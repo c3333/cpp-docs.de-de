@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Microsoft::WRL::ClassFactory::QueryInterface method
 - Microsoft::WRL::ClassFactory::Release method
 ms.assetid: f13e6bce-722b-4f18-b7cf-3ffa6345c1db
-ms.openlocfilehash: ccc1c43e8c68053a773883c25704cdea086bd0b1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3b738cc8f439e6653162ab99b0a26e87aa8fee36
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398731"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372666"
 ---
 # <a name="classfactory-class"></a>ClassFactory-Klasse
 
@@ -53,7 +53,7 @@ class ClassFactory :
 ### <a name="parameters"></a>Parameter
 
 *I0*<br/>
-Die nullte-Schnittstelle.
+Die Null-Schnittstelle.
 
 *I1*<br/>
 Die erste Schnittstelle.
@@ -61,11 +61,11 @@ Die erste Schnittstelle.
 *I2*<br/>
 Die zweite Schnittstelle.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Nutzen `ClassFactory` eine benutzerdefinierte Factoryimplementierung bereitstellen.
+Verwenden `ClassFactory` Sie diese, um eine benutzerdefinierte Factoryimplementierung bereitzustellen.
 
-Das folgende Muster für die Programmierung veranschaulicht, wie die [implementiert](implements-structure.md) Struktur, die mehr als drei Schnittstellen für eine Klassenfactory angeben.
+Das folgende Programmiermuster veranschaulicht, wie die [Implements-Struktur](implements-structure.md) verwendet wird, um mehr als drei Schnittstellen in einer Klassenfactory anzugeben.
 
 `struct MyFactory : ClassFactory<Implements<I1, I2, I3>, I4, I5>`
 
@@ -73,18 +73,18 @@ Das folgende Muster für die Programmierung veranschaulicht, wie die [implementi
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                        | Beschreibung
+Name                                        | BESCHREIBUNG
 ------------------------------------------- | -----------
 [ClassFactory::ClassFactory](#classfactory) |
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                            | Beschreibung
+Name                                            | BESCHREIBUNG
 ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------
-[ClassFactory::AddRef](#addref)                 | Inkrementiert den Verweiszähler für den aktuellen `ClassFactory` Objekt.
-[ClassFactory::LockServer](#lockserver)         | Erhöht oder verringert die Anzahl der zugrunde liegenden Objekte nachverfolgt werden, von der aktuellen `ClassFactory` Objekt.
-[ClassFactory::QueryInterface](#queryinterface) | Ruft einen Zeiger auf die Schnittstelle, die durch Parameter angegeben wird.
-[ClassFactory::Release](#release)               | Dekrementiert den Verweiszähler für den aktuellen `ClassFactory` Objekt.
+[ClassFactory::AddRef](#addref)                 | Inkrementiert die Referenzanzahl für das aktuelle `ClassFactory` Objekt.
+[ClassFactory::LockServer](#lockserver)         | Erhöht oder dekrementiert die Anzahl der zugrunde liegenden `ClassFactory` Objekte, die vom aktuellen Objekt nachverfolgt werden.
+[ClassFactory::QueryInterface](#queryinterface) | Ruft einen Zeiger auf die schnittstelle ab, die durch Parameter angegeben wird.
+[ClassFactory::Release](#release)               | Dekrementiert die Referenzanzahl `ClassFactory` für das aktuelle Objekt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -110,13 +110,13 @@ Name                                            | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** module.h
+**Kopfzeile:** module.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="addref"></a>ClassFactory::AddRef
+## <a name="classfactoryaddref"></a><a name="addref"></a>ClassFactory::AddRef
 
-Inkrementiert den Verweiszähler für den aktuellen `ClassFactory` Objekt.
+Inkrementiert die Referenzanzahl für das aktuelle `ClassFactory` Objekt.
 
 ```cpp
 STDMETHOD_(
@@ -129,15 +129,15 @@ STDMETHOD_(
 
 „S_OK“ im Erfolgsfall, andernfalls ein HRESULT, das den Fehler beschreibt.
 
-## <a name="classfactory"></a>ClassFactory::ClassFactory
+## <a name="classfactoryclassfactory"></a><a name="classfactory"></a>ClassFactory::ClassFactory
 
 ```cpp
 WRL_NOTHROW ClassFactory();
 ```
 
-## <a name="lockserver"></a>ClassFactory::LockServer
+## <a name="classfactorylockserver"></a><a name="lockserver"></a>ClassFactory::LockServer
 
-Erhöht oder verringert die Anzahl der zugrunde liegenden Objekte nachverfolgt werden, von der aktuellen `ClassFactory` Objekt.
+Erhöht oder dekrementiert die Anzahl der zugrunde liegenden `ClassFactory` Objekte, die vom aktuellen Objekt nachverfolgt werden.
 
 ```cpp
 STDMETHOD(
@@ -147,20 +147,20 @@ STDMETHOD(
 
 ### <a name="parameters"></a>Parameter
 
-*fLock*<br/>
-**"true"** erhöht die Anzahl der überwachten Objekte. **"false"** um die Anzahl der überwachten Objekte zu verringern.
+*Herde*<br/>
+**true,** um die Anzahl der nachverfolgten Objekte zu erhöhen. **false,** um die Anzahl der verfolgten Objekte zu dekrementodienen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls E_FAIL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`ClassFactory` verfolgt des Objekte in einer zugrunde liegenden Instanz, von der [Modul](module-class.md) Klasse.
+`ClassFactory`verfolgt Objekte in einer zugrunde liegenden Instanz der [Modulklasse.](module-class.md)
 
-## <a name="queryinterface"></a>ClassFactory::QueryInterface
+## <a name="classfactoryqueryinterface"></a><a name="queryinterface"></a>ClassFactory::QueryInterface
 
-Ruft einen Zeiger auf die Schnittstelle, die durch Parameter angegeben wird.
+Ruft einen Zeiger auf die schnittstelle ab, die durch Parameter angegeben wird.
 
 ```cpp
 STDMETHOD(
@@ -174,15 +174,15 @@ STDMETHOD(
 Eine Schnittstellen-ID.
 
 *ppvObject*<br/>
-Wenn dieser Vorgang abgeschlossen ist, einen Zeiger auf die Schnittstelle, die vom Parameter angegebene *Riid*.
+Wenn dieser Vorgang abgeschlossen ist, wird ein Zeiger auf die Schnittstelle angezeigt, die durch den Parameter *riid*angegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 „S_OK“ im Erfolgsfall, andernfalls ein HRESULT, das den Fehler beschreibt.
 
-## <a name="release"></a>ClassFactory::Release
+## <a name="classfactoryrelease"></a><a name="release"></a>ClassFactory::Release
 
-Dekrementiert den Verweiszähler für den aktuellen `ClassFactory` Objekt.
+Dekrementiert die Referenzanzahl `ClassFactory` für das aktuelle Objekt.
 
 ```cpp
 STDMETHOD_(

@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::gamma_distribution [C++], param_type
 - std::gamma_distribution [C++], param_type
 ms.assetid: 2a6798ac-6152-41d7-8ef6-d684d92f1572
-ms.openlocfilehash: ab71ada5b1fb8b604b94ed098a46820b86a65c63
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 4bcc17ada430c1e3b14ef1ef67ea97e863dbdd5d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689605"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370682"
 ---
 # <a name="gamma_distribution-class"></a>gamma_distribution-Klasse
 
@@ -70,15 +70,15 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*RealType* -\
-Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+*RealType*\
+Der Gleitkomma-Ergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-*URNG* \
-Die einheitliche Zufallszahlengenerator-Engine. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+*URNG*\
+Die einheitliche Zufallszahlengenerator-Engine. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Gleit Komma Typs produziert, oder den Typ **Double** , wenn kein entsprechend der Gamma Verteilung verteilter Wert angegeben wird. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Gleitkommatyps erzeugt, oder typ **doppelt,** wenn keine bereitgestellt wird, verteilt gemäß der Gammaverteilung. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -95,7 +95,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 Ausführliche Informationen über die Gammaverteilung finden Sie im Wolfram MathWorld-Artikel [Gamma Distribution](https://go.microsoft.com/fwlink/p/?linkid=401111).
 
@@ -188,7 +188,7 @@ Distribution for 10 samples:
 
 **Namespace:** std
 
-## <a name="gamma_distribution"></a> gamma_distribution::gamma_distribution
+## <a name="gamma_distributiongamma_distribution"></a><a name="gamma_distribution"></a>gamma_distribution::gamma_distribution
 
 Erstellt die Verteilung.
 
@@ -199,16 +199,16 @@ explicit gamma_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*Alpha* \
+*Alpha*\
 Der `alpha`-Verteilungsparameter.
 
-*Beta* -\
+*Beta*\
 Der `beta`-Verteilungsparameter.
 
-*\ für* den
+*Parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0.0 < alpha` und `0.0 < beta`
 
@@ -216,7 +216,7 @@ Mit dem ersten Konstruktor wird ein Objekt erstellt, in dessen gespeichertem `al
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> gamma_distribution::param_type
+## <a name="gamma_distributionparam_type"></a><a name="param_type"></a>gamma_distribution::param_type
 
 Speichert die Parameter der Verteilung.
 
@@ -234,16 +234,16 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*Alpha* \
+*Alpha*\
 Der `alpha`-Verteilungsparameter.
 
-*Beta* -\
+*Beta*\
 Der `beta`-Verteilungsparameter.
 
-*Rechte* \
+*Richting*\
 Die `param_type`-Instanz, mit der verglichen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0.0 < alpha` und `0.0 < beta`
 
@@ -251,4 +251,4 @@ Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteil
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)
+[\<zufällige>](../standard-library/random.md)

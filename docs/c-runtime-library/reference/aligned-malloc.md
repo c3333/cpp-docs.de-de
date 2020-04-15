@@ -1,8 +1,9 @@
 ---
 title: _aligned_malloc
-ms.date: 12/11/2019
+ms.date: 4/2/2020
 api_name:
 - _aligned_malloc
+- _o__aligned_malloc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - aligned_malloc function
 - _aligned_malloc function
 ms.assetid: fb788d40-ee94-4039-aa4d-97d73dab1ca0
-ms.openlocfilehash: c06c822ae4e7584a172c260a5c06e25019a1ce5e
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: b7d7f29f50b28ff713de94cc3304014e96d45b70
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75300130"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81350609"
 ---
 # <a name="_aligned_malloc"></a>_aligned_malloc
 
@@ -46,31 +48,33 @@ void * _aligned_malloc(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*size*<br/>
+*Größe*<br/>
 Die Größe der angeforderten Speicherbelegung.
 
-*alignment*<br/>
+*Ausrichtung*<br/>
 Der Ausrichtungswert, der eine ganzzahlige Potenz von 2 sein muss.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Speicherblock, der zugeordnet wurde, oder NULL, wenn der Vorgang fehlgeschlagen ist. Der Zeiger ist ein Vielfaches der *Ausrichtung*.
+Ein Zeiger auf den Speicherblock, der zugewiesen wurde, oder NULL, wenn der Vorgang fehlgeschlagen ist. Der Zeiger ist ein Vielfaches der *Ausrichtung*.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **_aligned_malloc** basiert auf [malloc](malloc.md).
 
-**_aligned_malloc** ist als `__declspec(noalias)` und `__declspec(restrict)`gekennzeichnet, was bedeutet, dass die Funktion globale Variablen garantiert nicht ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
+**_aligned_malloc** markiert `__declspec(noalias)` `__declspec(restrict)`ist und , was bedeutet, dass die Funktion garantiert keine globalen Variablen ändert und dass der zurückgegebene Zeiger nicht aliasiert wird. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
 
-Diese Funktion legt `errno` auf `ENOMEM` fest, wenn die Speicherbelegung fehlgeschlagen ist oder die angeforderte Größe größer als `_HEAP_MAXREQ` war. Weitere Informationen zu `errno` finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md). Außerdem überprüft **_aligned_malloc** seine Parameter. Wenn die *Ausrichtung* keine Potenz von 2 ist oder die *Größe* 0 (null) ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie unter [Parameter Validierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt diese Funktion NULL zurück und legt `errno` auf `EINVAL`fest.
+Diese Funktion legt `errno` auf `ENOMEM` fest, wenn die Speicherbelegung fehlgeschlagen ist oder die angeforderte Größe größer als `_HEAP_MAXREQ` war. Weitere Informationen zu `errno` finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md). Außerdem **überprüft _aligned_malloc** seine Parameter. Wenn *die Ausrichtung* keine Leistung von 2 ist oder die *Größe* Null ist, ruft diese Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, `errno` gibt `EINVAL`diese Funktion NULL zurück und setzt auf .
 
-Verwenden Sie [_aligned_free](aligned-free.md) , um den von **_aligned_malloc** und `_aligned_offset_malloc`ermittelbaren Speicherplatz zuzuweisen. Verwenden Sie `free`nicht, wodurch der ausgerichtete Speicher nicht ordnungsgemäß freigegeben wird und Fehler bei der Fehlerdiagnose auftreten können.
+Verwenden Sie [_aligned_free,](aligned-free.md) um **_aligned_malloc** den `_aligned_offset_malloc`von _aligned_malloc und . Verwenden Sie `free`nicht , das den ausgerichteten Speicher nicht korrekt zurückgibt und zu schwer zu diagnostizierenden Fehlern führen kann.
 
-## <a name="requirements"></a>-Anforderungen
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_aligned_malloc**|\<malloc.h>|
 

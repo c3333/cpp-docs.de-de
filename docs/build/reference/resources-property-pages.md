@@ -14,55 +14,55 @@ f1_keywords:
 - VC.Project.VCResourceCompilerTool.ResourceOutputFileName
 - VC.Project.VCResourceCompilerTool.NullTerminateStrings
 - vc.project.AdditionalOptionsPage
-ms.openlocfilehash: 16168e7eb5e27f4ec0380d53cf8a5c4b9586ec34
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: c4a3048bfa07e9635662534b510fa57caa091f00
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171137"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336075"
 ---
-# <a name="resources-property-page"></a>Ressourcen (Eigenschaften Seite)
+# <a name="resources-property-page"></a>Ressourcen-Eigenschaftenseite
 
-Bei nativen Windows-Desktop Programmen ruft der Build den [Ressourcen Compiler (RC. exe)](/windows/win32/menurc/resource-compiler) auf, um der Binärdatei Bilder, Zeichen folgen Tabellen und *Res* -Dateien hinzuzufügen. Die Eigenschaften, die auf dieser Eigenschaften Seite verfügbar gemacht werden, werden an den Ressourcen Compiler C++ und nicht an den Compiler oder den Linker übermittelt. Weitere Informationen zu den hier aufgeführten Eigenschaften und deren Zuordnung zu den RC-Befehlszeilenoptionen finden Sie unter [Verwenden von RC (RC-Befehlszeile)](/windows/win32/menurc/using-rc-the-rc-command-line-). Informationen zum Zugreifen auf die Eigenschaften Seiten für **Ressourcen** finden Sie unter [festlegen C++ von Compiler-und Buildeigenschaften in Visual Studio](../working-with-project-properties.md). Informationen zum programmgesteuerten Zugriff auf diese Eigenschaften finden Sie unter <xref:Microsoft.VisualStudio.VCProjectEngine.VCResourceCompilerTool>.
+Bei systemeigenen Windows-Desktopprogrammen ruft der Build den [Ressourcencompiler (rc.exe)](/windows/win32/menurc/resource-compiler) auf, um der Binärdatei Bilder, Zeichenfolgentabellen und *.res-Dateien* hinzuzufügen. Die auf dieser Eigenschaftenseite verfügbar gemachten Eigenschaften werden an den Ressourcencompiler und nicht an den C++-Compiler oder den Linker übergeben. Weitere Informationen zu den hier aufgeführten Eigenschaften und deren Zuordnung zu RC-Befehlszeilenoptionen finden Sie unter [Verwenden von RC (Die RC-Befehlszeile)](/windows/win32/menurc/using-rc-the-rc-command-line-). Informationen zum Zugriff auf **Resources** die Ressourcen-Eigenschaftenseiten finden Sie unter Festlegen von [C++-Compiler- und Buildeigenschaften in Visual Studio](../working-with-project-properties.md). Informationen zum programmgesteuerten Zugriff auf diese Eigenschaften finden Sie unter <xref:Microsoft.VisualStudio.VCProjectEngine.VCResourceCompilerTool>.
 
-Eigenschaften für .NET-Ressourcen C++in/CLI-Anwendungen werden auf der Eigenschaften [Seite verwaltete Ressourcen](managed-resources-property-page.md)verfügbar gemacht.
+Eigenschaften für .NET-Ressourcen in C++/CLI-Anwendungen werden auf der [Eigenschaftenseite Verwaltete Ressourcen](managed-resources-property-page.md)verfügbar gemacht.
 
 ## <a name="preprocessor-definitions"></a>Präprozessordefinitionen
 
-Gibt eine oder mehrere Definitionen für den Ressourcen Compiler an. (/d [Makro])
+Gibt eine oder mehrere Definitionen für den Ressourcencompiler an. (/d[makro])
 
 ## <a name="undefine-preprocessor-definitions"></a>Präprozessordefinitionen aufheben
 
-Aufheben der Definition eines Symbols. /u
+Dedefine eines Symbols. (/u)
 
-## <a name="culture"></a>Kultur
+## <a name="culture"></a>culture
 
-Listet die in den Ressourcen verwendete Kultur (z. b. US-Englisch oder Italienisch) auf. (/l [NUM])
+Listet die Kultur (z. B. US-Englisch oder Italienisch) auf, die in den Ressourcen verwendet wird. (/l [num])
 
 ## <a name="additional-include-directories"></a>Zusätzliche Includeverzeichnisse
 
-Gibt mindestens ein Verzeichnis an, das dem Include-Pfad hinzugefügt werden soll. Verwenden Sie Semikolons als Trennzeichen, wenn mehr als ein Trennzeichen verwendet wird. (/I [Pfad])
+Gibt ein oder mehrere Verzeichnisse an, die dem Includepfad hinzugefügt werden sollen. Verwenden Sie das Semikolon-Trennzeichen, wenn mehr als ein. (/I[Pfad])
 
-## <a name="ignore-standard-include-paths"></a>Standardincludepfade ignorieren
+## <a name="ignore-standard-include-paths"></a>Standard-Includepfade ignorieren
 
-Verhindert, dass der Ressourcen Compiler in Verzeichnissen, die in den INCLUDE-Umgebungsvariablen angegeben sind, nach Includedateien sucht. /X
+Verhindert, dass der Ressourcencompiler nach Include-Dateien in Verzeichnissen sucht, die in den INCLUDE-Umgebungsvariablen angegeben sind. (/X)
 
 ## <a name="show-progress"></a>Status anzeigen
 
-Statusmeldungen an Ausgabefenster senden. /v
+Senden Sie Fortschrittsmeldungen an das Ausgabefenster. (/v)
 
 ## <a name="suppress-startup-banner"></a>Startbanner unterdrücken
 
-Unterdrücken der Anzeige des Start Banners und der Informations Meldung (/nologo)
+Unterdrücken der Anzeige des Startbanners und der Informationsmeldung (/nologo)
 
-## <a name="resource-file-name"></a>Ressourcen Dateiname
+## <a name="resource-file-name"></a>Ressourcendateiname
 
-Gibt den Namen der Ressourcen Datei an (/FO [File]).
+Gibt den Namen der Ressourcendatei an (/fo[Datei])
 
-## <a name="null-terminate-strings"></a>NULL-Zeichen folgen beenden
+## <a name="null-terminate-strings"></a>Null-Beendigungszeichenfolgen
 
-Fügen Sie NULL an alle Zeichen folgen in den Zeichen folgen Tabellen an. /n
+Fügen Sie NULL an alle Zeichenfolgen in den Zeichenfolgentabellen an. (/n)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++Referenz zur Projekteigenschaften Seite](property-pages-visual-cpp.md)
+[C++-Projekteigenschaftsseitenverweis](property-pages-visual-cpp.md)

@@ -25,16 +25,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::ComPtrRef::operator void** operator
 - Microsoft::WRL::Details::ComPtrRef::ReleaseAndGetAddressOf method
 ms.assetid: d6bdfd20-e977-45b4-9ac1-1b8efbdb77de
-ms.openlocfilehash: 281e02d85e70a84530e6980d31669a73091448d5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: df9ded817227547493c04035e0abc3d948e24495
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398666"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372634"
 ---
 # <a name="comptrref-class"></a>ComPtrRef-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -46,35 +46,35 @@ class ComPtrRef : public ComPtrRefBase<T>;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein [ComPtr\<T >](comptr-class.md) Typ oder einem Typ abgeleitet ist, nicht nur die Schnittstelle der `ComPtr`.
+Ein [ComPtr\<T>](comptr-class.md) Typ oder ein daraus abgeleiteter Typ, nicht nur die Schnittstelle, die durch die dargestellt wird. `ComPtr`
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Stellt einen Verweis auf ein Objekt des Typs `ComPtr<T>`.
+Stellt einen Verweis auf `ComPtr<T>`ein Objekt vom Typ dar.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                               | Beschreibung
+Name                               | BESCHREIBUNG
 ---------------------------------- | -------------------------------------------------------------------------------------------------------------
-[ComPtrRef::ComPtrRef](#comptrref) | Initialisiert eine neue Instanz der dem `ComPtrRef` Klasse aus dem angegebenen Zeiger auf einen anderen `ComPtrRef` Objekt.
+[ComPtrRef::ComPtrRef](#comptrref) | Initialisiert eine neue Instanz `ComPtrRef` der Klasse vom angegebenen `ComPtrRef` Zeiger auf ein anderes Objekt.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                         | Beschreibung
+Name                                                         | BESCHREIBUNG
 ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------
-[ComPtrRef::GetAddressOf](#getaddressof)                     | Ruft die Adresse eines Zeigers auf die Schnittstelle, die vom aktuellen `ComPtrRef` Objekt.
-[ComPtrRef::ReleaseAndGetAddressOf](#releaseandgetaddressof) | Löscht die aktuelle `ComPtrRef` Objekt und gibt einen Zeiger-auf-ein-Zeiger auf die Schnittstelle, die durch dargestellt wurde die `ComPtrRef` Objekt.
+[ComPtrRef::GetAddressOf](#getaddressof)                     | Ruft die Adresse eines Zeigers auf die `ComPtrRef` Schnittstelle ab, die durch das aktuelle Objekt dargestellt wird.
+[ComPtrRef::ReleaseAndGetAddressOf](#releaseandgetaddressof) | Löscht das `ComPtrRef` aktuelle Objekt und gibt einen Zeiger auf einen Zeiger auf die `ComPtrRef` Schnittstelle zurück, die durch das Objekt dargestellt wurde.
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-Name                                                                     | Beschreibung
+Name                                                                     | BESCHREIBUNG
 ------------------------------------------------------------------------ | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[Comptrref:: Operator InterfaceType **](#operator-interfacetype-star-star) | Löscht die aktuelle `ComPtrRef` Objekt und gibt einen Zeiger-auf-ein-Zeiger auf die Schnittstelle, die durch dargestellt wurde die `ComPtrRef` Objekt.
-[Comptrref:: T *](#operator-t-star)                               | Gibt den Wert des der [Ptr_](comptrrefbase-class.md#ptr) -Datenmember des aktuellen ComPtrRef-Objekts.
-[Comptrref:: Operator Void **](#operator-void-star-star)                   | Löscht die aktuelle `ComPtrRef` Objekt, wandelt der Zeiger auf die Schnittstelle, die durch dargestellt wurde die `ComPtrRef` -Objekt als eine Zeiger-auf-Zeiger-auf `void`, und klicken Sie dann die Cast-Zeiger zurückgibt.
-[ComPtrRef::operator*](#operator-star)                                   | Ruft ab, der Zeiger auf die Schnittstelle, die vom aktuellen `ComPtrRef` Objekt.
+[ComPtrRef::operator InterfaceType**](#operator-interfacetype-star-star) | Löscht das `ComPtrRef` aktuelle Objekt und gibt einen Zeiger auf einen Zeiger auf die `ComPtrRef` Schnittstelle zurück, die durch das Objekt dargestellt wurde.
+[ComPtrRef::operator T*](#operator-t-star)                               | Gibt den Wert des [ptr_](comptrrefbase-class.md#ptr) Datenmembers des aktuellen ComPtrRef-Objekts zurück.
+[ComPtrRef::operator void**](#operator-void-star-star)                   | Löscht das `ComPtrRef` aktuelle Objekt, wirft den Zeiger auf die `ComPtrRef` Schnittstelle um, die vom Objekt als `void`Zeiger auf Zeiger auf zeiger-zu dargestellt dargestellt wurde, und gibt dann den Umwandlungszeiger zurück.
+[ComPtrRef::Operator*](#operator-star)                                   | Ruft den Zeiger auf die Schnittstelle `ComPtrRef` ab, die durch das aktuelle Objekt dargestellt wird.
 [ComPtrRef::operator==](#operator-equality)                              | Gibt an, ob zwei `ComPtrRef`-Objekte gleich sind.
 [ComPtrRef::operator!=](#operator-inequality)                            | Gibt an, ob zwei `ComPtrRef`-Objekte ungleich sind.
 
@@ -90,9 +90,9 @@ Name                                                                     | Besch
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="comptrref"></a>ComPtrRef::ComPtrRef
+## <a name="comptrrefcomptrref"></a><a name="comptrref"></a>ComPtrRef::ComPtrRef
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 ComPtrRef(
@@ -102,16 +102,16 @@ ComPtrRef(
 
 ### <a name="parameters"></a>Parameter
 
-*ptr*<br/>
-Der zugrunde liegenden Wert eines anderen `ComPtrRef` Objekt.
+*Ptr*<br/>
+Der zugrunde liegende `ComPtrRef` Wert eines anderen Objekts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert eine neue Instanz der dem `ComPtrRef` Klasse aus dem angegebenen Zeiger auf einen anderen `ComPtrRef` Objekt.
+Initialisiert eine neue Instanz `ComPtrRef` der Klasse vom angegebenen `ComPtrRef` Zeiger auf ein anderes Objekt.
 
-## <a name="getaddressof"></a>ComPtrRef::GetAddressOf
+## <a name="comptrrefgetaddressof"></a><a name="getaddressof"></a>ComPtrRef::GetAddressOf
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 InterfaceType* const * GetAddressOf() const;
@@ -119,15 +119,15 @@ InterfaceType* const * GetAddressOf() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Adresse eines Zeigers auf die Schnittstelle, die vom aktuellen `ComPtrRef` Objekt.
+Adresse eines Zeigers auf die Schnittstelle, die durch das aktuelle `ComPtrRef` Objekt dargestellt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft die Adresse eines Zeigers auf die Schnittstelle, die vom aktuellen `ComPtrRef` Objekt.
+Ruft die Adresse eines Zeigers auf die `ComPtrRef` Schnittstelle ab, die durch das aktuelle Objekt dargestellt wird.
 
-## <a name="operator-equality"></a>ComPtrRef::operator==
+## <a name="comptrrefoperator"></a><a name="operator-equality"></a>ComPtrRef::operator==
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 bool operator==(
@@ -158,27 +158,27 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*a*<br/>
+*Eine*<br/>
 Ein Verweis auf ein `ComPtrRef`-Objekt.
 
-*b*<br/>
-Ein Verweis auf einen anderen `ComPtrRef` Objekt oder ein Zeiger auf einen anonymen Typ (`void*`).
+*B*<br/>
+Ein Verweis `ComPtrRef` auf ein anderes Objekt oder ein`void*`Zeiger auf einen anonymen Typ ( ).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der erste Operator ergibt **"true"** Wenn Objekt *eine* Objekt entspricht *b*ist, andernfalls **"false"**.
+Der erste Operator gibt **true** ab, wenn Objekt *a* gleich Objekt *b*ist; andernfalls **false**.
 
-Führen Sie die zweite und dritte Operator **"true"** Wenn Objekt *eine* gleich **"nullptr"** ist, andernfalls **"false"**.
+Der zweite und dritte Operator ergeben **true,** wenn Objekt *a* gleich **nullptr**ist; andernfalls **false**.
 
-Die vierten und fünften-Operatoren ergeben **"true"** Wenn Objekt *eine* Objekt entspricht *b*ist, andernfalls **"false"**.
+Der vierte und fünfte Operator ergeben **true,** wenn Objekt *a* gleich Objekt *b*ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt an, ob zwei `ComPtrRef`-Objekte gleich sind.
 
-## <a name="operator-inequality"></a>ComPtrRef::operator!=
+## <a name="comptrrefoperator"></a><a name="operator-inequality"></a>ComPtrRef::operator!=
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 bool operator!=(
@@ -209,39 +209,39 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*a*<br/>
+*Eine*<br/>
 Ein Verweis auf ein `ComPtrRef`-Objekt.
 
-*b*<br/>
-Ein Verweis auf einen anderen `ComPtrRef` Objekt oder ein Zeiger auf ein anonymes Objekt (`void*`).
+*B*<br/>
+Ein Verweis `ComPtrRef` auf ein anderes Objekt oder ein`void*`Zeiger auf ein anonymes Objekt ( ).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der erste Operator ergibt **"true"** Wenn Objekt *eine* ist nicht gleich Objekt *b*ist, andernfalls **"false"**.
+Der erste Operator gibt **true** ab, wenn Objekt *a* nicht gleich Objekt *b*ist; andernfalls **false**.
 
-Führen Sie die zweite und dritte Operator **"true"** Wenn Objekt *eine* ist nicht gleich **"nullptr"** ist, andernfalls **"false"**.
+Der zweite und dritte Operator ergeben **true,** wenn Objekt *a* nicht gleich **nullptr**ist; andernfalls **false**.
 
-Die vierten und fünften-Operatoren ergeben **"true"** Wenn Objekt *eine* ist nicht gleich Objekt *b*ist, andernfalls **"false"**.
+Der vierte und fünfte Operator ergeben **true,** wenn Objekt *a* nicht gleich Objekt *b*ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt an, ob zwei `ComPtrRef`-Objekte ungleich sind.
 
-## <a name="operator-interfacetype-star-star"></a>Comptrref:: Operator InterfaceType **
+## <a name="comptrrefoperator-interfacetype"></a><a name="operator-interfacetype-star-star"></a>ComPtrRef::operator InterfaceType**
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 operator InterfaceType**();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Löscht die aktuelle `ComPtrRef` Objekt und gibt einen Zeiger-auf-ein-Zeiger auf die Schnittstelle, die durch dargestellt wurde die `ComPtrRef` Objekt.
+Löscht das `ComPtrRef` aktuelle Objekt und gibt einen Zeiger auf einen Zeiger auf die `ComPtrRef` Schnittstelle zurück, die durch das Objekt dargestellt wurde.
 
-## <a name="operator-star"></a>ComPtrRef::operator*
+## <a name="comptrrefoperator"></a><a name="operator-star"></a>ComPtrRef::Operator*
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 InterfaceType* operator *();
@@ -249,39 +249,39 @@ InterfaceType* operator *();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf die Schnittstelle, die vom aktuellen `ComPtrRef` Objekt.
+Zeiger auf die Schnittstelle, `ComPtrRef` die durch das aktuelle Objekt dargestellt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ab, der Zeiger auf die Schnittstelle, die vom aktuellen `ComPtrRef` Objekt.
+Ruft den Zeiger auf die Schnittstelle `ComPtrRef` ab, die durch das aktuelle Objekt dargestellt wird.
 
-## <a name="operator-t-star"></a>Comptrref:: T *
+## <a name="comptrrefoperator-t"></a><a name="operator-t-star"></a>ComPtrRef::operator T*
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 operator T*();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den Wert des der [Ptr_](comptrrefbase-class.md#ptr) -Datenmember des aktuellen `ComPtrRef` Objekt.
+Gibt den Wert des [ptr_](comptrrefbase-class.md#ptr) Datenmember des aktuellen `ComPtrRef` Objekts zurück.
 
-## <a name="operator-void-star-star"></a>Comptrref:: "void"\*\*
+## <a name="comptrrefoperator-void"></a><a name="operator-void-star-star"></a>ComPtrRef::operator void\*\*
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 operator void**() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Löscht die aktuelle `ComPtrRef` Objekt, wandelt der Zeiger auf die Schnittstelle, die durch dargestellt wurde die `ComPtrRef` -Objekt als eine Zeiger-auf-Zeiger-auf `void`, und klicken Sie dann die Cast-Zeiger zurückgibt.
+Löscht das `ComPtrRef` aktuelle Objekt, wirft den Zeiger auf die `ComPtrRef` Schnittstelle um, die vom Objekt als `void`Zeiger auf Zeiger auf zeiger-zu dargestellt dargestellt wurde, und gibt dann den Umwandlungszeiger zurück.
 
-## <a name="releaseandgetaddressof"></a>ComPtrRef::ReleaseAndGetAddressOf
+## <a name="comptrrefreleaseandgetaddressof"></a><a name="releaseandgetaddressof"></a>ComPtrRef::ReleaseAndGetAddressOf
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 InterfaceType** ReleaseAndGetAddressOf();
@@ -289,8 +289,8 @@ InterfaceType** ReleaseAndGetAddressOf();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf die Schnittstelle, die dargestellt wird, wurde von der gelöschten `ComPtrRef` Objekt.
+Zeiger auf die Schnittstelle, die `ComPtrRef` durch das gelöschte Objekt dargestellt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Löscht die aktuelle `ComPtrRef` Objekt und gibt einen Zeiger-auf-ein-Zeiger auf die Schnittstelle, die durch dargestellt wurde die `ComPtrRef` Objekt.
+Löscht das `ComPtrRef` aktuelle Objekt und gibt einen Zeiger auf einen Zeiger auf die `ComPtrRef` Schnittstelle zurück, die durch das Objekt dargestellt wurde.

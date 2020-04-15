@@ -1,39 +1,39 @@
 ---
 title: Zeiger (C++)
 ms.date: 11/19/2019
-description: Informationen zu unformatierten Zeigern und C++intelligenten Zeigern in Microsoft.
+description: Informationen zu unformatierten Zeigern und intelligenten Zeigern in Microsoft C++.
 helpviewer_keywords:
 - pointers (C++)
 ms.assetid: 595387c5-8e58-4670-848f-344c7caf985e
-ms.openlocfilehash: 21dcc55048e9e378f370f25254e1910b05e49d69
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 485cee667fa288bff76fdeac7c9f229355c276d1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74246425"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371920"
 ---
 # <a name="pointers-c"></a>Zeiger (C++)
 
-Ein Zeiger ist eine Variable, in der die Speicheradresse eines Objekts gespeichert wird. Zeiger werden sowohl in C als auch C++ in drei Haupt Zwecken verwendet:
+Ein Zeiger ist eine Variable, die die Speicheradresse eines Objekts speichert. Zeiger werden sowohl in C als auch in C++ für drei Hauptzwecke ausgiebig verwendet:
 
-- um neue Objekte auf dem Heap zuzuordnen,
+- um neue Objekte auf dem Heap zuzuweisen,
 - So übergeben Sie Funktionen an andere Funktionen
-- zum Iterieren von Elementen in Arrays oder anderen Datenstrukturen.
+- , um Elemente in Arrays oder anderen Datenstrukturen zu iterieren.
 
-Bei der Programmierung im C-Stil werden unformatierte *Zeiger* für all diese Szenarien verwendet. Unformatierte Zeiger sind jedoch die Quelle vieler schwerwiegender Programmierfehler. Daher wird von der Verwendung dringend abgeraten, es sei denn, Sie bieten einen erheblichen Leistungsvorteil, und es gibt keine Mehrdeutigkeit, welche Zeiger der *besitzende Zeiger* ist, der für das Löschen des Objekts zuständig ist. Modern C++ stellt *intelligente Zeiger* zum Zuordnen von Objekten, *Iteratoren* zum Durchlaufen von Datenstrukturen und *Lambda-Ausdrücken* für das Übergeben von Funktionen bereit. Wenn Sie diese sprach-und Bibliotheksfunktionen anstelle von unformatierten Zeigern verwenden, machen Sie das Programm sicherer, einfacher zu Debuggen und leichter zu verstehen und zu warten. Weitere Informationen finden Sie unter [intelligente Zeiger](smart-pointers-modern-cpp.md), [Iteratoren](../standard-library/iterators.md)und [Lambda-Ausdrücke](lambda-expressions-in-cpp.md) .
+In der C-Programmierung werden für all diese Szenarien *unformatierte Zeiger* verwendet. Rohzeiger sind jedoch die Ursache für viele schwerwiegende Programmierfehler. Daher wird von ihrer Verwendung dringend abgeraten, es sei denn, sie bieten einen erheblichen Leistungsvorteil und es gibt keine Unklarheit darüber, welcher Zeiger der *eigene Zeiger* ist, der für das Löschen des Objekts verantwortlich ist. Modernes C++ bietet *intelligente Zeiger* zum Zuweisen von Objekten, *Iteratoren* zum Durchlaufen von Datenstrukturen und *Lambdaausdrücke* zum Übergeben von Funktionen. Durch die Verwendung dieser Sprach- und Bibliotheksfunktionen anstelle von rohen Zeigern machen Sie Ihr Programm sicherer, einfacher zu debuggen und einfacher zu verstehen und zu verwalten. Weitere Informationen finden Sie unter [Smart Pointers](smart-pointers-modern-cpp.md), [Iterators](../standard-library/iterators.md)und [Lambda-Ausdrücke.](lambda-expressions-in-cpp.md)
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-- [Unformatierte Zeiger](raw-pointers.md)
-- [Konstante und flüchtige Zeiger](const-and-volatile-pointers.md)
-- [New-und DELETE-Operatoren](new-and-delete-operators.md)
+- [Rohzeiger](raw-pointers.md)
+- [Const und flüchtige Zeiger](const-and-volatile-pointers.md)
+- [Neue und löschen operatoren](new-and-delete-operators.md)
 - [Intelligente Zeiger](smart-pointers-modern-cpp.md)
-- [Vorgehensweise: Erstellen und Verwenden von unique_ptr Instanzen](how-to-create-and-use-unique-ptr-instances.md)
-- [Vorgehensweise: Erstellen und Verwenden von shared_ptr Instanzen](how-to-create-and-use-shared-ptr-instances.md)
-- [Vorgehensweise: Erstellen und Verwenden von weak_ptr Instanzen](how-to-create-and-use-weak-ptr-instances.md)
-- [Vorgehensweise: Erstellen und Verwenden von CComPtr-und CComQIPtr-Instanzen](how-to-create-and-use-ccomptr-and-ccomqiptr-instances.md)
+- [Gewusst wie: Erstellen und Verwenden unique_ptr-Instanzen](how-to-create-and-use-unique-ptr-instances.md)
+- [Gewusst wie: Erstellen und Verwenden shared_ptr-Instanzen](how-to-create-and-use-shared-ptr-instances.md)
+- [Gewusst wie: Erstellen und Verwenden weak_ptr-Instanzen](how-to-create-and-use-weak-ptr-instances.md)
+- [Gewusst wie: Erstellen und Verwenden von CComPtr- und CComQIPtr-Instances](how-to-create-and-use-ccomptr-and-ccomqiptr-instances.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Iteratoren](../standard-library/iterators.md)</br>
+[Iterators](../standard-library/iterators.md)</br>
 [Lambda-Ausdrücke](lambda-expressions-in-cpp.md)

@@ -16,40 +16,40 @@ helpviewer_keywords:
 - heap corruption [MFC]
 - nested catch blocks [MFC]
 ms.assetid: d664a83d-879b-44d4-bdf0-029f0aca69e9
-ms.openlocfilehash: 00e88ddabf3a8e8b591bebae7ebc8ced0e1dc637
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: afad5335bedf001329ecb401a8a16c663afb5571
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406014"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371590"
 ---
 # <a name="exceptions-using-mfc-macros-and-c-exceptions"></a>Ausnahmen: Verwenden von MFC-Makros und C++-Ausnahmen
 
-Dieser Artikel behandelt die Überlegungen zum Schreiben von Code, der die Behandlung von Ausnahmen von MFC-Makros und der C++-Schlüsselwörter für die Ausnahmebehandlung verwendet.
+In diesem Artikel werden Überlegungen zum Schreiben von Code erläutert, der sowohl die MFC-Ausnahmebehandlungsmakros als auch die C++-Schlüsselwörter für die Ausnahmebehandlung verwendet.
 
 In diesem Artikel werden die folgenden Themen behandelt:
 
-- [Das Kombinieren von Ausnahmeschlüsselwörter und Makros](#_core_mixing_exception_keywords_and_macros)
+- [Mischen von Ausnahmeschlüsselwörtern und Makros](#_core_mixing_exception_keywords_and_macros)
 
-- [Try-Blöcke innerhalb von Catch-Blöcken](#_core_try_blocks_inside_catch_blocks)
+- [Versuchen Sie Blöcke in Catch-Blöcken](#_core_try_blocks_inside_catch_blocks)
 
-##  <a name="_core_mixing_exception_keywords_and_macros"></a> Das Kombinieren von Ausnahmeschlüsselwörter und Makros
+## <a name="mixing-exception-keywords-and-macros"></a><a name="_core_mixing_exception_keywords_and_macros"></a>Mischen von Ausnahmeschlüsselwörtern und Makros
 
-Sie können MFC-Ausnahmemakros und C++-Ausnahmeschlüsselwörter im selben Programm kombinieren. Aber die MFC-Makros können nicht mit C++-Ausnahmeschlüsselwörter im selben Block gemischt werden, da die Makros, die Exception-Objekte automatisch gelöscht, wenn sie den gültigen Bereich verlassen, während Code mithilfe der Schlüsselwörter für die Ausnahmebehandlung nicht der Fall ist. Weitere Informationen finden Sie im Artikel [Ausnahmen: Abfangen und Löschen von Ausnahmen](../mfc/exceptions-catching-and-deleting-exceptions.md).
+Sie können MFC-Ausnahmemakros und C++-Ausnahmeschlüsselwörter im selben Programm mischen. Sie können jedoch MFC-Makros nicht mit C++-Ausnahmeschlüsselwörtern im gleichen Block mischen, da die Makros Ausnahmeobjekte automatisch löschen, wenn sie den Gültigkeitsbereich nicht erweitern, während Code, der die Schlüsselwörter für die Ausnahmebehandlung verwendet, dies nicht tut. Weitere Informationen finden Sie im Artikel [Ausnahmen: Abfangen und Löschen von Ausnahmen](../mfc/exceptions-catching-and-deleting-exceptions.md).
 
-Der Hauptunterschied zwischen die Makros und die Schlüsselwörter ist, dass die Makros, die eine abgefangene Ausnahme "automatisch" löschen, wenn die Ausnahme den Gültigkeitsbereich verlässt. Code mit den Schlüsselwörtern nicht; Ausnahmen, die in einem Catch-Block abgefangen wird, müssen explizit gelöscht werden. Kombinieren von Makros und C++-Ausnahmeschlüsselwörter kann Speicherverluste verursachen, wenn ein Ausnahmeobjekt nicht gelöscht wird, oder zur Beschädigung des Heaps, wenn eine Ausnahme zweimal gelöscht wird.
+Der Hauptunterschied zwischen den Makros und den Schlüsselwörtern besteht darin, dass die Makros "automatisch" eine abgefangene Ausnahme löschen, wenn die Ausnahme den Gültigkeitsbereich verlässt. Code, der die Schlüsselwörter verwendet, nicht; Ausnahmen, die in einem Catch-Block abgefangen werden, müssen explizit gelöscht werden. Das Mischen von Makros und C++-Ausnahmeschlüsselwörtern kann speicherfehler verursachen, wenn ein Ausnahmeobjekt nicht gelöscht wird, oder zu einer Heapbeschädigung, wenn eine Ausnahme zweimal gelöscht wird.
 
-Der folgende Code wird z. B. den Ausnahmezeiger ungültig:
+Der folgende Code macht z. B. den Ausnahmezeiger ungültig:
 
 [!code-cpp[NVC_MFCExceptions#10](../mfc/codesnippet/cpp/exceptions-using-mfc-macros-and-cpp-exceptions_1.cpp)]
 
-Das Problem tritt auf, weil `e` wird gelöscht, wenn die Ausführung aus der "inneren" gibt **CATCH** Block. Mithilfe der **THROW_LAST** -Makro anstelle von der **AUSLÖSEN** Anweisung führt dazu, dass der "äußeren" **CATCH** Block, um einen gültigen Zeiger zu erhalten:
+Das Problem `e` tritt auf, weil gelöscht wird, wenn die Ausführung aus dem "inneren" **CATCH-Block** herausgeht. Die **THROW_LAST** Verwendung des THROW_LAST-Makros anstelle der **THROW-Anweisung** bewirkt, dass der "äußere" **CATCH-Block** einen gültigen Zeiger erhält:
 
 [!code-cpp[NVC_MFCExceptions#11](../mfc/codesnippet/cpp/exceptions-using-mfc-macros-and-cpp-exceptions_2.cpp)]
 
-##  <a name="_core_try_blocks_inside_catch_blocks"></a> Try-Blöcke innerhalb von Catch-Blöcken
+## <a name="try-blocks-inside-catch-blocks"></a><a name="_core_try_blocks_inside_catch_blocks"></a>Versuchen Sie Blöcke in Catch Blocks
 
-Sie können nicht die aktuelle Ausnahme erneut auslösen, aus einer **versuchen Sie es** Block, der innerhalb einer **CATCH** Block. Im folgende Beispiel ist ungültig:
+Sie können die aktuelle Ausnahme nicht **try** innerhalb eines try-Blocks, der sich innerhalb eines **CATCH-Blocks** befindet, erneut auslösen. Das folgende Beispiel ist ungültig:
 
 [!code-cpp[NVC_MFCExceptions#12](../mfc/codesnippet/cpp/exceptions-using-mfc-macros-and-cpp-exceptions_3.cpp)]
 

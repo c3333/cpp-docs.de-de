@@ -8,21 +8,21 @@ helpviewer_keywords:
 - single document interface (SDI) [MFC], applications
 - MDI [MFC], vs. SDI
 ms.assetid: bb7239d9-4759-4f63-bfff-44a04b48c067
-ms.openlocfilehash: 725249e5a71e8ee097c641e5972e3cc8bb0e3e33
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9730e7baf9589c4b05a60703c619aae2e941bdec
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62308529"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372758"
 ---
 # <a name="sdi-and-mdi"></a>SDI und MDI
 
-MFC erleichtert die Arbeit mit sowohl Single Document Interface (SDI) und Multiple Document Interface (MDI)-Anwendungen.
+MFC erleichtert die Arbeit mit SDI-Anwendungen (Single-Document Interface) und MDI-Anwendungen (Multiple Document Interface).
 
-SDI-Anwendungen können nur ein Fenster des geöffneten Dokuments Frame zu einem Zeitpunkt. MDI-Anwendungen können mehrere Dokument-Frame-Fensters in der gleichen Instanz von einer Anwendung geöffnet sein. MDI-Anwendung verfügt über ein Fenster, in der mehrere MDI untergeordnete Fenster, die selbst Rahmenfenster sind, geöffnet werden können, jeweils ein separates Dokument. In einigen Anwendungen können die untergeordneten Fenster verschiedener Typen, z. B. Chart-Windows und Windows der Tabelle sein. In diesem Fall kann die Menüleiste ändern, da untergeordnete MDI-Fenster mit unterschiedlichen Typen aktiviert werden.
+SDI-Anwendungen erlauben jeweils nur ein geöffnetes Dokumentrahmenfenster. MDI-Anwendungen ermöglichen das Öffnen mehrerer Dokumentrahmenfenster in derselben Instanz einer Anwendung. Eine MDI-Anwendung verfügt über ein Fenster, in dem mehrere untergeordnete MDI-Fenster geöffnet werden können, die selbst Rahmenfenster sind, die jeweils ein separates Dokument enthalten. In einigen Anwendungen können die untergeordneten Fenster unterschiedlicher Art sein, z. B. Diagrammfenster und Tabellenkalkulationsfenster. In diesem Fall kann sich die Menüleiste ändern, wenn untergeordnete MDI-Fenster unterschiedlicher Art aktiviert werden.
 
 > [!NOTE]
->  Unter Windows 95 und höher, sind Anwendungen häufig SDI, da das Betriebssystem eine Ansicht "dokumentbasierter" übernommen hat.
+> Unter Windows 95 und höher sind Anwendungen häufig SDI, da das Betriebssystem eine "dokumentzentrierte" Ansicht übernommen hat.
 
 Weitere Informationen finden Sie unter [Dokumente, Ansichten und das Framework](../mfc/documents-views-and-the-framework.md).
 

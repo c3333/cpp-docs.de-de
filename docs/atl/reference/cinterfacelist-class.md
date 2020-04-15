@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CInterfaceList class
 ms.assetid: 2077764d-25e5-4b3d-96c8-08a287bbcd25
-ms.openlocfilehash: e740d891e279bb29eeef898de52698dc3f04fc67
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0a7fd781c63e4ea084cf078e49fc9efb9cfa2d85
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62258636"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326781"
 ---
 # <a name="cinterfacelist-class"></a>CInterfaceList-Klasse
 
-Diese Klasse stellt nützliche Methoden aus, wenn Sie eine Liste der COM-Schnittstellenzeiger zu erstellen.
+Diese Klasse stellt Methoden bereit, die beim Erstellen einer Liste von COM-Schnittstellenzeigern nützlich sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,23 +30,23 @@ class CInterfaceList
 
 #### <a name="parameters"></a>Parameter
 
-*I*<br/>
-Eine COM-Schnittstelle, die den Typ des Zeigers gespeichert werden.
+*Ⅰ*<br/>
+Eine COM-Schnittstelle, die den Typ des zu speichernden Zeigers angibt.
 
 *piid*<br/>
-Ein Zeiger auf die IID der *ich*.
+Ein Zeiger auf die IID von *I*.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CInterfaceList::CInterfaceList](#cinterfacelist)|Der Konstruktor für die Schnittstellenliste.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse stellt einen Konstruktor und die abgeleiteten Methoden zum Erstellen einer Liste von COM-Schnittstellenzeiger. Verwendung [CInterfaceArray](../../atl/reference/cinterfacearray-class.md) Wenn ein Array erforderlich ist.
+Diese Klasse stellt einen Konstruktor und abgeleitete Methoden zum Erstellen einer Liste von COM-Schnittstellenzeigern bereit. Verwenden Sie [CInterfaceArray,](../../atl/reference/cinterfacearray-class.md) wenn ein Array erforderlich ist.
 
 Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
@@ -58,9 +58,9 @@ Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-co
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcoll.h
+**Kopfzeile:** atlcoll.h
 
-##  <a name="cinterfacelist"></a>  CInterfaceList::CInterfaceList
+## <a name="cinterfacelistcinterfacelist"></a><a name="cinterfacelist"></a>CInterfaceList::CInterfaceList
 
 Der Konstruktor für die Schnittstellenliste.
 
@@ -71,15 +71,15 @@ CInterfaceList(UINT nBlockSize = 10) throw();
 ### <a name="parameters"></a>Parameter
 
 *nBlockSize*<br/>
-Die Blockgröße hat den Standardwert 10.
+Die Blockgröße mit einem Standardwert von 10.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Blockgröße ist ein Maß für die Speichermenge belegt werden, wenn ein neues Element erforderlich ist. Größere Blöcke reduzieren Sie Aufrufe von Reservierungsroutinen Arbeitsspeicher jedoch mehr Ressourcen verwenden.
+Die Blockgröße ist ein Maß für die Speichermenge, die zugewiesen wird, wenn ein neues Element erforderlich ist. Größere Blockgrößen reduzieren Aufrufe von Speicherzuweisungsroutinen, verwenden jedoch mehr Ressourcen.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CAtlList-Klasse](../../atl/reference/catllist-class.md)<br/>
 [CComQIPtr-Klasse](../../atl/reference/ccomqiptr-class.md)<br/>
 [CComQIPtrElementTraits-Klasse](../../atl/reference/ccomqiptrelementtraits-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

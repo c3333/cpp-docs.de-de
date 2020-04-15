@@ -12,12 +12,12 @@ helpviewer_keywords:
 - CDialogEx [MFC], SetBackgroundColor
 - CDialogEx [MFC], SetBackgroundImage
 ms.assetid: a6ed3b1f-aef8-4b66-ac78-2160faf63c13
-ms.openlocfilehash: f92058d1aa0dabccf6623d20a248fed8eb99ab26
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b34c441ac63b023ae6272a1646151aad4be1bfbc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62168049"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375635"
 ---
 # <a name="cdialogex-class"></a>CDialogEx-Klasse
 
@@ -33,29 +33,29 @@ class CDialogEx : public CDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CDialogEx::CDialogEx](#cdialogex)|Erstellt ein `CDialogEx`-Objekt.|
 |`CDialogEx::~CDialogEx`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CDialogEx::SetBackgroundColor](#setbackgroundcolor)|Legt die Hintergrundfarbe des Dialogfelds fest.|
 |[CDialogEx::SetBackgroundImage](#setbackgroundimage)|Legt das Hintergrundbild des Dialogfelds fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Zum Verwenden der `CDialogEx`-Klasse müssen Sie Ihre Dialogfeldklasse von der `CDialogEx`-Klasse statt der `CDialog`-Klasse ableiten.
 
-Dialogfeldbilder werden in einer Ressourcendatei gespeichert. Das Framework löscht automatisch jedes Bild, das aus der Ressourcendatei geladen wird. Um das aktuelle Hintergrundbild programmgesteuert zu löschen, rufen die [CDialogEx::SetBackgroundImage](#setbackgroundimage) -Methode auf, oder Implementieren einer `OnDestroy` -Ereignishandler. Beim Aufrufen der [CDialogEx::SetBackgroundImage](#setbackgroundimage) -Methode, übergeben Sie ein `HBITMAP` -Parameter als Bild-Handle. Das `CDialogEx`-Objekt übernimmt den Besitz des Bilds und löscht es, wenn das `m_bAutoDestroyBmp` -Flag `TRUE` ist.
+Dialogfeldbilder werden in einer Ressourcendatei gespeichert. Das Framework löscht automatisch jedes Bild, das aus der Ressourcendatei geladen wird. Um das aktuelle Hintergrundbild programmgesteuert zu löschen, rufen Sie die [CDialogEx::SetBackgroundImage-Methode](#setbackgroundimage) auf, oder implementieren Sie einen `OnDestroy` Ereignishandler. Wenn Sie die [CDialogEx::SetBackgroundImage-Methode](#setbackgroundimage) `HBITMAP` aufrufen, übergeben Sie einen Parameter als Bildhandle. Das `CDialogEx`-Objekt übernimmt den Besitz des Bilds und löscht es, wenn das `m_bAutoDestroyBmp` -Flag `TRUE` ist.
 
-Ein `CDialogEx` Objekt kann es sich um ein übergeordnetes Element von einem [CMFCPopupMenu-Klasse](../../mfc/reference/cmfcpopupmenu-class.md) Objekt. Die [CMFCPopupMenu-Klasse](../../mfc/reference/cmfcpopupmenu-class.md) -Objekt ruft die `CDialogEx::SetActiveMenu` Methode bei der [CMFCPopupMenu-Klasse](../../mfc/reference/cmfcpopupmenu-class.md) -Objekt geöffnet wird. Danach die `CDialogEx` Objekt verarbeitet alle Menüereignisse, bis die [CMFCPopupMenu-Klasse](../../mfc/reference/cmfcpopupmenu-class.md) -Objekt ist geschlossen.
+Ein `CDialogEx` Objekt kann ein übergeordnetes Objekt eines [CMFCPopupMenu-Klassenobjekts](../../mfc/reference/cmfcpopupmenu-class.md) sein. Das [CMFCPopupMenu-Klassenobjekt](../../mfc/reference/cmfcpopupmenu-class.md) ruft die `CDialogEx::SetActiveMenu` Methode auf, wenn das [CMFCPopupMenu-Klassenobjekt](../../mfc/reference/cmfcpopupmenu-class.md) geöffnet wird. Anschließend behandelt `CDialogEx` das Objekt jedes Menüereignis, bis das [CMFCPopupMenu-Klassenobjekt](../../mfc/reference/cmfcpopupmenu-class.md) geschlossen wird.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -67,9 +67,9 @@ Ein `CDialogEx` Objekt kann es sich um ein übergeordnetes Element von einem [CM
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdialogex.h
+**Kopf:** afxdialogex.h
 
-##  <a name="cdialogex"></a>  CDialogEx::CDialogEx
+## <a name="cdialogexcdialogex"></a><a name="cdialogex"></a>CDialogEx::CDialogEx
 
 Erstellt ein `CDialogEx`-Objekt.
 
@@ -86,10 +86,10 @@ CDialogEx(
 ### <a name="parameters"></a>Parameter
 
 *nIDTemplate*<br/>
-[in] Die Ressourcen-ID, der eine Dialogfeldvorlage.
+[in] Die Ressourcen-ID einer Dialogfeldvorlage.
 
 *lpszTemplateName*<br/>
-[in] Der Ressourcenname, der eine Dialogfeldvorlage.
+[in] Der Ressourcenname einer Dialogfeldvorlage.
 
 *pParent*<br/>
 [in] Ein Zeiger auf das übergeordnete Fenster. Der Standardwert ist NULL.
@@ -99,9 +99,9 @@ CDialogEx(
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setbackgroundcolor"></a>  CDialogEx::SetBackgroundColor
+## <a name="cdialogexsetbackgroundcolor"></a><a name="setbackgroundcolor"></a>CDialogEx::SetBackgroundColor
 
 Legt die Hintergrundfarbe des Dialogfelds fest.
 
@@ -113,15 +113,15 @@ void SetBackgroundColor(
 
 ### <a name="parameters"></a>Parameter
 
-*color*<br/>
+*Farbe*<br/>
 [in] Ein RGB-Farbwert.
 
 *bRepaint*<br/>
-[in] "True", um den Bildschirm sofort zu aktualisieren; andernfalls "false". Der Standardwert ist "true".
+[in] TRUE, um den Bildschirm sofort zu aktualisieren; andernfalls FALSE. Der Standardwert ist TRUE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setbackgroundimage"></a>  CDialogEx::SetBackgroundImage
+## <a name="cdialogexsetbackgroundimage"></a><a name="setbackgroundimage"></a>CDialogEx::SetBackgroundImage
 
 Legt das Hintergrundbild des Dialogfelds fest.
 
@@ -147,21 +147,21 @@ BOOL SetBackgroundImage(
 [in] Die Ressourcen-ID des Hintergrundbilds.
 
 *location*<br/>
-[in] Eines der `CDialogEx::BackgroundLocation` Werte, die den Speicherort des Bilds angeben. Gültige Werte sind BACKGR_TILE, BACKGR_TOPLEFT, BACKGR_TOPRIGHT, BACKGR_BOTTOMLEFT und BACKGR_BOTTOMRIGHT. Der Standardwert ist BACKGR_TILE.
+[in] Einer der `CDialogEx::BackgroundLocation` Werte, die die Position des Bildes angeben. Gültige Werte umfassen BACKGR_TILE, BACKGR_TOPLEFT, BACKGR_TOPRIGHT, BACKGR_BOTTOMLEFT und BACKGR_BOTTOMRIGHT. Der Standardwert ist BACKGR_TILE.
 
 *bAutoDestroy*<br/>
-[in] True, um das Hintergrundbild automatisch zerstört. andernfalls "false".
+[in] TRUE, um das Hintergrundbild automatisch zu zerstören; andernfalls FALSE.
 
 *bRepaint*<br/>
-[in] TRUE, um das Dialogfeld sofort neu zu zeichnen, andernfalls "false".
+[in] TRUE, um das Dialogfeld sofort neu zu zeichnen; andernfalls FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Überladen Sie bei der zweiten Methode Syntax "true", wenn die Methode erfolgreich ist; andernfalls "false".
+In der zweiten Methodenüberladungssyntax TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Bild, das Sie angeben, nicht gestreckt, um den Innenbereich des Dialogfelds zu passen.
+Das von Ihnen angegebene Bild wird nicht an den Dialogfeldclientbereich geglast.
 
 ## <a name="see-also"></a>Siehe auch
 

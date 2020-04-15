@@ -7,25 +7,25 @@ helpviewer_keywords:
 - function calls, about function calls
 - function calls
 ms.assetid: 2cfa897d-3874-4820-933c-e624f75d1712
-ms.openlocfilehash: 2402f3fef77b19c0420f0c4a52407a730b53b1d5
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+ms.openlocfilehash: cce1a888f3e1224822ab4e97c67bf59da4c46fc9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148204"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334576"
 ---
 # <a name="function-calls"></a>Funktionsaufrufe
 
 Ein *Funktionsaufruf* ist ein Ausdruck, der Steuerung und Argumente (falls vorhanden) an eine Funktion übergibt und folgende Form annimmt:
 
-*expression* (*expression-list*<sub>opt</sub>)
+*Ausdruck* (*Ausdrucksliste*<sub>opt</sub>)
 
 wobei *expression* ein Funktionsname oder zu einer Funktionsadresse ausgewertet ist und *expression-list* eine Liste von Ausdrücken (durch Trennzeichen getrennt) ist. Die Werte dieser letzten Ausdrücke sind die Argumente, die an die Funktion übergeben werden. Wenn die Funktion keinen Wert zurückgibt, deklarieren Sie ihn zu einer Funktion, die `void` zurückgibt.
 
 Wenn eine Deklaration vor dem Funktionsaufruf vorhanden ist, jedoch keine Informationen zu dem Parameter angegeben werden, durchlaufen alle nicht deklarierten Argumente einfach die üblichen arithmetischen Konvertierungen.
 
 > [!NOTE]
->  Die Ausdrücke in der Funktionsargumentliste können in jeder Reihenfolge bewertet werden, Argumente, deren Werte sich über Nebeneffekte eines anderen Arguments ändern können, können also undefinierte Werte haben. Der Sequenzpunkt, der vom Funktionsaufrufoperator definiert ist, gewährleistet lediglich, dass alle Nebeneffekte in der Argumentliste ausgewertet werden, bevor die Steuerung an die aufgerufene Funktion übergeben wird. (Beachten Sie, dass die Reihenfolge, in der Argumente auf dem Stapel abgelegt werden, eine andere Angelegenheit ist.) Weitere Informationen finden Sie unter [Sequenzpunkte](../c-language/c-sequence-points.md).
+> Die Ausdrücke in der Funktionsargumentliste können in jeder Reihenfolge bewertet werden, Argumente, deren Werte sich über Nebeneffekte eines anderen Arguments ändern können, können also undefinierte Werte haben. Der Sequenzpunkt, der vom Funktionsaufrufoperator definiert ist, gewährleistet lediglich, dass alle Nebeneffekte in der Argumentliste ausgewertet werden, bevor die Steuerung an die aufgerufene Funktion übergeben wird. (Beachten Sie, dass die Reihenfolge, in der Argumente auf dem Stapel gedrückt werden, eine separate Angelegenheit ist.) Weitere Informationen finden Sie unter [Sequenzpunkte.](../c-language/c-sequence-points.md)
 
 Die einzige Anforderung in einem beliebigen Funktionsaufruf ist, dass der Ausdruck vor den Klammern mit einer Funktionsadresse ausgewertet werden muss. Dies bedeutet, dass eine Funktion von jedem Funktionszeigerausdruck aufgerufen werden kann.
 
@@ -93,4 +93,4 @@ Ein Argument, `i`, wird an die aufgerufene Funktion übergeben.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Funktionen](../c-language/functions-c.md)
+[Functions](../c-language/functions-c.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - COleUpdateDialog [MFC], COleUpdateDialog
 - COleUpdateDialog [MFC], DoModal
 ms.assetid: 699ca980-52b1-4cf8-9ab1-ac6767ad5b0e
-ms.openlocfilehash: 150e78b7880a61343db21c3c787ffdd1f0b734a5
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 9e2c7a8d79ebf5e6483a06354b280e474d7b8e61
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69503171"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374837"
 ---
 # <a name="coleupdatedialog-class"></a>COleUpdateDialog-Klasse
 
@@ -31,23 +31,23 @@ class COleUpdateDialog : public COleLinksDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[COleUpdateDialog::COleUpdateDialog](#coleupdatedialog)|Erstellt ein `COleUpdateDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleUpdateDialog::DoModal](#domodal)|Zeigt das Dialogfeld **Verknüpfungen bearbeiten** in einem Aktualisierungs Modus an.|
+|[COleUpdateDialog::DoModal](#domodal)|Zeigt das Dialogfeld **Links bearbeiten** im Aktualisierungsmodus an.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie in den Artikel [Dialogfeldern in OLE](../../mfc/dialog-boxes-in-ole.md).
+Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie im Artikel [Dialogfelder in OLE](../../mfc/dialog-boxes-in-ole.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -65,9 +65,9 @@ Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie in den Artike
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxodlgs. h
+**Kopf:** afxodlgs.h
 
-##  <a name="coleupdatedialog"></a>COleUpdateDialog:: COleUpdateDialog
+## <a name="coleupdatedialogcoleupdatedialog"></a><a name="coleupdatedialog"></a>COleUpdateDialog::COleUpdateDialog
 
 Erstellt ein `COleUpdateDialog`-Objekt.
 
@@ -87,19 +87,19 @@ Verweist auf das Dokument, das die Links enthält, die möglicherweise aktualisi
 *bUpdateLinks*<br/>
 Flag, das bestimmt, ob verknüpfte Objekte aktualisiert werden sollen.
 
-*bUpdateEmbeddings*<br/>
+*bUpdateEinbettungen*<br/>
 Flag, das bestimmt, ob eingebettete Objekte aktualisiert werden sollen.
 
 *pParentWnd*<br/>
-Zeigt auf das übergeordnete oder Besitzer Fenster Objekt (vom `CWnd`Typ), zu dem das Dialog Objekt gehört. Wenn er NULL ist, wird das übergeordnete Fenster des Dialog Felds auf das Hauptanwendungsfenster festgelegt.
+Zeigt auf das übergeordnete oder Besitzerfensterobjekt (vom Typ `CWnd`), zu dem das Dialogobjekt gehört. Wenn es NULL ist, wird das übergeordnete Fenster des Dialogfelds auf das Hauptanwendungsfenster festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion erstellt nur ein `COleUpdateDialog` -Objekt. Um das Dialogfeld anzuzeigen, nennen Sie [DoModal](../../mfc/reference/colelinksdialog-class.md#domodal). Diese Klasse sollte anstelle von `COleLinksDialog` verwendet werden, wenn Sie nur vorhandene verknüpfte oder eingebettete Elemente aktualisieren möchten.
+Diese Funktion erstellt `COleUpdateDialog` nur ein Objekt. Um das Dialogfeld anzuzeigen, rufen Sie [DoModal](../../mfc/reference/colelinksdialog-class.md#domodal)auf. Diese Klasse sollte verwendet `COleLinksDialog` werden, anstatt wenn Sie nur vorhandene verknüpfte oder eingebettete Elemente aktualisieren möchten.
 
-##  <a name="domodal"></a>COleUpdateDialog::D omodal
+## <a name="coleupdatedialogdomodal"></a><a name="domodal"></a>COleUpdateDialog::DoModal
 
-Zeigt das Dialogfeld Verknüpfungen bearbeiten im Aktualisierungs Modus an.
+Zeigt das Dialogfeld Links bearbeiten im Aktualisierungsmodus an.
 
 ```
 virtual INT_PTR DoModal();
@@ -107,17 +107,17 @@ virtual INT_PTR DoModal();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Abschluss Status für das Dialogfeld. Einer der folgenden Werte:
+Abschlussstatus für das Dialogfeld. Einer der folgenden Werte:
 
 - IDOK, wenn das Dialogfeld erfolgreich zurückgegeben wurde.
 
 - IDCANCEL, wenn keines der verknüpften oder eingebetteten Elemente im aktuellen Dokument aktualisiert werden muss.
 
-- Idabort, wenn ein Fehler aufgetreten ist. Wenn idabort zurückgegeben wird, können Sie die Member-Funktion [COleDialog:: GetLastError](../../mfc/reference/coledialog-class.md#getlasterror) aufrufen, um weitere Informationen zum aufgetretenen Fehlertyp abzurufen. Eine Auflistung möglicher Fehler finden Sie unter der Funktion [oleuieditlinks](/windows/win32/api/oledlg/nf-oledlg-oleuieditlinksw) im Windows SDK.
+- IDABORT, wenn ein Fehler aufgetreten ist. Wenn IDABORT zurückgegeben wird, rufen Sie die [Memberfunktion COleDialog::GetLastError](../../mfc/reference/coledialog-class.md#getlasterror) auf, um weitere Informationen über den Fehlertyp zu erhalten. Eine Liste möglicher Fehler finden Sie in der [OleUIEditLinks-Funktion](/windows/win32/api/oledlg/nf-oledlg-oleuieditlinksw) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Alle Verknüpfungen und/oder Einbettungen werden aktualisiert, es sei denn, der Benutzer wählt die Schaltfläche Abbrechen aus.
+Alle Links und/oder Einbettungen werden aktualisiert, es sei denn, der Benutzer wählt die Schaltfläche Abbrechen aus.
 
 ## <a name="see-also"></a>Siehe auch
 

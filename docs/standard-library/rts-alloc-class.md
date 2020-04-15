@@ -12,16 +12,16 @@ helpviewer_keywords:
 - stdext::rts_alloc [C++], deallocate
 - stdext::rts_alloc [C++], equals
 ms.assetid: ab41bffa-83d1-4a1c-87b9-5707d516931f
-ms.openlocfilehash: b0ec7d4d3dbe5ef1334bf3c394819a4f5235c28c
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 6ed84d906944a09fa355e281640e9480f3173554
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688981"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373428"
 ---
 # <a name="rts_alloc-class"></a>rts_alloc-Klasse
 
-Die Rts_alloc-Klassen Vorlage beschreibt einen [Filter](../standard-library/allocators-header.md) , der ein Array von Cache Instanzen enthält und bestimmt, welche Instanz für die Zuordnung und Aufhebung der Zuordnung zur Laufzeit anstatt zur Kompilierzeit verwendet werden soll.
+Die rts_alloc-Klassenvorlage beschreibt einen [Filter,](../standard-library/allocators-header.md) der ein Array von Cacheinstanzen enthält, und bestimmt, welche Instanz zur Laufzeit anstelle von Kompilierungszeiten für die Zuweisung und Deallation verwendet werden soll.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,20 +32,20 @@ class rts_alloc
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Cache*|Der Typ der Cache-Instanzen, die im Array enthalten sind. Dieser kann eine [cache_chunklist-Klasse](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klassen Vorlage enthält mehrere Block Belegungs Instanzen und bestimmt, welche Instanz zur Laufzeit anstelle der Kompilierzeit für die Zuordnung oder Aufhebung der Zuordnung verwendet werden soll. Sie wird mit Compilern verwendet, die keine Neubindungen kompilieren können.
+Diese Klassenvorlage enthält mehrere Blockzuweisungsinstanzen und bestimmt, welche Instanz zur Laufzeit anstelle von Kompilierungszeiten für die Zuweisung oder Deallokation verwendet werden soll. Sie wird mit Compilern verwendet, die keine Neubindungen kompilieren können.
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[allocate](#allocate)|Belegt einen Speicherblock.|
-|[deallocate](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
+|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
 ## <a name="requirements"></a>Anforderungen
@@ -54,7 +54,7 @@ Diese Klassen Vorlage enthält mehrere Block Belegungs Instanzen und bestimmt, w
 
 **Namespace:** stdext
 
-## <a name="allocate"></a> rts_alloc::allocate
+## <a name="rts_allocallocate"></a><a name="allocate"></a>rts_alloc::zuweisen
 
 Belegt einen Speicherblock.
 
@@ -64,19 +64,19 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*count*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
+|*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt `caches[_IDX].allocate(count)` zurück, wobei der Index `_IDX` von der angeforderten Blockgrößen *Anzahl*bestimmt wird. wenn die *Anzahl* zu groß ist, wird `operator new(count)` zurückgegeben. `cache`, das das Cache-Objekt darstellt.
+Die Memberfunktion `caches[_IDX].allocate(count)`gibt zurück, wobei der Index `_IDX` durch die *angeforderte*Blockgröße bestimmt `operator new(count)`wird, oder, wenn die *Anzahl* zu groß ist, gibt sie zurück. `cache`, das das Cache-Objekt darstellt.
 
-## <a name="deallocate"></a> rts_alloc::deallocate
+## <a name="rts_allocdeallocate"></a><a name="deallocate"></a>rts_alloc::deallocate
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -86,16 +86,16 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuweisung zum Speicher aufgehoben werden soll.|
+|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion ruft `caches[_IDX].deallocate(ptr, count)` auf, bei dem der Index `_IDX` von der angeforderten Blockgrößen *Anzahl*bestimmt wird, oder wenn die *Anzahl* zu groß ist, wird `operator delete(ptr)` zurückgegeben.
+Die Memberfunktion `caches[_IDX].deallocate(ptr, count)`ruft auf `_IDX` , wobei der Index durch die *angeforderte*Blockgröße `operator delete(ptr)`bestimmt wird, oder, wenn die *Anzahl* zu groß ist, gibt sie zurück.
 
-## <a name="equals"></a> rts_alloc::equals
+## <a name="rts_allocequals"></a><a name="equals"></a>rts_alloc::gleich
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -105,16 +105,16 @@ bool equals(const sync<_Cache>& _Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*_Cache*|Das Cache-Objekt, das dem Filter zugeordnet ist.|
 |*_Other*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**true** , wenn das Ergebnis von `caches[0].equals(other.caches[0])`; andernfalls **false**. `caches` stellt das Array von Cache-Objekten dar.
+**wahr,** wenn `caches[0].equals(other.caches[0])`das Ergebnis von ; andernfalls **false**. `caches` stellt das Array von Cache-Objekten dar.
 
 ## <a name="see-also"></a>Siehe auch
 
 [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl)\
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)

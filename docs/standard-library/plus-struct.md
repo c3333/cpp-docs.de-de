@@ -7,12 +7,12 @@ helpviewer_keywords:
 - plus class
 - plus struct
 ms.assetid: 4594abd5-b2f2-4fac-9b6b-fc9a2723f8cf
-ms.openlocfilehash: 7071b7709f106fc974e401f89bb98c2525bd6558
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 628823a7fc3c176f83bbb1dca59ec194b5d3db97
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68240506"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372071"
 ---
 # <a name="plus-struct"></a>plus-Struktur
 
@@ -20,7 +20,7 @@ Ein vordefiniertes Funktionsobjekt, mit dem der Additionsvorgang (binäres `oper
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <class Type = void>
 struct plus : public binary_function <Type, Type, Type>
 {
@@ -43,10 +43,10 @@ struct plus<void>
 Ein Typ, der ein binäres `operator+`-Element unterstützt, das Operanden angegebener oder abgeleiteter Typen akzeptiert.
 
 *Links*\
-Der linke Operand des Additionsvorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweisargument vom Typ *Typ*. Die spezialisierte Vorlage vervollkommnet die Weiterleitung von Lvalue und Rvalue-verweisargumenten des abgeleiteten Typs *T*.
+Der linke Operand des Additionsvorgangs. Die nicht spezialisierte Vorlage verwendet ein lvalue-Referenzargument vom Typ *Typ*. Die spezialisierte Vorlage führt eine perfekte Weiterleitung von lvalue- und rvalue-Referenzargumenten des abgeleiteten Typs *T*durch.
 
 *Richting*\
-Der rechte Operand des Additionsvorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweisargument vom Typ *Typ*. Die spezialisierte Vorlage vervollkommnet die Weiterleitung von Lvalue und Rvalue-verweisargumenten des abgeleiteten Typs *U*.
+Der rechte Operand des Additionsvorgangs. Die nicht spezialisierte Vorlage verwendet ein lvalue-Referenzargument vom Typ *Typ*. Die spezialisierte Vorlage führt eine perfekte Weiterleitung von lvalue- und rvalue-Referenzargumenten des abgeleiteten Typs *U*durch.
 
 ## <a name="return-value"></a>Rückgabewert
 

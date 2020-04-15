@@ -1,6 +1,6 @@
 ---
-title: Onanalysipedefunc-typedef
-description: Die C++ Referenz zum Build Insights SDK onanalysipedefunc-typedef.
+title: OnAnalysisEventFunc typdef
+description: Der C++Build Insights SDK OnAnalysisEventFunc typdef-Verweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: d260f6060e759f315589abda82e31c2c2b95a65e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: eacd174279caff0db22586d5e40d3a866afc4459
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334061"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81329128"
 ---
-# <a name="onanalysiseventfunc-typedef"></a>Onanalysipedefunc-typedef
+# <a name="onanalysiseventfunc-typedef"></a>OnAnalysisEventFunc typdef
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `OnAnalysisEventFunc` TypeDef ist eine der Funktions Signaturen, die in der [ANALYSIS_CALLBACKS](analysis-callbacks-struct.md) Struktur verwendet werden.
+Die `OnAnalysisEventFunc` typedef ist eine der Funktionssignaturen, die in der [ANALYSIS_CALLBACKS-Struktur](analysis-callbacks-struct.md) verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,14 +37,14 @@ typedef enum CALLBACK_CODE (BUILD_INSIGHTS_API *OnAnalysisEventFunc)(
 
 ### <a name="parameters"></a>Parameter
 
-*Event Stack* -\
-Der Ereignis Stapel für das aktuelle Ereignis. Weitere Informationen zu Ereignis Stapeln finden Sie unter [Ereignisse](../event-table.md).
+*eventStack*\
+Der Ereignisstapel für das aktuelle Ereignis. Weitere Informationen zu Ereignisstapeln finden Sie unter [Ereignisse](../event-table.md).
 
-*callbackcontext* -\
+*callbackContext*\
 Der Kontextwert, der für diesen Rückruf in [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md) oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md)festgelegt wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CALLBACK_CODE](callback-code-enum.md) Wert, der steuert, was als Nächstes geschehen soll.
+Ein [CALLBACK_CODE](callback-code-enum.md) Wert, der steuert, was als nächstes geschehen soll.
 
 ::: moniker-end

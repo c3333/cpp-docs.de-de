@@ -1,9 +1,11 @@
 ---
 title: asctime_s, _wasctime_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wasctime_s
 - asctime_s
+- _o__wasctime_s
+- _o_asctime_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,16 +36,16 @@ helpviewer_keywords:
 - _wasctime_s function
 - asctime_s function
 ms.assetid: 17ad9b2b-a459-465d-976a-42822897688a
-ms.openlocfilehash: 1cd2a15db0a27dedd88b9abf24b98d338515c949
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 52391eb1237e4c1d7ef320dacd211b603a21ab8b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73624784"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334224"
 ---
 # <a name="asctime_s-_wasctime_s"></a>asctime_s, _wasctime_s
 
-Konvertiert eine **TM** -Zeitstruktur in eine Zeichenfolge. Diese Funktionen sind Versionen von [asctime, _wasctime](asctime-wasctime.md) mit Sicherheitsverbesserungen wie in [Sicherheitsfunktionen](../../c-runtime-library/security-features-in-the-crt.md) in der CRT beschrieben.
+Konvertieren Sie eine **tm-Zeitstruktur** in eine Zeichenfolge. Diese Funktionen sind Versionen von [asctime, _wasctime](asctime-wasctime.md) mit Sicherheitsverbesserungen wie in [Sicherheitsfunktionen](../../c-runtime-library/security-features-in-the-crt.md) in der CRT beschrieben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -71,14 +74,14 @@ errno_t _wasctime_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
-Ein Zeiger auf einen Puffer, um das Ergebnis der Zeichenfolge zu speichern. Diese Funktion nimmt einen Zeiger auf einen gültigen Speicherort mit einer Größe an, die von " *numofelements*" angegeben wird.
+*Puffer*<br/>
+Ein Zeiger auf einen Puffer, um das Ergebnis der Zeichenfolge zu speichern. Diese Funktion setzt einen Zeiger auf einen gültigen Speicherspeicherort mit einer Größe voraus, die durch *numberOfElements*angegeben wird.
 
-*numberOfElements*<br/>
+*Sizeinbytes*<br/>
 Die Größe des Puffers, der zum Speichern des Ergebnisses verwendet wird.
 
-*tmsource*<br/>
-Zeit-/Datumsstruktur. Diese Funktion nimmt einen Zeiger auf ein gültiges **struct** - **TM** -Objekt an.
+*tmSource*<br/>
+Zeit-/Datumsstruktur. Diese Funktion setzt einen Zeiger auf ein **gültiges struct** **tm-Objekt** an.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -86,26 +89,26 @@ Null, wenn erfolgreich. Wenn es einen Fehler gibt, wird der ungültige Parameter
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*buffer*|*numberOfElements*|*tmsource*|Return|Wert im *Puffer*|
+|*Puffer*|*Sizeinbytes*|*tmSource*|Rückgabewert|Wert im *Puffer*|
 |--------------|------------------------|----------|------------|-----------------------|
-|**NULL**|Beliebig|Beliebig|**EINVAL**|Nicht modifiziert|
-|Not **null** (zeigt auf gültigen Speicher)|0|Beliebig|**EINVAL**|Nicht modifiziert|
-|nicht **null**|0<Größe<26|Beliebig|**EINVAL**|Leere Zeichenfolge|
-|nicht **null**|>= 26|**NULL**|**EINVAL**|Leere Zeichenfolge|
-|nicht **null**|>= 26|Ungültige Zeitstruktur oder Zeitkomponentenwerte außerhalb des Bereichs|**EINVAL**|Leere Zeichenfolge|
+|**Null**|Any|Any|**Einval**|Nicht geändert|
+|Nicht **NULL** (zeigt auf gültigen Speicher)|0|Any|**Einval**|Nicht geändert|
+|Nicht **NULL**|0<Größe<26|Any|**Einval**|leere Zeichenfolge|
+|Nicht **NULL**|>= 26|**Null**|**Einval**|leere Zeichenfolge|
+|Nicht **NULL**|>= 26|Ungültige Zeitstruktur oder Zeitkomponentenwerte außerhalb des Bereichs|**Einval**|leere Zeichenfolge|
 
 > [!NOTE]
-> Fehlerbedingungen für **wasctime_s** ähneln **asctime_s** , mit der Ausnahme, dass die Größenbeschränkung in Wörtern gemessen wird.
+> Die Fehlerbedingungen für **wasctime_s** ähneln **asctime_s** mit der Ausnahme, dass die Größenbeschränkung in Wörtern gemessen wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Asctime** -Funktion konvertiert eine als-Struktur gespeicherte Zeit in eine Zeichenfolge. Der *tmsource* -Wert wird normalerweise durch einen Aufruf von **gmtime** oder **localtime**abgerufen. Beide Funktionen können verwendet werden, um eine **TM** -Struktur zu füllen, wie Sie in Time definiert ist. Micha.
+Die **asctime-Funktion** konvertiert eine als Struktur gespeicherte Zeit in eine Zeichenfolge. Der *tmSource-Wert* wird in der Regel von einem Aufruf von **gmtime** oder **localtime**abgerufen. Beide Funktionen können verwendet werden, um eine **tm-Struktur** auszufüllen, wie in TIME definiert. H.
 
 |timeptr.member|Wert|
 |--------------------|-----------|
 |**tm_hour**|Stunden seit Mitternacht (0-23)|
 |**tm_isdst**|Positiv bei Sommerzeit; 0 bei Winterzeit; negativ bei unbekannter Zeit. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit (DST, Daylight Saving Time) zu implementieren.|
-|**tm_mday**|Tag des Monats (1-31)|
+|**tm_mday**|Monat des Monats (1-31)|
 |**tm_min**|Minuten nach Stunde (0-59)|
 |**tm_mon**|Monat (0-11; Januar = 0)|
 |**tm_sec**|Sekunden nach Minute (0-59)|
@@ -115,11 +118,13 @@ Die **Asctime** -Funktion konvertiert eine als-Struktur gespeicherte Zeit in ein
 
 Die konvertierte Zeichenfolge wird auch gemäß den lokalen Zeitzoneneinstellungen angepasst. Informationen zur Konfiguration der Zeitzonen finden Sie unter den [time, _time32, _time64](time-time32-time64.md), [_ftime, _ftime32, _ftime64](ftime-ftime32-ftime64.md) und [localtime_s, _localtime32_s, _localtime64_2](localtime-s-localtime32-s-localtime64-s.md)-Funktionen. Informationen zur Definition der Zeitzonenumgebung und globalen Variablen finden Sie unter der [_tzset](tzset.md)-Funktion.
 
-Das von **asctime_s** erzeugte Zeichen folgen Ergebnis enthält genau 26 Zeichen und hat das Formular `Wed Jan 02 02:03:55 1980\n\0`. Eine 24-Stunden-Uhr wird verwendet. Alle Felder haben eine feste Breite. Die Zeilenwechsel- und Nullzeichen nehmen die letzten beiden Stellen der Zeichenfolge ein. Der Wert, der als zweiter Parameter übergeben wird, sollte mindestens so hoch sein. Wenn der Wert kleiner ist, wird der Fehlercode " **Eingabe**" zurückgegeben.
+Das von **asctime_s** erzeugte Zeichenfolgenergebnis enthält `Wed Jan 02 02:03:55 1980\n\0`genau 26 Zeichen und hat das Formular . Eine 24-Stunden-Uhr wird verwendet. Alle Felder haben eine feste Breite. Die Zeilenwechsel- und Nullzeichen nehmen die letzten beiden Stellen der Zeichenfolge ein. Der Wert, der als zweiter Parameter übergeben wird, sollte mindestens so hoch sein. Wenn es weniger ist, wird ein **Fehlercode, EINVAL**, zurückgegeben.
 
-**_wasctime_s** ist eine breit Zeichen Version von **asctime_s**. **_wasctime_s** und **asctime_s** Verhalten sich andernfalls identisch.
+**_wasctime_s** ist eine breit **gefächerte**Version von asctime_s . **_wasctime_s** und **asctime_s** verhalten sich ansonsten gleich.
 
-Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mapping"></a>Routinemäßige Allgemeintext-Zuordnung
 
@@ -131,20 +136,20 @@ Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen v
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**asctime_s**|\<time.h>|
 |**_wasctime_s**|\<time.h> oder \<wchar.h>|
 
 ## <a name="security"></a>Sicherheit
 
-Wenn der Puffer Zeiger nicht **null** ist und der Zeiger nicht auf einen gültigen Puffer zeigt, überschreibt die Funktion das, was sich am Speicherort befindet. Dies kann auch zu einer Zugriffsverletzung führen.
+Wenn der Pufferzeiger nicht **NULL** ist und der Zeiger nicht auf einen gültigen Puffer weist, überschreibt die Funktion alles, was sich an der Position befindet. Dies kann auch zu einer Zugriffsverletzung führen.
 
 Wenn das übergebene Größenargument größer als die tatsächliche Puffergröße ist, kann ein [Pufferüberlauf](/windows/win32/SecBP/avoiding-buffer-overruns) auftreten.
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm versetzt die Systemzeit in die lange ganzzahlige **aclock**, übersetzt Sie in die Struktur **newTime** und konvertiert Sie dann mithilfe der **asctime_s** -Funktion in eine Zeichenfolge Form für die Ausgabe.
+Dieses Programm platziert die Systemzeit in der langen ganzzahligen **Uhr**, übersetzt sie in die Struktur **newtime** und konvertiert sie dann in String-Form für die Ausgabe, mit der **asctime_s-Funktion.**
 
 ```C
 // crt_asctime_s.c
@@ -180,7 +185,7 @@ Current date and time: Wed May 14 15:30:17 2003
 
 ## <a name="see-also"></a>Siehe auch
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [ctime_s, _ctime32_s, _ctime64_s, _wctime_s, _wctime32_s, _wctime64_s](ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)<br/>
 [_ftime, _ftime32, _ftime64](ftime-ftime32-ftime64.md)<br/>
 [gmtime_s, _gmtime32_s, _gmtime64_s](gmtime-s-gmtime32-s-gmtime64-s.md)<br/>

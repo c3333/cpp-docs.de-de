@@ -1,5 +1,5 @@
 ---
-title: 'TN022: Standardbefehlen'
+title: 'TN022: Implementieren von Standardbefehlen'
 ms.date: 11/04/2016
 f1_keywords:
 - vc.commands
@@ -59,436 +59,436 @@ helpviewer_keywords:
 - ID_FILE_NEW command [MFC]
 - ID_INDICATOR_NUM command
 ms.assetid: a7883b46-23f7-4870-ac3a-804aed9258b5
-ms.openlocfilehash: 8d568760cc75a4c1f2ddb6dd88108cc830783194
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5c7041f40c7e30592f642d29d9d02812a9596864
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62306050"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370397"
 ---
-# <a name="tn022-standard-commands-implementation"></a>TN022: Standardbefehlen
+# <a name="tn022-standard-commands-implementation"></a>TN022: Implementieren von Standardbefehlen
 
 > [!NOTE]
->  Der folgende technische Hinweis wurde seit dem ersten Erscheinen in der Onlinedokumentation nicht aktualisiert. Daher können einige Verfahren und Themen veraltet oder falsch sein. Um aktuelle Informationen zu erhalten, wird empfohlen, das gewünschte Thema im Index der Onlinedokumentation zu suchen.
+> Der folgende technische Hinweis wurde seit dem ersten Erscheinen in der Onlinedokumentation nicht aktualisiert. Daher können einige Verfahren und Themen veraltet oder falsch sein. Um aktuelle Informationen zu erhalten, wird empfohlen, das gewünschte Thema im Index der Onlinedokumentation zu suchen.
 
-Dieser Hinweis beschreibt die Standardbefehle-Implementierungen von MFC 2.0 bereitgestellt werden. Lesen [technischen Hinweis 21](../mfc/tn021-command-and-message-routing.md) zuerst, da es wird, die Mechanismen verwendet beschrieben, um viele der standard-Befehle implementieren.
+Dieser Hinweis beschreibt die Standardbefehlsimplementierungen von MFC 2.0. Lesen Sie zunächst [technische Anmerkung 21,](../mfc/tn021-command-and-message-routing.md) da sie die Mechanismen beschreibt, die zum Implementieren vieler Standardbefehle verwendet werden.
 
-Diese Beschreibung wird davon ausgegangen, Kenntnisse der MFC-Architekturen, die APIs und die üblichen Programmierpraxis. Dokumentierte als auch nicht dokumentierte "Implementation nur" werden APIs beschrieben. Dies ist kein Ausgangspunkt, mehr über die Features von oder Programmieren in MFC. Finden Sie unter Visual C++ für weitere allgemeine Informationen und Details der dokumentierten APIs.
+Diese Beschreibung setzt Kenntnisse der MFC-Architekturen, APIs und gängigen Programmierpraxis voraus. Dokumentierte sowie nicht dokumentierte "nur Implementierungs"-APIs werden beschrieben. Dies ist kein Ort, um mehr über die Funktionen oder das Programmieren in MFC zu erfahren. Ausführlichere Informationen zu dokumentierten APIs finden Sie unter Visual C++.
 
-## <a name="the-problem"></a>Das Problem
+## <a name="the-problem"></a>Problemstellung
 
-MFC definiert viele Standardbefehls-IDs in der Headerdatei AFXRES. H. Framework-Unterstützung für diese Befehle variiert. Verstehen, wo und wie die Framework-Klassen dieser Befehle verarbeiten, die zeigt nicht nur Ihnen wie das Framework intern funktioniert, jedoch bietet nützlichsten Informationen zum Anpassen von den standardimplementierungen, und erfahren Sie, einige Techniken zum Implementieren von eigene Befehlshandler.
+MFC definiert viele Standardbefehls-IDs in der Headerdatei AFXRES. H. Die Frameworkunterstützung für diese Befehle variiert. Wenn Sie verstehen, wo und wie die Frameworkklassen mit diesen Befehlen umgehen, werden Sie nicht nur zeigen, wie das Framework intern funktioniert, sondern sie bieten auch nützliche Informationen zum Anpassen der Standardimplementierungen und bei einigen Techniken zum Implementieren Ihrer eigenen Befehlshandler.
 
-## <a name="contents-of-this-technical-note"></a>Inhalt dieses technischer Hinweis
+## <a name="contents-of-this-technical-note"></a>Inhalt dieses technischen Hinweises
 
-Jedes Befehls-ID wird in beiden Abschnitten beschrieben:
+Jede Befehls-ID wird in zwei Abschnitten beschrieben:
 
-- Titel: der symbolische Namen der Befehls-ID (z. B. ID_FILE_SAVE) gefolgt von den Zweck des Befehls (z. B. "speichert das aktuelle Dokument") durch einen Doppelpunkt getrennt.
+- Der Titel: der symbolische Name der Befehls-ID (z. B. ID_FILE_SAVE), gefolgt vom Zweck des Befehls (z. B. "speichert das aktuelle Dokument"), getrennt durch einen Doppelpunkt.
 
-- Eine oder mehrere Absätze, beschreibt die Klassen implementieren, mit dem Befehl, und was bewirkt, dass die standardmäßige Implementierung
+- Ein oder mehrere Absätze, in denen beschrieben wird, welche Klassen den Befehl implementieren und was die Standardimplementierung bewirkt
 
-Die meisten Implementierungen von Standard-Befehl werden in die Framework Basisklasse meldungszuordnung prewired. Es gibt einige Befehl-Implementierungen, die explizite Verknüpfung in der abgeleiteten Klasse erfordern. Diese werden unter "Hinweis" beschrieben. Wenn Sie die richtigen Optionen in AppWizard ausgewählt haben, werden diese Standardhandler für die Sie in das generierte Anwendungsgerüst verbunden.
+Die meisten Standardbefehlsimplementierungen sind in der Basisklassen-Nachrichtenzuordnung des Frameworks vorverdrahtet. Es gibt einige Befehlsimplementierungen, die eine explizite Verdrahtung in der abgeleiteten Klasse erfordern. Diese werden unter "Hinweis" beschrieben. Wenn Sie in AppWizard die richtigen Optionen ausgewählt haben, werden diese Standardhandler für Sie in der generierten Skelettanwendung verbunden.
 
-## <a name="naming-convention"></a>Namenskonvention
+## <a name="naming-convention"></a>Benennungskonvention
 
-Standard-Befehle führen Sie eine einfache Benennungskonvention, die wir empfehlen, dass Sie nach Möglichkeit verwenden. Die meisten Befehle befinden sich im standard stellen in der Menüleiste der Anwendung. Die symbolische Namen des Befehls beginnt mit "ID_" gefolgt vom Namen standard-Popup-Menü, gefolgt vom Namen Menüelements. Die symbolische Namen ist in Großbuchstaben mit Wörtern Unterstrich. Für Befehle, die nicht über Elementnamen Standardmenü verfügen, ist ein logische Befehlsnamen beginnend mit "ID_" (z. B. ID_NEXT_PANE) definiert.
+Standardbefehle folgen einer einfachen Namenskonvention, die Wir nach Möglichkeit verwenden sollten. Die meisten Standardbefehle befinden sich an Standardstellen in der Menüleiste einer Anwendung. Der symbolische Name des Befehls beginnt mit "ID_", gefolgt vom Standard-Popupmenünamen, gefolgt vom Namen des Menüelements. Der symbolische Name ist im Großbuchstaben mit Unterstrich Wortumbrüche. Für Befehle, die keine Standardmenüelementnamen haben, wird ein logischer Befehlsname definiert, beginnend mit "ID_" (z. B. ID_NEXT_PANE).
 
-Wir verwenden das Präfix "ID_", um die Befehle angeben, die entwickelt wurden, Menüelemente, Symbolleisten-Schaltflächen oder anderen Benutzeroberflächen-Befehl gebunden werden soll. Behandlung von Befehlen mit "ID_" Befehlshandler sollte die ON_COMMAND- und ON_UPDATE_COMMAND_UI Mechanismen von der MFC-befehlsarchitektur verwendet werden.
+Wir verwenden das Präfix "ID_", um Befehle anzugeben, die an Menüelemente, Symbolleistenschaltflächen oder andere Befehlsbenutzeroberflächenobjekte gebunden werden sollen. Befehlshandler, die "ID_"-Befehle verarbeiten, sollten die ON_COMMAND- und ON_UPDATE_COMMAND_UI-Mechanismen der MFC-Befehlsarchitektur verwenden.
 
-Es wird empfohlen, dass Sie das standardmäßige "IDM_"-Präfix für Menüelemente verwenden, die nicht der-befehlsarchitektur folgen und im Menü-spezifischen Code zum Aktivieren und deaktivieren sie benötigen. Die Anzahl der bestimmte Befehle im Menü sollte natürlich klein sein, da der MFC-befehlsarchitektur folgen, nicht nur Befehlshandler leistungsfähiger macht (da sie mit Symbolleisten funktionieren), sondern die befehlshandlercode ein wiederverwendet werden macht.
+Es wird empfohlen, das Standardpräfix "IDM_" für Menüelemente zu verwenden, die nicht der Befehlsarchitektur folgen und menüspezifischen Code benötigen, um sie zu aktivieren und zu deaktivieren. Natürlich sollte die Anzahl der menüspezifischen Befehle klein sein, da die Befolgschaft der MFC-Befehlsarchitektur nicht nur Befehlshandler leistungsfähiger macht (da sie mit Symbolleisten arbeiten), sondern auch den Befehlshandlercode wiederverwendbar macht.
 
 ## <a name="id-ranges"></a>ID-Bereiche
 
-Näheres [technischer Hinweis 20](../mfc/tn020-id-naming-and-numbering-conventions.md) für Weitere Informationen zur Verwendung von MFC-ID-Bereiche.
+Weitere Informationen zur Verwendung von ID-Bereichen in MFC finden Sie im [Technischen Hinweis 20.](../mfc/tn020-id-naming-and-numbering-conventions.md)
 
-MFC-Standardbefehle liegen im Bereich von 0xE000 zu 0xEFFF. Sie verlassen Sie sich nicht auf die speziellen Werte, der diese IDs unterliegt in zukünftigen Versionen der Bibliothek enthalten, werden.
+MFC-Standardbefehle liegen im Bereich von 0xE000 bis 0xEFFF. Bitte verlassen Sie sich nicht auf die spezifischen Werte dieser IDs, da sie in zukünftigen Versionen der Bibliothek geändert werden können.
 
-Ihre Anwendung sollte die Befehle im Bereich von 0 x 8000 bis 0xDFFF definieren.
+Ihre Anwendung sollte ihre Befehle im Bereich 0x8000 bis 0xDFFF definieren.
 
-## <a name="standard-command-ids"></a>Standardbefehle-IDs
+## <a name="standard-command-ids"></a>Standardbefehls-IDs
 
-Für jedes Befehls-ID befindet sich eine Standardnachricht Zeile Eingabeaufforderung Zeichenfolge, die in die Datei ANWEISUNGEN gefunden werden kann. RC. Die Zeichenfolgen-ID für diese Eingabeaufforderung im Menü muss identisch mit der Befehls-ID sein.
+Für jede Befehls-ID gibt es eine Standard-Eingabeaufforderungszeichenfolge für Die Nachrichten, die in der Datei PROMPTS gefunden werden kann. Rc. Die Zeichenfolgen-ID für diese Menüaufforderung muss mit der Befehls-ID identisch sein.
 
-- ID_FILE_NEW erstellt ein neues /-leeres Dokument.
-
-    > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
-
-   `CWinApp::OnFileNew` Dieser Befehl hängt die Anzahl der Dokumentvorlagen implementiert in der Anwendung. Wenn es nur eine `CDocTemplate`, `CWinApp::OnFileNew` erstellt ein neues Dokument dieses Typs als auch die richtige Frame und Ansicht-Klasse.
-
-   Wenn es mehr als eine `CDocTemplate`, `CWinApp::OnFileNew` fordert den Benutzer ein Dialogfeld (AFX_IDD_NEWTYPEDLG), sodass sie Sie auswählen, welche die zu verwendende Typ zu dokumentieren. Die ausgewählte `CDocTemplate` wird verwendet, um das Dokument zu erstellen.
-
-   Eine häufige Anpassung der ID_FILE_NEW ist, eine andere und mehr grafische Auswahl Dokumenttypen bereitzustellen. In diesem Fall können implementieren Sie Ihr eigenes `CMyApp::OnFileNew` und platzieren Sie sie in der meldungszuordnung anstelle von `CWinApp::OnFileNew`. Es gibt keine Notwendigkeit, Implementierung der Basisklasse aufzurufen.
-
-   Geben Sie einen separaten Befehl zum Erstellen eines Dokuments für jeden Typ ist eine weitere häufige Anpassung der ID_FILE_NEW werden. In diesem Fall sollten Sie die neuen Befehls-IDs, z. B. ID_FILE_NEW_CHART und ID_FILE_NEW_SHEET definieren.
-
-- ID_FILE_OPEN öffnet ein vorhandenes Dokument.
+- ID_FILE_NEW Erstellt ein neues/leeres Dokument.
 
     > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   `CWinApp::OnFileOpen` verfügt über eine sehr einfache Implementierung eines Aufrufs `CWinApp::DoPromptFileName` gefolgt von `CWinApp::OpenDocumentFile` durch die Datei oder Pfad des zu öffnenden Datei. Die `CWinApp` Implementierung Routine `DoPromptFileName` wird das Standarddialogfeld FileOpen und füllt sie mit der Dateierweiterungen, die von der aktuellen Dokumentvorlagen abgerufen.
+   `CWinApp::OnFileNew`implementiert diesen Befehl je nach Anzahl der Dokumentvorlagen in der Anwendung unterschiedlich. Wenn nur ein `CDocTemplate` `CWinApp::OnFileNew` dokument dieses Typs erstellt wird, wird ein neues Dokument dieses Typs sowie der richtige Frame und die Ansichtsklasse erstellt.
 
-   Eine häufige Anpassung der ID_FILE_OPEN ist das Dialogfeld "FileOpen" anpassen oder zusätzliche Filter hinzufügen. Ersetzen Sie die standardmäßige Implementierung mit Ihren eigenen FileOpen-Dialogfeld, und rufen ist die empfohlene Methode zum Anpassen dieser `CWinApp::OpenDocumentFile` mit den Namen des Dokuments Datei oder Pfad. Es gibt keine Notwendigkeit, die Basisklasse aufzurufen.
+   Wenn mehr als `CDocTemplate`eine `CWinApp::OnFileNew` vorhanden ist, wird der Benutzer mit einem Dialogfeld (AFX_IDD_NEWTYPEDLG) aufgefordert, mit dem er auswählen kann, welcher Dokumenttyp verwendet werden soll. Die `CDocTemplate` ausgewählte wird zum Erstellen des Dokuments verwendet.
 
-- ID_FILE_CLOSE schließt die derzeit geöffnete Dokument.
+   Eine häufige Anpassung von ID_FILE_NEW besteht darin, eine andere und grafischere Auswahl von Dokumenttypen bereitzustellen. In diesem Fall können `CMyApp::OnFileNew` Sie Ihre eigene implementieren und `CWinApp::OnFileNew`in Ihrer Nachrichtenzuordnung anstelle von platzieren. Es ist nicht erforderlich, die Basisklassenimplementierung aufzurufen.
 
-   `CDocument::OnFileClose` Aufrufe `CDocument::SaveModified` , die der Benutzer aufgefordert, das Dokument zu speichern, wenn es geändert wurde, und dann ruft `OnCloseDocument`. Alle schließen Logik, einschließlich der Zerstören des Dokuments, erfolgt in der `OnCloseDocument` Routine.
+   Eine weitere häufige Anpassung von ID_FILE_NEW besteht darin, einen separaten Befehl zum Erstellen eines Dokuments jedes Typs bereitzustellen. In diesem Fall sollten Sie neue Befehls-IDs definieren, z. B. ID_FILE_NEW_CHART und ID_FILE_NEW_SHEET.
 
-    > [!NOTE]
-    >  ID_FILE_CLOSE fungiert, anders als eine WM_CLOSE-Meldung oder einen SC_CLOSE-System-Befehl an das Rahmenfenster Dokumente gesendet. Schließen eines Fensters wird das Dokument geschlossen werden, nur wenn dieser das letzte Frame-Fenster mit das Dokument ist. Schließen des Dokuments mit ID_FILE_CLOSE nicht nur das Dokument geschlossen, aber wird beendet, dass alle Rahmenfenster des Dokuments angezeigt.
-
-- ID_FILE_SAVE speichert das aktuelle Dokument.
-
-   Verwendet die Implementierung eine Hilfsroutine `CDocument::DoSave` für beide dient `OnFileSave` und `OnFileSaveAs`. Wenn Sie ein Dokument speichern, die noch nicht gespeichert wurde (d. h. es keinen Pfadnamen ein, wie im Fall von FileNew) oder, der aus einem nur-Lese Dokument gelesen wurde die `OnFileSave` Logik angewendet wird, wie die ID_FILE_SAVE_AS-Befehl aus, und bitten Sie den Benutzer auf einen neuen Dateinamen anzugeben. . Der eigentliche Prozess der Öffnen der Datei, und dies das Speichern erfolgt über die virtuelle Funktion `OnSaveDocument`.
-
-   Es gibt zwei häufige Gründe für die ID_FILE_SAVE anpassen. Entfernen Sie für Dokumente, die nicht speichern einfach die ID_FILE_SAVE-Menüelemente und Symbolleisten-Schaltflächen, von der Benutzeroberfläche. Stellen Sie außerdem sicher, dass Sie niemals Ihr Dokument geändert (d. h. niemals Aufrufen `CDocument::SetModifiedFlag`) und das Framework wird niemals dazu führen, dass das Dokument gespeichert werden soll. Definieren Sie einen neuen Befehl für diesen Vorgang für Dokumente, die an einem beliebigen Ort als Datei auf einem Datenträger speichern.
-
-   Im Fall von einem `COleServerDoc`, ID_FILE_SAVE wird verwendet, für die Datei speichern (für normale Dokumente) und Aktualisierung der (für eingebettete Dokumente).
-
-   Wenn die Dokumentdaten in einzelnen Datenträger-Dateien gespeichert, aber nicht die Standardeinstellung verwenden möchten `CDocument` Implementierung zu serialisieren, sollten Sie überschreiben `CDocument::OnSaveDocument` anstelle von `OnFileSave`.
-
-- ID_FILE_SAVE_AS speichert das aktuelle Dokument unter einem anderen Dateinamen an.
-
-   Die `CDocument::OnFileSaveAs` Implementierung verwendet die gleichen `CDocument::DoSave` Hilfsroutine als `OnFileSave`. Die `OnFileSaveAs` Befehl erfolgt genauso ID_FILE_SAVE hätte die Dokumente keine Dateinamen vor dem Speichern. `COleServerDoc::OnFileSaveAs` implementiert die Logik, eine normales Dokument-Datendatei speichern oder Speichern eines Serverdokuments, die in einer anderen Anwendung als separate Datei eingebetteten OLE-Objekt darstellt.
-
-   Wenn Sie die Logik der ID_FILE_SAVE anpassen, Sie werden wahrscheinlich ID_FILE_SAVE_AS auf ähnliche Weise anpassen möchten, oder der Vorgang von "Speichern unter" gilt möglicherweise nicht in Ihr Dokument. Sie können dem Menüelement, das in der Menüleiste entfernen, wenn es nicht erforderlich ist.
-
-- ID_FILE_SAVE_COPY_AS speichert eine Kopie für die aktuellen Dokument unter einem neuen Namen.
-
-   Die `COleServerDoc::OnFileSaveCopyAs` Implementierung ist sehr ähnlich `CDocument::OnFileSaveAs`, außer dass das Document-Objekt nicht "an die zugrunde liegende Datei nach dem Speichern angefügt ist". D. h., wenn das Dokument im Arbeitsspeicher "vor dem Speichern geändert wurde", ist es immer noch "geändert". Darüber hinaus hat mit diesem Befehl keine Auswirkungen auf den Pfadnamen oder den Titel in das Dokument gespeichert werden.
-
-- ID_FILE_UPDATE benachrichtigt den Container aus, um ein eingebettetes Dokument zu speichern.
-
-   Die `COleServerDoc::OnUpdateDocument` Implementierung einfach Notifiies den Container, der die Einbettung gespeichert werden soll. Der Container ruft dann die entsprechenden OLE-APIs, um das eingebettete Objekt zu speichern.
-
-- ID_FILE_PAGE_SETUP Ruft einen anwendungsspezifischen Seite Setup/Layout-Dialog.
-
-   Derzeit ist es jedoch keinen Standard für diesen Dialog, und das Framework keine Standardimplementierung dieses Befehls besitzt.
-
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
-
-- ID_FILE_PRINT_SETUP rufen Sie das Standarddialogfeld einrichten.
+- ID_FILE_OPEN Öffnet ein vorhandenes Dokument.
 
     > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   Dieser Befehl ruft das Dialogfeld "Drucken Standardinstallation", mit dem Benutzer zum Anpassen des Druckers, und Drucken die Einstellungen für die mindestens, in diesem Dokument oder höchstens alle Dokumente in dieser Anwendung. Sie müssen die Systemsteuerung verwenden, um die standarddruckereinstellungen für das gesamte System zu ändern.
+   `CWinApp::OnFileOpen`hat eine sehr einfache `CWinApp::DoPromptFileName` Implementierung `CWinApp::OpenDocumentFile` des Aufrufs gefolgt von der Datei oder dem Pfadnamen der datei zu öffnen. Die `CWinApp` Implementierungsroutine `DoPromptFileName` ruft das standardmäßige FileOpen-Dialogfeld auf und füllt es mit den Dateierweiterungen aus den aktuellen Dokumentvorlagen.
 
-   `CWinApp::OnFilePrintSetup` verfügt über eine sehr einfache Implementierung erstellen eine `CPrintDialog` -Objekt ab, und rufen die `CWinApp::DoPrintDialog` implementierungsfunktion. Hiermit wird die Standard-Drucker Anwendungsinstallation.
+   Eine häufige Anpassung von ID_FILE_OPEN besteht darin, das Dialogfeld FileOpen anzupassen oder zusätzliche Dateifilter hinzuzufügen. Die empfohlene Methode zum Anpassen besteht darin, die Standardimplementierung durch `CWinApp::OpenDocumentFile` Ein eigenes FileOpen-Dialogfeld zu ersetzen und den Datei- oder Pfadnamen des Dokuments aufzurufen. Es ist nicht erforderlich, die Basisklasse aufzurufen.
 
-   Die allgemeine Notwendigkeit zum Anpassen von mit diesem Befehl ist für die Druckereinstellungen für pro-Dokument, die mit dem Dokument beim Speichern gespeichert werden soll. Dazu sollten Sie in der meldungszuordnung Handler in Hinzufügen Ihrer `CDocument` Klasse, die erstellt eine `CPrintDialog` Objekt, initialisiert es mit den entsprechenden Drucker-Attributen (in der Regel *hDevMode-Feld* und *hDevNames*), rufen Sie die `CPrintDialog::DoModal`, und speichern Sie die geänderte Druckereinstellungen. Für eine stabile Implementierung sollten Sie die Implementierung der zunächst `CWinApp::DoPrintDialog` zum Erkennen von Fehlern und `CWinApp::UpdatePrinterSelection` arbeiten mit sinnvollen Standardwerten Behandlung und Nachverfolgen von Änderungen für eine systemweite Drucker.
+- ID_FILE_CLOSE Schließt das aktuell geöffnete Dokument.
 
-- ID_FILE_PRINT Standard Drucken des aktuellen Dokuments
-
-    > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CView`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
-
-   Mit diesem Befehl wird das aktuelle Dokument gedruckt oder genauer gesagt, beginnt den Druckvorgang, der dies erfordert das standardmäßige Dialogfeld "Drucken" aufrufen und die print-Engine ausgeführt.
-
-   `CView::OnFilePrint` mit diesem Befehl und die print-Hauptschleife implementiert werden. Ruft den virtuellen `CView::OnPreparePrinting` auf Aufforderung des Benutzers mit dem Dialogfeld "Drucken". Klicken Sie dann bereitet die DC-Ausgabe an den Drucker zu wechseln, wird das Drucken Statusdialogfeld (AFX_IDD_PRINTDLG) und sendet die `StartDoc` ESC, um den Drucker. `CView::OnFilePrint` enthält auch die wichtigsten seitenbasierten print, Loop. Für jede Seite ruft den virtuellen `CView::OnPrepareDC` gefolgt von einem `StartPage` Escapezeichen und Aufrufen der virtuellen `CView::OnPrint` für diese Seite. Wenn Sie fertig sind, die virtuelle `CView::OnEndPrinting` aufgerufen wird, und das Dialogfeld "Drucken Status" geschlossen ist.
-
-   Die MFC-Druck-Architektur soll auf viele verschiedene Arten für Drucken und Druckvorschau zu verknüpfen. Normalerweise finden Sie die verschiedenen `CView` überschreibbare-Funktionen für alle Seiten orientiert Druckaufgaben ausreichend. Nur bei Anwendungen, die der Drucker für objektorientierte nicht-Page-Ausgabe verwendet, sollten Sie die Notwendigkeit, ersetzen Sie die Implementierung ID_FILE_PRINT suchen.
-
-- ID_FILE_PRINT_PREVIEW Geben Sie den Seitenansicht-Modus für das aktuelle Dokument.
+   `CDocument::OnFileClose`ruft `CDocument::SaveModified` auf, um den Benutzer aufzufordern, das `OnCloseDocument`Dokument zu speichern, wenn es geändert wurde, und ruft dann auf. Die gesamte Abschlusslogik, einschließlich der Zerstörung `OnCloseDocument` des Dokuments, erfolgt in der Routine.
 
     > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CView`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
+    >  ID_FILE_CLOSE wirkt anders als eine WM_CLOSE Nachricht oder ein SC_CLOSE Systembefehl, der an das Dokumentrahmenfenster gesendet wird. Beim Schließen eines Fensters wird das Dokument nur geschlossen, wenn dies das letzte Rahmenfenster ist, in dem das Dokument angezeigt wird. Wenn Sie das Dokument mit ID_FILE_CLOSE schließen, wird nicht nur das Dokument geschlossen, sondern alle Rahmenfenster, in denen das Dokument angezeigt wird.
 
-   `CView::OnFilePrintPreview` Startet den Seitenansichtmodus durch Aufrufen der Hilfsfunktion für das dokumentierte `CView::DoPrintPreview`. `CView::DoPrintPreview` ist die Haupt-Engine für die Seitenansicht-Schleife, ebenso `OnFilePrint` ist die Haupt-Engine für die Drucken-Schleife.
+- ID_FILE_SAVE Speichert das aktuelle Dokument.
 
-   Die Seitenansicht-Vorgang kann in einer Vielzahl von Möglichkeiten angepasst werden, durch das Übergeben von unterschiedlichen Parameters `DoPrintPreview`. Näheres [technischen Hinweis 30](../mfc/tn030-customizing-printing-and-print-preview.md), einige Details der Seitenansicht erläutert und wie Sie sie anpassen.
+   Die Implementierung verwendet eine `CDocument::DoSave` Hilfsroutine, `OnFileSave` die `OnFileSaveAs`sowohl für als auch für verwendet wird. Wenn Sie ein Dokument speichern, das zuvor nicht gespeichert wurde (d. h. es hat keinen Pfadnamen, wie im Fall `OnFileSave` von FileNew), oder das aus einem schreibgeschützten Dokument gelesen wurde, verhält sich die Logik wie der Befehl ID_FILE_SAVE_AS und fordert den Benutzer auf, einen neuen Dateinamen bereitzustellen. Der eigentliche Prozess des Öffnens der Datei und `OnSaveDocument`des Speicherns erfolgt über die virtuelle Funktion .
 
-- ID_FILE_MRU_FILE1... FILE16 Einen Bereich von Befehls-IDs für das MRU-Menü Datei **Liste**.
+   Es gibt zwei häufige Gründe, ID_FILE_SAVE anzupassen. Für Dokumente, die nicht gespeichert werden, entfernen Sie einfach die ID_FILE_SAVE Menüelemente und Symbolleistenschaltflächen aus der Benutzeroberfläche. Stellen Sie außerdem sicher, dass Sie Ihr `CDocument::SetModifiedFlag`Dokument niemals verschmutzt haben (d. h. nie aufrufen), und das Framework wird niemals dazu führen, dass das Dokument gespeichert wird. Definieren Sie für Dokumente, die an einem anderen Ort als einer Datenträgerdatei gespeichert werden, einen neuen Befehl für diesen Vorgang.
 
-   `CWinApp::OnUpdateRecentFileMenu` ist ein Update UI Befehlshandler, der die fortgeschrittenere Verwendungen des ON_UPDATE_COMMAND_UI-Mechanismus. In der Menüressource müssen Sie nur ein einzelnes Menüelement mit der ID ID_FILE_MRU_FILE1 definieren. Dieses Menüelement bleibt zunächst deaktiviert.
+   Im Fall eines `COleServerDoc`wird ID_FILE_SAVE sowohl für das Speichern von Dateien (für normale Dokumente) als auch für die Dateiaktualisierung (für eingebettete Dokumente) verwendet.
 
-   Als das MRU-Menü wächst, Menü "Weitere", die Elemente der Liste hinzugefügt werden. Der Standard `CWinApp` Implementierung ist standardmäßig auf den standardmäßigen Grenzwert der vier zuletzt verwendeten Dateien. Sie können die Standardeinstellung ändern, durch den Aufruf `CWinApp::LoadStdProfileSettings` mit einem Wert größer oder kleiner. Die MRU-Liste ist in der Anwendung gespeichert. INI-Datei. Die Liste wird in der Anwendungsverzeichnis geladen `InitInstance` ausgeführt werden, wenn Sie aufrufen `LoadStdProfileSettings`, und wird gespeichert, wenn die Anwendung beendet wird. Die MRU-Menü Update Befehlshandler Benutzeroberfläche werden auch absolute Pfade, relative Pfade für die Anzeige auf das Menü "Datei" konvertiert werden.
+   Wenn Ihre Dokumentdaten in einzelnen Datenträgerdateien gespeichert sind, Sie `CDocument` jedoch nicht die standardmäßige `CDocument::OnSaveDocument` Serialisierungsimplementierung verwenden möchten, sollten Sie anstelle von `OnFileSave`überschreiben.
 
-   `CWinApp::OnOpenRecentFile` ist der ON_COMMAND-Handler, der den eigentlichen Befehl ausführt. Ruft einfach den Dateinamen aus der MRU-Liste und Aufrufe `CWinApp::OpenDocumentFile`, die alle Aktionen zum Öffnen der Datei und die MRU-Liste aktualisiert wird.
+- ID_FILE_SAVE_AS Speichert das aktuelle Dokument unter einem anderen Dateinamen.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die `CDocument::OnFileSaveAs` Implementierung verwendet `CDocument::DoSave` dieselbe Hilfsroutine wie `OnFileSave`. Der `OnFileSaveAs` Befehl wird genauso behandelt wie ID_FILE_SAVE, wenn die Dokumente vor dem Speichern keinen Dateinamen hatten. `COleServerDoc::OnFileSaveAs`implementiert die Logik zum Speichern einer normalen Dokumentdatendatei oder zum Speichern eines Serverdokuments, das ein OLE-Objekt darstellt, das in eine andere Anwendung eingebettet ist, als separate Datei.
 
-- ID_EDIT_CLEAR löscht die aktuelle Auswahl
+   Wenn Sie die Logik ID_FILE_SAVE anpassen, sollten Sie ID_FILE_SAVE_AS wahrscheinlich auf ähnliche Weise anpassen, oder die Funktionsweise von "Speichern unter" gilt möglicherweise nicht für Ihr Dokument. Sie können das Menüelement aus der Menüleiste entfernen, wenn es nicht benötigt wird.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+- ID_FILE_SAVE_COPY_AS Speichert ein aktuelles Dokument unter einem neuen Namen.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls mit `CEdit::Clear`. Der Befehl ist deaktiviert, wenn keine aktuelle Auswahl vorhanden ist.
+   Die `COleServerDoc::OnFileSaveCopyAs` Implementierung ist `CDocument::OnFileSaveAs`sehr ähnlich zu , mit der Ausnahme, dass das Dokumentobjekt nach dem Speichern nicht an die zugrunde liegende Datei "angefügt" ist. Das heißt, wenn das Speicherdokument vor dem Speichern "modifiziert" wurde, wird es immer noch "modifiziert". Darüber hinaus hat dieser Befehl keine Auswirkungen auf den Pfadnamen oder Titel, der im Dokument gespeichert ist.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+- ID_FILE_UPDATE benachrichtigt den Container, um ein eingebettetes Dokument zu speichern.
 
-- ID_EDIT_CLEAR_ALL löscht das gesamte Dokument.
+   Die `COleServerDoc::OnUpdateDocument` Implementierung weist den Container einfach darauf hin, dass die Einbettung gespeichert werden soll. Der Container ruft dann die entsprechenden OLE-APIs auf, um das eingebettete Objekt zu speichern.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+- ID_FILE_PAGE_SETUP Ruft ein anwendungsspezifisches Seiteneinrichtungs-/Layoutdialogfeld auf.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID. Finden Sie im Tutorial für MFC-Beispiel [SCRIBBLE](../overview/visual-cpp-samples.md) eine beispielimplementierung.
+   Derzeit gibt es keinen Standard für dieses Dialogfeld, und das Framework hat keine Standardimplementierung dieses Befehls.
 
-- ID_EDIT_COPY kopiert die aktuelle Auswahl in die Zwischenablage.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+- ID_FILE_PRINT_SETUP Rufen Sie das standardmäßige Dialogfeld Drucksetup auf.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls, der den derzeitig markierten Text als HIERSVR mit in die Zwischenablage kopiert `CEdit::Copy`. Der Befehl ist deaktiviert, wenn keine aktuelle Auswahl vorhanden ist.
+    > [!NOTE]
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Dieser Befehl ruft das Standardmäßige Drucksetup-Dialogfeld auf, mit dem der Benutzer die Drucker- und Druckeinstellungen für mindestens dieses Dokument oder höchstens alle Dokumente in dieser Anwendung anpassen kann. Sie müssen die Systemsteuerung verwenden, um die Standarddruckereinstellungen für das gesamte System zu ändern.
 
-- ID_EDIT_CUT schneidet die aktuelle Auswahl in die Zwischenablage.
+   `CWinApp::OnFilePrintSetup`hat eine sehr einfache `CPrintDialog` Implementierung, `CWinApp::DoPrintDialog` die ein Objekt erstellt und die Implementierungsfunktion aufruft. Dadurch wird die Standarddruckereinrichtung der Anwendung festgelegt.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Das Anpassen dieses Befehls ist häufig die Möglichkeit, Druckereinstellungen pro Dokument zu ermöglichen, die beim Speichern mit dem Dokument gespeichert werden sollen. Dazu `CDocument` sollten Sie ihrer Klasse einen Messagemap-Handler `CPrintDialog` hinzufügen, der ein Objekt erstellt, es mit den entsprechenden Druckerattributen `CPrintDialog::DoModal`(in der Regel *hDevMode* und *hDevNames)* initialisiert, die aufruft und die geänderten Druckereinstellungen speichert. Für eine robuste Implementierung sollten Sie `CWinApp::DoPrintDialog` sich die Implementierung `CWinApp::UpdatePrinterSelection` von zur Erkennung von Fehlern und zum Umgang mit sinnvollen Standardeinstellungen und nachverfolgen systemweiten Druckeränderungen ansehen.
 
-   `CEditView` Stellt eine Implementierung von diesem Befehl, der den derzeitig markierten Text in die Zwischenablage, wie die Verwendung von HIERSVR schneidet `CEdit::Cut`. Der Befehl ist deaktiviert, wenn keine aktuelle Auswahl vorhanden ist.
+- ID_FILE_PRINT Standarddruck des aktuellen Dokuments
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+    > [!NOTE]
+    >  Sie müssen diese `CView`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-- ID_EDIT_FIND beginnt die Suche wird, wird das Dialogfeld ohne Modus suchen.
+   Mit diesem Befehl wird das aktuelle Dokument oder korrekt erweiterbar, der Druckvorgang gestartet, bei dem das Standarddruckdialogfeld aufzurufen und die Druckmaschine ausgeführt wird.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   `CView::OnFilePrint`implementiert diesen Befehl und die Hauptdruckschleife. Es ruft `CView::OnPreparePrinting` die virtuelle Eingabeaufforderung des Benutzers mit dem Druckdialog auf. Anschließend wird der Ausgangs-DC vorbereitet, um zum Drucker zu gelangen, der `StartDoc` Druckfortschrittsdialog (AFX_IDD_PRINTDLG) wird angezeigt und der Escape-Vorgang an den Drucker gesendet. `CView::OnFilePrint`enthält auch die Hauptseiten-orientierte Druckschleife. Für jede Seite ruft `CView::OnPrepareDC` sie das `StartPage` Virtuelle auf, `CView::OnPrint` gefolgt von einem Escape- und Aufruf des virtuellen für diese Seite. Wenn die sende Zeit abgeschlossen ist, wird das virtuelle `CView::OnEndPrinting` Feld aufgerufen, und das Dialogfeld für den Druckfortschritt wird geschlossen.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls, der die Hilfsfunktion Implementierung aufruft `OnEditFindReplace` verwenden und die vorherigen Einstellungen für den Suchen/Ersetzen in privaten implementierungsvariablen zu speichern. Die `CFindReplaceDialog` Klasse wird verwendet, um das Dialogfeld ohne Modus für die Aufforderung an den Benutzer zu verwalten.
+   Die MFC-Druckarchitektur wurde entwickelt, um auf viele verschiedene Arten für den Druck und die Druckvorschau zu binden. Normalerweise finden Sie `CView` die verschiedenen überschreibbaren Funktionen für alle seitenorientierten Druckaufgaben geeignet. Nur bei einer Anwendung, die den Drucker für die nicht seitenorientierte Ausgabe verwendet, sollten Sie die Notwendigkeit finden, die ID_FILE_PRINT Implementierung zu ersetzen.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+- ID_FILE_PRINT_PREVIEW Geben Sie den Druckvorschaumodus für das aktuelle Dokument ein.
 
-- ID_EDIT_PASTE fügt den aktuellen Inhalt der Zwischenablage ein.
+    > [!NOTE]
+    >  Sie müssen diese `CView`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   `CView::OnFilePrintPreview`startet den Druckvorschaumodus, indem die `CView::DoPrintPreview`dokumentierte Hilfsfunktion aufgerufen wird. `CView::DoPrintPreview`ist das Hauptmodul für die Druckvorschauschleife, ebenso wie `OnFilePrint` das Hauptmodul für die Druckschleife.
 
-   `CEditView` Stellt eine Implementierung von diesem Befehl, der aktuellen Daten in der Zwischenablage und Ersetzen Sie dabei mit den ausgewählten Text kopiert `CEdit::Paste`. Der Befehl ist deaktiviert, wenn keine **HIERSVR** in die Zwischenablage.
+   Der Druckvorschauvorgang kann auf verschiedene Weise angepasst werden, indem verschiedene Parameter an `DoPrintPreview`übergeben werden. Weitere Informationen finden Sie in [Technical Note 30](../mfc/tn030-customizing-printing-and-print-preview.md), in dem einige Details der Druckvorschau erläutert und wie Sie sie anpassen können.
 
-   `COleClientDoc` bietet nur einen Update-Befehlshandler Benutzeroberfläche für diesen Befehl ein. Wenn die Zwischenablage nicht eingebettet werden OLE-Element/Objekt enthält, wird der Befehl deaktiviert. Sie sind verantwortlich für das Schreiben des Handlers für die eigentliche Befehl, um das eigentliche einfügen. Wenn OLE-Anwendungen auch andere Formate einfügen kann, sollten Sie Ihre eigenen Update-Befehlshandler-Benutzeroberfläche in Ihrer Ansicht oder das Dokument bereitstellen (d. h. an einer beliebigen Stelle vor dem `COleClientDoc` in das Ziel Befehlsrouting).
+- ID_FILE_MRU_FILE1... FILE16 Ein Bereich von Befehls-IDs für die **Datei-MRU-Liste**.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   `CWinApp::OnUpdateRecentFileMenu`ist ein Updatebefehls-UI-Handler, der eine der erweiterten Anwendungen des ON_UPDATE_COMMAND_UI-Mechanismus ist. In Ihrer Menüressource müssen Sie nur ein einzelnes Menüelement mit ID-ID_FILE_MRU_FILE1 definieren. Dieser Menüpunkt bleibt zunächst deaktiviert.
 
-   Verwenden Sie zum Ersetzen der standard OLE-Implementierung, `COleClientItem::CanPaste`.
+   Wenn die MRU-Liste wächst, werden der Liste weitere Menüelemente hinzugefügt. Die `CWinApp` Standardimplementierung entspricht standardmäßig dem Standardlimit der vier zuletzt verwendeten Dateien. Sie können die Standardeinstellung ändern, indem Sie mit einem größeren oder kleineren Wert aufrufen. `CWinApp::LoadStdProfileSettings` Die MRU-Liste wird in der Anwendung gespeichert. INI-Datei. Die Liste wird beim Aufrufen `InitInstance` `LoadStdProfileSettings`von in die Funktion Ihrer Anwendung geladen und beim Beenden der Anwendung gespeichert. Der BENUTZERbenutzer benutzerui MRU konvertiert auch absolute Pfade in relative Pfade zur Anzeige im Dateimenü.
+
+   `CWinApp::OnOpenRecentFile`ist der ON_COMMAND-Handler, der den eigentlichen Befehl ausführt. Es erhält einfach den Dateinamen aus `CWinApp::OpenDocumentFile`der MRU-Liste und ruft auf, was die ganze Arbeit des Öffnens der Datei und der Aktualisierung der MRU-Liste macht.
+
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
+
+- ID_EDIT_CLEAR Löscht die aktuelle Auswahl
+
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
+
+   `CEditView`stellt eine Implementierung dieses `CEdit::Clear`Befehls mithilfe bereit. Der Befehl ist deaktiviert, wenn keine aktuelle Auswahl vorhanden ist.
+
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
+
+- ID_EDIT_CLEAR_ALL Löscht das gesamte Dokument.
+
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
+
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden. Eine Beispielimplementierung finden Sie im MFC-Tutorial-Beispiel [SCRIBBLE.](../overview/visual-cpp-samples.md)
+
+- ID_EDIT_COPY Kopiert die aktuelle Auswahl in die Zwischenablage.
+
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
+
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, der den aktuell `CEdit::Copy`ausgewählten Text als CF_TEXT mit kopiert. Der Befehl ist deaktiviert, wenn keine aktuelle Auswahl vorhanden ist.
+
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
+
+- ID_EDIT_CUT Schneidet die aktuelle Auswahl in die Zwischenablage.
+
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
+
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, der den aktuell `CEdit::Cut`markierten Text in die Zwischenablage schneidet, indem CF_TEXT verwendet wird. Der Befehl ist deaktiviert, wenn keine aktuelle Auswahl vorhanden ist.
+
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
+
+- ID_EDIT_FIND Beginnt den Findvorgang, ruft das moduslose Find-Dialogfeld auf.
+
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
+
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, `OnEditFindReplace` die die Implementierungshilfsfunktion aufruft, um die vorherigen Einstellungen zum Suchen/Ersetzen in privaten Implementierungsvariablen zu verwenden und zu speichern. Die `CFindReplaceDialog` Klasse wird verwendet, um das moduslose Dialogfeld zu verwalten, um den Benutzer aufzufragen.
+
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
+
+- ID_EDIT_PASTE Fügt den aktuellen Inhalt der Zwischenablage ein.
+
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
+
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, mit dem die `CEdit::Paste`aktuellen Zwischenablagedaten kopiert werden, die den markierten Text mithilfe ersetzen. Der Befehl ist deaktiviert, wenn keine **CF_TEXT** in der Zwischenablage vorhanden ist.
+
+   `COleClientDoc`stellt nur einen Updatebefehl-UI-Handler für diesen Befehl bereit. Wenn die Zwischenablage kein einbettbares OLE-Element/-Objekt enthält, wird der Befehl deaktiviert. Sie sind dafür verantwortlich, den Handler für den eigentlichen Befehl zu schreiben, um das eigentliche Einfügen zu tun. Wenn Ihre OLE-Anwendung auch andere Formate einfügen kann, sollten Sie ihren eigenen Updatebefehls-UI-Handler in der Ansicht oder im Dokument bereitstellen (d. h. irgendwo zuvor `COleClientDoc` im Befehlszielrouting).
+
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
+
+   Verwenden Sie `COleClientItem::CanPaste`zum Ersetzen der Standard-OLE-Implementierung .
 
 - ID_EDIT_PASTE_LINK Fügt einen Link aus dem aktuellen Inhalt der Zwischenablage ein.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
 
-   `COleDocument` bietet nur einen Update-Befehlshandler Benutzeroberfläche für diesen Befehl ein. Wenn die Zwischenablage nicht verknüpfbares OLE/Elementobjekt enthält, wird der Befehl deaktiviert. Sie sind verantwortlich für das Schreiben des Handlers für die eigentliche Befehl, um das eigentliche einfügen. Wenn OLE-Anwendungen auch andere Formate einfügen kann, sollten Sie Ihre eigenen Update-Befehlshandler-Benutzeroberfläche in Ihrer Ansicht oder das Dokument bereitstellen (d. h. an einer beliebigen Stelle vor dem `COleDocument` in das Ziel Befehlsrouting).
+   `COleDocument`stellt nur einen Updatebefehl-UI-Handler für diesen Befehl bereit. Wenn die Zwischenablage kein verklinkbares OLE-Element/-Objekt enthält, wird der Befehl deaktiviert. Sie sind dafür verantwortlich, den Handler für den eigentlichen Befehl zu schreiben, um das eigentliche Einfügen zu tun. Wenn Ihre OLE-Anwendung auch andere Formate einfügen kann, sollten Sie ihren eigenen Updatebefehls-UI-Handler in der Ansicht oder im Dokument bereitstellen (d. h. irgendwo zuvor `COleDocument` im Befehlszielrouting).
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-   Verwenden Sie zum Ersetzen der standard OLE-Implementierung, `COleClientItem::CanPasteLink`.
+   Verwenden Sie `COleClientItem::CanPasteLink`zum Ersetzen der Standard-OLE-Implementierung .
 
-- ID_EDIT_PASTE_SPECIAL fügt den aktuellen Inhalt der Zwischenablage mit Optionen.
+- ID_EDIT_PASTE_SPECIAL Fügt den aktuellen Inhalt der Zwischenablage mit Optionen ein.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse. MFC bietet dieses Dialogfeld nicht.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren. MFC stellt dieses Dialogfeld nicht bereit.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_EDIT_REPEAT wiederholt den letzten Vorgang.
+- ID_EDIT_REPEAT Wiederholt den letzten Vorgang.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls, den letzten Find-Vorgang zu wiederholen. Die private Implementierung-Variablen für die letzten Find dienen. Der Befehl ist deaktiviert, wenn eine Suche kann nicht ausgeführt werden.
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, um den letzten Findvorgang zu wiederholen. Die privaten Implementierungsvariablen für den letzten Find werden verwendet. Der Befehl ist deaktiviert, wenn ein Suchen nicht versucht werden kann.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_EDIT_REPLACE beginnt der Ersetzungsvorgang wird das Dialogfeld ohne Modus ersetzen.
+- ID_EDIT_REPLACE Beginnt den Ersetzungsvorgang, ruft das moduslose Ersetzungsdialogfeld auf.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls, der die Hilfsfunktion Implementierung aufruft `OnEditFindReplace` verwenden und die vorherigen Einstellungen für den Suchen/Ersetzen in privaten implementierungsvariablen zu speichern. Die `CFindReplaceDialog` Klasse wird verwendet, um den nicht-modales Dialogfeld verwalten, die der Benutzer aufgefordert wird.
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, `OnEditFindReplace` die die Implementierungshilfsfunktion aufruft, um die vorherigen Einstellungen zum Suchen/Ersetzen in privaten Implementierungsvariablen zu verwenden und zu speichern. Die `CFindReplaceDialog` Klasse wird verwendet, um das moduslose Dialogfeld zu verwalten, in dem der Benutzer aufgefordert wird.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_EDIT_SELECT_ALL wählt das gesamte Dokument.
+- ID_EDIT_SELECT_ALL Wählt das gesamte Dokument aus.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls, in dem der gesamte Text im Dokument ausgewählt. Der Befehl ist deaktiviert, wenn kein Text Auswahl vorhanden ist.
+   `CEditView`stellt eine Implementierung dieses Befehls bereit, der den gesamten Text im Dokument auswählt. Der Befehl ist deaktiviert, wenn kein Text ausgewählt werden kann.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_EDIT_UNDO macht den letzten Vorgang rückgängig.
+- ID_EDIT_UNDO den letzten Vorgang auftut.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
 
-   `CEditView` Stellt eine Implementierung dieses Befehls mit `CEdit::Undo`. Der Befehl ist deaktiviert, wenn `CEdit::CanUndo` gibt FALSE zurück.
+   `CEditView`stellt eine Implementierung dieses `CEdit::Undo`Befehls mithilfe von bereit. Der Befehl ist `CEdit::CanUndo` deaktiviert, wenn FALSE zurückgegeben wird.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_EDIT_REDO wiederholt den letzten Vorgang.
+- ID_EDIT_REDO Den letzten Vorgang wird erneut durchgeführt.
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen dies implementieren, für die einzelnen `CView`-abgeleitete Klasse.
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für jede -abgeleitete Klasse implementieren.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_WINDOW_NEW öffnet ein weiteres Fenster auf dem aktiven Dokument.
+- ID_WINDOW_NEW Öffnet ein weiteres Fenster im aktiven Dokument.
 
-   `CMDIFrameWnd::OnWindowNew` implementiert dieses leistungsfähige Feature mit, dass die Dokumentvorlage des aktuellen Dokuments um einen anderen Frame mit einer anderen Ansicht des aktuellen Dokuments zu erstellen.
+   `CMDIFrameWnd::OnWindowNew`implementiert diese leistungsstarke Funktion, indem sie die Dokumentvorlage des aktuellen Dokuments verwendet, um einen anderen Rahmen zu erstellen, der eine andere Ansicht des aktuellen Dokuments enthält.
 
-   Wie die meisten mehrerer Document Interface (MDI) Fenster Menübefehle wird der Befehl deaktiviert, wenn keine aktiven untergeordneten MDI-Fensters.
+   Wie die meisten MDI-Menübefehle (Multiple Document Interface) ist der Befehl deaktiviert, wenn kein aktives untergeordnetes MDI-Fenster vorhanden ist.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen. Wenn Sie möchten einen Befehl angeben, der zusätzliche Ansichten oder Rahmenfenster erstellt, werden Sie wahrscheinlich besser, entwickeln Ihre eigenen Befehls sein. Sie können den Code aus Klonen `CMDIFrameWnd::OnWindowNew` und ändern sie die der bestimmten Frame und Anzeigen von Klassen Ihrer Wahl.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen. Wenn Sie einen Befehl bereitstellen möchten, der zusätzliche Ansichten oder Framefenster erstellt, sollten Sie wahrscheinlich besser Ihren eigenen Befehl erfinden. Sie können den `CMDIFrameWnd::OnWindowNew` Code aus klonen und in den bestimmten Frame und Ansichtsklassen Ihrer Gelieben ändern.
 
-- ID_WINDOW_ARRANGE richtet die Symbole am unteren Rand eines MDI-Fensters.
+- ID_WINDOW_ARRANGE Ordnet Symbole am unteren Rand eines MDI-Fensters an.
 
-   `CMDIFrameWnd` Dieser standard MDI-Befehl in eine Hilfsfunktion Implementierung implementiert `OnMDIWindowCmd`. Dieses Hilfsprogramm Befehls-IDs für MDI-Windows-Nachrichten zugeordnet und kann daher viel Code gemeinsam.
+   `CMDIFrameWnd`implementiert diesen Standard-MDI-Befehl in `OnMDIWindowCmd`einer Implementierungshilfsfunktion . Dieser Hilfshelfer ordnet Befehls-IDs MDI-Windows-Nachrichten zu und kann daher viel Code freigeben.
 
-   Der Befehl ist wie die meisten Befehle für MDI-Fensters im Menü deaktiviert, es ist keine aktiven untergeordneten MDI-Fensters.
+   Wie die meisten MDI-Fenstermenübefehle ist der Befehl deaktiviert, wenn kein aktives untergeordnetes MDI-Fenster vorhanden ist.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_WINDOW_CASCADE kaskadierende Windows, um eine Überlappung.
+- ID_WINDOW_CASCADE Cascades-Fenster, damit sie sich überlappen.
 
-   `CMDIFrameWnd` Dieser standard MDI-Befehl in eine Hilfsfunktion Implementierung implementiert `OnMDIWindowCmd`. Dieses Hilfsprogramm Befehls-IDs für MDI-Windows-Nachrichten zugeordnet und kann daher viel Code gemeinsam.
+   `CMDIFrameWnd`implementiert diesen Standard-MDI-Befehl in `OnMDIWindowCmd`einer Implementierungshilfsfunktion . Dieser Hilfshelfer ordnet Befehls-IDs MDI-Windows-Nachrichten zu und kann daher viel Code freigeben.
 
-   Der Befehl ist wie die meisten Befehle für MDI-Fensters im Menü deaktiviert, es ist keine aktiven untergeordneten MDI-Fensters.
+   Wie die meisten MDI-Fenstermenübefehle ist der Befehl deaktiviert, wenn kein aktives untergeordnetes MDI-Fenster vorhanden ist.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_WINDOW_TILE_HORZ   Tiles windows horizontally.
+- ID_WINDOW_TILE_HORZ Fenster horizontal.
 
-   Mit diesem Befehl wird in implementiert `CMDIFrameWnd` wie ID_WINDOW_CASCADE, außer dass eine andere MDI-Windows-Meldung für den Vorgang verwendet wird.
+   Dieser Befehl wird `CMDIFrameWnd` in genau wie ID_WINDOW_CASCADE implementiert, außer dass eine andere MDI-Windows-Nachricht für den Vorgang verwendet wird.
 
-   Sie sollten die standardausrichtung für die Kachel für Ihre Anwendung auswählen. Dies ist möglich, indem Sie die ID für das Fenster "Kachel" Menüelement ID_WINDOW_TILE_HORZ oder ID_WINDOW_TILE_VERT ändern.
+   Sie sollten die Standardkachelausrichtung für Ihre Anwendung auswählen. Sie können dies tun, indem Sie die ID für das Menüelement Fenster "Kachel" in ID_WINDOW_TILE_HORZ oder ID_WINDOW_TILE_VERT ändern.
 
-- ID_WINDOW_TILE_VERT-Kacheln Windows vertikal.
+- ID_WINDOW_TILE_VERT Kachelfenster vertikal.
 
-   Mit diesem Befehl wird in implementiert `CMDIFrameWnd` wie ID_WINDOW_CASCADE, außer dass eine andere MDI-Windows-Meldung für den Vorgang verwendet wird.
+   Dieser Befehl wird `CMDIFrameWnd` in genau wie ID_WINDOW_CASCADE implementiert, außer dass eine andere MDI-Windows-Nachricht für den Vorgang verwendet wird.
 
-   Sie sollten die standardausrichtung für die Kachel für Ihre Anwendung auswählen. Dies ist möglich, indem Sie die ID für das Fenster "Kachel" Menüelement ID_WINDOW_TILE_HORZ oder ID_WINDOW_TILE_VERT ändern.
+   Sie sollten die Standardkachelausrichtung für Ihre Anwendung auswählen. Sie können dies tun, indem Sie die ID für das Menüelement Fenster "Kachel" in ID_WINDOW_TILE_HORZ oder ID_WINDOW_TILE_VERT ändern.
 
-- ID_WINDOW_SPLIT-Tastatur-Schnittstelle, die Aufteilung.
+- ID_WINDOW_SPLIT Tastaturschnittstelle zum Splitter.
 
-   `CView` verarbeitet diesen Befehl für die `CSplitterWnd` Implementierung. Wenn die Ansicht eines unterteilten Fensters gehört, wird mit diesem Befehl an die implementierungsfunktion Delegieren `CSplitterWnd::DoKeyboardSplit`. Dies platziert den Splitter in einem Modus, die Benutzer über die Tastatur teilen oder Aufteilung eines unterteilten Fensters ermöglichen.
+   `CView`behandelt diesen Befehl `CSplitterWnd` für die Implementierung. Wenn die Ansicht Teil eines Splitterfensters ist, wird `CSplitterWnd::DoKeyboardSplit`dieser Befehl an die Implementierungsfunktion delegiert. Dadurch wird der Splitter in einen Modus versetzt, der es Tastaturbenutzern ermöglicht, ein Splitterfenster aufzuteilen oder aufzuteilen.
 
-   Dieser Befehl ist deaktiviert, wenn die Sicht nicht in eine Aufteilung ist.
+   Dieser Befehl ist deaktiviert, wenn sich die Ansicht nicht in einem Splitter befindet.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_APP_ABOUT Ruft das Dialogfeld "Info".
+- ID_APP_ABOUT Ruft das Dialogfeld Über auf.
 
-   Es ist keine Standardimplementierung für Informationen zu einer Anwendung-Feld. Der Standardwert von AppWizard erstellte Anwendung eine benutzerdefinierten Dialogfeldklasse für Ihre Anwendung erstellt und als Ihre Box zu verwenden. AppWizard wird auch die trivial Befehlshandler schreiben, die mit diesem Befehl verarbeitet und ruft das Dialogfeld.
+   Es gibt keine Standardimplementierung für die About-Box einer Anwendung. Die von AppWizard erstellte Standardanwendung erstellt eine benutzerdefinierte Dialogfeldklasse für Ihre Anwendung und verwendet sie als Info-Feld. AppWizard schreibt auch den trivialen Befehlshandler, der diesen Befehl verarbeitet und das Dialogfeld aufruft.
 
-   Sie können mit diesem Befehl werden fast immer implementieren.
+   Sie implementieren diesen Befehl fast immer.
 
-- ID_APP_EXIT Beenden der Anwendung.
+- ID_APP_EXIT beenden Sie die Anwendung.
 
-   `CWinApp::OnAppExit` verarbeitet mit diesem Befehl, indem Sie eine WM_CLOSE-Meldung an das Hauptfenster der Anwendung senden. Der Standard, das Herunterfahren der Anwendung (und werden aufgefordert, modifizierte Dateien usw.) erfolgt durch die `CFrameWnd` Implementierung.
+   `CWinApp::OnAppExit`behandelt diesen Befehl, indem eine WM_CLOSE Nachricht an das Hauptfenster der Anwendung gesendet wird. Das standardmäßige Herunterfahren der Anwendung (Eingabeaufforderung für schmutzige Dateien `CFrameWnd` usw.) wird von der Implementierung behandelt.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen. Überschreiben von `CWinApp::SaveAllModified` oder `CFrameWnd` schließende Logik wird empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen. Es `CWinApp::SaveAllModified` wird `CFrameWnd` empfohlen, die Abschließende Logik zu überschreiben oder zu schließen.
 
-   Wenn Sie den Befehl zu implementieren möchten, empfehlen wir, dass es sich bei der Verwendung dieses Befehls-ID.
+   Wenn Sie diesen Befehl implementieren möchten, wird empfohlen, diese Befehls-ID zu verwenden.
 
-- ID_HELP_INDEX enthält die Hilfethemen aus. HLP-Datei.
-
-    > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
-
-   `CWinApp::OnHelpIndex` mit diesem Befehl behandelt, durch den Aufruf einfach `CWinApp::WinHelp`.
-
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
-
-- ID_HELP_USING Zeigt Hilfe zur Verwendung von Hilfe an.
+- ID_HELP_INDEX Listet Hilfethemen aus auf. HLP-Datei.
 
     > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   `CWinApp::OnHelpUsing` mit diesem Befehl behandelt, durch den Aufruf einfach `CWinApp::WinHelp`.
+   `CWinApp::OnHelpIndex`behandelt diesen Befehl, indem `CWinApp::WinHelp`er trivial aufruft.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- Modus der ID_CONTEXT_HELP gibt UMSCHALT + F1-Hilfe.
-
-    > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
-
-   `CWinApp::OnContextHelp` verarbeitet mit diesem Befehl, indem Sie den Hilfecursor-Modus festlegen, eine modale Größenanpassungsschleife eingeben, und warten, bis der Benutzer die Auswahl ein Fensters, um Hilfe zu erhalten, auf. Näheres [technischer Hinweis 28](../mfc/tn028-context-sensitive-help-support.md) für Weitere Informationen zur Implementierung MFC zu unterstützen.
-
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
-
-- ID_HELP bietet Hilfe zu den aktuellen Kontext
+- ID_HELP_USING Zeigt Hilfe zur Verwendung der Hilfe an.
 
     > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   `CWinApp::OnHelp` verarbeitet mit diesem Befehl, indem Sie den richtigen Hilfekontext für den aktuellen Anwendungskontext abrufen. Dadurch wird einfach F1-Hilfe, können in den Meldungsfeldern und so weiter. Näheres [technischer Hinweis 28](../mfc/tn028-context-sensitive-help-support.md) für Weitere Informationen zu den MFC-Implementierung Hilfe.
+   `CWinApp::OnHelpUsing`behandelt diesen Befehl, indem `CWinApp::WinHelp`er trivial aufruft.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_DEFAULT_HELP zeigt standardmäßig die Hilfe für den Kontext
+- ID_CONTEXT_HELP wechselt in den UMSCHALT-F1-Hilfemodus.
 
     > [!NOTE]
-    >  Sie müssen diese Option, um verbinden Ihrer `CWinApp`-abgeleitete Klasse meldungszuordnung, um diese Funktion zu aktivieren.
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   Mit diesem Befehl wird in der Regel zugeordnet `CWinApp::OnHelpIndex`.
+   `CWinApp::OnContextHelp`behandelt diesen Befehl, indem der Hilfemoduscursor festgelegt wird, eine modale Schleife eingibt und darauf wartet, dass der Benutzer ein Fenster auswählt, in dem Hilfe angezeigt wird. Weitere Informationen zur MFC-Hilfe-Implementierung finden Sie im [Technischen Hinweis 28.](../mfc/tn028-context-sensitive-help-support.md)
 
-   Bei Bedarf eine Unterscheidung zwischen Standardhilfe und im Hilfe-Index ist, kann ein anderen Befehlshandler bereitgestellt werden.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_NEXT_PANE wechselt zum nächsten Bereich
+- ID_HELP Gibt Hilfe zum aktuellen Kontext
 
-   `CView` verarbeitet diesen Befehl für die `CSplitterWnd` Implementierung. Wenn die Ansicht eines unterteilten Fensters gehört, wird mit diesem Befehl an die implementierungsfunktion Delegieren `CSplitterWnd::OnNextPaneCmd`. Dadurch wird die aktive Ansicht zum nächsten Bereich in der Splitter verschoben.
+    > [!NOTE]
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   Dieser Befehl ist deaktiviert, wenn die Ansicht nicht in eine Aufteilung ist, oder es kein Nächster Bereich ist zu wechseln.
+   `CWinApp::OnHelp`behandelt diesen Befehl, indem der richtige Hilfekontext für den aktuellen Anwendungskontext ab. Dies behandelt einfache F1-Hilfe, Hilfe in Meldungsfeldern und so weiter. Weitere Informationen zur MFC-Hilfeimplementierung finden Sie im [Technischen Hinweis 28.](../mfc/tn028-context-sensitive-help-support.md)
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_PREV_PANE wechselt zum vorherigen Bereich
+- ID_DEFAULT_HELP Zeigt Standardhilfe für Kontext an
 
-   `CView` verarbeitet diesen Befehl für die `CSplitterWnd` Implementierung. Wenn die Ansicht eines unterteilten Fensters gehört, wird mit diesem Befehl an die implementierungsfunktion Delegieren `CSplitterWnd::OnNextPaneCmd`. Dadurch wird die aktive Ansicht zum vorherigen Bereich in der Splitter verschoben.
+    > [!NOTE]
+    >  Sie müssen diese `CWinApp`Verbindung mit der Nachrichtenzuordnung Ihrer -abgeleiteten Klasse herstellen, um diese Funktionalität zu aktivieren.
 
-   Dieser Befehl ist deaktiviert, wenn die Ansicht nicht in eine Aufteilung ist oder keine vorheriger Bereich zu wechseln.
+   Dieser Befehl wird normalerweise `CWinApp::OnHelpIndex`zugeordnet.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Ein anderer Befehlshandler kann bereitgestellt werden, wenn eine Unterscheidung zwischen der Standardhilfe und dem Hilfeindex gewünscht wird.
 
-- ID_OLE_INSERT_NEW Fügt ein neues OLE-Objekt
+- ID_NEXT_PANE Geht zum nächsten Bereich
 
-   Zurzeit besteht keine Standardimplementierung für diesen Befehl. Sie müssen diese implementieren Ihrer `CView`-abgeleitete Klasse ein neues OLE-Element/Objekt an der aktuellen Auswahl eingefügt werden soll.
+   `CView`behandelt diesen Befehl `CSplitterWnd` für die Implementierung. Wenn die Ansicht Teil eines Splitterfensters ist, wird `CSplitterWnd::OnNextPaneCmd`dieser Befehl an die Implementierungsfunktion delegiert. Dadurch wird die aktive Ansicht in den nächsten Bereich im Splitter verschoben.
 
-   Alle OLE-Clientanwendungen sollten den Befehl zu implementieren. AppWizard, mit der OLE-Option erstellt eine Skelette-Implementierung der `OnInsertObject` in Ihrer Ansichtsklasse, die Sie ausführen müssen.
+   Dieser Befehl ist deaktiviert, wenn sich die Ansicht nicht in einem Splitter befindet oder kein nächster Bereich vorhanden ist.
 
-   Finden Sie im MFC-OLE-Beispiel [OCLIENT](../overview/visual-cpp-samples.md) Beispiel für eine vollständige Implementierung dieses Befehls.
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-- ID_OLE_EDIT_LINKS bearbeitet OLE-links
+- ID_PREV_PANE Geht zum vorherigen Bereich
 
-   `COleDocument` verarbeitet mit diesem Befehl mithilfe der bereitgestellten MFC-Implementierung von der standard OLE-Links-Dialog. Die Implementierung dieses Dialogfelds erfolgt über die `COleLinksDialog` Klasse. Wenn das aktuelle Dokument keine Links enthält, wird der Befehl deaktiviert.
+   `CView`behandelt diesen Befehl `CSplitterWnd` für die Implementierung. Wenn die Ansicht Teil eines Splitterfensters ist, wird `CSplitterWnd::OnNextPaneCmd`dieser Befehl an die Implementierungsfunktion delegiert. Dadurch wird die aktive Ansicht in den vorherigen Bereich im Splitter verschoben.
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Dieser Befehl ist deaktiviert, wenn sich die Ansicht nicht in einem Splitter befindet oder kein vorheriger Bereich vorhanden ist.
 
-- ID_OLE_VERB_FIRST... LETZTE eine ID-Bereich für die OLE-Verben
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-   `COleDocument` verwendet dieses Befehls-ID-Bereich für die Verben, die von das aktuell ausgewählte OLE-Element/Objekt unterstützt werden. Dies muss ein Bereich sein, da ein bestimmtes Typs des OLE-Item-Objekt auf NULL oder mehr benutzerdefinierte Verben unterstützen kann. Klicken Sie im Menü Ihrer Anwendung sollten Sie ein Menüelement mit der ID des ID_OLE_VERB_FIRST verfügen. Wenn das Programm ausgeführt wird, wird das Menü mit der entsprechenden Verb-Beschreibung (oder ein Popupmenü mit vielen Verben) aktualisiert. Die Verwaltung des OLE-Menüs erfolgt durch `AfxOleSetEditMenu`, Arbeit in der Update-Befehlshandler Benutzeroberfläche für diesen Befehl.
+- ID_OLE_INSERT_NEW Fügt ein neues OLE-Objekt ein
 
-   Es gibt keine explizite Befehlshandler für die Verarbeitung aller die Befehls-ID in diesem Bereich aus. `COleDocument::OnCmdMsg` wird zum Abfangen aller Befehls-IDs in diesem Bereich, in nullbasierte Verb Zahlen zu aktivieren und starten Sie den Server für das jeweilige Verb außer Kraft gesetzt (mit `COleClientItem::DoVerb`).
+   Derzeit gibt es keine Standardimplementierung für diesen Befehl. Sie müssen dies `CView`für die -abgeleitete Klasse implementieren, um ein neues OLE-Element/Objekt bei der aktuellen Auswahl einzufügen.
 
-   Anpassung oder andere Verwendung dieses Befehls-ID-Bereichs wird nicht empfohlen.
+   Alle OLE-Clientanwendungen sollten diesen Befehl implementieren. AppWizard erstellt mit der OLE-Option eine `OnInsertObject` Skelettimplementierung von in Ihrer Ansichtsklasse, die Sie abschließen müssen.
 
-- ID_VIEW_TOOLBAR Schaltet die Symbolleiste ein- und ausschalten
+   Eine vollständige Implementierung dieses Befehls finden Sie im [OCLIENT-Beispiel](../overview/visual-cpp-samples.md) für MFC OLE.
 
-   `CFrameWnd` kümmert sich mit diesem Befehl und der Update-Befehlshandler Benutzeroberfläche, um den Sichtbarkeitsstatus der Symbolleiste zu wechseln. Die Symbolleiste muss ein untergeordnetes Fenster des Frames mit untergeordneten Fenster-ID des AFX_IDW_TOOLBAR sein. Die Befehlshandler Schaltet die Sichtbarkeit des Fensters Symbolleiste. `CFrameWnd::RecalcLayout` wird verwendet, das Rahmenfenster, über die Symbolleiste im neuen Zustand neu zu zeichnen. Der Update-Befehls-UI-Handler überprüft das Menüelement, wenn die Symbolleiste sichtbar ist.
+- ID_OLE_EDIT_LINKS Edits OLE-Links
 
-   Anpassung von diesen Befehlshandler wird nicht empfohlen. Wenn Sie die zusätzliche Symbolleisten hinzufügen möchten, sollten Sie zu klonen und zu ändern, die den Befehlshandler und die Update-Befehls-UI-Handler für diesen Befehl.
+   `COleDocument`behandelt diesen Befehl mithilfe der von MFC bereitgestellten Implementierung des Standarddialogfelds ole-Links. Auf die Implementierung dieses Dialogfelds wird über die `COleLinksDialog` Klasse zugegriffen. Wenn das aktuelle Dokument keine Verknüpfungen enthält, wird der Befehl deaktiviert.
 
-- ID_VIEW_STATUS_BAR Schaltet die Statusleiste ein- und ausschalten
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
 
-   Mit diesem Befehl wird in implementiert `CFrameWnd` ID_VIEW_TOOLBAR, außer ein anderes untergeordnetes Fenster ID (AFX_IDW_STATUS_BAR) verwendet wird, wie.
+- ID_OLE_VERB_FIRST... LAST Ein ID-Bereich für OLE-Verben
 
-## <a name="update-only-command-handlers"></a>Nur-Update-Befehlshandler
+   `COleDocument`verwendet diesen Befehls-ID-Bereich für die Verben, die vom aktuell ausgewählten OLE-Element/Objekt unterstützt werden. Dies muss ein Bereich sein, da ein bestimmtes OLE-Element/Objekttyp null oder mehr benutzerdefinierte Verben unterstützen kann. Im Menü Ihrer Anwendung sollten Sie ein Menüelement mit der ID ID_OLE_VERB_FIRST. Wenn das Programm ausgeführt wird, wird das Menü mit dem entsprechenden Menü verb Beschreibung (oder Pop-up-Menü mit vielen Verben) aktualisiert. Die Verwaltung des OLE-Menüs `AfxOleSetEditMenu`wird von behandelt, die im Befehlsbefehl UI-Handler für diesen Befehl ausgeführt wird.
 
-Mehrere Standardbefehls-IDs werden als Indikatoren in Statusleisten verwendet. Diese verwenden dasselbe Updatebefehl UI-Mechanismus zur Behandlung, um ihren aktuellen visuellen Zustand während der Leerlaufzeit Anwendung anzuzeigen. Da Sie nicht vom Benutzer ausgewählt werden (d. h. Sie können nicht per Push übertragen einen Statusleistenbereich), und klicken Sie dann nicht sinnvoll, einen ON_COMMAND-Handler für diese Befehls-IDs zu verwenden.
+   Es gibt keine expliziten Befehlshandler für die Behandlung jeder Befehls-ID in diesem Bereich. `COleDocument::OnCmdMsg`wird überschrieben, um alle Befehls-IDs in diesem Bereich abzufangen, sie in Null-basierte Verbnummern umzuwandeln und den Server für dieses Verb zu starten (mit `COleClientItem::DoVerb`).
 
-- ID_INDICATOR_CAPS : Indikator der CAP-Sperre.
+   Eine Anpassung oder andere Verwendung dieses Befehls-ID-Bereichs wird nicht empfohlen.
 
-- ID_INDICATOR_NUM: NUM-Lock-Indikator.
+- ID_VIEW_TOOLBAR Schaltet die Symbolleiste ein und aus
 
-- ID_INDICATOR_SCRL: Kap-Sperrindikator.
+   `CFrameWnd`behandelt diesen Befehl und den befehlsorientierten UI-Handler, um den sichtbaren Status der Symbolleiste umzuschalten. Die Symbolleiste muss ein untergeordnetes Fenster des Rahmens mit der untergeordneten Fenster-ID von AFX_IDW_TOOLBAR sein. Der Befehlshandler schaltet tatsächlich die Sichtbarkeit des Symbolleistenfensters um. `CFrameWnd::RecalcLayout`wird verwendet, um das Rahmenfenster mit der Symbolleiste in ihrem neuen Zustand neu zu zeichnen. Der befehlsorientierte UI-Handler überprüft das Menüelement, wenn die Symbolleiste sichtbar ist.
 
-- ID_INDICATOR_KANA : KANA Sperren Indikator (gilt nur für japanische Systeme).
+   Die Anpassung dieses Befehlshandlers wird nicht empfohlen. Wenn Sie zusätzliche Symbolleisten hinzufügen möchten, sollten Sie den Befehlshandler und den befehls-befehlsui-Handler für diesen Befehl klonen und ändern.
 
-Drei davon werden im implementiert `CFrameWnd::OnUpdateKeyIndicator`, eine Implementierung-Hilfe, die die Befehls-ID verwendet, um den entsprechenden virtuellen Schlüssel zuzuordnen. Eine gängige Implementierung aktiviert oder deaktiviert (für Statusbereiche, die deaktiviert = kein Text) der `CCmdUI` Objekt abhängig davon, ob die entsprechende virtuelle Taste derzeit gesperrt ist.
+- ID_VIEW_STATUS_BAR Schaltet die Statusleiste ein und aus
 
-Anpassung von diesen Befehlshandler wird nicht empfohlen.
+   Dieser Befehl wird `CFrameWnd` in genau wie ID_VIEW_TOOLBAR implementiert, außer dass eine andere untergeordnete Fenster-ID (AFX_IDW_STATUS_BAR) verwendet wird.
 
-- ID_INDICATOR_EXT: Indikator für erweiterte Option.
+## <a name="update-only-command-handlers"></a>Nur Update-Befehlshandler
 
-- ID_INDICATOR_OVR : Indikator mit dem Überschreibmodus.
+Mehrere Standardbefehls-IDs werden als Indikatoren in Statusleisten verwendet. Diese verwenden denselben Mechanismus für die Benutzeroberfläche, um ihren aktuellen visuellen Status während der Laufzeit der Anwendung anzuzeigen. Da sie vom Benutzer nicht ausgewählt werden können (d. h., Sie können einen Statusleistenbereich nicht übertragen), macht es keinen Sinn, einen ON_COMMAND Handler für diese Befehls-IDs zu haben.
 
-- ID_INDICATOR_REC: Indikator der Aufzeichnung.
+- ID_INDICATOR_CAPS : CAP-Sperranzeige.
 
-Zurzeit besteht keine Standardimplementierung für diese Indikatoren.
+- ID_INDICATOR_NUM : NUM-Sperranzeige.
 
-Wenn Sie diese Indikatoren implementieren, es wird empfohlen, diesen Indikator IDs und verwalten, die Reihenfolge der Indikatoren in der Statusleiste (d. h. in der folgenden Reihenfolge: EXT, CAP, NUM, SCRL, OVR, REC).
+- ID_INDICATOR_SCRL : SCRL-Sperranzeige.
+
+- ID_INDICATOR_KANA : KANA-Sperranzeige (gilt nur für japanische Systeme).
+
+Alle drei werden in `CFrameWnd::OnUpdateKeyIndicator`implementiert, einem Implementierungshelfer, der die Befehls-ID verwendet, um dem entsprechenden virtuellen Schlüssel zuzuordnen. Eine gemeinsame Implementierung aktiviert oder deaktiviert (für Statusbereiche `CCmdUI` deaktiviert = kein Text), je nachdem, ob der entsprechende virtuelle Schlüssel derzeit gesperrt ist.
+
+Die Anpassung dieses Befehlshandlers wird nicht empfohlen.
+
+- ID_INDICATOR_EXT : EXTended Select-Indikator.
+
+- ID_INDICATOR_OVR : OVeRstrike-Anzeige.
+
+- ID_INDICATOR_REC : RECording-Anzeige.
+
+Derzeit gibt es keine Standardimplementierung für diese Indikatoren.
+
+Wenn Sie sich für die Implementierung dieser Indikatoren entscheiden, empfehlen wir Ihnen, diese Indikator-IDs zu verwenden und die Reihenfolge der Indikatoren in Ihrer Statusleiste beizubehalten (d. h. in dieser Reihenfolge: EXT, CAP, NUM, SCRL, OVR, REC).
 
 ## <a name="see-also"></a>Siehe auch
 

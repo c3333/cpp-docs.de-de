@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - sync_per_container class
 ms.assetid: 0b4b2904-b668-4d94-a422-d4f919cbffab
-ms.openlocfilehash: 378451ac2643d62271fd9e7fa44706a84ee8bb83
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 2c60911b5469cbf74944c9f63af44f2351790280
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68450287"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376550"
 ---
-# <a name="syncpercontainer-class"></a>sync_per_container-Klasse
+# <a name="sync_per_container-class"></a>sync_per_container-Klasse
 
 Beschreibt einen [Synchronisierungsfilter](../standard-library/allocators-header.md), der für jedes Zuweisungsobjekt ein getrenntes Cache-Objekt bereitstellt.
 
@@ -28,13 +28,13 @@ class sync_per_container
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Cache*|Der Cachetyp, der diesem Synchronisierungsfilter zugeordnet werden soll. Dieser kann [cache_chunklist](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
@@ -44,7 +44,7 @@ class sync_per_container
 
 **Namespace:** stdext
 
-## <a name="equals"></a> sync_per_container::equals
+## <a name="sync_per_containerequals"></a><a name="equals"></a>sync_per_container::gleich
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -54,17 +54,17 @@ bool equals(const sync_per_container<Cache>& Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Cache*|Das Cache-Objekt des Synchronisierungsfilters.|
 |*Andere*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Member-Funktion gibt immer **false**zurück.
+Die Memberfunktion gibt immer **false**zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)

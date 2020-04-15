@@ -6,12 +6,12 @@ helpviewer_keywords:
 - NMAKE program, inference rules
 - batch-mode inference rules in NMAKE
 ms.assetid: 0650b547-ef19-4455-9bba-fa567dcf88f2
-ms.openlocfilehash: f01866e347b2734b5adfd111e3ae9de4f9edcf9f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 38402e7b8a937cebb823ce13fa1ac01fc1099878
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62295018"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328408"
 ---
 # <a name="batch-mode-rules"></a>Stapelverarbeitungsregeln
 
@@ -20,18 +20,18 @@ ms.locfileid: "62295018"
    commands
 ```
 
-Im Batchmodus-Rückschlussregeln geben nur einen Aufruf der Rückschlussregel, wenn diese Rückschlussregel N Befehle durchlaufen. Ohne im Batchmodus-Rückschlussregeln müssten N Befehle aufgerufen werden. N ist die Anzahl von abhängigen Dateien, die die Rückschlussregel auslösen.
+Batchmodus-Rückschlussregeln stellen nur einen Aufruf der Rückschlussregel bereit, wenn N-Befehle diese Rückschlussregel durchlaufen. Ohne Batchmodus-Rückschlussregeln müssten N-Befehle aufgerufen werden. N ist die Anzahl der abhängigen Elemente, die die Rückschlussregel auslösen.
 
-Makefiles, die im Batchmodus-Rückschlussregeln enthalten, müssen NMAKE Version 1.62 oder höher verwenden. Um die NMAKE-Version zu überprüfen, führen Sie das _NMAKE_VER-Makro, das zur Verfügung mit NMAKE, Version, 1.62 oder höher. Dieses Makro gibt eine Zeichenfolge mit der Visual C++-Version zurück.
+Makefiles, die Batchmodus-Einschlussregeln enthalten, müssen NMAKE Version 1.62 oder höher verwenden. Um die NMAKE-Version zu überprüfen, führen Sie das _NMAKE_VER Makro mit NMAKE Version 1.62 oder höher aus. Dieses Makro gibt eine Zeichenfolge zurück, die die Visual C++-Produktversion darstellt.
 
-Der Unterschied nur syntaktische standard Rückschlussregel ist, die im Batchmodus Rückschlussregel mit zwei Doppelpunkten (:) beendet wird.
+Der einzige syntaktische Unterschied zur Standard-Rückschlussregel besteht darin, dass die Batchmodus-Inferenzregel mit einem Doppelpunkt (::) beendet wird.
 
 > [!NOTE]
->  Das Tool, das aufgerufen wird, muss mehrere Dateien zu verarbeiten sein. Die im Batchmodus Rückschlussregel muss verwenden `$<` als das Makro mit abhängigen Dateien zugreifen.
+> Das aufgerufene Tool muss in der Lage sein, mehrere Dateien zu verarbeiten. Die Batchmodus-Rückschlussregel muss `$<` als Makro verwendet werden, um auf abhängige Dateien zuzugreifen.
 
-Die im Batchmodus-Rückschlussregeln können den Buildprozess beschleunigen. Es ist schneller Dateien an den Compiler im Batch angeben, da der Compilertreiber nur einmal aufgerufen wird. Beispielsweise bietet der C- und C++-Compiler eine bessere Leistung bei der Verarbeitung eines Satzes von Dateien, da es während des Prozesses speicherresident bleiben kann.
+Die Batchmodus-Rückschlussregeln können den Buildprozess beschleunigen. Es ist schneller, Dateien im Batch an den Compiler zu übermitteln, da der Compilertreiber nur einmal aufgerufen wird. Beispielsweise führt der C- und C++-Compiler eine bessere Leistung bei der Verarbeitung einer Gruppe von Dateien, da er während des Prozesses speicherresident bleiben kann.
 
-Das folgende Beispiel zeigt, wie Sie mit der im Batchmodus-Rückschlussregeln:
+Das folgende Beispiel zeigt, wie Batchmodus-Rückschlussregeln verwendet werden:
 
 ```
 #
@@ -56,7 +56,7 @@ $(Objs) :
 #end of makefile
 ```
 
-NMAKE: erzeugt die folgende Ausgabe ohne im Batchmodus-Rückschlussregeln:
+NMAKE erzeugt die folgende Ausgabe ohne Batch-Modus-Inferenzregeln:
 
 ```
 E:\tmp> nmake -f test.mak -a NOBatch=1
@@ -73,7 +73,7 @@ foo3.cpp
 foo4.cpp
 ```
 
-NMAKE: führt zu folgendem Ergebnis mit den im Batchmodus-Rückschlussregeln:
+NMAKE liefert das folgende Ergebnis mit den Batch-Modus-Inferenzregeln:
 
 ```
 E:\tmp> nmake -f test.mak -a

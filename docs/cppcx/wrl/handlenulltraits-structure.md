@@ -11,16 +11,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::HandleTraits::HANDLENullTraits::Close method
 - Microsoft::WRL::Wrappers::HandleTraits::HANDLENullTraits::GetInvalidValue method
 ms.assetid: 88a29a14-c516-40cb-a0ca-ee897a668623
-ms.openlocfilehash: d70425f414b998eb67e3937c2c126dd3eda0c00d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 41e06cc50f36a077a34d992c416a543e5bf9b593
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398380"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371477"
 ---
 # <a name="handlenulltraits-structure"></a>HANDLENullTraits-Struktur
 
-Definiert die allgemeinen Merkmale eines nicht initialisierten Handles.
+Definiert allgemeine Merkmale eines nicht initialisierten Handles.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,15 +32,15 @@ struct HANDLENullTraits;
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name   | Beschreibung
+Name   | BESCHREIBUNG
 ------ | ---------------------
-`Type` | Ein Synonym für den HANDLE.
+`Type` | Ein Synonym für HANDLE.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                  | Beschreibung
+Name                                                  | BESCHREIBUNG
 ----------------------------------------------------- | -----------------------------
-[HANDLENullTraits::Close](#close)                     | Schließt das angegebene Handle.
+[HANDLENullTraits::Schließen](#close)                     | Schließt das angegebene Handle.
 [HANDLENullTraits::GetInvalidValue](#getinvalidvalue) | Stellt ein ungültiges Handle dar.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
@@ -49,11 +49,11 @@ Name                                                  | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers::HandleTraits
 
-## <a name="close"></a>HANDLENullTraits::Close
+## <a name="handlenulltraitsclose"></a><a name="close"></a>HANDLENullTraits::Schließen
 
 Schließt das angegebene Handle.
 
@@ -65,14 +65,14 @@ inline static bool Close(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Das Handle zu schließen.
+*H*<br/>
+Das zu schließende Handle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** Wenn behandeln *h* geschlossen wird, erfolgreich ist; andernfalls **"false"**.
+**true,** wenn Handle *h* erfolgreich geschlossen wurde; andernfalls **false**.
 
-## <a name="getinvalidvalue"></a>HANDLENullTraits::GetInvalidValue
+## <a name="handlenulltraitsgetinvalidvalue"></a><a name="getinvalidvalue"></a>HANDLENullTraits::GetInvalidValue
 
 Stellt ein ungültiges Handle dar.
 

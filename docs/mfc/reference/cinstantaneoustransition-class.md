@@ -12,12 +12,12 @@ helpviewer_keywords:
 - CInstantaneousTransition [MFC], Create
 - CInstantaneousTransition [MFC], m_dblFinalValue
 ms.assetid: c3d5121f-2c6b-4221-9e57-10e082a31120
-ms.openlocfilehash: f3861bbbc0fc138dcb0f2a8b969ed9bde41335bd
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 15c471d64309cc1358c9c5b0b33577261dd877f6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69505936"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372439"
 ---
 # <a name="cinstantaneoustransition-class"></a>CInstantaneousTransition-Klasse
 
@@ -33,29 +33,29 @@ class CInstantaneousTransition : public CBaseTransition;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cinstantaneoustransition:: cinstantaneoustransition](#cinstantaneoustransition)|Erstellt ein Übergangs Objekt und initialisiert seinen Endwert.|
+|[CInstantaneousTransition::CInstantaneousTransition](#cinstantaneoustransition)|Erstellt ein Übergangsobjekt und initialisiert dessen Endgültigen Wert.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CInstantaneousTransition::Create](#create)|Ruft die Übergangs Bibliothek auf, um ein gekapseltes Übergangs-com- (Überschreibt [cbasetransition:: Create](../../mfc/reference/cbasetransition-class.md#create).)|
+|[CInstantaneousTransition::Erstellen](#create)|Ruft die Übergangsbibliothek auf, um ein gekapseltes COM-Übergangsobjekt zu erstellen. (Überschreibt [CBaseTransition::Create](../../mfc/reference/cbasetransition-class.md#create).)|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CInstantaneousTransition::m_dblFinalValue](#m_dblfinalvalue)|Der Wert der Animations Variablen am Ende des Übergangs.|
+|[CInstantaneousTransition::m_dblFinalValue](#m_dblfinalvalue)|Der Wert der Animationsvariablen am Ende des Übergangs.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Während eines sofortigen Übergangs ändert sich der Wert der Animations Variablen sofort vom aktuellen Wert in einen angegebenen Endwert. Die Dauer dieses Übergangs ist immer 0 (null). Da alle Übergänge automatisch gelöscht werden, empfiehlt es sich, diese mithilfe des new-Operators zuzuweisen. Das gekapselte iuianimationtransition com-Objekt wird von canimationcontroller:: animategroup erstellt, bis es NULL ist. Das Ändern von Element Variablen nach der Erstellung dieses COM-Objekts hat keine Auswirkungen.
+Während eines sofortigen Übergangs ändert sich der Wert der Animationsvariablen sofort von ihrem aktuellen Wert in einen angegebenen Endwert. Die Dauer dieses Übergangs ist immer Null. Da alle Übergänge automatisch gelöscht werden, wird empfohlen, sie mit dem Operator new zuzuweisen. Das gekapselte IUIAnimationTransition COM-Objekt wird von CAnimationController::AnimateGroup erstellt, bis es NULL ist. Das Ändern von Membervariablen nach der Erstellung dieses COM-Objekts hat keine Auswirkungen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CBaseTransition](../../mfc/reference/cbasetransition-class.md)
 
@@ -65,9 +65,9 @@ Während eines sofortigen Übergangs ändert sich der Wert der Animations Variab
 
 **Header:** afxanimationcontroller.h
 
-##  <a name="cinstantaneoustransition"></a>Cinstantaneoustransition:: cinstantaneoustransition
+## <a name="cinstantaneoustransitioncinstantaneoustransition"></a><a name="cinstantaneoustransition"></a>CInstantaneousTransition::CInstantaneousTransition
 
-Erstellt ein Übergangs Objekt und initialisiert seinen Endwert.
+Erstellt ein Übergangsobjekt und initialisiert dessen Endgültigen Wert.
 
 ```
 CInstantaneousTransition(DOUBLE dblFinalValue);
@@ -76,11 +76,11 @@ CInstantaneousTransition(DOUBLE dblFinalValue);
 ### <a name="parameters"></a>Parameter
 
 *dblFinalValue*<br/>
-Der Wert der Animations Variablen am Ende des Übergangs.
+Der Wert der Animationsvariablen am Ende des Übergangs.
 
-##  <a name="create"></a>Cinstantaneoustransition:: Create
+## <a name="cinstantaneoustransitioncreate"></a><a name="create"></a>CInstantaneousTransition::Erstellen
 
-Ruft die Übergangs Bibliothek auf, um ein gekapseltes Übergangs-com-
+Ruft die Übergangsbibliothek auf, um ein gekapseltes COM-Übergangsobjekt zu erstellen.
 
 ```
 virtual BOOL Create(
@@ -91,15 +91,15 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *pLibrary*<br/>
-Ein Zeiger auf eine [iuianimationtransitionlibrary-Schnittstelle](/windows/win32/api/uianimation/nn-uianimation-iuianimationtransitionlibrary), die eine Bibliothek von Standard Übergängen definiert.
+Ein Zeiger auf eine [IUIAnimationTransitionLibrary-Schnittstelle](/windows/win32/api/uianimation/nn-uianimation-iuianimationtransitionlibrary), die eine Bibliothek mit Standardübergängen definiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Übergang erfolgreich erstellt wurde. andernfalls false.
+TRUE, wenn der Übergang erfolgreich erstellt wurde; andernfalls FALSE.
 
-##  <a name="m_dblfinalvalue"></a>Cinstantaneoustransition:: m_dblFinalValue
+## <a name="cinstantaneoustransitionm_dblfinalvalue"></a><a name="m_dblfinalvalue"></a>CInstantaneousTransition::m_dblFinalValue
 
-Der Wert der Animations Variablen am Ende des Übergangs.
+Der Wert der Animationsvariablen am Ende des Übergangs.
 
 ```
 DOUBLE m_dblFinalValue;

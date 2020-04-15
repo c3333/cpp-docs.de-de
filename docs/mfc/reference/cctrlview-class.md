@@ -1,5 +1,5 @@
 ---
-title: Cctrlview-Klasse
+title: CCtrlView-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CCtrlView
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - CCtrlView [MFC], m_dwDefaultStyle
 - CCtrlView [MFC], m_strClass
 ms.assetid: ff488596-1e71-451f-8fec-b0831a7b44e0
-ms.openlocfilehash: 334f139b81afeb06d57cbd128abe9e413b1fd0e7
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f77f1c265920bd160da790647ef754c55e6dbda3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69507152"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369358"
 ---
-# <a name="cctrlview-class"></a>Cctrlview-Klasse
+# <a name="cctrlview-class"></a>CCtrlView-Klasse
 
 Passt die Dokument-/Ansichtarchitektur den allgemeinen Steuerelemente an, die von Windows 98 und Windows NT-Versionen 3,51 (und höher) unterstützt werden.
 
@@ -37,31 +37,31 @@ class CCtrlView : public CView
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CCtrlView::CCtrlView](#cctrlview)|Erstellt ein `CCtrlView`-Objekt.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CCtrlView::OnDraw](#ondraw)|Wird von Framework aufgerufen, um mit dem angegebenen Gerätekontext zu zeichnen.|
+|[CCtrlView::OnDraw](#ondraw)|Wird vom Framework aufgerufen, um mit dem angegebenen Gerätekontext zu zeichnen.|
 |[CCtrlView::PreCreateWindow](#precreatewindow)|Wird vor der Erstellung des an diesem `CCtrlView`-Objekt angefügten Windows-Fensters aufgerufen.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CCtrlView::m_dwDefaultStyle](#m_dwdefaultstyle)|Enthält den Standardstil für die Ansichts Klasse.|
-|[Cctrlview:: m_strClass](#m_strclass)|Enthält den Namen der Windows-Klasse für die Ansichts Klasse.|
+|[CCtrlView::m_dwDefaultStyle](#m_dwdefaultstyle)|Enthält den Standardstil für die Ansichtsklasse.|
+|[CCtrlView::m_strClass](#m_strclass)|Enthält den Windows-Klassennamen für die Ansichtsklasse.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klasse `CCtrlView` und ihre Ableitungen, [CEditView](../../mfc/reference/ceditview-class.md), [CListView](../../mfc/reference/clistview-class.md), [CTreeView](../../mfc/reference/ctreeview-class.md)und [CRichEditView](../../mfc/reference/cricheditview-class.md), passen die Dokument-/Ansichtsarchitektur an die neuen allgemeinen Steuerelemente an, die von Windows 95/98 und Windows NT Version 3,51 unterstützt werden. und höher. Weitere Informationen zur Dokument-/Ansichtsarchitektur finden Sie unter [Dokument](../../mfc/document-view-architecture.md)-/Ansichtarchitektur.
+Die `CCtrlView` Klasse und ihre Ableitungen, [CEditView](../../mfc/reference/ceditview-class.md), [CListView](../../mfc/reference/clistview-class.md), [CTreeView](../../mfc/reference/ctreeview-class.md)und [CRichEditView](../../mfc/reference/cricheditview-class.md), passen die Dokumentansichtsarchitektur an die neuen allgemeinen Steuerelemente an, die von Windows 95/98 und Windows NT-Versionen 3.51 und höher unterstützt werden. Weitere Informationen zur Dokumentansichtsarchitektur finden Sie unter [Dokument-/Ansichtsarchitektur](../../mfc/document-view-architecture.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -75,7 +75,7 @@ Die Klasse `CCtrlView` und ihre Ableitungen, [CEditView](../../mfc/reference/ced
 
 **Header:** afxwin.h
 
-##  <a name="cctrlview"></a>Cctrlview:: cctrlview
+## <a name="cctrlviewcctrlview"></a><a name="cctrlview"></a>CCtrlView::CCtrlView
 
 Erstellt ein `CCtrlView`-Objekt.
 
@@ -87,39 +87,39 @@ CCtrlView(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszClass*<br/>
-Der Name der Windows-Klasse der Ansichts Klasse.
+*lpszKlasse*<br/>
+Windows-Klassenname der Ansichtsklasse.
 
 *dwStyle*<br/>
-Stil der Ansichts Klasse.
+Stil der Ansichtsklasse.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft den Konstruktor auf, wenn ein neues Rahmen Fenster erstellt oder ein Fenster geteilt wird. Überschreiben Sie [CView:: OnInitialUpdate](../../mfc/reference/cview-class.md#oninitialupdate) , um die Sicht zu initialisieren, nachdem das Dokument angefügt wurde. Rufen Sie [CWnd:: Create](../../mfc/reference/cwnd-class.md#create) oder [CWnd:: kreateex](../../mfc/reference/cwnd-class.md#createex) auf, um das Windows-Objekt zu erstellen.
+Das Framework ruft den Konstruktor auf, wenn ein neues Rahmenfenster erstellt oder ein Fenster geteilt wird. Überschreiben Sie [CView::OnInitialUpdate,](../../mfc/reference/cview-class.md#oninitialupdate) um die Ansicht zu initialisieren, nachdem das Dokument angefügt wurde. Rufen Sie [CWnd::Create](../../mfc/reference/cwnd-class.md#create) oder [CWnd::CreateEx](../../mfc/reference/cwnd-class.md#createex) auf, um das Windows-Objekt zu erstellen.
 
-##  <a name="m_strclass"></a>Cctrlview:: m_strClass
+## <a name="cctrlviewm_strclass"></a><a name="m_strclass"></a>CCtrlView::m_strClass
 
-Enthält den Namen der Windows-Klasse für die Ansichts Klasse.
+Enthält den Windows-Klassennamen für die Ansichtsklasse.
 
 ```
 CString m_strClass;
 ```
 
-##  <a name="m_dwdefaultstyle"></a>Cctrlview:: m_dwDefaultStyle
+## <a name="cctrlviewm_dwdefaultstyle"></a><a name="m_dwdefaultstyle"></a>CCtrlView::m_dwDefaultStyle
 
-Enthält den Standardstil für die Ansichts Klasse.
+Enthält den Standardstil für die Ansichtsklasse.
 
 ```
 DWORD m_dwDefaultStyle;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Stil wird angewendet, wenn ein Fenster erstellt wird.
 
-##  <a name="ondraw"></a>Cctrlview:: OnDraw
+## <a name="cctrlviewondraw"></a><a name="ondraw"></a>CCtrlView::OnDraw
 
-Wird von Framework aufgerufen, um den Inhalt des `CCtrlView` -Objekts mit dem angegebenen Gerätekontext zu zeichnen.
+Wird vom Framework aufgerufen, um `CCtrlView` den Inhalt des Objekts mithilfe des angegebenen Gerätekontexts zu zeichnen.
 
 ```
 virtual void OnDraw(CDC* pDC);
@@ -128,13 +128,13 @@ virtual void OnDraw(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-Ein Zeiger auf den Gerätekontext, in dem die Zeichnung auftritt.
+Ein Zeiger auf den Gerätekontext, in dem die Zeichnung ausgeführt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnDraw`wird in der Regel für die Bildschirm Anzeige aufgerufen, wobei ein von *PDC*angegebener Bildschirm Kontext übergeben wird.
+`OnDraw`wird in der Regel für die Bildschirmanzeige aufgerufen, die einen von *pDC*angegebenen Bildschirmgerätekontext übergibt.
 
-##  <a name="precreatewindow"></a>Cctrlview::P neu erstellen
+## <a name="cctrlviewprecreatewindow"></a><a name="precreatewindow"></a>CCtrlView::PreCreateWindow
 
 Wird vor der Erstellung des an diesem `CWnd`-Objekt angefügten Windows-Fensters aufgerufen.
 
@@ -144,22 +144,22 @@ virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 
 ### <a name="parameters"></a>Parameter
 
-*cs*<br/>
-Eine [foratestruct](/windows/win32/api/winuser/ns-winuser-createstructw) -Struktur.
+*Cs*<br/>
+Eine [CREATESTRUCT-Struktur.](/windows/win32/api/winuser/ns-winuser-createstructw)
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Fenster Erstellung fortgesetzt werden soll. 0, um einen Erstellungs Fehler anzugeben.
+Ein Wert ungleich Null, wenn die Fenstererstellung fortgesetzt werden soll; 0, um einen Erstellungsfehler anzuzeigen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion niemals direkt aufzurufen.
+Rufen Sie diese Funktion niemals direkt auf.
 
-Die Standard Implementierung dieser Funktion prüft auf einen null-Fenster Klassennamen und ersetzt einen entsprechenden Standardwert. Überschreiben Sie diese Member-Funktion `CREATESTRUCT` , um die Struktur vor dem Erstellen des Fensters zu ändern.
+Die Standardimplementierung dieser Funktion sucht nach einem NULL-Fensterklassennamen und ersetzt einen entsprechenden Standardwert. Überschreiben Sie diese Memberfunktion, um die `CREATESTRUCT` Struktur zu ändern, bevor das Fenster erstellt wird.
 
-Jede von `CCtrlView` abgeleitete Klasse fügt Ihrer außer Kraft Setzung von `PreCreateWindow`eine eigene Funktionalität hinzu. Entwurfs bedingt werden diese Ableitungen von `PreCreateWindow` nicht dokumentiert. Wenn Sie die für jede Klasse geeigneten Stile und die Abhängigkeiten zwischen den Stilen ermitteln möchten, können Sie den MFC-Quellcode für die Basisklasse Ihrer Anwendung untersuchen. Wenn Sie sich für das `PreCreateWindow`überschreiben entscheiden, können Sie bestimmen, ob die in der Basisklasse Ihrer Anwendung verwendeten Stile die erforderliche Funktionalität bereitstellen, indem Sie die Informationen verwenden, die aus dem MFC-Quellcode gesammelt wurden.
+Jede Klasse, `CCtrlView` die von der Außerkraftsetzung von `PreCreateWindow`abgeleitet wird, fügt ihre eigene Funktionalität hinzu. Diese Ableitungen von `PreCreateWindow` sind gestalterweise nicht dokumentiert. Um die Stile zu bestimmen, die für jede Klasse geeignet sind, und die Interdependenzen zwischen den Stilen, können Sie den MFC-Quellcode für die Basisklasse Ihrer Anwendung untersuchen. Wenn Sie überschreiben `PreCreateWindow`möchten, können Sie mithilfe der aus dem MFC-Quellcode gesammelten Informationen bestimmen, ob die in der Basisklasse Ihrer Anwendung verwendeten Stile die Erforderliche bieten.
 
-Weitere Informationen zum Ändern von Fenster Stilen finden Sie unter [Ändern der Stile eines Fensters, das von MFC erstellt wurde](../../mfc/changing-the-styles-of-a-window-created-by-mfc.md).
+Weitere Informationen zum Ändern von Fensterstilen finden Sie unter [Ändern der Stile eines fensters, das von MFC erstellt wurde.](../../mfc/changing-the-styles-of-a-window-created-by-mfc.md)
 
 ## <a name="see-also"></a>Siehe auch
 

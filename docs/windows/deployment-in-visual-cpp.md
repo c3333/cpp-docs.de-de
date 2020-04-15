@@ -5,12 +5,12 @@ helpviewer_keywords:
 - deploying applications [C++]
 - application deployment [C++]
 ms.assetid: d4b4ffc0-d2bd-4e4a-84a6-62f1c26f6a09
-ms.openlocfilehash: 67d5c7b0772eda55d1b653bd73f95ac93e31e644
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 5c4b75a65fcfb34a4988b176ffcb5b2afcb7ea13
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514812"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81377380"
 ---
 # <a name="deployment-in-visual-c"></a>Bereitstellung in Visual C++
 
@@ -26,7 +26,7 @@ Wenn Sie Visual C++-Bibliotheken zentral bereitstellen möchten, können Sie ein
 
 - Dateien für *verteilbare Pakete*, die eigenständige ausführbare Befehlszeilendateien sind und alle verteilbaren Visual C++ Bibliotheken enthalten, oder
 
-- *verteilbare Mergemodule* (MSM-Dateien), mit denen Sie bestimmte Bibliotheken bereitstellen können und die Sie in die Windows Installer-Datei (MSI) der Anwendung einschließen können.
+- *Verteilbare Mergemodule* (.msm-Dateien), die Sie zum Bereitstellen bestimmter Bibliotheken verwenden können und die Sie in die Windows Installer-Datei (.msi) Ihrer Anwendung aufnehmen.
 
 Eine verteilbare Paketdatei installiert alle Visual C++-Bibliotheken für eine bestimmte Systemarchitektur. Wenn Ihre Anwendung beispielsweise für x64 erstellt wurde, können Sie das verteilbare Paket „vcredist_x64.exe“ verwenden, um alle Visual C++-Bibliotheken zu installieren, die Ihre Anwendung verwendet. Sie können den Installer Ihrer Anwendung so programmieren, dass verteilbare Pakete ausgeführt werden, bevor Sie die Anwendung installieren.
 
@@ -53,4 +53,4 @@ Die Ladereihenfolge von Visual C++-Bibliotheken hängt vom System ab. Verwenden 
 ## <a name="see-also"></a>Siehe auch
 
 - [Deploying Desktop Applications (Bereitstellen von Desktopanwendungen)](deploying-native-desktop-applications-visual-cpp.md)
-- [Universelle CRT-Bereitstellung](universal-crt-deployment.md)
+- [Bereitstellung der universellen CRT](universal-crt-deployment.md)

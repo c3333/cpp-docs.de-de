@@ -56,12 +56,12 @@ helpviewer_keywords:
 - std::skipws [C++]
 - std::unitbuf [C++]
 - std::uppercase [C++]
-ms.openlocfilehash: 3ba2ba463bbd59bd8febccb73c37cc3b79a4c75b
-ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
+ms.openlocfilehash: 67ac9259110abbd03fc054ea4e60ed1715030dcc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80150628"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375412"
 ---
 # <a name="ltiosgt-functions"></a>&lt;ios&gt;-Funktionen
 
@@ -80,13 +80,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig werden Variablen vom Typ **bool** als 1 oder 0 angezeigt.
 
-`boolalpha` effektiv `str.`[Setf](../standard-library/ios-base-class.md#setf)(`ios_base::boolalpha`) aufruft, und gibt dann *Str*zurück.
+`boolalpha`ruft `str.` [setf](../standard-library/ios-base-class.md#setf) `ios_base::boolalpha`( ) effektiv auf und gibt dann *str*zurück.
 
 [noboolalpha](../standard-library/ios-functions.md#noboolalpha) kehrt den Effekt von `boolalpha` um.
 
@@ -117,7 +117,7 @@ true
 true
 ```
 
-## <a name="dec"></a><a name="dec"></a>31.12.2012
+## <a name="dec"></a><a name="dec"></a>Dec
 
 Gibt an, dass ganzzahlige Variablen in Basis-10-Schreibweise angezeigt werden.
 
@@ -132,13 +132,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig werden Ganzzahlvariablen in Basis-10-Schreibweise angezeigt.
 
-`dec` effektiv `str.`[Setf](../standard-library/ios-base-class.md#setf)(`ios_base::dec`, `ios_base::basefield`) aufruft, und gibt dann *Str*zurück.
+`dec`ruft `str.` [setf](../standard-library/ios-base-class.md#setf) `ios_base::dec`( `ios_base::basefield`, ) effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -170,7 +170,7 @@ int main( )
 100
 ```
 
-## <a name="ltiosgt-defaultfloat"></a><a name="ios_defaultfloat"></a>&lt;IOS-&gt; DefaultFloat
+## <a name="ltiosgt-defaultfloat"></a><a name="ios_defaultfloat"></a> &lt;ios&gt; defaultfloat
 
 Konfiguriert die Flags eines `ios_base`-Objekts, sodass ein Standard-Anzeigeformat für Floatwerte verwendet wird.
 
@@ -180,14 +180,14 @@ ios_base& defaultfloat(ios_base& iosbase);
 
 ### <a name="parameters"></a>Parameter
 
-*_Iosbase*\
+*_iosbase*\
 Ein `ios_base`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator ruft `iosbase.`[ios_base:: unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::floatfield)`auf und gibt dann *iosbase*zurück.
+Der Manipulator `iosbase.`ruft [effektiv ios_base::unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::floatfield)`auf und gibt dann *iosbase*zurück.
 
-## <a name="fixed"></a><a name="fixed"></a>festen
+## <a name="fixed"></a><a name="fixed"></a>Fest
 
 Gibt an, dass eine Gleitkommazahl in fester Dezimalschreibweise angezeigt wird.
 
@@ -202,13 +202,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-`fixed` ist die Standard Anzeige Notation für Gleit Komma Zahlen. [scientific](../standard-library/ios-functions.md#scientific) bewirkt, dass Gleitkommazahlen in wissenschaftlicher Schreibweise angezeigt werden.
+`fixed`ist die Standardanzeigenotation für Gleitkommazahlen. [scientific](../standard-library/ios-functions.md#scientific) bewirkt, dass Gleitkommazahlen in wissenschaftlicher Schreibweise angezeigt werden.
 
-Der Manipulator ruft *Str*auf. [Setf](../standard-library/ios-base-class.md#setf)(`ios_base::fixed`, `ios_base::floatfield`) und gibt dann *Str*zurück.
+Der Manipulator ruft effektiv *str*. [setf](../standard-library/ios-base-class.md#setf) `ios_base::fixed`( `ios_base::floatfield` , ), und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -235,7 +235,7 @@ int main( )
 1.1
 ```
 
-## <a name="hex"></a><a name="hex"></a>dchen
+## <a name="hex"></a><a name="hex"></a>Hex
 
 Gibt an, dass ganzzahlige Variablen in Basis-16-Schreibweise angezeigt werden soll.
 
@@ -250,17 +250,17 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig werden Ganzzahlvariablen in Basis-10-Schreibweise angezeigt. Ebenfalls verändern [dec](../standard-library/ios-functions.md#dec) und [oct](../standard-library/ios-functions.md#oct) die Anzeige von Ganzzahlvariablen.
 
-Der Manipulator ruft `str`effektiv auf **.** [Setf](../standard-library/ios-base-class.md#setf)(`ios_base::hex`, `ios_base::basefield`) und gibt dann *Str*zurück.
+Der Manipulator `str`ruft effektiv **auf.** [setf](../standard-library/ios-base-class.md#setf) `ios_base::hex`( `ios_base::basefield`, ), und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
-Unter [Dec](../standard-library/ios-functions.md#dec) finden Sie ein Beispiel für die Verwendung von `hex`.
+Ein [dec](../standard-library/ios-functions.md#dec) Beispiel für die Verwendung `hex`von .
 
 ## <a name="hexfloat"></a><a name="hexfloat"></a>hexfloat
 
@@ -276,7 +276,7 @@ enum class io_errc {
 };
 ```
 
-## <a name="internal"></a><a name="internal"></a>Verbrennungs
+## <a name="internal"></a><a name="internal"></a>Interne
 
 Bewirkt, dass ein Nummernzeichen linksbündig und die Zahl rechtsbündig ausgerichtet wird.
 
@@ -291,13 +291,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Durch [showpos](../standard-library/ios-functions.md#showpos) zeigt das Nummernzeichen für positive Zahlen an.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(`[ios_base:: Internal](../standard-library/ios-base-class.md#fmtflags)`,` [ios_base::-Feld](../standard-library/ios-base-class.md#fmtflags)`)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(`[ios_base::internal](../standard-library/ios-base-class.md#fmtflags) `,` [ios_base::adjustfield](../standard-library/ios-base-class.md#fmtflags)`)`auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -334,7 +334,7 @@ template <> struct is_error_code_enum<io_errc> : public true_type { };
 const error_category& iostream_category() noexcept;
 ```
 
-## <a name="left"></a><a name="left"></a>linken
+## <a name="left"></a><a name="left"></a>Links
 
 Bewirkt, dass Text, der nicht so breit ist wie die Ausgabebreite, im Stream linksbündig angezeigt wird.
 
@@ -349,11 +349,11 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::left, ios_base::adjustfield)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::left, ios_base::adjustfield)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -404,13 +404,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 In der Standardeinstellung ist `noboolalpha` aktiviert.
 
-`noboolalpha` `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::boolalpha)`effektiv aufruft, und gibt dann *Str*zurück.
+`noboolalpha`ruft `str.`effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::boolalpha)`auf und gibt dann *str*zurück.
 
 [boolalpha](../standard-library/ios-functions.md#boolalpha) kehrt den Effekt von `noboolalpha` um.
 
@@ -433,13 +433,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 `noshowbase` ist standardmäßig aktiviert. Verwenden Sie [showbase](../standard-library/ios-functions.md#showbase), um die Schreibweisenbasis von Zahlen zu kennzeichnen.
 
-Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::showbase)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::showbase)`auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -460,13 +460,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 `noshowpoint` ist standardmäßig aktiviert; verwenden Sie [showpoint](../standard-library/ios-functions.md#showpoint) und [precision](../standard-library/ios-base-class.md#precision), um Nullen hinter dem Dezimaltrennzeichen angezeigt zu bekommen.
 
-Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::showpoint)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::showpoint)`auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -507,19 +507,19 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 `noshowpos` ist standardmäßig aktiviert.
 
-Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::showps)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::showps)`auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
 Unter [showpos](../standard-library/ios-functions.md#showpos) finden Sie ein Beispiel für die Verwendung von `noshowpos`.
 
-## <a name="noskipws"></a><a name="noskipws"></a>Noskipws
+## <a name="noskipws"></a><a name="noskipws"></a>noskipws
 
 Bewirkt, dass Leerzeichen vom Eingabestream gelesen werden.
 
@@ -534,13 +534,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 In der Standardeinstellung ist [skipws](../standard-library/ios-functions.md#skipws) aktiviert. Wenn im Eingabestream ein Leerzeichen erkannt wird, wird dadurch das Ende des Puffers markiert.
 
-Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::skipws)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::skipws)`auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -576,13 +576,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 [unitbuf](../standard-library/ios-functions.md#unitbuf) bewirkt, dass der Puffer verarbeitet wird, wenn dieser nicht leer ist.
 
-Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::unitbuf)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::unitbuf)`auf und gibt dann *str*zurück.
 
 ## <a name="nouppercase"></a><a name="nouppercase"></a>nouppercase
 
@@ -599,17 +599,17 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::uppercase)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft effektiv [unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::uppercase)`auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
 Unter [uppercase](../standard-library/ios-functions.md#uppercase) finden Sie ein Beispiel für die Verwendung von `nouppercase`.
 
-## <a name="oct"></a><a name="oct"></a>31.10
+## <a name="oct"></a><a name="oct"></a>Okt
 
 Gibt an, dass ganzzahlige Variablen in Basis-8-Schreibweise angezeigt werden.
 
@@ -624,17 +624,17 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig werden Ganzzahlvariablen in Basis-10-Schreibweise angezeigt. Ebenfalls verändern [dec](../standard-library/ios-functions.md#dec) und [hex](../standard-library/ios-functions.md#hex) die Anzeige von Ganzzahlvariablen.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::oct, ios_base::basefield)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::oct, ios_base::basefield)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
-Unter [Dec](../standard-library/ios-functions.md#dec) finden Sie ein Beispiel für die Verwendung von `oct`.
+Ein [dec](../standard-library/ios-functions.md#dec) Beispiel für die Verwendung `oct`von .
 
 ## <a name="right"></a><a name="right"></a>Richting
 
@@ -651,13 +651,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 [left](../standard-library/ios-functions.md#left) modifiziert auch die Textausrichtung.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::right, ios_base::adjustfield)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::right, ios_base::adjustfield)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -693,7 +693,7 @@ int main( )
                    5
 ```
 
-## <a name="scientific"></a><a name="scientific"></a>wissenschaftlich
+## <a name="scientific"></a><a name="scientific"></a>Wissenschaftliche
 
 Bewirkt, dass Gleitkommazahlen in wissenschaftlicher Schreibweise angezeigt werden.
 
@@ -708,13 +708,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Für Gleitkommazahlen ist die [fixed](../standard-library/ios-functions.md#fixed)-Schreibweise standardmäßig aktiviert.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::scientific, ios_base::floatfield)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::scientific, ios_base::floatfield)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -738,7 +738,7 @@ int main( )
 1.002300e+002
 ```
 
-## <a name="showbase"></a><a name="showbase"></a>Showbase
+## <a name="showbase"></a><a name="showbase"></a>showbase
 
 Gibt die Schreibweisenbasis an, mit der eine Zahl angezeigt wird.
 
@@ -753,13 +753,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Schreibweisenbasis einer Zahl kann mit [dec](../standard-library/ios-functions.md#dec), [oct](../standard-library/ios-functions.md#oct) und [hex](../standard-library/ios-functions.md#hex) geändert werden.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::showbase)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::showbase)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -792,7 +792,7 @@ int main( )
 144
 ```
 
-## <a name="showpoint"></a><a name="showpoint"></a>showpoint
+## <a name="showpoint"></a><a name="showpoint"></a>Showpoint
 
 Zeigt den ganzzahligen Teil einer Gleitkommazahl und Ziffern rechts vom Dezimaltrennzeichen an, selbst wenn der Bruchteil null ist.
 
@@ -807,19 +807,19 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 [noshowpoint](../standard-library/ios-functions.md#noshowpoint) ist standardmäßig aktiviert.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::showpoint)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::showpoint)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
 Unter [noshowpoint](../standard-library/ios-functions.md#noshowpoint) finden Sie ein Beispiel für die Verwendung von `showpoint`.
 
-## <a name="showpos"></a><a name="showpos"></a>Showpos
+## <a name="showpos"></a><a name="showpos"></a>showpos
 
 Bewirkt, dass positive Zahlen explizit signiert werden.
 
@@ -834,13 +834,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 [noshowpos](../standard-library/ios-functions.md#noshowpos) ist die Standardeinstellung.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::showpos)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::showpos)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -879,13 +879,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 In der Standardeinstellung ist `skipws` aktiviert. [noskipws](../standard-library/ios-functions.md#noskipws) bewirkt, dass Leerzeichen aus Eingabestream gelesen werden.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::skipws)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(ios_base::skipws)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -916,7 +916,7 @@ Enter three characters: 1 2 3
 .3.
 ```
 
-## <a name="unitbuf"></a><a name="unitbuf"></a>Unitbuf
+## <a name="unitbuf"></a><a name="unitbuf"></a>unitbuf
 
 Bewirkt, dass die Ausgabe verarbeitet wird, wenn der Puffer nicht leer ist.
 
@@ -931,7 +931,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -939,9 +939,9 @@ Bitte beachten Sie, dass `endl` auch den Puffer leert.
 
 [nounitbuf](../standard-library/ios-functions.md#nounitbuf) ist standardmäßig aktiviert.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(`[ios_base:: Unitbuf](../standard-library/ios-base-class.md#fmtflags) -`)`auf und gibt dann *Str*zurück.
+Der Manipulator `str.`ruft [setf](../standard-library/ios-base-class.md#setf)`(`[ios_base::unitbuf](../standard-library/ios-base-class.md#fmtflags)`)`effektiv auf und gibt dann *str*zurück.
 
-## <a name="uppercase"></a><a name="uppercase"></a> uppercase
+## <a name="uppercase"></a><a name="uppercase"></a>Großbuchstaben
 
 Gibt an, dass hexadezimale Ziffern und der Exponent in wissenschaftlicher Schreibweise in Großbuchstaben angezeigt werden.
 
@@ -956,13 +956,13 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
+Ein Verweis auf das Objekt, von dem *str* abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 [nouppercase](../standard-library/ios-functions.md#nouppercase) ist standardmäßig aktiviert.
 
-Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(`[ios_base:: Großbuchstaben](../standard-library/ios-base-class.md#fmtflags)`)`auf und gibt dann *Str*zurück.
+Der Manipulator ruft `str.` [setf](../standard-library/ios-base-class.md#setf)`(`[ios_base::großschreibung](../standard-library/ios-base-class.md#fmtflags)`)`effektiv auf und gibt dann *str*zurück.
 
 ### <a name="example"></a>Beispiel
 

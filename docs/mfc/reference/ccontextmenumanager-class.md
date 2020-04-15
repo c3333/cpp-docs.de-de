@@ -1,5 +1,5 @@
 ---
-title: Ccontextmenumanager-Klasse
+title: CContextMenuManager-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CContextMenuManager
@@ -28,16 +28,16 @@ helpviewer_keywords:
 - CContextMenuManager [MFC], ShowPopupMenu
 - CContextMenuManager [MFC], TrackPopupMenu
 ms.assetid: 1de20640-243c-47e1-85de-1baa4153bc83
-ms.openlocfilehash: c8a51a33c69b09d0ecd61520b5f1c9ff18c290a0
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: f322f40beabeb9a837dda01c95e9f950a07585d1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425982"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369420"
 ---
-# <a name="ccontextmenumanager-class"></a>Ccontextmenumanager-Klasse
+# <a name="ccontextmenumanager-class"></a>CContextMenuManager-Klasse
 
-Das `CContextMenuManager` Objekt verwaltet Kontextmenüs, auch als Kontextmenüs bezeichnet.
+Das `CContextMenuManager` Objekt verwaltet Kontextmenüs, die auch als Kontextmenüs bezeichnet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -49,55 +49,55 @@ class CContextMenuManager : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Ccontextmenumanager:: ccontextmenumanager](#ccontextmenumanager)|Erstellt ein `CContextMenuManager`-Objekt.|
+|[CContextMenuManager::CContextMenuManager](#ccontextmenumanager)|Erstellt ein `CContextMenuManager`-Objekt.|
 |`CContextMenuManager::~CContextMenuManager`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Ccontextmenumanager:: AddMenu](#addmenu)|Fügt ein neues Kontextmenü hinzu.|
-|[Ccontextmenumanager:: getmenubyid](#getmenubyid)|Gibt ein Handle für das Menü zurück, das der angegebenen Ressourcen-ID zugeordnet ist.|
-|[Ccontextmenumanager:: getmenubyname](#getmenubyname)|Gibt ein Handle für das Menü zurück, das mit dem angegebenen Menünamen übereinstimmt.|
-|[Ccontextmenumanager:: getmenunames](#getmenunames)|Gibt eine Liste von Menü Namen zurück.|
-|[Ccontextmenumanager:: LoadState](#loadstate)|Lädt Kontextmenüs, die in der Windows-Registrierung gespeichert sind.|
-|[Ccontextmenumanager:: ResetState](#resetstate)|Löscht die Kontextmenüs aus dem Kontextmenü-Manager.|
-|[Ccontextmenumanager:: SaveState](#savestate)|Speichert Kontextmenüs in der Windows-Registrierung.|
-|[Ccontextmenumanager:: setdontcloseactivemenu](#setdontcloseactivemenu)|Steuert, ob das `CContextMenuManager` das aktive Kontextmenü schließt, wenn ein neues Kontextmenü angezeigt wird.|
-|[Ccontextmenumanager:: showPopupMenu](#showpopupmenu)|Zeigt das angegebene Kontextmenü an.|
-|[Ccontextmenumanager:: TrackPopupMenu](#trackpopupmenu)|Zeigt das angegebene Kontextmenü an. Gibt den Index des ausgewählten Menübefehls zurück.|
+|[CContextMenuManager::AddMenu](#addmenu)|Fügt ein neues Kontextmenü hinzu.|
+|[CContextMenuManager::GetMenuById](#getmenubyid)|Gibt ein Handle an das Menü zurück, das der bereitgestellten Ressourcen-ID zugeordnet ist.|
+|[CContextMenuManager::GetMenuByName](#getmenubyname)|Gibt ein Handle an das Menü zurück, das mit dem angegebenen Menünamen übereinstimmt.|
+|[CContextMenuManager::GetMenuNames](#getmenunames)|Gibt eine Liste mit Menünamen zurück.|
+|[CContextMenuManager::LoadState](#loadstate)|Lädt In der Windows-Registrierung gespeicherte Kontextmenüs.|
+|[CContextMenuManager::ResetState](#resetstate)|Löscht die Kontextmenüs aus dem Kontextmenü-Manager.|
+|[CContextMenuManager::SaveState](#savestate)|Speichert Kontextmenüs in der Windows-Registrierung.|
+|[CContextMenuManager::SetDontCloseActiveMenu](#setdontcloseactivemenu)|Steuert, `CContextMenuManager` ob das aktive Kontextmenü geschlossen wird, wenn ein neues Kontextmenü angezeigt wird.|
+|[CContextMenuManager::ShowPopupMenu](#showpopupmenu)|Zeigt das angegebene Kontextmenü an.|
+|[CContextMenuManager::TrackPopupMenu](#trackpopupmenu)|Zeigt das angegebene Kontextmenü an. Gibt den Index des ausgewählten Menübefehls zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CContextMenuManager` verwaltet Kontextmenüs und stellt sicher, dass Sie über ein konsistentes Erscheinungsbild verfügen.
+`CContextMenuManager`verwaltet Kontextmenüs und stellt sicher, dass sie ein einheitliches Erscheinungsbild haben.
 
-Sie sollten kein `CContextMenuManager` Objekt manuell erstellen. Das Framework der Anwendung erstellt das `CContextMenuManager` Objekt. Sie sollten jedoch [CWinAppEx:: InitContextMenuManager](../../mfc/reference/cwinappex-class.md#initcontextmenumanager) aufrufen, wenn Ihre Anwendung initialisiert wird. Verwenden Sie nach dem Initialisieren des Kontext-Managers die Methode [CWinAppEx:: getcontextmenumanager](../../mfc/reference/cwinappex-class.md#getcontextmenumanager) , um einen Zeiger auf den Kontext-Manager für Ihre Anwendung zu erhalten.
+Sie sollten ein `CContextMenuManager` Objekt nicht manuell erstellen. Das Framework Ihrer Anwendung `CContextMenuManager` erstellt das Objekt. Sie sollten jedoch [CWinAppEx::InitContextMenuManager](../../mfc/reference/cwinappex-class.md#initcontextmenumanager) aufrufen, wenn Ihre Anwendung initialisiert wird. Nachdem Sie den Kontext-Manager initialisiert haben, verwenden Sie die Methode [CWinAppEx::GetContextMenuManager,](../../mfc/reference/cwinappex-class.md#getcontextmenumanager) um einen Zeiger auf den Kontext-Manager für Ihre Anwendung zu erhalten.
 
-Sie können zur Laufzeit Kontextmenüs erstellen, indem Sie `AddMenu`aufrufen. Wenn Sie das Menü anzeigen möchten, ohne zuerst Benutzereingaben zu empfangen, wenden Sie `ShowPopupMenu`an. `TrackPopupMenu` wird verwendet, wenn Sie ein Menü Erstellen und auf Benutzereingaben warten möchten. `TrackPopupMenu` gibt den Index des ausgewählten Befehls oder "0" zurück, wenn der Benutzer beendet wurde, ohne etwas auszuwählen.
+Sie können Zur Laufzeit Kontextmenüs `AddMenu`erstellen, indem Sie aufrufen. Wenn Sie das Menü anzeigen möchten, ohne `ShowPopupMenu`vorher Benutzereingaben zu erhalten, rufen Sie an. `TrackPopupMenu`wird verwendet, wenn Sie ein Menü erstellen und auf Benutzereingaben warten möchten. `TrackPopupMenu`gibt den Index des ausgewählten Befehls oder 0 zurück, wenn der Benutzer beendet wurde, ohne etwas auszuwählen.
 
-Der `CContextMenuManager` kann auch seinen Status speichern und in die Windows-Registrierung laden.
+Der `CContextMenuManager` kann auch speichern und seinen Status in die Windows-Registrierung laden.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie einem `CContextMenuManager` Objekt ein Menü hinzugefügt wird und wie das aktive Popup Menü nicht geschlossen wird, wenn das `CContextMenuManager`-Objekt ein neues Popup Menü anzeigt. Dieser Code Ausschnitt ist Teil des Beispiels für [benutzerdefinierte Seiten](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird veranschaulicht, `CContextMenuManager` wie einem Objekt ein Menü hinzugefügt wird und `CContextMenuManager` wie das aktive Popupmenü nicht geschlossen wird, wenn das Objekt ein neues Popupmenü anzeigt. Dieser Codeausschnitt ist Teil des [Beispiels für benutzerdefinierte Seiten](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_CustomPages#4](../../mfc/reference/codesnippet/cpp/ccontextmenumanager-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 `CContextMenuManager`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afxcontextmenumanager. h
+**Kopfzeile:** afxcontextmenumanager.h
 
-##  <a name="addmenu"></a>Ccontextmenumanager:: AddMenu
+## <a name="ccontextmenumanageraddmenu"></a><a name="addmenu"></a>CContextMenuManager::AddMenu
 
-Fügt dem [ccontextmenumanager](../../mfc/reference/ccontextmenumanager-class.md)ein neues Kontextmenü hinzu.
+Fügt dem [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)ein neues Kontextmenü hinzu.
 
 ```
 BOOL AddMenu(
@@ -111,38 +111,38 @@ BOOL AddMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*uimerunameresid*<br/>
-in Eine Ressourcen-ID für eine Zeichenfolge, die den Namen für das neue Menü enthält.
+*uiMenuNameResId*<br/>
+[in] Eine Ressourcen-ID für eine Zeichenfolge, die den Namen für das neue Menü enthält.
 
-*uimaufuresid*<br/>
-in Die Menü Ressourcen-ID.
+*uiMenuResId*<br/>
+[in] Die Menüressourcen-ID.
 
-*lpszname*<br/>
-in Eine Zeichenfolge, die den Namen für das neue Menü enthält.
+*lpszName*<br/>
+[in] Eine Zeichenfolge, die den Namen für das neue Menü enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Methode erfolgreich war. 0, wenn die Methode fehlschlägt.
+Ein Wert ungleich Null, wenn die Methode erfolgreich war; 0, wenn die Methode fehlschlägt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode schlägt fehl, wenn *uimenuresid* ungültig ist oder ein anderes Menü mit dem gleichen Namen bereits im `CContextMenuManager`vorhanden ist.
+Diese Methode schlägt fehl, wenn *uiMenuResId* ungültig ist oder wenn `CContextMenuManager`sich bereits ein anderes Menü mit demselben Namen im befindet.
 
-##  <a name="ccontextmenumanager"></a>Ccontextmenumanager:: ccontextmenumanager
+## <a name="ccontextmenumanagerccontextmenumanager"></a><a name="ccontextmenumanager"></a>CContextMenuManager::CContextMenuManager
 
-Erstellt ein [ccontextmenumanager](../../mfc/reference/ccontextmenumanager-class.md) -Objekt.
+Erstellt ein [CContextMenuManager-Objekt.](../../mfc/reference/ccontextmenumanager-class.md)
 
 ```
 CContextMenuManager();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In den meisten Fällen sollten Sie keine `CContextMenuManager` manuell erstellen. Das Framework der Anwendung erstellt das `CContextMenuManager` Objekt. Sie sollten [CWinAppEx:: InitContextMenuManager](../../mfc/reference/cwinappex-class.md#initcontextmenumanager) während der Initialisierung der Anwendung aufrufen. Rufen Sie [CWinAppEx:: getcontextmenumanager](../../mfc/reference/cwinappex-class.md#getcontextmenumanager)auf, um einen Zeiger auf den Kontext-Manager zu erhalten.
+In den meisten Fällen sollten `CContextMenuManager` Sie keine manuell erstellen. Das Framework Ihrer Anwendung `CContextMenuManager` erstellt das Objekt. Sie sollten [CWinAppEx::InitContextMenuManager](../../mfc/reference/cwinappex-class.md#initcontextmenumanager) während der Initialisierung Ihrer Anwendung aufrufen. Um einen Zeiger auf den Kontext-Manager zu erhalten, rufen Sie [CWinAppEx::GetContextMenuManager](../../mfc/reference/cwinappex-class.md#getcontextmenumanager)auf.
 
-##  <a name="getmenubyid"></a>Ccontextmenumanager:: getmenubyid
+## <a name="ccontextmenumanagergetmenubyid"></a><a name="getmenubyid"></a>CContextMenuManager::GetMenuById
 
-Gibt ein Handle für das Menü zurück, das einer bestimmten Ressourcen-ID zugeordnet ist.
+Gibt ein Handle an das Menü zurück, das einer bestimmten Ressourcen-ID zugeordnet ist.
 
 ```
 HMENU GetMenuById(UINT nMenuResId) const;
@@ -150,16 +150,16 @@ HMENU GetMenuById(UINT nMenuResId) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nmenuresid*<br/>
-in Die Ressourcen-ID für das Menü.
+*nMenuResId*<br/>
+[in] Die Ressourcen-ID für das Menü.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Handle für das zugeordnete Menü oder `NULL`, wenn das Menü nicht gefunden wurde.
+Ein Handle zum zugeordneten Menü oder `NULL` wenn das Menü nicht gefunden wird.
 
-##  <a name="getmenubyname"></a>Ccontextmenumanager:: getmenubyname
+## <a name="ccontextmenumanagergetmenubyname"></a><a name="getmenubyname"></a>CContextMenuManager::GetMenuByName
 
-Gibt ein Handle für ein bestimmtes Menü zurück.
+Gibt ein Handle an ein bestimmtes Menü zurück.
 
 ```
 HMENU GetMenuByName(
@@ -169,23 +169,23 @@ HMENU GetMenuByName(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszname*<br/>
-in Eine Zeichenfolge, die den Namen des abzurufenden Menüs enthält.
+*lpszName*<br/>
+[in] Eine Zeichenfolge, die den Namen des abzurufenden Menüs enthält.
 
-*puiorigresid*<br/>
-vorgenommen Ein Zeiger auf einen uint. Dieser Parameter enthält die Ressourcen-ID des angegebenen Menüs, sofern gefunden.
+*puiOrigResID*<br/>
+[out] Ein Zeiger auf ein UINT. Dieser Parameter enthält die Ressourcen-ID des angegebenen Menüs, falls gefunden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Handle für das Menü, das mit dem Namen übereinstimmt, der von *lpszname*angegeben wurde. NULL, wenn kein Menü namens *lpszname*vorhanden ist.
+Ein Handle für das Menü, das mit dem Namen übereinstimmt, der von *lpszName*angegeben wurde. NULL, wenn kein Menü namens *lpszName*vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn diese Methode ein Menü findet, das *lpszname*entspricht, speichert `GetMenuByName` die Menü Ressourcen-ID im Parameter *puiorigresid*.
+Wenn diese Methode ein Menü findet, `GetMenuByName` das *mit lpszName*übereinstimmt, speichert die Menüressourcen-ID im Parameter *puiOrigResID*.
 
-##  <a name="getmenunames"></a>Ccontextmenumanager:: getmenunames
+## <a name="ccontextmenumanagergetmenunames"></a><a name="getmenunames"></a>CContextMenuManager::GetMenuNames
 
-Gibt die Liste der dem [ccontextmenumanager](../../mfc/reference/ccontextmenumanager-class.md)hinzugefügten Menü Namen zurück.
+Gibt die Liste der Menünamen zurück, die dem [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)hinzugefügt wurden.
 
 ```
 void GetMenuNames(CStringList& listOfNames) const;
@@ -193,12 +193,12 @@ void GetMenuNames(CStringList& listOfNames) const;
 
 ### <a name="parameters"></a>Parameter
 
-*listobnames*<br/>
-vorgenommen Ein Verweis auf einen [CStringList](../../mfc/reference/cstringlist-class.md) -Parameter. Diese Methode schreibt die Liste der Menü Namen in diesen Parameter.
+*listOfNames*<br/>
+[out] Ein Verweis auf einen [CStringList-Parameter.](../../mfc/reference/cstringlist-class.md) Diese Methode schreibt die Liste der Menünamen in diesen Parameter.
 
-##  <a name="loadstate"></a>Ccontextmenumanager:: LoadState
+## <a name="ccontextmenumanagerloadstate"></a><a name="loadstate"></a>CContextMenuManager::LoadState
 
-Lädt Informationen, die der [ccontextmenumanager-Klasse](../../mfc/reference/ccontextmenumanager-class.md) zugeordnet sind, aus der Windows-Registrierung.
+Lädt Informationen, die der [CContextMenuManager-Klasse](../../mfc/reference/ccontextmenumanager-class.md) zugeordnet sind, aus der Windows-Registrierung.
 
 ```
 virtual BOOL LoadState(LPCTSTR lpszProfileName = NULL);
@@ -206,22 +206,22 @@ virtual BOOL LoadState(LPCTSTR lpszProfileName = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszprofilename*<br/>
-in Eine Zeichenfolge, die den relativen Pfad eines Registrierungsschlüssels enthält.
+*lpszProfileName*<br/>
+[in] Eine Zeichenfolge, die den relativen Pfad eines Registrierungsschlüssels enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Methode erfolgreich ist. andernfalls 0.
+Ein Wert ungleich Null, wenn die Methode erfolgreich ist; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der *lpszprofilename* -Parameter ist nicht der absolute Pfad für einen Registrierungs Eintrag. Dabei handelt es sich um einen relativen Pfad, der am Ende des Standard Registrierungsschlüssels für Ihre Anwendung hinzugefügt wird. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](../../mfc/reference/cwinappex-class.md#getregistrybase) bzw. [CWinAppEx:: setregistrybase](../../mfc/reference/cwinappex-class.md#setregistrybase) .
+Der Parameter *lpszProfileName* ist nicht der absolute Pfad für einen Registrierungseintrag. Es handelt sich um einen relativen Pfad, der am Ende des Standardregistrierungsschlüssels für Ihre Anwendung hinzugefügt wird. Um den Standardregistrierungsschlüssel abzudateien oder festzulegen, verwenden Sie die Methoden [CWinAppEx::GetRegistryBase](../../mfc/reference/cwinappex-class.md#getregistrybase) bzw. [CWinAppEx::SetRegistryBase.](../../mfc/reference/cwinappex-class.md#setregistrybase)
 
-Verwenden Sie die-Methode [ccontextmenumanager:: SaveState](#savestate) , um die Kontextmenüs in der Registrierung zu speichern.
+Verwenden Sie die Methode [CContextMenuManager::SaveState,](#savestate) um die Verknüpfungsmenüs in der Registrierung zu speichern.
 
-##  <a name="resetstate"></a>Ccontextmenumanager:: ResetState
+## <a name="ccontextmenumanagerresetstate"></a><a name="resetstate"></a>CContextMenuManager::ResetState
 
-Löscht alle Elemente aus den Kontextmenüs, die der [ccontextmenumanager-Klasse](../../mfc/reference/ccontextmenumanager-class.md)zugeordnet sind.
+Löscht alle Elemente aus den Kontextmenüs, die der [CContextMenuManager-Klasse](../../mfc/reference/ccontextmenumanager-class.md)zugeordnet sind.
 
 ```
 virtual BOOL ResetState();
@@ -229,15 +229,15 @@ virtual BOOL ResetState();
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Methode erfolgreich ist. FALSE, wenn ein Fehler auftritt.
+TRUE, wenn die Methode erfolgreich ist; FALSE, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode löscht die Popup Menüs und entfernt Sie aus der `CContextMenuManager`.
+Diese Methode löscht die Popupmenüs und entfernt `CContextMenuManager`sie aus der .
 
-##  <a name="savestate"></a>Ccontextmenumanager:: SaveState
+## <a name="ccontextmenumanagersavestate"></a><a name="savestate"></a>CContextMenuManager::SaveState
 
-Speichert die der [ccontextmenumanager-Klasse](../../mfc/reference/ccontextmenumanager-class.md) zugeordneten Informationen in der Windows-Registrierung.
+Speichert Informationen, die der [CContextMenuManager-Klasse](../../mfc/reference/ccontextmenumanager-class.md) zugeordnet sind, in der Windows-Registrierung.
 
 ```
 virtual BOOL SaveState(LPCTSTR lpszProfileName = NULL);
@@ -245,22 +245,22 @@ virtual BOOL SaveState(LPCTSTR lpszProfileName = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszprofilename*<br/>
-in Eine Zeichenfolge, die den relativen Pfad eines Registrierungsschlüssels enthält.
+*lpszProfileName*<br/>
+[in] Eine Zeichenfolge, die den relativen Pfad eines Registrierungsschlüssels enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Methode erfolgreich ist. andernfalls 0.
+Ein Wert ungleich Null, wenn die Methode erfolgreich ist; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der *lpszprofilename* -Parameter ist nicht der absolute Pfad für einen Registrierungs Eintrag. Dabei handelt es sich um einen relativen Pfad, der am Ende des Standard Registrierungsschlüssels für Ihre Anwendung hinzugefügt wird. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](../../mfc/reference/cwinappex-class.md#getregistrybase) bzw. [CWinAppEx:: setregistrybase](../../mfc/reference/cwinappex-class.md#setregistrybase) .
+Der Parameter *lpszProfileName* ist nicht der absolute Pfad für einen Registrierungseintrag. Es handelt sich um einen relativen Pfad, der am Ende des Standardregistrierungsschlüssels für Ihre Anwendung hinzugefügt wird. Um den Standardregistrierungsschlüssel abzudateien oder festzulegen, verwenden Sie die Methoden [CWinAppEx::GetRegistryBase](../../mfc/reference/cwinappex-class.md#getregistrybase) bzw. [CWinAppEx::SetRegistryBase.](../../mfc/reference/cwinappex-class.md#setregistrybase)
 
-Verwenden Sie die-Methode [ccontextmenumanager:: LoadState](#loadstate) , um die Kontextmenüs aus der Registrierung zu laden.
+Verwenden Sie die Methode [CContextMenuManager::LoadState,](#loadstate) um die Kontextmenüs aus der Registrierung zu laden.
 
-##  <a name="setdontcloseactivemenu"></a>Ccontextmenumanager:: setdontcloseactivemenu
+## <a name="ccontextmenumanagersetdontcloseactivemenu"></a><a name="setdontcloseactivemenu"></a>CContextMenuManager::SetDontCloseActiveMenu
 
-Steuert, ob [ccontextmenumanager](../../mfc/reference/ccontextmenumanager-class.md) das aktive Popup Menü beim Anzeigen eines neuen Popup Menüs schließt.
+Steuert, ob der [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md) das aktive Popupmenü schließt, wenn ein neues Popupmenü angezeigt wird.
 
 ```
 void SetDontCloseActiveMenu (BOOL bSet = TRUE);
@@ -268,14 +268,14 @@ void SetDontCloseActiveMenu (BOOL bSet = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*BSET*<br/>
-in Ein boolescher Parameter, der steuert, ob das aktive Popup Menü geschlossen werden soll. Der Wert true gibt an, dass das aktive Popup Menü nicht geschlossen ist. FALSE gibt an, dass das aktive Popup Menü geschlossen wird.
+*bSet*<br/>
+[in] Ein boolescher Parameter, der steuert, ob das aktive Popupmenü geschlossen werden soll. Der Wert TRUE gibt an, dass das aktive Popupmenü nicht geschlossen ist. FALSE gibt an, dass das aktive Popupmenü geschlossen ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig schließt das `CContextMenuManager` das aktive Popupmenü.
+Standardmäßig schließt `CContextMenuManager` der das aktive Popupmenü.
 
-##  <a name="showpopupmenu"></a>Ccontextmenumanager:: showPopupMenu
+## <a name="ccontextmenumanagershowpopupmenu"></a><a name="showpopupmenu"></a>CContextMenuManager::ShowPopupMenu
 
 Zeigt das angegebene Kontextmenü an.
 
@@ -300,43 +300,43 @@ virtual CMFCPopupMenu* ShowPopupMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*uimaufuresid*<br/>
-in Die Ressourcen-ID des Menüs, das von dieser Methode angezeigt wird.
+*uiMenuResId*<br/>
+[in] Die Ressourcen-ID des Menüs, das von dieser Methode angezeigt wird.
 
-*x*<br/>
-in Der horizontale Offset für das Kontextmenü in Client Koordinaten.
+*X*<br/>
+[in] Der horizontale Versatz für das Kontextmenü in Clientkoordinaten.
 
 *y*<br/>
-in Der vertikale Offset für das Kontextmenü in Client Koordinaten.
+[in] Der vertikale Versatz für das Kontextmenü in Clientkoordinaten
 
-*pwndowner*<br/>
-in Ein Zeiger auf das übergeordnete Fenster des Kontextmenüs.
+*pWndOwner*<br/>
+[in] Ein Zeiger auf das übergeordnete Fenster des Kontextmenüs.
 
-*bownmessage*<br/>
-in Ein boolescher Parameter, der angibt, wie Nachrichten weitergeleitet werden. Wenn *bownmessage* den Wert false hat, wird das MFC-Standard Routing verwendet. Andernfalls empfängt *pwndowner* die Nachrichten.
+*bOwnMessage*<br/>
+[in] Ein boolescher Parameter, der angibt, wie Nachrichten weitergeleitet werden. Wenn *bOwnMessage* FALSE ist, wird standard-MFC-Routing verwendet. Andernfalls empfängt *pWndOwner* die Nachrichten.
 
-*hmenupopup*<br/>
-in Das Handle des Menüs, das von dieser Methode angezeigt wird.
+*hmenuPopup*<br/>
+[in] Das Handle des Menüs, das von dieser Methode angezeigt wird.
 
-*Bauto zerstören*<br/>
-in Ein boolescher Parameter, der angibt, ob das Menü automatisch gelöscht wird.
+*bAutoDestroy*<br/>
+[in] Ein boolescher Parameter, der angibt, ob das Menü automatisch zerstört wird.
 
-*brightalign*<br/>
-in Ein boolescher Parameter, der angibt, wie die Menü Elemente ausgerichtet werden. Wenn *brightalign* den Wert true hat, wird das Menü rechts-nach-Links-Lesefolge rechtsbündig ausgerichtet.
+*bRightAlign*<br/>
+[in] Ein boolescher Parameter, der angibt, wie die Menüelemente ausgerichtet sind. Wenn *bRightAlign* TRUE ist, ist das Menü für die Lesereihenfolge von rechts nach links rechts-nach-links ausgerichtet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Methoden Überladung gibt einen Wert ungleich 0 zurück, wenn die-Methode das Menü erfolgreich anzeigt. andernfalls 0. Die zweite Methoden Überladung gibt einen Zeiger auf [cmfcpopupmenu](../../mfc/reference/cmfcpopupmenu-class.md) zurück, wenn das Kontextmenü ordnungsgemäß angezeigt wird. andernfalls NULL.
+Die erste Methodenüberladung gibt einen Wert ungleich Null zurück, wenn die Methode das Menü erfolgreich anzeigt. andernfalls 0. Die zweite Methodenüberladung gibt einen Zeiger auf [CMFCPopupMenu](../../mfc/reference/cmfcpopupmenu-class.md) zurück, wenn das Kontextmenü korrekt angezeigt wird. andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ähnelt der-Methode [ccontextmenumanager:: TrackPopupMenu](#trackpopupmenu) darin, dass beide Methoden ein Kontextmenü anzeigen. `TrackPopupMenu` gibt jedoch den Index des ausgewählten Menübefehls zurück.
+Diese Methode ähnelt der Methode [CContextMenuManager::TrackPopupMenu,](#trackpopupmenu) da beide Methoden ein Kontextmenü anzeigen. `TrackPopupMenu` Gibt jedoch den Index des ausgewählten Menübefehls zurück.
 
-Wenn der Parameter *baudedestroy* den Wert false hat, müssen Sie die geerbte `DestroyMenu` Methode manuell aufrufen, um Speicherressourcen freizugeben. Die Standard Implementierung von `ShowPopupMenu` verwendet nicht den Parameter " *bauy}* ". Sie wird für die zukünftige Verwendung oder für benutzerdefinierte Klassen bereitgestellt, die von der `CContextMenuManager`-Klasse abgeleitet werden.
+Wenn der Parameter *bAutoDestroy* FALSE ist, müssen `DestroyMenu` Sie die geerbte Methode manuell aufrufen, um Speicherressourcen freizugeben. Die Standardimplementierung `ShowPopupMenu` von verwendet nicht den Parameter *bAutoDestroy*. Sie wird für die zukünftige Verwendung oder `CContextMenuManager` für benutzerdefinierte Klassen bereitgestellt, die von der Klasse abgeleitet sind.
 
-##  <a name="trackpopupmenu"></a>Ccontextmenumanager:: TrackPopupMenu
+## <a name="ccontextmenumanagertrackpopupmenu"></a><a name="trackpopupmenu"></a>CContextMenuManager::TrackPopupMenu
 
-Zeigt das angegebene Kontextmenü an und gibt den Index des ausgewählten Kontextmenü Befehls zurück.
+Zeigt das angegebene Kontextmenü an und gibt den Index des ausgewählten Kontextmenübefehls zurück.
 
 ```
 virtual UINT TrackPopupMenu(
@@ -349,28 +349,28 @@ virtual UINT TrackPopupMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*hmenupopup*<br/>
-in Das Handle des Kontextmenüs, das von dieser Methode angezeigt wird.
+*hmenuPopup*<br/>
+[in] Das Handle des Kontextmenüs, das diese Methode anzeigt.
 
-*x*<br/>
-in Der horizontale Offset für das Kontextmenü in Client Koordinaten.
+*X*<br/>
+[in] Der horizontale Versatz für das Kontextmenü in Clientkoordinaten.
 
 *y*<br/>
-in Der vertikale Offset für das Kontextmenü in Client Koordinaten.
+[in] Der vertikale Versatz für das Kontextmenü in den Clientkoordinaten.
 
-*pwndowner*<br/>
-in Ein Zeiger auf das übergeordnete Fenster des Kontextmenüs.
+*pWndOwner*<br/>
+[in] Ein Zeiger auf das übergeordnete Fenster des Kontextmenüs.
 
-*brightalign*<br/>
-in Ein boolescher Parameter, der angibt, wie Menü Elemente ausgerichtet werden. Wenn *brightalign* den Wert true hat, wird das Menü rechts-nach-Links-Lesefolge rechtsbündig ausgerichtet. Wenn *brightalign* den Wert false hat, wird das Menü für die Lesefolge von links nach rechts ausgerichtet.
+*bRightAlign*<br/>
+[in] Ein boolescher Parameter, der angibt, wie Menüelemente ausgerichtet sind. Wenn *bRightAlign* TRUE ist, ist das Menü für die Lesereihenfolge von rechts nach links rechts-nach-links ausgerichtet. Wenn *bRightAlign* FALSE ist, ist das Menü für die Lesereihenfolge von links nach rechts links ausgerichtet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Menübefehls-ID des Befehls, den der Benutzer auswählt. 0, wenn der Benutzer das Kontextmenü schließt, ohne einen Menübefehl auszuwählen.
+Die Menübefehls-ID des Befehls, den der Benutzer auswählt; 0, wenn der Benutzer das Kontextmenü schließt, ohne einen Menübefehl auszuwählen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode fungiert als modaler-Befehl, um ein Kontextmenü anzuzeigen. Die Anwendung wird nicht mit der folgenden Zeile im Code fortgesetzt, bis der Benutzer das Kontextmenü schließt oder einen Befehl auswählt. Eine alternative Methode, mit der Sie ein Kontextmenü anzeigen können, ist [ccontextmenumanager:: showPopupMenu](#showpopupmenu). Bei dieser Methode handelt es sich nicht um einen modalen-Befehl, und die ID des ausgewählten Befehls wird nicht zurückgegeben.
+Diese Methode fungiert als modaler Aufruf, um ein Kontextmenü anzuzeigen. Die Anwendung fährt erst in der folgenden Zeile im Code fort, wenn der Benutzer entweder das Kontextmenü schließt oder einen Befehl auswählt. Eine alternative Methode, die Sie zum Anzeigen eines Kontextmenüs verwenden können, ist [CContextMenuManager::ShowPopupMenu](#showpopupmenu). Diese Methode ist kein modaler Aufruf und gibt die ID des ausgewählten Befehls nicht zurück.
 
 ## <a name="see-also"></a>Siehe auch
 

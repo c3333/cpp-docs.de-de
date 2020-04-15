@@ -16,12 +16,12 @@ helpviewer_keywords:
 - collection classes [MFC], duplicates allowed
 - collection classes [MFC], shapes
 ms.assetid: a82188cd-443f-40d8-a244-edf292a53db4
-ms.openlocfilehash: c72a57385b0036d98629d1ee24111500b9d2f8ad
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 53a4eb3e30048d9dc82722d912a026d63a87586d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62218611"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371749"
 ---
 # <a name="recommendations-for-choosing-a-collection-class"></a>Empfehlungen für die Auswahl einer Sammlungsklasse
 
@@ -47,45 +47,45 @@ Die folgende Tabelle, [Auflistungsformfeatures](#_core_collection_shape_features
 
 - In Spalte 6 wird beschrieben, ob die einzelnen Formen doppelte Elemente zulassen.
 
-### <a name="_core_collection_shape_features"></a>  Auflistungsformfeatures
+### <a name="collection-shape-features"></a><a name="_core_collection_shape_features"></a>Sammlungs-Shape-Features
 
-|Form|Geordnete|Indiziert|Einfügen eines Elements|Suchen nach einem angegebenen Element|Doppelte Elemente|
+|Form|Bestellt|Indizierte|Einfügen eines Elements|Suchen nach einem angegebenen Element|Doppelte Elemente|
 |-----------|--------------|--------------|-----------------------|----------------------------------|-------------------------|
-|Liste|Ja|Nein|Fast|Langsam|Ja|
+|List|Ja|Nein|Schnell|Langsam|Ja|
 |Array|Ja|Nach Ganzzahl|Langsam|Langsam|Ja|
-|Zuordnung|Nein|Nach Schlüssel|Fast|Fast|Nein (Schlüssel) Ja (Werte)|
+|Karte|Nein|Nach Schlüssel|Schnell|Schnell|Nein (Schlüssel) Ja (Werte)|
 
 In der folgenden Tabelle, [Merkmale von MFC-Auflistungsklassen](#_core_characteristics_of_mfc_collection_classes), werden weitere wichtige Merkmale bestimmter MFC-Auflistungsklassen als Anleitung zur Auswahl zusammengefasst. Ihre Wahl kann davon abhängen, ob die Klasse auf C++-Vorlagen basiert, ihre Elemente über den MFC-Mechanismus zur [Dokumentserialisierung](../mfc/serialization-in-mfc.md) serialisiert werden können, die Elemente über den MFC-Diagnosesicherungsmechanismus gesichert werden können oder die Klasse typsicher ist – d. h., ob Sie den Typ der Elemente gewährleisten können, die in einer auf der Klasse basierenden Auflistung gespeichert und daraus abgerufen werden.
 
-### <a name="_core_characteristics_of_mfc_collection_classes"></a>  Merkmale von MFC-Auflistungsklassen
+### <a name="characteristics-of-mfc-collection-classes"></a><a name="_core_characteristics_of_mfc_collection_classes"></a>Eigenschaften von MFC-Sammlungsklassen
 
 |Klasse|Verwendet C++-<br /><br /> Vorlagen|Wird bei Bedarf<br /><br /> serialisiert|Wird bei Bedarf<br /><br /> gesichert|Is<br /><br /> typsicher|
 |-----------|------------------------------|---------------------------|-----------------------|-----------------------|
 |`CArray`|Ja|Ja 1|Ja 1|Nein|
-|`CByteArray`|Nein|Ja|Ja|Ja 3|
-|`CDWordArray`|Nein|Ja|Ja|Ja 3|
-|`CList`|Ja|Ja 1|Ja 1|Nein|
+|`CByteArray`|Nein |Ja|Ja|Ja 3|
+|`CDWordArray`|Nein |Ja|Ja|Ja 3|
+|`CList`|Ja|Ja 1|Ja 1|Nein |
 |`CMap`|Ja|Ja 1|Ja 1|Nein|
-|`CMapPtrToPtr`|Nein|Nein|Ja|Nein|
-|`CMapPtrToWord`|Nein|Nein|Ja|Nein|
-|`CMapStringToOb`|Nein|Ja|Ja|Nein|
-|`CMapStringToPtr`|Nein|Nein|Ja|Nein|
-|`CMapStringToString`|Nein|Ja|Ja|Ja 3|
-|`CMapWordToOb`|Nein|Ja|Ja|Nein|
-|`CMapWordToPtr`|Nein|Nein|Ja|Nein|
-|`CObArray`|Nein|Ja|Ja|Nein|
-|`CObList`|Nein|Ja|Ja|Nein|
-|`CPtrArray`|Nein|Nein|Ja|Nein|
-|`CPtrList`|Nein|Nein|Ja|Nein|
-|`CStringArray`|Nein|Ja|Ja|Ja 3|
-|`CStringList`|Nein|Ja|Ja|Ja 3|
+|`CMapPtrToPtr`|Nein|Nein |Ja|Nein|
+|`CMapPtrToWord`|Nein|Nein |Ja|Nein|
+|`CMapStringToOb`|Nein |Ja|Ja|Nein|
+|`CMapStringToPtr`|Nein|Nein |Ja|Nein|
+|`CMapStringToString`|Nein |Ja|Ja|Ja 3|
+|`CMapWordToOb`|Nein |Ja|Ja|Nein|
+|`CMapWordToPtr`|Nein|Nein |Ja|Nein|
+|`CObArray`|Nein |Ja|Ja|Nein|
+|`CObList`|Nein |Ja|Ja|Nein|
+|`CPtrArray`|Nein|Nein |Ja|Nein|
+|`CPtrList`|Nein|Nein |Ja|Nein|
+|`CStringArray`|Nein |Ja|Ja|Ja 3|
+|`CStringList`|Nein |Ja|Ja|Ja 3|
 |`CTypedPtrArray`|Ja|Je nachdem 2|Ja|Ja|
 |`CTypedPtrList`|Ja|Je nachdem 2|Ja|Ja|
 |`CTypedPtrMap`|Ja|Je nachdem 2|Ja|Ja|
-|`CUIntArray`|Nein|Nein|Ja|Ja 3|
-|`CWordArray`|Nein|Ja|Ja|Ja 3|
+|`CUIntArray`|Nein|Nein |Ja|Ja 3|
+|`CWordArray`|Nein |Ja|Ja|Ja 3|
 
-1. Zum Serialisieren müssen Sie explizit die `Serialize`-Funktion des Auflistungsobjekts aufrufen; zum Sichern müssen Sie explizit seine `Dump`-Funktion aufrufen. Sie können nicht die Form `ar << collObj` zum Serialisieren oder die Form `dmp` `<< collObj` zum Sichern verwenden.
+1. Zum Serialisieren müssen Sie explizit die `Serialize`-Funktion des Auflistungsobjekts aufrufen; zum Sichern müssen Sie explizit seine `Dump`-Funktion aufrufen. Sie können das `ar << collObj` Formular nicht zum `dmp` `<< collObj` Serialisieren oder zum Abladen des Formulars verwenden.
 
 2. Serialisierbarkeit hängt vom zugrunde liegenden Auflistungstyp ab. Wenn z. B. ein typisiertes Zeigerarray auf `CObArray`basiert, ist es serialisierbar; auf `CPtrArray`basierend ist es nicht serialisierbar. Im Allgemeinen können die „Ptr“-Klassen nicht serialisiert werden.
 

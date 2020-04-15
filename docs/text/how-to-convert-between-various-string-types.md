@@ -7,18 +7,18 @@ helpviewer_keywords:
 - string conversion [C++]
 - strings [C++], converting
 ms.assetid: e7e4f741-3c82-45f0-b8c0-1e1e343b0e77
-ms.openlocfilehash: 3e7c83b70b4204cfc8880c968bb353b47e5b79e1
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: ff07bf7a00be36f28620735c48128f973d9fe791
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80075536"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375809"
 ---
 # <a name="how-to-convert-between-various-string-types"></a>Gewusst wie: Konvertieren zwischen verschiedenen Zeichenfolgentypen
 
-Dieses Thema veranschaulicht, wie verschiedene Visual C++-Zeichenfolgentypen in andere Zeichenfolgen konvertiert werden. Zu den behandelten Zeichen folgen Typen zählen `char *`, `wchar_t*`, [_bstr_t](../cpp/bstr-t-class.md), [CComBSTR](../atl/reference/ccombstr-class.md), [CString](../atl-mfc-shared/using-cstring.md), [basic_string](../standard-library/basic-string-class.md)und <xref:System.String?displayProperty=fullName>. In allen Fällen wird beim Konvertieren in den neuen Typ eine Kopie der Zeichenfolge erstellt. Alle Änderungen, die an der neuen Zeichenfolge vorgenommen werden, wirken sich nicht auf die Originalzeichenfolge aus und umgekehrt.
+Dieses Thema veranschaulicht, wie verschiedene Visual C++-Zeichenfolgentypen in andere Zeichenfolgen konvertiert werden. Die abgedeckten `char *`Zeichenfolgentypen `wchar_t*`sind , [, _bstr_t](../cpp/bstr-t-class.md), [CComBSTR](../atl/reference/ccombstr-class.md), [CString](../atl-mfc-shared/using-cstring.md), [basic_string](../standard-library/basic-string-class.md)und <xref:System.String?displayProperty=fullName>. In allen Fällen wird beim Konvertieren in den neuen Typ eine Kopie der Zeichenfolge erstellt. Alle Änderungen, die an der neuen Zeichenfolge vorgenommen werden, wirken sich nicht auf die Originalzeichenfolge aus und umgekehrt.
 
-## <a name="converting-from-char-"></a>Wandeln von char-\*
+## <a name="converting-from-char-"></a>Konvertieren aus char\*
 
 ## <a name="example"></a>Beispiel
 
@@ -119,7 +119,7 @@ Hello, World! (basic_string)
 Hello, World! (System::String)
 ```
 
-## <a name="converting-from-wchar_t-"></a>Wchar_t wird von \*
+## <a name="converting-from-wchar_t-"></a>Konvertieren von wchar_t\*
 
 ## <a name="example"></a>Beispiel
 
@@ -699,7 +699,7 @@ Hello, World! (System::String)
 
 ### <a name="description"></a>BESCHREIBUNG
 
-In diesem Beispiel wird veranschaulicht, wie ein breit Zeichen (Unicode) [System:: String](assetId:///System::String?qualifyHint=True&autoUpgrade=True) in die anderen oben aufgeführten Zeichen folgen Typen konvertiert wird.
+In diesem Beispiel wird veranschaulicht, wie sie von einem System (Unicode) [System::String](/dotnet/api/system.string) (Wide Character) in die anderen oben aufgeführten Zeichenfolgentypen konvertiert werden.
 
 ### <a name="code"></a>Code
 
@@ -800,13 +800,13 @@ Hello, World! (CStringW)
 Hello, World! (basic_string)
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[ATL-und MFC-Zeichen folgen Konvertierungs Makros](../atl/reference/string-conversion-macros.md)<br/>
-[CString-Operationen bei Zeichenfolgen im C-Format](../atl-mfc-shared/cstring-operations-relating-to-c-style-strings.md)<br/>
+[ATL- und MFC-Zeichenfolgenkonvertierungsmakros](../atl/reference/string-conversion-macros.md)<br/>
+[CString-Vorgänge bei Zeichenfolgen im C-Format](../atl-mfc-shared/cstring-operations-relating-to-c-style-strings.md)<br/>
 [Vorgehensweise: Konvertieren einer Standardzeichenfolge nach System::String](../dotnet/how-to-convert-standard-string-to-system-string.md)<br/>
-[Vorgehensweise: Konvertieren von System::String zu Standardzeichenfolge](../dotnet/how-to-convert-system-string-to-standard-string.md)<br/>
-[Vorgehensweise: Konvertieren von System:: String in wchar_t * oder char\*](../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md)<br/>
+[Gewusst wie: Konvertieren von System::String zu Standardzeichenfolge](../dotnet/how-to-convert-system-string-to-standard-string.md)<br/>
+[Gewusst wie: Konvertieren von System::String in wchar_t* oder char\*](../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md)<br/>
 [Programmieren mit CComBSTR](../atl/programming-with-ccombstr-atl.md)<br/>
 [mbstowcs_s, _mbstowcs_s_l](../c-runtime-library/reference/mbstowcs-s-mbstowcs-s-l.md)<br/>
 [wcstombs_s, _wcstombs_s_l](../c-runtime-library/reference/wcstombs-s-wcstombs-s-l.md)<br/>

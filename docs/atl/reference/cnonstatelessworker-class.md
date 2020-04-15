@@ -11,19 +11,19 @@ f1_keywords:
 helpviewer_keywords:
 - CNonStatelessWorker class
 ms.assetid: d00936c6-9e7d-49fb-b87d-417b963367d1
-ms.openlocfilehash: abfd3e585c843fcc4ed4ad273c8ed217eaaccb7d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f3604f95c8217c7407c100671265140bbadbab78
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62245529"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326733"
 ---
 # <a name="cnonstatelessworker-class"></a>CNonStatelessWorker-Klasse
 
-Empfängt Anforderungen aus dem Threadpool und übergibt sie an eine Worker-Objekt, das erstellt und zerstört wird bei jeder Anforderung.
+Empfängt Anforderungen von einem Threadpool und gibt sie an ein Workerobjekt weiter, das bei jeder Anforderung erstellt und zerstört wird.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,35 +35,35 @@ class CNonStatelessWorker
 #### <a name="parameters"></a>Parameter
 
 *Worker*<br/>
-Eine Worker-Thread-Klasse, die mit der [Worker Archetyp](../../atl/reference/worker-archetype.md) geeignet, für die Verarbeitung von Anforderungen für in die Warteschlange [CThreadPool](../../atl/reference/cthreadpool-class.md).
+Eine Arbeitsthreadklasse, die dem [Workerarchetyp](../../atl/reference/worker-archetype.md) entspricht, der für die Verarbeitung von Anforderungen in der Warteschlange [von CThreadPool](../../atl/reference/cthreadpool-class.md)geeignet ist.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CNonStatelessWorker::RequestType](#requesttype)|Implementierung von [WorkerArchetype::RequestType](worker-archetype.md#requesttype).|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CNonStatelessWorker::Execute](#execute)|Implementierung von [WorkerArchetype::Execute](worker-archetype.md#execute).|
-|[CNonStatelessWorker::Initialize](#initialize)|Implementierung von [WorkerArchetype::Initialize](worker-archetype.md#initialize).|
-|[CNonStatelessWorker::Terminate](#terminate)|Implementierung von [WorkerArchetype::Terminate](worker-archetype.md#terminate).|
+|[CNonStatelessWorker::Ausführen](#execute)|Implementierung von [WorkerArchetype::Execute](worker-archetype.md#execute).|
+|[CNonStatelessWorker::Initialisieren](#initialize)|Implementierung von [WorkerArchetype::Initialize](worker-archetype.md#initialize).|
+|[CNonStatelessWorker::Beenden](#terminate)|Implementierung von [WorkerArchetype::Terminate](worker-archetype.md#terminate).|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse ist für die Verwendung mit einem einfachen Arbeitsthread [CThreadPool](../../atl/reference/cthreadpool-class.md). Diese Klasse stellt keine Funktionen zur Behandlung von Anforderung selbst bereit. Stattdessen eine Instanz instanziieren *Worker* pro Anforderung und delegiert die Implementierung der Methoden für diese Instanz.
+Diese Klasse ist ein einfacher Arbeitsthread für die Verwendung mit [CThreadPool](../../atl/reference/cthreadpool-class.md). Diese Klasse bietet keine eigenen Funktionen zur Anforderungsverarbeitung. Stattdessen instanziiert es eine Instanz von *Worker* pro Anforderung und delegiert die Implementierung seiner Methoden an diese Instanz.
 
-Der Vorteil dieser Klasse ist, dass es sich um eine bequeme Möglichkeit, ändern Sie das Zustandsmodell für vorhandene Klassen von Worker-Threads bereitstellt. `CThreadPool` erstellt einen einzelnen Worker für die Lebensdauer des Threads, damit es, wenn die Workerklasse den Zustand enthält, sie über mehrere Anforderungen hinweg enthalten wird. Von dieser Klasse in einfach umschließt die `CNonStatelessWorker` Vorlage vor der Verwendung mit `CThreadPool`, die Lebensdauer des Workers und der Status ist auf eine einzelne Anforderung enthält.
+Der Vorteil dieser Klasse besteht darin, dass sie eine bequeme Möglichkeit bietet, das Zustandsmodell für vorhandene Arbeitsthreadklassen zu ändern. `CThreadPool`erstellt eine einzelne Arbeitskraft für die Lebensdauer des Threads. Wenn die Workerklasse den Status hält, wird sie über mehrere Anforderungen hinweg verwendet. Durch einfaches Umschließen `CNonStatelessWorker` dieser Klasse in `CThreadPool`der Vorlage vor der Verwendung mit ist die Lebensdauer der Arbeitskraft und des Status, den sie enthält, auf eine einzelne Anforderung beschränkt.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlutil.h
+**Kopfzeile:** atlutil.h
 
-##  <a name="execute"></a>  CNonStatelessWorker::Execute
+## <a name="cnonstatelessworkerexecute"></a><a name="execute"></a>CNonStatelessWorker::Ausführen
 
 Implementierung von [WorkerArchetype::Execute](worker-archetype.md#execute).
 
@@ -74,11 +74,11 @@ void Execute(
     OVERLAPPED* pOverlapped);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode erstellt eine Instanz der *Worker* -Klasse auf den Stapel und ruft [initialisieren](worker-archetype.md#initialize) für dieses Objekt. Wenn die Initialisierung erfolgreich ist, ruft diese Methode auch [Execute](worker-archetype.md#execute) und [Terminate](worker-archetype.md#terminate) für dasselbe Objekt.
+Diese Methode erstellt eine Instanz der *Worker-Klasse* auf dem Stapel und ruft [Initialize](worker-archetype.md#initialize) für dieses Objekt auf. Wenn die Initialisierung erfolgreich ist, ruft diese Methode auch [Execute](worker-archetype.md#execute) und [Terminate](worker-archetype.md#terminate) für dasselbe Objekt auf.
 
-##  <a name="initialize"></a>  CNonStatelessWorker::Initialize
+## <a name="cnonstatelessworkerinitialize"></a><a name="initialize"></a>CNonStatelessWorker::Initialisieren
 
 Implementierung von [WorkerArchetype::Initialize](worker-archetype.md#initialize).
 
@@ -88,13 +88,13 @@ BOOL Initialize(void* /* pvParam */) throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer "true" zurück.
+Gibt immer TRUE zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Klasse führt keine Initialisierungen `Initialize`.
+Diese Klasse führt keine Initialisierung in `Initialize`durch.
 
-##  <a name="requesttype"></a>  CNonStatelessWorker::RequestType
+## <a name="cnonstatelessworkerrequesttype"></a><a name="requesttype"></a>CNonStatelessWorker::RequestType
 
 Implementierung von [WorkerArchetype::RequestType](worker-archetype.md#requesttype).
 
@@ -102,11 +102,11 @@ Implementierung von [WorkerArchetype::RequestType](worker-archetype.md#requestty
 typedef Worker::RequestType RequestType;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Klasse behandelt, denselben Typ von Arbeitselement wie die Klasse für den *Worker* Template-Parameter. Finden Sie unter [CNonStatelessWorker-Übersicht](../../atl/reference/cnonstatelessworker-class.md) Details.
+Diese Klasse behandelt denselben Arbeitsaufgabentyp wie die *Worker* Klasse, die für den Worker-Vorlagenparameter verwendet wird. Weitere Informationen finden Sie unter [CNonStatelessWorker Overview.](../../atl/reference/cnonstatelessworker-class.md)
 
-##  <a name="terminate"></a>  CNonStatelessWorker::Terminate
+## <a name="cnonstatelessworkerterminate"></a><a name="terminate"></a>CNonStatelessWorker::Beenden
 
 Implementierung von [WorkerArchetype::Terminate](worker-archetype.md#terminate).
 
@@ -114,9 +114,9 @@ Implementierung von [WorkerArchetype::Terminate](worker-archetype.md#terminate).
 void Terminate(void* /* pvParam */) throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Klasse führt keine Bereinigungen `Terminate`.
+Diese Klasse führt keine Bereinigung in `Terminate`durch.
 
 ## <a name="see-also"></a>Siehe auch
 

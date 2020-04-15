@@ -8,24 +8,24 @@ helpviewer_keywords:
 - persistent C++ objects [MFC]
 - TN002
 ms.assetid: 553fe01d-c587-4c8d-a181-3244a15c2be9
-ms.openlocfilehash: 1880d5d43055966dea8ab16dc4f26bd4e4602ec5
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: f65a7b7afcf6bd832c9c23560bb29374038fae1b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79447126"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370445"
 ---
 # <a name="tn002-persistent-object-data-format"></a>TN002: Persistentes Objektdatenformat
 
-In diesem Hinweis werden die MFC-Routinen beschrieben C++ , die persistente Objekte und das Format der Objektdaten unterstützen, wenn Sie in einer Datei gespeichert werden. Dies gilt nur für Klassen mit den [DECLARE_SERIAL](../mfc/reference/run-time-object-model-services.md#declare_serial) -und [IMPLEMENT_SERIAL](../mfc/reference/run-time-object-model-services.md#implement_serial) -Makros.
+Dieser Hinweis beschreibt die MFC-Routinen, die persistente C++-Objekte unterstützen, und das Format der Objektdaten, wenn sie in einer Datei gespeichert werden. Dies gilt nur für Klassen mit den [DECLARE_SERIAL-](../mfc/reference/run-time-object-model-services.md#declare_serial) und IMPLEMENT_SERIAL-Makros. [IMPLEMENT_SERIAL](../mfc/reference/run-time-object-model-services.md#implement_serial)
 
 ## <a name="the-problem"></a>Problemstellung
 
-Die MFC-Implementierung für persistente Daten speichert Daten für viele Objekte in einem einzelnen zusammenhängenden Teil einer Datei. Die `Serialize`-Methode des Objekts übersetzt die Daten des Objekts in ein kompaktes binäres Format.
+Die MFC-Implementierung für persistente Daten speichert Daten für viele Objekte in einem einzelnen zusammenhängenden Teil einer Datei. Die Methode `Serialize` des Objekts übersetzt die Daten des Objekts in ein kompaktes Binärformat.
 
-Die-Implementierung gewährleistet, dass alle Daten mit der [CArchive-Klasse](../mfc/reference/carchive-class.md)im gleichen Format gespeichert werden. Es verwendet ein `CArchive` Objekt als Übersetzer. Dieses Objekt wird von dem Erstellungs Zeitpunkt bis zum Aufruf von [CArchive:: Close](../mfc/reference/carchive-class.md#close)beibehalten. Diese Methode kann entweder explizit vom Programmierer oder implizit durch den Dekonstruktor aufgerufen werden, wenn das Programm den Bereich verlässt, der die `CArchive`enthält.
+Die Implementierung stellt sicher, dass alle Daten im gleichen Format gespeichert werden, indem die [CArchive-Klasse](../mfc/reference/carchive-class.md)verwendet wird. Es verwendet `CArchive` ein Objekt als Übersetzer. Dieses Objekt bleibt von der Erstellung bis zum Aufrufen von [CArchive::Close](../mfc/reference/carchive-class.md#close)erhalten. Diese Methode kann entweder explizit vom Programmierer oder implizit vom Destruktor aufgerufen werden, wenn das Programm den Bereich verlässt, der die `CArchive`enthält.
 
-In diesem Hinweis wird die Implementierung der `CArchive` Member [CArchive:: Read Object](../mfc/reference/carchive-class.md#readobject) und [CArchive:: Write Object](../mfc/reference/carchive-class.md#writeobject)beschrieben. Sie finden den Code für diese Funktionen in arcobj. cpp und die Haupt Implementierung für `CArchive` in arccore. cpp. Der Benutzercode ruft `ReadObject` und `WriteObject` nicht direkt auf. Stattdessen werden diese Objekte von klassenspezifischen typsicheren Einfügungs-und Extraktions Operatoren verwendet, die automatisch durch die DECLARE_SERIAL-und IMPLEMENT_SERIAL-Makros generiert werden. Der folgende Code zeigt, wie `WriteObject` und `ReadObject` implizit aufgerufen werden:
+Dieser Hinweis beschreibt die `CArchive` Implementierung der Member [CArchive::ReadObject](../mfc/reference/carchive-class.md#readobject) und [CArchive::WriteObject](../mfc/reference/carchive-class.md#writeobject). Sie finden den Code für diese Funktionen in Arcobj.cpp und die Hauptimplementierung für `CArchive` in Arccore.cpp. Benutzercode ruft `ReadObject` nicht `WriteObject` und direkt an. Stattdessen werden diese Objekte von klassenspezifischen typsicheren Einfüge- und Extraktionsoperatoren verwendet, die automatisch von den DECLARE_SERIAL und IMPLEMENT_SERIAL Makros generiert werden. Der folgende Code `WriteObject` `ReadObject` zeigt, wie und wie implizit aufgerufen werden:
 
 ```
 class CMyObject : public CObject
@@ -42,70 +42,70 @@ ar <<pObj;        // calls ar.WriteObject(pObj)
 ar>> pObj;        // calls ar.ReadObject(RUNTIME_CLASS(CObj))
 ```
 
-## <a name="saving-objects-to-the-store-carchivewriteobject"></a>Speichern von Objekten im Speicher (CArchive:: Write Object)
+## <a name="saving-objects-to-the-store-carchivewriteobject"></a>Speichern von Objekten im Store (CArchive::WriteObject)
 
-Die-Methode `CArchive::WriteObject` schreibt Header Daten, die zum Rekonstruieren des-Objekts verwendet werden. Diese Daten bestehen aus zwei Teilen: dem Objekttyp und dem Status des Objekts. Diese Methode ist auch für die Beibehaltung der Identität des geschriebenen Objekts verantwortlich, sodass nur eine einzige Kopie gespeichert wird, unabhängig von der Anzahl der Zeiger auf das Objekt (einschließlich Zirkel Zeigern).
+Die `CArchive::WriteObject` Methode schreibt Headerdaten, die zum Rekonstruieren des Objekts verwendet werden. Diese Daten bestehen aus zwei Teilen: dem Typ des Objekts und dem Status des Objekts. Diese Methode ist auch für die Aufrechterhaltung der Identität des objektgeschriebenen Objekts verantwortlich, sodass nur eine einzelne Kopie gespeichert wird, unabhängig von der Anzahl der Zeiger auf dieses Objekt (einschließlich zirkulärer Zeiger).
 
-Das Speichern (einfügen) und das Wiederherstellen (extrahieren) von Objekten basiert auf mehreren "Manifest-Konstanten". Dabei handelt es sich um Werte, die im Binärformat gespeichert werden und wichtige Informationen für das Archiv bereitstellen (Beachten Sie, dass das Präfix "w" aus 16-Bit-Mengen besteht
+Das Speichern (Einfügen) und Wiederherstellen (Extrahieren) von Objekten beruht auf mehreren "Manifestkonstanten". Dies sind Werte, die in Binärdateien gespeichert sind und wichtige Informationen für das Archiv liefern (beachten Sie, dass das Präfix "w" 16-Bit-Mengen angibt):
 
 |Tag|BESCHREIBUNG|
 |---------|-----------------|
-|wNullTag|Wird für NULL-Objekt Zeiger (0) verwendet.|
-|wNewClassTag|Gibt an, dass die folgende Klassen Beschreibung neu in diesem Archiv Kontext ist (-1).|
-|wOldClassTag|Gibt an, dass die Klasse des gelesenen Objekts in diesem Kontext (0X8000) angezeigt wird.|
+|wNullTag|Wird für NULL-Objektzeiger (0) verwendet.|
+|wNewClassTag|Gibt die Klassenbeschreibung an, die im Folgenden für diesen Archivkontext neu ist (-1).|
+|wOldClassTag|Gibt an, dass die Klasse des zu lesenden Objekts in diesem Kontext gesehen wurde (0x8000).|
 
-Beim Speichern von Objekten behält das Archiv einen [CMapPtrToPtr](../mfc/reference/cmapptrtoptr-class.md) (den *m_pStoreMap*) bei, der eine Zuordnung eines gespeicherten Objekts zu einem beständigen 32-Bit-Bezeichner (PID) ist. Jedem eindeutigen Objekt und jedem eindeutigen Klassennamen, der im Kontext des Archivs gespeichert wird, wird eine PID zugewiesen. Diese PIDs werden sequenziell ab 1 ausgegeben. Diese PIDs haben außerhalb des Bereichs des Archivs keine Bedeutung und müssen insbesondere nicht mit Daten Satz Nummern oder anderen Identitäts Elementen verwechselt werden.
+Beim Speichern von Objekten verwaltet das Archiv einen [CMapPtrToPtr](../mfc/reference/cmapptrtoptr-class.md) (die *m_pStoreMap*), bei dem es sich um eine Zuordnung von einem gespeicherten Objekt zu einem 32-Bit persistenten Bezeichner (PID) handelt. Jedem eindeutigen Objekt und jedem eindeutigen Klassennamen, der im Kontext des Archivs gespeichert wird, wird eine PID zugewiesen. Diese PIDs werden ab 1 nacheinander verteilt. Diese PIDs haben außerhalb des Archivbereichs keine Bedeutung und sind insbesondere nicht mit Datensatznummern oder anderen Identitätselementen zu verwechseln.
 
-In der `CArchive`-Klasse sind PIDs 32-Bit, aber Sie werden als 16-Bit-geschrieben, es sei denn, Sie sind größer als 0x7ffe. Große PIDs werden als 0x7FFF geschrieben, gefolgt von der 32-Bit-PID. Dies gewährleistet die Kompatibilität mit Projekten, die in früheren Versionen erstellt wurden.
+In `CArchive` der Klasse sind PIDs 32-Bit, aber sie werden als 16-Bit geschrieben, es sei denn, sie sind größer als 0x7FFE. Große PIDs werden als 0x7FFF geschrieben, gefolgt von der 32-Bit-PID. Dadurch bleibt die Kompatibilität mit Projekten erhalten, die in früheren Versionen erstellt wurden.
 
-Wenn eine Anforderung zum Speichern eines Objekts in einem Archiv erfolgt (in der Regel mit dem globalen einfügeoperator), erfolgt eine Überprüfung für einen NULL- [CObject](../mfc/reference/cobject-class.md) -Zeiger. Wenn der Zeiger NULL ist, wird der *wnulltag* in den Archivdaten Strom eingefügt.
+Wenn eine Anforderung zum Speichern eines Objekts in einem Archiv gestellt wird (in der Regel mithilfe des globalen Einfügeoperators), wird ein [NULL-CObject-Zeiger](../mfc/reference/cobject-class.md) überprüft. Wenn der Zeiger NULL ist, wird das *wNullTag* in den Archivstream eingefügt.
 
-Wenn der Zeiger nicht NULL ist und serialisiert werden kann (die Klasse ist eine `DECLARE_SERIAL` Klasse), überprüft der Code die *m_pStoreMap* , um festzustellen, ob das Objekt bereits gespeichert wurde. Wenn dies der Fall ist, fügt der Code die mit diesem Objekt verknüpfte 32-Bit-PID in den Archivdaten Strom ein.
+Wenn der Zeiger nicht NULL ist und serialisiert `DECLARE_SERIAL` werden kann (die Klasse ist eine Klasse), überprüft der Code die *m_pStoreMap,* ob das Objekt bereits gespeichert wurde. Wenn dies der Zuspruch besteht, fügt der Code die diesem Objekt zugeordnete 32-Bit-PID in den Archivstream ein.
 
-Wenn das Objekt noch nicht gespeichert wurde, gibt es zwei Möglichkeiten: entweder das-Objekt und der exakte Typ (d. h. die-Klasse) des-Objekts sind neu in diesem Archiv Kontext, oder das Objekt hat einen exakten Typ, der bereits vorhanden ist. Um zu ermitteln, ob der Typ erkannt wurde, fragt der Code die *m_pStoreMap* nach einem [CRuntimeClass](../mfc/reference/cruntimeclass-structure.md) -Objekt ab, das mit dem `CRuntimeClass` Objekt übereinstimmt, das dem gespeicherten Objekt zugeordnet ist. Wenn eine Entsprechung vorliegt, fügt `WriteObject` ein Tag ein, das die bitweise `OR` von *woldclasstag* und diesem Index ist. Wenn die `CRuntimeClass` mit diesem Archiv Kontext neu ist, weist `WriteObject` dieser Klasse eine neue PID zu und fügt Sie in das Archiv ein, dem der *wnewclasstag* -Wert vorangestellt ist.
+Wenn das Objekt noch nicht gespeichert wurde, gibt es zwei Möglichkeiten zu berücksichtigen: Entweder das Objekt und der genaue Typ (d. h. die Klasse) des Objekts sind neu in diesem Archivkontext, oder das Objekt ist von einem genauen Typ, der bereits gesehen wurde. Um zu bestimmen, ob der Typ angezeigt wurde, fragt der Code `CRuntimeClass` die *m_pStoreMap* nach einem [CRuntimeClass-Objekt](../mfc/reference/cruntimeclass-structure.md) ab, das dem Objekt entspricht, das dem zu speichernden Objekt zugeordnet ist. Wenn eine Übereinstimmung `WriteObject` vorhanden ist, fügt ein Tag `OR` ein, das das Bit-wise von *wOldClassTag* und diesem Index ist. Wenn `CRuntimeClass` der in diesem Archivkontext neu ist, `WriteObject` weist dieser Klasse eine neue PID zu und fügt sie in das Archiv ein, dem der wert *wNewClassTag* vorangestellt ist.
 
-Der Deskriptor für diese Klasse wird dann mithilfe der `CRuntimeClass::Store`-Methode in das Archiv eingefügt. `CRuntimeClass::Store` fügt die Schema Nummer der Klasse (siehe unten) und den ASCII-Textnamen der Klasse ein. Beachten Sie, dass die Verwendung des ASCII-textnamens nicht sicherstellt, dass das Archiv Anwendungs übergreifend eindeutig ist. Daher sollten Sie Ihre Datendateien markieren, um Beschädigungen zu verhindern. Nach dem Einfügen der Klassen Informationen fügt das Archiv das Objekt in die *m_pStoreMap* ein und ruft dann die `Serialize`-Methode auf, um klassenspezifische Daten einzufügen. Wenn das Objekt vor dem Aufrufen `Serialize` in die *m_pStoreMap* platziert wird, wird verhindert, dass mehrere Kopien des Objekts im Speicher gespeichert werden.
+Der Deskriptor für diese Klasse wird dann `CRuntimeClass::Store` mit der Methode in das Archiv eingefügt. `CRuntimeClass::Store`fügt die Schemanummer der Klasse (siehe unten) und den ASCII-Textnamen der Klasse ein. Beachten Sie, dass die Verwendung des ASCII-Textnamens keine Garantie für die eindeutige Eindeutigkeit des Archivs in allen Anwendungen garantiert. Daher sollten Sie Ihre Datendateien markieren, um Beschädigungen zu verhindern. Nach dem Einfügen der Klasseninformationen legt das *m_pStoreMap* Archiv das Objekt `Serialize` in die m_pStoreMap und ruft dann die Methode auf, klassenspezifische Daten einzufügen. Durch das Platzieren *m_pStoreMap* des `Serialize` Objekts in die m_pStoreMap vor dem Aufruf wird verhindert, dass mehrere Kopien des Objekts im Speicher gespeichert werden.
 
-Wenn Sie zum ursprünglichen Aufrufer zurückkehren (in der Regel der Stamm des Netzwerks von Objekten), müssen Sie [CArchive:: Close](../mfc/reference/carchive-class.md#close)aufzurufen. Wenn Sie beabsichtigen, andere [CFile](../mfc/reference/cfile-class.md)-Vorgänge auszuführen, müssen Sie die `CArchive`- [Methoden Leerung aufzurufen, um](../mfc/reference/carchive-class.md#flush) eine Beschädigung des Archivs zu verhindern.
+Wenn Sie zum ursprünglichen Aufrufer zurückkehren (in der Regel der Stamm des Objektnetzwerks), müssen Sie [CArchive::Close](../mfc/reference/carchive-class.md#close)aufrufen. Wenn Sie andere [CFile-Vorgänge](../mfc/reference/cfile-class.md)ausführen möchten, müssen Sie die `CArchive` Methode [Flush](../mfc/reference/carchive-class.md#flush) aufrufen, um eine Beschädigung des Archivs zu verhindern.
 
 > [!NOTE]
->  Diese Implementierung erzwingt ein hartes Limit von 0x3ffffffe-Indizes pro Archiv Kontext. Diese Zahl stellt die maximale Anzahl eindeutiger Objekte und Klassen dar, die in einem einzelnen Archiv gespeichert werden können, aber eine einzelne Datenträger Datei kann eine unbegrenzte Anzahl von Archiv Kontexten aufweisen.
+> Diese Implementierung legt eine harte Grenze von 0x3FFFFFFE-Indizes pro Archivkontext fest. Diese Zahl stellt die maximale Anzahl eindeutiger Objekte und Klassen dar, die in einem einzelnen Archiv gespeichert werden können, aber eine einzelne Datenträgerdatei kann eine unbegrenzte Anzahl von Archivkontexten haben.
 
-## <a name="loading-objects-from-the-store-carchivereadobject"></a>Laden von Objekten aus dem Speicher (CArchive:: Read Object)
+## <a name="loading-objects-from-the-store-carchivereadobject"></a>Laden von Objekten aus dem Store (CArchive::ReadObject)
 
-Beim Laden (extrahieren) von Objekten wird die `CArchive::ReadObject`-Methode verwendet, und es handelt sich um den umgekehrten `WriteObject`. Wie bei `WriteObject`wird `ReadObject` nicht direkt durch Benutzercode aufgerufen. Benutzercode sollte den typsicheren Extraktions Operator aufrufen, der `ReadObject` mit der erwarteten `CRuntimeClass`aufruft. Dadurch wird die Typintegrität des Extraktions Vorgangs sichergestellt.
+Das Laden (Extrahieren) `CArchive::ReadObject` von Objekten verwendet `WriteObject`die Methode und ist die Umgekehrte von . Wie `WriteObject`bei `ReadObject` wird nicht direkt vom Benutzercode aufgerufen. Benutzercode sollte den typsicheren Extraktionsoperator aufrufen, der mit der erwarteten `ReadObject` `CRuntimeClass`aufruft. Dadurch wird die Typintegrität des Extraktvorgangs sichergestellt.
 
-Da die `WriteObject` Implementierung, die ansteigende PIDs zugewiesen hat, beginnend mit 1 (0 als NULL-Objekt vordefiniert ist), kann die `ReadObject` Implementierung ein Array verwenden, um den Zustand des Archiv Kontexts beizubehalten. Wenn eine PID aus dem Speicher gelesen wird und die PID größer als die aktuelle obere Grenze der *m_pLoadArray*ist, weiß `ReadObject`, dass ein neues Objekt (oder eine Klassen Beschreibung) folgt.
+Da `WriteObject` die Implementierung zunehmenden PIDs zugewiesen wurde, beginnend mit 1 `ReadObject` (0 ist als NULL-Objekt vordefiniert), kann die Implementierung ein Array verwenden, um den Status des Archivkontexts beizubehalten. Wenn eine PID aus dem Speicher gelesen wird und die PID *m_pLoadArray*größer `ReadObject` als die aktuelle Obergrenze des m_pLoadArray ist, weiß, dass ein neues Objekt (oder eine Klassenbeschreibung) folgt.
 
-## <a name="schema-numbers"></a>Schema Nummern
+## <a name="schema-numbers"></a>Schemanummern
 
-Die Schema Nummer, die der-Klasse zugewiesen wird, wenn die `IMPLEMENT_SERIAL`-Methode der-Klasse gefunden wird, ist die "Version" der Klassen Implementierung. Das Schema bezieht sich auf die Implementierung der-Klasse, nicht auf die Häufigkeit, mit der ein bestimmtes Objekt persistent gemacht wurde (in der Regel als Objekt Version bezeichnet).
+Die Schemanummer, die der Klasse `IMPLEMENT_SERIAL` zugewiesen wird, wenn die Methode der Klasse gefunden wird, ist die "Version" der Klassenimplementierung. Das Schema bezieht sich auf die Implementierung der Klasse, nicht auf die Häufigkeit, mit der ein bestimmtes Objekt persistent gemacht wurde (in der Regel als Objektversion bezeichnet).
 
-Wenn Sie beabsichtigen, mehrere verschiedene Implementierungen derselben Klasse im Lauf der Zeit zu verwalten, können Sie das Schema bei der Überarbeitung der Implementierung des `Serialize`-Methode des Objekts erhöhen, indem Sie Code schreiben, mit dem Objekte geladen werden können, die mit älteren Versionen der Implementierung gespeichert wurden.
+Wenn Sie mehrere verschiedene Implementierungen derselben Klasse im Laufe der Zeit beibehalten möchten, `Serialize` können Sie durch das Erhöhen des Schemas beim Überarbeiten der Methodenimplementierung des Objekts Code schreiben, der objekte laden kann, die mithilfe älterer Versionen der Implementierung gespeichert sind.
 
-Die `CArchive::ReadObject`-Methode löst eine [carchiveexception](../mfc/reference/carchiveexception-class.md) aus, wenn Sie auf eine Schema Nummer im permanenten Speicher trifft, die von der Schema Nummer der Klassen Beschreibung im Arbeitsspeicher abweicht. Die Wiederherstellung nach dieser Ausnahme ist nicht einfach.
+Die `CArchive::ReadObject` Methode löst eine [CArchiveException](../mfc/reference/carchiveexception-class.md) aus, wenn sie auf eine Schemanummer im persistenten Speicher trifft, die sich von der Schemanummer der Klassenbeschreibung im Arbeitsspeicher unterscheidet. Es ist nicht einfach, sich von dieser Ausnahme zu erholen.
 
-Sie können `VERSIONABLE_SCHEMA` in Kombination mit (bitweiser **or**) Ihrer Schema Version verwenden, um zu verhindern, dass diese Ausnahme ausgelöst wird. Wenn Sie `VERSIONABLE_SCHEMA`verwenden, kann der Code die entsprechende Aktion in seiner `Serialize` Funktion durchführen, indem er den Rückgabewert von [CArchive:: GetObjectSchema](../mfc/reference/carchive-class.md#getobjectschema)überprüft.
+Sie können `VERSIONABLE_SCHEMA` ihre Schemaversion in Kombination mit (bitweise **oder**) verwenden, um zu verhindern, dass diese Ausnahme ausgelöst wird. Mithilfe `VERSIONABLE_SCHEMA`von kann Der Code die `Serialize` entsprechende Aktion in seiner Funktion ergreifen, indem er den Rückgabewert von [CArchive::GetObjectSchema](../mfc/reference/carchive-class.md#getobjectschema)überprüft.
 
-## <a name="calling-serialize-directly"></a>Direktes Aufrufen von serialisieren
+## <a name="calling-serialize-directly"></a>Serialisieren Direkt aufrufen
 
-In vielen Fällen ist der Aufwand des allgemeinen Objekt Archiv Schemas von `WriteObject` und `ReadObject` nicht erforderlich. Dies ist der häufige Fall, dass die Daten in ein [CDocument](../mfc/reference/cdocument-class.md)serialisiert werden. In diesem Fall wird die `Serialize`-Methode der `CDocument` direkt aufgerufen, nicht mit den Extrahierungs-oder einfügeoperatoren. Der Inhalt des Dokuments kann wiederum das allgemeinere Objekt Archiv Schema verwenden.
+In vielen Fällen ist der Overhead `WriteObject` des `ReadObject` allgemeinen Objektarchivschemas von und ist nicht notwendig. Dies ist der häufige Fall, wenn die Daten in ein [CDocument](../mfc/reference/cdocument-class.md)serialisiert werden. In diesem Fall `Serialize` `CDocument` wird die Methode des direkt aufgerufen, nicht mit den Extrakt- oder Insert-Operatoren. Der Inhalt des Dokuments kann wiederum das allgemeinere Objektarchivschema verwenden.
 
-Das direkte Aufrufen von `Serialize` hat die folgenden vor-und Nachteile:
+Das `Serialize` direkte Aufrufen hat folgende Vor- und Nachteile:
 
-- Vor oder nach der Serialisierung des Objekts werden dem Archiv keine zusätzlichen Bytes hinzugefügt. Dadurch werden die gespeicherten Daten nicht nur kleiner, sondern es können auch `Serialize` Routinen implementiert werden, die beliebige Dateiformate verarbeiten können.
+- Vor oder nach der Serialisierung des Objekts werden dem Archiv keine zusätzlichen Bytes hinzugefügt. Dadurch werden nicht nur die gespeicherten Daten `Serialize` kleiner, sondern Auch routinen implementiert, die alle Dateiformate verarbeiten können.
 
-- Der MFC ist optimiert, sodass die `WriteObject`-und `ReadObject` Implementierungen und verwandte Auflistungen nicht mit Ihrer Anwendung verknüpft werden, es sei denn, Sie benötigen das allgemeinere Objekt Archiv Schema für einen anderen Zweck.
+- Die MFC ist so `WriteObject` `ReadObject` abgestimmt, dass die Implementierungen und zugehörigen Sammlungen nicht mit Ihrer Anwendung verknüpft werden, es sei denn, Sie benötigen das allgemeinere Objektarchivschema für einen anderen Zweck.
 
-- Der Code muss nicht von alten Schema Nummern wieder hergestellt werden. Dadurch ist Ihr dokumentserialisierungscode für das Codieren von Schema Nummern, Dateiformat-Versionsnummern oder alle Identifikationsnummern verantwortlich, die Sie am Anfang der Datendateien verwenden.
+- Der Code muss nicht von alten Schemanummern wiederhergestellt werden. Dadurch ist der Dokumentserialisierungscode für die Codierung von Schemanummern, Dateiformatversionsnummern oder den zu Beginn der Datendateien verwendenden Identifizierenvonnummern verantwortlich.
 
-- Alle Objekte, die mit einem direkten-`Serialize` serialisiert werden, dürfen `CArchive::GetObjectSchema` nicht verwenden oder einen Rückgabewert von (uint)-1 verarbeiten, der angibt, dass die Version unbekannt war.
+- Jedes Objekt, das mit einem `Serialize` direkten Aufruf `CArchive::GetObjectSchema` serialisiert wird, darf einen Rückgabewert von (UINT)-1 nicht verwenden oder verarbeiten, was darauf hinweist, dass die Version unbekannt war.
 
-Da `Serialize` direkt in Ihrem Dokument aufgerufen wird, ist es in der Regel nicht möglich, dass die untergeordneten Objekte des Dokuments Verweise auf Ihr übergeordnetes Dokument archivieren. Diese Objekte müssen explizit einen Zeiger auf Ihr Container Dokument erhalten, oder Sie müssen die [CArchive:: MapObject](../mfc/reference/carchive-class.md#mapobject) -Funktion verwenden, um den `CDocument` Zeiger einer PID zuzuordnen, bevor diese backzeigern archiviert werden.
+Da `Serialize` das Dokument direkt aufgerufen wird, ist es in der Regel nicht möglich, dass die Unterobjekte des Dokuments Verweise auf das übergeordnete Dokument archivieren. Diese Objekte müssen explizit einen Zeiger auf ihr Containerdokument erhalten, oder Sie müssen `CDocument` die [Funktion CArchive::MapObject](../mfc/reference/carchive-class.md#mapobject) verwenden, um den Zeiger einer PID zuzuordnen, bevor diese Hintergrundzeiger archiviert werden.
 
-Wie bereits erwähnt, sollten Sie die Versions-und Klassen Informationen selbst codieren, wenn Sie `Serialize` direkt aufzurufen, sodass Sie das Format später ändern können, während die Abwärtskompatibilität mit älteren Dateien gewahrt bleibt. Die `CArchive::SerializeClass`-Funktion kann explizit aufgerufen werden, bevor ein Objekt direkt serialisiert oder eine Basisklasse aufgerufen wird.
+Wie bereits erwähnt, sollten Sie die Versions- und `Serialize` Klasseninformationen beim direkten Aufruf selbst kodieren, sodass Sie das Format später ändern können, während die Abwärtskompatibilität mit älteren Dateien beibehalten wird. Die `CArchive::SerializeClass` Funktion kann explizit aufgerufen werden, bevor ein Objekt direkt serialisiert wird oder bevor eine Basisklasse aufgerufen wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Technische Hinweise – nach Nummern geordnet](../mfc/technical-notes-by-number.md)<br/>
 [Technische Hinweise – nach Kategorien geordnet](../mfc/technical-notes-by-category.md)

@@ -5,49 +5,49 @@ helpviewer_keywords:
 - property page data transfer functions in MFC
 - property pages [MFC], global MFC functions
 ms.assetid: 734f88bc-c776-4136-9b0e-f45c761a45c1
-ms.openlocfilehash: 1c4e6c585bf216518e46109e88a2388da03a0496
-ms.sourcegitcommit: 934cb53fa4cb59fea611bfeb9db110d8d6f7d165
+ms.openlocfilehash: 1064cd99d1820ae8865fa632c3097441172c78c4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65611781"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372996"
 ---
 # <a name="property-pages-mfc"></a>Eigenschaftenseiten (MFC)
 
-Eigenschaftenseiten werden die aktuellen Werte von bestimmten Eigenschaften der OLE-Steuerelements in einer anpassbaren, grafische Schnittstelle zum Anzeigen und bearbeiten, die durch die Unterstützung einer datenzuordnung Authentifizierungsmechanismus auf Grundlage der Dialogdatenaustausch (DDX) angezeigt.
+Eigenschaftenseiten zeigen die aktuellen Werte bestimmter OLE-Steuerelementeigenschaften in einer anpassbaren, grafischen Oberfläche zum Anzeigen und Bearbeiten an, indem ein Datenzuordnungsmechanismus unterstützt wird, der auf dem Dialogdatenaustausch (DDX) basiert.
 
-Dieser Mechanismus für die datenzuordnung ordnet Steuerelemente der Seite Eigenschaft, die einzelnen Eigenschaften des OLE-Steuerelements. Der Wert der Steuerelementeigenschaft spiegelt wider, den Status oder den Inhalt des Eigenschaft-Steuerelement. Die Zuordnung zwischen Eigenschaften und Steuerelemente der Seite Eigenschaft wird angegeben, indem **DDP_** Funktionsaufrufe, die auf der Eigenschaftenseite `DoDataExchange` Member-Funktion. Im folgenden finden eine Liste der **DDP_** Funktionen, die exchange-Daten, die eingegeben wird, über die Eigenschaftenseite des Steuerelements:
+Dieser Datenzuordnungsmechanismus ordnet Eigenschaftenseitensteuerelemente den einzelnen Eigenschaften des OLE-Steuerelements zu. Der Wert der Steuerelementeigenschaft gibt den Status oder Inhalt des Eigenschaftenseitensteuerelements an. Die Zuordnung zwischen Eigenschaftenseitensteuerelementen **DDP_** und Eigenschaften wird durch DDP_ `DoDataExchange` Funktionsaufrufe in der Memberfunktion der Eigenschaftenseite angegeben. Im Folgenden finden Sie eine Liste von **DDP_** Funktionen, die Daten austauschen, die über die Eigenschaftenseite Ihres Steuerelements eingegeben wurden:
 
-### <a name="property-page-data-transfer"></a>Eigenschaft-Seite-Datenübertragung
+### <a name="property-page-data-transfer"></a>Eigenschaftenseite Datenübertragung
 
 |||
 |-|-|
-|[DDP_CBIndex](#ddp_cbindex)|Verknüpft die ausgewählte Zeichenfolge Index in einem Kombinationsfeld mit der Eigenschaft eines Steuerelements an.|
-|[DDP_CBString](#ddp_cbstring)|Verknüpft die ausgewählte Zeichenfolge in einem Kombinationsfeld mit der Eigenschaft eines Steuerelements an. Die ausgewählte Zeichenfolge kann mit den Buchstaben des Eigenschaftswerts beginnen jedoch nicht vollständig Übereinstimmung.|
-|[DDP_CBStringExact](#ddp_cbstringexact)|Verknüpft die ausgewählte Zeichenfolge in einem Kombinationsfeld mit der Eigenschaft eines Steuerelements an. Die ausgewählte Zeichenfolge und den Wert der Eigenschaft Zeichenfolge müssen genau übereinstimmen.|
-|[DDP_Check](#ddp_check)|Verknüpft ein Kontrollkästchen des Steuerelements auf der Seite mit der Eigenschaft eines Steuerelements an.|
-|[DDP_LBIndex](#ddp_lbindex)|Verknüpft die ausgewählte Zeichenfolge Index in einem Listenfeld mit der Eigenschaft eines Steuerelements an.|
-|[DDP_LBString](#ddp_lbstring)|Verknüpft die ausgewählte Zeichenfolge in ein Listenfeld mit der Eigenschaft eines Steuerelements an. Die ausgewählte Zeichenfolge kann mit den Buchstaben des Eigenschaftswerts beginnen jedoch muss nicht vollständig damit übereinstimmen.|
-|[DDP_LBStringExact](#ddp_lbstringexact)|Verknüpft die ausgewählte Zeichenfolge in ein Listenfeld mit der Eigenschaft eines Steuerelements an. Die ausgewählte Zeichenfolge und den Wert der Eigenschaft Zeichenfolge müssen genau übereinstimmen.|
-|[DDP_PostProcessing](#ddp_postprocessing)|Beendet die Übertragung von Eigenschaftswerten über das Steuerelement an.|
-|[DDP_Radio](#ddp_radio)|Links eine Gruppe von Optionsfeldern des Steuerelements auf der Seite mit der Eigenschaft eines Steuerelements.|
-|[DDP_Text](#ddp_text)|Verknüpft ein Steuerelement des Steuerelements auf der Seite mit der Eigenschaft eines Steuerelements an. Diese Funktion behandelt die verschiedene Arten von Eigenschaften, z. B. **doppelte**, **kurze**, BSTR, und **lange**.|
+|[DDP_CBIndex](#ddp_cbindex)|Verknüpft den Index der ausgewählten Zeichenfolge in einem Kombinationsfeld mit der Eigenschaft eines Steuerelements.|
+|[DDP_CBString](#ddp_cbstring)|Verknüpft die ausgewählte Zeichenfolge in einem Kombinationsfeld mit der Eigenschaft eines Steuerelements. Die ausgewählte Zeichenfolge kann mit den gleichen Buchstaben wie der Wert der Eigenschaft beginnen, muss sie jedoch nicht vollständig abgleichen.|
+|[DDP_CBStringExact](#ddp_cbstringexact)|Verknüpft die ausgewählte Zeichenfolge in einem Kombinationsfeld mit der Eigenschaft eines Steuerelements. Die ausgewählte Zeichenfolge und der Zeichenfolgenwert der Eigenschaft müssen genau übereinstimmen.|
+|[DDP_Check](#ddp_check)|Verknüpft ein Kontrollkästchen auf der Eigenschaftenseite des Steuerelements mit der Eigenschaft eines Steuerelements.|
+|[DDP_LBIndex](#ddp_lbindex)|Verknüpft den Index der ausgewählten Zeichenfolge in einem Listenfeld mit der Eigenschaft eines Steuerelements.|
+|[DDP_LBString](#ddp_lbstring)|Verknüpft die ausgewählte Zeichenfolge in einem Listenfeld mit der Eigenschaft eines Steuerelements. Die ausgewählte Zeichenfolge kann mit den gleichen Buchstaben wie der Wert der Eigenschaft beginnen, muss sie jedoch nicht vollständig übereinstimmen.|
+|[DDP_LBStringExact](#ddp_lbstringexact)|Verknüpft die ausgewählte Zeichenfolge in einem Listenfeld mit der Eigenschaft eines Steuerelements. Die ausgewählte Zeichenfolge und der Zeichenfolgenwert der Eigenschaft müssen genau übereinstimmen.|
+|[DDP_PostProcessing](#ddp_postprocessing)|Beendet die Übertragung von Eigenschaftswerten von Ihrem Steuerelement.|
+|[DDP_Radio](#ddp_radio)|Verknüpft eine Optionsfeldgruppe auf der Eigenschaftenseite des Steuerelements mit der Eigenschaft eines Steuerelements.|
+|[DDP_Text](#ddp_text)|Verknüpft ein Steuerelement auf der Eigenschaftenseite des Steuerelements mit der Eigenschaft eines Steuerelements. Diese Funktion behandelt verschiedene Arten von Eigenschaften, z. B. **double**, **short**, BSTR und **long**.|
 
-Weitere Informationen zu den `DoDataExchange` -Funktion oder auf den Eigenschaftenseiten, finden Sie im Artikel [ActiveX-Steuerelemente: Eigenschaftenseiten](../../mfc/mfc-activex-controls-property-pages.md).
+Weitere Informationen zu `DoDataExchange` den Funktions- und Eigenschaftenseiten finden Sie im Artikel [ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).
 
-Im folgenden finden eine Liste der Makros, die zum Erstellen und Verwalten von Eigenschaftenseiten für OLE-Steuerelements:
+Im Folgenden finden Sie eine Liste von Makros, die zum Erstellen und Verwalten von Eigenschaftenseiten für ein OLE-Steuerelement verwendet werden:
 
 ### <a name="property-pages"></a>Eigenschaftenseiten
 
 |||
 |-|-|
-|[BEGIN_PROPPAGEIDS](#begin_proppageids)|Beginnt die Liste der Eigenschaftenseiten-IDs an.|
-|[END_PROPPAGEIDS](#end_proppageids)|Die Liste der Eigenschaftenseiten-IDs wird beendet.|
-|[PROPPAGEID](#proppageid)|Deklariert eine Eigenschaftenseite der Steuerelement-Klasse.|
+|[BEGIN_PROPPAGEIDS](#begin_proppageids)|Beginnt die Liste der Eigenschaftenseiten-IDs.|
+|[END_PROPPAGEIDS](#end_proppageids)|Beendet die Liste der Eigenschaftenseiten-IDs.|
+|[PROPPAGEID](#proppageid)|Deklariert eine Eigenschaftenseite der Steuerelementklasse.|
 
-##  <a name="ddp_cbindex"></a>  DDP_CBIndex
+## <a name="ddp_cbindex"></a><a name="ddp_cbindex"></a>DDP_CBIndex
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert einer Ganzzahleigenschaft mit dem Index der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite zu synchronisieren.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer ganzzahligen Eigenschaft mit dem Index der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite zu synchronisieren.
 
 ```
 void AFXAPI DDP_CBIndex(
@@ -60,28 +60,28 @@ void AFXAPI DDP_CBIndex(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Ressourcen-ID des Kombinationsfeld-Feld der Eigenschaft des Steuerelements anhand des zugeordneten Steuerelements *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Kombinationsfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname der Steuerelementeigenschaft mit dem Kombinationsfeld-Steuerelement, das vom angegebenen ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem von *id*angegebenen Kombinationsfeldsteuerelement ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_CBIndex` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_CBIndex` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_cbstring"></a>  DDP_CBString
+## <a name="ddp_cbstring"></a><a name="ddp_cbstring"></a>DDP_CBString
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert einer Zeichenfolgeneigenschaft mit der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite zu synchronisieren.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft mit der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite zu synchronisieren.
 
 ```
 void AFXAPI DDP_CBString(
@@ -94,28 +94,28 @@ void AFXAPI DDP_CBString(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Ressourcen-ID des Kombinationsfeld-Feld der Eigenschaft des Steuerelements anhand des zugeordneten Steuerelements *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Kombinationsfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname der Steuerelementeigenschaft mit dem angegebenen Combo Box Zeichenfolge ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit der kombinationsfeldzeichenfolge ausgetauscht werden soll, die durch *id*angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_CBString` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_CBString` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_cbstringexact"></a>  DDP_CBStringExact
+## <a name="ddp_cbstringexact"></a><a name="ddp_cbstringexact"></a>DDP_CBStringExact
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert einer Zeichenfolgeneigenschaft zu synchronisieren, die die aktuelle Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite genau übereinstimmt.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft zu synchronisieren, die genau mit der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite übereinstimmt.
 
 ```
 void AFXAPI DDP_CBStringExact(
@@ -128,28 +128,28 @@ void AFXAPI DDP_CBStringExact(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Ressourcen-ID des Kombinationsfeld-Feld der Eigenschaft des Steuerelements anhand des zugeordneten Steuerelements *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Kombinationsfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname der Steuerelementeigenschaft mit dem angegebenen Combo Box Zeichenfolge ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit der kombinationsfeldzeichenfolge ausgetauscht werden soll, die durch *id*angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_CBStringExact` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_CBStringExact` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_check"></a>  DDP_Check
+## <a name="ddp_check"></a><a name="ddp_check"></a>DDP_Check
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert der Eigenschaft mit dem zugeordneten Eigenschaft Seite das Kontrollkästchen-Steuerelement zu synchronisieren.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert der Eigenschaft mit dem zugeordneten Kontrollkästchen-Kontrollkästchen-Steuerelement für Eigenschaftenseiten zu synchronisieren.
 
 ```
 void AFXAPI DDP_Check(
@@ -162,28 +162,28 @@ void AFXAPI DDP_Check(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Ressourcen-ID des Kontrollkästchen-Steuerelements verknüpft ist, mit der Eigenschaft des Steuerelements gemäß *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Kontrollkästchen-Steuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname der Steuerelementeigenschaft mit dem Kontrollkästchen-Steuerelement, das anhand des ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem von *id*angegebenen Kontrollkästchen-Steuerelement ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_Check` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_Check` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_lbindex"></a>  DDP_LBIndex
+## <a name="ddp_lbindex"></a><a name="ddp_lbindex"></a>DDP_LBIndex
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert einer Ganzzahleigenschaft mit dem Index der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite zu synchronisieren.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Ganzzahleigenschaft mit dem Index der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite zu synchronisieren.
 
 ```
 void AFXAPI DDP_LBIndex(
@@ -196,28 +196,28 @@ void AFXAPI DDP_LBIndex(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Liste die Ressourcen-ID-Feld der Eigenschaft des Steuerelements anhand des zugeordneten Steuerelements *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Listenfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname, der der Eigenschaft des Steuerelements mit der angegebenen Liste Feld Zeichenfolge ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit der von *id*angegebenen Listenfeldzeichenfolge ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_LBIndex` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_LBIndex` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_lbstring"></a>  DDP_LBString
+## <a name="ddp_lbstring"></a><a name="ddp_lbstring"></a>DDP_LBString
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert einer Zeichenfolgeneigenschaft mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite zu synchronisieren.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite zu synchronisieren.
 
 ```
 void AFXAPI DDP_LBString(
@@ -230,28 +230,28 @@ void AFXAPI DDP_LBString(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Liste die Ressourcen-ID-Feld der Eigenschaft des Steuerelements anhand des zugeordneten Steuerelements *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Listenfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname, der der Eigenschaft des Steuerelements mit der angegebenen Liste Feld Zeichenfolge ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit der von *id*angegebenen Listenfeldzeichenfolge ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_LBString` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_LBString` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_lbstringexact"></a>  DDP_LBStringExact
+## <a name="ddp_lbstringexact"></a><a name="ddp_lbstringexact"></a>DDP_LBStringExact
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` Funktion, um den Wert einer Zeichenfolgeneigenschaft zu synchronisieren, die die aktuelle Auswahl in einem Listenfeld auf der Eigenschaftenseite genau übereinstimmt.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft zu synchronisieren, die genau mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite übereinstimmt.
 
 ```
 void AFXAPI DDP_LBStringExact(
@@ -264,28 +264,28 @@ void AFXAPI DDP_LBStringExact(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Liste die Ressourcen-ID-Feld der Eigenschaft des Steuerelements anhand des zugeordneten Steuerelements *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Listenfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname, der der Eigenschaft des Steuerelements mit der angegebenen Liste Feld Zeichenfolge ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit der von *id*angegebenen Listenfeldzeichenfolge ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_LBStringExact` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_LBStringExact` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_postprocessing"></a>  DDP_PostProcessing
+## <a name="ddp_postprocessing"></a><a name="ddp_postprocessing"></a>DDP_PostProcessing
 
-Rufen Sie diese Funktion in Ihr Eigenschaftenseite `DoDataExchange` -Funktion verwendet, um die Übertragung von Eigenschaftswerten auf der Eigenschaftenseite zu Ihrem Steuerelement Fertig stellen, wenn Eigenschaftswerte gespeichert werden.
+Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um die Übertragung von Eigenschaftswerten von der Eigenschaftenseite auf das Steuerelement zu beenden, wenn Eigenschaftswerte gespeichert werden.
 
 ```
 void AFXAPI DDP_PostProcessing(CDataExchange * pDX);
@@ -294,11 +294,11 @@ void AFXAPI DDP_PostProcessing(CDataExchange * pDX);
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, wenn Sie alle Dialogdatenaustausch-Funktionen durchgeführt haben. Zum Beispiel:
+Diese Funktion sollte aufgerufen werden, nachdem alle Datenaustauschfunktionen abgeschlossen sind. Beispiel:
 
 [!code-cpp[NVC_MFCAxCtl#15](../../mfc/reference/codesnippet/cpp/property-pages-mfc_1.cpp)]
 
@@ -306,9 +306,9 @@ Diese Funktion sollte aufgerufen werden, wenn Sie alle Dialogdatenaustausch-Funk
 
   **Header** afxctl.h
 
-##  <a name="ddp_radio"></a>  DDP_Radio
+## <a name="ddp_radio"></a><a name="ddp_radio"></a>DDP_Radio
 
-Rufen Sie diese Funktion des Steuerelements `DoPropExchange` Funktion, um den Wert der Eigenschaft mit der zugehörigen Eigenschaft Seite Optionsfeld-Steuerelement zu synchronisieren.
+Rufen Sie diese Funktion `DoPropExchange` in der Funktion des Steuerelements auf, um den Wert der Eigenschaft mit dem zugehörigen Optionsfeldsteuerelement der Eigenschaftenseite zu synchronisieren.
 
 ```
 void AFXAPI DDP_Radio(
@@ -321,28 +321,28 @@ void AFXAPI DDP_Radio(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Ressourcen-ID des Optionsfelds Schaltflächen-Steuerelement, die der Eigenschaft des Steuerelements anhand des zugeordneten *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Optionsfeldsteuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname, der der Eigenschaft des Steuerelements mit das Optionsfeld-Steuerelement gemäß ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem durch *id*angegebenen Optionsfeldsteuerelement ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_Radio` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_Radio` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="ddp_text"></a>  DDP_Text
+## <a name="ddp_text"></a><a name="ddp_text"></a>DDP_Text
 
-Rufen Sie diese Funktion des Steuerelements `DoDataExchange` Funktion, um den Wert der Eigenschaft mit dem Steuerelement zugeordnete Eigenschaft zu synchronisieren.
+Rufen Sie diese Funktion `DoDataExchange` in der Funktion des Steuerelements auf, um den Wert der Eigenschaft mit dem zugehörigen Eigenschaftenseitensteuerelement zu synchronisieren.
 
 ```
 void AFXAPI DDP_Text(
@@ -397,28 +397,28 @@ void AFXAPI DDP_Text(
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Zeiger auf eine `CDataExchange` Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
+Zeiger auf `CDataExchange` ein Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Datenaustauschs herzustellen, darunter seine Richtung.
 
-*ID*<br/>
-Die Ressourcen-ID des Steuerelements mit der Eigenschaft des Steuerelements anhand des verknüpften *PszPropName*.
+*id*<br/>
+Die Ressourcen-ID des Steuerelements, das der von *pszPropName*angegebenen Steuerelementeigenschaft zugeordnet ist.
 
-*member*<br/>
-Die Membervariable, die das Eigenschaftensteuerelement-Seite anhand des zugeordneten *Id* und durch die angegebene Eigenschaft *PszPropName*.
+*Mitglied*<br/>
+Die Membervariable, die dem Eigenschaftenseitensteuerelement zugeordnet ist, das durch *id* angegeben wird, und die Eigenschaft, die von *pszPropName*angegeben wird.
 
 *pszPropName*<br/>
-Der Eigenschaftenname der Steuerelementeigenschaft mit dem vom angegebenen Steuerelement ausgetauscht werden sollen *Id*.
+Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem von *id*angegebenen Steuerelement ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte aufgerufen werden, ehe die entsprechende `DDX_Text` Funktionsaufruf.
+Diese Funktion sollte vor `DDX_Text` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="begin_proppageids"></a>  BEGIN_PROPPAGEIDS
+## <a name="begin_proppageids"></a><a name="begin_proppageids"></a>BEGIN_PROPPAGEIDS
 
-Beginn der Definition Ihres Steuerelements-Liste der Eigenschaftenseiten-IDs an.
+Beginnt die Definition der Liste der Eigenschaftenseiten-IDs des Steuerelements.
 
 ```
 BEGIN_PROPPAGEIDS(class_name,  count)
@@ -426,25 +426,25 @@ BEGIN_PROPPAGEIDS(class_name,  count)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name des der Control-Klasse, die für die Eigenschaft Seiten angegeben werden.
+*Class_name*<br/>
+Der Name der Steuerelementklasse, für die Eigenschaftenseiten angegeben werden.
 
 *count*<br/>
-Die Anzahl der Seiten, die von der Control-Klasse verwendet.
+Die Anzahl der Eigenschaftenseiten, die von der Steuerelementklasse verwendet werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Klicken Sie in der Implementierungsdatei (.cpp), die die Member-Funktionen für die Klasse definiert, starten Sie die Eigenschaftenliste für die Seite mit dem BEGIN_PROPPAGEIDS-Makro, und klicken Sie dann fügen Sie die Makroeinträge für jede Eigenschaft, und schließen Sie die Eigenschaftenliste für die Seite mit den END_PROPPAGEIDS -Makro.
+Starten Sie in der Implementierungsdatei (.cpp), die die Memberfunktionen für Ihre Klasse definiert, die Eigenschaftenseitenliste mit dem BEGIN_PROPPAGEIDS-Makro, fügen Sie dann Makroeinträge für jede Ihrer Eigenschaftenseiten hinzu, und vervollständigen Sie die Eigenschaftenseitenliste mit dem END_PROPPAGEIDS-Makro.
 
-Weitere Informationen zu Eigenschaftenseiten, finden Sie im Artikel [ActiveX-Steuerelemente: Eigenschaftenseiten](../../mfc/mfc-activex-controls-property-pages.md).
+Weitere Informationen zu Eigenschaftenseiten finden Sie im Artikel [ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="end_proppageids"></a>  END_PROPPAGEIDS
+## <a name="end_proppageids"></a><a name="end_proppageids"></a>END_PROPPAGEIDS
 
-Beendet die Definition der Eigenschaft Seite ID enthalten.
+Beendet die Definition der Eigenschaftenseiten-ID-Liste.
 
 ```
 END_PROPPAGEIDS(class_name)
@@ -452,14 +452,14 @@ END_PROPPAGEIDS(class_name)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name der Steuerelement-Klasse, die auf der Seite der besitzt.
+*Class_name*<br/>
+Der Name der Steuerelementklasse, die die Eigenschaftenseite besitzt.
 
 ### <a name="requirements"></a>Anforderungen
 
   **Header** afxctl.h
 
-##  <a name="proppageid"></a>  PROPPAGEID
+## <a name="proppageid"></a><a name="proppageid"></a>PROPPAGEID
 
 Fügt eine Eigenschaftenseite für die Verwendung durch das OLE-Steuerelement hinzu.
 
@@ -470,11 +470,11 @@ PROPPAGEID(clsid)
 ### <a name="parameters"></a>Parameter
 
 *clsid*<br/>
-Die eindeutige Klasse-ID einer Eigenschaftenseite.
+Die eindeutige Klassen-ID einer Eigenschaftenseite.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Alle PROPPAGEID-Makros müssen zwischen die BEGIN_PROPPAGEIDS und END_PROPPAGEIDS-Makros in der Implementierungsdatei des Steuerelements platziert werden.
+Alle PROPPAGEID-Makros müssen zwischen dem BEGIN_PROPPAGEIDS und END_PROPPAGEIDS Makros in der Implementierungsdatei des Steuerelements platziert werden.
 
 ### <a name="requirements"></a>Anforderungen
 
@@ -482,4 +482,4 @@ Alle PROPPAGEID-Makros müssen zwischen die BEGIN_PROPPAGEIDS und END_PROPPAGEID
 
 ## <a name="see-also"></a>Siehe auch
 
-[Makros und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)
+[MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

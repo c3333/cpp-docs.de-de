@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Microsoft::WRL::SimpleActivationFactory::GetRuntimeClassName method
 - Microsoft::WRL::SimpleActivationFactory::GetTrustLevel method
 ms.assetid: aff768e0-0038-4fd7-95d2-ad7d308da41c
-ms.openlocfilehash: 1831a816d0967c2ca53f941128639ea368c1b727
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 39e539c63e91b508f51656114ee8fbd68150991f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403085"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370937"
 ---
 # <a name="simpleactivationfactory-class"></a>SimpleActivationFactory-Klasse
 
@@ -36,11 +36,11 @@ class SimpleActivationFactory : public ActivationFactory<>;
 *Basis*<br/>
 Eine Basisklasse.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Basisklasse muss einen Standardkonstruktor bereitstellen.
 
-Im folgenden Codebeispiel wird veranschaulicht, wie mit SimpleActivationFactory mit der [ActivatableClassWithFactoryEx](activatableclass-macros.md) Makro.
+Im folgenden Codebeispiel wird veranschaulicht, wie SimpleActivationFactory mit dem [ActivatableClassWithFactoryEx-Makro](activatableclass-macros.md) verwendet wird.
 
 `ActivatableClassWithFactoryEx(MyClass, SimpleActivationFactory, MyServerName);`
 
@@ -48,11 +48,11 @@ Im folgenden Codebeispiel wird veranschaulicht, wie mit SimpleActivationFactory 
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[SimpleActivationFactory::ActivateInstance-Methode](#activateinstance)|Erstellt eine Instanz der angegebenen Schnittstelle.|
-|[SimpleActivationFactory::GetRuntimeClassName-Methode](#getruntimeclassname)|Ruft den Common Language Runtime-Klassennamen einer Instanz der Klasse gemäß den *Base* Klassenvorlagenparameter.|
-|[SimpleActivationFactory::GetTrustLevel-Methode](#gettrustlevel)|Ruft die Vertrauensebene der eine Instanz der Klasse, die gemäß der *Base* Klassenvorlagenparameter.|
+|[SimpleActivationFactory::GetRuntimeClassName-Methode](#getruntimeclassname)|Ruft den Laufzeitklassennamen einer Instanz der Klasse ab, die durch den *Vorlagenparameter der Basisklasse* angegeben wird.|
+|[SimpleActivationFactory::GetTrustLevel-Methode](#gettrustlevel)|Ruft die Vertrauensstufe einer Instanz der Klasse ab, die durch den *Vorlagenparameter der Basisklasse* angegeben wird.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -80,11 +80,11 @@ Im folgenden Codebeispiel wird veranschaulicht, wie mit SimpleActivationFactory 
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** module.h
+**Kopfzeile:** module.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="activateinstance"></a>Simpleactivationfactory:: Activateinstance-Methode
+## <a name="simpleactivationfactoryactivateinstance-method"></a><a name="activateinstance"></a>SimpleActivationFactory::ActivateInstance-Methode
 
 Erstellt eine Instanz der angegebenen Schnittstelle.
 
@@ -97,19 +97,19 @@ STDMETHOD( ActivateInstance )(
 #### <a name="parameters"></a>Parameter
 
 *ppvObject*<br/>
-Wenn dieser Vorgang abgeschlossen ist, Zeiger auf eine Instanz des Objekts gemäß der `Base` Klassenvorlagenparameter.
+Wenn dieser Vorgang abgeschlossen ist, zeigen Sie auf `Base` eine Instanz des Objekts, die durch den Klassenvorlagenparameter angegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn `__WRL_STRICT__` wird definiert, ein Assert-Fehler wird ausgegeben, wenn die Klassenvorlagenparameter angegebene Basisklasse abgeleitet ist nicht [RuntimeClass](runtimeclass-class.md), oder ist nicht konfiguriert, mit dem WinRt oder WinRtClassicComMix [ RuntimeClassType](runtimeclasstype-enumeration.md) Enumerationswert.
+Wenn `__WRL_STRICT__` definiert, wird ein Assert-Fehler angezeigt, wenn die im Klassenvorlagenparameter angegebene Basisklasse nicht von [RuntimeClass](runtimeclass-class.md)abgeleitet oder nicht mit dem Enumerationswert WinRt oder WinRtClassicComMix [RuntimeClassType](runtimeclasstype-enumeration.md) konfiguriert ist.
 
-## <a name="getruntimeclassname"></a>Simpleactivationfactory:: Getruntimeclassname-Methode
+## <a name="simpleactivationfactorygetruntimeclassname-method"></a><a name="getruntimeclassname"></a>SimpleActivationFactory::GetRuntimeClassName-Methode
 
-Ruft den Common Language Runtime-Klassennamen einer Instanz der Klasse gemäß den `Base` Klassenvorlagenparameter.
+Ruft den Laufzeitklassennamen einer Instanz der Klasse `Base` ab, die durch den Klassenvorlagenparameter angegeben wird.
 
 ```cpp
 STDMETHOD( GetRuntimeClassName )(
@@ -120,19 +120,19 @@ STDMETHOD( GetRuntimeClassName )(
 #### <a name="parameters"></a>Parameter
 
 *runtimeName*<br/>
-Wenn dieser Vorgang abgeschlossen ist, den Namen der Common Language Runtime-Klasse.
+Wenn dieser Vorgang abgeschlossen ist, wird der Name der Laufzeitklasse ausgeführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn `__WRL_STRICT__` wird definiert, ein Assert-Fehler wird ausgegeben, wenn die Klasse, wird angegeben die `Base` Klassenvorlagenparameter wird nicht von abgeleiteten [RuntimeClass](runtimeclass-class.md), oder ist nicht mit dem WinRt oder WinRtClassicComMix konfiguriert[RuntimeClassType](runtimeclasstype-enumeration.md) Enumerationswert.
+Wenn `__WRL_STRICT__` definiert, wird ein Assert-Fehler angezeigt, wenn `Base` die vom Klassenvorlagenparameter angegebene Klasse nicht von [RuntimeClass](runtimeclass-class.md)abgeleitet oder nicht mit dem Enumerationswert WinRt oder WinRtClassicComMix [RuntimeClassType](runtimeclasstype-enumeration.md) konfiguriert ist.
 
-## <a name="gettrustlevel"></a>Simpleactivationfactory:: Gettrustlevel-Methode
+## <a name="simpleactivationfactorygettrustlevel-method"></a><a name="gettrustlevel"></a>SimpleActivationFactory::GetTrustLevel-Methode
 
-Ruft die Vertrauensebene der eine Instanz der Klasse, die gemäß der `Base` Klassenvorlagenparameter.
+Ruft die Vertrauensstufe einer Instanz der `Base` Klasse ab, die durch den Klassenvorlagenparameter angegeben wird.
 
 ```cpp
 STDMETHOD(
@@ -143,8 +143,8 @@ STDMETHOD(
 #### <a name="parameters"></a>Parameter
 
 *trustLvl*<br/>
-Wenn dieser Vorgang abgeschlossen ist, die Vertrauensebene des aktuellen Klassenobjekts.
+Wenn dieser Vorgang abgeschlossen ist, wird die Vertrauensstufe des aktuellen Klassenobjekts abgeschlossen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Stets S_OK.
+Immer S_OK.

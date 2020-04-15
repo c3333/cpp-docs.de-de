@@ -5,12 +5,12 @@ f1_keywords:
 - hash_set/std::swap
 - hash_set/std::swap (hash_multiset)
 ms.assetid: 557a0162-3728-4537-97dc-f9f6cc7ece94
-ms.openlocfilehash: 2fbc05c16ba6629397bbb07bab30cb9315a16e1f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: d7df6b3c5dc0d0d493d17b3e9995bc4758ffd6d4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426936"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370589"
 ---
 # <a name="lthash_setgt-functions"></a>&lt;hash_set&gt; Funktionen
 
@@ -18,7 +18,7 @@ ms.locfileid: "79426936"
 |-|-|
 |[swap](#swap)|[swap (hash_multiset)](#swap_hash_multiset)|
 
-## <a name="swap"></a> swap
+## <a name="swap"></a><a name="swap"></a>Swap
 
 > [!NOTE]
 > Diese API ist veraltet. Die Alternative ist [unordered_set-Klasse](../standard-library/unordered-set-class.md).
@@ -33,25 +33,25 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte*\
-Die hash_set, die die auszutauschenden Elemente bereitstellen, oder die hash_set, deren Elemente mit denen des hash_set *Links*ausgetauscht werden sollen.
+*Richting*\
+Die hash_set, die die zu tauschenden Elemente oder die hash_set, deren Elemente mit denen der hash_set *links*ausgetauscht werden sollen.
 
-*Linker*\
-Die hash_set, deren Elemente mit denen des hash_set *Rechts*ausgetauscht werden sollen.
+*Links*\
+Die hash_set, deren Elemente mit denen des hash_set *Rechten*ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `swap`-Vorlagen Funktion ist ein Algorithmus, der sich auf die Container Klasse spezialisiert hash_set, um die Member-Funktion `left.`[Swap](../standard-library/hash-set-class.md#swap)(`right`) auszuführen. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagenfunktion
+Die `swap` Vorlagenfunktion ist ein Algorithmus, der auf die `left.`Containerklasse hash_set zum Ausführen des Memberfunktions-Swaps ( [swap](../standard-library/hash-set-class.md#swap)`right`) spezialisiert ist. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die spezialisierteste Version der Vorlagenfunktion aus. Die allgemeine Version der Vorlagenfunktion
 
 **template \<class T> void swap(T&, T&),**
 
-in der Algorithmusklasse funktioniert mittels Zuweisung und ist ein langsamer Vorgang. Die spezialisierte Version in jedem Container ist viel schneller, da sie mit der internen Darstellung der Containerklasse verwendet werden kann.
+in der Algorithmusklasse funktioniert mittels Zuweisung und ist ein langsamer Vorgang. Die spezialisierte Version in jedem Container ist viel schneller, da sie mit der internen Darstellung der Containerklasse genutzt werden kann.
 
 ### <a name="example"></a>Beispiel
 
 Im Codebeispiel für die Memberklasse [hash_set::swap](../standard-library/hash-set-class.md#swap) finden Sie ein Beispiel, das die Vorlagenversion `swap` verwendet.
 
-## <a name="swap_hash_multiset"></a> swap (hash_multiset)
+## <a name="swap-hash_multiset"></a><a name="swap_hash_multiset"></a>Swap (hash_multiset)
 
 > [!NOTE]
 > Diese API ist veraltet. Die Alternative ist [unordered_set-Klasse](../standard-library/unordered-set-class.md).
@@ -64,19 +64,19 @@ void swap(hash_multiset <Key, Traits, Allocator>& left, hash_multiset <Key, Trai
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte*\
-Die Hash_multiset, die die auszutauschenden Elemente bereitstellen, oder die Hash_multiset, deren Elemente mit denen des Hash_multiset *Links*ausgetauscht werden sollen.
+*Richting*\
+Die hash_multiset, die die zu tauschenden Elemente oder die hash_multiset, deren Elemente mit denen der hash_multiset *links*ausgetauscht werden sollen.
 
-*Linker*\
-Die Hash_multiset, deren Elemente mit denen des Hash_multiset *Rechts*ausgetauscht werden sollen.
+*Links*\
+Die hash_multiset, deren Elemente mit denen des hash_multiset *Rechten*ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `swap`-Vorlagen Funktion ist ein Algorithmus, der sich auf die Container Klasse spezialisiert hash_multiset, um die Member-Funktion `left.`[Swap](../standard-library/hash-multiset-class.md#swap)(`right`) auszuführen. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagenfunktion
+Die `swap` Vorlagenfunktion ist ein Algorithmus, der auf die `left.`Containerklasse hash_multiset zum Ausführen des Memberfunktions-Swaps ( [swap](../standard-library/hash-multiset-class.md#swap)`right`) spezialisiert ist. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die spezialisierteste Version der Vorlagenfunktion aus. Die allgemeine Version der Vorlagenfunktion
 
 **template \<class T> void swap(T&, T&),**
 
-in der Algorithmusklasse funktioniert mittels Zuweisung und ist ein langsamer Vorgang. Die spezialisierte Version in jedem Container ist viel schneller, da sie mit der internen Darstellung der Containerklasse verwendet werden kann.
+in der Algorithmusklasse funktioniert mittels Zuweisung und ist ein langsamer Vorgang. Die spezialisierte Version in jedem Container ist viel schneller, da sie mit der internen Darstellung der Containerklasse genutzt werden kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -84,4 +84,4 @@ Im Codebeispiel für die Memberklasse [hash_multiset::swap](../standard-library/
 
 ## <a name="see-also"></a>Siehe auch
 
-[<hash_set>](../standard-library/hash-set.md)
+[<hash_set><](../standard-library/hash-set.md)

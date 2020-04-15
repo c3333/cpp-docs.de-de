@@ -11,16 +11,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::HandleTraits::CriticalSectionTraits::GetInvalidValue method
 - Microsoft::WRL::Wrappers::HandleTraits::CriticalSectionTraits::Unlock method
 ms.assetid: c515a1b5-4eb0-40bc-9035-c4d9352c9de7
-ms.openlocfilehash: ce904ecbd9a5855c63fd43f07f88c215cef544ae
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 05c93bf6a2765bd11489075067c627ab3c3ab691
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398601"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372581"
 ---
 # <a name="criticalsectiontraits-structure"></a>CriticalSectionTraits-Struktur
 
-Spezialisiert hat eine `CriticalSection` Objekt, das entweder ein ungültiges kritischen Abschnitt oder eine Funktion, die einen kritischen Abschnitt release unterstützt.
+Spezialisiert auf `CriticalSection` ein Objekt, um entweder einen ungültigen kritischen Abschnitt oder eine Funktion zum Freigeben eines kritischen Abschnitts zu unterstützen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,16 +32,16 @@ struct CriticalSectionTraits;
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name   | Beschreibung
+Name   | BESCHREIBUNG
 ------ | -----------------------------------------------------------------------------------------------------------------
-`Type` | Ein `typedef` , die einen Zeiger auf einen kritischen Abschnitt definiert. `Type` wird definiert als `typedef CRITICAL_SECTION* Type;`.
+`Type` | Eine, `typedef` die einen Zeiger auf einen kritischen Abschnitt definiert. `Type` ist als `typedef CRITICAL_SECTION* Type;` definiert.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                       | Beschreibung
+Name                                                       | BESCHREIBUNG
 ---------------------------------------------------------- | -----------------
-[CriticalSectionTraits::GetInvalidValue](#getinvalidvalue) | Spezialisiert hat eine `CriticalSection` Vorlage so, dass die Vorlage immer ungültig ist.
-[CriticalSectionTraits::Unlock](#unlock)                   | Spezialisiert hat eine `CriticalSection` Vorlage so, dass die It freigeben Besitzer des Objekts angegebenen kritischen Abschnitt unterstützt.
+[CriticalSectionTraits::GetInvalidValue](#getinvalidvalue) | Speziell ist `CriticalSection` eine Vorlage so, dass die Vorlage immer ungültig ist.
+[CriticalSectionTraits::Entsperren](#unlock)                   | Spezialisiert auf `CriticalSection` eine Vorlage, sodass sie das Freigeben des Besitzes des angegebenen kritischen Abschnittsobjekts unterstützt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -49,13 +49,13 @@ Name                                                       | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers::HandleTraits
 
-## <a name="getinvalidvalue"></a>CriticalSectionTraits::GetInvalidValue
+## <a name="criticalsectiontraitsgetinvalidvalue"></a><a name="getinvalidvalue"></a>CriticalSectionTraits::GetInvalidValue
 
-Spezialisiert hat eine `CriticalSection` Vorlage so, dass die Vorlage immer ungültig ist.
+Speziell ist `CriticalSection` eine Vorlage so, dass die Vorlage immer ungültig ist.
 
 ```cpp
 inline static Type GetInvalidValue();
@@ -65,13 +65,13 @@ inline static Type GetInvalidValue();
 
 Gibt immer einen Zeiger auf einen ungültigen kritischen Abschnitt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `Type` Modifizierer ist definiert als `typedef CRITICAL_SECTION* Type;`.
+Der `Type` Modifikator `typedef CRITICAL_SECTION* Type;`ist definiert als .
 
-## <a name="unlock"></a>CriticalSectionTraits::Unlock
+## <a name="criticalsectiontraitsunlock"></a><a name="unlock"></a>CriticalSectionTraits::Entsperren
 
-Spezialisiert hat eine `CriticalSection` Vorlage so, dass die It freigeben Besitzer des Objekts angegebenen kritischen Abschnitt unterstützt.
+Spezialisiert auf `CriticalSection` eine Vorlage, sodass sie das Freigeben des Besitzes des angegebenen kritischen Abschnittsobjekts unterstützt.
 
 ```cpp
 inline static void Unlock(
@@ -81,11 +81,11 @@ inline static void Unlock(
 
 ### <a name="parameters"></a>Parameter
 
-*cs*<br/>
-Ein Zeiger auf ein Objekt des kritischen Abschnitts.
+*Cs*<br/>
+Ein Zeiger auf ein kritisches Abschnittsobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `Type` Modifizierer ist definiert als `typedef CRITICAL_SECTION* Type;`.
+Der `Type` Modifikator `typedef CRITICAL_SECTION* Type;`ist definiert als .
 
-Weitere Informationen finden Sie unter **Funktion LeaveCriticalSection** in die **Synchronisierungsfunktionen** Teil der Windows-API-Dokumentation.
+Weitere Informationen finden Sie unter **LeaveCriticalSection-Funktion** im Abschnitt **Synchronisierungsfunktionen** in der Windows-API-Dokumentation.

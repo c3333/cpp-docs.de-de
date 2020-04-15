@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMFCSpinButtonCtrl [MFC], OnDraw
 ms.assetid: 8773f259-4d3f-4bca-a71c-09e0c71bc843
-ms.openlocfilehash: 60808359c11604368493031e1b6f4573b3b2026f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 445b857400d8c82109ca7220b84bac692a2abf89
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410095"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376177"
 ---
 # <a name="cmfcspinbuttonctrl-class"></a>CMFCSpinButtonCtrl-Klasse
 
-Die `CMFCSpinButtonCtrl` -Klasse unterstützt einen visuellen Manager, der ein Drehfeldsteuerelement zeichnet.
+Die `CMFCSpinButtonCtrl` Klasse unterstützt einen visuellen Manager, der ein Drehtastensteuerelement zeichnet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,30 +29,30 @@ class CMFCSpinButtonCtrl : public CSpinButtonCtrl
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`CMFCSpinButtonCtrl::CMFCSpinButtonCtrl`|Standardkonstruktor|
+|`CMFCSpinButtonCtrl::CMFCSpinButtonCtrl`|Der Standardkonstruktor.|
 |`CMFCSpinButtonCtrl::~CMFCSpinButtonCtrl`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCSpinButtonCtrl::OnDraw](#ondraw)|Zeichnet die aktuelle Drehfeld-Steuerelement neu.|
+|[CMFCSpinButtonCtrl::OnDraw](#ondraw)|Malt das aktuelle Drehtastensteuerelement neu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Um einen visuellen Manager verwenden, die um in der Anwendung ein Drehfeld-Steuerelement zu zeichnen, ersetzen Sie alle Instanzen von der `CSpinButtonCtrl` -Klasse mit der `CMFCSpinButtonCtrl` Klasse.
+Um einen visuellen Manager zum Zeichnen eines Drehtastensteuerelements `CSpinButtonCtrl` in der `CMFCSpinButtonCtrl` Anwendung zu verwenden, ersetzen Sie alle Instanzen der Klasse durch die Klasse.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie zum Erstellen eines Objekts von der `CMFCSpinButtonCtrl` Klasse, und verwenden dessen `Create` Methode.
+Im folgenden Beispiel wird veranschaulicht, `CMFCSpinButtonCtrl` wie Sie `Create` ein Objekt der Klasse erstellen und dessen Methode verwenden.
 
 [!code-cpp[NVC_MFC_RibbonApp#25](../../mfc/reference/codesnippet/cpp/cmfcspinbuttonctrl-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -64,11 +64,11 @@ Im folgende Beispiel wird veranschaulicht, wie zum Erstellen eines Objekts von d
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxspinbuttonctrl.h
+**Kopf:** afxspinbuttonctrl.h
 
-##  <a name="ondraw"></a>  CMFCSpinButtonCtrl::OnDraw
+## <a name="cmfcspinbuttonctrlondraw"></a><a name="ondraw"></a>CMFCSpinButtonCtrl::OnDraw
 
-Zeichnet die aktuelle Drehfeld-Steuerelement neu.
+Malt das aktuelle Drehtastensteuerelement neu.
 
 ```
 virtual void OnDraw(CDC* pDC);
@@ -79,9 +79,9 @@ virtual void OnDraw(CDC* pDC);
 *pDC*<br/>
 [in] Ein Zeiger auf einen Gerätekontext.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework Ruft die `CMFCSpinButtonCtrl::OnPaint` Methode zum Behandeln der [CWnd::OnPaint](../../mfc/reference/cwnd-class.md#onpaint) Nachricht und dass die Methode ruft wiederum diese `CMFCSpinButtonCtrl::OnDraw` Methode. Überschreiben Sie diese Methode, um anzupassen, wie das Framework die Drehfeldsteuerelement zeichnet.
+Das Framework `CMFCSpinButtonCtrl::OnPaint` ruft die Methode auf, die [CWnd::OnPaint-Nachricht](../../mfc/reference/cwnd-class.md#onpaint) zu behandeln, und diese Methode ruft diese `CMFCSpinButtonCtrl::OnDraw` Methode wiederum auf. Überschreiben Sie diese Methode, um die Art und Weise anzupassen, wie das Framework das Drehtastensteuerelement zeichnet.
 
 ## <a name="see-also"></a>Siehe auch
 

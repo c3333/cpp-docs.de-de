@@ -1,29 +1,29 @@
 ---
-title: Willkommen zurück zur C++ modernenC++
-description: Beschreibt die neuen Programmier Ausdrücke in modernen C++ und deren Begründung.
+title: Willkommen zurück bei C++ - Modern C++
+description: Beschreibt die neuen Programmieridiome in Modern C++ und deren Begründung.
 ms.date: 01/10/2020
 ms.topic: conceptual
 ms.assetid: 1cb1b849-ed9c-4721-a972-fd8f3dab42e2
-ms.openlocfilehash: 9630322024e639f9e5db1888dac5a1530befc716
-ms.sourcegitcommit: ba129dc55dc3ff638f3af5ac0e87ec2ca1cb2674
+ms.openlocfilehash: 7d0fcb623162713b845107bbf00669af7ae5ca98
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75869720"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369496"
 ---
-# <a name="welcome-back-to-c---modern-c"></a>Willkommen zurück zur C++ modernenC++
+# <a name="welcome-back-to-c---modern-c"></a>Willkommen zurück bei C++ - Modern C++
 
-Seit seiner Erstellung C++ ist zu einer der am häufigsten verwendeten Programmiersprachen in der Welt geworden. Gut geschriebene C++-Programme sind schnell und effizient. Die Sprache ist flexibler als andere Sprachen: Sie kann auf der höchsten Abstraktions Ebene und auf der Ebene des Silicon verwendet werden. C++bietet hochgradig optimierte Standardbibliotheken. Sie ermöglicht den Zugriff auf Low-Level-Hardware Features, um die Geschwindigkeit zu maximieren und Arbeitsspeicher Anforderungen zu minimieren Mithilfe C++von können Sie eine große Bandbreite von apps erstellen. Spiele, Gerätetreiber und leistungsstarke wissenschaftliche Software. Eingebettete Programme. Windows-Client-apps. Auch Bibliotheken und Compiler für andere Programmiersprachen werden in C++geschrieben.
+Seit seiner Gründung hat sich C++ zu einer der am häufigsten verwendeten Programmiersprachen der Welt entwickelt. Gut geschriebene C++-Programme sind schnell und effizient. Die Sprache ist flexibler als andere Sprachen: Sie kann auf den höchsten Abstraktionsebenen und auf der Ebene des Siliziums funktionieren. C++ bietet hochoptimierte Standardbibliotheken. Es ermöglicht den Zugriff auf Low-Level-Hardware-Funktionen, um die Geschwindigkeit zu maximieren und den Speicherbedarf zu minimieren. Mit C++ können Sie eine Vielzahl von Apps erstellen. Spiele, Gerätetreiber und leistungsstarke wissenschaftliche Software. Eingebettete Programme. Windows-Client-Apps. Sogar Bibliotheken und Compiler für andere Programmiersprachen werden in C++ geschrieben.
 
-Eine der ursprünglichen Anforderungen für C++ war Abwärtskompatibilität mit der Programmiersprache C. Daher C++ hat die Programmierung im C-Stil stets mit unformatierten Zeigern, Arrays, auf NULL endenden Zeichen folgen und anderen Features gestattet. Sie können eine hohe Leistung ermöglichen, aber auch Fehler und Komplexität erzeugen. Die Entwicklung von C++ hat Features hervorgehoben, die die Notwendigkeit der Verwendung von Idioms im C-Stil erheblich verringern. Die alten Funktionen für die C-Programmierung sind vorhanden, wenn Sie Sie benötigen, C++ aber mit modernem Code sollten Sie Sie weniger und weniger benötigen. Moderner C++ Code ist einfacher, sicherer, eleganter und immer noch so schnell wie je zuvor.
+Eine der ursprünglichen Anforderungen für C++ war Abwärtskompatibilität mit der Programmiersprache C. Daher hat C++ immer die Programmierung im C-Stil mit unformatierten Zeigern, Arrays, null-terminierten Zeichenfolgen und anderen Features zugelassen. Sie können eine großartige Leistung ermöglichen, aber auch Fehler und Komplexität hervorbringen. Die Entwicklung von C++ hat Features hervorgehoben, die die Notwendigkeit, Idiome im C-Stil zu verwenden, erheblich reduzieren. Die alten C-Programmierfunktionen sind vorhanden, wenn Sie sie brauchen, aber mit modernem C++-Code sollten Sie sie immer weniger benötigen. Moderner C++-Code ist einfacher, sicherer, eleganter und immer noch so schnell wie eh und je.
 
-Die folgenden Abschnitte bieten einen Überblick über die wichtigsten Features von modern C++. Sofern nicht anders angegeben, sind die hier aufgeführten Funktionen in c++ 11 und höher verfügbar. Im Microsoft C++ -Compiler können Sie die [/Std](../build/reference/std-specify-language-standard-version.md) -Compileroption festlegen, um anzugeben, welche Version des Standards für das Projekt verwendet werden soll.
+Die folgenden Abschnitte geben einen Überblick über die Hauptmerkmale des modernen C++. Sofern nicht anders angegeben, sind die hier aufgeführten Funktionen in C++11 und höher verfügbar. Im Microsoft C++-Compiler können Sie die Compileroption [/std](../build/reference/std-specify-language-standard-version.md) festlegen, um anzugeben, welche Version des Standards für Ihr Projekt verwendet werden soll.
 
 ## <a name="resources-and-smart-pointers"></a>Ressourcen und intelligente Zeiger
 
-Eine der Hauptklassen von Fehlern bei der Programmierung im C-Stil ist der *Speicher*Fehler. Verluste werden häufig durch einen Fehler beim Abrufen von **Delete** für den Arbeitsspeicher verursacht, der mit **New**zugeordnet wurde. Modern C++ betont das Prinzip der *Ressourcenbeschaffung ist Initialisierung* (RAII). Die Idee ist einfach. Ressourcen (Heap Speicher, Datei Handles, Sockets usw.) sollten *im Besitz* eines Objekts sein. Dieses Objekt erstellt bzw. empfängt die neu zugeordnete Ressource im Konstruktor und löscht sie in Ihrem Dekonstruktor. Das Prinzip von RAII stellt sicher, dass alle Ressourcen ordnungsgemäß an das Betriebssystem zurückgegeben werden, wenn das besitzende Objekt den Gültigkeitsbereich verlässt.
+Eine der wichtigsten Klassen von Fehlern in der C-Stil-Programmierung ist das *Speicherleck*. Lecks werden häufig durch einen Fehler beim Aufrufen von **Löschvorgängen** für Speicher verursacht, der mit **neuen**zugewiesen wurde. Moderne C++ betont das Prinzip der *Ressourcenerfassung ist Initialisierung* (RAII). Die Idee ist einfach. Ressourcen (Heapspeicher, Dateihandles, Sockets usw.) sollten *im Besitz* eines Objekts sein. Dieses Objekt erstellt oder empfängt die neu zugewiesene Ressource in seinem Konstruktor und löscht sie in ihrem Destruktor. Das RAII-Prinzip garantiert, dass alle Ressourcen ordnungsgemäß an das Betriebssystem zurückgegeben werden, wenn das besitzende Objekt den Gültigkeitsbereich verlässt.
 
-Zur Unterstützung der einfachen Übernahme von RAII- C++ Prinzipien bietet die Standard Bibliothek drei intelligente Zeiger Typen: [Std:: unique_ptr](../standard-library/unique-ptr-class.md), [Std:: shared_ptr](../standard-library/shared-ptr-class.md)und [Std:: weak_ptr](../standard-library/weak-ptr-class.md). Ein intelligenter Zeiger übernimmt die Zuordnung und Löschung des Arbeitsspeichers, den er besitzt. Im folgenden Beispiel wird eine-Klasse mit einem Array Element veranschaulicht, das im-`make_unique()`aufgerufen wird. Die Aufrufe von **New** und **Delete** werden von der `unique_ptr`-Klasse gekapselt. Wenn ein `widget` Objekt den Gültigkeitsbereich verlässt, wird der unique_ptr Dekonstruktor aufgerufen und gibt den Arbeitsspeicher frei, der für das Array reserviert wurde.  
+Um die einfache Übernahme der RAII-Prinzipien zu unterstützen, bietet die C++-Standardbibliothek drei intelligente Zeigertypen: [std::unique_ptr](../standard-library/unique-ptr-class.md), [std::shared_ptr](../standard-library/shared-ptr-class.md)und [std::weak_ptr](../standard-library/weak-ptr-class.md). Ein intelligenter Zeiger verarbeitet die Zuweisung und Löschung des Speichers, den er besitzt. Das folgende Beispiel zeigt eine Klasse mit einem Arraymember, `make_unique()`der auf dem Heap im Aufruf von zugeordnet ist. Die Aufrufe zu **new** und **delete** werden `unique_ptr` von der Klasse gekapselt. Wenn `widget` ein Objekt den Gültigkeitsbereich verlässt, wird der unique_ptr Destruktor aufgerufen, und es gibt den Speicher frei, der für das Array reserviert wurde.  
 
 ```cpp
 #include <memory>
@@ -46,22 +46,22 @@ void functionUsingWidget() {
 
 ```
 
-Verwenden Sie nach Möglichkeit einen intelligenten Zeiger, wenn Sie Heap Speicher zuordnen. Wenn Sie die Operatoren "New" und "Delete" explizit verwenden müssen, befolgen Sie das Prinzip von RAII. Weitere Informationen finden Sie unter [Objekt Lebensdauer und Ressourcenverwaltung (RAII)](object-lifetime-and-resource-management-modern-cpp.md).
+Verwenden Sie nach Möglichkeit einen intelligenten Zeiger, wenn Heapspeicher zugewiesen wird. Wenn Sie die neuen und löschen Operatoren explizit verwenden müssen, folgen Sie dem Prinzip von RAII. Weitere Informationen finden Sie unter [Objektlebensdauer und Ressourcenverwaltung (RAII)](object-lifetime-and-resource-management-modern-cpp.md).
 
-## <a name="stdstring-and-stdstring_view"></a>Std:: String und Std:: string_view
+## <a name="stdstring-and-stdstring_view"></a>std::string und std::string_view
 
-Zeichen folgen im C-Stil sind eine weitere wichtige Quelle für Fehler. Durch die Verwendung von [Std:: String und Std:: wstring](../standard-library/basic-string-class.md)können Sie praktisch alle Fehler beseitigen, die mit Zeichen folgen im C-Stil verknüpft sind. Außerdem profitieren Sie von den Vorteilen der Element Funktionen zum Suchen, anfügen, voranstellen usw. Beide sind für die Geschwindigkeit stark optimiert. Wenn Sie eine Zeichenfolge an eine Funktion übergeben, die nur schreibgeschützten Zugriff erfordert, können Sie in c++ 17 [Std:: string_view](../standard-library/basic-string-view-class.md) für einen noch größeren Leistungsvorteil verwenden.
+Zeichenfolgen im C-Stil sind eine weitere Wichtige Quelle für Fehler. Mit [std::string und std::wstring](../standard-library/basic-string-class.md)können Sie praktisch alle Fehler beseitigen, die mit Zeichenfolgen im C-Stil verbunden sind. Sie profitieren auch von Memberfunktionen zum Suchen, Anfügen, Vorstehen usw. Beide sind hochgradig auf Geschwindigkeit optimiert. Wenn Sie eine Zeichenfolge an eine Funktion übergeben, die nur schreibgeschützten Zugriff erfordert, können Sie in C++17 [std::string_view](../standard-library/basic-string-view-class.md) verwenden, um einen noch größeren Leistungsvorteil zu erzielen.
 
-## <a name="stdvector-and-other-standard-library-containers"></a>Std:: Vector und andere Standard Bibliotheks Container
+## <a name="stdvector-and-other-standard-library-containers"></a>std::vector und andere Standardbibliothekscontainer
 
-Die Standard Bibliotheks Container befolgen alle das Prinzip von RAII. Sie stellen Iteratoren für den sicheren Durchlauf von Elementen bereit. Und Sie sind stark für die Leistung optimiert und wurden gründlich auf Richtigkeit getestet. Wenn Sie diese Container verwenden, vermeiden Sie das Potenzial von Fehlern oder Ineffizienzen, die in benutzerdefinierten Datenstrukturen eingeführt werden könnten. Verwenden Sie anstelle von unformatierten Arrays [Vector](../standard-library/vector-class.md) als sequenziellen C++Container in.
+Die Standard Library Container folgen alle dem Prinzip von RAII. Sie bieten Iteratoren für die sichere Durchquerung von Elementen. Und sie sind stark leistungsoptimiert und wurden gründlich auf Korrektheit getestet. Durch die Verwendung dieser Container eliminieren Sie das Potenzial für Fehler oder Ineffizienzen, die in benutzerdefinierten Datenstrukturen eingeführt werden können. Anstelle von Raw-Arrays verwenden Sie [vector](../standard-library/vector-class.md) als sequenzieller Container in C++.
 
 ```cpp
 vector<string> apples;
 apples.push_back("Granny Smith");
 ```
 
-Verwenden Sie [map](../standard-library/map-class.md) (nicht `unordered_map`) als standardmäßigen assoziativen Container. Verwenden Sie [Set](../standard-library/set-class.md), [multimap](../standard-library/multimap-class.md)und [Multiset](../standard-library/multiset-class.md) für degenerierte und mehrere Fälle.
+Verwenden [map](../standard-library/map-class.md) Sie `unordered_map`Map (nicht ) als standardmäßigen assoziativen Container. Verwenden Sie [set](../standard-library/set-class.md), [multimap](../standard-library/multimap-class.md)und [multiset](../standard-library/multiset-class.md) für degenerierte und mehrfache Fälle.
 
 ```cpp
 map<string, string> apple_color;
@@ -71,29 +71,29 @@ apple_color["Granny Smith"] = "Green";
 
 Wenn eine Leistungsoptimierung erforderlich ist, erwägen Sie folgende Verwendungen:
 
-- Der [Arraytyp beim](../standard-library/array-class-stl.md) einbetten ist wichtig, z. b. als Klassenmember.
+- Der [Arraytyp](../standard-library/array-class-stl.md) beim Einbetten ist wichtig, z. B. als Klassenmember.
 
-- Ungeordnete assoziative Container, z. b. [unordered_map](../standard-library/unordered-map-class.md). Diese verfügen über einen niedrigeren pro-Element-Aufwand und eine Konstante Zeit Suche, Sie können jedoch schwieriger und effizient verwendet werden.
+- Ungeordnete assoziative Container wie [unordered_map](../standard-library/unordered-map-class.md). Diese haben einen geringeren Overhead pro Element und eine konstante Suche, können jedoch schwieriger und effizient verwendet werden.
 
-- Sortiertes `vector`. Weitere Informationen finden Sie unter [Algorithmen](../cpp/algorithms-modern-cpp.md).
+- Sortiert `vector`. Weitere Informationen finden Sie unter [Algorithmen](../cpp/algorithms-modern-cpp.md).
 
-Verwenden Sie keine Arrays im C-Stil. Verwenden Sie für ältere APIs, die direkten Zugriff auf die Daten benötigen, Zugriffsmethoden wie z. b. `f(vec.data(), vec.size());`. Weitere Informationen zu Containern finden [ C++ Sie unter Standard Bibliothek Container](../standard-library/stl-containers.md).
+Verwenden Sie keine Arrays im C-Stil. Verwenden Sie für ältere APIs, die direkten Zugriff `f(vec.data(), vec.size());` auf die Daten benötigen, stattdessen Accessormethoden. Weitere Informationen zu Containern finden Sie unter [C++ StandardBibliothekscontainer](../standard-library/stl-containers.md).
 
-## <a name="standard-library-algorithms"></a>Algorithmen der Standard Bibliothek
+## <a name="standard-library-algorithms"></a>Standardbibliotheksalgorithmen
 
-Bevor Sie davon ausgehen, dass Sie einen benutzerdefinierten Algorithmus für Ihr Programm schreiben müssen, über C++ prüfen Sie zunächst die [Algorithmen](../standard-library/algorithm.md)der Standard Bibliothek. Die Standard Bibliothek enthält ein ständig wachsendes Spektrum an Algorithmen für viele gängige Vorgänge wie das suchen, sortieren, Filtern und randomialisieren. Die mathematische Bibliothek ist umfangreich. Ab c++ 17 werden parallele Versionen von vielen Algorithmen bereitgestellt.
+Bevor Sie davon ausgehen, dass Sie einen benutzerdefinierten Algorithmus für Ihr Programm schreiben müssen, überprüfen Sie zuerst die C++ [Standardlibrary-Algorithmen](../standard-library/algorithm.md). Die Standardbibliothek enthält eine ständig wachsende Auswahl an Algorithmen für viele gängige Vorgänge wie Suchen, Sortieren, Filtern und Randomisieren. Die Mathebibliothek ist umfangreich. Ab C++17 werden parallele Versionen vieler Algorithmen bereitgestellt.
 
 Im Folgenden sind einige wichtige Beispiele aufgeführt:
 
-- **for_each**, der standardmäßige Traversale-Algorithmus (zusammen mit Bereichs basierten for-Schleifen).
+- **for_each**der Standard-Traversalalgorithmus (zusammen mit bereichsbasierten Schleifen).
 
-- **Transformation**für nicht direkte Änderungen von Container Elementen
+- **transform**, für die nicht-in-Ort-Änderung von Containerelementen
 
-- **find_if**, der Standard Suchalgorithmus.
+- **find_if**der Standardsuchalgorithmus.
 
-- **Sortieren**, **lower_bound**und die anderen standardmäßigen Sortier-und Suchalgorithmen.
+- **sort**, **lower_bound**und die anderen Standard-Sortier- und Suchalgorithmen.
 
-Verwenden Sie zum Schreiben eines Comparators Strict **<** , und verwenden Sie *benannte Lambdas* , wenn dies möglich ist.
+Um einen Komparator zu **<** schreiben, verwenden Sie streng und verwenden Sie, wenn Sie können, *den Namen Lambdas.*
 
 ```cpp
 auto comp = [](const widget& w1, const widget& w2)
@@ -104,9 +104,9 @@ sort( v.begin(), v.end(), comp );
 auto i = lower_bound( v.begin(), v.end(), comp );
 ```
 
-## <a name="auto-instead-of-explicit-type-names"></a>Auto anstelle von expliziten Typnamen
+## <a name="auto-instead-of-explicit-type-names"></a>Auto statt expliziter Typnamen
 
-C++ 11 hat das Schlüsselwort " [Auto](auto-cpp.md) " zur Verwendung in Variablen-, Funktions-und Vorlagen Deklarationen eingeführt. **Auto** weist den Compiler an, den Typ des Objekts abzuleiten, damit Sie ihn nicht explizit eingeben müssen. " **Auto** " ist besonders nützlich, wenn der dedulierte Typ eine in einer Vorlage vorgenommene Vorlage ist:
+C++11 hat das [Schlüsselwort auto](auto-cpp.md) für die Verwendung in Variablen-, Funktions- und Vorlagendeklarationen eingeführt. **auto** weist den Compiler an, den Typ des Objekts abzuleiten, damit Sie es nicht explizit eingeben müssen. **auto** ist besonders nützlich, wenn es sich bei dem abgeleiteten Typ um eine geschachtelte Vorlage handelt:
 
 ```cpp
 map<int,list<string>>::iterator i = m.begin(); // C-style
@@ -115,7 +115,7 @@ auto i = m.begin(); // modern C++
 
 ## <a name="range-based-for-loops"></a>Bereichsbasierte For-Schleifen
 
-Die Iterationen im C-Stil für Arrays und Container sind anfällig für das Indizieren von Fehlern und auch mühsam. Um diese Fehler zu vermeiden und den Code lesbarer zu machen, verwenden Sie Bereichs basierte for-Schleifen mit Standard Bibliotheks Containern und unformatierten Arrays. Weitere Informationen finden Sie unter [Range-based for-Anweisung](../cpp/range-based-for-statement-cpp.md).
+Die Iteration im C-Stil über Arrays und Container ist anfällig für Indizierungsfehler und auch mühsam typisiert. Um diese Fehler zu beseitigen und den Code lesbarer zu machen, verwenden Sie bereichsbasierte Schleifen mit Standardbibliothekscontainern und Raw-Arrays. Weitere Informationen finden Sie unter [Bereichsbasiert für Anweisung](../cpp/range-based-for-statement-cpp.md).
 
 ```cpp
 #include <iostream>
@@ -139,18 +139,18 @@ int main()
 }
 ```
 
-## <a name="constexpr-expressions-instead-of-macros"></a>constexpr-Ausdrücke anstelle von Makros
+## <a name="constexpr-expressions-instead-of-macros"></a>constexpr-Ausdrücke statt Makros
 
-Makros in C und C++ sind Token, die vom Präprozessor vor der Kompilierung verarbeitet werden. Jede Instanz eines Makro Tokens wird durch den definierten Wert oder Ausdruck ersetzt, bevor die Datei kompiliert wird. Makros werden häufig bei der Programmierung im C-Stil verwendet, um konstante Werte für die Kompilierzeit zu definieren. Makros sind jedoch fehleranfällig und schwer zu debuggen. In modernen C++Erweiterungen sollten Sie [constexpr](constexpr-cpp.md) -Variablen für Kompilierzeit Konstanten bevorzugen:
+Makros in C und C++ sind Token, die vom Präprozessor vor der Kompilierung verarbeitet werden. Jede Instanz eines Makrotokens wird durch ihren definierten Wert oder Ausdruck ersetzt, bevor die Datei kompiliert wird. Makros werden häufig in der Programmierung im C-Stil verwendet, um konstante Werte für die Kompilierungszeit zu definieren. Makros sind jedoch fehleranfällig und schwer zu debuggen. In modernen C++ sollten Sie [constexpr-Variablen](constexpr-cpp.md) für Kompilierungszeitkonstanten bevorzugen:
 
 ```cpp
-#define SIZE 10 / C-style
+#define SIZE 10 // C-style
 constexpr int size = 10; // modern C++
 ```
 
 ### <a name="uniform-initialization"></a>Einheitliche Initialisierung
 
-In modernen C++können Sie die Initialisierung von Klammern für beliebige Typen verwenden. Diese Form der Initialisierung ist besonders praktisch, wenn Arrays, Vektoren oder andere Container initialisiert werden. Im folgenden Beispiel wird `v2` mit drei Instanzen von `S`initialisiert. `v3` wird mit drei Instanzen von `S` initialisiert, die selbst mit geschweiften Klammern initialisiert werden. Der Compiler leitet den Typ jedes Elements auf der Grundlage des deklarierten Typs `v3`ab.
+In modernen C++ können Sie die Geschweifkontoinitialisierung für jeden Typ verwenden. Diese Form der Initialisierung ist besonders praktisch beim Initialisieren von Arrays, Vektoren oder anderen Containern. Im folgenden Beispiel `v2` wird mit drei `S`Instanzen von initialisiert. `v3`wird mit drei Instanzen initialisiert, von `S` denen sie selbst mithilfe von geschweiften Klammern initialisiert werden. Der Compiler leitet den Typ jedes Elements basierend `v3`auf dem deklarierten Typ von ab.
 
 ```cpp
 #include <vector>
@@ -183,15 +183,15 @@ int main()
 }
 ```
 
-Weitere Informationen finden Sie unter geschweifter [Klammer Initialisierung](initializing-classes-and-structs-without-constructors-cpp.md).
+Weitere Informationen finden Sie unter [Brace Initialisierung](initializing-classes-and-structs-without-constructors-cpp.md).
 
 ## <a name="move-semantics"></a>Verschieben der Semantik
 
-Modern C++ bietet *Bewegungs Semantik*, sodass unnötige Speicher Kopien vermieden werden können. In früheren Versionen der Sprache waren Kopien in bestimmten Situationen unvermeidlich. Ein *Verschiebungs Vorgang überträgt* den Besitz einer Ressource von einem Objekt zum nächsten, ohne eine Kopie zu erstellen. Beim Implementieren einer Klasse, die eine Ressource besitzt (z. b. Heap Speicher, Datei Handles usw.), können Sie einen *bewegungskonstruktor* und Verschiebungs *Zuweisungs Operator* dafür definieren. Der Compiler wählt diese speziellen Member bei der Überladungs Auflösung in Situationen aus, in denen eine Kopie nicht benötigt wird. Die Containertypen der Standard Bibliothek rufen den bewegungskonstruktor für Objekte auf, wenn eine definiert ist. Weitere Informationen finden Sie unter [bewegungskonstruktoren und Bewegungs ZuweisungsC++Operatoren ()](move-constructors-and-move-assignment-operators-cpp.md).
+Moderne C++ bietet *Bewegungssemantik*, die es ermöglicht, unnötige Speicherkopien zu vermeiden. In früheren Versionen der Sprache waren Kopien in bestimmten Situationen unvermeidbar. Ein *Verschiebungsvorgang* überträgt den Besitz einer Ressource von einem Objekt auf das nächste, ohne eine Kopie zu erstellen. Beim Implementieren einer Klasse, die eine Ressource besitzt (z. B. Heapspeicher, Dateihandles usw.), können Sie einen *Verschiebungskonstruktor* und einen *Verschiebungszuweisungsoperator* dafür definieren. Der Compiler wählt diese speziellen Member während der Überlastauflösung in Situationen aus, in denen keine Kopie benötigt wird. Die Containertypen der Standardbibliothek rufen den Verschiebungskonstruktor für Objekte auf, sofern einer definiert ist. Weitere Informationen finden Sie unter Verschieben von [Konstruktoren und Verschieben von Zuweisungsoperatoren (C++)](move-constructors-and-move-assignment-operators-cpp.md).
 
 ## <a name="lambda-expressions"></a>Lambdaausdrücke
 
-Bei der Programmierung im C-Stil kann eine Funktion mithilfe eines *Funktions Zeigers*an eine andere Funktion übermittelt werden. Funktionszeiger sind unpraktisch für die Wartung und das Verständnis. Die Funktion, auf die Sie verweisen, kann an anderer Stelle im Quellcode definiert werden, und zwar weit entfernt von dem Zeitpunkt, an dem Sie aufgerufen wird. Außerdem sind Sie nicht typsicher. Modern C++ bietet *Funktions Objekte*, Klassen, die den Operator [()](function-call-operator-parens.md) überschreiben, sodass Sie wie eine Funktion aufgerufen werden können. Die einfachste Möglichkeit zum Erstellen von Funktions Objekten ist die Verwendung von Inline- [Lambda-Ausdrücken](../cpp/lambda-expressions-in-cpp.md). Im folgenden Beispiel wird gezeigt, wie ein Lambda-Ausdruck verwendet wird, um ein Funktions Objekt zu übergeben, das die `for_each`-Funktion für jedes Element im Vektor aufruft:
+In der Programmierung im C-Stil kann eine Funktion mithilfe eines *Funktionszeigers*an eine andere Funktion übergeben werden. Funktionszeiger sind unbequem zu pflegen und zu verstehen. Die Funktion, auf die sie sich beziehen, kann an anderer Stelle im Quellcode definiert werden, weit entfernt von dem Punkt, an dem sie aufgerufen wird. Außerdem sind sie nicht typsicher. Modernes C++ stellt *Funktionsobjekte*bereit, Klassen, die den [Operator ()](function-call-operator-parens.md) überschreiben, wodurch sie wie eine Funktion aufgerufen werden können. Die bequemste Möglichkeit zum Erstellen von Funktionsobjekten ist mit [Inline-Lambdaausdrücken](../cpp/lambda-expressions-in-cpp.md). Das folgende Beispiel zeigt, wie ein Lambda-Ausdruck verwendet `for_each` wird, um ein Funktionsobjekt zu übergeben, dass die Funktion für jedes Element im Vektor aufgerufen wird:
 
 ```cpp
     std::vector<int> v {1,2,3,4,5};
@@ -200,23 +200,23 @@ Bei der Programmierung im C-Stil kann eine Funktion mithilfe eines *Funktions Ze
     auto result = find_if(begin(v), end(v), [=](int i) { return i > x && i < y; });
 ```
 
-Der Lambda-Ausdruck `[=](int i) { return i > x && i < y; }` kann als "Funktion gelesen werden, die ein einzelnes Argument vom Typ `int` annimmt und einen booleschen Wert zurückgibt, der angibt, ob das Argument größer als `x` und kleiner als `y`ist." Beachten Sie, dass die Variablen `x` und `y` aus dem umgebenden Kontext im Lambda-Ausdruck verwendet werden können. Der `[=]` gibt an, dass diese Variablen nach Wert *aufgezeichnet* werden. Das heißt, der Lambda Ausdruck hat seine eigenen Kopien dieser Werte.
+Der `[=](int i) { return i > x && i < y; }` Lambda-Ausdruck kann als "Funktion gelesen werden, die ein einzelnes Argument des Typs `int` annimmt und ein boolesches Argument zurückgibt, das angibt, ob das Argument größer als `x` und kleiner als `y`ist." Beachten Sie, `x` `y` dass die Variablen und aus dem umgebenden Kontext im Lambda verwendet werden können. Der `[=]` gibt an, dass diese Variablen nach Wert *erfasst* werden. Mit anderen Worten, der Lambda-Ausdruck hat seine eigenen Kopien dieser Werte.
 
 ## <a name="exceptions"></a>Ausnahmen
 
-Modern C++ unterstreicht Ausnahmen anstelle von Fehlercodes als beste Methode zum melden und behandeln von Fehlerbedingungen. Weitere Informationen finden Sie unter [moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md).
+Moderne S++ betont Ausnahmen anstelle von Fehlercodes als die beste Möglichkeit, Fehlerbedingungen zu melden und zu behandeln. Weitere Informationen finden Sie unter [Bewährte Methoden für moderne C++-Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md).
 
-## <a name="stdatomic"></a>Std:: Atomic
+## <a name="stdatomic"></a>std::atomare
 
-Verwenden Sie C++ die Standard Bibliothek [Std:: Atomic](../standard-library/atomic-structure.md) -Struktur und verwandte Typen für Kommunikationsmechanismen zwischen Threads.
+Verwenden Sie die C++-Standardbibliothek [std::atomic](../standard-library/atomic-structure.md) struct und verwandte Typen für Interthread-Kommunikationsmechanismen.
 
-## <a name="stdvariant-c17"></a>Std:: Variant (c++ 17)
+## <a name="stdvariant-c17"></a>std::Variante (C++17)
 
-Unions werden häufig bei der Programmierung im C-Stil verwendet, um Speicherplatz zu sparen, indem die Mitglieder verschiedener Typen die gleiche Speicheradresse belegen können. Allerdings sind Unions nicht typsicher und anfällig für Programmierfehler. C++ 17 führt die [Std:: Variant](../standard-library/variant-class.md) -Klasse als stabilere und sicherere Alternative zu Unions ein. Die [Std:: Visit](../standard-library/variant-functions.md#visit) -Funktion kann verwendet werden, um auf typsichere Weise auf Member eines `variant` Typs zuzugreifen.
+Unions werden häufig in der Programmierung im C-Stil verwendet, um Speicher zu sparen, indem Member verschiedener Typen den gleichen Speicherort belegen können. Unions sind jedoch nicht typsicher und anfällig für Programmierfehler. C++17 führt die [std::variant-Klasse](../standard-library/variant-class.md) als robustere und sicherere Alternative zu Gewerkschaften ein. Die [Funktion std::visit](../standard-library/variant-functions.md#visit) kann verwendet werden, `variant` um auf typsichere Weise auf die Member eines Typs zuzugreifen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++ Language Reference (C++-Programmiersprachenreferenz)](../cpp/cpp-language-reference.md)\
+[C++-Sprachreferenz](../cpp/cpp-language-reference.md)\
 [Lambda-Ausdrücke](../cpp/lambda-expressions-in-cpp.md)\
 [C++-Standardbibliothek](../standard-library/cpp-standard-library-reference.md)\
 [Microsoft C++-Sprachkonformität: Tabelle](../overview/visual-cpp-language-conformance.md)

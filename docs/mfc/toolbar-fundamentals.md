@@ -20,87 +20,87 @@ helpviewer_keywords:
 - frame window classes [MFC], toolbar embedded in
 - LoadToolBar method [MFC]
 ms.assetid: cc00aaff-8a56-433b-b0c0-b857d76b4ffd
-ms.openlocfilehash: 9c784db2e1a482b313147e6837d6bbbd16d0ecb4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d4e8793337beb2eed533fe04daf549ec21efc61d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62168218"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373476"
 ---
 # <a name="toolbar-fundamentals"></a>Grundlegendes über Symbolleisten
 
-Dieser Artikel beschreibt die grundlegende MFC-Implementierung, die Ihre Anwendung eine Standardsymbolleiste hinzufügen, indem Sie im Anwendungs-Assistenten die Option ermöglicht. Zu den behandelten Themen gehören:
+In diesem Artikel wird die grundlegende MFC-Implementierung beschrieben, mit der Sie Ihrer Anwendung eine Standardsymbolleiste hinzufügen können, indem Sie im Anwendungs-Assistenten eine Option auswählen. Folgende Themen werden behandelt:
 
-- [Die Option der Anwendungs-Assistent-Symbolleiste](#_core_the_appwizard_toolbar_option)
+- [Die Toolbar-Option anwendungsassistent](#_core_the_appwizard_toolbar_option)
 
-- [Die Symbolleiste im code](#_core_the_toolbar_in_code)
+- [Die Symbolleiste im Code](#_core_the_toolbar_in_code)
 
-- [Bearbeiten die Symbolleistenressource](#_core_editing_the_toolbar_resource)
+- [Bearbeiten der Symbolleistenressource](#_core_editing_the_toolbar_resource)
 
 - [Mehrere Symbolleisten](#_core_multiple_toolbars)
 
-##  <a name="_core_the_appwizard_toolbar_option"></a> Die Anwendung Assistenten-Option-Symbolleiste
+## <a name="the-application-wizard-toolbar-option"></a><a name="_core_the_appwizard_toolbar_option"></a>Die Toolbar-Option des Anwendungs-Assistenten
 
-Um eine einzige Symbolleiste mit Schaltflächen zu erhalten, wählen Sie die Symbolleistenoption standardmäßiges Andocken auf der Seite mit der Bezeichnung Features der Benutzeroberfläche. Dadurch wird Ihre Anwendung Code hinzugefügt, die:
+Um eine einzelne Symbolleiste mit Standardschaltflächen zu erhalten, wählen Sie die Option Standard-Docking-Symbolleisten auf der Seite mit der Bezeichnung Benutzeroberflächenfeatures aus. Dadurch wird Ihrer Anwendung Code hinzugefügt, der:
 
 - Erstellt das Symbolleistenobjekt.
 
-- Verwaltet die Symbolleiste, einschließlich der Möglichkeit, andocken oder auf "float".
+- Verwaltet die Symbolleiste, einschließlich ihrer Fähigkeit zum Andocken oder Schweben.
 
-##  <a name="_core_the_toolbar_in_code"></a> Die Symbolleiste im Code
+## <a name="the-toolbar-in-code"></a><a name="_core_the_toolbar_in_code"></a>Die Symbolleiste im Code
 
-Die Symbolleiste ist eine [CToolBar](../mfc/reference/ctoolbar-class.md) Objekt deklariert als Datenmember von der Anwendung `CMainFrame` Klasse. Das heißt, wird die Toolbar-Objekt in das Hauptrahmenfenster-Objekt eingebettet. Dies bedeutet, dass MFC die Symbolleiste erstellt, wenn das Rahmenfenster erstellt und zerstört wird, wenn es sich um das Rahmenfenster zerstört. Die folgende Deklaration der partiellen Klasse, für eine Anwendung multiple Document Interface (MDI), zeigt die Datenelemente für eine eingebettete Symbolleiste und einer eingebetteten Statusleiste. Außerdem wird gezeigt, überschreiben die `OnCreate` Member-Funktion.
+Die Symbolleiste ist ein [CToolBar-Objekt,](../mfc/reference/ctoolbar-class.md) das als `CMainFrame` Datenmember der Anwendungsklasse deklariert ist. Mit anderen Worten, das Symbolleistenobjekt ist in das Hauptrahmenfensterobjekt eingebettet. Dies bedeutet, dass MFC die Symbolleiste erstellt, wenn es das Rahmenfenster erstellt, und die Symbolleiste zerstört, wenn sie das Rahmenfenster zerstört. Die folgende partielle Klassendeklaration für eine MDI-Anwendung (Multiple Document Interface) zeigt Datenmember für eine eingebettete Symbolleiste und eine eingebettete Statusleiste an. Außerdem wird die Außerkraftsetzung der `OnCreate` Memberfunktion angezeigt.
 
 [!code-cpp[NVC_MFCListView#6](../atl/reference/codesnippet/cpp/toolbar-fundamentals_1.h)]
 
-Symbolleiste-Erstellung erfolgt in `CMainFrame::OnCreate`. MFC-Aufrufe [OnCreate](../mfc/reference/cwnd-class.md#oncreate) nach dem Erstellen des Fensters für den Frame, aber bevor er angezeigt wird. Der Standardwert `OnCreate` , der Anwendungs-Assistent generiert führt Sie die folgenden Aufgaben für die Symbolleiste:
+Die Werkzeugleistenerstellung `CMainFrame::OnCreate`erfolgt in . MFC ruft [OnCreate](../mfc/reference/cwnd-class.md#oncreate) auf, nachdem das Fenster für den Rahmen erstellt wurde, aber bevor es sichtbar wird. Die `OnCreate` vom Anwendungs-Assistenten generierte Standardeinstellung führt die folgenden Toolbar-Aufgaben aus:
 
-1. Ruft die `CToolBar` des Objekts [erstellen](../mfc/reference/ctoolbar-class.md#create) Member-Funktion zum Erstellen der zugrunde liegende [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) Objekt.
+1. Ruft `CToolBar` die [Memberfunktion Erstellen](../mfc/reference/ctoolbar-class.md#create) des Objekts auf, um das zugrunde liegende [CToolBarCtrl-Objekt](../mfc/reference/ctoolbarctrl-class.md) zu erstellen.
 
-1. Aufrufe [LoadToolBar](../mfc/reference/ctoolbar-class.md#loadtoolbar) die Symbolleisteninformationen zu laden.
+1. Ruft [LoadToolBar](../mfc/reference/ctoolbar-class.md#loadtoolbar) auf, um die Ressourceninformationen der Symbolleiste zu laden.
 
-1. Ruft die Funktionen, um andocken, Gleitkommatyp und QuickInfos zu ermöglichen. Weitere Informationen über diese Aufrufe, finden Sie im Artikel [andockbare und unverankerte Symbolleisten](../mfc/docking-and-floating-toolbars.md).
+1. Ruft Funktionen auf, um Docking-, Floating- und Tool-Tipps zu aktivieren. Weitere Informationen zu diesen Anrufen finden Sie im Artikel [Docking and Floating Toolbars](../mfc/docking-and-floating-toolbars.md).
 
 > [!NOTE]
->  Im allgemeinen MFC-Beispiel [DOCKTOOL](../overview/visual-cpp-samples.md) enthält Abbildungen der alten und neuen MFC-Symbolleisten. Die Symbolleisten, mit denen `COldToolbar` erfordern Aufrufe in Schritt 2 `LoadBitmap` (statt `LoadToolBar`) und `SetButtons`. Die neuen Symbolleisten sind Aufrufe von `LoadToolBar`.
+> Das MFC General-Beispiel [DOCKTOOL](../overview/visual-cpp-samples.md) enthält Illustrationen von alten und neuen MFC-Symbolleisten. Die Symbolleisten, `COldToolbar` die verwenden, `LoadBitmap` erfordern Aufrufe `LoadToolBar`in `SetButtons`Schritt 2 an (anstelle) und an . Die neuen Symbolleisten `LoadToolBar`erfordern Aufrufe von .
 
-Das Andocken, Gleitkommatyp und Aufrufe der Tool-Tipps sind optional. Sie können die Zeilen aus entfernen `OnCreate` Falls gewünscht. Das Ergebnis ist eine Symbolleiste, die feste, nicht "float" oder Redock und kann nicht angezeigt werden QuickInfos bleibt.
+Die Docking-, Floating- und Tool-Tipps-Aufrufe sind optional. Sie können diese `OnCreate` Zeilen entfernen, wenn Sie es vorziehen. Das Ergebnis ist eine Symbolleiste, die fest bleibt, nicht schweben oder umdocken kann und keine Werkzeugspitzen anzeigen kann.
 
-##  <a name="_core_editing_the_toolbar_resource"></a> Bearbeiten die Symbolleistenressource
+## <a name="editing-the-toolbar-resource"></a><a name="_core_editing_the_toolbar_resource"></a>Bearbeiten der Symbolleistenressource
 
-Die Standardsymbolleiste Sie mit dem Assistenten für die Anwendung erhalten basiert auf einer **RT_TOOLBAR** benutzerdefinierte Ressource, die in MFC, Version 4.0 eingeführt wurden. Sie können diese Ressource mit dem Bearbeiten der [Symbolleisten-Editor](../windows/toolbar-editor.md). Der Editor können Sie problemlos hinzufügen, löschen und Neuanordnen von Schaltflächen. Sie enthält einen grafischen Editor für die Schaltflächen, die den allgemeine Grafikeditor in Visual C++ sehr ähnlich ist. Wenn Sie Symbolleisten in früheren Versionen von Visual C++ bearbeitet haben, finden die Aufgabe viel einfacher jetzt Sie.
+Die Standardsymbolleiste, die Sie mit dem Anwendungs-Assistenten erhalten, basiert auf einer **RT_TOOLBAR** benutzerdefinierteressource, die in MFC-Version 4.0 eingeführt wurde. Sie können diese Ressource mit dem [Symbolleisten-Editor](../windows/toolbar-editor.md)bearbeiten. Mit dem Editor können Sie Schaltflächen einfach hinzufügen, löschen und neu anordnen. Es enthält einen grafischen Editor für die Schaltflächen, der dem allgemeinen Grafikeditor in Visual C++ sehr ähnlich ist. Wenn Sie Symbolleisten in früheren Versionen von Visual C++ bearbeitet haben, wird die Aufgabe jetzt viel einfacher.
 
-Um eine Symbolleisten-Schaltfläche mit einem Befehl zu verbinden, Sie geben Ihnen der Schaltfläche eine Befehls-ID, z. B. `ID_MYCOMMAND`. Geben Sie die Befehls-ID der Schaltfläche auf der Seite in der Symbolleisten-Editor ein. Erstellen Sie dann eine Handlerfunktion für den Befehl (finden Sie unter [Zuordnen von Meldungen zu Funktionen](../mfc/reference/mapping-messages-to-functions.md) Informationen).
+Um eine Symbolleistenschaltfläche mit einem Befehl zu verbinden, geben `ID_MYCOMMAND`Sie der Schaltfläche eine Befehls-ID, z. B. . Geben Sie die Befehls-ID auf der Eigenschaftenseite der Schaltfläche im Symbolleisten-Editor an. Erstellen Sie dann eine Handlerfunktion für den Befehl (weitere Informationen finden Sie unter [Zuordnen von Nachrichten zu Funktionen).](../mfc/reference/mapping-messages-to-functions.md)
 
-Neue [CToolBar](../mfc/reference/ctoolbar-class.md) Memberfunktionen arbeiten mit der **RT_TOOLBAR** Ressource. [LoadToolBar](../mfc/reference/ctoolbar-class.md#loadtoolbar) jetzt nimmt den Platz von [LoadBitmap](../mfc/reference/ctoolbar-class.md#loadbitmap) beim Laden der Bitmap des der Symbolleisten-Schaltflächen und [SetButtons](../mfc/reference/ctoolbar-class.md#setbuttons) legen Sie das Button-Stile und Schaltflächen mit Bitmapbildern verbinden.
+Neue [CToolBar-Memberfunktionen](../mfc/reference/ctoolbar-class.md) arbeiten mit der **RT_TOOLBAR** Ressource. [LoadToolBar](../mfc/reference/ctoolbar-class.md#loadtoolbar) tritt nun an die Stelle von [LoadBitmap,](../mfc/reference/ctoolbar-class.md#loadbitmap) um die Bitmap der Symbolleisten-Schaltflächenbilder zu laden, und SetButtons, um die [Schaltflächenstile](../mfc/reference/ctoolbar-class.md#setbuttons) festzulegen und Schaltflächen mit Bitmap-Bildern zu verbinden.
 
-Weitere Informationen zur Verwendung des Symbolleisten-Editors finden Sie unter [Symbolleisten-Editor](../windows/toolbar-editor.md).
+Weitere Informationen zur Verwendung des Symbolleisten-Editors finden Sie unter [Toolbar-Editor](../windows/toolbar-editor.md).
 
-##  <a name="_core_multiple_toolbars"></a> Mehrere Symbolleisten
+## <a name="multiple-toolbars"></a><a name="_core_multiple_toolbars"></a>Mehrere Symbolleisten
 
-Der Anwendungs-Assistent bietet eine Standardsymbolleiste. Wenn Sie mehr als eine Symbolleiste in Ihrer Anwendung benötigen, können Sie Ihren Code für die zusätzlichen Symbolleisten, die basierend auf dem vom Assistenten generierten Code für die Standardsymbolleiste modellieren.
+Der Anwendungs-Assistent stellt Ihnen eine Standardsymbolleiste zur Verfügung. Wenn Sie mehr als eine Symbolleiste in Ihrer Anwendung benötigen, können Sie den Code für zusätzliche Symbolleisten basierend auf dem vom Assistenten generierten Code für die Standardsymbolleiste modellieren.
 
 Wenn Sie eine Symbolleiste als Ergebnis eines Befehls anzeigen möchten, müssen Sie:
 
-- Erstellen Sie eine neue Symbolleistenressource über die Symbolleiste des Editors und Laden Sie es in `OnCreate` mit der [LoadToolbar](../mfc/reference/ctoolbar-class.md#loadtoolbar) Member-Funktion.
+- Erstellen Sie eine neue Symbolleistenressource mit dem `OnCreate` Symbolleisten-Editor, und laden Sie sie mit der [LoadToolbar-Memberfunktion](../mfc/reference/ctoolbar-class.md#loadtoolbar) ein.
 
-- Betten Sie ein neues [CToolBar](../mfc/reference/ctoolbar-class.md) Objekt in die Hauptframe-Fensterklasse.
+- Einbetten eines neuen [CToolBar-Objekts](../mfc/reference/ctoolbar-class.md) in ihre Hauptrahmenfensterklasse.
 
-- Stellen Sie die entsprechende Funktion aufgerufen wird, in `OnCreate` andocken oder "float" der Symbolleiste, legen Sie die Formate und so weiter.
+- Machen Sie die `OnCreate` entsprechenden Funktionsaufrufe, um die Symbolleiste anzudocken oder zu schweben, ihre Stile festzulegen usw.
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
-- [Implementieren der MFC-Symbolleiste (Übersicht die Übersichtsinformationen auf der Symbolleiste)](../mfc/mfc-toolbar-implementation.md)
+- [MFC Toolbar-Implementierung (Übersichtsinformationen zu Symbolleisten)](../mfc/mfc-toolbar-implementation.md)
 
-- [Andockbare und unverankerte Symbolleisten](../mfc/docking-and-floating-toolbars.md)
+- [Docking und schwimmende Symbolleisten](../mfc/docking-and-floating-toolbars.md)
 
-- [QuickInfo in Symbolleisten](../mfc/toolbar-tool-tips.md)
+- [QuickInfos für die Symbolleiste](../mfc/toolbar-tool-tips.md)
 
-- Die [CToolBar](../mfc/reference/ctoolbar-class.md) und [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) Klassen
+- Die Klassen [CToolBar](../mfc/reference/ctoolbar-class.md) und [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)
 
-- [Arbeiten mit dem Symbolleisten-Steuerelement](../mfc/working-with-the-toolbar-control.md)
+- [Arbeiten mit der Symbolleistensteuerung](../mfc/working-with-the-toolbar-control.md)
 
-- [Verwenden der bisherigen Symbolleisten](../mfc/using-your-old-toolbars.md)
+- [Verwenden Ihrer alten Symbolleisten](../mfc/using-your-old-toolbars.md)
 
 ## <a name="see-also"></a>Siehe auch
 

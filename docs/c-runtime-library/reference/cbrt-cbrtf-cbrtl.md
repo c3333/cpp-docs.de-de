@@ -1,10 +1,12 @@
 ---
 title: cbrt, cbrtf, cbrtl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - cbrt
 - cbrtf
 - cbrtl
+- _o_cbrt
+- _o_cbrtf
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +33,12 @@ helpviewer_keywords:
 - cbrtf function
 - cbrt function
 ms.assetid: ab51d916-3db2-4beb-b46a-28b4062cd33f
-ms.openlocfilehash: d3983c5d3237b1a6cb82887a690919cbf21401ab
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a63c30368e23feda4b7845f367ad394249a50d4d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939288"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81333570"
 ---
 # <a name="cbrt-cbrtf-cbrtl"></a>cbrt, cbrtf, cbrtl
 
@@ -63,20 +66,22 @@ long double cbrtl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Gleitkommawert
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **cbrt** -Funktionen geben den Cube-root von *x*zurück.
+Die **cbrt-Funktionen** geben den Cube-Stamm von *x*zurück.
 
-|Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
+|Eingabe|SEH-Ausnahme|**_matherr** Ausnahme|
 |-----------|-------------------|--------------------------|
-|± ∞, QNAN, IND|none|none|
+|± ∞, QNAN, IND|Keine|Keine|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **cbrt** aufzurufen, die **float** -oder **Long** **Double** -Typen annehmen. In einem C-Programm übernimmt **cbrt** immer Double und gibt **Double**zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **cbrt** aufrufen, die **float-** oder **long** **double-Typen** annehmen. In einem C-Programm nimmt und gibt **cbrt** immer **double**ein.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -84,7 +89,7 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **cbrt** aufzuruf
 |--------------|--------------|------------------|
 |**cbrt**, **cbrtf**, **cbrtl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -1,6 +1,6 @@
 ---
-title: Ianalyzer-Klasse
-description: Die C++ ianalyzer-Klassenreferenz für das Build Insights SDK.
+title: IAnalyzer-Klasse
+description: Der C++ Build Insights SDK IAnalyzer-Klassenverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 53f7b36695bb24d96ccfe88afbb56ff717c94dc9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: be9d80bb94450458c73fd6ce8d908985ba6f293d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334079"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81329171"
 ---
-# <a name="ianalyzer-class"></a>Ianalyzer-Klasse
+# <a name="ianalyzer-class"></a>IAnalyzer-Klasse
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `IAnalyzer`-Klasse stellt eine Schnittstelle zum Analysieren einer Ablauf Verfolgung für die Ereignis Ablauf Verfolgung für Windows (ETW) bereit. Es wird mit den Funktionen [makedynamicanalyzergroup](../functions/make-dynamic-analyzer-group.md), [makedynamikreloggergroup](../functions/make-dynamic-relogger-group.md), [makestaticanalyzergroup](../functions/make-dynamic-analyzer-group.md)und [makestatikreloggergroup](../functions/make-static-analyzer-group.md) verwendet. Verwenden Sie `IAnalyzer` als Basisklasse, um ein eigenes Analysetool zu erstellen, das Teil einer Analyse-oder der reloggersitzung-Gruppe sein kann.
+Die `IAnalyzer` Klasse stellt eine Schnittstelle zum Analysieren einer Ereignisablaufverfolgung für Windows (ETW)-Ablaufverfolgung bereit. Es wird mit den Funktionen [MakeDynamicAnalyzerGroup](../functions/make-dynamic-analyzer-group.md), [MakeDynamicReloggerGroup](../functions/make-dynamic-relogger-group.md), [MakeStaticAnalyzerGroup](../functions/make-dynamic-analyzer-group.md)und [MakeStaticReloggerGroup](../functions/make-static-analyzer-group.md) verwendet. Verwenden `IAnalyzer` Sie als Basisklasse, um einen eigenen Analysator zu erstellen, der Teil einer Analyse- oder Reloggergruppe sein kann.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,43 +61,43 @@ public:
 
 ## <a name="remarks"></a>Bemerkungen
 
-Klassen, die von `IAnalyzer` abgeleitet werden, können sowohl als Analysen als auch als reloggers verwendet werden. Bei der Verwendung als reloggers leiten die relogger-spezifischen Funktionen zu ihrer Analyzer-Entsprechung um. Der umgekehrte Wert ist nicht "true": eine Klasse, die von `IRelogger` abgeleitet ist, kann nicht als Analyzer verwendet werden. Die Verwendung eines Analyzers in einer der reloggersitzung-Gruppe ist ein gängiges Muster. Bei der Platzierung in einer frühen Position einer der reloggersitzung-Gruppe kann ein Analyzer Informationen vorab berechnen und in späteren Positionen für die erneute Protokollierung verfügbar machen.
+Klassen, die `IAnalyzer` von stammen, können sowohl als Analysatoren als auch als Relogger verwendet werden. Bei Verwendung als Relogger, die Relogger-spezifische Funktionen auf ihre Analysator Äquivalent umleiten. Das Gegenteil ist nicht der Fall: Eine `IRelogger` Klasse, die von einem Analyser abstammt, kann nicht als Analyzer verwendet werden. Die Verwendung eines Analyzers in einer Reloggergruppe ist ein gängiges Muster. Wenn ein Analysator in einer frühen Position einer Reloggergruppe platziert wird, kann er Informationen vorberechnen und für Relogger in späteren Positionen zur Verfügung stellen.
 
-Der Standard Rückgabewert für alle Funktionen, die nicht überschrieben werden, ist `AnalysisControl::CONTINUE`. Weitere Informationen finden Sie unter [analysiscontrol](analysis-control-enum-class.md).
+Der Standardrückgabewert für alle Funktionen, die `AnalysisControl::CONTINUE`nicht überschrieben werden, ist . Weitere Informationen finden Sie unter [AnalysisControl](analysis-control-enum-class.md).
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
-Zusätzlich zum [ontraceinfo](irelogger-class.md#on-trace-info) -Member der `IRelogger`-Schnittstelle enthält die `IAnalyzer`-Klasse die folgenden Member:
+Zusätzlich zum [OnTraceInfo-Member](irelogger-class.md#on-trace-info) `IRelogger` aus der `IAnalyzer` Schnittstelle enthält die Klasse die folgenden Member:
 
-### <a name="destructor"></a>Destructor
+### <a name="destructor"></a>Destruktor
 
-[~ Ianalyzer](#ianalyzer-destructor)
+[IAnalyzer](#ianalyzer-destructor)
 
 ### <a name="functions"></a>Functions
 
-[Onbeginanalysis](#on-begin-analysis) -\
-[Onbeginanalysispass](#on-begin-analysis-pass) -\
-[Onbeginrelogging](#on-begin-relogging) -\
-[Onbeginreloggingpass](#on-begin-relogging-pass) -\
-[Oneindanalysis](#on-end-analysis) -\
-[Onenddanalysispass](#on-end-analysis-pass) -\
-[Onendrelogging](#on-end-relogging) -\
-[Onendreloggingpass](#on-end-relogging-pass) -\
-[Onsimpleevent](#on-simple-event) -\
-[Onstartactivity](#on-start-activity) -\
-[Onstopactivity](#on-stop-activity)
+[OnBeginAnalysis](#on-begin-analysis)\
+[OnBeginAnalysisPass](#on-begin-analysis-pass)\
+[OnBeginRelogging](#on-begin-relogging)\
+[OnBeginReloggingPass](#on-begin-relogging-pass)\
+[OnEndAnalysis](#on-end-analysis)\
+[OnendAnalysisPass](#on-end-analysis-pass)\
+[OnEndRelogging](#on-end-relogging)\
+[OnEndReloggingPass](#on-end-relogging-pass)\
+[OnSimpleEvent](#on-simple-event)\
+[OnStartActivity](#on-start-activity)\
+[OnStopActivity](#on-stop-activity)
 
-## <a name="ianalyzer-destructor"></a>~ Ianalyzer
+## <a name="ianalyzer"></a><a name="ianalyzer-destructor"></a>IAnalyzer
 
-Zerstört die ianalyzer-Klasse.
+Zerstört die IAnalyzer-Klasse.
 
 ```cpp
 virtual ~IAnalyzer();
 ```
 
-## <a name="on-begin-analysis"></a>Onbeginanalysis
+## <a name="onbeginanalysis"></a><a name="on-begin-analysis"></a>OnBeginAnalysis
 
-Für Analyzer, die Teil einer Analysegruppe sind, wird diese Funktion aufgerufen, bevor der erste Analyse Durchlauf beginnt. Für Analysen, die Teil einer der reloggersitzung-Gruppe sind, wird diese Funktion aufgerufen, bevor die erneute Protokollierung beginnt. Für Analysen, die Teil der Gruppe "Analyzer" und "der reloggersitzung" derselben relogging-Sitzung sind, wird diese Funktion zweimal aufgerufen, bevor der erste Analyse Durchlauf beginnt.
+Für Analysatoren, die Teil einer Analysegruppe sind, wird diese Funktion aufgerufen, bevor der erste Analysedurchlauf beginnt. Für Analysatoren, die Teil einer Reloggergruppe sind, wird diese Funktion aufgerufen, bevor der Relogging-Pass beginnt. Für Analysatoren, die Teil der Analyse- und Reloggergruppe derselben Relogging-Sitzung sind, wird diese Funktion zweimal aufgerufen, bevor der erste Analysedurchlauf beginnt.
 
 ```cpp
 virtual AnalysisControl OnBeginAnalysis();
@@ -105,11 +105,11 @@ virtual AnalysisControl OnBeginAnalysis();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
-## <a name="on-begin-analysis-pass"></a>Onbeginanalysispass
+## <a name="onbeginanalysispass"></a><a name="on-begin-analysis-pass"></a>OnBeginAnalysisPass
 
-Für Analysen, die Teil einer Analysegruppe sind, wird diese Funktion zu Beginn jeder Analysephase aufgerufen. Für Analysemodule, die Teil einer der reloggersitzung-Gruppe sind, wird diese Funktion am Anfang der der reloggersitzung-Übergabe aufgerufen. Für Analyzer, die Teil der Gruppe "Analyzer" und "der reloggersitzung" derselben relogging-Sitzung sind, wird diese Funktion zu Beginn jeder Analysephase und am Anfang der der reloggersitzung-Weiterleitung aufgerufen.
+Für Analysatoren, die Teil einer Analysatorgruppe sind, wird diese Funktion am Anfang jedes Analysedurchlaufs aufgerufen. Für Analysatoren, die Teil einer Reloggergruppe sind, wird diese Funktion am Anfang des Relogger-Passes aufgerufen. Für Analysatoren, die Teil der Analyse- und Reloggergruppe derselben Relogging-Sitzung sind, wird diese Funktion am Anfang jedes Analysedurchlaufs und am Anfang des Relogger-Durchlaufs aufgerufen.
 
 ```cpp
 virtual AnalysisControl OnBeginAnalysisPass();
@@ -117,23 +117,23 @@ virtual AnalysisControl OnBeginAnalysisPass();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
-## <a name="on-begin-relogging"></a>Onbeginrelogging
+## <a name="onbeginrelogging"></a><a name="on-begin-relogging"></a>OnBeginRelogging
 
 ```cpp
 AnalysisControl OnBeginRelogging() final;
 ```
 
-Diese Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Diese Funktion leitet den Aufrufen von [onbeginanalysis](#on-begin-analysis)um.
+Diese Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Diese Funktion leitet den Aufruf von [OnBeginAnalysis](#on-begin-analysis)um.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis des [onbeginanalysis](#on-begin-analysis) -Aufrufes.
+Das Ergebnis des [OnBeginAnalysis-Aufrufs.](#on-begin-analysis)
 
-## <a name="on-begin-relogging-pass"></a>Onbeginreloggingpass
+## <a name="onbeginreloggingpass"></a><a name="on-begin-relogging-pass"></a>OnBeginReloggingPass
 
-Diese Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Diese Funktion leitet den-Befehl an [onbeginanalysispass](#on-begin-analysis-pass)um.
+Diese Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Diese Funktion leitet den Aufruf zu [OnBeginAnalysisPass](#on-begin-analysis-pass)um.
 
 ```cpp
 AnalysisControl OnBeginReloggingPass() final;
@@ -141,14 +141,14 @@ AnalysisControl OnBeginReloggingPass() final;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis des [onbeginanalysispass](#on-begin-analysis-pass) -Aufrufes.
+Das Ergebnis des [OnBeginAnalysisPass-Aufrufs.](#on-begin-analysis-pass)
 
-## <a name="on-end-analysis"></a>Onenddanalysis
+## <a name="onendanalysis"></a><a name="on-end-analysis"></a>OnEndAnalysis
 
-Für Analyzer, die Teil einer Analysegruppe sind, wird diese Funktion aufgerufen, nachdem der letzte Analyse Durchlauf beendet wurde. Für Analyzer, die Teil einer der reloggersitzung-Gruppe sind, wird diese Funktion aufgerufen, nachdem die erneute Protokollierung abgeschlossen wurde. Für Analyzer, die Teil der Gruppe "Analyzer" und "der reloggersitzung" derselben relogging-Sitzung sind, wird diese Funktion zweimal aufgerufen:
+Bei Analysatoren, die Teil einer Analysegruppe sind, wird diese Funktion aufgerufen, nachdem der letzte Analysedurchlauf beendet wurde. Für Analysatoren, die Teil einer Reloggergruppe sind, wird diese Funktion aufgerufen, nachdem der Relogging-Pass beendet wurde. Für Analysatoren, die Teil der Analyse- und Reloggergruppe derselben Relogging-Sitzung sind, wird diese Funktion zweimal aufgerufen:
 
-1. Nachdem alle Analyse Durchläufen beendet wurden und bevor der neuprotokollierungs Durchlauf beginnt, und
-1. Nachdem die erneute Protokollierung abgeschlossen wurde.
+1. nachdem alle Analysedurchläufe beendet sind und bevor der Relogging-Pass beginnt, und
+1. nachdem der Relogging-Pass beendet wurde.
 
 ```cpp
 virtual AnalysisControl OnEndAnalysis();
@@ -156,11 +156,11 @@ virtual AnalysisControl OnEndAnalysis();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
-## <a name="on-end-analysis-pass"></a>Onenddanalysispass
+## <a name="onendanalysispass"></a><a name="on-end-analysis-pass"></a>OnendAnalysisPass
 
-Für Analysen, die Teil einer Analysegruppe sind, wird diese Funktion am Ende jeder Analysephase aufgerufen. Für Analysen, die Teil einer der reloggersitzung-Gruppe sind, wird diese Funktion am Ende der der reloggersitzung-Übergabe aufgerufen. Für Analyzer, die Teil der Gruppe "Analyzer" und "der reloggersitzung" derselben relogging-Sitzung sind, wird diese Funktion am Ende jeder Analysephase und am Ende der der reloggersitzung-Weiterleitung aufgerufen.
+Für Analysatoren, die Teil einer Analysegruppe sind, wird diese Funktion am Ende jedes Analysedurchlaufs aufgerufen. Für Analysatoren, die Teil einer Reloggergruppe sind, wird diese Funktion am Ende des Relogger-Passes aufgerufen. Für Analysatoren, die Teil der Analyse- und Reloggergruppe derselben Relogging-Sitzung sind, wird diese Funktion am Ende jedes Analysedurchlaufs und am Ende des Relogger-Durchlaufs aufgerufen.
 
 ```cpp
 virtual AnalysisControl OnEndAnalysisPass();
@@ -168,11 +168,11 @@ virtual AnalysisControl OnEndAnalysisPass();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
-## <a name="on-end-relogging"></a>Onendrelogging
+## <a name="onendrelogging"></a><a name="on-end-relogging"></a>OnEndRelogging
 
-Diese Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Diese Funktion leitet den-Rückruf an [onendanalysis](#on-end-analysis)um.
+Diese Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Diese Funktion leitet den Aufruf an [OnEndAnalysis](#on-end-analysis)um.
 
 ```cpp
 AnalysisControl OnEndRelogging() final;
@@ -180,11 +180,11 @@ AnalysisControl OnEndRelogging() final;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis des [onsdanalysis](#on-end-analysis) -Aufrufes.
+Das Ergebnis des [OnEndAnalysis-Aufrufs.](#on-end-analysis)
 
-## <a name="on-end-relogging-pass"></a>Onendreloggingpass
+## <a name="onendreloggingpass"></a><a name="on-end-relogging-pass"></a>OnEndReloggingPass
 
-Diese Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Diese Funktion leitet den-Rückruf an [onendanalysispass](#on-end-analysis-pass)um.
+Diese Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Diese Funktion leitet den Aufruf zu [OnEndAnalysisPass](#on-end-analysis-pass)um.
 
 ```cpp
 AnalysisControl OnEndReloggingPass() final;
@@ -192,11 +192,11 @@ AnalysisControl OnEndReloggingPass() final;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis des [onsdanalysispass](#on-end-analysis-pass) -Aufrufes.
+Das Ergebnis des [OnEndAnalysisPass-Aufrufs.](#on-end-analysis-pass)
 
-## <a name="on-simple-event"></a>Onsimpleevent
+## <a name="onsimpleevent"></a><a name="on-simple-event"></a>OnSimpleEvent
 
-Diese Funktion wird aufgerufen, wenn ein einfaches Ereignis verarbeitet wird. Die zweite Version dieser Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Alle Aufrufe von Version 2 werden an Version 1 umgeleitet.
+Diese Funktion wird aufgerufen, wenn ein einfaches Ereignis verarbeitet wird. Die zweite Version dieser Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Alle Anrufe auf Version 2 werden auf Version 1 umgeleitet.
 
 ### <a name="version-1"></a>Version 1
 
@@ -213,19 +213,19 @@ AnalysisControl OnSimpleEvent(const EventStack& eventStack,
 
 ### <a name="parameters"></a>Parameter
 
-*Event Stack* -\
-Der Ereignis Stapel für dieses einfache Ereignis. Weitere Informationen zu Ereignis Stapeln finden Sie unter [Ereignisse](../event-table.md).
+*eventStack*\
+Der Ereignisstapel für dieses einfache Ereignis. Weitere Informationen zu Ereignisstapeln finden Sie unter [Ereignisse](../event-table.md).
 
-\ " *relogsession* "
+*relogSession*\
 Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
-## <a name="on-start-activity"></a>Onstartactivity
+## <a name="onstartactivity"></a><a name="on-start-activity"></a>OnStartActivity
 
-Diese Funktion wird aufgerufen, wenn ein Aktivitäts Start Ereignis verarbeitet wird. Die zweite Version dieser Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Alle Aufrufe von Version 2 werden an Version 1 umgeleitet.
+Diese Funktion wird aufgerufen, wenn ein Aktivitätsstartereignis verarbeitet wird. Die zweite Version dieser Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Alle Anrufe auf Version 2 werden auf Version 1 umgeleitet.
 
 ### <a name="version-1"></a>Version 1
 
@@ -242,19 +242,19 @@ AnalysisControl OnStartActivity(const EventStack& eventStack,
 
 ### <a name="parameters"></a>Parameter
 
-*Event Stack* -\
-Der Ereignis Stapel für dieses Aktivitäts Start Ereignis. Weitere Informationen zu Ereignis Stapeln finden Sie unter [Ereignisse](../event-table.md).
+*eventStack*\
+Der Ereignisstapel für dieses Aktivitätsstartereignis. Weitere Informationen zu Ereignisstapeln finden Sie unter [Ereignisse](../event-table.md).
 
-\ " *relogsession* "
+*relogSession*\
 Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
-## <a name="on-stop-activity"></a>Onstopactivity
+## <a name="onstopactivity"></a><a name="on-stop-activity"></a>OnStopActivity
 
-Diese Funktion wird aufgerufen, wenn ein Aktivitäts beenden-Ereignis verarbeitet wird. Die zweite Version dieser Funktion kann nicht überschrieben werden. Sie wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer der reloggersitzung-Gruppe ist. Alle Aufrufe von Version 2 werden an Version 1 umgeleitet.
+Diese Funktion wird aufgerufen, wenn ein Aktivitätstop-Ereignis verarbeitet wird. Die zweite Version dieser Funktion kann nicht überschrieben werden. Es wird vom C++ Build Insights SDK aufgerufen, wenn ein Analyzer Teil einer Reloggergruppe ist. Alle Anrufe auf Version 2 werden auf Version 1 umgeleitet.
 
 ### <a name="version-1"></a>Version 1
 
@@ -271,14 +271,14 @@ AnalysisControl OnStopActivity(const EventStack& eventStack,
 
 ### <a name="parameters"></a>Parameter
 
-*Event Stack* -\
-Der Ereignis Stapel für dieses Aktivitäts Ereignis zum Abbrechen. Weitere Informationen zu Ereignis Stapeln finden Sie unter [Ereignisse](../event-table.md).
+*eventStack*\
+Der Ereignisstapel für dieses Aktivitätsstoppereignis. Weitere Informationen zu Ereignisstapeln finden Sie unter [Ereignisse](../event-table.md).
 
-\ " *relogsession* "
+*relogSession*\
 Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [analysiscontrol](analysis-control-enum-class.md) -Code, der beschreibt, was als Nächstes geschehen soll.
+Ein [AnalysisControl-Code,](analysis-control-enum-class.md) der beschreibt, was als nächstes geschehen soll.
 
 ::: moniker-end

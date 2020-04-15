@@ -7,44 +7,44 @@ helpviewer_keywords:
 - relationships, MFC objects
 - MFC object relationships
 ms.assetid: 6e8f3b51-e80f-4d88-94c8-4c1e4ee163ad
-ms.openlocfilehash: bb8d1fcd9737b33d52038746a26f4e1bd1043e95
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d7e40e25b405d3f8ec50a518889cc2b89bc8c725
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62309043"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372814"
 ---
 # <a name="relationships-among-mfc-objects"></a>Beziehungen zwischen MFC-Objekten
 
-Damit der Erstellungsvorgang für Dokumente und Ansichten in der Sicht eingefügt werden, sollten Sie in einem laufenden Programm: ein Dokument, das Rahmenfenster verwendet, um die Ansicht zu speichern und die Ansicht, die dem Dokument zugeordnet.
+Um den Erstellungsprozess des Dokuments/der Ansicht zu relativieren, sollten Sie ein laufendes Programm in Betracht ziehen: ein Dokument, das Rahmenfenster, das die Ansicht enthält, und die dem Dokument zugeordnete Ansicht.
 
-- Ein Dokument behält eine Liste der Ansichten des Dokuments und einen Zeiger auf die Dokumentvorlage, die das Dokument erstellt.
+- Ein Dokument enthält eine Liste der Ansichten dieses Dokuments und einen Zeiger auf die Dokumentvorlage, die das Dokument erstellt hat.
 
-- Eine Sicht führt einen Zeiger auf sein Dokument und ist ein untergeordnetes Element des übergeordneten Fensters Frame.
+- Eine Ansicht hält einen Zeiger auf das Dokument und ist ein untergeordnetes Element des übergeordneten Rahmenfensters.
 
-- Einem Dokumentrahmenfenster führt einen Zeiger auf die derzeit aktive Ansicht an.
+- Ein Dokumentrahmenfenster hält einen Zeiger auf die aktuelle aktive Ansicht.
 
-- Eine Dokumentvorlage behält es sich um eine Liste der geöffneten Dokumente.
+- Eine Dokumentvorlage enthält eine Liste der geöffneten Dokumente.
 
-- Die Anwendung behält eine Liste ihrer Dokumentvorlagen.
+- Die Anwendung führt eine Liste ihrer Dokumentvorlagen.
 
-- Windows behält den Überblick über alle offenen Fenster, damit sie Nachrichten senden kann.
+- Windows verfolgt alle geöffneten Fenster, damit es Nachrichten an sie senden kann.
 
-Diese Beziehungen werden während der Erstellung der Dokument-/Ansicht eingerichtet. Die folgende Tabelle zeigt, wie Objekte in einem laufenden Programm auf andere Objekte zugreifen können. Jedes Objekt kann einen Zeiger auf das Anwendungsobjekt erhalten, durch Aufrufen der globalen Funktion [AfxGetApp](../mfc/reference/application-information-and-management.md#afxgetapp).
+Diese Beziehungen werden während der Dokument-/Ansichtserstellung eingerichtet. Die folgende Tabelle zeigt, wie Objekte in einem laufenden Programm auf andere Objekte zugreifen können. Jedes Objekt kann einen Zeiger auf das Anwendungsobjekt abrufen, indem es die globale Funktion [AfxGetApp aufruft.](../mfc/reference/application-information-and-management.md#afxgetapp)
 
 ### <a name="gaining-access-to-other-objects-in-your-application"></a>Zugriff auf andere Objekte in Ihrer Anwendung
 
-|Vom Objekt|Gewusst wie: Zugriff auf andere Objekte|
+|Vom Objekt|So greifen Sie auf andere Objekte zu|
 |-----------------|---------------------------------|
-|Dokument|Verwendung [Sie GetFirstViewPosition](../mfc/reference/cdocument-class.md#getfirstviewposition) und [GetNextView](../mfc/reference/cdocument-class.md#getnextview) Ansichtsliste des Dokuments auf.<br /><br /> Rufen Sie [Sie GetDocTemplate](../mfc/reference/cdocument-class.md#getdoctemplate) um die Dokumentvorlage zu erhalten.|
-|Ansicht|Rufen Sie [GetDocument](../mfc/reference/cview-class.md#getdocument) um das Dokument zu erhalten.<br /><br /> Rufen Sie [GetParentFrame](../mfc/reference/cwnd-class.md#getparentframe) um das Rahmenfenster zu erhalten.|
-|Dokumentrahmenfenster|Rufen Sie [GetActiveView](../mfc/reference/cframewnd-class.md#getactiveview) zum Abrufen der aktuellen Ansicht.<br /><br /> Rufen Sie [Sie GetActiveDocument](../mfc/reference/cframewnd-class.md#getactivedocument) zum Abrufen der aktuellen Ansicht angefügten Dokuments.|
-|MDI-Rahmenfenster|Rufen Sie [Sie MDIGetActive](../mfc/reference/cmdiframewnd-class.md#mdigetactive) abzurufenden das aktuell aktive [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md).|
+|Dokument|Verwenden Sie [GetFirstViewPosition](../mfc/reference/cdocument-class.md#getfirstviewposition) und [GetNextView,](../mfc/reference/cdocument-class.md#getnextview) um auf die Ansichtsliste des Dokuments zuzugreifen.<br /><br /> Rufen Sie [GetDocTemplate](../mfc/reference/cdocument-class.md#getdoctemplate) auf, um die Dokumentvorlage abzurufen.|
+|Sicht|Rufen Sie [GetDocument](../mfc/reference/cview-class.md#getdocument) auf, um das Dokument abzurufen.<br /><br /> Rufen Sie [GetParentFrame](../mfc/reference/cwnd-class.md#getparentframe) auf, um das Rahmenfenster abzurufen.|
+|Dokumentrahmenfenster|Rufen Sie [GetActiveView](../mfc/reference/cframewnd-class.md#getactiveview) auf, um die aktuelle Ansicht abzurufen.<br /><br /> Rufen Sie [GetActiveDocument](../mfc/reference/cframewnd-class.md#getactivedocument) auf, um das Dokument an die aktuelle Ansicht anzuhängen.|
+|MDI-Rahmenfenster|Rufen Sie [MDIGetActive](../mfc/reference/cmdiframewnd-class.md#mdigetactive) auf, um den aktuell aktiven [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md)abzurufen.|
 
-In der Regel ein Rahmenfenster hat eine Sicht, aber in einigen Fällen enthält das gleiche Rahmenfenster wie Splitterfenster, mehrere Ansichten. Das Rahmenfenster führt einen Zeiger auf die derzeit aktive Ansicht; der Zeiger wird jedes Mal aktualisiert, die eine andere Ansicht aktiviert ist.
+In der Regel verfügt ein Rahmenfenster über eine Ansicht, aber manchmal enthält dasselbe Rahmenfenster, wie in Splitterfenstern, mehrere Ansichten. Das Rahmenfenster hält einen Zeiger auf die aktuell aktive Ansicht. Der Zeiger wird jedes Mal aktualisiert, wenn eine andere Ansicht aktiviert wird.
 
 > [!NOTE]
->  Ein Zeiger auf das Hauptrahmenfenster befindet sich in der [M_pMainWnd](../mfc/reference/cwinthread-class.md#m_pmainwnd) Membervariable des Anwendungsobjekts. Einen Aufruf von `OnFileNew` in der Überschreibung der der `InitInstance` Memberfunktion `CWinApp` legt *M_pMainWnd* für Sie. Wenn Sie nicht aufrufen `OnFileNew`, legen Sie den Wert der Variablen in `InitInstance` selbst. (SDI-COM-Komponente (Server)-Anwendungen möglicherweise nicht die Variable festgelegt, wenn ' / Embedding ' in der Befehlszeile angegeben ist.) Beachten Sie, dass *M_pMainWnd* ist jetzt ein Member der Klasse `CWinThread` statt `CWinApp`.
+> Ein Zeiger auf das Hauptrahmenfenster wird in der [m_pMainWnd](../mfc/reference/cwinthread-class.md#m_pmainwnd) Membervariable des Anwendungsobjekts gespeichert. Ein Aufruf `OnFileNew` in Ihrer Außerkraftsetzung `InitInstance` `CWinApp` der Memberfunktion von Sets *m_pMainWnd* für Sie. Wenn Sie nicht `OnFileNew`aufrufen, müssen Sie den `InitInstance` Wert der Variablen in sich selbst festlegen. (SDI COM-Komponentenanwendungen (Serveranwendungen) können die Variable nicht festlegen, wenn sich /Embedding in der Befehlszeile befindet.) Beachten Sie, dass *m_pMainWnd* `CWinThread` jetzt `CWinApp`ein Member der Klasse und nicht .
 
 ## <a name="see-also"></a>Siehe auch
 

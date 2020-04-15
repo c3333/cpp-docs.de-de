@@ -10,19 +10,19 @@ helpviewer_keywords:
 - SafeInt class
 - SafeInt class, constructor
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-ms.openlocfilehash: c69dc7ed5e34d98d5acff8f2bc28c34761bd31c6
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: c365b5cab5814d3992e6570949a69fc5d39c1dd3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076822"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373466"
 ---
 # <a name="safeint-class"></a>SafeInt-Klasse
 
 Erweitert die primitiven Ganzzahlen, um Ganzzahlüberlauf zu vermeiden, und ermöglicht Ihnen, verschiedene Typen von ganzen Zahlen zu vergleichen.
 
 > [!NOTE]
-> Die neueste Version dieser Bibliothek befindet sich unter [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt).
+> Die neueste Version dieser Bibliothek [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt)befindet sich unter .
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,13 +39,13 @@ class SafeInt;
 | E         |  Ein Aufzählungsdatentyp, der die Fehlerbehandlungsrichtlinie definiert. |
 | U         |  Der Typ des Ganzzahl- oder booleschen Parameters für den zweiten Operanden. |
 
-| Parameter  |  BESCHREIBUNG |
+| Parameter  |  Beschreibung |
 |---------|-----------------|
 | *rhs*      |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
-| *i*        |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
+| *Ⅰ*        |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
 | *bits*     |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -223,7 +223,7 @@ Es gibt zwei Optionen zur Optimierung der Fehlerrichtlinie. Die erste Option ist
 
 `SafeInt`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** „safeint.h“
 
@@ -257,13 +257,13 @@ SafeInt (
 
 ### <a name="parameters"></a>Parameter
 
-*i*<br/>
+*Ⅰ*<br/>
 [in] Der Wert für das neue `SafeInt`-Objekt. Dabei muss es sich je nach Konstruktor um einen Parameter vom Typ „T“ oder „U“ handeln.
 
-*b*<br/>
+*B*<br/>
 [in] Der boolesche Wert für das neue `SafeInt`-Objekt.
 
-*u*<br/>
+*U*<br/>
 [in] Ein `SafeInt`-Objekt vom Typ „U“. Das neue `SafeInt`-Objekt hat den gleichen Wert wie *u*, ist aber vom Typ „T“.
 
 U Der in `SafeInt` gespeicherte Datentyp. Dies kann entweder ein boolescher Wert, ein Zeichen oder eine ganze Zahl sein. Wenn er ein ganzzahliger Typ ist, kann er mit oder ohne Vorzeichen sein und zwischen 8 und 64 Bits groß sein.

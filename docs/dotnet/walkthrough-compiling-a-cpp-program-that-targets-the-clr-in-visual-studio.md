@@ -1,6 +1,6 @@
 ---
-title: Kompilieren eines C++/CLI-Programms, das die CLR als Ziel hat
-description: Verwenden Sie C++ Microsoft zum Erstellen von Programmen und Bibliotheken, die C++ systemeigenen Code und .net-Programme verbinden können.
+title: Kompilieren eines C++/CLI-Programms, das auf die CLR abzielt
+description: Verwenden Sie Microsoft C++, um Programme und Bibliotheken zu erstellen, die systemeigenen C++-Code und .NET-Programme verbinden können.
 ms.date: 04/23/2019
 helpviewer_keywords:
 - command-line applications [C++], managed code
@@ -8,35 +8,35 @@ helpviewer_keywords:
 - Visual C++, managed code
 - managed code [C++]
 ms.assetid: 339f89df-a5d2-4040-831a-ddbe25b5dce4
-ms.openlocfilehash: 36c41856dfcdb5c5f50ba59205b4c73c5fde5963
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 0d661d9e77211a0e49f8695ad713b607377a236a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080020"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371808"
 ---
-# <a name="walkthrough-compile-a-ccli-program-that-targets-the-clr-in-visual-studio"></a>Exemplarische Vorgehensweise: C++Kompilieren eines/CLI-Programms für die CLR in Visual Studio
+# <a name="walkthrough-compile-a-ccli-program-that-targets-the-clr-in-visual-studio"></a>Exemplarische Vorgehensweise: Kompilieren eines C++/CLI-Programms, das auf die CLR in Visual Studio abzielt
 
-Mithilfe C++von/CLI können Sie Programme C++ erstellen, die .NET-Klassen und systemeigene C++ Typen verwenden. C++/CLI ist für die Verwendung in Konsolen Anwendungen und DLLs vorgesehen, die System C++ eigenen Code einbinden und über .net-Programme zugänglich machen. Verwenden C# Sie zum Erstellen einer Windows-Benutzeroberfläche, die auf .NET basiert, oder Visual Basic.
+Mithilfe von C++/CLI können Sie C++-Programme erstellen, die auch .NET-Klassen sowie systemeigene C++-Typen verwenden. C++/CLI ist für die Verwendung in Konsolenanwendungen und in DLLs vorgesehen, die systemeigenen C++-Code umschließen und über .NET-Programme zugänglich machen. Um eine Windows-Benutzeroberfläche basierend auf .NET zu erstellen, verwenden Sie C- oder Visual Basic.
 
-Für dieses Verfahren können Sie ein eigenes C++ Programm eingeben oder eines der Beispiel Programme verwenden. Das Beispielprogramm, das für diese Vorgehensweise verwendet wird, erstellt eine Textdatei namens „textfile.txt“, die im Projektverzeichnis gespeichert wird.
+Für dieses Verfahren können Sie Ein eigenes C++-Programm eingeben oder eines der Beispielprogramme verwenden. Das Beispielprogramm, das für diese Vorgehensweise verwendet wird, erstellt eine Textdatei namens „textfile.txt“, die im Projektverzeichnis gespeichert wird.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - Grundlegende Kenntnisse der Programmiersprache C++.
-- In Visual Studio 2017 und höher ist C++die/CLI-Unterstützung eine optionale Komponente. Öffnen Sie die **Visual Studio-Installer** über das Windows-Startmenü, um Sie zu installieren. Stellen Sie sicher, dass die **Desktop C++ Entwicklung mit** der Kachel aktiviert ist, und aktivieren Sie **Optional**  **C++** im Abschnitt optionale Komponenten auch/CLI-Unterstützung.
+- In Visual Studio 2017 und höher ist die C++/CLI-Unterstützung eine optionale Komponente. Um es zu installieren, öffnen Sie Visual **Studio Installer** im Windows-Startmenü. Stellen Sie sicher, dass die **Desktopentwicklung mit C++-Kachel** aktiviert ist, und überprüfen Sie im Abschnitt **Optionale** Komponenten auch **C++/CLI-Unterstützung**.
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
-Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual Studio Sie verwenden. Stellen Sie sicher, dass Sie in der Versionsauswahl links oben auf dieser Seite die richtige Version ausgewählt haben.
+Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual Studio Sie verwenden. Verwenden Sie das Versionsauswahlsteuerelement, um die **Version** Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker range="vs-2019"
 
-### <a name="to-create-a-ccli-project-in-visual-studio-2019"></a>So erstellen Sie C++ein/CLI-Projekt in Visual Studio 2019
+### <a name="to-create-a-ccli-project-in-visual-studio-2019"></a>So erstellen Sie ein C++/CLI-Projekt in Visual Studio 2019
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den oberen Rand, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
+1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste nach oben, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
-1. Geben Sie im oberen Bereich des Dialog Felds **CLR** in das Suchfeld ein, und wählen Sie dann **leeres CLR-Projekt** aus der Ergebnisliste aus.
+1. Geben Sie oben im Dialogfeld **CLR** in das Suchfeld ein, und wählen Sie dann **CLR Empty Project** aus der Ergebnisliste aus.
 
 1. Klicken Sie auf die Schaltfläche **Erstellen**, um das Projekt zu erstellen.
 
@@ -44,7 +44,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 ::: moniker range="vs-2017"
 
-### <a name="to-create-a-ccli-project-in-visual-studio-2017"></a>So erstellen Sie C++ein/CLI-Projekt in Visual Studio 2017
+### <a name="to-create-a-ccli-project-in-visual-studio-2017"></a>So erstellen Sie ein C++/CLI-Projekt in Visual Studio 2017
 
 1. Erstellen Sie ein neues Projekt. Zeigen Sie im Menü **Datei** auf **Neu**, und klicken Sie dann auf **Projekt**.
 
@@ -58,7 +58,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 ::: moniker range="vs-2015"
 
-### <a name="to-create-a-ccli-project-in-visual-studio-2015"></a>So erstellen Sie C++ein/CLI-Projekt in Visual Studio 2015
+### <a name="to-create-a-ccli-project-in-visual-studio-2015"></a>So erstellen Sie ein C++/CLI-Projekt in Visual Studio 2015
 
 1. Erstellen Sie ein neues Projekt. Zeigen Sie im Menü **Datei** auf **Neu**, und klicken Sie dann auf **Projekt**.
 
@@ -76,11 +76,11 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 1. Fügen Sie dem Projekt eine neue Quelldatei hinzu:
 
-   - Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Quelldateien**, zeigen Sie auf **Hinzufügen**, und klicken Sie dann auf **Neues Element**.
+   - Klicken Sie mit der rechten Maustaste auf den Ordner **Quelldateien** im **Projektmappen-Explorer**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.
 
-   - Klicken Sie auf **C++-Datei (.cpp)** , geben Sie einen Dateinamen ein, und klicken Sie dann auf **Hinzufügen**.
+   - Klicken Sie auf **C++-Datei (.cpp)**, geben Sie einen Dateinamen ein, und klicken Sie dann auf **Hinzufügen**.
 
-   Die **CPP**-Datei wird im Ordner **Quelldateien** im **Projektmappen-Explorer** angezeigt. Au0erdem wird ein Fenster im Registerkartenformat angezeigt, in dem Sie den Code eingeben können, den Sie in diese Datei einfügen möchten.
+   Die **CPP-Datei** wird im Ordner **"Quelldateien"** im **Projektmappen-Explorer** angezeigt, und ein Registerkartenfenster wird angezeigt, in dem Sie den gewünschten Code in diese Datei eingeben.
 
 1. Klicken Sie in Visual Studio in die neu erstellte Registerkarte, und geben Sie ein gültiges Visual C++-Programm ein, oder kopieren Sie eines der Beispielprogramme und fügen es ein.
 
@@ -90,7 +90,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
    `StreamWriter^ sw = gcnew StreamWriter(fileName);`
 
-   Weitere Informationen zur C++/CLI-Syntax finden Sie unter [Komponenten Erweiterungen für laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md).
+   Weitere Informationen zur C++/CLI-Syntax finden Sie unter [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md).
 
 1. Klicken Sie im Menü **Build** auf **Projektmappe erstellen**.
 
@@ -107,7 +107,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
    > [!NOTE]
    > Durch Auswählen der leeren CLR-Projektvorlage wird automatisch die Compileroption `/clr` festgelegt. Klicken Sie zum Überprüfen mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, klicken Sie auf **Eigenschaften**, und überprüfen Sie dann die Option **Common Language Runtime-Unterstützung** im Knoten **Allgemein** der **Konfigurationseigenschaften**.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)<br/>
+[C++-Sprachreferenz](../cpp/cpp-language-reference.md)<br/>
 [Projekte und Buildsysteme](../build/projects-and-build-systems-cpp.md)<br/>

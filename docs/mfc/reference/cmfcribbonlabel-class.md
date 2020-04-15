@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CMFCRibbonLabel [MFC], CMFCRibbonLabel
 - CMFCRibbonLabel [MFC], SetACCData
 ms.assetid: 0346c891-83bf-4f20-b8a1-c84cf2aadced
-ms.openlocfilehash: b79d6191d2deb0a295e81da1150cc7b38fd81232
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cd30e374441661368d3ea7abf5177424f8dffb3c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388409"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375125"
 ---
 # <a name="cmfcribbonlabel-class"></a>CMFCRibbonLabel-Klasse
 
@@ -31,28 +31,28 @@ class CMFCRibbonLabel : public CMFCRibbonButton
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCRibbonLabel::CMFCRibbonLabel](#cmfcribbonlabel)|Erstellt und initialisiert ein `CMFCRibbonLabel` Objekt mit der angegebenen Textzeichenfolge.|
+|[CMFCRibbonLabel::CMFCRibbonLabel](#cmfcribbonlabel)|Erstellt und initialisiert `CMFCRibbonLabel` ein Objekt mit der angegebenen Textzeichenfolge.|
 |`CMFCRibbonLabel::~CMFCRibbonLabel`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`CMFCRibbonLabel::CreateObject`|Wird vom Framework verwendet, um eine dynamische Instanz dieses Klassentyps zu erstellen.|
-|`CMFCRibbonLabel::GetThisClass`|Durch das Framework verwendet wird, einen Zeiger zum Abrufen der [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt, das diesem Klassentyp zugeordnet ist.|
-|[CMFCRibbonLabel::SetACCData](#setaccdata)|Bestimmt die barrierefreiheitsdaten für das aktuelle Element der Menüband-Bezeichnung an. (Überschreibt [cmfcribbonbutton:: Setaccdata](../../mfc/reference/cmfcribbonbutton-class.md#setaccdata).)|
+|`CMFCRibbonLabel::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass-Objekt](../../mfc/reference/cruntimeclass-structure.md) abzuholen, das diesem Klassentyp zugeordnet ist.|
+|[CMFCRibbonLabel::SetACCData](#setaccdata)|Bestimmt die Eingabehilfendaten für das aktuelle Multifunktionsbandbeschriftungselement. (Überschreibt [CMFCRibbonButton::SetACCData](../../mfc/reference/cmfcribbonbutton-class.md#setaccdata).)|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie eine Menüband-Bezeichnung erstellt haben, hinzufügen, einen Bereich durch den Aufruf [cmfcribbonpanel:: Add](../../mfc/reference/cmfcribbonpanel-class.md#add).
+Nachdem Sie eine Multifunktionsleistenbeschriftung erstellt haben, fügen Sie sie einem Bedienfeld hinzu, indem Sie [CMFCRibbonPanel::Add](../../mfc/reference/cmfcribbonpanel-class.md#add)aufrufen.
 
-Sie können keine Menüband-Bezeichnung Symbolleiste für den Schnellzugriff hinzugefügt werden.
+Sie können der Schnellzugriffssymbolleiste keine Multifunktionsleistenbeschriftung hinzufügen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CMFCRibbonBaseElement](../../mfc/reference/cmfcribbonbaseelement-class.md)
 
@@ -62,11 +62,11 @@ Sie können keine Menüband-Bezeichnung Symbolleiste für den Schnellzugriff hin
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxRibbonLabel.h
+**Kopfzeile:** afxRibbonLabel.h
 
-##  <a name="cmfcribbonlabel"></a>  CMFCRibbonLabel::CMFCRibbonLabel
+## <a name="cmfcribbonlabelcmfcribbonlabel"></a><a name="cmfcribbonlabel"></a>CMFCRibbonLabel::CMFCRibbonLabel
 
-Erstellt und initialisiert ein [CMFCRibbonLabel](../../mfc/reference/cmfcribbonlabel-class.md) -Objekt, das zeigt, an der angegebenen Textzeichenfolge.
+Erstellt und initialisiert ein [CMFCRibbonLabel-Objekt,](../../mfc/reference/cmfcribbonlabel-class.md) das die angegebene Textzeichenfolge anzeigt.
 
 ```
 CMFCRibbonLabel(
@@ -77,14 +77,14 @@ CMFCRibbonLabel(
 ### <a name="parameters"></a>Parameter
 
 *lpszText*<br/>
-[in] Der Text in der Bezeichnung angezeigt werden.
+[in] Der Text, der in der Beschriftung angezeigt werden soll.
 
 *bIsMultiLine*<br/>
-[in] True, um anzugeben, dass die Bezeichnung eine mehrzeilige Bezeichnung ist. andernfalls "false".
+[in] TRUE, um anzugeben, dass es sich bei der Bezeichnung um eine mehrzeilige Beschriftung handelt. andernfalls FALSE.
 
-##  <a name="setaccdata"></a>  CMFCRibbonLabel::SetACCData
+## <a name="cmfcribbonlabelsetaccdata"></a><a name="setaccdata"></a>CMFCRibbonLabel::SetACCData
 
-Bestimmt die barrierefreiheitsdaten für das aktuelle Element der Menüband-Bezeichnung an.
+Bestimmt die Eingabehilfendaten für das aktuelle Multifunktionsbandbeschriftungselement.
 
 ```
 virtual BOOL SetACCData(
@@ -95,14 +95,14 @@ virtual BOOL SetACCData(
 ### <a name="parameters"></a>Parameter
 
 *pParent*<br/>
-[in] Stellt das übergeordnete Fenster des die aktuelle Menüband-Bezeichnung an.
+[in] Stellt das übergeordnete Fenster der aktuellen Multifunktionsleistenbeschriftung dar.
 
-*data*<br/>
-[out] Ein Objekt des Typs `CAccessibilityData` , die mit den Zugriff auf Daten des die aktuelle Menüband-Bezeichnung aufgefüllt wird.
+*Daten*<br/>
+[out] Ein Objekt `CAccessibilityData` des Typs, das mit den Eingabehilfendaten der aktuellen Multifunktionsleistenbeschriftung aufgefüllt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die *Daten* Parameter wurde erfolgreich mit den Zugriff auf Daten des die aktuelle Menüband-Bezeichnung aufgefüllt ist, andernfalls "false".
+TRUE, wenn der *Datenparameter* erfolgreich mit den Eingabehilfendaten der aktuellen Multifunktionsbandbeschriftung aufgefüllt wurde. andernfalls FALSE.
 
 ## <a name="see-also"></a>Siehe auch
 

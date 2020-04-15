@@ -1,5 +1,5 @@
 ---
-title: Cmfcribbongallerymenubutton-Klasse
+title: CMFCRibbonGalleryMenuButton-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCRibbonGalleryMenuButton
@@ -18,17 +18,17 @@ helpviewer_keywords:
 - CMFCRibbonGalleryMenuButton [MFC], HasButton
 - CMFCRibbonGalleryMenuButton [MFC], IsEmptyMenuAllowed
 ms.assetid: 4d459d9b-8b1a-4371-92f6-dc4ce6cc42c8
-ms.openlocfilehash: 0ec295fa64b835064435992a398d4292ccf26f38
-ms.sourcegitcommit: bd7ddc044f9083246614b602ef6a758775313214
+ms.openlocfilehash: 305393def3b176b052b1db89c66c1e755f528ee6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866169"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375145"
 ---
-# <a name="cmfcribbongallerymenubutton-class"></a>Cmfcribbongallerymenubutton-Klasse
+# <a name="cmfcribbongallerymenubutton-class"></a>CMFCRibbonGalleryMenuButton-Klasse
 
 Implementiert eine Menüband-Menüschaltfläche, die Menübandkataloge enthält.
-Weitere Informationen finden Sie im Quellcode, der sich im **Ordner\\VC atlmfc\\\\src MFC** Ihrer Visual Studio-Installation befindet.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,21 +40,21 @@ class CMFCRibbonGalleryMenuButton : public CMFCToolBarMenuButton
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cmfcribbongallerymenubutton:: cmfcribbongallerymenubutton](#cmfcribbongallerymenubutton)|Erstellt und initialisiert ein `CMFCRibbonGalleryMenuButton`-Objekt.|
+|[CMFCRibbonGalleryMenuButton::CMFCRibbonGalleryMenuButton](#cmfcribbongallerymenubutton)|Erstellt und initialisiert ein `CMFCRibbonGalleryMenuButton`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cmfcribbongallerymenubutton:: CopyFrom](#copyfrom)|(Überschreibt [cmfctoolbarmenubutton:: CopyFrom](../../mfc/reference/cmfctoolbarmenubutton-class.md#copyfrom).)|
-|[CMFCRibbonGalleryMenuButton::CreatePopupMenu](#createpopupmenu)|(Überschreibt [cmfctoolbarmenubutton:: kreatepopupmenu](../../mfc/reference/cmfctoolbarmenubutton-class.md#createpopupmenu).)|
+|[CMFCRibbonGalleryMenuButton::CopyFrom](#copyfrom)|(Überschreibt [CMFCToolBarMenuButton::CopyFrom](../../mfc/reference/cmfctoolbarmenubutton-class.md#copyfrom).)|
+|[CMFCRibbonGalleryMenuButton::CreatePopupMenu](#createpopupmenu)|(Überschreibt [CMFCToolBarMenuButton::CreatePopupMenu](../../mfc/reference/cmfctoolbarmenubutton-class.md#createpopupmenu).)|
 |[CMFCRibbonGalleryMenuButton::GetPalette](#getpalette)||
 |[CMFCRibbonGalleryMenuButton::HasButton](#hasbutton)|(Überschreibt `CMFCToolBarMenuButton::HasButton`.)|
-|[Cmfcribbongallerymenubutton:: isemptymenuallowed](#isemptymenuallowed)|(Überschreibt [cmfctoolbarmenubutton:: isemptymenuallowed](../../mfc/reference/cmfctoolbarmenubutton-class.md#isemptymenuallowed).)|
+|[CMFCRibbonGalleryMenuButton::IsEmptyMenuAllowed](#isemptymenuallowed)|(Überschreibt [CMFCToolBarMenuButton::IsEmptyMenuAllowed](../../mfc/reference/cmfctoolbarmenubutton-class.md#isemptymenuallowed).)|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Katalogmenüschaltfläche wird als ein Popupmenü mit einem Pfeil angezeigt. Wenn der Benutzer auf diese Schaltfläche klickt, wird ein Katalog von Bildern angezeigt. Beim Erstellen einer Katalogmenüschaltfläche müssen Sie eine Bildliste angeben, die diese Bilder enthält.
 
@@ -88,16 +88,16 @@ BOOL CMainFrame::OnShowPopupMenu (CMFCPopupMenu* pMenuPopup)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)\
-└&nbsp;[Cmfctoolbarbutton](../../mfc/reference/cmfctoolbarbutton-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[Cmfctoolbarmenubutton](../../mfc/reference/cmfctoolbarmenubutton-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[Cmfcribbongallerymenubutton](../../mfc/reference/cmfcribbongallerymenubutton-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)\
+•&nbsp;[CMFCToolBarButton](../../mfc/reference/cmfctoolbarbutton-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;[CMFCToolBarMenuButton](../../mfc/reference/cmfctoolbarmenubutton-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;[CMFCRibbonGalleryMenuButton](../../mfc/reference/cmfcribbongallerymenubutton-class.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxribbonpalettegallery. h
+**Kopfzeile:** afxRibbonPaletteGallery.h
 
-##  <a name="copyfrom"></a>Cmfcribbongallerymenubutton:: CopyFrom
+## <a name="cmfcribbongallerymenubuttoncopyfrom"></a><a name="copyfrom"></a>CMFCRibbonGalleryMenuButton::CopyFrom
 
 ```
 virtual void CopyFrom(const CMFCToolBarButton& src);
@@ -107,11 +107,11 @@ virtual void CopyFrom(const CMFCToolBarButton& src);
 
 [in] *src*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="cmfcribbongallerymenubutton"></a>Cmfcribbongallerymenubutton:: cmfcribbongallerymenubutton
+## <a name="cmfcribbongallerymenubuttoncmfcribbongallerymenubutton"></a><a name="cmfcribbongallerymenubutton"></a>CMFCRibbonGalleryMenuButton::CMFCRibbonGalleryMenuButton
 
-Erstellt und initialisiert ein [cmfcribbongallerymenubutton](../../mfc/reference/cmfcribbongallerymenubutton-class.md) -Objekt.
+Erstellt und initialisiert ein [CMFCRibbonGalleryMenuButton-Objekt.](../../mfc/reference/cmfcribbongallerymenubutton-class.md)
 
 ```
 CMFCRibbonGalleryMenuButton(
@@ -131,34 +131,34 @@ CMFCRibbonGalleryMenuButton(
 ### <a name="parameters"></a>Parameter
 
 *uiID*<br/>
-Die Befehls-ID der Schaltfläche. Dies ist der Wert, der in der WM_COMMAND-Nachricht gesendet wird, wenn der Benutzer auf diese Schaltfläche klickt.
+Die Befehls-ID der Schaltfläche. Dies ist der Wert, der in der WM_COMMAND Nachricht gesendet wird, wenn der Benutzer auf diese Schaltfläche klickt.
 
 *iImage*<br/>
-Der Index des Bilds, das mit der Menü Schaltfläche des Katalogs angezeigt werden soll. Die Bilder werden im *imagespalette* -Parameter gespeichert.
+Der Index des Bildes, das mit der Schaltfläche "Galeriemenü" angezeigt werden soll. Die Bilder werden im Parameter *imagesPalette* gespeichert.
 
 *lpszText*<br/>
-Der Text, der auf der Menü Schaltfläche angezeigt werden soll.
+Der Text, der auf der Menüschaltfläche angezeigt werden soll.
 
 *imagesPalette*<br/>
-Enthält die Liste der Bilder, die im Katalog angezeigt werden sollen.
+Enthält die Liste der Bilder, die in der Galerie angezeigt werden sollen.
 
 *uiImagesPaletteResID*<br/>
-Die Ressourcen-ID der Bildliste für die Bilder, die im Katalog angezeigt werden sollen.
+Die Ressourcen-ID der Bildliste für die Bilder, die in der Galerie angezeigt werden sollen.
 
 *cxPaletteImage*<br/>
-Gibt die Breite des Bilds in Pixel an, das im Katalog angezeigt werden soll.
+Gibt die Breite in Pixeln des Bildes an, das in der Galerie angezeigt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Menü Schaltfläche "Katalog" wird als Popup Menü mit einem Pfeil angezeigt. Wenn der Benutzer auf diese Schaltfläche klickt, wird ein Katalog von Bildern angezeigt.
+Die Schaltfläche "Galeriemenü" wird als Popupmenü mit einem Pfeil angezeigt. Wenn der Benutzer auf diese Schaltfläche klickt, wird ein Katalog von Bildern angezeigt.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie der Konstruktor der `CMFCRibbonGalleryMenuButton` -Klasse verwendet wird. Dieser Code Ausschnitt ist Teil des Beispiel- [Demo Beispiels von MS Office 2007](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird veranschaulicht, wie `CMFCRibbonGalleryMenuButton` der Konstruktor der Klasse verwendet wird. Dieser Codeausschnitt ist Teil des [MS Office 2007-Demobeispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MSOffice2007Demo#8](../../mfc/reference/codesnippet/cpp/cmfcribbongallerymenubutton-class_1.cpp)]
 
-##  <a name="createpopupmenu"></a>Cmfcribbongallerymenubutton:: kreatepopupmenu
+## <a name="cmfcribbongallerymenubuttoncreatepopupmenu"></a><a name="createpopupmenu"></a>CMFCRibbonGalleryMenuButton::CreatePopupMenu
 
 ```
 virtual CMFCPopupMenu* CreatePopupMenu();
@@ -166,9 +166,9 @@ virtual CMFCPopupMenu* CreatePopupMenu();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getpalette"></a>Cmfcribbongallerymenubutton:: getpalette
+## <a name="cmfcribbongallerymenubuttongetpalette"></a><a name="getpalette"></a>CMFCRibbonGalleryMenuButton::GetPalette
 
 ```
 CMFCRibbonGallery& GetPalette();
@@ -176,9 +176,9 @@ CMFCRibbonGallery& GetPalette();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="hasbutton"></a>Cmfcribbongallerymenubutton:: hasbutton
+## <a name="cmfcribbongallerymenubuttonhasbutton"></a><a name="hasbutton"></a>CMFCRibbonGalleryMenuButton::HasButton
 
 ```
 virtual BOOL HasButton() const;
@@ -186,9 +186,9 @@ virtual BOOL HasButton() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isemptymenuallowed"></a>Cmfcribbongallerymenubutton:: isemptymenuallowed
+## <a name="cmfcribbongallerymenubuttonisemptymenuallowed"></a><a name="isemptymenuallowed"></a>CMFCRibbonGalleryMenuButton::IsEmptyMenuAllowed
 
 ```
 virtual BOOL IsEmptyMenuAllowed() const;
@@ -196,7 +196,7 @@ virtual BOOL IsEmptyMenuAllowed() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 

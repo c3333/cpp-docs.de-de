@@ -15,16 +15,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::MakeAllocator::MakeAllocator, constructor
 - Microsoft::WRL::Details::MakeAllocator::~MakeAllocator, destructor
 ms.assetid: a1114615-abd7-4a56-9bc3-750c118f0fa1
-ms.openlocfilehash: 805f0c09b0490d8cec1a0be96dcb1fc99a051371
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dc0d83f2550646572a4eff2bec7850037c6dbf6a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62161237"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371333"
 ---
 # <a name="makeallocator-class"></a>MakeAllocator-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,31 +50,31 @@ class MakeAllocator<T, true>;
 Ein Typname.
 
 *hasWeakReferenceSupport*<br/>
-**"true"** zum Zuweisen von Arbeitsspeicher für ein Objekt, das schwache Verweise; unterstützt. **"false"** zum Zuweisen von Arbeitsspeicher für ein Objekt, das schwache Verweise nicht unterstützt.
+**true,** um Speicher für ein Objekt zuzuweisen, das schwache Verweise unterstützt; **false,** um Speicher für ein Objekt zuzuweisen, das keine schwachen Verweise unterstützt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Belegt Speicher für eine aktivierbare Klasse, mit oder ohne Unterstützung von schwachen Verweis.
+Reserviert Speicher für eine aktivierbare Klasse mit oder ohne schwache Verweisunterstützung.
 
-Überschreiben der `MakeAllocator` Klasse, um eine benutzerdefinierte Zuordnung Speichermodell zu implementieren.
+Überschreiben `MakeAllocator` Sie die Klasse, um ein benutzerdefiniertes Speicherzuweisungsmodell zu implementieren.
 
-`MakeAllocator` wird normalerweise verwendet, um Speicherverluste zu verhindern, wenn ein Objekt während der Erstellung auslöst.
+`MakeAllocator`wird in der Regel verwendet, um Speicherverluste zu verhindern, wenn ein Objekt während der Konstruktion ausgelöst wird.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                                  | Beschreibung
+Name                                                  | BESCHREIBUNG
 ----------------------------------------------------- | ----------------------------------------------------------------
-[MakeAllocator::MakeAllocator](#makeallocator)        | Initialisiert eine neue Instanz der `MakeAllocator`-Klasse.
-[MakeAllocator::~MakeAllocator](#tilde-makeallocator) | Hebt die Initialisierung der aktuellen Instanz von der `MakeAllocator` Klasse.
+[MakeAllocator::MakeAllocator](#makeallocator)        | Initialisiert eine neue Instanz der Klasse `MakeAllocator`.
+[MakeAllocator::'MakeAllocator](#tilde-makeallocator) | Deinitialisiert die aktuelle Instanz `MakeAllocator` der Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                 | Beschreibung
+Name                                 | BESCHREIBUNG
 ------------------------------------ | -----------------------------------------------------------------------------------------------------------
-[MakeAllocator::Allocate](#allocate) | Weist Speicher zu und ordnet es die aktuellen `MakeAllocator` Objekt.
-[MakeAllocator::Detach](#detach)     | Hebt die Zuordnung von belegten Arbeitsspeicher die [Allocate](#allocate) Methode aus dem aktuellen `MakeAllocator` Objekt.
+[MakeAllocator::Allocate](#allocate) | Ordnet Speicher zu und ordnet `MakeAllocator` ihn dem aktuellen Objekt zu.
+[MakeAllocator::Detach](#detach)     | Trennt den von der [Allocate-Methode](#allocate) zugewiesenen Speicher vom aktuellen `MakeAllocator` Objekt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -86,9 +86,9 @@ Name                                 | Beschreibung
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="allocate"></a>MakeAllocator::Allocate
+## <a name="makeallocatorallocate"></a><a name="allocate"></a>MakeAllocator::Allocate
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 __forceinline void* Allocate();
@@ -96,52 +96,52 @@ __forceinline void* Allocate();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bei Erfolg einen Zeiger auf den reservierten Speicher; andernfalls `nullptr`.
+Wenn erfolgreich, ein Zeiger auf den zugewiesenen Speicher; andernfalls `nullptr`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weist Speicher zu und ordnet es die aktuellen `MakeAllocator` Objekt.
+Ordnet Speicher zu und ordnet `MakeAllocator` ihn dem aktuellen Objekt zu.
 
-Die Größe des zugeordneten Speichers ist die Größe des vom aktuellen angegebenen Typs `MakeAllocator` Template-Parameter.
+Die Größe des zugewiesenen Speichers entspricht der `MakeAllocator` Größe des Typs, der durch den aktuellen Vorlagenparameter angegeben wird.
 
-Ein Entwickler benötigt, um nur überschreiben die `Allocate()` zu einer anderen Zuordnung Speichermodell zu implementierende Methode.
+Ein Entwickler muss nur `Allocate()` die Methode überschreiben, um ein anderes Speicherzuweisungsmodell zu implementieren.
 
-## <a name="detach"></a>MakeAllocator::Detach
+## <a name="makeallocatordetach"></a><a name="detach"></a>MakeAllocator::Detach
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 __forceinline void Detach();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Hebt die Zuordnung von belegten Arbeitsspeicher die [Allocate](#allocate) Methode aus dem aktuellen `MakeAllocator` Objekt.
+Trennt den von der [Allocate-Methode](#allocate) zugewiesenen Speicher vom aktuellen `MakeAllocator` Objekt.
 
-Wenn Sie aufrufen `Detach()`, Sie sind verantwortlich für das Löschen des Arbeitsspeichers, die bereitgestellt werden, indem die `Allocate` Methode.
+Wenn Sie `Detach()`aufrufen, sind Sie für das `Allocate` Löschen des von der Methode bereitgestellten Speichers verantwortlich.
 
-## <a name="makeallocator"></a>MakeAllocator::MakeAllocator
+## <a name="makeallocatormakeallocator"></a><a name="makeallocator"></a>MakeAllocator::MakeAllocator
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 MakeAllocator();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert eine neue Instanz der `MakeAllocator`-Klasse.
+Initialisiert eine neue Instanz der Klasse `MakeAllocator`.
 
-## <a name="tilde-makeallocator"></a>MakeAllocator::~MakeAllocator
+## <a name="makeallocatormakeallocator"></a><a name="tilde-makeallocator"></a>MakeAllocator::'MakeAllocator
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 ~MakeAllocator();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Hebt die Initialisierung der aktuellen Instanz von der `MakeAllocator` Klasse.
+Deinitialisiert die aktuelle Instanz `MakeAllocator` der Klasse.
 
-Dieser Destruktor werden bei Bedarf auch den zugrunde liegenden belegten Speicher gelöscht.
+Dieser Destruktor löscht bei Bedarf auch den zugrunde liegenden zugewiesenen Speicher.

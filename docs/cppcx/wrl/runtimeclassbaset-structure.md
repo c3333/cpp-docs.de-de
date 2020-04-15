@@ -11,16 +11,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::RuntimeClassBaseT::AsIID method
 - Microsoft::WRL::Details::RuntimeClassBaseT::GetImplementedIIDS method
 ms.assetid: a62775fb-3359-4f45-9ff1-c07fa8da464b
-ms.openlocfilehash: 5d93b3e86e7ba105a42ccbedbbf44c51ada97bbd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 06a9f73e00d541b0e5bcbe20c57befe4a67c5132
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403164"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375719"
 ---
 # <a name="runtimeclassbaset-structure"></a>RuntimeClassBaseT-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,20 +32,20 @@ friend struct Details::RuntimeClassBaseT;
 ### <a name="parameters"></a>Parameter
 
 *RuntimeClassTypeT*<br/>
-Ein Feld von Flags, der angibt, eine oder mehrere [RuntimeClassType](runtimeclasstype-enumeration.md) Enumeratoren.
+Ein Feld mit Flags, das einen oder mehrere [RuntimeClassType-Enumeratoren](runtimeclasstype-enumeration.md) angibt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Stellt Hilfsmethoden für `QueryInterface` Vorgänge und die erste Schnittstellen-IDs.
+Stellt Hilfsmethoden `QueryInterface` für Vorgänge und das Abrufen von Schnittstellen-IDs bereit.
 
 ## <a name="members"></a>Member
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-Name                                                         | Beschreibung
+Name                                                         | BESCHREIBUNG
 ------------------------------------------------------------ | -----------------------------------------------------------------------------
-[RuntimeClassBaseT::AsIID](#asiid)                           | Ruft einen Zeiger auf die angegebene Schnittstellen-ID.
-[RuntimeClassBaseT::GetImplementedIIDS](#getimplementediids) | Ruft ein Array von Schnittstellen-IDs, die von einem angegebenen Typ implementiert werden.
+[RuntimeClassBaseT::AsIID](#asiid)                           | Ruft einen Zeiger auf die angegebene Schnittstellen-ID ab.
+[RuntimeClassBaseT::GetImplementedIIDS](#getimplementediids) | Ruft ein Array von Schnittstellen-IDs ab, die von einem angegebenen Typ implementiert werden.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -57,9 +57,9 @@ Name                                                         | Beschreibung
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="asiid"></a>RuntimeClassBaseT::AsIID
+## <a name="runtimeclassbasetasiid"></a><a name="asiid"></a>RuntimeClassBaseT::AsIID
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 template<typename T>
@@ -73,28 +73,28 @@ __forceinline static HRESULT AsIID(
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Typ, die Schnittstellen-ID, die vom Parameter angegebene implementiert *Riid*.
+Ein Typ, der die durch den Parameter *riid*angegebene Schnittstellen-ID implementiert.
 
 *implements*<br/>
-Eine Variable des Typs von Template-Parameter angegebenen *T*.
+Eine Variable des Typs, die durch den Vorlagenparameter *T*angegeben wird.
 
 *riid*<br/>
-Die Schnittstellen-ID abgerufen werden soll.
+Die abzurufende Schnittstellen-ID.
 
 *ppvObject*<br/>
-Wenn dieser Vorgang erfolgreich ist, wird ein Zeiger-auf-a-Zeiger auf die Schnittstelle vom-Parameter angegebenen *Riid*.
+Wenn dieser Vorgang erfolgreich ist, wird ein Zeiger auf die Schnittstelle angezeigt, die durch den Parameter *riid*angegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler beschreibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft einen Zeiger auf die angegebene Schnittstellen-ID.
+Ruft einen Zeiger auf die angegebene Schnittstellen-ID ab.
 
-## <a name="getimplementediids"></a>RuntimeClassBaseT::GetImplementedIIDS
+## <a name="runtimeclassbasetgetimplementediids"></a><a name="getimplementediids"></a>RuntimeClassBaseT::GetImplementedIIDS
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 template<typename T>
@@ -108,21 +108,21 @@ __forceinline static HRESULT GetImplementedIIDS(
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Typ des der *implementiert* Parameter.
+Der Typ des *Implements-Parameters.*
 
 *implements*<br/>
-Zeiger auf den vom Parameter angegebenen Typ *T*.
+Zeiger auf den typ, der durch parameter *T*angegeben wird.
 
 *iidCount*<br/>
-Die maximale Anzahl von Schnittstellen-IDs abrufen.
+Die maximale Anzahl der abzurufenden Schnittstellen-IDs.
 
 *iids*<br/>
-Wenn dieser Vorgang erfolgreich abgeschlossen, ein Array von die Schnittstellen-IDs, die vom Typ implementiert wird *T*.
+Wenn dieser Vorgang erfolgreich abgeschlossen wird, wird ein Array der Schnittstellen-IDs, die vom Typ *T*implementiert sind.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler beschreibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ein Array von Schnittstellen-IDs, die von einem angegebenen Typ implementiert werden.
+Ruft ein Array von Schnittstellen-IDs ab, die von einem angegebenen Typ implementiert werden.

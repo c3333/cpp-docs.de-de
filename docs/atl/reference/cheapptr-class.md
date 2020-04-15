@@ -10,19 +10,19 @@ f1_keywords:
 helpviewer_keywords:
 - CHeapPtr class
 ms.assetid: e5c5bfd4-9bf1-4164-8a83-8155fe253454
-ms.openlocfilehash: 8cb35139e707d81a53edb762a2b7fc2ab41ff247
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a512aa974cb57072915f887f0c2a20ed1263ffa3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62258675"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326914"
 ---
 # <a name="cheapptr-class"></a>CHeapPtr-Klasse
 
-Eine intelligente Zeiger-Klasse für die Verwaltung von Heap-Zeiger.
+Eine intelligente Zeigerklasse zum Verwalten von Heapzeigern.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,35 +34,35 @@ class CHeapPtr : public CHeapPtrBase<T, Allocator>
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Objekttyp, auf dem Heap gespeichert werden.
+Der Objekttyp, der auf dem Heap gespeichert werden soll.
 
-*Allocator*<br/>
-Die Speicher-Allocation-Klasse verwenden.
+*Zuweisung*<br/>
+Die zu verwendende Speicherzuweisungsklasse.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHeapPtr::CHeapPtr](#cheapptr)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHeapPtr::Allocate](#allocate)|Rufen Sie diese Methode, um die speicherbelegung auf dem Heap, Objekte zu speichern.|
-|[CHeapPtr::Reallocate](#reallocate)|Rufen Sie diese Methode, um den Arbeitsspeicher auf dem Heap neu zuzuordnen.|
+|[CHeapPtr::Zuweisen](#allocate)|Rufen Sie diese Methode auf, um Speicher auf dem Heap zum Speichern von Objekten zuzuweisen.|
+|[CHeapPtr::Neuzuordnen](#reallocate)|Rufen Sie diese Methode auf, um den Speicher auf dem Heap neu zuzuweisen.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHeapPtr::operator =](#operator_eq)|Der Zuweisungsoperator.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CHeapPtr` stammt aus [CHeapPtrBase](../../atl/reference/cheapptrbase-class.md) und verwendet Sie standardmäßig die CRT-Routinen (in [CCRTAllocator](../../atl/reference/ccrtallocator-class.md)) zum Zuordnen und Freigeben von Arbeitsspeicher. Die Klasse [CHeapPtrList](../../atl/reference/cheapptrlist-class.md) kann verwendet werden, um eine Liste von Heap Zeigern zu erstellen. Siehe auch [CComHeapPtr](../../atl/reference/ccomheapptr-class.md), die COM-Arbeitsspeicher speicherbelegungsroutinen verwendet.
+`CHeapPtr`wird von [CHeapPtrBase](../../atl/reference/cheapptrbase-class.md) abgeleitet und verwendet standardmäßig die CRT-Routinen (in [CCRTAllocator](../../atl/reference/ccrtallocator-class.md)), um Speicher zuzuweisen und freizugeben. Die Klasse [CHeapPtrList](../../atl/reference/cheapptrlist-class.md) kann verwendet werden, um eine Liste von Heapzeigern zu erstellen. Siehe auch [CComHeapPtr](../../atl/reference/ccomheapptr-class.md), das COM-Speicherzuweisungsroutinen verwendet.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -72,11 +72,11 @@ Die Speicher-Allocation-Klasse verwenden.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcore.h
+**Kopfzeile:** atlcore.h
 
-##  <a name="allocate"></a>  CHeapPtr::Allocate
+## <a name="cheapptrallocate"></a><a name="allocate"></a>CHeapPtr::Zuweisen
 
-Rufen Sie diese Methode, um die speicherbelegung auf dem Heap, Objekte zu speichern.
+Rufen Sie diese Methode auf, um Speicher auf dem Heap zum Speichern von Objekten zuzuweisen.
 
 ```
 bool Allocate(size_t nElements = 1) throw();
@@ -85,21 +85,21 @@ bool Allocate(size_t nElements = 1) throw();
 ### <a name="parameters"></a>Parameter
 
 *nElements*<br/>
-Die Anzahl der Elemente, die zum Berechnen der Menge an Arbeitsspeicher zugeordnet werden soll. Der Standardwert ist 1.
+Die Anzahl der Elemente, die zum Berechnen der zuzuweisenden Speichermenge verwendet werden. Der Standardwert ist 1.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" zurück, wenn der Speicher wurde erfolgreich zugeordnet, "false" bei einem Fehler.
+Gibt true zurück, wenn der Speicher erfolgreich zugewiesen wurde, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Allocator-Routinen dienen, reservieren ausreichend Arbeitsspeicher auf dem Heap zum Speichern von *nElement* Objekte eines Typs, die im Konstruktor definiert.
+Die Zuweisungsroutinen werden verwendet, um genügend Speicher auf dem Heap zu reservieren, um *nElement-Objekte* eines im Konstruktor definierten Typs zu speichern.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#77](../../atl/codesnippet/cpp/cheapptr-class_1.cpp)]
 
-##  <a name="cheapptr"></a>  CHeapPtr::CHeapPtr
+## <a name="cheapptrcheapptr"></a><a name="cheapptr"></a>CHeapPtr::CHeapPtr
 
 Der Konstruktor.
 
@@ -111,18 +111,18 @@ CHeapPtr(CHeapPtr<T, Allocator>& p) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
-Einem vorhandenen Heapzeiger oder `CHeapPtr`.
+*P*<br/>
+Ein vorhandener Heapzeiger oder `CHeapPtr`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Heapzeiger kann optional mithilfe eines bestehenden Zeigers, erstellt werden oder ein `CHeapPtr` Objekt. Wenn dies der Fall ist, die neue `CHeapPtr` Objekt übernimmt die Verantwortung für die Verwaltung der neue Zeiger und Ressourcen.
+Der Heapzeiger kann optional mit einem vorhandenen Zeiger `CHeapPtr` oder einem Objekt erstellt werden. Wenn dies `CHeapPtr` der Zuspruch bereits der Falle ist, übernimmt das neue Objekt die Verantwortung für die Verwaltung des neuen Zeigers und der neuen Ressourcen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#78](../../atl/codesnippet/cpp/cheapptr-class_2.cpp)]
 
-##  <a name="operator_eq"></a>  CHeapPtr::operator =
+## <a name="cheapptroperator-"></a><a name="operator_eq"></a>CHeapPtr::operator =
 
 Zuweisungsoperator.
 
@@ -133,20 +133,20 @@ CHeapPtr<T, Allocator>& operator=(
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
+*P*<br/>
 Ein vorhandenes `CHeapPtr`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf die aktualisierte `CHeapPtr`.
+Gibt einen Verweis `CHeapPtr`auf die aktualisierte zurück.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#80](../../atl/codesnippet/cpp/cheapptr-class_3.cpp)]
 
-##  <a name="reallocate"></a>  CHeapPtr::Reallocate
+## <a name="cheapptrreallocate"></a><a name="reallocate"></a>CHeapPtr::Neuzuordnen
 
-Rufen Sie diese Methode, um den Arbeitsspeicher auf dem Heap neu zuzuordnen.
+Rufen Sie diese Methode auf, um den Speicher auf dem Heap neu zuzuweisen.
 
 ```
 bool Reallocate(size_t nElements) throw();
@@ -155,11 +155,11 @@ bool Reallocate(size_t nElements) throw();
 ### <a name="parameters"></a>Parameter
 
 *nElements*<br/>
-Die neue Anzahl von Elementen, die zum Berechnen der Menge an Arbeitsspeicher zugeordnet werden soll.
+Die neue Anzahl von Elementen, die zum Berechnen der zuzuweisenden Speichermenge verwendet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" zurück, wenn der Speicher wurde erfolgreich zugeordnet, "false" bei einem Fehler.
+Gibt true zurück, wenn der Speicher erfolgreich zugewiesen wurde, false bei einem Fehler.
 
 ### <a name="example"></a>Beispiel
 
@@ -169,4 +169,4 @@ Gibt "true" zurück, wenn der Speicher wurde erfolgreich zugeordnet, "false" bei
 
 [CHeapPtrBase-Klasse](../../atl/reference/cheapptrbase-class.md)<br/>
 [CCRTAllocator-Klasse](../../atl/reference/ccrtallocator-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

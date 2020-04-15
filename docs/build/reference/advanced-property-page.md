@@ -1,27 +1,27 @@
 ---
-title: Erweiterte Eigenschaften Seite (Projekt)
+title: Erweiterte Eigenschaftenseite (Projekt)
 ms.date: 07/19/2019
 f1_keywords:
 - VC.Project.VCConfiguration.VCToolsVersion
 ms.description: Use the Advanced property page in Visual Studio 2019 to set various properties for C++ projects.
-ms.openlocfilehash: fae3c76d4a62e3b0409664b3630ad76ab601c52b
-ms.sourcegitcommit: 610751254a01cba6ad15fb1e1764ecb2e71f66bf
+ms.openlocfilehash: 8ce62b768f5cda30501e791bcd040a40b18bfb23
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68315529"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328425"
 ---
-# <a name="advanced-property-page"></a>Erweiterte Eigenschaften Seite
+# <a name="advanced-property-page"></a>Erweiterte Eigenschaftenseite
 
-Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügbar.
+Die Erweiterte Eigenschaftenseite ist in Visual Studio 2019 und höher verfügbar.
 
 ::: moniker range="vs-2019"
 
 ## <a name="advanced-properties"></a>Erweiterte Eigenschaften
 
-- **Ziel Dateierweiterung**
+- **Zieldateierweiterung**
 
-   Gibt die Dateierweiterung an, die für die Buildausgabe verwendet werden soll. Der Standardwert ist " **. exe** " für Anwendungen, " **. lib** " für statische Bibliotheken und " **. dll** " für DLLs.
+   Gibt die Dateierweiterung an, die für die Buildausgabe verwendet werden soll. Standardwerte auf **.exe** für Anwendungen, **.lib** für statische Bibliotheken und **.dll** für DLLs.
 
 - **Bei der Bereinigung zu löschende Erweiterungen**
 
@@ -33,19 +33,19 @@ Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügba
 
    Ermöglicht es Ihnen, ein vom Standardspeicherort abweichendes Verzeichnis für die Protokolldatei anzugeben, die bei jedem Erstellen eines Projekts generiert wird. Der Standardspeicherort wird durch die Makros $(IntDir)$(MSBuildProjectName).log angegeben.
 
-   Sie können Projektmakros verwenden, um den Verzeichnispfad zu ändern. Siehe [Allgemeine Makros für Buildbefehle und-Eigenschaften](common-macros-for-build-commands-and-properties.md).
+   Sie können Projektmakros verwenden, um den Verzeichnispfad zu ändern. Siehe [Allgemeine Makros für Buildbefehle und -eigenschaften](common-macros-for-build-commands-and-properties.md).
 
-- **Bevorzugte buildtoolarchitektur**
+- **Bevorzugte Build-Tool-Architektur**
 
-   Gibt an, ob die x86-oder x64-Buildtools verwendet werden.
+   Gibt an, ob die x86- oder x64-Buildtools verwendet werden sollen.
 
 - **Debugbibliotheken verwenden**
 
-   Gibt an, ob ein Debug-oder Releasebuild erstellt werden soll.
+   Gibt an, ob ein DEBUG- oder RELEASE-Build erstellt werden soll.
 
-- **Unity-Build (groß) aktivieren**
+- **Unity (JUMBO)-Build aktivieren**
 
-   Ermöglicht einen Buildprozess, C++ bei dem viele Quelldateien vor der Kompilierung in einer oder mehreren "Unity"-Dateien kombiniert werden, um die Leistung zu verbessern. Nicht im Zusammenhang mit der Unity-Spiel-Engine.
+   Ermöglicht einen Buildprozess, bei dem viele C++-Quelldateien vor der Kompilierung zu einer oder mehreren "Einheitsdateien" zusammengefasst werden, um die Buildleistung zu verbessern. In nichts mit der Unity-Spiel-Engine zu tun.
 
 - **Verwendung von MFC**
 
@@ -63,9 +63,9 @@ Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügba
 
    Legt die Verwendung der [/GL](gl-whole-program-optimization.md)-Compileroption und der [/LTCG](ltcg-link-time-code-generation.md)-Linkeroption fest. Dies ist standardmäßig für die Debugkonfiguration deaktiviert und für die Verkaufskonfiguration aktiviert.
 
-- **MSVC-Toolsetversion**
+- **MSVC Toolset-Version**
 
-   Gibt die Vollversion des MSVC-Toolsets an, das zum Erstellen des Projekts verwendet wird. Wenn Sie verschiedene Update-und Vorschau Versionen eines Toolsets installiert haben, können Sie angeben, welches hier verwendet werden soll.
+   Gibt die Vollversion des MSVC-Toolsets an, das zum Erstellen des Projekts verwendet wird. Wenn Sie verschiedene Update- und Vorschauversionen eines Toolsets installiert haben, können Sie hier angeben, welches Toolset hier verwendet werden soll.
 
 ## <a name="ccli-properties"></a>C++/CLI-Eigenschaften
 

@@ -13,16 +13,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::Invoke method
 - Microsoft::WRL::Details::InvokeHelper, constructor
 ms.assetid: 555ad2bc-4dd6-4e65-a2e2-1242c395f0e5
-ms.openlocfilehash: 3fcba210d4018d22487d234b437acfee3634cec6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9cb4e166628a6b5e7671494446d467e73c9f8cc3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386134"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371386"
 ---
 # <a name="invokehelper-structure"></a>InvokeHelper-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -104,43 +104,43 @@ struct InvokeHelper<TDelegateInterface, TCallback, 9> :
 ### <a name="parameters"></a>Parameter
 
 *TDelegateInterface*<br/>
-Der Typ des Delegaten-Schnittstelle.
+Der Delegatschnittstellentyp.
 
 *TCallback*<br/>
-Der Typ des Ereignishandlerfunktion.
+Der Typ der Ereignishandlerfunktion.
 
 *argCount*<br/>
-Die Anzahl von Argumenten in eine `InvokeHelper` Spezialisierung.
+Die Anzahl der `InvokeHelper` Argumente in einer Spezialisierung.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Stellt eine Implementierung der `Invoke()` -Methode basierend auf der angegebenen Nummer und Typ der Argumente.
+Stellt eine Implementierung `Invoke()` der Methode basierend auf der angegebenen Anzahl und dem angegebenen Argumenttyp bereit.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name     | Beschreibung
+Name     | BESCHREIBUNG
 -------- | -----------------------------------------------------------------------------
-`Traits` | Ein Synonym für die Klasse, die den Typ jedes Arguments der Ereignis-Handler definiert.
+`Traits` | Ein Synonym für die Klasse, die den Typ jedes Ereignishandlerarguments definiert.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                        | Beschreibung
+Name                                        | BESCHREIBUNG
 ------------------------------------------- | -------------------------------------------------------
-[InvokeHelper::InvokeHelper](#invokehelper) | Initialisiert eine neue Instanz der `InvokeHelper`-Klasse.
+[InvokeHelper::InvokeHelper](#invokehelper) | Initialisiert eine neue Instanz der Klasse `InvokeHelper`.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                            | Beschreibung
+Name                            | BESCHREIBUNG
 ------------------------------- | -----------------------------------------------------------------------------------
-[InvokeHelper::Invoke](#invoke) | Ruft den Ereignishandler, dessen Signatur mit die angegebene Anzahl von Argumenten enthält.
+[InvokeHelper::Invoke](#invoke) | Ruft den Ereignishandler auf, dessen Signatur die angegebene Anzahl von Argumenten enthält.
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-Name                                 | Beschreibung
+Name                                 | BESCHREIBUNG
 ------------------------------------ | ----------------------------------------------------------
-[InvokeHelper::callback_](#callback) | Stellt den Ereignishandler aufgerufen wird, wenn ein Ereignis auftritt.
+[InvokeHelper::callback_](#callback) | Stellt den Ereignishandler dar, der aufruft, wenn ein Ereignis auftritt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -148,27 +148,27 @@ Name                                 | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** event.h
+**Kopfzeile:** event.h
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="callback"></a>InvokeHelper::callback_
+## <a name="invokehelpercallback_"></a><a name="callback"></a>InvokeHelper::callback_
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 TCallback callback_;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Stellt den Ereignishandler aufgerufen wird, wenn ein Ereignis auftritt.
+Stellt den Ereignishandler dar, der aufruft, wenn ein Ereignis auftritt.
 
-Die `TCallback` Template-Parameter gibt den Typ des ereignishandlers.
+Der `TCallback` Vorlagenparameter gibt den Typ des Ereignishandlers an.
 
-## <a name="invoke"></a>InvokeHelper::Invoke
+## <a name="invokehelperinvoke"></a><a name="invoke"></a>InvokeHelper::Invoke
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 STDMETHOD(
@@ -206,7 +206,7 @@ STDMETHOD(
 ### <a name="parameters"></a>Parameter
 
 *arg1*<br/>
-Das Argument 1.
+Argument 1.
 
 *arg2*<br/>
 Argument 2.
@@ -215,34 +215,34 @@ Argument 2.
 Argument 3.
 
 *arg4*<br/>
-4-Argument.
+Argument 4.
 
 *arg5*<br/>
-5-Argument.
+Argument 5.
 
 *arg6*<br/>
-6-Argument.
+Argument 6.
 
 *arg7*<br/>
-7-Argument.
+Argument 7.
 
 *arg8*<br/>
-8-Argument.
+Argument 8.
 
 *arg9*<br/>
-9-Argument.
+Argument 9.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler beschreibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft den Ereignishandler, dessen Signatur mit die angegebene Anzahl von Argumenten enthält.
+Ruft den Ereignishandler auf, dessen Signatur die angegebene Anzahl von Argumenten enthält.
 
-## <a name="invokehelper"></a>InvokeHelper::InvokeHelper
+## <a name="invokehelperinvokehelper"></a><a name="invokehelper"></a>InvokeHelper::InvokeHelper
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 explicit InvokeHelper(
@@ -252,11 +252,11 @@ explicit InvokeHelper(
 
 ### <a name="parameters"></a>Parameter
 
-*callback*<br/>
+*Rückruf*<br/>
 Ein Ereignishandler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert eine neue Instanz der `InvokeHelper`-Klasse.
+Initialisiert eine neue Instanz der Klasse `InvokeHelper`.
 
-Die `TCallback` Template-Parameter gibt den Typ des ereignishandlers.
+Der `TCallback` Vorlagenparameter gibt den Typ des Ereignishandlers an.

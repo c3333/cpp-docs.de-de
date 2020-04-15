@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Microsoft::WRL::SimpleClassFactory class
 - Microsoft::WRL::SimpleClassFactory::CreateInstance method
 ms.assetid: 6edda1b2-4e44-4e14-9364-72f519249962
-ms.openlocfilehash: 9a4c169944d56b693efa681bf7089636477012ea
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 924b9d2c30f11e6f0444d9c647807f1c86dcc411
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403079"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373550"
 ---
 # <a name="simpleclassfactory-class"></a>SimpleClassFactory-Klasse
 
@@ -32,11 +32,11 @@ class SimpleClassFactory : public ClassFactory<>;
 *Basis*<br/>
 Eine Basisklasse.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Basisklasse muss einen Standardkonstruktor bereitstellen.
 
-Im folgenden Codebeispiel wird veranschaulicht, wie Sie mit `SimpleClassFactory` mit der [ActivatableClassWithFactoryEx](activatableclass-macros.md) Makro.
+Im folgenden Codebeispiel wird `SimpleClassFactory` veranschaulicht, wie Sie das [ActivatableClassWithFactoryEx-Makro](activatableclass-macros.md) verwenden.
 
 `ActivatableClassWithFactoryEx(MyClass, SimpleClassFactory, MyServerName);`
 
@@ -44,7 +44,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie mit `SimpleClassFactory`
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[SimpleClassFactory::CreateInstance-Methode](#createinstance)|Erstellt eine Instanz der angegebenen Schnittstelle.|
 
@@ -74,11 +74,11 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie mit `SimpleClassFactory`
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** module.h
+**Kopfzeile:** module.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="createinstance"></a>Simpleclassfactory:: CreateInstance-Methode
+## <a name="simpleclassfactorycreateinstance-method"></a><a name="createinstance"></a>SimpleClassFactory::CreateInstance-Methode
 
 Erstellt eine Instanz der angegebenen Schnittstelle.
 
@@ -93,20 +93,20 @@ STDMETHOD( CreateInstance )(
 #### <a name="parameters"></a>Parameter
 
 *pUnkOuter*<br/>
-Muss `nullptr`ist, andernfalls CLASS_E_NOAGGREGATION zurückgegeben wird.
+Muss `nullptr`sein ; Andernfalls wird der Rückgabewert CLASS_E_NOAGGREGATION.
 
-SimpleClassFactory unterstützt keine Aggregation. Wenn der Aggregation unterstützt wurden, und das zu erstellende Objekt war Teil einer Aggregatfunktion gehört, *pUnkOuter* wäre ein Zeiger auf das steuernde `IUnknown` Schnittstelle des Aggregats.
+SimpleClassFactory unterstützt keine Aggregation. Wenn die Aggregation unterstützt würde und das zu erstellende Objekt Teil eines Aggregats `IUnknown` wäre, wäre *pUnkOuter* ein Zeiger auf die steuernde Schnittstelle des Aggregats.
 
 *riid*<br/>
-Schnittstellen-ID des Objekts zu erstellen.
+Schnittstellen-ID des zu erstellenden Objekts.
 
 *ppvObject*<br/>
-Wenn dieser Vorgang abgeschlossen ist, Zeiger auf eine Instanz des Objekts gemäß der *Riid* Parameter.
+Wenn dieser Vorgang abgeschlossen ist, zeigen Sie auf eine Instanz des Objekts, die durch den *riid-Parameter* angegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn `__WRL_STRICT__` wird definiert, ein Assert-Fehler wird ausgegeben, wenn die Klassenvorlagenparameter angegebene Basisklasse abgeleitet ist nicht [RuntimeClass](runtimeclass-class.md), oder ist nicht konfiguriert, mit dem ClassicCom oder WinRtClassicComMix [ RuntimeClassType](runtimeclasstype-enumeration.md) Enumerationswert.
+Wenn `__WRL_STRICT__` definiert, wird ein Assert-Fehler angezeigt, wenn die im Klassenvorlagenparameter angegebene Basisklasse nicht von [RuntimeClass](runtimeclass-class.md)abgeleitet oder nicht mit dem Enumerationswert ClassicCom oder WinRtClassicComMix [RuntimeClassType](runtimeclasstype-enumeration.md) konfiguriert ist.

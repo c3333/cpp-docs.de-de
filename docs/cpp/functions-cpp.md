@@ -8,16 +8,16 @@ helpviewer_keywords:
 - default arguments
 - declarators, functions
 ms.assetid: 33ba01d5-75b5-48d2-8eab-5483ac7d2274
-ms.openlocfilehash: fbc8b108ea958f526156e7f81a75a2918a0a8903
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 1425ddebffc150158e88e44b1d2c22e3f85e5a31
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076161"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375737"
 ---
 # <a name="functions-c"></a>Funktionen (C++)
 
-Eine Funktion ist ein Codeblock, der einige Vorgänge ausführt. Eine Funktion kann optional Eingabeparameter definieren, die Aufrufern ermöglichen, Argumente in die Funktion weiterzugeben. Eine Funktion kann einen Wert optional als Ausgabe zurückgeben. Funktionen sind für das Kapseln allgemeiner Vorgänge in einem einzelnen wiederverwendbaren Block nützlich, und zwar ideal unter Verwendung eines Namens, der deutlich das beschreibt, was die Funktion vornimmt. Die folgende Funktion akzeptiert zwei ganze Zahlen von einem Aufrufer und gibt Ihre Summe zurück. *a* und *b* sind *Parameter* vom Typ **int**.
+Eine Funktion ist ein Codeblock, der einige Vorgänge ausführt. Eine Funktion kann optional Eingabeparameter definieren, die Aufrufern ermöglichen, Argumente in die Funktion weiterzugeben. Eine Funktion kann einen Wert optional als Ausgabe zurückgeben. Funktionen sind für das Kapseln allgemeiner Vorgänge in einem einzelnen wiederverwendbaren Block nützlich, und zwar ideal unter Verwendung eines Namens, der deutlich das beschreibt, was die Funktion vornimmt. Die folgende Funktion akzeptiert zwei ganze Zahlen von einem Aufrufer und gibt deren Summe zurück. *a* und *b* sind *Parameter* vom Typ **int**.
 
 ```cpp
 int sum(int a, int b)
@@ -26,7 +26,7 @@ int sum(int a, int b)
 }
 ```
 
-Die Funktion kann von einer beliebigen Anzahl von Stellen im Programm aufgerufen oder *aufgerufen*werden. Die an die Funktion übergebenen Werte sind die *Argumente*, deren Typen mit den Parametertypen in der Funktionsdefinition kompatibel sein müssen.
+Die Funktion kann von einer beliebigen Anzahl von Stellen im Programm aufgerufen oder *aufgerufen*werden. Die Werte, die an die Funktion übergeben werden, sind die *Argumente*, deren Typen mit den Parametertypen in der Funktionsdefinition kompatibel sein müssen.
 
 ```cpp
 int main()
@@ -39,19 +39,19 @@ int main()
 
 Es gibt keine praktische Begrenzung für die Funktionslänge, jedoch angemessene Entwurfsziele für Funktionen, die eine einzelne klar definierte Aufgabe ausführen. Komplexe Algorithmen sollten möglichst in leicht verständliche einfachere Funktionen aufgeschlüsselt werden.
 
-Im Klassenbereich definierte Funktionen werden als Memberfunktionen bezeichnet. In C++ kann eine Funktion im Gegensatz zu anderen Sprachen auch im Namespacebereich (einschließlich des impliziten globalen Namespace) definiert werden. Solche Funktionen werden als *Kostenlose Funktionen* oder als *nicht-Member-Funktionen*bezeichnet. Sie werden in der Standard Bibliothek ausführlich verwendet.
+Im Klassenbereich definierte Funktionen werden als Memberfunktionen bezeichnet. In C++ kann eine Funktion im Gegensatz zu anderen Sprachen auch im Namespacebereich (einschließlich des impliziten globalen Namespace) definiert werden. Solche Funktionen werden *als freie Funktionen* oder *Nicht-Member-Funktionen*bezeichnet; sie werden ausgiebig in der Standardbibliothek verwendet.
 
-Funktionen können *überladen*werden. Dies bedeutet, dass unterschiedliche Versionen einer Funktion denselben Namen haben können, wenn Sie sich durch die Anzahl und/oder den Typ formaler Parameter unterscheiden. Weitere Informationen finden Sie unter [Funktions Überladung](../cpp/function-overloading.md).
+Funktionen können *überladen*sein, was bedeutet, dass verschiedene Versionen einer Funktion denselben Namen haben können, wenn sie sich durch die Anzahl und/oder den Typ der formalen Parameter unterscheiden. Weitere Informationen finden Sie unter [Funktionsüberladung](../cpp/function-overloading.md).
 
 ## <a name="parts-of-a-function-declaration"></a>Bestandteile einer Funktionsdeklaration
 
-Eine minimale Funktions *Deklaration* besteht aus dem Rückgabetyp, dem Funktionsnamen und der Parameterliste (die leer sein kann) sowie optionalen Schlüsselwörtern, die dem Compiler zusätzliche Anweisungen bereitstellen. Das folgende Beispiel ist eine Funktionsdeklaration:
+Eine minimale *Funktionsdeklaration* besteht aus dem Rückgabetyp, dem Funktionsnamen und der Parameterliste (die leer sein kann) zusammen mit optionalen Schlüsselwörtern, die zusätzliche Anweisungen für den Compiler bereitstellen. Das folgende Beispiel ist eine Funktionsdeklaration:
 
 ```cpp
 int sum(int a, int b);
 ```
 
-Eine Funktionsdefinition besteht aus einer Deklaration und dem *Text*, der den gesamten Code zwischen den geschweiften Klammern umfasst:
+Eine Funktionsdefinition besteht aus einer Deklaration plus dem *Text*, der den gesamten Code zwischen den geschweiften Klammern ist:
 
 ```cpp
 int sum(int a, int b)
@@ -64,7 +64,7 @@ Eine Funktionsdeklaration, auf die ein Semikolon folgt, wird möglicherweise an 
 
 Die erforderlichen Bestandteile einer Funktionsdeklaration lauten:
 
-1. Der Rückgabetyp, der den Typ des Werts angibt, den die Funktion zurückgibt, oder **void** , wenn kein Wert zurückgegeben wird. In c++ 11 ist " **Auto** " ein gültiger Rückgabetyp, der den Compiler anweist, den Typ aus der Return-Anweisung abzuleiten. In C++14 ist „decltype(auto)“ ebenfalls zulässig. Weitere Informationen finden Sie unten unter „Typableitung in Rückgabetypen“.
+1. Der Rückgabetyp, der den Typ des von der Funktion zurückgegebenen Werts angibt, oder **void,** wenn kein Wert zurückgegeben wird. In C++11 ist **auto** ein gültiger Rückgabetyp, der den Compiler anweist, den Typ aus der rückgabeanweisung abzuleiten. In C++14 ist „decltype(auto)“ ebenfalls zulässig. Weitere Informationen finden Sie unten unter „Typableitung in Rückgabetypen“.
 
 1. Der Funktionsname, der mit einem Buchstaben oder Unterstrich beginnen muss, darf keine Leerzeichen enthalten. Im Allgemeinen weisen führende Unterstriche in Standardbibliothek-Funktionsnamen auf private Memberfunktionen oder Nicht-Memberfunktionen, die nicht für die Verwendung durch Ihren Code vorgesehen sind, hin.
 
@@ -83,7 +83,7 @@ Optionale Bestandteile einer Funktionsdeklaration sind:
     };
     ```
 
-1. Die Verknüpfungs Spezifikation **extern** oder **statisch**.
+1. Die Verknüpfungsspezifikation, **extern** oder **statisch.**
 
     ```cpp
     //Declare printf with C linkage.
@@ -91,9 +91,9 @@ Optionale Bestandteile einer Funktionsdeklaration sind:
 
     ```
 
-   Weitere Informationen finden Sie unter [Übersetzungseinheiten und Verknüpfungen](../cpp/program-and-linkage-cpp.md).
+   Weitere Informationen finden Sie unter [Übersetzungseinheiten und Verknüpfung](../cpp/program-and-linkage-cpp.md).
 
-1. **Inline**, das den Compiler anweist, jeden Aufrufe der Funktion durch den Funktionscode selbst zu ersetzen. Durch den Inlinevorgang kann die Leistung in Szenarien verbessert werden, in denen eine Funktion schnell ausgeführt und wiederholt in einem leistungskritischen Codeabschnitt aufgerufen wird.
+1. **inline**, in der der Compiler angewiesen wird, jeden Aufruf der Funktion durch den Funktionscode selbst zu ersetzen. Durch den Inlinevorgang kann die Leistung in Szenarien verbessert werden, in denen eine Funktion schnell ausgeführt und wiederholt in einem leistungskritischen Codeabschnitt aufgerufen wird.
 
     ```cpp
     inline double Account::GetBalance()
@@ -102,9 +102,9 @@ Optionale Bestandteile einer Funktionsdeklaration sind:
     }
     ```
 
-   Weitere Informationen finden Sie unter [Inline Funktionen](../cpp/inline-functions-cpp.md).
+   Weitere Informationen finden Sie unter [Inlinefunktionen](../cpp/inline-functions-cpp.md).
 
-1. Ein `noexcept` Ausdruck, der angibt, ob die Funktion eine Ausnahme auslösen kann. Im folgenden Beispiel löst die Funktion keine Ausnahme aus, wenn der `is_pod` Ausdrucks als **true**ausgewertet wird.
+1. Ein `noexcept` Ausdruck, der angibt, ob die Funktion eine Ausnahme auslösen kann. Im folgenden Beispiel löst die Funktion keine `is_pod` Ausnahme aus, wenn der Ausdruck als **true**ausgewertet wird.
 
     ```cpp
     #include <type_traits>
@@ -113,15 +113,15 @@ Optionale Bestandteile einer Funktionsdeklaration sind:
     T copy_object(T& obj) noexcept(std::is_pod<T>) {...}
     ```
 
-   Weitere Informationen finden Sie unter [noaußer](../cpp/noexcept-cpp.md).
+   Weitere Informationen finden Sie unter [noexcept](../cpp/noexcept-cpp.md).
 
-1. (Nur Element Funktionen) Die CV-Qualifizierer, die angeben, ob die Funktion **konstant** oder **flüchtig**ist.
+1. (Nur Mitgliedsfunktionen) Die cv-qualifizierer, die angeben, ob die Funktion **const** oder **volatile**ist.
 
-1. (Nur Element Funktionen) **Virtual**, `override`oder `final`. **Virtual** gibt an, dass eine Funktion in einer abgeleiteten Klasse überschrieben werden kann. `override` bedeutet, dass eine Funktion in einer abgeleiteten Klasse eine virtuelle Funktion überschreibt. `final` bedeutet, dass eine Funktion in keiner weiteren abgeleiteten Klasse überschrieben werden kann. Weitere Informationen finden Sie unter [virtuelle Funktionen](../cpp/virtual-functions.md).
+1. (Nur Mitgliedsfunktionen) **virtual** `override`, `final`oder . **virtual** gibt an, dass eine Funktion in einer abgeleiteten Klasse überschrieben werden kann. `override` bedeutet, dass eine Funktion in einer abgeleiteten Klasse eine virtuelle Funktion überschreibt. `final` bedeutet, dass eine Funktion in keiner weiteren abgeleiteten Klasse überschrieben werden kann. Weitere Informationen finden Sie unter [Virtuelle Funktionen](../cpp/virtual-functions.md).
 
-1. (nur Element Funktionen) die auf eine Element Funktion angewendete **statische** Funktion bedeutet, dass die Funktion keinen Objektinstanzen der Klasse zugeordnet ist.
+1. (nur Memberfunktionen) **statisch** angewendet auf eine Memberfunktion bedeutet, dass die Funktion keiner Objektinstanz der Klasse zugeordnet ist.
 
-1. (Nur nicht statische Member-Funktionen) Der Ref-Qualifizierer, der für den Compiler angibt, welche Überladung einer Funktion ausgewählt werden soll, wenn der implizite Objekt Parameter (\*this) ein rvalue-Verweis oder ein Lvalue-Verweis ist. Weitere Informationen finden Sie unter [Funktions Überladung](function-overloading.md#ref-qualifiers).
+1. (Nur nicht statische Memberfunktionen) Der ref-Qualifizierer, der dem Compiler angibt, welche Überladung\*einer Funktion zu wählen ist, wenn der implizite Objektparameter (dies) ein rvalue-Verweis im Vergleich zu einem lvalue-Verweis ist. Weitere Informationen finden Sie unter [Funktionsüberladung](function-overloading.md#ref-qualifiers).
 
 Die folgende Abbildung zeigt die Teile einer Funktionsdefinition. Der schattierte Bereich ist der Funktionsrumpf.
 
@@ -130,7 +130,7 @@ Teile einer Funktionsdefinition
 
 ## <a name="function-definitions"></a>Funktionsdefinitionen
 
-Eine *Funktionsdefinition* besteht aus der Deklaration und dem Funktions Rumpf, der in geschweiften Klammern eingeschlossen ist und Variablen Deklarationen, Anweisungen und Ausdrücke enthält. Das folgende Beispiel zeigt eine komplette Funktionsdefinition:
+Eine *Funktionsdefinition* besteht aus der Deklaration und dem Funktionstext, die in geschweifte Klammern eingeschlossen sind und Variablendeklarationen, Anweisungen und Ausdrücke enthalten. Das folgende Beispiel zeigt eine vollständige Funktionsdefinition:
 
 ```cpp
     int foo(int i, std::string s)
@@ -157,11 +157,11 @@ Im Textteil deklarierte Variablen werden als lokale Variablen bezeichnet. Sie ve
     }
 ```
 
-## <a name="const-and-constexpr-functions"></a>const-und constexpr-Funktionen
+## <a name="const-and-constexpr-functions"></a>const- und constexpr-Funktionen
 
-Sie können eine Member-Funktion als **Konstanten** deklarieren, um anzugeben, dass die Funktion die Werte von Datenmembern in der Klasse nicht ändern darf. Indem Sie eine Member-Funktion **als "** Konstante" deklarieren, unterstützen Sie den Compiler beim Erzwingen von " *Konstanten-Korrektheit*". Wenn jemand versehentlich versucht, das Objekt mithilfe einer Funktion zu ändern, die als " **Konstanten**" deklariert ist, wird ein Compilerfehler ausgelöst. Weitere Informationen finden Sie unter [konstant](const-cpp.md).
+Sie können eine Memberfunktion als **const** deklarieren, um anzugeben, dass die Funktion die Werte von Datenmembern in der Klasse nicht ändern darf. Indem Sie eine Memberfunktion als **const**deklarieren, helfen Sie dem Compiler, *const-correctness*zu erzwingen. Wenn jemand irrtümlicherweise versucht, das Objekt mithilfe einer funktion zu ändern, die als **const**deklariert wurde, wird ein Compilerfehler ausgelöst. Weitere Informationen finden Sie unter [const](const-cpp.md).
 
-Deklarieren Sie eine Funktion als `constexpr`, wenn der erstellte Wert möglicherweise zur Kompilierzeit bestimmt werden kann. Eine constexpr-Funktion wird in der Regel schneller ausgeführt als eine reguläre Funktion. Weitere Informationen finden Sie unter [constexpr](constexpr-cpp.md).
+Deklarieren `constexpr` Sie eine Funktion, wenn der erzeugte Wert möglicherweise zur Kompilierungszeit bestimmt werden kann. Eine constexpr-Funktion wird in der Regel schneller ausgeführt als eine reguläre Funktion. Weitere Informationen finden Sie unter [constexpr](constexpr-cpp.md).
 
 ## <a name="function-templates"></a>Funktionsvorlagen
 
@@ -178,31 +178,31 @@ auto a = Add2(3.13, 2.895); // a is a double
 auto b = Add2(string{ "Hello" }, string{ " World" }); // b is a std::string
 ```
 
-Weitere Informationen finden Sie unter [Funktions Vorlagen](../cpp/function-templates.md) .
+Weitere Informationen finden Sie unter [Funktionsvorlagen](../cpp/function-templates.md)
 
 ## <a name="function-parameters-and-arguments"></a>Funktionsparameter und Argumente
 
 Eine Funktion weist eine durch Kommas getrennte Liste von mindestens null Typen auf. Jede davon verfügt über einen Namen, unter dem es im Funktionsrumpf aufgerufen werden kann. Eine Funktionsvorlage kann den zusätzliche Typ- oder Wertparameter angeben. Der Aufrufer gibt Argumente weiter, bei denen es sich um konkrete Werte handelt, deren Typen mit der Parameterliste kompatibel sind.
 
-Argumente werden standardmäßig zur Funktion nach Wert weitergegeben. Die Funktion empfängt demnach eine Kopie des weiterzugebenden Objekts. Für große Objekte kann das Erstellen einer Kopie aufwändig und nicht immer erforderlich sein. Fügen Sie dem-Parameter einen Verweis Quantifizierer hinzu, um zu bewirken, dass Argumente als Verweis übergeben werden (genauer gesagt: Lvalue-Verweis):
+Argumente werden standardmäßig zur Funktion nach Wert weitergegeben. Die Funktion empfängt demnach eine Kopie des weiterzugebenden Objekts. Für große Objekte kann das Erstellen einer Kopie aufwändig und nicht immer erforderlich sein. Um zu bewirken, dass Argumente als Verweis übergeben werden (insbesondere lvalue-Referenz), fügen Sie dem Parameter einen Referenzquantifier hinzu:
 
 ```cpp
 void DoSomething(std::string& input){...}
 ```
 
-Wenn eine Funktion ein Argument ändert, das nach Verweis weitergegeben wird, ändert sie das ursprüngliche Objekt und nicht eine lokale Kopie. Um zu verhindern, dass eine Funktion ein solches Argument ändert, qualifizieren Sie den Parameter als Konstanten &:
+Wenn eine Funktion ein Argument ändert, das nach Verweis weitergegeben wird, ändert sie das ursprüngliche Objekt und nicht eine lokale Kopie. Um zu verhindern, dass eine Funktion ein solches Argument ändert, qualifizieren Sie den Parameter als const&:
 
 ```cpp
 void DoSomething(const std::string& input){...}
 ```
 
-**C++ 11:**  Um Argumente explizit zu verarbeiten, die von rvalue-reference oder lvalue-Reference übergeben werden, verwenden Sie ein doppeltes kaufmännisches und-Argument für den-Parameter, um einen universellen Verweis anzugeben:
+**C++ 11:**  Um Argumente explizit zu behandeln, die von rvalue-reference oder lvalue-reference übergeben werden, verwenden Sie ein Double-ampersand für den Parameter, um einen universellen Verweis anzugeben:
 
 ```cpp
 void DoSomething(const std::string&& input){...}
 ```
 
-Eine Funktion, die mit dem einzelnen Schlüsselwort **void** in der Parameter Deklarations Liste deklariert wird, hat keine Argumente, solange das Schlüsselwort **void** der erste und einzige Member der Argument Deklarations Liste ist. Argumente vom Typ " **void** " an anderer Stelle in der Liste führen zu Fehlern. Beispiel:
+Eine Funktion, die mit dem einzelnen Schlüsselwort **void** in der Parameterdeklarationsliste deklariert ist, benötigt keine Argumente, solange das Schlüsselwort **void** das erste und einzige Element der Argumentdeklarationsliste ist. Argumente des Typs **void** an anderer Stelle in der Liste führen zu Fehlern. Beispiel:
 
 ```cpp
 
@@ -210,7 +210,7 @@ Eine Funktion, die mit dem einzelnen Schlüsselwort **void** in der Parameter De
 long GetTickCount( void );
 ```
 
-Beachten Sie, dass es nicht zulässig ist, ein **void** -Argument anzugeben, außer wie hier beschrieben: Typen, die vom Typ " **void** " (z. b. Zeiger auf " **void** " und " **void**"-Arrays) abgeleitet sind, können an beliebiger Stelle in
+Beachten Sie, dass, obwohl es ungültig ist, ein **void-Argument** anzugeben, außer wie hier beschrieben, Typen, die vom Typ **void** abgeleitet sind (z. B. Zeiger auf **void** und Arrays von **void),** überall in der Argumentdeklarationsliste angezeigt werden können.
 
 ### <a name="default-arguments"></a>Standardargumente
 
@@ -239,11 +239,11 @@ Weitere Informationen finden Sie unter [Standardargumente](../cpp/default-argume
 
 ## <a name="function-return-types"></a>Funktionsrückgabetypen
 
-Eine Funktion kann keine andere Funktion oder ein integriertes Array zurückgeben. Sie kann jedoch Zeiger auf diese Typen oder einen *Lambda*-Wert zurückgeben, der ein Funktions Objekt erzeugt. Mit Ausnahme dieser Fälle gibt eine Funktion möglicherweise einen Wert eines beliebigen Typs zurück, der sich im Gültigkeitsbereich befindet, oder Sie gibt keinen Wert zurück. in diesem Fall ist der Rückgabetyp " **void**".
+Eine Funktion gibt möglicherweise keine andere Funktion oder ein integriertes Array zurück. Es kann jedoch Zeiger auf diese Typen oder einen *Lambda*zurückgeben, der ein Funktionsobjekt erzeugt. Mit Ausnahme dieser Fälle kann eine Funktion einen Wert eines beliebigen Typs zurückgeben, der sich im Gültigkeitsbereich befindet, oder sie gibt keinen Wert zurück, in diesem Fall ist der Rückgabetyp **void**.
 
 ### <a name="trailing-return-types"></a>Nachstehende Rückgabetypen
 
-Ein „gewöhnlicher“ Rückgabetyp befindet sich auf der linken Seite der Funktionssignatur. Ein nach stehender *Rückgabetyp* befindet sich auf der rechten Seite der Signatur, und dem->-Operator vorangestellt. Nachstehende Rückgabetypen sind insbesondere in Funktionsvorlagen nützlich, wenn der Typ des Rückgabewerts auf Vorlagenparametern beruht.
+Ein „gewöhnlicher“ Rückgabetyp befindet sich auf der linken Seite der Funktionssignatur. Ein *nachgestellter Rückgabetyp* befindet sich auf der rechten Seite der Signatur und wird durch den Operator -> vorangestellt. Nachstehende Rückgabetypen sind insbesondere in Funktionsvorlagen nützlich, wenn der Typ des Rückgabewerts auf Vorlagenparametern beruht.
 
 ```cpp
 template<typename Lhs, typename Rhs>
@@ -253,19 +253,19 @@ auto Add(const Lhs& lhs, const Rhs& rhs) -> decltype(lhs + rhs)
 }
 ```
 
-Wenn **Auto** in Verbindung mit einem nachfolgenden Rückgabetyp verwendet wird, dient es lediglich als Platzhalter für den Ausdruck, den der decltype-Ausdruck erzeugt. er führt nicht selbst eine Typableitung durch.
+Wenn **auto** in Verbindung mit einem nachgestellten Rückgabetyp verwendet wird, dient es nur als Platzhalter für das, was der decltype-Ausdruck erzeugt, und führt selbst keinen Typabzug durch.
 
 ## <a name="function-local-variables"></a>Lokale Funktionsvariablen
 
-Eine Variable, die innerhalb eines Funktions Texts deklariert wird, wird als *lokale Variable* oder einfach als *lokale*Variable bezeichnet. Nicht statische lokale Variablen sind nur innerhalb des Funktionsrumpfs sichtbar, wenn sie auf dem Stapel deklariert werden, wenn den Bereich verlässt, wenn die Funktion vorhanden ist. Wenn Sie eine lokale Variable erstellen und Sie als Wert zurückgeben, kann der Compiler normalerweise die *benannte Rückgabewert Optimierung* ausführen, um unnötige Kopiervorgänge zu vermeiden. Wenn Sie eine lokale Variable nach Verweis zurückgeben, stellt eine Compiler eine Warnung aus, da jeder Versuch durch den Aufrufer, diesen Verweis zu verwenden, erst nach der Zerstörung der lokalen Variablen auftritt.
+Eine Variable, die innerhalb eines Funktionstexts deklariert wird, wird als *lokale Variable* oder einfach als *lokale*. Nicht statische lokale Variablen sind nur innerhalb des Funktionsrumpfs sichtbar, wenn sie auf dem Stapel deklariert werden, wenn den Bereich verlässt, wenn die Funktion vorhanden ist. Wenn Sie eine lokale Variable erstellen und nach Wert zurückgeben, kann der Compiler in der Regel die *benannte Rückgabewertoptimierung* durchführen, um unnötige Kopiervorgänge zu vermeiden. Wenn Sie eine lokale Variable nach Verweis zurückgeben, stellt eine Compiler eine Warnung aus, da jeder Versuch durch den Aufrufer, diesen Verweis zu verwenden, erst nach der Zerstörung der lokalen Variablen auftritt.
 
 In C++ kann eine lokale Variable als statisch deklariert werden. Die Variable ist nur innerhalb des Funktionsrumpfs sichtbar. Es ist jedoch eine einzelne Kopie der Variable für alle Instanzen der Funktion vorhanden. Lokale statische Objekte werden während der Beendigung zerstört, die von `atexit` angegeben wird. Wenn kein statisches Objekt erstellt wurde, da die Ablaufsteuerung des Programms seine Deklaration umgangen ist, wird nicht versucht, das Objekt zu zerstören.
 
-##  <a name="type-deduction-in-return-types-c14"></a><a name="type_deduction"></a>Typableitung in Rückgabe Typen (c++ 14)
+## <a name="type-deduction-in-return-types-c14"></a><a name="type_deduction"></a>Typabzug in Reklamattypen (C++14)
 
-In c++ 14 können Sie " **Auto** " verwenden, um den Compiler anzuweisen, den Rückgabetyp aus dem Funktions Rumpf abzuleiten, ohne einen nachfolgenden Rückgabetyp bereitstellen zu müssen. Beachten Sie, dass **Auto** immer zu einem Rückgabewert herleitet. Verwenden Sie `auto&&` um den Compiler anzuweisen, einen Verweis abzuleiten.
+In C++14 können Sie **den** Compiler automatisch anweisen, den Rückgabetyp aus dem Funktionstext abzuleiten, ohne einen nachfolgenden Rückgabetyp angeben zu müssen. Beachten Sie, dass **auto** immer zu einem Return-by-Wert ableitet. Verwenden Sie `auto&&` um den Compiler anzuweisen, einen Verweis abzuleiten.
 
-In diesem Beispiel wird **Auto** als nicht konstanten Wert Kopie der Summe von LHS und RHS abgeleitet.
+In diesem Beispiel wird **auto** als Nicht-const-Wertkopie der Summe von lhs und rhs abgeleitet.
 
 ```cpp
 template<typename Lhs, typename Rhs>
@@ -275,9 +275,9 @@ auto Add2(const Lhs& lhs, const Rhs& rhs)
 }
 ```
 
-Beachten Sie, dass **Auto** die Konstante des Typs, den er herleitet, nicht beibehält. Für Weiterleitungs Funktionen, deren Rückgabewert die Konstante oder die Verweis Funktion ihrer Argumente beibehalten muss, können Sie das " **decltype (Auto)** "-Schlüsselwort verwenden, das die Deklarations Regeln für den **decltype** -Typ verwendet und alle Typinformationen beibehält. **decltype (Auto)** kann als normaler Rückgabewert auf der linken Seite oder als nachfolgende Rückgabewert verwendet werden.
+Beachten Sie, dass **auto** die Konsistenz des typs, den es ableitet, nicht beibehält. Für Weiterleitungsfunktionen, deren Rückgabewert die Konsistenz oder Ref-ness seiner Argumente beibehalten muss, können Sie das Schlüsselwort **decltype(auto)** verwenden, das die **Decltype-Typ-Inferenzregeln** verwendet und alle Typinformationen beibehält. **decltype(auto)** kann als normaler Rückgabewert auf der linken Seite oder als nachgestellter Rückgabewert verwendet werden.
 
-Im folgenden Beispiel (basierend auf Code aus [N3493](https://wg21.link/n3493)) wird **decltype (Auto)** zum Aktivieren der perfekten Weiterleitung von Funktions Argumenten in einem Rückgabetyp verwendet, der erst bekannt ist, wenn die Vorlage instanziiert wird.
+Das folgende Beispiel (basierend auf Code aus [N3493](https://wg21.link/n3493)) zeigt, dass **decltype(auto)** verwendet wird, um die perfekte Weiterleitung von Funktionsargumenten in einem Rückgabetyp zu ermöglichen, der erst bekannt ist, wenn die Vorlage instanziiert wurde.
 
 ```cpp
 template<typename F, typename Tuple = tuple<T...>, int... I>
@@ -295,11 +295,11 @@ template<typename F, typename Tuple = tuple<T...>,
 }
 ```
 
-## <a name="returning-multiple-values-from-a-function"></a><a name="multi_val"></a>Zurückgeben von mehreren Werten aus einer Funktion
+## <a name="returning-multiple-values-from-a-function"></a><a name="multi_val"></a>Zurückgeben mehrerer Werte aus einer Funktion
 
-Es gibt verschiedene Möglichkeiten, mehr als einen Wert aus einer Funktion zurückzugeben:
+Es gibt verschiedene Möglichkeiten, mehr als einen Wert von einer Funktion zurückzugeben:
 
-1. Kapseln Sie die Werte in einer benannten Klasse oder einem Struktur Objekt. Erfordert, dass die Klassen-oder Struktur Definition für den Aufrufer sichtbar ist:
+1. Kapseln Sie die Werte in einer benannten Klasse oder einem Strukturobjekt. Erfordert, dass die Klassen- oder Strukturdefinition für den Aufrufer sichtbar ist:
 
     ```cpp
     #include <string>
@@ -328,7 +328,7 @@ Es gibt verschiedene Möglichkeiten, mehr als einen Wert aus einer Funktion zur�
     }
     ```
 
-1. Gibt ein Std:: Tuple-oder Std::p Air-Objekt zurück:
+1. Geben Sie ein std::tupel- oder std::pair-Objekt zurück:
 
     ```cpp
     #include <tuple>
@@ -362,7 +362,7 @@ Es gibt verschiedene Möglichkeiten, mehr als einen Wert aus einer Funktion zur�
     }
     ```
 
-1. **Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): strukturierte Bindungen verwenden. Der Vorteil von strukturierten Bindungen besteht darin, dass die Variablen, die die Rückgabewerte speichern, zur gleichen Zeit initialisiert werden, in der Sie deklariert werden. Dies kann in manchen Fällen wesentlich effizienter sein. In dieser Anweisung--`auto[x, y, z] = f();`--die Klammern stellen die Namen ein und initialisieren Sie, die sich im Gültigkeitsbereich für den gesamten Funktionsblock befinden.
+1. **Visual Studio 2017 Version 15.3 und höher** (verfügbar mit [/std:c++17](../build/reference/std-specify-language-standard-version.md)): Verwenden Sie strukturierte Bindungen. Der Vorteil strukturierter Bindungen besteht darin, dass die Variablen, die die Rückgabewerte speichern, gleichzeitig initialisiert werden, wenn sie deklariert werden, was in einigen Fällen wesentlich effizienter sein kann. In dieser Anweisung`auto[x, y, z] = f();`-- -- führen die Klammern Namen ein und initialisieren sie, die für den gesamten Funktionsbaustein im Gültigkeitsbereich stehen.
 
     ```cpp
     #include <tuple>
@@ -402,13 +402,13 @@ Es gibt verschiedene Möglichkeiten, mehr als einen Wert aus einer Funktion zur�
     }
     ```
 
-1. Zusätzlich zur Verwendung des Rückgabewerts können Sie Werte zurückgeben, indem Sie eine beliebige Anzahl von Parametern für die Verwendung von "Pass-by-Reference" definieren, damit die Funktion die Werte der vom Aufrufer bereitgestellten Objekte ändern oder initialisieren kann. Weitere Informationen finden Sie unter [Verweistyp-Funktionsargumente](reference-type-function-arguments.md).
+1. Zusätzlich zur Verwendung des Rückgabewerts selbst können Sie Werte "zurückgeben", indem Sie eine beliebige Anzahl von Parametern definieren, um Pass-by-Verweis zu verwenden, damit die Funktion die Werte von Objekten ändern oder initialisieren kann, die der Aufrufer bereitstellt. Weitere Informationen finden Sie unter [Referenztypfunktionsargumente](reference-type-function-arguments.md).
 
 ## <a name="function-pointers"></a>Funktionszeiger
 
 C++ unterstützt Funktionszeiger auf die gleiche Weise wie die C-Sprache. Eine typsichere Alternative besteht jedoch darin, ein Funktionsobjekt zu verwenden.
 
-Es wird empfohlen, **typedef** zu deklarieren, um einen Alias für den Funktions Zeigertyp zu deklarieren, wenn eine Funktion deklariert wird, die einen Funktions Zeigertyp zurückgibt.  Beispiel:
+Es wird empfohlen, **typedef** zum Deklarieren eines Alias für den Funktionszeigertyp zu verwenden, wenn eine Funktion deklariert wird, die einen Funktionszeigertyp zurückgibt.  Beispiel:
 
 ```cpp
 typedef int (*fp)(int);
@@ -423,7 +423,7 @@ int (*myFunction(char* s))(int);
 
 Die vorhergehende Deklaration gleicht der Deklaration oben, die "typedef" verwendet.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionsüberladung](../cpp/function-overloading.md)<br/>
 [Funktionen mit Variablenargumentlisten](../cpp/functions-with-variable-argument-lists-cpp.md)<br/>

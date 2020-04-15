@@ -8,65 +8,65 @@ helpviewer_keywords:
 - compiling programs [C++]
 - C program compiling [C++]
 ms.assetid: 7e74cc2d-54b1-49de-b7ad-d3ae6b39ab8d
-ms.openlocfilehash: 1b4e7f0f188ce7b3003f12cb7acafaf15a03d86a
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: d807fa75b32b515c2222fec9ea9d070266303e33
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80078255"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81335259"
 ---
 # <a name="walkthrough-compile-a-c-program-on-the-command-line"></a>Exemplarische Vorgehensweise: Kompilieren eines C-Programms in der Befehlszeile
 
-Visual C++ bietet einen C-Compiler, mit dem Sie alles von einfachen Konsolenprogrammen bis hin zu vollständigen Windows-Desktop Anwendungen, mobilen apps und mehr erstellen können.
+Visual C++ enthält einen C-Compiler, mit dem Sie alles erstellen können, von einfachen Konsolenprogrammen bis hin zu vollständigen Windows-Desktopanwendungen, mobilen Apps und mehr.
 
-In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit einem Text-Editor ein einfaches "Hello, World"-C-Programm erstellen und dann in der Befehlszeile kompilieren. Wenn Sie lieber in C++ der Befehlszeile arbeiten, finden Sie weitere Informationen unter Exemplarische Vorgehensweise [: Kompilieren eines nativen C++ Programms in der Befehlszeile](walkthrough-compiling-a-native-cpp-program-on-the-command-line.md). Wenn Sie die Visual Studio-IDE testen möchten, anstatt die Befehlszeile zu verwenden, finden Sie weitere Informationen unter Exemplarische Vorgehensweise [:C++arbeiten mit Projekten und Projektmappen ()](../ide/walkthrough-working-with-projects-and-solutions-cpp.md) oder [Verwenden der Visual Studio-IDE für C++ die Desktop Entwicklung](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md).
+In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie mithilfe eines Texteditors ein einfaches C-Programm im "Hello, World"-Stil erstellen und es dann in der Befehlszeile kompilieren. Wenn Sie lieber in C++ in der Befehlszeile arbeiten möchten, finden Sie weitere Informationen unter [Walkthrough: Kompilieren eines nativen C++-Programms in der Befehlszeile](walkthrough-compiling-a-native-cpp-program-on-the-command-line.md). Wenn Sie die Visual Studio-IDE anstelle der Befehlszeile ausprobieren möchten, finden Sie weitere Informationen unter [Exemplarische Vorgehensweise: Arbeiten mit Projekten und Lösungen (C++)](../ide/walkthrough-working-with-projects-and-solutions-cpp.md) oder [Verwenden der Visual Studio-IDE für C++ Desktop development](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Um diese exemplarische Vorgehensweise durchführen zu können, müssen Sie entweder Visual Studio und C++ die optionalen visuellen Komponenten oder die Buildtools für Visual Studio installiert haben.
+Um diese exemplarische Vorgehensweise abzuschließen, müssen Sie entweder Visual Studio und die optionalen Visual C++-Komponenten oder die Buildtools für Visual Studio installiert haben.
 
-Visual Studio ist eine leistungsstarke integrierte Entwicklungsumgebung, die einen voll funktionsfähigen Editor, Ressourcen-Manager, Debugger und Compiler für viele Sprachen und Plattformen unterstützt. Weitere Informationen zu diesen Features und zum herunterladen und Installieren von Visual Studio, einschließlich der kostenlosen Visual Studio Community Edition, finden Sie unter [Installieren von Visual Studio](/visualstudio/install/install-visual-studio).
+Visual Studio ist eine leistungsstarke integrierte Entwicklungsumgebung, die einen voll funktionsfähigen Editor, Ressourcen-Manager, Debugger und Compiler für viele Sprachen und Plattformen unterstützt. Informationen zu diesen Features und zum Herunterladen und Installieren von Visual Studio, einschließlich der kostenlosen Visual Studio Community-Edition, finden Sie unter Installieren von [Visual Studio](/visualstudio/install/install-visual-studio).
 
-Die Buildtools für Visual Studio-Version von Visual Studio installieren nur das Befehlszeilen-Toolset, die Compiler, Tools und Bibliotheken, die Sie benötigen, um C++ C und Programme zu erstellen. Es eignet sich ideal für buildlabs oder Schulungs Übungen und die Installation relativ schnell. Um nur das Befehlszeilen-Toolset zu installieren, laden Sie Build Tools für Visual Studio von der [Visual Studio-Download](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) Seite herunter, und führen Sie das Installationsprogramm aus. Wählen Sie im Visual Studio-Installer die  **C++ Arbeitsauslastung Build Tools** aus, und wählen Sie dann **Installieren**aus.
+Die Buildtools für Visual Studio-Versionen von Visual Studio installiert nur das Befehlszeilentoolset, die Compiler, Tools und Bibliotheken, die Sie zum Erstellen von C- und C++-Programmen benötigen. Es ist perfekt für den Aufbau von Labors oder Klassenzimmerübungen und wird relativ schnell installiert. Um nur das Befehlszeilentoolset zu installieren, laden Sie Build Tools for Visual Studio von der [Visual Studio-Downloadseite herunter,](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) und führen Sie das Installationsprogramm aus. Wählen Sie im Visual Studio-Installationsprogramm die **C++-Buildtools-Workload** aus, und wählen Sie **Installieren**aus.
 
-Bevor Sie ein C-oder C++ -Programm in der Befehlszeile erstellen können, müssen Sie sicherstellen, dass die Tools installiert sind und dass Sie über die Befehlszeile darauf zugreifen können. Visual C++ hat komplexe Anforderungen an die Befehlszeilen Umgebung, um die verwendeten Tools, Header und Bibliotheken zu finden. Das **visuelle C++ Element kann nicht in einem einfachen Eingabe** Aufforderungs Fenster ohne Vorbereitung verwendet werden. Sie benötigen ein *Eingabe* Aufforderungs Fenster für Entwickler, bei dem es sich um ein reguläres Eingabe Aufforderungs Fenster handelt, das alle erforderlichen Umgebungsvariablen enthält. Glücklicherweise installiert Visual C++ die Tastenkombinationen, mit denen Sie Entwickler Eingabe Aufforderungen starten können, bei denen die Umgebung für Befehlszeilenbuilds eingerichtet ist. Leider unterscheiden sich die Namen der Verknüpfungen für Entwickler-Eingabe Aufforderungen und deren Position in nahezu jeder Version von C++ Visual und unterschiedlichen Versionen von Windows. Die erste Exemplarische Vorgehensweise ist die Suche nach der richtigen Verknüpfung, die verwendet werden soll.
+Bevor Sie ein C- oder C++-Programm in der Befehlszeile erstellen können, müssen Sie überprüfen, ob die Tools installiert sind und über die Befehlszeile darauf zugreifen können. Visual C++ hat komplexe Anforderungen an die Befehlszeilenumgebung, um die verwendeten Tools, Header und Bibliotheken zu finden. **Sie können Visual C++ nicht ohne Vorbereitung in einem einfachen Eingabeaufforderungsfenster verwenden.** Sie benötigen ein *Eingabeaufforderungsfenster für Entwickler,* bei dem es sich um ein reguläres Eingabeaufforderungsfenster handelt, in dem alle erforderlichen Umgebungsvariablen festgelegt sind. Glücklicherweise installiert Visual C++ Verknüpfungen, damit Sie Entwicklerbefehlsanweisungen starten können, auf denen die Umgebung für Befehlszeilenbuilds eingerichtet ist. Leider unterscheiden sich die Namen der Eingabeaufforderungsverknüpfungen für Entwickler und deren Standort in fast jeder Version von Visual C++ und in verschiedenen Windows-Versionen. Ihre erste exemplarische Aufgabe besteht darin, die richtige Verknüpfung zu finden.
 
 > [!NOTE]
-> Eine Eingabe Aufforderungs Verknüpfung für Entwickler legt automatisch die richtigen Pfade für den Compiler und die Tools sowie für alle erforderlichen Header und Bibliotheken fest. Einige dieser Werte unterscheiden sich für jede Buildkonfiguration. Sie müssen diese Umgebungs Werte selbst festlegen, wenn Sie keine der Tastenkombinationen verwenden. Weitere Informationen finden Sie unter [Festlegen der Pfad- und Umgebungsvariablen für Befehlszeilenbuilds](setting-the-path-and-environment-variables-for-command-line-builds.md). Da die Buildumgebung Komplex ist, empfehlen wir dringend, dass Sie eine Eingabeaufforderung für Entwickler verwenden, anstatt ihre eigenen zu erstellen.
+> Eine Eingabeaufforderungsverknüpfung für Entwickler legt automatisch die richtigen Pfade für den Compiler und die Tools sowie für alle erforderlichen Header und Bibliotheken fest. Einige dieser Werte unterscheiden sich für jede Buildkonfiguration. Sie müssen diese Umgebungswerte selbst festlegen, wenn Sie keine der Verknüpfungen verwenden. Weitere Informationen finden Sie unter [Festlegen der Pfad- und Umgebungsvariablen für Befehlszeilenbuilds](setting-the-path-and-environment-variables-for-command-line-builds.md). Da die Buildumgebung komplex ist, wird dringend empfohlen, eine Eingabeaufforderungsverknüpfung für Entwickler zu verwenden, anstatt eine eigene zu erstellen.
 
-Diese Anweisungen sind abhängig von der verwendeten Version von Visual Studio. Bevor Sie fortfahren, stellen Sie sicher, dass die Versions Auswahl in der linken oberen Ecke dieser Seite ordnungsgemäß festgelegt ist.
+Diese Anweisungen hängen davon ab, welche Version von Visual Studio Sie verwenden. Verwenden Sie das Versionsauswahlsteuerelement, um die **Version** Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker range="vs-2019"
 
-## <a name="open-a-developer-command-prompt-in-visual-studio-2019"></a>Öffnen Sie eine Developer-Eingabeaufforderung in Visual Studio 2019
+## <a name="open-a-developer-command-prompt-in-visual-studio-2019"></a>Öffnen einer Entwicklereingabeaufforderung in Visual Studio 2019
 
-Wenn Sie Visual Studio 2019 unter Windows 10 installiert haben, öffnen Sie das Startmenü, Scrollen Sie nach unten, und öffnen Sie den Ordner **Visual Studio 2019** (nicht die Visual Studio 2019-APP). Wählen Sie **Developer-Eingabeaufforderung für vs 2019 aus** , um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie Visual Studio 2019 unter Windows 10 installiert haben, öffnen Sie das Startmenü, und scrollen Sie dann nach unten, und öffnen Sie den Ordner **Visual Studio 2019** (nicht die Visual Studio 2019-App). Wählen Sie **Developer Command Prompt für VS 2019** aus, um das Eingabeaufforderungsfenster zu öffnen.
 
-Wenn Sie eine andere Version von Windows verwenden, suchen Sie im Startmenü oder auf der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabe Aufforderungs Verknüpfung für Entwickler enthält. Sie können auch die Windows Search-Funktion verwenden, um nach "Developer Command Prompt" zu suchen und eine solche auszuwählen, die mit der installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie eine andere Windows-Version verwenden, suchen Sie im Startmenü oder in der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabeaufforderungsverknüpfung für Entwickler enthält. Sie können auch die Windows-Suchfunktion verwenden, um nach "Developer-Eingabeaufforderung" zu suchen und eine auszuwählen, die mit ihrer installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabeaufforderungsfenster zu öffnen.
 
 ::: moniker-end
 
 ::: moniker range="vs-2017"
 
-## <a name="open-a-developer-command-prompt-in-visual-studio-2017"></a>Öffnen Sie eine Developer-Eingabeaufforderung in Visual Studio 2017
+## <a name="open-a-developer-command-prompt-in-visual-studio-2017"></a>Öffnen einer Entwicklereingabeaufforderung in Visual Studio 2017
 
-Wenn Sie Visual Studio 2017 unter Windows 10 installiert haben, öffnen Sie das Startmenü, Scrollen Sie nach unten, und öffnen Sie den Ordner **Visual Studio 2017** (nicht die Visual Studio 2017-APP). Wählen Sie **Developer-Eingabeaufforderung für vs 2017 aus** , um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie Visual Studio 2017 unter Windows 10 installiert haben, öffnen Sie das Startmenü, und scrollen Sie dann nach unten, und öffnen Sie den Ordner **Visual Studio 2017** (nicht die Visual Studio 2017-App). Wählen Sie **Developer Command Prompt für VS 2017** aus, um das Eingabeaufforderungsfenster zu öffnen.
 
-Wenn Sie eine andere Version von Windows ausführen, suchen Sie im Startmenü oder auf der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabe Aufforderungs Verknüpfung für Entwickler enthält. Sie können auch die Windows Search-Funktion verwenden, um nach "Developer Command Prompt" zu suchen und eine solche auszuwählen, die mit der installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie eine andere Windows-Version ausführen, suchen Sie im Startmenü oder auf der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabeaufforderungsverknüpfung für Entwickler enthält. Sie können auch die Windows-Suchfunktion verwenden, um nach "Developer-Eingabeaufforderung" zu suchen und eine auszuwählen, die mit ihrer installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabeaufforderungsfenster zu öffnen.
 
 ::: moniker-end
 
 ::: moniker range="vs-2015"
 
-## <a name="open-a-developer-command-prompt-in-visual-studio-2015"></a>Öffnen Sie eine Developer-Eingabeaufforderung in Visual Studio 2015
+## <a name="open-a-developer-command-prompt-in-visual-studio-2015"></a>Öffnen einer Entwicklereingabeaufforderung in Visual Studio 2015
 
-Wenn Sie Microsoft Visual C++ Build Tools 2015 unter Windows 10 installiert haben, öffnen Sie das Startmenü, Scrollen Sie nach unten, und öffnen Sie den Ordner **Visual C++ Build Tools** . **Start** Wählen **Sie C++ Visual 2015 x86 Native Tools-Eingabeaufforderung** aus, um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie Microsoft Visual C++ Build Tools 2015 unter Windows 10 installiert haben, öffnen Sie das **Startmenü,** und scrollen Sie dann nach unten, und öffnen Sie den Ordner **Visual C++ Build Tools.** Wählen Sie **Visual C++ 2015 x86 Native Tools Command Prompt,** um das Eingabeaufforderungsfenster zu öffnen.
 
-Wenn Sie eine andere Version von Windows ausführen, suchen Sie im Startmenü oder auf der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabe Aufforderungs Verknüpfung für Entwickler enthält. Sie können auch die Windows Search-Funktion verwenden, um nach "Developer Command Prompt" zu suchen und eine solche auszuwählen, die mit der installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie eine andere Windows-Version ausführen, suchen Sie im Startmenü oder auf der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabeaufforderungsverknüpfung für Entwickler enthält. Sie können auch die Windows-Suchfunktion verwenden, um nach "Developer-Eingabeaufforderung" zu suchen und eine auszuwählen, die mit ihrer installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabeaufforderungsfenster zu öffnen.
 
 ::: moniker-end
 
-Überprüfen Sie als nächstes, C++ ob die Visual Developer-Eingabeaufforderung ordnungsgemäß eingerichtet ist. Geben Sie im Eingabe Aufforderungs Fenster `cl` ein, und überprüfen Sie, ob die Ausgabe in etwa wie folgt aussieht:
+Überprüfen Sie als Nächstes, ob die Befehlsaufforderung für die Visual C++-Entwicklereingabe ordnungsgemäß eingerichtet ist. Geben Sie im Eingabeaufforderungsfenster ein, `cl` und überprüfen Sie, ob die Ausgabe etwa wie folgt aussieht:
 
 ```Output
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise>cl
@@ -76,23 +76,23 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 usage: cl [ option... ] filename... [ /link linkoption... ]
 ```
 
-Abhängig von der Version von Visual C++ und allen installierten Updates gibt es möglicherweise Unterschiede in den aktuellen Verzeichnis-oder Versionsnummern. Wenn die oben genannte Ausgabe ähnlich aussieht wie Sie sehen, können Sie C-oder C++ -Programme in der Befehlszeile erstellen.
+Je nach Version von Visual C++ und installierten Updates kann es Unterschiede in den aktuellen Verzeichnis- oder Versionsnummern geben. Wenn die obige Ausgabe dem angezeigt wird, können Sie C- oder C++-Programme in der Befehlszeile erstellen.
 
 > [!NOTE]
-> Wenn Sie eine Fehlermeldung wie z. b. "CL" wird nicht als interner oder externer Befehl, ausführbares Programm oder eine Batchdatei (Fehler C1034 oder Fehler LNK1104) erkennen, wenn Sie den **cl** -Befehl ausführen, verwenden Sie entweder keine Entwickler-Eingabeaufforderung, oder es ist ein Fehler bei der Installation C++der Visualisierung aufgetreten. Sie müssen dieses Problem beheben, bevor Sie fortfahren können.
+> Wenn beim Ausführen des **Befehls "cl'** nicht als interner oder externer Befehl, bedienbares Programm oder Batchdatei, Fehler C1034 oder Fehler LNK1104 beim Ausführen des Befehls cl erkannt wird, verwenden Sie entweder keine Entwicklereingabeaufforderung, oder es stimmt etwas mit der Installation von Visual C++ nicht. Sie müssen dieses Problem beheben, bevor Sie fortfahren können.
 
-Wenn Sie die Verknüpfung für Entwickler-Eingabe Aufforderungen nicht finden oder wenn Sie eine Fehlermeldung erhalten, wenn Sie `cl`eingeben, C++ kann bei der visuellen Installation ein Problem auftreten. Wenn Sie Visual Studio 2017 oder höher verwenden, versuchen Sie, die **Desktop Entwicklung mit der C++**  Arbeitsauslastung im Visual Studio-Installer erneut zu installieren. Weitere Informationen finden Sie [unter C++ Installieren der Unterstützung in Visual Studio](vscpp-step-0-installation.md). Oder installieren Sie die Buildtools über die [Visual Studio-Download](https://visualstudio.microsoft.com/downloads/) Seite neu. Fahren Sie nicht mit dem nächsten Abschnitt fort, bis dies funktioniert. Weitere Informationen zur Installation und Problembehandlung von Visual Studio finden Sie unter [Installieren von Visual Studio](/visualstudio/install/install-visual-studio).
+Wenn Sie die Eingabeaufforderungsverknüpfung für entwickler nicht finden können oder `cl`wenn beim Eingeben eine Fehlermeldung angezeigt wird, liegt möglicherweise bei der Visual C++-Installation ein Problem vor. Wenn Sie Visual Studio 2017 oder höher verwenden, installieren Sie die **Desktopentwicklung mit C++-Workload** im Visual Studio-Installationsprogramm neu. Weitere Informationen finden Sie unter Installieren der [C++-Unterstützung in Visual Studio](vscpp-step-0-installation.md). Oder installieren Sie die Buildtools auf der [Visual Studio-Downloadseite](https://visualstudio.microsoft.com/downloads/) neu. Fahren Sie nicht mit dem nächsten Abschnitt fort, bis dies funktioniert. Weitere Informationen zum Installieren und Beheben von Visual Studio finden Sie unter Installieren von [Visual Studio](/visualstudio/install/install-visual-studio).
 
 > [!NOTE]
-> Abhängig von der Windows-Version auf dem Computer und der System Sicherheitskonfiguration müssen Sie möglicherweise mit der rechten Maustaste klicken, um das Kontextmenü für die Eingabeaufforderung für Entwickler-Eingabeaufforderung zu öffnen. Wählen Sie dann **als Administrator ausführen** aus, um das in dieser exemplarischen Vorgehensweise erstellte Programm erfolgreich zu erstellen und auszuführen.
+> Abhängig von der Version von Windows auf dem Computer und der Systemsicherheitskonfiguration müssen Sie möglicherweise mit der rechten Maustaste klicken, um das Kontextmenü für die Eingabeaufforderungsverknüpfung für Entwickler zu öffnen, und dann ausführen **als Administrator** auswählen, um das Programm, das Sie erstellen, erfolgreich zu erstellen und auszuführen, indem Sie diese exemplarische Vorgehensweise befolgen.
 
-## <a name="create-a-c-source-file-and-compile-it-on-the-command-line"></a>Erstellen Sie eine C-Quelldatei, und kompilieren Sie Sie in der Befehlszeile.
+## <a name="create-a-c-source-file-and-compile-it-on-the-command-line"></a>Erstellen einer C-Quelldatei und Kompilieren in der Befehlszeile
 
-1. Geben Sie im Eingabe Aufforderungs Fenster des Entwicklers `cd c:\` ein, um das aktuelle Arbeitsverzeichnis in das Stammverzeichnis des Laufwerks C: zu ändern. Geben Sie als nächstes `md c:\simple` ein, um ein Verzeichnis zu erstellen, und geben Sie dann `cd c:\simple` ein, um zu diesem Verzeichnis zu wechseln. Dieses Verzeichnis enthält die Quelldatei und das kompilierte Programm.
+1. Geben Sie `cd c:\` im Eingabeaufforderungsfenster des Entwicklerbefehls ein, um das aktuelle Arbeitsverzeichnis in den Stamm Ihres Laufwerks C: zu ändern. Geben Sie `md c:\simple` als Nächstes ein, `cd c:\simple` um ein Verzeichnis zu erstellen, und geben Sie dann ein, um in dieses Verzeichnis zu wechseln. Dieses Verzeichnis enthält Ihre Quelldatei und das kompilierte Programm.
 
-1. Geben Sie `notepad simple.c` an der Developer-Eingabeaufforderung ein. Wählen Sie im angezeigten Dialogfeld Notepad-Warnung die Option **Ja** aus, um eine neue einfache c-Datei in Ihrem Arbeitsverzeichnis zu erstellen.
+1. Geben `notepad simple.c` Sie die Eingabeaufforderung für den Entwickler ein. Wählen Sie im Benachrichtigungsdialogfeld "Notepad"- Und -Warnung die Option **Ja** aus, um eine neue simple.c-Datei in Ihrem Arbeitsverzeichnis zu erstellen.
 
-1. Geben Sie im Editor die folgenden Codezeilen ein:
+1. Geben Sie in Notepad die folgenden Codezeilen ein:
 
     ```C
     #include <stdio.h>
@@ -104,9 +104,9 @@ Wenn Sie die Verknüpfung für Entwickler-Eingabe Aufforderungen nicht finden od
     }
     ```
 
-1. Wählen Sie in der Editor-Menüleiste **Datei** > **Speichern** aus, um Simple. c in Ihrem Arbeitsverzeichnis zu speichern.
+1. Wählen Sie in der Notizblock-Menüleiste > **Dateispeichern** aus, um simple.c in Ihrem Arbeitsverzeichnis zu speichern. **File**
 
-1. Wechseln Sie zurück zum Entwickler-Eingabe Aufforderungs Fenster. Geben Sie `dir` an der Eingabeaufforderung ein, um den Inhalt des Verzeichnisses "c:\simple ein" aufzulisten. Die Quelldatei "Simple. c" sollte in der Verzeichnis Auflistung angezeigt werden, was etwa wie folgt aussieht:
+1. Wechseln Sie zurück zum Eingabeaufforderungsfenster für Entwickler. Geben `dir` Sie an der Eingabeaufforderung ein, um den Inhalt des Verzeichnisses c:-simple aufzulisten. Sie sollten die Quelldatei simple.c in der Verzeichnisliste sehen, die etwa wie folgt aussieht:
 
     ```Output
     C:\simple>dir
@@ -123,11 +123,11 @@ Wenn Sie die Verknüpfung für Entwickler-Eingabe Aufforderungen nicht finden od
 
     ```
 
-   Die Datumsangaben und andere Details unterscheiden sich auf Ihrem Computer. Wenn die Quell Code Datei "Simple. c" nicht angezeigt wird, stellen Sie sicher, dass Sie das Verzeichnis "c:\simple ein" geändert haben, das Sie erstellt haben, und stellen Sie sicher, dass Sie die Quelldatei in diesem Verzeichnis gespeichert haben. Stellen Sie außerdem sicher, dass Sie den Quellcode mit der Dateinamenerweiterung ". c" und nicht mit der Erweiterung ". txt" gespeichert haben.
+   Die Daten und andere Details unterscheiden sich auf Ihrem Computer. Wenn Die Quellcodedatei simple.c nicht angezeigt wird, stellen Sie sicher, dass Sie in das von Ihnen erstellte Verzeichnis c:-simple geändert haben, und stellen Sie in Notepad sicher, dass Sie die Quelldatei in diesem Verzeichnis gespeichert haben. Stellen Sie außerdem sicher, dass Sie den Quellcode mit einer .c Dateinamenerweiterung und nicht mit einer .txt-Erweiterung gespeichert haben.
 
-1. Geben Sie `cl simple.c` an der Developer-Eingabeaufforderung ein, um das Programm zu kompilieren.
+1. Um Ihr Programm `cl simple.c` zu kompilieren, geben Sie die Eingabeaufforderung für den Entwickler ein.
 
-   Der ausführbare Programmname "Simple. exe" wird in den Ausgabeinformationen angezeigt, die der Compiler anzeigt:
+   Sie können den ausführbaren Programmnamen simple.exe in den Zeilen der Ausgabeinformationen sehen, die der Compiler anzeigt:
 
     ```Output
     c:\simple>cl simple.c
@@ -143,12 +143,12 @@ Wenn Sie die Verknüpfung für Entwickler-Eingabe Aufforderungen nicht finden od
     ```
 
    > [!NOTE]
-   > Wenn Sie einen Fehler wie "CL" erhalten, der nicht als interner oder externer Befehl, ausführbares Programm oder eine Batchdatei (Fehler C1034 oder Fehler LNK1104) erkannt wird, ist die Entwickler-Eingabeaufforderung nicht ordnungsgemäß eingerichtet. Weitere Informationen zum Beheben dieses Problems finden Sie im Abschnitt **Öffnen einer Developer-Eingabeaufforderung** .
+   > Wenn sie eine Fehlermeldung wie "'cl' wird nicht als interner oder externer Befehl, bedienbares Programm oder Batchdatei erkannt", Fehler C1034, oder Fehler LNK1104, wird die Entwicklereingabeaufforderung nicht ordnungsgemäß eingerichtet. Informationen zum Beheben dieses Problems finden Sie im Abschnitt **"Öffnen eines Entwicklerbefehls".**
 
    > [!NOTE]
-   > Wenn Sie einen anderen Compiler oder Linker-Fehler oder eine andere Warnung erhalten, überprüfen Sie den Quellcode, um alle Fehler zu beheben, speichern Sie ihn, und führen Sie den Compiler erneut aus. Um Informationen zu bestimmten Fehlern zu erhalten, verwenden Sie das Suchfeld am oberen Rand dieser Seite, um nach der Fehlernummer zu suchen.
+   > Wenn Sie einen anderen Compiler- oder Linkerfehler oder eine andere Warnung erhalten, überprüfen Sie den Quellcode, um Fehler zu korrigieren, speichern Sie ihn, und führen Sie den Compiler erneut aus. Informationen zu bestimmten Fehlern finden Sie im Suchfeld oben auf dieser Seite, um nach der Fehlernummer zu suchen.
 
-1. Geben Sie `simple` an der Eingabeaufforderung ein, um das Programm auszuführen.
+1. Um Ihr Programm `simple` auszuführen, geben Sie die Eingabeaufforderung ein.
 
    Das Programm zeigt folgenden Text an und wird anschließend beendet:
 
@@ -156,33 +156,33 @@ Wenn Sie die Verknüpfung für Entwickler-Eingabe Aufforderungen nicht finden od
     Hello, World! This is a native C program compiled on the command line.
     ```
 
-   Herzlichen Glückwunsch, Sie haben ein C-Programm mit der Befehlszeile kompiliert und ausgeführt.
+   Herzlichen Glückwunsch, Sie haben ein C-Programm über die Befehlszeile kompiliert und ausgeführt.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Dieses "Hello, World"-Beispiel ist so einfach wie ein C-Programm. In realen Programmen sind Header Dateien und weitere Quelldateien vorhanden, die in Bibliotheken verknüpft sind und nützliche Arbeiten bewirken.
+Dieses "Hello, World"-Beispiel ist ungefähr so einfach, wie ein C-Programm bekommen kann. Reale Programme haben Header-Dateien und mehr Quelldateien, Verknüpfen in Bibliotheken, und tun nützliche Arbeit.
 
-Sie können die Schritte in dieser exemplarischen Vorgehensweise verwenden, um Ihren eigenen C-Code zu erstellen, anstatt den gezeigten Beispielcode einzugeben. Sie können auch viele C-Codebeispiel Programme erstellen, die Sie an anderer Stelle finden. Wenn Sie ein Programm mit zusätzlichen Quell Code Dateien kompilieren möchten, geben Sie alle in der Befehlszeile ein, z. b.:
+Sie können die Schritte in dieser exemplarischen Vorgehensweise verwenden, um Ihren eigenen C-Code zu erstellen, anstatt den angezeigten Beispielcode einzugeben. Sie können auch viele C-Code-Beispielprogramme erstellen, die Sie an anderer Stelle finden. Um ein Programm mit zusätzlichen Quellcodedateien zu kompilieren, geben Sie sie alle in der Befehlszeile ein, z. B.:
 
 `cl file1.c file2.c file3.c`
 
-Der Compiler gibt ein Programm mit dem Namen file1. exe aus. Um den Namen in Program1. exe zu ändern, fügen Sie eine [/out](reference/out-output-file-name.md) Linker-Option hinzu:
+Der Compiler gibt ein Programm namens file1.exe aus. Um den Namen in program1.exe [/out](reference/out-output-file-name.md) zu ändern, fügen Sie eine /out-Linker-Option hinzu:
 
 `cl file1.c file2.c file3.c /link /out:program1.exe`
 
-Um automatisch mehr Programmierfehler zu erfassen, empfiehlt es sich, die Kompilierung entweder mithilfe der [/w3](reference/compiler-option-warning-level.md) -Option oder der [/W4](reference/compiler-option-warning-level.md) -Warnstufe zu kompilieren:
+Und um weitere Programmierfehler automatisch zu erfassen, empfehlen wir Ihnen, entweder die Warnungsstufe [/W3](reference/compiler-option-warning-level.md) oder [/W4](reference/compiler-option-warning-level.md) zu verwenden:
 
 `cl /W4 file1.c file2.c file3.c /link /out:program1.exe`
 
-Der Compiler "CL. exe" verfügt über viele weitere Optionen, die Sie zum Erstellen, optimieren, Debuggen und analysieren Ihres Codes anwenden können. Geben Sie `cl /?` an der Developer-Eingabeaufforderung ein, um eine kurze Liste zu erhalten. Sie können auch separat kompilieren und verknüpfen und Linkeroptionen in komplexeren Buildszenarien anwenden. Weitere Informationen zu den Optionen und der Verwendung von Compileroptionen und Linkeroptionen finden Sie unter [C/C++ Building Reference](reference/c-cpp-building-reference.md).
+Der Compiler, cl.exe, verfügt über viele weitere Optionen, die Sie zum Erstellen, Optimieren, Debuggen und Analysieren des Codes anwenden können. Geben Sie eine `cl /?` Schnellliste an der Eingabeaufforderung für den Entwickler ein. Sie können auch separat kompilieren und verknüpfen und Linkeroptionen in komplexeren Buildszenarien anwenden. Weitere Informationen zu Compiler- und Linkeroptionen und -verwendung finden Sie unter [C/C++-Baureferenz](reference/c-cpp-building-reference.md).
 
-Sie können NMAKE-und Makefiles-oder MSBuild-und Projektdateien verwenden, um komplexere Projekte in der Befehlszeile zu konfigurieren und zu erstellen. Weitere Informationen zur Verwendung dieser Tools finden Sie unter [NMAKE Reference](reference/nmake-reference.md) und [MSBuild](msbuild-visual-cpp.md).
+Sie können NMAKE- und makefiles- oder MSBuild- und Projektdateien verwenden, um komplexere Projekte in der Befehlszeile zu konfigurieren und zu erstellen. Weitere Informationen zur Verwendung dieser Tools finden Sie unter [NMAKE Reference](reference/nmake-reference.md) und [MSBuild](msbuild-visual-cpp.md).
 
-Die C- C++ und-Sprachen sind ähnlich, aber nicht identisch. Der Microsoft C/C++ Compiler (MSVC) verwendet eine einfache Regel, um zu bestimmen, welche Sprache verwendet werden soll, wenn der Code kompiliert wird. Standardmäßig behandelt der MSVC-Compiler alle Dateien, die mit. c enden, als c-Quellcode und alle Dateien, die auf. cpp C++ enden, als Quellcode. Verwenden Sie die [/TC](reference/tc-tp-tc-tp-specify-source-file-type.md) -Compileroption, um zu erzwingen, dass der Compiler alle Dateien als nicht von der Dateinamenerweiterung abhängige C behandelt.
+Die C- und C++-Sprachen sind ähnlich, aber nicht identisch. Der Microsoft C/C++-Compiler (MSVC) verwendet eine einfache Regel, um zu bestimmen, welche Sprache beim Kompilieren des Codes verwendet werden soll. Standardmäßig behandelt der MSVC-Compiler alle Dateien, die in .c enden, als C-Quellcode und alle Dateien, die in .cpp enden, als C++-Quellcode. Um den Compiler zu zwingen, alle Dateien als C nicht abhängig von der Dateinamenerweiterung zu behandeln, verwenden Sie die Compileroption [/Tc.](reference/tc-tp-tc-tp-specify-source-file-type.md)
 
-MSVC ist mit dem ISO C99-Standard kompatibel, jedoch nicht streng kompatibel. In den meisten Fällen wird der Portable C-Code wie erwartet kompiliert und ausgeführt. Visual C++ unterstützt den größten Teil der Änderungen in ISO C11 nicht. Bestimmte Bibliotheksfunktionen und POSIX-Funktionsnamen werden von MSVC als veraltet markiert. Die Funktionen werden unterstützt, aber die bevorzugten Namen wurden geändert. Weitere Informationen finden Sie unter [Sicherheitsfunktionen in der CRT](../c-runtime-library/security-features-in-the-crt.md) und [Compilerwarnung (Stufe 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md).
+MSVC ist mit dem ISO C99-Standard kompatibel, aber nicht streng konform. In den meisten Fällen wird portabler C-Code wie erwartet kompiliert und ausgeführt. Visual C++ unterstützt die meisten Änderungen in ISO C11 nicht. Bestimmte Bibliotheksfunktionen und POSIX-Funktionsnamen sind von MSVC veraltet. Die Funktionen werden unterstützt, aber die bevorzugten Namen haben sich geändert. Weitere Informationen finden Sie [unter Sicherheitsfeatures in der CRT-](../c-runtime-library/security-features-in-the-crt.md) und [Compilerwarnung (Stufe 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Exemplarische Vorgehensweise: Erstellen eines Standard C++-Konsolenprogramms (C++)](../windows/walkthrough-creating-a-standard-cpp-program-cpp.md)<br/>
 [C-Sprachreferenz](../c-language/c-language-reference.md)<br/>

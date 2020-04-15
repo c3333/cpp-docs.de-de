@@ -2,59 +2,59 @@
 title: Häufig auftretende ARM-Migrationsprobleme bei Visual C++
 ms.date: 05/06/2019
 ms.assetid: 0f4c434e-0679-4331-ba0a-cc15dd435a46
-ms.openlocfilehash: 518b8872b301a8fcfc0f154cb3d5d0299efb0975
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.openlocfilehash: 2c29b4ffa5344b309622314970ce52c47a0ebd05
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303224"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328796"
 ---
 # <a name="common-visual-c-arm-migration-issues"></a>Häufig auftretende ARM-Migrationsprobleme bei Visual C++
 
-Wenn Sie den Microsoft C++ -Compiler (MSVC) verwenden, C++ kann der gleiche Quellcode in der ARM-Architektur andere Ergebnisse als bei x86-oder x64-Architekturen liefern.
+Wenn Sie den Microsoft C++-Compiler (MSVC) verwenden, kann derselbe C++-Quellcode in der ARM-Architektur andere Ergebnisse liefern als bei x86- oder x64-Architekturen.
 
-## <a name="sources-of-migration-issues"></a>Quellen für Migrationsprobleme
+## <a name="sources-of-migration-issues"></a>Quellen von Migrationsproblemen
 
-Viele Probleme, die auftreten können, wenn Sie Code von der x86-oder x64-Architektur zur ARM-Architektur migrieren, beziehen sich auf quellcodekonstrukte, die möglicherweise nicht definiertes, Implementierungs definiertes oder nicht bestimmtes Verhalten aufrufen.
+Viele Probleme, die beim Migrieren von Code aus der x86- oder x64-Architektur in die ARM-Architektur auftreten können, beziehen sich auf Quellcodekonstrukte, die möglicherweise nicht definiertes, implementierungsdefiniertes oder nicht angegebenes Verhalten aufrufen.
 
-Nicht *definiertes Verhalten* ist das C++ Verhalten, das der Standard nicht definiert, und das durch einen Vorgang verursacht wird, der kein vernünftiges Ergebnis hat: z. b. das umrechnen eines Gleit Komma Werts in eine Ganzzahl ohne Vorzeichen oder das Verschieben eines Werts durch eine Anzahl von Punkten, die negativ oder größer als die Anzahl der Bits im höher gestuften Typ ist.
+*Undefiniertes Verhalten* ist ein Verhalten, das der C++-Standard nicht definiert, und das wird durch einen Vorgang verursacht, der kein vernünftiges Ergebnis hat: z. B. das Konvertieren eines Gleitkommawerts in eine nicht signierte ganzzahlige Datei oder das Verschieben eines Werts um eine Anzahl von Positionen, die negativ ist oder die Anzahl der Bits in ihrem heraufgestuften Typ überschreitet.
 
-Durch die C++ *Implementierung definiertes Verhalten* ist das Verhalten, das der Compiler vom Compiler zum Definieren und dokumentieren benötigt. Ein Programm kann sich sicher auf Implementierungs definiertes Verhalten verlassen, obwohl dies möglicherweise nicht portabel ist. Beispiele für Implementierungs definiertes Verhalten sind u. a. die Größe der integrierten Datentypen und ihre Ausrichtungs Anforderungen. Ein Beispiel für einen Vorgang, der von Implementierungs definiertem Verhalten beeinflusst werden kann, ist der Zugriff auf die Liste der Variablen Argumente.
+*Das von der Implementierung definierte Verhalten* ist ein Verhalten, das der C++-Standard vom Compileranbieter definieren und dokumentieren muss. Ein Programm kann sich sicher auf das von der Implementierung definierte Verhalten verlassen, auch wenn dies möglicherweise nicht portierbar ist. Beispiele für ein implementierungsdefiniertes Verhalten sind die Größe integrierter Datentypen und deren Ausrichtungsanforderungen. Ein Beispiel für einen Vorgang, der möglicherweise durch das durch die Implementierung definierte Verhalten beeinflusst wird, ist der Zugriff auf die Liste der Variablenargumente.
 
-*Nicht spezifiziertes Verhalten* ist das Verhalten C++ , dass der Standard absichtlich nicht deterministisch bleibt. Obwohl das Verhalten als nicht deterministisch angesehen wird, werden bestimmte Aufrufe von nicht spezifiziertem Verhalten von der compilerimplementierung bestimmt. Es ist jedoch nicht erforderlich, dass ein Compilerhersteller das Ergebnis vorbestimmt oder ein konsistentes Verhalten zwischen vergleichbaren aufrufen gewährleistet, und es ist keine Dokumentation erforderlich. Ein Beispiel für ein nicht angegebenes Verhalten ist die Reihenfolge, in der unter Ausdrücke ausgewertet werden, die Argumente für einen Funktions aufrufenthalten.
+*Nicht angegebenes Verhalten* ist ein Verhalten, das der C++-Standard absichtlich nicht deterministisch hinterlässt. Obwohl das Verhalten als nicht deterministisch betrachtet wird, werden bestimmte Aufrufe nicht angegebenen Verhaltens von der Compilerimplementierung bestimmt. Es ist jedoch nicht erforderlich, dass ein Compileranbieter das Ergebnis vorab bestimmt oder ein konsistentes Verhalten zwischen vergleichbaren Aufrufen garantiert, und es besteht keine Dokumentation. Ein Beispiel für nicht angegebenes Verhalten ist die Reihenfolge, in der Unterausdrücke, die Argumente für einen Funktionsaufruf enthalten, ausgewertet werden.
 
-Andere Migrationsprobleme können auf Hardware Unterschiede zwischen Arm-und x86-oder x64-Architekturen zurückzuführen sein C++ , die auf unterschiedliche Weise mit dem Standard interagieren. Beispielsweise bietet das starke Speichermodell der x86-und x64-Architektur `volatile`qualifizierten Variablen einige zusätzliche Eigenschaften, die verwendet wurden, um bestimmte Arten der Kommunikation zwischen Threads in der Vergangenheit zu vereinfachen. Das schwache Speichermodell der ARM-Architektur unterstützt diese Verwendung nicht, auch wenn C++ der Standard dies nicht erfordert.
+Andere Migrationsprobleme können auf Hardwareunterschiede zwischen ARM- und x86- oder x64-Architekturen zurückgeführt werden, die unterschiedlich mit dem C++-Standard interagieren. Das starke Speichermodell der x86- und x64-Architektur gibt `volatile`beispielsweise -qualifizierten Variablen einige zusätzliche Eigenschaften, die in der Vergangenheit verwendet wurden, um bestimmte Arten der Interthreadkommunikation zu erleichtern. Das schwache Speichermodell der ARM-Architektur unterstützt diese Verwendung jedoch nicht, und der C++-Standard erfordert dies nicht.
 
 > [!IMPORTANT]
->  Obwohl `volatile` einige Eigenschaften erhalten, die verwendet werden können, um eingeschränkte Formen der Thread übergreifenden Kommunikation auf x86 und x64 zu implementieren, reichen diese zusätzlichen Eigenschaften nicht aus, um die Kommunikation zwischen Threads im Allgemeinen zu implementieren. Der C++ Standard empfiehlt, dass eine solche Kommunikation implementiert wird, indem stattdessen die entsprechenden Synchronisierungs primitiven verwendet werden.
+> Obwohl `volatile` einige Eigenschaften erhalten werden, die zum Implementieren begrenzter Formen der Interthreadkommunikation auf x86 und x64 verwendet werden können, reichen diese zusätzlichen Eigenschaften nicht aus, um die Interthreadkommunikation im Allgemeinen zu implementieren. Der C++-Standard empfiehlt, eine solche Kommunikation mithilfe geeigneter Synchronisierungsprimitiven zu implementieren.
 
-Da verschiedene Plattformen diese Verhaltensweisen anders ausdrücken könnten, kann das Portieren von Software zwischen Plattformen schwierig und fehleranfällig sein, wenn Sie vom Verhalten einer bestimmten Plattform abhängig ist. Obwohl viele dieser Arten von Verhalten beobachtet werden können und möglicherweise stabil erscheinen, ist die Verwendung von mindestens nicht portabel, und in Fällen von undefiniertem oder nicht spezifiziertem Verhalten ist auch ein Fehler. Auch das in diesem Dokument erwähnte Verhalten sollte sich nicht darauf verlassen und sich in zukünftigen Compilern oder CPU-Implementierungen ändern.
+Da verschiedene Plattformen diese Art von Verhalten unterschiedlich ausdrücken können, kann die Portierung von Software zwischen Plattformen schwierig und fehleranfällig sein, wenn sie vom Verhalten einer bestimmten Plattform abhängt. Obwohl viele dieser Verhaltensweisen beobachtet werden können und stabil erscheinen können, ist es zumindest nicht portierbar, sich darauf zu verlassen, und im Falle von nicht definiertem oder nicht spezifiziertem Verhalten ist es auch ein Fehler. Selbst das in diesem Dokument zitierte Verhalten sollte nicht berücksichtigt werden und könnte sich in zukünftigen Compilern oder CPU-Implementierungen ändern.
 
 ## <a name="example-migration-issues"></a>Beispiel für Migrationsprobleme
 
-Im weiteren Verlauf dieses Dokuments wird beschrieben, wie das unterschiedliche C++ Verhalten dieser Sprachelemente auf verschiedenen Plattformen zu unterschiedlichen Ergebnissen führen kann.
+Der Rest dieses Dokuments beschreibt, wie das unterschiedliche Verhalten dieser C++-Sprachelemente auf verschiedenen Plattformen zu unterschiedlichen Ergebnissen führen kann.
 
-### <a name="conversion-of-floating-point-to-unsigned-integer"></a>Konvertierung einer Gleit Komma Zahl in eine ganze Zahl ohne Vorzeichen
+### <a name="conversion-of-floating-point-to-unsigned-integer"></a>Konvertierung des Gleitkommas in nicht signierte Ganzzahl
 
-Bei der ARM-Architektur wird die Konvertierung eines Gleit Komma Werts in eine 32-Bit-Ganzzahl in den nächstgelegenen Wert durchlaufen, den die ganze Zahl darstellen kann, wenn der Gleit Komma Wert außerhalb des Bereichs liegt, der von der Ganzzahl dargestellt werden kann. In den x86-und x64-Architekturen wird die Konvertierung umschlossen, wenn die Ganzzahl nicht signiert ist, oder auf-2147483648 festgelegt, wenn die Ganzzahl signiert ist. Keine dieser Architekturen unterstützt die Konvertierung von Gleit Komma Werten direkt in kleinere ganzzahlige Typen. Stattdessen werden die Konvertierungen in 32 Bits durchgeführt, und die Ergebnisse werden auf eine geringere Größe gekürzt.
+In der ARM-Architektur wird die Konvertierung eines Gleitkommawerts in eine 32-Bit-Ganzzahl in den nächsten Wert gesättigt, den die ganze Zahl darstellen kann, wenn der Gleitkommawert außerhalb des Bereichs liegt, den die ganze Zahl darstellen kann. Bei den x86- und x64-Architekturen wird die Konvertierung umbrochen, wenn die ganze Zahl nicht signiert ist oder auf -2147483648 festgelegt ist, wenn die ganze Zahl signiert ist. Keine dieser Architekturen unterstützt direkt die Konvertierung von Gleitkommawerten in kleinere Ganzzahltypen. Stattdessen werden die Konvertierungen in 32 Bit durchgeführt, und die Ergebnisse werden auf eine kleinere Größe abgeschnitten.
 
-Bei der ARM-Architektur bedeutet die Kombination aus Sättigung und Abschneiden, dass bei der Konvertierung in nicht signierte Typen kleinere nicht signierte Typen ordnungsgemäß gefüllt werden, wenn eine 32-Bit-Ganzzahl gefüllt wird, aber ein abgeschnittenes Ergebnis für Werte erzeugt wird, die größer sind als die ein kleinerer Typ kann, aber zu klein darstellen, um die vollständige ganzzahlige 32-Bit-Ganzzahl zu Die Konvertierung ist auch korrekt für 32-Bit-Ganzzahlen mit Vorzeichen, aber das Abschneiden von gesättigten Ganzzahlen mit Vorzeichen ergibt in-1 für positiv satte Werte und 0 für negative Werte. Die Konvertierung in eine kleinere Ganzzahl mit Vorzeichen erzeugt ein nicht vorhersagbares Ergebnis.
+Für die ARM-Architektur bedeutet die Kombination aus Sättigung und Abschneide, dass die Konvertierung in nicht signierte Typen kleinere nicht signierte Typen korrekt sättigt, wenn sie eine 32-Bit-Ganzzahl sättigen, aber ein abgeschnittenes Ergebnis für Werte erzeugt, die größer als der kleinere Typ darstellen können, aber zu klein sind, um die vollständige 32-Bit-Ganzzahl zu sättigen. Die Konvertierung sättigt auch korrekt für 32-Bit-ganzer Code, aber das Abschneiden von gesättigten, signierten Ganzzahlen ergibt -1 für positiv gesättigte Werte und 0 für negativ gesättigte Werte. Die Konvertierung in eine kleinere signierte Ganzzahl führt zu einem abgeschnittenen Ergebnis, das unvorhersehbar ist.
 
-Bei den x86-und x64-Architekturen ist die Kombination aus Umschließungs Verhalten bei ganzzahligen Konvertierungen ohne Vorzeichen und der expliziten Bewertung für ganzzahlige Konvertierungen mit Vorzeichen bei Überlauf und beim Abschneiden die Ergebnisse für die meisten Verschiebungen unvorhersagbar, wenn Sie zu groß.
+Für die x86- und x64-Architekturen macht die Kombination aus Umbruchverhalten für ganzzahlige Konvertierungen und expliziter Bewertung für signierte Ganzzahlkonvertierungen beim Überlauf zusammen mit dem Abschneiden die Ergebnisse für die meisten Verschiebungen unvorhersehbar, wenn sie zu groß sind.
 
-Diese Plattformen unterscheiden sich auch darin, wie Sie die Konvertierung von Nan (not-a-Number) in ganzzahlige Typen verarbeiten. Auf Arm wird NaN in 0x00000000; konvertiert. auf x86 und x64 wird in 0x80000000 konvertiert.
+Diese Plattformen unterscheiden sich auch in der Art und Weise, wie sie die Konvertierung von NaN (Not-a-Number) in ganzzahlige Typen handhaben. Bei ARM konvertiert NaN in 0x0000000; auf x86 und x64 wird in 0x8000000konvertiert.
 
-Die Gleit Komma Konvertierung ist nur möglich, wenn Sie wissen, dass sich der Wert innerhalb des Bereichs des ganzzahligen Typs befindet, in den er konvertiert wird.
+Die Gleitkommakonvertierung kann nur verwendet werden, wenn Sie wissen, dass sich der Wert innerhalb des Bereichs des Ganzzahltyps befindet, in den er konvertiert wird.
 
-### <a name="shift-operator---behavior"></a>Verhalten des Verschiebungs Operators (\<\< > >)
+### <a name="shift-operator---behavior"></a>Shift-Operator-Verhalten ( >>)\< \<
 
-In der ARM-Architektur kann ein Wert nach links oder nach rechts bis zu 255 Bits verschoben werden, bevor das Muster wiederholt wird. In x86-und x64-Architekturen wird das Muster bei jedem Vielfachen von 32 wiederholt, es sei denn, die Quelle des Musters ist eine 64-Bit-Variable. in diesem Fall wiederholt sich das Muster bei jedem Vielfachen von 64 in x64 und jedes Vielfache von 256 auf x86, bei dem eine Software Implementierung verwendet wird. Wenn beispielsweise eine 32-Bit-Variable, die den Wert 1 hat, von 32 Positionen nach links verschoben wird, auf Arm ist das Ergebnis 0, auf x86 ist das Ergebnis 1, und auf x64 ist das Ergebnis ebenfalls 1. Wenn es sich bei der Quelle des Werts jedoch um eine 64-Bit-Variable handelt, ist das Ergebnis auf allen drei Plattformen 4294967296, und der Wert wird nicht "umbrochen", bis er 64 Positionen an x64 oder 256 Positionen auf Arm und x86 verschiebt.
+In der ARM-Architektur kann ein Wert nach links oder rechts bis zu 255 Bit verschoben werden, bevor sich das Muster zu wiederholen beginnt. Bei x86- und x64-Architekturen wird das Muster bei jedem Vielfachen von 32 wiederholt, es sei denn, die Quelle des Musters ist eine 64-Bit-Variable. in diesem Fall wiederholt sich das Muster bei jedem Vielfachen von 64 auf x64 und jedes Vielfache von 256 auf x86, bei dem eine Softwareimplementierung verwendet wird. Zum Beispiel für eine 32-Bit-Variable, die einen Wert von 1 links verschoben durch 32 Positionen hat, auf ARM ist das Ergebnis 0, auf x86 ist das Ergebnis 1, und auf x64 ist das Ergebnis auch 1. Wenn die Quelle des Werts jedoch eine 64-Bit-Variable ist, dann ist das Ergebnis auf allen drei Plattformen 4294967296, und der Wert "umwickelt" erst, wenn er 64 Positionen auf x64 oder 256 Positionen auf ARM und x86 verschoben hat.
 
-Da das Ergebnis einer Verschiebungs Operation, die die Anzahl der Bits im Quelltyp überschreitet, nicht definiert ist, muss der Compiler nicht in allen Situationen über konsistentes Verhalten verfügen. Wenn z. b. beide Operanden einer Schicht zur Kompilierzeit bekannt sind, kann der Compiler das Programm mit einer internen Routine optimieren, um das Ergebnis der Verschiebung vorab zu berechnen und dann anstelle des Verschiebungs Vorgangs das Ergebnis zu ersetzen. Wenn die UMSCHALT Menge zu groß oder negativ ist, kann sich das Ergebnis der internen Routine von dem Ergebnis desselben Verschiebungs Ausdrucks unterscheiden, der von der CPU ausgeführt wird.
+Da das Ergebnis eines Schichtvorgangs, der die Anzahl der Bits im Quelltyp überschreitet, nicht definiert ist, muss der Compiler in allen Situationen kein konsistentes Verhalten aufweisen. Wenn z. B. beide Operanden einer Verschiebung zur Kompilierungszeit bekannt sind, kann der Compiler das Programm optimieren, indem er eine interne Routine verwendet, um das Ergebnis der Verschiebung vorzuberechnen und dann das Ergebnis anstelle des Schichtvorgangs zu ersetzen. Wenn der Schichtbetrag zu groß oder negativ ist, kann sich das Ergebnis der internen Routine von dem Ergebnis desselben Verschiebungsausdrucks unterscheiden, der von der CPU ausgeführt wird.
 
-### <a name="variable-arguments-varargs-behavior"></a>Verhalten von Variablen Argumenten (VarArgs)
+### <a name="variable-arguments-varargs-behavior"></a>Verhalten von Variablenargumenten (varargs)
 
-Bei der ARM-Architektur unterliegen Parameter aus der Liste der Variablen Argumente, die auf dem Stapel weitergegeben werden, der Ausrichtung. Beispielsweise wird ein 64-Bit-Parameter an einer 64-Bit-Grenze ausgerichtet. Bei x86 und x64 sind Argumente, die auf dem Stapel weitergegeben werden, nicht der Ausrichtung unterliegen und werden nicht eng verpackt. Dieser Unterschied kann dazu führen, dass eine Variadic-Funktion wie `printf` Speicheradressen liest, die als Auffüll Zeichen auf Arm vorgesehen waren, wenn das erwartete Layout der Variablen Argumentliste nicht genau übereinstimmt, auch wenn es für eine Teilmenge einiger Werte in den x86-oder x64-Architekturen funktionieren kann. Betrachten Sie das folgende Beispiel:
+In der ARM-Architektur unterliegen Parameter aus der Liste der Variablenargumente, die auf dem Stapel übergeben werden, der Ausrichtung. Beispielsweise wird ein 64-Bit-Parameter an einer 64-Bit-Grenze ausgerichtet. Auf x86 und x64 unterliegen Argumente, die auf dem Stapel übergeben werden, nicht der Ausrichtung und dem festverpacken. Dieser Unterschied kann dazu führen, `printf` dass eine variadic Funktion wie das Lesen von Speicheradressen, die als Auffüllung auf ARM vorgesehen waren, wenn das erwartete Layout der Liste der Variablenargumente nicht genau übereinstimmt, obwohl es für eine Teilmenge einiger Werte auf den x86- oder x64-Architekturen funktionieren könnte. Betrachten Sie dieses Beispiel:
 
 ```C
 // notice that a 64-bit integer is passed to the function, but '%d' is used to read it.
@@ -63,18 +63,18 @@ Bei der ARM-Architektur unterliegen Parameter aus der Liste der Variablen Argume
 printf("%d\n", 1LL);
 ```
 
-In diesem Fall kann der Fehler behoben werden, indem sichergestellt wird, dass die richtige Format Angabe verwendet wird, damit die Ausrichtung des Arguments berücksichtigt wird. Dieser Code ist korrekt:
+In diesem Fall kann der Fehler behoben werden, indem sichergestellt wird, dass die richtige Formatspezifikation verwendet wird, sodass die Ausrichtung des Arguments berücksichtigt wird. Dieser Code ist richtig:
 
 ```C
 // CORRECT: use %I64d for 64-bit integers
 printf("%I64d\n", 1LL);
 ```
 
-### <a name="argument-evaluation-order"></a>Reihenfolge der Argument Auswertung
+### <a name="argument-evaluation-order"></a>Argumentauswertungsreihenfolge
 
-Da Arm-, x86-und x64-Prozessoren so unterschiedlich sind, können Sie unterschiedliche Anforderungen an compilerimplementierungen und auch verschiedene Optimierungsmöglichkeiten bieten. Aus diesem Grund kann ein Compiler mit anderen Faktoren wie der Aufruf Konvention und den Optimierungs Einstellungen Funktionsargumente in einer anderen Reihenfolge auf verschiedenen Architekturen auswerten, oder wenn die anderen Faktoren geändert werden. Dies kann bewirken, dass sich das Verhalten einer APP, die von einer bestimmten Auswertungs Reihenfolge abhängt, unerwartet ändert.
+Da ARM-, x86- und x64-Prozessoren so unterschiedlich sind, können sie unterschiedliche Anforderungen an Compilerimplementierungen und auch unterschiedliche Optimierungsmöglichkeiten darstellen. Aus diesem Grund kann ein Compiler zusammen mit anderen Faktoren wie Aufrufkonventions- und Optimierungseinstellungen Funktionsargumente in einer anderen Reihenfolge auf verschiedenen Architekturen auswerten oder wenn die anderen Faktoren geändert werden. Dies kann dazu führen, dass sich das Verhalten einer App, die auf einer bestimmten Auswertungsreihenfolge beruht, unerwartet ändert.
 
-Diese Art von Fehler kann auftreten, wenn Argumente für eine Funktion Nebeneffekte aufweisen, die sich im selben-Befehl auf andere Argumente der Funktion auswirken. Normalerweise ist diese Art der Abhängigkeit leicht zu vermeiden, Sie kann jedoch manchmal durch Abhängigkeiten verdeckt werden, die schwer zu erkennen sind, oder durch Operator Überladung. Sehen Sie sich dieses Codebeispiel an:
+Diese Art von Fehler kann auftreten, wenn Argumente für eine Funktion Nebenwirkungen haben, die sich auf andere Argumente für die Funktion im gleichen Aufruf auswirken. Normalerweise ist diese Art von Abhängigkeit leicht zu vermeiden, aber sie kann manchmal durch Abhängigkeiten verdeckt werden, die schwer zu erkennen sind, oder durch Eine Überladung des Bedieners. Betrachten Sie dieses Codebeispiel:
 
 ```cpp
 handle memory_handle;
@@ -82,21 +82,21 @@ handle memory_handle;
 memory_handle->acquire(*p);
 ```
 
-Dies ist klar definiert, aber wenn `->` und `*` überladene Operatoren sind, wird dieser Code in etwas übersetzt, das dem folgenden ähnelt:
+Dies scheint klar definiert, aber wenn `->` und `*` sind überladene Operatoren, dann wird dieser Code in etwas übersetzt, das diesem ähnelt:
 
 ```cpp
 Handle::acquire(operator->(memory_handle), operator*(p));
 ```
 
-Wenn eine Abhängigkeit zwischen `operator->(memory_handle)` und `operator*(p)`besteht, kann der Code auf eine bestimmte Auswertungs Reihenfolge zurückgreifen, auch wenn der ursprüngliche Code so aussieht, als ob keine mögliche Abhängigkeit vorhanden ist.
+Und wenn eine Abhängigkeit `operator->(memory_handle)` zwischen `operator*(p)`und besteht, kann der Code auf einer bestimmten Auswertungsreihenfolge basieren, obwohl der ursprüngliche Code so aussieht, als ob keine Abhängigkeit möglich ist.
 
-### <a name="volatile-keyword-default-behavior"></a>volatile-Schlüsselwort Standardverhalten
+### <a name="volatile-keyword-default-behavior"></a>volatiles Schlüsselwort-Standardverhalten
 
-Der MSVC-Compiler unterstützt zwei unterschiedliche Interpretationen des `volatile` Speicher Qualifizierers, den Sie mithilfe von Compilerschaltern angeben können. Der Schalter [/volatile: ms](reference/volatile-volatile-keyword-interpretation.md) wählt die Microsoft Extended volatile-Semantik aus, die eine starke Reihenfolge garantiert, wie dies bei x86 und x64 der herkömmliche Fall war, weil das Modell für hohe Arbeitsspeicher auf diesen Architekturen hoch war. Der Schalter [/volatile: ISO](reference/volatile-volatile-keyword-interpretation.md) wählt die strikte C++ standardmäßige flüchtige Semantik aus, die keine starke Reihenfolge garantiert.
+Der MSVC-Compiler unterstützt zwei `volatile` unterschiedliche Interpretationen des Speicherqualifizierers, die Sie mithilfe von Compilerwechseln angeben können. Der Schalter [/volatile:ms](reference/volatile-volatile-keyword-interpretation.md) wählt die erweiterte flüchtige Semantik von Microsoft aus, die eine starke Reihenfolge garantiert, wie dies bei x86 und x64 aufgrund des starken Speichermodells auf diesen Architekturen der Fall war. Der Schalter [/volatile:iso](reference/volatile-volatile-keyword-interpretation.md) wählt die strenge flüchtige C++-Standardsemantik aus, die keine starke Reihenfolge garantiert.
 
-In der ARM-Architektur lautet der Standardwert **/volatile: ISO** , da ARM-Prozessoren ein schwach gestelltes Speichermodell aufweisen und die Arm-Software nicht über die erweiterte Semantik von **/volatile: ms** verfügt und in der Regel nicht mit der Software, die Sie verwendet, eine Schnittstelle hat. Dennoch ist es manchmal praktisch oder sogar erforderlich, ein Arm-Programm zu kompilieren, um die erweiterte Semantik zu verwenden. Beispielsweise ist es möglicherweise zu teuer, ein Programm für die Verwendung der ISO C++ -Semantik zu portieren, oder die Treibersoftware muss der herkömmlichen Semantik entsprechen, damit Sie ordnungsgemäß funktioniert. In diesen Fällen können Sie den Schalter **/volatile: ms** verwenden. zum erneuten Erstellen der herkömmlichen flüchtigen Semantik auf Arm-Zielen muss der Compiler jedoch alle Lese-oder Schreibvorgänge einer `volatile` Variablen in den Speicher sperren einfügen, um eine starke Reihenfolge zu erzwingen, was sich negativ auf die Leistung auswirken kann.
+In der ARM-Architektur ist die Standardeinstellung **/volatile:iso,** da ARM-Prozessoren über ein schwach geordnetes Speichermodell verfügen und weil die ARM-Software nicht über ein Vermächtnis verfügt, sich auf die erweiterte Semantik von **/volatile:ms** zu verlassen, und in der Regel keine Schnittstelle zu Software haben muss, die dies tut. Es ist jedoch manchmal noch bequem oder sogar erforderlich, ein ARM-Programm zu kompilieren, um die erweiterte Semantik zu verwenden. Beispielsweise kann es zu teuer sein, ein Programm für die Verwendung der ISO C++-Semantik zu portieren, oder die Treibersoftware muss sich an die herkömmliche Semantik halten, um ordnungsgemäß zu funktionieren. In diesen Fällen können Sie den Schalter **/volatile:ms** verwenden. Um jedoch die traditionelle flüchtige Semantik für ARM-Ziele neu zu erstellen, `volatile` muss der Compiler Speicherbarrieren um jeden Lese- oder Schreibvorgang einer Variablen einfügen, um eine starke Reihenfolge zu erzwingen, die sich negativ auf die Leistung auswirken kann.
 
-Auf den x86-und x64-Architekturen ist **/volatile: ms** der Standardwert, da ein Großteil der Software, die bereits für diese Architekturen erstellt wurde, mithilfe von MSVC darauf basiert. Wenn Sie x86-und x64-Programme kompilieren, können Sie den Schalter **/volatile: ISO** angeben, um unnötige Abhängigkeit von der herkömmlichen flüchtigen Semantik zu vermeiden und die Portabilität zu fördern.
+Bei den x86- und x64-Architekturen ist die Standardeinstellung **/volatile:ms,** da ein Großteil der Software, die bereits für diese Architekturen mithilfe von MSVC erstellt wurde, auf ihnen basiert. Wenn Sie x86- und x64-Programme kompilieren, können Sie den Schalter **/volatile:iso** angeben, um unnötige Abhängigkeiten von der herkömmlichen flüchtigen Semantik zu vermeiden und die Portabilität zu fördern.
 
 ## <a name="see-also"></a>Siehe auch
 

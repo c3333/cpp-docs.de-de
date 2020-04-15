@@ -1,5 +1,5 @@
 ---
-title: 'TN028: Kontextbezogene Hilfe Support'
+title: 'TN028: Bereitstellen kontextbezogener Hilfe'
 ms.date: 11/04/2016
 f1_keywords:
 - vc.help
@@ -8,33 +8,33 @@ helpviewer_keywords:
 - TN028
 - resource identifiers, context-sensitive Help
 ms.assetid: 884f1c55-fa27-4d4c-984f-30907d477484
-ms.openlocfilehash: 5689e314c2ba94068619a066e5f458e06819b2b7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 502edc837d7886dd60ab5107fb194c1490a76928
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62305982"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370327"
 ---
-# <a name="tn028-context-sensitive-help-support"></a>TN028: Kontextbezogene Hilfe Support
+# <a name="tn028-context-sensitive-help-support"></a>TN028: Bereitstellen kontextbezogener Hilfe
 
-In diesem Hinweis werden die Regeln für die Zuweisung von Hilfe Kontexten-IDs und andere Probleme Hilfe in MFC beschrieben. Kontextbezogene Hilfe-Support muss es sich um die Hilfe-Compiler, der in Visual C++ verfügbar ist.
+In diesem Hinweis werden die Regeln zum Zuweisen von Hilfekontext-IDs und anderen Hilfeproblemen in MFC beschrieben. Für die kontextsensitive Hilfeunterstützung ist der Hilfecompiler erforderlich, der in Visual C++ verfügbar ist.
 
 > [!NOTE]
->  Zusätzlich zur Implementierung kontextbezogene Hilfe, die WinHelp verwenden, unterstützt MFC auch HTML-Hilfe. Weitere Informationen zu dieser Unterstützung und die Programmierung mit HTML-Hilfe, finden Sie unter [HTML-Hilfe: Kontextbezogene Hilfe für Programme](../mfc/html-help-context-sensitive-help-for-your-programs.md).
+> Neben der Implementierung kontextsensitiver Hilfe mithilfe von WinHelp unterstützt MFC auch die Verwendung der HTML-Hilfe. Weitere Informationen zu dieser Unterstützung und Programmierung mit HTML-Hilfe finden Sie in der [HTML-Hilfe: Kontextsensitive Hilfe für Ihre Programme](../mfc/html-help-context-sensitive-help-for-your-programs.md).
 
-## <a name="types-of-help-supported"></a>Hilfetypen unterstützt
+## <a name="types-of-help-supported"></a>Unterstützte Arten der Hilfe
 
-Es gibt zwei Arten der kontextbezogenen Hilfe in Windows-Anwendungen implementiert. Die erste, bezeichnet als "F1-Hilfe" umfasst die WinHelp mit den geeigneten Kontext basierend auf dem derzeit aktiven Objekt starten. Die zweite ist "UMSCHALT + F1". In diesem Modus ändert sich des Mauszeigers auf den Hilfecursor, und klicken Sie auf ein Objekt auf der Benutzer wird. An diesem Punkt wird die WinHelp gestartet, um Hilfe für das Objekt zu ermöglichen, die auf der Benutzer geklickt hat.
+Es gibt zwei Arten von kontextsensitiven Hilfe, die in Windows-Anwendungen implementiert ist. Die erste, die als "F1-Hilfe" bezeichnet wird, beinhaltet das Starten von WinHelp mit dem entsprechenden Kontext basierend auf dem aktuell aktiven Objekt. Der zweite ist der Modus "Shift+ F1". In diesem Modus ändert sich der Mauszeiger zum Hilfecursor, und der Benutzer klickt weiter auf ein Objekt. An diesem Punkt wird WinHelp gestartet, um Hilfe für das Objekt zu geben, auf das der Benutzer geklickt hat.
 
-Die Microsoft Foundation Classes implementieren beide der folgenden Formen der Hilfe. Darüber hinaus unterstützt das Framework zwei einfache Hilfebefehle ein, den Index und die Hilfe verwenden.
+Die Microsoft Foundation-Klassen implementieren beide Formen der Hilfe. Darüber hinaus unterstützt das Framework zwei einfache Hilfebefehle, Hilfeindex und Verwenden der Hilfe.
 
 ## <a name="help-files"></a>Hilfedateien
 
-Microsoft Foundation Classes gehen davon aus einer einzelnen Hilfedatei. Diese Hilfedatei müssen den gleichen Namen und Pfad wie die Anwendung. Wenn die ausführbare Datei C:\MyApplication\MyHelp.exe ist muss die Datei z. B. C:\MyApplication\MyHelp.hlp sein. Den Pfad durch Festlegen der *M_pszHelpFilePath* Membervariable der der [CWinApp-Klasse](../mfc/reference/cwinapp-class.md).
+Die Microsoft Foundation-Klassen verwenden eine einzelne Hilfedatei. Diese Hilfedatei muss denselben Namen und Pfad wie die Anwendung haben. Wenn die ausführbare Datei z. B. C:'MyApplication'MyHelp.exe' lautet, muss die Hilfedatei C:'MyApplication'MyHelp.hlp' sein. Sie legen den Pfad über die *m_pszHelpFilePath* Membervariable der [CWinApp-Klasse](../mfc/reference/cwinapp-class.md)fest.
 
-## <a name="help-context-ranges"></a>Hilfe-Kontext-Bereiche
+## <a name="help-context-ranges"></a>Hilfe Kontextbereiche
 
-Die standardmäßige Implementierung von MFC ist erforderlich, ein Programm, um einige Regeln bezüglich der Zuordnung von Hilfekontext IDs entsprechen. Diese Regeln sind, einen Bereich von IDs, die bestimmte Steuerelemente zugeordnet wird. Sie können diese Regeln durch die Bereitstellung von verschiedenen Implementierungen der verschiedenen Hilfe-bezogenen Memberfunktionen überschreiben.
+Die Standardimplementierung von MFC erfordert, dass ein Programm einige Regeln für die Zuweisung von Hilfekontext-IDs befolgt. Bei diesen Regeln handelt es sich um eine Reihe von IDs, die bestimmten Steuerelementen zugeordnet sind. Sie können diese Regeln überschreiben, indem Sie verschiedene Implementierungen der verschiedenen Hilfe-bezogenen Memberfunktionen bereitstellen.
 
 ```
 0x00000000 - 0x0000FFFF : user defined
@@ -52,64 +52,64 @@ Die standardmäßige Implementierung von MFC ist erforderlich, ein Programm, um 
 0x00040000 + IDW_
 ```
 
-## <a name="simple-help-commands"></a>Einfach "Help"-Befehle
+## <a name="simple-help-commands"></a>Einfache "Hilfe"-Befehle
 
-Es gibt zwei einfache Help-Befehle, die von der Microsoft Foundation Classes implementiert werden:
+Es gibt zwei einfache Hilfebefehle, die von den Microsoft Foundation-Klassen implementiert werden:
 
-- ID_HELP_INDEX, die von implementiert ist [CWinApp::OnHelpIndex](../mfc/reference/cwinapp-class.md#onhelpindex)
+- ID_HELP_INDEX, die von [CWinApp implementiert wird::OnHelpIndex](../mfc/reference/cwinapp-class.md#onhelpindex)
 
-- ID_HELP_USING, die von implementiert ist [CWinApp::OnHelpUsing](../mfc/reference/cwinapp-class.md#onhelpusing)
+- ID_HELP_USING, die von [CWinApp implementiert wird::OnHelpUsing](../mfc/reference/cwinapp-class.md#onhelpusing)
 
-Der erste Befehl zeigt die Hilfe-Index für die Anwendung. Das zweite zeigt die Hilfe zur Verwendung von der WinHelp-Anwendung.
+Der erste Befehl zeigt den Hilfeindex für die Anwendung an. Die zweite zeigt die Benutzerhilfe zur Verwendung des WinHelp-Programms.
 
-## <a name="context-sensitive-help-f1-help"></a>Kontextbezogene Hilfe (F1-Hilfe)
+## <a name="context-sensitive-help-f1-help"></a>Kontextsensitive Hilfe (F1-Hilfe)
 
-Die F1-Taste wird durch eine Zugriffstaste, die in der Tabelle mit Zugriffstasten wird das Hauptfenster platziert in der Regel an einen Befehl mit einer ID von ID_HELP übersetzt. ID_HELP-Befehl kann auch über eine Schaltfläche mit einer ID ID_HELP auf der wichtigsten Fenster oder Dialogfeld generiert werden.
+Die Taste F1 wird in der Regel in einen Befehl mit der ID ID_HELP von einem Beschleuniger übersetzt, der in die Beschleunigertabelle des Hauptfensters eingefügt wird. Der Befehl ID_HELP kann auch durch eine Schaltfläche mit der ID ID_HELP im Hauptfenster oder Dialogfeld generiert werden.
 
-Unabhängig davon, wie die ID_HELP-Befehl generiert wird wird sie als normale Befehl weitergeleitet, bis einen Befehlshandler erreicht. Weitere Informationen über die MFC-Befehlsrouting Architektur finden Sie unter [technischen Hinweis 21](../mfc/tn021-command-and-message-routing.md). Wenn die Anwendung Help aktiviert wurde, wird der ID_HELP-Befehl vom behandelt [CWinApp::OnHelp](../mfc/reference/cwinapp-class.md#onhelp). Das Anwendungsobjekt empfängt die hilfemeldung an und leitet dann den Befehl entsprechend. Dies ist erforderlich, da die Standard-Befehlsrouting nicht zur Bestimmung der spezifischsten Kontexts geeignet ist.
+Unabhängig davon, wie der Befehl ID_HELP generiert wird, wird er als normaler Befehl weitergeleitet, bis er einen Befehlshandler erreicht. Weitere Informationen zur MFC-Befehlsroutingarchitektur finden Sie unter [Technical Note 21](../mfc/tn021-command-and-message-routing.md). Wenn die Anwendung die Hilfe aktiviert hat, wird der Befehl ID_HELP von [CWinApp::OnHelp](../mfc/reference/cwinapp-class.md#onhelp)verarbeitet. Das Anwendungsobjekt empfängt die Hilfenachricht und leitet den Befehl dann entsprechend weiter. Dies ist erforderlich, da das Standardbefehlsrouting nicht ausreicht, um den spezifischsten Kontext zu bestimmen.
 
-`CWinApp::OnHelp` versucht, WinHelp in der folgenden Reihenfolge zu starten:
+`CWinApp::OnHelp`versucht, WinHelp in der folgenden Reihenfolge zu starten:
 
-1. Überprüft, ob eine aktive `AfxMessageBox` rufen Sie mit der eine Hilfe-ID. Wenn ein Meldungsfeld derzeit aktiv ist, wird die WinHelp mit dem Kontext entsprechenden in dieser MessageBox gestartet.
+1. Sucht nach `AfxMessageBox` einem aktiven Anruf mit einer Hilfe-ID. Wenn derzeit ein Meldungsfeld aktiv ist, wird WinHelp mit dem kontextabhängigen Kontext gestartet, der für dieses Meldungsfeld geeignet ist.
 
-1. Sendet eine Nachricht WM_COMMANDHELP des aktiven Fensters. Wenn das Fenster von WinHelp starten nicht reagiert, wird dieselbe Nachricht klicken Sie dann auf den übergeordneten Elementen dieses Fenster gesendet, bis die Nachricht verarbeitet wird oder das aktuelle Fenster ein Fenster auf oberster Ebene ist.
+1. Sendet eine WM_COMMANDHELP Nachricht an das aktive Fenster. Wenn dieses Fenster nicht durch Starten von WinHelp antwortet, wird dieselbe Nachricht an die Vorfahren dieses Fensters gesendet, bis die Nachricht verarbeitet wird oder das aktuelle Fenster ein Fenster der obersten Ebene ist.
 
-1. Sendet einen ID_DEFAULT_HELP-Befehl an das Hauptfenster. Dadurch wird die standardmäßige Hilfe aufgerufen. Mit diesem Befehl wird in der Regel zugeordnet `CWinApp::OnHelpIndex`.
+1. Sendet einen ID_DEFAULT_HELP Befehl an das Hauptfenster. Dadurch wird die Standardhilfe aufgerufen. Dieser Befehl wird im `CWinApp::OnHelpIndex`Allgemeinen zugeordnet.
 
-Um die Standard-ID Basiswerte (z. B. 0 x 10000 für Befehle und 0 x 20000 für Ressourcen wie z. B. Dialogfeldern) Global zu überschreiben, sollte die Anwendung überschreiben [CWinApp::WinHelp](../mfc/reference/cwinapp-class.md#winhelp).
+Um die Standard-ID-Basiswerte global zu überschreiben (z. B. 0x10000 für Befehle und 0x20000 für Ressourcen wie Dialogfelder), sollte die Anwendung [CWinApp::WinHelp](../mfc/reference/cwinapp-class.md#winhelp)überschreiben.
 
-Um überschreiben diese Funktion und die Möglichkeit, dass ein Hilfekontext bestimmt wird, sollten Sie die WM_COMMANDHELP-Meldung zu behandeln. Sie möchten möglicherweise spezifische Hilfe routing bereitstellen als das Framework bietet, wie es nur so umfassend wie die aktuellen untergeordneten MDI-Fensters wird. Sie sollten auch spezifische Hilfe für ein bestimmtes Fenster oder Dialogfeld möglicherweise basierend auf den aktuellen internen Zustand des Objekts oder das aktive Steuerelement im Dialogfeld bereitzustellen.
+Um diese Funktionalität und die Art und Weise, wie ein Hilfekontext bestimmt wird, zu überschreiben, sollten Sie die WM_COMMANDHELP-Nachricht behandeln. Möglicherweise möchten Sie spezifischeres Hilferouting bereitstellen, als das Framework bereitstellt, da es nur so tief geht wie das aktuelle untergeordnete MDI-Fenster. Möglicherweise möchten Sie auch spezifischere Hilfe für ein bestimmtes Fenster oder Dialogfeld bereitstellen, möglicherweise basierend auf dem aktuellen internen Status dieses Objekts oder dem aktiven Steuerelement im Dialogfeld.
 
-## <a name="wmcommandhelp"></a>WM_COMMANDHELP
+## <a name="wm_commandhelp"></a>WM_COMMANDHELP
 
 ```
 
 afx_msg LRESULT CWnd::OnCommandHelp(WPARAM wParam, LPARAM lParam)
 ```
 
-WM_COMMANDHELP ist eine private Windows-MFC-Nachricht, die durch das aktive Fenster empfangen wird, wenn Hilfe angefordert wird. Wenn das Fenster auf diese Nachricht erhält, kann es aufrufen `CWinApp::WinHelp` mit Kontext, der interne Zustand des Fensters entspricht.
+WM_COMMANDHELP ist eine private Windows MFC-Nachricht, die vom aktiven Fenster empfangen wird, wenn Hilfe angefordert wird. Wenn das Fenster diese Nachricht `CWinApp::WinHelp` empfängt, kann es mit einem Kontext aufrufen, der dem internen Status des Fensters entspricht.
 
 *lParam*<br/>
-Enthält den derzeit verfügbaren Hilfekontext. *lParam* ist 0 (null), wenn keine Hilfekontext ermittelt wurde. Eine Implementierung von `OnCommandHelp` können die Kontext-ID in *lParam* zum Bestimmen von eines anderen Kontexts oder es können nur übergeben `CWinApp::WinHelp`.
+Enthält den aktuell verfügbaren Hilfekontext. *lParam* ist Null, wenn kein Hilfekontext bestimmt wurde. Eine Implementierung `OnCommandHelp` von kann die Kontext-ID in *lParam* verwenden, `CWinApp::WinHelp`um einen anderen Kontext zu bestimmen, oder sie einfach an übergeben.
 
 *wParam*<br/>
-Wird nicht verwendet und ist 0 (null).
+Wird nicht verwendet und ist Null.
 
-Wenn die `OnCommandHelp` Funktionsaufrufe `CWinApp::WinHelp`, sollte zurückgegeben **"true"**. Zurückgeben von **"true"** beendet die Weiterleitung von diesen Befehl aus, für andere Klassen und anderen Fenstern.
+Wenn `OnCommandHelp` die `CWinApp::WinHelp`Funktion aufruft, sollte sie **TRUE**zurückgeben. Durch das Zurücksenden von **TRUE** wird das Routing dieses Befehls an andere Klassen und andere Fenster angehalten.
 
-## <a name="help-mode-shiftf1-help"></a>Hilfemodus (UMSCHALT + F1-Hilfe)
+## <a name="help-mode-shiftf1-help"></a>Hilfemodus (Shift+F1-Hilfe)
 
-Dies ist die zweite Form der kontextbezogenen Hilfe. In diesem Modus wird in der Regel durch Drücken von UMSCHALT + F1 oder über der Symbolleiste von/eingegeben. Sie wird als Befehl (ID_CONTEXT_HELP) implementiert. Der Message-Filter-Hook wird nicht zum Übersetzen mit diesem Befehl bei der ein modales Dialogfeld oder Menü aktiv ist, daher mit diesem Befehl ist nur für den Benutzer verfügbar, wenn die Anwendung die Haupt-Meldungsverteilschleife ausgeführt wird (`CWinApp::Run`).
+Dies ist die zweite Form der kontextsensitiven Hilfe. Im Allgemeinen wird dieser Modus durch Drücken von SHIFT+F1 oder über das Menü/die Symbolleiste eingegeben. Es wird als Befehl (ID_CONTEXT_HELP) implementiert. Der Nachrichtenfilter-Hook wird nicht verwendet, um diesen Befehl zu übersetzen, während ein modales Dialogfeld oder Menü aktiv`CWinApp::Run`ist, daher steht dieser Befehl dem Benutzer nur zur Verfügung, wenn die Anwendung die Hauptnachrichtenpumpe ( ausführt).
 
-Nach der Eingabe dieser Modus, wird der Hilfe-Mauszeiger über alle Bereiche der Anwendung angezeigt, auch wenn die Anwendung normalerweise einen eigene Cursor für den entsprechenden Bereich (z. B. Größenanpassungsrahmens um das Fenster ") angezeigt wird. Der Benutzer kann die Maus oder Tastatur zu verwenden, um einen Befehl auswählen. Anstatt den Befehl auszuführen, wird die Hilfe zum Befehl "," angezeigt. Außerdem kann der Benutzer ein sichtbares Objekt auf dem Bildschirm z. B. eine Schaltfläche auf der Symbolleiste klicken, und Hilfe für das Objekt angezeigt wird. In diesem Modus Hilfe erfolgt über `CWinApp::OnContextHelp`.
+Nach dem Betreten dieses Modus wird der Mauszeiger der Hilfe über alle Bereiche der Anwendung angezeigt, auch wenn die Anwendung normalerweise einen eigenen Cursor für diesen Bereich anzeigen würde (z. B. den Größenrahmen um das Fenster). Der Benutzer kann mit der Maus oder der Tastatur einen Befehl auswählen. Anstatt den Befehl auszuführen, wird Hilfe für diesen Befehl angezeigt. Außerdem kann der Benutzer auf ein sichtbares Objekt auf dem Bildschirm klicken, z. B. auf eine Schaltfläche auf der Symbolleiste, und die Hilfe wird für dieses Objekt angezeigt. Diese Hilfewirdwird von `CWinApp::OnContextHelp`wird bereitgestellt.
 
-Während der Ausführung dieser Schleife werden alle Tastatureingaben ist inaktiv, mit Ausnahme der Schlüssel, die das Menü zuzugreifen. Darüber hinaus Befehl Übersetzung erfolgt weiterhin über `PreTranslateMessage` , damit Benutzer eine Tastenkombination drücken, und erhalten Sie Hilfe zum Befehl ",".
+Während der Ausführung dieser Schleife sind alle Tastatureingaben inaktiv, mit Ausnahme von Tasten, die auf das Menü zugreifen. Außerdem wird die Befehlsübersetzung weiterhin durchgeführt, `PreTranslateMessage` damit der Benutzer eine Beschleunigertaste drücken und Hilfe zu diesem Befehl erhalten kann.
 
-Wenn bestimmte stehen Übersetzungen oder Aktionen platzieren, in der `PreTranslateMessage` -Funktion, die während der Modus der UMSCHALT + F1-Hilfe, stattfinden sollte nicht sollten Sie überprüfen die *M_bHelpMode* Mitglied `CWinApp` vor dem Ausführen, die Vorgänge. Die `CDialog` Implementierung `PreTranslateMessage` überprüft dies vor dem Aufruf `IsDialogMessage`, z. B. Dadurch wird "Dialogfeld" Navigationstasten auf nicht modale Dialogfelder UMSCHALT + F1 Modus deaktiviert. Darüber hinaus `CWinApp::OnIdle` wird trotzdem aufgerufen, während diese Schleife.
+Wenn bestimmte Übersetzungen oder Aktionen in `PreTranslateMessage` der Funktion stattfinden, die während des SHIFT+F1-Hilfemodus nicht `CWinApp` stattfinden sollten, sollten Sie den *m_bHelpMode* Mitglied überprüfen, bevor Sie diese Vorgänge ausführen. Die `CDialog` Implementierung `PreTranslateMessage` von überprüft `IsDialogMessage`dies vor dem Aufruf, zum Beispiel. Dadurch werden die "Dialognavigationstasten" in moduslosen Dialogen während des SHIFT+F1-Modus deaktiviert. Darüber hinaus `CWinApp::OnIdle` wird während dieser Schleife immer noch aufgerufen.
 
-Wenn der Benutzer einen Befehl im Menü auswählt, wird sie als Hilfe zum Befehl "," behandelt (über WM_COMMANDHELP, siehe unten). Wenn der Benutzer einen sichtbaren Bereich des Fensters Anwendungen klickt, erfolgt eine Entscheidung treffen, gibt an, ob es sich um einen nicht-Klick oder ein Client, auf handelt. `OnContextHelp` Handles-Zuordnung von nicht-Client klickt automatisch auf Clients Klicks. Wenn es sich um einen Client, auf handelt, sendet er klicken Sie dann eine WM_HELPHITTEST an das Fenster, das auf die geklickt wurde an. Wenn das Fenster einen Wert ungleich NULL zurückgibt, wird dieser Wert als den Kontext Hilfe verwendet. Wenn 0 (null), gibt `OnContextHelp` versucht das übergeordnete Fenster (und falls dies fehlschlägt, seinem übergeordneten Element und so weiter). Wenn ein Hilfekontext nicht bestimmt werden kann, wird standardmäßig im Hauptfenster ein ID_DEFAULT_HELP-Befehl an der anschließend (normalerweise) zugeordnet ist `CWinApp::OnHelpIndex`.
+Wenn der Benutzer einen Befehl aus dem Menü auswählt, wird er als Hilfe zu diesem Befehl behandelt (durch WM_COMMANDHELP, siehe unten). Wenn der Benutzer auf einen sichtbaren Bereich des Anwendungsfensters klickt, wird bestimmt, ob es sich um einen Nicht-Client-Klick oder einen Clientklick handelt. `OnContextHelp`behandelt die Zuordnung von Nicht-Client-Klicks zu Clientklicks automatisch. Wenn es sich um einen Clientklick handelt, sendet er eine WM_HELPHITTEST an das Fenster, auf das geklickt wurde. Wenn dieses Fenster einen Wert ungleich Null zurückgibt, wird dieser Wert als Kontext für die Hilfe verwendet. Wenn das übergeordnete `OnContextHelp` Fenster Null zurückgegeben wird (und wenn dies nicht der Ort ist, wird das übergeordnete Fenster usw. nicht angezeigt). Wenn ein Hilfekontext nicht bestimmt werden kann, wird standardmäßig ein ID_DEFAULT_HELP Befehl an das `CWinApp::OnHelpIndex`Hauptfenster gesendet, der dann (normalerweise) zugeordnet wird.
 
-## <a name="wmhelphittest"></a>WM_HELPHITTEST
+## <a name="wm_helphittest"></a>WM_HELPHITTEST
 
 ```
 
@@ -117,48 +117,48 @@ afx_msg LRESULT CWnd::OnHelpHitTest(
 WPARAM, LPARAM lParam)
 ```
 
-WM_HELPHITTEST ist eine MFC-privaten Windows-Meldung, die durch das aktive Fenster, die während der Modus der UMSCHALT + F1-Hilfe geklickt empfangen wird. Wenn das Fenster auf diese Nachricht empfängt, gibt er eine **DWORD** Hilfe-ID für die Verwendung durch WinHelp.
+WM_HELPHITTEST ist eine private MFC-Fensternachricht, die vom aktiven Fenster empfangen wird, auf das im UMSCHALT+F1-Hilfemodus geklickt wurde. Wenn das Fenster diese Nachricht **DWORD** empfängt, gibt es eine DWORD-Hilfe-ID zur Verwendung durch WinHelp zurück.
 
-LOWORD(lParam) enthält die x-Gerät-Koordinate, in Bezug auf den Clientbereich des Fensters mit der Maus geklickt wurde.
+LOWORD(lParam) enthält die X-Achsen-Gerätekoordinate, auf die relativ zum Clientbereich des Fensters mit der Maus geklickt wurde.
 
-HIWORD(lParam) enthält die y-Koordinate.
+HIWORD(lParam) enthält die Y-Achsen-Koordinate.
 
 *wParam*<br/>
-Wird nicht verwendet und ist 0 (null). Wenn der Rückgabewert ungleich NULL ist, wird die WinHelp mit diesen Kontext aufgerufen. Wenn der Rückgabewert 0 (null) ist, wird das übergeordnete Fenster Hilfe abgefragt.
+wird nicht verwendet und ist Null. Wenn der Rückgabewert ungleich Null ist, wird WinHelp mit diesem Kontext aufgerufen. Wenn der Rückgabewert Null ist, wird das übergeordnete Fenster um Hilfe abgefragt.
 
-In vielen Fällen können Sie die Treffertests Code nutzen, die Sie bereits verfügen können. Die Implementierung der `CToolBar::OnHelpHitTest` ein Beispiel Behandlung der WM_HELPHITTEST-Meldung (der Code nutzt den Treffertest-Code, der auf Schaltflächen und QuickInfos im verwendet `CControlBar`).
+In vielen Fällen können Sie Hit-Testing-Code nutzen, den Sie möglicherweise bereits haben. Sehen Sie `CToolBar::OnHelpHitTest` sich die Implementierung von für ein Beispiel für die Behandlung der WM_HELPHITTEST Nachricht `CControlBar`(der Code nutzt den Treffertestcode auf Schaltflächen und QuickInfos in verwendet ).
 
-## <a name="mfc-application-wizard-support-and-makehm"></a>Assistentenunterstützung für MFC-Anwendung und MAKEHM
+## <a name="mfc-application-wizard-support-and-makehm"></a>MFC Application Wizard Support und MAKEHM
 
-Die MFC-Anwendungs-Assistent erstellt die erforderlichen Dateien zum Erstellen einer Hilfedatei (CNT und HPJ-Dateien). Darüber hinaus zahlreiche vordefinierte RTF-Dateien, die vom Microsoft-Hilfecompiler akzeptiert werden. Viele der Themen, die abgeschlossen sind, aber einige kann für die spezifische Anwendung geändert werden müssen.
+Der MFC-Anwendungs-Assistent erstellt die erforderlichen Dateien zum Erstellen einer Hilfedatei (.cnt- und .hpj-Dateien). Es enthält auch eine Reihe von vorgefertigten .rtf-Dateien, die vom Microsoft-Hilfe-Compiler akzeptiert werden. Viele der Themen sind vollständig, aber einige müssen möglicherweise für Ihre spezifische Anwendung geändert werden.
 
-Automatische Erstellung einer Datei "Zuordnung help" wird durch ein Dienstprogramm namens MAKEHM unterstützt. Das Hilfsprogramm MAKEHM kann Ressourcen von einer Anwendung übersetzen. H-Datei zu einer Hilfedatei für die Zuordnung. Zum Beispiel:
+Die automatische Erstellung einer "Help Mapping"-Datei wird von einem Dienstprogramm namens MAKEHM unterstützt. Das MAKEHM-Dienstprogramm kann die RESOURCE einer Anwendung übersetzen. H-Datei in eine Hilfezuordnungsdatei. Beispiel:
 
 ```
 #define IDD_MY_DIALOG   2000
 #define ID_MY_COMMAND   150
 ```
 
-wird in übersetzt:
+wird übersetzt in:
 
 ```
 HIDD_MY_DIALOG    0x207d0
 HID_MY_COMMAND    0x10096
 ```
 
-Dieses Format ist kompatibel mit der Hilfe-Compiler-Funktion, die Kontext-IDs (die Zahlen auf der rechten Seite) mit Themennamen (die Symbole auf der linken Seite) zuordnet.
+Dieses Format ist mit der Funktion des Hilfe-Compilers kompatibel, die Kontext-IDs (die Zahlen auf der rechten Seite) mit Themennamen (den Symbolen auf der linken Seite) zuordnet.
 
-Der Quellcode für MAKEHM finden Sie in der MFC-Programmierung Utilities-Beispiel [MAKEHM](../overview/visual-cpp-samples.md).
+Der Quellcode für MAKEHM ist im MFC Programming Utilities-Beispiel [MAKEHM](../overview/visual-cpp-samples.md)verfügbar.
 
-## <a name="adding-help-support-after-running-the-mfc-application-wizard"></a>Hilfe Support nach Ausführen des Assistenten der MFC-Anwendung hinzufügen
+## <a name="adding-help-support-after-running-the-mfc-application-wizard"></a>Hinzufügen von Hilfeunterstützung nach dem Ausführen des MFC-Anwendungs-Assistenten
 
-Überprüfen Sie die Option "Kontextbezogene Hilfe" auf der Seite "Erweiterte Features" des Assistenten für MFC-Anwendung vor dem Erstellen Ihrer Anwendung ist die beste Möglichkeit, Hilfe zu Ihrer Anwendung hinzufügen werden. Auf diese Weise den MFS-Anwendungsassistenten automatisch hinzugefügt, die erforderlichen Meldungszuordnungseinträge Ihre `CWinApp`-abgeleitete Klasse, um Hilfe zu unterstützen.
+Die beste Möglichkeit, Ihrer Anwendung Hilfe hinzuzufügen, besteht darin, die Option "Kontextsensitive Hilfe" auf der Seite Erweiterte Funktionen des MFC-Anwendungs-Assistenten zu aktivieren, bevor Sie Ihre Anwendung erstellen. Auf diese Weise fügt der MFC-Anwendungs-Assistent `CWinApp`automatisch die erforderlichen Nachrichtenzuordnungseinträge zu Ihrer -abgeleiteten Klasse hinzu, um die Hilfe zu unterstützen.
 
-## <a name="help-on-message-boxes"></a>Hilfe zur Meldungsfelder
+## <a name="help-on-message-boxes"></a>Hilfe zu Nachrichtenfeldern
 
-Hilfe in den Meldungsfeldern (manchmal als "Warnungen" bezeichnet) wird unterstützt, über die `AfxMessageBox` -Funktion, die einen Wrapper für die `MessageBox` Windows-API.
+Hilfe zu Message Boxes (manchmal auch `AfxMessageBox` als Warnungen bezeichnet) `MessageBox` wird durch die Funktion, einen Wrapper für die Windows-API, unterstützt.
 
-Es gibt zwei Versionen der `AfxMessageBox`, eine für die Verwendung mit einem Zeichenfolgen-ID und ein anderes für die Verwendung mit einem Zeiger auf Zeichenfolge (`LPCSTR`):
+Es gibt zwei `AfxMessageBox`Versionen von , eine für die Verwendung mit einer`LPCSTR`Zeichenfolgen-ID und eine andere für die Verwendung mit einem Zeiger auf String ( ):
 
 ```
 int AFXAPI AfxMessageBox(LPCSTR lpszText,
@@ -170,11 +170,11 @@ int AFXAPI AfxMessageBox(UINT nIDPrompt,
     UINT nIDHelp);
 ```
 
-In beiden Fällen besteht eine optionale Hilfe-ID.
+In beiden Fällen gibt es eine optionale Hilfe-ID.
 
-Im ersten Fall ist die Standardeinstellung für nIDHelp 0 (null) und keine Hilfe zu diesem Meldungsfeld angibt. Wenn der Benutzer F1 drückt, während z. B. Message Box aktiv ist, erhält der Benutzer keine Hilfe (selbst wenn die Anwendung die Hilfefunktion unterstützt). Wenn dies nicht erwünscht ist, sollte eine Hilfe-ID für nIDHelp angegeben werden.
+Im ersten Fall ist die Standardeinstellung für nIDHelp 0, was keine Hilfe für dieses Meldungsfeld angibt. Wenn der Benutzer F1 drückt, während ein Meldungsfeld aktiv ist, erhält der Benutzer keine Hilfe (auch wenn die Anwendung die Hilfe unterstützt). Wenn dies nicht wünschenswert ist, sollte eine Hilfe-ID für nIDHelp bereitgestellt werden.
 
-Im zweiten Fall ist der Standardwert für nIDHelp-1 und gibt an, dass die Hilfe-ID nIDPrompt identisch ist. Hilfe funktioniert nur, wenn die Anwendung Help-fähige, natürlich ist). Sie sollten für nIDHelp 0 angeben, wenn Sie möchten, dass das Meldungsfeld keine Hilfe unterstützt. Soll die Nachricht Hilfe aktiviert ist, sondern eine andere Hilfe-ID als nIDPrompt wünschen, geben Sie einfach einen positiven Wert für die anderen nIDPrompt nIDHelp.
+Im zweiten Fall ist der Standardwert für nIDHelp -1, was darauf hinweist, dass die Hilfe-ID mit nIDPrompt identisch ist. Die Hilfe funktioniert nur, wenn die Anwendung hilfeaktiviert ist. Sie sollten 0 für nIDHelp angeben, wenn Sie möchten, dass das Meldungsfeld keine Hilfeunterstützung bietet. Wenn Sie möchten, dass die Nachricht Hilfe aktiviert wird, aber eine andere Hilfe-ID als nIDPrompt wünschen, geben Sie einfach einen positiven Wert für nIDHelp an, der sich von dem von nIDPrompt unterscheidet.
 
 ## <a name="see-also"></a>Siehe auch
 

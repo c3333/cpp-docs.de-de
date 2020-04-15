@@ -1,8 +1,9 @@
 ---
 title: _CIatan2
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _CIatan2
+- _o__CIatan2
 api_location:
 - msvcr80.dll
 - msvcrt.dll
@@ -12,6 +13,7 @@ api_location:
 - msvcr100.dll
 - msvcr90.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -23,16 +25,16 @@ helpviewer_keywords:
 - _CIatan2 intrinsic
 - CIatan2 intrinsic
 ms.assetid: 31f8cc78-b79f-4576-b73b-8add18e08680
-ms.openlocfilehash: dee536b41ccb4c45284fa418e92b99807e51c53a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 2535cb5747b5eac9257594bd4c6d91e64ee7b3eb
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940528"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334387"
 ---
 # <a name="_ciatan2"></a>_CIatan2
 
-Berechnet den Arkustangens von *x* / *y*, wobei *x* und *y* die obersten Werte des Stapels sind.
+Berechnet die Arctangent von *x* / *y,* wobei *x* und *y* Werte auf der Oberseite des Stapels sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,13 +42,15 @@ Berechnet den Arkustangens von *x* / *y*, wobei *x* und *y* die obersten Werte d
 void __cdecl _CIatan2();
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Diese Version der `atan2`-Funktion verfügt über eine spezielle Aufrufkonvention, die der Compiler versteht. Sie beschleunigt die Ausführung, da sie das Generieren von Kopien verhindert und bei der Registerzuweisung hilft.
 
 Der resultierende Wert wird oben auf dem Stapel abgelegt.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 **Plattform:** x86
 

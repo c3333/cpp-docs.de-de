@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::IsSame structure
 - Microsoft::WRL::Details::IsSame::value constant
 ms.assetid: 1eddbc3f-3cc5-434f-8495-e4477e1f868e
-ms.openlocfilehash: b659f832756b79289181db34fa8d6fc0d974609d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fcaf33309521b44163022e0ffa9b1e03e53e2551
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62161276"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371344"
 ---
 # <a name="issame-structure"></a>IsSame-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,19 +36,19 @@ struct IsSame<T1, T1>;
 Ein Typ.
 
 *T2*<br/>
-Einen anderen Typ.
+Ein anderer Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Überprüft, ob es sich bei einem Typ angegeben ist identisch mit einer anderen angegebenen Typ.
+Testet, ob ein angegebener Typ mit einem anderen angegebenen Typ identisch ist.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
-Name                    | Beschreibung
+Name                    | BESCHREIBUNG
 ----------------------- | --------------------------------------------------
-[IsSame::value](#value) | Gibt an, ob ein Typ mit einer anderen identisch ist.
+[IsSame::Wert](#value) | Gibt an, ob ein Typ mit einem anderen identisch ist.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -56,13 +56,13 @@ Name                    | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** internal.h
+**Kopfzeile:** internal.h
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="value"></a>IsSame::value
+## <a name="issamevalue"></a><a name="value"></a>IsSame::Wert
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 template <typename T1, typename T2>
@@ -78,8 +78,8 @@ struct IsSame<T1, T1>
 };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt an, ob ein Typ mit einer anderen identisch ist.
+Gibt an, ob ein Typ mit einem anderen identisch ist.
 
-`value` ist **"true"** , wenn die Vorlagenparameter identisch sind und **"false"** Wenn sich die Vorlagenparameter unterscheiden.
+`value`ist **true,** wenn die Vorlagenparameter identisch sind, und **false,** wenn die Vorlagenparameter unterschiedlich sind.

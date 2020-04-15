@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::DontUseNewUseMake class
 - Microsoft::WRL::Details::DontUseNewUseMake::operator new operator
 ms.assetid: 8b38d07b-fc14-4cea-afb9-4c1a7dde0093
-ms.openlocfilehash: 02420f2657c7d7d6a7a0294f0321717a3bb2b5d7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ae67373b4f2f2d4a199b939b06e6f526f1365446
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398536"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371555"
 ---
 # <a name="dontusenewusemake-class"></a>DontUseNewUseMake-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,17 +26,17 @@ Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet
 class DontUseNewUseMake;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Verhindert die Verwendung von Operator `new` in `RuntimeClass`. Folglich müssen Sie verwenden die [Funktion](make-function.md) stattdessen.
+Verhindert die `new` `RuntimeClass`Verwendung des Operators in . Daher müssen Sie stattdessen die [Funktion Erstellen](make-function.md) verwenden.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-Name                                             | Beschreibung
+Name                                             | BESCHREIBUNG
 ------------------------------------------------ | ---------------------------------------------------------------------------
-[Dontusenewusemake:: neue](#operator-new) | Überlädt `new` und verhindert, dass deren verwendeten `RuntimeClass`.
+[DontUseNewUseMake::operator neu](#operator-new) | Überlastet Operator `new` und verhindert, dass `RuntimeClass`er in verwendet wird.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -48,9 +48,9 @@ Name                                             | Beschreibung
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="operator-new"></a>Dontusenewusemake:: neue
+## <a name="dontusenewusemakeoperator-new"></a><a name="operator-new"></a>DontUseNewUseMake::operator neu
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 void* operator new(
@@ -62,15 +62,15 @@ void* operator new(
 ### <a name="parameters"></a>Parameter
 
 *__unnamed0*<br/>
-Einen unbenannten Parameter, der angibt, die Anzahl der Bytes an Arbeitsspeicher zugewiesen werden.
+Ein unbenannter Parameter, der die Anzahl der zuzuweisenden Bytes an Speicher angibt.
 
-*placement*<br/>
-Der Typ, zugeordnet werden.
+*Platzierung*<br/>
+Der typ, der zugewiesen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bietet eine Möglichkeit, zusätzliche Argumente zu übergeben, wenn Sie beim Überladen `new`.
+Bietet eine Möglichkeit, zusätzliche Argumente zu `new`übergeben, wenn Sie den Operator überladen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überlädt `new` und verhindert, dass deren verwendeten `RuntimeClass`.
+Überlastet Operator `new` und verhindert, dass `RuntimeClass`er in verwendet wird.

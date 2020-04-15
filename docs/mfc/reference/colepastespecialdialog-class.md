@@ -28,12 +28,12 @@ helpviewer_keywords:
 - COlePasteSpecialDialog [MFC], GetSelectionType
 - COlePasteSpecialDialog [MFC], m_ps
 ms.assetid: 0e82ef9a-9bbe-457e-8240-42c86a0534f7
-ms.openlocfilehash: f4174369620f14f2d1ac410aa5d756c75097ad0f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 5e67a81f48b8cdf0dae6dc90fc2ded8dc44a73ab
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426618"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376990"
 ---
 # <a name="colepastespecialdialog-class"></a>COlePasteSpecialDialog-Klasse
 
@@ -49,41 +49,41 @@ class COlePasteSpecialDialog : public COleDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COlePasteSpecialDialog:: COlePasteSpecialDialog](#colepastespecialdialog)|Erstellt ein `COlePasteSpecialDialog`-Objekt.|
+|[COlePasteSpecialDialog::COlePasteSpecialDialog](#colepastespecialdialog)|Erstellt ein `COlePasteSpecialDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COlePasteSpecialDialog:: addFormat](#addformat)|Fügt der Liste der Formate, die von der Anwendung eingefügt werden können, benutzerdefinierte Formate hinzu.|
-|[COlePasteSpecialDialog:: addlinkentry](#addlinkentry)|Fügt der Liste der unterstützten Zwischenablage Formate einen neuen Eintrag hinzu.|
-|[COlePasteSpecialDialog:: addstandardformats](#addstandardformats)|Fügt CF_BITMAP, CF_DIB, CF_METAFILEPICT und optional CF_LINKSOURCE der Liste der Formate hinzu, die von der Anwendung eingefügt werden können.|
-|[COlePasteSpecialDialog:: kreateitem](#createitem)|Erstellt das Element im Container Dokument unter Verwendung des angegebenen Formats.|
-|[COlePasteSpecialDialog::D omodal](#domodal)|Zeigt das OLE-Dialogfeld "speziell einfügen" an.|
-|[COlePasteSpecialDialog:: getdrawaspect](#getdrawaspect)|Gibt an, ob das Element als Symbol gezeichnet werden soll oder nicht.|
-|[COlePasteSpecialDialog:: getikonicmetafile](#geticonicmetafile)|Ruft ein Handle für die Metadatei ab, die der ikonischen Form dieses Elements zugeordnet ist.|
-|[COlePasteSpecialDialog:: getpasteindex](#getpasteindex)|Ruft den Index der verfügbaren Einfüge Optionen ab, die vom Benutzer ausgewählt wurden.|
-|[COlePasteSpecialDialog:: GetSelectionType](#getselectiontype)|Ruft den ausgewählten Typ der Auswahl ab.|
+|[COlePasteSpecialDialog::AddFormat](#addformat)|Fügt der Liste der Formate, die Ihre Anwendung einfügen kann, benutzerdefinierte Formate hinzu.|
+|[COlePasteSpecialDialog::AddLinkEntry](#addlinkentry)|Fügt der Liste der unterstützten Zwischenablageformate einen neuen Eintrag hinzu.|
+|[COlePasteSpecialDialog::Standardformate hinzufügen](#addstandardformats)|Fügt der Liste der Formate, die Ihre Anwendung einfügen kann, CF_BITMAP, CF_DIB, CF_METAFILEPICT und optional CF_LINKSOURCE hinzu.|
+|[COlePasteSpecialDialog::CreateItem](#createitem)|Erstellt das Element im Containerdokument im angegebenen Format.|
+|[COlePasteSpecialDialog::DoModal](#domodal)|Zeigt das Dialogfeld OLE Paste Special an.|
+|[COlePasteSpecialDialog::GetDrawAspect](#getdrawaspect)|Gibt an, ob ein Element als Symbol gezeichnet werden soll oder nicht.|
+|[COlePasteSpecialDialog::GetIconicMetafile](#geticonicmetafile)|Ruft ein Handle für die Metadatei ab, die der ikonischen Form dieses Elements zugeordnet ist.|
+|[COlePasteSpecialDialog::GetPasteIndex](#getpasteindex)|Ruft den Index der verfügbaren Einfügeoptionen ab, der vom Benutzer ausgewählt wurde.|
+|[COlePasteSpecialDialog::GetSelectionType](#getselectiontype)|Ruft den ausgewählten Auswahltyp ab.|
 
-### <a name="public-data-members"></a>Öffentliche Datenelemente
+### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COlePasteSpecialDialog:: m_ps](#m_ps)|Eine Struktur vom Typ oleuipastespecial, mit der die Funktion des Dialog Felds gesteuert wird.|
+|[COlePasteSpecialDialog::m_ps](#m_ps)|Eine Struktur vom Typ OLEUIPASTESPECIAL, die die Funktion des Dialogfelds steuert.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Erstellen Sie ein Objekt der Klasse `COlePasteSpecialDialog`, wenn Sie dieses Dialogfeld aufzurufen. Nachdem ein `COlePasteSpecialDialog`-Objekt erstellt wurde, können Sie mit den Member-Funktionen [addFormat](#addformat) und [addstandardformats](#addstandardformats) dem Dialogfeld Zwischenablage Formate hinzufügen. Sie können auch die [m_ps](#m_ps) -Struktur verwenden, um die Werte oder Zustände von Steuerelementen im Dialogfeld zu initialisieren. Die `m_ps` Struktur ist vom Typ oleuipastespecial.
+Erstellen Sie ein `COlePasteSpecialDialog` Klassenobjekt, wenn Sie dieses Dialogfeld aufrufen möchten. Nachdem `COlePasteSpecialDialog` ein Objekt erstellt wurde, können Sie die Memberfunktionen [AddFormat](#addformat) und [AddStandardFormats](#addstandardformats) verwenden, um dem Dialogfeld Zwischenablageformate hinzuzufügen. Sie können auch die [m_ps](#m_ps) Struktur verwenden, um die Werte oder Zustände von Steuerelementen im Dialogfeld zu initialisieren. Die `m_ps` Struktur ist vom Typ OLEUIPASTESPECIAL.
 
-Weitere Informationen finden Sie in der [oleuipastespecial](/windows/win32/api/oledlg/ns-oledlg-oleuipastespecialw) -Struktur in der Windows SDK.
+Weitere Informationen finden Sie in der [OLEUIPASTESPECIAL-Struktur](/windows/win32/api/oledlg/ns-oledlg-oleuipastespecialw) im Windows SDK.
 
-Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie in den Artikel [Dialogfeldern in OLE](../../mfc/dialog-boxes-in-ole.md).
+Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie im Artikel [Dialogfelder in OLE](../../mfc/dialog-boxes-in-ole.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -91,19 +91,19 @@ Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie in den Artike
 
 [CDialog](../../mfc/reference/cdialog-class.md)
 
-[Ccommondialog](../../mfc/reference/ccommondialog-class.md)
+[CCommonDialog](../../mfc/reference/ccommondialog-class.md)
 
 [COleDialog](../../mfc/reference/coledialog-class.md)
 
 `COlePasteSpecialDialog`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afxodlgs. h
+**Kopf:** afxodlgs.h
 
-##  <a name="addformat"></a>COlePasteSpecialDialog:: addFormat
+## <a name="colepastespecialdialogaddformat"></a><a name="addformat"></a>COlePasteSpecialDialog::AddFormat
 
-Mit dieser Funktion können Sie der Liste der Formate, die Ihre Anwendung in einem Vorgang zum Einfügen von Sonderzeichen unterstützen kann, neue Formate hinzufügen.
+Rufen Sie diese Funktion auf, um der Liste der Formate, die Ihre Anwendung in einem Vorgang "Einfügen" unterstützen kann, neue Formate hinzuzufügen.
 
 ```
 void AddFormat(
@@ -122,44 +122,44 @@ void AddFormat(
 
 ### <a name="parameters"></a>Parameter
 
-*fmt*<br/>
-Verweis auf den hinzu zufügenden Datentyp.
+*Fmt*<br/>
+Verweis auf den hinzuzufügenden Datentyp.
 
-*lpszformat*<br/>
-Eine Zeichenfolge, die das Format für den Benutzer beschreibt.
+*lpszFormat*<br/>
+Zeichenfolge, die dem Benutzer das Format beschreibt.
 
-*lpszresult*<br/>
-Eine Zeichenfolge, die das Ergebnis beschreibt, wenn dieses Format im Dialogfeld ausgewählt wird.
+*lpszErgebnis*<br/>
+Zeichenfolge, die das Ergebnis beschreibt, wenn dieses Format im Dialogfeld ausgewählt ist.
 
-*flags*<br/>
-Die verschiedenen Verknüpfungs-und Einbettungs Optionen für dieses Format sind verfügbar. Dieses Flag ist eine bitweise Kombination aus einem oder mehreren der unterschiedlichen Werte im enumerierten oleuipasteflag-Typ.
+*Flaggen*<br/>
+Die verschiedenen Verknüpfungs- und Einbettungsoptionen für dieses Format. Dieses Flag ist eine bitweise Kombination eines oder mehrerer der verschiedenen Werte im aufgezählten OLEUIPASTEFLAG-Typ.
 
-*CF*<br/>
-Das hinzu zufügende Zwischenablage Format.
+*Cf*<br/>
+Das hinzuzufügende Zwischenablageformat.
 
-*TYMED*<br/>
-Die in diesem Format verfügbaren Medientypen. Dies ist eine bitweise Kombination aus einem oder mehreren Werten im TYMED-enumerierten Typ.
+*Tymed*<br/>
+Die in diesem Format verfügbaren Medientypen. Dies ist eine bitweise Kombination eines oder mehrerer Werte im aufgezählten TYMED-Typ.
 
-*nformatid*<br/>
-Die ID der Zeichenfolge, die dieses Format identifiziert. Das Format dieser Zeichenfolge sind zwei separate Zeichen folgen, die durch ein "\n"-Zeichen getrennt sind. Die erste Zeichenfolge ist die gleiche, die im *lpstreformat* -Parameter übergeben wird, und die zweite Zeichenfolge entspricht dem *lpstrauresult* -Parameter.
+*nFormatID*<br/>
+Die ID der Zeichenfolge, die dieses Format identifiziert. Das Format dieser Zeichenfolge besteht aus zwei separaten Zeichenfolgen, die durch ein Zeichen 'n' getrennt sind. Die erste Zeichenfolge ist die gleiche, die im *lpstrFormat-Parameter* übergeben würde, und die zweite ist die gleiche wie der *lpstrResult-Parameter.*
 
-*benableicon*<br/>
-Flag, das bestimmt, ob das Kontrollkästchen als Symbol anzeigen aktiviert ist, wenn dieses Format im Listenfeld ausgewählt wird.
+*bEnableIcon*<br/>
+Flag, das bestimmt, ob das Kontrollkästchen Als Symbol anzeigen aktiviert ist, wenn dieses Format im Listenfeld ausgewählt wird.
 
-*bLink*<br/>
+*Blinken*<br/>
 Flag, das bestimmt, ob das Optionsfeld Link einfügen aktiviert ist, wenn dieses Format im Listenfeld ausgewählt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion kann aufgerufen werden, um entweder Standardformate (z. b. CF_TEXT oder CF_TIFF oder benutzerdefinierte Formate hinzuzufügen, die von der Anwendung beim System registriert wurden. Weitere Informationen zum Einfügen von Datenobjekten in Ihre Anwendung finden Sie im Artikel [Datenobjekte und Datenquellen: Manipulation](../../mfc/data-objects-and-data-sources-manipulation.md).
+Diese Funktion kann aufgerufen werden, um entweder Standardformate wie CF_TEXT oder CF_TIFF oder benutzerdefinierte Formate hinzuzufügen, die Ihre Anwendung beim System registriert hat. Weitere Informationen zum Einfügen von Datenobjekten in Ihre Anwendung finden Sie im Artikel [Datenobjekte und Datenquellen: Manipulation](../../mfc/data-objects-and-data-sources-manipulation.md).
 
-Weitere Informationen finden Sie unter dem [TYMED](/windows/win32/api/objidl/ne-objidl-tymed) -Enumerationstyp und der [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur in der Windows SDK.
+Weitere Informationen finden [TYMED](/windows/win32/api/objidl/ne-objidl-tymed) Sie im TYMED-Enumerationstyp und in der [FORMATETC-Struktur](/windows/win32/api/objidl/ns-objidl-formatetc) im Windows SDK.
 
-Weitere Informationen finden Sie unter dem enumerierten [oleuipasteflag](/windows/win32/api/oledlg/ne-oledlg-oleuipasteflag) -Typ in der Windows SDK.
+Weitere Informationen finden Sie im aufgezählten [OLEUIPASTEFLAG-Typ](/windows/win32/api/oledlg/ne-oledlg-oleuipasteflag) im Windows SDK.
 
-##  <a name="addlinkentry"></a>COlePasteSpecialDialog:: addlinkentry
+## <a name="colepastespecialdialogaddlinkentry"></a><a name="addlinkentry"></a>COlePasteSpecialDialog::AddLinkEntry
 
-Fügt der Liste der unterstützten Zwischenablage Formate einen neuen Eintrag hinzu.
+Fügt der Liste der unterstützten Zwischenablageformate einen neuen Eintrag hinzu.
 
 ```
 OLEUIPASTEFLAG AddLinkEntry(UINT cf);
@@ -167,16 +167,16 @@ OLEUIPASTEFLAG AddLinkEntry(UINT cf);
 
 ### <a name="parameters"></a>Parameter
 
-*CF*<br/>
-Das hinzu zufügende Zwischenablage Format.
+*Cf*<br/>
+Das hinzuzufügende Zwischenablageformat.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine [oleuipasteflag](/windows/win32/api/oledlg/ne-oledlg-oleuipasteflag) -Struktur, die die Informationen für den neuen Link Eintrag enthält.
+Eine [OLEUIPASTEFLAG-Struktur,](/windows/win32/api/oledlg/ne-oledlg-oleuipasteflag) die die Informationen für den neuen Linkeintrag enthält.
 
-##  <a name="addstandardformats"></a>COlePasteSpecialDialog:: addstandardformats
+## <a name="colepastespecialdialogaddstandardformats"></a><a name="addstandardformats"></a>COlePasteSpecialDialog::Standardformate hinzufügen
 
-Mit dieser Funktion können Sie die folgenden Zwischenablage Formate zur Liste der Formate hinzufügen, die Ihre Anwendung in einem Vorgang zum Einfügen von Sondervorgängen unterstützen kann:
+Rufen Sie diese Funktion auf, um die folgenden Zwischenablageformate zur Liste der Formate hinzuzufügen, die Ihre Anwendung in einem Vorgang "Einfügen" unterstützen kann:
 
 ```
 void AddStandardFormats(BOOL bEnableLink = TRUE);
@@ -184,10 +184,10 @@ void AddStandardFormats(BOOL bEnableLink = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*benablelink*<br/>
-Flag, das bestimmt, ob CF_LINKSOURCE der Liste der Formate hinzugefügt werden soll, die von der Anwendung eingefügt werden können.
+*bEnableLink*<br/>
+Flag, das bestimmt, ob der Liste der Formate, die Die Anwendung eingefügt werden kann, CF_LINKSOURCE hinzugefügt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 - CF_BITMAP
 
@@ -197,11 +197,11 @@ Flag, das bestimmt, ob CF_LINKSOURCE der Liste der Formate hinzugefügt werden s
 
 - **"Eingebettetes Objekt"**
 
-- optional **"Link Quelle"**
+- (optional) **"Link-Quelle"**
 
-Diese Formate werden verwendet, um Einbettungen und Verknüpfungen zu unterstützen.
+Diese Formate werden verwendet, um das Einbetten und Verknüpfen zu unterstützen.
 
-##  <a name="colepastespecialdialog"></a>COlePasteSpecialDialog:: COlePasteSpecialDialog
+## <a name="colepastespecialdialogcolepastespecialdialog"></a><a name="colepastespecialdialog"></a>COlePasteSpecialDialog::COlePasteSpecialDialog
 
 Erstellt ein `COlePasteSpecialDialog`-Objekt.
 
@@ -215,31 +215,31 @@ COlePasteSpecialDialog(
 ### <a name="parameters"></a>Parameter
 
 *dwFlags*<br/>
-Erstellungsflag enthält eine beliebige Anzahl der folgenden Flags, die mithilfe des bitweisen OR-Operators kombiniert werden:
+Erstellungsflag enthält eine beliebige Anzahl der folgenden Flags, die mit dem bitwise-OR-Operator kombiniert werden:
 
-- PSF_SELECTPASTE gibt an, dass beim Aufrufen des Dialog Felds zunächst das Optionsfeld einfügen aktiviert wird. Kann nicht in Kombination mit PSF_SELECTPASTELINK verwendet werden. Dies ist die Standardeinstellung.
+- PSF_SELECTPASTE Gibt an, dass das Optionsfeld Einfügen zunächst aktiviert wird, wenn das Dialogfeld aufgerufen wird. Kann nicht in Kombination mit PSF_SELECTPASTELINK verwendet werden. Dies ist die Standardoption.
 
-- PSF_SELECTPASTELINK gibt an, dass das Optionsfeld Link einfügen anfänglich aktiviert wird, wenn das Dialogfeld aufgerufen wird. Kann nicht in Kombination mit PSF_SELECTPASTE verwendet werden.
+- PSF_SELECTPASTELINK Gibt an, dass das Optionsfeld Verknüpfung einfügen zunächst aktiviert wird, wenn das Dialogfeld aufgerufen wird. Kann nicht in Kombination mit PSF_SELECTPASTE verwendet werden.
 
-- PSF_CHECKDISPLAYASICON gibt an, dass das Kontrollkästchen als Symbol anzeigen zuerst überprüft wird, wenn das Dialogfeld aufgerufen wird.
+- PSF_CHECKDISPLAYASICON Gibt an, dass das Kontrollkästchen Als Symbol anzeigen wird, wird anfänglich aktiviert, wenn das Dialogfeld aufgerufen wird.
 
-- PSF_SHOWHELP gibt an, dass die Schaltfläche Hilfe angezeigt wird, wenn das Dialogfeld aufgerufen wird.
+- PSF_SHOWHELP Gibt an, dass die Hilfeschaltfläche angezeigt wird, wenn das Dialogfeld aufgerufen wird.
 
 *pDataObject*<br/>
-Verweist auf das [COleDataObject-Objekt](../../mfc/reference/coledataobject-class.md) , das eingefügt werden soll. Wenn dieser Wert NULL ist, wird der `COleDataObject` aus der Zwischenablage abgerufen.
+Zeigt auf das [COleDataObject](../../mfc/reference/coledataobject-class.md) zum Einfügen. Wenn dieser Wert NULL ist, ruft er die `COleDataObject` aus der Zwischenablage ab.
 
-*pparser*<br/>
-Zeigt auf das übergeordnete oder Besitzer Fenster Objekt (vom Typ "`CWnd`"), zu dem das Dialog Objekt gehört. Wenn er NULL ist, wird das übergeordnete Fenster des Dialog Felds auf das Hauptanwendungsfenster festgelegt.
+*pParentWnd*<br/>
+Zeigt auf das übergeordnete oder Besitzerfensterobjekt (vom Typ `CWnd`), zu dem das Dialogobjekt gehört. Wenn es SICH um NULL handelt, wird das übergeordnete Fenster des Dialogfelds auf das Hauptanwendungsfenster festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion erstellt nur ein `COlePasteSpecialDialog` Objekt. Um das Dialogfeld anzuzeigen, müssen Sie die Funktion [DoModal](#domodal) aufrufen.
+Diese Funktion erstellt `COlePasteSpecialDialog` nur ein Objekt. Um das Dialogfeld anzuzeigen, rufen Sie die [DoModal-Funktion](#domodal) auf.
 
-Weitere Informationen finden Sie unter dem enumerierten [oleuipasteflag](/windows/win32/api/oledlg/ne-oledlg-oleuipasteflag) -Typ in der Windows SDK.
+Weitere Informationen finden Sie im aufgezählten [OLEUIPASTEFLAG-Typ](/windows/win32/api/oledlg/ne-oledlg-oleuipasteflag) im Windows SDK.
 
-##  <a name="createitem"></a>COlePasteSpecialDialog:: kreateitem
+## <a name="colepastespecialdialogcreateitem"></a><a name="createitem"></a>COlePasteSpecialDialog::CreateItem
 
-Erstellt das neue Element, das im Dialogfeld "besonderes einfügen" ausgewählt wurde.
+Erstellt das neue Element, das im Dialogfeld Spezial einfügen ausgewählt wurde.
 
 ```
 BOOL CreateItem(COleClientItem* pNewItem);
@@ -247,20 +247,20 @@ BOOL CreateItem(COleClientItem* pNewItem);
 
 ### <a name="parameters"></a>Parameter
 
-*pnetwitem*<br/>
-Verweist auf eine `COleClientItem`-Instanz. Darf nicht NULL sein.
+*pNewItem*<br/>
+Zeigt auf `COleClientItem` eine Instanz. Lässt keine NULL-Werte zu.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Element erfolgreich erstellt wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn das Element erfolgreich erstellt wurde; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sollte nur aufgerufen werden, nachdem die [Domäne](#domodal) IDOK zurückgegeben hat.
+Diese Funktion sollte nur aufgerufen werden, nachdem [DoModal](#domodal) IDOK zurückgegeben hat.
 
-##  <a name="domodal"></a>COlePasteSpecialDialog::D omodal
+## <a name="colepastespecialdialogdomodal"></a><a name="domodal"></a>COlePasteSpecialDialog::DoModal
 
-Zeigt das OLE-Dialogfeld "speziell einfügen" an.
+Zeigt das Dialogfeld OLE Paste Special an.
 
 ```
 virtual INT_PTR DoModal();
@@ -268,23 +268,23 @@ virtual INT_PTR DoModal();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Abschluss Status für das Dialogfeld. Einer der folgenden Werte:
+Abschlussstatus für das Dialogfeld. Einer der folgenden Werte:
 
 - IDOK, wenn das Dialogfeld erfolgreich angezeigt wurde.
 
 - IDCANCEL, wenn der Benutzer das Dialogfeld abgebrochen hat.
 
-- Idabort, wenn ein Fehler aufgetreten ist. Wenn idabort zurückgegeben wird, können Sie die `COleDialog::GetLastError` Member-Funktion abrufen, um weitere Informationen zum aufgetretenen Fehlertyp abzurufen. Eine Auflistung möglicher Fehler finden Sie unter der [oleuipastespecial](/windows/win32/api/oledlg/nf-oledlg-oleuipastespecialw) -Funktion in der Windows SDK.
+- IDABORT, wenn ein Fehler aufgetreten ist. Wenn IDABORT zurückgegeben wird, rufen Sie die `COleDialog::GetLastError` Memberfunktion auf, um weitere Informationen über den Fehlertyp zu erhalten, der aufgetreten ist. Eine Liste möglicher Fehler finden Sie unter Die [OleUIPasteSpecial-Funktion](/windows/win32/api/oledlg/nf-oledlg-oleuipastespecialw) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie die verschiedenen Dialogfeld-Steuerelemente durch Festlegen der Elemente der [m_ps](#m_ps) Struktur initialisieren möchten, sollten Sie dies vor dem Aufrufen von `DoModal`tun, nachdem das Dialogfeld Objekt erstellt wurde.
+Wenn Sie die verschiedenen Dialogfeldsteuerelemente initialisieren [m_ps](#m_ps) möchten, indem Sie Elemente `DoModal`der m_ps Struktur festlegen, sollten Sie dies vor dem Aufruf tun, jedoch nachdem das Dialogobjekt erstellt wurde.
 
-Wenn `DoModal` IDOK zurückgibt, können Sie andere Element Funktionen aufrufen, um die Einstellungen oder Informationen einzugeben, die der Benutzer im Dialogfeld abruft.
+Wenn `DoModal` IDOK zurückgegeben wird, können Sie andere Memberfunktionen aufrufen, um die Einstellungen oder Informationen, die der Benutzer eingibt, in das Dialogfeld abzurufen.
 
-##  <a name="getdrawaspect"></a>COlePasteSpecialDialog:: getdrawaspect
+## <a name="colepastespecialdialoggetdrawaspect"></a><a name="getdrawaspect"></a>COlePasteSpecialDialog::GetDrawAspect
 
-Bestimmt, ob der Benutzer das ausgewählte Element als Symbol anzeigt.
+Legt fest, ob der Benutzer das ausgewählte Element als Symbol anzeigen möchte.
 
 ```
 DVASPECT GetDrawAspect() const;
@@ -292,21 +292,21 @@ DVASPECT GetDrawAspect() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Methode, die zum Rendering des-Objekts erforderlich ist.
+Die Methode, die zum Rendern des Objekts erforderlich ist.
 
-- DVASPECT_CONTENT zurückgegeben, wenn das Kontrollkästchen als Symbol anzeigen beim Verwerfen des Dialog Felds nicht überprüft wurde.
+- DVASPECT_CONTENT zurückgegeben, wenn das Kontrollkästchen Als Symbol anzeigen nicht aktiviert wurde, wenn das Dialogfeld verworfen wurde.
 
-- DVASPECT_ICON zurückgegeben, wenn das Kontrollkästchen als Symbol anzeigen beim Verwerfen des Dialog Felds aktiviert wurde.
+- DVASPECT_ICON zurückgegeben, wenn das Kontrollkästchen Als Symbol anzeigen aktiviert wurde, wenn das Dialogfeld deaktiviert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion nur dann aufzurufen, nachdem die [Domäne](#domodal) IDOK zurückgegeben hat.
+Rufen Sie diese Funktion nur auf, nachdem [DoModal](#domodal) IDOK zurückgegeben hat.
 
-Weitere Informationen zum Zeichnen-Aspekt finden Sie in der [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur im Windows SDK.
+Weitere Informationen zum Zeichnungsaspekt finden Sie in der [FORMATETC-Struktur](/windows/win32/api/objidl/ns-objidl-formatetc) im Windows SDK.
 
-##  <a name="geticonicmetafile"></a>COlePasteSpecialDialog:: getikonicmetafile
+## <a name="colepastespecialdialoggeticonicmetafile"></a><a name="geticonicmetafile"></a>COlePasteSpecialDialog::GetIconicMetafile
 
-Ruft die Metadatendatei ab, die dem vom Benutzer ausgewählten Element zugeordnet ist.
+Ruft die Metadatei ab, die dem vom Benutzer ausgewählten Element zugeordnet ist.
 
 ```
 HGLOBAL GetIconicMetafile() const;
@@ -314,9 +314,9 @@ HGLOBAL GetIconicMetafile() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Handle für die Metadatei, das den ikonischen Aspekt des ausgewählten Elements enthält, wenn das Kontrollkästchen als Symbol anzeigen beim Verwerfen des Dialog Felds ausgewählt wurde, indem Sie auf **OK**klicken. andernfalls NULL.
+Das Handle für die Metadatei, das den ikonischen Aspekt des ausgewählten Elements enthält, wenn das Kontrollkästchen Als Symbol anzeigen aktiviert wurde, als das Dialogfeld durch Auswahl **von OK**verworfen wurde; andernfalls NULL.
 
-##  <a name="getpasteindex"></a>COlePasteSpecialDialog:: getpasteindex
+## <a name="colepastespecialdialoggetpasteindex"></a><a name="getpasteindex"></a>COlePasteSpecialDialog::GetPasteIndex
 
 Ruft den Indexwert ab, der dem vom Benutzer ausgewählten Eintrag zugeordnet ist.
 
@@ -326,15 +326,15 @@ int GetPasteIndex() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Index im Array der `OLEUIPASTEENTRY` Strukturen, die vom Benutzer ausgewählt wurden. Das Format, das dem ausgewählten Index entspricht, sollte beim Ausführen des Einfügevorgangs verwendet werden.
+Der Index in `OLEUIPASTEENTRY` das Array von Strukturen, das vom Benutzer ausgewählt wurde. Das Format, das dem ausgewählten Index entspricht, sollte beim Ausführen des Einfügevorgangs verwendet werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie in der [oleuipasteentry](/windows/win32/api/oledlg/ns-oledlg-oleuipasteentryw) -Struktur in der Windows SDK.
+Weitere Informationen finden Sie in der [OLEUIPASTEENTRY-Struktur](/windows/win32/api/oledlg/ns-oledlg-oleuipasteentryw) im Windows SDK.
 
-##  <a name="getselectiontype"></a>COlePasteSpecialDialog:: GetSelectionType
+## <a name="colepastespecialdialoggetselectiontype"></a><a name="getselectiontype"></a>COlePasteSpecialDialog::GetSelectionType
 
-Bestimmt den vom Benutzer vorgenommenen Auswahltyp.
+Bestimmt den Auswahltyp, den der Benutzer getroffen hat.
 
 ```
 UINT GetSelectionType() const;
@@ -344,9 +344,9 @@ UINT GetSelectionType() const;
 
 Gibt den Typ der getroffenen Auswahl zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabetyp Werte werden durch den `Selection` Enumerationstyp angegeben, der in der `COlePasteSpecialDialog`-Klasse deklariert ist.
+Die Rückgabetypwerte werden `Selection` durch den in der `COlePasteSpecialDialog` Klasse deklarierten Enumerationstyp angegeben.
 
 ```
 enum Selection {
@@ -357,29 +357,29 @@ enum Selection {
     };
 ```
 
-Die folgenden Werte werden in kurze Form der folgenden Werte beschrieben:
+Kurze Beschreibungen dieser Werte folgen:
 
-- `COlePasteSpecialDialog::pasteLink` das Optionsfeld Link einfügen aktiviert wurde und das ausgewählte Format ein Standardmäßiges OLE-Format war.
+- `COlePasteSpecialDialog::pasteLink`Das Menülink-Optionsfeld wurde überprüft, und das gewählte Format war ein Standard-OLE-Format.
 
-- `COlePasteSpecialDialog::pasteNormal` das Optionsfeld einfügen aktiviert und das ausgewählte Format ein Standardmäßiges OLE-Format war.
+- `COlePasteSpecialDialog::pasteNormal`Die Schaltfläche "Einfügen" wurde aktiviert und das gewählte Format war ein Standard-OLE-Format.
 
-- `COlePasteSpecialDialog::pasteOther` das ausgewählte Format kein standardmäßiges OLE-Format ist.
+- `COlePasteSpecialDialog::pasteOther`Das ausgewählte Format ist kein Standard-OLE-Format.
 
-- `COlePasteSpecialDialog::pasteStatic` das ausgewählte Format eine Metadatei ist.
+- `COlePasteSpecialDialog::pasteStatic`Das gewählte Format war eine Metadatei.
 
-##  <a name="m_ps"></a>COlePasteSpecialDialog:: m_ps
+## <a name="colepastespecialdialogm_ps"></a><a name="m_ps"></a>COlePasteSpecialDialog::m_ps
 
-Struktur des Typs oleuipastespecial, mit der das Verhalten des Dialog Felds spezielles einfügen gesteuert wird.
+Struktur vom Typ OLEUIPASTESPECIAL, die verwendet wird, um das Verhalten des Dialogfelds "Spezial einfügen" zu steuern.
 
 ```
 OLEUIPASTESPECIAL m_ps;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Member dieser Struktur können direkt oder über Element Funktionen geändert werden.
+Member dieser Struktur können direkt oder über Memberfunktionen geändert werden.
 
-Weitere Informationen finden Sie in der [oleuipastespecial](/windows/win32/api/oledlg/ns-oledlg-oleuipastespecialw) -Struktur in der Windows SDK.
+Weitere Informationen finden Sie in der [OLEUIPASTESPECIAL-Struktur](/windows/win32/api/oledlg/ns-oledlg-oleuipastespecialw) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 

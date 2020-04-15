@@ -1,10 +1,13 @@
 ---
 title: remquo, remquof, remquol
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - remquof
 - remquo
 - remquol
+- _o_remquo
+- _o_remquof
+- _o_remquol
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +34,12 @@ helpviewer_keywords:
 - remquof function
 - remquo function
 ms.assetid: a1d3cb8b-8027-4cd3-8deb-04eb17f299fc
-ms.openlocfilehash: c96357dda007e9bf12ddaf6091af47794bfc0630
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e6a6f211e83118379e0697464d21f5968ea68cee
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949363"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332839"
 ---
 # <a name="remquo-remquof-remquol"></a>remquo, remquof, remquol
 
@@ -56,24 +60,26 @@ long double remquo( long double numer, long double denom, int* quo ); /* C++ onl
 
 ### <a name="parameters"></a>Parameter
 
-*Zahl*<br/>
+*numer*<br/>
 Der Zähler.
 
-*Denom*<br/>
+*denom*<br/>
 Der Nenner.
 
-*beizubehalten*<br/>
+*Quo*<br/>
 Ein Zeiger auf eine ganze Zahl zum Speichern eines Werts, der das Zeichen und die ungefähre Größe des Quotienten hat.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**remquo** gibt den Gleit Komma Rest von *x* / *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt **remquo** einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
+**remquo** gibt den Gleitkommarest von *x* / *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt **remquo** einen leisen NaN zurück. Informationen zur Darstellung eines ruhigen NaN durch die **printf-Familie** finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **remquo** -Funktion berechnet den Gleit Komma Rest *f* von *x* / *y* , sodass *x* = *i* \* *y* + *f*, wo *ich* ist eine ganze Zahl, *f* hat dasselbe Vorzeichen wie *x*, und der absolute Wert von *f* ist kleiner als der absolute Wert von *y*.
+Die **remquo-Funktion** berechnet den Gleitkommarest *f* von *x* / *y,* so dass *x* = *i* \* *y* + *f*, wobei *i* eine ganze Zahl ist, *f* das gleiche Vorzeichen wie *x*hat und der absolute Wert von *f* kleiner als der absolute Wert von *y*ist.
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **remquo** aufzurufen können, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **remquo** immer zwei **doppelte** Argumente an und gibt einen **Double**-Wert zurück.
+C++ ermöglicht eine Überlastung, sodass Sie Überladungen von **remquo** aufrufen können, die **Float-** oder **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt **remquo** immer zwei **doppelte** Argumente und gibt eine **doppelte**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 

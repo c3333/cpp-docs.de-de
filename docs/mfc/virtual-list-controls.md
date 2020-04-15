@@ -7,61 +7,61 @@ helpviewer_keywords:
 - list controls [MFC], List view
 - virtual list controls
 ms.assetid: 319f841f-e426-423a-8276-d93f965b0b45
-ms.openlocfilehash: a6e76a812a6196c487f72516e2b88198a544fdc7
-ms.sourcegitcommit: 3caf5261b3ea80d9cf14038c116ba981d655cd13
+ms.openlocfilehash: 1ade5f404e134cf6de20756dcc5af169fefdec76
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70907342"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375515"
 ---
 # <a name="virtual-list-controls"></a>Virtuelle Listensteuerelemente
 
-Ein virtuelles Listen Steuerelement ist ein Listenansicht-Steuerelement mit dem LVS_OWNERDATA-Stil. Dieser Stil ermöglicht dem Steuerelement, eine Element Anzahl bis zu einem **DWORD** zu unterstützen (die Standardelement Anzahl wird nur auf einen **int**-Wert ausgedehnt). Der größte Vorteil dieses Stils ist jedoch die Möglichkeit, jeweils nur eine Teilmenge der Datenelemente im Arbeitsspeicher zu haben. Dadurch kann sich das Steuerelement für die virtuelle Listenansicht für die Verwendung mit großen Datenbanken mit Informationen eignen, bei denen bestimmte Methoden für den Datenzugriff bereits vorhanden sind.
+Ein virtuelles Listensteuerelement ist ein Listenansichtssteuerelement mit dem Stil LVS_OWNERDATA. Dieser Stil ermöglicht es dem Steuerelement, eine Elementanzahl bis zu einem **DWORD** zu unterstützen (die Standardelementanzahl erstreckt sich nur auf einen **int**). Der größte Vorteil dieses Stils ist jedoch die Möglichkeit, nur eine Teilmenge von Datenelementen gleichzeitig im Arbeitsspeicher zu haben. Auf diese Weise kann sich das Steuerelement für die virtuelle Listenansicht für die Verwendung mit großen Informationsdatenbanken eignen, in denen bereits bestimmte Methoden für den Zugriff auf Daten vorhanden sind.
 
 > [!NOTE]
->  Zusätzlich zur Bereitstellung von Funktionen für virtuelle `CListCtrl`Listen in bietet MFC auch die gleiche Funktionalität in der [CListView](../mfc/reference/clistview-class.md) -Klasse.
+> Neben der Bereitstellung virtueller `CListCtrl`Listenfunktionen in bietet MFC auch die gleiche Funktionalität in der [CListView-Klasse.](../mfc/reference/clistview-class.md)
 
-Es gibt einige Kompatibilitätsprobleme, die bei der Entwicklung von Virtual List-Steuerelementen zu beachten sind. Weitere Informationen finden Sie im Abschnitt Kompatibilitätsprobleme des Themas Listenansicht-Steuerelemente in der Windows SDK.
+Es gibt einige Kompatibilitätsprobleme, die Sie beim Entwickeln virtueller Listensteuerelemente beachten sollten. Weitere Informationen finden Sie im Abschnitt Kompatibilitätsprobleme im Thema Listenansichtssteuerelemente im Windows SDK.
 
-## <a name="handling-the-lvn_getdispinfo-notification"></a>Behandeln der LVN_GETDISPINFO-Benachrichtigung
+## <a name="handling-the-lvn_getdispinfo-notification"></a>Behandeln der LVN_GETDISPINFO Benachrichtigung
 
-Virtuelle Listen Steuerelemente behalten sehr wenig Element Informationen bei. Mit Ausnahme der Elementauswahl und der Fokus Informationen werden alle Element Informationen vom Besitzer des Steuer Elements verwaltet. Informationen werden vom Framework über eine LVN_GETDISPINFO-Benachrichtigungs Meldung angefordert. Um die angeforderten Informationen bereitzustellen, muss der Besitzer des Steuer Elements der virtuellen Liste (oder das Steuerelement selbst) diese Benachrichtigung verarbeiten. Dies kann problemlos mithilfe des Klassen- [Assistenten](reference/mfc-class-wizard.md) erfolgen (Weitere Informationen finden Sie unter [Mapping messages to Functions](../mfc/reference/mapping-messages-to-functions.md)). Der resultierende Code sollte in `CMyDialog` etwa wie im folgenden Beispiel aussehen (dabei ist das virtuelle Listen Steuerelement Objekt, und das Dialogfeld verarbeitet die Benachrichtigung):
+Virtuelle Listensteuerelemente verwalten nur sehr wenige Elementinformationen. Mit Ausnahme der Artikelauswahl- und Fokusinformationen werden alle Elementinformationen vom Besitzer des Steuerelements verwaltet. Informationen werden vom Framework über eine LVN_GETDISPINFO Benachrichtigung angefordert. Um die angeforderten Informationen bereitzustellen, muss der Besitzer des virtuellen Listensteuerelements (oder das Steuerelement selbst) diese Benachrichtigung behandeln. Dies kann ganz einfach mit dem [Klassen-Assistenten](reference/mfc-class-wizard.md) erfolgen (siehe [Zuordnen von Nachrichten zu Funktionen](../mfc/reference/mapping-messages-to-functions.md)). Der resultierende Code sollte etwa wie im `CMyDialog` folgenden Beispiel aussehen (wo das virtuelle Listensteuerelementobjekt gehört und das Dialogfeld die Benachrichtigung verarbeitet):
 
 [!code-cpp[NVC_MFCControlLadenDialog#23](../mfc/codesnippet/cpp/virtual-list-controls_1.cpp)]
 
-Im Handler für die LVN_GETDISPINFO-Benachrichtigungs Meldung müssen Sie überprüfen, um festzustellen, welche Art von Informationen angefordert werden. Mögliche Werte sind:
+Im Handler für die LVN_GETDISPINFO Benachrichtigung müssen Sie überprüfen, welche Art von Informationen angefordert werden. Mögliche Werte:
 
-- `LVIF_TEXT`Der *pszText* -Member muss ausgefüllt werden.
+- `LVIF_TEXT`Das *pszText-Element* muss ausgefüllt werden.
 
-- `LVIF_IMAGE`Der *iImage* -Member muss ausgefüllt werden.
+- `LVIF_IMAGE`Das *iImage-Member* muss ausgefüllt werden.
 
-- `LVIF_INDENT`Der *iIndent* -Member muss ausgefüllt werden.
+- `LVIF_INDENT`Das *iIndent-Element* muss ausgefüllt werden.
 
-- `LVIF_PARAM`Der *LPARAM* -Member muss ausgefüllt werden. (Für unter Elemente nicht vorhanden.)
+- `LVIF_PARAM`Das *lParam-Mitglied* muss ausgefüllt werden. (Nicht vorhanden für Unterpositionen.)
 
-- `LVIF_STATE`Der *State* -Member muss ausgefüllt werden.
+- `LVIF_STATE`Das *Landesmitglied* muss ausgefüllt werden.
 
-Anschließend sollten Sie alle Informationen bereitstellen, die an das Framework zurück angefordert werden.
+Sie sollten dann alle angeforderten Informationen an den Rahmen zurückgeben.
 
-Im folgenden Beispiel (aus dem Text des Benachrichtigungs Handlers für das Listen Steuerelement-Objekt entnommen) wird eine mögliche Methode veranschaulicht, indem Informationen für die Text Puffer und das Bild eines Elements bereitgestellt werden:
+Das folgende Beispiel (aus dem Text des Benachrichtigungshandlers für das Listensteuerelementobjekt) veranschaulicht eine mögliche Methode, indem Informationen für die Textpuffer und das Bild eines Elements zur Verfügung gestellt werden:
 
 [!code-cpp[NVC_MFCControlLadenDialog#24](../mfc/codesnippet/cpp/virtual-list-controls_2.cpp)]
 
-## <a name="caching-and-virtual-list-controls"></a>Caching und Virtual List-Steuerelemente
+## <a name="caching-and-virtual-list-controls"></a>Zwischenspeichern und virtuelle Listensteuerelemente
 
-Da diese Art von Listen Steuerelement für große Datasets gedacht ist, sollten Sie angeforderte Elementdaten Zwischenspeichern, um die Abruf Leistung zu verbessern. Das Framework bietet einen Cache-Hinting-Mechanismus, der die Optimierung des Caches durch Senden einer LVN_ODCACHEHINT-Benachrichtigungs Meldung unterstützt.
+Da dieser Typ von Listensteuerelement für große Datensätze vorgesehen ist, wird empfohlen, angeforderte Elementdaten zwischenzuspeichern, um die Abrufleistung zu verbessern. Das Framework bietet einen Cache-Hinweismechanismus, der die Optimierung des Caches durch Senden einer LVN_ODCACHEHINT Benachrichtigung unterstützt.
 
-Im folgenden Beispiel wird der Cache mit dem an die Handlerfunktion Übergabe Bereich aktualisiert.
+Im folgenden Beispiel wird der Cache mit dem Bereich aktualisiert, der an die Handlerfunktion übergeben wird.
 
 [!code-cpp[NVC_MFCControlLadenDialog#25](../mfc/codesnippet/cpp/virtual-list-controls_3.cpp)]
 
-Weitere Informationen zum Vorbereiten und Verwalten eines Caches finden Sie im Abschnitt Cache Verwaltung des Themas Listenansicht-Steuerelemente in der Windows SDK.
+Weitere Informationen zum Vorbereiten und Verwalten eines Caches finden Sie im Abschnitt Cacheverwaltung im Thema Listenansichtssteuerelemente im Windows SDK.
 
-## <a name="finding-specific-items"></a>Suchen nach bestimmten Elementen
+## <a name="finding-specific-items"></a>Suchen bestimmter Elemente
 
-Die LVN_ODFINDITEM-Benachrichtigungs Meldung wird vom Virtual List-Steuerelement gesendet, wenn ein bestimmtes Listen Steuerungselement gefunden werden muss. Die Benachrichtigungs Meldung wird gesendet, wenn das Listenansicht-Steuerelement einen schnellen Zugriffsschlüssel erhält oder wenn es eine LVM_FINDITEM-Nachricht empfängt. Suchinformationen werden in Form einer " **LVFINDINFO** "-Struktur gesendet, die ein Member der **nmlvfinditem** -Struktur ist. Behandeln Sie diese Nachricht, indem `OnChildNotify` Sie die Funktion des Listen Steuerungs Objekts überschreiben und innerhalb des Text Körpers des Handlers die LVN_ODFINDITEM-Nachricht überprüfen. Wenn Sie gefunden werden, führen Sie die entsprechende Aktion aus.
+Die LVN_ODFINDITEM Benachrichtigungwird vom virtuellen Listensteuerelement gesendet wird, wenn ein bestimmtes Listensteuerelement gefunden werden muss. Die Benachrichtigung wird gesendet, wenn das Listenansichtssteuerelement schnellen Schlüsselzugriff empfängt oder wenn es eine LVM_FINDITEM Nachricht empfängt. Suchinformationen werden in Form einer **LVFINDINFO-Struktur** gesendet, die mitglied der **NMLVFINDITEM-Struktur** ist. Behandeln Sie diese Meldung, indem Sie die `OnChildNotify` Funktion des Listensteuerelements und innerhalb des Hauptteils des Handlers überschreiben, überprüfen Sie, ob die LVN_ODFINDITEM Nachricht. Wenn gefunden, führen Sie die entsprechende Aktion aus.
 
-Sie sollten darauf vorbereitet sein, nach einem Element zu suchen, das den vom Listenansicht-Steuerelement angegebenen Informationen entspricht. Wenn kein übereinstimmendes Element gefunden wird, sollten Sie den Index des Elements zurückgeben, oder-1, wenn kein entsprechendes Element gefunden wurde.
+Sie sollten bereit sein, nach einem Element zu suchen, das den Informationen des Listenansichtssteuerelements entspricht. Sie sollten den Index des Elements zurückgeben, wenn es erfolgreich ist, oder -1, wenn kein übereinstimmendes Element gefunden wird.
 
 ## <a name="see-also"></a>Siehe auch
 

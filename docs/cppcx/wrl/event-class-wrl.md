@@ -1,5 +1,5 @@
 ---
-title: Event-Klasse (WRL)
+title: Ereignisklasse (WRL)
 ms.date: 09/24/2018
 ms.topic: reference
 f1_keywords:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::Event::Event, constructor
 - Microsoft::WRL::Wrappers::Event::operator= operator
 ms.assetid: 55dfc9fc-62d4-4bb2-9d85-5b6dd88569e8
-ms.openlocfilehash: 2d36b4fa3d1824f43e0cfafe55c439a6bdeccb6f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 85b4c2d1f1a27e90a65e47aa749e079f4aa08739
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398549"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371519"
 ---
-# <a name="event-class-wrl"></a>Event-Klasse (WRL)
+# <a name="event-class-wrl"></a>Ereignisklasse (WRL)
 
 Stellt ein Ereignis dar.
 
@@ -32,15 +32,15 @@ class Event : public HandleT<HandleTraits::EventTraits>;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                   | Beschreibung
+Name                   | BESCHREIBUNG
 ---------------------- | ------------------------------------------------
-[Event::Event](#event) | Initialisiert eine neue Instanz der `Event`-Klasse.
+[Veranstaltung::Event](#event) | Initialisiert eine neue Instanz der Klasse `Event`.
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-Name                                 | Beschreibung
+Name                                 | BESCHREIBUNG
 ------------------------------------ | ------------------------------------------------------------------------
-[Event::operator=](#operator-assign) | Weist dem angegebenen `Event` Verweis auf das aktuelle `Event` Instanz.
+[Ereignis::operator=](#operator-assign) | Weist der `Event` aktuellen `Event` Instanz den angegebenen Verweis zu.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -50,13 +50,13 @@ Name                                 | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers
 
-## <a name="event"></a>Event::Event
+## <a name="eventevent"></a><a name="event"></a>Veranstaltung::Event
 
-Initialisiert eine neue Instanz der `Event`-Klasse.
+Initialisiert eine neue Instanz der Klasse `Event`.
 
 ```cpp
 explicit Event(
@@ -69,12 +69,12 @@ WRL_NOTHROW Event(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Handle für ein Ereignis. In der Standardeinstellung *h* wird initialisiert `nullptr`.
+*H*<br/>
+Handle für ein Ereignis. Standardmäßig wird *h* in `nullptr`initialisiert.
 
-## <a name="operator-assign"></a>Event::operator=
+## <a name="eventoperator"></a><a name="operator-assign"></a>Ereignis::operator=
 
-Weist dem angegebenen `Event` Verweis auf das aktuelle `Event` Instanz.
+Weist der `Event` aktuellen `Event` Instanz den angegebenen Verweis zu.
 
 ```cpp
 WRL_NOTHROW Event& operator=(
@@ -84,9 +84,9 @@ WRL_NOTHROW Event& operator=(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Ein Rvalue-Verweis auf ein `Event` Instanz.
+*H*<br/>
+Ein rvalue-Verweis `Event` auf eine Instanz.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die aktuelle `Event` Instanz.
+Ein Zeiger auf `Event` die aktuelle Instanz.

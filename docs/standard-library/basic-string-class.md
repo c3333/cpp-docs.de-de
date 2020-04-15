@@ -116,16 +116,16 @@ helpviewer_keywords:
 - std::basic_string [C++], substr
 - std::basic_string [C++], swap
 ms.assetid: a9c3e0a2-39bf-4c8a-b093-9abe30839591
-ms.openlocfilehash: 9d00ba8161e204661077848f213043bf2b275c15
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 0aca4e8b8a446eb773f6ba4efaeb4a0a6c9644af
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076733"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376723"
 ---
 # <a name="basic_string-class"></a>basic_string-Klasse
 
-Die von einem Objekt vom Typ "`basic_string`" gesteuerten Sequenzen sind C++ die Standard mäßige Zeichen folgen Klasse und werden normalerweise als Zeichen folgen bezeichnet. Sie sollten jedoch nicht mit den auf NULL endenden Zeichen folgen C++ im C-Stil verwechselt werden, die in der Standardbibliothek verwendet werden. Die C++-Standardzeichenfolge ist ein Container, der die Verwendung von Zeichenfolgen als Normaltypen, wie das Verwenden von Vergleichs- und Verkettungsvorgängen, Iteratoren, STL-Algorithmen sowie das Kopieren und Zuweisen mit von Klassenzuweisung verwaltetem Arbeitsspeicher, ermöglicht. Falls eine C++-Standardzeichenfolge in eine auf NULL endende Zeichenfolge im C-Stil konvertiert werden muss, verwenden Sie den Member [basic_string::c_str](#c_str).
+Die Sequenzen, die von `basic_string` einem Objekt vom Typ gesteuert werden, sind die Standard-C++-Zeichenfolgenklasse und werden normalerweise als Zeichenfolgen bezeichnet, sollten jedoch nicht mit den in der C++-Standardbibliothek verwendeten Zeichenfolgen im C++-Stil verwechselt werden. Die C++-Standardzeichenfolge ist ein Container, der die Verwendung von Zeichenfolgen als Normaltypen, wie das Verwenden von Vergleichs- und Verkettungsvorgängen, Iteratoren, STL-Algorithmen sowie das Kopieren und Zuweisen mit von Klassenzuweisung verwaltetem Arbeitsspeicher, ermöglicht. Falls eine C++-Standardzeichenfolge in eine auf NULL endende Zeichenfolge im C-Stil konvertiert werden muss, verwenden Sie den Member [basic_string::c_str](#c_str).
 
 ## <a name="syntax"></a>Syntax
 
@@ -136,14 +136,14 @@ class basic_string;
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
-Der Datentyp eines einzelnen in der Zeichenfolge zu speichernden Zeichens. Die C++ Standard Bibliothek bietet Spezialisierungs Informationen für diese Klassen Vorlage mit den Typdefinitionen [String](../standard-library/string-typedefs.md#string) für Elemente des Typs **char**, [wstring](../standard-library/string-typedefs.md#wstring), für **wchar_t**, [u16string](../standard-library/string-typedefs.md#u16string) für `char16_t`und [u32string](../standard-library/string-typedefs.md#u32string) für `char32_t`.
+*Chartype*\
+Der Datentyp eines einzelnen in der Zeichenfolge zu speichernden Zeichens. Die C++-Standardbibliothek bietet Spezialisierungen dieser Klassenvorlage mit der Typdefinitionszeichenfolge für Elemente vom Typ **char** `char16_t`, [wstring](../standard-library/string-typedefs.md#wstring), für **wchar_t**, [u16string](../standard-library/string-typedefs.md#u16string) für und [u32string](../standard-library/string-typedefs.md#u32string) für `char32_t`. [string](../standard-library/string-typedefs.md#string)
 
 *Merkmale*\
-Verschiedene wichtige Eigenschaften der `CharType` Elemente in einer basic_string Spezialisierung werden von der-Klasse `Traits`beschrieben. Der Standardwert ist `char_traits`< `CharType`>.
+Verschiedene wichtige Eigenschaften `CharType` der Elemente in einer basic_string `Traits`Spezialisierung werden von der Klasse beschrieben. Der Standardwert ist `char_traits`< `CharType`>.
 
-*Zuordner\*
-Der Typ, mit dem das gespeicherte Zuordnungsobjekt darstellt wird, mit dem Details zum Belegen und Freigeben des Arbeitsspeichers der Zeichenfolge gekapselt werden. Der Standardwert lautet **allocator**< `CharType`>.
+*Zuweisung*\
+Der Typ, mit dem das gespeicherte Zuordnungsobjekt darstellt wird, mit dem Details zum Belegen und Freigeben des Arbeitsspeichers der Zeichenfolge gekapselt werden. Der Standardwert ist **>.** <  `CharType`
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -161,58 +161,58 @@ Der Typ, mit dem das gespeicherte Zuordnungsobjekt darstellt wird, mit dem Detai
 |[const_reference](#const_reference)|Ein Typ, der einen Verweis auf ein **const**-Element bereitstellt, das in einer Liste zum Lesen und Ausführen von **const**-Vorgängen gespeichert ist.|
 |[const_reverse_iterator](#const_reverse_iterator)|Ein Typ, der einen Iterator mit wahlfreiem Zugriff bereitstellt, mit dem jedes **const**-Element in der Zeichenfolge gelesen werden kann.|
 |[difference_type](#difference_type)|Ein Typ, der den Unterschied zwischen zwei Iteratoren, die auf Elemente innerhalb derselben Zeichenfolge verweisen, bereitstellt.|
-|[iterator](#iterator)|Ein Typ, der einen Iterator mit zufälligem Zugriff bereitstellt, mit dem jedes Element in einer Zeichenfolge gelesen oder geändert werden kann.|
-|[npos](#npos)|Ein ganzzahliger ganzzahliger Wert, der auf-1 initialisiert wurde und entweder "nicht gefunden" oder "alle verbleibenden Zeichen" angibt, wenn eine Suchfunktion fehlschlägt.|
-|[pointer](#pointer)|Ein Typ, der einen Zeiger auf ein Zeichenelement in einer Zeichenfolge oder einem Zeichenarray bereitstellt.|
-|[Referenz](#reference)|Ein Typ, der einen Verweis auf ein in einer Zeichenfolge gespeichertes Element bereitstellt.|
+|[Iterator](#iterator)|Ein Typ, der einen Iterator mit zufälligem Zugriff bereitstellt, mit dem jedes Element in einer Zeichenfolge gelesen oder geändert werden kann.|
+|[npos](#npos)|Ein nicht signierter integraler Wert, der auf -1 initialisiert wurde und entweder "nicht gefunden" oder "alle verbleibenden Zeichen" angibt, wenn eine Suchfunktion fehlschlägt.|
+|[Zeiger](#pointer)|Ein Typ, der einen Zeiger auf ein Zeichenelement in einer Zeichenfolge oder einem Zeichenarray bereitstellt.|
+|[Verweis](#reference)|Ein Typ, der einen Verweis auf ein in einer Zeichenfolge gespeichertes Element bereitstellt.|
 |[reverse_iterator](#reverse_iterator)|Ein Typ, der einen Iterator mit zufälligem Zugriff bereitstellt, mit dem ein Element in einer umgekehrten Zeichenfolge gelesen oder geändert werden kann.|
-|[size_type](#size_type)|Ein Integraltyp ohne Vorzeichen für die Anzahl von Elementen in einer Zeichenfolge.|
+|[Size_type](#size_type)|Ein Integraltyp ohne Vorzeichen für die Anzahl von Elementen in einer Zeichenfolge.|
 |[traits_type](#traits_type)|Ein Typ für die Zeichenmerkmale der in einer Zeichenfolge gespeicherten Elemente.|
-|[value_type](#value_type)|Ein Typ, der die Art der in einer Zeichenfolge gespeicherten Zeichen darstellt.|
+|[Value_type](#value_type)|Ein Typ, der die Art der in einer Zeichenfolge gespeicherten Zeichen darstellt.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[append](#append)|Fügt am Ende einer Zeichenfolge Zeichen hinzu.|
-|[assign](#assign)|Weist dem Inhalt einer Zeichenfolge neue Zeichenwerte zu.|
-|[at](#at)|Gibt einen Verweis auf das Element an einer angegebenen Position in der Zeichenfolge zurück.|
-|[Rückseite](#back)||
-|[begin](#begin)|Gibt ein Iterator zurück, der das erste Element in der Zeichenfolge adressiert.|
+|[Anfügen](#append)|Fügt am Ende einer Zeichenfolge Zeichen hinzu.|
+|[Zuweisen](#assign)|Weist dem Inhalt einer Zeichenfolge neue Zeichenwerte zu.|
+|[Auf](#at)|Gibt einen Verweis auf das Element an einer angegebenen Position in der Zeichenfolge zurück.|
+|[back (Zurück)](#back)||
+|[Beginnen](#begin)|Gibt ein Iterator zurück, der das erste Element in der Zeichenfolge adressiert.|
 |[c_str](#c_str)|Konvertiert den Inhalt einer Zeichenfolge als eine auf NULL endende Zeichenfolge im C-Format zurück.|
 |[Kapazität](#capacity)|Gibt die höchste Anzahl von Elementen zurück, die ohne Erhöhung der Speicherbelegung der Zeichenfolge in einer Zeichenfolge gespeichert werden können.|
 |[cbegin](#cbegin)|Gibt einen const-Iterator zurück, der das erste Element in der Zeichenfolge adressiert.|
 |[cend](#cend)|Gibt einen const-Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer Zeichenfolge nachfolgt.|
-|[Löschen](#clear)|Löscht alle Elemente einer Zeichenfolge.|
-|[compare](#compare)|Vergleicht eine Zeichenfolge mit einer angegebenen Zeichenfolge, um zu bestimmen, ob die beiden Zeichenfolgen gleich sind, oder ob eine lexikografisch kleiner als die andere ist.|
-|[copy](#copy)|Kopiert höchstens eine angegebene Anzahl von Zeichen aus einer indizierten Position in einer Quellzeichenfolge in ein Zielzeichenarray. Veraltet. Verwenden Sie stattdessen [basic_string::_Copy_s](#copy_s).|
+|[Klar](#clear)|Löscht alle Elemente einer Zeichenfolge.|
+|[Vergleichen](#compare)|Vergleicht eine Zeichenfolge mit einer angegebenen Zeichenfolge, um zu bestimmen, ob die beiden Zeichenfolgen gleich sind, oder ob eine lexikografisch kleiner als die andere ist.|
+|[Kopieren](#copy)|Kopiert höchstens eine angegebene Anzahl von Zeichen aus einer indizierten Position in einer Quellzeichenfolge in ein Zielzeichenarray. Veraltet. Verwenden Sie stattdessen [basic_string::_Copy_s](#copy_s).|
 |[crbegin](#crbegin)|Gibt einen const-Iterator zurück, der das erste Element in einer umgekehrter Zeichenfolge adressiert.|
 |[crend](#crend)|Gibt einen const-Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer umgekehrten Zeichenfolge nachfolgt.|
 |[_Copy_s](#copy_s)|Kopiert höchstens eine angegebene Anzahl von Zeichen aus einer indizierten Position in einer Quellzeichenfolge in ein Zielzeichenarray.|
-|[data](#data)|Konvertiert den Inhalt einer Zeichenfolge in ein Zeichenarray.|
+|[Daten](#data)|Konvertiert den Inhalt einer Zeichenfolge in ein Zeichenarray.|
 |[empty](#empty)|Testet, ob in der Zeichenfolge Zeichen enthalten sind.|
-|[end](#end)|Gibt einen Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer Zeichenfolge nachfolgt.|
+|[Ende](#end)|Gibt einen Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer Zeichenfolge nachfolgt.|
 |[erase](#erase)|Entfernt ein Element oder einen Reihe von Elementen einer Zeichenfolge von einer angegebenen Position.|
 |[find](#find)|Sucht eine Zeichenfolge vorwärts nach dem ersten Vorkommen einer Teilzeichenfolge ab, die mit einer bestimmten Zeichensequenz übereinstimmt.|
 |[find_first_not_of](#find_first_not_of)|Durchsucht eine Zeichenfolge nach dem ersten Zeichen, das kein Element einer angegebenen Zeichenfolge ist.|
 |[find_first_of](#find_first_of)|Durchsucht eine Zeichenfolge nach dem ersten Zeichen, das einem Element der angegebenen Zeichenfolge entspricht.|
 |[find_last_not_of](#find_last_not_of)|Durchsucht eine Zeichenfolge nach dem letzten Zeichen, das kein Element einer angegebenen Zeichenfolge ist.|
 |[find_last_of](#find_last_of)|Durchsucht eine Zeichenfolge nach dem letzten Zeichen, das ein Element der angegebenen Zeichenfolge ist.|
-|[Vorderseite](#front)|Gibt einen Verweis auf das erste Element in einer Zeichenfolge zurück.|
+|[Vorder-](#front)|Gibt einen Verweis auf das erste Element in einer Zeichenfolge zurück.|
 |[get_allocator](#get_allocator)|Gibt eine Kopie des zum Erstellen der Zeichenfolge verwendeten `allocator`-Objekts zurück.|
-|[insert](#insert)|Fügt ein Element oder mehrere Elemente oder ein Reihe von Elementen an einer bestimmten Position in die Zeichenfolge ein.|
+|[Einfügen](#insert)|Fügt ein Element oder mehrere Elemente oder ein Reihe von Elementen an einer bestimmten Position in die Zeichenfolge ein.|
 |[length](#length)|Gibt die aktuelle Anzahl von Elementen in einer Zeichenfolge zurück.|
-|[max_size](#max_size)|Gibt die Höchstanzahl von Zeichen, die eine Zeichenfolge enthalten könnte zurück.|
+|[Max_size](#max_size)|Gibt die Höchstanzahl von Zeichen, die eine Zeichenfolge enthalten könnte zurück.|
 |[pop_back](#pop_back)|Löscht das letzte Element der Zeichenfolge.|
 |[push_back](#push_back)|Fügt ein Element am Ende der Zeichenfolge hinzu.|
 |[rbegin](#rbegin)|Gibt einen Iterator an das erste Element in einer umgekehrten Zeichenfolge zurück.|
 |[rend](#rend)|Gibt einen Iterator zurück, der auf die Position direkt hinter dem letzten Element in einer umgekehrten Zeichenfolge zeigt.|
 |[replace](#replace)|Ersetzt Elemente an einer bestimmten Position in einer Zeichenfolge durch angegebene Zeichen oder Zeichen, die aus anderen Bereichen oder Zeichenfolgen oder C-Zeichenfolgen kopiert werden.|
-|[reserve](#reserve)|Legt die Kapazität der Zeichenfolge auf eine Zahl fest, die mindestens so groß ist, wie eine angegebene Anzahl.|
-|[resize](#resize)|Gibt eine neue Größe für eine Zeichenfolge an und fügt Elemente an bzw. löscht sie bei Bedarf.|
+|[Reservieren](#reserve)|Legt die Kapazität der Zeichenfolge auf eine Zahl fest, die mindestens so groß ist, wie eine angegebene Anzahl.|
+|[Größe](#resize)|Gibt eine neue Größe für eine Zeichenfolge an und fügt Elemente an bzw. löscht sie bei Bedarf.|
 |[rfind](#rfind)|Sucht eine Zeichenfolge rückwärts nach dem ersten Vorkommen einer Teilzeichenfolge ab, die mit einer bestimmten Zeichensequenz übereinstimmt.|
 |[shrink_to_fit](#shrink_to_fit)|Verwirft die Überkapazität der Zeichenfolge.|
-|[size](#size)|Gibt die aktuelle Anzahl von Elementen in einer Zeichenfolge zurück.|
+|[Größe](#size)|Gibt die aktuelle Anzahl von Elementen in einer Zeichenfolge zurück.|
 |[substr](#substr)|Kopiert eine Teilzeichenfolge höchstens einer beliebigen Anzahl von Zeichen aus einer Zeichenfolge, beginnend an einer angegebenen Position.|
 |[swap](#swap)|Tauschen Sie den Inhalt von zwei Zeichenfolgen aus.|
 
@@ -220,9 +220,9 @@ Der Typ, mit dem das gespeicherte Zuordnungsobjekt darstellt wird, mit dem Detai
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[operator+=](#op_add_eq)|Fügt einer Zeichenfolge Zeichen an.|
-|[operator=](#op_eq)|Weist dem Inhalt einer Zeichenfolge neue Zeichenwerte zu.|
-|[operator[]](#op_at)|Stellt mit einem angegebenen Index in einer Zeichenfolge einen Verweis auf das Zeichen.|
+|[Operator+=](#op_add_eq)|Fügt einer Zeichenfolge Zeichen an.|
+|[Operator=](#op_eq)|Weist dem Inhalt einer Zeichenfolge neue Zeichenwerte zu.|
+|[operator&#91;&#93;](#op_at)|Stellt mit einem angegebenen Index in einer Zeichenfolge einen Verweis auf das Zeichen.|
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -230,13 +230,13 @@ Wenn eine Funktion aufgefordert wird, eine Sequenz zu generieren, die länger al
 
 Verweise, Zeiger und Iteratoren, mit denen Elemente der gesteuerten Sequenz festgelegt werden, können nach jedem Aufruf einer Funktion, mit der die gesteuerte Sequenz geändert wird, oder nach dem ersten Aufruf einer anderen als einer **const**-Memberfunktion ungültig werden.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Zeichenfolge >
+**Header:** \<string>
 
 **Namespace:** std
 
-## <a name="basic_stringallocator_type"></a><a name="allocator_type"></a> basic_string::allocator_type
+## <a name="basic_stringallocator_type"></a><a name="allocator_type"></a>basic_string::allocator_type
 
 Ein Typ, mit dem die Zuweisungsklasse für ein Zeichenfolgenobjekt dargestellt wird.
 
@@ -246,7 +246,7 @@ typedef Allocator allocator_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `Allocator`dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `Allocator` dar.
 
 ### <a name="example"></a>Beispiel
 
@@ -267,7 +267,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringappend"></a><a name="append"></a> basic_string::append
+## <a name="basic_stringappend"></a><a name="append"></a>basic_string::anfügen
 
 Fügt am Ende einer Zeichenfolge Zeichen hinzu.
 
@@ -307,7 +307,7 @@ basic_string<CharType, Traits, Allocator>& append(
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, die angefügt werden soll.
 
 *Str*\
@@ -316,16 +316,16 @@ Die Zeichenfolge, deren Zeichen angefügt werden sollen.
 *Offset*\
 Der Index des Teils der Quellzeichenfolge, der die anzufügenden Zeichen bereitstellt.
 
-*Anzahl*\
+*Count*\
 Die Anzahl der Zeichen, die höchstens aus der Quellzeichenfolge angefügt werden darf.
 
 *char_value*\
 Der Zeichenwert, der angefügt werden soll.
 
-*erste*\
+*Ersten*\
 Ein Eingabeiterator, der das erste Element im Bereich adressiert, der angefügt werden soll.
 
-*Letzter*\
+*letzte*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der die Position eines der letzten Elemente im anzufügenden Bereich adressiert.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -334,7 +334,7 @@ Ein Verweis auf das Zeichenfolgenobjekt, an das die Zeichen angefügt werden, di
 
 ### <a name="remarks"></a>Bemerkungen
 
-Zeichen können mithilfe des [Operators + =](#op_add_eq) oder der Element Funktionen `append` oder [push_back](#push_back)an eine Zeichenfolge angehängt werden. `operator+=` fügt einzelne Argument Werte an, während die `append` Member-Funktion mit mehreren Argumenten einen bestimmten Teil einer Zeichenfolge zum Hinzufügen von angeben kann.
+Zeichen können mit dem [operator+=](#op_add_eq) oder den Memberfunktionen `append` oder [push_back](#push_back)an eine Zeichenfolge angehängt werden. `operator+=`fügt Einzelargumentwerte an, während `append` die Memberfunktion mit mehreren Argumenten die Angabe eines bestimmten Teils einer Zeichenfolge zum Hinzufügen ermöglicht.
 
 ### <a name="example"></a>Beispiel
 
@@ -428,7 +428,7 @@ The string str2f is: Wide World
 The appended string str1 is: Hello World.
 ```
 
-## <a name="basic_stringassign"></a><a name="assign"></a> basic_string::assign
+## <a name="basic_stringassign"></a><a name="assign"></a>basic_string::zuweisen
 
 Weist dem Inhalt einer Zeichenfolge neue Zeichenwerte zu.
 
@@ -468,11 +468,11 @@ basic_string<CharType, Traits, Allocator>& assign(
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*Ptr*\
 Ein Zeiger auf die Zeichen einer C-Zeichenfolge, die der Zielzeichenfolge zugewiesen werden sollen.
 
-*Anzahl*\
-Die Anzahl der Zeichen, die aus der Quell Zeichenfolge zugewiesen werden sollen.
+*Count*\
+Die Anzahl der Zeichen, die aus der Quellzeichenfolge zugewiesen werden sollen.
 
 *Str*\
 Die Quellzeichenfolge, deren Zeichen der Zielzeichenfolge zugewiesen werden sollen.
@@ -480,13 +480,13 @@ Die Quellzeichenfolge, deren Zeichen der Zielzeichenfolge zugewiesen werden soll
 *char_value*\
 Der Zeichenwert, der zugewiesen werden soll.
 
-*erste*\
+*Ersten*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der das erste Zeichen im Bereich der Quellzeichenfolge adressiert, die dem Zielbereich zugewiesen werden soll.
 
-*Letzter*\
+*letzte*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der das Zeichen nach dem letzten Zeichen im Bereich der Quellzeichenfolge adressiert, die dem Zielbereich zugewiesen werden soll.
 
-*aus*\
+*Aus*\
 Die Position, ab der neue Zeichen zugewiesen werden.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -495,7 +495,7 @@ Ein Verweis auf das Zeichenfolgenobjekt, dem durch die Memberfunktion neue Zeich
 
 ### <a name="remarks"></a>Bemerkungen
 
-Den Zeichenfolgen können neue Zeichenwerte zugewiesen werden. Der neue Wert kann entweder eine Zeichenfolge und C-Zeichenfolge oder ein einzelnes Zeichen sein. Der [Operator =](#op_eq) kann verwendet werden, wenn der neue Wert von einem einzelnen Parameter beschrieben werden kann. Andernfalls kann die Member-Funktion `assign`, die über mehrere Parameter verfügt, verwendet werden, um anzugeben, welcher Teil der Zeichenfolge einer Ziel Zeichenfolge zugewiesen werden soll.
+Den Zeichenfolgen können neue Zeichenwerte zugewiesen werden. Der neue Wert kann entweder eine Zeichenfolge und C-Zeichenfolge oder ein einzelnes Zeichen sein. Der [Operator=](#op_eq) kann verwendet werden, wenn der neue Wert durch einen einzigen Parameter beschrieben werden kann; Andernfalls kann `assign`die Memberfunktion , die über mehrere Parameter verfügt, verwendet werden, um anzugeben, welcher Teil der Zeichenfolge einer Zielzeichenfolge zugewiesen werden soll.
 
 ### <a name="example"></a>Beispiel
 
@@ -589,7 +589,7 @@ The string str2f is: Wide World
 The string str1 assigned a range of string str2f is: World.
 ```
 
-## <a name="basic_stringat"></a><a name="at"></a> basic_string::at
+## <a name="basic_stringat"></a><a name="at"></a>basic_string::at
 
 Stellt mit einem angegebenen Index in einer Zeichenfolge einen Verweis auf das Zeichen.
 
@@ -610,13 +610,13 @@ Ein Verweis auf das Zeichen der Zeichenfolge an der Position, die durch den Para
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das erste Element der Zeichenfolge weist einen Index von NULL auf, und die folgenden Elemente werden nacheinander durch die positiven ganzen Zahlen indiziert, sodass eine Zeichenfolge der Länge *n* über ein *n*-te Element verfügt, das von der Zahl *n-* 1 indiziert wird.
+Das erste Element der Zeichenfolge hat einen Index von Null, und die folgenden Elemente werden fortlaufend durch die positiven ganzen Zahlen indiziert, sodass eine Zeichenfolge der Länge *n* ein *n*th-Element hat, das durch die Zahl *n -* 1 indiziert wird.
 
-Der Member [-&#91; Operator](#op_at) ist schneller als die Element Funktion `at` zum Bereitstellen von Lese-und Schreibzugriff auf die Elemente einer Zeichenfolge.
+Der [Memberoperator&#91;&#93;](#op_at) ist schneller `at` als die Memberfunktion, um Lese- und Schreibzugriff auf die Elemente einer Zeichenfolge bereitzustellen.
 
-Der Member `operator[]` überprüft nicht, ob der als Parameter übergebenen Index gültig ist, aber die Element Funktion `at` verwendet und daher verwendet werden sollte, wenn die Gültigkeit nicht sicher ist. Ein ungültiger Index, bei dem es sich um einen Index handelt, der kleiner ist als 0 (null) oder größer oder gleich der Größe der Zeichenfolge, die an die Member-Funktion geleitet wird `at` löst eine Ausnahme [Out_of_range Klassen](../standard-library/out-of-range-class.md) Ein ungültiger Index, der an `operator[]` übergeben wird, führt zu nicht definiertem Verhalten. Der Index, der gleich der Länge der Zeichenfolge ist, ist allerdings ein gültiger Index für const-Zeichenfolgen. Der Operator gibt das NULL-Zeichen zurück, wenn dieser Index übergeben wurde.
+Der `operator[]` Member überprüft nicht, ob der als Parameter übergebene Index gültig ist, aber die Memberfunktion `at` tut dies und sollte daher verwendet werden, wenn die Gültigkeit nicht sicher ist. Ein ungültiger Index, bei dem es sich um einen Index handelt, der kleiner `at` als Null oder größer oder gleich der Größe der Zeichenfolge ist und an die Memberfunktion übergeben wird, löst eine [out_of_range Klassenausnahme](../standard-library/out-of-range-class.md) aus. Ein ungültiger Index, der an `operator[]` übergeben wird, führt zu nicht definiertem Verhalten. Der Index, der gleich der Länge der Zeichenfolge ist, ist allerdings ein gültiger Index für const-Zeichenfolgen. Der Operator gibt das NULL-Zeichen zurück, wenn dieser Index übergeben wurde.
 
-Der zurückgegebene Verweis wird möglicherweise durch Neuzuordnungen oder Änderungen für nicht **konstante**  Zeichenfolgen ungültig.
+Der zurückgegebene Verweis wird möglicherweise durch Neuzuordnungen oder Änderungen für nicht **konstante ** Zeichenfolgen ungültig.
 
 ### <a name="example"></a>Beispiel
 
@@ -657,7 +657,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringback"></a><a name="back"></a> basic_string::back
+## <a name="basic_stringback"></a><a name="back"></a>basic_string::zurück
 
 Gibt einen Verweis auf das letzte Element der Zeichenfolge zurück.
 
@@ -673,7 +673,7 @@ Ein Verweis auf das letzte Element der Zeichenfolge, die nicht leer sein darf.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="basic_stringbasic_string"></a><a name="basic_string"></a> basic_string::basic_string
+## <a name="basic_stringbasic_string"></a><a name="basic_string"></a>basic_string::basic_string
 
 Erstellt eine Zeichenfolge, die leer ist, oder von bestimmten Zeichen initialisiert wird, oder eine vollständige oder teilweise Kopie eines anderen Zeichenfolgenobjekts oder einer C-Zeichenfolge (null-terminiert) ist.
 
@@ -747,16 +747,16 @@ basic_string(
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, deren Zeichen verwendet werden, um die erstellte `string` zu initialisieren. Dieser Wert darf kein Nullzeiger sein.
 
 *alloc_type*\
 Der Speicherzuordnerklasse für das Zeichenfolgenobjekt, das erstellt wird.
 
-*Anzahl*\
+*Count*\
 Die Anzahl der zu initialisierenden Zeichen.
 
-*Rechte*\
+*Richting*\
 Die Zeichenfolge zum Initialisieren der zu erstellenden Zeichenfolge.
 
 *right_offset*\
@@ -765,10 +765,10 @@ Der Index eines Zeichens in einer Zeichenfolge, die als erste verwendet wird, um
 *char_value*\
 Der Zeichenwert, der in die zu erstellende Zeichenfolge kopiert werden soll.
 
-*erste*\
+*Ersten*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der das erste Element im einzufügenden Quellbereich adressiert.
 
-*Letzter*\
+*letzte*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der die Position eines der letzten Elemente im einzufügenden Quellbereich adressiert.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -777,9 +777,9 @@ Ein Verweis auf das Zeichenfolgenobjekt, das von den Konstruktoren erstellt wird
 
 ### <a name="remarks"></a>Bemerkungen
 
-Von allen Konstruktoren wird ein [basic_string::allocator_type](#allocator_type) gespeichert, und die gesteuerte Sequenz wird initialisiert. Das Zuweisungsobjekt ist das Argument `al`, sofern es vorhanden ist. Für den Kopierkonstruktor ist `right.`[basic_string:: Get_allocator](#get_allocator)`()`. Andernfalls ist die Zuweisung `Alloc()`.
+Von allen Konstruktoren wird ein [basic_string::allocator_type](#allocator_type) gespeichert, und die gesteuerte Sequenz wird initialisiert. Das Zuweisungsobjekt ist das Argument `al`, sofern es vorhanden ist. Für den Kopierkonstruktor `right.`ist es [basic_string::get_allocator](#get_allocator)`()`. Andernfalls lautet `Alloc()`der Allokator .
 
-Die gesteuerte Sequenz wird in eine Kopie der Operandensequenz initialisiert, die von den verbleibenden Operanden angegeben werden. Ein Konstruktor ohne Operandensequenz gibt eine leere gesteuerte Sequenz an. Wenn `InputIterator` ein ganzzahliger Typ in einem vorlagenkonstruktor ist, verhält sich die operandensequenz `first,  last` identisch mit `(size_type) first, (value_type) last`.
+Die gesteuerte Sequenz wird in eine Kopie der Operandensequenz initialisiert, die von den verbleibenden Operanden angegeben werden. Ein Konstruktor ohne Operandensequenz gibt eine leere gesteuerte Sequenz an. Wenn `InputIterator` es sich um einen ganzzahligen Typ in `first,  last` einem Vorlagenkonstruktor `(size_type) first, (value_type) last`handelt, verhält sich die Operandensequenz wie .
 
 ### <a name="example"></a>Beispiel
 
@@ -830,7 +830,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringbegin"></a><a name="begin"></a> basic_string::begin
+## <a name="basic_stringbegin"></a><a name="begin"></a>basic_string::begin
 
 Gibt ein Iterator zurück, der das erste Element in der Zeichenfolge adressiert.
 
@@ -880,7 +880,7 @@ int main( ) {
 }
 ```
 
-## <a name="basic_stringc_str"></a><a name="c_str"></a> basic_string::c_str
+## <a name="basic_stringc_str"></a><a name="c_str"></a>basic_string::c_str
 
 Konvertiert den Inhalt einer Zeichenfolge in einen NULL-terminierten C-String.
 
@@ -890,13 +890,13 @@ const value_type *c_str() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die im C-Stil angegebene Version der aufrufenden Zeichenfolge.  Der Zeiger Wert ist nicht gültig, nachdem eine nicht-konstante Funktion, einschließlich des Dekonstruktors, in der Basic_string-Klasse des-Objekts aufgerufen wurde.
+Ein Zeiger auf die im C-Stil angegebene Version der aufrufenden Zeichenfolge.  Der Zeigerwert ist nach dem Aufrufen einer Nicht-const-Funktion, einschließlich des Destruktors, in der basic_string-Klasse für das Objekt ungültig.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Objekte vom Typ "String", die zur Klassen Vorlage gehören, basic_string\<Char-> nicht notwendigerweise null beendet werden. Das NULL-Zeichen „\0„ wird als Sonderzeichen in einer C-Zeichenfolge verwendet, um das Ende einer Zeichenfolge zu markieren. Es hat allerdings keine besondere Bedeutung in einem Objekt des Typs „string“ und kann genau wie jedes andere Zeichen ein Teil der Zeichenfolge sein. Es gibt eine automatische Konvertierung von **Konstanten char** -<strong>\*</strong> in Zeichen folgen, aber die String-Klasse bietet keine automatischen Konvertierungen von Zeichen folgen im C-Format in Objekte des Typs **basic_string\<Char >** .
+Objekte des Typs String,\<die zur Klassenvorlage gehören basic_string char> werden nicht notwendigerweise null beendet. Das NULL-Zeichen „\0„ wird als Sonderzeichen in einer C-Zeichenfolge verwendet, um das Ende einer Zeichenfolge zu markieren. Es hat allerdings keine besondere Bedeutung in einem Objekt des Typs „string“ und kann genau wie jedes andere Zeichen ein Teil der Zeichenfolge sein. Es gibt eine automatische Konvertierung von **const char** <strong>\*</strong> in Zeichenfolgen, aber die Zeichenfolgenklasse sieht keine automatischen Konvertierungen von Zeichenfolgen im C-Stil in Objekte vom Typ **basic_string\<char>** vor.
 
-Die zurückgegebene Zeichenfolge im C-Stil sollte nicht geändert werden, da dadurch der Zeiger auf die Zeichenfolge ungültig oder gelöscht werden kann, da die Zeichenfolge eine begrenzte Lebensdauer aufweist und sich im Besitz der Klassen Zeichenfolge befindet.
+Die zurückgegebene Zeichenfolge im C-Stil sollte nicht geändert werden, da dies den Zeiger auf die Zeichenfolge ungültig machen oder löschen könnte, da die Zeichenfolge eine begrenzte Lebensdauer hat und im Besitz der Klassenzeichenfolge ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -944,7 +944,7 @@ The C-style string c_str1 is: Hello world
 The length of C-style string str1 = 11
 ```
 
-## <a name="basic_stringcapacity"></a><a name="capacity"></a> basic_string::capacity
+## <a name="basic_stringcapacity"></a><a name="capacity"></a>basic_string::Kapazität
 
 Gibt die höchste Anzahl von Elementen zurück, die ohne Erhöhung der Speicherbelegung der Zeichenfolge in einer Zeichenfolge gespeichert werden können.
 
@@ -1014,9 +1014,9 @@ int main( )
 }
 ```
 
-## <a name="basic_stringcbegin"></a><a name="cbegin"></a> basic_string::cbegin
+## <a name="basic_stringcbegin"></a><a name="cbegin"></a>basic_string::cbegin
 
-Gibt einen **Konstanten** Iterator zurück, der das erste Element im Bereich adressiert.
+Gibt **const** einen const-Iterator zurück, der das erste Element im Bereich adressiert.
 
 ```cpp
 const_iterator cbegin() const;
@@ -1024,13 +1024,13 @@ const_iterator cbegin() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **konstanter** Random-Access-Iterator, der auf das erste Element des Bereichs zeigt oder die Position direkt hinter dem Ende eines leeren Bereichs (für einen leeren Bereich, `cbegin() == cend()`).
+Ein const-Random-Access-Iterator, der auf das erste Element des Bereichs oder die Position direkt `cbegin() == cend()`hinter dem Ende eines leeren Bereichs zeigt (für einen leeren Bereich, ). **const**
 
 ### <a name="remarks"></a>Bemerkungen
 
 Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
-Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [automatischen](../cpp/auto-cpp.md) Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollten `Container` ein änderbarer (nicht **konstanter) Container**sein, der `begin()` und `cbegin()`unterstützt.
+Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` Betrachten Sie im Beispiel einen veränderbaren (nicht-const) Container `cbegin()`jeder Art, der und unterstützt. **const** `begin()`
 
 ```cpp
 auto i1 = Container.begin();
@@ -1040,9 +1040,9 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator
 ```
 
-## <a name="basic_stringcend"></a><a name="cend"></a> basic_string::cend
+## <a name="basic_stringcend"></a><a name="cend"></a>basic_string::cend
 
-Gibt einen **Konstanten** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
+Gibt **const** einen const-Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
 
 ```cpp
 const_iterator cend() const;
@@ -1050,13 +1050,13 @@ const_iterator cend() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **konstanter** Random-Access-Iterator, der direkt hinter das Ende des Bereichs zeigt.
+Ein **const** const-Random-Access-Iterator, der direkt über das Ende des Bereichs zeigt.
 
 ### <a name="remarks"></a>Bemerkungen
 
 `cend` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
-Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [automatischen](../cpp/auto-cpp.md) Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollten `Container` ein änderbarer (nicht **konstanter) Container**sein, der `end()` und `cend()`unterstützt.
+Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` Betrachten Sie im Beispiel einen veränderbaren (nicht-const) Container `cend()`jeder Art, der und unterstützt. **const** `end()`
 
 ```cpp
 auto i1 = Container.end();
@@ -1066,9 +1066,9 @@ auto i2 = Container.cend();
 // i2 is Container<T>::const_iterator
 ```
 
-Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
+Der von `cend` zurückgegebene Wert sollte nicht dereferenziert werden.
 
-## <a name="basic_stringclear"></a><a name="clear"></a> basic_string::clear
+## <a name="basic_stringclear"></a><a name="clear"></a>basic_string::klar
 
 Löscht alle Elemente einer Zeichenfolge.
 
@@ -1119,7 +1119,7 @@ The modified string str1 is:
 Nothing printed above because the string str1 is empty.
 ```
 
-## <a name="basic_stringcompare"></a><a name="compare"></a> basic_string::compare
+## <a name="basic_stringcompare"></a><a name="compare"></a>basic_string::vergleichen
 
 Führt einen Vergleich unter Berücksichtigung der Groß-/Kleinschreibung mit einer angegebenen Zeichenfolge aus, um zu bestimmen, ob die beiden Zeichenfolgen gleich sind, oder ob eine lexikografisch kleiner als die andere ist.
 
@@ -1171,10 +1171,10 @@ Die maximale Anzahl von Zeichen aus der Parameterzeichenfolge, die verglichen we
 *Offset*\
 Der Index der Parameterzeichenfolge, an dem der Vergleich beginnt.
 
-*Anzahl*\
+*Count*\
 Die maximale Anzahl von Zeichen aus der Parameterzeichenfolge, die verglichen werden soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, die mit der Operandenzeichenfolge verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1183,7 +1183,7 @@ Ein negativer Wert, wenn die Operandenzeichenfolge kleiner ist als die Parameter
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `compare`-Element Funktionen vergleichen entweder den gesamten oder einen Teil des Parameters und die Operanden Zeichenfolgen, abhängig von der verwendeten.
+Die `compare` Memberfunktionen vergleichen entweder alle oder einen Teil des Parameters und der Operanden, je nachdem, welche verwendet wird.
 
 Beim Vergleich wird die Groß-/Kleinschreibung berücksichtigt.
 
@@ -1380,7 +1380,7 @@ The 3 characters from position 2 of the operand string are equal to
 the first 3 characters of the parameter C-string.
 ```
 
-## <a name="basic_stringconst_iterator"></a><a name="const_iterator"></a> basic_string::const_iterator
+## <a name="basic_stringconst_iterator"></a><a name="const_iterator"></a>basic_string::const_iterator
 
 Ein Typ, der einen Iterator mit wahlfreiem Zugriff bereitstellt, mit dem auf ein **const**-Element zugegriffen wird, und mit dem dieses Element gelesen werden kann.
 
@@ -1396,7 +1396,7 @@ Ein Typ `const_iterator` kann nicht zum Ändern des Werts eines Zeichens verwend
 
 Im Beispiel für [begin](#begin) wird verdeutlicht, wie ein `const_iterator` deklariert und verwendet wird.
 
-## <a name="basic_stringconst_pointer"></a><a name="const_pointer"></a> basic_string::const_pointer
+## <a name="basic_stringconst_pointer"></a><a name="const_pointer"></a>basic_string::const_pointer
 
 Ein Typ, der einen Zeiger auf ein **const**-Element in einer Zeichenfolge bereitstellt.
 
@@ -1408,7 +1408,7 @@ typedef typename allocator_type::const_pointer const_pointer;
 
 Der Typ ist ein Synonym für `allocator_type::const_pointer`.
 
-Für den Typ `string`entspricht es `char*`.
+Für `string`Typ ist es `char*`äquivalent zu .
 
 Zeiger, die als „const“ deklariert werden, müssen beim Deklarieren initialisiert werden. Const-Zeiger zeigen immer auf den gleichen Speicherbereich und können auf konstante oder nicht konstante Daten zeigen.
 
@@ -1436,7 +1436,7 @@ The string pstr1a is: In Here.
 The C-string cstr1c is: Out There.
 ```
 
-## <a name="basic_stringconst_reference"></a><a name="const_reference"></a> basic_string::const_reference
+## <a name="basic_stringconst_reference"></a><a name="const_reference"></a>basic_string::const_reference
 
 Ein Typ, der einen Verweis auf ein **const**-Element bereitstellt, das in einer Liste zum Lesen und Ausführen von **const**-Vorgängen gespeichert ist.
 
@@ -1448,13 +1448,13 @@ typedef typename allocator_type::const_reference const_reference;
 
 Ein `const_reference`-Typ kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
-Der Typ ist ein Synonym für `allocator_type::const_reference`. Für Zeichen folgen `type`entspricht dies dem Konstanten `char&`.
+Der Typ ist ein Synonym für `allocator_type::const_reference`. Für `type`string ist es äquivalent `char&`zu const .
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [t](#at) wird verdeutlicht, wie ein `const_reference` deklariert und verwendet wird.
 
-## <a name="basic_stringconst_reverse_iterator"></a><a name="const_reverse_iterator"></a> basic_string::const_reverse_iterator
+## <a name="basic_stringconst_reverse_iterator"></a><a name="const_reverse_iterator"></a>basic_string::const_reverse_iterator
 
 Ein Typ, der einen Iterator mit wahlfreiem Zugriff bereitstellt, mit dem jedes **const**-Element in der Zeichenfolge gelesen werden kann.
 
@@ -1468,9 +1468,9 @@ Ein Typ `const_reverse_iterator` kann den Wert eines Zeichens nicht ändern und 
 
 ### <a name="example"></a>Beispiel
 
-Im Beispiel für [rbegin](#rbegin) wird verdeutlicht, wie `const_reverse_iterator` deklariert und verwendet wird.
+Im Beispiel für [rbegin](#rbegin) wird verdeutlicht, wie ein `const_reverse_iterator` deklariert und verwendet wird.
 
-## <a name="basic_stringcopy"></a><a name="copy"></a> basic_string::copy
+## <a name="basic_stringcopy"></a><a name="copy"></a>basic_string::kopie
 
 Kopiert höchstens eine angegebene Anzahl von Zeichen aus einer indizierten Position in einer Quellzeichenfolge in ein Zielzeichenarray.
 
@@ -1485,10 +1485,10 @@ size_type copy(
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*Ptr*\
 Das Zielzeichenarray, in das die Elemente kopiert werden sollen.
 
-*Anzahl* Die Anzahl der Zeichen, die höchstens aus der Quell Zeichenfolge kopiert werden sollen.
+*zählen* Die Anzahl der Zeichen, die höchstens aus der Quellzeichenfolge kopiert werden sollen.
 
 *Offset*\
 Die Anfangsposition in der Quellzeichenfolge, ab der Kopien erstellt werden dürfen.
@@ -1499,7 +1499,7 @@ Die Anzahl der tatsächlich kopierten Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein NULL-Zeichen wird nicht an das Ende der Kopie angehängt.
+Ein Nullzeichen wird nicht an das Ende der Kopie angehängt.
 
 ### <a name="example"></a>Beispiel
 
@@ -1550,7 +1550,7 @@ The number of copied characters in array2 is: 5
 The copied characters array2 is: World
 ```
 
-## <a name="basic_stringcrbegin"></a><a name="crbegin"></a> basic_string::crbegin
+## <a name="basic_stringcrbegin"></a><a name="crbegin"></a>basic_string::crbegin
 
 Gibt einen const-Iterator zurück, der das erste Element in einer umgekehrter Zeichenfolge adressiert.
 
@@ -1562,7 +1562,7 @@ const_reverse_iterator crbegin() const;
 
 Ein reverse-Iterator, der auf die Position unmittelbar hinter dem Ende der Zeichenfolge verweist. Die Position kennzeichnet den Anfang der umgekehrten Zeichenfolge.
 
-## <a name="basic_stringcrend"></a><a name="crend"></a> basic_string::crend
+## <a name="basic_stringcrend"></a><a name="crend"></a>basic_string::crend
 
 Gibt einen const-Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer umgekehrten Zeichenfolge nachfolgt.
 
@@ -1576,7 +1576,7 @@ Ein const_reverse-Iterator, der auf den Speicherort verweist, der dem letzten El
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="basic_string_copy_s"></a><a name="copy_s"></a> basic_string::_Copy_s
+## <a name="basic_string_copy_s"></a><a name="copy_s"></a>basic_string::_Copy_s
 
 Kopiert höchstens eine angegebene Anzahl von Zeichen aus einer indizierten Position in einer Quellzeichenfolge in ein Zielzeichenarray.
 
@@ -1590,13 +1590,13 @@ size_type _Copy_s(
 
 ### <a name="parameters"></a>Parameter
 
-*dest* -\
+*Dest*\
 Das Zielzeichenarray, in das die Elemente kopiert werden sollen.
 
 *dest_size*\
 Die Größe von *dest*.
 
-*Anzahl* Die Anzahl der Zeichen, die höchstens aus der Quell Zeichenfolge kopiert werden sollen.
+*zählen* Die Anzahl der Zeichen, die höchstens aus der Quellzeichenfolge kopiert werden sollen.
 
 *Offset*\
 Die Anfangsposition in der Quellzeichenfolge, ab der Kopien erstellt werden dürfen.
@@ -1607,7 +1607,7 @@ Die Anzahl der tatsächlich kopierten Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein NULL-Zeichen wird nicht an das Ende der Kopie angehängt.
+Ein Nullzeichen wird nicht an das Ende der Kopie angehängt.
 
 ### <a name="example"></a>Beispiel
 
@@ -1656,9 +1656,9 @@ The number of copied characters in array2 is: 5
 The copied characters array2 is: World
 ```
 
-## <a name="basic_stringdata"></a><a name="data"></a> basic_string::data
+## <a name="basic_stringdata"></a><a name="data"></a>basic_string::data
 
-Konvertiert den Inhalt einer Zeichenfolge in ein mit Null endendes Zeichen Array.
+Konvertiert den Inhalt einer Zeichenfolge in ein null-terminiertes Array von Zeichen.
 
 ```cpp
 const value_type *data() const noexcept;
@@ -1667,17 +1667,17 @@ value_type *data() noexcept;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf das erste Element des null-terminierten Arrays, das den Inhalt der Zeichenfolge enthält. Bei einer leeren Zeichenfolge zeigt der Zeiger auf ein einzelnes Null-Zeichen, das gleich `value_type()`ist.
+Ein Zeiger auf das erste Element des null-terminierten Arrays, das den Inhalt der Zeichenfolge enthält. Bei einer leeren Zeichenfolge zeigt der Zeiger auf `value_type()`ein einzelnes Nullzeichen gleich .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der von `data` Punkt zurückgegebene Zeiger auf einen gültigen Bereich `[data(), data() + size()]`. Jedes Element im Bereich entspricht den aktuellen Daten in der Zeichenfolge. Das heißt, für jeden gültigen Offset *n* im Bereich `data() + n == addressof(operator[](n))`.
+Der Zeiger, `data` der von Punkten `[data(), data() + size()]`in einem gültigen Bereich zurückgegeben wird. Jedes Element im Bereich entspricht den aktuellen Daten in der Zeichenfolge. Das heißt, für *n* jeden gültigen Offset `data() + n == addressof(operator[](n))`n im Bereich .
 
-Wenn Sie den Inhalt der Zeichenfolge ändern, die von der **Konstanten** Überladung `data`zurückgegeben wird, ist das Verhalten nicht definiert. Sie erhalten auch ein nicht definiertes Verhalten, wenn das Terminal-NULL-Zeichen in einen anderen Wert geändert wird. Der zurückgegebene Zeiger kann ungültig gemacht werden, wenn ein nicht konstanter Verweis auf die Zeichenfolge an eine Standard Bibliotheksfunktion übermittelt wird. Sie kann auch durch einen-Aufrufvorgang für eine nicht konstante Member-Funktion ungültig werden. Aufrufe an Member `at`, `back`, `begin`, `end`, `front`, `rbegin`, `rend`und `operator[]` den Zeiger nicht für ungültig erklären.
+Wenn Sie den Inhalt der Zeichenfolge ändern, `data`die von der **const-Überladung** von zurückgegeben wird, ist das Verhalten nicht definiert. Sie erhalten auch ein nicht definiertes Verhalten, wenn das Terminal-Nullzeichen in einen anderen Wert geändert wird. Der zurückgegebene Zeiger kann ungültig werden, wenn ein Nicht-Const-Verweis auf die Zeichenfolge an eine Standardbibliotheksfunktion übergeben wird. Sie kann auch durch einen Aufruf einer Nicht-const-Memberfunktion ungültig werden. Aufrufe an `at` `back`Member `begin` `end`, `front` `rbegin`, `rend`, `operator[]` , , , , und löschen den Zeiger nicht.
 
-Vor c++ 11 konnte `data` nicht garantieren, dass die zurückgegebene Zeichenfolge mit Null beendet wurde. Seit c++ 11 geben `data` und `c_str` beide eine NULL-terminierte Zeichenfolge zurück, und sind tatsächlich identisch.
+Vor C++11 `data` konnte nicht garantiert werden, dass die zurückgegebene Zeichenfolge null beendet wurde. Da `data` C++11, `c_str` und beide geben eine null-terminierte Zeichenfolge, und sind effektiv die gleiche.
 
-Die nicht konstante Überlastung ist neu in c++ 17. Um es zu verwenden, geben Sie die Compileroption **/Std: c++ 17** oder **/Std: c + + Latest** an.
+Die Nicht-Const-Überlastung ist neu in C++17. Um es zu verwenden, geben Sie die Compileroption **/std:c++17** oder **/std:c++latest** an.
 
 ### <a name="example"></a>Beispiel
 
@@ -1725,7 +1725,7 @@ The C-style string c_str1 is: Hello world
 The length of C-style string str1 = 11
 ```
 
-## <a name="basic_stringdifference_type"></a><a name="difference_type"></a> basic_string::difference_type
+## <a name="basic_stringdifference_type"></a><a name="difference_type"></a>basic_string::difference_type
 
 Ein Typ, der den Unterschied zwischen zwei Iteratoren, die auf Elemente innerhalb derselben Zeichenfolge verweisen, bereitstellt.
 
@@ -1737,7 +1737,7 @@ typedef typename allocator_type::difference_type difference_type;
 
 Der Ganzzahltyp mit Vorzeichen beschreibt ein Objekt, das die Differenz zwischen den Adressen von zwei beliebigen Elementen in der gesteuerten Sequenz darstellen kann.
 
-Für den Typ `string`entspricht es `ptrdiff_t`.
+Für `string`Typ ist es `ptrdiff_t`äquivalent zu .
 
 ### <a name="example"></a>Beispiel
 
@@ -1773,7 +1773,7 @@ The last character i is at position: 8.
 The difference is: 6.
 ```
 
-## <a name="basic_stringempty"></a><a name="empty"></a> basic_string::empty
+## <a name="basic_stringempty"></a><a name="empty"></a>basic_string::leer
 
 Testet, ob in der Zeichenfolge Zeichen enthalten sind oder nicht.
 
@@ -1821,7 +1821,7 @@ int main() {
 }
 ```
 
-## <a name="basic_stringend"></a><a name="end"></a> basic_string::end
+## <a name="basic_stringend"></a><a name="end"></a>basic_string::Ende
 
 Gibt einen Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer Zeichenfolge nachfolgt.
 
@@ -1837,9 +1837,9 @@ Gibt einen Iterator mit wahlfreiem Zugriff zurück, der den Speicherort adressie
 
 ### <a name="remarks"></a>Bemerkungen
 
-`end` wird häufig verwendet, um zu testen, ob ein Iterator das Ende seiner Zeichenfolge erreicht hat. Der von `end` zurückgegebene Wert darf nicht dereferenziert werden.
+`end`wird häufig verwendet, um zu testen, ob ein Iterator das Ende seiner Zeichenfolge erreicht hat. Der von `end` zurückgegebene Wert sollte nicht dereferenziert werden.
 
-Wenn der Rückgabewert von `end` zu `const_iterator` zugewiesen wird, kann das Zeichenfolgenobjekt nicht geändert werden. Wenn der Rückgabewert von `end` einem `iterator`zugewiesen wird, kann das Zeichen folgen Objekt geändert werden.
+Wenn der Rückgabewert von `end` zu `const_iterator` zugewiesen wird, kann das Zeichenfolgenobjekt nicht geändert werden. Wenn der Rückgabewert von `end` `iterator`einem zugewiesen ist, kann das Zeichenfolgenobjekt geändert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1894,7 +1894,7 @@ The modified string str1 is now: No way ouT.
 The string str2 is empty.
 ```
 
-## <a name="basic_stringerase"></a><a name="erase"></a> basic_string::erase
+## <a name="basic_stringerase"></a><a name="erase"></a>basic_string::löschen
 
 Entfernt ein Element oder einen Reihe von Elementen einer Zeichenfolge von einer angegebenen Position.
 
@@ -1913,20 +1913,20 @@ basic_string<CharType, Traits, Allocator>& erase(
 
 ### <a name="parameters"></a>Parameter
 
-*erste*\
+*Ersten*\
 Ein Iterator, der die Position des ersten Elements im zu löschenden Bereich adressiert.
 
-*Letzter*\
+*letzte*\
 Ein Iterator, der die Position adressiert, die um 1 höher ist als die Position des letzten Elements im zu löschenden Bereich.
 
-*ITER* -\
+*Iter*\
 Ein Iterator, der die Position des Elements in der zu löschenden Zeichenfolge adressiert.
 
 *Offset*\
 Der Index des ersten Zeichens in der zu löschenden Zeichenfolge.
 
-*Anzahl*\
-Die Anzahl der Elemente, die entfernt werden, wenn im Bereich der Zeichenfolge, die mit *Offset*beginnt, so viele Elemente vorhanden sind.
+*Count*\
+Die Anzahl der Elemente, die entfernt werden, wenn sich im Bereich der Zeichenfolge, die mit *Offset*beginnt, begeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1934,7 +1934,7 @@ Bei den ersten beiden Memberfunktionen adressiert ein Iterator das erste Zeichen
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die dritte Memberfunktion gibt **\*this** zurück.
+Die dritte Memberfunktion gibt ** \*diese**zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -1997,7 +1997,7 @@ The original string object str3 is: Hello computer.
 The modified string object str3m is: Hello .
 ```
 
-## <a name="basic_stringfind"></a><a name="find"></a> basic_string::find
+## <a name="basic_stringfind"></a><a name="find"></a>basic_string::finden
 
 Sucht eine Zeichenfolge vorwärts nach dem ersten Vorkommen einer Teilzeichenfolge ab, die mit einer bestimmten Zeichensequenz übereinstimmt.
 
@@ -2028,10 +2028,10 @@ Der Zeichenwert, nach dem die Memberfunktion suchen soll.
 *Offset*\
 Index der Position, an der die Suche beginnen soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, nach der die Memberfunktion suchen soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Zeichen, vom ersten Zeichen vorwärts, in der C-Zeichenfolge nach der die Memberfunktion suchen soll.
 
 *Str*\
@@ -2172,7 +2172,7 @@ the 5th position in str4 is: 25
 The index of the 1st element of 'clear' in str4 is: 0
 ```
 
-## <a name="basic_stringfind_first_not_of"></a><a name="find_first_not_of"></a> basic_string::find_first_not_of
+## <a name="basic_stringfind_first_not_of"></a><a name="find_first_not_of"></a>basic_string::find_first_not_of
 
 Durchsucht eine Zeichenfolge nach dem ersten Zeichen, das kein Element einer angegebenen Zeichenfolge ist.
 
@@ -2203,10 +2203,10 @@ Der Zeichenwert, nach dem die Memberfunktion suchen soll.
 *Offset*\
 Index der Position, an der die Suche beginnen soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, nach der die Memberfunktion suchen soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Zeichen, vom ersten Zeichen vorwärts, in der C-Zeichenfolge nach der die Memberfunktion suchen soll.
 
 *Str*\
@@ -2360,7 +2360,7 @@ The index of the 1st non occurrence of an element of '12' in str4 after
 the 0th position is: 2
 ```
 
-## <a name="basic_stringfind_first_of"></a><a name="find_first_of"></a> basic_string::find_first_of
+## <a name="basic_stringfind_first_of"></a><a name="find_first_of"></a>basic_string::find_first_of
 
 Durchsucht eine Zeichenfolge nach dem ersten Zeichen, das einem Element der angegebenen Zeichenfolge entspricht.
 
@@ -2391,10 +2391,10 @@ Der Zeichenwert, nach dem die Memberfunktion suchen soll.
 *Offset*\
 Index der Position, an der die Suche beginnen soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, nach der die Memberfunktion suchen soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Zeichen, vom ersten Zeichen vorwärts, in der C-Zeichenfolge nach der die Memberfunktion suchen soll.
 
 *Str*\
@@ -2547,7 +2547,7 @@ The index of the 1st occurrence of an element of 'a2' in str4 after
 the 0th position is: 1
 ```
 
-## <a name="basic_stringfind_last_not_of"></a><a name="find_last_not_of"></a> basic_string::find_last_not_of
+## <a name="basic_stringfind_last_not_of"></a><a name="find_last_not_of"></a>basic_string::find_last_not_of
 
 Durchsucht eine Zeichenfolge nach dem letzten Zeichen, das kein Element einer angegebenen Zeichenfolge ist.
 
@@ -2578,10 +2578,10 @@ Der Zeichenwert, nach dem die Memberfunktion suchen soll.
 *Offset*\
 Index der Position, an der die Suche enden soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, nach der die Memberfunktion suchen soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Zeichen, vom ersten Zeichen vorwärts, in der C-Zeichenfolge nach der die Memberfunktion suchen soll.
 
 *Str*\
@@ -2736,7 +2736,7 @@ The index of the last occurrence of an element not in '12'
 in str4 before the end position is: 10
 ```
 
-## <a name="basic_stringfind_last_of"></a><a name="find_last_of"></a> basic_string::find_last_of
+## <a name="basic_stringfind_last_of"></a><a name="find_last_of"></a>basic_string::find_last_of
 
 Durchsucht eine Zeichenfolge nach dem letzten Zeichen, das einem Element der angegebenen Zeichenfolge entspricht.
 
@@ -2767,10 +2767,10 @@ Der Zeichenwert, nach dem die Memberfunktion suchen soll.
 *Offset*\
 Index der Position, an der die Suche enden soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, nach der die Memberfunktion suchen soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Zeichen, vom ersten Zeichen vorwärts, in der C-Zeichenfolge nach der die Memberfunktion suchen soll.
 
 *Str*\
@@ -2910,7 +2910,7 @@ The index of the last occurrence of an element of 'a2' in str4 before
 the 0th position is: 9
 ```
 
-## <a name="basic_stringfront"></a><a name="front"></a> basic_string::front
+## <a name="basic_stringfront"></a><a name="front"></a>basic_string::front
 
 Gibt einen Verweis auf das erste Element in einer Zeichenfolge zurück.
 
@@ -2926,7 +2926,7 @@ Ein Verweis auf das erste Element der Zeichenfolge, die nicht leer sein darf.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="basic_stringget_allocator"></a><a name="get_allocator"></a> basic_string::get_allocator
+## <a name="basic_stringget_allocator"></a><a name="get_allocator"></a>basic_string::get_allocator
 
 Gibt eine Kopie des Zuweisungsobjekts zurück, das zum Erstellen einer Zeichenfolge verwendet wird.
 
@@ -2969,7 +2969,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringinsert"></a><a name="insert"></a> basic_string::insert
+## <a name="basic_stringinsert"></a><a name="insert"></a>basic_string::einfügen
 
 Fügt ein Element oder mehrere Elemente oder ein Reihe von Elementen an einer bestimmten Position in die Zeichenfolge ein.
 
@@ -3028,13 +3028,13 @@ void insert(
 
 ### <a name="parameters"></a>Parameter
 
-*Positions*\
+*Position*\
 Der Index der Position hinter der Einfügemarke für die neuen Zeichen.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, die ganz oder teilweise in die Zeichenfolge eingefügt werden soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl der einzufügenden Zeichen.
 
 *Str*\
@@ -3046,13 +3046,13 @@ Der Index des Teils der Quellzeichenfolge, der die anzufügenden Zeichen bereits
 *char_value*\
 Der Zeichenwert der einzufügenden Elemente.
 
-*ITER* -\
+*Iter*\
 Ein Iterator, der die Position adressiert, hinter der ein Zeichen eingefügt werden soll.
 
-*erste*\
+*Ersten*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der das erste Element im einzufügenden Quellbereich adressiert.
 
-*Letzter*\
+*letzte*\
 Ein Eingabeiterator, const_pointer oder const_iterator, der die Position eines der letzten Elemente im einzufügenden Quellbereich adressiert.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -3148,7 +3148,7 @@ The string with a character inserted from a range is: ABCDefgHIJ
 The string with a character inserted from a range is: ABCDeeeHIJ
 ```
 
-## <a name="basic_stringiterator"></a><a name="iterator"></a> basic_string::iterator
+## <a name="basic_stringiterator"></a><a name="iterator"></a>basic_string::iterator
 
 Ein Typ, der einen Iterator mit wahlfreiem Zugriff bereitstellt, mit dem auf ein **const**-Element zugegriffen wird, und mit dem dieses Element gelesen werden kann.
 
@@ -3158,13 +3158,13 @@ typedef implementation-defined iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein Type-`iterator` kann verwendet werden, um den Wert eines Zeichens zu ändern, und wird verwendet, um eine Zeichenfolge vorwärts zu durchlaufen.
+Ein `iterator` Typ kann verwendet werden, um den Wert eines Zeichens zu ändern, und wird verwendet, um eine Zeichenfolge in vorwärts gerichtetzuitieren.
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [begin](#begin) wird verdeutlicht, wie ein `iterator` deklariert und verwendet wird.
 
-## <a name="basic_stringlength"></a><a name="length"></a> basic_string::length
+## <a name="basic_stringlength"></a><a name="length"></a>basic_string::Länge
 
 Gibt die aktuelle Anzahl von Elementen in einer Zeichenfolge zurück.
 
@@ -3230,7 +3230,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringmax_size"></a><a name="max_size"></a> basic_string::max_size
+## <a name="basic_stringmax_size"></a><a name="max_size"></a>basic_string::max_size
 
 Gibt die Höchstanzahl von Zeichen, die eine Zeichenfolge enthalten könnte zurück.
 
@@ -3300,9 +3300,9 @@ int main( )
 }
 ```
 
-## <a name="basic_stringnpos"></a><a name="npos"></a> basic_string::npos
+## <a name="basic_stringnpos"></a><a name="npos"></a>basic_string::npos
 
-Ein ganzzahliger ganzzahliger Wert, der auf-1 initialisiert wurde und entweder "nicht gefunden" oder "alle verbleibenden Zeichen" angibt, wenn eine Suchfunktion fehlschlägt.
+Ein nicht signierter integraler Wert, der auf -1 initialisiert wurde und entweder "nicht gefunden" oder "alle verbleibenden Zeichen" angibt, wenn eine Suchfunktion fehlschlägt.
 
 ```cpp
 static const size_type npos = -1;
@@ -3310,13 +3310,13 @@ static const size_type npos = -1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn der Rückgabewert auf den `npos` Wert geprüft werden soll, kann er möglicherweise nicht ausgeführt werden, es sei denn, der Rückgabewert ist vom Typ [size_type](#size_type) und nicht vom Typ " **int** " oder " **Ganzzahl ohne Vorzeichen**".
+Wenn der Rückgabewert `npos` auf den Wert überprüft werden soll, funktioniert er möglicherweise nicht, es sei denn, der Rückgabewert ist vom Typ [size_type](#size_type) und nicht **int** oder **unsigned**.
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [find](#find) wird verdeutlicht, wie `npos` deklariert und verwendet wird.
 
-## <a name="basic_stringoperator"></a><a name="op_add_eq"></a> basic_string::operator+=
+## <a name="basic_stringoperator"></a><a name="op_add_eq"></a>basic_string::operator+=
 
 Fügt einer Zeichenfolge Zeichen an.
 
@@ -3336,10 +3336,10 @@ basic_string<CharType, Traits, Allocator>& operator+=(
 *char_value*\
 Das Zeichen, das angefügt werden soll.
 
-*ptr* -\
+*Ptr*\
 Die Zeichen der C-Zeichenfolge, die angefügt werden sollen.
 
-*Rechte*\
+*Richting*\
 Die Zeichen der Zeichenfolge, die angefügt werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -3405,7 +3405,7 @@ The appended string str1d is: Hello Wide .
 The doubly appended strig str1 is: Hello Wide World.
 ```
 
-## <a name="basic_stringoperator"></a><a name="op_eq"></a> basic_string::operator=
+## <a name="basic_stringoperator"></a><a name="op_eq"></a>basic_string::operator=
 
 Weist dem Inhalt einer Zeichenfolge neue Zeichenwerte zu.
 
@@ -3428,10 +3428,10 @@ basic_string<CharType, Traits, Allocator>& operator=(
 *char_value*\
 Der Zeichenwert, der zugewiesen werden soll.
 
-*ptr* -\
+*Ptr*\
 Ein Zeiger auf die Zeichen einer C-Zeichenfolge, die der Zielzeichenfolge zugewiesen werden sollen.
 
-*Rechte*\
+*Richting*\
 Die Quellzeichenfolge, deren Zeichen der Zielzeichenfolge zugewiesen werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -3499,7 +3499,7 @@ The string str3c is: World.
 The string str1 reassigned with string str3c is: World.
 ```
 
-## <a name="basic_stringoperator"></a><a name="op_at"></a> basic_string::operator[]
+## <a name="basic_stringoperator"></a><a name="op_at"></a>basic_string::operator[]
 
 Stellt mit einem angegebenen Index in einer Zeichenfolge einen Verweis auf das Zeichen.
 
@@ -3523,11 +3523,11 @@ Das erste Element der Zeichenfolge hat einen Index von 0, und die folgenden Elem
 
 `operator[]` ist schneller als die Memberfunktion [at](#at) beim Bereitstellen von Lese- und Schreibzugriff auf die Elemente einer Zeichenfolge.
 
-`operator[]` überprüft nicht, ob der als Parameter übergebenen Index gültig ist, aber die Element Funktion `at` und sollte in der Gültigkeit verwendet werden, ist nicht sicher. Ein ungültiger Index (ein Index, der kleiner oder gleich 0 (null) oder größer oder gleich der Größe der Zeichenfolge ist), der an die Member-Funktion übertragen wird `at` löst eine [Out_of_range Klassen](../standard-library/out-of-range-class.md) Ausnahme aus Ein ungültiger Index, der an `operator[]` übergeben wird, führt zu nicht definiertem Verhalten. Der Index, der gleich der Länge der Zeichenfolge ist, ist allerdings ein gültiger Index für const-Zeichenfolgen. Der Operator gibt das NULL-Zeichen zurück, wenn dieser Index übergeben wurde.
+`operator[]`überprüft nicht, ob der als Parameter übergebene Index `at` gültig ist, aber die Memberfunktion ist nicht sicher und sollte daher in der Gültigkeit verwendet werden. Ein ungültiger Index (ein Index kleiner als Null oder größer oder gleich der `at` Größe der Zeichenfolge), der an die Memberfunktion übergeben wird, löst eine [out_of_range Klassenausnahme](../standard-library/out-of-range-class.md) aus. Ein ungültiger Index, der an `operator[]` übergeben wird, führt zu nicht definiertem Verhalten. Der Index, der gleich der Länge der Zeichenfolge ist, ist allerdings ein gültiger Index für const-Zeichenfolgen. Der Operator gibt das NULL-Zeichen zurück, wenn dieser Index übergeben wurde.
 
-Der zurückgegebene Verweis wird möglicherweise durch Neuzuordnungen oder Änderungen für nicht **konstante**  Zeichenfolgen ungültig.
+Der zurückgegebene Verweis wird möglicherweise durch Neuzuordnungen oder Änderungen für nicht **konstante ** Zeichenfolgen ungültig.
 
-Beim Kompilieren mit [\_ITERATOR\_DEBUG\_LEVEL](../standard-library/iterator-debug-level.md) mit Einstellung auf 1 oder 2 tritt ein Laufzeitfehler auf, wenn Sie versuchen, auf ein Element außerhalb der Grenzen der Zeichenfolge zuzugreifen. Weitere Informationen finden Sie unter [Checked Iterators (Überprüfte Iteratoren)](../standard-library/checked-iterators.md).
+Beim Kompilieren mit [ \_ITERATOR\_\_DEBUG LEVEL,](../standard-library/iterator-debug-level.md) das auf 1 oder 2 festgelegt ist, tritt ein Laufzeitfehler auf, wenn Sie versuchen, auf ein Element außerhalb der Grenzen der Zeichenfolge zuzugreifen. Weitere Informationen finden Sie unter [Überprüfte Iteratoren](../standard-library/checked-iterators.md).
 
 ### <a name="example"></a>Beispiel
 
@@ -3568,7 +3568,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringpointer"></a><a name="pointer"></a> basic_string::pointer
+## <a name="basic_stringpointer"></a><a name="pointer"></a>basic_string::pointer
 
 Ein Typ, der einen Zeiger auf ein Zeichenelement in einer Zeichenfolge oder einem Zeichenarray bereitstellt.
 
@@ -3580,7 +3580,7 @@ typedef typename allocator_type::pointer pointer;
 
 Der Typ ist ein Synonym für `allocator_type::pointer`.
 
-Für Type `string`entspricht es **char** <strong>\*</strong>.
+Für `string`Typ ist es gleichbedeutend mit **char**<strong>\*</strong>.
 
 ### <a name="example"></a>Beispiel
 
@@ -3605,7 +3605,7 @@ The string pstr1a is: In Here.
 The C-string cstr1b is: Out There.
 ```
 
-## <a name="basic_stringpop_back"></a><a name="pop_back"></a> basic_string::pop_back
+## <a name="basic_stringpop_back"></a><a name="pop_back"></a>basic_string::pop_back
 
 Löscht das letzte Element der Zeichenfolge.
 
@@ -3617,7 +3617,7 @@ void pop_back();
 
 Diese Memberfunktion ruft tatsächlich `erase(size() - 1)` auf, um das letzte Element der Sequenz zu löschen, das nicht leer sein darf.
 
-## <a name="basic_stringpush_back"></a><a name="push_back"></a> basic_string::push_back
+## <a name="basic_stringpush_back"></a><a name="push_back"></a>basic_string::push_back
 
 Fügt ein Element am Ende der Zeichenfolge hinzu.
 
@@ -3632,7 +3632,7 @@ Das Zeichen am Ende der Zeichenfolge hinzugefügt werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion ruft [Insert](#insert)( [End](#end), *char_value* ) auf.
+Die Memberfunktion ruft [effektiv insert](#insert)( [end](#end), *char_value* ) auf.
 
 ### <a name="example"></a>Beispiel
 
@@ -3672,7 +3672,7 @@ The last character-letter of the modified str1 is now: c
 The modified string str1 is: abc
 ```
 
-## <a name="basic_stringrbegin"></a><a name="rbegin"></a> basic_string::rbegin
+## <a name="basic_stringrbegin"></a><a name="rbegin"></a>basic_string::rbegin
 
 Gibt einen Iterator an das erste Element in einer umgekehrten Zeichenfolge zurück.
 
@@ -3748,7 +3748,7 @@ AblE was I ere I saw elbA
 The string str2 is empty.
 ```
 
-## <a name="basic_stringreference"></a><a name="reference"></a> basic_string::reference
+## <a name="basic_stringreference"></a><a name="reference"></a>basic_string::Referenz
 
 Ein Typ, der einen Verweis auf ein in einer Zeichenfolge gespeichertes Element bereitstellt.
 
@@ -3758,17 +3758,17 @@ typedef typename allocator_type::reference reference;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein Type-`reference` kann verwendet werden, um den Wert eines Elements zu ändern.
+Ein `reference` Typ kann verwendet werden, um den Wert eines Elements zu ändern.
 
 Der Typ ist ein Synonym für `allocator_type::reference`.
 
-Für den Typ `string`entspricht es `chr&`.
+Für `string`Typ ist es `chr&`äquivalent zu .
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [t](#at) wird verdeutlicht, wie ein `reference` deklariert und verwendet wird.
 
-## <a name="basic_stringrend"></a><a name="rend"></a> basic_string::rend
+## <a name="basic_stringrend"></a><a name="rend"></a>basic_string::rend
 
 Gibt einen Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer umgekehrten Zeichenfolge nachfolgt.
 
@@ -3790,7 +3790,7 @@ Wenn der Rückgabewert von `rend` zu `const_reverse_iterator` zugewiesen wird, k
 
 `rend` kann verwendet werden, um zu testen, ob das Ende der Zeichenfolge von einem umgekehrten Iterator erreicht wurde.
 
-Der von `rend` zurückgegebene Wert darf nicht dereferenziert werden.
+Der von `rend` zurückgegebene Wert sollte nicht dereferenziert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -3846,7 +3846,7 @@ ablE was I ere I saw elbo
 The string str2 is empty.
 ```
 
-## <a name="basic_stringreplace"></a><a name="replace"></a> basic_string::replace
+## <a name="basic_stringreplace"></a><a name="replace"></a>basic_string::ersetzen
 
 Ersetzt Elemente an einer bestimmten Position in einer Zeichenfolge durch angegebene Zeichen oder Zeichen, die aus anderen Bereichen oder Zeichenfolgen oder C-Zeichenfolgen kopiert werden.
 
@@ -3939,7 +3939,7 @@ Der Index der Parameterzeichenfolge, an dem der Kopiervorgang beginnt.
 *number_2*\
 Die maximale Anzahl von Zeichen aus der C-Parameterzeichenfolge.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, die als Quelle für die Zeichen für die Operandenzeichenfolge verwendet werden soll.
 
 *char_value*\
@@ -3948,17 +3948,17 @@ Das Zeichen, das in die Operandenzeichenfolge kopiert werden soll.
 *first0*\
 Ein Iterator, der das erste Zeichen adressiert, das in der Operandenzeichenfolge entfernt werden soll.
 
-*Last0*\
+*zuletzt0*\
 Ein Iterator, der das letzte Zeichen adressiert, das in der Operandenzeichenfolge entfernt werden soll.
 
-*erste*\
+*Ersten*\
 Ein Iterator, const_pointer oder const_iterator, der das erste Zeichen adressiert, das in die Parameterzeichenfolge eingefügt werden soll.
 
-*Letzter*\
+*letzte*\
 Ein Iterator, const_pointer oder const_iterator, der das letzte Zeichen adressiert, das in die Parameterzeichenfolge eingefügt werden soll.
 
-*Anzahl*\
-Gibt an, wie oft *char_value* in die Operanden Zeichenfolge kopiert wird.
+*Count*\
+Die Häufigkeit, mit *der char_value* in die Operandenzeichenfolge kopiert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -4143,7 +4143,7 @@ The result of s7o.replace (IterF3 ,IterL3 ,IterF4 ,IterL4)
 is the string: OPPOOOO.
 ```
 
-## <a name="basic_stringreserve"></a><a name="reserve"></a> basic_string::reserve
+## <a name="basic_stringreserve"></a><a name="reserve"></a>basic_string::Reserve
 
 Legt die Kapazität der Zeichenfolge auf eine Zahl fest, die mindestens so groß ist, wie eine angegebene Anzahl.
 
@@ -4153,14 +4153,14 @@ void reserve(size_type count = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*Anzahl*\
+*Count*\
 Die Anzahl der Zeichen, für die Speicher reserviert wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Es ist wichtig, über ausreichende Kapazität zu verfügen, da Neuzuordnungen ein zeitaufwendiger Prozess sind, bei dem alle Verweise, Zeiger und Iteratoren für ungültig erklärt werden, die auf Zeichen in einer Zeichenfolge verweisen.
 
-Das Konzept der Kapazität für Objekte des Typs „string“ ist das gleiche Konzept wie für Objekte des Typs „vector“. Im Gegensatz zu Vector kann die Member-Funktion `reserve` aufgerufen werden, um die Kapazität eines Objekts zu verkleinern. Die Anforderung ist nicht bindend und kann erfolgen oder nicht. Da der Standardwert für den-Parameter 0 (null) ist, ist ein-`reserve` eine nicht Bindungs Anforderung, um die Kapazität der Zeichenfolge so zu verkleinern, dass Sie mit der Anzahl der Zeichen in der Zeichenfolge passt. Die Kapazität wird nie unter die aktuelle Anzahl der Zeichen reduziert.
+Das Konzept der Kapazität für Objekte des Typs „string“ ist das gleiche Konzept wie für Objekte des Typs „vector“. Im Gegensatz zu `reserve` vector kann die Memberfunktion aufgerufen werden, um die Kapazität eines Objekts zu verkleinern. Die Anforderung ist nicht bindend und kann erfolgen oder nicht. Da der Standardwert für den Parameter `reserve` Null ist, ist ein Aufruf von eine unverbindliche Anforderung, um die Kapazität der Zeichenfolge zu verkleinern, um die Anzahl der Zeichen anzupassen, die derzeit in der Zeichenfolge enthalten sind. Die Kapazität wird nie unter die aktuelle Anzahl der Zeichen reduziert.
 
 Das Aufrufen von `reserve` ist die einzige Möglichkeit, die Kapazität einer Zeichenfolge zu verringern. Wie oben erwähnt, ist diese Anforderung nicht bindend und könnte nicht ausgeführt werden.
 
@@ -4233,7 +4233,7 @@ The current size of string str1 is: 11.
 The reduced capacity of string str1 is: 47.
 ```
 
-## <a name="basic_stringresize"></a><a name="resize"></a> basic_string::resize
+## <a name="basic_stringresize"></a><a name="resize"></a>basic_string::Größe ändern
 
 Gibt eine neue Größe für eine Zeichenfolge an und fügt Elemente an bzw. löscht sie bei Bedarf.
 
@@ -4248,7 +4248,7 @@ void resize(
 
 ### <a name="parameters"></a>Parameter
 
-*Anzahl*\
+*Count*\
 Die neue Größe der Zeichenfolge.
 
 *char_value*\
@@ -4343,7 +4343,7 @@ The current size of downsized string str1 is: 5.
 The capacity of downsized string str1 is: 47.
 ```
 
-## <a name="basic_stringreverse_iterator"></a><a name="reverse_iterator"></a> basic_string::reverse_iterator
+## <a name="basic_stringreverse_iterator"></a><a name="reverse_iterator"></a>basic_string::reverse_iterator
 
 Ein Typ, der einen Verweis auf ein in einer Zeichenfolge gespeichertes Element bereitstellt.
 
@@ -4357,9 +4357,9 @@ Ein Typ `reverse_iterator` kann verwendet werden, um den Wert eines Zeichens zu 
 
 ### <a name="example"></a>Beispiel
 
-Im Beispiel für [rbegin](#rbegin) wird verdeutlicht, wie `reverse_iterator` deklariert und verwendet wird.
+Im Beispiel für [rbegin](#rbegin) wird verdeutlicht, wie ein `reverse_iterator` deklariert und verwendet wird.
 
-## <a name="basic_stringrfind"></a><a name="rfind"></a> basic_string::rfind
+## <a name="basic_stringrfind"></a><a name="rfind"></a>basic_string::rfind
 
 Sucht eine Zeichenfolge rückwärts nach dem ersten Vorkommen einer Teilzeichenfolge ab, die mit einer bestimmten Zeichensequenz übereinstimmt.
 
@@ -4390,10 +4390,10 @@ Der Zeichenwert, nach dem die Memberfunktion suchen soll.
 *Offset*\
 Index der Position, an der die Suche beginnen soll.
 
-*ptr* -\
+*Ptr*\
 Die C-Zeichenfolge, nach der die Memberfunktion suchen soll.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Zeichen, vom ersten Zeichen vorwärts, in der C-Zeichenfolge nach der die Memberfunktion suchen soll.
 
 *Str*\
@@ -4534,7 +4534,7 @@ The substring 'clear' was not found in str4 before the 15th position.
 The index of the 1st element of 'clear' in str4 is: 17
 ```
 
-## <a name="basic_stringshrink_to_fit"></a><a name="shrink_to_fit"></a> basic_string::shrink_to_fit
+## <a name="basic_stringshrink_to_fit"></a><a name="shrink_to_fit"></a>basic_string::shrink_to_fit
 
 Verwirft die Überkapazität der Zeichenfolge.
 
@@ -4546,7 +4546,7 @@ void shrink_to_fit();
 
 Diese Memberfunktion löscht nicht mehr benötigten Speicherplatz im Container.
 
-## <a name="basic_stringsize"></a><a name="size"></a> basic_string::size
+## <a name="basic_stringsize"></a><a name="size"></a>basic_string::größe
 
 Gibt die aktuelle Anzahl von Elementen in einer Zeichenfolge zurück.
 
@@ -4612,7 +4612,7 @@ int main( )
 }
 ```
 
-## <a name="basic_stringsize_type"></a><a name="size_type"></a> basic_string::size_type
+## <a name="basic_stringsize_type"></a><a name="size_type"></a>basic_string::size_type
 
 Ein Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen und Indizes in einer Zeichenfolge darstellen kann.
 
@@ -4622,9 +4622,9 @@ typedef typename allocator_type::size_type size_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dies entspricht `allocator_type::size_type`.
+es entspricht `allocator_type::size_type`.
 
-Für den Typ `string`entspricht es `size_t`.
+Für `string`Typ ist es `size_t`äquivalent zu .
 
 ### <a name="example"></a>Beispiel
 
@@ -4655,7 +4655,7 @@ The current size of string str1 is: 11.
 The capacity of string str1 is: 15.
 ```
 
-## <a name="basic_stringsubstr"></a><a name="substr"></a> basic_string::substr
+## <a name="basic_stringsubstr"></a><a name="substr"></a>basic_string::substr
 
 Kopiert eine Teilzeichenfolge höchstens einer beliebigen Anzahl von Zeichen aus einer Zeichenfolge, beginnend an einer angegebenen Position.
 
@@ -4670,7 +4670,7 @@ basic_string<CharType, Traits, Allocator> substr(
 *Offset*\
 Ein Index mit Standardwert 0, der das Element an der Position lokalisiert, von der die Kopie der Zeichenfolge erstellt wird.
 
-*Anzahl*\
+*Count*\
 Die Anzahl der Zeichen, die kopiert werden sollen, sofern sie vorhanden sind.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -4714,7 +4714,7 @@ Heterological paradoxes are persistent.
 which is the entire original string.
 ```
 
-## <a name="basic_stringswap"></a><a name="swap"></a> basic_string::swap
+## <a name="basic_stringswap"></a><a name="swap"></a>basic_string::swap
 
 Tauschen Sie den Inhalt von zwei Zeichenfolgen aus.
 
@@ -4775,7 +4775,7 @@ The basic_string s1 = Tweedledum.
 The basic_string s2 = Tweedledee.
 ```
 
-## <a name="basic_stringtraits_type"></a><a name="traits_type"></a> basic_string::traits_type
+## <a name="basic_stringtraits_type"></a><a name="traits_type"></a>basic_string::traits_type
 
 Ein Typ für die Zeichenmerkmale der in einer Zeichenfolge gespeicherten Elemente.
 
@@ -4785,15 +4785,15 @@ typedef Traits traits_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für den zweiten Vorlagen Parameter `Traits`.
+Der Typ ist ein Synonym `Traits`für den zweiten Vorlagenparameter .
 
-Bei Type `string`entspricht es **Char_traits\<Char->** .
+Für `string`Typ entspricht dies **\<char_traits zeichen>**.
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [copy](../standard-library/char-traits-struct.md#copy) wird verdeutlicht, wie `traits_type` deklariert und verwendet wird.
 
-## <a name="basic_stringvalue_type"></a><a name="value_type"></a> basic_string::value_type
+## <a name="basic_stringvalue_type"></a><a name="value_type"></a>basic_string::value_type
 
 Ein Typ, der die Art der in einer Zeichenfolge gespeicherten Zeichen darstellt.
 
@@ -4803,7 +4803,7 @@ typedef typename allocator_type::value_type value_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dies entspricht `traits_type::char_type` und entspricht **char** für Objekte vom Typ `string`.
+Es entspricht `traits_type::char_type` und entspricht **char** für Objekte `string`vom Typ .
 
 ### <a name="example"></a>Beispiel
 
@@ -4831,7 +4831,7 @@ The character ch1 is: G.
 The character ch2 is: H.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[\<string>](../standard-library/string.md)\
+[\<>](../standard-library/string.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)
