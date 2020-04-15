@@ -2,10 +2,10 @@
 title: Bibliotheken
 ms.date: 11/18/2018
 ms.openlocfilehash: dc139fea346be8034fa80236844abb2303fa345d
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "80075606"
 ---
 # <a name="libraries"></a>Bibliotheken

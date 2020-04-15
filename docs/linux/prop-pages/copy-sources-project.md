@@ -3,10 +3,10 @@ title: Kopieren von Quellprojekteigenschaften (Linux C++)
 ms.date: 10/16/2019
 ms.assetid: 1a44230d-5dd8-4d33-93b4-e77e03e00150
 ms.openlocfilehash: 732a13520a223f1aa73733cd4098c247052f8d3b
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "79441385"
 ---
 # <a name="copy-sources-project-properties-linux-c"></a>Kopieren von Quellprojekteigenschaften (Linux C++)
