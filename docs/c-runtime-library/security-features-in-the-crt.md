@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CRT, security enhancements
 - parameters [C++], validation
 ms.assetid: d9568b08-9514-49cd-b3dc-2454ded195a3
-ms.openlocfilehash: cf8bee39d6ec0f41049586d3861dcf450b7b2aaa
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 1b42c766a7b75cb3f4d5c20d715968905d529d04
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57746942"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81361008"
 ---
 # <a name="security-features-in-the-crt"></a>Sicherheitsfunktionen in der CRT
 
@@ -52,7 +52,7 @@ char szBuf[10];
 strcpy(szBuf, "test"); // warning: deprecated
 ```
 
-Durch Definieren von `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` als 1 wird die Warnung beseitigt, indem der `strcpy`-Aufruf in `strcpy_s` geändert wird, was Pufferüberläufe verhindert. Weitere Informationen finden Sie unter [Secure Template Overloads](../c-runtime-library/secure-template-overloads.md).
+Durch Definieren von `_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES` als 1 wird die Warnung beseitigt, indem der `strcpy`-Aufruf in `strcpy_s` geändert wird, was Pufferüberläufe verhindert. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../c-runtime-library/secure-template-overloads.md).
 
 Für diese veralteten Funktionen ohne sichere Vorlagenüberladungen sollten Sie definitiv erwägen, den Code manuell zu aktualisieren, um die sicheren Versionen zu verwenden.
 
@@ -64,11 +64,11 @@ Zu den wichtigsten Sicherheitsfunktionen zählen Folgende:
 
 - `Parameter Validation`. An CRT-Funktionen übergebene Parameter werden sowohl in sicheren Funktionen als auch in vielen bereits vorhandenen Versionen der Funktionen überprüft. Diese Überprüfungen umfassen:
 
-   - Überprüfung auf **NULL**-Werte, die den Funktionen übergeben werden.
+  - Überprüfung auf **NULL**-Werte, die den Funktionen übergeben werden.
 
-   - Überprüfung von Enumerationswerten auf Gültigkeit.
+  - Überprüfung von Enumerationswerten auf Gültigkeit.
 
-   - Überprüfen, ob ganzzahlige Werte im gültigen Bereiche liegen.
+  - Überprüfen, ob ganzzahlige Werte im gültigen Bereiche liegen.
 
 - Weitere Informationen finden Sie unter [Parametervalidierung](../c-runtime-library/parameter-validation.md).
 
@@ -88,6 +88,6 @@ Zu den wichtigsten Sicherheitsfunktionen zählen Folgende:
 
 ## <a name="see-also"></a>Siehe auch
 
-[Parametervalidierung](../c-runtime-library/parameter-validation.md)<br/>
+[Parameterüberprüfung](../c-runtime-library/parameter-validation.md)<br/>
 [Sichere Vorlagenüberladungen](../c-runtime-library/secure-template-overloads.md)<br/>
 [CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)

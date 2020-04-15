@@ -1,10 +1,13 @@
 ---
 title: acosh, acoshf, acoshl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - acoshf
 - acosh
 - acoshl
+- _o_acosh
+- _o_acoshf
+- _o_acoshl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +37,12 @@ helpviewer_keywords:
 - acosh function
 - acoshl function
 ms.assetid: 6985c4d7-9e2a-44ce-9a9b-5a43015f15f7
-ms.openlocfilehash: da1d6024cc9f00ebfc7696ddedf92ea9f25728a1
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b719f67651643885351843fb8e995964e03de105
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170357"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81350844"
 ---
 # <a name="acosh-acoshf-acoshl"></a>acosh, acoshf, acoshl
 
@@ -59,29 +63,31 @@ long double acosh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*X*<br/>
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **acosh** -Funktionen geben den umgekehrten hyberbolischen Kosinus (hyperbolischen Arkus Kosinus) von *x*zurück. Diese Funktionen sind für die Domäne *x* 1 gültig. Wenn *x* kleiner als 1 ist, wird `errno` auf `EDOM` festgelegt, und das Ergebnis ist ein stilles Nan. Wenn *x* eine Stille Nan, unbegrenzt oder unendlich ist, wird derselbe Wert zurückgegeben.
+Die **Acosh-Funktionen** geben den inversen hyberbischen Kosinus (arc hyperbolic cosine) von *x*zurück. Diese Funktionen sind über die Domäne *x* 1 gültig. Wenn *x* kleiner als `errno` 1 `EDOM` ist, wird auf gesetzt und das Ergebnis ist ein ruhiger NaN. Wenn *x* ein ruhiger NaN, unbestimmt oder unendlich ist, wird der gleiche Wert zurückgegeben.
 
-|Eingabe|SEH-Ausnahme|`_matherr`-Ausnahme|
+|Eingabe|SEH-Ausnahme|`_matherr` -Ausnahme|
 |-----------|-------------------|--------------------------|
-|± QNAN, IND, INF|none|none|
-|*x* < 1|none|none|
+|± QNAN, IND, INF|Keine|Keine|
+|*x* < 1|Keine|Keine|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie verwenden C++, können Sie über Ladungen von **acosh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **acosh** immer Double und gibt **Double**zurück.
+Wenn Sie C++ verwenden, können Sie Überladungen von **acosh** aufrufen, die **float-** oder **lange** **Doppelwerte** annehmen und zurückgeben. In einem C-Programm nimmt **acosh** immer **doppelt**.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**acosh**, **acoshf**, **acoshl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -111,7 +117,7 @@ cosh( 0.785398 ) = 1.324609
 acosh( 1.324609 ) = 0.785398
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [asinh, asinhf, asinhl](asinh-asinhf-asinhl.md)<br/>

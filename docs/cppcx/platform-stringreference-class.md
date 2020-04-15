@@ -9,12 +9,12 @@ f1_keywords:
 - VCCORLIB/Platform::StringReference::GetHSTRING
 - VCCORLIB/Platform::StringReference::GetString
 ms.assetid: 2d09c7ec-0f16-458e-83ed-7225a1b9221e
-ms.openlocfilehash: 7b6ab42dc630ce7e0014534064e8f1ce6da00857
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4748eecdf67ae5a60ddf97783a934a05e80b406c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182989"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374658"
 ---
 # <a name="platformstringreference-class"></a>Platform::StringReference-Klasse
 
@@ -26,43 +26,43 @@ Ein Optimierungstyp, den Sie verwenden können, um Zeichenfolgendaten in `Platfo
 class StringReference
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ### <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[StringReference::StringReference](#ctor)|Zwei Konstruktoren für das Erstellen von Instanzen von `StringReference`.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[StringReference::Data](#data)|Gibt die Zeichenfolgendaten als char16-Wertearray zurück.|
-|[StringReference::Length](#length)|Gibt die Anzahl der Zeichen in der Zeichenfolge zurück.|
+|[StringReference::Länge](#length)|Gibt die Anzahl der Zeichen in der Zeichenfolge zurück.|
 |[StringReference::GetHSTRING](#gethstring)|Gibt die Zeichenfolgendaten als HSTRING zurück.|
 |[StringReference::GetString](#getstring)|Gibt die Zeichenfolgendaten als `Platform::String^`zurück.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[StringReference::operator=](#operator-assign)|Weist ein `StringReference` -Element einer neuen `StringReference` -Instanz zu.|
 |[StringReference::operator()](#operator-call)|Konvertiert ein `StringReference` -Element in ein `Platform::String^`-Element.|
 
 ### <a name="requirements"></a>Anforderungen
 
-**Unterstützter Client (Min.):** Windows 8
+**Mindestens unterstützter Client:** Windows 8
 
-**Unterstützter Server (Min.):** Windows Server 2012
+**Minimal unterstützter Server:** Windows Server 2012
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
 **Header:** vccorlib.h
 
-## <a name="data"></a>  Stringreference:: Data-Methode
+## <a name="stringreferencedata-method"></a><a name="data"></a>StringReference::Data-Methode
 
 Gibt die Inhalte dieses `StringReference` als char16-Wertearray zurück.
 
@@ -76,7 +76,7 @@ const ::default::char16 * Data() const;
 
 Ein Array von char16-UNICODE-Textzeichen.
 
-## <a name="gethstring"></a>  Stringreference:: Gethstring-Methode
+## <a name="stringreferencegethstring-method"></a><a name="gethstring"></a>StringReference::GetHSTRING-Methode
 
 Gibt den Inhalt der Zeichenfolge als `__abi_HSTRING` zurück.
 
@@ -90,9 +90,9 @@ __abi_HSTRING GetHSTRING() const;
 
 Ein `__abi_HSTRING` mit den eigentlichen Zeichenfolgedaten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="getstring"></a>  Stringreference:: GetString-Methode
+## <a name="stringreferencegetstring-method"></a><a name="getstring"></a>StringReference::GetString-Methode
 
 Gibt den Inhalt der Zeichenfolge als `Platform::String^` zurück.
 
@@ -107,7 +107,7 @@ __declspec(no_release_return) __declspec(no_refcount)
 
 Ein `Platform::String^`, das die eigentlichen Zeichenfolgedaten enthält.
 
-## <a name="length"></a>  Stringreference:: Length-Methode
+## <a name="stringreferencelength-method"></a><a name="length"></a>StringReference::Length-Methode
 
 Gibt die Anzahl der Zeichen in der Zeichenfolge zurück.
 
@@ -121,9 +121,9 @@ unsigned int Length() const;
 
 Eine ganze Zahl ohne Vorzeichen, die die Anzahl von Zeichen in der Zeichenfolge angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="operator-assign"></a>  Stringreference:: Operator =-Operator
+## <a name="stringreferenceoperator-operator"></a><a name="operator-assign"></a>StringReference::operator= Operator
 
 Weist das angegebene Objekt dem aktuellen `StringReference`-Objekt zu.
 
@@ -146,11 +146,11 @@ Zeiger auf ein Array von char16-Werten das zum Initialisieren des aktuellen `Str
 
 Ein Verweis auf ein Objekt des Typs `StringReference`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Da `StringReference` eine Standard-c++-Klasse und keine Verweisklasse ist, erscheint nicht in der **Objektkatalog**.
+Da `StringReference` es sich um eine Standard-C++-Klasse und nicht um eine Verweisklasse handelt, wird sie nicht im **Objektbrowser**angezeigt.
 
-## <a name="operator-call"></a>  Stringreference::Operator()-Operator
+## <a name="stringreferenceoperator--operator"></a><a name="operator-call"></a>StringReference::operator() Operator
 
 Konvertiert ein `StringReference`-Objekt in ein `Platform::String^`-Objekt.
 
@@ -165,9 +165,9 @@ __declspec(no_release_return) __declspec(no_refcount)
 
 Ein Handle für ein Objekt des Typs `Platform::String`
 
-## <a name="ctor"></a>  StringReference::StringReference-Konstruktor
+## <a name="stringreferencestringreference-constructor"></a><a name="ctor"></a>StringReference::StringReference-Konstruktor
 
-Initialisiert eine neue Instanz der `StringReference`-Klasse.
+Initialisiert eine neue Instanz der Klasse `StringReference`.
 
 ### <a name="syntax"></a>Syntax
 
@@ -189,7 +189,7 @@ Zeiger auf ein char16-Wertearray, das zum Initialisieren der neuen Instanz verwe
 *__lenArg*<br/>
 Die Anzahl von Elementen in `__strArg`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Version dieses Konstruktors ist der Standardkonstruktor. Die zweite Version initialisiert eine neue `StringReference`-Instanzklasse aus dem Objekt, das durch den `__fstrArg`-Parameter spezifiziert wird. Die dritten und vierten Überladungen initialisieren eine neue `StringReference`-Instanz aus einem char16-Wertearray. char16 stellt ein 16-Bit-UNICODE-Textzeichen dar.
 

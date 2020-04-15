@@ -62,16 +62,16 @@ helpviewer_keywords:
 - CDaoWorkspace [MFC], SetLoginTimeout
 - CDaoWorkspace [MFC], m_pDAOWorkspace
 ms.assetid: 64f60de6-4df1-4d4a-a65b-c489b5257d52
-ms.openlocfilehash: c1d235035cee9342c8c54c7aaa4e05a96d5a37e3
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 52aaa4970ef483988194691eb6b870cbfe51f494
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425970"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81377116"
 ---
 # <a name="cdaoworkspace-class"></a>CDaoWorkspace-Klasse
 
-Verwaltet eine benannte, kennwortgeschützte Datenbanksitzung eines einzelnen Benutzers von der Anmeldung bis zu Abmeldung. DAO wird über Office 2013 unterstützt. DAO 3,6 ist die endgültige Version, die als veraltet eingestuft wird.
+Verwaltet eine benannte, kennwortgeschützte Datenbanksitzung eines einzelnen Benutzers von der Anmeldung bis zu Abmeldung. DAO wird über Office 2013 unterstützt. DAO 3.6 ist die endgültige Version und gilt als veraltet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -83,153 +83,153 @@ class CDaoWorkspace : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDaoWorkspace:: CDaoWorkspace](#cdaoworkspace)|Erstellt ein Workspace-Objekt. Anschließend wird `Create` oder `Open`aufgerufen.|
+|[CDaoWorkspace::CDaoWorkspace](#cdaoworkspace)|Erstellt ein Arbeitsbereichsobjekt. Danach rufen `Create` `Open`Sie an oder .|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDaoWorkspace:: Append](#append)|Fügt einen neu erstellten Arbeitsbereich für die Datenbank-Engine-Arbeitsbereiche Sammlung an.|
-|[CDaoWorkspace:: BeginTrans](#begintrans)|Beginnt eine neue Transaktion, die auf alle Datenbanken, die im Arbeitsbereich geöffnet wird.|
-|[CDaoWorkspace:: Close](#close)|Schließt den Arbeitsbereich und alle darin enthaltenen Objekte. Ausstehende Transaktionen ein Rollback ausgeführt.|
-|[CDaoWorkspace:: CommitTrans](#committrans)|Schließt die aktuelle Transaktion ab und speichert die Änderungen.|
-|[CDaoWorkspace:: CompactDatabase](#compactdatabase)|Eine Datenbank komprimiert (oder dupliziert).|
-|[CDaoWorkspace:: Create](#create)|Erstellt ein neues Objekt des DAO-Arbeitsbereich.|
-|[CDaoWorkspace:: getdatabasecount](#getdatabasecount)|Gibt die Anzahl der DAO-Datenbankobjekte in der arbeitsbereichssammlung Datenbanken zurück.|
-|[CDaoWorkspace:: getdatabaseingefo](#getdatabaseinfo)|Gibt Informationen zu einer angegebenen DAO-Datenbank, die in der datenbankauflistung des Arbeitsbereichs definiert.|
-|[CDaoWorkspace:: getinipath](#getinipath)|Gibt den Speicherort der Microsoft Jet-Datenbank-Engine-initialisierungseinstellungen in der Windows-Registrierung zurück.|
-|[CDaoWorkspace:: getisolateodbctrans](#getisolateodbctrans)|Gibt einen Wert, der angibt, ob mehrere Transaktionen, bei denen die ODBC-Datenquelle über isoliert sind, mehrere Verbindungen mit der Datenquelle erzwungen.|
-|[CDaoWorkspace:: GetLoginTimeout](#getlogintimeout)|Gibt die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn der Benutzer versucht, eine ODBC-Datenbank anmelden.|
-|[CDaoWorkspace:: GetName](#getname)|Der benutzerdefinierte Name für die Workspace-Objekt zurückgegeben.|
-|[CDaoWorkspace:: GetUserName](#getusername)|Gibt zurück, der Benutzername angegeben, wenn der Arbeitsbereich erstellt wurde. Dies ist der Name der Besitzer des Arbeitsbereichs.|
-|[CDaoWorkspace:: GetVersion](#getversion)|Gibt eine Zeichenfolge mit der Version der Datenbank-Engine, die mit dem Arbeitsbereich verknüpft ist.|
-|[CDaoWorkspace:: getworkspacecount](#getworkspacecount)|Gibt die Anzahl der Objekte für DAO-Arbeitsbereich in der Datenbank-Engine-arbeitsbereicheauflistung zurück.|
-|[CDaoWorkspace:: getworkspaceingefo](#getworkspaceinfo)|Gibt Informationen zu einem angegebenen DAO-Arbeitsbereich in der Datenbank-Engine-arbeitsbereicheauflistung definiert.|
-|[CDaoWorkspace:: Leerlauf](#idle)|Können die Datenbank-Engine zum Ausführen von Hintergrundaufgaben.|
-|[CDaoWorkspace:: IsOpen](#isopen)|Gibt zurück, die ungleich NULL, wenn der Arbeitsbereich öffnen.|
-|[CDaoWorkspace:: Open](#open)|Explizit öffnet ein Workspace-Objekt, das mit DAO Standard-Arbeitsbereich verknüpft ist.|
-|[CDaoWorkspace:: repairren Database](#repairdatabase)|Versucht, eine beschädigte Datenbank zu reparieren.|
-|[CDaoWorkspace:: Rollback](#rollback)|Beendet die aktuelle Transaktion aus, und die Änderungen nicht gespeichert.|
-|[CDaoWorkspace:: SetDefaultPassword](#setdefaultpassword)|Legt das Kennwort, das die Datenbank-Engine verwendet wird, wenn eine Arbeitsbereichsobjekt ohne ein bestimmtes Kennwort erstellt wird.|
-|[CDaoWorkspace:: setdefaultuser](#setdefaultuser)|Legt fest, den Benutzernamen ein, dem die Datenbank-Engine verwendet wird, wenn eine Arbeitsbereichsobjekt ohne einen bestimmten Benutzernamen erstellt wird.|
-|[CDaoWorkspace:: setinipath](#setinipath)|Legt den Speicherort der Microsoft Jet-Datenbank-Engine-initialisierungseinstellungen in der Windows-Registrierung fest.|
-|[CDaoWorkspace:: "abtisolateodbctrans"](#setisolateodbctrans)|Gibt an, ob mehrere Transaktionen, bei denen die ODBC-Datenquelle isoliert werden, indem Sie mehrere Verbindungen mit der Datenquelle zu erzwingen.|
-|[CDaoWorkspace:: setLoginTimeout](#setlogintimeout)|Legt die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn der Benutzer versucht, eine ODBC-Datenquelle anmelden.|
+|[CDaoWorkspace::Anfügen](#append)|Fügt einen neu erstellten Arbeitsbereich an die Workspaces-Auflistung des Datenbankmoduls an.|
+|[CDaoWorkspace::BeginTrans](#begintrans)|Startet eine neue Transaktion, die für alle im Arbeitsbereich geöffneten Datenbanken gilt.|
+|[CDaoWorkspace::Schließen](#close)|Schließt den Arbeitsbereich und alle darin enthaltenen Objekte. Ausstehende Transaktionen werden zurückgesetzt.|
+|[CDaoWorkspace::CommitTrans](#committrans)|Schließt die aktuelle Transaktion ab und speichert die Änderungen.|
+|[CDaoWorkspace::CompactDatabase](#compactdatabase)|Komprimiert (oder dupliziert) eine Datenbank.|
+|[CDaoWorkspace::Erstellen](#create)|Erstellt ein neues DAO-Arbeitsbereichsobjekt.|
+|[CDaoWorkspace::GetDatabaseCount](#getdatabasecount)|Gibt die Anzahl der DAO-Datenbankobjekte in der Datenbanksammlung des Arbeitsbereichs zurück.|
+|[CDaoWorkspace::GetDatabaseInfo](#getdatabaseinfo)|Gibt Informationen zu einer angegebenen DAO-Datenbank zurück, die in der Datenbanksammlung des Arbeitsbereichs definiert ist.|
+|[CDaoWorkspace::GetIniPath](#getinipath)|Gibt den Speicherort der Initialisierungseinstellungen des Microsoft Jet-Datenbankmoduls in der Windows-Registrierung zurück.|
+|[CDaoWorkspace::GetIsolateODBCTrans](#getisolateodbctrans)|Gibt einen Wert zurück, der angibt, ob mehrere Transaktionen, die dieselbe ODBC-Datenquelle enthalten, über erzwungene mehrfache Verbindungen zur Datenquelle isoliert werden.|
+|[CDaoWorkspace::GetLoginTimeout](#getlogintimeout)|Gibt die Anzahl der Sekunden zurück, bevor ein Fehler auftritt, wenn der Benutzer versucht, sich bei einer ODBC-Datenbank anzumelden.|
+|[CDaoWorkspace::GetName](#getname)|Gibt den benutzerdefinierten Namen für das Arbeitsbereichsobjekt zurück.|
+|[CDaoWorkspace::GetUserName](#getusername)|Gibt den Benutzernamen zurück, der beim Erstellen des Arbeitsbereichs angegeben wurde. Dies ist der Name des Arbeitsbereichsbesitzers.|
+|[CDaoWorkspace::GetVersion](#getversion)|Gibt eine Zeichenfolge zurück, die die Version des Datenbankmoduls enthält, das dem Arbeitsbereich zugeordnet ist.|
+|[CDaoWorkspace::GetWorkspaceCount](#getworkspacecount)|Gibt die Anzahl der DAO-Arbeitsbereichsobjekte in der Workspaces-Auflistung des Datenbankmoduls zurück.|
+|[CDaoWorkspace::GetWorkspaceInfo](#getworkspaceinfo)|Gibt Informationen zu einem angegebenen DAO-Arbeitsbereich zurück, der in der Workspaces-Auflistung des Datenbankmoduls definiert ist.|
+|[CDaoWorkspace::Leerlauf](#idle)|Ermöglicht dem Datenbankmodul die Ausführung von Hintergrundaufgaben.|
+|[CDaoWorkspace::IsOpen](#isopen)|Gibt einen Wert ungleich Null zurück, wenn der Arbeitsbereich geöffnet ist.|
+|[CDaoWorkspace::Öffnen](#open)|Öffnet explizit ein Arbeitsbereichsobjekt, das dem Standardarbeitsbereich von DAO zugeordnet ist.|
+|[CDaoWorkspace::RepairDatabase](#repairdatabase)|Versucht, eine beschädigte Datenbank zu reparieren.|
+|[CDaoWorkspace::Rollback](#rollback)|Beendet die aktuelle Transaktion und speichert die Änderungen nicht.|
+|[CDaoWorkspace::SetDefaultPassword](#setdefaultpassword)|Legt das Kennwort fest, das das Datenbankmodul verwendet, wenn ein Arbeitsbereichsobjekt ohne ein bestimmtes Kennwort erstellt wird.|
+|[CDaoWorkspace::SetDefaultUser](#setdefaultuser)|Legt den Benutzernamen fest, den das Datenbankmodul verwendet, wenn ein Arbeitsbereichsobjekt ohne einen bestimmten Benutzernamen erstellt wird.|
+|[CDaoWorkspace::SetIniPath](#setinipath)|Legt den Speicherort der Initialisierungseinstellungen des Microsoft Jet-Datenbankmoduls in der Windows-Registrierung fest.|
+|[CDaoWorkspace::SetIsolateODBCTrans](#setisolateodbctrans)|Gibt an, ob mehrere Transaktionen, die dieselbe ODBC-Datenquelle enthalten, isoliert werden, indem mehrere Verbindungen zur Datenquelle erzwungen werden.|
+|[CDaoWorkspace::SetLoginTimeout](#setlogintimeout)|Legt die Anzahl der Sekunden fest, bevor ein Fehler auftritt, wenn der Benutzer versucht, sich bei einer ODBC-Datenquelle anzumelden.|
 
-### <a name="public-data-members"></a>Öffentliche Datenelemente
+### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDaoWorkspace:: m_pDAOWorkspace](#m_pdaoworkspace)|Verweist auf das zugrunde liegende DAO-Workspace-Objekt.|
+|[CDaoWorkspace::m_pDAOWorkspace](#m_pdaoworkspace)|Zeigt auf das zugrunde liegende DAO-Arbeitsbereichsobjekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-In den meisten Fällen benötigen Sie nicht mehrere Arbeitsbereiche, und Sie müssen keine explizite Workspace-Objekte zu erstellen; Wenn Sie die Datenbank und Recordset-Objekte öffnen, verwenden sie die DAO Standard-Arbeitsbereich. Allerdings können Sie mehrere Sitzungen zu einem Zeitpunkt führen Sie bei Bedarf zusätzliche Workspace-Objekte erstellen. Jedes Arbeitsbereichsobjekt kann mehrere geöffneten Datenbankobjekten in seine eigene Sammlung von Datenbanken enthalten. In MFC ist ein Arbeitsbereich in erster Linie eine Transaktions-Manager, eine Reihe von open Datenbanken angeben, alle in der "Transaktionsprotokoll-Speicherplatz."
+In den meisten Fällen benötigen Sie nicht mehrere Arbeitsbereiche, und Sie müssen keine expliziten Arbeitsbereichsobjekte erstellen. Wenn Sie Datenbank- und Recordset-Objekte öffnen, verwenden sie den Standardarbeitsbereich von DAO. Bei Bedarf können Sie jedoch mehrere Sitzungen gleichzeitig ausführen, indem Sie zusätzliche Arbeitsbereichsobjekte erstellen. Jedes Arbeitsbereichsobjekt kann mehrere geöffnete Datenbankobjekte in seiner eigenen Datenbankauflistung enthalten. In MFC ist ein Arbeitsbereich in erster Linie ein Transaktions-Manager, der eine Reihe offener Datenbanken im gleichen "Transaktionsbereich" angibt.
 
 > [!NOTE]
->  Die DAO-Datenbankklassen unterscheiden sich von der MFC-Datenbankklassen in Bezug auf Open Database Connectivity (ODBC). Allen Klassennamen der DAO-Datenbank haben ein Präfix "CDao". Im Allgemeinen sind die MFC-Klassen basierend auf DAO leistungsfähiger als die MFC-Klassen basierend auf ODBC. Die DAO-basierten Klassen greifen auf Daten über das Microsoft Jet-Datenbankmodul, einschließlich der ODBC-Treiber. Außerdem unterstützen (Data Definition Language, Datendefinitionssprache)-Vorgänge, z. B. das Erstellen von Datenbanken und Tabellen und Felder, die über die Klassen, ohne direkt aufrufen von DAO hinzufügen.
+> Die DAO-Datenbankklassen unterscheiden sich von den MFC-Datenbankklassen, die auf Open Database Connectivity (ODBC) basieren. Alle DAO-Datenbankklassennamen haben das Präfix "CDao". Im Allgemeinen sind die Aufbasis von DAO basierenden MFC-Klassen leistungsfähiger als die MFC-Klassen, die auf ODBC basieren. Die DAO-basierten Klassen greifen über das Microsoft Jet-Datenbankmodul auf Daten zu, einschließlich ODBC-Treibern. Sie unterstützen auch DDL-Vorgänge (Data Definition Language), z. B. das Erstellen von Datenbanken und das Hinzufügen von Tabellen und Feldern über die Klassen, ohne DAO direkt aufrufen zu müssen.
 
 ## <a name="capabilities"></a>Funktionen
 
-Klassen `CDaoWorkspace` stellt Folgendes bereit:
+Die `CDaoWorkspace` Klasse bietet Folgendes:
 
-- Explizite Zugriff, falls erforderlich, um eine Standard-Arbeitsbereich, und initialisieren Sie die Datenbank-Engine erstellt. In der Regel verwenden Sie DAOs-Standard-Arbeitsbereich implizit durch das Erstellen der Datenbank und Recordset-Objekte.
+- Expliziter Zugriff, falls erforderlich, auf einen Standardarbeitsbereich, der durch Initialisieren des Datenbankmoduls erstellt wird. Normalerweise verwenden Sie den Standardarbeitsbereich von DAO implizit, indem Sie Datenbank- und Recordset-Objekte erstellen.
 
-- Öffnen Sie ein Transaktionsprotokoll-Speicherplatz in dem Transaktionen gilt für alle Datenbanken im Arbeitsbereich. Sie können zusätzliche Arbeitsbereiche zum Verwalten von separaten Transaktion Speicherplätze erstellen.
+- Ein Transaktionsbereich, in dem Transaktionen für alle im Arbeitsbereich geöffneten Datenbanken gelten. Sie können zusätzliche Arbeitsbereiche erstellen, um separate Transaktionsbereiche zu verwalten.
 
-- Eine Schnittstelle für viele Eigenschaften der zugrunde liegenden Microsoft Jet-Datenbank-Engine (siehe die statische Memberfunktionen). Öffnen oder Erstellen eines Arbeitsbereichs oder Aufrufen einer statischen Memberfunktion vor dem Öffnen oder erstellen, und initialisiert die Datenbank-Engine.
+- Eine Schnittstelle zu vielen Eigenschaften des zugrunde liegenden Microsoft Jet-Datenbankmoduls (siehe statische Memberfunktionen). Beim Öffnen oder Erstellen eines Arbeitsbereichs oder beim Aufrufen einer statischen Memberfunktion vor dem Öffnen oder Erstellen wird das Datenbankmodul initialisiert.
 
-- Zugriff auf die Datenbank-Engine-Arbeitsbereiche-Auflistung, der alle aktiven Arbeitsbereiche gespeichert, die es angefügt wurden. Sie können auch erstellen und Verwenden von Arbeitsbereichen, ohne auf die Auflistung anfügen.
+- Zugriff auf die Workspaces-Auflistung des Datenbankmoduls, in der alle aktiven Arbeitsbereiche gespeichert werden, die an sie angehängt wurden. Sie können auch Arbeitsbereiche erstellen und mit ihnen arbeiten, ohne sie an die Sammlung anzuhängen.
 
 ## <a name="security"></a>Sicherheit
 
-MFC implementiert nicht die Sammlungen für Benutzer und Gruppen über DAO, die für die sicherheitssteuerung verwendet werden. Wenn Sie die Aspekte des DAO benötigen, müssen Sie sie selbst über direkte Aufrufe von DAO-Schnittstellen programmieren. Weitere Informationen finden [Sie im technischen Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
+MFC implementiert keine Benutzer- und Gruppensammlungen in DAO, die für die Sicherheitskontrolle verwendet werden. Wenn Sie diese Aspekte von DAO benötigen, müssen Sie sie selbst über direkte Aufrufe an DAO-Schnittstellen programmieren. Weitere Informationen finden Sie unter [Technische Anmerkung 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
 
 ## <a name="usage"></a>Verwendung
 
-Sie können Klassen `CDaoWorkspace` für folgende Zwecke verwenden:
+Sie können `CDaoWorkspace` die Klasse verwenden, um:
 
-- Öffnen Sie explizit die Standard-Arbeitsbereich.
+- Öffnen Sie den Standardarbeitsbereich explizit.
 
-   Normalerweise ist die Verwendung des Standard Arbeitsbereichs implizit – Wenn Sie neue [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -oder [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekte öffnen. Sie müssen jedoch möglicherweise für den Zugriff explizit – z. B. zum Zugriff auf Datenbank-Engine-Eigenschaften oder die Arbeitsbereiche-Auflistung. Nachfolgend finden Sie in der "Impliziten Verwendung der Standard-Arbeitsbereich".
+   Normalerweise ist die Verwendung des Standardarbeitsbereichs implizit, wenn Sie neue [CDaoDatabase-](../../mfc/reference/cdaodatabase-class.md) oder [CDaoRecordset-Objekte](../../mfc/reference/cdaorecordset-class.md) öffnen. Möglicherweise müssen Sie jedoch explizit darauf zugreifen, z. B. um auf Die Eigenschaften des Datenbankmoduls oder auf die Workspaces-Auflistung zuzugreifen. Siehe "Implizite Verwendung des Standardarbeitsbereichs" weiter unten.
 
-- Neue Arbeitsbereiche zu erstellen. Rufen Sie [Append](#append) auf, wenn Sie Sie der Workspaces-Auflistung hinzufügen möchten.
+- Erstellen Sie neue Arbeitsbereiche. Rufen Sie [Append](#append) auf, wenn Sie sie der Workspaces-Auflistung hinzufügen möchten.
 
-- Öffnen Sie einen vorhandenen Arbeitsbereich, in der Auflistung der Arbeitsbereiche.
+- Öffnen Sie einen vorhandenen Arbeitsbereich in der Workspaces-Auflistung.
 
-Das Erstellen eines neuen Arbeitsbereichs, der nicht bereits in der Arbeitsbereichs Sammlung vorhanden ist, wird unter der [Create](#create) Member-Funktion beschrieben. Workspace-Objekte beibehalten in keiner Weise zwischen Beispieldatenbank-Engine-Sitzungen nicht. Wenn Ihre Anwendung statisch MFC verknüpft ist, wird beim Beenden der Anwendung die Datenbank-Engine deinitialisiert. Wenn Ihre Anwendung dynamisch mit MFC verknüpft wird, ist die Datenbank-Engine nicht initialisiert, wenn die MFC-DLL entladen wird.
+Das Erstellen eines neuen Arbeitsbereichs, der noch nicht in der Workspaces-Auflistung vorhanden ist, wird unter [der](#create) Funktion Member erstellen beschrieben. Workspace-Objekte bleiben zwischen Datababase-Engine-Sitzungen in keiner Weise erhalten. Wenn Ihre Anwendung MFC statisch verknüpft, wird das Datenbankmodul durch das Beenden der Anwendung nicht initialisiert. Wenn Ihre Anwendung dynamisch mit MFC verknüpft wird, wird das Datenbankmodul beim Entladen der MFC-DLL nicht initialisiert.
 
-Wenn Sie den Standard Arbeitsbereich explizit öffnen oder einen vorhandenen Arbeitsbereich in der Sammlung "Arbeitsbereiche" öffnen, wird unter der Funktion " [Open](#open) Member" beschrieben.
+Das explizite Öffnen des Standardarbeitsbereichs oder das Öffnen eines vorhandenen Arbeitsbereichs in der Workspaces-Auflistung wird unter der Funktion [Member öffnen](#open) beschrieben.
 
-Beenden Sie eine Arbeitsbereichs Sitzung, indem Sie den Arbeitsbereich mit der [Close](#close) Member-Funktion schließen. `Close` schließt alle Datenbanken, die Sie zuvor nicht geschlossen haben, und stellt für Transaktionen ohne Commit ein Rollback durch.
+Beenden Sie eine Arbeitsbereichssitzung, indem Sie den Arbeitsbereich mit der Memberfunktion [Schließen](#close) schließen schließen. `Close`schließt alle Datenbanken, die Sie zuvor nicht geschlossen haben, und setzt alle nicht festgeschriebenen Transaktionen zurück.
 
 ## <a name="transactions"></a>Transaktionen
 
-DAO verwaltet Transaktionen auf der arbeitsbereichsebene. Transaktionen in einem Arbeitsbereich mit mehreren open-Datenbanken, daher gelten für alle Datenbanken. Wenn beispielsweise zwei Datenbanken über nicht ausgeübte Updates verfügen und [CommitTrans](#committrans)aufgerufen wird, wird für alle Updates ein Commit ausgeführt. Wenn Sie Transaktionen auf eine einzelne Datenbank beschränken möchten, benötigen Sie ein eigenes Workspace-Objekt für sie.
+DAO verwaltet Transaktionen auf Arbeitsbereichsebene. Daher gelten Transaktionen in einem Arbeitsbereich mit mehreren geöffneten Datenbanken für alle Datenbanken. Wenn z. B. zwei Datenbanken nicht festgeschriebene Aktualisierungen haben und Sie [CommitTrans](#committrans)aufrufen, werden alle Updates festgeschrieben. Wenn Sie Transaktionen auf eine einzelne Datenbank beschränken möchten, benötigen Sie dafür ein separates Arbeitsbereichsobjekt.
 
-## <a name="implicit-use-of-the-default-workspace"></a>Implizite Verwendung von Standard-Arbeitsbereich
+## <a name="implicit-use-of-the-default-workspace"></a>Implizite Verwendung des Standardarbeitsbereichs
 
-Verwendet MFC-DAO Standard-Arbeitsbereich implizit in den folgenden Situationen:
+MFC verwendet den Standardarbeitsbereich von DAO implizit unter den folgenden Umständen:
 
-- Wenn Sie ein neues `CDaoDatabase` Objekt erstellen, aber nicht über ein vorhandenes `CDaoWorkspace` Objekt, erstellt MFC ein temporäres Arbeitsbereichs Objekt für Sie, das dem Standard Arbeitsbereich von DAO entspricht. Wenn Sie für mehrere Datenbanken dazu sind alle Datenbankobjekte mit Standard-Arbeitsbereich verknüpft. Sie können über einen `CDaoDatabase` Datenmember auf den Arbeitsbereich einer Datenbank zugreifen.
+- Wenn Sie ein `CDaoDatabase` neues Objekt erstellen, dies jedoch nicht über ein vorhandenes `CDaoWorkspace` Objekt tun, erstellt MFC ein temporäres Arbeitsbereichsobjekt für Sie, das dem Standardarbeitsbereich von DAO entspricht. Wenn Sie dies für mehrere Datenbanken tun, sind alle Datenbankobjekte dem Standardarbeitsbereich zugeordnet. Sie können über ein `CDaoDatabase` Datenmitglied auf den Arbeitsbereich einer Datenbank zugreifen.
 
-- Wenn Sie ein `CDaoRecordset` Objekt erstellen, ohne einen Zeiger auf ein `CDaoDatabase` Objekt bereitzustellen, erstellt MFC ein temporäres Datenbankobjekt und durch Erweiterung ein temporäres Arbeitsbereichs Objekt. Sie können über ein `CDaoRecordset` Datenmember auf die Datenbank eines Recordsets und indirekt auf den Arbeitsbereich zugreifen.
+- Wenn Sie ein `CDaoRecordset` Objekt erstellen, ohne einen `CDaoDatabase` Zeiger auf ein Objekt zu geben, erstellt MFC ein temporäres Datenbankobjekt und durch Erweiterung ein temporäres Arbeitsbereichsobjekt. Sie können über ein `CDaoRecordset` Datenmitglied auf die Datenbank eines Recordsets und indirekt auf dessen Arbeitsbereich zugreifen.
 
-## <a name="other-operations"></a>Andere Vorgänge
+## <a name="other-operations"></a>Sonstige Operationen
 
-Andere Datenbankoperationen werden ebenfalls bereitgestellt, z. B. eine beschädigte Datenbank zu reparieren oder Komprimieren einer Datenbank.
+Andere Datenbankvorgänge werden ebenfalls bereitgestellt, z. B. das Reparieren einer beschädigten Datenbank oder das Komprimieren einer Datenbank.
 
-Weitere Informationen zum direkten Aufrufen von DAO und zur DAO-Sicherheit finden [Sie im technischen Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
+Informationen zum direkten Aufruf von DAO und zur DAO-Sicherheit finden Sie unter [Technische Anmerkung 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 `CDaoWorkspace`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxdao.h
 
-##  <a name="append"></a>CDaoWorkspace:: Append
+## <a name="cdaoworkspaceappend"></a><a name="append"></a>CDaoWorkspace::Anfügen
 
-Rufen Sie diese Member-Funktion nach dem aufzurufen von [Create](#create)auf.
+Rufen Sie diese Memberfunktion auf, nachdem Sie [Create](#create)aufrufen.
 
 ```
 virtual void Append();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`Append` fügt ein neu erstelltes Arbeitsbereichs Objekt an die Arbeitsbereichs Sammlung der Datenbank-Engine an. Arbeitsbereiche beibehalten zwischen Datenbank-Engine-Sitzungen nicht; Sie werden nur im Arbeitsspeicher, nicht auf dem Datenträger gespeichert. Sie müssen keine fügen Sie einen Arbeitsbereich; Wenn Sie nicht, können Sie weiterhin verwenden.
+`Append`fügt ein neu erstelltes Arbeitsbereichsobjekt an die Workspaces-Auflistung des Datenbankmoduls an. Arbeitsbereiche bleiben nicht zwischen Datenbankmodulsitzungen bestehen. Sie werden nur im Arbeitsspeicher gespeichert, nicht auf dem Datenträger. Sie müssen keinen Arbeitsbereich anhängen. Wenn Sie dies nicht tun, können Sie es trotzdem verwenden.
 
-Ein angefügter Arbeitsbereich bleibt in der Workspaces-Auflistung in einem aktiven, geöffneten Zustand, bis Sie seine [Close](#close) Member-Funktion aufruft.
+Ein angehängter Arbeitsbereich verbleibt in der Workspaces-Auflistung in einem aktiven, offenen Zustand, bis Sie die Memberfunktion ["Schließen"](#close) aufrufen.
 
-Weitere Informationen finden Sie unter dem Thema "Fügen Sie der Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Append-Methode" in der DAO-Hilfe.
 
-##  <a name="begintrans"></a>CDaoWorkspace:: BeginTrans
+## <a name="cdaoworkspacebegintrans"></a><a name="begintrans"></a>CDaoWorkspace::BeginTrans
 
-Rufen Sie diese Memberfunktion zum Initiieren einer Transaktion.
+Rufen Sie diese Memberfunktion auf, um eine Transaktion zu initiieren.
 
 ```
 void BeginTrans();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie `BeginTrans`aufgerufen haben, werden Updates, die Sie an Ihrer Daten-oder Datenbankstruktur vornehmen, beim commitcommit der Transaktion wirksam. Da der Arbeitsbereich einen einzelnen Transaktionsbereich definiert, gilt die Transaktion alle geöffneten Datenbanken in den Arbeitsbereich ab. Es gibt zwei Möglichkeiten, um die Transaktion abzuschließen:
+Nach dem `BeginTrans`Aufruf werden Aktualisierungen, die Sie an Ihren Daten oder der Datenbankstruktur vornehmen, wirksam, wenn Sie die Transaktion festsetzen. Da der Arbeitsbereich einen einzelnen Transaktionsbereich definiert, gilt die Transaktion für alle geöffneten Datenbanken im Arbeitsbereich. Es gibt zwei Möglichkeiten, die Transaktion abzuschließen:
 
-- Der [CommitTrans](#committrans) -Member wird aufgerufen, um einen Commit für die Transaktion durchzusetzen und die Änderungen an der Datenquelle zu speichern
+- Rufen Sie die [CommitTrans-Memberfunktion](#committrans) auf, um die Transaktion zu übertragen und Änderungen an der Datenquelle zu speichern.
 
-- Oder rufen Sie die [Rollback](#rollback) -Member-Funktion auf, um die Transaktion abzubrechen.
+- Oder rufen Sie die [Rollback-Memberfunktion](#rollback) auf, um die Transaktion abzubrechen.
 
-Die Workspace-Objekt oder ein Datenbankobjekt schließen, während eine Transaktion ausstehende wird ein Rollback aller anstehende Transaktionen.
+Beim Schließen des Arbeitsbereichsobjekts oder eines Datenbankobjekts, während eine Transaktion ausstehend ist, werden alle ausstehenden Transaktionen zurückgesetzt.
 
-Wenn Sie Transaktionen in einer ODBC-Datenquelle von denen in einer anderen ODBC-Datenquelle isolieren müssen, finden Sie weitere Informationen unter der Member-Funktion von " [c tisolateodbctrans](#setisolateodbctrans) ".
+Wenn Sie Transaktionen auf einer ODBC-Datenquelle von denen in einer anderen ODBC-Datenquelle isolieren müssen, lesen Sie die [SetIsolateODBCTrans-Memberfunktion.](#setisolateodbctrans)
 
-##  <a name="cdaoworkspace"></a>CDaoWorkspace:: CDaoWorkspace
+## <a name="cdaoworkspacecdaoworkspace"></a><a name="cdaoworkspace"></a>CDaoWorkspace::CDaoWorkspace
 
 Erstellt ein `CDaoWorkspace`-Objekt.
 
@@ -237,60 +237,60 @@ Erstellt ein `CDaoWorkspace`-Objekt.
 CDaoWorkspace();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nach dem Erstellen der C++-Objekt, haben Sie zwei Möglichkeiten:
+Nach dem Erstellen des C++-Objekts haben Sie zwei Möglichkeiten:
 
-- Ruft die [Open](#open) Member-Funktion des-Objekts auf, um den Standard Arbeitsbereich zu öffnen oder ein vorhandenes Objekt in der Arbeitsbereichs Auflistung zu öffnen.
+- Rufen Sie die [Memberfunktion "Öffnen"](#open) des Objekts auf, um den Standardarbeitsbereich zu öffnen oder ein vorhandenes Objekt in der Workspaces-Auflistung zu öffnen.
 
-- Oder rufen Sie die [Create](#create) Member-Funktion des Objekts auf, um ein neues DAO-Arbeitsbereichs Objekt zu erstellen. Dadurch wird explizit eine neue Arbeitsbereichs Sitzung gestartet, auf die Sie über das `CDaoWorkspace` Objekt verweisen können. Nachdem Sie `Create`aufgerufen haben, können Sie " [Append](#append) " aufrufen, wenn Sie den Arbeitsbereich der Arbeitsbereichs Sammlung der Datenbank-Engine hinzufügen möchten.
+- Oder rufen Sie die Memberfunktion [Erstellen](#create) des Objekts auf, um ein neues DAO-Arbeitsbereichsobjekt zu erstellen. Dadurch wird explizit eine neue Arbeitsbereichssitzung gestartet, auf die Sie über das `CDaoWorkspace` Objekt verweisen können. Nach `Create`dem Aufruf können Sie [Append](#append) aufrufen, wenn Sie den Arbeitsbereich der Workspaces-Auflistung des Datenbankmoduls hinzufügen möchten.
 
-Informationen dazu, wann Sie explizit ein `CDaoWorkspace` Objekt erstellen müssen, finden Sie in der Übersicht über die Klassen Übersicht für [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md) . Normalerweise verwenden Sie Arbeitsbereiche, die implizit erstellt werden, wenn Sie ein [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt öffnen, ohne einen Arbeitsbereich anzugeben, oder wenn Sie ein [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekt öffnen, ohne ein Datenbankobjekt anzugeben. MFC-DAO-Objekte, die auf diese Weise erstellter verwenden DAO Standard-Arbeitsbereich, das einmal erstellt und wiederverwendet wird.
+In der Klassenübersicht für [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md) finden Sie Informationen `CDaoWorkspace` darüber, wann Sie explizit ein Objekt erstellen müssen. Normalerweise verwenden Sie Arbeitsbereiche, die implizit erstellt werden, wenn Sie ein [CDaoDatabase-Objekt](../../mfc/reference/cdaodatabase-class.md) öffnen, ohne einen Arbeitsbereich anzugeben, oder wenn Sie ein [CDaoRecordset-Objekt](../../mfc/reference/cdaorecordset-class.md) öffnen, ohne ein Datenbankobjekt anzugeben. MFC-DAO-Objekte, die auf diese Weise erstellt wurden, verwenden den Standardarbeitsbereich von DAO, der einmal erstellt und wiederverwendet wird.
 
-Um einen Arbeitsbereich und die darin enthaltenen Objekte freizugeben, müssen Sie die [Close](#close) Member-Funktion des Arbeitsbereichs Objekts anrufen.
+Um einen Arbeitsbereich und seine enthaltenen Objekte freizugeben, rufen Sie die [Memberfunktion "Schließen"](#close) des Workspace-Objekts auf.
 
-##  <a name="close"></a>CDaoWorkspace:: Close
+## <a name="cdaoworkspaceclose"></a><a name="close"></a>CDaoWorkspace::Schließen
 
-Rufen Sie diese Memberfunktion, um die Workspace-Objekt zu schließen.
+Rufen Sie diese Memberfunktion auf, um das Arbeitsbereichsobjekt zu schließen.
 
 ```
 virtual void Close();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Schließen ein Objekt Öffnen des Arbeitsbereichs gibt das zugrunde liegende DAO-Objekt und der Arbeitsbereich ist ein Member der Auflistung Arbeitsbereiche aus der Auflistung entfernt. Das Aufrufen von `Close` ist eine gute Programmier Übung.
+Beim Schließen eines geöffneten Arbeitsbereichsobjekts wird das zugrunde liegende DAO-Objekt freigegeben und, wenn der Arbeitsbereich Mitglied der Workspaces-Auflistung ist, aus der Auflistung entfernt. Aufrufen `Close` ist eine gute Programmierpraxis.
 
 > [!CAUTION]
->  Ein Workspace-Objekt schließen Schließt alle geöffneten Datenbanken im Arbeitsbereich. Dies führt alle geöffneten Recordsets in den Datenbanken, die ebenfalls geschlossen wird, und alle ausstehenden Änderungen oder Updates ein Rollback. Weitere Informationen finden Sie in den Element Funktionen [CDaoDatabase:: Close](../../mfc/reference/cdaodatabase-class.md#close), [CDaoRecordset:: Close](../../mfc/reference/cdaorecordset-class.md#close), [CDaoTableDef:: Close](../../mfc/reference/cdaotabledef-class.md#close)und [CDaoQueryDef:: Close](../../mfc/reference/cdaoquerydef-class.md#close) .
+> Beim Schließen eines Arbeitsbereichsobjekts werden alle geöffneten Datenbanken im Arbeitsbereich geschlossen. Dies führt dazu, dass alle Recordsets, die in den Datenbanken geöffnet werden, ebenfalls geschlossen werden, und alle ausstehenden Bearbeitungen oder Aktualisierungen werden zurückgesetzt. Weitere Informationen finden Sie in den Memberfunktionen [CDaoDatabase::Close](../../mfc/reference/cdaodatabase-class.md#close), [CDaoRecordset::Close](../../mfc/reference/cdaorecordset-class.md#close), [CDaoTableDef::Close](../../mfc/reference/cdaotabledef-class.md#close)und [CDaoQueryDef::Close.](../../mfc/reference/cdaoquerydef-class.md#close)
 
-Workspace-Objekte sind nicht dauerhaft; Sie sind nur vorhanden, während Verweise auf diese vorhanden sind. Dies bedeutet, dass wenn die Datenbank-Engine-Sitzung beendet wird, den Arbeitsbereich und der datenbankauflistung nicht beibehalten werden. Sie müssen sie erneut auf die nächste Sitzung erstellen, indem Sie Ihren Arbeitsbereich und die Datenbanken erneut zu öffnen.
+Arbeitsbereichsobjekte sind nicht permanent. sie existieren nur, solange Verweise auf sie vorhanden sind. Dies bedeutet, dass der Arbeitsbereich und seine Datenbanksammlung nach dem Ende der Datenbankmodulsitzung nicht beibehalten werden. Sie müssen sie für die nächste Sitzung neu erstellen, indem Sie Den Arbeitsbereich und die Datenbank(n) erneut öffnen.
 
-Verwandte Informationen finden Sie im Thema "Close-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Close-Methode" in der DAO-Hilfe.
 
-##  <a name="committrans"></a>CDaoWorkspace:: CommitTrans
+## <a name="cdaoworkspacecommittrans"></a><a name="committrans"></a>CDaoWorkspace::CommitTrans
 
-Rufen Sie diese Memberfunktion zum commit einer Transaktion – eine Gruppe von Änderungen und Aktualisierungen auf eine oder mehrere Datenbanken in den Arbeitsbereich zu speichern.
+Rufen Sie diese Memberfunktion auf, um eine Transaktion zu übertragen – speichern Sie eine Gruppe von Änderungen und Aktualisierungen in einer oder mehreren Datenbanken im Arbeitsbereich.
 
 ```
 void CommitTrans();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Transaktion besteht aus einer Reihe von Änderungen an den Daten der Datenbank oder ihrer Struktur, beginnend mit einem Aufrufen von [BeginTrans](#begintrans). Wenn Sie die Transaktion abgeschlossen haben, führen Sie entweder einen Commit für die Transaktion durch, oder führen Sie ein [Rollback](#rollback)aus (Abbrechen der Änderungen). In der Standardeinstellung ohne Transaktionen sind Updates für Datensätze sofort ein Commit ausgeführt. Das Aufrufen von `BeginTrans` bewirkt, dass die Aktualisierungen verzögert werden, bis Sie `CommitTrans`aufrufen.
+Eine Transaktion besteht aus einer Reihe von Änderungen an den Daten der Datenbank oder ihrer Struktur, beginnend mit einem Aufruf von [BeginTrans](#begintrans). Wenn Sie die Transaktion abschließen, übertragen Sie sie entweder oder setzen Sie sie mit [Rollback](#rollback)zurück (abbrechen Sie die Änderungen). Standardmäßig werden Aktualisierungen von Datensätzen ohne Transaktionen sofort festgeschrieben. Durch `BeginTrans` aufrufen wird die Zusage `CommitTrans`von Aktualisierungen verzögert, bis Sie anrufen.
 
 > [!CAUTION]
->  In einem Arbeitsbereich Transaktionen sind immer global für den Arbeitsbereich und sind nicht nur eine Datenbank oder ein Recordset auf. Wenn Sie Vorgänge für mehrere Datenbanken oder Recordsets innerhalb einer Arbeitsbereichs Transaktion ausführen, führt `CommitTrans` einen Commit für alle ausstehenden Updates aus, und `Rollback` stellt alle Vorgänge für diese Datenbanken und Recordsets wieder her.
+> Innerhalb eines Arbeitsbereichs sind Transaktionen immer global für den Arbeitsbereich und nicht auf eine Datenbank oder ein Recordset beschränkt. Wenn Sie Vorgänge für mehr als eine Datenbank oder `CommitTrans` ein Recordset innerhalb `Rollback` einer Arbeitsbereichstransaktion ausführen, überträgt alle ausstehenden Aktualisierungen und stellt alle Vorgänge für diese Datenbanken und Recordsets wieder her.
 
-Wenn Sie eine Datenbank oder ein Arbeitsbereichs mit ausstehenden Transaktionen schließen, werden die Transaktionen alle ein Rollback ausgeführt.
+Wenn Sie eine Datenbank oder einen Arbeitsbereich mit ausstehenden Transaktionen schließen, werden alle Transaktionen zurückgesetzt.
 
 > [!NOTE]
->  Dies ist kein Zweiphasen-Commit-Mechanismus. Wenn ein Update ein Fehler auftritt, Commit, führt andere weiterhin einen commit.
+> Dies ist kein zweiphasiges Commit-Verfahren. Wenn eine Aktualisierung nicht übertragen werden kann, werden andere weiterhin einen Commit durchführen.
 
-##  <a name="compactdatabase"></a>CDaoWorkspace:: CompactDatabase
+## <a name="cdaoworkspacecompactdatabase"></a><a name="compactdatabase"></a>CDaoWorkspace::CompactDatabase
 
-Rufen Sie diese Memberfunktion zum Komprimieren einer angegebenen Microsoft Jet (. MDB)-Datenbank.
+Rufen Sie diese Memberfunktion auf, um einen angegebenen Microsoft Jet (. MDB)-Datenbank.
 
 ```
 static void PASCAL CompactDatabase(
@@ -309,83 +309,83 @@ static void PASCAL CompactDatabase(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszsrcname*<br/>
-Der Name eines vorhandenen geschlossen Datenbank. Dies kann ein vollständiger Pfad und Dateiname sein, z. b. "C:\\\MyDB. MDB ". Wenn der Dateiname eine Erweiterung verfügt, müssen Sie es angeben. Wenn Ihr Netzwerk die Uniform Naming Convention (UNC) unterstützt, können Sie auch einen Netzwerkpfad angeben, z. b. "\\\\\\\myserver\\\meinefreigabe\\\meindir\\\MyDB. MDB ". (Doppelte umgekehrte Schrägstriche sind in den Pfad Zeichenfolgen erforderlich, da "\\C++ " das Escapezeichen ist.)
+*lpszSrcName*<br/>
+Der Name einer vorhandenen, geschlossenen Datenbank. Es kann sich um einen vollständigen Pfad und\\Dateinamen handelt, z. B. "C: .MYDB. MDB". Wenn der Dateiname eine Erweiterung hat, müssen Sie ihn angeben. Wenn Ihr Netzwerk die einheitliche Benennungskonvention (UNC) unterstützt, können\\\\\\Sie\\auch einen\\Netzwerkpfad angeben, z. B. " " "MYSERVER " MYSHARE , MYDIR\\, MYDB. MDB". (Doppelte umgekehrte Schrägstriche sind in\\den Pfadzeichenfolgen erforderlich, da " " das C++-Escapezeichen ist.)
 
-*lpszdestname*<br/>
-Der vollständige Pfad der komprimierten Datenbank, die Sie erstellen. Sie können auch einen Netzwerkpfad wie *lpszsrcname*angeben. Sie können das *lpszdestname* -Argument nicht verwenden, um die gleiche Datenbankdatei wie *lpszsrcname*anzugeben.
+*lpszDestName*<br/>
+Der vollständige Pfad der komprimierten Datenbank, die Sie erstellen. Sie können auch einen Netzwerkpfad wie bei *lpszSrcName*angeben. Sie können das Argument *lpszDestName* nicht verwenden, um dieselbe Datenbankdatei wie *lpszSrcName*anzugeben.
 
-*lpszpassword*<br/>
-Ein Kennwort verwendet, wenn Sie eine kennwortgeschützte Datenbank komprimiert werden sollen. Beachten Sie Folgendes: Wenn Sie die-Version von `CompactDatabase` verwenden, die ein Kennwort annimmt, müssen Sie alle Parameter angeben. Da es sich hierbei um einen Connect-Parameter handelt, müssen Sie wie folgt eine spezielle Formatierung ausführen:; Pwd = *lpszpassword*. Zum Beispiel:; PWD = "Zufrieden". (Das vorangestellte Semikolon ist erforderlich.)
+*lpszPasswort*<br/>
+Ein Kennwort, das verwendet wird, wenn Sie eine kennwortgeschützte Datenbank komprimieren möchten. Beachten Sie, dass Sie `CompactDatabase` alle Parameter angeben müssen, wenn Sie die Version davon verwenden, die ein Kennwort erfordert. Da es sich um einen connect-Parameter handelt, erfordert er eine spezielle Formatierung wie folgt: PWD= *lpszPassword*. Zum Beispiel: ; PWD="Glücklich". (Das führende Semikolon ist erforderlich.)
 
-*lpszlocale*<br/>
-Ein Zeichen folgen Ausdruck, mit dem die Sortierreihenfolge zum Erstellen von *lpszdestname*angegeben wird. Wenn Sie dieses Argument weglassen, indem Sie den Standardwert `dbLangGeneral` (siehe unten) akzeptieren, ist das Gebiets Schema der neuen Datenbank mit dem der alten Datenbank identisch. Dabei sind folgende Werte möglich:
+*lpszLocale*<br/>
+Ein Zeichenfolgenausdruck, der verwendet wird, um die Sortierungsreihenfolge zum Erstellen von *lpszDestName*anzugeben. Wenn Sie dieses Argument weglassen, `dbLangGeneral` indem Sie den Standardwert von (siehe unten) akzeptieren, entspricht das Gebietsschema der neuen Datenbank dem der alten Datenbank. Mögliche Werte:
 
-- `dbLangGeneral` Englisch, Deutsch, Französisch, Portugiesisch, Italienisch und modern Spanisch
+- `dbLangGeneral`Englisch, Deutsch, Französisch, Portugiesisch, Italienisch und Modernes Spanisch
 
-- `dbLangArabic` Arabisch
+- `dbLangArabic`Arabisch
 
-- `dbLangCyrillic` Russisch
+- `dbLangCyrillic`Russisch
 
-- `dbLangCzech` Tschechisch
+- `dbLangCzech`Tschechisch
 
-- `dbLangDutch` Niederländisch
+- `dbLangDutch`Holländisch
 
-- `dbLangGreek` Griechisch
+- `dbLangGreek`Griechisch
 
-- `dbLangHebrew` Hebräisch
+- `dbLangHebrew`Hebräisch
 
-- `dbLangHungarian` Ungarisch
+- `dbLangHungarian`Ungarisch
 
-- `dbLangIcelandic` Isländisch
+- `dbLangIcelandic`Isländisch
 
-- `dbLangNordic` Nordische Sprachen (nur Microsoft Jet-Datenbank-Engine, Version 1,0)
+- `dbLangNordic`Nordische Sprachen (nur Microsoft Jet-Datenbankmodul Version 1.0)
 
-- `dbLangNorwdan` Norwegisch und Dänisch
+- `dbLangNorwdan`Norwegisch und Dänisch
 
-- `dbLangPolish` Polnisch
+- `dbLangPolish`Polnisch
 
-- traditionelles Spanisch `dbLangSpanish`
+- `dbLangSpanish`Traditionelles Spanisch
 
-- `dbLangSwedfin` Swedish und Finnisch
+- `dbLangSwedfin`Schwedisch und Finnisch
 
-- `dbLangTurkish` Türkisch
+- `dbLangTurkish`Türkisch
 
-*noptions*<br/>
-Gibt eine oder mehrere Optionen für die Zieldatenbank *lpszdestname*an. Wenn Sie dieses Argument weglassen, indem Sie den Standardwert akzeptieren, weist *lpszdestname* dieselbe Verschlüsselung und dieselbe Version wie *lpszsrcname*auf. Sie können die Option `dbEncrypt` oder `dbDecrypt` mit einer der Versions Optionen kombinieren, indem Sie den bitweisen OR-Operator verwenden. Mögliche Werte, die angeben, einem Datenbankformat, nicht in einer Datenbank-Engine-Version, sind:
+*nOptionen*<br/>
+Gibt eine oder mehrere Optionen für die *Zieldatenbank, lpszDestName*, an. Wenn Sie dieses Argument weglassen, indem Sie den Standardwert akzeptieren, hat der *lpszDestName* dieselbe Verschlüsselung und dieselbe Version wie *lpszSrcName*. Sie können `dbEncrypt` die `dbDecrypt` oder Option mit einer der Versionsoptionen mit dem Bitwise-OR-Operator kombinieren. Mögliche Werte, die ein Datenbankformat und keine Datenbankmodulversion angeben, sind:
 
-- `dbEncrypt` die Datenbank während der Komprimierung zu verschlüsseln.
+- `dbEncrypt`Verschlüsseln Sie die Datenbank beim Komprimieren.
 
-- `dbDecrypt` die Datenbank während der Komprimierung zu entschlüsseln.
+- `dbDecrypt`Entschlüsseln Sie die Datenbank beim Komprimieren.
 
-- `dbVersion10` erstellen Sie eine Datenbank, die während der Komprimierung die Microsoft Jet-Datenbank-Engine-Version 1,0 verwendet.
+- `dbVersion10`Erstellen Sie eine Datenbank, die das Microsoft Jet-Datenbankmodul Version 1.0 verwendet, während Sie die Komprimierung verwenden.
 
-- `dbVersion11` erstellen Sie eine Datenbank, die während der Komprimierung die Microsoft Jet-Datenbank-Engine-Version 1,1 verwendet.
+- `dbVersion11`Erstellen Sie eine Datenbank, die das Microsoft Jet-Datenbankmodul Version 1.1 verwendet, während Sie die Komprimierung verwenden.
 
-- `dbVersion20` erstellen Sie eine Datenbank, die während der Komprimierung die Microsoft Jet-Datenbank-Engine-Version 2,0 verwendet.
+- `dbVersion20`Erstellen Sie eine Datenbank, die das Microsoft Jet-Datenbankmodul Version 2.0 verwendet, während Sie die Komprimierung verwenden.
 
-- `dbVersion30` erstellen Sie eine Datenbank, die während der Komprimierung die Microsoft Jet-Datenbank-Engine-Version 3,0 verwendet.
+- `dbVersion30`Erstellen Sie eine Datenbank, die die Microsoft Jet-Datenbankmodulversion 3.0 verwendet, während Sie die Komprimierung verwenden.
 
-Sie können `dbEncrypt` oder `dbDecrypt` im options-Argument verwenden, um anzugeben, ob die Datenbank verschlüsselt oder entschlüsselt werden soll, wenn Sie komprimiert wird. Wenn Sie eine Verschlüsselungs Konstante weglassen oder sowohl `dbDecrypt` als auch `dbEncrypt`einschließen, weist *lpszdestname* dieselbe Verschlüsselung wie *lpszsrcname*auf. Sie können eine der Konstanten Version im Optionsargument verwenden, um die Version des Datenformats für die komprimierte Datenbank anzugeben. Diese Konstante wirkt sich nur auf die Version des Datenformats von *lpszdestname*aus. Sie können nur eine Versionskonstante angeben. Wenn Sie eine Versions Konstante weglassen, hat *lpszdestname* dieselbe Version wie *lpszsrcname*. Sie können *lpszdestname* nur in eine Version komprimieren, die gleich oder später ist als *lpszsrcname*.
-
-> [!CAUTION]
->  Wenn eine Datenbank nicht verschlüsselt ist, kann, auch wenn Sie Benutzername und Kennwort-Sicherheit implementieren, um direkt die binäre Datenträgerdatei lesen, aus der Datenbank besteht.
-
-### <a name="remarks"></a>Hinweise
-
-Wenn Sie Daten in einer Datenbank ändern, wird die Datenbankdatei kann fragmentiert werden, und verwenden mehr Speicherplatz als nötig. In regelmäßigen Abständen, sollten Sie Ihre Datenbank defragmentieren Sie die Datenbankdatei komprimieren. Die komprimierte Datenbank ist in der Regel kleiner. Sie können auch auswählen, um die Sortierreihenfolge, die Verschlüsselung oder die Version des Datenformats zu ändern, während Sie kopieren und komprimieren Sie die Datenbank.
+Sie können `dbEncrypt` `dbDecrypt` die Datenbank beim Komprimieren verwenden oder im Argument options angeben, ob die Datenbank verschlüsselt oder entschlüsselt werden soll. Wenn Sie eine Verschlüsselungskonstante weglassen `dbDecrypt` `dbEncrypt`oder wenn Sie sowohl als auch einschließen, hat *lpszDestName* dieselbe Verschlüsselung wie *lpszSrcName*. Sie können eine der Versionskonstanten im Optionsargument verwenden, um die Version des Datenformats für die komprimierte Datenbank anzugeben. Diese Konstante wirkt sich nur auf die Version des Datenformats von *lpszDestName*aus. Sie können nur eine Versionskonstante angeben. Wenn Sie eine Versionskonstante weglassen, hat *lpszDestName* dieselbe Version wie *lpszSrcName*. Sie können *lpszDestName* nur auf eine Version komprimieren, die die gleiche oder spätere Version als die von *lpszSrcName*ist.
 
 > [!CAUTION]
->  Die `CompactDatabase` Member-Funktion konvertiert eine vollständige Microsoft Access-Datenbank nicht ordnungsgemäß von einer Version in eine andere. Es wird nur das Datenformat konvertiert. Microsoft Access-Objekte, wie Formulare und Berichte, werden nicht konvertiert. Allerdings werden die Daten ordnungsgemäß konvertiert.
+> Wenn eine Datenbank nicht verschlüsselt ist, ist es möglich, auch wenn Sie Benutzer-/Kennwortsicherheit implementieren, die Binärdatenträgerdatei, aus der die Datenbank besteht, direkt zu lesen.
+
+### <a name="remarks"></a>Bemerkungen
+
+Wenn Sie Daten in einer Datenbank ändern, kann die Datenbankdatei fragmentiert werden und mehr Speicherplatz als erforderlich verbrauchen. In regelmäßigen Abständen sollten Sie die Datenbank komprimieren, um die Datenbankdatei zu defragmentieren. Die komprimierte Datenbank ist in der Regel kleiner. Sie können auch die Sortierreihenfolge, die Verschlüsselung oder die Version des Datenformats ändern, während Sie die Datenbank kopieren und komprimieren.
+
+> [!CAUTION]
+> Die `CompactDatabase` Memberfunktion konvertiert eine vollständige Microsoft Access-Datenbank nicht ordnungsgemäß von einer Version in eine andere. Nur das Datenformat wird konvertiert. Mit Microsoft Access definierte Objekte, z. B. Formulare und Berichte, werden nicht konvertiert. Die Daten werden jedoch korrekt konvertiert.
 
 > [!TIP]
->  Sie können auch `CompactDatabase` verwenden, um eine Datenbankdatei zu kopieren.
+> Sie können `CompactDatabase` auch zum Kopieren einer Datenbankdatei verwenden.
 
-Weitere Informationen zum Komprimieren von Datenbanken finden Sie im Thema "CompactDatabase Method" in-DAO-Hilfe.
+Weitere Informationen zum Komprimieren von Datenbanken finden Sie im Thema "CompactDatabase-Methode" in der DAO-Hilfe.
 
-##  <a name="create"></a>CDaoWorkspace:: Create
+## <a name="cdaoworkspacecreate"></a><a name="create"></a>CDaoWorkspace::Erstellen
 
-Rufen Sie diese Member-Funktion auf, um ein neues DAO-Arbeitsbereichs Objekt zu erstellen und es dem MFC-`CDaoWorkspace` Objekt zuzuordnen.
+Rufen Sie diese Memberfunktion auf, um ein neues DAO-Arbeitsbereichsobjekt zu erstellen und es dem MFC-Objekt `CDaoWorkspace` zuzuordnen.
 
 ```
 virtual void Create(
@@ -396,30 +396,30 @@ virtual void Create(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszname*<br/>
-Eine Zeichenfolge mit bis zu 14 Zeichen, die der neue Arbeitsbereich-Objekt eindeutig bezeichnet. Sie müssen einen Namen angeben. Verwandte Informationen finden Sie im Thema "Name-Eigenschaft" in-DAO-Hilfe.
+*lpszName*<br/>
+Eine Zeichenfolge mit bis zu 14 Zeichen, die das neue Arbeitsbereichsobjekt eindeutig benennt. Sie müssen einen Namen angeben. Weitere Informationen finden Sie im Thema "Name-Eigenschaft" in der DAO-Hilfe.
 
-*lpszusername*<br/>
-Der Benutzername des Besitzers des Arbeitsbereichs. Informationen zu den Anforderungen finden Sie unter dem *lpszdefaultuser* -Parameter der [setdefaultuser](#setdefaultuser) -Member-Funktion. Weitere Informationen finden Sie unter dem Thema "UserName-Eigenschaft" in-DAO-Hilfe.
+*lpszUserName*<br/>
+Der Benutzername des Besitzers des Arbeitsbereichs. Informationen zu Anforderungen finden Sie im Parameter *lpszDefaultUser* in der [SetDefaultUser-Memberfunktion.](#setdefaultuser) Weitere Informationen finden Sie im Thema "UserName-Eigenschaft" in der DAO-Hilfe.
 
-*lpszpassword*<br/>
-Das Kennwort für das neue Workspace-Objekt. Ein Kennwort kann bis zu 14 Zeichen lang sein und darf Zeichen mit Ausnahme von ASCII 0 (null). Bei Kennwörtern wird nach Groß- und Kleinschreibung unterschieden. Verwandte Informationen finden Sie im Thema "Password-Eigenschaft" in-DAO-Hilfe.
+*lpszPasswort*<br/>
+Das Kennwort für das neue Arbeitsbereichsobjekt. Ein Kennwort kann bis zu 14 Zeichen lang sein und ein beliebiges Zeichen außer ASCII 0 (null) enthalten. Bei Kennwörtern wird nach Groß- und Kleinschreibung unterschieden. Weitere Informationen finden Sie im Thema "Kennworteigenschaft" in der DAO-Hilfe.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der gesamte Erstellungsvorgang ist:
+Der gesamte Erstellungsprozess ist:
 
-1. Erstellen Sie ein [CDaoWorkspace](#cdaoworkspace) -Objekt.
+1. Erstellen Sie ein [CDaoWorkspace-Objekt.](#cdaoworkspace)
 
-1. Rufen Sie die `Create` Member-Funktion des-Objekts auf, um den zugrunde liegenden DAO-Arbeitsbereich Geben Sie einen Arbeitsbereichsnamen ein.
+1. Rufen Sie die `Create` Memberfunktion des Objekts auf, um den zugrunde liegenden DAO-Arbeitsbereich zu erstellen. Sie müssen einen Arbeitsbereichsnamen angeben.
 
-1. Rufen Sie optional [Append](#append) auf, wenn Sie den Arbeitsbereich der Arbeitsbereichs Sammlung der Datenbank-Engine hinzufügen möchten. Sie können mit dem Arbeitsbereich arbeiten, ohne es anzuhängen.
+1. Rufen Sie optional [Append](#append) auf, wenn Sie den Arbeitsbereich der Workspaces-Auflistung des Datenbankmoduls hinzufügen möchten. Sie können mit dem Arbeitsbereich arbeiten, ohne ihn anzuhängen.
 
-Nach dem `Create`-Befehl befindet sich das Arbeitsbereichs Objekt in einem geöffneten Zustand und kann verwendet werden. Nach `Create`werden `Open` nicht mehr aufgerufen. Sie können `Create` nicht abrufen, wenn der Arbeitsbereich bereits in der Arbeitsbereichs Sammlung vorhanden ist. `Create` initialisiert die Datenbank-Engine, wenn Sie nicht bereits für die Anwendung initialisiert wurde.
+Nach `Create` dem Aufruf befindet sich das Arbeitsbereichsobjekt in einem offenen Zustand, der einsatzbereit ist. Sie rufen `Open` nicht `Create`nach an. Sie rufen `Create` nicht auf, wenn der Arbeitsbereich bereits in der Workspaces-Auflistung vorhanden ist. `Create`initialisiert das Datenbankmodul, wenn es noch nicht für Ihre Anwendung initialisiert wurde.
 
-##  <a name="getdatabasecount"></a>CDaoWorkspace:: getdatabasecount
+## <a name="cdaoworkspacegetdatabasecount"></a><a name="getdatabasecount"></a>CDaoWorkspace::GetDatabaseCount
 
-Rufen Sie diese Memberfunktion zum Abrufen der Anzahl der DAO-Datenbankobjekte in der datenbankauflistung des Arbeitsbereichs – die Anzahl der geöffneten Datenbanken im Arbeitsbereich.
+Rufen Sie diese Memberfunktion auf, um die Anzahl der DAO-Datenbankobjekte in der Datenbanksammlung des Arbeitsbereichs abzurufen – die Anzahl der geöffneten Datenbanken im Arbeitsbereich.
 
 ```
 short GetDatabaseCount();
@@ -429,13 +429,13 @@ short GetDatabaseCount();
 
 Die Anzahl der geöffneten Datenbanken im Arbeitsbereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`GetDatabaseCount` ist nützlich, wenn Sie alle definierten Datenbanken in der Datenbanksammlung des Arbeitsbereichs durchlaufen müssen. Informationen zu einer bestimmten Datenbank in der Sammlung finden Sie unter [getDatabaseInfo](#getdatabaseinfo). Die typische Verwendung besteht darin, `GetDatabaseCount` für die Anzahl der geöffneten Datenbanken aufzurufen und diese Zahl dann als Schleifenindex für wiederholte Aufrufe `GetDatabaseInfo`zu verwenden.
+`GetDatabaseCount`ist nützlich, wenn Sie alle definierten Datenbanken in der Datenbanksammlung des Arbeitsbereichs durchlaufen müssen. Informationen zu einer bestimmten Datenbank in der Auflistung finden Sie unter [GetDatabaseInfo](#getdatabaseinfo). Typische Verwendung besteht `GetDatabaseCount` darin, die Anzahl der geöffneten Datenbanken aufzurufen und `GetDatabaseInfo`diese Nummer dann als Schleifenindex für wiederholte Aufrufe von zu verwenden.
 
-##  <a name="getdatabaseinfo"></a>CDaoWorkspace:: getdatabaseingefo
+## <a name="cdaoworkspacegetdatabaseinfo"></a><a name="getdatabaseinfo"></a>CDaoWorkspace::GetDatabaseInfo
 
-Rufen Sie diese Memberfunktion, um verschiedene Arten von Informationen über eine Datenbank geöffnet, in dem Arbeitsbereich zu erhalten.
+Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen über eine im Arbeitsbereich geöffnete Datenbank abzurufen.
 
 ```
 void GetDatabaseInfo(
@@ -452,32 +452,32 @@ void GetDatabaseInfo(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der nullbasierte Index des Datenbankobjekts in der datenbankauflistung des Arbeitsbereichs, für die Suche nach Index.
+Der nullbasierte Index des Datenbankobjekts in der Datenbankauflistung des Arbeitsbereichs für die Suche nach Index.
 
 *dbinfo*<br/>
-Ein Verweis auf ein [cdaodatabaseinfo](../../mfc/reference/cdaodatabaseinfo-structure.md) -Objekt, das die angeforderten Informationen zurückgibt.
+Ein Verweis auf ein [CDaoDatabaseInfo-Objekt,](../../mfc/reference/cdaodatabaseinfo-structure.md) das die angeforderten Informationen zurückgibt.
 
-*dwinfooptions*<br/>
-Optionen, die angeben, welche Informationen über die Datenbank abgerufen. Die verfügbaren Optionen sind hier aufgeführt, zusammen mit der sie die Funktion zurückgibt verursachen:
+*dwInfoOptionen*<br/>
+Optionen, die angeben, welche Informationen über die abzurufende Datenbank abgerufen werden sollen. Die verfügbaren Optionen sind hier zusammen mit dem, was die Funktion zurückgeben lässt aufgeführt:
 
-- AFX_DAO_PRIMARY_INFO (Standard) Namen aktualisiert werden kann, Transaktionen
+- AFX_DAO_PRIMARY_INFO (Standard)-Name, Updatable, Transaktionen
 
-- Primäre AFX_DAO_SECONDARY_INFO Informationen plus: Abfragetimeout Version Reihenfolge sortieren
+- AFX_DAO_SECONDARY_INFO Primärinformationen plus: Version, Sortierreihenfolge, Abfragetimeout
 
-- AFX_DAO_ALL_INFO primären und sekundären Informationen plus: Verbinden
+- AFX_DAO_ALL_INFO Primär- und Sekundärinformationen plus: Verbinden
 
-*lpszname*<br/>
-Der Name des Datenbankobjekts, für die Suche anhand des Namens. Der Name ist eine Zeichenfolge mit bis zu 14 Zeichen, die der neue Arbeitsbereich-Objekt eindeutig bezeichnet.
+*lpszName*<br/>
+Der Name des Datenbankobjekts für die Suche nach Namen. Der Name ist eine Zeichenfolge mit bis zu 14 Zeichen, die das neue Arbeitsbereichsobjekt eindeutig benennt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Version der Funktion können Sie eine Datenbank über einen Index zu suchen. Die andere Version können Sie eine Datenbank anhand des Namens zu suchen.
+Mit einer Version der Funktion können Sie eine Datenbank nach Index suchen. Mit der anderen Version können Sie eine Datenbank nach Namen suchen.
 
-Eine Beschreibung der Informationen, die in *dbinfo*zurückgegeben werden, finden Sie in der [cdaodatabaseinfo](../../mfc/reference/cdaodatabaseinfo-structure.md) -Struktur. Diese Struktur enthält Member, die den in der Beschreibung von *dwinfooptions*aufgeführten Elementen der oben aufgeführten Informationen entsprechen. Wenn Sie die Informationen auf einer Ebene anfordern, erhalten Sie Informationen für alle vorherigen Ebenen sowie an.
+Eine Beschreibung der in *dbinfo*zurückgegebenen Informationen finden Sie in der [CDaoDatabaseInfo-Struktur.](../../mfc/reference/cdaodatabaseinfo-structure.md) Diese Struktur verfügt über Member, die den oben aufgeführten Informationen in der Beschreibung von *dwInfoOptions*entsprechen. Wenn Sie Informationen auf einer Ebene anfordern, erhalten Sie auch Informationen für alle vorherigen Ebenen.
 
-##  <a name="getinipath"></a>CDaoWorkspace:: getinipath
+## <a name="cdaoworkspacegetinipath"></a><a name="getinipath"></a>CDaoWorkspace::GetIniPath
 
-Rufen Sie diese Memberfunktion um den Speicherort der Microsoft Jet-Datenbank-Engine-Initialisierung-Einstellungen in der Windows-Registrierung abzurufen.
+Rufen Sie diese Memberfunktion auf, um den Speicherort der Initialisierungseinstellungen des Microsoft Jet-Datenbankmoduls in der Windows-Registrierung abzurufen.
 
 ```
 static CString PASCAL GetIniPath();
@@ -485,17 +485,17 @@ static CString PASCAL GetIniPath();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine [CString](../../atl-mfc-shared/reference/cstringt-class.md) , die den Registrierungs Speicherort enthält.
+Ein [CString,](../../atl-mfc-shared/reference/cstringt-class.md) der den Registrierungsspeicherort enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können den Speicherort zum Abrufen von Informationen zu Einstellungen für die Datenbank-Engine verwenden. Die zurückgegebenen Informationen ist tatsächlich auf den Namen der Unterschlüssel der Registrierung.
+Sie können den Speicherort verwenden, um Informationen zu den Einstellungen für das Datenbankmodul zu erhalten. Die zurückgegebenen Informationen sind eigentlich der Name eines Registrierungsunterschlüssels.
 
-Weitere Informationen finden Sie unter den Themen "IniPath Property" und "Anpassen von Windows-Registrierung Einstellungen für den Datenzugriff" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "IniPath-Eigenschaft" und "Anpassen der Windows-Registrierungseinstellungen für den Datenzugriff" in der DAO-Hilfe.
 
-##  <a name="getisolateodbctrans"></a>CDaoWorkspace:: getisolateodbctrans
+## <a name="cdaoworkspacegetisolateodbctrans"></a><a name="getisolateodbctrans"></a>CDaoWorkspace::GetIsolateODBCTrans
 
-Rufen Sie diese Memberfunktion um den aktuellen Wert der Eigenschaft DAO IsolateODBCTrans für den Arbeitsbereich zu erhalten.
+Rufen Sie diese Memberfunktion auf, um den aktuellen Wert der DAO IsolateODBCTrans-Eigenschaft für den Arbeitsbereich abzurufen.
 
 ```
 BOOL GetIsolateODBCTrans();
@@ -503,19 +503,19 @@ BOOL GetIsolateODBCTrans();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Legen Sie ungleich NULL, wenn es sich bei ODBC-Transaktionen isoliert sind; andernfalls 0.
+Ein Wert ungleich Null, wenn ODBC-Transaktionen isoliert sind; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In einigen Situationen müssen Sie mehrere gleichzeitige Transaktionen mit ausstehender für eine ODBC-Datenbank haben. Zu diesem Zweck müssen Sie einen separaten Arbeitsbereich für jede Transaktion zu öffnen. Bedenken Sie, dass zwar jeden Arbeitsbereich eine eigene ODBC-Verbindung mit der Datenbank verfügen kann, dies die Systemleistung verlangsamt. Da der Transaktionsisolation nicht normal erforderlich ist, werden die ODBC-Verbindungen von mehreren Workspace-Objekte, die vom gleichen Benutzer geöffnet standardmäßig freigegeben.
+In einigen Situationen müssen möglicherweise mehrere gleichzeitige Transaktionen für dieselbe ODBC-Datenbank ausstehen. Dazu müssen Sie für jede Transaktion einen separaten Arbeitsbereich öffnen. Beachten Sie, dass jeder Arbeitsbereich zwar über eine eigene ODBC-Verbindung mit der Datenbank verfügen kann, dies jedoch die Systemleistung verlangsamt. Da normalerweise keine Transaktionsisolation erforderlich ist, werden ODBC-Verbindungen von mehreren Arbeitsbereichsobjekten, die vom gleichen Benutzer geöffnet werden, standardmäßig gemeinsam genutzt.
 
-Einige ODBC-Server, z. B. Microsoft SQL Server zulassen nicht gleichzeitige Transaktionen auf eine einzelne Verbindung. Wenn Sie mehr als eine Transaktion zu einem Zeitpunkt steht aus für eine Datenbank verfügen müssen, legen Sie die IsolateODBCTrans-Eigenschaft auf "true" für jeden Arbeitsbereich, sobald Sie es öffnen. Dies erzwingt, dass eine separate ODBC-Verbindung für jeden Arbeitsbereich.
+Einige ODBC-Server, z. B. Microsoft SQL Server, lassen keine gleichzeitigen Transaktionen auf einer einzelnen Verbindung zu. Wenn für eine solche Datenbank jeweils mehr als eine Transaktion ausstehen muss, legen Sie die IsolateODBCTrans-Eigenschaft für jeden Arbeitsbereich auf TRUE fest, sobald Sie sie öffnen. Dadurch wird eine separate ODBC-Verbindung für jeden Arbeitsbereich erzwingt.
 
-Verwandte Informationen finden Sie im Thema "IsolateODBCTrans-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "IsolateODBCTrans-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getlogintimeout"></a>CDaoWorkspace:: GetLoginTimeout
+## <a name="cdaoworkspacegetlogintimeout"></a><a name="getlogintimeout"></a>CDaoWorkspace::GetLoginTimeout
 
-Rufen Sie diese Memberfunktion um den aktuellen Wert der DAO-LoginTimeout-Eigenschaft für den Arbeitsbereich zu erhalten.
+Rufen Sie diese Memberfunktion auf, um den aktuellen Wert der DAO LoginTimeout-Eigenschaft für den Arbeitsbereich abzurufen.
 
 ```
 static short PASCAL GetLoginTimeout();
@@ -523,19 +523,19 @@ static short PASCAL GetLoginTimeout();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn Sie versuchen, eine ODBC-Datenbank anmelden.
+Die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert stellt die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn Sie versuchen, eine ODBC-Datenbank anmelden. Die Standardeinstellung für das Anmeldungstimeout beträgt 20 Sekunden. Beim Anmeldungstimeout auf 0 festgelegt ist, wird kein Timeout erfolgt, und die Kommunikation mit der Datenquelle reagiert möglicherweise nicht.
+Dieser Wert stellt die Anzahl der Sekunden dar, bevor ein Fehler auftritt, wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden. Die Standardeinstellung LoginTimeout beträgt 20 Sekunden. Wenn LoginTimeout auf 0 gesetzt ist, tritt kein Timeout auf, und die Kommunikation mit der Datenquelle reagiert möglicherweise nicht mehr.
 
-Wenn Sie versuchen, die mit einer ODBC-Datenbank, z. B. Microsoft SQL Server, melden Sie sich möglicherweise die Verbindung aufgrund von Netzwerkfehlern oder weil der Server nicht ausgeführt wird. Anstatt zu warten, der Standardwert 20 Sekunden eine Verbindung herstellen, können Sie angeben, wie lange die Datenbank-Engine wartet, bevor er einen Fehler erzeugt. Anmeldung mit dem Server wird implizit als Teil einer Reihe verschiedener Ereignisse, wie z. B. das Ausführen einer Abfrage in einer externen Server-Datenbank.
+Wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden, z. B. Microsoft SQL Server, schlägt die Verbindung möglicherweise aufgrund von Netzwerkfehlern oder aufgrund nicht ausgeführter Server fehl. Anstatt auf die standardmäßige Verbindung von 20 Sekunden zu warten, können Sie angeben, wie lange das Datenbankmodul wartet, bevor es einen Fehler auslöst. Die Anmeldung beim Server erfolgt implizit als Teil einer Reihe verschiedener Ereignisse, z. B. beim Ausführen einer Abfrage in einer externen Serverdatenbank.
 
-Verwandte Informationen finden Sie im Thema "LoginTimeout-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "LoginTimeout-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getname"></a>CDaoWorkspace:: GetName
+## <a name="cdaoworkspacegetname"></a><a name="getname"></a>CDaoWorkspace::GetName
 
-Mit dieser Member-Funktion können Sie den benutzerdefinierten Namen des DAO-Arbeitsbereichs Objekts abrufen, das dem `CDaoWorkspace`-Objekt zugrunde liegt.
+Rufen Sie diese Memberfunktion auf, um den benutzerdefinierten `CDaoWorkspace` Namen des DAO-Arbeitsbereichsobjekts abzurufen, das dem Objekt zugrunde liegt.
 
 ```
 CString GetName();
@@ -543,17 +543,17 @@ CString GetName();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Wert, der den benutzerdefinierten Namen des DAO-Arbeitsbereichs Objekts enthält.
+Ein [CString,](../../atl-mfc-shared/reference/cstringt-class.md) der den benutzerdefinierten Namen des DAO-Arbeitsbereichsobjekts enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Name ist nützlich für den Zugriff auf die DAO-Workspace-Objekt in der Datenbank-Engine-arbeitsbereicheauflistung nach Namen.
+Der Name ist nützlich für den Zugriff auf das DAO-Arbeitsbereichsobjekt in der Workspaces-Auflistung des Datenbankmoduls nach Namen.
 
-Verwandte Informationen finden Sie im Thema "Name-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Name-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getusername"></a>CDaoWorkspace:: GetUserName
+## <a name="cdaoworkspacegetusername"></a><a name="getusername"></a>CDaoWorkspace::GetUserName
 
-Rufen Sie diese Memberfunktion zum Abrufen des Namens des Besitzers des Arbeitsbereichs.
+Rufen Sie diese Memberfunktion auf, um den Namen des Besitzers des Arbeitsbereichs abzurufen.
 
 ```
 CString GetUserName();
@@ -561,17 +561,17 @@ CString GetUserName();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Wert, der den Besitzer des Arbeitsbereichs Objekts darstellt.
+Eine [CString,](../../atl-mfc-shared/reference/cstringt-class.md) die den Besitzer des Arbeitsbereichsobjekts darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie zum Abrufen oder Festlegen der Berechtigungen für Besitzer des Arbeitsbereichs, DAO direkt, um die Einstellung der Eigenschaft Berechtigungen zu überprüfen. Dadurch wird bestimmt, welche Berechtigungen dieser Benutzer besitzt. Um mit den Berechtigungen zu arbeiten, benötigen Sie ein SYSTEM aus. MDA-Datei.
+Um die Berechtigungen für den Arbeitsbereichsbesitzer zu erhalten oder festzulegen, rufen Sie DAO direkt auf, um die Eigenschafteneinstellung Berechtigungen zu überprüfen. Dadurch wird bestimmt, über welche Berechtigungen dieser Benutzer verfügt. Um mit Berechtigungen arbeiten zu können, benötigen Sie ein SYSTEM. MDA-Datei.
 
-Weitere Informationen zum direkten Aufrufen von DAO finden [Sie im technischen Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md). Weitere Informationen finden Sie unter dem Thema "UserName-Eigenschaft" in-DAO-Hilfe.
+Informationen zum direkten Aufruf von DAO finden Sie unter [Technisches Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md). Weitere Informationen finden Sie im Thema "UserName-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getversion"></a>CDaoWorkspace:: GetVersion
+## <a name="cdaoworkspacegetversion"></a><a name="getversion"></a>CDaoWorkspace::GetVersion
 
-Rufen Sie diese Memberfunktion zum Ermitteln der Version von Microsoft Jet-Datenbank-Engine verwendet.
+Rufen Sie diese Memberfunktion auf, um die Version des verwendeten Microsoft Jet-Datenbankmoduls zu ermitteln.
 
 ```
 static CString PASCAL GetVersion();
@@ -579,17 +579,17 @@ static CString PASCAL GetVersion();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Wert, der die Version der Datenbank-Engine angibt, die dem Objekt zugeordnet ist.
+Ein [CString,](../../atl-mfc-shared/reference/cstringt-class.md) der die Version des Datenbankmoduls angibt, das dem Objekt zugeordnet ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der zurückgegebene Wert stellt die Versionsnummer im Format "Hauptversion.Nebenversion"; z. B. "3.0". Die Versionsnummer des Produkts (z. B. "3.0") besteht aus der Versionsnummer (3), einem Punkt und die Versionsnummer (0).
+Der zurückgegebene Wert stellt die Versionsnummer in der Form "major.minor" dar. z. B. "3.0". Die Produktversionsnummer (z. B. 3.0) besteht aus der Versionsnummer (3), einem Punkt und der Versionsnummer (0).
 
-Verwandte Informationen finden Sie im Thema "Version-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Versionseigenschaft" in der DAO-Hilfe.
 
-##  <a name="getworkspacecount"></a>CDaoWorkspace:: getworkspacecount
+## <a name="cdaoworkspacegetworkspacecount"></a><a name="getworkspacecount"></a>CDaoWorkspace::GetWorkspaceCount
 
-Rufen Sie diese Memberfunktion zum Abrufen der Anzahl der DAO-Workspace-Objekte in der Datenbank-Engine-Arbeitsbereiche-Auflistung.
+Rufen Sie diese Memberfunktion auf, um die Anzahl der DAO-Arbeitsbereichsobjekte in der Workspaces-Auflistung des Datenbankmoduls abzurufen.
 
 ```
 short GetWorkspaceCount();
@@ -597,15 +597,15 @@ short GetWorkspaceCount();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der geöffneten Arbeitsbereiche in der Auflistung der Arbeitsbereiche.
+Die Anzahl der geöffneten Arbeitsbereiche in der Workspaces-Auflistung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Zahl umfasst keine öffnen Arbeitsbereiche nicht auf die Auflistung angefügt. `GetWorkspaceCount` ist nützlich, wenn Sie alle definierten Arbeitsbereiche in der Arbeitsbereiche-Auflistung durchlaufen müssen. Informationen zu einem bestimmten Arbeitsbereich in der Sammlung finden Sie unter [GetWorkspaceInfo](#getworkspaceinfo). Die typische Verwendung besteht darin, `GetWorkspaceCount` für die Anzahl der geöffneten Arbeitsbereiche aufzurufen und diese Zahl dann als Schleifenindex für wiederholte Aufrufe `GetWorkspaceInfo`zu verwenden.
+Diese Anzahl enthält keine offenen Arbeitsbereiche, die nicht an die Auflistung angehängt sind. `GetWorkspaceCount`ist nützlich, wenn Sie alle definierten Arbeitsbereiche in der Workspaces-Auflistung durchlaufen müssen. Informationen zu einem bestimmten Arbeitsbereich in der Auflistung finden Sie unter [GetWorkspaceInfo](#getworkspaceinfo). Typische Verwendung besteht `GetWorkspaceCount` darin, die Anzahl der geöffneten Arbeitsbereiche aufzurufen und `GetWorkspaceInfo`diese Nummer dann als Schleifenindex für wiederholte Aufrufe von zu verwenden.
 
-##  <a name="getworkspaceinfo"></a>CDaoWorkspace:: getworkspaceingefo
+## <a name="cdaoworkspacegetworkspaceinfo"></a><a name="getworkspaceinfo"></a>CDaoWorkspace::GetWorkspaceInfo
 
-Rufen Sie diese Memberfunktion, um verschiedene Arten von Informationen über einen Arbeitsbereich öffnen, in der Sitzung zu erhalten.
+Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen zu einem in der Sitzung geöffneten Arbeitsbereich abzurufen.
 
 ```
 void GetWorkspaceInfo(
@@ -622,30 +622,30 @@ void GetWorkspaceInfo(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der nullbasierte Index des Datenbankobjekts in der Auflistung Arbeitsbereiche für die Suche nach Index.
+Der nullbasierte Index des Datenbankobjekts in der Workspaces-Auflistung für die Suche nach Index.
 
 *wkspcinfo*<br/>
-Ein Verweis auf ein [cdaoworkspaceinfo](../../mfc/reference/cdaoworkspaceinfo-structure.md) -Objekt, das die angeforderten Informationen zurückgibt.
+Ein Verweis auf ein [CDaoWorkspaceInfo-Objekt,](../../mfc/reference/cdaoworkspaceinfo-structure.md) das die angeforderten Informationen zurückgibt.
 
-*dwinfooptions*<br/>
-Optionen, die angeben, welche Informationen über den Arbeitsbereich abrufen. Die verfügbaren Optionen sind hier aufgeführt, zusammen mit der sie die Funktion zurückgibt verursachen:
+*dwInfoOptionen*<br/>
+Optionen, die angeben, welche Informationen über den abzurufenden Arbeitsbereich abgerufen werden sollen. Die verfügbaren Optionen sind hier zusammen mit dem, was die Funktion zurückgeben lässt aufgeführt:
 
-- Name der AFX_DAO_PRIMARY_INFO (Standard)
+- AFX_DAO_PRIMARY_INFO (Standard)-Name
 
-- Primäre AFX_DAO_SECONDARY_INFO Informationen plus: Benutzername
+- AFX_DAO_SECONDARY_INFO Primärinformationen plus: Benutzername
 
-- AFX_DAO_ALL_INFO primären und sekundären Informationen plus: ODBCTrans zu isolieren
+- AFX_DAO_ALL_INFO Primär- und Sekundärinformationen plus: ODBCTrans isolieren
 
-*lpszname*<br/>
-Der Name des Workspace-Objekts, für die Suche anhand des Namens. Der Name ist eine Zeichenfolge mit bis zu 14 Zeichen, die der neue Arbeitsbereich-Objekt eindeutig bezeichnet.
+*lpszName*<br/>
+Der Name des Arbeitsbereichsobjekts für die Suche nach Namen. Der Name ist eine Zeichenfolge mit bis zu 14 Zeichen, die das neue Arbeitsbereichsobjekt eindeutig benennt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Beschreibung der Informationen, die in *wkspcinfo*zurückgegeben werden, finden Sie in der [cdaoworkspaceinfo](../../mfc/reference/cdaoworkspaceinfo-structure.md) -Struktur. Diese Struktur enthält Member, die den in der Beschreibung von *dwinfooptions*aufgeführten Elementen der oben aufgeführten Informationen entsprechen. Wenn Sie die Informationen auf einer Ebene anfordern, erhalten Sie Informationen zu vorherigen Ebenen sowie an.
+Eine Beschreibung der in *wkspcinfo*zurückgegebenen Informationen finden Sie in der [CDaoWorkspaceInfo-Struktur.](../../mfc/reference/cdaoworkspaceinfo-structure.md) Diese Struktur verfügt über Member, die den oben aufgeführten Informationen in der Beschreibung von *dwInfoOptions*entsprechen. Wenn Sie Informationen auf einer Ebene anfordern, erhalten Sie auch Informationen für frühere Ebenen.
 
-##  <a name="idle"></a>CDaoWorkspace:: Leerlauf
+## <a name="cdaoworkspaceidle"></a><a name="idle"></a>CDaoWorkspace::Leerlauf
 
-Wenden Sie `Idle` an, um der Datenbank-Engine die Möglichkeit zu bieten, Hintergrundaufgaben auszuführen, die aufgrund intensiver Datenverarbeitung möglicherweise nicht auf dem neuesten Stand sind.
+Rufen `Idle` Sie an, um dem Datenbankmodul die Möglichkeit zu geben, Hintergrundaufgaben auszuführen, die aufgrund der intensiven Datenverarbeitung möglicherweise nicht auf dem neuesten Stand sind.
 
 ```
 static void PASCAL Idle(int nAction = dbFreeLocks);
@@ -653,25 +653,25 @@ static void PASCAL Idle(int nAction = dbFreeLocks);
 
 ### <a name="parameters"></a>Parameter
 
-*naktionsmeldung*<br/>
-Aktion bei der Verarbeitung im Leerlauf ausgeführt werden soll. Zurzeit ist die einzige gültige Aktion `dbFreeLocks`.
+*nAction*<br/>
+Eine Aktion, die während der Verarbeitung im Leerlauf zu ergreifen ist. Derzeit ist `dbFreeLocks`die einzige gültige Aktion .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies ist häufig in mehreren Benutzern, Multitasking-Umgebungen, in dem ist nicht genügend Hintergrundverarbeitungszeit, um alle Datensätze in einem Recordset aktuell zu halten.
+Dies trifft häufig auf Multiuser-Multitasking-Umgebungen zu, in denen nicht genügend Hintergrundverarbeitungszeit zur Geltung hat, um alle Datensätze in einem Recordset auf dem aktuellen Stand zu halten.
 
 > [!NOTE]
->  Das Aufrufen von `Idle` ist bei Datenbanken, die mit Version 3,0 der Microsoft Jet-Datenbank-Engine erstellt wurden, nicht erforderlich Verwenden Sie `Idle` nur für Datenbanken, die mit früheren Versionen erstellt wurden.
+> Ein `Idle` Aufruf ist bei Datenbanken, die mit Version 3.0 des Microsoft Jet-Datenbankmoduls erstellt wurden, nicht erforderlich. Wird `Idle` nur für Datenbanken verwendet, die mit früheren Versionen erstellt wurden.
 
-In der Regel wird lesen, Sperren entfernt werden, und Daten im lokalen Dynaset eines assistentartigen Recordset-Objekte nur aktualisiert, wenn keine anderen Aktionen (einschließlich mausbewegungen) auftreten. Wenn Sie `Idle`regelmäßig aufzurufen, stellen Sie der Datenbank-Engine Zeit zum Auffangen von Hintergrund Verarbeitungsaufgaben bereit, indem Sie nicht benötigte Lese Sperren freigeben. Die Angabe der `dbFreeLocks` Konstante als Argument verzögert die Verarbeitung, bis alle Lese Sperren freigegeben wurden.
+In der Regel werden Lesesperren entfernt, und Daten in lokalen Recordset-Objekten vom Typ Dynaset werden nur aktualisiert, wenn keine anderen Aktionen (einschließlich Mausbewegungen) ausgeführt werden. Wenn Sie `Idle`regelmäßig aufrufen, haben Sie dem Datenbankmodul Zeit, Hintergrundverarbeitungsaufgaben nachzuholen, indem Sie nicht benötigte Lesesperren freigeben. Die Angabe `dbFreeLocks` der Konstante als Argument verzögert die Verarbeitung, bis alle Lesesperren freigegeben werden.
 
-Diese Memberfunktion ist in Umgebungen mit nur einem Benutzer nicht erforderlich, es sei denn, die mehrere Instanzen einer Anwendung ausgeführt werden. Die `Idle` Member-Funktion kann die Leistung in einer mehr Benutzerumgebung verbessern, da die Datenbank-Engine zwingt, Daten auf den Datenträger zu leeren und Sperren für den Arbeitsspeicher freizugeben. Sie können auch Lesesperren freigeben, dazu die Vorgängen Teil einer Transaktion.
+Diese Memberfunktion ist in Einzelbenutzerumgebungen nur erforderlich, wenn mehrere Instanzen einer Anwendung ausgeführt werden. Die `Idle` Memberfunktion kann die Leistung in einer Mehrbenutzerumgebung erhöhen, da sie das Datenbankmodul zwingt, Daten auf den Datenträger zu löschen, wodurch Sperren für den Arbeitsspeicher freigegeben werden. Sie können Lesesperren auch freigeben, indem Sie Vorgänge zu einem Teil einer Transaktion machen.
 
-Verwandte Informationen finden Sie im Thema "Im Leerlauf Method" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Leerlaufmethode" in der DAO-Hilfe.
 
-##  <a name="isopen"></a>CDaoWorkspace:: IsOpen
+## <a name="cdaoworkspaceisopen"></a><a name="isopen"></a>CDaoWorkspace::IsOpen
 
-Rufen Sie diese Member-Funktion auf, um zu bestimmen, ob das `CDaoWorkspace` Objekt geöffnet ist – d. h. ob das MFC-Objekt durch einen [Open](#open) -oder [Create](#create)-Befehl initialisiert wurde.
+Rufen Sie diese Memberfunktion `CDaoWorkspace` auf, um zu bestimmen, ob das Objekt geöffnet ist, d. h., ob das MFC-Objekt durch einen Aufruf von [Öffnen](#open) oder durch einen Aufruf von [Create](#create)initialisiert wurde.
 
 ```
 BOOL IsOpen() const;
@@ -679,25 +679,25 @@ BOOL IsOpen() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Workspace-Objekt geöffnet ist; andernfalls 0.
+Ein Wert ungleich Null, wenn das Workspace-Objekt geöffnet ist; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können keine der Memberfunktionen Funktionen eines Arbeitsbereichs aufrufen, die im geöffneten Zustand ist.
+Sie können jede der Memberfunktionen eines Arbeitsbereichs aufrufen, die sich in einem offenen Zustand befindet.
 
-##  <a name="m_pdaoworkspace"></a>CDaoWorkspace:: m_pDAOWorkspace
+## <a name="cdaoworkspacem_pdaoworkspace"></a><a name="m_pdaoworkspace"></a>CDaoWorkspace::m_pDAOWorkspace
 
-Ein Zeiger auf das zugrunde liegende DAO-Workspace-Objekt.
+Ein Zeiger auf das zugrunde liegende DAO-Arbeitsbereichsobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie dieses Datenelement aus, wenn Sie den Zugriff auf das zugrunde liegende DAO-Objekt weiterleiten müssen. Sie können die DAO-Schnittstellen des Objekts über diesen Zeiger aufrufen.
+Verwenden Sie dieses Datenelement, wenn Sie direkten Zugriff auf das zugrunde liegende DAO-Objekt benötigen. Sie können die Schnittstellen des DAO-Objekts über diesen Zeiger aufrufen.
 
-Weitere Informationen zum direkten Zugriff auf DAO-Objekte finden [Sie im technischen Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
+Informationen zum direkten Zugriff auf DAO-Objekte finden Sie unter [Technische Anmerkung 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
 
-##  <a name="open"></a>CDaoWorkspace:: Open
+## <a name="cdaoworkspaceopen"></a><a name="open"></a>CDaoWorkspace::Öffnen
 
-Explizit öffnet ein Workspace-Objekt, das mit DAO Standard-Arbeitsbereich verknüpft ist.
+Öffnet explizit ein Arbeitsbereichsobjekt, das dem Standardarbeitsbereich von DAO zugeordnet ist.
 
 ```
 virtual void Open(LPCTSTR lpszName = NULL);
@@ -705,30 +705,30 @@ virtual void Open(LPCTSTR lpszName = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszname*<br/>
-Der Name des Objekts die DAO-Arbeitsbereich zu öffnen, eine Zeichenfolge mit bis zu 14 Zeichen, die den Arbeitsbereich eindeutig bezeichnet. Akzeptieren Sie den Standardwert NULL, um die Standard-Arbeitsbereich explizit zu öffnen. Informationen zu den Benennungs Anforderungen finden Sie unter dem *lpszname* -Parameter für [Create](#create). Verwandte Informationen finden Sie im Thema "Name-Eigenschaft" in-DAO-Hilfe.
+*lpszName*<br/>
+Der Name des zu öffnenden DAO-Arbeitsbereichsobjekts – eine Zeichenfolge mit bis zu 14 Zeichen, die den Arbeitsbereich eindeutig benennt. Akzeptieren Sie den Standardwert NULL, um den Standardarbeitsbereich explizit zu öffnen. Benennensanforderungen finden Sie im Parameter *lpszName* für [Erstellen](#create). Weitere Informationen finden Sie im Thema "Name-Eigenschaft" in der DAO-Hilfe.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie ein `CDaoWorkspace` Objekt erstellt haben, können Sie diese Member-Funktion für eine der folgenden Aktionen verwenden:
+Rufen Sie `CDaoWorkspace` nach dem Erstellen eines Objekts diese Memberfunktion auf, um eine der folgenden Optionen zu ausführen:
 
-- Öffnen Sie explizit die Standard-Arbeitsbereich. Übergeben Sie für *lpszname*den Wert NULL.
+- Öffnen Sie den Standardarbeitsbereich explizit. Übergeben Sie NULL für *lpszName*.
 
-- Öffnen Sie ein vorhandenes `CDaoWorkspace` Objekt, ein Mitglied der Workspaces-Auflistung, nach Namen. Übergeben Sie einen gültigen Namen für ein vorhandenes Workspace-Objekt.
+- Öffnen Sie `CDaoWorkspace` ein vorhandenes Objekt, ein Mitglied der Workspaces-Auflistung, nach Namen. Übergeben Sie einen gültigen Namen für ein vorhandenes Arbeitsbereichsobjekt.
 
-`Open` versetzt das Arbeitsbereichs Objekt in einen geöffneten Zustand und initialisiert die Datenbank-Engine auch, wenn Sie nicht bereits für die Anwendung initialisiert wurde.
+`Open`versetzt das Workspace-Objekt in einen offenen Zustand und initialisiert auch das Datenbankmodul, wenn es noch nicht für Ihre Anwendung initialisiert wurde.
 
-Obwohl viele `CDaoWorkspace` Member-Funktionen nur aufgerufen werden können, nachdem der Arbeitsbereich geöffnet wurde, sind die folgenden Member-Funktionen, die auf der Datenbank-Engine ausgeführt werden, C++ nach der Erstellung des-Objekts, aber vor einem Aufruf von `Open`verfügbar:
+Obwohl `CDaoWorkspace` viele Memberfunktionen erst aufgerufen werden können, nachdem der Arbeitsbereich geöffnet wurde, stehen die folgenden Memberfunktionen, die auf dem `Open`Datenbankmodul ausgeführt werden, nach dem Erstellen des C++-Objekts, jedoch vor einem Aufruf von:
 
 ||||
 |-|-|-|
-|[Erstellen](#create)|[GetVersion](#getversion)|[Setdefaultuser](#setdefaultuser)|
-|[Getinipath](#getinipath)|[Idle](#idle)|[Setinipath](#setinipath)|
+|[Erstellen](#create)|[Getversion](#getversion)|[SetDefaultUser](#setdefaultuser)|
+|[GetIniPath](#getinipath)|[Idle](#idle)|[SetIniPath](#setinipath)|
 |[GetLoginTimeout](#getlogintimeout)|[SetDefaultPassword](#setdefaultpassword)|[SetLoginTimeout](#setlogintimeout)|
 
-##  <a name="repairdatabase"></a>CDaoWorkspace:: repairren Database
+## <a name="cdaoworkspacerepairdatabase"></a><a name="repairdatabase"></a>CDaoWorkspace::RepairDatabase
 
-Rufen Sie diese Memberfunktion auf, wenn Sie versuchen, eine beschädigte Datenbank zu reparieren, die auf die Microsoft Jet-Datenbank-Engine zugreift müssen.
+Rufen Sie diese Memberfunktion auf, wenn Sie versuchen müssen, eine beschädigte Datenbank zu reparieren, die auf das Microsoft Jet-Datenbankmodul zugreift.
 
 ```
 static void PASCAL RepairDatabase(LPCTSTR lpszName);
@@ -736,41 +736,41 @@ static void PASCAL RepairDatabase(LPCTSTR lpszName);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszname*<br/>
-Der Pfad und Dateiname für eine vorhandene Microsoft Jet-Engine Datenbankdatei. Wenn Sie den Pfad weglassen, wird nur das aktuelle Verzeichnis durchsucht. Wenn Ihr System die Uniform Naming Convention (UNC) unterstützt, können Sie auch einen Netzwerkpfad angeben, z. b.: "\\\\\\\meinserver\\\meinefreigabe\\\meindir\\\MyDB. MDB ". (Doppelte umgekehrte Schrägstriche sind in der Pfad Zeichenfolge erforderlich, da "\\C++ " das Escapezeichen ist.)
+*lpszName*<br/>
+Der Pfad und der Dateiname für eine vorhandene Microsoft Jet-Engine-Moduldatenbankdatei. Wenn Sie den Pfad weglassen, wird nur das aktuelle Verzeichnis durchsucht. Wenn Ihr System die einheitliche Benennungskonvention (UNC) unterstützt, können\\\\\\Sie auch\\einen\\Netzwerkpfad\\angeben, z. B.: " "MYSERVER "MYSHARE " MYDIR " MYDIR " MYDB " MYDB. MDB". (Doppelte umgekehrte Schrägstriche sind in\\der Pfadzeichenfolge erforderlich, da " " das C++-Escapezeichen ist.)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie müssen die von *lpszname* angegebene Datenbank schließen, bevor Sie Sie reparieren. In einer mehr Benutzerumgebung kann *lpszname* nicht von anderen Benutzern geöffnet werden, während Sie Sie reparieren. Wenn *lpszname* nicht geschlossen ist oder für die ausschließliche Verwendung nicht verfügbar ist, tritt ein Fehler auf.
+Sie müssen die von *lpszName* angegebene Datenbank schließen, bevor Sie sie reparieren. In einer Mehrbenutzerumgebung können andere Benutzer *lpszName* nicht öffnen, während Sie es reparieren. Wenn *lpszName* nicht geschlossen ist oder nicht exklusiv verwendet werden kann, tritt ein Fehler auf.
 
-Diese Memberfunktion versucht, eine Datenbank zu reparieren, die von einer unvollständigen Schreibvorgang als möglicherweise fehlerhaft gekennzeichnet wurde. Dies kann auftreten, wenn eine Anwendung mithilfe der Microsoft Jet-Datenbank-Engine aufgrund eines Problems Power Netzwerkausfall oder einem Hardware unerwartet geschlossen ist. Wenn Sie den Vorgang abschließen und die Funktion zum [Schließen](../../mfc/reference/cdaodatabase-class.md#close) des Members aufzurufen, oder Sie die Anwendung auf die übliche Weise beenden, wird die Datenbank nicht als möglicherweise beschädigt markiert.
+Diese Memberfunktion versucht, eine Datenbank zu reparieren, die durch einen unvollständigen Schreibvorgang möglicherweise als beschädigt markiert wurde. Dies kann auftreten, wenn eine Anwendung, die das Microsoft Jet-Datenbankmodul verwendet, aufgrund eines Stromausfalls oder eines Computerhardwareproblems unerwartet geschlossen wird. Wenn Sie den Vorgang abschließen und die [Memberfunktion Schließen](../../mfc/reference/cdaodatabase-class.md#close) aufrufen oder die Anwendung auf übliche Weise beenden, wird die Datenbank nicht als möglicherweise beschädigt markiert.
 
 > [!NOTE]
->  Nach dem Reparieren einer Datenbank ist es auch ratsam, Sie mit der Element Funktion " [CompactDatabase](#compactdatabase) " zu komprimieren, um die Datei zu defragmentieren und Speicherplatz auf dem Datenträger wiederherzustellen.
+> Nach dem Reparieren einer Datenbank ist es auch eine gute Idee, sie mithilfe der [CompactDatabase-Memberfunktion](#compactdatabase) zu komprimieren, um die Datei zu defragmentieren und Speicherplatz wiederherzustellen.
 
-Weitere Informationen zum Reparieren von Datenbanken finden Sie im Thema "RepairDatabase Method" in-DAO-Hilfe.
+Weitere Informationen zum Reparieren von Datenbanken finden Sie im Thema "RepairDatabase-Methode" in der DAO-Hilfe.
 
-##  <a name="rollback"></a>CDaoWorkspace:: Rollback
+## <a name="cdaoworkspacerollback"></a><a name="rollback"></a>CDaoWorkspace::Rollback
 
-Rufen Sie diese Memberfunktion, um die aktuelle Transaktion zu beenden und alle Datenbanken in den Arbeitsbereich in ihren Zustand wiederherstellen, bevor die Transaktion gestartet wurde.
+Rufen Sie diese Memberfunktion auf, um die aktuelle Transaktion zu beenden und alle Datenbanken im Arbeitsbereich in ihren Zustand zu versetzen, bevor die Transaktion gestartet wurde.
 
 ```
 void Rollback();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!CAUTION]
->  In einem Arbeitsbereichsobjekt Transaktionen sind immer global für den Arbeitsbereich und sind nicht nur eine Datenbank oder ein Recordset auf. Wenn Sie Vorgänge für mehrere Datenbanken oder Recordsets innerhalb einer Arbeitsbereichs Transaktion ausführen, stellt `Rollback` alle Vorgänge für alle diese Datenbanken und Recordsets wieder her.
+> Innerhalb eines Arbeitsbereichsobjekts sind Transaktionen immer global für den Arbeitsbereich und nicht auf eine Datenbank oder ein Recordset beschränkt. Wenn Sie Vorgänge für mehr als eine Datenbank oder `Rollback` ein Recordset innerhalb einer Arbeitsbereichstransaktion ausführen, werden alle Vorgänge für alle diese Datenbanken und Recordsets wiederhergestellt.
 
-Wenn Sie ein Workspace-Objekt schließen, ohne zu speichern oder ein Rollback aller anstehenden Transaktionen, werden die Transaktionen automatisch zurückgesetzt. Wenn Sie [CommitTrans](#committrans) oder `Rollback` aufrufen, ohne zuerst [BeginTrans](#begintrans)aufzurufen, tritt ein Fehler auf.
+Wenn Sie ein Arbeitsbereichsobjekt schließen, ohne ausstehende Transaktionen zu speichern oder zurückzufahren, werden die Transaktionen automatisch zurückgesetzt. Wenn Sie [CommitTrans](#committrans) aufrufen oder `Rollback` ohne zuerst [BeginTrans](#begintrans)aufrufen, tritt ein Fehler auf.
 
 > [!NOTE]
->  Wenn Sie eine Transaktion starten, zeichnet die Datenbank-Engine die Vorgänge in einer Datei, in dem durch die Umgebungsvariable "TEMP" auf der Arbeitsstation angegebenen Verzeichnis gespeichert. Wenn die Transaktionsprotokoll Datei den verfügbaren Speicher auf dem temporären Laufwerk erschöpft, bewirkt die Datenbank-Engine, dass MFC eine `CDaoException` auslöst (DAO-Fehler 2004). Wenn Sie an diesem Punkt `CommitTrans`aufgerufen haben, wird für eine unbestimmte Anzahl von Vorgängen ein Commit ausgeführt, aber die restlichen nicht abgeschlossenen Vorgänge gehen verloren, und der Vorgang muss neu gestartet werden. Der Aufruf von `Rollback` gibt das Transaktionsprotokoll frei und führt ein Rollback aller Vorgänge in der Transaktion aus.
+> Wenn Sie eine Transaktion beginnen, zeichnet das Datenbankmodul seine Vorgänge in einer Datei auf, die in dem Verzeichnis gespeichert ist, das von der Temp-Umgebungsvariablen auf der Arbeitsstation angegeben wird. Wenn die Transaktionsprotokolldatei den verfügbaren Speicher auf Ihrem TEMP-Laufwerk ausschöpft, bewirkt das Datenbankmodul, dass MFC einen `CDaoException` (DAO-Fehler 2004) auslöst. Wenn Sie aufrufen, `CommitTrans`wird eine unbestimmte Anzahl von Vorgängen festgeschrieben, aber die verbleibenden nicht abgeschlossenen Vorgänge gehen verloren, und der Vorgang muss neu gestartet werden. Durch `Rollback` Aufrufen wird das Transaktionsprotokoll freigegeben und alle Vorgänge in der Transaktion zurückgesetzt.
 
-##  <a name="setdefaultpassword"></a>CDaoWorkspace:: SetDefaultPassword
+## <a name="cdaoworkspacesetdefaultpassword"></a><a name="setdefaultpassword"></a>CDaoWorkspace::SetDefaultPassword
 
-Rufen Sie diese Memberfunktion, um das Standardkennwort festzulegen, das die Datenbank-Engine verwendet wird, wenn ein Workspace-Objekt ohne ein bestimmtes Kennwort erstellt wird.
+Rufen Sie diese Memberfunktion auf, um das Standardkennwort festzulegen, das das Datenbankmodul verwendet, wenn ein Arbeitsbereichsobjekt ohne ein bestimmtes Kennwort erstellt wird.
 
 ```
 static void PASCAL SetDefaultPassword(LPCTSTR lpszPassword);
@@ -778,28 +778,28 @@ static void PASCAL SetDefaultPassword(LPCTSTR lpszPassword);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszpassword*<br/>
-Das Standardkennwort. Ein Kennwort kann bis zu 14 Zeichen lang sein und darf Zeichen mit Ausnahme von ASCII 0 (null). Bei Kennwörtern wird nach Groß- und Kleinschreibung unterschieden.
+*lpszPasswort*<br/>
+Das Standardkennwort. Ein Kennwort kann bis zu 14 Zeichen lang sein und ein beliebiges Zeichen außer ASCII 0 (null) enthalten. Bei Kennwörtern wird nach Groß- und Kleinschreibung unterschieden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Standardkennwort, das Sie festlegen, gilt für neue Arbeitsbereiche, die Sie nach dem Aufruf zu erstellen. Wenn Sie nachfolgende Arbeitsbereiche erstellen, müssen Sie im [Create](#create) -Befehl kein Kennwort angeben.
+Das von Ihnen festgelegte Standardkennwort gilt für neue Arbeitsbereiche, die Sie nach dem Aufruf erstellen. Wenn Sie nachfolgende Arbeitsbereiche erstellen, müssen Sie im [Aufruf erstellen](#create) kein Kennwort angeben.
 
-So verwenden Sie diese Memberfunktion auf:
+So verwenden Sie diese Memberfunktion:
 
-1. Erstellen Sie ein `CDaoWorkspace` Objekt, aber `Create`nicht aufzurufen.
+1. Erstellen `CDaoWorkspace` Sie ein Objekt, rufen Sie jedoch nicht auf. `Create`
 
-1. Rufen Sie `SetDefaultPassword` und, wenn Sie möchten, [setdefaultuser](#setdefaultuser)auf.
+1. Rufen `SetDefaultPassword` Sie SetDefaultUser auf und, wenn Sie möchten, [SetDefaultUser](#setdefaultuser)an.
 
-1. Ruft `Create` für dieses Arbeitsbereichs Objekt oder nachfolgende, ohne Angabe eines Kennworts auf.
+1. Rufen `Create` Sie dieses Workspace-Objekt oder nachfolgende Objekt auf, ohne ein Kennwort anzugeben.
 
-In der Standardeinstellung die DefaultUser-Eigenschaft auf "Admin" festgelegt ist und die Eigenschaft "DefaultPassword" auf eine leere Zeichenfolge festgelegt ist ("").
+Standardmäßig ist die DefaultUser-Eigenschaft auf "admin" und die DefaultPassword-Eigenschaft auf eine leere Zeichenfolge ("") festgelegt.
 
-Weitere Informationen zur Sicherheit finden Sie im Thema "Berechtigungen Property" in-DAO-Hilfe. Weitere Informationen finden Sie unter den Themen "DefaultPassword Property" und "DefaultUser-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen zur Sicherheit finden Sie im Thema "Berechtigungseigenschaft" in der DAO-Hilfe. Weitere Informationen finden Sie in den Themen "DefaultPassword-Eigenschaft" und "DefaultUser-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="setdefaultuser"></a>CDaoWorkspace:: setdefaultuser
+## <a name="cdaoworkspacesetdefaultuser"></a><a name="setdefaultuser"></a>CDaoWorkspace::SetDefaultUser
 
-Rufen Sie diese Memberfunktion um den Standardnamen für den Benutzer festzulegen, den die Datenbank-Engine verwendet wird, wenn ein Workspace-Objekt ohne einen bestimmten Benutzernamen erstellt wird.
+Rufen Sie diese Memberfunktion auf, um den Standardbenutzernamen festzulegen, den das Datenbankmodul verwendet, wenn ein Arbeitsbereichsobjekt ohne einen bestimmten Benutzernamen erstellt wird.
 
 ```
 static void PASCAL SetDefaultUser(LPCTSTR lpszDefaultUser);
@@ -807,28 +807,28 @@ static void PASCAL SetDefaultUser(LPCTSTR lpszDefaultUser);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszdefaultuser*<br/>
-Der Standardbenutzername. Ein Benutzername kann 1-20 Zeichen lang sein und alphabetische Zeichen enthalten. Sonderzeichen, Zahlen, Leerzeichen und Symbole mit Ausnahme von: "(Anführungszeichen),/(Schrägstrich), \ (umgekehrter Schrägstrich), \[ \] (eckige Klammern),: ( &#124; Doppelpunkt), (Pipe), \< (kleiner-als-Zeichen), > (größer als Vorzeichen), + (Pluszeichen), = (Gleichheitszeichen), (Semikolon),, (Komma), (Fragezeichen), \* (Sternchen), führende Leerzeichen und Steuerzeichen (ASCII 00 bis ASCII 31). Weitere Informationen finden Sie unter dem Thema "UserName-Eigenschaft" in-DAO-Hilfe.
+*lpszDefaultUser*<br/>
+Der Standardbenutzername. Ein Benutzername kann 1 - 20 Zeichen lang sein und alphabetische Zeichen, akzentuierte Zeichen, Zahlen, Leerzeichen und Symbole enthalten, \[ \] mit Ausnahme von: " (Anführungszeichen), / (Vorwärtsschrägstrich), (umgekehrter Schrägstrich), (Klammern), : (Kolon), &#124; (Rohr), \< (weniger als Zeichen), > (größer als Zeichen), + (Pluszeichen), = (Gleichheitszeichen), ; (Semikolon), ( Komma), (Fragezeichen), \* (Sternchen), führende Leerzeichen und Steuerzeichen (ASCII 00 bis ASCII 31). Weitere Informationen finden Sie im Thema "UserName-Eigenschaft" in der DAO-Hilfe.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Standardname für den Benutzer, die Sie festlegen, gilt für neue Arbeitsbereiche, die Sie nach dem Aufruf zu erstellen. Wenn Sie nachfolgende Arbeitsbereiche erstellen, müssen Sie im [Create](#create) -Befehl keinen Benutzernamen angeben.
+Der von Ihnen festgelegte Standardbenutzername gilt für neue Arbeitsbereiche, die Sie nach dem Aufruf erstellen. Wenn Sie nachfolgende Arbeitsbereiche erstellen, müssen Sie im Aufruf [Erstellen](#create) keinen Benutzernamen angeben.
 
-So verwenden Sie diese Memberfunktion auf:
+So verwenden Sie diese Memberfunktion:
 
-1. Erstellen Sie ein `CDaoWorkspace` Objekt, aber `Create`nicht aufzurufen.
+1. Erstellen `CDaoWorkspace` Sie ein Objekt, rufen Sie jedoch nicht auf. `Create`
 
-1. Aufrufen von `SetDefaultUser` und, wenn Sie möchten, [SetDefaultPassword](#setdefaultpassword).
+1. Rufen `SetDefaultUser` Sie SetDefaultPassword auf und, wenn Sie möchten, [SetDefaultPassword](#setdefaultpassword)an.
 
-1. Ruft `Create` für dieses Arbeitsbereichs Objekt oder nachfolgende auf, ohne einen Benutzernamen anzugeben.
+1. Rufen `Create` Sie dieses Workspace-Objekt oder nachfolgende Aufforderungen auf, ohne einen Benutzernamen anzugeben.
 
-In der Standardeinstellung die DefaultUser-Eigenschaft auf "Admin" festgelegt ist und die Eigenschaft "DefaultPassword" auf eine leere Zeichenfolge festgelegt ist ("").
+Standardmäßig ist die DefaultUser-Eigenschaft auf "admin" und die DefaultPassword-Eigenschaft auf eine leere Zeichenfolge ("") festgelegt.
 
-Weitere Informationen finden Sie unter den Themen "DefaultUser Property" und "DefaultPassword-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "DefaultUser-Eigenschaft" und "DefaultPassword-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="setinipath"></a>CDaoWorkspace:: setinipath
+## <a name="cdaoworkspacesetinipath"></a><a name="setinipath"></a>CDaoWorkspace::SetIniPath
 
-Rufen Sie diese Memberfunktion zum Angeben des Speicherorts der Windows-registrierungseinstellungen für das Microsoft Jet-Datenbankmodul.
+Rufen Sie diese Memberfunktion auf, um den Speicherort der Windows-Registrierungseinstellungen für das Microsoft Jet-Datenbankmodul anzugeben.
 
 ```
 static void PASCAL SetIniPath(LPCTSTR lpszRegistrySubKey);
@@ -836,21 +836,21 @@ static void PASCAL SetIniPath(LPCTSTR lpszRegistrySubKey);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszregistrysubkey*<br/>
-Eine Zeichenfolge, die mit dem Namen der einen Windows-Registrierungsunterschlüssel für den Speicherort der Einstellungen für Microsoft Jet-Datenbank-Engine oder für installierbare ISAM-Datenbanken erforderlichen Parameter.
+*lpszRegistrySubkey*<br/>
+Eine Zeichenfolge, die den Namen eines Windows-Registrierungsunterschlüssels für den Speicherort der Microsoft Jet-Datenbankmoduleinstellungen oder Parameter enthält, die für installierbare ISAM-Datenbanken erforderlich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenden Sie `SetIniPath` nur an, wenn Sie spezielle Einstellungen angeben müssen. Weitere Informationen finden Sie im Thema "IniPath-Eigenschaft" in-DAO-Hilfe.
+Rufen `SetIniPath` Sie nur an, wenn Sie spezielle Einstellungen angeben müssen. Weitere Informationen finden Sie im Thema "IniPath-Eigenschaft" in der DAO-Hilfe.
 
 > [!NOTE]
->  Ruft während der Anwendungs Installation `SetIniPath` auf, nicht bei der Ausführung der Anwendung. `SetIniPath` müssen vor dem Öffnen von Arbeitsbereichen, Datenbanken oder Recordsets aufgerufen werden. Andernfalls löst MFC eine Ausnahme aus.
+> Rufen `SetIniPath` Sie während der Anwendungsinstallation auf, nicht, wenn die Anwendung ausgeführt wird. `SetIniPath`muss aufgerufen werden, bevor Sie Arbeitsbereiche, Datenbanken oder Recordsets öffnen; Andernfalls löst MFC eine Ausnahme aus.
 
-Sie können diesen Mechanismus verwenden, auf die Datenbank-Engine mit vom Benutzer bereitgestellte registrierungseinstellungen konfigurieren zu können. Der Gültigkeitsbereich dieses Attributs ist Ihre Anwendung auf und kann nicht geändert werden, ohne Ihre Anwendung neu zu starten.
+Mit diesem Mechanismus können Sie das Datenbankmodul mit vom Benutzer bereitgestellten Registrierungseinstellungen konfigurieren. Der Bereich dieses Attributs ist auf Ihre Anwendung beschränkt und kann nicht geändert werden, ohne die Anwendung neu zu starten.
 
-##  <a name="setisolateodbctrans"></a>CDaoWorkspace:: "abtisolateodbctrans"
+## <a name="cdaoworkspacesetisolateodbctrans"></a><a name="setisolateodbctrans"></a>CDaoWorkspace::SetIsolateODBCTrans
 
-Rufen Sie diese Memberfunktion um den Wert der Eigenschaft DAO IsolateODBCTrans für den Arbeitsbereich festzulegen.
+Rufen Sie diese Memberfunktion auf, um den Wert der DAO IsolateODBCTrans-Eigenschaft für den Arbeitsbereich festzulegen.
 
 ```
 void SetIsolateODBCTrans(BOOL bIsolateODBCTrans);
@@ -858,18 +858,18 @@ void SetIsolateODBCTrans(BOOL bIsolateODBCTrans);
 
 ### <a name="parameters"></a>Parameter
 
-*bisolateodbctrans*<br/>
-Übergeben Sie "true", sollten Sie beginnen, Isolieren von ODBC-Transaktionen. Übergeben Sie "false", sollten Sie isolieren ODBC-Transaktionen zu beenden.
+*bIsolateODBCTrans*<br/>
+Übergeben Sie TRUE, wenn Sie mit der Isolierung von ODBC-Transaktionen beginnen möchten. Übergeben Sie FALSE, wenn Sie die Isolierung von ODBC-Transaktionen beenden möchten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In einigen Situationen müssen Sie mehrere gleichzeitige Transaktionen mit ausstehender für eine ODBC-Datenbank haben. Zu diesem Zweck müssen Sie einen separaten Arbeitsbereich für jede Transaktion zu öffnen. Obwohl jeder Arbeitsbereich eine eigene ODBC-Verbindung mit der Datenbank verfügen kann, wird dadurch die Leistung des Systems. Da der Transaktionsisolation nicht normal erforderlich ist, werden die ODBC-Verbindungen von mehreren Workspace-Objekte, die vom gleichen Benutzer geöffnet standardmäßig freigegeben.
+In einigen Situationen müssen möglicherweise mehrere gleichzeitige Transaktionen für dieselbe ODBC-Datenbank ausstehen. Dazu müssen Sie für jede Transaktion einen separaten Arbeitsbereich öffnen. Obwohl jeder Arbeitsbereich über eine eigene ODBC-Verbindung mit der Datenbank verfügen kann, verlangsamt dies die Systemleistung. Da normalerweise keine Transaktionsisolation erforderlich ist, werden ODBC-Verbindungen von mehreren Arbeitsbereichsobjekten, die vom gleichen Benutzer geöffnet werden, standardmäßig gemeinsam genutzt.
 
-Einige ODBC-Server, z. B. Microsoft SQL Server zulassen nicht gleichzeitige Transaktionen auf eine einzelne Verbindung. Wenn Sie mehr als eine Transaktion zu einem Zeitpunkt steht aus für eine Datenbank verfügen müssen, legen Sie die IsolateODBCTrans-Eigenschaft auf "true" für jeden Arbeitsbereich, sobald Sie es öffnen. Dies erzwingt, dass eine separate ODBC-Verbindung für jeden Arbeitsbereich.
+Einige ODBC-Server, z. B. Microsoft SQL Server, lassen keine gleichzeitigen Transaktionen auf einer einzelnen Verbindung zu. Wenn für eine solche Datenbank jeweils mehr als eine Transaktion ausstehen muss, legen Sie die IsolateODBCTrans-Eigenschaft für jeden Arbeitsbereich auf TRUE fest, sobald Sie sie öffnen. Dadurch wird eine separate ODBC-Verbindung für jeden Arbeitsbereich erzwingt.
 
-##  <a name="setlogintimeout"></a>CDaoWorkspace:: setLoginTimeout
+## <a name="cdaoworkspacesetlogintimeout"></a><a name="setlogintimeout"></a>CDaoWorkspace::SetLoginTimeout
 
-Rufen Sie diese Memberfunktion um den Wert der DAO-LoginTimeout-Eigenschaft für den Arbeitsbereich festzulegen.
+Rufen Sie diese Memberfunktion auf, um den Wert der DAO LoginTimeout-Eigenschaft für den Arbeitsbereich festzulegen.
 
 ```
 static void PASCAL SetLoginTimeout(short nSeconds);
@@ -878,15 +878,15 @@ static void PASCAL SetLoginTimeout(short nSeconds);
 ### <a name="parameters"></a>Parameter
 
 *nSekunden*<br/>
-Die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn Sie versuchen, eine ODBC-Datenbank anmelden.
+Die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert stellt die Anzahl der Sekunden, bevor ein Fehler auftritt, wenn Sie versuchen, eine ODBC-Datenbank anmelden. Die Standardeinstellung für das Anmeldungstimeout beträgt 20 Sekunden. Beim Anmeldungstimeout auf 0 festgelegt ist, wird kein Timeout erfolgt, und die Kommunikation mit der Datenquelle reagiert möglicherweise nicht.
+Dieser Wert stellt die Anzahl der Sekunden dar, bevor ein Fehler auftritt, wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden. Die Standardeinstellung LoginTimeout beträgt 20 Sekunden. Wenn LoginTimeout auf 0 gesetzt ist, tritt kein Timeout auf, und die Kommunikation mit der Datenquelle reagiert möglicherweise nicht mehr.
 
-Wenn Sie versuchen, die mit einer ODBC-Datenbank, z. B. Microsoft SQL Server, melden Sie sich möglicherweise die Verbindung aufgrund von Netzwerkfehlern oder weil der Server nicht ausgeführt wird. Anstatt zu warten, der Standardwert 20 Sekunden eine Verbindung herstellen, können Sie angeben, wie lange die Datenbank-Engine wartet, bevor er einen Fehler erzeugt. Anmelden an den Server wird implizit als Teil einer Reihe verschiedener Ereignisse, wie z. B. das Ausführen einer Abfrage in einer externen Server-Datenbank. Der Timeoutwert wird durch die aktuelle Einstellung der LoginTimeout-Eigenschaft bestimmt.
+Wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden, z. B. Microsoft SQL Server, schlägt die Verbindung möglicherweise aufgrund von Netzwerkfehlern oder aufgrund nicht ausgeführter Server fehl. Anstatt auf die standardmäßige Verbindung von 20 Sekunden zu warten, können Sie angeben, wie lange das Datenbankmodul wartet, bevor es einen Fehler auslöst. Die Anmeldung am Server erfolgt implizit als Teil einer Reihe verschiedener Ereignisse, z. B. beim Ausführen einer Abfrage in einer externen Serverdatenbank. Der Timeoutwert wird durch die aktuelle Einstellung der LoginTimeout-Eigenschaft bestimmt.
 
-Verwandte Informationen finden Sie im Thema "LoginTimeout-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "LoginTimeout-Eigenschaft" in der DAO-Hilfe.
 
 ## <a name="see-also"></a>Siehe auch
 

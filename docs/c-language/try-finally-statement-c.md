@@ -7,20 +7,20 @@ helpviewer_keywords:
 - __finally keyword [C]
 - structured exception handling, try-finally
 ms.assetid: 514400c1-c322-4bf3-9e48-3047240b8a82
-ms.openlocfilehash: 82cc5ffa3f50196fc5f518b8bb5b2080ff14fd8d
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+ms.openlocfilehash: 61a6a9edd9faaf8afb06bb7bfdc619cddde3e6fc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151831"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81349614"
 ---
 # <a name="try-finally-statement-c"></a>try-finally-Anweisung (C)
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
 Die `try-finally`-Anweisung ist eine Microsoft-Erweiterung zur Programmiersprache C, die es Zielanwendungen ermöglicht, den Bereinigungscode auszuführen, auch wenn die Ausführung eines Codeblocks unterbrochen wird. Die Bereinigung besteht aus Aufgaben wie z. B. Neuzuweisung von Arbeitsspeicher, Schließen von Dateien und Freigeben von Dateihandles. Die `try-finally`-Anweisung ist besonders nützlich für Routinen, in denen an mehreren Stellen eine Fehlerüberprüfung durchgeführt wird, die eine vorzeitige Rückgabe von der Routine verursachen könnte.
 
-*try-finally-statement*: **__try** *compound-statement*
+*try-finally-statement*: **__try**  *compound-statement*
 
 **__finally**  *compound-statement*
 
@@ -41,14 +41,14 @@ Eine `try-finally`-Anweisung mithilfe einer `return`-Anweisung oder der `longjmp
 Der Beendigungshandler wird nicht aufgerufen, wenn ein Prozess während der Ausführung einer `try-finally`-Anweisung abgebrochen wird.
 
 > [!NOTE]
->  Die strukturierte Ausnahmebehandlung arbeitet mit C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Der C++-Ausnahmebehandlungsmechanismus ist außerdem viel flexibler, da er Ausnahmen eines beliebigen Typs behandeln kann.
+> Die strukturierte Ausnahmebehandlung arbeitet mit C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Der C++-Ausnahmebehandlungsmechanismus ist außerdem viel flexibler, da er Ausnahmen eines beliebigen Typs behandeln kann.
 
 > [!NOTE]
->  Für C++-Programme sollte die C++-Ausnahmebehandlung anstelle der strukturierten Ausnahmebehandlung verwendet werden. Weitere Informationen finden Sie unter [Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md) in *C++-Sprachreferenz*.
+> Für C++-Programme sollte die C++-Ausnahmebehandlung anstelle der strukturierten Ausnahmebehandlung verwendet werden. Weitere Informationen finden Sie unter [Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md) in *C++-Sprachreferenz*.
 
 Weitere Informationen zur Funktionsweise der `try-finally`-Anweisung finden Sie im Beispiel für die [try-except-Anweisung](../c-language/try-except-statement-c.md).
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

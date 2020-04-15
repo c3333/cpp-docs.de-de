@@ -18,22 +18,22 @@ helpviewer_keywords:
 - std::operator&lt;&lt; (thread)
 - std::operator&lt;= (thread)
 - std::operator== (thread)
-ms.openlocfilehash: c0593b8016cf45abe64114958ccda84eb3704844
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 6312d14dc681736ee396d5c7af6c50ba8d72cd3a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426168"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375832"
 ---
 # <a name="ltthreadgt-operators"></a>&lt;thread&gt;-Operatoren
 
 ||||
 |-|-|-|
-|[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|
-|[operator&lt;](#op_lt)|[operator&lt;&lt;](#op_lt_lt)|[operator&lt;=](#op_lt_eq)|
-|[operator==](#op_eq_eq)|
+|[Operator!=](#op_neq)|[Operator&gt;](#op_gt)|[Operator&gt;=](#op_gt_eq)|
+|[Operator&lt;](#op_lt)|[Operator&lt;&lt;](#op_lt_lt)|[Operator&lt;=](#op_lt_eq)|
+|[Betreiber== Einzelnachweise ==](#op_eq_eq)|
 
-## <a name="op_gt_eq"></a>operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
 
 Bestimmt, ob ein `thread::id`-Objekt größer als oder gleich einem anderen Objekt ist.
 
@@ -45,21 +45,21 @@ bool operator>= (
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `thread::id`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `!(Left < Right)`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="op_gt"></a> operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>Operator&gt;
 
 Bestimmt, ob ein `thread::id`-Objekt größer als ein anderes Objekt ist.
 
@@ -71,21 +71,21 @@ bool operator> (
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `thread::id`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `Right < Left`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="op_lt_eq"></a>operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
 
 Bestimmt, ob ein `thread::id`-Objekt kleiner als oder gleich einem anderen Objekt ist.
 
@@ -97,21 +97,21 @@ bool operator<= (
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `thread::id`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `!(Right < Left)`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="op_lt"></a> operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>Operator&lt;
 
 Bestimmt, ob ein `thread::id`-Objekt kleiner als ein anderes Objekt ist.
 
@@ -123,23 +123,23 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `thread::id`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn *left* in der Gesamt Reihenfolge *direkt* vorangestellt ist. andernfalls **false**.
+**true,** wenn *Links* in der Gesamtreihenfolge *rechts* vorangeht; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Operator definiert eine gesamte Sortierung für alle `thread::id`-Objekte. Diese Objekte können als Schlüssel in assoziativen Containern verwendet werden.
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="op_neq"></a> operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator!=
 
 Überprüft zwei `thread::id`-Objekte auf Ungleichheit.
 
@@ -151,21 +151,21 @@ bool operator!= (
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `thread::id`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `!(Left == Right)`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="op_eq_eq"></a> operator==
+## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
 
 Überprüft zwei `thread::id`-Objekte auf Gleichheit.
 
@@ -177,21 +177,21 @@ bool operator== (
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `thread::id`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die beiden-Objekte denselben Ausführungs Thread darstellen, oder wenn keines der Objekte einen Ausführungs Thread darstellt. andernfalls **false**.
+**true,** wenn die beiden Objekte denselben Ausführungsthread darstellen oder wenn keines der beiden Objekte einen Ausführungsthread darstellt; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="op_lt_lt"></a>operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a>Operator&lt;&lt;
 
 Fügt eine Textdarstellung eines `thread::id`-Objekts in einen Stream ein.
 
@@ -203,22 +203,22 @@ basic_ostream<Elem, Tr>& operator<<(
 
 ### <a name="parameters"></a>Parameter
 
-*Ostr* -\
+*Ostr*\
 Ein [basic_ostream](../standard-library/basic-ostream-class.md)-Objekt.
 
-*ID* -\
-Ein `thread::id`-Objekt.
+*Id*\
+Ein `thread::id` -Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 *Ostr*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion fügt *ID* in *Ostr*ein.
+Diese Funktion fügt *Id* in *Ostr ein.*
 
 Wenn zwei `thread::id`-Objekte gleich sind, sind die eingefügten Text-Darstellungen dieser Objekte gleich.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<thread>](../standard-library/thread.md)
+[\<Gewinde>](../standard-library/thread.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - COleCmdUI [MFC], SetCheck
 - COleCmdUI [MFC], SetText
 ms.assetid: a2d5ce08-6657-45d3-8673-2a9f32d50eec
-ms.openlocfilehash: 5dc4e9504805146a9eff0f5ab937868226e4516e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1b7a6b21a3ad778b4a5ca345b1aaf42875810e4e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62148509"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376271"
 ---
 # <a name="colecmdui-class"></a>COleCmdUI-Klasse
 
@@ -35,25 +35,25 @@ class COleCmdUI : public CCmdUI
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[COleCmdUI::COleCmdUI](#colecmdui)|Erstellt ein `COleCmdUI`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleCmdUI::Enable](#enable)|Legt fest oder löscht der Befehl-Flag aktivieren.|
-|[COleCmdUI::SetCheck](#setcheck)|Legt den Status einer Umschaltfläche ein-und Befehl.|
-|[COleCmdUI::SetText](#settext)|Gibt eine Textzeichenfolge Name oder Status für einen Befehl zurück.|
+|[COleCmdUI::Aktivieren](#enable)|Legt das Befehlsflag "Enable" fest oder löscht es.|
+|[COleCmdUI::SetCheck](#setcheck)|Legt den Status eines Ein-/Aus-Toggle-Befehls fest.|
+|[COleCmdUI::SetText](#settext)|Gibt einen Textnamen oder eine Statuszeichenfolge für einen Befehl zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-In einer Anwendung ist, die nicht für DocObjects, aktiviert, wenn der Benutzeransichten ein Menü in der MFC-Anwendung verarbeitet, wähle ich UPDATE_COMMAND_UI. Jede Benachrichtigung erhält eine [CCmdUI](../../mfc/reference/ccmdui-class.md) -Objekt, das bearbeitet werden kann, um den Zustand eines bestimmten Befehls wiederzugeben. Wenn Sie jedoch Ihre Anwendung für DocObjects aktiviert ist, MFC UPDATE_OLE_COMMAND_UI Benachrichtigungen verarbeitet und weist `COleCmdUI` Objekte.
+In einer Anwendung, die für DocObjects nicht aktiviert ist, verarbeitet MFC, wenn der Benutzer ein Menü in der Anwendung anzeigt, UPDATE_COMMAND_UI Notifationen. Jede Benachrichtigung erhält ein [CCmdUI-Objekt,](../../mfc/reference/ccmdui-class.md) das so bearbeitet werden kann, dass es den Status eines bestimmten Befehls widerspiegelt. Wenn Ihre Anwendung jedoch für DocObjects aktiviert ist, verarbeitet `COleCmdUI` MFC UPDATE_OLE_COMMAND_UI Benachrichtigungen und weist Objekte zu.
 
-`COleCmdUI` ermöglicht DocObject um Befehle zu empfangen, die in der zugehörigen Containers-Benutzeroberfläche (z. B. FileNew, Open, Print und So weiter) stammen, und einen Container aus, um Befehle zu empfangen, die auf das Objekt in der Benutzeroberfläche stammen. Obwohl `IDispatch` verwendet werden, um die gleichen Befehle senden `IOleCommandTarget` bietet eine einfachere Möglichkeit zum Abfragen und ausgeführt werden, da es auf einen Standardsatz von Befehlen in der Regel ohne Argumente beruht ein, und keine Typinformationen beteiligt ist. `COleCmdUI` kann verwendet werden, zu aktivieren, aktualisieren und Festlegen anderer Eigenschaften des DocObject Befehlen der Benutzeroberfläche. Wenn Sie den Befehl aufrufen möchten, rufen Sie [COleServerDoc::OnExecOleCmd](../../mfc/reference/coleserverdoc-class.md#onexecolecmd).
+`COleCmdUI`ermöglicht einem DocObject das Empfangen von Befehlen, die von der Benutzeroberfläche des Containers stammen (z. B. FileNew, Open, Print usw.), und ermöglicht einem Container das Empfangen von Befehlen, die von der Benutzeroberfläche des DocObject stammen. Obwohl `IDispatch` zum Senden derselben Befehle `IOleCommandTarget` verwendet werden könnte, bietet dies eine einfachere Möglichkeit zum Abfragen und Ausführen, da sie auf einem Standardsatz von Befehlen basiert, in der Regel ohne Argumente, und es sind keine Typinformationen beteiligt. `COleCmdUI`kann zum Aktivieren, Aktualisieren und Festlegen anderer Eigenschaften von DocObject-Benutzeroberflächenbefehlen verwendet werden. Wenn Sie den Befehl aufrufen möchten, rufen Sie [COleServerDoc::OnExecOleCmd](../../mfc/reference/coleserverdoc-class.md#onexecolecmd)auf.
 
-Weitere Informationen zu DocObjects, finden Sie unter [CDocObjectServer](../../mfc/reference/cdocobjectserver-class.md) und [CDocObjectServerItem](../../mfc/reference/cdocobjectserveritem-class.md).
+Weitere Informationen zu DocObjects finden Sie unter [CDocObjectServer](../../mfc/reference/cdocobjectserver-class.md) und [CDocObjectServerItem](../../mfc/reference/cdocobjectserveritem-class.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -63,11 +63,11 @@ Weitere Informationen zu DocObjects, finden Sie unter [CDocObjectServer](../../m
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdocobj.h
+**Kopf:** afxdocobj.h
 
-##  <a name="colecmdui"></a>  COleCmdUI::COleCmdUI
+## <a name="colecmduicolecmdui"></a><a name="colecmdui"></a>COleCmdUI::COleCmdUI
 
-Erstellt eine `COleCmdUI` Objekt verknüpft ist, mit einem bestimmten Benutzeroberflächen-Befehl.
+Erstellt ein `COleCmdUI` Objekt, das einem bestimmten Benutzeroberflächenbefehl zugeordnet ist.
 
 ```
 COleCmdUI(
@@ -79,21 +79,21 @@ COleCmdUI(
 ### <a name="parameters"></a>Parameter
 
 *rgCmds*<br/>
-Eine Liste der unterstützten Befehle, die die angegebene GUID zugeordnet. Die `OLECMD` Struktur ordnet Befehle Befehlsflags.
+Eine Liste der unterstützten Befehle, die der angegebenen GUID zugeordnet sind. Die `OLECMD` Struktur ordnet Befehlen Befehlen mit Befehlsflags zu.
 
 *cCmds*<br/>
-Die Anzahl der Befehle in *RgCmds*.
+Die Anzahl der Befehle in *rgCmds*.
 
-*pGroup*<br/>
-Ein Zeiger auf eine GUID, die eine Reihe von Befehlen identifiziert.
+*pGruppe*<br/>
+Ein Zeiger auf eine GUID, der eine Reihe von Befehlen identifiziert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `COleCmdUI` Objekt stellt eine programmgesteuerte Schnittstelle zum Aktualisieren von Benutzeroberflächenobjekten DocObject wie z. B. Steuerleiste-Schaltflächen oder Menüelemente. Die Objekte der Benutzeroberfläche können werden aktiviert, deaktiviert, überprüft und/oder gelöscht wird, über die `COleCmdUI` Objekt.
+Das `COleCmdUI` Objekt stellt eine programmgesteuerte Schnittstelle zum Aktualisieren von DocObject-Benutzeroberflächenobjekten wie Menüelementen oder Steuerelementleistenschaltflächen bereit. Die Benutzeroberflächenobjekte können aktiviert, deaktiviert, überprüft und/oder `COleCmdUI` über das Objekt gelöscht werden.
 
-##  <a name="enable"></a>  COleCmdUI::Enable
+## <a name="colecmduienable"></a><a name="enable"></a>COleCmdUI::Aktivieren
 
-Mit dieser Funktion wird zum Festlegen der Kennzeichnung des Befehls von der `COleCmdUI` Objekt OLECOMDF_ENABLED, die der Schnittstelle mitteilt, der Befehl ist verfügbar und aktiviert, oder deaktivieren Sie die Kennzeichnung des Befehls.
+Rufen Sie diese Funktion auf, `COleCmdUI` um das Befehlsflag des Objekts auf OLECOMDF_ENABLED festzulegen, das der Schnittstelle mitteilt, dass der Befehl verfügbar und aktiviert ist, oder um das Befehlsflag zu löschen.
 
 ```
 virtual void Enable(BOOL bOn);
@@ -101,12 +101,12 @@ virtual void Enable(BOOL bOn);
 
 ### <a name="parameters"></a>Parameter
 
-*bOn*<br/>
-Gibt an, ob mit der Befehl verknüpft die `COleCmdUI` Objekt aktiviert oder deaktiviert werden soll. Nonzero können den Befehl. 0 deaktiviert den Befehl.
+*Bon*<br/>
+Gibt an, ob `COleCmdUI` der dem Objekt zugeordnete Befehl aktiviert oder deaktiviert werden soll. Ein Wert ungleich Null aktiviert den Befehl. 0 deaktiviert den Befehl.
 
-##  <a name="setcheck"></a>  COleCmdUI::SetCheck
+## <a name="colecmduisetcheck"></a><a name="setcheck"></a>COleCmdUI::SetCheck
 
-Mit dieser Funktion können Sie den Status einer Umschaltfläche ein-und Befehl.
+Rufen Sie diese Funktion auf, um den Status eines Ein/Aus-Toggle-Befehls festzulegen.
 
 ```
 virtual void SetCheck(int nCheck);
@@ -115,17 +115,17 @@ virtual void SetCheck(int nCheck);
 ### <a name="parameters"></a>Parameter
 
 *nCheck*<br/>
-Ein Wert, der den Status einer Umschaltfläche ein-und Befehl. Gültige Werte:
+Ein Wert, der den Zustand bestimmt, um einen Ein-/Aus-Toggle-Befehl festzulegen. Werte:
 
-|Wert|Description|
+|Wert|Beschreibung|
 |-----------|-----------------|
-|**1**|Legt fest, der Befehl auf.|
-|**2**|Der Befehl festgelegt einem unbestimmten Zustand; der Zustand kann nicht bestimmt werden, da das Attribut mit diesem Befehl sowohl auf und Deaktivieren der Zustände in der entsprechenden Auswahl wird.|
-|ein anderer Wert|Der Befehl auf off festgelegt.|
+|**1**|Legt den Befehl auf ein.|
+|**2**|Legt den Befehl auf unbestimmt fest. Der Status kann nicht bestimmt werden, da sich das Attribut dieses Befehls sowohl in ein- als auch nach außerhalb in der entsprechenden Auswahl befindet.|
+|jeder andere Wert|Legt den Befehl auf "Off" fest.|
 
-##  <a name="settext"></a>  COleCmdUI::SetText
+## <a name="colecmduisettext"></a><a name="settext"></a>COleCmdUI::SetText
 
-Rufen Sie diese Funktion, um eine Textzeichenfolge Name oder Status für einen Befehl zurück.
+Rufen Sie diese Funktion auf, um einen Textnamen oder eine Statuszeichenfolge für einen Befehl zurückzugeben.
 
 ```
 virtual void SetText(LPCTSTR lpszText);
@@ -134,7 +134,7 @@ virtual void SetText(LPCTSTR lpszText);
 ### <a name="parameters"></a>Parameter
 
 *lpszText*<br/>
-Ein Zeiger auf den Text, mit dem Befehl verwendet werden.
+Ein Zeiger auf den Text, der mit dem Befehl verwendet werden soll.
 
 ## <a name="see-also"></a>Siehe auch
 

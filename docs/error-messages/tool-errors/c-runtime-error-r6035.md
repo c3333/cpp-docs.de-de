@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - R6035
 ms.assetid: f8fb50b8-18bf-4258-b96a-b0a9de468d16
-ms.openlocfilehash: 7c497347689bcfc5528280bd22aa5183d5fafd61
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ff3cd0259df92aa5cdade3f78a240e69f8f6f7de
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80197003"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81377479"
 ---
 # <a name="c-runtime-error-r6035"></a>C-Laufzeitfehler R6035
 
 Microsoft Visual C++-Laufzeitbibliothek, Fehler R6035 – Ein Modul in dieser Anwendung initialisiert das globale Sicherheitscookie dieses Moduls, während eine Funktion aktiv ist, die sich auf dieses Sicherheitscookie stützt.  Rufen Sie zuvor __security_init_cookie auf.
 
-[__security_init_cookie](../../c-runtime-library/reference/security-init-cookie.md) muss vor der ersten Verwendung des globalen Sicherheits Cookies aufgerufen werden.
+[__security_init_cookie](../../c-runtime-library/reference/security-init-cookie.md) muss vor der ersten Verwendung des globalen Sicherheitscookies aufgerufen werden.
 
-Das globale Sicherheits Cookie wird zum Schutz vor Pufferüberlauf in Code verwendet, der mit [/GS (Puffer-Sicherheitsüberprüfung)](../../build/reference/gs-buffer-security-check.md) kompiliert wurde, und in Code, der die strukturierte Ausnahmebehandlung verwendet. Im Wesentlichen geschieht Folgendes: Beim Einstieg in eine vor Pufferüberlauf geschützte Funktion wird das Cookie auf dem Stapel abgelegt, und bei Funktionsende wird der Wert auf dem Stapel mit dem globalen Cookie verglichen. Jeglicher Unterschied zwischen diesen Werten weist darauf hin, dass ein Pufferüberlauf eingetreten ist. Das Programm wird daraufhin sofort beendet.
+Das globale Sicherheitscookie wird für den Pufferüberlaufschutz in Code verwendet, der mit [/GS (Buffer Security Check)](../../build/reference/gs-buffer-security-check.md) kompiliert wurde, und in Code, der strukturierte Ausnahmebehandlung verwendet. Im Wesentlichen geschieht Folgendes: Beim Einstieg in eine vor Pufferüberlauf geschützte Funktion wird das Cookie auf dem Stapel abgelegt, und bei Funktionsende wird der Wert auf dem Stapel mit dem globalen Cookie verglichen. Jeglicher Unterschied zwischen diesen Werten weist darauf hin, dass ein Pufferüberlauf eingetreten ist. Das Programm wird daraufhin sofort beendet.
 
 Fehler R6035 weist darauf hin, dass `__security_init_cookie` nach Eingabe einer geschützten Funktion aufgerufen wurde. Ein Fortsetzen der Ausführung würde zum Feststellen eines unechten Pufferüberlaufs führen, da das Cookie auf dem Stapel nicht mehr mit dem globalen Cookie übereinstimmt.
 
-Betrachten Sie das folgende DLL-Beispiel. Der DLL-Einstiegspunkt wird durch die Option Linker [/Entry (Einstiegspunkt Symbol)](../../build/reference/entry-entry-point-symbol.md) auf DllEntryPoint festgelegt. Dies umgeht die Initialisierung durch CRT, die normalerweise das globale Sicherheitscookie initialisiert, sodass die DLL selbst `__security_init_cookie` aufrufen muss.
+Betrachten Sie das folgende DLL-Beispiel. Der DLL-Einstiegspunkt wird über die Option linker [/ENTRY (Entry-Point Symbol)](../../build/reference/entry-entry-point-symbol.md) auf DllEntryPoint festgelegt. Dies umgeht die Initialisierung durch CRT, die normalerweise das globale Sicherheitscookie initialisiert, sodass die DLL selbst `__security_init_cookie` aufrufen muss.
 
 ```
 // Wrong way to call __security_init_cookie
@@ -66,8 +66,8 @@ void DllEntryHelper() {
 In diesem Fall ist DllEntryPoint nicht gegen Pufferüberläufe geschützt (es sind keine lokalen Zeichenfolgenpuffer vorhanden, und es wird keine strukturierte Ausnahmebehandlung verwendet). Daher kann hier gefahrlos `__security_init_cookie` aufgerufen werden. Anschließend wird eine geschützte Hilfsfunktion aufgerufen.
 
 > [!NOTE]
->  Die Fehlermeldung R6035 wird nur von der x86-Debug-CRT generiert, und dies auch nur für die strukturierte Ausnahmebehandlung. Die zugrunde liegende Bedingung ist jedoch auf allen Plattformen und für alle Formen der Ausnahmebehandlung ein Fehler, z. B. C++ EH.
+> Die Fehlermeldung R6035 wird nur von der x86-Debug-CRT generiert, und dies auch nur für die strukturierte Ausnahmebehandlung. Die zugrunde liegende Bedingung ist jedoch auf allen Plattformen und für alle Formen der Ausnahmebehandlung ein Fehler, z. B. C++ EH.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Sicherheits Features in MSVC](https://blogs.msdn.microsoft.com/vcblog/2017/06/28/security-features-in-microsoft-visual-c/)
+[Sicherheitsfunktionen in MSVC](https://blogs.msdn.microsoft.com/vcblog/2017/06/28/security-features-in-microsoft-visual-c/)

@@ -7,27 +7,27 @@ helpviewer_keywords:
 - message classes [MFC], finding
 - message-map macros
 ms.assetid: bf59fbc8-b222-42d3-b5d3-0a79aa3cb923
-ms.openlocfilehash: c50c6fc1134f579859530972dc864103c4e0ebcf
-ms.sourcegitcommit: 3caf5261b3ea80d9cf14038c116ba981d655cd13
+ms.openlocfilehash: eec0ae43546e3cc0c08e3178c4808e21fa48686a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70907356"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81360168"
 ---
 # <a name="where-to-find-message-maps"></a>Wo sich Meldungszuordnungen befinden
 
-Wenn Sie mit dem Anwendungs-Assistenten eine neue Skeleton-Anwendung erstellen, schreibt der Anwendungs-Assistent eine Meldungs Zuordnung für jede Befehls Zielklasse, die für Sie erstellt wird. Dies schließt die abgeleiteten Anwendungs-, Dokument-, Ansichts-und Rahmen Fenster Klassen ein. Einige dieser Nachrichten Zuordnungen verfügen bereits über die Einträge, die vom Anwendungs-Assistenten für bestimmte Nachrichten und vordefinierte Befehle bereitgestellt werden, und einige sind nur Platzhalter für Handler, die Sie hinzufügen.
+Wenn Sie mit dem Anwendungs-Assistenten eine neue Skelettanwendung erstellen, schreibt der Anwendungs-Assistent eine Meldungszuordnung für jede Befehlszielklasse, die er für Sie erstellt. Dazu gehören die abgeleiteten Anwendungs-, Dokument-, Ansichts- und Framefensterklassen. Einige dieser Meldungszuordnungen verfügen bereits über die Vom Anwendungs-Assistenten für bestimmte Nachrichten und vordefinierten Befehle bereitgestellten Einträge, und einige sind nur Platzhalter für Handler, die Sie hinzufügen.
 
-Die Meldungs Zuordnung einer Klasse befindet sich im. Cpp-Datei für die-Klasse. Wenn Sie mit den grundlegenden Meldungs Zuordnungen arbeiten, die der Anwendungs-Assistent erstellt, verwenden Sie den [Klassen-Assistenten](reference/mfc-class-wizard.md) , um Einträge für die Nachrichten und Befehle hinzuzufügen, die von den einzelnen Eine typische Meldungs Zuordnung könnte wie folgt aussehen, nachdem Sie einige Einträge hinzugefügt haben:
+Die Meldungszuordnung einer Klasse befindet sich im . CPP-Datei für die Klasse. Wenn Sie mit den grundlegenden Nachrichtenzuordnungen arbeiten, die der Anwendungs-Assistent erstellt, verwenden Sie den [Klassen-Assistenten,](reference/mfc-class-wizard.md) um Einträge für die Nachrichten und Befehle hinzuzufügen, die von jeder Klasse verarbeitet werden. Eine typische Meldungszuordnung könnte wie folgt aussehen, nachdem Sie einige Einträge hinzugefügt haben:
 
 [!code-cpp[NVC_MFCMessageHandling#1](../mfc/codesnippet/cpp/where-to-find-message-maps_1.cpp)]
 
-Die Meldungs Zuordnung besteht aus einer Auflistung von Makros. Zwei Makros, [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) und [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map), Klammern die Meldungs Zuordnung. Andere Makros, wie z `ON_COMMAND`. b., füllen den Inhalt der Nachrichten Zuordnung aus.
+Die Nachrichtenzuordnung besteht aus einer Sammlung von Makros. Zwei Makros, [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) und [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map), klammern die Meldungszuordnung in Klammern. Andere Makros, `ON_COMMAND`z. B. , füllen den Inhalt der Meldungszuordnung aus.
 
 > [!NOTE]
->  Auf die Nachrichten Zuordnungs Makros folgt kein Semikolon.
+> Auf die Message-Map-Makros folgen keine Semikolons.
 
-Wenn Sie mit dem Assistenten zum Hinzufügen von Klassen eine neue Klasse erstellen, wird eine Meldungs Zuordnung für die-Klasse bereitstellt. Alternativ dazu können Sie eine Meldungs Zuordnung auch manuell mithilfe des Quell Code-Editors erstellen.
+Wenn Sie den Assistenten zum Hinzufügen von Klassen verwenden, um eine neue Klasse zu erstellen, stellt er eine Meldungszuordnung für die Klasse bereit. Alternativ können Sie eine Meldungszuordnung manuell mit dem Quellcode-Editor erstellen.
 
 ## <a name="see-also"></a>Siehe auch
 

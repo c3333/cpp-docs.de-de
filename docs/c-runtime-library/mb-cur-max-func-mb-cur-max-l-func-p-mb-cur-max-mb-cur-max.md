@@ -1,11 +1,12 @@
 ---
 title: ___mb_cur_max_func, ___mb_cur_max_l_func, __p___mb_cur_max, __mb_cur_max
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - ___mb_cur_max_l_func
 - __p___mb_cur_max
 - ___mb_cur_max_func
 - __mb_cur_max
+- _o____mb_cur_max_func
 api_location:
 - msvcr110_clr0400.dll
 - msvcr110.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr90.dll
 - msvcr120.dll
 - api-ms-win-crt-locale-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +32,12 @@ helpviewer_keywords:
 - ___mb_cur_max_l_func
 - __p___mb_cur_max
 ms.assetid: 60d36108-1ca7-45a6-8ce7-68a91f13e3a1
-ms.openlocfilehash: a37ae2134d92310d6a530c759559b5e4b4af00f6
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: f9b9e2d903bb05f5b1b653b4fb51c57b354d4126
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70944198"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81351083"
 ---
 # <a name="___mb_cur_max_func-___mb_cur_max_l_func-__p___mb_cur_max-__mb_cur_max"></a>___mb_cur_max_func, ___mb_cur_max_l_func, __p___mb_cur_max, __mb_cur_max
 
@@ -58,17 +60,19 @@ locale: Die Struktur des Gebietsschemas, aus dem das Ergebnis abgerufen werden s
 
 Die maximale Anzahl von Bytes in einem Multibyte-Zeichen für das Gebietsschema des aktuelles Threads oder das angegebene Gebietsschema.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Dies ist eine interne Funktion, die CRT nutzt, um den aktuellen Wert des Makros [MB_CUR_MAX](../c-runtime-library/mb-cur-max.md) aus dem lokalen Threadspeicher abzurufen. Wir empfehlen, das Makro `MB_CUR_MAX` in Ihrem Code für Übertragbarkeit zu nutzen.
 
 Das Makro `__mb_cur_max` ist ein bequemer Weg zum Aufrufen der Funktion `___mb_cur_max_func()`. Die Funktion `__p___mb_cur_max` ist für eine Kompatibilität mit Visual C++ 5.0 und früheren Versionen definiert.
 
-Interne CRT-Funktionen sind implementierungsspezifisch und mit jeder neuen Veröffentlichung Änderungen unterworfen. Ihre Verwendung in einem Code wird nicht empfohlen.
+Interne CRT-Funktionen sind implementierungsspezifisch und mit jedem neuen Release Änderungen unterworfen. Ihre Verwendung in einem Code wird nicht empfohlen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |`___mb_cur_max_func`, `___mb_cur_max_l_func`, `__p___mb_cur_max`|\<ctype.h>, \<stdlib.h>|
 

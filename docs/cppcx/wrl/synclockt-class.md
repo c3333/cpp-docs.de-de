@@ -17,16 +17,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::Details::SyncLockT::~SyncLockT, destructor
 - Microsoft::WRL::Wrappers::Details::SyncLockT::Unlock method
 ms.assetid: a967f6f7-3555-43d1-b210-2bb65d63d15e
-ms.openlocfilehash: d27e6ba8601d0e822113bf3a4a65269c89437271
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 52c4404fa28f680a9a7a4592d03f535e8406d1a4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398159"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374286"
 ---
 # <a name="synclockt-class"></a>SyncLockT-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,41 +38,41 @@ class SyncLockT;
 ### <a name="parameters"></a>Parameter
 
 *SyncTraits*<br/>
-Der Typ, der Besitz einer Ressource übernehmen kann.
+Der Typ, der den Besitz einer Ressource übernehmen kann.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Stellt einen Typ, der exklusiven annehmen kann, oder den gemeinsamen Besitz einer Ressource.
+Stellt einen Typ dar, der exklusiven oder freigegebenen Besitz einer Ressource übernehmen kann.
 
-Die `SyncLockT` Klasse wird verwendet, z. B. zum Implementieren der [SRWLock](srwlock-class.md) Klasse.
+Die `SyncLockT` Klasse wird z. B. zum Implementieren der [SRWLock-Klasse](srwlock-class.md) verwendet.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                      | Beschreibung
+Name                                      | BESCHREIBUNG
 ----------------------------------------- | ----------------------------------------------------
-[SyncLockT::SyncLockT](#synclockt)        | Initialisiert eine neue Instanz der `SyncLockT`-Klasse.
-[SyncLockT::~SyncLockT](#tilde-synclockt) | Hebt die Initialisierung einer Instanz von der `SyncLockT` Klasse.
+[SyncLockT::SyncLockT](#synclockt)        | Initialisiert eine neue Instanz der Klasse `SyncLockT`.
+[SyncLockT::-SyncLockt](#tilde-synclockt) | Deinitialisiert eine Instanz `SyncLockT` der Klasse.
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-Name                               | Beschreibung
+Name                               | BESCHREIBUNG
 ---------------------------------- | ----------------------------------------------------
-[SyncLockT::SyncLockT](#synclockt) | Initialisiert eine neue Instanz der `SyncLockT`-Klasse.
+[SyncLockT::SyncLockT](#synclockt) | Initialisiert eine neue Instanz der Klasse `SyncLockT`.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                             | Beschreibung
+Name                             | BESCHREIBUNG
 -------------------------------- | --------------------------------------------------------------------------------------------------------------
-[SyncLockT::IsLocked](#islocked) | Gibt an, ob die aktuelle `SyncLockT` Objekt besitzt eine Ressource, d. h. die `SyncLockT` Objekt *gesperrt*.
-[SyncLockT::Unlock](#unlock)     | Gibt die Steuerung der Ressource frei, die von der aktuellen frei `SyncLockT` Objekt, sofern vorhanden.
+[SyncLockT::IsLocked](#islocked) | Gibt an, `SyncLockT` ob das aktuelle Objekt eigentümer eine Ressource ist. das heißt, `SyncLockT` das Objekt ist *gesperrt*.
+[SyncLockT::Entsperren](#unlock)     | Gibt die Steuerung der Ressource `SyncLockT` frei, die sich im Besitz des aktuellen Objekts befindet.
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-Name                      | Beschreibung
+Name                      | BESCHREIBUNG
 ------------------------- | -------------------------------------------------------------------
-[SyncLockT::sync_](#sync) | Enthält die zugrunde liegende Ressource dargestellt wird, durch die `SyncLockT` Klasse.
+[SyncLockT::sync_](#sync) | Enthält die zugrunde liegende `SyncLockT` Ressource, die von der Klasse dargestellt wird.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -80,27 +80,27 @@ Name                      | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers::Details
 
-## <a name="tilde-synclockt"></a>SyncLockT::~SyncLockT
+## <a name="synclocktsynclockt"></a><a name="tilde-synclockt"></a>SyncLockT::-SyncLockt
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 ~SyncLockT();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Hebt die Initialisierung einer Instanz von der `SyncLockT` Klasse.
+Deinitialisiert eine Instanz `SyncLockT` der Klasse.
 
 Dieser Destruktor entsperrt auch die aktuelle `SyncLockT` Instanz.
 
-## <a name="islocked"></a>SyncLockT::IsLocked
+## <a name="synclocktislocked"></a><a name="islocked"></a>SyncLockT::IsLocked
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 bool IsLocked() const;
@@ -108,27 +108,27 @@ bool IsLocked() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** Wenn die `SyncLockT` Objekt gesperrt ist; andernfalls **"false"**.
+**true,** `SyncLockT` wenn das Objekt gesperrt ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt an, ob die aktuelle `SyncLockT` Objekt besitzt eine Ressource, d. h. die `SyncLockT` Objekt *gesperrt*.
+Gibt an, `SyncLockT` ob das aktuelle Objekt eigentümer eine Ressource ist. das heißt, `SyncLockT` das Objekt ist *gesperrt*.
 
-## <a name="sync"></a>SyncLockT::sync_
+## <a name="synclocktsync_"></a><a name="sync"></a>SyncLockT::sync_
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 typename SyncTraits::Type sync_;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Enthält die zugrunde liegende Ressource dargestellt wird, durch die `SyncLockT` Klasse.
+Enthält die zugrunde liegende `SyncLockT` Ressource, die von der Klasse dargestellt wird.
 
-## <a name="synclockt"></a>SyncLockT::SyncLockT
+## <a name="synclocktsynclockt"></a><a name="synclockt"></a>SyncLockT::SyncLockT
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 SyncLockT(
@@ -142,26 +142,26 @@ explicit SyncLockT(
 
 ### <a name="parameters"></a>Parameter
 
-*other*<br/>
-Ein Rvalue-Verweis auf einen anderen `SyncLockT` Objekt.
+*Andere*<br/>
+Ein rvalue-Verweis `SyncLockT` auf ein anderes Objekt.
 
-*sync*<br/>
-Ein Verweis auf einen anderen `SyncLockWithStatusT` Objekt.
+*Sync*<br/>
+Ein Verweis `SyncLockWithStatusT` auf ein anderes Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert eine neue Instanz der `SyncLockT`-Klasse.
+Initialisiert eine neue Instanz der Klasse `SyncLockT`.
 
-Der erste Konstruktor initialisiert die aktuelle `SyncLockT` Objekt von einem anderen `SyncLockT` vom Parameter angegebenen Objekts *andere*, und erklärt klicken Sie dann die andere `SyncLockT` Objekt. Der zweite Konstruktor ist `protected`, und initialisiert die aktuelle `SyncLockT` Objekt, das einen ungültigen Status.
+Der erste Konstruktor initialisiert `SyncLockT` das `SyncLockT` aktuelle Objekt aus einem anderen Objekt, `SyncLockT` das durch den Parameter *andere*angegeben wird, und macht dann das andere Objekt ungültig. Der zweite Konstruktor ist `protected`, und `SyncLockT` initialisiert das aktuelle Objekt in einen ungültigen Zustand.
 
-## <a name="unlock"></a>SyncLockT::Unlock
+## <a name="synclocktunlock"></a><a name="unlock"></a>SyncLockT::Entsperren
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 void Unlock();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt die Steuerung der Ressource frei, die von der aktuellen frei `SyncLockT` Objekt, sofern vorhanden.
+Gibt die Steuerung der Ressource `SyncLockT` frei, die sich im Besitz des aktuellen Objekts befindet.

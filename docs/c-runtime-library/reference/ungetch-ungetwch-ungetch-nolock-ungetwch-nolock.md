@@ -1,11 +1,15 @@
 ---
 title: _ungetch, _ungetwch, _ungetch_nolock, _ungetwch_nolock
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ungetch_nolock
 - _ungetwch_nolock
 - _ungetwch
 - _ungetch
+- _o__ungetch
+- _o__ungetch_nolock
+- _o__ungetwch
+- _o__ungetwch_nolock
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +51,12 @@ helpviewer_keywords:
 - ungetwch_nolock function
 - _ungetwch function
 ms.assetid: 70ae71c6-228c-4883-a57d-de6d5f873825
-ms.openlocfilehash: 5fd34d0c975ee49bce688cd902a6df856b5d6963
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 8a6c03c0a17f5c7a4f7fb7088696ba97073af6c9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79443747"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81361320"
 ---
 # <a name="_ungetch-_ungetwch-_ungetch_nolock-_ungetwch_nolock"></a>_ungetch, _ungetwch, _ungetch_nolock, _ungetwch_nolock
 
@@ -79,18 +84,20 @@ wint_t _ungetwch_nolock(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu verschiebendes Zeichen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Beide Funktionen geben bei Erfolg das Zeichen *c* zurück. Wenn ein Fehler auftritt, gibt **_ungetch** den Wert **EOF** zurück, und **_ungetwch** gibt **WEOF**zurück.
+Beide Funktionen geben das Zeichen *c* zurück, wenn sie erfolgreich sind. Wenn ein Fehler auftritt, **gibt _ungetch** den Wert **EOF** zurück, und **_ungetwch** **gibt WEOF**zurück.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Funktionen schieben das Zeichen *c* zurück in die Konsole, sodass *c* das nächste von **_getch** oder **_getche** (oder **_getwch** oder **_getwche**) gelesene Zeichen ist. **_ungetch** und **_ungetwch** schlagen fehl, wenn Sie vor dem nächsten Lesevorgang mehrmals aufgerufen werden. Das *c* -Argument darf nicht **EOF** (oder **WEOF**) sein.
+Diese Funktionen schieben das Zeichen *c* zurück zur Konsole, wodurch *c* das nächste Zeichen ist, **das** von _getch oder **_getche** (oder **_getwch** oder **_getwche)** gelesen wird. **_ungetch** und **_ungetwch** fehlschlagen, wenn sie mehr als einmal vor dem nächsten Lesen aufgerufen werden. Das *c-Argument* darf nicht **EOF** (oder **WEOF )** sein.
 
 Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nicht vor Störungen durch andere Threads geschützt. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsichere Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -99,14 +106,14 @@ Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nic
 |**_ungettch**|**_ungetch**|**_ungetch**|**_ungetwch**|
 |**_ungettch_nolock**|**_ungetch_nolock**|**_ungetch_nolock**|**_ungetwch_nolock**|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_ungetch** **_ungetch_nolock**|\<conio.h>|
-|**_ungetwch** **_ungetwch_nolock**|\<conio.h> oder \<wchar.h>|
+|**_ungetch**, **_ungetch_nolock**|\<conio.h>|
+|**_ungetwch**, **_ungetwch_nolock**|\<conio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -150,8 +157,8 @@ int main( void )
 Whitetoken = White
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsole und Port-I/O](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cscanf, _cscanf_l, _cwscanf, _cwscanf_l](cscanf-cscanf-l-cwscanf-cwscanf-l.md)<br/>
 [_getch, _getwch](getch-getwch.md)<br/>

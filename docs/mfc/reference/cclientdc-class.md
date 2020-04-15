@@ -10,16 +10,16 @@ helpviewer_keywords:
 - CClientDC [MFC], CClientDC
 - CClientDC [MFC], m_hWnd
 ms.assetid: 8a871d6b-06f8-496e-9fa3-9a5780848369
-ms.openlocfilehash: 46428740d052c70218d4443395777428cdf3c3b0
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: abe8a3220fd37a0375fcf37504c715edf4c6962e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69507339"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81352298"
 ---
 # <a name="cclientdc-class"></a>CClientDC-Klasse
 
-Übernimmt das Aufrufen der Windows-Funktionen [GetDC](/windows/win32/api/winuser/nf-winuser-getdc) zur Erstellungszeit und [ReleaseDC](/windows/win32/api/winuser/nf-winuser-releasedc) zur Zerstörungs Zeit.
+Kümmert sich um den Aufruf der Windows-Funktionen [GetDC](/windows/win32/api/winuser/nf-winuser-getdc) zur Konstruktionszeit und [ReleaseDC](/windows/win32/api/winuser/nf-winuser-releasedc) zur Zerstörungszeit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,25 +31,25 @@ class CClientDC : public CDC
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CClientDC::CClientDC](#cclientdc)|Erstellt ein `CClientDC` -Objekt, das `CWnd`mit verbunden ist.|
+|[CClientDC::CClientDC](#cclientdc)|Erstellt ein `CClientDC` Objekt, `CWnd`das mit der verbunden ist.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CClientDC::m_hWnd](#m_hwnd)|Das HWND des Fensters, für das dieser `CClientDC` gültig ist.|
+|[CClientDC::m_hWnd](#m_hwnd)|Die HWND des Fensters, für das dies `CClientDC` gültig ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dies bedeutet, dass der einem `CClientDC` -Objekt zugeordnete Gerätekontext der Client Bereich eines Fensters ist.
+Dies bedeutet, dass der `CClientDC` Gerätekontext, der einem Objekt zugeordnet ist, der Clientbereich eines Fensters ist.
 
-Weitere Informationen zu `CClientDC`finden Sie unter [Geräte Kontexte](../../mfc/device-contexts.md).
+Weitere Informationen `CClientDC`zu finden Sie unter [Gerätekontexte](../../mfc/device-contexts.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CDC](../../mfc/reference/cdc-class.md)
 
@@ -59,9 +59,9 @@ Weitere Informationen zu `CClientDC`finden Sie unter [Geräte Kontexte](../../mf
 
 **Header:** afxwin.h
 
-##  <a name="cclientdc"></a>CClientDC:: CClientDC
+## <a name="cclientdccclientdc"></a><a name="cclientdc"></a>CClientDC::CClientDC
 
-Erstellt ein `CClientDC` -Objekt, das auf den Client Bereich des [CWnd](../../mfc/reference/cwnd-class.md) zugreift, auf das von *pwnd*verwiesen wird.
+Erstellt ein `CClientDC` Objekt, auf das der Clientbereich des [CWnd](../../mfc/reference/cwnd-class.md) von *pWnd*angezeigt wird.
 
 ```
 explicit CClientDC(CWnd* pWnd);
@@ -70,37 +70,37 @@ explicit CClientDC(CWnd* pWnd);
 ### <a name="parameters"></a>Parameter
 
 *pWnd*<br/>
-Das Fenster, auf dessen Client Bereich das Gerätekontext Objekt zugreift.
+Das Fenster, auf dessen Clientbereich das Gerätekontextobjekt zugreift.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Konstruktor ruft die Windows-Funktion [GetDC](/windows/win32/api/winuser/nf-winuser-getdc)auf.
 
-Eine Ausnahme (vom Typ `CResourceException`) wird ausgelöst, wenn der `GetDC` Windows-Befehl fehlschlägt. Ein Gerätekontext ist möglicherweise nicht verfügbar, wenn Windows bereits alle verfügbaren Geräte Kontexte zugewiesen hat. Die Anwendung ist für die fünf allgemeinen Anzeige Kontexte, die zu jedem beliebigen Zeitpunkt unter Windows verfügbar sind, konkurrenzfähig.
+Eine Ausnahme (vom Typ `CResourceException`) `GetDC` wird ausgelöst, wenn der Windows-Aufruf fehlschlägt. Ein Gerätekontext ist möglicherweise nicht verfügbar, wenn Windows bereits alle verfügbaren Gerätekontexte zugewiesen hat. Ihre Anwendung konkurriert mit den fünf gemeinsamen Anzeigekontexten, die zu einem bestimmten Zeitpunkt unter Windows verfügbar sind.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#42](../../mfc/codesnippet/cpp/cclientdc-class_1.cpp)]
 
-##  <a name="m_hwnd"></a>CClientDC:: m_hWnd
+## <a name="cclientdcm_hwnd"></a><a name="m_hwnd"></a>CClientDC::m_hWnd
 
-Der `HWND` `CClientDC` des Zeigers, der zum Erstellen des-Objekts verwendet wird. `CWnd`
+Der `HWND` Zeiger, der `CWnd` zum `CClientDC` Erstellen des Objekts verwendet wird.
 
 ```
 HWND m_hWnd;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 *m_hWnd* ist eine geschützte Variable.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CClientDC:: CClientDC](#cclientdc).
+  Siehe Beispiel für [CClientDC::CClientDC](#cclientdc).
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel-MDI](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel MDI](../../overview/visual-cpp-samples.md)<br/>
 [CDC-Klasse](../../mfc/reference/cdc-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CDC-Klasse](../../mfc/reference/cdc-class.md)

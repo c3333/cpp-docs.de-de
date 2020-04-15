@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - basic_regex class
 ms.assetid: 8a18c6b4-f22a-4cfd-bc16-b4267867ebc3
-ms.openlocfilehash: 45776754bd0854aeb85382eda95891a6832ca09e
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 74a8684c619e2cfbd5417950aa6108ad93511bf7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689963"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376745"
 ---
 # <a name="basic_regex-class"></a>basic_regex-Klasse
 
@@ -26,21 +26,21 @@ class basic_regex
 
 ## <a name="parameters"></a>Parameter
 
-*Elem* -\
+*Elem*\
 Der zu entsprechende Elementtyp.
 
-*Rxcharakteristika* -\
+*RXtraits*\
 Merkmalklasse für Elemente.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage beschreibt ein Objekt, das einen regulären Ausdruck enthält. Objekte dieser Klassen Vorlage können an die Vorlagen Funktionen [regex_match](../standard-library/regex-functions.md#regex_match), [regex_search](../standard-library/regex-functions.md#regex_search)und [regex_replace](../standard-library/regex-functions.md#regex_replace)zusammen mit geeigneten Textzeichen folgen Argumenten weitergegeben werden, um nach Text zu suchen, der mit dem regulären Ausdruck übereinstimmt. Es gibt zwei Spezialisierungs Informationen dieser Klassen Vorlage mit den Typdefinitionen [Regex](../standard-library/regex-typedefs.md#regex) für Elemente des Typs **char**und [wregex](../standard-library/regex-typedefs.md#wregex) für Elemente des Typs **wchar_t**.
+Die Klassenvorlage beschreibt ein Objekt, das einen regulären Ausdruck enthält. Objekte dieser Klassenvorlage können an die Vorlagenfunktionen [regex_match ,](../standard-library/regex-functions.md#regex_match) [regex_search](../standard-library/regex-functions.md#regex_search)und [regex_replace](../standard-library/regex-functions.md#regex_replace)sowie an geeignete Textzeichenfolgenargumente übergeben werden, um nach Text zu suchen, der dem regulären Ausdruck entspricht. Es gibt zwei Spezialisierungen dieser Klassenvorlage mit den Typdefinitionen [regex](../standard-library/regex-typedefs.md#regex) für Elemente vom Typ **char**und [wregex](../standard-library/regex-typedefs.md#wregex) für Elemente vom Typ **wchar_t**.
 
-Das Vorlagen Argument *rxproperties* beschreibt verschiedene wichtige Eigenschaften der Syntax der regulären Ausdrücke, die von der Klassen Vorlage unterstützt werden. Eine Klasse, die diese Merkmale des regulären Ausdrucks angibt, muss dieselbe externe Schnittstelle wie ein Objekt vom Typ " [regex_traits Class](../standard-library/regex-traits-class.md)" aufweisen.
+Das Vorlagenargument *RXtraits* beschreibt verschiedene wichtige Eigenschaften der Syntax der regulären Ausdrücke, die von der Klassenvorlage unterstützt werden. Eine Klasse, die diese Eigenschaften für reguläre Ausdrücke angibt, muss dieselbe externe Schnittstelle wie ein Objekt vom Typ [regex_traits Klasse](../standard-library/regex-traits-class.md)aufweisen.
 
 Einige Funktionen akzeptieren eine Operandensequenz, die einen regulären Ausdruck definiert. Sie können eine solche Operandensequenz wie folgt angeben:
 
-`ptr`: eine NULL-terminierte Sequenz (z. b. eine C-Zeichen *Folge für den* Typ **char**) beginnend bei `ptr` (bei der es sich nicht um einen NULL-Zeiger handeln darf), wobei das abschließende Element der Wert `value_type()` ist und nicht Teil der operandensequenz ist.
+`ptr`-- eine null-terminierte Sequenz (z. B. eine C-Zeichenfolge, für *Elem* vom Typ **char**), beginnend `ptr` bei `value_type()` (die kein Nullzeiger sein darf), wobei das beendende Element der Wert ist und nicht Teil der Operandensequenz ist
 
 `ptr`, `count` – eine Sequenz von `count`-Elementen, die bei `ptr` (darf kein NULL-Zeiger sein) beginnen
 
@@ -50,44 +50,44 @@ Einige Funktionen akzeptieren eine Operandensequenz, die einen regulären Ausdru
 
 `right` – das `basic_regex`-Objekt `right`
 
-Diese Member-Funktionen akzeptieren auch ein Argument `flags`, das verschiedene Optionen für die Interpretation des regulären Ausdrucks angibt, zusätzlich zu den vom *rxtrait* -Typ beschriebenen.
+Diese Memberfunktionen verwenden `flags` auch ein Argument, das verschiedene Optionen für die Interpretation des regulären Ausdrucks zusätzlich zu den vom *Typ RXtraits* beschriebenen Optionen angibt.
 
 ### <a name="members"></a>Member
 
 |Member|Standardwert|
 |-|-|
-|public static konstant flag_type iCase|regex_constants:: iCase|
-|public static Konstanten flag_type nosubs|regex_constants:: nosubs|
-|öffentliches statisches Konstanten flag_type optimieren|regex_constants:: optimieren|
-|public static Konstanten flag_type COLLATE|regex_constants:: COLLATE|
-|public static konstant flag_type ECMAScript|regex_constants:: ECMAScript|
-|public static konstant flag_type Basic|regex_constants:: Basic|
-|öffentliches statisches Konstanten flag_type erweitert|regex_constants:: Extended|
-|public static konstant flag_type awk|regex_constants:: awk|
-|public static konstant flag_type grep|regex_constants:: grep|
-|public static konstant flag_type egrep kompilieren|regex_constants:: egrep|
-|Private rxmerkmalen-Merkmale||
+|öffentliche statische const flag_type icase|regex_constants::icase|
+|öffentliche statische const flag_type nosubs|regex_constants::nosubs|
+|öffentliche statische const flag_type optimieren|regex_constants::optimieren|
+|öffentliche statische const flag_type kollat|regex_constants::collate|
+|öffentliche statische const flag_type ECMAScript|regex_constants::ECMAScript|
+|öffentliche statische const flag_type basis|regex_constants::basic|
+|öffentliche statische const flag_type erweitert|regex_constants::erweitert|
+|öffentliche statische const flag_type awk|regex_constants::awk|
+|öffentliche statische const flag_type grep|regex_constants::grep|
+|öffentliche statische const flag_type egrep|regex_constants::egrep|
+|private RXtraits-Eigenschaften||
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[basic_regex](#basic_regex)|Konstruiert das reguläre Ausdrucksobjekt.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[flag_type](#flag_type)|Der Typ der Syntaxoptionsflags.|
 |[locale_type](#locale_type)|Der Typ des gespeicherten Gebietsschemaobjekts.|
-|[value_type](#value_type)|Der Elementtyp.|
+|[Value_type](#value_type)|Der Elementtyp.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[assign](#assign)|Weist dem Objekt für einen regulären Ausdruck einen Wert zu.|
-|[flags](#flags)|Gibt Syntaxoptionsflags zurück.|
+|[Zuweisen](#assign)|Weist dem Objekt für einen regulären Ausdruck einen Wert zu.|
+|[Flaggen](#flags)|Gibt Syntaxoptionsflags zurück.|
 |[getloc](#getloc)|Gibt das gespeicherte Gebietsschemaobjekt zurück.|
 |[imbue](#imbue)|Ändert das gespeicherte Gebietsschemaobjekt.|
 |[mark_count](#mark_count)|Gibt die Anzahl der übereinstimmenden Teilausdrücke zurück.|
@@ -95,9 +95,9 @@ Diese Member-Funktionen akzeptieren auch ein Argument `flags`, das verschiedene 
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
-|[operator=](#op_eq)|Weist dem Objekt für einen regulären Ausdruck einen Wert zu.|
+|[Operator=](#op_eq)|Weist dem Objekt für einen regulären Ausdruck einen Wert zu.|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -196,7 +196,7 @@ getloc == imbued == true
 match("abc") == true
 ```
 
-## <a name="assign"></a> basic_regex::assign
+## <a name="basic_regexassign"></a><a name="assign"></a>basic_regex::zuweisen
 
 Weist dem Objekt für einen regulären Ausdruck einen Wert zu.
 
@@ -230,44 +230,44 @@ basic_regex& assign(
 
 ### <a name="parameters"></a>Parameter
 
-*Stcharakteristika* -\
+*STtraits*\
 Merkmalklasse für eine Zeichenfolgequelle.
 
-*Stalloc* -\
+*STalloc*\
 Zuweisungsklasse für eine Zeichenfolgequelle.
 
-*Init* -\
+*Init*\
 Eingabeiteratortyp für eine Bereichsquelle.
 
-*Rechte* \
+*Richting*\
 Zu kopierende RegEx-Quelle.
 
-*ptr* -\
+*Ptr*\
 Zeiger zum Anfang der zu kopierenden Sequenz.
 
-*Flags* \
+*Flaggen*\
 Syntaxoptionsflags, die beim Kopieren hinzugefügt werden.
 
-*> \ len/TD*
+*len/TD>*\
 Länge der zu kopierenden Sequenz.
 
-*Str* \
+*Str*\
 Zu kopierende Zeichenfolge.
 
-*erste* \
+*Ersten*\
 Anfang der zu kopierenden Sequenz.
 
-*Letzter* \
+*letzte*\
 Ende der zu kopierenden Sequenz.
 
-*IList* -\
+*Ilist*\
 Das zu kopierende initializer_list-Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Jede Memberfunktion ersetzt den regulären Ausdruck, der in `*this` enthalten ist durch den regulären Ausdruck, der in der Operandensequenz enthalten ist und gibt dann `*this` zurück.
 
-## <a name="basic_regex"></a> basic_regex::basic_regex
+## <a name="basic_regexbasic_regex"></a><a name="basic_regex"></a>basic_regex::basic_regex
 
 Konstruiert das reguläre Ausdrucksobjekt.
 
@@ -304,48 +304,48 @@ explicit basic_regex(
 
 ### <a name="parameters"></a>Parameter
 
-*Stcharakteristika* -\
+*STtraits*\
 Merkmalklasse für eine Zeichenfolgequelle.
 
-*Stalloc* -\
+*STalloc*\
 Zuweisungsklasse für eine Zeichenfolgequelle.
 
-*Init* -\
+*Init*\
 Eingabeiteratortyp für eine Bereichsquelle.
 
-*Rechte* \
+*Richting*\
 Zu kopierende RegEx-Quelle.
 
-*ptr* -\
+*Ptr*\
 Zeiger zum Anfang der zu kopierenden Sequenz.
 
-*Flags* \
+*Flaggen*\
 Syntaxoptionsflags, die beim Kopieren hinzugefügt werden.
 
-*> \ len/TD*
+*len/TD>*\
 Länge der zu kopierenden Sequenz.
 
-*Str* \
+*Str*\
 Zu kopierende Zeichenfolge.
 
-*erste* \
+*Ersten*\
 Anfang der zu kopierenden Sequenz.
 
-*Letzter* \
+*letzte*\
 Ende der zu kopierenden Sequenz.
 
-*IList* -\
+*Ilist*\
 Das zu kopierende initializer_list-Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Alle Konstruktoren speichern ein standardmäßig erstelltes Objekt vom Typ `RXtraits`.
 
 Der erste Konstruktor erstellt ein leeres `basic_regex`-Objekt. Die anderen Konstruktoren erstellen ein `basic_regex`-Objekt, das den regulären Ausdruck enthält, der von der Operandensequenz beschrieben wird.
 
-Ein leeres `basic_regex` Objekt entspricht keiner Zeichen Sequenz bei der Übergabe an [regex_match](../standard-library/regex-functions.md#regex_match), [regex_search](../standard-library/regex-functions.md#regex_search)oder [regex_replace](../standard-library/regex-functions.md#regex_replace).
+Ein `basic_regex` leeres Objekt stimmt mit keiner Zeichensequenz überein, wenn es an [regex_match](../standard-library/regex-functions.md#regex_match), [regex_search](../standard-library/regex-functions.md#regex_search)oder [regex_replace](../standard-library/regex-functions.md#regex_replace)übergeben wird.
 
-## <a name="flag_type"></a> basic_regex::flag_type
+## <a name="basic_regexflag_type"></a><a name="flag_type"></a>basic_regex::flag_type
 
 Der Typ der Syntaxoptionsflags.
 
@@ -353,11 +353,11 @@ Der Typ der Syntaxoptionsflags.
 typedef regex_constants::syntax_option_type flag_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für [regex_constants::syntax_option_type](../standard-library/regex-constants-class.md#syntax_option_type).
 
-## <a name="flags"></a> basic_regex::flags
+## <a name="basic_regexflags"></a><a name="flags"></a>basic_regex::Flaggen
 
 Gibt Syntaxoptionsflags zurück.
 
@@ -365,11 +365,11 @@ Gibt Syntaxoptionsflags zurück.
 flag_type flags() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt den Wert des `flag_type`-Arguments zurück, das an den letzten Aufruf einer der [basic_regex::assign](#assign)-Memberfunktionen übergeben wurde. Wenn kein Aufruf erfolgt ist, wird der an den Konstruktor übergebene Wert zurückgegeben.
 
-## <a name="getloc"></a> basic_regex::getloc
+## <a name="basic_regexgetloc"></a><a name="getloc"></a>basic_regex::getloc
 
 Gibt das gespeicherte Gebietsschemaobjekt zurück.
 
@@ -377,11 +377,11 @@ Gibt das gespeicherte Gebietsschemaobjekt zurück.
 locale_type getloc() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt `traits.` [regex_traits::getloc](../standard-library/regex-traits-class.md#getloc)`()` zurück.
+Die Memberfunktion `traits.`gibt [regex_traits::getloc](../standard-library/regex-traits-class.md#getloc)`()`zurück.
 
-## <a name="imbue"></a> basic_regex::imbue
+## <a name="basic_regeximbue"></a><a name="imbue"></a>basic_regex::imbue
 
 Ändert das gespeicherte Gebietsschemaobjekt.
 
@@ -391,14 +391,14 @@ locale_type imbue(locale_type loc);
 
 ### <a name="parameters"></a>Parameter
 
-*Loc* -\
+*Loc*\
 Das zu speichernde Gebietsschemaobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion leert `*this` und gibt `traits.`[regex_traits::imbue](../standard-library/regex-traits-class.md#imbue)`(loc)` zurück.
+Die Memberfunktion `*this` leert `traits.`sich und gibt [regex_traits::imbue](../standard-library/regex-traits-class.md#imbue)`(loc)`zurück.
 
-## <a name="locale_type"></a> basic_regex::locale_type
+## <a name="basic_regexlocale_type"></a><a name="locale_type"></a>basic_regex::locale_type
 
 Der Typ des gespeicherten Gebietsschemaobjekts.
 
@@ -406,11 +406,11 @@ Der Typ des gespeicherten Gebietsschemaobjekts.
 typedef typename RXtraits::locale_type locale_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für [regex_traits::locale_type](../standard-library/regex-traits-class.md#locale_type).
 
-## <a name="mark_count"></a> basic_regex::mark_count
+## <a name="basic_regexmark_count"></a><a name="mark_count"></a>basic_regex::mark_count
 
 Gibt die Anzahl der übereinstimmenden Teilausdrücke zurück.
 
@@ -418,11 +418,11 @@ Gibt die Anzahl der übereinstimmenden Teilausdrücke zurück.
 unsigned mark_count() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt die Anzahl der Erfassungsgruppen im regulären Ausdruck zurück.
 
-## <a name="op_eq"></a> basic_regex::operator=
+## <a name="basic_regexoperator"></a><a name="op_eq"></a>basic_regex::operator=
 
 Weist dem Objekt für einen regulären Ausdruck einen Wert zu.
 
@@ -437,23 +437,23 @@ basic_regex& operator=(const basic_string<Elem, STtraits, STalloc>& str);
 
 ### <a name="parameters"></a>Parameter
 
-*Stcharakteristika* -\
+*STtraits*\
 Merkmalklasse für eine Zeichenfolgequelle.
 
-*Stalloc* -\
+*STalloc*\
 Zuweisungsklasse für eine Zeichenfolgequelle.
 
-*Rechte* \
+*Richting*\
 Zu kopierende RegEx-Quelle.
 
-*Str* \
+*Str*\
 Zu kopierende Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Jeder Operator ersetzt den regulären Ausdruck, der in `*this` enthalten ist, durch den regulären Ausdruck, der in der Operandensequenz enthalten ist, und gibt dann `*this`zurück.
 
-## <a name="swap"></a> basic_regex::swap
+## <a name="basic_regexswap"></a><a name="swap"></a>basic_regex::swap
 
 Tauscht zwei Objekte mit regulärem Ausdruck.
 
@@ -463,14 +463,14 @@ void swap(basic_regex& right) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Das Objekt mit regulärem Ausdruck, gegen das getauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion tauscht die regulären Ausdrücke zwischen `*this` und *Rechts*aus. Die Funktion führt dies in konstanter Zeit aus und löst keine Ausnahmen aus.
+Die Memberfunktion tauscht die `*this` regulären Ausdrücke zwischen und *rechts*aus. Die Funktion führt dies in konstanter Zeit aus und löst keine Ausnahmen aus.
 
-## <a name="value_type"></a> basic_regex::value_type
+## <a name="basic_regexvalue_type"></a><a name="value_type"></a>basic_regex::value_type
 
 Der Elementtyp.
 
@@ -478,16 +478,16 @@ Der Elementtyp.
 typedef Elem value_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für den Vorlagen Parameter *Elem*.
+Der Typ ist ein Synonym für den Vorlagenparameter *Elem*.
 
 ## <a name="see-also"></a>Siehe auch
 
 [\<regex>](../standard-library/regex.md)\
-[regex_match](../standard-library/regex-functions.md#regex_match) \
-[regex_search](../standard-library/regex-functions.md#regex_search) \
-[regex_replace](../standard-library/regex-functions.md#regex_replace) \
-[regex](../standard-library/regex-typedefs.md#regex)\
+[regex_match](../standard-library/regex-functions.md#regex_match)\
+[regex_search](../standard-library/regex-functions.md#regex_search)\
+[regex_replace](../standard-library/regex-functions.md#regex_replace)\
+[Regex](../standard-library/regex-typedefs.md#regex)\
 [wregex](../standard-library/regex-typedefs.md#wregex)\
 [regex_traits-Klasse](../standard-library/regex-traits-class.md)

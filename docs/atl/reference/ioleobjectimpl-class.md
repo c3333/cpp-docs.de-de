@@ -1,5 +1,5 @@
 ---
-title: Ioleobjectimpl-Klasse
+title: IOleObjectImpl-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - IOleObjectImpl
@@ -49,19 +49,19 @@ helpviewer_keywords:
 - IOleObject, ATL implementation
 - IOleObjectImpl class
 ms.assetid: 59750b2d-1633-4a51-a4c2-6455b6b90c45
-ms.openlocfilehash: ded158b0ec862de5b0d0b23dd4b9edb50ad577ef
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 86d82aea2e92eb99903284abe4ac03478369616c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423057"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326524"
 ---
-# <a name="ioleobjectimpl-class"></a>Ioleobjectimpl-Klasse
+# <a name="ioleobjectimpl-class"></a>IOleObjectImpl-Klasse
 
-Diese Klasse implementiert `IUnknown` und ist die Prinzipal Schnittstelle, über die ein Container mit einem-Steuerelement kommuniziert.
+Diese Klasse `IUnknown` implementiert und ist die Hauptschnittstelle, über die ein Container mit einem Steuerelement kommuniziert.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -73,60 +73,60 @@ class ATL_NO_VTABLE IOleObjectImpl : public IOleObject
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IOleObjectImpl`abgeleitete Klasse.
+Ihre Klasse, `IOleObjectImpl`abgeleitet von .
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Ioleobjectimpl:: Empfehlung](#advise)|Stellt eine Beratungs Verbindung mit dem-Steuerelement her.|
-|[Ioleobjectimpl:: Close](#close)|Ändert den Zustand des Steuer Elements von wird ausgeführt in geladen.|
-|[Ioleobjectimpl::D overb](#doverb)|Weist das-Steuerelement an, eine seiner Aufzählungs Aktionen auszuführen.|
-|[Ioleobjectimpl::D overbverwerdundo](#doverbdiscardundo)|Weist das Steuerelement an, alle rückgängigzustände zu verwerfen, die Sie beibehalten.|
-|[Ioleobjectimpl::D overbhide](#doverbhide)|Weist das Steuerelement an, seine Benutzeroberfläche aus der Ansicht zu entfernen.|
-|[Ioleobjectimpl::D overbinplaceaktivierungs](#doverbinplaceactivate)|Führt das-Steuerelement aus und installiert das zugehörige Fenster, die Benutzeroberfläche des Steuer Elements wird jedoch nicht installiert.|
-|[Ioleobjectimpl::D overbopen](#doverbopen)|Bewirkt, dass das Steuerelement in einem separaten Fenster geöffnet wird.|
-|[Ioleobjectimpl::D overbprimary](#doverbprimary)|Führt die angegebene Aktion aus, wenn der Benutzer auf das-Steuerelement doppelklickt. Das-Steuerelement definiert die Aktion, normalerweise, um das Steuerelement direkt zu aktivieren.|
-|[Ioleobjectimpl::D overbshow](#doverbshow)|Zeigt ein neu eingefügtes Steuerelement für den Benutzer an.|
-|[Ioleobjectimpl::D overbuiaktivierungs](#doverbuiactivate)|Aktiviert das Steuerelement direkt und zeigt die Benutzeroberfläche des Steuer Elements an, z. b. Menüs und Symbolleisten.|
-|[Ioleobjectimpl:: Endbenutzer](#enumadvise)|Listet die Beratungs Verbindungen des-Steuer Elements auf.|
-|[Ioleobjectimpl:: EnumVerbs](#enumverbs)|Listet Aktionen für das-Steuerelement auf.|
-|[Ioleobjectimpl:: GetClientSite](#getclientsite)|Ruft die Client Site des-Steuer Elements ab.|
-|[Ioleobjectimpl:: GetClipboardData](#getclipboarddata)|Ruft Daten aus der Zwischenablage ab. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[Ioleobjectimpl:: GetExtent](#getextent)|Ruft den Umfang des Anzeige Bereichs des Steuer Elements ab.|
-|[Ioleobjectimpl:: getfehlstatus](#getmiscstatus)|Ruft den Status des Steuer Elements ab.|
-|[Ioleobjectimpl:: getmoniker](#getmoniker)|Ruft den Moniker des Steuer Elements ab. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[Ioleobjectimpl:: GetUserClassID](#getuserclassid)|Ruft den Klassen Bezeichner des Steuer Elements ab.|
-|[Ioleobjectimpl:: GetUserType](#getusertype)|Ruft den Benutzertyp Namen des Steuer Elements ab.|
-|[Ioleobjectimpl:: initfromdata](#initfromdata)|Initialisiert das Steuerelement aus den ausgewählten Daten. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[Ioleobjectimpl:: isupdedate](#isuptodate)|Überprüft, ob das Steuerelement auf dem neuesten Stand ist. Die ATL-Implementierung gibt S_OK zurück.|
-|[Ioleobjectimpl:: onpostverbverwerdundo](#onpostverbdiscardundo)|Wird von [doverbverwerfen Dundo](#doverbdiscardundo) aufgerufen, nachdem der Zustand rückgängig gemacht wurde.|
-|[Ioleobjectimpl:: onpostverbhide](#onpostverbhide)|Wird von [doverbhide](#doverbhide) aufgerufen, nachdem das Steuerelement ausgeblendet ist.|
-|[Ioleobjectimpl:: onpostverbinplaceaktivierungs](#onpostverbinplaceactivate)|Wird von [doverbinplaceaktivierungs](#doverbinplaceactivate) aufgerufen, nachdem das Steuerelement direkt aktiviert wurde.|
-|[Ioleobjectimpl:: onpostverbopen](#onpostverbopen)|Wird von [doverbopen](#doverbopen) aufgerufen, nachdem das Steuerelement in einem separaten Fenster zum Bearbeiten geöffnet wurde.|
-|[Ioleobjectimpl:: onpostverbshow](#onpostverbshow)|Wird von [doverbshow](#doverbshow) aufgerufen, nachdem das Steuerelement sichtbar gemacht wurde.|
-|[Ioleobjectimpl:: onpostverbuiaktivierungs](#onpostverbuiactivate)|Wird von [doverbuiaktivierungs](#doverbuiactivate) aufgerufen, nachdem die Benutzeroberfläche des Steuer Elements aktiviert wurde.|
-|[Ioleobjectimpl:: onpreverbverwerdundo](#onpreverbdiscardundo)|Wird von [doverbverwerfen Dundo](#doverbdiscardundo) aufgerufen, bevor der Zustand rückgängig gemacht wird.|
-|[Ioleobjectimpl:: onpreverbhide](#onpreverbhide)|Wird von [doverbhide](#doverbhide) aufgerufen, bevor das-Steuerelement ausgeblendet wird.|
-|[Ioleobjectimpl:: onpreverbinplaceaktivierungs](#onpreverbinplaceactivate)|Wird von [doverbinplaceaktivierungs](#doverbinplaceactivate) aufgerufen, bevor das Steuerelement an Ort und Stelle aktiviert wird.|
-|[Ioleobjectimpl:: onpreverbopen](#onpreverbopen)|Wird von [doverbopen](#doverbopen) aufgerufen, bevor das Steuerelement in einem separaten Fenster zum Bearbeiten geöffnet wurde.|
-|[Ioleobjectimpl:: onpreverbshow](#onpreverbshow)|Wird von [doverbshow](#doverbshow) aufgerufen, bevor das Steuerelement sichtbar gemacht wurde.|
-|[Ioleobjectimpl:: onpreverbuiaktivierungs](#onpreverbuiactivate)|Wird von [doverbuiaktivierungs](#doverbuiactivate) aufgerufen, bevor die Benutzeroberfläche des Steuer Elements aktiviert wurde.|
-|[Ioleobjectimpl:: SetClientSite](#setclientsite)|Weist das-Steuerelement an seine Client Site im Container zu.|
-|[Ioleobjectimpl:: SetColorScheme](#setcolorscheme)|Empfiehlt ggf. ein Farbschema für die Anwendung des Steuer Elements. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[Ioleobjectimpl:: abtextent](#setextent)|Legt den Umfang des Anzeige Bereichs des-Steuer Elements fest.|
-|[Ioleobjectimpl:: lthostnames](#sethostnames)|Weist das-Steuerelement an, die Namen der Containeranwendung und des Container Dokuments zu steuern.|
-|[Ioleobjectimpl:: setmoniker](#setmoniker)|Teilt dem Steuerelement mit, was sein Moniker ist. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[Ioleobjectimpl:: unempfehlung](#unadvise)|Löscht eine Beratungs Verbindung mit dem-Steuerelement.|
-|[Ioleobjectimpl:: Update](#update)|Aktualisiert das-Steuerelement. Die ATL-Implementierung gibt S_OK zurück.|
+|[IOleObjectImpl::Beratung](#advise)|Stellt eine beratende Verbindung mit dem Steuerelement her.|
+|[IOleObjectImpl::Schließen](#close)|Ändert den Steuerstatus von "Laufen" auf "Geladen".|
+|[IOleObjectImpl::DoVerb](#doverb)|Weist das Steuerelement an, eine der aufgezählten Aktionen auszuführen.|
+|[IOleObjectImpl::DoVerbDiscardUndo](#doverbdiscardundo)|Weist das Steuerelement an, jeden Rückgängigzustand zu verwerfen, den es aufrechterhält.|
+|[IOleObjectImpl::DoVerbHide](#doverbhide)|Weist das Steuerelement an, die Benutzeroberfläche aus der Ansicht zu entfernen.|
+|[IOleObjectImpl::DoVerbInPlaceActivate](#doverbinplaceactivate)|Führt das Steuerelement aus und installiert das Fenster, installiert jedoch nicht die Benutzeroberfläche des Steuerelements.|
+|[IOleObjectImpl::DoVerbÖffnen](#doverbopen)|Bewirkt, dass das Steuerelement in einem separaten Fenster geöffnet wird.|
+|[IOleObjectImpl::DoVerbPrimary](#doverbprimary)|Führt die angegebene Aktion aus, wenn der Benutzer auf das Steuerelement doppelklickt. Das Steuerelement definiert die Aktion, in der Regel, um das Steuerelement an Ort und Stelle zu aktivieren.|
+|[IOleObjectImpl::DoVerbShow](#doverbshow)|Zeigt dem Benutzer ein neu eingefügtes Steuerelement an.|
+|[IOleObjectImpl::DoVerbUIActivate](#doverbuiactivate)|Aktiviert das Steuerelement an Ort und Stelle und zeigt die Benutzeroberfläche des Steuerelements an, z. B. Menüs und Symbolleisten.|
+|[IOleObjectImpl::EnumAdvise](#enumadvise)|Zählt die Beratungsverbindungen des Steuerelements auf.|
+|[IOleObjectImpl::EnumVerbs](#enumverbs)|Zählt Aktionen für das Steuerelement auf.|
+|[IOleObjectImpl::GetClientSite](#getclientsite)|Ruft die Clientsite des Steuerelements ab.|
+|[IOleObjectImpl::GetClipboardData](#getclipboarddata)|Ruft Daten aus der Zwischenablage ab. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IOleObjectImpl::GetExtent](#getextent)|Ruft die Ausdehnung des Anzeigebereichs des Steuerelements ab.|
+|[IOleObjectImpl::GetMiscStatus](#getmiscstatus)|Ruft den Status des Steuerelements ab.|
+|[IOleObjectImpl::GetMoniker](#getmoniker)|Ruft den Moniker des Steuerelements ab. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IOleObjectImpl::GetUserClassID](#getuserclassid)|Ruft den Klassenbezeichner des Steuerelements ab.|
+|[IOleObjectImpl::GetUserType](#getusertype)|Ruft den Benutzertypnamen des Steuerelements ab.|
+|[IOleObjectImpl::InitFromData](#initfromdata)|Initialisiert das Steuerelement aus ausgewählten Daten. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IOleObjectImpl::IsUptoDate](#isuptodate)|Überprüft, ob das Steuerelement auf dem neuesten Stand ist. Die ATL-Implementierung gibt S_OK zurück.|
+|[IOleObjectImpl::OnPostVerbDiscardUndo](#onpostverbdiscardundo)|Wird von [DoVerbDiscardUndo](#doverbdiscardundo) aufgerufen, nachdem der Rückgängig-Zustand verworfen wurde.|
+|[IOleObjectImpl::OnPostVerbHide](#onpostverbhide)|Wird von [DoVerbHide](#doverbhide) aufgerufen, nachdem das Steuerelement ausgeblendet wurde.|
+|[IOleObjectImpl::OnPostVerbInPlaceActivate](#onpostverbinplaceactivate)|Wird von [DoVerbInPlaceActivate](#doverbinplaceactivate) aufgerufen, nachdem das Steuerelement aktiviert wurde.|
+|[IOleObjectImpl::OnPostVerbÖffnen](#onpostverbopen)|Wird von [DoVerbOpen](#doverbopen) aufgerufen, nachdem das Steuerelement zur Bearbeitung in einem separaten Fenster geöffnet wurde.|
+|[IOleObjectImpl::OnPostVerbShow](#onpostverbshow)|Wird von [DoVerbShow](#doverbshow) aufgerufen, nachdem das Steuerelement sichtbar gemacht wurde.|
+|[IOleObjectImpl::OnPostVerbUIActivate](#onpostverbuiactivate)|Wird von [DoVerbUIActivate](#doverbuiactivate) aufgerufen, nachdem die Benutzeroberfläche des Steuerelements aktiviert wurde.|
+|[IOleObjectImpl::OnPreVerbDiscardUndo](#onpreverbdiscardundo)|Wird von [DoVerbDiscardUndo](#doverbdiscardundo) aufgerufen, bevor der Rückgängig-Zustand verworfen wird.|
+|[IOleObjectImpl::OnPreVerbHide](#onpreverbhide)|Wird von [DoVerbHide](#doverbhide) aufgerufen, bevor das Steuerelement ausgeblendet wird.|
+|[IOleObjectImpl::OnPreVerbInPlaceActivate](#onpreverbinplaceactivate)|Wird von [DoVerbInPlaceActivate](#doverbinplaceactivate) aufgerufen, bevor das Steuerelement aktiviert wird.|
+|[IOleObjectImpl::OnPreVerbÖffnen](#onpreverbopen)|Wird von [DoVerbOpen](#doverbopen) aufgerufen, bevor das Steuerelement zur Bearbeitung in einem separaten Fenster geöffnet wurde.|
+|[IOleObjectImpl::OnPreVerbShow](#onpreverbshow)|Wird von [DoVerbShow](#doverbshow) aufgerufen, bevor das Steuerelement sichtbar gemacht wurde.|
+|[IOleObjectImpl::OnPreVerbUIActivate](#onpreverbuiactivate)|Wird von [DoVerbUIActivate](#doverbuiactivate) aufgerufen, bevor die Benutzeroberfläche des Steuerelements aktiviert wurde.|
+|[IOleObjectImpl::SetClientSite](#setclientsite)|Gibt das Steuerelement über seine Clientsite im Container an.|
+|[IOleObjectImpl::SetColorScheme](#setcolorscheme)|Empfiehlt ein Farbschema für die Anwendung des Steuerelements, falls vorhanden. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IOleObjectImpl::SetExtent](#setextent)|Legt die Ausdehnung des Anzeigebereichs des Steuerelements fest.|
+|[IOleObjectImpl::SetHostNames](#sethostnames)|Gibt das Steuerelement die Namen der Containeranwendung und des Containerdokuments an.|
+|[IOleObjectImpl::SetMoniker](#setmoniker)|Sagt dem Steuerelement an, was sein Moniker ist. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IOleObjectImpl::Unadvise](#unadvise)|Löscht eine beratende Verbindung mit dem Steuerelement.|
+|[IOleObjectImpl::Update](#update)|Aktualisiert das Steuerelement. Die ATL-Implementierung gibt S_OK zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die [IOleObject](/windows/win32/api/oleidl/nn-oleidl-ioleobject) -Schnittstelle ist die Prinzipal Schnittstelle, über die ein Container mit einem-Steuerelement kommuniziert. Class `IOleObjectImpl` stellt eine Standard Implementierung dieser Schnittstelle bereit und implementiert `IUnknown`, indem Informationen in Debugbuilds an das dumpgerät gesendet werden.
+Die [IOleObject-Schnittstelle](/windows/win32/api/oleidl/nn-oleidl-ioleobject) ist die Hauptschnittstelle, über die ein Container mit einem Steuerelement kommuniziert. Die `IOleObjectImpl` Klasse stellt eine Standardimplementierung `IUnknown` dieser Schnittstelle bereit und implementiert, indem Informationen in Debugbuilds an das Dumpgerät gesendet werden.
 
-**Zugehörige Artikel** [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md), [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
+**Verwandte Artikel** [ATL Tutorial](../../atl/active-template-library-atl-tutorial.md), Erstellen eines [ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -134,13 +134,13 @@ Die [IOleObject](/windows/win32/api/oleidl/nn-oleidl-ioleobject) -Schnittstelle 
 
 `IOleObjectImpl`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** atlctl. h
+**Kopfzeile:** atlctl.h
 
-##  <a name="advise"></a>Ioleobjectimpl:: Empfehlung
+## <a name="ioleobjectimpladvise"></a><a name="advise"></a>IOleObjectImpl::Beratung
 
-Stellt eine Beratungs Verbindung mit dem-Steuerelement her.
+Stellt eine beratende Verbindung mit dem Steuerelement her.
 
 ```
 STDMETHOD(Advise)(
@@ -148,29 +148,29 @@ STDMETHOD(Advise)(
     DWORD* pdwConnection);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IOleObject:: Rat](/windows/win32/api/oleidl/nf-oleidl-ioleobject-advise) in der Windows SDK.
+Weitere Informationen finden Sie unter [IOleObject::Advise](/windows/win32/api/oleidl/nf-oleidl-ioleobject-advise) im Windows SDK.
 
-##  <a name="close"></a>Ioleobjectimpl:: Close
+## <a name="ioleobjectimplclose"></a><a name="close"></a>IOleObjectImpl::Schließen
 
-Ändert den Zustand des Steuer Elements von wird ausgeführt in geladen.
+Ändert den Steuerstatus von "Laufen" auf "Geladen".
 
 ```
 STDMETHOD(Close)(DWORD dwSaveOption);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Deaktiviert das Steuerelement und zerstört das Fenster des Steuer Elements, sofern es vorhanden ist. Wenn der Steuerelement-Klassendatenmember [CComControlBase:: m_bRequiresSave](../../atl/reference/ccomcontrolbase-class.md#m_brequiressave) true und der *dwsaveoption* -Parameter entweder OLECLOSE_SAVEIFDIRTY oder OLECLOSE_PROMPTSAVE ist, werden die Steuerelement Eigenschaften vor dem Schließen gespeichert.
+Deaktiviert das Steuerelement und zerstört das Kontrollfenster, falls vorhanden. Wenn der Steuerelementklassendatenmember [CComControlBase::m_bRequiresSave](../../atl/reference/ccomcontrolbase-class.md#m_brequiressave) TRUE ist und der Parameter *dwSaveOption* entweder OLECLOSE_SAVEIFDIRTY oder OLECLOSE_PROMPTSAVE ist, werden die Steuerelementeigenschaften vor dem Schließen gespeichert.
 
-Die in den Steuerelement-klassendatenmembern gespeicherten Zeiger [CComControlBase:: m_spInPlaceSite](../../atl/reference/ccomcontrolbase-class.md#m_spinplacesite) und [CComControlBase:: m_spAdviseSink](../../atl/reference/ccomcontrolbase-class.md#m_spadvisesink) werden freigegeben, und die Datenmember [CComControlBase:: m_bNegotiatedWnd](../../atl/reference/ccomcontrolbase-class.md#m_bnegotiatedwnd), [CComControlBase:: m_bWndless](../../atl/reference/ccomcontrolbase-class.md#m_bwndless)und [CComControlBase:: m_bInPlaceSiteEx](../../atl/reference/ccomcontrolbase-class.md#m_binplacesiteex) sind auf false festgelegt.
+Die Zeiger in den Steuerelementklassendatenmembern [CComControlBase::m_spInPlaceSite](../../atl/reference/ccomcontrolbase-class.md#m_spinplacesite) und [CComControlBase::m_spAdviseSink](../../atl/reference/ccomcontrolbase-class.md#m_spadvisesink) werden freigegeben, und die Datenmember [CComControlBase::m_bNegotiatedWnd](../../atl/reference/ccomcontrolbase-class.md#m_bnegotiatedwnd), [CComControlBase::m_bWndless](../../atl/reference/ccomcontrolbase-class.md#m_bwndless)und [CComControlBase::m_bInPlaceSiteEx](../../atl/reference/ccomcontrolbase-class.md#m_binplacesiteex) werden auf FALSE festgelegt.
 
-Weitere Informationen finden Sie im Windows SDK unter [IOleObject:: Close](/windows/win32/api/oleidl/nf-oleidl-ioleobject-close) .
+Siehe [IOleObject::Schließen](/windows/win32/api/oleidl/nf-oleidl-ioleobject-close) im Windows SDK.
 
-##  <a name="doverb"></a>Ioleobjectimpl::D overb
+## <a name="ioleobjectimpldoverb"></a><a name="doverb"></a>IOleObjectImpl::DoVerb
 
-Weist das-Steuerelement an, eine seiner Aufzählungs Aktionen auszuführen.
+Weist das Steuerelement an, eine der aufgezählten Aktionen auszuführen.
 
 ```
 STDMETHOD(DoVerb)(
@@ -182,26 +182,26 @@ STDMETHOD(DoVerb)(
     LPCRECT lprcPosRect);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Abhängig vom Wert `iVerb`wird eine der ATL-`DoVerb` Hilfsfunktionen wie folgt aufgerufen:
+Abhängig vom Wert `iVerb`von wird eine `DoVerb` der ATL-Hilfsfunktionen wie folgt aufgerufen:
 
-|*iVerb* Wert|DoVerb Helper-Funktion namens|
+|*iVerb* Wert|DoVerb-Hilfsfunktion namens|
 |-------------------|-----------------------------------|
-|OLEIVERB_DISCARDUNDOSTATE|[Doverbverwerdundo](#doverbdiscardundo)|
-|OLEIVERB_HIDE|[Doverbhide](#doverbhide)|
-|OLEIVERB_INPLACEACTIVATE|[Doverbinplaceaktivierungs](#doverbinplaceactivate)|
-|OLEIVERB_OPEN|[Doverbopen](#doverbopen)|
-|OLEIVERB_PRIMARY|[Doverbprimary](#doverbprimary)|
-|OLEIVERB_PROPERTIES|[CComControlBase::D overbproperties](../../atl/reference/ccomcontrolbase-class.md#doverbproperties)|
-|OLEIVERB_SHOW|[Doverbshow](#doverbshow)|
-|OLEIVERB_UIACTIVATE|[Doverbuiaktivierungs](#doverbuiactivate)|
+|OLEIVERB_DISCARDUNDOSTATE|[DoVerbDiscardUndo](#doverbdiscardundo)|
+|OLEIVERB_HIDE|[DoVerbHide](#doverbhide)|
+|OLEIVERB_INPLACEACTIVATE|[DoVerbinPlaceActivate](#doverbinplaceactivate)|
+|OLEIVERB_OPEN|[DoVerbOpen](#doverbopen)|
+|OLEIVERB_PRIMARY|[DoVerbPrimary](#doverbprimary)|
+|OLEIVERB_PROPERTIES|[CComControlBase::DoVerbProperties](../../atl/reference/ccomcontrolbase-class.md#doverbproperties)|
+|OLEIVERB_SHOW|[DoVerbShow](#doverbshow)|
+|OLEIVERB_UIACTIVATE|[DoVerbUIActivate](#doverbuiactivate)|
 
-Weitere Informationen finden Sie unter [IOleObject::D overb](/windows/win32/api/oleidl/nf-oleidl-ioleobject-doverb) in der Windows SDK.
+Siehe [IOleObject::DoVerb](/windows/win32/api/oleidl/nf-oleidl-ioleobject-doverb) im Windows SDK.
 
-##  <a name="doverbdiscardundo"></a>Ioleobjectimpl::D overbverwerdundo
+## <a name="ioleobjectimpldoverbdiscardundo"></a><a name="doverbdiscardundo"></a>IOleObjectImpl::DoVerbDiscardUndo
 
-Weist das Steuerelement an, alle rückgängigzustände zu verwerfen, die Sie beibehalten.
+Weist das Steuerelement an, jeden Rückgängigzustand zu verwerfen, den es aufrechterhält.
 
 ```
 HRESULT DoVerbDiscardUndo(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
@@ -209,19 +209,19 @@ HRESULT DoVerbDiscardUndo(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält.
+[in] Handle des Fensters, das das Steuerelement enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt S_OK zurück.
 
-##  <a name="doverbhide"></a>Ioleobjectimpl::D overbhide
+## <a name="ioleobjectimpldoverbhide"></a><a name="doverbhide"></a>IOleObjectImpl::DoVerbHide
 
-Deaktiviert und entfernt die Benutzeroberfläche des Steuer Elements und blendet das Steuerelement aus.
+Deaktiviert und entfernt die Benutzeroberfläche des Steuerelements und blendet das Steuerelement aus.
 
 ```
 HRESULT DoVerbHide(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
@@ -229,19 +229,19 @@ HRESULT DoVerbHide(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
+[in] Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt S_OK zurück.
 
-##  <a name="doverbinplaceactivate"></a>Ioleobjectimpl::D overbinplaceaktivierungs
+## <a name="ioleobjectimpldoverbinplaceactivate"></a><a name="doverbinplaceactivate"></a>IOleObjectImpl::DoVerbInPlaceActivate
 
-Führt das-Steuerelement aus und installiert das zugehörige Fenster, die Benutzeroberfläche des Steuer Elements wird jedoch nicht installiert.
+Führt das Steuerelement aus und installiert das Fenster, installiert jedoch nicht die Benutzeroberfläche des Steuerelements.
 
 ```
 HRESULT DoVerbInPlaceActivate(LPCRECT prcPosRect, HWND /* hwndParent */);
@@ -249,21 +249,21 @@ HRESULT DoVerbInPlaceActivate(LPCRECT prcPosRect, HWND /* hwndParent */);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
+[in] Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der HRESULT-Standardwerte.
+Einer der Standard-HRESULT-Werte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aktiviert das Steuerelement direkt durch Aufrufen von [CComControlBase:: inplaceaktivierungs](../../atl/reference/ccomcontrolbase-class.md#inplaceactivate). Wenn das Datenmember der Steuerelement Klasse `m_bWindowOnly` true ist, versucht `DoVerbInPlaceActivate` zunächst, das Steuerelement als fensterloses Steuerelement zu aktivieren (Dies ist nur möglich, wenn der Container [ioleingeplacesitewindowless](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless)unterstützt). Wenn dies fehlschlägt, versucht die Funktion, das Steuerelement mit erweiterten Funktionen zu aktivieren (Dies ist nur möglich, wenn der Container [ioleingeplacesiteex](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)unterstützt). Wenn dies fehlschlägt, versucht die Funktion, das Steuerelement ohne erweiterte Funktionen zu aktivieren (Dies ist nur möglich, wenn der Container [ioleingeplacesite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)unterstützt). Wenn die Aktivierung erfolgreich ist, benachrichtigt die Funktion den Container, dass das Steuerelement aktiviert wurde.
+Aktiviert das Steuerelement an Ort und Stelle, indem [CComControlBase::InPlaceActivate](../../atl/reference/ccomcontrolbase-class.md#inplaceactivate)aufgerufen wird. Sofern der Datenmember `m_bWindowOnly` der Steuerelementklasse `DoVerbInPlaceActivate` nicht TRUE ist, wird zunächst versucht, das Steuerelement als fensterloses Steuerelement zu aktivieren (nur möglich, wenn der Container [IOleInPlaceSiteWindowless](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless)unterstützt). Wenn dies fehlschlägt, versucht die Funktion, das Steuerelement mit erweiterten Features zu aktivieren (nur möglich, wenn der Container [IOleInPlaceSiteEx](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)unterstützt). Wenn dies fehlschlägt, versucht die Funktion, das Steuerelement ohne erweiterte Funktionen zu aktivieren (nur möglich, wenn der Container [IOleInPlaceSite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)unterstützt). Wenn die Aktivierung erfolgreich ist, benachrichtigt die Funktion den Container, für den das Steuerelement aktiviert wurde.
 
-##  <a name="doverbopen"></a>Ioleobjectimpl::D overbopen
+## <a name="ioleobjectimpldoverbopen"></a><a name="doverbopen"></a>IOleObjectImpl::DoVerbÖffnen
 
 Bewirkt, dass das Steuerelement in einem separaten Fenster geöffnet wird.
 
@@ -273,19 +273,19 @@ HRESULT DoVerbOpen(LPCRECT /* prcPosRect */, HWND /* hwndParent */);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält.
+[in] Handle des Fensters, das das Steuerelement enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt S_OK zurück.
 
-##  <a name="doverbprimary"></a>Ioleobjectimpl::D overbprimary
+## <a name="ioleobjectimpldoverbprimary"></a><a name="doverbprimary"></a>IOleObjectImpl::DoVerbPrimary
 
-Definiert die Aktion, die ausgeführt wird, wenn der Benutzer auf das-Steuerelement doppelklickt.
+Definiert die Aktion, die ausgeführt wird, wenn der Benutzer auf das Steuerelement doppelklickt.
 
 ```
 HRESULT DoVerbPrimary(LPCRECT prcPosRect, HWND hwndParent);
@@ -293,21 +293,21 @@ HRESULT DoVerbPrimary(LPCRECT prcPosRect, HWND hwndParent);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält.
+[in] Handle des Fensters, das das Steuerelement enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der HRESULT-Standardwerte.
+Einer der Standard-HRESULT-Werte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig legen Sie fest, um die Eigenschaften Seiten anzuzeigen. Sie können dies in der Steuerelement Klasse überschreiben, um ein anderes Verhalten beim Doppelklicken aufzurufen. Beispielsweise können Sie ein Video abspielen oder direkt in den aktiven Schritt wechseln.
+Legen Sie standardmäßig fest, dass die Eigenschaftenseiten angezeigt werden. Sie können dies in Ihrer Steuerelementklasse überschreiben, um beim Doppelklicken ein anderes Verhalten aufzurufen. spielen Sie z. B. ein Video ab oder gehen Sie aktiv an Ort und Stelle.
 
-##  <a name="doverbshow"></a>Ioleobjectimpl::D overbshow
+## <a name="ioleobjectimpldoverbshow"></a><a name="doverbshow"></a>IOleObjectImpl::DoVerbShow
 
 Weist den Container an, das Steuerelement sichtbar zu machen.
 
@@ -317,19 +317,19 @@ HRESULT DoVerbShow(LPCRECT prcPosRect, HWND /* hwndParent */);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
+[in] Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der HRESULT-Standardwerte.
+Einer der Standard-HRESULT-Werte.
 
-##  <a name="doverbuiactivate"></a>Ioleobjectimpl::D overbuiaktivierungs
+## <a name="ioleobjectimpldoverbuiactivate"></a><a name="doverbuiactivate"></a>IOleObjectImpl::DoVerbUIActivate
 
-Aktiviert die Benutzeroberfläche des Steuer Elements und benachrichtigt den Container, dass die Menüs durch zusammengesetzte Menüs ersetzt werden.
+Aktiviert die Benutzeroberfläche des Steuerelements und benachrichtigt den Container, dass seine Menüs durch zusammengesetzte Menüs ersetzt werden.
 
 ```
 HRESULT DoVerbUIActivate(LPCRECT prcPosRect, HWND /* hwndParent */);
@@ -337,55 +337,55 @@ HRESULT DoVerbUIActivate(LPCRECT prcPosRect, HWND /* hwndParent */);
 
 ### <a name="parameters"></a>Parameter
 
-*prcposrec*<br/>
-in Zeiger auf das Rechteck, in dem das Steuerelement gezeichnet werden soll.
+*prcPosRec*<br/>
+[in] Zeiger auf das Rechteck, in das das Steuerelement gezeichnet werden soll.
 
 *hwndParent*<br/>
-in Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
+[in] Handle des Fensters, das das Steuerelement enthält. Wird in der ATL-Implementierung nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der HRESULT-Standardwerte.
+Einer der Standard-HRESULT-Werte.
 
-##  <a name="enumadvise"></a>Ioleobjectimpl:: Endbenutzer
+## <a name="ioleobjectimplenumadvise"></a><a name="enumadvise"></a>IOleObjectImpl::EnumAdvise
 
-Stellt eine Enumeration registrierter Beratungs Verbindungen für dieses Steuerelement bereit.
+Liefert eine Aufzählung registrierter Beratungsverbindungen für dieses Steuerelement.
 
 ```
 STDMETHOD(EnumAdvise)(IEnumSTATDATA** ppenumAdvise);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: EnumAdvise](/windows/win32/api/oleidl/nf-oleidl-ioleobject-enumadvise) in der Windows SDK.
+Weitere Informationen finden Sie unter [IOleObject::EnumAdvise](/windows/win32/api/oleidl/nf-oleidl-ioleobject-enumadvise) im Windows SDK.
 
-##  <a name="enumverbs"></a>Ioleobjectimpl:: EnumVerbs
+## <a name="ioleobjectimplenumverbs"></a><a name="enumverbs"></a>IOleObjectImpl::EnumVerbs
 
-Stellt eine Enumeration registrierter Aktionen (Verben) für dieses Steuerelement bereit, indem `OleRegEnumVerbs`aufgerufen wird.
+Stellt eine Enumeration registrierter Aktionen (Verben) `OleRegEnumVerbs`für dieses Steuerelement durch Aufrufen von an.
 
 ```
 STDMETHOD(EnumVerbs)(IEnumOLEVERB** ppEnumOleVerb);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können Verben zur RGS-Datei Ihres Projekts hinzufügen. Informationen hierzu finden Sie beispielsweise unter circctl. RGS im [CIRC](../../overview/visual-cpp-samples.md) -Beispiel.
+Sie können verbs der .rgs-Datei Ihres Projekts hinzufügen. Siehe z. B. CIRCCTL. RGS in der [CIRC-Probe.](../../overview/visual-cpp-samples.md)
 
-Siehe [IOleObject:: EnumVerbs](/windows/win32/api/oleidl/nf-oleidl-ioleobject-enumverbs) in der Windows SDK.
+Siehe [IOleObject:EnumVerbs](/windows/win32/api/oleidl/nf-oleidl-ioleobject-enumverbs) im Windows SDK.
 
-##  <a name="getclientsite"></a>Ioleobjectimpl:: GetClientSite
+## <a name="ioleobjectimplgetclientsite"></a><a name="getclientsite"></a>IOleObjectImpl::GetClientSite
 
-Versetzt den Zeiger in das Datenmember der Steuerelement Klasse [CComControlBase:: m_spClientSite](../../atl/reference/ccomcontrolbase-class.md#m_spclientsite) in *ppclientsite* und erhöht den Verweis Zähler für den Zeiger.
+Fügt den Zeiger im Steuerelementklassendatenmember [CComControlBase::m_spClientSite](../../atl/reference/ccomcontrolbase-class.md#m_spclientsite) in *ppClientSite* ein und erhöht die Verweisanzahl auf dem Zeiger.
 
 ```
 STDMETHOD(GetClientSite)(IOleClientSite** ppClientSite);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IOleObject:: GetClientSite](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getclientsite) im Windows SDK.
+Siehe [IOleObject::GetClientSite](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getclientsite) im Windows SDK.
 
-##  <a name="getclipboarddata"></a>Ioleobjectimpl:: GetClipboardData
+## <a name="ioleobjectimplgetclipboarddata"></a><a name="getclipboarddata"></a>IOleObjectImpl::GetClipboardData
 
 Ruft Daten aus der Zwischenablage ab.
 
@@ -399,13 +399,13 @@ STDMETHOD(GetClipboardData)(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: GetClipboardData](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getclipboarddata) im Windows SDK.
+Siehe [IOleObject::GetClipboardData](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getclipboarddata) im Windows SDK.
 
-##  <a name="getextent"></a>Ioleobjectimpl:: GetExtent
+## <a name="ioleobjectimplgetextent"></a><a name="getextent"></a>IOleObjectImpl::GetExtent
 
-Ruft die Anzeige Größe eines ausgelaufenden Steuer Elements in HIMETRIC-Einheiten ab (0,01 Millimeter pro Einheit).
+Ruft die Anzeigegröße eines laufenden Steuerelements in HIMETRIC-Einheiten (0,01 Millimeter pro Einheit) ab.
 
 ```
 STDMETHOD(GetExtent)(
@@ -413,15 +413,15 @@ STDMETHOD(GetExtent)(
     SIZEL* psizel);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Größe wird im Datenmember der Steuerelement Klasse [CComControlBase:: m_sizeExtent](../../atl/reference/ccomcontrolbase-class.md#m_sizeextent)gespeichert.
+Die Größe wird im Steuerelementklassendatenmember [CComControlBase::m_sizeExtent](../../atl/reference/ccomcontrolbase-class.md#m_sizeextent)gespeichert.
 
-Siehe [IOleObject:: GetExtent](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getextent) in der Windows SDK.
+Siehe [IOleObject::GetExtent](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getextent) im Windows SDK.
 
-##  <a name="getmiscstatus"></a>Ioleobjectimpl:: getfehlstatus
+## <a name="ioleobjectimplgetmiscstatus"></a><a name="getmiscstatus"></a>IOleObjectImpl::GetMiscStatus
 
-Gibt einen Zeiger auf registrierte Statusinformationen für das-Steuerelement zurück, indem `OleRegGetMiscStatus`aufgerufen wird.
+Gibt einen Zeiger auf registrierte Statusinformationen `OleRegGetMiscStatus`für das Steuerelement zurück, indem aufgerufen wird.
 
 ```
 STDMETHOD(GetMiscStatus)(
@@ -429,15 +429,15 @@ STDMETHOD(GetMiscStatus)(
     DWORD* pdwStatus);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Statusinformationen umfassen Verhalten, die von den Steuerelement-und Präsentationsdaten unterstützt werden. Sie können Statusinformationen zur RGS-Datei Ihres Projekts hinzufügen.
+Die Statusinformationen umfassen Verhaltensweisen, die von den Steuerelement- und Präsentationsdaten unterstützt werden. Sie können der .rgs-Datei Ihres Projekts Statusinformationen hinzufügen.
 
-Siehe [IOleObject:: getfehlstatus](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getmiscstatus) in der Windows SDK.
+Siehe [IOleObject::GetMiscStatus](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getmiscstatus) im Windows SDK.
 
-##  <a name="getmoniker"></a>Ioleobjectimpl:: getmoniker
+## <a name="ioleobjectimplgetmoniker"></a><a name="getmoniker"></a>IOleObjectImpl::GetMoniker
 
-Ruft den Moniker des Steuer Elements ab.
+Ruft den Moniker des Steuerelements ab.
 
 ```
 STDMETHOD(GetMoniker)(
@@ -450,25 +450,25 @@ STDMETHOD(GetMoniker)(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: getmoniker](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getmoniker) in der Windows SDK.
+Siehe [IOleObject::GetMoniker](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getmoniker) im Windows SDK.
 
-##  <a name="getuserclassid"></a>Ioleobjectimpl:: GetUserClassID
+## <a name="ioleobjectimplgetuserclassid"></a><a name="getuserclassid"></a>IOleObjectImpl::GetUserClassID
 
-Gibt den Klassen Bezeichner des Steuer Elements zurück.
+Gibt den Klassenbezeichner des Steuerelements zurück.
 
 ```
 STDMETHOD(GetUserClassID)(CLSID* pClsid);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: GetUserClassID](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getuserclassid) in der Windows SDK.
+Siehe [IOleObject:GetUserClassID](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getuserclassid) im Windows SDK.
 
-##  <a name="getusertype"></a>Ioleobjectimpl:: GetUserType
+## <a name="ioleobjectimplgetusertype"></a><a name="getusertype"></a>IOleObjectImpl::GetUserType
 
-Gibt den Benutzertyp Namen des Steuer Elements zurück, indem `OleRegGetUserType`aufgerufen wird.
+Gibt den Benutzertypnamen des Steuerelements zurück, indem er aufruft. `OleRegGetUserType`
 
 ```
 STDMETHOD(GetUserType)(
@@ -476,15 +476,15 @@ STDMETHOD(GetUserType)(
     LPOLESTR* pszUserType);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Benutzertyp Name wird zur Anzeige in Benutzeroberflächen Elementen wie Menüs und Dialogfeldern verwendet. Sie können den Benutzertyp Namen in der RGS-Datei Ihres Projekts ändern.
+Der Benutzertypname wird für die Anzeige in Benutzeroberflächenelementen wie Menüs und Dialogfeldern verwendet. Sie können den Benutzertypnamen in der .rgs-Datei Ihres Projekts ändern.
 
-Siehe [IOleObject:: GetUserType](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getusertype) in der Windows SDK.
+Siehe [IOleObject::GetUserType](/windows/win32/api/oleidl/nf-oleidl-ioleobject-getusertype) im Windows SDK.
 
-##  <a name="initfromdata"></a>Ioleobjectimpl:: initfromdata
+## <a name="ioleobjectimplinitfromdata"></a><a name="initfromdata"></a>IOleObjectImpl::InitFromData
 
-Initialisiert das Steuerelement aus den ausgewählten Daten.
+Initialisiert das Steuerelement aus ausgewählten Daten.
 
 ```
 STDMETHOD(InitFromData)(
@@ -497,11 +497,11 @@ STDMETHOD(InitFromData)(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: initfromdata](/windows/win32/api/oleidl/nf-oleidl-ioleobject-initfromdata) in der Windows SDK.
+Siehe [IOleObject::InitFromData](/windows/win32/api/oleidl/nf-oleidl-ioleobject-initfromdata) im Windows SDK.
 
-##  <a name="isuptodate"></a>Ioleobjectimpl:: isupdedate
+## <a name="ioleobjectimplisuptodate"></a><a name="isuptodate"></a>IOleObjectImpl::IsUptoDate
 
 Überprüft, ob das Steuerelement auf dem neuesten Stand ist.
 
@@ -513,13 +513,13 @@ STDMETHOD(IsUpToDate)(void);
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IOleObject:: isuptopdate](/windows/win32/api/oleidl/nf-oleidl-ioleobject-isuptodate) in der Windows SDK.
+Siehe [IOleObject::IsUpToDate](/windows/win32/api/oleidl/nf-oleidl-ioleobject-isuptodate) im Windows SDK.
 
-##  <a name="onpostverbdiscardundo"></a>Ioleobjectimpl:: onpostverbverwerdundo
+## <a name="ioleobjectimplonpostverbdiscardundo"></a><a name="onpostverbdiscardundo"></a>IOleObjectImpl::OnPostVerbDiscardUndo
 
-Wird von [doverbverwerfen Dundo](#doverbdiscardundo) aufgerufen, nachdem der Zustand rückgängig gemacht wurde.
+Wird von [DoVerbDiscardUndo](#doverbdiscardundo) aufgerufen, nachdem der Rückgängig-Zustand verworfen wurde.
 
 ```
 HRESULT OnPostVerbDiscardUndo();
@@ -529,13 +529,13 @@ HRESULT OnPostVerbDiscardUndo();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode mit Code, der ausgeführt werden soll, nachdem der Rückgängig-Zustand verworfen wurde.
 
-##  <a name="onpostverbhide"></a>Ioleobjectimpl:: onpostverbhide
+## <a name="ioleobjectimplonpostverbhide"></a><a name="onpostverbhide"></a>IOleObjectImpl::OnPostVerbHide
 
-Wird von [doverbhide](#doverbhide) aufgerufen, nachdem das Steuerelement ausgeblendet ist.
+Wird von [DoVerbHide](#doverbhide) aufgerufen, nachdem das Steuerelement ausgeblendet wurde.
 
 ```
 HRESULT OnPostVerbHide();
@@ -545,13 +545,13 @@ HRESULT OnPostVerbHide();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode mit Code, den Sie ausführen möchten, nachdem das Steuerelement ausgeblendet ist.
+Überschreiben Sie diese Methode mit Code, der ausgeführt werden soll, nachdem das Steuerelement ausgeblendet wurde.
 
-##  <a name="onpostverbinplaceactivate"></a>Ioleobjectimpl:: onpostverbinplaceaktivierungs
+## <a name="ioleobjectimplonpostverbinplaceactivate"></a><a name="onpostverbinplaceactivate"></a>IOleObjectImpl::OnPostVerbInPlaceActivate
 
-Wird von [doverbinplaceaktivierungs](#doverbinplaceactivate) aufgerufen, nachdem das Steuerelement direkt aktiviert wurde.
+Wird von [DoVerbInPlaceActivate](#doverbinplaceactivate) aufgerufen, nachdem das Steuerelement aktiviert wurde.
 
 ```
 HRESULT OnPostVerbInPlaceActivate();
@@ -561,13 +561,13 @@ HRESULT OnPostVerbInPlaceActivate();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode mit Code, den Sie ausführen möchten, nachdem das Steuerelement direkt aktiviert wurde.
+Überschreiben Sie diese Methode mit Code, der ausgeführt werden soll, nachdem das Steuerelement aktiviert wurde.
 
-##  <a name="onpostverbopen"></a>Ioleobjectimpl:: onpostverbopen
+## <a name="ioleobjectimplonpostverbopen"></a><a name="onpostverbopen"></a>IOleObjectImpl::OnPostVerbÖffnen
 
-Wird von [doverbopen](#doverbopen) aufgerufen, nachdem das Steuerelement in einem separaten Fenster zum Bearbeiten geöffnet wurde.
+Wird von [DoVerbOpen](#doverbopen) aufgerufen, nachdem das Steuerelement zur Bearbeitung in einem separaten Fenster geöffnet wurde.
 
 ```
 HRESULT OnPostVerbOpen();
@@ -577,13 +577,13 @@ HRESULT OnPostVerbOpen();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode mit Code, den Sie ausführen möchten, nachdem das Steuerelement in einem separaten Fenster zum Bearbeiten geöffnet wurde.
+Überschreiben Sie diese Methode mit Code, der ausgeführt werden soll, nachdem das Steuerelement zur Bearbeitung in einem separaten Fenster geöffnet wurde.
 
-##  <a name="onpostverbshow"></a>Ioleobjectimpl:: onpostverbshow
+## <a name="ioleobjectimplonpostverbshow"></a><a name="onpostverbshow"></a>IOleObjectImpl::OnPostVerbShow
 
-Wird von [doverbshow](#doverbshow) aufgerufen, nachdem das Steuerelement sichtbar gemacht wurde.
+Wird von [DoVerbShow](#doverbshow) aufgerufen, nachdem das Steuerelement sichtbar gemacht wurde.
 
 ```
 HRESULT OnPostVerbShow();
@@ -593,13 +593,13 @@ HRESULT OnPostVerbShow();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode mit dem Code, den Sie ausführen möchten, nachdem das Steuerelement sichtbar gemacht wurde.
+Überschreiben Sie diese Methode mit Code, der ausgeführt werden soll, nachdem das Steuerelement sichtbar gemacht wurde.
 
-##  <a name="onpostverbuiactivate"></a>Ioleobjectimpl:: onpostverbuiaktivierungs
+## <a name="ioleobjectimplonpostverbuiactivate"></a><a name="onpostverbuiactivate"></a>IOleObjectImpl::OnPostVerbUIActivate
 
-Wird von [doverbuiaktivierungs](#doverbuiactivate) aufgerufen, nachdem die Benutzeroberfläche des Steuer Elements aktiviert wurde.
+Wird von [DoVerbUIActivate](#doverbuiactivate) aufgerufen, nachdem die Benutzeroberfläche des Steuerelements aktiviert wurde.
 
 ```
 HRESULT OnPostVerbUIActivate();
@@ -609,13 +609,13 @@ HRESULT OnPostVerbUIActivate();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode mit Code, den Sie ausführen möchten, nachdem die Benutzeroberfläche des Steuer Elements aktiviert wurde.
+Überschreiben Sie diese Methode mit Code, der ausgeführt werden soll, nachdem die Benutzeroberfläche des Steuerelements aktiviert wurde.
 
-##  <a name="onpreverbdiscardundo"></a>Ioleobjectimpl:: onpreverbverwerdundo
+## <a name="ioleobjectimplonpreverbdiscardundo"></a><a name="onpreverbdiscardundo"></a>IOleObjectImpl::OnPreVerbDiscardUndo
 
-Wird von [doverbverwerfen Dundo](#doverbdiscardundo) aufgerufen, bevor der Zustand rückgängig gemacht wird.
+Wird von [DoVerbDiscardUndo](#doverbdiscardundo) aufgerufen, bevor der Rückgängig-Zustand verworfen wird.
 
 ```
 HRESULT OnPreVerbDiscardUndo();
@@ -625,13 +625,13 @@ HRESULT OnPreVerbDiscardUndo();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um zu verhindern, dass der Rückgängig-Zustand verworfen wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
 
-##  <a name="onpreverbhide"></a>Ioleobjectimpl:: onpreverbhide
+## <a name="ioleobjectimplonpreverbhide"></a><a name="onpreverbhide"></a>IOleObjectImpl::OnPreVerbHide
 
-Wird von [doverbhide](#doverbhide) aufgerufen, bevor das-Steuerelement ausgeblendet wird.
+Wird von [DoVerbHide](#doverbhide) aufgerufen, bevor das Steuerelement ausgeblendet wird.
 
 ```
 HRESULT OnPreVerbHide();
@@ -641,13 +641,13 @@ HRESULT OnPreVerbHide();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um zu verhindern, dass das Steuerelement ausgeblendet wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
 
-##  <a name="onpreverbinplaceactivate"></a>Ioleobjectimpl:: onpreverbinplaceaktivierungs
+## <a name="ioleobjectimplonpreverbinplaceactivate"></a><a name="onpreverbinplaceactivate"></a>IOleObjectImpl::OnPreVerbInPlaceActivate
 
-Wird von [doverbinplaceaktivierungs](#doverbinplaceactivate) aufgerufen, bevor das Steuerelement an Ort und Stelle aktiviert wird.
+Wird von [DoVerbInPlaceActivate](#doverbinplaceactivate) aufgerufen, bevor das Steuerelement aktiviert wird.
 
 ```
 HRESULT OnPreVerbInPlaceActivate();
@@ -657,13 +657,13 @@ HRESULT OnPreVerbInPlaceActivate();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um zu verhindern, dass das Steuerelement direkt aktiviert wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
+Um zu verhindern, dass das Steuerelement aktiviert wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
 
-##  <a name="onpreverbopen"></a>Ioleobjectimpl:: onpreverbopen
+## <a name="ioleobjectimplonpreverbopen"></a><a name="onpreverbopen"></a>IOleObjectImpl::OnPreVerbÖffnen
 
-Wird von [doverbopen](#doverbopen) aufgerufen, bevor das Steuerelement in einem separaten Fenster zum Bearbeiten geöffnet wurde.
+Wird von [DoVerbOpen](#doverbopen) aufgerufen, bevor das Steuerelement zur Bearbeitung in einem separaten Fenster geöffnet wurde.
 
 ```
 HRESULT OnPreVerbOpen();
@@ -673,13 +673,13 @@ HRESULT OnPreVerbOpen();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um zu verhindern, dass das Steuerelement zur Bearbeitung in einem separaten Fenster geöffnet wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
+Um zu verhindern, dass das Steuerelement für die Bearbeitung in einem separaten Fenster geöffnet wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
 
-##  <a name="onpreverbshow"></a>Ioleobjectimpl:: onpreverbshow
+## <a name="ioleobjectimplonpreverbshow"></a><a name="onpreverbshow"></a>IOleObjectImpl::OnPreVerbShow
 
-Wird von [doverbshow](#doverbshow) aufgerufen, bevor das Steuerelement sichtbar gemacht wurde.
+Wird von [DoVerbShow](#doverbshow) aufgerufen, bevor das Steuerelement sichtbar gemacht wurde.
 
 ```
 HRESULT OnPreVerbShow();
@@ -689,13 +689,13 @@ HRESULT OnPreVerbShow();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um zu verhindern, dass das Steuerelement sichtbar gemacht wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
 
-##  <a name="onpreverbuiactivate"></a>Ioleobjectimpl:: onpreverbuiaktivierungs
+## <a name="ioleobjectimplonpreverbuiactivate"></a><a name="onpreverbuiactivate"></a>IOleObjectImpl::OnPreVerbUIActivate
 
-Wird von [doverbuiaktivierungs](#doverbuiactivate) aufgerufen, bevor die Benutzeroberfläche des Steuer Elements aktiviert wurde.
+Wird von [DoVerbUIActivate](#doverbuiactivate) aufgerufen, bevor die Benutzeroberfläche des Steuerelements aktiviert wurde.
 
 ```
 HRESULT OnPreVerbUIActivate();
@@ -705,27 +705,27 @@ HRESULT OnPreVerbUIActivate();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um zu verhindern, dass die Benutzeroberfläche des Steuer Elements aktiviert wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
+Um zu verhindern, dass die Benutzeroberfläche des Steuerelements aktiviert wird, überschreiben Sie diese Methode, um einen Fehler HRESULT zurückzugeben.
 
-##  <a name="setclientsite"></a>Ioleobjectimpl:: SetClientSite
+## <a name="ioleobjectimplsetclientsite"></a><a name="setclientsite"></a>IOleObjectImpl::SetClientSite
 
-Weist das-Steuerelement an seine Client Site im Container zu.
+Gibt das Steuerelement über seine Clientsite im Container an.
 
 ```
 STDMETHOD(SetClientSite)(IOleClientSite* pClientSite);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Methode gibt dann S_OK zurück.
+Die Methode gibt dann S_OK zurück.
 
-Weitere Informationen finden Sie unter [IOleObject:: SetClientSite](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setclientsite) im Windows SDK.
+Siehe [IOleObject::SetClientSite](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setclientsite) im Windows SDK.
 
-##  <a name="setcolorscheme"></a>Ioleobjectimpl:: SetColorScheme
+## <a name="ioleobjectimplsetcolorscheme"></a><a name="setcolorscheme"></a>IOleObjectImpl::SetColorScheme
 
-Empfiehlt ggf. ein Farbschema für die Anwendung des Steuer Elements.
+Empfiehlt ein Farbschema für die Anwendung des Steuerelements, falls vorhanden.
 
 ```
 STDMETHOD(SetColorScheme)(LOGPALETTE* /* pLogPal */);
@@ -735,13 +735,13 @@ STDMETHOD(SetColorScheme)(LOGPALETTE* /* pLogPal */);
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: SetColorScheme](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setcolorscheme) in der Windows SDK.
+Siehe [IOleObject::SetColorScheme](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setcolorscheme) im Windows SDK.
 
-##  <a name="setextent"></a>Ioleobjectimpl:: abtextent
+## <a name="ioleobjectimplsetextent"></a><a name="setextent"></a>IOleObjectImpl::SetExtent
 
-Legt den Umfang des Anzeige Bereichs des-Steuer Elements fest.
+Legt die Ausdehnung des Anzeigebereichs des Steuerelements fest.
 
 ```
 STDMETHOD(SetExtent)(
@@ -749,19 +749,19 @@ STDMETHOD(SetExtent)(
     SIZEL* psizel);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Andernfalls speichert `SetExtent` den Wert, auf den `psizel` im Steuerelement-Klassendatenmember [CComControlBase:: m_sizeExtent](../../atl/reference/ccomcontrolbase-class.md#m_sizeextent)verweist. Dieser Wert ist in HIMETRIC-Einheiten (0,01 Millimeter pro Einheit).
+Andernfalls `SetExtent` wird der Wert `psizel` gespeichert, auf den im Steuerelementklassendatenmember [CComControlBase::m_sizeExtent](../../atl/reference/ccomcontrolbase-class.md#m_sizeextent)verwiesen wird. Dieser Wert ist in HIMETRIC-Einheiten (0,01 Millimeter pro Einheit) vorhanden.
 
-Wenn der Steuerelement-Klassendatenmember [CComControlBase:: m_bResizeNatural](../../atl/reference/ccomcontrolbase-class.md#m_bresizenatural) den Wert true hat, speichert `SetExtent` auch den Wert, auf den `psizel` im Steuerelement-Klassendatenmember [CComControlBase:: m_sizeNatural](../../atl/reference/ccomcontrolbase-class.md#m_sizenatural)zeigt.
+Wenn der Steuerelementklassendatenmember [CComControlBase::m_bResizeNatural](../../atl/reference/ccomcontrolbase-class.md#m_bresizenatural) TRUE ist, `SetExtent` speichert `psizel` auch der Wert, auf den im Steuerelementklassendatenmember [CComControlBase::m_sizeNatural](../../atl/reference/ccomcontrolbase-class.md#m_sizenatural)verwiesen wird.
 
-Wenn der steuerelementklassendatenmember [CComControlBase:: m_bRecomposeOnResize](../../atl/reference/ccomcontrolbase-class.md#m_brecomposeonresize) true ist, ruft `SetExtent` `SendOnDataChange` und `SendOnViewChange` auf, um alle mit dem Anmelde Inhaber registrierten Beratungs senken zu benachrichtigen, dass sich die Größe des Steuer Elements geändert hat.
+Wenn das Steuerelementklassendatenelement [CComControlBase::m_bRecomposeOnResize](../../atl/reference/ccomcontrolbase-class.md#m_brecomposeonresize) `SendOnDataChange` TRUE `SendOnViewChange` ist, `SetExtent` ruft und benachrichtigt alle beim Beratungshalter registrierten Beratungssenken, dass sich die Steuerelementgröße geändert hat.
 
-Siehe [IOleObject:: SetExtent](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setextent) in der Windows SDK.
+Siehe [IOleObject::SetExtent](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setextent) im Windows SDK.
 
-##  <a name="sethostnames"></a>Ioleobjectimpl:: lthostnames
+## <a name="ioleobjectimplsethostnames"></a><a name="sethostnames"></a>IOleObjectImpl::SetHostNames
 
-Weist das-Steuerelement an, die Namen der Containeranwendung und des Container Dokuments zu steuern.
+Gibt das Steuerelement die Namen der Containeranwendung und des Containerdokuments an.
 
 ```
 STDMETHOD(SetHostNames)(LPCOLESTR /* szContainerApp */, LPCOLESTR /* szContainerObj */);
@@ -771,13 +771,13 @@ STDMETHOD(SetHostNames)(LPCOLESTR /* szContainerApp */, LPCOLESTR /* szContainer
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: sethostnames](/windows/win32/api/oleidl/nf-oleidl-ioleobject-sethostnames) im Windows SDK.
+Siehe [IOleObject::SetHostNames](/windows/win32/api/oleidl/nf-oleidl-ioleobject-sethostnames) im Windows SDK.
 
-##  <a name="setmoniker"></a>Ioleobjectimpl:: setmoniker
+## <a name="ioleobjectimplsetmoniker"></a><a name="setmoniker"></a>IOleObjectImpl::SetMoniker
 
-Teilt dem Steuerelement mit, was sein Moniker ist.
+Sagt dem Steuerelement an, was sein Moniker ist.
 
 ```
 STDMETHOD(SetMoniker)(
@@ -789,25 +789,25 @@ STDMETHOD(SetMoniker)(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: setmoniker](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setmoniker) in der Windows SDK.
+Siehe [IOleObject::SetMoniker](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setmoniker) im Windows SDK.
 
-##  <a name="unadvise"></a>Ioleobjectimpl:: unempfehlung
+## <a name="ioleobjectimplunadvise"></a><a name="unadvise"></a>IOleObjectImpl::Unadvise
 
-Löscht die beratungsverbindung, die im `m_spOleAdviseHolder` Datenmember der Steuerelement Klasse gespeichert ist.
+Löscht die im `m_spOleAdviseHolder` Datenmember der Steuerungsklasse gespeicherte beratungsgebundene Verbindung.
 
 ```
 STDMETHOD(Unadvise)(DWORD dwConnection);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [IOleObject:: Unrat](/windows/win32/api/oleidl/nf-oleidl-ioleobject-unadvise) im Windows SDK.
+Siehe [IOleObject::Unadvise](/windows/win32/api/oleidl/nf-oleidl-ioleobject-unadvise) im Windows SDK.
 
-##  <a name="update"></a>Ioleobjectimpl:: Update
+## <a name="ioleobjectimplupdate"></a><a name="update"></a>IOleObjectImpl::Update
 
-Aktualisiert das-Steuerelement.
+Aktualisiert das Steuerelement.
 
 ```
 STDMETHOD(Update)(void);
@@ -817,12 +817,12 @@ STDMETHOD(Update)(void);
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IOleObject:: Update](/windows/win32/api/oleidl/nf-oleidl-ioleobject-update) in der Windows SDK.
+Siehe [IOleObject::Update](/windows/win32/api/oleidl/nf-oleidl-ioleobject-update) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md)<br/>
-[ActiveX-Steuerelement Schnittstellen](/windows/win32/com/activex-controls-interfaces)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[ActiveX-Steuerelementschnittstellen](/windows/win32/com/activex-controls-interfaces)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)

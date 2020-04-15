@@ -1,8 +1,9 @@
 ---
 title: clearerr_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - clearerr_s
+- _o_clearerr_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - resetting stream error indicator
 - clearerr_s function
 ms.assetid: b74d014d-b7a8-494a-a330-e5ffd5614772
-ms.openlocfilehash: 12e76ba5133d99ed2d45d7cf15bada2ad1c5c38b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a8f8978b9d46d8d903f8256424d47c84bec649ec
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939151"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81350050"
 ---
 # <a name="clearerr_s"></a>clearerr_s
 
@@ -47,26 +49,28 @@ errno_t clearerr_s(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
-Zeiger auf **Datei** Struktur
+*Stream*<br/>
+Zeiger auf **FILE-Struktur**
 
 ## <a name="return-value"></a>Rückgabewert
 
-NULL, wenn erfolgreich; **EINVAL** , wenn der *Stream* **null**ist.
+Null, wenn erfolgreich; **EINVAL,** wenn *Stream* **NULL**ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **clearerr_s** -Funktion setzt den Fehler Indikator und den Dateiende-Indikator für den *Stream*zurück. Fehlerindikatoren werden nicht automatisch gelöscht. Sobald der Fehler Indikator für einen angegebenen Stream festgelegt ist, geben Vorgänge in diesem Stream weiterhin einen Fehlerwert zurück, bis **clearerr_s**, **clearerr**, [fseek](fseek-fseeki64.md), **fsetpos**oder [Rewind](rewind.md) aufgerufen wird.
+Die **clearerr_s-Funktion** setzt die Fehleranzeige und die End-of-File-Anzeige für *Stream*zurück. Fehlerindikatoren werden nicht automatisch gelöscht. Sobald der Fehlerindikator für einen angegebenen Stream festgelegt ist, geben Vorgänge in diesem Stream weiterhin einen Fehlerwert zurück, bis **clearerr_s**, **clearerr**, [fseek](fseek-fseeki64.md), **fsetpos**oder [rewind](rewind.md) aufgerufen wird.
 
-Wenn der Stream **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion " **errno** " auf " **EINVAL** " fest und gibt " **EINVAL**" zurück.
+Wenn *Der Stream* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt **EINVAL**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**clearerr_s**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -116,7 +120,7 @@ int main( void )
 n
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Write error: Bad file descriptor

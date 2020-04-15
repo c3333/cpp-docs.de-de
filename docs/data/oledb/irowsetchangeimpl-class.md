@@ -31,16 +31,16 @@ helpviewer_keywords:
 - SetData method
 - FlushData method
 ms.assetid: 1e9fee15-ed9e-4387-af8f-215569beca6c
-ms.openlocfilehash: b069cd08814855a0528806ac6d19ed8f5beb6f37
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ae4ceea53ec91cc3f9593dd3789fcf61e0702274
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210456"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376946"
 ---
 # <a name="irowsetchangeimpl-class"></a>IRowsetChangeImpl-Klasse
 
-Die OLE DB Vorlagen Implementierung der [IRowsetChange](/previous-versions/windows/desktop/ms715790(v=vs.85)) -Schnittstelle in der OLE DB-Spezifikation.
+Die OLE DB Templates-Implementierung der [IRowsetChange-Schnittstelle](/previous-versions/windows/desktop/ms715790(v=vs.85)) in der OLE DB-Spezifikation.
 
 ## <a name="syntax"></a>Syntax
 
@@ -57,58 +57,58 @@ class ATL_NO_VTABLE IRowsetChangeImpl : public BaseInterface
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine von `IRowsetChangeImpl`abgeleitete Klasse.
+Eine Klasse, `IRowsetChangeImpl`die von abgeleitet ist.
 
 *Storage*<br/>
-Der Benutzerdaten Satz.
+Der Benutzerdatensatz.
 
-*Typeinterface wurde*<br/>
-Die Basisklasse für die-Schnittstelle, z. b. `IRowsetChange`.
+*BaseInterface*<br/>
+Die Basisklasse für die `IRowsetChange`Schnittstelle, z. B. .
 
 *RowClass*<br/>
-Die Speichereinheit für das Zeilen handle.
+Die Speichereinheit für das Zeilenhandle.
 
-*Mapclass*<br/>
-Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
+*MapClass*<br/>
+Die Speichereinheit für alle Zeilenhandles, die sich im Besitz des Anbieters befinden.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
-### <a name="interface-methods-used-with-irowsetchange"></a>Schnittstellen Methoden (mit IRowsetChange verwendet)
+### <a name="interface-methods-used-with-irowsetchange"></a>Schnittstellenmethoden (verwendet mit IRowsetChange)
 
 |||
 |-|-|
-|[DeleteRows](#deleterows)|Löscht Zeilen aus dem Rowset.|
+|[Deleterows](#deleterows)|Löscht Zeilen aus dem Rowset.|
 |[InsertRow](#insertrow)|Fügt eine Zeile in das Rowset ein.|
-|[SetData](#setdata)|Legt Datenwerte in einer oder mehreren Spalten fest.|
+|[Setdata](#setdata)|Legt Datenwerte in einer oder mehreren Spalten fest.|
 
-### <a name="implementation-method-callback"></a>Implementierungsmethode (Rückruf)
+### <a name="implementation-method-callback"></a>Implementierungsmethode (Callback)
 
 |||
 |-|-|
-|[FlushData](#flushdata)|Wird vom Anbieter überschrieben, um Daten in seinen Speicher zu übertragen.|
+|[Flushdata](#flushdata)|Vom Anbieter überschrieben, um Daten in seinen Speicher zu übertragen.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Schnittstelle ist für sofortige Schreibvorgänge in einem Datenspeicher verantwortlich. "Immediate" bedeutet, dass diese Änderungen sofort an den Datenspeicher übertragen werden (und nicht rückgängig gemacht werden können), wenn der Endbenutzer (die Person, die den Consumer verwendet) Änderungen vornimmt.
+Diese Schnittstelle ist für sofortige Schreibvorgänge in einen Datenspeicher verantwortlich. "Sofort" bedeutet, dass, wenn der Endbenutzer (die Person, die den Verbraucher verwendet) Änderungen vornimmt, diese Änderungen sofort an den Datenspeicher übertragen werden (und nicht rückgängig gemacht werden können).
 
-`IRowsetChangeImpl` implementiert die OLE DB `IRowsetChange`-Schnittstelle, die das Aktualisieren von Werten von Spalten in vorhandenen Zeilen, das Löschen von Zeilen und das Einfügen neuer Zeilen ermöglicht.
+`IRowsetChangeImpl`implementiert die OLE `IRowsetChange` DB-Schnittstelle, die das Aktualisieren von Werten von Spalten in vorhandenen Zeilen, das Löschen von Zeilen und das Einfügen neuer Zeilen ermöglicht.
 
-Die OLE DB-Vorlagen Implementierung unterstützt alle Basis Methoden (`SetData`, `InsertRow`und `DeleteRows`).
+Die OLE DB Templates-Implementierung unterstützt`SetData` `InsertRow`alle `DeleteRows`Basismethoden ( , , und ).
 
 > [!IMPORTANT]
->  Es wird dringend empfohlen, dass Sie die folgende Dokumentation lesen, bevor Sie versuchen, Ihren Anbieter zu implementieren:
+> Es wird dringend empfohlen, die folgende Dokumentation zu lesen, bevor Sie versuchen, Ihren Anbieter zu implementieren:
 
-- [Erstellen eines aktualisierbaren Anbieters](../../data/oledb/creating-an-updatable-provider.md)
+- [Erstellen eines updatable-Anbieters](../../data/oledb/creating-an-updatable-provider.md)
 
-- Kapitel 6 der *OLE DB Programmierer-Referenz*
+- Kapitel 6 der Referenz des *OLE DB-Programmierers*
 
-- Sehen Sie sich auch an, wie die `RUpdateRowset`-Klasse im [Update](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV) Panel-Beispiel verwendet wird.
+- Sehen Sie `RUpdateRowset` auch, wie die Klasse im [UpdatePV-Beispiel](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV) verwendet wird.
 
-## <a name="irowsetchangeimpldeleterows"></a><a name="deleterows"></a>IRowsetChangeImpl::D eleterows
+## <a name="irowsetchangeimpldeleterows"></a><a name="deleterows"></a>IRowsetChangeImpl::DeleteRows
 
 Löscht Zeilen aus dem Rowset.
 
@@ -123,11 +123,11 @@ STDMETHOD (DeleteRows )(HCHAPTER /* hReserved */,
 
 #### <a name="parameters"></a>Parameter
 
-Weitere Informationen finden Sie unter [IRowsetChange::D eleterows](/previous-versions/windows/desktop/ms724362(v=vs.85)) in der *OLE DB Programmer es Reference*.
+Siehe [IRowsetChange::DeleteRows](/previous-versions/windows/desktop/ms724362(v=vs.85)) in der *Referenz des OLE DB-Programmierers*.
 
-## <a name="irowsetchangeimplinsertrow"></a><a name="insertrow"></a>IRowsetChangeImpl:: InsertRow
+## <a name="irowsetchangeimplinsertrow"></a><a name="insertrow"></a>IRowsetChangeImpl::InsertRow
 
-Erstellt und Initialisiert eine neue Zeile im Rowset.
+Erstellt und initialisiert eine neue Zeile im Rowset.
 
 ### <a name="syntax"></a>Syntax
 
@@ -140,9 +140,9 @@ STDMETHOD (InsertRow )(HCHAPTER /* hReserved */,
 
 #### <a name="parameters"></a>Parameter
 
-Weitere Informationen finden Sie unter [IRowsetChange:: InsertRow](/previous-versions/windows/desktop/ms716921(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
+Siehe [IRowsetChange::InsertRow](/previous-versions/windows/desktop/ms716921(v=vs.85)) in der *Referenz des OLE DB-Programmierers*.
 
-## <a name="irowsetchangeimplsetdata"></a><a name="setdata"></a>IRowsetChangeImpl:: SetData
+## <a name="irowsetchangeimplsetdata"></a><a name="setdata"></a>IRowsetChangeImpl::SetData
 
 Legt Datenwerte in einer oder mehreren Spalten fest.
 
@@ -156,11 +156,11 @@ STDMETHOD (SetData )(HROW hRow,
 
 #### <a name="parameters"></a>Parameter
 
-Weitere Informationen finden Sie unter [IRowsetChange:: SetData](/previous-versions/windows/desktop/ms721232(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
+Siehe [IRowsetChange::SetData](/previous-versions/windows/desktop/ms721232(v=vs.85)) in der *Referenz des OLE DB-Programmierers*.
 
-## <a name="irowsetchangeimplflushdata"></a><a name="flushdata"></a>IRowsetChangeImpl:: FlushData
+## <a name="irowsetchangeimplflushdata"></a><a name="flushdata"></a>IRowsetChangeImpl::FlushData
 
-Wird vom Anbieter überschrieben, um Daten in seinen Speicher zu übertragen.
+Vom Anbieter überschrieben, um Daten in seinen Speicher zu übertragen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -171,17 +171,17 @@ HRESULT FlushData(HROW hRowToFlush,
 
 #### <a name="parameters"></a>Parameter
 
-*hrowabflush*<br/>
-in Handle für die Zeilen für die Daten. Der Typ dieser Zeile wird anhand des *RowClass* -Vorlagen Arguments der `IRowsetImpl`-Klasse bestimmt (standardmäßig`CSimpleRow`).
+*hRowToFlush*<br/>
+[in] Behandeln Sie die Zeilen für die Daten. Der Typ dieser Zeile wird aus dem *RowClass-Vorlagenargument* der `IRowsetImpl` Klasse bestimmt (standardmäßig).`CSimpleRow`
 
-*haccessorshflush*<br/>
-in Handle für den-Accessor, der Bindungs Informationen und Typinformationen im `PROVIDER_MAP` enthält (siehe [IAccessorImpl](../../data/oledb/iaccessorimpl-class.md)).
+*hAccessorToFlush*<br/>
+[in] Handle an den Accessor, der Bindungsinformationen `PROVIDER_MAP` und Typinformationen in seinem enthält (siehe [IAccessorImpl](../../data/oledb/iaccessorimpl-class.md)).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standard.
+Ein Standard-HRESULT.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

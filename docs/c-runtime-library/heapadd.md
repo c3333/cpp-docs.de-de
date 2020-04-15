@@ -24,19 +24,19 @@ helpviewer_keywords:
 - heaps, adding memory
 - heapadd function
 ms.assetid: 4d691fe2-2763-49f4-afb1-62738b7cd3ff
-ms.openlocfilehash: 4be87710519c9a389adbaf41fefddb9ea8dfb1e6
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: c5eeb66ff0e6fb05063ec395e12cd97106ad724d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940283"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81351321"
 ---
 # <a name="_heapadd"></a>_heapadd
 
 Fügt dem Heap Arbeitsspeicher hinzu.
 
 > [!IMPORTANT]
->  Diese Funktion ist veraltet. Von Visual Studio 2015 an ist sie nicht in der CRT verfügbar.
+> Diese Funktion ist veraltet. Von Visual Studio 2015 an ist sie nicht in der CRT verfügbar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -52,31 +52,31 @@ int _heapadd(
 *memblock*<br/>
 Zeiger auf den Heapspeicher.
 
-*size*<br/>
+*Größe*<br/>
 Größe des hinzuzufügenden Speichers in Byte.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Bei Erfolg gibt `_heapadd` „0“ (null) zurück; andernfalls gibt die Funktion „-1“ zurück und legt `errno` auf `ENOSYS` fest.
 
-Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Von Visual C++, Version 4.0, an, wurde die zugrundeliegende Heapstruktur in die C-Laufzeitbibliotheken verschoben, um die neuen Debugfunktionen zu unterstützen. Das hat zur Folge, dass `_heapadd` auf Plattformen, die auf der Win32-API basieren, nicht mehr unterstützt wird.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |`_heapadd`|\<malloc.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../c-runtime-library/compatibility.md) in der Einführung.
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../c-runtime-library/compatibility.md) in der Einführung.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Speicherreservierung](../c-runtime-library/memory-allocation.md)<br/>
-[free](../c-runtime-library/reference/free.md)<br/>
+[Speicherzuweisung](../c-runtime-library/memory-allocation.md)<br/>
+[kostenlos](../c-runtime-library/reference/free.md)<br/>
 [_heapchk](../c-runtime-library/reference/heapchk.md)<br/>
 [_heapmin](../c-runtime-library/reference/heapmin.md)<br/>
 [_heapset](../c-runtime-library/heapset.md)<br/>

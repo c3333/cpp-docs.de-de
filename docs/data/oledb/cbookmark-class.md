@@ -66,16 +66,16 @@ helpviewer_keywords:
 - operator =, bookmarks
 - operator=, bookmarks
 ms.assetid: bc942f95-6f93-41d9-bb6e-bcdae4ae0b7a
-ms.openlocfilehash: e15be3342b32b432c438b65ec57765cb135f5316
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d3d82ea09b7ed2c1cbaf325906b4f9b480e1eb4e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80212237"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81359335"
 ---
 # <a name="cbookmark-class"></a>CBookmark-Klasse
 
-Enthält einen Lesezeichen Wert im Puffer.
+Hält einen Lesezeichenwert in seinem Puffer.
 
 ## <a name="syntax"></a>Syntax
 
@@ -89,14 +89,14 @@ class CBookmark< 0 > : public CBookmarkBase
 
 ### <a name="parameters"></a>Parameter
 
-*nSize*<br/>
-Die Größe des Lesezeichen Puffers in Bytes. Wenn *nSize* gleich 0 (null) ist, wird der Lesezeichen Puffer dynamisch zur Laufzeit erstellt.
+*nGröße*<br/>
+Die Größe des Lesezeichenpuffers in Bytes. Wenn *nSize* Null ist, wird der Lesezeichenpuffer zur Laufzeit dynamisch erstellt.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -105,19 +105,19 @@ Die Größe des Lesezeichen Puffers in Bytes. Wenn *nSize* gleich 0 (null) ist, 
 |[CBookmark](#cbookmark)|Der Konstruktor|
 |[GetBuffer](#getbuffer)|Ruft den Zeiger auf den Puffer ab.|
 |[GetSize](#getsize)|Ruft die Größe des Puffers in Bytes ab.|
-|[SetBookmark](#setbookmark)|Legt den Lesezeichen Wert fest.|
+|[SetBookmark](#setbookmark)|Legt den Lesezeichenwert fest.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[Operator =](#operator)|Weist einem anderen eine `CBookmark` Klasse zu.|
+|[Operator =](#operator)|Weist eine `CBookmark` Klasse einer anderen klasse zu.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CBookmark<0>` ist eine Vorlagen Spezialisierung `CBookmark`. der Puffer wird zur Laufzeit dynamisch erstellt.
+`CBookmark<0>`ist eine Vorlagenspezialisierung `CBookmark`von ; sein Puffer wird zur Laufzeit dynamisch erstellt.
 
-## <a name="cbookmarkcbookmark"></a><a name="cbookmark"></a>CBookmark:: CBookmark
+## <a name="cbookmarkcbookmark"></a><a name="cbookmark"></a>CBookmark::CBookmark
 
 Der Konstruktor.
 
@@ -130,19 +130,19 @@ CBookmark(DBLENGTH nSize);
 
 #### <a name="parameters"></a>Parameter
 
-*nSize*<br/>
-in Größe des Lesezeichen Puffers in Bytes.
+*nGröße*<br/>
+[in] Größe des Lesezeichenpuffers in Bytes.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Mit der ersten Funktion wird der Puffer auf NULL festgelegt, und die Puffergröße wird auf 0 festgelegt. Mit der zweiten Funktion wird die Puffergröße auf *nSize*festgelegt, und der Puffer wird auf ein Bytearray mit *nSize* -Bytes festgelegt.
+Die erste Funktion legt den Puffer auf NULL und die Puffergröße auf 0 fest. Die zweite Funktion legt die Puffergröße auf *nSize*fest und der Puffer auf ein Bytearray von *nSize* Bytes.
 
 > [!NOTE]
->  Diese Funktion ist nur in `CBookmark<0>`verfügbar.
+> Diese Funktion ist `CBookmark<0>`nur in verfügbar.
 
-## <a name="cbookmarkgetbuffer"></a><a name="getbuffer"></a>CBookmark:: GetBuffer
+## <a name="cbookmarkgetbuffer"></a><a name="getbuffer"></a>CBookmark::GetBuffer
 
-Ruft den Zeiger auf den Lesezeichen Puffer ab.
+Ruft den Zeiger auf den Lesezeichenpuffer ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -152,11 +152,11 @@ virtual BYTE* GetBuffer() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Lesezeichen Puffer.
+Ein Zeiger auf den Lesezeichenpuffer.
 
-## <a name="cbookmarkgetsize"></a><a name="getsize"></a>CBookmark:: GetSize
+## <a name="cbookmarkgetsize"></a><a name="getsize"></a>CBookmark::GetSize
 
-Ruft die Größe des Lesezeichen Puffers ab.
+Ruft die Größe des Lesezeichenpuffers ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -168,9 +168,9 @@ virtual DBLENGTH GetSize() const throw();
 
 Die Größe des Puffers in Byte.
 
-## <a name="cbookmarksetbookmark"></a><a name="setbookmark"></a>CBookmark:: SetBookmark
+## <a name="cbookmarksetbookmark"></a><a name="setbookmark"></a>CBookmark::SetBookmark
 
-Kopiert den Lesezeichen Wert, auf den von *pbuffer* verwiesen wird, in den `CBookmark` Puffer und legt die Puffergröße auf *nSize*fest.
+Kopiert den Lesezeichenwert, auf den `CBookmark` *pBuffer verweist,* in den Puffer und legt die Puffergröße auf *nSize*fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -180,23 +180,23 @@ HRESULT SetBookmark(DBLENGTH nSize, BYTE* pBuffer) throw();
 
 #### <a name="parameters"></a>Parameter
 
-*nSize*<br/>
-in Die Größe des Lesezeichen Puffers.
+*nGröße*<br/>
+[in] Die Größe des Lesezeichenpuffers.
 
 *pBuffer*<br/>
-in Ein Zeiger auf das Bytearray, das den Lesezeichen Wert enthält.
+[in] Ein Zeiger auf das Bytearray, das den Lesezeichenwert enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standard.
+Ein Standard-HRESULT.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion ist nur in `CBookmark<0>`verfügbar.
+Diese Funktion ist `CBookmark<0>`nur in verfügbar.
 
-## <a name="cbookmarkoperator-"></a><a name="operator"></a>CBookmark:: Operator =
+## <a name="cbookmarkoperator-"></a><a name="operator"></a>CBookmark::operator =
 
-Weist ein `CBookmark` Objekt einem anderen zu.
+Weist ein `CBookmark` Objekt einem anderen objekt zu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -206,9 +206,9 @@ CBookmark& operator =(const CBookmark& bookmark) throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator wird nur in `CBookmark<0>`benötigt.
+Dieser Operator wird `CBookmark<0>`nur in benötigt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Ole DB Consumer Templates Referenz](../../data/oledb/ole-db-consumer-templates-reference.md)

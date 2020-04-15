@@ -1,5 +1,5 @@
 ---
-title: 'Exemplarische Vorgehensweise: Arbeiten mit Projekten und Projektmappen (C++)'
+title: 'Exemplarische Vorgehensweise: Arbeiten mit Projekten und Lösungen (C++)'
 ms.date: 05/14/2019
 helpviewer_keywords:
 - solutions [C++]
@@ -7,28 +7,28 @@ helpviewer_keywords:
 - projects [C++]
 - solutions [C++], about solutions
 ms.assetid: 93a3f290-e294-46e3-876e-e3084d9ae833
-ms.openlocfilehash: 6d9ee71e2608c2ed4935e7a5a3c54af45921e5d2
-ms.sourcegitcommit: bf1940a39029dbbd861f95480f55e5e8bd25cda0
-ms.translationtype: HT
+ms.openlocfilehash: 36c64a74310c72df38021aebd8abb3ee430da3f0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108398"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375899"
 ---
-# <a name="walkthrough-working-with-projects-and-solutions-c"></a>Exemplarische Vorgehensweise: Arbeiten mit Projekten und Projektmappen (C++)
+# <a name="walkthrough-working-with-projects-and-solutions-c"></a>Exemplarische Vorgehensweise: Arbeiten mit Projekten und Lösungen (C++)
 
 In diesem Abschnitt lesen Sie, wie Sie ein C++-Projekt in Visual Studio erstellen, Code hinzufügen und dann das Projekt erstellen und ausführen. Bei dem Projekt in dieser exemplarischen Vorgehensweise handelt es sich um ein Programm, das nachverfolgt, wie viele Spieler verschiedene Kartenspiele spielen.
 
 In Visual Studio wird die Arbeit in Projekten und Projektmappen organisiert. Eine Projektmappe kann mehrere Projekte aufweisen, z.B. eine DLL und eine ausführbare Datei, die auf diese DLL verweist. Weitere Informationen finden Sie unter [Projektmappen und Projekte](/visualstudio/ide/solutions-and-projects-in-visual-studio).
 
-## <a name="before-you-start"></a>Vor der Installation
+## <a name="before-you-start"></a>Vorbereitung
 
-Sie benötigen mindestens Visual Studio 2017, um diese exemplarische Vorgehensweise abschließen zu können. Wie Sie eine Kopie erhalten, erfahren Sie in der folgenden Anleitung: [Install C++ support in Visual Studio (Installieren der C++-Unterstützung in Visual Studio)](../build/vscpp-step-0-installation.md). Wenn Sie dies noch nicht durchgeführt haben, befolgen Sie nach der Installation die nächsten Schritte im Tutorial „Hallo Welt“, um sicherzustellen, dass die C++-Komponenten ordnungsgemäß installiert wurden und alles funktioniert.
+Sie benötigen mindestens Visual Studio 2017, um diese exemplarische Vorgehensweise abschließen zu können. Wenn Sie eine Kopie benötigen, finden Sie eine kurze Anleitung unter [Installieren der C++-Unterstützung in Visual Studio](../build/vscpp-step-0-installation.md). Wenn Sie dies noch nicht durchgeführt haben, befolgen Sie nach der Installation die nächsten Schritte im Tutorial „Hallo Welt“, um sicherzustellen, dass die C++-Komponenten ordnungsgemäß installiert wurden und alles funktioniert.
 
 Es ist hilfreich, die Grundlagen von C++ zu verstehen und zu wissen, wofür der Compiler, der Linker und der Debugger verwendet werden. Im Tutorial wird ebenfalls davon ausgegangen, dass Sie mit Windows vertraut sind und wissen, wie Sie z.B. Menüs und Dialogfelder verwenden.
 
 ## <a name="create-a-project"></a>Erstellen eines Projekts
 
-Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für jeden Projekttyp legt Visual Studio Compilereinstellungen fest und generiert abhängig vom Typ Startcode, den Sie später ändern können. Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual Studio Sie verwenden. Stellen Sie sicher, dass Sie in der Versionsauswahl links oben auf dieser Seite die richtige Version ausgewählt haben.
+Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für jeden Projekttyp legt Visual Studio Compilereinstellungen fest und generiert abhängig vom Typ Startcode, den Sie später ändern können. Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual Studio Sie verwenden. Verwenden Sie das Versionsauswahlsteuerelement, um die **Version** Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker range="vs-2019"
 
@@ -36,7 +36,7 @@ Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für 
 
 1. Klicken Sie im Hauptmenü auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
-1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
+1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++**, die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
 
 1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter**. Geben Sie auf der nächsten Seite *Game* als Name für das Projekt ein.
 
@@ -54,7 +54,7 @@ Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für 
 
 ### <a name="to-create-a-project-in-visual-studio-2017"></a>Erstellen eines Projekts in Visual Studio 2017
 
-1. Wählen Sie auf der Menüleiste **Datei** > **Neu** > **Projekt** aus.
+1. Wählen Sie in der Menüleiste **Datei** > **Neu** > **Projekt** aus.
 
 1. Erweitern Sie **Installiert** im linken Bereich des Dialogfeld **Neues Projekt**, und wählen Sie **Visual C++** aus, wenn dies nicht bereits geöffnet ist.
 
@@ -76,7 +76,7 @@ Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für 
 
 ### <a name="to-create-a-project-in-visual-studio-2015"></a>Erstellen eines Projekts in Visual Studio 2015
 
-1. Wählen Sie auf der Menüleiste **Datei** > **Neu** > **Projekt** aus.
+1. Wählen Sie in der Menüleiste **Datei** > **Neu** > **Projekt** aus.
 
 1. Erweitern Sie **Installiert** im linken Bereich des Dialogfeld **Neues Projekt**, und wählen Sie **Visual C++** aus, wenn dies nicht bereits geöffnet ist.
 
@@ -104,9 +104,9 @@ In diesem Teil der exemplarischen Vorgehensweise wird gezeigt, wie dem Projekt e
 
 1. Wenn das Fenster **Projektmappen-Explorer** nicht in Visual Studio angezeigt wird, klicken Sie in der Menüleiste auf **Ansicht** > **Projektmappen-Explorer**.
 
-1. Wählen Sie im **Projektmappen-Explorer** das Projekt **Game** aus. Klicken Sie in der Menüleiste auf **Projekt** > **Klasse hinzufügen**.
+1. Wählen Sie im **Projektmappen-Explorer** das Projekt **Game** aus. Wählen Sie in der Menüleiste > **Projekt-Klasse hinzufügen**aus. **Project**
 
-1. Geben Sie im Dialogfeld **Klasse hinzufügen** *Cardgame* in das Feld **Klassenname** ein. Ändern Sie die Standarddateinamen und - einstellungen nicht. Klicken Sie auf die Schaltfläche **OK** .
+1. Geben Sie im Dialogfeld **Klasse hinzufügen***Cardgame* in das Feld **Klassenname** ein. Ändern Sie die Standarddateinamen und - einstellungen nicht. Klicken Sie auf die Schaltfläche **OK** .
 
    Visual Studio erstellt neue Dateien und fügt diese zum Projekt hinzu. Diese werden im Fenster **Projektmappen-Explorer** angezeigt. Die Dateien „Cardgame.h“ und „Cardgame.cpp“ werden im Editor geöffnet.
 
@@ -245,7 +245,7 @@ Erstellen Sie nun das Projekt, und führen Sie die App aus.
 
    Wenn die Erstellung nicht erfolgreich war, vergleichen Sie Ihren Code mit dem Code, der in den Schritten weiter oben gezeigt wurde.
 
-1. Klicken Sie zum Ausführen des Projekts auf der Menüleiste auf **Debuggen** > **Starten ohne Debuggen**. Es sollte ein Konsolenfenster angezeigt werden, und die Ausgabe sollte dem folgenden Beispiel ähneln:
+1. Um das Projekt auszuführen, wählen Sie in der Menüleiste **Debugstart** > **ohne Debuggen**aus. Es sollte ein Konsolenfenster angezeigt werden, und die Ausgabe sollte dem folgenden Beispiel ähneln:
 
     ```Output
     4 players have started a new game.  There are now 4 players in total.
@@ -265,5 +265,5 @@ Glückwunsch, Sie haben erfolgreich ein App-Projekt und eine Projektmappe erstel
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)<br/>
+[C++-Sprachreferenz](../cpp/cpp-language-reference.md)<br/>
 [Projekte und Buildsysteme](../build/projects-and-build-systems-cpp.md)<br/>

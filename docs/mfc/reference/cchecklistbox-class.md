@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CCheckListBox [MFC], SetCheck
 - CCheckListBox [MFC], SetCheckStyle
 ms.assetid: 1dd78438-00e8-441c-b36f-9c4f9ac0d019
-ms.openlocfilehash: cd50711813a3cfc1305cd5558c95e909ddbfc3f2
-ms.sourcegitcommit: ab8d7b47b63b62892a1256a09b1324a9a136eccf
+ms.openlocfilehash: 8ca8d3b2cb4ce3c5b070d883e0a418ebec3665b1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78215521"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81352379"
 ---
 # <a name="cchecklistbox-class"></a>CCheckListBox-Klasse
 
@@ -49,56 +49,56 @@ class CCheckListBox : public CListBox
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CCheckListBox:: CCheckListBox](#cchecklistbox)|Erstellt ein `CCheckListBox`-Objekt.|
+|[CCheckListBox::CCheckListBox](#cchecklistbox)|Erstellt ein `CCheckListBox`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CCheckListBox:: Create](#create)|Erstellt das Fenster Prüfliste für Windows und fügt es an das `CCheckListBox` Objekt an.|
-|[CCheckListBox::D rawitem](#drawitem)|Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines Listen Felds für das Besitzer Zeichen ändert.|
-|[CCheckListBox:: enable](#enable)|Aktiviert oder deaktiviert ein Prüfliste-Feld Element.|
-|[CCheckListBox:: getcheck](#getcheck)|Ruft den Zustand des Kontrollkästchens eines Elements ab.|
-|[CCheckListBox:: getcheckstyle](#getcheckstyle)|Ruft den Stil der Kontrollkästchen des-Steuer Elements ab.|
-|[CCheckListBox:: isaktivierte](#isenabled)|Bestimmt, ob ein Element aktiviert ist.|
-|[CCheckListBox:: MeasureItem](#measureitem)|Wird von Framework aufgerufen, wenn ein Listenfeld mit einer Art von Besitzer Zeichenfolge erstellt wird.|
-|[CCheckListBox:: ongetcheckposition](#ongetcheckposition)|Wird von Framework aufgerufen, um die Position des Kontrollkästchens eines Elements zu erhalten.|
-|[CCheckListBox:: setcheck](#setcheck)|Legt den Zustand des Kontrollkästchens eines Elements fest.|
-|[CCheckListBox:: setcheckstyle](#setcheckstyle)|Legt den Stil der Kontrollkästchen des-Steuer Elements fest.|
+|[CCheckListBox::Erstellen](#create)|Erstellt das Windows-Checklistenfeld und `CCheckListBox` fügt es an das Objekt an.|
+|[CCheckListBox::DrawItem](#drawitem)|Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines Listenfelds für die Besitzerzeichnung ändert.|
+|[CCheckListBox::Aktivieren](#enable)|Aktiviert oder deaktiviert ein Checklistenfeldelement.|
+|[CCheckListBox::GetCheck](#getcheck)|Ruft das Kontrollkästchen des Elements ab.|
+|[CCheckListBox::GetCheckStyle](#getcheckstyle)|Ruft den Stil der Kontrollkästchen des Steuerelements ab.|
+|[CCheckListBox::IsEnabled](#isenabled)|Bestimmt, ob ein Element aktiviert ist.|
+|[CCheckListBox::MeasureItem](#measureitem)|Wird vom Framework aufgerufen, wenn ein Listenfeld mit einem Besitzerzeichnungsstil erstellt wird.|
+|[CCheckListBox::OnGetCheckPosition](#ongetcheckposition)|Wird vom Framework aufgerufen, um die Position des Kontrollkästchens eines Elements abzusehen.|
+|[CCheckListBox::SetCheck](#setcheck)|Legt das Kontrollkästchen für den Status eines Elements fest.|
+|[CCheckListBox::SetCheckStyle](#setcheckstyle)|Legt den Stil der Kontrollkästchen des Steuerelements fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Im Feld "Prüfliste" wird eine Liste von Elementen, z. b. Dateinamen, angezeigt. Jedes Element in der Liste enthält ein Kontrollkästchen neben dem Element, das der Benutzer überprüfen oder deaktivieren kann.
+Ein "Checklistenfeld" zeigt eine Liste von Elementen an, z. B. Dateinamen. Jedes Element in der Liste verfügt über ein Kontrollkästchen, das der Benutzer aktivieren oder löschen kann.
 
-`CCheckListBox` gilt nur für Steuerelemente, die vom Besitzer gezeichnet werden, da die Liste mehr als Text Zeichenfolgen enthält. Im einfachsten Fall enthält ein Prüfliste Text Zeichenfolgen und Kontrollkästchen, aber Sie müssen nicht über Text verfügen. Beispielsweise können Sie über eine Liste kleiner Bitmaps mit einem Kontrollkästchen neben jedem Element verfügen.
+`CCheckListBox`ist nur für besitzergezeichnete Steuerelemente vorgesehen, da die Liste mehr als Textzeichenfolgen enthält. Im einfachsten Fall enthält ein Checklistenfeld Textzeichenfolgen und Kontrollkästchen, aber Sie benötigen überhaupt keinen Text. Sie können z. B. eine Liste kleiner Bitmaps mit einem Kontrollkästchen neben jedem Element haben.
 
-Zum Erstellen eines eigenen Prüfliste müssen Sie eine eigene Klasse von `CCheckListBox`ableiten. Um eine eigene Klasse abzuleiten, schreiben Sie einen Konstruktor für die abgeleitete Klasse, und nennen Sie dann `Create`.
+Um ein eigenes Checklistenfeld zu erstellen, `CCheckListBox`müssen Sie eine eigene Klasse von ableiten. Um eine eigene Klasse abzuleiten, schreiben Sie einen `Create`Konstruktor für die abgeleitete Klasse, und rufen Sie dann auf.
 
-Wenn Sie die von einem Listenfeld gesendeten Windows-Benachrichtigungs Meldungen an das übergeordnete Element (in der Regel eine von [CDialog](../../mfc/reference/cdialog-class.md)abgeleitete Klasse) verarbeiten möchten, fügen Sie der übergeordneten Klasse für jede Nachricht einen Nachrichten Zuordnungs Eintrag und eine nachrichtenhandlermember-Funktion hinzu.
+Wenn Sie Windows-Benachrichtigungen verarbeiten möchten, die von einem Listenfeld an das übergeordnete Element gesendet werden (normalerweise eine von [CDialog](../../mfc/reference/cdialog-class.md)abgeleitete Klasse), fügen Sie der übergeordneten Klasse für jede Nachricht einen Nachrichtenzuordnungseintrag und eine Message-Handler-Memberfunktion hinzu.
 
-Jeder Nachrichten Zuordnungs Eintrag hat die folgende Form:
+Jeder Nachrichtenzuordnungseintrag hat die folgende Form:
 
-**Bei\_** _Benachrichtigung_ **(** _ID_, _mitgliedungsfxn_ **)**
+**\_ON-Benachrichtigung**_Notification_ **(** _id_, _memberFxn_ **)**
 
-Dabei gibt `id` die ID des untergeordneten Fensters für das Steuerelement an, das die Benachrichtigung sendet, und `memberFxn` der Name der übergeordneten Element Funktion ist, die Sie zum Verarbeiten der Benachrichtigung geschrieben haben.
+wobei `id` die untergeordnete Fenster-ID des Steuerelements `memberFxn` angegeben wird, das die Benachrichtigung sendet, und der Name der übergeordneten Memberfunktion ist, die Sie geschrieben haben, um die Benachrichtigung zu behandeln.
 
-Der Prototyp der übergeordneten Funktion ist wie folgt:
+Der Funktionsprototyp des Übergeordneten ist wie folgt:
 
 `afx_msg void memberFxn();`
 
-Es gibt nur einen Meldungs Zuordnungs Eintrag, der sich speziell auf `CCheckListBox` bezieht (es werden jedoch auch die Meldungs Zuordnungs Einträge für [CListBox](../../mfc/reference/clistbox-class.md)angezeigt):
+Es gibt nur einen Message-Map-Eintrag, `CCheckListBox` der sich speziell auf CListBox bezieht (siehe aber auch die Message-Map-Einträge für [CListBox):](../../mfc/reference/clistbox-class.md)
 
-- ON_CLBN_CHKCHANGE der Benutzer den Status des Kontrollkästchens eines Elements geändert hat.
+- ON_CLBN_CHKCHANGE Der Benutzer hat das Kontrollkästchen eines Elements geändert.
 
-Wenn es sich bei der Prüfliste um ein Standard Prüfliste handelt (eine Liste von Zeichen folgen mit den standardmäßigen Kontrollkästchen auf der linken Seite), können Sie das Kontrollkästchen Standardwert für " [CCheckListBox::D rawitem](#drawitem) " verwenden, um das Prüfliste zu zeichnen. Andernfalls müssen Sie die [CListBox:: compareitem](../../mfc/reference/clistbox-class.md#compareitem) -Funktion und die [CCheckListBox::D rawitem](#drawitem) -und [CCheckListBox:: MeasureItem](#measureitem) -Funktionen überschreiben.
+Wenn es sich bei Ihrem Checklistenfeld um ein Standardprüffeld handelt (eine Liste von Zeichenfolgen mit den Kontrollkästchen in Standardgröße links neben jedem), können Sie das Kontrollkästchen [CCheckListBox::DrawItem](#drawitem) verwenden. Andernfalls müssen Sie die [Funktion CListBox::CompareItem](../../mfc/reference/clistbox-class.md#compareitem) und die Funktionen [CCheckListBox::DrawItem](#drawitem) und [CCheckListBox::MeasureItem](#measureitem) überschreiben.
 
-Sie können ein Prüfliste entweder aus einer Dialogfeld Vorlage oder direkt im Code erstellen.
+Sie können ein Checklistenfeld entweder aus einer Dialogfeldvorlage oder direkt im Code erstellen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -108,11 +108,11 @@ Sie können ein Prüfliste entweder aus einer Dialogfeld Vorlage oder direkt im 
 
 `CCheckListBox`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
-##  <a name="cchecklistbox"></a>CCheckListBox:: CCheckListBox
+## <a name="cchecklistboxcchecklistbox"></a><a name="cchecklistbox"></a>CCheckListBox::CCheckListBox
 
 Erstellt ein `CCheckListBox`-Objekt.
 
@@ -120,17 +120,17 @@ Erstellt ein `CCheckListBox`-Objekt.
 CCheckListBox();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CCheckListBox`-Objekt in zwei Schritten. Definieren Sie zuerst eine Klasse, die von `CCheckListBox`abgeleitet wurde, und klicken Sie dann auf `Create`, das das Fenster Prüfliste für Windows initialisiert und an das `CCheckListBox` Objekt anfügt
+Sie erstellen `CCheckListBox` ein Objekt in zwei Schritten. Definieren Sie zuerst `CCheckListBox`eine von `Create`abgeleitete Klasse und rufen Sie dann auf, wodurch das Windows-Checklistenfeld initialisiert und an das `CCheckListBox` Objekt angefügt wird.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCControlLadenDialog#60](../../mfc/codesnippet/cpp/cchecklistbox-class_1.cpp)]
 
-##  <a name="create"></a>CCheckListBox:: Create
+## <a name="cchecklistboxcreate"></a><a name="create"></a>CCheckListBox::Erstellen
 
-Erstellt das Fenster Prüfliste für Windows und fügt es an das `CCheckListBox` Objekt an.
+Erstellt das Windows-Checklistenfeld und `CCheckListBox` fügt es an das Objekt an.
 
 ```
 virtual BOOL Create(
@@ -142,49 +142,49 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*dwstyle*<br/>
-Gibt die Art der Prüfliste an. Der Stil muss LBS_HASSTRINGS sein, und entweder LBS_OWNERDRAWFIXED (alle Elemente in der Liste haben dieselbe Höhe) oder LBS_OWNERDRAWVARIABLE (Elemente in der Liste weisen eine unterschiedliche Höhe auf). Dieser Stil kann mit anderen [Listenfeld](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Formaten außer LBS_USETABSTOPS kombiniert werden.
+*dwStyle*<br/>
+Gibt den Stil des Checklistenfelds an. Der Stil muss LBS_HASSTRINGS und entweder LBS_OWNERDRAWFIXED (alle Elemente in der Liste haben die gleiche Höhe) oder LBS_OWNERDRAWVARIABLE (Elemente in der Liste sind unterschiedlich hoch). Dieser Stil kann mit anderen [Listenfeldstilen](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) außer LBS_USETABSTOPS kombiniert werden.
 
 *Rect*<br/>
-Gibt die Größe und Position der Prüfliste an. Kann entweder ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur sein.
+Gibt die Größe und Position des Checklistenfelds an. Kann entweder ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) sein.
 
-*pparser*<br/>
-Gibt das übergeordnete Fenster der Prüfliste an (normalerweise ein `CDialog` Objekt). Er darf nicht NULL sein.
+*pParentWnd*<br/>
+Gibt das übergeordnete Fenster des Prüffelds (in der Regel ein Objekt) `CDialog` an. Es darf nicht NULL sein.
 
-*NID*<br/>
-Gibt die Steuerelement-ID der Prüfliste an.
+*nID*<br/>
+Gibt die Kontrollfeld-ID des Prüffelds an.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CCheckListBox`-Objekt in zwei Schritten. Definieren Sie zunächst eine Klasse, die von `CcheckListBox` abgeleitet ist, und klicken Sie dann auf `Create`, das das Fenster Prüfliste für Windows initialisiert und an den `CCheckListBox`anfügt. Ein Beispiel finden Sie unter [CCheckListBox:: CCheckListBox](#cchecklistbox) .
+Sie erstellen `CCheckListBox` ein Objekt in zwei Schritten. Definieren Sie zunächst eine `CcheckListBox` von `Create`der Klasse abgeleitete Klasse, und rufen Sie `CCheckListBox`dann auf, die das Windows-Checklistenfeld initialisiert und an die anfügt. Siehe [CCheckListBox::CCheckListBox](#cchecklistbox) für ein Beispiel.
 
-Wenn `Create` ausgeführt wird, sendet Windows die [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate)-, [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate)-, [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)-und [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) Meldungen an das CheckBox-Steuerelement.
+Bei `Create` der Ausführung sendet Windows die [Nachrichten WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate) [, WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate), [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)und [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) Nachrichten an das Prüffeldsteuerelement.
 
-Diese Nachrichten werden standardmäßig von den Funktionen " [onnccreate](../../mfc/reference/cwnd-class.md#onnccreate)", " [OnCreate](../../mfc/reference/cwnd-class.md#oncreate)", " [onnccalcsize](../../mfc/reference/cwnd-class.md#onnccalcsize)" und " [ongetminmaxinfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) " in der `CWnd`-Basisklasse verarbeitet. Um die standardmäßige Meldungs Behandlung zu erweitern, fügen Sie der abgeleiteten Klasse eine Meldungs Zuordnung hinzu, und überschreiben Sie die zuvor genannten nachrichtenhandlerelementfunktionen. Überschreiben Sie `OnCreate`z. b., um die erforderliche Initialisierung für eine neue Klasse auszuführen.
+Diese Nachrichten werden standardmäßig von den Memberfunktionen [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate), [OnCreate](../../mfc/reference/cwnd-class.md#oncreate), [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize)und `CWnd` [OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) in der Basisklasse verarbeitet. Um die Standardnachrichtenbehandlung zu erweitern, fügen Sie der abgeleiteten Klasse eine Nachrichtenzuordnung hinzu, und überschreiben Sie die vorherigen Nachrichtenhandlermemberfunktionen. Überschreiben `OnCreate`Sie z. B., um die erforderliche Initialisierung für eine neue Klasse durchzuführen.
 
-Anwenden der folgenden [Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf ein checkprüfliste-Steuerelement:
+Wenden Sie die folgenden [Fensterstile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf ein Checklistenfeldsteuerelement an:
 
-- Immer WS_CHILD
+- WS_CHILD Immer
 
-- WS_VISIBLE in der Regel
+- WS_VISIBLE In der Regel
 
-- WS_DISABLED selten
+- WS_DISABLED Selten
 
-- WS_VSCROLL, um eine vertikale Schiebe Leiste hinzuzufügen
+- WS_VSCROLL So fügen Sie eine vertikale Bildlaufleiste hinzu
 
-- WS_HSCROLL, um eine horizontale Schiebe Leiste hinzuzufügen
+- WS_HSCROLL So fügen Sie eine horizontale Bildlaufleiste hinzu
 
-- WS_GROUP zum Gruppieren von Steuerelementen
+- WS_GROUP Zu Gruppensteuerelementen
 
-- WS_TABSTOP, um die Tabstopps für dieses Steuerelement zuzulassen.
+- WS_TABSTOP So lassen Sie das Tabing auf dieses Steuerelement zu
 
-##  <a name="drawitem"></a>CCheckListBox::D rawitem
+## <a name="cchecklistboxdrawitem"></a><a name="drawitem"></a>CCheckListBox::DrawItem
 
-Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines von einem Besitzer gezeichneten Prüfliste ändert.
+Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines vom Besitzer gezeichneten Checklistenfelds ändert.
 
 ```
 virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
@@ -192,22 +192,22 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpdrawitemstruct*<br/>
-Ein langer Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
+*lpDrawItemStruct*<br/>
+Ein langer Zeiger auf eine [DRAWITEMSTRUCT-Struktur,](/windows/win32/api/winuser/ns-winuser-drawitemstruct) die Informationen über den erforderlichen Zeichnungstyp enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `itemAction` und `itemState` Member der `DRAWITEMSTRUCT` Struktur definieren die auszuführende Zeichnungs Aktion.
+Die `itemAction` `itemState` und die `DRAWITEMSTRUCT` Elemente der Struktur definieren die Zeichnungsaktion, die ausgeführt werden soll.
 
-Standardmäßig zeichnet diese Funktion eine Standard-CheckBox-Liste, die aus einer Liste von Zeichen folgen mit jeweils einem standardmäßigen Kontrollkästchen auf der linken Seite besteht. Die Liste der Kontrollkästchen ist die in [Create](#create)angegebene Größe.
+Standardmäßig zeichnet diese Funktion eine Standard-Kontrollkästchenliste, die aus einer Liste von Zeichenfolgen besteht, die jeweils ein Kontrollkästchen in Standardgröße auf der linken Seite enthalten. Die Kontrollkästchenliste ist die unter [Erstellen](#create)angegebene .
 
-Überschreiben Sie diese Member-Funktion, um das Zeichnen von Prüfliste für das Erstellen von Besitzern zu implementieren, bei denen es sich nicht um die Standardwerte handelt, z. b. Prüfliste mit Listen, die keine Zeichen folgen sind, mit Elementen variabler Höhe oder mit Kontrollkästchen Die Anwendung sollte alle GDI-Objekte (Graphics Device Interface), die für den in *lpdrawitemstruct* angegebenen Anzeige Kontext ausgewählt wurden, vor der Beendigung dieser Element Funktion wiederherstellen.
+Überschreiben Sie diese Memberfunktion, um das Zeichnen von Prüflistenfeldern für Besitzerzeichnen zu implementieren, die nicht standardmäßig aufgeführt sind, z. B. Checklistenfelder mit Listen, die keine Zeichenfolgen sind, mit Elementen mit variabler Höhe oder mit Kontrollkästchen, die sich nicht auf der linken Seite befinden. Die Anwendung sollte alle GDI-Objekte (Graphics Device Interface) wiederherstellen, die für den anzeigekontext ausgewählt wurden, der in *lpDrawItemStruct* vor dem Beenden dieser Memberfunktion angegeben wurde.
 
-Wenn Prüfliste Elemente nicht die gleiche Höhe aufweisen, muss der Stil der Prüfliste (angegeben in `Create`) **LBS_OWNERVARIABLE**sein, und Sie müssen die [MeasureItem](#measureitem) -Funktion überschreiben.
+Wenn Checklistenfeldelemente nicht alle die gleiche Höhe aufweisen, muss der Checklistenfeldstil (in `Create`angegeben) **LBS_OWNERVARIABLE**sein, und Sie müssen die [MeasureItem-Funktion](#measureitem) überschreiben.
 
-##  <a name="enable"></a>CCheckListBox:: enable
+## <a name="cchecklistboxenable"></a><a name="enable"></a>CCheckListBox::Aktivieren
 
-Mit dieser Funktion können Sie ein Checklisten Element aktivieren oder deaktivieren.
+Rufen Sie diese Funktion auf, um ein Checklistenfeldelement zu aktivieren oder zu deaktivieren.
 
 ```
 void Enable(
@@ -218,14 +218,14 @@ void Enable(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der Index des zu aktivierenden Prüfliste-Elements.
+Index des zu aktivierenden Checklistenfeldelements.
 
-*benabled*<br/>
+*bAktiviert*<br/>
 Gibt an, ob das Element aktiviert oder deaktiviert ist.
 
-##  <a name="getcheck"></a>CCheckListBox:: getcheck
+## <a name="cchecklistboxgetcheck"></a><a name="getcheck"></a>CCheckListBox::GetCheck
 
-Ruft den Zustand des angegebenen Kontrollkästchens ab.
+Ruft den Status des angegebenen Kontrollkästchens ab.
 
 ```
 int GetCheck(int nIndex);
@@ -234,21 +234,21 @@ int GetCheck(int nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der null basierte Index eines Kontrollkästchens, das im Listenfeld enthalten ist.
+Nullbasierter Index eines Kontrollkästchens, das im Listenfeld enthalten ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Zustand des angegebenen Kontrollkästchens. In der folgenden Tabelle sind die möglichen Werte aufgeführt.
+Der Status des angegebenen Kontrollkästchens. In der folgenden Tabelle sind mögliche Werte aufgeführt.
 
-|Wert|Beschreibung|
+|Wert|BESCHREIBUNG|
 |-----------|-----------------|
-|BST_CHECKED|Das Kontrollkästchen ist aktiviert.|
+|Bst_checked|Das Kontrollkästchen ist aktiviert.|
 |BST_UNCHECKED|Das Kontrollkästchen ist nicht aktiviert.|
-|BST_INDETERMINATE|Der Kontrollkästchen Zustand ist unbestimmt.|
+|BST_INDETERMINATE|Der Kontrollkästchenstatus ist unbestimmt.|
 
-##  <a name="getcheckstyle"></a>CCheckListBox:: getcheckstyle
+## <a name="cchecklistboxgetcheckstyle"></a><a name="getcheckstyle"></a>CCheckListBox::GetCheckStyle
 
-Mit dieser Funktion können Sie den Stil der Prüfliste abrufen.
+Rufen Sie diese Funktion auf, um den Stil des Checklistenfelds abzurufen.
 
 ```
 UINT GetCheckStyle();
@@ -256,15 +256,15 @@ UINT GetCheckStyle();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Stil der Kontrollkästchen des Steuer Elements.
+Der Stil der Kontrollkästchen des Steuerelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Informationen zu möglichen Stilen finden Sie unter [setcheckstyle](#setcheckstyle).
+Informationen zu möglichen Stilen finden Sie unter [SetCheckStyle](#setcheckstyle).
 
-##  <a name="isenabled"></a>CCheckListBox:: isaktivierte
+## <a name="cchecklistboxisenabled"></a><a name="isenabled"></a>CCheckListBox::IsEnabled
 
-Mit dieser Funktion können Sie feststellen, ob ein Element aktiviert ist.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob ein Element aktiviert ist.
 
 ```
 BOOL IsEnabled(int nIndex);
@@ -273,15 +273,15 @@ BOOL IsEnabled(int nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der Index des Elements.
+Index des Artikels.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Element aktiviert ist. andernfalls 0.
+Ein Wert ungleich Null, wenn das Element aktiviert ist; andernfalls 0.
 
-##  <a name="measureitem"></a>CCheckListBox:: MeasureItem
+## <a name="cchecklistboxmeasureitem"></a><a name="measureitem"></a>CCheckListBox::MeasureItem
 
-Wird von Framework aufgerufen, wenn ein Prüfliste mit einem nicht standardmäßigen Stil erstellt wird.
+Wird vom Framework aufgerufen, wenn ein Checklistenfeld mit einem nicht standardmäßigen Stil erstellt wird.
 
 ```
 virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
@@ -289,16 +289,16 @@ virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpmeasureitemstruct*<br/>
-Ein langer Zeiger auf eine [measureitemstruct](/windows/win32/api/winuser/ns-winuser-measureitemstruct) -Struktur.
+*lpMeasureItemStruct*<br/>
+Ein langer Zeiger auf eine [MEASUREITEMSTRUCT-Struktur.](/windows/win32/api/winuser/ns-winuser-measureitemstruct)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, und füllen Sie die `MEASUREITEMSTRUCT` Struktur aus, um Fenster über die Dimensionen von CheckBox-Elementen zu informieren. Wenn das Prüfliste mit dem [LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) -Format erstellt wird, ruft das Framework diese Member-Funktion für jedes Element im Listenfeld auf. Andernfalls wird dieser Member nur einmal aufgerufen.
+Standardmäßig führt diese Memberfunktion nichts aus. Überschreiben Sie diese Memberfunktion, und füllen Sie die `MEASUREITEMSTRUCT` Struktur aus, um Windows über die Dimensionen von Checklisten-Box-Elementen zu informieren. Wenn das Checklistenfeld mit dem [Stil LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) erstellt wird, ruft das Framework diese Memberfunktion für jedes Element im Listenfeld auf. Andernfalls wird dieses Element nur einmal aufgerufen.
 
-##  <a name="ongetcheckposition"></a>CCheckListBox:: ongetcheckposition
+## <a name="cchecklistboxongetcheckposition"></a><a name="ongetcheckposition"></a>CCheckListBox::OnGetCheckPosition
 
-Das Framework ruft diese Funktion auf, um die Position und Größe des Kontrollkästchens in einem Element zu erhalten.
+Das Framework ruft diese Funktion auf, um die Position und Größe des Kontrollkästchens in einem Element abzubekommen.
 
 ```
 virtual CRect OnGetCheckPosition(
@@ -308,23 +308,23 @@ virtual CRect OnGetCheckPosition(
 
 ### <a name="parameters"></a>Parameter
 
-*rectitem*<br/>
-Die Position und Größe des Listen Elements.
+*rectItem*<br/>
+Die Position und Größe des Listenelements.
 
-*"rectcheckbox"*<br/>
-Die Standardposition und-Größe des Kontrollkästchens eines Elements.
+*rectCheckBox*<br/>
+Das Kontrollkästchen Standardposition und -größe eines Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Position und Größe des Kontrollkästchens eines Elements.
+Die Position und Größe des Kontrollkästchens eines Artikels.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung gibt nur die Standardposition und-Größe des Kontrollkästchens (`rectCheckBox`) zurück. Standardmäßig wird ein Kontrollkästchen in der oberen linken Ecke eines Elements ausgerichtet und ist die Standardgröße des Kontrollkästchens. Es gibt möglicherweise Fälle, in denen Sie die Kontrollkästchen auf der rechten Seite oder eine größere oder kleinere Kontrollkästchen wünschen. Überschreiben Sie in diesen Fällen `OnGetCheckPosition`, um die Position und Größe des Kontrollkästchens innerhalb des Elements zu ändern.
+Die Standardimplementierung gibt nur die Standardposition und`rectCheckBox`-größe des Kontrollkästchens ( zurück. Standardmäßig wird ein Kontrollkästchen in der oberen linken Ecke eines Elements ausgerichtet und ist die Standard-Kontrollkästchengröße. Es kann Fälle geben, in denen Sie die Kontrollkästchen auf der rechten Seite oder ein größeres oder kleineres Kontrollkästchen wünschen. In diesen Fällen `OnGetCheckPosition` überschreiben Sie, um die Position und Größe des Kontrollkästchens innerhalb des Elements zu ändern.
 
-##  <a name="setcheck"></a>CCheckListBox:: setcheck
+## <a name="cchecklistboxsetcheck"></a><a name="setcheck"></a>CCheckListBox::SetCheck
 
-Legt den Zustand des angegebenen Kontrollkästchens fest.
+Legt den Status des angegebenen Kontrollkästchens fest.
 
 ```
 void SetCheck(
@@ -335,24 +335,24 @@ void SetCheck(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der null basierte Index eines Kontrollkästchens, das im Listenfeld enthalten ist.
+Nullbasierter Index eines Kontrollkästchens, das im Listenfeld enthalten ist.
 
-*nPrüfen*<br/>
-Der Schaltflächen Zustand für das angegebene Kontrollkästchen. Mögliche Werte finden Sie im Abschnitt "Hinweise".
+*nCheck*<br/>
+Der Schaltflächenstatus für das angegebene Kontrollkästchen. Weitere Informationen zu möglichen Werten finden Sie im Abschnitt "Bemerkungen".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In der folgenden Tabelle sind die möglichen Werte für den *ncheck* -Parameter aufgeführt.
+In der folgenden Tabelle sind mögliche Werte für den Parameter *nCheck* aufgeführt.
 
-|Wert|Beschreibung|
+|Wert|BESCHREIBUNG|
 |-----------|-----------------|
-|BST_CHECKED|Aktivieren Sie das angegebene Kontrollkästchen.|
+|Bst_checked|Aktivieren Sie das angegebene Kontrollkästchen.|
 |BST_UNCHECKED|Deaktivieren Sie das angegebene Kontrollkästchen.|
-|BST_INDETERMINATE|Legen Sie den Zustand des angegebenen Kontrollkästchens auf unbestimmt fest.<br /><br /> Dieser Status ist nur verfügbar, wenn das Kontrollkästchen Format BS_AUTO3STATE oder BS_3STATE ist. Weitere Informationen finden Sie unter [Schaltflächen Stile](../../mfc/reference/styles-used-by-mfc.md#button-styles).|
+|BST_INDETERMINATE|Legen Sie den angegebenen Kontrollkästchenstatus auf unbestimmt fest.<br /><br /> Dieser Status ist nur verfügbar, wenn der Kontrollkästchenstil BS_AUTO3STATE oder BS_3STATE ist. Weitere Informationen finden Sie unter [Schaltflächenstile](../../mfc/reference/styles-used-by-mfc.md#button-styles).|
 
-##  <a name="setcheckstyle"></a>CCheckListBox:: setcheckstyle
+## <a name="cchecklistboxsetcheckstyle"></a><a name="setcheckstyle"></a>CCheckListBox::SetCheckStyle
 
-Mit dieser Funktion können Sie den Stil der Kontrollkästchen im Prüfliste festlegen.
+Rufen Sie diese Funktion auf, um den Stil der Kontrollkästchen im Checklistenfeld festzulegen.
 
 ```
 void SetCheckStyle(UINT nStyle);
@@ -360,12 +360,12 @@ void SetCheckStyle(UINT nStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*nstyle*<br/>
-Bestimmt die Art der Kontrollkästchen im Prüfliste.
+*nStyle*<br/>
+Bestimmt den Stil der Kontrollkästchen im Checklistenfeld.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gültige Stile:
+Gültige Stile sind:
 
 - BS_CHECKBOX
 
@@ -375,7 +375,7 @@ Gültige Stile:
 
 - BS_3STATE
 
-Weitere Informationen zu diesen Stilen finden Sie unter [Schalt](../../mfc/reference/styles-used-by-mfc.md#button-styles)Flächen Formate.
+Weitere Informationen zu diesen Stilen finden Sie unter [Schaltflächenstile](../../mfc/reference/styles-used-by-mfc.md#button-styles).
 
 ## <a name="see-also"></a>Siehe auch
 

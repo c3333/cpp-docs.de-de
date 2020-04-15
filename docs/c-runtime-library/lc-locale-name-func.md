@@ -1,8 +1,9 @@
 ---
 title: ___lc_locale_name_func
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - ___lc_locale_name_func
+- _o____lc_locale_name_func
 api_location:
 - msvcrt.dll
 - msvcr110.dll
@@ -11,6 +12,7 @@ api_location:
 - msvcr120.dll
 - msvcr80.dll
 - msvcr110_clr0400.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -20,12 +22,12 @@ f1_keywords:
 helpviewer_keywords:
 - ___lc_locale_name_func
 ms.assetid: ef858308-872e-43de-95e0-9b1b4084343e
-ms.openlocfilehash: abc1ade393538586ad07f57e6838591833c9948b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: f38d4d9b11189a8313b26dd3313a5def800c2410
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70944231"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81351118"
 ---
 # <a name="___lc_locale_name_func"></a>___lc_locale_name_func
 
@@ -41,15 +43,17 @@ wchar_t** ___lc_locale_name_func(void);
 
 Ein Zeiger auf eine Zeichenfolge, die den aktuellen Gebietsschemanamen des Threads enthält.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 `___lc_locale_name_func` ist eine interne CRT-Funktion, die von anderen CRT-Funktionen verwendet wird, um den aktuellen Gebietsschemanamen aus dem lokalen Threadspeicher für CRT-Daten abzurufen. Diese Information ist auch mit Verwendung der Funktion [_get_current_locale](../c-runtime-library/reference/get-current-locale.md) oder der Funktionen [Setlocale, _wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md) verfügbar.
 
 Interne CRT-Funktionen sind implementierungsspezifisch und mit jedem neuen Release Änderungen unterworfen. Ihre Verwendung in einem Code wird nicht empfohlen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |`___lc_locale_name_func`|crt\src\setlocal.h|
 
