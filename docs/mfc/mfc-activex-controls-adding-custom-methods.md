@@ -5,78 +5,78 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], methods
 - PtInCircle custom method [MFC]
 ms.assetid: 8f8dc344-44a0-4021-8db5-4cdd3d700e18
-ms.openlocfilehash: 4f5a7dc844d80ae94df8af7c0b2eea141376f9e9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 88d486248eab5d980463764db34bf40b05b830dc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160145"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364716"
 ---
 # <a name="mfc-activex-controls-adding-custom-methods"></a>MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Methoden
 
-Benutzerdefinierte Methoden unterscheiden sich von vordefinierten Methoden, da sie nicht bereits durch implementiert sind `COleControl`. Sie müssen die Implementierung für jede benutzerdefinierte Methode angeben, die Sie zu Ihrem Steuerelement hinzuzufügen.
+Benutzerdefinierte Methoden unterscheiden sich von Bestandsmethoden `COleControl`dadurch, dass sie nicht bereits von implementiert sind. Sie müssen die Implementierung für jede benutzerdefinierte Methode bereitstellen, die Sie dem Steuerelement hinzufügen.
 
 >[!IMPORTANT]
-> ActiveX ist eine veraltete Technologie, die nicht für Neuentwicklungen verwendet werden soll. Weitere Informationen zu moderne Technologien, die ActiveX-ablösen, finden Sie unter [ActiveX-Steuerelemente](activex-controls.md).
+> ActiveX ist eine legacy Technologie, die nicht für Neuentwicklungen verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ablösen, finden Sie unter [ActiveX Controls](activex-controls.md).
 
-Ein ActiveX-Steuerelement-Benutzer kann eine benutzerdefinierte Methode zu einem beliebigen Zeitpunkt für das Steuerelement spezifische Aktionen aufrufen. Die Dispatch-Eintrag für die Zuordnung für benutzerdefinierte Methoden ist das DISP_FUNCTION.
+Ein ActiveX-Steuerelementbenutzer kann jederzeit eine benutzerdefinierte Methode aufrufen, um steuerungsspezifische Aktionen auszuführen. Der Dispatch-Map-Eintrag für benutzerdefinierte Methoden ist vom Formular DISP_FUNCTION.
 
-##  <a name="_core_adding_a_custom_method_with_classwizard"></a> Hinzufügen einer benutzerdefinierten Methode mit dem Assistenten hinzufügen
+## <a name="adding-a-custom-method-with-the-add-method-wizard"></a><a name="_core_adding_a_custom_method_with_classwizard"></a>Hinzufügen einer benutzerdefinierten Methode mit dem Assistenten zum Hinzufügen der Methode
 
-Das folgende Verfahren veranschaulicht die benutzerdefinierte Methode PtInCircle Codegerüst eines ActiveX-Steuerelements hinzufügen. PtInCircle bestimmt, ob die Koordinaten, die an das Steuerelement innerhalb oder außerhalb des Kreises. Dieses Verfahren kann auch verwendet werden, andere benutzerdefinierte Methoden hinzufügen. Ersetzen Sie den Namen Ihrer benutzerdefinierten Methode und seine Parameter für die PtInCircle Methodennamen und Parameter.
+Das folgende Verfahren veranschaulicht das Hinzufügen der benutzerdefinierten Methode PtInCircle zum Skelettcode eines ActiveX-Steuerelements. PtInCircle bestimmt, ob sich die an das Steuerelement übergebenen Koordinaten innerhalb oder außerhalb des Kreises befinden. Dieselbe Prozedur kann auch verwendet werden, um andere benutzerdefinierte Methoden hinzuzufügen. Ersetzen Sie den benutzerdefinierten Methodennamen und seine Parameter durch den PtInCircle-Methodennamen und die Parameter.
 
 > [!NOTE]
->  Dieses Beispiel verwendet die `InCircle` Funktion aus dem Artikel Ereignisse. Weitere Informationen zu dieser Funktion, finden Sie im Artikel [MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Ereignissen zu einem ActiveX-Steuerelement](../mfc/mfc-activex-controls-adding-custom-events.md).
+> In diesem `InCircle` Beispiel wird die Funktion aus dem Artikel Ereignisse verwendet. Weitere Informationen zu dieser Funktion finden Sie im Artikel [MFC ActiveX Controls: Adding Custom Events to a ActiveX Control](../mfc/mfc-activex-controls-adding-custom-events.md).
 
-#### <a name="to-add-the-ptincircle-custom-method-using-the-add-method-wizard"></a>Die benutzerdefinierte PtInCircle-Methode, die mithilfe des Assistenten zum Hinzufügen einer Methode hinzufügen
+#### <a name="to-add-the-ptincircle-custom-method-using-the-add-method-wizard"></a>So fügen Sie die benutzerdefinierte PtInCircle-Methode mithilfe des Assistenten zum Hinzufügen von Methoden hinzu
 
-1. Laden Sie das Steuerelementprojekt.
+1. Laden Sie das Projekt des Steuerelements.
 
 1. Erweitern Sie in der Klassenansicht den Bibliotheksknoten des Steuerelements.
 
 1. Klicken Sie mit der rechten Maustaste auf den Schnittstellenknoten des Steuerelements (den zweiten Knoten des Bibliotheksknotens), um das Kontextmenü zu öffnen.
 
-1. Klicken Sie im Kontextmenü auf **hinzufügen** , und klicken Sie dann auf **Methode hinzufügen**.
+1. Klicken Sie im Kontextmenü auf **Hinzufügen** und dann auf **Methode hinzufügen**.
 
-   Dies öffnet den Assistenten zum Hinzufügen einer Methode.
+   Dadurch wird der Assistenten zum Hinzufügen von Methoden geöffnet.
 
-1. In der **Methodenname** geben *PtInCircle*.
+1. Geben Sie im Feld **Methodenname** *PtInCircle*ein.
 
-1. In der **Interner Name** Feld, geben Sie den Namen der internen Funktion der Methode oder den Standardwert (in diesem Fall *PtInCircle*).
+1. Geben Sie im Feld **Interner Name** den Namen der internen Funktion der Methode ein, oder verwenden Sie den Standardwert (in diesem Fall *PtInCircle*).
 
-1. In der **Rückgabetyp** auf **VARIANT_BOOL** für den Rückgabetyp der Methode.
+1. Klicken Sie im Feld **Rückgabetyp** auf **VARIANT_BOOL** für den Rückgabetyp der Methode.
 
-1. Mithilfe der **Parametertyp** und **Parametername** Steuerelemente hinzufügen, einen Parameter namens *xCoord* (Typ *OLE_XPOS_PIXELS*).
+1. Fügen Sie mithilfe der Steuerelemente **Parametertyp** und **Parametername** einen Parameter namens *xCoord* (Typ *OLE_XPOS_PIXELS*) hinzu.
 
-9. Mithilfe der **Parametertyp** und **Parametername** Steuerelemente hinzufügen, einen Parameter namens *dem Namen yCoord* (Typ *OLE_YPOS_PIXELS*).
+1. Fügen Sie mithilfe der Steuerelemente **Parametertyp** und **Parametername** einen Parameter namens *yCoord* hinzu (Typ *OLE_YPOS_PIXELS*).
 
-10. Klicken Sie auf **Fertig stellen**.
+1. Klicken Sie auf **Fertig stellen**.
 
-##  <a name="_core_classwizard_changes_for_custom_methods"></a> Hinzufügen von Assistenten Änderungen für benutzerdefinierte Methoden
+## <a name="add-method-wizard-changes-for-custom-methods"></a><a name="_core_classwizard_changes_for_custom_methods"></a>Hinzufügen von Methoden-Assistentenänderungen für benutzerdefinierte Methoden
 
-Wenn Sie eine benutzerdefinierte Methode hinzufügen, nimmt der Assistent zum Hinzufügen einer Methode einige Änderungen an dem Control-Header-Klasse (. H) und die Implementierung (. CPP)-Dateien. Die folgende Zeile wird zur Deklaration Dispatch-Zuordnung im Header Steuerelement-Klasse hinzugefügt (. H)-Datei:
+Wenn Sie eine benutzerdefinierte Methode hinzufügen, nimmt der Assistent zum Hinzufügen von Methoden einige Änderungen am Steuerelementklassenheader (. H) und Umsetzung (. CPP)-Dateien. Die folgende Zeile wird der Dispatchzuordnungsdeklaration im Steuerelementklassenheader (. H) Datei:
 
 [!code-cpp[NVC_MFC_AxUI#18](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_1.h)]
 
-Dieser Code deklariert einen Handler Dispatch-Methode mit dem Namen `PtInCircle`. Diese Funktion kann aufgerufen werden, vom Benutzer Steuerelements, die mit den externen Namen `PtInCircle`.
+Dieser Code deklariert einen `PtInCircle`Dispatchmethodenhandler mit dem Namen . Diese Funktion kann vom Steuerelementbenutzer unter `PtInCircle`Verwendung des externen Namens aufgerufen werden.
 
-Die folgende Zeile wird des Steuerelements hinzugefügt. IDL-Datei:
+Die folgende Zeile wird der des Steuerelements hinzugefügt. IDL-Datei:
 
 [!code-cpp[NVC_MFC_AxUI#19](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_2.idl)]
 
-Diese Zeile weist den `PtInCircle` Methode einer bestimmten ID-Nummer, die der Position der Methode in der Liste Assistenten zum Hinzufügen von Methoden, Methoden und Eigenschaften. Da der Assistent zum Hinzufügen einer Methode verwendet wurde, um die benutzerdefinierte Methode hinzuzufügen, wurde der Eintrag für diese des Projekts automatisch hinzugefügt. IDL-Datei.
+Diese Zeile weist `PtInCircle` der Methode eine bestimmte ID-Nummer, die Position der Methode in der Methoden-Assistenten-Methoden- und Eigenschaftenliste hinzufügen zu. Da der Assistenten zum Hinzufügen der Methode verwendet wurde, um die benutzerdefinierte Methode hinzuzufügen, wurde der Eintrag dafür automatisch dem Projekt hinzugefügt. IDL-Datei.
 
-Darüber hinaus die folgende Zeile befindet, in der Implementierung (. CPP)-Datei von der Control-Klasse wird des Steuerelements Dispatchzuordnung hinzugefügt:
+Darüber hinaus befindet sich die folgende Zeile in der Implementierung (. CPP)-Datei der Steuerelementklasse, wird der Dispatch-Zuordnung des Steuerelements hinzugefügt:
 
 [!code-cpp[NVC_MFC_AxUI#20](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_3.cpp)]
 
-Die DISP_FUNCTION-Makro ordnet die Methode `PtInCircle` Handler-Funktion des Steuerelements, `PtInCircle`, deklariert den Rückgabetyp zu sein **VARIANT_BOOL**, und deklariert zwei Parameter vom Typ **VTS_XPOS_PIXELS** und **VTS_YPOSPIXELS** übergeben werden soll `PtInCircle`.
+Das DISP_FUNCTION-Makro `PtInCircle` ordnet die Methode der `PtInCircle`Handlerfunktion des Steuerelements zu, , deklariert den Rückgabetyp als `PtInCircle` **VARIANT_BOOL**und deklariert zwei Parameter vom Typ **VTS_XPOS_PIXELS** und **VTS_YPOSPIXELS,** die an übergeben werden sollen.
 
-Abschließend fügt der Assistent zum Hinzufügen einer Methode die Stub-Funktion `CSampleCtrl::PtInCircle` am unteren Rand des Steuerelements-Implementierung (. CPP)-Datei. Für `PtInCircle` funktioniert, wie bereits erwähnt, müssen sie wie folgt geändert werden:
+Schließlich fügt der Assistent zum `CSampleCtrl::PtInCircle` Hinzufügen von Methoden die Stubfunktion am unteren Rand der Implementierung des Steuerelements hinzu (. CPP)-Datei. Damit `PtInCircle` sie wie zuvor angegeben funktioniert, muss sie wie folgt geändert werden:
 
 [!code-cpp[NVC_MFC_AxUI#21](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_4.cpp)]
 
 ## <a name="see-also"></a>Siehe auch
 
 [MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md)<br/>
-[Symbole in der Klassenansicht und im Objektbrowser](/visualstudio/ide/class-view-and-object-browser-icons)
+[Klassenansicht und Objektbrowsersymbole](/visualstudio/ide/class-view-and-object-browser-icons)

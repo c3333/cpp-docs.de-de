@@ -13,59 +13,59 @@ helpviewer_keywords:
 - DTN_FORMAT notification [MFC]
 - DateTimePicker control [MFC]
 ms.assetid: 404f4ba9-cba7-4718-9faa-bc6b274a723f
-ms.openlocfilehash: 5d08c349253e62c15553cfa0452cee930b1a1876
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 50350e51b6747d8c010db9d0dcaa9dff2e56e1f3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513507"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366558"
 ---
 # <a name="using-callback-fields-in-a-date-and-time-picker-control"></a>Verwenden von Rückruffeldern in einem Steuerelement für die Datums- und Zeitauswahl
 
-Zusätzlich zu den Standard Formatierungszeichen, die Felder für Datums-und Zeitauswahl definieren, können Sie die Ausgabe anpassen, indem Sie bestimmte Teile einer benutzerdefinierten Format Zeichenfolge als Rückruf Felder angeben. Um ein Rückruf Feld zu deklarieren, fügen Sie ein oder mehrere "X"-Zeichen (ASCII-Code 88) an beliebiger Stelle im Text der Format Zeichenfolge ein. Die folgende Zeichenfolge "" ist heute beispielsweise "yy"/"mm"/"dd" (Tag "X") ", bewirkt, dass das Steuerelement für die Datums-und Uhrzeit Auswahl den aktuellen Wert als das Jahr anzeigt, auf das der Monat, das Datum und schließlich der Tag des Jahres folgt.
+Zusätzlich zu den Standardformatzeichen, die Datums- und Uhrzeitauswahlfelder definieren, können Sie die Ausgabe anpassen, indem Sie bestimmte Teile einer benutzerdefinierten Formatzeichenfolge als Rückruffelder angeben. Um ein Rückruffeld zu deklarieren, fügen Sie ein oder mehrere "X"-Zeichen (ASCII-Code 88) an einer beliebigen Stelle im Textkörper der Formatzeichenfolge ein. Die folgende Zeichenfolge "'Heute ist z. B.: 'yy'/'MM'/'dd' (Tag 'X')'" bewirkt, dass das Datums- und Uhrzeitauswahlsteuerelement den aktuellen Wert als Jahr gefolgt von Monat, Datum und schließlich dem Tag des Jahres anzeigt.
 
 > [!NOTE]
->  Die Anzahl der X-Werte in einem Rückruf Feld entspricht nicht der Anzahl der Zeichen, die angezeigt werden.
+> Die Anzahl der X in einem Rückruffeld entspricht nicht der Anzahl der Zeichen, die angezeigt werden.
 
-Sie können zwischen mehreren Rückruf Feldern in einer benutzerdefinierten Zeichenfolge unterscheiden, indem Sie das "X"-Zeichen wiederholen. Daher enthält die Format Zeichenfolge "XXddddMMMdd", "yyyXXX" zwei eindeutige Rückruf Felder: "XX" und "xxx".
+Sie können zwischen mehreren Rückruffeldern in einer benutzerdefinierten Zeichenfolge unterscheiden, indem Sie das Zeichen "X" wiederholen. So enthält die Formatzeichenfolge "XXddddMMMdd", 'yyyXXX' zwei eindeutige Rückruffelder, "XX" und "XXX".
 
 > [!NOTE]
->  Rückruf Felder werden als gültige Felder behandelt, sodass Ihre Anwendung für die Verarbeitung von DTN_WMKEYDOWN-Benachrichtigungs Meldungen vorbereitet werden muss.
+> Rückruffelder werden als gültige Felder behandelt, daher muss Ihre Anwendung darauf vorbereitet sein, DTN_WMKEYDOWN Benachrichtigungen zu verarbeiten.
 
-Das Implementieren von Rückruf Feldern in einem Steuerelement für die Datums-und Uhrzeit Auswahl besteht aus drei Teilen:
+Das Implementieren von Rückruffeldern in Der Datums- und Zeitauswahlsteuerung besteht aus drei Teilen:
 
-- Initialisieren der benutzerdefinierten Format Zeichenfolge
+- Initialisieren der benutzerdefinierten Formatzeichenfolge
 
-- Behandeln der DTN_FORMATQUERY-Benachrichtigung
+- Behandeln der DTN_FORMATQUERY Benachrichtigung
 
 - Behandeln der DTN_FORMAT-Benachrichtigung
 
-## <a name="initializing-the-custom-format-string"></a>Initialisieren der benutzerdefinierten Format Zeichenfolge
+## <a name="initializing-the-custom-format-string"></a>Initialisieren der benutzerdefinierten Formatzeichenfolge
 
-Initialisieren Sie `CDateTimeCtrl::SetFormat`die benutzerdefinierte Zeichenfolge mit einem-Befehl. Weitere Informationen finden Sie unter [Verwenden von benutzerdefinierten Format Zeichenfolgen in einem Steuerelement für Datums-und Zeit](../mfc/using-custom-format-strings-in-a-date-and-time-picker-control.md)Auswahl. Die benutzerdefinierte Format Zeichenfolge kann in der `OnInitDialog` Funktion der enthaltenden Dialogfeld Klasse oder `OnInitialUpdate` Funktion der enthaltenden Ansichts Klasse festgelegt werden.
+Initialisieren Sie die benutzerdefinierte `CDateTimeCtrl::SetFormat`Zeichenfolge mit einem Aufruf von . Weitere Informationen finden Sie unter [Verwenden von benutzerdefinierten Formatzeichenfolgen in einem Datums- und Zeitauswahlsteuerelement](../mfc/using-custom-format-strings-in-a-date-and-time-picker-control.md). Ein häufiger Ort zum Festlegen der `OnInitDialog` benutzerdefinierten Formatzeichenfolge ist `OnInitialUpdate` die Funktion der enthaltenden Dialogklasse oder Funktion der enthaltenden Ansichtsklasse.
 
-## <a name="handling-the-dtn_formatquery-notification"></a>Behandeln der DTN_FORMATQUERY-Benachrichtigung
+## <a name="handling-the-dtn_formatquery-notification"></a>Behandeln der DTN_FORMATQUERY Benachrichtigung
 
-Wenn das Steuerelement die Format Zeichenfolge analysiert und ein Rückruf Feld findet, sendet die Anwendung DTN_FORMAT-und DTN_FORMATQUERY-Benachrichtigungs Meldungen. Die Rückruf Feld Zeichenfolge ist in den Benachrichtigungen enthalten, sodass Sie bestimmen können, welches Rückruf Feld abgefragt wird.
+Wenn das Steuerelement die Formatzeichenfolge analysiert und auf ein Rückruffeld stößt, sendet die Anwendung DTN_FORMAT und DTN_FORMATQUERY Benachrichtigungen. Die Rückruffeldzeichenfolge ist in den Benachrichtigungen enthalten, sodass Sie bestimmen können, welches Rückruffeld abgefragt wird.
 
-Die DTN_FORMATQUERY-Benachrichtigung wird gesendet, um die maximal zulässige Größe in Pixel der Zeichenfolge abzurufen, die im aktuellen Rückruf Feld angezeigt wird.
+Die DTN_FORMATQUERY Benachrichtigung wird gesendet, um die maximal zulässige Größe in Pixeln der Zeichenfolge abzurufen, die im aktuellen Rückruffeld angezeigt wird.
 
-Zum ordnungsgemäßen berechnen dieses Werts müssen Sie die Höhe und Breite der Zeichenfolge berechnen, um das Feld zu ersetzen, indem Sie die Anzeige Schriftart des Steuer Elements verwenden. Die tatsächliche Berechnung der Zeichenfolge lässt sich problemlos durch einen aufzurufenden [GetTextExtentPoint32](/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32w) Win32-Funktion erreichen. Nachdem die Größe bestimmt wurde, übergeben Sie den Wert zurück an die Anwendung, und beenden Sie die Handlerfunktion.
+Um diesen Wert richtig zu berechnen, müssen Sie die Höhe und Breite der Zeichenfolge berechnen, die durch das Feld ersetzt werden soll, indem Sie die Anzeigeschriftart des Steuerelements verwenden. Die eigentliche Berechnung der Zeichenfolge kann leicht mit einem Aufruf der [GetTextExtentPoint32](/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32w) Win32-Funktion erreicht werden. Nachdem die Größe ermittelt wurde, übergeben Sie den Wert an die Anwendung zurück, und beenden Sie die Handlerfunktion.
 
-Im folgenden Beispiel wird eine Methode zum Bereitstellen der Größe der Rückruf Zeichenfolge veranschaulicht:
+Das folgende Beispiel ist eine Methode zum Bereitstellen der Größe der Rückrufzeichenfolge:
 
 [!code-cpp[NVC_MFCControlLadenDialog#8](../mfc/codesnippet/cpp/using-callback-fields-in-a-date-and-time-picker-control_1.cpp)]
 
-Nachdem die Größe des aktuellen Rückruf Felds berechnet wurde, müssen Sie einen Wert für das Feld angeben. Dies erfolgt im Handler für die DTN_FORMAT-Benachrichtigung.
+Nachdem die Größe des aktuellen Rückruffelds berechnet wurde, müssen Sie einen Wert für das Feld angeben. Dies geschieht im Handler für die DTN_FORMAT Benachrichtigung.
 
 ## <a name="handling-the-dtn_format-notification"></a>Behandeln der DTN_FORMAT-Benachrichtigung
 
-Die DTN_FORMAT-Benachrichtigung wird von der Anwendung verwendet, um die Zeichenfolge anzufordern, die ersetzt wird. Im folgenden Beispiel wird eine mögliche Methode veranschaulicht:
+Die DTN_FORMAT Benachrichtigung wird von der Anwendung verwendet, um die Zeichenkette anzufordern, die ersetzt wird. Das folgende Beispiel veranschaulicht eine mögliche Methode:
 
 [!code-cpp[NVC_MFCControlLadenDialog#9](../mfc/codesnippet/cpp/using-callback-fields-in-a-date-and-time-picker-control_2.cpp)]
 
 > [!NOTE]
->  Der Zeiger auf die **NMDATETIMEFORMAT** -Struktur wird gefunden, indem der erste Parameter des Benachrichtigungs Handlers in den richtigen Typ umgewandelt wird.
+> Der Zeiger auf die **NMDATETIMEFORMAT-Struktur** wird gefunden, indem der erste Parameter des Benachrichtigungshandlers auf den richtigen Typ umgegossen wird.
 
 ## <a name="see-also"></a>Siehe auch
 

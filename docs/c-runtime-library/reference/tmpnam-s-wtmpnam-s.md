@@ -1,9 +1,11 @@
 ---
 title: tmpnam_s, _wtmpnam_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - tmpnam_s
 - _wtmpnam_s
+- _o__wtmpnam_s
+- _o_tmpnam_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +36,12 @@ helpviewer_keywords:
 - file names [C++], temporary
 - wtmpnam_s function
 ms.assetid: e70d76dc-49f5-4aee-bfa2-f1baa2bcd29f
-ms.openlocfilehash: 847df0d2369857d009c39b4dd61adce45094899c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e34fbe64d342205659a4b0bdaf703248e62ed733
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946041"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81362418"
 ---
 # <a name="tmpnam_s-_wtmpnam_s"></a>tmpnam_s, _wtmpnam_s
 
@@ -67,7 +70,7 @@ errno_t _wtmpnam_s(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Zeiger, der den generierten Namen enthalten wird.
 
 *sizeInChars*<br/>
@@ -81,21 +84,23 @@ Beide Funktionen geben bei Erfolg 0 zurück und bei einem Fehler eine Fehlernumm
 
 |||||
 |-|-|-|-|
-|*str*|*sizeInChars*|**Rückgabewert**|**Inhalt der**  *str*|
-|**NULL**|any|**EINVAL**|nicht geändert|
-|Not **null** (zeigt auf gültigen Speicher)|zu kurz|**ERANGE**|nicht geändert|
+|*Str*|*sizeInChars*|**Rückgabewert**|**Inhalt der***str*  |
+|**Null**|any|**Einval**|nicht geändert|
+|nicht **NULL** (zeigt auf gültigen Speicher)|zu kurz|**ERANGE**|nicht geändert|
 
-Wenn *Str* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
+Wenn *str* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben **EINVAL**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Jede dieser Funktionen gibt den Namen einer Datei zurück, die derzeit nicht vorhanden ist. **tmpnam_s** gibt einen eindeutigen Namen im angegebenen temporären Windows-Verzeichnis zurück, das von [gettemppathw](/windows/win32/api/fileapi/nf-fileapi-gettemppathw)zurückgegeben wurde. Wenn einem Dateinamen ohne Pfadinformationen ein umgekehrter Schrägstrich vorangestellt ist, wie z.B. \fname21, weist dies darauf hin, dass der Name für das aktuelle Arbeitsverzeichnis gültig ist.
+Jede dieser Funktionen gibt den Namen einer Datei zurück, die derzeit nicht vorhanden ist. **tmpnam_s** gibt einen eindeutigen Namen im angegebenen temporären Windows-Verzeichnis zurück, das von [GetTempPathW](/windows/win32/api/fileapi/nf-fileapi-gettemppathw)zurückgegeben wird. Wenn einem Dateinamen ohne Pfadinformationen ein umgekehrter Schrägstrich vorangestellt ist, wie z.B. \fname21, weist dies darauf hin, dass der Name für das aktuelle Arbeitsverzeichnis gültig ist.
 
-In **tmpnam_s**können Sie diesen generierten Dateinamen in *Str*speichern. Die maximale Länge einer Zeichenfolge, die von **tmpnam_s** zurückgegeben wird, ist **L_tmpnam_s**, die in stdio definiert ist. Micha. Wenn *Str* **null**ist, verlässt **tmpnam_s** das Ergebnis in einem internen statischen Puffer. Alle nachfolgenden Aufrufe zerstören deshalb diesen Wert. Der von **tmpnam_s** generierte Name besteht aus einem Programm generierten Dateinamen und nach dem ersten **tmpnam_s**-Befehl eine Dateierweiterung von sequenziellen Zahlen in Basis 32 (. 1-. 1vvvvvu, wenn **TMP_MAX_S** in stdio. H ist **INT_MAX**).
+Für **tmpnam_s**können Sie diesen generierten Dateinamen in *str*speichern. Die maximale Länge einer Zeichenfolge, die von **tmpnam_s** zurückgegeben wird, ist **L_tmpnam_s**, definiert in STDIO. H. Wenn *str* **NULL**ist, lässt **tmpnam_s** das Ergebnis in einem internen statischen Puffer. Alle nachfolgenden Aufrufe zerstören deshalb diesen Wert. Der von **tmpnam_s** generierte Name besteht aus einem programmgenerierten Dateinamen und nach dem ersten Aufruf **von tmpnam_s**aus einer Dateierweiterung mit fortlaufenden Nummern in Basis 32 (.1-.1vvvvvu, wenn **TMP_MAX_S** in STDIO. H ist **INT_MAX**).
 
-**tmpnam_s** verarbeitet nach Bedarf automatisch Multibyte-Zeichen folgen Argumente und erkennt multibytezeichensequenzen entsprechend der OEM-Codepage, die vom Betriebssystem abgerufen wird. **_wtmpnam_s** ist eine breit Zeichen Version von **tmpnam_s**. Das Argument und der Rückgabewert von **_wtmpnam_s** sind Zeichen folgen mit breit Zeichen. **_wtmpnam_s** und **tmpnam_s** Verhalten sich identisch, mit dem Unterschied, dass **_wtmpnam_s** keine Multibyte-Zeichen folgen verarbeitet.
+**tmpnam_s** verarbeitet automatisch Zeichenfolgenargumente mit mehreren Byte-Zeichen, wobei Multibyte-Zeichensequenzen entsprechend der VOM Betriebssystem abgerufenen OEM-Codepage erkannt werden. **_wtmpnam_s** ist eine breit gefächerte Version von **tmpnam_s**; Das Argument und der Rückgabewert von **_wtmpnam_s** sind Zeichenfolgen mit großen Zeichen. **_wtmpnam_s** und **tmpnam_s** verhalten sich identisch, außer dass **_wtmpnam_s** keine Zeichenfolgen mit mehreren Byte-Zeichen verarbeitet.
 
-Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen vorhanden) vereinfacht. Überladungen können automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Secure Template Overloads (Sichere Vorlagenüberladungen)](../../c-runtime-library/secure-template-overloads.md).
+Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen vorhanden) vereinfacht. Überladungen können automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -105,12 +110,12 @@ Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen v
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**tmpnam_s**|\<stdio.h>|
 |**_wtmpnam_s**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

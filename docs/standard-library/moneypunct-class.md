@@ -46,16 +46,16 @@ helpviewer_keywords:
 - std::moneypunct [C++], positive_sign
 - std::moneypunct [C++], thousands_sep
 ms.assetid: cf2650da-3e6f-491c-95d5-23e57f582ee6
-ms.openlocfilehash: 7960ee8b5e9ce6b27494e896e38bbf6b5256fe7e
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 3a277b2f97fd53c52b705051c30eb18faf6364d0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425424"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366252"
 ---
 # <a name="moneypunct-class"></a>moneypunct-Klasse
 
-Die Klassen Vorlage beschreibt ein Objekt, das als Gebiets Schema Aspekt dienen kann, um die Sequenzen vom Typ *CharType* zu beschreiben, die zur Darstellung eines monetären Eingabe Felds oder eines monetären Ausgabe Felds verwendet werden. Wenn der Vorlagen Parameter " *Intl* " den Wert " *true*" hat, werden internationale Konventionen beachtet.
+Die Klassenvorlage beschreibt ein Objekt, das als Gebietsschema dienen kann, um die Sequenzen des Typs *CharType* zu beschreiben, der zur Darstellung eines monetären Eingabefelds oder eines monetären Ausgabefelds verwendet wird. Wenn der Vorlagenparameter *Intl* *wahr*ist, werden internationale Konventionen eingehalten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -66,13 +66,13 @@ class moneypunct;
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
+*Chartype*\
 Der Typ, der innerhalb eines Programms verwendet wird, um Zeichen zu codieren.
 
-*Intl* -\
+*Intl*\
 Ein Flag, das festlegt, ob internationale Konventionen beachtet werden sollen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in **id** gespeichert.
 
@@ -80,20 +80,20 @@ Das konstante statische Objekt „intl“ speichert den Wert des Vorlagenparamet
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[moneypunct](#moneypunct)|Konstruktor von Objekten des Typs `moneypunct`.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.|
 |[string_type](#string_type)|Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen vom Typ `CharType` enthält.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[curr_symbol](#curr_symbol)|Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Währungssymbol verwendet werden soll.|
 |[decimal_point](#decimal_point)|Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Dezimalzeichen verwendet werden soll.|
@@ -107,20 +107,20 @@ Das konstante statische Objekt „intl“ speichert den Wert des Vorlagenparamet
 |[do_positive_sign](#do_positive_sign)|Eine geschützte virtuelle Memberfunktion, die aufgerufen wird, um eine gebietsschemaspezifische Sequenz von Elementen zurückzugeben, die als Pluszeichen verwendet werden soll.|
 |[do_thousands_sep](#do_thousands_sep)|Eine geschützte virtuelle Memberfunktion, die aufgerufen wird, um eine gebietsschemaspezifische Sequenz von Elementen zurückzugeben, die als Tausendertrennzeichen verwendet werden soll.|
 |[frac_digits](#frac_digits)|Gibt eine gebietsschemaspezifische Anzahl von Ziffern zurück, die auf der rechten Seite eines Dezimaltrennzeichens angezeigt werden sollen.|
-|[grouping](#grouping)|Gibt eine gebietsschemaspezifische Regel zur Bestimmung zurück, wie Ziffern auf der linken Seite eines Dezimaltrennzeichens gruppiert werden sollen.|
+|[Gruppierung](#grouping)|Gibt eine gebietsschemaspezifische Regel zur Bestimmung zurück, wie Ziffern auf der linken Seite eines Dezimaltrennzeichens gruppiert werden sollen.|
 |[neg_format](#neg_format)|Gibt eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit negativen Zahlen zurück.|
 |[negative_sign](#negative_sign)|Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Minuszeichen verwendet werden soll.|
 |[pos_format](#pos_format)|Gibt eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit positiven Zahlen zurück.|
 |[positive_sign](#positive_sign)|Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Pluszeichen verwendet werden soll.|
 |[thousands_sep](#thousands_sep)|Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Tausendertrennzeichen verwendet werden soll.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Gebiets Schema >
+**Header:** \<locale>
 
 **Namespace:** std
 
-## <a name="char_type"></a> moneypunct::char_type
+## <a name="moneypunctchar_type"></a><a name="char_type"></a>moneypunct::char_type
 
 Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.
 
@@ -128,11 +128,11 @@ Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwe
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für den Vorlagenparameter **CharType**.
+Der Typ stellt ein Synonym für den Vorlagenparameter **CharType** dar.
 
-## <a name="curr_symbol"></a> moneypunct::curr_symbol
+## <a name="moneypunctcurr_symbol"></a><a name="curr_symbol"></a>moneypunct::curr_symbol
 
 Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Währungssymbol verwendet werden soll.
 
@@ -144,7 +144,7 @@ string_type curr_symbol() const;
 
 Eine Zeichenfolge, die das Währungssymbol enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_curr_symbol](#do_curr_symbol) zurück.
 
@@ -169,7 +169,7 @@ int main( )
 };
 ```
 
-## <a name="decimal_point"></a> moneypunct::decimal_point
+## <a name="moneypunctdecimal_point"></a><a name="decimal_point"></a>moneypunct::decimal_point
 
 Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Dezimalzeichen verwendet werden soll.
 
@@ -181,7 +181,7 @@ CharType decimal_point() const;
 
 Eine gebietsschemaspezifische Sequenz von Elementen, die als Dezimaltrennzeichen verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_decimal_point](#do_decimal_point) zurück.
 
@@ -215,7 +215,7 @@ German_Germany.1252 international decimal point ,
 German_Germany.1252 domestic decimal point ,
 ```
 
-## <a name="do_curr_symbol"></a> moneypunct::do_curr_symbol
+## <a name="moneypunctdo_curr_symbol"></a><a name="do_curr_symbol"></a>moneypunct::do_curr_symbol
 
 Eine geschützte virtuelle Memberfunktion, die eine gebietsschemaspezifische Sequenz von Elementen zurückgibt, die als Währungssymbol verwendet werden soll.
 
@@ -231,7 +231,7 @@ Eine gebietsschemaspezifische Sequenz von Elementen, die als Dezimaltrennzeichen
 
 Informationen hierzu finden Sie im Beispiel für [curr_symbol](#curr_symbol), bei dem die virtuelle Memberfunktion durch `curr_symbol` aufgerufen wird.
 
-## <a name="do_decimal_point"></a> moneypunct::do_decimal_point
+## <a name="moneypunctdo_decimal_point"></a><a name="do_decimal_point"></a>moneypunct::do_decimal_point
 
 Eine geschützte virtuelle Memberfunktion, die eine gebietsschemaspezifische Sequenz von Elementen zurückgibt, die als Dezimaltrennzeichen verwendet werden soll.
 
@@ -247,7 +247,7 @@ Eine gebietsschemaspezifische Sequenz von Elementen, die als Dezimaltrennzeichen
 
 Informationen hierzu finden Sie im Beispiel für [decimal_point](#decimal_point), bei dem die virtuelle Memberfunktion durch `decimal_point` aufgerufen wird.
 
-## <a name="do_frac_digits"></a> moneypunct::do_frac_digits
+## <a name="moneypunctdo_frac_digits"></a><a name="do_frac_digits"></a>moneypunct::do_frac_digits
 
 Eine geschützte virtuelle Memberfunktion, die eine gebietsschemaspezifische Anzahl von Ziffern zurückgibt, die auf der rechten Seiten des Dezimaltrennzeichens angezeigt werden sollen.
 
@@ -263,7 +263,7 @@ Eine gebietsschemaspezifische Anzahl von Ziffern zurück, die auf der rechten Se
 
 Informationen hierzu finden Sie im Beispiel für [frac_digits](#frac_digits), bei dem die virtuelle Memberfunktion durch `frac_digits` aufgerufen wird.
 
-## <a name="do_grouping"></a> moneypunct::do_grouping
+## <a name="moneypunctdo_grouping"></a><a name="do_grouping"></a>moneypunct::do_grouping
 
 Eine geschützte virtuelle Memberfunktion, die eine gebietsschemaspezifische Regel zurückgibt, mit der festgelegt wird, wie Ziffern auf der linken Seite eines Dezimaltrennzeichens gruppiert werden.
 
@@ -277,9 +277,9 @@ Eine gebietsschemaspezifische Regel, die festlegt, wie Ziffern auf der linken Se
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für die [Gruppierung](#grouping), bei der die Funktion des virtuellen Members von `grouping`aufgerufen wird.
+Siehe Beispiel für das [Gruppieren](#grouping), in `grouping`dem die Funktion der virtuellen Member von aufgerufen wird.
 
-## <a name="do_neg_format"></a> moneypunct::do_neg_format
+## <a name="moneypunctdo_neg_format"></a><a name="do_neg_format"></a>moneypunct::do_neg_format
 
 Eine geschützte virtuelle Memberfunktion, die aufgerufen wird, um eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit negativen Zahlen zurückzugeben.
 
@@ -289,27 +289,27 @@ virtual pattern do_neg_format() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die geschützte virtuelle Memberfunktion gibt eine gebietsschemaspezifische Regel zurück, mit der festgelegt wird, wie für einen negativen Betrag Ausgabefelder für monetäre Werte generiert werden. Jedes der vier Elemente `pattern::field` kann die folgenden Werte aufweisen:
+Die geschützte virtuelle Memberfunktion gibt eine gebietsschemaspezifische Regel zurück, mit der festgelegt wird, wie für einen negativen Betrag Ausgabefelder für monetäre Werte generiert werden. Jedes der vier `pattern::field` Elemente von kann die Folgenden haben:
 
-- `none`, um NULL oder mehr Leerzeichen abzugleichen oder nichts zu generieren.
+- `none`, um null oder mehr Leerzeichen zu entsprechen oder nichts zu generieren.
 
-- `sign`, um ein positives oder negatives Vorzeichen abzugleichen oder zu generieren.
+- `sign`, um ein positives oder negatives Vorzeichen zu entstimmen oder zu generieren.
 
-- `space`, um NULL oder mehr Leerzeichen abzugleichen oder ein Leerzeichen zu generieren.
+- `space`, um null oder mehr Leerzeichen zu entsprechen oder einen Raum zu generieren.
 
-- `symbol`, um ein Währungssymbol abzugleichen oder zu generieren.
+- `symbol`, um ein Währungssymbol zu erhalten oder zu generieren.
 
-- `value`, um einen monetären Wert abzugleichen oder zu generieren.
+- `value`einen monetären Wert zu erzielen oder zu generieren.
 
-Komponenten eines monetären Ausgabe Felds werden generiert, und die Komponenten eines monetären Eingabe Felds werden in der Reihenfolge abgeglichen, in der diese Elemente in `pattern::field`angezeigt werden. Jeder der Werte `sign`, `symbol`, `value`und entweder `none` oder `space` muss genau einmal angezeigt werden. Der Wert `none` darf nicht zuerst angezeigt werden. Der Wert **space** darf weder an erster noch an letzter Stelle angezeigt werden. Wenn `Intl` true ist, wird die Reihenfolge `symbol`, `sign`, `none`und dann `value`.
+Komponenten eines monetären Ausgabefelds werden generiert, und Komponenten eines monetären Eingabefeldes werden in der Reihenfolge abgeglichen, in der diese Elemente in `pattern::field`angezeigt werden. Jeder der `sign`Werte `symbol` `value`, , `none` `space` und entweder oder muss genau einmal angezeigt werden. Der `none` Wert darf nicht zuerst angezeigt werden. Der Wert **space** darf weder an erster noch an letzter Stelle angezeigt werden. Wenn `Intl` true, `symbol`lautet die `sign` `none`Reihenfolge `value`, , , dann .
 
-Die Vorlagen Version von `moneypunct`\< **CharType**, **Intl**> `{`**money_base:: Symbol**, **money_base:: Sign**, **money_base:: Value**, **money_base:: None**`}`zurück.
+Die Vorlagenversion von `moneypunct`\< **CharType**, **Intl**> returns `{`**money_base::symbol**, **money_base::sign**, **money_base::value**, **money_base::none**`}`.
 
 ### <a name="example"></a>Beispiel
 
 Informationen hierzu finden Sie im Beispiel für [neg_format](#neg_format), bei dem die virtuelle Memberfunktion durch `neg_format` aufgerufen wird.
 
-## <a name="do_negative_sign"></a> moneypunct::do_negative_sign
+## <a name="moneypunctdo_negative_sign"></a><a name="do_negative_sign"></a>moneypunct::do_negative_sign
 
 Eine geschützte virtuelle Memberfunktion, die aufgerufen wird, um eine gebietsschemaspezifische Sequenz von Elementen zurückzugeben, die als Minuszeichen verwendet werden soll.
 
@@ -325,7 +325,7 @@ Eine gebietsschemaspezifische Sequenz von Elementen, die als negatives Vorzeiche
 
 Informationen hierzu finden Sie im Beispiel für [negative_sign](#negative_sign), bei dem die virtuelle Memberfunktion durch `negative_sign` aufgerufen wird.
 
-## <a name="do_pos_format"></a> moneypunct::do_pos_format
+## <a name="moneypunctdo_pos_format"></a><a name="do_pos_format"></a>moneypunct::do_pos_format
 
 Eine geschützte virtuelle Memberfunktion, die aufgerufen wird, um eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit positiven Zahlen zurückzugeben.
 
@@ -335,15 +335,15 @@ virtual pattern do_pos_format() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die geschützte virtuelle Memberfunktion gibt eine gebietsschemaspezifische Regel zurück, die festlegt, wie für einen positiven Betrag Ausgabefelder für monetäre Werte generiert werden. (Außerdem wird festgelegt, wie die Komponenten eines monetären Eingabe Felds abgeglichen werden.) Die Codierung ist dieselbe wie für [Do_neg_format](#do_neg_format).
+Die geschützte virtuelle Memberfunktion gibt eine gebietsschemaspezifische Regel zurück, die festlegt, wie für einen positiven Betrag Ausgabefelder für monetäre Werte generiert werden. (Außerdem wird bestimmt, wie die Komponenten eines monetären Eingabefelds übereinstimmen.) Die Codierung ist die gleiche wie bei [do_neg_format](#do_neg_format).
 
-Die Vorlagen Version von Moneypunct\< **CharType**, **inputlterator**> gibt `{`**money_base:: Symbol**, **money_base:: Sign**, **money_base:: Value**, **money_base:: None**`}`zurück.
+Die Vorlagenversion von moneypunct\< **CharType**, **Inputlterator**> returns `{`**money_base::symbol**, **money_base::sign**, **money_base::value**, **money_base::none**`}`.
 
 ### <a name="example"></a>Beispiel
 
 Informationen hierzu finden Sie im Beispiel für [pos_format](#pos_format), bei dem die virtuelle Memberfunktion durch `pos_format` aufgerufen wird.
 
-## <a name="do_positive_sign"></a> moneypunct::do_positive_sign
+## <a name="moneypunctdo_positive_sign"></a><a name="do_positive_sign"></a>moneypunct::do_positive_sign
 
 Eine geschützte virtuelle Memberfunktion, die eine gebietsschemaspezifische Sequenz von Elementen zurückgibt, die als positives Vorzeichen verwendet werden soll.
 
@@ -359,7 +359,7 @@ Eine gebietsschemaspezifische Sequenz von Elementen, die als positives Vorzeiche
 
 Informationen hierzu finden Sie im Beispiel für [positive_sign](#positive_sign), bei dem die virtuelle Memberfunktion durch `positive_sign` aufgerufen wird.
 
-## <a name="do_thousands_sep"></a> moneypunct::do_thousands_sep
+## <a name="moneypunctdo_thousands_sep"></a><a name="do_thousands_sep"></a>moneypunct::do_thousands_sep
 
 Eine geschützte virtuelle Memberfunktion, die ein gebietsschemaspezifisches Element zurückgibt, das auf der linken Seite eines Dezimalzeichens als Gruppentrennzeichen verwendet werden soll.
 
@@ -375,7 +375,7 @@ Ein gebietsschemaspezifisches Element, das auf der linken Seite eines Dezimalzei
 
 Informationen hierzu finden Sie im Beispiel für [thousands_sep](#thousands_sep), bei dem die virtuelle Memberfunktion durch `thousands_sep` aufgerufen wird.
 
-## <a name="frac_digits"></a> moneypunct::frac_digits
+## <a name="moneypunctfrac_digits"></a><a name="frac_digits"></a>moneypunct::frac_digits
 
 Gibt eine gebietsschemaspezifische Anzahl von Ziffern zurück, die auf der rechten Seite eines Dezimaltrennzeichens angezeigt werden sollen.
 
@@ -387,7 +387,7 @@ int frac_digits() const;
 
 Eine gebietsschemaspezifische Anzahl von Ziffern zurück, die auf der rechten Seiten des Dezimaltrennzeichens angezeigt werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_frac_digits](#do_frac_digits) zurück.
 
@@ -444,7 +444,7 @@ German_Germany.1252 domestic frac_digits
 to the right of the radix character: 2
 ```
 
-## <a name="grouping"></a> moneypunct::grouping
+## <a name="moneypunctgrouping"></a><a name="grouping"></a>moneypunct::gruppierung
 
 Gibt eine gebietsschemaspezifische Regel zur Bestimmung zurück, wie Ziffern auf der linken Seite eines Dezimaltrennzeichens gruppiert werden sollen.
 
@@ -456,7 +456,7 @@ string grouping() const;
 
 Eine gebietsschemaspezifische Regel, die festlegt, wie Ziffern auf der linken Seite eines Dezimaltrennzeichens gruppiert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_grouping](#do_grouping) zurück.
 
@@ -513,7 +513,7 @@ German_Germany.1252 domestic frac_digits
 to the right of the radix character: 2
 ```
 
-## <a name="moneypunct"></a> moneypunct::moneypunct
+## <a name="moneypunctmoneypunct"></a><a name="moneypunct"></a>moneypunct::moneypunct
 
 Konstruktor von Objekten des Typs `moneypunct`.
 
@@ -523,24 +523,24 @@ explicit moneypunct(size_t _Refs = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*_Refs*\
+*_refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die möglichen Werte für den *_Refs* -Parameter und ihre Bedeutung lauten:
+Die möglichen Werte für den *parameter _Refs* und deren Signifikanz sind:
 
 - 0: Die Lebensdauer des Objekts wird von den Gebietsschemas verwaltet, in denen es enthalten ist.
 
 - 1: Die Lebensdauer des Objekts muss manuell verwaltet werden.
 
-- \> 1: diese Werte sind nicht definiert.
+- \>1: Diese Werte sind nicht definiert.
 
 Direkte Beispiele sind nicht möglich, da der Destruktor geschützt ist.
 
 Der Konstruktor initialisiert sein Basisobjekt mit [locale::facet](../standard-library/locale-class.md#facet_class)(_ *Refs*).
 
-## <a name="neg_format"></a> moneypunct::neg_format
+## <a name="moneypunctneg_format"></a><a name="neg_format"></a>moneypunct::neg_format
 
 Gibt eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit negativen Zahlen zurück.
 
@@ -552,7 +552,7 @@ pattern neg_format() const;
 
 Eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit negativen Beträgen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_neg_format](#do_neg_format) zurück.
 
@@ -588,7 +588,7 @@ int main( ) {
 }
 ```
 
-## <a name="negative_sign"></a> moneypunct::negative_sign
+## <a name="moneypunctnegative_sign"></a><a name="negative_sign"></a>moneypunct::negative_sign
 
 Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Minuszeichen verwendet werden soll.
 
@@ -600,7 +600,7 @@ string_type negative_sign() const;
 
 Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Minuszeichen verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_negative_sign](#do_negative_sign) zurück.
 
@@ -650,7 +650,7 @@ French_France.1252 international negative sign: -
 French_France.1252 domestic negative sign: -
 ```
 
-## <a name="pos_format"></a> moneypunct::pos_format
+## <a name="moneypunctpos_format"></a><a name="pos_format"></a>moneypunct::pos_format
 
 Gibt eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit positiven Zahlen zurück.
 
@@ -662,7 +662,7 @@ pattern pos_format() const;
 
 Eine gebietsschemaspezifische Regel zur Formatierung von Ausgaben mit positiven Beträgen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_pos_format](#do_pos_format) zurück.
 
@@ -698,7 +698,7 @@ int main() {
 }
 ```
 
-## <a name="positive_sign"></a> moneypunct::positive_sign
+## <a name="moneypunctpositive_sign"></a><a name="positive_sign"></a>moneypunct::positive_sign
 
 Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Pluszeichen verwendet werden soll.
 
@@ -710,7 +710,7 @@ string_type positive_sign() const;
 
 Eine gebietsschemaspezifische Sequenz von Elementen, die als positive Vorzeichen verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_positive_sign](#do_positive_sign) zurück.
 
@@ -760,7 +760,7 @@ French_France.1252 international positive sign:
 French_France.1252 domestic positive sign:
 ```
 
-## <a name="string_type"></a> moneypunct::string_type
+## <a name="moneypunctstring_type"></a><a name="string_type"></a>moneypunct::string_type
 
 Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen des Typs **CharType** enthält.
 
@@ -768,11 +768,11 @@ Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen des Typs **CharType** ent
 typedef basic_string<CharType, Traits, Allocator> string_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt eine Spezialisierung der Klassen Vorlagen [basic_string](../standard-library/basic-string-class.md) , deren Objekte Kopien der Interpunktions Sequenzen speichern können.
+Der Typ beschreibt eine Spezialisierung von Klassenvorlagen [basic_string](../standard-library/basic-string-class.md) deren Objekte Kopien der Satzzeichensequenzen speichern können.
 
-## <a name="thousands_sep"></a> moneypunct::thousands_sep
+## <a name="moneypunctthousands_sep"></a><a name="thousands_sep"></a>moneypunct::thousands_sep
 
 Gibt eine gebietsschemaspezifische Sequenz von Elementen zurück, die als Tausendertrennzeichen verwendet werden soll.
 
@@ -784,7 +784,7 @@ CharType thousands_sep() const;
 
 Eine gebietsschemaspezifische Sequenz von Elementen, die als Tausendertrennzeichen verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt [do_thousands_sep](#do_thousands_sep) zurück.
 
@@ -835,5 +835,5 @@ English_Canada.1252 domestic thousands separator: ,
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<locale>](../standard-library/locale.md)\
+[\<Gebietsschema>](../standard-library/locale.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

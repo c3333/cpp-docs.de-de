@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CPropertyPage [MFC], SetModified
 - CPropertyPage [MFC], m_psp
 ms.assetid: d9000a21-aa81-4530-85d9-f43432afb4dc
-ms.openlocfilehash: 6a6223708c83f7a5b3e6532a2016660d558f8270
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 816948ea17f674c3cd693331502df33cce62610c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426438"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364000"
 ---
 # <a name="cpropertypage-class"></a>CPropertyPage-Klasse
 
@@ -61,47 +61,47 @@ class CPropertyPage : public CDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPropertyPage:: CPropertyPage](#cpropertypage)|Erstellt ein `CPropertyPage`-Objekt.|
+|[CPropertyPage::CPropertyPage](#cpropertypage)|Erstellt ein `CPropertyPage`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPropertyPage:: canceldeclose](#canceltoclose)|Ändert die Schaltfläche OK, um den Lesevorgang zu schließen, und deaktiviert die Schaltfläche Abbrechen nach einer nicht BEHEB baren Änderung auf der Seite eines modalen Eigenschaften Blatts.|
-|[CPropertyPage:: Construct](#construct)|Erstellt ein `CPropertyPage`-Objekt. Verwenden Sie `Construct`, wenn Sie die Parameter zur Laufzeit angeben möchten, oder wenn Sie Arrays verwenden.|
-|[CPropertyPage:: getpsp](#getpsp)|Ruft die Windows- [PROPSHEETPAGE](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2) -Struktur ab, die dem `CPropertyPage` Objekt zugeordnet ist.|
-|[CPropertyPage:: OnApply](#onapply)|Wird von Framework aufgerufen, wenn auf die Schaltfläche "jetzt anwenden" geklickt wird.|
-|[CPropertyPage:: OnCancel](#oncancel)|Wird von Framework aufgerufen, wenn auf die Schaltfläche Abbrechen geklickt wird.|
-|[CPropertyPage:: OnKillActive](#onkillactive)|Wird von Framework aufgerufen, wenn die aktuelle Seite nicht mehr die aktive Seite ist. Führen Sie hier die Datenüberprüfung aus.|
-|[CPropertyPage:: OnOK](#onok)|Wird von Framework aufgerufen, wenn auf die Schaltfläche OK, jetzt anwenden oder schließen geklickt wird.|
-|[CPropertyPage:: OnQueryCancel](#onquerycancel)|Wird von Framework aufgerufen, wenn auf die Schaltfläche Abbrechen geklickt wird, und bevor der Abbruch stattfindet.|
-|[CPropertyPage:: onreset](#onreset)|Wird von Framework aufgerufen, wenn auf die Schaltfläche Abbrechen geklickt wird.|
-|[CPropertyPage:: OnSetActive](#onsetactive)|Wird von Framework aufgerufen, wenn die Seite zur aktiven Seite gemacht wird.|
-|[CPropertyPage:: onwizardback](#onwizardback)|Wird von Framework aufgerufen, wenn auf die Schaltfläche "zurück" während der Verwendung eines Eigenschaften Blatts vom Typ "Wizard" geklickt wird.|
-|[CPropertyPage:: onwizardfinish](#onwizardfinish)|Wird von Framework aufgerufen, wenn auf die Schaltfläche Fertigstellen während der Verwendung eines Eigenschaften Blatts vom Typ Wizard geklickt wird.|
-|[CPropertyPage:: onwizardnext](#onwizardnext)|Wird von Framework aufgerufen, wenn auf die Schaltfläche Weiter geklickt wird, während ein Eigenschaften Blatt des Assistenten angezeigt wird.|
-|[CPropertyPage:: querysiblings](#querysiblings)|Leitet die Nachricht an jede Seite des Eigenschaften Blatts weiter.|
-|[CPropertyPage:: SetModified](#setmodified)|Ruft auf, um die Schaltfläche jetzt anwenden zu aktivieren oder zu deaktivieren.|
+|[CPropertyPage::AbbrechenToClose](#canceltoclose)|Ändert die Schaltfläche OK, um Schließen zu lesen, und deaktiviert die Schaltfläche Abbrechen, nachdem die Seite eines modalen Eigenschaftenblatts nicht wiederhergestellt werden kann.|
+|[CPropertyPage::Konstrukt](#construct)|Erstellt ein `CPropertyPage`-Objekt. Verwenden `Construct` Sie diese Option, wenn Sie Ihre Parameter zur Laufzeit angeben möchten oder wenn Sie Arrays verwenden.|
+|[CPropertyPage::GetPSP](#getpsp)|Ruft die dem `CPropertyPage` Objekt zugeordnete Windows [PROPSHEETPAGE-Struktur](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2) ab.|
+|[CPropertyPage::OnApply](#onapply)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Jetzt anwenden geklickt wird.|
+|[CPropertyPage::OnCancel](#oncancel)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Abbrechen geklickt wird.|
+|[CPropertyPage::OnKillActive](#onkillactive)|Wird vom Framework aufgerufen, wenn die aktuelle Seite nicht mehr die aktive Seite ist. Führen Sie hier die Datenvalidierung durch.|
+|[CPropertyPage::OnOK](#onok)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche OK, Jetzt anwenden oder Schließen geklickt wird.|
+|[CPropertyPage::OnQuerycancel](#onquerycancel)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Abbrechen geklickt wird und bevor der Abbruch erfolgt ist.|
+|[CPropertyPage::Zurücksetzen](#onreset)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Abbrechen geklickt wird.|
+|[CPropertyPage::OnSetActive](#onsetactive)|Wird vom Framework aufgerufen, wenn die Seite zur aktiven Seite gemacht wird.|
+|[CPropertyPage::OnWizardBack](#onwizardback)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Zurück geklickt wird, während ein Eigenschaftenblatt vom Assistenten-Typ verwendet wird.|
+|[CPropertyPage::OnWizardFinish](#onwizardfinish)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Fertig stellen geklickt wird, während ein Eigenschaftenblatt vom Assistenten-Typ verwendet wird.|
+|[CPropertyPage::OnWizardNext](#onwizardnext)|Wird vom Framework aufgerufen, wenn auf die Schaltfläche Weiter geklickt wird, während ein Eigenschaftenblatt vom Assistenten-Typ verwendet wird.|
+|[CPropertyPage::QuerySiblings](#querysiblings)|Leitet die Nachricht an jede Seite des Eigenschaftenblatts weiter.|
+|[CPropertyPage::SetModified](#setmodified)|Rufen Sie an, um die Schaltfläche Jetzt anwenden zu aktivieren oder zu deaktivieren.|
 
-### <a name="public-data-members"></a>Öffentliche Datenelemente
+### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPropertyPage:: m_psp](#m_psp)|Die Windows- [PROPSHEETPAGE](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2) -Struktur. Ermöglicht den Zugriff auf grundlegende Eigenschaften Seiten Parameter.|
+|[CPropertyPage::m_psp](#m_psp)|Die Windows [PROPSHEETPAGE-Struktur.](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2) Bietet Zugriff auf grundlegende Eigenschaftenseitenparameter.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wie bei Standard Dialogfeldern leiten Sie eine Klasse von `CPropertyPage` für jede Seite in Ihrem Eigenschaften Blatt ab. Um `CPropertyPage`von abgeleiteten Objekten zu verwenden, erstellen Sie zunächst ein [CPropertySheet](../../mfc/reference/cpropertysheet-class.md) -Objekt, und erstellen Sie dann ein-Objekt für jede Seite, die in das Eigenschaften Blatt übergeht. Rufen Sie [CPropertySheet:: addPage](../../mfc/reference/cpropertysheet-class.md#addpage) für jede Seite im Blatt auf, und zeigen Sie dann das Eigenschaften Blatt durch Aufrufen von [CPropertySheet::D omodal](../../mfc/reference/cpropertysheet-class.md#domodal) für ein modales Eigenschaften Blatt oder [CPropertySheet:: Create](../../mfc/reference/cpropertysheet-class.md#create) für ein nicht modales Eigenschaften Blatt an.
+Wie bei Standarddialogfeldern leiten Sie `CPropertyPage` eine Klasse für jede Seite in Ihrem Eigenschaftenblatt ab. Um `CPropertyPage`-abgeleitete Objekte zu verwenden, erstellen Sie zuerst ein [CPropertySheet-Objekt,](../../mfc/reference/cpropertysheet-class.md) und erstellen Sie dann ein Objekt für jede Seite, die in das Eigenschaftenblatt geht. Rufen Sie [CPropertySheet::AddPage](../../mfc/reference/cpropertysheet-class.md#addpage) für jede Seite im Blatt auf, und zeigen Sie dann das Eigenschaftenblatt an, indem Sie [CPropertySheet::DoModal](../../mfc/reference/cpropertysheet-class.md#domodal) für ein modales Eigenschaftenblatt oder [CPropertySheet::Create](../../mfc/reference/cpropertysheet-class.md#create) für ein modusloses Eigenschaftenblatt aufrufen.
 
-Sie können ein Dialogfeld vom Typ "Registerkarte" erstellen, das als Assistent bezeichnet wird, der aus einem Eigenschaften Blatt mit einer Sequenz von Eigenschaften Seiten besteht, die den Benutzer durch die Schritte eines Vorgangs leiten, wie z. b. das Einrichten eines Geräts oder das Erstellen eines Newsletter. Im Dialogfeld der Registerkarte "Wizard-Type" sind auf den Eigenschaften Seiten keine Registerkarten enthalten, und es ist jeweils nur eine Eigenschaften Seite sichtbar. Anstatt die Schaltflächen "OK" und "jetzt anwenden" zu verwenden, verfügt das Dialogfeld "Wizard-Type Registerkarte" über eine Schaltfläche "zurück", eine Schaltfläche "weiter" oder "Fertigstellen"
+Sie können einen Typ von Registerkartendialogfeld namens Assistent erstellen, der aus einem Eigenschaftenblatt mit einer Sequenz von Eigenschaftenseiten besteht, die den Benutzer durch die Schritte eines Vorgangs führen, z. B. das Einrichten eines Geräts oder das Erstellen eines Newsletters. In einem Dialogfeld für den Assistenten-Registerkarte verfügen die Eigenschaftenseiten nicht über Registerkarten, und jeweils ist jeweils nur eine Eigenschaftenseite sichtbar. Anstatt über die Schaltflächen OK und Jetzt anwenden zu verfügen, verfügt das Dialogfeld "Registerkarte" vom Assistenten-Typ über eine Schaltfläche "Zurück", eine Schaltfläche "Weiter" oder "Beenden" und die Schaltfläche Abbrechen.
 
-Weitere Informationen zum Einrichten eines Eigenschaften Blatts als Assistent finden Sie unter [CPropertySheet::](../../mfc/reference/cpropertysheet-class.md#setwizardmode)"". Weitere Informationen zur Verwendung von `CPropertyPage` Objekten finden Sie im Artikel [Eigenschaften Blätter und Eigenschaften Seiten](../../mfc/property-sheets-and-property-pages-in-mfc.md).
+Weitere Informationen zum Einrichten eines Eigenschaftenblatts als Assistent finden Sie unter [CPropertySheet::SetWizardMode](../../mfc/reference/cpropertysheet-class.md#setwizardmode). Weitere Informationen zur `CPropertyPage` Verwendung von Objekten finden Sie im Artikel [Eigenschaftenblätter und Eigenschaftenseiten](../../mfc/property-sheets-and-property-pages-in-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -111,31 +111,31 @@ Weitere Informationen zum Einrichten eines Eigenschaften Blatts als Assistent fi
 
 `CPropertyPage`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdlgs. h
+**Kopf:** afxdlgs.h
 
-##  <a name="canceltoclose"></a>CPropertyPage:: canceldeclose
+## <a name="cpropertypagecanceltoclose"></a><a name="canceltoclose"></a>CPropertyPage::AbbrechenToClose
 
-Diese Funktion wird aufgerufen, nachdem eine nicht BEHEB Bare Änderung an den Daten auf einer Seite eines modalen Eigenschaften Blatts vorgenommen wurde.
+Rufen Sie diese Funktion auf, nachdem eine nicht wiederherstellbare Änderung an den Daten auf einer Seite eines modalen Eigenschaftenblatts vorgenommen wurde.
 
 ```
 void CancelToClose();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion ändert die Schaltfläche OK, um die Schaltfläche Abbrechen zu schließen und zu deaktivieren. Diese Änderung warnt den Benutzer, dass eine Änderung permanent ist und die Änderungen nicht abgebrochen werden können.
+Diese Funktion ändert die Schaltfläche OK in Schließen und Deaktivieren der Schaltfläche Abbrechen. Diese Änderung warnt den Benutzer, dass eine Änderung dauerhaft ist und die Änderungen nicht abgebrochen werden können.
 
-Die `CancelToClose` Member-Funktion führt in einem nicht modalem Eigenschaften Blatt keine Aktion aus, da ein nicht modalem Eigenschaften Blatt standardmäßig nicht über die Schaltfläche Abbrechen verfügt.
+Die `CancelToClose` Memberfunktion führt in einem moduslosen Eigenschaftenblatt nichts aus, da ein modusloses Eigenschaftenblatt standardmäßig nicht über eine Schaltfläche Abbrechen verfügt.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CPropertyPage:: querysiblings](#querysiblings).
+  Siehe Beispiel für [CPropertyPage::QuerySiblings](#querysiblings).
 
-##  <a name="construct"></a>CPropertyPage:: Construct
+## <a name="cpropertypageconstruct"></a><a name="construct"></a>CPropertyPage::Konstrukt
 
-Diese Member-Funktion zum Erstellen eines `CPropertyPage`-Objekts aufzurufen.
+Rufen Sie diese Memberfunktion auf, um ein `CPropertyPage` Objekt zu erstellen.
 
 ```
 void Construct(
@@ -161,40 +161,40 @@ void Construct(
 
 ### <a name="parameters"></a>Parameter
 
-*nidtemplate*<br/>
-ID der Vorlage, die für diese Seite verwendet wird.
+*nIDTemplate*<br/>
+ID der für diese Seite verwendeten Vorlage.
 
-*nidcaption*<br/>
-ID des Namens, der auf der Registerkarte für diese Seite platziert werden soll. Wenn der Wert 0 ist, wird der Name aus der Dialogfeld Vorlage für diese Seite entnommen.
+*nIDCaption*<br/>
+ID des Namens, der auf der Registerkarte für diese Seite platziert werden soll. Wenn 0, wird der Name aus der Dialogvorlage für diese Seite übernommen.
 
-*lpsztemplatename*<br/>
-Enthält eine NULL-terminierte Zeichenfolge, die den Namen einer Vorlagen Ressource ist.
+*lpszTemplateName*<br/>
+Enthält eine null-terminierte Zeichenfolge, die der Name einer Vorlagenressource ist.
 
-*nidheadertitle*<br/>
-ID des Namens, der an der Titel Position des Eigenschaften Seiten Headers platziert werden soll. Standardmäßig ist der Wert 0.
+*nIDHeaderTitle*<br/>
+ID des Namens, der am Titelspeicherort des Eigenschaftenseitenkopfes platziert werden soll. Standardmäßig 0.
 
-*nidheaderuntertitel*<br/>
-ID des Namens, der in der Untertitel Position des Header der Eigenschaften Seite platziert werden soll. Standardmäßig ist der Wert 0.
+*nIDHeaderSubTitle*<br/>
+ID des Namens, der am Untertitelspeicherort des Eigenschaftenseitenkopfes platziert werden soll. Standardmäßig 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das-Objekt wird angezeigt, nachdem alle der folgenden Bedingungen erfüllt sind:
+Das Objekt wird angezeigt, nachdem alle folgenden Bedingungen erfüllt sind:
 
-- Die Seite wurde mithilfe von [CPropertySheet:: addPage](../../mfc/reference/cpropertysheet-class.md#addpage)zu einem Eigenschaften Blatt hinzugefügt.
+- Die Seite wurde einem Eigenschaftenblatt mit [CPropertySheet::AddPage](../../mfc/reference/cpropertysheet-class.md#addpage)hinzugefügt.
 
-- Die [DoModal](../../mfc/reference/cpropertysheet-class.md#domodal) -oder [Create](../../mfc/reference/cpropertysheet-class.md#create) -Funktion des Eigenschaften Blatts wurde aufgerufen.
+- Die [Funktion DoModal](../../mfc/reference/cpropertysheet-class.md#domodal) oder [Create](../../mfc/reference/cpropertysheet-class.md#create) des Eigenschaftenblatts wurde aufgerufen.
 
-- Der Benutzer hat diese Seite ausgewählt (im Registerkarten Format).
+- Der Benutzer hat diese Seite ausgewählt (tabbed to).
 
-Ruft `Construct` auf, wenn einer der anderen Klassenkonstruktoren nicht aufgerufen wurde. Die `Construct` Member-Funktion ist flexibel, da Sie die Parameter Anweisung leer lassen und dann an einem beliebigen Punkt im Code mehrere Parameter und die Erstellung angeben können.
+Rufen `Construct` Sie auf, wenn einer der anderen Klassenkonstruktoren nicht aufgerufen wurde. Die `Construct` Memberfunktion ist flexibel, da Sie die Parameteranweisung leer lassen und dann mehrere Parameter und Konstruktionen an einem beliebigen Punkt im Code angeben können.
 
-Sie müssen `Construct` verwenden, wenn Sie mit Arrays arbeiten, und Sie müssen `Construct` für jedes Element des Arrays abrufen, damit den Datenmembern ordnungsgemäße Werte zugewiesen werden.
+Sie müssen `Construct` verwenden, wenn Sie mit Arrays arbeiten, und Sie müssen für jedes Element des Arrays aufrufen, `Construct` damit den Datenmembern die richtigen Werte zugewiesen werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#112](../../mfc/codesnippet/cpp/cpropertypage-class_1.cpp)]
 
-##  <a name="cpropertypage"></a>CPropertyPage:: CPropertyPage
+## <a name="cpropertypagecpropertypage"></a><a name="cpropertypage"></a>CPropertyPage::CPropertyPage
 
 Erstellt ein `CPropertyPage`-Objekt.
 
@@ -228,40 +228,40 @@ CPropertyPage(
 
 ### <a name="parameters"></a>Parameter
 
-*nidtemplate*<br/>
-ID der Vorlage, die für diese Seite verwendet wird.
+*nIDTemplate*<br/>
+ID der für diese Seite verwendeten Vorlage.
 
-*nidcaption*<br/>
-ID des Namens, der auf der Registerkarte für diese Seite platziert werden soll. Wenn der Wert 0 ist, wird der Name aus der Dialogfeld Vorlage für diese Seite entnommen.
+*nIDCaption*<br/>
+ID des Namens, der auf der Registerkarte für diese Seite platziert werden soll. Wenn 0, wird der Name aus der Dialogvorlage für diese Seite übernommen.
 
 *dwSize*<br/>
-*lpsztemplatename* Verweist auf eine Zeichenfolge, die den Namen der Vorlage für diese Seite enthält. Darf nicht NULL sein.
+*lpszTemplateName* Zeigt auf eine Zeichenfolge, die den Namen der Vorlage für diese Seite enthält. Lässt keine NULL-Werte zu.
 
-*nidheadertitle*<br/>
-ID des Namens, der an der Titel Position des Eigenschaften Seiten Headers platziert werden soll.
+*nIDHeaderTitle*<br/>
+ID des Namens, der am Titelspeicherort des Eigenschaftenseitenkopfes platziert werden soll.
 
-*nidheaderuntertitel*<br/>
-ID des Namens, der in der Untertitel Position des Header der Eigenschaften Seite platziert werden soll.
+*nIDHeaderSubTitle*<br/>
+ID des Namens, der am Untertitelspeicherort des Eigenschaftenseitenkopfes platziert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das-Objekt wird angezeigt, nachdem alle der folgenden Bedingungen erfüllt sind:
+Das Objekt wird angezeigt, nachdem alle folgenden Bedingungen erfüllt sind:
 
-- Die Seite wurde mithilfe von [CPropertySheet:: addPage](../../mfc/reference/cpropertysheet-class.md#addpage)zu einem Eigenschaften Blatt hinzugefügt.
+- Die Seite wurde einem Eigenschaftenblatt mit [CPropertySheet::AddPage](../../mfc/reference/cpropertysheet-class.md#addpage)hinzugefügt.
 
-- Die [DoModal](../../mfc/reference/cpropertysheet-class.md#domodal) -oder [Create](../../mfc/reference/cpropertysheet-class.md#create) -Funktion des Eigenschaften Blatts wurde aufgerufen.
+- Die [Funktion DoModal](../../mfc/reference/cpropertysheet-class.md#domodal) oder [Create](../../mfc/reference/cpropertysheet-class.md#create) des Eigenschaftenblatts wurde aufgerufen.
 
-- Der Benutzer hat diese Seite ausgewählt (im Registerkarten Format).
+- Der Benutzer hat diese Seite ausgewählt (tabbed to).
 
-Wenn Sie über mehrere Parameter verfügen (z. b. Wenn Sie ein Array verwenden), verwenden Sie [CPropertySheet:: Construct](../../mfc/reference/cpropertysheet-class.md#construct) anstelle von `CPropertyPage`.
+Wenn Sie über mehrere Parameter verfügen (z. B. wenn Sie ein `CPropertyPage`Array verwenden), verwenden Sie [CPropertySheet::Construct](../../mfc/reference/cpropertysheet-class.md#construct) anstelle von .
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#113](../../mfc/codesnippet/cpp/cpropertypage-class_2.cpp)]
 
-##  <a name="getpsp"></a>CPropertyPage:: getpsp
+## <a name="cpropertypagegetpsp"></a><a name="getpsp"></a>CPropertyPage::GetPSP
 
-Ruft die Windows- [PROPSHEETPAGE](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2) -Struktur ab, die dem `CPropertyPage` Objekt zugeordnet ist.
+Ruft die dem `CPropertyPage` Objekt zugeordnete Windows [PROPSHEETPAGE-Struktur](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2) ab.
 
 ```
 const PROPSHEETPAGE& GetPSP() const;
@@ -271,29 +271,29 @@ PROPSHEETPAGE& GetPSP();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf die `PROPSHEETPAGE`-Struktur.
+Ein Verweis `PROPSHEETPAGE` auf die Struktur.
 
-##  <a name="m_psp"></a>CPropertyPage:: m_psp
+## <a name="cpropertypagem_psp"></a><a name="m_psp"></a>CPropertyPage::m_psp
 
-`m_psp` ist eine Struktur, deren Elemente die Merkmale von [PROPSHEETPAGE](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2)speichern.
+`m_psp`ist eine Struktur, deren Member die Eigenschaften von [PROPSHEETPAGE](/windows/win32/api/prsht/ns-prsht-propsheetpagea_v2)speichern.
 
 ```
 PROPSHEETPAGE m_psp;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Struktur, um die Darstellung einer Eigenschaften Seite zu initialisieren, nachdem Sie erstellt wurde.
+Verwenden Sie diese Struktur, um die Darstellung einer Eigenschaftenseite nach dem Erstellen zu initialisieren.
 
-Weitere Informationen zu dieser Struktur, einschließlich einer Auflistung ihrer Member, finden Sie unter `PROPSHEETPAGE` in der Windows SDK.
+Weitere Informationen zu dieser Struktur, einschließlich einer `PROPSHEETPAGE` Liste ihrer Mitglieder, finden Sie im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#128](../../mfc/codesnippet/cpp/cpropertypage-class_3.cpp)]
 
-##  <a name="onapply"></a>CPropertyPage:: OnApply
+## <a name="cpropertypageonapply"></a><a name="onapply"></a>CPropertyPage::OnApply
 
-Diese Member-Funktion wird vom Framework aufgerufen, wenn der Benutzer die Schaltfläche "OK" oder "jetzt anwenden" auswählt.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer die Schaltfläche OK oder Jetzt anwenden wählt.
 
 ```
 virtual BOOL OnApply();
@@ -301,41 +301,41 @@ virtual BOOL OnApply();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Änderungen akzeptiert werden. andernfalls 0.
+Ein Wert ungleich Null, wenn die Änderungen akzeptiert werden; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Framework diese Funktion aufruft, werden Änderungen, die an allen Eigenschaften Seiten im Eigenschaften Blatt vorgenommen werden, akzeptiert, das Eigenschaften Blatt behält den Fokus, und `OnApply` gibt true zurück (den Wert 1). Bevor `OnApply` vom Framework aufgerufen werden kann, müssen Sie [SetModified](#setmodified) aufgerufen und den Parameter auf true festgelegt haben. Dadurch wird die Schaltfläche jetzt anwenden aktiviert, sobald der Benutzer eine Änderung auf der Eigenschaften Seite vornimmt.
+Wenn das Framework diese Funktion aufruft, werden Änderungen akzeptiert, die auf allen Eigenschaftenseiten im Eigenschaftenblatt vorgenommen wurden, das Eigenschaftenblatt behält den Fokus bei und `OnApply` gibt TRUE (den Wert 1) zurück. Bevor `OnApply` Sie vom Framework aufgerufen werden können, müssen Sie [SetModified](#setmodified) aufgerufen und den Parameter auf TRUE festgelegt haben. Dadurch wird die Schaltfläche Jetzt anwenden aktiviert, sobald der Benutzer eine Änderung auf der Eigenschaftenseite vornimmt.
 
-Überschreiben Sie diese Member-Funktion, um anzugeben, welche Aktion das Programm durchführt, wenn der Benutzer auf die Schaltfläche jetzt anwenden klickt Beim Überschreiben sollte die Funktion true zurückgeben, um Änderungen zu akzeptieren, und false, um zu verhindern, dass Änderungen wirksam werden.
+Überschreiben Sie diese Memberfunktion, um anzugeben, welche Aktion Ihr Programm ausführt, wenn der Benutzer auf die Schaltfläche Jetzt anwenden klickt. Beim Überschreiben sollte die Funktion TRUE zurückgeben, um Änderungen und FALSE zu akzeptieren, um zu verhindern, dass Änderungen wirksam werden.
 
-Die Standard Implementierung von `OnApply` `OnOK`aufruft.
+Die Standardimplementierung `OnApply` `OnOK`von Aufrufen .
 
-Weitere Informationen zu Benachrichtigungs Meldungen, die gesendet werden, wenn der Benutzer die Schaltfläche "jetzt anwenden" oder "OK" in einem Eigenschaften Blatt drückt, finden Sie unter [PSN_APPLY](/windows/win32/Controls/psn-apply) im Windows SDK.
+Weitere Informationen zu Benachrichtigungen, die gesendet werden, wenn der Benutzer die Schaltfläche Jetzt oder OK in einem Eigenschaftenblatt drücken, finden Sie unter [PSN_APPLY](/windows/win32/Controls/psn-apply) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Sehen Sie sich das Beispiel für [CPropertyPage:: OnOK](#onok)an.
+  Siehe Beispiel für [CPropertyPage::OnOK](#onok).
 
-##  <a name="oncancel"></a>CPropertyPage:: OnCancel
+## <a name="cpropertypageoncancel"></a><a name="oncancel"></a>CPropertyPage::OnCancel
 
-Diese Member-Funktion wird von Framework aufgerufen, wenn die Schaltfläche Abbrechen ausgewählt wird.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn die Schaltfläche Abbrechen ausgewählt ist.
 
 ```
 virtual void OnCancel();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Member-Funktion, um Schaltflächen Aktionen für die Ausführung Der Standardwert negiert alle Änderungen, die vorgenommen wurden.
+Überschreiben Sie diese Memberfunktion, um Schaltflächenaktionen abbrechen auszuführen. Der Standardwert negiert alle vorgenommenen Änderungen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#114](../../mfc/codesnippet/cpp/cpropertypage-class_4.cpp)]
 
-##  <a name="onkillactive"></a>CPropertyPage:: OnKillActive
+## <a name="cpropertypageonkillactive"></a><a name="onkillactive"></a>CPropertyPage::OnKillActive
 
-Diese Member-Funktion wird von Framework aufgerufen, wenn die Seite nicht mehr die aktive Seite ist.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn die Seite nicht mehr die aktive Seite ist.
 
 ```
 virtual BOOL OnKillActive();
@@ -343,43 +343,43 @@ virtual BOOL OnKillActive();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Daten erfolgreich aktualisiert wurden, andernfalls 0.
+Ein Wert ungleich Null, wenn Daten erfolgreich aktualisiert wurden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Member-Funktion, um spezielle Daten Validierungs Tasks auszuführen.
+Überschreiben Sie diese Memberfunktion, um spezielle Datenüberprüfungsaufgaben auszuführen.
 
-Die Standard Implementierung dieser Member-Funktion kopiert die Einstellungen aus den Steuerelementen auf der Eigenschaften Seite in die Element Variablen der Eigenschaften Seite. Wenn die Daten aufgrund eines DDV-Fehlers (Dialog Datenüberprüfung) nicht erfolgreich aktualisiert wurden, behält die Seite den Fokus.
+Die Standardimplementierung dieser Memberfunktion kopiert Einstellungen von den Steuerelementen auf der Eigenschaftenseite in die Membervariablen der Eigenschaftenseite. Wenn die Daten aufgrund eines DDV-Fehlers (Dialogdatenvalidierung) nicht erfolgreich aktualisiert wurden, behält die Seite den Fokus bei.
 
-Nachdem diese Member-Funktion erfolgreich zurückgegeben wurde, ruft das Framework die [OnOK](#onok) -Funktion der Seite auf.
+Nachdem diese Memberfunktion erfolgreich zurückgegeben wurde, ruft das Framework die [OnOK-Funktion](#onok) der Seite auf.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#115](../../mfc/codesnippet/cpp/cpropertypage-class_5.cpp)]
 
-##  <a name="onok"></a>CPropertyPage:: OnOK
+## <a name="cpropertypageonok"></a><a name="onok"></a>CPropertyPage::OnOK
 
-Diese Member-Funktion wird vom Framework aufgerufen, wenn der Benutzer entweder die Schaltfläche "OK" oder "jetzt anwenden" auswählt, unmittelbar nachdem das Framework [OnKillActive](#onkillactive)aufgerufen hat.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer direkt nach dem Aufruf von [OnKillActive](#onkillactive)die Schaltfläche OK oder Jetzt anwenden wählt.
 
 ```
 virtual void OnOK();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Benutzer entweder die Schaltfläche OK oder die Schaltfläche jetzt anwenden auswählt, empfängt das Framework die [PSN_APPLY](/windows/win32/Controls/psn-apply) Benachrichtigung von der Eigenschaften Seite. Der `OnOK` aufrufen wird nicht durchgeführt, wenn Sie [CPropertySheet::P ressbutton](../../mfc/reference/cpropertysheet-class.md#pressbutton) aufrufen, weil die Eigenschaften Seite die Benachrichtigung in diesem Fall nicht sendet.
+Wenn der Benutzer entweder die Schaltfläche OK oder Jetzt anwenden wählt, erhält das Framework die [PSN_APPLY](/windows/win32/Controls/psn-apply) Benachrichtigung von der Eigenschaftenseite. Der Aufruf `OnOK` an wird nicht gesendet, wenn Sie [CPropertySheet::PressButton](../../mfc/reference/cpropertysheet-class.md#pressbutton) aufrufen, da die Eigenschaftenseite die Benachrichtigung in diesem Fall nicht sendet.
 
-Überschreiben Sie diese Member-Funktion, um zusätzliches Verhalten zu implementieren, das für die derzeit aktive Seite spezifisch ist, wenn der Benutzer das gesamte Eigenschaften Blatt schließt.
+Überschreiben Sie diese Memberfunktion, um zusätzliches Verhalten zu implementieren, das für die aktuell aktive Seite spezifisch ist, wenn der Benutzer das gesamte Eigenschaftenblatt verwirft.
 
-Die Standard Implementierung dieser Member-Funktion markiert die Seite als "Clean", um widerzuspiegeln, dass die Daten in der `OnKillActive`-Funktion aktualisiert wurden.
+Die Standardimplementierung dieser Memberfunktion markiert die Seite als "sauber", um `OnKillActive` anzuzeigen, dass die Daten in der Funktion aktualisiert wurden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#116](../../mfc/codesnippet/cpp/cpropertypage-class_6.cpp)]
 
-##  <a name="onquerycancel"></a>CPropertyPage:: OnQueryCancel
+## <a name="cpropertypageonquerycancel"></a><a name="onquerycancel"></a>CPropertyPage::OnQuerycancel
 
-Diese Member-Funktion wird vom Framework aufgerufen, wenn der Benutzer auf die Schaltfläche Abbrechen klickt und bevor die Aktion abbrechen stattfindet.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer auf die Schaltfläche Abbrechen klickt und bevor die Abbruchaktion ausgeführt wurde.
 
 ```
 virtual BOOL OnQueryCancel();
@@ -387,41 +387,41 @@ virtual BOOL OnQueryCancel();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt false zurück, um den Abbruch Vorgang zu verhindern, oder true, um dies zuzulassen.
+Gibt FALSE zurück, um den Abbruchvorgang zu verhindern, oder TRUE, um ihn zuzulassen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Member-Funktion, um eine Aktion anzugeben, die das Programm annimmt, wenn der Benutzer auf die Schaltfläche Abbrechen klickt
+Überschreiben Sie diese Memberfunktion, um eine Aktion anzugeben, die das Programm ausführt, wenn der Benutzer auf die Schaltfläche Abbrechen klickt.
 
-Die Standard Implementierung von `OnQueryCancel` gibt true zurück.
+Die Standardimplementierung `OnQueryCancel` von returns TRUE.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#117](../../mfc/codesnippet/cpp/cpropertypage-class_7.cpp)]
 
-##  <a name="onreset"></a>CPropertyPage:: onreset
+## <a name="cpropertypageonreset"></a><a name="onreset"></a>CPropertyPage::Zurücksetzen
 
-Diese Member-Funktion wird vom Framework aufgerufen, wenn der Benutzer die Schaltfläche Abbrechen auswählt.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer die Schaltfläche Abbrechen auswählt.
 
 ```
 virtual void OnReset();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Framework diese Funktion aufruft, werden Änderungen an allen Eigenschaften Seiten, die zuvor durch den Benutzer vorgenommen wurden, die zuvor die Schaltfläche jetzt anwenden ausgewählt haben, verworfen, und das Eigenschaften Blatt behält den Fokus.
+Wenn das Framework diese Funktion aufruft, werden Änderungen an allen Eigenschaftenseiten, die vom Benutzer vorgenommen wurden, der zuvor die Schaltfläche Jetzt anwenden ausgewählt hat, verworfen, und das Eigenschaftenblatt behält den Fokus bei.
 
-Überschreiben Sie diese Element Funktion, um anzugeben, welche Aktion das Programm durchführt, wenn der Benutzer auf die Schaltfläche Abbrechen klickt.
+Überschreiben Sie diese Memberfunktion, um anzugeben, welche Aktion das Programm ausführt, wenn der Benutzer auf die Schaltfläche Abbrechen klickt.
 
-Die Standard Implementierung von `OnReset` führt keine Aktion aus.
+Die Standardimplementierung `OnReset` von bewirkt nichts.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CPropertyPage:: OnCancel](#oncancel).
+  Siehe Beispiel für [CPropertyPage::OnCancel](#oncancel).
 
-##  <a name="onsetactive"></a>CPropertyPage:: OnSetActive
+## <a name="cpropertypageonsetactive"></a><a name="onsetactive"></a>CPropertyPage::OnSetActive
 
-Diese Member-Funktion wird vom Framework aufgerufen, wenn die Seite vom Benutzer ausgewählt und zur aktiven Seite wird.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn die Seite vom Benutzer ausgewählt wird und zur aktiven Seite wird.
 
 ```
 virtual BOOL OnSetActive();
@@ -429,21 +429,21 @@ virtual BOOL OnSetActive();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Seite erfolgreich festgelegt wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn die Seite erfolgreich aktiv festgelegt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Member-Funktion, um Aufgaben auszuführen, wenn eine Seite aktiviert wird. Durch die Überschreibung dieser Member-Funktion wird in der Regel die Standardversion nach dem Aktualisieren von Datenmembern aufgerufen, damit die Seiten Steuerelemente mit den neuen Daten aktualisiert werden können.
+Überschreiben Sie diese Memberfunktion, um Aufgaben auszuführen, wenn eine Seite aktiviert ist. Ihre Außerkraftsetzung dieser Memberfunktion würde in der Regel die Standardversion nach dem Aktualisieren von Datenmembern aufrufen, um es zu ermöglichen, die Seitensteuerelemente mit den neuen Daten zu aktualisieren.
 
-Die Standard Implementierung erstellt das Fenster für die Seite, wenn es nicht bereits erstellt wurde, und macht es zur aktiven Seite.
+Die Standardimplementierung erstellt das Fenster für die Seite, sofern sie nicht zuvor erstellt wurde, und macht sie zur aktiven Seite.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CPropertySheet:: setfinishtext](../../mfc/reference/cpropertysheet-class.md#setfinishtext).
+  Siehe Beispiel für [CPropertySheet::SetFinishText](../../mfc/reference/cpropertysheet-class.md#setfinishtext).
 
-##  <a name="onwizardback"></a>CPropertyPage:: onwizardback
+## <a name="cpropertypageonwizardback"></a><a name="onwizardback"></a>CPropertyPage::OnWizardBack
 
-Diese Member-Funktion wird vom Framework aufgerufen, wenn der Benutzer auf die Schaltfläche "zurück" in einem Assistenten klickt.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer in einem Assistenten auf die Schaltfläche "Zurück" klickt.
 
 ```
 virtual LRESULT OnWizardBack();
@@ -451,21 +451,21 @@ virtual LRESULT OnWizardBack();
 
 ### <a name="return-value"></a>Rückgabewert
 
-0, um automatisch mit der nächsten Seite fortzufahren. -1, um zu verhindern, dass die Seite geändert wird. Um zu einer anderen Seite als der nächsten zu springen, geben Sie den Bezeichner des Dialog Felds an, das angezeigt werden soll.
+0, um automatisch zur nächsten Seite zu gelangen; -1, um zu verhindern, dass die Seite geändert wird. Um zu einer anderen Seite als der nächsten zu springen, geben Sie den Bezeichner des anzuzeigenden Dialogfelds zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Member-Funktion, um eine Aktion anzugeben, die der Benutzer beim Drücken der Schaltfläche "zurück" ausführen muss.
+Überschreiben Sie diese Memberfunktion, um eine Aktion anzugeben, die der Benutzer ergreifen muss, wenn die Schaltfläche Zurück gedrückt wird.
 
-Weitere Informationen zum Erstellen eines Eigenschaften Blatts für einen Assistenten finden Sie unter [CPropertySheet::](../../mfc/reference/cpropertysheet-class.md#setwizardmode)"".
+Weitere Informationen zum Erstellen eines Eigenschaftenblatts vom Assistenten finden Sie unter [CPropertySheet::SetWizardMode](../../mfc/reference/cpropertysheet-class.md#setwizardmode).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#118](../../mfc/codesnippet/cpp/cpropertypage-class_8.cpp)]
 
-##  <a name="onwizardfinish"></a>CPropertyPage:: onwizardfinish
+## <a name="cpropertypageonwizardfinish"></a><a name="onwizardfinish"></a>CPropertyPage::OnWizardFinish
 
-Diese Member-Funktion wird von Framework aufgerufen, wenn der Benutzer auf die Schaltfläche Fertigstellen in einem Assistenten klickt.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer in einem Assistenten auf die Schaltfläche Fertig stellen klickt.
 
 ```
 virtual BOOL OnWizardFinish();
@@ -473,17 +473,17 @@ virtual BOOL OnWizardFinish();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Eigenschaften Blatt gelöscht wird, wenn der Assistent abgeschlossen ist. andernfalls NULL.
+Ein Wert ungleich Null, wenn das Eigenschaftenblatt zerstört wird, wenn der Assistent abgeschlossen ist. andernfalls Null.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Benutzer auf die Schaltfläche **Fertig** stellen in einem Assistenten klickt, ruft das Framework diese Funktion auf. Wenn `OnWizardFinish` true (einen Wert ungleich 0 (null)) zurückgibt, kann das Eigenschaften Blatt zerstört (aber nicht zerstört) werden. Ruft `DestroyWindow` auf, um das Eigenschaften Blatt zu zerstören. `DestroyWindow` nicht aus `OnWizardFinish`abrufen. Dies führt zu Heap Beschädigungen oder anderen Fehlern.
+Wenn ein Benutzer in einem Assistenten auf die Schaltfläche **Fertig stellen** klickt, ruft das Framework diese Funktion auf. Wenn `OnWizardFinish` TRUE zurückgegeben wird (ein Wert ungleich Null), kann das Eigenschaftenblatt zerstört werden (aber nicht tatsächlich zerstört). Rufen `DestroyWindow` Sie den Aufruf auf, um das Eigenschaftenblatt zu zerstören. Rufen `DestroyWindow` Sie `OnWizardFinish`nicht von ; Dies führt zu Heap-Beschädigungen oder anderen Fehlern.
 
-Sie können diese Element Funktion überschreiben, um eine Aktion anzugeben, die der Benutzer beim Drücken der Schaltfläche Fertigstellen ausführen muss. Wenn Sie diese Funktion überschreiben, geben Sie false zurück, um zu verhindern, dass das Eigenschaften Blatt zerstört wird.
+Sie können diese Memberfunktion überschreiben, um eine Aktion anzugeben, die der Benutzer ergreifen muss, wenn die Schaltfläche Fertig stellen gedrückt wird. Wenn Sie diese Funktion überschreiben, geben Sie FALSE zurück, um zu verhindern, dass das Eigenschaftenblatt zerstört wird.
 
-Weitere Informationen zu Benachrichtigungs Meldungen, die gesendet werden, wenn der Benutzer die Schaltfläche Fertigstellen auf einem Eigenschaften Blatt eines Assistenten drückt, finden Sie unter [PSN_WIZFINISH](/windows/win32/Controls/psn-wizfinish) in der Windows SDK.
+Weitere Informationen zu Benachrichtigungen, die gesendet werden, wenn der Benutzer die Schaltfläche Fertig stellen in einem Eigenschaftenblatt des Assistenten drückt, finden Sie unter [PSN_WIZFINISH](/windows/win32/Controls/psn-wizfinish) im Windows SDK.
 
-Weitere Informationen zum Erstellen eines Eigenschaften Blatts für einen Assistenten finden Sie unter [CPropertySheet::](../../mfc/reference/cpropertysheet-class.md#setwizardmode)"".
+Weitere Informationen zum Erstellen eines Eigenschaftenblatts vom Assistenten finden Sie unter [CPropertySheet::SetWizardMode](../../mfc/reference/cpropertysheet-class.md#setwizardmode).
 
 ### <a name="example"></a>Beispiel
 
@@ -495,9 +495,9 @@ Weitere Informationen zum Erstellen eines Eigenschaften Blatts für einen Assist
 
 [!code-cpp[NVC_MFCDocView#122](../../mfc/codesnippet/cpp/cpropertypage-class_12.cpp)]
 
-##  <a name="onwizardnext"></a>CPropertyPage:: onwizardnext
+## <a name="cpropertypageonwizardnext"></a><a name="onwizardnext"></a>CPropertyPage::OnWizardNext
 
-Diese Member-Funktion wird von Framework aufgerufen, wenn der Benutzer auf die Schaltfläche weiter in einem Assistenten klickt.
+Diese Memberfunktion wird vom Framework aufgerufen, wenn der Benutzer in einem Assistenten auf die Schaltfläche Weiter klickt.
 
 ```
 virtual LRESULT OnWizardNext();
@@ -505,21 +505,21 @@ virtual LRESULT OnWizardNext();
 
 ### <a name="return-value"></a>Rückgabewert
 
-0, um automatisch mit der nächsten Seite fortzufahren. -1, um zu verhindern, dass die Seite geändert wird. Um zu einer anderen Seite als der nächsten zu springen, geben Sie den Bezeichner des Dialog Felds an, das angezeigt werden soll.
+0, um automatisch zur nächsten Seite zu gelangen; -1, um zu verhindern, dass die Seite geändert wird. Um zu einer anderen Seite als der nächsten zu springen, geben Sie den Bezeichner des anzuzeigenden Dialogfelds zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Member-Funktion, um eine Aktion anzugeben, die der Benutzer beim Drücken der Schaltfläche weiter ausführen muss.
+Überschreiben Sie diese Memberfunktion, um eine Aktion anzugeben, die der Benutzer ergreifen muss, wenn die Schaltfläche Weiter gedrückt wird.
 
-Weitere Informationen zum Erstellen eines Eigenschaften Blatts für einen Assistenten finden Sie unter [CPropertySheet::](../../mfc/reference/cpropertysheet-class.md#setwizardmode)"".
+Weitere Informationen zum Erstellen eines Eigenschaftenblatts vom Assistenten finden Sie unter [CPropertySheet::SetWizardMode](../../mfc/reference/cpropertysheet-class.md#setwizardmode).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#123](../../mfc/codesnippet/cpp/cpropertypage-class_13.cpp)]
 
-##  <a name="querysiblings"></a>CPropertyPage:: querysiblings
+## <a name="cpropertypagequerysiblings"></a><a name="querysiblings"></a>CPropertyPage::QuerySiblings
 
-Diese Member-Funktion wird aufgerufen, um eine Meldung an jede Seite im Eigenschaften Blatt weiterzuleiten.
+Rufen Sie diese Memberfunktion auf, um eine Nachricht an jede Seite im Eigenschaftenblatt weiterzuleiten.
 
 ```
 LRESULT QuerySiblings(
@@ -530,18 +530,18 @@ LRESULT QuerySiblings(
 ### <a name="parameters"></a>Parameter
 
 *wParam*<br/>
-Gibt zusätzliche Nachrichten abhängige Informationen an.
+Gibt zusätzliche nachrichtenabhängige Informationen an.
 
 *lParam*<br/>
-Gibt zusätzliche Nachrichten abhängige Informationen an.
+Gibt zusätzliche nachrichtenabhängige Informationen an
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Wert ungleich 0 (null) von einer Seite im Eigenschaften Blatt oder 0, wenn alle Seiten den Wert 0 zurückgeben.
+Der Wert ungleich Null von einer Seite im Eigenschaftenblatt oder 0, wenn alle Seiten den Wert 0 zurückgeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn eine Seite einen Wert ungleich 0 (null) zurückgibt, sendet das Eigenschaften Blatt die Nachricht nicht an nachfolgende Seiten.
+Wenn eine Seite einen Wert ungleich Null zurückgibt, sendet das Eigenschaftenblatt die Nachricht nicht an nachfolgende Seiten.
 
 ### <a name="example"></a>Beispiel
 
@@ -551,9 +551,9 @@ Wenn eine Seite einen Wert ungleich 0 (null) zurückgibt, sendet das Eigenschaft
 
 [!code-cpp[NVC_MFCDocView#126](../../mfc/codesnippet/cpp/cpropertypage-class_16.cpp)]
 
-##  <a name="setmodified"></a>CPropertyPage:: SetModified
+## <a name="cpropertypagesetmodified"></a><a name="setmodified"></a>CPropertyPage::SetModified
 
-Diese Member-Funktion wird aufgerufen, um die Schaltfläche "jetzt anwenden" zu aktivieren oder zu deaktivieren, je nachdem, ob die Einstellungen auf der Eigenschaften Seite auf das entsprechende externe Objekt angewendet werden sollen.
+Rufen Sie diese Memberfunktion auf, um die Schaltfläche Jetzt anwenden zu aktivieren oder zu deaktivieren, je nachdem, ob die Einstellungen auf der Eigenschaftenseite auf das entsprechende externe Objekt angewendet werden sollen.
 
 ```
 void SetModified(BOOL bChanged = TRUE);
@@ -561,12 +561,12 @@ void SetModified(BOOL bChanged = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bchanged*<br/>
-TRUE, um anzugeben, dass die Einstellungen der Eigenschaften Seite seit der letzten Anwendung geändert wurden. FALSE, um anzugeben, dass die Eigenschaften Seiteneinstellungen angewendet wurden, oder sollte ignoriert werden.
+*bChanged*<br/>
+TRUE, um anzugeben, dass die Eigenschaftenseiteneinstellungen seit der letzten Anwendung geändert wurden; FALSE, um anzugeben, dass die Eigenschaftenseiteneinstellungen angewendet wurden oder ignoriert werden sollten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework verfolgt, welche Seiten "geändert" werden, d. h. Eigenschaften Seiten, für die Sie `SetModified( TRUE )`aufgerufen haben. Die Schaltfläche jetzt anwenden wird immer aktiviert, wenn Sie `SetModified( TRUE )` für eine der Seiten aufgerufen haben. Die Schaltfläche jetzt anwenden wird deaktiviert, wenn Sie `SetModified( FALSE )` für eine der Seiten aufzurufen, aber nur, wenn keine der anderen Seiten "geändert" ist.
+Das Framework verfolgt, welche Seiten "schmutzig" sind, d. h. Eigenschaftenseiten, für die Sie aufgerufen `SetModified( TRUE )`haben. Die Schaltfläche Jetzt anwenden wird immer `SetModified( TRUE )` aktiviert, wenn Sie eine der Seiten aufrufen. Die Schaltfläche Jetzt anwenden wird `SetModified( FALSE )` deaktiviert, wenn Sie eine der Seiten aufrufen, jedoch nur, wenn keine der anderen Seiten "schmutzig" ist.
 
 ### <a name="example"></a>Beispiel
 

@@ -1,6 +1,6 @@
 ---
 title: strnlen, strnlen_s, wcsnlen, wcsnlen_s, _mbsnlen, _mbsnlen_l, _mbstrnlen, _mbstrnlen_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - wcsnlen
 - strnlen_s
@@ -10,6 +10,10 @@ api_name:
 - strnlen
 - wcsnlen_s
 - _mbsnlen
+- _o__mbsnlen
+- _o__mbsnlen_l
+- _o__mbstrnlen
+- _o__mbstrnlen_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,6 +28,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -61,19 +66,19 @@ helpviewer_keywords:
 - string length
 - strnlen_l function
 ms.assetid: cc05ce1c-72ea-4ae4-a7e7-4464e56e5f80
-ms.openlocfilehash: 6613c79bd9637b857dbf825eca2b37c71c154bec
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: db4fa65fa47dfe11d7ab56ffc5feee06f2634e2a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947001"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364471"
 ---
 # <a name="strnlen-strnlen_s-wcsnlen-wcsnlen_s-_mbsnlen-_mbsnlen_l-_mbstrnlen-_mbstrnlen_l"></a>strnlen, strnlen_s, wcsnlen, wcsnlen_s, _mbsnlen, _mbsnlen_l, _mbstrnlen, _mbstrnlen_l
 
 Ruft die Länge einer Zeichenfolge durch Verwendung des aktuellen oder einen übergebenen Gebietsschemas ab. Dies sind sicherere Versionen von [strlen, wcslen, _mbslen, _mbslen_l, _mbstrlen, _mbstrlen_l](strlen-wcslen-mbslen-mbslen-l-mbstrlen-mbstrlen-l.md).
 
 > [!IMPORTANT]
-> **_mbsnlen**, **_mbsnlen_l**, **_mbstrnlen**und **_mbstrnlen_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> **_mbsnlen** **, _mbsnlen_l**, **_mbstrnlen**und **_mbstrnlen_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -116,10 +121,10 @@ size_t _mbstrnlen_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Mit NULL endende Zeichenfolge.
 
-*numberOfElements*<br/>
+*Sizeinbytes*<br/>
 Die Größe des Zeichenfolgenpuffers.
 
 *locale*<br/>
@@ -127,22 +132,24 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Diese Funktionen geben die Anzahl von Zeichen in der Zeichenfolge zurück (ohne das abschließende Nullzeichen). Wenn kein NULL-Terminator in den ersten *anzahlungsbytes* der Zeichenfolge (oder breit Zeichen für **wcsnlen**) vorhanden ist, wird " *suffiofelements* " zurückgegeben, um den Fehlerzustand anzugeben. NULL-terminierte Zeichen folgen haben Längen, die streng kleiner *sind als "* ".
+Diese Funktionen geben die Anzahl von Zeichen in der Zeichenfolge zurück (ohne das abschließende Nullzeichen). Wenn innerhalb der ersten *numberOfElements-Bytes* der Zeichenfolge (oder Breitzeichen für **wcsnlen**) kein Null-Terminator vorhanden ist, wird *numberOfElements* zurückgegeben, um die Fehlerbedingung anzugeben. null-terminierte Zeichenfolgen haben Längen, die strikt kleiner als *numberOfElements*sind.
 
-**_mbstrnlen** und **_mbstrnlen_l** geben-1 zurück, wenn die Zeichenfolge ein ungültiges Multibytezeichen enthält.
+**_mbstrnlen** und **_mbstrnlen_l** -1 zurückgeben, wenn die Zeichenfolge ein ungültiges Multibyte-Zeichen enthält.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> " **strinnlen** " ist kein Ersatz für " **straulen**". " **straunlen** " soll nur zur Berechnung der Größe eingehender, nicht vertrauenswürdiger Daten in einem Puffer der bekannten Größe verwendet werden, z. –. eines Netzwerk Pakets. " **stringenlen** " berechnet die Länge, geht jedoch nicht über das Ende des Puffers hinaus, wenn die Zeichenfolge nicht mehr ist. Verwenden Sie in anderen Situationen " **strinlen**". (Gleiches gilt für **wcsnlen**, **_mbsnlen**und **_mbstrnlen**.)
+> **strnlen** ist kein Ersatz für **strlen**; **strnlen** ist nur dazu gedacht, die Größe eingehender nicht vertrauenswürdiger Daten in einem Puffer bekannter Größe zu berechnen, z. B. ein Netzwerkpaket. **strnlen** berechnet die Länge, geht aber nicht am Ende des Puffers vorbei, wenn die Zeichenfolge nicht beendet ist. Verwenden Sie für andere Situationen **strlen**. (Das gleiche gilt für **wcsnlen**, **_mbsnlen**und **_mbstrnlen**.)
 
-Jede dieser Funktionen gibt die Anzahl der Zeichen in *Str*zurück, ohne das abschließende Null Zeichen. Allerdings wird die Zeichenfolge von " **straunlen** " und " **Strnlen_s** " als Einzel Byte-Zeichenfolge interpretiert, sodass der Rückgabewert immer der Anzahl von Bytes entspricht, selbst wenn die Zeichenfolge Multibytezeichen enthält. **wcsnlen** und **Wcsnlen_s** sind breit Zeichen Versionen von " **strinnlen** " und " **Strnlen_s** ". die Argumente für **wcsnlen** und **Wcsnlen_s** sind breit Zeichen-Zeichen folgen, und die Anzahl der Zeichen in Einheiten mit breit Zeichen. Andernfalls Verhalten sich **wcsnlen** und **straunlen** wie **Strnlen_s** und **Wcsnlen_s**identisch.
+Jede dieser Funktionen gibt die Anzahl der Zeichen in *str*zurück, ohne das beendende Nullzeichen. **Strnlen** und **strnlen_s** interpretieren die Zeichenfolge jedoch als Zeichenfolge mit einem einzigen Byte, und daher ist der Rückgabewert immer gleich der Anzahl der Bytes, auch wenn die Zeichenfolge Multibyte-Zeichen enthält. **wcsnlen** und **wcsnlen_s** sind breitstellige Versionen von **strnlen** bzw. **strnlen_s;** Die Argumente für **wcsnlen** und **wcsnlen_s** sind Zeichenfolgen mit großen Zeichen, und die Anzahl der Zeichen sind in Breitzeicheneinheiten. Ansonsten verhalten sich **wcsnlen** und **strnlen** identisch, ebenso wie **strnlen_s** und **wcsnlen_s**.
 
-" **strinnlen**", " **wcsnlen**" und " **_mbsnlen** " überprüfen Ihre Parameter nicht. Wenn *Str* **null**ist, tritt eine Zugriffsverletzung auf.
+**strnlen**, **wcsnlen**und **_mbsnlen** validieren ihre Parameter nicht. Wenn *str* **NULL**ist, tritt eine Zugriffsverletzung auf.
 
-**Strnlen_s** und **Wcsnlen_s** überprüfen Ihre Parameter. Wenn *Str* **null**ist, geben die Funktionen 0 zurück.
+**strnlen_s** und **wcsnlen_s** ihre Parameter überprüfen. Wenn *str* **NULL**ist, geben die Funktionen 0 zurück.
 
-**_mbstrnlen** überprüft auch seine Parameter. Wenn *Str* **null**ist, oder wenn " *numofelements* " größer als **INT_MAX**ist, generiert **_mbstrnlen** eine Ausnahme wegen eines ungültigen Parameters, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt _mbstrnlen **errno** auf **EINVAL** fest und gibt-1 zurück.
+**_mbstrnlen** überprüft auch seine Parameter. Wenn *str* **NULL**ist oder *wenn numberOfElements* größer als **INT_MAX** **ist, generiert _mbstrnlen** eine ungültige Parameterausnahme, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, **setzt _mbstrnlen** **errno** auf **EINVAL** und gibt -1 zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -152,20 +159,20 @@ Jede dieser Funktionen gibt die Anzahl der Zeichen in *Str*zurück, ohne das abs
 |**_tcscnlen**|**strnlen**|**_mbsnlen**|**wcsnlen**|
 |**_tcscnlen_l**|**strnlen**|**_mbsnlen_l**|**wcsnlen**|
 
-**_mbsnlen** und **_mbstrnlen** geben die Anzahl von Multibytezeichen in einer Multibytezeichenfolge zurück. **_mbsnlen** erkennt multibytezeichensequenzen entsprechend der Multibytezeichen-Codepage, die derzeit verwendet wird, oder gemäß dem übergebenen Gebiets Schema. Er testet nicht auf die Gültigkeit von Multibytezeichen. **_mbstrnlen** testet die Gültigkeit von Multibytezeichen und erkennt multibytezeichensequenzen. Wenn die an **_mbstrnlen** über gegebene Zeichenfolge ein ungültiges Multibytezeichen enthält, wird **errno** auf **EILSEQ**festgelegt.
+**_mbsnlen** und **_mbstrnlen** die Anzahl der Multibyte-Zeichen in einer Zeichenfolge mit mehreren Byte-Zeichen zurückgeben. **_mbsnlen** erkennt Multibyte-Zeichen-Sequenzen gemäß der Multibyte-Codepage, die derzeit verwendet wird, oder nach dem Gebietsschema, das übergeben wurde. Es wird nicht auf Gültigkeit von mehreren Byte-Zeichen getestet. **_mbstrnlen** tests auf Gültigkeit von Mehreren Byte-Zeichen und erkennt Multibyte-Zeichen-Sequenzen. Wenn die Zeichenfolge, die an **_mbstrnlen** übergeben wird, ein ungültiges Multibyte-Zeichen enthält, wird **errno** auf **EILSEQ**festgelegt.
 
-Der Ausgabewert wird von der Einstellung der **LC_CTYPE** -Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die Versionen dieser Funktionen sind identisch, außer dass diejenigen ohne das **_l** -Suffix das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten verwenden, und die Versionen mit dem **_l** -Suffix verwenden stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird durch die Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst. weitere Informationen finden Sie unter [setlocale, _wsetlocale.](setlocale-wsetlocale.md) Die Versionen dieser Funktionen sind identisch, mit der Ausnahme, dass die Versionen, die nicht über das **_l** Suffix verfügen, das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten verwenden und die Versionen mit dem **suffix _l** stattdessen den übergebenen Gebietsschemaparameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strnlen**, **strnlen_s**|\<string.h>|
-|**wcsnlen**, **Wcsnlen_s**|\<string.h> oder \<wchar.h>|
+|**wcsnlen**, **wcsnlen_s**|\<string.h> oder \<wchar.h>|
 |**_mbsnlen**, **_mbsnlen_l**|\<mbstring.h>|
 |**_mbstrnlen**, **_mbstrnlen_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -207,7 +214,7 @@ Length: 100
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [setlocale, _wsetlocale](setlocale-wsetlocale.md)<br/>

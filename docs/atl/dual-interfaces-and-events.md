@@ -5,22 +5,22 @@ helpviewer_keywords:
 - events [C++], dual interfaces
 - dual interfaces, events
 ms.assetid: bb382f7c-e885-4274-bf07-83f3602615d2
-ms.openlocfilehash: 01233edb63145d69d335349bb9dff91e6a4aca5a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4ce5048c25bd55feb0f1eb20fc04ec6bfeead746
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62198264"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81319603"
 ---
 # <a name="dual-interfaces-and-events"></a>Duale Schnittstellen und Ereignisse
 
-Es ist, zwar möglich, eine Event-Schnittstelle als Dual entwerfen stehen eine Reihe von Gründen ein guter Entwurf, nicht zu tun. Die grundlegende Ursache ist, dass das Ereignis über die Vtable oder nur von der Quelle des Ereignisses ausgelöst werden `Invoke`, aber nicht beides. Wenn die Ereignisquelle wird, das Ereignis als eine direkte Vtable-Methodenaufruf ausgelöst, der `IDispatch` Methoden nicht verwendet wird, und es ist klar, dass die Schnittstelle sollte eine reine Vtable-Schnittstelle wurde. Wenn die Ereignisquelle als Aufruf an das Ereignis ausgelöst wird `Invoke`, die Vtable-Methoden nicht verwendet wird, und es ist klar, dass die Schnittstelle sollte eine Disp-Schnittstelle wurde. Wenn Sie Ihre Ereignisschnittstellen als duale Schnittstellen definieren, müssen Sie erfordert Clients, die Teil einer Schnittstelle zu implementieren, die nie verwendet wird.
+Es ist zwar möglich, eine Ereignisschnittstelle als Dual zu entwerfen, es gibt jedoch eine Reihe guter Designgründe, dies nicht zu tun. Der Hauptgrund ist, dass die Quelle des Ereignisses das Ereignis `Invoke`nur über den vtable oder über, nicht über beide, ausfeuert. Wenn die Ereignisquelle das Ereignis als direkten vtable-Methodenaufruf auslöst, werden die `IDispatch` Methoden nie verwendet, und es ist klar, dass die Schnittstelle eine reine vtable-Schnittstelle hätte sein sollen. Wenn die Ereignisquelle das Ereignis `Invoke`als Aufruf von auslöst, werden die vtable-Methoden nie verwendet, und es ist klar, dass die Schnittstelle eine Dispinterface hätte sein sollen. Wenn Sie Ihre Ereignisschnittstellen als Duals definieren, müssen Clients einen Teil einer Schnittstelle implementieren, die nie verwendet wird.
 
 > [!NOTE]
->  Dieses Argument gilt im Allgemeinen nicht für duale Schnittstellen. Aus Implementierungssicht sind duale Schnittstellen für eine schnelle, bequeme und gut unterstützte Möglichkeit zum Implementieren von Schnittstellen, die für eine Breite Palette von Clients zugänglich sind.
+> Dieses Argument gilt im Allgemeinen nicht für duale Schnittstellen. Aus Der Implementierung summieren sich die Duals als schnelle, bequeme und gut unterstützte Möglichkeit, Schnittstellen zu implementieren, auf die eine Vielzahl von Clients zugreifen können.
 
-Es gibt weitere Gründe für die duale Ereignisschnittstellen zu vermeiden; weder Internet Explorer als auch Visual Basic unterstützt.
+Es gibt weitere Gründe, duale Ereignisschnittstellen zu vermeiden. Weder Visual Basic noch Internet Explorer unterstützen sie.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Duale Schnittstellen und ATL](../atl/dual-interfaces-and-atl.md)
+[Dual E-Schnittstellen und ATL](../atl/dual-interfaces-and-atl.md)

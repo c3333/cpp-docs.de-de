@@ -7,55 +7,55 @@ helpviewer_keywords:
 - CToolBarCtrl class [MFC], accessing toolbar
 - toolbar controls [MFC], accessing
 ms.assetid: b19409d5-3831-42c7-80ae-195c49dc9085
-ms.openlocfilehash: 60cc527493e2a68751c201b998ab171c564d6c1f
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 371f1944fae655556bbc9f89d7ffcce7cc326e5e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69510577"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365248"
 ---
 # <a name="working-with-the-toolbar-control"></a>Arbeiten mit dem ToolBar-Steuerelement
 
-In diesem Artikel wird erläutert, wie Sie auf das [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) -Objekt, das einer [CToolBar](../mfc/reference/ctoolbar-class.md) zugrunde liegt, zugreifen können, um Ihre Symbolleisten besser zu steuern Dies ist ein erweitertes Thema.
+In diesem Artikel wird erläutert, wie Sie auf das [CToolBarCtrl-Objekt](../mfc/reference/ctoolbarctrl-class.md) zugreifen können, das einer [CToolBar](../mfc/reference/ctoolbar-class.md) zugrunde liegt, um die Kontrolle über Ihre Symbolleisten zu erhalten. Dies ist ein fortgeschrittenes Thema.
 
-## <a name="procedures"></a>Verfahren
+## <a name="procedures"></a>Prozeduren
 
-#### <a name="to-access-the-toolbar-common-control-underlying-your-ctoolbar-object"></a>So greifen Sie auf das allgemeine Steuerelement der Symbolleiste zu
+#### <a name="to-access-the-toolbar-common-control-underlying-your-ctoolbar-object"></a>So greifen Sie auf das allgemeine Steuerelement der Symbolleiste zu, das Ihrem CToolBar-Objekt zugrunde liegt
 
-1. Aufrufen von [CToolBar:: GetToolBarCtrl](../mfc/reference/ctoolbar-class.md#gettoolbarctrl).
+1. Rufen Sie [CToolBar::GetToolBarCtrl](../mfc/reference/ctoolbar-class.md#gettoolbarctrl)auf.
 
-`GetToolBarCtrl`Gibt einen Verweis auf ein [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) -Objekt zurück. Sie können den Verweis verwenden, um Member-Funktionen der Symbolleisten-Steuerelement Klasse aufzurufen.
+`GetToolBarCtrl`gibt einen Verweis auf ein [CToolBarCtrl-Objekt](../mfc/reference/ctoolbarctrl-class.md) zurück. Sie können den Verweis verwenden, um Memberfunktionen der Symbolleistensteuerungsklasse aufzurufen.
 
 > [!CAUTION]
->  Wenn Sie `CToolBarCtrl` "Get Functions" sicher aufrufen, sollten Sie Vorsicht walten **lassen** , wenn Sie die **Set** -Funktionen aufrufen. Dies ist ein erweitertes Thema. Normalerweise müssen Sie nicht auf das zugrunde liegende Symbolleisten-Steuerelement zugreifen.
+> Während `CToolBarCtrl` das Aufrufen von **Get-Funktionen** sicher ist, sollten Sie vorsichtig sein, wenn Sie die **Set-Funktionen** aufrufen. Dies ist ein fortgeschrittenes Thema. Normalerweise sollten Sie nicht auf das zugrunde liegende Symbolleistensteuerelement zugreifen müssen.
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
 - [Steuerelemente (allgemeine Windows-Steuerelemente)](../mfc/controls-mfc.md)
 
-- [Grundlagen zu Toolbar](../mfc/toolbar-fundamentals.md)
+- [Toolbar-Grundlagen](../mfc/toolbar-fundamentals.md)
 
-- [Andockbare und Gleit Komma Symbolleisten](../mfc/docking-and-floating-toolbars.md)
+- [Docking und schwimmende Symbolleisten](../mfc/docking-and-floating-toolbars.md)
 
-- [Dynamisches Ändern der Größe der Symbolleiste](../mfc/docking-and-floating-toolbars.md)
+- [Dynamische Größenänderung der Symbolleiste](../mfc/docking-and-floating-toolbars.md)
 
-- [Quick Infos für Symbolleisten](../mfc/toolbar-tool-tips.md)
+- [QuickInfos für die Symbolleiste](../mfc/toolbar-tool-tips.md)
 
-- [Aktualisierungen der Statusleiste "Flyby"](../mfc/toolbar-tool-tips.md)
+- [Flyby-Statusleisten-Updates](../mfc/toolbar-tool-tips.md)
 
-- [Behandeln von QuickInfo-Benachrichtigungen](../mfc/handling-tool-tip-notifications.md)
+- [Umgang mit Tool-Tipp-Benachrichtigungen](../mfc/handling-tool-tip-notifications.md)
 
 - Die Klassen [CToolBar](../mfc/reference/ctoolbar-class.md) und [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)
 
-- [Behandeln von Anpassungs Benachrichtigungen](../mfc/handling-customization-notifications.md)
+- [Behandlung von Anpassungsbenachrichtigungen](../mfc/handling-customization-notifications.md)
 
 - [Mehrere Symbolleisten](../mfc/toolbar-fundamentals.md)
 
-- [Verwenden der alten Symbolleisten](../mfc/using-your-old-toolbars.md)
+- [Verwenden Ihrer alten Symbolleisten](../mfc/using-your-old-toolbars.md)
 
-- [Steuer leisten](../mfc/control-bars.md)
+- [Steuerleisten](../mfc/control-bars.md)
 
-Allgemeine Informationen zur Verwendung von allgemeinen Windows-Steuerelementen finden Sie unter Allgemeine Steuer [Elemente](/windows/win32/Controls/common-controls-intro).
+Allgemeine Informationen zur Verwendung allgemeiner Windows-Steuerelemente finden Sie unter [Allgemeine Steuerelemente](/windows/win32/Controls/common-controls-intro).
 
 ## <a name="see-also"></a>Siehe auch
 

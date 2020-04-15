@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - namespaces [C++]
 ms.assetid: d1a5a9ab-1cad-47e6-a82d-385bb77f4188
-ms.openlocfilehash: ae3006dd1b17ec38240a318af6cfcac5c7d6bf49
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 4957ec5a5face860d2e39861eddc8f7e5abe9370
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423735"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367912"
 ---
 # <a name="namespaces-c"></a>Namespaces (C++)
 
-Ein Namespace ist ein deklarativer Bereich, der einen Gültigkeitsbereich für die darin enthaltenen Bezeichner darstellt (die Namen von Typen, Funktionen, Variablen usw.). Namespaces werden verwendet, um Code in logischen Gruppen zu organisieren und Namenskonflikte zu vermeiden, die insbesondere dann auftreten können, wenn die Codebasis mehrere Bibliotheken enthält. Alle Bezeichner im Gültigkeitsbereich des Namespaces sind ohne Qualifizierung füreinander sichtbar. Bezeichner außerhalb des Namespace können mithilfe des voll qualifizierten Namens für jeden Bezeichner auf die Member zugreifen, z. b. `std::vector<std::string> vec;`oder else durch eine [using-Deklaration](../cpp/using-declaration.md) für einen einzelnen Bezeichner (`using std::string`) oder eine [using-Direktive](../cpp/namespaces-cpp.md#using_directives) für alle Bezeichner im Namespace (`using namespace std;`). Der Code in Headerdateien muss immer den vollqualifizierten Namespacenamen verwenden.
+Ein Namespace ist ein deklarativer Bereich, der einen Gültigkeitsbereich für die darin enthaltenen Bezeichner darstellt (die Namen von Typen, Funktionen, Variablen usw.). Namespaces werden verwendet, um Code in logischen Gruppen zu organisieren und Namenskonflikte zu vermeiden, die insbesondere dann auftreten können, wenn die Codebasis mehrere Bibliotheken enthält. Alle Bezeichner im Gültigkeitsbereich des Namespaces sind ohne Qualifizierung füreinander sichtbar. Bezeichner außerhalb des Namespace können auf die Member zugreifen, `std::vector<std::string> vec;`indem sie den vollqualifizierten Namen`using std::string`für jeden Bezeichner verwenden, z. B. , oder durch eine [Verwendungsdeklaration](../cpp/using-declaration.md) für einen einzelnen Bezeichner ( ), oder eine [Verwendungsdirektive](../cpp/namespaces-cpp.md#using_directives) für alle Bezeichner im Namespace (`using namespace std;`). Der Code in Headerdateien muss immer den vollqualifizierten Namespacenamen verwenden.
 
 Das folgende Beispiel zeigt eine Namespacedeklaration und drei Verfahren, mit denen Code außerhalb des Namespaces auf die Member zugreifen kann.
 
@@ -58,14 +58,14 @@ mgr.DoSomething();
 Func(mgr);
 ```
 
-## <a id="using_directives"></a>using-Direktiven
+## <a name="using-directives"></a><a id="using_directives"></a>Verwendung von Richtlinien
 
-Die **using** -Direktive ermöglicht, dass alle Namen in einem **Namespace** ohne *Namespace Name* als expliziter Qualifizierer verwendet werden. Verwenden Sie eine using-Direktive in einer Implementierungs Datei (d.h. *. cpp), wenn Sie mehrere verschiedene Bezeichner in einem Namespace verwenden. Wenn Sie nur einen oder zwei Bezeichner verwenden, sollten Sie eine using-Deklaration in Erwägung ziehen, um nur diese Bezeichner in den Gültigkeitsbereich zu bringen, und nicht alle Bezeichner im-Namespace. Wenn eine lokale Variable denselben Namen wie eine Namespacevariable besitzt , wird die Namespacevariable ausgeblendet. Es ist ein Fehler, wenn eine Namespacevariable mit dem gleichen Namen wie eine globale Variable vorliegt.
+Die **using** using-Direktive ermöglicht die Verwendung aller Namen in einem **Namespace** ohne den *Namespace-Namen* als expliziten Qualifizierer. Verwenden Sie eine using-Direktive in einer Implementierungsdatei (d. h. *.cpp), wenn Sie mehrere verschiedene Bezeichner in einem Namespace verwenden. Wenn Sie nur einen oder zwei Bezeichner verwenden, sollten Sie eine Verwendungsdeklaration in Betracht ziehen, um nur diese Bezeichner in den Gültigkeitsbereich und nicht alle Bezeichner im Namespace zu bringen. Wenn eine lokale Variable denselben Namen wie eine Namespacevariable besitzt , wird die Namespacevariable ausgeblendet. Es ist ein Fehler, wenn eine Namespacevariable mit dem gleichen Namen wie eine globale Variable vorliegt.
 
 > [!NOTE]
->  Eine using-Direktive kann am Anfang einer CPP-Datei (im Dateigültigkeitsbereich) platziert werden oder innerhalb einer Klassen- oder Funktionsdefinition.
+> Eine using-Direktive kann am Anfang einer CPP-Datei (im Dateigültigkeitsbereich) platziert werden oder innerhalb einer Klassen- oder Funktionsdefinition.
 >
->  Vermeiden Sie generell das Einfügen von using-Direktiven in Headerdateien (*.h), da jede Datei, die diesen Header enthält, den gesamten Namespaceinhalt in den Gültigkeitsbereich einbinden kann; dies kann dazu führen, dass Probleme mit ausgeblendeten Namen und Namenskonflikte auftreten, die sehr schwer zu beheben sind. Verwenden Sie immer vollqualifizierte Namen in einer Headerdatei. Wenn diese Namen zu lang werden, können Sie einen Namespacealias verwenden, um sie zu kürzen. (Siehe unten.)
+> Vermeiden Sie generell das Einfügen von using-Direktiven in Headerdateien (*.h), da jede Datei, die diesen Header enthält, den gesamten Namespaceinhalt in den Gültigkeitsbereich einbinden kann; dies kann dazu führen, dass Probleme mit ausgeblendeten Namen und Namenskonflikte auftreten, die sehr schwer zu beheben sind. Verwenden Sie immer vollqualifizierte Namen in einer Headerdatei. Wenn diese Namen zu lang werden, können Sie einen Namespacealias verwenden, um sie zu kürzen. (Siehe unten.)
 
 ## <a name="declaring-namespaces-and-namespace-members"></a>Deklarieren von Namespaces und Namespacemembern
 
@@ -81,7 +81,7 @@ namespace ContosoDataServer
 }
 ```
 
-Funktions Implementierungen in "condesodata. cpp" müssen den voll qualifizierten Namen verwenden, selbst wenn Sie eine **using** -Direktive am Anfang der Datei platzieren:
+Funktionsimplementierungen in contosodata.cpp sollten den vollqualifizierten Namen **using** verwenden, auch wenn Sie eine Using-Direktive oben in der Datei platzieren:
 
 ```cpp
 #include "contosodata.h"
@@ -119,15 +119,15 @@ Dieser Fehler kann auftreten, wenn Namespacemember über mehrere Headerdateien d
 
 ## <a name="the-global-namespace"></a>Der globale Namespace
 
-Wenn ein Bezeichner nicht in einem expliziten Namespace deklariert ist, ist er Teil des impliziten globalen Namespaces. Vermeiden Sie im Allgemeinen, wenn möglich, Deklarationen im globalen Gültigkeitsbereich zu verwenden, mit Ausnahme der Einstiegspunkt- [Hauptfunktion](../c-language/main-function-and-program-execution.md), die sich im globalen Namespace befinden muss. Um einen globalen Bezeichner explizit zu qualifizieren, verwenden Sie den Bereichsauflösungsoperator ohne Namen, wie in `::SomeFunction(x);`. Dadurch wird der Bezeichner von allen anderen Elementen gleichen Namens in allen anderen Namespaces unterschieden, und es vereinfacht außerdem das Verständnis Ihres Codes für andere.
+Wenn ein Bezeichner nicht in einem expliziten Namespace deklariert ist, ist er Teil des impliziten globalen Namespaces. Versuchen Sie im Allgemeinen, deklarationen nach Möglichkeit im globalen Gültigkeitsbereich zu vermeiden, mit Ausnahme der [Hauptfunktion](../c-language/main-function-and-program-execution.md)des Einstiegspunkts , die sich im globalen Namespace befinden muss. Um einen globalen Bezeichner explizit zu qualifizieren, verwenden Sie den Bereichsauflösungsoperator ohne Namen, wie in `::SomeFunction(x);`. Dadurch wird der Bezeichner von allen anderen Elementen gleichen Namens in allen anderen Namespaces unterschieden, und es vereinfacht außerdem das Verständnis Ihres Codes für andere.
 
 ## <a name="the-std-namespace"></a>Der Namespace "std"
 
-Alle C++ Standard Bibliothekstypen und-Funktionen werden in den `std` Namespaces oder Namespaces deklariert, die in `std`geschachtelt sind.
+Alle C++-Standardbibliothekstypen und `std` -funktionen werden im Namespace oder im Namespaces, der in `std`verschachtelt ist, deklariert.
 
 ## <a name="nested-namespaces"></a>Geschachtelte Namespaces
 
-Namespaces können geschachtelt werden. Ein gewöhnlicher geschachtelter Namespace hat nicht qualifizierten Zugriff auf seine übergeordnete Member, aber die übergeordneten Member haben keinen nicht qualifizierten Zugriff auf den geschachtelten Namespace (es sei denn, er ist als Inline deklariert), wie im folgenden Beispiel gezeigt:
+Namespaces können geschachtelt werden. Ein normaler verschachtelter Namespace hat uneingeschränkten Zugriff auf die übergeordneten Mitglieder, aber die übergeordneten Member haben keinen uneingeschränkten Zugriff auf den verschachtelten Namespace (es sei denn, er wird als Inline deklariert), wie im folgenden Beispiel gezeigt:
 
 ```cpp
 namespace ContosoDataServer
@@ -205,7 +205,7 @@ Inlinenamespaces können als Mechanismus für die Versionskontrolle verwendet we
 
 Das inline-Schlüsselwort muss auf die erste Deklaration des Namespaces in einer Kompilierungseinheit angewendet werden.
 
-Das folgende Beispiel zeigt zwei Versionen einer Schnittstelle, beide in einem geschachtelten Namespace. Der `v_20`-Namespace weist einige Änderungen gegenüber der `v_10`-Schnittstelle auf und ist als Inline gekennzeichnet. Clientcode, der die neue Bibliothek verwendet `Contoso::Funcs::Add` aufruft, ruft die v_20-Version auf. Bei Code, der versucht, `Contoso::Funcs::Divide` aufzurufen, wird jetzt ein Fehler zur Kompilierzeit ausgegeben. Wenn diese Funktion wirklich benötigt wird, kann durch explizites Aufrufen von `v_10` immer noch auf die `Contoso::v_10::Funcs::Divide`-Version zugegriffen werden.
+Das folgende Beispiel zeigt zwei Versionen einer Schnittstelle, beide in einem geschachtelten Namespace. Der `v_20`-Namespace weist einige Änderungen gegenüber der `v_10`-Schnittstelle auf und ist als Inline gekennzeichnet. Clientcode, der die neue Bibliothek verwendet `Contoso::Funcs::Add` aufruft, ruft die v_20-Version auf. Bei Code, der versucht, `Contoso::Funcs::Divide` aufzurufen, wird jetzt ein Fehler zur Kompilierzeit ausgegeben. Wenn diese Funktion wirklich benötigt wird, kann durch explizites Aufrufen von `Contoso::v_10::Funcs::Divide` immer noch auf die `v_10`-Version zugegriffen werden.
 
 ```cpp
 namespace Contoso
@@ -241,9 +241,9 @@ namespace Contoso
 }
 ```
 
-## <a id="namespace_aliases"></a>Namespace Aliase
+## <a name="namespace-aliases"></a><a id="namespace_aliases"></a>Namespace-Aliase
 
-Namespacenamen müssen eindeutig sein, was bedeutet, dass sie häufig nicht zu kurz sein dürfen. Wenn Code aufgrund eines langen Namens schwer zu lesen ist oder die Eingabe einer Headerdatei Umstände bereitet, wenn keine using-Direktiven verwendet werden können, können Sie einen Namespacealias als Abkürzung für den tatsächlichen Namen erstellen. Beispiel:
+Namespacenamen müssen eindeutig sein, was bedeutet, dass sie häufig nicht zu kurz sein dürfen. Wenn die Länge eines Namens das Lesen von Code erschwert oder mühsam in eine Headerdatei eingegeben werden kann, in der die Verwendung von Direktiven nicht verwendet werden kann, können Sie einen Namespace-Alias erstellen, der als Abkürzung für den tatsächlichen Namen dient. Beispiel:
 
 ```cpp
 namespace a_very_long_namespace_name { class Foo {}; }
@@ -262,7 +262,7 @@ namespace
 }
 ```
 
-Dies wird als unbenannter oder anonymer Namespace bezeichnet und ist hilfreich, wenn Sie Variablen Deklarationen für Code in anderen Dateien unsichtbar machen möchten (d. h., Sie geben interne Verknüpfungen an), ohne einen benannten Namespace erstellen zu müssen. Der gesamte Code in einer bestimmten Datei kann die Bezeichner in einem unbenannten Namespace sehen, aber die Bezeichner, zusammen mit dem Namespace selbst, sind außerhalb dieser Datei nicht sichtbar – oder genauer gesagt außerhalb der Übersetzungseinheit.
+Dies wird als unbenannter oder anonymer Namespace bezeichnet, und es ist nützlich, wenn Sie Variablendeklarationen für den Code in anderen Dateien unsichtbar machen möchten (d. h. ihnen eine interne Verknüpfung geben), ohne einen benannten Namespace erstellen zu müssen. Der gesamte Code in einer bestimmten Datei kann die Bezeichner in einem unbenannten Namespace sehen, aber die Bezeichner, zusammen mit dem Namespace selbst, sind außerhalb dieser Datei nicht sichtbar – oder genauer gesagt außerhalb der Übersetzungseinheit.
 
 ## <a name="see-also"></a>Siehe auch
 

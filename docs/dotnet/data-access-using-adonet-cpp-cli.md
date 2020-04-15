@@ -22,33 +22,33 @@ helpviewer_keywords:
 - SAFEARRAY, marshaling
 - ADO.NET [C++], marshaling SAFEARRAY types
 ms.assetid: b0cd987d-1ea7-4f76-ba01-cbd52503d06d
-ms.openlocfilehash: b258e574b912b1c32e5ffae7ba29cfc5f9903685
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 35633449c4c01f5c103dcd54b81c0d6aa7c08cdc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209091"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364408"
 ---
 # <a name="data-access-using-adonet-ccli"></a>Datenzugriff mit ADO.NET (C++/CLI)
 
-ADO.NET ist die .NET Framework-API für den Datenzugriff und bietet die Leistung und benutzerfreundlichkeit von vorherigen Data Access-Lösungen. Dieser Abschnitt beschreibt einige der Probleme im Zusammenhang mit ADO.NET, die in Visual C++-Benutzer, z. B. das Marshalling systemeigenen Typs sind.
+ADO.NET ist die .NET Framework-API für den Datenzugriff und bietet Leistung und Benutzerfreundlichkeit, die von früheren Datenzugriffslösungen nicht erreicht wurden. In diesem Abschnitt werden einige der Probleme beschrieben, die ADO.NET betreffen, die für Visual C++-Benutzer eindeutig sind, z. B. das Marshallen systemeigener Typen.
 
-ADO.NET wird unter der Common Language Runtime (CLR) ausgeführt. Aus diesem Grund muss jede Anwendung, die Interaktion mit ADO.NET auch die CLR abzielen. Allerdings bedeutet dies nicht, dass native Anwendungen keine ADO.NET verwenden. Diese Beispiele zeige, wie für die Interaktion mit einer ADO.NET-Datenbank von systemeigenem Code.
+ADO.NET läuft unter der Common Language Runtime (CLR). Daher muss jede Anwendung, die mit ADO.NET interagiert, auch auf die CLR abzielen. Dies bedeutet jedoch nicht, dass systemeigene Anwendungen ADO.NET nicht verwenden können. In diesen Beispielen wird veranschaulicht, wie sie mit einer ADO.NET Datenbank aus systemeigenem Code interagieren.
 
-## <a name="marshal_ansi"></a> Marshallen von ANSI-Zeichenfolgen für ADO.NET
+## <a name="marshal-ansi-strings-for-adonet"></a><a name="marshal_ansi"></a>Marshal ANSI Strings für ADO.NET
 
-Veranschaulicht, wie eine native Zeichenfolge hinzufügen möchten (`char *`) mit einer Datenbank und das Marshallen einer <xref:System.String?displayProperty=fullName> aus einer Datenbank in eine systemeigene Zeichenfolge.
+Veranschaulicht, wie einer Datenbank`char *`eine systemeigene Zeichenfolge ( <xref:System.String?displayProperty=fullName> ) hinzugefügt wird und wie eine aus einer Datenbank zu einer systemeigenen Zeichenfolge gemarshallt wird.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel die Klasse DatabaseClass wird erstellt für die Interaktion mit einem ADO.NET <xref:System.Data.DataTable> Objekt. Beachten Sie, dass diese Klasse ein systemeigenes C++ `class` (im Vergleich zu einem `ref class` oder `value class`). Dies ist erforderlich, da diese Klasse von nativem Code verwendet werden soll, und keine verwaltete Typen in systemeigenem Code können. Diese Klasse wird kompiliert werden, um die CLR als Ziel ist die `#pragma managed` Richtlinie, die vor der Klassendeklaration. Weitere Informationen zu dieser Richtlinie, finden Sie unter [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md).
+In diesem Beispiel wird die Klasse DatabaseClass <xref:System.Data.DataTable> erstellt, um mit einem ADO.NET Objekt zu interagieren. Beachten Sie, dass es sich `class` bei dieser `ref class` Klasse `value class`um ein systemeigenes C++ handelt (im Vergleich zu einem oder ). Dies ist erforderlich, da wir diese Klasse aus systemeigenem Code verwenden möchten und Sie keine verwalteten Typen in systemeigenem Code verwenden können. Diese Klasse wird für die CLR erstellt, wie `#pragma managed` die Direktive vor der Klassendeklaration zeigt. Weitere Informationen zu dieser Direktive finden Sie unter [Verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md).
 
-Beachten Sie den privaten Member der Klasse DatabaseClass: `gcroot<DataTable ^> table`. Da systemeigene Typen verwaltete Typen enthalten, können nicht die `gcroot` Schlüsselwort ist erforderlich. Weitere Informationen zu `gcroot`, finden Sie unter [Vorgehensweise: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Beachten Sie den privaten Member `gcroot<DataTable ^> table`der DatabaseClass-Klasse: . Da systemeigene Typen keine `gcroot` verwalteten Typen enthalten können, ist das Schlüsselwort erforderlich. Weitere Informationen `gcroot`zu finden Sie unter [Gewusst wie: Erklären von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
 
-Der Rest des Codes in diesem Beispiel wird systemeigenem C++-Code, gekennzeichnet durch die `#pragma unmanaged` -Direktive vor `main`. In diesem Beispiel werden wir erstellen eine neue Instanz der DatabaseClass und Aufrufen ihrer Methoden zum Erstellen einer Tabelle und einige Zeilen in der Tabelle zu füllen. Beachten Sie, dass systemeigene C++-Zeichenfolgen als Werte für die Datenbankspalte StringCol übergeben werden. Innerhalb der DatabaseClass diese Zeichenfolgen mit dem Marshalling-Funktionalität in verwaltete Zeichenfolgen gemarshallt werden die <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace. Dabei wird die Methode <xref:System.Runtime.InteropServices.Marshal.PtrToStringAnsi%2A> zum Marshallen eine `char *` auf eine <xref:System.String>, und die Methode <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A> zum Marshallen einer <xref:System.String> auf eine `char *`.
+Der Rest des Codes in diesem Beispiel ist systemeigener C++-Code, wie die `#pragma unmanaged` vorangehende `main`Direktive zeigt. In diesem Beispiel erstellen wir eine neue Instanz von DatabaseClass und rufen deren Methoden auf, um eine Tabelle zu erstellen und einige Zeilen in der Tabelle aufzufüllen. Beachten Sie, dass systemeigene C++-Zeichenfolgen als Werte für die Datenbankspalte StringCol übergeben werden. Innerhalb von DatabaseClass werden diese Zeichenfolgen mithilfe der im <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace gefundenen Marshallingfunktionalität in verwaltete Zeichenfolgen gemarshallt. Insbesondere wird <xref:System.Runtime.InteropServices.Marshal.PtrToStringAnsi%2A> die Methode verwendet, `char *` <xref:System.String>um a <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A> zu a zu <xref:System.String> marshallen, und die Methode wird verwendet, um a zu einer `char *`zu marshallen.
 
 > [!NOTE]
->  Die Speichermenge von <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A> muss aufgehoben werden, durch Aufrufen von entweder <xref:System.Runtime.InteropServices.Marshal.FreeHGlobal%2A> oder `GlobalFree`.
+> Der von <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A> ihnen zugewiesene Speicher <xref:System.Runtime.InteropServices.Marshal.FreeHGlobal%2A> muss `GlobalFree`durch Aufrufen von entweder oder zugewiesen werden.
 
 ```cpp
 // adonet_marshal_string_native.cpp
@@ -155,26 +155,26 @@ StringCol: This is string 2.
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-- Um den Code über die Befehlszeile kompilieren, speichern Sie das Codebeispiel in einer Datei, die mit dem Namen adonet_marshal_string_native.cpp, und geben Sie die folgende Anweisung aus:
+- Um den Code aus der Befehlszeile zu kompilieren, speichern Sie das Codebeispiel in einer Datei mit dem Namen adonet_marshal_string_native.cpp, und geben Sie die folgende Anweisung ein:
 
     ```
     cl /clr /FU System.dll /FU System.Data.dll /FU System.Xml.dll adonet_marshal_string_native.cpp
     ```
 
-## <a name="marshal_bstr"></a> Marshallen von BSTR-Zeichenfolgen für ADO.NET
+## <a name="marshal-bstr-strings-for-adonet"></a><a name="marshal_bstr"></a>Marshal BSTR Strings für ADO.NET
 
-Veranschaulicht das Hinzufügen eine COM-Zeichenfolge (`BSTR`) mit einer Datenbank und das Marshallen einer <xref:System.String?displayProperty=fullName> aus einer Datenbank in eine `BSTR`.
+Veranschaulicht, wie einer Datenbank`BSTR`eine COM-Zeichenfolge ( <xref:System.String?displayProperty=fullName> ) hinzugefügt wird `BSTR`und wie eine aus einer Datenbank zu einer gemarshallt wird.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel die Klasse DatabaseClass wird erstellt für die Interaktion mit einem ADO.NET <xref:System.Data.DataTable> Objekt. Beachten Sie, dass diese Klasse ein systemeigenes C++ `class` (im Vergleich zu einem `ref class` oder `value class`). Dies ist erforderlich, da diese Klasse von nativem Code verwendet werden soll, und keine verwaltete Typen in systemeigenem Code können. Diese Klasse wird kompiliert werden, um die CLR als Ziel ist die `#pragma managed` Richtlinie, die vor der Klassendeklaration. Weitere Informationen zu dieser Richtlinie, finden Sie unter [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md).
+In diesem Beispiel wird die Klasse DatabaseClass <xref:System.Data.DataTable> erstellt, um mit einem ADO.NET Objekt zu interagieren. Beachten Sie, dass es sich `class` bei dieser `ref class` Klasse `value class`um ein systemeigenes C++ handelt (im Vergleich zu einem oder ). Dies ist erforderlich, da wir diese Klasse aus systemeigenem Code verwenden möchten und Sie keine verwalteten Typen in systemeigenem Code verwenden können. Diese Klasse wird für die CLR erstellt, wie `#pragma managed` die Direktive vor der Klassendeklaration zeigt. Weitere Informationen zu dieser Direktive finden Sie unter [Verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md).
 
-Beachten Sie den privaten Member der Klasse DatabaseClass: `gcroot<DataTable ^> table`. Da systemeigene Typen verwaltete Typen enthalten, können nicht die `gcroot` Schlüsselwort ist erforderlich. Weitere Informationen zu `gcroot`, finden Sie unter [Vorgehensweise: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Beachten Sie den privaten Member `gcroot<DataTable ^> table`der DatabaseClass-Klasse: . Da systemeigene Typen keine `gcroot` verwalteten Typen enthalten können, ist das Schlüsselwort erforderlich. Weitere Informationen `gcroot`zu finden Sie unter [Gewusst wie: Erklären von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
 
-Der Rest des Codes in diesem Beispiel wird systemeigenem C++-Code, gekennzeichnet durch die `#pragma unmanaged` -Direktive vor `main`. In diesem Beispiel werden wir erstellen eine neue Instanz der DatabaseClass und Aufrufen ihrer Methoden zum Erstellen einer Tabelle und einige Zeilen in der Tabelle zu füllen. Beachten Sie, dass die COM-Zeichenfolgen als Werte für die Datenbankspalte StringCol übergeben werden. Innerhalb der DatabaseClass diese Zeichenfolgen mit dem Marshalling-Funktionalität in verwaltete Zeichenfolgen gemarshallt werden die <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace. Dabei wird die Methode <xref:System.Runtime.InteropServices.Marshal.PtrToStringBSTR%2A> zum Marshallen eine `BSTR` auf eine <xref:System.String>, und die Methode <xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> zum Marshallen einer <xref:System.String> auf eine `BSTR`.
+Der Rest des Codes in diesem Beispiel ist systemeigener C++-Code, wie die `#pragma unmanaged` vorangehende `main`Direktive zeigt. In diesem Beispiel erstellen wir eine neue Instanz von DatabaseClass und rufen deren Methoden auf, um eine Tabelle zu erstellen und einige Zeilen in der Tabelle aufzufüllen. Beachten Sie, dass COM-Zeichenfolgen als Werte für die Datenbankspalte StringCol übergeben werden. Innerhalb von DatabaseClass werden diese Zeichenfolgen mithilfe der im <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace gefundenen Marshallingfunktionalität in verwaltete Zeichenfolgen gemarshallt. Insbesondere wird <xref:System.Runtime.InteropServices.Marshal.PtrToStringBSTR%2A> die Methode verwendet, `BSTR` <xref:System.String>um a <xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> zu a zu <xref:System.String> marshallen, und die Methode wird verwendet, um a zu einer `BSTR`zu marshallen.
 
 > [!NOTE]
->  Die Speichermenge von <xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> muss aufgehoben werden, durch Aufrufen von entweder <xref:System.Runtime.InteropServices.Marshal.FreeBSTR%2A> oder `SysFreeString`.
+> Der von <xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> ihnen zugewiesene Speicher <xref:System.Runtime.InteropServices.Marshal.FreeBSTR%2A> muss `SysFreeString`durch Aufrufen von entweder oder zugewiesen werden.
 
 ``` cpp
 // adonet_marshal_string_bstr.cpp
@@ -289,26 +289,26 @@ StringCol: This is string 2.
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-- Um den Code über die Befehlszeile kompilieren, speichern Sie das Codebeispiel in einer Datei, die mit dem Namen adonet_marshal_string_native.cpp, und geben Sie die folgende Anweisung aus:
+- Um den Code aus der Befehlszeile zu kompilieren, speichern Sie das Codebeispiel in einer Datei mit dem Namen adonet_marshal_string_native.cpp, und geben Sie die folgende Anweisung ein:
 
     ```
     cl /clr /FU System.dll /FU System.Data.dll /FU System.Xml.dll adonet_marshal_string_native.cpp
     ```
 
-## <a name="marshal_unicode"></a> Marshallen von Unicode-Zeichenfolgen für ADO.NET
+## <a name="marshal-unicode-strings-for-adonet"></a><a name="marshal_unicode"></a>Marshal Unicode Strings für ADO.NET
 
-Veranschaulicht das Hinzufügen einer systemeigenen Unicodezeichenfolge (`wchar_t *`) mit einer Datenbank und das Marshallen einer <xref:System.String?displayProperty=fullName> aus einer Datenbank in eine systemeigene Unicodezeichenfolge.
+Veranschaulicht, wie eine systemeigene`wchar_t *`Unicode-Zeichenfolge ( ) <xref:System.String?displayProperty=fullName> zu einer Datenbank hinzugefügt wird und wie eine aus einer Datenbank zu einer systemeigenen Unicode-Zeichenfolge gemarshallt wird.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel die Klasse DatabaseClass wird erstellt für die Interaktion mit einem ADO.NET <xref:System.Data.DataTable> Objekt. Beachten Sie, dass diese Klasse ein systemeigenes C++ `class` (im Vergleich zu einem `ref class` oder `value class`). Dies ist erforderlich, da diese Klasse von nativem Code verwendet werden soll, und keine verwaltete Typen in systemeigenem Code können. Diese Klasse wird kompiliert werden, um die CLR als Ziel ist die `#pragma managed` Richtlinie, die vor der Klassendeklaration. Weitere Informationen zu dieser Richtlinie, finden Sie unter [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md).
+In diesem Beispiel wird die Klasse DatabaseClass <xref:System.Data.DataTable> erstellt, um mit einem ADO.NET Objekt zu interagieren. Beachten Sie, dass es sich `class` bei dieser `ref class` Klasse `value class`um ein systemeigenes C++ handelt (im Vergleich zu einem oder ). Dies ist erforderlich, da wir diese Klasse aus systemeigenem Code verwenden möchten und Sie keine verwalteten Typen in systemeigenem Code verwenden können. Diese Klasse wird für die CLR erstellt, wie `#pragma managed` die Direktive vor der Klassendeklaration zeigt. Weitere Informationen zu dieser Direktive finden Sie unter [Verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md).
 
-Beachten Sie den privaten Member der Klasse DatabaseClass: `gcroot<DataTable ^> table`. Da systemeigene Typen verwaltete Typen enthalten, können nicht die `gcroot` Schlüsselwort ist erforderlich. Weitere Informationen zu `gcroot`, finden Sie unter [Vorgehensweise: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Beachten Sie den privaten Member `gcroot<DataTable ^> table`der DatabaseClass-Klasse: . Da systemeigene Typen keine `gcroot` verwalteten Typen enthalten können, ist das Schlüsselwort erforderlich. Weitere Informationen `gcroot`zu finden Sie unter [Gewusst wie: Erklären von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
 
-Der Rest des Codes in diesem Beispiel wird systemeigenem C++-Code, gekennzeichnet durch die `#pragma unmanaged` -Direktive vor `main`. In diesem Beispiel werden wir erstellen eine neue Instanz der DatabaseClass und Aufrufen ihrer Methoden zum Erstellen einer Tabelle und einige Zeilen in der Tabelle zu füllen. Beachten Sie, dass Unicode-C++-Zeichenfolgen als Werte für die Datenbankspalte StringCol übergeben werden. Innerhalb der DatabaseClass diese Zeichenfolgen mit dem Marshalling-Funktionalität in verwaltete Zeichenfolgen gemarshallt werden die <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace. Dabei wird die Methode <xref:System.Runtime.InteropServices.Marshal.PtrToStringUni%2A> zum Marshallen eine `wchar_t *` auf eine <xref:System.String>, und die Methode <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalUni%2A> zum Marshallen einer <xref:System.String> auf eine `wchar_t *`.
+Der Rest des Codes in diesem Beispiel ist systemeigener C++-Code, wie die `#pragma unmanaged` vorangehende `main`Direktive zeigt. In diesem Beispiel erstellen wir eine neue Instanz von DatabaseClass und rufen deren Methoden auf, um eine Tabelle zu erstellen und einige Zeilen in der Tabelle aufzufüllen. Beachten Sie, dass Unicode C++-Zeichenfolgen als Werte für die Datenbankspalte StringCol übergeben werden. Innerhalb von DatabaseClass werden diese Zeichenfolgen mithilfe der im <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace gefundenen Marshallingfunktionalität in verwaltete Zeichenfolgen gemarshallt. Insbesondere wird <xref:System.Runtime.InteropServices.Marshal.PtrToStringUni%2A> die Methode verwendet, `wchar_t *` <xref:System.String>um a <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalUni%2A> zu a zu <xref:System.String> marshallen, und die Methode wird verwendet, um a zu einer `wchar_t *`zu marshallen.
 
 > [!NOTE]
->  Die Speichermenge von <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalUni%2A> muss aufgehoben werden, durch Aufrufen von entweder <xref:System.Runtime.InteropServices.Marshal.FreeHGlobal%2A> oder `GlobalFree`.
+> Der von <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalUni%2A> ihnen zugewiesene Speicher <xref:System.Runtime.InteropServices.Marshal.FreeHGlobal%2A> muss `GlobalFree`durch Aufrufen von entweder oder zugewiesen werden.
 
 ```cpp
 // adonet_marshal_string_wide.cpp
@@ -415,23 +415,23 @@ StringCol: This is string 2.
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-- Um den Code über die Befehlszeile kompilieren, speichern Sie das Codebeispiel in einer Datei, die mit dem Namen adonet_marshal_string_wide.cpp, und geben Sie die folgende Anweisung aus:
+- Um den Code aus der Befehlszeile zu kompilieren, speichern Sie das Codebeispiel in einer Datei mit dem Namen adonet_marshal_string_wide.cpp, und geben Sie die folgende Anweisung ein:
 
     ```
     cl /clr /FU System.dll /FU System.Data.dll /FU System.Xml.dll adonet_marshal_string_wide.cpp
     ```
 
-## <a name="marshal_variant"></a> Marshallen eines VARIANT für ADO.NET
+## <a name="marshal-a-variant-for-adonet"></a><a name="marshal_variant"></a>Marschall a VARIANT für ADO.NET
 
-Veranschaulicht das Hinzufügen ein systemeigenen `VARIANT` mit einer Datenbank und das Marshallen einer <xref:System.Object?displayProperty=fullName> aus einer Datenbank in eine systemeigene `VARIANT`.
+Veranschaulicht, wie eine `VARIANT` Systemazuzmutter zu <xref:System.Object?displayProperty=fullName> einer Datenbank hinzugefügt `VARIANT`und eine aus einer Datenbank zu einer systemeigenen gemarshallt wird.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel die Klasse DatabaseClass wird erstellt für die Interaktion mit einem ADO.NET <xref:System.Data.DataTable> Objekt. Beachten Sie, dass diese Klasse ein systemeigenes C++ `class` (im Vergleich zu einem `ref class` oder `value class`). Dies ist erforderlich, da diese Klasse von nativem Code verwendet werden soll, und keine verwaltete Typen in systemeigenem Code können. Diese Klasse wird kompiliert werden, um die CLR als Ziel ist die `#pragma managed` Richtlinie, die vor der Klassendeklaration. Weitere Informationen zu dieser Richtlinie, finden Sie unter [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md).
+In diesem Beispiel wird die Klasse DatabaseClass <xref:System.Data.DataTable> erstellt, um mit einem ADO.NET Objekt zu interagieren. Beachten Sie, dass es sich `class` bei dieser `ref class` Klasse `value class`um ein systemeigenes C++ handelt (im Vergleich zu einem oder ). Dies ist erforderlich, da wir diese Klasse aus systemeigenem Code verwenden möchten und Sie keine verwalteten Typen in systemeigenem Code verwenden können. Diese Klasse wird für die CLR erstellt, wie `#pragma managed` die Direktive vor der Klassendeklaration zeigt. Weitere Informationen zu dieser Direktive finden Sie unter [Verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md).
 
-Beachten Sie den privaten Member der Klasse DatabaseClass: `gcroot<DataTable ^> table`. Da systemeigene Typen verwaltete Typen enthalten, können nicht die `gcroot` Schlüsselwort ist erforderlich. Weitere Informationen zu `gcroot`, finden Sie unter [Vorgehensweise: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Beachten Sie den privaten Member `gcroot<DataTable ^> table`der DatabaseClass-Klasse: . Da systemeigene Typen keine `gcroot` verwalteten Typen enthalten können, ist das Schlüsselwort erforderlich. Weitere Informationen `gcroot`zu finden Sie unter [Gewusst wie: Erklären von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
 
-Der Rest des Codes in diesem Beispiel wird systemeigenem C++-Code, gekennzeichnet durch die `#pragma unmanaged` -Direktive vor `main`. In diesem Beispiel werden wir erstellen eine neue Instanz der DatabaseClass und Aufrufen ihrer Methoden zum Erstellen einer Tabelle und einige Zeilen in der Tabelle zu füllen. Beachten Sie, dass systemeigene `VARIANT` Typen werden als Werte für die Datenbankspalte ObjectCol übergeben wird. Innerhalb der DatabaseClass diese `VARIANT` Typen gemarshallt werden verwaltete Objekte, die mit dem Marshalling-Funktionalität der <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace. Dabei wird die Methode <xref:System.Runtime.InteropServices.Marshal.GetObjectForNativeVariant%2A> zum Marshallen einer `VARIANT` auf ein <xref:System.Object>, und die Methode <xref:System.Runtime.InteropServices.Marshal.GetNativeVariantForObject%2A> zum Marshallen ein <xref:System.Object> auf eine `VARIANT`.
+Der Rest des Codes in diesem Beispiel ist systemeigener C++-Code, wie die `#pragma unmanaged` vorangehende `main`Direktive zeigt. In diesem Beispiel erstellen wir eine neue Instanz von DatabaseClass und rufen deren Methoden auf, um eine Tabelle zu erstellen und einige Zeilen in der Tabelle aufzufüllen. Beachten Sie, dass systemeigene `VARIANT` Typen als Werte für die Datenbankspalte ObjectCol übergeben werden. Innerhalb von DatabaseClass werden diese `VARIANT` Typen mithilfe der im <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace gefundenen Marshallingfunktionalität zu verwalteten Objekten gemarshallt. Insbesondere wird <xref:System.Runtime.InteropServices.Marshal.GetObjectForNativeVariant%2A> die Methode verwendet, `VARIANT` <xref:System.Object>um a <xref:System.Runtime.InteropServices.Marshal.GetNativeVariantForObject%2A> zu einem zu <xref:System.Object> marshallen, und die Methode wird verwendet, um eine zu einer `VARIANT`zu marshallen.
 
 ```cpp
 // adonet_marshal_variant.cpp
@@ -556,23 +556,23 @@ ObjectCol: 42
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-- Um den Code über die Befehlszeile kompilieren, speichern Sie das Codebeispiel in einer Datei, die mit dem Namen adonet_marshal_variant.cpp, und geben Sie die folgende Anweisung aus:
+- Um den Code aus der Befehlszeile zu kompilieren, speichern Sie das Codebeispiel in einer Datei mit dem Namen adonet_marshal_variant.cpp, und geben Sie die folgende Anweisung ein:
 
     ```
     cl /clr /FU System.dll /FU System.Data.dll /FU System.Xml.dll adonet_marshal_variant.cpp
     ```
 
-## <a name="marshal_safearray"></a> Marshallen eines SAFEARRAY für ADO.NET
+## <a name="marshal-a-safearray-for-adonet"></a><a name="marshal_safearray"></a>Marshall a SAFEARRAY für ADO.NET
 
-Veranschaulicht das Hinzufügen ein systemeigenen `SAFEARRAY` mit einer Datenbank und das Marshallen eines verwalteten Arrays aus einer Datenbank in eine systemeigene `SAFEARRAY`.
+Veranschaulicht, wie eine `SAFEARRAY` systemeigene Datei zu einer Datenbank hinzugefügt und `SAFEARRAY`ein verwaltetes Array aus einer Datenbank zu einem systemeigenen gemarshallt wird.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel die Klasse DatabaseClass wird erstellt für die Interaktion mit einem ADO.NET <xref:System.Data.DataTable> Objekt. Beachten Sie, dass diese Klasse ein systemeigenes C++ `class` (im Vergleich zu einem `ref class` oder `value class`). Dies ist erforderlich, da diese Klasse von nativem Code verwendet werden soll, und keine verwaltete Typen in systemeigenem Code können. Diese Klasse wird kompiliert werden, um die CLR als Ziel ist die `#pragma managed` Richtlinie, die vor der Klassendeklaration. Weitere Informationen zu dieser Richtlinie, finden Sie unter [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md).
+In diesem Beispiel wird die Klasse DatabaseClass <xref:System.Data.DataTable> erstellt, um mit einem ADO.NET Objekt zu interagieren. Beachten Sie, dass es sich `class` bei dieser `ref class` Klasse `value class`um ein systemeigenes C++ handelt (im Vergleich zu einem oder ). Dies ist erforderlich, da wir diese Klasse aus systemeigenem Code verwenden möchten und Sie keine verwalteten Typen in systemeigenem Code verwenden können. Diese Klasse wird für die CLR erstellt, wie `#pragma managed` die Direktive vor der Klassendeklaration zeigt. Weitere Informationen zu dieser Direktive finden Sie unter [Verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md).
 
-Beachten Sie den privaten Member der Klasse DatabaseClass: `gcroot<DataTable ^> table`. Da systemeigene Typen verwaltete Typen enthalten, können nicht die `gcroot` Schlüsselwort ist erforderlich. Weitere Informationen zu `gcroot`, finden Sie unter [Vorgehensweise: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Beachten Sie den privaten Member `gcroot<DataTable ^> table`der DatabaseClass-Klasse: . Da systemeigene Typen keine `gcroot` verwalteten Typen enthalten können, ist das Schlüsselwort erforderlich. Weitere Informationen `gcroot`zu finden Sie unter [Gewusst wie: Erklären von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
 
-Der Rest des Codes in diesem Beispiel wird systemeigenem C++-Code, gekennzeichnet durch die `#pragma unmanaged` -Direktive vor `main`. In diesem Beispiel werden wir erstellen eine neue Instanz der DatabaseClass und Aufrufen ihrer Methoden zum Erstellen einer Tabelle und einige Zeilen in der Tabelle zu füllen. Beachten Sie, dass systemeigene `SAFEARRAY` Typen werden als Werte für die Datenbankspalte ArrayIntsCol übergeben wird. Innerhalb der DatabaseClass diese `SAFEARRAY` Typen gemarshallt werden verwaltete Objekte, die mit dem Marshalling-Funktionalität der <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace. Dabei wird die Methode <xref:System.Runtime.InteropServices.Marshal.Copy%2A> zum Marshallen einer `SAFEARRAY` in ein verwaltetes Array von ganzen Zahlen, und die Methode <xref:System.Runtime.InteropServices.Marshal.Copy%2A> zum Marshallen von eines verwalteten Arrays von ganzen Zahlen in einer `SAFEARRAY`.
+Der Rest des Codes in diesem Beispiel ist systemeigener C++-Code, wie die `#pragma unmanaged` vorangehende `main`Direktive zeigt. In diesem Beispiel erstellen wir eine neue Instanz von DatabaseClass und rufen deren Methoden auf, um eine Tabelle zu erstellen und einige Zeilen in der Tabelle aufzufüllen. Beachten Sie, dass systemeigene `SAFEARRAY` Typen als Werte für die Datenbankspalte ArrayIntsCol übergeben werden. Innerhalb von DatabaseClass werden diese `SAFEARRAY` Typen mithilfe der im <xref:System.Runtime.InteropServices?displayProperty=fullName> Namespace gefundenen Marshallingfunktionalität zu verwalteten Objekten gemarshallt. Insbesondere wird <xref:System.Runtime.InteropServices.Marshal.Copy%2A> die Methode verwendet, um a `SAFEARRAY` zu einem verwalteten <xref:System.Runtime.InteropServices.Marshal.Copy%2A> Array von Ganzzahlen zu marshallen, `SAFEARRAY`und die Methode wird verwendet, um ein verwaltetes Array von Ganzzahlen zu einem zu marshallen.
 
 ```cpp
 // adonet_marshal_safearray.cpp
@@ -709,7 +709,7 @@ int main()
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-- Um den Code über die Befehlszeile kompilieren, speichern Sie das Codebeispiel in einer Datei, die mit dem Namen adonet_marshal_safearray.cpp, und geben Sie die folgende Anweisung aus:
+- Um den Code aus der Befehlszeile zu kompilieren, speichern Sie das Codebeispiel in einer Datei mit dem Namen adonet_marshal_safearray.cpp, und geben Sie die folgende Anweisung ein:
 
     ```
     cl /clr /FU System.dll /FU System.Data.dll /FU System.Xml.dll adonet_marshal_safearray.cpp
@@ -717,17 +717,17 @@ int main()
 
 ## <a name="net-framework-security"></a>.NET Framework-Sicherheit
 
-Informationen zu Sicherheitsaspekten bezüglich ADO.NET finden Sie unter [Sichern von ADO.NET-Anwendungen](/dotnet/framework/data/adonet/securing-ado-net-applications).
+Informationen zu Sicherheitsproblemen im Zusammenhang mit ADO.NET finden Sie unter [Sichern ADO.NET Anwendungen](/dotnet/framework/data/adonet/securing-ado-net-applications).
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-|Abschnitt|Beschreibung|
+|`Section`|BESCHREIBUNG|
 |-------------|-----------------|
-|[ADO.NET](/dotnet/framework/data/adonet/index)|Bietet eine Übersicht über ADO.NET und einen Satz von Klassen, die Datenzugriffsdienste für .NET-Programmierer verfügbar machen.|
+|[ADO.NET](/dotnet/framework/data/adonet/index)|Bietet einen Überblick über ADO.NET, eine Gruppe von Klassen, die Datenzugriffsdienste für den .NET-Programmierer verfügbar machen.|
 
 ## <a name="see-also"></a>Siehe auch
 
-[.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+[.NET Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
 
 [Interoperabilität von nativem Code und .NET](../dotnet/native-and-dotnet-interoperability.md)
 

@@ -1,8 +1,9 @@
 ---
 title: _tzset
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _tzset
+- _o__tzset
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - time environment variables
 - environment variables, setting time
 ms.assetid: 3f6ed537-b414-444d-b272-5dd377481930
-ms.openlocfilehash: e9ea454ede370a20779b5852b426b418db81757c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b2537a3bbfd2b5cec6bdf149c520aac7e3344b1e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957561"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81362188"
 ---
 # <a name="_tzset"></a>_tzset
 
@@ -46,49 +48,51 @@ Legt die Umgebungsvariablen für die Zeit fest.
 void _tzset( void );
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_tzset** -Funktion verwendet die aktuelle Einstellung der Umgebungsvariablen " **TZ** ", um drei globalen Variablen Werte zuzuweisen: **_daylight**, **_timezone**und **_tzname**. Diese Variablen werden von den Funktionen [_ftime](ftime-ftime32-ftime64.md) und [localtime](localtime-localtime32-localtime64.md) verwendet, um Korrekturen von der koordinierten Weltzeit (UTC) zur Ortszeit und von der [time](time-time32-time64.md) -Funktion zur Berechnung der UTC aus der Systemzeit durchführen. Verwenden Sie die folgende Syntax, um die **TZ** -Umgebungsvariable festzulegen:
+Die **_tzset-Funktion** verwendet die aktuelle Einstellung der Umgebungsvariablen **TZ,** um drei globalen Variablen Werte zuzuweisen: **_daylight**, **_timezone**und **_tzname**. Diese Variablen werden von den [_ftime-](ftime-ftime32-ftime64.md) und [Lokalzeitfunktionen](localtime-localtime32-localtime64.md) verwendet, um Korrekturen von der koordinierten Weltzeit (UTC) bis zur ortszeiten Zeit vorzunehmen, und durch die [Zeitfunktion,](time-time32-time64.md) um UTC aus der Systemzeit zu berechnen. Verwenden Sie die folgende **TZ** Syntax, um die TZ-Umgebungsvariable festzulegen:
 
-> **Set TZ =** _tzn_ &#124;] hh:mm\[: SS]] [DZN]\[ \[ **+** **-**
+> **satz TZ=**_tzn_ \[ **+**&#124;**-**]*hh*\[**:**_mm_\[**:**_ss_] ][*dzn*]
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |-|-|
 | *tzn* | Dreibuchstabiger Zeitzonenname, z. B. PST. Sie müssen die richtige Verschiebung (Offset) von der Ortszeit zur UTC angeben. |
 | *hh* | Unterschied in Stunden zwischen UTC und Ortszeit. Das Pluszeichen (+) ist für positive Werte optional. |
-| *mm* | Minuten. Getrennt von *HH* durch einen Doppelpunkt ( **:** ). |
-| *ss* | Sekunden. Von *mm* getrennt durch einen Doppelpunkt ( **:** ). |
-| *dzn* | Dreibuchstabige Sommerzeitzone, z. B. PDT. Wenn die Sommerzeit in der Lokalität nie wirksam ist, legen Sie **TZ** ohne einen Wert für *DZN*fest. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit (DST, Daylight Saving Time) zu implementieren. |
+| *Mm* | Minuten. Getrennt von *hh* durch einen Doppelpunkt (**:**). |
+| *Ss* | Sekunden. Getrennt von *mm* durch einen Doppelpunkt (**:**). |
+| *dzn* | Dreibuchstabige Sommerzeitzone, z. B. PDT. Wenn die Sommerzeit in der Ortschaft nie in Kraft ist, legen Sie **TZ** ohne Wert für *dzn*fest. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit (DST, Daylight Saving Time) zu implementieren. |
 
 > [!NOTE]
 > Seien Sie vorsichtig, wenn Sie das Zeichen des Zeitunterschieds berechnen. Da der Zeitunterschied die Verschiebung von der Ortszeit zu UTC (anstatt umgekehrt) ist, ist das dazugehörige Zeichen gegenüber dem erwarteten möglicherweise das entgegengesetzte. Für Zeitzonen vor UTC ist der Zeitunterschied negativ; für Zeitzonen hinter UTC ist der Unterschied positiv.
 
-Geben Sie z. b. Folgendes in der Befehlszeile ein, um die **TZ** -Umgebungsvariable so festzulegen, dass Sie der aktuellen Zeitzone in Deutschland entspricht:
+Um beispielsweise die **Umgebungsvariable TZ** so einzustellen, dass sie der aktuellen Zeitzone in Deutschland entspricht, geben Sie in der Befehlszeile Folgendes ein:
 
-> **Set TZ = GST-1GDT**
+> **Satz TZ=GST-1GDT**
 
 Dieser Befehl verwendet GST zur Angabe der deutschen Normalzeit und setzt voraus, dass UTC eine Stunde hinter Deutschland (oder Deutschland eine Stunde vor UTC) ist, und dass Deutschland die Sommerzeit berücksichtigt.
 
-Wenn der **TZ** -Wert nicht festgelegt ist, versucht **_tzset** , die vom Betriebssystem angegebenen Zeitzoneninformationen zu verwenden. Im Windows-Betriebssystem werden diese Informationen in der Datum/Uhrzeit-Anwendung in der Systemsteuerung angegeben. Wenn **_tzset** diese Informationen nicht abrufen kann, wird standardmäßig PST8PDT verwendet, was die Pacific Time Zone angibt.
+Wenn der **TZ-Wert** nicht festgelegt ist, **versucht _tzset,** die vom Betriebssystem angegebenen Zeitzoneninformationen zu verwenden. Im Windows-Betriebssystem werden diese Informationen in der Datum/Uhrzeit-Anwendung in der Systemsteuerung angegeben. Wenn **_tzset** diese Informationen nicht abrufen können, verwendet es standardmäßig PST8PDT, was die Pazifische Zeitzone bedeutet.
 
-Basierend auf dem Wert der **TZ** -Umgebungsvariablen werden die folgenden Werte den globalen Variablen **_daylight**, **_timezone**und **_tzname** zugewiesen, wenn **_tzset** aufgerufen wird:
+Basierend auf dem Wert der TZ-Umgebungsvariablen werden den globalen Variablen **_daylight ,** **_timezone**und **_tzname,** wenn **_tzset** aufgerufen wird, die folgenden Werte zugewiesen: **TZ**
 
-|Globale Variable|Beschreibung|Standardwert|
+|Globale Variable|BESCHREIBUNG|Standardwert|
 |---------------------|-----------------|-------------------|
-|**_daylight**|Wert ungleich 0 (null), wenn eine Sommer Zeitzone in der **TZ** -Einstellung angegeben wird. andernfalls 0.|1|
+|**_daylight**|Wert ungleich Null, wenn in der **TZ-Einstellung** eine Sommerzeitzone angegeben ist; andernfalls 0.|1|
 |**_timezone**|Unterschied in Sekunden zwischen Ortszeit und UTC.|28800 (28800 Sekunden sind gleich 8 Stunden)|
-|**_tzname**[0]|Zeichen folgen Wert des Zeit Zonen namens von der **TZ** -Umgebungsvariablen; leer, wenn **TZ** nicht festgelegt wurde.|PST|
-|**_tzname**[1]|Zeichen folgen Wert der Sommer Zeitzone; leer, wenn die Sommer Zeitzone von der **TZ** -Umgebungsvariablen ausgelassen wird.|PDT|
+|**_tzname**[0]|Zeichenfolgenwert des Zeitzonennamens aus der **Umgebungsvariablen TZ;** leer, wenn **TZ** nicht gesetzt wurde.|PST|
+|**_tzname**[1]|Zeichenfolgenwert der Sommerzeitzone; leer, wenn die Sommerzeitzone in der **Umweltvariablen TZ** weggelassen wird.|PDT|
 
-Die Standardwerte, die in der obigen Tabelle für **_daylight** und dem **_tzname** -Array angezeigt werden, entsprechen "PST8PDT". Wenn die DST-Zone in der **TZ** -Umgebungsvariablen weggelassen wird, ist der Wert von **_daylight** 0 und die Funktionen [_ftime](ftime-ftime32-ftime64.md), [gmtime](gmtime-gmtime32-gmtime64.md)und [localtime](localtime-localtime32-localtime64.md) geben 0 für Ihre DST-Flags zurück.
+Die in der obigen Tabelle angezeigten Standardwerte für **_daylight** und das **array _tzname** entsprechen "PST8PDT". Wenn die DST-Zone in der TZ-Umgebungsvariablen weggelassen wird, ist der Wert von **_daylight** 0, und die [_ftime](ftime-ftime32-ftime64.md)-, [gmtime-](gmtime-gmtime32-gmtime64.md)und **TZ** [Lokalzeitfunktionen](localtime-localtime32-localtime64.md) geben 0 für ihre DST-Flags zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_tzset**|\<time.h>|
 
-Die **_tzset** -Funktion ist Microsoft-spezifisch. Weitere Informationen finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die **_tzset** Funktion ist Microsoft-spezifisch. Weitere Informationen finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -127,7 +131,7 @@ _tzname[0] = Pacific Standard Time
 
 ## <a name="see-also"></a>Siehe auch
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>
 [_ftime, _ftime32, _ftime64](ftime-ftime32-ftime64.md)<br/>
 [gmtime, _gmtime32, _gmtime64](gmtime-gmtime32-gmtime64.md)<br/>

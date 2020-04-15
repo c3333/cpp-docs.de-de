@@ -38,12 +38,12 @@ helpviewer_keywords:
 - stdext::allocator_base [C++], destroy
 - stdext::allocator_base [C++], max_size
 ms.assetid: f920b45f-2a88-4bb0-8ead-b6126b426ed4
-ms.openlocfilehash: cbc1a9eb9432a454ca5dc04205b9d0c7b631a430
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: f93c8ff53452fc98415e194966960254e7b44143
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690089"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364983"
 ---
 # <a name="allocator_base-class"></a>allocator_base-Klasse
 
@@ -58,41 +58,41 @@ class allocator_base
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
-|*PPEN*|Die Synchronisierungsrichtlinie für die Zuweisung: [sync_none-Klasse](../standard-library/sync-none-class.md), [sync_per_container-Klasse](../standard-library/sync-per-container-class.md), [sync_per_thread-Klasse](../standard-library/sync-per-thread-class.md) oder [sync_shared-Klasse](../standard-library/sync-shared-class.md).|
+|*Typ*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+|*Synchronisierung*|Die Synchronisierungsrichtlinie für die Zuweisung: [sync_none-Klasse](../standard-library/sync-none-class.md), [sync_per_container-Klasse](../standard-library/sync-per-container-class.md), [sync_per_thread-Klasse](../standard-library/sync-per-thread-class.md) oder [sync_shared-Klasse](../standard-library/sync-shared-class.md).|
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[allocator_base](#allocator_base)|Konstruiert ein Objekt vom Typ `allocator_base`.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[const_pointer](#const_pointer)|Ein Typ, der einen konstanten Zeiger auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
 |[const_reference](#const_reference)|Ein Typ, der einen konstanten Verweis auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
 |[difference_type](#difference_type)|Ein ganzzahliger Typ mit Vorzeichen, der die Differenz zwischen Werten von Zeigern und dem Typ des Objekts, das von der Zuweisung verwaltet wird, darstellen kann.|
 |[Zeiger](#pointer)|Ein Typ, der einen Zeiger auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
-|[reference](#reference)|Ein Typ, der einen Verweis auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
-|[size_type](#size_type)|Ein ganzzahliger Typ ohne Vorzeichen, der die Länge einer beliebigen Sequenz darstellen kann, die ein Objekt vom Typ `allocator_base` zuordnen kann.|
-|[value_type](#value_type)|Ein Typ, der von der Zuweisung verwaltet wird.|
+|[Verweis](#reference)|Ein Typ, der einen Verweis auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
+|[Size_type](#size_type)|Ein nicht signierter integraler Typ, der die Länge `allocator_base` einer beliebigen Sequenz darstellen kann, die ein Objekt vom Typ zuweisen kann.|
+|[Value_type](#value_type)|Ein Typ, der von der Zuweisung verwaltet wird.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[_Charalloc](#charalloc)|Ordnet Speicher für ein Array vom Typ " **char**" zu.|
-|[_Chardealloc](#chardealloc)|Gibt Speicher für das Array frei, das Elemente vom Typ **char**enthält.|
-|[address](#address)|Sucht die Adresse eines Objekts, dessen Wert angegeben wird.|
-|[allocate](#allocate)|Ordnet einen Speicherblock zu, der groß genug ist, um mindestens eine angegebene Anzahl von Elementen zu speichern.|
-|[construct](#construct)|Erstellt eine bestimmte Art von Objekt an einer bestimmten Adresse, die mit einem angegebenen Wert initialisiert wird.|
-|[deallocate](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
-|[destroy](#destroy)|Ruft einen Objektdestruktor auf, ohne die Zuordnung des Speicherplatzes aufzuheben, an dem Objekt gespeichert wurde.|
-|[max_size](#max_size)|Gibt die Anzahl der Elemente vom Typ *Type* zurück, die von einem Objekt der Klassenzuweisung zugeordnet werden konnten, bevor der freie Speicherplatz verbraucht ist.|
+|[_Charalloc](#charalloc)|Ordnet Speicher für ein Array vom Typ **char**zu.|
+|[_Chardealloc](#chardealloc)|Gibt Speicherplatz für das Array frei, das Elemente vom Typ **char**enthält.|
+|[Adresse](#address)|Sucht die Adresse eines Objekts, dessen Wert angegeben wird.|
+|[Zuordnen](#allocate)|Ordnet einen Speicherblock zu, der groß genug ist, um mindestens eine angegebene Anzahl von Elementen zu speichern.|
+|[Erstellen](#construct)|Erstellt eine bestimmte Art von Objekt an einer bestimmten Adresse, die mit einem angegebenen Wert initialisiert wird.|
+|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[Zerstören](#destroy)|Ruft einen Objektdestruktor auf, ohne die Zuordnung des Speicherplatzes aufzuheben, an dem Objekt gespeichert wurde.|
+|[Max_size](#max_size)|Gibt die Anzahl der Elemente vom Typ *Type* zurück, die von einem Objekt der Klassenzuweisung zugeordnet werden konnten, bevor der freie Speicherplatz verbraucht ist.|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -100,9 +100,9 @@ class allocator_base
 
 **Namespace:** stdext
 
-## <a name="charalloc"></a> allocator_base::_Charalloc
+## <a name="allocator_base_charalloc"></a><a name="charalloc"></a>allocator_base::_Charalloc
 
-Ordnet Speicher für ein Array vom Typ " **char**" zu.
+Ordnet Speicher für ein Array vom Typ **char**zu.
 
 ```cpp
 char *_Charalloc(size_type count);
@@ -110,21 +110,21 @@ char *_Charalloc(size_type count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*count*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
+|*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird von Containers verwendet, wenn sie mit einem Compiler kompiliert wird, der Rebind nicht kompilieren kann. Es implementiert `_Charalloc` für die benutzerdefinierte allocator-Klasse, indem es das Ergebnis eines Aufrufs an die Funktion `allocate` des Synchronisationsfilters zurückgibt.
 
-## <a name="chardealloc"></a> allocator_base::_Chardealloc
+## <a name="allocator_base_chardealloc"></a><a name="chardealloc"></a>allocator_base::_Chardealloc
 
-Gibt Speicher für das Array frei, das Elemente vom Typ **char**enthält.
+Gibt Speicherplatz für das Array frei, das Elemente vom Typ **char**enthält.
 
 ```cpp
 void _Chardealloc(void* ptr, size_type count);
@@ -132,16 +132,16 @@ void _Chardealloc(void* ptr, size_type count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuweisung zum Speicher aufgehoben werden soll.|
+|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird von Containers verwendet, wenn sie mit einem Compiler kompiliert wird, der Rebind nicht kompilieren kann. Für die benutzerdefinierte allocator-Klasse implementiert es `_Chardealloc`, indem es das Ergebnis eines Aufrufs an die Funktion `deallocate` des Synchronisationsfilters zurückgibt. Der Zeiger ptr muss schon vorher für ein Zuweisungsobjekt, das gleich `*this` ist,von einen Aufruf an `_Charalloc` zurückgegeben worden sein, damit er ein Arrayobjekt der gleichen Größe und des gleichen Typs zuweisen kann. `_Chardealloc` löst nie eine Ausnahme aus.
 
-## <a name="address"></a> allocator_base::address
+## <a name="allocator_baseaddress"></a><a name="address"></a>allocator_base::Adresse
 
 Sucht die Adresse eines Objekts, dessen Wert angegeben wird.
 
@@ -153,18 +153,18 @@ const_pointer address(const_reference val);
 
 ### <a name="parameters"></a>Parameter
 
-*Val* -\
+*Val*\
 Der konstante oder nicht konstante Wert des Objekts, nach dessen Adresse gesucht wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein konstanter oder nicht konstanter Zeiger auf ein Objekt mit konstantem bzw. nicht konstantem Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `&val` zurückgegeben wird.
 
-## <a name="allocate"></a> allocator_base::allocate
+## <a name="allocator_baseallocate"></a><a name="allocate"></a>allocator_base::zuweisen
 
 Ordnet einen Speicherblock zu, der groß genug ist, um mindestens eine angegebene Anzahl von Elementen zu speichern.
 
@@ -177,20 +177,20 @@ pointer allocate(size_type _Nx);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_Nx*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
-|*_Hint*|Konvertiert die Zeichenfolgendarstellung einer Zahl in einem angegebenen Stil und einem kulturspezifischen Format in die entsprechende 32-Bit-Ganzzahl mit Vorzeichen.|
+|*_nx*|Die Anzahl der zuzuweisenden Elemente im Array|
+|*_Hint*|Dieser Parameter wird ignoriert.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion implementiert Speicherreservierung für die benutzerdefinierte allocator-Klasse, indem sie das Ergebnis eines Aufrufs an die Funktion `allocate` des Synchronisationsfilters des Typs „type“ `*` wenn `_Nx == 1` zurückgibt; andernfalls indem sie das Ergebnis eines Aufrufs an den Cast `operator new(_Nx * sizeof(Type))` des Typs „Type“ `*`.
 
-## <a name="allocator_base"></a> allocator_base::allocator_base
+## <a name="allocator_baseallocator_base"></a><a name="allocator_base"></a>allocator_base::allocator_base
 
 Konstruiert ein Objekt vom Typ `allocator_base`.
 
@@ -203,15 +203,15 @@ allocator_base(const allocator_base<Other, Sync>& right);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*right*|Das zu kopierende Zuweisungsobjekt.|
+|*Richting*|Das zu kopierende Zuweisungsobjekt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Konstruktor erstellt eine [allocator_base](../standard-library/allocator-base-class.md)-Instanz. Der zweite Konstruktor erstellt eine `allocator_base`-Instanz, so dass jede `allocator_base<Type, _Sync>`-Instanz `a`, `allocator_base<Type, Sync>(allocator_base<Other, Sync>(a)) == a`.
 
-## <a name="const_pointer"></a> allocator_base::const_pointer
+## <a name="allocator_baseconst_pointer"></a><a name="const_pointer"></a>allocator_base::const_pointer
 
 Ein Typ, der einen konstanten Zeiger auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.
 
@@ -219,7 +219,7 @@ Ein Typ, der einen konstanten Zeiger auf den Typ des Objekts bereitstellt, das v
 typedef const Type *const_pointer;
 ```
 
-## <a name="const_reference"></a> allocator_base::const_reference
+## <a name="allocator_baseconst_reference"></a><a name="const_reference"></a>allocator_base::const_reference
 
 Ein Typ, der einen konstanten Verweis auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.
 
@@ -227,7 +227,7 @@ Ein Typ, der einen konstanten Verweis auf den Typ des Objekts bereitstellt, das 
 typedef const Type& const_reference;
 ```
 
-## <a name="construct"></a> allocator_base::construct
+## <a name="allocator_baseconstruct"></a><a name="construct"></a>allocator_base::konstrukt
 
 Erstellt eine bestimmte Art von Objekt an einer bestimmten Adresse, die mit einem angegebenen Wert initialisiert wird.
 
@@ -237,16 +237,16 @@ void construct(pointer ptr, const Type& val);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf den Speicherort, in dem das Objekt erstellt werden soll.|
-|*val*|Der Wert, mit dem das zu erstellende Objekt initialisiert werden soll.|
+|*Ptr*|Ein Zeiger auf den Speicherort, in dem das Objekt erstellt werden soll.|
+|*Val*|Der Wert, mit dem das zu erstellende Objekt initialisiert werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `new((void*)ptr Type(val)` aufgerufen wird.
 
-## <a name="deallocate"></a> allocator_base::deallocate
+## <a name="allocator_basedeallocate"></a><a name="deallocate"></a>allocator_base::deallocate
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -256,16 +256,16 @@ void deallocate(pointer ptr, size_type _Nx);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuweisung zum Speicher aufgehoben werden soll.|
-|*_Nx*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
+|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
+|*_nx*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `deallocate(ptr)` im Synchronisationsfilter `Sync` wenn `_Nx == 1` aufgerufen wird; andernfalls Aufruf an `operator delete(_Nx * ptr)`.
 
-## <a name="destroy"></a> allocator_base::destroy
+## <a name="allocator_basedestroy"></a><a name="destroy"></a>allocator_base::destroy
 
 Ruft einen Objektdestruktor auf, ohne die Zuordnung des Speicherplatzes aufzuheben, an dem Objekt gespeichert wurde.
 
@@ -275,15 +275,15 @@ void destroy(pointer ptr);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger, der die Adresse des zu zerstörenden Objekts angibt.|
+|*Ptr*|Ein Zeiger, der die Adresse des zu zerstörenden Objekts angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `ptr->~Type()` aufgerufen wird.
 
-## <a name="difference_type"></a> allocator_base::difference_type
+## <a name="allocator_basedifference_type"></a><a name="difference_type"></a>allocator_base::difference_type
 
 Ein ganzzahliger Typ mit Vorzeichen, der die Differenz zwischen Werten von Zeigern und dem Typ des Objekts, das von der Zuweisung verwaltet wird, darstellen kann.
 
@@ -291,7 +291,7 @@ Ein ganzzahliger Typ mit Vorzeichen, der die Differenz zwischen Werten von Zeige
 typedef std::ptrdiff_t difference_type;
 ```
 
-## <a name="max_size"></a> allocator_base::max_size
+## <a name="allocator_basemax_size"></a><a name="max_size"></a>allocator_base::max_size
 
 Gibt die Anzahl der Elemente vom Typ `Type` zurück, die von einem Objekt der Klassenzuweisung zugeordnet werden konnten, bevor der freie Speicherplatz verbraucht ist.
 
@@ -303,11 +303,11 @@ size_type max_size() const;
 
 Die Anzahl von Elementen, die zugewiesen werden konnten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `(size_t)-1 / sizeof(Type)` wenn `0 < (size_t)-1 / sizeof(Type)` zurückgegeben wird; andernfalls `1`.
 
-## <a name="pointer"></a> allocator_base::pointer
+## <a name="allocator_basepointer"></a><a name="pointer"></a>allocator_base::pointer
 
 Ein Typ, der einen Zeiger auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.
 
@@ -315,7 +315,7 @@ Ein Typ, der einen Zeiger auf den Typ des Objekts bereitstellt, das von der Zuwe
 typedef Type *pointer;
 ```
 
-## <a name="reference"></a> allocator_base::reference
+## <a name="allocator_basereference"></a><a name="reference"></a>allocator_base::Referenz
 
 Ein Typ, der einen Verweis auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.
 
@@ -323,15 +323,15 @@ Ein Typ, der einen Verweis auf den Typ des Objekts bereitstellt, das von der Zuw
 typedef Type& reference;
 ```
 
-## <a name="size_type"></a> allocator_base::size_type
+## <a name="allocator_basesize_type"></a><a name="size_type"></a>allocator_base::size_type
 
-Ein ganzzahliger Typ ohne Vorzeichen, der die Länge einer beliebigen Sequenz darstellen kann, die ein Objekt vom Typ `allocator_base` zuordnen kann.
+Ein nicht signierter integraler Typ, der die Länge `allocator_base` einer beliebigen Sequenz darstellen kann, die ein Objekt vom Typ zuweisen kann.
 
 ```cpp
 typedef std::size_t size_type;
 ```
 
-## <a name="value_type"></a> allocator_base::value_type
+## <a name="allocator_basevalue_type"></a><a name="value_type"></a>allocator_base::value_type
 
 Ein Typ, der von der Zuweisung verwaltet wird.
 
@@ -341,4 +341,4 @@ typedef Type value_type;
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)

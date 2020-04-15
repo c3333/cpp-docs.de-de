@@ -1,6 +1,6 @@
 ---
 title: _strnset_s, _strnset_s_l, _wcsnset_s, _wcsnset_s_l, _mbsnset_s, _mbsnset_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsnset_s_l
 - _strnset_s
@@ -8,6 +8,10 @@ api_name:
 - _strnset_s_l
 - _wcsnset_s_l
 - _wcsnset_s
+- _o__mbsnset_s
+- _o__mbsnset_s_l
+- _o__strnset_s
+- _o__wcsnset_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -58,12 +63,12 @@ helpviewer_keywords:
 - strnset_s function
 - _wcsnset_s function
 ms.assetid: 9cf1b321-b5cb-4469-b285-4c07cfbd8813
-ms.openlocfilehash: acf84e6f09436f3bd97f9556ab8db9604243b8a8
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 62b0ecdc7d9e1afb93c4b15c37016ac687dc80d6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73626135"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364458"
 ---
 # <a name="_strnset_s-_strnset_s_l-_wcsnset_s-_wcsnset_s_l-_mbsnset_s-_mbsnset_s_l"></a>_strnset_s, _strnset_s_l, _wcsnset_s, _wcsnset_s_l, _mbsnset_s, _mbsnset_s_l
 
@@ -118,13 +123,13 @@ errno_t _mbsnset_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Zu ändernde Zeichenfolge.
 
-*numberOfElements*<br/>
-Die Größe des *Str* -Puffers.
+*Sizeinbytes*<br/>
+Die Größe *str* des str-Puffers.
 
-*c*<br/>
+*C*<br/>
 Zeicheneinstellung.
 
 *count*<br/>
@@ -137,17 +142,19 @@ Zu verwendendes Gebietsschema.
 
 Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
-Diese Funktionen überprüfen ihre Argumente. Wenn *Str* keine gültige NULL-terminierte Zeichenfolge ist oder das Größen Argument kleiner oder gleich 0 ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen einen Fehlercode zurück und legen **errno** auf diesen Fehlercode fest. Der Standardfehler Code ist " **Deval** ", wenn kein spezifischeren Wert angewendet wird.
+Diese Funktionen überprüfen ihre Argumente. Wenn *str* keine gültige NULL-Termin-Zeichenfolge ist oder das Size-Argument kleiner oder gleich 0 ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen einen Fehlercode zurück und setzen **errno** auf diesen Fehlercode. Der Standardfehlercode ist **EINVAL,** wenn kein spezifischerer Wert angewendet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Funktionen legen höchstens die ersten *count* -Zeichen von *Str* bis *c*fest. Wenn *count* größer als die Größe von *Str*ist, wird die Größe von *Str* anstelle von *count*verwendet. Es tritt ein Fehler auf, wenn die *Anzahl* größer als die Anzahl der *Nummerierungen* ist, und beide Parameter größer als die Größe von *Str*.
+Diese Funktionen legen höchstens die ersten *Zählzeichen* von *str* bis *c*fest. Wenn die *Anzahl* größer als die Größe von *str*ist, wird die Größe von *str* anstelle von *count*verwendet. Ein Fehler tritt auf, wenn die *Anzahl* größer als *numberOfElements* ist und beide Parameter größer als die Größe von *str*sind.
 
-**_wcsnset_s** und **_mbsnset_s** sind breit Zeichen-und multibytezeichenversionen von **_strnset_s**. Das Zeichen folgen Argument von **_wcsnset_s** ist eine Zeichenfolge mit breit Zeichen. das von **_mbsnset_s** ist eine amultibyte-Zeichenfolge. Diese drei Funktionen verhalten sich andernfalls identisch.
+**_wcsnset_s** und **_mbsnset_s** sind breit- und multibyte-Zeichen-Versionen von **_strnset_s**. Das Zeichenfolgenargument **von _wcsnset_s** ist eine Zeichenfolge mit großen Zeichen. die von **_mbsnset_s** ist eine Zeichenfolge mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
+Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -158,7 +165,7 @@ Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mi
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_strnset_s**|\<string.h>|
 |**_strnset_s_l**|\<tchar.h>|
@@ -192,7 +199,7 @@ After:  **** is a test
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>

@@ -14,12 +14,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlModuleT class
 ms.assetid: 9b74d02f-9117-47b1-a05e-c5945f83dd2b
-ms.openlocfilehash: 2cd207038a92b944bf95575f0e0c820b8f09d615
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bf64c073249b7426fafb430a708573d9d06d11fd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260148"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321413"
 ---
 # <a name="catlmodulet-class"></a>CAtlModuleT-Klasse
 
@@ -35,32 +35,32 @@ class ATL_NO_VTABLE CAtlModuleT : public CAtlModule
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die Klasse abgeleitet `CAtlModuleT`.
+Ihre Klasse `CAtlModuleT`abgeleitet von .
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAtlModuleT::CAtlModuleT](#catlmodulet)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlModuleT::InitLibId](#initlibid)|Initialisiert den Datenmember, die mit der GUID des aktuellen Moduls.|
-|[CAtlModuleT::RegisterAppId](#registerappid)|Die EXE-Datei hinzugefügt zur Registrierung.|
-|[CAtlModuleT::RegisterServer](#registerserver)|Fügt den Dienst in der Registrierung.|
-|[CAtlModuleT::UnregisterAppId](#unregisterappid)|Entfernt die EXE-Datei aus der Registrierung.|
+|[CAtlModuleT::InitLibId](#initlibid)|Initialisiert das Datenelement, das die GUID des aktuellen Moduls enthält.|
+|[CAtlModuleT::RegisterAppId](#registerappid)|Fügt die EXE zur Registrierung hinzu.|
+|[CAtlModuleT::RegisterServer](#registerserver)|Fügt den Dienst zur Registrierung hinzu.|
+|[CAtlModuleT::UnregisterAppId](#unregisterappid)|Entfernt die EXE aus der Registrierung.|
 |[CAtlModuleT::UnregisterServer](#unregisterserver)|Entfernt den Dienst aus der Registrierung.|
 |[CAtlModuleT::UpdateRegistryAppId](#updateregistryappid)|Aktualisiert die EXE-Informationen in der Registrierung.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAtlModuleT`, abgeleitet [CAtlModule](../../atl/reference/catlmodule-class.md), implementiert eine ausführbare Datei (EXE) oder einem Dienst (EXE), ATL-Modul. Ein ausführbares Modul ist eine lokale, Out-of-Process-Server, während ein Dienstmodul einer Windows-Anwendung, die im Hintergrund ausgeführt wird ist, wenn Windows gestartet wird.
+`CAtlModuleT`, abgeleitet von [CAtlModule](../../atl/reference/catlmodule-class.md), implementiert ein ausführbares (EXE) oder ein Service (EXE) ATL-Modul. Ein ausführbares Modul ist ein lokaler Server a-process, während ein Dienstmodul eine Windows-Anwendung ist, die beim Starten von Windows im Hintergrund ausgeführt wird.
 
-`CAtlModuleT` bietet Unterstützung für die Initialisierung, Registrierung und Aufheben der Registrierung des Moduls.
+`CAtlModuleT`bietet Unterstützung beim Initialisieren, Registrieren und Aufheben der Registrierung des Moduls.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -72,9 +72,9 @@ Die Klasse abgeleitet `CAtlModuleT`.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Kopfzeile:** atlbase.h
 
-##  <a name="catlmodulet"></a>  CAtlModuleT::CAtlModuleT
+## <a name="catlmoduletcatlmodulet"></a><a name="catlmodulet"></a>CAtlModuleT::CAtlModuleT
 
 Der Konstruktor.
 
@@ -82,25 +82,25 @@ Der Konstruktor.
 CAtlModuleT() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aufrufe [CAtlModuleT::InitLibId](#initlibid).
+Ruft [CAtlModuleT::InitLibId](#initlibid)auf.
 
-##  <a name="initlibid"></a>  CAtlModuleT::InitLibId
+## <a name="catlmoduletinitlibid"></a><a name="initlibid"></a>CAtlModuleT::InitLibId
 
-Initialisiert den Datenmember, die mit der GUID des aktuellen Moduls.
+Initialisiert das Datenelement, das die GUID des aktuellen Moduls enthält.
 
 ```
 static void InitLibId() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wird aufgerufen, durch den Konstruktor [CAtlModuleT::CAtlModuleT](#catlmodulet).
+Wird vom Konstruktor [CAtlModuleT::CAtlModuleT](#catlmodulet)aufgerufen.
 
-##  <a name="registerappid"></a>  CAtlModuleT::RegisterAppId
+## <a name="catlmoduletregisterappid"></a><a name="registerappid"></a>CAtlModuleT::RegisterAppId
 
-Die EXE-Datei hinzugefügt zur Registrierung.
+Fügt die EXE zur Registrierung hinzu.
 
 ```
 HRESULT RegisterAppId() throw();
@@ -108,11 +108,11 @@ HRESULT RegisterAppId() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen HRESULT-Fehler bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-##  <a name="registerserver"></a>  CAtlModuleT::RegisterServer
+## <a name="catlmoduletregisterserver"></a><a name="registerserver"></a>CAtlModuleT::RegisterServer
 
-Fügt den Dienst in der Registrierung.
+Fügt den Dienst zur Registrierung hinzu.
 
 ```
 HRESULT RegisterServer(
@@ -123,18 +123,18 @@ HRESULT RegisterServer(
 ### <a name="parameters"></a>Parameter
 
 *bRegTypeLib*<br/>
-True, wenn die Typbibliothek registriert werden. Der Standardwert ist "false".
+TRUE, wenn die Typbibliothek registriert werden soll. Der Standardwert ist FALSE.
 
 *pCLSID*<br/>
-Zeigt auf die CLSID des Objekts, das registriert werden. Wenn NULL (Standardwert), alle Objekte in der objektzuordnung registriert wird.
+Zeigt auf die CLSID des zu registrierenden Objekts. Wenn NULL (der Standardwert), werden alle Objekte in der Objektzuordnung registriert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen HRESULT-Fehler bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-##  <a name="unregisterappid"></a>  CAtlModuleT::UnregisterAppId
+## <a name="catlmoduletunregisterappid"></a><a name="unregisterappid"></a>CAtlModuleT::UnregisterAppId
 
-Entfernt die EXE-Datei aus der Registrierung.
+Entfernt die EXE aus der Registrierung.
 
 ```
 HRESULT UnregisterAppId() throw();
@@ -142,9 +142,9 @@ HRESULT UnregisterAppId() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen HRESULT-Fehler bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-##  <a name="unregisterserver"></a>  CAtlModuleT::UnregisterServer
+## <a name="catlmoduletunregisterserver"></a><a name="unregisterserver"></a>CAtlModuleT::UnregisterServer
 
 Entfernt den Dienst aus der Registrierung.
 
@@ -157,16 +157,16 @@ HRESULT UnregisterServer(
 ### <a name="parameters"></a>Parameter
 
 *bUnRegTypeLib*<br/>
-"True", wenn die Bibliothek auch aufgehoben werden soll.
+TRUE, wenn die Typbibliothek ebenfalls nicht registriert werden soll.
 
 *pCLSID*<br/>
-Zeigt auf die CLSID des Objekts, das nicht aufgehoben werden. Wenn NULL (Standardwert), alle Objekte in der objektzuordnung aufgehoben.
+Zeigt auf die CLSID des objekts, das nicht registriert werden soll. Wenn NULL (der Standardwert), werden alle Objekte in der Objektzuordnung nicht registriert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen HRESULT-Fehler bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-##  <a name="updateregistryappid"></a>  CAtlModuleT::UpdateRegistryAppId
+## <a name="catlmoduletupdateregistryappid"></a><a name="updateregistryappid"></a>CAtlModuleT::UpdateRegistryAppId
 
 Aktualisiert die EXE-Informationen in der Registrierung.
 
@@ -181,10 +181,10 @@ Reserviert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen HRESULT-Fehler bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CAtlModule-Klasse](../../atl/reference/catlmodule-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
 [Modulklassen](../../atl/atl-module-classes.md)

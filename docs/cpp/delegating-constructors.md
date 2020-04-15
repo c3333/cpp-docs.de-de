@@ -1,13 +1,13 @@
 ---
-title: Delegier Ende KonstruktorenC++()
-description: Verwenden Sie Delegatenkonstruktoren C++ in, um andere Konstruktoren aufzurufen und die Code Wiederholung zu verringern.
+title: Delegieren von Konstruktoren (C++)
+description: Verwenden Sie delegierende Konstruktoren in C++, um andere Konstruktoren aufzurufen und die Codewiederholung zu reduzieren.
 ms.date: 11/19/2019
-ms.openlocfilehash: 533cdfbeb882f3770cc554b0633611a4ffc2cfbd
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: f26a013aa3c081d900ffc3eb32649acc77505db0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74250697"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81316673"
 ---
 # <a name="delegating-constructors"></a>Delegierende Konstruktoren
 

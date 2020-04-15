@@ -1,6 +1,6 @@
 ---
 title: strncat_s, _strncat_s_l, wcsncat_s, _wcsncat_s_l, _mbsncat_s, _mbsncat_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wcsncat_s_l
 - wcsncat_s
@@ -8,6 +8,10 @@ api_name:
 - _mbsncat_s
 - strncat_s
 - _strncat_s_l
+- _o__mbsncat_s
+- _o__mbsncat_s_l
+- _o_strncat_s
+- _o_wcsncat_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -51,12 +56,12 @@ helpviewer_keywords:
 - wcsncat_s_l function
 - mbsncat_s function
 ms.assetid: de77eca2-4d9c-4e66-abf2-a95fefc21e5a
-ms.openlocfilehash: 7b76f20516cbf20530f20d3f5b6d1978cfeaaef4
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 7e3359a97ff8e11f47c61590f4af11d51f62073a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73626174"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364220"
 ---
 # <a name="strncat_s-_strncat_s_l-wcsncat_s-_wcsncat_s_l-_mbsncat_s-_mbsncat_s_l"></a>strncat_s, _strncat_s_l, wcsncat_s, _wcsncat_s_l, _mbsncat_s, _mbsncat_s_l
 
@@ -150,13 +155,13 @@ errno_t _mbsncat_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*der schnellste*<br/>
+*Strdest*<br/>
 Auf NULL endende Zielzeichenfolge.
 
-*numberOfElements*<br/>
+*Sizeinbytes*<br/>
 Größe des Zielpuffers.
 
-*-Quelle*<br/>
+*Strsource*<br/>
 Mit NULL endende Quellzeichenfolge.
 
 *count*<br/>
@@ -171,19 +176,19 @@ Gibt bei Erfolg 0 (null) zurück und einen Fehlercode, wenn ein Fehler auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*"Ziel"*|*numberOfElements*|*-Quelle*|Rückgabewert|Inhalt von " *straudestination* "|
+|*Strdestination*|*Sizeinbytes*|*Strsource*|Rückgabewert|Inhalt von *strDestination*|
 |----------------------|------------------------|-----------------|------------------|----------------------------------|
-|**Null** oder nicht verwaltet|any|any|**EINVAL**|nicht geändert|
-|any|any|**NULL**|**EINVAL**|nicht geändert|
+|**NULL** oder nicht beendet|any|any|**Einval**|nicht geändert|
+|any|any|**Null**|**Einval**|nicht geändert|
 |any|0 oder zu klein|any|**ERANGE**|nicht geändert|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Funktionen versuchen, die ersten *D-* Zeichen von " *strinsource* " an das Ende des " *strandest*" anzufügen, wobei " *D* *" der kleinere Wert und die* Länge von " *darsource*" ist. Wenn das Anfügen dieser *D-* Zeichen in " *strindest* " passt (dessen Größe als " *suffioements*" angegeben ist) und weiterhin Platz für ein NULL-Terminator ist, dann werden diese Zeichen angehängt, beginnend beim ursprünglichen abschließenden NULL von *. die schnellste*und eine neue abschließende Null wird angehängt. Andernfalls wird " *strandest*[0]" auf das NULL-Zeichen festgelegt und der Handler für ungültige Parameter wird aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben.
+Diese Funktionen versuchen, die ersten *D-Zeichen* von *strSource* an das Ende von *strDest*anzuhängen, wobei *D* der geringere *Wert* und die Länge von *strSource*ist. Wenn das Anfügen dieser *D-Zeichen* in *strDest* passt (dessen Größe als *numberOfElements*angegeben ist) und dennoch Platz für einen Null-Terminator lässt, werden diese Zeichen angehängt, beginnend mit der ursprünglichen Beendennull von *strDest*, und ein neuer beendender Nullzeichen wird angehängt; Andernfalls wird *strDest*[0] auf das Nullzeichen gesetzt, und der ungültige Parameterhandler wird aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben.
 
-Zu der oberen Aufführung gibt es eine Ausnahme. Wenn *count* gleich [_TRUNCATE](../../c-runtime-library/truncate.md) ist, wird der Wert von " *straust* " an den *schnellsten* angehängt, während er weiterhin Platz hat, um ein abschließendes NULL-Zeichen anzufügen.
+Zu der oberen Aufführung gibt es eine Ausnahme. Wenn *die Anzahl* [_TRUNCATE](../../c-runtime-library/truncate.md) dann wird so viel von *strSource,* wie passen wird, an *strDest* angehängt, während dennoch Raum gelassen wird, um eine beendende NULL anzuhängen.
 
-Ein auf ein Objekt angewendeter
+Beispiel:
 
 ```C
 char dst[5];
@@ -191,9 +196,9 @@ strncpy_s(dst, _countof(dst), "12", 2);
 strncat_s(dst, _countof(dst), "34567", 3);
 ```
 
-bedeutet, dass **strncat_s** in einem Puffer mit einer Länge von fünf Zeichen drei Zeichen an zwei Zeichen anfügen soll. Dadurch würde kein Platz mehr für das NULL-Terminator bestehen, daher wird **strncat_s** die Zeichenfolge Nullen und den Handler für ungültige Parameter aufrufen.
+bedeutet, dass wir **strncat_s** bitten, drei Zeichen an zwei Zeichen in einem Puffer von fünf Zeichen anzuhängen; Dadurch bleibt kein Platz für den NULL-Terminator, daher **wird strncat_s** die Zeichenfolge auf Null gesetzt und ruft den ungültigen Parameterhandler auf.
 
-Wenn das abkürzen von Verhalten erforderlich ist, verwenden Sie **_TRUNCATE** , oder passen Sie den *Größen* Parameter entsprechend an:
+Wenn das Abschneideverhalten erforderlich ist, verwenden Sie **_TRUNCATE** oder passen Sie den *Größenparameter* entsprechend an:
 
 ```C
 strncat_s(dst, _countof(dst), "34567", _TRUNCATE);
@@ -207,15 +212,17 @@ strncat_s(dst, _countof(dst), "34567", _countof(dst)-strlen(dst)-1);
 
 In jedem Fall wird die Ergebniszeichenfolge mit einem NULL-Zeichen beendet. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
-Wenn " *strinsource* " oder " *strindest* **" NULL ist, oder**" *zahlofelements* " gleich NULL ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion " **eival** " zurück, ohne die Parameter zu ändern.
+Wenn *strSource* oder *strDest* **NULL**ist oder *ist numberOfElements* Null, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **EINVAL** zurück, ohne ihre Parameter zu ändern.
 
-**wcsncat_s** und **_mbsncat_s** sind breit Zeichen-und multibytezeichenversionen von **strncat_s**. Die Zeichen folgen Argumente und der Rückgabewert von **wcsncat_s** sind Zeichen folgen mit breit Zeichen. bei den **_mbsncat_s** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**wcsncat_s** und **_mbsncat_s** sind breit- und multibyte-Zeichen-Versionen von **strncat_s**. Die Zeichenfolgenargumente und der Rückgabewert von **wcsncat_s** sind Zeichenfolgen mit großen Zeichen. bei **_mbsncat_s** sind Zeichenfolgen mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
+Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -224,11 +231,11 @@ Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mi
 |**_tcsncat_s**|**strncat_s**|**_mbsnbcat_s**|**wcsncat_s**|
 |**_tcsncat_s_l**|**_strncat_s_l**|**_mbsnbcat_s_l**|**_wcsncat_s_l**|
 
-**_strncat_s_l** und **_wcsncat_s_l** haben keine Gebiets Schema Abhängigkeit. Sie werden nur für **_tcsncat_s_l**bereitgestellt.
+**_strncat_s_l** und **_wcsncat_s_l** haben keine Gebietsschemaabhängigkeit; sie sind nur für **_tcsncat_s_l**vorgesehen.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strncat_s**|\<string.h>|
 |**wcsncat_s**|\<string.h> oder \<wchar.h>|
@@ -375,7 +382,7 @@ Invalid parameter handler invoked: (L"Buffer is too small" && 0)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>

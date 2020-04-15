@@ -6,29 +6,29 @@ helpviewer_keywords:
 - properties [MFC], ActiveX controls
 - MFC ActiveX controls [MFC], properties
 ms.assetid: ec2e6759-5a8e-41d8-a275-99af8ff6f32e
-ms.openlocfilehash: 438c95c56961cc587b64e494678ade191f18ab6b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d4f1265e6540e9f84bdb680e7948a4e308d31bb0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392803"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364651"
 ---
 # <a name="mfc-activex-controls-advanced-property-implementation"></a>MFC-ActiveX-Steuerelemente: Weiterführende Eigenschaftenimplementierung
 
-Dieser Artikel beschreibt die Themen in Bezug auf die Implementierung erweiterter Eigenschaften in einem ActiveX-Steuerelement.
+In diesem Artikel werden Themen im Zusammenhang mit der Implementierung erweiterter Eigenschaften in einem ActiveX-Steuerelement beschrieben.
 
 >[!IMPORTANT]
-> ActiveX ist eine veraltete Technologie, die nicht für Neuentwicklungen verwendet werden soll. Weitere Informationen zu moderne Technologien, die ActiveX-ablösen, finden Sie unter [ActiveX-Steuerelemente](activex-controls.md).
+> ActiveX ist eine legacy Technologie, die nicht für Neuentwicklungen verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ablösen, finden Sie unter [ActiveX Controls](activex-controls.md).
 
-- [Schreibgeschützte und lesegeschützte Eigenschaften](#_core_read2donly_and_write2donly_properties)
+- [Schreibgeschützte und schreibgeschützte Eigenschaften](#_core_read2donly_and_write2donly_properties)
 
 - [Zurückgeben von Fehlercodes aus einer Eigenschaft](#_core_returning_error_codes_from_a_property)
 
-##  <a name="_core_read2donly_and_write2donly_properties"></a> Schreibgeschützte und lesegeschützte Eigenschaften
+## <a name="read-only-and-write-only-properties"></a><a name="_core_read2donly_and_write2donly_properties"></a>Schreibgeschützte und schreibgeschützte Eigenschaften
 
-Der Assistent zum Hinzufügen von Eigenschaften bietet eine schnelle und einfache Methode, um schreibgeschützte oder lesegeschützte Eigenschaften für das Steuerelement zu implementieren.
+Der Add-Eigenschaften-Assistent bietet eine schnelle und einfache Methode zum Implementieren schreibgeschützter oder schreibgeschützter Eigenschaften für das Steuerelement.
 
-#### <a name="to-implement-a-read-only-or-write-only-property"></a>Zum Implementieren von Schreib- oder lesegeschützte Eigenschaften
+#### <a name="to-implement-a-read-only-or-write-only-property"></a>So implementieren Sie eine schreibgeschützte oder schreibgeschützte Eigenschaft
 
 1. Laden Sie das Steuerelementprojekt.
 
@@ -36,40 +36,40 @@ Der Assistent zum Hinzufügen von Eigenschaften bietet eine schnelle und einfach
 
 1. Klicken Sie mit der rechten Maustaste auf den Schnittstellenknoten des Steuerelements (den zweiten Knoten des Bibliotheksknotens), um das Kontextmenü zu öffnen.
 
-1. Klicken Sie im Kontextmenü auf **hinzufügen** , und klicken Sie dann auf **Eigenschaft hinzufügen**.
+1. Klicken Sie im Kontextmenü auf **Hinzufügen** und dann auf **Eigenschaft hinzufügen**.
 
-   Daraufhin wird die [Assistent zum Hinzufügen von Eigenschaften](../ide/names-add-property-wizard.md).
+   Dadurch wird der [Eigenschaften-Assistent hinzufügen](../ide/names-add-property-wizard.md)geöffnet.
 
-1. In der **Eigenschaftennamen** geben den Namen der Eigenschaft.
+1. Geben Sie im Feld **Eigenschaftenname** den Namen Ihrer Eigenschaft ein.
 
 1. Klicken Sie unter **Implementierungstyp**auf **Get/Set-Methoden**.
 
-1. In der **Eigenschaftentyp** wählen den richtigen Typ für die Eigenschaft.
+1. Wählen Sie im Feld **Eigenschaftentyp** den richtigen Typ für die Eigenschaft aus.
 
-1. Wenn Sie eine schreibgeschützte Eigenschaft möchten, deaktivieren Sie den Namen der Set-Funktion. Wenn Sie eine Eigenschaft für nur-schreiben möchten, deaktivieren Sie den Namen der Get-Funktion.
+1. Wenn Sie eine schreibgeschützte Eigenschaft wünschen, deaktivieren Sie den Funktionsnamen Festlegen. Wenn Sie eine schreibgebundene Eigenschaft wünschen, deaktivieren Sie den Get-Funktionsnamen.
 
-9. Klicken Sie auf **Fertig stellen**.
+1. Klicken Sie auf **Fertig stellen**.
 
-Wenn Sie dies tun, wird der Assistent zum Hinzufügen von Eigenschaften fügt die Funktion `SetNotSupported` oder `GetNotSupported` in den Eintrag der Dispatchzuordnung anstelle einer normalen festgelegt oder Get-Funktion.
+Wenn Sie dies tun, fügt der `SetNotSupported` `GetNotSupported` Eigenschaften-Assistent die Funktion oder in den Dispatch-Map-Eintrag anstelle einer normalen Set- oder Get-Funktion ein.
 
-Wenn Sie eine vorhandene Eigenschaft als schreibgeschützt oder lesegeschützt ändern möchten, können Sie die Dispatchzuordnung manuell bearbeiten und entfernen Sie die unnötige Set- oder Get-Funktion von der Control-Klasse.
+Wenn Sie eine vorhandene Eigenschaft schreibgeschützt oder schreibgeschützt ändern möchten, können Sie die Dispatchzuordnung manuell bearbeiten und die unnötige Set- oder Get-Funktion aus der Steuerelementklasse entfernen.
 
-Wenn Sie möchten eine Eigenschaft bedingt schreibgeschützt oder lesegeschützt (z. B. nur, wenn das Steuerelement in einem bestimmten Modus ausgeführt wird), können Sie die Set- oder Get-Funktion, wie gewohnt bereitstellen und Aufrufen der `SetNotSupported` oder `GetNotSupported` funktionieren, falls zutreffend. Zum Beispiel:
+Wenn sie möchten, dass eine Eigenschaft bedingt schreibgeschützt oder schreibgeschützt ist (z. B. nur, wenn das Steuerelement in einem bestimmten `SetNotSupported` `GetNotSupported` Modus arbeitet), können Sie die Funktion Festlegen oder Abrufen als Normal bereitstellen und ggf. die oder-Funktion aufrufen. Beispiel:
 
 [!code-cpp[NVC_MFC_AxUI#29](../mfc/codesnippet/cpp/mfc-activex-controls-advanced-property-implementation_1.cpp)]
 
-In diesem Codebeispiel ruft `SetNotSupported` Wenn die `m_bReadOnlyMode` -Datenmember ist **"true"**. Wenn **"false"**, und klicken Sie dann die Eigenschaft auf den neuen Wert festgelegt ist.
+Dieses Codebeispiel `SetNotSupported` ruft `m_bReadOnlyMode` auf, wenn der Datenmember **TRUE**ist. Wenn **FALSE**, dann wird die Eigenschaft auf den neuen Wert festgelegt.
 
-##  <a name="_core_returning_error_codes_from_a_property"></a> Zurückgeben von Fehlercodes aus einer Eigenschaft
+## <a name="returning-error-codes-from-a-property"></a><a name="_core_returning_error_codes_from_a_property"></a>Zurückgeben von Fehlercodes von einer Eigenschaft
 
-Um anzugeben, dass ein Fehler aufgetreten ist, bei dem Versuch, eine Eigenschaft abzurufen oder festzulegen, verwenden Sie die `COleControl::ThrowError` Funktion, die einen SCODE (Statuscode:) als Parameter annimmt. Sie können einen vordefinierten SCODE oder definieren ein eigenes. Eine Liste der vordefinierten SCODEs und Anweisungen zum Definieren von benutzerdefinierten SCODEs, finden Sie unter [Behandeln von Fehlern in der ActiveX-Steuerelement](../mfc/mfc-activex-controls-advanced-topics.md) in Artikel ActiveX-Steuerelemente: Weiterführende Themen.
+Um anzugeben, dass beim Abholen oder Festlegen einer Eigenschaft `COleControl::ThrowError` ein Fehler aufgetreten ist, verwenden Sie die Funktion, die einen SCODE (Statuscode) als Parameter verwendet. Sie können einen vordefinierten SCODE verwenden oder einen Eigenen definieren. Eine Liste vordefinierter SCODEs und Anweisungen zum Definieren benutzerdefinierter SCODEs finden Sie unter Behandeln von [Fehlern in Ihrem ActiveX-Steuerelement](../mfc/mfc-activex-controls-advanced-topics.md) im Artikel ActiveX-Steuerelemente: Erweiterte Themen.
 
-Hilfsfunktionen vorhanden sind, für die am häufigsten verwendeten SCODEs, z. B. vordefinierte [COleControl::SetNotSupported](../mfc/reference/colecontrol-class.md#setnotsupported), [COleControl::GetNotSupported](../mfc/reference/colecontrol-class.md#getnotsupported), und [COleControl::SetNotPermitted](../mfc/reference/colecontrol-class.md#setnotpermitted).
+Hilfsfunktionen sind für die am häufigsten vordefinierten SCODEs vorhanden, z. B. [COleControl::SetNotSupported](../mfc/reference/colecontrol-class.md#setnotsupported), [COleControl::GetNotSupported](../mfc/reference/colecontrol-class.md#getnotsupported)und [COleControl::SetNotPermitted](../mfc/reference/colecontrol-class.md#setnotpermitted).
 
 > [!NOTE]
->  `ThrowError` nur als Rückgabe einen Fehler aus, in einer Eigenschaft Get oder Set verwendet werden soll-Funktion oder ein Automatisierungsmethode. Hierbei handelt es sich um das einzige Mal, die der entsprechenden Ausnahmehandler übergeben werden auf dem Stapel vorhanden.
+> `ThrowError`soll nur verwendet werden, um einen Fehler innerhalb der Get- oder Set-Funktion einer Eigenschaft oder einer Automatisierungsmethode zurückzugeben. Dies sind die einzigen Male, in denen der entsprechende Ausnahmehandler auf dem Stapel vorhanden ist.
 
-Weitere Informationen zum Melden von Ausnahmen in anderen Bereichen des Codes, finden Sie unter [COleControl:: FireError](../mfc/reference/colecontrol-class.md#fireerror) und im Abschnitt [Behandeln von Fehlern in der ActiveX-Steuerelement](../mfc/mfc-activex-controls-advanced-topics.md) in diesem Artikel ActiveX-Steuerelemente: Weiterführende Themen.
+Weitere Informationen zum Melden von Ausnahmen in anderen Bereichen des Codes finden Sie unter [COleControl::FireError](../mfc/reference/colecontrol-class.md#fireerror) und den Abschnitt [Umgang mit Fehlern in Ihrem ActiveX-Steuerelement](../mfc/mfc-activex-controls-advanced-topics.md) im Artikel ActiveX-Steuerelemente: Erweiterte Themen.
 
 ## <a name="see-also"></a>Siehe auch
 

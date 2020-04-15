@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMFCImageEditorDialog [MFC], CMFCImageEditorDialog
 ms.assetid: 6a7d08f3-1ec2-4062-9b79-a0c2776b58d1
-ms.openlocfilehash: 97f16fa00b2e90fd9c43bf9b6792b4eafe7d7b88
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 23c2a919428689fe107b82041bd87b758ede2bc9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394525"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367468"
 ---
 # <a name="cmfcimageeditordialog-class"></a>CMFCImageEditorDialog-Klasse
 
-Die `CMFCImageEditorDialog` Klasse unterstützt ein bildbearbeitungs-Dialogfeld.
+Die `CMFCImageEditorDialog` Klasse unterstützt ein Bildeditor-Dialogfeld.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,31 +29,31 @@ class CMFCImageEditorDialog : public CDialogEx
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCImageEditorDialog::CMFCImageEditorDialog](#cmfcimageeditordialog)|Erstellt ein `CMFCImageEditorDialog`-Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `CMFCImageEditorDialog` -Klasse stellt ein Dialogfeld, das enthält:
+Die `CMFCImageEditorDialog` Klasse stellt ein Dialogfeld bereit, das Folgendes enthält:
 
-- Ein Bildbereich, mit denen Sie einzelne Pixel in einem Bild zu ändern.
+- Ein Bildbereich, den Sie zum Ändern einzelner Pixel in einem Bild verwenden.
 
-- Zeichnen die Tools, um die Pixel im Bildbereich zu ändern.
+- Zeichenwerkzeuge, um die Pixel im Bildbereich zu ändern.
 
-- Eine Farbpalette an die Farbe, die von den Zeichentools verwendet wird.
+- Eine Farbpalette, um die Farbe anzugeben, die von den Zeichenwerkzeugen verwendet wird.
 
-- Einen Vorschaubereich, in dem die Auswirkungen der Bearbeitung angezeigt.
+- Ein Vorschaubereich, der den Effekt Ihrer Bearbeitung anzeigt.
 
-Die folgende Abbildung zeigt ein Bild-Editor im Dialogfeld an.
+Die folgende Abbildung zeigt ein Dialogfeld für den Bildeditor.
 
 ![CMFCImageEditorDialog-Dialogfeld](../../mfc/reference/media/imageedit.png "CMFCImageEditorDialog-Dialogfeld")
 
-Eine Möglichkeit zur Verwendung einer `CMFCImageEditorDialog` Objekt ist das Übergeben einer `CBitmap` Bild, das bearbeitet werden. Ein großes Bild kann nicht erstellt werden, da der Bereich für die bildbearbeitung verfügt über nur eine begrenzte Größe und die logische Pixelgröße angepasst wird, um den Bereich passt. Rufen Sie die `DoModal` Methode, um ein modales Dialogfeld starten.
+Eine Möglichkeit, `CMFCImageEditorDialog` ein Objekt zu `CBitmap` verwenden, besteht darin, ein zu bearbeitendes Bild zu übergeben. Erstellen Sie kein großes Bild, da der Bildbearbeitungsbereich eine begrenzte Größe aufweist und die logische Pixelgröße an den Bereich angepasst wird. Rufen `DoModal` Sie die Methode auf, um ein modales Dialogfeld zu starten.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -67,9 +67,9 @@ Eine Möglichkeit zur Verwendung einer `CMFCImageEditorDialog` Objekt ist das Ü
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afximageeditordialog.h
+**Kopfzeile:** afximageeditordialog.h
 
-##  <a name="cmfcimageeditordialog"></a>  CMFCImageEditorDialog::CMFCImageEditorDialog
+## <a name="cmfcimageeditordialogcmfcimageeditordialog"></a><a name="cmfcimageeditordialog"></a>CMFCImageEditorDialog::CMFCImageEditorDialog
 
 Erstellt ein `CMFCImageEditorDialog`-Objekt.
 
@@ -86,20 +86,20 @@ CMFCImageEditorDialog(
 Zeiger auf ein Bild.
 
 *pParent*<br/>
-Zeiger auf das übergeordnete Fenster das aktuelle Bild-Editor-Dialogfeld.
+Zeigen Sie mit dem Zeiger auf das übergeordnete Fenster des aktuellen Bildeditor-Dialogfelds.
 
 *nBitsPixel*<br/>
-Die Anzahl der Bits verwendet, um die Farbe der ein einzelnes Pixel darzustellen, die auch als Farbtiefe bezeichnet wird.  Wenn die *nBitsPixel* Parameter ist 1, die Farbtiefe stammt aus dem Image gemäß den *pBitmap* Parameter. Der Standardwert ist -1.
+Die Anzahl der Bits, die verwendet werden, um die Farbe eines einzelnen Pixels darzustellen, was auch als Farbtiefe bezeichnet wird.  Wenn der *nBitsPixel-Parameter* -1 ist, wird die Farbtiefe aus dem Bild abgeleitet, das durch den Parameter *pBitmap* angegeben wird. Der Standardwert ist -1.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Um ein Bild ändern möchten, übergeben Sie einen Image-Zeiger auf die `CMFCImageEditorDialog` Konstruktor. Rufen Sie dann die `DoModal` Methode, um ein modales Dialogfeld zu öffnen. Wenn die `DoModal` Methode zurückgegeben wird, enthält das Bitmuster des neuen Images.
+Um ein Bild zu ändern, übergeben `CMFCImageEditorDialog` Sie einen Bildzeiger an den Konstruktor. Rufen Sie `DoModal` dann die Methode auf, um ein modales Dialogfeld zu öffnen. Wenn `DoModal` die Methode zurückgegeben wird, enthält die Bitmap das neue Bild.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ### <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie zum Erstellen eines Objekts von der `CMFCImageEditorDialog` Klasse. In diesem Beispiel ist Teil der [Beispiel neue Steuerelemente](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird veranschaulicht, `CMFCImageEditorDialog` wie ein Objekt der Klasse erstellt wird. Dieses Beispiel ist Teil des [Beispiels "Neue Steuerelemente "Neue Steuerelemente ".](../../overview/visual-cpp-samples.md)
 
 [!code-cpp[NVC_MFC_NewControls#8](../../mfc/reference/codesnippet/cpp/cmfcimageeditordialog-class_1.cpp)]
 [!code-cpp[NVC_MFC_NewControls#40](../../mfc/reference/codesnippet/cpp/cmfcimageeditordialog-class_2.cpp)]

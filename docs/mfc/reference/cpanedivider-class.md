@@ -1,5 +1,5 @@
 ---
-title: Cpanedivider-Klasse
+title: CPaneDivider-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CPaneDivider
@@ -84,18 +84,18 @@ helpviewer_keywords:
 - CPaneDivider [MFC], m_nDefaultWidth
 - CPaneDivider [MFC], m_pSliderRTC
 ms.assetid: 8e828a5d-232f-4127-b8e3-7fa45a7a476e
-ms.openlocfilehash: d4888fbf2a95652b0a38adc8ecd059a7515636cb
-ms.sourcegitcommit: bd7ddc044f9083246614b602ef6a758775313214
+ms.openlocfilehash: 41fa3204712749a3b1123a20d31b01ba8b5fbaa4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866118"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364121"
 ---
-# <a name="cpanedivider-class"></a>Cpanedivider-Klasse
+# <a name="cpanedivider-class"></a>CPaneDivider-Klasse
 
-Weitere Informationen finden Sie im Quellcode, der sich im **Ordner\\VC atlmfc\\\\src MFC** Ihrer Visual Studio-Installation befindet.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
-Die `CPaneDivider` -Klasse dividiert zwei Bereiche, dividiert zwei Gruppen von Bereichen oder trennt eine Gruppe von Bereichen vom Client Bereich des Hauptrahmen Fensters.
+Die `CPaneDivider` Klasse teilt zwei Bereiche, teilt zwei Gruppen von Bereichen oder trennt eine Gruppe von Bereichen vom Clientbereich des Hauptrahmenfensters.
 
 ## <a name="syntax"></a>Syntax
 
@@ -107,22 +107,22 @@ class CPaneDivider : public CBasePane
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CPaneDivider::CPaneDivider](#cpanedivider)||
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CPaneDivider::AddPaneContainer](#addpanecontainer)||
 |[CPaneDivider::AddPane](#addpane)||
 |[CPaneDivider::AddRecentPane](#addrecentpane)||
 |[CPaneDivider::CalcExpectedDockedRect](#calcexpecteddockedrect)||
-|[CPaneDivider::CalcFixedLayout](#calcfixedlayout)|(Überschreibt [cbasepane:: calcfixedlayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout).)|
+|[CPaneDivider::CalcFixedLayout](#calcfixedlayout)|(Überschreibt [CBasePane::CalcFixedLayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout).)|
 |[CPaneDivider::CheckVisibility](#checkvisibility)||
-|[CPaneDivider::CreateEx](#createex)|(Überschreibt [cbasepane:: deateex](../../mfc/reference/cbasepane-class.md#createex).)|
-|[CPaneDivider::DoesAllowDynInsertBefore](#doesallowdyninsertbefore)|(Überschreibt [cbasepane::D oesallowdyninsertbefore](../../mfc/reference/cbasepane-class.md#doesallowdyninsertbefore).)|
+|[CPaneDivider::CreateEx](#createex)|(Überschreibt [CBasePane::CreateEx](../../mfc/reference/cbasepane-class.md#createex).)|
+|[CPaneDivider::DoesAllowDynInsertBefore](#doesallowdyninsertbefore)|(Überschreibt [CBasePane::DoesAllowDynInsertBefore](../../mfc/reference/cbasepane-class.md#doesallowdyninsertbefore).)|
 |[CPaneDivider::DoesContainFloatingPane](#doescontainfloatingpane)||
 |[CPaneDivider::FindPaneContainer](#findpanecontainer)||
 |[CPaneDivider::FindTabbedPane](#findtabbedpane)||
@@ -133,17 +133,17 @@ class CPaneDivider : public CBasePane
 |[CPaneDivider::GetWidth](#getwidth)||
 |[CPaneDivider::Init](#init)||
 |[CPaneDivider::InsertPane](#insertpane)||
-|[CPaneDivider::IsAutoHideMode](#isautohidemode)|(Überschreibt [cbasepane:: isautohidemode](../../mfc/reference/cbasepane-class.md#isautohidemode).)|
+|[CPaneDivider::IsAutoHideMode](#isautohidemode)|(Überschreibt [CBasePane::IsAutoHideMode](../../mfc/reference/cbasepane-class.md#isautohidemode).)|
 |[CPaneDivider::IsDefault](#isdefault)||
-|[CPaneDivider::IsHorizontal](#ishorizontal)|(Überschreibt [cbasepane:: IsHorizontal](../../mfc/reference/cbasepane-class.md#ishorizontal).)|
-|[CPaneDivider::Move](#move)||
+|[CPaneDivider::IsHorizontal](#ishorizontal)|(Überschreibt [CBasePane::IsHorizontal](../../mfc/reference/cbasepane-class.md#ishorizontal).)|
+|[CPaneDivider::Bewegen](#move)||
 |[CPaneDivider::NotifyAboutRelease](#notifyaboutrelease)||
 |[CPaneDivider::OnShowPane](#onshowpane)||
 |[CPaneDivider::ReleaseEmptyPaneContainers](#releaseemptypanecontainers)||
 |[CPaneDivider::RemovePane](#removepane)||
 |[CPaneDivider::ReplacePane](#replacepane)||
 |[CPaneDivider::RepositionPanes](#repositionpanes)||
-|[CPaneDivider::Serialize](#serialize)|(Überschreibt `CBasePane::Serialize`.)|
+|[CPaneDivider::Serialisieren](#serialize)|(Überschreibt `CBasePane::Serialize`.)|
 |[CPaneDivider::SetAutoHideMode](#setautohidemode)||
 |[CPaneDivider::SetPaneContainerManager](#setpanecontainermanager)||
 |[CPaneDivider::ShowWindow](#showwindow)||
@@ -152,47 +152,47 @@ class CPaneDivider : public CBasePane
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPaneDivider::GetPanes](#getpanes)|Gibt die Liste der Bereiche zurück, die sich in der [cpanecontainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur für Standard Bereichs Teiler aufgerufen werden.|
-|[CPaneDivider::GetPaneDividers](#getpanedividers)|Gibt die Liste der Bereichs Teiler zurück, die sich in der [cpanecontainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur für Standard Bereichs Teiler aufgerufen werden.|
+|[CPaneDivider::GetPanes](#getpanes)|Gibt die Liste der Bereiche zurück, die sich in der [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur für Standardbereichsteiler aufgerufen werden.|
+|[CPaneDivider::GetPaneDividers](#getpanedividers)|Gibt die Liste der Bereichsteiler zurück, die sich in der [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur für Standardbereichsteiler aufgerufen werden.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPaneDivider::m_nDefaultWidth](#m_ndefaultwidth)|Gibt die Standardbreite für alle Bereichs Teiler in der Anwendung in Pixel an.|
-|[CPaneDivider::m_pSliderRTC](#m_psliderrtc)|Enthält einen Zeiger auf die Lauf Zeit Klassen Informationen über `CPaneDivider`ein von abgeleitetes Objekt.|
+|[CPaneDivider::m_nDefaultWidth](#m_ndefaultwidth)|Gibt die Standardbreite in Pixeln aller Bereichsteiler in der Anwendung an.|
+|[CPaneDivider::m_pSliderRTC](#m_psliderrtc)|Enthält einen Zeiger auf die Laufzeitklasseninformationen zu einem `CPaneDivider`-derived-Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das Framework erstellt `CPaneDivider` Objekte automatisch, wenn ein Bereich angedockt ist.
+Das Framework `CPaneDivider` erstellt Objekte automatisch, wenn ein Bereich angedockt ist.
 
-Es gibt zwei Arten von Bereichs Teiler:
+Es gibt zwei Arten von Bereichsteilern:
 
-- ein Standard Bereichs Teiler wird erstellt, wenn eine Gruppe von Bereichen an eine Seite des Hauptrahmen Fensters angedockt wird. Der Standard Bereichs Teiler enthält einen Zeiger auf die [cpanecontainermanager-Klasse](../../mfc/reference/cpanecontainermanager-class.md) und leitet die meisten Vorgänge in der Gruppe von Bereichen (z. b. Ändern der Größe eines Bereichs oder Andocken eines anderen Bereichs oder Containers) an den Container-Manager um. Jeder Docking Bereich behält einen Zeiger auf seinen Standard Bereichs Teiler bei.
+- Eine Standardbereichstrennwand wird erstellt, wenn eine Gruppe von Bereichen an eine Seite des Hauptrahmenfensters angedockt ist. Die Standardbereichsteilergruppe enthält einen Zeiger auf die [CPaneContainerManager-Klasse](../../mfc/reference/cpanecontainermanager-class.md) und leitet die meisten Vorgänge für die Gruppe von Bereichen (z. B. Ändern der Größe eines Bereichs oder Andocken eines anderen Bereichs oder Containers) an den Container-Manager um. Jeder Andockbereich verwaltet einen Zeiger auf den Standardbereichsteiler.
 
-- Ein regulärer Bereichs Teiler dividiert nur zwei Bereiche in einem Container. Weitere Informationen finden Sie unter [cpanecontainer-Klasse](../../mfc/reference/cpanecontainer-class.md).
+- Ein normaler Scheibenteiler teilt nur zwei Bereiche in einen Container. Weitere Informationen finden Sie unter [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md).
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Codebeispiel zeigt den Abruf eines `CPaneDivider`-Objekts aus einem `CWorkspaceBar`-Objekt. Dieser Code Ausschnitt ist Teil des Beispiel für die [MDI-Registerkarten-Demo](../../overview/visual-cpp-samples.md).
+Das folgende Codebeispiel zeigt den Abruf eines `CPaneDivider`-Objekts aus einem `CWorkspaceBar`-Objekt. Dieser Codeausschnitt ist Teil des [MDI Tabs Demo-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MDITabsDemo#5](../../mfc/reference/codesnippet/cpp/cpanedivider-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)\
-└&nbsp;[CCmdTarget](../../mfc/reference/ccmdtarget-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[CWnd](../../mfc/reference/cwnd-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[Cbasepane](../../mfc/reference/cbasepane-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[Cpanedivider](../../mfc/reference/cpanedivider-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)\
+&nbsp;[CCmdTarget](../../mfc/reference/ccmdtarget-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CWnd](../../mfc/reference/cwnd-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CBasePane](../../mfc/reference/cbasepane-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CPaneDivider](../../mfc/reference/cpanedivider-class.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxPaneDivider.h
+**Kopfzeile:** afxPaneDivider.h
 
-##  <a name="setautohidemode"></a>Cpanedivider:: abtaudehidemode
+## <a name="cpanedividersetautohidemode"></a><a name="setautohidemode"></a>CPaneDivider::SetAutoHideMode
 
 ```
 void SetAutoHideMode(BOOL bMode);
@@ -200,11 +200,11 @@ void SetAutoHideMode(BOOL bMode);
 
 ### <a name="parameters"></a>Parameter
 
-in *bmode*<br/>
+[in] *bMode*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setpanecontainermanager"></a>Cpanedivider:: setpanecontainermanager
+## <a name="cpanedividersetpanecontainermanager"></a><a name="setpanecontainermanager"></a>CPaneDivider::SetPaneContainerManager
 
 ```
 void SetPaneContainerManager(CPaneContainerManager* p);
@@ -214,9 +214,9 @@ void SetPaneContainerManager(CPaneContainerManager* p);
 
 [in] *p*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="addpane"></a>Cpanedivider:: addpane
+## <a name="cpanedivideraddpane"></a><a name="addpane"></a>CPaneDivider::AddPane
 
 ```
 virtual void AddPane(CDockablePane* pBar);
@@ -226,9 +226,9 @@ virtual void AddPane(CDockablePane* pBar);
 
 [in] *pBar*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="addpanecontainer"></a>Cpanedivider:: addpanecontainer
+## <a name="cpanedivideraddpanecontainer"></a><a name="addpanecontainer"></a>CPaneDivider::AddPaneContainer
 
 ```
 virtual BOOL AddPaneContainer(
@@ -243,16 +243,16 @@ virtual BOOL AddPaneContainer(
 
 ### <a name="parameters"></a>Parameter
 
-in *barcontainermanager*<br/>
-in *bouteredge*<br/>
-in *ptargetbar*<br/>
-in *dwalignment*<br/>
+[in] *barContainerManager*<br/>
+[in] *bOuterEdge*<br/>
+[in] *pTargetBar*<br/>
+[in] *dwAlignment*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="addrecentpane"></a>Cpanedivider:: addrecentpane
+## <a name="cpanedivideraddrecentpane"></a><a name="addrecentpane"></a>CPaneDivider::AddRecentPane
 
 ```
 virtual CDockablePane* AddRecentPane(CDockablePane* pBar);
@@ -264,9 +264,9 @@ virtual CDockablePane* AddRecentPane(CDockablePane* pBar);
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="calcexpecteddockedrect"></a>Cpanedivider:: calcexpecteddockedrect
+## <a name="cpanedividercalcexpecteddockedrect"></a><a name="calcexpecteddockedrect"></a>CPaneDivider::CalcExpectedDockedRect
 
 ```
 virtual void CalcExpectedDockedRect(
@@ -279,15 +279,15 @@ virtual void CalcExpectedDockedRect(
 
 ### <a name="parameters"></a>Parameter
 
-in *pwndper Dock*<br/>
-in *ptmouse*<br/>
-in *rectresult*<br/>
+[in] *pWndToDock*<br/>
+[in] *ptMouse*<br/>
+[in] *rectResult*<br/>
 [in] *bDrawTab*<br/>
 [in] *ppTargetBar*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="calcfixedlayout"></a>Cpanedivider:: calcfixedlayout
+## <a name="cpanedividercalcfixedlayout"></a><a name="calcfixedlayout"></a>CPaneDivider::CalcFixedLayout
 
 ```
 virtual CSize CalcFixedLayout(
@@ -297,14 +297,14 @@ virtual CSize CalcFixedLayout(
 
 ### <a name="parameters"></a>Parameter
 
-in *bstretch*<br/>
+[in] *bStretch*<br/>
 [in] *bHorz*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="checkvisibility"></a>Cpanedivider:: checkvisibility
+## <a name="cpanedividercheckvisibility"></a><a name="checkvisibility"></a>CPaneDivider::CheckVisibility
 
 ```
 virtual BOOL CheckVisibility();
@@ -312,9 +312,9 @@ virtual BOOL CheckVisibility();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="cpanedivider"></a>Cpanedivider:: cpanedivider
+## <a name="cpanedividercpanedivider"></a><a name="cpanedivider"></a>CPaneDivider::CPaneDivider
 
 ```
 CPaneDivider();
@@ -326,14 +326,14 @@ CPaneDivider(
 
 ### <a name="parameters"></a>Parameter
 
-in *bdefaultlider*<br/>
-in *pparent*<br/>
+[in] *bDefaultSlider*<br/>
+[in] *pParent*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="createex"></a>Cpanedivider:: up-Ex
+## <a name="cpanedividercreateex"></a><a name="createex"></a>CPaneDivider::CreateEx
 
 ```
 virtual BOOL CreateEx(
@@ -347,18 +347,18 @@ virtual BOOL CreateEx(
 
 ### <a name="parameters"></a>Parameter
 
-in *dwstyleex*<br/>
-in *dwstyle*<br/>
-in *Rect*<br/>
-in *pparser*<br/>
+[in] *dwStyleEx*<br/>
+[in] *dwStyle*<br/>
+[in] *rect*<br/>
+[in] *pParentWnd*<br/>
 [in] *nID*<br/>
-in *pContext*<br/>
+[in] *pContext*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="doesallowdyninsertbefore"></a>Cpanedivider::D oesallowdyninsertbefore
+## <a name="cpanedividerdoesallowdyninsertbefore"></a><a name="doesallowdyninsertbefore"></a>CPaneDivider::DoesAllowDynInsertBefore
 
 ```
 virtual BOOL DoesAllowDynInsertBefore() const;
@@ -366,9 +366,9 @@ virtual BOOL DoesAllowDynInsertBefore() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="doescontainfloatingpane"></a>Cpanedivider::D oescontainfloatingpane
+## <a name="cpanedividerdoescontainfloatingpane"></a><a name="doescontainfloatingpane"></a>CPaneDivider::DoesContainFloatingPane
 
 ```
 virtual BOOL DoesContainFloatingPane();
@@ -376,9 +376,9 @@ virtual BOOL DoesContainFloatingPane();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="findpanecontainer"></a>Cpanedivider:: findpanecontainer
+## <a name="cpanedividerfindpanecontainer"></a><a name="findpanecontainer"></a>CPaneDivider::FindPaneContainer
 
 ```
 CPaneContainer* FindPaneContainer(
@@ -393,9 +393,9 @@ CPaneContainer* FindPaneContainer(
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="findtabbedpane"></a>Cpanedivider:: findtabbedpane
+## <a name="cpanedividerfindtabbedpane"></a><a name="findtabbedpane"></a>CPaneDivider::FindTabbedPane
 
 ```
 CDockablePane* FindTabbedPane(UINT nID);
@@ -407,9 +407,9 @@ CDockablePane* FindTabbedPane(UINT nID);
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getdefaultwidth"></a>Cpanedivider:: getdefaultwidth
+## <a name="cpanedividergetdefaultwidth"></a><a name="getdefaultwidth"></a>CPaneDivider::GetDefaultWidth
 
 ```
 static int __stdcall GetDefaultWidth();
@@ -417,9 +417,9 @@ static int __stdcall GetDefaultWidth();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getfirstpane"></a>Cpanedivider:: getfirstpane
+## <a name="cpanedividergetfirstpane"></a><a name="getfirstpane"></a>CPaneDivider::GetFirstPane
 
 ```
 const CBasePane* GetFirstPane() const;
@@ -427,11 +427,11 @@ const CBasePane* GetFirstPane() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getpanedividers"></a>Cpanedivider:: getpanedividers
+## <a name="cpanedividergetpanedividers"></a><a name="getpanedividers"></a>CPaneDivider::GetPaneDividers
 
-Gibt die Liste der Bereichs Teiler zurück, die sich in der [cpanecontainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur für Standard Bereichs Teiler aufgerufen werden.
+Gibt die Liste der Bereichsteiler zurück, die sich in der [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur für Standardbereichsteiler aufgerufen werden.
 
 ```
 void GetPaneDividers(CObList& lstSliders);
@@ -440,13 +440,13 @@ void GetPaneDividers(CObList& lstSliders);
 ### <a name="parameters"></a>Parameter
 
 *lstSliders*<br/>
-vorgenommen Enthält die Liste der Bereichs Teiler, die sich im Bereichs Container befinden.
+[out] Enthält die Liste der Bereichsteiler, die sich im Bereichscontainer befinden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sollte nur für Standard Bereichs Teiler aufgerufen werden. Ein Standard Bereichs Teiler ist ein unter Teiler, der die Größe des gesamten Bereichs Containers ändert.
+Diese Methode sollte nur für Standardbereichsteiler aufgerufen werden. Eine Standardbereichsteilerung ist eine Trennlinie, die die Größe des gesamten Bereichscontainers ändert.
 
-##  <a name="getpanedividerstyle"></a>Cpanedivider:: getpanedividerstyle
+## <a name="cpanedividergetpanedividerstyle"></a><a name="getpanedividerstyle"></a>CPaneDivider::GetPaneDividerStyle
 
 ```
 DWORD GetPaneDividerStyle() const;
@@ -454,11 +454,11 @@ DWORD GetPaneDividerStyle() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getpanes"></a>Cpanedivider:: getpanels
+## <a name="cpanedividergetpanes"></a><a name="getpanes"></a>CPaneDivider::GetPanes
 
-Gibt die Liste der Bereiche zurück, die sich in der [cpanecontainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur aufgerufen werden, um Standard Bereichs Teiler abzurufen.
+Gibt die Liste der Bereiche zurück, die sich in der [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md)befinden. Diese Methode sollte nur aufgerufen werden, um Standardbereichsteiler abzurufen.
 
 ```
 void GetPanes(CObList& lstBars);
@@ -467,13 +467,13 @@ void GetPanes(CObList& lstBars);
 ### <a name="parameters"></a>Parameter
 
 *lstBars*<br/>
-vorgenommen Enthält die Liste der Bereiche, die sich im Bereichs Container befinden.
+[out] Enthält die Liste der Bereiche, die sich im Bereichscontainer befinden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sollte nur für Standard Bereichs Teiler aufgerufen werden. Ein Standard Bereichs Teiler ist ein unter Teiler, der die Größe des gesamten Bereichs Containers ändert.
+Diese Methode sollte nur für Standardbereichsteiler aufgerufen werden. Eine Standardbereichsteilerung ist eine Trennlinie, die die Größe des gesamten Bereichscontainers ändert.
 
-##  <a name="getrootcontainerrect"></a>Cpanedivider:: getrootcontainerrect
+## <a name="cpanedividergetrootcontainerrect"></a><a name="getrootcontainerrect"></a>CPaneDivider::GetRootContainerRect
 
 ```
 CRect GetRootContainerRect();
@@ -481,9 +481,9 @@ CRect GetRootContainerRect();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getwidth"></a>Cpanedivider:: getWidth
+## <a name="cpanedividergetwidth"></a><a name="getwidth"></a>CPaneDivider::GetWidth
 
 ```
 int GetWidth() const;
@@ -491,9 +491,9 @@ int GetWidth() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="init"></a>Cpanedivider:: init
+## <a name="cpanedividerinit"></a><a name="init"></a>CPaneDivider::Init
 
 ```
 void Init(
@@ -503,12 +503,12 @@ void Init(
 
 ### <a name="parameters"></a>Parameter
 
-in *bdefaultlider*<br/>
-in *pparent*<br/>
+[in] *bDefaultSlider*<br/>
+[in] *pParent*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="insertpane"></a>Cpanedivider:: insertpane
+## <a name="cpanedividerinsertpane"></a><a name="insertpane"></a>CPaneDivider::InsertPane
 
 ```
 virtual BOOL InsertPane(
@@ -520,16 +520,16 @@ virtual BOOL InsertPane(
 
 ### <a name="parameters"></a>Parameter
 
-in *pbartoinsert*<br/>
-in *ptargetbar*<br/>
-in *dwalignment*<br/>
-in *lprect*<br/>
+[in] *pBarToInsert*<br/>
+[in] *pTargetBar*<br/>
+[in] *dwAlignment*<br/>
+[in] *lpRect*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isautohidemode"></a>Cpanedivider:: isautohidemode
+## <a name="cpanedividerisautohidemode"></a><a name="isautohidemode"></a>CPaneDivider::IsAutoHideMode
 
 ```
 BOOL IsAutoHideMode() const;
@@ -537,9 +537,9 @@ BOOL IsAutoHideMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isdefault"></a>Cpanedivider:: IsDefault
+## <a name="cpanedividerisdefault"></a><a name="isdefault"></a>CPaneDivider::IsDefault
 
 ```
 BOOL IsDefault() const;
@@ -547,9 +547,9 @@ BOOL IsDefault() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="ishorizontal"></a>Cpanedivider:: IsHorizontal
+## <a name="cpanedividerishorizontal"></a><a name="ishorizontal"></a>CPaneDivider::IsHorizontal
 
 ```
 BOOL IsHorizontal() const;
@@ -557,17 +557,17 @@ BOOL IsHorizontal() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="m_ndefaultwidth"></a>Cpanedivider:: m_nDefaultWidth
+## <a name="cpanedividerm_ndefaultwidth"></a><a name="m_ndefaultwidth"></a>CPaneDivider::m_nDefaultWidth
 
-Gibt die Standardbreite aller Bereichs Teiler in der Anwendung in Pixel an.
+Gibt die Standardbreite (in Pixel) aller Bereichsteiler in der Anwendung an.
 
 ```
 AFX_IMPORT_DATA static int m_nDefaultWidth;
 ```
 
-##  <a name="move"></a>Cpanedivider:: Move
+## <a name="cpanedividermove"></a><a name="move"></a>CPaneDivider::Bewegen
 
 ```
 virtual void Move(
@@ -578,25 +578,25 @@ virtual void Move(
 ### <a name="parameters"></a>Parameter
 
 [in] *ptOffset*<br/>
-in *banpassungen-Layout*<br/>
+[in] *bAdjustLayout*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="m_psliderrtc"></a>Cpanedivider:: m_pSliderRTC
+## <a name="cpanedividerm_psliderrtc"></a><a name="m_psliderrtc"></a>CPaneDivider::m_pSliderRTC
 
-Enthält einen Zeiger auf Lauf Zeit Klassen Informationen über `CPaneDivider`ein von abgeleitetes Objekt.
+Enthält einen Zeiger auf Laufzeitklasseninformationen `CPaneDivider`zu einem -abgeleiteten Objekt.
 
 ```
 AFX_IMPORT_DATA static CRuntimeClass* m_pSliderRTC;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legen Sie diese Member-Variable fest, wenn Sie einen benutzerdefinierten Bereichs Teiler erstellen. Dies ermöglicht es dem Framework, den Bereichs Teiler zu erstellen, wenn der Bereich gezeichnet wird.
+Legen Sie diese Membervariable fest, wenn Sie einen benutzerdefinierten Bereichsteiler erstellen. Dadurch kann das Framework den Bereichsteiler erstellen, wenn der Bereich gezeichnet wird.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird gezeigt, wie die `m_pSliderRTC` -Element Variable festgelegt wird:
+Das folgende Beispiel zeigt, `m_pSliderRTC` wie die Membervariable festgelegt wird:
 
 ```
 class CMySplitter : public CPaneDivider
@@ -607,15 +607,15 @@ class CMySplitter : public CPaneDivider
 CPaneDivider::m_pSliderRTC = RUNTIME_CLASS(CMySpliter);
 ```
 
-##  <a name="notifyaboutrelease"></a>Cpanedivider:: notifyabamplease
+## <a name="cpanedividernotifyaboutrelease"></a><a name="notifyaboutrelease"></a>CPaneDivider::NotifyAboutRelease
 
 ```
 virtual void NotifyAboutRelease();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onshowpane"></a>Cpanedivider:: onshowpane
+## <a name="cpanedivideronshowpane"></a><a name="onshowpane"></a>CPaneDivider::OnShowPane
 
 ```
 virtual void OnShowPane(
@@ -628,17 +628,17 @@ virtual void OnShowPane(
 [in] *pBar*<br/>
 [in] *bShow*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="releaseemptypanecontainers"></a>Cpanedivider:: releaseemptypanecontainers
+## <a name="cpanedividerreleaseemptypanecontainers"></a><a name="releaseemptypanecontainers"></a>CPaneDivider::ReleaseEmptyPaneContainers
 
 ```
 void ReleaseEmptyPaneContainers();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="removepane"></a>Cpanedivider:: removepane
+## <a name="cpanedividerremovepane"></a><a name="removepane"></a>CPaneDivider::RemovePane
 
 ```
 virtual void RemovePane(CDockablePane* pBar);
@@ -648,9 +648,9 @@ virtual void RemovePane(CDockablePane* pBar);
 
 [in] *pBar*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="replacepane"></a>Cpanedivider:: replacepane
+## <a name="cpanedividerreplacepane"></a><a name="replacepane"></a>CPaneDivider::ReplacePane
 
 ```
 virtual BOOL ReplacePane(
@@ -660,14 +660,14 @@ virtual BOOL ReplacePane(
 
 ### <a name="parameters"></a>Parameter
 
-in *pbartoreplace*<br/>
-in *pbartoreplacewith*<br/>
+[in] *pBarToReplace*<br/>
+[in] *pBarToReplaceWith*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="repositionpanes"></a>Cpanedivider:: repositionbereichs
+## <a name="cpanedividerrepositionpanes"></a><a name="repositionpanes"></a>CPaneDivider::RepositionPanes
 
 ```
 virtual void RepositionPanes(
@@ -677,12 +677,12 @@ virtual void RepositionPanes(
 
 ### <a name="parameters"></a>Parameter
 
-in *neu (neu* )<br/>
-in *hdwp*<br/>
+[in] *rectNeu*<br/>
+[in] *hdwp*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="serialize"></a>Cpanedivider:: Serialize
+## <a name="cpanedividerserialize"></a><a name="serialize"></a>CPaneDivider::Serialisieren
 
 ```
 void Serialize(CArchive& ar);
@@ -692,9 +692,9 @@ void Serialize(CArchive& ar);
 
 [in] *ar*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="showwindow"></a>Cpanedivider:: ShowWindow
+## <a name="cpanedividershowwindow"></a><a name="showwindow"></a>CPaneDivider::ShowWindow
 
 ```
 void ShowWindow(int nCmdShow);
@@ -702,11 +702,11 @@ void ShowWindow(int nCmdShow);
 
 ### <a name="parameters"></a>Parameter
 
-in *nCmdShow*<br/>
+[in] *nCmdShow*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="storerecentdocksiteinfo"></a>Cpanedivider:: storerecentdocksiteinfo
+## <a name="cpanedividerstorerecentdocksiteinfo"></a><a name="storerecentdocksiteinfo"></a>CPaneDivider::StoreRecentDockSiteInfo
 
 ```
 void StoreRecentDockSiteInfo(CDockablePane* pBar);
@@ -716,9 +716,9 @@ void StoreRecentDockSiteInfo(CDockablePane* pBar);
 
 [in] *pBar*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="storerecenttabrelatedinfo"></a>Cpanedivider:: storerecenttabrelatedinfo
+## <a name="cpanedividerstorerecenttabrelatedinfo"></a><a name="storerecenttabrelatedinfo"></a>CPaneDivider::StoreRecentTabRelatedInfo
 
 ```
 void StoreRecentTabRelatedInfo(
@@ -728,10 +728,10 @@ void StoreRecentTabRelatedInfo(
 
 ### <a name="parameters"></a>Parameter
 
-in *pdockingbar*<br/>
+[in] *pDockingBar*<br/>
 [in] *pTabbedBar*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 

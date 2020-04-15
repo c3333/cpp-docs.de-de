@@ -1,9 +1,11 @@
 ---
 title: _strtime, _wstrtime
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wstrtime
 - _strtime
+- _o__strtime
+- _o__wstrtime
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _tstrtime function
 - time, copying
 ms.assetid: 9e538161-cf49-44ec-bca5-c0ab0b9e4ca3
-ms.openlocfilehash: ea4a2b304dc30ec167f8a9094bcf278ff0d31f77
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 827e5a579d801c12b932440fcbbaa18343ad7ece
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946560"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81316881"
 ---
 # <a name="_strtime-_wstrtime"></a>_strtime, _wstrtime
 
@@ -75,13 +78,15 @@ Zeitzeichenfolge
 
 Gibt einen Zeiger auf die resultierende Zeichenfolge *timestr*zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_strtime** -Funktion kopiert die aktuelle Ortszeit in den Puffer, auf den von *timestr*verwiesen wird. Die Uhrzeit ist als **hh: mm: SS** formatiert, wobei **HH** zwei Ziffern darstellt, die die Stunde in 24-Stunden-Notation darstellen, **mm** zwei Ziffern, die die Minuten nach der Stunde darstellen, und **SS** zwei Ziffern darstellt, die Sekunden darstellen. Die Zeichenfolge **18:23:44** stellt z. b. 23 Minuten und 44 Sekunden nach 6 Uhr dar. Der Puffer muss mindestens 9 Bytes lang sein.
+Die **_strtime-Funktion** kopiert die aktuelle Ortszeit in den Puffer, auf den die *Timestr*zeigt. Die Zeit wird als **hh:mm:ss** formatiert, wobei **hh** zwei Ziffern ist, die die Stunde in 24-Stunden-Notation darstellen, **mm** ist zweistellig, die Minuten nach der Stunde und **ss** zweistellig, was Sekunden darstellt. Beispielsweise stellt die Zeichenfolge **18:23:44** 23 Minuten und 44 Sekunden nach 18 Uhr dar. Der Puffer muss mindestens 9 Bytes lang sein.
 
-**_wstrtime** ist eine breit Zeichen Version von **_strtime**. Das Argument und der Rückgabewert von **_wstrtime** sind Zeichen folgen mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch. Wenn *timestr* ein **null** -Zeiger ist oder *timestr* falsch formatiert ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die Ausnahme fortgesetzt werden darf, geben diese Funktionen einen **null** -Wert zurück und legen **errno** auf **EINVAL** fest, wenn *timestr* **null** war, oder legen Sie **errno** auf **ERANGE** fest, wenn *timestr* falsch formatiert ist.
+**_wstrtime** ist eine breit **gefächerte**Version von _strtime ; Das Argument und der Rückgabewert von **_wstrtime** sind Zeichenfolgen mit großen Zeichen. Anderenfalls verhalten sich diese Funktionen identisch. Wenn *timestr* ein **NULL-Zeiger** ist oder *timestr* falsch formatiert ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausnahme fortgesetzt werden darf, geben diese Funktionen einen **NULL** zurück und setzen **errno** auf **EINVAL,** wenn *timestr* ein **NULL** war, oder setzen **errno** auf **ERANGE,** wenn *timestr* falsch formatiert ist.
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -91,12 +96,12 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_strtime**|\<time.h>|
 |**_wstrtime**|\<time.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -122,7 +127,7 @@ The current time is 14:21:44
 
 ## <a name="see-also"></a>Siehe auch
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>
 [ctime, _ctime32, _ctime64, _wctime, _wctime32, _wctime64](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)<br/>
 [gmtime, _gmtime32, _gmtime64](gmtime-gmtime32-gmtime64.md)<br/>

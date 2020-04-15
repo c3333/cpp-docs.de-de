@@ -8,48 +8,48 @@ helpviewer_keywords:
 - control classes [MFC], variables
 - classes [MFC], declaring variables based on
 ms.assetid: 5722dc38-c0eb-40bd-93da-67a808140d03
-ms.openlocfilehash: d550b80beb124f3d8ec36ba81dad1a9ca7e9fa15
-ms.sourcegitcommit: 65ed563a8a1d4d90f872a2a6edcb086f84ec9f77
+ms.openlocfilehash: 994f81524001a80d1cf0dd3783b9de742d61e84d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741615"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365842"
 ---
 # <a name="declaring-a-variable-based-on-your-new-control-class"></a>Deklarieren einer auf der neuen Steuerelementklasse basierenden Variablen
 
-Nachdem Sie eine MFC-Steuerelement-Klasse erstellt haben, können Sie eine darauf basierende Variable deklarieren. Um einen Kontext für die neue Variable zu gewährleisten, müssen Sie den Dialog-Editor zu öffnen und bearbeiten das Dialogfeld, in dem Sie Ihr wiederverwendbare Steuerelement zu verwenden möchten. Darüber hinaus muss das Dialogfeld bereits eine Klasse zugeordnet sein. Weitere Informationen zur Verwendung des Dialog-Editors, finden Sie unter [Dialog-Editor](../../windows/dialog-editor.md).
+Nachdem Sie eine MFC-Steuerelementklasse erstellt haben, können Sie eine darauf basierende Variable deklarieren. Um einen Kontext für die neue Variable bereitzustellen, müssen Sie den Dialog-Editor öffnen und das Dialogfeld bearbeiten, in dem Sie das wiederverwendbare Steuerelement verwenden möchten. Außerdem muss dem Dialogfeld bereits eine Klasse zugeordnet sein. Informationen zur Verwendung des Dialogeditors finden Sie unter [Dialogeditor](../../windows/dialog-editor.md).
 
-### <a name="to-declare-a-variable-based-on-your-reusable-class"></a>Zum Deklarieren einer Variablen, die basierend auf Ihrer wiederverwendbare Klasse
+### <a name="to-declare-a-variable-based-on-your-reusable-class"></a>So deklarieren Sie eine Variable basierend auf Ihrer wiederverwendbaren Klasse
 
-1. Während der Bearbeitung des Dialogfelds, ziehen Sie ein Steuerelement der gleiche Typ wie die Basisklasse des neuen Steuerelements über die Steuerelemente-Symbolleiste auf das Dialogfeld.
+1. Ziehen Sie beim Bearbeiten des Dialogfelds ein Steuerelement desselben Typs wie die Basisklasse des neuen Steuerelements aus der Symbolleiste Steuerelemente in das Dialogfeld.
 
-1. Platzieren Sie den Mauszeiger über dem Steuerelement verworfen.
+1. Platzieren Sie den Mauszeiger über dem gelöschten Steuerelement.
 
-1. Doppelklicken Sie bei gedrückter STRG-Taste, auf das Steuerelement.
+1. Doppelklicken Sie beim Drücken der STRG-Taste auf das Steuerelement.
 
-   Die [Hinzufügen von Membervariablen](../../ide/add-member-variable-wizard.md) Dialogfeld wird angezeigt.
+   Das Dialogfeld [Elementvariable hinzufügen](../../ide/add-member-variable-wizard.md) wird angezeigt.
 
-1. In der **Zugriff** wählen den richtigen Zugriff für das Steuerelement.
+1. Wählen Sie im Feld **Zugriff** den richtigen Zugriff für Ihr Steuerelement aus.
 
-1. Klicken Sie auf die **Steuerungsvariable** Kontrollkästchen.
+1. Klicken Sie auf das Kontrollkästchen **Steuerelementvariable.**
 
-1. In der **Variablenname** geben einen Namen.
+1. Geben Sie im Feld **Variablenname** einen Namen ein.
 
-1. Klicken Sie unter **Kategorie**, klicken Sie auf **Steuerelement**.
+1. Klicken Sie unter **Kategorie**auf **Steuerung**.
 
-1. In der **Steuerelement-ID** Liste, wählen Sie das Steuerelement, das Sie hinzugefügt haben. Die **Variablentyp** Liste sollte die richtigen Variablentyp, anzeigen und die **Steuerelementtyp** den korrekten Steuerelementtyp angezeigt.
+1. Wählen Sie in der Liste **Steuerungs-ID** das Steuerelement aus, das Sie hinzugefügt haben. In der Liste **Variablentyp** sollte der richtige Variablentyp angezeigt werden, und im Feld **Steuerelementtyp** sollte der richtige Steuertyp angezeigt werden.
 
-9. In der **Kommentar** hinzu, und eine zusätzliche Anmerkung, die in Ihrem Code angezeigt werden sollen.
+1. Fügen Sie im Feld **Kommentar** einen beliebigen Kommentar hinzu, der in Ihrem Code angezeigt werden soll.
 
-10. Klicken Sie auf **OK**.
+1. Klicken Sie auf **OK**.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Zuordnen von Meldungen zu Funktionen](../../mfc/reference/mapping-messages-to-functions.md)<br/>
-[Hinzufügen neuer Funktionen mit Code-Assistenten](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>
-[Hinzufügen einer Klasse](../../ide/adding-a-class-visual-cpp.md)<br/>
+[Adding Functionality with Code Wizards (Hinzufügen neuer Funktionen mit Code-Assistenten)](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>
+[Adding a Class (Hinzufügen einer Klasse)](../../ide/adding-a-class-visual-cpp.md)<br/>
 [Hinzufügen einer Memberfunktion](../../ide/adding-a-member-function-visual-cpp.md)<br/>
 [Adding a Member Variable (Hinzufügen einer Membervariablen)](../../ide/adding-a-member-variable-visual-cpp.md)<br/>
-[Überschreiben einer virtuellen Funktion](../../ide/overriding-a-virtual-function-visual-cpp.md)<br/>
+[Overriding a Virtual Function (Überschreiben einer virtuellen Funktion)](../../ide/overriding-a-virtual-function-visual-cpp.md)<br/>
 [MFC Message Handler (MFC-Meldungshandler)](../../mfc/reference/adding-an-mfc-message-handler.md)<br/>
 [Navigating the Class Structure (Navigieren in der Klassenstruktur)](../../ide/navigate-code-cpp.md)

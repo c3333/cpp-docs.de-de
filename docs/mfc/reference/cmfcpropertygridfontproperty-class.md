@@ -1,5 +1,5 @@
 ---
-title: Cmfcpropertygridfontproperty-Klasse
+title: CMFCPropertyGridFontProperty-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCPropertyGridFontProperty
@@ -12,16 +12,16 @@ helpviewer_keywords:
 - CMFCPropertyGridFontProperty [MFC], GetColor
 - CMFCPropertyGridFontProperty [MFC], GetLogFont
 ms.assetid: 83693f33-bbd3-4fcb-a9ad-fa79fcf2ca24
-ms.openlocfilehash: a3c5b806482a97d64a9ffab92877781cb8778b6b
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a1c9905d8d7f32a049496c4e164c9eaac13455d6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69505114"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81361841"
 ---
-# <a name="cmfcpropertygridfontproperty-class"></a>Cmfcpropertygridfontproperty-Klasse
+# <a name="cmfcpropertygridfontproperty-class"></a>CMFCPropertyGridFontProperty-Klasse
 
-Die `CMFCPropertyGridFileProperty` -Klasse unterstützt ein Eigenschaften Listen-Steuerelement, das ein Dialogfeld zur Schriftart Auswahl öffnet.
+Die `CMFCPropertyGridFileProperty` Klasse unterstützt ein Eigenschaftenlistensteuerelement, das ein Dialogfeld für die Schriftartauswahl öffnet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,26 +33,26 @@ class CMFCPropertyGridFontProperty : public CMFCPropertyGridProperty
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCPropertyGridFontProperty::CMFCPropertyGridFontProperty](#cmfcpropertygridfontproperty)|Erstellt ein `CMFCPropertyGridFontProperty`-Objekt.|
 |`CMFCPropertyGridFontProperty::~CMFCPropertyGridFontProperty`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`CMFCPropertyGridFontProperty::FormatProperty`|Formatiert die Textdarstellung eines Eigenschaftswerts. (Überschreibt [cmfcpropertygridproperty:: formatproperty](../../mfc/reference/cmfcpropertygridproperty-class.md#formatproperty).)|
-|[CMFCPropertyGridFontProperty::GetColor](#getcolor)|Ruft die Schriftart Farbe ab, die der Benutzer aus dem Dialogfeld Schriftart auswählt.|
+|`CMFCPropertyGridFontProperty::FormatProperty`|Formatiert die Textdarstellung eines Eigenschaftswerts. (Überschreibt [CMFCPropertyGridProperty::FormatProperty](../../mfc/reference/cmfcpropertygridproperty-class.md#formatproperty).)|
+|[CMFCPropertyGridFontProperty::GetColor](#getcolor)|Ruft die Schriftartfarbe ab, die der Benutzer aus dem Dialogfeld Schriftart auswählt.|
 |[CMFCPropertyGridFontProperty::GetLogFont](#getlogfont)|Ruft die Schriftart ab, die der Benutzer aus dem Dialogfeld Schriftart auswählt.|
-|`CMFCPropertyGridFontProperty::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt abzurufen, das diesem Klassentyp zugeordnet ist.|
-|`CMFCPropertyGridFontProperty::OnClickButton`|Wird vom Framework aufgerufen, wenn der Benutzer auf eine Schaltfläche klickt, die in einer Eigenschaft enthalten ist. (Überschreibt [cmfcpropertygridproperty:: onclickbutton](../../mfc/reference/cmfcpropertygridproperty-class.md#onclickbutton).)|
+|`CMFCPropertyGridFontProperty::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass-Objekt](../../mfc/reference/cruntimeclass-structure.md) abzuholen, das diesem Klassentyp zugeordnet ist.|
+|`CMFCPropertyGridFontProperty::OnClickButton`|Wird vom Framework aufgerufen, wenn der Benutzer auf eine Schaltfläche klickt, die in einer Eigenschaft enthalten ist. (Überschreibt [CMFCPropertyGridProperty::OnClickButton](../../mfc/reference/cmfcpropertygridproperty-class.md#onclickbutton).)|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CMFCPropertyGridProperty](../../mfc/reference/cmfcpropertygridproperty-class.md)
 
@@ -60,9 +60,9 @@ class CMFCPropertyGridFontProperty : public CMFCPropertyGridProperty
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxpropertygridctrl. h
+**Kopf:** afxpropertygridctrl.h
 
-##  <a name="cmfcpropertygridfontproperty"></a>Cmfcpropertygridfontproperty:: cmfcpropertygridfontproperty
+## <a name="cmfcpropertygridfontpropertycmfcpropertygridfontproperty"></a><a name="cmfcpropertygridfontproperty"></a>CMFCPropertyGridFontProperty::CMFCPropertyGridFontProperty
 
 Erstellt ein `CMFCPropertyGridFontProperty`-Objekt.
 
@@ -79,36 +79,36 @@ CMFCPropertyGridFontProperty(
 ### <a name="parameters"></a>Parameter
 
 *strName*<br/>
-in Der Name der Eigenschaft.
+[in] Der Name der Eigenschaft.
 
-*lf*<br/>
-in Eine logische Schriftart Struktur, die die Attribute der Schriftart angibt.
+*Lf*<br/>
+[in] Eine logische Schriftartstruktur, die die Attribute der Schriftart angibt.
 
 *dwFontDialogFlags*<br/>
-in Stile, die auf das Dialogfeld Schriftart angewendet werden, das angezeigt wird, wenn Sie auf die Dropdown Schaltfläche Eigenschafts Wert klicken. Der Standardwert ist die bitweise Kombination (or) von CF_EFFECTS und CF_SCREENFONTS. Weitere Informationen finden Sie unter dem *Flags* -Parameter der [chooonfont-Struktur](/windows/win32/api/commdlg/ns-commdlg-choosefontw).
+[in] Formatvorlagen, die auf das Schriftartdialogfeld angewendet werden, das angezeigt wird, wenn Sie auf die Dropdown-Schaltfläche Eigenschaftenwert klicken. Der Standardwert ist die bitweise Kombination (OR) von CF_EFFECTS und CF_SCREENFONTS. Weitere Informationen finden Sie im *Parameter Flags* der [CHOOSEFONT-Struktur](/windows/win32/api/commdlg/ns-commdlg-choosefontw).
 
 *lpszDescr*<br/>
-in Beschreibung der Schriftart Eigenschaft. Der Standardwert ist NULL.
+[in] Beschreibung der font-Eigenschaft. Der Standardwert ist NULL.
 
 *dwData*<br/>
-in Anwendungsspezifische Daten, z. b. eine ganze Zahl oder ein Zeiger auf andere Daten, die der-Eigenschaft zugeordnet sind. Der Standardwert ist 0.
+[in] Anwendungsspezifische Daten, z. B. eine ganze Zahl oder ein Zeiger auf andere Daten, die der Eigenschaft zugeordnet sind. Der Standardwert ist 0.
 
 *Farbe*<br/>
-in Die Farbe der Schriftart. Der Standardwert ist die Standardfarbe.
+[in] Die Farbe der Schriftart. Der Standardwert ist die Standardfarbe.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein `CMFCPropertyGridFontProperty` -Objekt stellt eine Schriftart Eigenschaft in einem Eigenschaften Raster-Schriftart Steuerelement dar.
+Ein `CMFCPropertyGridFontProperty` Objekt stellt eine Schriftarteigenschaft in einem Eigenschaftenraster-Schriftartsteuerelement dar.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie ein Objekt der `CMFCPropertyGridFontProperty` -Klasse erstellt wird. Dieses Beispiel ist Teil des Beispiels " [neue Steuerelemente](../../overview/visual-cpp-samples.md)".
+Im folgenden Beispiel wird veranschaulicht, `CMFCPropertyGridFontProperty` wie ein Objekt der Klasse erstellt wird. Dieses Beispiel ist Teil des [Beispiels "Neue Steuerelemente "Neue Steuerelemente ".](../../overview/visual-cpp-samples.md)
 
 [!code-cpp[NVC_MFC_NewControls#26](../../mfc/reference/codesnippet/cpp/cmfcpropertygridfontproperty-class_1.cpp)]
 
-##  <a name="getcolor"></a>Cmfcpropertygridfontproperty:: GetColor
+## <a name="cmfcpropertygridfontpropertygetcolor"></a><a name="getcolor"></a>CMFCPropertyGridFontProperty::GetColor
 
-Ruft die Schriftart Farbe ab, die der Benutzer aus dem Dialogfeld Schriftart auswählt.
+Ruft die Schriftartfarbe ab, die der Benutzer aus dem Dialogfeld Schriftart auswählt.
 
 ```
 COLORREF GetColor() const;
@@ -118,9 +118,9 @@ COLORREF GetColor() const;
 
 Ein RGB-Farbwert, der die ausgewählte Schriftfarbe darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getlogfont"></a>Cmfcpropertygridfontproperty:: getlogfont
+## <a name="cmfcpropertygridfontpropertygetlogfont"></a><a name="getlogfont"></a>CMFCPropertyGridFontProperty::GetLogFont
 
 Ruft die Schriftart ab, die der Benutzer aus dem Dialogfeld Schriftart auswählt.
 
@@ -130,9 +130,9 @@ LPLOGFONT GetLogFont();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf eine [LOGFONT](/windows/win32/api/wingdi/ns-wingdi-logfontw) -Struktur, die die ausgewählte Schriftart beschreibt.
+Ein Zeiger auf eine [LOGFONT-Struktur,](/windows/win32/api/wingdi/ns-wingdi-logfontw) die die ausgewählte Schriftart beschreibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 

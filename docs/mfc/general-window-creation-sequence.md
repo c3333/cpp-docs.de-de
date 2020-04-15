@@ -7,35 +7,35 @@ helpviewer_keywords:
 - windows [MFC], creating
 - sequence [MFC]
 ms.assetid: 9cd8c7ea-5e24-429e-b6d9-d7b6041d8ba6
-ms.openlocfilehash: 949cf72910654b502ca4b57be72bedc2db63c315
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fb10ced78e230316a6e2982f24c1fb6e2e52ed8d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62219563"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364272"
 ---
 # <a name="general-window-creation-sequence"></a>Allgemeine Ablauffolge bei der Fenstererstellung
 
-Wenn Sie ein Fenster in Ihrem eigenen, z. B. ein untergeordnetes Fenster erstellen, verwendet das Framework viel den gleichen Prozess als beschrieben. [Dokument-/Ansicht-Erstellung](../mfc/document-view-creation.md).
+Wenn Sie ein eigenes Fenster erstellen, z. B. ein untergeordnetes Fenster, verwendet das Framework in etwa den gleichen Prozess wie unter [Dokument-/Ansichtserstellung](../mfc/document-view-creation.md)beschrieben.
 
-Aller Fensterklassen, die von MFC einsetzen bereitgestellten [zweistufige Konstruktion](../mfc/one-stage-and-two-stage-construction-of-objects.md). D. h. während eines Aufrufs der C++- **neue** -Operator, der Konstruktor weist und initialisiert ein C++-Objekt aber einen entsprechenden Windows-Fenster nicht erstellt. Erfolgt anschließend durch Aufrufen der [erstellen](../mfc/reference/cwnd-class.md#create) -Memberfunktion des Window-Objekts.
+Alle von MFC angebotenen Fensterklassen verfügen über [eine zweistufige Konstruktion.](../mfc/one-stage-and-two-stage-construction-of-objects.md) Das heißt, während eines Aufrufs des **neuen** C++-Operators ordnet und initialisiert der Konstruktor ein C++-Objekt, erstellt jedoch kein entsprechendes Windows-Fenster. Dies geschieht anschließend, indem Sie die [Memberfunktion Erstellen](../mfc/reference/cwnd-class.md#create) des Fensterobjekts aufrufen.
 
-Die `Create` Memberfunktion wird die Windows-Fenster und speichert die `HWND` in die C++ öffentlichen Datenmember des Objekts [M_hWnd](../mfc/reference/cwnd-class.md#m_hwnd). `Create` Führen Sie erhalten Flexibilität über die Erstellungsparameter. Vor dem Aufruf `Create`, Sie möchten mit der globalen-Funktion eine Fensterklasse registrieren [AfxRegisterWndClass](../mfc/reference/application-information-and-management.md#afxregisterwndclass) um die Stile-Symbol und die Klasse für den Frame festzulegen.
+Die `Create` Memberfunktion erstellt das Windows-Fenster und speichert es `HWND` im öffentlichen Datenmember des C++-Objekts [m_hWnd](../mfc/reference/cwnd-class.md#m_hwnd). `Create`bietet volle Flexibilität über die Erstellungsparameter. Vor `Create`dem Aufruf können Sie eine Fensterklasse mit der globalen Funktion [AfxRegisterWndClass](../mfc/reference/application-information-and-management.md#afxregisterwndclass) registrieren, um das Symbol und die Klassenstile für den Frame festzulegen.
 
-Für das Rahmenfenster, können Sie die [LoadFrame](../mfc/reference/cframewnd-class.md#loadframe) Memberfunktion anstelle der `Create`. `LoadFrame` Stellt das Windows-Fenster, das mit weniger Parametern. Es ruft viele Standardwerte aus Ressourcen, einschließlich des Frames Beschriftung, Symbol, Zugriffstastentabelle und im Menü ab.
+Für Rahmenfenster können Sie die [LoadFrame-Memberfunktion](../mfc/reference/cframewnd-class.md#loadframe) anstelle von `Create`verwenden. `LoadFrame`macht das Windows-Fenster mit weniger Parametern. Es ruft viele Standardwerte aus Ressourcen ab, einschließlich Beschriftung, Symbol, Beschleunigertabelle und Menü des Frames.
 
 > [!NOTE]
->  Ihr Symbol Zugriffstastentabelle und Menüressourcen benötigen eine allgemeine Ressourcen-ID, wie z. B. **IDR_MAINFRAME**, für die sie von LoadFrame geladen werden.
+> Das Symbol, die Beschleunigertabelle und die Menüressourcen müssen über eine gemeinsame Ressourcen-ID verfügen, z. B. **IDR_MAINFRAME**, damit sie von LoadFrame geladen werden können.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
 - [Fensterobjekte](../mfc/window-objects.md)
 
-- [Registrieren von Fensterklassen""](../mfc/registering-window-classes.md)
+- [Registrieren des Fensters "Klassen"](../mfc/registering-window-classes.md)
 
 - [Zerstören von Fensterobjekten](../mfc/destroying-window-objects.md)
 
-- [Erstellen eines Dokuments Rahmenfenster](../mfc/creating-document-frame-windows.md)
+- [Erstellen von Dokumentrahmenfenstern](../mfc/creating-document-frame-windows.md)
 
 ## <a name="see-also"></a>Siehe auch
 

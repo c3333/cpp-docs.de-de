@@ -1,5 +1,5 @@
 ---
-title: Cmfcfontcombobox-Klasse
+title: CMFCFontComboBox-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCFontComboBox
@@ -16,16 +16,16 @@ helpviewer_keywords:
 - CMFCFontComboBox [MFC], Setup
 - CMFCFontComboBox [MFC], m_bDrawUsingFont
 ms.assetid: 9a53fb0c-7b45-486d-8187-2a4c723d9fbb
-ms.openlocfilehash: 69e8f81e7e01d0610f3cbf88ac1725a21d59838f
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 60b4b7cdfdace2332de35dd93c43eacf592e99e2
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69505296"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367494"
 ---
-# <a name="cmfcfontcombobox-class"></a>Cmfcfontcombobox-Klasse
+# <a name="cmfcfontcombobox-class"></a>CMFCFontComboBox-Klasse
 
-Die `CMFCFontComboBox` -Klasse erstellt ein Kombinations Feld-Steuerelement, das eine Liste von Schriftarten enthält.
+Die `CMFCFontComboBox` Klasse erstellt ein Kombinationsfeldsteuerelement, das eine Liste von Schriftarten enthält.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,36 +37,36 @@ class CMFCFontComboBox : public CComboBox
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCFontComboBox::CMFCFontComboBox](#cmfcfontcombobox)|Erstellt ein `CMFCFontComboBox`-Objekt.|
 |`CMFCFontComboBox::~CMFCFontComboBox`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`CMFCFontComboBox::CompareItem`|Wird von Framework aufgerufen, um die relative Position eines neuen Elements im sortierten Listenfeld des aktuellen Schriftart-Kombinations Feld-Steuer Elements zu bestimmen. (Überschreibt [CComboBox:: compareitem](../../mfc/reference/ccombobox-class.md#compareitem).)|
-|`CMFCFontComboBox::DrawItem`|Wird von Framework aufgerufen, um ein angegebenes Element im aktuellen Schriftart-Kombinations Feld-Steuerelement zu zeichnen. (Überschreibt [CComboBox::D rawitem](../../mfc/reference/ccombobox-class.md#drawitem).)|
+|`CMFCFontComboBox::CompareItem`|Wird vom Framework aufgerufen, um die relative Position eines neuen Elements im sortierten Listenfeld des aktuellen Schriftkombinationsfeldsteuerelements zu bestimmen. (Überschreibt [CComboBox::CompareItem](../../mfc/reference/ccombobox-class.md#compareitem).)|
+|`CMFCFontComboBox::DrawItem`|Wird vom Framework aufgerufen, um ein angegebenes Element im aktuellen Schriftkombinationsfeldsteuerelement zu zeichnen. (Überschreibt [CComboBox::DrawItem](../../mfc/reference/ccombobox-class.md#drawitem).)|
 |[CMFCFontComboBox::GetSelFont](#getselfont)|Ruft Informationen zur aktuell ausgewählten Schriftart ab.|
-|`CMFCFontComboBox::MeasureItem`|Wird von Framework aufgerufen, um Fenster über die Abmessungen des Listen Felds im aktuellen Schriftart-Kombinations Feld-Steuerelement zu informieren. (Überschreibt [CComboBox:: MeasureItem](../../mfc/reference/ccombobox-class.md#measureitem).)|
-|`CMFCFontComboBox::PreTranslateMessage`|Übersetzt Fenster Meldungen, bevor diese an die Windows-Funktionen [translatemess](/windows/win32/api/winuser/nf-winuser-translatemessage) und [DispatchMessage](/windows/win32/api/winuser/nf-winuser-dispatchmessage) gesendet werden. (Überschreibt [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage).)|
-|[CMFCFontComboBox::SelectFont](#selectfont)|Wählt die Schriftart aus, die den angegebenen Kriterien aus dem Schriftart-Kombinations Feld entspricht.|
-|[CMFCFontComboBox::Setup](#setup)|Initialisiert die Liste der Elemente im Kombinations Feld Schriftart.|
+|`CMFCFontComboBox::MeasureItem`|Wird vom Framework aufgerufen, um Windows über die Dimensionen des Listenfelds im aktuellen Steuerelement für die Schriftkombinationskombination zu informieren. (Überschreibt [CComboBox::MeasureItem](../../mfc/reference/ccombobox-class.md#measureitem).)|
+|`CMFCFontComboBox::PreTranslateMessage`|Übersetzt Fensternachrichten, bevor sie an die [TranslateMessage-](/windows/win32/api/winuser/nf-winuser-translatemessage) und [DispatchMessage-Windows-Funktionen](/windows/win32/api/winuser/nf-winuser-dispatchmessage) gesendet werden. (Überschreibt [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage).)|
+|[CMFCFontComboBox::SelectFont](#selectfont)|Wählt die Schriftart aus, die den angegebenen Kriterien entspricht, aus dem Feld "Schriftkombination".|
+|[CMFCFontComboBox::Setup](#setup)|Initialisiert die Liste der Elemente im Schriftkombinationsfeld.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCFontComboBox::m_bDrawUsingFont](#m_bdrawusingfont)|Gibt für das Framework an, welche Schriftart zum Zeichnen der Element Bezeichnungen im aktuellen Schriftart-Kombinations Feld verwendet werden soll.|
+|[CMFCFontComboBox::m_bDrawUsingFont](#m_bdrawusingfont)|Gibt dem Framework an, welche Schriftart zum Zeichnen der Elementbeschriftungen im aktuellen Schriftkombinationsfeld verwendet werden soll.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Fügen Sie der `CMFCFontComboBox` Dialogfeld Klasse eine `CMFCFontComboBox` Variable hinzu, um ein-Objekt in einem Dialogfeld zu verwenden. Rufen Sie dann `OnInitDialog` in der-Methode der Dialogfeld Klasse die [cmfcfontcombobox:: Setup](#setup) -Methode auf, um die Liste der Elemente im Kombinations Feld-Steuerelement zu initialisieren.
+Um ein `CMFCFontComboBox` Objekt in einem Dialogfeld zu verwenden, fügen Sie der Dialogfeldklasse eine `CMFCFontComboBox` Variable hinzu. Rufen Sie `OnInitDialog` dann in der Methode der Dialogfeldklasse die [CMFCFontComboBox::Setup-Methode](#setup) auf, um die Liste der Elemente im Kombinationsfeldsteuerelement zu initialisieren.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -78,9 +78,9 @@ Fügen Sie der `CMFCFontComboBox` Dialogfeld Klasse eine `CMFCFontComboBox` Vari
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxfontcombobox. h
+**Kopfzeile:** afxfontcombobox.h
 
-##  <a name="cmfcfontcombobox"></a>Cmfcfontcombobox:: cmfcfontcombobox
+## <a name="cmfcfontcomboboxcmfcfontcombobox"></a><a name="cmfcfontcombobox"></a>CMFCFontComboBox::CMFCFontComboBox
 
 Erstellt ein `CMFCFontComboBox`-Objekt.
 
@@ -90,9 +90,9 @@ CMFCFontComboBox();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getselfont"></a>Cmfcfontcombobox:: getselfont
+## <a name="cmfcfontcomboboxgetselfont"></a><a name="getselfont"></a>CMFCFontComboBox::GetSelFont
 
 Ruft Informationen zur aktuell ausgewählten Schriftart ab.
 
@@ -102,25 +102,25 @@ CMFCFontInfo* GetSelFont() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf das [cmfcfontinfo-Klassen](../../mfc/reference/cmfcfontinfo-class.md) Objekt, das eine Schriftart beschreibt. Der Wert kann NULL sein, wenn im Kombinations Feld keine Schriftart ausgewählt ist.
+Ein Zeiger auf das [CMFCFontInfo-Klassenobjekt,](../../mfc/reference/cmfcfontinfo-class.md) das eine Schriftart beschreibt. Es kann NULL sein, wenn im Kombinationsfeld keine Schriftart ausgewählt ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="m_bdrawusingfont"></a>Cmfcfontcombobox:: m_bDrawUsingFont
+## <a name="cmfcfontcomboboxm_bdrawusingfont"></a><a name="m_bdrawusingfont"></a>CMFCFontComboBox::m_bDrawUsingFont
 
-Gibt für das Framework an, welche Schriftart zum Zeichnen der Element Bezeichnungen im aktuellen Schriftart-Kombinations Feld verwendet werden soll.
+Gibt dem Framework an, welche Schriftart zum Zeichnen der Elementbeschriftungen im aktuellen Schriftkombinationsfeld verwendet werden soll.
 
 ```
 static BOOL m_bDrawUsingFont;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legen Sie dieses Element auf "true" fest, um das Framework anzuweisen, die gleiche Schriftart zum Zeichnen der einzelnen Element Bezeichnungen zu verwenden. Legen Sie dieses Element auf false fest, um das Framework so zu leiten, dass jede Element Bezeichnung mit der Schriftart gezeichnet wird, deren Name mit der Bezeichnung identisch ist. Der Standardwert dieses Members ist false.
+Legen Sie diesen Member auf TRUE fest, um das Framework anzuweisen, dieselbe Schriftart zum Zeichnen jeder Elementbeschriftung zu verwenden. Legen Sie diesen Member auf FALSE fest, um das Framework anzuweisen, jede Elementbeschriftung mit der Schriftart zu zeichnen, deren Name mit der Beschriftung identisch ist. Der Standardwert dieses Elements ist FALSE.
 
-##  <a name="selectfont"></a>Cmfcfontcombobox:: selectfont
+## <a name="cmfcfontcomboboxselectfont"></a><a name="selectfont"></a>CMFCFontComboBox::SelectFont
 
-Wählt die Schriftart aus, die den angegebenen Kriterien aus dem Schriftart-Kombinations Feld entspricht.
+Wählt die Schriftart aus, die den angegebenen Kriterien entspricht, aus dem Feld "Schriftkombination".
 
 ```
 BOOL SelectFont(CMFCFontInfo* pDesc);
@@ -133,32 +133,32 @@ BOOL SelectFont(
 ### <a name="parameters"></a>Parameter
 
 *pDesc*<br/>
-in Verweist auf ein Schriftart Beschreibungs Objekt.
+[in] Zeigt auf ein Schriftartbeschreibungsobjekt.
 
-*Wert*<br/>
-in Gibt einen Schriftart Namen an.
+*lpszName*<br/>
+[in] Gibt einen Schriftartnamen an.
 
 *nCharSet*<br/>
-in Gibt einen Zeichensatz an. Der Standardwert ist DEFAULT_CHARSET. Weitere Informationen finden Sie unter dem `lfCharSet` -Member der [LOGFONT](/windows/win32/api/wingdi/ns-wingdi-logfontw) -Struktur.
+[in] Gibt einen Zeichensatz an. Der Standardwert ist DEFAULT_CHARSET. Weitere Informationen finden `lfCharSet` Sie im Member der [LOGFONT-Struktur.](/windows/win32/api/wingdi/ns-wingdi-logfontw)
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn ein Element im Schriftart Kombinations Feld mit dem angegebenen Schriftart Beschreibungs Objekt, dem angegebenen Schriftart Namen und dem angegebenen Zeichensatz übereinstimmt. andernfalls false.
+TRUE, wenn ein Element im Schriftkombinationsfeld mit dem angegebenen Schriftartbeschreibungsobjekt oder Schriftartennamen und Zeichensatz übereinstimmt; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um das Element im Kombinations Feld Schriftart auszuwählen und zu dem Element zu scrollen, das der angegebenen Schriftart entspricht.
+Verwenden Sie diese Methode, um das Element im Schriftkombinationsfeld auszuwählen und zu scrollen, das der angegebenen Schriftart entspricht.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie die `SelectFont` -Methode in `CMFCFontComboBox` der-Klasse verwendet wird. Dieses Beispiel ist Teil des Beispiels " [neue Steuerelemente](../../overview/visual-cpp-samples.md)".
+Im folgenden Beispiel wird `SelectFont` veranschaulicht, `CMFCFontComboBox` wie die Methode in der Klasse verwendet wird. Dieses Beispiel ist Teil des [Beispiels "Neue Steuerelemente "Neue Steuerelemente ".](../../overview/visual-cpp-samples.md)
 
 [!code-cpp[NVC_MFC_NewControls#34](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_1.h)]
 [!code-cpp[NVC_MFC_NewControls#35](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_2.cpp)]
 
-##  <a name="setup"></a>Cmfcfontcombobox:: Setup
+## <a name="cmfcfontcomboboxsetup"></a><a name="setup"></a>CMFCFontComboBox::Setup
 
-Initialisiert die Liste der Elemente im Kombinations Feld Schriftart.
+Initialisiert die Liste der Elemente im Schriftkombinationsfeld.
 
 ```
 BOOL Setup(
@@ -170,25 +170,25 @@ BOOL Setup(
 ### <a name="parameters"></a>Parameter
 
 *nFontType*<br/>
-in Gibt den Typ der Schriftart an. Der Standardwert ist die bitweise Kombination (or) von DEVICE_FONTTYPE, RASTER_FONTTYPE und TRUETYPE_FONTTYPE.
+[in] Gibt den Schrifttyp an. Der Standardwert ist die bitweise Kombination (OR) von DEVICE_FONTTYPE, RASTER_FONTTYPE und TRUETYPE_FONTTYPE.
 
 *nCharSet*<br/>
-in Gibt den Schriftzeichen Satz an. Der Standardwert ist DEFAULT_CHARSET.
+[in] Gibt den Schriftzeichensatz an. Der Standardwert ist DEFAULT_CHARSET.
 
-*nPitchAndFamily*<br/>
-in Gibt den Schrift Schnitt und die Familie an. Der Standardwert ist DEFAULT_PITCH.
+*nPitchAndFamilie*<br/>
+[in] Gibt die Schriftabstand und die Familie an. Der Standardwert ist DEFAULT_PITCH.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn das Schriftart Kombinations Feld erfolgreich initialisiert wurde. andernfalls false.
+TRUE, wenn das Schriftkombinationsfeld erfolgreich initialisiert wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode initialisiert das Schriftart-Kombinations Feld, indem die aktuell installierten Schriftarten aufgelistet werden, die den angegebenen Parametern entsprechen, und diese Schriftart Namen in das Kombinations Feld Schriftart eingefügt werden.
+Diese Methode initialisiert das Schriftkombinationsfeld, indem die aktuell installierten Schriftarten aufgezählt werden, die den angegebenen Parametern entsprechen, und diese Schriftartnamen in das Schriftkombinationsfeld einfügen.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie die `Setup` -Methode in `CMFCFontComboBox` der-Klasse verwendet wird. Dieses Beispiel ist Teil des Beispiels " [neue Steuerelemente](../../overview/visual-cpp-samples.md)".
+Im folgenden Beispiel wird `Setup` veranschaulicht, `CMFCFontComboBox` wie die Methode in der Klasse verwendet wird. Dieses Beispiel ist Teil des [Beispiels "Neue Steuerelemente "Neue Steuerelemente ".](../../overview/visual-cpp-samples.md)
 
 [!code-cpp[NVC_MFC_NewControls#34](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_1.h)]
 [!code-cpp[NVC_MFC_NewControls#36](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_3.cpp)]

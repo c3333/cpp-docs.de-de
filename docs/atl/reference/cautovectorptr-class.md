@@ -13,19 +13,19 @@ f1_keywords:
 helpviewer_keywords:
 - CAutoVectorPtr class
 ms.assetid: 0030362b-6bc4-4a47-9b5b-3c3899dceab4
-ms.openlocfilehash: f614318125f3c6bce4003fee5fb4a945c7c88129
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 573446256aa89423837ebf73176a73f72054911b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260382"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318768"
 ---
 # <a name="cautovectorptr-class"></a>CAutoVectorPtr-Klasse
 
-Diese Klasse stellt ein intelligenter Zeiger-Objekt, das mit der neuen Vektor dar und delete-Operator.
+Diese Klasse stellt ein intelligentes Zeigerobjekt mit Vektor-Neu- und Löschoperatoren dar.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -43,46 +43,46 @@ Der Zeigertyp.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAutoVectorPtr::CAutoVectorPtr](#cautovectorptr)|Der Konstruktor.|
-|[CAutoVectorPtr::~CAutoVectorPtr](#dtor)|Der Destruktor.|
+|[CAutoVectorPtr::'CAutoVectorPtr](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAutoVectorPtr::Allocate](#allocate)|Rufen Sie diese Methode zum Belegen des Arbeitsspeichers, der das Array von Objekten, die auf den erforderlichen `CAutoVectorPtr`.|
-|[CAutoVectorPtr::Attach](#attach)|Rufen Sie diese Methode, um den Besitz eines bestehenden Zeigers zu übernehmen.|
-|[CAutoVectorPtr::Detach](#detach)|Rufen Sie diese Methode, um den Besitz eines Zeigers freizugeben.|
-|[CAutoVectorPtr::Free](#free)|Rufen Sie diese Methode zum Löschen eines Objekts verweist eine `CAutoVectorPtr`.|
+|[CAutoVectorPtr::Zuweisen](#allocate)|Rufen Sie diese Methode auf, um den Speicher `CAutoVectorPtr`zuzuweisen, der für das Array von Objekten erforderlich ist, auf das von verwiesen wird.|
+|[CAutoVectorPtr::Anfügen](#attach)|Rufen Sie diese Methode auf, um die Besitzverhältnisse eines vorhandenen Zeigers zu übernehmen.|
+|[CAutoVectorPtr::Detach](#detach)|Rufen Sie diese Methode auf, um den Besitz eines Zeigers freizugeben.|
+|[CAutoVectorPtr::Kostenlos](#free)|Rufen Sie diese Methode auf, `CAutoVectorPtr`um ein Objekt zu löschen, auf das von einem verwiesen wird.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAutoVectorPtr::operator T *](#operator_t__star)|Der Cast-Operator.|
-|[CAutoVectorPtr::operator =](#operator_eq)|Der Zuweisungsoperator.|
+|[CAutoVectorPtr::Operator T *](#operator_t__star)|Der Gussoperator.|
+|[CAutoVectorPtr::Operator =](#operator_eq)|Der Zuweisungsoperator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAutoVectorPtr::m_p](#m_p)|Die Zeiger-Membervariable.|
+|[CAutoVectorPtr::m_p](#m_p)|Die Zeigerdatenmembervariable.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse stellt Methoden zum Erstellen und verwalten einen intelligenten Zeiger, dadurch wird Schutz vor Speicherverluste durch Ressourcen automatisch freigegeben, wenn sie außerhalb des gültigen Bereichs liegt. `CAutoVectorPtr` ist vergleichbar mit `CAutoPtr`, der einzige Unterschied ist, dass `CAutoVectorPtr` verwendet [Vektor neue&#91; &#93; ](../../standard-library/new-operators.md#op_new_arr) und [Vektor löschen&#91; &#93; ](../../standard-library/new-operators.md#op_delete_arr) zum Zuordnen und Freigeben von Arbeitsspeicher anstelle der C++ **neue** und **löschen** Operatoren. Finden Sie unter [CAutoVectorPtrElementTraits](../../atl/reference/cautovectorptrelementtraits-class.md) Wenn Auflistungsklassen von `CAutoVectorPtr` erforderlich sind.
+Diese Klasse stellt Methoden zum Erstellen und Verwalten eines intelligenten Zeigers bereit, der zum Schutz vor Speicherverlusten beiträgt, indem Ressourcen automatisch freiwerden, wenn er nicht in den Gültigkeitsbereich fällt. `CAutoVectorPtr`ist ähnlich `CAutoPtr`wie , der `CAutoVectorPtr` einzige Unterschied ist, dass [Vektor neue&#91;&#93;](../../standard-library/new-operators.md#op_new_arr) und Vektor löschen [&#91;&#93;](../../standard-library/new-operators.md#op_delete_arr) speicherzuteilen und freizugeben anstelle der C++ **new** und **delete** Operatoren. Siehe [CAutoVectorPtrElementTraits,](../../atl/reference/cautovectorptrelementtraits-class.md) wenn `CAutoVectorPtr` Auflistungsklassen von erforderlich sind.
 
-Finden Sie unter [CAutoPtr](../../atl/reference/cautoptr-class.md) ein Beispiel der Verwendung einer intelligenten Zeiger-Klasse.
+Ein Beispiel für die Verwendung einer intelligenten Zeigerklasse finden Sie unter [CAutoPtr.](../../atl/reference/cautoptr-class.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Kopfzeile:** atlbase.h
 
-##  <a name="allocate"></a>  CAutoVectorPtr::Allocate
+## <a name="cautovectorptrallocate"></a><a name="allocate"></a>CAutoVectorPtr::Zuweisen
 
-Rufen Sie diese Methode zum Belegen des Arbeitsspeichers, der das Array von Objekten, die auf den erforderlichen `CAutoVectorPtr`.
+Rufen Sie diese Methode auf, um den Speicher `CAutoVectorPtr`zuzuweisen, der für das Array von Objekten erforderlich ist, auf das von verwiesen wird.
 
 ```
 bool Allocate(size_t nElements) throw();
@@ -95,15 +95,15 @@ Die Anzahl der Elemente im Array.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn der Speicher erfolgreich zugeordnet, "false" bei einem Fehler.
+Gibt true zurück, wenn der Speicher erfolgreich zugewiesen wurde, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Debug-Builds wird ein Assertionsfehler auftreten, wenn die [CAutoVectorPtr::m_p](#m_p) Membervariable zeigt derzeit zu einem vorhandenen Wert; das heißt, ist es nicht gleich NULL.
+In Debugbuilds tritt ein Assertionsfehler auf, wenn die [Membervariable CAutoVectorPtr::m_p](#m_p) derzeit auf einen vorhandenen Wert verweist. das heißt, es ist nicht gleich NULL.
 
-##  <a name="attach"></a>  CAutoVectorPtr::Attach
+## <a name="cautovectorptrattach"></a><a name="attach"></a>CAutoVectorPtr::Anfügen
 
-Rufen Sie diese Methode, um den Besitz eines bestehenden Zeigers zu übernehmen.
+Rufen Sie diese Methode auf, um die Besitzverhältnisse eines vorhandenen Zeigers zu übernehmen.
 
 ```
 void Attach(T* p) throw();
@@ -111,16 +111,16 @@ void Attach(T* p) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
-Die `CAutoVectorPtr` Objekt übernimmt dann den Besitz des this-Zeigers.
+*P*<br/>
+Das `CAutoVectorPtr` Objekt übernimmt den Besitz dieses Zeigers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn eine `CAutoVectorPtr` Objekt übernimmt den Besitz eines Zeigers, wird es automatisch löschen den Zeiger und alle zugeordneten Daten, wenn sie den Gültigkeitsbereich verlässt. Wenn [CAutoVectorPtr::Detach](#detach) wird aufgerufen, der Programmierer ist erneut bei Verantwortung für die Freigabe alle zugeordneten Ressourcen.
+Wenn `CAutoVectorPtr` ein Objekt den Besitz eines Zeigers übernimmt, löscht es automatisch den Zeiger und alle zugeordneten Daten, wenn es den Gültigkeitsbereich verlässt. Wenn [CAutoVectorPtr::Detach](#detach) aufgerufen wird, wird dem Programmierer erneut die Verantwortung für die Freigabe der zugewiesenen Ressourcen übertragen.
 
-Debug-Builds wird ein Assertionsfehler auftreten, wenn die [CAutoVectorPtr::m_p](#m_p) Membervariable zeigt derzeit zu einem vorhandenen Wert; das heißt, ist es nicht gleich NULL.
+In Debugbuilds tritt ein Assertionsfehler auf, wenn die [Membervariable CAutoVectorPtr::m_p](#m_p) derzeit auf einen vorhandenen Wert verweist. das heißt, es ist nicht gleich NULL.
 
-##  <a name="cautovectorptr"></a>  CAutoVectorPtr::CAutoVectorPtr
+## <a name="cautovectorptrcautovectorptr"></a><a name="cautovectorptr"></a>CAutoVectorPtr::CAutoVectorPtr
 
 Der Konstruktor.
 
@@ -132,14 +132,14 @@ CAutoVectorPtr(CAutoVectorPtr<T>& p) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
-Einem vorhandenen Zeiger.
+*P*<br/>
+Ein vorhandener Zeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `CAutoVectorPtr` Objekt mit einem vorhandenen Zeiger erstellt werden kann, die in diesem Fall erfolgt die Übertragung des Besitzes des Zeigers.
+Das `CAutoVectorPtr` Objekt kann mit einem vorhandenen Zeiger erstellt werden, in diesem Fall überträgt es den Besitz des Zeigers.
 
-##  <a name="dtor"></a>  CAutoVectorPtr:: ~ CAutoVectorPtr
+## <a name="cautovectorptrcautovectorptr"></a><a name="dtor"></a>CAutoVectorPtr::'CAutoVectorPtr
 
 Der Destruktor.
 
@@ -147,13 +147,13 @@ Der Destruktor.
 ~CAutoVectorPtr() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt alle zugeordneten Ressourcen frei. Aufrufe [CAutoVectorPtr::Free](#free).
+Gibt alle zugewiesenen Ressourcen frei. Ruft [CAutoVectorPtr::Free](#free)auf.
 
-##  <a name="detach"></a>  CAutoVectorPtr::Detach
+## <a name="cautovectorptrdetach"></a><a name="detach"></a>CAutoVectorPtr::Detach
 
-Rufen Sie diese Methode, um den Besitz eines Zeigers freizugeben.
+Rufen Sie diese Methode auf, um den Besitz eines Zeigers freizugeben.
 
 ```
 T* Detach() throw();
@@ -161,37 +161,37 @@ T* Detach() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt eine Kopie des Zeigers.
+Gibt eine Kopie des Zeigers zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den Besitz eines Zeigers, legt die [CAutoVectorPtr::m_p](#m_p) Membervariable für NULL-Werte und gibt eine Kopie des Zeigers zurück. Nach dem Aufruf `Detach`, es wird bis zu dem Programmierer, die eine kostenlose zugeordneten Ressourcen über den die `CAutoVectorPtr` Objekt möglicherweise zuvor Verantwortung angenommen haben.
+Gibt den Besitz eines Zeigers frei, legt die [Membervariable CAutoVectorPtr::m_p](#m_p) auf NULL fest und gibt eine Kopie des Zeigers zurück. Nach `Detach`dem Aufruf ist es Sache des Programmierers, `CAutoVectorPtr` alle zugewiesenen Ressourcen freizugeben, für die das Objekt zuvor möglicherweise die Verantwortung übernommen hat.
 
-##  <a name="free"></a>  CAutoVectorPtr::Free
+## <a name="cautovectorptrfree"></a><a name="free"></a>CAutoVectorPtr::Kostenlos
 
-Rufen Sie diese Methode zum Löschen eines Objekts verweist eine `CAutoVectorPtr`.
+Rufen Sie diese Methode auf, `CAutoVectorPtr`um ein Objekt zu löschen, auf das von einem verwiesen wird.
 
 ```
 void Free() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Objekt verweist die `CAutoVectorPtr` wird freigegeben, und die [CAutoVectorPtr::m_p](#m_p) Member-Variable auf NULL festgelegt ist.
+Das Objekt, auf `CAutoVectorPtr` das der zeigt, wird freigegeben, und die Membervariable [CAutoVectorPtr::m_p](#m_p) wird auf NULL gesetzt.
 
-##  <a name="m_p"></a>  CAutoVectorPtr::m_p
+## <a name="cautovectorptrm_p"></a><a name="m_p"></a>CAutoVectorPtr::m_p
 
-Die Zeiger-Membervariable.
+Die Zeigerdatenmembervariable.
 
 ```
 T* m_p;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Membervariable enthält Zeigerinformationen.
+Diese Membervariable enthält die Zeigerinformationen.
 
-##  <a name="operator_eq"></a>  CAutoVectorPtr::operator =
+## <a name="cautovectorptroperator-"></a><a name="operator_eq"></a>CAutoVectorPtr::Operator =
 
 Der Zuweisungsoperator.
 
@@ -201,30 +201,30 @@ CAutoVectorPtr<T>& operator= (CAutoVectorPtr<T>& p) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
+*P*<br/>
 Ein Zeiger.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf eine **CAutoVectorPtr\< T >**.
+Gibt einen Verweis auf einen **\< CAutoVectorPtr T >** zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Zuweisungsoperator trennt die `CAutoVectorPtr` Objekt aus einem aktuellen Zeiger und fügt den neuen Zeiger *p*, an seiner Stelle.
+Der Zuweisungsoperator trennt `CAutoVectorPtr` das Objekt von einem beliebigen aktuellen Zeiger und fügt den neuen Zeiger *p*an seiner Stelle an.
 
-##  <a name="operator_t__star"></a>  CAutoVectorPtr::operator T *
+## <a name="cautovectorptroperator-t-"></a><a name="operator_t__star"></a>CAutoVectorPtr::Operator T *
 
-Der Cast-Operator.
+Der Gussoperator.
 
 ```
 operator T*() const throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt einen Zeiger auf den Object-Datentyp in der Klassenvorlage definiert.
+Gibt einen Zeiger auf den in der Klassenvorlage definierten Objektdatentyp zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CAutoPtr-Klasse](../../atl/reference/cautoptr-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

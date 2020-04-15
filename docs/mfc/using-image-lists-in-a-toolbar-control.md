@@ -6,35 +6,35 @@ helpviewer_keywords:
 - image lists [MFC], toolbar controls
 - CToolBarCtrl class [MFC], image lists
 ms.assetid: ccbe8df4-4ed9-4b54-bb93-9a1dcb3b97eb
-ms.openlocfilehash: d027f7834c67ad0ed51d1b7fda5b2704972efe38
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 81468528c15300a7e9ace6b20fd9fb34818f1928
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411564"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366494"
 ---
 # <a name="using-image-lists-in-a-toolbar-control"></a>Verwenden von Bildlisten in einem Symbolleisten-Steuerelement
 
-Standardmäßig werden die von den Schaltflächen in einem Symbolleisten-Steuerelement verwendet Bilder als eine einzelne Bitmap gespeichert. Allerdings können Sie Bilder in einem Satz von Bildlisten speichern. Das Steuerelementobjekt Symbolleiste kann bis zu drei separate Bildlisten verwenden:
+Standardmäßig werden die Bilder, die von den Schaltflächen in einem Symbolleistensteuerelement verwendet werden, als einzelne Bitmap gespeichert. Sie können jedoch auch Schaltflächenbilder in einer Reihe von Bildlisten speichern. Das Symbolleistensteuerelement kann bis zu drei separate Bildlisten verwenden:
 
-- Aktiviert die Bildliste enthält Bilder für Symbolleisten-Schaltflächen, die derzeit aktiviert sind.
+- Aktivierte Bildliste Enthält Bilder für Symbolleistenschaltflächen, die derzeit aktiviert sind.
 
-- Deaktiviert die Bildliste enthält Bilder für Symbolleisten-Schaltflächen, die zurzeit deaktiviert sind.
+- Deaktivierte Bildliste Enthält Bilder für Symbolleistenschaltflächen, die derzeit deaktiviert sind.
 
-- Markiert die Bildliste enthält Bilder für Symbolleisten-Schaltflächen, die derzeit ausgewählt sind. Diese Bildliste wird verwendet, nur dann, wenn die Symbolleiste die Formatvorlage TBSTYLE_FLAT verwendet.
+- Hervorgehobene Bildliste Enthält Bilder für Symbolleistenschaltflächen, die derzeit hervorgehoben sind. Diese Bildliste wird nur verwendet, wenn die Symbolleiste den TBSTYLE_FLAT-Stil verwendet.
 
-Diese Bildlisten werden von dem Symbolleisten-Steuerelement verwendet, wenn Sie sie durch Zuordnen der `CToolBarCtrl` Objekt. Diese Zuordnung wird erreicht, indem Sie Aufrufe an [CToolBarCtrl:: SetImageList](../mfc/reference/ctoolbarctrl-class.md#setimagelist), [SetDisabledImageList](../mfc/reference/ctoolbarctrl-class.md#setdisabledimagelist), und [SetHotImageList](../mfc/reference/ctoolbarctrl-class.md#sethotimagelist).
+Diese Bildlisten werden vom Symbolleistensteuerelement verwendet, `CToolBarCtrl` wenn Sie sie dem Objekt zuordnen. Diese Zuordnung wird durch Aufrufe von [CToolBarCtrl::SetImageList](../mfc/reference/ctoolbarctrl-class.md#setimagelist), [SetDisabledImageList](../mfc/reference/ctoolbarctrl-class.md#setdisabledimagelist)und [SetHotImageList](../mfc/reference/ctoolbarctrl-class.md#sethotimagelist)erreicht.
 
-MFC verwendet standardmäßig die `CToolBar` Klasse zum Implementieren von MFC-Anwendungssymbolleisten. Allerdings die `GetToolBarCtrl` Memberfunktion kann verwendet werden, die eingebettete abzurufenden `CToolBarCtrl` Objekt. Sie können dann Aufrufe an `CToolBarCtrl` Memberfunktionen, die das zurückgegebene Objekt verwenden.
+Standardmäßig verwendet MFC `CToolBar` die Klasse, um MFC-Anwendungssymbolleisten zu implementieren. Die `GetToolBarCtrl` Memberfunktion kann jedoch verwendet werden, um das eingebettete `CToolBarCtrl` Objekt abzurufen. Sie können dann `CToolBarCtrl` mithilfe des zurückgegebenen Objekts Aufrufe von Memberfunktionen tätigen.
 
-Im folgende Beispiel wird diese Technik veranschaulicht, indem Sie einen aktivierten zuweisen (`m_ToolBarImages`) als auch deaktivierte (`m_ToolBarDisabledImages`) Bildliste an, eine `CToolBarCtrl` Objekt (`m_ToolBarCtrl`).
+Im folgenden Beispiel wird diese Technik`m_ToolBarImages`veranschaulicht, indem`m_ToolBarDisabledImages`einem `CToolBarCtrl` Objekt eine`m_ToolBarCtrl`aktivierte ( ) und deaktivierte ( ) Bildliste zugewiesen wird ( ).
 
 [!code-cpp[NVC_MFCControlLadenDialog#35](../mfc/codesnippet/cpp/using-image-lists-in-a-toolbar-control_1.cpp)]
 
 > [!NOTE]
->  Der Bildliste ein, die die Toolbar-Objekt müssen es sich um dauerhafte Objekte sein. Aus diesem Grund sind sie häufig Datenmember einer MFC-Klasse. In diesem Beispiel ist die Hauptframe-Fensterklasse.
+> Die vom Symbolleistenobjekt verwendeten Bildlisten müssen permanente Objekte sein. Aus diesem Grund sind sie häufig Datenmember einer MFC-Klasse. in diesem Beispiel die Hauptrahmenfensterklasse.
 
-Sobald der Bildliste zugeordnet sind die `CToolBarCtrl` Objekt, das Framework automatisch die richtigen Schaltflächenbild angezeigt.
+Sobald die Bildlisten dem `CToolBarCtrl` Objekt zugeordnet sind, zeigt das Framework automatisch das richtige Schaltflächenbild an.
 
 ## <a name="see-also"></a>Siehe auch
 

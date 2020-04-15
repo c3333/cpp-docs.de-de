@@ -10,12 +10,12 @@ helpviewer_keywords:
 - SQL Server projects, retrieving aggregate values from recordsets
 - SQL aggregate values, retrieving from recordsets
 ms.assetid: 94500662-22a4-443e-82d7-acbe6eca447b
-ms.openlocfilehash: 1a8abc8b73ee878ac2feefa210268e87c608e938
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9ebbe78191d0c4140baf3557637ba2103886577d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80212835"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368652"
 ---
 # <a name="recordset-obtaining-sums-and-other-aggregate-results-odbc"></a>Recordset: Abrufen von Summen und anderen Aggregatergebnissen (ODBC)
 
@@ -36,10 +36,10 @@ In diesem Thema wird erläutert, wie Aggregatergebnisse mit den folgenden [SQL](
 
 - **COUNT**: Zählt die Anzahl der Datensätze in einer Spalte mit einem beliebigen Datentyp.
 
-Sie können diese SQL-Funktionen verwenden, um statistische Informationen zu den Datensätzen in einer Datenquelle abzurufen, statt Datensätze aus der Datenquelle zu extrahieren. Das Recordset, das erstellt wird, besteht in der Regel aus einem einzigen Datensatz (wenn alle Spalten Aggregate sind), der einen Wert enthält. (Es können mehrere Datensätze vorhanden sein, wenn Sie eine **Group by** -Klausel verwendet haben.) Dieser Wert ist das Ergebnis der Berechnung oder Extraktion, die von der SQL-Funktion ausgeführt wird.
+Sie können diese SQL-Funktionen verwenden, um statistische Informationen zu den Datensätzen in einer Datenquelle abzurufen, statt Datensätze aus der Datenquelle zu extrahieren. Das Recordset, das erstellt wird, besteht in der Regel aus einem einzigen Datensatz (wenn alle Spalten Aggregate sind), der einen Wert enthält. (Es gibt möglicherweise mehr als einen Datensatz, wenn Sie eine **GROUP BY-Klausel** verwendet haben.) Dieser Wert ist das Ergebnis der Berechnung oder Extraktion, die von der SQL-Funktion durchgeführt wird.
 
 > [!TIP]
->  Wenn Sie eine **GROUP BY**-SQL-Klausel (und möglicherweise eine **HAVING**-Klausel) zu Ihrer SQL-Anweisung hinzufügen möchten, fügen Sie diese am Ende von `m_strFilter` an. Beispiel:
+> Wenn Sie eine **GROUP BY**-SQL-Klausel (und möglicherweise eine **HAVING**-Klausel) zu Ihrer SQL-Anweisung hinzufügen möchten, fügen Sie diese am Ende von `m_strFilter` an. Beispiel:
 
 ```
 m_strFilter = "sales > 10 GROUP BY SALESPERSON_ID";
@@ -48,7 +48,7 @@ m_strFilter = "sales > 10 GROUP BY SALESPERSON_ID";
 Sie können die Anzahl von Datensätzen, aus denen Sie Aggregatergebnisse abrufen, einschränken, indem Sie die Spalten filtern und sortieren.
 
 > [!CAUTION]
->  Einige Aggregationsoperatoren geben einen Wert mit einem Datentyp zurück, der sich vom Datentyp der Spalten unterscheidet, über die die Operatoren aggregieren.
+> Einige Aggregationsoperatoren geben einen Wert mit einem Datentyp zurück, der sich vom Datentyp der Spalten unterscheidet, über die die Operatoren aggregieren.
 
 - **SUM** und **AVG** geben möglicherweise den nächstgrößeren Datentyp zurück (z. B. führt ein Aufrufen mit `int` zur Rückgabe von **LONG** oder **double**).
 
@@ -56,7 +56,7 @@ Sie können die Anzahl von Datensätzen, aus denen Sie Aggregatergebnisse abrufe
 
 - **MAX** und **MIN** geben den Datentyp zurück, den die Spalte hat, die sie berechnen.
 
-     Beispielsweise erstellt der Assistent zum **Hinzufügen von Klassen** `long` `m_lSales`, um eine Verkaufs Spalte aufzunehmen, aber Sie müssen dies durch ein `double m_dblSumSales` Datenmember ersetzen, um das Aggregat Ergebnis aufzunehmen. Siehe folgendes Beispiel.
+     Der **Klasse hinzufügen**-Assistent erstellt beispielsweise `long` `m_lSales`, um eine Sales-Spalte einzubinden, aber Sie müssen dies durch ein `double m_dblSumSales`-Datenmember ersetzen, um das aggregierte Ergebnis zu berücksichtigen. Siehe folgendes Beispiel.
 
 #### <a name="to-obtain-an-aggregate-result-for-a-recordset"></a>So rufen Sie ein aggregiertes Ergebnis für ein Recordset ab
 
@@ -77,7 +77,7 @@ Sie können die Anzahl von Datensätzen, aus denen Sie Aggregatergebnisse abrufe
 1. Öffnen Sie das Recordset. Das Ergebnis des Aggregationsvorgangs wird in `m_dblSumSales` gespeichert.
 
 > [!NOTE]
->  Der Assistent weist tatsächlich Datenmembernamen ohne ungarische Präfixe zu. Beispielsweise würde der Assistent den Namen `m_Sales` für eine „Sales“-Spalte anstelle des Namens `m_lSales` erstellen, der zuvor zur Veranschaulichung verwendet wurde.
+> Der Assistent weist tatsächlich Datenmembernamen ohne ungarische Präfixe zu. Beispielsweise würde der Assistent den Namen `m_Sales` für eine „Sales“-Spalte anstelle des Namens `m_lSales` erstellen, der zuvor zur Veranschaulichung verwendet wurde.
 
 Wenn Sie eine [CRecordView](../../mfc/reference/crecordview-class.md)-Klasse verwenden, um die Daten anzuzeigen, müssen Sie den DDX-Funktionsaufruf so ändern, dass der neue Wert des Datenmembers angezeigt wird. In diesem Fall bedeutet dies eine Änderung von:
 
@@ -91,7 +91,7 @@ in:
 DDX_FieldText(pDX, IDC_SUMSALES, m_pSet->m_dblSumSales, m_pSet);
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
-[Recordset: Wie Recordsets Datensätze auswählen (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)
+[Recordset: Datensatzauswahl durch Recordsets (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)

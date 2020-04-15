@@ -1,9 +1,11 @@
 ---
 title: wctomb, _wctomb_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wctomb_l
 - wctomb
+- _o__wctomb_l
+- _o_wctomb
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - characters, converting
 - string conversion, multibyte character strings
 ms.assetid: 4a543f0e-5516-4d81-8ff2-3c5206f02ed5
-ms.openlocfilehash: 195105618c75bd2a3a493f169fca4c2d3d4ebd62
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 162585ea866b4fb26cfaae3bc94345dadaba0baa
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945003"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367404"
 ---
 # <a name="wctomb-_wctomb_l"></a>wctomb, _wctomb_l
 
@@ -59,7 +62,7 @@ int _wctomb_l(
 
 ### <a name="parameters"></a>Parameter
 
-*mbchar*<br/>
+*Mbchar*<br/>
 Die Adresse eines Multibytezeichens.
 
 *wchar*<br/>
@@ -67,21 +70,23 @@ Ein Breitzeichen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn **wctomb** das breit Zeichen in ein Multibytezeichen konvertiert, wird die Anzahl von Bytes (die nie größer als **MB_CUR_MAX**ist) im breit Zeichen zurückgegeben. Wenn *WCHAR* das breit Zeichen NULL-Zeichen (L ' \ 0 ') ist, gibt **wcgrab** 1 zurück. Wenn der Ziel Zeiger *mbchar* **null**ist, gibt **wctomb** 0 zurück. Wenn die Konvertierung im aktuellen Gebiets Schema nicht möglich ist, gibt **wctomb** -1 zurück, und **errno** ist auf **EILSEQ**festgelegt.
+Wenn **wctomb** das breite Zeichen in ein Multibyte-Zeichen konvertiert, gibt es die Anzahl der Bytes (die nie größer als **MB_CUR_MAX**ist) im Breitzeichen zurück. Wenn *wchar* das Nullzeichen mit einem breitzeichenden Zeichen (L''0') ist, gibt **wctomb** 1 zurück. Wenn der Zielzeiger *mbchar* **NULL**ist, gibt **wctomb** 0 zurück. Wenn die Konvertierung im aktuellen Gebietsschema nicht möglich ist, gibt **wctomb** -1 zurück und **errno** wird auf **EILSEQ**gesetzt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **wctomb** -Funktion konvertiert das *WCHAR* -Argument in das entsprechende Multibytezeichen und speichert das Ergebnis bei *mbchar*. Sie können die Funktion von einem beliebigen Punkt in einem beliebigen Programm aufrufen. **wctomb** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_wctomb_l** ist mit **wctomb** identisch, mit dem Unterschied, dass es stattdessen das übergebene Gebiets Schema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die **wctomb-Funktion** konvertiert ihr *wchar-Argument* in das entsprechende Multibyte-Zeichen und speichert das Ergebnis bei *mbchar*. Sie können die Funktion von einem beliebigen Punkt in einem beliebigen Programm aufrufen. **wctomb** verwendet das aktuelle Gebietsschema für jedes gebietsschemaabhängige Verhalten. **_wctomb_l** ist identisch mit **wctomb,** außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-**wctomb** überprüft seine Parameter. Wenn *mbchar* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt-1 zurück.
+**wctomb** überprüft seine Parameter. Wenn *mbchar* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und die Funktion gibt -1 zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**wctomb**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

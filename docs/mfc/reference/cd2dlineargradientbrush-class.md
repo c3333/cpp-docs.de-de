@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CD2DLinearGradientBrush [MFC], m_LinearGradientBrushProperties
 - CD2DLinearGradientBrush [MFC], m_pLinearGradientBrush
 ms.assetid: d4be9ff9-0ea8-45e6-9b8d-f3bc5673cbac
-ms.openlocfilehash: d86235893d1f238f4cba9c927fad17f29060e591
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6c488d66962f26b6ca9b8c63cb387fc75191085a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62348626"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369199"
 ---
 # <a name="cd2dlineargradientbrush-class"></a>CD2DLinearGradientBrush-Klasse
 
@@ -51,41 +51,41 @@ class CD2DLinearGradientBrush : public CD2DGradientBrush;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CD2DLinearGradientBrush::CD2DLinearGradientBrush](#cd2dlineargradientbrush)|Erstellt ein CD2DLinearGradientBrush-Objekt.|
-|[CD2DLinearGradientBrush::~CD2DLinearGradientBrush](#_dtorcd2dlineargradientbrush)|Der Destruktor. Wird aufgerufen, wenn ein D2D-Pinsels mit linearem Farbverlauf-Objekt zerstört wird.|
+|[CD2DLinearGradientBrush::-CD2DLinearGradientBrush](#_dtorcd2dlineargradientbrush)|Der Destruktor. Wird aufgerufen, wenn ein lineares D2D-Gradientenpinselobjekt zerstört wird.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DLinearGradientBrush::Attach](#attach)|Hängt die vorhandene Ressourcenschnittstelle für das Objekt|
-|[CD2DLinearGradientBrush::Create](#create)|Erstellt eine CD2DLinearGradientBrush an. (Überschreibt [CD2DResource:: Create](../../mfc/reference/cd2dresource-class.md#create).)|
-|[CD2DLinearGradientBrush::Destroy](#destroy)|Zerstört ein CD2DLinearGradientBrush-Objekt. (Überschreibt [CD2DGradientBrush:: Destroy](../../mfc/reference/cd2dgradientbrush-class.md#destroy).)|
-|[CD2DLinearGradientBrush::Detach](#detach)|Resource-Schnittstelle aus dem Objekt getrennt|
-|[CD2DLinearGradientBrush::Get](#get)|Gibt die ID2D1LinearGradientBrush-Schnittstelle|
-|[CD2DLinearGradientBrush::GetEndPoint](#getendpoint)|Ruft die Endkoordinaten des linearen Farbverlaufs|
-|[CD2DLinearGradientBrush::GetStartPoint](#getstartpoint)|Ruft die Anfangskoordinaten des linearen Farbverlaufs|
-|[CD2DLinearGradientBrush::SetEndPoint](#setendpoint)|Legt die Endkoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels|
-|[CD2DLinearGradientBrush::SetStartPoint](#setstartpoint)|Legt die Anfangskoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels|
+|[CD2DLinearGradientBrush::Anfügen](#attach)|Fügt vorhandene Ressourcenschnittstelle an das Objekt an|
+|[CD2DLinearGradientBrush::Erstellen](#create)|Erstellt einen CD2DLinearGradientBrush. (Überschreibt [CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create).)|
+|[CD2DLinearGradientBrush::Destroy](#destroy)|Zerstört ein CD2DLinearGradientBrush-Objekt. (Überschreibt [CD2DGradientBrush::Destroy](../../mfc/reference/cd2dgradientbrush-class.md#destroy).)|
+|[CD2DLinearGradientBrush::Detach](#detach)|Trennen der Ressourcenschnittstelle vom Objekt|
+|[CD2DLinearGradientBrush::Get](#get)|Gibt ID2D1LinearGradientBrush-Schnittstelle zurück|
+|[CD2DLinearGradientBrush::GetEndPoint](#getendpoint)|Ruft die Endkoordinaten des linearen Farbverlaufs ab|
+|[CD2DLinearGradientBrush::GetStartPoint](#getstartpoint)|Ruft die Startkoordinaten des linearen Farbverlaufs ab|
+|[CD2DLinearGradientBrush::SetEndPoint](#setendpoint)|Legt die Endkoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels fest|
+|[CD2DLinearGradientBrush::SetStartPoint](#setstartpoint)|Legt die Startkoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels fest|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DLinearGradientBrush::operator ID2D1LinearGradientBrush*](#operator_id2d1lineargradientbrush_star)|Gibt die ID2D1LinearGradientBrush-Schnittstelle|
+|[CD2DLinearGradientBrush::operator ID2D1LinearGradientBrush*](#operator_id2d1lineargradientbrush_star)|Gibt ID2D1LinearGradientBrush-Schnittstelle zurück|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DLinearGradientBrush::m_LinearGradientBrushProperties](#m_lineargradientbrushproperties)|Die Start- und Endpunkt des Farbverlaufs entspricht.|
-|[CD2DLinearGradientBrush::m_pLinearGradientBrush](#m_plineargradientbrush)|Ein Zeiger auf ein ID2D1LinearGradientBrush.|
+|[CD2DLinearGradientBrush::m_LinearGradientBrushProperties](#m_lineargradientbrushproperties)|Der Anfangs- und Endpunkt des Farbverlaufs.|
+|[CD2DLinearGradientBrush::m_pLinearGradientBrush](#m_plineargradientbrush)|Ein Zeiger auf einen ID2D1LinearGradientBrush.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CD2DResource](../../mfc/reference/cd2dresource-class.md)
 
@@ -97,19 +97,19 @@ class CD2DLinearGradientBrush : public CD2DGradientBrush;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="_dtorcd2dlineargradientbrush"></a>  CD2DLinearGradientBrush:: ~ CD2DLinearGradientBrush
+## <a name="cd2dlineargradientbrushcd2dlineargradientbrush"></a><a name="_dtorcd2dlineargradientbrush"></a>CD2DLinearGradientBrush::-CD2DLinearGradientBrush
 
-Der Destruktor. Wird aufgerufen, wenn ein D2D-Pinsels mit linearem Farbverlauf-Objekt zerstört wird.
+Der Destruktor. Wird aufgerufen, wenn ein lineares D2D-Gradientenpinselobjekt zerstört wird.
 
 ```
 virtual ~CD2DLinearGradientBrush();
 ```
 
-##  <a name="attach"></a>  CD2DLinearGradientBrush::Attach
+## <a name="cd2dlineargradientbrushattach"></a><a name="attach"></a>CD2DLinearGradientBrush::Anfügen
 
-Hängt die vorhandene Ressourcenschnittstelle für das Objekt
+Fügt vorhandene Ressourcenschnittstelle an das Objekt an
 
 ```
 void Attach(ID2D1LinearGradientBrush* pResource);
@@ -118,9 +118,9 @@ void Attach(ID2D1LinearGradientBrush* pResource);
 ### <a name="parameters"></a>Parameter
 
 *pResource*<br/>
-Vorhandene Ressourcenschnittstelle. NULL darf nicht sein
+Vorhandene Ressourcenschnittstelle. Kann nicht NULL sein
 
-##  <a name="cd2dlineargradientbrush"></a>  CD2DLinearGradientBrush::CD2DLinearGradientBrush
+## <a name="cd2dlineargradientbrushcd2dlineargradientbrush"></a><a name="cd2dlineargradientbrush"></a>CD2DLinearGradientBrush::CD2DLinearGradientBrush
 
 Erstellt ein CD2DLinearGradientBrush-Objekt.
 
@@ -141,30 +141,30 @@ CD2DLinearGradientBrush(
 *pParentTarget*<br/>
 Ein Zeiger auf das Renderziel.
 
-*gradientStops*<br/>
-Ein Zeiger auf ein Array von D2D1_GRADIENT_STOP-Strukturen.
+*Gradientstops*<br/>
+Ein Zeiger auf ein Array von D2D1_GRADIENT_STOP Strukturen.
 
 *gradientStopsCount*<br/>
-Ein Wert größer als oder gleich 1, der die Anzahl der Farbverlaufsstopps in GradientStops-Array angibt.
+Ein Wert größer oder gleich 1, der die Anzahl der Verlaufsstopps im array gradientStops angibt.
 
 *LinearGradientBrushProperties*<br/>
-Die Start- und Endpunkt des Farbverlaufs entspricht.
+Der Anfangs- und Endpunkt des Farbverlaufs.
 
 *colorInterpolationGamma*<br/>
-Der Speicherplatz in der die, den Farbe der Interpolation zwischen dem Farbverlaufsstopp ausgeführt wird.
+Der Bereich, in dem die Farbinterpolation zwischen den Farbverlaufsstopps durchgeführt wird.
 
 *extendMode*<br/>
-Das Verhalten der Farbverlauf außerhalb der normalisierten Bereich [0,1].
+Das Verhalten des Farbverlaufs außerhalb des normalisierten Bereichs [0,1].
 
 *pBrushProperties*<br/>
-Ein Zeiger auf die Deckkraft und die Transformation eines Pinsels.
+Ein Zeiger auf die Deckkraft und Transformation eines Pinsels.
 
 *bAutoDestroy*<br/>
-Gibt an, dass vom Besitzer (pParentTarget) das Objekt zerstört wird.
+Gibt an, dass das Objekt vom Besitzer (pParentTarget) zerstört wird.
 
-##  <a name="create"></a>  CD2DLinearGradientBrush::Create
+## <a name="cd2dlineargradientbrushcreate"></a><a name="create"></a>CD2DLinearGradientBrush::Erstellen
 
-Erstellt eine CD2DLinearGradientBrush an.
+Erstellt einen CD2DLinearGradientBrush.
 
 ```
 virtual HRESULT Create(CRenderTarget* pRenderTarget);
@@ -177,9 +177,9 @@ Ein Zeiger auf das Renderziel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird einen HRESULT-Fehlercode zurückgegeben.
+Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
 
-##  <a name="destroy"></a>  CD2DLinearGradientBrush::Destroy
+## <a name="cd2dlineargradientbrushdestroy"></a><a name="destroy"></a>CD2DLinearGradientBrush::Destroy
 
 Zerstört ein CD2DLinearGradientBrush-Objekt.
 
@@ -187,9 +187,9 @@ Zerstört ein CD2DLinearGradientBrush-Objekt.
 virtual void Destroy();
 ```
 
-##  <a name="detach"></a>  CD2DLinearGradientBrush::Detach
+## <a name="cd2dlineargradientbrushdetach"></a><a name="detach"></a>CD2DLinearGradientBrush::Detach
 
-Resource-Schnittstelle aus dem Objekt getrennt
+Trennen der Ressourcenschnittstelle vom Objekt
 
 ```
 ID2D1LinearGradientBrush* Detach();
@@ -197,11 +197,11 @@ ID2D1LinearGradientBrush* Detach();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf getrennten Resource-Schnittstelle.
+Zeiger auf eine getrennte Ressourcenschnittstelle.
 
-##  <a name="get"></a>  CD2DLinearGradientBrush::Get
+## <a name="cd2dlineargradientbrushget"></a><a name="get"></a>CD2DLinearGradientBrush::Get
 
-Gibt die ID2D1LinearGradientBrush-Schnittstelle
+Gibt ID2D1LinearGradientBrush-Schnittstelle zurück
 
 ```
 ID2D1LinearGradientBrush* Get();
@@ -209,11 +209,11 @@ ID2D1LinearGradientBrush* Get();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1LinearGradientBrush-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1LinearGradientBrush-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="getendpoint"></a>  CD2DLinearGradientBrush::GetEndPoint
+## <a name="cd2dlineargradientbrushgetendpoint"></a><a name="getendpoint"></a>CD2DLinearGradientBrush::GetEndPoint
 
-Ruft die Endkoordinaten des linearen Farbverlaufs
+Ruft die Endkoordinaten des linearen Farbverlaufs ab
 
 ```
 CD2DPointF GetEndPoint() const;
@@ -221,11 +221,11 @@ CD2DPointF GetEndPoint() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die zweidimensionalen Endkoordinaten des linearen Farbverlaufs, im Koordinatenraum des Pinsels
+Die endende zweidimensionale Koordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels
 
-##  <a name="getstartpoint"></a>  CD2DLinearGradientBrush::GetStartPoint
+## <a name="cd2dlineargradientbrushgetstartpoint"></a><a name="getstartpoint"></a>CD2DLinearGradientBrush::GetStartPoint
 
-Ruft die Anfangskoordinaten des linearen Farbverlaufs
+Ruft die Startkoordinaten des linearen Farbverlaufs ab
 
 ```
 CD2DPointF GetStartPoint() const;
@@ -233,27 +233,27 @@ CD2DPointF GetStartPoint() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die zweidimensionalen Anfangskoordinaten des linearen Farbverlaufs, im Koordinatenraum des Pinsels
+Die beginnenden zweidimensionalen Koordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels
 
-##  <a name="m_lineargradientbrushproperties"></a>  CD2DLinearGradientBrush::m_LinearGradientBrushProperties
+## <a name="cd2dlineargradientbrushm_lineargradientbrushproperties"></a><a name="m_lineargradientbrushproperties"></a>CD2DLinearGradientBrush::m_LinearGradientBrushProperties
 
-Die Start- und Endpunkt des Farbverlaufs entspricht.
+Der Anfangs- und Endpunkt des Farbverlaufs.
 
 ```
 D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES m_LinearGradientBrushProperties;
 ```
 
-##  <a name="m_plineargradientbrush"></a>  CD2DLinearGradientBrush::m_pLinearGradientBrush
+## <a name="cd2dlineargradientbrushm_plineargradientbrush"></a><a name="m_plineargradientbrush"></a>CD2DLinearGradientBrush::m_pLinearGradientBrush
 
-Ein Zeiger auf ein ID2D1LinearGradientBrush.
+Ein Zeiger auf einen ID2D1LinearGradientBrush.
 
 ```
 ID2D1LinearGradientBrush* m_pLinearGradientBrush;
 ```
 
-##  <a name="operator_id2d1lineargradientbrush_star"></a>  CD2DLinearGradientBrush::Operator ID2D1LinearGradientBrush *
+## <a name="cd2dlineargradientbrushoperator-id2d1lineargradientbrush"></a><a name="operator_id2d1lineargradientbrush_star"></a>CD2DLinearGradientBrush::operator ID2D1LinearGradientBrush*
 
-Gibt die ID2D1LinearGradientBrush-Schnittstelle
+Gibt ID2D1LinearGradientBrush-Schnittstelle zurück
 
 ```
 operator ID2D1LinearGradientBrush*();
@@ -261,11 +261,11 @@ operator ID2D1LinearGradientBrush*();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1LinearGradientBrush-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1LinearGradientBrush-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="setendpoint"></a>  CD2DLinearGradientBrush::SetEndPoint
+## <a name="cd2dlineargradientbrushsetendpoint"></a><a name="setendpoint"></a>CD2DLinearGradientBrush::SetEndPoint
 
-Legt die Endkoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels
+Legt die Endkoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels fest
 
 ```
 void SetEndPoint(CD2DPointF point);
@@ -273,12 +273,12 @@ void SetEndPoint(CD2DPointF point);
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
-Die zweidimensionalen Endkoordinaten des linearen Farbverlaufs, im Koordinatenraum des Pinsels
+*Punkt*<br/>
+Die endende zweidimensionale Koordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels
 
-##  <a name="setstartpoint"></a>  CD2DLinearGradientBrush::SetStartPoint
+## <a name="cd2dlineargradientbrushsetstartpoint"></a><a name="setstartpoint"></a>CD2DLinearGradientBrush::SetStartPoint
 
-Legt die Anfangskoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels
+Legt die Startkoordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels fest
 
 ```
 void SetStartPoint(CD2DPointF point);
@@ -286,8 +286,8 @@ void SetStartPoint(CD2DPointF point);
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
-Die zweidimensionalen Anfangskoordinaten des linearen Farbverlaufs, im Koordinatenraum des Pinsels
+*Punkt*<br/>
+Die beginnenden zweidimensionalen Koordinaten des linearen Farbverlaufs im Koordinatenraum des Pinsels
 
 ## <a name="see-also"></a>Siehe auch
 

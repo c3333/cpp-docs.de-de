@@ -1,9 +1,11 @@
 ---
 title: wcstombs, _wcstombs_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - wcstombs
 - _wcstombs_l
+- _o__wcstombs_l
+- _o_wcstombs
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +36,12 @@ helpviewer_keywords:
 - characters, converting
 - string conversion, multibyte character strings
 ms.assetid: 91234252-9ea1-423a-af99-e9d0ce4a40e3
-ms.openlocfilehash: e4aa09ec8e6d97762d39e63aa05b0eb0cc159d17
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fb95c6d73a3979a39995b9104a76fc42ca9e8535
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945119"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366709"
 ---
 # <a name="wcstombs-_wcstombs_l"></a>wcstombs, _wcstombs_l
 
@@ -78,8 +81,8 @@ size_t _wcstombs_l(
 *mbstr*<br/>
 Die Adresse einer Multibyte-Zeichensequenz.
 
-*wcstr*<br/>
-Die Adresse einer Breitzeichensequenz.
+*Wcstr*<br/>
+Adresse einer Breitzeichensequenz.
 
 *count*<br/>
 Die maximale Anzahl von Bytes, die in der Multibyte-Ausgabezeichenfolge gespeichert werden können.
@@ -89,34 +92,36 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn **wcstomsb** die Multibytezeichenfolge erfolgreich konvertiert, wird die Anzahl von Bytes zurückgegeben, die in die Multibytezeichen-Ausgabe Zeichenfolge geschrieben werden, ohne den abschließenden NULL-Wert (sofern vorhanden) Wenn das *mbstr* -Argument **null**ist, gibt **wcstombs** die erforderliche Größe in Byte der Ziel Zeichenfolge zurück. Wenn **wcstomsb** ein breit Zeichen erkennt, das nicht in ein Multibytezeichen konvertiert werden kann, wird-1 in den Typ **size_t** umgewandelt und **errno** auf **EILSEQ**festgelegt.
+Wenn **wcstombs** die Multibyte-Zeichenfolge erfolgreich konvertiert, gibt es die Anzahl der Bytes zurück, die in die Multibyte-Ausgabezeichenfolge geschrieben wurden, ohne die beendende NULL (falls vorhanden). Wenn das *mbstr-Argument* **NULL**ist, gibt **wcstombs** die erforderliche Größe in Bytes der Zielzeichenfolge zurück. Wenn **wcstombs** auf ein breites Zeichen trifft, das nicht in ein Multibyte-Zeichen konvertiert werden kann, gibt es -1-Umwandlung zurück, um **size_t** einzugeben, und setzt **errno** auf **EILSEQ**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **wcstomsb** -Funktion konvertiert die Zeichenfolge mit breit Zeichen, auf die von *wcstr* verwiesen wird, in die entsprechenden Multibytezeichen und speichert die Ergebnisse im *mbstr* -Array. Der *count* -Parameter gibt die maximale Anzahl von Bytes an, die in der Multibytezeichen-Ausgabe Zeichenfolge gespeichert werden können (d. h. die Größe von *mbstr*). Es ist allgemein nicht bekannt, wie viele Bytes bei der Konvertierung einer Breitzeichenfolge benötigt werden. Einige Breitzeichen benötigen nur ein Byte in der Ausgabezeichenfolge; andere erfordern zwei. Wenn in der Multibytezeichen-Ausgabe Zeichenfolge für jedes breit Zeichen in der Eingabe Zeichenfolge zwei Bytes vorhanden sind (einschließlich des breit Zeichens null), wird das Ergebnis garantiert angepasst.
+Die **funktion wcstombs** konvertiert die Breitzeichenzeichenfolge, auf die von *wcstr* verwiesen wird, in die entsprechenden Multibyte-Zeichen und speichert die Ergebnisse im *mbstr-Array.* Der *Parameter count* gibt die maximale Anzahl von Bytes an, die in der Multibyte-Ausgabezeichenfolge gespeichert werden können (d. h. die Größe von *mbstr*). Es ist allgemein nicht bekannt, wie viele Bytes bei der Konvertierung einer Breitzeichenfolge benötigt werden. Einige Breitzeichen benötigen nur ein Byte in der Ausgabezeichenfolge; andere erfordern zwei. Wenn die Multibyte-Ausgabezeichenfolge für jedes breite Zeichen in der Eingabezeichenfolge (einschließlich des Breitzeichen-Nullzeichens) zwei Bytes enthält, ist das Ergebnis garantiert passend.
 
-Wenn **wcstomsb** das breit Zeichen NULL-Zeichen (L ' \ 0 ') erkennt, entweder vor oder wenn *count* auftritt, wird es in 8-Bit 0 konvertiert und beendet. Folglich ist die Multibytezeichenfolge bei *mbstr* nur dann NULL-terminiert, wenn **wcstomsb** bei der Konvertierung ein breit Zeichen NULL-Zeichen findet. Wenn die Sequenzen, auf die von *wcstr* und *mbstr* verwiesen wird, überlappen, ist das Verhalten von **wcstomsb** nicht definiert.
+Wenn **wcstombs** auf das Breitzeichen-NULL-Zeichen (L'-0') trifft, entweder vor oder wenn *die Anzahl* erfolgt, konvertiert es in eine 8-Bit-0 und stoppt. Daher wird die Multibyte-Zeichenfolge bei *mbstr* nur dann null beendet, wenn **wcstombs** während der Konvertierung auf ein Breitzeichen-Nullzeichen trifft. Wenn sich die Sequenzen, auf die *wcstr* und *mbstr* zeigten, überlappen, ist das Verhalten von **wcstombs** nicht definiert.
 
-Wenn das *mbstr* -Argument **null**ist, gibt **wcstombs** die erforderliche Größe in Byte der Ziel Zeichenfolge zurück.
+Wenn das *mbstr-Argument* **NULL**ist, gibt **wcstombs** die erforderliche Größe in Bytes der Zielzeichenfolge zurück.
 
-**wcstomsb** überprüft seine Parameter. Wenn *wcstr* **null**ist, oder wenn *count* größer als **INT_MAX**ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md) Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt die Funktion **errno** auf **EINVAL** fest und gibt-1 zurück.
+**wcstombs** überprüft seine Parameter. Wenn *wcstr* **NULL**ist oder wenn die *Anzahl* größer als **INT_MAX**ist, ruft diese Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt die Funktion **errno** auf **EINVAL** und gibt -1 zurück.
 
-**wcstomsb** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_wcstombs_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**wcstombs** verwendet das aktuelle Gebietsschema für jedes gebietsschemaabhängige Verhalten. **_wcstombs_l** identisch ist, außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**wcstombs**|\<stdlib.h>|
 |**_wcstombs_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm veranschaulicht das Verhalten der **wcstomsb** -Funktion.
+Dieses Programm veranschaulicht das Verhalten der **wcstombs-Funktion.**
 
 ```C
 // crt_wcstombs.c

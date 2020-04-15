@@ -1,6 +1,6 @@
 ---
 title: _strnicmp, _wcsnicmp, _mbsnicmp, _strnicmp_l, _wcsnicmp_l, _mbsnicmp_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wcsnicmp
 - _strnicmp_l
@@ -8,6 +8,12 @@ api_name:
 - _strnicmp
 - _mbsnicmp
 - _mbsnicmp_l
+- _o__mbsnicmp
+- _o__mbsnicmp_l
+- _o__strnicmp
+- _o__strnicmp_l
+- _o__wcsnicmp
+- _o__wcsnicmp_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +28,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -69,12 +76,12 @@ helpviewer_keywords:
 - mbsnicmp function
 - _wcsnicmp function
 ms.assetid: df6e5037-4039-4c85-a0a6-21d4ef513966
-ms.openlocfilehash: 6d1645c33684f5a0fbabc2119592c39a7df97ca3
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b0bde60a230f1fd428716073471cd85b2728a614
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947138"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364829"
 ---
 # <a name="_strnicmp-_wcsnicmp-_mbsnicmp-_strnicmp_l-_wcsnicmp_l-_mbsnicmp_l"></a>_strnicmp, _wcsnicmp, _mbsnicmp, _strnicmp_l, _wcsnicmp_l, _mbsnicmp_l
 
@@ -136,23 +143,25 @@ Zu verwendendes Gebietsschema.
 
 Gibt die Beziehung zwischen den untergeordneten Zeichenfolgen wie folgt an.
 
-|Rückgabewert|Beschreibung|
+|Rückgabewert|BESCHREIBUNG|
 |------------------|-----------------|
-|< 0|*Zeichenfolge1* Teil Zeichenfolge ist kleiner als *Zeichenfolge2* Teil Zeichenfolge.|
-|0|*Zeichenfolge1* Teil Zeichenfolge ist mit *Zeichenfolge2* Teil Zeichenfolge identisch.|
-|> 0|*Zeichenfolge1* Teil Zeichenfolge ist größer als *Zeichenfolge2* Teil Zeichenfolge.|
+|< 0|*String1-Teilzeichenfolge* ist kleiner als *string2-Teilzeichenfolge.*|
+|0|*string1-Teilzeichenfolge* ist identisch mit *der Zeichenfolge2.*|
+|> 0|*String1-Teilzeichenfolge* ist größer als *string2-Teilzeichenfolge.*|
 
-Bei einem Parameter Validierungs Fehler geben diese Funktionen **_NLSCMPERROR**zurück, das in \<String. h > und \<mbstring. h > definiert ist.
+Bei einem Parametervalidierungsfehler **_NLSCMPERROR**geben diese Funktionen \<_NLSCMPERROR zurück, \<der in string.h> und mbstring.h> definiert ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_strnicmp** -Funktion vergleicht ordinalmäßig die ersten *count* -Zeichen von *Zeichenfolge1* und *Zeichenfolge2*. Der Vergleich erfolgt ohne Berücksichtigung der Groß-/Kleinschreibung, indem jedes Zeichen in Kleinbuchstaben konvertiert wird. bei **_strnicmp** handelt es sich um eine Version von " **strencmp**". Der Vergleich endet, wenn ein abschließendes NULL-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden. Wenn die Zeichen folgen gleich sind, wenn ein abschließende Null-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden, ist die kürzere Zeichenfolge geringer.
+Die **_strnicmp-Funktion** vergleicht höchstens die ersten *Zählzeichen* von *string1* und *string2*. Der Vergleich erfolgt ohne Berücksichtigung der Groß-/Kleinschreibung, indem jedes Zeichen in Kleinbuchstaben konvertiert wird. **_strnicmp** ist eine Groß-/Kleinschreibung von **strncmp**. Der Vergleich endet, wenn ein beendendes Nullzeichen in einer der beiden Zeichenfolgen erreicht wird, bevor *Zählzeichen* verglichen werden. Wenn die Zeichenfolgen gleich sind, wenn ein beendendes NULL-Zeichen in einer der beiden Zeichenfolgen erreicht wird, bevor *Zählzeichen* verglichen werden, ist die kürzere Zeichenfolge kleiner.
 
-Die Zeichen von 91 bis 96 in der ASCII-Tabelle ('[', '\\', ']', '^', '_' und '\`') werden als kleiner als jedes beliebige alphabetische Zeichen ausgewertet. Diese Reihenfolge ist mit der von **striCmp**identisch.
+Die Zeichen von 91 bis 96 in der ASCII-Tabelle ('[', '\\', ']', '^', '_' und '\`') werden als kleiner als jedes beliebige alphabetische Zeichen ausgewertet. Diese Reihenfolge ist identisch mit der von **stricmp**.
 
-**_wcsnicmp** und **_mbsnicmp** sind breit Zeichen-und multibytezeichenversionen von **_strnicmp**. Die Argumente von **_wcsnicmp** sind Zeichen folgen mit breit Zeichen. bei den **_mbsnicmp** handelt es sich um Multibyte-Zeichen folgen. **_mbsnicmp** erkennt multibytezeichensequenzen entsprechend der aktuellen Multibytezeichen-Codepage und gibt **_NLSCMPERROR** bei einem Fehler zurück. Weitere Informationen finden Sie unter [Codepages](../../c-runtime-library/code-pages.md). Diese drei Funktionen verhalten sich andernfalls identisch. Diese Funktionen werden von der Gebiets Schema Einstellung beeinflusst – die Versionen, die nicht über das **_l** -Suffix verfügen, verwenden das aktuelle Gebiets Schema für Ihr vom Gebiets Schema abhängiges Verhalten. die Versionen, die über das **_l** -Suffix *verfügen, verwenden stattdessen das* übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_wcsnicmp** und **_mbsnicmp** sind breit- und multibyte-Zeichen-Versionen von **_strnicmp**. Die Argumente von **_wcsnicmp** sind Zeichenfolgen mit großen Zeichen; bei **_mbsnicmp** sind Zeichenfolgen mit mehreren Bytezeichen. **_mbsnicmp** erkennt Multibyte-Zeichensequenzen entsprechend der aktuellen Multibyte-Codepage und gibt **_NLSCMPERROR** bei einem Fehler zurück. Weitere Informationen finden Sie unter [Codepages](../../c-runtime-library/code-pages.md). Diese drei Funktionen verhalten sich andernfalls identisch. Diese Funktionen werden von der Gebietsschemaeinstellung beeinflusst – die Versionen, die nicht über das **_l** Suffix verfügen, verwenden das aktuelle Gebietsschema für ihr gebietsschemaabhängiges Verhalten. Die Versionen, die über das **_l** Suffix verfügen, verwenden stattdessen das *übergebene Gebietsschema.* Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Mit allen diesen Funktionen werden ihre Parameter überprüft. Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **_NLSCMPERROR** zurück und legen **errno** auf **EINVAL**fest.
+Mit allen diesen Funktionen werden ihre Parameter überprüft. Wenn *string1* oder *string2* ein NULL-Zeiger ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **_NLSCMPERROR** zurück und setzen **errno** auf **EINVAL**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -164,13 +173,13 @@ Mit allen diesen Funktionen werden ihre Parameter überprüft. Wenn entweder *Ze
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_strnicmp**, **_strnicmp_l**|\<string.h>|
 |**_wcsnicmp**, **_wcsnicmp_l**|\<string.h> oder \<wchar.h>|
 |**_mbsnicmp**, **_mbsnicmp_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -178,7 +187,7 @@ Ein Beispiel hierfür finden Sie unter [strncmp](strncmp-wcsncmp-mbsncmp-mbsncmp
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>
 [strcmp, wcscmp, _mbscmp](strcmp-wcscmp-mbscmp.md)<br/>
 [strcpy, wcscpy, _mbscpy](strcpy-wcscpy-mbscpy.md)<br/>

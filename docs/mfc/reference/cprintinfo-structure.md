@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - CPrintInfo structure [MFC]
 ms.assetid: 0b3de849-d050-4386-9a14-f4c1a25684f7
-ms.openlocfilehash: 96b6204fe46cb624d22506b2d3e5c1d7621b1865
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cf0a1e6b7e742e950663f1ed9cc9ff2ddabd9d6f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62372477"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364021"
 ---
 # <a name="cprintinfo-structure"></a>CPrintInfo-Struktur
 
-Speichert Informationen zu einem Auftrag drucken oder die Seitenansicht.
+Speichert Informationen zu einem Druck- oder Druckvorschauauftrag.
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,47 +27,47 @@ struct CPrintInfo
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPrintInfo::GetFromPage](#getfrompage)|Gibt die Anzahl der ersten Seite gedruckt wird.|
-|[CPrintInfo::GetMaxPage](#getmaxpage)|Gibt die Anzahl der letzten Seite des Dokuments.|
-|[CPrintInfo::GetMinPage](#getminpage)|Gibt die Anzahl der ersten Seite des Dokuments.|
-|[CPrintInfo::GetOffsetPage](#getoffsetpage)|Gibt die Anzahl der Seiten, die vor der ersten Seite eines DocObject-Elements in einem kombinierten DocObject-Druckauftrag gedruckt wird.|
-|[CPrintInfo::GetToPage](#gettopage)|Gibt die Anzahl der letzten Seite gedruckt wird.|
-|[CPrintInfo::SetMaxPage](#setmaxpage)|Legt die Anzahl der letzten Seite des Dokuments.|
-|[CPrintInfo::SetMinPage](#setminpage)|Legt die Anzahl der ersten Seite des Dokuments.|
+|[CPrintInfo::GetFromPage](#getfrompage)|Gibt die Nummer der ersten zu druckenden Seite zurück.|
+|[CPrintInfo::GetMaxPage](#getmaxpage)|Gibt die Nummer der letzten Seite des Dokuments zurück.|
+|[CPrintInfo::GetMinPage](#getminpage)|Gibt die Nummer der ersten Seite des Dokuments zurück.|
+|[CPrintInfo::GetOffsetPage](#getoffsetpage)|Gibt die Anzahl der Seiten zurück, die der ersten Seite eines DocObject-Elements vorangehen, das in einem kombinierten DocObject-Druckauftrag gedruckt wird.|
+|[CPrintInfo::GetToPage](#gettopage)|Gibt die Nummer der zuletzt gedruckten Seite zurück.|
+|[CPrintInfo::SetMaxPage](#setmaxpage)|Legt die Nummer der letzten Seite des Dokuments fest.|
+|[CPrintInfo::SetMinPage](#setminpage)|Legt die Nummer der ersten Seite des Dokuments fest.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPrintInfo::m_bContinuePrinting](#m_bcontinueprinting)|Enthält ein Flag, der angibt, ob das Framework die print-Schleife fortgesetzt werden soll.|
-|[CPrintInfo::m_bDirect](#m_bdirect)|Enthält ein Flag, der angibt, ob das Dokument gedruckt wird direkt (ohne Anzeige des Dialogfelds drucken).|
-|[CPrintInfo::m_bDocObject](#m_bdocobject)|Enthält ein Flag, der angibt, ob das gedruckte Dokument DocObject ist.|
-|[CPrintInfo::m_bPreview](#m_bpreview)|Enthält ein Flag, der angibt, ob das Dokument wird in der Vorschau angezeigt wird.|
-|[CPrintInfo::m_dwFlags](#m_dwflags)|Gibt Vorgänge an DocObject drucken.|
-|[CPrintInfo::m_lpUserData](#m_lpuserdata)|Enthält einen Zeiger auf eine Struktur Benutzer erstellt.|
-|[CPrintInfo::m_nCurPage](#m_ncurpage)|Gibt die Anzahl der gegenwärtig gedruckte Seite.|
-|[CPrintInfo::m_nJobNumber](#m_njobnumber)|Gibt an, die Projektnummer, die vom Betriebssystem für den aktuellen Druckauftrag zugewiesen|
-|[CPrintInfo::m_nNumPreviewPages](#m_nnumpreviewpages)|Identifiziert die Anzahl der Seiten, die im Vorschaufenster angezeigt. 1 oder 2.|
-|[CPrintInfo::m_nOffsetPage](#m_noffsetpage)|Gibt den Offset der ersten Seite des bestimmten DocObject in einem kombinierten DocObject-Druckauftrag an.|
-|[CPrintInfo::m_pPD](#m_ppd)|Enthält einen Zeiger auf die `CPrintDialog` für das Dialogfeld "Drucken" verwendete Objekt.|
-|[CPrintInfo::m_rectDraw](#m_rectdraw)|Gibt ein Rechteck die aktuelle nutzbaren Seitenbereich an.|
-|[CPrintInfo::m_strPageDesc](#m_strpagedesc)|Enthält eine Formatzeichenfolge für die Seitenzahl Anzeige.|
+|[CPrintInfo::m_bContinuePrinting](#m_bcontinueprinting)|Enthält ein Flag, das angibt, ob das Framework die Druckschleife fortsetzen soll.|
+|[CPrintInfo::m_bDirect](#m_bdirect)|Enthält ein Flag, das angibt, ob das Dokument direkt gedruckt wird (ohne das Dialogfeld Drucken anzuzeigen).|
+|[CPrintInfo::m_bDocObject](#m_bdocobject)|Enthält ein Flag, das angibt, ob es sich bei dem gedruckten Dokument um ein DocObject handelt.|
+|[CPrintInfo::m_bPreview](#m_bpreview)|Enthält ein Flag, das angibt, ob das Dokument in der Vorschau angezeigt wird.|
+|[CPrintInfo::m_dwFlags](#m_dwflags)|Gibt DocObject-Druckvorgänge an.|
+|[CPrintInfo::m_lpUserData](#m_lpuserdata)|Enthält einen Zeiger auf eine vom Benutzer erstellte Struktur.|
+|[CPrintInfo::m_nCurPage](#m_ncurpage)|Gibt die Nummer der Seite an, die gerade gedruckt wird.|
+|[CPrintInfo::m_nJobNumber](#m_njobnumber)|Gibt die Auftragsnummer an, die vom Betriebssystem für den aktuellen Druckauftrag zugewiesen wurde.|
+|[CPrintInfo::m_nNumPreviewPages](#m_nnumpreviewpages)|Identifiziert die Anzahl der im Vorschaufenster angezeigten Seiten. entweder 1 oder 2.|
+|[CPrintInfo::m_nOffsetPage](#m_noffsetpage)|Gibt den Offset der ersten Seite eines bestimmten DocObject in einem kombinierten DocObject-Druckauftrag an.|
+|[CPrintInfo::m_pPD](#m_ppd)|Enthält einen Zeiger `CPrintDialog` auf das Objekt, das für das Dialogfeld Drucken verwendet wird.|
+|[CPrintInfo::m_rectDraw](#m_rectdraw)|Gibt ein Rechteck an, das den aktuellen nutzbaren Seitenbereich definiert.|
+|[CPrintInfo::m_strPageDesc](#m_strpagedesc)|Enthält eine Formatzeichenfolge für die Seitennummernanzeige.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CPrintInfo` ist eine Struktur, und verfügt nicht über eine Basisklasse.
+`CPrintInfo`ist eine Struktur und hat keine Basisklasse.
 
-Das Framework erstellt ein Objekt des `CPrintInfo` jedes Mal, wenn der Druck oder Befehl "Seitenansicht" wird ausgewählt, und es zerstört, wenn der Befehl abgeschlossen ist.
+Das Framework erstellt `CPrintInfo` ein Objekt, das jedes Mal, wenn der Befehl Druck oder Druckvorschau ausgewählt wird, und zerstört es, wenn der Befehl abgeschlossen ist.
 
-`CPrintInfo` enthält Informationen zu den Druckauftrag als Ganzes, z. B. den Bereich der Seiten gedruckt werden, und den aktuellen Status des Druckauftrags, wie z. B. das gegenwärtig gedruckte Seite. Einige Informationen befindet sich in einem zugeordneten [CPrintDialog](../../mfc/reference/cprintdialog-class.md) -Objekt dieses Objekt enthält die Werte, die vom Benutzer im Dialogfeld "Drucken" eingegeben.
+`CPrintInfo`enthält Informationen sowohl zum Druckauftrag als Ganzes, z. B. zum Zudrucken des Seitenbereichs, als auch zum aktuellen Status des Druckauftrags, z. B. zur Seite, die gerade gedruckt wird. Einige Informationen werden in einem [zugeordneten CPrintDialog-Objekt](../../mfc/reference/cprintdialog-class.md) gespeichert. Dieses Objekt enthält die Vom Benutzer im Dialogfeld Drucken eingegebenen Werte.
 
-Ein `CPrintInfo` Objekt zwischen dem Framework und Ihrer Ansichtsklasse übergeben wird, die während des Druckvorgangs und wird verwendet, um den Informationsaustausch zwischen den beiden. Beispielsweise das Framework informiert der Ansichtsklasse der Seite des Dokuments durch Zuweisen eines Werts zum Drucken der `m_nCurPage` Mitglied `CPrintInfo`; die Ansicht Klasse ruft den Wert ab, und führt das eigentliche Drucken der angegebenen Seite.
+Ein `CPrintInfo` Objekt wird während des Druckvorgangs zwischen dem Framework und der Ansichtsklasse übergeben und wird zum Austausch von Informationen zwischen den beiden Objekten verwendet. Das Framework informiert z. B. die Ansichtsklasse darüber, welche Seite `m_nCurPage` des `CPrintInfo`Dokuments gedruckt werden soll, indem dem Member von ein Wert zugewiesen wird. Die Ansichtsklasse ruft den Wert ab und führt den tatsächlichen Druck der angegebenen Seite durch.
 
-Ein weiteres Beispiel ist der Fall, bei dem die Länge des Dokuments nicht bekannt ist, bis es gedruckt wird. In diesem Fall überprüft die View-Klasse für das Ende des Dokuments jedes Mal, wenn eine Seite gedruckt wird. Wenn das Ende erreicht ist, legt die Ansichtsklasse der `m_bContinuePrinting` Mitglied `CPrintInfo` auf "false"; Dadurch wird darüber informiert das Framework die print-Schleife zu beenden.
+Ein weiteres Beispiel ist der Fall, in dem die Länge des Dokuments erst bekannt ist, wenn es gedruckt wird. In diesem Fall testet die Ansichtsklasse jedes Mal, wenn eine Seite gedruckt wird, das Ende des Dokuments. Wenn das Ende erreicht ist, `m_bContinuePrinting` legt `CPrintInfo` die Ansichtsklasse den Member von auf FALSE fest. dies informiert das Framework, um die Druckschleife zu stoppen.
 
-`CPrintInfo` wird verwendet, indem die Memberfunktionen der `CView` aufgelistet unter "Siehe auch". Weitere Informationen zu der von der Microsoft Foundation Class-Bibliothek bereitgestellten Druckarchitektur, finden Sie unter [Frame Windows](../../mfc/frame-windows.md) und [Dokument-/Ansichtarchitektur](../../mfc/document-view-architecture.md) und in den Artikeln [ Drucken von](../../mfc/printing.md) und [drucken: Mehrseitige Dokumente](../../mfc/multipage-documents.md).
+`CPrintInfo`wird von den Memberfunktionen von `CView` unter "Siehe auch" aufgeführt verwendet. Weitere Informationen zur Druckarchitektur der Microsoft Foundation-Klassenbibliothek finden Sie unter [Rahmenfenster und](../../mfc/frame-windows.md) [Dokument-/Ansichtsarchitektur](../../mfc/document-view-architecture.md) sowie in den Artikeln [Drucken](../../mfc/printing.md) und [Drucken: Mehrseitige Dokumente](../../mfc/multipage-documents.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -75,11 +75,11 @@ Ein weiteres Beispiel ist der Fall, bei dem die Länge des Dokuments nicht bekan
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxext.h
+**Kopf:** afxext.h
 
-##  <a name="getfrompage"></a>  CPrintInfo::GetFromPage
+## <a name="cprintinfogetfrompage"></a><a name="getfrompage"></a>CPrintInfo::GetFromPage
 
-Rufen Sie diese Funktion zum Abrufen der Anzahl der ersten Seite gedruckt werden sollen.
+Rufen Sie diese Funktion auf, um die Nummer der ersten zu druckenden Seite abzurufen.
 
 ```
 UINT GetFromPage() const;
@@ -87,15 +87,15 @@ UINT GetFromPage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der ersten Seite gedruckt werden sollen.
+Die Nummer der ersten zu druckenden Seite.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies ist der Wert, der vom Benutzer im Dialogfeld "Drucken" angegeben wird, und es befindet sich in der `CPrintDialog` Objekt, auf die `m_pPD` Member. Wenn der Benutzer einen Wert nicht angegeben, ist der Standardwert der ersten Seite des Dokuments.
+Dies ist der vom Benutzer im Dialogfeld Drucken angegebene `CPrintDialog` Wert, der `m_pPD` im Objekt gespeichert wird, auf das vom Element verwiesen wird. Wenn der Benutzer keinen Wert angegeben hat, ist der Standardwert die erste Seite des Dokuments.
 
-##  <a name="getmaxpage"></a>  CPrintInfo::GetMaxPage
+## <a name="cprintinfogetmaxpage"></a><a name="getmaxpage"></a>CPrintInfo::GetMaxPage
 
-Rufen Sie diese Funktion zum Abrufen der Anzahl der letzten Seite des Dokuments.
+Rufen Sie diese Funktion auf, um die Nummer der letzten Seite des Dokuments abzurufen.
 
 ```
 UINT GetMaxPage() const;
@@ -103,15 +103,15 @@ UINT GetMaxPage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der letzten Seite des Dokuments.
+Die Nummer der letzten Seite des Dokuments.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert befindet sich in der `CPrintDialog` Objekt, auf die `m_pPD` Member.
+Dieser Wert wird `CPrintDialog` im Objekt gespeichert, auf das `m_pPD` der Member verweist.
 
-##  <a name="getminpage"></a>  CPrintInfo::GetMinPage
+## <a name="cprintinfogetminpage"></a><a name="getminpage"></a>CPrintInfo::GetMinPage
 
-Rufen Sie diese Funktion zum Abrufen der Anzahl der ersten Seite des Dokuments.
+Rufen Sie diese Funktion auf, um die Nummer der ersten Seite des Dokuments abzurufen.
 
 ```
 UINT GetMinPage() const;
@@ -119,15 +119,15 @@ UINT GetMinPage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der ersten Seite des Dokuments.
+Die Nummer der ersten Seite des Dokuments.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert befindet sich in der `CPrintDialog` Objekt, auf die `m_pPD` Member.
+Dieser Wert wird `CPrintDialog` im Objekt gespeichert, auf das `m_pPD` der Member verweist.
 
-##  <a name="getoffsetpage"></a>  CPrintInfo::GetOffsetPage
+## <a name="cprintinfogetoffsetpage"></a><a name="getoffsetpage"></a>CPrintInfo::GetOffsetPage
 
-Rufen Sie diese Funktion zum Abrufen des Offsets beim Drucken mehrerer DocObject-Elemente von einem DocObject-Client.
+Rufen Sie diese Funktion auf, um den Offset abzurufen, wenn mehrere DocObject-Elemente von einem DocObject-Client gedruckt werden.
 
 ```
 UINT GetOffsetPage() const;
@@ -135,15 +135,15 @@ UINT GetOffsetPage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Seiten, die vor der ersten Seite eines DocObject-Elements in einem kombinierten DocObject-Druckauftrag gedruckt wird.
+Die Anzahl der Seiten vor der ersten Seite eines DocObject-Elements, die in einem kombinierten DocObject-Druckauftrag gedruckt werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert verweist auf die `m_nOffsetPage` Member. Die erste Seite des Dokuments werden fortlaufend die `m_nOffsetPage` Wert + 1, wenn die DocObject mit anderen aktive Dokumente zu drucken. Die `m_nOffsetPage` Element gilt nur, wenn die `m_bDocObject` Wert ist "true".
+Auf diesen Wert wird `m_nOffsetPage` vom Member verwiesen. Die erste Seite Ihres Dokuments `m_nOffsetPage` wird mit dem Wert + 1 nummeriert, wenn sie als DocObject mit anderen aktiven Dokumenten gedruckt wird. Der `m_nOffsetPage` Member ist nur `m_bDocObject` gültig, wenn der Wert TRUE ist.
 
-##  <a name="gettopage"></a>  CPrintInfo::GetToPage
+## <a name="cprintinfogettopage"></a><a name="gettopage"></a>CPrintInfo::GetToPage
 
-Rufen Sie diese Funktion zum Abrufen der Anzahl der letzten Seite gedruckt werden sollen.
+Rufen Sie diese Funktion auf, um die Nummer der letzten zu druckenden Seite abzurufen.
 
 ```
 UINT GetToPage() const;
@@ -151,55 +151,55 @@ UINT GetToPage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der letzten Seite gedruckt werden sollen.
+Die Nummer der letzten zu druckenden Seite.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies ist der Wert, der vom Benutzer im Dialogfeld "Drucken" angegeben wird, und es befindet sich in der `CPrintDialog` Objekt, auf die `m_pPD` Member. Wenn der Benutzer einen Wert nicht angegeben, ist der Standardwert der letzten Seite des Dokuments.
+Dies ist der vom Benutzer im Dialogfeld Drucken angegebene `CPrintDialog` Wert, der `m_pPD` im Objekt gespeichert wird, auf das vom Element verwiesen wird. Wenn der Benutzer keinen Wert angegeben hat, ist der Standardwert die letzte Seite des Dokuments.
 
-##  <a name="m_bcontinueprinting"></a>  CPrintInfo::m_bContinuePrinting
+## <a name="cprintinfom_bcontinueprinting"></a><a name="m_bcontinueprinting"></a>CPrintInfo::m_bContinuePrinting
 
-Enthält ein Flag, der angibt, ob das Framework die print-Schleife fortgesetzt werden soll.
+Enthält ein Flag, das angibt, ob das Framework die Druckschleife fortsetzen soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie das Drucken-Time-Paginierung durchführen, können Sie dieses Element festlegen, auf "false" in der Überschreibung der `CView::OnPrepareDC` nach das Ende des Dokuments erreicht wurde. Sie müssen keine dieser Variablen zu ändern, wenn Sie die Länge des Dokuments zu Beginn des Druckauftrags mit angegeben haben die `SetMaxPage` Member-Funktion. Die `m_bContinuePrinting` Member ist eine öffentliche Variable des Typs "bool".
+Wenn Sie die Druckzeitpaginierung vorgenommen haben, können Sie diesen `CView::OnPrepareDC` Member in Ihrer Außerkraftsetzung auf FALSE festlegen, sobald das Ende des Dokuments erreicht ist. Sie müssen diese Variable nicht ändern, wenn Sie die Länge des Dokuments `SetMaxPage` zu Beginn des Druckauftrags mithilfe der Memberfunktion angegeben haben. Der `m_bContinuePrinting` Member ist eine öffentliche Variable vom Typ BOOL.
 
-##  <a name="m_bdirect"></a>  CPrintInfo::m_bDirect
+## <a name="cprintinfom_bdirect"></a><a name="m_bdirect"></a>CPrintInfo::m_bDirect
 
-Das Framework legt dieser Member auf "true", wenn das Dialogfeld Drucken für direct-Druck umgangen werden, wird; "False" andernfalls.
+Das Framework legt diesen Member auf TRUE fest, wenn das Dialogfeld Drucken für den Direktdruck umgangen wird. FALSE sonst.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Dialogfeld "Drucken" wird normalerweise umgangen werden, beim Drucken aus der Shell oder beim Drucken erfolgt mithilfe des Befehls-ID ID_FILE_PRINT_DIRECT.
+Das Dialogfeld Drucken wird normalerweise umgangen, wenn Sie aus der Shell drucken oder wenn das Drucken mit der Befehls-ID ID_FILE_PRINT_DIRECT erfolgt.
 
-Sie normalerweise nicht dieses Members ändern, aber wenn Sie ändern, ändern Sie ihn vor dem Aufruf [CView::DoPreparePrinting](../../mfc/reference/cview-class.md#doprepareprinting) in der Überschreibung der [CView::OnPreparePrinting](../../mfc/reference/cview-class.md#onprepareprinting).
+Normalerweise ändern Sie dieses Mitglied normalerweise nicht, aber wenn Sie es ändern, ändern Sie es, bevor Sie [CView::DoPreparePrinting](../../mfc/reference/cview-class.md#doprepareprinting) in Ihrer Außerkraftsetzung von [CView::OnPreparePrinting](../../mfc/reference/cview-class.md#onprepareprinting)aufrufen.
 
-##  <a name="m_bdocobject"></a>  CPrintInfo::m_bDocObject
+## <a name="cprintinfom_bdocobject"></a><a name="m_bdocobject"></a>CPrintInfo::m_bDocObject
 
-Enthält ein Flag, der angibt, ob das gedruckte Dokument DocObject ist.
+Enthält ein Flag, das angibt, ob es sich bei dem gedruckten Dokument um ein DocObject handelt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Datenmember `m_dwFlags` und `m_nOffsetPage` sind ungültig, es sei denn, dieses Flag "true" festgelegt ist.
+Datenmember `m_dwFlags` `m_nOffsetPage` und sind ungültig, es sei denn, dieses Flag ist TRUE.
 
-##  <a name="m_bpreview"></a>  CPrintInfo::m_bPreview
+## <a name="cprintinfom_bpreview"></a><a name="m_bpreview"></a>CPrintInfo::m_bPreview
 
-Enthält ein Flag, der angibt, ob das Dokument wird in der Vorschau angezeigt wird.
+Enthält ein Flag, das angibt, ob das Dokument in der Vorschau angezeigt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies wird durch das Framework festgelegt, je nachdem, welcher Befehl des Benutzers ausgeführt. Das Dialogfeld "Drucken" wird nicht für einen Auftrag für die Seitenansicht angezeigt. Die `m_bPreview` Member ist eine öffentliche Variable des Typs "bool".
+Dies wird vom Framework festgelegt, je nachdem, welcher Befehl der Benutzer ausgeführt hat. Das Dialogfeld Drucken wird für einen Druckvorschauauftrag nicht angezeigt. Der `m_bPreview` Member ist eine öffentliche Variable vom Typ BOOL.
 
-##  <a name="m_dwflags"></a>  CPrintInfo::m_dwFlags
+## <a name="cprintinfom_dwflags"></a><a name="m_dwflags"></a>CPrintInfo::m_dwFlags
 
-Enthält eine Kombination von Flags, die DocObject-Druck-Vorgänge angeben.
+Enthält eine Kombination von Flags, die DocObject-Druckvorgänge angeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nur gültig, wenn Datenmember `m_bDocObject` ist "true".
+Gültig nur, `m_bDocObject` wenn das Datenmember TRUE ist.
 
-Die Flags können es sich um eine oder mehrere der folgenden Werte sein:
+Die Flags können einer oder mehrere der folgenden Werte sein:
 
 - PRINTFLAG_MAYBOTHERUSER
 
@@ -215,71 +215,71 @@ Die Flags können es sich um eine oder mehrere der folgenden Werte sein:
 
 - PRINTFLAG_PRINTTOFILE
 
-##  <a name="m_lpuserdata"></a>  CPrintInfo::m_lpUserData
+## <a name="cprintinfom_lpuserdata"></a><a name="m_lpuserdata"></a>CPrintInfo::m_lpUserData
 
-Enthält einen Zeiger auf eine Struktur Benutzer erstellt.
+Enthält einen Zeiger auf eine vom Benutzer erstellte Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können dies verwenden, zum Drucken-spezifische Daten speichern, die Sie nicht in der Ansichtsklasse speichern möchten. Die `m_lpUserData` Member ist eine öffentliche Variable des Typs LPVOID.
+Sie können dies verwenden, um druckspezifische Daten zu speichern, die Sie nicht in Ihrer Ansichtsklasse speichern möchten. Der `m_lpUserData` Member ist eine öffentliche Variable vom Typ LPVOID.
 
-##  <a name="m_ncurpage"></a>  CPrintInfo::m_nCurPage
+## <a name="cprintinfom_ncurpage"></a><a name="m_ncurpage"></a>CPrintInfo::m_nCurPage
 
-Enthält die Anzahl der aktuellen Seite.
+Enthält die Nummer der aktuellen Seite.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft `CView::OnPrepareDC` und `CView::OnPrint` einmal für jede Seite des Dokuments und geben Sie einen anderen Wert für diesen Member jedes Mal; die Werte reichen von den Rückgabewert von `GetFromPage` vom zurückgegebenen `GetToPage`. Verwenden Sie dieses Element in Ihrer überschreibungen von `CView::OnPrepareDC` und `CView::OnPrint` die angegebene Seite des Dokuments gedruckt.
+Das Framework `CView::OnPrepareDC` `CView::OnPrint` ruft und einmal für jede Seite des Dokuments, wobei jedes Mal ein anderer Wert für dieses Element angegeben wird. seine Werte reichen von `GetFromPage` dem Wert, `GetToPage`der von zurückgegeben wird, bis zu dem Wert, der von zurückgegeben wird. Verwenden Sie dieses Element `CView::OnPrepareDC` in `CView::OnPrint` Ihren Außerkraftsetzungen und zum Drucken der angegebenen Seite des Dokuments.
 
-Wenn Sie den Vorschaumodus zuerst aufgerufen wird, liest das Framework den Wert des Elements zu bestimmen, welche Seite des Dokuments zunächst in der Vorschau angezeigt werden soll. Sie können den Wert des Elements festlegen, in der Überschreibung der `CView::OnPreparePrinting` aktuelle Position im Dokument des Benutzers zu verwalten, bei der Eingabe im Vorschaumodus. Die `m_nCurPage` Member ist eine öffentliche Variable vom Typ "uint".
+Wenn der Vorschaumodus zum ersten Mal aufgerufen wird, liest das Framework den Wert dieses Elements, um zu bestimmen, welche Seite des Dokuments ursprünglich in der Vorschau angezeigt werden soll. Sie können den Wert dieses Elements in `CView::OnPreparePrinting` Ihrer Außerkraftsetzung festlegen, um die aktuelle Position des Benutzers im Dokument beizubehalten, wenn Sie in den Vorschaumodus wechseln. Der `m_nCurPage` Member ist eine öffentliche Variable vom Typ UINT.
 
-##  <a name="m_njobnumber"></a>  CPrintInfo::m_nJobNumber
+## <a name="cprintinfom_njobnumber"></a><a name="m_njobnumber"></a>CPrintInfo::m_nJobNumber
 
-Gibt an, die Projektnummer, die vom Betriebssystem für den aktuellen Druckauftrag zugewiesen.
+Gibt die Auftragsnummer an, die vom Betriebssystem für den aktuellen Druckauftrag zugewiesen wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert kann SP_ERROR sein, wenn der Auftrag noch ausgedruckt noch nicht (d. h., wenn die `CPrintInfo` Objekt neu erstellt wird und noch nicht zum Drucken verwendet wurde), oder wenn beim Starten des Auftrags ein Fehler aufgetreten.
+Dieser Wert kann SP_ERROR sein, wenn der Auftrag noch nicht `CPrintInfo` gedruckt wurde (d. h., wenn das Objekt neu erstellt wurde und noch nicht zum Drucken verwendet wurde) oder wenn beim Starten des Auftrags ein Fehler aufgetreten ist.
 
-##  <a name="m_nnumpreviewpages"></a>  CPrintInfo::m_nNumPreviewPages
+## <a name="cprintinfom_nnumpreviewpages"></a><a name="m_nnumpreviewpages"></a>CPrintInfo::m_nNumPreviewPages
 
-Enthält die Anzahl der Seiten, die im Vorschaumodus angezeigt. Sie können entweder 1 oder 2 sein.
+Enthält die Anzahl der im Vorschaumodus angezeigten Seiten. es kann entweder 1 oder 2 sein.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `m_nNumPreviewPages` Member ist eine öffentliche Variable vom Typ "uint".
+Der `m_nNumPreviewPages` Member ist eine öffentliche Variable vom Typ UINT.
 
-##  <a name="m_noffsetpage"></a>  CPrintInfo::m_nOffsetPage
+## <a name="cprintinfom_noffsetpage"></a><a name="m_noffsetpage"></a>CPrintInfo::m_nOffsetPage
 
-Enthält die Anzahl der Seiten, die vor der ersten Seite des bestimmten DocObject in einem kombinierten DocObject-Druckauftrag.
+Enthält die Anzahl der Seiten vor der ersten Seite eines bestimmten DocObject in einem kombinierten DocObject-Druckauftrag.
 
-##  <a name="m_ppd"></a>  CPrintInfo::m_pPD
+## <a name="cprintinfom_ppd"></a><a name="m_ppd"></a>CPrintInfo::m_pPD
 
-Enthält einen Zeiger auf die `CPrintDialog` Objekt verwendet, um das Dialogfeld "Drucken" für den Auftrag anzuzeigen.
+Enthält einen Zeiger `CPrintDialog` auf das Objekt, das zum Anzeigen des Dialogfelds Drucken für den Druckauftrag verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `m_pPD` Member ist eine öffentliche Variable deklariert, die als Zeiger auf `CPrintDialog`.
+Das `m_pPD` Member ist eine öffentliche Variable, `CPrintDialog`die als Zeiger auf deklariert wird.
 
-##  <a name="m_rectdraw"></a>  CPrintInfo::m_rectDraw
+## <a name="cprintinfom_rectdraw"></a><a name="m_rectdraw"></a>CPrintInfo::m_rectDraw
 
-Gibt den verwendbaren Zeichnungsbereich Seitenrand in logischen Koordinaten an.
+Gibt den verwendbaren Zeichenbereich des Zeichenblatts in logischen Koordinaten an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Möglicherweise möchten Sie dies in der Überschreibung der verweisen `CView::OnPrint`. Sie können diesen Member verwenden, zum Nachverfolgen welcher Bereich nutzbar bleibt, nachdem Sie Kopfzeilen, Fußzeilen und So weiter drucken. Die `m_rectDraw` Member ist eine öffentliche Variable des Typs `CRect`.
+Darauf sollten Sie in Ihrer Außerkraftsetzung von `CView::OnPrint`verweisen. Sie können dieses Element verwenden, um nachzuverfolgen, welcher Bereich nach dem Drucken von Kopfzeilen, Fußzeilen usw. weiterhin verwendet werden kann. Der `m_rectDraw` Member ist eine `CRect`öffentliche Variable vom Typ .
 
-##  <a name="m_strpagedesc"></a>  CPrintInfo::m_strPageDesc
+## <a name="cprintinfom_strpagedesc"></a><a name="m_strpagedesc"></a>CPrintInfo::m_strPageDesc
 
-Enthält eine Formatzeichenfolge, die die Seitenzahlen der Seitenansicht angezeigt. Diese Zeichenfolge besteht aus zwei Teilzeichenfolgen, für Einzelseiten-Anzeige und für Double-Wert-Seite-Anzeige, jeweils durch ein Zeichen "\n" beendet.
+Enthält eine Formatzeichenfolge, die zum Anzeigen der Seitenzahlen während der Druckvorschau verwendet wird. Diese Zeichenfolge besteht aus zwei Teilzeichenfolgen, eine für die einseitige Anzeige und eine für die doppelseitige Anzeige, die jeweils durch ein Zeichen von ''n' beendet werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework verwendet "Seite %u\nPages % u-%u\n" als Standardwert an. Wenn Sie ein anderes Format für die Seitenzahlen können eine Formatzeichenfolge angeben, in der Überschreibung der `CView::OnPreparePrinting`. Die `m_strPageDesc` Member ist eine öffentliche Variable des Typs `CString`.
+Das Framework verwendet "Page %u'nPages %u-%u'n" als Standardwert. Wenn Sie ein anderes Format für die Seitenzahlen wünschen, `CView::OnPreparePrinting`geben Sie in der Außerkraftsetzung von eine Formatzeichenfolge an. Der `m_strPageDesc` Member ist eine `CString`öffentliche Variable vom Typ .
 
-##  <a name="setmaxpage"></a>  CPrintInfo::SetMaxPage
+## <a name="cprintinfosetmaxpage"></a><a name="setmaxpage"></a>CPrintInfo::SetMaxPage
 
-Rufen Sie diese Funktion zum Angeben der Anzahl der letzten Seite des Dokuments.
+Rufen Sie diese Funktion auf, um die Nummer der letzten Seite des Dokuments anzugeben.
 
 ```
 void SetMaxPage(UINT nMaxPage);
@@ -288,19 +288,19 @@ void SetMaxPage(UINT nMaxPage);
 ### <a name="parameters"></a>Parameter
 
 *nMaxPage*<br/>
-Die Anzahl der letzten Seite des Dokuments.
+Nummer der letzten Seite des Dokuments.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert befindet sich in der `CPrintDialog` Objekt, auf die `m_pPD` Member. Wenn die Länge des Dokuments bekannt ist, bevor es gedruckt wird, rufen Sie diese Funktion aus der Überschreibung der `CView::OnPreparePrinting`. Wenn die Länge des Dokuments eine Einstellung, die vom Benutzer im Dialogfeld "Drucken" angegebenen abhängig ist, rufen Sie diese Funktion aus der Überschreibung der `CView::OnBeginPrinting`. Wenn die Länge des Dokuments nicht bekannt ist, bevor es gedruckt wird, verwenden Sie die `m_bContinuePrinting` Member zur Steuerung der print-Schleife.
+Dieser Wert wird `CPrintDialog` im Objekt gespeichert, auf das `m_pPD` der Member verweist. Wenn die Länge des Dokuments vor dem Drucken bekannt ist, `CView::OnPreparePrinting`rufen Sie diese Funktion aus ihrer Außerkraftsetzung von auf. Wenn die Länge des Dokuments von einer Einstellung abhängt, die vom Benutzer im `CView::OnBeginPrinting`Dialogfeld Drucken angegeben wird, rufen Sie diese Funktion über die Außerkraftsetzung von auf. Wenn die Länge des Dokuments erst bekannt ist, wenn es gedruckt wird, verwenden Sie das `m_bContinuePrinting` Element, um die Druckschleife zu steuern.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe das Beispiel für [CView::OnPreparePrinting](../../mfc/reference/cview-class.md#onprepareprinting).
+  Siehe Beispiel für [CView::OnPreparePrinting](../../mfc/reference/cview-class.md#onprepareprinting).
 
-##  <a name="setminpage"></a>  CPrintInfo::SetMinPage
+## <a name="cprintinfosetminpage"></a><a name="setminpage"></a>CPrintInfo::SetMinPage
 
-Rufen Sie diese Funktion zum Angeben der Anzahl der ersten Seite des Dokuments.
+Rufen Sie diese Funktion auf, um die Nummer der ersten Seite des Dokuments anzugeben.
 
 ```
 void SetMinPage(UINT nMinPage);
@@ -309,11 +309,11 @@ void SetMinPage(UINT nMinPage);
 ### <a name="parameters"></a>Parameter
 
 *nMinPage*<br/>
-Die Anzahl der ersten Seite des Dokuments.
+Nummer der ersten Seite des Dokuments.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Seitenzahlen beginnen normalerweise bei 1. Dieser Wert befindet sich in der `CPrintDialog` Objekt, auf die `m_pPD` Member.
+Seitenzahlen beginnen normalerweise bei 1. Dieser Wert wird `CPrintDialog` im Objekt gespeichert, auf das `m_pPD` der Member verweist.
 
 ## <a name="see-also"></a>Siehe auch
 

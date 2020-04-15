@@ -1,9 +1,11 @@
 ---
 title: wctomb_s, _wctomb_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wctomb_s_l
 - wctomb_s
+- _o__wctomb_s_l
+- _o_wctomb_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - characters, converting
 - string conversion, multibyte character strings
 ms.assetid: 7e94a888-deed-4dbd-b5e9-d4a0455538b8
-ms.openlocfilehash: 329724ca0196e07397d4f0337a2bf0aa2db05c84
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1ddc9a991f28c4a2ea491f3ddd04d78f6345e255
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957896"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367250"
 ---
 # <a name="wctomb_s-_wctomb_s_l"></a>wctomb_s, _wctomb_s_l
 
@@ -66,11 +69,11 @@ errno_t _wctomb_s_l(
 *pRetValue*<br/>
 Die Anzahl von Bytes oder ein Code, der das Ergebnis angibt.
 
-*mbchar*<br/>
+*Mbchar*<br/>
 Die Adresse eines Multibytezeichens.
 
 *sizeInBytes*<br/>
-Größe des Puffers *mbchar*.
+Größe des *Puffers mbchar*.
 
 *wchar*<br/>
 Ein Breitzeichen.
@@ -84,34 +87,36 @@ Null, wenn erfolgreich, Fehlercode bei Fehler.
 
 Fehlerbedingungen
 
-|*mbchar*|*sizeInBytes*|Rückgabewert|*pRetValue*|
+|*Mbchar*|*sizeInBytes*|Rückgabewert|*pRetValue*|
 |--------------|-------------------|------------------|-----------------|
-|**NULL**|>0|**EINVAL**|nicht geändert|
-|any|>**INT_MAX**|**EINVAL**|nicht geändert|
-|any|zu klein|**EINVAL**|nicht geändert|
+|**Null**|>0|**Einval**|nicht geändert|
+|any|>**Int_max**|**Einval**|nicht geändert|
+|any|zu klein|**Einval**|nicht geändert|
 
-Wenn eine der oben genannten Fehlerbedingungen auftritt, wird ein Handler für ungültige Parameter aufgerufen (siehe [Parametervalidierung](../../c-runtime-library/parameter-validation.md)). Wenn die weitere Ausführung zugelassen wird, gibt **wctomb** **EINVAL** zurück und legt **errno** auf **EINVAL**fest.
+Wenn eine der oben genannten Fehlerbedingungen auftritt, wird ein Handler für ungültige Parameter aufgerufen (siehe [Parametervalidierung](../../c-runtime-library/parameter-validation.md)). Wenn die Ausführung fortgesetzt werden darf, gibt **wctomb** **EINVAL** zurück und setzt **errno** auf **EINVAL**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **wctomb_s** -Funktion konvertiert das *WCHAR* -Argument in das entsprechende Multibytezeichen und speichert das Ergebnis bei *mbchar*. Sie können die Funktion von einem beliebigen Punkt in einem beliebigen Programm aufrufen.
+Die **wctomb_s-Funktion** konvertiert ihr *wchar-Argument* in das entsprechende Multibyte-Zeichen und speichert das Ergebnis bei *mbchar*. Sie können die Funktion von einem beliebigen Punkt in einem beliebigen Programm aufrufen.
 
-Wenn **wctomb_s** das breit Zeichen in ein Multibytezeichen konvertiert, wird die Anzahl von Bytes (die nie größer als **MB_CUR_MAX**ist) im breit Zeichen in die ganze Zahl eingefügt, auf die von *pRetValue*verwiesen wird. Wenn *WCHAR* das breit Zeichen NULL-Zeichen (L ' \ 0 ') ist, füllt wctomb_s *pRetValue* mit 1. Wenn der Ziel Zeiger *mbchar* **null**ist, setzt **wctomb_s** den Wert 0 in *pRetValue*. Wenn die Konvertierung im aktuellen Gebiets Schema nicht möglich ist, legt **wctomb_s** -1 in *pRetValue*ab.
+Wenn **wctomb_s** das breite Zeichen in ein Multibyte-Zeichen konvertiert, setzt es die Anzahl der Bytes (die nie größer als **MB_CUR_MAX**ist) im breiten Zeichen in die ganze Zahl, auf die *pRetValue*zeigt. Wenn *wchar* das Breitzeichen-Nullzeichen ist (L''0'), füllt **wctomb_s** *pRetValue* mit 1. Wenn der Zielzeiger *mbchar* **NULL**ist, **setzt wctomb_s** 0 in *pRetValue*. Wenn die Konvertierung im aktuellen Gebietsschema nicht möglich ist, **setzt wctomb_s** -1 in *pRetValue*.
 
-**wctomb_s** verwendet das aktuelle Gebiets Schema für Gebiets Schema abhängige Informationen; **_wctomb_s_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**wctomb_s** verwendet das aktuelle Gebietsschema für gebietsschemaabhängige Informationen. **_wctomb_s_l** ist identisch, außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**wctomb_s**|\<stdlib.h>|
 |**_wctomb_s_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm veranschaulicht das Verhalten der **wctomb** -Funktion.
+Dieses Programm veranschaulicht das Verhalten der **wctomb-Funktion.**
 
 ```cpp
 // crt_wctomb_s.cpp

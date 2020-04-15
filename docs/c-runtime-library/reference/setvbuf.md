@@ -1,8 +1,9 @@
 ---
 title: setvbuf
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - setvbuf
+- _o_setvbuf
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - stream buffering
 - setvbuf function
 ms.assetid: 6aa5aa37-3408-4fa0-992f-87f9f9c4baea
-ms.openlocfilehash: 38b6474f550107a8edd941c7112ba98891ab3c12
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 203265a8dd85854bcedd737359b856fdc4cce04d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948183"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81316264"
 ---
 # <a name="setvbuf"></a>setvbuf
 
@@ -50,45 +52,47 @@ int setvbuf(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
-*buffer*<br/>
-Vom Benutzer zugewiesener Puffer.
+*Puffer*<br/>
+Vom Benutzer zugeordneter Speicher.
 
-*mode*<br/>
+*Modus*<br/>
 Pufferungsmodus.
 
-*size*<br/>
-Puffergröße in Bytes. Zulässiger Bereich: 2 < = *Größe* < = INT_MAX (2147483647). Intern wird der für *size* angegebene Wert auf das nächste Vielfache von 2 gerundet.
+*Größe*<br/>
+Puffergröße in Bytes. Zulässiger Bereich: 2 <= *Größe* <= INT_MAX (2147483647). Intern wird der für *die Größe* angegebene Wert auf das nächste Vielfache von 2 abgerundet.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Gibt bei Erfolg 0 zurück.
 
-Wenn der Stream **null**ist oder wenn der *Modus* oder die *Größe* nicht innerhalb einer gültigen Änderung liegt, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die Ausführung weiterhin zugelassen wird, gibt diese Funktion -1 zurück und legt **errno** auf **EINVAL** fest.
+Wenn *der Stream* **NULL**ist oder der *Modus* oder die *Größe* nicht innerhalb einer gültigen Änderung liegt, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung weiterhin zugelassen wird, gibt diese Funktion -1 zurück und legt **errno** auf **EINVAL** fest.
 
-Weitere Informationen über diese und andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (_doserrno, errno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **setvbuf** -Funktion ermöglicht es dem Programm, sowohl die Pufferung als auch die Puffergröße für den *Stream*zu steuern. der *Stream* muss auf eine geöffnete Datei verweisen, die seit dem Öffnen eines e/a-Vorgangs nicht durchlaufen wurde. Das Array, auf das von *buffer* verwiesen wird, wird als Puffer verwendet, es sei denn, es ist **null**. in diesem Fall verwendet **setvbuf** einen automatisch zugeordneten Puffer mit *einer Länge von*2 \* 2 Bytes.
+Die **setvbuf-Funktion** ermöglicht es dem Programm, sowohl die Pufferung als auch die Puffergröße für *stream*zu steuern. *Stream* muss sich auf eine geöffnete Datei beziehen, die seit dem Öffnen keiner E/A-Operation unterzogen wurde. Das Array, auf das durch *Puffer* verwiesen wird, wird als Puffer verwendet, es sei denn, \* es ist **NULL**, in diesem Fall verwendet **setvbuf** einen automatisch zugewiesenen Puffer der *Längengröße*/2 2 Bytes.
 
-Der Modus muss **_IOFBF**, **_IOLBF**oder **_IONBF**sein. Wenn der *Modus* " **_IOFBF** " oder " **_IOLBF**" ist, wird die *Größe* als Größe des Puffers verwendet. Wenn der Modus **_IONBF**ist, wird der Stream nicht gepuffert, und die *Größe* und der *Puffer* werden ignoriert. Die Werte für den- *Modus* und ihre Bedeutung lauten:
+Der Modus muss **_IOFBF**, **_IOLBF**oder **_IONBF**sein. Wenn der *Modus* **_IOFBF** oder **_IOLBF**ist, wird die *Größe* als Größe des Puffers verwendet. Wenn *der Modus* **_IONBF**ist, wird der Stream entpuffert, und *Größe* und *Puffer* werden ignoriert. Werte für *den Modus* und ihre Bedeutung sind:
 
 |*Moduswert*|Bedeutung|
 |-|-|
-| **_IOFBF** | Vollständige Pufferung; Das heißt, der *Puffer* wird verwendet, wenn der Puffer und die *Größe* als Größe des Puffers verwendet werden. Wenn der Puffer **null**ist, wird eine automatisch zugeordnete Puffer *Größe* (Bytes) verwendet. |
-| **_IOLBF** | Für einige Systeme bietet dies Zeilenpufferung. Für Win32 ist das Verhalten jedoch mit der **_IOFBF** -Full-Pufferung identisch. |
-| **_IONBF** | Unabhängig von *Puffer* oder *Größe*wird kein Puffer verwendet. |
+| **_IOFBF** | Vollständige Pufferung; Das heißt, *Puffer* wird als Puffer und *Größe* als Größe des Puffers verwendet. Wenn *Puffer* **NULL**ist, wird eine automatisch zugewiesene *Puffergröße* Bytes long verwendet. |
+| **_IOLBF** | Für einige Systeme bietet dies Zeilenpufferung. Für Win32 ist das Verhalten jedoch das gleiche wie **_IOFBF** - Vollpufferung. |
+| **_IONBF** | Es wird kein Puffer verwendet, unabhängig von *Puffer* oder *Größe*. |
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**setvbuf**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 

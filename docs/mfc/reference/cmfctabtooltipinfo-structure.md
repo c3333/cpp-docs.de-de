@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMFCTabToolTipInfo struct
 ms.assetid: 9c3b3fb9-1497-4d59-932b-0da9348dd5e2
-ms.openlocfilehash: 87c8820bc33f3a344933faa797a9fc60d2422b13
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a507d1e69b3524074e50fde0e87fc5ebb6e5ca03
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62252957"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367341"
 ---
 # <a name="cmfctabtooltipinfo-structure"></a>CMFCTabToolTipInfo-Struktur
 
-Diese Struktur enthält Informationen über die MDI-Registerkarte, der der Benutzer zeigt.
+Diese Struktur enthält Informationen zur Registerkarte MDI, über die der Benutzer mit der Maus auf den Mauszeiger schwebt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,21 +25,21 @@ struct CMFCTabToolTipInfo
 
 ## <a name="members"></a>Member
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCTabToolTipInfo::m_nTabIndex](#m_ntabindex)|Gibt den Index des Registerkarten-Steuerelements.|
-|[CMFCTabToolTipInfo::m_pTabWnd](#m_ptabwnd)|Ein Zeiger auf das Registerkarten-Steuerelement.|
+|[CMFCTabToolTipInfo::m_nTabIndex](#m_ntabindex)|Gibt den Index des Registerkartensteuerelements an.|
+|[CMFCTabToolTipInfo::m_pTabWnd](#m_ptabwnd)|Ein Zeiger auf das Registerkartensteuerelement.|
 |[CMFCTabToolTipInfo::m_strText](#m_strtext)|Der QuickInfo-Text.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Zeiger auf eine `CMFCTabToolTipInfo` Struktur als Parameter der Nachricht AFX_WM_ON_GET_TAB_TOOLTIP übergeben wird. Diese Meldung wird generiert, wenn MDI-Registerkarten aktiviert sind, und Benutzer auf ein Registerkarten-Steuerelement zeigen.
+Ein Zeiger auf `CMFCTabToolTipInfo` eine Struktur wird als Parameter der AFX_WM_ON_GET_TAB_TOOLTIP Nachricht übergeben. Diese Meldung wird generiert, wenn MDI-Registerkarten aktiviert sind und der Benutzer den Mauszeiger über ein Registerkartensteuerelement schwebt.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt wie `CMFCTabToolTipInfo` werden in der [MDITabsDemo-Beispiel: MFC im Registerkartenformat MDI-Anwendung](../../overview/visual-cpp-samples.md).
+Das folgende Beispiel `CMFCTabToolTipInfo` zeigt, wie im [MDITabsDemo-Beispiel verwendet wird: MFC Tabbed MDI-Anwendung](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]
 
@@ -51,27 +51,27 @@ Das folgende Beispiel zeigt wie `CMFCTabToolTipInfo` werden in der [MDITabsDemo-
 
 **Header:** afxbasetabctrl.h
 
-##  <a name="m_ntabindex"></a>  CMFCTabToolTipInfo::m_nTabIndex
+## <a name="cmfctabtooltipinfom_ntabindex"></a><a name="m_ntabindex"></a>CMFCTabToolTipInfo::m_nTabIndex
 
-Gibt den Index des Registerkarten-Steuerelements.
+Gibt den Index des Registerkartensteuerelements an.
 
 ```
 int m_nTabIndex;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Index der Registerkarte für die der Benutzer zeigt.
+Index der Registerkarte, über die der Benutzer schwebt.
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt wie `m_nTabIndex` werden in der [MDITabsDemo-Beispiel: MFC im Registerkartenformat MDI-Anwendung](../../overview/visual-cpp-samples.md).
+Das folgende Beispiel `m_nTabIndex` zeigt, wie im [MDITabsDemo-Beispiel verwendet wird: MFC Tabbed MDI-Anwendung](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]
 
-##  <a name="m_ptabwnd"></a>  CMFCTabToolTipInfo::m_pTabWnd
+## <a name="cmfctabtooltipinfom_ptabwnd"></a><a name="m_ptabwnd"></a>CMFCTabToolTipInfo::m_pTabWnd
 
-Ein Zeiger auf das Registerkarten-Steuerelement.
+Ein Zeiger auf das Registerkartensteuerelement.
 
 ```
 CMFCBaseTabCtrl* m_pTabWnd;
@@ -79,11 +79,11 @@ CMFCBaseTabCtrl* m_pTabWnd;
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt wie `m_pTabWnd` werden in der [MDITabsDemo-Beispiel: MFC im Registerkartenformat MDI-Anwendung](../../overview/visual-cpp-samples.md).
+Das folgende Beispiel `m_pTabWnd` zeigt, wie im [MDITabsDemo-Beispiel verwendet wird: MFC Tabbed MDI-Anwendung](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]
 
-##  <a name="m_strtext"></a>  CMFCTabToolTipInfo::m_strText
+## <a name="cmfctabtooltipinfom_strtext"></a><a name="m_strtext"></a>CMFCTabToolTipInfo::m_strText
 
 Der QuickInfo-Text.
 
@@ -91,13 +91,13 @@ Der QuickInfo-Text.
 CString m_strText;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Zeichenfolge leer ist, wird die QuickInfo nicht angezeigt.
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt wie `m_strText` werden in der [MDITabsDemo-Beispiel: MFC im Registerkartenformat MDI-Anwendung](../../overview/visual-cpp-samples.md).
+Das folgende Beispiel `m_strText` zeigt, wie im [MDITabsDemo-Beispiel verwendet wird: MFC Tabbed MDI-Anwendung](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]
 
