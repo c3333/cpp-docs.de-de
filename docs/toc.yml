@@ -457,7 +457,7 @@
           href: build/how-to-integrate-custom-tools-into-the-project-properties.md
         - name: 'Vorgehensweise: Modify the target framework and platform toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)'
           href: build/how-to-modify-the-target-framework-and-platform-toolset.md
-    - name: 'Exemplarische Vorgehensweise: Erstellen und Verwenden einer statischen Bibliothek (C++)'
+    - name: 'Exemplarische Vorgehensweise: Erstellen einer statischen Bibliothek (C++)'
       href: build/walkthrough-creating-and-using-a-static-library-cpp.md
     - name: Erstellen von C++-DLLs in Visual Studio
       expanded: false
@@ -4245,9 +4245,9 @@
                   href: cpp/binary-operators.md
                 - name: Zuweisung
                   href: cpp/assignment.md
-                - name: 'Funktionsaufruf '
+                - name: Funktionsaufruf
                   href: cpp/function-call-cpp.md
-                - name: 'Indizierung '
+                - name: Indizierung
                   href: cpp/subscripting.md
                 - name: Memberzugriff
                   href: cpp/member-access.md
@@ -6577,6 +6577,8 @@
                   href: c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md
                 - name: CRT-Initialisierung
                   href: c-runtime-library/crt-initialization.md
+                - name: Globaler Status in der CRT
+                  href: c-runtime-library/global-state.md
             - name: Universelle C-Laufzeitroutinen nach Kategorie
               expanded: false
               items:
