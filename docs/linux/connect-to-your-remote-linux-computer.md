@@ -2,12 +2,12 @@
 title: Herstellen einer Verbindung mit dem Linux-Zielsystem in Visual Studio
 description: Informationen zum Herstellen einer Verbindung mit einem Linux-Remotecomputer oder einem Windows-Subsystem für Linux über ein Visual Studio C++-Projekt
 ms.date: 01/17/2020
-ms.openlocfilehash: d0065b63d7a81d3ae3d68b26184c88aca77f601c
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: 624dce6bb05e4f4a961628e0c6f455e11c14dff8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518217"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364364"
 ---
 # <a name="connect-to-your-target-linux-system-in-visual-studio"></a>Herstellen einer Verbindung mit dem Linux-Zielsystem in Visual Studio
 
@@ -150,10 +150,10 @@ In Visual Studio 2017 verwenden Sie die gleichen Schritte, um eine Verbindung mi
 
 In Version 16.1 von Visual Studio 2019 wurde native Unterstützung für die Verwendung von C++ mit dem [Windows-Subsystem für Linux (WSL)](/windows/wsl/about) hinzugefügt. Das bedeutet, dass Sie den Erstellungs- und den Debugvorgang direkt für Ihre lokale WSL-Installation durchführen können. Es ist nicht mehr erforderlich, eine Remoteverbindung hinzuzufügen oder SSH zu konfigurieren. Weitere Informationen zur [Installation von WSL](/windows/wsl/install-win10) finden Sie hier.
 
-Sie müssen die Tools „gcc „oder „clang“, „gdb“, „make“, „rsync“ und „zip“ installieren, um die WSL-Installation so zu konfigurieren, dass sie mit Visual Studio verwendet werden kann. Sie können sie für Distributionen installieren, die apt verwenden, indem Sie diesen Befehl verwenden, der auch den g++-Compiler installiert:
+Sie müssen die Tools „gcc „oder „clang“, „gdb“, „make“, „ninja-build“ (nur für CMake-Projekte in Visual Studio 2019 Version 16.6 oder höher erforderlich), „rsync“ und „zip“ installieren, um die WSL-Installation so zu konfigurieren, dass sie mit Visual Studio verwendet werden kann. Sie können sie für Distributionen installieren, die apt verwenden, indem Sie diesen Befehl verwenden, der auch den g++-Compiler installiert:
 
 ```bash
-sudo apt install g++ gdb make rsync zip
+sudo apt install g++ gdb make ninja-build rsync zip
 ```
 
 Weitere Informationen finden Sie unter [Herunterladen, Installieren und Einrichten der Linux-Workload](download-install-and-setup-the-linux-development-workload.md).

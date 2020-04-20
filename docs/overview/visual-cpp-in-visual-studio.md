@@ -5,17 +5,17 @@ ms.date: 07/02/2019
 ms.technology: cpp-ide
 helpviewer_keywords:
 - Visual C++, home page
-ms.openlocfilehash: 0a4093860c7d06e8240e03b1487546f80da24b88
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: f00ec21db29299549821aae09064f788f92bd667
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77416101"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365206"
 ---
 # <a name="c-in-visual-studio"></a>C++ in Visual Studio
 
 > [!NOTE]
-> Diese Entwicklerdokumentation gilt für Visual Studio 2015 und höher. Verwenden Sie die Versionsauswahl oben links auf der Seite, um Ihre Version von Visual Studio anzugeben.
+> Diese Entwicklerdokumentation gilt für Visual Studio 2015 und höher. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 >
 > Wenn Sie zum Ausführen eines Programms ein verteilbares Visual C++-Paket suchen, wechseln Sie zum [Microsoft Download Center](https://www.microsoft.com/download/), und geben Sie **Visual C++** in das Suchfeld ein.
 
@@ -65,7 +65,7 @@ Lernen Sie C++ kennen, verschaffen Sie sich einen Überblick über das moderne C
 [Visual C++ kennen lernen](../build/vscpp-step-1-create.md)<br/>
 Beginnen Sie mit dem Erlernen von C++.
 
-[Visual C++-Beispiele](visual-cpp-samples.md)<br/>
+[Visual Studio: C++ -Beispiele](visual-cpp-samples.md)<br/>
 Informationen zu Beispielen.
 
 ## <a name="c-development-tools"></a>C++-Entwicklungstools

@@ -3,12 +3,12 @@ title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
 ms.date: 03/16/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
 ms.technology: cpp-language
-ms.openlocfilehash: d76a6dc4c5ad9cbf83befccfdd470ce755d0603c
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 2309e79acb4784cd2e79b4f3f6fffb29e8d5dea8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80077426"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81353538"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
@@ -164,7 +164,7 @@ Die Entwicklung der [Featuretestmakros (P0941R2)](https://wg21.link/p0941r2) ist
 
 ### <a name="char8_t"></a>char8_t
 
-[P0482r6](https://wg21.link/p0482r6). C++20 führt einen neuen Zeichentyp ein, der für die Darstellung von UTF-8-Codeeinheiten verwendet wird. `u8`-Zeichenfolgenliterale in C++20 verfügen über den Typ `const char8_t[N]` anstelle von `const char[N]` (der vorherige Typ). Ähnliche Änderungen wurden in [N2231](https://wg14.link/n2231) für den C-Standard vorgeschlagen. Vorschläge für die Wiederherstellung der Abwärtskompatibilität von `char8_t` wurden in [P1423r0](https://wg21.link/p1423r0) angegeben. In Visual Studio 2019 Version 16.1 wurde dem C++-Compiler von Microsoft Unterstützung für `char8_t` hinzugefügt, wenn die Compileroption **/Zc:char8_t** angegeben wird. Zukünftig erfolgt die Unterstützung mit [/std:c++latest](../build/reference/std-specify-language-standard-version.md), was mithilfe von **/Zc:char8_t-** in das C++17-Verhalten zurückversetzt werden kann. Der EDG-Compiler, der IntelliSense betreibt, unterstützt dies noch nicht, weshalb vermeidbare Intune-spezifische Fehler auftreten, die sich nicht auf die tatsächliche Kompilierung auswirken.
+[P0482r6](https://wg21.link/p0482r6). C++20 führt einen neuen Zeichentyp ein, der für die Darstellung von UTF-8-Codeeinheiten verwendet wird. `u8`-Zeichenfolgenliterale in C++20 verfügen über den Typ `const char8_t[N]` anstelle von `const char[N]` (der vorherige Typ). Ähnliche Änderungen wurden in [N2231](https://wg14.link/n2231) für den C-Standard vorgeschlagen. Vorschläge für die Wiederherstellung der Abwärtskompatibilität von `char8_t` wurden in [P1423r3](https://wg21.link/p1423r3) angegeben. In Visual Studio 2019 Version 16.1 wurde dem C++-Compiler von Microsoft Unterstützung für `char8_t` hinzugefügt, wenn die Compileroption **/Zc:char8_t** angegeben wird. Zukünftig erfolgt die Unterstützung mit [/std:c++latest](../build/reference/std-specify-language-standard-version.md), was mithilfe von **/Zc:char8_t-** in das C++17-Verhalten zurückversetzt werden kann. Der EDG-Compiler, der IntelliSense betreibt, unterstützt dies noch nicht, weshalb vermeidbare Intune-spezifische Fehler auftreten, die sich nicht auf die tatsächliche Kompilierung auswirken.
 
 #### <a name="example"></a>Beispiel
 
@@ -2514,7 +2514,7 @@ Diese neue Warnung C4768 wird für einige Windows SDK-Header ausgegeben, die mit
    #pragma warning (pop)
    ```
 
-### <a name="extern-constexpr-linkage"></a><a name="extern_linkage"></a>Externe constexpr-Verknüpfung
+### <a name="extern-constexpr-linkage"></a><a name="extern_linkage"></a> Externe constexpr-Verknüpfung
 
 In früheren Versionen von Visual Studio gab der Compiler immer eine interne **constexpr**-Variablenverknüpfung aus, selbst wenn die Variable als **extern** markiert wurde. In Visual Studio 2017 Version 15.5 ermöglicht ein neuer Compilerschalter ( **/Zc:extern7Constexpr**) das richtige standardkonforme Verhalten. Letztendlich wird dieses Verhalten die Standardeinstellung sein.
 
