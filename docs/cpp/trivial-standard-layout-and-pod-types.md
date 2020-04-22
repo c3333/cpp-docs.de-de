@@ -2,12 +2,12 @@
 title: Triviale Typen sowie Standardlayout-, POD- und Literaltypen
 ms.date: 04/05/2018
 ms.assetid: 2b23a7be-9bad-49fc-8298-31a9a7c556b0
-ms.openlocfilehash: b31fefd31b32a5fc4aa3f655b90d39f60a524ca4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6fe237386e63fcdd96621edabf2b0b66ce72e4f8
+ms.sourcegitcommit: 435133128b18cdd02d33d929b16c33e7ec40e9eb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188063"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81664136"
 ---
 # <a name="trivial-standard-layout-pod-and-literal-types"></a>Triviale Typen sowie Standardlayout-, POD- und Literaltypen
 
@@ -32,17 +32,17 @@ Im folgenden Beispiel werden triviale Typen dargestellt. In „Trivial2“ müss
 ```cpp
 struct Trivial
 {
-      int i;
+   int i;
 private:
    int j;
-   };
+};
 
 struct Trivial2
 {
    int i;
    Trivial2(int a, int b) : i(a), j(b) {}
    Trivial2() = default;
-   private:
+private:
    int j;   // Different access control
 };
 ```
@@ -137,15 +137,15 @@ protected:
 // Neither trivial nor standard-layout
 struct A : B
 {
-      int a;
+   int a;
    int b;
    void Foo() override {} // Virtual function
 };
 
 // Trivial but not standard-layout
 struct C
-   {
-      int a;
+{
+   int a;
 private:
    int b;   // Different access control
 };
@@ -183,16 +183,16 @@ int main()
 }
 ```
 
-## <a name="literal-types"></a><a name="literal_types"></a> Literaltypen
+## <a name="literal-types"></a><a name="literal_types"></a>Literaltypen
 
 Das Layout eines Literaltyps kann zur Kompilierzeit bestimmt werden. Folgende Typen sind Literaltypen:
 
 - void
 - Skalare Typen
-- Verweise
+- references
 - Void-Arrays, skalare Typen oder Verweise
 - Eine Klasse, die einen trivialen Destruktor und einen oder mehrere constexpr-Konstruktoren aufweist, die keine Konstruktoren zum Verschieben oder Kopieren sind. Darüber hinaus müssen alle nicht statischen Datenmember und Basisklassen Literaltypen und permanent sein.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Grundlegende Konzepte](../cpp/basic-concepts-cpp.md)
+[Grundkonzepte](../cpp/basic-concepts-cpp.md)
