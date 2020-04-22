@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAutoVectorPtr class
 ms.assetid: 0030362b-6bc4-4a47-9b5b-3c3899dceab4
-ms.openlocfilehash: 573446256aa89423837ebf73176a73f72054911b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fc4bd4ba7a2f41a25679f1da718671f525519708
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318768"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748213"
 ---
 # <a name="cautovectorptr-class"></a>CAutoVectorPtr-Klasse
 
@@ -76,7 +76,7 @@ Diese Klasse stellt Methoden zum Erstellen und Verwalten eines intelligenten Zei
 
 Ein Beispiel für die Verwendung einer intelligenten Zeigerklasse finden Sie unter [CAutoPtr.](../../atl/reference/cautoptr-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -105,7 +105,7 @@ In Debugbuilds tritt ein Assertionsfehler auf, wenn die [Membervariable CAutoVec
 
 Rufen Sie diese Methode auf, um die Besitzverhältnisse eines vorhandenen Zeigers zu übernehmen.
 
-```
+```cpp
 void Attach(T* p) throw();
 ```
 
@@ -171,7 +171,7 @@ Gibt den Besitz eines Zeigers frei, legt die [Membervariable CAutoVectorPtr::m_p
 
 Rufen Sie diese Methode auf, `CAutoVectorPtr`um ein Objekt zu löschen, auf das von einem verwiesen wird.
 
-```
+```cpp
 void Free() throw();
 ```
 
@@ -224,7 +224,7 @@ operator T*() const throw();
 
 Gibt einen Zeiger auf den in der Klassenvorlage definierten Objektdatentyp zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CAutoPtr-Klasse](../../atl/reference/cautoptr-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

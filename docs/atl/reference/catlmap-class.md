@@ -37,12 +37,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlMap class
 ms.assetid: 5e2fe028-8e6d-4686-93df-1433d2080ec3
-ms.openlocfilehash: 8a89ca7f7dedcd386abdd41e7487f1b838260c83
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8954eeae28f13fb50643646b41c032588ecc278f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321439"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748656"
 ---
 # <a name="catlmap-class"></a>CAtlMap-Klasse
 
@@ -151,7 +151,7 @@ Wenn eine kleine Anzahl von Elementen gespeichert werden muss, sollten Sie statt
 
 Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcoll.h
 
@@ -159,7 +159,7 @@ Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-co
 
 Rufen Sie diese Methode auf, um einen ASSERT zu verursachen, wenn das `CAtlMap` Objekt ungültig ist.
 
-```
+```cpp
 void AssertValid() const;
 ```
 
@@ -249,7 +249,7 @@ Diese Klasse wird von den Methoden [CAtlMap::GetNext](#getnext) und [CAtlMap::Lo
 
 Rufen Sie diese Methode auf, `CAtlMap` um das automatische Erneuthastieren des Objekts zu deaktivieren.
 
-```
+```cpp
 void DisableAutoRehash() throw();
 ```
 
@@ -263,7 +263,7 @@ Wenn das automatische Rehashing aktiviert ist (was standardmäßig der Fall ist)
 
 Rufen Sie diese Methode auf, `CAtlMap` um das automatische Rehashing des Objekts zu aktivieren.
 
-```
+```cpp
 void EnableAutoRehash() throw();
 ```
 
@@ -277,7 +277,7 @@ Wenn das automatische Rehashing aktiviert ist (was standardmäßig der Fall ist)
 
 Rufen Sie diese Methode auf, um das Element an einer angegebenen Position in der Karte zurückzugeben.
 
-```
+```cpp
 void GetAt(
     POSITION pos,
     KOUTARGTYPE key,
@@ -376,7 +376,7 @@ Gibt einen Zeiger auf das nächste Paar von Schlüssel-Wert-Elementen zurück, d
 
 Ruft das nächste Element zum Iterieren ab.
 
-```
+```cpp
 void GetNextAssoc(
     POSITION& pos,
     KOUTARGTYPE key,
@@ -597,7 +597,7 @@ Wenn der Schlüssel bereits vorhanden ist, wird das Element ersetzt. Wenn der Sc
 
 Rufen Sie diese Methode `CAtlMap` auf, um das Objekt erneut zu hashen.
 
-```
+```cpp
 void Rehash(UINT nBins = 0);
 ```
 
@@ -614,7 +614,7 @@ Wenn *nBins* 0 `CAtlMap` ist, wird eine angemessene Zahl basierend auf der Anzah
 
 Rufen Sie diese Methode auf, um alle Elemente aus dem `CAtlMap` Objekt zu entfernen.
 
-```
+```cpp
 void RemoveAll() throw();
 ```
 
@@ -626,7 +626,7 @@ Löscht das `CAtlMap` Objekt und gibt den Speicher frei, der zum Speichern der E
 
 Rufen Sie diese Methode auf, um `CAtlMap` das Element an der angegebenen Position im Objekt zu entfernen.
 
-```
+```cpp
 void RemoveAtPos(POSITION pos) throw();
 ```
 
@@ -690,7 +690,7 @@ Gibt die Position des Schlüssel-Wert-Element-Paares im `CAtlMap` Objekt zurück
 
 Rufen Sie diese Methode auf, `CAtlMap` um die optimale Last des Objekts festzulegen.
 
-```
+```cpp
 void SetOptimalLoad(
     float fOptimalLoad,
     float fLoThreshold,
@@ -720,7 +720,7 @@ Diese Methode definiert den optimalen `CAtlMap` Lastwert für das Objekt neu. Si
 
 Rufen Sie diese Methode auf, um den `CAtlMap` an einer bestimmten Position im Objekt gespeicherten Wert zu ändern.
 
-```
+```cpp
 void SetValueAt(
     POSITION pos,
     VINARGTYPE value);
@@ -780,7 +780,7 @@ V  m_value;
 *V*<br/>
 Der Wertelementtyp.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Marquee-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [UpdatePV-Beispiel](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV)<br/>

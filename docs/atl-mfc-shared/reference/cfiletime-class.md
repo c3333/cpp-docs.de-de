@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CFileTime class
 - shared classes, CFileTime
 ms.assetid: 1a358a65-1383-4124-b0d4-59b026e6860f
-ms.openlocfilehash: bc9fe752898a5dfde2631352abd8c3cf5f8b378c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fd19d941365c7772363417ce3e9225bd9b0300b2
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317896"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748840"
 ---
 # <a name="cfiletime-class"></a>CFileTime-Klasse
 
@@ -107,7 +107,7 @@ Die folgenden statischen const-Membervariablen werden bereitgestellt, um Berechn
 
 `CFileTime`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atltime.h
 
@@ -436,7 +436,7 @@ Siehe Beispiel für [CFileTime::Millisecond](#millisecond).
 
 Rufen Sie diese Methode auf, um `CFileTime` das vom Objekt gespeicherte Datum und die Uhrzeit festzulegen.
 
-```
+```cpp
 void SetTime(ULONGLONG nTime) throw();
 ```
 
@@ -473,7 +473,7 @@ static const ULONGLONG Week = Day* 7;
 
 Siehe Beispiel für [CFileTime::Millisecond](#millisecond).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [FILETIME](/windows/win32/api/minwinbase/ns-minwinbase-filetime)<br/>
 [CFileTimeSpan-Klasse](../../atl-mfc-shared/reference/cfiletimespan-class.md)<br/>

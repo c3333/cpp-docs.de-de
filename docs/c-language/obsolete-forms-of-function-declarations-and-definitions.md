@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - old style function declarations
 ms.assetid: 67c5038f-0529-4f29-9d0f-c27580977b50
-ms.openlocfilehash: ed6ee67194aa208f77a8d43dcc17ac43b0d74278
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+ms.openlocfilehash: f26e79a586ea451cc51b339b5be593c2359e1f1a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148009"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745873"
 ---
 # <a name="obsolete-forms-of-function-declarations-and-definitions"></a>Veraltete Formen von Funktionsdeklarationen und -definitionen
 
@@ -30,7 +30,7 @@ Die Funktionen, die eine ganze Zahl oder einen Zeiger mit derselben Größe wie 
 
 Um die Einhaltung des ANSI-C-Standards zu gewährleisten, generieren Funktionsdeklarationen alten Stils mit Auslassungszeichen jetzt beim Kompilieren mit der /Za-Option einen Fehler. Beim Kompilieren mit "/Ze" wird eine Warnung der Stufe 4 generiert. Beispiel:
 
-```
+```cpp
 void funct1( a, ... )  /* Generates a warning under /Ze or */
 int a;                 /* an error when compiling with /Za */
 {
@@ -39,7 +39,7 @@ int a;                 /* an error when compiling with /Za */
 
 Sie sollten diese Deklaration als Prototyp neu schreiben:
 
-```
+```cpp
 void funct1( int a, ... )
 {
 }
@@ -49,6 +49,6 @@ Funktionsdeklarationen im alten Stil generieren außerdem Warnungen, wenn Sie da
 
 Im nächsten Abschnitt [C-Funktionsdefinitionen](../c-language/c-function-definitions.md) wird die Syntax von Funktionsdefinitionen aufgezeigt, einschließlich des alten Syntaxstils. Das Nichtterminal für die Parameterliste im alten Syntaxstil ist *identifier-list*.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über die Funktionen](../c-language/overview-of-functions.md)

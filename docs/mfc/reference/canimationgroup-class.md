@@ -46,12 +46,12 @@ helpviewer_keywords:
 - CAnimationGroup [MFC], m_nGroupID
 - CAnimationGroup [MFC], m_pParentController
 ms.assetid: 8bc18ceb-33a2-41d0-9731-71811adacab7
-ms.openlocfilehash: 28d305e2107f7b9a8fd2164eb0ec9678d62ef8fa
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 14ac32524436ff46449171ad90599e60f63dff2a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369744"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750152"
 ---
 # <a name="canimationgroup-class"></a>CAnimationGroup-Klasse
 
@@ -119,7 +119,7 @@ Animationsgruppen werden automatisch vom Animationscontroller (CAnimationControl
 
 `CAnimationGroup`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -135,7 +135,7 @@ Der Destruktor. Wird aufgerufen, wenn eine Animationsgruppe zerstört wird.
 
 Ein Helfer, der einem Storyboard Keyframes hinzufügt.
 
-```
+```cpp
 void AddKeyframes(IUIAnimationStoryboard* pStoryboard, BOOL bAddDeep);
 ```
 
@@ -151,7 +151,7 @@ Gibt an, ob diese Methode den Storyboard-Keyframes hinzugefügt werden soll, die
 
 Ein Helfer, der einem Storyboard Übergänge hinzufügt.
 
-```
+```cpp
 void AddTransitions(
     IUIAnimationStoryboard* pStoryboard,
     BOOL bDependOnKeyframes);
@@ -193,7 +193,7 @@ Diese Methode erstellt ein internes Storyboard, erstellt und wendet Übergänge 
 
 Wendet Übergänge auf Animationsobjekte an.
 
-```
+```cpp
 void ApplyTransitions();
 ```
 
@@ -326,7 +326,7 @@ ATL::CComPtr<IUIAnimationStoryboard> m_pStoryboard;
 
 Entfernt und zerstört optional alle Keyframes, die zu einer Animationsgruppe gehören.
 
-```
+```cpp
 void RemoveKeyframes();
 ```
 
@@ -338,7 +338,7 @@ Wenn m_bAutodestroyKeyframes Member TRUE ist, werden Keyframes entfernt und zers
 
 Entfernt Übergänge aus Animationsobjekten, die zu einer Animationsgruppe gehören.
 
-```
+```cpp
 void RemoveTransitions();
 ```
 
@@ -374,7 +374,7 @@ Rufen Sie diese Funktion auf, um eine Animation zum angegebenen Zeitpunkt zu pla
 
 Leitet alle Animationsobjekte, die zu Gruppe gehören, zerstört automatisch Übergänge.
 
-```
+```cpp
 void SetAutodestroyTransitions(BOOL bAutoDestroy = TRUE);
 ```
 
@@ -387,6 +387,6 @@ Gibt an, wie Übergänge zerstört werden.
 
 Legen Sie diesen Wert nur dann auf FALSE fest, wenn Sie Übergänge auf dem Stapel zuweisen. Der Standardwert ist TRUE, daher wird dringend empfohlen, Übergangsobjekte mit Operator new zuzuweisen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

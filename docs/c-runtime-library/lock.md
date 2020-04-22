@@ -23,12 +23,12 @@ helpviewer_keywords:
 - lock function
 - _lock function
 ms.assetid: 29f77c37-30de-4b3d-91b6-030216e645a6
-ms.openlocfilehash: 30cd84f008c7174d767ecf5e2b744a58b21e5000
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9ab7cab2209dc2e02cacca6d540927aa39dc3965
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81351093"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745391"
 ---
 # <a name="_lock"></a>_lock
 
@@ -39,7 +39,7 @@ Ruft eine Multi-Thread-Sperre ab.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 void __cdecl _lock
    int locknum
 );
@@ -54,11 +54,11 @@ void __cdecl _lock
 
 Wenn die Sperre bereits abgerufen wurde, ruft diese Methode die Sperre dennoch ab und verursacht einen internen C-Laufzeitfehler (CRT). Wenn die Methode keine Sperre abrufen kann, wird sie mit einem schwerwiegenden Fehler beendet und der Fehlercode auf `_RT_LOCK`festgelegt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Quelle:** mlock.c
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](../c-runtime-library/reference/crt-alphabetical-function-reference.md)<br/>
 [_unlock](../c-runtime-library/unlock.md)

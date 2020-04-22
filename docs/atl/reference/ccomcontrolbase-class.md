@@ -80,12 +80,12 @@ f1_keywords:
 helpviewer_keywords:
 - CComControlBase class
 ms.assetid: 3d1bf022-acf2-4092-8283-ff8cee6332f3
-ms.openlocfilehash: 2420e1643444e6cbbf8edff90bbd3ecb1eac8534
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 15cfa205337248181f02e6a1218d49e75bda58e6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81320772"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748114"
 ---
 # <a name="ccomcontrolbase-class"></a>CComControlBase-Klasse
 
@@ -202,7 +202,7 @@ Diese Klasse stellt Methoden zum Erstellen und Verwalten von ATL-Steuerelementen
 
 Weitere Informationen zum Erstellen eines Steuerelements finden Sie im [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md). Weitere Informationen zum ATL-Projekt-Assistenten finden Sie im Artikel [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlctl.h
 
@@ -548,7 +548,7 @@ HRESULT GetAmbientLocaleID(LCID& lcid);
 
 ### <a name="parameters"></a>Parameter
 
-*lcid*<br/>
+*Lcid*<br/>
 Die Unterkunft DISPID_AMBIENT_LOCALEID.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -794,13 +794,13 @@ Dieser Wert wird mit [CComControlBase::SetDirty](#setdirty)festgelegt.
 
 Ruft die x- und y-Werte des Zählers und Nenners des Zoomfaktors für ein Steuerelement ab, das für die ortsspezifische Bearbeitung aktiviert ist.
 
-```
+```cpp
 void GetZoomInfo(ATL_DRAWINFO& di);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*di*<br/>
+*Di*<br/>
 Die Struktur, die den Zähler und den Nenner des Zoomfaktors hält. Weitere Informationen finden Sie [unter ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md).
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1249,7 +1249,7 @@ virtual HRESULT OnDraw(ATL_DRAWINFO& di);
 
 ### <a name="parameters"></a>Parameter
 
-*di*<br/>
+*Di*<br/>
 Ein Verweis auf die [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md) Struktur, die Zeichnungsinformationen enthält, z. B. den Zeichnungsaspekt, die Steuerelementgrenzen und ob die Zeichnung optimiert ist oder nicht.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1276,7 +1276,7 @@ virtual HRESULT OnDrawAdvanced(ATL_DRAWINFO& di);
 
 ### <a name="parameters"></a>Parameter
 
-*di*<br/>
+*Di*<br/>
 Ein Verweis auf die [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md) Struktur, die Zeichnungsinformationen enthält, z. B. den Zeichnungsaspekt, die Steuerelementgrenzen und ob die Zeichnung optimiert ist oder nicht.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1553,7 +1553,7 @@ Für ein Fenstersteuerelement wird die Windows-API-Funktion [SetFocus](/windows/
 
 Legt den `m_bRequiresSave` Datenmember auf den Wert in *bDirty*fest.
 
-```
+```cpp
 void SetDirty(BOOL bDirty);
 ```
 
@@ -1566,7 +1566,7 @@ Wert des Datenelements [CComControlBase::m_bRequiresSave](#m_brequiressave).
 
 `SetDirty(TRUE)`sollte aufgerufen werden, um zu kennzeichnen, dass sich das Steuerelement seit dem letzten Speichern geändert hat. Der Wert `m_bRequiresSave` von wird mit [CComControlBase abgerufen::GetDirty](#getdirty).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

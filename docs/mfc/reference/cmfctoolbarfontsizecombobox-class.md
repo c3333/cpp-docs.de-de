@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CMFCToolBarFontSizeComboBox [MFC], RebuildFontSizes
 - CMFCToolBarFontSizeComboBox [MFC], SetTwipSize
 ms.assetid: 72e0c44c-6a0e-4194-a71f-ab64e3afb9b5
-ms.openlocfilehash: 09811b14ed805b1965015a32a25c0b67c947ff4e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6c90bb1ce464a90295e7edb933d87594444c3648
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81358306"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745322"
 ---
 # <a name="cmfctoolbarfontsizecombobox-class"></a>CMFCToolBarFontSizeComboBox-Klasse
 
@@ -71,7 +71,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCToolBarFontSizeComboBox` wie ve
 
 [CMFCToolBarFontSizeComboBox](../../mfc/reference/cmfctoolbarfontsizecombobox-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxtoolbarfontcombobox.h
 
@@ -99,7 +99,7 @@ Wenn der Rückgabewert positiv ist, ist es die Schriftgröße in twips. Es ist -
 
 Füllt ein Kombinationsfeld für schriftgröße mit allen gültigen Größen der angegebenen Schriftart.
 
-```
+```cpp
 void RebuildFontSizes(const CString& strFontName);
 ```
 
@@ -116,7 +116,7 @@ Rufen Sie diese Funktion auf, wenn Sie zwischen der Auswahl in einem Schriftkomb
 
 Rundet die angegebene Größe (in Twips) in Punkten auf die nächste Größe und legt dann die ausgewählte Größe im Kombinationsfeld auf diesen Wert fest.
 
-```
+```cpp
 void SetTwipSize(int nSize);
 ```
 
@@ -129,7 +129,7 @@ void SetTwipSize(int nSize);
 
 Sie können die vorherige gültige Schriftgröße später abrufen, indem Sie die [CMFCToolBarFontSizeComboBox::GetTwipSize-Methode](#gettwipsize) aufrufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

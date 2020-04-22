@@ -17,12 +17,12 @@ f1_keywords:
 helpviewer_keywords:
 - CComPtrBase class
 ms.assetid: 6dbe9543-dee8-4a97-b02f-dd3a25f4a1a0
-ms.openlocfilehash: 7d450f7762b39d7fa8fae07230690eecb8edbb4d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9c62cc912b3fea3ea68390882bdda37cbfb25a7e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327466"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747762"
 ---
 # <a name="ccomptrbase-class"></a>CComPtrBase-Klasse
 
@@ -84,7 +84,7 @@ Der Objekttyp, auf den der smarte Zeiger verweisen soll.
 
 Diese Klasse bildet die Grundlage für andere intelligente Zeiger, die COM-Speicherverwaltungsroutinen verwenden, z. [B. CComQIPtr](../../atl/reference/ccomqiptr-class.md) und [CComPtr](../../atl/reference/ccomptr-class.md). Die abgeleiteten Klassen fügen eigene Konstruktoren und Operatoren `CComPtrBase`hinzu, verlassen sich jedoch auf die von bereitgestellten Methoden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcomcli.h
 
@@ -122,7 +122,7 @@ Weitere Informationen finden Sie unter [AtlAdvise.](connection-point-global-func
 
 Rufen Sie diese Methode auf, um die Besitzverhältnisse eines vorhandenen Zeigers zu übernehmen.
 
-```
+```cpp
 void Attach(T* p2) throw();
 ```
 
@@ -386,7 +386,7 @@ In Debugbuilds tritt ein Assertionsfehler auf, wenn *pp* nicht gleich NULL ist.
 
 Rufen Sie diese Methode auf, um die Schnittstelle freizugeben.
 
-```
+```cpp
 void Release() throw();
 ```
 
@@ -415,6 +415,6 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 Diese Methode ruft [AtlSetChildSite](composite-control-global-functions.md#atlsetchildsite)auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

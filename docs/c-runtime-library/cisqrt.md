@@ -25,12 +25,12 @@ helpviewer_keywords:
 - CIsqrt intrinsic
 - _CIsqrt intrinsic
 ms.assetid: 663548ea-398c-48ee-8397-a787c6ebb937
-ms.openlocfilehash: eb67474ce5ecd1e6769f8d5fb676fd1753ef6d72
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e6bed6dcde8f4f80e323da120ddb3f2488f769a1
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81349512"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745414"
 ---
 # <a name="_cisqrt"></a>_CIsqrt
 
@@ -38,7 +38,7 @@ Berechnet die Quadratwurzel des obersten Werts im Stapel.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 void __cdecl _CIsqrt();
 ```
 
@@ -50,11 +50,11 @@ Der resultierende Wert wird oben auf dem Stapel abgelegt.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Plattform:** x86
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](../c-runtime-library/reference/crt-alphabetical-function-reference.md)<br/>
 [sqrt, sqrtf, sqrtl](../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)

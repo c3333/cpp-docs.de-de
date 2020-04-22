@@ -16,12 +16,12 @@ f1_keywords:
 helpviewer_keywords:
 - CSimpleArray class
 ms.assetid: ee0c9f39-b61c-4c18-bc43-4eada21dca3a
-ms.openlocfilehash: e45c9b3fd778aacd3a3e2d5d3696661afa0c6fb0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d3386687757412d09e4df29e84f691f1615c472a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330904"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746472"
 ---
 # <a name="csimplearray-class"></a>CSimpleArray-Klasse
 
@@ -79,7 +79,7 @@ Der `TEqual` Parameter bietet eine Möglichkeit, eine Gleichheitsfunktion für z
 
 Sowohl `CSimpleArray` als auch [CSimpleMap](../../atl/reference/csimplemap-class.md) sind für eine kleine Anzahl von Elementen konzipiert. [CAtlArray](../../atl/reference/catlarray-class.md) und [CAtlMap](../../atl/reference/catlmap-class.md) sollten verwendet werden, wenn das Array eine große Anzahl von Elementen enthält.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsimpcoll.h
 
@@ -256,7 +256,7 @@ Wenn ein Element entfernt wird, werden die verbleibenden Elemente im Array neu n
 
 Entfernt alle Elemente aus dem Array.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -307,6 +307,6 @@ Der dem angegebenen Element zuzuweisende Wert.
 
 Gibt TRUE zurück, wenn erfolgreich, FALSE, wenn der Index ungültig war.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

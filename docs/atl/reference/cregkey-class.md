@@ -42,12 +42,12 @@ helpviewer_keywords:
 - registry, writing to
 - registry, deleting keys
 ms.assetid: 3afce82b-ba2c-4c1a-8404-dc969e1af74b
-ms.openlocfilehash: 01810c16ff3e7fbc930983b9a52dc3a80f779f14
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d3bdb2e7c3ab0ef56ef7f6fba5d43f1ba0bb7fc6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81331034"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746511"
 ---
 # <a name="cregkey-class"></a>CRegKey-Klasse
 
@@ -129,7 +129,7 @@ Wenn Sie einen Schlüssel schließen, werden seine Registrierungsdaten auf die F
 > [!IMPORTANT]
 > Alle Methoden, die es dem Aufrufer ermöglichen, einen Registrierungsspeicherort anzugeben, haben das Potenzial, Daten zu lesen, denen nicht vertraut werden kann. Methoden, die [RegQueryValueEx](/windows/win32/api/winreg/nf-winreg-regqueryvalueexw) verwenden, sollten berücksichtigen, dass diese Funktion nicht explizit Zeichenfolgen verarbeitet, die NULL beendet sind. Beide Bedingungen sollten durch den aufrufenden Code überprüft werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -137,7 +137,7 @@ Wenn Sie einen Schlüssel schließen, werden seine Registrierungsdaten auf die F
 
 Rufen Sie diese Methode auf, `CRegKey` um einen HKEY an das Objekt anzufügen, indem Sie das [m_hKey](#m_hkey) Memberhandle auf *hKey*festlegen.
 
-```
+```cpp
 void Attach(HKEY hKey) throw();
 ```
 
@@ -1056,7 +1056,7 @@ Die beiden Originalversionen von `SetValue` sind als ATL_DEPRECATED gekennzeichn
 
 Die dritte Methode ruft [RegSetValueEx](/windows/win32/api/winreg/nf-winreg-regsetvalueexw)auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [DCOM-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

@@ -52,12 +52,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAccessToken class
 ms.assetid: bb5c5945-56a5-4083-b442-76573cee83ab
-ms.openlocfilehash: 9ae63946dfa6244e97c376f9eccd9bab93586990
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f7a2ee2f9d633c1ed743621eec5b2f7cc04c0e0b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319038"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748830"
 ---
 # <a name="caccesstoken-class"></a>CAccessToken-Klasse
 
@@ -136,7 +136,7 @@ Ein [Zugriffstoken](/windows/win32/SecAuthZ/access-tokens) ist ein Objekt, das d
 
 Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zugriffssteuerung](/windows/win32/SecAuthZ/access-control) im Windows SDK.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsecurity.h
 
@@ -144,7 +144,7 @@ Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zu
 
 Rufen Sie diese Methode auf, um den Besitz des angegebenen Zugriffstokenhandles zu übernehmen.
 
-```
+```cpp
 void Attach(HANDLE hToken) throw();
 ```
 
@@ -1179,7 +1179,7 @@ Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
 Die primäre Gruppe ist die Standardgruppe für neue Objekte, die erstellt wurden, während dieses Zugriffstoken aktiviert ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ATLSecurity-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [Zugriffstoken](/windows/win32/SecAuthZ/access-tokens)<br/>

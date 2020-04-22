@@ -54,12 +54,12 @@ helpviewer_keywords:
 - CImage class
 - transparent color
 ms.assetid: 52861e3d-bf7e-481f-a240-90e88f76c490
-ms.openlocfilehash: 5b5ef833a3755b07e42a60b24464b1f260062d16
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a6d20e1bf12f5fe7d1e9b41d88b088ca9fad35ed
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317811"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747179"
 ---
 # <a name="cimage-class"></a>CImage-Klasse
 
@@ -197,7 +197,7 @@ Sie können `CImage` entweder von MFC oder ATL verwendet werden.
 > <br/>
 > Ebenso müssen Sie *atlimage.h* einschließen, bevor Sie *atlimpl.cpp*einschließen. Um dies ganz einfach zu erreichen, fügen Sie *atlimage.h* in Ihre *pch.h* (*stdafx.h* in Visual Studio 2017 und früher) ein.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlimage.h
 
@@ -258,7 +258,7 @@ Ein Alphatransparenzwert, der für die gesamte Quellbitmap verwendet werden soll
 Die Alpha-Verschmelzungsfunktion für Quell- und Zielbitmaps, ein globaler Alphawert, der auf die gesamte Quellbitmap angewendet werden soll, und Formatinformationen für die Quellbitmap. Die Quell- und Ziel-Mischfunktionen sind derzeit auf AC_SRC_OVER beschränkt.
 
 *pointDest*<br/>
-Ein Verweis [POINT](/previous-versions/dd162805\(v=vs.85\)) auf eine POINT-Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
+Ein Verweis [POINT](/windows/win32/api/windef/ns-windef-point) auf eine POINT-Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
 
 *nDestWidth*<br/>
 Die Breite des Zielrechtecks in logischen Einheiten.
@@ -279,7 +279,7 @@ Die Breite des Quellrechtecks in logischen Einheiten.
 Die Höhe des Quellrechtecks in logischen Einheiten.
 
 *rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das Ziel identifiziert.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
 
 *rectSrc*<br/>
 Ein Verweis `RECT` auf eine Struktur, der die Quelle identifiziert.
@@ -298,7 +298,7 @@ Wenn *bBlendOp* auf den Standardwert AC_SRC_OVER festgelegt ist, wird die Quellb
 
 Fügt *hBitmap* an `CImage` ein Objekt an.
 
-```
+```cpp
 void Attach(HBITMAP hBitmap, DIBOrientation eOrientation = DIBOR_DEFAULT) throw();
 ```
 
@@ -368,7 +368,7 @@ Die logische y-Koordinate der oberen linken Ecke des Zielrechtecks.
 Der zu durchführende Raster-Vorgang. Raster-Vorgangscodes definieren genau, wie die Bits der Quelle, des Ziels und des Musters (wie durch den aktuell ausgewählten Pinsel definiert) zu dem Ziel kombiniert werden. Eine Liste anderer Raster-Vorgangscodes und deren Beschreibungen finden Sie unter [BitBlt](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK.
 
 *pointDest*<br/>
-Eine [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die obere linke Ecke des Zielrechtecks angibt.
+Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die obere linke Ecke des Zielrechtecks angibt.
 
 *nDestWidth*<br/>
 Die Breite des Zielrechtecks in logischen Einheiten.
@@ -383,7 +383,7 @@ Die logische x-Koordinate der oberen linken Ecke des Quellrechtecks.
 Die logische y-Koordinate der oberen linken Ecke des Quellrechtecks.
 
 *rectDest*<br/>
-Eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das Zielrechteck angibt.
+Eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Zielrechteck angibt.
 
 *pointSrc*<br/>
 Eine `POINT` Struktur, die die obere linke Ecke des Quellrechtecks angibt.
@@ -480,7 +480,7 @@ Gibt den Komprimierungstyp für eine komprimierte Bottom-up-Bitmap an (TOP-down-
 - BI_BITFIELDS Das Format ist unkomprimiert, und die Farbtabelle besteht aus drei DWORD-Farbmasken, die die roten, grünen und blauen Komponenten jedes Pixels angeben. Dies gilt bei Verwendung mit 16- und 32-bpp-Bitmaps.
 
 *pdwBitfields*<br/>
-Wird nur verwendet, wenn *eCompression* auf BI_BITFIELDS festgelegt ist, andernfalls muss es NULL sein. Ein Zeiger auf ein Array von drei DWORD-Bitmasken, das angibt, welche Bits jedes Pixels für die roten, grünen und blauen Komponenten der Farbe verwendet werden. Informationen zu Einschränkungen für die Bitfelder finden Sie unter [BITMAPINFOHEADER](/previous-versions//dd183376\(v=vs.85\)) im Windows SDK.
+Wird nur verwendet, wenn *eCompression* auf BI_BITFIELDS festgelegt ist, andernfalls muss es NULL sein. Ein Zeiger auf ein Array von drei DWORD-Bitmasken, das angibt, welche Bits jedes Pixels für die roten, grünen und blauen Komponenten der Farbe verwendet werden. Informationen zu Einschränkungen für die Bitfelder finden Sie unter [BITMAPINFOHEADER](/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader) im Windows SDK.
 
 *dwFlags*<br/>
 Gibt an, ob das Bitmapobjekt über einen Alphakanal verfügt. Kann eine Kombination aus Null oder mehr der folgenden Werte sein:
@@ -507,7 +507,7 @@ m_myImage.CreateEx(100, 100, 16, BI_BITFIELDS, adwBitmasks, 0);
 
 Trennt die Bitmap vom `CImage` Objekt und zerstört die Bitmap.
 
-```
+```cpp
 void Destroy() throw();
 ```
 
@@ -595,13 +595,13 @@ Die Breite des Quellrechtecks in logischen Einheiten.
 Die Höhe des Quellrechtecks in logischen Einheiten.
 
 *rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das Ziel identifiziert.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
 
 *rectSrc*<br/>
 Ein Verweis `RECT` auf eine Struktur, der die Quelle identifiziert.
 
 *pointDest*<br/>
-Ein Verweis [POINT](/previous-versions/dd162805\(v=vs.85\)) auf eine POINT-Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
+Ein Verweis [POINT](/windows/win32/api/windef/ns-windef-point) auf eine POINT-Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -617,7 +617,7 @@ Für Versionen, die `Draw` kein Quellrechteck angeben, ist das gesamte Quellbild
 
 Ruft einen Zeiger auf die tatsächlichen Bitwerte eines bestimmten Pixels in einer Bitmap ab.
 
-```
+```cpp
 void* GetBits() throw();
 ```
 
@@ -648,13 +648,13 @@ Die Anzahl der Bits pro Pixel.
 
 Dieser Wert bestimmt die Anzahl der Bits, die jedes Pixel definieren, und die maximale Anzahl von Farben in der Bitmap.
 
-Die Bits pro Pixel sind in der Regel 1, 4, 8, 16, 24 oder 32. Weitere `biBitCount` Informationen zu diesem Wert finden Sie unter [bitMAPINFOHEADER](/previous-versions//dd183376\(v=vs.85\)) im Windows SDK.
+Die Bits pro Pixel sind in der Regel 1, 4, 8, 16, 24 oder 32. Weitere `biBitCount` Informationen zu diesem Wert finden Sie unter [bitMAPINFOHEADER](/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader) im Windows SDK.
 
 ## <a name="cimagegetcolortable"></a><a name="getcolortable"></a>CImage::GetColorTable
 
 Ruft rote, grüne, blaue (RGB) Farbwerte aus einem Bereich von Einträgen in der Palette des DIB-Abschnitts ab.
 
-```
+```cpp
 void GetColorTable(
     UINT iFirstColor,
     UINT nColors,
@@ -909,10 +909,10 @@ COLORREF GetPixel(int x, int y) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die x-Koordinate des Pixels.
 
-*y*<br/>
+*Y*<br/>
 Die y-Koordinate des Pixels.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -923,16 +923,16 @@ Der rote, grüne, blaue (RGB) Wert des Pixels. Wenn sich das Pixel außerhalb de
 
 Ruft die genaue Adresse eines Pixels ab.
 
-```
+```cpp
 void* GetPixelAddress(int x, int y) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die x-Koordinate des Pixels.
 
-*y*<br/>
+*Y*<br/>
 Die y-Koordinate des Pixels.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1076,7 +1076,7 @@ Gültige Bildtypen sind BMP, GIF, JPEG, PNG und TIFF.
 
 Lädt ein Bild aus einer BITMAP-Ressource.
 
-```
+```cpp
 void LoadFromResource(
     HINSTANCE hInstance,
     LPCTSTR pszResourceName) throw();
@@ -1259,10 +1259,10 @@ Die x-Koordinate der oberen linken Ecke der monochromen Bitmap.
 Die y-Koordinate der oberen linken Ecke der monochromen Bitmap.
 
 *rectSrc*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Koordinaten des Quellrechtecks angibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Koordinaten des Quellrechtecks angibt.
 
 *pointMaske*<br/>
-Eine [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die obere linke Ecke der Maskenbitmap angibt.
+Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die obere linke Ecke der Maskenbitmap angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1278,7 +1278,7 @@ Diese Methode gilt nur für Windows NT, Versionen 4.0 und höher. Ausführlicher
 
 Gibt den Gerätekontext frei.
 
-```
+```cpp
 void ReleaseDC() const throw();
 ```
 
@@ -1290,7 +1290,7 @@ Da jeweils nur eine Bitmap in einem Gerätekontext ausgewählt `ReleaseDC` werde
 
 Gibt Ressourcen frei, die von GDI+ verwendet werden.
 
-```
+```cpp
 void ReleaseGDIPlus() throw();
 ```
 
@@ -1346,7 +1346,7 @@ Rufen Sie diese Funktion auf, um das Bild mit einem angegebenen Namen und Typ zu
 
 Legt die Roten, Grünen, Blauen (RGB) Farbwerte für einen Bereich von Einträgen in der Palette des DIB-Abschnitts fest.
 
-```
+```cpp
 void SetColorTable(
     UINT iFirstColor,
     UINT nColors,
@@ -1372,16 +1372,16 @@ Diese Methode unterstützt nur DIB-Abschnittsbitmaps.
 
 Legt die Farbe eines Pixels an einer bestimmten Position in der Bitmap fest.
 
-```
+```cpp
 void SetPixel(int x, int y, COLORREF color) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die horizontale Position des festzulegenden Pixels.
 
-*y*<br/>
+*Y*<br/>
 Die vertikale Position des festzulegenden Pixels.
 
 *Farbe*<br/>
@@ -1395,16 +1395,16 @@ Diese Methode schlägt fehl, wenn die Pixelkoordinaten außerhalb des ausgewähl
 
 Legt die Pixelfarbe auf die Farbe fest, die sich in *iIndex* in der Farbpalette befindet.
 
-```
+```cpp
 void SetPixelIndexed(int x, int y, int iIndex) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die horizontale Position des festzulegenden Pixels.
 
-*y*<br/>
+*Y*<br/>
 Die vertikale Position des festzulegenden Pixels.
 
 *iIndex*<br/>
@@ -1414,7 +1414,7 @@ Der Index einer Farbe in der Farbpalette.
 
 Legt das Pixel an den von *x* und *y* angegebenen Positionen auf die Farben *fest,* die durch r , *g*und *b*in einem roten, grünen, blauen (RGB)-Bild angegeben sind.
 
-```
+```cpp
 void SetPixelRGB(
     int x,
     int y,
@@ -1425,13 +1425,13 @@ void SetPixelRGB(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die horizontale Position des festzulegenden Pixels.
 
-*y*<br/>
+*Y*<br/>
 Die vertikale Position des festzulegenden Pixels.
 
-*R*<br/>
+*r*<br/>
 Die Intensität der roten Farbe.
 
 *G*<br/>
@@ -1519,7 +1519,7 @@ Die Höhe des Zielrechtecks in logischen Einheiten.
 Der zu durchführende Raster-Vorgang. Raster-Vorgangscodes definieren genau, wie die Bits der Quelle, des Ziels und des Musters (wie durch den aktuell ausgewählten Pinsel definiert) zu dem Ziel kombiniert werden. Eine Liste anderer Raster-Vorgangscodes und deren Beschreibungen finden Sie unter [BitBlt](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK.
 
 *rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das Ziel identifiziert.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
 
 *xSrc*<br/>
 Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
@@ -1602,7 +1602,7 @@ Die Höhe des Zielrechtecks in logischen Einheiten.
 Die Farbe in der Quellbitmap, die als transparent behandelt werden soll. Standardmäßig CLR_INVALID, was angibt, dass die Farbe, die derzeit als transparente Farbe des Bildes festgelegt ist, verwendet werden soll.
 
 *rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das Ziel identifiziert.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
 
 *xSrc*<br/>
 Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
@@ -1656,7 +1656,7 @@ BOOL TransparentBlt(CImage* pSrcImage, CImage* pDstImage,
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MMXSwarm-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [SimpleImage-Beispiel](../../overview/visual-cpp-samples.md)<br/>

@@ -106,12 +106,12 @@ helpviewer_keywords:
 - CMFCMenuBar [MFC], SetRecentlyUsedMenus
 - CMFCMenuBar [MFC], SetShowAllCommands
 ms.assetid: 8a3ce4c7-b012-4dc0-b4f8-53c10b4b86b8
-ms.openlocfilehash: 50dd488d1f59c99b8fee1eb96acf6d0041547df9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f25bff9564eb7a4290f958f0b7810cac8ef7e238
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369687"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749618"
 ---
 # <a name="cmfcmenubar-class"></a>CMFCMenuBar-Klasse
 
@@ -214,7 +214,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 `CMFCMenuBar`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxmenubar.h
 
@@ -430,7 +430,7 @@ Verwenden Sie diese Methode, wenn ein Menüsteuerelement dieselben Menüelemente
 
 Aktiviert **Help** ein Hilfekombinationsfeld, das sich auf der rechten Seite der Menüleiste befindet.
 
-```
+```cpp
 void EnableHelpCombobox(
     UINT uiID,
     LPCTSTR lpszPrompt = NULL,
@@ -954,7 +954,7 @@ Die gespeicherten Informationen umfassen die Menüelemente, den Dockstatus und d
 
 Legt das Standardmenü für ein [CMFCMenuBar-Objekt](../../mfc/reference/cmfcmenubar-class.md) basierend auf der Ressourcen-ID fest.
 
-```
+```cpp
 void SetDefaultMenuResId(UINT uiResId);
 ```
 
@@ -971,7 +971,7 @@ Verwenden Sie die [CMFCMenuBar::GetDefaultMenuResId-Methode,](#getdefaultmenures
 
 ## <a name="cmfcmenubarsetforcedownarrows"></a><a name="setforcedownarrows"></a>CMFCMenuBar::SetForceDownArrows
 
-```
+```cpp
 void SetForceDownArrows(BOOL bValue);
 ```
 
@@ -985,7 +985,7 @@ void SetForceDownArrows(BOOL bValue);
 
 Das Framework ruft diese Methode auf, wenn ein MDI seinen Anzeigemodus ändert und die Menüleiste aktualisiert werden muss.
 
-```
+```cpp
 void SetMaximizeMode(
     BOOL bMax,
     CWnd* pWnd = NULL,
@@ -1011,7 +1011,7 @@ Wenn ein untergeordnetes MDI-Fenster maximiert wird, zeigt eine Menüleiste, die
 
 Legt die Laufzeitklasseninformationen fest, die das Framework verwendet, wenn der Benutzer Menüschaltflächen erstellt.
 
-```
+```cpp
 void SetMenuButtonRTC(CRuntimeClass* pMenuButtonRTC);
 ```
 
@@ -1082,7 +1082,7 @@ static void SetShowAllCommands(BOOL bShowAllCommands = TRUE);
 
 Wenn in einem Menü nicht alle Menübefehle angezeigt werden, werden die Befehle ausgeblendet, die selten verwendet werden. Weitere Informationen zum Anzeigen von Menübefehlen finden Sie unter [CMFCMenuBar Class](../../mfc/reference/cmfcmenubar-class.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

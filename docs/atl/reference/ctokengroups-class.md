@@ -16,12 +16,12 @@ f1_keywords:
 helpviewer_keywords:
 - CTokenGroups class
 ms.assetid: 2ab08076-4b08-4487-bc70-ec6dee304190
-ms.openlocfilehash: 1e9d21c59eb5efabf036fbc938a40de2c4b7a0b7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ccfa628f4a099f7e13eb09d272c72c2bdd846f37
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330550"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746379"
 ---
 # <a name="ctokengroups-class"></a>CTokenGroups-Klasse
 
@@ -73,7 +73,7 @@ Die `CTokenGroups` Klasse ist ein Wrapper für die [TOKEN_GROUPS-Struktur,](/win
 
 Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zugriffssteuerung](/windows/win32/SecAuthZ/access-control) im Windows SDK.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsecurity.h
 
@@ -81,7 +81,7 @@ Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zu
 
 Fügt `CSid` dem `CTokenGroups` `TOKEN_GROUPS` Objekt eine oder eine vorhandene Struktur hinzu.
 
-```
+```cpp
 void Add(const CSid& rSid, DWORD dwAttributes) throw(... );
 void Add(const TOKEN_GROUPS& rTokenGroups) throw(...);
 ```
@@ -153,7 +153,7 @@ Gibt true `CSid` zurück, wenn der entfernt wird, andernfalls false.
 
 Löscht alle `CSid` Objekte und die zugehörigen Attribute aus dem `CTokenGroups` Objekt.
 
-```
+```cpp
 void DeleteAll() throw();
 ```
 
@@ -197,7 +197,7 @@ Ruft einen Zeiger auf die [TOKEN_GROUPS](/windows/win32/api/winnt/ns-winnt-token
 
 Ruft die `CSid` Objekte und (optional) die Attribute `CTokenGroups` ab, die zum Objekt gehören.
 
-```
+```cpp
 void GetSidsAndAttributes(
     CSid::CSidArray* pSids,
     CAtlArray<DWORD>* pAttributes = NULL) const throw(...);
@@ -271,7 +271,7 @@ operator const TOKEN_GROUPS *() const throw(...);
 
 Gibt einen Wert auf einen [TOKEN_GROUPS](/windows/win32/api/winnt/ns-winnt-token_groups) Zeiger auf die TOKEN_GROUPS-Struktur.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sicherheitsbeispiel](../../overview/visual-cpp-samples.md)<br/>
 [CSid-Klasse](../../atl/reference/csid-class.md)<br/>

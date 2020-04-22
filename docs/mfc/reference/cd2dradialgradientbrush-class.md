@@ -38,12 +38,12 @@ helpviewer_keywords:
 - CD2DRadialGradientBrush [MFC], m_pRadialGradientBrush
 - CD2DRadialGradientBrush [MFC], m_RadialGradientBrushProperties
 ms.assetid: 6c76d84a-d831-4ee2-96f1-82c1f5b0d6a9
-ms.openlocfilehash: aca9606271040e5c5c9aee81be0a08b64cf2bab7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 450314fdbf8441b0cc345430518d083573659add
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369131"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750308"
 ---
 # <a name="cd2dradialgradientbrush-class"></a>CD2DRadialGradientBrush-Klasse
 
@@ -107,7 +107,7 @@ class CD2DRadialGradientBrush : public CD2DGradientBrush;
 
 `CD2DRadialGradientBrush`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -123,7 +123,7 @@ virtual ~CD2DRadialGradientBrush();
 
 Fügt vorhandene Ressourcenschnittstelle an das Objekt an
 
-```
+```cpp
 void Attach(ID2D1RadialGradientBrush* pResource);
 ```
 
@@ -303,7 +303,7 @@ Zeiger auf eine ID2D1RadialGradientBrush-Schnittstelle oder NULL, wenn das Objek
 
 Gibt die Mitte der Farbverlaufsellipse im Koordinatenraum des Pinsels an.
 
-```
+```cpp
 void SetCenter(CD2DPointF point);
 ```
 
@@ -316,7 +316,7 @@ Die Mitte der Gradientenellipse im Koordinatenraum des Pinsels
 
 Gibt den Versatz des Gradientenursprungs relativ zum Mittelpunkt der Gradientenellipse an.
 
-```
+```cpp
 void SetGradientOriginOffset(CD2DPointF gradientOriginOffset);
 ```
 
@@ -329,7 +329,7 @@ Der Offset des Gradientenursprungs aus der Mitte der Gradientenellipse
 
 Gibt den x-Radius der Farbverlaufsellipse im Koordinatenraum des Pinsels an.
 
-```
+```cpp
 void SetRadiusX(FLOAT radiusX);
 ```
 
@@ -342,7 +342,7 @@ Der x-Radius der Gradientenellipse. Dieser Wert befindet sich im Koordinatenraum
 
 Gibt den y-Radius der Farbverlaufsellipse im Koordinatenraum des Pinsels an.
 
-```
+```cpp
 void SetRadiusY(FLOAT radiusY);
 ```
 
@@ -351,6 +351,6 @@ void SetRadiusY(FLOAT radiusY);
 *Radiusy*<br/>
 Der y-Radius der Gradientenellipse. Dieser Wert befindet sich im Koordinatenraum des Pinsels.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -114,12 +114,12 @@ helpviewer_keywords:
 - CRenderTarget [MFC], m_pRenderTarget
 - CRenderTarget [MFC], m_pTextFormatDefault
 ms.assetid: 30d1607d-68d3-4d14-ac36-fdbd0ef903a1
-ms.openlocfilehash: 1b165b485e067120477de560d2091c448e02fe44
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8c0a0d1f578b2f0d186ce0f4ea8c7da07e741b71
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368344"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747207"
 ---
 # <a name="crendertarget-class"></a>CRenderTarget-Klasse
 
@@ -220,7 +220,7 @@ class CRenderTarget : public CObject;
 
 [CRenderTarget](../../mfc/reference/crendertarget-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -236,7 +236,7 @@ virtual ~CRenderTarget();
 
 Fügt vorhandene Renderzielschnittstelle an das Objekt an
 
-```
+```cpp
 void Attach(ID2D1RenderTarget* pRenderTarget);
 ```
 
@@ -249,7 +249,7 @@ Vorhandene Renderzielschnittstelle. Kann nicht NULL sein
 
 Initiiert das Zeichnen auf diesem Renderziel.
 
-```
+```cpp
 void BeginDraw();
 ```
 
@@ -257,7 +257,7 @@ void BeginDraw();
 
 Löscht den Zeichenbereich auf die angegebene Farbe.
 
-```
+```cpp
 void Clear(D2D1_COLOR_F color);
 ```
 
@@ -314,7 +314,7 @@ Die gewünschte Größe des neuen Renderziels in Pixel, wenn es sich vom ursprü
 *desiredFormat*<br/>
 Das gewünschte Pixelformat und der Alphamodus des neuen Renderziels oder NULL. Wenn das Pixelformat auf DXGI_FORMAT_UNKNOWN festgelegt ist oder wenn dieser Parameter null ist, verwendet das neue Renderziel dasselbe Pixelformat wie das ursprüngliche Renderziel. Wenn der Alphamodus D2D1_ALPHA_MODE_UNKNOWN ist oder dieser Parameter NULL ist, wird der Alphamodus des neuen Renderziels standardmäßig auf D2D1_ALPHA_MODE_PREMULTIPLIED. Informationen zu unterstützten Pixelformaten finden Sie unter Unterstützte Pixelformate und Alpha-Modi.
 
-*Optionen*<br/>
+*options*<br/>
 Ein Wert, der angibt, ob das neue Renderziel mit GDI kompatibel sein muss.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -362,7 +362,7 @@ Zeiger auf die getrennte Renderzielschnittstelle.
 
 Zeichnet den formatierten Text, der durch das angegebene IDWriteTextLayout-Objekt beschrieben wird.
 
-```
+```cpp
 void DrawBitmap(
     CD2DBitmap* pBitmap,
     const CD2DRectF& rectDest,
@@ -392,7 +392,7 @@ Die Größe und Position des zu zeichnenden Bereichs innerhalb der Bitmap in ger
 
 Zeichnet die Umrisslinie der angegebenen Ellipse mithilfe des angegebenen Strichstils.
 
-```
+```cpp
 void DrawEllipse(
     const CD2DEllipse& ellipse,
     CD2DBrush* pBrush,
@@ -418,7 +418,7 @@ Der Stil des Strichs, der auf die Umrisslinie der Ellipse angewendet werden soll
 
 Zeichnet die Umrisse der angegebenen Geometrie mithilfe des angegebenen Strichstils.
 
-```
+```cpp
 void DrawGeometry(
     CD2DGeometry* pGeometry,
     CD2DBrush* pBrush,
@@ -444,7 +444,7 @@ Der Stil des Strichs, der auf die Kontur der Geometrie angewendet werden soll, o
 
 Zeichnet die angegebenen Glyphen.
 
-```
+```cpp
 void DrawGlyphRun(
     const CD2DPointF& ptBaseLineOrigin,
     const DWRITE_GLYPH_RUN& glyphRun,
@@ -470,7 +470,7 @@ Ein Wert, der angibt, wie Glyphenmetriken verwendet werden, um Text zu messen, w
 
 Zeichnet eine Linie zwischen den angegebenen Punkten mithilfe des angegebenen Strichstils.
 
-```
+```cpp
 void DrawLine(
     const CD2DPointF& ptFrom,
     const CD2DPointF& ptTo,
@@ -500,7 +500,7 @@ Der Stil des zu malenden Strichs oder NULL, um eine durchgezogene Linie zu malen
 
 Zeichnet die Umrisslinie eines Rechtecks mit den angegebenen Bemaßungen und dem Strichstil.
 
-```
+```cpp
 void DrawRectangle(
     const CD2DRectF& rectangle,
     CD2DBrush* pBrush,
@@ -526,7 +526,7 @@ Der Stil des zu malenden Strichs oder NULL, um einen durchgehenden Strich zu mal
 
 Zeichnet die Umrisslinie des angegebenen abgerundeten Rechtecks mithilfe des angegebenen Strichstils.
 
-```
+```cpp
 void DrawRoundedRectangle(
     const CD2DRoundedRect& rectRounded,
     CD2DBrush* pBrush,
@@ -552,7 +552,7 @@ Der Stil des Strichs des abgerundeten Rechtecks oder NULL, um einen durchgehende
 
 Zeichnet den angegebenen Text mithilfe der Formatinformationen, die von einem IDWriteTextFormat-Objekt bereitgestellt werden.
 
-```
+```cpp
 void DrawText(
     const CString& strText,
     const CD2DRectF& rectangle,
@@ -576,7 +576,7 @@ Der Pinsel zum Zeichnen des Texts.
 *textFormat*<br/>
 Ein Objekt, das Formatierungsdetails des zu zeichnenden Textes beschreibt, z. B. die Schriftart, die Schriftgröße und die Fließrichtung.
 
-*Optionen*<br/>
+*options*<br/>
 Ein Wert, der angibt, ob der Text an Pixelgrenzen gefangen werden soll und ob der Text auf das Layoutrechteck abgeschnitten werden soll. Der Standardwert ist D2D1_DRAW_TEXT_OPTIONS_NONE, was angibt, dass Text an Pixelgrenzen gefangen und nicht auf das Layoutrechteck abgeschnitten werden soll.
 
 *messMode*<br/>
@@ -586,7 +586,7 @@ Ein Wert, der angibt, wie Glyphenmetriken verwendet werden, um Text zu messen, w
 
 Zeichnet den formatierten Text, der durch das angegebene IDWriteTextLayout-Objekt beschrieben wird.
 
-```
+```cpp
 void DrawTextLayout(
     const CD2DPointF& ptOrigin,
     CD2DTextLayout* textLayout,
@@ -605,7 +605,7 @@ Der formatierte Text, der gezeichnet werden soll. Alle Zeichnungseffekte, die ni
 *pBrushForeground*<br/>
 Der Pinsel, der zum Zeichnen von Text in textLayout verwendet wird, dem noch kein Pinsel als Zeichnungseffekt zugeordnet ist (angegeben durch die IDWriteTextLayout::SetDrawingEffect-Methode).
 
-*Optionen*<br/>
+*options*<br/>
 Ein Wert, der angibt, ob der Text an Pixelgrenzen gefangen werden soll und ob der Text auf das Layoutrechteck abgeschnitten werden soll. Der Standardwert ist D2D1_DRAW_TEXT_OPTIONS_NONE, was angibt, dass Text an Pixelgrenzen gefangen und nicht auf das Layoutrechteck abgeschnitten werden soll.
 
 ## <a name="crendertargetenddraw"></a><a name="enddraw"></a>CRenderTarget::EndDraw
@@ -624,7 +624,7 @@ Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein
 
 Malt das Innere der angegebenen Ellipse.
 
-```
+```cpp
 void FillEllipse(
     const CD2DEllipse& ellipse,
     CD2DBrush* pBrush);
@@ -642,7 +642,7 @@ Der Pinsel verwendet, um das Innere der Ellipse zu malen.
 
 Zeichnet das Innere der angegebenen Geometrie.
 
-```
+```cpp
 void FillGeometry(
     CD2DGeometry* pGeometry,
     CD2DBrush* pBrush,
@@ -664,7 +664,7 @@ Die Deckkraftmaske, die auf die Geometrie angewendet werden soll; NULL für kein
 
 Zeichnet das Innere des angegebenen Netzes.
 
-```
+```cpp
 void FillMesh(
     CD2DMesh* pMesh,
     CD2DBrush* pBrush);
@@ -682,7 +682,7 @@ Der Pinsel, mit dem das Netz lackiert wird.
 
 Wendet die durch die angegebene Bitmap beschriebene Deckkraftmaske auf einen Pinsel an und verwendet diesen Pinsel, um einen Bereich des Renderziels zu malen.
 
-```
+```cpp
 void FillOpacityMask(
     CD2DBitmap* pOpacityMask,
     CD2DBrush* pBrush,
@@ -699,7 +699,7 @@ Die Position und der Radius der zu malenden Ellipse in geräteunabhängigen Pixe
 *pBrush*<br/>
 Der Pinsel, der zum Zeichnen des durch destinationRectangle angegebenen Bereichs des Renderziels verwendet wird.
 
-*Inhalt*<br/>
+*content*<br/>
 Der Inhaltstyp, den die Deckkraftmaske enthält. Der Wert wird verwendet, um den Farbraum zu bestimmen, in dem die Deckkraftmaske gemischt wird.
 
 *rectDest*<br/>
@@ -712,7 +712,7 @@ Der Bereich der Bitmap, der als Deckkraftmaske in geräteunabhängigen Pixeln ve
 
 Zeichnet das Innere des angegebenen Rechtecks.
 
-```
+```cpp
 void FillRectangle(
     const CD2DRectF& rectangle,
     CD2DBrush* pBrush);
@@ -730,7 +730,7 @@ Der Pinsel, mit dem das Innere des Rechtecks bemalt wird.
 
 Zeichnet das Innere des angegebenen abgerundeten Rechtecks.
 
-```
+```cpp
 void FillRoundedRectangle(
     const CD2DRoundedRect& rectRounded,
     CD2DBrush* pBrush);
@@ -748,7 +748,7 @@ Der Pinsel, mit dem das Innere des abgerundeten Rechtecks gezeichnet wird.
 
 Führt alle ausstehenden Zeichnungsbefehle aus.
 
-```
+```cpp
 void Flush(
     D2D1_TAG* tag1 = NULL,
     D2D1_TAG* tag2 = NULL);
@@ -850,7 +850,7 @@ Die aktuelle Größe des Renderziels in geräteunabhängigen Pixeln
 
 Ruft die Bezeichnung für nachfolgende Zeichnungsvorgänge ab.
 
-```
+```cpp
 void GetTags(
     D2D1_TAG* tag1 = NULL,
     D2D1_TAG* tag2 = NULL) const;
@@ -880,7 +880,7 @@ Aktueller Antialiasing-Modus für Text- und Glyphenzeichnungsvorgänge.
 
 Ruft die aktuellen Textrenderingoptionen des Renderziels ab.
 
-```
+```cpp
 void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams);
 ```
 
@@ -893,7 +893,7 @@ Wenn diese Methode zurückgegeben wird, enthält textRenderingParams die Adresse
 
 Ruft die aktuelle Transformation des Renderziels ab.
 
-```
+```cpp
 void GetTransform(D2D1_MATRIX_3X2_F* transform);
 ```
 
@@ -971,7 +971,7 @@ Zeiger auf eine ID2D1RenderTarget-Schnittstelle oder NULL, wenn das Objekt noch 
 
 Entfernt den letzten achsenausgerichteten Clip aus dem Renderziel. Nachdem diese Methode aufgerufen wurde, wird der Clip nicht mehr auf nachfolgende Zeichnungsvorgänge angewendet.
 
-```
+```cpp
 void PopAxisAlignedClip();
 ```
 
@@ -979,7 +979,7 @@ void PopAxisAlignedClip();
 
 Beendet die Umleitung von Zeichnungsvorgängen an den Layer, der durch den letzten PushLayer-Aufruf angegeben wurde.
 
-```
+```cpp
 void PopLayer();
 ```
 
@@ -987,7 +987,7 @@ void PopLayer();
 
 Entfernt den letzten achsenausgerichteten Clip aus dem Renderziel. Nachdem diese Methode aufgerufen wurde, wird der Clip nicht mehr auf nachfolgende Zeichnungsvorgänge angewendet.
 
-```
+```cpp
 void PushAxisAlignedClip(
     const CD2DRectF& rectClip,
     D2D1_ANTIALIAS_MODE mode = D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
@@ -1005,7 +1005,7 @@ Der Antialiasing-Modus, der zum Zeichnen der Kanten von Cliprechtecken mit Subpi
 
 Fügt dem Renderziel den angegebenen Layer hinzu, sodass alle nachfolgenden Zeichnungsvorgänge empfangen werden, bis PopLayer aufgerufen wird.
 
-```
+```cpp
 void PushLayer(
     const D2D1_LAYER_PARAMETERS& layerParameters,
     CD2DLayer& layer);
@@ -1023,7 +1023,7 @@ Der Layer, der nachfolgende Zeichnungsvorgänge empfängt.
 
 Legt den Zeichnungsstatus des Renderziels auf den des angegebenen ID2D1DrawingStateBlock fest.
 
-```
+```cpp
 void RestoreDrawingState(ID2D1DrawingStateBlock& drawingStateBlock);
 ```
 
@@ -1036,7 +1036,7 @@ Der neue Zeichnungsstatus des Renderziels.
 
 Speichert den aktuellen Zeichnungsstatus im angegebenen ID2D1DrawingStateBlock.
 
-```
+```cpp
 void SaveDrawingState(ID2D1DrawingStateBlock& drawingStateBlock) const;
 ```
 
@@ -1049,7 +1049,7 @@ Wenn diese Methode zurückgegeben wird, enthält der aktuelle Zeichnungsstatus d
 
 Legt den Antialiasing-Modus des Renderziels fest. Der Antialiasing-Modus gilt für alle nachfolgenden Zeichnungsvorgänge, mit Ausnahme von Text- und Glyphenzeichnungsvorgängen.
 
-```
+```cpp
 void SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode);
 ```
 
@@ -1062,7 +1062,7 @@ Der Antialiasing-Modus für zukünftige Zeichnungsvorgänge.
 
 Legt die Punkte pro Zoll (DPI) des Renderziels fest.
 
-```
+```cpp
 void SetDpi(const CD2DSizeF& sizeDPI);
 ```
 
@@ -1075,7 +1075,7 @@ Ein Wert größer oder gleich Null, der den horizontalen/vertikalen DPI des Rend
 
 Gibt eine Bezeichnung für nachfolgende Zeichnungsvorgänge an.
 
-```
+```cpp
 void SetTags(
     D2D1_TAG tag1,
     D2D1_TAG tag2);
@@ -1093,7 +1093,7 @@ Eine Bezeichnung, die auf nachfolgende Zeichnungsvorgänge angewendet werden sol
 
 Gibt den Antialiasing-Modus an, der für nachfolgende Text- und Glyphenzeichnungsvorgänge verwendet werden soll.
 
-```
+```cpp
 void SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode);
 ```
 
@@ -1106,7 +1106,7 @@ Der Antialiasing-Modus, der für nachfolgende Text- und Glyphenzeichnungsvorgän
 
 Gibt Textrenderingoptionen an, die auf alle nachfolgenden Text- und Glyphenzeichnungsvorgänge angewendet werden sollen.
 
-```
+```cpp
 void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams = NULL);
 ```
 
@@ -1119,7 +1119,7 @@ Die Textrenderingoptionen, die auf alle nachfolgenden Text- und Glyphenzeichnung
 
 Wendet die angegebene Transformation auf das Renderziel an und ersetzt die vorhandene Transformation. Alle nachfolgenden Zeichnungsvorgänge finden im transformierten Raum statt.
 
-```
+```cpp
 void SetTransform(const D2D1_MATRIX_3X2_F* transform);
 void SetTransform(const D2D1_MATRIX_3X2_F& transform);
 ```
@@ -1146,6 +1146,6 @@ Zeiger auf das CD2DResource-Objekt.
 
 TRUE ist Eint/Objekt, falls gültig; andernfalls FALSE.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -35,12 +35,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlServiceModuleT class
 ms.assetid: 8fc753ce-4a50-402b-9b4a-0a4ce5dd496c
-ms.openlocfilehash: 5d87eada997d0bbfe44cd07a819f6b012a7a3a20
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6d1985384c2d9a324abac548f27be6be5f0cacf5
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321342"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748590"
 ---
 # <a name="catlservicemodulet-class"></a>CAtlServiceModuleT-Klasse
 
@@ -127,7 +127,7 @@ Diese Klasse ersetzt die veraltete [CComModule-Klasse,](../../atl/reference/ccom
 
 `CAtlServiceModuleT`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -147,7 +147,7 @@ Initialisiert die Datenmember und legt den anfänglichen Dienststatus fest.
 
 Die Handlerroutine für den Dienst.
 
-```
+```cpp
 void Handler(DWORD dwOpcode) throw();
 ```
 
@@ -230,7 +230,7 @@ Gibt TRUE zurück, wenn der Dienst installiert ist, andernfalls FALSE.
 
 Schreibt in das Ereignisprotokoll.
 
-```
+```cpp
 void __cdecl LogEvent(LPCTSTR pszFormat, ...) throw();
 ```
 
@@ -310,7 +310,7 @@ Eine null-terminierte Zeichenfolge, die den Namen des Dienstes speichert.
 
 Überschreiben Sie diese Methode, um den Dienst fortzusetzen.
 
-```
+```cpp
 void OnContinue() throw();
 ```
 
@@ -318,7 +318,7 @@ void OnContinue() throw();
 
 Überschreiben Sie diese Methode, um den Dienst abzuhören.
 
-```
+```cpp
 void OnInterrogate() throw();
 ```
 
@@ -326,7 +326,7 @@ void OnInterrogate() throw();
 
 Überschreiben Sie diese Methode, um den Dienst anzuhalten.
 
-```
+```cpp
 void OnPause() throw();
 ```
 
@@ -334,7 +334,7 @@ void OnPause() throw();
 
 Überschreiben Sie diese Methode, um den Dienst herunterzufahren.
 
-```
+```cpp
 void OnShutdown() throw();
 ```
 
@@ -342,7 +342,7 @@ void OnShutdown() throw();
 
 Überschreiben Sie diese Methode, um den Dienst zu beenden.
 
-```
+```cpp
 void OnStop() throw();
 ```
 
@@ -350,7 +350,7 @@ void OnStop() throw();
 
 Überschreiben Sie diese Methode, um unbekannte Anforderungen an den Dienst zu verarbeiten.
 
-```
+```cpp
 void OnUnknownRequest(DWORD /* dwOpcode*/) throw();
 ```
 
@@ -446,7 +446,7 @@ Nach dem `Run` Aufruf ruft [CAtlServiceModuleT::PreMessageLoop](#premessageloop)
 
 Diese Methode wird vom Dienststeuerungs-Manager aufgerufen.
 
-```
+```cpp
 void ServiceMain(DWORD dwArgc, LPTSTR* lpszArgv) throw();
 ```
 
@@ -468,7 +468,7 @@ Nach dem SCM-Aufrufe `ServiceMain`muss ein Dienst dem SCM eine Handlerfunktion z
 
 Diese Methode aktualisiert den Dienststatus.
 
-```
+```cpp
 void SetServiceStatus(DWORD dwState) throw();
 ```
 
@@ -563,7 +563,7 @@ Gibt den Rückgabewert des Dienstes zurück.
 
 Diese Methode verarbeitet die Befehlszeile (mit [CAtlServiceModuleT::ParseCommandLine](#parsecommandline)) und startet dann den Dienst (mit [CAtlServiceModuleT::Start](#start)).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CAtlExeModuleT-Klasse](../../atl/reference/catlexemodulet-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

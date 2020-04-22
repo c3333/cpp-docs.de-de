@@ -7,30 +7,30 @@ f1_keywords:
 helpviewer_keywords:
 - Release method [C++]
 ms.assetid: db448b34-0efa-4f02-b701-ad1ca3ae6ca5
-ms.openlocfilehash: f455e855e782a939e79898ee46e445f65d25d37a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 73de3c2d19063f0738b8b0a3c510ea520f58de0b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170591"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745058"
 ---
 # <a name="_com_ptr_trelease"></a>_com_ptr_t::Release
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
-Ruft die **releasemember** -Funktion von `IUnknown` für den gekapselten Schnittstellen Zeiger auf.
+Ruft die **Release-Memberfunktion** des `IUnknown` auf dem gekapselten Schnittstellenzeiger auf.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Release( );
 ```
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ruft `IUnknown::Release` für den gekapselten Schnittstellen Zeiger auf und gibt einen `E_POINTER` Fehler aus, wenn dieser Schnittstellen Zeiger NULL ist.
+Ruft `IUnknown::Release` den gekapselten Schnittstellenzeiger auf `E_POINTER` und löst einen Fehler aus, wenn dieser Schnittstellenzeiger NULL ist.
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Weitere Informationen
 

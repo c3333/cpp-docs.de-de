@@ -29,12 +29,12 @@ helpviewer_keywords:
 - CComBSTR class
 - CComBSTR
 ms.assetid: 8fea1879-a05e-47a5-a803-8dec60eaa534
-ms.openlocfilehash: adaad47c49a64c6654b70fa60ef5514e104c50a5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c1448a5638b263a87403edf0baca170f0f952e26
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321056"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748135"
 ---
 # <a name="ccombstr-class"></a>CComBSTR-Klasse
 
@@ -112,7 +112,7 @@ Ein [BSTR](/previous-versions/windows/desktop/automat/bstr) wird nach dem zuletz
 
 Eine Liste der Vorsichtsmaßnahmen bei der Verwendung `CComBSTR`finden Sie unter [Programmieren mit CComBSTR](../../atl/programming-with-ccombstr-atl.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -242,7 +242,7 @@ S_OK auf Erfolg oder einen beliebigen HRESULT-Standardfehlerwert.
 
 Fügt dem `CComBSTR` Objekt einen BSTR an, indem der [m_str](#m_str) Member auf *src*gesetzt wird.
 
-```
+```cpp
 void Attach(BSTR src) throw();
 ```
 
@@ -424,7 +424,7 @@ Der dem `CComBSTR` Objekt zugeordnete BSTR.
 
 Befreit das [m_str](#m_str) m_str-Mitglied.
 
-```
+```cpp
 void Empty() throw();
 ```
 
@@ -761,7 +761,7 @@ Sie können einen BSTR aus dem Inhalt des Streams mit der [ReadFromStream-Funkti
 
 [!code-cpp[NVC_ATL_Utilities#45](../../atl/codesnippet/cpp/ccombstr-class_18.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)<br/>
 [ATL- und MFC-Zeichenfolgenkonvertierungsmakros](string-conversion-macros.md)

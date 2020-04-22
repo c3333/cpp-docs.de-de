@@ -13,12 +13,12 @@ helpviewer_keywords:
 - CStrBufT class
 - shared classes, CStrBufT
 ms.assetid: 6b50fa8f-87e8-4ed4-a229-157ce128710f
-ms.openlocfilehash: 84c67aa8ea819f420368a72a2374f800f3d89055
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 71d7b6f7d53e9613b1ac26013d73c1dbd1ef0aab
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317647"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746929"
 ---
 # <a name="cstrbuft-class"></a>CStrBufT-Klasse
 
@@ -84,7 +84,7 @@ Diese Klasse wird als Wrapperklasse zum Ersetzen von Aufrufen von [GetBuffer](..
 
 In erster Linie als `CStrBufT` Hilfsklasse konzipiert, bietet eine bequeme Möglichkeit für einen Entwickler, mit dem `ReleaseBuffer`Zeichenpuffer eines Zeichenfolgenobjekts zu arbeiten, ohne sich Gedanken darüber zu machen, wie oder wann er aufruft. Dies ist möglich, da das Wrapperobjekt bei einer Ausnahme oder mehreren beendenden Codepfaden natürlich aus dem Gültigkeitsbereich verschwindet. dadurch, dass der Destruktor die Zeichenfolgenressource freigibt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsimpstr.h
 
@@ -196,7 +196,7 @@ Legt fest, ob [CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimple
 
 Legt die Länge des Zeichenpuffers fest.
 
-```
+```cpp
 void SetLength(int nLength);
 ```
 
@@ -224,7 +224,7 @@ typedef CSimpleStringT<TCharType> StringType;
 
 `TCharType`ist der Zeichentyp, der zum Spezialisieren der Klassenvorlage verwendet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)

@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CTypedPtrList [MFC], RemoveTail
 - CTypedPtrList [MFC], SetAt
 ms.assetid: c273096e-1756-4340-864b-4a08b674a65e
-ms.openlocfilehash: 40dbfb822e71309e9675aba14d46d333ffa4ee06
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9f4899d4470903a4145cc171579e4b251b984f95
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373267"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747185"
 ---
 # <a name="ctypedptrlist-class"></a>CTypedPtrList-Klasse
 
@@ -99,7 +99,7 @@ In diesem Beispiel `CTypedPtrList`wird eine Instanz von erstellt, ein Objekt hin
 
 `CTypedPtrList`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxtempl.h
 
@@ -179,7 +179,7 @@ TYPE GetAt(POSITION position) const;
 *TYP*<br/>
 Vorlagenparameter, der den Typ der in der Liste gespeicherten Elemente angibt.
 
-*Position*<br/>
+*position*<br/>
 Ein POSITION-Wert, `GetHeadPosition` der `Find` von einem vorherigen oder Memberfunktionsaufruf zurückgegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -354,7 +354,7 @@ Sie müssen sicherstellen, dass die `RemoveTail`Liste nicht leer ist, bevor Sie 
 
 Diese Memberfunktion `BASE_CLASS`ruft **::SetAt**auf.
 
-```
+```cpp
 void SetAt(POSITION pos, TYPE newElement);
 ```
 
@@ -377,7 +377,7 @@ Sie müssen sicherstellen, dass Ihr POSITION-Wert eine gültige Position in der 
 
 Ausführlichere Anmerkungen finden Sie unter [CObList::SetAt](../../mfc/reference/coblist-class.md#setat).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel COLLECT](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

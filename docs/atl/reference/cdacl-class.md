@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - CDacl class
 ms.assetid: 2dc76616-6362-4967-b6cf-e2d39ca37ddd
-ms.openlocfilehash: 1540c90e3538d763708e161ba6c1a5e459bb2bdf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 713e78635fe261615a82ab518cdb2c68ac0eeed4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327151"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747738"
 ---
 # <a name="cdacl-class"></a>CDacl-Klasse
 
@@ -74,7 +74,7 @@ Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zu
 
 `CDacl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsecurity.h
 
@@ -235,7 +235,7 @@ Sie sollten sicherstellen, dass Sie nur eine DACL (discretionary access-control 
 
 Entfernt einen bestimmten ACE (Access-Control-Eintrag) aus dem `CDacl` Objekt.
 
-```
+```cpp
 void RemoveAce(UINT nIndex) throw();
 ```
 
@@ -252,7 +252,7 @@ Diese Methode wird von [CAtlArray::RemoveAt](../../atl/reference/catlarray-class
 
 Entfernt alle acEs (Access-Control-Einträge), die `CDacl` im Objekt enthalten sind.
 
-```
+```cpp
 void RemoveAllAces() throw();
 ```
 
@@ -260,7 +260,7 @@ void RemoveAllAces() throw();
 
 Entfernt jede `ACE` (Zugriffssteuerungseintrag) Struktur (falls vorhanden) im `CDacl` Objekt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sicherheitsbeispiel](../../overview/visual-cpp-samples.md)<br/>
 [CAcl-Klasse](../../atl/reference/cacl-class.md)<br/>

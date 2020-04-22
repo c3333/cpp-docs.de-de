@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - CDebugReportHook class
 ms.assetid: 798076c3-6e63-4286-83b8-aa1bbcd0c20c
-ms.openlocfilehash: 621d32a14618327873e6e0cce856c5792e1f8c46
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8380556bbe007326156bf0ec0eefc23052e8e056
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327109"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747720"
 ---
 # <a name="cdebugreporthook-class"></a>CDebugReportHook-Klasse
 
@@ -57,7 +57,7 @@ Mithilfe dieser Klasse können Sie Komponenten, die in nicht interaktiven [Fenst
 
 Beachten Sie, dass Debugberichte mithilfe des zugrunde liegenden Sicherheitskontexts des Threads gesendet werden. Der Identitätswechsel ist vorübergehend deaktiviert, sodass Debugberichte in Situationen angezeigt werden können, in denen der Identitätswechsel von Benutzern mit niedrigen Berechtigungen stattfindet, z. B. in Webanwendungen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlutil.h
 
@@ -127,7 +127,7 @@ Der Code in dieser Funktion wird im zugrunde liegenden Sicherheitskontext des au
 
 Rufen Sie diese Methode auf, um das Senden von Debugberichten an die named pipe zu beenden und den vorherigen Berichtshook wiederherzustellen.
 
-```
+```cpp
 void RemoveHook() throw();
 ```
 
@@ -139,7 +139,7 @@ Ruft [_CrtSetReportHook2](../../c-runtime-library/reference/crtsetreporthook2-cr
 
 Rufen Sie diese Methode auf, um mit dem Senden von Debugberichten an die named pipe zu beginnen.
 
-```
+```cpp
 void SetHook() throw();
 ```
 
@@ -173,7 +173,7 @@ Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
 Rufen Sie diese Methode auf, um die Zeit in Millisekunden festzulegen, die diese Klasse wartet, bis die benannte Pipe verfügbar wird.
 
-```
+```cpp
 void SetTimeout(DWORD dwTimeout);
 ```
 
@@ -182,6 +182,6 @@ void SetTimeout(DWORD dwTimeout);
 *dwTimeout*<br/>
 Die Zeit in Millisekunden, die diese Klasse wartet, bis die benannte Pipe verfügbar ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../atl/reference/atl-classes.md)

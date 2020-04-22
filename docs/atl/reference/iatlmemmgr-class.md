@@ -13,12 +13,12 @@ helpviewer_keywords:
 - memory, managing
 - memory, memory manager
 ms.assetid: 18b2c569-25fe-4464-bdb6-3b1abef7154a
-ms.openlocfilehash: c296c9de79c305d0f7d2f135f250d181d3cd667a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fcecf716e9d865b1b8590a733216576e0da4c2fb
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330057"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746005"
 ---
 # <a name="iatlmemmgr-class"></a>IAtlMemMgr-Klasse
 
@@ -37,7 +37,7 @@ __interface __declspec(uuid("654F7EF5-CFDF-4df9-A450-6C6A13C622C0")) IAtlMemMgr
 |||
 |-|-|
 |[Zuordnen](#allocate)|Rufen Sie diese Methode auf, um einen Speicherblock zu belegen.|
-|[Kostenlos](#free)|Rufen Sie diese Methode auf, um einen Speicherblock freizugeben.|
+|[Free](#free)|Rufen Sie diese Methode auf, um einen Speicherblock freizugeben.|
 |[GetSize](#getsize)|Rufen Sie diese Methode auf, um die Größe eines zugewiesenen Speicherblocks abzurufen.|
 |[Reservieren](#reallocate)|Rufen Sie diese Methode auf, um einen Speicherblock neu zuzuweisen.|
 
@@ -52,7 +52,7 @@ Diese Schnittstelle wird von [CComHeap](../../atl/reference/ccomheap-class.md), 
 
 [!code-cpp[NVC_ATL_Utilities#94](../../atl/codesnippet/cpp/iatlmemmgr-class_1.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlmem.h
 
@@ -60,7 +60,7 @@ Diese Schnittstelle wird von [CComHeap](../../atl/reference/ccomheap-class.md), 
 
 Rufen Sie diese Methode auf, um einen Speicherblock zu belegen.
 
-```
+```cpp
 void* Allocate(size_t nBytes) throw();
 ```
 
@@ -85,7 +85,7 @@ Ein Beispiel finden Sie in der [IAtlMemMgr-Übersicht](../../atl/reference/iatlm
 
 Rufen Sie diese Methode auf, um einen Speicherblock freizugeben.
 
-```
+```cpp
 void Free(void* p) throw();
 ```
 
@@ -127,7 +127,7 @@ Ein Beispiel finden Sie in der [IAtlMemMgr-Übersicht](../../atl/reference/iatlm
 
 Rufen Sie diese Methode auf, um den von diesem Speicher-Manager zugeordneten Arbeitsspeicher neu zuzuordnen.
 
-```
+```cpp
 void* Reallocate(void* p, size_t nBytes) throw();
 ```
 
@@ -967,6 +967,6 @@ Eine Beschreibung der verbleibenden Parameter und des Rückgabewerts finden Sie 
 
 Weitere Informationen finden Sie unter [Hostieren von ActiveX-Steuerelementen unter Verwendung von ATL AXHost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, das `IAxWinHostWindowLic::CreateControlLicEx`verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

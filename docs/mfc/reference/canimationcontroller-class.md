@@ -103,12 +103,12 @@ helpviewer_keywords:
 - CAnimationController [MFC], m_pTransitionFactory
 - CAnimationController [MFC], m_pTransitionLibrary
 ms.assetid: ed294c98-695e-40a6-b940-33ef1d40aa6b
-ms.openlocfilehash: 34a02567bfeb76666cc38ccf05dcc285a1f658f5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 489e931c4063e7bf06ace1cb130b9891253c94d4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369754"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750177"
 ---
 # <a name="canimationcontroller-class"></a>CAnimationController-Klasse
 
@@ -202,7 +202,7 @@ Die CAnimationController-Klasse ist die Schlüsselklasse, die Animationen verwal
 
 `CAnimationController`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -299,7 +299,7 @@ CAnimationController(void);
 
 Wird vom Framework aufgerufen, um die Gruppe zu bereinigen, wenn die Animation geplant wurde.
 
-```
+```cpp
 void CleanUpGroup(UINT32 nGroupID);
 void CleanUpGroup(CAnimationGroup* pGroup);
 ```
@@ -1010,7 +1010,7 @@ Diese Methode wird aufgerufen, wenn Sie Storyboard-Ereignisse mit CAnimationCont
 
 Entfernt alle Animationsgruppen aus dem Animationscontroller.
 
-```
+```cpp
 void RemoveAllAnimationGroups();
 ```
 
@@ -1022,7 +1022,7 @@ Alle Gruppen werden gelöscht, ihr Zeiger, wenn er auf Anwendungsebene gespeiche
 
 Entfernt eine Animationsgruppe mit der angegebenen ID aus dem Animationscontroller.
 
-```
+```cpp
 void RemoveAnimationGroup(UINT32 nGroupID);
 ```
 
@@ -1039,7 +1039,7 @@ Diese Methode entfernt eine Animationsgruppe aus der internen Liste von Gruppen 
 
 Entfernen Sie ein Animationsobjekt aus dem Animationscontroller.
 
-```
+```cpp
 void RemoveAnimationObject(
     CAnimationBaseObject* pObject,
     BOOL bNoDelete = FALSE);
@@ -1061,7 +1061,7 @@ Entfernt ein Animationsobjekt aus dem Animationscontroller und der Animationsgru
 
 Entfernt Übergänge aus Animationsobjekten, die zur angegebenen Gruppe gehören.
 
-```
+```cpp
 void RemoveTransitions(UINT32 nGroupID);
 ```
 
@@ -1104,7 +1104,7 @@ Sie müssen AnimateGroup aufrufen, wobei der Parameter bScheduleNow auf FALSE be
 
 Stellt eine Beziehung zwischen dem Animationscontroller und einem Fenster her.
 
-```
+```cpp
 void SetRelatedWnd(CWnd* pWnd);
 ```
 
@@ -1129,6 +1129,6 @@ virtual void UpdateAnimationManager();
 
 Durch aufrufende Methoden wird der Animations-Manager zur aktuellen Zeit gebracht, der Status von Storyboards bei Bedarf geändert und alle Animationsvariablen auf entsprechende interpolierte Werte aktualisiert. Intern ruft diese Methode IUIAnimationTimer::GetTime(timeNow) und IUIAnimationManager::Update(timeNow) auf. Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um dieses Verhalten anzupassen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -11,12 +11,12 @@ f1_keywords:
 helpviewer_keywords:
 - CNonStatelessWorker class
 ms.assetid: d00936c6-9e7d-49fb-b87d-417b963367d1
-ms.openlocfilehash: f3604f95c8217c7407c100671265140bbadbab78
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6264bb6bc9070b5ce170b294f9db0d371e7b6b71
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81326733"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747672"
 ---
 # <a name="cnonstatelessworker-class"></a>CNonStatelessWorker-Klasse
 
@@ -59,7 +59,7 @@ Diese Klasse ist ein einfacher Arbeitsthread für die Verwendung mit [CThreadPoo
 
 Der Vorteil dieser Klasse besteht darin, dass sie eine bequeme Möglichkeit bietet, das Zustandsmodell für vorhandene Arbeitsthreadklassen zu ändern. `CThreadPool`erstellt eine einzelne Arbeitskraft für die Lebensdauer des Threads. Wenn die Workerklasse den Status hält, wird sie über mehrere Anforderungen hinweg verwendet. Durch einfaches Umschließen `CNonStatelessWorker` dieser Klasse in `CThreadPool`der Vorlage vor der Verwendung mit ist die Lebensdauer der Arbeitskraft und des Status, den sie enthält, auf eine einzelne Anforderung beschränkt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlutil.h
 
@@ -67,7 +67,7 @@ Der Vorteil dieser Klasse besteht darin, dass sie eine bequeme Möglichkeit biet
 
 Implementierung von [WorkerArchetype::Execute](worker-archetype.md#execute).
 
-```
+```cpp
 void Execute(
     Worker::RequestType request,
     void* pvWorkerParam,
@@ -110,7 +110,7 @@ Diese Klasse behandelt denselben Arbeitsaufgabentyp wie die *Worker* Klasse, die
 
 Implementierung von [WorkerArchetype::Terminate](worker-archetype.md#terminate).
 
-```
+```cpp
 void Terminate(void* /* pvParam */) throw();
 ```
 
@@ -118,7 +118,7 @@ void Terminate(void* /* pvParam */) throw();
 
 Diese Klasse führt keine Bereinigung in `Terminate`durch.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CThreadPool-Klasse](../../atl/reference/cthreadpool-class.md)<br/>
 [Worker Archetype](../../atl/reference/worker-archetype.md)<br/>

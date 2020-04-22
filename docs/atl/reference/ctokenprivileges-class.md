@@ -18,12 +18,12 @@ f1_keywords:
 helpviewer_keywords:
 - CTokenPrivileges class
 ms.assetid: 89590105-f001-4014-870d-142926091231
-ms.openlocfilehash: ceb9aeca6b99e7fc9d08625e11cbdb182fb3dc9e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 75c09f723860540aa54cf3744cde7e61d9202f79
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330544"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747364"
 ---
 # <a name="ctokenprivileges-class"></a>CTokenPrivileges-Klasse
 
@@ -79,7 +79,7 @@ Die `CTokenPrivileges` Klasse ist ein Wrapper für die [TOKEN_PRIVILEGES](/windo
 
 Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zugriffssteuerung](/windows/win32/SecAuthZ/access-control) im Windows SDK.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsecurity.h
 
@@ -166,7 +166,7 @@ Diese Methode ist als Werkzeug zum Erstellen eingeschränkter Token nützlich.
 
 Löscht alle Berechtigungen aus `CTokenPrivileges` dem Zugriffstokenobjekt.
 
-```
+```cpp
 void DeleteAll() throw();
 ```
 
@@ -178,7 +178,7 @@ Löscht alle im `CTokenPrivileges` Zugriffstokenobjekt enthaltenen Berechtigunge
 
 Ruft Anzeigenamen für die im `CTokenPrivileges` Zugriffstokenobjekt enthaltenen Berechtigungen ab.
 
-```
+```cpp
 void GetDisplayNames(CNames* pDisplayNames) const throw(...);
 ```
 
@@ -221,7 +221,7 @@ Gibt die Anzahl der Bytes `TOKEN_PRIVILEGES` zurück, `CTokenPrivileges` die erf
 
 Ruft die lokal eindeutigen Bezeichner (LUIDs) und Attributflags aus dem `CTokenPrivileges` Objekt ab.
 
-```
+```cpp
 void GetLuidsAndAttributes(
     CLUIDArray* pPrivileges,
     CAttributes* pAttributes = NULL) const throw(...);
@@ -243,7 +243,7 @@ Diese Methode führt alle im `CTokenPrivileges` Zugriffstokenobjekt enthaltenen 
 
 Ruft den Namen und die `CTokenPrivileges` Attributflags aus dem Objekt ab.
 
-```
+```cpp
 void GetNamesAndAttributes(
     CNames* pNames,
     CAttributes* pAttributes = NULL) const throw(...);
@@ -330,7 +330,7 @@ operator const TOKEN_PRIVILEGES *() const throw(...);
 
 Gibt einen Wert auf einen [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) Zeiger auf die TOKEN_PRIVILEGES-Struktur.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sicherheitsbeispiel](../../overview/visual-cpp-samples.md)<br/>
 [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges)<br/>

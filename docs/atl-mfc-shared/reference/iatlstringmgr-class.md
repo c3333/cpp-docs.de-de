@@ -14,12 +14,12 @@ helpviewer_keywords:
 - memory, managing
 - IAtlStringMgr class
 ms.assetid: 722f0346-a770-4aa7-8f94-177be8dba823
-ms.openlocfilehash: 49ef7850edb18cd51092f282644973376abd4c7c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c3fabb7a7a6da4129787d219bd83b2a35fa0c4dd
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317483"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746610"
 ---
 # <a name="iatlstringmgr-class"></a>IAtlStringMgr-Klasse
 
@@ -39,7 +39,7 @@ __interface IAtlStringMgr
 |-|-|
 |[Zuordnen](#allocate)|Rufen Sie diese Methode auf, um eine neue Zeichenfolgendatenstruktur zuzuweisen.|
 |[Klon](#clone)|Rufen Sie diese Methode auf, um einen Zeiger an `CSimpleStringT`einen neuen Zeichenfolgen-Manager zur Verwendung mit einer anderen Instanz von zurückzugeben.|
-|[Kostenlos](#free)|Rufen Sie diese Methode auf, um eine Zeichenfolgendatenstruktur freizugeben.|
+|[Free](#free)|Rufen Sie diese Methode auf, um eine Zeichenfolgendatenstruktur freizugeben.|
 |[GetNilString](#getnilstring)|Gibt einen Zeiger `CStringData` auf das Objekt zurück, das von leeren Zeichenfolgenobjekten verwendet wird.|
 |[Reservieren](#reallocate)|Rufen Sie diese Methode auf, um eine Zeichenfolgendatenstruktur neu zuzuweisen.|
 
@@ -49,7 +49,7 @@ Diese Schnittstelle verwaltet den Speicher, der von den MFC-unabhängigen Zeiche
 
 Sie können diese Klasse auch verwenden, um einen benutzerdefinierten Speicher-Manager für Ihre benutzerdefinierte Zeichenfolgenklasse zu implementieren. Weitere Informationen finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsimpstr.h
 
@@ -108,7 +108,7 @@ Wenn der Speicher-Manager jedoch die Verwendung durch `CSimpleStringT`mehrere In
 
 Gibt eine Zeichenfolgendatenstruktur frei.
 
-```
+```cpp
 void Free(CStringData* pData) throw();
 ```
 
@@ -181,7 +181,7 @@ Rufen Sie [IAtlStringMgr::Free](#free) auf, um den von dieser Methode zugewiesen
 > [!NOTE]
 > Anwendungsbeispiele finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)

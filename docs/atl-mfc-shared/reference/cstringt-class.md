@@ -80,12 +80,12 @@ helpviewer_keywords:
 - shared classes, CStringT
 - CStringT class
 ms.assetid: 7cacc59c-425f-40f1-8f5b-6db921318ec9
-ms.openlocfilehash: 90f63b474f509b4d1a15ad6fe11bda61c343f483
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8fcce4c426cd99785d34dc080f238cc78cdfee36
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317591"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746707"
 ---
 # <a name="cstringt-class"></a>CStringT-Klasse
 
@@ -269,7 +269,7 @@ Da `CStringT` ein Vorlagenargument verwendet wird, um den unterstützten Zeichen
 
 `CStringT`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Header|Zweck|
 |------------|-------------|
@@ -306,7 +306,7 @@ Das folgende Beispiel veranschaulicht die Verwendung von `CStringT::AllocSysStri
 
 Konvertiert alle Zeichen in `CStringT` diesem Objekt aus dem ANSI-Zeichensatz in den OEM-Zeichensatz.
 
-```
+```cpp
 void AnsiToOem();
 ```
 
@@ -322,7 +322,7 @@ Die Funktion ist nicht verfügbar, wenn _UNICODE definiert ist.
 
 Fügt formatierte Daten an `CStringT` ein vorhandenes Objekt an.
 
-```
+```cpp
 void __cdecl AppendFormat(PCXSTR pszFormat, [, argument] ...);
 void __cdecl AppendFormat(UINT nFormatID, [, argument] ...);
 ```
@@ -696,7 +696,7 @@ Sucht das erste Vorkommen eines der Zeichen in *pszCharSet*.
 
 Schreibt formatierte Daten `CStringT` auf die gleiche Weise, wie [sprintf_s](../../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md) Daten in ein Zeichenarray im C-Stil formatiert.
 
-```
+```cpp
 void __cdecl Format(UINT nFormatID, [, argument]...);
 void __cdecl Format(PCXSTR pszFormat,  [, argument] ...);
 ```
@@ -730,7 +730,7 @@ Weitere Informationen finden Sie unter [Format Specification Syntax: printf and 
 
 Formatiert eine Nachrichtenzeichenfolge.
 
-```
+```cpp
 void __cdecl FormatMessage(UINT nFormatID, [, argument]...);
 void __cdecl FormatMessage(PCXSTR pszFormat, [, argument]...);
 ```
@@ -763,7 +763,7 @@ Jede Einfügung muss über einen entsprechenden Parameter verfügen, der dem Par
 
 Formatiert eine Nachrichtenzeichenfolge mithilfe einer Variablenargumentliste.
 
-```
+```cpp
 void FormatMessageV(PCXSTR pszFormat, va_list* pArgList);
 ```
 
@@ -788,7 +788,7 @@ Weitere Informationen finden Sie unter die Windows [FormatMessage-Funktion](/win
 
 Formatiert eine Nachrichtenzeichenfolge mithilfe einer Variablenargumentliste.
 
-```
+```cpp
 void FormatV(PCXSTR pszFormat, va_list args);
 ```
 
@@ -797,7 +797,7 @@ void FormatV(PCXSTR pszFormat, va_list args);
 *pszFormat*<br/>
 Zeigt auf die Formatsteuerungszeichenfolge. Es wird auf Einfügungen gescannt und entsprechend formatiert. Die Formatzeichenfolge ähnelt Laufzeitfunktion `printf`-style-Formatzeichenfolgen, außer sie ermöglicht das Einfügen der Parameter in beliebiger Reihenfolge.
 
-*Args*<br/>
+*args*<br/>
 Zeiger auf eine Liste von Argumenten.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1012,7 +1012,7 @@ Bei Multibyte-Zeichensätzen (MBCS) bezieht sich *nCount* auf jedes 8-Bit-Zeiche
 
 Konvertiert alle Zeichen in `CStringT` diesem Objekt aus dem OEM-Zeichensatz in den ANSI-Zeichensatz.
 
-```
+```cpp
 void OemToAnsi();
 ```
 
@@ -1778,7 +1778,7 @@ Die `CStringT& TrimRight()` Version erfordert keine Parameter. Es schneidet alle
 
 [!code-cpp[NVC_ATLMFC_Utilities#138](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_42.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)<br/>

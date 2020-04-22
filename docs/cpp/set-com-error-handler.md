@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - _set_com_error_handler function
 ms.assetid: 49fe4fca-5e37-4d83-abaf-15be5ce37f94
-ms.openlocfilehash: 226dce24de68edd66ca68c43e41ce0cb5b8a1b48
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: debad733f351c710ada342e29fa95a4d1ff03b7d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857293"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749805"
 ---
 # <a name="_set_com_error_handler"></a>_set_com_error_handler
 
@@ -17,7 +17,7 @@ Ersetzt die Standardfunktion für die COM-Fehlerbehandlung. **_set_com_error_han
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 void __stdcall _set_com_error_handler(
    void (__stdcall *pHandler)(
       HRESULT hr,
@@ -26,20 +26,20 @@ void __stdcall _set_com_error_handler(
 );
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>Parameter
 
 *pHandler*<br/>
 Zeiger auf die Ersetzungsfunktion.
 
-*hr*<br/>
+*Hr*<br/>
 HRESULT-Informationen.
 
 *perrinfo*<br/>
 `IErrorInfo`-Objekt
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Standardmäßig verarbeitet [_com_raise_error](../cpp/com-raise-error.md) alle com-Fehler. Sie können dieses Verhalten ändern, indem Sie **_set_com_error_handler** verwenden, um eine eigene Fehler Behandlungs Funktion aufzurufen.
+Standardmäßig [verarbeitet _com_raise_error](../cpp/com-raise-error.md) alle COM-Fehler. Sie können dieses Verhalten ändern, indem Sie **_set_com_error_handler** verwenden, um Ihre eigene Fehlerbehandlungsfunktion aufzurufen.
 
 Die Ersetzungsfunktion muss über eine Signatur verfügen, die der von `_com_raise_error` entspricht.
 
@@ -84,12 +84,12 @@ int main()
 Exception raised: Unable to establish the connection!
 ```
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<comdef.h>
+**Kopfzeile:** \<comdef.h>
 
-**Lib:** Wenn die **/Zc: wchar_t** -Compileroption angegeben ist (Standardeinstellung), verwenden Sie "comsuppw. lib" oder "comsuppwd. lib". Wenn die **/Zc: wchar_t-Compileroption** angegeben ist, verwenden Sie comsupp. lib. Weitere Informationen, einschließlich Informationen zum Festlegen dieser Option in der IDE, finden Sie unter [/Zc: wchar_t (wchar_t ist System eigener Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md).
+**Lib:** Wenn die Compileroption **/Zc:wchar_t** angegeben ist (Standardeinstellung), verwenden Sie comsuppw.lib oder comsuppwd.lib. Wenn die Compileroption **/Zc:wchar_t-** angegeben ist, verwenden Sie comsupp.lib. Weitere Informationen, einschließlich zum Festlegen dieser Option in der IDE, finden Sie unter [/Zc:wchar_t (wchar_t ist Systemeigener Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Globale COM-Funktionen des Compilers](../cpp/compiler-com-global-functions.md)

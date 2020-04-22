@@ -22,12 +22,12 @@ helpviewer_keywords:
 - contained windows
 - CContainedWindowT class
 ms.assetid: cde0ca36-9347-4068-995a-d294dae57ca9
-ms.openlocfilehash: cde9c73a195303e57758cb4f27184b5136bdaf14
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7b89346bbc62cdda808b193a199fdf121f052ebb
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327216"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747745"
 ---
 # <a name="ccontainedwindowt-class"></a>CcontainedWindowT-Klasse
 
@@ -116,7 +116,7 @@ Wenn Sie das **Steuerelement Hinzufügen basierend auf** der Option im ATL-Proje
 
 `CContainedWindowT`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlwin.h
 
@@ -214,7 +214,7 @@ HWND Create(
 [in] Das Handle für das übergeordnete oder Besitzerfenster.
 
 *Rect*<br/>
-[in] Eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position des Fensters angibt. Der `RECT` kann durch Zeiger oder durch Verweis übergeben werden.
+[in] Eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position des Fensters angibt. Der `RECT` kann durch Zeiger oder durch Verweis übergeben werden.
 
 *szWindowName*<br/>
 [in] Gibt den Namen des Fensters an. Der Standardwert ist NULL.
@@ -390,7 +390,7 @@ Das unterklassige Fenster verwendet jetzt [CContainedWindowT::WindowProc](#windo
 
 Ändert, welche Meldungszuordnung zum Verarbeiten der Nachrichten des enthaltenen Fensters verwendet wird.
 
-```
+```cpp
 void SwitchMessageMap(DWORD dwMsgMapID);
 ```
 
@@ -460,7 +460,7 @@ Das Ergebnis der Nachrichtenverarbeitung.
 
 `WindowProc`leitet Nachrichten an die Nachrichtenzuordnung weiter, die von [m_dwMsgMapID](#m_dwmsgmapid)identifiziert wurde. `WindowProc` Ruft bei Bedarf [DefWindowProc](#defwindowproc) zur zusätzlichen Nachrichtenverarbeitung auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWindow-Klasse](../../atl/reference/cwindow-class.md)<br/>
 [CWindowImpl-Klasse](../../atl/reference/cwindowimpl-class.md)<br/>

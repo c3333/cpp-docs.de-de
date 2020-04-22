@@ -49,12 +49,12 @@ f1_keywords:
 helpviewer_keywords:
 - CPathT class
 ms.assetid: eba4137d-1fd2-4b44-a2e1-0944db64df3c
-ms.openlocfilehash: 13f46f549c7dd99852be0f322aef560cb454ed2a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: c10b854ae5c2d7167a067675b1391be24b6a8122
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81331472"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746595"
 ---
 # <a name="cpatht-class"></a>CPathT-Klasse
 
@@ -158,7 +158,7 @@ Die ATL/MFC-Zeichenfolgenklasse, die für den Pfad verwendet werden soll (siehe 
 
 `typedef CPathT< CStringW > CPathW;`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlpath.h
 
@@ -166,7 +166,7 @@ Die ATL/MFC-Zeichenfolgenklasse, die für den Pfad verwendet werden soll (siehe 
 
 Rufen Sie diese Methode auf, um am Ende einer Zeichenfolge einen umgekehrten Schrägstrich hinzuzufügen, um die richtige Syntax für einen Pfad zu erstellen. Wenn der Pfad bereits einen nachgestellten umgekehrten Schrägstrich hat, wird kein umgekehrter Schrägstrich hinzugefügt.
 
-```
+```cpp
 void AddBackslash();
 ```
 
@@ -220,7 +220,7 @@ Weitere Informationen finden Sie unter [PathAppend](/windows/win32/api/shlwapi/n
 
 Rufen Sie diese Methode auf, um einen Stammpfad aus einer bestimmten Laufwerknummer zu erstellen.
 
-```
+```cpp
 void BuildRoot(int iDrive);
 ```
 
@@ -237,7 +237,7 @@ Weitere Informationen finden Sie unter [PathBuildRoot](/windows/win32/api/shlwap
 
 Rufen Sie diese Methode auf, um den Pfad in kanonische Form zu konvertieren.
 
-```
+```cpp
 void Canonicalize();
 ```
 
@@ -249,7 +249,7 @@ Weitere Informationen finden Sie unter [PathCanonicalize](/windows/win32/api/shl
 
 Rufen Sie diese Methode auf, um eine Zeichenfolge, die einen Verzeichnisnamen darstellt, und eine Zeichenfolge, die einen Dateipfadnamen darstellt, in einem Pfad zu verketten.
 
-```
+```cpp
 void Combine(PCXSTR pszDir, PCXSTR  pszFile);
 ```
 
@@ -712,7 +712,7 @@ typedef StringType::PXSTR PXSTR;
 
 Rufen Sie diese Methode auf, um den Pfad in Anführungszeichen einzuschließen, wenn er Leerzeichen enthält.
 
-```
+```cpp
 void QuoteSpaces();
 ```
 
@@ -758,7 +758,7 @@ Weitere Informationen finden Sie unter [PathRelativePathTo](/windows/win32/api/s
 
 Rufen Sie diese Methode auf, um alle Befehlszeilenargumente aus dem Pfad zu entfernen.
 
-```
+```cpp
 void RemoveArgs();
 ```
 
@@ -770,7 +770,7 @@ Weitere Informationen finden Sie unter [PathRemoveArgs](/windows/win32/api/shlwa
 
 Rufen Sie diese Methode auf, um den nachgestellten umgekehrten Schrägstrich aus dem Pfad zu entfernen.
 
-```
+```cpp
 void RemoveBackslash();
 ```
 
@@ -782,7 +782,7 @@ Weitere Informationen finden Sie unter [PathRemoveBackslash](/windows/win32/api/
 
 Rufen Sie diese Methode auf, um alle führenden und nachfolgenden Leerzeichen aus dem Pfad zu entfernen.
 
-```
+```cpp
 void RemoveBlanks();
 ```
 
@@ -794,7 +794,7 @@ Weitere Informationen finden Sie unter [PathRemoveBlanks](/windows/win32/api/shl
 
 Rufen Sie diese Methode auf, um die Dateierweiterung aus dem Pfad zu entfernen, falls vorhanden.
 
-```
+```cpp
 void RemoveExtension();
 ```
 
@@ -859,7 +859,7 @@ Weitere Informationen finden Sie unter [PathSkipRoot](/windows/win32/api/shlwapi
 
 Rufen Sie diese Methode auf, um den Pfadteil eines vollqualifizierten Pfads und Dateinamens zu entfernen.
 
-```
+```cpp
 void StripPath();
 ```
 
@@ -887,7 +887,7 @@ Weitere Informationen finden Sie unter [PathStripToRoot](/windows/win32/api/shlw
 
 Rufen Sie diese Methode auf, um Anführungszeichen vom Anfang und Ende eines Pfads zu entfernen.
 
-```
+```cpp
 void UnquoteSpaces();
 ```
 
@@ -907,7 +907,7 @@ typedef StringType::XCHAR XCHAR;
 
 `StringType`ist der Vorlagenparameter für `CPathT`.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../atl/reference/atl-classes.md)<br/>
 [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md)

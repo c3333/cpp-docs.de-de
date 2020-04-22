@@ -188,12 +188,12 @@ helpviewer_keywords:
 - CMFCRibbonBar [MFC], ToggleMimimizeState
 - CMFCRibbonBar [MFC], TranslateChar
 ms.assetid: a65d06fa-1a28-4cc0-8971-bc9d7c9198fe
-ms.openlocfilehash: cf3cb7a6e4bc4bc6c79265eb5138aca9fb55ce21
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 51d7ad249d3f3a2556f461aea1a33dd7cbc787eb
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361438"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749748"
 ---
 # <a name="cmfcribbonbar-class"></a>CMFCRibbonBar-Klasse
 
@@ -335,7 +335,7 @@ Informationen zum Hinzufügen einer Multifunktionsleistenleiste zu Ihrer vorhand
 
 [CMFCRibbonBar](../../mfc/reference/cmfcribbonbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxribbonbar.h
 
@@ -581,7 +581,7 @@ Die Kategorie der Schnellzugriffssymbolleisten wird nur im Dialogfeld für die A
 
 Fügt das angegebene Multifunktionsleistenelement zur Registerkartenzeile der Multifunktionsleistenleiste hinzu.
 
-```
+```cpp
 void AddToTabs(CMFCRibbonBaseElement* pElement);
 ```
 
@@ -679,7 +679,7 @@ TRUE, wenn das Fenster erstellt wurde; andernfalls FALSE.
 
 Schließt alle Keytip-Steuerelemente auf der Multifunktionsleistenleiste.
 
-```
+```cpp
 void DeactivateKeyboardFocus(BOOL bSetFocus = TRUE);
 ```
 
@@ -732,7 +732,7 @@ virtual void DWMCompositionChanged();
 
 Aktiviert oder deaktiviert die Keytip-Funktion für die Multifunktionsleistenleiste.
 
-```
+```cpp
 void EnableKeyTips(BOOL bEnable = TRUE);
 ```
 
@@ -749,7 +749,7 @@ Wenn Sie diese Funktion aktivieren, werden wichtige Tipps angezeigt, wenn der Be
 
 Aktiviert oder deaktiviert die **Print Preview-Funktion.**
 
-```
+```cpp
 void EnablePrintPreview(BOOL bEnable = TRUE);
 ```
 
@@ -768,7 +768,7 @@ Standardmäßig ist die **Print Preview-Funktion** aktiviert.
 
 Aktiviert oder deaktiviert QuickInfos und optionale QuickInfo-Beschreibungen auf der Multifunktionsleistenleiste.
 
-```
+```cpp
 void EnableToolTips(
     BOOL bEnable = TRUE,
     BOOL bEnableDescr = TRUE);
@@ -865,7 +865,7 @@ Der nullbasierte Index einer Multifunktionsleistenkategorie, wenn die Methode er
 
 Passt das Layout aller Elemente in der Multifunktionsleistenleiste und im übergeordneten Fenster an und zeichnet das gesamte Fenster neu.
 
-```
+```cpp
 void ForceRecalcLayout();
 ```
 
@@ -1017,7 +1017,7 @@ Das Multifunktionsleistenelement, das derzeit heruntergelassen wird; oder NULL, 
 
 Ruft ein Array von Zeigern auf alle Multifunktionsleistenelemente ab, die über eine bestimmte Befehls-ID verfügen.
 
-```
+```cpp
 void GetElementsByID(
     UINT uiCmdID,
     CArray<CMFCRibbonBaseElement*,CMFCRibbonBaseElement*>& arButtons);
@@ -1060,7 +1060,7 @@ In der folgenden Tabelle ist die mögliche Kombination von Flags für den Rückg
 
 Ruft die Befehls-IDs für die angegebene Auflistung von Menübandelementen auf der Multifunktionsleistenleiste ab.
 
-```
+```cpp
 void GetItemIDsList(CList<UINT, UINT>& lstItems,
     BOOL bHiddenOnly = FALSE) const;
 ```
@@ -1177,7 +1177,7 @@ Ein Zeiger auf das Menübandelement auf der Schnellzugriffssymbolleiste, dessen 
 
 Ruft eine Liste der Befehls-IDs für die Menübandelemente auf der Schnellzugriffssymbolleiste ab.
 
-```
+```cpp
 void GetQuickAccessCommands(CList<UINT,UINT>& lstCommands);
 ```
 
@@ -1286,7 +1286,7 @@ Wenn eine Kontextkategorie aktiv ist, wird die aktive Kategorie auf die erste si
 
 Blendet alle Tastenspitzen auf der Multifunktionsleistenleiste aus.
 
-```
+```cpp
 void HideKeyTips();
 ```
 
@@ -1635,7 +1635,7 @@ TRUE, wenn das Tastenanschlagereignis verarbeitet wurde; andernfalls FALSE.
 
 Entfernt eine QuickInfo aus der Ansicht.
 
-```
+```cpp
 void PopTooltip();
 ```
 
@@ -1676,7 +1676,7 @@ Nach der Layoutanpassung wird die Anzeige der Multifunktionsleisten aktualisiert
 
 Löscht alle Menübandkategorien aus der Multifunktionsleistenleiste.
 
-```
+```cpp
 void RemoveAllCategories();
 ```
 
@@ -1688,7 +1688,7 @@ Diese Methode löscht alle Menübandkategorien aus dem Arbeitsspeicher und aus d
 
 Entfernt alle Menübandelemente aus dem Registerkartenbereich.
 
-```
+```cpp
 void RemoveAllFromTabs();
 ```
 
@@ -1749,7 +1749,7 @@ Wenn die von *pCategory* angegebene Kategorie nicht angezeigt wird, kann sie nic
 
 Ordnet die Systemschaltflächen auf der Multifunktionsleistenleiste, die zu einem untergeordneten MDI-Fenster (Multiple Document Interface) gehören, dem angegebenen untergeordneten MDI-Fenster zu.
 
-```
+```cpp
 void SetActiveMDIChild(CWnd* pWnd);
 ```
 
@@ -1764,7 +1764,7 @@ void SetActiveMDIChild(CWnd* pWnd);
 
 Weist der Menübandleiste eine Anwendungsschaltfläche zu.
 
-```
+```cpp
 void SetApplicationButton(
     CMFCRibbonApplicationButton* pButton,
     CSize sizeButton);
@@ -1822,7 +1822,7 @@ Die optionale Menü-Keytip ist für Multifunktionsleistenelemente mit einer gete
 
 Legt die Tastaturnavigationsebene fest, während der Benutzer die Tastenspitzen drückt, die auf der Multifunktionsleistenleiste enthalten sind.
 
-```
+```cpp
 void SetKeyboardNavigationLevel(
     CObject* pLevel,
     BOOL bSetFocus = TRUE);
@@ -1844,7 +1844,7 @@ Die Tastaturnavigation der Multifunktionsleisten beginnt, wenn der Benutzer die 
 
 Passt die Multifunktionsleistenleiste an, wenn die Fenstergröße eines untergeordneten Fensters der Multidocument-Schnittstelle (MDI) in den maximierten Zustand eintritt oder verlässt.
 
-```
+```cpp
 void SetMaximizeMode(
     BOOL bMax,
     CWnd* pWnd = NULL);
@@ -1866,7 +1866,7 @@ Die Multifunktionsleistenleiste zeigt Systemschaltflächen für ein untergeordne
 
 Fügt der Symbolleiste für den Schnellzugriff eines oder mehrere Menübandelemente hinzu.
 
-```
+```cpp
 void SetQuickAccessCommands(
     const CList<UINT,UINT>& lstCommands,
     BOOL bRecalcLayout=TRUE);
@@ -1890,13 +1890,13 @@ Im folgenden Beispiel wird `SetQuickAccessCommands` veranschaulicht, `CMFCRibbon
 
 Legt die Symbolleiste für den Schnellzugriff auf den Standardzustand fest.
 
-```
+```cpp
 void SetQuickAccessDefaultState(const CMFCRibbonQuickAccessToolBarDefaultState& state);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Staat*<br/>
+*state*<br/>
 [in] Der Standardzustand der Schnellzugriffssymbolleiste.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1913,7 +1913,7 @@ Im folgenden Beispiel wird `SetQuickAccessDefaultState` veranschaulicht, `CMFCRi
 
 Positioniert die Symbolleiste für den Schnellzugriff über oder unter der Multifunktionsleistenleiste.
 
-```
+```cpp
 void SetQuickAccessToolbarOnTop(BOOL bOnTop);
 ```
 
@@ -1926,7 +1926,7 @@ void SetQuickAccessToolbarOnTop(BOOL bOnTop);
 
 Legt die regulären und großen Größen der festen QuickA-Breite für die Multifunktionsleisten fest.
 
-```
+```cpp
 void SetTooltipFixedWidth(
     int nWidthRegular,
     int nWidthLargeImage);
@@ -1948,7 +1948,7 @@ Wenn Sie einen Parameter auf 0 setzen, variiert die entsprechende Breite.
 
 Blendet die angegebene Menübandkategorie ein oder aus.
 
-```
+```cpp
 void ShowCategory(
     int nIndex,
     BOOL bShow=TRUE);
@@ -1966,7 +1966,7 @@ void ShowCategory(
 
 Blendet die Kontextkategorien mit der angegebenen ID ein oder aus.
 
-```
+```cpp
 void ShowContextCategories(
     UINT uiContextID,
     BOOL bShow=TRUE);
@@ -1984,7 +1984,7 @@ void ShowContextCategories(
 
 Zeigt die Tastenspitzen für jedes Menübandelement auf der Multifunktionsleistenleiste an.
 
-```
+```cpp
 void ShowKeyTips();
 ```
 
@@ -1994,7 +1994,7 @@ void ShowKeyTips();
 
 Schaltet die Menübandleiste zwischen den minimierten und maximierten Zustand um.
 
-```
+```cpp
 void ToggleMimimizeState();
 ```
 
@@ -2131,7 +2131,7 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 Aktiviert oder deaktiviert das Windows 7-Look (kleine rechteckige Anwendungsschaltfläche) für die Multifunktionsleiste.
 
-```
+```cpp
 void SetWindows7Look(
     BOOL bWindows7Look,
     BOOL bRecalc = TRUE);
@@ -2147,7 +2147,7 @@ TRUE berechnet das Menübandlayout neu. FALSE sonst.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

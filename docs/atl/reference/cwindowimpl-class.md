@@ -18,12 +18,12 @@ helpviewer_keywords:
 - CWindowImpl class
 - subclassing windows, ATL
 ms.assetid: 02eefd45-a0a6-4d1b-99f6-dbf627e2cc2f
-ms.openlocfilehash: d7f7f7363eb123181bd6e0389663810346094cba
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ea150195f06d12cd6549b9026714d9e1bbf392df
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330299"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745999"
 ---
 # <a name="cwindowimpl-class"></a>CWindowImpl-Klasse
 
@@ -122,7 +122,7 @@ Der Zerstörungserder der `CWindowImplRoot`Basisklasse stellt sicher, dass das F
 
 `CWindowImpl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlwin.h
 
@@ -147,7 +147,7 @@ HWND Create(
 [in] Das Handle für das übergeordnete oder Besitzerfenster.
 
 *Rect*<br/>
-[in] Eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position des Fensters angibt. Der `RECT` kann durch Zeiger oder durch Verweis übergeben werden.
+[in] Eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position des Fensters angibt. Der `RECT` kann durch Zeiger oder durch Verweis übergeben werden.
 
 *szWindowName*<br/>
 [in] Gibt den Namen des Fensters an. Der Standardwert ist NULL.
@@ -375,7 +375,7 @@ Das Ergebnis der Nachrichtenverarbeitung.
 
 Sie können `WindowProc` überschreiben, um einen anderen Mechanismus für die Verarbeitung von Nachrichten bereitzustellen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)<br/>
 [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md)<br/>

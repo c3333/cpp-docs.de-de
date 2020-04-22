@@ -10,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - CComCritSecLock class
 ms.assetid: 223152a1-86c3-4ef9-89a7-f455fe791b0e
-ms.openlocfilehash: 24d141c5b0ec703feadcd7db96da33f9de940dda
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4b2ef093c1142b592ad2a6605a08bd8c34a643ea
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327950"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748074"
 ---
 # <a name="ccomcritseclock-class"></a>CComCritSecLock-Klasse
 
@@ -52,7 +52,7 @@ Das zu sperrende und zu entsperrte Objekt.
 
 Verwenden Sie diese Klasse, um Objekte sicherer zu sperren und zu entsperren als mit der [CComCriticalSection-Klasse](../../atl/reference/ccomcriticalsection-class.md) oder [cComAutoCriticalSection-Klasse](../../atl/reference/ccomautocriticalsection-class.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -108,7 +108,7 @@ Wenn das Objekt bereits gesperrt ist, tritt ein ASSERT-Fehler in Debugbuilds auf
 
 Rufen Sie diese Methode auf, um das Objekt des kritischen Abschnitts zu entsperren.
 
-```
+```cpp
 void Unlock() throw();
 ```
 
@@ -116,7 +116,7 @@ void Unlock() throw();
 
 Wenn das Objekt bereits entsperrt ist, tritt ein ASSERT-Fehler in Debugbuilds auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CComCriticalSection-Klasse](../../atl/reference/ccomcriticalsection-class.md)<br/>
 [CComAutoCriticalSection-Klasse](../../atl/reference/ccomautocriticalsection-class.md)

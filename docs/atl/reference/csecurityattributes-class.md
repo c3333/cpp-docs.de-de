@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - CSecurityAttributes class
 ms.assetid: a094880c-52e1-4a28-97ff-752d5869908e
-ms.openlocfilehash: 113bcebb7461415590156206ee7aa4c91e0e93d3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e0ac813008a028bb233adfb4c7409a0ad62a6b78
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330982"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746503"
 ---
 # <a name="csecurityattributes-class"></a>CSecurityAttributes-Klasse
 
@@ -55,7 +55,7 @@ Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zu
 
 `CSecurityAttributes`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsecurity.h
 
@@ -80,7 +80,7 @@ Gibt an, ob das zurückgegebene Handle geerbt wird, wenn ein neuer Prozess erste
 
 Rufen Sie diese Methode auf, `CSecurityAttributes` um die Attribute des Objekts festzulegen.
 
-```
+```cpp
 void Set(const CSecurityDesc& rSecurityDescriptor, bool bInheritHandle = false) throw(...);
 ```
 
@@ -96,7 +96,7 @@ Gibt an, ob das zurückgegebene Handle geerbt wird, wenn ein neuer Prozess erste
 
 Diese Methode wird vom Konstruktor verwendet, um das `CSecurityAttributes` Objekt zu initialisieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sicherheitsbeispiel](../../overview/visual-cpp-samples.md)<br/>
 [Security_attributes](/previous-versions/windows/desktop/legacy/aa379560\(v=vs.85\))<br/>

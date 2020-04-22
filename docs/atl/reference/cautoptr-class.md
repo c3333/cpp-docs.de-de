@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAutoPtr class
 ms.assetid: 08988d53-4fb0-4711-bdfc-8ac29c63f410
-ms.openlocfilehash: cb8e3d6b71db6ab60b3b246bd8c5bf4f2c9aaa34
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2fa6eb26c2e2cd569d74c02d8303768b1aeb4f1c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321257"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748271"
 ---
 # <a name="cautoptr-class"></a>CAutoPtr-Klasse
 
@@ -81,7 +81,7 @@ Diese Klasse stellt Methoden zum Erstellen und Verwalten eines intelligenten Zei
 
 Siehe auch [CAutoPtrArray](../../atl/reference/cautoptrarray-class.md) und [CAutoPtrList,](../../atl/reference/cautoptrlist-class.md) wenn Arrays oder Listen von intelligenten Zeigern erforderlich sind.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -93,7 +93,7 @@ Siehe auch [CAutoPtrArray](../../atl/reference/cautoptrarray-class.md) und [CAut
 
 Rufen Sie diese Methode auf, um die Besitzverhältnisse eines vorhandenen Zeigers zu übernehmen.
 
-```
+```cpp
 void Attach(T* p) throw();
 ```
 
@@ -179,7 +179,7 @@ Siehe das Beispiel in der [CAutoPtr Übersicht](../../atl/reference/cautoptr-cla
 
 Rufen Sie diese Methode auf, `CAutoPtr`um ein Objekt zu löschen, auf das von einem verwiesen wird.
 
-```
+```cpp
 void Free() throw();
 ```
 
@@ -267,7 +267,7 @@ Gibt einen Zeiger auf den in der Klassenvorlage definierten Objektdatentyp zurü
 
 Siehe das Beispiel in der [CAutoPtr Übersicht](../../atl/reference/cautoptr-class.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CHeapPtr-Klasse](../../atl/reference/cheapptr-class.md)<br/>
 [CAutoVectorPtr-Klasse](../../atl/reference/cautovectorptr-class.md)<br/>

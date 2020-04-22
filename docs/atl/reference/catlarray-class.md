@@ -25,12 +25,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlArray class
 ms.assetid: 0b503aa8-2357-40af-a326-6654bf1da098
-ms.openlocfilehash: 85168af654d3d63e06559486b464938b7fd90ad3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 607af2adaa3ef28a768812f3c811eb2ed3169ad9
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321574"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748793"
 ---
 # <a name="catlarray-class"></a>CAtlArray-Klasse
 
@@ -99,7 +99,7 @@ Für Arrays mit einer kleinen Anzahl von Elementen kann die ATL-Klasse [CSimpleA
 
 Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcoll.h
 
@@ -162,7 +162,7 @@ In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Argument kein
 
 Rufen Sie diese Methode auf, um zu bestätigen, dass das Arrayobjekt gültig ist.
 
-```
+```cpp
 void AssertValid() const;
 ```
 
@@ -206,7 +206,7 @@ Gibt alle Ressourcen frei, die vom Arrayobjekt verwendet werden.
 
 Rufen Sie diese Methode auf, um die Elemente eines Arrays in ein anderes zu kopieren.
 
-```
+```cpp
 void Copy(const CAtlArray<E, ETraits>& aSrc);
 ```
 
@@ -234,7 +234,7 @@ In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das vorhandene `CAtlArray` Ob
 
 Rufen Sie diese Methode auf, um alle leeren Elemente aus dem Array zu entfernen.
 
-```
+```cpp
 void FreeExtra() throw();
 ```
 
@@ -319,7 +319,7 @@ typedef ETraits::INARGTYPE INARGTYPE;
 
 Rufen Sie diese Methode auf, um ein Array in ein anderes einzufügen.
 
-```
+```cpp
 void InsertArrayAt(size_t iStart, const CAtlArray<E, ETraits>* paNew);
 ```
 
@@ -348,7 +348,7 @@ In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Objekt ungül
 
 Rufen Sie diese Methode auf, um ein neues Element (oder mehrere Kopien eines Elements) in das Arrayobjekt einzufügen.
 
-```
+```cpp
 void InsertAt(size_t iElement, INARGTYPE element, size_t nCount = 1);
 ```
 
@@ -429,7 +429,7 @@ typedef ETraits::OUTARGTYPE OUTARGTYPE;
 
 Rufen Sie diese Methode auf, um alle Elemente aus dem Arrayobjekt zu entfernen.
 
-```
+```cpp
 void RemoveAll() throw();
 ```
 
@@ -447,7 +447,7 @@ Siehe beispielfür [CAtlArray::IsEmpty](#isempty).
 
 Rufen Sie diese Methode auf, um ein oder mehrere Elemente aus dem Array zu entfernen.
 
-```
+```cpp
 void RemoveAt(size_t iElement, size_t nCount = 1);
 ```
 
@@ -473,7 +473,7 @@ In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Objekt ungül
 
 Rufen Sie diese Methode auf, um den Wert eines Elements im Arrayobjekt festzulegen.
 
-```
+```cpp
 void SetAt(size_t iElement, INARGTYPE element);
 ```
 
@@ -527,7 +527,7 @@ Siehe Beispiel für [CAtlArray::GetData](#getdata).
 
 Rufen Sie diese Methode auf, um den Wert eines Elements im Arrayobjekt festzulegen und das Array nach Bedarf zu erweitern.
 
-```
+```cpp
 void SetAtGrow(size_t iElement, INARGTYPE element);
 ```
 
@@ -547,7 +547,7 @@ Ersetzt den Wert des Elements, auf das der Index zeigt. Wenn *iElement* größer
 
 [!code-cpp[NVC_ATL_Utilities#12](../../atl/codesnippet/cpp/catlarray-class_12.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MMXSwarm-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [DynamicConsumer-Beispiel](../../overview/visual-cpp-samples.md)<br/>

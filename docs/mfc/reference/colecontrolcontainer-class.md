@@ -72,12 +72,12 @@ helpviewer_keywords:
 - COleControlContainer [MFC], m_pWnd
 - COleControlContainer [MFC], m_siteMap
 ms.assetid: f7ce9246-0fb7-4f07-a83a-6c2390d0fdf8
-ms.openlocfilehash: b1737b2ac114181a4245fff027b756ca30b64129
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 83171e012db7ef2cce459d35cfc689746afd062c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366188"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749025"
 ---
 # <a name="colecontrolcontainer-class"></a>COleControlContainer-Klasse
 
@@ -153,7 +153,7 @@ In der Regel wird diese `COccManager` `COleControlSite` Klasse in Verbindung mit
 
 `COleControlContainer`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxocc.h
 
@@ -359,7 +359,7 @@ Verwenden Sie die zweite Überladung, um Steuerelemente in Der Standardgröße z
 
 Erstellt eine OLE-Schriftart.
 
-```
+```cpp
 void CreateOleFont(CFont* pFont);
 ```
 
@@ -389,7 +389,7 @@ Ein Zeiger auf die benutzerdefinierte Site des angegebenen Elements.
 
 Legt fest, ob der Container Ereignisse von den angefügten Kontrollstandorten ignoriert oder akzeptiert.
 
-```
+```cpp
 void FreezeAllEvents(BOOL bFreeze);
 ```
 
@@ -809,7 +809,7 @@ Der Bezeichner des Steuerelements.
 *lpszString*<br/>
 Zeiger auf den Text des Steuerelements.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

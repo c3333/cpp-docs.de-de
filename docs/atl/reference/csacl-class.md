@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - CSacl class
 ms.assetid: 8624889b-aebc-4183-9d29-a20f07837f05
-ms.openlocfilehash: 72b5c9fee3868286f9e4a0917f46aeb732349c62
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d5a060555901361ef6c70c6a4f801605eafd92cf
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330995"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746550"
 ---
 # <a name="csacl-class"></a>CSacl-Klasse
 
@@ -72,7 +72,7 @@ Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zu
 
 `CSacl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsecurity.h
 
@@ -194,7 +194,7 @@ Gibt einen Verweis `CSacl` auf das aktualisierte Objekt zurück. Stellen Sie `AC
 
 Entfernt einen bestimmten ACE (Access-Control-Eintrag) aus dem `CSacl` Objekt.
 
-```
+```cpp
 void RemoveAce(UINT nIndex) throw();
 ```
 
@@ -211,7 +211,7 @@ Diese Methode wird von [CAtlArray::RemoveAt](../../atl/reference/catlarray-class
 
 Entfernt alle im `CSacl` Objekt enthaltenen Zugriffssteuerungseinträge (Access-Control Entries, ACEs).
 
-```
+```cpp
 void RemoveAllAces() throw();
 ```
 
@@ -219,7 +219,7 @@ void RemoveAllAces() throw();
 
 Entfernt jede `ACE` Struktur (falls vorhanden) im `CSacl` Objekt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CAcl-Klasse](../../atl/reference/cacl-class.md)<br/>
 [ACLs](/windows/win32/SecAuthZ/access-control-lists)<br/>

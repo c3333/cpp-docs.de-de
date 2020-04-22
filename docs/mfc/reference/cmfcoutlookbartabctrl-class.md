@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CMFCOutlookBarTabCtrl [MFC], SetToolbarImageList
 - CMFCOutlookBarTabCtrl [MFC], SetVisiblePageButtons
 ms.assetid: b1f2b3f7-cc59-49a3-99d8-7ff9b37c044b
-ms.openlocfilehash: 309b74126f57e76aa6399f57382d88fee4400700
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9c5d7d5135c3b207bbf113970deb8cbeb186bcca
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369662"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749566"
 ---
 # <a name="cmfcoutlookbartabctrl-class"></a>CMFCOutlookBarTabCtrl Class
 
@@ -127,7 +127,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie `CMFCOutlookBarTabCtrl` ein 
 
 [CMFCOutlookBarTabCtrl](../../mfc/reference/cmfcoutlookbartabctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxoutlookbartabctrl.h
 
@@ -135,7 +135,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie `CMFCOutlookBarTabCtrl` ein 
 
 Fügt ein Windows-Steuerelement als neue Registerkarte in der Outlook-Leiste hinzu.
 
-```
+```cpp
 void AddControl(
     CWnd* pWndCtrl,
     LPCTSTR lpszName,
@@ -277,7 +277,7 @@ Rufen Sie diese Funktion auf, um die ortsnahe Bearbeitung von Textbeschriftungen
 
 Wird vom Framework aufgerufen, um Bildlaufhandles zu aktivieren, mit denen der Benutzer durch Schaltflächen im Outlook-Leistenbereich scrollen kann.
 
-```
+```cpp
 void EnableScrollButtons(
     BOOL bEnable = TRUE,
     BOOL bIsUp = TRUE,
@@ -416,7 +416,7 @@ Der visuelle Effekt des Festlegens der aktiven Registerkarte hängt davon ab, ob
 
 Legt die Rahmengröße des Outlook-Registerkartensteuerelements fest.
 
-```
+```cpp
 void SetBorderSize(int nBorderSize);
 ```
 
@@ -433,7 +433,7 @@ Legt die neue Rahmengröße fest und berechnet das Outlook-Fensterlayout neu.
 
 Legt die Ausrichtung der Textbeschriftungen auf den Registerkartenschaltflächen der Outlook-Leiste fest.
 
-```
+```cpp
 void SetPageButtonTextAlign(
     UINT uiAlign,
     BOOL bRedraw=TRUE);
@@ -495,7 +495,7 @@ Diese Methode sollte nicht aufgerufen werden, wenn sie nicht im Microsoft Office
 
 ## <a name="cmfcoutlookbartabctrlsetvisiblepagebuttons"></a><a name="setvisiblepagebuttons"></a>CMFCOutlookBarTabCtrl::SetVisiblePageButtons
 
-```
+```cpp
 void SetVisiblePageButtons(int nVisiblePageButtons);
 ```
 
@@ -505,7 +505,7 @@ void SetVisiblePageButtons(int nVisiblePageButtons);
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

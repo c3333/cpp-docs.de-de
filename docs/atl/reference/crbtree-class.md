@@ -27,12 +27,12 @@ f1_keywords:
 helpviewer_keywords:
 - CRBTree class
 ms.assetid: a1b1cb63-38e4-4fc2-bb28-f774d1721760
-ms.openlocfilehash: 56c9db9d1a7bcd7fe2a2647d8b1339d223c4b66b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 58c001ccef35d4265ef5b7fe200654781f130872
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81331242"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746575"
 ---
 # <a name="crbtree-class"></a>CRBTree-Klasse
 
@@ -114,7 +114,7 @@ Diese Vorlagenklasse wurde für die Verwendung durch [CRBMap](../../atl/referenc
 
 Eine vollständigere Erläuterung der verschiedenen Auflistungsklassen und ihrer Features und Leistungsmerkmale finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcoll.h
 
@@ -276,7 +276,7 @@ Der *Pos-Positionszähler* wird nach jedem Anruf aktualisiert. Wenn das abgerufe
 
 Rufen Sie diese Methode auf, um den Schlüssel und den Wert eines elements abzurufen, das in der Karte gespeichert ist, und die Position zum nächsten Element weiterzuleiten.
 
-```
+```cpp
 void GetNextAssoc(
     POSITION& pos,
     KOUTARGTYPE key,
@@ -429,7 +429,7 @@ typedef KTraits::OUTARGTYPE KOUTARGTYPE;
 
 Rufen Sie diese Methode auf, um alle Elemente aus dem `CRBTree` Objekt zu entfernen.
 
-```
+```cpp
 void RemoveAll() throw();
 ```
 
@@ -441,7 +441,7 @@ Löscht das `CRBTree` Objekt und gibt den Speicher frei, der zum Speichern der E
 
 Rufen Sie diese Methode auf, um `CRBTree` das Element an der angegebenen Position im Objekt zu entfernen.
 
-```
+```cpp
 void RemoveAt(POSITION pos) throw();
 ```
 
@@ -458,7 +458,7 @@ Entfernt das Schlüssel-Wert-Paar, das an der angegebenen Position gespeichert i
 
 Rufen Sie diese Methode auf, um den `CRBTree` an einer bestimmten Position im Objekt gespeicherten Wert zu ändern.
 
-```
+```cpp
 void SetValueAt(POSITION pos, VINARGTYPE value);
 ```
 
@@ -490,6 +490,6 @@ Typ, der verwendet wird, wenn ein Wert als Ausgabeargument übergeben wird.
 typedef VTraits::OUTARGTYPE VOUTARGTYPE;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

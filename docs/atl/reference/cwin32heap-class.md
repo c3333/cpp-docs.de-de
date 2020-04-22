@@ -16,12 +16,12 @@ f1_keywords:
 helpviewer_keywords:
 - CWin32Heap class
 ms.assetid: 69176022-ed98-4e3b-96d8-116b0c58ac95
-ms.openlocfilehash: fbdb77e7f52e858401c87e1cd8782b59cc6ebcea
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2d79de308b1afb3059cf04ad40b63b6e603073c8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330457"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746030"
 ---
 # <a name="cwin32heap-class"></a>CWin32Heap-Klasse
 
@@ -77,7 +77,7 @@ Siehe Beispiel für [IAtlMemMgr](../../atl/reference/iatlmemmgr-class.md).
 
 `CWin32Heap`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlmem.h
 
@@ -108,7 +108,7 @@ Implementiert mit [HeapAlloc](/windows/win32/api/heapapi/nf-heapapi-heapalloc).
 
 Fügt das Heapobjekt an einen vorhandenen Heap an.
 
-```
+```cpp
 void Attach(HANDLE hHeap, bool bTakeOwnership) throw();
 ```
 
@@ -267,7 +267,7 @@ Gibt einen Zeiger auf den neu belegten Speicherblock zurück.
 
 Wenn *p* NULL ist, wird davon ausgegangen, dass der Speicherblock noch nicht zugewiesen wurde und [CWin32Heap::Allocate](#allocate) aufgerufen wird, mit dem Argument *nBytes*.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)<br/>
 [IAtlMemMgr-Klasse](../../atl/reference/iatlmemmgr-class.md)<br/>

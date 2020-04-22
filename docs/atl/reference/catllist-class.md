@@ -37,12 +37,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlList class
 ms.assetid: 09e98053-64b2-4efa-99ab-d0542caaf981
-ms.openlocfilehash: 91b1841423fe159bb5fdd0f06a112c601b1dbc83
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0e4ea8eef51431c100f5d3119d7f75e9673e276e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318928"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748734"
 ---
 # <a name="catllist-class"></a>CAtlList-Klasse
 
@@ -119,7 +119,7 @@ Die meisten `CAtlList` Methoden verwenden einen Positionswert. Dieser Wert wird 
 
 Weitere Informationen zu den mit ATL verfügbaren Auflistungsklassen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcoll.h
 
@@ -153,7 +153,7 @@ Wenn die erste Version verwendet wird, wird ein leeres Element mit dem Standardk
 
 Rufen Sie diese Methode auf, um dem Kopf der Liste eine vorhandene Liste hinzuzufügen.
 
-```
+```cpp
 void AddHeadList(const CAtlList<E, ETraits>* plNew);
 ```
 
@@ -200,7 +200,7 @@ Wenn die erste Version verwendet wird, wird ein leeres Element mit dem Standardk
 
 Rufen Sie diese Methode auf, um eine vorhandene Liste am Ende dieser Liste hinzuzufügen.
 
-```
+```cpp
 void AddTailList(const CAtlList<E, ETraits>* plNew);
 ```
 
@@ -221,7 +221,7 @@ Die von *plNew* gezeigte Liste wird nach dem letzten Element (falls vorhanden) i
 
 Rufen Sie diese Methode auf, um zu bestätigen, dass die Liste gültig ist.
 
-```
+```cpp
 void AssertValid() const;
 ```
 
@@ -599,7 +599,7 @@ Gibt true zurück, wenn die Liste keine Objekte enthält, andernfalls false.
 
 Rufen Sie diese Methode auf, um das angegebene Element an den Kopf der Liste zu verschieben.
 
-```
+```cpp
 void MoveToHead(POSITION pos) throw();
 ```
 
@@ -620,7 +620,7 @@ Das angegebene Element wird von seiner aktuellen Position an den Kopf der Liste 
 
 Rufen Sie diese Methode auf, um das angegebene Element an den Endes der Liste zu verschieben.
 
-```
+```cpp
 void MoveToTail(POSITION pos) throw();
 ```
 
@@ -641,7 +641,7 @@ Siehe Beispiel für [CAtlList::MoveToHead](#movetohead).
 
 Rufen Sie diese Methode auf, um alle Elemente aus der Liste zu entfernen.
 
-```
+```cpp
 void RemoveAll() throw();
 ```
 
@@ -657,7 +657,7 @@ Siehe Beispiel für [CAtlList::IsEmpty](#isempty).
 
 Rufen Sie diese Methode auf, um ein einzelnes Element aus der Liste zu entfernen.
 
-```
+```cpp
 void RemoveAt(POSITION pos) throw();
 ```
 
@@ -700,7 +700,7 @@ Das Head-Element wird aus der Liste gelöscht, und der Speicher wird freigegeben
 
 Rufen Sie diese Methode auf, um das Element am Anfang der Liste zu entfernen, ohne einen Wert zurückzugeben.
 
-```
+```cpp
 void RemoveHeadNoReturn() throw();
 ```
 
@@ -736,7 +736,7 @@ Das tail-Element wird aus der Liste gelöscht, und der Speicher wird freigegeben
 
 Rufen Sie diese Methode auf, um das Element am Ende der Liste zu entfernen, ohne einen Wert zurückzugeben.
 
-```
+```cpp
 void RemoveTailNoReturn() throw();
 ```
 
@@ -752,7 +752,7 @@ Siehe Beispiel für [CAtlList::IsEmpty](#isempty).
 
 Rufen Sie diese Methode auf, um den Wert des Elements an einer bestimmten Position in der Liste festzulegen.
 
-```
+```cpp
 void SetAt(POSITION pos, INARGTYPE element);
 ```
 
@@ -776,7 +776,7 @@ Ersetzt den vorhandenen Wert durch *das Element*. In Debugbuilds tritt ein Asser
 
 Rufen Sie diese Methode auf, um Elemente in der Liste auszutauschen.
 
-```
+```cpp
 void SwapElements(POSITION pos1, POSITION pos2) throw();
 ```
 
@@ -796,7 +796,7 @@ Tauscht die Elemente an den beiden angegebenen Positionen. In Debugbuilds tritt 
 
 [!code-cpp[NVC_ATL_Utilities#31](../../atl/codesnippet/cpp/catllist-class_19.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CList-Klasse](../../mfc/reference/clist-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

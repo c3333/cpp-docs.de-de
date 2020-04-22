@@ -18,12 +18,12 @@ helpviewer_keywords:
 - connection points [C++], managing
 - CComDynamicUnkArray class
 ms.assetid: 202470d7-9a1b-498f-b96d-659d681acd65
-ms.openlocfilehash: 57383823897a434f649c6c4af78e71fe6ff66a6a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 51b1d7e81c98bd5dbcf957b1705e7a717bfb9ab0
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327897"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747981"
 ---
 # <a name="ccomdynamicunkarray-class"></a>CComDynamicUnkArray-Klasse
 
@@ -69,7 +69,7 @@ Weitere Informationen zum Automatisieren der Erstellung von Verbindungspunktprox
 > [!NOTE]
 > **Hinweis** Die `CComDynamicUnkArray` Klasse wird vom Assistenten zum Hinzufügen von **Klassen** verwendet, wenn ein Steuerelement mit Verbindungspunkten erstellt wird. Wenn Sie die Anzahl der Verbindungspunkte manuell angeben `CComDynamicUnkArray` möchten, ändern Sie den Verweis von `CComUnkArray<` *n* `>`, wobei *n* die Anzahl der erforderlichen Verbindungspunkte ist.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcom.h
 
@@ -113,7 +113,7 @@ Bevor Sie `IUnknown` die Schnittstelle verwenden, sollten Sie überprüfen, ob e
 
 Leert das Array.
 
-```
+```cpp
 void clear();
 ```
 
@@ -238,7 +238,7 @@ Das Cookie, das `IUnknown` auf den Zeiger verweist, der aus dem Array entfernt w
 
 Gibt TRUE zurück, wenn der Zeiger entfernt wird. andernfalls FALSE.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CComUnkArray-Klasse](../../atl/reference/ccomunkarray-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)
