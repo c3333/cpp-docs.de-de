@@ -72,12 +72,12 @@ helpviewer_keywords:
 - CTabCtrl [MFC], SetPadding
 - CTabCtrl [MFC], SetToolTips
 ms.assetid: 42e4aff6-46ae-4b2c-beaa-d1dce8d82138
-ms.openlocfilehash: 7d4a478b560be686e4da6f6dea623d6058626562
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 42d4b24222b1760bc418e904881edb2bb0e5a1f4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365967"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752309"
 ---
 # <a name="ctabctrl-class"></a>CTabCtrl-Klasse
 
@@ -152,7 +152,7 @@ Weitere Informationen zur `CTabCtrl`Verwendung finden Sie unter [Steuerelemente]
 
 `CTabCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -160,7 +160,7 @@ Weitere Informationen zur `CTabCtrl`Verwendung finden Sie unter [Steuerelemente]
 
 Berechnet den Anzeigebereich eines Registerkartensteuerelements mit einem Fensterrechteck oder berechnet das Fensterrechteck, das einem bestimmten Anzeigebereich entspricht.
 
-```
+```cpp
 void AdjustRect(BOOL bLarger,   LPRECT lpRect);
 ```
 
@@ -170,7 +170,7 @@ void AdjustRect(BOOL bLarger,   LPRECT lpRect);
 Gibt an, welcher Vorgang ausgeführt werden soll. Wenn dieser Parameter TRUE ist, gibt *lpRect* ein Anzeigerechteck an und empfängt das entsprechende Fensterrechteck. Wenn dieser Parameter FALSE ist, gibt *lpRect* ein Fensterrechteck an und empfängt das entsprechende Anzeigerechteck.
 
 *lpRect*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das angegebene Rechteck angibt und das berechnete Rechteck empfängt.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das angegebene Rechteck angibt und das berechnete Rechteck empfängt.
 
 ### <a name="example"></a>Beispiel
 
@@ -194,7 +194,7 @@ virtual BOOL Create(
 Gibt den Stil des Registerkartensteuerelements an. Wenden Sie eine beliebige Kombination von [Registerkartensteuerelementstilen](/windows/win32/Controls/tab-control-styles)an, die im Windows SDK beschrieben werden. Eine Liste der Fensterstile, die Sie auch auf das Steuerelement anwenden können, finden Sie unter **Hinweise.**
 
 *Rect*<br/>
-Gibt die Größe und Position des Registerkartensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Gibt die Größe und Position des Registerkartensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Registerkartensteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -250,7 +250,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Registerkartensteuerelements an. Wenden Sie eine beliebige Kombination von [Registerkartensteuerelementstilen](/windows/win32/Controls/tab-control-styles)an, die im Windows SDK beschrieben werden. Unter **Hinweise** unter [Erstellen](#create) finden Sie eine Liste von Fensterstilen, die Sie auch auf das Steuerelement anwenden können.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -313,7 +313,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Setzt Elemente in einem Registerkartensteuerelement zurück und löscht alle, die gedrückt wurden.
 
-```
+```cpp
 void DeselectAll(BOOL fExcludeFocus);
 ```
 
@@ -485,7 +485,7 @@ BOOL GetItemRect(int nItem,   LPRECT lpRect) const;
 Nullbasierter Index des Registerkartenelements.
 
 *lpRect*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das umgrenzende Rechteck der Registerkarte empfängt. Diese Koordinaten verwenden den aktuellen Zuordnungsmodus des Ansichtsfensters.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das umgrenzende Rechteck der Registerkarte empfängt. Diese Koordinaten verwenden den aktuellen Zuordnungsmodus des Ansichtsfensters.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -682,7 +682,7 @@ Nullbasierter Index der neuen Registerkarte, falls erfolgreich; ansonsten - 1.
 
 Entfernt das angegebene Bild aus der Bildliste eines Registerkartensteuerelements.
 
-```
+```cpp
 void RemoveImage(int nImage);
 ```
 
@@ -699,7 +699,7 @@ Das Registerkartensteuerelement aktualisiert den Bildindex jeder Registerkarte, 
 
 Legt den Fokus auf eine angegebene Registerkarte in einem Registerkartensteuerelement fest.
 
-```
+```cpp
 void SetCurFocus(int nItem);
 ```
 
@@ -829,7 +829,7 @@ CSize SetItemSize(CSize size);
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Die neue Breite und Höhe des Registerkarten-Steuerelements in Pixeln.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -892,20 +892,20 @@ Diese Memberfunktion implementiert das Verhalten der Win32-Meldung [TCM_SETMINTA
 
 Legt den Abstand (Auffüllung) um das Symbol und die Beschriftung jeder Registerkarte in einem Registerkartensteuerelement fest.
 
-```
+```cpp
 void SetPadding(CSize size);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Legt den Abstand (Auffüllung) um das Symbol und die Beschriftung jeder Registerkarte in einem Registerkartensteuerelement fest.
 
 ## <a name="ctabctrlsettooltips"></a><a name="settooltips"></a>CTabCtrl::SetToolTips
 
 Weist einem Registerkartensteuerelement ein QuickInfo-Steuerelement zu.
 
-```
+```cpp
 void SetToolTips(CToolTipCtrl* pWndTip);
 ```
 
@@ -922,7 +922,7 @@ Sie können das QuickInfo-Steuerelement, das einem Registerkartensteuerelement z
 
   Siehe Beispiel für [CPropertySheet::GetTabControl](../../mfc/reference/cpropertysheet-class.md#gettabcontrol).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

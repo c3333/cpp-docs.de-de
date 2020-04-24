@@ -46,12 +46,12 @@ helpviewer_keywords:
 - CMFCFilterChunkValueImpl [MFC], SetTextValue
 - CMFCFilterChunkValueImpl [MFC], SetChunk
 ms.assetid: 3c833f23-5b88-4d08-9e09-ca6a8aec88bf
-ms.openlocfilehash: 2c90a873033516710077d31c8bb8af5fb5172ca6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c89d41f7db43d9504bfc22cbf35a59fcceb511e2
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367508"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752360"
 ---
 # <a name="cmfcfilterchunkvalueimpl-class"></a>CMFCFilterChunkValueImpl-Klasse
 
@@ -121,7 +121,7 @@ hr = Chunk. SetFileTimeValue(PKEY_ItemDate, ftLastModified);
 
 [CMFCFilterChunkValueImpl](../../mfc/reference/cmfcfilterchunkvalueimpl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -129,7 +129,7 @@ hr = Chunk. SetFileTimeValue(PKEY_ItemDate, ftLastModified);
 
 Löscht den ChunkValue.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -178,7 +178,7 @@ S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
 Initialisiert diesen Chunk-Wert aus dem anderen Wert.
 
-```
+```cpp
 void CopyFrom (IFilterChunkValue* pValue);
 ```
 
@@ -693,6 +693,6 @@ S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

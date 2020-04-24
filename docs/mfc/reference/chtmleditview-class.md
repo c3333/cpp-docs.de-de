@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CHtmlEditView [MFC], GetDHtmlDocument
 - CHtmlEditView [MFC], GetStartDocument
 ms.assetid: 166c8ba8-3fb5-4dd7-a9ea-5bca662d00f6
-ms.openlocfilehash: 1254a3412846cdebd1d9accb91d27d0afbc4ef8d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 20d4586c1ae45e5f3f56c0adbb1ecb1757084fd7
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352081"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752319"
 ---
 # <a name="chtmleditview-class"></a>CHtmlEditView-Klasse
 
@@ -67,7 +67,7 @@ class CHtmlEditView : public CHtmlView, public CHtmlEditCtrlBase<CHtmlEditView>
 
 `CHtmlEditView`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxhtml.h
 
@@ -106,7 +106,7 @@ Zeigt auf eine null-terminierte Zeichenfolge, die den Fensternamen darstellt.
 Gibt die Fensterstilattribute an. Standardmäßig werden die WS_VISIBLE- und WS_CHILD Windows-Stile festgelegt.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des Fensters angibt. Mit *dem rectDefault-Wert* kann Windows die Größe und Position des neuen Fensters angeben.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des Fensters angibt. Mit *dem rectDefault-Wert* kann Windows die Größe und Position des neuen Fensters angeben.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das übergeordnete Fenster des Steuerelements.
@@ -142,7 +142,7 @@ Ruft den Namen des Standarddokuments für diese Ansicht ab.
 virtual LPCTSTR GetStartDocument();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [HTMLEdit-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

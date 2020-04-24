@@ -72,12 +72,12 @@ helpviewer_keywords:
 - CToolTipCtrl [MFC], Update
 - CToolTipCtrl [MFC], UpdateTipText
 ms.assetid: 8973f70c-b73a-46c7-908d-758f364b9a97
-ms.openlocfilehash: fdf91549fd1b911de3af82bb940b92fe5e220b92
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 53a5a5b6871680f9758d140174dcceae6c53f568
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365105"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752198"
 ---
 # <a name="ctooltipctrl-class"></a>CToolTipCtrl Class
 
@@ -156,7 +156,7 @@ Weitere Informationen zur `CToolTipCtrl`Verwendung finden Sie unter [Steuereleme
 
 `CToolTipCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -164,7 +164,7 @@ Weitere Informationen zur `CToolTipCtrl`Verwendung finden Sie unter [Steuereleme
 
 Rufen Sie diese Funktion auf, um ein QuickInfo-Steuerelement zu aktivieren oder zu deaktivieren.
 
-```
+```cpp
 void Activate(BOOL bActivate);
 ```
 
@@ -210,7 +210,7 @@ Zeigen Sie mit dem Zeiger auf das Fenster, das das Werkzeug enthält.
 ID der Zeichenfolgenressource, die den Text für das Werkzeug enthält.
 
 *lpRectTool*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die Koordinaten des umgrenzenden Rechtecks des Werkzeugs enthält. Die Koordinaten sind relativ zur oberen linken Ecke des Clientbereichs des Fensters, das von *pWnd*identifiziert wird.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die Koordinaten des umgrenzenden Rechtecks des Werkzeugs enthält. Die Koordinaten sind relativ zur oberen linken Ecke des Clientbereichs des Fensters, das von *pWnd*identifiziert wird.
 
 *nIDTool*<br/>
 ID des Werkzeugs.
@@ -248,7 +248,7 @@ BOOL AdjustRect(
 ### <a name="parameters"></a>Parameter
 
 *lprc*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die entweder ein Werkzeugspitzenfensterrechteck oder ein Textanzeigerechteck enthält.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die entweder ein Werkzeugspitzenfensterrechteck oder ein Textanzeigerechteck enthält.
 
 *bLarger*<br/>
 Wenn TRUE, wird *lprc* verwendet, um ein Textanzeigerechteck anzugeben, und es empfängt das entsprechende Fensterrechteck. Wenn FALSE, wird *lprc* verwendet, um ein Fensterrechteck anzugeben, und es erhält das entsprechende Textanzeigerechteck.
@@ -289,7 +289,7 @@ Sie erstellen `CToolTipCtrl` eine in zwei Schritten. Rufen Sie zunächst den Kon
 
 Der *dwStyle-Parameter* kann eine beliebige Kombination von [Window Styles](../../mfc/reference/styles-used-by-mfc.md#window-styles)sein. Darüber hinaus verfügt ein QuickInfo-Steuerelement über zwei klassenspezifische Stile: TTS_ALWAYSTIP und TTS_NOPREFIX.
 
-|Stil|Bedeutung|
+|Style|Bedeutung|
 |-----------|-------------|
 |TTS_ALWAYSTIP|Gibt an, dass die QuickInfo angezeigt wird, wenn sich der Cursor auf einem Werkzeug befindet, unabhängig davon, ob das Besitzerfenster des Werkzeugspitzensteuerelements aktiv oder inaktiv ist. Ohne diesen Stil wird das Werkzeugspitzensteuerelement angezeigt, wenn das Besitzerfenster des Werkzeugs aktiv ist, jedoch nicht, wenn es inaktiv ist.|
 |TTS_NOPREFIX|Dieser Stil verhindert, dass das System das zeichenund (&) von einer Zeichenfolge entfernt. Wenn ein QuickInfo-Steuerelement nicht über den TTS_NOPREFIX-Stil verfügt, entfernt das System automatisch vom Format, sodass eine Anwendung dieselbe Zeichenfolge wie ein Menüelement und als Text in einem QuickInfo-Steuerelement verwenden kann.|
@@ -352,7 +352,7 @@ Sie müssen `Create` nach dem Erstellen des Objekts aufrufen.
 
 Entfernt das von *pWnd* und *nIDTool* angegebene Werkzeug aus der Sammlung von Werkzeugen, die von einem QuickInfo-Steuerelement unterstützt werden.
 
-```
+```cpp
 void DelTool(
     CWnd* pWnd,
     UINT_PTR nIDTool = 0);
@@ -446,14 +446,14 @@ Diese Memberfunktion implementiert das Verhalten der Win32-Meldung [TTM_GETDELAY
 
 Ruft den oberen, linken, unteren und rechten Rand ab, der für ein QuickInfo-Fenster festgelegt wurde.
 
-```
+```cpp
 void GetMargin(LPRECT lprc) const;
 ```
 
 ### <a name="parameters"></a>Parameter
 
 *lprc*<br/>
-Adresse einer `RECT` Struktur, die die Margin-Informationen erhält. Die Elemente der [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) definieren kein umgrenzendes Rechteck. Für die Zwecke dieser Meldung werden die Strukturmember wie folgt interpretiert:
+Adresse einer `RECT` Struktur, die die Margin-Informationen erhält. Die Elemente der [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) definieren kein umgrenzendes Rechteck. Für die Zwecke dieser Meldung werden die Strukturmember wie folgt interpretiert:
 
 |Member|Darstellung|
 |------------|--------------------|
@@ -486,7 +486,7 @@ Diese Memberfunktion implementiert das Verhalten der [TTM_GETMAXTIPWIDTH](/windo
 
 Ruft den Text ab, den ein QuickInfo-Steuerelement für ein Werkzeug verwaltet.
 
-```
+```cpp
 void GetText(
     CString& str,
     CWnd* pWnd,
@@ -544,7 +544,7 @@ Diese Memberfunktion implementiert das Verhalten der [TTM_GETTIPTEXTCOLOR](/wind
 
 Ruft den Titel des aktuellen QuickInfo-Steuerelements ab.
 
-```
+```cpp
 void GetTitle(PTTGETTITLE pttgt) const;
 ```
 
@@ -656,7 +656,7 @@ typedef struct _TT_HITTESTINFO { // tthti
 
 Entfernt ein angezeigtes QuickInfo-Fenster aus der Ansicht.
 
-```
+```cpp
 void Pop();
 ```
 
@@ -668,7 +668,7 @@ Diese Memberfunktion implementiert das Verhalten der [TTM_POP](/windows/win32/Co
 
 Bewirkt, dass das aktuelle QuickInfo-Steuerelement an den Koordinaten der letzten Mausnachricht angezeigt wird.
 
-```
+```cpp
 void Popup();
 ```
 
@@ -686,7 +686,7 @@ Im folgenden Codebeispiel wird ein QuickInfo-Fenster angezeigt.
 
 Übergibt eine Mausnachricht zur Verarbeitung an ein QuickInfo-Steuerelement.
 
-```
+```cpp
 void RelayEvent(LPMSG lpMsg);
 ```
 
@@ -713,7 +713,7 @@ Eine QuickInfo-Steuerung verarbeitet nur die folgenden Meldungen, die an sie ges
 
 Legt die Verzögerungszeit für ein QuickInfo-Steuerelement fest.
 
-```
+```cpp
 void SetDelayTime(UINT nDelay);
 
 void SetDelayTime(
@@ -740,7 +740,7 @@ Die Verzögerungszeit ist die Zeitdauer, die der Cursor auf einem Werkzeug verbl
 
 Legt den oberen, linken, unteren und rechten Rand für ein QuickInfo-Fenster fest.
 
-```
+```cpp
 void SetMargin(LPRECT lprc);
 ```
 
@@ -778,7 +778,7 @@ Diese Memberfunktion implementiert das Verhalten der [TTM_SETMAXTIPWIDTH](/windo
 
 Legt die Hintergrundfarbe in einem QuickInfo-Fenster fest.
 
-```
+```cpp
 void SetTipBkColor(COLORREF clr);
 ```
 
@@ -795,7 +795,7 @@ Diese Memberfunktion implementiert das Verhalten der Win32-Meldung [TTM_SETTIPBK
 
 Legt die Textfarbe in einem QuickInfofenster fest.
 
-```
+```cpp
 void SetTipTextColor(COLORREF clr);
 ```
 
@@ -838,7 +838,7 @@ Diese Memberfunktion implementiert das Verhalten der [TTM_SETTITLE](/windows/win
 
 Legt die Informationen fest, die eine QuickInfo für ein Werkzeug verwaltet.
 
-```
+```cpp
 void SetToolInfo(LPTOOLINFO lpToolInfo);
 ```
 
@@ -851,7 +851,7 @@ Ein Zeiger auf eine [TOOLINFO-Struktur,](/windows/win32/api/commctrl/ns-commctrl
 
 Legt ein neues umgrenzendes Rechteck für ein Werkzeug fest.
 
-```
+```cpp
 void SetToolRect(
     CWnd* pWnd,
     UINT_PTR nIDTool,
@@ -867,7 +867,7 @@ Zeigen Sie mit dem Zeiger auf das Fenster, das das Werkzeug enthält.
 ID des Werkzeugs.
 
 *lpRect*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das neue umgrenzte Rechteck angibt.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das neue umgrenzte Rechteck angibt.
 
 ## <a name="ctooltipctrlsetwindowtheme"></a><a name="setwindowtheme"></a>CToolTipCtrl::SetWindowTheme
 
@@ -894,7 +894,7 @@ Diese Memberfunktion emuliert die Funktionalität der [TTM_SETWINDOWTHEME](/wind
 
 Erzwingt, dass das aktuelle Werkzeug neu gezeichnet wird.
 
-```
+```cpp
 void Update();
 ```
 
@@ -902,7 +902,7 @@ void Update();
 
 Aktualisiert den Tooltipptext für die Werkzeuge dieses Steuerelements.
 
-```
+```cpp
 void UpdateTipText(
     LPCTSTR lpszText,
     CWnd* pWnd,
@@ -928,7 +928,7 @@ ID des Werkzeugs.
 *nIDText*<br/>
 ID der Zeichenfolgenressource, die den Text für das Werkzeug enthält.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

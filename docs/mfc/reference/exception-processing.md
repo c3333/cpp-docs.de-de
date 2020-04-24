@@ -11,12 +11,12 @@ helpviewer_keywords:
 - MFC, exceptions
 - exceptions [MFC], MFC throwing functions
 ms.assetid: 26d4457c-8350-48f5-916e-78f919787c30
-ms.openlocfilehash: d819c170f47ea259e776bce6db0a6971e3f54bec
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bdf9dee88c29621bdc77c83d2633d93b4b9d10a7
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365716"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751610"
 ---
 # <a name="exception-processing"></a>Ausnahmeverarbeitung
 
@@ -45,7 +45,7 @@ Beispiele und weitere Details finden Sie im Artikel [Ausnahmen](../../mfc/except
 |[AND_CATCH_ALL](#and_catch_all)|Legt einen Codeblock zum Abfangen aller anderen zusätzlichen Ausnahmetypen fest, die in einem vorherigen **TRY-Block** ausgelöst wurden.|
 |[END_CATCH](#end_catch)|Beendet den letzten **CATCH-** oder AND_CATCH-Codeblock. **AND_CATCH**|
 |[END_CATCH_ALL](#end_catch_all)|Beendet den letzten **CATCH_ALL** Codeblock.|
-|[Werfen](#throw)|Löst eine angegebene Ausnahme aus.|
+|[THROW](#throw)|Löst eine angegebene Ausnahme aus.|
 |[THROW_LAST](#throw_last)|Löst die aktuell behandelte Ausnahme an den nächsten äußeren Handler aus.|
 
 ### <a name="exception-throwing-functions"></a>Exception-Throwing-Funktionen
@@ -104,7 +104,7 @@ Weitere Informationen finden Sie im Artikel [Ausnahmen](../../mfc/exception-hand
 
 Siehe Beispiel für [CATCH](#catch).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Header: afx.h
 
@@ -167,7 +167,7 @@ Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmen](../../mfc/e
 
 Siehe Beispiel für [CFile::Abort](../../mfc/reference/cfile-class.md#abort).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -200,7 +200,7 @@ Der Ausnahmeverarbeitungscode kann das Ausnahmeobjekt ggf. abgefragt, um weitere
 
 Siehe Beispiel für [CATCH](#catch).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -226,7 +226,7 @@ Der Ausnahmeverarbeitungscode kann das Ausnahmeobjekt ggf. abgefragt, um weitere
 > [!NOTE]
 > Der **AND_CATCH_ALL-Block** ist als C++-Bereich definiert (durch geschweifte Klammern definiert). Wenn Sie Variablen in diesem Bereich deklarieren, denken Sie daran, dass nur innerhalb dieses Bereichs darauf zugegriffen werden kann.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -242,7 +242,7 @@ END_CATCH
 
 Weitere Informationen zum END_CATCH-Makro finden Sie im Artikel [Ausnahmen](../../mfc/exception-handling-in-mfc.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -254,7 +254,7 @@ Markiert das Ende des letzten **CATCH_ALL88** oder **AND_CATCH_ALL** Blocks.
 END_CATCH_ALL
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -277,7 +277,7 @@ Verweist auf ein Ausnahmeobjekt, das von `CException`abgeleitet wurde.
 
 Weitere Informationen finden Sie im Artikel [Ausnahmen](../../mfc/exception-handling-in-mfc.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -299,7 +299,7 @@ Weitere Informationen finden Sie im Artikel [Ausnahmen](../../mfc/exception-hand
 
 Siehe Beispiel für [CFile::Abort](../../mfc/reference/cfile-class.md#abort).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -307,7 +307,7 @@ Siehe Beispiel für [CFile::Abort](../../mfc/reference/cfile-class.md#abort).
 
 Löst eine Archivausnahme aus.
 
-```
+```cpp
 void  AfxThrowArchiveException(int cause, LPCTSTR lpszArchiveName);
 ```
 
@@ -319,7 +319,7 @@ Gibt eine ganze Zahl an, die den Grund für die Ausnahme angibt. Eine Liste der 
 *lpszArchiveName*<br/>
 Zeigt auf eine Zeichenfolge, `CArchive` die den Namen des Objekts enthält, das die Ausnahme verursacht hat (sofern verfügbar).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -327,7 +327,7 @@ Zeigt auf eine Zeichenfolge, `CArchive` die den Namen des Objekts enthält, das 
 
 Löst eine Dateiausnahme aus.
 
-```
+```cpp
 void AfxThrowFileException(
     int cause,
     LONG lOsError = -1,
@@ -349,7 +349,7 @@ Zeigt auf eine Zeichenfolge, die den Namen der Datei enthält, die die Ausnahme 
 
 Sie sind für die Ermittlung der Ursache auf der Grundlage des Betriebssystemfehlercodes verantwortlich.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -359,7 +359,7 @@ Löst eine ungültige Argumentausnahme aus.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void AfxThrowInvalidArgException( );
 ```
 
@@ -367,7 +367,7 @@ void AfxThrowInvalidArgException( );
 
 Diese Funktion wird aufgerufen, wenn ungültige Argumente verwendet werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -375,7 +375,7 @@ Diese Funktion wird aufgerufen, wenn ungültige Argumente verwendet werden.
 
 Löst eine Speicherausnahme aus.
 
-```
+```cpp
 void AfxThrowMemoryException();
 ```
 
@@ -383,7 +383,7 @@ void AfxThrowMemoryException();
 
 Rufen Sie diese Funktion auf, wenn Aufrufe von zugrunde liegenden Systemspeicherzuweisungen (z. B. **malloc** und die [GlobalAlloc](/windows/win32/api/winbase/nf-winbase-globalalloc) Windows-Funktion) fehlschlagen. Sie müssen es nicht für **neu** aufrufen, da **new** automatisch eine Speicherausnahme auslöst, wenn die Speicherzuweisung fehlschlägt.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -391,11 +391,11 @@ Rufen Sie diese Funktion auf, wenn Aufrufe von zugrunde liegenden Systemspeicher
 
 Löst eine Ausnahme aus, die das Ergebnis einer Anforderung für ein nicht unterstütztes Feature ist.
 
-```
+```cpp
 void AfxThrowNotSupportedException();
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -403,7 +403,7 @@ void AfxThrowNotSupportedException();
 
 Löst eine Ressourcenausnahme aus.
 
-```
+```cpp
 void  AfxThrowResourceException();
 ```
 
@@ -411,7 +411,7 @@ void  AfxThrowResourceException();
 
 Diese Funktion wird normalerweise aufgerufen, wenn eine Windows-Ressource nicht geladen werden kann.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -419,7 +419,7 @@ Diese Funktion wird normalerweise aufgerufen, wenn eine Windows-Ressource nicht 
 
 Löst eine Ausnahme aus, um einen Endbenutzervorgang zu beenden.
 
-```
+```cpp
 void AfxThrowUserException();
 ```
 
@@ -427,7 +427,7 @@ void AfxThrowUserException();
 
 Diese Funktion wird normalerweise `AfxMessageBox` sofort aufgerufen, nachdem sie dem Benutzer einen Fehler gemeldet hat.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -435,7 +435,7 @@ Diese Funktion wird normalerweise `AfxMessageBox` sofort aufgerufen, nachdem sie
 
 Verwenden Sie diese Funktion, um eine Ausnahme innerhalb einer OLE-Automatisierungsfunktion auszulösen.
 
-```
+```cpp
 void AFXAPI AfxThrowOleDispatchException(
     WORD wCode ,
     LPCSTR lpszDescription,
@@ -469,7 +469,7 @@ Die für diese Funktion bereitgestellten Informationen können von der treibern 
 
 [!code-cpp[NVC_MFCExceptions#25](../../mfc/codesnippet/cpp/exception-processing_2.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -477,7 +477,7 @@ Die für diese Funktion bereitgestellten Informationen können von der treibern 
 
 Erstellt ein Objekt `COleException` vom Typ und löst eine Ausnahme aus.
 
-```
+```cpp
 void AFXAPI AfxThrowOleException(SCODE sc);
 void AFXAPI AfxThrowOleException(HRESULT hr);
 ```
@@ -494,7 +494,7 @@ Behandeln Sie einen Ergebniscode, der den Grund für die Ausnahme angibt.
 
 Die Version, die ein HRESULT als Argument verwendet, konvertiert diesen Ergebniscode in den entsprechenden SCODE. Weitere Informationen zu HRESULT und SCODE finden Sie unter [Struktur von COM-Fehlercodes](/windows/win32/com/structure-of-com-error-codes) im Windows SDK.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxdao.h
 
@@ -502,7 +502,7 @@ Die Version, die ein HRESULT als Argument verwendet, konvertiert diesen Ergebnis
 
 Rufen Sie diese Funktion auf, um eine Ausnahme vom Typ [CDaoException](../../mfc/reference/cdaoexception-class.md) aus Ihrem eigenen Code auszulösen.
 
-```
+```cpp
 void AFXAPI AfxThrowDaoException(
     int nAfxDaoError = NO_AFX_DAO_ERROR,
     SCODE scode = S_OK);
@@ -522,7 +522,7 @@ Der Rahmen `AfxThrowDaoException`ruft auch auf . In Ihrem Aufruf können Sie ein
 
 Informationen zu Ausnahmen im Zusammenhang mit den MFC `CDaoException` DAO-Klassen finden Sie in der Klasse in diesem Buch und im Artikel [Ausnahmen: Datenbankausnahmen](../../mfc/exceptions-database-exceptions.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxdb.h
 
@@ -530,7 +530,7 @@ Informationen zu Ausnahmen im Zusammenhang mit den MFC `CDaoException` DAO-Klass
 
 Rufen Sie diese Funktion auf, um eine Ausnahme des Typs `CDBException` aus Ihrem eigenen Code auszulösen.
 
-```
+```cpp
 void AfxThrowDBException(
     RETCODE nRetCode,
     CDatabase* pdb,
@@ -554,7 +554,7 @@ Das Framework `AfxThrowDBException` ruft auf, wenn es einen ODBC RETCODE von ein
 
 Informationen zu den von ODBC definierten RETCODE-Werten finden Sie in Kapitel 8, "Abrufen von Status und Fehlerinformationen", im Windows SDK. Informationen zu MFC-Erweiterungen dieser Codes finden Sie unter Klasse [CDBException](../../mfc/reference/cdbexception-class.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
@@ -562,7 +562,7 @@ Informationen zu den von ODBC definierten RETCODE-Werten finden Sie in Kapitel 8
 
 Die von MFC bereitgestellte Standardbeendigungsfunktion.
 
-```
+```cpp
 void  AfxAbort();
 ```
 
@@ -574,11 +574,11 @@ void  AfxAbort();
 
 Siehe Beispiel für [CATCH](#catch).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afx.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](mfc-macros-and-globals.md)<br/>
 [CException-Klasse](cexception-class.md)<br/>

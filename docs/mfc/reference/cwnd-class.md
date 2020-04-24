@@ -818,12 +818,12 @@ helpviewer_keywords:
 - CWnd [MFC], WindowProc
 - CWnd [MFC], m_hWnd
 ms.assetid: 49a832ee-bc34-4126-88b3-bc1d9974f6c4
-ms.openlocfilehash: 12ba4cc28d94cbc2961475944c62d2e942b20c05
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c2ea240ba736c95026b2b6d2af45296245881bab
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365930"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751710"
 ---
 # <a name="cwnd-class"></a>CWnd-Klasse
 
@@ -1295,7 +1295,7 @@ Weitere Informationen zur `CWnd`Verwendung finden Sie unter [Rahmenfenster](../.
 
 `CWnd`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -1576,7 +1576,7 @@ Rufen Sie `BeginPaint` die Memberfunktion nur als Antwort auf eine [WM_PAINT](#o
 
 Bindet die einfache gebundene Standardeigenschaft des aufrufenden Objekts (z. B. ein Bearbeitungssteuerelement), wie in der Typbibliothek markiert, an den zugrunde liegenden Cursor, der durch die DataSource-, UserName-, Password- und SQL-Eigenschaften des Datenquellensteuerelements definiert wird.
 
-```
+```cpp
 void BindDefaultProperty(
     DISPID dwDispID,
     VARTYPE vtProp,
@@ -1612,7 +1612,7 @@ Das `CWnd` Objekt, auf dem Sie diese Funktion aufrufen, muss ein datengebundenes
 
 Bindet eine cursorgebundene Eigenschaft für ein datengebundenes Steuerelement (z. B. ein Rastersteuerelement) an ein Datenquellensteuerelement und registriert diese Beziehung mit dem MFC-Bindungs-Manager.
 
-```
+```cpp
 void BindProperty(
     DISPID dwDispId,
     CWnd* pWndDSC);
@@ -1640,7 +1640,7 @@ Das `CWnd` Objekt, auf dem Sie diese Funktion aufrufen, muss ein datengebundenes
 
 Bringt `CWnd` nach oben im Stapel überlappender Fenster.
 
-```
+```cpp
 void BringWindowToTop();
 ```
 
@@ -1708,7 +1708,7 @@ TRUE, um Tool-Tipps abzubrechen, wenn eine Taste gedrückt wird, und den Statusl
 
 Zentriert ein Fenster relativ zu dessen übergeordnetem Element.
 
-```
+```cpp
 void CenterWindow(CWnd* pAlternateOwner = NULL);
 ```
 
@@ -1746,7 +1746,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Wählt eine Schaltfläche aus (platziert ein Häkchen neben) oder löscht eine Schaltfläche (entfernt ein Häkchen von) oder ändert den Status einer Schaltfläche mit drei Zuzeichen.
 
-```
+```cpp
 void CheckDlgButton(
     int nIDButton,
     UINT nCheck);
@@ -1772,7 +1772,7 @@ Die `CheckDlgButton` Funktion sendet eine [BM_SETCHECK](/windows/win32/Controls/
 
 Wählt ein bestimmtes Optionsfeld in einer Gruppe aus (fügt ein Häkchen zu) und löscht alle anderen Optionsfelder in der Gruppe (entfernt ein Häkchen).
 
-```
+```cpp
 void CheckRadioButton(
     int nIDFirstButton,
     int nIDLastButton,
@@ -1843,7 +1843,7 @@ Das `CWnd`zurückgegebene * * ist möglicherweise temporär und sollte nicht fü
 
 Konvertiert die Clientkoordinaten eines bestimmten Punkts oder Rechtecks auf der Anzeige zu Bildschirmkoordinaten.
 
-```
+```cpp
 void ClientToScreen(LPPOINT lpPoint) const;  void ClientToScreen(LPRECT lpRect) const;
 ```
 
@@ -1869,7 +1869,7 @@ Die `ClientToScreen` Memberfunktion geht davon aus, dass sich der angegebene Pun
 
 Minimiert das Fenster.
 
-```
+```cpp
 void CloseWindow();
 ```
 
@@ -1984,7 +1984,7 @@ Erstellt einen Active Accessibility-Proxy für das angegebene Objekt.
 
 Erstellt eine neue Form für die Systempflege und beansprucht das Eigentum an der Pflege.
 
-```
+```cpp
 void CreateCaret(CBitmap* pBitmap);
 ```
 
@@ -2150,10 +2150,10 @@ Zeiger auf eine null-terminierte Zeichenfolge, die den Fensteranzeigenamen enth�
 *dwStyle*<br/>
 Bitweise Kombination (OR) von [Fensterstilen](styles-used-by-mfc.md#window-styles); ANDERNFALLS NULL für den Standardfensterstil.
 
-*X*<br/>
+*x*<br/>
 Der anfängliche horizontale Abstand des Fensters von der linken Seite des Bildschirms oder des übergeordneten Fensters.
 
-*y*<br/>
+*Y*<br/>
 Der anfängliche vertikale Abstand des Fensters vom oberen Bildschirmrand oder dem übergeordneten Fenster.
 
 *nWidth*<br/>
@@ -2207,7 +2207,7 @@ Die [CWnd::OnCreate-Methode](#oncreate) wird `CreateEx` aufgerufen, bevor die Me
 
 Erstellt ein graues Rechteck für die Systempflege und beansprucht den Besitz der Einsorge.
 
-```
+```cpp
 void CreateGrayCaret(
     int nWidth,
     int nHeight);
@@ -2241,7 +2241,7 @@ Die Systempflege ist eine gemeinsame Ressource. `CWnd`sollte eine Einserstelle n
 
 Erstellt ein durchgehendes Rechteck für die Systempflege und beansprucht den Besitz der Einsorge.
 
-```
+```cpp
 void CreateSolidCaret(
     int nWidth,
     int nHeight);
@@ -2373,7 +2373,7 @@ Wenn das Fenster das übergeordnete Fenster eines Fensters ist, werden diese unt
 
 Die `DestroyWindow` Memberfunktion zerstört auch moduslose Dialogfelder, die von [CDialog::Create](../../mfc/reference/cdialog-class.md#create)erstellt wurden.
 
-Wenn `CWnd` es sich bei dem Zerstörten um ein untergeordnetes Fenster handelt und der [WS_EX_NOPARENTNOTIFY](../../mfc/reference/styles-used-by-mfc.md#extended-window-styles) Stil nicht festgelegt ist, wird die [WM_PARENTNOTIFY](/previous-versions/windows/desktop/inputmsg/wm-parentnotify) Nachricht an das übergeordnete Element gesendet.
+Wenn `CWnd` es sich bei dem Zerstörten um ein untergeordnetes Fenster handelt und der [WS_EX_NOPARENTNOTIFY](../../mfc/reference/styles-used-by-mfc.md#extended-window-styles) Stil nicht festgelegt ist, wird die [WM_PARENTNOTIFY](/windows/win32/inputmsg/wm-parentnotify) Nachricht an das übergeordnete Element gesendet.
 
 ### <a name="example"></a>Beispiel
 
@@ -2626,7 +2626,7 @@ Weitere Informationen zum Dialogdatenaustausch und zur Validierung finden Sie un
 
 Rufen Sie diese Memberfunktion in `CWnd` einem Fenster mit einem Zeiger in der [CWinApp::InitInstance-Funktion](../../mfc/reference/cwinapp-class.md#initinstance) Ihrer Anwendung auf, um anzugeben, dass das Fenster gelöschte Dateien aus dem Windows-Datei-Manager oder Datei-Explorer akzeptiert.
 
-```
+```cpp
 void DragAcceptFiles(BOOL bAccept = TRUE);
 ```
 
@@ -2681,10 +2681,10 @@ BOOL DrawAnimatedRects(
 Gibt den Animationstyp an. Wenn Sie IDANI_CAPTION angeben, wird die Fensterbeschriftung von der von *lprcFrom* angegebenen Position an die von *lprcTo*angegebene Position animiert. Der Effekt ähnelt der Minimierung oder Maximierung eines Fensters.
 
 *lprcVon*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des Symbols oder des minimierten Fensters angibt.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position und Größe des Symbols oder des minimierten Fensters angibt.
 
 *lprcTo*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des wiederhergestellten Fensters angibt
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position und Größe des wiederhergestellten Fensters angibt
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -2728,7 +2728,7 @@ Diese Memberfunktion emuliert die Funktionalität der Funktion [DrawCaption](/wi
 
 Zeichnet die Menüleiste neu.
 
-```
+```cpp
 void DrawMenuBar();
 ```
 
@@ -2744,7 +2744,7 @@ Wenn eine Menüleiste geändert wird, nachdem Windows das Fenster erstellt hat, 
 
 Aktiviert benutzerdefinierte Active Accessibility-Funktionen.
 
-```
+```cpp
 void EnableActiveAccessibility();
 ```
 
@@ -2756,7 +2756,7 @@ Die standardmäßige Active Accessibility-Unterstützung von MFC ist für Standa
 
 Aktiviert oder deaktiviert den dynamischen Layout-Manager. Wenn das dynamische Layout aktiviert ist, können die Position und Größe von untergeordneten Fensters dynamisch angepasst werden, wenn der Benutzer die Größe des Fensters anpasst.
 
-```
+```cpp
 void EnableDynamicLayout(BOOL bEnable = TRUE);
 ```
 
@@ -2773,7 +2773,7 @@ Wenn Sie ein dynamisches Layout aktivieren möchten, reicht es nicht aus, nur di
 
 Aktiviert oder deaktiviert die D2D-Unterstützung für Fenster. Rufen Sie diese Methode vor der Initialisierung des Hauptfensters auf.
 
-```
+```cpp
 void EnableD2DSupport(
     BOOL bEnable = TRUE,
     BOOL bUseDCRenderTarget = FALSE);
@@ -2827,7 +2827,7 @@ Ein Wert ungleich Null, wenn die Pfeile wie angegeben aktiviert oder deaktiviert
 
 Aktiviert oder deaktiviert die Bildlaufleiste für dieses Fenster.
 
-```
+```cpp
 void EnableScrollBarCtrl(
     int nBar,
     BOOL bEnable = TRUE);
@@ -2966,7 +2966,7 @@ virtual void EndModalState();
 
 Markiert das Ende der Malerei im angegebenen Fenster.
 
-```
+```cpp
 void EndPaint(LPPAINTSTRUCT lpPaint);
 ```
 
@@ -3014,7 +3014,7 @@ TRUE, wenn eine Dialogressource ausgeführt wird; andernfalls FALSE.
 
 Wird vom Framework aufgerufen, um QuickInfo-Meldungen anzuzeigen.
 
-```
+```cpp
 void FilterToolTipMessage(MSG* pMsg);
 ```
 
@@ -3699,7 +3699,7 @@ ID des überprüften Optionsfelds oder 0, wenn keine senzumtiert ist.
 
 Kopiert die Clientkoordinaten `CWnd` des Clientbereichs in die Struktur, auf die *lpRect*zeigt.
 
-```
+```cpp
 void GetClientRect(LPRECT lpRect) const;
 ```
 
@@ -4460,7 +4460,7 @@ Im Gegensatz dazu gibt die [GetParent-Funktion](#getparent) einen Zeiger auf das
 
 Rufen Sie diese Memberfunktion auf, um die activeX-Steuerelementeigenschaft abzurufen, die von *dwDispID*angegeben wird.
 
-```
+```cpp
 void GetProperty(
     DISPID dwDispID,
     VARTYPE vtProp,
@@ -4685,7 +4685,7 @@ Die aktuelle Position ist ein relativer Wert, der vom aktuellen Bildlaufbereich 
 
 Kopiert die aktuellen minimalen und maximalen Bildlaufleistenpositionen für die angegebene Bildlaufleiste an die von *lpMinPos* und *lpMaxPos*angegebenen Positionen .
 
-```
+```cpp
 void GetScrollRange(
     int nBar,
     LPINT lpMinPos,
@@ -5050,7 +5050,7 @@ Das `flags` Element der [WINDOWPLACEMENT-Struktur,](/windows/win32/api/winuser/n
 
 Kopiert die Abmessungen des umgebenden `CWnd` Rechtecks des Objekts in die Struktur, auf die *lpRect*zeigt.
 
-```
+```cpp
 void GetWindowRect(LPRECT lpRect) const;
 ```
 
@@ -5160,7 +5160,7 @@ Diese Memberfunktion [WM_GETTEXTLENGTH](/windows/win32/winmsg/wm-gettextlength) 
 
 Blendet das Caretzeichen aus, indem es auf dem Anzeigebildschirm entfernt wird.
 
-```
+```cpp
 void HideCaret();
 ```
 
@@ -5234,7 +5234,7 @@ Weitere Informationen finden Sie unter [CWinApp::HtmlHelp.](../../mfc/reference/
 
 Wird durch das Framework aufgerufen, um das dynamische Layout für ein Fenster zu initialisieren.
 
-```
+```cpp
 void InitDynamicLayout();
 ```
 
@@ -5246,7 +5246,7 @@ Rufen Sie diese Methode nicht direkt auf.
 
 Ungültig macht den gesamten `CWnd`Clientbereich von .
 
-```
+```cpp
 void Invalidate(BOOL bErase = TRUE);
 ```
 
@@ -5271,7 +5271,7 @@ Windows sendet [WM_PAINT](#onpaint) eine WM_PAINT `CWnd` Nachricht, wenn der Akt
 
 Ungültig macht den Clientbereich innerhalb des angegebenen Rechtecks, indem dieses Rechteck zum `CWnd` Aktualisierungsbereich hinzugefügt wird.
 
-```
+```cpp
 void InvalidateRect(
     LPCRECT lpRect,
     BOOL bErase = TRUE);
@@ -5297,7 +5297,7 @@ Windows sendet [WM_PAINT](#onpaint) eine WM_PAINT `CWnd` Nachricht, wenn der Akt
 
 Ungültig macht den Clientbereich innerhalb der angegebenen Region, indem `CWnd`er der aktuellen Aktualisierungsregion von hinzugefügt wird.
 
-```
+```cpp
 void InvalidateRgn(
     CRgn* pRgn,
     BOOL bErase = TRUE);
@@ -5325,7 +5325,7 @@ Die angegebene Region muss zuvor von einer der Regionsfunktionen erstellt worden
 
 Rufen Sie diese Memberfunktion auf, um die ActiveX Control-Methode oder -Eigenschaft aufzurufen, die von *dwDispID*angegeben wird, in dem von *wFlags*angegebenen Kontext.
 
-```
+```cpp
 void AFX_CDECL InvokeHelper(
     DISPID dwDispID,
     WORD wFlags,
@@ -5623,7 +5623,7 @@ Der `m_hWnd` Datenmember ist eine öffentliche Variable vom Typ HWND.
 
 Konvertiert (Zuordnung) einen Satz von Punkten aus dem Koordinatenbereich von `CWnd` zum Koordinatenbereich des anderen Fensters.
 
-```
+```cpp
 void MapWindowPoints(
     CWnd* pwndTo,
     LPRECT lpRect) const;
@@ -5790,7 +5790,7 @@ Informationen zum Ändern von Fenstern mit regulären Fensterstilen finden Sie u
 
 Ändert die Position und die Abmessungen.
 
-```
+```cpp
 void MoveWindow(
     int x,
     int y,
@@ -5805,10 +5805,10 @@ void MoveWindow(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die neue Position der linken `CWnd`Seite der an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die neue Position am `CWnd`oberen Rand der an.
 
 *nWidth*<br/>
@@ -5837,7 +5837,7 @@ Die `MoveWindow` Funktion sendet die [WM_GETMINMAXINFO](#ongetminmaxinfo) Nachri
 
 Signalisiert dem System, dass ein vordefiniertes Ereignis aufgetreten ist. Wenn Clientanwendungen eine Hook-Funktion für das Ereignis registriert haben, ruft das System die Hook-Funktion des Clients auf.
 
-```
+```cpp
 void NotifyWinEvent(
     DWORD event,
     LONG idObjectType,
@@ -8116,10 +8116,10 @@ afx_msg void OnMove(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die neue x-Koordinatenposition der oberen linken Ecke des Clientbereichs an. Diese neue Position wird in Bildschirmkoordinaten für überlappende Fenster und Popupfenster sowie elternclient-Koordinaten für untergeordnete Fenster angegeben.
 
-*y*<br/>
+*Y*<br/>
 Gibt die neue y-Koordinatenposition der oberen linken Ecke des Clientbereichs an. Diese neue Position wird in Bildschirmkoordinaten für überlappende Fenster und Popupfenster sowie elternclient-Koordinaten für untergeordnete Fenster angegeben.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -8579,7 +8579,7 @@ Diese Methode empfängt die [WM_DWMNCRENDERINGCHANGED](/windows/win32/dwm/wm-dwm
 
 Das Framework ruft diese Memberfunktion auf, wenn der Benutzer auf XBUTTON1 oder XBUTTON2 doppelklickt, während sich der Cursor im Nichtclientbereich eines Fensters befindet.
 
-```
+```cpp
 void OnNcXButtonDblClk(
     short nHitTest,
     UINT nButton,
@@ -10601,7 +10601,7 @@ Ein Wert ungleich Null, wenn die Nachricht übersetzt wurde und nicht gesendet w
 
 Rufen Sie diese Memberfunktion auf, um das aktuelle Fenster im angegebenen Gerätekontext zu zeichnen, der sich am häufigsten in einem Druckergerätekontext befindet.
 
-```
+```cpp
 void Print(
     CDC* pDC,
     DWORD dwFlags) const;
@@ -10647,7 +10647,7 @@ Gibt die Zeichnungsoptionen an. Dieser Parameter kann eines oder mehrere dieser 
 
 Rufen Sie diese Memberfunktion auf, um ein beliebiges Fenster im angegebenen Gerätekontext (in der Regel ein Druckergerätekontext) zu zeichnen.
 
-```
+```cpp
 void PrintClient(
     CDC* pDC,
     DWORD dwFlags) const;
@@ -10852,7 +10852,7 @@ Die Anwendung muss `ReleaseDC` die Memberfunktion für jeden Aufruf der [GetWind
 
 Wird aufgerufen, um Kontrollleisten im Clientbereich eines Fensters neu zu positionieren und die Größe zu ändern.
 
-```
+```cpp
 void RepositionBars(UINT nIDFirst,
     UINT nIDLast,
     UINT nIDLeftOver,
@@ -10926,7 +10926,7 @@ Standardmäßig `ContinueModal` wird FALSE `EndModalLoop` nach dem Aufruf zurüc
 
 Konvertiert die Bildschirmkoordinaten eines bestimmten Punkts oder Rechtecks auf der Anzeige zu Clientkoordinaten.
 
-```
+```cpp
 void ScreenToClient(LPPOINT lpPoint) const;  void ScreenToClient(LPRECT lpRect) const;
 ```
 
@@ -10950,7 +10950,7 @@ Die `ScreenToClient` Memberfunktion ersetzt die in *lpPoint* oder *lpRect* angeg
 
 Scrollt den Inhalt des Clientbereichs `CWnd` des aktuellen Objekts.
 
-```
+```cpp
 void ScrollWindow(
     int xAmount,
     int yAmount,
@@ -11143,7 +11143,7 @@ Die `SendMessage` Memberfunktion ruft die Fensterprozedur direkt auf und gibt er
 
 Rufen Sie diese Memberfunktion auf, um die angegebene Windows-Nachricht an alle untergeordneten Fenster zu senden.
 
-```
+```cpp
 void SendMessageToDescendants(
     UINT message,
     WPARAM wParam = 0,
@@ -11313,7 +11313,7 @@ Das Fenster kann ein beliebiges untergeordnetes Fenster sein, nicht nur ein Steu
 
 Legt den Text eines bestimmten Steuerelements in einem Dialogfeld auf die Zeichenfolgendarstellung eines angegebenen Ganzzahlwerts fest.
 
-```
+```cpp
 void SetDlgItemInt(
     int nID,
     UINT nValue,
@@ -11343,7 +11343,7 @@ Gibt an, ob der Ganzzahlwert signiert oder nicht signiert ist. Wenn dieser Param
 
 Legt die Beschriftung oder den Text eines Steuerelements fest, das einem Fenster oder Dialogfeld gehört.
 
-```
+```cpp
 void SetDlgItemText(
     int nID,
     LPCTSTR lpszString);
@@ -11409,7 +11409,7 @@ Wenn das aktuelle Fenster aktiv ist, aber nicht den Fokus hat (d. h., kein Fenst
 
 Sendet die WM_SETFONT Nachricht an das Fenster, um die angegebene Schriftart zu verwenden.
 
-```
+```cpp
 void SetFont(
     CFont* pFont,
     BOOL bRedraw = TRUE);
@@ -11518,7 +11518,7 @@ Bewirkt, dass das Fenster neu gezeichnet wird, um die Menüänderung widerzuspie
 
 Legt den Besitzer des aktuellen Fensters auf das angegebene Fensterobjekt fest.
 
-```
+```cpp
 void SetOwner(CWnd* pOwnerWnd);
 ```
 
@@ -11560,7 +11560,7 @@ Wenn das untergeordnete Fenster sichtbar ist, führt Windows das entsprechende N
 
 Rufen Sie diese Memberfunktion auf, um die von *dwDispID*angegebene OLE-Steuerelementeigenschaft festzulegen.
 
-```
+```cpp
 void AFX_CDECL SetProperty(
     DISPID dwDispID,
     VARTYPE vtProp, ...);
@@ -11588,7 +11588,7 @@ Weitere Informationen zur Verwendung dieser Memberfunktion mit OLE-Steuerelement
 
 Eine Anwendung `SetRedraw` ruft auf, um das Erneutzeichnen von Änderungen zu ermöglichen oder zu verhindern, dass Änderungen neu gezeichnet werden.
 
-```
+```cpp
 void SetRedraw(BOOL bRedraw = TRUE);
 ```
 
@@ -11684,7 +11684,7 @@ Das Festlegen von *bRedraw* auf FALSE ist immer dann nützlich, wenn die Bildlau
 
 Legt die minimalen und maximalen Positionswerte für die angegebene Scrollleiste fest.
 
-```
+```cpp
 void SetScrollRange(
     int nBar,
     int nMinPos,
@@ -11755,7 +11755,7 @@ Es wird ein Intervallwert angegeben, und jedes Mal, wenn das Intervall verstrich
 
 Die *lpfnTimer-Rückruffunktion* muss `TimerProc`nicht benannt werden, aber sie muss als statisch deklariert und wie folgt definiert werden.
 
-```
+```cpp
 void CALLBACK TimerProc(
     HWND hWnd,   // handle of CWnd that called SetTimer
     UINT nMsg,   // WM_TIMER
@@ -11840,10 +11840,10 @@ Identifiziert `CWnd` das Objekt, das diesem `CWnd` Objekt in der Z-Reihenfolge v
 
 Regeln zur Verwendung dieses Parameters finden Sie im Abschnitt "Bemerkungen" dieses Themas.
 
-*X*<br/>
+*x*<br/>
 Gibt die neue Position der linken Seite des Fensters an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die neue Position am oberen Rand des Fensters an.
 
 *Cx*<br/>
@@ -11949,7 +11949,7 @@ Nach einem erfolgreichen `SetWindowRgn`Aufruf von besitzt das Betriebssystem die
 
 Legt den Titel des Fensters auf den angegebenen Text fest.
 
-```
+```cpp
 void SetWindowText(LPCTSTR lpszString);
 ```
 
@@ -11972,7 +11972,7 @@ Diese Funktion bewirkt, dass eine [WM_SETTEXT](/windows/win32/winmsg/wm-settext)
 
 Zeigt die Einserstelle auf dem Bildschirm an der aktuellen Position der Einstelle an.
 
-```
+```cpp
 void ShowCaret();
 ```
 
@@ -11994,7 +11994,7 @@ Die Einsiederbe ist eine gemeinsame Ressource. Das Fenster sollte die Einserbitt
 
 Zeigt oder blendet alle Popupfenster aus, die sich im Besitz dieses Fensters befinden.
 
-```
+```cpp
 void ShowOwnedPopups(BOOL bShow = TRUE);
 ```
 
@@ -12011,7 +12011,7 @@ Gibt an, ob Popupfenster angezeigt oder ausgeblendet werden sollen. Wenn dieser 
 
 Zeigt eine Bildlaufleiste ein oder blendet sie aus.
 
-```
+```cpp
 void ShowScrollBar(
     UINT nBar,
     BOOL bShow = TRUE);
@@ -12146,7 +12146,7 @@ Diese Memberfunktion fügt das Windows-Steuerelement an ein `CWnd` Objekt `WndPr
 
 Rufen Sie diese Memberfunktion auf, `CWnd::LockWindowUpdate`um ein Fenster zu entsperren, das mit gesperrt wurde.
 
-```
+```cpp
 void UnlockWindowUpdate();
 ```
 
@@ -12195,7 +12195,7 @@ Das Framework `UpdateData` ruft automatisch mit *bSaveAndValidate* auf FALSE zur
 
 Rufen Sie diese Memberfunktion auf, um den Status von Dialogfeldern [ON_UPDATE_COMMAND_UI](message-map-macros-mfc.md#on_update_command_ui) und anderen Steuerelementen in einem Dialogfeld oder Fenster zu aktualisieren, das den ON_UPDATE_COMMAND_UI-Rückrufmechanismus verwendet.
 
-```
+```cpp
 void UpdateDialogControls(
     CCmdTarget* pTarget,
     BOOL bDisableIfNoHndler);
@@ -12275,7 +12275,7 @@ Diese Memberfunktion emuliert die Funktionalität der Funktion [UpdateLayeredWin
 
 Aktualisiert den Clientbereich, indem eine [WM_PAINT](/windows/win32/gdi/wm-paint) Nachricht gesendet wird, wenn der Aktualisierungsbereich nicht leer ist.
 
-```
+```cpp
 void UpdateWindow();
 ```
 
@@ -12291,7 +12291,7 @@ Die `UpdateWindow` Memberfunktion sendet eine WM_PAINT Nachricht direkt, die die
 
 Überprüft den Clientbereich innerhalb des angegebenen Rechtecks, indem das Rechteck aus dem Aktualisierungsbereich des Fensters entfernt wird.
 
-```
+```cpp
 void ValidateRect(LPCRECT lpRect);
 ```
 
@@ -12310,7 +12310,7 @@ Windows generiert weiterhin WM_PAINT Nachrichten, bis der aktuelle Aktualisierun
 
 Überprüft den Clientbereich innerhalb des angegebenen Bereichs, indem der Bereich aus dem aktuellen Aktualisierungsbereich des Fensters entfernt wird.
 
-```
+```cpp
 void ValidateRgn(CRgn* pRgn);
 ```
 
@@ -12432,7 +12432,7 @@ virtual void ResizeDynamicLayout();
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

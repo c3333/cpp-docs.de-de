@@ -160,12 +160,12 @@ helpviewer_keywords:
 - CMFCPopupMenu [MFC], OnChangeHot
 - CMFCPopupMenu [MFC], OnChooseItem
 ms.assetid: 9555dca1-8c9c-44c9-af72-0659ddad128e
-ms.openlocfilehash: 4749b043271518a40024d1da4f97b593ad882a78
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 74f161d68c3c58574d75ab64a1360fc7f571920d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375373"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751931"
 ---
 # <a name="cmfcpopupmenu-class"></a>CMFCPopupMenu-Klasse
 
@@ -296,7 +296,7 @@ Im folgenden Beispiel wird veranschaulicht, wie sie ein Popupmenüobjekt konfigu
 
 `CMFCPopupMenu`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxpopupmenu.h
 
@@ -375,7 +375,7 @@ Ein MENUAREA_TYPE Parameter kann einen der folgenden Werte aufweisen.
 
 ## <a name="cmfcpopupmenuclosemenu"></a><a name="closemenu"></a>CMFCPopupMenu::CloseMenu
 
-```
+```cpp
 void CloseMenu(BOOL bSetFocusToBar = FALSE);
 ```
 
@@ -426,10 +426,10 @@ virtual BOOL Create(
 *pWndParent*<br/>
 [in] Das übergeordnete Fenster `CMFCPopupMenu`für die .
 
-*X*<br/>
+*x*<br/>
 [in] Die horizontale Bildschirmkoordinate für die Position des Popupmenüs
 
-*y*<br/>
+*Y*<br/>
 [in] Die vertikale Bildschirmkoordinate für die Position des Popmenüs.
 
 *Hmenu*<br/>
@@ -488,7 +488,7 @@ virtual BOOL DefaultMouseClickOnClose() const;
 
 Initialisiert das Logo für ein Popupmenü.
 
-```
+```cpp
 void EnableMenuLogo(
     int iLogoSize,
     LOGO_LOCATION nLogoLocation = MENU_LOGO_LEFT);
@@ -527,7 +527,7 @@ Wenn Sie Sound aktivieren, ruft das Framework die [PlaySound-Methode](/windows/w
 
 ## <a name="cmfcpopupmenuenableresize"></a><a name="enableresize"></a>CMFCPopupMenu::EnableResize
 
-```
+```cpp
 void EnableResize(CSize sizeMinResize);
 ```
 
@@ -539,7 +539,7 @@ void EnableResize(CSize sizeMinResize);
 
 ## <a name="cmfcpopupmenuenablescrolling"></a><a name="enablescrolling"></a>CMFCPopupMenu::EnableScrolling
 
-```
+```cpp
 void EnableScrolling(BOOL = TRUE);
 ```
 
@@ -551,7 +551,7 @@ void EnableScrolling(BOOL = TRUE);
 
 ## <a name="cmfcpopupmenuenablevertresize"></a><a name="enablevertresize"></a>CMFCPopupMenu::EnableVertResize
 
-```
+```cpp
 void EnableVertResize(int nMinResize);
 ```
 
@@ -1089,7 +1089,7 @@ TRUE, wenn ein Popupmenü sichtbar ist; andernfalls FALSE.
 
 ## <a name="cmfcpopupmenumoveto"></a><a name="moveto"></a>CMFCPopupMenu::MoveTo
 
-```
+```cpp
 void MoveTo(const CPoint& pt);
 ```
 
@@ -1188,7 +1188,7 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 
 Löscht alle Elemente aus einem Popupmenü.
 
-```
+```cpp
 void RemoveAllItems();
 ```
 
@@ -1259,7 +1259,7 @@ Siehe [CMFCPopupMenu::GetAnimationType](#getanimationtype) für eine Liste gült
 
 ## <a name="cmfcpopupmenusetautodestroy"></a><a name="setautodestroy"></a>CMFCPopupMenu::SetAutoDestroy
 
-```
+```cpp
 void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 ```
 
@@ -1273,7 +1273,7 @@ void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 
 Legt den Standardbefehl für das Popupmenü fest.
 
-```
+```cpp
 void SetDefaultItem(UINT uiCmd);
 ```
 
@@ -1324,7 +1324,7 @@ Wenn Sie diese Methode aufrufen, wird ein globales Flag in Ihrer Anwendung festg
 
 Legen Sie die maximale Breite für das Popupmenü fest.
 
-```
+```cpp
 void SetMaxWidth(int iMaxWidth);
 ```
 
@@ -1339,7 +1339,7 @@ Wenn der Text, der einem Menübefehl zugeordnet ist, nicht in die maximale Breit
 
 ## <a name="cmfcpopupmenusetmessagewnd"></a><a name="setmessagewnd"></a>CMFCPopupMenu::SetMessageWnd
 
-```
+```cpp
 void SetMessageWnd(CWnd* pMsgWnd);
 ```
 
@@ -1351,7 +1351,7 @@ void SetMessageWnd(CWnd* pMsgWnd);
 
 ## <a name="cmfcpopupmenusetparentribbonelement"></a><a name="setparentribbonelement"></a>CMFCPopupMenu::SetParentRibbonElement
 
-```
+```cpp
 void SetParentRibbonElement(CMFCRibbonBaseElement* pElem);
 ```
 
@@ -1363,7 +1363,7 @@ void SetParentRibbonElement(CMFCRibbonBaseElement* pElem);
 
 ## <a name="cmfcpopupmenusetquickcustomizetype"></a><a name="setquickcustomizetype"></a>CMFCPopupMenu::SetQuickCustomizeType
 
-```
+```cpp
 void SetQuickCustomizeType(QUICK_CUSTOMIZE_TYPE Type);
 ```
 
@@ -1375,7 +1375,7 @@ void SetQuickCustomizeType(QUICK_CUSTOMIZE_TYPE Type);
 
 ## <a name="cmfcpopupmenusetquickmode"></a><a name="setquickmode"></a>CMFCPopupMenu::SetQuickMode
 
-```
+```cpp
 void SetQuickMode();
 ```
 
@@ -1385,7 +1385,7 @@ void SetQuickMode();
 
 Legt die Menüausrichtung für Popupmenüs fest.
 
-```
+```cpp
 void SetRightAlign(BOOL bRightAlign = TRUE);
 ```
 
@@ -1419,7 +1419,7 @@ Dies ist eine globale Option für alle Popupmenüs in einer Anwendung. Wenn dies
 
 Erzwingt, dass im Popupmenü alle Befehle angezeigt werden.
 
-```
+```cpp
 void ShowAllCommands();
 ```
 
@@ -1429,7 +1429,7 @@ Dies ist keine globale Einstellung und wirkt sich nur auf das aktuelle Popupmen�
 
 ## <a name="cmfcpopupmenutriggerresize"></a><a name="triggerresize"></a>CMFCPopupMenu::TriggerResize
 
-```
+```cpp
 void TriggerResize();
 ```
 
@@ -1456,7 +1456,7 @@ Diese Methode ist nützlich, wenn Popupmenüs über animierte Steuerelemente ode
 
 Aktualisiert den Schatten für das Popupmenü.
 
-```
+```cpp
 void UpdateShadow(LPRECT lprectScreen = NULL);
 ```
 
@@ -1469,7 +1469,7 @@ void UpdateShadow(LPRECT lprectScreen = NULL);
 
 Rufen Sie diese Methode auf, wenn ein Popupmenü mit einem Schatten ein animiertes Bild überlappt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

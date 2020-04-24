@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CMFCDesktopAlertWnd [MFC], SetSmallCaption
 - CMFCDesktopAlertWnd [MFC], SetTransparency
 ms.assetid: 73a2dd7b-ea84-4ae2-9830-7cf6e8dd2425
-ms.openlocfilehash: f9c59258cf757b5468985a954640ccec1543512b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cf453b6e69f012bedaf0bd91b5eaf11f7caffa12
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367633"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752461"
 ---
 # <a name="cmfcdesktopalertwnd-class"></a>CMFCDesktopAlertWnd Class
 
@@ -135,7 +135,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CMFCDesktopAlertWnd` verschiede
 
 [CMFCDesktopAlertWnd](../../mfc/reference/cmfcdesktopalertwnd-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxDesktopAlertWnd.h
 
@@ -391,7 +391,7 @@ BOOL ProcessCommand(HWND hwnd);
 
 Legt die neue Animationsgeschwindigkeit fest.
 
-```
+```cpp
 void SetAnimationSpeed(UINT nSpeed);
 ```
 
@@ -408,7 +408,7 @@ Rufen Sie diese Methode auf, um die Animationsgeschwindigkeit für das Warnungsf
 
 Legt den Animationstyp fest.
 
-```
+```cpp
 void SetAnimationType(CMFCPopupMenu::ANIMATION_TYPE type);
 ```
 
@@ -435,7 +435,7 @@ Rufen Sie diese Methode auf, um den Animationstyp festzulegen. Sie können einen
 
 Legt die Zeitfürst beim automatischen Schließen fest.
 
-```
+```cpp
 void SetAutoCloseTime(int nTime);
 ```
 
@@ -452,7 +452,7 @@ Das Warnungsfenster wird automatisch nach der angegebenen Zeit geschlossen, wenn
 
 Wechselt zwischen kleinen und regulären Beschriftungen.
 
-```
+```cpp
 void SetSmallCaption(BOOL bSmallCaption = TRUE);
 ```
 
@@ -469,7 +469,7 @@ Rufen Sie diese Methode auf, um die kleine oder normale Beschriftung anzuzeigen.
 
 Legt die Transparenzebene des Popupfensters fest.
 
-```
+```cpp
 void SetTransparency(BYTE nTransparency);
 ```
 
@@ -492,7 +492,7 @@ virtual CSize GetDialogSize();
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

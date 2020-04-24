@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - ICommandTarget interface [MFC]
 ms.assetid: dd9927f6-3479-4e7c-8ef9-13206cf901f3
-ms.openlocfilehash: 865a8a27d96f84f536e40ec5a7bbbbdd9837dfcd
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: be64f4e0367b9ecc1b24fa96f067f4acd45a9978
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81356918"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751456"
 ---
 # <a name="icommandtarget-interface"></a>ICommandTarget-Schnittstelle
 
@@ -41,7 +41,7 @@ Weitere Informationen [finden Sie unter Gewusst wie: Hinzufügen von Befehlsrout
 
 Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [Verwenden einer Windows Form Benutzersteuerung in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwinforms.h (definiert in assembly atlmfc-lib-mfcmifc80.dll)
 
@@ -49,7 +49,7 @@ Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [Verwend
 
 Initialisiert das Befehlszielobjekt.
 
-```
+```cpp
 void Initialize(ICommandSource^ cmdSource);
 ```
 
@@ -64,7 +64,7 @@ Wenn Sie ein Benutzersteuerelement in einer MFC-Ansicht hosten, leitet CWinForms
 
 Diese Methode initialisiert das Befehlszielobjekt und ordnet es dem angegebenen Befehlsquellobjekt cmdSource zu. Sie sollte in der Implementierung der Benutzersteuerungsklasse aufgerufen werden. Bei der Initialisierung sollten Sie Befehlshandler beim Befehlsquellobjekt registrieren, indem Sie ICommandSource::AddCommandHandler in der Initialize-Implementierung aufrufen. Weitere Informationen finden Sie unter Gewusst wie: Hinzufügen von Befehlsrouting zum Windows-Formularsteuerelement, um ein Beispiel dafür zu finden, wie Sie initialisieren verwenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vorgehensweise: Hinzufügen von Befehlsrouting zum Windows Forms-Steuerelement](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)<br/>
 [ICommandSource-Schnittstelle](../../mfc/reference/icommandsource-interface.md)

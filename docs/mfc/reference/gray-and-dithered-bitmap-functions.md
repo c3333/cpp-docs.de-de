@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - gray and dithered bitmap functions [MFC]
 ms.assetid: cb139a77-b85e-4504-9d93-24156ad77a41
-ms.openlocfilehash: bbc64aad0d65c0430ad23b96f635be8fe2b396e0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a220596b880ee74d5f9ebf683d087156224ee7c5
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81357040"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751476"
 ---
 # <a name="gray-and-dithered-bitmap-functions"></a>Bitmap-Funktionen zu Ausgrauen und Dithering
 
@@ -44,7 +44,7 @@ MFC enthält außerdem zwei Funktionen, mit denen der Hintergrund einer Bitmap d
 
 Zeichnet eine graue Version einer Bitmap.
 
-```
+```cpp
 void AFXAPI AfxDrawGrayBitmap(
     CDC* pDC,
     int x,
@@ -58,10 +58,10 @@ void AFXAPI AfxDrawGrayBitmap(
 *pDC*<br/>
 Zeigt auf den Ziel-DC.
 
-*X*<br/>
+*x*<br/>
 Die X-Koordinate des Ziels.
 
-*y*<br/>
+*Y*<br/>
 Die Y-Koordinate des Ziels.
 
 *rSrc*<br/>
@@ -80,7 +80,7 @@ Eine mit `AfxDrawGrayBitmap` gezeichnete Bitmap hat das Aussehen eines deaktivie
 
 [!code-cpp[NVC_MFCDocView#191](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_1.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -88,7 +88,7 @@ Eine mit `AfxDrawGrayBitmap` gezeichnete Bitmap hat das Aussehen eines deaktivie
 
 Kopiert eine graue Version einer Bitmap.
 
-```
+```cpp
 void AFXAPI AfxGetGrayBitmap(
     const CBitmap& rSrc,
     CBitmap* pDest,
@@ -116,7 +116,7 @@ Eine mit `AfxGetGrayBitmap` kopierte Bitmap hat das Aussehen eines deaktivierten
 
 [!code-cpp[NVC_MFCDocView#193](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_2.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -124,7 +124,7 @@ Eine mit `AfxGetGrayBitmap` kopierte Bitmap hat das Aussehen eines deaktivierten
 
 Zeichnet eine Bitmap und ersetzt ihren Hintergrund durch ein gezaudertes (Prüfmuster) Muster.
 
-```
+```cpp
 void AFXAPI AfxDrawDitheredBitmap(
     CDC* pDC,
     int x,
@@ -139,10 +139,10 @@ void AFXAPI AfxDrawDitheredBitmap(
 *pDC*<br/>
 Zeigt auf den Ziel-DC.
 
-*X*<br/>
+*x*<br/>
 Die X-Koordinate des Ziels.
 
-*y*<br/>
+*Y*<br/>
 Die Y-Koordinate des Ziels.
 
 *rSrc*<br/>
@@ -164,7 +164,7 @@ Die Quell-Bitmap wird auf dem Ziel-DC mit einem zweifarbigen (*cr1* und *cr2*) k
 
 [!code-cpp[NVC_MFCDocView#190](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_3.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -172,7 +172,7 @@ Die Quell-Bitmap wird auf dem Ziel-DC mit einem zweifarbigen (*cr1* und *cr2*) k
 
 Kopiert eine Bitmap und ersetzt den Hintergrund durch ein gezaudertes (Prüfmuster) Muster.
 
-```
+```cpp
 void AFXAPI AfxGetDitheredBitmap(
     const CBitmap& rSrc,
     CBitmap* pDest,
@@ -204,10 +204,10 @@ Die Quellbitmap wird mit einem zweifarbigen (*cr1* und *cr2*) karierten Muster, 
 
 [!code-cpp[NVC_MFCDocView#192](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_4.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

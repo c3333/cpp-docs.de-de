@@ -232,12 +232,12 @@ helpviewer_keywords:
 - CMFCRibbonBaseElement [MFC], OnProcessKey
 - CMFCRibbonBaseElement [MFC], OnSetFocus
 ms.assetid: 419ea91b-5062-44cc-b0a3-f87d29566f62
-ms.openlocfilehash: f28ba975b060de149edaa5e3b93eac61d4cd6703
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8cf84df16feac39406c80af8c91973ba81d3c815
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375312"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752483"
 ---
 # <a name="cmfcribbonbaseelement-class"></a>CMFCRibbonBaseElement-Klasse
 
@@ -405,7 +405,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCRibbonBaseElement](../../mfc/reference/cmfcribbonbaseelement-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxbaseribbonelement.h
 
@@ -1893,7 +1893,7 @@ Diese Methode benachrichtigt das übergeordnete Fenster der Multifunktionsleiste
 
 Schließt das Popupmenü für das Menübandelement und sendet eine Schließenmeldung an das übergeordnete Menü.
 
-```
+```cpp
 void PostMenuCommand(UINT uiCmdId);
 ```
 
@@ -1972,7 +1972,7 @@ In der folgenden Tabelle wird die Logik für diese Methode zusammengefasst.
 
 Ordnet dem Multifunktionsleistenelement ein Datenelement zu.
 
-```
+```cpp
 void SetData(DWORD_PTR dwData);
 ```
 
@@ -1985,7 +1985,7 @@ void SetData(DWORD_PTR dwData);
 
 Legt fest, dass das Multifunktionsleistenelement als Popupbefehl angezeigt wird.
 
-```
+```cpp
 void SetDefaultMenuLook(BOOL bIsDefaultMenuLook = TRUE);
 ```
 
@@ -2129,7 +2129,7 @@ virtual void SetParentRibbonBar(CMFCRibbonBar* pRibbonBar);
 
 Legt die Bemaßungen des Anzeigerechtecks für das Multifunktionsleistenelement fest.
 
-```
+```cpp
 void SetRect(CRect rect);
 ```
 
@@ -2200,7 +2200,7 @@ virtual void SetToolTipText(LPCTSTR lpszText);
 
 Legt die Sichtbarkeit des Multifunktionsleistenelements fest.
 
-```
+```cpp
 void SetVisible(BOOL bIsVisible);
 ```
 
@@ -2273,7 +2273,7 @@ TRUE, wenn das Multifunktionsleistenelement fokussiert ist; andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

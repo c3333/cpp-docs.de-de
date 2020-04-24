@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CUserToolsManager [MFC], SetDefExt
 - CUserToolsManager [MFC], SetFilter
 ms.assetid: bdfa37ae-efca-4616-abb5-9d0dcd2d335b
-ms.openlocfilehash: c1f14657350c08679868299ce4878cca2ae10eec
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1e9be5d7cb81f2769b98d9baeae786873f5fa73d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373226"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751986"
 ---
 # <a name="cusertoolsmanager-class"></a>CUserToolsManager-Klasse
 
@@ -118,7 +118,7 @@ Im folgenden Beispiel wird veranschaulicht, `CUserToolsManager` wie Sie einen Ve
 
 `CUserToolsManager`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxusertoolsmanager.h
 
@@ -460,7 +460,7 @@ Normalerweise müssen Sie diese Methode nicht direkt aufrufen, [CWinAppEx::SaveS
 
 Gibt die Standarderweiterung an, die das Dialogfeld **Dateiöffnen** ( [CFileDialog-Klasse](../../mfc/reference/cfiledialog-class.md)) im **Befehlsfeld** auf der Registerkarte **Werkzeuge** im Dialogfeld **Anpassen** verwendet.
 
-```
+```cpp
 void SetDefExt(const CString& strDefExt);
 ```
 
@@ -477,7 +477,7 @@ Rufen Sie diese Methode auf, um eine Standarddateinamenerweiterung im Dialogfeld
 
 Gibt den Dateifilter an, den das Dialogfeld **Dateiöffnen** ( [CFileDialog-Klasse](../../mfc/reference/cfiledialog-class.md)) im **Befehlsfeld** auf der Registerkarte **Werkzeuge** im Dialogfeld **Anpassen** verwendet.
 
-```
+```cpp
 void SetFilter(const CString& strFilter);
 ```
 
@@ -486,7 +486,7 @@ void SetFilter(const CString& strFilter);
 *strFilter*<br/>
 [in] Gibt den Filter an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

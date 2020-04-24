@@ -9,35 +9,35 @@ helpviewer_keywords:
 - VARIANT object [C++], attach
 - VARIANT object
 ms.assetid: 2f02bd08-2306-4477-aa88-d2a5dee2b859
-ms.openlocfilehash: 3792ed4d0fcd86c4a4e846771c450413fda130b5
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d0822dfc730cbbb64f8364e6fa8fe8bc7207f9f9
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187764"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750742"
 ---
 # <a name="_variant_tattach"></a>_variant_t::Attach
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
-Fügt ein `VARIANT` Objekt an das **_variant_t** Objekt an.
+Fügt ein `VARIANT` Objekt an das **_variant_t-Objekt** an.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Attach(VARIANT& varSrc);
 ```
 
 #### <a name="parameters"></a>Parameter
 
 *varSrc*<br/>
-Ein `VARIANT`-Objekt, das an dieses **_variant_t** Objekt angefügt werden soll.
+Ein `VARIANT` Objekt, das diesem **_variant_t** Objekt angefügt werden soll.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Übernimmt den Besitz der `VARIANT`, indem Sie gekapselt wird. Diese Member-Funktion gibt alle vorhandenen gekapselten `VARIANT`frei, kopiert dann die angegebene `VARIANT`und legt deren `VARTYPE` auf VT_EMPTY fest, um sicherzustellen, dass Ihre Ressourcen nur vom **_variant_t** -destrukturtor freigegeben werden können.
+Übernimmt das `VARIANT` Eigentum an der, indem sie es einkapselt. Diese Memberfunktion gibt alle vorhandenen `VARIANT`gekapselten `VARIANT`frei, kopiert `VARTYPE` dann die angegebene , und legt ihre auf VT_EMPTY fest, um sicherzustellen, dass ihre Ressourcen nur vom _variant_t-Destruktor freigegeben werden können. **_variant_t**
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Weitere Informationen
 

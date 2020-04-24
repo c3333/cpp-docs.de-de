@@ -38,12 +38,12 @@ helpviewer_keywords:
 - CMFCAutoHideBar [MFC], UpdateVisibleState
 - CMFCAutoHideBar [MFC], m_nShowAHWndDelay
 ms.assetid: 54c8d84f-de64-4efd-8a47-3ea0ade40a70
-ms.openlocfilehash: 62750f4fb1261f4f30286297c3a240ab67e6df1c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 05f77dfba442f1ce4a375c8f225908799ece1788
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369899"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751763"
 ---
 # <a name="cmfcautohidebar-class"></a>CMFCAutoHideBar-Klasse
 
@@ -118,7 +118,7 @@ Das folgende Beispiel veranschaulicht das Erstellen eines `CMFCAutoHideBar`-Obje
 
 [CMFCAutoHideBar](../../mfc/reference/cmfcautohidebar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxautohidebar.h
 
@@ -315,7 +315,7 @@ Siehe [CPane::SetActiveInGroup](../../mfc/reference/cpane-class.md#setactiveingr
 
 ## <a name="cmfcautohidebarsetrecentvisiblestate"></a><a name="setrecentvisiblestate"></a>CMFCAutoHideBar::SetRecentVisibleState
 
-```
+```cpp
 void SetRecentVisibleState(BOOL bState);
 ```
 
@@ -384,7 +384,7 @@ Abgeleitete Klassen können diese Methode zum Anpassen des Verhaltens außer Kra
 
 Deaktiviert den automatischen Ausblendemodus für eine Gruppe von automatisch ausblendbaren Leisten.
 
-```
+```cpp
 void UnSetAutoHideMode(CDockablePane* pFirstBarInGroup)
 ```
 
@@ -398,13 +398,13 @@ void UnSetAutoHideMode(CDockablePane* pFirstBarInGroup)
 
 Wird vom Framework aufgerufen, wenn die automatisch ausblendbare Leiste neu gezeichnet werden muss.
 
-```
+```cpp
 void UpdateVisibleState();
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

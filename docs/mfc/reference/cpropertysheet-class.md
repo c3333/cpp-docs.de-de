@@ -52,12 +52,12 @@ helpviewer_keywords:
 - CPropertySheet [MFC], SetWizardMode
 - CPropertySheet [MFC], m_psh
 ms.assetid: 8461ccff-d14f-46e0-a746-42ad642ef94e
-ms.openlocfilehash: 167c99f734e4538ff2704e032a6ca98fb1d82004
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e8ab91b9a6fe76070d79ea2eee2e5765db2e99e3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363950"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750972"
 ---
 # <a name="cpropertysheet-class"></a>CPropertySheet-Klasse
 
@@ -157,7 +157,7 @@ Weitere Informationen zur Verwendung `CPropertySheet` von Objekten finden Sie im
 
 `CPropertySheet`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdlgs.h
 
@@ -165,7 +165,7 @@ Weitere Informationen zur Verwendung `CPropertySheet` von Objekten finden Sie im
 
 Fügt die mitgelieferte Seite mit der rechten Registerkarte im Eigenschaftenblatt hinzu.
 
-```
+```cpp
 void AddPage(CPropertyPage* pPage);
 ```
 
@@ -194,7 +194,7 @@ Wenn Sie `AddPage` nach dem Anzeigen der Eigenschaftenseite anrufen, spiegelt di
 
 Erstellt ein `CPropertySheet`-Objekt.
 
-```
+```cpp
 void Construct(
     UINT nIDCaption,
     CWnd* pParentWnd = NULL,
@@ -422,7 +422,7 @@ Siehe Beispiel für [CPropertySheet::AddPage](#addpage).
 
 Gibt an, ob Zeilen von Registerkarten in einem Eigenschaftenblatt gestapelt werden sollen.
 
-```
+```cpp
 void EnableStackedTabs(BOOL bStacked);
 ```
 
@@ -445,7 +445,7 @@ Sie müssen `EnableStackedTabs` aufrufen, wenn Sie ein modales oder ein moduslos
 
 Beendet das Eigenschaftenblatt.
 
-```
+```cpp
 void EndDialog(int nEndID);
 ```
 
@@ -600,14 +600,14 @@ Weitere Informationen zu dieser Struktur, einschließlich einer Liste ihrer Mitg
 
 Konvertiert die Dialogfeldeinheiten eines Rechtecks in Bildschirmeinheiten.
 
-```
+```cpp
 void MapDialogRect(LPRECT lpRect) const;
 ```
 
 ### <a name="parameters"></a>Parameter
 
 *lpRect*<br/>
-Zeigt auf eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) oder ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das die zu konvertierenden Dialogfeldkoordinaten enthält.
+Zeigt auf eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das die zu konvertierenden Dialogfeldkoordinaten enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -641,7 +641,7 @@ Sie benötigen keinen Nachrichtenzuordnungseintrag für diese Memberfunktion.
 
 Simuliert die Auswahl der angegebenen Schaltfläche in einem Eigenschaftenblatt.
 
-```
+```cpp
 void PressButton(int nButton);
 ```
 
@@ -678,7 +678,7 @@ Ein Aufruf `PressButton` an sendet die [PSN_APPLY](/windows/win32/Controls/psn-a
 
 Entfernt eine Seite aus dem Eigenschaftenblatt und zerstört das zugehörige Fenster.
 
-```
+```cpp
 void RemovePage(CPropertyPage* pPage);
 void RemovePage(int nPage);
 ```
@@ -728,7 +728,7 @@ Siehe beispielfür [CPropertySheet::GetActivePage](#getactivepage).
 
 Legt den Text in der Schaltfläche Fertig stellen fest.
 
-```
+```cpp
 void SetFinishText(LPCTSTR lpszText);
 ```
 
@@ -749,7 +749,7 @@ Rufen `SetFinishText` Sie an, um den Text auf der Schaltfläche Fertig stellen a
 
 Gibt die Beschriftung des Eigenschaftenblatts an (den Text, der in der Titelleiste eines Rahmenfensters angezeigt wird).
 
-```
+```cpp
 void SetTitle(
     LPCTSTR lpszText,
     UINT nStyle = 0);
@@ -775,7 +775,7 @@ Standardmäßig verwendet ein Eigenschaftenblatt den Beschriftungsparameter im E
 
 Aktiviert oder deaktiviert die Schaltfläche Zurück, Weiter oder Beenden in einem Assistenten-Eigenschaftenblatt.
 
-```
+```cpp
 void SetWizardButtons(DWORD dwFlags);
 ```
 
@@ -812,7 +812,7 @@ A `CPropertySheet` verfügt über drei `CStylePage` `CColorPage`Assistenteneigen
 
 Richtet eine Eigenschaftenseite als Assistenten ein.
 
-```
+```cpp
 void SetWizardMode();
 ```
 
@@ -828,7 +828,7 @@ Rufen `SetWizardMode` Sie an, bevor Sie [DoModal](#domodal)aufrufen. Nach dem `S
 
 [!code-cpp[NVC_MFCDocView#142](../../mfc/codesnippet/cpp/cpropertysheet-class_15.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>

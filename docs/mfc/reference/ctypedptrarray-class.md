@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CTypedPtrArray [MFC], SetAt
 - CTypedPtrArray [MFC], SetAtGrow
 ms.assetid: e3ecdf1a-a889-4156-92dd-ddbd36ccd919
-ms.openlocfilehash: a996bca471ce82a7c2adaaad67670ddef417eda1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 20cf147e955b6b19919f35750b0f46a8b5a67ad0
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373281"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752065"
 ---
 # <a name="ctypedptrarray-class"></a>CTypedPtrArray-Klasse
 
@@ -85,7 +85,7 @@ Weitere Informationen zur `CTypedPtrArray`Verwendung finden Sie in den Artikeln 
 
 `CTypedPtrArray`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxtempl.h
 
@@ -144,7 +144,7 @@ Ausführlichere Anmerkungen finden Sie unter [CObArray::Append](../../mfc/refere
 
 Diese Memberfunktion `BASE_CLASS`ruft **::Copy**auf.
 
-```
+```cpp
 void Copy(const CTypedPtrArray<BASE_CLASS, TYPE>& src);
 ```
 
@@ -215,7 +215,7 @@ Ausführlichere Bemerkungen finden Sie unter [CObArray::GetAt](../../mfc/referen
 
 Diese Memberfunktion `BASE_CLASS`ruft **::InsertAt**auf.
 
-```
+```cpp
 void InsertAt(
     INT_PTR nIndex,
     TYPE newElement,
@@ -280,7 +280,7 @@ Die Debug-Version der Bibliothek bestätigt, ob das Subskript (entweder auf der 
 
 Diese Memberfunktion `BASE_CLASS`ruft **::SetAt**auf.
 
-```
+```cpp
 void SetAt(
     INT_PTR nIndex,
     TYPE ptr);
@@ -305,7 +305,7 @@ Ausführlichere Anmerkungen finden Sie unter [CObArray::SetAt](../../mfc/referen
 
 Diese Memberfunktion `BASE_CLASS`ruft **::SetAtGrow**auf.
 
-```
+```cpp
 void SetAtGrow(
     INT_PTR nIndex,
     TYPE newElement);
@@ -326,7 +326,7 @@ Der Objektzeiger, der diesem Array hinzugefügt werden soll. Ein **NULL-Wert** i
 
 Ausführlichere Anmerkungen finden Sie unter [CObArray::SetAtGrow](../../mfc/reference/cobarray-class.md#setatgrow).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel COLLECT](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

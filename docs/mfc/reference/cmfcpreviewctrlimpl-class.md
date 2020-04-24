@@ -36,12 +36,12 @@ helpviewer_keywords:
 - CMFCPreviewCtrlImpl [MFC], m_font
 - CMFCPreviewCtrlImpl [MFC], m_pDocument
 ms.assetid: 06257fa0-54c9-478d-9d68-c9698c3f93ed
-ms.openlocfilehash: 060e601901fa5725d7ca62f244f66784af3dc11d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0c0a594a84b45ce7bf6f2c2fa5d1a547fa10eaa6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375337"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751849"
 ---
 # <a name="cmfcpreviewctrlimpl-class"></a>CMFCPreviewCtrlImpl-Klasse
 
@@ -91,7 +91,7 @@ class CMFCPreviewCtrlImpl : public CWnd;
 |[CMFCPreviewCtrlImpl::m_font](#m_font)|Schriftart, die zum Anzeigen von Text im Vorschaufenster verwendet wird.|
 |[CMFCPreviewCtrlImpl::m_pDocument](#m_pdocument)|Ein Zeiger auf ein Dokument, dessen Inhalt im Steuerelement in der Vorschau angezeigt wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -251,7 +251,7 @@ Wird vom Vorschauhandler aufgerufen, um eine Beziehung zwischen der Dokumentimpl
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void SetDocument(
    IDocument* pDocument
 );

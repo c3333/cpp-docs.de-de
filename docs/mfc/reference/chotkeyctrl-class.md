@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CHotKeyCtrl [MFC], SetHotKey
 - CHotKeyCtrl [MFC], SetRules
 ms.assetid: 896f9766-0718-4f58-aab2-20325e118ca6
-ms.openlocfilehash: 758fb78fbd4e25a0e2fb8cea300c5371ece04fb4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a79cc0ab2c01633f96430477aa536a60385461e9
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366883"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750798"
 ---
 # <a name="chotkeyctrl-class"></a>CHotKeyCtrl-Klasse
 
@@ -81,7 +81,7 @@ Weitere Informationen zur `CHotKeyCtrl`Verwendung finden Sie unter [Steuerelemen
 
 `CHotKeyCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -151,7 +151,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Hotkey-Steuerelements an. Wenden Sie eine beliebige Kombination von Steuerelementstilen an. Weitere Informationen finden Sie unter [Allgemeine Steuerelementstile](/windows/win32/Controls/common-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -254,7 +254,7 @@ Der Schlüsselname, den diese Funktion zurückgibt, stammt vom Tastaturtreiber, 
 
 Legt die Tastenkombination für ein Hotkey-Steuerelement fest.
 
-```
+```cpp
 void SetHotKey(
     WORD wVirtualKeyCode,
     WORD wModifiers);
@@ -285,7 +285,7 @@ Der virtuelle Tastencode und die Modifikatortasten definieren zusammen die Taste
 
 Rufen Sie diese Funktion auf, um die ungültigen Kombinationen und die Standardmodifikatorkombination für ein Hotkey-Steuerelement zu definieren.
 
-```
+```cpp
 void SetRules(
     WORD wInvalidComb,
     WORD wModifiers);
@@ -319,7 +319,7 @@ Array von Flags, das die Tastenkombination angibt, die verwendet werden soll, we
 
 Wenn ein Benutzer eine ungültige Tastenkombination eingibt, wie in *wInvalidComb*angegeben, verwendet das System den OPERATOR ODER, um die vom Benutzer eingegebenen Schlüssel mit den in *wModifiers*angegebenen Flags zu kombinieren. Die resultierende Tastenkombination wird in eine Zeichenfolge konvertiert und dann im Hotkey-Steuerelement angezeigt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

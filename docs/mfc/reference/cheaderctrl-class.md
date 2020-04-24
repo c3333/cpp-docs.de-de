@@ -64,12 +64,12 @@ helpviewer_keywords:
 - CHeaderCtrl [MFC], SetItem
 - CHeaderCtrl [MFC], SetOrderArray
 ms.assetid: b847ac90-5fae-4a87-88e0-ca45f77b8b3b
-ms.openlocfilehash: 6b5088526ad2c1f94fdc95ec3b84ab7cf64b59e1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: de1705d47c5692d3563bc7d9cb2646531819197a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366852"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750924"
 ---
 # <a name="cheaderctrl-class"></a>CHeaderCtrl-Klasse
 
@@ -152,7 +152,7 @@ Weitere Informationen zur `CHeaderCtrl`Verwendung von finden Sie unter [Steuerel
 
 `CHeaderCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -231,7 +231,7 @@ virtual BOOL Create(
 Gibt den Stil des Headersteuerelements an. Eine Beschreibung der Headersteuerungsstile finden Sie unter [Headersteuerungsstile](/windows/win32/Controls/header-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Gibt die Größe und Position des Kopfsteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Gibt die Größe und Position des Kopfsteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Headersteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -301,7 +301,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Der Stil des Headersteuerelements. Eine Beschreibung der Headersteuerungsstile finden Sie unter [Headersteuerungsstile](/windows/win32/Controls/header-control-styles) im Windows SDK. Eine Liste zusätzlicher Formatvorlagen finden Sie unter [Erstellen.](#create)
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -543,7 +543,7 @@ BOOL GetItemDropDownRect(
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*iItem*|[in] Nullbasierter Index eines Kopfelements, dessen Stil HDF_SPLITBUTTON ist. Weitere Informationen finden `fmt` Sie im Member der [HDITEM-Struktur.](/windows/win32/api/commctrl/ns-commctrl-hditemw)|
-|*lpRect*|[out] Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) um die umgrenzenden Rechteckinformationen zu empfangen.|
+|*lpRect*|[out] Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) um die umgrenzenden Rechteckinformationen zu empfangen.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -581,7 +581,7 @@ BOOL GetItemRect(
 Der nullbasierte Index des Kopfsteuerelementselements.
 
 *lpRect*<br/>
-Ein Zeiger auf die Adresse einer [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die umgrenzenden Rechteckinformationen empfängt.
+Ein Zeiger auf die Adresse einer [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die umgrenzenden Rechteckinformationen empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -633,7 +633,7 @@ BOOL GetOverflowRect(LPRECT lpRect) const;
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*lpRect*|[out] Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die umgrenzenden Rechteckinformationen empfängt.|
+|*lpRect*|[out] Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die umgrenzenden Rechteckinformationen empfängt.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -957,7 +957,7 @@ Diese Memberfunktion implementiert das Verhalten des Win32-Makros [HDM_SETORDERA
 
   Siehe Beispiel für [CHeaderCtrl::GetOrderArray](#getorderarray).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

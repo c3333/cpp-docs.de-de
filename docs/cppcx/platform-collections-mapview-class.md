@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - MapView Class
 ms.assetid: 9577dde7-f599-43c6-b1e4-7d653706fd62
-ms.openlocfilehash: 24995f553c5fcb8626c0d51758577b948c9c67ad
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: a770b318d893b9e81bdf11a75c2b0b05c0a9979f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81354431"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750613"
 ---
 # <a name="platformcollectionsmapview-class"></a>Platform::Collections::MapView-Klasse
 
@@ -70,7 +70,7 @@ MapView ist eine konkrete C++-Implementierung der [Windows::Foundation::Collecti
 
 `MapView`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
@@ -197,7 +197,7 @@ Teilt das aktuelle MapView-Objekt in zwei MapView-Objekte. Diese Methode führt 
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Split(
    Windows::Foundation::Collections::IMapView<
                          K, V>^ * firstPartition,
@@ -217,6 +217,6 @@ Der zweite Teil des ursprünglichen MapView-Objekts.
 
 Diese Methode führt keine Operationen aus und hat keine Auswirkungen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Plattform-Namespace](platform-namespace-c-cx.md)

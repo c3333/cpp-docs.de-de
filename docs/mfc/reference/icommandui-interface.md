@@ -14,12 +14,12 @@ f1_keywords:
 helpviewer_keywords:
 - ICommandUI interface [MFC]
 ms.assetid: 134afe8d-dcdf-47ca-857a-a166a6b665dd
-ms.openlocfilehash: 335deefc04a80f47151c5d5e71486e30f9918abd
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b75509beb7287fad5e51dc9d15fc3e47cacf6854
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81356632"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751308"
 ---
 # <a name="icommandui-interface"></a>ICommandUI-Schnittstelle
 
@@ -77,7 +77,7 @@ Diese Eigenschaft legt das Benutzeroberflächenelement für diesen Befehl auf de
 
 Weist den Befehlsroutingmechanismus an, die aktuelle Nachricht weiterhin über die Kette der Handler weiterzuleiten.
 
-```
+```cpp
 void ContinueRouting();
 ```
 
@@ -145,10 +145,10 @@ property String^ Text;
 
 Diese Eigenschaft legt den Text des Benutzeroberflächenelements für diesen Befehl fest. Legen Sie Text auf einen Textzeichenfolgenhandle fest.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwinforms.h (definiert in assembly atlmfc-lib-mfcmifc80.dll)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdUI-Klasse](../../mfc/reference/ccmdui-class.md)
