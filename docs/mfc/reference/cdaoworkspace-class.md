@@ -62,12 +62,12 @@ helpviewer_keywords:
 - CDaoWorkspace [MFC], SetLoginTimeout
 - CDaoWorkspace [MFC], m_pDAOWorkspace
 ms.assetid: 64f60de6-4df1-4d4a-a65b-c489b5257d52
-ms.openlocfilehash: 52aaa4970ef483988194691eb6b870cbfe51f494
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c492c806d64b1cfe0e4f73b3bb880ec7bd0a7e80
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377116"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754659"
 ---
 # <a name="cdaoworkspace-class"></a>CDaoWorkspace-Klasse
 
@@ -189,7 +189,7 @@ Informationen zum direkten Aufruf von DAO und zur DAO-Sicherheit finden Sie unte
 
 `CDaoWorkspace`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -213,7 +213,7 @@ Weitere Informationen finden Sie im Thema "Append-Methode" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um eine Transaktion zu initiieren.
 
-```
+```cpp
 void BeginTrans();
 ```
 
@@ -272,7 +272,7 @@ Weitere Informationen finden Sie im Thema "Close-Methode" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um eine Transaktion zu übertragen – speichern Sie eine Gruppe von Änderungen und Aktualisierungen in einer oder mehreren Datenbanken im Arbeitsbereich.
 
-```
+```cpp
 void CommitTrans();
 ```
 
@@ -437,7 +437,7 @@ Die Anzahl der geöffneten Datenbanken im Arbeitsbereich.
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen über eine im Arbeitsbereich geöffnete Datenbank abzurufen.
 
-```
+```cpp
 void GetDatabaseInfo(
     int nIndex,
     CDaoDatabaseInfo& dbinfo,
@@ -607,7 +607,7 @@ Diese Anzahl enthält keine offenen Arbeitsbereiche, die nicht an die Auflistung
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen zu einem in der Sitzung geöffneten Arbeitsbereich abzurufen.
 
-```
+```cpp
 void GetWorkspaceInfo(
     int nIndex,
     CDaoWorkspaceInfo& wkspcinfo,
@@ -754,7 +754,7 @@ Weitere Informationen zum Reparieren von Datenbanken finden Sie im Thema "Repair
 
 Rufen Sie diese Memberfunktion auf, um die aktuelle Transaktion zu beenden und alle Datenbanken im Arbeitsbereich in ihren Zustand zu versetzen, bevor die Transaktion gestartet wurde.
 
-```
+```cpp
 void Rollback();
 ```
 
@@ -852,7 +852,7 @@ Mit diesem Mechanismus können Sie das Datenbankmodul mit vom Benutzer bereitges
 
 Rufen Sie diese Memberfunktion auf, um den Wert der DAO IsolateODBCTrans-Eigenschaft für den Arbeitsbereich festzulegen.
 
-```
+```cpp
 void SetIsolateODBCTrans(BOOL bIsolateODBCTrans);
 ```
 
@@ -888,7 +888,7 @@ Wenn Sie versuchen, sich bei einer ODBC-Datenbank anzumelden, z. B. Microsoft SQ
 
 Weitere Informationen finden Sie im Thema "LoginTimeout-Eigenschaft" in der DAO-Hilfe.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

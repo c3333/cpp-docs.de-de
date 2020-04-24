@@ -94,12 +94,12 @@ helpviewer_keywords:
 - CEdit [MFC], ShowBalloonTip
 - CEdit [MFC], Undo
 ms.assetid: b1533c30-7f10-4663-88d3-8b7f2c9f7024
-ms.openlocfilehash: 3ca2fe4486ae0751f37d046ef28ed11e60e776ac
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 94769a6fb3c5fceefda96b54cebb35b0533a8afa
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373987"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753219"
 ---
 # <a name="cedit-class"></a>CEdit Class
 
@@ -227,7 +227,7 @@ Weitere Informationen `CEdit`zu finden Sie unter [Steuerelemente](../../mfc/cont
 
 `CEdit`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -299,7 +299,7 @@ Weitere Informationen finden Sie unter [EM_CHARFROMPOS](/windows/win32/Controls/
 
 Rufen Sie diese Funktion auf, um die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement zu löschen (löschen).
 
-```
+```cpp
 void Clear();
 ```
 
@@ -319,7 +319,7 @@ Weitere Informationen finden Sie unter [WM_CLEAR](/windows/win32/dataxchg/wm-cle
 
 Rufen Sie diese Funktion auf, um die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement in der Zwischenablage im format CF_TEXT zu ändern.
 
-```
+```cpp
 void Copy();
 ```
 
@@ -389,7 +389,7 @@ Wenden Sie die folgenden [Fensterstile](styles-used-by-mfc.md#window-styles) auf
 
 Rufen Sie diese Funktion auf, um die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement zu löschen (auszuschneiden) und den gelöschten Text in die Zwischenablage im CF_TEXT Format zu kopieren.
 
-```
+```cpp
 void Cut();
 ```
 
@@ -409,7 +409,7 @@ Weitere Informationen finden Sie unter [WM_CUT](/windows/win32/dataxchg/wm-cut) 
 
 Rufen Sie diese Funktion auf, um das Rückgängig-Flag eines Bearbeitungssteuerelements zurückzusetzen (löschen).
 
-```
+```cpp
 void EmptyUndoBuffer();
 ```
 
@@ -720,7 +720,7 @@ Diese Methode sendet die [EM_GETPASSWORDCHAR](/windows/win32/Controls/em-getpass
 
 Rufen Sie diese Funktion auf, um das Formatierungsrechteck eines Bearbeitungssteuerelements abzurufen.
 
-```
+```cpp
 void GetRect(LPRECT lpRect) const;
 ```
 
@@ -793,7 +793,7 @@ Diese Funktion sendet die [EM_HIDEBALLOONTIP](/windows/win32/Controls/em-hidebal
 
 Rufen Sie diese Funktion auf, um die Länge des Textes zu begrenzen, den der Benutzer in ein Bearbeitungssteuerelement eingeben kann.
 
-```
+```cpp
 void LimitText(int nChars = 0);
 ```
 
@@ -910,7 +910,7 @@ Diese Methode wird von der [EM_LINELENGTH-Meldung](/windows/win32/Controls/em-li
 
 Rufen Sie diese Funktion auf, um den Text eines mehrzeiligen Bearbeitungssteuerelements zu scrollen.
 
-```
+```cpp
 void LineScroll(
     int nLines,
     int nChars = 0);
@@ -942,7 +942,7 @@ Weitere Informationen finden Sie unter [EM_LINESCROLL](/windows/win32/Controls/e
 
 Rufen Sie diese Funktion auf, um `CEdit` die Daten aus der Zwischenablage in die einfüge-Einfügemarke einzufügen.
 
-```
+```cpp
 void Paste();
 ```
 
@@ -990,7 +990,7 @@ Weitere Informationen finden Sie unter [EM_POSFROMCHAR](/windows/win32/Controls/
 
 Rufen Sie diese Funktion auf, um die aktuelle Auswahl in einem Bearbeitungssteuerelement durch den von *lpszNewText*angegebenen Text zu ersetzen.
 
-```
+```cpp
 void ReplaceSel(LPCTSTR lpszNewText, BOOL bCanUndo = FALSE);
 ```
 
@@ -1056,7 +1056,7 @@ Im folgenden Beispiel wird die [CEdit::SetCueBanner-Methode](#setcuebanner) vera
 
 Rufen Sie diese Funktion auf, um das Handle auf den lokalen Speicher festzulegen, der von einem mehrzeiligen Bearbeitungssteuerelement verwendet wird.
 
-```
+```cpp
 void SetHandle(HLOCAL hBuffer);
 ```
 
@@ -1090,7 +1090,7 @@ Weitere Informationen finden Sie unter [EM_SETHANDLE](/windows/win32/Controls/em
 
 Hebt einen Textbereich hervor, der im aktuellen Bearbeitungssteuerelement angezeigt wird.
 
-```
+```cpp
 void SetHighlight(
     int ichStart,
     int ichEnd);
@@ -1111,7 +1111,7 @@ Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Na
 
 Rufen Sie diese Memberfunktion auf, `CEdit` um die Textgrenze für dieses Objekt festzulegen.
 
-```
+```cpp
 void SetLimitText(UINT nMax);
 ```
 
@@ -1138,7 +1138,7 @@ Weitere Informationen finden Sie unter [EM_SETLIMITTEXT](/windows/win32/Controls
 
 Rufen Sie diese Methode auf, um den linken und rechten Rand dieses Bearbeitungssteuerelements festzulegen.
 
-```
+```cpp
 void SetMargins(
     UINT nLeft,
     UINT nRight);
@@ -1167,7 +1167,7 @@ Weitere Informationen finden Sie unter [EM_SETMARGINS](/windows/win32/Controls/e
 
 Rufen Sie diese Funktion auf, um das geänderte Flag für ein Bearbeitungssteuerelement festzulegen oder zu löschen.
 
-```
+```cpp
 void SetModify(BOOL bModified = TRUE);
 ```
 
@@ -1190,7 +1190,7 @@ Weitere Informationen finden Sie unter [EM_SETMODIFY](/windows/win32/Controls/em
 
 Rufen Sie diese Funktion auf, um ein Kennwortzeichen festzulegen oder zu entfernen, das in einem Bearbeitungssteuerelement angezeigt wird, wenn der Benutzer Text eingibt.
 
-```
+```cpp
 void SetPasswordChar(TCHAR ch);
 ```
 
@@ -1246,7 +1246,7 @@ Weitere Informationen finden Sie unter [EM_SETREADONLY](/windows/win32/Controls/
 
 Rufen Sie diese Funktion auf, um die Bemaßungen eines Rechtecks mithilfe der angegebenen Koordinaten festzulegen.
 
-```
+```cpp
 void SetRect(LPCRECT lpRect);
 ```
 
@@ -1275,7 +1275,7 @@ Weitere Informationen finden Sie unter [EM_SETRECT](/windows/win32/Controls/em-s
 
 Rufen Sie diese Funktion auf, um das Formatierungsrechteck eines mehrzeiligen Bearbeitungssteuerelements festzulegen.
 
-```
+```cpp
 void SetRectNP(LPCRECT lpRect);
 ```
 
@@ -1306,7 +1306,7 @@ Weitere Informationen finden Sie unter [EM_SETRECTNP](/windows/win32/Controls/em
 
 Rufen Sie diese Funktion auf, um einen Zeichenbereich in einem Bearbeitungssteuerelement auszuwählen.
 
-```
+```cpp
 void SetSel(
     DWORD dwSelection,
     BOOL bNoScroll = FALSE);
@@ -1343,7 +1343,7 @@ Weitere Informationen finden Sie unter [EM_SETSEL](/windows/win32/Controls/em-se
 
 Rufen Sie diese Funktion auf, um die Tabstopps in einem mehrzeiligen Bearbeitungssteuerelement festzulegen.
 
-```
+```cpp
 void SetTabStops();
 BOOL SetTabStops(const int& cxEachStop);
 
@@ -1447,7 +1447,7 @@ Weitere Informationen finden Sie unter [EM_UNDO](/windows/win32/Controls/em-undo
 
 [!code-cpp[NVC_MFC_CEdit#25](../../mfc/reference/codesnippet/cpp/cedit-class_27.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CALCDRIV](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>

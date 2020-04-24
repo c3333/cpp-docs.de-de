@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CD2DBrush [MFC], m_pBrush
 - CD2DBrush [MFC], m_pBrushProperties
 ms.assetid: 0d2c0857-2261-48a8-8ee0-a88cbf08499a
-ms.openlocfilehash: d03fb6f398e18957f68fc18c78d8a397efc67506
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 536d84fe2c2f68d62490e1ce2b65085426762e87
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369277"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754197"
 ---
 # <a name="cd2dbrush-class"></a>CD2DBrush-Klasse
 
@@ -91,7 +91,7 @@ class CD2DBrush : public CD2DResource;
 
 `CD2DBrush`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -107,7 +107,7 @@ virtual ~CD2DBrush();
 
 Fügt dem Objekt eine vorhandene Ressourcenschnittstelle an.
 
-```
+```cpp
 void Attach(ID2D1Brush* pResource);
 ```
 
@@ -186,7 +186,7 @@ Ein Wert zwischen Null und 1, der die Deckkraft des Pinsels angibt. Dieser Wert 
 
 Ruft die aktuelle Transformation des Renderziels ab
 
-```
+```cpp
 void GetTransform(D2D1_MATRIX_3X2_F* transform) const;
 ```
 
@@ -239,7 +239,7 @@ Zeiger auf eine ID2D1Brush-Schnittstelle oder NULL, wenn das Objekt noch nicht i
 
 Legt den Grad der Deckkraft dieses Pinsels fest
 
-```
+```cpp
 void SetOpacity(FLOAT opacity);
 ```
 
@@ -252,7 +252,7 @@ Ein Wert zwischen Null und 1, der die Deckkraft des Pinsels angibt. Dieser Wert 
 
 Wendet die angegebene Transformation auf das Renderziel an und ersetzt die vorhandene Transformation. Alle nachfolgenden Zeichnungsvorgänge finden im transformierten Raum statt.
 
-```
+```cpp
 void SetTransform(const D2D1_MATRIX_3X2_F* transform);
 ```
 
@@ -261,6 +261,6 @@ void SetTransform(const D2D1_MATRIX_3X2_F* transform);
 *Verwandeln*<br/>
 Die Transformation, die auf das Renderziel angewendet werden soll
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

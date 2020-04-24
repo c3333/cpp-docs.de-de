@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CIPAddressCtrl [MFC], SetFieldFocus
 - CIPAddressCtrl [MFC], SetFieldRange
 ms.assetid: 9764d2f4-cb14-4ba8-b799-7f57a55a47c6
-ms.openlocfilehash: 28aa0e7137647bc49406dab1e82b9c2b05ca3538
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0613dea766b022acf140a82bb4b01784793c2589
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372345"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754964"
 ---
 # <a name="cipaddressctrl-class"></a>CIPAddressCtrl-Klasse
 
@@ -80,7 +80,7 @@ Allgemeinere Informationen zum IP-Adresssteuerelement finden Sie unter [IP-Adres
 
 `CIPAddressCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -96,7 +96,7 @@ CIPAddressCtrl();
 
 Löscht den Inhalt des IP-Adresssteuerelements.
 
-```
+```cpp
 void ClearAddress();
 ```
 
@@ -122,7 +122,7 @@ virtual BOOL Create(
 Der Stil des IP-Adresssteuerelements. Wenden Sie eine Kombination von Fensterstilen an. Sie müssen den WS_CHILD-Stil einschließen, da das Steuerelement ein untergeordnetes Fenster sein muss. Eine Liste der Windows-Stile finden Sie unter [CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf die Größe und Position des IP-Adresssteuerelements. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Ein Verweis auf die Größe und Position des IP-Adresssteuerelements. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das übergeordnete Fenster des IP-Adresssteuerelements. Es darf nicht NULL sein.
@@ -166,7 +166,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Der Stil des IP-Adresssteuerelements. Wenden Sie eine Kombination von Fensterstilen an. Sie müssen den WS_CHILD-Stil einschließen, da das Steuerelement ein untergeordnetes Fenster sein muss. Eine Liste der Windows-Stile finden Sie unter [CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -248,7 +248,7 @@ Diese Memberfunktion implementiert das Verhalten der [IPM_ISBLANK](/windows/win3
 
 Legt die Adresswerte für alle vier Felder im IP-Adresssteuerelement fest.
 
-```
+```cpp
 void SetAddress(
     BYTE nField0,
     BYTE nField1,
@@ -290,7 +290,7 @@ Diese Memberfunktion implementiert das Verhalten der [IPM_SETADDRESS](/windows/w
 
 Legt den Tastaturfokus auf das angegebene Feld im IP-Adresssteuerelement fest.
 
-```
+```cpp
 void SetFieldFocus(WORD nField);
 ```
 
@@ -307,7 +307,7 @@ Diese Memberfunktion implementiert das Verhalten der [IPM_SETFOCUS](/windows/win
 
 Legt den Bereich im angegebenen Feld im IP-Adresssteuerelement fest.
 
-```
+```cpp
 void SetFieldRange(
     int nField,
     BYTE nLower,
@@ -329,7 +329,7 @@ Ein Verweis auf eine ganze Zahl, die die Obergrenze des angegebenen Felds in die
 
 Diese Memberfunktion implementiert das Verhalten der [IPM_SETRANGE](/windows/win32/Controls/ipm-setrange)Win32-IPM_SETRANGE , wie im Windows SDK beschrieben. Verwenden Sie die beiden Parameter *nLower* und *nUpper*, um die unteren und oberen Grenzwerte des Felds anstelle des mit der Win32-Meldung verwendeten *wRange-Parameters* anzugeben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

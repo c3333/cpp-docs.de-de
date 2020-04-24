@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CMFCMaskedEdit [MFC], SetWindowText
 - CMFCMaskedEdit [MFC], IsMaskedChar
 ms.assetid: 13b1a645-2d5d-4c37-8599-16d5003f23a5
-ms.openlocfilehash: de28b308ec235e33e39aabd707677f4e75320b0b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 26617f10605fe2a8a94adcc477cccab7e2ba4919
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365286"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754220"
 ---
 # <a name="cmfcmaskededit-class"></a>CMFCMaskedEdit-Klasse
 
@@ -105,7 +105,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie eine Maske (z. B. eine Telef
 
 [CMFCMaskedEdit](../../mfc/reference/cmfcmaskededit-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxmaskededit.h
 
@@ -113,7 +113,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie eine Maske (z. B. eine Telef
 
 Deaktiviert die Überprüfung von Benutzereingaben.
 
-```
+```cpp
 void DisableMask();
 ```
 
@@ -125,7 +125,7 @@ Wenn die Benutzereingabeüberprüfung deaktiviert ist, verhält sich das maskier
 
 Gibt an, `GetWindowText` ob die Methode nur maskierte Zeichen abruft.
 
-```
+```cpp
 void EnableGetMaskedCharsOnly(BOOL bEnable=TRUE);
 ```
 
@@ -142,7 +142,7 @@ Verwenden Sie diese Methode, um das Abrufen maskierter Zeichen zu aktivieren. Er
 
 Initialisiert das maskierte Bearbeitungssteuerelement.
 
-```
+```cpp
 void EnableMask(
     LPCTSTR lpszMask,
     LPCTSTR lpszInputTemplate,
@@ -185,7 +185,7 @@ In der folgenden Tabelle sind die Standardmaskenzeichen aufgeführt:
 
 Gibt an, ob das maskierte Bearbeitungssteuerelement es dem Benutzer ermöglicht, bestimmte Gruppeneingaben oder alle Eingaben auszuwählen.
 
-```
+```cpp
 void EnableSelectByGroup(BOOL bEnable=TRUE);
 ```
 
@@ -219,7 +219,7 @@ Wenn die Auswahl nach Gruppe aktiviert ist, kann der Benutzer nur die Zeichenfol
 
 Gibt an, ob der Text nur anhand der maskierten Zeichen oder der gesamten Maske überprüft wird.
 
-```
+```cpp
 void EnableSetMaskedCharsOnly(BOOL bEnable=TRUE);
 ```
 
@@ -291,7 +291,7 @@ TRUE, wenn der *chChar-Parameter* der Typ des Zeichens ist, der durch den *chMas
 
 Gibt eine Zeichenfolge mit gültigen Zeichen an, die der Benutzer eingeben kann.
 
-```
+```cpp
 void SetValidChars(LPCTSTR lpszValid=NULL);
 ```
 
@@ -321,7 +321,7 @@ m_wndMaskEdit.SetValidChars(_T("1234567890ABCDEFabcdef"));m_wndMaskEdit.SetWindo
 
 Zeigt eine Eingabeaufforderung im maskierten Bearbeitungssteuerelement an.
 
-```
+```cpp
 void SetWindowText(LPCTSTR lpszString);
 ```
 
@@ -336,7 +336,7 @@ Diese Methode legt den Steuertext fest.
 
 Diese Methode definiert [CWnd::SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext)neu.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

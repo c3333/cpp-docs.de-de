@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CDocObjectServer [MFC], OnApplyViewState
 - CDocObjectServer [MFC], OnSaveViewState
 ms.assetid: 18cd0dff-0616-4472-b8d9-66c081bc383a
-ms.openlocfilehash: ccd8ddc9f4981b3d9f7f4e1decdf6790cd05b98b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f415df35b13e50eee092f87eca0627e5cf143720
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375491"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753281"
 ---
 # <a name="cdocobjectserver-class"></a>CDocObjectServer-Klasse
 
@@ -73,7 +73,7 @@ Weitere Informationen zu DocObjects finden Sie unter [CDocObjectServerItem](../.
 
 `CDocObjectServer`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdocob.h
 
@@ -81,7 +81,7 @@ Weitere Informationen zu DocObjects finden Sie unter [CDocObjectServerItem](../.
 
 Rufen Sie diese Funktion auf, um den Dokumentobjektserver zu aktivieren (aber nicht anzuzeigen).
 
-```
+```cpp
 void ActivateDocObject();
 ```
 
@@ -167,7 +167,7 @@ Ihr Status kann Eigenschaften wie Ansichtstyp, Zoomfaktor, Einfüge- und Auswahl
 
 Sie können `OnSaveViewState` persistente Informationen speichern, die für den Status Ihrer Ansicht spezifisch sind. Wenn Sie `OnSaveViewState` zum Speichern von Informationen überschreiben, sollten Sie diese Informationen überschreiben, `OnApplyViewState` um diese Informationen zu lesen und sie auf Ihre Ansicht anzuwenden, wenn sie neu aktiviert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

@@ -38,12 +38,12 @@ helpviewer_keywords:
 - CAnimationRect [MFC], m_szInitial
 - CAnimationRect [MFC], m_topValue
 ms.assetid: 0294156d-241e-4a57-92b2-31234fe557d6
-ms.openlocfilehash: 4ffd1254efd3283a4c5641092aefec8eec0ac22a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 273ea2b548d35722ebf937d2db2b589fef5e69fa
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373334"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755138"
 ---
 # <a name="canimationrect-class"></a>CAnimationRect-Klasse
 
@@ -117,7 +117,7 @@ Die CAnimationRect-Klasse kapselt vier CAnimationVariable-Objekte und kann in An
 
 `CAnimationRect`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -125,7 +125,7 @@ Die CAnimationRect-Klasse kapselt vier CAnimationVariable-Objekte und kann in An
 
 Fügt Übergänge für linke, obere, rechte und untere Koordinaten hinzu.
 
-```
+```cpp
 void AddTransition(
     CBaseTransition* pLeftTransition,
     CBaseTransition* pTopTransition,
@@ -405,7 +405,7 @@ Diese Funktion ruft getValue intern auf. Wenn GetValue aus irgendeinem Grund feh
 
 Weist CAnimationRect Korrektur zu.
 
-```
+```cpp
 void operator=(const RECT& rect);
 ```
 
@@ -422,7 +422,7 @@ Es wird empfohlen, dies vor dem Starten der Animation zu tun, da dieser Operator
 
 Legt den Standardwert fest.
 
-```
+```cpp
 void SetDefaultValue(const CRect& rect);
 ```
 
@@ -435,6 +435,6 @@ Gibt neue Standardwerte für links, oben, rechts und unten an.
 
 Verwenden Sie diese Funktion, um einen Standardwert für animationsobjekt festzulegen. Diese Methode weist den Grenzen des Rechtecks Standardwerte zu. Außerdem werden zugrunde liegende COM-Objekte neu erstellt, wenn sie erstellt wurden. Wenn Sie dieses Animationsobjekt für Ereignisse (ValueChanged oder IntegerValueChanged) abonniert haben, müssen Sie diese Ereignisse erneut aktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

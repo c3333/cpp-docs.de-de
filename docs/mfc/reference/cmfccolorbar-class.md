@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CMFCColorBar [MFC], SetPropList
 - CMFCColorBar [MFC], ShowCommandMessageString
 ms.assetid: 4756ee40-25a5-4cee-af7f-acab7993d1c7
-ms.openlocfilehash: 7b63fb66b800bd758c7f4c89c553e857ad9bbfbc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 58fddeef9cb0afe930af84b05e6a87871f729da4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367767"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752569"
 ---
 # <a name="cmfccolorbar-class"></a>CMFCColorBar-Klasse
 
@@ -227,7 +227,7 @@ Im folgenden Beispiel wird veranschaulicht, wie sie eine `CMFCColorBar` Farbleis
 
 [CMFCColorBar](../../mfc/reference/cmfccolorbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcolorbar.h
 
@@ -380,7 +380,7 @@ Die Standardbeschriftung für die andere Schaltfläche ist **More Colors...**.
 
 Berechnet die vertikalen und horizontalen Ränder, die erforderlich sind, um die Schaltflächen im Farbleistensteuerelement zu enthalten, und passt die Position dieser Schaltflächen an.
 
-```
+```cpp
 void ContextToSize(
     BOOL bSquareButtons = TRUE,
     BOOL bCenterButtons = TRUE);
@@ -504,7 +504,7 @@ TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
 Zeigt die automatische Schaltfläche ein oder blendet sie aus.
 
-```
+```cpp
 void EnableAutomaticButton(
     LPCTSTR lpszLabel,
     COLORREF colorAutomatic,
@@ -532,7 +532,7 @@ Die Textbeschriftung der automatischen Schaltfläche wird gelöscht, wenn der Pa
 
 Aktiviert oder deaktiviert die Anzeige eines Dialogfelds, in dem der Benutzer weitere Farben auswählen kann.
 
-```
+```cpp
 void EnableOtherButton(
     LPCTSTR lpszLabel,
     BOOL bAltColorDlg=TRUE,
@@ -802,7 +802,7 @@ Zeigen Sie mit dem Mauszeiger auf die Palette, die durch die Palette der überge
 
 Legt die aktuell ausgewählte Farbe fest.
 
-```
+```cpp
 void SetColor(COLORREF color);
 ```
 
@@ -837,7 +837,7 @@ Diese Methode ändert den Namen der `CMFCColorBar` angegebenen Farbe in allen Ob
 
 Legt eine neue Befehls-ID für ein Farbleistensteuerelement fest.
 
-```
+```cpp
 void SetCommandID(UINT nCommandID);
 ```
 
@@ -854,7 +854,7 @@ Rufen Sie diese Methode auf, um die Befehls-ID eines Farbleistensteuerelements z
 
 Legt die Liste der Farben fest, die im aktuellen Dokument verwendet werden.
 
-```
+```cpp
 void SetDocumentColors(
     LPCTSTR lpszCaption,
     CList<COLORREF,COLORREF>& lstDocColors,
@@ -880,7 +880,7 @@ void SetDocumentColors(
 
 Legt den horizontalen Rand fest, d. h. den Abstand zwischen der linken oder rechten Farbzelle und der Begrenzung des Clientbereichs.
 
-```
+```cpp
 void SetHorzMargin(int nHorzMargin);
 ```
 
@@ -897,7 +897,7 @@ Standardmäßig legt der [CmFCColorBar::CMFCColorBar-Konstruktor](#cmfccolorbar)
 
 Legt `m_pWndPropList` den geschützten Datenmember auf den angegebenen Zeiger auf ein Eigenschaftenrastersteuerelement fest.
 
-```
+```cpp
 void SetPropList(CMFCPropertyGridCtrl* pWndList);
 ```
 
@@ -911,7 +911,7 @@ void SetPropList(CMFCPropertyGridCtrl* pWndList);
 
 Legt den vertikalen Rand fest, d. h. den Abstand zwischen der oberen oder unteren Farbzelle und der Clientbereichsgrenze.
 
-```
+```cpp
 void SetVertMargin(int nVertMargin);
 ```
 
@@ -941,7 +941,7 @@ virtual void ShowCommandMessageString(UINT uiCmdId);
 
 Diese Methode sendet die WM_SETMESSAGESTRING Nachricht an den Besitzer des Farbleistensteuerelements.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

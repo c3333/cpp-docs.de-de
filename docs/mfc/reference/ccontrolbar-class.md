@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CControlBar [MFC], m_bAutoDelete
 - CControlBar [MFC], m_pInPlaceOwner
 ms.assetid: 4d668c55-9b42-4838-97ac-cf2b3000b82c
-ms.openlocfilehash: deb95d76e6d68ba5b9fad82bca1d88fd71c5a547
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c2f8ea48bf9a1f015928650085b07198b152771a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369399"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754796"
 ---
 # <a name="ccontrolbar-class"></a>CControlBar Class
 
@@ -119,7 +119,7 @@ Weitere Informationen zu `CControlBar` finden Sie unter:
 
 `CControlBar`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -293,7 +293,7 @@ Ein `CRect` Objekt, das die Abmessungen des Steuerleistengreifers enthält.
 
 Rufen Sie diese Funktion auf, damit eine Steuerleiste angedockt werden kann.
 
-```
+```cpp
 void EnableDocking(DWORD dwDockStyle);
 ```
 
@@ -450,7 +450,7 @@ Um eine einzelne Schaltfläche oder einen einzelnen Bereich zu aktualisieren, ve
 
 Rufen Sie diese Funktion auf, um die gewünschten **CBRS_** Stile für die Steuerleiste festzulegen.
 
-```
+```cpp
 void SetBarStyle(DWORD dwStyle);
 ```
 
@@ -493,7 +493,7 @@ Wirkt sich nicht auf die **einstellungen für WS_** (Fensterstil) aus.
 
 Rufen Sie diese Funktion auf, um die Größe der Ränder der Kontrollleiste festzulegen.
 
-```
+```cpp
 void SetBorders(
     int cxLeft = 0,
     int cyTop = 0,
@@ -530,7 +530,7 @@ Im folgenden Codebeispiel werden der obere und untere Rand der Kontrollleiste au
 
 Ändert den direkten Besitzer einer Steuerleiste.
 
-```
+```cpp
 void SetInPlaceOwner(CWnd* pWnd);
 ```
 
@@ -541,7 +541,7 @@ Ein Zeiger auf ein `CWnd`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel STRGBARS](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

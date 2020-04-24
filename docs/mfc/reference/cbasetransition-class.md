@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CBaseTransition [MFC], m_transition
 - CBaseTransition [MFC], m_type
 ms.assetid: dfe84007-bbc5-43b7-b5b8-fae9145573bf
-ms.openlocfilehash: 8339785fd10fa3dcef1c0fb573310762dc2d2405
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9abe4ae55d9d84ea435cd5d82925ff8b8a544480
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352835"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752958"
 ---
 # <a name="cbasetransition-class"></a>CBaseTransition-Klasse
 
@@ -114,7 +114,7 @@ Diese Klasse kapselt die IUIAnimationTransition-Schnittstelle und dient als Basi
 
 `CBaseTransition`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -180,7 +180,7 @@ CBaseTransition();
 
 Gibt gekapseltes IUIAnimationTransition COM-Objekt frei.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -374,7 +374,7 @@ TRANSITION_TYPE m_type;
 
 Legt Keyframes für einen Übergang fest.
 
-```
+```cpp
 void SetKeyframes(
     CBaseKeyFrame* pStart = NULL,
     CBaseKeyFrame* pEnd = NULL);
@@ -396,7 +396,7 @@ Diese Methode weist den Übergang an, nach dem angegebenen Keyframe zu beginnen 
 
 Erstellt eine Beziehung zwischen Animationsvariable und Übergang.
 
-```
+```cpp
 void SetRelatedVariable(CAnimationVariable* pVariable);
 ```
 
@@ -421,6 +421,6 @@ enum TRANSITION_TYPE;
 
 Im Konstruktor eines bestimmten Übergangs wird ein Übergangstyp festgelegt. Beispielsweise legt CSinusoidalTransitionFromRange seinen Typ auf SINUSOIDAL_FROM_RANGE.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

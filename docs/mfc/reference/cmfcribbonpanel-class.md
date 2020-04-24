@@ -114,12 +114,12 @@ helpviewer_keywords:
 - CMFCRibbonPanel [MFC], SetKeys
 - CMFCRibbonPanel [MFC], ShowPopup
 ms.assetid: 51d70749-1140-4386-b103-f14082049ba6
-ms.openlocfilehash: fa07132ace37074effb02802353fc82d3e338be0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5d622b5c36729daca81a6093e9f21573ce86940e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368880"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753550"
 ---
 # <a name="cmfcribbonpanel-class"></a>CMFCRibbonPanel-Klasse
 
@@ -217,7 +217,7 @@ Im folgenden Beispiel wird `CMFCRibbonPanel` veranschaulicht, wie ein `CMFCRibbo
 
 [CMFCRibbonPanel](../../mfc/reference/cmfcribbonpanel-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxRibbonPanel.h
 
@@ -432,7 +432,7 @@ Ein gültiger Zeiger auf das Basisbandelement an Position *nIndex* im Menübandb
 
 Ruft alle Multifunktionsleistenelemente ab, die im Menübandbedienfeld enthalten sind.
 
-```
+```cpp
 void GetElements(CArray<CMFCRibbonBaseElement*, CMFCRibbonBaseElement*>& arElements);
 ```
 
@@ -447,7 +447,7 @@ void GetElements(CArray<CMFCRibbonBaseElement*, CMFCRibbonBaseElement*>& arEleme
 
 Fügt Multifunktionsleistenelemente mit der angegebenen Befehls-ID zum angegebenen Array hinzu.
 
-```
+```cpp
 void GetElementsByID(
 UINT uiCmdID,
 CArray<CMFCRibbonBaseElement*, CMFCRibbonBaseElement*>& arElements);
@@ -502,7 +502,7 @@ Nullbasierter Index des angegebenen Multifunktionsleistenelements, wenn die Meth
 
 Ruft die Befehls-IDs für alle Menübandelemente im Menübandbedienfeld ab.
 
-```
+```cpp
 void GetItemIDsList(CList<UINT, UINT>& lstItems) const;
 ```
 
@@ -891,7 +891,7 @@ Rufen Sie diese Methode auf, um ein Element aus dem Menübandbedienfeld zu entfe
 
 Löscht alle Menübandelemente aus dem Menübandbedienfeld.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -955,7 +955,7 @@ Um ein multifunktionsleistenelement basierend auf der Position zu ersetzen, rufe
 
 Aktiviert oder deaktiviert die Zentrierung der vertikalen Positionen von Menübandelementen innerhalb ihres Anzeigerechtecks.
 
-```
+```cpp
 void SetCenterColumnVert(BOOL bSet = TRUE);
 ```
 
@@ -970,7 +970,7 @@ void SetCenterColumnVert(BOOL bSet = TRUE);
 
 Ordnet benutzerdefinierte Daten dem Menübandbedienfeld zu.
 
-```
+```cpp
 void SetData(DWORD_PTR dwData);
 ```
 
@@ -1108,7 +1108,7 @@ pColorButton->EnableAutomaticButton(_T("Automatic"),
 
 Aktiviert oder deaktiviert die Anpassung der Breite von Multifunktionsleistenelementen in derselben Spalte.
 
-```
+```cpp
 void SetJustifyColumns(BOOL bSet = TRUE);
 ```
 
@@ -1125,7 +1125,7 @@ Wenn dieses Feature in einem Multifunktionsleistenbedienfeld aktiviert ist, werd
 
 Legt die Keytip für die Standardschaltfläche des Menübandbedienfelds fest.
 
-```
+```cpp
 void SetKeys(LPCTSTR lpszKeys);
 ```
 
@@ -1163,7 +1163,7 @@ Das Popupmenü für das Menüleistenfenster ist nur verfügbar, wenn die Anzeige
 
 Legt den Fokus auf das angegebene Ribbon-Element fest.
 
-```
+```cpp
 void SetFocused(CMFCRibbonBaseElement* pNewFocus);
 ```
 
@@ -1178,7 +1178,7 @@ Ein Zeiger auf ein Ribbon-Element, das den Fokus empfängt.
 
 Scrollt die Galerie, um das angegebene Ribbon-Element sichtbar zu machen.
 
-```
+```cpp
 void MakeGalleryItemVisible(CMFCRibbonBaseElement* pItem);
 ```
 
@@ -1207,7 +1207,7 @@ TRUE, wenn das übergeordnete Menüband Windows 7 aussehen lässt; andernfalls F
 
 Ruft ein Array sichtbarer Elemente ab.
 
-```
+```cpp
 void GetVisibleElements(
 CArray<CMFCRibbonBaseElement*,
 CMFCRibbonBaseElement*>& arElements);
@@ -1248,7 +1248,7 @@ Ein Zeiger auf ein fokussiertes Element oder NULL.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

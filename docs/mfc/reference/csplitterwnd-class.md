@@ -72,12 +72,12 @@ helpviewer_keywords:
 - CSplitterWnd [MFC], OnDrawSplitter
 - CSplitterWnd [MFC], OnInvertTracker
 ms.assetid: fd0de258-6dbe-4552-9e47-a39de0471d51
-ms.openlocfilehash: 8c8ce90f5e36d6cdc2592233588bc3bd7bf2c9d6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a872854af1695b8b2b347b21d73165d259b3a986
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371695"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753065"
 ---
 # <a name="csplitterwnd-class"></a>CSplitterWnd-Klasse
 
@@ -189,7 +189,7 @@ Weitere Informationen zum Erstellen dynamischer Splitterfenster finden Sie unter
 
 `CSplitterWnd`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -619,7 +619,7 @@ Gibt die aktuelle Anzahl der Spalten im Splitter zurück. Bei einem statischen S
 
 Gibt Informationen für die angegebene Spalte zurück.
 
-```
+```cpp
 void GetColumnInfo(
     int col,
     int& cxCur,
@@ -675,7 +675,7 @@ Gibt die aktuelle Anzahl der Zeilen im Splitterfenster zurück. Bei einem statis
 
 Gibt Informationen für die angegebene Zeile zurück.
 
-```
+```cpp
 void GetRowInfo(
     int row,
     int& cyCur,
@@ -896,7 +896,7 @@ Geben Sie den Bereich an, indem Sie entweder Zeile und Spalte **oder** *pWnd*ang
 
 Rufen Sie den Aufruf auf, um die angegebenen Spalteninformationen festzulegen.
 
-```
+```cpp
 void SetColumnInfo(
     int col,
     int cxIdeal,
@@ -928,7 +928,7 @@ Wenn das Framework das Splitterfenster anzeigt, legt es die Bereiche in Spalten 
 
 Rufen Sie an, um die angegebenen Zeileninformationen festzulegen.
 
-```
+```cpp
 void SetRowInfo(
     int row,
     int cyIdeal,
@@ -956,7 +956,7 @@ Wenn das Framework das Splitterfenster anzeigt, legt es die Bereiche in Spalten 
 
 Gibt den neuen Bildlaufstil für die gemeinsame Bildlaufleistenunterstützung des Splitterfensters an.
 
-```
+```cpp
 void SetScrollStyle(DWORD dwStyle);
 ```
 
@@ -1034,7 +1034,7 @@ Ein Zeiger zu einem Gerätekontext.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel VIEWEX](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

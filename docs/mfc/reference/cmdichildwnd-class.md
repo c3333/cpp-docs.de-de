@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CMDIChildWnd [MFC], MDIRestore
 - CMDIChildWnd [MFC], SetHandles
 ms.assetid: 6d07f5d4-9a3e-4723-9fa5-e65bb669fdd5
-ms.openlocfilehash: 0fbcb47f3148b72a3155e7c17cc913d652c70c2e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a547a21b96d035f507e749aeb19f891175498d5d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370083"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754576"
 ---
 # <a name="cmdichildwnd-class"></a>CMDIChildWnd-Klasse
 
@@ -105,7 +105,7 @@ Weitere Informationen `CMDIChildWnd`zu finden Sie unter [Frame Windows](../../mf
 
 `CMDIChildWnd`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -207,7 +207,7 @@ Der zurückgegebene Frame ist `CMDIChildWnd` zwei übergeordnete Zeichen, die au
 
 Rufen Sie diese Memberfunktion auf, um ein untergeordnetes MDI-Fenster unabhängig vom MDI-Rahmenfenster zu aktivieren.
 
-```
+```cpp
 void MDIActivate();
 ```
 
@@ -223,7 +223,7 @@ Wenn der Rahmen aktiv wird, wird auch das zuletzt aktivierte untergeordnete Fens
 
 Rufen Sie diese Memberfunktion auf, um ein untergeordnetes MDI-Fenster zu zerstören.
 
-```
+```cpp
 void MDIDestroy();
 ```
 
@@ -239,7 +239,7 @@ Die Memberfunktion entfernt den Titel des untergeordneten Fensters aus dem Rahme
 
 Rufen Sie diese Memberfunktion auf, um ein untergeordnetes MDI-Fenster zu maximieren.
 
-```
+```cpp
 void MDIMaximize();
 ```
 
@@ -255,7 +255,7 @@ Wenn ein untergeordnetes Fenster maximiert wird, ändert Windows die Größe, so
 
 Rufen Sie diese Memberfunktion auf, um ein untergeordnetes MDI-Fenster von einer maximierten oder minimierten Größe wiederherzustellen.
 
-```
+```cpp
 void MDIRestore();
 ```
 
@@ -267,7 +267,7 @@ void MDIRestore();
 
 Legt die Handles für Menü- und Beschleunigerressourcen fest.
 
-```
+```cpp
 void SetHandles(
     HMENU hMenu,
     HACCEL hAccel);
@@ -285,7 +285,7 @@ Das Handle einer Beschleunigerressource.
 
 Rufen Sie diese Funktion auf, um das Menü und die Beschleunigerressourcen festzulegen, die vom untergeordneten MDI-Fensterobjekt verwendet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel MDI](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel MDIDOCVW](../../overview/visual-cpp-samples.md)<br/>

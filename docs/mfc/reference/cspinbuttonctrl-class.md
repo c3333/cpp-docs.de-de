@@ -32,12 +32,12 @@ helpviewer_keywords:
 - CSpinButtonCtrl [MFC], SetPos
 - CSpinButtonCtrl [MFC], SetRange
 ms.assetid: 509bfd76-1c5a-4af6-973f-e133c0b87734
-ms.openlocfilehash: 4230d43bad8bcc15bcb26aaf0357e70216909ba1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cedfe16a6870bc779121e8e864866cfcb711b148
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318124"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753106"
 ---
 # <a name="cspinbuttonctrl-class"></a>CSpinButtonCtrl-Klasse
 
@@ -98,7 +98,7 @@ Weitere Informationen zur `CSpinButtonCtrl`Verwendung finden Sie unter [Steuerel
 
 `CSpinButtonCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -120,7 +120,7 @@ virtual BOOL Create(
 Gibt den Stil des Drehschaltflächensteuerelements an. Wenden Sie eine beliebige Kombination von Drehtastensteuerungsstilen auf das Steuerelement an. Diese Stile werden im Windows SDK unter [Up-Down Control Styles](/windows/win32/Controls/up-down-control-styles) beschrieben.
 
 *Rect*<br/>
-Gibt die Größe und Position des Drehschaltflächensteuerelements an. Es kann entweder ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) sein.
+Gibt die Größe und Position des Drehschaltflächensteuerelements an. Es kann entweder ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) sein.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das übergeordnete Fenster des Drehschaltflächensteuerelements, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -160,7 +160,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Drehschaltflächensteuerelements an. Wenden Sie eine beliebige Kombination von Drehtastensteuerungsstilen auf das Steuerelement an. Diese Stile werden im Windows SDK unter [Up-Down Control Styles](/windows/win32/Controls/up-down-control-styles) beschrieben.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -375,7 +375,7 @@ Die vorherige Position (16-Bit-Präzision für `SetPos`, `SetPos32`32-Bit-Präzi
 
 Legt die oberen und unteren Grenzwerte (Bereich) für ein Drehtastensteuerelement fest.
 
-```
+```cpp
 void SetRange(
     short nLower,
     short nUpper);
@@ -397,7 +397,7 @@ Die Memberfunktion `SetRange32` legt den 32-Bit-Bereich für die Drehtastensteue
 > [!NOTE]
 > Der Standardbereich für die Drehschaltfläche hat den maximalen Wert auf Null (0) und das Minimum auf 100. Da der Maximalwert kleiner als der Mindestwert ist, verringert durch Klicken auf den Pfeil nach oben die Position, und durch Klicken auf den Abwärtspfeil wird er erhöht. Verwenden `CSpinButtonCtrl::SetRange` Sie diese Werte, um diese Werte anzupassen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

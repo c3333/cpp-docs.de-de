@@ -72,12 +72,12 @@ helpviewer_keywords:
 - CDaoTableDef [MFC], m_pDAOTableDef
 - CDaoTableDef [MFC], m_pDatabase
 ms.assetid: 7c5d2254-8475-43c4-8a6c-2d32ead194c9
-ms.openlocfilehash: 063d0b795c7e4f6af901f52563295883ef81de7d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: adc31ccbf2be34aa1df1fa56111d1990701a6329
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377128"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754690"
 ---
 # <a name="cdaotabledef-class"></a>CDaoTableDef-Klasse
 
@@ -185,7 +185,7 @@ Wenn Sie mit einem tabledef-Objekt fertig sind, rufen Sie die Memberfunktion [Sc
 
 `CDaoTableDef`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -300,7 +300,7 @@ Weitere Informationen finden Sie im Thema "CreateTableDef-Methode" in der DAO-Hi
 
 Rufen Sie diese Memberfunktion auf, um der Tabelle ein Feld hinzuzufügen.
 
-```
+```cpp
 void CreateField(
     LPCTSTR lpszName,
     short nType,
@@ -373,7 +373,7 @@ Weitere Informationen finden Sie im Thema "CreateField-Methode" in der DAO-Hilfe
 
 Rufen Sie diese Funktion auf, um einer Tabelle einen Index hinzuzufügen.
 
-```
+```cpp
 void CreateIndex(CDaoIndexInfo& indexinfo);
 ```
 
@@ -402,7 +402,7 @@ Die verbleibenden Member werden ignoriert, wenn sie auf FALSE festgelegt sind. D
 
 Rufen Sie diese Memberfunktion auf, um ein Feld zu entfernen und nicht darauf zu zugreifen.
 
-```
+```cpp
 void DeleteField(LPCTSTR lpszName);
 void DeleteField(int nIndex);
 ```
@@ -425,7 +425,7 @@ Weitere Informationen finden Sie im Thema "Methode löschen" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um einen Index in einer zugrunde liegenden Tabelle zu löschen.
 
-```
+```cpp
 void DeleteIndex(LPCTSTR lpszName);
 void DeleteIndex(int nIndex);
 ```
@@ -557,7 +557,7 @@ Weitere Informationen finden Sie im Thema "Count Property" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen zu einem feld zu erhalten, das in der tabledef definiert ist.
 
-```
+```cpp
 void GetFieldInfo(
     int nIndex,
     CDaoFieldInfo& fieldinfo,
@@ -619,7 +619,7 @@ Weitere Informationen finden Sie im Thema "Count Property" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen über einen in der tabledef definierten Index abzurufen.
 
-```
+```cpp
 void GetIndexInfo(
     int nIndex,
     CDaoIndexInfo& indexinfo,
@@ -796,7 +796,7 @@ Ein Zeiger auf eine Zeichenfolge, die einen Tabellennamen angibt.
 
 Rufen Sie diese Memberfunktion auf, um die Verbindungsinformationen für eine angehängte Tabelle zu aktualisieren.
 
-```
+```cpp
 void RefreshLink();
 ```
 
@@ -812,7 +812,7 @@ Weitere Informationen finden Sie im Thema "RefreshLink-Methode" in der DAO-Hilfe
 
 Legt einen Wert fest, der `CDaoTableDef` ein oder mehrere Merkmale eines Objekts angibt.
 
-```
+```cpp
 void SetAttributes(long lAttributes);
 ```
 
@@ -842,7 +842,7 @@ Weitere Informationen finden Sie im Thema "Attributes Property" in der DAO-Hilfe
 
 Für `CDaoTableDef` ein Objekt, das eine angefügte Tabelle darstellt, besteht das Zeichenfolgenobjekt aus einem oder zwei Teilen (ein Datenbanktypbezeichner und ein Pfad zur Datenbank).
 
-```
+```cpp
 void SetConnect(LPCTSTR lpszConnect);
 ```
 
@@ -894,7 +894,7 @@ Weitere Informationen finden Sie im Thema "Verbindungseigenschaft" in der DAO-Hi
 
 Rufen Sie diese Memberfunktion auf, um einen benutzerdefinierten Namen für eine Tabelle festzulegen.
 
-```
+```cpp
 void SetName(LPCTSTR lpszName);
 ```
 
@@ -913,7 +913,7 @@ Weitere Informationen finden Sie im Thema "Name-Eigenschaft" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um den Namen einer angefügten Tabelle oder den Namen der Basistabelle anzugeben, auf der das `CDaoTableDef` Objekt basiert, wie er in der ursprünglichen Datenquelle der Daten vorhanden ist.
 
-```
+```cpp
 void SetSourceTableName(LPCTSTR lpszSrcTableName);
 ```
 
@@ -932,7 +932,7 @@ Weitere Informationen finden Sie im Thema "SourceTableName-Eigenschaft" in der D
 
 Rufen Sie diese Memberfunktion auf, um eine Validierungsregel für eine tabledef festzulegen.
 
-```
+```cpp
 void SetValidationRule(LPCTSTR lpszValidationRule);
 ```
 
@@ -957,7 +957,7 @@ Weitere Informationen finden Sie im Thema "ValidationRule-Eigenschaft" in der DA
 
 Rufen Sie diese Memberfunktion auf, um den `CDaoTableDef` Ausnahmetext einer Validierungsregel für ein Objekt mit einer zugrunde liegenden Basistabelle festzulegen, die vom Microsoft Jet-Datenbankmodul unterstützt wird.
 
-```
+```cpp
 void SetValidationText(LPCTSTR lpszValidationText);
 ```
 
@@ -972,7 +972,7 @@ Sie können den Validierungstext einer angehängten Tabelle nicht festlegen.
 
 Weitere Informationen finden Sie im Thema "ValidationText-Eigenschaft" in der DAO-Hilfe.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

@@ -36,12 +36,12 @@ helpviewer_keywords:
 - CComboBoxEx [MFC], SetItem
 - CComboBoxEx [MFC], SetWindowTheme
 ms.assetid: 33ca960a-2409-478c-84a4-a2ee8ecfe8f7
-ms.openlocfilehash: 4151ea17fd3223c126715742c6149f2cf55bcbc7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a948d54be17103fa83848ff5f0e86dd2c522f0a3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369474"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754825"
 ---
 # <a name="ccomboboxex-class"></a>CComboBoxEx-Klasse
 
@@ -120,7 +120,7 @@ Eine ausführliche, konzeptionelle Diskussion finden Sie unter [Verwenden von CC
 
 `CComboBoxEx`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -150,7 +150,7 @@ virtual BOOL Create(
 Gibt die Kombination von Kombinationsfeldstilen an, die auf das Kombinationsfeld angewendet werden. Weitere Informationen zu Stilen finden Sie unter **Anmerkungen** unten.
 
 *Rect*<br/>
-Ein Verweis auf ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) d. h. die Position und Größe des Kombinationsfelds.
+Ein Verweis auf ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) d. h. die Position und Größe des Kombinationsfelds.
 
 *pParentWnd*<br/>
 Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete `CDialog`Fenster des Kombinationsfelds ist (in der Regel a ). Es darf nicht NULL sein.
@@ -210,7 +210,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Der Stil des Kombinationsfeldsteuerelements. Weitere Informationen finden Sie [unter Erstellen](#create) einer Liste von Stilen.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -468,7 +468,7 @@ Der Rückgabewert wird nicht verwendet.
 
 Diese Memberfunktion emuliert die Funktionalität der [CBEM_SETWINDOWTHEME](/windows/win32/Controls/cbem-setwindowtheme) Nachricht, wie im Windows SDK beschrieben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel-MFCIE](../../overview/visual-cpp-samples.md)<br/>
 [CComboBox-Klasse](../../mfc/reference/ccombobox-class.md)<br/>

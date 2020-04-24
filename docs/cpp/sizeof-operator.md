@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof operator
 ms.assetid: 8bc3b6fb-54a1-4eb7-ada0-05f8c5efc532
-ms.openlocfilehash: 8789bb5e0e363458edffa7207ea1e138aae4d284
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c9ae581b1b3bea522f2c1557b8be44ee1f32eef1
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365569"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032290"
 ---
 # <a name="sizeof-operator"></a>sizeof-Operator
 
 Ergibt die Größe seines Operanden in Bezug auf die Größe des Typs **char**.
 
 > [!NOTE]
-> Weitere Informationen `sizeof ...` zum Operator finden Sie unter [Ellipsen und Variadic Templates](../cpp/ellipses-and-variadic-templates.md).
+> Informationen zum `sizeof ...` Operator finden Sie unter [Ellipsis und variadic templates](../cpp/ellipses-and-variadic-templates.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -103,7 +103,7 @@ Der **Sizeof-Operator** wird häufig verwendet, um die Anzahl der Elemente in ei
 sizeof array / sizeof array[0]
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [Keywords](../cpp/keywords-cpp.md)

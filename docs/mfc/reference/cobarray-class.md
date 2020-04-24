@@ -42,12 +42,12 @@ helpviewer_keywords:
 - CObArray [MFC], SetAtGrow
 - CObArray [MFC], SetSize
 ms.assetid: 27894efd-2370-4776-9ed9-24a98492af17
-ms.openlocfilehash: 7b923fd9231d3652d8d2f1750a8024d15287811e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c19715f62704bfc97059421451929cbbec2506ce
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81360445"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754475"
 ---
 # <a name="cobarray-class"></a>CObArray-Klasse
 
@@ -125,7 +125,7 @@ Die Arrayklassenableitung ähnelt der Listenableitung. Weitere Informationen zur
 
 `CObArray`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxcoll.h
 
@@ -219,7 +219,7 @@ Eine Auflistung der Klasse, die `CAge` in allen Sammlungsbeispielen verwendet wi
 
 Rufen Sie diese Memberfunktion auf, um die Elemente des angegebenen Arrays mit den Elementen eines anderen Arrays desselben Typs zu überschreiben.
 
-```
+```cpp
 void Copy(const CObArray& src);
 ```
 
@@ -316,7 +316,7 @@ Die folgende Tabelle zeigt andere Memberfunktionen, die `CObArray::ElementAt`äh
 
 Gibt zusätzlichen Speicher frei, der beim Wachsen des Arrays zugewiesen wurde.
 
-```
+```cpp
 void FreeExtra();
 ```
 
@@ -516,7 +516,7 @@ Eine Auflistung der Klasse, die `CAge` in allen Sammlungsbeispielen verwendet wi
 
 Fügt ein Element (oder alle Elemente in einem anderen Array) am angegebenen Index ein.
 
-```
+```cpp
 void InsertAt(
     INT_PTR nIndex,
     CObject* newElement,
@@ -626,7 +626,7 @@ Eine Auflistung der Klasse, die `CAge` in allen Sammlungsbeispielen verwendet wi
 
 Entfernt alle Zeiger aus diesem Array, löscht die `CObject` Objekte jedoch nicht.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -657,7 +657,7 @@ Eine Auflistung der Klasse, die `CAge` in allen Sammlungsbeispielen verwendet wi
 
 Entfernt ein oder mehrere Elemente, die bei einem angegebenen Index in einem Array beginnen.
 
-```
+```cpp
 void RemoveAt(
     INT_PTR nIndex,
     INT_PTR nCount = 1);
@@ -707,7 +707,7 @@ RemoveAt example: A CObArray with 1 elements
 
 Legt das Arrayelement auf den angegebenen Index fest.
 
-```
+```cpp
 void SetAt(
     INT_PTR nIndex,
     CObject* newElement);
@@ -756,7 +756,7 @@ SetAt example: A CObArray with 2 elements
 
 Legt das Arrayelement auf den angegebenen Index fest.
 
-```
+```cpp
 void SetAtGrow(
     INT_PTR nIndex,
     CObject* newElement);
@@ -805,7 +805,7 @@ SetAtGrow example: A CObArray with 4 elements
 
 Legt die Größe eines leeren oder vorhandenen Arrays fest. reserviert bei Bedarf Speicher.
 
-```
+```cpp
 void SetSize(
     INT_PTR nNewSize,
     INT_PTR nGrowBy = -1);
@@ -842,7 +842,7 @@ Die folgende Tabelle zeigt andere Memberfunktionen, die `CObArray::SetSize`ähnl
 
   Siehe Beispiel für [CObArray::GetData](#getdata).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

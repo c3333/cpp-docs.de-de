@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CDateTimeCtrl [MFC], SetRange
 - CDateTimeCtrl [MFC], SetTime
 ms.assetid: 7113993b-5d37-4148-939f-500a190c5bdc
-ms.openlocfilehash: d0433507c32c7359f8033836bf845defa8ad7f7a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 577dde7f4f4209f15590825fdb87fe23f788a1ce
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321914"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754610"
 ---
 # <a name="cdatetimectrl-class"></a>CDateTimeCtrl-Klasse
 
@@ -104,7 +104,7 @@ Das Datums- und Uhrzeitauswahlsteuerelement verwendet auch Benachrichtigungen un
 
 `CDateTimeCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdtctl.h
 
@@ -120,7 +120,7 @@ CDateTimeCtrl();
 
 Schließt das aktuelle Datums- und Uhrzeitauswahlsteuerelement.
 
-```
+```cpp
 void CloseMonthCal() const;
 ```
 
@@ -158,7 +158,7 @@ virtual BOOL Create(
 Gibt die Kombination von Datumszeitsteuerungsstilen an. Weitere Informationen zu Datums- und Uhrzeitauswahlstilen finden Sie unter [Datums- und Zeitauswahlsteuerungsstile](/windows/win32/Controls/date-and-time-picker-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) d. h. die Position und Größe des Datums- und Uhrzeitauswahlsteuerelements.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) d. h. die Position und Größe des Datums- und Uhrzeitauswahlsteuerelements.
 
 *pParentWnd*<br/>
 Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Datums- und Uhrzeitauswahlsteuerelements ist. Es darf nicht NULL sein.
@@ -474,7 +474,7 @@ Diese Memberfunktion implementiert das Verhalten der [DTM_SETMCCOLOR](/windows/w
 
 Legt die Schriftart fest, die das Kalendersteuerelement für den untergeordneten Monat des Datums- und Uhrzeitauswahlsteuerelements verwendet.
 
-```
+```cpp
 void SetMonthCalFont(
     HFONT hFont,
     BOOL bRedraw = TRUE);
@@ -597,7 +597,7 @@ Diese Memberfunktion implementiert das Verhalten der Win32-Meldung [DTM_SETSYSTE
 
 [!code-cpp[NVC_MFC_CDateTimeCtrl#8](../../mfc/reference/codesnippet/cpp/cdatetimectrl-class_13.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

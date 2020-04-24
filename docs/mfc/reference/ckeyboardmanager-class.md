@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CKeyboardManager [MFC], TranslateCharToUpper
 - CKeyboardManager [MFC], UpdateAccelTable
 ms.assetid: 4809ece6-89df-4479-8b53-9bf476ee107b
-ms.openlocfilehash: 5d0f544943cc8584960bb2668ee7ce326547e2fa
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a8053ab33a2b49eb2c447cdaa1cb2b9e356bc696
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372314"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754927"
 ---
 # <a name="ckeyboardmanager-class"></a>CKeyboardManager-Klasse
 
@@ -91,7 +91,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CKeyboardManager` Sie `CWinAppE
 
 [CKeyboardManager](../../mfc/reference/ckeyboardmanager-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxkeyboardmanager.h
 
@@ -256,7 +256,7 @@ Wenn Sie kein Standardfenster angeben, wird das Hauptrahmenfenster Ihrer Anwendu
 
 Lädt die Tastenkombinationstabellen aus der Anwendungsressource neu.
 
-```
+```cpp
 void ResetAll();
 ```
 
@@ -375,7 +375,7 @@ Ein Wert ungleich Null, wenn die Methode erfolgreich ist; andernfalls 0.
 
 Verwenden Sie diese Funktion, um die vorhandene Verknüpfungstabelle durch neue Tastenkombinationen für mehrere Framefensterobjekte zu ersetzen. Die Funktion erhält eine Dokumentvorlage als Parameter, um Zugriff auf alle Framefensterobjekte zu erhalten, die mit der angegebenen Dokumentvorlage verbunden sind.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

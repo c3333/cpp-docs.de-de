@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CColorDialog [MFC], OnColorOK
 - CColorDialog [MFC], m_cc
 ms.assetid: d013dc25-9290-4b5d-a97e-95ad7208e13b
-ms.openlocfilehash: ab8d934ca0c40c7073f2fc6d88549eb8db595b3f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 99b4ff27a7686972bcbc85478998b52ed713ab5b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352239"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754256"
 ---
 # <a name="ccolordialog-class"></a>CColorDialog-Klasse
 
@@ -105,7 +105,7 @@ Weitere Informationen zur `CColorDialog`Verwendung finden Sie unter [Allgemeine 
 
 `CColorDialog`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdlgs.h
 
@@ -249,7 +249,7 @@ Sie können [SetCurrentColor](#setcurrentcolor) `OnColorOK` von innen aufrufen, 
 
 Rufen Sie diese `DoModal` Funktion nach dem Aufruf auf, um die aktuelle Farbauswahl auf den in *clr*angegebenen Farbwert zu erzwingen.
 
-```
+```cpp
 void SetCurrentColor(COLORREF clr);
 ```
 
@@ -266,7 +266,7 @@ Diese Funktion wird innerhalb eines `OnColorOK`Nachrichtenhandlers oder aufgeruf
 
   Siehe Beispiel für [CColorDialog::OnColorOK](#oncolorok).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel MDI](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DRAWCLI](../../overview/visual-cpp-samples.md)<br/>

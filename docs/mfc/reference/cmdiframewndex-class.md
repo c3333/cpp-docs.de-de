@@ -156,12 +156,12 @@ helpviewer_keywords:
 - CMDIFrameWndEx [MFC], m_bCanCovertControlBarToMDIChild
 - CMDIFrameWndEx [MFC], m_bDisableSetRedraw
 ms.assetid: dbcafcb3-9a7a-4f11-9dfe-ba57565c81d0
-ms.openlocfilehash: e5b571ee677dab447075abb632cc013c9cd58d44
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 22ea89231487f214b797938e2202c9eed01fcb6e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370045"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754537"
 ---
 # <a name="cmdiframewndex-class"></a>CMDIFrameWndEx-Klasse
 
@@ -288,7 +288,7 @@ Im folgenden Beispiel wird eine `CMDIFrameWndEx`Klasse von ableiten. Dieser Code
 
 [CMDIFrameWndEx](../../mfc/reference/cmdiframewndex-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxMDIFrameWndEx.h
 
@@ -296,7 +296,7 @@ Im folgenden Beispiel wird eine `CMDIFrameWndEx`Klasse von ableiten. Dieser Code
 
 Berechnet das Layout des aktiven Elements neu.
 
-```
+```cpp
 void ActiveItemRecalcLayout();
 ```
 
@@ -481,7 +481,7 @@ Ein Zeiger auf das neue Fenster.
 
 Dockt den angegebenen Bereich an das Rahmenfenster an.
 
-```
+```cpp
 void DockPane(
     CBasePane* pBar,
     UINT nDockBarID=0,
@@ -603,7 +603,7 @@ Das folgende Beispiel `EnableDocking` zeigt, wie die Methode im [VisualStudioDem
 
 Zeigt das Hauptmenü im Vollbildmodus ein oder blendet es aus.
 
-```
+```cpp
 void EnableFullScreenMainMenu(BOOL bEnableMenu);
 ```
 
@@ -618,7 +618,7 @@ void EnableFullScreenMainMenu(BOOL bEnableMenu);
 
 Aktiviert den Vollbildmodus für das Rahmenfenster.
 
-```
+```cpp
 void EnableFullScreenMode(UINT uiFullScreenCmd);
 ```
 
@@ -635,7 +635,7 @@ Im Vollbildmodus werden alle Docking-Steuerleisten, Symbolleisten und Menüs aus
 
 Aktiviert oder deaktiviert das Laden des Andockstatus.
 
-```
+```cpp
 void EnableLoadDockState(BOOL bEnable = TRUE);
 ```
 
@@ -650,7 +650,7 @@ void EnableLoadDockState(BOOL bEnable = TRUE);
 
 Aktiviert oder deaktiviert die Funktion MDI-Registerkartengruppen für das Rahmenfenster.
 
-```
+```cpp
 void EnableMDITabbedGroups(
     BOOL bEnable,
     const CMDITabInfo& params);
@@ -694,7 +694,7 @@ Das folgende Beispiel `EnableMDITabbedGroups` zeigt, wie im [VisualStudioDemo-Be
 
 Aktiviert oder deaktiviert die MDI-Registerkartenfunktion für das MDI-Rahmenfenster. Wenn diese Option aktiviert ist, wird im Rahmenfenster eine Registerkarte für jedes untergeordnete MDI-Fenster angezeigt.
 
-```
+```cpp
 void EnableMDITabs(
     BOOL bEnable=TRUE,
     BOOL bIcons=TRUE,
@@ -719,7 +719,7 @@ Gibt die Position der Registerkartenbeschriftungen an.
 *bTabCloseButton*<br/>
 Gibt an, ob Schaltflächen zum Schließen von Registerkarten angezeigt werden sollen.
 
-*Stil*<br/>
+*style*<br/>
 Gibt den Stil von Registerkarten an. Verwenden Sie STYLE_3D_SCROLLED für reguläre Registerkarten oder STYLE_3D_ONENOTE für Microsoft OneNote-Registerkarten.
 
 *bTabCustomTooltips*<br/>
@@ -746,7 +746,7 @@ Das folgende Beispiel `EnableMDITabs` zeigt, wie im [MDITabsDemo-Beispiel verwen
 
 Gibt an, ob die letzte aktive Registerkarte geöffnet werden soll, wenn der Benutzer die aktuelle Registerkarte schließt.
 
-```
+```cpp
 void EnableMDITabsLastActiveActivation(BOOL bLastActiveTab=TRUE);
 ```
 
@@ -771,7 +771,7 @@ Verwenden `EnableMDITabsLastActiveActivation` Sie diese Option, um die zweite M�
 
 Aktiviert oder deaktiviert die automatische Erstellung und Verwaltung des Popupbereichsmenüs, in dem eine Liste der Anwendungsbereiche angezeigt wird.
 
-```
+```cpp
 void EnablePaneMenu(
     BOOL bEnable,
     UINT uiCustomizeCmd,
@@ -815,7 +815,7 @@ Das folgende Beispiel `EnablePaneMenu` zeigt, wie im [VisualStudioDemo-Beispiel:
 
 Fügt ein Menüelement ein, dessen Befehls-ID ein [CMFCWindowsManagerDialog-Dialogfeld](../../mfc/reference/cmfcwindowsmanagerdialog-class.md) aufruft.
 
-```
+```cpp
 void EnableWindowsDialog(
     UINT uiMenuId,
     LPCTSTR lpszMenuText,
@@ -1232,7 +1232,7 @@ Das folgende Beispiel `LoadMDIState` zeigt, wie im [VisualStudioDemo-Beispiel: M
 
 Verschiebt die aktive Registerkarte aus dem aktuell aktiven Registerkartenfenster in die nächste oder vorherige Registerkartengruppe.
 
-```
+```cpp
 void MDITabMoveToNextGroup(BOOL bNext=TRUE);
 ```
 
@@ -1245,7 +1245,7 @@ void MDITabMoveToNextGroup(BOOL bNext=TRUE);
 
 Erstellt eine neue Registerkartengruppe mit einem einzelnen Fenster.
 
-```
+```cpp
 void MDITabNewGroup(BOOL bVert=TRUE);
 ```
 
@@ -1789,7 +1789,7 @@ Diese Methode überschreibt [CFrameWnd::RecalcLayout](../../mfc/reference/cframe
 
 Hebt die Registrierung eines Bereichs auf und entfernt ihn aus dem Docking-Manager.
 
-```
+```cpp
 void RemovePaneFromDockManager(
     CBasePane* pControlBar,
     BOOL bDestroy,
@@ -1864,7 +1864,7 @@ Das folgende Beispiel `SaveMDIState` zeigt, wie im [VisualStudioDemo-Beispiel: M
 
 Legt das Druckvorschaufensterfenster fest.
 
-```
+```cpp
 void SetPrintPreviewFrame(CFrameWnd* pWnd);
 ```
 
@@ -1879,7 +1879,7 @@ void SetPrintPreviewFrame(CFrameWnd* pWnd);
 
 Ändert ein Symbolleistenobjekt, indem Dummy-Elemente durch benutzerdefinierte Elemente ersetzt werden.
 
-```
+```cpp
 void SetupToolbarMenu(
     CMenu& menu,
     const UINT uiViewUserToolbarCmdFirst,
@@ -1901,7 +1901,7 @@ void SetupToolbarMenu(
 
 Schaltet den Hauptframe vom regulären Modus in den Vollbildmodus.
 
-```
+```cpp
 void ShowFullScreen();
 ```
 
@@ -1911,7 +1911,7 @@ void ShowFullScreen();
 
 Zeigt den angegebenen Bereich ein oder blendet ihn aus.
 
-```
+```cpp
 void ShowPane(
     CBasePane* pBar,
     BOOL bShow,
@@ -1947,7 +1947,7 @@ Das folgende Beispiel `ShowPane` zeigt, wie im [VisualStudioDemo-Beispiel: MFC V
 
 Erstellt ein [CMFCWindowsManagerDialog-Feld](../../mfc/reference/cmfcwindowsmanagerdialog-class.md) und öffnet es.
 
-```
+```cpp
 void ShowWindowsDialog();
 ```
 
@@ -1988,7 +1988,7 @@ Das folgende Beispiel `TabbedDocumentToControlBar` zeigt, wie im [VisualStudioDe
 
 Wird vom Framework aufgerufen, um die Fensterrahmenbeschriftung zu aktualisieren.
 
-```
+```cpp
 void UpdateCaption();
 ```
 
@@ -1998,7 +1998,7 @@ void UpdateCaption();
 
 Legt das Symbol für jeden MDI-Registerkartenbereich fest.
 
-```
+```cpp
 void UpdateMDITabbedBarsIcons();
 ```
 
@@ -2024,7 +2024,7 @@ virtual void WinHelp(
 
 Diese Methode überschreibt [CWnd::WinHelp](../../mfc/reference/cwnd-class.md#winhelp).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

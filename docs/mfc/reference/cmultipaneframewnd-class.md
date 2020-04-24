@@ -80,12 +80,12 @@ helpviewer_keywords:
 - CMultiPaneFrameWnd [MFC], StoreRecentDockSiteInfo
 - CMultiPaneFrameWnd [MFC], StoreRecentTabRelatedInfo
 ms.assetid: 989a548e-0d70-46b7-a513-8cf740e1be3e
-ms.openlocfilehash: db5f0b3c6b48a3704803d77242904e25e053b7ac
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 047dd5ca2ca6705549e8f92de1550248e348ff52
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363384"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752794"
 ---
 # <a name="cmultipaneframewnd-class"></a>CMultiPaneFrameWnd-Klasse
 
@@ -171,7 +171,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CMultiPaneFrameWnd` ein Zeiger 
 
 [CMultiPaneFrameWnd](../../mfc/reference/cmultipaneframewnd-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxMultiPaneFrameWnd.h
 
@@ -580,7 +580,7 @@ virtual void SetDockState(CDockingManager* pDockManager);
 
 ## <a name="cmultipaneframewndsetlastfocusedpane"></a><a name="setlastfocusedpane"></a>CMultiPaneFrameWnd::SetLastFocusedPane
 
-```
+```cpp
 void SetLastFocusedPane(HWND hwnd);
 ```
 
@@ -636,7 +636,7 @@ virtual void StoreRecentTabRelatedInfo(
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

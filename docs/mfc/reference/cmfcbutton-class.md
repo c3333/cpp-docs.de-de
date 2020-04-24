@@ -80,12 +80,12 @@ helpviewer_keywords:
 - CMFCButton [MFC], m_nAlignStyle
 - CMFCButton [MFC], m_nFlatStyle
 ms.assetid: 4b32f57c-7a53-4734-afb9-d47e3359f62e
-ms.openlocfilehash: 5434801969a55387a5b5555c9a4ade22f1969e7d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e949feaaac3570e1518cfb488cc1c42a471a1c46
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367775"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754873"
 ---
 # <a name="cmfcbutton-class"></a>CMFCButton-Klasse
 
@@ -199,7 +199,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die Eigenschaften der `CMFCButto
 
 [CMFCButton](../../mfc/reference/cmfcbutton-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxbutton.h
 
@@ -215,7 +215,7 @@ virtual void CleanUp();
 
 Gibt an, ob der Volltext einer QuickInfo in einem großen QuickInfo-Fenster oder eine abgeschnittene Version des Textes in einem kleinen QuickInfo-Fenster angezeigt werden soll.
 
-```
+```cpp
 void EnableFullTextTooltip(BOOL bOn=TRUE);
 ```
 
@@ -230,7 +230,7 @@ void EnableFullTextTooltip(BOOL bOn=TRUE);
 
 Gibt an, ob die Schriftart des Schaltflächentexts mit der Schriftart des Anwendungsmenüs identisch ist.
 
-```
+```cpp
 void EnableMenuFont(
     BOOL bOn=TRUE,
     BOOL bRedraw=TRUE);
@@ -700,7 +700,7 @@ virtual CFont* SelectFont(CDC* pDC);
 
 Legt eine Schaltfläche auf Auto-Repeat-Modus fest.
 
-```
+```cpp
 void SetAutorepeatMode(int nTimeDelay=500);
 ```
 
@@ -717,7 +717,7 @@ Diese Methode bewirkt, dass die Schaltfläche ständig WM_COMMAND Nachrichten an
 
 Legt das Bild für eine aktivierte Schaltfläche fest.
 
-```
+```cpp
 void SetCheckedImage(
     HICON hIcon,
     BOOL bAutoDestroy=TRUE,
@@ -782,7 +782,7 @@ void SetCheckedImage(
 
 Legt die Hintergrundfarbe für den Schaltflächentext fest.
 
-```
+```cpp
 void SetFaceColor(
     COLORREF crFace,
     BOOL bRedraw=TRUE);
@@ -804,7 +804,7 @@ Verwenden Sie diese Methode, um eine neue Füllfarbe für den Schaltflächenhint
 
 Legt das Bild für eine Schaltfläche fest.
 
-```
+```cpp
 void SetImage(
     HICON hIcon,
     BOOL bAutoDestroy=TRUE,
@@ -876,7 +876,7 @@ Im folgenden Beispiel wird veranschaulicht, `SetImage` wie verschiedene `CMFCBut
 
 Legt das Cursorbild fest.
 
-```
+```cpp
 void SetMouseCursor(HCURSOR hcursor);
 ```
 
@@ -900,7 +900,7 @@ Im folgenden Beispiel wird `SetMouseCursor` veranschaulicht, `CMFCButton` wie di
 
 Legt den Cursor auf das Bild einer Hand fest.
 
-```
+```cpp
 void SetMouseCursorHand();
 ```
 
@@ -912,7 +912,7 @@ Verwenden Sie diese Methode, um das Cursorbild einer Hand mit der Schaltfläche 
 
 Verwendet `CMenuImages` ein Objekt, um das Schaltflächenbild festzulegen.
 
-```
+```cpp
 void SetStdImage(
     CMenuImages::IMAGES_IDS id,
     CMenuImages::IMAGE_STATE state=CMenuImages::ImageBlack,
@@ -924,7 +924,7 @@ void SetStdImage(
 *id*<br/>
 [in] Einer der Schaltflächenbildbezeichner, `CMenuImage::IMAGES_IDS` der in der Enumeration definiert ist. Die Bildwerte geben Bilder wie Pfeile, Pins und Optionsfelder an.
 
-*Staat*<br/>
+*state*<br/>
 [in] Einer der Schaltflächenbildstatusbezeichner, `CMenuImages::IMAGE_STATE` der in der Enumeration definiert ist. Die Bildzustände geben Schaltflächenfarben wie Schwarz, Grau, Hellgrau, Weiß und Dunkelgrau an. Der Standardwert ist `CMenuImages::ImageBlack`.
 
 *idDeaktiviert*<br/>
@@ -936,7 +936,7 @@ void SetStdImage(
 
 Legt die Farbe des Schaltflächentexts für eine Schaltfläche fest, die nicht ausgewählt ist.
 
-```
+```cpp
 void SetTextColor(COLORREF clrText);
 ```
 
@@ -951,7 +951,7 @@ void SetTextColor(COLORREF clrText);
 
 Legt die Farbe des Schaltflächentexts für eine ausgewählte Schaltfläche fest.
 
-```
+```cpp
 void SetTextHotColor(COLORREF clrTextHot);
 ```
 
@@ -966,7 +966,7 @@ void SetTextHotColor(COLORREF clrTextHot);
 
 Ordnet eine QuickInfo einer Schaltfläche zu.
 
-```
+```cpp
 void SetTooltip(LPCTSTR lpszToolTipText);
 ```
 
@@ -998,7 +998,7 @@ Ein `CSize` Objekt, das die neue Größe der Schaltfläche enthält.
 
 Standardmäßig berechnet diese Methode eine neue Größe, die einen horizontalen Rand von 10 Pixeln und einen vertikalen Rand von 5 Pixeln enthält.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

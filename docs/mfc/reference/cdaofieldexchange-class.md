@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CDaoFieldExchange [MFC], m_nOperation
 - CDaoFieldExchange [MFC], m_prs
 ms.assetid: 350a663e-92ff-44ab-ad53-d94efa2e5823
-ms.openlocfilehash: e1ce6e13b9c6045881cc0bb4114a6e11d58365c8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 86f12f78338d1c60e3dd13614ccedc2868f28d81
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368992"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754719"
 ---
 # <a name="cdaofieldexchange-class"></a>CDaoFieldExchange-Klasse
 
@@ -73,7 +73,7 @@ Die [IsValidOperation-Memberfunktion](#isvalidoperation) wird zum Schreiben eige
 
 `CDaoFieldExchange`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -136,7 +136,7 @@ Enthält einen Zeiger auf das [CDaoRecordset-Objekt,](../../mfc/reference/cdaore
 
 Rufen `SetFieldType` Sie `CDaoRecordset` die `DoFieldExchange` Außerkraftsetzung Ihrer Klasse auf.
 
-```
+```cpp
 void SetFieldType(UINT nFieldType);
 ```
 
@@ -157,7 +157,7 @@ Wenn Sie Ihre Recordset-Klasse parametrisieren, sollten Sie DFX-Aufrufe für all
 
 Im Allgemeinen muss jeder Gruppe von DFX-Funktionsaufrufen, die Felddatenmembern `SetFieldType`oder Parameterdatenelementen zugeordnet sind, ein Aufruf von vorangestellt werden. Der *nFieldType-Parameter* jedes `SetFieldType` Aufrufs identifiziert den Typ der Datenmember, `SetFieldType` die durch die DFX-Funktionsaufrufe dargestellt werden, die dem Aufruf folgen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CDaoRecordset-Klasse](../../mfc/reference/cdaorecordset-class.md)

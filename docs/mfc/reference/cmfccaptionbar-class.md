@@ -66,12 +66,12 @@ helpviewer_keywords:
 - CMFCCaptionBar [MFC], m_clrBarBorder
 - CMFCCaptionBar [MFC], m_clrBarText
 ms.assetid: acb54d5f-14ff-4c96-aeb3-7717cf566d9a
-ms.openlocfilehash: 3a1e8890176fe686b54fe4756dfd578869cbcdfb
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c42b1ccb51a3c290e0887717d900543b8d5b277a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367798"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752626"
 ---
 # <a name="cmfccaptionbar-class"></a>CMFCCaptionBar-Klasse
 
@@ -167,7 +167,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCCaptionBar](../../mfc/reference/cmfccaptionbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxcaptionbar.h
 
@@ -227,7 +227,7 @@ Gibt FALSE zurück, es sei denn, es wird überschrieben.
 
 Aktiviert oder deaktiviert die Schaltfläche in der Beschriftungsleiste.
 
-```
+```cpp
 void EnableButton(BOOL bEnable=TRUE);
 ```
 
@@ -473,7 +473,7 @@ Die Standardimplementierung zeigt den `CDC::DrawText` Text mithilfe von [CMFCCap
 
 Entfernt das Bitmapbild aus der Beschriftungsleiste.
 
-```
+```cpp
 void RemoveBitmap();
 ```
 
@@ -481,7 +481,7 @@ void RemoveBitmap();
 
 Entfernt die Schaltfläche aus der Beschriftungsleiste.
 
-```
+```cpp
 void RemoveButton();
 ```
 
@@ -493,7 +493,7 @@ Das Layout der Beschriftungsleistenelemente wird automatisch angepasst.
 
 Entfernt das Symbol aus der Beschriftungsleiste.
 
-```
+```cpp
 void RemoveIcon();
 ```
 
@@ -501,7 +501,7 @@ void RemoveIcon();
 
 Entfernt die Textbeschriftung aus der Beschriftungsleiste.
 
-```
+```cpp
 void RemoveText();
 ```
 
@@ -509,7 +509,7 @@ void RemoveText();
 
 Legt das Bitmapbild für die Beschriftungsleiste fest.
 
-```
+```cpp
 void SetBitmap(
     HBITMAP hBitmap,
     COLORREF clrTransparent,
@@ -557,7 +557,7 @@ Die Bitmap wird gemäß dem Parameter *bmpAlignment* ausgerichtet.  Dieser Param
 
 Legt die Rahmengröße der Beschriftungsleiste fest.
 
-```
+```cpp
 void SetBorderSize(int nSize);
 ```
 
@@ -570,7 +570,7 @@ void SetBorderSize(int nSize);
 
 Legt die Schaltfläche für die Beschriftungsleiste fest.
 
-```
+```cpp
 void SetButton(
     LPCTSTR lpszLabel,
     UINT uiCmdUI,
@@ -596,7 +596,7 @@ TRUE, wenn die Schaltfläche einen Dropdown-Pfeil anzeigt, andernfalls FALSE.
 
 Gibt an, ob die Taste gedrückt bleibt.
 
-```
+```cpp
 void SetButtonPressed(BOOL bPresed=TRUE);
 ```
 
@@ -609,7 +609,7 @@ TRUE, wenn die Taste ihren gedrückten Zustand behält, ANDERNFALLS FALSE.
 
 Legt die QuickInfo für die Schaltfläche fest.
 
-```
+```cpp
 void SetButtonToolTip(
     LPCTSTR lpszToolTip,
     LPCTSTR lpszDescription=NULL);
@@ -627,7 +627,7 @@ void SetButtonToolTip(
 
 Legt den Rahmenstil der Beschriftungsleiste fest.
 
-```
+```cpp
 void SetFlatBorder(BOOL bFlat=TRUE);
 ```
 
@@ -640,7 +640,7 @@ void SetFlatBorder(BOOL bFlat=TRUE);
 
 Legt das Symbol für eine Beschriftungsleiste fest.
 
-```
+```cpp
 void SetIcon(
     HICON hIcon,
     BarElementAlignment iconAlignment=ALIGN_RIGHT);
@@ -672,7 +672,7 @@ Das Symbol wird entsprechend dem Parameter *iconAlignment* ausgerichtet. Es kann
 
 Legt die QuickInfo für das Bild in der Beschriftungsleiste fest.
 
-```
+```cpp
 void SetImageToolTip(
     LPCTSTR lpszToolTip,
     LPCTSTR lpszDescription=NULL);
@@ -690,7 +690,7 @@ void SetImageToolTip(
 
 Legt den Abstand zwischen der Kante des Beschriftungsbalkenelements und dem Rand des Beschriftungsleistensteuerelements fest.
 
-```
+```cpp
 void SetMargin(int nMargin);
 ```
 
@@ -703,7 +703,7 @@ void SetMargin(int nMargin);
 
 Legt die Textbeschriftung für die Beschriftungsleiste fest.
 
-```
+```cpp
 void SetText(
     const CString& strText,
     BarElementAlignment textAlignment=ALIGN_RIGHT);
@@ -729,7 +729,7 @@ Die Textbeschriftung wird gemäß dem Parameter *textAlignment* ausgerichtet. Es
 
 - ALIGN_CENTER
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

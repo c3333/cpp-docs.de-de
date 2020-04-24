@@ -28,12 +28,12 @@ helpviewer_keywords:
 - COleMessageFilter [MFC], SetMessagePendingDelay
 - COleMessageFilter [MFC], SetRetryReply
 ms.assetid: b1fd1639-fac4-4fd0-bf17-15172deba13c
-ms.openlocfilehash: f6db5f012aedf08edd87980e304e181295bfb953
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8a6c160a76ae27059238c3e8e26b5bea87a87f7f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374912"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753835"
 ---
 # <a name="colemessagefilter-class"></a>COleMessageFilter-Klasse
 
@@ -88,7 +88,7 @@ Weitere Informationen finden Sie im Artikel [Server: Implementieren eines Server
 
 `COleMessageFilter`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxole.h
 
@@ -120,7 +120,7 @@ COleMessageFilter();
 
 Aktiviert und deaktiviert das dialogische Dialogfeld "Beschäftigt", das angezeigt wird, wenn die Benachrichtigungsausstehende Verzögerung abläuft (siehe [SetRetryReply](#setretryreply)) während eines OLE-Aufrufs.
 
-```
+```cpp
 void EnableBusyDialog(BOOL bEnableBusy = TRUE);
 ```
 
@@ -133,7 +133,7 @@ Gibt an, ob das Dialogfeld "beschäftigt" aktiviert oder deaktiviert ist.
 
 Aktiviert und deaktiviert das Dialogfeld "Nicht reagiert", das angezeigt wird, wenn während eines OLE-Aufrufs eine Tastatur- oder Mausnachricht aussteht und der Anruf ein Timeout aufgetreten ist.
 
-```
+```cpp
 void EnableNotRespondingDialog(BOOL bEnableNotResponding = TRUE);
 ```
 
@@ -203,7 +203,7 @@ Der Standardnachrichtenfilter des Frameworks wird während der Initialisierung a
 
 Widerruft eine vorherige Registrierung, die durch einen Aufruf von [Register](#register)durchgeführt wurde.
 
-```
+```cpp
 void Revoke();
 ```
 
@@ -217,7 +217,7 @@ Der Standardnachrichtenfilter, der automatisch vom Framework erstellt und regist
 
 Diese Funktion legt die "beschäftigte Antwort" der Anwendung fest.
 
-```
+```cpp
 void SetBusyReply(SERVERCALL nBusyReply);
 ```
 
@@ -244,7 +244,7 @@ Standardmäßig ist die ausgelastete Antwort SERVERCALL_RETRYLATER. Diese Antwor
 
 Bestimmt, wie lange die aufrufende Anwendung auf eine Antwort von der aufgerufenen Anwendung wartet, bevor weitere Aktionen ergriffen werden.
 
-```
+```cpp
 void SetMessagePendingDelay(DWORD nTimeout = 5000);
 ```
 
@@ -261,7 +261,7 @@ Diese Funktion funktioniert in Verbindung mit [SetRetryReply](#setretryreply).
 
 Bestimmt die Aktion der aufrufenden Anwendung, wenn sie eine ausgelastete Antwort von einer aufgerufenen Anwendung empfängt.
 
-```
+```cpp
 void SetRetryReply(DWORD nRetryReply = 0);
 ```
 
@@ -284,7 +284,7 @@ Wenn während eines Anrufs eine Tastatur- oder Mausnachricht aussteht und das Ze
 
 Wenn die Dialogfelder deaktiviert sind, wird die aktuelle "Wiederholungsantwort" immer für Aufrufe an ausgelastete Anwendungen verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

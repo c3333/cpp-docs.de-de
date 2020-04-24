@@ -1,35 +1,41 @@
 ---
 title: Compilerwarnung (Stufe 1) C4251
-ms.date: 11/04/2016
+ms.date: 04/21/2020
 f1_keywords:
 - C4251
 helpviewer_keywords:
 - C4251
 ms.assetid: a9992038-f0c2-4fc4-a9be-4509442cbc1e
-ms.openlocfilehash: 8a723b7ce7fc79fb6be9c9dd2b500631098622b0
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9f261d3deb7f1cac8cd5c60b920e0be49bc8b7a6
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80163218"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032329"
 ---
 # <a name="compiler-warning-level-1-c4251"></a>Compilerwarnung (Stufe 1) C4251
 
-"Bezeichner": die Klasse "Type" muss über eine DLL-Schnittstelle verfügen, die von Clients der Klasse "Typ2" verwendet werden darf.
+> '*Typ*' : Klasse '*Typ1*' muss dll-interface haben, um von Clients der Klasse '*typ2*' verwendet zu werden
 
-Stellen Sie Folgendes sicher, um die Möglichkeit einer Daten Beschädigung beim Exportieren einer Klasse mit [__declspec (dllexport)](../../cpp/dllexport-dllimport.md)zu minimieren:
+## <a name="remarks"></a>Bemerkungen
 
-- Alle statischen Daten sind über Funktionen zugänglich, die aus der dll exportiert werden.
+Um die Möglichkeit einer Datenbeschädigung beim Exportieren einer als [__declspec(dllexport)](../../cpp/dllexport-dllimport.md)deklarierten Klasse zu minimieren, stellen Sie sicher, dass:
 
-- Keine Inline Methoden ihrer Klasse können statische Daten ändern.
+- Auf alle statischen Daten wird über Funktionen zugegriffen, die aus der DLL exportiert werden.
 
-- Keine Inline Methoden ihrer Klasse verwenden CRT-Funktionen, oder andere Bibliotheksfunktionen verwenden statische Daten (Weitere Informationen finden Sie unter [potenzielle Fehler bei der Übergabe von CRT-Objekten über dll-Grenzen](../../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md) hinweg).
+- Keine inline Methoden Ihrer Klasse können statische Daten ändern.
 
-- Keine Methoden ihrer Klasse (unabhängig vom Inlining) können Typen verwenden, bei denen die Instanziierung in der exe-und dll-Datei Unterschiede aufweisen.
+- Keine inline Methoden Ihrer Klasse verwenden CRT-Funktionen oder andere Bibliotheksfunktionen, die statische Daten verwenden. Weitere Informationen finden Sie unter [Potenzielle Fehler beim Übergeben von CRT-Objekten über DLL-Grenzen](../../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md)hinweg .
 
-Sie können den Export von Klassen vermeiden, indem Sie eine DLL definieren, die eine Klasse mit virtuellen Funktionen definiert, und Funktionen, die Sie zum Instanziieren und Löschen von Objekten des Typs aufzurufen können.  Sie können dann einfach virtuelle Funktionen für den Typ aufzurufen.
+- Keine Methoden Ihrer Klasse (ob inline oder nicht) können Typen verwenden, bei denen die Instanziierung in EXE und DLL statische Datenunterschiede aufweisen.
 
-C4251 kann ignoriert werden, wenn Sie von einem Typ in der C++ Standard Bibliothek ableiten, eine Debugversion ( **/MTD**) kompilieren und die Compilerfehlermeldung auf _Container_base verweist.
+Sie können Probleme beim Exportieren einer Klasse aus einer DLL vermeiden: Definieren Sie Ihre Klasse, um virtuelle Funktionen und Funktionen zum Instanziieren und Löschen von Objekten des Typs zu verwenden. Sie können dann einfach virtuelle Funktionen für den Typ aufrufen.
+
+C4251 kann ignoriert werden, wenn Ihre Klasse von einem Typ in der C++-Standardbibliothek abgeleitet wird, Sie eine Debugversion `_Container_base`(**/MTd )** kompilieren und die Compilerfehlermeldung auf verweist.
+
+## <a name="example"></a>Beispiel
+
+In diesem Beispiel `VecWrapper` wird `std::vector`eine spezielle Klasse exportiert, die von abgeleitet wurde.
 
 ```cpp
 // C4251.cpp
@@ -37,5 +43,5 @@ C4251 kann ignoriert werden, wenn Sie von einem Typ in der C++ Standard Biblioth
 #include <vector>
 using namespace std;
 class Node;
-class __declspec(dllimport) VecWrapper : vector<Node *> {};   // C4251
+class __declspec(dllexport) VecWrapper : vector<Node *> {};   // C4251
 ```

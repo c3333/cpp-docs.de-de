@@ -8,12 +8,12 @@ helpviewer_keywords:
 - memory leaks [MFC], detecting
 - detecting memory leaks [MFC]
 ms.assetid: 229d9de7-a6f3-4cc6-805b-5a9d9b1bfe1d
-ms.openlocfilehash: 8f49a9faf70673c62167deeaa1bef33e4882378f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 94a2fb65a9a3030f9dc683d0eb30f476b9de1cad
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369985"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752614"
 ---
 # <a name="cmemorystate-structure"></a>CMemoryState Structure
 
@@ -71,7 +71,7 @@ Weitere Informationen zur Verwendung `CMemoryState` und anderen Diagnosen finden
 
 `CMemoryState`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -79,7 +79,7 @@ Weitere Informationen zur Verwendung `CMemoryState` und anderen Diagnosen finden
 
 Erstellt eine Momentaufnahme des Arbeitsspeichers und speichert ihn in diesem `CMemoryState` Objekt.
 
-```
+```cpp
 void Checkpoint();
 ```
 
@@ -137,7 +137,7 @@ Ein Wert ungleich Null, wenn die beiden Speicherzustände unterschiedlich sind; 
 
 Ruft `Dump` die Funktion für alle Objekte `CObject` eines Typs auf, die seit dem letzten `CMemoryState` [Checkpoint-Aufruf](#checkpoint) für dieses Objekt von der Klasse abgeleitet wurden (und immer noch zugewiesen sind).
 
-```
+```cpp
 void DumpAllObjectsSince() const;
 ```
 
@@ -153,7 +153,7 @@ Wenn `DumpAllObjectsSince` Sie mit `CMemoryState` einem nicht initialisierten Ob
 
 Druckt einen präzisen `CMemoryState` Speicherstatistikbericht aus einem Objekt, das mit der [Memberfunktion Differenz](#difference) gefüllt wird.
 
-```
+```cpp
 void DumpStatistics() const;
 ```
 
@@ -195,6 +195,6 @@ Fügen Sie einen `ExitInstance` Handler für die Funktion hinzu, und verwenden S
 
 Sie können das Programm nun im Debug-Modus `DumpStatistics` ausführen, um die Ausgabe der Funktion anzuzeigen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

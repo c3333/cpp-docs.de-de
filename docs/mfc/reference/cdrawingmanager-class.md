@@ -56,12 +56,12 @@ helpviewer_keywords:
 - CDrawingManager [MFC], SetPixel
 - CDrawingManager [MFC], SmartMixColors
 ms.assetid: 9e4775ca-101b-4aa9-a85a-4d047c701215
-ms.openlocfilehash: 59c34a69b96cc9986db99b5f34bc38cf76f4909a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 73c5775c2cb83dea79401615b31f2194094fac8e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374019"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753237"
 ---
 # <a name="cdrawingmanager-class"></a>CDrawingManager-Klasse
 
@@ -121,7 +121,7 @@ Die `CDrawingManager` Klasse bietet Funktionen zum Zeichnen von Schatten, Farbve
 [Cobject](../../mfc/reference/cobject-class.md)<br/>
 `CDrawingManager`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxdrawmanager.h
 
@@ -156,8 +156,8 @@ static HBITMAP __stdcall CreateBitmap_32(
 
 |||
 |-|-|
-|Parameter|Beschreibung|
-|*Größe*|[in] Ein [CSize-Parameter,](../../atl-mfc-shared/reference/csize-class.md) der die Größe der Bitmap angibt.|
+|Parameter|BESCHREIBUNG|
+|*size*|[in] Ein [CSize-Parameter,](../../atl-mfc-shared/reference/csize-class.md) der die Größe der Bitmap angibt.|
 |*pBits*|[out] Ein Zeiger auf einen Datenzeiger, der die Position der Bitwerte des DIB empfängt.|
 |*Bitmap*|Ein Handle zur ursprünglichen Bitmap|
 |*clrTransparent*|Ein RGB-Wert, der die transparente Farbe der ursprünglichen Bitmap angibt.|
@@ -174,7 +174,7 @@ Weitere Informationen zum Erstellen einer DIB-Bitmap finden Sie unter [CreateDIB
 
 Zeigt Bitmaps mit transparenten oder halbtransparenten Pixeln an.
 
-```
+```cpp
 void DrawAlpha(
     CDC* pDstDC,
     const CRect& rectDst,
@@ -204,7 +204,7 @@ Diese Methode führt Alpha-Mischungen für zwei Bitmaps durch. Weitere Informati
 
 Zeichnet eine Ellipse mit den mitgelieferten Füll- und Rahmenfarben.
 
-```
+```cpp
 void DrawEllipse(
     const CRect& rect,
     COLORREF clrFill,
@@ -276,7 +276,7 @@ Das durch *Rekt* definierte Rechteck muss mindestens 5 Pixel breit und 5 Pixel h
 
 Zeichnet eine Linie.
 
-```
+```cpp
 void DrawLine(
     int x1,
     int y1,
@@ -311,7 +311,7 @@ Diese Methode schlägt fehl, wenn *clrLine* gleich -1 ist.
 
 Zeichnet ein Rechteck mit den mitgelieferten Füll- und Rahmenfarben.
 
-```
+```cpp
 void DrawRect(
     const CRect& rect,
     COLORREF clrFill,
@@ -397,7 +397,7 @@ Im folgenden Beispiel wird `DrawShadow` veranschaulicht, `CDrawingManager` wie d
 
 Füllt einen rechteckigen Bereich mit zwei Farbverläufen.
 
-```
+```cpp
 void Fill4ColorsGradient(
     CRect rect,
     COLORREF colorStart1,
@@ -441,7 +441,7 @@ Diese Methode generiert einen Assertionsfehler, wenn *nPercentage* kleiner als 0
 
 Füllt einen rechteckigen Bereich mit dem angegebenen Farbverlauf.
 
-```
+```cpp
 void FillGradient(
     CRect rect,
     COLORREF colorStart,
@@ -481,7 +481,7 @@ Im folgenden Beispiel wird `FillGradient` veranschaulicht, `CDrawingManager` wie
 
 Füllt einen rechteckigen Bereich mit einem angegebenen Farbverlauf.
 
-```
+```cpp
 void FillGradient2 (
     CRect rect,
     COLORREF colorStart,
@@ -737,7 +737,7 @@ Um eine HSV- oder HSL-Farbe in eine RGB-Darstellung zu konvertieren, rufen Sie e
 
 Dreht einen rechteckigen Bereich um.
 
-```
+```cpp
 void MirrorRect(
     CRect rect,
     BOOL bHorz = TRUE);
@@ -924,10 +924,10 @@ static void __stdcall SetAlphaPixel(
 *Rect*<br/>
 [in] Ein rechteckiger Bereich in Ihrer Anwendung. Der Zeichnungsmanager zeichnet einen Schatten unter und rechts von diesem Bereich.
 
-*X*<br/>
+*x*<br/>
 [in] Die horizontale Koordinate des Pixels, das farbet.
 
-*y*<br/>
+*Y*<br/>
 [in] Die vertikale Koordinate des Pixels, das farbet.
 
 *Prozent*<br/>
@@ -970,8 +970,8 @@ static void __stdcall SetPixel(
 |*pBits*|[in] Ein Zeiger auf die Bitwerte der Bitmap.|
 |*Cx*|[in] Die Gesamtbreite der Bitmap.|
 |*Cy*|[in] Die Gesamthöhe der Bitmap.|
-|*X*|[in] Die x-Koordinate des pixeligen Pixels in der zu ändernden Bitmap.|
-|*y*|[in] Die y-Koordinate des zu ändernden Pixels in der Bitmap.|
+|*x*|[in] Die x-Koordinate des pixeligen Pixels in der zu ändernden Bitmap.|
+|*Y*|[in] Die y-Koordinate des zu ändernden Pixels in der Bitmap.|
 |*Farbe*|[in] Die neue Farbe für das Pixel, das durch die angegebenen Koordinaten identifiziert wird.|
 
 ## <a name="cdrawingmanagersmartmixcolors"></a><a name="smartmixcolors"></a>CDrawingManager::SmartMixColors
@@ -992,7 +992,7 @@ static COLORREF __stdcall SmartMixColors(
 |||
 |-|-|
 |Parameter|BESCHREIBUNG|
-|*Farbe1*|[in] Die erste Farbe, die gemischt werden soll.|
+|*color1*|[in] Die erste Farbe, die gemischt werden soll.|
 |*farbe2*|[in] Die zweite Farbe, die gemischt werden soll.|
 |*dblLumRatio*|[in] Das Verhältnis für die Leuchtkraft der neuen Farbe. `SmartMixColors`multipliziert die Leuchtkraft der gemischten Farbe mit diesem Verhältnis, bevor eine endgültige Farbe bestimmt wird.|
 |*k1*|[in] Das gewichtete Verhältnis für die erste Farbe.|
@@ -1012,7 +1012,7 @@ Das gewichtete Verhältnis wird mit der folgenden \* Formel berechnet: \* (farbe
 
 Dreht einen Quell-DC-Inhalt innerhalb des angegebenen Rechtecks um 90 Grad.
 
-```
+```cpp
 void DrawRotated(
     CRect rectDest,
     CDC& dcSrc,
@@ -1032,7 +1032,7 @@ TRUE zeigt +90 Grad rotieren; FALSE zeigt rotieren -90 Grad an.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

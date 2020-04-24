@@ -166,12 +166,12 @@ helpviewer_keywords:
 - CMFCPropertyGridProperty [MFC], m_strFormatLong
 - CMFCPropertyGridProperty [MFC], m_strFormatShort
 ms.assetid: 36f3fabe-0efe-468b-8a0b-5a7956db38a2
-ms.openlocfilehash: a5ac8fec691a3bf8ba3725aa5be0ac9da5ef34b4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 08fd7f1ba11053358391e7f120eb5db80d764c87
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361819"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754089"
 ---
 # <a name="cmfcpropertygridproperty-class"></a>CMFCPropertyGridProperty-Klasse
 
@@ -307,7 +307,7 @@ Im folgenden Beispiel wird `CMFCPropertyGridProperty` veranschaulicht, wie ein O
 
 [CMFCPropertyGridProperty](../../mfc/reference/cmfcpropertygridproperty-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxpropertygridctrl.h
 
@@ -400,7 +400,7 @@ Der Wertebereich einer Eigenschaft besteht aus einem Textfeld und möglicherweis
 
 Macht eine Eigenschaft entweder editierbar oder schreibgeschützt.
 
-```
+```cpp
 void AllowEdit(BOOL bAllow=TRUE);
 ```
 
@@ -539,7 +539,7 @@ Rufen Sie die [CMFCPropertyGridProperty::EnableSpinControl-Methode](#enablespinc
 
 Aktiviert oder deaktiviert eine Eigenschaft.
 
-```
+```cpp
 void Enable(BOOL bEnable=TRUE);
 ```
 
@@ -554,7 +554,7 @@ void Enable(BOOL bEnable=TRUE);
 
 Aktiviert oder deaktiviert ein Drehschaltflächensteuerelement, das zum Ändern eines Eigenschaftswerts verwendet wird.
 
-```
+```cpp
 void EnableSpinControl(
     BOOL bEnable=TRUE,
     int nMin=0,
@@ -582,7 +582,7 @@ Der Eigenschaftstyp, der durch den *varValue-Parameter* des [Konstruktors CMFCPr
 
 Erweitert oder reduziert eine Eigenschaft, die Untereigenschaften enthält.
 
-```
+```cpp
 void Expand(BOOL bExpand=TRUE);
 ```
 
@@ -801,7 +801,7 @@ CMFCPropertyGridProperty* GetSubItem(int nIndex) const;
 
 Ein Zeiger auf ein Eigenschaftsobjekt, das ein untergeordnetes Element dieser Eigenschaft ist.
 
-- oder -
+Oder
 
 Im Einzelhandelsmodus NULL, wenn der *nIndex-Parameter* ungültig ist. Im Debugmodus wird diese Methode bestätigt.
 
@@ -912,7 +912,7 @@ In der folgenden Tabelle sind die Werte aufgeführt, die an den Parameter *pnAre
 
 Wird vom Framework aufgerufen, um ein Eigenschaftsobjekt zu initialisieren.
 
-```
+```cpp
 void Init();
 ```
 
@@ -1556,7 +1556,7 @@ Diese Methode unterstützt eine Eigenschaft, die entweder eine Liste von Werten 
 
 Zeichnet die Eigenschaft neu.
 
-```
+```cpp
 void Redraw();
 ```
 
@@ -1566,7 +1566,7 @@ void Redraw();
 
 Entfernt alle Optionen (Elemente) aus einer Eigenschaft.
 
-```
+```cpp
 void RemoveAllOptions();
 ```
 
@@ -1612,7 +1612,7 @@ virtual void ResetOriginalValue();
 
 Ordnet einem Wert für Einen DWORD-Wert eine Eigenschaft zu.
 
-```
+```cpp
 void SetData(DWORD_PTR dwData);
 ```
 
@@ -1629,7 +1629,7 @@ Verwenden Sie die [CMFCPropertyGridProperty::GetData-Methode,](#getdata) um den 
 
 Gibt den Text an, der die aktuelle Eigenschaft beschreibt.
 
-```
+```cpp
 void SetDescription(const CString& strDescr);
 ```
 
@@ -1644,7 +1644,7 @@ void SetDescription(const CString& strDescr);
 
 Legt den Namen einer Eigenschaft fest.
 
-```
+```cpp
 void SetName(
     LPCTSTR lpszName,
     BOOL bRedraw=TRUE);
@@ -1696,7 +1696,7 @@ virtual void SetValue(const _variant_t& varValue);
 
 Zeigt eine Eigenschaft an oder blendet sie aus.
 
-```
+```cpp
 void Show(
     BOOL bShow=TRUE,
     BOOL bAdjustLayout=TRUE);
@@ -1710,7 +1710,7 @@ void Show(
 *bAdjustLayout*<br/>
 [in] TRUE, um neu zu berechnen, wie die Beschriftung und der Wert einer Eigenschaft gezeichnet werden sollen, und dann die Eigenschaft zu zeichnen; FALSE, um vorhandene Berechnungen zum Zeichnen der Eigenschaft zu verwenden. Der Standardwert ist TRUE.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

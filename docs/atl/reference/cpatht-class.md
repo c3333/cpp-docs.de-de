@@ -49,12 +49,12 @@ f1_keywords:
 helpviewer_keywords:
 - CPathT class
 ms.assetid: eba4137d-1fd2-4b44-a2e1-0944db64df3c
-ms.openlocfilehash: c10b854ae5c2d7167a067675b1391be24b6a8122
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
-ms.translationtype: HT
+ms.openlocfilehash: 76273e7fbfa50e610b437e11859821374413d008
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/22/2020
-ms.locfileid: "81746595"
+ms.locfileid: "82032133"
 ---
 # <a name="cpatht-class"></a>CPathT-Klasse
 
@@ -102,8 +102,8 @@ Die ATL/MFC-Zeichenfolgenklasse, die für den Pfad verwendet werden soll (siehe 
 |[CPathT::Canonicalize](#canonicalize)|Rufen Sie diese Methode auf, um den Pfad in kanonische Form zu konvertieren.|
 |[CPathT::Kombinieren](#combine)|Rufen Sie diese Methode auf, um eine Zeichenfolge, die einen Verzeichnisnamen darstellt, und eine Zeichenfolge, die einen Dateipfadnamen darstellt, in einem Pfad zu verketten.|
 |[CPathT::CommonPrefix](#commonprefix)|Rufen Sie diese Methode auf, um zu bestimmen, ob der angegebene Pfad ein gemeinsames Präfix mit dem aktuellen Pfad verwendet.|
-|[CPathT::CompactPath](#compactpath)|Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Pixelbreite passt, indem Pfadkomponenten durch Ellipsen ersetzt werden.|
-|[CPathT::CompactPathEx](#compactpathex)|Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Anzahl von Zeichen passt, indem Pfadkomponenten durch Ellipsen ersetzt werden.|
+|[CPathT::CompactPath](#compactpath)|Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Pixelbreite passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.|
+|[CPathT::CompactPathEx](#compactpathex)|Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Anzahl von Zeichen passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.|
 |[CPathT::FileExists](#fileexists)|Rufen Sie diese Methode auf, um zu überprüfen, ob die Datei unter diesem Pfadnamen vorhanden ist.|
 |[CPathT::FindExtension](#findextension)|Rufen Sie diese Methode auf, um die Position der Dateierweiterung innerhalb des Pfads zu finden.|
 |[CPathT::FindFileName](#findfilename)|Rufen Sie diese Methode auf, um die Position des Dateinamens innerhalb des Pfads zu finden.|
@@ -288,7 +288,7 @@ Ein Präfix ist einer der folgenden\\\\Typen: "C: ", ".", "..", ".. \\\\". Weite
 
 ## <a name="cpathtcompactpath"></a><a name="compactpath"></a>CPathT::CompactPath
 
-Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Pixelbreite passt, indem Pfadkomponenten durch Ellipsen ersetzt werden.
+Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Pixelbreite passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.
 
 ```
 BOOL CompactPath(HDC hDC, UINT nWidth);
@@ -312,7 +312,7 @@ Weitere Informationen finden Sie unter [PathCompactPath](/windows/win32/api/shlw
 
 ## <a name="cpathtcompactpathex"></a><a name="compactpathex"></a>CPathT::CompactPathEx
 
-Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Anzahl von Zeichen passt, indem Pfadkomponenten durch Ellipsen ersetzt werden.
+Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Anzahl von Zeichen passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.
 
 ```
 BOOL CompactPathEx(UINT nMaxChars, DWORD dwFlags = 0);

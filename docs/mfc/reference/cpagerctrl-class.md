@@ -48,12 +48,12 @@ helpviewer_keywords:
 - CPagerCtrl [MFC], SetChild
 - CPagerCtrl [MFC], SetScrollPos
 ms.assetid: 65ac58dd-4f5e-4b7e-b15c-e0d435a7e884
-ms.openlocfilehash: b2c4f1ac99735953f4832226b840ced4ea4c509a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cd27a3acf26abe39831089546df317679f2ecab6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376975"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753706"
 ---
 # <a name="cpagerctrl-class"></a>CPagerCtrl-Klasse
 
@@ -116,7 +116,7 @@ Die `CPagerCtrl` Klasse wird von der [CWnd-Klasse](../../mfc/reference/cwnd-clas
 
 `CPagerCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -149,7 +149,7 @@ virtual BOOL Create(
 |Parameter|Beschreibung|
 |---------------|-----------------|
 |*dwStyle*|[in] Eine bitweise Kombination (OR) von [Fensterstilen](../../mfc/reference/styles-used-by-mfc.md#window-styles) und [Pager-Steuerelementstilen,](/windows/win32/Controls/pager-control-styles) die auf das Steuerelement angewendet werden sollen.|
-|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des Steuerelements in Clientkoordinaten enthält.|
+|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position und Größe des Steuerelements in Clientkoordinaten enthält.|
 |*pParentWnd*|[in] Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Steuerelements ist. Dieser Parameter darf nicht NULL sein.|
 |*nID*|[in] Die ID des Steuerelements.|
 
@@ -186,7 +186,7 @@ virtual BOOL CreateEx(
 |---------------|-----------------|
 |*dwExStyle*|[in] Eine bitweise Kombination erweiterter Stile, die auf das Steuerelement angewendet werden sollen. Weitere Informationen finden Sie im *dwExStyle-Parameter* der [CreateWindowEx-Funktion.](/windows/win32/api/winuser/nf-winuser-createwindowexw)|
 |*dwStyle*|[in] Eine bitweise Kombination (OR) von [Fensterstilen](../../mfc/reference/styles-used-by-mfc.md#window-styles) und [Pager-Steuerelementstilen,](/windows/win32/Controls/pager-control-styles) die auf das Steuerelement angewendet werden sollen.|
-|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des Steuerelements in Clientkoordinaten enthält.|
+|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position und Größe des Steuerelements in Clientkoordinaten enthält.|
 |*pParentWnd*|[in] Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Steuerelements ist. Dieser Parameter darf nicht NULL sein.|
 |*nID*|[in] Die ID des Steuerelements.|
 
@@ -202,7 +202,7 @@ Um ein Pager-Steuerelement `CPagerCtrl` zu erstellen, deklarieren Sie eine Varia
 
 Aktiviert oder deaktiviert die Weiterleitung [WM_MOUSEMOVE](/windows/win32/inputdev/wm-mousemove) Nachrichten an das Fenster, das im aktuellen Pagersteuerelement enthalten ist.
 
-```
+```cpp
 void ForwardMouse(BOOL bForward);
 ```
 
@@ -462,7 +462,7 @@ Diese Methode sendet die [PGM_GETBUTTONSTATE](/windows/win32/Controls/pgm-getbut
 
 Bewirkt, dass das aktuelle Pager-Steuerelement die Größe des enthaltenen Fensters neu berechnet.
 
-```
+```cpp
 void RecalcSize();
 ```
 
@@ -572,7 +572,7 @@ Im folgenden Beispiel wird ein Pagersteuerelement erstellt und anschließend die
 
 Legt das enthaltene Fenster für das aktuelle Pagersteuerelement fest.
 
-```
+```cpp
 void SetChild(HWND hwndChild);
 ```
 
@@ -598,7 +598,7 @@ Im folgenden Beispiel wird ein Pagersteuerelement erstellt und anschließend die
 
 Legt die Bildlaufposition des aktuellen Pager-Steuerelements fest.
 
-```
+```cpp
 void SetScrollPos(int iPos);
 ```
 
@@ -612,7 +612,7 @@ void SetScrollPos(int iPos);
 
 Diese Methode sendet die [PGM_SETPOS](/windows/win32/Controls/pgm-setpos) Nachricht, die im Windows SDK beschrieben wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CPagerCtrl-Klasse](../../mfc/reference/cpagerctrl-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

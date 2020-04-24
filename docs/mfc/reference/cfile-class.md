@@ -60,12 +60,12 @@ helpviewer_keywords:
 - CFile [MFC], m_hFile
 - CFile [MFC], m_pTM
 ms.assetid: b2eb5757-d499-4e67-b044-dd7d1abaa0f8
-ms.openlocfilehash: 4ba37d481db73fb0556659ede267b3474c3f32f5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 53afaf7732811e25729944eb71130a88e4f17a87
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373917"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755004"
 ---
 # <a name="cfile-class"></a>CFile-Klasse
 
@@ -150,7 +150,7 @@ Weitere Informationen zur `CFile`Verwendung finden Sie in den Artikeln [Dateien 
 
 `CFile`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -751,7 +751,7 @@ Der Ausnahmehandler für diese Methode muss das Ausnahmeobjekt löschen, nachdem
 
 Legt den Wert des Dateizeigers auf den Anfang der Datei fest.
 
-```
+```cpp
 void SeekToBegin();
 ```
 
@@ -843,7 +843,7 @@ static void PASCAL SetStatus(
 *lpszFileName*<br/>
 Eine Zeichenfolge, die den Pfad zur gewünschten Datei ist. Der Pfad kann relativ oder absolut sein und einen Netzwerknamen enthalten.
 
-*Status*<br/>
+*status*<br/>
 Der Puffer, der die neuen Statusinformationen enthält. Rufen `GetStatus` Sie die Memberfunktion `CFileStatus` auf, um die Struktur mit aktuellen Werten vorzufüllen, und nehmen Sie dann bei Bedarf Änderungen vor. Wenn ein Wert 0 ist, wird das entsprechende Statuselement nicht aktualisiert. Eine Beschreibung der `CFileStatus` Struktur finden Sie in der [GetStatus-Memberfunktion.](#getstatus)
 
 *Ptm*<br/>
@@ -916,7 +916,7 @@ Die Anzahl der Bytes, die aus dem Puffer übertragen werden sollen. Bei Textmodu
 
 Siehe auch die Beispiele für [CFile::CFile](#cfile) und [CFile::Open](#open).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel DRAWCLI](../../overview/visual-cpp-samples.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

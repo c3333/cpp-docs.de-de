@@ -133,12 +133,12 @@ helpviewer_keywords:
 - CPane [MFC], m_bHandleMinSize
 - CPane [MFC], m_recentDockInfo
 ms.assetid: 5c651a64-3c79-4d94-9676-45f6402a6bc5
-ms.openlocfilehash: 7b2c5db976af832b1f1570dd431374c9e15520ad
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 95aec648009f6d037081c9b3f54d46e9865ca559
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364168"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753669"
 ---
 # <a name="cpane-class"></a>CPane Class
 
@@ -260,7 +260,7 @@ Wenn Sie eine Klasse `CPane`von ableiten, kann sie in einer [CDockSite](../../mf
 
 [CPane](../../mfc/reference/cpane-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxPane.h
 
@@ -340,7 +340,7 @@ Der Unterschied in Derbreite und Höhe zwischen *rectRequired* und dem aktuellen
 
 Berechnet das innere Rechteck eines Bereichs, einschließlich der Rahmen und Greifer.
 
-```
+```cpp
 void CalcInsideRect(
     CRect& rect,
     BOOL bHorz) const;
@@ -362,7 +362,7 @@ Diese Methode wird vom Framework aufgerufen, wenn es das Layout für einen Berei
 
 Berechnet das kürzlich angedockte Rechteck.
 
-```
+```cpp
 void CalcRecentDockedRect();
 ```
 
@@ -864,7 +864,7 @@ virtual void GetMinSize(CSize& size) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 [out] Ein `CSize` Objekt, das mit der minimal zulässigen Größe gefüllt ist.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -890,7 +890,7 @@ Der Bereichstitel wird im Beschriftungsbereich angezeigt, wenn der Bereich anged
 
 Ruft das *virtuelle Rechteck* des Bereichs ab.
 
-```
+```cpp
 void GetVirtualRect(CRect& rectVirtual) const;
 ```
 
@@ -1381,7 +1381,7 @@ Wenn `CMFCAutoHideButton::m_bOverlappingTabs` FALSE ist oder sich der Bereich ni
 
 Legt die Rahmenwerte des Bereichs fest.
 
-```
+```cpp
 void SetBorders(
     int cxLeft = 0,
     int cyTop = 0,
@@ -1416,7 +1416,7 @@ Rufen Sie diese Funktion auf, um die Größe der Rahmen des Bereichs festzulegen
 
 Legt den *Hotspot* für den Bereich fest.
 
-```
+```cpp
 void SetClientHotSpot(const CPoint& ptNew);
 ```
 
@@ -1471,13 +1471,13 @@ Standardmäßig ist für alle Symbolleisten der exklusive Zeilenmodus deaktivier
 
 Legt die zulässige Mindestgröße für den Bereich fest.
 
-```
+```cpp
 void SetMinSize(const CSize& size);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 [in] Ein `CSize` Objekt, das die für den Bereich zulässige Mindestgröße enthält.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1486,7 +1486,7 @@ void SetMinSize(const CSize& size);
 
 Legt das *virtuelle Rechteck* des Bereichs fest.
 
-```
+```cpp
 void SetVirtualRect(
     const CRect& rect,
     BOOL bMapToParent = TRUE);
@@ -1510,7 +1510,7 @@ Rufen Sie methoden, die sich auf virtuelle Rechtecke beziehen, nur auf, wenn Sie
 
 Legt die Laufzeitklasseninformationen für das Standardfenster für Minirahmen fest.
 
-```
+```cpp
 void SetMiniFrameRTC(CRuntimeClass* pClass);
 ```
 
@@ -1582,7 +1582,7 @@ Verwenden Sie diese Methode, um das Abdocken eines Bereichs programmgesteuert ab
 
 Aktualisiert das virtuelle Rechteck.
 
-```
+```cpp
 void UpdateVirtualRect();
 void UpdateVirtualRect(CPoint ptOffset);
 void UpdateVirtualRect(CSize sizeNew);
@@ -1604,7 +1604,7 @@ Die zweite Überladung verschiebt das virtuelle Rechteck um den betrag, der von 
 
 Die dritte Überladung legt das virtuelle Rechteck mithilfe der aktuellen Position des Bereichs und der Größe fest, die durch *sizeNew*angegeben wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

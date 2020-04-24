@@ -12,12 +12,12 @@ helpviewer_keywords:
 - upgrading ActiveX controls
 - licensing ActiveX controls
 ms.assetid: 4d12ddfa-b491-4f9f-a0b7-b51458e05651
-ms.openlocfilehash: 802640d5132c28dbda564afcb63c12d8a4133042
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dfee42369b698956f4f91ab61a1f37e0ef06d9f1
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81353542"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754507"
 ---
 # <a name="upgrading-an-existing-activex-control"></a>Upgrading eines vorhandenen ActiveX-Steuerelements
 
@@ -46,7 +46,7 @@ Sie können auch Optimierungen hinzufügen, wie unter [ActiveX-Steuerelemente: O
 
 ## <a name="packaging-code-for-downloading"></a><a name="_core_packaging_code_for_downloading"></a>Verpackungscode zum Herunterladen
 
-Weitere Informationen zu diesem Thema finden Sie unter [Verpacken von ActiveX-Steuerelementen](https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa751974%28v%3dvs.85%29).
+Weitere Informationen zu diesem Thema finden Sie unter [Verpacken von ActiveX-Steuerelementen](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa751974%28v%3dvs.85%29).
 
 ### <a name="the-codebase-tag"></a>Das CODEBASE-Tag
 
@@ -270,7 +270,7 @@ Ein Browser verfügt über Optionen für das Sicherheitsniveau, die vom Benutzer
 
 - Skripterstellung und Persistenz erfolgen ohne Warnung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Internetprogrammierungsaufgaben](../mfc/mfc-internet-programming-tasks.md)<br/>
 [Grundlagen der MFC-Internetprogrammierung](../mfc/mfc-internet-programming-basics.md)<br/>

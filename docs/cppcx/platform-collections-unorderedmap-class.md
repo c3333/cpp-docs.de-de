@@ -5,12 +5,12 @@ ms.topic: reference
 f1_keywords:
 - collection/Platform::Collections::UnorderedMap
 ms.assetid: dc84f261-b13c-4c0a-9b57-30dcb9e3065e
-ms.openlocfilehash: c6f702850f5bf84b8b1bc857c9d0a744728d0cbd
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 80b46cb95f2fdb83922ca22e8aa06a89aca4bfde
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81354422"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82031497"
 ---
 # <a name="platformcollectionsunorderedmap-class"></a>Platform::Collections::UnorderedMap-Klasse
 
@@ -52,7 +52,7 @@ Folgende Typen sind zulässig:
 
 - Öffentliche Enumerationsklasse
 
-**UnorderedMap** ist im Grunde ein Wrapper für [std::unordered_map,](../standard-library/unordered-map-class.md) der die Speicherung von Windows-Runtime-Typen unterstützt. Es ist die konkrete Implementierung der [Windows::Foundation::Collections::IMap-](/uwp/api/Windows.Foundation.Collections.IMap_K_V_) und [IObservableMap-Typen,](/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_) die über öffentliche Windows-Runtime-Schnittstellen übergeben werden. Wenn Sie versuchen, einen `Platform::Collections::UnorderedMap` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts auf [Windows::Foundation::Collections::IMap](/uwp/api/Windows.Foundation.Collections.IMap_K_V_)ändern.
+**UnorderedMap** ist im Grunde ein Wrapper für [std::unordered_map,](../standard-library/unordered-map-class.md) der die Speicherung von Windows-Runtime-Typen unterstützt. Es ist die konkrete Implementierung der [Windows::Foundation::Collections::IMap-](/uwp/api/windows.foundation.collections.imap-2) und [IObservableMap-Typen,](/uwp/api/windows.foundation.collections.iobservablemap-2) die über öffentliche Windows-Runtime-Schnittstellen übergeben werden. Wenn Sie versuchen, einen `Platform::Collections::UnorderedMap` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts auf [Windows::Foundation::Collections::IMap](/uwp/api/windows.foundation.collections.imap-2)ändern.
 
 Weitere Informationen finden Sie unter [Sammlungen](../cppcx/collections-c-cx.md).
 
@@ -88,7 +88,7 @@ Weitere Informationen finden Sie unter [Sammlungen](../cppcx/collections-c-cx.md
 
 `UnorderedMap`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
@@ -106,7 +106,7 @@ virtual void Clear();
 
 ## <a name="unorderedmapfirst-method"></a><a name="first"></a>UnorderedMap::Erste Methode
 
-Gibt einen Iterator zurück, der das erste [Windows::Foundation::Collections::IKeyValuePair\<K,V->-Element](/uwp/api/Windows.Foundation.Collections.IKeyValuePair_K_V_) in der ungeordneten Karte angibt.
+Gibt einen Iterator zurück, der das erste [Windows::Foundation::Collections::IKeyValuePair\<K,V->-Element](/uwp/api/windows.foundation.collections.ikeyvaluepair-2) in der ungeordneten Karte angibt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -126,7 +126,7 @@ Eine bequeme Möglichkeit, den von First() zurückgegebenen Iterator zu halten, 
 
 ## <a name="unorderedmapgetview-method"></a><a name="getview"></a>UnorderedMap::GetView-Methode
 
-Gibt eine schreibgeschützte Ansicht der aktuellen UnorderedMap zurück. Das heißt, eine [Platform::Collections::UnorderedMapView-Klasse,](../cppcx/platform-collections-unorderedmapview-class.md) die die Schnittstelle [Windows::Foundation::Collections::IMapView::IMapView]/uwp/api/Windows.Foundation.Collections.IMapView_K_V_) implementiert.
+Gibt eine schreibgeschützte Ansicht der aktuellen UnorderedMap zurück. Das heißt, eine [Platform::Collections::UnorderedMapView-Klasse,](../cppcx/platform-collections-unorderedmapview-class.md) die die [Windows::Foundation::Collections::IMapView::IMapView-Schnittstelle](/uwp/api/windows.foundation.collections.imapview-2) implementiert.
 
 ### <a name="syntax"></a>Syntax
 
@@ -217,7 +217,7 @@ event Windows::Foundation::Collections::MapChangedEventHandler<K,V>^ MapChanged;
 
 ### <a name="property-valuereturn-value"></a>Eigenschaftswert/Rückgabewert
 
-Ein [MapChangedEventHandler\<K,V>,](/uwp/api/windows.foundation.collections.mapchangedeventhandler) der Informationen über das Objekt enthält, das das Ereignis ausgelöst hat, und die Art der Änderungen, die aufgetreten sind. Siehe auch [IMapChangedEventArgs\<K>](/uwp/api/Windows.Foundation.Collections.IMapChangedEventArgs_K_) und [CollectionChange Enumeration](/uwp/api/windows.foundation.collections.collectionchange).
+Ein [MapChangedEventHandler\<K,V>,](/uwp/api/windows.foundation.collections.mapchangedeventhandler-2) der Informationen über das Objekt enthält, das das Ereignis ausgelöst hat, und die Art der Änderungen, die aufgetreten sind. Siehe auch [IMapChangedEventArgs\<K>](/uwp/api/windows.foundation.collections.imapchangedeventargs-1) und [CollectionChange Enumeration](/uwp/api/windows.foundation.collections.collectionchange).
 
 ## <a name="net-framework-equivalent"></a>Entsprechung in .NET Framework
 
@@ -241,7 +241,7 @@ Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* ist der TypNam
 
 ## <a name="unorderedmapsize-method"></a><a name="size"></a>UnorderedMap::Size-Methode
 
-Gibt die Anzahl von [Windows::Foundation::Collections::IKeyValuePair\<K,V>](/uwp/api/Windows.Foundation.Collections.IKeyValuePair_K_V_) Elementen in der UnorderedMap zurück.
+Gibt die Anzahl von [Windows::Foundation::Collections::IKeyValuePair\<K,V>](/uwp/api/windows.foundation.collections.ikeyvaluepair-2) Elementen in der UnorderedMap zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -361,7 +361,7 @@ Der Eingabeiterator des ersten Elements in einem Bereich von Elementen, die verw
 *last*<br/>
 Der Eingabeiterator des ersten Elements nach einem Bereich von Elementen, die verwendet werden, um die aktuelle UnorderedMap zu initialisieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Plattform-Namespace](platform-namespace-c-cx.md)<br/>
 [Platform::Collections-Namespace](../cppcx/platform-collections-namespace.md)<br/>

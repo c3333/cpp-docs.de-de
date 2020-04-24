@@ -12,12 +12,12 @@ helpviewer_keywords:
 - CException [MFC], Delete
 - CException [MFC], ReportError
 ms.assetid: cfacf14d-bfe4-4666-a5c7-38b800512920
-ms.openlocfilehash: c3742db7475e626b18e9c073a0b7417a8034863f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 93901f6f92ee79bd893b2ec0d1e341e77749d951
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373942"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753179"
 ---
 # <a name="cexception-class"></a>CException-Klasse
 
@@ -80,7 +80,7 @@ Wenn eine Ausnahme von einem der Makros abgefangen wird, wird das `CException` O
 
 `CException`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -105,7 +105,7 @@ Normalerweise müssten Sie diesen Konstruktor normalerweise nie direkt aufrufen.
 
 Diese Funktion überprüft, `CException` ob das Objekt auf dem Heap erstellt wurde, und wenn ja, ruft sie den **delete-Operator** für das Objekt auf.
 
-```
+```cpp
 void Delete();
 ```
 
@@ -226,7 +226,7 @@ else
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](cobject-class.md)<br/>
 [Hierarchiediagramm](../hierarchy-chart.md)<br/>

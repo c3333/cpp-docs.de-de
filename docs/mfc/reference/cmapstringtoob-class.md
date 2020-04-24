@@ -34,12 +34,12 @@ helpviewer_keywords:
 - CMapStringToOb [MFC], RemoveKey
 - CMapStringToOb [MFC], SetAt
 ms.assetid: 09653980-b885-4f3a-8594-0aeb7f94c601
-ms.openlocfilehash: 12de7bd72f643f08cebf948634703172d6725ce6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6520d1c38701647ae51450b9b9800a7cd2701b7a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370107"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754592"
 ---
 # <a name="cmapstringtoob-class"></a>CMapStringToOb-Klasse
 
@@ -103,7 +103,7 @@ Die Ableitung der Kartenklassen ist ähnlich wie die Listenableitung. Im Artikel
 
 `CMapStringToOb`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxcoll.h
 
@@ -201,7 +201,7 @@ Die folgende Tabelle zeigt andere Memberfunktionen, die `CMapStringToOb::GetHash
 
 Ruft das Map-Element bei *rNextPosition*ab und aktualisiert *dann rNextPosition,* um auf das nächste Element in der Karte zu verweisen.
 
-```
+```cpp
 void GetNextAssoc(
     POSITION& rNextPosition,
     CString& rKey,
@@ -353,7 +353,7 @@ Die folgende Tabelle zeigt andere Memberfunktionen, die `CMapStringToOb::HashKey
 
 Initialisiert die Hashtabelle.
 
-```
+```cpp
 void InitHashTable(
     UINT hashSize,
     BOOL bAllocNow = TRUE);
@@ -534,7 +534,7 @@ Operator [] example: A CMapStringToOb with 2 elements
 
 Entfernt alle Elemente aus dieser Karte `CString` und zerstört die Wichtigsten objekte.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -612,7 +612,7 @@ RemoveKey example: A CMapStringToOb with 3 elements
 
 Das primäre Mittel zum Einfügen eines Elements in eine Karte.
 
-```
+```cpp
 void SetAt(
     LPCTSTR key,
     CObject* newValue);
@@ -658,7 +658,7 @@ after Lisa's birthday: A CMapStringToOb with 2 elements
 [Bart] = a CAge at $4654 13
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

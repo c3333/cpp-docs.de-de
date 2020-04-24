@@ -26,12 +26,12 @@ helpviewer_keywords:
 - COleDispatchDriver [MFC], m_bAutoRelease
 - COleDispatchDriver [MFC], m_lpDispatch
 ms.assetid: 3ed98daf-cdc7-4374-8a0c-cf695a8d3657
-ms.openlocfilehash: c22097c3a686857a6a5698033b7395c5d15f2570
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2b52ed3137a9a515278e018d69751aedaddb0cf1
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366084"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753884"
 ---
 # <a name="coledispatchdriver-class"></a>COleDispatchDriver-Klasse
 
@@ -95,7 +95,7 @@ Weitere Informationen zur `COleDispatchDriver`Verwendung finden Sie in den folge
 
 `COleDispatchDriver`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -103,7 +103,7 @@ Weitere Informationen zur `COleDispatchDriver`Verwendung finden Sie in den folge
 
 Rufen Sie die `AttachDispatch` -Memberfunktion auf, um dem `IDispatch` -Objekt einen `COleDispatchDriver` -Zeiger anzufügen. Weitere Informationen finden Sie unter [Implementing the IDispatch Interface](/previous-versions/windows/desktop/automat/implementing-the-idispatch-interface).
 
-```
+```cpp
 void AttachDispatch(
     LPDISPATCH lpDispatch,
     BOOL bAutoRelease = TRUE);
@@ -217,7 +217,7 @@ Weitere Informationen zum LPDISPATCH-Typ finden Sie unter [Implementieren der ID
 
 Ruft die von *dwDispID*angegebene Objekteigenschaft ab.
 
-```
+```cpp
 void GetProperty(
     DISPID dwDispID,
     VARTYPE vtProp,
@@ -243,7 +243,7 @@ Adresse der Variablen, die den Eigenschaftswert empfängt. Er muss mit dem von *
 
 Ruft die von *dwDispID*angegebene Objektmethode oder -eigenschaft in dem von *wFlags*angegebenen Kontext auf.
 
-```
+```cpp
 void AFX_CDECL InvokeHelper(
     DISPID dwDispID,
     WORD wFlags,
@@ -282,7 +282,7 @@ Mögliche Werte für das *argument vtRet* werden der VARENUMeration entnommen. F
 |------------|-----------------|
 |VT_EMPTY|**void**|
 |VT_I2|**short**|
-|VT_I4|**Lange**|
+|VT_I4|**long**|
 |VT_R4|**float**|
 |VT_R8|**double**|
 |VT_CY|**CY**|
@@ -369,7 +369,7 @@ operator LPDISPATCH();
 
 Gibt `IDispatch` die Verbindung frei. Weitere Informationen finden Sie unter [Implementieren der IDispatch-Schnittstelle](/previous-versions/windows/desktop/automat/implementing-the-idispatch-interface)
 
-```
+```cpp
 void ReleaseDispatch();
 ```
 
@@ -385,7 +385,7 @@ Wenn die automatische Freigabe für diese Verbindung `IDispatch::Release` festge
 
 Legt die von *dwDispID*angegebene OLE-Objekteigenschaft fest.
 
-```
+```cpp
 void AFX_CDECL SetProperty(
     DISPID dwDispID,
     VARTYPE vtProp, ...);
@@ -406,7 +406,7 @@ Ein einzelner Parameter des von *vtProp*angegebenen Typs .
 
 [!code-cpp[NVC_MFCOleContainer#7](../../mfc/codesnippet/cpp/coledispatchdriver-class_7.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CALCDRIV](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel ACDUAL](../../overview/visual-cpp-samples.md)<br/>

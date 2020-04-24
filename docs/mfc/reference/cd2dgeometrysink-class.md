@@ -38,12 +38,12 @@ helpviewer_keywords:
 - CD2DGeometrySink [MFC], SetSegmentFlags
 - CD2DGeometrySink [MFC], m_pSink
 ms.assetid: e5e07f41-0343-4ab1-9d6b-8c62ed33c04a
-ms.openlocfilehash: cb51c7b11f75debece61105bf20a201b6eab80a9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bb5d2b53fa5899ac84608dc4ace6a84a3e5a7575
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369237"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754767"
 ---
 # <a name="cd2dgeometrysink-class"></a>CD2DGeometrySink-Klasse
 
@@ -99,7 +99,7 @@ class CD2DGeometrySink;
 
 `CD2DGeometrySink`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -115,7 +115,7 @@ virtual ~CD2DGeometrySink();
 
 Fügt der Pfadgeometrie einen einzelnen Bogen hinzu
 
-```
+```cpp
 void AddArc(const D2D1_ARC_SEGMENT& arc);
 ```
 
@@ -128,7 +128,7 @@ Das Bogensegment, das der Figur hinzugefügt werden soll
 
 Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.
 
-```
+```cpp
 void AddBezier(const D2D1_BEZIER_SEGMENT& bezier);
 ```
 
@@ -141,7 +141,7 @@ Eine Struktur, die die Kontrollpunkte und den Endpunkt der hinzuzufügenden Béz
 
 Erstellt eine Sequenz von kubischen Bézierkurven und fügt sie der Geometriesenke hinzu.
 
-```
+```cpp
 void AddBeziers(
     const CArray<D2D1_BEZIER_SEGMENT,
     D2D1_BEZIER_SEGMENT>& beziers);
@@ -156,7 +156,7 @@ Ein Array von Bézier-Segmenten, das die zu erstellenden Bézierkurven beschreib
 
 Erstellt ein Liniensegment zwischen dem aktuellen Punkt und dem angegebenen Endpunkt und fügt es der Geometriesenke hinzu.
 
-```
+```cpp
 void AddLine(CD2DPointF point);
 ```
 
@@ -169,7 +169,7 @@ Der Endpunkt der zu zeichnenden Linie.
 
 Erstellt eine Sequenz von Linien mit den angegebenen Punkten und fügt sie der Geometriesenke hinzu.
 
-```
+```cpp
 void AddLines(
     const CArray<CD2DPointF,
     CD2DPointF>& points);
@@ -184,7 +184,7 @@ Ein Array von einem oder mehreren Punkten, die die zu zeichnenden Linien beschre
 
 Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.
 
-```
+```cpp
 void AddQuadraticBezier(const D2D1_QUADRATIC_BEZIER_SEGMENT& bezier);
 ```
 
@@ -197,7 +197,7 @@ Eine Struktur, die den Kontrollpunkt und den Endpunkt der hinzuzufügenden quadr
 
 Fügt eine Sequenz quadratischer Béziersegmente als Array in einem einzelnen Aufruf hinzu.
 
-```
+```cpp
 void AddQuadraticBeziers(
     const CArray<D2D1_QUADRATIC_BEZIER_SEGMENT,
     D2D1_QUADRATIC_BEZIER_SEGMENT>& beziers);
@@ -212,7 +212,7 @@ Ein Array einer Sequenz quadratischer Béziersegmente.
 
 Startet eine neue Figur am angegebenen Punkt.
 
-```
+```cpp
 void BeginFigure(
     CD2DPointF startPoint,
     D2D1_FIGURE_BEGIN figureBegin);
@@ -255,7 +255,7 @@ Ungleich Null, wenn erfolgreich; andernfalls FALSE.
 
 Beendet die aktuelle Zahl; optional schließt es.
 
-```
+```cpp
 void EndFigure(D2D1_FIGURE_END figureEnd);
 ```
 
@@ -312,7 +312,7 @@ Zeiger auf eine ID2D1GeometrySink-Schnittstelle oder NULL, wenn das Objekt noch 
 
 Gibt die Methode an, die verwendet wird, um zu bestimmen, welche Punkte sich innerhalb der geometrie, die von dieser Geometriesenke beschrieben wird, und welche Punkte sich außerhalb befinden.
 
-```
+```cpp
 void SetFillMode(D2D1_FILL_MODE fillMode);
 ```
 
@@ -325,7 +325,7 @@ Die Methode, mit der bestimmt wird, ob ein bestimmter Punkt Teil der Geometrie i
 
 Gibt Strich- und Verknüpfungsoptionen an, die auf neue Segmente angewendet werden sollen, die der Geometriesenke hinzugefügt werden.
 
-```
+```cpp
 void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags);
 ```
 
@@ -334,6 +334,6 @@ void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags);
 *vertexFlags*<br/>
 Strich- und Verknüpfungsoptionen, die auf neue Segmente angewendet werden sollen, die der Geometriesenke hinzugefügt werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

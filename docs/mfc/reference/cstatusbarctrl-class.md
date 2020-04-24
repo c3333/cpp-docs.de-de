@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CStatusBarCtrl [MFC], SetText
 - CStatusBarCtrl [MFC], SetTipText
 ms.assetid: 8504ad38-7b91-4746-aede-ac98886eb47b
-ms.openlocfilehash: 7a594fdb2d3a35ce905b7790026f7418b7435f3a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 57d040a7efd87d384e0aaa6275593bc91f38cc86
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366029"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753035"
 ---
 # <a name="cstatusbarctrl-class"></a>CStatusBarCtrl-Klasse
 
@@ -110,7 +110,7 @@ Weitere Informationen zur `CStatusBarCtrl`Verwendung von finden Sie unter [Steue
 
 `CStatusBarCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -132,7 +132,7 @@ virtual BOOL Create(
 Gibt den Stil des Statusleistensteuerelements an. Wenden Sie eine beliebige Kombination von Statusleistensteuerungsstilen an, die in [allgemeinen Steuerelementstilen](/windows/win32/Controls/common-control-styles) im Windows SDK aufgeführt sind. Dieser Parameter muss den stilWS_CHILD enthalten. Es sollte auch den WS_VISIBLE Stil enthalten.
 
 *Rect*<br/>
-Gibt die Größe und Position des Statusleistensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Gibt die Größe und Position des Statusleistensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Statusleistensteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -178,7 +178,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Statusleistensteuerelements an. Wenden Sie eine beliebige Kombination von Statusleistensteuerungsstilen an, die in [allgemeinen Steuerelementstilen](/windows/win32/Controls/common-control-styles) im Windows SDK aufgeführt sind. Dieser Parameter muss den stilWS_CHILD enthalten. Es sollte auch den WS_VISIBLE Stil enthalten.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -344,7 +344,7 @@ BOOL GetRect(
 Nullbasierter Index des Teils, dessen umgrenztes Rechteck abgerufen werden soll.
 
 *lpRect*<br/>
-Adresse einer [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das umgrenzende Rechteck empfängt.
+Adresse einer [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das umgrenzende Rechteck empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -530,7 +530,7 @@ Diese Memberfunktion implementiert das Verhalten der [SB_SETICON](/windows/win32
 
 Legt die Minimale Höhe des Zeichenbereichs eines Statusleistensteuerelements fest.
 
-```
+```cpp
 void SetMinHeight(int nMin);
 ```
 
@@ -632,7 +632,7 @@ Die Nachricht macht den geänderten Teil des Steuerelements ungültig, sodass de
 
 Legt den QuickInfo-Text für einen Bereich in einer Statusleiste fest.
 
-```
+```cpp
 void SetTipText(
     int nPane,
     LPCTSTR pszTipText);
@@ -654,7 +654,7 @@ Diese Memberfunktion implementiert das Verhalten der [SB_SETTIPTEXT](/windows/wi
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#12](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_14.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

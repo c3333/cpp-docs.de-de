@@ -42,12 +42,12 @@ helpviewer_keywords:
 - CArray [MFC], SetAtGrow
 - CArray [MFC], SetSize
 ms.assetid: fead8b00-4cfd-4625-ad0e-251df62ba92f
-ms.openlocfilehash: 2c520a732edf54ebb36c07728ceb19791b351143
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3355e72c58365e97f8f3f8ce09754285f671915a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377027"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753981"
 ---
 # <a name="carray-class"></a>CArray-Klasse
 
@@ -130,7 +130,7 @@ Weitere Informationen zur Verwendung `CArray`finden Sie im Artikel [Sammlungen](
 
 `CArray`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxtempl.h
 
@@ -209,7 +209,7 @@ Das Array wächst jeweils um ein Element.
 
 Verwenden Sie diese Memberfunktion, um die Elemente eines Arrays in ein anderes zu kopieren.
 
-```
+```cpp
 void Copy(const CArray& src);
 ```
 
@@ -258,7 +258,7 @@ Es wird verwendet, um den linken Zuweisungsoperator für Arrays zu implementiere
 
 Gibt zusätzlichen Speicher frei, der beim Wachsen des Arrays zugewiesen wurde.
 
-```
+```cpp
 void FreeExtra();
 ```
 
@@ -385,7 +385,7 @@ Die `GetUpperBound( )` Bedingung = -1 gibt an, dass das Array keine Elemente ent
 
 Die erste `InsertAt` Version von fügt ein Element (oder mehrere Kopien eines Elements) an einem angegebenen Index in einem Array ein.
 
-```
+```cpp
 void InsertAt(
     INT_PTR nIndex,
     ARG_TYPE newElement,
@@ -502,7 +502,7 @@ Bei Arrays, in denen ein Element einen Zeiger auf eines seiner eigenen Member od
 
 Entfernt alle Elemente aus diesem Array.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -518,7 +518,7 @@ Wenn das Array bereits leer ist, funktioniert die Funktion weiterhin.
 
 Entfernt ein oder mehrere Elemente, die bei einem angegebenen Index in einem Array beginnen.
 
-```
+```cpp
 void RemoveAt(
     INT_PTR nIndex,
     INT_PTR nCount = 1);
@@ -546,7 +546,7 @@ Wenn Sie versuchen, mehr Elemente zu entfernen, als im Array über dem Entfernun
 
 Legt das Arrayelement auf den angegebenen Index fest.
 
-```
+```cpp
 void SetAt(INT_PTR nIndex, ARG_TYPE newElement);
 ```
 
@@ -575,7 +575,7 @@ Sie müssen sicherstellen, dass der Indexwert eine gültige Position im Array da
 
 Legt das Arrayelement auf den angegebenen Index fest.
 
-```
+```cpp
 void SetAtGrow(INT_PTR nIndex, ARG_TYPE newElement);
 ```
 
@@ -602,7 +602,7 @@ Das Array wird bei Bedarf automatisch vergrößert (d. h. die obere Grenze wird 
 
 Legt die Größe eines leeren oder vorhandenen Arrays fest. reserviert bei Bedarf Speicher.
 
-```
+```cpp
 void SetSize(
     INT_PTR nNewSize,
     INT_PTR nGrowBy = -1);
@@ -628,7 +628,7 @@ Der Parameter *nGrowBy* wirkt sich auf die interne Speicherzuweisung aus, währe
 
   Siehe Beispiel für [GetData](#getdata).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel COLLECT](../../overview/visual-cpp-samples.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CMFCRibbonColorButton [MFC], SetPalette
 - CMFCRibbonColorButton [MFC], UpdateColor
 ms.assetid: 6b4b4ee3-8cc0-41b4-a4eb-93e8847008e1
-ms.openlocfilehash: 8cf92d8d4b1b113f751bee85ac2a7df6eb06afea
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 528b883d75889589c7021f462324dd9dcb71be25
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375242"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754841"
 ---
 # <a name="cmfcribboncolorbutton-class"></a>CMFCRibbonColorButton-Klasse
 
@@ -108,7 +108,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCRibbonColorButton](../../mfc/reference/cmfcribboncolorbutton-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxribboncolorbutton.h
 
@@ -116,7 +116,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 Fügt dem normalen Farbbereich eine Gruppe Farben hinzu.
 
-```
+```cpp
 void AddColorsGroup(
     LPCTSTR lpszName,
     const CList<COLORREF,COLORREF>& lstColors,
@@ -188,7 +188,7 @@ CMFCRibbonColorButton(
 
 Gibt an, ob die Schaltfläche **Automatisch** aktiviert ist.
 
-```
+```cpp
 void EnableAutomaticButton(
     LPCTSTR lpszLabel,
     COLORREF colorAutomatic,
@@ -222,7 +222,7 @@ void EnableAutomaticButton(
 
 Aktiviert die Schaltfläche **Weitere** .
 
-```
+```cpp
 void EnableOtherButton(
     LPCTSTR lpszLabel,
     LPCTSTR lpszToolTip=NULL);
@@ -310,7 +310,7 @@ Die Farbe des aktuell ausgewählten Elements in der Popup-Farbpalette.
 
 Entfernt alle Farbgruppen aus dem normalen Farbbereich.
 
-```
+```cpp
 void RemoveAllColorGroups();
 ```
 
@@ -318,7 +318,7 @@ void RemoveAllColorGroups();
 
 Wählt eine Farbe aus dem normalen Farbbereich aus.
 
-```
+```cpp
 void SetColor(COLORREF color);
 ```
 
@@ -331,7 +331,7 @@ void SetColor(COLORREF color);
 
 Legt die Größe aller Farbelemente fest, die in der Farbleiste angezeigt werden.
 
-```
+```cpp
 void SetColorBoxSize(CSize sizeBox);
 ```
 
@@ -366,7 +366,7 @@ Da diese `CMFCColorBar::SetColorName`Methode aufruft, ändert sie den `CMFCColor
 
 Legt die Anzahl der Spalten fest, die in der Farbtabelle angezeigt werden, die dem Benutzer während des Farbauswahlprozesses des Benutzers angezeigt wird.
 
-```
+```cpp
 void SetColumns(int nColumns);
 ```
 
@@ -381,7 +381,7 @@ void SetColumns(int nColumns);
 
 Gibt eine Liste mit RGB-Werten für die Anzeige im Farbbereich des Dokuments an.
 
-```
+```cpp
 void SetDocumentColors(
     LPCTSTR lpszLabel,
     CList<COLORREF,COLORREF>& lstColors);
@@ -399,7 +399,7 @@ void SetDocumentColors(
 
 Gibt die Standardfarben an, die in der Farbtabelle angezeigt werden sollen, die auf der Farbschaltfläche angezeigt werden.
 
-```
+```cpp
 void SetPalette(CPalette* pPalette);
 ```
 
@@ -414,7 +414,7 @@ void SetPalette(CPalette* pPalette);
 
 Wird vom Framework aufgerufen, wenn der Benutzer eine Farbe aus der Farbtabelle auswählt, die angezeigt wird, wenn der Benutzer auf die Schaltfläche "Farbe" klickt.
 
-```
+```cpp
 void UpdateColor(COLORREF color);
 ```
 
@@ -427,7 +427,7 @@ void UpdateColor(COLORREF color);
 
 Die `CMFCRibbonColorButton::UpdateColor` Methode ändert die Farbe der aktuell ausgewählten Schaltfläche und benachrichtigt das übergeordnete Element, indem eine WM_COMMAND Nachricht mit einer BN_CLICKED Standardbenachrichtigung gesendet wird. Verwenden Sie die [CMFCRibbonColorButton::GetColor-Methode,](#getcolor) um die ausgewählte Farbe abzurufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

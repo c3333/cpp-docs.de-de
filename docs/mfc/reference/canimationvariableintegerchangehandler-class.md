@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CAnimationVariableIntegerChangeHandler [MFC], OnIntegerValueChanged
 - CAnimationVariableIntegerChangeHandler [MFC], SetAnimationController
 ms.assetid: 6ac8e91b-e514-4ff6-babd-33f77c4b2b61
-ms.openlocfilehash: 261f8eb17953c047fcc8ec05ae48dc369de4614c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dec940d2f5e68f0531fc917df447b5a1a5cb8189
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377036"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755059"
 ---
 # <a name="canimationvariableintegerchangehandler-class"></a>CAnimationVariableIntegerChangeHandler-Klasse
 
@@ -61,7 +61,7 @@ Dieser Ereignishandler wird erstellt und an die IUIAnimationVariable::SetVariabl
 
 `CAnimationVariableIntegerChangeHandler`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -128,7 +128,7 @@ S_OK, ob die Methode erfolgreich ist. andernfalls E_FAIL.
 
 Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.
 
-```
+```cpp
 void SetAnimationController(CAnimationController* pAnimationController);
 ```
 
@@ -137,6 +137,6 @@ void SetAnimationController(CAnimationController* pAnimationController);
 *pAnimationController*<br/>
 Ein Zeiger auf den Animationscontroller, der Ereignisse empfängt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

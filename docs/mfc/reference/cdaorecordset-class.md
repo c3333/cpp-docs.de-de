@@ -166,12 +166,12 @@ helpviewer_keywords:
 - CDaoRecordset [MFC], m_strFilter
 - CDaoRecordset [MFC], m_strSort
 ms.assetid: 2322067f-1027-4662-a5d7-aa2fc7488630
-ms.openlocfilehash: 5b4b2919405696c748ce01217ac82afeac316de2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6a1475d1b0bc083cfd180ea5a211e752c973e2f8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377152"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754678"
 ---
 # <a name="cdaorecordset-class"></a>CDaoRecordset-Klasse
 
@@ -325,7 +325,7 @@ Weitere Informationen finden Sie im Thema "Recordset-Objekt" in der DAO-Hilfe.
 
 `CDaoRecordset`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -626,7 +626,7 @@ Weitere Informationen finden Sie in den Themen "AddNew Method", "Edit Method", "
 
 Rufen Sie diese Memberfunktion auf, um eine angegebene Anzahl von Datensätzen aus dem Recordset zwischenzuspeichern.
 
-```
+```cpp
 void FillCache(
     long* pSize = NULL,
     COleVariant* pBookmark = NULL);
@@ -1105,7 +1105,7 @@ Weitere Informationen finden Sie im Thema "Count Property" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um Informationen zu den Feldern in einem Recordset abzurufen.
 
-```
+```cpp
 void GetFieldInfo(
     int nIndex,
     CDaoFieldInfo& fieldinfo,
@@ -1212,7 +1212,7 @@ Weitere Informationen finden Sie im Thema "Attributes Property" in der DAO-Hilfe
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen über einen Index abzurufen, der in der Basistabelle definiert ist, die einem Recordset zugrunde liegt.
 
-```
+```cpp
 void GetIndexInfo(
     int nIndex,
     CDaoIndexInfo& indexinfo,
@@ -1802,7 +1802,7 @@ Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, Mov
 
 Rufen Sie diese Memberfunktion auf, um den ersten Datensatz im Recordset (falls vorhanden) zum aktuellen Datensatz zu machen.
 
-```
+```cpp
 void MoveFirst();
 ```
 
@@ -1832,7 +1832,7 @@ Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, Mov
 
 Rufen Sie diese Memberfunktion auf, um den letzten Datensatz (falls vorhanden) im Recordset zum aktuellen Datensatz zu machen.
 
-```
+```cpp
 void MoveLast();
 ```
 
@@ -1858,7 +1858,7 @@ Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, Mov
 
 Rufen Sie diese Memberfunktion auf, um den nächsten Datensatz im Recordset zum aktuellen Datensatz zu machen.
 
-```
+```cpp
 void MoveNext();
 ```
 
@@ -1884,7 +1884,7 @@ Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, Mov
 
 Rufen Sie diese Memberfunktion auf, um den vorherigen Datensatz im Recordset zum aktuellen Datensatz zu machen.
 
-```
+```cpp
 void MovePrev();
 ```
 
@@ -2129,7 +2129,7 @@ Weitere Informationen finden Sie im Thema "Suchmethode" in der DAO-Hilfe.
 
 Legt die relative Datensatznummer des aktuellen Datensatzes eines Recordset-Objekts fest.
 
-```
+```cpp
 void SetAbsolutePosition(long lPosition);
 ```
 
@@ -2158,7 +2158,7 @@ Weitere Informationen finden Sie im Thema "AbsolutePosition-Eigenschaft" in der 
 
 Rufen Sie diese Memberfunktion auf, um das Recordset auf dem Datensatz zu positionieren, der das angegebene Lesezeichen enthält.
 
-```
+```cpp
 void SetBookmark(COleVariant varBookmark);
 ```
 
@@ -2182,7 +2182,7 @@ Weitere Informationen finden Sie in den Themen "Bookmark-Eigenschaft" und Leseze
 
 Rufen Sie diese Memberfunktion auf, um die Anzahl der zwischenzuspeichernden Datensätze festzulegen.
 
-```
+```cpp
 void SetCacheSize(long lSize);
 ```
 
@@ -2203,7 +2203,7 @@ Weitere Informationen finden Sie im Thema "CacheSize, CacheStart Properties" in 
 
 Rufen Sie diese Memberfunktion auf, um das Lesezeichen des ersten Datensatzes im Zwischenspeichern anzugeben.
 
-```
+```cpp
 void SetCacheStart(COleVariant varBookmark);
 ```
 
@@ -2230,7 +2230,7 @@ Weitere Informationen finden Sie im Thema CacheSize, CacheStart-Eigenschaften" i
 
 Rufen Sie diese Memberfunktion auf, um einen Index für ein Datensatzset vom Tabellentyp festzulegen.
 
-```
+```cpp
 void SetCurrentIndex(LPCTSTR lpszIndex);
 ```
 
@@ -2253,7 +2253,7 @@ Weitere Informationen finden Sie im Thema "Indexobjekt" und in der Definition "a
 
 Rufen Sie diese Memberfunktion auf, um ein Felddatenelement des Recordsets als geändert oder unverändert zu kennzeichnen.
 
-```
+```cpp
 void SetFieldDirty(
     void* pv,
     BOOL bDirty = TRUE);
@@ -2296,7 +2296,7 @@ Dies bedeutet, dass Sie nicht alle **Param-Felder** auf NULL setzen können, wie
 
 Rufen Sie diese Memberfunktion auf, um ein Felddatenelement des Recordsets als Null (insbesondere ohne Wert) oder als Nicht-Null zu kennzeichnen.
 
-```
+```cpp
 void SetFieldNull(
     void* pv,
     BOOL bNull = TRUE);
@@ -2379,7 +2379,7 @@ Weitere Informationen finden Sie in den Themen "Feldobjekt" und "Werteigenschaft
 
 Rufen Sie diese Memberfunktion auf, um das Feld auf einen Null-Wert festzulegen.
 
-```
+```cpp
 void SetFieldValueNull(int nIndex);
 void SetFieldValueNull(LPCTSTR lpszName);
 ```
@@ -2402,7 +2402,7 @@ Weitere Informationen finden Sie in den Themen "Feldobjekt" und "Werteigenschaft
 
 Rufen Sie diese Memberfunktion auf, um den Typ der Sperrung für das Recordset festzulegen.
 
-```
+```cpp
 void SetLockingMode(BOOL bPessimistic);
 ```
 
@@ -2458,7 +2458,7 @@ Geben Sie den Wert `COleVariant` an, der als Objekt festgelegt werden soll. Info
 
 Rufen Sie diese Memberfunktion auf, um den Parameter auf einen Null-Wert festzulegen.
 
-```
+```cpp
 void SetParamValueNull(int nIndex);
 void SetParamValueNull(LPCTSTR lpszName);
 ```
@@ -2479,7 +2479,7 @@ C++ NULL ist nicht identisch mit Null, was in der Datenbankterminologie bedeutet
 
 Rufen Sie diese Memberfunktion auf, um einen Wert festzulegen, der die ungefähre Position des aktuellen Datensatzes im Recordset-Objekt basierend auf einem Prozentsatz der Datensätze im Recordset ändert.
 
-```
+```cpp
 void SetPercentPosition(float fPosition);
 ```
 
@@ -2525,7 +2525,7 @@ Wenn das Recordset-Objekt pessimistisch in einer Mehrbenutzerumgebung gesperrt i
 
 Weitere Informationen finden Sie in den Themen "AddNew Method", "CancelUpdate Method", "Delete Method", "LastModified Property", "Update Method" und "EditMode Property" in der DAO-Hilfe.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

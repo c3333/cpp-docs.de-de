@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - VectorView Class
 ms.assetid: 05cd461d-dce7-49d3-b0e7-2e5c78ed8192
-ms.openlocfilehash: cecbd61ad8862d5046cab9e0b418d5c4d16829d4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7f12c7b926cd8d3d8fc892cff6f2245e7c216219
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363802"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032225"
 ---
 # <a name="platformcollectionsvectorview-class"></a>Platform::Collections::VectorView-Klasse
 
@@ -40,7 +40,7 @@ Gibt ein binäres Prädikat zum Testen der Übereinstimmung mit Werten des Typs 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `VectorView` Klasse implementiert die [Windows::Foundation::Collections::IVectorView\<T>-Schnittstelle](/uwp/api/Windows.Foundation.Collections.IVectorView_T_) und unterstützt Standardvorlagenbibliotheksiteratoren.
+Die `VectorView` Klasse implementiert die [Windows::Foundation::Collections::IVectorView\<T>-Schnittstelle](/uwp/api/windows.foundation.collections.ivectorview-1) und unterstützt Standardvorlagenbibliotheksiteratoren.
 
 ### <a name="members"></a>Member
 
@@ -64,7 +64,7 @@ Die `VectorView` Klasse implementiert die [Windows::Foundation::Collections::IVe
 
 `VectorView`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
@@ -250,7 +250,7 @@ Ein [std::initializer_list](../standard-library/initializer-list-class.md) desse
 *N*<br/>
 Die Anzahl von Elementen in einer Auflistung von Objekten, die verwendet wird, um die aktuelle VectorView zu initialisieren.
 
-*Größe*<br/>
+*size*<br/>
 Die Anzahl von Elementen in der VectorView.
 
 *value*<br/>
@@ -274,7 +274,7 @@ Das erste Element in einer Sequenz von Objekten, die verwendet werden, um die ak
 *last*<br/>
 Das letzte Element in einer Sequenz von Objekten, die verwendet werden, um die aktuelle VectorView zu initialisieren. Die Art `last` der wird durch *perfekte Weiterleitung*übergeben. Weitere Informationen finden Sie unter [RValue-Verweisdeklarator: &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Plattform-Namespace](platform-namespace-c-cx.md)<br/>
 [Erstellen von Windows-Runtime-Komponenten in C++](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)

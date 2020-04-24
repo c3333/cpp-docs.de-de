@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CNetAddressCtrl [MFC], GetAllowType
 - CNetAddressCtrl [MFC], SetAllowType
 ms.assetid: cb4c6aca-3f49-4b52-b76c-65f57096155b
-ms.openlocfilehash: 71e3b1a9fde84f96696d26c891ab6688f246d575
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c6f391966ef6657363e8f23e5666a57a935b08e1
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363310"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752777"
 ---
 # <a name="cnetaddressctrl-class"></a>CNetAddressCtrl-Klasse
 
@@ -90,7 +90,7 @@ Das folgende Codebeispiel aus der Dialogheaderdatei definiert die [NC_ADDRESS](/
 
 `CNetAddressCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -127,7 +127,7 @@ virtual BOOL Create(
 |Parameter|Beschreibung|
 |---------------|-----------------|
 |*dwStyle*|[in] Eine bitweise Kombination von Stilen, die auf das Steuerelement angewendet werden sollen. Weitere Informationen finden Sie unter Bearbeiten von [Stilen](../../mfc/reference/styles-used-by-mfc.md#edit-styles).|
-|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des Steuerelements enthält.|
+|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position und Größe des Steuerelements enthält.|
 |*pParentWnd*|[in] Ein Nicht-NULL-Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Steuerelements ist.|
 |*nID*|[in] Die ID des Steuerelements.|
 
@@ -154,7 +154,7 @@ virtual BOOL CreateEx(
 |---------------|-----------------|
 |*dwExStyle*|[in] Eine bitweise Kombination (OR) erweiterter Stile, die auf das Steuerelement angewendet werden sollen. Weitere Informationen finden Sie im *dwExStyle-Parameter* der [CreateWindowEx-Funktion.](/windows/win32/api/winuser/nf-winuser-createwindowexw)|
 |*dwStyle*|[in] Eine bitweise Kombination (OR) von Stilen, die auf das Steuerelement angewendet werden sollen. Weitere Informationen finden Sie unter Bearbeiten von [Stilen](../../mfc/reference/styles-used-by-mfc.md#edit-styles).|
-|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des Steuerelements enthält.|
+|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position und Größe des Steuerelements enthält.|
 |*pParentWnd*|[in] Ein Nicht-NULL-Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Steuerelements ist.|
 |*nID*|[in] Die ID des Steuerelements.|
 
@@ -245,7 +245,7 @@ Verwenden Sie die [CNetAddressCtrl::SetAllowType-Methode,](#setallowtype) um die
 
 Diese Meldung ruft das [NetAddr_SetAllowType-Makro](/windows/win32/api/shellapi/nf-shellapi-netaddr_setallowtype) auf, das im Windows SDK beschrieben wird. Dieses Makro sendet die NCM_SETALLOWTYPE Nachricht.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CNetAddressCtrl-Klasse](../../mfc/reference/cnetaddressctrl-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

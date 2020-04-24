@@ -106,12 +106,12 @@ helpviewer_keywords:
 - CFrameWnd [MFC], m_bAutoMenuEnable
 - CFrameWnd [MFC], rectDefault
 ms.assetid: e2220aba-5bf4-4002-b960-fbcafcad01f1
-ms.openlocfilehash: 0fd104e377300233ef1526f6c453346555dd27d3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3bb93420b39be5d6fb9a6691cec8300fdccb0e73
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373786"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754979"
 ---
 # <a name="cframewnd-class"></a>CFrameWnd-Klasse
 
@@ -253,7 +253,7 @@ Weitere Informationen `CFrameWnd`zu finden Sie unter [Frame Windows](../../mfc/f
 
 `CFrameWnd`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -384,7 +384,7 @@ Verwenden Sie diese Memberfunktion, um `CView`"Ansichten" zu erstellen, die nich
 
 Bewirkt, dass eine Steuerleiste an das Rahmenfenster angedockt wird.
 
-```
+```cpp
 void DockControlBar(
     CControlBar* pBar,
     UINT nDockBarID = 0,
@@ -420,7 +420,7 @@ Die Steuerleiste wird an eine der Seiten des Rahmenfensters angedockt, die in de
 
 Rufen Sie diese Funktion auf, um andockbare Steuerleisten in einem Rahmenfenster zu aktivieren.
 
-```
+```cpp
 void EnableDocking(DWORD dwDockStyle);
 ```
 
@@ -463,7 +463,7 @@ virtual void EndModalState();
 
 Rufen Sie diese Funktion auf, um zu bewirken, dass eine Steuerleiste nicht an das Rahmenfenster angedockt wird.
 
-```
+```cpp
 void FloatControlBar(
     CControlBar* pBar,
     CPoint point,
@@ -570,13 +570,13 @@ Der *nID-Parameter* bezieht sich auf `Create` den eindeutigen Bezeichner, der an
 
 Rufen Sie diese Memberfunktion auf, um Statusinformationen über `CDockState` die Steuerelementleisten des Rahmenfensters in einem Objekt zu speichern.
 
-```
+```cpp
 void GetDockState(CDockState& state) const;
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Staat*<br/>
+*state*<br/>
 Enthält den aktuellen Status der Kontrollleisten des Rahmenfensters bei der Rückgabe.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -675,7 +675,7 @@ Ein [CString-Objekt,](../../atl-mfc-shared/reference/cstringt-class.md) das den 
 
 Rufen `IntitialUpdateFrame` Sie an, `Create`nachdem Sie einen neuen Frame mit erstellt haben.
 
-```
+```cpp
 void InitialUpdateFrame(
     CDocument* pDoc,
     BOOL bMakeVisible);
@@ -748,7 +748,7 @@ Wenn Sie `LoadFrame` aufrufen, das Rahmenfenster zu erstellen, lädt das Framewo
 
 Rufen Sie diese Funktion auf, um die Einstellungen jeder Steuerleiste wiederherzustellen, die dem Rahmenfenster gehört.
 
-```
+```cpp
 void LoadBarState(LPCTSTR lpszProfileName);
 ```
 
@@ -1014,7 +1014,7 @@ static AFX_DATA const CRect rectDefault;
 
 Rufen Sie diese Funktion auf, um Informationen zu jeder Steuerleiste zu speichern, die dem Rahmenfenster gehört.
 
-```
+```cpp
 void SaveBarState(LPCTSTR lpszProfileName) const;
 ```
 
@@ -1031,7 +1031,7 @@ Diese Informationen können aus der Initialisierungsdatei mit [LoadBarState](#lo
 
 Legt die angegebene Ansicht als aktive Ansicht für Rich Preview fest.
 
-```
+```cpp
 void SetActivePreviewView(CView* pViewNew);
 ```
 
@@ -1046,7 +1046,7 @@ Ein Zeiger auf eine zu aktivierende Ansicht.
 
 Rufen Sie diese Memberfunktion auf, um die aktive Ansicht festzulegen.
 
-```
+```cpp
 void SetActiveView(
     CView* pViewNew,
     BOOL bNotify = TRUE);
@@ -1068,13 +1068,13 @@ Das Framework ruft diese Funktion automatisch auf, wenn der Benutzer den Fokus i
 
 Rufen Sie diese Memberfunktion auf, `CDockState` um in einem Objekt gespeicherte Statusinformationen auf die Steuerelementleisten des Rahmenfensters anzuwenden.
 
-```
+```cpp
 void SetDockState(const CDockState& state);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Staat*<br/>
+*state*<br/>
 Wenden Sie den gespeicherten Status auf die Kontrollleisten des Rahmenfensters an.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1127,7 +1127,7 @@ Diese Methode wirkt sich auf den Status von Menüs in Anwendungen aus, die für 
 
 Rufen Sie diese Funktion auf, um eine Zeichenfolge im Statusleistenbereich mit der ID 0 zu platzieren.
 
-```
+```cpp
 void SetMessageText(LPCTSTR lpszText);
 void SetMessageText(UINT nID);
 ```
@@ -1148,7 +1148,7 @@ Dies ist in der Regel der linke und längste Bereich der Statusleiste.
 
 Legt die aktuelle Position für die Auf-Fortschrittsleiste von Windows 7 fest, die auf der Taskleiste angezeigt wird.
 
-```
+```cpp
 void SetProgressBarPosition(int nProgressPos);
 ```
 
@@ -1163,7 +1163,7 @@ Gibt die festzulegende Position an. Sie muss innerhalb des `SetProgressBarRange`
 
 Legt den Bereich für die Auf-/ Azudeleiste von Windows 7 fest, die auf der Taskleiste angezeigt wird.
 
-```
+```cpp
 void SetProgressBarRange(
     int nRangeMin,
     int nRangeMax);
@@ -1183,7 +1183,7 @@ Maximalwert.
 
 Legt den Typ und den Status der Fortschrittsanzeige fest, die auf einer Taskleistenschaltfläche angezeigt wird.
 
-```
+```cpp
 void SetProgressBarState(TBPFLAG tbpFlags);
 ```
 
@@ -1229,7 +1229,7 @@ TRUE, wenn erfolgreich; FALSE, wenn die Betriebssystemversion kleiner als Window
 
 Legt den Titel des Fensterobjekts fest.
 
-```
+```cpp
 void SetTitle(LPCTSTR lpszTitle);
 ```
 
@@ -1242,7 +1242,7 @@ Ein Zeiger auf eine Zeichenfolge, die den Titel des Fensterobjekts enthält.
 
 Rufen Sie diese Memberfunktion auf, um die Steuerleiste ein- oder auszublenden.
 
-```
+```cpp
 void ShowControlBar(
     CControlBar* pBar,
     BOOL bShow,
@@ -1264,7 +1264,7 @@ Wenn TRUE, verzögern Sie die Anzeige der Steuerleiste. Wenn FALSE, zeigen Sie d
 
 Rufen Sie diese Memberfunktion auf, um `CFrameWnd` alle Fenster anzuzeigen, die abhängig vom Objekt sind.
 
-```
+```cpp
 void ShowOwnedWindows(BOOL bShow);
 ```
 
@@ -1273,7 +1273,7 @@ void ShowOwnedWindows(BOOL bShow);
 *bShow*<br/>
 Gibt an, ob die eigenen Fenster angezeigt oder ausgeblendet werden sollen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

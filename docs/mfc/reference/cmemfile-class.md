@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CMemFile [MFC], Memcpy
 - CMemFile [MFC], Realloc
 ms.assetid: 20e86515-e465-4f73-b2ea-e49789d63165
-ms.openlocfilehash: 46937795499fd9f697f9778c263a1ee011777c0d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1bd88ad17bdb047de4c344ab96f3d9aecbe23c31
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370021"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752638"
 ---
 # <a name="cmemfile-class"></a>CMemFile-Klasse
 
@@ -90,7 +90,7 @@ Weitere Informationen `CMemFile`finden Sie in den Artikeln [Dateien in MFC](../.
 
 `CMemFile`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -121,7 +121,7 @@ Die Standardimplementierung verwendet die Laufzeitbibliotheksfunktion [malloc,](
 
 Rufen Sie diese Funktion auf, `CMemFile`um einen Speicherblock an an anzuhängen.
 
-```
+```cpp
 void Attach(
     BYTE* lpBuffer,
     UINT nBufferSize,
@@ -288,7 +288,7 @@ Ein Zeiger auf den Speicherblock, der neu verteilt (und möglicherweise verschob
 
 Überschreiben Sie diese Funktion, um eine benutzerdefinierte Speicherneuzuweisung zu implementieren. Wenn Sie diese Funktion überschreiben, sollten Sie wahrscheinlich auch [Alloc](#alloc) und [Free](#free) überschreiben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CFile-Klasse](../../mfc/reference/cfile-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

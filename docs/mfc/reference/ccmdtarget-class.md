@@ -46,12 +46,12 @@ helpviewer_keywords:
 - CCmdTarget [MFC], OnFinalRelease
 - CCmdTarget [MFC], RestoreWaitCursor
 ms.assetid: 8883b132-2057-4ce0-a5f2-88979f8f2b13
-ms.openlocfilehash: 5ee4101302322a5212a80b32f095cdd13d9769e0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1ef7040f3be1e4c30a6dc19e6093727299c9f1c3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352289"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752711"
 ---
 # <a name="ccmdtarget-class"></a>CCmdTarget-Klasse
 
@@ -113,7 +113,7 @@ Dispatch-Maps werden ähnlich wie Nachrichtenzuordnungen `IDispatch` verwendet, 
 
 `CCmdTarget`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -121,7 +121,7 @@ Dispatch-Maps werden ähnlich wie Nachrichtenzuordnungen `IDispatch` verwendet, 
 
 Rufen Sie diese Funktion auf, um den Cursor als Sanduhr anzuzeigen, wenn Sie erwarten, dass ein Befehl ein spürbares Zeitintervall einnimmt.
 
-```
+```cpp
 void BeginWaitCursor();
 ```
 
@@ -169,7 +169,7 @@ Zeiger auf die [MSG-Struktur,](/windows/win32/api/winuser/ns-winuser-msg) die da
 Das Handle des Dokumentfensters, das das Objekt enthält.
 
 *lpRect*<br/>
-Zeiger auf die [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Koordinaten in Pixel enthält, die das umgrenzende Rechteck eines Objekts in *hwndParent*definieren.
+Zeiger auf die [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Koordinaten in Pixel enthält, die das umgrenzende Rechteck eines Objekts in *hwndParent*definieren.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -183,7 +183,7 @@ Diese Memberfunktion ist im Grunde eine Implementierung von [IOleObject::DoVerb]
 
 Rufen Sie diese Funktion auf, um die OLE-Automatisierung für ein Objekt zu aktivieren.
 
-```
+```cpp
 void EnableAutomation();
 ```
 
@@ -195,7 +195,7 @@ Diese Funktion wird in der Regel vom Konstruktor des Objekts aufgerufen und soll
 
 Aktiviert das Auslösen von Ereignis über Verbindungspunkte.
 
-```
+```cpp
 void EnableConnections();
 ```
 
@@ -207,7 +207,7 @@ Um Verbindungspunkte zu aktivieren, rufen Sie diese Memberfunktion im Konstrukto
 
 Aktiviert die Typbibliothek eines Objekts.
 
-```
+```cpp
 void EnableTypeLib();
 ```
 
@@ -219,7 +219,7 @@ Rufen Sie diese Memberfunktion im `CCmdTarget`Konstruktor Ihres -derived-Objekts
 
 Rufen Sie diese Funktion `BeginWaitCursor` auf, nachdem Sie die Memberfunktion aufgerufen haben, um vom Sanduhrcursor zum vorherigen Cursor zurückzukehren.
 
-```
+```cpp
 void EndWaitCursor();
 ```
 
@@ -284,7 +284,7 @@ virtual BOOL GetDispatchIID(IID* pIID);
 ### <a name="parameters"></a>Parameter
 
 *pIID*<br/>
-Ein Zeiger auf eine Schnittstellen-ID (eine [GUID](/previous-versions/cc317743(v%3dmsdn.10)).
+Ein Zeiger auf eine Schnittstellen-ID (eine [GUID](/windows/win32/api/guiddef/ns-guiddef-guid).
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -346,11 +346,11 @@ HRESULT GetTypeInfoOfGuid(
 
 ### <a name="parameters"></a>Parameter
 
-*lcid*<br/>
+*Lcid*<br/>
 Ein Gebietsschema-Bezeichner ( `LCID`).
 
 *guid*<br/>
-Die [GUID](/previous-versions/cc317743(v%3dmsdn.10)) der Typbeschreibung.
+Die [GUID](/windows/win32/api/guiddef/ns-guiddef-guid d der Typbeschreibung.
 
 *ppTypeInfo*<br/>
 Zeiger auf einen Zeiger `ITypeInfo` auf die Schnittstelle.
@@ -371,7 +371,7 @@ virtual HRESULT GetTypeLib(
 
 ### <a name="parameters"></a>Parameter
 
-*lcid*<br/>
+*Lcid*<br/>
 Ein Gebietsschemabezeichner (LCID).
 
 *ppTypeLib*<br/>
@@ -514,7 +514,7 @@ virtual void OnFinalRelease();
 
 Rufen Sie diese Funktion auf, um den entsprechenden Sanduhrcursor wiederherzustellen, nachdem sich der Systemcursor geändert hat (z. B. nachdem ein Meldungsfeld geöffnet und dann geschlossen wurde, während er sich mitten in einem längeren Vorgang befindet).
 
-```
+```cpp
 void RestoreWaitCursor();
 ```
 
@@ -522,7 +522,7 @@ void RestoreWaitCursor();
 
 [!code-cpp[NVC_MFCDocView#43](../../mfc/codesnippet/cpp/ccmdtarget-class_1.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel ACDUAL](../../overview/visual-cpp-samples.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

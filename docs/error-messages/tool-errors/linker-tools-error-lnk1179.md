@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1179
 ms.assetid: 4b1536d7-0d3d-4f29-a9c1-6fa5cf6cb665
-ms.openlocfilehash: a267019f1be08cc8dcffdff3b4ba0b73357cccd4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d85693cec11ef53a6bbbb60d8ced716d2a0bb131
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80183956"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754346"
 ---
 # <a name="linker-tools-error-lnk1179"></a>Linkertoolfehler LNK1179
 
-Ungültige oder beschädigte Datei: doppelter COMDAT "Dateiname".
+Ungültige oder beschädigte Datei: Duplizieren comDAT 'Dateiname'
 
-Ein Objekt Modul enthält mindestens zwei COMDATs mit demselben Namen.
+Ein Objektmodul enthält zwei oder mehr COMDATs mit demselben Namen.
 
-Dieser Fehler kann durch die Verwendung von [/H](../../build/reference/h-restrict-length-of-external-names.md)verursacht werden, wodurch die Länge externer Namen und die [/Gy](../../build/reference/gy-enable-function-level-linking.md)-Funktion, die in COMDATs verpackt werden, eingeschränkt werden.
+Dieser Fehler kann durch die Verwendung von [/H](../../build/reference/h-restrict-length-of-external-names.md)verursacht werden, das die Länge externer Namen begrenzt, und [/Gy](../../build/reference/gy-enable-function-level-linking.md), das Inpackungen in COMDATs verpackt.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Code sind `function1` und `function2` in den ersten acht Zeichen identisch. Beim Kompilieren mit **/Gy** und **/h8** wird ein Link Fehler erzeugt.
+Im folgenden Code `function1` `function2` und sind in den ersten acht Zeichen identisch. Durch das Kompilieren mit **/Gy** und **/H8** wird ein Linkfehler ausgelöst.
 
-```
+```cpp
 void function1(void);
 void function2(void);
 

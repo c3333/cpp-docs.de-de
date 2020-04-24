@@ -104,12 +104,12 @@ helpviewer_keywords:
 - CMFCTabCtrl [MFC], SynchronizeScrollBar
 - CMFCTabCtrl [MFC], m_bEnableActivate
 ms.assetid: d441385d-2c72-4203-96fa-deae2273da35
-ms.openlocfilehash: 7c5e2c0f3ad3b40c5dbff619c45ebcd9573892ca
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: da871679665376342a6d23369a1e34c9a7060ce7
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367367"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753453"
 ---
 # <a name="cmfctabctrl-class"></a>CMFCTabCtrl Class
 
@@ -248,7 +248,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCTabCtrl` wie verschiedene `CMFC
 [!code-cpp[NVC_MFC_StateCollection#1](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_1.h)]
 [!code-cpp[NVC_MFC_StateCollection#3](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_2.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxtabctrl.h
 
@@ -256,7 +256,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCTabCtrl` wie verschiedene `CMFC
 
 Zeigt die angegebene Registerkarte des aktuellen Registerkartensteuerelements an und legt den Fokus auf diese Registerkarte fest.
 
-```
+```cpp
 void ActivateMDITab(int nTab = -1);
 ```
 
@@ -283,7 +283,7 @@ Immer TRUE.
 
 Gibt an, ob das Framework die Größe des Clientbereichs aller Registerkartensteuerungsfenster ändern soll, wenn sich ein Benutzeroberflächenelement des Registerkartensteuerelements ändert.
 
-```
+```cpp
 void AutoSizeWindow(BOOL bAutoSize = TRUE);
 ```
 
@@ -310,7 +310,7 @@ BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*Stil*<br/>
+*style*<br/>
 [in] Der Stil des Registerkartensteuerelements. Weitere Informationen finden Sie in den Hinweisen.
 
 *Rect*<br/>
@@ -336,7 +336,7 @@ TRUE, wenn erfolgreich; andernfalls FALSE.
 
 In der folgenden Tabelle werden die Werte beschrieben, die Sie für den *Stilparameter* angeben können.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |STYLE_3D|Erstellt ein Registerkartensteuerelement mit einer dreidimensionalen Darstellung.|
 |STYLE_FLAT|Erstellt ein Registerkartensteuerelement mit flachen Registerkarten.|
@@ -348,7 +348,7 @@ In der folgenden Tabelle werden die Werte beschrieben, die Sie für den *Stilpar
 
 In der folgenden Tabelle sind die Werte aufgeführt, die Sie für den *Positionsparameter* angeben können.
 
-|Position|BESCHREIBUNG|
+|Standort|Beschreibung|
 |--------------|-----------------|
 |LOCATION_BOTTOM|Registerkarten befinden sich am unteren Rand des Tab-Steuerelements.|
 |LOCATION_TOP|Registerkarten befinden sich oben im Tab-Steuerelement.|
@@ -381,7 +381,7 @@ Diese Methode wird aufgerufen, wenn Sie die Bezeichnung einer Registerkarte änd
 
 Zeigt eine Schaltfläche Schließen ( **X**) auf der aktiven Registerkarte ein oder blendet sie aus.
 
-```
+```cpp
 void EnableActiveTabCloseButton(BOOL bEnable=TRUE);
 ```
 
@@ -409,7 +409,7 @@ virtual void EnableInPlaceEdit(BOOL bEnable);
 
 Wechselt zwischen einer Benutzeroberfläche, die zwei Schaltflächen zum Scrollen der Fensterregisterkarten verwendet, und einer Benutzeroberfläche, die ein Popupmenü mit Registerkartenangezeigt anzeigt.
 
-```
+```cpp
 void EnableTabDocumentsMenu(BOOL bEnable=TRUE);
 ```
 
@@ -508,7 +508,7 @@ Verwenden Sie diese Methode, um auf die eingebettete Bildlaufleiste des Register
 
 Ruft das umgrenzende Rechteck des Registerkartenbeschriftungsbereichs oben oder unten im Registerkartensteuerelement ab.
 
-```
+```cpp
 void GetTabArea(
     CRect& rectTabAreaTop,
     CRect& rectTabAreaBottom) const;
@@ -571,7 +571,7 @@ virtual void GetTabsRect(CRect& rect) const;
 
 Ruft die Grenze des Clientbereichs des aktuellen Registerkartensteuerelements ab.
 
-```
+```cpp
 void GetWndArea(CRect& rect) const;
 ```
 
@@ -586,7 +586,7 @@ void GetWndArea(CRect& rect) const;
 
 Blendet die horizontale Bildlaufleiste (falls vorhanden) im aktiven Fenster aus.
 
-```
+```cpp
 void HideActiveWindowHorzScrollBar();
 ```
 
@@ -598,7 +598,7 @@ Verwenden Sie diese Methode, um zu verhindern, dass das Registerkartensteuerelem
 
 Gibt an, ob das Framework inaktive Registerkartensteuerungsfenster anzeigt.
 
-```
+```cpp
 void HideInactiveWindow(BOOL bHide = TRUE);
 ```
 
@@ -613,7 +613,7 @@ void HideInactiveWindow(BOOL bHide = TRUE);
 
 Aktiviert oder deaktiviert das Zeichnen des Registerkartenbereichs, wenn keine sichtbaren Registerkarten vorhanden sind.
 
-```
+```cpp
 void HideNoTabs(BOOL bHide=TRUE);
 ```
 
@@ -835,7 +835,7 @@ BOOL ModifyTabStyle(Style style);
 
 ### <a name="parameters"></a>Parameter
 
-*Stil*<br/>
+*style*<br/>
 [in] Einer der Enumerationswerte, der die Darstellung des Registerkartensteuerelements angibt. Weitere Informationen finden Sie in der Tabelle unter Bemerkungen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -938,7 +938,7 @@ virtual void OnShowTabDocumentsMenu(CPoint point);
 
 Legt die aktuelle Registerkarte eines Registerkartensteuerelements als aktive Registerkarte in einer Registerkartengruppe für mehrere Dokumentschnittstellen fest.
 
-```
+```cpp
 void SetActiveInMDITabGroup(BOOL bActive);
 ```
 
@@ -978,7 +978,7 @@ Die `SetActiveTab` Methode ruft automatisch die [CMFCTabCtrl::HideActiveWindowHo
 
 Aktiviert oder deaktiviert die Verwendung einer fett formatierten Schriftart auf aktiven Registerkarten.
 
-```
+```cpp
 void SetActiveTabBoldFont(BOOL bIsBold=TRUE);
 ```
 
@@ -993,7 +993,7 @@ void SetActiveTabBoldFont(BOOL bIsBold=TRUE);
 
 Gibt an, ob ein Rahmenrechteck um eine eingebettete Leiste gezeichnet wird.
 
-```
+```cpp
 void SetDrawFrame(BOOL bDraw=TRUE);
 ```
 
@@ -1008,7 +1008,7 @@ void SetDrawFrame(BOOL bDraw=TRUE);
 
 Gibt an, ob ein flacher oder ein 3D-Rahmen um den Tab-Bereich gezeichnet werden soll.
 
-```
+```cpp
 void SetFlatFrame(
     BOOL bFlat=TRUE,
     BOOL bRepaint=TRUE);
@@ -1065,7 +1065,7 @@ Verwenden Sie die [CMFCBaseTabCtrl::AddTab-Methode,](../../mfc/reference/cmfcbas
 
 Gibt an, wie die Größe des aktuellen Registerkartensteuerelements geändert werden kann, und zeigt dann das Steuerelement erneut an.
 
-```
+```cpp
 void SetResizeMode(ResizeMode resizeMode);
 ```
 
@@ -1088,7 +1088,7 @@ Der *Parameter resizeMode* kann einer `ResizeMode` der folgenden Enumerationswer
 
 Gibt die maximale Tabstoppbreite in einem Registerkartenfenster an.
 
-```
+```cpp
 void SetTabMaxWidth(int nTabMaxWidth);
 ```
 
@@ -1105,7 +1105,7 @@ Verwenden Sie diese Methode, um die Breite jeder Registerkarte in einem Register
 
 Beendet den aktuellen Größenänderungsvorgang für das Registerkartensteuerelement.
 
-```
+```cpp
 void StopResize(BOOL bCancel);
 ```
 
@@ -1135,7 +1135,7 @@ TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
 Diese Methode wirkt sich nur auf ein Registerkartensteuerelement aus, das flache Registerkarten anzeigt. Die Bildlaufleiste beeinflusst alle Registerkarten gleichzeitig.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

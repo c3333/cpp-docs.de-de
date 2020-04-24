@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CEditView [MFC], OnTextNotFound
 - CEditView [MFC], dwStyleDefault
 ms.assetid: bf38255c-fcbe-450c-95b2-3c5e35f86c37
-ms.openlocfilehash: 8fbb2dc569e675ecff4ce04758a4eced40505bf6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 33b5975eea534eeaf308f73b5ca7fca2cd76787f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373973"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753201"
 ---
 # <a name="ceditview-class"></a>CEditView-Klasse
 
@@ -142,7 +142,7 @@ Weitere Informationen `CEditView`zu finden Sie [unter Abgeleitete Ansichtsklasse
 
 `CEditView`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -259,7 +259,7 @@ Verwenden Sie diese Funktion, um die aktuelle Druckerschriftart zu bestimmen. We
 
 Rufen `GetSelectedText` Sie auf, den `CString` markierten Text in ein Objekt zu kopieren, bis zum Ende der Auswahl oder das Zeichen vor dem ersten Wagenrückgabezeichen in der Auswahl.
 
-```
+```cpp
 void GetSelectedText(CString& strResult) const;
 ```
 
@@ -423,7 +423,7 @@ Das `rect.bottom` Element des *rectLayout-Objekts* wird so geändert, dass die A
 
 Rufen `SerializeRaw` Sie `CArchive` auf, um ein Objekt `CEditView` lesen zu lassen oder den Text im Objekt in eine Textdatei zu schreiben.
 
-```
+```cpp
 void SerializeRaw(CArchive& ar);
 ```
 
@@ -440,7 +440,7 @@ Verweis auf `CArchive` das Objekt, in dem der serialisierte Text gespeichert wir
 
 Rufen `SetPrinterFont` Sie an, um die Druckerschriftart auf die von *pFont*angegebene Schriftart festzulegen.
 
-```
+```cpp
 void SetPrinterFont(CFont* pFont);
 ```
 
@@ -457,7 +457,7 @@ Wenn Sie möchten, dass Ihre Ansicht immer eine bestimmte `SetPrinterFont` Schri
 
 Rufen Sie diese Funktion auf, um die Tabstopps festzulegen, die für die Anzeige und den Druck verwendet werden.
 
-```
+```cpp
 void SetTabStops(int nTabStops);
 ```
 
@@ -482,7 +482,7 @@ Dieses Codefragment legt die Tabstopps im Steuerelement auf jedes vierte Zeichen
 
 Rufen Sie diese Memberfunktion auf, um den Puffer zu entsperren.
 
-```
+```cpp
 void UnlockBuffer() const;
 ```
 
@@ -490,7 +490,7 @@ void UnlockBuffer() const;
 
 Rufen `UnlockBuffer` Sie an, nachdem Sie den von [LockBuffer](#lockbuffer)zurückgegebenen Zeiger verwendet haben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel SUPERPAD](../../overview/visual-cpp-samples.md)<br/>
 [CCtrlView-Klasse](../../mfc/reference/cctrlview-class.md)<br/>

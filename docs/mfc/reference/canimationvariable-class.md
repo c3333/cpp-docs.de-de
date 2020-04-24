@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CAnimationVariable [MFC], m_pParentObject
 - CAnimationVariable [MFC], m_variable
 ms.assetid: 506e697e-31a8-4033-a27e-292f4d7b42d9
-ms.openlocfilehash: 51cc4732ee8ad5f954e5bd758484cec74cf00fe6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b53a1338566a329fbdf5b91c41d0411a529afe8d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377048"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755069"
 ---
 # <a name="canimationvariable-class"></a>CAnimationVariable-Klasse
 
@@ -116,7 +116,7 @@ Die CAnimationVariable-Klasse kapselt das IUIAnimationVariable COM-Objekt. Es en
 
 `CAnimationVariable`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -132,7 +132,7 @@ virtual ~CAnimationVariable();
 
 Fügt einen Übergang hinzu.
 
-```
+```cpp
 void AddTransition(CBaseTransition* pTransition);
 ```
 
@@ -149,7 +149,7 @@ Diese Methode wird aufgerufen, um einen Übergang zur internen Liste der Überg�
 
 Fügt Übergänge von der internen Liste zum Storyboard hinzu.
 
-```
+```cpp
 void ApplyTransitions(
     CAnimationController* pController,
     IUIAnimationStoryboard* pStoryboard,
@@ -192,7 +192,7 @@ Erstellt ein Animationsvariablenobjekt und legt dessen Standardwert fest. Ein St
 
 Löscht Übergänge.
 
-```
+```cpp
 void ClearTransitions(BOOL bAutodestroy);
 ```
 
@@ -253,7 +253,7 @@ Diese Methode wird vom Framework aufgerufen, wenn es Übergänge erstellen muss,
 
 Aktiviert oder deaktiviert das IntegerValueChanged-Ereignis.
 
-```
+```cpp
 void EnableIntegerValueChangedEvent (
     CAnimationController* pController,
     BOOL bEnable);
@@ -275,7 +275,7 @@ Wenn das ValueChanged-Ereignis aktiviert ist, ruft das Framework die virtuelle M
 
 Aktiviert oder deaktiviert das ValueChanged-Ereignis.
 
-```
+```cpp
 void EnableValueChangedEvent (
     CAnimationController* pController,
     BOOL bEnable);
@@ -414,7 +414,7 @@ ATL::CComPtr<IUIAnimationVariable> m_variable;
 
 Legt den Standardwert fest und gibt das IUIAnimationVariable COM-Objekt frei.
 
-```
+```cpp
 void SetDefaultValue(DOUBLE dblDefaultValue);
 ```
 
@@ -431,7 +431,7 @@ Verwenden Sie diese Methode, um den Standardwert zurückzusetzen. Diese Methode 
 
 Legt die Beziehung zwischen einer Animationsvariablen und einem Animationsobjekt fest.
 
-```
+```cpp
 void SetParentAnimationObject(CAnimationBaseObject* pParentObject);
 ```
 
@@ -444,6 +444,6 @@ Ein Zeiger auf ein Animationsobjekt, das diese Variable enthält.
 
 Diese Methode wird intern aufgerufen, um eine 1:1-Beziehung zwischen einer Animationsvariablen und einem Animationsobjekt herzustellen, das sie kapselt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -36,12 +36,12 @@ helpviewer_keywords:
 - CJumpList [MFC], InitializeList
 - CJumpList [MFC], SetAppID
 ms.assetid: d364d27e-f512-4b12-9872-c2a17c78ab1f
-ms.openlocfilehash: 98d6bec3d33c9060ebb741111dff793f64cc7cb0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2e45e2e58bd51d36b6412940b7ed01aa119017ed
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372335"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754937"
 ---
 # <a name="cjumplist-class"></a>CJumpList-Klasse
 
@@ -83,7 +83,7 @@ class CJumpList;
 
 [CJumpList](../../mfc/reference/cjumplist-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxadv.h
 
@@ -99,7 +99,7 @@ Zerstört ein `CJumpList` -Objekt.
 
 Bricht eine Listerstellungstransaktion ab, ohne eine Bindung zu übernehmen.
 
-```
+```cpp
 void AbortList();
 ```
 
@@ -256,7 +256,7 @@ Wenn dieser Parameter FALSE ist, wird die Liste nicht automatisch im Destruktor 
 
 Entfernt alle Aufgaben und Ziele, die der `CJumpList` aktuellen Instanz bisher hinzugefügt wurden.
 
-```
+```cpp
 void ClearAll();
 ```
 
@@ -268,7 +268,7 @@ Diese Methode löscht und gibt alle Daten und internen Schnittstellen frei.
 
 Entfernt alle Ziele, die der aktuellen CJumpList-Instanz bisher hinzugefügt wurden.
 
-```
+```cpp
 void ClearAllDestinations();
 ```
 
@@ -350,7 +350,7 @@ Sie müssen diese Methode nicht explizit aufrufen, es sei `ICustomDestinationLis
 
 Legt die Anwendungsbenutzermodell-ID für die Liste fest, die erstellt wird.
 
-```
+```cpp
 void SetAppID(LPCTSTR strAppID);
 ```
 
@@ -359,6 +359,6 @@ void SetAppID(LPCTSTR strAppID);
 *strAppID*<br/>
 Eine Zeichenfolge, die die Anwendungsbenutzermodell-ID angibt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - application control [MFC]
 ms.assetid: c1f69f15-e0fe-4515-9f36-d63d31869deb
-ms.openlocfilehash: 1f438d3344e90a16def2bd4c0f9cedcd47a64203
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7e18b4504ddbfdd9a4399f33c34c6e6e9900233b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363555"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752856"
 ---
 # <a name="application-control"></a>Anwendungssteuerelement
 
@@ -50,7 +50,7 @@ Eine Anwendung sollte nicht beendet werden, wenn auf ihre Objekte verweise. Die 
 
 [!code-cpp[NVC_MFCAutomation#2](../../mfc/codesnippet/cpp/application-control_1.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxdisp.h
 
@@ -76,7 +76,7 @@ Rufen Sie diese Funktion `COleMessageFilter`auf, um auf das `AfxGetApp` aktuelle
 
 [!code-cpp[NVC_MFCAutomation#4](../../mfc/codesnippet/cpp/application-control_3.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxwin.h
 
@@ -96,7 +96,7 @@ Ein Wert ungleich Null, wenn der Benutzer die Kontrolle über die Anwendung hat;
 
 Der Benutzer hat die Kontrolle über die Anwendung, wenn der Benutzer ein neues Dokument explizit geöffnet oder erstellt hat. Der Benutzer hat auch die Kontrolle, wenn die Anwendung nicht von den OLE-System-DLLs gestartet wurde, d. h., wenn der Benutzer die Anwendung mit der Systemshell gestartet hat.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxdisp.h
 
@@ -104,7 +104,7 @@ Der Benutzer hat die Kontrolle über die Anwendung, wenn der Benutzer ein neues 
 
 Legt das Benutzersteuerungsflag fest oder löscht es, `AfxOleGetUserCtrl`das in der Referenz für erläutert wird.
 
-```
+```cpp
 void AFXAPI AfxOleSetUserCtrl(BOOL bUserCtrl);
 ```
 
@@ -119,7 +119,7 @@ Das Framework ruft diese Funktion auf, wenn der Benutzer ein Dokument erstellt o
 
 Rufen Sie diese Funktion auf, wenn andere Aktionen in Ihrer Anwendung den Benutzer die Kontrolle über die Anwendung behalten sollen.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxdisp.h
 
@@ -127,7 +127,7 @@ Rufen Sie diese Funktion auf, wenn andere Aktionen in Ihrer Anwendung den Benutz
 
 Erhöht die globale Anzahl der aktiven Objekte in der Anwendung.
 
-```
+```cpp
 void AFXAPI AfxOleLockApp();
 ```
 
@@ -143,7 +143,7 @@ Aufruf `AfxOleLockApp` von jedem Objekt, das OLE-Schnittstellen verfügbar macht
 
 [!code-cpp[NVC_MFCAutomation#5](../../mfc/codesnippet/cpp/application-control_4.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxdisp.h
 
@@ -151,7 +151,7 @@ Aufruf `AfxOleLockApp` von jedem Objekt, das OLE-Schnittstellen verfügbar macht
 
 Dekrementiert die Anzahl der aktiven Objekte in der Anwendung.
 
-```
+```cpp
 void AFXAPI AfxOleUnlockApp();
 ```
 
@@ -165,7 +165,7 @@ Wenn die Anzahl der aktiven `AfxOleOnReleaseAllObjects` Objekte Null erreicht, w
 
 Siehe Beispiel für [AfxOleLockApp](#afxolelockapp).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxdisp.h
 
@@ -206,7 +206,7 @@ Dies kann die Anzeige der Bedienelemente erheblich beschleunigen. Wenn Sie z. B.
 AfxOleLockControl(_T("MSCAL.Calendar"));
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -276,7 +276,7 @@ Die Symbole werden wie folgt ausgefüllt:
 |%4|Kurzer Typname|
 |%5|Langer Typname|
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxdisp.h
 
@@ -284,7 +284,7 @@ Die Symbole werden wie folgt ausgefüllt:
 
 Implementiert die Benutzeroberfläche für den *Befehl typename* Object.
 
-```
+```cpp
 void AFXAPI AfxOleSetEditMenu(
     COleClientItem* pClient,
     CMenu* pMenu,
@@ -322,7 +322,7 @@ Sie müssen die folgende Anweisung im Anwendungsressourcenskript Ihres Clients (
 
 **#include \<afxolecl.rc>**
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile**: afxole.h
 
@@ -361,10 +361,10 @@ Ein Steuerelement ist `AfxOleLockControl`mit gesperrt, sodass dynamisch erstellt
 AfxOleUnlockControl(_T("MSCAL.Calendar"));
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](mfc-macros-and-globals.md)<br/>

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CBitmapButton [MFC], LoadBitmaps
 - CBitmapButton [MFC], SizeToContent
 ms.assetid: 9ad6cb45-c3c4-4fb1-96d3-1fe3df7bbcfc
-ms.openlocfilehash: c052f913f68d1890a470ed8a6aae2882ed181863
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: df21591dec1da5861125d7e9480fb9345aaad061
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352713"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752951"
 ---
 # <a name="cbitmapbutton-class"></a>CBitmapButton-Klasse
 
@@ -57,7 +57,7 @@ Diese Bitmaps können beeinen Stückgrößen haben, aber alle werden so behandel
 
 Verschiedene Anwendungen erfordern unterschiedliche Kombinationen von Bitmap-Bildern:
 
-|Nach oben|Nach unten|Mit Fokus|Disabled|Application|
+|Nach oben|Nach unten|Mit Fokus|Deaktiviert|Application|
 |--------|----------|-------------|--------------|-----------------|
 |×||||Bitmap|
 |×|×|||Button ohne WS_TABSTOP Stil|
@@ -108,7 +108,7 @@ Weitere Informationen `CBitmapButton`zu finden Sie unter [Steuerelemente](../../
 
 `CBitmapButton`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -214,7 +214,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Rufen Sie diese Funktion auf, um die Größe einer Bitmap-Schaltfläche auf die Größe der Bitmap zu ändern.
 
-```
+```cpp
 void SizeToContent();
 ```
 
@@ -222,7 +222,7 @@ void SizeToContent();
 
 [!code-cpp[NVC_MFCControlLadenDialog#59](../../mfc/codesnippet/cpp/cbitmapbutton-class_4.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CTRLTEST](../../overview/visual-cpp-samples.md)<br/>
 [CButton-Klasse](../../mfc/reference/cbutton-class.md)<br/>

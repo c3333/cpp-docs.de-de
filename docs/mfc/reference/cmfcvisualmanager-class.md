@@ -344,12 +344,12 @@ helpviewer_keywords:
 - CMFCVisualManager [MFC], SetMenuShadowDepth
 - CMFCVisualManager [MFC], SetShadowHighlightedImage
 ms.assetid: beed80f7-36a2-4d64-9f09-e807cfefc3fe
-ms.openlocfilehash: 3ae37f1e7222b996e62490365869782bbf458ee9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: df232fb8ad66dd259a69c4add82f6bcc9b34eeaf
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81320000"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752845"
 ---
 # <a name="cmfcvisualmanager-class"></a>CMFCVisualManager-Klasse
 
@@ -599,7 +599,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CMFCVisualManager` die Standard
 
 `CMFCVisualManager`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxvisualmanager.h
 
@@ -661,7 +661,7 @@ static void __stdcall DestroyInstance(BOOL bAutoDestroyOnly = FALSE);
 
 ## <a name="cmfcvisualmanagerdodrawheadersortarrow"></a><a name="dodrawheadersortarrow"></a>CMFCVisualManager::DoDrawHeaderSortArrow
 
-```
+```cpp
 void DoDrawHeaderSortArrow(
     CDC* pDC,
     CRect rect,
@@ -765,7 +765,7 @@ virtual BOOL DrawTextOnGlass(
 
 ## <a name="cmfcvisualmanagerenabletoolbarbuttonfill"></a><a name="enabletoolbarbuttonfill"></a>CMFCVisualManager::EnableToolbarButtonFill
 
-```
+```cpp
 void EnableToolbarButtonFill(BOOL bEnable = TRUE);
 ```
 
@@ -1411,7 +1411,7 @@ virtual COLORREF GetToolbarButtonTextColor(
 *pButton*<br/>
 [in] Ein Zeiger auf die Symbolleistenschaltfläche.
 
-*Staat*<br/>
+*state*<br/>
 [in] Der Status der Symbolleistenschaltfläche.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1822,7 +1822,7 @@ virtual BOOL OnDrawBrowseButton(
 *Pedit*<br/>
 [in] Ein Zeiger auf ein Bearbeitungssteuerelement. Der visuelle Manager zeichnet die Suchschaltfläche für dieses Bearbeitungssteuerelement.
 
-*Staat*<br/>
+*state*<br/>
 [in] Ein aufgezählter Wert, der den Status der Schaltfläche angibt.
 
 *clrText*<br/>
@@ -1859,7 +1859,7 @@ virtual void OnDrawButtonBorder(
 *Rect*<br/>
 [in] Ein Rechteck, das die Grenzen der Symbolleistenschaltfläche angibt.
 
-*Staat*<br/>
+*state*<br/>
 [in] Ein aufgezählter Datentyp, der den aktuellen Status der Symbolleistenschaltfläche angibt.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -4358,7 +4358,7 @@ virtual void OnFillButtonInterior(
 *Rect*<br/>
 [in] Ein Rechteck, das die Grenzen der Symbolleistenschaltfläche angibt.
 
-*Staat*<br/>
+*state*<br/>
 [in] Der Status der Symbolleistenschaltfläche.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -5011,7 +5011,7 @@ Verwenden Sie diese Methode, um den visuellen Manager zu ändern, den Ihre Anwen
 
 Aktiviert oder deaktiviert den geprägten Modus für deaktivierte Symbolleistenbilder.
 
-```
+```cpp
 void SetEmbossDisabledImage (BOOL bEmboss = TRUE);
 ```
 
@@ -5028,7 +5028,7 @@ Verwenden Sie die Funktion [CMFCVisualManager::IsEmbossDisabledImage,](#isemboss
 
 Aktiviert oder deaktiviert den Beleuchtungseffekt für inaktive Bilder in einem Menü oder einer Symbolleiste.
 
-```
+```cpp
 void SetFadeInactiveImage(BOOL bFade = TRUE);
 ```
 
@@ -5045,7 +5045,7 @@ Diese Funktion steuert, ob inaktive Bilder in einem Menü oder einer Symbolleist
 
 Legt ein Flag fest, das angibt, ob die Menüschaltflächen flach angezeigt werden. Andernfalls erscheinen sie dreidimensional.
 
-```
+```cpp
 void SetMenuFlatLook(BOOL bMenuFlatLook = TRUE);
 ```
 
@@ -5062,7 +5062,7 @@ Standardmäßig ist diese Funktion nicht aktiviert.
 
 Legt die Breite und Höhe des Menüschattens fest.
 
-```
+```cpp
 void SetMenuShadowDepth(int nDepth);
 ```
 
@@ -5079,7 +5079,7 @@ Die Höhe und Breite des Menüschattens muss identisch sein. Der Standardwert is
 
 Legt ein Flag fest, das angibt, ob der [CMFCVisualManager](../../mfc/reference/cmfcvisualmanager-class.md) Schatten für hervorgehobene Bilder anzeigt.
 
-```
+```cpp
 void SetShadowHighlightedImage(BOOL bShadow = TRUE);
 ```
 
@@ -5092,7 +5092,7 @@ void SetShadowHighlightedImage(BOOL bShadow = TRUE);
 
 Standardmäßig ist diese Funktion deaktiviert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

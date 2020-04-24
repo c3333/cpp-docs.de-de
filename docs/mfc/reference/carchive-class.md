@@ -52,12 +52,12 @@ helpviewer_keywords:
 - CArchive [MFC], WriteString
 - CArchive [MFC], m_pDocument
 ms.assetid: 9e950d23-b874-456e-ae4b-fe00781a7699
-ms.openlocfilehash: 46d30e38674d10aecdfdbf7be91c48063ba9f493
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ef8b6ec9060e8c15dd45f8203dadd2a2aca9e168
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377063"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753120"
 ---
 # <a name="carchive-class"></a>CArchive-Klasse
 
@@ -138,7 +138,7 @@ Weitere Informationen `CArchive`zu finden Sie in den Artikeln [Serialisierung](.
 
 `CArchive`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -146,7 +146,7 @@ Weitere Informationen `CArchive`zu finden Sie in den Artikeln [Serialisierung](.
 
 Rufen Sie diese Funktion auf, um das Archiv zu schließen, ohne eine Ausnahme auszulösen.
 
-```
+```cpp
 void Abort ();
 ```
 
@@ -208,7 +208,7 @@ Sie dürfen `CFile` Vorgänge nicht verwenden, um den Status der Datei zu änder
 
 Löscht alle im Puffer verbleibenden Daten, schließt das Archiv und trennt das Archiv von der Datei.
 
-```
+```cpp
 void Close();
 ```
 
@@ -226,7 +226,7 @@ Die Memberfunktion `Close` stellt sicher, dass alle Daten aus dem Archiv in die 
 
 Erzwingt, dass alle im Archivpuffer verbleibenden Daten in die Datei geschrieben werden.
 
-```
+```cpp
 void Flush();
 ```
 
@@ -346,7 +346,7 @@ Wenn `IsStoring` der Status eines Archivs ungleich Null ist, ist sein `IsLoading
 
 Rufen Sie diese Memberfunktion auf, um Objekte in der Zuordnung zu platzieren, die nicht wirklich in die Datei serialisiert sind, aber für Unterobjekte verfügbar sind, auf die verwiesen werden kann.
 
-```
+```cpp
 void MapObject(const CObject* pOb);
 ```
 
@@ -676,7 +676,7 @@ In der Version der Memberfunktion mit dem Parameter *nMax* hält der Puffer bis 
 
 Rufen Sie diese Memberfunktion auf, wenn Sie die Versionsinformationen einer Basisklasse speichern und laden möchten.
 
-```
+```cpp
 void SerializeClass(const CRuntimeClass* pClassRef);
 ```
 
@@ -703,7 +703,7 @@ Verwenden [RUNTIME_CLASS](../../mfc/reference/run-time-object-model-services.md#
 
 Rufen `SetLoadParams` Sie auf, wenn Sie `CObject`eine große Anzahl von -abgeleiteten Objekten aus einem Archiv lesen möchten.
 
-```
+```cpp
 void SetLoadParams(UINT nGrowBy = 1024);
 ```
 
@@ -726,7 +726,7 @@ Sie dürfen `SetLoadParams` nicht aufrufen, nachdem ein Objekt geladen wurde ode
 
 Rufen Sie diese Memberfunktion auf, um das im Archivobjekt gespeicherte Objektschema auf *nSchema*festzulegen.
 
-```
+```cpp
 void SetObjectSchema(UINT nSchema);
 ```
 
@@ -749,7 +749,7 @@ Verwendung `SetObjectSchema` für erweiterte Versionierung; Z. B. wenn Sie erzwi
 
 Verwenden `SetStoreParams` Sie diese Verwendung, wenn Sie eine große Anzahl von `CObject`-abgeleiteten Objekten in einem Archiv speichern.
 
-```
+```cpp
 void SetStoreParams(UINT nHashSize = 2053, UINT nBlockSize = 128);
 ```
 
@@ -775,7 +775,7 @@ Sie dürfen `SetStoreParams` nicht aufrufen, nachdem Objekte gespeichert wurden 
 
 Schreibt eine angegebene Anzahl von Bytes in das Archiv.
 
-```
+```cpp
 void Write(const void* lpBuf, INT nMax);
 ```
 
@@ -801,7 +801,7 @@ Sie können `Write` die Memberfunktion `Serialize` in Ihrer Funktion verwenden, 
 
 Verwenden `WriteClass` Sie diese Möglichkeit, um die Versions- und Klasseninformationen einer Basisklasse während der Serialisierung der abgeleiteten Klasse zu speichern.
 
-```
+```cpp
 void WriteClass(const CRuntimeClass* pClassRef);
 ```
 
@@ -828,7 +828,7 @@ Sie können [SerializeClass](#serializeclass) `WriteClass`anstelle von verwenden
 
 Speichert die `CObject` angegebenen Dateien im Archiv.
 
-```
+```cpp
 void WriteObject(const CObject* pOb);
 ```
 
@@ -858,7 +858,7 @@ Eine Definition der `CAge`Klasse finden Sie im Beispiel für [CObList::CObList](
 
 Verwenden Sie diese Memberfunktion, um Daten aus `CArchive` einem Puffer in die dem Objekt zugeordnete Datei zu schreiben.
 
-```
+```cpp
 void WriteString(LPCTSTR lpsz);
 ```
 
@@ -879,7 +879,7 @@ Das beendende Nullzeichen ('''''' wird nicht in die Datei geschrieben; auch wird
 
 [!code-cpp[NVC_MFCSerialization#30](../../mfc/codesnippet/cpp/carchive-class_23.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CFile-Klasse](../../mfc/reference/cfile-class.md)<br/>

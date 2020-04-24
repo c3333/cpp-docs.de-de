@@ -5,16 +5,16 @@ helpviewer_keywords:
 - value struct
 - value class
 ms.assetid: 262a0992-9721-4c02-8297-efc07d90e5a4
-ms.openlocfilehash: 3340c5e387dc58ddcb5348cdc041a58840463995
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 4a4897f0a3b5c95ffb58e5c9666a2d764d71b3ec
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740932"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752894"
 ---
 # <a name="value-classes-and-structs-ccx"></a>Wertklassen und Strukturen (C++/CX)
 
-Eine *Wert Struktur* oder *Wert Klasse* ist ein Windows-Runtime kompatibler Pod ("Plain Old Data Structure"). Sie verfügt über eine feste Größe und besteht nur aus Feldern. Anders als eine Verweisklasse hat sie keine Eigenschaften.
+Eine *Wertstruktur* oder *Wertklasse* ist ein Windows-Runtime-kompatibler POD ("einfache alte Datenstruktur"). Sie verfügt über eine feste Größe und besteht nur aus Feldern. Anders als eine Verweisklasse hat sie keine Eigenschaften.
 
 Die folgenden Beispiele zeigen, wie Wertstrukturen deklariert und initialisiert werden.
 
@@ -52,7 +52,7 @@ Wenn eine Variable eines Werttyps einer anderen Variablen zugewiesen wird, wird 
 
 Eine *Wertklasse* entspricht `value struct` , außer dass den zugehörigen Felder explizit öffentliche Zugreifbarkeit zugeordnet werden muss. Sie wird durch das Schlüsselwort `value class` deklariert.
 
-Eine Wert Struktur oder Wert Klasse kann als Felder nur grundlegende numerische Typen, `Platform::String^`Enumerationsklassen, oder [Platform:: iBox \<T > ^](../cppcx/platform-ibox-interface.md) enthalten, wobei T ein numerischer Typ oder eine Enumerationsklasse oder eine Wert Klasse oder eine Struktur ist. Ein `IBox<T>^` -Feld kann den Wert `nullptr`haben. Auf diese Weise implementiert C++ das Konzept der auf *NULL festlegbaren Werttypen*.
+Eine Wertstruktur oder Wertklasse kann als Felder nur grundlegende `Platform::String^`numerische Typen, Enumerumklassen, , oder [Platform::IBox \<T>,](../cppcx/platform-ibox-interface.md) wobei T ein numerischer Typ oder eine Enumerumklasse oder Wertklasse oder -struktur ist. Ein `IBox<T>^` -Feld kann den Wert `nullptr`haben. Auf diese Weise implementiert C++ das Konzept der auf *NULL festlegbaren Werttypen*.
 
 Eine Wertklasse oder Wertstruktur, die einen `Platform::String^` - oder `IBox<T>^` -Typ als Member enthält, das nicht `memcpy`-fähig ist.
 
@@ -68,13 +68,13 @@ Wenn Sie über einen Werttyp als Funktions- oder Methodenparameter verfügen, wi
 
 Verwenden Sie zum Deklarieren eines Parameters, der einen Werttyp als Wert übergibt, Code wie den folgenden:
 
-```
+```cpp
 void Method1(MyValueType obj);
 ```
 
 Um einen Parameter zu deklarieren, der einen Werttyp als Verweis übergibt, verwenden Sie das Verweissymbol (&), wie im Folgenden dargestellt:
 
-```
+```cpp
 void Method2(MyValueType& obj);
 ```
 
@@ -90,7 +90,7 @@ Sie können auch ein Zeigersymbol (*) verwenden, um einen Werttyp als Verweis zu
 
 ## <a name="nullable-value-types"></a>Auf NULL festlegbare Werttypen
 
-Wie bereits erwähnt, kann eine Wert Klasse oder eine Wert Struktur ein Feld vom Typ [Platform:: iBox\<T > ^](../cppcx/platform-ibox-interface.md)haben `IBox<int>^`– z. b. Ein solches Feld kann jeden beliebigen numerischen Wert haben, der für den Typ `int` gültig ist, oder er kann den Wert `nullptr`haben. Sie können ein auf NULL festlegbares Feld als Argument an eine Methode, deren Parameter als optional deklariert ist, oder an eine beliebige andere Stelle übergeben, für die ein Werttyp keinen Wert haben muss.
+Wie bereits erwähnt, kann eine Wertklasse oder Wertstruktur ein Feld vom Typ [Platform::IBox\<T>.](../cppcx/platform-ibox-interface.md) `IBox<int>^` Ein solches Feld kann jeden beliebigen numerischen Wert haben, der für den Typ `int` gültig ist, oder er kann den Wert `nullptr`haben. Sie können ein auf NULL festlegbares Feld als Argument an eine Methode, deren Parameter als optional deklariert ist, oder an eine beliebige andere Stelle übergeben, für die ein Werttyp keinen Wert haben muss.
 
 Im folgenden Beispiel wird veranschaulicht, wie eine Struktur mit einem auf NULL festlegbaren Feld initialisiert wird.
 
@@ -147,9 +147,9 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Typsystem (C++/CX)](../cppcx/type-system-c-cx.md)<br/>
+[Typsystem (C++-CX)](../cppcx/type-system-c-cx.md)<br/>
 [C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
-[Referenz zu Namespaces](../cppcx/namespaces-reference-c-cx.md)<br/>
+[Namespaces-Referenz](../cppcx/namespaces-reference-c-cx.md)<br/>
 [Verweisklassen und Strukturen (C++/CX)](../cppcx/ref-classes-and-structs-c-cx.md)

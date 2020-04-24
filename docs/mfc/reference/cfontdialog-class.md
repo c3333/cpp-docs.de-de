@@ -34,12 +34,12 @@ helpviewer_keywords:
 - CFontDialog [MFC], IsUnderline
 - CFontDialog [MFC], m_cf
 ms.assetid: 6228d500-ed0f-4156-81e5-ab0d57d1dcf4
-ms.openlocfilehash: 6ece239496def9fd65a95a622ac3c475fe5becea
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6a8e24b68f377235c1f1e21fbcd5618aebbe299a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373827"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755013"
 ---
 # <a name="cfontdialog-class"></a>CFontDialog-Klasse
 
@@ -118,7 +118,7 @@ Weitere Informationen zur `CFontDialog`Verwendung finden Sie unter [Allgemeine D
 
 `CFontDialog`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdlgs.h
 
@@ -196,7 +196,7 @@ Wenn `DoModal` IDOK zurückgegeben wird, können Sie andere Memberfunktionen auf
 
 Ruft die Zeichenformatierung der ausgewählten Schriftart ab.
 
-```
+```cpp
 void GetCharFormat(CHARFORMAT& cf) const;
 ```
 
@@ -225,7 +225,7 @@ Die Farbe der ausgewählten Schriftart.
 
 Rufen Sie diese Funktion auf, um den Membern einer [LOGFONT-Struktur](/windows/win32/api/wingdi/ns-wingdi-logfontw) die Merkmale der aktuell ausgewählten Schriftart zuzuweisen.
 
-```
+```cpp
 void GetCurrentFont(LPLOGFONT lplf);
 ```
 
@@ -392,7 +392,7 @@ Nach dem `CFontDialog` Erstellen eines `m_cf` Objekts können Sie verschiedene A
 
 [!code-cpp[NVC_MFCDocView#89](../../mfc/codesnippet/cpp/cfontdialog-class_12.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [CCommonDialog-Klasse](../../mfc/reference/ccommondialog-class.md)<br/>

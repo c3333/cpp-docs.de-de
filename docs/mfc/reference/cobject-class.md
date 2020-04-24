@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CObject [MFC], IsSerializable
 - CObject [MFC], Serialize
 ms.assetid: 95e9acd3-d9eb-4ac0-b52b-ca4a501a7a3a
-ms.openlocfilehash: cea4d09a1c1a4680b095a40fa0619287959ff4ce
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 66d76e0062d13b2bd5a16d9b07f99db9e989805a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81360423"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753991"
 ---
 # <a name="cobject-class"></a>CObject-Klasse
 
@@ -89,7 +89,7 @@ Informationen zum Ableiten von Microsoft Foundation-Klassen und C++-Klassen im A
 
 `CObject`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -275,7 +275,7 @@ Eine Auflistung der `CAge` in allen `CObject` Beispielen verwendeten Klasse find
 
 Für die Release-Version der Bibliothek gibt der Operator **delete** den vom Operator **new**zugewiesenen Speicher frei.
 
-```
+```cpp
 void PASCAL operator delete(void* p);
 
 void PASCAL operator delete(
@@ -312,7 +312,7 @@ Eine Auflistung der in den `CAge` `CObject` Beispielen verwendeten Klasse finden
 
 Für die Release-Version der Bibliothek führt der Operator **new** `malloc`eine optimale Speicherzuweisung in ähnlicher Weise aus.
 
-```
+```cpp
 void* PASCAL operator new(size_t nSize);
 void* PASCAL operator new(size_t, void* p);
 
@@ -374,6 +374,6 @@ Eine Auflistung der `CAge` in allen `CObject` Beispielen verwendeten Klasse find
 
 [!code-cpp[NVC_MFCCObjectSample#13](../../mfc/codesnippet/cpp/cobject-class_10.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

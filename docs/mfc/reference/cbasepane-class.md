@@ -166,12 +166,12 @@ helpviewer_keywords:
 - CBasePane [MFC], UndockPane
 - CBasePane [MFC], DoPaint
 ms.assetid: 8163dd51-d7c7-4def-9c74-61f8ecdfad82
-ms.openlocfilehash: 56e4e30e23262da677c014a18e9fb8b175a6903d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 941f32dfadffd97210586edd7c2aa63c3c1708cd
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352939"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752992"
 ---
 # <a name="cbasepane-class"></a>CBasePane-Klasse
 
@@ -356,7 +356,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CBasePane](../../mfc/reference/cbasepane-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxbasepane.h
 
@@ -377,7 +377,7 @@ virtual void AccNotifyObjectFocusEvent(int);
 
 Fügt dem Docking-Manager einen Bereich hinzu.
 
-```
+```cpp
 void AddPane(CBasePane* pBar);
 ```
 
@@ -726,7 +726,7 @@ Sie können eine beliebige Kombination aus untergeordneten Fensterstilen und MFC
 
 Die Bibliothek fügt mehrere neue Stile für Bereiche hinzu. In der folgenden Tabelle werden die neuen Formatvorlagen beschrieben:
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |AFX_CBRS_FLOAT|Der Bereich kann schweben.|
 |AFX_CBRS_AUTOHIDE|Der Bereich unterstützt den Auto-Hide-Modus|
@@ -774,7 +774,7 @@ Rufen Sie diese Funktion auf, um einen Bereich an einen anderen Bereich oder ein
 
 Dockt den Bereich mithilfe von Laufzeittypinformationen an.
 
-```
+```cpp
 void DockPaneUsingRTTI(BOOL bUseDockSite);
 ```
 
@@ -1011,7 +1011,7 @@ Eine bitweise-OR-Kombination aus AFX_CBRS_-Flags.
 
 Der Rückgabewert ist eine Kombination der folgenden möglichen Werte.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |AFX_CBRS_FLOAT|Lässt die Steuerleiste schweben.|
 |AFX_CBRS_AUTOHIDE|Aktiviert den Auto-Hide-Modus.|
@@ -1740,7 +1740,7 @@ virtual void RecalcLayout();
 
 Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der Liste im Docking-Manager.
 
-```
+```cpp
 void RemovePaneFromDockManager(
     CBasePane* pBar,
     BOOL bDestroy = TRUE,
@@ -1826,7 +1826,7 @@ virtual void SetControlBarStyle(DWORD dwNewStyle);
 *dwNewStyle*<br/>
 [in] Eine bitweise-ODER-Kombination der folgenden möglichen Werte.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |AFX_CBRS_FLOAT|Lässt die Steuerleiste schweben.|
 |AFX_CBRS_AUTOHIDE|Aktiviert den Auto-Hide-Modus.|
@@ -1837,7 +1837,7 @@ virtual void SetControlBarStyle(DWORD dwNewStyle);
 
 Legt den Andockmodus für den Bereich fest.
 
-```
+```cpp
 void SetDockingMode(AFX_DOCK_TYPE dockModeNew);
 ```
 
@@ -1919,10 +1919,10 @@ virtual HDWP SetWindowPos(
 *pWndInsertAfter*<br/>
 [in] Identifiziert `CWnd` das Objekt, `CWnd` das vor diesem Objekt in der Z-Reihenfolge steht. Weitere Informationen finden Sie unter [CWnd::SetWindowPos](../../mfc/reference/cwnd-class.md#setwindowpos).
 
-*X*<br/>
+*x*<br/>
 [in] Gibt die Position der linken Seite des Fensters an.
 
-*y*<br/>
+*Y*<br/>
 [in] Gibt die Position am oberen Rand des Fensters an.
 
 *Cx*<br/>
@@ -2014,7 +2014,7 @@ Rufen Sie diese Methode auf, um den Bereichsstatus zu bearbeiten oder den Bereic
 
 Wenn Sie diesen Bereich weiterhin verwenden möchten, rufen Sie entweder [CBasePane::DockPane](#dockpane) oder [CBasePane::FloatPane](#floatpane) auf, bevor Sie diese Methode aufrufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

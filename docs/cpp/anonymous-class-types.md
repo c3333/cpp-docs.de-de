@@ -5,12 +5,12 @@ helpviewer_keywords:
 - class types [C++], anonymous
 - anonymous class types
 ms.assetid: 9ba667b2-8c2a-4c29-82a6-fa120b9233c8
-ms.openlocfilehash: 611c1ed9853fc7e6e0788a7276890b14ec84a523
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e227f48588c3c4f59c0d0bd28ab16178de159b58
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373342"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032082"
 ---
 # <a name="anonymous-class-types"></a>Anonyme Klassentypen
 
@@ -53,7 +53,7 @@ Anonyme Klassen unterliegen bestimmten Einschränkungen. (Weitere Informationen 
 
 - Können keinen Konstruktor oder Destruktor aufweisen.
 
-- Können nicht als Argumente an Funktionen übergeben werden (es sei denn, die Typüberprüfung wird mithilfe von Ellipsen außer Kraft gesetzt).
+- Kann nicht als Argumente an Funktionen übergeben werden (es sei denn, die Typprüfung wird mit Auslassungsfunktionen besiegt).
 
 - Können nicht als Rückgabewerte von Funktionen zurückgegeben werden.
 

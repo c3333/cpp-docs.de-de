@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CAnimationTimerEventHandler [MFC], OnRenderingTooSlow
 - CAnimationTimerEventHandler [MFC], SetAnimationController
 ms.assetid: 188dea3b-4b5e-4f6b-8df9-09d993a21619
-ms.openlocfilehash: 72b6e5d8d9d4823795a1fb053c5f2374cb80fba4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d1653e50fef03deb8eb23dd9a989d1ca2a529dd8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81320014"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755089"
 ---
 # <a name="canimationtimereventhandler-class"></a>CAnimationTimerEventHandler-Klasse
 
@@ -57,7 +57,7 @@ Dieser Ereignishandler wird erstellt und an IUIAnimationTimer::SetTimerEventHand
 
 `CAnimationTimerEventHandler`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -126,7 +126,7 @@ S_OK, ob die Methode erfolgreich ist. andernfalls E_FAIL.
 
 Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.
 
-```
+```cpp
 void SetAnimationController(CAnimationController* pAnimationController);
 ```
 
@@ -135,6 +135,6 @@ void SetAnimationController(CAnimationController* pAnimationController);
 *pAnimationController*<br/>
 Ein Zeiger auf den Animationscontroller, der Ereignisse empfängt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

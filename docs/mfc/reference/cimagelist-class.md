@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CImageList [MFC], Write
 - CImageList [MFC], m_hImageList
 ms.assetid: b6d1a704-1c82-4548-8a8f-77972adc98a5
-ms.openlocfilehash: eff2d0c1de88ebd9d949ebe197563c87c17e5b05
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 17cd2a94cb397e59e4622aea8ed7bb6fbe1eee43
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372445"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752687"
 ---
 # <a name="cimagelist-class"></a>CImageList-Klasse
 
@@ -162,7 +162,7 @@ Weitere Informationen zur `CImageList`Verwendung von finden Sie unter [Steuerele
 
 `CImageList`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -691,13 +691,13 @@ Ein Zeiger auf den Zielgerätekontext. Sie müssen dieses [CDC-Objekt](../../mfc
 Der nullbasierte Index des zu zeichnenden Bildes.
 
 *Pt*<br/>
-Eine [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die x- und y-Koordinaten enthält, in denen das Bild gezeichnet wird.
+Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die x- und y-Koordinaten enthält, in denen das Bild gezeichnet wird.
 
 *Sz*<br/>
 Eine [SIZE](/windows/win32/api/windef/ns-windef-size) SIZE-Struktur, die die Größe des zu zeichnenden Bildes angibt.
 
 *ptOrigin*<br/>
-Eine [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die x- und y-Koordinaten enthält, die die obere linke Ecke des Zeichnungsvorgangs in Bezug auf das Bild selbst angibt. Pixel des Bildes, die sich links von der x-Koordinate und oberhalb der y-Koordinate befinden, werden nicht gezeichnet.
+Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die x- und y-Koordinaten enthält, die die obere linke Ecke des Zeichnungsvorgangs in Bezug auf das Bild selbst angibt. Pixel des Bildes, die sich links von der x-Koordinate und oberhalb der y-Koordinate befinden, werden nicht gezeichnet.
 
 *fStyle*<br/>
 Flag, das den Zeichnungsstil und optional das Überlagerungsbild angibt. Weitere Informationen zum Überlagerungsbild finden Sie im Abschnitt "Bemerkungen". Die MFC-Standardimplementierung ILD_NORMAL zeichnet das Bild mit der Hintergrundfarbe für die Bildliste. Wenn die Hintergrundfarbe der CLR_NONE Wert ist, wird das Bild transparent mit einer Maske gezeichnet.
@@ -874,7 +874,7 @@ static CImageList* PASCAL GetDragImage(
 ### <a name="parameters"></a>Parameter
 
 *lpPoint*<br/>
-Adresse einer [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die aktuelle Ziehposition empfängt.
+Adresse einer [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die aktuelle Ziehposition empfängt.
 
 *lpPointHotSpot*<br/>
 Adresse einer `POINT` Struktur, die den Versatz des Ziehbildes relativ zur Ziehposition empfängt.
@@ -1191,7 +1191,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 [!code-cpp[NVC_MFC_CImageList#17](../../mfc/reference/codesnippet/cpp/cimagelist-class_23.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

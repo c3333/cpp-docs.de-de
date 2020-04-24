@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CMFCPropertyGridToolTipCtrl [MFC], SetTextMargin
 - CMFCPropertyGridToolTipCtrl [MFC], Track
 ms.assetid: 84b436e5-6695-4da0-9569-1a875e087711
-ms.openlocfilehash: 94d75f914e5f7928d08dd2a87997ab02c4f16832
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fc5d6d99c326fba7020e8c5040c3bf28d09f8f0a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361791"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754118"
 ---
 # <a name="cmfcpropertygridtooltipctrl-class"></a>CMFCPropertyGridToolTipCtrl-Klasse
 
@@ -82,7 +82,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCPropertyGridToolTipCtrl` wie ei
 
 [CMFCPropertyGridToolTipCtrl](../../mfc/reference/cmfcpropertygridtooltipctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxpropertygridtooltipctrl.h
 
@@ -115,7 +115,7 @@ TRUE, wenn das Fenster erfolgreich erstellt wurde; andernfalls FALSE.
 
 Deaktiviert und blendet das QuickInfo-Steuerelement aus.
 
-```
+```cpp
 void Deactivate();
 ```
 
@@ -127,7 +127,7 @@ Diese Methode legt die letzte Position und den letzten Text auf leere Werte fest
 
 Gibt die Koordinaten der letzten Position des QuickInfo-Steuerelements zurück.
 
-```
+```cpp
 void GetLastRect(CRect& rect) const;
 ```
 
@@ -140,7 +140,7 @@ void GetLastRect(CRect& rect) const;
 
 Blendet das QuickInfo-Steuerelement aus.
 
-```
+```cpp
 void Hide();
 ```
 
@@ -148,7 +148,7 @@ void Hide();
 
 Legt den Abstand zwischen dem QuickInfo-Text und dem Rahmen des QuickInfo-Fensters fest.
 
-```
+```cpp
 void SetTextMargin(int nTextMargin);
 ```
 
@@ -161,7 +161,7 @@ void SetTextMargin(int nTextMargin);
 
 Zeigt das QuickInfo-Steuerelement an.
 
-```
+```cpp
 void Track(
     CRect rect,
     const CString& strText);
@@ -179,7 +179,7 @@ void Track(
 
 Diese Methode zeigt das QuickInfo-Steuerelement an der Position und Größe an, die durch *rect*angegeben wird. Wenn sich Position, Größe und Text seit dem letzten Aufruf dieser Methode nicht geändert haben, hat diese Methode keine Auswirkungen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

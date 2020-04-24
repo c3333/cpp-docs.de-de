@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CMFCShellTreeCtrl [MFC], SetFlags
 - CMFCShellTreeCtrl [MFC], SetRelatedList
 ms.assetid: 3d1da715-9554-4ed7-968c-055c48146267
-ms.openlocfilehash: 41d9a14e379c566f001eda8b10b2669b95beb171
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c6f5856e92c2aca1d23ee6a37b99ea9700ea6db0
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376139"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753444"
 ---
 # <a name="cmfcshelltreectrl-class"></a>CMFCShellTreeCtrl-Klasse
 
@@ -81,7 +81,7 @@ Diese Klasse erweitert `CTreeCtrl` die Klasse, indem es dem Programm ermöglicht
 
 `CMFCShellTreeCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxshelltreeCtrl.h
 
@@ -96,7 +96,7 @@ Im folgenden Beispiel wird gezeigt, wie ein Objekt der `CMFCShellTreeCtrl`-Klass
 
 Aktiviert das Kontextmenü.
 
-```
+```cpp
 void EnableShellContextMenu(BOOL bEnable = TRUE);
 ```
 
@@ -221,7 +221,7 @@ virtual CString OnGetItemText(LPAFX_SHELLITEMINFO pItem);
 
 Aktualisiert und zeichnet die [CMFCShellTreeCtrl](../../mfc/reference/cmfcshelltreectrl-class.md)neu.
 
-```
+```cpp
 void Refresh();
 ```
 
@@ -254,7 +254,7 @@ S_OK, wenn erfolgreich; E_FAIL sonst.
 
 Legt Flags fest, um den Strukturkontext zu filtern.
 
-```
+```cpp
 void SetFlags(
     DWORD dwFlags,
     BOOL bRefresh = TRUE);
@@ -276,7 +276,7 @@ Die `CMFCShellTreeCtrl` übergibt alle set flags an [IShellFolder::EnumObjects](
 
 Ordnet ein [CMFCShellListCtrl-Objekt](../../mfc/reference/cmfcshelllistctrl-class.md) einem [CMFCShellTreeCtrl-Objekt](../../mfc/reference/cmfcshelltreectrl-class.md) zu.
 
-```
+```cpp
 void SetRelatedList(CMFCShellListCtrl* pShellList);
 ```
 
@@ -291,7 +291,7 @@ Diese Methode `CMFCShellListCtrl` ordnet `CMFCShellTreeCtrl`eine mit einer zu. D
 
 Verwenden Sie die Methode [CMFCShellTreeCtrl::GetRelatedList,](#getrelatedlist) um die `CMFCShellListCtrl` zugeordnete mit einer `CMFCShellTreeCtrl`abzurufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CMFCRibbonMiniToolBar [MFC], Show
 - CMFCRibbonMiniToolBar [MFC], ShowWithContextMenu
 ms.assetid: 7017e963-aeaf-4fe9-b540-e15a7ed41e94
-ms.openlocfilehash: 10b1d35c331df6563d09be0bea3c97c73e89acaa
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5e5ac6c923640b7584d89a9c6f75d941deadddf3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375090"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754083"
 ---
 # <a name="cmfcribbonminitoolbar-class"></a>CMFCRibbonMiniToolBar-Klasse
 
@@ -78,7 +78,7 @@ Die Minisymbolleiste wird transparent, wenn der Mauszeiger sich außerhalb des g
 
 [CMFCRibbonMiniToolBar](../../mfc/reference/cmfcribbonminitoolbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxRibbonMiniToolBar.h
 
@@ -86,7 +86,7 @@ Die Minisymbolleiste wird transparent, wenn der Mauszeiger sich außerhalb des g
 
 Legt die Liste der auf der Symbolleiste anzuzeigenden Befehle fest.
 
-```
+```cpp
 void SetCommands(
     CMFCRibbonBar* pRibbonBar,
     const CList<UINT,UINT>& lstCommands);
@@ -122,10 +122,10 @@ BOOL Show(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 [in] Gibt die horizontale Position der Minisymbolleiste in Bildschirmkoordinaten an.
 
-*y*<br/>
+*Y*<br/>
 [in] Gibt die vertikale Position der Minisymbolleiste in Bildschirmkoordinaten an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -146,10 +146,10 @@ BOOL ShowWithContextMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 [in] Gibt die horizontale Position des Kontextmenüs in Bildschirmkoordinaten an.
 
-*y*<br/>
+*Y*<br/>
 [in] Gibt die vertikale Position des Kontextmenüs in Bildschirmkoordinaten an.
 
 *uiMenuResID*<br/>
@@ -190,7 +190,7 @@ virtual BOOL IsRibbonMiniToolBar() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

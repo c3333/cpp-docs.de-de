@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CMFCCmdUsageCount [MFC], Serialize
 - CMFCCmdUsageCount [MFC], SetOptions
 ms.assetid: 9c33b783-37c0-43ea-9f31-3c75e246c841
-ms.openlocfilehash: 1c03f0c62e508f9d00a352b71c8f3a18604e36c0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 02b302ec38922128190a6f20ce2f156b52383b55
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367741"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752583"
 ---
 # <a name="cmfccmdusagecount-class"></a>CMFCCmdUsageCount-Klasse
 
@@ -82,7 +82,7 @@ Sie können `CMFCCmdUsageCount` Klassendaten zwischen den Ausführungen des Prog
 
 [CMFCCmdUsageCount](../../mfc/reference/cmfccmdusagecount-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcmdusagecount.h
 
@@ -90,7 +90,7 @@ Sie können `CMFCCmdUsageCount` Klassendaten zwischen den Ausführungen des Prog
 
 Erhöht um eins den Zähler, der dem angegebenen Befehl zugeordnet ist.
 
-```
+```cpp
 void AddCmd(UINT uiCmd);
 ```
 
@@ -179,7 +179,7 @@ Diese Methode gibt 0 zurück, `m_nTotalUsage`wenn die Gesamtbefehlsverwendung 0 
 
 Löscht die Verwendungsanzahl aller Befehle.
 
-```
+```cpp
 void Reset();
 ```
 
@@ -236,7 +236,7 @@ Diese Methode legt `CMFCCmdUsageCount` die `m_nStartCount` shared `m_nMinUsagePe
 
 In Debug-Builds generiert diese Methode einen Assertionsfehler, wenn der Parameter *nMinUsagePercentage* größer oder gleich 100 ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -100,12 +100,12 @@ helpviewer_keywords:
 - CRichEditView [MFC], m_nBulletIndent
 - CRichEditView [MFC], m_nWordWrap
 ms.assetid: bd576b10-4cc0-4050-8f76-e1a0548411e4
-ms.openlocfilehash: 2d832f3cc07d39ace9e679901c5344a376cea03c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b72daac576411b45908d1e91bd86bbd9aeacf738
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318636"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754456"
 ---
 # <a name="cricheditview-class"></a>CRichEditView-Klasse
 
@@ -210,7 +210,7 @@ Ein Beispiel für die Verwendung einer umfangreichen Bearbeitungsansicht [WORDPA
 
 `CRichEditView`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxrich.h
 
@@ -218,7 +218,7 @@ Ein Beispiel für die Verwendung einer umfangreichen Bearbeitungsansicht [WORDPA
 
 Rufen Sie diese Funktion auf, um das angegebene Dialogfeld so zu verschieben, dass die aktuelle Auswahl nicht verdeckt wird.
 
-```
+```cpp
 void AdjustDialogPosition(CDialog* pDlg);
 ```
 
@@ -251,7 +251,7 @@ CRichEditView();
 
 Rufen Sie diese Funktion auf, um das OLE-Element in *dataobj* in dieses umfangreiche Bearbeitungsdokument/diese umfassende Bearbeitungsdokument/-ansicht einzufügen.
 
-```
+```cpp
 void DoPaste(
     COleDataObject& dataobj,
     CLIPFORMAT cf,
@@ -643,7 +643,7 @@ Die Anzahl der Zeichen oder Bytes im Bearbeitungssteuerelement. Wenn inkompatibl
 
 Rufen Sie diese Funktion auf, um die angegebene Datei (als [CRichEditCntrItem-Objekt)](../../mfc/reference/cricheditcntritem-class.md) in eine umfangreiche Bearbeitungsansicht einzufügen.
 
-```
+```cpp
 void InsertFileAsObject(LPCTSTR lpszFileName);
 ```
 
@@ -745,7 +745,7 @@ Einer der folgenden Werte:
 
 Rufen Sie diese Funktion auf, um die Zeichenformatierungseffekte für die aktuelle Auswahl umzuschalten.
 
-```
+```cpp
 void OnCharEffect(
     DWORD dwMask,
     DWORD dwEffect);
@@ -844,7 +844,7 @@ Weitere Informationen finden Sie unter [IStorage](/windows/win32/api/objidl/nn-o
 
 Rufen Sie diese Funktion auf, um die Absatzausrichtung für die ausgewählten Absätze zu ändern.
 
-```
+```cpp
 void OnParaAlign(WORD wAlign);
 ```
 
@@ -975,7 +975,7 @@ Weitere Informationen finden Sie unter [MessageBeep](/windows/win32/api/winuser/
 
 Das Framework ruft diese Funktion auf, um die Befehlsbenutzeroberfläche für Zeicheneffektbefehle zu aktualisieren.
 
-```
+```cpp
 void OnUpdateCharEffect(
     CCmdUI* pCmdUI,
     DWORD dwMask,
@@ -1007,7 +1007,7 @@ Weitere Informationen zu den Parametern *dwMask* und *dwEffect* und deren potenz
 
 Das Framework ruft diese Funktion auf, um die Befehlsbenutzeroberfläche für Absatzeffektbefehle zu aktualisieren.
 
-```
+```cpp
 void OnUpdateParaAlign(
     CCmdUI* pCmdUI,
     WORD wAlign);
@@ -1153,7 +1153,7 @@ Weitere Informationen zu HRESULT und `IDataObject`, siehe Struktur von [COM-Fehl
 
 Rufen Sie diese Funktion auf, um die `CRichEditView` Zeichenformatierungsattribute für neuen Text in diesem Objekt festzulegen.
 
-```
+```cpp
 void SetCharFormat(CHARFORMAT2 cf);
 ```
 
@@ -1176,7 +1176,7 @@ Weitere Informationen finden Sie [unter EM_SETCHARFORMAT](/windows/win32/Control
 
 Rufen Sie diese Funktion auf, um die Druckränder für diese umfangreiche Bearbeitungsansicht festzulegen.
 
-```
+```cpp
 void SetMargins(const CRect& rectMargin);
 ```
 
@@ -1199,7 +1199,7 @@ Beachten Sie, dass die von [PrintPage](#printpage) verwendeten Ränder relativ z
 
 Rufen Sie diese Funktion auf, um das Papierformat für das Drucken dieser umfangreichen Bearbeitungsansicht festzulegen.
 
-```
+```cpp
 void SetPaperSize(CSize sizePaper);
 ```
 
@@ -1247,7 +1247,7 @@ Weitere Informationen finden Sie [unter EM_SETPARAFORMAT](/windows/win32/Control
 
 Rufen Sie diese Funktion auf, um den internen Suchstatus des [CRichEditView-Steuerelements](../../mfc/reference/cricheditview-class.md) nach einem fehlgeschlagenen Aufruf von [FindText](#findtext)zurückzusetzen.
 
-```
+```cpp
 void TextNotFound(LPCTSTR lpszFind);
 ```
 
@@ -1282,7 +1282,7 @@ virtual void WrapChanged();
 
 [!code-cpp[NVC_MFCDocView#163](../../mfc/codesnippet/cpp/cricheditview-class_13.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel WORDPAD](../../overview/visual-cpp-samples.md)<br/>
 [CCtrlView-Klasse](../../mfc/reference/cctrlview-class.md)<br/>

@@ -52,12 +52,12 @@ helpviewer_keywords:
 - CMFCToolBarEditBoxButton [MFC], SetContextMenuID
 - CMFCToolBarEditBoxButton [MFC], SetFlatMode
 ms.assetid: b21d9b67-6bf7-4ca9-bd62-b237756e0ab3
-ms.openlocfilehash: 52989f7b523bf0ba9a00da350242a968ca0db153
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 064ebe1c8fe377064d410d09e5ef60ed628df2f3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81360474"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753996"
 ---
 # <a name="cmfctoolbareditboxbutton-class"></a>CMFCToolBarEditBoxButton-Klasse
 
@@ -143,7 +143,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 `CMFCToolBarEditBoxButton`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxtoolbareditboxbutton.h
 
@@ -638,7 +638,7 @@ Ein Wert ungleich Null, wenn der Text festgelegt wurde; 0, `CMFCToolBarEditBoxBu
 
 Gibt die Ressourcen-ID des Kontextmenüs an, das der Schaltfläche zugeordnet ist.
 
-```
+```cpp
 void SetContextMenuID(UINT uiResID);
 ```
 
@@ -685,7 +685,7 @@ virtual void SetStyle(UINT nStyle);
 
 Diese Methode legt [CMFCToolBarButton::m_nStyle](../../mfc/reference/cmfctoolbarbutton-class.md#m_nstyle) auf *nStyle* fest Es deaktiviert auch das Textfeld, wenn sich die Anwendung im Anpassungsmodus befindet, und aktiviert es, wenn sich die Anwendung nicht im Anpassungsmodus befindet (siehe [CMFCToolBar::SetCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#setcustomizemode) und [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode)). Eine Liste gültiger Stilflags finden Sie unter [ToolBar-Steuerelementvorlagen.](../../mfc/reference/toolbar-control-styles.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

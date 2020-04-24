@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CMFCListCtrl [MFC], SetSortColumn
 - CMFCListCtrl [MFC], Sort
 ms.assetid: 50d16aee-138c-4f34-8690-cb75d544ef2e
-ms.openlocfilehash: 63fbfd236ed98eee3b90f4a20b191817026903c7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 099ec086bd95a1180af4cf5a8f6a9fa7f1d099ea
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370773"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754234"
 ---
 # <a name="cmfclistctrl-class"></a>CMFCListCtrl-Klasse
 
@@ -86,7 +86,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCListCtrl](../../mfc/reference/cmfclistctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxlistctrl.h
 
@@ -94,7 +94,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 Markiert die sortierten Spalten mit einer anderen Hintergrundfarbe.
 
-```
+```cpp
 void EnableMarkSortedColumn(
     BOOL bMark = TRUE,
     BOOL bRedraw = TRUE);
@@ -116,7 +116,7 @@ void EnableMarkSortedColumn(
 
 Ermöglicht das Sortieren der Datenzeilen im Listensteuerelement nach mehreren Spalten.
 
-```
+```cpp
 void EnableMultipleSort(BOOL bEnable = TRUE);
 ```
 
@@ -277,7 +277,7 @@ Standardmäßig ruft diese `GetTextColor` Methode unabhängig von Eingabeparamet
 
 Entfernt eine Sortierspalte aus der Liste der sortierten Spalten.
 
-```
+```cpp
 void RemoveSortColumn(int iColumn);
 ```
 
@@ -294,7 +294,7 @@ Diese Methode entfernt eine Sortierspalte aus dem Headersteuerelement. Es ruft [
 
 Legt die aktuelle sortierte Spalte und die Sortierreihenfolge fest.
 
-```
+```cpp
 void SetSortColumn(
     int iColumn,
     BOOL bAscending = TRUE,
@@ -338,7 +338,7 @@ virtual void Sort(
 *bHinzufügen*<br/>
 [in] Ein boolescher Wert, der angibt, ob diese Methode die durch *iColumn* angegebene Spalte zur Liste der Sortierspalten hinzufügt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

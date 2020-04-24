@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CAutoHideDockSite [MFC], UnSetAutoHideMode
 - CAutoHideDockSite [MFC], m_nExtraSpace
 ms.assetid: 2a0f6bec-c369-4ab7-977d-564e7946ebad
-ms.openlocfilehash: 3a4593ac17f0af26517144edb7b01a9ca4203b1a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1f23729ced02a151c6186bdcc72cb8938416be46
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352982"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752996"
 ---
 # <a name="cautohidedocksite-class"></a>CAutoHideDockSite-Klasse
 
@@ -94,7 +94,7 @@ Im folgenden Beispiel wird `CAutoHideDockSite` veranschaulicht, `CMFCAutoHideBar
 
 [!code-cpp[NVC_MFC_RibbonApp#29](../../mfc/reference/codesnippet/cpp/cautohidedocksite-class_1.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxautohidedocksite.h
 
@@ -151,7 +151,7 @@ Wenn *lpRect* NULL ist, legt das Framework den Bereich an der Standardposition a
 
 Ruft die Größe der Dock-Site in Bildschirmkoordinaten ab.
 
-```
+```cpp
 void GetAlignRect(CRect& rect) const;
 ```
 
@@ -182,7 +182,7 @@ Wenn `CMFCAutoHideBar` a an einem `CAutoHideDockSite`angedockt ist, sollte es ni
 
 Legt den Rand auf der linken Seite der Dockingleiste fest.
 
-```
+```cpp
 void SetOffsetLeft(int nOffset);
 ```
 
@@ -199,7 +199,7 @@ void SetOffsetLeft(int nOffset);
 
 Legt den Rand auf der rechten Seite der Dockingleiste fest.
 
-```
+```cpp
 void SetOffsetRight(int nOffset);
 ```
 
@@ -235,7 +235,7 @@ Die Standardimplementierung verwendet nicht *rectNewClientArea*. Es zeichnet die
 
 Ruft [CMFCAutoHideBar::UnSetAutoHideMode](../../mfc/reference/cmfcautohidebar-class.md#unsetautohidemode) für Objekte auf der Dock-Site auf.
 
-```
+```cpp
 void UnSetAutoHideMode(CMFCAutoHideBar* pAutoHideToolbar);
 ```
 
@@ -250,7 +250,7 @@ void UnSetAutoHideMode(CMFCAutoHideBar* pAutoHideToolbar);
 
 Diese Methode sucht nach der Zeile, die *pAutoHideToolbar*enthält. Es `CMFCAutoHideBar.UnSetAutoHideMode` ruft nach `CMFCAutoHideBar` allen Objekten in dieser Zeile. Wenn *pAutoHideToolbar* nicht gefunden wird oder NULL `CMFCAutoHideBar.UnSetAutoHideMode` ist, `CMFCAutoHideBar` ruft `CAutoHideDockSite`diese Methode alle Objekte auf der auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

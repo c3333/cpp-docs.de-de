@@ -34,12 +34,12 @@ helpviewer_keywords:
 - CMDIFrameWnd [MFC], MDISetMenu
 - CMDIFrameWnd [MFC], MDITile
 ms.assetid: fa8736e6-511b-4c51-8b4d-eba78378aeb9
-ms.openlocfilehash: a6e68f6368a7b45e0a566a7d2d12f23a9cd62b12
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d5c9bc12e6c3f0ab4742a940547087c9742caf73
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370061"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754545"
 ---
 # <a name="cmdiframewnd-class"></a>CMDIFrameWnd-Klasse
 
@@ -127,7 +127,7 @@ Weitere Informationen `CMDIFrameWnd`zu finden Sie unter [Frame Windows](../../mf
 
 `CMDIFrameWnd`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -242,7 +242,7 @@ Die Standardimplementierung sucht nach einem Popupmenü, das Standardmäßige Me
 
 Aktiviert ein anderes untergeordnetes MDI-Fenster.
 
-```
+```cpp
 void MDIActivate(CWnd* pWndActivate);
 ```
 
@@ -268,7 +268,7 @@ Siehe Beispiel für [CMDIFrameWnd::GetWindowMenuPopup](#getwindowmenupopup).
 
 Ordnet alle untergeordneten MDI-Fenster in einem Kaskadenformat an.
 
-```
+```cpp
 void MDICascade();
 void MDICascade(int nType);
 ```
@@ -311,7 +311,7 @@ Siehe Beispiel für [CMDIChildWnd::MDIMaximize](../../mfc/reference/cmdichildwnd
 
 Ordnet alle minimierten untergeordneten Dokumentfenster an.
 
-```
+```cpp
 void MDIIconArrange();
 ```
 
@@ -327,7 +327,7 @@ Siehe Beispiel für [CMDIFrameWnd::MDICascade](#mdicascade).
 
 Maximiert das angegebene untergeordnete MDI-Fenster.
 
-```
+```cpp
 void MDIMaximize(CWnd* pWnd);
 ```
 
@@ -350,7 +350,7 @@ Siehe Beispiel für [CMDIChildWnd::MDIMaximize](../../mfc/reference/cmdichildwnd
 
 Aktiviert das untergeordnete Fenster direkt hinter dem aktuell aktiven untergeordneten Fenster und platziert das aktuell aktive untergeordnete Fenster hinter allen anderen untergeordneten Fenstern.
 
-```
+```cpp
 void MDINext();
 ```
 
@@ -366,7 +366,7 @@ Wenn das aktuell aktive untergeordnete MDI-Fenster maximiert ist, stellt die Mem
 
 Aktiviert das vorherige untergeordnete Fenster und platziert das aktuell aktive untergeordnete Fenster direkt dahinter.
 
-```
+```cpp
 void MDIPrev();
 ```
 
@@ -378,7 +378,7 @@ Wenn das aktuell aktive untergeordnete MDI-Fenster maximiert ist, stellt die Mem
 
 Stellt ein untergeordnetes MDI-Fenster von einer maximierten oder minimierten Größe wieder her.
 
-```
+```cpp
 void MDIRestore(CWnd* pWnd);
 ```
 
@@ -433,7 +433,7 @@ Rufen Sie diese Memberfunktion nicht auf, wenn Sie das Framework zum Verwalten I
 
 Ordnet alle untergeordneten Fenster in einem gekachelten Format an.
 
-```
+```cpp
 void MDITile();
 void MDITile(int nType);
 ```
@@ -457,7 +457,7 @@ Die erste `MDITile`Version von , ohne Parameter, kachelt die Fenster vertikal un
 
 Siehe Beispiel für [CMDIFrameWnd::MDICascade](#mdicascade).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel MDI](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel MDIDOCVW](../../overview/visual-cpp-samples.md)<br/>

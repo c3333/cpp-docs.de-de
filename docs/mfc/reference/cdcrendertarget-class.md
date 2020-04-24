@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CDCRenderTarget [MFC], GetDCRenderTarget
 - CDCRenderTarget [MFC], m_pDCRenderTarget
 ms.assetid: aa8059c9-08e6-49e4-9b8c-00fa54077a61
-ms.openlocfilehash: 790ce0f32c2325fa0ea92ca0bda64ddaa4c86c45
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8c07962c017d160cb3ce5841a75f1ae8a8761641
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375697"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753395"
 ---
 # <a name="cdcrendertarget-class"></a>CDCRenderTarget-Klasse
 
@@ -75,7 +75,7 @@ class CDCRenderTarget : public CRenderTarget;
 
 [CDCRenderTarget](../../mfc/reference/cdcrendertarget-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -83,7 +83,7 @@ class CDCRenderTarget : public CRenderTarget;
 
 Fügt vorhandene Renderzielschnittstelle an das Objekt an
 
-```
+```cpp
 void Attach(ID2D1DCRenderTarget* pTarget);
 ```
 
@@ -183,6 +183,6 @@ operator ID2D1DCRenderTarget*();
 
 Zeiger auf eine ID2D1DCRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

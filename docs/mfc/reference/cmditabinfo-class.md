@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CMDITabInfo [MFC], m_style
 - CMDITabInfo [MFC], m_tabLocation
 ms.assetid: 988ae1b7-4f7f-4239-b88f-7e28b3291c5e
-ms.openlocfilehash: 0d230d2a3401ab556adc1183f4c4210ec6ff3c29
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 30bf7726b35d762be2bbbd119e0303894879cd3d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370033"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752650"
 ---
 # <a name="cmditabinfo-class"></a>CMDITabInfo-Klasse
 
@@ -89,7 +89,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die `CMDITabInfo` Werte der vers
 
 [CMDITabInfo](../../mfc/reference/cmditabinfo-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxmdiclientareawnd.h
 
@@ -238,7 +238,7 @@ Auf die Registerkarten eines der folgenden Standortflags anwenden:
 
 Liest oder schreibt dieses Objekt aus einem Archiv oder in ein Archiv.
 
-```
+```cpp
 void Serialize(CArchive& ar);
 ```
 
@@ -247,7 +247,7 @@ void Serialize(CArchive& ar);
 *ar*<br/>
 [in] Ein zu serialisierendes [CArchive-Klassenobjekt.](../../mfc/reference/carchive-class.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CMDIFrameWndEx-Klasse](../../mfc/reference/cmdiframewndex-class.md)<br/>
 [MDI-Gruppen im Registerkartenformat](../../mfc/mdi-tabbed-groups.md)<br/>

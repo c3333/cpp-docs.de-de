@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CMFCRibbonMainPanel [MFC], AddToRight
 - CMFCRibbonMainPanel [MFC], GetCommandsFrame
 ms.assetid: 1af78798-5e75-4365-9c81-a54aa5679602
-ms.openlocfilehash: 1458039c25f2379b3c3db553b2010e9391df28db
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0fd1cd2fec31f9da0c2bec36d08586780f4f95c3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375104"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753568"
 ---
 # <a name="cmfcribbonmainpanel-class"></a>CMFCRibbonMainPanel-Klasse
 
@@ -72,7 +72,7 @@ Das Framework `CMFCRibbonMainPanel` zeigt die anzeige, wenn Sie das Anwendungsfe
 
 [CMFCRibbonMainPanel](../../mfc/reference/cmfcribbonmainpanel-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxRibbonMainPanel.h
 
@@ -97,7 +97,7 @@ Fügt dem Bedienfeld ein Multifunktionsleistenelement hinzu. Elemente, die mit d
 
 Fügt dem Listenmenü der letzten Dateien eine Textzeichenfolge hinzu.
 
-```
+```cpp
 void AddRecentFilesList(
     LPCTSTR lpszLabel,
     int nWidth = 300);
@@ -117,7 +117,7 @@ Gibt die Breite des Listenbereichs der letzten Dateien in Pixel an.
 
 Fügt dem unteren Bereich des Menübandbedienfelds ein Multifunktionsleistenelement hinzu.
 
-```
+```cpp
 void AddToBottom(CMFCRibbonMainPanelButton* pElem);
 ```
 
@@ -132,7 +132,7 @@ void AddToBottom(CMFCRibbonMainPanelButton* pElem);
 
 Fügt dem rechten Bereich des Anwendungsschaltflächenbereichs ein Multifunktionsleistenelement hinzu.
 
-```
+```cpp
 void AddToRight(
     CMFCRibbonBaseElement* pElem,
     int nWidth = 300);
@@ -162,7 +162,7 @@ CRect GetCommandsFrame() const;
 
 Ein Rechteck, das den Bereich des Menüband-Hauptfensters darstellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

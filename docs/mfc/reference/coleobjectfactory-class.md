@@ -36,12 +36,12 @@ helpviewer_keywords:
 - COleObjectFactory [MFC], VerifyLicenseKey
 - COleObjectFactory [MFC], VerifyUserLicense
 ms.assetid: ab179c1e-4af2-44aa-a576-37c48149b427
-ms.openlocfilehash: 9f3d86cf735c02b6021441c66d9fd64547f6d6c2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 165ba7c1918c3ccc5d5d7e0bc067fba86678a3e7
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374910"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753807"
 ---
 # <a name="coleobjectfactory-class"></a>COleObjectFactory-Klasse
 
@@ -107,7 +107,7 @@ Weitere Informationen zur Objekterstellung finden Sie in den Artikeln [Data Obje
 
 `COleObjectFactory`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -281,7 +281,7 @@ Diese Funktion wird normalerweise von [CWinApp::InitInstance](../../mfc/referenc
 
 Widerruft die Registrierung dieses Objektwerks bei den OLE-System-DLLs.
 
-```
+```cpp
 void Revoke();
 ```
 
@@ -317,7 +317,7 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 Registriert alle Objektfactorys der Anwendung in der OLE-Systemregistrierung.
 
-```
+```cpp
 void UpdateRegistry(LPCTSTR lpszProgID = NULL);
 virtual BOOL UpdateRegistry(BOOL bRegister);
 ```
@@ -398,7 +398,7 @@ virtual BOOL VerifyUserLicense();
 
 Ein Wert ungleich Null, wenn die Entwurfszeitlizenz gültig ist; andernfalls 0.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

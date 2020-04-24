@@ -15,16 +15,16 @@ f1_keywords:
 helpviewer_keywords:
 - Map Class (C++/Cx)
 ms.assetid: 2b8cf968-1167-4898-a149-1195b32c1785
-ms.openlocfilehash: 7f41a924811be95160b06a2097db6103cde8fc11
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ff27f6c543a2326dd4318f66aae51b89092b28e2
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81354449"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032446"
 ---
 # <a name="platformcollectionsmap-class"></a>Platform::Collections::Map-Klasse
 
-Stellt eine *Zuordnung*dar, die eine Auflistung von Schlüssel-Wert-Paaren ist. Implementiert [Windows::Foundation::Collections::IObservableMap](/uwp/api/windows.foundation.collections.iobservablemap_k_v_) zur Hilfe bei der XAML-Datenbindung . [data binding](/windows/uwp/data-binding/data-binding-in-depth)
+Stellt eine *Zuordnung*dar, die eine Auflistung von Schlüssel-Wert-Paaren ist. Implementiert [Windows::Foundation::Collections::IObservableMap](/uwp/api/windows.foundation.collections.iobservablemap-2) zur Hilfe bei der XAML-Datenbindung . [data binding](/windows/uwp/data-binding/data-binding-in-depth)
 
 ## <a name="syntax"></a>Syntax
 
@@ -63,7 +63,7 @@ Folgende Typen sind zulässig:
 
 - Öffentliche Enumerationsklasse
 
-Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-library/map-class.md). Es handelt sich um eine c++-konkrete Implementierung der [Windows::Foundation::Collections::IMap<Windows::Foundation::Collections::IKeyValuePair\<K,V>>](/uwp/api/Windows.Foundation.Collections.IMap_K_V_) und [IObservableMap-Typen,](/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_) die über öffentliche Windows-Runtime-Schnittstellen übergeben werden. Wenn Sie versuchen, einen `Platform::Collections::Map` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder den Rückgabewert in [Windows::Foundation::Collections::IMap\<K,V>](/uwp/api/Windows.Foundation.Collections.IMap_K_V_)ändern.
+Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-library/map-class.md). Es handelt sich um eine c++-konkrete Implementierung der [Windows::Foundation::Collections::IMap<Windows::Foundation::Collections::IKeyValuePair\<K,V>>](/uwp/api/windows.foundation.collections.imap-2) und [IObservableMap-Typen,](/uwp/api/windows.foundation.collections.iobservablemap-2) die über öffentliche Windows-Runtime-Schnittstellen übergeben werden. Wenn Sie versuchen, einen `Platform::Collections::Map` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder den Rückgabewert in [Windows::Foundation::Collections::IMap\<K,V>](/uwp/api/windows.foundation.collections.imap-2)ändern.
 
 Weitere Informationen finden Sie unter [Sammlungen](../cppcx/collections-c-cx.md).
 
@@ -99,7 +99,7 @@ Weitere Informationen finden Sie unter [Sammlungen](../cppcx/collections-c-cx.md
 
 `Map`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
@@ -136,7 +136,7 @@ Eine bequeme Möglichkeit, den von First() zurückgegebenen Iterator zu halten, 
 
 ## <a name="mapgetview-method"></a><a name="getview"></a>Karte::GetView-Methode
 
-Gibt eine schreibgeschützte Ansicht der aktuellen Karte zurück. Das heißt, eine [Platform::Collections::MapView Class](../cppcx/platform-collections-mapview-class.md), die die Schnittstelle [Windows::Foundation::Collections::IMapView\<K,V>]/uwp/api/Windows.Foundation.Collections.IMapView_K_V_) implementiert.
+Gibt eine schreibgeschützte Ansicht der aktuellen Karte zurück. Das heißt, eine [Platform::Collections::MapView-Klasse](../cppcx/platform-collections-mapview-class.md), die die [Windows::Foundation::Collections::IMapView\<K,V->-Schnittstelle](/uwp/api/windows.foundation.collections.imapview-2) implementiert.
 
 ### <a name="syntax"></a>Syntax
 
@@ -258,7 +258,7 @@ event Windows::Foundation::Collections::MapChangedEventHandler<K,V>^ MapChanged;
 
 ### <a name="property-valuereturn-value"></a>Eigenschaftswert/Rückgabewert
 
-Ein [MapChangedEventHandler\<K,V>,](/uwp/api/windows.foundation.collections.mapchangedeventhandler) der Informationen über das Objekt enthält, das das Ereignis ausgelöst hat, und die Art der Änderungen, die aufgetreten sind. Siehe auch [IMapChangedEventArgs\<K>](/uwp/api/Windows.Foundation.Collections.IMapChangedEventArgs_K_) und [CollectionChange Enumeration](/uwp/api/windows.foundation.collections.collectionchange).
+Ein [MapChangedEventHandler\<K,V>,](/uwp/api/windows.foundation.collections.mapchangedeventhandler-2) der Informationen über das Objekt enthält, das das Ereignis ausgelöst hat, und die Art der Änderungen, die aufgetreten sind. Siehe auch [IMapChangedEventArgs\<K>](/uwp/api/windows.foundation.collections.imapchangedeventargs-1) und [CollectionChange Enumeration](/uwp/api/windows.foundation.collections.collectionchange).
 
 ## <a name="net-framework-equivalent"></a>Entsprechung in .NET Framework
 
@@ -281,7 +281,7 @@ Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* ist der TypNam
 
 ## <a name="mapsize-method"></a><a name="size"></a>Karte::Size-Methode
 
-Gibt die Anzahl von [Windows::Foundation::Collections::IKeyValuePair\<K,V>](/uwp/api/Windows.Foundation.Collections.IKeyValuePair_K_V_) Elementen in der Karte zurück.
+Gibt die Anzahl von [Windows::Foundation::Collections::IKeyValuePair\<K,V>](/uwp/api/windows.foundation.collections.ikeyvaluepair-2) Elementen in der Karte zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -293,7 +293,7 @@ virtual property unsigned int Size;
 
 Die Anzahl von Elementen in der Zuordnung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sammlungen (C++/CX)](collections-c-cx.md)<br/>
 [Plattform-Namespace](platform-namespace-c-cx.md)<br/>

@@ -22,12 +22,12 @@ helpviewer_keywords:
 - COleCurrency [MFC], m_cur
 - COleCurrency [MFC], m_status
 ms.assetid: 3a36e345-303f-46fb-a57c-858274378a8d
-ms.openlocfilehash: 3cb3217e02323f8a0afcd1639e6e24ee7b0f136e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cc69143101c5d00d4f9a689bd02abdd9596e5b53
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366141"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753919"
 ---
 # <a name="colecurrency-class"></a>COleCurrency-Klasse
 
@@ -90,7 +90,7 @@ CURRENCY wird als 8-Byte-Wert für zwei Komplement-Ganzzahlwerte implementiert, 
 
 `COleCurrency`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -159,7 +159,7 @@ Gibt Flags für Gebietsschemaeinstellungen an. Nur das folgende Flag ist für di
 
 - LOCALE_NOUSEROVERRIDE Verwenden Sie die Standardgebietsschemaeinstellungen des Systems anstelle von benutzerdefinierten Benutzereinstellungen.
 
-*lcid*<br/>
+*Lcid*<br/>
 Gibt die Gebietsschema-ID an, die für die Konvertierung verwendet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -469,7 +469,7 @@ Zeigt Flags für Gebietsschemaeinstellungen an, möglicherweise das folgende Fla
 
 - LOCALE_NOUSEROVERRIDE Verwenden Sie die Standardgebietsschemaeinstellungen des Systems anstelle von benutzerdefinierten Benutzereinstellungen.
 
-*lcid*<br/>
+*Lcid*<br/>
 Gibt die Gebietsschema-ID an, die für die Konvertierung verwendet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -518,7 +518,7 @@ BOOL operator>=(const COleCurrency& cur) const;
 
 Rufen Sie diese Memberfunktion auf, um `COleCurrency` die Einheiten und den Bruchteil dieses Objekts festzulegen.
 
-```
+```cpp
 void SetCurrency(
     long nUnits,
     long nFractionalUnits);
@@ -542,13 +542,13 @@ Beachten Sie, dass die Einheiten und der Bruchteil durch signierte Long-Werte an
 
 Rufen Sie diese Memberfunktion auf, um `COleCurrency` den Status (Gültigkeit) dieses Objekts festzulegen.
 
-```
+```cpp
 void SetStatus(CurrencyStatus  status  );
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Status*<br/>
+*status*<br/>
 Der neue Status `COleCurrency` für dieses Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -574,7 +574,7 @@ Eine kurze Beschreibung dieser Statuswerte finden Sie in der folgenden Liste:
 > [!CAUTION]
 > Diese Funktion ist für fortgeschrittene Programmiersituationen. Diese Funktion ändert die Daten in diesem Objekt nicht. Es wird am häufigsten verwendet, um den Status auf null oder ungültig festzulegen. Beachten Sie, dass der Zuweisungsoperator ( [operator =](#operator_eq)) und [SetCurrency](#setcurrency) den Status auf das Objekt basierend auf dem Quellwert(n) festlegen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [COleVariant-Klasse](../../mfc/reference/colevariant-class.md)

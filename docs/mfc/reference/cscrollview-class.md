@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CScrollView [MFC], SetScaleToFitSize
 - CScrollView [MFC], SetScrollSizes
 ms.assetid: 4ba16dac-1acb-4be0-bb55-5fb695b6948d
-ms.openlocfilehash: c22f438623ca1d1c9022ea7c3efc50e0826ad302
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5d0eb163fae2aa5fc63470e1c499311ab1a402a6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318490"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754424"
 ---
 # <a name="cscrollview-class"></a>CScrollView-Klasse
 
@@ -116,7 +116,7 @@ Weitere Informationen zur `CScrollView`Verwendung finden Sie unter [Dokument-/An
 
 `CScrollView`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -124,7 +124,7 @@ Weitere Informationen zur `CScrollView`Verwendung finden Sie unter [Dokument-/An
 
 Rufen Sie diese Memberfunktion auf, um zu bestimmen, ob die Bildlaufansicht über horizontale und vertikale Balken verfügt.
 
-```
+```cpp
 void CheckScrollBars(
     BOOL& bHasHorzBar,
     BOOL& bHasVertBar) const;
@@ -154,7 +154,7 @@ Sie müssen `SetScrollSizes` entweder `SetScaleToFitSize` oder bevor die Bildlau
 
 Rufen `FillOutsideRect` Sie auf, den Bereich der Ansicht zu füllen, der außerhalb des Bildlaufbereichs angezeigt wird.
 
-```
+```cpp
 void FillOutsideRect(
     CDC* pDC,
     CBrush* pBrush);
@@ -198,7 +198,7 @@ Dieses Koordinatenpaar entspricht der Position im Dokument, an die die obere lin
 
 `GetDeviceScrollSizes`ruft den aktuellen Zuordnungsmodus, die Gesamtgröße sowie die Linien- und Seitengrößen der scrollbaren Ansicht ab.
 
-```
+```cpp
 void GetDeviceScrollSizes(
     int& nMapMode,
     SIZE& sizeTotal,
@@ -258,7 +258,7 @@ Die Gesamtgröße der Bildlaufansicht in logischen Einheiten. Die horizontale Gr
 
 Rufen `ResizeParentToFit` Sie auf, um die Größe der Ansicht die Größe des Rahmenfensters bestimmen zu lassen.
 
-```
+```cpp
 void ResizeParentToFit(BOOL bShrinkOnly = TRUE);
 ```
 
@@ -279,7 +279,7 @@ Dies wird nur für Ansichten in untergeordneten MDI-Rahmenfenstern empfohlen. Wi
 
 Rufen `ScrollToPosition` Sie einen Bildlauf zu einem bestimmten Punkt in der Ansicht auf.
 
-```
+```cpp
 void ScrollToPosition(POINT pt);
 ```
 
@@ -296,7 +296,7 @@ Die Ansicht wird gescrollt, sodass sich dieser Punkt in der oberen linken Ecke d
 
 Rufen `SetScaleToFitSize` Sie an, wenn Sie die Größe des Ansichtsfensters automatisch auf die aktuelle Fenstergröße skalieren möchten.
 
-```
+```cpp
 void SetScaleToFitSize(SIZE sizeTotal);
 ```
 
@@ -321,7 +321,7 @@ In der Regel platzieren `SetScaleToFitSize` Sie den Aufruf in Ihrer `OnInitialUp
 
 Rufen `SetScrollSizes` Sie an, wenn die Ansicht aktualisiert werden soll.
 
-```
+```cpp
 void SetScrollSizes(
     int nMapMode,
     SIZE sizeTotal,
@@ -374,7 +374,7 @@ Sie müssen den Zuordnungsmodus auf einen der Windows-Zuordnungsmodi festlegen, 
 
 [!code-cpp[NVC_MFCDocView#169](../../mfc/codesnippet/cpp/cscrollview-class_6.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel DIBLOOK](../../overview/visual-cpp-samples.md)<br/>
 [CView-Klasse](../../mfc/reference/cview-class.md)<br/>

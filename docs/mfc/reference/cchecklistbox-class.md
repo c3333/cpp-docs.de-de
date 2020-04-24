@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CCheckListBox [MFC], SetCheck
 - CCheckListBox [MFC], SetCheckStyle
 ms.assetid: 1dd78438-00e8-441c-b36f-9c4f9ac0d019
-ms.openlocfilehash: 8ca8d3b2cb4ce3c5b070d883e0a418ebec3665b1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dc0e80e80d61104a4d8cb5f1cfd4e26a64c42249
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352379"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752747"
 ---
 # <a name="cchecklistbox-class"></a>CCheckListBox-Klasse
 
@@ -108,7 +108,7 @@ Sie können ein Checklistenfeld entweder aus einer Dialogfeldvorlage oder direkt
 
 `CCheckListBox`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -209,7 +209,7 @@ Wenn Checklistenfeldelemente nicht alle die gleiche Höhe aufweisen, muss der Ch
 
 Rufen Sie diese Funktion auf, um ein Checklistenfeldelement zu aktivieren oder zu deaktivieren.
 
-```
+```cpp
 void Enable(
     int nIndex,
     BOOL bEnabled = TRUE);
@@ -326,7 +326,7 @@ Die Standardimplementierung gibt nur die Standardposition und`rectCheckBox`-grö
 
 Legt den Status des angegebenen Kontrollkästchens fest.
 
-```
+```cpp
 void SetCheck(
     int nIndex,
     int nCheck);
@@ -354,7 +354,7 @@ In der folgenden Tabelle sind mögliche Werte für den Parameter *nCheck* aufgef
 
 Rufen Sie diese Funktion auf, um den Stil der Kontrollkästchen im Checklistenfeld festzulegen.
 
-```
+```cpp
 void SetCheckStyle(UINT nStyle);
 ```
 
@@ -377,7 +377,7 @@ Gültige Stile sind:
 
 Weitere Informationen zu diesen Stilen finden Sie unter [Schaltflächenstile](../../mfc/reference/styles-used-by-mfc.md#button-styles).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel TSTCON](../../overview/visual-cpp-samples.md)<br/>
 [CListBox-Klasse](../../mfc/reference/clistbox-class.md)<br/>

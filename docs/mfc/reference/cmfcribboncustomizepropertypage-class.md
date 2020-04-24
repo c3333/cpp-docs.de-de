@@ -12,12 +12,12 @@ helpviewer_keywords:
 - CMFCRibbonCustomizePropertyPage [MFC], AddCustomCategory
 - CMFCRibbonCustomizePropertyPage [MFC], OnOK
 ms.assetid: ea32a99a-dfbe-401e-8975-aa191552532f
-ms.openlocfilehash: c77e2fed1067091c139eee664fb291b83742eb54
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 57fbd1e1f574beebff8baab014e7ab615f56333f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375189"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754173"
 ---
 # <a name="cmfcribboncustomizepropertypage-class"></a>CMFCRibbonCustomizePropertyPage-Klasse
 
@@ -75,7 +75,7 @@ Im folgenden Beispiel wird `CMFCRibbonCustomizePropertyPage` veranschaulicht, wi
 
 [CMFCRibbonCustomizePropertyPage](../../mfc/reference/cmfcribboncustomizepropertypage-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxribboncustomizedialog.h
 
@@ -83,7 +83,7 @@ Im folgenden Beispiel wird `CMFCRibbonCustomizePropertyPage` veranschaulicht, wi
 
 Fügt dem **Kombinationsfeld Befehle** eine benutzerdefinierte Kategorie hinzu.
 
-```
+```cpp
 void AddCustomCategory(
     LPCTSTR lpszName,
     const CList<UINT, UINT>& lstIDS);
@@ -126,7 +126,7 @@ virtual void OnOK();
 
 Die Standardimplementierung wendet die im Dialogfeld **Anpassen** ausgewählten Optionen auf die Schnellzugriffssymbolleiste an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

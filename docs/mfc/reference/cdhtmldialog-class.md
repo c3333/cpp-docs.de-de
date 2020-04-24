@@ -116,12 +116,12 @@ helpviewer_keywords:
 - CDHtmlDialog [MFC], m_strCurrentUrl
 - CDHtmlDialog [MFC], m_szHtmlResID
 ms.assetid: 3f941c85-87e1-4f0f-9cc5-ffee8498b312
-ms.openlocfilehash: 57ea8f3a1dbbce4fcfa350bd99e4ee628e9675c8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e2e4306320c52b8276d915848dfa6e460982c92b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375689"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753376"
 ---
 # <a name="cdhtmldialog-class"></a>CDHtmlDialog-Klasse
 
@@ -232,7 +232,7 @@ class CDHtmlDialog : public CDialog, public CDHtmlEventSink
 
 `CDHtmlDialog`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdhtml.h
 
@@ -348,7 +348,7 @@ Sie können diese Memberfunktion überschreiben, um eine Instanz Ihrer eigenen S
 
 Tauscht Daten zwischen einer Membervariablen und dem Eigenschaftswert eines ActiveX-Steuerelements auf einer HTML-Seite aus.
 
-```
+```cpp
 void DDX_DHtml_AxControl(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -387,7 +387,7 @@ Das Datenelement vom Typ VARIANT, [COleVariant](../../mfc/reference/colevariant-
 
 Tauscht Daten zwischen einer Mitgliedsvariablen und einem Kontrollkästchen auf einer HTML-Seite aus.
 
-```
+```cpp
 void DDX_DHtml_CheckBox(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -413,7 +413,7 @@ Der ausgetauschte Wert.
 
 Tauscht Daten zwischen einer Membervariablen und einer beliebigen HTML-Elementeigenschaft auf einer HTML-Seite aus.
 
-```
+```cpp
 void DDX_DHtml_ElementText(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -475,7 +475,7 @@ Der ausgetauschte Wert.
 
 Tauscht Daten zwischen einer Mitgliedsvariablen und einem Optionsfeld auf einer HTML-Seite aus.
 
-```
+```cpp
 void DDX_DHtml_Radio(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -497,7 +497,7 @@ Der ausgetauschte Wert.
 
 Ruft den Index eines Listenfelds auf einer HTML-Seite ab oder legt er fest.
 
-```
+```cpp
 void DDX_DHtml_SelectIndex(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -519,7 +519,7 @@ Der ausgetauschte Wert.
 
 Ruft den Anzeigetext eines Listenfeldeintrags (basierend auf dem aktuellen Index) auf einer HTML-Seite ab oder legt er fest.
 
-```
+```cpp
 void DDX_DHtml_SelectString(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -541,7 +541,7 @@ Der ausgetauschte Wert.
 
 Ruft den Wert eines Listenfeldeintrags (basierend auf dem aktuellen Index) auf einer HTML-Seite ab oder legt den Wert fest.
 
-```
+```cpp
 void DDX_DHtml_SelectValue(
     CDataExchange* pDX,
     LPCTSTR szId,
@@ -567,7 +567,7 @@ Der ausgetauschte Wert.
 
 Trennt ein modusloses Dialogfeld `CDHtmlDialog` vom Objekt und zerstört das Objekt.
 
-```
+```cpp
 void DestroyModeless();
 ```
 
@@ -684,7 +684,7 @@ Die Überlastungen werden von der am wenigsten effizienten oben bis zur effizien
 
 Ruft den URL (Uniform Resource Locator) ab, der dem aktuellen Dokument zugeordnet ist.
 
-```
+```cpp
 void GetCurrentUrl(CString& szUrl);
 ```
 
@@ -1066,7 +1066,7 @@ LPTSTR m_szHtmlResID;
 
 Navigiert zu der Ressource, die durch die von *lpszURL*angegebene URL identifiziert wird.
 
-```
+```cpp
 void Navigate(
     LPCTSTR lpszURL,
     DWORD dwFlags = 0,
@@ -1242,7 +1242,7 @@ Gibt E_NOTIMPL zurück.
 
 Legt die Eigenschaft eines ActiveX-Steuerelements auf einen neuen Wert fest.
 
-```
+```cpp
 void SetControlProperty(
     LPCTSTR szElementId,
     DISPID dispId,
@@ -1280,7 +1280,7 @@ Zeichenfolge, die den Namen der festzulegenden Eigenschaft enthält.
 
 Legt `innerHTML` die Eigenschaft eines HTML-Elements fest.
 
-```
+```cpp
 void SetElementHtml(
     LPCTSTR szElementId,
     BSTR bstrText);
@@ -1305,7 +1305,7 @@ Der `IUnknown` Zeiger eines HTML-Elements.
 
 Legt eine Eigenschaft eines HTML-Elements fest.
 
-```
+```cpp
 void SetElementProperty(
     LPCTSTR szElementId,
     DISPID dispId,
@@ -1327,7 +1327,7 @@ Der neue Wert der Eigenschaft.
 
 Legt `innerText` die Eigenschaft eines HTML-Elements fest.
 
-```
+```cpp
 void SetElementText(
     LPCTSTR szElementId,
     BSTR bstrText);
@@ -1352,7 +1352,7 @@ Der `IUnknown` Zeiger eines HTML-Elements.
 
 Legt die Schnittstelle `IDispatch` des Hosts fest.
 
-```
+```cpp
 void SetExternalDispatch(IDispatch* pdispExternal);
 ```
 
@@ -1365,7 +1365,7 @@ Die `IDispatch` neue Schnittstelle.
 
 Legt die Host-UI-Flags fest.
 
-```
+```cpp
 void SetHostFlags(DWORD dwFlags);
 ```
 
@@ -1522,7 +1522,7 @@ Gibt E_NOTIMPL zurück.
 
 Diese Memberfunktion ist die Implementierung von [IDocHostUIHandler::UpdateUI](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa753268\(v=vs.85\))von CDHtmlDialog, wie im Windows SDK beschrieben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel DHtmlExplore](../../overview/visual-cpp-samples.md)<br/>
 [DDX_DHtml-Hilfsmakros](#ddx_dhtml_helper_macros)<br/>

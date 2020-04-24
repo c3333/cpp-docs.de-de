@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CAsyncSocket [MFC], OnSend
 - CAsyncSocket [MFC], m_hSocket
 ms.assetid: cca4d5a1-aa0f-48bd-843e-ef0e2d7fc00b
-ms.openlocfilehash: 7ab02dba4bf10b04dddac4e2e954623223af42d9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e384be534bdbb355554c28383e9e214e9084f217
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81353025"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753029"
 ---
 # <a name="casyncsocket-class"></a>CAsyncSocket-Klasse
 
@@ -173,7 +173,7 @@ Weitere Informationen finden Sie unter [Windows Sockets: Verwenden von Klasse CA
 
 `CAsyncSocket`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxsock.h
 
@@ -1112,7 +1112,7 @@ Weitere Informationen finden Sie unter [Windows Sockets: Socket Notifications](.
 
 Weist einem `CAsyncSocket` Objekt einen neuen Wert zu.
 
-```
+```cpp
 void operator=(const CAsyncSocket& rSrc);
 ```
 
@@ -1835,7 +1835,7 @@ Gibt `TRUE` bei Erfolg bzw. `FALSE` bei einem Fehler zurück.
 
 Diese Methode weist ein Sockethandle zu. [CAsyncSocket::Bind](#bind) wird nicht aufrufen, um den Socket an eine `Bind` angegebene Adresse zu binden, daher müssen Sie später aufrufen, um den Socket an eine angegebene Adresse zu binden. Sie können [CAsyncSocket::SetSockOpt](#setsockopt) verwenden, um die Socketoption festzulegen, bevor sie gebunden wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

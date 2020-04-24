@@ -50,12 +50,12 @@ helpviewer_keywords:
 - CDatabase [MFC], SetQueryTimeout
 - CDatabase [MFC], m_hdbc
 ms.assetid: bd0de70a-e3c3-4441-bcaa-bbf434426ca8
-ms.openlocfilehash: 260a4a38fcee8994d804267709c11279266d393c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bc920307e09179dc214710a3b6b19ff27a82749d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376482"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754642"
 ---
 # <a name="cdatabase-class"></a>CDatabase-Klasse
 
@@ -123,7 +123,7 @@ Weitere Informationen `CDatabase`zu finden Sie in den Artikeln [Datenquelle (ODB
 
 `CDatabase`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxdb.h
 
@@ -186,7 +186,7 @@ Rufen Sie in `SQLBindParameters` Ihrer Außerkraftsetzung und die zugehörigen O
 
 Rufen Sie diese Memberfunktion auf, um anzufordern, dass die Datenquelle entweder einen asynchronen Vorgang oder einen Prozess von einem zweiten Thread abbricht.
 
-```
+```cpp
 void Cancel();
 ```
 
@@ -294,7 +294,7 @@ Weitere Informationen zu Transaktionen finden Sie im Artikel [Transaktion (ODBC)
 
 Rufen Sie diese Memberfunktion auf, wenn Sie einen SQL-Befehl direkt ausführen müssen.
 
-```
+```cpp
 void ExecuteSQL(LPCTSTR lpszSQL);
 ```
 
@@ -606,7 +606,7 @@ Nach einem Rollback bleibt der Datensatz, der vor dem Rollback aktuell war, aktu
 
 Rufen Sie diese Memberfunktion `OpenEx` `Open` auf – bevor Sie aufrufen oder – um die standardmäßige Anzahl von Sekunden zu überschreiben, die zulässig sind, bevor eine versuchte Datenquellenverbindung ein Timesout aufweist.
 
-```
+```cpp
 void SetLoginTimeout(DWORD dwSeconds);
 ```
 
@@ -625,7 +625,7 @@ Der Standardwert für Anmeldetimeouts beträgt 15 Sekunden. Nicht alle Datenquel
 
 Rufen Sie diese Memberfunktion auf, um die Standardanzahl von Sekunden zu überschreiben, um vor nachfolgenden Vorgängen für das Timeout der verbundenen Datenquelle zuzulassen.
 
-```
+```cpp
 void SetQueryTimeout(DWORD dwSeconds);
 ```
 
@@ -640,7 +640,7 @@ Bei einem Vorgang kann aufgrund von Netzwerkzugriffsproblemen, übermäßiger Ab
 
 Der Standardwert für Abfragetimeouts beträgt 15 Sekunden. Nicht alle Datenquellen unterstützen die Möglichkeit, einen Abfragetimeoutwert festzulegen. Wenn Sie einen Abfragetimeoutwert von 0 festlegen, tritt kein Timeout auf. die Kommunikation mit der Datenquelle reagiert möglicherweise nicht mehr. Dieses Verhalten kann während der Entwicklung nützlich sein. Wenn die Datenquelle kein Timeout unterstützt, erhalten Sie die Ablaufverfolgungsausgabe, aber keine Ausnahme.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
