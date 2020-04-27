@@ -1,5 +1,5 @@
 ---
-title: CAtlException-Klasse
+title: Klasse von "Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlException
@@ -9,20 +9,20 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlException class
 ms.assetid: 3fd7b041-f70d-4292-b947-0d70781d95a8
-ms.openlocfilehash: 6da56e4d6c443520eb6f857624a5923e71a1e580
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f09d9b2f46233cf356f5ade8a5b90e08a213d276
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318996"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168201"
 ---
-# <a name="catlexception-class"></a>CAtlException-Klasse
+# <a name="catlexception-class"></a>Klasse von "Klasse"
 
 Diese Klasse definiert eine ATL-Ausnahme.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 class CAtlException
 ```
 
@@ -32,65 +32,65 @@ class CAtlException
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlException::CAtlException](#catlexception)|Der Konstruktor.|
+|["", "".](#catlexception)|Der Konstruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlException::operator HRESULT](#operator_hresult)|Gibt das aktuelle Objekt in einen HRESULT-Wert um.|
+|["", "", "", "HRESULT":](#operator_hresult)|Wandelt das aktuelle-Objekt in einen HRESULT-Wert um.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlException::m_hr](#m_hr)|Die Variable vom Typ HRESULT, die vom Objekt erstellt und zum Speichern der Fehlerbedingung verwendet wird.|
+|["Ception":: m_hr](#m_hr)|Die Variable vom Typ HRESULT, die vom-Objekt erstellt und zum Speichern der Fehlerbedingung verwendet wird.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein `CAtlException` Objekt stellt eine Ausnahmebedingung dar, die sich auf einen ATL-Vorgang bezieht. Die `CAtlException` Klasse enthält einen öffentlichen Datenmember, der den Statuscode speichert, der den Grund für die Ausnahme angibt, und einen Umwandlungsoperator, mit dem Sie die Ausnahme wie ein HRESULT behandeln können.
+Ein `CAtlException` -Objekt stellt eine Ausnahme Bedingung dar, die sich auf einen ATL-Vorgang bezieht. Die `CAtlException` -Klasse enthält einen öffentlichen Datenmember, der den Statuscode zur Angabe des Grunds für die Ausnahme und einen Cast Operator speichert, der es Ihnen ermöglicht, die Ausnahme zu behandeln, als ob es sich um ein HRESULT handelt.
 
-Im Allgemeinen rufen `AtlThrow` Sie ein `CAtlException` Objekt auf, anstatt es direkt zu erstellen.
+Im Allgemeinen wird aufgerufen `AtlThrow` , anstatt ein `CAtlException` -Objekt direkt zu erstellen.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlexcept.h
+**Header:** atlexcept. h
 
-## <a name="catlexceptioncatlexception"></a><a name="catlexception"></a>CAtlException::CAtlException
+## <a name="catlexceptioncatlexception"></a><a name="catlexception"></a>"", "".
 
 Der Konstruktor.
 
-```
+```cpp
 CAtlException(HRESULT hr) throw();
 CAtlException() throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Hr*<br/>
+*HR*<br/>
 Der HRESULT-Fehlercode.
 
-## <a name="catlexceptionoperator-hresult"></a><a name="operator_hresult"></a>CAtlException::operator HRESULT
+## <a name="catlexceptionoperator-hresult"></a><a name="operator_hresult"></a>"", "", "", "HRESULT":
 
-Gibt das aktuelle Objekt in einen HRESULT-Wert um.
+Wandelt das aktuelle-Objekt in einen HRESULT-Wert um.
 
-```
+```cpp
 operator HRESULT() const throw ();
 ```
 
-## <a name="catlexceptionm_hr"></a><a name="m_hr"></a>CAtlException::m_hr
+## <a name="catlexceptionm_hr"></a><a name="m_hr"></a>"Ception":: m_hr
 
-Das HRESULT-Datenelement.
+Der HRESULT-Datenmember.
 
-```
+```cpp
 HRESULT m_hr;
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Datenelement, das die Fehlerbedingung speichert. Der HRESULT-Wert wird vom Konstruktor [CAtlException::CAtlException](#catlexception)festgelegt.
+Der Datenmember, der den Fehlerzustand speichert. Der HRESULT-Wert wird durch den Konstruktor, ["](#catlexception)", "", "", "", ".
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [AtlThrow](debugging-and-error-reporting-global-functions.md#atlthrow)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: CAtlArray-Klasse
+title: Asslarray-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlArray
@@ -25,30 +25,30 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlArray class
 ms.assetid: 0b503aa8-2357-40af-a326-6654bf1da098
-ms.openlocfilehash: 607af2adaa3ef28a768812f3c811eb2ed3169ad9
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 5928a9bf8af12b2ce15a386871b845ef86cc7a2d
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81748793"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168765"
 ---
-# <a name="catlarray-class"></a>CAtlArray-Klasse
+# <a name="catlarray-class"></a>Asslarray-Klasse
 
-Diese Klasse implementiert ein Arrayobjekt.
+Diese Klasse implementiert ein Array Objekt.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template<typename E, class ETraits = CElementTraits<E>>
 class CAtlArray
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
-*E*<br/>
+*Fresser*<br/>
 Der Typ der im Array gespeicherten Daten.
 
-*ETraits*<br/>
+*Echarakteristika*<br/>
 Der Code, der zum Kopieren oder Verschieben von Elementen verwendet wird.
 
 ## <a name="members"></a>Member
@@ -57,64 +57,64 @@ Der Code, der zum Kopieren oder Verschieben von Elementen verwendet wird.
 
 |||
 |-|-|
-|[Hinzufügen](#add)|Rufen Sie diese Methode auf, um dem Arrayobjekt ein Element hinzuzufügen.|
-|[Append](#append)|Rufen Sie diese Methode auf, um den Inhalt eines Arrays am Ende eines anderen Arrays hinzuzufügen.|
-|[Assertvalid](#assertvalid)|Rufen Sie diese Methode auf, um zu bestätigen, dass das Arrayobjekt gültig ist.|
-|[Catlarray](#catlarray)|Der Konstruktor.|
-|[CAtlArray](#dtor)|Der Destruktor.|
-|[Kopieren](#copy)|Rufen Sie diese Methode auf, um die Elemente eines Arrays in ein anderes zu kopieren.|
-|[FreeExtra](#freeextra)|Rufen Sie diese Methode auf, um alle leeren Elemente aus dem Array zu entfernen.|
-|[GetAt](#getat)|Rufen Sie diese Methode auf, um ein einzelnes Element aus dem Arrayobjekt abzurufen.|
-|[GetCount](#getcount)|Rufen Sie diese Methode auf, um die Anzahl der im Array gespeicherten Elemente zurückzugeben.|
-|[GetData](#getdata)|Rufen Sie diese Methode auf, um einen Zeiger auf das erste Element im Array zurückzugeben.|
-|[InsertArrayAt](#insertarrayat)|Rufen Sie diese Methode auf, um ein Array in ein anderes einzufügen.|
-|[Insertat](#insertat)|Rufen Sie diese Methode auf, um ein neues Element (oder mehrere Kopien eines Elements) in das Arrayobjekt einzufügen.|
-|[Isempty](#isempty)|Rufen Sie diese Methode auf, um zu testen, ob das Array leer ist.|
-|[Removeall](#removeall)|Rufen Sie diese Methode auf, um alle Elemente aus dem Arrayobjekt zu entfernen.|
-|[RemoveAt](#removeat)|Rufen Sie diese Methode auf, um ein oder mehrere Elemente aus dem Array zu entfernen.|
-|[Setat](#setat)|Rufen Sie diese Methode auf, um den Wert eines Elements im Arrayobjekt festzulegen.|
-|[SetAtGrow](#setatgrow)|Rufen Sie diese Methode auf, um den Wert eines Elements im Arrayobjekt festzulegen und das Array nach Bedarf zu erweitern.|
-|[SetCount](#setcount)|Rufen Sie diese Methode auf, um die Größe des Arrayobjekts festzulegen.|
+|[Add (Hinzufügen)](#add)|Mit dieser Methode können Sie dem Array Objekt ein Element hinzufügen.|
+|[Append](#append)|Ruft diese Methode auf, um den Inhalt eines Arrays am Ende eines anderen Arrays hinzuzufügen.|
+|["AssertValid"](#assertvalid)|Mit dieser Methode können Sie bestätigen, dass das Array Objekt gültig ist.|
+|[.](#catlarray)|Der Konstruktor.|
+|[~-Größe](#dtor)|Der Destruktor.|
+|[Kopieren](#copy)|Ruft diese Methode auf, um die Elemente eines Arrays in ein anderes Array zu kopieren.|
+|["Freextra"](#freeextra)|Diese Methode wird aufgerufen, um leere Elemente aus dem Array zu entfernen.|
+|[GetAt](#getat)|Rufen Sie diese Methode auf, um ein einzelnes Element aus dem Array Objekt abzurufen.|
+|[GetCount](#getcount)|Mit dieser Methode wird die Anzahl der im Array gespeicherten Elemente zurückgegeben.|
+|[GetData](#getdata)|Ruft diese Methode auf, um einen Zeiger auf das erste Element im Array zurückzugeben.|
+|[Insertarrayat](#insertarrayat)|Ruft diese Methode auf, um ein Array in ein anderes einzufügen.|
+|[InsertAt](#insertat)|Mit dieser Methode können Sie ein neues Element (oder mehrere Kopien eines Elements) in das Array Objekt einfügen.|
+|[IsEmpty](#isempty)|Mit dieser Methode können Sie überprüfen, ob das Array leer ist.|
+|[RemoveAll](#removeall)|Mit dieser Methode können Sie alle Elemente aus dem Array Objekt entfernen.|
+|[RemoveAt](#removeat)|Diese Methode wird aufgerufen, um ein oder mehrere Elemente aus dem Array zu entfernen.|
+|[SetAt](#setat)|Ruft diese Methode auf, um den Wert eines Elements im Array Objekt festzulegen.|
+|["Antatwächst"](#setatgrow)|Ruft diese Methode auf, um den Wert eines Elements im Array Objekt festzulegen und das Array nach Bedarf zu erweitern.|
+|[SetCount](#setcount)|Ruft diese Methode auf, um die Größe des Array Objekts festzulegen.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[Betreiber &#91;&#93;](#operator_at)|Rufen Sie diesen Operator auf, um einen Verweis auf ein Element im Array zurückzugeben.|
+|[Operator &#91;&#93;](#operator_at)|Ruft diesen Operator auf, um einen Verweis auf ein Element im Array zurückzugeben.|
 
 ### <a name="typedefs"></a>TypeDefs
 
 |||
 |-|-|
-|[INARGTYPE](#inargtype)|Der Datentyp, der zum Hinzufügen von Elementen zum Array verwendet werden soll.|
-|[OUTARGTYPE](#outargtype)|Der Datentyp, der zum Abrufen von Elementen aus dem Array verwendet werden soll.|
+|[Inargtype](#inargtype)|Der Datentyp, der zum Hinzufügen von Elementen zum Array verwendet werden soll.|
+|[Outargtype](#outargtype)|Der Datentyp, der zum Abrufen von Elementen aus dem Array verwendet werden soll.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CAtlArray`bietet Methoden zum Erstellen und Verwalten eines Arrays von Elementen eines benutzerdefinierten Typs. Obwohl es den Standard-C-Arrays ähnelt, kann das `CAtlArray` Objekt bei Bedarf dynamisch verkleinert und wachsen. Der Arrayindex beginnt immer an Position 0, und die obere Grenze kann festgelegt werden oder kann erweitert werden, wenn neue Elemente hinzugefügt werden.
+`CAtlArray`stellt Methoden zum Erstellen und Verwalten eines Arrays von Elementen eines benutzerdefinierten Typs bereit. Obwohl die Standard-C-Arrays ähnlich `CAtlArray` sind, kann das-Objekt bei Bedarf dynamisch verkleinert und vergrößert werden. Der Array Index beginnt immer an Position 0, und die obere Grenze kann korrigiert oder erweitert werden, wenn neue Elemente hinzugefügt werden.
 
 Für Arrays mit einer kleinen Anzahl von Elementen kann die ATL-Klasse [CSimpleArray](../../atl/reference/csimplearray-class.md) verwendet werden.
 
-`CAtlArray`ist eng mit der `CArray` MFC-Klasse verbunden und wird in einem MFC-Projekt arbeiten, wenn auch ohne Serialisierungsunterstützung.
+`CAtlArray`ist eng mit der MFC- `CArray` Klasse verknüpft und funktioniert in einem MFC-Projekt, wenn auch ohne Serialisierungsunterstützung.
 
-Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
+Weitere Informationen finden Sie unter [ATL](../../atl/atl-collection-classes.md)-Auflistungs Klassen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlcoll.h
+**Header:** atlcoll. h
 
-## <a name="catlarrayadd"></a><a name="add"></a>CAtlArray::Hinzufügen
+## <a name="catlarrayadd"></a><a name="add"></a>"Update":: Add
 
-Rufen Sie diese Methode auf, um dem Arrayobjekt ein Element hinzuzufügen.
+Mit dieser Methode können Sie dem Array Objekt ein Element hinzufügen.
 
-```
+```cpp
 size_t Add(INARGTYPE element);
 size_t Add();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Element*<br/>
+*gewisses*<br/>
 Das Element, das dem Array hinzugefügt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -123,44 +123,44 @@ Gibt den Index des hinzugefügten Elements zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das neue Element wird am Ende des Arrays hinzugefügt. Wenn kein Element bereitgestellt wird, wird ein leeres Element hinzugefügt. Das heißt, das Array wird vergrößert, als ob ein echtes Element hinzugefügt wurde. Wenn der Vorgang fehlschlägt, wird [AtlThrow](debugging-and-error-reporting-global-functions.md#atlthrow) mit dem Argument E_OUTOFMEMORY aufgerufen.
+Das neue Element wird am Ende des Arrays hinzugefügt. Wenn kein-Element bereitgestellt wird, wird ein leeres-Element hinzugefügt. Das heißt, dass das Array so erhöht wird, als ob ein reales Element hinzugefügt wurde. Wenn der Vorgang fehlschlägt, wird " [atlthrow](debugging-and-error-reporting-global-functions.md#atlthrow) " mit dem Argument E_OUTOFMEMORY aufgerufen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#1](../../atl/codesnippet/cpp/catlarray-class_1.cpp)]
 
-## <a name="catlarrayappend"></a><a name="append"></a>CAtlArray::Anfügen
+## <a name="catlarrayappend"></a><a name="append"></a>"": Anfügen
 
-Rufen Sie diese Methode auf, um den Inhalt eines Arrays am Ende eines anderen Arrays hinzuzufügen.
+Ruft diese Methode auf, um den Inhalt eines Arrays am Ende eines anderen Arrays hinzuzufügen.
 
-```
+```cpp
 size_t Append(const CAtlArray<E, ETraits>& aSrc);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*aSrc*<br/>
-Das anzuhängende Array.
+*ASRC*<br/>
+Das anzufügende Array.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt den Index des ersten angehängten Elements zurück.
+Gibt den Index des ersten angefügten Elements zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Elemente im bereitgestellten Array werden am Ende des vorhandenen Arrays hinzugefügt. Bei Bedarf wird Speicher für die neuen Elemente reserviert.
+Die Elemente im angegebenen Array werden am Ende des vorhandenen Arrays hinzugefügt. Bei Bedarf wird der Arbeitsspeicher zugeordnet, um die neuen Elemente zu unterstützen.
 
-Die Arrays müssen vom gleichen Typ sein, und es ist nicht möglich, ein Array an sich selbst anzuhängen.
+Die Arrays müssen denselben Typ aufweisen, und es ist nicht möglich, ein Array an sich selbst anzufügen.
 
-In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Argument kein gültiges Array ist oder wenn *aSrc* auf dasselbe Objekt verweist. In Releasebuilds können ungültige Argumente zu unvorhersehbarem Verhalten führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das `CAtlArray` Argument kein gültiges Array ist oder wenn *ASRC* auf dasselbe Objekt verweist. In Releasebuilds können ungültige Argumente zu unvorhersehbarem Verhalten führen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#2](../../atl/codesnippet/cpp/catlarray-class_2.cpp)]
 
-## <a name="catlarrayassertvalid"></a><a name="assertvalid"></a>CAtlArray::AssertValid
+## <a name="catlarrayassertvalid"></a><a name="assertvalid"></a>"": AssertValid "
 
-Rufen Sie diese Methode auf, um zu bestätigen, dass das Arrayobjekt gültig ist.
+Mit dieser Methode können Sie bestätigen, dass das Array Objekt gültig ist.
 
 ```cpp
 void AssertValid() const;
@@ -168,43 +168,43 @@ void AssertValid() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Arrayobjekt ungültig ist, wird ATLASSERT eine Assertion auslösen. Diese Methode ist nur verfügbar, wenn _DEBUG definiert ist.
+Wenn das Array Objekt nicht gültig ist, löst ATLASSERT eine-Assertionen aus. Diese Methode ist nur verfügbar, wenn _DEBUG definiert ist.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#3](../../atl/codesnippet/cpp/catlarray-class_3.cpp)]
 
-## <a name="catlarraycatlarray"></a><a name="catlarray"></a>CAtlArray::CAtlArray
+## <a name="catlarraycatlarray"></a><a name="catlarray"></a>"":
 
 Der Konstruktor.
 
-```
+```cpp
 CAtlArray() throw();
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
-Initialisiert das Arrayobjekt.
+Initialisiert das Array Objekt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#4](../../atl/codesnippet/cpp/catlarray-class_4.cpp)]
 
-## <a name="catlarraycatlarray"></a><a name="dtor"></a>CAtlArray::-CAtlArray
+## <a name="catlarraycatlarray"></a><a name="dtor"></a>"": ""
 
 Der Destruktor.
 
-```
+```cpp
 ~CAtlArray() throw();
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt alle Ressourcen frei, die vom Arrayobjekt verwendet werden.
+Gibt alle Ressourcen frei, die vom Array Objekt verwendet werden.
 
-## <a name="catlarraycopy"></a><a name="copy"></a>CAtlArray::Kopieren
+## <a name="catlarraycopy"></a><a name="copy"></a>"": Kopieren
 
-Rufen Sie diese Methode auf, um die Elemente eines Arrays in ein anderes zu kopieren.
+Ruft diese Methode auf, um die Elemente eines Arrays in ein anderes Array zu kopieren.
 
 ```cpp
 void Copy(const CAtlArray<E, ETraits>& aSrc);
@@ -212,27 +212,27 @@ void Copy(const CAtlArray<E, ETraits>& aSrc);
 
 ### <a name="parameters"></a>Parameter
 
-*aSrc*<br/>
+*ASRC*<br/>
 Die Quelle der Elemente, die in ein Array kopiert werden sollen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um Elemente eines Arrays mit den Elementen eines anderen Arrays zu überschreiben. Bei Bedarf wird Speicher für die neuen Elemente reserviert. Es ist nicht möglich, Elemente eines Arrays in sich selbst zu kopieren.
+Mit dieser Methode können Sie Elemente eines Arrays mit den Elementen eines anderen Arrays überschreiben. Bei Bedarf wird der Arbeitsspeicher zugeordnet, um die neuen Elemente zu unterstützen. Es ist nicht möglich, Elemente eines Arrays in sich selbst zu kopieren.
 
-Wenn der vorhandene Inhalt des Arrays beibehalten werden soll, verwenden Sie stattdessen [CAtlArray::Append.](#append)
+Wenn der vorhandene Inhalt des Arrays beibehalten werden soll [, verwenden Sie](#append) stattdessen "".
 
-In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das vorhandene `CAtlArray` Objekt ungültig ist oder wenn *aSrc* auf dasselbe Objekt verweist. In Releasebuilds können ungültige Argumente zu unvorhersehbarem Verhalten führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das vorhandene `CAtlArray` Objekt ungültig ist, oder wenn *ASRC* auf dasselbe Objekt verweist. In Releasebuilds können ungültige Argumente zu unvorhersehbarem Verhalten führen.
 
 > [!NOTE]
-> `CAtlArray::Copy`unterstützt keine Arrays, die aus Elementen bestehen, die mit der [CAutoPtr-Klasse](../../atl/reference/cautoptr-class.md) erstellt wurden.
+> `CAtlArray::Copy`unterstützt keine Arrays, die aus Elementen bestehen, die mit der [cautoptr](../../atl/reference/cautoptr-class.md) -Klasse erstellt wurden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#5](../../atl/codesnippet/cpp/catlarray-class_5.cpp)]
 
-## <a name="catlarrayfreeextra"></a><a name="freeextra"></a>CAtlArray::FreeExtra
+## <a name="catlarrayfreeextra"></a><a name="freeextra"></a>"Update":: freextra
 
-Rufen Sie diese Methode auf, um alle leeren Elemente aus dem Array zu entfernen.
+Diese Methode wird aufgerufen, um leere Elemente aus dem Array zu entfernen.
 
 ```cpp
 void FreeExtra() throw();
@@ -242,39 +242,39 @@ void FreeExtra() throw();
 
 Alle leeren Elemente werden entfernt, aber die Größe und die obere Grenze des Arrays bleiben unverändert.
 
-In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das CAtlArray-Objekt ungültig ist oder wenn das Array seine maximale Größe überschreitet.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das-Objekt nicht gültig ist, oder wenn das Array seine maximale Größe überschreiten würde.
 
-## <a name="catlarraygetat"></a><a name="getat"></a>CAtlArray::GetAt
+## <a name="catlarraygetat"></a><a name="getat"></a>"Update":: GetAt
 
-Rufen Sie diese Methode auf, um ein einzelnes Element aus dem Arrayobjekt abzurufen.
+Rufen Sie diese Methode auf, um ein einzelnes Element aus dem Array Objekt abzurufen.
 
-```
+```cpp
 const E& GetAt(size_t iElement) const throw();
 E& GetAt(size_t iElement) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Ielement*<br/>
-Der Indexwert des zurückzugebenden Arrayelements.
+*IElement*<br/>
+Der Indexwert des zurück zugebende Array Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf das erforderliche Arrayelement zurück.
+Gibt einen Verweis auf das erforderliche Array Element zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *iElement* die Anzahl der Elemente im Array überschreitet. In Releasebuilds kann ein ungültiges Argument zu unvorhersehbarem Verhalten führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *IElement* die Anzahl der Elemente im Array überschreitet. In Releasebuilds kann ein ungültiges Argument zu unvorhersehbarem Verhalten führen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#6](../../atl/codesnippet/cpp/catlarray-class_6.cpp)]
 
-## <a name="catlarraygetcount"></a><a name="getcount"></a>CAtlArray::GetCount
+## <a name="catlarraygetcount"></a><a name="getcount"></a>"Chanlarray:: GetCount"
 
-Rufen Sie diese Methode auf, um die Anzahl der im Array gespeicherten Elemente zurückzugeben.
+Mit dieser Methode wird die Anzahl der im Array gespeicherten Elemente zurückgegeben.
 
-```
+```cpp
 size_t GetCount() const throw();
 ```
 
@@ -284,40 +284,40 @@ Gibt die Anzahl der im Array gespeicherten Elemente zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Da sich das erste Element im Array an `GetCount` Position 0 befindet, ist der zurückgegebene Wert immer 1 größer als der größte Index.
+Da sich das erste Element im Array an Position 0 befindet, ist der Wert, `GetCount` der von zurückgegeben wird, immer 1 größer als der größte Index.
 
 ### <a name="example"></a>Beispiel
 
-Siehe beispiel für [CAtlArray::GetAt](#getat).
+Weitere Informationen finden Sie im [Beispiel für "](#getat)".
 
-## <a name="catlarraygetdata"></a><a name="getdata"></a>CAtlArray::GetData
+## <a name="catlarraygetdata"></a><a name="getdata"></a>"": GetData
 
-Rufen Sie diese Methode auf, um einen Zeiger auf das erste Element im Array zurückzugeben.
+Ruft diese Methode auf, um einen Zeiger auf das erste Element im Array zurückzugeben.
 
-```
+```cpp
 E* GetData() throw();
 const E* GetData() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf den Speicherspeicherort zurück, in dem das erste Element im Array gespeichert wird. Wenn keine Elemente verfügbar sind, wird NULL zurückgegeben.
+Gibt einen Zeiger auf den Speicherort zurück, der das erste Element im Array speichert. Wenn keine Elemente verfügbar sind, wird NULL zurückgegeben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#7](../../atl/codesnippet/cpp/catlarray-class_7.cpp)]
 
-## <a name="catlarrayinargtype"></a><a name="inargtype"></a>CAtlArray::INARGTYPE
+## <a name="catlarrayinargtype"></a><a name="inargtype"></a>"": Inargtype
 
 Der Datentyp, der zum Hinzufügen von Elementen zum Array verwendet werden soll.
 
-```
+```cpp
 typedef ETraits::INARGTYPE INARGTYPE;
 ```
 
-## <a name="catlarrayinsertarrayat"></a><a name="insertarrayat"></a>CAtlArray::InsertArrayAt
+## <a name="catlarrayinsertarrayat"></a><a name="insertarrayat"></a>"": Insertarrayat
 
-Rufen Sie diese Methode auf, um ein Array in ein anderes einzufügen.
+Ruft diese Methode auf, um ein Array in ein anderes einzufügen.
 
 ```cpp
 void InsertArrayAt(size_t iStart, const CAtlArray<E, ETraits>* paNew);
@@ -328,25 +328,25 @@ void InsertArrayAt(size_t iStart, const CAtlArray<E, ETraits>* paNew);
 *iStart*<br/>
 Der Index, an dem das Array eingefügt werden soll.
 
-*paNew*<br/>
+*Panew*<br/>
 Das Array, das eingefügt werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Elemente aus dem Array *paNew* werden in das Arrayobjekt kopiert, beginnend mit dem Element *iStart*. Die vorhandenen Arrayelemente werden verschoben, um zu vermeiden, dass sie überschrieben werden.
+Elemente aus dem *arraypanew* werden in das Array Objekt kopiert, beginnend bei Element *iStart*. Die vorhandenen Array Elemente werden verschoben, damit Sie nicht überschrieben werden.
 
-In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Objekt ungültig ist oder wenn der *paNew-Zeiger* NULL oder ungültig ist.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das `CAtlArray` Objekt ungültig ist, oder wenn der *Panew* -Zeiger NULL oder ungültig ist.
 
 > [!NOTE]
-> `CAtlArray::InsertArrayAt`unterstützt keine Arrays, die aus Elementen bestehen, die mit der [CAutoPtr-Klasse](../../atl/reference/cautoptr-class.md) erstellt wurden.
+> `CAtlArray::InsertArrayAt`unterstützt keine Arrays, die aus Elementen bestehen, die mit der [cautoptr](../../atl/reference/cautoptr-class.md) -Klasse erstellt wurden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#8](../../atl/codesnippet/cpp/catlarray-class_8.cpp)]
 
-## <a name="catlarrayinsertat"></a><a name="insertat"></a>CAtlArray::InsertAt
+## <a name="catlarrayinsertat"></a><a name="insertat"></a>"Update":: InsertAt
 
-Rufen Sie diese Methode auf, um ein neues Element (oder mehrere Kopien eines Elements) in das Arrayobjekt einzufügen.
+Mit dieser Methode können Sie ein neues Element (oder mehrere Kopien eines Elements) in das Array Objekt einfügen.
 
 ```cpp
 void InsertAt(size_t iElement, INARGTYPE element, size_t nCount = 1);
@@ -354,30 +354,30 @@ void InsertAt(size_t iElement, INARGTYPE element, size_t nCount = 1);
 
 ### <a name="parameters"></a>Parameter
 
-*Ielement*<br/>
-Der Index, in den das Element oder die Elemente eingefügt werden sollen.
+*IElement*<br/>
+Der Index, an dem das Element oder die Elemente eingefügt werden sollen.
 
-*Element*<br/>
-Der Wert des elements oder der Elemente, die eingefügt werden sollen.
+*gewisses*<br/>
+Der Wert des Elements, das eingefügt werden soll.
 
 *nCount*<br/>
-Die Anzahl der hinzuzufügenden Elemente.
+Die Anzahl der hinzu zufügenden Elemente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Fügt ein oder mehrere Elemente in das Array ein, beginnend mit dem Index *iElement*. Vorhandene Elemente werden verschoben, um zu vermeiden, dass sie überschrieben werden.
+Fügt ein oder mehrere Elemente in das Array ein, beginnend bei Index *IElement*. Vorhandene Elemente werden verschoben, damit Sie nicht überschrieben werden.
 
-In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Objekt ungültig ist, die Anzahl der hinzuzufügenden Elemente Null ist oder die kombinierte Anzahl von Elementen zu groß ist, als dass das Array enthalten werden kann. In Einzelhandelsbuilds kann das Übergeben ungültiger Parameter zu unvorhersehbaren Ergebnissen führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das `CAtlArray` -Objekt ungültig ist, die Anzahl der hinzu zufügenden Elemente 0 (null) ist oder die kombinierte Anzahl von Elementen zu groß ist, um das Array enthalten zu können. In Einzelhandels Builds kann das Übergeben von ungültigen Parametern zu unvorhersehbaren Ergebnissen führen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#9](../../atl/codesnippet/cpp/catlarray-class_9.cpp)]
 
-## <a name="catlarrayisempty"></a><a name="isempty"></a>CAtlArray::IsEmpty
+## <a name="catlarrayisempty"></a><a name="isempty"></a>"": IsEmpty
 
-Rufen Sie diese Methode auf, um zu testen, ob das Array leer ist.
+Mit dieser Methode können Sie überprüfen, ob das Array leer ist.
 
-```
+```cpp
 bool IsEmpty() const throw();
 ```
 
@@ -387,47 +387,47 @@ Gibt true zurück, wenn das Array leer ist, andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Array ist angeblich leer, wenn es keine Elemente enthält. Daher ist das Array, selbst wenn es leere Elemente enthält, nicht leer.
+Das Array ist leer, wenn es keine Elemente enthält. Daher ist es nicht leer, auch wenn das Array leere Elemente enthält.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#10](../../atl/codesnippet/cpp/catlarray-class_10.cpp)]
 
-## <a name="catlarrayoperator-"></a><a name="operator_at"></a>CAtlArray::operator []
+## <a name="catlarrayoperator-"></a><a name="operator_at"></a>"-Operator":: Operator []
 
-Rufen Sie diesen Operator auf, um einen Verweis auf ein Element im Array zurückzugeben.
+Ruft diesen Operator auf, um einen Verweis auf ein Element im Array zurückzugeben.
 
-```
+```cpp
 E& operator[](size_t ielement) throw();
 const E& operator[](size_t ielement) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Ielement*<br/>
-Der Indexwert des zurückzugebenden Arrayelements.
+*IElement*<br/>
+Der Indexwert des zurück zugebende Array Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf das erforderliche Arrayelement zurück.
+Gibt einen Verweis auf das erforderliche Array Element zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Führt eine ähnliche Funktion wie [CAtlArray::GetAt](#getat)aus. Im Gegensatz zur MFC-Klasse [CArray](../../mfc/reference/carray-class.md)kann dieser Operator nicht als Ersatz für [CAtlArray::SetAt](#setat)verwendet werden.
+Führt eine ähnliche Funktion für "" "" "" ["mit"](#getat)". Anders als bei der MFC-Klasse [CArray](../../mfc/reference/carray-class.md)kann dieser Operator nicht als Ersatz für " [asslarray::](#setat)" verwendet werden.
 
-In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *iElement* die Gesamtzahl der Elemente im Array überschreitet. In Einzelhandelsbuilds kann ein ungültiger Parameter zu unvorhersehbaren Ergebnissen führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *IElement* die Gesamtzahl der Elemente im Array überschreitet. In Einzelhandels Builds kann ein ungültiger Parameter zu unvorhersehbaren Ergebnissen führen.
 
-## <a name="catlarrayoutargtype"></a><a name="outargtype"></a>CAtlArray::OUTARGTYPE
+## <a name="catlarrayoutargtype"></a><a name="outargtype"></a>"Datentypen": outargtype
 
 Der Datentyp, der zum Abrufen von Elementen aus dem Array verwendet werden soll.
 
-```
+```cpp
 typedef ETraits::OUTARGTYPE OUTARGTYPE;
 ```
 
-## <a name="catlarrayremoveall"></a><a name="removeall"></a>CAtlArray::Alle entfernen
+## <a name="catlarrayremoveall"></a><a name="removeall"></a>"": RemoveAll
 
-Rufen Sie diese Methode auf, um alle Elemente aus dem Arrayobjekt zu entfernen.
+Mit dieser Methode können Sie alle Elemente aus dem Array Objekt entfernen.
 
 ```cpp
 void RemoveAll() throw();
@@ -435,17 +435,17 @@ void RemoveAll() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Entfernt alle Elemente aus dem Arrayobjekt.
+Entfernt alle Elemente aus dem Array Objekt.
 
-Diese Methode ruft [CAtlArray::SetCount](#setcount) auf, um die Größe des Arrays zu ändern, und gibt anschließend den zugewiesenen Speicher frei.
+Diese Methode ruft " [chanlarray:: SetCount](#setcount) " auf, um die Größe des Arrays zu ändern, und gibt anschließend zugeordneten Speicher frei.
 
 ### <a name="example"></a>Beispiel
 
-Siehe beispielfür [CAtlArray::IsEmpty](#isempty).
+Weitere Informationen finden Sie im [Beispiel für "](#isempty)".
 
-## <a name="catlarrayremoveat"></a><a name="removeat"></a>CAtlArray::RemoveAt
+## <a name="catlarrayremoveat"></a><a name="removeat"></a>"Update":: RemoveAt
 
-Rufen Sie diese Methode auf, um ein oder mehrere Elemente aus dem Array zu entfernen.
+Diese Methode wird aufgerufen, um ein oder mehrere Elemente aus dem Array zu entfernen.
 
 ```cpp
 void RemoveAt(size_t iElement, size_t nCount = 1);
@@ -453,7 +453,7 @@ void RemoveAt(size_t iElement, size_t nCount = 1);
 
 ### <a name="parameters"></a>Parameter
 
-*Ielement*<br/>
+*IElement*<br/>
 Der Index des ersten zu entfernenden Elements.
 
 *nCount*<br/>
@@ -461,17 +461,17 @@ Die Anzahl der zu entfernenden Elemente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Entfernt ein oder mehrere Elemente aus dem Array. Alle verbleibenden Elemente werden nach unten verschoben. Die obere Grenze wird dekrementiert, aber der Speicher wird erst freigegeben, wenn ein Aufruf von [CAtlArray::FreeExtra](#freeextra) gemacht wird.
+Entfernt ein oder mehrere Elemente aus dem Array. Alle verbleibenden Elemente werden nach unten verschoben. Die obere Grenze wird verringert, aber der Arbeitsspeicher wird erst freigegeben, wenn ein [calllarray:: freextra](#freeextra) -Befehl durchgeführt wird.
 
-In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Objekt ungültig ist oder wenn die gesamtsumme von *iElement* und *nCount* die Gesamtzahl der Elemente im Array überschreitet. In Einzelhandelsbuilds können ungültige Parameter zu unvorhersehbaren Ergebnissen führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das `CAtlArray` Objekt ungültig ist, oder wenn die kombinierte Gesamtanzahl von *IElement* und *nCount* die Gesamtzahl der Elemente im Array überschreitet. In Einzelhandels Builds können ungültige Parameter zu unvorhersehbaren Ergebnissen führen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#11](../../atl/codesnippet/cpp/catlarray-class_11.cpp)]
 
-## <a name="catlarraysetat"></a><a name="setat"></a>CAtlArray::SetAt
+## <a name="catlarraysetat"></a><a name="setat"></a>"":
 
-Rufen Sie diese Methode auf, um den Wert eines Elements im Arrayobjekt festzulegen.
+Ruft diese Methode auf, um den Wert eines Elements im Array Objekt festzulegen.
 
 ```cpp
 void SetAt(size_t iElement, INARGTYPE element);
@@ -479,35 +479,35 @@ void SetAt(size_t iElement, INARGTYPE element);
 
 ### <a name="parameters"></a>Parameter
 
-*Ielement*<br/>
-Der Index, der auf das festzulegende Arrayelement zeigt.
+*IElement*<br/>
+Der Index, der auf das festzulegende Array Element verweist.
 
-*Element*<br/>
+*gewisses*<br/>
 Der neue Wert des angegebenen Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
-In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *iElement* die Anzahl der Elemente im Array überschreitet. In Einzelhandelsbuilds kann ein ungültiger Parameter zu unvorhersehbaren Ergebnissen führen.
+In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *IElement* die Anzahl der Elemente im Array überschreitet. In Einzelhandels Builds kann ein ungültiger Parameter zu unvorhersehbaren Ergebnissen führen.
 
 ### <a name="example"></a>Beispiel
 
-Siehe beispiel für [CAtlArray::GetAt](#getat).
+Weitere Informationen finden Sie im [Beispiel für "](#getat)".
 
-## <a name="catlarraysetcount"></a><a name="setcount"></a>CAtlArray::SetCount
+## <a name="catlarraysetcount"></a><a name="setcount"></a>"Chanlarray:: SetCount"
 
-Rufen Sie diese Methode auf, um die Größe des Arrayobjekts festzulegen.
+Ruft diese Methode auf, um die Größe des Array Objekts festzulegen.
 
-```
+```cpp
 bool SetCount(size_t nNewSize, int nGrowBy = - 1);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nNewSize*<br/>
+*nnewSize*<br/>
 Die erforderliche Größe des Arrays.
 
-*nGrowBy*<br/>
-Ein Wert, der verwendet wird, um zu bestimmen, wie groß der Puffer wird. Ein Wert von -1 bewirkt, dass ein intern berechneter Wert verwendet wird.
+*ngrowby*<br/>
+Ein-Wert, der verwendet wird, um die Größe des Puffers zu bestimmen. Der Wert-1 bewirkt, dass ein intern berechneter Wert verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -515,17 +515,17 @@ Gibt true zurück, wenn die Größe des Arrays erfolgreich geändert wurde, ande
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Array kann vergrößert oder verkleinert werden. Wenn erhöht, werden dem Array zusätzliche leere Elemente hinzugefügt. Wenn sie verringert werden, werden die Elemente mit den größten Indizes gelöscht und der Speicher freigegeben.
+Das Array kann erweitert oder verkleinert werden. Wenn der Wert erhöht wird, werden dem Array zusätzliche leere Elemente hinzugefügt. Wenn die Größe verringert wird, werden die Elemente mit den größten Indizes gelöscht und der Arbeitsspeicher freigegeben.
 
-Verwenden Sie diese Methode, um die Größe des Arrays festzulegen, bevor Sie es verwenden. Wenn `SetCount` nicht verwendet wird, reduziert das Hinzufügen von Elementen – und die anschließende Speicherzuweisung – die Leistung und den Fragmentspeicher.
+Verwenden Sie diese Methode, um die Größe des Arrays vor der Verwendung festzulegen. Wenn `SetCount` nicht verwendet wird, wird durch den Prozess des Hinzufügens von Elementen – und der nachfolgenden Speicher Belegung – die Leistung und der fragmentarbeitsspeicher reduziert.
 
 ### <a name="example"></a>Beispiel
 
-Siehe Beispiel für [CAtlArray::GetData](#getdata).
+Weitere Informationen finden Sie im [Beispiel für "":](#getdata)
 
-## <a name="catlarraysetatgrow"></a><a name="setatgrow"></a>CAtlArray::SetAtGrow
+## <a name="catlarraysetatgrow"></a><a name="setatgrow"></a>"":
 
-Rufen Sie diese Methode auf, um den Wert eines Elements im Arrayobjekt festzulegen und das Array nach Bedarf zu erweitern.
+Ruft diese Methode auf, um den Wert eines Elements im Array Objekt festzulegen und das Array nach Bedarf zu erweitern.
 
 ```cpp
 void SetAtGrow(size_t iElement, INARGTYPE element);
@@ -533,15 +533,15 @@ void SetAtGrow(size_t iElement, INARGTYPE element);
 
 ### <a name="parameters"></a>Parameter
 
-*Ielement*<br/>
-Der Index, der auf das festzulegende Arrayelement zeigt.
+*IElement*<br/>
+Der Index, der auf das festzulegende Array Element verweist.
 
-*Element*<br/>
+*gewisses*<br/>
 Der neue Wert des angegebenen Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ersetzt den Wert des Elements, auf das der Index zeigt. Wenn *iElement* größer als die aktuelle Größe des Arrays ist, wird das Array automatisch durch einen Aufruf von [CAtlArray::SetCount](#setcount)erhöht. In Debugbuilds wird ein ATLASSERT `CAtlArray` ausgelöst, wenn das Objekt ungültig ist. In Einzelhandelsbuilds können ungültige Parameter zu unvorhersehbaren Ergebnissen führen.
+Ersetzt den Wert des Elements, auf das durch den Index verwiesen wird. Wenn *IElement* größer als die aktuelle Größe des Arrays ist, wird das Array automatisch mit einem aufzurufenden [calllarray:: SetCount](#setcount)-Befehl vergrößert. In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das `CAtlArray` Objekt nicht gültig ist. In Einzelhandels Builds können ungültige Parameter zu unvorhersehbaren Ergebnissen führen.
 
 ### <a name="example"></a>Beispiel
 

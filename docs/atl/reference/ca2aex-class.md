@@ -10,31 +10,31 @@ f1_keywords:
 helpviewer_keywords:
 - CA2AEX class
 ms.assetid: 57dc65df-d9cf-4a84-99d3-6e031dde3664
-ms.openlocfilehash: 4f8b9f91e9bc499523fe3484bc76325e2efb8140
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dfd8967d21005d83b38eeae36cfc147051d7beaf
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319182"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168526"
 ---
 # <a name="ca2aex-class"></a>CA2AEX-Klasse
 
-Diese Klasse wird von den Zeichenfolgenkonvertierungsmakros CA2TEX und CT2AEX sowie vom typedef CA2A verwendet.
+Diese Klasse wird von den Zeichen folgen Konvertierungs Makros CA2TEX und CT2AEX sowie von typedef CA2A verwendet.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <int t_nBufferLength = 128>
 class CA2AEX
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *t_nBufferLength*<br/>
-Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Byte.
+Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Bytes.
 
 ## <a name="members"></a>Member
 
@@ -43,30 +43,30 @@ Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standar
 |Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CA2AEX::CA2AEX](#ca2aex)|Der Konstruktor.|
-|[CA2AEX::CA2AEX](#dtor)|Der Destruktor.|
+|[CA2AEX:: ~ CA2AEX](#dtor)|Der Destruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2AEX::operator LPSTR](#operator_lpstr)|Konvertierungsoperator.|
+|[CA2AEX:: Operator LPSTR](#operator_lpstr)|Konvertierungs Operator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2AEX::m_psz](#m_psz)|Das Datenelement, das die Quellzeichenfolge speichert.|
-|[CA2AEX::m_szBuffer](#m_szbuffer)|Der statische Puffer, der zum Speichern der konvertierten Zeichenfolge verwendet wird.|
+|[CA2AEX:: m_psz](#m_psz)|Der Datenmember, der die Quell Zeichenfolge speichert.|
+|[CA2AEX:: m_szBuffer](#m_szbuffer)|Der statische Puffer, der zum Speichern der konvertierten Zeichenfolge verwendet wird.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie CA2TEX, CT2AEX oder CA2A in Ihrem eigenen Code, es sei denn, zusätzliche Funktionen sind erforderlich.
+Wenn keine zusätzliche Funktionalität erforderlich ist, verwenden Sie CA2TEX, CT2AEX oder CA2A in Ihrem eigenen Code.
 
-Diese Klasse enthält einen statischen Puffer fester Größe, der zum Speichern des Ergebnisses der Konvertierung verwendet wird. Wenn das Ergebnis zu groß ist, um in den statischen Puffer zu passen, weist die Klasse Speicher mithilfe von **malloc**zu, wodurch der Speicher freigegeben wird, wenn das Objekt den Gültigkeitsbereich verlässt. Dadurch wird sichergestellt, dass diese Klasse im Gegensatz zu Textkonvertierungsmakros, die in früheren Versionen von ATL verfügbar waren, sicher in Schleifen verwendet werden kann und den Stapel nicht überläuft.
+Diese Klasse enthält einen statischen Puffer fester Größe, der verwendet wird, um das Ergebnis der Konvertierung zu speichern. Wenn das Ergebnis zu groß für den statischen Puffer ist, ordnet die Klasse Arbeitsspeicher mithilfe von **malloc**zu und gibt den Arbeitsspeicher frei, wenn das Objekt den Gültigkeitsbereich verlässt. Dadurch wird sichergestellt, dass diese Klasse im Gegensatz zu Text Konvertierungs Makros, die in früheren Versionen von ATL verfügbar waren, sicher in Schleifen verwendet werden kann und dass der Stapel nicht überläuft.
 
-Wenn die Klasse versucht, Speicher auf dem Heap `AtlThrow` zuzuweisen, und fehlschlägt, ruft sie mit dem Argument E_OUTOFMEMORY auf.
+Wenn die Klasse versucht, Arbeitsspeicher auf dem Heap zuzuordnen, und einen Fehler verursacht `AtlThrow` , wird mit dem Argument E_OUTOFMEMORY aufgerufen.
 
-Standardmäßig verwenden die ATL-Konvertierungsklassen und Makros die ANSI-Codepage des aktuellen Threads für die Konvertierung.
+Standardmäßig wird die ANSI-Codepage des aktuellen Threads für die Konvertierung von den ATL-Konvertierungs Klassen und-Makros verwendet.
 
 Die folgenden Makros basieren auf dieser Klasse:
 
@@ -78,42 +78,42 @@ Die folgende typedef basiert auf dieser Klasse:
 
 - CA2A
 
-Eine Erläuterung dieser Textkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros](string-conversion-macros.md).
+Eine Erläuterung dieser Text Konvertierungs Makros finden Sie unter [ATL-und MFC-Zeichen folgen-Konvertierungs Makros](string-conversion-macros.md).
 
 ## <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung dieser Zeichenfolgenkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros.](string-conversion-macros.md)
+Ein Beispiel für die Verwendung dieser Zeichen folgen Konvertierungs Makros finden Sie unter [ATL-und MFC-Zeichen folgen Konvertierungs Makros](string-conversion-macros.md) .
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlconv.h
+**Header:** ATL-v. h
 
 ## <a name="ca2aexca2aex"></a><a name="ca2aex"></a>CA2AEX::CA2AEX
 
 Der Konstruktor.
 
-```
+```cpp
 CA2AEX(LPCSTR psz, UINT nCodePage) throw(...);
 CA2AEX(LPCSTR psz) throw(...);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Psz*<br/>
-Die zu konvertierende Textzeichenfolge.
+*PSZ*<br/>
+Die zu konvertierende Text Zeichenfolge.
 
-*nCodePage*<br/>
-Nicht verwendet in dieser Klasse.
+*ncodepage*<br/>
+In dieser Klasse nicht verwendet.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Erstellt den Puffer, der für die Übersetzung erforderlich ist.
+Erstellt den für die Übersetzung erforderlichen Puffer.
 
-## <a name="ca2aexca2aex"></a><a name="dtor"></a>CA2AEX::CA2AEX
+## <a name="ca2aexca2aex"></a><a name="dtor"></a>CA2AEX:: ~ CA2AEX
 
 Der Destruktor.
 
-```
+```cpp
 ~CA2AEX() throw();
 ```
 
@@ -121,35 +121,35 @@ Der Destruktor.
 
 Gibt den zugewiesenen Puffer frei.
 
-## <a name="ca2aexm_psz"></a><a name="m_psz"></a>CA2AEX::m_psz
+## <a name="ca2aexm_psz"></a><a name="m_psz"></a>CA2AEX:: m_psz
 
-Das Datenelement, das die Quellzeichenfolge speichert.
+Der Datenmember, der die Quell Zeichenfolge speichert.
 
-```
+```cpp
 LPSTR m_psz;
 ```
 
-## <a name="ca2aexm_szbuffer"></a><a name="m_szbuffer"></a>CA2AEX::m_szBuffer
+## <a name="ca2aexm_szbuffer"></a><a name="m_szbuffer"></a>CA2AEX:: m_szBuffer
 
 Der statische Puffer, der zum Speichern der konvertierten Zeichenfolge verwendet wird.
 
-```
+```cpp
 char m_szBuffer[ t_nBufferLength];
 ```
 
-## <a name="ca2aexoperator-lpstr"></a><a name="operator_lpstr"></a>CA2AEX::operator LPSTR
+## <a name="ca2aexoperator-lpstr"></a><a name="operator_lpstr"></a>CA2AEX:: Operator LPSTR
 
-Konvertierungsoperator.
+Konvertierungs Operator.
 
-```
+```cpp
 operator LPSTR() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Textzeichenfolge als Typ LPSTR zurück.
+Gibt die Text Zeichenfolge als LPSTR-Typ zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [CA2CAEX-Klasse](../../atl/reference/ca2caex-class.md)<br/>
 [CA2WEX-Klasse](../../atl/reference/ca2wex-class.md)<br/>

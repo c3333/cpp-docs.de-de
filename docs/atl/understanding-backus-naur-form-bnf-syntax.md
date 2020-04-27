@@ -5,12 +5,12 @@ helpviewer_keywords:
 - BNF notation
 - Backus-Naur form (BNF) syntax
 ms.assetid: 994bbef0-9077-4aa8-bdfe-b7e830af9acc
-ms.openlocfilehash: 77f0fa6fef8e517e5714d1da6c61d0e310e0718c
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 0f07a39863b586d524d060dc3df7117e2c930b3e
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65709180"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168708"
 ---
 # <a name="understanding-backus-naur-form-bnf-syntax"></a>Einführung in die BNF-Syntax (Backus-Naur-Form)
 
@@ -19,7 +19,7 @@ Die vom ATL-Registrar verwendeten Skripts sind in diesem Thema mit der BNF-Synta
 |Konvention/Symbol|Bedeutung|
 |------------------------|-------------|
 |::=|Entsprechung|
-|&#124;|ODER|
+|&#124;|oder|
 |X+|Mindestens ein X.|
 |\[X]|X ist optional. Optionale Trennzeichen sind durch \[] gekennzeichnet.|
 |Jeglicher **fett** ausgezeichnete Text|Ein Zeichenfolgenliteral.|
@@ -29,13 +29,13 @@ Wie in der obigen Tabelle angegeben ist, werden für Registrar-Skripts Zeichenfo
 
 |Zeichenfolgenliteral|Aktion|
 |--------------------|------------|
-|**ForceRemove**|Entfernt den nächsten Schlüssel (sofern vorhanden) vollständig und erstellt diesen dann neu.|
+|**"ForceRemove"**|Entfernt den nächsten Schlüssel (sofern vorhanden) vollständig und erstellt diesen dann neu.|
 |**NoRemove**|Entfernt den nächsten Schlüssel beim Aufheben der Registrierung nicht.|
-|**val**|Gibt an, dass `<Key Name>` tatsächlich ein benannter Wert ist.|
-|**Delete**|Löscht den nächsten Schlüssel während der Registrierung.|
-|**s**|Gibt an, dass der nächste Wert eine Zeichenfolge (REG_SZ) ist.|
+|**ster**|Gibt an, dass `<Key Name>` tatsächlich ein benannter Wert ist.|
+|**Löschen**|Löscht den nächsten Schlüssel während der Registrierung.|
+|**Hymnen**|Gibt an, dass der nächste Wert eine Zeichenfolge (REG_SZ) ist.|
 |**d**|Gibt an, dass der nächste Wert ein DWORD-Wert (REG_DWORD) ist.|
-|**m**|Gibt an, dass der nächste Wert eine mehrteilige Zeichenfolge (REG_MULTI_SZ) ist.|
+|**800**|Gibt an, dass der nächste Wert eine mehrteilige Zeichenfolge (REG_MULTI_SZ) ist.|
 |**b**|Gibt an, dass der nächste Wert ein Binärwert (REG_BINARY) ist.|
 
 ## <a name="bnf-syntax-examples"></a>Beispiele für die BNF-Syntax
@@ -44,47 +44,37 @@ Es folgen einige Syntaxbeispiele, die Ihnen verdeutlichen sollen, wie die Notati
 
 ### <a name="syntax-example-1"></a>Syntaxbeispiel 1
 
-```
-<registry expression> ::= <Add Key>
-```
+> \<Registrierungs Ausdruck>:: = \<Schlüssel hinzufügen>
 
 gibt an, dass `registry expression` mit `Add Key` identisch ist.
 
 ### <a name="syntax-example-2"></a>Syntaxbeispiel 2
 
-```
-<registry expression> ::= <Add Key> | <Delete Key>
-```
+> \<Registrierungs Ausdruck>:: = \<Key> hinzufügen | \<Schlüssel> löschen
 
 gibt an, dass `registry expression` entweder mit `Add Key` oder mit `Delete Key` identisch ist.
 
 ### <a name="syntax-example-3"></a>Syntaxbeispiel 3
 
-```
-<Key Name> ::= '<AlphaNumeric>+'
-```
+> \<Schlüssel Name>:: = '\<alphanumerisches>+ '
 
-gibt an, dass `Key Name` mit mindestens einem `AlphaNumerics`-Wert identisch ist.
+Gibt an `Key Name` , dass einem oder mehreren `AlphaNumeric` Werten entspricht.
 
 ### <a name="syntax-example-4"></a>Syntaxbeispiel 4
 
-```
-<Add Key> ::= [ForceRemove | NoRemove | val]<Key Name>
-```
+> \<Schlüssel hinzufügen>:: = [**ForceRemove** | **NoRemove** | **Val**]\<Schlüssel Name>
 
 gibt an, dass `Add Key` mit `Key Name` identisch ist, und dass die Zeichenfolgenliterale `ForceRemove`, `NoRemove` und `val` optional sind.
 
 ### <a name="syntax-example-5"></a>Syntaxbeispiel 5
 
-```
-<AlphaNumeric> ::= any character not NULL, that is, ASCII 0
-```
+> \<Alphanumerisches>:: = *beliebiges Zeichen ungleich NULL,* d. h. ASCII 0
 
 gibt an, dass `AlphaNumeric` mit jedem Nicht-NULL-Zeichen identisch ist.
 
 ### <a name="syntax-example-6"></a>Syntaxbeispiel 6
 
-```
+```rgs
 val 'testmulti' = m 'String 1\0String 2\0'
 ```
 
@@ -92,12 +82,12 @@ gibt an, dass der Schlüsselname `testmulti` eine mehrteilige Zeichenfolge ist, 
 
 ### <a name="syntax-example-7"></a>Syntaxbeispiel 7
 
-```
+```rgs
 val 'testhex' = d '&H55'
 ```
 
 gibt an, dass der Schlüsselname `testhex` ein DWORD-Wert ist, der auf hexadezimal 55 (dezimal 85) festgelegt ist. Beachten Sie, dass dieses Format der **&H**-Notation entspricht, wie sie in der Visual Basic-Spezifikation enthalten ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-[Erstellen von Registrierungsskripts](../atl/creating-registrar-scripts.md)
+[Erstellen von Registrierungs Skripts](../atl/creating-registrar-scripts.md)

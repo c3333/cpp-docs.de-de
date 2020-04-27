@@ -1,5 +1,5 @@
 ---
-title: CAtlFileMapping-Klasse
+title: Klasse von "Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlFileMapping
@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlFileMapping class
 ms.assetid: 899fc058-e05e-48b5-aca9-340403bb9e26
-ms.openlocfilehash: ca46ccdacf5ea24f1de26cdc75bf808c4ecfaa40
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7516349e4ec54d8cb90fa6ff23b0ded954aa043b
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318958"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168123"
 ---
-# <a name="catlfilemapping-class"></a>CAtlFileMapping-Klasse
+# <a name="catlfilemapping-class"></a>Klasse von "Klasse"
 
-Diese Klasse stellt eine Speicherzuordnungsdatei dar, die den Methoden von [CAtlFileMappingBase](../../atl/reference/catlfilemappingbase-class.md)einen umwandlungsoperator hinzufügt.
+Diese Klasse stellt eine Speicher Abbild Datei dar und fügt den [Methoden von "](../../atl/reference/catlfilemappingbase-class.md)" für "" von "" die Methode "" von "" für "".
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <typename T = char>
 class CAtlFileMapping : public CAtlFileMappingBase
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Typ der Daten, die für den Umwandlungsoperator verwendet werden.
+Der Typ der Daten, die für den Umwandlungs Operator verwendet werden.
 
 ## <a name="members"></a>Member
 
@@ -39,39 +39,39 @@ Der Typ der Daten, die für den Umwandlungsoperator verwendet werden.
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlFileMapping::operator T*](#operator_t_star)|Ermöglicht die `CAtlFileMapping` implizite `T*`Konvertierung von Objekten in .|
+|["Chanlfilemapping:: Operator T *"](#operator_t_star)|Ermöglicht die implizite Konvertierung `CAtlFileMapping` von- `T*`Objekten in.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse fügt einen einzelnen Umwandlungsoperator hinzu, um die implizite Konvertierung von `CAtlFileMapping` Objekten in zu `T*`ermöglichen. Andere Member werden von der Basisklasse [CAtlFileMappingBase](../../atl/reference/catlfilemappingbase-class.md)bereitgestellt.
+Diese Klasse fügt einen einzelnen Cast Operator hinzu, um die implizite `CAtlFileMapping` Konvertierung von `T*`Objekten in zuzulassen. Andere Member werden von der Basisklasse "" [, "](../../atl/reference/catlfilemappingbase-class.md)", "", "", ".
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CAtlFileMappingBase](../../atl/reference/catlfilemappingbase-class.md)
+[' ' ' ' ' ' ' ' ' "](../../atl/reference/catlfilemappingbase-class.md)
 
 `CAtlFileMapping`
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlfile.h
+**Header:** atlfile. h
 
-## <a name="catlfilemappingoperator-t"></a><a name="operator_t_star"></a>CAtlFileMapping::operator T*
+## <a name="catlfilemappingoperator-t"></a><a name="operator_t_star"></a>"Chanlfilemapping:: Operator T *"
 
-Ermöglicht die `CAtlFileMapping` implizite `T*`Konvertierung von Objekten in .
+Ermöglicht die implizite Konvertierung `CAtlFileMapping` von- `T*`Objekten in.
 
-```
+```cpp
 operator T*() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `T*` einen Zeiger auf den Anfang der Speicherzuordnungsdatei zurück.
+Gibt einen `T*` Zeiger auf den Anfang der Speicher Abbild Datei zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [CAtlFileMappingBase::GetData](../../atl/reference/catlfilemappingbase-class.md#getdata) auf und interpretiert den `T*` zurückgegebenen Zeiger als einen, wobei *T* der Typ ist, der als Vorlagenparameter dieser Klasse verwendet wird.
+Ruft ["](../../atl/reference/catlfilemappingbase-class.md#getdata) " "" "" "," ", und interpretiert den zurückgegebenen Zeiger als `T*` " ", wobei" *T* "der Typ ist, der als Vorlagen Parameter dieser Klasse verwendet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-[CAtlFileMappingBase-Klasse](../../atl/reference/catlfilemappingbase-class.md)<br/>
+[Klasse von "-Klasse"](../../atl/reference/catlfilemappingbase-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

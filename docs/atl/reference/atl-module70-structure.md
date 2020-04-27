@@ -1,5 +1,5 @@
 ---
-title: _ATL_MODULE70-Struktur
+title: _ATL_MODULE70 Struktur
 ms.date: 11/04/2016
 f1_keywords:
 - _ATL_MODULE70
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - ATL_MODULE70 structure
 - _ATL_MODULE70 structure
 ms.assetid: b059b2c8-dfd1-4ac9-b07d-39df638cc7b3
-ms.openlocfilehash: d05683383fab64f027f198d49bfbf42aa593d582
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8d39cdd281e09cdfe09546627aa630a11d12464e
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260921"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168565"
 ---
-# <a name="atlmodule70-structure"></a>_ATL_MODULE70-Struktur
+# <a name="_atl_module70-structure"></a>_ATL_MODULE70 Struktur
 
-Enthält Daten, die von jedem ATL-Modul verwendet.
+Enthält Daten, die von jedem ATL-Modul verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 struct _ATL_MODULE70 {
     UINT cbSize;
     LONG m_nLockCnt;
@@ -34,25 +34,25 @@ struct _ATL_MODULE70 {
 ## <a name="members"></a>Member
 
 `cbSize`<br/>
-Die Größe der Struktur, die für die versionsverwaltung verwendet werden soll.
+Die Größe der-Struktur, die für die Versionsverwaltung verwendet wird.
 
 `m_nLockCnt`<br/>
-Um zu bestimmen, wie lange das Modul aktiv bleiben soll, Verweiszähler dieser Planergruppe.
+Verweis Zähler, um zu bestimmen, wie lange das Modul aktiv bleiben soll.
 
 `m_pTermFuncs`<br/>
-Verfolgt-Funktionen, die aufgerufen werden, wenn Sie ATL fährt registriert wurden.
+Verfolgt Funktionen, die registriert wurden, um aufgerufen zu werden, wenn ATL heruntergefahren wird.
 
 `m_csStaticDataInitAndTypeInfo`<br/>
-Verwendet, um den Zugriff auf interne Daten in mehreren Threads Situationen zu koordinieren.
+Wird verwendet, um den Zugriff auf interne Daten in Multithread-Situationen zu koordinieren.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-[_ATL_MODULE](atl-typedefs.md#_atl_module) ist definiert als Typedef von `_ATL_MODULE70`.
+[_ATL_MODULE](atl-typedefs.md#_atl_module) ist als typedef von `_ATL_MODULE70`definiert.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Klassen und Strukturen](../../atl/reference/atl-classes.md)

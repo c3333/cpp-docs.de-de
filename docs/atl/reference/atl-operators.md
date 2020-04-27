@@ -4,162 +4,162 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - operators [ATL]
 ms.assetid: 58ccd252-2869-45ee-8a5c-3ca40ee7f8a2
-ms.openlocfilehash: 8c15daa1d2b12c58323ef5ef75559a2ab911ad93
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fe5363d3d05123c17e45254898e2210797400022
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319236"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168851"
 ---
 # <a name="atl-operators"></a>ATL-Operatoren
 
-Dieser Abschnitt enthält die Referenzthemen für die globalen ATL-Operatoren.
+Dieser Abschnitt enthält die Referenz Themen für die globalen ATL-Operatoren.
 
 |Operator|BESCHREIBUNG|
 |--------------|-----------------|
-|[Operator ==](#operator_eq_eq)|Vergleicht `CSid` zwei `SID` Objekte oder Strukturen für die Gleichheit.|
-|[Operator !=](#operator_neq)|Vergleicht `CSid` zwei `SID` Objekte oder Strukturen für Ungleichheit.|
-|[Betreiber <](#operator_lt)|Testet, `CSid` ob `SID` das Objekt oder die Struktur auf `CSid` der `SID` linken Seite des Operators kleiner als das Objekt oder die Struktur auf der rechten Seite ist (für C++-Standardbibliothekskompatibilität).|
-|[Betreiber >](#operator_gt)|Testet, `CSid` ob `SID` das Objekt oder die Struktur auf `CSid` der `SID` linken Seite des Operators größer ist als das Objekt oder die Struktur auf der rechten Seite (für C++-Standardbibliothekskompatibilität).|
-|[Operator <=](#operator_lt__eq)|Testet, `CSid` ob `SID` das Objekt oder die Struktur auf der linken `CSid` Seite `SID` des Operators kleiner oder gleich dem Objekt oder der Struktur auf der rechten Seite ist (für C++-Standardbibliothekskompatibilität).|
-|[Operator >=](#operator_gt__eq)|Testet, `CSid` ob `SID` das Objekt oder die Struktur auf der linken `CSid` Seite `SID` des Operators größer oder gleich dem Objekt oder der Struktur auf der rechten Seite ist (für C++-Standardbibliothekskompatibilität).|
+|[Operator = =](#operator_eq_eq)|Vergleicht zwei `CSid` -Objekte `SID` oder-Strukturen auf Gleichheit.|
+|[Operator! =](#operator_neq)|Vergleicht zwei `CSid` -Objekte `SID` oder-Strukturen auf Ungleichheit.|
+|[Operator <](#operator_lt)|Testet, ob `CSid` das Objekt `SID` oder die Struktur auf der linken Seite des Operators kleiner ist als `CSid` das Objekt `SID` oder die Struktur auf der rechten Seite (für die Kompatibilität der C++-Standard Bibliothek).|
+|[Operator >](#operator_gt)|Testet, ob `CSid` das Objekt `SID` oder die Struktur auf der linken Seite des Operators größer als das `CSid` Objekt oder `SID` die Struktur auf der rechten Seite ist (für die Kompatibilität der C++-Standard Bibliothek).|
+|[Operator <=](#operator_lt__eq)|Testet, ob `CSid` das Objekt `SID` oder die Struktur auf der linken Seite des Operators kleiner als oder gleich dem Objekt `CSid` oder `SID` der Struktur auf der rechten Seite ist (für die Kompatibilität der C++-Standard Bibliothek).|
+|[Operator >=](#operator_gt__eq)|Testet, ob `CSid` das Objekt `SID` oder die Struktur Links vom Operator größer als oder gleich dem Objekt oder `CSid` `SID` der Struktur auf der rechten Seite ist (für die Kompatibilität der C++-Standard Bibliothek).|
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlsecurity.h.
+**Header:** ATLSecurity. h.
 
-## <a name="operator-"></a><a name="operator_eq_eq"></a>Operator ==
+## <a name="operator-"></a><a name="operator_eq_eq"></a>Operator = =
 
-Vergleicht `CSid` Objekte `SID` oder (Sicherheitskennungs-)Strukturen auf Gleichheit.
+Vergleicht `CSid` Objekte oder `SID` (sicherheitsbezeichnerstrukturen) auf Gleichheit.
 
-```
+```cpp
 bool operator==(const CSid& lhs, const CSid& rhs) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Das `CSid` erste `SID` zu vergleichende Objekt oder die erste Struktur.
+*LHS*<br/>
+Das erste `CSid` zu vergleichende `SID` Objekt oder die erste zu vergleichende Struktur.
 
 *rhs*<br/>
-Das `CSid` zweite `SID` zu vergleichende Objekt oder die zweite Struktur.
+Das zweite `CSid` zu vergleichende `SID` Objekt oder die zweite zu vergleichende Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Objekte gleich sind, FALSE, wenn sie nicht gleich sind.
+Gibt true zurück, wenn die Objekte gleich sind, false, wenn Sie nicht gleich sind.
 
-## <a name="operator-"></a><a name="operator_neq"></a>Operator !=
+## <a name="operator-"></a><a name="operator_neq"></a>Operator! =
 
-Vergleicht `CSid` Objekte `SID` oder (Sicherheitskennungs-)Strukturen mit Ungleichheit.
+Vergleicht `CSid` Objekte oder `SID` (Sicherheits-ID)-Strukturen auf Ungleichheit.
 
-```
+```cpp
 bool operator==(const CSid& lhs, const CSid& rhs) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Das `CSid` erste `SID` zu vergleichende Objekt oder die erste Struktur.
+*LHS*<br/>
+Das erste `CSid` zu vergleichende `SID` Objekt oder die erste zu vergleichende Struktur.
 
 *rhs*<br/>
-Das `CSid` zweite `SID` zu vergleichende Objekt oder die zweite Struktur.
+Das zweite `CSid` zu vergleichende `SID` Objekt oder die zweite zu vergleichende Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Objekte nicht gleich sind, FALSE, wenn sie gleich sind.
+Gibt true zurück, wenn die Objekte nicht gleich sind, false, wenn Sie gleich sind.
 
-## <a name="operator-"></a><a name="operator_lt"></a>Betreiber <
+## <a name="operator-"></a><a name="operator_lt"></a>Operator <
 
-Testet, `CSid` ob `SID` das Objekt oder die Struktur auf `CSid` der `SID` linken Seite des Operators kleiner als das Objekt oder die Struktur auf der rechten Seite ist (für C++-Standardbibliothekskompatibilität).
+Testet, ob `CSid` das Objekt `SID` oder die Struktur auf der linken Seite des Operators kleiner ist als `CSid` das Objekt `SID` oder die Struktur auf der rechten Seite (für die Kompatibilität der C++-Standard Bibliothek).
 
-```
+```cpp
 bool operator<(const CSid& lhs, const CSid& rhs) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Das `CSid` erste `SID` zu vergleichende Objekt oder die erste Struktur.
+*LHS*<br/>
+Das erste `CSid` zu vergleichende `SID` Objekt oder die erste zu vergleichende Struktur.
 
 *rhs*<br/>
-Das `CSid` zweite `SID` zu vergleichende Objekt oder die zweite Struktur.
+Das zweite `CSid` zu vergleichende `SID` Objekt oder die zweite zu vergleichende Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Adresse des *lhs-Objekts* kleiner als die Adresse des *rhs-Objekts* ist, andernfalls FALSE.
+Gibt true zurück, wenn die Adresse des *LHS* -Objekts kleiner als die Adresse des *RHS* -Objekts ist, andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator wirkt auf `CSid` die `SID` Adresse des Objekts oder der Struktur und wird implementiert, um die Kompatibilität mit C++ Standardlibrary-Auflistungsklassen bereitzustellen.
+Dieser Operator verhält sich mit der Adresse des `CSid` Objekts oder `SID` der Struktur und wird implementiert, um die Kompatibilität mit C++-Standard Bibliotheks Auflistungs Klassen zu gewährleisten.
 
-## <a name="operator-"></a><a name="operator_gt"></a>Betreiber >
+## <a name="operator-"></a><a name="operator_gt"></a>Operator >
 
-Testet, `CSid` ob `SID` das Objekt oder die Struktur auf `CSid` der `SID` linken Seite des Operators größer ist als das Objekt oder die Struktur auf der rechten Seite (für C++-Standardbibliothekskompatibilität).
+Testet, ob `CSid` das Objekt `SID` oder die Struktur auf der linken Seite des Operators größer als das `CSid` Objekt oder `SID` die Struktur auf der rechten Seite ist (für die Kompatibilität der C++-Standard Bibliothek).
 
-```
+```cpp
 bool operator<(const CSid& lhs, const CSid& rhs) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Das `CSid` erste `SID` zu vergleichende Objekt oder die erste Struktur.
+*LHS*<br/>
+Das erste `CSid` zu vergleichende `SID` Objekt oder die erste zu vergleichende Struktur.
 
 *rhs*<br/>
-Das `CSid` zweite `SID` zu vergleichende Objekt oder die zweite Struktur.
+Das zweite `CSid` zu vergleichende `SID` Objekt oder die zweite zu vergleichende Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Adresse des *lhs* größer als die Adresse des *rhs*ist, ANDERNFALLS FALSE.
+Gibt "true" zurück, wenn die Adresse des *LHS* größer als die Adresse des *RHS*ist, andernfalls "false".
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator wirkt auf `CSid` die `SID` Adresse des Objekts oder der Struktur und wird implementiert, um die Kompatibilität mit C++ Standardlibrary-Auflistungsklassen bereitzustellen.
+Dieser Operator verhält sich mit der Adresse des `CSid` Objekts oder `SID` der Struktur und wird implementiert, um die Kompatibilität mit C++-Standard Bibliotheks Auflistungs Klassen zu gewährleisten.
 
 ## <a name="operator-"></a><a name="operator_lt__eq"></a>Operator <=
 
-Testet, `CSid` ob `SID` das Objekt oder die Struktur auf der linken `CSid` Seite `SID` des Operators kleiner oder gleich dem Objekt oder der Struktur auf der rechten Seite ist (für C++-Standardbibliothekskompatibilität).
+Testet, ob `CSid` das Objekt `SID` oder die Struktur auf der linken Seite des Operators kleiner als oder gleich dem Objekt `CSid` oder `SID` der Struktur auf der rechten Seite ist (für die Kompatibilität der C++-Standard Bibliothek).
 
-```
+```cpp
 bool operator<(const CSid& lhs, const CSid& rhs) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Das `CSid` erste `SID` zu vergleichende Objekt oder die erste Struktur.
+*LHS*<br/>
+Das erste `CSid` zu vergleichende `SID` Objekt oder die erste zu vergleichende Struktur.
 
 *rhs*<br/>
-Das `CSid` zweite `SID` zu vergleichende Objekt oder die zweite Struktur.
+Das zweite `CSid` zu vergleichende `SID` Objekt oder die zweite zu vergleichende Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Adresse des *lhs* kleiner oder gleich der Adresse des *rhs*ist, andernfalls FALSE.
+Gibt "true" zurück, wenn die Adresse der *LHS* kleiner oder gleich der Adresse des *RHS*ist, andernfalls "false".
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator wirkt auf `CSid` die `SID` Adresse des Objekts oder der Struktur und wird implementiert, um die Kompatibilität mit C++ Standardlibrary-Auflistungsklassen bereitzustellen.
+Dieser Operator verhält sich mit der Adresse des `CSid` Objekts oder `SID` der Struktur und wird implementiert, um die Kompatibilität mit C++-Standard Bibliotheks Auflistungs Klassen zu gewährleisten.
 
 ## <a name="operator-"></a><a name="operator_gt__eq"></a>Operator >=
 
-Testet, `CSid` ob `SID` das Objekt oder die Struktur auf der linken `CSid` Seite `SID` des Operators größer oder gleich dem Objekt oder der Struktur auf der rechten Seite ist (für C++-Standardbibliothekskompatibilität).
+Testet, ob `CSid` das Objekt `SID` oder die Struktur Links vom Operator größer als oder gleich dem Objekt oder `CSid` `SID` der Struktur auf der rechten Seite ist (für die Kompatibilität der C++-Standard Bibliothek).
 
-```
+```cpp
 bool operator<(const CSid& lhs, const CSid& rhs) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Das `CSid` erste `SID` zu vergleichende Objekt oder die erste Struktur.
+*LHS*<br/>
+Das erste `CSid` zu vergleichende `SID` Objekt oder die erste zu vergleichende Struktur.
 
 *rhs*<br/>
-Das `CSid` zweite `SID` zu vergleichende Objekt oder die zweite Struktur.
+Das zweite `CSid` zu vergleichende `SID` Objekt oder die zweite zu vergleichende Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Adresse der *lhs* größer oder gleich der Adresse des *rhs*ist, andernfalls FALSE.
+Gibt "true" zurück, wenn die Adresse der *LHS* größer oder gleich der Adresse des *RHS*ist, andernfalls "false".
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator wirkt auf `CSid` die `SID` Adresse des Objekts oder der Struktur und wird implementiert, um die Kompatibilität mit C++ Standardlibrary-Auflistungsklassen bereitzustellen.
+Dieser Operator verhält sich mit der Adresse des `CSid` Objekts oder `SID` der Struktur und wird implementiert, um die Kompatibilität mit C++-Standard Bibliotheks Auflistungs Klassen zu gewährleisten.
