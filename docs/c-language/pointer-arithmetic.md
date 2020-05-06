@@ -6,11 +6,11 @@ helpviewer_keywords:
 - arithmetic pointer
 ms.assetid: eb924a29-59d3-48a5-9d62-9424790730eb
 ms.openlocfilehash: c1b3e31561bedece6a6180fbeb13473153a46ab6
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152676"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64343139"
 ---
 # <a name="pointer-arithmetic"></a>Zeigerarithmetik
 

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - integers, casting to floating-point values
 ms.assetid: 81fd5b7d-15eb-4c11-a8c8-e1621ff54fd3
 ms.openlocfilehash: 8fa013668278fae82bcb2bb9eb1f2aec3cb61581
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62312647"
 ---
 # <a name="casting-integers-to-floating-point-values"></a>Umwandlung ganzer Zahlen in Gleitkommazahlen-Punktwerte
 

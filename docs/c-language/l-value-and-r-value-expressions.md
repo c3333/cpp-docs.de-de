@@ -8,15 +8,15 @@ helpviewer_keywords:
 - subscript expressions
 ms.assetid: b790303e-ec6f-4d0d-bc55-df42da267172
 ms.openlocfilehash: bd5f702588a11b7841f77de539d113206833cde9
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56150219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62325519"
 ---
 # <a name="l-value-and-r-value-expressions"></a>L-Wert- und R-Wert-Ausdrücke
 
-Ausdrücke, die auf Speicheradressen verweisen, werden als "L-Wertausdrücke" bezeichnet. Ein L-Wert stellt einen "Lokatorwert" des Speicherbereichs bzw. einen "linken" Wert dar, der besagt, dass der Wert links neben dem Gleichzeichen (**=**) stehen kann. Häufig sind L-Werte Bezeichner.
+Ausdrücke, die auf Speicheradressen verweisen, werden als "L-Wertausdrücke" bezeichnet. Ein L-Wert stellt einen "Lokatorwert" des Speicherbereichs bzw. einen "linken" Wert dar, der besagt, dass der Wert links neben dem Gleichzeichen ( **=** ) stehen kann. Häufig sind L-Werte Bezeichner.
 
 Ausdrücke, die auf änderbare Speicherorte verweisen, werden als "änderbare L-Werte" bezeichnet. Ein änderbarer L-Wert darf weder einen Arraytyp noch einen unvollständigen Typ oder einen Typ mit dem Attribut **const** aufweisen. Damit Strukturen und Unions änderbare L-Werte sein können, dürfen sie keine Member mit dem Attribut **const** enthalten. Der Name des Bezeichners gibt einen Speicherort an, und der Wert der Variable ist der an diesem Speicherort gespeicherte Wert.
 
@@ -26,9 +26,9 @@ Jeder der folgenden C-Ausdrücke kann ein L-Wertausdruck sein:
 
 - Ein Bezeichner des Ganzzahl-, Gleitkomma-, Zeiger-, Struktur- oder Union-Typs
 
-- Ein Subscriptausdruck (**[ ]**), der nicht als Array ausgewertet wird
+- Ein Subscriptausdruck ( **[ ]** ), der nicht als Array ausgewertet wird
 
-- Ein Memberauswahlausdruck (**->** oder **.**)
+- Ein Memberauswahlausdruck ( **->** oder **.** )
 
 - Ein unärer Dereferenzierungsausdruck (<strong>\*</strong>), der nicht auf ein Array verweist
 
