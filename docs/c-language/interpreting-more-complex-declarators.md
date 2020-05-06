@@ -6,11 +6,11 @@ helpviewer_keywords:
 - interpreting complex declarators
 ms.assetid: dd5b7019-c86d-4645-a5cc-21f834de6f4a
 ms.openlocfilehash: 13c81728f02963863b641348b58380da099b0013
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232864"
 ---
 # <a name="interpreting-more-complex-declarators"></a>Interpretieren von komplexeren Deklaratoren
 
@@ -70,7 +70,7 @@ In dieser Deklaration für `var` geben Klammern dem Zeigermodifizierer höhere P
 long *var( long, long ); /* Function returning pointer to long */
 ```
 
-Funktionsmodifizierer haben auch höhere Priorität als Zeigermodifizierer, sodass diese Deklaration für `var` `var` als Funktion deklariert, die einen Zeiger auf einen **long**-Wert zurückgibt. Die Funktion wird deklariert, um zwei **long**-Werte als Argumente abzurufen.
+Funktionsmodifizierer haben auch höhere Priorität als Zeigermodifizierer, sodass diese Deklaration für `var``var` als Funktion deklariert, die einen Zeiger auf einen **long**-Wert zurückgibt. Die Funktion wird deklariert, um zwei **long**-Werte als Argumente abzurufen.
 
 ```
 long (*var)( long, long ); /* Pointer to function returning long */

@@ -13,15 +13,15 @@ helpviewer_keywords:
 - type names [C++], simple
 ms.assetid: 0d4b515a-4f68-4786-83cf-a5d43c7cb6f3
 ms.openlocfilehash: 4003d9427c160b0e1c725cdc591190bd9777b3de
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62234929"
 ---
 # <a name="data-type-specifiers-and-equivalents"></a>Datentypspezifizierer und Entsprechungen
 
-In diesem Buch wird anstelle der langen Formen im Allgemeinen die Form der Typspezifizierer verwendet, die in der folgenden Tabelle aufgelistet sind, und es wird davon ausgegangen, dass der Typ `char` standardmäßig signiert ist. Daher entspricht in diesem Buch `char` **signed char**.
+In diesem Buch wird anstelle der langen Formen im Allgemeinen die Form der Typspezifizierer verwendet, die in der folgenden Tabelle aufgelistet sind, und es wird davon ausgegangen, dass der Typ `char` standardmäßig signiert ist. Daher entspricht in diesem Buch `char`**signed char**.
 
 ### <a name="type-specifiers-and-equivalents"></a>Typspezifizierer und Entsprechungen
 
@@ -38,9 +38,9 @@ In diesem Buch wird anstelle der langen Formen im Allgemeinen die Form der Typsp
 |**float**|—|
 |**long double**2|—|
 
-1. Wenn Sie den **char**-Typ standardmäßig auf „unsigned“ festlegen (durch Angabe der /J-Compileroption), können Sie **signed char** nicht als **char** abkürzen.
+1\. Wenn Sie den **char**-Typ standardmäßig auf „unsigned“ festlegen (durch Angabe der /J-Compileroption), können Sie **signed char** nicht als **char** abkürzen.
 
-2. In 32-Bit- und 64-Bit-Betriebssystemen ordnet der Microsoft C-Compiler **long double** dem Typ **double** zu.
+2\. In 32-Bit- und 64-Bit-Betriebssystemen ordnet der Microsoft C-Compiler **long double** dem Typ **double** zu.
 
 **Microsoft-spezifisch**
 
