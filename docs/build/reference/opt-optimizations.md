@@ -17,12 +17,12 @@ helpviewer_keywords:
 - optimization, linker
 - /OPT linker option
 ms.assetid: 8f229863-5f53-48a8-9478-243a647093ac
-ms.openlocfilehash: b25db4d6c260c3c6751de293aa2a82df8aa05e7e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5c0ab3579fcb9633c435305a8b02b0c3f73d7a6f
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81336221"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825703"
 ---
 # <a name="opt-optimizations"></a>/OPT (Optimierungen)
 
@@ -30,74 +30,74 @@ Steuert die Optimierungen, die während eines Builds von LINK ausgeführt werden
 
 ## <a name="syntax"></a>Syntax
 
-> **/OPT:**.**. .** | . . . . . . . . . . . .**.**. . . . . . .<br/>
-> **/OPT:****ICF****=**[_Iterationen_] | **NOICF**<br/>
-> **/OPT:****LBR** | **NOLBR**
+> **/OPT:**{**ref** | **NOREF**} \
+> **/OPT:**{**ICF**[**=**_Iterationen_] | **NOICF**} \
+> **/OPT:**{**LBR** | **nolbr**}
 
 ## <a name="arguments"></a>Argumente
 
-**REF** &#124; **NOREF**
+**Ref** &#124; **NOREF**
 
-**/OPT:REF** eliminiert Funktionen und Daten, auf die nie verwiesen wird; **/OPT:NOREF** speichert Funktionen und Daten, auf die nie verwiesen wird.
+**/OPT: Ref** löscht Funktionen und Daten, auf die nie verwiesen wird. **/OPT: NOREF** speichert Funktionen und Daten, auf die nie verwiesen wird.
 
-Wenn /OPT:REF aktiviert ist, entfernt LINK nicht referenzierte verpackte Funktionen und Daten, die als *COMDATs*bezeichnet werden. Diese Optimierung ist als transitive COMDAT-Eliminierung bekannt. Die Option **/OPT:REF** deaktiviert auch die inkrementelle Verknüpfung.
+Wenn/OPT: REF aktiviert ist, entfernt Link nicht referenzierte Paketfunktionen und-Daten, die als *COMDATs*bezeichnet werden. Diese Optimierung ist als transitive COMDAT-Eliminierung bekannt. Die Option **/OPT: Ref** deaktiviert auch die inkrementelle Verknüpfung.
 
-Inline-Funktionen und Memberfunktionen, die in einer Klassendeklaration definiert sind, sind immer COMDATs. Alle Funktionen in einer Objektdatei werden in COMDATs umgewandelt, wenn sie mit der Option [/Gy](gy-enable-function-level-linking.md) kompiliert werden. Um **const-Daten** in COMDATs zu platzieren, müssen Sie sie mithilfe `__declspec(selectany)`von deklarieren. Informationen zum Angeben von Daten zum Entfernen oder Falten finden Sie unter [selectany](../../cpp/selectany.md).
+Inline Funktionen und Member-Funktionen, die innerhalb einer Klassen Deklaration definiert sind, sind immer COMDATs. Alle Funktionen in einer Objektdatei werden in COMDATs erstellt, wenn Sie mithilfe der [/Gy](gy-enable-function-level-linking.md) -Option kompiliert werden. Zum Platzieren von **Konstanten** Daten in COMDATs müssen Sie diese mithilfe `__declspec(selectany)`von deklarieren. Informationen zum Angeben von Daten zum Entfernen oder Falten finden Sie unter [Selectany](../../cpp/selectany.md).
 
-Standardmäßig wird **/OPT:REF** durch den Linker aktiviert, es sei **denn, /OPT:NOREF** oder [/DEBUG](debug-generate-debug-info.md) ist angegeben. Um diese Standardeinstellung zu überschreiben und nicht referenzierte COMDATs im Programm beizubehalten, geben Sie **/OPT:NOREF**an. Sie können die Option [/INCLUDE](include-force-symbol-references.md) verwenden, um das Entfernen eines bestimmten Symbols zu überschreiben.
+Standardmäßig wird **/OPT: Ref** vom Linker aktiviert, es sei denn, **/OPT: NOREF** oder [/Debug](debug-generate-debug-info.md) wurde angegeben. Um diese Standardeinstellung zu überschreiben und unreferenzierte COMDATs im Programm beizubehalten, geben Sie **/OPT: NOREF**an. Sie können die [/include](include-force-symbol-references.md) -Option verwenden, um das Entfernen eines bestimmten Symbols zu überschreiben.
 
-Wenn [/DEBUG](debug-generate-debug-info.md) angegeben ist, ist die Standardeinstellung für **/OPT** **NOREF**, und alle Funktionen bleiben im Bild erhalten. Um diese Standardeinstellung zu überschreiben und einen Debugbuild zu optimieren, geben Sie **/OPT:REF**an. Dies kann die Größe Ihrer ausführbaren Datei reduzieren und kann eine nützliche Optimierung auch in Debugbuilds sein. Es wird empfohlen, **auch /OPT:NOICF** anzugeben, um identische Funktionen in Debugbuilds beizubehalten. Dadurch wird es einfacher, in Funktionen, die andernfalls gefaltet würden, Stapelüberwachungen zu lesen und Haltepunkte festzulegen.
+Wenn [/Debug](debug-generate-debug-info.md) angegeben wird, ist der Standardwert für **/opt** **NOREF**, und alle Funktionen werden im Image beibehalten. Um diese Standardeinstellung zu überschreiben und einen Debugbuild zu optimieren, geben Sie **/OPT: Ref**an. Dadurch kann die Größe Ihrer ausführbaren Datei reduziert werden, und Sie kann auch in Debugbuilds eine sinnvolle Optimierung sein. Es wird empfohlen, auch **/OPT: NOICF** anzugeben, um identische Funktionen in Debugbuilds beizubehalten. Dadurch wird es einfacher, in Funktionen, die andernfalls gefaltet würden, Stapelüberwachungen zu lesen und Haltepunkte festzulegen.
 
-**ICF-Iterationen**\[**=**_iterations_] &#124; **NOICF**
+**ICF**\[**=**-_Iterationen_] &#124; **NOICF**
 
-Verwenden Sie\[**=** **ICF-Iterationen**], um identische COMDAT-Faltungen durchzuführen._iterations_ Redundante COMDATs können aus der Linkerausgabe entfernt werden. Der Parameter *optionale Iterationen* gibt an, wie oft die Symbole für Duplikate durchlaufen werden. Die Standardanzahl der Iterationen ist 1. Zusätzliche Iterationen können mehr Duplikate auffinden, die bei der Faltung in vorherigen Iterationen unentdeckt blieben.
+Verwenden Sie **ICF**\[**=**-_Iterationen_], um eine identische COMDAT-Faltung auszuführen. Redundante COMDATs können aus der Linkerausgabe entfernt werden. Der optionale *Iterationen* Parameter gibt an, wie oft die Symbole für Duplikate durchlaufen werden. Die Standard Anzahl von Iterationen ist 1. Zusätzliche Iterationen können mehr Duplikate auffinden, die bei der Faltung in vorherigen Iterationen unentdeckt blieben.
 
-Standardmäßig wird **/OPT:ICF** durch den Linker aktiviert, es sei **denn, /OPT:NOICF** oder [/DEBUG](debug-generate-debug-info.md) ist angegeben. Um diese Standardeinstellung zu überschreiben und zu verhindern, dass COMDATs im Programm gefaltet werden, geben Sie **/OPT:NOICF**an.
+Standardmäßig wird **/OPT: ICF** durch den Linker aktiviert, es sei denn, **/OPT: NOICF** oder [/Debug](debug-generate-debug-info.md) wurde angegeben. Um diese Standardeinstellung zu überschreiben und zu verhindern, dass COMDATs im Programm gefaltet werden, geben Sie **/OPT: NOICF**an.
 
-In einem Debugbuild müssen Sie **explizit /OPT:ICF** angeben, um das COMDAT-Falten zu aktivieren. Da **/OPT:ICF** jedoch identische Daten oder Funktionen zusammenführen kann, kann es die Funktionsnamen ändern, die in Stapelablaufverfolgungen angezeigt werden. Es kann auch unmöglich machen, Haltepunkte in bestimmten Funktionen festzulegen oder einige Daten im Debugger zu untersuchen, und Sie können unerwartete Funktionen in den einzelnen Schritt durch den Code führen. Das Verhalten des Codes ist identisch, aber die Debuggerpräsentation kann sehr verwirrend sein. Daher wird nicht empfohlen, **/OPT:ICF** in Debugbuilds zu verwenden, es sei denn, die Vorteile kleinerer Codes überwiegen diese Nachteile.
+In einem Debugbuild müssen Sie explizit **/OPT: ICF** angeben, um die COMDAT-Faltung zu aktivieren. Da **/OPT: ICF** identische Daten oder Funktionen zusammenführen kann, kann es jedoch die Funktionsnamen ändern, die in Stapel Überwachungen angezeigt werden. Außerdem kann es unmöglich sein, in bestimmten Funktionen Haltepunkte festzulegen oder einige Daten im Debugger zu untersuchen. Außerdem können Sie unerwartete Funktionen verwenden, wenn Sie den Code in Einzelschritten durchlaufen. Das Verhalten des Codes ist identisch, aber die Debugger-Präsentation kann sehr verwirrend sein. Daher empfiehlt es sich nicht, **/OPT: ICF** in Debugbuilds zu verwenden, es sei denn, die Vorteile von geringerem Code überwiegen diese Nachteile.
 
 > [!NOTE]
-> Da **/OPT:ICF** dazu führen kann, dass dieselbe Adresse verschiedenen Funktionen oder schreibgeschützten Datenmembern zugewiesen wird (d. h. **const-Variablen,** wenn sie mit **/Gy**kompiliert werden), kann es ein Programm unterbrechen, das von eindeutigen Adressen für Funktionen oder schreibgeschützte Datenmember abhängt. Weitere Informationen finden Sie unter [/Gy (Funktionslevel-Linking aktivieren)](gy-enable-function-level-linking.md).
+> Da **/OPT: ICF** bewirken kann, dass dieselbe Adresse verschiedenen Funktionen oder schreibgeschützten Datenmembern (d **. h. Konstanten** Variablen bei der Kompilierung mit **/Gy**) zugewiesen wird, kann Sie ein Programm unterbrechen, das von eindeutigen Adressen für Funktionen oder schreibgeschützte Datenmember abhängt. Weitere Informationen finden Sie unter [/Gy (Funktionslevel-Linking aktivieren)](gy-enable-function-level-linking.md).
 
-**LBR** &#124; **NOLBR**
+**LBR** &#124; **nolbr**
 
-Die Optionen **/OPT:LBR** und **/OPT:NOLBR** gelten nur für ARM-Binärdateien. Da bestimmte Anweisungen für den ARM-Prozessorzweig einen begrenzten Bereich haben, ersetzt der Linker, wenn er einen Sprung zu einer A-Range-Adresse erkennt, die Zieladresse der Zweiganweisung durch die Adresse eines Codes "Insel", der eine Zweiganweisung enthält, die auf das tatsächliche Ziel abzielt. Sie können **/OPT:LBR** verwenden, um die Erkennung von Anweisungen für lange Zweigstellen und die Platzierung von Zwischencodeinseln zu optimieren, um die Gesamtcodegröße zu minimieren. **/OPT:NOLBR** weist den Linker an, Codeinseln für lange Zweiganweisungen zu generieren, sobald sie auftreten, ohne Optimierung.
+Die Optionen **/OPT: LBR** und **/OPT: nolbr** gelten nur für Arm-Binärdateien. Da bestimmte ARM-Prozessor Verzweigungs Anweisungen einen begrenzten Bereich aufweisen und der Linker einen Sprung zu einer außerhalb des gültigen Bereichs gültigen Adresse erkennt, ersetzt er die Zieladresse der Verzweigungs Anweisung durch die Adresse einer "Insel", die eine Verzweigungs Anweisung enthält, die auf das eigentliche Ziel abzielt. Sie können **/OPT: LBR** verwenden, um die Erkennung von langen Verzweigungs Anweisungen und die Platzierung von zwischen Code Inseln zu optimieren, um die Gesamt Code Größe zu minimieren. **/OPT: nolbr** weist den Linker an, Code Inseln für lange Verzweigungs Anweisungen zu generieren, die ohne Optimierung auftreten.
 
-Standardmäßig wird die Option **/OPT:LBR** festgelegt, wenn die inkrementelle Verknüpfung nicht aktiviert ist. Wenn Sie eine nicht inkrementelle Verknüpfung, aber keine langen Verzweigungsoptimierungen wünschen, geben Sie **/OPT:NOLBR**an. Die Option **/OPT:LBR** deaktiviert die inkrementelle Verknüpfung.
+Standardmäßig wird die Option **/OPT: LBR** festgelegt, wenn die inkrementelle Verknüpfung nicht aktiviert ist. Wenn Sie einen nicht inkrementellen Link, aber keine langen Verzweigungs Optimierungen möchten, geben Sie **/OPT: nolbr**an. Die Option **/OPT: LBR** deaktiviert die inkrementelle Verknüpfung.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Bei Verwendung in der Befehlszeile ist der Linker standardmäßig **auf /OPT:REF,ICF,LBR**. Wenn **/DEBUG** angegeben ist, ist der Standardwert **/OPT:NOREF,NOICF,NOLBR**.
+Bei Verwendung in der Befehlszeile wird der Linker standardmäßig auf **/OPT: ref, ICF, LBR**festgelegt. Wenn **/Debug** angegeben wird, lautet der Standardwert **/OPT: NOREF, NOICF, nolbr**.
 
-Die **/OPT-Optimierungen** verringern in der Regel die Bildgröße und erhöhen die Programmgeschwindigkeit. Diese Verbesserungen können in größeren Programmen erheblich sein, weshalb sie standardmäßig für Einzelhandelsbuilds aktiviert sind.
+Die **/opt** -Optimierungen verringern die Bildgröße in der Regel und erhöhen die Programm Geschwindigkeit. Diese Verbesserungen können in größeren Programmen beträchtlich sein. aus diesem Grund sind Sie für Einzelhandels Builds standardmäßig aktiviert.
 
-Die Linker-Optimierung nimmt im Voraus zusätzliche Zeit in Anspruch, aber der optimierte Code spart auch Zeit, wenn der Linker weniger Verschiebungen zu beheben hat und ein kleineres endgültiges Image erstellt, und er spart noch mehr Zeit, wenn er weniger Debuginformationen zum Verarbeiten und Schreiben in die PDB hat. Wenn die Optimierung aktiviert ist, kann dies insgesamt zu einer schnelleren Verbindungszeit führen, da die geringen zusätzlichen Kosten in der Analyse durch die Zeitersparnis bei Linkerdurchläufen über kleinere Binärdateien mehr als ausgeglichen werden können.
+Die linkeroptimierung nimmt zusätzliche Zeit in Anspruch, aber der optimierte Code spart auch Zeit, wenn der Linker weniger Umsetzungen aufweist, um eine Korrektur durchführen zu können, und ein kleineres endgültiges Image erstellt, und es spart noch mehr Zeit, wenn weniger Debuginformationen zum Verarbeiten und Schreiben in die PDB benötigt werden. Wenn die Optimierung aktiviert ist, kann dies zu einer schnelleren Verknüpfungs Zeit führen, da die kleinen zusätzlichen Kosten bei der Analyse mehr als versetzt werden können, wenn die Zeitersparnis im Linker über kleinere Binärdateien verläuft.
 
-Die **/OPT-Argumente** können zusammen angegeben werden, getrennt durch Kommas. Anstelle von **/OPT:REF /OPT:NOICF**können Sie beispielsweise **/OPT:REF,NOICF**angeben.
+Die **/opt** -Argumente können durch Kommas getrennt angegeben werden. Beispielsweise können Sie anstelle von **/OPT: Ref/OPT: NOICF** **/OPT: ref, NOICF**angeben.
 
-Sie können die Linkeroption [/VERBOSE](verbose-print-progress-messages.md) verwenden, um die Funktionen anzuzeigen, die von **/OPT:REF** entfernt werden, und die Funktionen, die von **/OPT:ICF**gefaltet werden.
+Mit der [/verbose](verbose-print-progress-messages.md) Linker-Option können Sie die Funktionen anzeigen, die von **/OPT: Ref** entfernt wurden, sowie die Funktionen, die von **/OPT: ICF**gefaltet werden.
 
-Die **/OPT-Argumente** werden häufig für Projekte festgelegt, die mithilfe des Dialogfelds **"Neues Projekt"** in der Visual Studio-IDE erstellt wurden, und haben in der Regel unterschiedliche Werte für Debug- und Releasekonfigurationen. Wenn für diese Linkeroptionen in Ihrem Projekt kein Wert festgelegt ist, erhalten Sie möglicherweise die Projektstandards, die sich von den Standardwerten unterscheiden können, die vom Linker in der Befehlszeile verwendet werden.
+Die **/opt** -Argumente werden häufig für Projekte festgelegt, die mit dem Dialogfeld " **Neues Projekt** " in der Visual Studio-IDE erstellt wurden, und in der Regel unterschiedliche Werte für Debug-und Releasekonfigurationen Wenn für diese Linkeroptionen in Ihrem Projekt kein Wert festgelegt ist, können Sie die Projekt Standardwerte erhalten, die sich von den Standardwerten unterscheiden können, die vom Linker in der Befehlszeile verwendet werden.
 
 ### <a name="to-set-the-opticf-or-optref-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie die OPT:ICF- oder OPT:REF-Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die Eigenschaftenseite > **Konfigurationeigenschaften-Linkeroptimierung** > **Optimization** aus. **Configuration Properties**
+1. Wählen Sie die Eigenschaften Seite für die**Linker** > -**Optimierung** der **Konfigurations Eigenschaften** > .
 
 1. Ändern Sie eine der folgenden Eigenschaften:
 
    - **COMDAT-Faltung aktivieren**
 
-   - **Verweise**
+   - **Referenzen**
 
 ### <a name="to-set-the-optlbr-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie die OPT:LBR-Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die Eigenschaftenseite **Configuration Properties** > **Linker** > **Command Line** aus.
+1. Wählen Sie die Eigenschaften Seite für die**Linker** > **Linkerbefehlszeile** der **Configuration Properties** > 
 
-1. Geben Sie die Option in **Zusätzliche Optionen**ein:
+1. Geben Sie die Option in **zusätzliche Optionen**ein:
 
    `/opt:lbr` oder `/opt:nolbr`
 
@@ -105,7 +105,7 @@ Die **/OPT-Argumente** werden häufig für Projekte festgelegt, die mithilfe des
 
 - Siehe die Eigenschaften <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.EnableCOMDATFolding%2A> und <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.OptimizeReferences%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [MSVC-Linkerreferenz](linking.md)
 - [MSVC-Linkeroptionen](linker-options.md)

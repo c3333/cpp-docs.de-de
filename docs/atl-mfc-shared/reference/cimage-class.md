@@ -54,19 +54,19 @@ helpviewer_keywords:
 - CImage class
 - transparent color
 ms.assetid: 52861e3d-bf7e-481f-a240-90e88f76c490
-ms.openlocfilehash: a6d20e1bf12f5fe7d1e9b41d88b088ca9fad35ed
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: a79012e7f2750a4eab12318ffcd52e5e15c30c83
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81747179"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825604"
 ---
 # <a name="cimage-class"></a>CImage-Klasse
 
-`CImage`bietet erweiterte Bitmap-Unterstützung, einschließlich der Möglichkeit, Bilder in JPEG-, GIF-, BMP- und PORTABLE Network Graphics (PNG)-Formaten zu laden und zu speichern.
+`CImage`bietet erweiterte Unterstützung für Bitmap, einschließlich der Möglichkeit, Bilder in JPEG-, GIF-, BMP-und Portable Network Graphics-Formaten (PNG) zu laden und zu speichern.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -80,85 +80,85 @@ class CImage
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CImage::CImage](#cimage)|Der Konstruktor.|
+|[CImage:: CImage](#cimage)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CImage::AlphaBlend](#alphablend)|Zeigt Bitmaps mit transparenten oder halbtransparenten Pixeln an.|
-|[CImage::Attach](#attach)|Fügt ein HBITMAP `CImage` an ein Objekt an. Kann entweder mit Nicht-DIB-Abschnittsbitmaps oder DIB-Abschnittsbitmaps verwendet werden.|
-|[CImage::BitBlt](#bitblt)|Kopiert eine Bitmap aus dem Quellgerätekontext in diesen aktuellen Gerätekontext.|
-|[CImage::Erstellen](#create)|Erstellt eine DIB-Abschnittsbitmap und fügt `CImage` sie an das zuvor erstellte Objekt an.|
-|[CImage::CreateEx](#createex)|Erstellt eine DIB-Abschnittsbitmap (mit zusätzlichen Parametern) `CImage` und fügt sie an das zuvor erstellte Objekt an.|
-|[CImage::Destroy](#destroy)|Trennt die Bitmap vom `CImage` Objekt und zerstört die Bitmap.|
-|[CImage::Detach](#detach)|Trennt die Bitmap von `CImage` einem Objekt.|
-|[CImage::Draw](#draw)|Kopiert eine Bitmap aus einem Quellrechteck in ein Zielrechteck. `Draw`dehnt oder komprimiert die Bitmap, um sie bei Bedarf an die Abmessungen des Zielrechtecks anzupassen, und verarbeitet Alpha-Verschmelzungen und transparente Farben.|
-|[CImage::GetBits](#getbits)|Ruft einen Zeiger auf die tatsächlichen Pixelwerte der Bitmap ab.|
-|[CImage::GetBPP](#getbpp)|Ruft die Bits pro Pixel ab.|
-|[CImage::GetColorTable](#getcolortable)|Ruft rote, grüne, blaue (RGB) Farbwerte aus einem Bereich von Einträgen in der Farbtabelle ab.|
-|[CImage::GetDC](#getdc)|Ruft den Gerätekontext ab, in dem die aktuelle Bitmap ausgewählt ist.|
-|[CImage::GetExporterFilterString](#getexporterfilterstring)|Sucht die verfügbaren Bildformate und deren Beschreibungen.|
-|[CImage::GetHeight](#getheight)|Ruft die Höhe des aktuellen Bildes in Pixel ab.|
-|[CImage::GetImporterFilterString](#getimporterfilterstring)|Sucht die verfügbaren Bildformate und deren Beschreibungen.|
-|[CImage::GetMaxColorTableEntries](#getmaxcolortableentries)|Ruft die maximale Anzahl von Einträgen in der Farbtabelle ab.|
-|[CImage::GetPitch](#getpitch)|Ruft die Tonhöhe des aktuellen Bildes in Bytes ab.|
-|[CImage::GetPixel](#getpixel)|Ruft die Farbe des Pixels ab, das durch *x* und *y*angegeben wird.|
-|[CImage::GetPixelAddress](#getpixeladdress)|Ruft die Adresse eines bestimmten Pixels ab.|
-|[CImage::GetTransparentColor](#gettransparentcolor)|Ruft die Position der transparenten Farbe in der Farbtabelle ab.|
-|[CImage::GetWidth](#getwidth)|Ruft die Breite des aktuellen Bildes in Pixel ab.|
-|[CImage::IsDIBSection](#isdibsection)|Bestimmt, ob es sich bei der angehängten Bitmap um einen DIB-Abschnitt handelt.|
-|[CImage::IsIndexed](#isindexed)|Gibt an, dass die Farben einer Bitmap einer indizierten Palette zugeordnet sind.|
-|[CImage::IsNull](#isnull)|Gibt an, ob eine Quellbitmap aktuell geladen ist.|
-|[CImage::IsTransparencySupported](#istransparencysupported)|Gibt an, ob die Anwendung transparente Bitmaps unterstützt.|
-|[CImage::Laden](#load)|Lädt ein Bild aus der angegebenen Datei.|
-|[CImage::LoadFromResource](#loadfromresource)|Lädt ein Bild aus der angegebenen Ressource.|
-|[CImage::MaskBlt](#maskblt)|Kombiniert die Farbdaten für die Quell- und Zielbitmaps mithilfe der angegebenen Masken- und Raster-Operation.|
-|[CImage::PlgBlt](#plgblt)|Führt eine Bitblockübertragung von einem Rechteck in einem Quellgerätekontext in ein Parallelogramm in einem Zielgerätekontext durch.|
-|[CImage::ReleaseDC](#releasedc)|Gibt den Gerätekontext frei, der mit [CImage::GetDC](#getdc)abgerufen wurde.|
-|[CImage::ReleaseGDIPlus](#releasegdiplus)|Gibt Ressourcen frei, die von GDI+ verwendet werden. Muss aufgerufen werden, um Ressourcen `CImage` freizugeben, die von einem globalen Objekt erstellt wurden.|
-|[CImage::Speichern](#save)|Speichert ein Bild als angegebenen Typ. `Save`Bildoptionen können nicht angegeben werden.|
-|[CImage::SetColorTable](#setcolortable)|Legt rote, grüne, blaue RGB-Farbwerte in einem Bereich von Einträgen in der Farbtabelle des DIB-Abschnitts fest.|
-|[CImage::SetPixel](#setpixel)|Legt das Pixel an den angegebenen Koordinaten auf die angegebene Farbe fest.|
-|[CImage::SetPixelIndexed](#setpixelindexed)|Legt das Pixel an den angegebenen Koordinaten auf die Farbe am angegebenen Index der Palette fest.|
-|[CImage::SetPixelRGB](#setpixelrgb)|Legt das Pixel an den angegebenen Koordinaten auf den angegebenen roten, grünen, blauen (RGB)-Wert fest.|
-|[CImage::SetTransparentColor](#settransparentcolor)|Legt den Index der Farbe fest, die als transparent behandelt werden soll. Nur eine Farbe in einer Palette kann transparent sein.|
-|[CImage::StretchBlt](#stretchblt)|Kopiert eine Bitmap aus einem Quellrechteck in ein Zielrechteck, indem die Bitmap bei Bedarf an die Abmessungen des Zielrechtecks gegliedert oder komprimiert wird.|
-|[CImage::TransparentBlt](#transparentblt)|Kopiert eine Bitmap mit transparenter Farbe aus dem Quellgerätekontext in diesen aktuellen Gerätekontext.|
+|[CImage:: AlphaBlend](#alphablend)|Zeigt Bitmaps mit transparenten oder semitransparenten Pixeln an.|
+|[CImage:: Attach](#attach)|Fügt ein HBITMAP an ein `CImage` -Objekt an. Kann entweder mit nicht-DIB-Abschnitts Bitmaps oder DIB-Abschnitts Bitmaps verwendet werden.|
+|[CImage:: BitBLT](#bitblt)|Kopiert eine Bitmap aus dem Quell Gerätekontext in diesen aktuellen Gerätekontext.|
+|[CImage:: Create](#create)|Erstellt eine DIB-Abschnitts Bitmap und fügt Sie an das zuvor `CImage` erstellte-Objekt an.|
+|[CImage:: kreateex](#createex)|Erstellt eine DIB-Abschnitts Bitmap (mit zusätzlichen Parametern) und fügt Sie an das `CImage` zuvor erstellte Objekt an.|
+|[CImage::D estroy](#destroy)|Trennt die Bitmap vom- `CImage` Objekt und zerstört die Bitmap.|
+|[CImage::D Etach](#detach)|Trennt die Bitmap von einem `CImage` -Objekt.|
+|[CImage::D RAW](#draw)|Kopiert eine Bitmap aus einem Quell Rechteck in ein Ziel Rechteck. `Draw`stremiert oder komprimiert die Bitmap, sodass Sie ggf. den Abmessungen des Ziel Rechtecks entspricht, und behandelt Alpha Mischungen und transparente Farben.|
+|[CImage:: GetBits](#getbits)|Ruft einen Zeiger auf die eigentlichen Pixelwerte der Bitmap ab.|
+|[CImage:: getbpp](#getbpp)|Ruft die Bits pro Pixel ab.|
+|[CImage:: getcolortable](#getcolortable)|Ruft rote, grüne, blaue (RGB) Farbwerte aus einem Bereich von Einträgen in der Farbtabelle ab.|
+|[CImage:: GetDC](#getdc)|Ruft den Gerätekontext ab, in dem die aktuelle Bitmap ausgewählt wird.|
+|[CImage:: getexporterfilterstring](#getexporterfilterstring)|Sucht die verfügbaren Bildformate und deren Beschreibungen.|
+|[CImage:: GetHeight](#getheight)|Ruft die Höhe des aktuellen Bilds in Pixel ab.|
+|[CImage:: getimporterfilterstring](#getimporterfilterstring)|Sucht die verfügbaren Bildformate und deren Beschreibungen.|
+|[CImage:: getmaxcolortableentries](#getmaxcolortableentries)|Ruft die maximale Anzahl von Einträgen in der Farbtabelle ab.|
+|[CImage:: getPitch](#getpitch)|Ruft die Tonhöhe des aktuellen Bilds in Bytes ab.|
+|[CImage:: GetPixel](#getpixel)|Ruft die Farbe des Pixels ab, das von *x* und *y*angegeben wird.|
+|[CImage:: getpixeladdress](#getpixeladdress)|Ruft die Adresse eines gegebenen Pixels ab.|
+|[CImage:: gettransparentcolor](#gettransparentcolor)|Ruft die Position der transparenten Farbe in der Farbtabelle ab.|
+|[CImage:: getWidth](#getwidth)|Ruft die Breite des aktuellen Bilds in Pixel ab.|
+|[CImage:: isdibsection](#isdibsection)|Bestimmt, ob die angefügte Bitmap ein DIB-Abschnitt ist.|
+|[CImage:: isindebug](#isindexed)|Gibt an, dass die Farben einer Bitmap einer indizierten Palette zugeordnet werden.|
+|[CImage:: IsNull](#isnull)|Gibt an, ob eine Quell Bitmap momentan geladen ist.|
+|[CImage:: istransparkocysupported](#istransparencysupported)|Gibt an, ob die Anwendung transparente Bitmaps unterstützt.|
+|[CImage:: Load](#load)|Lädt ein Bild aus der angegebenen Datei.|
+|[CImage:: loadfromresource](#loadfromresource)|Lädt ein Bild aus der angegebenen Ressource.|
+|[CImage:: MaskBlt](#maskblt)|Kombiniert die Farbdaten für die Quell-und Ziel Bitmaps mithilfe der angegebenen Maske und des Raster Vorgangs.|
+|[CImage::P lgblt](#plgblt)|Führt eine Bitblock Übertragung von einem Rechteck in einem Quell Gerätekontext in ein Parallelogramm in einem Zielgeräte Kontext aus.|
+|[CImage:: ReleaseDC](#releasedc)|Gibt den Gerätekontext frei, der mit [CImage:: GetDC](#getdc)abgerufen wurde.|
+|[CImage:: releasegdiplus](#releasegdiplus)|Gibt die von GDI+ verwendeten Ressourcen frei. Muss aufgerufen werden, um Ressourcen freizugeben, die `CImage` von einem globalen Objekt erstellt wurden.|
+|[CImage:: Save](#save)|Speichert ein Bild als den angegebenen Typ. `Save`die Bild Optionen können nicht angegeben werden.|
+|[CImage:: setcolortable](#setcolortable)|Legt farbige, grüne und blaue RGB-Farbwerte in einem Bereich von Einträgen in der Farbtabelle des DIB-Abschnitts fest.|
+|[CImage:: SetPixel](#setpixel)|Legt das Pixel an den angegebenen Koordinaten auf die angegebene Farbe fest.|
+|[CImage:: setpixelindiziert](#setpixelindexed)|Legt das Pixel an den angegebenen Koordinaten auf die Farbe am angegebenen Index der Palette fest.|
+|[CImage:: setpixelrgb](#setpixelrgb)|Legt das Pixel an den angegebenen Koordinaten auf den angegebenen roten, grünen, blauen (RGB) Wert fest.|
+|[CImage:: settransparentcolor](#settransparentcolor)|Legt den Index der Farbe fest, die als transparent behandelt werden soll. Nur eine Farbe in einer Palette kann transparent sein.|
+|[CImage:: StretchBlt](#stretchblt)|Kopiert eine Bitmap aus einem Quell Rechteck in ein Ziel Rechteck, wobei die Bitmap bei Bedarf an die Abmessungen des Ziel Rechtecks angepasst oder komprimiert wird.|
+|[CImage:: TransparentBlt](#transparentblt)|Kopiert eine Bitmap mit transparenter Farbe aus dem Quell Gerätekontext in diesen aktuellen Gerätekontext.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CImage::operator HBITMAP](#operator_hbitmap)|Gibt das Windows-Handle `CImage` zurück, das an das Objekt angefügt ist.|
+|[CImage:: Operator HBITMAP](#operator_hbitmap)|Gibt das an das `CImage` -Objekt angefügte Windows-Handle zurück.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CImage`nimmt Bitmaps, die entweder geräteunabhängige Bitmap-Abschnitte (DIB) sind oder nicht; Sie können jedoch [Create](#create) oder [CImage::Load](#load) nur mit DIB-Abschnitten verwenden. Sie können eine Nicht-DIB-Abschnittsbitmap mit [Attach](#attach)an ein `CImage` `CImage` Objekt anfügen, aber dann können Sie nicht die folgenden Methoden verwenden, die nur DIB-Abschnittsbitmaps unterstützen:
+`CImage`erfordert Bitmaps, bei denen es sich entweder um einen geräteunabhängigen Bitmap-Abschnitt (DIB) handelt oder nicht. Sie können jedoch [Create](#create) oder [CImage:: Load](#load) nur mit DIB-Abschnitten verwenden. Sie können eine nicht-DIB-Abschnitts Bitmap an ein `CImage` -Objekt anfügen, indem Sie [Anfügen](#attach)verwenden. `CImage` Sie können jedoch nicht die folgenden Methoden verwenden, die nur DIB-Abschnitts Bitmaps unterstützen:
 
 - [GetBits](#getbits)
 
-- [GetColorTable](#getcolortable)
+- [Getcolortable](#getcolortable)
 
-- [GetMaxColorTableEntries](#getmaxcolortableentries)
+- [Getmaxcolortableentries](#getmaxcolortableentries)
 
 - [GetPitch](#getpitch)
 
-- [GetPixelAddress](#getpixeladdress)
+- [Getpixeladdress](#getpixeladdress)
 
 - [IsIndexed](#isindexed)
 
-- [SetColorTable](#setcolortable)
+- [Setcolortable](#setcolortable)
 
-Um zu ermitteln, ob eine angehängte Bitmap ein DIB-Abschnitt ist, rufen Sie [IsDibSection](#isdibsection)auf.
-
-> [!NOTE]
-> In Visual Studio .NET 2003 wird in dieser `CImage` Klasse die Anzahl der erstellten Objekte gezählt. Wenn die Anzahl auf 0 `GdiplusShutdown` geht, wird die Funktion automatisch aufgerufen, um Ressourcen freizugeben, die von GDI+ verwendet werden. Dadurch wird `CImage` sichergestellt, dass alle Objekte, die direkt oder `GdiplusShutdown` indirekt `DllMain`von DLLs erstellt werden, immer ordnungsgemäß zerstört werden und nicht von aufgerufen werden.
+Um zu ermitteln, ob eine angefügte Bitmap ein DIB-Abschnitt ist, nennen Sie [isdibsection](#isdibsection).
 
 > [!NOTE]
-> Die `CImage` Verwendung globaler Objekte in einer DLL wird nicht empfohlen. Wenn Sie ein globales `CImage` Objekt in einer DLL verwenden müssen, rufen Sie [CImage::ReleaseGDIPlus](#releasegdiplus) auf, um Ressourcen, die von GDI+ verwendet werden, explizit freizugeben.
+> In Visual Studio .NET 2003 behält diese Klasse die Anzahl der erstellten `CImage` Objekte bei. Wenn die Anzahl auf 0 (null) sinkt `GdiplusShutdown` , wird die Funktion automatisch aufgerufen, um von GDI+ verwendete Ressourcen freizugeben. Dadurch wird sichergestellt `CImage` , dass alle direkt oder indirekt durch DLLs erstellten Objekte ordnungsgemäß zerstört `GdiplusShutdown` werden und nicht von `DllMain`aufgerufen werden.
 
-`CImage`kann nicht in ein neues [CDC](../../mfc/reference/cdc-class.md)ausgewählt werden. `CImage`erstellt einen eigenen HDC für das Bild. Da ein HBITMAP jeweils nur in einem HDC ausgewählt werden kann, kann der HBITMAP, der dem `CImage` zugeordnet ist, nicht in einem anderen HDC ausgewählt werden. Wenn Sie ein CDC benötigen, rufen `CImage` Sie den HDC aus dem ab und geben Sie ihn [an CDC::FromHandle weiter.](../../mfc/reference/cdc-class.md#fromhandle)
+> [!NOTE]
+> Es wird `CImage` nicht empfohlen, globale Objekte in einer DLL zu verwenden. Wenn Sie ein globales `CImage` Objekt in einer DLL verwenden müssen, nennen Sie [CImage:: releasegdiplus](#releasegdiplus) , um die von GDI+ verwendeten Ressourcen explizit freizugeben.
+
+`CImage`kann nicht in einem neuen [CDC](../../mfc/reference/cdc-class.md)ausgewählt werden. `CImage`erstellt einen eigenen HDC für das Image. Da eine HBITMAP nur jeweils in einem hdc ausgewählt werden kann, kann die HBITMAP, die dem `CImage` zugeordnet ist, nicht in einem anderen HDC ausgewählt werden. Wenn Sie eine CDC benötigen, rufen Sie den hdc aus `CImage` dem ab, und übergeben Sie ihn an [CDC:: FromHandle](../../mfc/reference/cdc-class.md#fromhandle).
 
 ## <a name="example"></a>Beispiel
 
@@ -171,7 +171,7 @@ pDC->Rectangle(0, 40, 100, 50);
 m_myImage.ReleaseDC();
 ```
 
-Wenn Sie `CImage` in einem MFC-Projekt verwenden, beachten Sie, welche Memberfunktionen in Ihrem Projekt einen Zeiger auf ein [CBitmap-Objekt](../../mfc/reference/cbitmap-class.md) erwarten. Wenn Sie mit `CImage` einer solchen Funktion wie [CMenu::AppendMenu](../../mfc/reference/cmenu-class.md#appendmenu)verwenden möchten, verwenden Sie `CImage` [CBitmap::FromHandle](../../mfc/reference/cbitmap-class.md#fromhandle), übergeben Sie es Ihrem HBITMAP, und verwenden Sie die zurückgegebene `CBitmap*`.
+Beachten Sie bei `CImage` der Verwendung von in einem MFC-Projekt, welche Member-Funktionen in Ihrem Projekt einen Zeiger auf ein [CBitmap](../../mfc/reference/cbitmap-class.md) -Objekt erwarten. Wenn Sie mit einer solchen `CImage` Funktion verwenden möchten, z. b. [CMenu:: AppendMenu](../../mfc/reference/cmenu-class.md#appendmenu), verwenden Sie [CBitmap:: FromHandle](../../mfc/reference/cbitmap-class.md#fromhandle), `CImage` übergeben Sie Ihr HBITMAP, und `CBitmap*`verwenden Sie die zurückgegebene.
 
 ## <a name="example"></a>Beispiel
 
@@ -188,22 +188,22 @@ void CMyDlg::OnRButtonDown(UINT nFlags, CPoint point)
 }
 ```
 
-Durch `CImage`haben Sie Zugriff auf die eigentlichen Bits eines DIB-Abschnitts. Sie können `CImage` ein Objekt überall dort verwenden, wo Sie zuvor einen Win32 HBITMAP- oder DIB-Abschnitt verwendet haben.
+`CImage`Mithilfe von haben Sie Zugriff auf die tatsächlichen Bits eines DIB-Abschnitts. Sie können ein `CImage` -Objekt überall dort verwenden, wo Sie zuvor einen Win32-HBITMAP-oder DIB-Abschnitt verwendet haben.
 
-Sie können `CImage` entweder von MFC oder ATL verwendet werden.
+Sie können entweder `CImage` von MFC oder ATL verwenden.
 
 > [!NOTE]
-> Wenn Sie ein `CImage`Projekt mit `CString` erstellen, müssen Sie definieren, bevor Sie *atlimage.h*einschließen. Wenn Ihr Projekt ATL ohne MFC verwendet, schließen Sie *atlstr.h* ein, bevor Sie *atlimage.h*einschließen. Wenn Ihr Projekt MFC verwendet (oder wenn es sich um ein ATL-Projekt mit MFC-Unterstützung handelt), schließen Sie *afxstr.h ein,* bevor Sie *atlimage.h*einschließen.<br/>
-> <br/>
-> Ebenso müssen Sie *atlimage.h* einschließen, bevor Sie *atlimpl.cpp*einschließen. Um dies ganz einfach zu erreichen, fügen Sie *atlimage.h* in Ihre *pch.h* (*stdafx.h* in Visual Studio 2017 und früher) ein.
+> Wenn Sie ein Projekt mit `CImage`erstellen, müssen Sie definieren `CString` , bevor Sie *atlimage. h*einschließen. Wenn Ihr Projekt ATL ohne MFC verwendet, fügen Sie " *atlstr. h* " ein, bevor Sie " *atlimage. h*" einschließen. Wenn für Ihr Projekt MFC verwendet wird (oder wenn es sich um ein ATL-Projekt mit MFC-Unterstützung handelt), schließen Sie *afxstr. h* ein, bevor Sie *atlimage. h*einschließen.
+>
+> Ebenso müssen Sie *atlimage. h* einschließen, bevor Sie *Atlimpl. cpp*einschließen. Um dies zu erreichen, fügen Sie " *atlimage. h* " in die Datei " *PCH. h* " ein (*stdafx. h* in Visual Studio 2017 und früher).
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlimage.h
+**Header:** atlimage. h
 
-## <a name="cimagealphablend"></a><a name="alphablend"></a>CImage::AlphaBlend
+## <a name="cimagealphablend"></a><a name="alphablend"></a>CImage:: AlphaBlend
 
-Zeigt Bitmaps mit transparenten oder halbtransparenten Pixeln an.
+Zeigt Bitmaps mit transparenten oder semitransparenten Pixeln an.
 
 ```
 BOOL AlphaBlend(
@@ -242,47 +242,47 @@ BOOL AlphaBlend(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
-Handle für den Zielgerätekontext.
+*hdestdc*<br/>
+Handle für den Zielgeräte Kontext.
 
-*xDest*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*xdest*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*yDest*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*ydest*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*bSrcAlpha*<br/>
-Ein Alphatransparenzwert, der für die gesamte Quellbitmap verwendet werden soll. Der Standardwert 0xff (255) geht davon aus, dass das Bild undurchsichtig ist und Sie nur Alphawerte pro Pixel verwenden möchten.
+*bsrcalpha*<br/>
+Ein Alpha Transparenz Wert, der für die gesamte Quell Bitmap verwendet werden soll. Der Standardwert 0xFF (255) setzt voraus, dass das Bild nicht transparent ist, und dass Sie nur Pixel-Alpha Werte pro Pixel verwenden möchten.
 
-*bBlendOp*<br/>
-Die Alpha-Verschmelzungsfunktion für Quell- und Zielbitmaps, ein globaler Alphawert, der auf die gesamte Quellbitmap angewendet werden soll, und Formatinformationen für die Quellbitmap. Die Quell- und Ziel-Mischfunktionen sind derzeit auf AC_SRC_OVER beschränkt.
+*bblendop*<br/>
+Die Alpha Mischungs Funktion für Quell-und Ziel Bitmaps, einen globalen Alpha-Wert, der auf die gesamte Quell Bitmap angewendet werden soll, und Formatierungsinformationen für die Quell Bitmap. Die Blend-Funktionen für Quelle und Ziel sind zurzeit auf AC_SRC_OVER beschränkt.
 
-*pointDest*<br/>
-Ein Verweis [POINT](/windows/win32/api/windef/ns-windef-point) auf eine POINT-Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
+*pointdest*<br/>
+Ein Verweis auf eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur, die die linke obere Ecke des Ziel Rechtecks in logischen Einheiten bezeichnet.
 
-*nDestWidth*<br/>
-Die Breite des Zielrechtecks in logischen Einheiten.
+*ndestwidth*<br/>
+Die Breite des Ziel Rechtecks in logischen Einheiten.
 
-*nDestHeight*<br/>
-Die Höhe des Zielrechtecks in logischen Einheiten.
+*ndestheight*<br/>
+Die Höhe des Ziel Rechtecks in logischen Einheiten.
 
-*xSrc*<br/>
-Die logische x-Koordinate der oberen linken Ecke des Quellrechtecks.
+*xsrc*<br/>
+Die logische x-Koordinate der oberen linken Ecke des Quell Rechtecks.
 
-*ySrc*<br/>
-Die logische y-Koordinate der oberen linken Ecke des Quellrechtecks.
+*ysrc*<br/>
+Die logische y-Koordinate der oberen linken Ecke des Quell Rechtecks.
 
-*nSrcWidth*<br/>
-Die Breite des Quellrechtecks in logischen Einheiten.
+*nsrcwidth*<br/>
+Die Breite des Quell Rechtecks in logischen Einheiten.
 
-*nSrcHeight*<br/>
-Die Höhe des Quellrechtecks in logischen Einheiten.
+*nsrcheight*<br/>
+Die Höhe des Quell Rechtecks in logischen Einheiten.
 
-*rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
+*neusten*<br/>
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die das Ziel identifiziert.
 
-*rectSrc*<br/>
-Ein Verweis `RECT` auf eine Struktur, der die Quelle identifiziert.
+*reckategorirc*<br/>
+Ein Verweis auf eine `RECT` -Struktur, die die Quelle identifiziert.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -290,13 +290,13 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Alpha-Blend-Bitmaps unterstützen die Farbverschmelzung pro Pixel.
+Alpha-Blend-Bitmaps unterstützen Farb Mischungs Farben pro Pixel.
 
-Wenn *bBlendOp* auf den Standardwert AC_SRC_OVER festgelegt ist, wird die Quellbitmap basierend auf den Alphawerten der Quellpixel über der Zielbitmap platziert.
+Wenn *bblendop* auf den Standardwert AC_SRC_OVER festgelegt ist, wird die Quell Bitmap auf der Zielbitmap basierend auf den Alpha Werten der Quell Pixel platziert.
 
-## <a name="cimageattach"></a><a name="attach"></a>CImage::Attach
+## <a name="cimageattach"></a><a name="attach"></a>CImage:: Attach
 
-Fügt *hBitmap* an `CImage` ein Objekt an.
+Fügt *hBitmap* an ein `CImage` -Objekt an.
 
 ```cpp
 void Attach(HBITMAP hBitmap, DIBOrientation eOrientation = DIBOR_DEFAULT) throw();
@@ -304,25 +304,25 @@ void Attach(HBITMAP hBitmap, DIBOrientation eOrientation = DIBOR_DEFAULT) throw(
 
 ### <a name="parameters"></a>Parameter
 
-*hBitmap*<br/>
-Ein Handle für einen HBITMAP.
+*HBITMAP*<br/>
+Ein Handle für eine HBITMAP.
 
-*eOrientation*<br/>
+*eorientation*<br/>
 Gibt die Ausrichtung der Bitmap an. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- DIBOR_DEFAULT Die Ausrichtung der Bitmap wird vom Betriebssystem bestimmt.
+- DIBOR_DEFAULT die Ausrichtung der Bitmap durch das Betriebssystem bestimmt wird.
 
-- DIBOR_BOTTOMUP Die Zeilen der Bitmap befinden sich in umgekehrter Reihenfolge. Dies bewirkt, dass [CImage::GetBits](#getbits) einen Zeiger am Ende des Bitmappuffers und [CImage::GetPitch](#getpitch) eine negative Zahl zurückgibt.
+- DIBOR_BOTTOMUP die Zeilen der Bitmap in umgekehrter Reihenfolge angezeigt werden. Dies bewirkt, dass [CImage:: GetBits](#getbits) einen Zeiger in der Nähe des Endes des bitmappuffers und [CImage:: getPitch](#getpitch) zurückgibt, um eine negative Zahl zurückzugeben.
 
-- DIBOR_TOPDOWN Die Zeilen der Bitmap befinden sich in der oberen bis unteren Reihenfolge. Dies bewirkt, dass [CImage::GetBits](#getbits) einen Zeiger auf das erste Byte des Bitmappuffers und [CImage::GetPitch](#getpitch) eine positive Zahl zurückgibt.
+- DIBOR_TOPDOWN die Zeilen der Bitmap in der Reihenfolge von oben nach unten angezeigt werden. Dies bewirkt, dass [CImage:: GetBits](#getbits) einen Zeiger auf das erste Byte des bitmappuffers und [CImage:: getPitch](#getpitch) zurückgibt, um eine positive Zahl zurückzugeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Bitmap kann entweder eine Nicht-DIB-Abschnittsbitmap oder eine DIB-Abschnittsbitmap sein. Eine Liste der Methoden, die Sie nur mit DIB-Abschnittsbitmaps verwenden können, finden Sie unter [IsDIBSection.](#isdibsection)
+Die Bitmap kann entweder eine nicht-DIB-Abschnitts Bitmap oder eine DIB-Abschnitts Bitmap sein. Eine Liste der Methoden, die Sie nur mit DIB-Abschnitts Bitmaps verwenden können, finden Sie unter [isdibsection](#isdibsection) .
 
-## <a name="cimagebitblt"></a><a name="bitblt"></a>CImage::BitBlt
+## <a name="cimagebitblt"></a><a name="bitblt"></a>CImage:: BitBLT
 
-Kopiert eine Bitmap aus dem Quellgerätekontext in diesen aktuellen Gerätekontext.
+Kopiert eine Bitmap aus dem Quell Gerätekontext in diesen aktuellen Gerätekontext.
 
 ```
 BOOL BitBlt(
@@ -355,38 +355,38 @@ BOOL BitBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
-Das Ziel HDC.
+*hdestdc*<br/>
+Der Ziel-hdc.
 
-*xDest*<br/>
-Die logische x-Koordinate der oberen linken Ecke des Zielrechtecks.
+*xdest*<br/>
+Die logische x-Koordinate der oberen linken Ecke des Ziel Rechtecks.
 
-*yDest*<br/>
-Die logische y-Koordinate der oberen linken Ecke des Zielrechtecks.
+*ydest*<br/>
+Die logische y-Koordinate der oberen linken Ecke des Ziel Rechtecks.
 
-*dwROP*<br/>
-Der zu durchführende Raster-Vorgang. Raster-Vorgangscodes definieren genau, wie die Bits der Quelle, des Ziels und des Musters (wie durch den aktuell ausgewählten Pinsel definiert) zu dem Ziel kombiniert werden. Eine Liste anderer Raster-Vorgangscodes und deren Beschreibungen finden Sie unter [BitBlt](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK.
+*dwrop*<br/>
+Der auszuführende Raster Vorgang. Raster-Vorgangs Codes definieren genau, wie die Bits der Quelle, des Ziels und des Musters (wie durch den aktuell ausgewählten Pinsel definiert) zum bilden des Ziels kombiniert werden. Unter [BitBLT](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK finden Sie eine Liste mit anderen Code für den Raster Betrieb und deren Beschreibungen.
 
-*pointDest*<br/>
-Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die obere linke Ecke des Zielrechtecks angibt.
+*pointdest*<br/>
+Eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur, die die linke obere Ecke des Ziel Rechtecks angibt.
 
-*nDestWidth*<br/>
-Die Breite des Zielrechtecks in logischen Einheiten.
+*ndestwidth*<br/>
+Die Breite des Ziel Rechtecks in logischen Einheiten.
 
-*nDestHeight*<br/>
-Die Höhe des Zielrechtecks in logischen Einheiten.
+*ndestheight*<br/>
+Die Höhe des Ziel Rechtecks in logischen Einheiten.
 
-*xSrc*<br/>
-Die logische x-Koordinate der oberen linken Ecke des Quellrechtecks.
+*xsrc*<br/>
+Die logische x-Koordinate der oberen linken Ecke des Quell Rechtecks.
 
-*ySrc*<br/>
-Die logische y-Koordinate der oberen linken Ecke des Quellrechtecks.
+*ysrc*<br/>
+Die logische y-Koordinate der oberen linken Ecke des Quell Rechtecks.
 
-*rectDest*<br/>
-Eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Zielrechteck angibt.
+*neusten*<br/>
+Eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die das Ziel Rechteck angibt.
 
-*pointSrc*<br/>
-Eine `POINT` Struktur, die die obere linke Ecke des Quellrechtecks angibt.
+*Point RC*<br/>
+Eine `POINT` -Struktur, die die linke obere Ecke des Quell Rechtecks angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -394,9 +394,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [BitBlt](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK.
+Weitere Informationen finden Sie unter [BitBLT](/windows/win32/api/wingdi/nf-wingdi-bitblt) in der Windows SDK.
 
-## <a name="cimagecimage"></a><a name="cimage"></a>CImage::CImage
+## <a name="cimagecimage"></a><a name="cimage"></a>CImage:: CImage
 
 Erstellt ein `CImage`-Objekt.
 
@@ -406,15 +406,15 @@ CImage() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie das Objekt erstellt haben, rufen Sie [Create](#create), [Load](#load), [LoadFromResource](#loadfromresource)oder [Attach](#attach) auf, um eine Bitmap an das Objekt anzufügen.
+Nachdem Sie das Objekt erstellt haben, rufen Sie [Create](#create), [Load](#load), [loadfromresource](#loadfromresource)oder [Attach](#attach) auf, um eine Bitmap an das Objekt anzufügen.
 
-**Hinweis** In Visual Studio wird in dieser Klasse `CImage` die Anzahl der erstellten Objekte gezählt. Wenn die Anzahl auf 0 `GdiplusShutdown` geht, wird die Funktion automatisch aufgerufen, um Ressourcen freizugeben, die von GDI+ verwendet werden. Dadurch wird `CImage` sichergestellt, dass alle Objekte, die direkt oder `GdiplusShutdown` indirekt von DLLs erstellt werden, immer ordnungsgemäß zerstört werden und nicht von DllMain aufgerufen werden.
+**Hinweis** In Visual Studio behält diese Klasse die Anzahl der erstellten `CImage` Objekte bei. Wenn die Anzahl auf 0 (null) sinkt `GdiplusShutdown` , wird die Funktion automatisch aufgerufen, um von GDI+ verwendete Ressourcen freizugeben. Dadurch wird sichergestellt `CImage` , dass alle direkt oder indirekt durch DLLs erstellten Objekte ordnungsgemäß zerstört `GdiplusShutdown` werden und nicht von DllMain aufgerufen werden.
 
-Die `CImage` Verwendung globaler Objekte in einer DLL wird nicht empfohlen. Wenn Sie ein globales `CImage` Objekt in einer DLL verwenden müssen, rufen Sie [CImage::ReleaseGDIPlus](#releasegdiplus) auf, um Ressourcen, die von GDI+ verwendet werden, explizit freizugeben.
+Es wird `CImage` nicht empfohlen, globale Objekte in einer DLL zu verwenden. Wenn Sie ein globales `CImage` Objekt in einer DLL verwenden müssen, nennen Sie [CImage:: releasegdiplus](#releasegdiplus) , um die von GDI+ verwendeten Ressourcen explizit freizugeben.
 
-## <a name="cimagecreate"></a><a name="create"></a>CImage::Erstellen
+## <a name="cimagecreate"></a><a name="create"></a>CImage:: Create
 
-Erstellt `CImage` eine Bitmap und fügt `CImage` sie an das zuvor erstellte Objekt an.
+Erstellt eine `CImage` Bitmap und fügt Sie an das zuvor erstellte `CImage` -Objekt an.
 
 ```
 BOOL Create(
@@ -426,30 +426,30 @@ BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*nWidth*<br/>
-Die Breite `CImage` der Bitmap in Pixel.
+*nwidth*<br/>
+Die Breite der `CImage` Bitmap in Pixel.
 
-*nHeight*<br/>
-Die Höhe `CImage` der Bitmap in Pixel. Wenn *nHeight* positiv ist, ist die Bitmap ein DIB von unten nach oben und ihr Ursprung ist die linke untere Ecke. Wenn *nHeight* negativ ist, ist die Bitmap ein DIB von oben nach unten und sein Ursprung ist die obere linke Ecke.
+*nheight*<br/>
+Die Höhe der `CImage` Bitmap in Pixel. Wenn *nheight* positiv ist, ist die Bitmap ein Bottom-up-DIB, und der Ursprung ist die untere linke Ecke. Wenn *nheight* negativ ist, ist die Bitmap eine Top-Down-DIB, und Ihr Ursprung ist die linke obere Ecke.
 
-*nBPP*<br/>
-Die Anzahl der Bits pro Pixel in der Bitmap. Normalerweise 4, 8, 16, 24 oder 32. Kann 1 für monochrome Bitmaps oder Masken sein.
+*nbpp*<br/>
+Die Anzahl der Bits pro Pixel in der Bitmap. Normalerweise 4, 8, 16, 24 oder 32. Kann für monochrome Bitmaps oder-Masken 1 sein.
 
 *dwFlags*<br/>
-Gibt an, ob das Bitmapobjekt über einen Alphakanal verfügt. Kann eine Kombination aus Null oder mehr der folgenden Werte sein:
+Gibt an, ob das Bitmap-Objekt über einen Alpha-Kanal verfügt. Kann eine Kombination aus null oder mehr der folgenden Werte sein:
 
-- *createAlphaChannel* Kann nur verwendet werden, wenn *nBPP* 32 ist und *eCompression* BI_RGB ist. Wenn angegeben, hat das erstellte Bild einen Alphawert (Transparenz) für jedes Pixel, das im 4. Byte jedes Pixels gespeichert ist (nicht in einem nicht-alpha 32-Bit-Bild verwendet). Dieser Alphakanal wird automatisch beim Aufrufen von [CImage::AlphaBlend](#alphablend)verwendet.
+- " *kreatealphachannel* " Kann nur verwendet werden, wenn *nbpp* 32 und *ecompression* BI_RGB ist. Wenn angegeben, hat das erstellte Image einen Alpha-Wert (Transparenz) für jedes Pixel, das im 4. Byte der einzelnen Pixel gespeichert wird (nicht verwendet in einem nicht-alpha-32-Bit-Bild). Dieser Alphakanal wird automatisch verwendet, wenn [CImage:: AlphaBlend](#alphablend)aufgerufen wird.
 
 > [!NOTE]
-> Bei Aufrufen von [CImage::Draw](#draw)werden Bilder mit einem Alphakanal automatisch alpha mit dem Ziel vermischt.
+> In Aufrufen von [CImage::D RAW](#draw)werden Bilder mit einem Alphakanal automatisch mit dem Ziel gemischt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-## <a name="cimagecreateex"></a><a name="createex"></a>CImage::CreateEx
+## <a name="cimagecreateex"></a><a name="createex"></a>CImage:: kreateex
 
-Erstellt `CImage` eine Bitmap und fügt `CImage` sie an das zuvor erstellte Objekt an.
+Erstellt eine `CImage` Bitmap und fügt Sie an das zuvor erstellte `CImage` -Objekt an.
 
 ```
 BOOL CreateEx(
@@ -463,57 +463,57 @@ BOOL CreateEx(
 
 ### <a name="parameters"></a>Parameter
 
-*nWidth*<br/>
-Die Breite `CImage` der Bitmap in Pixel.
+*nwidth*<br/>
+Die Breite der `CImage` Bitmap in Pixel.
 
-*nHeight*<br/>
-Die Höhe `CImage` der Bitmap in Pixel. Wenn *nHeight* positiv ist, ist die Bitmap ein DIB von unten nach oben und ihr Ursprung ist die linke untere Ecke. Wenn *nHeight* negativ ist, ist die Bitmap ein DIB von oben nach unten und sein Ursprung ist die obere linke Ecke.
+*nheight*<br/>
+Die Höhe der `CImage` Bitmap in Pixel. Wenn *nheight* positiv ist, ist die Bitmap ein Bottom-up-DIB, und der Ursprung ist die untere linke Ecke. Wenn *nheight* negativ ist, ist die Bitmap eine Top-Down-DIB, und Ihr Ursprung ist die linke obere Ecke.
 
-*nBPP*<br/>
-Die Anzahl der Bits pro Pixel in der Bitmap. Normalerweise 4, 8, 16, 24 oder 32. Kann 1 für monochrome Bitmaps oder Masken sein.
+*nbpp*<br/>
+Die Anzahl der Bits pro Pixel in der Bitmap. Normalerweise 4, 8, 16, 24 oder 32. Kann für monochrome Bitmaps oder-Masken 1 sein.
 
-*eCompression*<br/>
-Gibt den Komprimierungstyp für eine komprimierte Bottom-up-Bitmap an (TOP-down-DIBs können nicht komprimiert werden). Es kann sich um einen der folgenden Werte handeln:
+*ecompression*<br/>
+Gibt den Komprimierungstyp für eine komprimierte Bottom-up-Bitmap an (Top-Down-Disb können nicht komprimiert werden). Es kann sich um einen der folgenden Werte handeln:
 
-- BI_RGB Das Format ist unkomprimiert. Die Angabe dieses `CImage::CreateEx` Werts beim `CImage::Create`Aufrufen ist gleichbedeutend mit dem Aufrufen von .
+- BI_RGB das Format ist nicht komprimiert. Die Angabe dieses Werts beim `CImage::CreateEx` Aufrufen von entspricht dem `CImage::Create`Aufrufen von.
 
-- BI_BITFIELDS Das Format ist unkomprimiert, und die Farbtabelle besteht aus drei DWORD-Farbmasken, die die roten, grünen und blauen Komponenten jedes Pixels angeben. Dies gilt bei Verwendung mit 16- und 32-bpp-Bitmaps.
+- BI_BITFIELDS das Format unkomprimiert ist, und die Farbtabelle besteht aus drei DWORD-Farb Masken, die jeweils die roten, grünen und blauen Komponenten der einzelnen Pixel angeben. Dies ist gültig bei Verwendung mit 16-und 32-bpp-Bitmaps.
 
-*pdwBitfields*<br/>
-Wird nur verwendet, wenn *eCompression* auf BI_BITFIELDS festgelegt ist, andernfalls muss es NULL sein. Ein Zeiger auf ein Array von drei DWORD-Bitmasken, das angibt, welche Bits jedes Pixels für die roten, grünen und blauen Komponenten der Farbe verwendet werden. Informationen zu Einschränkungen für die Bitfelder finden Sie unter [BITMAPINFOHEADER](/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader) im Windows SDK.
+*pdwbitfields*<br/>
+Wird nur verwendet, wenn *ecompression* auf BI_BITFIELDS festgelegt ist, andernfalls muss Sie NULL sein. Ein Zeiger auf ein Array von drei DWORD-Bitmasks, das angibt, welche Bits jedes Pixels für die rot-, grün-und Blau-Komponenten der Farbe verwendet werden. Informationen zu Einschränkungen für Bitfields finden Sie unter [BITMAPINFOHEADER](/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader) in der Windows SDK.
 
 *dwFlags*<br/>
-Gibt an, ob das Bitmapobjekt über einen Alphakanal verfügt. Kann eine Kombination aus Null oder mehr der folgenden Werte sein:
+Gibt an, ob das Bitmap-Objekt über einen Alpha-Kanal verfügt. Kann eine Kombination aus null oder mehr der folgenden Werte sein:
 
-- *createAlphaChannel* Kann nur verwendet werden, wenn *nBPP* 32 ist und *eCompression* BI_RGB ist. Wenn angegeben, hat das erstellte Bild einen Alphawert (Transparenz) für jedes Pixel, das im 4. Byte jedes Pixels gespeichert ist (nicht in einem nicht-alpha 32-Bit-Bild verwendet). Dieser Alphakanal wird automatisch beim Aufrufen von [CImage::AlphaBlend](#alphablend)verwendet.
+- " *kreatealphachannel* " Kann nur verwendet werden, wenn *nbpp* 32 und *ecompression* BI_RGB ist. Wenn angegeben, hat das erstellte Image einen Alpha-Wert (Transparenz) für jedes Pixel, das im 4. Byte der einzelnen Pixel gespeichert wird (nicht verwendet in einem nicht-alpha-32-Bit-Bild). Dieser Alphakanal wird automatisch verwendet, wenn [CImage:: AlphaBlend](#alphablend)aufgerufen wird.
 
    > [!NOTE]
-   > Bei Aufrufen von [CImage::Draw](#draw)werden Bilder mit einem Alphakanal automatisch alpha mit dem Ziel vermischt.
+   > In Aufrufen von [CImage::D RAW](#draw)werden Bilder mit einem Alphakanal automatisch mit dem Ziel gemischt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn erfolgreich. Andernfalls FALSE.
+TRUE, wenn erfolgreich. Andernfalls false.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird eine 100x100-Pixel-Bitmap erstellt, mit der jedes Pixel mit 16 Bit kodiert wird. In einem bestimmten 16-Bit-Pixel kodieren die Bits 0-3 die rote Komponente, die Bits 4-7 grün und die Bits 8-11 blau. Die restlichen 4 Bits sind nicht verwendet.
+Im folgenden Beispiel wird eine 100 x 100 Pixel-Bitmap erstellt, wobei 16 Bits zum Codieren der einzelnen Pixel verwendet werden. In einem angegebenen 16-Bit-Pixel codieren Bits 0-3 die rote Komponente, Bits 4-7 codieren grün und Bits 8-11 codieren blau. Die verbleibenden 4 Bits werden nicht verwendet.
 
 ```cpp
 DWORD adwBitmasks[3] = { 0x0000000f, 0x000000f0, 0x00000f00 };
 m_myImage.CreateEx(100, 100, 16, BI_BITFIELDS, adwBitmasks, 0);
 ```
 
-## <a name="cimagedestroy"></a><a name="destroy"></a>CImage::Destroy
+## <a name="cimagedestroy"></a><a name="destroy"></a>CImage::D estroy
 
-Trennt die Bitmap vom `CImage` Objekt und zerstört die Bitmap.
+Trennt die Bitmap vom- `CImage` Objekt und zerstört die Bitmap.
 
 ```cpp
 void Destroy() throw();
 ```
 
-## <a name="cimagedetach"></a><a name="detach"></a>CImage::Detach
+## <a name="cimagedetach"></a><a name="detach"></a>CImage::D Etach
 
-Trennt eine Bitmap von `CImage` einem Objekt.
+Trennt eine Bitmap von einem `CImage` -Objekt.
 
 ```
 HBITMAP Detach() throw();
@@ -521,11 +521,11 @@ HBITMAP Detach() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Handle an die Bitmap getrennt, oder NULL, wenn keine Bitmap angefügt ist.
+Ein Handle für die getrennte Bitmap oder NULL, wenn keine Bitmap angefügt ist.
 
-## <a name="cimagedraw"></a><a name="draw"></a>CImage::Draw
+## <a name="cimagedraw"></a><a name="draw"></a>CImage::D RAW
 
-Kopiert eine Bitmap aus dem Quellgerätekontext in den aktuellen Gerätekontext.
+Kopiert eine Bitmap aus dem Quell Gerätekontext in den aktuellen Gerätekontext.
 
 ```
 BOOL Draw(
@@ -567,41 +567,41 @@ BOOL Draw(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
-Ein Handle für den Zielgerätekontext.
+*hdestdc*<br/>
+Ein Handle für den Zielgeräte Kontext.
 
-*xDest*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*xdest*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*yDest*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*ydest*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*nDestWidth*<br/>
-Die Breite des Zielrechtecks in logischen Einheiten.
+*ndestwidth*<br/>
+Die Breite des Ziel Rechtecks in logischen Einheiten.
 
-*nDestHeight*<br/>
-Die Höhe des Zielrechtecks in logischen Einheiten.
+*ndestheight*<br/>
+Die Höhe des Ziel Rechtecks in logischen Einheiten.
 
-*xSrc*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*xsrc*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*ySrc*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*ysrc*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*nSrcWidth*<br/>
-Die Breite des Quellrechtecks in logischen Einheiten.
+*nsrcwidth*<br/>
+Die Breite des Quell Rechtecks in logischen Einheiten.
 
-*nSrcHeight*<br/>
-Die Höhe des Quellrechtecks in logischen Einheiten.
+*nsrcheight*<br/>
+Die Höhe des Quell Rechtecks in logischen Einheiten.
 
-*rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
+*neusten*<br/>
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die das Ziel identifiziert.
 
-*rectSrc*<br/>
-Ein Verweis `RECT` auf eine Struktur, der die Quelle identifiziert.
+*reckategorirc*<br/>
+Ein Verweis auf eine `RECT` -Struktur, die die Quelle identifiziert.
 
-*pointDest*<br/>
-Ein Verweis [POINT](/windows/win32/api/windef/ns-windef-point) auf eine POINT-Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
+*pointdest*<br/>
+Ein Verweis auf eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur, die die linke obere Ecke des Ziel Rechtecks in logischen Einheiten bezeichnet.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -609,13 +609,13 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-`Draw`führt den gleichen Vorgang wie [StretchBlt](#stretchblt)aus, es sei denn, das Bild enthält eine transparente Farbe oder einen Alphakanal. Führt in `Draw` diesem Fall den gleichen Vorgang wie [TransparentBlt](#transparentblt) oder [AlphaBlend](#alphablend) aus.
+`Draw`führt den gleichen Vorgang wie [StretchBlt](#stretchblt)aus, es sei denn, das Bild enthält eine transparente Farbe oder einen Alphakanal. In diesem Fall führt `Draw` den gleichen Vorgang wie erforderlich aus, um entweder [TransparentBlt](#transparentblt) oder [AlphaBlend](#alphablend) durchführen zu können.
 
-Für Versionen, die `Draw` kein Quellrechteck angeben, ist das gesamte Quellbild die Standardeinstellung. Für die `Draw` Version, die keine Größe für das Zielrechteck angibt, ist die Größe des Quellbilds die Standardeinstellung, und es tritt kein Dehnen oder Verkleinern auf.
+Bei Versionen von `Draw` , die kein Quell Rechteck angeben, ist das gesamte Quell Image der Standard. Bei der-Version `Draw` , die keine Größe für das Ziel Rechteck angibt, ist die Größe des Quell Bilds der Standardwert, und es erfolgt keine Streckung oder Verkleinerung.
 
-## <a name="cimagegetbits"></a><a name="getbits"></a>CImage::GetBits
+## <a name="cimagegetbits"></a><a name="getbits"></a>CImage:: GetBits
 
-Ruft einen Zeiger auf die tatsächlichen Bitwerte eines bestimmten Pixels in einer Bitmap ab.
+Ruft einen Zeiger auf die tatsächlichen Bitwerte eines angegebenen Pixels in einer Bitmap ab.
 
 ```cpp
 void* GetBits() throw();
@@ -623,18 +623,18 @@ void* GetBits() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Bitmappuffer. Wenn es sich bei der Bitmap um einen DIB von unten nach oben handelt, zeigt der Zeiger am Ende des Puffers. Wenn es sich bei der Bitmap um einen DIB von oben nach unten handelt, zeigt der Zeiger auf das erste Byte des Puffers.
+Ein Zeiger auf den bitmappuffer. Wenn die Bitmap ein Bottom-up-DIB ist, zeigt der Zeiger auf das Ende des Puffers. Wenn die Bitmap ein Top-Down-DIB ist, zeigt der Zeiger auf das erste Byte des Puffers.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Mit diesem Zeiger und dem von [GetPitch](#getpitch)zurückgegebenen Wert können Sie einzelne Pixel in einem Bild suchen und ändern.
+Mithilfe dieses Zeigers können Sie zusammen mit dem von [getPitch](#getpitch)zurückgegebenen Wert einzelne Pixel in einem Bild suchen und ändern.
 
 > [!NOTE]
-> Diese Methode unterstützt nur DIB-Abschnittsbitmaps. Folglich greifen Sie auf die `CImage` Pixel eines Objekts auf die gleiche Weise wie die Pixel eines DIB-Abschnitts zu. Der zurückgegebene Zeiger zeigt auf das Pixel an der Position (0, 0).
+> Diese Methode unterstützt nur DIB-Abschnitts Bitmaps. Folglich greifen Sie auf die Pixel eines- `CImage` Objekts auf die gleiche Weise wie die Pixel eines DIB-Abschnitts zu. Der zurückgegebene Zeiger zeigt auf das Pixel an der Position (0,0).
 
-## <a name="cimagegetbpp"></a><a name="getbpp"></a>CImage::GetBPP
+## <a name="cimagegetbpp"></a><a name="getbpp"></a>CImage:: getbpp
 
-Ruft den Bit-pro-Pixel-Wert ab.
+Ruft den Wert für Bits pro Pixel ab.
 
 ```
 int GetBPP() const throw();
@@ -646,11 +646,11 @@ Die Anzahl der Bits pro Pixel.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert bestimmt die Anzahl der Bits, die jedes Pixel definieren, und die maximale Anzahl von Farben in der Bitmap.
+Dieser Wert bestimmt die Anzahl der Bits, die jedes Pixel definieren, sowie die maximale Anzahl von Farben in der Bitmap.
 
-Die Bits pro Pixel sind in der Regel 1, 4, 8, 16, 24 oder 32. Weitere `biBitCount` Informationen zu diesem Wert finden Sie unter [bitMAPINFOHEADER](/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader) im Windows SDK.
+Die Bits pro Pixel sind normalerweise 1, 4, 8, 16, 24 oder 32. Weitere Informationen `biBitCount` zu diesem Wert finden Sie unter dem-Member von [BITMAPINFOHEADER](/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader) im Windows SDK.
 
-## <a name="cimagegetcolortable"></a><a name="getcolortable"></a>CImage::GetColorTable
+## <a name="cimagegetcolortable"></a><a name="getcolortable"></a>CImage:: getcolortable
 
 Ruft rote, grüne, blaue (RGB) Farbwerte aus einem Bereich von Einträgen in der Palette des DIB-Abschnitts ab.
 
@@ -663,18 +663,18 @@ void GetColorTable(
 
 ### <a name="parameters"></a>Parameter
 
-*iFirstColor*<br/>
-Der Farbtabellenindex des ersten abzurufenden Eintrags.
+*ifirstcolor*<br/>
+Der Farbtabellen Index des ersten Eintrags, der abgerufen werden soll.
 
-*nFarben*<br/>
-Die Anzahl der abzurufenden Farbtabelleneinträge.
+*ncolors*<br/>
+Die Anzahl der abzurufenden farbtabelleneinträge.
 
-*prgbColors*<br/>
-Ein Zeiger auf das Array von [RGBQUAD-Strukturen,](/windows/win32/api/wingdi/ns-wingdi-rgbquad) um die Farbtabelleneinträge abzurufen.
+*prgbcolors*<br/>
+Ein Zeiger auf das Array von [rgbquad](/windows/win32/api/wingdi/ns-wingdi-rgbquad) -Strukturen zum Abrufen der farbtabelleneinträge.
 
-## <a name="cimagegetdc"></a><a name="getdc"></a>CImage::GetDC
+## <a name="cimagegetdc"></a><a name="getdc"></a>CImage:: GetDC
 
-Ruft den Gerätekontext ab, in dem derzeit das Bild ausgewählt ist.
+Ruft den Gerätekontext ab, in dem das Bild derzeit ausgewählt ist.
 
 ```
 HDC GetDC() const throw();
@@ -686,11 +686,11 @@ Ein Handle für einen Gerätekontext.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Für jeden `GetDC`Aufruf von benötigen Sie einen nachfolgenden Aufruf von [ReleaseDC](#releasedc).
+Für jeden-aufrufbedarf `GetDC`benötigen Sie einen nachfolgenden-aufrufbefehl für [ReleaseDC](#releasedc).
 
-## <a name="cimagegetexporterfilterstring"></a><a name="getexporterfilterstring"></a>CImage::GetExporterFilterString
+## <a name="cimagegetexporterfilterstring"></a><a name="getexporterfilterstring"></a>CImage:: getexporterfilterstring
 
-Sucht Bildformate, die zum Speichern von Bildern verfügbar sind.
+Findet Bildformate, die zum Speichern von Bildern verfügbar sind.
 
 ```
 static HRESULT GetExporterFilterString(
@@ -703,17 +703,17 @@ static HRESULT GetExporterFilterString(
 
 ### <a name="parameters"></a>Parameter
 
-*strExporteure*<br/>
-Ein Verweis auf ein `CSimpleString`-Objekt. Weitere Informationen finden Sie unter **Bemerkungen.**
+*strexporters*<br/>
+Ein Verweis auf ein `CSimpleString`-Objekt. Weitere Informationen finden Sie unter " **Hinweise** ".
 
-*aguidFileTypes*<br/>
-Ein Array von GUIDs, wobei jedes Element einem der Dateitypen in der Zeichenfolge entspricht. Im Beispiel in *pszAllFilesDescription* unten ist *aguidFileTypes*[0] GUID_NULL und die verbleibenden Arraywerte sind die Bilddateiformate, die vom aktuellen Betriebssystem unterstützt werden.
+*aguidfiletypes*<br/>
+Ein Array von GUIDs, wobei jedes Element einem der Dateitypen in der Zeichenfolge entspricht. Im Beispiel in *pszallfilesdescription* unten ist *aguidfiletypes*[0] GUID_NULL, und die restlichen Array Werte sind die Bild Dateiformate, die vom aktuellen Betriebssystem unterstützt werden.
 
 > [!NOTE]
-> Eine vollständige Liste der Konstanten finden Sie unter **Bilddateiformatkonstanten** im Windows SDK.
+> Eine umfassende Liste der Konstanten finden Sie unter **Bild Datei Format Konstanten** in der Windows SDK.
 
-*pszAllFilesBeschreibung*<br/>
-Wenn dieser Parameter nicht NULL ist, verfügt die Filterzeichenfolge über einen zusätzlichen Filter am Anfang der Liste. Dieser Filter hat den aktuellen Wert von *pszAllFilesDescription* für seine Beschreibung und akzeptiert Dateien jeder Erweiterung, die von einem anderen Exporteur in der Liste unterstützt wird.
+*pszallfilesdescription*<br/>
+Wenn dieser Parameter nicht NULL ist, weist die Filter Zeichenfolge am Anfang der Liste einen zusätzlichen Filter auf. Dieser Filter enthält den aktuellen Wert von " *pszallfilesdescription* " für seine Beschreibung und akzeptiert Dateien jeder beliebigen Erweiterung, die von einem anderen Exportprogramm in der Liste unterstützt wird.
 
 Beispiel:
 
@@ -725,55 +725,55 @@ CImage::GetExporterFilterString(
 _T("All Image Files"));
 ```
 
-*dwExclude*<br/>
-Satz von Bitflags, die angeben, welche Dateitypen aus der Liste ausgeschlossen werden sollen. Zulässige Flags sind:
+*dwexclude*<br/>
+Ein Satz von Bitflags, die angeben, welche Dateitypen aus der Liste ausgeschlossen werden sollen. Zulässige Flags sind:
 
-- `excludeGIF`= 0x01 Schließt GIF-Dateien aus.
+- `excludeGIF`= 0x01 schließt GIF-Dateien aus.
 
-- `excludeBMP`= 0x02 Schließt BMP-Dateien (Windows Bitmap) aus.
+- `excludeBMP`= 0x02 schließt BMP-Dateien (Windows-Bitmap) aus.
 
-- `excludeEMF`= 0x04 Schließt EMF-Dateien (Enhanced Metafile) aus.
+- `excludeEMF`= 0x04 schließt EMF (Enhanced Metafile)-Dateien aus.
 
-- `excludeWMF`= 0x08 Schließt WMF-Dateien (Windows Metafile) aus.
+- `excludeWMF`= 0x08 schließt WMF-Dateien (Windows Metafile) aus.
 
-- `excludeJPEG`= 0x10 Schließt JPEG-Dateien aus.
+- `excludeJPEG`= 0x10 schließt JPEG-Dateien aus.
 
-- `excludePNG`= 0x20 Schließt PNG-Dateien aus.
+- `excludePNG`= 0x20 schließt PNG-Dateien aus.
 
-- `excludeTIFF`= 0x40 Schließt TIFF-Dateien aus.
+- `excludeTIFF`= 0x40 schließt TIFF-Dateien aus.
 
-- `excludeIcon`= 0x80 schließt ICO-Dateien (Windows Icon) aus.
+- `excludeIcon`= 0x80 schließt ICO-Dateien (Windows-Symbol Dateien) aus.
 
-- `excludeOther`= 0x80000000 Schließt alle anderen Dateitypen aus, die oben nicht aufgeführt sind.
+- `excludeOther`= 0x80000000 schließt alle anderen Dateitypen aus, die oben nicht aufgeführt sind.
 
-- `excludeDefaultLoad`= 0 Für das Laden sind standardmäßig alle Dateitypen enthalten
+- `excludeDefaultLoad`= 0 beim Laden werden alle Dateitypen standardmäßig eingeschlossen.
 
-- `excludeDefaultSave` = `excludeIcon &#124; excludeEMF &#124; excludeWMF`Zum Speichern werden diese Dateien standardmäßig ausgeschlossen, da sie in der Regel spezielle Anforderungen haben.
+- `excludeDefaultSave` = `excludeIcon &#124; excludeEMF &#124; excludeWMF`Zum Speichern werden diese Dateien standardmäßig ausgeschlossen, da Sie in der Regel über besondere Anforderungen verfügen.
 
-*chSeparator*<br/>
-Das Zwischen den Bildformaten verwendete Trennzeichen. Weitere Informationen finden Sie unter **Bemerkungen.**
+*chseparator*<br/>
+Das Trennzeichen, das zwischen den Bildformaten verwendet wird. Weitere Informationen finden Sie unter " **Hinweise** ".
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie können die resultierende Formatzeichenfolge an Ihr MFC [CFileDialog-Objekt](../../mfc/reference/cfiledialog-class.md) übergeben, um die Dateierweiterungen der verfügbaren Bildformate im Dialogfeld Dateispeichern als verfügbar verfügbar zu machen.
+Sie können die resultierende Format Zeichenfolge an Ihr MFC [CFileDialog](../../mfc/reference/cfiledialog-class.md) -Objekt übergeben, um die Dateierweiterungen der verfügbaren Bildformate im Dialogfeld Datei speichern unter verfügbar zu machen.
 
-Der Parameter *strExporter* hat das Format:
+Der Parameter " *strexporter* " weist das folgende Format auf:
 
-Dateibeschreibung0 \*&#124;.ext0&#124;\*dateidescription1&#124;.ext1&#124;... Dateibeschreibung *n* n \*&#124;.ext *n*&#124;&#124;
+Datei description0&#124;\*. ext0&#124;filedescription1&#124;\*. EXT1&#124;... Dateibeschreibung *n*&#124;\*. ext *n*&#124;&#124;
 
-wobei '&#124;' das Trennzeichen `chSeparator`ist, das durch angegeben wird. Beispiel:
+wobei ' &#124; ' das von `chSeparator`angegebene Trennzeichen ist. Beispiel:
 
 `"Bitmap format|*.bmp|JPEG format|*.jpg|GIF format|*.gif|PNG format|*.png||"`
 
-Verwenden Sie das Standardtrennzeichen '&#124;', wenn `CFileDialog` Sie diese Zeichenfolge an ein MFC-Objekt übergeben. Verwenden Sie das Nulltrennzeichen '''', wenn Sie diese Zeichenfolge an ein gemeinsames Dialogfeld Dateispeichern übergeben.
+Verwenden Sie das Standard Trennzeichen "&#124;", wenn Sie diese Zeichenfolge an `CFileDialog` ein MFC-Objekt übergeben. Verwenden Sie das NULL Trennzeichen "\ 0", wenn Sie diese Zeichenfolge an ein gemeinsames Dialogfeld zum Speichern von Dateien übergeben.
 
-## <a name="cimagegetheight"></a><a name="getheight"></a>CImage::GetHeight
+## <a name="cimagegetheight"></a><a name="getheight"></a>CImage:: GetHeight
 
-Ruft die Höhe eines Bildes in Pixel ab.
+Ruft die Höhe eines Bilds in Pixel ab.
 
 ```
 int GetHeight() const throw();
@@ -781,11 +781,11 @@ int GetHeight() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Höhe eines Bildes in Pixel.
+Die Höhe eines Bilds in Pixel.
 
-## <a name="cimagegetimporterfilterstring"></a><a name="getimporterfilterstring"></a>CImage::GetImporterFilterString
+## <a name="cimagegetimporterfilterstring"></a><a name="getimporterfilterstring"></a>CImage:: getimporterfilterstring
 
-Sucht Bildformate, die zum Laden von Bildern verfügbar sind.
+Findet Bildformate, die zum Laden von Bildern verfügbar sind.
 
 ```
 static HRESULT GetImporterFilterString(
@@ -798,17 +798,17 @@ static HRESULT GetImporterFilterString(
 
 ### <a name="parameters"></a>Parameter
 
-*strImporters*<br/>
-Ein Verweis auf ein `CSimpleString`-Objekt. Weitere Informationen finden Sie unter **Bemerkungen.**
+*strimporters*<br/>
+Ein Verweis auf ein `CSimpleString`-Objekt. Weitere Informationen finden Sie unter " **Hinweise** ".
 
-*aguidFileTypes*<br/>
-Ein Array von GUIDs, wobei jedes Element einem der Dateitypen in der Zeichenfolge entspricht. Im Beispiel in *pszAllFilesDescription* unten wird *aguidFileTypes*[0] GUID_NULL mit den verbleibenden Arraywerten sind die Bilddateiformate, die vom aktuellen Betriebssystem unterstützt werden.
+*aguidfiletypes*<br/>
+Ein Array von GUIDs, wobei jedes Element einem der Dateitypen in der Zeichenfolge entspricht. Im Beispiel in der folgenden Abbildung von *pszallfilesdescription* wird *aguidfiletypes*[0] mit den verbleibenden Array Werten GUID_NULL, die vom aktuellen Betriebssystem unterstützt werden.
 
 > [!NOTE]
-> Eine vollständige Liste der Konstanten finden Sie unter **Bilddateiformatkonstanten** im Windows SDK.
+> Eine umfassende Liste der Konstanten finden Sie unter **Bild Datei Format Konstanten** in der Windows SDK.
 
-*pszAllFilesBeschreibung*<br/>
-Wenn dieser Parameter nicht NULL ist, verfügt die Filterzeichenfolge über einen zusätzlichen Filter am Anfang der Liste. Dieser Filter hat den aktuellen Wert von *pszAllFilesDescription* für seine Beschreibung und akzeptiert Dateien jeder Erweiterung, die von einem anderen Exporteur in der Liste unterstützt wird.
+*pszallfilesdescription*<br/>
+Wenn dieser Parameter nicht NULL ist, weist die Filter Zeichenfolge am Anfang der Liste einen zusätzlichen Filter auf. Dieser Filter enthält den aktuellen Wert von " *pszallfilesdescription* " für seine Beschreibung und akzeptiert Dateien jeder beliebigen Erweiterung, die von einem anderen Exportprogramm in der Liste unterstützt wird.
 
 Beispiel:
 
@@ -820,49 +820,49 @@ CImage::GetImporterFilterString(
 _T("All Image Files"));
 ```
 
-*dwExclude*<br/>
-Satz von Bitflags, die angeben, welche Dateitypen aus der Liste ausgeschlossen werden sollen. Zulässige Flags sind:
+*dwexclude*<br/>
+Ein Satz von Bitflags, die angeben, welche Dateitypen aus der Liste ausgeschlossen werden sollen. Zulässige Flags sind:
 
-- `excludeGIF`= 0x01 Schließt GIF-Dateien aus.
+- `excludeGIF`= 0x01 schließt GIF-Dateien aus.
 
-- `excludeBMP`= 0x02 Schließt BMP-Dateien (Windows Bitmap) aus.
+- `excludeBMP`= 0x02 schließt BMP-Dateien (Windows-Bitmap) aus.
 
-- `excludeEMF`= 0x04 Schließt EMF-Dateien (Enhanced Metafile) aus.
+- `excludeEMF`= 0x04 schließt EMF (Enhanced Metafile)-Dateien aus.
 
-- `excludeWMF`= 0x08 Schließt WMF-Dateien (Windows Metafile) aus.
+- `excludeWMF`= 0x08 schließt WMF-Dateien (Windows Metafile) aus.
 
-- `excludeJPEG`= 0x10 Schließt JPEG-Dateien aus.
+- `excludeJPEG`= 0x10 schließt JPEG-Dateien aus.
 
-- `excludePNG`= 0x20 Schließt PNG-Dateien aus.
+- `excludePNG`= 0x20 schließt PNG-Dateien aus.
 
-- `excludeTIFF`= 0x40 Schließt TIFF-Dateien aus.
+- `excludeTIFF`= 0x40 schließt TIFF-Dateien aus.
 
-- `excludeIcon`= 0x80 schließt ICO-Dateien (Windows Icon) aus.
+- `excludeIcon`= 0x80 schließt ICO-Dateien (Windows-Symbol Dateien) aus.
 
-- `excludeOther`= 0x80000000 Schließt alle anderen Dateitypen aus, die oben nicht aufgeführt sind.
+- `excludeOther`= 0x80000000 schließt alle anderen Dateitypen aus, die oben nicht aufgeführt sind.
 
-- `excludeDefaultLoad`= 0 Für das Laden sind standardmäßig alle Dateitypen enthalten
+- `excludeDefaultLoad`= 0 beim Laden werden alle Dateitypen standardmäßig eingeschlossen.
 
-- `excludeDefaultSave` = `excludeIcon &#124; excludeEMF &#124; excludeWMF`Zum Speichern werden diese Dateien standardmäßig ausgeschlossen, da sie in der Regel spezielle Anforderungen haben.
+- `excludeDefaultSave` = `excludeIcon &#124; excludeEMF &#124; excludeWMF`Zum Speichern werden diese Dateien standardmäßig ausgeschlossen, da Sie in der Regel über besondere Anforderungen verfügen.
 
-*chSeparator*<br/>
-Das Zwischen den Bildformaten verwendete Trennzeichen. Weitere Informationen finden Sie unter **Bemerkungen.**
+*chseparator*<br/>
+Das Trennzeichen, das zwischen den Bildformaten verwendet wird. Weitere Informationen finden Sie unter " **Hinweise** ".
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie können die resultierende Formatzeichenfolge an Ihr MFC [CFileDialog-Objekt](../../mfc/reference/cfiledialog-class.md) übergeben, um die Dateierweiterungen der verfügbaren Bildformate im Dialogfeld **Dateiöffnung** verfügbar zu machen.
+Sie können die resultierende Format Zeichenfolge an Ihr MFC [CFileDialog](../../mfc/reference/cfiledialog-class.md) -Objekt übergeben, um die Dateierweiterungen der verfügbaren Bildformate im Dialogfeld **Datei öffnen** verfügbar zu machen.
 
-Der Parameter *strImporter* hat das Format:
+Der *strimporter* -Parameter hat folgendes Format:
 
-Dateibeschreibung0 \*&#124;.ext0&#124;\*dateidescription1&#124;.ext1&#124;... Dateibeschreibung *n* n \*&#124;.ext *n*&#124;&#124;
+Datei description0&#124;\*. ext0&#124;filedescription1&#124;\*. EXT1&#124;... Dateibeschreibung *n*&#124;\*. ext *n*&#124;&#124;
 
-wobei '&#124;' das Trennzeichen ist, das von *chSeparator*angegeben wird. Beispiel:
+Dabei ist ' &#124; ' das von ' *chseparator*' angegebene Trennzeichen. Beispiel:
 
 `"Bitmap format|*.bmp|JPEG format|*.jpg|GIF format|*.gif|PNG format|*.png||"`
 
-Verwenden Sie das Standardtrennzeichen '&#124;', wenn `CFileDialog` Sie diese Zeichenfolge an ein MFC-Objekt übergeben. Verwenden Sie das Nulltrennzeichen '''', wenn Sie diese Zeichenfolge an ein gemeinsames **Dialogfeld Datei** öffnen übergeben.
+Verwenden Sie das Standard Trennzeichen "&#124;", wenn Sie diese Zeichenfolge an `CFileDialog` ein MFC-Objekt übergeben. Verwenden Sie das NULL Trennzeichen "\ 0", wenn Sie diese Zeichenfolge an ein gemeinsames Dialogfeld zum **Öffnen von Dateien** übergeben.
 
-## <a name="cimagegetmaxcolortableentries"></a><a name="getmaxcolortableentries"></a>CImage::GetMaxColorTableEntries
+## <a name="cimagegetmaxcolortableentries"></a><a name="getmaxcolortableentries"></a>CImage:: getmaxcolortableentries
 
 Ruft die maximale Anzahl von Einträgen in der Farbtabelle ab.
 
@@ -876,11 +876,11 @@ Die Anzahl der Einträge in der Farbtabelle.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode unterstützt nur DIB-Abschnittsbitmaps.
+Diese Methode unterstützt nur DIB-Abschnitts Bitmaps.
 
-## <a name="cimagegetpitch"></a><a name="getpitch"></a>CImage::GetPitch
+## <a name="cimagegetpitch"></a><a name="getpitch"></a>CImage:: getPitch
 
-Ruft die Tonhöhe eines Bildes ab.
+Ruft die Tonhöhe eines Bilds ab.
 
 ```
 int GetPitch() const throw();
@@ -888,18 +888,18 @@ int GetPitch() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Tonhöhe des Bildes. Wenn der Rückgabewert negativ ist, ist die Bitmap ein DIB von unten nach oben und ihr Ursprung ist die linke untere Ecke. Wenn der Rückgabewert positiv ist, ist die Bitmap ein DIB von oben nach unten und ihr Ursprung ist die obere linke Ecke.
+Die Darstellung des Bilds. Wenn der Rückgabewert negativ ist, ist die Bitmap ein Bottom-up-DIB, und der Ursprung ist die untere linke Ecke. Wenn der Rückgabewert positiv ist, ist die Bitmap ein Top-Down-DIB, und der Ursprung ist die linke obere Ecke.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Tonhöhe ist der Abstand in Bytes zwischen zwei Speicheradressen, die den Anfang einer Bitmaplinie und den Anfang der nächsten Bitmaplinie darstellen. Da die Tonhöhe in Bytes gemessen wird, hilft Ihnen die Tonhöhe eines Bildes, das Pixelformat zu bestimmen. Die Tonhöhe kann auch zusätzlichen Speicher enthalten, der für die Bitmap reserviert ist.
+Die Tonhöhe ist der Abstand zwischen zwei Speicheradressen (in Bytes), die den Anfang einer bitmaplinie darstellen, und dem Anfang der nächsten Bitmap-Linie. Da die Tonhöhe in Bytes gemessen wird, hilft Ihnen die Darstellung eines Bilds dabei, das Pixel Format zu bestimmen. Die Tonhöhe kann auch zusätzlichen Arbeitsspeicher enthalten, der für die Bitmap reserviert ist.
 
-Verwenden `GetPitch` Sie [getBits,](#getbits) um einzelne Pixel eines Bildes zu finden.
+Verwenden `GetPitch` Sie mit [GetBits](#getbits) , um einzelne Pixel eines Bilds zu suchen.
 
 > [!NOTE]
-> Diese Methode unterstützt nur DIB-Abschnittsbitmaps.
+> Diese Methode unterstützt nur DIB-Abschnitts Bitmaps.
 
-## <a name="cimagegetpixel"></a><a name="getpixel"></a>CImage::GetPixel
+## <a name="cimagegetpixel"></a><a name="getpixel"></a>CImage:: GetPixel
 
 Ruft die Farbe des Pixels an der von *x* und *y*angegebenen Position ab.
 
@@ -912,14 +912,14 @@ COLORREF GetPixel(int x, int y) const throw();
 *x*<br/>
 Die x-Koordinate des Pixels.
 
-*Y*<br/>
+*Teenie*<br/>
 Die y-Koordinate des Pixels.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der rote, grüne, blaue (RGB) Wert des Pixels. Wenn sich das Pixel außerhalb des aktuellen Zuschneidebereichs befindet, wird der Rückgabewert CLR_INVALID.
+Der rote, grüne und blaue (RGB) Wert des Pixels. Wenn das Pixel außerhalb des aktuellen Clippingbereichs liegt, wird der Rückgabewert CLR_INVALID.
 
-## <a name="cimagegetpixeladdress"></a><a name="getpixeladdress"></a>CImage::GetPixelAddress
+## <a name="cimagegetpixeladdress"></a><a name="getpixeladdress"></a>CImage:: getpixeladdress
 
 Ruft die genaue Adresse eines Pixels ab.
 
@@ -932,21 +932,21 @@ void* GetPixelAddress(int x, int y) throw();
 *x*<br/>
 Die x-Koordinate des Pixels.
 
-*Y*<br/>
+*Teenie*<br/>
 Die y-Koordinate des Pixels.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Adresse wird anhand der Koordinaten eines Pixels, der Tonhöhe der Bitmap und der Bits pro Pixel bestimmt.
+Die Adresse wird gemäß den Koordinaten eines Pixels, der Tonhöhe der Bitmap und den Bits pro Pixel bestimmt.
 
-Bei Formaten mit weniger als 8 Bit pro Pixel gibt diese Methode die Adresse des Bytes zurück, das das Pixel enthält. Wenn Ihr Bildformat beispielsweise 4 Bit `GetPixelAddress` pro Pixel aufweist, gibt die Adresse des ersten Pixels im Byte zurück, und Sie müssen für 2 Pixel pro Byte berechnen.
+Bei Formaten, die weniger als 8 Bits pro Pixel aufweisen, gibt diese Methode die Adresse des Bytes zurück, das das Pixel enthält. Wenn Ihr Bildformat z. b. 4 Bits pro Pixel hat `GetPixelAddress` , gibt die Adresse des ersten Pixels im Byte zurück, und Sie müssen 2 Pixel pro Byte berechnen.
 
 > [!NOTE]
-> Diese Methode unterstützt nur DIB-Abschnittsbitmaps.
+> Diese Methode unterstützt nur DIB-Abschnitts Bitmaps.
 
-## <a name="cimagegettransparentcolor"></a><a name="gettransparentcolor"></a>CImage::GetTransparentColor
+## <a name="cimagegettransparentcolor"></a><a name="gettransparentcolor"></a>CImage:: gettransparentcolor
 
-Ruft die indizierte Position der transparenten Farbe in der Farbpalette ab.
+Ruft den indizierten Speicherort der transparenten Farbe in der Farbpalette ab.
 
 ```
 LONG GetTransparentColor() const throw();
@@ -956,9 +956,9 @@ LONG GetTransparentColor() const throw();
 
 Der Index der transparenten Farbe.
 
-## <a name="cimagegetwidth"></a><a name="getwidth"></a>CImage::GetWidth
+## <a name="cimagegetwidth"></a><a name="getwidth"></a>CImage:: getWidth
 
-Ruft die Breite eines Bildes in Pixel ab.
+Ruft die Breite eines Bilds in Pixel ab.
 
 ```
 int GetWidth() const throw();
@@ -968,9 +968,9 @@ int GetWidth() const throw();
 
 Die Breite der Bitmap in Pixel.
 
-## <a name="cimageisdibsection"></a><a name="isdibsection"></a>CImage::IsDIBSection
+## <a name="cimageisdibsection"></a><a name="isdibsection"></a>CImage:: isdibsection
 
-Bestimmt, ob es sich bei der angehängten Bitmap um einen DIB-Abschnitt handelt.
+Bestimmt, ob die angefügte Bitmap ein DIB-Abschnitt ist.
 
 ```
 bool IsDIBSection() const throw();
@@ -978,29 +978,29 @@ bool IsDIBSection() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die angehängte Bitmap ein DIB-Abschnitt ist. Andernfalls FALSE.
+TRUE, wenn die angefügte Bitmap ein DIB-Abschnitt ist. Andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn es sich bei der Bitmap nicht um `CImage` einen DIB-Abschnitt handelt, können Sie nicht die folgenden Methoden verwenden, die nur DIB-Abschnittsbitmaps unterstützen:
+Wenn die Bitmap kein DIB-Abschnitt ist, können Sie die folgenden `CImage` Methoden nicht verwenden, die nur DIB-Abschnitts Bitmaps unterstützen:
 
 - [GetBits](#getbits)
 
-- [GetColorTable](#getcolortable)
+- [Getcolortable](#getcolortable)
 
-- [GetMaxColorTableEntries](#getmaxcolortableentries)
+- [Getmaxcolortableentries](#getmaxcolortableentries)
 
 - [GetPitch](#getpitch)
 
-- [GetPixelAddress](#getpixeladdress)
+- [Getpixeladdress](#getpixeladdress)
 
 - [IsIndexed](#isindexed)
 
-- [SetColorTable](#setcolortable)
+- [Setcolortable](#setcolortable)
 
-## <a name="cimageisindexed"></a><a name="isindexed"></a>CImage::IsIndexed
+## <a name="cimageisindexed"></a><a name="isindexed"></a>CImage:: isindebug
 
-Bestimmt, ob die Pixel einer Bitmap einer Farbpalette zugeordnet sind.
+Bestimmt, ob die Pixel einer Bitmap einer Farbpalette zugeordnet werden.
 
 ```
 bool IsIndexed() const throw();
@@ -1008,18 +1008,18 @@ bool IsIndexed() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn indiziert; andernfalls FALSE.
+TRUE, wenn indiziert. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode gibt TRUE nur zurück, wenn die Bitmap 8 Bit (256 Farben) oder weniger ist.
+Diese Methode gibt nur dann true zurück, wenn die Bitmap 8-Bit (256 Farben) oder kleiner ist.
 
 > [!NOTE]
-> Diese Methode unterstützt nur DIB-Abschnittsbitmaps.
+> Diese Methode unterstützt nur DIB-Abschnitts Bitmaps.
 
-## <a name="cimageisnull"></a><a name="isnull"></a>CImage::IsNull
+## <a name="cimageisnull"></a><a name="isnull"></a>CImage:: IsNull
 
-Bestimmt, ob eine Bitmap aktuell geladen ist.
+Bestimmt, ob eine Bitmap momentan geladen ist.
 
 ```
 bool IsNull() const throw();
@@ -1027,9 +1027,9 @@ bool IsNull() const throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode gibt TRUE zurück, wenn eine Bitmap derzeit nicht geladen ist. andernfalls FALSE.
+Diese Methode gibt true zurück, wenn eine Bitmap zurzeit nicht geladen ist. andernfalls false.
 
-## <a name="cimageistransparencysupported"></a><a name="istransparencysupported"></a>CImage::IsTransparencySupported
+## <a name="cimageistransparencysupported"></a><a name="istransparencysupported"></a>CImage:: istransparkocysupported
 
 Gibt an, ob die Anwendung transparente Bitmaps unterstützt.
 
@@ -1039,13 +1039,13 @@ static BOOL IsTransparencySupported() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn die aktuelle Plattform Transparenz unterstützt. andernfalls 0.
+Ungleich 0 (null), wenn die aktuelle Plattform Transparenz unterstützt. andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn der Rückgabewert ungleich Null ist und Transparenz unterstützt wird, verarbeitet ein Aufruf von [AlphaBlend](#alphablend), [TransparentBlt](#transparentblt)oder [Draw](#draw) transparente Farben.
+Wenn der Rückgabewert ungleich 0 (null) ist und Transparenz unterstützt wird, behandelt ein Aufrufen von [AlphaBlend](#alphablend), [TransparentBlt](#transparentblt)oder [Draw](#draw) transparente Farben.
 
-## <a name="cimageload"></a><a name="load"></a>CImage::Laden
+## <a name="cimageload"></a><a name="load"></a>CImage:: Load
 
 Lädt ein Bild
 
@@ -1064,17 +1064,17 @@ Ein Zeiger auf einen Stream, der den Namen der zu ladenden Bilddatei enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Lädt das von *pszFileName* oder *pStream*angegebene Abbild .
+Lädt das von *pszFileName* oder *pStream*angegebene Bild.
 
 Gültige Bildtypen sind BMP, GIF, JPEG, PNG und TIFF.
 
-## <a name="cimageloadfromresource"></a><a name="loadfromresource"></a>CImage::LoadFromResource
+## <a name="cimageloadfromresource"></a><a name="loadfromresource"></a>CImage:: loadfromresource
 
-Lädt ein Bild aus einer BITMAP-Ressource.
+Lädt ein Bild aus einer Bitmap-Ressource.
 
 ```cpp
 void LoadFromResource(
@@ -1091,19 +1091,19 @@ void LoadFromResource(
 *hInstance*<br/>
 Handle für eine Instanz des Moduls, das das zu ladende Bild enthält.
 
-*pszResourceName*<br/>
+*pszresourcename*<br/>
 Ein Zeiger auf die Zeichenfolge, die den Namen der Ressource enthält, die das zu ladende Bild enthält.
 
-*nIDResource*<br/>
+*nidresource*<br/>
 Die ID der zu ladenden Ressource
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Ressource muss vom Typ BITMAP sein.
+Die Ressource muss den Typ "Bitmap" aufweisen.
 
-## <a name="cimagemaskblt"></a><a name="maskblt"></a>CImage::MaskBlt
+## <a name="cimagemaskblt"></a><a name="maskblt"></a>CImage:: MaskBlt
 
-Kombiniert die Farbdaten für die Quell- und Zielbitmaps mithilfe der angegebenen Masken- und Raster-Operation.
+Kombiniert die Farbdaten für die Quell-und Ziel Bitmaps mithilfe der angegebenen Maske und des Raster Vorgangs.
 
 ```
 BOOL MaskBlt(
@@ -1143,66 +1143,66 @@ BOOL MaskBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
+*hdestdc*<br/>
 Das Handle für das Modul, dessen ausführbare Datei die Ressource enthält.
 
-*xDest*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*xdest*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*yDest*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*ydest*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*nDestWidth*<br/>
-Die Breite des Zielrechtecks und der Quellbitmap in logischen Einheiten.
+*ndestwidth*<br/>
+Die Breite des Ziel Rechtecks und der Quell Bitmap in logischen Einheiten.
 
-*nDestHeight*<br/>
-Die Höhe des Zielrechtecks und der Quellbitmap in logischen Einheiten.
+*ndestheight*<br/>
+Die Höhe des Ziel Rechtecks und der Quell Bitmap in logischen Einheiten.
 
-*xSrc*<br/>
-Die logische x-Koordinate der oberen linken Ecke der Quellbitmap.
+*xsrc*<br/>
+Die logische x-Koordinate der oberen linken Ecke der Quell Bitmap.
 
-*ySrc*<br/>
-Die logische y-Koordinate der oberen linken Ecke der Quellbitmap.
+*ysrc*<br/>
+Die logische y-Koordinate der oberen linken Ecke der Quell Bitmap.
 
-*hbmMask*<br/>
-Behandeln Sie die monochrome Maskenbitmap in Kombination mit der Farbbitmap im Quellgerätekontext.
+*hbmmask*<br/>
+Handle für die Chrome-Masken Bitmap, kombiniert mit der Farb Bitmap im Quell Gerätekontext.
 
-*xMaske*<br/>
-Der horizontale Pixelversatz für die Maskenbitmap, die durch den Parameter *hbmMask* angegeben wird.
+*xmask*<br/>
+Der horizontale Pixel Offset für die Maske-Bitmap, die durch den *hbmmask* -Parameter angegeben wird.
 
-*yMask*<br/>
-Der vertikale Pixelversatz für die Maskenbitmap, die durch den Parameter *hbmMask* angegeben wird.
+*ymask*<br/>
+Der vertikale Pixel Offset für die Maske-Bitmap, die durch den *hbmmask* -Parameter angegeben wird.
 
-*dwROP*<br/>
-Gibt sowohl Vordergrund- als auch Hintergrund-Raster-Arbeitscodes an, die von der Methode zum Steuern der Kombination von Quell- und Zieldaten verwendet werden. Der Hintergrund-Raster-Vorgangscode wird im Hochwertbyte des Hochauftragsdieses dieses Werts gespeichert. Der Vordergrund-Raster-Vorgangscode wird im Low-Order-Byte des Hochauftrags dieses Werts gespeichert. Das Wort dieser Position niedriger Ordnung wird ignoriert und sollte Null sein. Eine Erläuterung von Vordergrund und Hintergrund im Kontext `MaskBlt` dieser Methode finden Sie im Windows SDK. Eine Liste der allgemeinen Raster-Vorgangscodes finden `BitBlt` Sie im Windows SDK.
+*dwrop*<br/>
+Gibt die ternären Raster Vorgangs Codes für Vordergrund und Hintergrund an, die die-Methode verwendet, um die Kombination von Quell-und Zieldaten zu steuern. Der Code für den Hintergrund Raster Vorgang wird im hochwertigen Byte des höherwertigen Worts dieses Werts gespeichert. der Code für den Vordergrund-Raster Vorgang wird in einem nieder wertigen Byte des höchst wertigen Worts dieses Werts gespeichert. Das nieder wertige Wort dieses Werts wird ignoriert und sollte NULL sein. Eine Erläuterung der Vordergrund-und Hintergrundinformationen im Kontext dieser Methode finden `MaskBlt` Sie unter in der Windows SDK. Eine Liste der allgemeinen Raster Vorgangs Codes finden `BitBlt` Sie unter in der Windows SDK.
 
-*rectDest*<br/>
-Ein Verweis `RECT` auf eine Struktur, der das Ziel identifiziert.
+*neusten*<br/>
+Ein Verweis auf eine `RECT` -Struktur, die das Ziel identifiziert.
 
-*pointSrc*<br/>
-Eine `POINT` Struktur, die die obere linke Ecke des Quellrechtecks angibt.
+*Point RC*<br/>
+Eine `POINT` -Struktur, die die linke obere Ecke des Quell Rechtecks angibt.
 
-*pointMaske*<br/>
-Eine `POINT` Struktur, die die obere linke Ecke der Maskenbitmap angibt.
+*pointmaske*<br/>
+Eine `POINT` -Struktur, die die linke obere Ecke der Masken Bitmap angibt.
 
-*pointDest*<br/>
-Ein Verweis `POINT` auf eine Struktur, die die obere linke Ecke des Zielrechtecks in logischen Einheiten identifiziert.
+*pointdest*<br/>
+Ein Verweis auf eine `POINT` -Struktur, die die linke obere Ecke des Ziel Rechtecks in logischen Einheiten bezeichnet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich Null, wenn erfolgreich, andernfalls 0.
+Ungleich 0 (null), wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode gilt nur für Windows NT, Versionen 4.0 und höher.
+Diese Methode gilt nur für Windows NT, Version 4,0 und höher.
 
-## <a name="cimageoperator-hbitmap"></a><a name="operator_hbitmap"></a>CImage::operator HBITMAP
+## <a name="cimageoperator-hbitmap"></a><a name="operator_hbitmap"></a>CImage:: Operator HBITMAP
 
-Verwenden Sie diesen Operator, um das `CImage` angefügte Windows GDI-Handle des Objekts abzubekommen. Dieser Operator ist ein Gießoperator, der die direkte Verwendung eines HBITMAP-Objekts unterstützt.
+Verwenden Sie diesen Operator, um das angefügte Windows-GDI `CImage` -Handle des-Objekts zu erhalten. Dieser Operator ist ein Typumwandlungs Operator, der die direkte Verwendung eines HBITMAP-Objekts unterstützt.
 
-## <a name="cimageplgblt"></a><a name="plgblt"></a>CImage::PlgBlt
+## <a name="cimageplgblt"></a><a name="plgblt"></a>CImage::P lgblt
 
-Führt eine Bitblockübertragung von einem Rechteck in einem Quellgerätekontext in ein Parallelogramm in einem Zielgerätekontext durch.
+Führt eine Bitblock Übertragung von einem Rechteck in einem Quell Gerätekontext in ein Parallelogramm in einem Zielgeräte Kontext aus.
 
 ```
 BOOL PlgBlt(
@@ -1231,50 +1231,50 @@ BOOL PlgBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
-Ein Handle für den Zielgerätekontext.
+*hdestdc*<br/>
+Ein Handle für den Zielgeräte Kontext.
 
-*pPoints*<br/>
-Ein Zeiger auf ein Array von drei Punkten im logischen Raum, die drei Ecken des Zielparallelogramms identifizieren. Die obere linke Ecke des Quellrechtecks wird dem ersten Punkt in diesem Array, der oberen rechten Ecke dem zweiten Punkt in diesem Array und der unteren linken Ecke dem dritten Punkt zugeordnet. Die untere rechte Ecke des Quellrechtecks wird dem impliziten vierten Punkt im Parallelogramm zugeordnet.
+*ppoints*<br/>
+Ein Zeiger auf ein Array von drei Punkten im logischen Raum, der drei Ecken des Ziel-parallelograms identifiziert. Die linke obere Ecke des Quell Rechtecks wird dem ersten Punkt in diesem Array zugeordnet, der oberen rechten Ecke des zweiten Punkts in diesem Array und der unteren linken Ecke zum dritten Punkt. Die untere rechte Ecke des Quell Rechtecks wird dem impliziten vierten Punkt im Parallelogram zugeordnet.
 
-*hbmMask*<br/>
-Ein Handle für eine optionale monochrome Bitmap, die zum Maskieren der Farben des Quellrechtecks verwendet wird.
+*hbmmask*<br/>
+Ein Handle für eine optionale monochrome Bitmap, mit der die Farben des Quell Rechtecks maskiert werden.
 
-*xSrc*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*xsrc*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*ySrc*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*ysrc*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*nSrcWidth*<br/>
-Die Breite des Quellrechtecks in logischen Einheiten.
+*nsrcwidth*<br/>
+Die Breite des Quell Rechtecks in logischen Einheiten.
 
-*nSrcHeight*<br/>
-Die Höhe des Quellrechtecks in logischen Einheiten.
+*nsrcheight*<br/>
+Die Höhe des Quell Rechtecks in logischen Einheiten.
 
-*xMaske*<br/>
-Die x-Koordinate der oberen linken Ecke der monochromen Bitmap.
+*xmask*<br/>
+Die x-Koordinate der oberen linken Ecke der monochrome Bitmap.
 
-*yMask*<br/>
-Die y-Koordinate der oberen linken Ecke der monochromen Bitmap.
+*ymask*<br/>
+Die y-Koordinate der oberen linken Ecke der monochrome Bitmap.
 
-*rectSrc*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Koordinaten des Quellrechtecks angibt.
+*reckategorirc*<br/>
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Koordinaten des Quell Rechtecks angibt.
 
-*pointMaske*<br/>
-Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die obere linke Ecke der Maskenbitmap angibt.
+*pointmaske*<br/>
+Eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur, die die linke obere Ecke der Masken Bitmap angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich Null, wenn erfolgreich, andernfalls 0.
+Ungleich 0 (null), wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn *hbmMask* eine gültige monochrome `PlgBit` Bitmap identifiziert, verwendet diese Bitmap, um die Bits von Farbdaten aus dem Quellrechteck zu maskieren.
+Wenn *hbmmask* eine gültige monochrome Bitmap identifiziert `PlgBit` , verwendet diese Bitmap, um die Bits der Farbdaten aus dem Quell Rechteck zu maskieren.
 
-Diese Methode gilt nur für Windows NT, Versionen 4.0 und höher. Ausführlichere Informationen finden Sie unter [PlgBlt](/windows/win32/api/wingdi/nf-wingdi-plgblt) im Windows SDK.
+Diese Methode gilt nur für Windows NT, Version 4,0 und höher. Ausführlichere Informationen finden Sie unter [plgblt](/windows/win32/api/wingdi/nf-wingdi-plgblt) in der Windows SDK.
 
-## <a name="cimagereleasedc"></a><a name="releasedc"></a>CImage::ReleaseDC
+## <a name="cimagereleasedc"></a><a name="releasedc"></a>CImage:: ReleaseDC
 
 Gibt den Gerätekontext frei.
 
@@ -1284,11 +1284,11 @@ void ReleaseDC() const throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Da jeweils nur eine Bitmap in einem Gerätekontext ausgewählt `ReleaseDC` werden kann, müssen Sie für jeden Aufruf von [GetDC](#getdc)aufrufen.
+Da jeweils nur eine Bitmap in einem Gerätekontext ausgewählt werden kann, müssen Sie für jeden Aufruf `ReleaseDC` von [GetDC](#getdc)aufrufen.
 
-## <a name="cimagereleasegdiplus"></a><a name="releasegdiplus"></a>CImage::ReleaseGDIPlus
+## <a name="cimagereleasegdiplus"></a><a name="releasegdiplus"></a>CImage:: releasegdiplus
 
-Gibt Ressourcen frei, die von GDI+ verwendet werden.
+Gibt die von GDI+ verwendeten Ressourcen frei.
 
 ```cpp
 void ReleaseGDIPlus() throw();
@@ -1296,11 +1296,11 @@ void ReleaseGDIPlus() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode muss aufgerufen werden, um `CImage` Ressourcen freizugeben, die von einem globalen Objekt zugewiesen werden. Siehe [CImage::CImage](#cimage).
+Diese Methode muss aufgerufen werden, um Ressourcen freizugeben, die `CImage` von einem globalen Objekt zugeordnet werden. Weitere Informationen finden Sie unter [CImage:: CImage](#cimage).
 
-## <a name="cimagesave"></a><a name="save"></a>CImage::Speichern
+## <a name="cimagesave"></a><a name="save"></a>CImage:: Save
 
-Speichert ein Abbild im angegebenen Stream oder in der angegebenen Datei auf dem Datenträger.
+Speichert ein Bild im angegebenen Stream oder in der angegebenen Datei auf dem Datenträger.
 
 ```
 HRESULT Save(
@@ -1315,36 +1315,36 @@ HRESULT Save(
 ### <a name="parameters"></a>Parameter
 
 *pStream*<br/>
-Ein Zeiger auf ein COM IStream-Objekt, das die Dateibilddaten enthält.
+Ein Zeiger auf ein COM-IStream-Objekt, das die Datei image Daten enthält.
 
 *pszFileName*<br/>
-Ein Zeiger auf den Dateinamen für das Bild.
+Ein Zeiger auf den Dateinamen des Bilds.
 
-*guidFileType*<br/>
-Der Dateityp, unter dem das Bild gespeichert werden soll. Dabei kann es sich um eine der folgenden Methoden handeln:
+*guidfiletype*<br/>
+Der Dateityp, in dem das Bild gespeichert werden soll. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- `ImageFormatBMP`Ein unkomprimiertes Bitmapbild.
+- `ImageFormatBMP`Ein unkomprimiertes Bitmap-Bild.
 
-- `ImageFormatPNG`Ein komprimiertes Bild (Portable Network Graphic, PNG).
+- `ImageFormatPNG`Ein komprimiertes Bild für eine Portable Netzwerk Grafik (PNG).
 
-- `ImageFormatJPEG`Ein JPEG-komprimiertes Bild.
+- `ImageFormatJPEG`Ein mit JPEG komprimiertes Bild.
 
-- `ImageFormatGIF`Ein GIF-komprimiertes Bild.
+- `ImageFormatGIF`Ein mit GIF komprimiertes Bild.
 
 > [!NOTE]
-> Eine vollständige Liste der Konstanten finden Sie unter **Bilddateiformatkonstanten** im Windows SDK.
+> Eine umfassende Liste der Konstanten finden Sie unter **Bild Datei Format Konstanten** in der Windows SDK.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um das Bild mit einem angegebenen Namen und Typ zu speichern. Wenn der Parameter *guidFileType* nicht enthalten ist, wird die Dateierweiterung des Dateinamens verwendet, um das Bildformat zu bestimmen. Wenn keine Erweiterung bereitgestellt wird, wird das Bild im BMP-Format gespeichert.
+Mit dieser Funktion können Sie das Bild unter Verwendung eines angegebenen Namens und Typs speichern. Wenn der *guidfiletype* -Parameter nicht enthalten ist, wird die Dateierweiterung des Datei namens verwendet, um das Bildformat zu bestimmen. Wenn keine Erweiterung bereitgestellt wird, wird das Bild im BMP-Format gespeichert.
 
-## <a name="cimagesetcolortable"></a><a name="setcolortable"></a>CImage::SetColorTable
+## <a name="cimagesetcolortable"></a><a name="setcolortable"></a>CImage:: setcolortable
 
-Legt die Roten, Grünen, Blauen (RGB) Farbwerte für einen Bereich von Einträgen in der Palette des DIB-Abschnitts fest.
+Legt die roten, grünen, blauen (RGB) Farbwerte für einen Bereich von Einträgen in der Palette des DIB-Abschnitts fest.
 
 ```cpp
 void SetColorTable(
@@ -1355,20 +1355,20 @@ void SetColorTable(
 
 ### <a name="parameters"></a>Parameter
 
-*iFirstColor*<br/>
-Der Farbtabellenindex des ersten festzulegenden Eintrags.
+*ifirstcolor*<br/>
+Der Farbtabellen Index des ersten Eintrags, der festgelegt werden soll.
 
-*nFarben*<br/>
-Die Anzahl der festzulegenden Farbtabelleneinträge.
+*ncolors*<br/>
+Die Anzahl der festzulegenden farbtabelleneinträge.
 
-*prgbColors*<br/>
-Ein Zeiger auf das Array von [RGBQUAD-Strukturen,](/windows/win32/api/wingdi/ns-wingdi-rgbquad) um die Farbtabelleneinträge festzulegen.
+*prgbcolors*<br/>
+Ein Zeiger auf das Array von [rgbquad](/windows/win32/api/wingdi/ns-wingdi-rgbquad) -Strukturen, um die farbtabelleneinträge festzulegen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode unterstützt nur DIB-Abschnittsbitmaps.
+Diese Methode unterstützt nur DIB-Abschnitts Bitmaps.
 
-## <a name="cimagesetpixel"></a><a name="setpixel"></a>CImage::SetPixel
+## <a name="cimagesetpixel"></a><a name="setpixel"></a>CImage:: SetPixel
 
 Legt die Farbe eines Pixels an einer bestimmten Position in der Bitmap fest.
 
@@ -1381,19 +1381,19 @@ void SetPixel(int x, int y, COLORREF color) throw();
 *x*<br/>
 Die horizontale Position des festzulegenden Pixels.
 
-*Y*<br/>
+*Teenie*<br/>
 Die vertikale Position des festzulegenden Pixels.
 
-*Farbe*<br/>
-Die Farbe, auf die Sie das Pixel festlegen.
+*color*<br/>
+Die Farbe, in der das Pixel festgelegt wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode schlägt fehl, wenn die Pixelkoordinaten außerhalb des ausgewählten Zuschneidebereichs liegen.
+Diese Methode schlägt fehl, wenn die Pixelkoordinaten außerhalb des ausgewählten Clippingbereichs liegen.
 
-## <a name="cimagesetpixelindexed"></a><a name="setpixelindexed"></a>CImage::SetPixelIndexed
+## <a name="cimagesetpixelindexed"></a><a name="setpixelindexed"></a>CImage:: setpixelindiziert
 
-Legt die Pixelfarbe auf die Farbe fest, die sich in *iIndex* in der Farbpalette befindet.
+Legt die Pixelfarbe auf die Farbe fest, die sich in der Farbpalette unter *iIndex* befindet.
 
 ```cpp
 void SetPixelIndexed(int x, int y, int iIndex) throw();
@@ -1404,15 +1404,15 @@ void SetPixelIndexed(int x, int y, int iIndex) throw();
 *x*<br/>
 Die horizontale Position des festzulegenden Pixels.
 
-*Y*<br/>
+*Teenie*<br/>
 Die vertikale Position des festzulegenden Pixels.
 
 *iIndex*<br/>
 Der Index einer Farbe in der Farbpalette.
 
-## <a name="cimagesetpixelrgb"></a><a name="setpixelrgb"></a>CImage::SetPixelRGB
+## <a name="cimagesetpixelrgb"></a><a name="setpixelrgb"></a>CImage:: setpixelrgb
 
-Legt das Pixel an den von *x* und *y* angegebenen Positionen auf die Farben *fest,* die durch r , *g*und *b*in einem roten, grünen, blauen (RGB)-Bild angegeben sind.
+Legt das Pixel an den durch *x* und *y* angegebenen Positionen auf die durch *r*, *g*und *b*angegebenen Farben in einem roten, grünen, blauen (RGB) Bild fest.
 
 ```cpp
 void SetPixelRGB(
@@ -1428,23 +1428,23 @@ void SetPixelRGB(
 *x*<br/>
 Die horizontale Position des festzulegenden Pixels.
 
-*Y*<br/>
+*Teenie*<br/>
 Die vertikale Position des festzulegenden Pixels.
 
 *r*<br/>
 Die Intensität der roten Farbe.
 
-*G*<br/>
+*selbst*<br/>
 Die Intensität der grünen Farbe.
 
-*B*<br/>
+*b*<br/>
 Die Intensität der blauen Farbe.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die roten, grünen und blauen Parameter werden jeweils durch eine Zahl zwischen 0 und 255 dargestellt. Wenn Sie alle drei Parameter auf Null setzen, ist die kombinierte resultierende Farbe schwarz. Wenn Sie alle drei Parameter auf 255 festlegen, ist die kombinierte resultierende Farbe weiß.
+Die roten, grünen und blauen Parameter werden jeweils durch eine Zahl zwischen 0 und 255 dargestellt. Wenn Sie alle drei Parameter auf 0 (null) festlegen, ist die kombinierte resultierende Farbe schwarz. Wenn Sie alle drei Parameter auf 255 festlegen, ist die kombinierte resultierende Farbe weiß.
 
-## <a name="cimagesettransparentcolor"></a><a name="settransparentcolor"></a>CImage::SetTransparentColor
+## <a name="cimagesettransparentcolor"></a><a name="settransparentcolor"></a>CImage:: settransparentcolor
 
 Legt eine Farbe an einer angegebenen indizierten Position als transparent fest.
 
@@ -1454,16 +1454,16 @@ LONG SetTransparentColor(LONG iTransparentColor) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*iTransparentColor*<br/>
-Der Index der Farbe, die auf transparent festgelegt werden soll, in einer Farbpalette. Wenn -1, wird keine Farbe auf transparent gesetzt.
+*itransparentcolor*<br/>
+Der Index der Farbe, die auf transparent festgelegt werden soll, in einer Farbpalette. Wenn-1, wird keine Farbe auf transparent festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Index der Farbe, die zuvor als transparent festgelegt wurde.
 
-## <a name="cimagestretchblt"></a><a name="stretchblt"></a>CImage::StretchBlt
+## <a name="cimagestretchblt"></a><a name="stretchblt"></a>CImage:: StretchBlt
 
-Kopiert eine Bitmap aus dem Quellgerätekontext in diesen aktuellen Gerätekontext.
+Kopiert eine Bitmap aus dem Quell Gerätekontext in diesen aktuellen Gerätekontext.
 
 ```
 BOOL StretchBlt(
@@ -1500,53 +1500,53 @@ BOOL StretchBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
-Ein Handle für den Zielgerätekontext.
+*hdestdc*<br/>
+Ein Handle für den Zielgeräte Kontext.
 
-*xDest*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*xdest*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*yDest*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*ydest*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*nDestWidth*<br/>
-Die Breite des Zielrechtecks in logischen Einheiten.
+*ndestwidth*<br/>
+Die Breite des Ziel Rechtecks in logischen Einheiten.
 
-*nDestHeight*<br/>
-Die Höhe des Zielrechtecks in logischen Einheiten.
+*ndestheight*<br/>
+Die Höhe des Ziel Rechtecks in logischen Einheiten.
 
-*dwROP*<br/>
-Der zu durchführende Raster-Vorgang. Raster-Vorgangscodes definieren genau, wie die Bits der Quelle, des Ziels und des Musters (wie durch den aktuell ausgewählten Pinsel definiert) zu dem Ziel kombiniert werden. Eine Liste anderer Raster-Vorgangscodes und deren Beschreibungen finden Sie unter [BitBlt](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK.
+*dwrop*<br/>
+Der auszuführende Raster Vorgang. Raster-Vorgangs Codes definieren genau, wie die Bits der Quelle, des Ziels und des Musters (wie durch den aktuell ausgewählten Pinsel definiert) zum bilden des Ziels kombiniert werden. Unter [BitBLT](/windows/win32/api/wingdi/nf-wingdi-bitblt) im Windows SDK finden Sie eine Liste mit anderen Code für den Raster Betrieb und deren Beschreibungen.
 
-*rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
+*neusten*<br/>
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die das Ziel identifiziert.
 
-*xSrc*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*xsrc*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*ySrc*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*ysrc*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*nSrcWidth*<br/>
-Die Breite des Quellrechtecks in logischen Einheiten.
+*nsrcwidth*<br/>
+Die Breite des Quell Rechtecks in logischen Einheiten.
 
-*nSrcHeight*<br/>
-Die Höhe des Quellrechtecks in logischen Einheiten.
+*nsrcheight*<br/>
+Die Höhe des Quell Rechtecks in logischen Einheiten.
 
-*rectSrc*<br/>
-Ein Verweis `RECT` auf eine Struktur, der die Quelle identifiziert.
+*reckategorirc*<br/>
+Ein Verweis auf eine `RECT` -Struktur, die die Quelle identifiziert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich Null, wenn erfolgreich, andernfalls 0.
+Ungleich 0 (null), wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [StretchBlt](/windows/win32/api/wingdi/nf-wingdi-stretchblt) im Windows SDK.
+Weitere Informationen finden Sie unter [StretchBlt](/windows/win32/api/wingdi/nf-wingdi-stretchblt) in der Windows SDK.
 
-## <a name="cimagetransparentblt"></a><a name="transparentblt"></a>CImage::TransparentBlt
+## <a name="cimagetransparentblt"></a><a name="transparentblt"></a>CImage:: TransparentBlt
 
-Kopiert eine Bitmap aus dem Quellgerätekontext in diesen aktuellen Gerätekontext.
+Kopiert eine Bitmap aus dem Quell Gerätekontext in diesen aktuellen Gerätekontext.
 
 ```
 BOOL TransparentBlt(
@@ -1583,49 +1583,49 @@ BOOL TransparentBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*hDestDC*<br/>
-Ein Handle für den Zielgerätekontext.
+*hdestdc*<br/>
+Ein Handle für den Zielgeräte Kontext.
 
-*xDest*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*xdest*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*yDest*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Zielrechtecks.
+*ydest*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Ziel Rechtecks.
 
-*nDestWidth*<br/>
-Die Breite des Zielrechtecks in logischen Einheiten.
+*ndestwidth*<br/>
+Die Breite des Ziel Rechtecks in logischen Einheiten.
 
-*nDestHeight*<br/>
-Die Höhe des Zielrechtecks in logischen Einheiten.
+*ndestheight*<br/>
+Die Höhe des Ziel Rechtecks in logischen Einheiten.
 
-*crTransparent*<br/>
-Die Farbe in der Quellbitmap, die als transparent behandelt werden soll. Standardmäßig CLR_INVALID, was angibt, dass die Farbe, die derzeit als transparente Farbe des Bildes festgelegt ist, verwendet werden soll.
+*crtransparent*<br/>
+Die Farbe in der Quell Bitmap, die als transparent behandelt werden soll. Standardmäßig CLR_INVALID, das angibt, dass die Farbe, die derzeit als transparente Farbe des Bilds festgelegt ist, verwendet werden soll.
 
-*rectDest*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das Ziel identifiziert.
+*neusten*<br/>
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die das Ziel identifiziert.
 
-*xSrc*<br/>
-Die x-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*xsrc*<br/>
+Die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*ySrc*<br/>
-Die y-Koordinate in logischen Einheiten der oberen linken Ecke des Quellrechtecks.
+*ysrc*<br/>
+Die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Quell Rechtecks.
 
-*nSrcWidth*<br/>
-Die Breite des Quellrechtecks in logischen Einheiten.
+*nsrcwidth*<br/>
+Die Breite des Quell Rechtecks in logischen Einheiten.
 
-*nSrcHeight*<br/>
-Die Höhe des Quellrechtecks in logischen Einheiten.
+*nsrcheight*<br/>
+Die Höhe des Quell Rechtecks in logischen Einheiten.
 
-*rectSrc*<br/>
-Ein Verweis `RECT` auf eine Struktur, der die Quelle identifiziert.
+*reckategorirc*<br/>
+Ein Verweis auf eine `RECT` -Struktur, die die Quelle identifiziert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn erfolgreich, andernfalls FALSE.
+TRUE, wenn erfolgreich, andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-`TransparentBlt`wird für Quellbitmaps mit 4 Bit pro Pixel und 8 Bit pro Pixel unterstützt. Verwenden Sie [CImage::AlphaBlend,](#alphablend) um 32 Bit-pro-Pixel-Bitmaps mit Transparenz anzugeben.
+`TransparentBlt`wird für Quell Bitmaps von 4 Bits pro Pixel und 8 Bits pro Pixel unterstützt. Verwenden Sie [CImage:: AlphaBlend](#alphablend) , um 32 Bits pro Pixel-Bitmaps mit Transparenz anzugeben.
 
 ### <a name="example"></a>Beispiel
 
@@ -1661,7 +1661,7 @@ BOOL TransparentBlt(CImage* pSrcImage, CImage* pDstImage,
 [MMXSwarm-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [SimpleImage-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [Geräteunabhängige Bitmaps](/windows/win32/gdi/device-independent-bitmaps)<br/>
-[CreateDIBSection](/windows/win32/api/wingdi/nf-wingdi-createdibsection)<br/>
+["Kreatedibsection"](/windows/win32/api/wingdi/nf-wingdi-createdibsection)<br/>
 [ATL-COM-Desktop-Komponenten](../../atl/atl-com-desktop-components.md)<br/>
 [Geräteunabhängige Bitmaps](/windows/win32/gdi/device-independent-bitmaps)<br/>
-[CreateDIBSection](/windows/win32/api/wingdi/nf-wingdi-createdibsection)
+["Kreatedibsection"](/windows/win32/api/wingdi/nf-wingdi-createdibsection)

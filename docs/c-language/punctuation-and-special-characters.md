@@ -9,11 +9,11 @@ helpviewer_keywords:
 - special characters
 ms.assetid: e239633e-36f6-4967-939c-bf2799323778
 ms.openlocfilehash: 3594ca0f2dfcc294fa7a3d44268150ac5507e547
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232272"
 ---
 # <a name="punctuation-and-special-characters"></a>Interpunktions- und Sonderzeichen
 
@@ -23,7 +23,7 @@ Interpunktion und Sonderzeichen im C-Zeichensatz haben verschiedene Funktionen. 
 
 `punctuator`: eines der folgenden Zeichen **( )   [ ]   { }   \*   ,   :   =   ;   ... #**
 
-Diese Zeichen haben eine besondere Bedeutung in C. Die Verwendungsmöglichkeiten werden in diesem Buch beschrieben. Das Rautezeichen (**#**) darf nur in [Vorverarbeitungsdirektiven](../preprocessor/preprocessor-directives.md) auftreten.
+Diese Zeichen haben eine besondere Bedeutung in C. Die Verwendungsmöglichkeiten werden in diesem Buch beschrieben. Das Rautezeichen ( **#** ) darf nur in [Vorverarbeitungsdirektiven](../preprocessor/preprocessor-directives.md) auftreten.
 
 ## <a name="see-also"></a>Siehe auch
 
