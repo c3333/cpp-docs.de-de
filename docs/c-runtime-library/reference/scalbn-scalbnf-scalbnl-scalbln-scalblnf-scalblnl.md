@@ -26,7 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +46,12 @@ helpviewer_keywords:
 - scalbnf function
 - scalblnf function
 ms.assetid: df2f1543-8e39-4af4-a5cf-29307e64807d
-ms.openlocfilehash: d0c7f6db7ad6970be85203eef76e5ccb152e2200
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3d450459b4f428e5d5f1f02eaa71a126e4f710df
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81332601"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918187"
 ---
 # <a name="scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl"></a>scalbn, scalbnf, scalbnl, scalbln, scalblnf, scalblnl
 
@@ -104,7 +104,7 @@ long double scalblnl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert.
 
 *Exp*<br/>
@@ -112,17 +112,17 @@ Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **scalbn-Funktionen** geben den Wert *x* \* **FLT_RADIX**<sup>exp</sup> zurück, wenn sie erfolgreich sind. Bei Überlauf (je nach Vorzeichen von *x*), **scalbn** returns +/- **HUGE_VAL**; Der **errno-Wert** ist auf **ERANGE**festgelegt.
+Die **scalbn** -Funktionen geben den Wert von *x* \* **FLT_RADIX**<sup>Exp</sup> zurück, wenn erfolgreich. Bei einem Überlauf (abhängig vom Vorzeichen von *x*) gibt **scalbn** +/- **HUGE_VAL**; zurück. der **errno** -Wert ist auf **ERANGE**festgelegt.
 
-Weitere Informationen zu **errno-** und möglichen Fehlerrückgabewerten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-**FLT_RADIX** ist \<in float.h> als natives Gleitkomma-Radix definiert; auf binären Systemen hat es einen Wert von 2, und **scalbn** entspricht [ldexp](ldexp.md).
+**FLT_RADIX** ist in \<float. h> als systemeigene Gleit Komma Basis definiert. auf binären Systemen hat es den Wert 2, und **scalbn** entspricht [LDE XP](ldexp.md).
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Scalbn** und **Scalbln** aufrufen, die **Float-** oder **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt **scalbn** immer ein **Double** und ein **int** und gibt ein **Double**zurück, und **scalbln** nimmt immer ein **Double** und ein **Long** und gibt ein **Double**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **scalbln** aufzurufen, die **float** -oder **Long** **Double** -Typen verwenden und zurückgeben. In einem C-Programm nimmt **scalbn** immer einen **Double** -und einen **int** -Wert an und gibt einen **Double**-Wert zurück. **scalbln** nimmt immer einen **Double** -Wert und einen **Long** -Wert und gibt einen **Double**zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 

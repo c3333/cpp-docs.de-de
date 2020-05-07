@@ -26,7 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -54,12 +54,12 @@ helpviewer_keywords:
 - _tcsncpy_s function
 - wcsncpy_s_l function
 ms.assetid: a971c800-94d1-4d88-92f3-a2fe236a4546
-ms.openlocfilehash: 81932aa3ca6af01ecc5f6ff353db76185d027838
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1fa2cc24f4ec610e1cc892ddd8d3bf8971ddf687
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364507"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919296"
 ---
 # <a name="strncpy_s-_strncpy_s_l-wcsncpy_s-_wcsncpy_s_l-_mbsncpy_s-_mbsncpy_s_l"></a>strncpy_s, _strncpy_s_l, wcsncpy_s, _wcsncpy_s_l, _mbsncpy_s, _mbsncpy_s_l
 
@@ -153,13 +153,13 @@ errno_t _mbsncpy_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Strdest*<br/>
+*der schnellste*<br/>
 Zielzeichenfolge.
 
-*Sizeinbytes*<br/>
+*numberOfElements*<br/>
 Die Größe der Zielzeichenfolge in Zeichen.
 
-*Strsource*<br/>
+*-Quelle*<br/>
 Quellzeichenfolge.
 
 *count*<br/>
@@ -170,22 +170,22 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Null, wenn erfolgreich, **STRUNCATE,** wenn abgeschnitten wurde, andernfalls ein Fehlercode.
+0 (null) **, wenn** der Vorgang fehlgeschlagen ist, und andernfalls ein Fehlercode.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Strdest*|*Sizeinbytes*|*Strsource*|Rückgabewert|Inhalt von *strDest*|
+|*der schnellste*|*numberOfElements*|*-Quelle*|Rückgabewert|Inhalt von " *strandest* "|
 |---------------|------------------------|-----------------|------------------|---------------------------|
-|**Null**|any|any|**Einval**|nicht geändert|
-|any|any|**Null**|**Einval**|*strDest*[0] auf 0 gesetzt|
-|any|0|any|**Einval**|nicht geändert|
-|nicht **NULL**|zu klein|any|**ERANGE**|*strDest*[0] auf 0 gesetzt|
+|**Normal**|any|any|**Eingabe**|nicht geändert|
+|any|any|**Normal**|**Eingabe**|" *strandest*[0]" auf 0 festgelegt.|
+|any|0|any|**Eingabe**|nicht geändert|
+|nicht **null**|zu klein|any|**ERANGE**|" *strandest*[0]" auf 0 festgelegt.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Diese Funktionen versuchen, die ersten *D-Zeichen* von *strSource* in *strDest*zu kopieren, wobei *D* die geringere *Anzahl* und die Länge von *strSource*ist. Wenn diese *D-Zeichen* in *strDest* passen (deren Größe als *numberOfElements*angegeben ist) und dennoch Platz für einen Null-Terminator lassen, werden diese Zeichen kopiert und eine beendende NULL angehängt; Andernfalls wird *strDest*[0] auf das Nullzeichen gesetzt, und der ungültige Parameterhandler wird aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben.
+Diese Funktionen versuchen, die ersten *D-* Zeichen von *"darsource* " in " *strandest*" zu kopieren, wobei " *d* *" der kleinere Wert und die* Länge von " *darsource*" ist. Wenn diese *D-* Zeichen in " *strindest* " passen (deren Größe als " *suffioements*" angegeben ist) und weiterhin Platz für ein NULL-Terminator ist, dann werden diese Zeichen kopiert und ein abschließendes NULL angehängt. Andernfalls wird " *strandest*[0]" auf das NULL-Zeichen festgelegt und der Handler für ungültige Parameter wird aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben.
 
-Zu der oberen Aufführung gibt es eine Ausnahme. Wenn *Count* **_TRUNCATE**ist, dann wird so viel von *strSource* kopiert, wie in *strDest* passen, während dennoch Platz für die beendende NULL bleibt, die immer angehängt wird.
+Zu der oberen Aufführung gibt es eine Ausnahme. Wenn " *count* " **_TRUNCATE**ist, wird so viel von " *straust* " in " *straudest* " kopiert, während der Platz für das abschließende Null bleibt, das immer angefügt wird.
 
 Beispiel:
 
@@ -194,30 +194,30 @@ char dst[5];
 strncpy_s(dst, 5, "a long string", 5);
 ```
 
-bedeutet, dass wir **strncpy_s** bitten, fünf Zeichen in einen Puffer von fünf Byte zu kopieren; Dadurch bleibt kein Platz für den NULL-Terminator, daher **wird strncpy_s** die Zeichenfolge auf Null gesetzt und ruft den ungültigen Parameterhandler auf.
+bedeutet, dass Sie **strncpy_s** , fünf Zeichen in einen fünf Bytes langen Puffer zu kopieren. Dadurch würde kein Platz mehr für das NULL-Terminator bestehen, daher **strncpy_s** die Zeichenfolge Nullen, und der Handler für ungültige Parameter wird aufgerufen.
 
-Wenn das Abschneideverhalten erforderlich ist, verwenden Sie **_TRUNCATE** oder (*Größe* - 1):
+Wenn das abkürzen von Verhalten erforderlich ist, verwenden Sie **_TRUNCATE** oder (*Größe* -1):
 
 ```C
 strncpy_s(dst, 5, "a long string", _TRUNCATE);
 strncpy_s(dst, 5, "a long string", 4);
 ```
 
-Beachten Sie, dass im Gegensatz zu **strncpy**, wenn die *Anzahl* größer als die Länge von *strSource*ist , die Zielzeichenfolge NICHT mit NULLzeichen bis zur *Längenanzahl*aufgepolstert wird.
+Beachten **Sie, dass**die Ziel Zeichenfolge, wenn die *Anzahl* größer als *die Länge von*" *darsource*" ist, nicht mit NULL Zeichen bis zur Länge der Länge aufgefüllt wird.
 
-Das Verhalten von **strncpy_s** ist nicht definiert, wenn sich die Quell- und Zielzeichenfolgen überlappen.
+Das Verhalten **strncpy_s** ist nicht definiert, wenn sich die Quell-und Ziel Zeichenfolgen überlappen.
 
-Wenn *strDest* oder *strSource* **NULL**oder *numberOfElements* 0 ist, wird der ungültige Parameterhandler aufgerufen. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **EINVAL** zurück und setzt **errno** auf **EINVAL**.
+Wenn " *strindest* " oder " *strinsource* " **null** *ist, oder "* -" "". Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **EINVAL** zurück und legt **errno** auf **EINVAL**fest.
 
-**wcsncpy_s** und **_mbsncpy_s** sind breit- und multibyte-Zeichen-Versionen von **strncpy_s**. Die Argumente und der Rückgabewert von **wcsncpy_s** und **mbsncpy_s** variieren entsprechend. Diese sechs Funktionen verhalten sich andernfalls identisch.
+**wcsncpy_s** und **_mbsncpy_s** sind breit Zeichen-und multibytezeichenversionen von **strncpy_s**. Die Argumente und der Rückgabewert von **wcsncpy_s** und **mbsncpy_s** unterscheiden sich entsprechend. Diese sechs Funktionen verhalten sich andernfalls identisch.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -227,15 +227,15 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_tcsncpy_s_l**|**_strncpy_s_l**|**_mbsnbcpy_s_l**|**_wcsncpy_s_l**|
 
 > [!NOTE]
-> **_strncpy_s_l** **haben _wcsncpy_s_l** und **_mbsncpy_s_l** keine Gebietsschemaabhängigkeit und werden nur für **_tcsncpy_s_l** bereitgestellt und sind nicht dazu bestimmt, direkt aufgerufen zu werden.
+> **_strncpy_s_l**, **_wcsncpy_s_l** und **_mbsncpy_s_l** haben keine Gebiets Schema Abhängigkeit und werden nur für **_tcsncpy_s_l** bereitgestellt und sind nicht für den direkten Aufruf vorgesehen.
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**strncpy_s**, **_strncpy_s_l**|\<string.h>|
-|**wcsncpy_s**, **_wcsncpy_s_l**|\<string.h> oder \<wchar.h>|
-|**_mbsncpy_s**, **_mbsncpy_s_l**|\<mbstring.h>|
+|**strncpy_s** **_strncpy_s_l**|\<string.h>|
+|**wcsncpy_s** **_wcsncpy_s_l**|\<string.h> oder \<wchar.h>|
+|**_mbsncpy_s** **_mbsncpy_s_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -410,9 +410,9 @@ After strncpy_s (with null-termination):
    'mice'
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbcpy, _mbsnbcpy_l](mbsnbcpy-mbsnbcpy-l.md)<br/>

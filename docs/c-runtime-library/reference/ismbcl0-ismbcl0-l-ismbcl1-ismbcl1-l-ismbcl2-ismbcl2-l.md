@@ -26,7 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -58,12 +58,12 @@ helpviewer_keywords:
 - _ismbcl2_l function
 - _ismbcl0 function
 ms.assetid: ee15ebd1-462c-4a43-95f3-6735836d626a
-ms.openlocfilehash: 5d9481ecc8e574b602124103f8524e07270fe058
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 813e6359d17f2ea4c6c0ded87a97c2afda243642
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81343224"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919730"
 ---
 # <a name="_ismbcl0-_ismbcl0_l-_ismbcl1-_ismbcl1_l-_ismbcl2-_ismbcl2_l"></a>_ismbcl0, _ismbcl0_l, _ismbcl1, _ismbcl1_l, _ismbcl2, _ismbcl2_l
 
@@ -100,7 +100,7 @@ int _ismbcl2_l(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu testende Zeichen.
 
 *locale*<br/>
@@ -108,9 +108,9 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* <= 255 und es eine entsprechende **_ismbb** Routine gibt (z. B. **entspricht _ismbcalnum** **_ismbbalnum),** ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** Routine.
+Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* <= 255 und es eine entsprechende **_ismbb** Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Jede dieser Funktionen testet ein angegebenes Mehrbytezeichen auf eine angegebene Bedingung.
 
@@ -118,18 +118,18 @@ Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas
 
 |Routine|Testbedingung (nur Codepage 932)|
 |-------------|-------------------------------------------|
-|**_ismbcl0**|JIS non-Kanji: 0x8140<=*c*<=0x889E.|
-|**_ismbcl0_l**|JIS non-Kanji: 0x8140<=*c*<=0x889E.|
-|**_ismbcl1**|JIS Level-1: 0x889F<=*c*<=0x9872.|
-|**_ismbcl1_l**|JIS Level-1: 0x889F<=*c*<=0x9872.|
-|**_ismbcl2**|JIS Level-2: 0x989F<=*c*<=0xEAA4.|
-|**_ismbcl2_l**|JIS Level-2: 0x989F<=*c*<=0xEAA4.|
+|**_ismbcl0**|JIS Non-Kanji: 0x8140<=*c*<= 0x889e.|
+|**_ismbcl0_l**|JIS Non-Kanji: 0x8140<=*c*<= 0x889e.|
+|**_ismbcl1**|JIS, Ebene-1:0x889f<=*c*<= 0x9872.|
+|**_ismbcl1_l**|JIS, Ebene-1:0x889f<=*c*<= 0x9872.|
+|**_ismbcl2**|JIS, Ebene 2:0x989f<=*c*<= 0xeaa4.|
+|**_ismbcl2_l**|JIS, Ebene 2:0x989f<=*c*<= 0xeaa4.|
 
-Die Funktionen überprüfen, ob der angegebene Wert *c* den oben beschriebenen Testbedingungen entspricht, überprüfen jedoch nicht, ob *c* ein gültiges Multibyte-Zeichen ist. Wenn das untere Byte in den Bereichen 0x00–0x3F, 0x7F oder 0xFD–0xFF liegt, geben diese Funktionen einen Wert ungleich 0 (null) zurück. Dies gibt an, dass das Zeichen die Testbedingung erfüllt. Verwenden Sie [_ismbbtrail](ismbbtrail-ismbbtrail-l.md), um zu prüfen, ob das Multibytezeichen definiert ist.
+Die Funktionen überprüfen, ob der angegebene Wert *c* den oben beschriebenen Testbedingungen entspricht. es wird jedoch nicht überprüft, ob *c* ein gültiges Multibytezeichen ist. Wenn das untere Byte in den Bereichen 0x00–0x3F, 0x7F oder 0xFD–0xFF liegt, geben diese Funktionen einen Wert ungleich 0 (null) zurück. Dies gibt an, dass das Zeichen die Testbedingung erfüllt. Verwenden Sie [_ismbbtrail](ismbbtrail-ismbbtrail-l.md), um zu prüfen, ob das Multibytezeichen definiert ist.
 
-**Endcodeseite 932 Spezifisch**
+**Ende der Codepage 932-spezifisch**
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -144,8 +144,8 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [_ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
-[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

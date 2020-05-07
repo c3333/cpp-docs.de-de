@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +39,12 @@ helpviewer_keywords:
 - _tstrdate function
 - copying dates
 ms.assetid: de8e4097-58f8-42ba-9dcd-cb4d9a9f1696
-ms.openlocfilehash: 9b4b6d3b81dd1dda968cc42448ab2e53bdd44433
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ea3aec8c007a6c0cae76de2f76d8ca2bafad2241
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361283"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911856"
 ---
 # <a name="_strdate-_wstrdate"></a>_strdate, _wstrdate
 
@@ -71,26 +71,26 @@ wchar_t *_wstrdate(
 
 ### <a name="parameters"></a>Parameter
 
-*datestr*<br/>
+*dateStr*<br/>
 Ein Zeiger auf einen Puffer, der die formatierte Datumszeichenfolge enthält.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt einen Zeiger auf die resultierende Zeichenfolge *datestr*zurück.
+Jede dieser Funktionen gibt einen Zeiger auf die resultierende Zeichenfolge *dateStr*zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [_strdate_s, _wstrdate_s](strdate-s-wstrdate-s.md). Es wird empfohlen, nach Möglichkeit die sichereren Funktionen zu verwenden.
 
-Die **funktion _strdate** kopiert das aktuelle Systemdatum in den Puffer, auf den durch *datestr*verwiesen wird, **formatiert mm**/**dd**/**yy**, wobei **mm** zwei Ziffern für den Monat, **dd** zwei Ziffern für den Tag und **yy** die letzten beiden Ziffern des Jahres ist. Beispielsweise stellt die Zeichenfolge **12/05/99** den 5. Dezember 1999 dar. Der Puffer muss mindestens 9 Bytes lang sein.
+Die **_strdate** -Funktion kopiert das aktuelle Systemdatum in den Puffer, auf den von *dateStr*verwiesen wird, formatiert **mm**/**DD**/**yy**, wobei **mm** zwei Ziffern darstellt, die den Monat darstellen, **DD** zwei Ziffern darstellt, die den Tag darstellen, und **yy** die letzten zwei Ziffern des Jahres. Die Zeichenfolge **12/05/99** stellt z. b. den 5. Dezember 1999 dar. Der Puffer muss mindestens 9 Bytes lang sein.
 
-Wenn *datestr* ein **NULL-Zeiger** ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen -1 zurück und setzen **errno** auf **EINVAL**.
+Wenn *dateStr* ein **null** -Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
 
-**_wstrdate** ist eine breitgefächerte Version von **_strdate**; Das Argument und der Rückgabewert von **_wstrdate** sind Zeichenfolgen mit großen Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+**_wstrdate** ist eine breit Zeichen Version von **_strdate**. Das Argument und der Rückgabewert von **_wstrdate** sind Zeichen folgen mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
 In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -133,7 +133,7 @@ int main()
 OS date: 04/25/03
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>

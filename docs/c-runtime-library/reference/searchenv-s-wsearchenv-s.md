@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-environment-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -42,12 +42,12 @@ helpviewer_keywords:
 - _searchenv_s function
 - environment paths
 ms.assetid: 47f9fc29-250e-4c09-b52e-9e9f0ef395ca
-ms.openlocfilehash: 3d526c546e1496b3b13b14a12c9025cbd0347cd2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5dd21013c8910ba07e2d23606af49bc80458dbc6
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81332401"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918994"
 ---
 # <a name="_searchenv_s-_wsearchenv_s"></a>_searchenv_s, _wsearchenv_s
 
@@ -87,47 +87,47 @@ errno_t _wsearchenv_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Dateiname*<br/>
+*Einfügen*<br/>
 Der Name der zu suchenden Datei.
 
-*Varname*<br/>
+*varname*<br/>
 Zu durchsuchende Umgebung.
 
 *Pfadnamen*<br/>
 Puffer zum Speichern des vollständigen Pfades.
 
-*Sizeinbytes*<br/>
-Größe des *Pfadnamenpuffers.*
+*numberOfElements*<br/>
+Größe des *Pfadnamen* Puffers.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt.
 
-Wenn *filename* eine leere Zeichenfolge ist, lautet der Rückgabewert **ENOENT**.
+Wenn *filename* eine leere Zeichenfolge ist, ist der Rückgabewert **ENOENT**.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Dateiname*|*Varname*|*Pfadnamen*|*Sizeinbytes*|Rückgabewert|Inhalt des *Pfadnamens*|
+|*Einfügen*|*varname*|*Pfadnamen*|*numberOfElements*|Rückgabewert|Inhalt von *Pfadnamen*|
 |----------------|---------------|----------------|------------------------|------------------|----------------------------|
-|any|any|**Null**|any|**Einval**|–|
-|**Null**|any|any|any|**Einval**|nicht geändert|
-|any|any|any|<= 0|**Einval**|nicht geändert|
+|any|any|**Normal**|any|**Eingabe**|–|
+|**Normal**|any|any|any|**Eingabe**|nicht geändert|
+|any|any|any|<= 0|**Eingabe**|nicht geändert|
 
-Wenn eine dieser Fehlerbedingungen auftritt, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben **EINVAL**zurück.
+Wenn eine dieser Fehlerbedingungen auftritt, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_searchenv_s-Routine** sucht nach der Zieldatei in der angegebenen Domäne. Die *varname-Variable* kann eine beliebige Umgebung oder benutzerdefinierte Variable sein, die eine Liste von Verzeichnispfaden angibt, z. B. **PATH**, **LIB**und **INCLUDE**. Da **_searchenv_s** groß ist, sollte *varname* mit der Groß-/Kleinschreibung der Umgebungsvariablen übereinstimmen. Wenn *varname* nicht mit dem Namen einer Umgebungsvariablen übereinstimmt, die in der Umgebung des Prozesses definiert ist, gibt die Funktion Null zurück, und die *Pathname-Variable* bleibt unverändert.
+Die **_searchenv_s** Routine sucht in der angegebenen Domäne nach der Zieldatei. Die *varname* -Variable kann eine beliebige Umgebung oder eine benutzerdefinierte Variable sein, die eine Liste von Verzeichnis Pfaden angibt, wie z. b. **path**, **lib**und **include**. Da bei **_searchenv_s** die Groß-/Kleinschreibung beachtet wird, sollte *varname* dem Fall der Umgebungsvariablen entsprechen. Wenn *varname* nicht mit dem Namen einer Umgebungsvariablen identisch ist, die in der Umgebung des Prozesses definiert ist, gibt die Funktion 0 (null) zurück, und die *Pfadname* -Variable bleibt unverändert.
 
-Die Routine sucht zuerst im aktuellen Arbeitsverzeichnis nach der Datei. Wenn die Datei dort nicht gefunden wird, werden als Nächstes die in der Umgebungsvariablen angegebenen Verzeichnisse durchsucht. Wenn sich die Zieldatei in einem dieser Verzeichnisse befindet, wird der neu erstellte Pfad in *den Pfadnamen*kopiert. Wenn die *Dateinamedatei* nicht gefunden wird, enthält *pathname* eine leere null-terminierte Zeichenfolge.
+Die Routine sucht zuerst im aktuellen Arbeitsverzeichnis nach der Datei. Wenn die Datei dort nicht gefunden wird, werden als Nächstes die in der Umgebungsvariablen angegebenen Verzeichnisse durchsucht. Wenn sich die Zieldatei in einem dieser Verzeichnisse befindet, wird der neu erstellte Pfad in *Pfadnamen*kopiert. Wenn die Datei *Namen* Datei nicht gefunden wird, enthält *Pfadnamen* eine leere NULL-terminierte Zeichenfolge.
 
-Der *Pfadnamenpuffer* sollte mindestens **_MAX_PATH** Zeichen lang sein, um die gesamte Länge des erstellten Pfadnamens aufzunehmen. Andernfalls **_searchenv_s** den *Pfadnamenpuffer* möglicherweise überlaufen, was zu unerwartetem Verhalten führt.
+Der *Pfadname* -Puffer muss mindestens **_MAX_PATH** Zeichen lang sein, um die vollständige Länge des erstellten Pfadnamens zu berücksichtigen. Andernfalls können **_searchenv_s** den *Pfadnamen* -Puffer überlaufen, was zu unerwartetem Verhalten führt.
 
-**_wsearchenv_s** ist eine breit **gefächerte**Version von _searchenv_s ; Die Argumente, **die _wsearchenv_s** sind Zeichenfolgen mit großen Zeichen. **_wsearchenv_s** und **_searchenv_s** verhalten sich ansonsten gleich.
+**_wsearchenv_s** ist eine breit Zeichen Version von **_searchenv_s**. die Argumente für **_wsearchenv_s** sind Zeichen folgen mit breit Zeichen. **_wsearchenv_s** und **_searchenv_s** Verhalten sich andernfalls identisch.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -180,7 +180,7 @@ Path for CL.EXE:
 C:\Program Files\Microsoft Visual Studio 2010\VC\BIN\CL.EXE
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
 [_searchenv, _wsearchenv](searchenv-wsearchenv.md)<br/>

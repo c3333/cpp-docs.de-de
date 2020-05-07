@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +39,12 @@ helpviewer_keywords:
 - mktemp function
 - temporary files [C++]
 ms.assetid: 055eb539-a8c2-4a7d-be54-f5b6d1eb5c85
-ms.openlocfilehash: 8affd20ca7826f0d383f749567c9625d61dacd48
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 536a63841c6e29fa003eb8b99c896f6d1cf5519f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338723"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919099"
 ---
 # <a name="_mktemp-_wmktemp"></a>_mktemp, _wmktemp
 
@@ -71,18 +71,18 @@ wchar_t *_wmktemp(
 
 ### <a name="parameters"></a>Parameter
 
-*nameTemplate*<br/>
+*aufweisen*<br/>
 Muster des Dateinamens.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt einen Zeiger auf den geänderten NameTemplate zurück. Die Funktion gibt **NULL** zurück, wenn *nameTemplate* schlecht formatiert ist oder keine eindeutigen Namen mehr aus dem angegebenen NameTemplate erstellt werden können.
+Jede dieser Funktionen gibt einen Zeiger auf die geänderte nametemplate zurück. Die-Funktion gibt NULL zurück, wenn " *nametemplate* " **ungültig** ist oder keine weiteren eindeutigen Namen aus der angegebenen nametemplate erstellt werden können.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mktemp-Funktion** erstellt einen eindeutigen Dateinamen, indem das *argument nameTemplate* geändert wird. **_mktemp** verarbeitet automatisch Zeichenfolgenargumente mit mehreren Byte-Zeichen, wobei Multibyte-Zeichensequenzen entsprechend der Multibyte-Codepage erkannt werden, die derzeit vom Laufzeitsystem verwendet wird. **_wmktemp** ist eine breit gefächerte Version von **_mktemp**; Das Argument und der Rückgabewert von **_wmktemp** sind Zeichenfolgen mit großen Zeichen. **_wmktemp** und **_mktemp** verhalten sich ansonsten identisch, mit der Ausnahme, dass **_wmktemp** keine Zeichenfolgen mit mehreren Byte-Zeichen verarbeitet.
+Die **_mktemp** -Funktion erstellt einen eindeutigen Dateinamen, indem das *nametemplate* -Argument geändert wird. **_mktemp** automatisch Multibytezeichen-Zeichen folgen Argumente behandelt, wobei Multibytezeichen-Zeichen folgen entsprechend der Multibytezeichen-Codepage erkannt werden, die zurzeit vom Laufzeitsystem verwendet wird. **_wmktemp** ist eine breit Zeichen Version von **_mktemp**. Das Argument und der Rückgabewert von **_wmktemp** sind Zeichen folgen mit breit Zeichen. **_wmktemp** und **_mktemp** Verhalten sich andernfalls identisch, mit dem Unterschied, dass **_wmktemp** keine Multibyte-Zeichen folgen verarbeitet.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -90,27 +90,27 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tmktemp**|**_mktemp**|**_mktemp**|**_wmktemp**|
 
-Das *argumentTemplate* hat die *Formularbasis*XXXXXX, wobei *basis* der Teil des neuen Dateinamens ist, den Sie angeben, und jedes X ist ein Platzhalter für ein **Zeichen, das**von _mktemp bereitgestellt wird. Jedes Platzhalterzeichen in *nameTemplate* muss ein X in Großbuchstaben sein. **_mktemp** behält die *Basis* bei und ersetzt das erste nachfolgende X durch ein alphabetisches Zeichen. **_mktemp** ersetzt die folgenden nachfolgenden X es durch einen fünfstelligen Wert; Dieser Wert ist eine eindeutige Nummer, die den aufrufenden Prozess oder in Multithreadprogrammen den aufrufenden Thread identifiziert.
+Das *nametemplate* -Argument hat die Form *Base*xxxxxx, wobei *Base* der von Ihnen angegebene Teil des neuen Datei namens und jedes X ein Platzhalter für ein Zeichen ist, das von **_mktemp**angegeben wird. Jedes Platzhalter Zeichen in *nametemplate* muss ein Großbuchstabe X sein. **_mktemp** behält die *Basis* bei und ersetzt das erste nachfolgende x durch ein alphabetisches Zeichen. **_mktemp** ersetzt die folgenden nachfolgenden X-Werte durch einen fünfstelligen Wert. Dieser Wert ist eine eindeutige Zahl, die den aufrufenden Prozess identifiziert, bzw. in Multithreadprogrammen den aufrufenden Thread.
 
-Jeder erfolgreiche Aufruf **an _mktemp** ändert *nameTemplate*. Bei jedem nachfolgenden Aufruf desselben Prozesses oder Threads mit demselben *nameTemplate-Argument* **sucht _mktemp** nach Dateinamen, die mit Namen übereinstimmen, die von **_mktemp** in früheren Aufrufen zurückgegeben wurden. Wenn keine Datei für einen bestimmten Namen vorhanden ist, **gibt _mktemp** diesen Namen zurück. Wenn Dateien für alle zuvor zurückgegebenen Namen vorhanden sind, **erstellt _mktemp** einen neuen Namen, indem das alphabetische Zeichen, das im zuvor zurückgegebenen Namen verwendet wurde, durch den nächsten verfügbaren Kleinbuchstaben ersetzt wird, in der Reihenfolge von 'a' bis 'z'. Wenn die *Basis* z. B. folgende Ist::
+Bei jedem erfolgreichen Aufrufe von **_mktemp** wird " *nametemplate" geändert*. Bei jedem nachfolgenden Aufruf desselben Prozesses oder Threads mit demselben *nametemplate* -Argument prüft **_mktemp** nach Dateinamen, die mit den Namen übereinstimmen, die von **_mktemp** in vorherigen Aufrufen zurückgegeben wurden. Wenn für einen bestimmten Namen keine Datei vorhanden ist, gibt **_mktemp** diesen Namen zurück. Wenn Dateien für alle zuvor zurückgegebenen Namen vorhanden sind, erstellt **_mktemp** einen neuen Namen, indem das in dem zuvor zurückgegebenen Namen verwendete alphabetische Zeichen durch den nächsten verfügbaren Kleinbuchstaben (in der angegebenen Reihenfolge) von "a" bis "z" ersetzt wird. Wenn die *Basis* beispielsweise:
 
 > **fn**
 
-und der von **_mktemp** angegebene fünfstellige Wert ist 12345, der zurückgegebene Vorname lautet:
+der von **_mktemp** bereitgestellte fünfstellige Wert ist 12345, der erste zurückgegebene Name lautet:
 
-> **fna12345**
+> **FNA12345**
 
-Wenn dieser Name zum Erstellen der Datei FNA12345 verwendet wird und diese Datei immer noch vorhanden ist, lautet der nächste Name, der bei einem Aufruf desselben Prozesses oder Threads mit derselben *Basis* für *nameTemplate* zurückgegeben wird:
+Wenn dieser Name verwendet wird, um die Datei zu erstellen FNA12345 und diese Datei immer noch vorhanden ist, lautet der nächste Name, der bei einem Rückruf desselben Prozesses oder Threads mit der gleichen *Basis* für " *nametemplate* " zurückgegeben wird, wie folgt:
 
 > **fnb12345**
 
 Ist FNA12345 nicht vorhanden, lautet der nächste zurückgegebene Name erneut:
 
-> **fna12345**
+> **FNA12345**
 
-**_mktemp** kann maximal 26 eindeutige Dateinamen für eine beliebige Kombination von *Basis-* und *NameTemplate-Werten* erstellen. Daher ist FNZ12345 der letzte eindeutige **Dateiname,** den _mktemp für die in diesem Beispiel verwendeten *Basis-* und *NameTemplate-Werte* erstellen kann.
+**_mktemp** können maximal 26 eindeutige Dateinamen für eine bestimmte Kombination von *Basis* -und *nametemplate* -Werten erstellen. Daher ist FNZ12345 der letzte eindeutige Dateiname **_mktemp** der für die *Basis* -und *nametemplate* -Werte erstellt werden kann, die in diesem Beispiel verwendet werden.
 
-Bei einem Fehler wird **errno** gesetzt. Wenn *nameTemplate* ein ungültiges Format hat (z. B. weniger als 6 X), wird **errno** auf **EINVAL**gesetzt. Wenn **_mktemp** keinen eindeutigen Namen erstellen kann, da bereits alle 26 möglichen Dateinamen vorhanden sind, legt **_mktemp** nameTemplate auf eine leere Zeichenfolge fest und gibt **EEXIST**zurück.
+Bei einem Fehler wird **errno** festgelegt. Wenn *nametemplate* ein ungültiges Format aufweist (z. b. weniger als 6 X), wird **errno** auf **EINVAL**festgelegt. Wenn **_mktemp** keinen eindeutigen Namen erstellen kann, weil alle 26 möglichen Dateinamen bereits vorhanden sind, wird "nametemplate" **_mktemp** auf eine leere Zeichenfolge festgelegt und " **EEXIST**" zurückgegeben.
 
 In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
@@ -209,7 +209,7 @@ Problem creating the template.
 Out of unique filenames.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [fopen, _wfopen](fopen-wfopen.md)<br/>

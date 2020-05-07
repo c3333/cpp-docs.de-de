@@ -17,7 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - _scalbf function
 - scalb function
 ms.assetid: 148cf5a8-b405-44bf-a1f0-7487adba2421
-ms.openlocfilehash: 6501fe53e67d0f277fa64c08e0edbff1d7eeb61a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: debb617afea26437df16150592e631461d82c6b8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81332690"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918220"
 ---
 # <a name="_scalb-_scalbf"></a>_scalb, _scalbf
 
@@ -58,7 +58,7 @@ float _scalbf(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert mit doppelter Genauigkeit.
 
 *Exp*<br/>
@@ -66,25 +66,25 @@ Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg einen Exponentialwert zurück. Bei Überlauf (je nach Vorzeichen von *x*), **gibt _scalb** +/- **HUGE_VAL**zurück; Die **errno-Variable** ist auf **ERANGE**gesetzt.
+Gibt bei Erfolg einen Exponentialwert zurück. Bei einem Überlauf (abhängig vom Vorzeichen von *x*) gibt **_scalb** +/- **HUGE_VAL**; zurück. die **errno** -Variable ist auf **ERANGE**festgelegt.
 
 Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_scalb-Funktion** berechnet den Wert von *x* \* 2<sup>*exp*</sup>.
+Die **_scalb** -Funktion berechnet den Wert von *x* \* 2<sup>*Exp*</sup>.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_scalb**, **_scalbf**|\<float.h>|
+|**_scalb** **_scalbf**|\<float.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldexp](ldexp.md)<br/>

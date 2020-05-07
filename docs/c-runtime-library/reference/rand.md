@@ -17,7 +17,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,16 +31,16 @@ helpviewer_keywords:
 - rand function
 - pseudorandom numbers
 - numbers, generating pseudorandom
-ms.openlocfilehash: 944c512d0102b459afc2924ef7515311e46cd43c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8f2a4d00310671e8ba80055e38e479e348562ac2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338163"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919527"
 ---
 # <a name="rand"></a>rand
 
-Generiert eine Pseudozufallszahl mithilfe eines bekannten und vollständig reproduzierbaren Algorithmus. Eine programmgesteuert sichere Version dieser Funktion ist verfügbar. siehe [rand_s](rand-s.md). Zahlen, die von **rand** generiert werden, sind nicht kryptographisch sicher. Für eine kryptographisch sichere Zufallszahlengenerierung verwenden Sie [rand_s](rand-s.md) oder die in der C++-Standardbibliothek deklarierten Funktionen in [ \<zufälligen>](../../standard-library/random.md).
+Generiert eine Pseudo Zufalls-Zahl mithilfe eines bekannten und vollständig reproduzierbaren Algorithmus. Eine Programm gesteuert sichere Version dieser Funktion ist verfügbar. siehe [rand_s](rand-s.md). Die von **Rand** generierten Zahlen sind nicht kryptografisch sicher. Verwenden Sie zum Generieren einer kryptografisch sicheren Zufallszahlengenerierung [rand_s](rand-s.md) oder die in der C++-Standard Bibliothek in [ \<Random>](../../standard-library/random.md)deklarierten Funktionen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,15 +50,15 @@ int rand( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**rand** gibt eine Pseudozufallszahl zurück, wie oben beschrieben. Es gibt keine Fehlerrückgabe.
+**Rand** gibt eine Pseudo Zufallszahl zurück, wie oben beschrieben. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **rand-Funktion** gibt eine Pseudorandom-Ganzzahl im Bereich 0 bis **RAND_MAX** (32767) zurück. Verwenden Sie die [Srand-Funktion,](srand.md) um den Pseudorandom-Zahlengenerator auszusieren, bevor Sie **rand**aufrufen.
+Die **Rand** -Funktion gibt eine Pseudo Zufalls-Ganzzahl im Bereich 0 bis **RAND_MAX** (32767) zurück. Verwenden Sie die [srand](srand.md) -Funktion, um einen Ausgangswert für den Pseudozufallszahlen-Generator zu verwenden, bevor Sie **Rand**aufrufen.
 
-Die **rand-Funktion** erzeugt eine bekannte Sequenz und ist nicht für die Verwendung als kryptografische Funktion geeignet. Für eine kryptographisch sichere Zufallszahlengenerierung verwenden Sie [rand_s](rand-s.md) oder die in der C++-Standardbibliothek deklarierten Funktionen in [ \<zufälligen>](../../standard-library/random.md). Informationen darüber, was mit **rand** \<falsch ist und wie zufällig> diese Mängel behebt, finden Sie in diesem Video mit dem Titel [rand Considered Harmful](https://channel9.msdn.com/Events/GoingNative/2013/rand-Considered-Harmful).
+Die **Rand** -Funktion generiert eine bekannte Sequenz und ist nicht für die Verwendung als Kryptografiefunktion geeignet. Verwenden Sie zum Generieren einer kryptografisch sicheren Zufallszahlengenerierung [rand_s](rand-s.md) oder die in der C++-Standard Bibliothek in [ \<Random>](../../standard-library/random.md)deklarierten Funktionen. Informationen dazu, was bei **Rand** falsch ist und wie \<Random> diese Mängel behandelt, finden Sie in diesem Video, das [als schädlich angesehen](https://channel9.msdn.com/Events/GoingNative/2013/rand-Considered-Harmful)wird.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -138,7 +138,7 @@ int main( void )
    66
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [srand](srand.md)<br/>
