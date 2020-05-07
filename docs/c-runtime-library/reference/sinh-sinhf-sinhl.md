@@ -19,7 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +37,12 @@ helpviewer_keywords:
 - sinhf function
 - sinhl function
 - hyperbolic functions
-ms.openlocfilehash: 4a8ffd1dbce112272f04241a2502c5df63f163a1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 107636d1e732ab7b3ed3003691d3678acc012b7d
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318674"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909909"
 ---
 # <a name="sinh-sinhf-sinhl"></a>sinh, sinhf, sinhl
 
@@ -63,31 +63,31 @@ long double sinh(long double x);  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **Sinh-Funktionen** geben den hyperbolischen Sinus von *x*zurück. Wenn das Ergebnis zu groß ist, setzt **sinh** **standardmäßig errno** auf **ERANGE** und gibt**HUGE_VAL**zurück.
+Die **sinh** -Funktionen geben den hyperbolischen Sinus von *x*zurück. Wenn das Ergebnis zu groß ist, legt **sinh** standardmäßig **errno** auf **ERANGE** fest und gibt "±**HUGE_VAL**" zurück.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
 |± QNAN,IND|Keine|_DOMAIN|
-|&#124;x&#124; bei 7.104760e+002|OVERFLOW+INEXACT|OVERFLOW|
+|&#124;x&#124; 104760e e + 002|OVERFLOW+INEXACT|OVERFLOW|
 
 Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Sinh** aufrufen, die **Float-** oder **lange** **Doppelwerte** annehmen und zurückgeben. In einem C-Programm nimmt und gibt **sinh** immer **doppelt**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **sinh** aufrufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **sinh** immer Double und gibt **Double**zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-|-|-|
-|**sinh**, **sinhf**, **sinhl**|\<math.h>|\<cmath> oder \<math.h>|
+|**sinh**, **Sinhf**, **sinhl**|\<math.h>|\<cmath> oder \<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -120,7 +120,7 @@ sinh( 1.570796 ) = 2.301299
 cosh( 1.570796 ) = 2.509178
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>

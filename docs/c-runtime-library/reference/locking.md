@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +30,12 @@ helpviewer_keywords:
 - files [C++], locking
 - _locking function
 ms.assetid: 099aaac1-d4ca-4827-aed6-24dff9844150
-ms.openlocfilehash: 2c6ee763a1491a744b25cbb517886e9354ca6152
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c1c211ffaa63a0e4711374b01b0530ed8db20dfb
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81342060"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911547"
 ---
 # <a name="_locking"></a>_locking
 
@@ -53,10 +53,10 @@ int _locking(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor.
 
-*Modus*<br/>
+*mode*<br/>
 Die auszuführende Sperraktion
 
 *nbytes*<br/>
@@ -64,34 +64,34 @@ Die Anzahl der zu sperrenden Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_locking** gibt bei Erfolg 0 zurück. Der Rückgabewert von -1 gibt einen Fehler an, in diesem Fall wird [errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) auf einen der folgenden Werte gesetzt.
+**_locking** gibt bei Erfolg 0 zurück. Der Rückgabewert-1 weist auf einen Fehler hin. in diesem Fall wird [errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) auf einen der folgenden Werte festgelegt.
 
 |errno-Wert|Bedingung|
 |-|-|
 | **EACCES** | Sperrverletzung (Datei bereits gesperrt oder entsperrt). |
 | **EBADF** | Ungültiger Dateideskriptor. |
-| **EDEADLOCK** | Sperrverletzung. Wird zurückgegeben, wenn das **_LK_LOCK-** oder **_LK_RLCK-Flag** angegeben ist und die Datei nach 10 Versuchen nicht gesperrt werden kann. |
-| **Einval** | _locking wurde ein ungültiges Argument **gegeben.** |
+| **EDEADLOCK** | Sperrverletzung. Wird zurückgegeben, wenn das **_LK_LOCK** -oder **_LK_RLCK** -Flag angegeben wird und die Datei nach 10 versuchen nicht gesperrt werden kann. |
+| **Eingabe** | **_Locking**wurde ein ungültiges Argument angegeben. |
 
 Wenn der Fehler aufgrund eines ungültigen Parameters entstanden ist, wie z.B. ein ungültiger Dateideskriptor, wird der Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_locking** Funktion sperrt oder entsperrt *nBytes* der von *fd*angegebenen Datei . Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Alle Sperr- oder Entsperraktionen beginnen an der aktuellen Position des Dateizeigers und laufen für die nächsten *nbytes*-Bytes ab. Es ist möglich, Bytes nach dem Ende der Datei zu sperren.
+Die **_locking** -Funktion sperrt oder entsperrt *nbytes* -Bytes der Datei, die von *FD*angegeben wird. Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Alle Sperr- oder Entsperraktionen beginnen an der aktuellen Position des Dateizeigers und laufen für die nächsten *nbytes*-Bytes ab. Es ist möglich, Bytes nach dem Ende der Datei zu sperren.
 
 Der *Modus* muss eine der folgenden Manifestkonstanten sein, die in „Locking.h“ definiert sind.
 
-|*Moduswert*|Effekt|
+|*Moduswert*|Wirkung|
 |-|-|
 | **_LK_LOCK** | Sperrt die angegebenen Bytes. Wenn die Bytes nicht gesperrt werden können, führt das Programm nach 1 Sekunde sofort einen neuen Versuch durch. Wenn nach 10 Versuchen die Bytes nicht gesperrt werden können, gibt die Konstante einen Fehler zurück. |
 | **_LK_NBLCK** | Sperrt die angegebenen Bytes. Wenn die Bytes nicht gesperrt werden können, gibt die Konstante einen Fehler zurück. |
-| **_LK_NBRLCK** | Genauso wie **_LK_NBLCK**. |
-| **_LK_RLCK** | Genauso wie **_LK_LOCK**. |
+| **_LK_NBRLCK** | Identisch mit **_LK_NBLCK**. |
+| **_LK_RLCK** | Identisch mit **_LK_LOCK**. |
 | **_LK_UNLCK** | Entsperrt die angegebenen Bytes, die zuvor gesperrt sein mussten. |
 
-Mehrere Bereiche einer Datei, die sich nicht überschneiden, können gesperrt werden. Ein Bereich, der entsperrt wird, muss zuvor gesperrt worden sein. **_locking** führt keine angrenzenden Regionen zusammen. Wenn zwei gesperrte Bereiche angrenzen, muss jede Region separat entsperrt werden. Bereichen sollten nur über einen kurzen Zeitraum gesperrt sein und sollten entsperrt werden, bevor eine Datei geschlossen oder das Programm beendet wird.
+Mehrere Bereiche einer Datei, die sich nicht überschneiden, können gesperrt werden. Ein Bereich, der entsperrt wird, muss zuvor gesperrt worden sein. in **_locking** werden keine angrenzenden Regionen zusammengeführt. Wenn zwei gesperrte Bereiche nebeneinander liegen, muss jede Region separat entsperrt werden. Bereichen sollten nur über einen kurzen Zeitraum gesperrt sein und sollten entsperrt werden, bevor eine Datei geschlossen oder das Programm beendet wird.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -170,7 +170,7 @@ No one can change these bytes while I'm reading them
 Now I'm done. Do what you will with them
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>

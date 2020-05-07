@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +30,12 @@ helpviewer_keywords:
 - floating-point functions, converting number to string
 - _fcvt_s function
 ms.assetid: 48671197-1d29-4c2b-a5d8-d2368f5f68a1
-ms.openlocfilehash: 80f02467e160e3196982c10576ad55f5487e5fc1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 557a1d359c389f0eb7477aab4bf9cbb51558703a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347447"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920202"
 ---
 # <a name="_fcvt_s"></a>_fcvt_s
 
@@ -64,7 +64,7 @@ errno_t _fcvt_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Puffer*<br/>
+*ert*<br/>
 Der angegebene Puffer, der das Ergebnis der Konvertierung enthält.
 
 *sizeInBytes*<br/>
@@ -76,46 +76,46 @@ Zu konvertierende Zahl.
 *count*<br/>
 Anzahl der Ziffern nach dem Dezimaltrennzeichen.
 
-*dec*<br/>
+*31.12.2012*<br/>
 Zeiger auf die gespeicherte Position der Dezimalstelle.
 
-*Zeichen*<br/>
+*Gebärden*<br/>
 Zeiger auf den gespeicherten Zeichen-Indikator.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Null, wenn erfolgreich. Der Rückgabewert ist ein Fehlercode, wenn ein Fehler auftritt. Fehlercodes sind in Errno.h definiert. Eine Liste dieser Fehler finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-Bei einem in der folgenden Tabelle enthaltenen ungültigen Parameter wird von dieser Funktion der Handler für ungültige Parameter aufgerufen, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt **EINVAL**zurück.
+Bei einem in der folgenden Tabelle enthaltenen ungültigen Parameter wird von dieser Funktion der Handler für ungültige Parameter aufgerufen, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion " **errno** " auf " **EINVAL** " fest und gibt " **EINVAL**" zurück.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Puffer*|*sizeInBytes*|value|count|dec|Signieren|Rückgabewert|Wert im *Puffer*|
+|*ert*|*sizeInBytes*|value|count|dec|Signieren|Rückgabewert|Wert im *Puffer*|
 |--------------|-------------------|-----------|-----------|---------|----------|------------|-----------------------|
-|**Null**|any|any|any|any|any|**Einval**|Nicht geändert.|
-|Nicht **NULL** (zeigt auf gültigen Speicher)|<=0|any|any|any|any|**Einval**|Nicht geändert.|
-|any|any|any|any|**Null**|any|**Einval**|Nicht geändert.|
-|any|any|any|any|any|**Null**|**Einval**|Nicht geändert.|
+|**Normal**|any|any|any|any|any|**Eingabe**|Nicht geändert.|
+|Not **null** (zeigt auf gültigen Speicher)|<=0|any|any|any|any|**Eingabe**|Nicht geändert.|
+|any|any|any|any|**Normal**|any|**Eingabe**|Nicht geändert.|
+|any|any|any|any|any|**Normal**|**Eingabe**|Nicht geändert.|
 
 ## <a name="security-issues"></a>Sicherheitsprobleme
 
-**_fcvt_s** eine Zugriffsverletzung generieren, wenn *der Puffer* nicht auf gültigen Speicher hinweist und nicht **NULL**ist.
+**_fcvt_s** generiert möglicherweise eine Zugriffsverletzung, wenn der *Puffer* nicht auf einen gültigen Speicher verweist und nicht **null**ist.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_fcvt_s-Funktion** konvertiert eine Gleitkommazahl in eine null-terminierte Zeichenfolge. Der *Wertparameter* ist die zu konvertierende Gleitkommazahl. **_fcvt_s** speichert die *Werteziffern* als Zeichenfolge und fügt ein Nullzeichen an . Der *Parameter count* gibt die Anzahl der Ziffern an, die nach dem Dezimaltrennzeichen gespeichert werden sollen. Überschüssige Ziffern werden abgerundet, um Orte zu *zählen.* Wenn es weniger als *Genauigkeitsziffern* zählen, wird die Zeichenfolge mit Nullen aufgepolstert.
+Die **_fcvt_s** -Funktion konvertiert eine Gleit Komma Zahl in eine NULL terminierte Zeichenfolge. Der *value* -Parameter ist die zu konvertierende Gleit Komma Zahl. **_fcvt_s** speichert die Ziffern des *Werts* als Zeichenfolge und fügt ein NULL-Zeichen (' \ 0 ') an. Der *count* -Parameter gibt die Anzahl der Ziffern an, die nach dem Dezimaltrennzeichen gespeichert werden sollen. Überschüssige Ziffern werden auf *Anzahl* von Stellen gerundet. Wenn weniger als *zählungs* Ziffern vorhanden sind, wird die Zeichenfolge mit Nullen aufgefüllt.
 
-In der Zeichenfolge werden nur Ziffern gespeichert. Die Position des Dezimalkommas und das Vorzeichen des *Wertes* können von *dec* und *Zeichen* nach dem Aufruf erhalten werden. Der *Parameter dec* zeigt auf einen Ganzzahlwert; Dieser ganzzahlige Wert gibt die Position des Dezimalkommas in Bezug auf den Anfang der Zeichenfolge an. Der Wert null oder ein negativer ganzzahliger Wert geben an, dass sich die Dezimalstelle links neben der ersten Ziffer befindet. Das *Parameterzeichen* zeigt auf eine ganze Zahl, die das Vorzeichen des *Werts*angibt. Die ganze Zahl wird auf 0 gesetzt, wenn *der Wert* positiv ist, und wird auf eine Zahl ungleich Null gesetzt, wenn *der Wert* negativ ist.
+In der Zeichenfolge werden nur Ziffern gespeichert. Die Position des Dezimal Trennzeichens und das Vorzeichen des *Werts* können aus *Dec* abgerufen und nach dem-Befehl *signiert* werden. Der *Dec* -Parameter verweist auf einen ganzzahligen Wert. dieser ganzzahlige Wert gibt die Position des Dezimal Trennzeichens in Bezug auf den Anfang der Zeichenfolge an. Der Wert null oder ein negativer ganzzahliger Wert geben an, dass sich die Dezimalstelle links neben der ersten Ziffer befindet. Das Parameter *Vorzeichen* verweist auf eine Ganzzahl, die das Vorzeichen des *Werts*angibt. Die Ganzzahl wird auf 0 festgelegt, wenn *value* positiv ist und auf eine Zahl ungleich 0 (null) festgelegt ist, wenn der *Wert* negativ ist.
 
-Ein Puffer mit länge **_CVTBUFSIZE** ist für jeden Gleitkommawert ausreichend.
+Ein Puffer der Länge **_CVTBUFSIZE** ist für alle Gleit Komma Werte ausreichend.
 
-Der Unterschied zwischen **_ecvt_s** und **_fcvt_s** liegt in der Interpretation des *Zählparameters.* **_ecvt_s** *interpretiert, zählen* als die Gesamtzahl der Ziffern in der Ausgabezeichenfolge, und **_fcvt_s** *interpretiert, zählen* als die Anzahl der Ziffern nach dem Dezimaltrennzeichen.
+Der Unterschied zwischen **_ecvt_s** und **_fcvt_s** ist die Interpretation des *count* -Parameters. **_ecvt_s** interpretiert *count* als die Gesamtanzahl der Ziffern in der Ausgabe Zeichenfolge, und **_fcvt_s** interpretiert *count* als die Anzahl der Ziffern nach dem Dezimaltrennzeichen.
 
 Die Verwendung dieser Funktion in C++ wird durch eine Überladung (als Vorlagen vorhanden) vereinfacht. Eine Überladung kann automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debugversion dieser Funktion füllt zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debugversion dieser Funktion füllt den Puffer zuerst mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -159,7 +159,7 @@ int main()
 Converted value: 120000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-locale-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +31,12 @@ helpviewer_keywords:
 - locales, freeing
 - _free_locale function
 ms.assetid: 1f08d348-ab32-4028-a145-6cbd51b49af9
-ms.openlocfilehash: 568e44d731f384a0503420339d716fdfdc81e13a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8dbc424c00464966605cce5c44118b88eb5335d3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346046"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920439"
 ---
 # <a name="_free_locale"></a>_free_locale
 
@@ -55,23 +55,23 @@ void _free_locale(
 *locale*<br/>
 Das freizugebende locale-Objekt
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_free_locale** Funktion wird verwendet, um das Gebietsschemaobjekt freizugeben, das von einem Aufruf an **_get_current_locale** oder **_create_locale**abgerufen wurde.
+Die **_free_locale** -Funktion wird verwendet, um das Gebiets Schema Objekt freizugeben, das aus einem- **aufruf_get_current_locale** oder **_create_locale**abgerufen wird.
 
-Der vorherige Name dieser Funktion, **__free_locale** (mit zwei führenden Unterstrichen) wurde veraltet.
+Der vorherige Name dieser Funktion, **__free_locale** (mit zwei führenden unterstrichen), ist veraltet.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|**Routine**|Erforderlicher Header|
+|**Rout**|Erforderlicher Header|
 |---------------|---------------------|
 |**_free_locale**|\<locale.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_get_current_locale](get-current-locale.md)<br/>
 [_create_locale, _wcreate_locale](create-locale-wcreate-locale.md)<br/>

@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -40,12 +40,12 @@ helpviewer_keywords:
 - _mbccpy function
 - mbccpy_l function
 ms.assetid: 13f4de6e-7792-41ac-b319-dd9b135433aa
-ms.openlocfilehash: 45f93e370e11cf38fc17da3557b21c636fcbc623
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a265a37ba4c16dd15e6b50035dcc65bc8afbe7c7
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341266"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919580"
 ---
 # <a name="_mbccpy-_mbccpy_l"></a>_mbccpy, _mbccpy_l
 
@@ -79,17 +79,17 @@ Zu kopierendes Multibytezeichen.
 *locale*<br/>
 Zu verwendendes Gebietsschema.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mbccpy-Funktion** kopiert ein Multibyte-Zeichen von *src* nach *dest*.
+Die **_mbccpy** -Funktion kopiert ein Multibytezeichen von *src* in *dest*.
 
-Diese Funktion überprüft ihre Parameter. Wenn **_mbccpy** ein Nullzeiger für *dest* oder *src*übergeben wird, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL**gesetzt.
+Diese Funktion überprüft ihre Parameter. Wenn **_mbccpy** einen NULL-Zeiger für *dest* oder *src*übergeben wird, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL**festgelegt.
 
-**_mbccpy** verwendet das aktuelle Gebietsschema für jedes gebietsschemaabhängige Verhalten. **_mbccpy_l** ist identisch mit **_mbccpy** außer dass **_mbccpy_l** das Gebietsschema verwendet, das für ein gebietsschemaabhängiges Verhalten übergeben wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_mbccpy** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_mbccpy_l** ist mit **_mbccpy** identisch, mit dem Unterschied, dass **_mbccpy_l** das übergebene Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 **Sicherheitshinweis** Verwenden Sie eine mit NULL endende Zeichenfolge. Die mit NULL endende Zeichenfolge darf die Größe des Zielpuffers nicht überschreiten. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns). Pufferüberlaufprobleme werden häufig bei Systemangriffen eingesetzt, da sie zu einer unbefugten Ausweitung der Berechtigungen führen.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -107,7 +107,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>

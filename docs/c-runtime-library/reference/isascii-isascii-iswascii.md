@@ -17,7 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +39,12 @@ helpviewer_keywords:
 - istascii function
 - iswascii function
 ms.assetid: ba4325ad-7cb3-4fb9-b096-58906d67971a
-ms.openlocfilehash: aeb9c27fee4d179cc16caa50c6f0aae521402beb
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3e04b85c9ce7519593802c21311315d534dce6a5
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81343913"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919788"
 ---
 # <a name="isascii-__isascii-iswascii"></a>isascii, __isascii, iswascii
 
@@ -65,20 +65,20 @@ int iswascii(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich Null zurück, wenn **c** eine bestimmte Darstellung eines ASCII-Zeichens ist. **__isascii** gibt einen Wert ungleich Null zurück, wenn **c** ein ASCII-Zeichen ist (im Bereich 0x00 - 0x7F). **iswascii** gibt einen Wert ungleich Null zurück, wenn **c** eine Breitzeichendarstellung eines ASCII-Zeichens ist. Jede dieser Routinen gibt 0 zurück, wenn **c** die Testbedingung nicht erfüllt.
+Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn **c** eine bestimmte Darstellung eines ASCII-Zeichens ist. **__isascii** gibt einen Wert ungleich 0 (null) zurück, wenn **c** ein ASCII-Zeichen ist (im Bereich 0x00-0x7F). **iswascii** gibt einen Wert ungleich 0 (null) zurück, wenn **c** eine breit Zeichen Darstellung eines ASCII-Zeichens ist. Jede dieser Routinen gibt 0 zurück, wenn **c** die Test Bedingung nicht erfüllt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Sowohl **__isascii als** auch **iswascii** werden als Makros implementiert, es sei denn, das Präprozessormakro _CTYPE_DISABLE_MACROS definiert ist.
+Sowohl **__isascii** als auch **iswascii** werden als Makros implementiert, es sei denn, das Präprozessormakro _CTYPE_DISABLE_MACROS definiert.
 
-Aus Gründen der Abwärtskompatibilität wird **isascii** nur dann als Makro implementiert, wenn [&#95;&#95;STDC-&#95;&#95;](../../preprocessor/predefined-macros.md) nicht oder als 0 definiert ist. andernfalls ist sie nicht definiert.
+Aus Gründen der Abwärtskompatibilität wird **isascii** nur dann als Makro implementiert, wenn [&#95;&#95;stdc-&#95;&#95;](../../preprocessor/predefined-macros.md) nicht definiert oder als 0 definiert ist. Andernfalls ist es nicht definiert.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -93,10 +93,10 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**isascii**, **__isascii**|C: \<ctype.h><br /><br /> C++: \<cctype> oder \<ctype.h>|
 |**iswascii**|C: \<wctype.h>, \<ctype.h>, oder \<wchar.h><br /><br /> C++: \<cwctype>, \<cctype>, \<wctype.h>, \<ctype.h>, oder \<wchar.h>|
 
-Die **Funktionen isascii**, **__isascii** und **iswascii** sind Microsoft-spezifisch. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
+Die Funktionen **isascii**, **__isascii** und **iswascii** sind Microsoft-spezifisch. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

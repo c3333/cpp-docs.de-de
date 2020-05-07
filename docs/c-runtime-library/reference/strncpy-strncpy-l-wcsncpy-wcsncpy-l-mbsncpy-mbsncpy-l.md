@@ -24,7 +24,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -68,12 +68,12 @@ helpviewer_keywords:
 - tcsncpy function
 - _strncpy_l function
 ms.assetid: ac4345a1-a129-4f2f-bb8a-373ec58ab8b0
-ms.openlocfilehash: 5e5ab815e95c1b8ee03cac86d5c3355874f8860b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1a21d9cb06b9459a7f015cd8f2a8fee75a1ab979
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363835"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919277"
 ---
 # <a name="strncpy-_strncpy_l-wcsncpy-_wcsncpy_l-_mbsncpy-_mbsncpy_l"></a>strncpy, _strncpy_l, wcsncpy, _wcsncpy_l, _mbsncpy, _mbsncpy_l
 
@@ -161,10 +161,10 @@ unsigned char *_mbsncpy_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Strdest*<br/>
+*der schnellste*<br/>
 Zielzeichenfolge.
 
-*Strsource*<br/>
+*-Quelle*<br/>
 Quellzeichenfolge.
 
 *count*<br/>
@@ -175,24 +175,24 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt *strDest zurück.* Kein Rückgabewert ist zur Fehleranzeige reserviert.
+Gibt die *schnellste*zurück. Kein Rückgabewert ist zur Fehleranzeige reserviert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **strncpy-Funktion** kopiert die anfänglichen *Zählzeichen* von *strSource* in *strDest* und gibt *strDest*zurück. Wenn *die Anzahl* kleiner oder gleich der Länge von *strSource*ist, wird ein Nullzeichen nicht automatisch an die kopierte Zeichenfolge angehängt. Wenn die *Anzahl* größer als die Länge von *strSource*ist, wird die Zielzeichenfolge mit NULLzeichen bis zur *Längenanzahl*aufgepolstert. Das Verhalten von **strncpy** ist nicht definiert, wenn sich die Quell- und Zielzeichenfolgen überlappen.
+Die Funktion " **strinncpy** " kopiert die anfänglichen *Anzahl* Zeichen von " *darsource* " in " *strandest* " und gibt " *strandest*" zurück Wenn " *count* " kleiner oder gleich der Länge von " *Strauch*" ist, wird ein NULL-Zeichen nicht automatisch an die kopierte Zeichenfolge angefügt. Wenn *count* größer als die Länge von " *darsource*" ist, wird die Ziel Zeichenfolge mit NULL Zeichen bis zur Längen *Anzahl*aufgefüllt. Das Verhalten von **strncpy** ist nicht definiert, wenn sich die Quell-und Ziel Zeichenfolgen überlappen.
 
 > [!IMPORTANT]
-> **strncpy** überprüft nicht auf ausreichend Speicherplatz in *strDest*; Dies macht es zu einer möglichen Ursache für Pufferüberläufe. Das *Argument count* begrenzt die Anzahl der kopierten Zeichen. es ist kein Limit für die Größe von *strDest*. Siehe folgendes Beispiel. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
+> " **straupie** " prüft *nicht, ob*ausreichend Speicherplatz in der Dadurch wird eine mögliche Ursache von Pufferüberläufen. Das *count* -Argument schränkt die Anzahl der kopierten Zeichen ein. Es handelt sich nicht um eine Begrenzung der Größe von " *strandest*". Siehe folgendes Beispiel. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-Wenn *strDest* oder *strSource* ein **NULL-Zeiger** ist oder wenn *die Anzahl* kleiner oder gleich Null ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen -1 zurück und setzen **errno** auf **EINVAL**.
+Wenn " *strindest* " oder " *strinsource* " ein **null** -Zeiger ist, oder wenn " *count* " kleiner oder gleich NULL ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
 
-**wcsncpy** und **_mbsncpy** sind Breitzeichen- und Multibyte-Versionen von **strncpy**. Die Argumente und der Rückgabewert von **wcsncpy** und **_mbsncpy** variieren entsprechend. Diese sechs Funktionen verhalten sich andernfalls identisch.
+**wcsncpy** und **_mbsncpy** sind breit Zeichen-und multibytezeichenversionen von " **straupie**". Die Argumente und der Rückgabewert von **wcsncpy** und **_mbsncpy** variieren entsprechend. Diese sechs Funktionen verhalten sich andernfalls identisch.
 
-Die Versionen dieser Funktionen mit dem **Suffix _l** sind identisch, außer dass sie das übergebene Gebietsschema anstelle des aktuellen Gebietsschemas für ihr gebietsschemaabhängiges Verhalten verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -202,7 +202,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_tcsncpy_l**|**_strncpy_l**|**_mbsnbcpy_l**|**_wcsncpy_l**|
 
 > [!NOTE]
-> **_strncpy_l** und **_wcsncpy_l** haben keine Gebietsabhängigkeit; sie sind nur für **_tcsncpy_l** zur Verfügung gestellt und sind nicht dazu bestimmt, direkt aufgerufen zu werden.
+> **_strncpy_l** und **_wcsncpy_l** haben keine Gebiets Schema Abhängigkeit. Sie werden nur für **_tcsncpy_l** bereitgestellt und sind nicht für den direkten Aufruf vorgesehen.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -210,13 +210,13 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-------------|---------------------|
 |**strncpy**|\<string.h>|
 |**wcsncpy**|\<string.h> oder \<wchar.h>|
-|**_mbsncpy**, **_mbsncpy_l**|\<mbstring.h>|
+|**_mbsncpy** **_mbsncpy_l**|\<mbstring.h>|
 
 Weitere Informationen zur Plattformkompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung von **strncpy** und wie es missbraucht werden kann, um Programmfehler und Sicherheitsprobleme zu verursachen. Der Compiler generiert für jeden Aufruf von **strncpy** eine Warnung ähnlich **crt_strncpy_x86.c(15) : Warnung C4996: 'strncpy': Diese Funktion oder Variable kann unsicher sein. Erwägen Sie stattdessen die Verwendung von strncpy_s. Verwenden Sie _CRT_SECURE_NO_WARNINGS, um die Veraltetseinschöpfung zu deaktivieren. Weitere Informationen finden Sie in der Online-Hilfe.**
+Im folgenden Beispiel wird die Verwendung von " **straupie** " veranschaulicht und erläutert, wie Sie missbraucht werden kann, um Programmfehler und Sicherheitsprobleme zu verursachen. Der Compiler generiert eine Warnung für jeden aufzurufenden **cncpy** -aufrub, ähnlich wie **crt_strncpy_x86. c (15): Warning C4996: "strinncpy": Diese Funktion oder Variable ist möglicherweise unsicher. Verwenden Sie stattdessen strncpy_s. Verwenden Sie zum Deaktivieren der Veraltung _CRT_SECURE_NO_WARNINGS. Weitere Informationen finden Sie in der Online Hilfe.**
 
 ```C
 // crt_strncpy_x86.c
@@ -283,9 +283,9 @@ Buffer overrun: s = 'ars.' (should be 'test')
 
 Das Layout von automatischen Variablen und die Ebene der Fehlererkennung und der Codeschutz kann durch geänderte Compilereinstellungen variieren. Durch dieses Beispiel können sich unterschiedliche Ergebnisse ergeben, wenn es in andere Kompilierungsumgebungen oder mit anderen Compileroptionen integriert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbcpy, _mbsnbcpy_l](mbsnbcpy-mbsnbcpy-l.md)<br/>
