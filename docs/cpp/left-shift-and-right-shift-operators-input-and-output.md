@@ -1,5 +1,5 @@
 ---
-title: LeftShift- und RightShift-Operatoren (&gt; &gt; und &lt; &lt;)
+title: Left Shift-und Right Shift-&gt; &gt; Operatoren (und &lt; &lt;)
 ms.date: 08/13/2018
 f1_keywords:
 - <<
@@ -13,30 +13,30 @@ helpviewer_keywords:
 - shift operators [C++]
 - operators [C++], shift
 ms.assetid: 25fa0cbb-5fdd-4657-8745-b35f7d8f1606
-ms.openlocfilehash: fd048bedc45b14bdc7b83120ad039296b54aa850
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 2020c2dbbf8ff91ee692366f55c836be0b3dddb0
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65222060"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825914"
 ---
-# <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>LeftShift- und RightShift-Operatoren (&gt; &gt; und &lt; &lt;)
+# <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>Left Shift-und Right Shift-&gt; &gt; Operatoren (und &lt; &lt;)
 
-Die bitweisen Schiebeoperatoren lauten der Right Shift Operator (**&gt;&gt;**), die verschiebt die Bits des *Shift-Expression* nach rechts, und der Left Shift-Operator (**&lt; &lt;**), wodurch die Bits verschoben *Shift-Expression* auf der linken Seite. <sup>1</sup>
+Die bitweisen Verschiebungs Operatoren sind der Right Shift-Operator**&gt;**(), der die Bits von *Shift-Expression* nach rechts verschiebt, und der Links Schiebe Operator (**&lt;**), der die Bits von *Shift-Expression* nach links verschiebt. <sup>1</sup>
 
 ## <a name="syntax"></a>Syntax
 
-> *shift-expression* `<<` *additive-expression*
+> " *Shift-Expression* `<<` *Additives-Expression* "\
 > *shift-expression* `>>` *additive-expression*
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 > [!IMPORTANT]
-> Die folgenden Beschreibungen und Beispiele gelten für Windows X86- und X64 Architekturen. Die Implementierung von Left Shift und Right Shift-Operatoren unterscheidet sich erheblich auf Windows für ARM-Geräte. Weitere Informationen finden Sie im Abschnitt "Shift Operators" die [Hello ARM](https://blogs.msdn.com/b/vcblog/archive/2012/10/25/hello-arm-exploring-undefined-unspecified-and-implementation-defined-behavior-in-c.aspx) Blogbeitrag.
+> Die folgenden Beschreibungen und Beispiele sind unter Windows für x86-und x64-Architekturen gültig. Die Implementierung der Operatoren Left Shift und Right Shift unterscheidet sich deutlich von Windows für ARM-Geräte. Weitere Informationen finden Sie im Abschnitt "Shift-Operatoren" des Blogbeitrags [Hello Arm](https://blogs.msdn.com/b/vcblog/archive/2012/10/25/hello-arm-exploring-undefined-unspecified-and-implementation-defined-behavior-in-c.aspx) .
 
 ## <a name="left-shifts"></a>Verschiebungen nach links
 
-Der Left Shift-Operator bewirkt, dass die Bits im *Shift-Expression* durch die Anzahl der angegebenen Positionen nach links verschoben werden sollen *Additive-Expression*. Die durch den Verschiebevorgang frei gewordenen Bitpositionen werden mit Nullen angefüllt. Eine Verschiebung nach links ist eine logische Verschiebung (die Bits, die über das Ende hinaus verschoben werden, werden verworfen, einschließlich des Vorzeichenbits). Weitere Informationen zu den Arten von bitweisen Verschiebungen finden Sie unter [bitweisen Verschiebungen](https://en.wikipedia.org/wiki/Bitwise_shift).
+Der Left Shift-Operator bewirkt, dass die Bits in *Shift-Expression* um die durch *Additiven Ausdruck*angegebene Anzahl von Positionen nach links verschoben werden. Die durch den Verschiebevorgang frei gewordenen Bitpositionen werden mit Nullen angefüllt. Eine Verschiebung nach links ist eine logische Verschiebung (die Bits, die über das Ende hinaus verschoben werden, werden verworfen, einschließlich des Vorzeichenbits). Weitere Informationen zu den Arten von bitweisen Verschiebungen finden Sie unter [bitweise Verschiebungen](https://en.wikipedia.org/wiki/Bitwise_shift).
 
 Im folgenden Codebeispiel wird veranschaulicht, wie Verschiebevorgänge nach links nicht signierte Zahlen verwenden. Das folgende Beispiel veranschaulicht, was mit den Bits geschieht, indem der Wert als ein Bitset dargestellt wird. Weitere Informationen finden Sie unter [Bitset-Klasse](../standard-library/bitset-class.md).
 
@@ -61,7 +61,7 @@ int main() {
 }
 ```
 
-Wenn Sie eine signierte Zahl nach links verschieben, sodass das Vorzeichenbit davon betroffen ist, ist das Ergebnis nicht definiert. Das folgende Beispiel zeigt, was geschieht, wenn ein 1-Bit an der Position Vorzeichenbit nach links verschoben wird.
+Wenn Sie eine signierte Zahl nach links verschieben, sodass das Vorzeichenbit davon betroffen ist, ist das Ergebnis nicht definiert. Im folgenden Beispiel wird gezeigt, was geschieht, wenn ein 1-Bit in die zeichenbitposition verschoben wird.
 
 ```cpp
 #include <iostream>
@@ -86,10 +86,10 @@ int main() {
 
 ## <a name="right-shifts"></a>Verschiebungen nach rechts
 
-Der Right Shift Operator bewirkt, dass das Bitmuster in *Shift-Expression* durch die Anzahl der angegebenen Positionen nach rechts verschoben werden sollen *Additive-Expression*. Für unsignierte Zahlen werden die durch den Verschiebevorgang frei gewordenen Bitpositionen mit Nullen angefüllt. Für signierte Zahlen wird das Vorzeichenbit verwendet, um die frei gewordenen Bitpositionen zu füllen. In anderen Worten, wenn die Zahl positiv ist, wird 0 verwendet, und wenn die Zahl negativ ist, wird 1 verwendet.
+Der Right Shift-Operator bewirkt, dass das Bitmuster in *Shift-Expression* um die durch *Additiven Ausdruck*angegebene Anzahl von Positionen nach rechts verschoben wird. Für unsignierte Zahlen werden die durch den Verschiebevorgang frei gewordenen Bitpositionen mit Nullen angefüllt. Für signierte Zahlen wird das Vorzeichenbit verwendet, um die frei gewordenen Bitpositionen zu füllen. In anderen Worten, wenn die Zahl positiv ist, wird 0 verwendet, und wenn die Zahl negativ ist, wird 1 verwendet.
 
 > [!IMPORTANT]
-> Das Ergebnis der Verschiebung einer signierten negativen Zahl nach rechts ist implementierungsabhängig. Obwohl Microsoft C++ Compiler, die das Vorzeichenbit verwendet, um die frei gewordenen Bitpositionen zu füllen, es gibt keine Garantie, dass auch andere Implementierungen dies tun.
+> Das Ergebnis der Verschiebung einer signierten negativen Zahl nach rechts ist implementierungsabhängig. Obwohl der Microsoft C++-Compiler das Signier Bit zum Auffüllen von frei gewordenen Bitpositionen verwendet, gibt es keine Garantie dafür, dass auch andere Implementierungen dies tun.
 
 Dieses Beispiel veranschaulicht, wie Verschiebevorgänge nach rechts nicht signierte Zahlen verwenden:
 
@@ -174,9 +174,9 @@ int main() {
 
 ## <a name="shifts-and-promotions"></a>Verschiebungen und Heraufstufungen
 
-Die Ausdrücke auf beiden Seiten eines Schiebeoperators müssen vom Typ „Ganzzahl“ sein. Ganzzahlige Erweiterungen erfolgt gemäß den Regeln, die in beschriebenen [Standardkonvertierungen](standard-conversions.md). Der Typ des Ergebnisses ist der Typ des heraufgestuften *Shift-Expression*.
+Die Ausdrücke auf beiden Seiten eines Schiebeoperators müssen vom Typ „Ganzzahl“ sein. Ganzzahlige Erweiterungen werden gemäß den in [Standard Konvertierungen](standard-conversions.md)beschriebenen Regeln ausgeführt. Der Ergebnistyp ist mit dem Typ des höher *gestuften Shift-Ausdrucks*identisch.
 
-Im folgenden Beispiel, eine Variable vom Typ **Char** wird höher gestuft, um eine **Int**.
+Im folgenden Beispiel wird eine Variable vom Typ **char** zu **int**herauf gestuft.
 
 ```cpp
 #include <iostream>
@@ -197,7 +197,7 @@ int main() {
 
 ## <a name="additional-details"></a>Weitere Details
 
-Das Ergebnis eines schiebevorgangs ist undefiniert, wenn *Additive-Expression* negativ ist oder wenn *Additive-Expression* ist größer als oder gleich der Anzahl der Bits im (heraufgestuften)  *Shift-Expression*. Kein Verschiebungsvorgang wird ausgeführt, wenn *Additive-Expression* ist 0.
+Das Ergebnis einer Verschiebungs Operation ist nicht definiert, wenn *Additives Ausdruck* negativ ist oder wenn *Additives Ausdruck* größer oder gleich der Anzahl der Bits im (höher gestuften) *Shift-Ausdruck*ist. Wenn *Additives Ausdruck* 0 ist, wird kein Verschiebungs Vorgang ausgeführt.
 
 ```cpp
 #include <iostream>
@@ -222,13 +222,13 @@ int main() {
 
 ## <a name="footnotes"></a>Fußnoten
 
-<sup>1</sup> im folgenden finden Sie die Beschreibung des Schiebeoperators in der C ++ 11 ISO-Spezifikation (INCITS/ISO/IEC 14882-2011[2012]), Abschnitte 5.8.2 und 5.8.3.
+<sup>1</sup> im folgenden finden Sie die Beschreibung der Shift-Operatoren in der ISO-Spezifikation c++ 11 (INCITS/ISO/IEC 14882-2011 [2012]), Abschnitte 5.8.2 und 5.8.3.
 
-Der Wert von `E1 << E2` ist `E1` nach links verschobene `E2`-Bitpositionen; frei gewordene Bitpositionen werden mit Nullen angefüllt. Wenn `E1` einen nicht signierten Typ hat, wird der Wert des Ergebnisses **E1 × 2**<sup>**E2**</sup>, wobei das reduzierte modulo eins mehr als der maximale Wert, der im Ergebnistyp dargestellt werden kann. Andernfalls gilt: Wenn `E1` verfügt über einen signierten Typ und einen nicht negativen Wert hat, und **E1 × 2**<sup>**E2** </sup> im entsprechenden nicht signierten Typ des Ergebnistyps, darstellbar ist Wert, der in den Ergebnistyp konvertiert wird, der Ergebniswert; Andernfalls ist das Verhalten nicht definiert.
+Der Wert von `E1 << E2` ist `E1` nach links verschobene `E2`-Bitpositionen; frei gewordene Bitpositionen werden mit Nullen angefüllt. Wenn `E1` einen nicht signierten Typ hat, ist der Wert des Ergebnisses **E1 × 2**<sup>**E2**</sup>, wobei das reduzierte Modulo eins mehr als der maximale Wert ist, der im Ergebnistyp dargestellt werden kann. Wenn `E1` andernfalls über einen signierten Typ und einen nicht negativen Wert verfügt und **E1 × 2**<sup>**E2**</sup> im entsprechenden nicht signierten Typ des Ergebnis Typs dargestellt werden kann, ist dieser Wert, der in den Ergebnistyp konvertiert wird, der resultierende Wert. Andernfalls ist das Verhalten nicht definiert.
 
-Der Wert von `E1 >> E2` ist `E1` nach rechts verschobene `E2`-Bitpositionen. Wenn `E1` einen nicht signierten Typ hat oder wenn `E1` verfügt über einen signierten Typ und einen nicht negativen Wert, der Wert des Ergebnisses ist der ganzzahlige Teil des Quotienten aus **E1/2**<sup>**E2** </sup>. Wenn `E1` einen signierten Typ und einen negativen Wert hat, ist der Ergebniswert durch die Implementierung definiert.
+Der Wert von `E1 >> E2` ist `E1` nach rechts verschobene `E2`-Bitpositionen. Wenn `E1` einen nicht signierten Typ hat oder `E1` wenn einen signierten Typ und einen nicht negativen Wert hat, ist der Wert des Ergebnisses der integrale Teil des quotients von **E1/2**<sup>**E2**</sup>. Wenn `E1` einen signierten Typ und einen negativen Wert hat, ist der Ergebniswert durch die Implementierung definiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit binären Operatoren](../cpp/expressions-with-binary-operators.md)<br/>
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)
+[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)
