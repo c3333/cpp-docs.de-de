@@ -20,12 +20,12 @@ helpviewer_keywords:
 - __leave keyword [C++], try-finally statement
 - structured exception handling [C++], try-finally
 ms.assetid: 826e0347-ddfe-4f6e-a7bc-0398e0edc7c2
-ms.openlocfilehash: a463b807d39addfdaa64b829720266bf0502fa7e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 17f7fb415303ab74f588a2205bc9430127091e96
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188076"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825895"
 ---
 # <a name="try-finally-statement"></a>try-finally-Anweisung
 
@@ -33,26 +33,26 @@ ms.locfileid: "80188076"
 
 Die folgende Syntax beschreibt die **try-endlich-** Anweisung:
 
-> **\_\_versuchen**<br/>
-> {<br/>
-> &nbsp;&nbsp;&nbsp;&nbsp;//überwachten Code<br/>
-> }<br/>
-> **\_\_**<br/>
-> {<br/>
-> &nbsp;&nbsp;&nbsp;&nbsp;//Beendigungs Code<br/>
+> **\_\_versu**<br/>
+> {\
+> &nbsp;&nbsp;&nbsp;&nbsp;geschützter Code \
+> }\
+> **\_\_endlich**\
+> {\
+> &nbsp;&nbsp;&nbsp;&nbsp;Beendigungs Code \
 > }
 
 ## <a name="grammar"></a>Grammatik
 
 *try-finally-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **\_** \_\_zum **Schluss** *compound-statement* eine *Verbund Anweisung \_*
+&nbsp;&nbsp;&nbsp;&nbsp;Try- *compound-statement* **Verbund Anweisung \_schließlich \_** *Verbund Anweisung* ** \_ \_**
 
-Bei der **Try-End-** Anweisung handelt es sich um eine Microsoft C++ -Erweiterung für C und Sprachen, die es Zielanwendungen ermöglichen, die Ausführung von Bereinigungs Code zu gewährleisten, wenn die Ausführung eines Code Blocks unterbrochen wird. Die Bereinigung besteht aus Aufgaben wie z. B. Neuzuweisung von Arbeitsspeicher, Schließen von Dateien und Freigeben von Dateihandles. Die **try-schließlich-** Anweisung ist besonders nützlich für Routinen mit mehreren Stellen, an denen eine Überprüfung auf einen Fehler erfolgt, der eine vorzeitige Rückgabe von der Routine verursachen könnte.
+Die **Try-End-** Anweisung ist eine Microsoft-Erweiterung für die Programmiersprachen C und C++, mit denen Zielanwendungen die Ausführung von Bereinigungs Code gewährleisten können, wenn die Ausführung eines Code Blocks unterbrochen wird. Die Bereinigung besteht aus Aufgaben wie z. B. Neuzuweisung von Arbeitsspeicher, Schließen von Dateien und Freigeben von Dateihandles. Die **try-schließlich-** Anweisung ist besonders nützlich für Routinen mit mehreren Stellen, an denen eine Überprüfung auf einen Fehler erfolgt, der eine vorzeitige Rückgabe von der Routine verursachen könnte.
 
 Verwandte Informationen und ein Codebeispiel finden Sie unter [Try-außer-Anweisung](../cpp/try-except-statement.md). Weitere Informationen über die strukturierte Ausnahmebehandlung im Allgemeinen finden Sie unter [strukturierte Ausnahmebehandlung](../cpp/structured-exception-handling-c-cpp.md). Weitere Informationen zur Behandlung von Ausnahmen in verwalteten Anwendungen mit C++/CLI finden Sie [unter Ausnahmebehandlung unter/CLR](../extensions/exception-handling-cpp-component-extensions.md).
 
 > [!NOTE]
-> Die strukturierte Ausnahmebehandlung arbeitet mit Win32 für C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Die C++-Ausnahmebehandlung ist auch flexibler, da sie Ausnahmen eines beliebigen Typs behandeln kann. Bei C++ Programmen empfiehlt es sich, den Mechanismus für die C++ Ausnahmebehandlung zu verwenden ([try-, catch-und Throw](../cpp/try-throw-and-catch-statements-cpp.md) -Anweisungen).
+> Die strukturierte Ausnahmebehandlung arbeitet mit Win32 für C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Die C++-Ausnahmebehandlung ist auch flexibler, da sie Ausnahmen eines beliebigen Typs behandeln kann. Für C++-Programme wird empfohlen, dass Sie den C++-Mechanismus zur Ausnahmebehandlung verwenden ([try-, catch-und Throw](../cpp/try-throw-and-catch-statements-cpp.md) -Anweisungen).
 
 Die Verbund Anweisung nach der **__try** -Klausel ist der geschützte Abschnitt. Die Verbund Anweisung nach der **__finally** -Klausel ist der Beendigungs Handler. Der Handler gibt eine Reihe von Aktionen an, welche ausgeführt werden, wenn der geschützte Bereich verlassen wird, ungeachtet dessen, ob der geschützte Bereich durch eine Ausnahme verlassen wird (nicht ordnungsgemäße Beendigung) oder durch ein standardmäßiges Fortsetzen (gewöhnliche Beendigung).
 
@@ -68,13 +68,13 @@ Wenn im **__try** -Block eine Ausnahme auftritt, muss das Betriebssystem einen H
 
 Nehmen Sie z. B. an, eine Reihe von Funktionsaufrufen verbindet Funktion A mit Funktion D, wie in der folgenden Abbildung dargestellt. Jede Funktion verfügt über einen Beendigungshandler. Wenn eine Ausnahme in Funktion D ausgelöst und in A behandelt wird, werden die Beendigungshandler in folgender Reihenfolge aufgerufen, während das System den Stapel abwickelt: D, C, B.
 
-![Reihenfolge der&#45;Beendigungs Handler-Ausführung](../cpp/media/vc38cx1.gif "Reihenfolge der&#45;Beendigungs Handler-Ausführung") <br/>
+![Reihenfolge der Beendigung&#45;handlerausführung](../cpp/media/vc38cx1.gif "Reihenfolge der Beendigung&#45;handlerausführung") <br/>
 Reihenfolge für das Beenden bei Handlerausführung
 
 > [!NOTE]
-> Das Verhalten von try-endlich unterscheidet sich von einigen anderen Sprachen, die die Verwendung von **schließlich**unterstützen C#, z. b.  Ein einzelner **__try** kann entweder **__finally** und **__except**haben, aber nicht beides.  Wenn beide zusammen verwendet werden sollen, muss eine äußere try-except-Anweisung die innere try-finally-Anweisung einschließen.  Es gelten andere Regeln für die Angabe, wann ein einzelner Block ausgeführt wird.
+> Das Verhalten von try-endlich unterscheidet sich von einigen anderen Sprachen, die die Verwendung von **schließlich**unterstützen, wie z. b. c#.  Ein einzelner **__try** kann entweder **__finally** und **__except**haben, aber nicht beides.  Wenn beide zusammen verwendet werden sollen, muss eine äußere try-except-Anweisung die innere try-finally-Anweisung einschließen.  Es gelten andere Regeln für die Angabe, wann ein einzelner Block ausgeführt wird.
 
-Aus Kompatibilitätsgründen mit früheren Versionen sind **_try**, **_finally**und **_leave** Synonyme für **__try**, **__finally**und **__leave** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Kompatibilitätsgründen mit früheren Versionen sind **_try**, **_finally**und **_leave** Synonyme für **__try**, **__finally**und **__leave** , es sei denn, die Compileroption [/Za \(Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
 ## <a name="the-__leave-keyword"></a>Das __leave-Schlüsselwort
 
@@ -90,11 +90,11 @@ Wenn ein **try** -Block aus irgendeinem Grund vorzeitig beendet wird, einschlie�
 
 Der Beendigungs Handler wird nicht aufgerufen, wenn ein Prozess in der Mitte der Ausführung einer **try-schließlich-** Anweisung abgebrochen wird.
 
-**Ende Microsoft-spezifisch**
+**Microsoft-spezifisch beenden**
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben eines Beendigungs Handlers](../cpp/writing-a-termination-handler.md)<br/>
-[Strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md)<br/>
+[Schreiben eines Beendigungshandlers](../cpp/writing-a-termination-handler.md)<br/>
+[Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Beendigungs HandlerSyntax](/windows/win32/Debug/termination-handler-syntax)

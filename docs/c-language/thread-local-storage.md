@@ -75,7 +75,7 @@ Diese Richtlinien müssen bei der Deklaration von statisch gebundenen threadloka
     int *p = &tls_i;      /* Error */
     ```
 
-- In C ist die Initialisierung einer Variablen mit einem Ausdruck zulässig, der einen Verweis auf sich selbst enthält. Dies gilt jedoch nur für Objekte, die keinen statischen Wertebereich aufweisen. Beispiel:
+- In C ist die Initialisierung einer Variablen mit einem Ausdruck zulässig, der einen Verweis auf sich selbst enthält. Dies gilt jedoch nur für Objekte, die keinen statischen Wertebereich aufweisen. Zum Beispiel:
 
     ```C
     #define Thread   __declspec( thread )
