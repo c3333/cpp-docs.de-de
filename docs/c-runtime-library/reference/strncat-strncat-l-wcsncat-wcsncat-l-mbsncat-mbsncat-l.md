@@ -24,7 +24,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -64,12 +64,12 @@ helpviewer_keywords:
 - _mbsncat_l function
 - tcsncat function
 ms.assetid: de67363b-68c6-4ca5-91e3-478610ad8159
-ms.openlocfilehash: 0e6fbc365d4e127d72df039b1351b1bfe91b1b74
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 98f13967d8abbe079934d0c09ab71c5e279d2b7f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364213"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918150"
 ---
 # <a name="strncat-_strncat_l-wcsncat-_wcsncat_l-_mbsncat-_mbsncat_l"></a>strncat, _strncat_l, wcsncat, _wcsncat_l, _mbsncat, _mbsncat_l
 
@@ -131,10 +131,10 @@ unsigned char *_mbsncat_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Strdest*<br/>
+*der schnellste*<br/>
 Auf NULL endende Zielzeichenfolge.
 
-*Strsource*<br/>
+*-Quelle*<br/>
 Mit NULL endende Quellzeichenfolge.
 
 *count*<br/>
@@ -147,20 +147,20 @@ Zu verwendendes Gebietsschema.
 
 Gibt einen Zeiger zur Zielzeichenfolge zurück. Kein Rückgabewert ist zur Fehleranzeige reserviert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **strncat-Funktion** fügt höchstens die ersten *Zählzeichen* von *strSource* an *strDest*an. Das Anfangszeichen von *strSource* überschreibt das beendende Nullzeichen von *strDest*. Wenn ein Nullzeichen in *strSource* angezeigt wird, bevor *Zählzeichen* angehängt werden, hängt **strncat** alle Zeichen von *strSource*bis zum Nullzeichen an. Wenn die *Anzahl* größer als die Länge von *strSource*ist, wird die Länge von *strSource* anstelle der *Anzahl*verwendet. In jedem Fall wird die Ergebniszeichenfolge mit einem NULL-Zeichen beendet. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
+Die " **strinncat** "-Funktion fügt höchstens die ersten *Anzahl* Zeichen von " *darsource* " an " *strandest*" an. Das Anfangs Zeichen von " *grasource* " überschreibt das abschließende Null-Zeichen von " *strandest*". Wenn ein NULL-Zeichen in " *darsource* " angezeigt wird, bevor *count* -Zeichen angehängt werden, fügt " **strinncat** " alle Zeichen von " *strausource*" bis zum NULL-Zeichen an. Wenn *count* größer als die Länge von "-" *ist, wird die Länge von "* *chansource* " anstelle von " *count*" verwendet. In jedem Fall wird die Ergebniszeichenfolge mit einem NULL-Zeichen beendet. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 > [!IMPORTANT]
-> **strncat** überprüft nicht auf ausreichend Platz in *strDest*; es ist daher eine mögliche Ursache für Pufferüberläufe. Beachten Sie, dass die *Anzahl* die Anzahl der angehängten Zeichen begrenzt. es ist kein Limit für die Größe von *strDest*. Betrachten Sie das folgende Beispiel. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
+> " **strauncat** " prüft *nicht, ob*ausreichend Speicherplatz in der Daher ist dies eine mögliche Ursache von Pufferüberläufen. Beachten Sie, dass *count* die Anzahl der angefügten Zeichen beschränkt. Es handelt sich nicht um eine Begrenzung der Größe von " *strandest*". Betrachten Sie das folgende Beispiel. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-**wcsncat** und **_mbsncat** sind Breitzeichen- und Multibyte-Zeichenversionen von **strncat**. Die Zeichenfolgenargumente und der Rückgabewert von **wcsncat** sind Zeichenfolgen mit großen Zeichen. bei **_mbsncat** sind Zeichenfolgen mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**wcsncat** und **_mbsncat** sind breit Zeichen-und multibytezeichenversionen von " **strinncat**". Die Zeichen folgen Argumente und der Rückgabewert von **wcsncat** sind Zeichen folgen mit breit Zeichen. bei den **_mbsncat** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 In C++ gibt es für diese Funktionen Vorlagenüberladungen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -170,7 +170,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_tcsncat_l**|**_strncat_l**|**_mbsnbcat_l**|**_wcsncat_l**|
 
 > [!NOTE]
-> **_strncat_l** und **_wcsncat_l** haben keine Gebietsabhängigkeit und sollen nicht direkt aufgerufen werden. Sie werden für den internen Gebrauch durch **_tcsncat_l**zur Verfügung gestellt.
+> **_strncat_l** und **_wcsncat_l** haben keine Gebiets Schema Abhängigkeit und sind nicht dafür vorgesehen, direkt aufgerufen zu werden. Sie werden für die interne Verwendung durch **_tcsncat_l**bereitgestellt.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -230,11 +230,11 @@ After BadAppend :  This is the initial string!Extra text to add to (47 chars)
 After GoodAppend:  This is the initial string!Extra text t (39 chars)
 ```
 
-Beachten Sie, dass **BadAppend** einen Pufferüberlauf verursacht hat.
+Beachten Sie, dass **badappend** einen Pufferüberlauf verursacht hat.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>
 [strcmp, wcscmp, _mbscmp](strcmp-wcscmp-mbscmp.md)<br/>

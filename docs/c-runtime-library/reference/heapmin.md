@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - _heapmin function
 - heapmin function
 ms.assetid: c0bccdf6-2d14-4d7b-a7ff-d6a17bdb410f
-ms.openlocfilehash: 6e8f90a7aa74ca3e890307f95b5f293f0be3575f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9a98dfffc784d05a93f65a51a5250c31fe1dd596
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81343998"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920113"
 ---
 # <a name="_heapmin"></a>_heapmin
 
@@ -51,15 +51,15 @@ int _heapmin( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn dies erfolgreich ist, **gibt _heapmin** 0 zurück. Andernfalls gibt die Funktion -1 zurück und setzt **errno** auf **ENOSYS**.
+Bei erfolgreicher Ausführung gibt **_heapmin** 0 zurück. Andernfalls gibt die Funktion-1 zurück und legt **errno** auf **enosys**fest.
 
 Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_heapmin-Funktion** minimiert den Heap, indem nicht verwendeter Heapspeicher für das Betriebssystem freigegeben wird. Wenn das Betriebssystem **_heapmin**(z. B. Windows 98) nicht unterstützt, gibt die Funktion -1 zurück und setzt **errno** auf **ENOSYS**.
+Die **_heapmin** -Funktion minimiert den Heap, indem nicht verwendeter Heap Speicher für das Betriebssystem freigegeben wird. Wenn das Betriebssystem **_heapmin**nicht unterstützt (z. b. Windows 98), gibt die Funktion-1 zurück und legt **errno** auf **enosys**fest.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -69,10 +69,10 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherzuweisung](../../c-runtime-library/memory-allocation.md)<br/>
-[kostenlos](free.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
+[Kosten](free.md)<br/>
 [_heapadd](../../c-runtime-library/heapadd.md)<br/>
 [_heapchk](heapchk.md)<br/>
 [_heapset](../../c-runtime-library/heapset.md)<br/>

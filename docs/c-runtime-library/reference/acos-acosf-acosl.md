@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arccosine function
 ms.assetid: 00b89c48-8faf-4824-aa95-fa4349a4975d
-ms.openlocfilehash: 4dd467ab807875dcf4236e4fbb744c77ec47880d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c6e6b1da823f050d20d47ecbad96d4e0b58fa452
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348975"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916892"
 ---
 # <a name="acos-acosf-acosl"></a>acos, acosf, acosl
 
@@ -62,14 +62,14 @@ long double acos( long double x );   // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
-Wert zwischen -1 und 1, für den das Arccosin (der inverse Kosinus) berechnet werden soll.
+*x*<br/>
+Der Wert zwischen-1 und 1, für den der Arkus Kosinus berechnet werden soll (umgekehrter Kosinus).
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **acos-Funktion** gibt den Arccosin von *x* im Bereich von 0 bis -B-Bogenmaßen zurück.
+Die **ACOS** -Funktion gibt den Arkus Kosinus von *x* im Bereich 0 bis adressiert zurück.
 
-Wenn *x* kleiner als -1 oder größer als 1 ist, gibt **acos** standardmäßig eine unbestimmte Zeit zurück.
+Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ACOS** standardmäßig einen unbestimmten Wert zurück.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
@@ -77,17 +77,17 @@ Wenn *x* kleiner als -1 oder größer als 1 ist, gibt **acos** standardmäßig e
 |± QNAN,IND|Keine|_DOMAIN|
 |&#124;x&#124;>1|INVALID|_DOMAIN|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Acos** aufrufen, die **Float-** und **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt **acos** immer ein **Double**und gibt es zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ACOS** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **ACOS** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
-|**acos**, **acosf**, **acosl**|\<math.h>|\<errno.h>|
+|**ACOS**, **Acosf**, **acosl**|\<math.h>|\<errno.h>|
 
 ## <a name="example"></a>Beispiel
 
@@ -139,7 +139,7 @@ Arcsine of 0.000000 = 0.000000
 Arccosine of 0.000000 = 1.570796
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [asin, asinf, asinl](asin-asinf-asinl.md)<br/>

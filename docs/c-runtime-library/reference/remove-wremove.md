@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - wremove function
 - remove function
 ms.assetid: b6345ec3-3289-4645-93a4-28b9e478cc19
-ms.openlocfilehash: 6a3d7ea81b2f6b1a7e87c706ca883394e02dff3a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bf3eedaa9c24e7385686e2343857e69171e43090
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338152"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917840"
 ---
 # <a name="remove-_wremove"></a>remove, _wremove
 
@@ -65,27 +65,27 @@ Pfad der zu löschenden Datei.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt 0 zurück, wenn die Datei erfolgreich gelöscht wird. Andernfalls gibt er -1 zurück und legt **errno** entweder an **EACCES** fest, um anzugeben, dass der Pfad eine schreibgeschützte Datei angibt, ein Verzeichnis angibt oder die Datei geöffnet ist, oder an **ENOENT,** um anzugeben, dass der Dateiname oder Pfad nicht gefunden wurde.
+Jede dieser Funktionen gibt 0 zurück, wenn die Datei erfolgreich gelöscht wird. Andernfalls wird-1 zurückgegeben und **errno** entweder auf **EACCES** festgelegt, um anzugeben, dass der Pfad eine schreibgeschützte Datei angibt, ein Verzeichnis angibt oder die Datei geöffnet ist, oder **, um** anzugeben, dass der Dateiname oder der Pfad nicht gefunden wurde.
 
-Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr.](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)
+Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) .
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **remove**-Funktion löscht die von *path* angegebene Datei. **_wremove** ist eine breit **gefächerte**Version von _remove ; Das *Pfadargument* für **_wremove** ist eine Zeichenfolge mit großen Zeichen. **_wremove** und **_remove** verhalten sich ansonsten gleich. Alle Handles zu einer Datei müssen geschlossen werden, bevor sie gelöscht werden kann.
+Die **remove**-Funktion löscht die von *path* angegebene Datei. **_wremove** ist eine breit Zeichen Version von **_remove**. Das *path* -Argument für **_wremove** ist eine Zeichenfolge mit breit Zeichen. **_wremove** und **_remove** Verhalten sich andernfalls identisch. Alle Handles zu einer Datei müssen geschlossen werden, bevor sie gelöscht werden kann.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|**_tremove**|**Entfernen**|**Entfernen**|**_wremove**|
+|**_tremove**|**remove**|**remove**|**_wremove**|
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**Entfernen**|\<stdio.h> oder \<io.h>|
+|**remove**|\<stdio.h> oder \<io.h>|
 |**_wremove**|\<stdio.h> oder \<wchar.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
@@ -123,7 +123,7 @@ This file will be deleted.
 Deleted 'CRT_REMOVE.TXT'
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_unlink, _wunlink](unlink-wunlink.md)<br/>
