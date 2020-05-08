@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,16 +37,16 @@ helpviewer_keywords:
 - _tcsncmp function
 - _mbsnbcmp function
 ms.assetid: dbc99e50-cf85-4e57-a13f-067591f18ac8
-ms.openlocfilehash: 2334d7755a3eaf3fb973783db17ca398e6b7f0b5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: edba674a0873b1f0a5f37457235c0dc1a8210ded
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81340697"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911975"
 ---
 # <a name="_mbsnbcmp-_mbsnbcmp_l"></a>_mbsnbcmp, _mbsnbcmp_l
 
-Vergleicht die ersten **n** Bytes von zwei Zeichenfolgen mit mehreren Bytezeichen.
+Vergleicht die ersten **n** Bytes von zwei Multibyte-Zeichen folgen.
 
 > [!IMPORTANT]
 > Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
@@ -69,7 +69,7 @@ int _mbsnbcmp_l(
 
 ### <a name="parameters"></a>Parameter
 
-*string1*, *string2*<br/>
+*Zeichenfolge1*, *Zeichenfolge2*<br/>
 Die zu vergleichende Zeichenfolgen.
 
 *count*<br/>
@@ -80,27 +80,27 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der Rückgabewert gibt die Ordinalbeziehung zwischen den Teilzeichenfolgen von *string1* und *string2*an.
+Der Rückgabewert gibt die ordinalbeziehung zwischen den Teil Zeichenfolgen von *Zeichenfolge1* und *Zeichenfolge2*an.
 
-|Rückgabewert|BESCHREIBUNG|
+|Rückgabewert|Beschreibung|
 |------------------|-----------------|
-|< 0|*String1-Teilzeichenfolge* ist kleiner als *string2-Teilzeichenfolge.*|
-|0|*string1-Teilzeichenfolge* ist identisch mit *der Zeichenfolge2.*|
-|> 0|*String1-Teilzeichenfolge* ist größer als *string2-Teilzeichenfolge.*|
+|< 0|*Zeichenfolge1* Teil Zeichenfolge ist kleiner als *Zeichenfolge2* Teil Zeichenfolge.|
+|0|*Zeichenfolge1* Teil Zeichenfolge ist mit *Zeichenfolge2* Teil Zeichenfolge identisch.|
+|> 0|*Zeichenfolge1* Teil Zeichenfolge ist größer als *Zeichenfolge2* Teil Zeichenfolge.|
 
-Bei einem Parametervalidierungsfehler **geben _mbsnbcmp** und **_mbsnbcmp_l** **_NLSCMPERROR**zurück, der in \<string.h> und \<mbstring.h> definiert ist.
+Bei einem Parameter Validierungs Fehler geben **_mbsnbcmp** und **_mbsnbcmp_l** **_NLSCMPERROR**zurück, das in \<String. h> und \<mbstring. h> definiert ist.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mbsnbcmp-Funktionen** vergleichen höchstens die ersten *Zählbytes* in *string1* und *string2* und geben einen Wert zurück, der die Beziehung zwischen den Teilzeichenfolgen angibt. **_mbsnbcmp** ist eine Groß-/Kleinschreibung von **_mbsnbicmp**. Im Gegensatz zu **_mbsnbcoll** **ist _mbsnbcmp** von der Sortierungsreihenfolge des Gebietsschemas nicht betroffen. **_mbsnbcmp** erkennt Multibyte-Zeichensequenzen entsprechend der aktuellen Multibyte-Codepage . [code page](../../c-runtime-library/code-pages.md)
+Die **_mbsnbcmp** Funktionen vergleichen höchstens die ersten *Anzahl* Bytes in *Zeichenfolge1* und *Zeichenfolge2* und geben einen Wert zurück, der die Beziehung zwischen den untergeordneten Zeichen folgen angibt. **_mbsnbcmp** ist eine Version von **_mbsnbicmp**, die Groß-/Kleinschreibung beachtet. Im Gegensatz zu **_mbsnbcoll**wird **_mbsnbcmp** nicht von der Sortierreihenfolge des Gebiets Schemas beeinflusst. **_mbsnbcmp** erkennt multibytezeichensequenzen entsprechend der aktuellen Multibytezeichen- [Codepage](../../c-runtime-library/code-pages.md).
 
-**_mbsnbcmp** ähnelt **_mbsncmp**, mit der Ausnahme, dass **_mbsncmp** Zeichenfolgen nach Zeichen und nicht nach Bytes vergleicht.
+**_mbsnbcmp** ähnelt **_mbsncmp**, außer dass **_mbsncmp** Zeichen folgen nach Zeichen und nicht nach Bytes vergleicht.
 
-Der Ausgabewert wird durch die **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst, die die Leadbytes und nachfolgenden Bytes von Multibyte-Zeichen angibt. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die **_mbsnbcmp-Funktion** verwendet das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten. Die **_mbsnbcmp_l** Funktion identisch ist, außer dass sie stattdessen den *Locale-Parameter* verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst, das die führenden Bytes und nachfolgenden Bytes von Multibytezeichen angibt. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die **_mbsnbcmp** -Funktion verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. Die **_mbsnbcmp_l** -Funktion ist beinahe identisch, verwendet jedoch stattdessen den *locale* -Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Wenn *string1* oder *string2* ein NULL-Zeiger ist, rufen diese Funktionen den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben die Funktionen **_NLSCMPERROR** zurück und **errno** wird auf **EINVAL**gesetzt.
+Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben die Funktionen **_NLSCMPERROR** und **errno** auf **EINVAL**fest.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -171,7 +171,7 @@ Result:   String 1 is equal to string 2
 
 ## <a name="see-also"></a>Siehe auch
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>
 [_mbsnbicmp, _mbsnbicmp_l](mbsnbicmp-mbsnbicmp-l.md)<br/>
 [strncmp, wcsncmp, _mbsncmp, _mbsncmp_l](strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)<br/>

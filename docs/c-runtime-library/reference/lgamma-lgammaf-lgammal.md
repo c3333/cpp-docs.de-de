@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +37,12 @@ helpviewer_keywords:
 - lgammal function
 - lgammaf function
 ms.assetid: 6e326c58-7077-481a-a329-c82ae56ae9e6
-ms.openlocfilehash: e2bdfbeac7b995be0b589156437a3ded39114adf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a610b0412b7e10949a810f4e360686292cff9ee3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81342161"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916450"
 ---
 # <a name="lgamma-lgammaf-lgammal"></a>lgamma, lgammaf, lgammal
 
@@ -63,31 +63,31 @@ long double lgamma( long double x ); //C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der zu berechnende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, geben Sie den natürlichen Logarithmus des absoluten Wertes der Gammafunktion von *x*zurück.
+Bei erfolgreicher Ausführung wird der natürliche Logarithmus des absoluten Werts der Gamma-Funktion von *x*zurückgegeben.
 
 |Problem|Rückgabewert|
 |-----------|------------|
-|*x* = NaN|NaN|
-|*x* = 0 €|+INFINITY|
+|*x* = Nan|NaN|
+|*x* = ± 0|+INFINITY|
 |*x*= negative ganze Zahl|+INFINITY|
-|•INFINITY|+INFINITY|
+|± Unendlich|+INFINITY|
 |pole-Fehler|+HUGE_VAL, +HUGE_VALF, oder +HUGE_VALL|
-|Überlaufbereichsfehler|HUGE_VAL, HUGE_VALF oder HUGE_VALL|
+|Überlaufbereichsfehler|± HUGE_VAL, ± HUGE_VALF oder ± HUGE_VALL|
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Lgamma** aufrufen, die **Float-** und **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **lgamma** immer eine **doppelte**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **lgamma** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **lgamma** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Wenn x eine rationale Zahl ist, gibt diese Funktion den Logarithmus des Faktors (x - 1) zurück.
+Wenn x eine rationale Zahl ist, gibt diese Funktion den Logarithmus der Fakultät von (x-1) zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -97,7 +97,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [tgamma, tgammaf, tgammal](tgamma-tgammaf-tgammal.md)<br/>

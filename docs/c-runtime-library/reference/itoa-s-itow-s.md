@@ -35,7 +35,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -90,16 +90,16 @@ helpviewer_keywords:
 - _ui64tot_s function
 - _i64toa_s function
 ms.assetid: eb746581-bff3-48b5-a973-bfc0a4478ecf
-ms.openlocfilehash: f392bb1dbcafd1666d082163190c4e988c7f1ab1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5cc3706abd07e11c819d4b2d37ff89e9b9137a22
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81342617"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916558"
 ---
-# <a name="_itoa_s-_ltoa_s-_ultoa_s-_i64toa_s-_ui64toa_s-_itow_s--_ltow_s--_ultow_s-_i64tow_s-_ui64tow_s"></a>_itoa_s, _ltoa_s, _ultoa_s, _i64toa_s, _ui64toa_s, _itow_s _ltow_s, _ultow_s, _i64tow_s, _ui64tow_s
+# <a name="_itoa_s-_ltoa_s-_ultoa_s-_i64toa_s-_ui64toa_s-_itow_s--_ltow_s--_ultow_s-_i64tow_s-_ui64tow_s"></a>_itoa_s, _ltoa_s, _ultoa_s, _i64toa_s, _ui64toa_s, _itow_s, _ltow_s, _ultow_s, _i64tow_s
 
-Konvertiert eine ganze Zahl in eine Zeichenfolge. Dies sind Versionen der [_itoa, _itow Funktionen](itoa-itow.md) mit Sicherheitsverbesserungen, wie unter [Sicherheitsfeatures in der CRT](../../c-runtime-library/security-features-in-the-crt.md)beschrieben.
+Konvertiert eine ganze Zahl in eine Zeichenfolge. Dies sind Versionen der [_itoa _itow Funktionen](itoa-itow.md) mit Sicherheitsverbesserungen, wie in [Sicherheitsfunktionen in der CRT](../../c-runtime-library/security-features-in-the-crt.md)beschrieben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -149,14 +149,14 @@ errno_t _ultow_s( unsigned long value, wchar_t (&buffer)[size], int radix );
 *value*<br/>
 Zu konvertierende Zahl.
 
-*Puffer*<br/>
+*ert*<br/>
 Ausgabepuffer, der das Ergebnis der Konvertierung enthält.
 
-*Größe*<br/>
-Größe des *Puffers* in Zeichen oder breiten Zeichen.
+*size*<br/>
+Größe des *Puffers* in Zeichen oder breit Zeichen.
 
-*Radix*<br/>
-Die Radix- oder numerische Basis, die zum Konvertieren des *Wertes*verwendet werden soll, der sich im Bereich 2-36 befinden muss.
+*Basis*<br/>
+Die Basis-oder numerische Basis, die zum Konvertieren des *Werts*verwendet werden soll, der im Bereich 2-36 liegen muss.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -166,26 +166,26 @@ Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt. Wenn eine der 
 
 |value|Puffer|size|radix|Rückgabewert|
 |-----------|------------|----------------------|-----------|------------|
-|any|**Null**|any|any|**Einval**|
-|any|any|<=0|any|**Einval**|
-|any|any|<= Länge der erforderlichen Ergebniszeichenfolge|any|**Einval**|
-|any|any|any|*Radix* < 2 oder *radix* > 36|**Einval**|
+|any|**Normal**|any|any|**Eingabe**|
+|any|any|<=0|any|**Eingabe**|
+|any|any|<= Länge der erforderlichen Ergebniszeichenfolge|any|**Eingabe**|
+|any|any|any|*Basis* < 2 oder *Basis* > 36|**Eingabe**|
 
 ### <a name="security-issues"></a>Sicherheitsprobleme
 
-Diese Funktionen können eine Zugriffsverletzung generieren, wenn *der Puffer* nicht auf gültigen Speicher zeigt und nicht **NULL**ist oder wenn die Länge des Puffers nicht lang genug ist, um die Ergebniszeichenfolge zu halten.
+Diese Funktionen können eine Zugriffsverletzung generieren, wenn der *Puffer* nicht auf einen gültigen Speicher verweist und nicht **null**ist, oder wenn die Länge des Puffers nicht lang genug ist, um die Ergebnis Zeichenfolge zu speichern.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Abgesehen von den Parametern und dem Rückgabewert haben die **_itoa_s-** und **_itow_s-Funktionsfamilien** das gleiche Verhalten wie die entsprechenden weniger sicheren **_itoa-** und **_itow-Versionen.**
+Mit Ausnahme der Parameter und des Rückgabewerts haben die **_itoa_s** -und **_itow_s** Funktions Familien das gleiche Verhalten wie die entsprechenden weniger sicheren **_itoa** und **_itow** Versionen.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Die CRT enthält praktische Makros, um die Größe des Puffers zu definieren, der erforderlich ist, um den längsten möglichen Wert jedes ganzzahligen Typs, einschließlich des Nullabschlusszeichens und des Zeichenzeichens, für mehrere allgemeine Basen zu konvertieren. Weitere Informationen finden Sie unter [Maximale Conversion Count-Makros](itoa-itow.md#maximum-conversion-count-macros).
+Die CRT umfasst bequeme Makros zum Definieren der Größe des Puffers, der zum Konvertieren des längsten möglichen Werts der einzelnen ganzzahligen Typen, einschließlich des NULL-Abschluss Zeichens und des Zeichen Zeichens, für mehrere allgemeine Basen erforderlich ist. Weitere Informationen finden Sie unter [Maximale Anzahl von Konvertierungs Makros](itoa-itow.md#maximum-conversion-count-macros).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -208,7 +208,7 @@ Diese Funktionen sind Microsoft-spezifisch. Weitere Informationen zur Kompatibil
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird die Verwendung einiger ganzzahliger Konvertierungsfunktionen veranschaulicht. Beachten Sie, dass das [_countof-Makro](countof-macro.md) nur funktioniert, um die Puffergröße zu bestimmen, wenn die Arraydeklaration für den Compiler sichtbar ist, und nicht für Parameter, die zu Zeigern zerfallen sind.
+Dieses Beispiel veranschaulicht die Verwendung einiger ganzzahliger Konvertierungs Funktionen. Beachten Sie, dass das [_countof](countof-macro.md) -Makro nur zum Ermitteln der Puffergröße verwendet werden kann, wenn die Array Deklaration für den Compiler sichtbar ist, nicht aber für Parameter, die in Zeiger abgeblendet sind.
 
 ```C
 // crt_itoa_s.c
@@ -276,7 +276,7 @@ base 3: 11112220022122120101211020120210210211220 (41 chars)
 base 2: 1111111111111111111111111111111111111111111111111111111111111111 (64 chars)
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [_itoa, _itow Funktionen](itoa-itow.md)<br/>

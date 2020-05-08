@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - _mbbtombc_l function
 - _mbbtombc function
 ms.assetid: 78593389-b0fc-43b6-8c1f-2a6bf702d64e
-ms.openlocfilehash: 5d26b06da1dcf8c53abda5d4ff2ee06ec3e7cd11
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b2088ea83729a74a60e75d1710529480f34cd638
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341418"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919604"
 ---
 # <a name="_mbbtombc-_mbbtombc_l"></a>_mbbtombc, _mbbtombc_l
 
@@ -62,7 +62,7 @@ unsigned int _mbbtombc_l(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu konvertierendes Einzelbytezeichen.
 
 *locale*<br/>
@@ -70,17 +70,17 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn **_mbbtombc** *c*erfolgreich konvertiert, gibt es ein Multibyte-Zeichen zurück. Andernfalls gibt es *c*zurück.
+Wenn **_mbbtombc** erfolgreich *c*konvertiert, wird ein Multibytezeichen zurückgegeben. Andernfalls wird *c*zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mbbtombc-Funktion** konvertiert ein bestimmtes Einzelbyte-Multibyte-Zeichen in ein entsprechendes Doppelbyte-Multibyte-Zeichen. Zeichen müssen im Bereich 0x20 - 0x7E oder 0xA1 - 0xDF konvertiert werden.
+Die **_mbbtombc** -Funktion konvertiert ein angegebenes Einzel Byte-Multibytezeichen in ein entsprechendes Doppelbyte-Multibytezeichen. Zeichen müssen innerhalb des Bereichs 0x20-0x7E oder 0xA1-0xDF liegen, um konvertiert zu werden.
 
-Der Ausgabewert wird durch die Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst. weitere Informationen finden Sie unter [setlocale, _wsetlocale.](setlocale-wsetlocale.md) Die Versionen dieser Funktion sind identisch, mit der Ausnahme, dass **_mbbtombc** das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten verwendet und **_mbbtombc_l** stattdessen den übergebenen Gebietsschemaparameter verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die Versionen dieser Funktion sind identisch, mit dem Unterschied, dass **_mbbtombc** das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten verwendet, und **_mbbtombc_l** stattdessen den übergebenen Gebiets Schema Parameter verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-In früheren Versionen wurde **_mbbtombc** **Hantozen**genannt. Verwenden Sie für neuen Code **_mbbtombc**.
+In früheren Versionen hieß **_mbbtombc** den Namen **handezen**. Verwenden Sie für neuen Code **_mbbtombc**.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -91,7 +91,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [_mbctombb, _mbctombb_l](mbctombb-mbctombb-l.md)<br/>

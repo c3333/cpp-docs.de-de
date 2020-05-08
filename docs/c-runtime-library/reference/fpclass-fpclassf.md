@@ -17,7 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - _fpclass function
 - _fpclassf function
 ms.assetid: 2774872d-3543-446f-bc72-db85f8b95a6b
-ms.openlocfilehash: b16655fed046114e9dd8592c5e1fd3fc5f7ed4bf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a6591d9348739d27831785a05f4a602aacdd4d0c
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346275"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914846"
 ---
 # <a name="_fpclass-_fpclassf"></a>_fpclass, _fpclassf
 
@@ -60,41 +60,41 @@ int _fpclassf(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der zu testende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **_fpclass-** und **_fpclassf-Funktionen** geben einen Ganzzahlwert zurück, der die Gleitkommaklassifizierung des Arguments *x*angibt. Die Klassifizierung weist möglicherweise einen der folgenden, in \<float.h> definierten Werte auf.
+Die Funktionen **_fpclass** und **_fpclassf** geben einen ganzzahligen Wert zurück, der die Gleit Komma Klassifizierung des Arguments *x*angibt. Die Klassifizierung weist möglicherweise einen der folgenden, in \<float.h> definierten Werte auf.
 
-|Wert|BESCHREIBUNG|
+|Value|Beschreibung|
 |-----------|-----------------|
 |**_FPCLASS_SNAN**|Signalisierender NaN|
 |**_FPCLASS_QNAN**|Stiller NaN|
-|**_FPCLASS_NINF**|Negative Unendlichkeit ( -INF)|
+|**_FPCLASS_NINF**|Minus unendlich (-INF)|
 |**_FPCLASS_NN**|Negativ normalisierter ungleich null-Wert|
 |**_FPCLASS_ND**|Negativ denormalisiert|
-|**_FPCLASS_NZ**|Negative Null ( - 0)|
+|**_FPCLASS_NZ**|Negatives NULL-Wert (-0)|
 |**_FPCLASS_PZ**|Positiv 0 (+0)|
 |**_FPCLASS_PD**|Positiv denormalisiert|
 |**_FPCLASS_PN**|Positiv normalisierter ungleich null-Wert|
 |**_FPCLASS_PINF**|Positiv unendlich|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_fpclass-** und **_fpclassf** Funktionen sind Microsoft-spezifisch. Sie ähneln [fpclassify](fpclassify.md), geben jedoch detaillierte Informationen über das Argument zurück. Die **_fpclassf** Funktion ist nur verfügbar, wenn sie für die x64-Plattform kompiliert wird.
+Die Funktionen **_fpclass** und **_fpclassf** sind Microsoft-spezifisch. Sie ähneln [fpclassify](fpclassify.md), geben jedoch detaillierte Informationen über das Argument zurück. Die **_fpclassf** -Funktion ist nur verfügbar, wenn Sie für die x64-Plattform kompiliert ist.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**_fpclass**, **_fpclassf**|\<float.h>|
+|**_fpclass** **_fpclassf**|\<float.h>|
 
 Weitere Informationen zur Kompatibilität und Konformität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [isnan, _isnan, _isnanf](isnan-isnan-isnanf.md)<br/>

@@ -22,7 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -50,12 +50,12 @@ helpviewer_keywords:
 - _totlower function
 - mbctoupper function
 ms.assetid: 787fab71-3224-4ed7-bc93-4dcd8023fc54
-ms.openlocfilehash: 49915a4017040200afca950cee5e1ac31184c589
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3a3adb32b8620a49110e887788e9f3c4893b6a1a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341060"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914290"
 ---
 # <a name="_mbctolower-_mbctolower_l-_mbctoupper-_mbctoupper_l"></a>_mbctolower, _mbctolower_l, _mbctoupper, _mbctoupper_l
 
@@ -85,7 +85,7 @@ unsigned int _mbctoupper_l(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu konvertierendes Multibytezeichen.
 
 *locale*<br/>
@@ -93,42 +93,42 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt das konvertierte Zeichen *c*zurück, wenn möglich. Andernfalls gibt es das Zeichen *c* unverändert zurück.
+Jede dieser Funktionen gibt, sofern möglich, das konvertierte Zeichen *c*zurück. Andernfalls wird das Zeichen *c* unverändert zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die Funktionen testen ein Zeichen *c* und wenden nach Möglichkeit eine der folgenden Konvertierungen an.
+Die Funktionen testen ein Zeichen *c* und wenden, wenn möglich, eine der folgenden Konvertierungen an.
 
 |Routinen|Konvertiert|
 |--------------|--------------|
-|**_mbctolower**, **_mbctolower_l**|Großbuchstaben in Kleinbuchstaben.|
-|**_mbctoupper**, **_mbctoupper_l**|Kleinbuchstaben in Großbuchstaben.|
+|**_mbctolower** **_mbctolower_l**|Großbuchstaben in Kleinbuchstaben.|
+|**_mbctoupper** **_mbctoupper_l**|Kleinbuchstaben in Großbuchstaben.|
 
-Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Version dieser Funktion ohne das **suffix _l** verwendet das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten. Die Version mit dem **Suffix _l** ist identisch, außer dass stattdessen der übergebene Gebietsschemaparameter verwendet wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Version dieser Funktion ohne das **_l** -Suffix verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. die Version mit dem **_l** -Suffix ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-In früheren Versionen wurde **_mbctolower** **jtolower**genannt, und **_mbctoupper** wurde **jtoupper**genannt. Verwenden Sie bei dem neuen Code stattdessen die die neuen Namen.
+In früheren Versionen hieß **_mbctolower** **jtolower**, und **_mbctoupper** wurde als **jtouppername**bezeichnet. Verwenden Sie bei dem neuen Code stattdessen die die neuen Namen.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |---------------------|--------------------------------------|--------------------|-----------------------|
-|**_totlower**|**Tolower**|**_mbctolower**|**towlower**|
+|**_totlower**|**ToLower**|**_mbctolower**|**towlower**|
 |**_totlower_l**|**_tolower_l**|**_mbctolower_l**|**_towlower_t**|
-|**_totupper**|**Toupper**|**_mbctoupper**|**towupper**|
+|**_totupper**|**ToUpper**|**_mbctoupper**|**towupper**|
 |**_totupper_l**|**toupper_l**|**_mbctoupper_l**|**_towupper_l**|
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routinen|Erforderlicher Header|
 |--------------|---------------------|
-|**_mbctolower**, **_mbctolower_l**|\<mbstring.h>|
-|**_mbctoupper**, **_mbctoupper_l**|\<mbstring.h>|
+|**_mbctolower** **_mbctolower_l**|\<mbstring.h>|
+|**_mbctoupper** **_mbctoupper_l**|\<mbstring.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [_mbbtombc, _mbbtombc_l](mbbtombc-mbbtombc-l.md)<br/>
