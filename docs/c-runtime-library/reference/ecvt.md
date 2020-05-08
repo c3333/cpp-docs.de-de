@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - converting double numbers
 - ecvt function
 ms.assetid: a916eb05-92d1-4b5c-8563-093acdb49dc8
-ms.openlocfilehash: 5e1760d5c68e650f6fbf44866d4e368b9d6233b6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9e02be690b257842c49166e18cf551c540190388
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348024"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915092"
 ---
 # <a name="_ecvt"></a>_ecvt
 
@@ -59,31 +59,31 @@ Zu konvertierende Zahl.
 *count*<br/>
 Anzahl der gespeicherten Ziffern.
 
-*dec*<br/>
+*31.12.2012*<br/>
 Gespeicherte Position der Dezimalstelle.
 
-*Zeichen*<br/>
+*Gebärden*<br/>
 Vorzeichen der konvertierten Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_ecvt** gibt einen Zeiger auf die Zeichenfolge der Ziffern zurück. **NULL,** wenn ein Fehler aufgetreten ist.
+**_ecvt** gibt einen Zeiger auf die Zeichenfolge der Ziffern zurück. **Null** , wenn ein Fehler aufgetreten ist.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_ecvt-Funktion** konvertiert eine Gleitkommazahl in eine Zeichenfolge. Der *Wertparameter* ist die zu konvertierende Gleitkommazahl. Diese Funktion speichert bis zu *zählenziffern* *wertals* Zeichenfolge und fügt ein Nullzeichen an (''''). Wenn die Anzahl der Ziffern im *Wert* die *Anzahl*überschreitet, wird die Ziffer niedriger Ordnung gerundet. Wenn weniger als *Zählziffern* vorhanden sind, wird die Zeichenfolge mit Nullen aufgepolstert.
+Die **_ecvt** -Funktion konvertiert eine Gleit Komma Zahl in eine Zeichenfolge. Der *value* -Parameter ist die zu konvertierende Gleit Komma Zahl. Diese Funktion speichert bis zum *zählen* der Ziffern des *Werts* als Zeichenfolge und fügt ein NULL-Zeichen (' \ 0 ') an. Wenn die Anzahl der Ziffern im *Wert* die *Anzahl überschreitet,* wird die nieder wertige Ziffer gerundet. Wenn weniger als *Zähl* Ziffern vorhanden sind, wird die Zeichenfolge mit Nullen aufgefüllt.
 
-Die Gesamtzahl der von **_ecvt** zurückgegebenen Ziffern darf **_CVTBUFSIZE**nicht überschreiten.
+Die Gesamtanzahl der von **_ecvt** zurückgegebenen Ziffern wird **_CVTBUFSIZE**nicht überschreiten.
 
-In der Zeichenfolge werden nur Ziffern gespeichert. Die Position des Dezimalkommas und das Vorzeichen des *Wertes* können von *dec* und *Zeichen* nach dem Aufruf erhalten werden. Der *Parameter dec* zeigt auf einen Ganzzahlwert, der die Position des Dezimalkommas in Bezug auf den Anfang der Zeichenfolge angibt. Der Wert 0 oder ein negativer Integer-Wert geben an, dass sich die Dezimalstelle links neben der ersten Ziffer befindet. Der *Vorzeichenparameter* zeigt auf eine ganze Zahl, die das Vorzeichen der konvertierten Zahl angibt. Wenn der Integer-Wert 0 ist, ist die Zahl positiv. Andernfalls ist die Zahl negativ.
+In der Zeichenfolge werden nur Ziffern gespeichert. Die Position des Dezimal Trennzeichens und das Vorzeichen des *Werts* können aus *Dec* abgerufen und nach dem-Befehl *signiert* werden. Der *Dec* -Parameter verweist auf einen ganzzahligen Wert, der die Position des Dezimal Trennzeichens in Bezug auf den Anfang der Zeichenfolge gibt. Der Wert 0 oder ein negativer Integer-Wert geben an, dass sich die Dezimalstelle links neben der ersten Ziffer befindet. Der *Sign* -Parameter verweist auf eine Ganzzahl, die das Vorzeichen der konvertierten Zahl angibt. Wenn der Integer-Wert 0 ist, ist die Zahl positiv. Andernfalls ist die Zahl negativ.
 
-Der Unterschied zwischen **_ecvt** und **_fcvt** liegt in der Interpretation des *Zählparameters.* **_ecvt** interpretiert *die Anzahl* als die Gesamtzahl der Ziffern in der Ausgabezeichenfolge, während **_fcvt** die *Anzahl* der Ziffern nach dem Dezimaltrennzeichen interpretiert.
+Der Unterschied zwischen **_ecvt** und **_fcvt** ist die Interpretation des *count* -Parameters. **_ecvt** interpretiert *count* als die Gesamtanzahl der Ziffern in der Ausgabe Zeichenfolge, während **_fcvt** die *Anzahl als Anzahl* der Ziffern nach dem Dezimaltrennzeichen interpretiert.
 
-**_ecvt** und **_fcvt** einen einzelnen statisch zugewiesenen Puffer für die Konvertierung verwenden. Jeder Aufruf dieser Routinen zerstört das Ergebnis des vorherigen Aufrufs.
+**_ecvt** und **_fcvt** verwenden einen einzelnen statisch zugeordneten Puffer für die Konvertierung. Jeder Aufruf dieser Routinen zerstört das Ergebnis des vorherigen Aufrufs.
 
-Diese Funktion überprüft ihre Parameter. Wenn *dec* oder *sign* **NULL**oder *count* is 0 ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und **NULL** zurückgegeben.
+Diese Funktion überprüft ihre Parameter. Wenn *Dec* oder *Sign* **null**ist oder *count* 0 ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und es wird **null** zurückgegeben.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -122,7 +122,7 @@ int main( void )
 source: 3.1415926535   buffer: '3141592654'  decimal: 1  sign: 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

@@ -1,6 +1,6 @@
 ---
 title: _popen, _wpopen
-description: Eine Referenz für die Bibliotheksfunktionen _popen der Microsoft _wpopenC-Laufzeit (CRT) und .
+description: Ein Verweis auf die Funktionen _popen der Microsoft C-Lauf Zeit Bibliothek ( _wpopenCRT) und.
 ms.date: 4/2/2020
 api_name:
 - _popen
@@ -19,7 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -49,12 +49,12 @@ no-loc:
 - _sys_errlist
 - _sys_nerr
 - EINVAL
-ms.openlocfilehash: 5b478893ef8f201f39cb63ecfc7ab174d16b86de
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 37e5bb491234e46a0e3330bc2fd42c16e54793fc
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338516"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915290"
 ---
 # <a name="_popen-_wpopen"></a>_popen, _wpopen
 
@@ -78,35 +78,35 @@ FILE *_wpopen(
 
 ### <a name="parameters"></a>Parameter
 
-*Befehl*\
+*s*\
 Befehl, der ausgeführt werden soll.
 
-*Modus*\
+*Spar*\
 Modus des zurückgegebenen Streams.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Stream zurück, der einem Ende der erstellten Pipe zugeordnet ist. Das andere Ende der Pipe ist der Standardeingabe oder Standardausgabe des erzeugten Befehls zugeordnet. Die Funktionen geben bei einem Fehler **NULL** zurück. Wenn der Fehler durch einen ungültigen Parameter verursacht wird, wird **errno** auf **EINVAL**gesetzt. Gültige Modi können Sie dem Abschnitt mit den Hinweisen entnehmen.
+Gibt einen Stream zurück, der einem Ende der erstellten Pipe zugeordnet ist. Das andere Ende der Pipe ist der Standardeingabe oder Standardausgabe des erzeugten Befehls zugeordnet. Die Funktionen geben bei einem Fehler **NULL** zurück. Wenn der Fehler durch einen ungültigen Parameter verursacht wird, wird **errno** auf **EINVAL**festgelegt. Gültige Modi können Sie dem Abschnitt mit den Hinweisen entnehmen.
 
 Weitere Informationen über diese und andere Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_popen-Funktion** erstellt eine Pipe. Anschließend wird asynchron eine erstellte Kopie des Befehlsprozessors ausgeführt und der *Befehl* als Befehlszeile verwendet. Die Zeichenfolge *mode* gibt den angeforderten Zugriffstyp wie folgt an.
+Die **_popen** -Funktion erstellt eine Pipe. Anschließend führt Sie asynchron eine generierte Kopie des Befehls Prozessors aus und verwendet den *Befehl* als Befehlszeile. Die Zeichenfolge *mode* gibt den angeforderten Zugriffstyp wie folgt an.
 
-|Zugriffsmodus|BESCHREIBUNG|
+|Zugriffsmodus|Beschreibung|
 |-|-|
-|**"r"**|Der aufrufende Prozess kann die Standardausgabe des erzeugten Befehls mit dem zurückgegebenen Stream lesen.|
-|**"w"**|Der aufrufende Prozess kann die Standardeingabe des erzeugten Befehls mit dem zurückgegebenen Stream schreiben.|
-|**"b"**|Öffnen im binären Modus.|
-|**"t"**|Öffnen im Textmodus.|
+|**r**|Der aufrufende Prozess kann die Standardausgabe des erzeugten Befehls mit dem zurückgegebenen Stream lesen.|
+|**Löw**|Der aufrufende Prozess kann die Standardeingabe des erzeugten Befehls mit dem zurückgegebenen Stream schreiben.|
+|**b**|Öffnen im binären Modus.|
+|**Bund**|Öffnen im Textmodus.|
 
 > [!NOTE]
-> Wenn die _popen Funktion **in** einem Windows-Programm verwendet wird, gibt sie einen ungültigen Dateizeiger zurück, der dazu führt, dass das Programm nicht mehr unbegrenzt reagiert. **_popen** funktioniert in einer Konsolenanwendung ordnungsgemäß. Informationen zum Erstellen einer Windows-Anwendung, die Ein- und Ausgabe umleitet, finden Sie unter [Erstellen eines untergeordneten Prozesses mit umgeleiteter Eingabe und Ausgabe](/windows/win32/ProcThread/creating-a-child-process-with-redirected-input-and-output) im Windows SDK.
+> Wenn die **_popen** -Funktion in einem Windows-Programm verwendet wird, gibt Sie einen ungültigen Dateizeiger zurück, der bewirkt, dass das Programm unbegrenzt nicht mehr reagiert. **_popen** funktioniert ordnungsgemäß in einer Konsolenanwendung. Informationen zum Erstellen einer Windows-Anwendung, die die Eingabe und Ausgabe umleitet, finden Sie unter [Erstellen eines untergeordneten Prozesses mit umgeleiteter Eingabe und Ausgabe](/windows/win32/ProcThread/creating-a-child-process-with-redirected-input-and-output) in der Windows SDK.
 
-**_wpopen** ist eine breit gefächerte Version von **_popen**; Das *Pfadargument* zu **_wpopen** ist eine Zeichenfolge mit großen Zeichen. **_wpopen** und **_popen** verhalten sich ansonsten gleich.
+**_wpopen** ist eine breit Zeichen Version von **_popen**. Das *path* -Argument für **_wpopen** ist eine Zeichenfolge mit breit Zeichen. **_wpopen** und **_popen** Verhalten sich andernfalls identisch.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -171,7 +171,7 @@ int main( void )
 }
 ```
 
-Bei dieser Ausgabe wird davon ausgegangen, dass sich `.c` nur eine Datei im aktuellen Verzeichnis mit der Dateinamenerweiterung befindet.
+Bei dieser Ausgabe wird davon ausgegangen, dass das aktuelle Verzeichnis nur eine Datei mit `.c` einer Dateinamenerweiterung enthält.
 
 ```Output
 Volume in drive C is CDRIVE
@@ -186,8 +186,8 @@ Directory of D:\proj\console\test1
 Process returned 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungskontrolle](../../c-runtime-library/process-and-environment-control.md)\
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)\
 [_pclose](pclose.md)\
 [_pipe](pipe.md)

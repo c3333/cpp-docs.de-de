@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-process-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +33,12 @@ helpviewer_keywords:
 - _wexecvpe function
 - _execvpe function
 ms.assetid: c0c3c986-d9c0-4814-a96c-10f0b3092766
-ms.openlocfilehash: dd2e4c91affe211cc58a2f1c147646172f3f34c4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4a1a2d66600a7502c088577adca4085c68e4ccd7
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347643"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909699"
 ---
 # <a name="_execvpe-_wexecvpe"></a>_execvpe, _wexecvpe
 
@@ -67,34 +67,34 @@ intptr_t _wexecvpe(
 *cmdname*<br/>
 Pfad der auszuführenden Datei.
 
-*Argv*<br/>
+*argv*<br/>
 Array von Zeigern zu Parametern.
 
-*Envp*<br/>
+*envp*<br/>
 Array von Zeigern zu Umgebungseinstellungen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Ein Rückgabewert von -1 gibt einen Fehler an, in diesem Fall wird die globale Variable **errno** festgelegt.
+Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Der Rückgabewert-1 gibt einen Fehler an. in diesem Fall ist die globale Variable **errno** festgelegt.
 
-|**errno-Wert**|BESCHREIBUNG|
+|**errno** -Wert|Beschreibung|
 |-------------------|-----------------|
 |**E2BIG**|Für die Argumente und die Umgebungseinstellungen werden mehr als 32 KB Speicherplatz benötigt.|
 |**EACCES**|Für die angegebene Datei ist eine Sperr- oder Freigabeverletzung aufgetreten.|
 |**EMFILE**|Zu viele Dateien sind geöffnet. (Die angegebene Datei muss geöffnet werden, damit festgestellt werden kann, ob sie ausführbar ist.)|
 |**ENOENT**|Die Datei oder der Pfad wurde nicht gefunden.|
 |**ENOEXEC**|Die angegebene Datei ist nicht ausführbar oder hat ein ungültiges Format für eine ausführbare Datei.|
-|**Enomem**|Es ist nicht genügend Arbeitsspeicher verfügbar, um den neuen Prozess auszuführen; der verfügbare Arbeitsspeicher ist beschädigt; oder es ist ein ungültiger Block vorhanden, was darauf hinweist, dass der aufrufende Prozess nicht ordnungsgemäß zugeordnet wurde.|
+|**Umomem**|Es ist nicht genügend Arbeitsspeicher verfügbar, um den neuen Prozess auszuführen; der verfügbare Arbeitsspeicher ist beschädigt; oder es ist ein ungültiger Block vorhanden, was darauf hinweist, dass der aufrufende Prozess nicht ordnungsgemäß zugeordnet wurde.|
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Jede dieser Funktionen lädt einen neuen Prozess, führt diesen aus und übergibt ein Array von Zeigern auf Befehlszeilenargumente und ein Array von Zeigern auf Umgebungseinstellungen. Diese Funktionen verwenden die Umgebungsvariable **PATH,** um die auszuführende Datei zu finden.
+Jede dieser Funktionen lädt einen neuen Prozess, führt diesen aus und übergibt ein Array von Zeigern auf Befehlszeilenargumente und ein Array von Zeigern auf Umgebungseinstellungen. Diese Funktionen verwenden die **path** -Umgebungsvariable, um die auszuführende Datei zu suchen.
 
-Die **_execvpe-Funktionen** validieren ihre Parameter. Wenn der *cmdname* ein Nullzeiger ist oder *wenn argv* ein Nullzeiger, ein Zeiger auf ein leeres Array oder ein Zeiger auf ein Array ist, das eine leere Zeichenfolge als erstes Argument enthält, rufen diese Funktionen den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben -1 zurück. Es wird kein Prozess gestartet.
+Die **_execvpe** Funktionen überprüfen Ihre Parameter. Wenn der *cmdname* ein NULL-Zeiger ist oder *argv* ein NULL-Zeiger, ein Zeiger auf ein leeres Array oder ein Zeiger auf ein Array ist, das eine leere Zeichenfolge als erstes Argument enthält, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück. Es wird kein Prozess gestartet.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -109,11 +109,11 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../..
 
 Siehe das Beispiel in [_exec-, _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_exec, _wexec Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
-[Abbrechen](abort.md)<br/>
+[Abbruch](abort.md)<br/>
 [atexit](atexit.md)<br/>
 [exit, _Exit, _exit](exit-exit-exit.md)<br/>
 [_onexit, _onexit_m](onexit-onexit-m.md)<br/>

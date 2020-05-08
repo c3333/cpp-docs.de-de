@@ -19,7 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +33,12 @@ helpviewer_keywords:
 - cbrtf function
 - cbrt function
 ms.assetid: ab51d916-3db2-4beb-b46a-28b4062cd33f
-ms.openlocfilehash: a63c30368e23feda4b7845f367ad394249a50d4d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d76c533c278e7f1808eb631e4c94e681b1ae0b6b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333570"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912106"
 ---
 # <a name="cbrt-cbrtf-cbrtl"></a>cbrt, cbrtf, cbrtl
 
@@ -66,22 +66,22 @@ long double cbrtl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **cbrt-Funktionen** geben den Cube-Stamm von *x*zurück.
+Die **cbrt** -Funktionen geben den Cube-root von *x*zurück.
 
-|Eingabe|SEH-Ausnahme|**_matherr** Ausnahme|
+|Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
 |-----------|-------------------|--------------------------|
 |± ∞, QNAN, IND|Keine|Keine|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **cbrt** aufrufen, die **float-** oder **long** **double-Typen** annehmen. In einem C-Programm nimmt und gibt **cbrt** immer **double**ein.
+Da C++ das überladen zulässt, können Sie über Ladungen von **cbrt** aufzurufen, die **float** -oder **Long** **Double** -Typen annehmen. In einem C-Programm übernimmt **cbrt** immer Double und gibt **Double**zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -115,7 +115,7 @@ int main( void )
 The cube root of -64.64 is -4.013289
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [exp, expf, expl](exp-expf.md)<br/>

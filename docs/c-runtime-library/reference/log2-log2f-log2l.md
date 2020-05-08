@@ -20,18 +20,18 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
 - apiref
 ms.assetid: 94d11b38-70b7-4d3a-94ac-523153c92b2e
-ms.openlocfilehash: 29a1a9e2003091944a4587036c62a49d76333080
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 58da7790e6fbce915c16a02a1b0d972a6fe1049e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341721"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911420"
 ---
 # <a name="log2-log2f-log2l"></a>log2, log2f, log2l
 
@@ -63,19 +63,19 @@ long double log2l(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der Wert, um den Basis 2-Logarithmus zu bestimmen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei Erfolg gibt zurück log2 *x*.
+Bei Erfolg wird return log2 *x*zurückgegeben.
 
 Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
 |Problem|Rückgabewert|
 |-----------|------------|
 |*x* < 0|NaN|
-|*x* = 0 €|-UNENDLICH|
+|*x* = ± 0|-UNENDLICH|
 |*x* = 1|+0|
 |+INFINITY|+INFINITY|
 |NaN|NaN|
@@ -84,11 +84,11 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Wenn x eine ganze Zahl ist, gibt diese Funktion im Wesentlichen den nullbasierten Index des wichtigsten 1 Bit *x*zurück.
+Wenn x eine ganze Zahl ist, gibt diese Funktion im Grunde den NULL basierten Index des signifikantesten 1 Bits von *x*zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -98,7 +98,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [exp2, exp2f, exp2l](exp2-exp2f-exp2l.md)<br/>

@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - calculating floors of values
 - floorl function
 ms.assetid: e9955f70-d659-414f-8050-132e13c8ff36
-ms.openlocfilehash: 67902c61cd6e6cebd1be5182601baedfa1639ea7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3455e9f1fb7f49e686b2d7ae315a413c829f87ea
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346675"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911633"
 ---
 # <a name="floor-floorf-floorl"></a>floor, floorf, floorl
 
@@ -67,30 +67,30 @@ long double floorl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **Floor-Funktionen** geben einen Gleitkommawert zurück, der die größte ganze Zahl darstellt, die kleiner oder gleich *x*ist. Es gibt keine Fehlerrückgabe.
+Die **Floor** -Funktionen geben einen Gleit Komma Wert zurück, der die größte ganze Zahl darstellt, die kleiner oder gleich *x*ist. Es gibt keine Fehlerrückgabe.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
 |± QNAN,IND|Keine|_DOMAIN|
 
-**boden** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
+**Floor** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-C++ ermöglicht Eine Überlastung, sodass Sie Überladungen von **Boden** aufrufen können, die **Float-** und **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **der Boden** immer ein **Double**zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Floor** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**Boden**, **floorf**, **floorl**|\<math.h>|
+|**Floor**, **floorf**, **floorl**|\<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -129,7 +129,7 @@ The ceil of 2.8 is 3.000000
 The ceil of -2.8 is -2.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,16 +36,16 @@ helpviewer_keywords:
 - _endthreadex function
 - threading [C++], terminating threads
 ms.assetid: 18a91f2f-659e-40b4-b266-ec12dcf2abf5
-ms.openlocfilehash: c76f479255080400e07678ef5dbde572b7a9dffc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a3889adcc90bd62e766102b72aae68577915e55b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348036"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915084"
 ---
 # <a name="_endthread-_endthreadex"></a>_endthread, _endthreadex
 
-Beendet einen Thread; **_endthread** einen Thread beendet, **der** von _beginthread erstellt wird, und **beendet _endthreadex** einen Thread, der von **_beginthreadex**erstellt wird.
+Beendet einen Thread. **_endthread** beendet einen Thread, der von **_beginthread** erstellt wurde, und **_endthreadex** beendet einen von **_beginthreadex**erstellten Thread.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,21 +61,21 @@ void _endthreadex(
 *retval*<br/>
 Threadexitcode.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Sie können **_endthread** aufrufen oder **_endthreadex** explizit aufrufen, um einen Thread zu beenden. **_endthread** oder **_endthreadex** wird jedoch automatisch aufgerufen, wenn der Thread von der als Parameter übergebenen Routine an **_beginthread** oder **_beginthreadex**zurückgibt. Das Beenden eines Threads mit einem Aufruf von **Endthread** oder **_endthreadex** trägt dazu bei, die ordnungsgemäße Wiederherstellung der für den Thread zugewiesenen Ressourcen sicherzustellen.
-
-> [!NOTE]
-> Rufen Sie für eine mit „Libcmt.lib“ verknüpfte ausführbare Datei die [ExitThread](/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitthread) -Win32-API nicht auf, damit das Laufzeitsystem nicht an der Freigabe von zugeordneten Ressourcen gehindert wird. **_endthread** und **_endthreadex** zugeordnete Threadressourcen zurückfordern und dann **ExitThread**aufrufen.
-
-**_endthread** schließt den Gewindegriff automatisch. (Dieses Verhalten unterscheidet sich von **ExitThread** der Win32 ExitThread-API.) Wenn Sie **_beginthread** und **_endthread**verwenden, schließen Sie das Threadhandle daher nicht explizit, indem Sie die Win32 [CloseHandle-API](/windows/win32/api/handleapi/nf-handleapi-closehandle) aufrufen.
-
-Wie die Win32 **ExitThread-API** schließt **_endthreadex** das Threadhandle nicht. Wenn Sie **_beginthreadex** und **_endthreadex**verwenden, müssen Sie daher das Threadhandle schließen, indem Sie die Win32 **CloseHandle-API** aufrufen.
+Sie können **_endthread** oder explizit **_endthreadex** zum Beenden eines Threads abrufen. **_endthread** oder **_endthreadex** wird jedoch automatisch aufgerufen, wenn der Thread aus der als Parameter an **_beginthread** oder **_beginthreadex**übergebenen Routine zurückgegeben wird. Wenn Sie einen Thread mit einem- **Endpunkt** **_endthreadex** oder einem-Endpunkt beenden, können Sie sicherstellen, dass für den Thread zugewiesene Ressourcen ordnungsgemäß wieder hergestellt werden
 
 > [!NOTE]
-> **_endthread** und **_endthreadex** dazu führen, dass im Thread ausstehende C++-Destruktoren nicht aufgerufen werden.
+> Rufen Sie für eine mit „Libcmt.lib“ verknüpfte ausführbare Datei die [ExitThread](/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitthread) -Win32-API nicht auf, damit das Laufzeitsystem nicht an der Freigabe von zugeordneten Ressourcen gehindert wird. **_endthread** und **_endthreadex** zugeordnete Thread Ressourcen freizugeben und dann **ExitThread**aufzurufen.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+**_endthread** schließt das Thread Handle automatisch. (Dieses Verhalten unterscheidet sich von der Win32- **ExitThread** -API.) Wenn Sie **_beginthread** und **_endthread**verwenden, schließen Sie das Thread handle daher nicht explizit, indem Sie die Win32- [CloseHandle](/windows/win32/api/handleapi/nf-handleapi-closehandle) -API aufrufen.
+
+Wie die Win32- **ExitThread** -API schließt **_endthreadex** nicht das Thread handle. Wenn Sie **_beginthreadex** und **_endthreadex**verwenden, müssen Sie daher das Thread handle schließen, indem Sie die Win32- **CloseHandle** -API aufrufen.
+
+> [!NOTE]
+> **_endthread** und **_endthreadex** führen dazu, dass im Thread ausstehende C++-de-dektoren nicht aufgerufen werden.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -94,7 +94,7 @@ Nur Multithread-Versionen von [C-Laufzeitbibliotheken](../../c-runtime-library/c
 
 Weitere Informationen finden Sie im Beispiel für [_beginthread](beginthread-beginthreadex.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_beginthread, _beginthreadex](beginthread-beginthreadex.md)<br/>

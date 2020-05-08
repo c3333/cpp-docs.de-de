@@ -18,7 +18,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +31,12 @@ helpviewer_keywords:
 - sorting arrays
 - arrays [CRT], sorting
 ms.assetid: d6cb33eb-d209-485f-8d41-229eb743c027
-ms.openlocfilehash: 09de57e206eb6fd4a75a0a9444332136aeee0e9d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3d9c3481b37e94dbb59ee7356caafc53501045ea
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338250"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913255"
 ---
 # <a name="qsort"></a>qsort
 
@@ -58,20 +58,20 @@ void qsort(
 *base*<br/>
 Start des Zielarrays.
 
-*number*<br/>
+*Zahl*<br/>
 Arraygröße in Elementen.
 
 *width*<br/>
 Elementgröße in Bytes.
 
-*Vergleichen*<br/>
+*vergleichbar*<br/>
 Zeiger auf eine benutzerdefinierte Routine, die zwei Elemente des Arrays vergleicht und einen Wert zurückgibt, der ihre Beziehung angibt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **qsort-Funktion** implementiert einen Schnellsortieralgorithmus, um ein Array von *Zahlenelementen* mit jeweils *großen* Bytes zu sortieren. Die *Argumentbasis* ist ein Zeiger auf die Basis des zu sortierenden Arrays. **qsort** überschreibt dieses Array mithilfe der sortierten Elemente.
+Die **qsort** -Funktion implementiert einen Quick-Sort-Algorithmus, um ein Array von *Zahlen* Elementen zu sortieren, wobei jede *Breite* von Bytes ist. Die Argument *Basis* ist ein Zeiger auf die Basis des Arrays, das sortiert werden soll. **qsort** überschreibt dieses Array mit den sortierten Elementen.
 
-**qsort** ruft die *Vergleichsroutine* ein oder mehrere Male während der Sortierung auf und übergibt Zeiger an zwei Arrayelemente bei jedem Aufruf.
+**qsort** Ruft die *Vergleichs* Routine mindestens ein Mal während der Sortierung auf und übergibt bei jedem Aufruf Zeiger auf zwei Array Elemente.
 
 ```C
 compare( (void *) & elem1, (void *) & elem2 );
@@ -79,17 +79,17 @@ compare( (void *) & elem1, (void *) & elem2 );
 
 Die Routine vergleicht die Elemente und gibt einen der folgenden Werte zurück.
 
-|Vergleich des Rückgabewerts der Funktion|BESCHREIBUNG|
+|Vergleich des Rückgabewerts der Funktion|Beschreibung|
 |-----------------------------------|-----------------|
 |< 0|**elem1** kleiner als **elem2**|
-|0|**elem1** entspricht **elem2**|
+|0|**elem1** Äquivalent zu **elem2**|
 |> 0|**elem1** größer als **elem2**|
 
 Das Array wird in aufsteigender Reihenfolge sortiert, wie von der Vergleichsfunktion definiert. Kehren Sie den Sinn der „größer als“ und „kleiner als“ in der Vergleichsfunktion um, um ein Array in absteigender Reihenfolge zu sortieren.
 
-Diese Funktion überprüft ihre Parameter. Wenn *compare* oder *number* **NULL**ist oder wenn *Basis* **NULL** ist und *Zahl* ungleich Null ist, oder wenn die *Breite* kleiner als Null ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion zurück und **errno** wird auf **EINVAL**gesetzt.
+Diese Funktion überprüft ihre Parameter. Wenn *Compare* oder *Number* **null**ist, oder wenn *Base* **null** und *Number* ungleich NULL ist, oder wenn *Width* kleiner als 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion zurück, und **errno** ist auf **EINVAL**festgelegt.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -143,7 +143,7 @@ int compare( const void *arg1, const void *arg2 )
 boy deserves every favor good
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Suchen und Sortieren](../../c-runtime-library/searching-and-sorting.md)<br/>
 [bsearch](bsearch.md)<br/>

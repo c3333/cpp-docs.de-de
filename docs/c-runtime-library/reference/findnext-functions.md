@@ -34,7 +34,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -114,16 +114,16 @@ helpviewer_keywords:
 - tfindnext32i64 function
 - _tfindnexti64 function
 ms.assetid: 75d97188-5add-4698-a46c-4c492378f0f8
-ms.openlocfilehash: 38243b48a97c038f36ada85e3ca2cda814f43fa8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: acb680db3b07b0f600b758401f1270deccf03da7
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346735"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911663"
 ---
 # <a name="_findnext-_findnext32-_findnext32i64-_findnext64-_findnext64i32-_findnexti64-_wfindnext-_wfindnext32-_wfindnext32i64-_wfindnext64-_wfindnext64i32-_wfindnexti64"></a>_findnext, _findnext32, _findnext32i64, _findnext64, _findnext64i32, _findnexti64, _wfindnext, _wfindnext32, _wfindnext32i64, _wfindnext64, _wfindnext64i32, _wfindnexti64
 
-Suchen Sie ggf. den nächsten Namen, der dem *Filespec-Argument* in einem vorherigen Aufruf [von _findfirst](findfirst-functions.md)entspricht, und ändern Sie dann den Inhalt der *Dateiinfo-Struktur* entsprechend.
+Suchen Sie ggf. nach dem nächsten Namen, der mit dem *Datei Angabe* -Argument in einem vorherigen- [_findfirst](findfirst-functions.md)übereinstimmt, und ändern Sie dann den *FileInfo* -Struktur Inhalt entsprechend.
 
 ## <a name="syntax"></a>Syntax
 
@@ -180,48 +180,48 @@ int _wfindnext64i32(
 
 ### <a name="parameters"></a>Parameter
 
-*Behandeln*<br/>
-Suchhandle, das von einem vorherigen Aufruf an **_findfirst**zurückgegeben wurde.
+*bewältigen*<br/>
+Das Suchhandle, das von einem vorherigen- **_findfirst**zurückgegeben wurde.
 
-*Fileinfo*<br/>
+*FileInfo*<br/>
 Puffer für Dateiinformationen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei Erfolg wird 0 zurückgegeben. Andernfalls wird -1 zurückgegeben und **errno** auf einen Wert festgelegt, der die Art des Fehlers angibt. Mögliche Fehlercodes werden in der folgenden Tabelle dargestellt.
+Bei Erfolg wird 0 zurückgegeben. Andernfalls wird-1 zurückgegeben, und **errno** wird auf einen Wert festgelegt, der die Art des Fehlers angibt. Mögliche Fehlercodes werden in der folgenden Tabelle dargestellt.
 
 |errno-Wert|Bedingung|
 |-|-|
-| **Einval** | Ungültiger Parameter: *fileinfo* war **NULL**. oder das Betriebssystem hat einen unerwarteten Fehler zurückgegeben. |
+| **Eingabe** | Ungültiger Parameter: " *filinput Info* " war **null**. oder das Betriebssystem hat einen unerwarteten Fehler zurückgegeben. |
 | **ENOENT** | Es konnten keine übereinstimmenden Dateien gefunden werden. |
-| **Enomem** | Nicht genügend Arbeitsspeicher oder die Länge des Dateinamens überstieg **MAX_PATH**. |
+| **Umomem** | Nicht genügend Arbeitsspeicher, oder die Länge des Datei namens wurde **MAX_PATH**überschritten. |
 
 Wenn ein ungültiger Parameter übergeben wird, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Sie müssen [_findclose](findclose.md) aufrufen, nachdem Sie die **_findfirst-** oder **_findnext-Funktion** (oder Varianten) verwendet haben. Auf diese Weise werden Ressourcen frei, die von diesen Funktionen in Ihrer Anwendung verwendet werden.
+Sie müssen [_findclose](findclose.md) abrufen, nachdem Sie die **_findfirst** -oder **_findnext** -Funktion (oder eine beliebige Variante) verwendet haben. Auf diese Weise werden Ressourcen frei, die von diesen Funktionen in Ihrer Anwendung verwendet werden.
 
-Die Variationen dieser **w** Funktionen mit dem w-Präfix sind Breitzeichenversionen; andernfalls sind sie identisch mit den entsprechenden Single-Byte-Funktionen.
+Die Variationen dieser Funktionen mit dem **w** -Präfix sind breit Zeichen Versionen. Andernfalls sind Sie identisch mit den entsprechenden Einzel Byte Funktionen.
 
-Varianten dieser Funktionen unterstützen 32-Bit- oder 64-Bit-Zeittypen und 32-Bit- oder 64-Bit-Dateigrößen. Das erste numerische Suffix (**32** oder **64**) gibt die Größe des verwendeten Zeittyps an; Das zweite Suffix lautet entweder **i32** oder **i64**, was angibt, ob die Dateigröße als 32-Bit- oder 64-Bit-Ganzzahl dargestellt wird. Informationen darüber, welche Versionen 32-Bit- und 64-Bit-Zeittypen und -Dateigrößen unterstützen, finden Sie in der folgenden Tabelle. In Varianten, die einen 64-Bit-Zeittyp verwenden, kann das Erstellungsdatum der Datei bis 23:59:59 am 31. Dezember 3000 (UTC) ausgedrückt werden. Die Varianten, die 32-Bit-Zeittypen verwenden, stellen Datumsangaben nur bis 23:59:59 am 18. Januar 2038 (UTC) dar. Der 1. Januar 1970 (Mitternacht) ist der älteste mögliche Datumsbereich für beide Funktionen.
+Varianten dieser Funktionen unterstützen 32-Bit- oder 64-Bit-Zeittypen und 32-Bit- oder 64-Bit-Dateigrößen. Das erste numerische Suffix (**32** oder **64**) gibt die Größe des verwendeten Zeittyps an. Das zweite Suffix ist entweder **i32** oder **I64**, das angibt, ob die Dateigröße als 32-Bit-oder 64-Bit-Ganzzahl dargestellt wird. Informationen darüber, welche Versionen 32-Bit- und 64-Bit-Zeittypen und -Dateigrößen unterstützen, finden Sie in der folgenden Tabelle. In Varianten, die einen 64-Bit-Zeittyp verwenden, kann das Erstellungsdatum der Datei bis 23:59:59 am 31. Dezember 3000 (UTC) ausgedrückt werden. Die Varianten, die 32-Bit-Zeittypen verwenden, stellen Datumsangaben nur bis 23:59:59 am 18. Januar 2038 (UTC) dar. Der 1. Januar 1970 (Mitternacht) ist der älteste mögliche Datumsbereich für beide Funktionen.
 
-Verwenden Sie **_findnext** oder **_wfindnext,** wenn Sie Dateigrößen größer als 3 GB unterstützen müssen, verwenden Sie **_findnexti64** oder **_wfindnexti64**, wenn Sie keinen bestimmten Grund haben, die Versionen zu verwenden, die die Zeitgröße explizit angeben. All diese Funktionen verwenden den 64-Bit-Zeittyp. In früheren Versionen verwendeten diese Funktionen einen 32-Bit-Zeittyp. Wenn dies eine brechende Änderung für eine Anwendung ist, können Sie **_USE_32BIT_TIME_T** definieren, um das alte Verhalten zu erhalten. Wenn **_USE_32BIT_TIME_T** definiert ist, verwenden **_findnext**, **_finnexti64** und die entsprechenden Unicode-Versionen eine 32-Bit-Zeit.
+Wenn Sie nicht über einen bestimmten Grund für die Verwendung der Versionen verfügen, die die zeitgröße explizit angeben, verwenden Sie **_findnext** oder **_wfindnext** oder wenn Sie Dateigrößen von mehr als 3 GB unterstützen müssen, verwenden Sie **_findnexti64** oder **_wfindnexti64**. All diese Funktionen verwenden den 64-Bit-Zeittyp. In früheren Versionen verwendeten diese Funktionen einen 32-Bit-Zeittyp. Wenn dies eine Breaking Change für eine Anwendung ist, können Sie **_USE_32BIT_TIME_T** definieren, um das alte Verhalten zu erhalten. Wenn **_USE_32BIT_TIME_T** definiert ist, **_findnext**verwenden _findnext **_finnexti64** und die entsprechenden Unicode-Versionen eine 32-Bit-Zeit.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="time-type-and-file-length-type-variations-of-_findnext"></a>_findnext-Varianten des Uhrzeittyps und Dateilängentyps
 
 |Functions|**_USE_32BIT_TIME_T** definiert?|Uhrzeittyp|Dateilängentyp|
 |---------------|----------------------------------|---------------|----------------------|
-|**_findnext**, **_wfindnext**|Nicht definiert|64 Bit|32 Bit|
-|**_findnext**, **_wfindnext**|Definiert|32 Bit|32 Bit|
-|**_findnext32**, **_wfindnext32**|Nicht von der Makrodefinition betroffen|32 Bit|32 Bit|
-|**_findnext64**, **_wfindnext64**|Nicht von der Makrodefinition betroffen|64 Bit|64 Bit|
-|**_findnexti64**, **_wfindnexti64**|Nicht definiert|64 Bit|64 Bit|
-|**_findnexti64**, **_wfindnexti64**|Definiert|32 Bit|64 Bit|
-|**_findnext32i64**, **_wfindnext32i64**|Nicht von der Makrodefinition betroffen|32 Bit|64 Bit|
-|**_findnext64i32**, **_wfindnext64i32**|Nicht von der Makrodefinition betroffen|64 Bit|32 Bit|
+|**_findnext** **_wfindnext**|Nicht definiert|64-Bit|32-Bit|
+|**_findnext** **_wfindnext**|Definiert|32-Bit|32-Bit|
+|**_findnext32** **_wfindnext32**|Nicht von der Makrodefinition betroffen|32-Bit|32-Bit|
+|**_findnext64** **_wfindnext64**|Nicht von der Makrodefinition betroffen|64-Bit|64-Bit|
+|**_findnexti64** **_wfindnexti64**|Nicht definiert|64-Bit|64-Bit|
+|**_findnexti64** **_wfindnexti64**|Definiert|32-Bit|64-Bit|
+|**_findnext32i64** **_wfindnext32i64**|Nicht von der Makrodefinition betroffen|32-Bit|64-Bit|
+|**_findnext64i32** **_wfindnext64i32**|Nicht von der Makrodefinition betroffen|64-Bit|32-Bit|
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -257,7 +257,7 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../..
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Systemaufrufe](../../c-runtime-library/system-calls.md)<br/>
 [Dateinamen-Suchfunktionen](../../c-runtime-library/filename-search-functions.md)<br/>

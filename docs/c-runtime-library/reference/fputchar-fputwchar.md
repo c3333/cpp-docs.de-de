@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -38,12 +38,12 @@ helpviewer_keywords:
 - fputtchar function
 - _fputchar function
 ms.assetid: b92ff600-a924-4f2b-b0e7-3097ee31bdff
-ms.openlocfilehash: 29d23dcaba75ad87b462a1a87c7a2ad9c8c7298b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 08997730e0ef80072e29de5bc5e7c106cb6cb9e0
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346169"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912018"
 ---
 # <a name="_fputchar-_fputwchar"></a>_fputchar, _fputwchar
 
@@ -62,20 +62,20 @@ wint_t _fputwchar(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu schreibende Zeichen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **_fputchar**gibt ein Rückgabewert von **EOF** einen Fehler an. Bei **_fputwchar**gibt ein Rückgabewert von **WEOF** einen Fehler an. Wenn c **NULL**ist, generieren diese Funktionen eine ungültige Parameterausnahme, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben sie **EOF** (oder **WEOF**) zurück und setzen **errno** auf **EINVAL**.
+Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **_fputchar**gibt der Rückgabewert von **EOF** einen Fehler an. Bei **_fputwchar**weist der Rückgabewert **WEOF** auf einen Fehler hin. Wenn c **null**ist, generieren diese Funktionen eine Ausnahme wegen eines ungültigen Parameters, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben Sie **EOF** (oder **WEOF**) zurück und legen **errno** auf **EINVAL**fest.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Beide Funktionen schreiben das einzelne Zeichen *c* in **stdout** und erweitert den Indikator entsprechend. **_fputchar** entspricht `fputc( stdout )`. Es ist auch äquivalent zu **putchar**, aber nur als Funktion implementiert, anstatt als Funktion und Makro. Im Gegensatz zu **fputc** und **putchar**sind diese Funktionen nicht mit dem ANSI-Standard kompatibel.
+Beide Funktionen schreiben das einzelne Zeichen *c* in **stdout** und verschieben den Indikator entsprechend. **_fputchar** entspricht `fputc( stdout )`. Sie entspricht auch **putchar**, wird jedoch nur als Funktion und nicht als Funktion und Makro implementiert. Anders als bei **fputc** und **putchar**sind diese Funktionen nicht mit dem ANSI-Standard kompatibel.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -90,7 +90,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_fputchar**|\<stdio.h>|
 |**_fputwchar**|\<stdio.h> oder \<wchar.h>|
 
-Die Konsole wird in UWP-Apps (Universelle Windows-Plattform) nicht unterstützt. Die Standard-Stream-Handles, die der Konsole zugeordnet sind –**stdin**, **stdout**und **stderr**– müssen umgeleitet werden, bevor C-Laufzeitfunktionen sie in UWP-Apps verwenden können. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -117,7 +117,7 @@ int main( void )
 This is a test of _fputchar!!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [fgetc, fgetwc](fgetc-fgetwc.md)<br/>
