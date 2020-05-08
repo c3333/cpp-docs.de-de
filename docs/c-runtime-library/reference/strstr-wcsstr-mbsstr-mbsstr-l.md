@@ -22,7 +22,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -50,12 +50,12 @@ helpviewer_keywords:
 - _mbsstr_l function
 - strstr function
 ms.assetid: 03d70c3f-2473-45cb-a5f8-b35beeb2748a
-ms.openlocfilehash: 06fb79ac050f4e1c357a76a782730cd72cbdadec
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1fb6c025ec324fceb1b11dd23ed61500f08b4535
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81316949"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911001"
 ---
 # <a name="strstr-wcsstr-_mbsstr-_mbsstr_l"></a>strstr, wcsstr, _mbsstr, _mbsstr_l
 
@@ -122,10 +122,10 @@ const unsigned char *_mbsstr_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Zu suchende mit NULL endende Zeichenfolge.
 
-*strSearch*<br/>
+*Trend*<br/>
 Zu suchende mit NULL endende Zeichenfolge.
 
 *locale*<br/>
@@ -133,27 +133,27 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf das erste Vorkommen von *strSearch* in *str*oder NULL zurück, wenn *strSearch* nicht in *str*angezeigt wird. Wenn *strSearch* auf eine Zeichenfolge mit Nulllänge zeigt, gibt die Funktion *str*zurück.
+Gibt einen Zeiger auf das erste Vorkommen von " *tresearch* " in *Str*oder "Null" zurück, wenn " *tresearch* " nicht in *Str*angezeigt wird. Wenn " *strinsearch* " auf eine Zeichenfolge mit der Länge Null zeigt, gibt die Funktion *Str*zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die `strstr` Funktion gibt einen Zeiger auf das erste Vorkommen von *strSearch* in *str*zurück. Die Suche umfasst keine abschließenden Nullzeichen. `wcsstr` ist die Breitzeichenversion von `strstr`, und `_mbsstr` ist die Multibytezeichenversion. Die Argumente und der Rückgabewert von `wcsstr` sind Breitzeichen-Zeichenfolgen; die von `_mbsstr` sind Mehrbyte-Zeichenfolgen. `_mbsstr` überprüft die eigenen Parameter. Wenn *str* oder *strSearch* NULL ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt `_mbsstr` `errno` werden darf, wird AUF EINVAL festgelegt und 0 zurückgegeben. `strstr` und `wcsstr` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
+Die `strstr` -Funktion gibt einen Zeiger auf das erste Vorkommen von " *tresearch* " in *Str*zurück. Die Suche umfasst keine abschließenden Nullzeichen. `wcsstr` ist die Breitzeichenversion von `strstr`, und `_mbsstr` ist die Multibytezeichenversion. Die Argumente und der Rückgabewert von `wcsstr` sind Breitzeichen-Zeichenfolgen; die von `_mbsstr` sind Mehrbyte-Zeichenfolgen. `_mbsstr` überprüft die eigenen Parameter. Wenn *Str* oder *strinsearch* NULL ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md) Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, `_mbsstr` legt `errno` auf EINVAL fest und gibt 0 zurück. `strstr` und `wcsstr` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 > [!IMPORTANT]
 > Diese Funktionen können eine Bedrohung aufgrund eines Pufferüberlaufproblems darstellen. Pufferüberlaufprobleme können für Angriffe auf ein System eingesetzt werden, da sie die Ausführung von willkürlichem Code ermöglichen können, was zur einer unbefugten Ausweitung der Berechtigungen führen kann. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-In C verwenden diese Funktionen einen **const-Zeiger** für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf **const** benötigt, gibt einen Zeiger auf **const**zurück; Die Version, die einen Zeiger auf nicht-**const** nimmt, gibt einen Zeiger auf nicht-**const**zurück. Die Makro-_CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **const-** als auch die**Nicht-const-Version** dieser Funktionen verfügbar sind. Wenn Sie das**Nicht-const-Verhalten** für beide C++-Überladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
+In C akzeptieren diese Funktionen einen **Konstanten** Zeiger für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf "Konstante" annimmt **, gibt einen** Zeiger auf " **konstant**" zurück. die Version, die einen Zeiger auf nicht-konstante annimmt **, gibt einen** Zeiger auf einen nicht**Konstanten**Wert zurück. Das Makro _CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **Konstanten** als auch die nicht**Konstanten** Versionen dieser Funktionen verfügbar sind. Wenn Sie das nicht**Konstante Verhalten für** beide C++-über Ladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
 
-Der Ausgabewert wird durch die Gebietsschema-Kategorie-Einstellung von LC_CTYPE beeinflusst. Weitere Informationen finden Sie unter [setlocale, _wsetlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen, die nicht über das **_l** Suffix verfügen, verwenden das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten. Die Versionen mit dem **suffix _l** sind identisch, außer dass sie stattdessen den übergebenen Gebietsschemaparameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der locale-Category-Einstellung LC_CTYPE; Weitere Informationen finden Sie unter [setlocale, _wsetlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen, die nicht über das **_l** -Suffix verfügen, verwenden das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. die Versionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
 |`_tcsstr`|`strstr`|`_mbsstr`|`wcsstr`|
-|**k.A.**|**k.A.**|`_mbsstr_l`|**k.A.**|
+|**Nicht zutreffend**|**Nicht zutreffend**|`_mbsstr_l`|**Nicht zutreffend**|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -202,9 +202,9 @@ String to be searched:
 lazy found at position 36
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcspn, wcscspn, _mbscspn, _mbscspn_l](strcspn-wcscspn-mbscspn-mbscspn-l.md)<br/>
@@ -212,4 +212,4 @@ lazy found at position 36
 [strpbrk, wcspbrk, _mbspbrk, _mbspbrk_l](strpbrk-wcspbrk-mbspbrk-mbspbrk-l.md)<br/>
 [strrchr, wcsrchr, _mbsrchr, _mbsrchr_l](strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)<br/>
 [strspn, wcsspn, _mbsspn, _mbsspn_l](strspn-wcsspn-mbsspn-mbsspn-l.md)<br/>
-[basic_string::finden](../../standard-library/basic-string-class.md#find)<br/>
+[basic_string:: Find](../../standard-library/basic-string-class.md#find)<br/>

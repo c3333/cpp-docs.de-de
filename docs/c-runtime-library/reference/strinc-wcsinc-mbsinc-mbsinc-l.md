@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +46,12 @@ helpviewer_keywords:
 - _tcsinc function
 - tcsinc function
 ms.assetid: 54685943-8e2c-45e9-a559-2d94930dc6b4
-ms.openlocfilehash: 0cfbe857ec8bbcdec887d4594cee0bf2b66de380
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a53102f991ec7467fd74e1997f8d5b7419b15aa1
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81362909"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919987"
 ---
 # <a name="_strinc-_wcsinc-_mbsinc-_mbsinc_l"></a>_strinc, _wcsinc, _mbsinc, _mbsinc_l
 
@@ -82,7 +82,7 @@ unsigned char *_mbsinc_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Aktuellen*<br/>
+*Strömung*<br/>
 Zeichenzeiger.
 
 *locale*<br/>
@@ -90,20 +90,20 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Zeiger auf das Zeichen zurück, das unmittelbar auf *current*folgt.
+Jede dieser Routinen gibt einen Zeiger auf das Zeichen zurück, das unmittelbar auf den *aktuellen*folgt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mbsinc-Funktion** gibt einen Zeiger auf das erste Byte des Multibyte-Zeichens zurück, das unmittelbar auf *current*folgt. **_mbsinc** erkennt Multibyte-Zeichensequenzen gemäß der [Multibyte-Codepage,](../../c-runtime-library/code-pages.md) die derzeit verwendet wird. **_mbsinc_l** identisch ist, außer dass es stattdessen den Gebietsschemaparameter verwendet, der übergeben wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die **_mbsinc** -Funktion gibt einen Zeiger auf das erste Byte des multibytezeichens zurück, das unmittelbar auf den *aktuellen*folgt. **_mbsinc** erkennt multibytezeichensequenzen gemäß der [Multibytezeichen-Codepage](../../c-runtime-library/code-pages.md) , die zurzeit verwendet wird. **_mbsinc_l** ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Die in Tchar.h definierte generische Textfunktion **_tcsinc** **_mbsinc** zugeordnet, wenn **_MBCS** definiert wurde, oder **_wcsinc,** wenn **_UNICODE** definiert wurde. Andernfalls **werden _tcsinc** **_strinc zugeordnet.** **_strinc** und **_wcsinc** sind einbyte und breitstellige Versionen von **_mbsinc**. **_strinc** und **_wcsinc** werden nur für diese Zuordnung bereitgestellt und sollten nicht anderweitig verwendet werden. Weitere Informationen finden Sie unter [Verwenden von Zuordnungen für generischen Text](../../c-runtime-library/using-generic-text-mappings.md) und [Textzuordnungen für generischen Text](../../c-runtime-library/generic-text-mappings.md).
+Die in Tchar. h definierte generische Textfunktion **_tcsinc**wird **_mbsinc** zugeordnet, wenn **_MBCS** definiert wurde, oder um **_wcsinc** , wenn **_UNICODE** definiert wurde. Andernfalls wird **_tcsinc** **_strinc**zugeordnet. **_strinc** und **_wcsinc** sind Einzel Byte Zeichen-und breit Zeichen Versionen von **_mbsinc**. **_strinc** und **_wcsinc** werden nur für diese Zuordnung bereitgestellt und sollten andernfalls nicht verwendet werden. Weitere Informationen finden Sie unter [Verwenden von Zuordnungen für generischen Text](../../c-runtime-library/using-generic-text-mappings.md) und [Textzuordnungen für generischen Text](../../c-runtime-library/generic-text-mappings.md).
 
-Wenn *current* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt diese Funktion **EINVAL** zurück und setzt **errno** auf **EINVAL**.
+Wenn *Current* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt diese Funktion **EINVAL** zurück und legt **errno** auf **EINVAL**fest.
 
 > [!IMPORTANT]
 > Diese Funktionen sind möglicherweise für Pufferüberlaufrisiken anfällig. Pufferüberläufe können für Systemangriffe eingesetzt werden, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -116,9 +116,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_strdec, _wcsdec, _mbsdec, _mbsdec_l](strdec-wcsdec-mbsdec-mbsdec-l.md)<br/>
 [_strnextc, _wcsnextc, _mbsnextc, _mbsnextc_l](strnextc-wcsnextc-mbsnextc-mbsnextc-l.md)<br/>
 [_strninc, _wcsninc, _mbsninc, _mbsninc_l](strninc-wcsninc-mbsninc-mbsninc-l.md)<br/>

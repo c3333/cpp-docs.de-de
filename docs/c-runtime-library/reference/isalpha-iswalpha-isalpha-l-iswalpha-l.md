@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -44,12 +44,12 @@ helpviewer_keywords:
 - istalpha function
 - _istalpha function
 ms.assetid: ed6cc2be-c4b0-4475-87ac-bc06d8c23064
-ms.openlocfilehash: 187031adc0b22aff2c5418cd7e0f3e64075f1745
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: abce570aecc307efd4986fab78d45954d7a79588
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81343929"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919801"
 ---
 # <a name="isalpha-iswalpha-_isalpha_l-_iswalpha_l"></a>isalpha, iswalpha, _isalpha_l, _iswalpha_l
 
@@ -76,7 +76,7 @@ int _iswalpha_l(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
 *locale*<br/>
@@ -84,11 +84,11 @@ Das statt des aktuellen Gebietsschemas zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich Null zurück, wenn *c* eine bestimmte Darstellung eines alphabetischen Zeichens ist. **isalpha** gibt einen Wert ungleich Null zurück, wenn *c* innerhalb der Bereiche A - Z oder a - z liegt. **iswalpha** gibt einen Wert ungleich Null nur für breite Zeichen zurück, für die [iswupper](isupper-isupper-l-iswupper-iswupper-l.md) oder **iswlower** ungleich Null ist. d. h., für jedes breite Zeichen, das zu einem implementierungsdefinierten Satz gehört, für den keiner von **iswcntrl**, **iswdigit**, **iswpunct**oder **iswspace** ungleich Null ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Testbedingung nicht erfüllt.
+Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn *c* eine bestimmte Darstellung eines alphabetischen Zeichens ist. **isalpha** gibt einen Wert ungleich 0 (null) zurück, wenn *c* innerhalb der Bereiche a-z oder a-z liegt. **iswalpha** gibt einen Wert ungleich 0 (null) nur für breit Zeichen zurück, für die [iswupper](isupper-isupper-l-iswupper-iswupper-l.md) oder **iswlower** ungleich 0 (null) ist. Das heißt, für jedes breit Zeichen, bei dem es sich um einen von der Implementierung definierten Satz handelt, für den keine **iswcntrl**, **iswdigit**, **iswpunct**oder **iswspace** ungleich 0 (null) ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Test Bedingung nicht erfüllt.
 
-Die Versionen dieser Funktionen mit dem **suffix _l** verwenden den Gebietsschemaparameter, der anstelle des aktuellen Gebietsschemas übergeben wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **_l** -Suffix verwenden den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **isalpha** und **_isalpha_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich 0 bis 0xFF, einschließlich. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* nicht einer dieser Werte ist, werden die Funktionen eine Assertion aus.
+Das Verhalten von **isalpha** und **_isalpha_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich von 0 bis 0xFF (einschließlich) liegt. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -97,9 +97,9 @@ Das Verhalten von **isalpha** und **_isalpha_l** ist nicht definiert, wenn *c* n
 |**_istalpha**|**isalpha**|**_ismbcalpha**|**iswalpha**|
 |**_istalpha_l**|**_isalpha_l**|**_ismbcalpha_l**|**_iswalpha_l**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -112,8 +112,8 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

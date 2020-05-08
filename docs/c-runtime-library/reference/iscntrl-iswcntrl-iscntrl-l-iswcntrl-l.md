@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -41,12 +41,12 @@ helpviewer_keywords:
 - iswcntrl function
 - _istcntrl_l function
 ms.assetid: 616eebf9-aed4-49ba-ba2c-8677c8fe6fb5
-ms.openlocfilehash: d3760102ca07c883ac711c66994ff470cb46cf84
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 24267a663af1aa68099861bfec1b0e5c18aa83be
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81343872"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919747"
 ---
 # <a name="iscntrl-iswcntrl-_iscntrl_l-_iswcntrl_l"></a>iscntrl, iswcntrl, _iscntrl_l, _iswcntrl_l
 
@@ -73,7 +73,7 @@ int _iswcntrl_l(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu testende ganze Zahl
 
 *locale*<br/>
@@ -81,11 +81,11 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich Null zurück, wenn *c* eine bestimmte Darstellung eines Steuerelementzeichens ist. **iscntrl** gibt einen Wert ungleich Null zurück, wenn *c* ein Steuerzeichen ist (0x00 - 0x1F oder 0x7F). **iswcntrl** gibt einen Wert ungleich Null zurück, wenn *c* ein Steuerelement-Breitzeichen ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Testbedingung nicht erfüllt.
+Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn *c* eine bestimmte Darstellung eines Steuer Zeichens ist. **iscntrl** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein Steuerzeichen ist (0x00-0x1F oder 0x7F). **iswcntrl** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein Steuer breit Zeichen ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Test Bedingung nicht erfüllt.
 
-Die Versionen dieser Funktionen mit dem **suffix _l** verwenden den Gebietsschemaparameter, der anstelle des aktuellen Gebietsschemas übergeben wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **_l** -Suffix verwenden den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **iscntrl** und **_iscntrl_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich 0 bis 0xFF, einschließlich. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* nicht einer dieser Werte ist, werden die Funktionen eine Assertion aus.
+Das Verhalten von **iscntrl** und **_iscntrl_l** ist nicht definiert, wenn *c* nicht EOF ist, oder im Bereich von 0 bis 0xFF (einschließlich). Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -94,9 +94,9 @@ Das Verhalten von **iscntrl** und **_iscntrl_l** ist nicht definiert, wenn *c* n
 |**_istcntrl**|**iscntrl**|**iscntrl**|**iswcntrl**|
 |**_istcntrl_l**|**_iscntrl_l**|**_iscntrl_l**|**_iswcntrl_l**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -109,8 +109,8 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

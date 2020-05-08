@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +39,12 @@ helpviewer_keywords:
 - _mkdir function
 - _tmkdir function
 ms.assetid: 7f22d01d-63a5-4712-a6e7-d34878b2d840
-ms.openlocfilehash: 56e525dd765ff2594eebcfe9a0aed37670b12e3e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f4714e3e763b827772a7d2eb61ae2e14f0aece02
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338785"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919150"
 ---
 # <a name="_mkdir-_wmkdir"></a>_mkdir, _wmkdir
 
@@ -64,26 +64,26 @@ int _wmkdir(
 
 ### <a name="parameters"></a>Parameter
 
-*Dirname*<br/>
+*dirname*<br/>
 Der Pfad für ein neues Verzeichnis.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt den Wert 0 zurück, wenn das neue Verzeichnis erstellt wurde. Bei einem Fehler gibt die Funktion -1 zurück und setzt **errno** wie folgt.
+Jede dieser Funktionen gibt den Wert 0 zurück, wenn das neue Verzeichnis erstellt wurde. Bei einem Fehler gibt die Funktion-1 zurück und legt **errno** wie folgt fest.
 
-**EEXIST** Verzeichnis wurde nicht erstellt, da *dirname* der Name einer vorhandenen Datei, eines vorhandenen Verzeichnisses oder eines vorhandenen Geräts ist.
+**EEXIST** Das Verzeichnis wurde nicht erstellt, da *dirname* der Name einer vorhandenen Datei, eines Verzeichnisses oder eines Geräts ist.
 
 **ENOENT** Der Pfad wurde nicht gefunden.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mkdir-Funktion** erstellt ein neues Verzeichnis mit dem angegebenen *Dirname.* **_mkdir** kann nur ein neues Verzeichnis pro Anruf erstellen, sodass nur die letzte Komponente von *dirname* ein neues Verzeichnis benennen kann. **_mkdir** übersetzt keine Pfadtrennzeichen. Unter Windows NT sind sowohl der umgekehrte Schrägstrich (\\) als auch der Schrägstrich () gültige Pfadtrennzeichen in Zeichenfolgen in Laufzeitroutinen.
+Die **_mkdir** -Funktion erstellt ein neues Verzeichnis mit dem angegebenen *dirname.* **_mkdir** können pro Rückruf nur ein neues Verzeichnis erstellen, sodass nur die letzte Komponente von *dirname* ein neues Verzeichnis benennen kann. in **_mkdir** werden keine Pfad Trennzeichen übersetzt. Unter Windows NT sind sowohl der umgekehrte Schrägstrich (\\) als auch der Schrägstrich () gültige Pfadtrennzeichen in Zeichenfolgen in Laufzeitroutinen.
 
-**_wmkdir** ist eine breit **gefächerte**Version von _mkdir ; Das *dirname-Argument* für **_wmkdir** ist eine Zeichenfolge mit großen Zeichen. **_wmkdir** und **_mkdir** verhalten sich ansonsten gleich.
+**_wmkdir** ist eine breit Zeichen Version von **_mkdir**. Das *dirname* -Argument für **_wmkdir** ist eine Zeichenfolge mit breit Zeichen. **_wmkdir** und **_mkdir** Verhalten sich andernfalls identisch.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -145,7 +145,7 @@ Directory of C:\testtmp
 Directory '\testtmp' was successfully removed
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
 [_chdir, _wchdir](chdir-wchdir.md)<br/>

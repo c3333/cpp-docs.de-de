@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-environment-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +37,12 @@ helpviewer_keywords:
 - environment variables, creating
 - environment variables, modifying
 ms.assetid: fbf51225-a8da-4b9b-9d7c-0b84ef72df18
-ms.openlocfilehash: f0164feed05b409ba29ca713f11f4f3323dbaac3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ade4fe613a2fd57df67f58c496b62d7192354654
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338393"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918874"
 ---
 # <a name="_putenv_s-_wputenv_s"></a>_putenv_s, _wputenv_s
 
@@ -66,7 +66,7 @@ errno_t _wputenv_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Varname*<br/>
+*varname*<br/>
 Der Umgebungsvariablenname.
 
 *value_string*<br/>
@@ -78,18 +78,18 @@ Gibt 0 (null) zurück, wenn erfolgreich, oder einen Fehlercode.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Varname*|*value_string*|Rückgabewert|
+|*varname*|*value_string*|Rückgabewert|
 |------------|-------------|------------------|
-|**Null**|any|**Einval**|
-|any|**Null**|**Einval**|
+|**Normal**|any|**Eingabe**|
+|any|**Normal**|**Eingabe**|
 
-Wenn einer dieser Fehlerzustände auftritt, wird ein Handler für ungültige Parameter von diesen Funktionen aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EINVAL** zurück und setzen **errno** auf **EINVAL**.
+Wenn einer dieser Fehlerzustände auftritt, wird ein Handler für ungültige Parameter von diesen Funktionen aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " zurück und legen " **errno** " auf " **EINVAL**" fest.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_putenv_s-Funktion** fügt neue Umgebungsvariablen hinzu oder ändert die Werte vorhandener Umgebungsvariablen. Umgebungsvariablen definieren die Umgebung, in der ein Prozess ausgeführt wird (beispielsweise der Standardsuchpfad für die mit einem Programm zu verknüpfenden Bibliotheken). **_wputenv_s** ist eine breit **gefächerte**Version von _putenv_s ; Das *envstring-Argument* für **_wputenv_s** ist eine Zeichenfolge mit großen Zeichen.
+Die **_putenv_s** -Funktion fügt neue Umgebungsvariablen hinzu oder ändert die Werte vorhandener Umgebungsvariablen. Umgebungsvariablen definieren die Umgebung, in der ein Prozess ausgeführt wird (beispielsweise der Standardsuchpfad für die mit einem Programm zu verknüpfenden Bibliotheken). **_wputenv_s** ist eine breit Zeichen Version von **_putenv_s**. Das *envstring* -Argument für **_wputenv_s** ist eine Zeichenfolge mit breit Zeichen.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -97,16 +97,16 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tputenv_s**|**_putenv_s**|**_putenv_s**|**_wputenv_s**|
 
-*varname* ist der Name der Umgebungsvariablen, die hinzugefügt oder geändert werden soll, und *value_string* ist der Wert der Variablen. Wenn *varname* bereits Teil der Umgebung ist, wird sein Wert durch *value_string*ersetzt. Andernfalls werden die neue *varname-Variable* und ihre *value_string* der Umgebung hinzugefügt. Sie können eine Variable aus der Umgebung entfernen, indem Sie eine leere Zeichenfolge (d. h. "") für *value_string*angeben.
+*varname* ist der Name der Umgebungsvariablen, die hinzugefügt oder geändert werden soll, und *value_string* ist der Wert der Variablen. Wenn *varname* bereits Teil der Umgebung ist, wird sein Wert durch *value_string*ersetzt; Andernfalls werden die neue *varname* -Variable und Ihre *value_string* der Umgebung hinzugefügt. Sie können eine Variable aus der Umgebung entfernen, indem Sie eine leere Zeichenfolge (d. h. "") für *value_string*angeben.
 
-**_putenv_s** und **_wputenv_s** wirken sich nur auf die Umgebung aus, die lokal für den aktuellen Prozess ist. Sie können sie nicht verwenden, um die Umgebung auf Befehlsebene zu ändern. Diese Funktionen funktionieren nur bei Datenstrukturen, auf die die Laufzeitbibliothek zugreifen kann, aber nicht bei dem Umgebungssegment, das vom Betriebssystem für einen Prozess erstellt wurde. Wenn der aktuelle Prozess beendet wird, wird die Umgebung auf die Ebene des aufrufenden Prozesses zurückgesetzt (in den meisten Fällen die Betriebssystemebene). Die geänderte Umgebung kann jedoch an alle neuen Prozesse übergeben werden, die von **_spawn**, **_exec**oder **System**erstellt werden, und diese neuen Prozesse erhalten alle neuen Elemente, die von **_putenv_s** und **_wputenv_s**hinzugefügt werden.
+**_putenv_s** und **_wputenv_s** wirken sich nur auf die Umgebung aus, die für den aktuellen Prozess lokal ist. Sie können Sie nicht zum Ändern der Umgebung auf Befehls Ebene verwenden. Diese Funktionen funktionieren nur bei Datenstrukturen, auf die die Laufzeitbibliothek zugreifen kann, aber nicht bei dem Umgebungssegment, das vom Betriebssystem für einen Prozess erstellt wurde. Wenn der aktuelle Prozess beendet wird, wird die Umgebung auf die Ebene des aufrufenden Prozesses zurückgesetzt (in den meisten Fällen die Betriebssystemebene). Die geänderte Umgebung kann jedoch an alle neuen Prozesse geleitet werden, die von **_spawn**, **_exec**oder **System**erstellt werden, und diese neuen Prozesse erhalten alle neuen Elemente, die von **_putenv_s** und **_wputenv_s**hinzugefügt werden.
 
-Ändern Sie einen Umgebungseintrag nicht direkt; Verwenden Sie **stattdessen _putenv_s** oder **_wputenv_s,** um sie zu ändern. Insbesondere das direkte Freilassen von Elementen des **_environ[]** globalen Arrays kann dazu führen, dass ungültiger Speicher adressiert wird.
+Einen Umgebungs Eintrag nicht direkt ändern; Verwenden Sie stattdessen **_putenv_s** oder **_wputenv_s** , um Sie zu ändern. Insbesondere das direkte Freigeben von Elementen des globalen Arrays **_environ []** kann dazu führen, dass ein ungültiger Speicher adressiert wird.
 
-**getenv** und **_putenv_s** die globale Variable **_environ** verwenden, um auf die Umgebungstabelle zuzugreifen. **_wgetenv** und **_wputenv_s** **verwenden sie _wenviron**. **_putenv_s** und **_wputenv_s** können den Wert von **_environ** und **_wenviron**ändern und damit das *envp-Argument* in **main** und das **_wenvp-Argument** in **wmain**ungültig machen. Daher ist es sicherer, **_environ** oder **_wenviron** für den Zugriff auf die Umgebungsinformationen zu verwenden. Weitere Informationen zur Beziehung von **_putenv_s** und **_wputenv_s** zu globalen Variablen finden Sie unter [_environ, _wenviron](../../c-runtime-library/environ-wenviron.md).
+**getenv** und **_putenv_s** die globale Variable **_environ** verwenden, um auf die Umgebungs Tabelle zuzugreifen. **_wgetenv** und **_wputenv_s** **_wenviron**verwenden. **_putenv_s** und **_wputenv_s** können den Wert von **_environ** und **_wenviron**ändern und dadurch das Argument "-Argument" für " **Main** " *und das* **_wenvp** Argument für " **wmain**" ungültig machen. Daher ist es sicherer, **_environ** oder **_wenviron** zu verwenden, um auf die Umgebungs Informationen zuzugreifen. Weitere Informationen zur Beziehung zwischen **_putenv_s** und **_wputenv_s** zu globalen Variablen finden Sie unter [_environ, _wenviron](../../c-runtime-library/environ-wenviron.md).
 
 > [!NOTE]
-> Die **_putenv_s** und **_getenv_s** Funktionsfamilien sind nicht threadsicher. **_getenv_s** einen Zeichenfolgenzeiger zurückgeben, während **_putenv_s** die Zeichenfolge ändert, und dadurch zufällige Fehler verursachen. Stellen Sie sicher, dass Aufrufe dieser Funktionen synchronisiert sind.
+> Die **_putenv_s** -und **_getenv_s** Familien von Funktionen sind nicht Thread sicher. **_getenv_s** könnte einen Zeichen folgen Zeiger zurückgeben, während **_putenv_s** die Zeichenfolge ändert, was zu zufälligen Fehlern führen kann. Stellen Sie sicher, dass Aufrufe dieser Funktionen synchronisiert sind.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -119,10 +119,10 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 ## <a name="example"></a>Beispiel
 
-Ein Beispiel, das zeigt, wie **_putenv_s**verwendet wird, finden Sie unter [getenv_s, _wgetenv_s](getenv-s-wgetenv-s.md).
+Ein Beispiel für die Verwendung von **_putenv_s**finden Sie unter [getenv_s _wgetenv_s](getenv-s-wgetenv-s.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [getenv, _wgetenv](getenv-wgetenv.md)<br/>
 [_searchenv, _wsearchenv](searchenv-wsearchenv.md)<br/>

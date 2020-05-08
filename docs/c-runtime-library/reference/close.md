@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - close function
 - files [C++], closing
 ms.assetid: 4708a329-8acf-4cd9-b7b0-a952e1897247
-ms.openlocfilehash: 4d8b702a10624ae80629b4ce4644c428322500cb
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c642820bf1bc2e2afbd14e17832fb3fdb6f865b8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348646"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919855"
 ---
 # <a name="_close"></a>_close
 
@@ -49,22 +49,22 @@ int _close(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_close** gibt 0 zurück, wenn die Datei erfolgreich geschlossen wurde. Ein Rückgabewert von -1 gibt einen Fehler an.
+**_close** gibt 0 zurück, wenn die Datei erfolgreich geschlossen wurde. Der Rückgabewert-1 gibt einen Fehler an.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_close-Funktion** schließt die Datei, die *fd*zugeordnet ist.
+Die **_close** -Funktion schließt die mit *FD*verknüpfte Datei.
 
-Der Dateideskriptor und das zugrunde liegende Betriebssystem-Dateihandle werden geschlossen. Daher ist es nicht notwendig, **CloseHandle** aufzurufen, wenn die Datei ursprünglich mit der Win32-Funktion **CreateFile** geöffnet und mit **_open_osfhandle**in einen Dateideskriptor konvertiert wurde.
+Der Dateideskriptor und das zugrunde liegende Betriebssystem-Dateihandle werden geschlossen. Folglich ist es nicht notwendig, **CloseHandle** aufzurufen, wenn die Datei ursprünglich mit der **Win32-Funktion** "" in der Datei "" mit der Datei "" von " **_open_osfhandle**" in einen Dateideskriptor konvertiert wurde.
 
-Diese Funktion überprüft ihre Parameter. Wenn *fd* ein fehlerhafter Dateideskriptor ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben die Funktionen -1 zurück und **errno** wird auf **EBADF**gesetzt.
+Diese Funktion überprüft ihre Parameter. Wenn *FD* ein fehlerhafter Dateideskriptor ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück, und **errno** ist auf **EBADF**festgelegt.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -78,9 +78,9 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../..
 
 Siehe das Beispiel für [_open](open-wopen.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [_chsize](chsize.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [_dup, _dup2](dup-dup2.md)<br/>

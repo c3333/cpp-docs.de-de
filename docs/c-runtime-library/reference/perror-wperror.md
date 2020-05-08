@@ -17,7 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - _wperror function
 - perror function
 ms.assetid: 34fce792-16fd-4673-9849-cd88b54b6cd5
-ms.openlocfilehash: 0c50e77863b4b136ac59b6f79d8e529691032609
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 64b9abe6313cc13e1e20f8f66ba486cdeb3e4892
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338535"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919333"
 ---
 # <a name="perror-_wperror"></a>perror, _wperror
 
@@ -59,34 +59,34 @@ void _wperror(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Zu druckende Zeichenfolgennachricht.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **perror-Funktion** gibt eine Fehlermeldung an **stderr**aus. **_wperror** ist eine breitgefächerte Version von **_perror**; Das *Nachrichtenargument* für **_wperror** ist eine Zeichenfolge mit großen Zeichen. **_wperror** und **_perror** verhalten sich ansonsten gleich.
+Die **perror** -Funktion gibt eine Fehlermeldung an **stderr**aus. **_wperror** ist eine breit Zeichen Version von **_perror**. Das *Nachrichten* Argument für **_wperror** ist eine Zeichenfolge mit breit Zeichen. **_wperror** und **_perror** Verhalten sich andernfalls identisch.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|**_tperror**|**Perror**|**Perror**|**_wperror**|
+|**_tperror**|**perror**|**perror**|**_wperror**|
 
-*Die Nachricht* wird zuerst gedruckt, gefolgt von einem Doppelpunkt, dann von der Systemfehlermeldung für den letzten Bibliotheksaufruf, der den Fehler verursacht hat, und schließlich durch ein Zeilenumleinenzeichen. Wenn *die Nachricht* ein Nullzeiger oder ein Zeiger auf eine Nullzeichenfolge ist, druckt **perror** nur die Systemfehlermeldung.
+Zuerst wird die *Nachricht* gedruckt, gefolgt von einem Doppelpunkt, dann nach der System Fehlermeldung für den letzten Bibliotheks Befehl, der den Fehler erzeugt hat, und schließlich nach einem Zeilen vorzeilenzeichen. Wenn *Message* ein NULL-Zeiger oder ein Zeiger auf eine NULL-Zeichenfolge ist, druckt **perror** nur die System Fehlermeldung.
 
-Die Fehlernummer wird in der Variablen [errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) (in ERRNO.H definiert) gespeichert. Über die Variable [_sys_errlist](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) wird auf die Systemfehlermeldungen zugegriffen, die als Array von Meldungen nach Fehlernummern geordnet sind. **perror** druckt die entsprechende Fehlermeldung mit dem **errno-Wert** als Index für **_sys_errlist**. Der Wert der Variablen [_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) ist definiert als die maximale Anzahl von Elementen im **array _sys_errlist.**
+Die Fehlernummer wird in der Variablen [errno](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) (in ERRNO.H definiert) gespeichert. Über die Variable [_sys_errlist](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) wird auf die Systemfehlermeldungen zugegriffen, die als Array von Meldungen nach Fehlernummern geordnet sind. **perror** druckt die entsprechende Fehlermeldung mit dem **errno** -Wert als Index für **_sys_errlist**. Der Wert der Variablen [_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) die als maximale Anzahl von Elementen im **_sys_errlist** Array definiert ist.
 
-Um genaue Ergebnisse zu erhalten, rufen Sie **perror** sofort auf, nachdem eine Bibliotheksroutine mit einem Fehler zurückgegeben wurde. Andernfalls können nachfolgende Aufrufe den **Errno-Wert** überschreiben.
+Um genaue Ergebnisse zu erhalten, wird durch Aufrufen von **perror** sofort nach der Rückgabe einer Bibliotheks Routine mit einem Fehler aufgerufen. Andernfalls können nachfolgende Aufrufe den **errno** -Wert überschreiben.
 
-Im Windows-Betriebssystem einige **errno-Werte** in ERRNO aufgeführt. H sind unbenutzt. Diese Werte sind für die Verwendung des UNIX-Betriebssystems reserviert. Eine Liste der vom Windows-Betriebssystem verwendeten **Errnowerte** finden Sie [unter _doserrno, errno, _sys_errlist und _sys_nerr.](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) **perror** druckt eine leere Zeichenfolge für einen **Errno-Wert,** der von diesen Plattformen nicht verwendet wird.
+Im Windows-Betriebssystem gibt es einige **errno** -Werte, die in errno aufgeführt sind. H wird nicht verwendet. Diese Werte sind für die Verwendung des UNIX-Betriebssystems reserviert. Eine Auflistung von **errno** -Werten, die vom Windows-Betriebssystem verwendet werden, finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) . **perror** gibt eine leere Zeichenfolge für einen **errno** -Wert aus, der nicht von diesen Plattformen verwendet wird.
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**Perror**|\<stdio.h > oder \<stdlib.h >|
+|**perror**|\<stdio.h > oder \<stdlib.h >|
 |**_wperror**|\<stdio.h> oder \<wchar.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
@@ -143,9 +143,9 @@ strerror says open failed: No such file or directory
 _strerror says open failed: No such file or directory
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [clearerr](clearerr.md)<br/>
 [ferror](ferror.md)<br/>
 [strerror, _strerror, _wcserror, \__wcserror](strerror-strerror-wcserror-wcserror.md)<br/>

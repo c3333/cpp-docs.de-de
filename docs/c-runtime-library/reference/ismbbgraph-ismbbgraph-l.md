@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - _ismbbgraph function
 - ismbbgraph function
 ms.assetid: b60db718-134f-4796-acc1-592d0b9efbb7
-ms.openlocfilehash: 28e52c564bb554df1bd2228691034db5a13a2300
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 60b8a974ab27878a379e3a9ad2596a23ed31757f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81343726"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909504"
 ---
 # <a name="_ismbbgraph-_ismbbgraph_l"></a>_ismbbgraph, _ismbbgraph_l
 
@@ -59,7 +59,7 @@ int _ismbbgraph_l (
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Die zu testende ganze Zahl.
 
 *locale*<br/>
@@ -71,11 +71,11 @@ Gibt einen Wert ungleich 0 (null) zurück, wenn diese Bedingung zutrifft. Der Au
 
 `isctype(c, ( _PUNCT | _UPPER | _LOWER | _DIGIT )) || _ismbbkprint(c)`
 
-ist ungleich Null für *c*, oder 0, wenn dies nicht der Fall ist. **_ismbbgraph** verwendet das aktuelle Gebietsschema für jedes gebietsschemaabhängige Verhalten. **_ismbbgraph_l** ist identisch, außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+ist für *c*ungleich 0 (null), oder 0, wenn dies nicht der Fall ist. **_ismbbgraph** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_ismbbgraph_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -90,7 +90,7 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../..
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Byteklassifizierung](../../c-runtime-library/byte-classification.md)<br/>
 [_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - streams, testing for errors
 - errors [C++], testing for stream
 ms.assetid: 528a34bc-f2aa-4c3f-b89a-5b148e6864f7
-ms.openlocfilehash: e424ffe3f113e50e318d9198bd5f06aaec96852a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8a5e0bfac2069ed016253de4276e772ea7912605
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347295"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920154"
 ---
 # <a name="ferror"></a>ferror
 
@@ -49,20 +49,20 @@ int ferror(
 
 ### <a name="parameters"></a>Parameter
 
-*Stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn beim *Stream*kein Fehler aufgetreten ist, gibt **Ferror** 0 zurück. Andernfalls gibt es einen Wert ungleich 0 (null) zurück. Wenn Stream **NULL**ist, ruft **ferror** den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt 0 zurück.
+Wenn im *Stream*kein Fehler aufgetreten ist, gibt **ferror** 0 zurück. Andernfalls gibt es einen Wert ungleich 0 (null) zurück. Wenn der Stream **null**ist, ruft **ferror** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt 0 zurück.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **Ferrorroutine** (sowohl als Funktion als auch als Makro implementiert) testet einen Lese- oder Schreibfehler in der Datei, die dem *Stream*zugeordnet ist. Wenn ein Fehler aufgetreten ist, bleibt die Fehleranzeige für den Stream so lange eingestellt, bis der Stream geschlossen oder neu gewickelt wird oder bis **Clearerr** gegen ihn aufgerufen wird.
+Die **ferror** -Routine (sowohl als Funktion als auch als Makro implementiert) testet auf einen Lese-oder Schreibfehler in der Datei, die dem *Stream*zugeordnet ist. Wenn ein Fehler aufgetreten ist, bleibt der Fehler Indikator für den Stream so lange festgelegt, bis der Stream geschlossen oder reaktiviert wird, oder bis **clearerr** für ihn aufgerufen wird.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -76,7 +76,7 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Sehen Sie sich das Beispiel für [feof](feof.md) an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Fehlerbehandlung](../../c-runtime-library/error-handling-crt.md)<br/>
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
