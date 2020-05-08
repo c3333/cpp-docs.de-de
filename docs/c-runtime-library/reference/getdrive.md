@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +30,12 @@ helpviewer_keywords:
 - disk drives
 - _getdrive function
 ms.assetid: e40631a0-8f1a-4897-90ac-e1037ff30bca
-ms.openlocfilehash: 239bad8ef492396d713d81611e8d4c00da1697af
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c9c30fa288469d2382b3923e50f0486d6e190f17
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81344337"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913767"
 ---
 # <a name="_getdrive"></a>_getdrive
 
@@ -52,11 +52,11 @@ int _getdrive( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt das aktuelle (Standard-)Laufwerk zurück (1 = A, 2 = B usw.). Ein Rückgabewert von Null bedeutet, dass der aktuelle Pfad nicht mit einem Buchstabenlaufwerknamen beginnt, z. B. mit einem UNC-Pfad. Oder es bedeutet, dass eine interne Pufferzuweisung fehlgeschlagen ist. Wenn eine interne `errno` Zuordnung fehlschlägt, wird auf ENOMEM gesetzt.
+Gibt das aktuelle (Standard-)Laufwerk zurück (1 = A, 2 = B usw.). Der Rückgabewert 0 (null) bedeutet, dass der aktuelle Pfad nicht mit dem Namen eines Buch Laufwerks, z. b. einem UNC-Pfad, beginnt. Oder es bedeutet, dass eine interne Puffer Zuordnung fehlgeschlagen ist. Wenn eine interne Zuordnung fehlschlägt `errno` , wird auf ENOMEM festgelegt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -116,7 +116,7 @@ F: (Current directory is F:\)
 G: (Current directory is G:\)
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
 [_chdrive](chdrive.md)<br/>

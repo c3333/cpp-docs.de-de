@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,16 +31,16 @@ helpviewer_keywords:
 - disk size
 - getdiskfree function
 ms.assetid: 47a3f6cf-4816-452a-8f3d-1c3ae02a0f2a
-ms.openlocfilehash: 095a272e1dd85c1b61e1970a1b881737acbb739d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f94e8ecd314ed55d8519363d80dda57f661f18e5
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81344318"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913817"
 ---
 # <a name="_getdiskfree"></a>_getdiskfree
 
-Verwendet Informationen zu einem Laufwerk, um eine **_diskfree_t** Struktur aufzufüllen.
+Verwendet Informationen über ein Laufwerk, um eine **_diskfree_t** Struktur aufzufüllen.
 
 > [!IMPORTANT]
 > Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
@@ -56,19 +56,19 @@ unsigned _getdiskfree(
 
 ### <a name="parameters"></a>Parameter
 
-*Laufwerk*<br/>
+*Antrie*<br/>
 Das Laufwerk, zu dem Sie Informationen abrufen möchten.
 
-*Driveinfo*<br/>
-Eine **_diskfree_t** Struktur, die mit Informationen über das Laufwerk gefüllt wird.
+*DriveInfo*<br/>
+Eine **_diskfree_t** Struktur, die mit Informationen über das Laufwerk aufgefüllt wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn die Funktion erfolgreich ist, ist der Rückgabewert „0“. Wenn die Funktion fehlerhaft ist, wird der Fehlercode als Rückgabewert ausgegeben. Der Wert **errno** wird für alle Fehler festgelegt, die vom Betriebssystem zurückgegeben werden. Weitere Informationen zu Fehlerbedingungen, die von **errno**angezeigt werden, finden Sie unter [errno Constants](../../c-runtime-library/errno-constants.md).
+Wenn die Funktion erfolgreich ist, ist der Rückgabewert „0“. Wenn die Funktion fehlerhaft ist, wird der Fehlercode als Rückgabewert ausgegeben. Der Wert **errno** wird für alle Fehler festgelegt, die vom Betriebssystem zurückgegeben werden. Weitere Informationen zu Fehlerzuständen, die von **errno**angegeben werden, finden Sie unter [Errno-Konstanten](../../c-runtime-library/errno-constants.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_diskfree_t** Struktur ist in Direct.h definiert.
+Die **_diskfree_t** -Struktur ist in Direct. h definiert.
 
 ```C
 struct _diskfree_t {
@@ -79,9 +79,9 @@ struct _diskfree_t {
 };
 ```
 
-Diese Funktion überprüft ihre Parameter. Wenn der *Driveinfo-Zeiger* **NULL** ist oder *das Laufwerk* ein ungültiges Laufwerk angibt, ruft diese Funktion einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **EINVAL** zurück und setzt **errno** auf **EINVAL**. Der gültige Laufwerksbereich liegt zwischen 0 und 26. Ein *Laufwerkwert* von 0 gibt das aktuelle Laufwerk an. Danach werden Zahlen Buchstaben des englischen Alphabets zugeordnet, so dass 1 Laufwerk A, 3 bedeutet Laufwerk C usw.
+Diese Funktion überprüft ihre Parameter. Wenn der *driveingefo* -Zeiger **null** ist oder ein *Laufwerk* ein ungültiges Laufwerk angibt, ruft diese Funktion einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **EINVAL** zurück und legt **errno** auf **EINVAL**fest. Der gültige Laufwerksbereich liegt zwischen 0 und 26. Der *Laufwerks* Wert 0 gibt das aktuelle Laufwerk an. Anschließend werden Zahlen Buchstaben des englischen Alphabets zugeordnet, d. b. 1 gibt Laufwerk a, 3 das Laufwerk C an usw.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -193,6 +193,6 @@ void utoiRightJustified(TCHAR* szLeft, TCHAR* szRight, unsigned uVal) {
 ======================================================================
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>

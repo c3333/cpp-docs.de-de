@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - _cabs function
 - calculating absolute values
 ms.assetid: fea292ee-1a39-4a0a-b416-4a189346ff26
-ms.openlocfilehash: e77e1811cb6f002c06e514b5f737b8a92ea84282
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6e769d2caf65ef3c084bcb6add701f78b03a1b17
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333689"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913352"
 ---
 # <a name="_cabs"></a>_cabs
 
@@ -50,18 +50,18 @@ double _cabs(
 
 ### <a name="parameters"></a>Parameter
 
-*Z*<br/>
+*z*<br/>
 Komplexe Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_cabs** gibt den absoluten Wert seines Arguments zurück, wenn er erfolgreich ist. Bei Überlauf **gibt _cabs** **HUGE_VAL** zurück und setzt **errno** auf **ERANGE**. Sie können die Fehlerbehandlung mit [_matherr](matherr.md) ändern.
+**_cabs** gibt bei erfolgreicher Ausführung den absoluten Wert des Arguments zurück. Bei einem Überlauf **_cabs** gibt _cabs **HUGE_VAL** zurück und legt **errno** auf **ERANGE**fest. Sie können die Fehlerbehandlung mit [_matherr](matherr.md) ändern.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_cabs-Funktion** berechnet den absoluten Wert einer komplexen Zahl, die eine Struktur vom Typ [_complex](../../c-runtime-library/standard-types.md)sein muss. Die Struktur *z* besteht aus einer realen Komponente *x* und einer imaginären Komponente *y*. Ein Aufruf von **_cabs** erzeugt einen Wert, der dem Wert des Ausdrucks `sqrt( z.x * z.x + z.y * z.y )`entspricht.
+Die **_cabs** -Funktion berechnet den absoluten Wert einer komplexen Zahl, die eine Struktur vom Typ [_complex](../../c-runtime-library/standard-types.md)sein muss. Die Struktur *z* besteht aus einer echten Komponente *x* und einer imaginären Komponente *y*. Ein **_cabs** -Aufrufe erzeugt einen Wert, der dem des Ausdrucks `sqrt( z.x * z.x + z.y * z.y )`entspricht.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -96,7 +96,7 @@ int main( void )
 The absolute value of 3.000000 + 4.000000i is 5.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [abs, labs, llabs, _abs64](abs-labs-llabs-abs64.md)<br/>

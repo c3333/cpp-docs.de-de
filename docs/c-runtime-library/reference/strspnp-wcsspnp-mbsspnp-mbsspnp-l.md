@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -48,12 +48,12 @@ helpviewer_keywords:
 - _tcsspnp function
 - tcsspnp function
 ms.assetid: 1ce18100-2edd-4c3b-af8b-53f204d80233
-ms.openlocfilehash: c45fc42fb9edce1b82b0910f8aae81d4058d5974
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 16c56f95fc89c1bb7b34c82cdf19c406b61c5a7e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317026"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911049"
 ---
 # <a name="_strspnp-_wcsspnp-_mbsspnp-_mbsspnp_l"></a>_strspnp, _wcsspnp, _mbsspnp, _mbsspnp_l
 
@@ -86,10 +86,10 @@ unsigned char *_mbsspnp_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Zu suchende mit NULL endende Zeichenfolge.
 
-*Charset*<br/>
+*charset*<br/>
 Mit NULL endender Zeichensatz.
 
 *locale*<br/>
@@ -97,15 +97,15 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_strspnp**, **_wcsspnp**und **_mbsspnp** einen Zeiger auf das erste Zeichen in *str* zurückgeben, das nicht zum Zeichensatz in *charset*gehört. Jede dieser Funktionen gibt **NULL** zurück, wenn *str* vollständig aus Zeichen aus *charset*besteht. Für diese Routinen ist kein Rückgabewert zur Anzeige eines Fehlers reserviert.
+**_strspnp**, **_wcsspnp**und **_mbsspnp** geben einen Zeiger auf das erste Zeichen in *Str* zurück, das nicht zum Zeichensatz in *CharSet*gehört. Jede dieser Funktionen gibt **null** zurück, wenn *Str* vollständig aus Zeichen aus *CharSet*besteht. Für diese Routinen ist kein Rückgabewert zur Anzeige eines Fehlers reserviert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_mbsspnp-Funktion** gibt einen Zeiger auf das Multibyte-Zeichen zurück, das das erste Zeichen in *str* ist, das nicht zum Zeichensatz in *charset*gehört. **_mbsspnp** erkennt Multibyte-Zeichen-Sequenzen entsprechend der derzeit genutzten [Multibyte-Codepage.](../../c-runtime-library/code-pages.md) Die Suche umfasst keine abschließenden Nullzeichen.
+Die **_mbsspnp** -Funktion gibt einen Zeiger auf das Multibytezeichen zurück, das das erste Zeichen in *Str* ist, das nicht zum Zeichensatz in *CharSet*gehört. **_mbsspnp** erkennt multibytezeichensequenzen gemäß der derzeit verwendeten [Multibytezeichen-Codepage](../../c-runtime-library/code-pages.md) . Die Suche umfasst keine abschließenden Nullzeichen.
 
-Wenn *str* oder *charset* ein NULL-Zeiger ist, ruft diese Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **NULL** zurück und setzt **errno** auf **EINVAL**.
+Wenn entweder *Str* oder *CharSet* ein NULL-Zeiger ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **null** zurück und legt **errno** auf **EINVAL**fest.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -113,9 +113,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tcsspnp**|**_strspnp**|**_mbsspnp**|**_wcsspnp**|
 
-**_strspnp** und **_wcsspnp** sind ein byte Und breit-zeichen-Versionen von **_mbsspnp**. **_strspnp** und **_wcsspnp** verhalten sich ähnlich wie **_mbsspnp** anders; sie werden nur für diese Zuordnung bereitgestellt und sollten aus keinem anderen Grund verwendet werden. Weitere Informationen finden Sie unter [Verwenden von Zuordnungen für generischen Text](../../c-runtime-library/using-generic-text-mappings.md) und [Textzuordnungen für generischen Text](../../c-runtime-library/generic-text-mappings.md).
+**_strspnp** und **_wcsspnp** sind Einzel Byte Zeichen-und breit Zeichen Versionen von **_mbsspnp**. , **_strspnp** und **_wcsspnp** identisch mit **_mbsspnp** Verhalten; andernfalls. Sie werden nur für diese Zuordnung bereitgestellt und sollten nicht aus anderen Gründen verwendet werden. Weitere Informationen finden Sie unter [Verwenden von Zuordnungen für generischen Text](../../c-runtime-library/using-generic-text-mappings.md) und [Textzuordnungen für generischen Text](../../c-runtime-library/generic-text-mappings.md).
 
-**_mbsspnp_l** identisch ist, außer dass stattdessen der übergebene Gebietsschemaparameter verwendet wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_mbsspnp_l** ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -151,7 +151,7 @@ abbage
 
 ## <a name="see-also"></a>Siehe auch
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strspn, wcsspn, _mbsspn, _mbsspn_l](strspn-wcsspn-mbsspn-mbsspn-l.md)<br/>

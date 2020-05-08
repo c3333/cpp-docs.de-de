@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +37,12 @@ helpviewer_keywords:
 - log1pf function
 - log1pl function
 ms.assetid: a40d965d-b4f6-42f4-ba27-2395546f7c12
-ms.openlocfilehash: b4e077f5b806dbe38ed4a4f4e8eef0259170cb7e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 21bba72b204f975b806e43cdc6d36d8efa173b9b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341810"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911428"
 ---
 # <a name="log1p-log1pf-log1pl"></a>log1p, log1pf, log1pl
 
@@ -74,12 +74,12 @@ long double log1pl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Das Gleitkommaargument.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, gibt das natürliche (base-*e*) Protokoll von (*x* + 1) zurück.
+Bei erfolgreicher Ausführung wird das natürliche Protokoll (Base-*e*) von (*x* + 1) zurückgegeben.
 
 Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
@@ -87,24 +87,24 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 |-----------|------------|-------------------|-----------|
 |+inf|+inf|||
 |Abbrüche|Identisch mit der Eingabe|UNDERFLOW||
-|€0|Identisch mit der Eingabe|||
+|± 0|Identisch mit der Eingabe|||
 |-1|-inf|DIVBYZERO|ERANGE|
 |< -1|nan|INVALID|EDOM|
 |-inf|nan|INVALID|EDOM|
-|€SNaN|Identisch mit der Eingabe|INVALID||
-|QNaN, unbestimmt|Identisch mit der Eingabe|||
+|± Snan|Identisch mit der Eingabe|INVALID||
+|± QNAN, unbegrenzt|Identisch mit der Eingabe|||
 
-Der **errno-Wert** wird auf ERANGE gesetzt, wenn *x* = -1. Der **errno-Wert** wird auf **EDOM** gesetzt, wenn *x* < -1.
+Der **errno** -Wert ist auf ERANGE festgelegt, wenn *x* =-1. Der **errno** -Wert ist auf **Edom** festgelegt, wenn *x* <-1.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **log1p-Funktionen** sind möglicherweise `log(x + 1)` genauer als bei Verwendung von *x* in der Nähe von 0.
+Die **log1p** -Funktionen sind möglicherweise präziser als `log(x + 1)` die Verwendung von, wenn *x* nahe 0 (null) ist.
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **log1p** aufrufen, die **float** und **lange** **doppelte** Typen aufnehmen und zurückgeben. In einem C-Programm nimmt **log1p** immer eine **doppelte**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **log1p** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **log1p** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Wenn *x* eine natürliche Zahl ist, gibt diese Funktion den Logarithmus des Faktors von (*x* - 1) zurück.
+Wenn *x* eine natürliche Zahl ist, gibt diese Funktion den Logarithmus der Fakultät von (*x* -1) zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -114,7 +114,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [log2, log2f, log2l](log2-log2f-log2l.md)<br/>

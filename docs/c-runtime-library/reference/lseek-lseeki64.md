@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - file pointers [C++], moving
 - seek file pointers
 ms.assetid: aba8a768-d40e-48c3-b38e-473dbd782f93
-ms.openlocfilehash: d35b3db157d4f33e3a8490c6620a08000ff090f5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b99793c7d3f16eceec20c90f29824bca8321fb12
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341615"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911305"
 ---
 # <a name="_lseek-_lseeki64"></a>_lseek, _lseeki64
 
@@ -63,34 +63,34 @@ __int64 _lseeki64(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf eine geöffnete Datei verweist.
 
 *offset*<br/>
 Anzahl von Bytes von *origin*.
 
-*Ursprung*<br/>
+*Entstehungs*<br/>
 Ursprüngliche Position
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_lseek** gibt den Offset der neuen Position vom Anfang der Datei in Bytes zurück. **_lseeki64** gibt den Offset in einer 64-Bit-Ganzzahl zurück. Die Funktion gibt -1L zurück, um einen Fehler anzuzeigen. Wenn ein ungültiger Parameter übergeben wird, z.B. ein fehlerhafter Dateideskriptor, oder der Wert für *origin* oder die von *offset* festgelegte Position vor dem Anfang der Datei ungültig ist, wird der Handler für ungültige Parameter aufgerufen, so wie unter [Parameter Validation (Parametervalidierung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EBADF** und geben -1L zurück. Auf Geräten, die über keine Suchfunktion verfügen (z.B. Terminals oder Drucker), ist der Rückgabewert undefiniert.
+**_lseek** gibt den Offset der neuen Position ab dem Anfang der Datei in Bytes zurück. **_lseeki64** gibt den Offset in einer 64-Bit-Ganzzahl zurück. Die Funktion gibt "-1L" zurück, um einen Fehler anzugeben. Wenn ein ungültiger Parameter übergeben wird, z.B. ein fehlerhafter Dateideskriptor, oder der Wert für *origin* oder die von *offset* festgelegte Position vor dem Anfang der Datei ungültig ist, wird der Handler für ungültige Parameter aufgerufen, so wie unter [Parameter Validation (Parametervalidierung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EBADF** fest und geben "-1L" zurück. Auf Geräten, die über keine Suchfunktion verfügen (z.B. Terminals oder Drucker), ist der Rückgabewert undefiniert.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_lseek-Funktion** verschiebt den Dateizeiger, der fd zugeordnet *ist,* an eine neue Position, die *Versatzbytes* vom *Ursprung*ist. Der nächste Vorgang für die Datei tritt am neuen Speicherort auf. Das Argument *origin* muss Teil der folgenden Konstante sein, die allesamt in „Stdio.h“ definiert sind.
+Die **_lseek** -Funktion verschiebt den Dateizeiger, der mit *FD* verknüpft ist, an einen neuen Speicherort, der aus dem *Ursprung* *Offset* Bytes ist. Der nächste Vorgang für die Datei tritt am neuen Speicherort auf. Das Argument *origin* muss Teil der folgenden Konstante sein, die allesamt in „Stdio.h“ definiert sind.
 
-|*Ursprungswert*||
+|*Ursprungs* Wert||
 |-|-|
 | **SEEK_SET** | Anfang der Datei |
 | **SEEK_CUR** | Aktuelle Position des Dateizeigers |
 | **SEEK_END** | Ende der Datei |
 
-Sie können **_lseek** verwenden, um den Zeiger an einer beliebigen Stelle in einer Datei oder über das Ende der Datei hinaus neu zu positionieren.
+Sie können **_lseek** verwenden, um den Zeiger an einer beliebigen Stelle in einer Datei oder hinter dem Ende der Datei neu zu positionieren.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -177,6 +177,6 @@ Position for end of file seek = 57
 
 ## <a name="see-also"></a>Siehe auch
 
-[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [fseek, _fseeki64](fseek-fseeki64.md)<br/>
 [_tell, _telli64](tell-telli64.md)<br/>
