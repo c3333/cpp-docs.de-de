@@ -1,6 +1,6 @@
 ---
 title: Veraltete Funktionen
-description: Listet die veralteten Funktionen auf, die veraltet und aus der Microsoft C-Laufzeitbibliothek (CRT) entfernt wurden.
+description: Listet die veralteten Funktionen auf, die veraltet sind und aus der Microsoft C-Lauf Zeit Bibliothek (CRT) entfernt wurden.
 ms.date: 4/2/2020
 api_name:
 - _beep
@@ -36,7 +36,7 @@ api_location:
 - api-ms-win-crt-runtime-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - api-ms-win-crt-time-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -65,16 +65,16 @@ helpviewer_keywords:
 - _sleep function
 - _seterrormode function
 ms.assetid: 8e14c2d4-1481-4240-8586-47eb43db02b0
-ms.openlocfilehash: 5c3ebd9ff3533439cde2f1b46d100976b18e02c9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b8a094294abba46ae78e9d3529ccf3a7b0a31f39
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350994"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919893"
 ---
 # <a name="obsolete-functions"></a>Veraltete Funktionen
 
-Bestimmte Bibliotheksfunktionen sind veraltet, und es stehen äquivalente neuere Funktionen zur Verfügung. Es wird empfohlen, diese Funktionen auf die aktualisierten Versionen umzuändern. Andere veraltete Versionen wurden aus der CRT entfernt. In diesem Artikel werden die Funktionen aufgeführt, die als veraltet veraltet und die In einer bestimmten Version von Visual Studio entfernten Funktionen veraltet sind.
+Bestimmte Bibliotheksfunktionen sind veraltet, und es stehen äquivalente neuere Funktionen zur Verfügung. Es wird empfohlen, diese Funktionen in die aktualisierten Versionen zu ändern. Andere veraltete Versionen wurden aus der CRT entfernt. In diesem Artikel werden die als veraltet markierten Funktionen und die in einer bestimmten Version von Visual Studio entfernten Funktionen aufgelistet.
 
 ## <a name="deprecated-as-obsolete-in-visual-studio-2015"></a>In Visual Studio 2015 als veraltet eingestuft
 
@@ -99,8 +99,8 @@ Bestimmte Bibliotheksfunktionen sind veraltet, und es stehen äquivalente neuere
 |[_get_output_format](../c-runtime-library/get-output-format.md)|Keine|
 |[_heapadd](../c-runtime-library/heapadd.md)|Keine|
 |[_heapset](../c-runtime-library/heapset.md)|Keine|
-|[inp, inpw, _inp, _inpw, _inpd](../c-runtime-library/inp-inpw-inpd.md)|Keine|
-|[outp, outpw, _outp, _outpw, _outpd](../c-runtime-library/outp-outpw-outpd.md)|Keine|
+|[INP, inpw, _inp _inpw, _inpd](../c-runtime-library/inp-inpw-inpd.md)|Keine|
+|[outp, outpw, _outp _outpw, _outpd](../c-runtime-library/outp-outpw-outpd.md)|Keine|
 |[_set_output_format](../c-runtime-library/set-output-format.md)|Keine|
 
 ## <a name="removed-from-the-crt-in-earlier-versions-of-visual-studio"></a>Aus der CRT in früheren Versionen von Visual Studio entfernt

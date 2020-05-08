@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - get_timezone function
 - _get_timezone function
 ms.assetid: 30ab0838-0ae9-4a2f-bfe6-a49ee443b21e
-ms.openlocfilehash: 94dfae1aaaddf9c545af4309d3ddc62a0bcb33f6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 28838825ab7a15f312f5f75a8ad9166926979690
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81344904"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918498"
 ---
 # <a name="_get_timezone"></a>_get_timezone
 
@@ -55,15 +55,15 @@ Der Unterschied in Sekunden zwischen UTC und Ortszeit.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Null, wenn erfolgreich oder ein **Errno-Wert,** wenn ein Fehler auftritt.
+NULL, wenn erfolgreich, oder ein **errno** -Wert, wenn ein Fehler auftritt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_get_timezone-Funktion** ruft den Unterschied in Sekunden zwischen UTC und Ortszeit als ganzzahlige Abruf. Der Standardwert beträgt 28.800 Sekunden für Pacific Standard Time (acht Stunden nach UTC).
+Die **_get_timezone** -Funktion Ruft den Unterschied in Sekunden zwischen UTC und Ortszeit als Ganzzahl ab. Der Standardwert beträgt 28.800 Sekunden für Pacific Standard Time (acht Stunden nach UTC).
 
-Wenn *Sekunden* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt **EINVAL**zurück.
+Wenn *Sekunden* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion " **errno** " auf " **EINVAL** " fest und gibt " **EINVAL**" zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -73,7 +73,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)<br/>

@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - remainderl
 - remainder
 ms.assetid: 5f721fb3-8b78-4597-9bc0-ca9bcd1f1d0e
-ms.openlocfilehash: 4b70d3175a125d72ff67710c83899c44dbf72015
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6b2a1a94fa39f9e9474f7bc3da3150bf4134d35f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81332866"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917850"
 ---
 # <a name="remainder-remainderf-remainderl"></a>remainder, remainderf, remainderl
 
@@ -60,29 +60,29 @@ long double remainder( long double x, long double y ); /* C++ only */
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der Zähler.
 
-*y*<br/>
+*Teenie*<br/>
 Der Nenner.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der Gleitkommarest von *x* / *y*. Wenn der Wert von *y* 0,0 ist, gibt der **Rest** einen leisen NaN zurück. Informationen zur Darstellung eines ruhigen NaN durch die **printf-Familie** finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
+Der Gleit Komma Rest von *x* / *y*. Wenn der Wert von *y* 0,0 ist, gibt **Rest** einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **Restfunktionen** berechnen den Gleitkommarest *r* von *x* / *y* so, dass *x* = *n* \* *y* + *r*, wobei *n*die ganze Zahl ist, die dem Wert *x* / *y* am nächsten ist, und *n*auch dann, wenn &#124; *n* - *x* / *y* &#124; = 1/2 ist. Wenn *r* = 0, *r* hat das gleiche Zeichen wie *x*.
+Die **Rest** -Funktionen berechnen den Gleit Komma Rest *r* von *x* / *y* , d. h. *x* = *n* \* *y* + *r*, wobei *n*die Ganzzahl ist, die dem Wert am nächsten liegt, bis zu *x* / *y* , und *n*ist auch immer, wenn &#124; *n* - *x* / *y* &#124; = 1/2. Wenn *r* = 0 ist, hat *r* das gleiche Vorzeichen wie *x*.
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Resten** aufrufen, die **Float-** oder **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt **der Rest** immer zwei **doppelte** Argumente und gibt eine **doppelte**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Restwerten** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Rest** immer zwei **doppelte** Argumente an und gibt einen **Double**-Wert zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------|-|
-|**Rest**, **restderf**, **rest**|\<math.h>|\<cmath> oder \<math.h>|
+|**Restwert, Restwert, Restwert** **remainderf** **remainderl**|\<math.h>|\<cmath> oder \<math.h>|
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -108,7 +108,7 @@ int main( void )
 The remainder of -10.00 / 3.00 is -1.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldiv, lldiv](ldiv-lldiv.md)<br/>

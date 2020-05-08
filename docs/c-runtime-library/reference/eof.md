@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +31,12 @@ helpviewer_keywords:
 - testing, for end-of-file
 - end of file
 ms.assetid: 265703f4-d07e-4005-abf3-b1d0cdd9e0b0
-ms.openlocfilehash: 3218969c603e771ee6d2cdbf9baeed1728934be6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5d00be1da0f329c43f1b6ea0f912ede74b307bbb
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347931"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915054"
 ---
 # <a name="_eof"></a>_eof
 
@@ -52,18 +52,18 @@ int _eof(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_eof** gibt 1 zurück, wenn die aktuelle Position das Ende der Datei ist, oder 0, wenn dies nicht der Fall ist. Ein Rückgabewert von -1 gibt einen Fehler an. In diesem Fall wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EBADF**gesetzt, was auf einen ungültigen Dateideskriptor hinweist.
+**_eof** gibt 1 zurück, wenn die aktuelle Position das Dateiende ist, oder 0, wenn dies nicht der Fall ist. Der Rückgabewert-1 gibt einen Fehler an. in diesem Fall wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EBADF**festgelegt, wodurch ein ungültiger Dateideskriptor angegeben wird.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_eof-Funktion** bestimmt, ob das Ende der Datei, die *fd* zugeordnet ist, erreicht wurde.
+Die **_eof** -Funktion bestimmt, ob das Ende der mit *FD* verknüpften Datei erreicht wurde.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -128,7 +128,7 @@ Number of bytes read = 29
 ## <a name="see-also"></a>Siehe auch
 
 [Fehlerbehandlung](../../c-runtime-library/error-handling-crt.md)<br/>
-[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [clearerr](clearerr.md)<br/>
 [feof](feof.md)<br/>
 [ferror](ferror.md)<br/>

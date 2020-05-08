@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - aligned_offset_recalloc function
 - _aligned_offset_recalloc function
 ms.assetid: a258f54e-eeb4-4853-96fc-007d710f98e9
-ms.openlocfilehash: 4c710712138d07191468cdc7ef02fc75e2f46dad
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4c71bc701beaabe179676656b331fcce966d1db1
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350544"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917172"
 ---
 # <a name="_aligned_offset_recalloc"></a>_aligned_offset_recalloc
 
@@ -56,13 +56,13 @@ void * _aligned_offset_recalloc(
 *memblock*<br/>
 Der Zeiger auf den aktuellen Speicherblock.
 
-*number*<br/>
+*Zahl*<br/>
 Anzahl der Elemente.
 
-*Größe*<br/>
+*size*<br/>
 Länge jedes Elements in Bytes.
 
-*Ausrichtung*<br/>
+*Richt*<br/>
 Der Ausrichtungswert, der eine ganzzahlige Potenz von 2 sein muss.
 
 *offset*<br/>
@@ -70,19 +70,19 @@ Der Offset in der Speicherbelegung zum Erzwingen der Ausrichtung.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_aligned_offset_recalloc** gibt einen leeren Zeiger auf den neu verteilten (und möglicherweise verschobenen) Speicherblock zurück. Der Rückgabewert ist **NULL,** wenn die Größe Null ist und das Pufferargument nicht **NULL**ist oder wenn nicht genügend Arbeitsspeicher verfügbar ist, um den Block auf die angegebene Größe zu erweitern. Im ersten Fall wird der ursprüngliche Block freigegeben. Im zweiten Fall wird der ursprüngliche Block nicht geändert. Der Rückgabewert zeigt auf einen Speicherplatz, der für die Speicherung eines beliebigen Objekttyps geeignet ist. Um einen Zeiger auf einen anderen Typ als den leeren zurückzugeben, verwenden Sie eine Typumwandlung für den Rückgabewert.
+**_aligned_offset_recalloc** gibt einen void-Zeiger auf den neu belegten (und möglicherweise verschobenden) Speicherblock zurück. Der Rückgabewert ist **null** , wenn die Größe 0 (null) ist und das Puffer Argument nicht **null**ist, oder wenn nicht genügend Arbeitsspeicher verfügbar ist, um den Block auf die angegebene Größe zu erweitern. Im ersten Fall wird der ursprüngliche Block freigegeben. Im zweiten Fall wird der ursprüngliche Block nicht geändert. Der Rückgabewert zeigt auf einen Speicherplatz, der für die Speicherung eines beliebigen Objekttyps geeignet ist. Um einen Zeiger auf einen anderen Typ als den leeren zurückzugeben, verwenden Sie eine Typumwandlung für den Rückgabewert.
 
-**_aligned_offset_recalloc** ist `__declspec(noalias)` `__declspec(restrict)`markiert und , was bedeutet, dass die Funktion garantiert keine globalen Variablen ändert und dass der zurückgegebene Zeiger nicht aliasiert wird. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
+**_aligned_offset_recalloc** ist als `__declspec(noalias)` und `__declspec(restrict)`gekennzeichnet, was bedeutet, dass die Funktion globale Variablen garantiert nicht ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Wie [_aligned_offset_malloc](aligned-offset-malloc.md) **ermöglicht _aligned_offset_recalloc** die Ausrichtung einer Struktur an einem Versatz innerhalb der Struktur.
+Wie [_aligned_offset_malloc](aligned-offset-malloc.md)ermöglicht **_aligned_offset_recalloc** , dass eine Struktur an einem Offset innerhalb der Struktur ausgerichtet wird.
 
-**_aligned_offset_recalloc** basiert auf **malloc**. Weitere Informationen zur Verwendung von **_aligned_offset_malloc**finden Sie unter [malloc](malloc.md). Wenn *memblock* **NULL**ist, ruft die Funktion **intern _aligned_offset_malloc** auf.
+**_aligned_offset_recalloc** basiert auf **malloc**. Weitere Informationen zum Verwenden von **_aligned_offset_malloc**finden Sie unter [malloc](malloc.md). Wenn *memblock* **null**ist, ruft die Funktion intern **_aligned_offset_malloc** auf.
 
-Diese Funktion legt **errno** auf **ENOMEM** fest, wenn die Speicherzuweisung fehlgeschlagen **_HEAP_MAXREQ**ist oder wenn die angeforderte Größe (*Zahlengröße* * *size*) größer als _HEAP_MAXREQ war. Weitere Informationen zu **errno**finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md). Außerdem **_aligned_offset_recalloc** seine Parameter überprüft. Wenn *die Ausrichtung* keine Leistung von 2 ist oder wenn der *Offset* größer oder gleich der angeforderten Größe und ungleich Null ist, ruft diese Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt diese Funktion **NULL** zurück und setzt **errno** auf **EINVAL**.
+Diese Funktion legt **errno** auf **ENOMEM** fest, wenn die Speicher Belegung fehlgeschlagen ist oder wenn die angeforderte Größe (*Zahlen* * *Größe*) größer als **_HEAP_MAXREQ**ist. Weitere Informationen zu **errno**finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md). Außerdem überprüft **_aligned_offset_recalloc** seine Parameter. Wenn die *Ausrichtung* keine Potenz von 2 ist oder der *Offset* größer oder gleich der angeforderten Größe und ungleich 0 (null) ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt diese Funktion **null** zurück und legt **errno** auf **EINVAL**fest.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -90,8 +90,8 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-------------|---------------------|
 |**_aligned_offset_recalloc**|\<malloc.h>|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Datenausrichtung](../../c-runtime-library/data-alignment.md)<br/>
+[Daten Ausrichtung](../../c-runtime-library/data-alignment.md)<br/>
 [_recalloc](recalloc.md)<br/>
 [_aligned_recalloc](aligned-recalloc.md)<br/>

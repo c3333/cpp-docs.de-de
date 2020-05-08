@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +31,12 @@ helpviewer_keywords:
 - _commit function
 - committing files to disk
 ms.assetid: d0c74d3a-4f2d-4fb0-b140-2d687db3d233
-ms.openlocfilehash: f8e13e7fc197c66395556d518ecbd1cd20ac1f77
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 217bccbc4ebc937b89bca5cc127de72b7118481c
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348615"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918531"
 ---
 # <a name="_commit"></a>_commit
 
@@ -52,20 +52,20 @@ int _commit(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_commit** gibt 0 zurück, wenn die Datei erfolgreich auf den Datenträger geleert wurde. Ein Rückgabewert von -1 gibt einen Fehler an.
+**_commit** gibt 0 zurück, wenn die Datei erfolgreich auf den Datenträger geleert wurde. Der Rückgabewert-1 gibt einen Fehler an.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_commit-Funktion** zwingt das Betriebssystem, die datei, die *fd* zugeordnet ist, auf den Datenträger zu schreiben. Dieser Aufruf stellt sicher, dass die angegebene Datei sofort geleert wird (und nicht nach Ermessen des Betriebssystems).
+Die **_commit** -Funktion zwingt das Betriebssystem, die mit *FD* verknüpfte Datei auf den Datenträger zu schreiben. Dieser Aufruf stellt sicher, dass die angegebene Datei sofort geleert wird (und nicht nach Ermessen des Betriebssystems).
 
-Wenn *fd* ein ungültiger Dateideskriptor ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion -1 zurück und **errno** wird auf **EBADF**gesetzt.
+Wenn *FD* ein ungültiger Dateideskriptor ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück, und **errno** ist auf **EBADF**festgelegt.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -75,9 +75,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>
 [_read](read.md)<br/>

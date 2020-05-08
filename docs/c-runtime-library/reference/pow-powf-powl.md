@@ -19,7 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,16 +39,16 @@ helpviewer_keywords:
 - powf function
 - pow function
 ms.assetid: e75c33ed-2e59-48b1-be40-81da917324f1
-ms.openlocfilehash: b181959ac05814a673ab11f33e4cfc5a39e3869e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 38e79b547ad49c6f1c0f5a784d710838afdec388
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333121"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916798"
 ---
 # <a name="pow-powf-powl"></a>pow, powf, powl
 
-Berechnet *x,* das auf die Leistung von *y*angehoben wird.
+Berechnet das in *y*angegebene *x* .
 
 ## <a name="syntax"></a>Syntax
 
@@ -68,10 +68,10 @@ long double pow( long double x, int y );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Basis.
 
-*y*<br/>
+*Teenie*<br/>
 Exponent.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -80,27 +80,27 @@ Gibt den Wert von *x*<sup>*y*</sup>zurück. Zu Überlauf oder Unterlauf wird kei
 
 |Werte von x und y|Rückgabewert von "pow"|
 |-----------------------|-------------------------|
-|*x* != 0,0 und *y* == 0,0|1|
-|*x* == 0,0 und *y* == 0,0|1|
-|*x* == 0,0 und *y* < 0|INF|
+|*x* ! = 0,0 und *y* = = 0,0|1|
+|*x* = = 0,0 und *y* = = 0,0|1|
+|*x* = = 0,0 und *y* < 0|INF|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-**pow** erkennt keine integralen Gleitkommawerte größer als 2<sup>64</sup> (z. B. 1.0E100).
+**Pow** erkennt keine ganzzahligen Gleit Komma Werte, die größer als 2<sup>64</sup> sind (z. b. 1.0 E100).
 
-**pow** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
+**Pow** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-Da C++ eine Überlastung ermöglicht, können Sie jede der verschiedenen Überladungen von **pow**aufrufen. In einem C-Programm nimmt **pow** immer zwei **doppelte** Werte und gibt einen **doppelten** Wert zurück.
+Da C++ das überladen zulässt, können Sie jede der verschiedenen über Ladungen von **Pow**aufzurufen. In einem C-Programm übernimmt **Pow** immer zwei **Double** -Werte und gibt einen **Double** -Wert zurück.
 
-Die `pow(int, int)`-Überladung ist nicht mehr verfügbar. Wenn Sie diese Überladung verwenden, gibt der Compiler möglicherweise [C2668](../../error-messages/compiler-errors-2/compiler-error-c2668.md)aus. Um dieses Problem zu vermeiden, geben Sie den ersten Parameter in **double**, **float**oder **long** **double**um.
+Die `pow(int, int)`-Überladung ist nicht mehr verfügbar. Wenn Sie diese Überladung verwenden, gibt der Compiler möglicherweise [C2668](../../error-messages/compiler-errors-2/compiler-error-c2668.md)aus. Um dieses Problem zu vermeiden, wandeln Sie den ersten Parameter in **Double**, **float**oder **Long** **Double**um.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-|-|-|
-|**pow**, **powf**, **powl**|\<math.h>|\<math.h> oder \<cmath>|
+|**Pow**, **powf**, **powl**|\<math.h>|\<math.h> oder \<cmath>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -125,7 +125,7 @@ int main( void )
 2.0 to the power of 3.0 is 8.0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md) <br/>
 [exp, expf, expl](exp-expf.md) <br/>

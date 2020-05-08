@@ -26,7 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +46,12 @@ helpviewer_keywords:
 - erfcf function
 - erfc function
 ms.assetid: 144d90d3-e437-41c2-a659-cd57596023b5
-ms.openlocfilehash: ad7ad279d3686e4f33a6f5f901c60348c131b89a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 633a766684ed7485ab579157ae4c94fe209f7e73
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347920"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915014"
 ---
 # <a name="erf-erff-erfl-erfc-erfcf-erfcl"></a>erf, erff, erfl, erfc, erfcf, erfcl
 
@@ -94,33 +94,33 @@ long double erfcl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Ein Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **erf-Funktionen** geben die Gauß-Fehlerfunktion von *x*zurück. Die **erfc-Funktionen** geben die komplementäre Gauß-Fehlerfunktion von *x*zurück.
+Die **ERF** -Funktionen geben die Gauß-Fehlerfunktion von *x*zurück. Die **erfc** -Funktionen geben die komplementäre Gauß-Fehlerfunktion von *x*zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **erf-Funktionen** berechnen die Gauß-Fehlerfunktion von *x*, die wie folgt definiert ist:
+Die **ERF** -Funktionen berechnen die Gauß-Fehlerfunktion von *x*, die wie folgt definiert ist:
 
 ![Die Fehlerfunktion von x](media/crt_erf_formula.PNG "Die Fehlerfunktion von x")
 
-Die komplementäre Gauß-Fehlerfunktion ist definiert als 1 - erf(x). Die **erf-Funktionen** geben einen Wert im Bereich -1.0 bis 1.0 zurück. Es gibt keine Fehlerrückgabe. Die **erfc-Funktionen** geben einen Wert im Bereich 0 bis 2 zurück. Wenn *x* für **erfc**zu groß ist, wird die **errno-Variable** auf **ERANGE**gesetzt.
+Die komplementäre Gauß-Fehlerfunktion ist als 1-ERF (x) definiert. Die **ERF** -Funktionen geben einen Wert im Bereich von-1,0 bis 1,0 zurück. Es gibt keine Fehlerrückgabe. Die **erfc** -Funktionen geben einen Wert im Bereich 0 bis 2 zurück. Wenn *x* für **erfc**zu groß ist, wird die **errno** -Variable auf **ERANGE**festgelegt.
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **erf** und **erfc** aufrufen, die **Float-** und **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nehmen **erf** und **erfc** immer ein **Double**und geben es zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ERF** und **erfc** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm verwenden **ERF** und **erfc** immer einen **Double**-Wert.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**erf**, **erff**, **erfl**, **erfc**, **erfcf**, **erfcl**|\<math.h>|
+|**ERF**, **erff**, **erfl**, **erfc**, **erfcf**, **erfcl**|\<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

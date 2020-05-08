@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -38,12 +38,12 @@ helpviewer_keywords:
 - chdir function
 - directories [C++], changing
 ms.assetid: 85e9393b-62ac-45d5-ab2a-fa2217f6152e
-ms.openlocfilehash: a3f224e68e4b5a43274616892012ceba737d6d17
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a54b42ee92392971fdb6979ee2dc3a3b9c65f184
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333389"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917040"
 ---
 # <a name="_chdir-_wchdir"></a>_chdir, _wchdir
 
@@ -62,26 +62,26 @@ int _wchdir(
 
 ### <a name="parameters"></a>Parameter
 
-*Dirname*<br/>
+*dirname*<br/>
 Pfad des neuen Arbeitsverzeichnisses.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Diese Funktionen geben bei Erfolg den Wert 0 zurück. Ein Rückgabewert von -1 gibt einen Fehler an. Wenn der angegebene Pfad nicht gefunden werden konnte, wird **errno** auf **ENOENT**festgelegt. Wenn *dirname* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und die Funktion gibt -1 zurück.
+Diese Funktionen geben bei Erfolg den Wert 0 zurück. Der Rückgabewert-1 gibt einen Fehler an. Wenn der angegebene Pfad nicht gefunden werden konnte, wird **errno** auf **ENOENT**festgelegt. Wenn *dirname* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt-1 zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **Funktion _chdir** ändert das aktuelle Arbeitsverzeichnis in das von *dirname*angegebene Verzeichnis. Der *Parameter dirname* muss auf ein vorhandenes Verzeichnis verweisen. Diese Funktion kann das aktuelle Arbeitsverzeichnis auf jedem beliebigen Laufwerk ändern. Wenn ein neuer Laufwerkbuchstabe in *dirname*angegeben wird, wird auch der Standardlaufwerkbuchstabe geändert. Wenn z. B. A der Standardlaufwerkbuchstabe und \BIN das aktuelle Arbeitsverzeichnis ist, ändert der folgende Aufruf das aktuelle Arbeitsverzeichnis in C und legt C als neues Standardlaufwerk fest:
+Die **_chdir** -Funktion ändert das aktuelle Arbeitsverzeichnis in das Verzeichnis, das von *dirname*angegeben wird. Der *dirname* -Parameter muss auf ein vorhandenes Verzeichnis verweisen. Diese Funktion kann das aktuelle Arbeitsverzeichnis auf jedem beliebigen Laufwerk ändern. Wenn ein neuer Laufwerk Buchstabe in *dirname*angegeben ist, wird der Standard Laufwerk Buchstabe ebenfalls geändert. Wenn z. B. A der Standardlaufwerkbuchstabe und \BIN das aktuelle Arbeitsverzeichnis ist, ändert der folgende Aufruf das aktuelle Arbeitsverzeichnis in C und legt C als neues Standardlaufwerk fest:
 
 ```C
 _chdir("c:\temp");
 ```
 
-Wenn Sie das optionale umgekehrte Schrägstrichzeichen (**&#92;**) in Pfaden verwenden, müssen Sie zwei umgekehrte Schrägstriche (**&#92;&#92;**) in einem C-Zeichenfolgenliteral platzieren, um einen einzelnen umgekehrten Schrägstrich darzustellen (**&#92;**).
+Wenn Sie den optionalen umgekehrten Schrägstrich (**&#92;**) in Pfaden verwenden, müssen Sie zwei umgekehrte Schrägstriche (**&#92;&#92;**) in einem C-Zeichenfolgenliteralzeichen platzieren, um einen einzelnen umgekehrten Schrägstrich (**&#92;**) darzustellen.
 
-**_wchdir** ist eine breit **gefächerte**Version von _chdir ; Das *dirname-Argument* für **_wchdir** ist eine Zeichenfolge mit großen Zeichen. **_wchdir** und **_chdir** verhalten sich ansonsten gleich.
+**_wchdir** ist eine breit Zeichen Version von **_chdir**. Das *dirname* -Argument für **_wchdir** ist eine Zeichenfolge mit breit Zeichen. **_wchdir** und **_chdir** Verhalten sich andernfalls identisch.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mapping"></a>Zuordnung generischer Textroutinen:
 
@@ -157,7 +157,7 @@ Directory of c:\windows
                0 Dir(s)  67,326,029,824 bytes free
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
 [_mkdir, _wmkdir](mkdir-wmkdir.md)<br/>

@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,19 +28,19 @@ helpviewer_keywords:
 - aborting programs
 - _set_abort_behavior function
 - set_abort_behavior function
-ms.openlocfilehash: fd3a3c2f99d1702cdccf68328c2122b965b2d078
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 06f72597a384cc5c90b2e345e62e13dee96c4dca
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81337868"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913128"
 ---
 # <a name="_set_abort_behavior"></a>_set_abort_behavior
 
 Gibt die Aktion an, die ausgeführt werden soll, wenn ein Programm nicht normal beendet wird.
 
 > [!NOTE]
-> Verwenden Sie die [Abbruchfunktion](abort.md) nicht, um eine Microsoft Store-App herunterzufahren, außer in Test- oder Debugszenarios. Programmgesteuerte oder UI-Möglichkeiten zum Schließen einer Store-App sind gemäß den [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)nicht zulässig. Weitere Informationen finden Sie unter [UWP-App-Lebenszyklus](/windows/uwp/launch-resume/app-lifecycle).
+> Verwenden Sie die [Abbruch](abort.md) -Funktion nicht zum Herunterfahren einer Microsoft Store-App, mit Ausnahme von Test-oder Debugszenarien. Programmgesteuerte oder UI-Methoden zum Schließen einer Store-App sind gemäß den [Microsoft Store Richtlinien](/legal/windows/agreements/store-policies)nicht zulässig. Weitere Informationen finden Sie unter [UWP-App-Lebenszyklus](/windows/uwp/launch-resume/app-lifecycle).
 
 ## <a name="syntax"></a>Syntax
 
@@ -53,21 +53,21 @@ unsigned int _set_abort_behavior(
 
 ### <a name="parameters"></a>Parameter
 
-*Flaggen*<br/>
-Neuer Wert der [Abbruchflags.](abort.md)
+*flags*<br/>
+Neuer Wert der [Abbruch](abort.md) -Flags.
 
 *mask*<br/>
-Maske für die [abzubrechenden](abort.md) Flags Bits, die festgelegt werden sollen.
+Maske für die festzulegenden [Abbruch](abort.md) -Flags-Bits.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Der alte Wert der Flags.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Es gibt zwei [Abbruchflags:](abort.md) **_WRITE_ABORT_MSG** und **_CALL_REPORTFAULT**. **_WRITE_ABORT_MSG** bestimmt, ob eine hilfreiche Textnachricht gedruckt wird, wenn ein Programm ungewöhnlich beendet wird. Die Meldung besagt, dass die Anwendung die [Abbruchfunktion](abort.md) aufgerufen hat. Beim Standardverhalten wird die Meldung ausgeben. **_CALL_REPORTFAULT**, wenn festgelegt, gibt an, dass ein Watson-Absturzabbild generiert und gemeldet wird, wenn [abort](abort.md) aufgerufen wird. Standardmäßig ist die Absturzabbildberichterstellung in den Nichtdebugversionen aktiviert.
+Es gibt zwei [Abbruch](abort.md) -Flags: **_WRITE_ABORT_MSG** und **_CALL_REPORTFAULT**. **_WRITE_ABORT_MSG** bestimmt, ob eine hilfreiche Textnachricht gedruckt wird, wenn ein Programm nicht normal beendet wird. Die Meldung besagt, dass die Anwendung die [Abbruch](abort.md) -Funktion aufgerufen hat. Beim Standardverhalten wird die Meldung ausgeben. Wenn festgelegt ist, gibt **_CALL_REPORTFAULT**an, dass ein Watson-Absturz Abbild generiert und gemeldet wird, wenn [Abbruch](abort.md) aufgerufen wird. Standardmäßig ist die Absturzabbildberichterstellung in den Nichtdebugversionen aktiviert.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -98,6 +98,6 @@ int main()
 Suppressing the abort message. If successful, this message will be the only output.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Abbrechen](abort.md)<br/>
+[Abbruch](abort.md)<br/>

@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +30,12 @@ helpviewer_keywords:
 - _get_heap_handle function
 - get_heap_handle function
 ms.assetid: a4d05049-8528-494a-8281-a470d1e1115c
-ms.openlocfilehash: e2e48e4acc26c7b8317a2d358d1a426d012ec508
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 895814a1a44910ef65a826cba330a3edd70b85a9
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81345089"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916301"
 ---
 # <a name="_get_heap_handle"></a>_get_heap_handle
 
@@ -51,11 +51,11 @@ intptr_t _get_heap_handle( void );
 
 Gibt das Handle an den Win32-Heap zurück, der vom C-Laufzeitsystem verwendet wird.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, wenn Sie [HeapSetInformation](/windows/win32/api/heapapi/nf-heapapi-heapsetinformation) aufrufen und niedrige Heap-Fragmentierung auf dem CRT-Heap aktivieren möchten.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -88,6 +88,6 @@ int main(void)
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherzuweisung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>

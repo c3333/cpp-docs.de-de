@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - _cgetws_s function
 - cgetws_s function
 ms.assetid: 38b74897-afe6-4dd9-a43f-36a3c0d72c5c
-ms.openlocfilehash: b4871ff2c362e2c6cbe37be6a31bde4e6e258709
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6e48602eee3d2135d4624b28d88661ac00f65542
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333549"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917099"
 ---
 # <a name="_cgets_s-_cgetws_s"></a>_cgets_s, _cgetws_s
 
@@ -77,10 +77,10 @@ errno_t _cgetws_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Puffer*<br/>
+*ert*<br/>
 Speicherort für Daten.
 
-*Sizeinbytes*<br/>
+*numberOfElements*<br/>
 Die Größe des Puffers in Einzelbyte- oder Breitzeichen. Hierbei handelt es sich auch um die maximale Anzahl der zu lesenden Zeichen.
 
 *pSizeRead*<br/>
@@ -92,23 +92,23 @@ Der Rückgabewert ist im Erfolgsfall „0“, andernfalls wird ein Fehlercode au
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Puffer*|*Sizeinbytes*|*pSizeRead*|Rückgabewert|Inhalt des *Puffers*|
+|*ert*|*numberOfElements*|*pSizeRead*|Rückgabewert|Inhalt des *Puffers*|
 |--------------|------------------------|-----------------|------------|--------------------------|
-|**Null**|any|any|**Einval**|–|
-|nicht **NULL**|Null|any|**Einval**|nicht geändert|
-|nicht **NULL**|any|**Null**|**Einval**|Zeichenfolge mit der Länge 0|
+|**Normal**|any|any|**Eingabe**|–|
+|nicht **null**|Null|any|**Eingabe**|nicht geändert|
+|nicht **null**|any|**Normal**|**Eingabe**|Zeichenfolge mit der Länge 0|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-**_cgets_s** und **_cgetws_s** eine Zeichenfolge aus der Konsole lesen und die Zeichenfolge (mit einem Null-Terminator) in *den Puffer*kopieren. **_cgetws_s** ist die Breitzeichenversion der Funktion; abgesehen von der Zeichengröße ist das Verhalten dieser beiden Funktionen identisch. Die maximale Größe der zu lesenden Zeichenfolge wird als *parameter numberOfElements* übergeben. Diese Größe sollte ein zusätzliches Zeichen für das abschließende Nullzeichen enthalten. Die tatsächliche Anzahl der gelesenen Zeichen wird in *pSizeRead*platziert.
+**_cgets_s** und **_cgetws_s** eine Zeichenfolge aus der Konsole lesen und die Zeichenfolge (mit einem NULL-Terminator) in den *Puffer*kopieren. **_cgetws_s** ist die breit Zeichen Version der Funktion. Abgesehen von der Zeichengröße ist das Verhalten dieser zwei Funktionen identisch. Die maximale Größe der zu lesenden Zeichenfolge wird als der Parameter " *numofelements* " übergeben. Diese Größe sollte ein zusätzliches Zeichen für das abschließende Nullzeichen enthalten. Die tatsächliche Anzahl von gelesenen Zeichen wird in *pSizeRead*platziert.
 
-Wenn während des Vorgangs oder im Zuge der Validierung der Parameter ein Fehler auftritt, wird der Handler für ungültige Parameter aufgerufen, wie dies unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und **EINVAL** zurückgegeben.
+Wenn während des Vorgangs oder im Zuge der Validierung der Parameter ein Fehler auftritt, wird der Handler für ungültige Parameter aufgerufen, wie dies unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und **EINVAL** wird zurückgegeben.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht. Die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein „size“-Argument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -125,7 +125,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Konsole und Port-I/O](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_getch, _getwch](getch-getwch.md)<br/>
