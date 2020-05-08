@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - round function
 - roundf function
 ms.assetid: 6be90877-193c-4b80-a32b-c3eca33f9c6f
-ms.openlocfilehash: 7b502a02b540a6d2e659ba0e89263bf521be1d82
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1c35972b38f8e440788404b5891a78d16197d739
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81337991"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916720"
 ---
 # <a name="round-roundf-roundl"></a>round, roundf, roundl
 
@@ -67,28 +67,28 @@ long double roundl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **runden** Funktionen geben einen Gleitkommawert zurück, der die nächste ganze Zahl bis *x*darstellt. Halbe Werte werden kaufmännisch gerundet, unabhängig von der Einstellung des Gleitkomma-Rundungsmodus. Es gibt keine Fehlerrückgabe.
+Die **Round** -Funktionen geben einen Gleit Komma Wert zurück, der die nächste Ganzzahl in *x*darstellt. Halbe Werte werden kaufmännisch gerundet, unabhängig von der Einstellung des Gleitkomma-Rundungsmodus. Es gibt keine Fehlerrückgabe.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|• **QNAN**, **IND**|Keine|**_DOMAIN**|
+|± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Runden** aufrufen, die **Float-** und **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt **runde** immer eine **doppelte**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Round** aufzurufen, die **float** -und **Long** **Double** -Werte annehmen und zurückgeben. In einem C-Programm nimmt **Round** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**rund**, **roundf**, **roundl**|\<math.h>|
+|**Round**, **roundf**, **roundl**|\<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -128,7 +128,7 @@ roundl(2.500000) is 3
 roundl(-2.500000) is -3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

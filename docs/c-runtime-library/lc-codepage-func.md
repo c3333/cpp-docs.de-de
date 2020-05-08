@@ -12,7 +12,7 @@ api_location:
 - msvcr90.dll
 - msvcr110.dll
 - msvcrt.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -23,12 +23,12 @@ f1_keywords:
 helpviewer_keywords:
 - ___lc_codepage_func
 ms.assetid: 6a663bd0-5a63-4a2f-9507-872ec1582aae
-ms.openlocfilehash: 2f3eeb4611a0a41ff1782e0b162cd65d86d3ef65
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ea740bc335981ad7e1017ab4026fdc50b8fe8893
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81351232"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914126"
 ---
 # <a name="___lc_codepage_func"></a>___lc_codepage_func
 
@@ -44,7 +44,7 @@ UINT ___lc_codepage_func(void);
 
 Die aktuelle Codepage des Threads.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `___lc_codepage_func` ist eine interne CRT-Funktion, die von anderen CRT-Funktionen verwendet wird, um die aktuelle Codepage aus dem lokalen Threadspeicher für CRT-Daten abzurufen. Diese Information kann auch durch Verwendung der [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)-Funktion gewonnen werden.
 
@@ -52,7 +52,7 @@ Eine *Codepage* ist eine Zuordnung von Einzelbyte- oder Doppelbytecodes zu einze
 
 Interne CRT-Funktionen sind implementierungsspezifisch und mit jedem neuen Release Änderungen unterworfen. Ihre Verwendung in einem Code wird nicht empfohlen.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -60,7 +60,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-------------|---------------------|
 |`___lc_codepage_func`|crt\src\setlocal.h|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)<br/>
 [setlocale, _wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)<br/>

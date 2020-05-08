@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - console, sending strings to
 - cputws function
 ms.assetid: ec418484-0f8d-43ec-8d8b-198a556c659e
-ms.openlocfilehash: 3b8f49fc7fbe90d4069a5dfeef9bbba3a7f05335
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 469b39e4e08f13af8d8ac3e679ed55c7afb240d2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348371"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917607"
 ---
 # <a name="_cputs-_cputws"></a>_cputs, _cputws
 
@@ -63,20 +63,20 @@ int _cputws(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Ausgabezeichenfolge.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn dies erfolgreich ist, **gibt _cputs** 0 zurück. Wenn die Funktion fehlschlägt, wird einen Wert ungleich null zurückgegeben.
+Bei erfolgreicher Ausführung gibt **_cputs** 0 zurück. Wenn die Funktion fehlschlägt, wird einen Wert ungleich null zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_cputs-Funktion** schreibt die null-terminierte Zeichenfolge, auf die von *str* direkt auf die Konsole verwiesen wird. Eine Kombination aus Wagenrücklauf-Zeilenvorschub (CR-LF) wird nicht automatisch an die Zeichenfolge angefügt.
+Die **_cputs** -Funktion schreibt die auf NULL endenden Zeichenfolge, auf die von *Str* verwiesen wird, direkt in die Konsole. Eine Kombination aus Wagenrücklauf-Zeilenvorschub (CR-LF) wird nicht automatisch an die Zeichenfolge angefügt.
 
-Diese Funktion überprüft seine Parameter. Wenn *str* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und -1 zurückgegeben.
+Diese Funktion überprüft seine Parameter. Wenn *Str* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und-1 wird zurückgegeben.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -154,7 +154,7 @@ Hello world (courtesy of _cputs)!
 Hello world (courtesy of _cputws)!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Konsole und Port-I/O](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_putch, _putwch](putch-putwch.md)<br/>

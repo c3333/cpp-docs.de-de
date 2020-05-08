@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - modff function
 - modfl function
 ms.assetid: b1c7abf5-d476-43ca-a03c-02072a86e32d
-ms.openlocfilehash: b509da5f18ea1f606b8a3b47ab66a78e4f595558
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: def04602cdeb0ad180bd4c51c02f570c94809784
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338696"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914637"
 ---
 # <a name="modf-modff-modfl"></a>modf, modff, modfl
 
@@ -62,25 +62,25 @@ long double modf( long double x, long double * intptr );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert.
 
-*Intptr*<br/>
+*IntPtr*<br/>
 Zeiger auf gespeicherten Ganzzahlbereich.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Diese Funktion gibt den Bruchteil von *x* mit Vorzeichen zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **modf-Funktionen** gliedern den Gleitkommawert *x* in Fraktion- und Ganzzahlteile, von denen jeder das gleiche Vorzeichen wie *x*hat. Der signierte Bruchteil von *x* wird zurückgegeben. Der ganzzahlige Teil wird als Gleitkommawert bei *intptr*gespeichert.
+Die **modf** -Funktionen unterbrechen den Gleit Komma Wert *x* in Bruchteile und ganzzahlige Teile, von denen jedes dasselbe Vorzeichen wie *x*aufweist. Der Wert von *x* mit Vorzeichen wird zurückgegeben. Der ganzzahlige Teil wird als Gleit Komma Wert bei *IntPtr*gespeichert.
 
 **modf** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-C++ ermöglicht Eine Überlastung, sodass Sie Überladungen von **Modf** aufrufen können, die **Float-** oder **lange** **Doppelparameter** aufnehmen und zurückgeben. In einem C-Programm nimmt **modf** immer zwei Doppeltewerte und gibt einen doppelten Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **modf** abrufen können, die **float** -oder **Long** **Double** -Parameter verwenden und zurückgeben. In einem C-Programm übernimmt **modf** immer zwei Double-Werte und gibt einen Double-Wert zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -114,7 +114,7 @@ int main( void )
 For -14.876543, the fraction is -0.876543 and the integer is -14
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [frexp](frexp.md)<br/>

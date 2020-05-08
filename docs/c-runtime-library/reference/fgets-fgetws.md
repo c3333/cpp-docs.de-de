@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - fgetws function
 - fgetts function
 ms.assetid: ad549bb5-df98-4ccd-a53f-95114e60c4fc
-ms.openlocfilehash: a1120529157801aac5cf1c4fd61f844fde443bed
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5c1d63eea6561af6ab7f51c147c92e184d3d11f8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346864"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912068"
 ---
 # <a name="fgets-fgetws"></a>fgets, fgetws
 
@@ -63,30 +63,30 @@ wchar_t *fgetws(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Speicherort für Daten.
 
 *numChars*<br/>
 Die maximale Anzahl der zu lesenden Zeichen
 
-*Stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt *str*zurück. **NULL** wird zurückgegeben, um einen Fehler oder eine End-of-File-Bedingung anzuzeigen. Verwenden Sie **feof** oder **ferror,** um zu bestimmen, ob ein Fehler aufgetreten ist. Wenn *str* oder *stream* ein Nullzeiger ist oder *numChars* kleiner oder gleich Null ist, ruft diese Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt, und die Funktion gibt **NULL**zurück.
+Jede dieser Funktionen gibt *Str*zurück. **Null** wird zurückgegeben, um einen Fehler oder eine dateiendebedingung anzugeben. Verwenden Sie **feof** oder **ferror** , um zu bestimmen, ob ein Fehler aufgetreten ist. Wenn *Str* oder *Stream* ein NULL-Zeiger ist, oder wenn *NumChars* kleiner oder gleich NULL ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **null**zurück.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **fgets-Funktion** liest eine Zeichenfolge aus dem *Eingabestreamargument* und speichert sie in *str*. **fgets** liest Zeichen von der aktuellen Stream-Position zum ersten Zeilenumlauf-Zeichen und einschließlich des ersten Zeilenumlaufzeichens bis zum Ende des Streams, oder bis die Anzahl der gelesenen Zeichen gleich *numChars* - 1 ist, je nachdem, was zuerst eintritt. Das in *str* gespeicherte Ergebnis wird mit einem Nullzeichen angehängt. Das Zeilenumbruchzeichen wird, wenn es gelesen wird, in die Zeichenfolge aufgenommen.
+Die **Funktion "** Funktion" liest eine Zeichenfolge aus dem eingabestreamargument und speichert Sie in *Str*. *stream* **fgets** liest Zeichen von der aktuellen Streamposition in und einschließlich des ersten Zeilen Vorzeichens, bis zum Ende des Streams oder bis die Anzahl der gelesenen Zeichen gleich *NumChars* -1 ist, je nachdem, was zuerst eintritt. Das in *Str* gespeicherte Ergebnis wird mit einem NULL-Zeichen versehen. Das Zeilenumbruchzeichen wird, wenn es gelesen wird, in die Zeichenfolge aufgenommen.
 
-**fgetws** ist eine Breitzeichenversion von **fgets**.
+" **f** " ist eine breit Zeichen Version von " **f**".
 
-**fgetws** liest das Breitzeichenargument *str* als Multibyte-Zeichen-Zeichenfolge oder als Breitzeichenzeichenfolge, je nachdem, ob *der Stream* im Textmodus bzw. im Binärmodus geöffnet wird. Weitere Informationen zur Anwendung von Text- und Binärmodi in Unicode- und Multibyte-Stream-E/A finden Sie unter [Text- und Binärmodus-Datei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md) und [Unicode-Stream-E/A in Text- und Binärmodi](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md).
+**fgetws** liest das breit Zeichen Argument *Str* als multibyte-Zeichenfolge oder Zeichenfolge mit breit Zeichen, je nachdem, ob der *Stream* im Textmodus oder Binärmodus geöffnet ist. Weitere Informationen zur Anwendung von Text- und Binärmodi in Unicode- und Multibyte-Stream-E/A finden Sie unter [Text- und Binärmodus-Datei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md) und [Unicode-Stream-E/A in Text- und Binärmodi](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 

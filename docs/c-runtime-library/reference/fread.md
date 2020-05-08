@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - data [C++], reading from input stream
 - streams [C++], reading data from
 ms.assetid: 9a3c1538-93dd-455e-ae48-77c1e23c53f0
-ms.openlocfilehash: 26ffd56072f1a5fddc3131a42cd47c145e437b60
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ec5af25070e253f6c04d1aab13404306251ed716
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346063"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912697"
 ---
 # <a name="fread"></a>fread
 
@@ -53,33 +53,33 @@ size_t fread(
 
 ### <a name="parameters"></a>Parameter
 
-*Puffer*<br/>
+*ert*<br/>
 Speicherort für Daten.
 
-*Größe*<br/>
+*size*<br/>
 Elementgröße in Bytes.
 
 *count*<br/>
 Maximale Anzahl der zu lesenden Elemente.
 
-*Stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**fread** gibt die Anzahl der tatsächlich gelesenen vollständigen Elemente zurück, die möglicherweise kleiner als *die Anzahl* sind, wenn ein Fehler auftritt oder wenn das Ende der Datei vor erreichen der *Anzahl*gefunden wird. Verwenden Sie die **feof-** oder **ferror-Funktion,** um einen Lesefehler von einer End-of-File-Bedingung zu unterscheiden. Wenn *Größe* oder *Anzahl* 0 ist, gibt **fread** 0 zurück, und der Pufferinhalt bleibt unverändert. Wenn *Stream* oder *Puffer* ein Nullzeiger ist, ruft **fread** den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt 0 zurück.
+**fread** gibt die Anzahl der tatsächlich gelesenen vollständigen Elemente zurück. diese kann *kleiner als die Anzahl sein* , wenn ein Fehler auftritt oder das Ende der Datei vor dem Erreichen der *Anzahl*erreicht wird. Verwenden Sie die Funktion " **feof** " oder " **ferror** ", um einen Lesefehler von einer dateiendebedingung zu unterscheiden. Wenn " *size* " oder " *count* " den Wert 0 hat, gibt **fread** 0 zurück, und der Pufferinhalt bleibt unverändert Wenn *Stream* oder *buffer* ein NULL-Zeiger ist, ruft **fread** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt 0 zurück.
 
-Weitere Informationen zu diesen Fehlercodes finden Sie [ \_unter doserrno, \_errno,\_sys errlist und \_sys\_nerr.](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)
+Weitere Informationen zu diesen Fehlercodes finden [ \_Sie unter \_"\_doserrno \_"\_, "errno", "sys errlist" und "sys NERR](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) ".
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **Fread-Funktion** liest bis zu, um Elemente der *Größe* Bytes aus dem *Eingabestream* zu *zählen,* und speichert sie im *Puffer*. Der Dateizeiger, der dem *Stream* zugeordnet ist (falls vorhanden), wird um die Anzahl der tatsächlich gelesenen Bytes erhöht. Wenn der angegebene Stream im [Textmodus](../../c-runtime-library/text-and-binary-mode-file-i-o.md)geöffnet wird, werden Neuezeilen im Windows-Stil in Zeilenlinien im Unix-Stil konvertiert. Das heißt, CRLF-Paare (Carriage Return-line Feed) werden durch LF-Zeichen (Single Line Feed) ersetzt. Dieser Vorgang hat keine Auswirkung auf den Dateizeiger oder den Rückgabewert. Die Position des Dateizeigers ist unbestimmt, wenn ein Fehler auftritt. Der Wert eines teilweise gelesenen Elements kann nicht bestimmt werden.
+Die **fread** -Funktion liest zum *zählen* von Elementen der *Größe* von Bytes aus dem Eingabestream und speichert Sie im *Puffer*. *stream* Der dem *Stream* zugeordnete Dateizeiger (sofern vorhanden) wird um die Anzahl der tatsächlich gelesenen Bytes erweitert. Wenn der angegebene Stream im [Textmodus](../../c-runtime-library/text-and-binary-mode-file-i-o.md)geöffnet ist, werden Zeilenumbrüche im Windows-Stil in eine neue Zeile im UNIX-Format konvertiert. Das heißt, dass Wagen Rücklauf-Zeilenvorschub-Paare (CRLF-Paare) durch Einzel Zeilenvorschub Zeichen (LF) ersetzt werden. Dieser Vorgang hat keine Auswirkung auf den Dateizeiger oder den Rückgabewert. Die Position des Dateizeigers ist unbestimmt, wenn ein Fehler auftritt. Der Wert eines teilweise gelesenen Elements kann nicht bestimmt werden.
 
-Wenn die angeforderte Datenmenge (d. h. *die Größenanzahl* \* *count*) größer oder gleich der internen **FILE-Puffergröße** \* ist (standardmäßig 4096 Byte, konfigurierbar mit [setvbuf](../../c-runtime-library/reference/setvbuf.md)), werden Streamdaten direkt in den vom Benutzer bereitgestellten Puffer kopiert, und die Zeilenumkehr erfolgt in diesem Puffer. Da die konvertierten Daten kürzer sein können als die *buffer*in den Puffer kopierten Streamdaten, können Daten, die\[*return_value* \* *Größe*einfügen, (wobei *return_value* der Rückgabewert von **fread**ist) nicht konvertierte Daten aus der Datei enthalten. Aus diesem Grund empfehlen wir Ihnen, Zeichendaten im *Puffer*\[*return_value* \* *Größe*] null zu beenden, wenn die Absicht des Puffers darin besteht, als Zeichenfolge im C-Stil zu fungieren. Weitere Informationen zu den Auswirkungen des Textmodus und des Binärmodus finden Sie unter [fopen.](fopen-wfopen.md)
+Wenn die Menge der angeforderten Daten (d. h. die *Größe der Größe* \* *) größer*als die oder gleich der Größe des internen **Datei** \* Puffers ist (standardmäßig 4096 Bytes, mithilfe von [setvbuf](../../c-runtime-library/reference/setvbuf.md)konfigurierbar), werden Streamdaten direkt in den vom Benutzer bereitgestellten Puffer kopiert, und in diesem Puffer wird die zeilenweise Konvertierung durchgeführt. Da die konvertierten Daten möglicherweise kürzer sind, als die in den Puffer kopierten Daten in den Puffer kopiert werden, können Daten über *Puffer*\[*return_value* \* *Größe*] (wobei *return_value* der Rückgabewert von **fread**ist) möglicherweise nicht konvertierte Daten aus der Datei enthalten. Aus diesem Grund wird empfohlen, Zeichendaten bei *Puffer*\[*return_value* \* *Größe*] mit NULL zu beenden, wenn die Absicht des Puffers als Zeichenfolge im C-Stil fungieren soll. Weitere Informationen zu den Auswirkungen des Textmodus und des binären Modus finden Sie unter " [f](fopen-wfopen.md) ".
 
 Diese Funktion sperrt alle anderen Threads. Wenn Sie eine nicht sperrende Version benötigen, verwenden Sie **_fread_nolock**.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -139,10 +139,10 @@ Number of items read = 25
 Contents of buffer = zyxwvutsrqponmlkjihgfedcb
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
-[Text und Binärdatei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md)<br/>
+[Text-und Binärdatei-e/a](../../c-runtime-library/text-and-binary-mode-file-i-o.md)<br/>
 [fopen](fopen-wfopen.md)<br/>
 [fwrite](fwrite.md)<br/>
 [_read](read.md)<br/>

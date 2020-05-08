@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +31,12 @@ helpviewer_keywords:
 - files [C++], removing
 - temporary files [C++], removing
 ms.assetid: 7419501e-2587-4f2a-b469-0dca07f84736
-ms.openlocfilehash: 1dc95d0f77528c26bad796ab6166998fca20a8ac
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ca5c693a1baed7e5f31219cdbee712b5c77f2a85
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338034"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917638"
 ---
 # <a name="_rmtmp"></a>_rmtmp
 
@@ -51,13 +51,13 @@ int _rmtmp( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_rmtmp** gibt die Anzahl der gesperrten und gelöschten temporären Dateien zurück.
+**_rmtmp** gibt die Anzahl der geschlossenen und gelöschten temporären Dateien zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_rmtmp** Funktion bebereinigt alle temporären Dateien im aktuellen Verzeichnis. Die Funktion entfernt nur die Dateien, die von **tmpfile**erstellt wurden; Verwenden Sie es nur in demselben Verzeichnis, in dem die temporären Dateien erstellt wurden.
+Die **_rmtmp** -Funktion bereinigt alle temporären Dateien im aktuellen Verzeichnis. Mit der-Funktion werden nur die von **tmpfile**erstellten Dateien entfernt. Verwenden Sie Sie nur in demselben Verzeichnis, in dem die temporären Dateien erstellt wurden.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -75,7 +75,7 @@ Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-feat
 
 Siehe das Beispiel für [tmpfile](tmpfile.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [_flushall](flushall.md)<br/>

@@ -22,7 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +46,12 @@ helpviewer_keywords:
 - logf function
 - logarithms
 ms.assetid: 7adc77c2-04f7-4245-a980-21215563cfae
-ms.openlocfilehash: ab6f2654e9e647f140d5c579087b76001b317887
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0acfbefb1fb01215e543538b9fdb8d554b10f8c1
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341873"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911484"
 ---
 # <a name="log-logf-logl-log10-log10f-log10l"></a>log, logf, logl, log10, log10f, log10l
 
@@ -77,32 +77,32 @@ long double log10( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Ein Wert, dessen Logarithmus gesucht wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **log-Funktionen** geben den natürlichen Logarithmus (Basis *e*) von *x* zurück, wenn erfolgreich. Die **log10-Funktionen** geben den Base-10-Logarithmus zurück. Wenn *x* negativ ist, geben diese Funktionen standardmäßig eine unbestimmte Funktion (IND) zurück. Wenn *x* 0 ist, geben sie unendlich (INF) zurück.
+Die **Log** -Funktionen geben bei Erfolg den natürlichen Logarithmus (Basis *e*) von *x* zurück. Die **log10** -Funktionen geben den Logarithmus zur Basis 10 zurück. Wenn *x* negativ ist, geben diese Funktionen standardmäßig einen unbestimmten Wert (IND) zurück. Wenn *x* 0 ist, wird unendlich (INF) zurückgegeben.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|• QNAN, IND|Keine|_DOMAIN|
-|€ 0|ZERODIVIDE|_SING|
+|± QNAN, IND|Keine|_DOMAIN|
+|± 0|ZERODIVIDE|_SING|
 |*x* < 0|INVALID|_DOMAIN|
 
-**log** und **log10** verfügen über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
+**Log** und **log10** verfügen über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-C++ ermöglicht eine Überlastung, sodass Sie Überladungen von **log** und **log10** aufrufen können, die **float-** oder **lange Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nehmen **log** und **log10** immer eine **doppelte**.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Log** und **log10** , die **float** -oder **long Double** -Werte verwenden und zurückgeben, aufgerufen werden können. In einem C-Programm verwenden **Log** und **log10** immer einen **Double**-Wert.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**log**, **logf**, **logl**, **log10**, **log10f**, **log10l**|\<math.h>|
+|**Log**, **logf**, **logl**, **log10**, **log10f**, **log10l**|\<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -161,7 +161,7 @@ int main()
 Log base 2 of 65536.000000 is 16.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md) <br/>
 [exp, expf, expl](exp-expf.md) <br/>

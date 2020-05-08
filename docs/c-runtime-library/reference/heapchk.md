@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +31,12 @@ helpviewer_keywords:
 - heaps, checking consistency
 - _heapchk function
 ms.assetid: 859619a5-1e35-4f02-9e09-11d9fa266ec0
-ms.openlocfilehash: 21c7f9e22728109676d3fc611405ccd43ac773f8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2ddbdaec5861d48cc23a7cbcd28332e8c06ebbfe
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81344056"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916214"
 ---
 # <a name="_heapchk"></a>_heapchk
 
@@ -50,7 +50,7 @@ int _heapchk( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_heapchk** gibt eine der folgenden ganzzahligen Manifestkonstanten zurück, die in Malloc.h definiert sind.
+**_heapchk** gibt eine der folgenden ganzzahligen Manifest-Konstanten zurück, die in malloc. h definiert sind.
 
 |Rückgabewert|Bedingung|
 |-|-|
@@ -60,13 +60,13 @@ int _heapchk( void );
 | **_HEAPEMPTY** | Der Heap wurde noch nicht initialisiert. |
 | **_HEAPOK** | Der Heap scheint konsistent zu sein. |
 
-Wenn ein Fehler auftritt, setzt _heapchk **errno** auf **_heapchk** **ENOSYS**.
+Wenn ein Fehler auftritt, legt **_heapchk** außerdem **errno** auf **enosys**fest.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_heapchk-Funktion** hilft beim Debuggen von Heapproblemen, indem sie auf minimale Konsistenz des Heaps überprüft. Wenn das Betriebssystem **_heapchk**(z. B. Windows 98) nicht unterstützt, gibt die Funktion **_HEAPOK** zurück und setzt **errno** auf **ENOSYS**.
+Die **_heapchk** -Funktion unterstützt das Debuggen von Heap bezogenen Problemen durch die Überprüfung auf minimale Konsistenz des Heaps. Wenn das Betriebssystem **_heapchk**nicht unterstützt (z. b. Windows 98), gibt die Funktion **_HEAPOK** zurück und legt **errno** auf **enosys**fest.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -119,9 +119,9 @@ int main( void )
 OK - heap is fine
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherzuweisung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
 [_heapadd](../../c-runtime-library/heapadd.md)<br/>
 [_heapmin](heapmin.md)<br/>
 [_heapset](../../c-runtime-library/heapset.md)<br/>

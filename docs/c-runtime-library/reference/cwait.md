@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-process-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +27,12 @@ helpviewer_keywords:
 - cwait function
 - _cwait function
 ms.assetid: d9b596b5-45f4-4e03-9896-3f383cb922b8
-ms.openlocfilehash: d54f62c8ce391b2c8ead92a0a73ac48e6f2b3cb3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9e2e23acb041004b9e96d1c6558ae195ed522155
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348151"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914793"
 ---
 # <a name="_cwait"></a>_cwait
 
@@ -54,36 +54,36 @@ intptr_t _cwait(
 ### <a name="parameters"></a>Parameter
 
 *termstat*<br/>
-Zeiger auf einen Puffer, in dem der Ergebniscode des angegebenen Prozesses gespeichert wird, oder **NULL**.
+Zeiger auf einen Puffer, in dem der Ergebniscode des angegebenen Prozesses gespeichert wird, oder **null**.
 
-*procHandle*<br/>
-Das Handle für den Prozess, auf den gewartet werden soll (d. h. der Prozess, der beendet werden muss, bevor **_cwait** zurückkehren kann).
+*prochandle*<br/>
+Das Handle für den Prozess, auf den gewartet werden soll (d. h. der Prozess, der beendet werden muss, bevor **_cwait** zurückgeben kann).
 
 *action*<br/>
-NULL: Von Windows-Betriebssystemanwendungen ignoriert; für andere Anwendungen: Aktionscode für *procHandle*.
+NULL: wird von Windows-Betriebssystem Anwendungen ignoriert. für andere Anwendungen: Aktions Code, der für *prochandle*ausgeführt werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn der angegebene Prozess erfolgreich abgeschlossen wurde, gibt das Handle des angegebenen Prozesses zurück und legt *termstat* auf den Ergebniscode fest, der vom angegebenen Prozess zurückgegeben wird. Andernfalls gibt -1 zurück und setzt **errno** wie folgt.
+Wenn der angegebene Prozess erfolgreich abgeschlossen wurde, wird das Handle des angegebenen Prozesses zurückgegeben und *termstat* auf den Ergebniscode festgelegt, der vom angegebenen Prozess zurückgegeben wird. Andernfalls wird-1 zurückgegeben und **errno** wie folgt festgelegt.
 
-|Wert|BESCHREIBUNG|
+|Value|Beschreibung|
 |-----------|-----------------|
-|**ECHILD**|Es ist kein angegebener Prozess vorhanden, *procHandle* ist ungültig, oder der Aufruf der [GetExitCodeProcess-](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess) oder [WaitForSingleObject-API](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject) ist fehlgeschlagen.|
-|**Einval**|*Aktion* ist ungültig.|
+|**ECHILD**|Es ist kein angegebener Prozess vorhanden, *prochandle* ist ungültig, oder der Aufrufen der [GetExitCodeProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess) -oder [WaitForSingleObject](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject) -API ist fehlgeschlagen.|
+|**Eingabe**|die *Aktion* ist ungültig.|
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_cwait-Funktion** wartet auf die Beendigung der Prozess-ID des angegebenen Prozesses, der von *procHandle*bereitgestellt wird. Der Wert von *procHandle,* der an **_cwait** übergeben wird, sollte der Wert sein, der vom Aufruf an die [_spawn-Funktion](../../c-runtime-library/spawn-wspawn-functions.md) zurückgegeben wird, die den angegebenen Prozess erstellt hat. Wenn die Prozess-ID beendet wird, bevor **_cwait** aufgerufen wird, **wird _cwait** sofort zurückgegeben. **_cwait** kann von jedem Prozess verwendet werden, um auf einen anderen bekannten Prozess zu warten, für den ein gültiges Handle (*procHandle*) vorhanden ist.
+Die **_cwait** -Funktion wartet auf die Beendigung der Prozess-ID des angegebenen Prozesses, der von *prochandle*bereitgestellt wird. Der Wert von *prochandle* , der an **_cwait** übermittelt wird, sollte der Wert sein, der durch den Aufrufder [_spawn](../../c-runtime-library/spawn-wspawn-functions.md) -Funktion zurückgegeben wird, die den angegebenen Prozess erstellt hat. Wenn die Prozess-ID beendet wird, bevor **_cwait** aufgerufen wird, wird **_cwait** sofort zurückgegeben. **_cwait** können von jedem Prozess verwendet werden, um auf einen anderen bekannten Prozess zu warten, für den ein gültiges Handle (*prochandle*) vorhanden ist.
 
-*termstat* verweist auf einen Puffer, in dem der Rückgabecode des angegebenen Prozesses gespeichert wird. Der Wert von *termstat* gibt an, ob der angegebene Prozess normalerweise durch Aufrufen der Windows [ExitProcess-API](/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess) beendet wurde. **ExitProcess** wird intern aufgerufen, wenn der angegebene Prozess **Exit** oder **_exit**aufruft, vom **Main**zurückkehrt oder das Ende von **main**erreicht. Weitere Informationen zu dem Wert, der über *termstat*zurückübergaben, finden Sie unter [GetExitCodeProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess). Wenn **_cwait** aufgerufen wird, indem ein **NULL-Wert** für *termstat*verwendet wird, wird der Rückgabecode des angegebenen Prozesses nicht gespeichert.
+*termstat* verweist auf einen Puffer, in dem der Rückgabecode des angegebenen Prozesses gespeichert wird. Der Wert von *termstat* gibt an, ob der angegebene Prozess durch Aufrufen der Windows [ExitProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess) -API ordnungsgemäß beendet wurde. **ExitProcess** wird intern aufgerufen, wenn der angegebene Prozess **Exit** oder **_exit**aufruft, von **Main**zurückkehrt oder das Ende von **Main**erreicht. Weitere Informationen zu dem Wert, der durch *termstat*zurückgegeben wird, finden Sie unter [GetExitCodeProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess). Wenn **_cwait** mit einem **null** -Wert für *termstat*aufgerufen wird, wird der Rückgabecode des angegebenen Prozesses nicht gespeichert.
 
-Der *Aktionsparameter* wird vom Windows-Betriebssystem ignoriert, da Eltern-Kind-Beziehungen in diesen Umgebungen nicht implementiert sind.
+Der *Action* -Parameter wird vom Windows-Betriebssystem ignoriert, da Beziehungen zwischen übergeordneten und untergeordneten Elementen in diesen Umgebungen nicht implementiert werden.
 
-Sofern *procHandle* nicht -1 oder -2 ist (Handles für den aktuellen Prozess oder Thread), wird das Handle geschlossen. Daher sollte in dieser Situation das zurückgegebene Handle nicht verwendet werden.
+Wenn *prochandle* nicht-1 oder-2 ist (Handles für den aktuellen Prozess oder Thread), wird das Handle geschlossen. Daher sollte in dieser Situation das zurückgegebene Handle nicht verwendet werden.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -161,7 +161,7 @@ Hi, Dad. It's Carl.
 Hi, Dad. It's Dave.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>

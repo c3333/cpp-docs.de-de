@@ -23,7 +23,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -43,12 +43,12 @@ helpviewer_keywords:
 - strtoul_l function
 - tcstoul function
 ms.assetid: 38f2afe8-8178-4e0b-8bbe-d5c6ad66e3ab
-ms.openlocfilehash: 60ae432fb11c5a29da2c4830c2a85305c6eaa46c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9e0e466893aedb565fcd5852c6768ecfc620c611
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365627"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912405"
 ---
 # <a name="strtoul-_strtoul_l-wcstoul-_wcstoul_l"></a>strtoul, _strtoul_l, wcstoul, _wcstoul_l
 
@@ -83,7 +83,7 @@ unsigned long _wcstoul_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Strsource*<br/>
+*-Quelle*<br/>
 Zu konvertierende mit NULL endende Zeichenfolge.
 
 *endptr*<br/>
@@ -97,21 +97,21 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**strtoul** gibt den konvertierten Wert zurück, falls vorhanden, oder **ULONG_MAX** bei Überlauf. **strtoul** gibt 0 zurück, wenn keine Konvertierung durchgeführt werden kann. **wcstoul** gibt Werte analog an **strtoul**zurück. Für beide Funktionen wird **errno** auf **ERANGE** gesetzt, wenn ein Über- oder Unterlauf auftritt.
+" **straul** " gibt den konvertierten Wert zurück, sofern vorhanden, oder **ULONG_MAX** bei einem Überlauf. " **straul** " gibt "0" zurück, wenn keine Konvertierung ausgeführt werden kann. **wcstoul** gibt Werte analog zu " **straul**" zurück. Bei beiden Funktionen wird **errno** auf **ERANGE** festgelegt, wenn ein Überlauf oder ein Unterlauf auftritt.
 
-Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr.](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)
+Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) .
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Jede dieser Funktionen konvertiert die Eingabezeichenfolge *strSource* in eine **nicht signierte** **long**.
+Jede dieser Funktionen konvertiert die *Eingabe Zeichenfolge* in eine **unsignierte** **Länge**.
 
-**strtoul** stoppt das Lesen der Zeichenfolge *strSource* beim ersten Zeichen, das es als Teil einer Zahl nicht erkennen kann. Dies kann das beendende Nullzeichen sein, oder es kann das erste numerische Zeichen größer oder gleich *Basis*sein. Die **LC_NUMERIC** Kategorieeinstellung des Gebietsschemas bestimmt die Erkennung des Radixzeichens in *strSource*; Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). **strtoul** und **wcstoul** verwenden das aktuelle Gebietsschema; **_strtoul_l** und **_wcstoul_l** identisch sind, außer dass sie stattdessen das übergebene Gebietsschema verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+*mit "* **straul l** " wird das Lesen der Zeichenfolge "" mit dem ersten Zeichen beendet, das nicht als Teil einer Zahl erkannt werden kann. Dies kann das abschließende Null-Zeichen sein, oder es kann das erste numerische Zeichen sein, das größer oder gleich der *Basis*ist. Die **LC_NUMERIC** Kategorieeinstellung des Gebiets Schemas bestimmt die Erkennung des Basis Zeichens in " *strinsource*". Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). " **straul** " und " **wcstoul** " verwenden das aktuelle Gebiets Schema. **_strtoul_l** und **_wcstoul_l** sind beinahe identisch, verwenden jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Wenn *endptr* nicht **NULL**ist, wird ein Zeiger auf das Zeichen, das den Scan beendet hat, an der Position gespeichert, auf die *endptr*zeigt. Wenn keine Konvertierung durchgeführt werden kann (es wurden keine gültigen Ziffern gefunden oder eine ungültige Basis angegeben), wird der Wert von *strSource* an der Position gespeichert, auf die *endptr*zeigt.
+Wenn *endptr* nicht **null**ist, wird ein Zeiger auf das Zeichen, das die Überprüfung beendet hat, an dem Speicherort gespeichert, auf den von *endptr*verwiesen wird. Wenn keine Konvertierung ausgeführt werden kann (keine gültigen Ziffern gefunden oder ungültige Basis angegeben), wird der Wert von " *strinsource* " an dem Speicherort gespeichert, auf den von *endptr*verwiesen wird.
 
-**wcstoul** ist eine breitstellige Version von **strtoul**; das Argument *strSource* ist eine Zeichenfolge mit großen Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+**wcstoul** ist eine breit Zeichen Version von " **Strauch**". Das *unsource* -Argument ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -120,11 +120,11 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_tcstoul**|**strtoul**|**strtoul**|**wcstoul**|
 |**_tcstoul_l**|**strtoul_l**|**_strtoul_l**|**_wcstoul_l**|
 
-**strtoul** erwartet, dass *strSource* auf eine Zeichenfolge der folgenden Form hinweist:
+" **Strauch** " erwartet, dass " *stresource* " auf eine Zeichenfolge der folgenden Form verweist:
 
-> [*Leerzeichen*] [a**+** **-**&#124; ' [**0** [- **x** &#124; **X** ' ]] [*Ziffern* &#124; *Buchstaben*]
+> [*Leerzeichen*] [{**+** &#124; **-**}] [**0** [{ **x** &#124; **x** }]] [*Ziffern* &#124; *Buchstaben*]
 
-Ein *Leerzeichen* kann aus Leerzeichen und Registerkartenzeichen bestehen, die ignoriert werden. *Ziffern* sind eine oder mehrere Dezimalstellen. *Buchstaben* sind einer oder mehrere der Buchstaben "a" bis "z" (oder "A" bis "Z"). Das erste Zeichen, das dieser Form nicht entspricht, beendet die Überprüfung. Wenn *die Basis* zwischen 2 und 36 liegt, wird sie als Basis der Zahl verwendet. Wenn *Base* 0 ist, werden die Anfangszeichen der Zeichenfolge, auf die von *strSource* verwiesen wird, verwendet, um die Basis zu bestimmen. Wenn das erste Zeichen "0" und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als ganze Oktalzahl interpretiert. Wenn das erste Zeichen "0" und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als hexadezimale ganze Zahl interpretiert. Wenn das erste Zeichen "1" bis "9 " ist, wird die Zeichenfolge als ganze Dezimalzahl interpretiert. Den Buchstaben „a“ bis „z“ (bzw. „A“ bis „Z“) werden die Werten 10 bis 35 zugewiesen. Es sind nur Buchstaben zulässig, deren zugewiesene Werte kleiner als *base* sind. Das erste Zeichen außerhalb des Bereichs der Basis beendet die Überprüfung. Wenn *basisrist* z. B. 0 ist und das erste gescannte Zeichen '0' ist, wird eine oktale Ganzzahl angenommen, und ein Zeichen '8' oder '9' stoppt den Scan. **strtoul** erlaubt ein**+** Plus -**-**) oder Minus ( ) Vorzeichenpräfix; Ein führendes Minuszeichen gibt an, dass der Rückgabewert negiert wird.
+Ein Leerraum kann aus *Leerzeichen und* Tabstopp Zeichen bestehen, die ignoriert werden. *Ziffern* sind eine oder mehrere Dezimalstellen. *Buchstaben* sind mindestens einer der Buchstaben "a" bis "z" (oder "a" bis "z"). Das erste Zeichen, das dieser Form nicht entspricht, beendet die Überprüfung. Wenn die *Basis* zwischen 2 und 36 ist, wird Sie als Basis der Zahl verwendet. Wenn *Base* den Wert 0 hat, werden die ersten Zeichen der Zeichenfolge, auf die von " *darsource* " verwiesen wird, zum Bestimmen der Basis verwendet. Wenn das erste Zeichen "0" und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als ganze Oktalzahl interpretiert. Wenn das erste Zeichen "0" und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als hexadezimale ganze Zahl interpretiert. Wenn das erste Zeichen "1" bis "9 " ist, wird die Zeichenfolge als ganze Dezimalzahl interpretiert. Den Buchstaben „a“ bis „z“ (bzw. „A“ bis „Z“) werden die Werten 10 bis 35 zugewiesen. Es sind nur Buchstaben zulässig, deren zugewiesene Werte kleiner als *base* sind. Das erste Zeichen außerhalb des Bereichs der Basis beendet die Überprüfung. Wenn die *Basis* beispielsweise 0 und das erste überprüfte Zeichen "0" ist, wird eine ganze Oktalzahl angenommen und ein "8"-oder "9"-Zeichen beendet die Überprüfung. " **Strauch** " ermöglicht ein Pluszeichen**+**() oder minus**-** Zeichen (). ein führendes Minuszeichen gibt an, dass der Rückgabewert negiert wird.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -141,7 +141,7 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Ein Beispiel hierfür finden Sie unter [strtod](strtod-strtod-l-wcstod-wcstod-l.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
