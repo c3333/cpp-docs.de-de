@@ -26,7 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +46,12 @@ helpviewer_keywords:
 - llroundf function
 - lroundl function
 ms.assetid: cfb88a35-54c6-469f-85af-f7d695dcfdd8
-ms.openlocfilehash: e73ae490fcd3e7d88228136b57d34491f0150764
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 10d5e1284f756107cee03b970d026d9e2896adf2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81341631"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911364"
 ---
 # <a name="lround-lroundf-lroundl-llround-llroundf-llroundl"></a>lround, lroundf, lroundl, llround, llroundf, llroundl
 
@@ -94,28 +94,28 @@ long long llroundl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **Funktionen lround** und **llround** geben die nächste **lange** oder **lange** **ganze** Zahl an *x*zurück. Halbe Werte werden kaufmännisch gerundet, unabhängig von der Einstellung des Gleitkomma-Rundungsmodus. Es gibt keine Fehlerrückgabe.
+Die **lround** -Funktion und die **LlRound** -Funktion geben die nächste **Long** -oder **Long** **Long-Ganzzahl** an *x*zurück Halbe Werte werden kaufmännisch gerundet, unabhängig von der Einstellung des Gleitkomma-Rundungsmodus. Es gibt keine Fehlerrückgabe.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|• **QNAN**, **IND**|Keine|**_DOMAIN**|
+|± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **lround** oder **llround** aufrufen, die **Float-** und **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm, **lround** und **llround** nehmen und geben Sie immer eine **doppelte**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **lround** oder **LlRound** aufzurufen, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm verwenden **lround** und **LlRound** immer einen **Double**-Wert.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**lround**, **lroundf**, **lroundl**, **llround**, **llroundf**, **llroundl**|\<math.h>|
+|**lround**, **lroundf**, **lroundl**, **LlRound**, **llroundf**, **llroundl**|\<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -155,7 +155,7 @@ lroundl(3.500000) is 4
 lroundl(-3.500000) is -4
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

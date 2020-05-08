@@ -26,7 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -48,12 +48,12 @@ helpviewer_keywords:
 - _y1 function
 - _yn function
 ms.assetid: a21a8bf1-df9d-4ba0-a8c2-e7ef71921d96
-ms.openlocfilehash: cdf722c9c6f6055ac918d1bede59345a9ef8d90d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ef914d542d058898cf9b16478fd40ef4b0725674
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348662"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913466"
 ---
 # <a name="bessel-functions-_j0-_j1-_jn-_y0-_y1-_yn"></a>Bessel-Funktionen: _j0, _j1, _jn, _y0, _y1, _yn
 
@@ -86,7 +86,7 @@ double _yn(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert.
 
 *n*<br/>
@@ -94,31 +94,31 @@ Ganzzahlige Ordnung der Bessel-Funktion.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt eine Bessel-Funktion von *x*zurück. Wenn *x* in den Funktionen **_y0** **, _y1**oder **_yn** negativ ist, setzt die Routine **errno** auf **EDOM**, gibt eine **_DOMAIN** Fehlermeldung auf **stderr**aus und gibt **_HUGE_VAL**zurück. Sie können die Fehlerbehandlung ändern, indem Sie **_matherr verwenden.**
+Jede dieser Routinen gibt eine Bessel-Funktion von *x*zurück. Wenn *x* in den Funktionen **_y0**, **_y1**oder **_yn** negativ ist, legt die Routine **errno** auf **Edom**fest, gibt eine **_DOMAIN** Fehlermeldung an **stderr**aus und gibt **_HUGE_VAL**zurück. Sie können die Fehlerbehandlung ändern, indem Sie **_matherr**verwenden.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_j0**, **_j1**und **_jn** Routinen geben Bessel-Funktionen der ersten Art zurück: Die Orders 0, 1 bzw. n.
-
-|Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
-|-----------|-------------------|-----------------------|
-|• **QNAN**, **IND**|**Ungültig**|**_DOMAIN**|
-
-Die **_y0**, **_y1**und **_yn** Routinen geben Bessel-Funktionen der zweiten Art zurück: Die Orders 0, 1 bzw. n.
+Die **_j0**-, **_j1**-und **_jn** Routinen geben Bessel-Funktionen der ersten Art zurück: Orders 0, 1 bzw. n.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|• **QNAN**, **IND**|**Ungültig**|**_DOMAIN**|
-|€ 0|**ZERODIVIDE**|**_SING**|
+|± **QNAN**, **IND**|**Ungültig**|**_DOMAIN**|
+
+Die **_y0**-, **_y1**-und **_yn** Routinen geben Bessel-Funktionen der zweiten Art zurück: Orders 0, 1 bzw. n.
+
+|Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
+|-----------|-------------------|-----------------------|
+|± **QNAN**, **IND**|**Ungültig**|**_DOMAIN**|
+|± 0|**ZERODIVIDE**|**_SING**|
 |&#124;x&#124; < 0,0|**Ungültig**|**_DOMAIN**|
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_j0**, **_j1**, **_jn**, **_y0**, **_y1**, **_yn**|\<cmath> (C++), \<math.h> (C, C++)|
+|**_j0**, **_j1**, **_jn**, **_y0**, **_y1** **_yn**|\<cmath> (C++), \<math.h> (C, C++)|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -163,7 +163,7 @@ Bessel functions for x = 2.387000:
    Second 4      _yn( 4, x )  -1.626833
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [_matherr](matherr.md)<br/>

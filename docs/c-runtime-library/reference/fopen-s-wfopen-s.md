@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +39,12 @@ helpviewer_keywords:
 - files [C++], opening
 - Unicode [C++], files
 ms.assetid: c534857e-39ee-4a3f-bd26-dfe551ac96c3
-ms.openlocfilehash: f18b04cadfa80d7e0be193bbd552efe8486eeeda
-ms.sourcegitcommit: fcc3aeb271449f8be80348740cffef39ba543407
+ms.openlocfilehash: a06191791132784740fa85ca45e23e8aaa56279e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82538605"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914914"
 ---
 # <a name="fopen_s-_wfopen_s"></a>fopen_s, _wfopen_s
 
@@ -84,11 +84,11 @@ Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt. Weitere Inform
 
 |*pFile*|*Einfügen*|*mode*|Rückgabewert|Inhalt von *Pfile*|
 |-------------|----------------|------------|------------------|------------------------|
-|**NULL**|any|any|**Eingabe**|unverändert|
-|any|**NULL**|any|**Eingabe**|unverändert|
-|any|any|**NULL**|**Eingabe**|unverändert|
+|**Normal**|any|any|**Eingabe**|unverändert|
+|any|**Normal**|any|**Eingabe**|unverändert|
+|any|any|**Normal**|**Eingabe**|unverändert|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dateien, die von **fopen_s** und **_wfopen_s** geöffnet werden, können nicht freigegeben werden. Wenn eine Datei freigegeben werden muss, verwenden Sie [_fsopen _wfsopen](fsopen-wfsopen.md) mit der entsprechenden freigabemoduskonstante, z. –. **_SH_DENYNO** für die Lese-/Schreibfreigabe.
 
@@ -171,8 +171,8 @@ Weitere Informationen zur Anwendung von Text- und Binärmodi in Unicode- und Mul
 |-|-|
 | **scher** | Aktivieren Sie das commitflag für den zugeordneten *Dateinamen* , damit der Inhalt des Datei Puffers direkt auf den Datenträger geschrieben wird, wenn entweder **fflush** oder **_flushall** aufgerufen wird. |
 | **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardeinstellung. Dabei wird auch das globale Commitflag überschrieben, wenn Sie das Programm mit COMMODE.OBJ verknüpfen. Der Standardwert des globalen Commitflags lautet "no-commit", es sei denn, Sie verknüpfen das Programm explizit mit COMMODE.OBJ (siehe [Link Options](../../c-runtime-library/link-options.md)). |
-| **N** | Gibt an, dass die Datei nicht von untergeordneten Prozessen geerbt wird. |
-| **E** | Gibt an, dass das Zwischenspeichern für den sequenziellen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
+| **Nr** | Gibt an, dass die Datei nicht von untergeordneten Prozessen geerbt wird. |
+| **Hymnen** | Gibt an, dass das Zwischenspeichern für den sequenziellen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
 | **R** | Gibt an, dass das Zwischenspeichern für den zufälligen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
 | **T** | Gibt an, dass eine Datei temporär ist. Wenn möglich, wird sie nicht auf den Datenträger geschrieben. |
 | **D** | Gibt an, dass eine Datei temporär ist. Sie wird gelöscht, wenn der letzte Dateizeiger geschlossen wird. |
@@ -192,7 +192,7 @@ Gültige Zeichen *für die im* **fopen_s** und [_fdopen](fdopen-wfdopen.md) verw
 |**Bund**|**_O_TEXT**|
 |**scher**|Keine|
 |**n**|Keine|
-|**E**|**_O_SEQUENTIAL**|
+|**Hymnen**|**_O_SEQUENTIAL**|
 |**R**|**_O_RANDOM**|
 |**T**|**_O_SHORTLIVED**|
 |**D**|**_O_TEMPORARY**|
@@ -202,7 +202,7 @@ Gültige Zeichen *für die im* **fopen_s** und [_fdopen](fdopen-wfdopen.md) verw
 
 Wenn Sie den **RB** -Modus verwenden, den Code nicht portieren müssen und davon ausgehen, dass ein Großteil der Datei gelesen wird und/oder die Netzwerkleistung nicht relevant ist, können Win32-Dateien mit Speicher Zuordnung auch eine Option sein.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|

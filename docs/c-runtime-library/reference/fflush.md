@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - flushing
 - fflush function
 ms.assetid: 8bbc753f-dc74-4e77-b563-74da2835e92b
-ms.openlocfilehash: 401f715e99e6304f0726c8b9c96a71d9582dbc1d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c5208c86484e1d9478f3879d91b32d57ba7c4a3a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347167"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912898"
 ---
 # <a name="fflush"></a>fflush
 
@@ -49,29 +49,29 @@ int fflush(
 
 ### <a name="parameters"></a>Parameter
 
-*Stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**fflush** gibt 0 zurück, wenn der Puffer erfolgreich geleert wurde. Der Wert 0 wird auch dann zurückgegeben, wenn der angegebene Stream über keinen Puffer verfügt oder nur zum Lesen geöffnet wird. Ein Rückgabewert von **EOF** gibt einen Fehler an.
+**fflush** gibt 0 zurück, wenn der Puffer erfolgreich geleert wurde. Der Wert 0 wird auch dann zurückgegeben, wenn der angegebene Stream über keinen Puffer verfügt oder nur zum Lesen geöffnet wird. Der Rückgabewert von **EOF** weist auf einen Fehler hin.
 
 > [!NOTE]
-> Wenn **fflush** **EOF**zurückgibt, sind möglicherweise Daten aufgrund eines Schreibfehlers verloren gegangen. Beim Einrichten eines kritischen Fehlerhandlers ist es am sichersten, das Puffern mit der **setvbuf-Funktion** zu deaktivieren oder E/A-Routinen auf niedriger Ebene wie **_open**, **_close**und **_write** anstelle der Stream-E/A-Funktionen zu verwenden.
+> Wenn **fflush** **EOF**zurückgibt, sind die Daten möglicherweise aufgrund eines Schreibfehlers verloren gegangen. Beim Einrichten eines kritischen Fehler Handlers ist es am sichersten, die Pufferung mit der **setvbuf** -Funktion zu aktivieren oder e/a-Routinen auf niedriger Ebene zu verwenden, wie z. b. **_open**, **_close**und **_write** anstelle der Stream-e/a-Funktionen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **fflush-Funktion** spült den *Streamstream*. Wenn der Stream im Schreibmodus oder im Updatemodus geöffnet wurde und der letzte Vorgang ein Schreibvorgang war, werden die Inhalte des Streampuffers in die zugrunde liegende Datei bzw. das Gerät geschrieben, und der Puffer wird verworfen. Wenn der Stream im Lesemodus geöffnet wurde oder wenn der Stream keinen Puffer hat, hat der Aufruf von **fflush** keine Auswirkungen, und jeder Puffer wird beibehalten. Ein Aufruf zu **fflush** negiert die Wirkung eines vorherigen Aufrufs von **ungetc** für den Stream. Der Stream bleibt nach dem Aufruf geöffnet.
+Die **fflush** -Funktion leert den Stream- *Stream*. Wenn der Stream im Schreibmodus oder im Updatemodus geöffnet wurde und der letzte Vorgang ein Schreibvorgang war, werden die Inhalte des Streampuffers in die zugrunde liegende Datei bzw. das Gerät geschrieben, und der Puffer wird verworfen. Wenn der Stream im Lesemodus geöffnet wurde, oder wenn der Stream über keinen Puffer verfügt, hat der Befehl **fflush** keine Auswirkung, und jeder Puffer wird beibehalten. Ein-Befehl von **fflush** negiert die Auswirkung eines früheren Aufrufens von **ungetc** für den Datenstrom. Der Stream bleibt nach dem Aufruf geöffnet.
 
-Wenn *Stream* **NULL**ist, entspricht das Verhalten einem Aufruf von **fflush** für jeden geöffneten Stream. Alle im Schreibmodus geöffneten Streams und alle Streams im Updatemodus, in denen der letzte Vorgang ein Schreibvorgang war, werden geleert. Der Aufruf hat keine Auswirkungen auf andere Streams.
+Wenn *stream* der Stream **null**ist, ist das Verhalten mit dem Befehl " **fflush** " für jeden geöffneten Stream identisch. Alle im Schreibmodus geöffneten Streams und alle Streams im Updatemodus, in denen der letzte Vorgang ein Schreibvorgang war, werden geleert. Der Aufruf hat keine Auswirkungen auf andere Streams.
 
-Puffer werden normalerweise vom Betriebssystem verwaltet, das den optimalen Zeitpunkt bestimmt, zu dem Daten automatisch auf den Datenträger geschrieben werden: wenn ein Puffer voll ist, wenn ein Stream geschlossen wird oder wenn ein Programm normal beendet wird, ohne den Stream zu schließen. Mit der Datenträgercommitfunktion der Laufzeitbibliothek können Sie sicherstellen, dass wichtige Daten direkt auf den Datenträger anstatt in die Betriebssystempuffer geschrieben werden. Sie können diese Funktion aktivieren, ohne ein vorhandenes Programm umzuschreiben. Verknüpfen Sie hierzu die Objektdateien des Programms mit COMMODE.OBJ. In der resultierenden ausführbaren Datei schreiben Aufrufe von **_flushall** den Inhalt aller Puffer auf den Datenträger. Nur **_flushall** und **fflush** sind von COMMODE.OBJ betroffen.
+Puffer werden normalerweise vom Betriebssystem verwaltet, das den optimalen Zeitpunkt bestimmt, zu dem Daten automatisch auf den Datenträger geschrieben werden: wenn ein Puffer voll ist, wenn ein Stream geschlossen wird oder wenn ein Programm normal beendet wird, ohne den Stream zu schließen. Mit der Datenträgercommitfunktion der Laufzeitbibliothek können Sie sicherstellen, dass wichtige Daten direkt auf den Datenträger anstatt in die Betriebssystempuffer geschrieben werden. Sie können diese Funktion aktivieren, ohne ein vorhandenes Programm umzuschreiben. Verknüpfen Sie hierzu die Objektdateien des Programms mit COMMODE.OBJ. In der resultierenden ausführbaren Datei **_flushall** den Inhalt aller Puffer auf den Datenträger schreiben. COMMODE. obj wirkt sich nur auf **_flushall** und **fflush** aus.
 
 Weitere Informationen zum Steuern der Datenträgercommitfunktion finden Sie unter [Stream-E/A](../../c-runtime-library/stream-i-o.md), [fopen](fopen-wfopen.md) und [_fdopen](fdopen-wfdopen.md).
 
-Diese Funktion sperrt den aufrufenden Thread und ist threadsicher. Eine nicht sperrende Version finden Sie **unter _fflush_nolock**.
+Diese Funktion sperrt den aufrufenden Thread und ist threadsicher. Eine nicht sperrende Version finden Sie unter **_fflush_nolock**.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -131,7 +131,7 @@ int main(void)
 User selected 5
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [fclose, _fcloseall](fclose-fcloseall.md)<br/>

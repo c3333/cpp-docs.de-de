@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - getwche function
 - _getche function
 ms.assetid: eac978a8-c43a-4130-938f-54f12e2a0fda
-ms.openlocfilehash: 59af5360ed8d966629d5e46f77681631a521d502
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dd8c72d4c8d6eedb2485fc23e09e9118ab6d45ac
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81344543"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910834"
 ---
 # <a name="_getche-_getwche"></a>_getche, _getwche
 
@@ -60,13 +60,13 @@ wint_t _getwche( void );
 
 Gibt das gelesene Zeichen zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_getche-** und **_getwche-Funktionen** lesen ein einzelnes Zeichen aus der Konsole mit Echo, was bedeutet, dass das Zeichen auf der Konsole angezeigt wird. Mit keiner dieser Funktionen kann STRG+C gelesen werden. Beim Lesen einer Steuertaste oder einer Pfeiltaste muss jede Funktion zweimal aufgerufen werden. Der erste Aufruf gibt 0 oder 0xE0 und der zweite Aufruf den tatsächlichen Tastencode zurück.
+Die Funktionen **_getche** und **_getwche** lesen ein einzelnes Zeichen aus der Konsole mit Echo, was bedeutet, dass das Zeichen in der Konsole angezeigt wird. Mit keiner dieser Funktionen kann STRG+C gelesen werden. Beim Lesen einer Steuertaste oder einer Pfeiltaste muss jede Funktion zweimal aufgerufen werden. Der erste Aufruf gibt 0 oder 0xE0 und der zweite Aufruf den tatsächlichen Tastencode zurück.
 
 Diese Funktionen sperren den aufrufenden Thread und sind daher threadsicher. Nicht sperrende Versionen finden Sie unter [_getche_nolock _getwche_nolock](getche-nolock-getwche-nolock.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -119,9 +119,9 @@ abcdefy
 Type 'Y' when finished typing keys: abcdefyY
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Konsole und Port-I/O](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cgets, _cgetws](../../c-runtime-library/cgets-cgetws.md)<br/>
 [getc, getwc](getc-getwc.md)<br/>
 [_ungetch, _ungetwch, _ungetch_nolock, _ungetwch_nolock](ungetch-ungetwch-ungetch-nolock-ungetwch-nolock.md)<br/>

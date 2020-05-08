@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - file pointers [C++], repositioning
 - file pointers [C++]
 ms.assetid: 1a460ce1-28d8-4b5e-83a6-633dca29c28a
-ms.openlocfilehash: 4b99dd1101727c3ba7d501dffc5abe22edf7f7ff
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 645b8bf105641b9f13a9f9fc0605e6b8526b4b56
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338092"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917755"
 ---
 # <a name="rewind"></a>rewind
 
@@ -50,30 +50,30 @@ void rewind(
 
 ### <a name="parameters"></a>Parameter
 
-*Stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **Reswind-Funktion** positioniert den dem *Stream* zugeordneten Dateizeiger am Anfang der Datei neu. Der Aufruf **rewind** ist vergleichbar mit
+Die **Rewind** -Funktion positioniert den mit *Stream* verknüpften Dateizeiger am Anfang der Datei. Der Aufruf **rewind** ist vergleichbar mit
 
-**(void) fseek(** _stream_**, 0L, SEEK_SET );**
+**(void) "f Seek" (** _Stream_**, 0l, SEEK_SET);**
 
-Im Gegensatz zu [fseek](fseek-fseeki64.md)löscht **der Rückspulen** jedoch die Fehlerindikatoren für den Stream sowie den End-of-File-Indikator. Im Gegensatz zu [fseek](fseek-fseeki64.md)gibt **Der Rückspulen** auch keinen Wert zurück, um anzugeben, ob der Zeiger erfolgreich verschoben wurde.
+Anders als bei der [Suche](fseek-fseeki64.md)löscht **Rewind** jedoch die Fehlerindikatoren für den Stream und den Dateiende-Indikator. Außerdem gibt **Rewind** im Gegensatz zu [fseek](fseek-fseeki64.md)keinen Wert zurück, um anzugeben, ob der Zeiger erfolgreich verschoben wurde.
 
-Um den Tastaturpuffer zu löschen, verwenden Sie **das Zurückspulen** mit dem Stream **stdin**, der standardmäßig der Tastatur zugeordnet ist.
+Verwenden Sie zum Löschen des Tastatur Puffers **Rewind** mit dem Stream **stdin**, der standardmäßig mit der Tastatur verknüpft ist.
 
-Wenn Stream ein **NULL-Zeiger** ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt diese Funktion zurück und **errno** wird auf **EINVAL**gesetzt.
+Wenn Stream ein **null** -Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt diese Funktion zurück, und **errno** ist auf **EINVAL**festgelegt.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**Zurückspulen**|\<stdio.h>|
+|**Rewind**|\<stdio.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

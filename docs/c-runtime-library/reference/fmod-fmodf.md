@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - fmod function
 - floating-point numbers, calculating remainders
 ms.assetid: 6962d369-d11f-40b1-a6d7-6f67239f8a23
-ms.openlocfilehash: 0cf25e2029f06c2e02a24ca84926e1a8b8f30159
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a6fcb7feeae72ff15d7b1ed0d55c5abbb408135a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81346554"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914958"
 ---
 # <a name="fmod-fmodf-fmodl"></a>fmod, fmodf, fmodl
 
@@ -77,21 +77,21 @@ Gleitkommawerte.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**fmod** gibt den Gleitkommarest von *x* / *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt **fmod** einen ruhigen NaN zurück. Informationen zur Darstellung eines ruhigen NaN durch die **printf-Familie** finden Sie unter [printf](printf-printf-l-wprintf-wprintf-l.md).
+" **f** " gibt den Gleit Komma Rest von *x* / *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt " **f** " einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **fmod-Funktion** berechnet den Gleitkommarest *f* von *x* / *y,* so dass *x* = *i* \* *y* + *f*, wobei *i* eine ganze Zahl ist, *f* das gleiche Vorzeichen wie *x*hat und der absolute Wert von *f* kleiner als der absolute Wert von *y*ist.
+Die **Funktion "** f" berechnet den Gleit Komma Rest *f* von *x* / *y* , sodass *x* = *i* \* *y* + *f* *, wobei es sich um* eine ganze Zahl handelt, *f* dasselbe Vorzeichen wie " *x*" hat und der absolute Wert von " *f* " kleiner ist als der absolute Wert von " *y*".
 
-C++ ermöglicht eine Überlastung, sodass Sie Überladungen von **Fmod** aufrufen können, die **Float-** und **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt **fmod** immer zwei **doppelte** Argumente und gibt eine **doppelte**zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt " **f** " immer zwei **doppelte** Argumente und gibt einen **Double**-Wert zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**fmod**, **fmodf**, **fmodl**|\<math.h>|
+|" **f**" **, "** f", " **f** ", "f"|\<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -117,7 +117,7 @@ int main( void )
 The remainder of -10.00 / 3.00 is -1.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

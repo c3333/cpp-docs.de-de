@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - chsize_s function
 - _chsize_s function
 ms.assetid: d88d2e94-6e3b-42a5-8631-16ac4d82fa38
-ms.openlocfilehash: 70845124eb889d73a0f87aadd923e2d86db96c29
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: faed95bfeb6fad88f502101e166ec6124b6e591d
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350076"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910416"
 ---
 # <a name="_chsize_s"></a>_chsize_s
 
@@ -51,27 +51,27 @@ errno_t _chsize_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf eine geöffnete Datei verweist.
 
-*Größe*<br/>
+*size*<br/>
 Neue Länge der Datei in Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_chsize_s** gibt den Wert 0 zurück, wenn die Dateigröße erfolgreich geändert wurde. Ein Rückgabewert ungleich Null gibt einen Fehler an: Der Rückgabewert ist **EACCES,** wenn die angegebene Datei für den Zugriff gesperrt ist, **EBADF,** wenn die angegebene Datei schreibgeschützt ist oder der Deskriptor ungültig ist, **ENOSPC,** wenn kein Speicherplatz auf dem Gerät verbleibt, oder **EINVAL,** wenn die Größe kleiner als Null ist. **errno** wird auf denselben Wert gesetzt.
+**_chsize_s** gibt den Wert 0 (null) zurück, wenn die Dateigröße erfolgreich geändert wurde. Ein Rückgabewert ungleich NULL weist auf einen Fehler hin: der Rückgabewert ist **EACCES** , wenn die angegebene Datei für den Zugriff gesperrt ist, **EBADF** , wenn die angegebene Datei schreibgeschützt ist oder der Deskriptor ungültig ist, **ENOSPC** , wenn kein Speicherplatz auf dem Gerät vorhanden ist, oder **EINVAL** , wenn die Größe kleiner als 0 (null) ist. **errno** ist auf denselben Wert festgelegt.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_chsize_s-Funktion** erweitert oder abgeschnitten die Datei, die fd zugeordnet *ist,* auf die durch *Größe*angegebene Länge. Die Datei muss in einem Modus geöffnet sein, der Schreiben zulässt. Wenn die Datei erweitert wird, werden NULL-Zeichen ('\0') angefügt. Wenn die Datei abgeschnitten wird, gehen alle Daten vom Ende der gekürzten Datei bis zur ursprünglichen Länge der Datei verloren.
+Die **_chsize_s** -Funktion erweitert oder verkürzt die mit *FD* zugeordnete Datei mit der durch *size*angegebenen Länge. Die Datei muss in einem Modus geöffnet sein, der Schreiben zulässt. Wenn die Datei erweitert wird, werden NULL-Zeichen ('\0') angefügt. Wenn die Datei abgeschnitten wird, gehen alle Daten vom Ende der gekürzten Datei bis zur ursprünglichen Länge der Datei verloren.
 
-**_chsize_s** nimmt eine 64-Bit-Ganzzahl als Dateigröße und kann daher Dateigrößen größer als 4 GB verarbeiten. **_chsize** ist auf 32-Bit-Dateigrößen beschränkt.
+**_chsize_s** nimmt eine 64-Bit-Ganzzahl als Dateigröße an und kann daher Dateigrößen von mehr als 4 GB verarbeiten. **_chsize** ist auf die Größe von 32-Bit-Dateien beschränkt.
 
-Diese Funktion überprüft ihre Parameter. Wenn *fd* kein gültiger Dateideskriptor ist oder die Größe kleiner als Null ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben.
+Diese Funktion überprüft ihre Parameter. Wenn *FD* kein gültiger Dateideskriptor ist oder die Größe kleiner als 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -81,7 +81,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_chsize](chsize.md)<br/>

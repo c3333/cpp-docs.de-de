@@ -24,7 +24,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -58,19 +58,19 @@ helpviewer_keywords:
 - _mbsnccnt function
 - _wcsncnt function
 ms.assetid: 2a022e9e-a307-4acb-a66b-e56e5357f848
-ms.openlocfilehash: bfd339a38dd5df30ece72059525860603ee10748
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 020b844d884182ae7553fec9e9db746987189910
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364184"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914208"
 ---
 # <a name="_strncnt-_wcsncnt-_mbsnbcnt-_mbsnbcnt_l-_mbsnccnt-_mbsnccnt_l"></a>_strncnt, _wcsncnt, _mbsnbcnt, _mbsnbcnt_l, _mbsnccnt, _mbsnccnt_l
 
 Gibt die Anzahl von Bytes oder Zeichen innerhalb einer angegebenen Zählers zurück.
 
 > [!IMPORTANT]
-> **_mbsnbcnt** **, _mbsnbcnt_l**, **_mbsnccnt**und **_mbsnccnt_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> **_mbsnbcnt**, **_mbsnbcnt_l**, **_mbsnccnt**und **_mbsnccnt_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -105,32 +105,32 @@ size_t _mbsnccnt_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Zu untersuchende Zeichenfolge.
 
 *count*<br/>
-Anzahl der Zeichen oder Bytes, die in *str*untersucht werden sollen.
+Anzahl von Zeichen oder bytes, die in *Str*untersucht werden sollen.
 
 *locale*<br/>
 Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_mbsnbcnt** und **_mbsnbcnt_l** die Anzahl der Bytes zurück, die in der ersten *Anzahl* von Multibyte-Zeichen von *str*gefunden wurden. **_mbsnccnt** und **_mbsnccnt_l** die Anzahl der Zeichen zurück, die in der ersten *Anzahl* von Bytes von *str*gefunden wurden. Wenn ein Nullzeichen vor Abschluss der Prüfung von *str* gefunden wird, geben sie die Anzahl der Bytes oder Zeichen zurück, die vor dem Nullzeichen gefunden wurden. Wenn *str* aus weniger als *Zählzeichen* oder Bytes besteht, geben sie die Anzahl der Zeichen oder Bytes in der Zeichenfolge zurück. Wenn *die Anzahl* kleiner als Null ist, geben sie 0 zurück. In früheren Versionen hatten diese Funktionen einen Rückgabewert vom Typ **int** statt **size_t**.
+**_mbsnbcnt** und **_mbsnbcnt_l** geben die Anzahl der Bytes zurück, die in der ersten *Anzahl* von Multibytezeichen-Zeichen von *Str*gefunden wurden. **_mbsnccnt** und **_mbsnccnt_l** geben die Anzahl der Zeichen zurück, die in der ersten *Anzahl* der Bytes von *Str*gefunden wurden. Wenn ein NULL-Zeichen gefunden wird, bevor die Untersuchung von *Str* abgeschlossen ist, geben Sie die Anzahl von Bytes oder Zeichen zurück, die vor dem NULL-Zeichen gefunden wurden. Wenn *Str* weniger als *Anzahl* Zeichen oder Bytes umfasst, wird die Anzahl der Zeichen oder Bytes in der Zeichenfolge zurückgegeben. Wenn *count* kleiner als 0 (null) ist, wird 0 zurückgegeben. In früheren Versionen hatten diese Funktionen einen Rückgabewert vom Typ " **int** " anstelle von " **size_t**".
 
-**_strncnt** gibt die Anzahl der Zeichen in den ersten *Zählbytes* der Single-Byte-Zeichenfolge *str*zurück. **_wcsncnt** gibt die Anzahl der Zeichen in den ersten *Anzahl* breit Zeichen der breit zeichenbreiten Zeichenfolge *str*zurück.
+**_strncnt** gibt die Anzahl von Zeichen in den ersten *Anzahl* Bytes der Einzel Byte Zeichenfolge *Str*zurück. **_wcsncnt** gibt die Anzahl der Zeichen in der ersten *Anzahl* von breit Zeichen der breit Zeichen-Zeichenfolge *Str*zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-**_mbsnbcnt** und **_mbsnbcnt_l** die Anzahl der Bytes zählen, die in der ersten *Anzahl* von Multibyte-Zeichen von *str*gefunden wurden. **_mbsnbcnt** und **_mbsnbcnt_l** **mtob** ersetzen und sollte anstelle von **mtob**verwendet werden.
+**_mbsnbcnt** und **_mbsnbcnt_l** zählen die Anzahl der Bytes, die in der ersten *Anzahl* von Multibytezeichen-Zeichen von *Str*gefunden wurden. **_mbsnbcnt** und **_mbsnbcnt_l** ersetzen Sie **mtob** und sollten anstelle von **mtob**verwendet werden.
 
-**_mbsnccnt** und **_mbsnccnt_l** die Anzahl der Zeichen zählen, die in der ersten *Anzahl* von Bytes von *str*gefunden wurden. Wenn **_mbsnccnt** und **_mbsnccnt_l** im zweiten Byte eines Doppelbytezeichens auf ein Nullzeichen stoßen, wird das erste Byte ebenfalls als NULL betrachtet und nicht im zurückgegebenen Zählwert enthalten. **_mbsnccnt** und **_mbsnccnt_l** **btom** ersetzen und sollte anstelle von **btom**verwendet werden.
+**_mbsnccnt** und **_mbsnccnt_l** zählt die Anzahl der Zeichen, die in der ersten *Anzahl* von Bytes von *Str*gefunden werden. Wenn **_mbsnccnt** und **_mbsnccnt_l** im zweiten Byte eines Doppelbyte Zeichens auf ein NULL-Zeichen stoßen, wird das erste Byte auch als null betrachtet und ist nicht im zurückgegebenen Zählwert enthalten. **_mbsnccnt** und **_mbsnccnt_l** ersetzen Sie **btom** und sollten anstelle von **btom**verwendet werden.
 
-Wenn *str* ein **NULL-Zeiger** ist oder *count* 0 ist, rufen diese Funktionen den ungültigen Parameterhandler auf, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben, **errno** wird auf **EINVAL**gesetzt, und die Funktion gibt 0 zurück.
+Wenn *Str* ein **null** -Zeiger ist oder *count* auf 0 festgelegt ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validierung](../../c-runtime-library/parameter-validation.md)beschrieben, **errno** ist auf **EINVAL**festgelegt, und die Funktion gibt 0 zurück.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -184,7 +184,7 @@ The first 10 characters are single-byte.
 
 ## <a name="see-also"></a>Siehe auch
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>
