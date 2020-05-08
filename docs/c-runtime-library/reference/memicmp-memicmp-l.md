@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +33,12 @@ helpviewer_keywords:
 - memicmp_l function
 - _memicmp_l function
 ms.assetid: 0a6eb945-4077-4f84-935d-1aaebe8db8cb
-ms.openlocfilehash: 5ad22f2107695b14d4a8361d4532d6e250b5af6f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 365b57dc300da5686895d66fa642e3870612c2ed
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333236"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915394"
 ---
 # <a name="_memicmp-_memicmp_l"></a>_memicmp, _memicmp_l
 
@@ -62,10 +62,10 @@ int _memicmp_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Puffer1*<br/>
+*buffer1*<br/>
 Erster Puffer.
 
-*puffer2*<br/>
+*buffer2*<br/>
 Zweite Puffer.
 
 *count*<br/>
@@ -85,15 +85,15 @@ Der Rückgabewert gibt die Beziehung zwischen den Puffern an.
 |> 0|*buffer1* größer als *buffer2*.|
 |**_NLSCMPERROR**|Ein Fehler ist aufgetreten.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_memicmp-Funktion** vergleicht die ersten *Zählzeichen* der beiden Puffer *buffer1* und *buffer2* Byte by byte. Beim Vergleich wird die Groß-/Kleinschreibung nicht berücksichtigt.
+Die **_memicmp** -Funktion vergleicht die ersten *count* -Zeichen der beiden Puffer *buffer1* und *buffer2* Byte mit Byte. Beim Vergleich wird die Groß-/Kleinschreibung nicht berücksichtigt.
 
-Wenn *buffer1* oder *buffer2* ein NULL-Zeiger ist, ruft diese Funktion einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **_NLSCMPERROR** zurück und setzt **errno** auf **EINVAL**.
+Wenn entweder *buffer1* oder *buffer2* ein NULL-Zeiger ist, ruft diese Funktion einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **_NLSCMPERROR** zurück und legt **errno** auf **EINVAL**fest.
 
-**_memicmp** verwendet das aktuelle Gebietsschema für gebietsschemaabhängiges Verhalten. **_memicmp_l** identisch ist, außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_memicmp** verwendet das aktuelle Gebiets Schema für vom Gebiets Schema abhängiges Verhalten. **_memicmp_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -139,7 +139,7 @@ Compare 'Those Who Will Not Learn from' to 'THOSE WHO WILL NOT LEARN FROM'
 First is equal to second.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Pufferbearbeitung](../../c-runtime-library/buffer-manipulation.md)<br/>
 [_memccpy](memccpy.md)<br/>

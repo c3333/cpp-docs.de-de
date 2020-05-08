@@ -20,7 +20,7 @@ api_location:
 - api-ms-win-crt-convert-l1-1-0.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - _mbtowc_l function
 - mbtowc_l function
 ms.assetid: dfd1c8a7-e73a-4307-9353-53b70b45d4d1
-ms.openlocfilehash: 99659def42cba4e832c26b1535706ea576931969
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 54e50da06fbe009184894edc60b6267e372aefc1
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81338793"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915413"
 ---
 # <a name="mbtowc-_mbtowc_l"></a>mbtowc, _mbtowc_l
 
@@ -62,9 +62,9 @@ int _mbtowc_l(
 ### <a name="parameters"></a>Parameter
 
 *wchar*<br/>
-Adresse eines breiten Zeichens (Typ **wchar_t**).
+Adresse eines breit Zeichens (Type **wchar_t**).
 
-*Mbchar*<br/>
+*mbchar*<br/>
 Adresse einer Sequenz von Bytes (ein Multibytezeichen).
 
 *count*<br/>
@@ -75,13 +75,13 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn **mbchar** nicht **NULL** ist und das Objekt, auf das *mbchar* verweist, ein gültiges Multibyte-Zeichen bildet, gibt **mbtowc** die Länge in Bytes des Multibyte-Zeichens zurück. Wenn *mbchar* **NULL** ist oder das Objekt, auf das es verweist, ein Breitzeichen-NULL-Zeichen (L'-0') ist, gibt die Funktion 0 zurück. Wenn das Objekt, auf das *mbchar* verweist, kein gültiges Multibyte-Zeichen innerhalb der ersten *Zählzeichen* bildet, gibt es -1 zurück.
+Wenn **mbchar** nicht **null** ist und das Objekt, auf das *mbchar* verweist, ein gültiges Multibytezeichen bildet, gibt **mbtowc** die Länge des multibytezeichens in Byte zurück. Wenn *mbchar* **null** ist oder das Objekt, auf das es verweist, ein breit Zeichen-NULL Zeichen (L ' \ 0 ') ist, gibt die Funktion 0 zurück. Wenn das Objekt, auf das *mbchar* verweist, kein gültiges Multibytezeichen innerhalb der ersten *count* -Zeichen bildet, wird-1 zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **mbtowc-Funktion** konvertiert *Anzahl* oder weniger Bytes, auf die von *mbchar*verwiesen wird, wenn *mbchar* nicht **NULL**ist, in ein entsprechendes breit zeichen. **mbtowc** speichert das resultierende Breitzeichen bei *wchar,* wenn *wchar* nicht **NULL**ist. **mbtowc** untersucht nicht mehr als **MB_CUR_MAX** Bytes. **mbtowc** verwendet das aktuelle Gebietsschema für gebietsschemaabhängiges Verhalten. **_mbtowc_l** identisch ist, außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die **mbtowc** -Funktion konvertiert *Anzahl* oder weniger Bytes, auf die *mbchar*zeigt, wenn *mbchar* nicht **null**ist, auf ein entsprechendes breit Zeichen. **mbtowc** speichert das resultierende breit Zeichen bei *WCHAR,* Wenn *WCHAR* nicht **null**ist. **mbtowc** untersucht nicht mehr als **MB_CUR_MAX** bytes. **mbtowc** verwendet das aktuelle Gebiets Schema für vom Gebiets Schema abhängiges Verhalten. **_mbtowc_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -152,7 +152,7 @@ Attempt to convert a NULL pointer to a wide character:
    Bytes converted: 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [MultiByteToWideChar](/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar)<br/>

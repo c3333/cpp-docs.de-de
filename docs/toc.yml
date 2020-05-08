@@ -4245,9 +4245,9 @@
                   href: cpp/binary-operators.md
                 - name: Zuweisung
                   href: cpp/assignment.md
-                - name: Funktionsaufruf
+                - name: 'Funktionsaufruf '
                   href: cpp/function-call-cpp.md
-                - name: Indizierung
+                - name: 'Indizierung '
                   href: cpp/subscripting.md
                 - name: Memberzugriff
                   href: cpp/member-access.md

@@ -20,7 +20,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -48,19 +48,19 @@ helpviewer_keywords:
 - tcsdup function
 - _tcsdup function
 ms.assetid: 8604f8bb-95e9-45d3-93ef-20397ebf247a
-ms.openlocfilehash: 7ad28633844c49ce5b86c8f71f4502c62eba1216
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 42b4a890c1c7f350b83bb92a548d716ee6d9ebfc
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81359690"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914471"
 ---
 # <a name="_strdup-_wcsdup-_mbsdup"></a>_strdup, _wcsdup, _mbsdup
 
 Dupliziert Zeichenfolgen.
 
 > [!IMPORTANT]
-> **_mbsdup** kann nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie unter [CRT-Funktionen, die in universellen Windows-Plattform-Apps nicht unterstützt](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)werden.
+> **_mbsdup** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie unter [CRT-Funktionen, die in universelle Windows-Plattform-apps nicht unterstützt](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -78,20 +78,20 @@ unsigned char *_mbsdup(
 
 ### <a name="parameters"></a>Parameter
 
-*Strsource*<br/>
+*-Quelle*<br/>
 Mit NULL endende Quellzeichenfolge.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt einen Zeiger auf den Speicherort für die kopierte Zeichenfolge oder **NULL** zurück, wenn speicherspeicher nicht zugewiesen werden kann.
+Jede dieser Funktionen gibt einen Zeiger auf den Speicherort für die kopierte Zeichenfolge oder **null** zurück, wenn der Speicher nicht zugeordnet werden kann.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_strdup-Funktion** ruft [malloc](malloc.md) auf, Speicherplatz für eine Kopie von *strSource* zuzuweisen, und kopiert dann *strSource* in den zugewiesenen Speicherplatz.
+Die **_strdup** -Funktion ruft [malloc](malloc.md) auf, um Speicherplatz für eine Kopie von " *strausource* " zuzuweisen, und kopiert dann "welessource" in den zugewiesenen Platz. *strSource*
 
-**_wcsdup** und **_mbsdup** sind breit- und multibyte-Zeichen-Versionen von **_strdup**. Die Argumente und der Rückgabewert von **_wcsdup** sind Zeichenfolgen mit großen Zeichen. bei **_mbsdup** sind Zeichenfolgen mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**_wcsdup** und **_mbsdup** sind breit Zeichen-und multibytezeichenversionen von **_strdup**. Die Argumente und der Rückgabewert von **_wcsdup** sind Zeichen folgen mit breit Zeichen. bei den **_mbsdup** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -99,9 +99,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tcsdup**|**_strdup**|**_mbsdup**|**_wcsdup**|
 
-Da **_strdup** **malloc** aufruft, um Speicherplatz für die Kopie von *strSource*zuzuweisen, ist es sinnvoll, diesen Speicher immer freizugeben, indem Sie die [freie](free.md) Routine auf dem Zeiger aufrufen, der vom Aufruf an **_strdup**zurückgegeben wird.
+Da **_strdup** **malloc** aufruft, um Speicherplatz für die Kopie von " *Strauch*" zuzuweisen, empfiehlt es sich, diesen Speicher durch Aufrufen der [Free](free.md) -Routine für den Zeiger freizugeben, der durch den Aufruf von " **_strdup**" zurückgegeben wird.
 
-Wenn **_DEBUG** und **_CRTDBG_MAP_ALLOC** definiert sind, werden **_strdup** und **_wcsdup** durch Aufrufe **_strdup_dbg** ersetzt und **_wcsdup_dbg,** um speicherzuweisungen zu debuggen. Weitere Informationen finden Sie unter [_strdup_dbg, _wcsdup_dbg](strdup-dbg-wcsdup-dbg.md).
+Wenn **_DEBUG** und **_CRTDBG_MAP_ALLOC** definiert sind, werden **_strdup** und **_wcsdup** durch Aufrufe von **_strdup_dbg** und **_wcsdup_dbg** ersetzt, um das Debuggen von Speicher Belegungen zu ermöglichen. Weitere Informationen finden Sie unter [_strdup_dbg, _wcsdup_dbg](strdup-dbg-wcsdup-dbg.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -137,9 +137,9 @@ Original: This is the buffer text
 Copy:     This is the buffer text
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [memset, wmemset](memset-wmemset.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>
 [strcmp, wcscmp, _mbscmp](strcmp-wcscmp-mbscmp.md)<br/>

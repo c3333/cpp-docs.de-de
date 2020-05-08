@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,16 +36,16 @@ helpviewer_keywords:
 - trigonometric functions
 - sinf function
 ms.assetid: 737de73e-3590-45f9-8257-dc1c0c489dfc
-ms.openlocfilehash: d177eeca3d6b8248010ba1e65abf5154f27e19d7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ecd6a03fb7a933391f50de9eb075d8247d60924f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81355003"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915772"
 ---
 # <a name="sin-sinf-sinl"></a>sin, sinf, sinl
 
-Berechnet den Sinus eines Gleitkommawerts.
+Berechnet den Sinus eines Gleit Komma Werts.
 
 ## <a name="syntax"></a>Syntax
 
@@ -62,12 +62,12 @@ long double sin(long double x);  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **Sündenfunktionen** geben den Sinus von *x*zurück. Wenn *x* größer oder gleich 263 oder kleiner oder gleich -263 ist, tritt ein Bedeutungsverlust im Ergebnis auf.
+Die **Sin** -Funktionen geben den Sinus von *x*zurück. Wenn *x* größer oder gleich 263 oder kleiner oder gleich-263 ist, tritt ein Bedeutungsverlust im Ergebnis auf.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
@@ -76,17 +76,17 @@ Die **Sündenfunktionen** geben den Sinus von *x*zurück. Wenn *x* größer oder
 
 Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Sünden** aufrufen, die **Float-** oder **lange** **Doppelwerte** annehmen und zurückgeben. In einem C-Programm nimmt und gibt **sin** immer **doppelt**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Sin** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **Sin** immer Double und gibt **Double**zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-|-|-|
-|**sin**, **sinf**, **sinl**|\<math.h>|\<cmath> oder \<math.h>|
+|**Sin**, **sinf**, **sinl**|\<math.h>|\<cmath> oder \<math.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -118,7 +118,7 @@ sin( 1.570796 ) = 1.000000
 cos( 1.570796 ) = 0.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acos, acosf, acosl](acos-acosf-acosl.md)<br/>
