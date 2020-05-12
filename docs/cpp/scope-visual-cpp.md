@@ -10,39 +10,39 @@ helpviewer_keywords:
 - functions [C++], scope
 - scope, C++ names
 ms.assetid: 81fecbb0-338b-4325-8332-49f33e716352
-ms.openlocfilehash: 534bb9711ff54e21ca091b399aa3d13ec5a7359d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a5b5601c89991fbe1a148ebaf781fe2ad6a9dfc4
+ms.sourcegitcommit: c4cf8976939dd0e13e25b82930221323ba6f15d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267315"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83204135"
 ---
 # <a name="scope-c"></a>Gültigkeitsbereich (C++)
 
-Wenn Sie ein Programmelement, z. B. eine Klasse, Funktion oder Variable deklarieren, kann in bestimmten Teilen des Programms dessen Name nur "gesehen" und verwendet werden. Der Kontext, in dem ein Name sichtbar ist, heißt die *Bereich*. Wenn Sie eine Variable deklarieren z. B. `x` innerhalb einer Funktion `x` ist nur sichtbar innerhalb dieser Funktion. Sie verfügt über *lokalen Gültigkeitsbereich*. Sie weist möglicherweise andere Variablen mit dem gleichen Namen in Ihrem Programm auf; solange sie sich in unterschiedlichen Bereichen sind, werden sie nicht die One Definition Rule verletzt und kein Fehler ausgelöst.
+Wenn Sie ein Programmelement deklarieren, wie z. b. eine Klasse, eine Funktion oder eine Variable, kann Ihr Name nur "sichtbar" sein und in bestimmten Teilen des Programms verwendet werden. Der Kontext, in dem ein Name sichtbar ist, wird als Gültigkeits *Bereich*bezeichnet. Wenn Sie z. b. eine Variable `x` innerhalb einer Funktion deklarieren, `x` ist nur innerhalb des Funktions Texts sichtbar. Er verfügt über einen *lokalen Bereich*. Möglicherweise haben Sie im Programm andere Variablen mit demselben Namen. solange Sie sich in unterschiedlichen Bereichen befinden, verstoßen Sie nicht gegen eine Definitions Regel, und es wird kein Fehler ausgelöst.
 
-Für automatische nicht statische Variablen bestimmt Umfang auch wenn sie erstellt und im Arbeitsspeicher des Programms zerstört werden.
+Für automatische nicht statische Variablen bestimmt der Bereich auch, wann Sie im Programmspeicher erstellt und zerstört werden.
 
-Es gibt sechs Arten von Gültigkeitsbereichen:
+Es gibt sechs Arten von Bereichen:
 
-- **Globalen Gültigkeitsbereich** ein globaler Namen wird außerhalb von jeder Klasse, Funktion oder Namespace deklariert wird. Es gibt jedoch in C++, werden diese Namen mit einem impliziten globalen Namespace. Der Bereich der globale Namen erstreckt sich von dem Zeitpunkt der Deklaration an das Ende der Datei, in der sie deklariert werden. Für globale Namen Sichtbarkeit unterliegen außerdem den Regeln der [Verknüpfung](program-and-linkage-cpp.md) die bestimmen, ob der Name in anderen Dateien im Programm sichtbar ist.
+- **Globaler** Gültigkeitsbereich Ein globaler Name ist ein Wert, der außerhalb einer Klasse, einer Funktion oder eines Namespace deklariert wird. In C++ sind diese Namen jedoch auch mit einem impliziten globalen Namespace vorhanden. Der Bereich der globalen Namen erstreckt sich vom Zeitpunkt der Deklaration bis zum Ende der Datei, in der Sie deklariert werden. Bei globalen Namen unterliegt die Sichtbarkeit auch den Regeln der [Verknüpfung](program-and-linkage-cpp.md) , die bestimmen, ob der Name in anderen Dateien im Programm sichtbar ist.
 
-- **Namespace-Gültigkeitsbereich** einen Namen, die in deklariert ist eine [Namespace](namespaces-cpp.md), außerhalb jeder Klasse oder Enumeration-Definition oder Funktionsblock, von dem Punkt der Deklaration bis zum Ende des Namespace sichtbar ist. Ein Namespace kann in mehreren Blöcken in verschiedene Dateien definiert werden.
+- **Namespace Bereich** Ein Name, der innerhalb eines [Namespace](namespaces-cpp.md)außerhalb von Klassen-oder Enumerationsdefinitionen oder Funktionsblöcken deklariert wird, ist ab dem Zeitpunkt der Deklaration bis zum Ende des Namespace sichtbar. Ein Namespace kann in mehreren Blöcken über verschiedene Dateien hinweg definiert werden.
 
-- **Lokalen Gültigkeitsbereich** ein Namen, die innerhalb einer Funktion oder einem Lambda-Ausdrucks die Parameternamen, einschließlich deklariert haben lokale Gültigkeit. Sie werden häufig als "lokal" bezeichnet. Sie sind nur von dem Zeitpunkt der Deklaration bis zum Ende der Funktion oder einem Lambda-Text angezeigt. Lokaler Bereich ist eine Art von Blockbereich, der später in diesem Artikel erläutert wird.
+- **Lokaler Bereich** Ein in einer Funktion oder einem Lambda deklarierter Name, einschließlich der Parameternamen, verfügt über einen lokalen Gültigkeitsbereich. Sie werden häufig als "Locals" bezeichnet. Sie sind nur ab dem Zeitpunkt der Deklaration bis zum Ende der Funktion oder des Lambda-Texts sichtbar. Der lokale Gültigkeitsbereich ist eine Art von Block Bereich, der weiter unten in diesem Artikel erläutert wird.
 
-- **Klassengültigkeitsbereich** Namen von Klassenmembern haben einen Klassengültigkeitsbereich, die in der gesamten Definition der Klasse, unabhängig von dem Zeitpunkt der Deklaration erweitert. Memberzugriff Klasse wird weiter gesteuert, indem die **öffentliche**, **private**, und **geschützt** Schlüsselwörter. Öffentlicher oder geschützter Member zugegriffen werden kann, nur mithilfe der memberauswahloperatoren (**.** oder **->**) oder Pointer-to-Member-Operatoren (**.** <strong>\*</strong> oder **->** <strong>\*</strong>).
+- **Klassen Bereich** Namen von Klassenmembern verfügen über einen Klassen Bereich, der unabhängig vom Zeitpunkt der Deklaration in der Klassendefinition erweitert wird. Der Zugriff auf Klassenmember wird weiter durch die **öffentlichen**, **privaten**und **geschützten** Schlüsselwörter gesteuert. Auf öffentliche oder geschützte Member kann nur mithilfe der Member-Selection-Operatoren (zugegriffen werden **.** oder **->** ) oder Zeiger-auf-Member-Operatoren (**.** <strong>\*</strong> oder **->** <strong>\*</strong> ).
 
-- **-Anweisungsbereichs** Namen deklariert wird, eine **für**, **Wenn**, **während**, oder **wechseln** Anweisung sind sichtbar, bis zum Ende der Anweisungsblock.
+- **Anweisungs Bereich** Namen, die in einer **for**-, **if**-, **while**-oder **Switch** -Anweisung deklariert sind, sind bis zum Ende des Anweisungsblocks sichtbar.
 
-- **Funktionsgültigkeitsbereich** ein [Bezeichnung](labeled-statements.md) Funktionsbereich, das bedeutet, dass es überall in einem Funktionsrumpf, sogar vor dem Punkt der Deklaration. Gültigkeitsbereich der Funktion ermöglicht es, schreiben die Anweisungen wie `goto cleanup` vor der `cleanup` Bezeichnung deklariert wird.
+- **Funktionsbereich** Eine [Bezeichnung](labeled-statements.md) weist einen Funktionsbereich auf, was bedeutet, dass Sie in einem Funktions Rumpf auch vor dem Zeitpunkt der Deklaration sichtbar ist. Der Funktionsbereich ermöglicht das Schreiben von-Anweisungen, wie `goto cleanup` vor dem `cleanup` Deklarieren der Bezeichnung.
 
 ## <a name="hiding-names"></a>Ausblenden von Namen
 
 Sie können einen Namen verbergen, indem Sie ihn in einem eingeschlossenen Block deklarieren. In der folgenden Abbildung wird `i` innerhalb des inneren Blocks neu deklariert. Dadurch wird die Variable ausgeblendet, die `i` im äußeren Blockbereich zugeordnet ist.
 
-![Block&#45;Bereich Ausblenden von Namen](../cpp/media/vc38sf1.png "Block&#45;Bereich Ausblenden von Namen") <br/>
-Blockbereich und Ausblenden von Namen
+![Ausblenden&#45;Bereichs namens ausblenden](../cpp/media/vc38sf1.png "Ausblenden&#45;Bereichs namens ausblenden") <br/>
+Block Bereich und namens ausblenden
 
 Die in der Abbildung dargestellte Ausgabe des Programms lautet wie folgt:
 
@@ -58,7 +58,7 @@ i = 0
 
 ## <a name="hiding-class-names"></a>Ausblenden von Klassennamen
 
-Sie können Klassennamen ausblenden, indem Sie eine Funktion, ein Objekt, eine Variable oder einen Enumerator im gleichen Bereich deklarieren. Jedoch den Namen der Klasse kann weiterhin zugegriffen werden, wenn das Schlüsselwort vorangestellt **Klasse**.
+Sie können Klassennamen ausblenden, indem Sie eine Funktion, ein Objekt, eine Variable oder einen Enumerator im gleichen Bereich deklarieren. Der Klassenname kann jedoch weiterhin aufgerufen werden, wenn die Schlüsselwort **Klasse**vorangestellt ist.
 
 ```cpp
 // hiding_class_names.cpp
@@ -85,31 +85,31 @@ int main()
     class Account Checking( Account ); // Qualifies Account as
                                        //  class name
 
-    cout << "Opening account with balance of: "
+    cout << "Opening account with a balance of: "
          << Checking.GetBalance() << "\n";
 }
-//Output: Opening account with balance of: 15.37
+//Output: Opening account with a balance of: 15.37
 ```
 
 > [!NOTE]
-> Alle platzieren Sie den Namen der Klasse (`Account`) wird aufgerufen, für die Class-Schlüsselwort verwendet werden muss, um es aus dem globalen Bereich Variablen Konto zu unterscheiden. Diese Regel gilt nicht, wenn der Klassenname auf der linken Seite des Bereichsauflösungsoperators (::) auftritt. Namen auf der linken Seite des Bereichsauflösungsoperators gelten immer als Klassennamen.
+> An jeder Stelle, für die der Klassenname ( `Account` ) aufgerufen wird, muss die schlüsselwortklasse verwendet werden, um Sie von dem globalen Variablen Konto unterscheiden zu können. Diese Regel gilt nicht, wenn der Klassenname auf der linken Seite des Bereichsauflösungsoperators (::) auftritt. Namen auf der linken Seite des Bereichsauflösungsoperators gelten immer als Klassennamen.
 
-Im folgende Beispiel wird veranschaulicht, wie einen Zeiger auf ein Objekt des Typs deklarieren `Account` mithilfe der **Klasse** Schlüsselwort:
+Im folgenden Beispiel wird veranschaulicht, wie ein Zeiger auf ein Objekt vom Typ `Account` mithilfe des **Class** -Schlüssel Worts deklariert wird:
 
 ```cpp
 class Account *Checking = new class Account( Account );
 ```
 
-Die `Account` im Initialisierer (in Klammern) in der vorherigen Anweisung hat einen globalen Gültigkeitsbereich, sondern vom Typ **doppelte**.
+Der `Account` im Initialisierer (in Klammern) in der vorangehenden Anweisung verfügt über einen globalen Gültigkeitsbereich. er ist vom Typ " **Double**".
 
 > [!NOTE]
 > Die in diesem Beispiel dargestellte Wiederverwendung von Bezeichnernamen gilt als schlechter Programmierstil.
 
-Weitere Informationen über die Deklaration und Initialisierung von Klassenobjekten finden Sie unter [Klassen, Strukturen und Unions](../cpp/classes-and-structs-cpp.md). Informationen zur Verwendung der **neue** und **löschen** freien Speicheroperatoren, finden Sie unter [neue "und" delete](new-and-delete-operators.md).
+Informationen zur Deklaration und Initialisierung von Klassen Objekten finden Sie unter [Klassen, Strukturen und Unions](../cpp/classes-and-structs-cpp.md). Weitere Informationen zum Verwenden der **New** -und **Delete** -Operatoren für freie Speicher finden Sie unter [New-und DELETE-Operatoren](new-and-delete-operators.md).
 
 ## <a name="hiding-names-with-global-scope"></a>Ausblenden von Namen mit globalem Bereich
 
-Sie können Namen mit globalem Bereich ausblenden, indem Sie explizit den gleichen Namen im Blockbereich zu deklarieren. Jedoch globale-Bereichsnamen können zugegriffen werden, verwenden den Bereichsauflösungsoperator (`::`).
+Sie können Namen mit globalem Gültigkeitsbereich ausblenden, indem Sie den gleichen Namen explizit im Block Bereich deklarieren. Auf Namen des globalen Bereichs kann jedoch mit dem Bereichs Auflösungs Operator () zugegriffen werden `::` .
 
 ```cpp
 #include <iostream>

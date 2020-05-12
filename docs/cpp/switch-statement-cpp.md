@@ -1,7 +1,7 @@
 ---
 title: switchAnweisung (C++)
-description: Verweis auf die Standard-C++-Anweisung switch in Microsoft Visual Studio C++.
-ms.date: 04/15/2020
+description: Verweis auf die C++-Standard switch Anweisung in Microsoft Visual Studio C++.
+ms.date: 04/25/2020
 f1_keywords:
 - default_cpp
 - switch_cpp
@@ -16,43 +16,55 @@ no-loc:
 - default
 - break
 - while
+- opt
 ms.assetid: 6c3f3ed3-5593-463c-8f4b-b33742b455c6
-ms.openlocfilehash: 1f65d4699423d74be9c75a9be47e543a9a1256e2
-ms.sourcegitcommit: 9266fc76ac2e872e35a208b4249660dfdfc87cba
-ms.translationtype: MT
+ms.openlocfilehash: d43a7a64b5a74f00833093ae8999d73edd7f5753
+ms.sourcegitcommit: c4cf8976939dd0e13e25b82930221323ba6f15d4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81480824"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83204162"
 ---
-# <a name="opno-locswitch-statement-c"></a>switchAnweisung (C++)
+# <a name="switch-statement-c"></a>`switch`Anweisung (C++)
 
 Ermöglicht die Auswahl von mehreren Codeabschnitten, abhängig vom Wert eines ganzzahligen Ausdrucks.
 
 ## <a name="syntax"></a>Syntax
 
-> **`switch (`**\[ *Initialisierung* **`;`**] *Ausdruck***`)`**\
-> **`{`**\
-> &nbsp;&nbsp;&nbsp;&nbsp;**`case`***Constant-Expression-Anweisung* **`:`** *statement*\
-> &nbsp;&nbsp;&nbsp;&nbsp;\[**`default :`***Anweisung*] \
-> **`}`**
+> *`selection-statement`*:\
+> &nbsp;&nbsp;&nbsp;&nbsp;__`switch`__&nbsp;__`(`__&nbsp;*`init-statement`*<sub>opt</sub> <sup>C++ 17</sup>&nbsp;*`condition`*&nbsp;__`)`__&nbsp;*`statement`*
 
-## <a name="remarks"></a>Bemerkungen
+> *`init-statement`*:\
+> &nbsp;&nbsp;&nbsp;&nbsp; *`expression-statement`*\
+> &nbsp;&nbsp;&nbsp;&nbsp; *`simple-declaration`*
 
-Der *Ausdruck* muss einen integralen Typ haben oder ein Klassentyp sein, der eine eindeutige Konvertierung in integralen Typ hat. Die integrale Förderung findet wie in [Standardkonvertierungen](standard-conversions.md)beschrieben statt.
+> *`condition`*:\
+> &nbsp;&nbsp;&nbsp;&nbsp; *`expression`*\
+> &nbsp;&nbsp;&nbsp;&nbsp; *`attribute-specifier-seq`*<sub>opt</sub>&nbsp;*`decl-specifier-seq`*&nbsp;*`declarator`*&nbsp;*`brace-or-equal-initializer`*
 
-Der **switch** Anweisungstext besteht **case** aus einer **default** Reihe von Etiketten und einem optionalen Etikett. Zusammen genommen werden die Anweisungen, die den Bezeichnungen folgen, *als beschriftete* Anweisungen bezeichnet. Die beschrifteten Anweisungen sind keine syntaktischen Anforderungen, aber die **switch** Anweisung ist ohne sie bedeutungslos. Es dürfen keine **case** zwei konstanten Ausdrücke in Anweisungen auf denselben Wert ausgewertet werden. Die **default** Bezeichnung darf nur einmal angezeigt werden. Die **default** Anweisung wird oft am Ende platziert, kann aber **switch** an einer beliebigen Stelle im Textkörper der Anweisung angezeigt werden. Eine **case** **default** oder Bezeichnung kann **switch** nur in einer Anweisung angezeigt werden.
+> *`labeled-statement`*:\
+> &nbsp;&nbsp;&nbsp;&nbsp; __`case`__&nbsp;*`constant-expression`*&nbsp;__`:`__&nbsp;*`statement`*\
+> &nbsp;&nbsp;&nbsp;&nbsp; __`default`__&nbsp;__`:`__&nbsp;*`statement`*
 
-Der *Konstantenausdruck* **case** in jeder Beschriftung wird in den *Ausdruckstyp*konvertiert. Dann wird es mit *dem Ausdruck* für Gleichheit verglichen. Die Steuerung wird **case** an die Anweisung übergibt, deren *Konstantenausdruck* mit dem Wert des *Ausdrucks*übereinstimmt. Der resultierende Verhalten wird in der folgenden Tabelle gezeigt.
+## <a name="remarks"></a>Hinweise
 
-### <a name="switch-statement-behavior"></a>Switch-Anweisungsverhalten
+Eine- __`switch`__ Anweisung bewirkt, dass die Steuerung *`labeled-statement`* abhängig vom Wert von zu einer in Ihrem Anweisungs Text übertragen wird *`condition`* .
+
+Muss einen ganzzahligen *`condition`* Typ aufweisen oder ein Klassentyp sein, der eine eindeutige Konvertierung in einen ganzzahligen Typ aufweist. Ganzzahlige herauf Stufung findet statt, wie in [Standard Konvertierungen](standard-conversions.md)beschrieben.
+
+Der __`switch`__ Anweisungs Text besteht aus einer Reihe von __`case`__ Bezeichnungen und einer optionalen __`default`__ Bezeichnung. Eine *`labeled-statement`* ist eine dieser Bezeichnungen und die folgenden Anweisungen. Die Anweisungen mit der Bezeichnung sind nicht syntaktische Anforderungen, aber die __`switch`__ Anweisung ist ohne sie bedeutungslos. Es können nicht zwei *`constant-expression`* Werte in- __`case`__ Anweisungen zu demselben Wert ausgewertet werden. Die __`default`__ Bezeichnung wird möglicherweise nur einmal angezeigt. Die- __`default`__ Anweisung wird häufig am Ende platziert, aber Sie kann an beliebiger __`switch`__ Stelle im Anweisungs Text angezeigt werden. Eine- __`case`__ oder- __`default`__ Bezeichnung kann nur innerhalb einer-Anweisung angezeigt werden __`switch`__ .
+
+Die *`constant-expression`* in jeder __`case`__ Bezeichnung wird in einen konstanten Wert konvertiert, der dem gleichen Typ wie entspricht *`condition`* . Anschließend wird es mit *`condition`* auf Gleichheit verglichen. Das Steuerelement wird an die erste Anweisung nach dem Wert weitergeleitet, der mit __`case`__ *`constant-expression`* dem Wert von übereinstimmt *`condition`* . Der resultierende Verhalten wird in der folgenden Tabelle gezeigt.
+
+### <a name="switch-statement-behavior"></a>`switch`Anweisungs Verhalten
 
 | Bedingung | Aktion |
 |--|--|
 | Der konvertierte Wert stimmt mit dem des hochgestuften steuernden Ausdrucks überein. | Die Steuerung wird an die Anweisung übertragen, die auf die Bezeichnug folgt. |
-| Keine der Konstanten stimmt mit **case** den Konstanten in den Beschriftungen überein. ein **default** Etikett vorhanden ist. | Die Steuerung wird **default** auf das Etikett übertragen. |
-| Keine der Konstanten stimmt mit **case** den Konstanten in den Beschriftungen überein. es **default** ist kein Etikett vorhanden. | Die Steuerung wird nach **switch** der Anweisung in die Anweisung übertragen. |
+| Keine der Konstanten entspricht den Konstanten in den __`case`__ Bezeichnungen __`default`__ . eine Bezeichnung ist vorhanden. | Das Steuerelement wird an die Bezeichnung übertragen __`default`__ . |
+| Keine der Konstanten entspricht den Konstanten in den __`case`__ Bezeichnungen __`default`__ . es ist keine Bezeichnung vorhanden. | Das Steuerelement wird an die Anweisung nach der-Anweisung übertragen __`switch`__ . |
 
-Wenn ein übereinstimmender Ausdruck gefunden wird, kann die Ausführung später **case** oder **default** durch Beschriftungen fortgesetzt werden. Die [`break`](../cpp/break-statement-cpp.md) Anweisung wird verwendet, um die Ausführung **switch** und Übertragung der Steuerung auf die Anweisung nach der Anweisung zu beenden. Ohne **break** Anweisung wird jede Anweisung **case** von der übereinstimmenden Bezeichnung bis zum Ende des **switch** ausgeführt, einschließlich der **default**. Beispiel:
+Wenn ein übereinstimmender Ausdruck gefunden wird, kann die Ausführung bis zu einem späteren Zeitpunkt fortgesetzt werden __`case`__ __`default`__ . Die [`break`](../cpp/break-statement-cpp.md) -Anweisung wird verwendet, um die Ausführung anzuhalten und die Steuerung an die Anweisung nach der-Anweisung zu übertragen __`switch`__ . Ohne eine- __`break`__ Anweisung wird jede Anweisung der übereinstimmenden __`case`__ Bezeichnung bis zum Ende der __`switch`__ ausgeführt, einschließlich der-Anweisung __`default`__ . Beispiel:
 
 ```cpp
 // switch_statement1.cpp
@@ -83,9 +95,9 @@ int main() {
 }
 ```
 
-Im obigen Beispiel wird `uppercase_A` inkrementiert, wenn `c` ein groß geschriebenes `'A'` ist. Die **break** Anweisung `uppercase_A++` nach beendet **switch** die Ausführung des Anweisungstexts, und die Steuerung wird an die **while** Schleife übergeben. Ohne **break** die Anweisung würde die Ausführung zur nächsten beschrifteten Anweisung "durchfallen", so dass `lowercase_a` und `other` auch erhöht würde. Einem ähnlichen Zweck dient **break** die `case 'a'`Anweisung für . Wenn `c` es sich `'a'` `lowercase_a` um einen Kleinbuchstaben handelt, wird die Anweisung erhöht, und die **break** Anweisung beendet den **switch** Anweisungstext. Wenn `c` es sich `'a'` nicht `'A'`um **default** ein oder handelt, wird die Anweisung ausgeführt.
+Im obigen Beispiel wird `uppercase_A` inkrementiert, wenn `c` ein groß geschriebenes `'A'` ist. Die __`break`__ -Anweisung nach `uppercase_A++` beendet die Ausführung des __`switch`__ Anweisungs Texts, und die Steuerung wird an die-Schleife weitergeleitet __`while`__ . Ohne die __`break`__ -Anweisung würde die Ausführung auf die nächste bezeichnete Anweisung zurückgreifen, sodass `lowercase_a` und `other` ebenfalls inkrementiert werden. Ein ähnlicher Zweck wird von der- __`break`__ Anweisung für bereitgestellt `case 'a'` . Wenn `c` ein Kleinbuchstabe ist `'a'` , `lowercase_a` wird inkrementiert, und die- __`break`__ Anweisung beendet den __`switch`__ Anweisungs Text. Wenn kein `c` `'a'` oder ist `'A'` , wird die- __`default`__ Anweisung ausgeführt.
 
-**Visual Studio 2017 und höher:** (verfügbar mit [/std:c++17](../build/reference/std-specify-language-standard-version.md)) Das `[[fallthrough]]` Attribut wird im C++17-Standard angegeben. Sie können es **switch** in einer Anweisung verwenden. Es ist ein Hinweis an den Compiler oder jeden, der den Code liest, dass Fall-Through-Verhalten absichtlich ist. Der Microsoft C++-Compiler warnt derzeit nicht vor Fallthrough-Verhalten, sodass dieses Attribut keine Auswirkungen auf das Compilerverhalten hat. Im Beispiel wird das Attribut auf eine leere Anweisung innerhalb der nicht beendeten beschrifteten Anweisung angewendet. Mit anderen Worten, das Semikolon ist notwendig.
+**Visual Studio 2017 und höher:** (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)) das- `[[fallthrough]]` Attribut wird im c++ 17-Standard angegeben. Sie können Sie in einer- __`switch`__ Anweisung verwenden. Es ist ein Hinweis für den Compiler, oder jeder, der den Code liest, ist beabsichtigt. Der Microsoft C++-Compiler warnt zurzeit nicht bei einem FallThrough-Verhalten, sodass dieses Attribut keine Auswirkung auf das Compilerverhalten hat. Im Beispiel wird das-Attribut auf eine leere-Anweisung innerhalb der nicht abgeschlossenen Anweisung mit der Bezeichnung angewendet. Das heißt, dass das Semikolon erforderlich ist.
 
 ```cpp
 int main()
@@ -113,7 +125,7 @@ int main()
 }
 ```
 
-**Visual Studio 2017 Version 15.3 und höher** (verfügbar mit [/std:c++17](../build/reference/std-specify-language-standard-version.md)). Eine switch Anweisung kann über eine *Initialisierungsklausel* verfügen. Es wird eine Variable eingeführt und initialisiert, deren Bereich auf den Block der switch Anweisung beschränkt ist:
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)). Eine- __`switch`__ Anweisung kann eine- *`init-statement`* Klausel enthalten, die mit einem Semikolon endet. Es wird eine Variable eingeführt und initialisiert, deren Bereich auf den Block der Anweisung beschränkt ist __`switch`__ :
 
 ```cpp
     switch (Gadget gadget(args); auto s = gadget.get_status())
@@ -126,7 +138,7 @@ int main()
     };
 ```
 
-Ein innerer **switch** Block einer Anweisung kann Definitionen mit Initialisierungen enthalten, solange sie *erreichbar*sind, d. h. nicht von allen möglichen Ausführungspfaden umgangen werden. Namen, die mit diesen Deklarationen eingeführt werden, weisen einen lokalen Gültigkeitsbereich auf. Beispiel:
+Ein innerer Block einer- __`switch`__ Anweisung kann Definitionen mit Initialisierern enthalten, solange Sie *erreichbar*sind, d. h. nicht durch alle möglichen Ausführungs Pfade umgangen werden. Namen, die mit diesen Deklarationen eingeführt werden, weisen einen lokalen Gültigkeitsbereich auf. Beispiel:
 
 ```cpp
 // switch_statement2.cpp
@@ -161,15 +173,13 @@ int main(int argc, char *argv[])
 }
 ```
 
-Eine **switch** Anweisung kann geschachtelt werden. Wenn sie geschachtelt sind, wird die **case** oder **default** Beschriftungen mit der nächstgelegenen **switch** Anweisung, die sie einschließt, in Verbindung gebracht.
+Eine- __`switch`__ Anweisung kann eingefügt werden. Beim Einfügen werden die- __`case`__ oder- __`default`__ Bezeichnungen mit der nächstgelegenen Anweisung verknüpft, __`switch`__ die Sie einschließt.
 
 ### <a name="microsoft-specific-behavior"></a>Microsoft-spezifisches Verhalten
 
-Microsoft C beschränkt die Anzahl **case** der **switch** Werte in einer Anweisung nicht. Die Anzahl wird nur durch den verfügbaren Speicher beschränkt. ANSI C erfordert, dass **case** mindestens 257 Beschriftungen in einer **switch** Anweisung zulässig sind.
+Microsoft C++ beschränkt die Anzahl der __`case`__ Werte in einer- __`switch`__ Anweisung nicht. Die Anzahl wird nur durch den verfügbaren Speicher beschränkt.
 
-Für default Microsoft C sind die Microsoft-Erweiterungen aktiviert. Verwenden Sie die Compileroption [/Za,](../build/reference/za-ze-disable-language-extensions.md) um diese Erweiterungen zu deaktivieren.
+## <a name="see-also"></a>Siehe auch
 
-## <a name="see-also"></a>Weitere Informationen
-
-[Auswahlanweisungen](../cpp/selection-statements-cpp.md)<br/>
-[Keywords](../cpp/keywords-cpp.md)
+[Auswahl Anweisungen](../cpp/selection-statements-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)
