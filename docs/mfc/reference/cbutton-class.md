@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CButton [MFC], SetState
 - CButton [MFC], SetTextMargin
 ms.assetid: cdc76d5b-31da-43c5-bc43-fde4cb39de5b
-ms.openlocfilehash: 05ad60855cd03115cf88ab2b51e56e6a26822035
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 74b07dc8144e853714ea73c8235f1259538a0c12
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352442"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752752"
 ---
 # <a name="cbutton-class"></a>CButton-Klasse
 
@@ -182,7 +182,7 @@ Wenn Sie `CButton` ein Objekt in einem Fenster erstellen, müssen Sie es möglic
 
 `CButton`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -430,7 +430,7 @@ BOOL GetNote(
 
 Bei der ersten Überladung ein [CString-Objekt,](../../atl-mfc-shared/using-cstring.md) das den Notiztext enthält, der dem aktuellen Befehlsverknüpfungssteuerelement zugeordnet ist.
 
-- oder -
+Oder
 
 In der zweiten Überladung TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
@@ -664,7 +664,7 @@ Sie sind dafür verantwortlich, die Bitmap freizugeben, wenn Sie damit fertig si
 
 Ändert den Stil einer Schaltfläche.
 
-```
+```cpp
 void SetButtonStyle(
     UINT nStyle,
     BOOL bRedraw = TRUE);
@@ -690,7 +690,7 @@ Verwenden `GetButtonStyle` Sie die Memberfunktion, um den Schaltflächenstil abz
 
 Legt den Kontrollkästchenzustand eines Optionsfelds oder Kontrollkästchens fest oder setzt ihn zurück.
 
-```
+```cpp
 void SetCheck(int nCheck);
 ```
 
@@ -1074,7 +1074,7 @@ Im folgenden Codebeispiel wird der Stil des Dropdownpfeils für die geteilte Sch
 
 Legt fest, ob ein Schaltflächensteuerelement hervorgehoben ist oder nicht.
 
-```
+```cpp
 void SetState(BOOL bHighlight);
 ```
 
@@ -1114,7 +1114,7 @@ Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
 Diese Memberfunktion emuliert die Funktionalität der BCM_SETTEXTMARGIN Nachricht, wie im Abschnitt [Schaltflächen](/windows/win32/controls/buttons) des Windows SDK beschrieben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

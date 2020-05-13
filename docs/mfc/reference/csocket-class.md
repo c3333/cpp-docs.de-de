@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CSocket [MFC], IsBlocking
 - CSocket [MFC], OnMessagePending
 ms.assetid: 7f23c081-d24d-42e3-b511-8053ca53d729
-ms.openlocfilehash: 3f0a7a9a90250ede7b112cfbd9bc1ca14d583356
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 730bea34354b008d641ecc28e7368f79efad12a7
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318193"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751154"
 ---
 # <a name="csocket-class"></a>CSocket-Klasse
 
@@ -90,7 +90,7 @@ Weitere Informationen finden Sie unter [Windows Sockets in MFC](../../mfc/window
 
 `CSocket`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxsock.h
 
@@ -129,7 +129,7 @@ Weitere Informationen finden Sie unter [Windows Sockets: Verwenden von Sockets m
 
 Rufen Sie diese Memberfunktion auf, um einen blockierenden Anruf abzubrechen, der derzeit ausgeführt wird.
 
-```
+```cpp
 void CancelBlockingCall();
 ```
 
@@ -255,7 +255,7 @@ Das Framework `OnMessagePending` ruft auf, während der Socket Windows-Nachricht
 
 Weitere Informationen finden Sie unter [Windows Sockets: Verwenden von Sockets mit Archiven](../../mfc/windows-sockets-using-sockets-with-archives.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CAsyncSocket-Klasse](../../mfc/reference/casyncsocket-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

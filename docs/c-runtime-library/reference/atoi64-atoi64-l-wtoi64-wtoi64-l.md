@@ -1,11 +1,15 @@
 ---
 title: _atoi64, _atoi64_l, _wtoi64, _wtoi64_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _atoi64_l
 - _wtoi64
 - _atoi64
 - _wtoi64_l
+- _o__atoi64
+- _o__atoi64_l
+- _o__wtoi64
+- _o__wtoi64_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -49,12 +54,12 @@ helpviewer_keywords:
 - _wtoi64 function
 - _atoi64 function
 ms.assetid: 2c3e30fd-545d-4222-8364-0c5905df9526
-ms.openlocfilehash: 950774e74462e8d1f301a1d5b933e57feaa9f840
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 555cd27e87324141f21bdd7ef12f9ff8ea1a4e09
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939488"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913568"
 ---
 # <a name="_atoi64-_atoi64_l-_wtoi64-_wtoi64_l"></a>_atoi64, _atoi64_l, _wtoi64, _wtoi64_l
 
@@ -81,7 +86,7 @@ __int64 _wtoi64_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -89,9 +94,9 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt den **__int64** -Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert ist 0 für **_atoi64** , wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
+Jede Funktion gibt den **__int64** Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert für **_atoi64** ist 0, wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
 
-Im Fall eines Überlaufs mit großen positiven ganzzahligen Werten gibt **_atoi64** **I64_MAX** und **I64_MIN** im Falle eines Überlaufs mit großen negativen ganzzahligen Werten zurück.
+Im Fall eines Überlaufs mit großen positiven ganzzahligen Werten gibt **_atoi64** **I64_MAX** zurück und **I64_MIN** im Falle eines Überlaufs mit großen negativen ganzzahligen Werten.
 
 In allen Fällen außerhalb des gültigen Bereichs wird **errno** auf **ERANGE**festgelegt. Wenn der übergebenen Parameter **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben 0 zurück.
 
@@ -111,6 +116,8 @@ Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert wer
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
@@ -122,12 +129,12 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 |Routinen|Erforderlicher Header|
 |--------------|---------------------|
-|**_atoi64**, **_atoi64_l**|\<stdlib.h>|
-|**_wtoi64**, **_wtoi64_l**|\<stdlib.h> oder \<wchar.h>|
+|**_atoi64** **_atoi64_l**|\<stdlib.h>|
+|**_wtoi64** **_wtoi64_l**|\<stdlib.h> oder \<wchar.h>|
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm zeigt, wie Zahlen, die als Zeichen folgen gespeichert werden, mithilfe der **_atoi64** -Funktionen in numerische Werte konvertiert werden können.
+Dieses Programm zeigt, wie Zahlen, die als Zeichen folgen gespeichert werden, mithilfe der **_atoi64** Funktionen in numerische Werte konvertiert werden können.
 
 ```C
 // crt_atoi64.c
@@ -174,7 +181,7 @@ Function: _atoi64( "3336402735171707160320" ) = -1
 Overflow condition occurred.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

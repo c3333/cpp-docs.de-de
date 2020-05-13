@@ -6,11 +6,11 @@ helpviewer_keywords:
 - linkage [C++], none
 ms.assetid: 5a413082-1034-4e04-b76b-8d14668bf434
 ms.openlocfilehash: c80cb814145ac986864fe351e664d8472f3bf880
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232388"
 ---
 # <a name="no-linkage"></a>Keine Verknüpfung
 

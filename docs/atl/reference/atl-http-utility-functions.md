@@ -2,12 +2,12 @@
 title: ATL-http-Hilfsprogrammfunktionen
 ms.date: 11/04/2016
 ms.assetid: 4db57ef2-31fa-4696-bbeb-79a9035033ed
-ms.openlocfilehash: ca6dfdfb02f5ef629c6eb523744260f177a3309b
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: c95681503da0d661382e6da33bd33e8f2004838b
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423537"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168604"
 ---
 # <a name="atl-http-utility-functions"></a>ATL-http-Hilfsprogrammfunktionen
 
@@ -15,20 +15,20 @@ Diese Funktionen unterstützen die Bearbeitung von URLs.
 
 |||
 |-|-|
-|[Atlcanonicalizeurl](#atlcanonicalizeurl)|Kanonisiert eine URL, die das Umwandeln unsicherer Zeichen und Leerzeichen in Escapesequenzen einschließt.|
-|[Atlcombineurl](#atlcombineurl)|Kombiniert eine Basis-URL und eine relative URL in einer einzelnen, kanonischen URL.|
-|[Atlescapeurl](#atlescapeurl)|Konvertiert alle unsicheren Zeichen in Escapesequenzen.|
-|[Atlgetdefaulturlport](#atlgetdefaulturlport)|Ruft die Standard Portnummer ab, die einem bestimmten Internet Protokoll oder-Schema zugeordnet ist.|
-|[Atlisunsafeurlchar](#atlisunsafeurlchar)|Bestimmt, ob ein Zeichen für die Verwendung in einer URL sicher ist.|
-|[Atlunescapeurl](#atlunescapeurl)|Konvertiert Escapezeichen zurück in ihre ursprünglichen Werte.|
-|[Rgbzu HTML](#rgbtohtml)|Konvertiert einen [COLORREF](/windows/win32/gdi/colorref) -Wert in den HTML-Text, der diesem Farbwert entspricht.|
-|[Systemtimedehttpdate](#systemtimetohttpdate)|Mit dieser Funktion konvertieren Sie die Systemzeit in eine Zeichenfolge, deren Format sich für die Verwendung in HTTP-Headern eignet.|
+|[AtlCanonicalizeUrl](#atlcanonicalizeurl)|Kanonisiert eine URL, die das Umwandeln unsicherer Zeichen und Leerzeichen in Escapesequenzen einschließt.|
+|[AtlCombineUrl](#atlcombineurl)|Kombiniert eine Basis-URL und eine relative URL in einer einzelnen, kanonischen URL.|
+|[AtlEscapeUrl](#atlescapeurl)|Konvertiert alle unsicheren Zeichen in Escapesequenzen.|
+|[AtlGetDefaultUrlPort](#atlgetdefaulturlport)|Ruft die Standard Portnummer ab, die einem bestimmten Internet Protokoll oder-Schema zugeordnet ist.|
+|[AtlIsUnsafeUrlChar](#atlisunsafeurlchar)|Bestimmt, ob ein Zeichen für die Verwendung in einer URL sicher ist.|
+|[AtlUnescapeUrl](#atlunescapeurl)|Konvertiert Escapezeichen zurück in ihre ursprünglichen Werte.|
+|[RGBToHtml](#rgbtohtml)|Konvertiert einen [COLORREF](/windows/win32/gdi/colorref) -Wert in den HTML-Text, der diesem Farbwert entspricht.|
+|[SystemTimeToHttpDate](#systemtimetohttpdate)|Mit dieser Funktion konvertieren Sie die Systemzeit in eine Zeichenfolge, deren Format sich für die Verwendung in HTTP-Headern eignet.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** atlutil. h
 
-## <a name="atlcanonicalizeurl"></a>Atlcanonicalizeurl
+## <a name="atlcanonicalizeurl"></a><a name="atlcanonicalizeurl"></a>Atlcanonicalizeurl
 
 Mit dieser Funktion wird eine URL kanonisiert, wobei unsichere Zeichen und Leerzeichen in Escapesequenzen konvertiert werden.
 
@@ -72,11 +72,11 @@ ATL_URL Flags, die das Verhalten dieser Funktion steuern.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verhält sich wie die aktuelle Version von [internetcanonicalizeurl](/windows/win32/api/wininet/nf-wininet-internetcanonicalizeurlw) , erfordert jedoch nicht, dass WinInet oder Internet Explorer installiert wird.
 
-## <a name="atlcombineurl"></a>Atlcombineurl
+## <a name="atlcombineurl"></a><a name="atlcombineurl"></a>Atlcombineurl
 
 Mit dieser Funktion wird eine Basis-URL und eine relative URL zu einer einzelnen kanonischen URL zusammengefasst.
 
@@ -92,7 +92,7 @@ inline BOOL AtlCombineUrl(
 ### <a name="parameters"></a>Parameter
 
 *szbaseurl*<br/>
-Die Basis-URL.
+Der Basis-URL.
 
 *szrelativeurl*<br/>
 Die URL relativ zur Basis-URL.
@@ -110,11 +110,11 @@ Flags, die das Verhalten dieser Funktion steuern. Weitere Informationen finden S
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verhält sich wie die aktuelle Version von [internetcombineurl](/windows/win32/api/wininet/nf-wininet-internetcombineurlw) , erfordert jedoch nicht, dass WinInet oder Internet Explorer installiert wird.
 
-## <a name="atlescapeurl"></a>Atlescapeurl
+## <a name="atlescapeurl"></a><a name="atlescapeurl"></a>Atlescapeurl
 
 Mit dieser Funktion werden alle unsicheren Zeichen in Escapesequenzen konvertiert.
 
@@ -155,11 +155,11 @@ ATL_URL Flags, die das Verhalten dieser Funktion steuern. Mögliche Werte finden
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-## <a name="atlgetdefaulturlport"></a>Atlgetdefaulturlport
+## <a name="atlgetdefaulturlport"></a><a name="atlgetdefaulturlport"></a>Atlgetdefaulturlport
 
 Mit dieser Funktion wird die Standardportnummer abgerufen, die einem bestimmten Internetprotokoll oder -schema zugeordnet ist.
 
-```
+```cpp
 inline ATL_URL_PORT AtlGetDefaultUrlPort(ATL_URL_SCHEME m_nScheme) throw();
 ```
 
@@ -172,11 +172,11 @@ Der [ATL_URL_SCHEME](atl-url-scheme-enum.md) -Wert, der das Schema identifiziert
 
 Die [ATL_URL_PORT](atl-typedefs.md#atl_url_port) , die dem angegebenen Schema zugeordnet ist, oder ATL_URL_INVALID_PORT_NUMBER, wenn das Schema nicht erkannt wird.
 
-## <a name="atlisunsafeurlchar"></a>Atlisunsafeurlchar
+## <a name="atlisunsafeurlchar"></a><a name="atlisunsafeurlchar"></a>Atlisunsafeurlchar
 
 Mit dieser Funktion finden Sie heraus, ob die Verwendung eines bestimmten Zeichens in einer URL sicher ist.
 
-```
+```cpp
 inline BOOL AtlIsUnsafeUrlChar(char chIn) throw();
 ```
 
@@ -189,11 +189,11 @@ Das Zeichen, das auf Sicherheit geprüft werden soll.
 
 Gibt true zurück, wenn das Eingabezeichen unsicher ist, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zeichen, die nicht in URLs verwendet werden sollen, können mithilfe dieser Funktion getestet und mithilfe von [atlcanonicalizeurl](#atlcanonicalizeurl)konvertiert werden.
 
-## <a name="atlunescapeurl"></a>Atlunescapeurl
+## <a name="atlunescapeurl"></a><a name="atlunescapeurl"></a>Atlunescapeurl
 
 Mit dieser Funktion können Sie Escapezeichen zurück in ihre ursprünglichen Werte konvertieren.
 
@@ -229,11 +229,11 @@ Die Größe des Puffers *lpszstringout*.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Kehrt den von [atlescapeurl](#atlescapeurl)angewendeten Konvertierungsprozess um.
 
-## <a name="rgbtohtml"></a>Rgbzu HTML
+## <a name="rgbtohtml"></a><a name="rgbtohtml"></a>Rgbzu HTML
 
 Konvertiert einen [COLORREF](/windows/win32/gdi/colorref) -Wert in den HTML-Text, der diesem Farbwert entspricht.
 
@@ -246,7 +246,7 @@ bool inline RGBToHtml(
 
 ### <a name="parameters"></a>Parameter
 
-*Farbe*<br/>
+*color*<br/>
 Ein RGB-Farbwert.
 
 *pbout*<br/>
@@ -259,11 +259,11 @@ Die Größe des Puffers in Bytes (einschließlich des leer Zeichens für das NUL
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein HTML-Farbwert ist ein Nummern Zeichen, gefolgt von einem sechsstelligen Hexadezimalwert, wobei zwei Ziffern für jede der roten, grünen und blauen Komponenten der Farbe verwendet werden (z. b. #FFFFFF weiß).
 
-## <a name="systemtimetohttpdate"></a>Systemtimedehttpdate
+## <a name="systemtimetohttpdate"></a><a name="systemtimetohttpdate"></a>Systemtimedehttpdate
 
 Mit dieser Funktion konvertieren Sie die Systemzeit in eine Zeichenfolge, deren Format sich für die Verwendung in HTTP-Headern eignet.
 
@@ -281,7 +281,7 @@ Die Systemzeit, die als HTTP-Format Zeichenfolge abgerufen werden soll.
 *Straume*<br/>
 Ein Verweis auf eine Zeichen folgen Variable, die die in RFC 2616 ([https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)) und RFC 1123 ([https://www.ietf.org/rfc/rfc1123.txt](https://www.ietf.org/rfc/rfc1123.txt)) definierte http-Datumsangabe empfangen soll.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Konzepte](../active-template-library-atl-concepts.md)<br/>
 [ATL-COM-Desktop-Komponenten](../atl-com-desktop-components.md)<br/>

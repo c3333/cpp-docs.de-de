@@ -50,12 +50,12 @@ helpviewer_keywords:
 - CAnimationBaseObject [MFC], m_nObjectID
 - CAnimationBaseObject [MFC], m_pParentController
 ms.assetid: 76b25917-940e-4eba-940f-31d270702603
-ms.openlocfilehash: 9581ea142c6f87ae12665374a483abc00763ad97
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1874ddfdd26b8dd371e32f7e68ea8f668c47d8e1
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371123"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750225"
 ---
 # <a name="canimationbaseobject-class"></a>CAnimationBaseObject-Klasse
 
@@ -122,7 +122,7 @@ Diese Klasse implementiert grundlegende Methoden für alle Animationsobjekte. Ei
 
 `CAnimationBaseObject`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -246,7 +246,7 @@ Loops über liste der Animationsvariablen, die in einem abgeleiteten Animationso
 
 Trennt ein Animationsobjekt vom übergeordneten Animationscontroller.
 
-```
+```cpp
 void DetachFromController();
 ```
 
@@ -425,7 +425,7 @@ CAnimationController* m_pParentController;
 
 Legt ein Flag fest, um Übergänge automatisch zu zerstören.
 
-```
+```cpp
 void SetAutodestroyTransitions(BOOL bValue);
 ```
 
@@ -442,7 +442,7 @@ Legen Sie dieses Flag nur fest, wenn Sie Übergangsobjekte mit Operator new zuge
 
 Legt neue IDs fest.
 
-```
+```cpp
 void SetID(
     UINT32 nObjectID,
     UINT32 nGroupID = 0);
@@ -476,7 +476,7 @@ Dieser Helfer kann verwendet werden, um eine Beziehung zwischen Animationsvariab
 
 Legt benutzerdefinierte Daten fest.
 
-```
+```cpp
 void SetUserData (DWORD dwUserData);
 ```
 
@@ -489,6 +489,6 @@ Gibt die benutzerdefinierten Daten an.
 
 Verwenden Sie diese Methode, um einem Animationsobjekt benutzerdefinierte Daten zuzuordnen. Diese Daten können später zur Laufzeit von GetUserData abgerufen werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

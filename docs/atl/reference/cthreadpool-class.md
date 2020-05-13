@@ -20,12 +20,12 @@ f1_keywords:
 helpviewer_keywords:
 - CThreadPool class
 ms.assetid: 06683718-01b9-413c-9481-2dc1734ec70f
-ms.openlocfilehash: 0b970915aa07fe2d1af2b3a07345d5b19826be69
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5e52868f23883836919b96be9aec1815bc1c17b3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330568"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747446"
 ---
 # <a name="cthreadpool-class"></a>CThreadPool-Klasse
 
@@ -92,7 +92,7 @@ Ein Beispiel für eine *Worker-Klasse* ist die [CNonStatelessWorker-Klasse](../.
 
 `CThreadPool`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlutil.h
 
@@ -254,7 +254,7 @@ BOOL QueueRequest(Worker::RequestType request) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*Anfrage*<br/>
+*Anforderung*<br/>
 Die Anforderung, die in die Warteschlange eingereiht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -333,7 +333,7 @@ Beachten Sie, dass *dwMaxWait* die Zeit ist, zu der der Pool auf das Herunterfah
 
 Rufen Sie diese Methode auf, um den Threadpool herunterzufahren.
 
-```
+```cpp
 void Shutdown(DWORD dwMaxWait = 0) throw();
 ```
 
@@ -346,7 +346,7 @@ Die angeforderte maximale Zeit in Millisekunden, die der Threadpool wartet, bis 
 
 Diese Methode sendet eine Herunterfahranforderung an alle Threads im Pool. Wenn das Timeout abläuft, ruft diese Methode [TerminateThread](/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminatethread) für jeden Thread auf, der nicht beendet wurde. Diese Methode wird automatisch vom Destruktor der Klasse aufgerufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IThreadPoolConfig-Schnittstelle](../../atl/reference/ithreadpoolconfig-interface.md)<br/>
 [DefaultThreadTraits](atl-typedefs.md#defaultthreadtraits)<br/>

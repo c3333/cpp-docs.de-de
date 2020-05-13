@@ -1,9 +1,11 @@
 ---
 title: rename, _wrename
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - rename
 - _wrename
+- _o__wrename
+- _o_rename
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +40,12 @@ helpviewer_keywords:
 - names [C++], changing directory
 - renaming files
 ms.assetid: 9f0a6103-26a2-4dda-b14b-79a48946266a
-ms.openlocfilehash: d3d88c46fc055fb173264b40a56c755c360c7adf
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b0a5f43d92d6dd85626f00bf5c2a6350e5bfa10f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949305"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917803"
 ---
 # <a name="rename-_wrename"></a>rename, _wrename
 
@@ -77,7 +80,7 @@ Jede dieser Funktionen gibt bei Erfolg 0 zurück. Bei einem Fehler gibt die Funk
 |-|-|
 | **EACCES** | Die Datei oder das Verzeichnis, das von *newname* angegeben wird, ist bereits vorhanden oder konnte nicht erstellt werden (ungültiger Pfad). Möglicherweise ist auch *oldname* ein Verzeichnis, und *newname* gibt einen anderen Pfad an. |
 | **ENOENT** | Von *oldname* angegebene Datei oder Pfad wurden nicht gefunden. |
-| **EINVAL** | Name enthält ungültige Zeichen. |
+| **Eingabe** | Name enthält ungültige Zeichen. |
 
 Weitere mögliche Rückgabewerte finden Sie unter [_doserrno, _errno, syserrlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
@@ -87,6 +90,8 @@ Die **rename**-Funktion benennt die Datei oder das Verzeichnis, die von *oldname
 
 **_wrename** ist eine breit Zeichen Version von **_rename**. die Argumente für **_wrename** sind Zeichen folgen mit breit Zeichen. **_wrename** und **_rename** Verhalten sich andernfalls identisch.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
@@ -95,12 +100,12 @@ Die **rename**-Funktion benennt die Datei oder das Verzeichnis, die von *oldname
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**rename**|\<io.h> oder \<stdio.h>|
 |**_wrename**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -132,7 +137,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 File 'CRT_RENAMER.OBJ' renamed to 'CRT_RENAMER.JBO'
@@ -140,4 +145,4 @@ File 'CRT_RENAMER.OBJ' renamed to 'CRT_RENAMER.JBO'
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>

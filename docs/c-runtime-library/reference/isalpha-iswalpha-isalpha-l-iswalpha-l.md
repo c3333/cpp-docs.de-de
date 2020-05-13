@@ -1,11 +1,13 @@
 ---
 title: isalpha, iswalpha, _isalpha_l, _iswalpha_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - iswalpha
 - _iswalpha_l
 - isalpha
 - _isalpha_l
+- _o_isalpha
+- _o_iswalpha
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -41,12 +44,12 @@ helpviewer_keywords:
 - istalpha function
 - _istalpha function
 ms.assetid: ed6cc2be-c4b0-4475-87ac-bc06d8c23064
-ms.openlocfilehash: 9a7de0ba1316a6c0155a46eed0564792ee6256f2
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: abce570aecc307efd4986fab78d45954d7a79588
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954583"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919801"
 ---
 # <a name="isalpha-iswalpha-_isalpha_l-_iswalpha_l"></a>isalpha, iswalpha, _isalpha_l, _iswalpha_l
 
@@ -73,7 +76,7 @@ int _iswalpha_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
 *locale*<br/>
@@ -94,19 +97,23 @@ Das Verhalten von **isalpha** und **_isalpha_l** ist nicht definiert, wenn *c* n
 |**_istalpha**|**isalpha**|**_ismbcalpha**|**iswalpha**|
 |**_istalpha_l**|**_isalpha_l**|**_ismbcalpha_l**|**_iswalpha_l**|
 
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**isalpha**|\<ctype.h>|
 |**iswalpha**|\<ctype.h> oder \<wchar.h>|
 |**_isalpha_l**|\<ctype.h>|
 |**_iswalpha_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

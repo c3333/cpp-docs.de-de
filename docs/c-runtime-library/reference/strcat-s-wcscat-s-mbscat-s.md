@@ -24,7 +24,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -43,12 +43,12 @@ helpviewer_keywords:
 - _mbscat_s_l function
 - appending strings
 ms.assetid: 0f2f9901-c5c5-480b-98bc-f8f690792fc0
-ms.openlocfilehash: 458c8ef4c69630b92f39c6ca13a538a1ba7ec72a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f7d890a753638112c4a1bb56cf6093a9510dbee2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81355429"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910666"
 ---
 # <a name="strcat_s-wcscat_s-_mbscat_s-_mbscat_s_l"></a>strcat_s, wcscat_s, _mbscat_s, _mbscat_s_l
 
@@ -106,13 +106,13 @@ errno_t _mbscat_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Strdestination*<br/>
+*"Ziel"*<br/>
 Auf NULL endender Zielzeichenfolgenpuffer.
 
-*Sizeinbytes*<br/>
+*numberOfElements*<br/>
 Größe des Zielzeichenfolgenpuffers.
 
-*Strsource*<br/>
+*-Quelle*<br/>
 Auf NULL endender Quellzeichenfolgepuffer.
 
 *locale*<br/>
@@ -124,15 +124,15 @@ Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Strdestination*|*Sizeinbytes*|*Strsource*|Rückgabewert|Inhalt von *strDestination*|
+|*"Ziel"*|*numberOfElements*|*-Quelle*|Rückgabewert|Inhalt von " *straudestination* "|
 |----------------------|------------------------|-----------------|------------------|----------------------------------|
-|**NULL** oder nicht beendet|any|any|**Einval**|nicht geändert|
-|any|any|**Null**|**Einval**|*strDestination*[0] auf 0 gesetzt|
-|any|0 oder zu klein|any|**ERANGE**|*strDestination*[0] auf 0 gesetzt|
+|**Null** oder nicht verwaltet|any|any|**Eingabe**|nicht geändert|
+|any|any|**Normal**|**Eingabe**|" *stredestination*[0]" auf 0 festgelegt.|
+|any|0 oder zu klein|any|**ERANGE**|" *stredestination*[0]" auf 0 festgelegt.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **funktion strcat_s** fügt *strSource* an *strDestination* an und beendet die resultierende Zeichenfolge mit einem NULL-Zeichen. Das Anfangszeichen von *strSource* überschreibt das beendende Nullzeichen von *strDestination*. Das Verhalten von **strcat_s** ist nicht definiert, wenn sich die Quell- und Zielzeichenfolgen überlappen.
+Die **strcat_s** -Funktion fügt " *strausource* " an " *stredestination* " an und beendet die resultierende Zeichenfolge mit einem NULL-Zeichen. Das Anfangs Zeichen von " *grasource* " überschreibt das abschließende Null-Zeichen von " *straudestination*". Das Verhalten **strcat_s** ist nicht definiert, wenn sich die Quell-und Ziel Zeichenfolgen überlappen.
 
 Beachten Sie, dass es sich bei dem zweiten Parameter um die Gesamtgröße des Puffers handelt, nicht um die verbleibende Größe:
 
@@ -143,17 +143,17 @@ strcat_s(buf, 16, " End");               // Correct
 strcat_s(buf, 16 - strlen(buf), " End"); // Incorrect
 ```
 
-**wcscat_s** und **_mbscat_s** sind breit- und multibyte-Versionen von **strcat_s**. Die Argumente und der Rückgabewert von **wcscat_s** sind Zeichenfolgen mit großen Zeichen. bei **_mbscat_s** sind Zeichenfolgen mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**wcscat_s** und **_mbscat_s** sind breit Zeichen-und multibytezeichenversionen von **strcat_s**. Die Argumente und der Rückgabewert von **wcscat_s** sind Zeichen folgen mit breit Zeichen. bei den **_mbscat_s** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-Wenn *strDestination* ein Nullzeiger oder kein null-terminiert erweist oder *wenn strSource* ein **NULL-Zeiger** ist oder wenn die Zielzeichenfolge zu klein ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EINVAL** zurück und setzen **errno** auf **EINVAL**.
+Wenn *die Ziel* Zeichenfolge **ein NULL** -Zeiger ist oder nicht mit NULL endet oder *Wenn die* Ziel Zeichenfolge zu klein ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " zurück und legen " **errno** " auf " **EINVAL**" fest.
 
-Die Versionen von Funktionen mit dem **suffix _l** haben das gleiche Verhalten, verwenden jedoch den Gebietsschemaparameter, der anstelle des aktuellen Gebietsschemas übergeben wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen von Funktionen mit dem **_l** -Suffix haben das gleiche Verhalten, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -175,9 +175,9 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Siehe Codebeispiel in [strcpy_s, wcscpy_s, _mbscpy_s](strcpy-s-wcscpy-s-mbscpy-s.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [strncat, _strncat_l, wcsncat, _wcsncat_l, _mbsncat, _mbsncat_l](strncat-strncat-l-wcsncat-wcsncat-l-mbsncat-mbsncat-l.md)<br/>
 [strncmp, wcsncmp, _mbsncmp, _mbsncmp_l](strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)<br/>
 [strncpy, _strncpy_l, wcsncpy, _wcsncpy_l, _mbsncpy, _mbsncpy_l](strncpy-strncpy-l-wcsncpy-wcsncpy-l-mbsncpy-mbsncpy-l.md)<br/>

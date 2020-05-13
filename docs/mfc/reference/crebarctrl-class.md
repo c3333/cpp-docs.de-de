@@ -98,12 +98,12 @@ helpviewer_keywords:
 - CReBarCtrl [MFC], ShowBand
 - CReBarCtrl [MFC], SizeToRect
 ms.assetid: 154570d7-e48c-425d-8c7e-c64542bcb4cc
-ms.openlocfilehash: 776892d71e2cb0f5d57512754cd7fa12730eb044
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 930322f1803eba7709505018c77ecea3f816dd15
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367449"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750637"
 ---
 # <a name="crebarctrl-class"></a>CReBarCtrl-Klasse
 
@@ -215,7 +215,7 @@ Weitere Informationen finden Sie unter [Verwenden von CReBarCtrl](../../mfc/usin
 
 `CReBarCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -223,7 +223,7 @@ Weitere Informationen finden Sie unter [Verwenden von CReBarCtrl](../../mfc/usin
 
 Implementiert das Verhalten der Win32-RB_BEGINDRAG , wie im Windows SDK beschrieben. [RB_BEGINDRAG](/windows/win32/Controls/rb-begindrag)
 
-```
+```cpp
 void BeginDrag(
     UINT uBand,
     DWORD dwPos = (DWORD)-1);
@@ -255,7 +255,7 @@ virtual BOOL Create(
 Gibt die Kombination von Bewehrungssteuerungsstilen an, die auf das Steuerelement angewendet werden. Eine Liste der unterstützten Stile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) d. h. die Position und Größe des Bewehrungssteuerelements.
+Ein Verweis auf ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) d. h. die Position und Größe des Bewehrungssteuerelements.
 
 *pParentWnd*<br/>
 Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Bewehrungssteuerelements ist. Es darf nicht NULL sein.
@@ -303,7 +303,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt die Kombination von Bewehrungssteuerungsstilen an, die auf das Steuerelement angewendet werden. Eine Liste der unterstützten Stile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -356,7 +356,7 @@ Ein Wert ungleich Null, wenn das Band erfolgreich gelöscht wurde; andernfalls N
 
 Implementiert das Verhalten der Win32-RB_DRAGMOVE , wie im Windows SDK beschrieben. [RB_DRAGMOVE](/windows/win32/Controls/rb-dragmove)
 
-```
+```cpp
 void DragMove(DWORD dwPos = (DWORD)-1);
 ```
 
@@ -369,7 +369,7 @@ Ein DWORD-Wert, der die neuen Mauskoordinaten enthält. Die horizontale Koordina
 
 Implementiert das Verhalten der Win32-RB_ENDDRAG , wie im Windows SDK beschrieben. [RB_ENDDRAG](/windows/win32/Controls/rb-enddrag)
 
-```
+```cpp
 void EndDrag();
 ```
 
@@ -377,7 +377,7 @@ void EndDrag();
 
 Implementiert das Verhalten der Win32-RB_GETBANDBORDERS , wie im Windows SDK beschrieben. [RB_GETBANDBORDERS](/windows/win32/Controls/rb-getbandborders)
 
-```
+```cpp
 void GetBandBorders(
     UINT uBand,
     LPRECT prc) const;
@@ -389,7 +389,7 @@ void GetBandBorders(
 Nullbasierter Index des Bands, für das die Rahmen abgerufen werden.
 
 *Vr china*<br/>
-Ein Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Bandgrenzen empfängt. Wenn das Bewehrungssteuerelement den stil RBS_BANDBORDERS hat, erhält jedes Element dieser Struktur die Anzahl der Pixel auf der entsprechenden Seite des Bands, die den Rahmen bilden. Wenn das Bewehrungssteuerelement nicht über den RBS_BANDBORDERS-Stil verfügt, erhält nur das linke Element dieser Struktur gültige Informationen. Eine Beschreibung der Bewehrungssteuerungsstile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
+Ein Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Bandgrenzen empfängt. Wenn das Bewehrungssteuerelement den stil RBS_BANDBORDERS hat, erhält jedes Element dieser Struktur die Anzahl der Pixel auf der entsprechenden Seite des Bands, die den Rahmen bilden. Wenn das Bewehrungssteuerelement nicht über den RBS_BANDBORDERS-Stil verfügt, erhält nur das linke Element dieser Struktur gültige Informationen. Eine Beschreibung der Bewehrungssteuerungsstile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
 
 ## <a name="crebarctrlgetbandcount"></a><a name="getbandcount"></a>CReBarCtrl::GetBandCount
 
@@ -429,7 +429,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Ruft die Ränder des Bands ab.
 
-```
+```cpp
 void GetBandMargins(PMARGINS pMargins);
 ```
 
@@ -584,7 +584,7 @@ BOOL GetRect(
 Nullbasierter Index eines Bands im Bewehrungssteuerelement.
 
 *Vr china*<br/>
-Ein Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Grenzen des Bewehrungsbandes empfängt.
+Ein Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Grenzen des Bewehrungsbandes empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -723,7 +723,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf seine größte Größe.
 
-```
+```cpp
 void MaximizeBand(UINT uBand);
 ```
 
@@ -744,7 +744,7 @@ Implementiert das Verhalten der Win32-RB_MAXIMIZEBAND mit [RB_MAXIMIZEBAND](/win
 
 Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf die kleinste Größe.
 
-```
+```cpp
 void MinimizeBand(UINT uBand);
 ```
 
@@ -787,7 +787,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Implementiert das Verhalten der Win32-RB_PUSHCHEVRON , wie im Windows SDK beschrieben. [RB_PUSHCHEVRON](/windows/win32/Controls/rb-pushchevron)
 
-```
+```cpp
 void PushChevron(
     UINT uBand,
     LPARAM lAppValue);
@@ -805,7 +805,7 @@ Ein anwendungsdefinierter 32-Bit-Wert. Siehe *lAppValue* in [RB_PUSHCHEVRON](/wi
 
 Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf seine ideale Größe.
 
-```
+```cpp
 void RestoreBand(UINT uBand);
 ```
 
@@ -931,7 +931,7 @@ Weitere Informationen zum Festlegen der Hintergrundfarbe und zum Festlegen der S
 
 Legt das Farbschema für die Schaltflächen auf einem Bewehrungssteuerelement fest.
 
-```
+```cpp
 void SetColorScheme(const COLORSCHEME* lpcs);
 ```
 
@@ -1056,7 +1056,7 @@ Sie wird bereitgestellt, um die Flexibilität der Textfarbe in einem Bewehrungss
 
 Ordnet ein Werkzeugspitzensteuerelement einem Bewehrungssteuerelement zu.
 
-```
+```cpp
 void SetToolTips(CToolTipCtrl* pToolTip);
 ```
 
@@ -1133,7 +1133,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Beachten Sie, dass `CRect` diese Memberfunktion ein Objekt `RECT` als Parameter und nicht als Struktur verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

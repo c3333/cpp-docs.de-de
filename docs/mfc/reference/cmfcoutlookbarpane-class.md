@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CMFCOutlookBarPane [MFC], EnableContextMenuItems
 - CMFCOutlookBarPane [MFC], RemoveAllButtons
 ms.assetid: 094e2ef3-a118-487e-a4cc-27626108fe08
-ms.openlocfilehash: 82d8f1da0640e5b487a06585c72279e7d7ffdf99
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 97c7edde26bdf13e899d823dcf88d143068d86a4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369641"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749607"
 ---
 # <a name="cmfcoutlookbarpane-class"></a>CMFCOutlookBarPane-Klasse
 
@@ -134,7 +134,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCOutlookBarPane` wie verschieden
 
 [CMFCOutlookBarPane](../../mfc/reference/cmfcoutlookbarpane-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxoutlookbarpane.h
 
@@ -232,7 +232,7 @@ virtual BOOL CanBeAttached() const;
 
 Gibt die Ressourcen frei, die von den Bildern im Outlook-Leistenbereich verwendet werden.
 
-```
+```cpp
 void ClearAll();
 ```
 
@@ -311,7 +311,7 @@ Die Standardimplementierung überprüft den Anpassungsmodus ( [CMFCToolBar::IsCu
 
 Gibt an, ob die Bildlaufpfeile im Outlook-Leistenbereich die Liste der Schaltflächen Seite für Seite oder die Schaltfläche nach Derenkzeichen voranbringen.
 
-```
+```cpp
 void EnablePageScrollMode(BOOL bPageScroll=TRUE);
 ```
 
@@ -395,7 +395,7 @@ TRUE, wenn die Schaltfläche erfolgreich entfernt wurde; FALSE, wenn die angegeb
 
 Legt die Hintergrundfarbe der Outlook-Leiste fest.
 
-```
+```cpp
 void SetBackColor(COLORREF color);
 ```
 
@@ -412,7 +412,7 @@ Rufen Sie diese Funktion auf, um die aktuelle Hintergrundfarbe für die Outlook-
 
 Legt das Hintergrundbild fest.
 
-```
+```cpp
 void SetBackImage(UINT uiImageID);
 ```
 
@@ -429,7 +429,7 @@ Rufen Sie diese Methode auf, um das Hintergrundbild der Outlook-Leiste festzuleg
 
 Setzt den Outlook-Leistenbereich auf den ursprünglichen Satz von Schaltflächen zurück.
 
-```
+```cpp
 void SetDefaultState();
 ```
 
@@ -441,7 +441,7 @@ Mit dieser Methode werden die Outlook-Leiste-Schaltflächen auf den ursprünglic
 
 Legt die Anzahl der Pixel des Auffüllens fest, die um Schaltflächen im Outlook-Leistenbereich verwendet werden.
 
-```
+```cpp
 void SetExtraSpace()
 ```
 
@@ -449,7 +449,7 @@ void SetExtraSpace()
 
 Legt die Farben des regulären und hervorgehobenen Texts im Outlook-Leistenbereich fest.
 
-```
+```cpp
 void SetTextColor(
     COLORREF clrRegText,
     COLORREF clrSelText=0);
@@ -467,7 +467,7 @@ void SetTextColor(
 
 Legt die transparente Farbe für den Outlook-Leistenbereich fest.
 
-```
+```cpp
 void SetTransparentColor(COLORREF color);
 ```
 
@@ -480,7 +480,7 @@ Gibt die neue transparente Farbe an.
 
 Die transparente Farbe ist erforderlich, um transparente Bilder anzuzeigen. Jedes Vorkommen dieser Farbe in einem Bild wird stattdessen mit der Hintergrundfarbe gezeichnet.  Es gibt keine Verschmelzung von Hintergrund- und Vordergrundbildern.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

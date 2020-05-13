@@ -3,12 +3,12 @@ title: Neuerungen bei C++ in Visual Studio
 ms.date: 07/02/2019
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: df7cf44831781086f1b36d32ea9ed773a5dff9a4
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: 9b656d4e13fe241c22a9c555d1c597016c5353d6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415727"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366818"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
@@ -180,7 +180,7 @@ IntelliCode ist jetzt als optionale Komponente in der Workload **Desktopentwickl
 
 ## <a name="incredibuild-integration"></a>IncrediBuild-Integration
 
-IncrediBuild ist jetzt als optionale Komponente in der Workload **Desktopentwicklung mit C++** enthalten. Der IncrediBuild Build Monitor ist vollständig in die Visual Studio-IDE integriert. Weitere Informationen finden Sie unter [Visualize your build with IncrediBuild’s Build Monitor and Visual Studio 2019](https://devblogs.microsoft.com/cppblog/visualize-your-build-with-incredibuilds-build-monitor-and-visual-studio-2019/) (Visualisieren Ihres Builds per IncrediBuild Build Monitor und Visual Studio 2019).
+IncrediBuild ist jetzt als optionale Komponente in der Workload **Desktopentwicklung mit C++** enthalten. Der IncrediBuild Build Monitor ist vollständig in die Visual Studio-IDE integriert. Weitere Informationen finden Sie unter [Visualisieren Ihres Builds mit IncrediBuild Build Monitor und Visual Studio 2019](https://devblogs.microsoft.com/cppblog/visualize-your-build-with-incredibuilds-build-monitor-and-visual-studio-2019/).
 
 ## <a name="debugging"></a>Debuggen
 

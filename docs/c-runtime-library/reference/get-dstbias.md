@@ -1,9 +1,11 @@
 ---
 title: _get_dstbias
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _get_dstbias
 - __dstbias
+- _o___dstbias
+- _o__get_dstbias
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +33,12 @@ helpviewer_keywords:
 - get_dstbias function
 - _get_dstbias function
 ms.assetid: e751358c-1ecc-411b-ae2c-81b2ec54ea45
-ms.openlocfilehash: a48cc4fe35a1bbd18342750571214ed0977cf3ee
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 845310928ec4707afe15bccc7ff5b979e7da69b6
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955951"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919369"
 ---
 # <a name="_get_dstbias"></a>_get_dstbias
 
@@ -49,7 +52,7 @@ error_t _get_dstbias( int* seconds );
 
 ### <a name="parameters"></a>Parameter
 
-*Vorsprung*<br/>
+*seconds*<br/>
 Die Verschiebung der Sommerzeit in Sekunden.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -64,18 +67,20 @@ Wenn *Sekunden* **null**ist, wird der Handler für ungültige Parameter aufgeruf
 
 Es wird empfohlen, diese Funktion anstelle des Makros **_dstbias** oder der veralteten Funktion **__dstbias**zu verwenden.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_get_dstbias**|\<time.h>|
 
 Weitere Informationen finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
-[errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
+[errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)<br/>
 [_get_daylight](get-daylight.md)<br/>
 [_get_timezone](get-timezone.md)<br/>
 [_get_tzname](get-tzname.md)<br/>

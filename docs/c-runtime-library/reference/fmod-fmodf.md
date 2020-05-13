@@ -1,10 +1,11 @@
 ---
-title: "\"f\", \"f\", \"f\", \"f\""
-ms.date: 04/05/2018
+title: fmod, fmodf, fmodl
+ms.date: 4/2/2020
 api_name:
 - fmod
 - fmodf
 - fmodl
+- _o_fmod
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,14 +34,14 @@ helpviewer_keywords:
 - fmod function
 - floating-point numbers, calculating remainders
 ms.assetid: 6962d369-d11f-40b1-a6d7-6f67239f8a23
-ms.openlocfilehash: e98432a73df8b872593d4cd610139bdfa72a25c4
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a6fcb7feeae72ff15d7b1ed0d55c5abbb408135a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957077"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914958"
 ---
-# <a name="fmod-fmodf-fmodl"></a>"f", "f", "f", "f"
+# <a name="fmod-fmodf-fmodl"></a>fmod, fmodf, fmodl
 
 Berechnet den Gleitkommarest.
 
@@ -79,17 +81,19 @@ Gleitkommawerte.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **Funktion "** f" berechnet den Gleit Komma Rest *f* von *x* / *y* , sodass *x* = *i* \* *y* + *f*, wo *ich* ist eine ganze Zahl, *f* hat dasselbe Vorzeichen wie *x*, und der absolute Wert von *f* ist kleiner als der absolute Wert von *y*.
+Die **Funktion "** f" berechnet den Gleit Komma Rest *f* von *x* / *y* , sodass *x* = *i* \* *y* + *f* *, wobei es sich um* eine ganze Zahl handelt, *f* dasselbe Vorzeichen wie " *x*" hat und der absolute Wert von " *f* " kleiner ist als der absolute Wert von " *y*".
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt " **f** " immer zwei **doppelte** Argumente und gibt einen **Double**-Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt " **f** " immer zwei **doppelte** Argumente und gibt einen **Double**-Wert zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**fmod**, **fmodf**, **fmodl**|\<math.h>|
+|" **f**" **, "** f", " **f** ", "f"|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -113,7 +117,7 @@ int main( void )
 The remainder of -10.00 / 3.00 is -1.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

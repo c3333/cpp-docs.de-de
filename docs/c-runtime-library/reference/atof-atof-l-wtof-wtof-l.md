@@ -1,11 +1,15 @@
 ---
 title: atof, _atof_l, _wtof, _wtof_l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _wtof_l
 - atof
 - _atof_l
 - _wtof
+- _o__atof_l
+- _o__wtof
+- _o__wtof_l
+- _o_atof
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -49,12 +54,12 @@ helpviewer_keywords:
 - _wtof function
 - string conversion, to floating point values
 ms.assetid: eb513241-c9a9-4f5c-b7e7-a49b14abfb75
-ms.openlocfilehash: a624ae9f900395ed2117ed2bb89e2768c64daba9
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5200b93a5745dfb8e9b31cd5663452b84cb3058a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939572"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909114"
 ---
 # <a name="atof-_atof_l-_wtof-_wtof_l"></a>atof, _atof_l, _wtof, _wtof_l
 
@@ -81,7 +86,7 @@ double _wtof_l(
 
 ## <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -101,13 +106,15 @@ Die Eingabezeichenfolge ist eine Sequenz von Zeichen, die als numerischer Wert d
 
 Das *Str* -Argument für **atof** und **_wtof** weist die folgende Form auf:
 
-[*Leerzeichen*] [*Sign*] [*Ziffern*] [ __.__ *Ziffern*] [{**e** &#124; **e** } [*Sign*]*Ziffern*]
+[*Leerzeichen*] [*Sign*] [*Ziffern*] [__.__ *Ziffern*] [{**e** &#124; **e** } [*Sign*]*Ziffern*]
 
 Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert werden. das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-); und *Ziffern* sind eine oder mehrere Dezimalstellen. Wenn keine Ziffern vor dem Dezimaltrennzeichen stehen, muss mindestens eine Ziffer nach dem Dezimaltrennzeichen stehen. Auf die Dezimalstellen kann ein Exponent folgen, der aus einem einführenden Buchstaben (**e**oder **e**) und einer optionalen ganzzahligen Ganzzahl mit Vorzeichen besteht.
 
 Die ucrt-Versionen dieser Funktionen unterstützen nicht die Konvertierung von Exponent-Buchstaben vom Fortran-Stil (**d** oder **d**). Diese nicht-standardmäßige Erweiterung wurde in früheren Versionen der CRT unterstützt. Sie ist möglicherweise eine fehlerhafte Änderung für Ihren Code.
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets *Schema Parameter,* der anstelle des aktuellen Gebiets Schemas übergeben wurde.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -121,11 +128,11 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 |Routine(n)|Erforderlicher Header|
 |------------------|---------------------|
 |**atof**, **_atof_l**|C: \<math.h> or \<stdlib.h> C++: \<cstdlib>, \<stdlib.h>, \<cmath> or \<math.h>|
-|**_wtof**, **_wtof_l**|C: \<stdlib.h> oder \<wchar.h> C++: \<cstdlib>, \<stdlib.h> oder \<wchar.h>|
+|**_wtof** **_wtof_l**|C: \<stdlib.h> or \<wchar.h> C++: \<cstdlib>, \<stdlib.h> or \<wchar.h>|
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm zeigt, wie Zahlen, die als Zeichen folgen gespeichert werden, mithilfe der **atof** -und **_atof_l** -Funktionen in numerische Werte konvertiert werden können.
+Dieses Programm zeigt, wie Zahlen, die als Zeichen folgen gespeichert werden, mithilfe der Funktionen **atof** und **_atof_l** in numerische Werte konvertiert werden können.
 
 ```C
 // crt_atof.c
@@ -174,7 +181,7 @@ Function: atof("  -2,309e-25") = -2.000000e+00
 Function: _atof_l("  -2,309e-25", fr)) = -2.309000e-25
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

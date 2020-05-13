@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CMFCColorButton [MFC], UpdateColor
 - CMFCColorButton [MFC], m_bEnabledInCustomizeMode
 ms.assetid: 9fdf34ae-4cc5-4c5e-9d89-1c50e8a73699
-ms.openlocfilehash: 21d05fd8e805467f1a7a77d20c81d5ba0401455e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cf24c162d0eda272f73c69c434589ae6ef3332a4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367730"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752565"
 ---
 # <a name="cmfccolorbutton-class"></a>CMFCColorButton-Klasse
 
@@ -131,7 +131,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie eine `CMFCColorButton` Farbs
 [!code-cpp[NVC_MFC_StatusBarDemo#10](../../mfc/reference/codesnippet/cpp/cmfccolorbutton-class_1.h)]
 [!code-cpp[NVC_MFC_StatusBarDemo#11](../../mfc/reference/codesnippet/cpp/cmfccolorbutton-class_2.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcolorbutton.h
 
@@ -147,7 +147,7 @@ CMFCColorButton();
 
 Aktivieren oder deaktivieren Sie die Schaltfläche "Automatisch" eines Farbauswahlsteuerelements und legen Sie die automatische (Standard-)Farbe fest.
 
-```
+```cpp
 void EnableAutomaticButton(
     LPCTSTR lpszLabel,
     COLORREF colorAutomatic,
@@ -171,7 +171,7 @@ void EnableAutomaticButton(
 
 Aktivieren oder deaktivieren Sie die Schaltfläche "Sonstiges", die unter den regulären Farbschaltflächen angezeigt wird.
 
-```
+```cpp
 void EnableOtherButton(
     LPCTSTR lpszLabel,
     BOOL bAltColorDlg=TRUE,
@@ -335,7 +335,7 @@ virtual void OnShowColorPopup();
 
 Initialisiert das `m_pPalette` geschützte Datenelement auf die angegebene Palette oder die Standardsystempalette.
 
-```
+```cpp
 void RebuildPalette(CPalette* pPal);
 ```
 
@@ -349,7 +349,7 @@ void RebuildPalette(CPalette* pPal);
 
 Gibt die Farbe der Schaltfläche an.
 
-```
+```cpp
 void SetColor(COLORREF color);
 ```
 
@@ -386,7 +386,7 @@ Die Liste der Farbnamen ist global pro Anwendung. Daher überträgt diese Method
 
 Definiert die Anzahl der Spalten, die in der Farbtabelle angezeigt werden, die dem Benutzer während des Farbauswahlprozesses des Benutzers angezeigt wird.
 
-```
+```cpp
 void SetColumnsNumber(int nColumns);
 ```
 
@@ -403,7 +403,7 @@ Der Benutzer kann eine Farbe aus einer Popup-Farbleiste auswählen, die eine Tab
 
 Gibt einen Satz von Farben und den Namen des Satzes an. Der Farbsatz wird mit einem [CMFCColorBar-Klassenobjekt](../../mfc/reference/cmfccolorbar-class.md) angezeigt.
 
-```
+```cpp
 void SetDocumentColors(
     LPCTSTR lpszLabel,
     CList<COLORREF,COLORREF>& lstColors);
@@ -425,7 +425,7 @@ Ein `CMFCColorButton` Objekt verwaltet eine Liste von RGB-Werten, die an ein [CM
 
 Gibt die Standardfarben an, die auf der Popup-Farbleiste angezeigt werden sollen.
 
-```
+```cpp
 void SetPalette(CPalette* pPalette);
 ```
 
@@ -472,7 +472,7 @@ virtual void UpdateColor(COLORREF color);
 
 Die `UpdateColor` Funktion ändert die Farbe der aktuell ausgewählten Schaltfläche und benachrichtigt das übergeordnete Element, indem eine WM_COMMAND Nachricht mit einer BN_CLICKED Standardbenachrichtigung gesendet wird. Verwenden Sie die [CMFCColorButton::GetColor-Methode,](#getcolor) um die ausgewählte Farbe abzurufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

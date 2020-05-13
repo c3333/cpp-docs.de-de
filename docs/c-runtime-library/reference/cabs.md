@@ -1,8 +1,9 @@
 ---
 title: _cabs
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _cabs
+- _o__cabs
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - _cabs function
 - calculating absolute values
 ms.assetid: fea292ee-1a39-4a0a-b416-4a189346ff26
-ms.openlocfilehash: 2c2bd6b3f097095514e47b757306b4d83a990e45
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6e769d2caf65ef3c084bcb6add701f78b03a1b17
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170340"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913352"
 ---
 # <a name="_cabs"></a>_cabs
 
@@ -55,17 +57,19 @@ Komplexe Zahl.
 
 **_cabs** gibt bei erfolgreicher Ausführung den absoluten Wert des Arguments zurück. Bei einem Überlauf **_cabs** gibt _cabs **HUGE_VAL** zurück und legt **errno** auf **ERANGE**fest. Sie können die Fehlerbehandlung mit [_matherr](matherr.md) ändern.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **_cabs** -Funktion berechnet den absoluten Wert einer komplexen Zahl, die eine Struktur vom Typ [_complex](../../c-runtime-library/standard-types.md)sein muss. Die Struktur *z* besteht aus einer echten Komponente *x* und einer imaginären Komponente *y*. Ein **_cabs** -Aufrufe erzeugt einen Wert, der dem des Ausdrucks `sqrt( z.x * z.x + z.y * z.y )`entspricht.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_cabs**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -1,8 +1,9 @@
 ---
 title: _getdrives
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _getdrives
+- _o__getdrives
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - getdrives function
 - disk drives
 ms.assetid: 869bb51f-4209-4328-846e-3aadebaceb9c
-ms.openlocfilehash: 0733cc00523bb3a7bb019453cc94183a5c2b87e1
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 66940abc3f171b07f0816441709b1f4f9db88614
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955077"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913754"
 ---
 # <a name="_getdrives"></a>_getdrives
 
@@ -51,13 +53,17 @@ unsigned long _getdrives( void );
 
 Wenn die Funktion erfolgreich ist, ist der Rückgabewert eine Bitmaske, die die aktuell verfügbaren Laufwerke darstellt. Bitposition 0 (das unwichtigste Bit) ist Laufwerk A, Bitposition 1 ist Laufwerk B, Bitposition 2 ist Laufwerk C usw. Wenn die Funktion fehlerhaft ist, ist der Rückgabewert null. Um erweiterte Fehlerinformationen abzurufen, nennen Sie **GetLastError**.
 
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_getdrives**|\<direct.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -105,6 +111,6 @@ D:
 E:
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CDataPathProperty [MFC], SetControl
 - CDataPathProperty [MFC], SetPath
 ms.assetid: 1f96efdb-54e4-460b-862c-eba5d4103488
-ms.openlocfilehash: e96106dcd6f496c6cc99c9d72d86052547b6d06b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 479f5d47d9cff72d36dbd25e434182af1ba01ef4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376471"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754655"
 ---
 # <a name="cdatapathproperty-class"></a>CDataPathProperty-Klasse
 
@@ -82,7 +82,7 @@ Weitere Informationen zur Verwendung asynchroner Moniker und ActiveX-Steuereleme
 
 `CDataPathProperty`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxctl.h
 
@@ -193,7 +193,7 @@ Die Öffnung sollte neu gestartet werden. Abgeleitete Klassen können diese Funk
 
 Rufen Sie diese Memberfunktion auf, um `CDataPathProperty` dem Objekt ein asynchrones OLE-Steuerelement zuzuordnen.
 
-```
+```cpp
 void SetControl(COleControl* pControl);
 ```
 
@@ -206,7 +206,7 @@ Ein Zeiger auf das asynchrone OLE-Steuerelement, das der Eigenschaft zugeordnet 
 
 Rufen Sie diese Memberfunktion auf, um den Pfadnamen der Eigenschaft festzulegen.
 
-```
+```cpp
 void SetPath(LPCTSTR lpszPath);
 ```
 
@@ -215,7 +215,7 @@ void SetPath(LPCTSTR lpszPath);
 *lpszPath*<br/>
 Ein Pfad, der absolut oder relativ sein kann, auf die Eigenschaft, die asynchron geladen wird. `CDataPathProperty`verwendet URLs, nicht Dateinamen. Wenn Sie `CDataPathProperty` ein Objekt für eine `file://` Datei benötigen, stellen Sie dem Pfad einen Voranstellen an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispielbild](../../overview/visual-cpp-samples.md)<br/>
 [CAsyncMonikerFile-Klasse](../../mfc/reference/casyncmonikerfile-class.md)<br/>

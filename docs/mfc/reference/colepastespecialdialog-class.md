@@ -28,12 +28,12 @@ helpviewer_keywords:
 - COlePasteSpecialDialog [MFC], GetSelectionType
 - COlePasteSpecialDialog [MFC], m_ps
 ms.assetid: 0e82ef9a-9bbe-457e-8240-42c86a0534f7
-ms.openlocfilehash: 5e67a81f48b8cdf0dae6dc90fc2ded8dc44a73ab
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 47fb421ef9dedcae7f92d33f55988dbbc2ea452d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376990"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753814"
 ---
 # <a name="colepastespecialdialog-class"></a>COlePasteSpecialDialog-Klasse
 
@@ -97,7 +97,7 @@ Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie im Artikel [D
 
 `COlePasteSpecialDialog`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxodlgs.h
 
@@ -105,7 +105,7 @@ Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie im Artikel [D
 
 Rufen Sie diese Funktion auf, um der Liste der Formate, die Ihre Anwendung in einem Vorgang "Einfügen" unterstützen kann, neue Formate hinzuzufügen.
 
-```
+```cpp
 void AddFormat(
     const FORMATETC& formatEtc,
     LPTSTR lpszFormat,
@@ -178,7 +178,7 @@ Eine [OLEUIPASTEFLAG-Struktur,](/windows/win32/api/oledlg/ne-oledlg-oleuipastefl
 
 Rufen Sie diese Funktion auf, um die folgenden Zwischenablageformate zur Liste der Formate hinzuzufügen, die Ihre Anwendung in einem Vorgang "Einfügen" unterstützen kann:
 
-```
+```cpp
 void AddStandardFormats(BOOL bEnableLink = TRUE);
 ```
 
@@ -381,7 +381,7 @@ Member dieser Struktur können direkt oder über Memberfunktionen geändert werd
 
 Weitere Informationen finden Sie in der [OLEUIPASTESPECIAL-Struktur](/windows/win32/api/oledlg/ns-oledlg-oleuipastespecialw) im Windows SDK.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>
 [COleDialog-Klasse](../../mfc/reference/coledialog-class.md)<br/>

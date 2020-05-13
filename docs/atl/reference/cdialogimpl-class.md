@@ -17,12 +17,12 @@ helpviewer_keywords:
 - dialog boxes, ATL
 - CDialogImpl class
 ms.assetid: d430bc7b-8a28-4ad3-9507-277bdd2c2c2e
-ms.openlocfilehash: 900a312c97d7b83eac93a372be39a006b3c4344d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d5ab7293f73429a93c3fcab243c2e34d3c78f28a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327054"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747707"
 ---
 # <a name="cdialogimpl-class"></a>CDialogImpl-Klasse
 
@@ -95,7 +95,7 @@ Wobei `MyDlg` der **Name Kurz** ist, der auf der Seite **Namen** des Assistenten
 |ATL-Projekt-Assistent|[Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)|
 |Dialogfelder|[Dialogfelder](/windows/win32/dlgbox/dialog-boxes) und nachfolgende Themen im Windows SDK|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlwin.h
 
@@ -119,7 +119,7 @@ HWND Create(
 *hWndEltern*<br/>
 [in] Das Handle zum Besitzerfenster.
 
-**RECT&** *korrigieren* [in] Eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des Dialogs angibt.
+**RECT&** *korrigieren* [in] Eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des Dialogs angibt.
 
 *dwInitParam*<br/>
 [in] Gibt den Wert an, der an das Dialogfeld im *LParam-Parameter* der WM_INITDIALOG-Nachricht übergeben werden soll.
@@ -324,7 +324,7 @@ Die Fensterprozedur.
 
 Nach dem ersten `StartDialogProc` `DialogProc` Aufruf von wird als Dialogprozedur festgelegt, und weitere Aufrufe werden dorthin gesetzt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

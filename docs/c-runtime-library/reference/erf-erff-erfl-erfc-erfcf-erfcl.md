@@ -1,6 +1,6 @@
 ---
 title: erf, erff, erfl, erfc, erfcf, erfcl
-ms.date: 01/31/2019
+ms.date: 4/2/2020
 api_name:
 - erff
 - erfl
@@ -8,6 +8,12 @@ api_name:
 - erfc
 - erfcf
 - erfcl
+- _o_erf
+- _o_erfc
+- _o_erfcf
+- _o_erfcl
+- _o_erff
+- _o_erfl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +46,12 @@ helpviewer_keywords:
 - erfcf function
 - erfc function
 ms.assetid: 144d90d3-e437-41c2-a659-cd57596023b5
-ms.openlocfilehash: df724ed056c02d79b5b51f97ae4aaf8ae267fde5
-ms.sourcegitcommit: 8178d22701047d24f69f10d01ba37490e3d67241
+ms.openlocfilehash: 633a766684ed7485ab579157ae4c94fe209f7e73
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "70937619"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915014"
 ---
 # <a name="erf-erff-erfl-erfc-erfcf-erfcl"></a>erf, erff, erfl, erfc, erfcf, erfcl
 
@@ -87,7 +94,7 @@ long double erfcl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Ein Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -98,11 +105,13 @@ Die **ERF** -Funktionen geben die Gauß-Fehlerfunktion von *x*zurück. Die **erf
 
 Die **ERF** -Funktionen berechnen die Gauß-Fehlerfunktion von *x*, die wie folgt definiert ist:
 
-![Die Fehlerfunktion von x.](media/crt_erf_formula.PNG "Die Fehlerfunktion von x")
+![Die Fehlerfunktion von x](media/crt_erf_formula.PNG "Die Fehlerfunktion von x")
 
 Die komplementäre Gauß-Fehlerfunktion ist als 1-ERF (x) definiert. Die **ERF** -Funktionen geben einen Wert im Bereich von-1,0 bis 1,0 zurück. Es gibt keine Fehlerrückgabe. Die **erfc** -Funktionen geben einen Wert im Bereich 0 bis 2 zurück. Wenn *x* für **erfc**zu groß ist, wird die **errno** -Variable auf **ERANGE**festgelegt.
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **ERF** und **erfc** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm verwenden **ERF** und **erfc** immer einen **Double**-Wert.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -112,6 +121,6 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **ERF** und **erf
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

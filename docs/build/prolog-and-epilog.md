@@ -1,25 +1,25 @@
 ---
-title: X64 Prolog und Epilog
+title: Prolog und Epilog bei x64-Systemen
 ms.date: 12/17/2018
 ms.assetid: 0453ed1a-3ff1-4bee-9cc2-d6d3d6384984
-ms.openlocfilehash: a225786853fcc2eb7b6a21de29f1ccf4901e4377
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d0b7444af6e434a09f6af5f5b1c144b46c79ad56
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62295234"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328430"
 ---
-# <a name="x64-prolog-and-epilog"></a>X64 Prolog und Epilog
+# <a name="x64-prolog-and-epilog"></a>Prolog und Epilog bei x64-Systemen
 
-Jede Funktion, die den Stapelspeicher zuweist, Aufrufen anderer Funktionen, nicht flüchtigen Register gespeichert oder mithilfe der Ausnahmebehandlung einen Prolog müssen, deren Adresse Grenzwerte im Zusammenhang mit der jeweiligen Funktionstabelleneintrag Entladedaten beschrieben werden. Weitere Informationen finden Sie unter [X64 Ausnahmebehandlung](../build/exception-handling-x64.md). Der Prolog speichert Argument Registern in der ihre privaten Adressen bei Bedarf legt nicht volatile Register auf den Stapel, ordnet die festen Bestandteil des Stapels für lokale Variablen und die temporären Dateien und optional richtet Frame-Pointer. Die zugeordnete Entladung der Daten muss die Aktion der Prolog beschreiben, und geben Sie müssen die erforderlichen Informationen für die Auswirkungen der Prologcode rückgängig zu machen.
+Jede Funktion, die Stapelspeicher zuweist, andere Funktionen aufruft, nichtflüchtige Register speichert oder Ausnahmebehandlung verwendet, muss über einen Prolog verfügen, dessen Adressgrenzen in den Entladungsdaten beschrieben werden, die dem jeweiligen Funktionstabelleneintrag zugeordnet sind. Weitere Informationen finden Sie unter [x64-Ausnahmebehandlung](../build/exception-handling-x64.md). Der Prolog speichert bei Bedarf Argumentregister in ihren Privatadressen, schiebt nichtflüchtige Register auf den Stapel, ordnet den festen Teil des Stapels für Locals und Temporäre zu und erstellt optional einen Framezeiger. Die zugehörigen Entladungsdaten müssen die Wirkung des Prologs beschreiben und die Informationen bereitstellen, die erforderlich sind, um die Wirkung des Prologcodes rückgängig zu machen.
 
-Wenn die feste Zuordnung im Stapel mehr als eine Seite ist (d. h. größer als 4096 Bytes), ist es möglich, dass die Stack-gesamtzuordnung mehr als eine Seite des virtuellen Speichers umfassen kann und daher die Zuordnung muss überprüft werden, bevor es zugewiesen ist. Eine spezielle Routine, die von der Prolog ist und die nicht Zerstören eines Register Argument, wird für diesen Zweck bereitgestellt.
+Wenn die feste Zuordnung im Stapel mehr als eine Seite (d. h. mehr als 4096 Bytes) ist, ist es möglich, dass sich die Stapelzuordnung über mehr als eine virtuelle Speicherseite erstreckt, und daher muss die Zuordnung überprüft werden, bevor sie zugewiesen wird. Eine spezielle Routine, die aus dem Prolog aufrufbar ist und keines der Argumentregister zerstört, wird zu diesem Zweck bereitgestellt.
 
-Die bevorzugte Methode zum Speichern von nicht volatile Register ist auf den Stapel vor dem festen stapelreservierung verschieben. Wenn die festen Stapelreservierungsgröße ausgeführt wird, bevor die nicht flüchtigen Register gespeichert werden, ist wahrscheinlich eine 32-Bit-Verschiebung erforderlich, um den gespeicherten Register-Bereich zu beheben. (Berichten nach, sind Pushbenachrichtigungen von Registern so schnell wie verschoben und in absehbarer trotz der implizite Abhängigkeit zwischen Pushvorgänge bleiben sollten.) Nicht volatile Register können in beliebiger Reihenfolge gespeichert werden. Allerdings muss die erste Verwendung von einem nicht flüchtigen Register im Prolog sein, um ihn zu speichern.
+Die bevorzugte Methode zum Speichern nichtflüchtiger Register besteht darin, sie vor der festen Stapelzuordnung auf den Stapel zu verschieben. Wenn die feste Stapelzuordnung vor dem Speichern der nichtflüchtigen Register durchgeführt wird, ist höchstwahrscheinlich eine 32-Bit-Verschiebung erforderlich, um den gespeicherten Registerbereich zu adressieren. (Berichten zufolge sind Registerverschiebungen so schnell wie Bewegungen und sollten dies auf absehbare Zeit trotz der impliziten Abhängigkeit zwischen Pushs bleiben.) Nichtflüchtige Register können in beliebiger Reihenfolge gespeichert werden. Die erste Verwendung eines nichtflüchtigen Registers im Prolog muss jedoch darin bestehen, es zu speichern.
 
-## <a name="prolog-code"></a>Prologcode
+## <a name="prolog-code"></a>Prolog-Code
 
-Der Code für einen typischen Prolog kann Folgendes sein:
+Der Code für einen typischen Prolog könnte sein:
 
 ```MASM
     mov    [RSP + 8], RCX
@@ -31,9 +31,9 @@ Der Code für einen typischen Prolog kann Folgendes sein:
     ...
 ```
 
-Dieser Prolog speichert das Argument Register RCX an ihrem privaten Speicherort, speichert permanenten Register R13-R15 reserviert den festen Teil des Stapelrahmens und richtet die Frame-Pointer, die von 128 Byte in den Bereich für feste Zuweisung verweist. Mit einem Offset kann mehrere Bereich feste Zuweisung mit 1-Byte-Offsets behandelt werden.
+Dieser Prolog speichert das Argumentregister RCX an seinem Heimatstandort, speichert nichtflüchtige Register R13-R15, ordnet den festen Teil des Stapelrahmens zu und richtet einen Framezeiger ein, der 128 Bytes in den festen Zuordnungsbereich zeigt. Durch die Verwendung eines Offsets kann ein großteil der festen Zuordnungsfläche mit Einbysatz-Offsets adressiert werden.
 
-Ist die feste Zuordnungsgröße größer als oder gleich auf eine Seite des Arbeitsspeichers, muss eine Hilfsfunktion aufgerufen werden, bevor RSP geändert wird. Dieses Hilfsprogramm, `__chkstk`, Tests des Bereichs zu zuzuweisenden Stack, um sicherzustellen, dass der Stapel ordnungsgemäß erweitert wird. In diesem Fall würde das vorherige Beispiel für den Prolog stattdessen Folgendes stehen:
+Wenn die feste Zuweisungsgröße größer oder gleich einer Speicherseite ist, muss eine Hilfsfunktion aufgerufen werden, bevor RSP geändert wird. Dieser Hilfsprogramm `__chkstk`, untersucht den zuzuweisenden Stapelbereich, um sicherzustellen, dass der Stapel ordnungsgemäß erweitert wird. In diesem Fall wäre das vorherige Prolog-Beispiel stattdessen:
 
 ```MASM
     mov    [RSP + 8], RCX
@@ -47,15 +47,15 @@ Ist die feste Zuordnungsgröße größer als oder gleich auf eine Seite des Arbe
     ...
 ```
 
-Die `__chkstk` Hilfsprogramm ändert sich nicht auf anderen Register R10 R11 und die Bedingungscodes. Insbesondere wird RAX unverändert und lassen Sie alle nicht flüchtigen Register und Argumentübergabe Register bleiben unverändert.
+Der `__chkstk` Helfer ändert keine anderen Register als R10, R11 und die Konditionscodes. Insbesondere wird raX unverändert zurückgegeben und alle nichtflüchtigen Register und Argumentübergaberegister unverändert bleiben.
 
-## <a name="epilog-code"></a>Epilogcode
+## <a name="epilog-code"></a>Epilog-Code
 
-Epilogcode ist bei jeder Beendigung einer Funktion vorhanden. Während es normalerweise nur einen Prolog ist, können viele epilogen vorhanden sein. Epilogcode im Stapel auf die Größe der feste Zuweisung kürzt, (falls erforderlich), wird der feste stapelreservierung, wird Sie nicht flüchtigen Register wiederhergestellt, indem Sie die gespeicherten Werte aus dem Stapel entfernt und zurückgegeben.
+Epilog-Code ist bei jedem Ausgang einer Funktion vorhanden. Während es normalerweise nur einen Prolog gibt, kann es viele Epilogs geben. Der Epilog-Code schneidet den Stapel auf seine feste Zuweisungsgröße (falls erforderlich), ordnet die feste Stapelzuordnung auf, stellt nichtflüchtige Register wieder her, indem die gespeicherten Werte aus dem Stapel entfernt werden, und gibt zurück.
 
-Die Epilogcode muss einem strikter Regeln für die entladungscodes zuverlässig Entladung durch Ausnahmen und Interrupts einhalten. Diese Regeln Verringern der Anzahl der Entladung der Daten, die erforderlich sind, da keine zusätzlichen Daten zur Beschreibung der einzelnen Epiloge erforderlich ist. Stattdessen kann die entladungscodes, dass es sich bei einem Epilog ausgeführt wird, indem Sie über einen Codestream zum Identifizieren eines Epilogs vorwärtsspulen bestimmen.
+Der Epilogcode muss einem strengen Satz von Regeln folgen, damit der Entladungscode zuverlässig durch Ausnahmen und Interrupts abgesendet werden kann. Diese Regeln reduzieren die Menge an Entladungsdaten, da keine zusätzlichen Daten erforderlich sind, um jeden Epilog zu beschreiben. Stattdessen kann der Entladungscode feststellen, dass ein Epilog ausgeführt wird, indem ein Codestream vorwärts scannt wird, um einen Epilog zu identifizieren.
 
-Wenn keine Frame-Pointer, in verwendet wird die Funktion, und klicken Sie dann auf der Epilog muss zuerst die Zuweisung der festen Bestandteil des Stapels, die nicht flüchtigen Register per pop ausgelesen werden und wird die Steuerung an die aufrufende Funktion zurückgegeben. Ein auf ein Objekt angewendeter
+Wenn in der Funktion kein Framezeiger verwendet wird, muss der Epilog zuerst den festen Teil des Stapels aufheben, die nichtflüchtigen Register werden geknallt, und die Steuerung wird an die aufrufende Funktion zurückgegeben. Beispiel:
 
 ```MASM
     add      RSP, fixed-allocation-size
@@ -65,7 +65,7 @@ Wenn keine Frame-Pointer, in verwendet wird die Funktion, und klicken Sie dann a
     ret
 ```
 
-Wenn der Frame-Pointer in der Funktion verwendet wird, muss im Stapel auf seine feste Zuweisung vor der Ausführung des Epilogs entfernt werden. Diese Aktion ist genau genommen nicht Teil der Epilog. Beispielsweise könnte der folgende Epilog verwendet werden, den Prolog bislang rückgängig zu machen:
+Wenn ein Framezeiger in der Funktion verwendet wird, muss der Stapel vor der Ausführung des Epilogs auf seine feste Zuordnung getrimmt werden. Diese Aktion ist technisch nicht Teil des Epilogs. Beispielsweise könnte der folgende Epilog verwendet werden, um den zuvor verwendeten Prolog rückgängig zu machen:
 
 ```MASM
     lea      RSP, -128[R13]
@@ -77,7 +77,7 @@ Wenn der Frame-Pointer in der Funktion verwendet wird, muss im Stapel auf seine 
     ret
 ```
 
-In der Praxis Wenn Frame-Pointer verwendet wird, besteht kein guter Grund RSP in zwei Schritten anpassen, sodass stattdessen der folgende Epilog verwendet wird:
+In der Praxis gibt es keinen guten Grund, RSP in zwei Schritten anzupassen, wenn ein Framezeiger verwendet wird, sodass stattdessen der folgende Epilog verwendet wird:
 
 ```MASM
     lea      RSP, fixed-allocation-size - 128[R13]
@@ -87,12 +87,12 @@ In der Praxis Wenn Frame-Pointer verwendet wird, besteht kein guter Grund RSP in
     ret
 ```
 
-Diese Formen werden nur eines Epilogs. Es muss entweder bestehen einer `add RSP,constant` oder `lea RSP,constant[FPReg]`, gefolgt von einer Reihe von NULL oder mehr 8-Byte-POP und `return` oder `jmp`. (Nur eine Teilmenge der `jmp` -Anweisungen sind im Epilog zulässig. Die Teilmenge wird ausschließlich für die Klasse der `jmp` ModRM Speicherverweise ModRM mod Feldwert, in denen 00 ist-Anweisungen. Die Verwendung von `jmp` Anweisungen in der Epilog mit ModRM mod Feldwert 01 oder 10 ist nicht zulässig. Finden Sie in Tabelle A-15 in der AMD X86-64-Architektur Programmer's manuelle Volume 3: Allgemeiner and System Instructions für Weitere Informationen zu den zulässigen ModRM-verweisen.) Es kann kein weiterer Code angezeigt. Insbesondere kann "nothing" in einem Epilog, einschließlich der beim Laden eines Rückgabewerts geplant werden.
+Diese Formulare sind die einzigen legalen für einen Epilog. Es muss entweder `add RSP,constant` aus `lea RSP,constant[FPReg]`einem oder bestehen, gefolgt von einer Reihe von `return` Null- `jmp`oder mehr 8-Byte-Register-Pops und einem oder einem . (Nur eine Teilmenge von `jmp` Anweisungen ist im Epilog zulässig. Die Teilmenge ist ausschließlich `jmp` die Klasse von Anweisungen mit ModRM-Speicherverweisen, wobei der ModRM-Modfeldwert 00 ist. Die Verwendung `jmp` von Anweisungen im Epilog mit ModRM Mod Feldwert 01 oder 10 ist verboten. Weitere Informationen zu den zulässigen ModRM-Referenzen finden Sie in Tabelle A-15 im AMD x86-64 Architecture Programmer es Manual Volume 3: General Purpose and System Instructions.) Es kann kein anderer Code angezeigt werden. Insbesondere kann innerhalb eines Epilogs nichts geplant werden, einschließlich des Ladens eines Rückgabewerts.
 
-Wenn der Frame-Pointer nicht verwendet wird, muss der Epilog verwenden `add RSP,constant` beim Aufheben der Zuordnung der festen Bestandteil des Stapels. Es können keine `lea RSP,constant[RSP]` stattdessen. Diese Einschränkung gilt, damit die entladungscodes weniger Muster zu erkennen, bei der Suche nach epilogen verfügt.
+Wenn kein Framezeiger verwendet wird, muss `add RSP,constant` der Epilog verwendet werden, um den festen Teil des Stapels zuverteilen. Es darf `lea RSP,constant[RSP]` stattdessen nicht verwendet werden. Diese Einschränkung ist vorhanden, sodass der Entladungscode bei der Suche nach Epilogs weniger Muster zu erkennen hat.
 
-Befolgen diese Regeln kann die entladungscodes, um zu bestimmen, dass es sich bei einem Epilog derzeit ausgeführt wird und Ausführung von der Rest des Epilogs zu ermöglichen, den Kontext der aufrufenden Funktion neu zu simulieren.
+Wenn Sie diese Regeln befolgen, kann der Entladungscode feststellen, ob derzeit ein Epilog ausgeführt wird, und die Ausführung des restlichen Epilogs simulieren, um das Erneuterstellen des Kontexts der aufrufenden Funktion zu ermöglichen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[x64-Softwarekonventionen](x64-software-conventions.md)
+[x64 Software-Konventionen](x64-software-conventions.md)

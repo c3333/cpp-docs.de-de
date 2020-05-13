@@ -1,8 +1,9 @@
 ---
 title: _msize
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _msize
+- _o__msize
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - msize function
 - _msize function
 ms.assetid: 02b1f89e-d0d7-4f12-938a-9eeba48a0f88
-ms.openlocfilehash: c1760cfa6a416e2eb4cd7b549cb5ae9bed00a609
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: cc8eef0d28f649340715edbf4b1ebdfea85c2ff2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951438"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914612"
 ---
 # <a name="_msize"></a>_msize
 
@@ -59,17 +61,19 @@ Zeiger zum Speicherblock.
 
 Die **_msize** -Funktion gibt die Größe des Speicherblocks (in Bytes) zurück, der durch einen **czuzuordnungs**-, **malloc**-oder **rezuordnungsbefehl**zugeordnet wird.
 
-Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **_msize** in [_msize_dbg](msize-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [CRT-Debugheap](/visualstudio/debugger/crt-debug-heap-details).
+Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **_msize** in [_msize_dbg](msize-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
 
 Diese Funktion überprüft seine Parameter. Wenn *memblock* ein NULL-Zeiger ist, ruft **_msize** einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn der Fehler behandelt wird, legt die Funktion **errno** auf **EINVAL** fest und gibt-1 zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_msize**|\<malloc.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -79,9 +83,9 @@ Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-feat
 
 Ein Beispiel finden Sie unter [realloc](realloc.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherreservierung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
 [calloc](calloc.md)<br/>
 [_expand](expand.md)<br/>
 [malloc](malloc.md)<br/>

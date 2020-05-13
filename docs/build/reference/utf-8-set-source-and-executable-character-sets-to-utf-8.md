@@ -1,51 +1,57 @@
 ﻿---
-title: /UTF-8 (Festlegen von Quell- und Ausführungszeichensätze auf UTF-8)
-title: /UTF-8 (Festlegen von Quell- und Ausführungszeichensätze auf UTF-8)
+title: "\"/UTF-8\" (Quelle und ausführbare Zeichensätze festlegen UTF-8auf)"
+ms.date: 04/26/2020
 
-ms.date: 11/04/2016
 f1_keywords:
 - /utf-8
 helpviewer_keywords:
 - /utf-8 compiler option
 ms.assetid: f0e1f3cb-6cae-46eb-9483-04ed13d9b504
-ms.openlocfilehash: 1ff0f23ad0758642c73b1b35d6d4dd1be20899cb
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+no-loc:
+- UTF
+- UTF-8
+- UTF-16
+ms.openlocfilehash: c98a30b0ec4b36b8bd87fb0956d9382751975cfd
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69498181"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168864"
 ---
-# <a name="utf-8-set-source-and-executable-character-sets-to-utf-8"></a>/UTF-8 (Festlegen von Quell- und Ausführungszeichensätze auf UTF-8)
+# <a name="utf-8-set-source-and-executable-character-sets-to-opno-locutf-8"></a>`/utf-8`(Legen Sie Quell-und ausführbare UTF-8Zeichensätze auf fest).
 
-Gibt sowohl den Quell- als auch den Ausführungszeichensatz als UTF-8 an.
+Gibt den Quell Zeichensatz und den Ausführungs Zeichensatz UTF-8als an.
 
 ## <a name="syntax"></a>Syntax
 
-```
-/utf-8
-```
+> **`/utf-8`**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-
+Sie können die **`/utf-8`** -Option verwenden, um die Quell-und Ausführungs Zeichensätze als mit UTF-8codiert festzulegen. Dies entspricht der Angabe **`/source-charset:utf-8 /execution-charset:utf-8`** von in der Befehlszeile. Jede dieser Optionen aktiviert auch die **`/validate-charset`** Option standardmäßig. Eine Liste der unterstützten Codepage-IDs und Zeichensatz Namen finden Sie unter [Code Page Identifier](/windows/win32/Intl/code-page-identifiers).
 Sie können **/utf-8** verwenden, um festzulegen, dass sowohl der Quell- als auch der Ausführungszeichensatz mittels UTF-8 codiert ist. Diese Option ist äquivalent zu **/source-Charset:utf-8** und **/execution-Charset:utf-8** in der Befehlszeile. Jede dieser Optionen aktiviert automatisch auch **/Validate-CharSet**. Eine Liste der unterstützten Codepagebezeichner und Zeichensätze finden Sie unter [Code Page Identifiers (Codepagebezeichner)](/windows/desktop/Intl/code-page-identifiers).
 
 
-Standardmäßig sucht Visual Studio nach einer Bytereihenfolge-Marke, um festzustellen, ob die Quelldatei in einem Unicode-Format codiert ist, z. B. UTF-16 oder UTF-8. Wenn keine Bytereihenfolge-Marke gefunden wurde, geht das Programm davon aus, dass die Quelldatei mithilfe der aktuellen Codepage des Benutzers codiert wurde, es sei denn, Sie haben mittels **/utf-8** oder **/Source-CharSet** eine Codepage spezifiziert. Visual Studio lässt zu, dass Sie Ihren C++-Quellcode mithilfe verschiedener Zeichencodierungen speichern. Weitere Informationen zu Quell- und Ausführungszeichensätzen finden Sie unter [Zeichensätze](../../cpp/character-sets.md) in der Sprachdokumentation.
+Standardmäßig erkennt Visual Studio eine Byte Reihenfolge Markierung, um zu bestimmen, ob die Quelldatei in einem codierten Unicode-Format vorliegt UTF-16 , UTF-8z. b. oder. Wenn keine Byte Reihenfolge Markierung gefunden wird, wird davon ausgegangen, dass die Quelldatei mithilfe der aktuellen Benutzer Codepage codiert wird, es sei denn, Sie **`/utf-8`** haben mithilfe **`/source-charset`** der-Option oder der-Option eine Codepage angegeben. Visual Studio ermöglicht es Ihnen, den C++-Quellcode mit einer beliebigen Zahl von Zeichen Codierungen zu speichern. Weitere Informationen zu Quell-und Ausführungs Zeichensätzen finden Sie unter [Zeichensätze](../../cpp/character-sets.md) in der Sprachdokumentation.
+
+## <a name="set-the-option-in-visual-studio-or-programmatically"></a>Festlegen der Option in Visual Studio oder Programm gesteuert
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen des Compilers und der Buildeigenschaften](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Erweitern Sie den Ordner **Konfigurations Eigenschaften**, **CC++/** und **Befehlszeile** .
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **C/C++** > -**Befehlszeile** aus.
 
-
-1. Fügen Sie unter **Zusätzliche Optionen** den Eintrag "**/utf-8**" hinzu, um UTF-8 als bevorzugte Codierung anzugeben.
+1. Fügen Sie unter **zusätzliche Optionen**die **`/utf-8`** Option hinzu, um Ihre bevorzugte Codierung anzugeben.
 
 
 1. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
-## <a name="see-also"></a>Siehe auch
+### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
+
+- Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
+
+## <a name="see-also"></a>Weitere Informationen:
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>

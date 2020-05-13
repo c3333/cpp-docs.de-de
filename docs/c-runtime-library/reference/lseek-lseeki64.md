@@ -1,9 +1,11 @@
 ---
 title: _lseek, _lseeki64
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _lseeki64
 - _lseek
+- _o__lseek
+- _o__lseeki64
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - file pointers [C++], moving
 - seek file pointers
 ms.assetid: aba8a768-d40e-48c3-b38e-473dbd782f93
-ms.openlocfilehash: 67bcce2a9936cd09973e8ddf1828704944866439
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b99793c7d3f16eceec20c90f29824bca8321fb12
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952984"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911305"
 ---
 # <a name="_lseek-_lseeki64"></a>_lseek, _lseeki64
 
@@ -60,14 +63,14 @@ __int64 _lseeki64(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf eine geöffnete Datei verweist.
 
 *offset*<br/>
 Anzahl von Bytes von *origin*.
 
-*origin*<br/>
-Ursprüngliche Position.
+*Entstehungs*<br/>
+Ursprüngliche Position
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -87,14 +90,16 @@ Die **_lseek** -Funktion verschiebt den Dateizeiger, der mit *FD* verknüpft ist
 
 Sie können **_lseek** verwenden, um den Zeiger an einer beliebigen Stelle in einer Datei oder hinter dem Ende der Datei neu zu positionieren.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_lseek**|\<io.h>|
 |**_lseeki64**|\<io.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -162,7 +167,7 @@ Line four.
 Line five.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Position for beginning of file seek = 0
@@ -172,6 +177,6 @@ Position for end of file seek = 57
 
 ## <a name="see-also"></a>Siehe auch
 
-[E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [fseek, _fseeki64](fseek-fseeki64.md)<br/>
 [_tell, _telli64](tell-telli64.md)<br/>

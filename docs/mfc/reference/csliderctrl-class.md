@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CSliderCtrl [MFC], SetTipSide
 - CSliderCtrl [MFC], SetToolTips
 ms.assetid: dd12b084-4eda-4550-a810-8f3cfb06b871
-ms.openlocfilehash: 24e1cb18f979d1144f15cf6ffedc6cace5f5361e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2e3572b34f930bb6a7d99b437c01c8aaf970e6c3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318215"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751273"
 ---
 # <a name="csliderctrl-class"></a>CSliderCtrl-Klasse
 
@@ -161,7 +161,7 @@ Weitere Informationen zur `CSliderCtrl`Verwendung finden Sie unter [Steuerelemen
 
 `CSliderCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -169,7 +169,7 @@ Weitere Informationen zur `CSliderCtrl`Verwendung finden Sie unter [Steuerelemen
 
 Löscht die aktuelle Auswahl in einem Schieberegler-Steuerelement.
 
-```
+```cpp
 void ClearSel(BOOL bRedraw = FALSE);
 ```
 
@@ -182,7 +182,7 @@ Zeichnen Sie die Flagge neu. Wenn dieser Parameter TRUE ist, wird der Schiebereg
 
 Entfernt die aktuellen Teilstriche aus einem Schieberegler-Steuerelement.
 
-```
+```cpp
 void ClearTics(BOOL bRedraw = FALSE);
 ```
 
@@ -209,7 +209,7 @@ virtual BOOL Create(
 Gibt den Stil des Schiebereglersteuerelements an. Wenden Sie eine beliebige Kombination von [Schiebereglersteuerelementstilen](/windows/win32/Controls/trackbar-control-styles), die im Windows SDK beschrieben werden, auf das Steuerelement an.
 
 *Rect*<br/>
-Gibt die Größe und Position des Schiebereglersteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Gibt die Größe und Position des Schiebereglersteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Schiebereglersteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -251,7 +251,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Schiebereglersteuerelements an. Wenden Sie eine beliebige Kombination von [Schiebereglersteuerelementstilen](/windows/win32/Controls/trackbar-control-styles), die im Windows SDK beschrieben werden, auf das Steuerelement an.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -304,7 +304,7 @@ Diese Memberfunktion implementiert das Verhalten der [TBM_GETBUDDY](/windows/win
 
 Ruft die Größe und Position des umgrenzenden Rechtecks für den Kanal eines Schiebereglersteuerelements ab.
 
-```
+```cpp
 void GetChannelRect(LPRECT lprc) const;
 ```
 
@@ -377,7 +377,7 @@ Die aktuelle Position.
 
 Ruft die maximalen und minimalen Positionen für den Schieberegler in einem Schieberegler-Steuerelement ab.
 
-```
+```cpp
 void GetRange(
     int& nMin,
     int& nMax) const;
@@ -423,7 +423,7 @@ Die Mindestposition des Steuerelements.
 
 Ruft die Start- und Endpositionen der aktuellen Auswahl in einem Schieberegler-Steuerelement ab.
 
-```
+```cpp
 void GetSelection(
     int& nMin,
     int& nMax) const;
@@ -457,7 +457,7 @@ Diese Methode sendet die [TBM_GETTHUMBLENGTH](/windows/win32/Controls/tbm-getthu
 
 Ruft die Größe und Position des umgrenzenden Rechtecks für den Schieberegler (Daumen) in einem Schieberegler-Steuerelement ab.
 
-```
+```cpp
 void GetThumbRect(LPRECT lprc) const;
 ```
 
@@ -608,7 +608,7 @@ Die Seitengröße wirkt sich darauf aus, wie stark sich der Schieberegler für d
 
 Legt die aktuelle Position des Schiebereglers in einem Schiebereglerfest fest.
 
-```
+```cpp
 void SetPos(int nPos);
 ```
 
@@ -621,7 +621,7 @@ Gibt die neue Schiebereglerposition an.
 
 Legt den Bereich (minimale und maximale Positionen) für den Schieberegler in einem Schiebereglerfest fest.
 
-```
+```cpp
 void SetRange(
     int nMin,
     int nMax,
@@ -643,7 +643,7 @@ Das Neuzeichnungsflag. Wenn dieser Parameter TRUE ist, wird der Schieberegler ne
 
 Legt den maximalen Bereich für den Schieberegler in einem Schieberegler-Steuerelement fest.
 
-```
+```cpp
 void SetRangeMax(
     int nMax,
     BOOL bRedraw = FALSE);
@@ -661,7 +661,7 @@ Das Neuzeichnungsflag. Wenn dieser Parameter TRUE ist, wird der Schieberegler ne
 
 Legt den Minimalbereich für den Schieberegler in einem Schiebereglerfest fest.
 
-```
+```cpp
 void SetRangeMin(
     int nMin,
     BOOL bRedraw = FALSE);
@@ -679,7 +679,7 @@ Das Neuzeichnungsflag. Wenn dieser Parameter TRUE ist, wird der Schieberegler ne
 
 Legt die Start- und Endpositionen für die aktuelle Auswahl in einem Schieberegler-Steuerelement fest.
 
-```
+```cpp
 void SetSelection(
     int nMin,
     int nMax);
@@ -697,7 +697,7 @@ Endposition für den Schieberegler.
 
 Legt die Länge des Schiebereglers im aktuellen Spurleistensteuerelement fest.
 
-```
+```cpp
 void SetThumbLength(int nLength);
 ```
 
@@ -746,7 +746,7 @@ Ein Wert ungleich Null, wenn das Häkchen gesetzt ist; andernfalls 0.
 
 Legt die Häufigkeit fest, mit der Teilstriche in einem Schieberegler angezeigt werden.
 
-```
+```cpp
 void SetTicFreq(int nFreq);
 ```
 
@@ -786,7 +786,7 @@ Diese Memberfunktion implementiert das Verhalten der Win32-TBM_SETTIPSIDE, wie i
 
 Weist einem Schiebereglersteuerelement ein QuickInfo-Steuerelement zu.
 
-```
+```cpp
 void SetToolTips(CToolTipCtrl* pWndTip);
 ```
 
@@ -799,7 +799,7 @@ Ein Zeiger auf ein [CToolTipCtrl-Objekt,](../../mfc/reference/ctooltipctrl-class
 
 Diese Memberfunktion implementiert das Verhalten der Win32-Nachricht [TBM_SETTOOLTIPS](/windows/win32/Controls/tbm-settooltips), wie im Windows SDK beschrieben. Wenn ein Schiebereglersteuerelement mit dem stil TBS_TOOLTIPS erstellt wird, wird ein Standard-Quickinfo-Steuerelement erstellt, das neben dem Schieberegler angezeigt wird und die aktuelle Position des Schiebereglers anzeigt. Eine Beschreibung der Schiebereglersteuerungsstile finden Sie unter [Spurleistensteuerungsstile](/windows/win32/Controls/trackbar-control-styles) im Windows SDK.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

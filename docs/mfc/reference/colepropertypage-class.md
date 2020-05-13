@@ -38,12 +38,12 @@ helpviewer_keywords:
 - COlePropertyPage [MFC], SetModifiedFlag
 - COlePropertyPage [MFC], SetPageName
 ms.assetid: e9972872-8e6b-4550-905e-d36a274d64dc
-ms.openlocfilehash: dbdc889e244b33365756bcbae5b37cf657a6d900
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 872ade08438e54098da730012f98cdd906483887
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374877"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753791"
 ---
 # <a name="colepropertypage-class"></a>COlePropertyPage-Klasse
 
@@ -103,7 +103,7 @@ Weitere Informationen zur `COlePropertyPage`Verwendung finden Sie im Artikel [Ac
 
 `COlePropertyPage`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxctl.h
 
@@ -187,7 +187,7 @@ Steuerelemente und Container arbeiten zusammen, sodass Benutzer Steuerelementeig
 
 Legt fest, welche Steuerelemente die Schaltfläche Anwenden nicht aktivieren.
 
-```
+```cpp
 void IgnoreApply(UINT nID);
 ```
 
@@ -326,7 +326,7 @@ Wenn der Status eines Eigenschaftenseitensteuerelements verschmutzt ist, wenn di
 
 Legt die Dialogressource der Eigenschaftenseite fest.
 
-```
+```cpp
 void SetDialogResource(HGLOBAL hDialog);
 ```
 
@@ -339,7 +339,7 @@ Behandeln Sie die Dialogressource der Eigenschaftenseite.
 
 Gibt Tooltip-Informationen, den Hilfedateinamen und den Hilfekontext für Ihre Eigenschaftenseite an.
 
-```
+```cpp
 void SetHelpInfo(
     LPCTSTR lpszDocString,
     LPCTSTR lpszHelpFile = NULL,
@@ -361,7 +361,7 @@ Hilfekontext für die Eigenschaftenseite.
 
 Gibt an, ob der Benutzer die Eigenschaftenseite geändert hat.
 
-```
+```cpp
 void SetModifiedFlag(BOOL bModified = TRUE);
 ```
 
@@ -374,7 +374,7 @@ Gibt den neuen Wert für das geänderte Flag der Eigenschaftenseite an.
 
 Legt den Namen der Eigenschaftenseite fest, der normalerweise auf der Registerkarte der Seite angezeigt wird.
 
-```
+```cpp
 void SetPageName(LPCTSTR lpszPageName);
 ```
 
@@ -383,7 +383,7 @@ void SetPageName(LPCTSTR lpszPageName);
 *lpszPageName*<br/>
 Zeiger auf eine Zeichenfolge, die den Namen der Eigenschaftenseite enthält.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CIRC3](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel TESTHELP](../../overview/visual-cpp-samples.md)<br/>

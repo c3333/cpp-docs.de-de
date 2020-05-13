@@ -1,6 +1,6 @@
 ---
 title: nextafter, nextafterf, nextafterl, _nextafter, _nextafterf, nexttoward, nexttowardf, nexttowardl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - nextafterf
 - _nextafterf
@@ -10,6 +10,13 @@ api_name:
 - nexttoward
 - nexttowardf
 - nexttowardl
+- _o__nextafter
+- _o_nextafter
+- _o_nextafterf
+- _o_nextafterl
+- _o_nexttoward
+- _o_nexttowardf
+- _o_nexttowardl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +29,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -51,12 +59,12 @@ helpviewer_keywords:
 - nexttowardf function
 - nexttowardl function
 ms.assetid: 9785bfb9-de53-4bd0-9637-f05fa0c1f6ab
-ms.openlocfilehash: c6b100fb24d879a16780650d8a374ec26f28c048
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: b137fd131536da6b8630b9cadf69238ce48964bf
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857722"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909337"
 ---
 # <a name="nextafter-nextafterf-nextafterl-_nextafter-_nextafterf-nexttoward-nexttowardf-nexttowardl"></a>nextafter, nextafterf, nextafterl, _nextafter, _nextafterf, nexttoward, nexttowardf, nexttowardl
 
@@ -85,12 +93,12 @@ float nexttoward( float x, long double y ); /* C++ only, requires <cmath> */
 long double nexttoward( long double x, long double y ); /* C++ only, requires <cmath> */
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der Gleitkommawert, der den Startpunkt markiert.
 
-*y*<br/>
+*Teenie*<br/>
 Der Gleitkommawert, der den Zielpunkt markiert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -101,20 +109,22 @@ Gibt den nächsten darstellbaren Gleit Komma Wert des Rückgabe Typs nach *x* in
 
 Die **nextafter** -und **NexTTo** -Funktions Familien sind äquivalent, außer dem Parametertyp *y*. Wenn *x* und *y* gleich sind, wird der zurückgegebene Wert *y* in den Rückgabetyp konvertiert.
 
-Da C++ das überladen zulässt, können Sie, wenn Sie \<cmath-> einschließen, über Ladungen von **nextafter** und **NexTTo** aufzurufen, die **float** -und **Long** **Double** -Typen zurückgeben. In einem C-Programm geben **nextafter** und **NexTTo** immer **Double**zurück.
+Da C++ das überladen zulässt, können Sie \<, wenn Sie cmath-> einschließen, über Ladungen von **nextafter** und **NexTTo** aufzurufen, die **float** -und **Long** **Double** -Typen zurückgeben. In einem C-Programm geben **nextafter** und **NexTTo** immer **Double**zurück.
 
 Die Funktionen **_nextafter** und **_nextafterf** sind Microsoft-spezifisch. Die **_nextafterf** -Funktion ist nur verfügbar, wenn für x64 kompiliert wird.
 
-## <a name="requirements"></a>-Anforderungen
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------------|-------------------------------|
-|**nextafter**, **nextafterf**, **nextafterl**, **_nextafterf**, **nexttoward**, **nexttowardf**, **nexttowardl**|\<math.h>|\<math.h> oder \<cmath>|
+|**nextafter**, **nextaf terf**, **nextaf Terl**, **_nextafterf**, **NexTTo**, **NexTTo wardf**, **nextin wardl**|\<math.h>|\<math.h> oder \<cmath>|
 |**_nextafter**|\<float.h>|\<float.h> oder \<cfloat>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [isnan, _isnan, _isnanf](isnan-isnan-isnanf.md)<br/>

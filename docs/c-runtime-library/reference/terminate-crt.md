@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,16 +27,16 @@ helpviewer_keywords:
 - terminate function
 - exception handling, termination
 ms.assetid: 90e67402-08e9-4b2a-962c-66a8afd3ccb4
-ms.openlocfilehash: 1aa95daeab424c933f10060fb4f87cb317aa188c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1ec4e27096dd6b5fea089e21c95022542d7adc82
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81362541"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912223"
 ---
 # <a name="terminate-crt"></a>terminate (CRT)
 
-Ruft [abbrechen](abort.md) oder eine Funktion, die Sie mit **set_terminate angeben.**
+Ruft [Abbruch](abort.md) oder eine Funktion auf, die Sie mit **Set_terminate**angeben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -44,9 +44,9 @@ Ruft [abbrechen](abort.md) oder eine Funktion, die Sie mit **set_terminate angeb
 void terminate( void );
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **Terminate-Funktion** wird bei der C++-Ausnahmebehandlung verwendet und in den folgenden Fällen aufgerufen:
+Die Funktion " **Beenden** " wird mit der C++-Ausnahmebehandlung verwendet und wird in den folgenden Fällen aufgerufen:
 
 - Ein übereinstimmender Catch-Handler kann nicht für eine ausgelöste C++.Ausnahme gefunden werden.
 
@@ -54,15 +54,15 @@ Die **Terminate-Funktion** wird bei der C++-Ausnahmebehandlung verwendet und in 
 
 - Der Stapel ist nach dem Auslösen einer Ausnahme beschädigt.
 
-**beenden** Anrufe standardmäßig [abbrechen.](abort.md) Sie können diese Standardeinstellung ändern, indem Sie Ihre eigene Beendigungsfunktion schreiben und **set_terminate** mit dem Namen Ihrer Funktion als Argument aufrufen. **terminate** ruft die letzte Funktion auf, die als Argument für **set_terminate**angegeben wurde. Weitere Informationen finden Sie unter [Nicht behandelte C++-Ausnahmen](../../cpp/unhandled-cpp-exceptions.md).
+**Beendigungs Aufrufe werden** standardmäßig [abgebrochen](abort.md) . Sie können diesen Standardwert ändern, indem Sie eine eigene Beendigungs Funktion schreiben und **Set_terminate** mit dem Namen ihrer Funktion als Argument aufrufen. **Beenden** Ruft die letzte Funktion auf, die als Argument für **Set_terminate**angegeben wurde. Weitere Informationen finden Sie unter [Nicht behandelte C++-Ausnahmen](../../cpp/unhandled-cpp-exceptions.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**Beenden**|\<eh.h>|
+|**aufzu**|\<eh.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -112,11 +112,11 @@ void term_func()
 term_func() was called by terminate().
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausnahmebehandlungsroutinen](../../c-runtime-library/exception-handling-routines.md)<br/>
-[Abbrechen](abort.md)<br/>
+[Abbruch](abort.md)<br/>
 [_set_se_translator](set-se-translator.md)<br/>
 [set_terminate](set-terminate-crt.md)<br/>
 [set_unexpected](set-unexpected-crt.md)<br/>
-[Unerwartete](unexpected-crt.md)<br/>
+[te](unexpected-crt.md)<br/>

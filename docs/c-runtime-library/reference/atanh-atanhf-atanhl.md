@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - atanhl function
 - atanh funciton
 ms.assetid: 83a43b5b-2580-4461-854f-dc84236d9f32
-ms.openlocfilehash: ef4a37c1ae76a88fd547b76c510097994a160253
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ce40cf25fde12c6413e88519906b807f2ee65faa
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350128"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920061"
 ---
 # <a name="atanh-atanhf-atanhl"></a>atanh, atanhf, atanhl
 
@@ -60,23 +60,23 @@ long double atanh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **atanh-Funktionen** geben die inverse hyberbische Tangente (arc hyperbolic tangent) von *x*zurück. Wenn *x* größer als 1 oder kleiner als -1 ist, wird **errno** auf **EDOM** gesetzt und das Ergebnis ist ein ruhiger NaN. Wenn *x* gleich 1 oder -1 ist, wird eine positive bzw. negative Unendlichkeit zurückgegeben, und **errno** wird auf **ERANGE**gesetzt.
+Die **atanh** -Funktionen geben den umgekehrten hyberbolischen Tangens (hyperbolischen Arkus Tangens) von *x*zurück. Wenn *x* größer als 1 oder kleiner als-1 ist, wird **errno** auf **Edom** festgelegt, und das Ergebnis ist ein stilles Nan. Wenn *x* gleich 1 oder-1 ist, wird ein positives oder negatives Unendlichkeits Wert zurückgegeben, und **errno** wird auf **ERANGE**festgelegt.
 
-|Eingabe|SEH-Ausnahme|**Matherr** Ausnahme|
+|Eingabe|SEH-Ausnahme|**Matherr** Distanzieren|
 |-----------|-------------------|-------------------------|
 |± QNAN,IND|Keine|Keine|
 |*X* 1; *x* -1|Keine|Keine|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **atanh** aufrufen, die **Float-** oder **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **atanh** immer **double**ein.
+Da C++ das überladen zulässt, können Sie über Ladungen von **atanh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **atanh** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -114,7 +114,7 @@ tanh( 0.785398 ) = 0.655794
 atanh( 0.655794 ) = 0.785398
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>

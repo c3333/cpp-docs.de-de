@@ -36,12 +36,12 @@ helpviewer_keywords:
 - CStatusBar [MFC], SetPaneStyle
 - CStatusBar [MFC], SetPaneText
 ms.assetid: a3bde3db-e71c-4881-a3ca-1d5481c345ba
-ms.openlocfilehash: 0549ee10faa15b80b18a0bee2f115425002e1479
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 969edb3b1c87da851d83d390ab9d4e707bd2eb1e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376262"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753056"
 ---
 # <a name="cstatusbar-class"></a>CStatusBar-Klasse
 
@@ -122,7 +122,7 @@ Weitere Informationen zur `CStatusBar`Verwendung finden Sie im Artikel [Statusle
 
 `CStatusBar`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -271,7 +271,7 @@ Die ID des Indikators, der von *nIndex*angegeben wird.
 
 Kopiert die Koordinaten des von *nIndex* angegebenen Indikators in die Struktur, auf die *lpRect*zeigt.
 
-```
+```cpp
 void GetItemRect(
     int nIndex,
     LPRECT lpRect) const;
@@ -283,7 +283,7 @@ void GetItemRect(
 Index des Indikators, dessen Rechteckkoordinaten abgerufen werden sollen.
 
 *lpRect*<br/>
-Zeigt auf eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) oder ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das die Koordinaten des von *nIndex*angegebenen Indikators empfängt.
+Zeigt auf eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das die Koordinaten des von *nIndex*angegebenen Indikators empfängt.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -293,7 +293,7 @@ Koordinaten sind in Pixel relativ zur oberen linken Ecke der Statusleiste.
 
 Legt *nID*, *nStyle*und *cxWidth* auf die ID, den Stil und die Breite des Indikatorbereichs an der von *nIndex*angegebenen Position fest.
 
-```
+```cpp
 void GetPaneInfo(
     int nIndex,
     UINT& nID,
@@ -406,7 +406,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Legt den angegebenen Indikatorbereich auf eine neue ID, Einen neuen Stil und eine neue Breite fest.
 
-```
+```cpp
 void SetPaneInfo(
     int nIndex,
     UINT nID,
@@ -446,7 +446,7 @@ Die folgenden Indikatorstile werden unterstützt:
 
 Rufen Sie diese Memberfunktion auf, um den Stil des Bereichs einer Statusleiste festzulegen.
 
-```
+```cpp
 void SetPaneStyle(
     int nIndex,
     UINT nStyle);
@@ -504,7 +504,7 @@ Nach dem `SetPaneText`Aufruf müssen Sie einen UI-Aktualisierungshandler hinzuf�
 
 [!code-cpp[NVC_MFCDocView#178](../../mfc/codesnippet/cpp/cstatusbar-class_3.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel STRGBARS](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DLGCBR32](../../overview/visual-cpp-samples.md)<br/>

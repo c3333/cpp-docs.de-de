@@ -1,5 +1,5 @@
 ---
-title: CAtlDebugInterfacesModule-Klasse
+title: Klasse von "-Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlDebugInterfacesModule
@@ -8,32 +8,32 @@ helpviewer_keywords:
 - _ATL_DEBUG_QI macro
 - CAtlDebugInterfacesModule class
 ms.assetid: a193b567-8191-4115-a963-a10805972bac
-ms.openlocfilehash: 1a056ccd4f78daaf16a97f0447999a8fbc828b99
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 231b5540c54e32495bc68459da06e18c0499d040
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260622"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168253"
 ---
-# <a name="catldebuginterfacesmodule-class"></a>CAtlDebugInterfacesModule-Klasse
+# <a name="catldebuginterfacesmodule-class"></a>Klasse von "-Klasse"
 
-Diese Klasse bietet Unterstützung für das Debuggen von Schnittstellen.
+Diese Klasse unterstützt das Debuggen von Schnittstellen.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 class CAtlDebugInterfacesModule
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAtlDebugInterfacesModule` bietet Unterstützung für das Debuggen von Schnittstellen erforderlich. Es befindet sich in jedem Projekt, das das Symbol definiert [_ATL_DEBUG_QI](debugging-and-error-reporting-macros.md#_atl_debug_qi).
+`CAtlDebugInterfacesModule`bietet die erforderliche Unterstützung zum Debuggen von Schnittstellen Sie ist in allen Projekten enthalten, die das Symbol [_ATL_DEBUG_QI](debugging-and-error-reporting-macros.md#_atl_debug_qi)definieren.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)<br/>
-[Modulklassen](../../atl/atl-module-classes.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
+[Modul Klassen](../../atl/atl-module-classes.md)

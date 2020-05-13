@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CMFCEditBrowseCtrl [MFC], OnIllegalFileName
 - CMFCEditBrowseCtrl [MFC], SetBrowseButtonImage
 ms.assetid: 69cfd886-3d35-4bee-8901-7c88fcf9520f
-ms.openlocfilehash: 6c611297353f82e4ec90365cbe33db763d9c9838
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d542af4a87b6f0a33c0344d1d3da76980f8c1a91
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367538"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752382"
 ---
 # <a name="cmfceditbrowsectrl-class"></a>CMFCEditBrowseCtrl-Klasse
 
@@ -125,7 +125,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCEditBrowseCtrl` wie `EnableFold
 [!code-cpp[NVC_MFC_NewControls#6](../../mfc/reference/codesnippet/cpp/cmfceditbrowsectrl-class_1.h)]
 [!code-cpp[NVC_MFC_NewControls#7](../../mfc/reference/codesnippet/cpp/cmfceditbrowsectrl-class_2.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxeditbrowsectrl.h
 
@@ -133,7 +133,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCEditBrowseCtrl` wie `EnableFold
 
 Zeigt die Schaltfläche "Durchsuchen" im aktuellen Bearbeitungs-Suchsteuerelement an oder zeigt sie nicht an.
 
-```
+```cpp
 void EnableBrowseButton(
     BOOL bEnable=TRUE,
     LPCTSTR szLabel=_T("..."));
@@ -157,7 +157,7 @@ Wenn der *Parameter bEnable* TRUE ist, ist `BrowseMode_Default`der Suchmodus des
 
 Zeigt die Schaltfläche "Durchsuchen" im aktuellen Bearbeitungs-Suchsteuerelement an und versetzt das Steuerelement in den *Dateisuchmodus.*
 
-```
+```cpp
 void EnableFileBrowseButton(
     LPCTSTR lpszDefExt=NULL,
     LPCTSTR lpszFilter=NULL,
@@ -185,7 +185,7 @@ Eine vollständige Liste der verfügbaren Flags finden Sie unter [OPENFILENAME-S
 
 Zeigt die Schaltfläche "Durchsuchen" im aktuellen Bearbeitungs-Suchsteuerelement an und versetzt das Steuerelement in den *Ordner-Suchmodus.*
 
-```
+```cpp
 void EnableFolderBrowseButton();
 ```
 
@@ -288,7 +288,7 @@ TRUE, wenn die Schaltfläche hervorgehoben ist; andernfalls FALSE.
 
 Legt ein benutzerdefiniertes Bild auf der Schaltfläche "Durchsuchen" des Bearbeitungs-Browse-Steuerelements fest.
 
-```
+```cpp
 void SetBrowseButtonImage(
     HICON hIcon,
     BOOL bAutoDestroy= TRUE);
@@ -337,7 +337,7 @@ Sollte FALSE zurückgeben, wenn dieser Dateiname nicht weiter an das Dateidialog
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

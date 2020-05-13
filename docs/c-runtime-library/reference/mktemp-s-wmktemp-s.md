@@ -1,9 +1,11 @@
 ---
 title: _mktemp_s, _wmktemp_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mktemp_s
 - _wmktemp_s
+- _o__mktemp_s
+- _o__wmktemp_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,16 +38,16 @@ helpviewer_keywords:
 - wmktemp_s function
 - temporary files [C++]
 ms.assetid: 92a7e269-7f3d-4c71-bad6-14bc827a451d
-ms.openlocfilehash: 464f0dfbdb0b84e1fd29ec650e53f5c2543c4403
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 7834049fe8d28f7294976ac29a3daa663a06cff6
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73624210"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919141"
 ---
 # <a name="_mktemp_s-_wmktemp_s"></a>_mktemp_s, _wmktemp_s
 
-Vergibt einen eindeutigen Dateinamen. Dabei handelt es sich um Versionen von [_mktemp, _wmktem](mktemp-wmktemp.md) mit den unter [Sicherheitsfunktionen in der CRT](../../c-runtime-library/security-features-in-the-crt.md) beschriebenen Erweiterungen.
+Erstellt einen eindeutigen Dateinamen. Dabei handelt es sich um Versionen von [_mktemp, _wmktem](mktemp-wmktemp.md) mit den unter [Sicherheitsfunktionen in der CRT](../../c-runtime-library/security-features-in-the-crt.md) beschriebenen Erweiterungen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -83,17 +86,19 @@ Beide Funktionen geben bei Erfolg null und bei Fehlern einen Fehlercode zurück.
 
 |*aufweisen*|*sizabchars*|Rückgabewert|Neuer Wert in " *nametemplate* "|
 |----------------|-------------------|----------------------|-------------------------------|
-|**NULL**|any|**EINVAL**|**NULL**|
-|Falsches Format (siehe Abschnitt "Hinweise" für das richtige Format)|any|**EINVAL**|Leere Zeichenfolge|
-|any|<= Anzahl von X|**EINVAL**|Leere Zeichenfolge|
+|**Normal**|any|**Eingabe**|**Normal**|
+|Falsches Format (siehe Abschnitt "Hinweise" für das richtige Format)|any|**Eingabe**|Leere Zeichenfolge|
+|any|<= Anzahl von X|**Eingabe**|Leere Zeichenfolge|
 
-Wenn eine der genannten Fehlerbedingungen auftritt, wird ein Handler für ungültige Parameter aufgerufen (siehe [Parametervalidierung](../../c-runtime-library/parameter-validation.md)). Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktionen gibt **EINVAL**zurück.
+Wenn eine der oben genannten Fehlerbedingungen auftritt, wird ein Handler für ungültige Parameter aufgerufen (siehe [Parametervalidierung](../../c-runtime-library/parameter-validation.md)). Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktionen gibt **EINVAL**zurück.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_mktemp_s** -Funktion erstellt einen eindeutigen Dateinamen, indem das *nametemplate* -Argument geändert wird, sodass der *nametemplate* -Zeiger nach dem-Befehl auf eine Zeichenfolge verweist, die den neuen Dateinamen enthält. **_mktemp_s** verarbeitet nach Bedarf automatisch Multibytezeichen-Zeichen folgen Argumente und erkennt multibytezeichensequenzen entsprechend der Multibytezeichen-Codepage, die zurzeit vom Laufzeitsystem verwendet wird. **_wmktemp_s** ist eine breit Zeichen Version von **_mktemp_s**. Das Argument von **_wmktemp_s** ist eine Zeichenfolge mit breit Zeichen. **_wmktemp_s** und **_mktemp_s** Verhalten sich andernfalls identisch, mit der Ausnahme, dass **_wmktemp_s** keine Multibyte-Zeichen folgen verarbeitet.
+Die **_mktemp_s** -Funktion erstellt einen eindeutigen Dateinamen, indem das *nametemplate* -Argument geändert wird, sodass der *nametemplate* -Zeiger nach dem-Befehl auf eine Zeichenfolge verweist, die den neuen Dateinamen enthält. **_mktemp_s** automatisch Multibytezeichen-Zeichen folgen Argumente behandelt, wobei Multibytezeichen-Zeichen folgen entsprechend der Multibytezeichen-Codepage erkannt werden, die zurzeit vom Laufzeitsystem verwendet wird. **_wmktemp_s** ist eine breit Zeichen Version von **_mktemp_s**. Das Argument von **_wmktemp_s** ist eine Zeichenfolge mit breit Zeichen. **_wmktemp_s** und **_mktemp_s** Verhalten sich andernfalls identisch, mit dem Unterschied, dass **_wmktemp_s** keine Multibyte-Zeichen folgen verarbeitet.
 
 Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -101,13 +106,13 @@ Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mi
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tmktemp_s**|**_mktemp_s**|**_mktemp_s**|**_wmktemp_s**|
 
-Das *nametemplate* -Argument hat das Format **baseXXXXXX**, wobei *Base* der von Ihnen angegebene Teil des neuen Datei namens und jedes X ein Platzhalter für ein Zeichen ist, das von **_mktemp_s**angegeben wird. Jedes Platzhalter Zeichen in *nametemplate* muss ein Großbuchstabe X sein. **_mktemp_s** behält die *Basis* bei und ersetzt das erste nachfolgende x durch ein alphabetisches Zeichen. **_mktemp_s** ersetzt die folgenden nachfolgenden X-Dateien durch einen fünfstelligen Wert. Dieser Wert ist eine eindeutige Zahl, die den aufrufenden Prozess identifiziert, bzw. in Multithreadprogrammen den aufrufenden Thread.
+Das *nametemplate* -Argument hat das Format **baseXXXXXX**, wobei *Base* der von Ihnen angegebene Teil des neuen Datei namens und jedes X ein Platzhalter für ein Zeichen ist, das von **_mktemp_s**angegeben wird. Jedes Platzhalter Zeichen in *nametemplate* muss ein Großbuchstabe X sein. **_mktemp_s** behält die *Basis* bei und ersetzt das erste nachfolgende x durch ein alphabetisches Zeichen. **_mktemp_s** ersetzt die folgenden nachfolgenden X-Werte durch einen fünfstelligen Wert. Dieser Wert ist eine eindeutige Zahl, die den aufrufenden Prozess identifiziert, bzw. in Multithreadprogrammen den aufrufenden Thread.
 
-Bei jedem erfolgreichen **_mktemp_s** -Aufrufe wird " *nametemplate" geändert*. Bei jedem nachfolgenden Aufruf desselben Prozesses oder Threads mit demselben *nametemplate* -Argument prüft **_mktemp_s** nach Dateinamen, die mit den Namen übereinstimmen, die in vorherigen Aufrufen von **_mktemp_s** zurückgegeben wurden. Wenn für einen bestimmten Namen keine Datei vorhanden ist, gibt **_mktemp_s** den Namen zurück. Wenn Dateien für alle zuvor zurückgegebenen Namen vorhanden sind, erstellt **_mktemp_s** einen neuen Namen, indem das in dem zuvor zurückgegebenen Namen verwendete alphabetische Zeichen durch den nächsten verfügbaren Kleinbuchstaben (in der angegebenen Reihenfolge) von "a" bis "z" ersetzt wird. Wenn die *Basis* beispielsweise:
+Bei jedem erfolgreichen Aufrufe von **_mktemp_s** wird " *nametemplate" geändert*. Bei jedem nachfolgenden Aufruf desselben Prozesses oder Threads mit demselben *nametemplate* -Argument prüft **_mktemp_s** nach Dateinamen, die mit den Namen übereinstimmen, die von **_mktemp_s** in vorherigen Aufrufen zurückgegeben wurden. Wenn für einen bestimmten Namen keine Datei vorhanden ist, gibt **_mktemp_s** diesen Namen zurück. Wenn Dateien für alle zuvor zurückgegebenen Namen vorhanden sind, erstellt **_mktemp_s** einen neuen Namen, indem das in dem zuvor zurückgegebenen Namen verwendete alphabetische Zeichen durch den nächsten verfügbaren Kleinbuchstaben (in der angegebenen Reihenfolge) von "a" bis "z" ersetzt wird. Wenn die *Basis* beispielsweise:
 
-> **Extreme**
+> **fn**
 
-der von **_mktemp_s** bereitgestellte fünfstellige Wert ist 12345, der erste zurückgegebene Name lautet wie folgt:
+der von **_mktemp_s** bereitgestellte fünfstellige Wert ist 12345, der erste zurückgegebene Name lautet:
 
 > **FNA12345**
 
@@ -119,13 +124,13 @@ Ist FNA12345 nicht vorhanden, lautet der nächste zurückgegebene Name erneut:
 
 > **FNA12345**
 
-**_mktemp_s** kann maximal 26 eindeutige Dateinamen für eine bestimmte Kombination von *Basis* -und *nametemplate* -Werten erstellen. Daher ist FNZ12345 der letzte eindeutige Dateiname **_mktemp_s** der für die *Basis* -und *nametemplate* -Werte erstellt werden kann, die in diesem Beispiel verwendet werden.
+**_mktemp_s** können maximal 26 eindeutige Dateinamen für eine bestimmte Kombination von *Basis* -und *nametemplate* -Werten erstellen. Daher ist FNZ12345 der letzte eindeutige Dateiname **_mktemp_s** der für die *Basis* -und *nametemplate* -Werte erstellt werden kann, die in diesem Beispiel verwendet werden.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mktemp_s**|\<io.h>|
 |**_wmktemp_s**|\<io.h> oder \<wchar.h>|
@@ -186,9 +191,9 @@ Unique filename is fnd03188
 Unique filename is fne03188
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [fopen, _wfopen](fopen-wfopen.md)<br/>
 [_getmbcp](getmbcp.md)<br/>
 [_getpid](getpid.md)<br/>

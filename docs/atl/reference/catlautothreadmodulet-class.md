@@ -1,5 +1,5 @@
 ---
-title: CAtlAutoThreadModuleT-Klasse
+title: Klasse von "-Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlAutoThreadModuleT
@@ -8,54 +8,54 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlAutoThreadModuleT class
 ms.assetid: ae1667c6-3fb8-47bc-b35d-9ea5e9896d7f
-ms.openlocfilehash: 63f1c8dbe3c752773fd64c6e339a9a3b67051d35
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7308e3a51c531fbe942e2df326c03273eeb326e2
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62247167"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168722"
 ---
-# <a name="catlautothreadmodulet-class"></a>CAtlAutoThreadModuleT-Klasse
+# <a name="catlautothreadmodulet-class"></a>Klasse von "-Klasse"
 
-Diese Klasse stellt Methoden zum Implementieren eines COM-Servers in einem Thread-Pool, Apartment-Modell.
+Diese Klasse stellt Methoden zum Implementieren eines Thread Pool-com-Servers mit einem Thread Pool bereit.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <class T,
          class ThreadAllocator = CComSimpleThreadAllocator,
          DWORD dwWait = INFINITE>
 class ATL_NO_VTABLE CAtlAutoThreadModuleT : public IAtlAutoThreadModule
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die Klasse, die die COM-Server implementiert werden.
+Die Klasse, mit der der com-Server implementiert wird.
 
-*ThreadAllocator*<br/>
-Die Verwaltung von threadauswahl-Klasse. Der Standardwert ist [CComSimpleThreadAllocator](../../atl/reference/ccomsimplethreadallocator-class.md).
+*Thread Zuordnung*<br/>
+Die Klasse, die die Thread Auswahl verwaltet. Der Standardwert ist [ccomsimplethreadzuweisung](../../atl/reference/ccomsimplethreadallocator-class.md).
 
-*dwWait*<br/>
-Gibt das Timeoutintervall in Millisekunden an. Der Standardwert ist INFINITE, der Timeoutintervall der Methode nie bedeutet, abgelaufen ist dass.
+*dwwait*<br/>
+Gibt das Timeout Intervall in Millisekunden an. Der Standardwert ist unendlich. Dies bedeutet, dass das Timeout Intervall der Methode nie abläuft.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlAutoThreadModuleT::GetDefaultThreads](#getdefaultthreads)|Diese statischen Funktion wird dynamisch berechnet, und gibt die maximale Anzahl von Threads für die EXE-Modul, das basierend auf der Anzahl der Prozessoren.|
+|["": Getdefaultthreads](#getdefaultthreads)|Diese statische Funktion berechnet die maximale Anzahl von Threads für das exe-Modul basierend auf der Anzahl der Prozessoren dynamisch und gibt Sie zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klasse [CAtlAutoThreadModule](../../atl/reference/catlautothreadmodule-class.md) leitet sich von `CAtlAutoThreadModuleT` um ein COM-Server in einem Thread-Pool, Apartment-Modell zu implementieren. Er ersetzt die veraltete Klasse [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md).
+Die Klasse [catlaudethreadmodule](../../atl/reference/catlautothreadmodule-class.md) wird von `CAtlAutoThreadModuleT` abgeleitet, um einen in einem Thread zusammengefassten com-Server mit einem Thread Pool zu implementieren. Es ersetzt die veraltete [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)-Klasse.
 
 > [!NOTE]
->  Diese Klasse sollte nicht in eine DLL verwendet werden, als Standard *DwWait* Wert INFINITE wird einen Deadlock verursachen, wenn die DLL entladen wird.
+> Diese Klasse sollte nicht in einer DLL verwendet werden, da der Standardwert von " *dwwait* " unbegrenzt zu einem Deadlock führt, wenn die DLL entladen wird.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -65,27 +65,27 @@ Die Klasse [CAtlAutoThreadModule](../../atl/reference/catlautothreadmodule-class
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Header:** atlbase. h
 
-##  <a name="getdefaultthreads"></a>  CAtlAutoThreadModuleT::GetDefaultThreads
+## <a name="catlautothreadmoduletgetdefaultthreads"></a><a name="getdefaultthreads"></a>"": Getdefaultthreads
 
-Diese statischen Funktion wird dynamisch berechnet, und gibt die maximale Anzahl von Threads für die EXE-Modul, das basierend auf der Anzahl der Prozessoren.
+Diese statische Funktion berechnet die maximale Anzahl von Threads für das exe-Modul basierend auf der Anzahl der Prozessoren dynamisch und gibt Sie zurück.
 
-```
+```cpp
 static int GetDefaultThreads();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Threads im Modul exe-Datei erstellt werden.
+Die Anzahl der Threads, die im exe-Modul erstellt werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode, wenn Sie eine andere Methode verwenden, für die Anzahl der Threads berechnen möchten. Standardmäßig ist die Anzahl der Prozessoren die Anzahl der Threads abhängig.
+Überschreiben Sie diese Methode, wenn Sie eine andere Methode zum Berechnen der Anzahl von Threads verwenden möchten. Standardmäßig basiert die Anzahl der Threads auf der Anzahl der Prozessoren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-[IAtlAutoThreadModule-Klasse](../../atl/reference/iatlautothreadmodule-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)<br/>
-[IAtlAutoThreadModule-Klasse](../../atl/reference/iatlautothreadmodule-class.md)<br/>
-[Modulklassen](../../atl/atl-module-classes.md)
+[Iatlaudethreadmodule-Klasse](../../atl/reference/iatlautothreadmodule-class.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
+[Iatlaudethreadmodule-Klasse](../../atl/reference/iatlautothreadmodule-class.md)<br/>
+[Modul Klassen](../../atl/atl-module-classes.md)

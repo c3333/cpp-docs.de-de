@@ -19,7 +19,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - calculating square roots
 - square roots, calculating
 ms.assetid: 2ba9467b-f172-41dc-8f10-b86f68fa813c
-ms.openlocfilehash: 364db84bc20f9f6cfafbdc53e1f2df6da70592df
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ee41d0747c31e5e8b89712a78eceda6a81d909a8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81355582"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913912"
 ---
 # <a name="sqrt-sqrtf-sqrtl"></a>sqrt, sqrtf, sqrtl
 
@@ -69,20 +69,20 @@ long double sqrtl(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Nicht negativer Gleitkommawert
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **sqrt** aufrufen, die **float-** oder **lange** **Doppeltypen** annehmen. In einem C-Programm nimmt und gibt **sqrt** immer **double**ein.
+Da C++ das überladen zulässt, können Sie über Ladungen von **sqrt** aufzurufen, die **float** -oder **Long** **Double** -Typen annehmen. In einem C-Programm nimmt **sqrt** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **sqrt-Funktionen** geben die Quadratwurzel von *x*zurück. Wenn *x* negativ ist, gibt **sqrt** standardmäßig ein unbestimmtes NaN zurück.
+Die **sqrt** -Funktionen geben die Quadratwurzel von *x*zurück. Wenn *x* negativ ist, gibt **sqrt** standardmäßig einen unbestimmten NaN-Wert zurück.
 
-|Eingabe|SEH-Ausnahme|**_matherr** Ausnahme|
+|Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
 |-----------|-------------------|--------------------------|
 |± QNAN,IND|Keine|_DOMAIN|
 |- ∞|Keine|_DOMAIN|
@@ -121,7 +121,7 @@ int main( void )
 The square root of 45.35 is 6.73
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [exp, expf, expl](exp-expf.md)<br/>

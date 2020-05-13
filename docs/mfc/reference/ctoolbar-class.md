@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CToolBar [MFC], SetHeight
 - CToolBar [MFC], SetSizes
 ms.assetid: e868da26-5e07-4607-9651-e2f863ad9059
-ms.openlocfilehash: fdbf343c91725783afd79bbebd73f66fdb1d67e2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cbb2d1bb797737a14e9728d339305bf9c371b543
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364282"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752210"
 ---
 # <a name="ctoolbar-class"></a>CToolBar-Klasse
 
@@ -155,7 +155,7 @@ Weitere Informationen zur `CToolBar`Verwendung finden Sie im Artikel [MFC Toolba
 
 `CToolBar`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -292,7 +292,7 @@ Rufen Sie die Memberfunktion [Erstellen](#create) auf, um das Symbolleistenfenst
 
 Diese Memberfunktion ruft die Steuerelement-ID, den Stil und den Bildindex der Symbolleistenschaltfläche oder des Trennzeichens an der von nIndex angegebenen Position *ab.*
 
-```
+```cpp
 void GetButtonInfo(
     int nIndex,
     UINT& nID,
@@ -522,7 +522,7 @@ Rufen Sie `SetBitmap` z. B. an, um das Bitmap-Bild zu ändern, nachdem der Benut
 
 Rufen Sie diese Memberfunktion auf, um die Befehls-ID, den Stil und die Bildnummer der Schaltfläche festzulegen.
 
-```
+```cpp
 void SetButtonInfo(
     int nIndex,
     UINT nID,
@@ -603,7 +603,7 @@ Wenn *lpIDArray* NULL ist, weist diese Funktion Speicherplatz für die Anzahl de
 
 Rufen Sie diese Memberfunktion auf, um den Stil einer Schaltfläche oder eines Trennzeichens festzulegen oder Umschaltflächen zu gruppieren.
 
-```
+```cpp
 void SetButtonStyle(
     int nIndex,
     UINT nStyle);
@@ -672,7 +672,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Diese Memberfunktion legt die Höhe der Symbolleiste auf den in *cyHeight*angegebenen Wert in Pixel fest.
 
-```
+```cpp
 void SetHeight(int cyHeight);
 ```
 
@@ -691,7 +691,7 @@ Wenn diese Funktion nicht aufgerufen wird, verwendet das Framework die Größe d
 
 Rufen Sie diese Memberfunktion auf, um die Schaltflächen der Symbolleiste auf die Größe in Pixel festzulegen, die in *sizeButton*angegeben ist.
 
-```
+```cpp
 void SetSizes(
     SIZE sizeButton,
     SIZE sizeImage);
@@ -715,7 +715,7 @@ Rufen Sie diese Memberfunktion nur für Symbolleisten auf, die die *Windows-Schn
 
 [!code-cpp[NVC_MFCListView#8](../../atl/reference/codesnippet/cpp/ctoolbar-class_4.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel STRGBARS](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DLGCBR32](../../overview/visual-cpp-samples.md)<br/>

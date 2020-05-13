@@ -25,7 +25,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -51,12 +51,12 @@ helpviewer_keywords:
 - characters, converting
 - toupper function
 ms.assetid: cdef1b0f-b19c-4d11-b7d2-cf6334c9b6cc
-ms.openlocfilehash: 85c218fdb3f5153e572e434bffbdb64510554d07
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 943b66bf03420dc707415fd5da0ddf8cc3107d85
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81362325"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913866"
 ---
 # <a name="toupper-_toupper-towupper-_toupper_l-_towupper_l"></a>toupper, _toupper, towupper, _toupper_l, _towupper_l
 
@@ -86,7 +86,7 @@ int _towupper_l(
 
 ### <a name="parameters"></a>Parameter
 
-*C*<br/>
+*scher*<br/>
 Zu konvertierendes Zeichen.
 
 *locale*<br/>
@@ -96,37 +96,37 @@ Zu verwendendes Gebietsschema.
 
 Jede dieser Routinen konvertiert nach Möglichkeit eine Kopie von *c*und gibt das Ergebnis zurück.
 
-Wenn *c* ein breites Zeichen ist, für das **iswlower** ungleich Null ist und ein entsprechendes breites Zeichen vorhanden ist, für das [iswupper](isupper-isupper-l-iswupper-iswupper-l.md) ungleich Null ist, gibt **Towupper** das entsprechende breit zeichen zurück; Andernfalls kehrt **das Abwupper** *c* unverändert zurück.
+Wenn *c* ein breit Zeichen ist, für das **iswlower** ungleich 0 (null) ist und ein entsprechendes breit Zeichen vorhanden ist, für das [iswupper](isupper-isupper-l-iswupper-iswupper-l.md) ungleich NULL ist, gibt **towupper** das entsprechende breit Zeichen zurück. Andernfalls gibt **towupper** *c* unverändert zurück.
 
 Es ist kein Rückgabewert zur Fehleranzeige reserviert.
 
-Damit **toupper** die erwarteten Ergebnisse liefert, müssen [__isascii](isascii-isascii-iswascii.md) und [islower](islower-iswlower-islower-l-iswlower-l.md) beide ungleich Null zurückgeben.
+Damit **toupperdie** erwarteten Ergebnisse liefert, müssen [__isascii](isascii-isascii-iswascii.md) und [IsLower](islower-iswlower-islower-l-iswlower-l.md) beide Werte ungleich 0 (null) zurückgeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Jede dieser Routinen konvertiert einen vorhandenen Kleinbuchstaben in einen Großbuchstaben, wenn dies möglich und relevant ist. Die Fallkonvertierung von **Towupper** ist gebietsschemaspezifisch. Es werden nur die für das aktuelle Gebietsschema relevanten Zeichen geändert. Die Funktionen ohne **das _l** Suffix verwenden das aktuell festgelegte Gebietsschema. Die Versionen dieser Funktionen mit dem **Suffix _l** nehmen das Gebietsschema als Parameter und verwenden das anstelle des aktuell festgelegten Gebietsschemas. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Jede dieser Routinen konvertiert einen vorhandenen Kleinbuchstaben in einen Großbuchstaben, wenn dies möglich und relevant ist. Die case-Konvertierung von **towupper** ist Gebiets Schema spezifisch. Es werden nur die für das aktuelle Gebietsschema relevanten Zeichen geändert. Die Funktionen ohne das **_l** -Suffix verwenden das aktuell festgelegte Gebiets Schema. Die Versionen dieser Funktionen mit dem **_l** -Suffix übernehmen das Gebiets Schema als Parameter und verwenden dieses anstelle des aktuell festgelegten Gebiets Schemas. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Damit **toupper** die erwarteten Ergebnisse liefert, müssen [__isascii](isascii-isascii-iswascii.md) und [isupper](isupper-isupper-l-iswupper-iswupper-l.md) beide ungleich Null zurückgeben.
+Damit **toupperdie** erwarteten Ergebnisse liefert, müssen [__isascii](isascii-isascii-iswascii.md) und [IsUpper](isupper-isupper-l-iswupper-iswupper-l.md) beide Werte ungleich 0 (null) zurückgeben.
 
 [Datenkonvertierungsroutinen](../../c-runtime-library/data-conversion.md)
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|**_totupper**|**Toupper**|**_mbctoupper**|**towupper**|
+|**_totupper**|**ToUpper**|**_mbctoupper**|**towupper**|
 |**_totupper_l**|**_toupper_l**|**_mbctoupper_l**|**_towupper_l**|
 
 > [!NOTE]
-> **_toupper_l** und **_towupper_l** haben keine Gebietsabhängigkeit und sollen nicht direkt aufgerufen werden. Sie werden für den internen Gebrauch durch **_totupper_l**zur Verfügung gestellt.
+> **_toupper_l** und **_towupper_l** haben keine Gebiets Schema Abhängigkeit und sind nicht dafür vorgesehen, direkt aufgerufen zu werden. Sie werden für die interne Verwendung durch **_totupper_l**bereitgestellt.
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**Toupper**|\<ctype.h>|
+|**ToUpper**|\<ctype.h>|
 |**_toupper**|\<ctype.h>|
 |**towupper**|\<ctype.h> oder \<wchar.h>|
 
@@ -136,9 +136,9 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Siehe das Beispiel in [to-Funktionen](../../c-runtime-library/to-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
-[zu Funktionen](../../c-runtime-library/to-functions.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>
+[to-Funktionen](../../c-runtime-library/to-functions.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>

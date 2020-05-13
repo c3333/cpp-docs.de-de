@@ -17,7 +17,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,16 +34,16 @@ helpviewer_keywords:
 - pseudorandom numbers
 - starting points, setting random
 - starting points
-ms.openlocfilehash: a8d018d429b2a484f88b7c1e0679f1f799983910
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3f6f97ad9a3bd0d7e4e88ad1797d369f012bbe5e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81355489"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913598"
 ---
 # <a name="srand"></a>srand
 
-Legt den Start-Ausgangswert für den Pseudozufallszahlengenerator fest, der von der **Rand-Funktion** verwendet wird.
+Legt den Startwert für den von der **Rand** -Funktion verwendeten Pseudo Zufalls Number-Generator fest.
 
 ## <a name="syntax"></a>Syntax
 
@@ -58,11 +58,11 @@ void srand(
 *seed*<br/>
 Startwert für die Pseudozufallszahlengenerierung
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **srand-Funktion** legt den Ausgangspunkt für die Generierung einer Reihe von Pseudozufallsganzen im aktuellen Thread fest. Um den Generator erneut zu initialisieren, um dieselbe Sequenz von Ergebnissen zu erstellen, rufen Sie die **srand-Funktion** auf und verwenden Sie das gleiche *Seed-Argument* erneut. Jeder andere Wert für *Seed* legt den Generator auf einen anderen Startpunkt in der Pseudozufallssequenz fest. **rand** ruft die pseudozufallszahlen ab, die generiert werden. Der Aufruf von **Rand** vor jedem Aufruf von **srand** erzeugt die gleiche Sequenz wie der Aufruf von **srand** mit *einem Alsat.*
+Die **srand** -Funktion legt den Ausgangspunkt für das Erstellen einer Reihe von Pseudo Zufalls-Ganzzahlen im aktuellen Thread fest. Um den Generator erneut zu initialisieren, um dieselbe Sequenz von Ergebnissen zu erstellen, rufen Sie die **srand** -Funktion auf, und verwenden Sie das gleiche *Seed* -Argument erneut. Jeder andere Wert für *Seed* legt den Generator auf einen anderen Startpunkt in der Pseudo Zufalls-Sequenz fest. **Rand** Ruft die zu Generier baren Pseudo Zufalls-Zahlen ab. Der Aufruf von **Rand** vor jedem Aufruf von **srand** generiert dieselbe Sequenz wie der *Aufruf von* **srand** mit einem als 1 bestandenen Ausgangswerten.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -76,7 +76,7 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Ein Beispiel hierfür finden Sie unter [rand](rand.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [rand](rand.md)<br/>

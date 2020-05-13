@@ -22,12 +22,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlExeModuleT class
 ms.assetid: 82245f3d-91d4-44fa-aa86-7cc7fbd758d9
-ms.openlocfilehash: d37cc8e97d29cbedfeb4ba79502d44529485399f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: b678c8a46f56337d76ec192869449797a4f66fb3
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423429"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168791"
 ---
 # <a name="catlexemodulet-class"></a>Klasse von "-Klasse"
 
@@ -35,12 +35,12 @@ Diese Klasse stellt das Modul für eine Anwendung dar.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <class T>
 class ATL_NO_VTABLE CAtlExeModuleT : public CAtlModuleT<T>
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *T*<br/>
 Die von `CAtlExeModuleT`abgeleitete Klasse.
@@ -49,18 +49,18 @@ Die von `CAtlExeModuleT`abgeleitete Klasse.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |["-" "" ""](#catlexemodulet)|Der Konstruktor.|
 |["" ("") ":](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |["Gatlexemodulet:: InitializeCom"](#initializecom)|Initialisiert com.|
 |["-Cmdlet"::P arccommandline](#parsecommandline)|Analysiert die Befehlszeile und führt ggf. eine Registrierung durch.|
-|[CAtlExeModuleT::PostMessageLoop](#postmessageloop)|Diese Methode wird unmittelbar nach Beendigung der Nachrichten Schleife aufgerufen.|
+|["-" ""-Projekt:P](#postmessageloop)|Diese Methode wird unmittelbar nach Beendigung der Nachrichten Schleife aufgerufen.|
 |["-":P remessageloop](#premessageloop)|Diese Methode wird unmittelbar vor der Eingabe der Nachrichten Schleife aufgerufen.|
 |[' ' ' ' ' ' ' "](#registerclassobjects)|Registriert das Klassenobjekt.|
 |[' ' ' ' ' "](#revokeclassobjects)|Widerruft das Klassenobjekt.|
@@ -72,15 +72,15 @@ Die von `CAtlExeModuleT`abgeleitete Klasse.
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlExeModuleT::m_bDelayShutdown](#m_bdelayshutdown)|Ein Flag, das angibt, dass das Modul verzögert heruntergefahren werden muss.|
-|[CAtlExeModuleT::m_dwPause](#m_dwpause)|Ein Pausen Wert, mit dem sichergestellt wird, dass alle Objekte vor dem Herunterfahren freigegeben|
-|[CAtlExeModuleT::m_dwTimeOut](#m_dwtimeout)|Ein Timeout Wert, mit dem das Entladen des Moduls verzögert wird.|
+|["": M_bDelayShutdown](#m_bdelayshutdown)|Ein Flag, das angibt, dass das Modul verzögert heruntergefahren werden muss.|
+|["": M_dwPause](#m_dwpause)|Ein Pausen Wert, mit dem sichergestellt wird, dass alle Objekte vor dem Herunterfahren freigegeben|
+|["": M_dwTimeOut](#m_dwtimeout)|Ein Timeout Wert, mit dem das Entladen des Moduls verzögert wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAtlExeModuleT` stellt das Modul für eine Anwendung (exe) dar und enthält Code, der das Erstellen einer exe-Datei, die Verarbeitung der Befehlszeile, das Registrieren von Klassen Objekten, das Ausführen der Nachrichten Schleife und das Bereinigen beim Beenden unterstützt.
+`CAtlExeModuleT`stellt das Modul für eine Anwendung (exe) dar und enthält Code, der das Erstellen einer exe-Datei, die Verarbeitung der Befehlszeile, das Registrieren von Klassen Objekten, das Ausführen der Nachrichten Schleife und das Bereinigen beim Beenden unterstützt.
 
 Diese Klasse wurde entwickelt, um die Leistung zu verbessern, wenn com-Objekte auf dem exe-Server ständig erstellt und zerstört werden. Nachdem das letzte com-Objekt freigegeben wurde, wartet die exe-Datei auf eine Dauer, die durch das DataSet "-Datenelement von" [m_dwTimeOut::](#m_dwtimeout) "angegeben wird. Wenn während dieses Zeitraums keine Aktivitäten vorhanden sind (d. h., es werden keine COM-Objekte erstellt), wird der Vorgang zum Herunterfahren initiiert.
 
@@ -92,9 +92,9 @@ Weitere Informationen zu Modulen in ATL finden Sie unter [ATL-Modul Klassen](../
 
 [_ATL_MODULE](atl-typedefs.md#_atl_module)
 
-[CAtlModule](../../atl/reference/catlmodule-class.md)
+["-Module"](../../atl/reference/catlmodule-class.md)
 
-[CAtlModuleT](../../atl/reference/catlmodulet-class.md)
+["-Modulet"](../../atl/reference/catlmodulet-class.md)
 
 `CAtlExeModuleT`
 
@@ -102,35 +102,35 @@ Weitere Informationen zu Modulen in ATL finden Sie unter [ATL-Modul Klassen](../
 
 **Header:** atlbase. h
 
-##  <a name="catlexemoduletcatlexemodulet"></a><a name="catlexemodulet"></a>"-" "" ""
+## <a name="catlexemoduletcatlexemodulet"></a><a name="catlexemodulet"></a>"-" "" ""
 
 Der Konstruktor.
 
-```
+```cpp
 CAtlExeModuleT() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das exe-Modul nicht initialisiert werden konnte, wird WinMain sofort ohne weitere Verarbeitung zurückgegeben.
 
-##  <a name="catlexemoduletcatlexemodulet"></a><a name="dtor"></a>"" ("") ":
+## <a name="catlexemoduletcatlexemodulet"></a><a name="dtor"></a>"" ("") ":
 
 Der Destruktor.
 
-```
+```cpp
 ~CAtlExeModuleT() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt alle zugeordneten Ressourcen frei.
 
-##  <a name="catlexemoduletinitializecom"></a><a name="initializecom"></a>"Gatlexemodulet:: InitializeCom"
+## <a name="catlexemoduletinitializecom"></a><a name="initializecom"></a>"Gatlexemodulet:: InitializeCom"
 
 Initialisiert com.
 
-```
+```cpp
 static HRESULT InitializeCom() throw();
 ```
 
@@ -138,53 +138,53 @@ static HRESULT InitializeCom() throw();
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird vom-Konstruktor aufgerufen und kann überschrieben werden, um com auf eine Weise zu initialisieren, die von der Standard Implementierung abweicht. Die Standard Implementierung ruft entweder `CoInitializeEx(NULL, COINIT_MULTITHREADED)` oder `CoInitialize(NULL)` auf, abhängig von der Projekt Konfiguration.
+Diese Methode wird vom-Konstruktor aufgerufen und kann überschrieben werden, um com auf eine Weise zu initialisieren, die von der Standard Implementierung abweicht. Die Standard Implementierung ruft `CoInitializeEx(NULL, COINIT_MULTITHREADED)` entweder oder `CoInitialize(NULL)` auf, abhängig von der Projekt Konfiguration.
 
 Das Überschreiben dieser Methode erfordert normalerweise das Überschreiben von "" "" "" " [".](#uninitializecom)
 
-##  <a name="catlexemoduletm_bdelayshutdown"></a><a name="m_bdelayshutdown"></a>"": M_bDelayShutdown
+## <a name="catlexemoduletm_bdelayshutdown"></a><a name="m_bdelayshutdown"></a>"": M_bDelayShutdown
 
 Ein Flag, das angibt, dass das Modul verzögert heruntergefahren werden muss.
 
-```
+```cpp
 bool m_bDelayShutdown;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie in der [Übersicht](../../atl/reference/catlexemodulet-class.md) zu "" ".
 
-##  <a name="catlexemoduletm_dwpause"></a><a name="m_dwpause"></a>"": M_dwPause
+## <a name="catlexemoduletm_dwpause"></a><a name="m_dwpause"></a>"": M_dwPause
 
 Ein Pausen Wert, der verwendet wird, um sicherzustellen, dass alle Objekte vor dem Herunterfahren
 
-```
+```cpp
 DWORD m_dwPause;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ändern Sie diesen Wert nach dem Aufruf von [CAtlExeModuleT:: InitializeCom](#initializecom) , um die Anzahl der Millisekunden festzulegen, die als Pause-Wert zum Herunterfahren des Servers verwendet wird. Der Standardwert ist 1000 Millisekunden.
 
-##  <a name="catlexemoduletm_dwtimeout"></a><a name="m_dwtimeout"></a>"": M_dwTimeOut
+## <a name="catlexemoduletm_dwtimeout"></a><a name="m_dwtimeout"></a>"": M_dwTimeOut
 
 Ein Timeout Wert, mit dem das Entladen des Moduls verzögert wird.
 
-```
+```cpp
 DWORD m_dwTimeOut;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ändern Sie diesen Wert nach dem Aufruf von [CAtlExeModuleT:: InitializeCom](#initializecom) , um die Anzahl der Millisekunden zu definieren, die als Timeout Wert für das Herunterfahren des Servers verwendet werden. Der Standardwert ist 5000 Millisekunden. Weitere Informationen finden Sie in der [Übersicht](../../atl/reference/catlexemodulet-class.md) zu "" "".
 
-##  <a name="catlexemoduletparsecommandline"></a><a name="parsecommandline"></a>"-Cmdlet"::P arccommandline
+## <a name="catlexemoduletparsecommandline"></a><a name="parsecommandline"></a>"-Cmdlet"::P arccommandline
 
 Analysiert die Befehlszeile und führt ggf. eine Registrierung durch.
 
-```
+```cpp
 bool ParseCommandLine(LPCTSTR lpCmdLine, HRESULT* pnRetCode) throw();
 ```
 
@@ -193,22 +193,22 @@ bool ParseCommandLine(LPCTSTR lpCmdLine, HRESULT* pnRetCode) throw();
 *lpCmdLine*<br/>
 Die Befehlszeile, die an die Anwendung übermittelt wird.
 
-*pnRetCode*<br/>
+*pnretcode*<br/>
 Das HRESULT, das der Registrierung entspricht (sofern vorhanden).
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt "true" zurück, wenn die Anwendung weiterhin ausgeführt werden soll, andernfalls "false".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode [wird von "](#winmain) " von "" von "" mit den Befehls zeilenschaltern aufgerufen und kann überschrieben werden. Die Standard Implementierung überprüft die Befehlszeilenargumente **/RegServer** und **/UnRegServer** und führt die Registrierung oder Aufhebung der Registrierung durch.
 
-##  <a name="catlexemoduletpostmessageloop"></a><a name="postmessageloop"></a>"-" ""-Projekt:P
+## <a name="catlexemoduletpostmessageloop"></a><a name="postmessageloop"></a>"-" ""-Projekt:P
 
 Diese Methode wird unmittelbar nach Beendigung der Nachrichten Schleife aufgerufen.
 
-```
+```cpp
 HRESULT PostMessageLoop() throw();
 ```
 
@@ -216,36 +216,36 @@ HRESULT PostMessageLoop() throw();
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode, um eine benutzerdefinierte Anwendungs Bereinigung auszuführen. Die Standard [Implementierung ruft "](#revokeclassobjects)" "" ".
 
-##  <a name="catlexemoduletpremessageloop"></a><a name="premessageloop"></a>"-":P remessageloop
+## <a name="catlexemoduletpremessageloop"></a><a name="premessageloop"></a>"-":P remessageloop
 
 Diese Methode wird unmittelbar vor der Eingabe der Nachrichten Schleife aufgerufen.
 
-```
+```cpp
 HRESULT PreMessageLoop(int nShowCmd) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nShowCmd*<br/>
+*nshowcmd*<br/>
 Der als *nshowcmd* -Parameter in WinMain übergebenen Wert.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode, um benutzerdefinierten Initialisierungs Code für die Anwendung hinzuzufügen. Die Standard Implementierung registriert die-Klassen Objekte.
 
-##  <a name="catlexemoduletregisterclassobjects"></a><a name="registerclassobjects"></a>' ' ' ' ' ' ' "
+## <a name="catlexemoduletregisterclassobjects"></a><a name="registerclassobjects"></a>' ' ' ' ' ' ' "
 
 Registriert das Klassenobjekt bei OLE, damit andere Anwendungen eine Verbindung damit herstellen können.
 
-```
+```cpp
 HRESULT RegisterClassObjects(DWORD dwClsContext, DWORD dwFlags) throw();
 ```
 
@@ -261,11 +261,11 @@ Bestimmt die Verbindungstypen für das-Klassenobjekt. Mögliche Werte sind REGCL
 
 Gibt bei Erfolg S_OK S_FALSE zurück, wenn keine zu registrierende Klassen vorhanden waren, oder ein Fehler HRESULT bei einem Fehler.
 
-##  <a name="catlexemoduletrevokeclassobjects"></a><a name="revokeclassobjects"></a>' ' ' ' ' "
+## <a name="catlexemoduletrevokeclassobjects"></a><a name="revokeclassobjects"></a>' ' ' ' ' "
 
 Entfernt das-Klassenobjekt.
 
-```
+```cpp
 HRESULT RevokeClassObjects() throw();
 ```
 
@@ -273,56 +273,56 @@ HRESULT RevokeClassObjects() throw();
 
 Gibt bei Erfolg S_OK S_FALSE zurück, wenn keine zu registrierende Klassen vorhanden waren, oder ein Fehler HRESULT bei einem Fehler.
 
-##  <a name="catlexemoduletrun"></a><a name="run"></a>"": Run
+## <a name="catlexemoduletrun"></a><a name="run"></a>"": Run
 
 Diese Methode führt Code im exe-Modul aus, um die Initialisierung auszuführen, die Nachrichten Schleife auszuführen und die Bereinigung auszuführen.
 
-```
+```cpp
 HRESULT Run(int nShowCmd = SW_HIDE) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nShowCmd*<br/>
+*nshowcmd*<br/>
 Gibt an, wie das Fenster angezeigt werden soll. Dieser Parameter kann einer der Werte sein, die im Abschnitt [WinMain](/windows/win32/api/winbase/nf-winbase-winmain) erläutert werden. Der Standardwert ist SW_HIDE.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode kann überschrieben werden. In der Praxis ist es jedoch besser, das ""-Ereignis "" zu überschreiben [: ":P remessageloop](#premessageloop)" [:P](#postmessageloop) [, "" "",](#runmessageloop)"", "".
 
-##  <a name="catlexemoduletrunmessageloop"></a><a name="runmessageloop"></a>"": Runmessageloop
+## <a name="catlexemoduletrunmessageloop"></a><a name="runmessageloop"></a>"": Runmessageloop
 
 Diese Methode führt die Nachrichten Schleife aus.
 
-```
+```cpp
 void RunMessageLoop() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode kann überschrieben werden, um das Verhalten der Nachrichten Schleife zu ändern.
 
-##  <a name="catlexemoduletuninitializecom"></a><a name="uninitializecom"></a>"Gatlexemodulet:: uninitializecom"
+## <a name="catlexemoduletuninitializecom"></a><a name="uninitializecom"></a>"Gatlexemodulet:: uninitializecom"
 
 Hebt die Initialisierung von com auf.
 
-```
+```cpp
 static void UninitializeCom() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig ruft diese Methode einfach " [dininitialize](/windows/win32/api/combaseapi/nf-combaseapi-couninitialize) " auf und wird vom Dekonstruktor aufgerufen. Überschreiben Sie diese Methode, wenn Sie "" "" [".](#initializecom)
 
-##  <a name="catlexemoduletunlock"></a><a name="unlock"></a>"": Unlock
+## <a name="catlexemoduletunlock"></a><a name="unlock"></a>"": Unlock
 
 Verringert die Sperrenanzahl des Moduls.
 
-```
+```cpp
 LONG Unlock() throw();
 ```
 
@@ -330,30 +330,30 @@ LONG Unlock() throw();
 
 Gibt einen Wert zurück, der möglicherweise für Diagnose-oder Testzwecke nützlich ist.
 
-##  <a name="catlexemoduletwinmain"></a><a name="winmain"></a>"": WinMain
+## <a name="catlexemoduletwinmain"></a><a name="winmain"></a>"": WinMain
 
 Diese Methode implementiert den Code, der zum Ausführen einer exe-Datei erforderlich ist.
 
-```
+```cpp
 int WinMain(int nShowCmd) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nShowCmd*<br/>
+*nshowcmd*<br/>
 Gibt an, wie das Fenster angezeigt werden soll. Dieser Parameter kann einer der Werte sein, die im Abschnitt [WinMain](/windows/win32/api/winbase/nf-winbase-winmain) erläutert werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt den Rückgabewert der ausführbaren Datei zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode kann überschrieben werden. Wenn das Überschreiben von [CAtlExeModuleT::PreMessageLoop](#premessageloop) [CAtlExeModuleT::PostMessageLoop](#postmessageloop) [CAtlExeModuleT::RunMessageLoop](#runmessageloop) mit dieser Methode möglich, die `WinMain` Funktion zu überschreiben.
+Diese Methode kann überschrieben werden. Wenn das Überschreiben von "" "" "" "" "" "". "" "", " [:P remessageloop](#premessageloop)" [:P](#postmessageloop), "" mit der Methode "", "" mit dieser Methode, die [CAtlExeModuleT::RunMessageLoop](#runmessageloop) `WinMain` Funktion "" überschreiben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [ATLDuck-Beispiel](../../overview/visual-cpp-samples.md)<br/>
-[CAtlModuleT-Klasse](../../atl/reference/catlmodulet-class.md)<br/>
-[CAtlDllModuleT-Klasse](../../atl/reference/catldllmodulet-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klasse von "Klasse"](../../atl/reference/catlmodulet-class.md)<br/>
+[Klasse von "-Klasse"](../../atl/reference/catldllmodulet-class.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)

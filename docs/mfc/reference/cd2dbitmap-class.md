@@ -51,12 +51,12 @@ helpviewer_keywords:
 - CD2DBitmap [MFC], m_strPath
 - CD2DBitmap [MFC], m_uiResID
 ms.assetid: 2b3686f1-812c-462b-b449-9f0cb6949bf6
-ms.openlocfilehash: ce4fe49e8af85c4b63be31bf10e9f196f85c019f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a3cabb00ded7dbc5f9c396a1de767058443a4436
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369319"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754207"
 ---
 # <a name="cd2dbitmap-class"></a>CD2DBitmap-Klasse
 
@@ -133,7 +133,7 @@ class CD2DBitmap : public CD2DResource;
 
 `CD2DBitmap`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -149,7 +149,7 @@ virtual ~CD2DBitmap();
 
 Fügt dem Objekt eine vorhandene Ressourcenschnittstelle an.
 
-```
+```cpp
 void Attach(ID2D1Bitmap* pResource);
 ```
 
@@ -214,7 +214,7 @@ Handle zur Bitmap.
 
 Initialisiert das Objekt.
 
-```
+```cpp
 void CommonInit();
 ```
 
@@ -473,6 +473,6 @@ operator ID2D1Bitmap*();
 
 Zeiger auf eine ID2D1Bitmap-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

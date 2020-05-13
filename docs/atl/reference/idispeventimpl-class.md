@@ -13,19 +13,19 @@ f1_keywords:
 helpviewer_keywords:
 - IDispEventImpl class
 ms.assetid: a64b5288-35cb-4638-aad6-2d15b1c7cf7b
-ms.openlocfilehash: e82a397b6d2abb66f773908c72a287c979e5ae1d
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: fa6e9f972accd0115d9f1e3248bd97ddde0c3c63
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69495934"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81329760"
 ---
 # <a name="idispeventimpl-class"></a>IDispEventImpl-Klasse
 
-Diese Klasse stellt Implementierungen der `IDispatch` -Methoden bereit.
+Diese Klasse stellt Implementierungen der `IDispatch` Methoden bereit.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,16 +42,16 @@ class ATL_NO_VTABLE IDispEventImpl : public IDispEventSimpleImpl<nID, T, pdiid>
 #### <a name="parameters"></a>Parameter
 
 *nID*<br/>
-Ein eindeutiger Bezeichner für das Quell Objekt. Wenn `IDispEventImpl` die Basisklasse für ein zusammengesetztes Steuerelement ist, verwenden Sie die Ressourcen-ID des gewünschten enthaltenen Steuer Elements für diesen Parameter. Verwenden Sie in anderen Fällen eine beliebige positive ganze Zahl.
+Ein eindeutiger Bezeichner für das Quellobjekt. Wenn `IDispEventImpl` die Basisklasse für ein zusammengesetztes Steuerelement ist, verwenden Sie die Ressourcen-ID des gewünschten enthaltenen Steuerelements für diesen Parameter. In anderen Fällen verwenden Sie eine beliebige positive ganze Zahl.
 
 *T*<br/>
-Die Klasse des Benutzers, die von `IDispEventImpl`abgeleitet ist.
+Die Klasse des Benutzers, `IDispEventImpl`die von abgeleitet wird.
 
 *pdiid*<br/>
-Der Zeiger auf die IID der Ereignis dispinterface, die von dieser Klasse implementiert wird. Diese Schnittstelle muss in der Typbibliothek definiert werden, die von " *plibid*", " *wMajor*" und " *wMinor*" angegeben wird.
+Der Zeiger auf die IID des Ereignisdispinterfaces, das von dieser Klasse implementiert wurde. Diese Schnittstelle muss in der Typbibliothek definiert sein, die mit *plibid*, *wMajor*und *wMinor*bezeichnet wird.
 
 *plibid*<br/>
-Ein Zeiger auf die Typbibliothek, die die Dispatchschnittstelle definiert, auf die von *pdiid*verwiesen wird. Wenn **& GUID_NULL**, wird die Typbibliothek aus dem Objekt geladen, das die Ereignisse aufführt.
+Ein Zeiger auf die Typbibliothek, die die Dispatchschnittstelle definiert, auf die *pdiid*. Wenn **&GUID_NULL**, wird die Typbibliothek aus dem Objekt geladen, das die Ereignisse bezieht.
 
 *wMajor*<br/>
 Die Hauptversion der Typbibliothek Der Standardwert ist 0.
@@ -60,50 +60,50 @@ Die Hauptversion der Typbibliothek Der Standardwert ist 0.
 Die Nebenversion der Typbibliothek Der Standardwert ist 0.
 
 *tihclass*<br/>
-Die Klasse, mit der die Typinformationen für *T*verwaltet werden. Der Standardwert ist eine Klasse vom Typ `CComTypeInfoHolder`. Sie können diesen Vorlagen Parameter jedoch außer Kraft setzen, indem Sie eine Klasse von einem anderen `CComTypeInfoHolder`Typ als bereitstellen.
+Die Klasse, die zum Verwalten der Typinformationen für *T*verwendet wird. Der Standardwert ist eine `CComTypeInfoHolder`Klasse vom Typ ; Sie können diesen Vorlagenparameter jedoch überschreiben, indem Sie `CComTypeInfoHolder`eine Klasse eines anderen Typs als angeben.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IDispEventImpl:: _tihclass](../../atl/reference/idispeventimpl-class.md)|Die Klasse, die verwendet wird, um die Typinformationen zu verwalten. Standardmäßig `CComTypeInfoHolder`lautet der Wert.|
+|[IDispEventImpl::_tihclass](../../atl/reference/idispeventimpl-class.md)|Die Klasse, die zum Verwalten der Typinformationen verwendet wird. Standardmäßig `CComTypeInfoHolder`.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[IDispEventImpl::IDispEventImpl](#idispeventimpl)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IDispEventImpl::GetFuncInfoFromId](#getfuncinfofromid)|Sucht den Funktions Index für den angegebenen Dispatchbezeichner.|
-|[IDispEventImpl::GetIDsOfNames](#getidsofnames)|Ordnet einem entsprechenden Satz von ganzzahligen DispIds einen einzelnen Member und einen optionalen Satz von Argument Namen zu.|
+|[IDispEventImpl::GetFuncInfoFromId](#getfuncinfofromid)|Sucht den Funktionsindex für den angegebenen Dispatch-Id.|
+|[IDispEventImpl::GetIDsOfNames](#getidsofnames)|Ordnet ein einzelnes Element und einen optionalen Satz von Argumentnamen einem entsprechenden Satz ganzzahliger DISPIDs zu.|
 |[IDispEventImpl::GetTypeInfo](#gettypeinfo)|Ruft die Typinformationen für ein Objekt ab.|
-|[IDispEventImpl::GetTypeInfoCount](#gettypeinfocount)|Ruft die Anzahl der Schnittstellen für Typinformationen ab.|
+|[IDispEventImpl::GetTypeInfoCount](#gettypeinfocount)|Ruft die Anzahl der Typinformationsschnittstellen ab.|
 |[IDispEventImpl::GetUserDefinedType](#getuserdefinedtype)|Ruft den Basistyp eines benutzerdefinierten Typs ab.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`IDispEventImpl`bietet eine Möglichkeit, eine Ereignis-dispinterface zu implementieren, ohne dass Sie Implementierungs Code für jede Methode bzw. jedes Ereignis an dieser Schnittstelle bereitstellen müssen. `IDispEventImpl`stellt Implementierungen der `IDispatch` -Methoden bereit. Sie müssen nur Implementierungen für die Ereignisse bereitstellen, die Sie behandeln möchten.
+`IDispEventImpl`bietet eine Möglichkeit zum Implementieren einer Ereignisdispinterface, ohne dass Sie Implementierungscode für jede Methode/jedes Ereignis auf dieser Schnittstelle bereitstellen müssen. `IDispEventImpl`stellt Implementierungen `IDispatch` der Methoden bereit. Sie müssen nur Implementierungen für die Ereignisse bereitstellen, die Sie behandeln möchten.
 
-`IDispEventImpl`arbeitet in Verbindung mit der Ereignis senkenzuordnung in der-Klasse, um Ereignisse an die entsprechende Handlerfunktion weiterzuleiten. So verwenden Sie diese Klasse:
+`IDispEventImpl`funktioniert in Verbindung mit der Ereignissenkenzuordnung in Ihrer Klasse, um Ereignisse an die entsprechende Handlerfunktion weiterzuleiten. So verwenden Sie diese Klasse:
 
-Fügen Sie ein [SINK_ENTRY](composite-control-macros.md#sink_entry) -oder [SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex) -Makro der Ereignis senkenzuordnung für jedes Ereignis für jedes Objekt hinzu, das Sie verarbeiten möchten. Wenn Sie `IDispEventImpl` als Basisklasse für ein zusammengesetztes Steuerelement verwenden, können Sie [atladvisesinkmap](connection-point-global-functions.md#atladvisesinkmap) zum Einrichten und Unterbrechen der Verbindung mit den Ereignis Quellen für alle Einträge in der Ereignis Senke-Zuordnung verwenden. In anderen Fällen oder bei größerer Kontrolle, wenden Sie [dispeventempfehlung](idispeventsimpleimpl-class.md#dispeventadvise) an, um die Verbindung zwischen dem Quell Objekt und der Basisklasse herzustellen. Bitten Sie [dispeventunempfehlung](idispeventsimpleimpl-class.md#dispeventunadvise) , die Verbindung zu unterbrechen.
+Fügen Sie der Ereignissenkenzuordnung für jedes Ereignis für jedes Objekt, das Sie behandeln möchten, ein [SINK_ENTRY](composite-control-macros.md#sink_entry) oder [SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex) Makro hinzu. Wenn `IDispEventImpl` Sie als Basisklasse eines zusammengesetzten Steuerelements verwenden, können Sie [AtlAdviseSinkMap](connection-point-global-functions.md#atladvisesinkmap) aufrufen, um die Verbindung mit den Ereignisquellen für alle Einträge in der Ereignissenkenzuordnung herzustellen und zu unterbrechen. Rufen Sie in anderen Fällen oder für eine bessere Kontrolle [DispEventAdvise](idispeventsimpleimpl-class.md#dispeventadvise) auf, um die Verbindung zwischen dem Quellobjekt und der Basisklasse herzustellen. Rufen Sie [DispEventUnadvise](idispeventsimpleimpl-class.md#dispeventunadvise) auf, um die Verbindung zu unterbrechen.
 
-Sie müssen für jedes `IDispEventImpl` Objekt, für das Sie Ereignisse behandeln müssen, von (mit einem eindeutigen Wert für *NID*) abgeleitet werden. Sie können die Basisklasse wieder verwenden, indem Sie die Verwendung eines Quell Objekts ablehnen und dann ein anderes Quell Objekt verwenden, aber die maximale Anzahl von Quell Objekten, die von einem einzelnen Objekt gleichzeitig verarbeitet werden können, ist durch `IDispEventImpl` die Anzahl der Basisklassen beschränkt.
+Sie müssen für `IDispEventImpl` jedes Objekt, für das Sie Ereignisse verarbeiten müssen, von (mit einem eindeutigen Wert für *nID*) ableiten. Sie können die Basisklasse wiederverwenden, indem Sie die Empfehlung für ein Quellobjekt aufdecken und dann von einem anderen Quellobjekt abberaten, `IDispEventImpl` aber die maximale Anzahl von Quellobjekten, die von einem einzelnen Objekt gleichzeitig behandelt werden können, wird durch die Anzahl der Basisklassen begrenzt.
 
-`IDispEventImpl`bietet die gleiche Funktionalität wie [IDispEventSimpleImpl](../../atl/reference/idispeventsimpleimpl-class.md), mit dem Unterschied, dass Sie Typinformationen über die Schnittstelle aus einer Typbibliothek abruft, anstatt Sie als Zeiger auf eine [_ATL_FUNC_INFO](../../atl/reference/atl-func-info-structure.md) -Struktur bereitzustellen. Verwenden `IDispEventSimpleImpl` Sie, wenn Sie nicht über eine Typbibliothek verfügen, die die Ereignis Schnittstelle beschreibt, oder möchten Sie den Aufwand vermeiden, der mit der Verwendung der Typbibliothek verknüpft ist.
+`IDispEventImpl`bietet die gleiche Funktionalität wie [IDispEventSimpleImpl](../../atl/reference/idispeventsimpleimpl-class.md), außer es ruft Typinformationen über die Schnittstelle aus einer Typbibliothek ab, anstatt sie als Zeiger auf eine [_ATL_FUNC_INFO-Struktur](../../atl/reference/atl-func-info-structure.md) bereitzustellen. Verwenden `IDispEventSimpleImpl` Sie diese Datei, wenn Sie nicht über eine Typbibliothek verfügen, die die Ereignisschnittstelle beschreibt, oder wenn Sie den mit der Verwendung der Typbibliothek verbundenen Overhead vermeiden möchten.
 
 > [!NOTE]
-> `IDispEventImpl`und `IDispEventSimpleImpl` stellen eine eigene Implementierung bereit `IUnknown::QueryInterface` , mit `IDispEventImpl` der `IDispEventSimpleImpl` jede-und-Basisklasse als separate com-Identität fungieren kann und gleichzeitig den direkten Zugriff auf Klassenmember in Ihrem Haupt-com-Objekt zulässt.
+> `IDispEventImpl`und `IDispEventSimpleImpl` stellen Sie `IUnknown::QueryInterface` eine `IDispEventImpl` eigene `IDispEventSimpleImpl` Implementierung bereit, die es jeder Basisklasse ermöglicht, als separate COM-Identität zu fungieren, während gleichzeitig der direkte Zugriff auf Klassenmember in Ihrem Haupt-COM-Objekt möglich ist.
 
-Die CE-ATL-Implementierung von ActiveX-Ereignis senken unterstützt nur Rückgabewerte vom Typ HRESULT oder void aus den Ereignishandlermethoden. alle anderen Rückgabewerte werden nicht unterstützt, und ihr Verhalten ist nicht definiert.
+Die CE ATL-Implementierung von ActiveX-Ereignissenken unterstützt nur Rückgabewerte vom Typ HRESULT oder void von Ihren Ereignishandlermethoden. Jeder andere Rückgabewert wird nicht unterstützt, und sein Verhalten ist nicht definiert.
 
-Weitere Informationen finden Sie [unter Unterstützung von IDispEventImpl](../../atl/supporting-idispeventimpl.md).
+Weitere Informationen finden Sie unter [Unterstützen von IDispEventImpl](../../atl/supporting-idispeventimpl.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -117,11 +117,11 @@ Weitere Informationen finden Sie [unter Unterstützung von IDispEventImpl](../..
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** Atlcom. h
+**Kopfzeile:** atlcom.h
 
-##  <a name="getfuncinfofromid"></a>IDispEventImpl:: getfuncinfofromid
+## <a name="idispeventimplgetfuncinfofromid"></a><a name="getfuncinfofromid"></a>IDispEventImpl::GetFuncInfoFromId
 
-Sucht den Funktions Index für den angegebenen Dispatchbezeichner.
+Sucht den Funktionsindex für den angegebenen Dispatch-Id.
 
 ```
 HRESULT GetFuncInfoFromId(
@@ -133,25 +133,25 @@ HRESULT GetFuncInfoFromId(
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
-in Ein Verweis auf die ID der Funktion.
+*Iid*<br/>
+[in] Ein Verweis auf die ID der Funktion.
 
 *dispidMember*<br/>
-in Die Dispatch-ID der Funktion.
+[in] Die Dispatch-ID der Funktion.
 
 *lcid*<br/>
-in Der Gebiets Schema Kontext der Funktions-ID.
+[in] Der Gebietsschemakontext der Funktions-ID.
 
 *info*<br/>
-in Die-Struktur, die angibt, wie die-Funktion aufgerufen wird.
+[in] Die Struktur, die angibt, wie die Funktion aufgerufen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standardwert.
+Ein Standard-HRESULT-Wert.
 
-##  <a name="getidsofnames"></a>IDispEventImpl:: GetIDsOfNames
+## <a name="idispeventimplgetidsofnames"></a><a name="getidsofnames"></a>IDispEventImpl::GetIDsOfNames
 
-Ordnet einen einzelnen Member und einen optionalen Satz von Argument Namen einem entsprechenden Satz von ganzzahligen DispIds zu, der bei nachfolgenden Aufrufen von [IDispatch:: Aufrufen](/windows/win32/api/oaidl/nf-oaidl-idispatch-invoke)verwendet werden kann.
+Ordnet einen einzelnen Member und einen optionalen Satz von Argumentnamen einem entsprechenden Satz ganzzahliger DISPIDs zu, die bei nachfolgenden Aufrufen von [IDispatch::Invoke](/windows/win32/api/oaidl/nf-oaidl-idispatch-invoke)verwendet werden können.
 
 ```
 STDMETHOD(GetIDsOfNames)(
@@ -162,11 +162,11 @@ STDMETHOD(GetIDsOfNames)(
     DISPID* rgdispid);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IDispatch:: GetIDsOfNames](/windows/win32/api/oaidl/nf-oaidl-idispatch-getidsofnames) im Windows SDK.
+Siehe [iDispatch::GetIDsOfNames](/windows/win32/api/oaidl/nf-oaidl-idispatch-getidsofnames) im Windows SDK.
 
-##  <a name="gettypeinfo"></a>IDispEventImpl:: gettypeingefo
+## <a name="idispeventimplgettypeinfo"></a><a name="gettypeinfo"></a>IDispEventImpl::GetTypeInfo
 
 Ruft die Typinformationen für ein Objekt ab, die dann zum Abrufen der Typinformationen für eine Schnittstelle verwendet werden können.
 
@@ -177,9 +177,9 @@ STDMETHOD(GetTypeInfo)(
     ITypeInfo** pptinfo);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="gettypeinfocount"></a>IDispEventImpl:: gettypanfocount
+## <a name="idispeventimplgettypeinfocount"></a><a name="gettypeinfocount"></a>IDispEventImpl::GetTypeInfoCount
 
 Ruft die Anzahl der Schnittstellen mit Typinformationen ab, die von einem Objekt bereitgestellt werden (0 oder 1).
 
@@ -187,11 +187,11 @@ Ruft die Anzahl der Schnittstellen mit Typinformationen ab, die von einem Objekt
 STDMETHOD(GetTypeInfoCount)(UINT* pctinfo);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IDispatch:: gettypeingefocount](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfocount) in der Windows SDK.
+Siehe [iDispatch::GetTypeInfoCount](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfocount) im Windows SDK.
 
-##  <a name="getuserdefinedtype"></a>IDispEventImpl:: getuserdefinedtype
+## <a name="idispeventimplgetuserdefinedtype"></a><a name="getuserdefinedtype"></a>IDispEventImpl::GetUserDefinedType
 
 Ruft den Basistyp eines benutzerdefinierten Typs ab.
 
@@ -203,46 +203,46 @@ VARTYPE GetUserDefinedType(
 
 ### <a name="parameters"></a>Parameter
 
-*pTI*<br/>
-in Ein Zeiger auf die [ITypeInfo](/windows/win32/api/oaidl/nn-oaidl-itypeinfo) -Schnittstelle, die den benutzerdefinierten Typ enthält.
+*Pti*<br/>
+[in] Ein Zeiger auf die [ITypeInfo-Schnittstelle,](/windows/win32/api/oaidl/nn-oaidl-itypeinfo) die den benutzerdefinierten Typ enthält.
 
-*hrt*<br/>
-in Ein Handle für die Typbeschreibung, die abgerufen werden soll.
+*Hrt*<br/>
+[in] Ein Handle für die Typbeschreibung, die abgerufen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Typ der Variante.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Siehe [itypeingefo:: getreftypeingefo](/windows/win32/api/oaidl/nf-oaidl-itypeinfo-getreftypeinfo).
+Siehe [iTypeInfo::GetRefTypeInfo](/windows/win32/api/oaidl/nf-oaidl-itypeinfo-getreftypeinfo).
 
-##  <a name="idispeventimpl"></a>IDispEventImpl:: IDispEventImpl
+## <a name="idispeventimplidispeventimpl"></a><a name="idispeventimpl"></a>IDispEventImpl::IDispEventImpl
 
-Der Konstruktor. Speichert die Werte der Klassen Vorlagen Parameter " *plibid*", " *pdiid*", " *wMajor*" und " *wMinor*".
+Der Konstruktor. Speichert die Werte der Klassenvorlagenparameter *plibid*, *pdiid*, *wMajor*und *wMinor*.
 
 ```
 IDispEventImpl();
 ```
 
-##  <a name="tihclass"></a>IDispEventImpl:: tihclass
+## <a name="idispeventimpltihclass"></a><a name="tihclass"></a>IDispEventImpl::tihclass
 
-Diese TypeDef ist eine Instanz des Klassen Vorlagen Parameters *tihclass*.
+Dieser typedef ist eine Instanz des Klassenvorlagenparameters *tihclass*.
 
 ```
 typedef tihclass _tihclass;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig ist `CComTypeInfoHolder`die-Klasse. `CComTypeInfoHolder`verwaltet die Typinformationen für die-Klasse.
+Standardmäßig ist `CComTypeInfoHolder`die Klasse . `CComTypeInfoHolder`verwaltet die Typinformationen für die Klasse.
 
 ## <a name="see-also"></a>Siehe auch
 
-[_ATL_FUNC_INFO-Struktur](../../atl/reference/atl-func-info-structure.md)<br/>
+[_ATL_FUNC_INFO Struktur](../../atl/reference/atl-func-info-structure.md)<br/>
 [IDispatchImpl-Klasse](../../atl/reference/idispatchimpl-class.md)<br/>
 [IDispEventSimpleImpl-Klasse](../../atl/reference/idispeventsimpleimpl-class.md)<br/>
 [SINK_ENTRY](composite-control-macros.md#sink_entry)<br/>
 [SINK_ENTRY_EX](composite-control-macros.md#sink_entry_ex)<br/>
 [SINK_ENTRY_INFO](composite-control-macros.md#sink_entry_info)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

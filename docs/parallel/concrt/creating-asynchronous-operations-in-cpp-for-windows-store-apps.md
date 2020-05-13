@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows 8.x apps, creating C++ async operations
 - Creating C++ async operations
 ms.assetid: a57cecf4-394a-4391-a957-1d52ed2e5494
-ms.openlocfilehash: 8e1183464d3ecf9b12fabcc6fb4f1fd99b7b0083
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 635a8c95a3801c6e88feff1cefa3ed27727a8f88
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81353410"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032186"
 ---
 # <a name="creating-asynchronous-operations-in-c-for-uwp-apps"></a>Erstellen von asynchronen Vorgängen in C++ für UWP-Apps
 
@@ -54,13 +54,13 @@ Mithilfe der Windows-Runtime können Sie die besten Funktionen verschiedener Pro
 [Windows::Foundation::IAsyncAction](/uwp/api/windows.foundation.iasyncaction)<br/>
 Stellt eine asynchrone Aktion dar.
 
-[Windows::Foundation::IAsyncActionWithProgress\<TProgress>](/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)<br/>
+[Windows::Foundation::IAsyncActionWithProgress\<TProgress>](/uwp/api/windows.foundation.iasyncactionwithprogress-1)<br/>
 Stellt eine asynchrone Aktion für Statusbenachrichtigungen dar.
 
-[Windows::Foundation::IAsyncOperation\<TResult>](/uwp/api/windows.foundation.iasyncoperation_tresult_)<br/>
+[Windows::Foundation::IAsyncOperation\<TResult>](/uwp/api/windows.foundation.iasyncoperation-1)<br/>
 Stellt einen asynchronen Vorgang dar, der ein Ergebnis zurückgibt.
 
-[Windows::Foundation::IAsyncOperationWithProgress\<TResult, TProgress>](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)<br/>
+[Windows::Foundation::IAsyncOperationWithProgress\<TResult, TProgress>](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)<br/>
 Stellt einen asynchronen Vorgang dar, der ein Ergebnis zurückgibt und den Status meldet.
 
 Der Begriff *Aktion* bedeutet, dass die asynchrone Aufgabe keinen Wert generiert (denken Sie an eine Funktion, die `void`zurückgibt). Der Begriff *Vorgang* bedeutet, dass die asynchrone Aufgabe einen Wert generiert. Der Begriff *Status* bedeutet, dass die Aufgabe Statusbenachrichtigungen an den Aufrufer übermitteln kann. JavaScript, .NET Framework und Visual C++ bieten jeweils eine eigene Möglichkeit zum Erstellen von Instanzen dieser Schnittstellen zur ABI-übergreifenden Verwendung. Für Visual C++ stellt die PPL die [concurrency::create_async](reference/concurrency-namespace-functions.md#create_async) -Funktion bereit. Diese Funktion erstellt eine asynchrone Aktion oder einen Vorgang der Windows-Runtime, die den Abschluss einer Aufgabe darstellt. Die `create_async` Funktion übernimmt eine Arbeitsfunktion (in der `task` Regel ein Lambda-Ausdruck), erstellt intern ein Objekt und umschließt diese Aufgabe in einer der vier asynchronen Windows-Runtime-Schnittstellen.
@@ -92,7 +92,7 @@ Das folgende Beispiel zeigt die `IAsyncAction` verschiedenen Möglichkeiten zum 
 
 ## <a name="example-creating-a-c-windows-runtime-component-and-consuming-it-from-c"></a><a name="example-component"></a>Beispiel: Erstellen einer C++-Windows-Runtime-Komponente und Verwenden von C\#
 
-Betrachten Sie eine App, die XAML und C- verwendet, um die Benutzeroberfläche und eine C++-Windows-Runtime-Komponente zu definieren, um rechenintensive Vorgänge auszuführen. In diesem Beispiel wird von der C++-Komponente berechnet, bei welchen Zahlen in einem angegebenen Bereich es sich um Primzahlen handelt. Um die Unterschiede zwischen den vier asynchronen Windows-Runtime-Taskschnittstellen zu veranschaulichen, beginnen `Primes`Sie in Visual Studio mit dem Erstellen einer **leeren Projektmappe** und dem Benennen . Fügen Sie der Projektmappe dann ein Projekt für **Windows-Runtime-Komponente** hinzu, und nennen Sie es `PrimesLibrary`. Fügen Sie der generierten C++-Headerdatei folgenden Code hinzu (in diesem Beispiel wird "Class1.h" in "Primes.h" umbenannt). Jede `public` -Methode definiert eine der vier asynchronen Schnittstellen. Die Methoden, die einen Wert zurückgeben, geben ein [Windows::Foundation::Collections::IVector\<int>](/uwp/api/Windows.Foundation.Collections.IVector_T_) Objekt zurück. Die den Status meldenden Methoden generieren `double` -Werte, die den Prozentsatz der abgeschlossenen Gesamtarbeit definieren.
+Betrachten Sie eine App, die XAML und C- verwendet, um die Benutzeroberfläche und eine C++-Windows-Runtime-Komponente zu definieren, um rechenintensive Vorgänge auszuführen. In diesem Beispiel wird von der C++-Komponente berechnet, bei welchen Zahlen in einem angegebenen Bereich es sich um Primzahlen handelt. Um die Unterschiede zwischen den vier asynchronen Windows-Runtime-Taskschnittstellen zu veranschaulichen, beginnen `Primes`Sie in Visual Studio mit dem Erstellen einer **leeren Projektmappe** und dem Benennen . Fügen Sie der Projektmappe dann ein Projekt für **Windows-Runtime-Komponente** hinzu, und nennen Sie es `PrimesLibrary`. Fügen Sie der generierten C++-Headerdatei folgenden Code hinzu (in diesem Beispiel wird "Class1.h" in "Primes.h" umbenannt). Jede `public` -Methode definiert eine der vier asynchronen Schnittstellen. Die Methoden, die einen Wert zurückgeben, geben ein [Windows::Foundation::Collections::IVector\<int>](/uwp/api/windows.foundation.collections.ivector-1) Objekt zurück. Die den Status meldenden Methoden generieren `double` -Werte, die den Prozentsatz der abgeschlossenen Gesamtarbeit definieren.
 
 [!code-cpp[concrt-windowsstore-primes#1](../../parallel/concrt/codesnippet/cpp/creating-asynchronous-operations-in-cpp-for-windows-store-apps_2.h)]
 
@@ -190,6 +190,6 @@ In der folgenden Abbildung werden die Ergebnisse der `CommonWords` -App dargeste
 
 In diesem Beispiel ist es möglich, `task` den Abbruch `create_async` zu unterstützen, da die unterstützten Objekte ein implizites Abbruchtoken verwenden. Wenn die Aufgaben kooperativ auf Abbruchvorgänge reagieren sollen, definieren Sie die Arbeitsfunktion so, dass diese ein `cancellation_token` -Objekt akzeptiert. Weitere Informationen zum Abbrechen in der PPL finden Sie unter [Cancellation in the PPL](cancellation-in-the-ppl.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Parallelitätslaufzeit](../../parallel/concrt/concurrency-runtime.md)

@@ -1,5 +1,5 @@
 ---
-title: Cpatht-Klasse
+title: CPathT-Klasse
 ms.date: 03/27/2019
 f1_keywords:
 - CPathT
@@ -49,19 +49,19 @@ f1_keywords:
 helpviewer_keywords:
 - CPathT class
 ms.assetid: eba4137d-1fd2-4b44-a2e1-0944db64df3c
-ms.openlocfilehash: ba1c831d772deef34449d17adc2c8e7a6f90eaef
-ms.sourcegitcommit: 8178d22701047d24f69f10d01ba37490e3d67241
+ms.openlocfilehash: 76273e7fbfa50e610b437e11859821374413d008
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "69496617"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032133"
 ---
-# <a name="cpatht-class"></a>Cpatht-Klasse
+# <a name="cpatht-class"></a>CPathT-Klasse
 
 Diese Klasse stellt einen Pfad dar.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -73,84 +73,84 @@ class CPathT
 #### <a name="parameters"></a>Parameter
 
 *StringType*<br/>
-Die ATL/MFC-Zeichen folgen Klasse, die für den Pfad verwendet werden soll (siehe [CStringT](../../atl-mfc-shared/reference/cstringt-class.md)).
+Die ATL/MFC-Zeichenfolgenklasse, die für den Pfad verwendet werden soll (siehe [CStringT](../../atl-mfc-shared/reference/cstringt-class.md)).
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cpatht::P cxstr](#pcxstr)|Ein konstanter Zeichen folgertyp.|
-|[Cpatht::P xstr](#pxstr)|Ein Zeichen Folgentyp.|
-|[Cpatht:: xchar](#xchar)|Ein Zeichentyp.|
+|[CPathT::PCXSTR](#pcxstr)|Ein konstanter Zeichenfolgentyp.|
+|[CPathT::PXSTR](#pxstr)|Ein Zeichenfolgentyp.|
+|[CPathT::XCHAR](#xchar)|Ein Zeichentyp.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cpatht:: cpatht](#cpatht)|Der Konstruktor für den Pfad.|
+|[CPathT::CPathT](#cpatht)|Der Konstruktor für den Pfad.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cpatht:: addbackschräg Strich](#addbackslash)|Rufen Sie diese Methode auf, um einen umgekehrten Schrägstrich am Ende einer Zeichenfolge hinzuzufügen, um die korrekte Syntax für einen Pfad zu erstellen.|
-|[Cpatht:: AddExtension](#addextension)|Mit dieser Methode können Sie einem Pfad eine Dateierweiterung hinzufügen.|
-|[Cpatht:: Append](#append)|Rufen Sie diese Methode auf, um eine Zeichenfolge an den aktuellen Pfad anzufügen.|
-|[Cpatht:: Buildroot](#buildroot)|Rufen Sie diese Methode auf, um einen Stammpfad aus einer angegebenen Laufwerk Nummer zu erstellen.|
-|[Cpatht:: Canonicalize](#canonicalize)|Mit dieser Methode wird der Pfad in eine kanonische Form konvertiert.|
-|[Cpatht:: Combine](#combine)|Diese Methode wird aufgerufen, um eine Zeichenfolge zu verketten, die einen Verzeichnisnamen und eine Zeichenfolge darstellt, die einen Dateipfadnamen in einem Pfad darstellt.|
-|[Cpatht:: commonprefix](#commonprefix)|Ruft diese Methode auf, um zu bestimmen, ob der angegebene Pfad ein gemeinsames Präfix mit dem aktuellen Pfad hat.|
-|[Cpatht:: compactpath](#compactpath)|Mit dieser Methode können Sie einen Dateipfad für eine bestimmte Pixel Breite abschneiden, indem Sie Pfad Komponenten durch Ellipsen ersetzen.|
-|[Cpatht:: compactpathex](#compactpathex)|Ruft diese Methode auf, um einen Dateipfad für eine bestimmte Anzahl von Zeichen abzuschneiden, indem Pfad Komponenten durch Ellipsen ersetzt werden.|
-|[Cpatht:: fileexistiert](#fileexists)|Mit dieser Methode können Sie überprüfen, ob die Datei mit diesem Pfadnamen vorhanden ist.|
-|[Cpatht:: findextension](#findextension)|Ruft diese Methode auf, um die Position der Dateierweiterung innerhalb des Pfads zu ermitteln.|
-|[Cpatht:: findfilename](#findfilename)|Ruft diese Methode auf, um die Position des Datei namens innerhalb des Pfads zu ermitteln.|
-|[Cpatht:: getdrivenumschlag](#getdrivenumber)|Mit dieser Methode können Sie den Pfad nach einem Laufwerksbuchstaben innerhalb des Bereichs von "a" bis "Z" Durchsuchen und die entsprechende Laufwerksnummer zurückgeben.|
-|[Cpatht:: GetExtension](#getextension)|Mit dieser Methode können Sie die Dateierweiterung aus dem Pfad abrufen.|
-|[Cpatht:: IsDirectory](#isdirectory)|Mit dieser Methode können Sie überprüfen, ob der Pfad ein gültiges Verzeichnis ist.|
-|[Cpatht:: isfilespec](#isfilespec)|Mit dieser Methode können Sie einen Pfad nach beliebigen Pfad Begrenzungs Zeichen (z. b. ': ' oder ' \\ ') durchsuchen. Wenn keine Pfad Trennzeichen vorhanden sind, wird der Pfad als dateispezifikations Pfad betrachtet.|
-|[Cpatht:: iationfix](#isprefix)|Ruft diese Methode auf, um zu bestimmen, ob ein Pfad ein gültiges Präfix des von *pszprefix*weiter gegebenen Typs enthält.|
-|[Cpatht:: IsRelative](#isrelative)|Ruft diese Methode auf, um zu bestimmen, ob der Pfad relativ ist.|
-|[Cpatht:: IsRoot](#isroot)|Ruft diese Methode auf, um zu bestimmen, ob der Pfad ein Verzeichnis Stamm ist.|
-|[Cpatht:: issameroot](#issameroot)|Ruft diese Methode auf, um zu bestimmen, ob ein anderer Pfad über eine gemeinsame Stamm Komponente mit dem aktuellen Pfad verfügt.|
-|[Cpatht:: IsUnc](#isunc)|Verwenden Sie diese Methode, um zu bestimmen, ob der Pfad ein gültiger UNC-Pfad (Universal Naming Convention) für einen Server und eine Freigabe ist.|
-|[Cpatht:: isuncserver](#isuncserver)|Mit dieser Methode können Sie feststellen, ob es sich bei dem Pfad um einen gültigen UNC-Pfad (Universal Naming Convention) für einen Server handelt.|
-|[Cpatht:: isuncservershare](#isuncservershare)|Verwenden Sie diese Methode, um zu bestimmen, ob der Pfad ein gültiger UNC-Freigabe Pfad (Universal Naming Convention) ist, \\ \ *Server* \ *Freigabe*.|
-|[Cpatht:: makepretty](#makepretty)|Mit dieser Methode wird ein Pfad in alle Kleinbuchstaben konvertiert, um dem Pfad eine konsistente Darstellung zu übergeben.|
-|[Cpatht:: matchspec](#matchspec)|Mit dieser Methode können Sie den Pfad nach einer Zeichenfolge suchen, die einen Platzhalter Übereinstimmungs Typen enthält.|
-|[Cpatht:: quotespaces](#quotespaces)|Mit dieser Methode können Sie den Pfad in Anführungszeichen einschließen, wenn er Leerzeichen enthält.|
-|[Cpatht:: RelativePathTo](#relativepathto)|Rufen Sie diese Methode auf, um einen relativen Pfad von einer Datei oder einem Ordner zu einem anderen zu erstellen.|
-|[Cpatht:: removeargs](#removeargs)|Diese Methode wird aufgerufen, um alle Befehlszeilenargumente aus dem Pfad zu entfernen.|
-|[Cpatht:: removebackschräg Strich](#removebackslash)|Mit dieser Methode wird der nachfolgende umgekehrte Schrägstrich aus dem Pfad entfernt.|
-|[Cpatht:: removeblank](#removeblanks)|Diese Methode wird aufgerufen, um alle führenden und nachfolgenden Leerzeichen aus dem Pfad zu entfernen.|
-|[Cpatht:: removeextension](#removeextension)|Mit dieser Methode können Sie die Dateierweiterung aus dem Pfad entfernen, sofern vorhanden.|
-|[Cpatht:: removefilespec](#removefilespec)|Mit dieser Methode können Sie den nachfolgenden Dateinamen und den umgekehrten Schrägstrich aus dem Pfad entfernen, wenn Sie diesen haben.|
-|[Cpatht:: renameextension](#renameextension)|Mit dieser Methode können Sie die Dateinamenerweiterung im Pfad durch eine neue Erweiterung ersetzen. Wenn der Dateiname keine Erweiterung enthält, wird die Erweiterung an das Ende der Zeichenfolge angefügt.|
-|[Cpatht:: skiproot](#skiproot)|Mit dieser Methode können Sie einen Pfad analysieren, wobei der Laufwerksbuchstabe oder der UNC-Server/die Freigabe Pfad Teile ignoriert werden.|
-|[Cpatht:: strippath](#strippath)|Diese Methode wird aufgerufen, um den Pfadteil eines voll qualifizierten Pfads und Datei namens zu entfernen.|
-|[Cpatht:: striptor](#striptoroot)|Mit dieser Methode können Sie alle Teile des Pfades außer den Stamm Informationen entfernen.|
-|[Cpatht:: unquotespaces](#unquotespaces)|Mit dieser Methode können Sie Anführungszeichen am Anfang und am Ende eines Pfades entfernen.|
+|[CPathT::AddBackslash](#addbackslash)|Rufen Sie diese Methode auf, um am Ende einer Zeichenfolge einen umgekehrten Schrägstrich hinzuzufügen, um die richtige Syntax für einen Pfad zu erstellen.|
+|[CPathT::AddExtension](#addextension)|Rufen Sie diese Methode auf, um einem Pfad eine Dateierweiterung hinzuzufügen.|
+|[CPathT::Anfügen](#append)|Rufen Sie diese Methode auf, um eine Zeichenfolge an den aktuellen Pfad anzuhängen.|
+|[CPathT::BuildRoot](#buildroot)|Rufen Sie diese Methode auf, um einen Stammpfad aus einer bestimmten Laufwerknummer zu erstellen.|
+|[CPathT::Canonicalize](#canonicalize)|Rufen Sie diese Methode auf, um den Pfad in kanonische Form zu konvertieren.|
+|[CPathT::Kombinieren](#combine)|Rufen Sie diese Methode auf, um eine Zeichenfolge, die einen Verzeichnisnamen darstellt, und eine Zeichenfolge, die einen Dateipfadnamen darstellt, in einem Pfad zu verketten.|
+|[CPathT::CommonPrefix](#commonprefix)|Rufen Sie diese Methode auf, um zu bestimmen, ob der angegebene Pfad ein gemeinsames Präfix mit dem aktuellen Pfad verwendet.|
+|[CPathT::CompactPath](#compactpath)|Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Pixelbreite passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.|
+|[CPathT::CompactPathEx](#compactpathex)|Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Anzahl von Zeichen passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.|
+|[CPathT::FileExists](#fileexists)|Rufen Sie diese Methode auf, um zu überprüfen, ob die Datei unter diesem Pfadnamen vorhanden ist.|
+|[CPathT::FindExtension](#findextension)|Rufen Sie diese Methode auf, um die Position der Dateierweiterung innerhalb des Pfads zu finden.|
+|[CPathT::FindFileName](#findfilename)|Rufen Sie diese Methode auf, um die Position des Dateinamens innerhalb des Pfads zu finden.|
+|[CPathT::GetDriveNumber](#getdrivenumber)|Rufen Sie diese Methode auf, um den Pfad nach einem Laufwerkbuchstaben im Bereich von 'A' bis 'Z' zu durchsuchen und die entsprechende Laufwerksnummer zurückzugeben.|
+|[CPathT::GetExtension](#getextension)|Rufen Sie diese Methode auf, um die Dateierweiterung aus dem Pfad abzurufen.|
+|[CPathT::IsDirectory](#isdirectory)|Rufen Sie diese Methode auf, um zu überprüfen, ob der Pfad ein gültiges Verzeichnis ist.|
+|[CPathT::IsFileSpec](#isfilespec)|Rufen Sie diese Methode auf, um einen Pfad nach Pfadtrennzeichen\\zu durchsuchen (z. B. ':' oder ' ' ). Wenn keine Pfadabgrenzungszeichen vorhanden sind, wird der Pfad als Dateispezifikationspfad betrachtet.|
+|[CPathT::IsPrefix](#isprefix)|Rufen Sie diese Methode auf, um zu bestimmen, ob ein Pfad ein gültiges Präfix des Typs enthält, der von *pszPrefix*übergeben wird.|
+|[CPathT::IsRelative](#isrelative)|Rufen Sie diese Methode auf, um zu bestimmen, ob der Pfad relativ ist.|
+|[CPathT::IsRoot](#isroot)|Rufen Sie diese Methode auf, um zu bestimmen, ob es sich bei dem Pfad um einen Verzeichnisstamm handelt.|
+|[CPathT::IsSameRoot](#issameroot)|Rufen Sie diese Methode auf, um zu bestimmen, ob ein anderer Pfad eine gemeinsame Stammkomponente mit dem aktuellen Pfad enthält.|
+|[CPathT::IsUNC](#isunc)|Rufen Sie diese Methode auf, um zu bestimmen, ob es sich bei dem Pfad um einen gültigen UNC-Pfad (Universal Naming Convention) für einen Server und eine Freigabe handelt.|
+|[CPathT::IsUNCServer](#isuncserver)|Rufen Sie diese Methode auf, um zu bestimmen, ob es sich bei dem Pfad nur um einen gültigen UNC-Pfad (Universal Naming Convention) für einen Server handelt.|
+|[CPathT::IsUNCServerShare](#isuncservershare)|Rufen Sie diese Methode auf, um zu bestimmen, ob es \\ \ sich bei dem Pfad um einen gültigen UNC-Freigabepfad (Universal Naming Convention) *handelt.*\ *share*|
+|[CPathT::MakePretty](#makepretty)|Rufen Sie diese Methode auf, um einen Pfad zu allen Kleinbuchstaben zu konvertieren, um dem Pfad eine konsistente Darstellung zu verleihen.|
+|[CPathT::MatchSpec](#matchspec)|Rufen Sie diese Methode auf, um den Pfad nach einer Zeichenfolge zu durchsuchen, die einen Platzhalterübereinstimmungstyp enthält.|
+|[CPathT::QuoteSpaces](#quotespaces)|Rufen Sie diese Methode auf, um den Pfad in Anführungszeichen einzuschließen, wenn er Leerzeichen enthält.|
+|[CPathT::RelativePathTo](#relativepathto)|Rufen Sie diese Methode auf, um einen relativen Pfad von einer Datei oder einem Ordner zu einem anderen zu erstellen.|
+|[CPathT::RemoveArgs](#removeargs)|Rufen Sie diese Methode auf, um alle Befehlszeilenargumente aus dem Pfad zu entfernen.|
+|[CPathT::RemoveBackslash](#removebackslash)|Rufen Sie diese Methode auf, um den nachgestellten umgekehrten Schrägstrich aus dem Pfad zu entfernen.|
+|[CPathT::RemoveBlanks](#removeblanks)|Rufen Sie diese Methode auf, um alle führenden und nachfolgenden Leerzeichen aus dem Pfad zu entfernen.|
+|[CPathT::RemoveExtension](#removeextension)|Rufen Sie diese Methode auf, um die Dateierweiterung aus dem Pfad zu entfernen, falls vorhanden.|
+|[CPathT::RemoveFileSpec](#removefilespec)|Rufen Sie diese Methode auf, um den nachfolgenden Dateinamen und umgekehrten Schrägstrich aus dem Pfad zu entfernen, sofern er sie enthält.|
+|[CPathT::RenameExtension](#renameextension)|Rufen Sie diese Methode auf, um die Dateinamenerweiterung im Pfad durch eine neue Erweiterung zu ersetzen. Wenn der Dateiname keine Erweiterung enthält, wird die Erweiterung an das Ende der Zeichenfolge angehängt.|
+|[CPathT::SkipRoot](#skiproot)|Rufen Sie diese Methode auf, um einen Pfad zu analysieren, wobei der Laufwerkbuchstabe oder die UNC-Server-/Freigabepfadteile ignoriert werden.|
+|[CPathT::StripPath](#strippath)|Rufen Sie diese Methode auf, um den Pfadteil eines vollqualifizierten Pfads und Dateinamens zu entfernen.|
+|[CPathT::StripToRoot](#striptoroot)|Rufen Sie diese Methode auf, um alle Teile des Pfads mit Ausnahme der Stamminformationen zu entfernen.|
+|[CPathT::UnquoteSpaces](#unquotespaces)|Rufen Sie diese Methode auf, um Anführungszeichen vom Anfang und Ende eines Pfads zu entfernen.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cpatht:: Operator const StringType &](#operator_const_stringtype_amp)|Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.|
-|[Cpatht:: Operator cpatht::P cxstr](#operator_cpatht__pcxstr)|Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.|
-|[Cpatht:: Operator StringType-&](#operator_stringtype_amp)|Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.|
-|[Cpatht:: Operator + =](#operator_add_eq)|Dieser Operator Fügt eine Zeichenfolge an den Pfad an.|
+|[CPathT::operator const StringType &](#operator_const_stringtype_amp)|Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.|
+|[CPathT::operator CPathT::PCXSTR](#operator_cpatht__pcxstr)|Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.|
+|[CPathT::operator StringType &](#operator_stringtype_amp)|Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.|
+|[CPathT::Operator +=](#operator_add_eq)|Dieser Operator fügt eine Zeichenfolge an den Pfad an.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cpatht:: m_strPath](#m_strpath)|Der Pfad.|
+|[CPathT::m_strPath](#m_strpath)|Der Pfad.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CPath`, `CPathA` und `CPathW` sind Instanziierungen von `CPathT` wie folgt definiert:
+`CPath`, `CPathA`und `CPathW` sind Instanziierungen wie `CPathT` folgt definiert:
 
 `typedef CPathT< CString > CPath;`
 
@@ -158,25 +158,25 @@ Die ATL/MFC-Zeichen folgen Klasse, die für den Pfad verwendet werden soll (sieh
 
 `typedef CPathT< CStringW > CPathW;`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlpath. h
+**Kopfzeile:** atlpath.h
 
-##  <a name="addbackslash"></a>Cpatht:: addbackschräg Strich
+## <a name="cpathtaddbackslash"></a><a name="addbackslash"></a>CPathT::AddBackslash
 
-Rufen Sie diese Methode auf, um einen umgekehrten Schrägstrich am Ende einer Zeichenfolge hinzuzufügen, um die korrekte Syntax für einen Pfad zu erstellen. Wenn der Pfad bereits einen nachfolgenden umgekehrten Schrägstrich enthält, wird kein umgekehrter Schrägstrich hinzugefügt.
+Rufen Sie diese Methode auf, um am Ende einer Zeichenfolge einen umgekehrten Schrägstrich hinzuzufügen, um die richtige Syntax für einen Pfad zu erstellen. Wenn der Pfad bereits einen nachgestellten umgekehrten Schrägstrich hat, wird kein umgekehrter Schrägstrich hinzugefügt.
 
-```
+```cpp
 void AddBackslash();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathaddbackschräg Strich](/windows/win32/api/shlwapi/nf-shlwapi-pathaddbackslashw).
+Weitere Informationen finden Sie unter [PathAddBackSlash](/windows/win32/api/shlwapi/nf-shlwapi-pathaddbackslashw).
 
-##  <a name="addextension"></a>Cpatht:: AddExtension
+## <a name="cpathtaddextension"></a><a name="addextension"></a>CPathT::AddExtension
 
-Mit dieser Methode können Sie einem Pfad eine Dateierweiterung hinzufügen.
+Rufen Sie diese Methode auf, um einem Pfad eine Dateierweiterung hinzuzufügen.
 
 ```
 BOOL AddExtension(PCXSTR pszExtension);
@@ -184,20 +184,20 @@ BOOL AddExtension(PCXSTR pszExtension);
 
 ### <a name="parameters"></a>Parameter
 
-*pszextension*<br/>
-Die hinzu zufügende Dateierweiterung.
+*pszExtension*<br/>
+Die hinzuzufügende Dateierweiterung.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathaddextension](/windows/win32/api/shlwapi/nf-shlwapi-pathaddextensionw).
+Weitere Informationen finden Sie unter [PathAddExtension](/windows/win32/api/shlwapi/nf-shlwapi-pathaddextensionw).
 
-##  <a name="append"></a>Cpatht:: Append
+## <a name="cpathtappend"></a><a name="append"></a>CPathT::Anfügen
 
-Rufen Sie diese Methode auf, um eine Zeichenfolge an den aktuellen Pfad anzufügen.
+Rufen Sie diese Methode auf, um eine Zeichenfolge an den aktuellen Pfad anzuhängen.
 
 ```
 BOOL Append(PCXSTR pszMore);
@@ -205,69 +205,69 @@ BOOL Append(PCXSTR pszMore);
 
 ### <a name="parameters"></a>Parameter
 
-*pszmore*<br/>
+*pszMehr*<br/>
 Die anzufügende Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [PathAppend](/windows/win32/api/shlwapi/nf-shlwapi-pathappendw).
 
-##  <a name="buildroot"></a>Cpatht:: Buildroot
+## <a name="cpathtbuildroot"></a><a name="buildroot"></a>CPathT::BuildRoot
 
-Rufen Sie diese Methode auf, um einen Stammpfad aus einer angegebenen Laufwerk Nummer zu erstellen.
+Rufen Sie diese Methode auf, um einen Stammpfad aus einer bestimmten Laufwerknummer zu erstellen.
 
-```
+```cpp
 void BuildRoot(int iDrive);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*IDrive*<br/>
-Die Laufwerksnummer (0 ist a:, 1 ist B: usw.).
+*Idrive*<br/>
+Die Laufwerksnummer (0 ist A:, 1 ist B:, usw.).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathbuildroot](/windows/win32/api/shlwapi/nf-shlwapi-pathbuildrootw).
+Weitere Informationen finden Sie unter [PathBuildRoot](/windows/win32/api/shlwapi/nf-shlwapi-pathbuildrootw).
 
-##  <a name="canonicalize"></a>Cpatht:: Canonicalize
+## <a name="cpathtcanonicalize"></a><a name="canonicalize"></a>CPathT::Canonicalize
 
-Mit dieser Methode wird der Pfad in eine kanonische Form konvertiert.
+Rufen Sie diese Methode auf, um den Pfad in kanonische Form zu konvertieren.
 
-```
+```cpp
 void Canonicalize();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathcanonicalize](/windows/win32/api/shlwapi/nf-shlwapi-pathcanonicalizew).
+Weitere Informationen finden Sie unter [PathCanonicalize](/windows/win32/api/shlwapi/nf-shlwapi-pathcanonicalizew).
 
-##  <a name="combine"></a>Cpatht:: Combine
+## <a name="cpathtcombine"></a><a name="combine"></a>CPathT::Kombinieren
 
-Diese Methode wird aufgerufen, um eine Zeichenfolge zu verketten, die einen Verzeichnisnamen und eine Zeichenfolge darstellt, die einen Dateipfadnamen in einem Pfad darstellt.
+Rufen Sie diese Methode auf, um eine Zeichenfolge, die einen Verzeichnisnamen darstellt, und eine Zeichenfolge, die einen Dateipfadnamen darstellt, in einem Pfad zu verketten.
 
-```
+```cpp
 void Combine(PCXSTR pszDir, PCXSTR  pszFile);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pszdir*<br/>
+*pszDir*<br/>
 Der Verzeichnispfad.
 
 *pszFile*<br/>
 Der Dateipfad.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathcombine](/windows/win32/api/shlwapi/nf-shlwapi-pathcombinew).
+Weitere Informationen finden Sie unter [PathCombine](/windows/win32/api/shlwapi/nf-shlwapi-pathcombinew).
 
-##  <a name="commonprefix"></a>Cpatht:: commonprefix
+## <a name="cpathtcommonprefix"></a><a name="commonprefix"></a>CPathT::CommonPrefix
 
-Ruft diese Methode auf, um zu bestimmen, ob der angegebene Pfad ein gemeinsames Präfix mit dem aktuellen Pfad hat.
+Rufen Sie diese Methode auf, um zu bestimmen, ob der angegebene Pfad ein gemeinsames Präfix mit dem aktuellen Pfad verwendet.
 
 ```
 CPathT<StringType> CommonPrefix(PCXSTR pszOther);
@@ -275,20 +275,20 @@ CPathT<StringType> CommonPrefix(PCXSTR pszOther);
 
 ### <a name="parameters"></a>Parameter
 
-*pszother*<br/>
-Der Pfad, der mit dem aktuellen verglichen werden soll.
+*pszOther*<br/>
+Der Pfad, der mit dem aktuellen zu vergleichen ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das gemeinsame Präfix zurück.
+Gibt das allgemeine Präfix zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Präfix ist einer der folgenden Typen: "C: \\ \\", ".", "..", ". \\ \\ ". Weitere Informationen finden Sie unter [pathcommonprefix](/windows/win32/api/shlwapi/nf-shlwapi-pathcommonprefixw).
+Ein Präfix ist einer der folgenden\\\\Typen: "C: ", ".", "..", ".. \\\\". Weitere Informationen finden Sie unter [PathCommonPrefix](/windows/win32/api/shlwapi/nf-shlwapi-pathcommonprefixw).
 
-##  <a name="compactpath"></a>Cpatht:: compactpath
+## <a name="cpathtcompactpath"></a><a name="compactpath"></a>CPathT::CompactPath
 
-Mit dieser Methode können Sie einen Dateipfad für eine bestimmte Pixel Breite abschneiden, indem Sie Pfad Komponenten durch Ellipsen ersetzen.
+Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Pixelbreite passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.
 
 ```
 BOOL CompactPath(HDC hDC, UINT nWidth);
@@ -296,23 +296,23 @@ BOOL CompactPath(HDC hDC, UINT nWidth);
 
 ### <a name="parameters"></a>Parameter
 
-*HDC*<br/>
-Der Gerätekontext, der für Schriftart Metriken verwendet wird.
+*Hdc*<br/>
+Der Gerätekontext, der für Schriftartmetriken verwendet wird.
 
-*nwidth*<br/>
-Die Breite in Pixel, in die die Zeichenfolge eingefügt werden soll.
+*nWidth*<br/>
+Die Breite in Pixel, in die die Zeichenfolge passen muss.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathcompactpath](/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathw).
+Weitere Informationen finden Sie unter [PathCompactPath](/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathw).
 
-##  <a name="compactpathex"></a>Cpatht:: compactpathex
+## <a name="cpathtcompactpathex"></a><a name="compactpathex"></a>CPathT::CompactPathEx
 
-Ruft diese Methode auf, um einen Dateipfad für eine bestimmte Anzahl von Zeichen abzuschneiden, indem Pfad Komponenten durch Ellipsen ersetzt werden.
+Rufen Sie diese Methode auf, um einen Dateipfad zu abschneiden, der in eine bestimmte Anzahl von Zeichen passt, indem Pfadkomponenten durch Auslassungspunkte ersetzt werden.
 
 ```
 BOOL CompactPathEx(UINT nMaxChars, DWORD dwFlags = 0);
@@ -320,21 +320,21 @@ BOOL CompactPathEx(UINT nMaxChars, DWORD dwFlags = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*nmaxchars*<br/>
-Die maximale Anzahl von Zeichen, die in der neuen Zeichenfolge enthalten sein sollen, einschließlich des abschließenden NULL-Zeichens.
+*nMaxChars*<br/>
+Die maximale Anzahl von Zeichen, die in der neuen Zeichenfolge enthalten sein sollen, einschließlich des beendenden NULL-Zeichens.
 
 *dwFlags*<br/>
 Reserviert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathcompactpathex](/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathexw).
+Weitere Informationen finden Sie unter [PathCompactPathEx](/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathexw).
 
-##  <a name="cpatht"></a>Cpatht:: cpatht
+## <a name="cpathtcpatht"></a><a name="cpatht"></a>CPathT::CPathT
 
 Der Konstruktor.
 
@@ -346,15 +346,15 @@ CPathT() throw();
 
 ### <a name="parameters"></a>Parameter
 
-*pszpath*<br/>
-Der Zeiger auf eine Pfad Zeichenfolge.
+*pszPath*<br/>
+Der Zeiger auf eine Pfadzeichenfolge.
 
 *path*<br/>
-Die Pfad Zeichenfolge.
+Die Pfadzeichenfolge.
 
-##  <a name="fileexists"></a>Cpatht:: fileexistiert
+## <a name="cpathtfileexists"></a><a name="fileexists"></a>CPathT::FileExists
 
-Mit dieser Methode können Sie überprüfen, ob die Datei mit diesem Pfadnamen vorhanden ist.
+Rufen Sie diese Methode auf, um zu überprüfen, ob die Datei unter diesem Pfadnamen vorhanden ist.
 
 ```
 BOOL FileExists() const;
@@ -362,15 +362,15 @@ BOOL FileExists() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn die Datei vorhanden ist, andernfalls false.
+Gibt TRUE zurück, wenn die Datei vorhanden ist, ANDERNFALLS FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathfilevorhanden](/windows/win32/api/shlwapi/nf-shlwapi-pathfileexistsw).
+Weitere Informationen finden Sie unter [PathFileExists](/windows/win32/api/shlwapi/nf-shlwapi-pathfileexistsw).
 
-##  <a name="findextension"></a>Cpatht:: findextension
+## <a name="cpathtfindextension"></a><a name="findextension"></a>CPathT::FindExtension
 
-Ruft diese Methode auf, um die Position der Dateierweiterung innerhalb des Pfads zu ermitteln.
+Rufen Sie diese Methode auf, um die Position der Dateierweiterung innerhalb des Pfads zu finden.
 
 ```
 int FindExtension() const;
@@ -378,15 +378,15 @@ int FindExtension() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Position des "." vor der Erweiterung zurück. Wenn keine Erweiterung gefunden wird, wird-1 zurückgegeben.
+Gibt die Position des "." vor der Erweiterung zurück. Wenn keine Erweiterung gefunden wird, gibt -1 zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathfindextension](/windows/win32/api/shlwapi/nf-shlwapi-pathfindextensionw).
+Weitere Informationen finden Sie unter [PathFindExtension](/windows/win32/api/shlwapi/nf-shlwapi-pathfindextensionw).
 
-##  <a name="findfilename"></a>Cpatht:: findfilename
+## <a name="cpathtfindfilename"></a><a name="findfilename"></a>CPathT::FindFileName
 
-Ruft diese Methode auf, um die Position des Datei namens innerhalb des Pfads zu ermitteln.
+Rufen Sie diese Methode auf, um die Position des Dateinamens innerhalb des Pfads zu finden.
 
 ```
 int FindFileName() const;
@@ -394,15 +394,15 @@ int FindFileName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Position des Datei namens zurück. Wenn kein Dateiname gefunden wird, wird-1 zurückgegeben.
+Gibt die Position des Dateinamens zurück. Wenn kein Dateiname gefunden wird, gibt -1 zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathfindfilename](/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew).
+Weitere Informationen finden Sie unter [PathFindFileName](/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew).
 
-##  <a name="getdrivenumber"></a>Cpatht:: getdrivenumschlag
+## <a name="cpathtgetdrivenumber"></a><a name="getdrivenumber"></a>CPathT::GetDriveNumber
 
-Mit dieser Methode können Sie den Pfad nach einem Laufwerksbuchstaben innerhalb des Bereichs von "a" bis "Z" Durchsuchen und die entsprechende Laufwerksnummer zurückgeben.
+Rufen Sie diese Methode auf, um den Pfad nach einem Laufwerkbuchstaben im Bereich von 'A' bis 'Z' zu durchsuchen und die entsprechende Laufwerksnummer zurückzugeben.
 
 ```
 int GetDriveNumber() const;
@@ -410,15 +410,15 @@ int GetDriveNumber() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Laufwerksnummer als Ganzzahl zwischen 0 und 25 zurück (entspricht "A" bis "Z"), wenn der Pfad einen Laufwerk Buchstaben aufweist, andernfalls "-1".
+Gibt die Laufwerksnummer als ganze Zahl von 0 bis 25 (entsprechend "A" bis "Z") zurück, wenn der Pfad einen Laufwerkbuchstaben hat, oder -1 andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathgetdrivenumschlag](/windows/win32/api/shlwapi/nf-shlwapi-pathgetdrivenumberw).
+Weitere Informationen finden Sie unter [PathGetDriveNumber](/windows/win32/api/shlwapi/nf-shlwapi-pathgetdrivenumberw).
 
-##  <a name="getextension"></a>Cpatht:: GetExtension
+## <a name="cpathtgetextension"></a><a name="getextension"></a>CPathT::GetExtension
 
-Mit dieser Methode können Sie die Dateierweiterung aus dem Pfad abrufen.
+Rufen Sie diese Methode auf, um die Dateierweiterung aus dem Pfad abzurufen.
 
 ```
 StringType GetExtension() const;
@@ -428,9 +428,9 @@ StringType GetExtension() const;
 
 Gibt die Dateierweiterung zurück.
 
-##  <a name="isdirectory"></a>Cpatht:: IsDirectory
+## <a name="cpathtisdirectory"></a><a name="isdirectory"></a>CPathT::IsDirectory
 
-Mit dieser Methode können Sie überprüfen, ob der Pfad ein gültiges Verzeichnis ist.
+Rufen Sie diese Methode auf, um zu überprüfen, ob der Pfad ein gültiges Verzeichnis ist.
 
 ```
 BOOL IsDirectory() const;
@@ -438,15 +438,15 @@ BOOL IsDirectory() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Wert ungleich 0 (null) zurück, wenn der Pfad ein Verzeichnis ist, andernfalls false.
+Gibt einen Wert ungleich Null (16) zurück, wenn der Pfad ein Verzeichnis ist, andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathisdirectory](/windows/win32/api/shlwapi/nf-shlwapi-pathisdirectoryw).
+Weitere Informationen finden Sie unter [PathIsDirectory](/windows/win32/api/shlwapi/nf-shlwapi-pathisdirectoryw).
 
-##  <a name="isfilespec"></a>Cpatht:: isfilespec
+## <a name="cpathtisfilespec"></a><a name="isfilespec"></a>CPathT::IsFileSpec
 
-Mit dieser Methode können Sie einen Pfad nach beliebigen Pfad Begrenzungs Zeichen (z. b. ': ' oder ' \\ ') durchsuchen. Wenn keine Pfad Trennzeichen vorhanden sind, wird der Pfad als dateispezifikations Pfad betrachtet.
+Rufen Sie diese Methode auf, um einen Pfad nach Pfadtrennzeichen\\zu durchsuchen (z. B. ':' oder ' ' ). Wenn keine Pfadabgrenzungszeichen vorhanden sind, wird der Pfad als Dateispezifikationspfad betrachtet.
 
 ```
 BOOL IsFileSpec() const;
@@ -454,15 +454,15 @@ BOOL IsFileSpec() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn keine Pfad Trennzeichen innerhalb des Pfads vorhanden sind, oder false, wenn Pfad Trennzeichen vorhanden sind.
+Gibt TRUE zurück, wenn sich keine Pfadtrennzeichen innerhalb des Pfads befinden, oder FALSE, wenn Pfadtrennzeichen vorhanden sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathisfilespec](/windows/win32/api/shlwapi/nf-shlwapi-pathisfilespecw).
+Weitere Informationen finden Sie unter [PathIsFileSpec](/windows/win32/api/shlwapi/nf-shlwapi-pathisfilespecw).
 
-##  <a name="isprefix"></a>Cpatht:: iationfix
+## <a name="cpathtisprefix"></a><a name="isprefix"></a>CPathT::IsPrefix
 
-Ruft diese Methode auf, um zu bestimmen, ob ein Pfad ein gültiges Präfix des von *pszprefix*weiter gegebenen Typs enthält.
+Rufen Sie diese Methode auf, um zu bestimmen, ob ein Pfad ein gültiges Präfix des Typs enthält, der von *pszPrefix*übergeben wird.
 
 ```
 BOOL IsPrefix(PCXSTR pszPrefix) const;
@@ -470,20 +470,20 @@ BOOL IsPrefix(PCXSTR pszPrefix) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pszprefix*<br/>
-Das Präfix, nach dem gesucht werden soll. Ein Präfix ist einer der folgenden Typen: "C: \\ \\", ".", "..", ". \\ \\ ".
+*pszPrefix*<br/>
+Das Präfix, nach dem gesucht werden soll. Ein Präfix ist einer der folgenden\\\\Typen: "C: ", ".", "..", ".. \\\\".
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" zurück, wenn der Pfad das Präfix enthält, andernfalls "false".
+Gibt TRUE zurück, wenn der Pfad das Präfix enthält, oder FALSE andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthistreufix](/windows/win32/api/shlwapi/nf-shlwapi-pathisprefixw)".
+Weitere Informationen finden Sie unter [PathIsPrefix](/windows/win32/api/shlwapi/nf-shlwapi-pathisprefixw).
 
-##  <a name="isrelative"></a>Cpatht:: IsRelative
+## <a name="cpathtisrelative"></a><a name="isrelative"></a>CPathT::IsRelative
 
-Ruft diese Methode auf, um zu bestimmen, ob der Pfad relativ ist.
+Rufen Sie diese Methode auf, um zu bestimmen, ob der Pfad relativ ist.
 
 ```
 BOOL IsRelative() const;
@@ -491,15 +491,15 @@ BOOL IsRelative() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" zurück, wenn der Pfad relativ ist, oder "false", wenn es absolut ist.
+Gibt TRUE zurück, wenn der Pfad relativ ist, oder FALSE, wenn er absolut ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathisrelative](/windows/win32/api/shlwapi/nf-shlwapi-pathisrelativew).
+Weitere Informationen finden Sie unter [PathIsRelative](/windows/win32/api/shlwapi/nf-shlwapi-pathisrelativew).
 
-##  <a name="isroot"></a>Cpatht:: IsRoot
+## <a name="cpathtisroot"></a><a name="isroot"></a>CPathT::IsRoot
 
-Ruft diese Methode auf, um zu bestimmen, ob der Pfad ein Verzeichnis Stamm ist.
+Rufen Sie diese Methode auf, um zu bestimmen, ob es sich bei dem Pfad um einen Verzeichnisstamm handelt.
 
 ```
 BOOL IsRoot() const;
@@ -507,15 +507,15 @@ BOOL IsRoot() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn der Pfad ein root ist, andernfalls false.
+Gibt TRUE zurück, wenn der Pfad ein Stamm ist, oder FALSE andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathisroot](/windows/win32/api/shlwapi/nf-shlwapi-pathisrootw).
+Weitere Informationen finden Sie unter [PathIsRoot](/windows/win32/api/shlwapi/nf-shlwapi-pathisrootw).
 
-##  <a name="issameroot"></a>Cpatht:: issameroot
+## <a name="cpathtissameroot"></a><a name="issameroot"></a>CPathT::IsSameRoot
 
-Ruft diese Methode auf, um zu bestimmen, ob ein anderer Pfad über eine gemeinsame Stamm Komponente mit dem aktuellen Pfad verfügt.
+Rufen Sie diese Methode auf, um zu bestimmen, ob ein anderer Pfad eine gemeinsame Stammkomponente mit dem aktuellen Pfad enthält.
 
 ```
 BOOL IsSameRoot(PCXSTR pszOther) const;
@@ -523,20 +523,20 @@ BOOL IsSameRoot(PCXSTR pszOther) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pszother*<br/>
+*pszOther*<br/>
 Der andere Pfad.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn beide Zeichen folgen die gleiche Stamm Komponente aufweisen, andernfalls false.
+Gibt TRUE zurück, wenn beide Zeichenfolgen dieselbe Stammkomponente haben, andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthissameroot](/windows/win32/api/shlwapi/nf-shlwapi-pathissamerootw)".
+Weitere Informationen finden Sie unter [PathIsSameRoot](/windows/win32/api/shlwapi/nf-shlwapi-pathissamerootw).
 
-##  <a name="isunc"></a>Cpatht:: IsUnc
+## <a name="cpathtisunc"></a><a name="isunc"></a>CPathT::IsUNC
 
-Verwenden Sie diese Methode, um zu bestimmen, ob der Pfad ein gültiger UNC-Pfad (Universal Naming Convention) für einen Server und eine Freigabe ist.
+Rufen Sie diese Methode auf, um zu bestimmen, ob es sich bei dem Pfad um einen gültigen UNC-Pfad (Universal Naming Convention) für einen Server und eine Freigabe handelt.
 
 ```
 BOOL IsUNC() const;
@@ -544,15 +544,15 @@ BOOL IsUNC() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn der Pfad ein gültiger UNC-Pfad ist, andernfalls false.
+Gibt TRUE zurück, wenn es sich bei dem Pfad um einen gültigen UNC-Pfad handelt, oder FALSE andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [PathIsUNC](/windows/win32/api/shlwapi/nf-shlwapi-pathisuncw).
 
-##  <a name="isuncserver"></a>Cpatht:: isuncserver
+## <a name="cpathtisuncserver"></a><a name="isuncserver"></a>CPathT::IsUNCServer
 
-Mit dieser Methode können Sie feststellen, ob es sich bei dem Pfad um einen gültigen UNC-Pfad (Universal Naming Convention) für einen Server handelt.
+Rufen Sie diese Methode auf, um zu bestimmen, ob es sich bei dem Pfad nur um einen gültigen UNC-Pfad (Universal Naming Convention) für einen Server handelt.
 
 ```
 BOOL IsUNCServer() const;
@@ -560,15 +560,15 @@ BOOL IsUNCServer() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn die Zeichenfolge ein gültiger UNC-Pfad für einen Server ist (kein Freigabe Name), andernfalls false.
+Gibt TRUE zurück, wenn es sich bei der Zeichenfolge um einen gültigen UNC-Pfad nur für einen Server (kein Freigabename) oder FALSE auf andere Weise handelt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathisuncserver](/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserverw).
+Weitere Informationen finden Sie unter [PathIsUNCServer](/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserverw).
 
-##  <a name="isuncservershare"></a>Cpatht:: isuncservershare
+## <a name="cpathtisuncservershare"></a><a name="isuncservershare"></a>CPathT::IsUNCServerShare
 
-Verwenden Sie diese Methode, um zu bestimmen, ob der Pfad ein gültiger UNC-Freigabe Pfad (Universal Naming Convention) ist, \\ \ *Server* \ *Freigabe*.
+Rufen Sie diese Methode auf, um zu bestimmen, ob es \\ \ sich bei dem Pfad um einen gültigen UNC-Freigabepfad (Universal Naming Convention) *handelt.*\ *share*
 
 ```
 BOOL IsUNCServerShare() const;
@@ -576,13 +576,13 @@ BOOL IsUNCServerShare() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn sich der Pfad im Formular \\ \ *Server* \ *Freigabe*befindet, andernfalls false.
+Gibt TRUE zurück, wenn \\ \ sich der Pfad in der *Formularserverfreigabe*\ *share*befindet, oder FALSE andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathisuncservershare](/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserversharew).
+Weitere Informationen finden Sie unter [PathIsUNCServerShare](/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserversharew).
 
-##  <a name="m_strpath"></a>Cpatht:: m_strPath
+## <a name="cpathtm_strpath"></a><a name="m_strpath"></a>CPathT::m_strPath
 
 Der Pfad.
 
@@ -590,13 +590,13 @@ Der Pfad.
 StringType m_strPath;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`StringType` ist der Vorlagen Parameter, der `CPathT` werden soll.
+`StringType`ist der Vorlagenparameter für `CPathT`.
 
-##  <a name="makepretty"></a>Cpatht:: makepretty
+## <a name="cpathtmakepretty"></a><a name="makepretty"></a>CPathT::MakePretty
 
-Mit dieser Methode wird ein Pfad in alle Kleinbuchstaben konvertiert, um dem Pfad eine konsistente Darstellung zu übergeben.
+Rufen Sie diese Methode auf, um einen Pfad zu allen Kleinbuchstaben zu konvertieren, um dem Pfad eine konsistente Darstellung zu verleihen.
 
 ```
 BOOL MakePretty();
@@ -604,15 +604,15 @@ BOOL MakePretty();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn der Pfad konvertiert wurde, andernfalls false.
+Gibt TRUE zurück, wenn der Pfad konvertiert wurde, oder FALSE andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathmakepretty](/windows/win32/api/shlwapi/nf-shlwapi-pathmakeprettyw).
+Weitere Informationen finden Sie unter [PathMakePretty](/windows/win32/api/shlwapi/nf-shlwapi-pathmakeprettyw).
 
-##  <a name="matchspec"></a>Cpatht:: matchspec
+## <a name="cpathtmatchspec"></a><a name="matchspec"></a>CPathT::MatchSpec
 
-Mit dieser Methode können Sie den Pfad nach einer Zeichenfolge suchen, die einen Platzhalter Übereinstimmungs Typen enthält.
+Rufen Sie diese Methode auf, um den Pfad nach einer Zeichenfolge zu durchsuchen, die einen Platzhalterübereinstimmungstyp enthält.
 
 ```
 BOOL MatchSpec(PCXSTR pszSpec) const;
@@ -620,20 +620,20 @@ BOOL MatchSpec(PCXSTR pszSpec) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pszspec*<br/>
-Zeiger auf eine mit NULL endenden Zeichenfolge mit dem Dateityp, der durchsucht werden soll. Um beispielsweise zu testen, ob es sich bei der Datei im aktuellen Pfad um eine doc-Datei handelt, sollte *pszspec* auf "*. doc" festgelegt werden.
+*pszSpec*<br/>
+Zeiger auf eine null-terminierte Zeichenfolge mit dem Dateityp, nach dem gesucht werden soll. Um beispielsweise zu testen, ob es sich bei der Datei im aktuellen Pfad um eine DOC-Datei handelt, sollte *pszSpec* auf "*.doc" festgelegt werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn die Zeichenfolge übereinstimmt, andernfalls false.
+Gibt TRUE zurück, wenn die Zeichenfolge übereinstimmt, oder FALSE andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [PathMatchSpec](/windows/win32/api/shlwapi/nf-shlwapi-pathmatchspecw).
 
-##  <a name="operator_add_eq"></a>Cpatht:: Operator + =
+## <a name="cpathtoperator-"></a><a name="operator_add_eq"></a>CPathT::Operator +=
 
-Dieser Operator Fügt eine Zeichenfolge an den Pfad an.
+Dieser Operator fügt eine Zeichenfolge an den Pfad an.
 
 ```
 CPathT<StringType>& operator+=(PCXSTR pszMore);
@@ -641,14 +641,14 @@ CPathT<StringType>& operator+=(PCXSTR pszMore);
 
 ### <a name="parameters"></a>Parameter
 
-*pszmore*<br/>
+*pszMehr*<br/>
 Die anzufügende Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt den aktualisierten Pfad zurück.
 
-##  <a name="operator_const_stringtype_amp"></a>Cpatht:: Operator const StringType &amp;
+## <a name="cpathtoperator-const-stringtype-amp"></a><a name="operator_const_stringtype_amp"></a>CPathT::operator const StringType&amp;
 
 Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.
 
@@ -658,9 +658,9 @@ operator const StringType&() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt eine Zeichenfolge zurück, die den aktuellen, von diesem-Objekt verwalteten Pfad darstellt.
+Gibt eine Zeichenfolge zurück, die den aktuellen Pfad darstellt, der von diesem Objekt verwaltet wird.
 
-##  <a name="operator_cpatht__pcxstr"></a>Cpatht:: Operator cpatht::P cxstr
+## <a name="cpathtoperator-cpathtpcxstr"></a><a name="operator_cpatht__pcxstr"></a>CPathT::operator CPathT::PCXSTR
 
 Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.
 
@@ -670,9 +670,9 @@ operator PCXSTR() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt eine Zeichenfolge zurück, die den aktuellen, von diesem-Objekt verwalteten Pfad darstellt.
+Gibt eine Zeichenfolge zurück, die den aktuellen Pfad darstellt, der von diesem Objekt verwaltet wird.
 
-##  <a name="operator_stringtype_amp"></a>Cpatht:: Operator StringType-&amp;
+## <a name="cpathtoperator-stringtype-amp"></a><a name="operator_stringtype_amp"></a>CPathT::operator StringType&amp;
 
 Mit diesem Operator kann das Objekt wie eine Zeichenfolge behandelt werden.
 
@@ -682,45 +682,45 @@ operator StringType&() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt eine Zeichenfolge zurück, die den aktuellen, von diesem-Objekt verwalteten Pfad darstellt.
+Gibt eine Zeichenfolge zurück, die den aktuellen Pfad darstellt, der von diesem Objekt verwaltet wird.
 
-##  <a name="pcxstr"></a>Cpatht::P cxstr
+## <a name="cpathtpcxstr"></a><a name="pcxstr"></a>CPathT::PCXSTR
 
-Ein konstanter Zeichen folgertyp.
+Ein konstanter Zeichenfolgentyp.
 
 ```
 typedef StringType::PCXSTR PCXSTR;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`StringType` ist der Vorlagen Parameter, der `CPathT` werden soll.
+`StringType`ist der Vorlagenparameter für `CPathT`.
 
-##  <a name="pxstr"></a>Cpatht::P xstr
+## <a name="cpathtpxstr"></a><a name="pxstr"></a>CPathT::PXSTR
 
-Ein Zeichen Folgentyp.
+Ein Zeichenfolgentyp.
 
 ```
 typedef StringType::PXSTR PXSTR;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`StringType` ist der Vorlagen Parameter, der `CPathT` werden soll.
+`StringType`ist der Vorlagenparameter für `CPathT`.
 
-##  <a name="quotespaces"></a>Cpatht:: quotespaces
+## <a name="cpathtquotespaces"></a><a name="quotespaces"></a>CPathT::QuoteSpaces
 
-Mit dieser Methode können Sie den Pfad in Anführungszeichen einschließen, wenn er Leerzeichen enthält.
+Rufen Sie diese Methode auf, um den Pfad in Anführungszeichen einzuschließen, wenn er Leerzeichen enthält.
 
-```
+```cpp
 void QuoteSpaces();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathquotespaces](/windows/win32/api/shlwapi/nf-shlwapi-pathquotespacesw).
+Weitere Informationen finden Sie unter [PathQuoteSpaces](/windows/win32/api/shlwapi/nf-shlwapi-pathquotespacesw).
 
-##  <a name="relativepathto"></a>Cpatht:: RelativePathTo
+## <a name="cpathtrelativepathto"></a><a name="relativepathto"></a>CPathT::RelativePathTo
 
 Rufen Sie diese Methode auf, um einen relativen Pfad von einer Datei oder einem Ordner zu einem anderen zu erstellen.
 
@@ -734,77 +734,77 @@ BOOL RelativePathTo(
 
 ### <a name="parameters"></a>Parameter
 
-*pszfrom*<br/>
+*pszVon*<br/>
 Der Anfang des relativen Pfads.
 
-*dwattrfrom*<br/>
-Die Dateiattribute von *pszfrom*. Wenn dieser Wert FILE_ATTRIBUTE_DIRECTORY enthält, wird davon ausgegangen, dass *pszfrom* ein Verzeichnis ist. Andernfalls wird davon ausgegangen, dass *pszfrom* eine Datei ist.
+*dwAttrVon*<br/>
+Die Dateiattribute von *pszFrom*. Wenn dieser Wert FILE_ATTRIBUTE_DIRECTORY enthält, wird *pszFrom* als Verzeichnis angenommen. Andernfalls wird *pszFrom* als Datei angenommen.
 
-*pszto*<br/>
+*pszTo*<br/>
 Der Endpunkt des relativen Pfads.
 
-*dwattrto*<br/>
-Die Dateiattribute von *pszto*. Wenn dieser Wert FILE_ATTRIBUTE_DIRECTORY enthält, wird davon ausgegangen, dass *pszto* ein Verzeichnis ist. Andernfalls wird davon ausgegangen, dass es sich bei *pszto* um eine Datei handelt.
+*dwAttrTo*<br/>
+Die Dateiattribute von *pszTo*. Wenn dieser Wert FILE_ATTRIBUTE_DIRECTORY enthält, wird *von pszTo* als Verzeichnis angenommen. Andernfalls wird *pszTo* als Datei angenommen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathrelativepathto](/windows/win32/api/shlwapi/nf-shlwapi-pathrelativepathtow).
+Weitere Informationen finden Sie unter [PathRelativePathTo](/windows/win32/api/shlwapi/nf-shlwapi-pathrelativepathtow).
 
-##  <a name="removeargs"></a>Cpatht:: removeargs
+## <a name="cpathtremoveargs"></a><a name="removeargs"></a>CPathT::RemoveArgs
 
-Diese Methode wird aufgerufen, um alle Befehlszeilenargumente aus dem Pfad zu entfernen.
+Rufen Sie diese Methode auf, um alle Befehlszeilenargumente aus dem Pfad zu entfernen.
 
-```
+```cpp
 void RemoveArgs();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthremuveargs](/windows/win32/api/shlwapi/nf-shlwapi-pathremoveargsw)".
+Weitere Informationen finden Sie unter [PathRemoveArgs](/windows/win32/api/shlwapi/nf-shlwapi-pathremoveargsw).
 
-##  <a name="removebackslash"></a>Cpatht:: removebackschräg Strich
+## <a name="cpathtremovebackslash"></a><a name="removebackslash"></a>CPathT::RemoveBackslash
 
-Mit dieser Methode wird der nachfolgende umgekehrte Schrägstrich aus dem Pfad entfernt.
+Rufen Sie diese Methode auf, um den nachgestellten umgekehrten Schrägstrich aus dem Pfad zu entfernen.
 
-```
+```cpp
 void RemoveBackslash();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthremuvebackschräg Strich](/windows/win32/api/shlwapi/nf-shlwapi-pathremovebackslashw)".
+Weitere Informationen finden Sie unter [PathRemoveBackslash](/windows/win32/api/shlwapi/nf-shlwapi-pathremovebackslashw).
 
-##  <a name="removeblanks"></a>Cpatht:: removeblank
+## <a name="cpathtremoveblanks"></a><a name="removeblanks"></a>CPathT::RemoveBlanks
 
-Diese Methode wird aufgerufen, um alle führenden und nachfolgenden Leerzeichen aus dem Pfad zu entfernen.
+Rufen Sie diese Methode auf, um alle führenden und nachfolgenden Leerzeichen aus dem Pfad zu entfernen.
 
-```
+```cpp
 void RemoveBlanks();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthremuveblank](/windows/win32/api/shlwapi/nf-shlwapi-pathremoveblanksw)".
+Weitere Informationen finden Sie unter [PathRemoveBlanks](/windows/win32/api/shlwapi/nf-shlwapi-pathremoveblanksw).
 
-##  <a name="removeextension"></a>Cpatht:: removeextension
+## <a name="cpathtremoveextension"></a><a name="removeextension"></a>CPathT::RemoveExtension
 
-Mit dieser Methode können Sie die Dateierweiterung aus dem Pfad entfernen, sofern vorhanden.
+Rufen Sie diese Methode auf, um die Dateierweiterung aus dem Pfad zu entfernen, falls vorhanden.
 
-```
+```cpp
 void RemoveExtension();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthremuveextension](/windows/win32/api/shlwapi/nf-shlwapi-pathremoveextensionw)".
+Weitere Informationen finden Sie unter [PathRemoveExtension](/windows/win32/api/shlwapi/nf-shlwapi-pathremoveextensionw).
 
-##  <a name="removefilespec"></a>Cpatht:: removefilespec
+## <a name="cpathtremovefilespec"></a><a name="removefilespec"></a>CPathT::RemoveFileSpec
 
-Mit dieser Methode können Sie den nachfolgenden Dateinamen und den umgekehrten Schrägstrich aus dem Pfad entfernen, wenn Sie diesen haben.
+Rufen Sie diese Methode auf, um den nachfolgenden Dateinamen und umgekehrten Schrägstrich aus dem Pfad zu entfernen, sofern er sie enthält.
 
 ```
 BOOL RemoveFileSpec();
@@ -812,15 +812,15 @@ BOOL RemoveFileSpec();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter " [pthremuvefilespec](/windows/win32/api/shlwapi/nf-shlwapi-pathremovefilespecw)".
+Weitere Informationen finden Sie unter [PathRemoveFileSpec](/windows/win32/api/shlwapi/nf-shlwapi-pathremovefilespecw).
 
-##  <a name="renameextension"></a>Cpatht:: renameextension
+## <a name="cpathtrenameextension"></a><a name="renameextension"></a>CPathT::RenameExtension
 
-Mit dieser Methode können Sie die Dateinamenerweiterung im Pfad durch eine neue Erweiterung ersetzen. Wenn der Dateiname keine Erweiterung enthält, wird die Erweiterung am Ende des Pfads angefügt.
+Rufen Sie diese Methode auf, um die Dateinamenerweiterung im Pfad durch eine neue Erweiterung zu ersetzen. Wenn der Dateiname keine Erweiterung enthält, wird die Erweiterung an das Ende des Pfads angehängt.
 
 ```
 BOOL RenameExtension(PCXSTR pszExtension);
@@ -828,20 +828,20 @@ BOOL RenameExtension(PCXSTR pszExtension);
 
 ### <a name="parameters"></a>Parameter
 
-*pszextension*<br/>
+*pszExtension*<br/>
 Die neue Dateinamenerweiterung, der ein "."-Zeichen vorangestellt ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathrenameextension](/windows/win32/api/shlwapi/nf-shlwapi-pathrenameextensionw).
+Weitere Informationen finden Sie unter [PathRenameExtension](/windows/win32/api/shlwapi/nf-shlwapi-pathrenameextensionw).
 
-##  <a name="skiproot"></a>Cpatht:: skiproot
+## <a name="cpathtskiproot"></a><a name="skiproot"></a>CPathT::SkipRoot
 
-Mit dieser Methode können Sie einen Pfad analysieren, wobei der Laufwerk Buchstabe bzw. UNC-Server/Freigabe Pfad Teile ignoriert werden.
+Rufen Sie diese Methode auf, um einen Pfad zu analysieren, wobei der Laufwerkbuchstabe oder die UNC-Server-/Freigabepfadteile ignoriert werden.
 
 ```
 int SkipRoot() const;
@@ -849,27 +849,27 @@ int SkipRoot() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Position des Anfangs des untergeordneten Pfads zurück, der auf den Stamm folgt (Laufwerk Buchstabe oder UNC-Server/-Freigabe).
+Gibt die Position des Anfangs des Unterpfads zurück, der dem Stamm folgt (Laufwerkbuchstabe oder UNC-Server/Freigabe).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathskiproot](/windows/win32/api/shlwapi/nf-shlwapi-pathskiprootw).
+Weitere Informationen finden Sie unter [PathSkipRoot](/windows/win32/api/shlwapi/nf-shlwapi-pathskiprootw).
 
-##  <a name="strippath"></a>Cpatht:: strippath
+## <a name="cpathtstrippath"></a><a name="strippath"></a>CPathT::StripPath
 
-Diese Methode wird aufgerufen, um den Pfadteil eines voll qualifizierten Pfads und Datei namens zu entfernen.
+Rufen Sie diese Methode auf, um den Pfadteil eines vollqualifizierten Pfads und Dateinamens zu entfernen.
 
-```
+```cpp
 void StripPath();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathstrippath](/windows/win32/api/shlwapi/nf-shlwapi-pathstrippathw).
+Weitere Informationen finden Sie unter [PathStripPath](/windows/win32/api/shlwapi/nf-shlwapi-pathstrippathw).
 
-##  <a name="striptoroot"></a>Cpatht:: striptor
+## <a name="cpathtstriptoroot"></a><a name="striptoroot"></a>CPathT::StripToRoot
 
-Mit dieser Methode können Sie alle Teile des Pfades außer den Stamm Informationen entfernen.
+Rufen Sie diese Methode auf, um alle Teile des Pfads mit Ausnahme der Stamminformationen zu entfernen.
 
 ```
 BOOL StripToRoot();
@@ -877,25 +877,25 @@ BOOL StripToRoot();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn ein gültiger Laufwerk Buchstabe im Pfad gefunden wurde, andernfalls false.
+Gibt TRUE zurück, wenn ein gültiger Laufwerkbuchstabe im Pfad gefunden wurde, oder FALSE auf andere Weise.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathstriptorioot](/windows/win32/api/shlwapi/nf-shlwapi-pathstriptorootw).
+Weitere Informationen finden Sie unter [PathStripToRoot](/windows/win32/api/shlwapi/nf-shlwapi-pathstriptorootw).
 
-##  <a name="unquotespaces"></a>Cpatht:: unquotespaces
+## <a name="cpathtunquotespaces"></a><a name="unquotespaces"></a>CPathT::UnquoteSpaces
 
-Mit dieser Methode können Sie Anführungszeichen am Anfang und am Ende eines Pfades entfernen.
+Rufen Sie diese Methode auf, um Anführungszeichen vom Anfang und Ende eines Pfads zu entfernen.
 
-```
+```cpp
 void UnquoteSpaces();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [pathunquotespaces](/windows/win32/api/shlwapi/nf-shlwapi-pathunquotespacesw).
+Weitere Informationen finden Sie unter [PathUnquoteSpaces](/windows/win32/api/shlwapi/nf-shlwapi-pathunquotespacesw).
 
-##  <a name="xchar"></a>Cpatht:: xchar
+## <a name="cpathtxchar"></a><a name="xchar"></a>CPathT::XCHAR
 
 Ein Zeichentyp.
 
@@ -903,11 +903,11 @@ Ein Zeichentyp.
 typedef StringType::XCHAR XCHAR;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`StringType` ist der Vorlagen Parameter, der `CPathT` werden soll.
+`StringType`ist der Vorlagenparameter für `CPathT`.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../atl/reference/atl-classes.md)<br/>
 [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md)

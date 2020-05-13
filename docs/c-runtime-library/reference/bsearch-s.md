@@ -1,8 +1,9 @@
 ---
 title: bsearch_s
-ms.date: 10/22/2019
+ms.date: 4/2/2020
 api_name:
 - bsearch_s
+- _o_bsearch_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - arrays [CRT], binary search
 - bsearch_s function
 ms.assetid: d5690d5e-6be3-4f1d-aa0b-5ca6dbded276
-ms.openlocfilehash: fc86576dbbe73f63da6bf0e28e7166ef7c552e55
-ms.sourcegitcommit: 0a5518fdb9d87fcc326a8507ac755936285fcb94
+ms.openlocfilehash: 91b015eb9005a9b447cdd9d74a38d7169bd90a73
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72811144"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913396"
 ---
 # <a name="bsearch_s"></a>bsearch_s
 
@@ -52,19 +54,19 @@ void *bsearch_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel* \
+*key*\
 Zeiger auf den Schlüssel, nach dem gesucht werden soll.
 
-*base*\
+*sock*\
 Ein Zeiger auf die Basis der Suchdaten.
 
-*Anzahl*\
+*number*\
 Anzahl der Elemente.
 
 *Breite*\
 Breite der Elemente.
 
-*vergleichen*\
+*vergleichbar*\
 Rückruffunktion, die zwei Elemente vergleicht. Das erste Argument ist der *Kontext* Zeiger. Das zweite Argument ist ein Zeiger auf den *Schlüssel* für die Suche. Das dritte Argument ist ein Zeiger auf das Array Element, das mit *Key*verglichen werden soll.
 
 *Kontext*\
@@ -80,15 +82,15 @@ Wenn ungültige Parameter an die Funktion übergeben werden, ruft Sie den Handle
 
 |||||||
 |-|-|-|-|-|-|
-|*key*|*base*|*compare*|*einigen*|*width*|**errno**|
-|**NULL**|any|any|any|any|**EINVAL**|
-|any|**NULL**|any|!= 0|any|**EINVAL**|
-|any|any|any|any|= 0|**EINVAL**|
-|any|any|**NULL**|eine|any|**EINVAL**|
+|*key*|*base*|*vergleichbar*|*Zahl*|*width*|**errno**|
+|**Normal**|any|any|any|any|**Eingabe**|
+|any|**Normal**|any|!= 0|any|**Eingabe**|
+|any|any|any|any|= 0|**Eingabe**|
+|any|any|**Normal**|ein|any|**Eingabe**|
 
 ## <a name="remarks"></a>Hinweise
 
-Die **bsearch_s** -Funktion führt eine binäre Suche eines sortierten Arrays von *Zahlen* Elementen durch, wobei jede *Breite* Byte groß ist. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *Key* ist der Wert, der gesucht wird. Der *Compare* -Parameter ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Array Element vergleicht und einen der folgenden Werte zurückgibt, die die zugehörige Beziehung angeben:
+Die **bsearch_s** -Funktion führt eine binäre Suche eines sortierten Arrays aus *Zahlen* Elementen durch, wobei jede *Breite* Byte groß ist. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *Key* ist der Wert, der gesucht wird. Der *Compare* -Parameter ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Array Element vergleicht und einen der folgenden Werte zurückgibt, die die zugehörige Beziehung angeben:
 
 |Von der *Vergleichs* Routine zurückgegebener Wert|Beschreibung|
 |-----------------------------------------|-----------------|
@@ -96,11 +98,13 @@ Die **bsearch_s** -Funktion führt eine binäre Suche eines sortierten Arrays vo
 |0|Schlüssel und Arrayelement sind gleich.|
 |> 0|Der Schlüssel ist größer als das Arrayelement.|
 
-Der *Kontext* Zeiger kann nützlich sein, wenn die durchsuchte Datenstruktur Teil eines Objekts ist und die Vergleichsfunktion auf Member des Objekts zugreifen muss. Mit der *Compare* -Funktion kann der void-Zeiger in den entsprechenden Objekttyp umgewandelt und auf Member des Objekts zugegriffen werden. Durch das Hinzufügen des *Kontext* Parameters wird **bsearch_s** sicherer, da zusätzlicher Kontext verwendet werden kann, um Fehler beim erneuten eintreten zu vermeiden, die mit der Verwendung statischer Variablen zur Bereitstellung von Daten für die *Vergleichs* Funktion einhergehen.
+Der *Kontext* Zeiger kann nützlich sein, wenn die durchsuchte Datenstruktur Teil eines Objekts ist und die Vergleichsfunktion auf Member des Objekts zugreifen muss. Mit der *Compare* -Funktion kann der void-Zeiger in den entsprechenden Objekttyp umgewandelt und auf Member des Objekts zugegriffen werden. Durch das Hinzufügen des *Kontext* Parameters wird **bsearch_s** sicherer, da zusätzlicher Kontext verwendet werden kann, um Fehler beim erneuten eintreten zu vermeiden, die mit der Verwendung statischer Variablen zum Bereitstellen von Daten für die *Vergleichs* Funktion einhergehen.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**bsearch_s**|\<stdlib.h> und \<search.h>|
 
@@ -108,7 +112,7 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm sortiert ein Zeichenfolgenarray mit [qsort_s](qsort-s.md)und verwendet anschließend bsearch_s, um nach dem Wort „Katze“ zu suchen.
+Dieses Programm sortiert ein Zeichenfolgenarray mit [qsort_s](qsort-s.md) und verwendet anschließend „bsearch_s“, um nach dem Wort „cat“ zu suchen.
 
 ```cpp
 // crt_bsearch_s.cpp
@@ -192,7 +196,7 @@ cat cow dog goat horse human pig rat
 cat found at 002F0F04
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Suchen und Sortieren](../../c-runtime-library/searching-and-sorting.md)\
 [_lfind](lfind.md)\

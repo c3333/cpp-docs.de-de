@@ -1,9 +1,11 @@
 ---
 title: _chdir, _wchdir
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wchdir
 - _chdir
+- _o__chdir
+- _o__wchdir
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +38,12 @@ helpviewer_keywords:
 - chdir function
 - directories [C++], changing
 ms.assetid: 85e9393b-62ac-45d5-ab2a-fa2217f6152e
-ms.openlocfilehash: 2b54e0978626779be21900e543a546bfae05efe2
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a54b42ee92392971fdb6979ee2dc3a3b9c65f184
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939369"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917040"
 ---
 # <a name="_chdir-_wchdir"></a>_chdir, _wchdir
 
@@ -74,9 +77,11 @@ Die **_chdir** -Funktion ändert das aktuelle Arbeitsverzeichnis in das Verzeich
 _chdir("c:\temp");
 ```
 
-Wenn Sie den optionalen umgekehrten Schrägstrich ( **&#92;** ) in Pfaden verwenden, müssen Sie zwei umgekehrte Schrägstriche ( **&#92;** ) in einem C-Zeichenfolgenliteralzeichen platzieren, um einen einzelnen umgekehrten Schrägstrich ( **&#92;** ) darzustellen.
+Wenn Sie den optionalen umgekehrten Schrägstrich (**&#92;**) in Pfaden verwenden, müssen Sie zwei umgekehrte Schrägstriche (**&#92;&#92;**) in einem C-Zeichenfolgenliteralzeichen platzieren, um einen einzelnen umgekehrten Schrägstrich (**&#92;**) darzustellen.
 
 **_wchdir** ist eine breit Zeichen Version von **_chdir**. Das *dirname* -Argument für **_wchdir** ist eine Zeichenfolge mit breit Zeichen. **_wchdir** und **_chdir** Verhalten sich andernfalls identisch.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mapping"></a>Zuordnung generischer Textroutinen:
 
@@ -86,12 +91,12 @@ Wenn Sie den optionalen umgekehrten Schrägstrich ( **&#92;** ) in Pfaden verwen
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_chdir**|\<direct.h>|\<errno.h>|
 |**_wchdir**|\<direct.h> oder \<wchar.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -152,7 +157,7 @@ Directory of c:\windows
                0 Dir(s)  67,326,029,824 bytes free
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
 [_mkdir, _wmkdir](mkdir-wmkdir.md)<br/>

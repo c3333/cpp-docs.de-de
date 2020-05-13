@@ -1,11 +1,15 @@
 ---
 title: atoi, _atoi_l, _wtoi, _wtoi_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wtoi
 - _wtoi_l
 - atoi
 - _atoi_l
+- _o__atoi_l
+- _o__wtoi
+- _o__wtoi_l
+- _o_atoi
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +23,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -44,12 +49,12 @@ helpviewer_keywords:
 - atoi function
 - wtoi function
 ms.assetid: ad7fda30-28ab-421f-aaad-ef0b8868663a
-ms.openlocfilehash: 8d66a219aea1451e745e32f7affbfb59b73ff796
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b8be8af9fc56eea0011e5b07c1573dfe848b6c7d
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70943734"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919863"
 ---
 # <a name="atoi-_atoi_l-_wtoi-_wtoi_l"></a>atoi, _atoi_l, _wtoi, _wtoi_l
 
@@ -76,7 +81,7 @@ int _wtoi_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -84,9 +89,9 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt den **int** -Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert für " **atoi** " und " **_wtoi**" ist 0, wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
+Jede Funktion gibt den **int** -Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert ist 0 für **die-und** - **_wtoi**, wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
 
-Im Fall eines Überlaufs mit großen negativen ganzzahligen Werten wird **LONG_MIN** zurückgegeben. " **atoi** " und " **_wtoi** " geben bei diesen Bedingungen **INT_MAX** und **INT_MIN** zurück. In allen Fällen außerhalb des gültigen Bereichs wird **errno** auf **ERANGE**festgelegt. Wenn der übergebenen Parameter **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben 0 zurück.
+Im Fall eines Überlaufs mit großen negativen ganzzahligen Werten wird **LONG_MIN** zurückgegeben. die _wtoi **-und** - **_wtoi** geben **INT_MAX** zurück und **INT_MIN** auf diese Bedingungen. In allen Fällen außerhalb des gültigen Bereichs wird **errno** auf **ERANGE**festgelegt. Wenn der übergebenen Parameter **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben 0 zurück.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -100,6 +105,8 @@ Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert wer
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
@@ -112,7 +119,7 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 |Routinen|Erforderlicher Header|
 |--------------|---------------------|
 |**atoi**|\<stdlib.h>|
-|**_atoi_l**, **_wtoi**, **_wtoi_l**|\<stdlib.h> oder \<wchar.h>|
+|**_atoi_l**, **_wtoi** **_wtoi_l**|\<stdlib.h> oder \<wchar.h>|
 
 ## <a name="example"></a>Beispiel
 
@@ -162,7 +169,7 @@ Function: atoi( "3336402735171707160320" ) = 2147483647
 Overflow condition occurred.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

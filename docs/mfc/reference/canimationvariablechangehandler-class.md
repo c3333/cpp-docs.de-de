@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CAnimationVariableChangeHandler [MFC], OnValueChanged
 - CAnimationVariableChangeHandler [MFC], SetAnimationController
 ms.assetid: 2ea4996d-5c04-4dfc-be79-d42d55050795
-ms.openlocfilehash: 7f45fdad00bacf56e2ee8c30b76e99d626902534
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2dc8f2c03f9df34012fb9db1ed5e5b0bb448b17f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377087"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755038"
 ---
 # <a name="canimationvariablechangehandler-class"></a>CAnimationVariableChangeHandler-Klasse
 
@@ -55,7 +55,7 @@ Dieser Ereignishandler wird erstellt `IUIAnimationVariable::SetVariableChangeHan
 
 `CAnimationVariableChangeHandler`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -93,7 +93,7 @@ Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein
 
 Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.
 
-```
+```cpp
 void SetAnimationController(CAnimationController* pAnimationController);
 ```
 
@@ -102,6 +102,6 @@ void SetAnimationController(CAnimationController* pAnimationController);
 *pAnimationController*<br/>
 Ein Zeiger auf den Animationscontroller, der Ereignisse empfängt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

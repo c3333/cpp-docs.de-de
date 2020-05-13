@@ -1,17 +1,17 @@
 ---
-title: Module (C++ com-Attribut)
+title: Modul (C++ COM-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.module
 helpviewer_keywords:
 - module attributes
 ms.assetid: 02223b2a-62b5-4262-832f-564b1e11e58e
-ms.openlocfilehash: e93073a1728063038ddd4e28dbb313854ee3c8c5
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9d4f9e23aaf182e28930ba3a4462b07533ba9015
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166691"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754380"
 ---
 # <a name="module-c"></a>module (C++)
 
@@ -26,54 +26,54 @@ Definiert den Bibliotheksblock in der IDL-Datei.
 ### <a name="parameters"></a>Parameter
 
 *type*<br/>
-Optionale Kann eines der folgenden sein:
+(Optional) Kann einer der folgenden sein:
 
-- `dll` fügt Funktionen und Klassen hinzu, mit denen die resultierende DLL als in-Process-COM-Server fungieren kann. Dies ist der Standardwert.
+- `dll`Fügt Funktionen und Klassen hinzu, mit denen die resultierende DLL als prozessinterner COM-Server funktionieren kann. Dies ist der Standardwert.
 
-- `exe` fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als out-of-Process-COM-Server fungieren kann.
+- `exe`Fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als out of Process COM-Server funktionieren kann.
 
-- `service` fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als NT-Dienst fungieren kann.
+- `service`Fügt Funktionen und Klassen hinzu, die es der resultierenden ausführbaren Datei ermöglichen, als NT-Dienst zu funktionieren.
 
-- `unspecified` deaktiviert die Injektion von ATL-Code im Zusammenhang mit dem Modul Attribut: der Einschleusung der ATL-Modul Klasse, der globalen Instanz _AtlModule und der Einstiegspunkt Funktionen. Einfügen von ATL-Code aufgrund von anderen Attributen im Projekt wird nicht deaktiviert.
+- `unspecified`Deaktiviert die Injektion von ATL-Code im Zusammenhang mit dem Modulattribut: die Injektion der ATL-Modulklasse, die globale Instanz _AtlModule und Einstiegspunktfunktionen. Einfügen von ATL-Code aufgrund von anderen Attributen im Projekt wird nicht deaktiviert.
 
 *name*<br/>
-Optionale Der Name des Bibliotheks Blocks.
+(Optional) Der Name des Bibliotheksblocks.
 
 *version*<br/>
-Optionale Die Versionsnummer, die Sie dem Bibliotheks Block zuweisen möchten. Der Standardwert ist 1,0.
+(Optional) Die Versionsnummer, die Sie dem Bibliotheksblock zuweisen möchten. Der Standardwert ist 1,0.
 
-*uuid*<br/>
-Eindeutige ID für die Bibliothek. Wenn Sie diesen Parameter weglassen, wird automatisch eine ID für die Bibliothek generiert. Möglicherweise müssen Sie die *UUID* des Bibliotheks Blocks abrufen. dazu können Sie den Bezeichner **__uuidof (** *Libraryname* **)** verwenden.
+*Uuid*<br/>
+Eindeutige ID für die Bibliothek. Wenn Sie diesen Parameter weglassen, wird automatisch eine ID für die Bibliothek generiert. Wenn Sie die *uuid* des Bibliotheksblocks abrufen müssen, können Sie dies mithilfe des Bezeichners **__uuidof (** *libraryname* **)**.
 
-*lcid*<br/>
+*Lcid*<br/>
 Der Lokalisierungsparameter. Weitere Informationen finden Sie unter [lcid](/windows/win32/Midl/lcid) .
 
-*Steuerelement*<br/>
-Optionale Gibt an, dass alle Co-Klassen in der Bibliothek Steuerelemente sind.
+*Steuerung*<br/>
+(Optional) Gibt an, dass alle Co-Klassen in der Bibliothek Steuerelemente sind.
 
 *helpstring*<br/>
 Gibt die Typbibliothek an.
 
 *helpstringdll*<br/>
-Optionale Legt den Namen der DLL-Datei fest, die zum Ausführen einer Dokument Zeichen folgen Suche verwendet werden soll. Weitere Informationen finden Sie unter [helpstringdll](/windows/win32/Midl/helpstringdll) .
+(Optional) Legt den Namen der DLL-Datei fest, die zum Ausführen einer Dokumentzeichenfolgensuche verwendet werden soll. Weitere Informationen finden Sie unter [helpstringdll](/windows/win32/Midl/helpstringdll) .
 
-*helpfile*<br/>
-Optionale Der Name der **Hilfe** Datei für die Typbibliothek.
+*Helpfile*<br/>
+(Optional) Der Name der **Hilfedatei** für die Typbibliothek.
 
-*helpcontext*<br/>
-Optionale Die **Hilfe-ID** für diese Typbibliothek.
+*Helpcontext*<br/>
+(Optional) Die **Hilfe-ID** für diese Typbibliothek.
 
 *helpstringcontext*<br/>
-Optionale Weitere Informationen finden Sie unter [helpstringcontext](helpstringcontext.md) .
+(Optional) Weitere Informationen finden Sie unter [helpstringcontext.](helpstringcontext.md)
 
-*hidden*<br/>
-Optionale Verhindert, dass die gesamte Bibliothek angezeigt wird. Dies ist für die Verwendung mit Steuerelementen vorgesehen. Hosts müssen eine neue Typbibliothek erstellen, die das Steuerelement mit erweiterten Eigenschaften umschließt. Weitere Informationen finden Sie unter [hidden](/windows/win32/Midl/hidden) MIDL-Attribut.
+*Versteckte*<br/>
+(Optional) Verhindert, dass die gesamte Bibliothek angezeigt wird. Dies ist für die Verwendung mit Steuerelementen vorgesehen. Hosts müssen eine neue Typbibliothek erstellen, die das Steuerelement mit erweiterten Eigenschaften umschließt. Weitere Informationen finden Sie unter [hidden](/windows/win32/Midl/hidden) MIDL-Attribut.
 
-*restricted*<br/>
-Optionale Member der Bibliothek können nicht willkürlich aufgerufen werden. Weitere Informationen finden Sie unter [restricted](/windows/win32/Midl/restricted) MIDL-Attribut.
+*Beschränkt*<br/>
+(Optional) Mitglieder der Bibliothek können nicht willkürlich aufgerufen werden. Weitere Informationen finden Sie unter [restricted](/windows/win32/Midl/restricted) MIDL-Attribut.
 
-*custom*<br/>
-Optionale Ein oder mehrere Attribute; Dies ähnelt dem [benutzerdefinierten](custom-cpp.md) Attribut. Der erste Parameter für *Custom* ist die GUID des Attributs. Beispiel:
+*Benutzerdefinierte*<br/>
+(Optional) Ein oder mehrere Attribute; Dies ähnelt dem [benutzerdefinierten](custom-cpp.md) Attribut. Der erste zu *benutzerdefinierte* Parameter ist die GUID des Attributs. Beispiel:
 
 ```
 [module(custom={guid,1}, custom={guid1,2})]
@@ -93,21 +93,21 @@ Ein Bibliotheksblock wird erstellt, wenn Sie zusätzlich zum **module** -Attribu
 
 Pro IDL-Datei ist ein Bibliotheksblock zulässig. Mehrere Modul-Einträge im Quellcode werden zusammengeführt und die neuesten Parameterwerte werden implementiert.
 
-Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert sich das Verhalten des Attributs. Zusätzlich zum obigen Verhalten fügt das Attribut auch ein globales Objekt (mit dem Namen `_AtlModule`) des richtigen Typs und zusätzlichen Unterstützungs Codes ein. Wenn das Attribut eigenständig ist, wird eine von dem richtigen Modultyp abgeleitete Klasse eingefügt. Wenn das Attribut auf eine Klasse angewendet wird, wird eine Basisklasse des richtigen Modultyps hinzugefügt. Der richtige Typ wird durch den Wert des *Typparameters* bestimmt:
+Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert sich das Verhalten des Attributs. Zusätzlich zu dem obigen Verhalten fügt das Attribut `_AtlModule`auch ein globales Objekt (genannt ) des richtigen Typs und zusätzlichen Supportcode ein. Wenn das Attribut eigenständig ist, wird eine von dem richtigen Modultyp abgeleitete Klasse eingefügt. Wenn das Attribut auf eine Klasse angewendet wird, wird eine Basisklasse des richtigen Modultyps hinzugefügt. Der richtige Typ wird durch den Wert des *Typparameters* bestimmt:
 
-- `type` = **dll**
+- `type` = **Dll**
 
-   [CAtlDllModuleT](../../atl/reference/catldllmodulet-class.md) dient als Basisklasse und als für einen COM-Server erforderliche Standard-DLL-Einstiegspunkte. Diese Einstiegspunkte sind [DllMain](/windows/win32/Dlls/dllmain), [DllRegisterServer](/windows/win32/api/olectl/nf-olectl-dllregisterserver), [DllUnRegisterServer](/windows/win32/api/olectl/nf-olectl-dllunregisterserver), [DllCanUnloadNow](/windows/win32/api/combaseapi/nf-combaseapi-dllcanunloadnow)und [DllGetClassObject](/previous-versions//dd797891\(v=vs.85\)).
+   [CAtlDllModuleT](../../atl/reference/catldllmodulet-class.md) dient als Basisklasse und als für einen COM-Server erforderliche Standard-DLL-Einstiegspunkte. Diese Einstiegspunkte sind [DllMain](/windows/win32/Dlls/dllmain), [DllRegisterServer](/windows/win32/api/olectl/nf-olectl-dllregisterserver), [DllUnRegisterServer](/windows/win32/api/olectl/nf-olectl-dllunregisterserver), [DllCanUnloadNow](/windows/win32/api/combaseapi/nf-combaseapi-dllcanunloadnow)und [DllGetClassObject](/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject).
 
 - `type` = **exe**
 
    [CAtlExeModuleT](../../atl/reference/catlexemodulet-class.md) dient als Basisklasse und ausführbarer Standardeinstiegspunkt [WinMain](/windows/win32/api/winbase/nf-winbase-winmain).
 
-- `type` = **service**
+- `type` = **Service**
 
    [CAtlServiceModuleT](../../atl/reference/catlservicemodulet-class.md) dient als Basisklasse und ausführbarer Standardeinstiegspunkt [WinMain](/windows/win32/api/winbase/nf-winbase-winmain).
 
-- `type` = **unspecified**
+- `type` = **Unspecified**
 
    Deaktiviert die Einfügung von ATL-Code im Zusammenhang mit dem Modulattribut.
 
@@ -152,8 +152,8 @@ BOOL WINAPI DllMain(DWORD dwReason, LPVOID lpReserved) {
 
 |||
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Anwendungsbereich**|Überall|
+|**Wiederholbare**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -164,10 +164,10 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Typedef-, Enum-, Union- und Strukturattribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [usesgetlasterror](usesgetlasterror.md)<br/>
-[fern](/windows/win32/Midl/library)<br/>
-[helpcontext](helpcontext.md)<br/>
+[Bibliothek](/windows/win32/Midl/library)<br/>
+[Helpcontext](helpcontext.md)<br/>
 [helpstring](helpstring.md)<br/>
-[helpfile](helpfile.md)<br/>
+[Helpfile](helpfile.md)<br/>
 [version](version-cpp.md)

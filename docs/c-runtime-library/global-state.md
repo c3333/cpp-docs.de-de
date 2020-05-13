@@ -3,12 +3,12 @@ title: Globaler Zustand in der CRT
 ms.date: 04/02/2020
 helpviewer_keywords:
 - CRT global state
-ms.openlocfilehash: 487418da104b2edbc45b5d3a664e4385394ada31
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1b32e8d4f23d2361a52a9b81150ef7c5c7422761
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377599"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81745343"
 ---
 # <a name="global-state-in-the-crt"></a>Globaler Zustand in der CRT
 
@@ -20,8 +20,8 @@ Der globale Status der UCRT wird nicht zwischen Anwendungen und dem Betriebssyst
 
 In der UCRT haben Funktionen, die mit dem globalen Zustand `_o_`interagieren, eine "Zwillingsfunktion" mit dem Präfix . Beispiel:
 
-    `setlocale()` affects global state specific to the app.
-    `_o_setlocale()` affects global state shared by all OS components, but not apps.
+- `setlocale()`wirkt sich auf den globalen Zustand aus, der für die App spezifisch ist.
+- `_o_setlocale()`wirkt sich auf den globalen Status aus, der von allen Betriebssystemkomponenten gemeinsam genutzt wird, jedoch nicht auf Apps.
 
 Der einzige Unterschied zwischen diesen "Zwillings"-Funktionen besteht darin, dass beim Lesen/Schreiben des globalen CRT-Status die OS-spezifischen Versionen (d. h. die Versionen, die mit `_o_`beginnen) die Betriebssystemkopie des globalen Status anstelle der Kopie des globalen Status der App verwenden.
 
@@ -53,6 +53,6 @@ Der globale Status, der von der Trennung von App und Betriebssystemstatus betrof
 - [fmode] (text-and-binary-mode-file-i-o.md)
 - [Zeitzoneninformationen](time-management.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C Laufzeitbibliotheksreferenz](c-run-time-library-reference.md)

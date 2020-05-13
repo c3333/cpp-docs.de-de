@@ -28,12 +28,12 @@ helpviewer_keywords:
 - COleDataObject [MFC], IsDataAvailable
 - COleDataObject [MFC], Release
 ms.assetid: d1cc84be-2e1c-4bb3-a8a0-565eb08aaa34
-ms.openlocfilehash: 5e1545a033ab482e838fbc944b0ca9b3e543d651
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8b9565382de8ae731c166f60a0d1994c1b948a7b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366134"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753910"
 ---
 # <a name="coledataobject-class"></a>COleDataObject-Klasse
 
@@ -84,7 +84,7 @@ Weitere Informationen zur Verwendung von Datenobjekten in Ihrer Anwendung finden
 
 `COleDataObject`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxole.h
 
@@ -92,7 +92,7 @@ Weitere Informationen zur Verwendung von Datenobjekten in Ihrer Anwendung finden
 
 Rufen Sie diese `COleDataObject` Funktion auf, um das Objekt einem OLE-Datenobjekt zuzuordnen.
 
-```
+```cpp
 void Attach(
     LPDATAOBJECT lpDataObject,
     BOOL bAutoRelease = TRUE);
@@ -131,7 +131,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Rufen Sie diese Funktion auf, um nachfolgende Aufrufe vorzubereiten, um `GetNextFormat` eine Liste von Datenformaten aus dem Element abzurufen.
 
-```
+```cpp
 void BeginEnumFormats();
 ```
 
@@ -288,7 +288,7 @@ Nach einem Aufruf von [COleDataObject::BeginEnumFormats](#beginenumformats)wird 
 
 Um die Verfügbarkeit eines bestimmten Formats zu überprüfen, rufen Sie [COleDataObject::IsDataAvailable](#isdataavailable)auf.
 
-Weitere Informationen finden Sie unter [IEnumXXXX::Next](/previous-versions//ms695273\(v=vs.85\)) im Windows SDK.
+Weitere Informationen finden Sie unter [IEnumXXXX::Next](/previous-versions/ms695273\(v=vs.85\)) im Windows SDK.
 
 ## <a name="coledataobjectisdataavailable"></a><a name="isdataavailable"></a>COleDataObject::IsDataverfügbar
 
@@ -328,7 +328,7 @@ Weitere Informationen finden Sie unter [RegisterClipboardFormat](/windows/win32/
 
 Rufen Sie diese Funktion auf, um den Besitz des `COleDataObject` [IDataObject-Objekts](/windows/win32/api/objidl/nn-objidl-idataobject) freizugeben, das zuvor dem Objekt zugeordnet war.
 
-```
+```cpp
 void Release();
 ```
 
@@ -336,7 +336,7 @@ void Release();
 
 Der `IDataObject` wurde dem `COleDataObject` durch `Attach` `AttachClipboard` Aufruf oder explizit oder durch das Framework zugeordnet. Wenn der *bAutoRelease-Parameter* `Attach` von `IDataObject` FALSE ist, wird das Objekt nicht freigegeben. In diesem Fall ist der Aufrufer `IDataObject` für die Freigabe der durch Aufrufen von [IUnknown::Release](/windows/win32/api/unknwn/nf-unknwn-iunknown-release)verantwortlich.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>

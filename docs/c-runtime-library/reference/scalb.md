@@ -1,9 +1,10 @@
 ---
 title: _scalb, _scalbf
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _scalb
 - _scalbf
+- _o__scalb
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +32,12 @@ helpviewer_keywords:
 - _scalbf function
 - scalb function
 ms.assetid: 148cf5a8-b405-44bf-a1f0-7487adba2421
-ms.openlocfilehash: 630a5e3db2c39cb40d31c71e6a6dfa214ed91e34
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: debb617afea26437df16150592e631461d82c6b8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948883"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918220"
 ---
 # <a name="_scalb-_scalbf"></a>_scalb, _scalbf
 
@@ -56,31 +58,33 @@ float _scalbf(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert mit doppelter Genauigkeit.
 
-*exp*<br/>
+*Exp*<br/>
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg einen Exponentialwert zurück. Bei einem Überlauf (abhängig vom Vorzeichen von *x*) gibt **_scalb** "+/- **HUGE_VAL**;" zurück. die **errno** -Variable ist auf **ERANGE**festgelegt.
+Gibt bei Erfolg einen Exponentialwert zurück. Bei einem Überlauf (abhängig vom Vorzeichen von *x*) gibt **_scalb** +/- **HUGE_VAL**; zurück. die **errno** -Variable ist auf **ERANGE**festgelegt.
 
-Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
 ## <a name="remarks"></a>Hinweise
 
 Die **_scalb** -Funktion berechnet den Wert von *x* \* 2<sup>*Exp*</sup>.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_scalb**, **_scalbf**|\<float.h>|
+|**_scalb** **_scalbf**|\<float.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldexp](ldexp.md)<br/>

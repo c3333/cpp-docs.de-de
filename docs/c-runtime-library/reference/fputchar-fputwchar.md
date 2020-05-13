@@ -1,9 +1,11 @@
 ---
 title: _fputchar, _fputwchar
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _fputchar
 - _fputwchar
+- _o__fputchar
+- _o__fputwchar
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +38,12 @@ helpviewer_keywords:
 - fputtchar function
 - _fputchar function
 ms.assetid: b92ff600-a924-4f2b-b0e7-3097ee31bdff
-ms.openlocfilehash: b78c59b937a8854d7a36355173a1ccf4f219d541
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 08997730e0ef80072e29de5bc5e7c106cb6cb9e0
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79442965"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912018"
 ---
 # <a name="_fputchar-_fputwchar"></a>_fputchar, _fputwchar
 
@@ -59,7 +62,7 @@ wint_t _fputwchar(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu schreibende Zeichen.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -68,9 +71,11 @@ Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **_fputchar**g
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Beide Funktionen schreiben das einzelne Zeichen *c* in **stdout** und verschieben den Indikator entsprechend. **_fputchar** entspricht `fputc( stdout )`. Sie entspricht auch **putchar**, wird jedoch nur als Funktion und nicht als Funktion und Makro implementiert. Anders als bei **fputc** und **putchar**sind diese Funktionen nicht mit dem ANSI-Standard kompatibel.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -78,14 +83,14 @@ Beide Funktionen schreiben das einzelne Zeichen *c* in **stdout** und verschiebe
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_fputtchar**|**_fputchar**|**_fputchar**|**_fputwchar**|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**_fputchar**|\<stdio.h>|
 |**_fputwchar**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

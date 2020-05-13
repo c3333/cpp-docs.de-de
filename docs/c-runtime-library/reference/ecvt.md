@@ -1,8 +1,9 @@
 ---
 title: _ecvt
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _ecvt
+- _o__ecvt
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - converting double numbers
 - ecvt function
 ms.assetid: a916eb05-92d1-4b5c-8563-093acdb49dc8
-ms.openlocfilehash: 9f91733c566c1782d5ccfc9a7c01e490a5915a85
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9e02be690b257842c49166e18cf551c540190388
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942047"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915092"
 ---
 # <a name="_ecvt"></a>_ecvt
 
@@ -57,10 +59,10 @@ Zu konvertierende Zahl.
 *count*<br/>
 Anzahl der gespeicherten Ziffern.
 
-*dec*<br/>
+*31.12.2012*<br/>
 Gespeicherte Position der Dezimalstelle.
 
-*sign*<br/>
+*Gebärden*<br/>
 Vorzeichen der konvertierten Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -71,15 +73,17 @@ Vorzeichen der konvertierten Zahl.
 
 Die **_ecvt** -Funktion konvertiert eine Gleit Komma Zahl in eine Zeichenfolge. Der *value* -Parameter ist die zu konvertierende Gleit Komma Zahl. Diese Funktion speichert bis zum *zählen* der Ziffern des *Werts* als Zeichenfolge und fügt ein NULL-Zeichen (' \ 0 ') an. Wenn die Anzahl der Ziffern im *Wert* die *Anzahl überschreitet,* wird die nieder wertige Ziffer gerundet. Wenn weniger als *Zähl* Ziffern vorhanden sind, wird die Zeichenfolge mit Nullen aufgefüllt.
 
-Die Gesamtanzahl von Ziffern, die von **_ecvt** zurückgegeben werden, überschreitet **_CVTBUFSIZE**nicht.
+Die Gesamtanzahl der von **_ecvt** zurückgegebenen Ziffern wird **_CVTBUFSIZE**nicht überschreiten.
 
 In der Zeichenfolge werden nur Ziffern gespeichert. Die Position des Dezimal Trennzeichens und das Vorzeichen des *Werts* können aus *Dec* abgerufen und nach dem-Befehl *signiert* werden. Der *Dec* -Parameter verweist auf einen ganzzahligen Wert, der die Position des Dezimal Trennzeichens in Bezug auf den Anfang der Zeichenfolge gibt. Der Wert 0 oder ein negativer Integer-Wert geben an, dass sich die Dezimalstelle links neben der ersten Ziffer befindet. Der *Sign* -Parameter verweist auf eine Ganzzahl, die das Vorzeichen der konvertierten Zahl angibt. Wenn der Integer-Wert 0 ist, ist die Zahl positiv. Andernfalls ist die Zahl negativ.
 
-Der Unterschied zwischen **_ecvt** und **_fcvt** ist die Interpretation des *count* -Parameters. **_ecvt** interpretiert *count* als die Gesamtanzahl der Ziffern in der Ausgabe Zeichenfolge, wohingegen **_fcvt** die Anzahl als Anzahl der Ziffern nach dem Dezimaltrennzeichen *interpretiert.*
+Der Unterschied zwischen **_ecvt** und **_fcvt** ist die Interpretation des *count* -Parameters. **_ecvt** interpretiert *count* als die Gesamtanzahl der Ziffern in der Ausgabe Zeichenfolge, während **_fcvt** die *Anzahl als Anzahl* der Ziffern nach dem Dezimaltrennzeichen interpretiert.
 
-**_ecvt** und **_fcvt** verwenden einen einzelnen statisch zugeordneten Puffer für die Konvertierung. Bei jedem Aufruf dieser Routinen wird das Ergebnis des vorherigen Aufrufs zerstört.
+**_ecvt** und **_fcvt** verwenden einen einzelnen statisch zugeordneten Puffer für die Konvertierung. Jeder Aufruf dieser Routinen zerstört das Ergebnis des vorherigen Aufrufs.
 
 Diese Funktion überprüft ihre Parameter. Wenn *Dec* oder *Sign* **null**ist oder *count* 0 ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und es wird **null** zurückgegeben.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -87,7 +91,7 @@ Diese Funktion überprüft ihre Parameter. Wenn *Dec* oder *Sign* **null**ist od
 |--------------|---------------------|
 |**_ecvt**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -118,7 +122,7 @@ int main( void )
 source: 3.1415926535   buffer: '3141592654'  decimal: 1  sign: 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

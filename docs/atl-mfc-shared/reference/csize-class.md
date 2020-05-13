@@ -11,12 +11,12 @@ helpviewer_keywords:
 - dimensions
 - CSize class
 ms.assetid: fb2cf85a-0bc1-46f8-892b-309c108b52ae
-ms.openlocfilehash: 6d1b82e3f60428e3a778709dc69de983a7f886bf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dc876781cca568a332072938bec2cda0afb2ac8b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317676"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81746973"
 ---
 # <a name="csize-class"></a>CSize-Klasse
 
@@ -62,7 +62,7 @@ Die `cx` `cy` und `SIZE` Mitglieder `CSize`von (und ) sind öffentlich. Darüber
 
 `CSize`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atltypes.h
 
@@ -139,7 +139,7 @@ Gibt einen Wert ungleich Null zurück, wenn die Größen nicht gleich sind, ande
 
 Fügt dieser `CSize`eine Größe hinzu.
 
-```
+```cpp
 void operator+=(SIZE size) throw();
 ```
 
@@ -151,7 +151,7 @@ void operator+=(SIZE size) throw();
 
 Subtrahiert eine `CSize`Größe von diesem .
 
-```
+```cpp
 void operator-=(SIZE size) throw();
 ```
 
@@ -179,11 +179,11 @@ Siehe die folgenden Beschreibungen der einzelnen Operatoren:
 
 - **Operator +(** *Punkt* **)**
 
-  Dieser Vorgang versetzt einen [POINT-Wert](/previous-versions/dd162805\(v=vs.85\)) (oder [CPoint)-Wert](../../atl-mfc-shared/reference/cpoint-class.md)um diesen `CSize` Wert. Die `cx` `cy` und Die `CSize` Member dieses `x` Werts werden den und `y` Datenelementen des `POINT` Werts hinzugefügt. Es ist analog zur Version von [CPoint::operator +,](../../atl-mfc-shared/reference/cpoint-class.md#operator_add) die einen [SIZE-Parameter](/windows/win32/api/windef/ns-windef-size) annimmt.
+  Dieser Vorgang versetzt einen [POINT-Wert](/windows/win32/api/windef/ns-windef-point) (oder [CPoint)-Wert](../../atl-mfc-shared/reference/cpoint-class.md)um diesen `CSize` Wert. Die `cx` `cy` und Die `CSize` Member dieses `x` Werts werden den und `y` Datenelementen des `POINT` Werts hinzugefügt. Es ist analog zur Version von [CPoint::operator +,](../../atl-mfc-shared/reference/cpoint-class.md#operator_add) die einen [SIZE-Parameter](/windows/win32/api/windef/ns-windef-size) annimmt.
 
 - **Operator +(** *lpRect* **)**
 
-   Dieser Vorgang versetzt einen [RECT-Wert](/previous-versions/dd162897\(v=vs.85\)) (oder [CRect)-Wert](../../atl-mfc-shared/reference/crect-class.md)um diesen `CSize` Wert. Die `cx` `cy` und Die `CSize` Member dieses `left`Werts werden `bottom` den , `RECT` `top`, `right`und den Datenmembern des Werts hinzugefügt. Es ist analog zur Version von [CRect::operator +,](../../atl-mfc-shared/reference/crect-class.md#operator_add) die einen [SIZE-Parameter](/windows/win32/api/windef/ns-windef-size) annimmt.
+   Dieser Vorgang versetzt einen [RECT-Wert](/windows/win32/api/windef/ns-windef-rect) (oder [CRect)-Wert](../../atl-mfc-shared/reference/crect-class.md)um diesen `CSize` Wert. Die `cx` `cy` und Die `CSize` Member dieses `left`Werts werden `bottom` den , `RECT` `top`, `right`und den Datenmembern des Werts hinzugefügt. Es ist analog zur Version von [CRect::operator +,](../../atl-mfc-shared/reference/crect-class.md#operator_add) die einen [SIZE-Parameter](/windows/win32/api/windef/ns-windef-size) annimmt.
 
 ### <a name="example"></a>Beispiel
 
@@ -210,11 +210,11 @@ Der vierte Operator, das unäre Minus, `CSize` ändert das Vorzeichen des Werts.
 
 - **Operator -(** *Punkt* **)**
 
-  Dieser Vorgang versetzt einen [POINT-](/previous-versions/dd162805\(v=vs.85\)) oder [CPoint-Wert](../../atl-mfc-shared/reference/cpoint-class.md) durch `CSize` die additive Umkehrung dieses Werts. Der `cx` `cy` und `CSize` dieser Wert werden von `x` `y` den und `POINT` Datenelementen des Werts subtrahiert. Es ist analog zur Version von [CPoint::operator -](../../atl-mfc-shared/reference/cpoint-class.md#operator_-) das nimmt einen [SIZE-Parameter.](/windows/win32/api/windef/ns-windef-size)
+  Dieser Vorgang versetzt einen [POINT-](/windows/win32/api/windef/ns-windef-point) oder [CPoint-Wert](../../atl-mfc-shared/reference/cpoint-class.md) durch `CSize` die additive Umkehrung dieses Werts. Der `cx` `cy` und `CSize` dieser Wert werden von `x` `y` den und `POINT` Datenelementen des Werts subtrahiert. Es ist analog zur Version von [CPoint::operator -](../../atl-mfc-shared/reference/cpoint-class.md#operator_-) das nimmt einen [SIZE-Parameter.](/windows/win32/api/windef/ns-windef-size)
 
 - **Operator -(** *lpRect* **)**
 
-  Dieser Vorgang versetzt einen [RECT-](/previous-versions/dd162897\(v=vs.85\)) oder [CRect-Wert](../../atl-mfc-shared/reference/crect-class.md) durch `CSize` die additive Umkehrung dieses Wertes. Die `cx` `cy` und die `CSize` Member dieses Werts `left` `top`werden `right`von `bottom` den , `RECT` , und den Datenmembern des Werts subtrahiert. Es ist analog zur Version von [CRect::operator -](../../atl-mfc-shared/reference/crect-class.md#operator_-) das nimmt einen [SIZE-Parameter.](/windows/win32/api/windef/ns-windef-size)
+  Dieser Vorgang versetzt einen [RECT-](/windows/win32/api/windef/ns-windef-rect) oder [CRect-Wert](../../atl-mfc-shared/reference/crect-class.md) durch `CSize` die additive Umkehrung dieses Wertes. Die `cx` `cy` und die `CSize` Member dieses Werts `left` `top`werden `right`von `bottom` den , `RECT` , und den Datenmembern des Werts subtrahiert. Es ist analog zur Version von [CRect::operator -](../../atl-mfc-shared/reference/crect-class.md#operator_-) das nimmt einen [SIZE-Parameter.](/windows/win32/api/windef/ns-windef-size)
 
 - **Operator -()**
 
@@ -224,7 +224,7 @@ Der vierte Operator, das unäre Minus, `CSize` ändert das Vorzeichen des Werts.
 
 [!code-cpp[NVC_ATLMFC_Utilities#103](../../atl-mfc-shared/codesnippet/cpp/csize-class_7.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel MDI](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

@@ -40,64 +40,64 @@ helpviewer_keywords:
 - LIST library manager option
 - /CONVERT library manager option
 ms.assetid: f56a8b85-fbdc-4c09-8d8e-00f0ffe1da53
-ms.openlocfilehash: 74b8cf198d46f83de327c68ac5f883bd75e5db80
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: de55059834a0887d487b7be38377af9984512b75
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62321448"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336404"
 ---
 # <a name="managing-a-library"></a>Verwalten einer Bibliothek
 
-Der Standardmodus für LIB ist eine Bibliothek von COFF-Objekten zu erstellen. LIB wird in diesem Modus ausgeführt, wenn Sie nicht/Extract (zum Kopieren eines Objekts in eine Datei) oder/DEF (zum Erstellen einer Importbibliothek) angeben.
+Der Standardmodus für LIB besteht darin, eine Bibliothek von COFF-Objekten zu erstellen oder zu ändern. LIB wird in diesem Modus ausgeführt, wenn Sie nicht /EXTRACT (um ein Objekt in eine Datei zu kopieren) oder /DEF (zum Erstellen einer Importbibliothek) angeben.
 
-Um eine Bibliothek von Objekten und/oder Bibliotheken zu erstellen, verwenden Sie die folgende Syntax:
+Verwenden Sie die folgende Syntax, um eine Bibliothek aus Objekten und/oder Bibliotheken zu erstellen:
 
 ```
 LIB [options...] files...
 ```
 
-Dieser Befehl erstellt eine Bibliothek aus einer oder mehreren Eingabedateien *Dateien*. Die *Dateien* COFF-Objektdateien, 32-Bit-OMF-Objektdateien oder bestehende COFF-Bibliotheken sind möglich. LIB erstellt eine Bibliothek, die alle Objekte in den angegebenen Dateien enthält. Wenn eine Eingabedatei eine 32-Bit-OMF-Objekt-Datei ist, konvertiert LIB in COFF-Format vor dem Erstellen der Bibliotheks. LIB kann kein 32-Bit-OMF-Objekt akzeptieren, die in einer Bibliothek, die von der 16-Bit-Version der LIB erstellt wird. Zum Extrahieren des Objekts müssen Sie zuerst die 16-Bit-Bibliothek verwenden. dann können Sie die Datei extrahierte Objekt als Eingabe für die 32-Bit-Bibliothek.
+Mit diesem Befehl wird eine Bibliothek aus einer oder mehreren *Eingabedateien*erstellt. Bei den *Dateien* kann es sich um COFF-Objektdateien, 32-Bit-OMF-Objektdateien oder vorhandene COFF-Bibliotheken erachten. LIB erstellt eine Bibliothek, die alle Objekte in den angegebenen Dateien enthält. Wenn es sich bei einer Eingabedatei um eine 32-Bit-OMF-Objektdatei handelt, konvertiert LIB sie in COFF, bevor die Bibliothek erstellt wird. LIB kann kein 32-Bit-OMF-Objekt akzeptieren, das sich in einer Bibliothek befindet, die von der 16-Bit-Version von LIB erstellt wurde. Sie müssen zuerst die 16-Bit-LIB verwenden, um das Objekt zu extrahieren. dann können Sie die extrahierte Objektdatei als Eingabe für die 32-Bit-LIB verwenden.
 
-In der Standardeinstellung benennt LIB Ausgabedatei mit dem Basisnamen der ersten Datei Objekt- oder Bibliotheksdateien und der Erweiterung. Lib. Die Ausgabedatei wird im aktuellen Verzeichnis abgelegt. Wenn eine Datei mit dem gleichen Namen bereits vorhanden ist, ersetzt die Ausgabedatei die vorhandene Datei an. Um eine vorhandene Bibliothek beizubehalten, verwenden Sie die/Out-Option, um einen Namen für die Ausgabedatei anzugeben.
+Standardmäßig benennt LIB die Ausgabedatei mit dem Basisnamen des ersten Objekts oder der ersten Bibliotheksdatei und der Erweiterung .lib. Die Ausgabedatei wird im aktuellen Verzeichnis abgelegt. Wenn bereits eine Datei mit demselben Namen vorhanden ist, ersetzt die Ausgabedatei die vorhandene Datei. Um eine vorhandene Bibliothek beizubehalten, verwenden Sie die Option /OUT, um einen Namen für die Ausgabedatei anzugeben.
 
-Die folgenden Optionen gelten für erstellen und Ändern einer Bibliothek:
+Die folgenden Optionen gelten für das Erstellen und Ändern einer Bibliothek:
 
-**/ LIBPATH:** *Dir*<br/>
-Überschreibt den Bibliothekspfad der Umgebung. Weitere Informationen finden Sie unter der Beschreibung des Links [/LIBPATH](libpath-additional-libpath.md) Option.
+**/LIBPATH:** *dir*<br/>
+Überschreibt den Bibliothekspfad der Umgebung. Weitere Informationen finden Sie in der Beschreibung der Option LINK [/LIBPATH.](libpath-additional-libpath.md)
 
-**/LIST**<br/>
-Zeigt Informationen über die Ausgabebibliothek an die Standardausgabe. Die Ausgabe kann in eine Datei umgeleitet werden. Sie können/List / verwenden, um den Inhalt einer vorhandenen Bibliothek zu bestimmen, ohne es zu ändern.
+**/LISTE**<br/>
+Zeigt Informationen über die Ausgabebibliothek für die Standardausgabe an. Die Ausgabe kann in eine Datei umgeleitet werden. Sie können /LIST verwenden, um den Inhalt einer vorhandenen Bibliothek zu bestimmen, ohne sie zu ändern.
 
-**/NAME:** *filename*<br/>
-Beim Erstellen einer Importbibliothek gibt den Namen der DLL für die die Importbibliothek erstellt wird.
+**/NAME:** *Dateiname*<br/>
+Gibt beim Erstellen einer Importbibliothek den Namen der DLL an, für die die Importbibliothek erstellt wird.
 
 **/NODEFAULTLIB**<br/>
-Entfernt eine oder mehrere Standardbibliotheken aus der Liste der Bibliotheken, die beim Auflösen externer Verweise durchsucht. Finden Sie unter [/NODEFAULTLIB](nodefaultlib-ignore-libraries.md) für Weitere Informationen.
+Entfernt eine oder mehrere Standardbibliotheken aus der Liste der Bibliotheken, die beim Auflösen externer Verweise durchsucht werden. Weitere Informationen finden Sie unter [/NODEFAULTLIB.](nodefaultlib-ignore-libraries.md)
 
-**/ OUT:** *Dateiname*<br/>
-Überschreibt den standardmäßigen Ausgabedateinamen. Standardmäßig wird die Ausgabebibliothek im aktuellen Verzeichnis, mit dem Basisnamen der ersten Datei Bibliothek oder Objektdatei in der Befehlszeile und die Erweiterung erstellt. Lib.
+**/OUT:** *Dateiname*<br/>
+Überschreibt den Standardausgabedateinamen. Standardmäßig wird die Ausgabebibliothek im aktuellen Verzeichnis mit dem Basisnamen der ersten Bibliothek oder Objektdatei in der Befehlszeile und der Erweiterung .lib erstellt.
 
-**/ REMOVE:** *Objekt*<br/>
-Unterdrückt das angegebene *Objekt* in der Ausgabebibliothek. LIB erstellt eine Ausgabebibliothek durch Kombinieren aller Objekte (in Objektdateien und Bibliotheken) und anschließendes Löschen aller mithilfe von/Remove angegeben.
+**/REMOVE:** *Objekt*<br/>
+Lässt das angegebene *Objekt* aus der Ausgabebibliothek aus. LIB erstellt eine Ausgabebibliothek, indem alle Objekte (in Objektdateien oder Bibliotheken) kombiniert und dann alle objekte gelöscht werden, die mit /REMOVE angegeben sind.
 
-**/ SUBSYSTEM:**{**KONSOLE** &AMP;#124; **EFI_APPLICATION** &AMP;#124; **EFI_BOOT_SERVICE_DRIVER** &AMP;#124; **EFI_ROM** &AMP;#124; **EFI_RUNTIME_DRIVER** &AMP;#124; **NATIVE** &AMP;#124; **POSIX** &AMP;#124; **WINDOWS** &AMP;#124; **WINDOWSCE**} [, #[. ##]]<br/>
-Teilt dem Betriebssystem Gewusst wie: Ausführen eines Programms erstellt, indem Sie mit der Ausgabebibliothek verknüpfen. Weitere Informationen finden Sie unter der Beschreibung des Links [/Subsystem](subsystem-specify-subsystem.md) Option.
+**/SUBSYSTEM:****"CONSOLE** &#124; **EFI_APPLICATION** &#124; EFI_APPLICATION **EFI_BOOT_SERVICE_DRIVER &#124; &#124; &#124;** EFI_ROM **&#124;** **EFI_RUNTIME_DRIVER &#124;** &#124; **NATIVE** &#124; **POSIX** &#124; **WINDOWS** &#124; **WINDOWSCE**<br/>
+Teilt dem Betriebssystem mit, wie ein Programm ausgeführt wird, das durch Verknüpfen mit der Ausgabebibliothek erstellt wurde. Weitere Informationen finden Sie in der Beschreibung der Option LINK [/SUBSYSTEM.](subsystem-specify-subsystem.md)
 
-LIB-Optionen, die in der Befehlszeile angegeben sind nicht in der Groß-/Kleinschreibung beachtet.
+Lib-Optionen, die in der Befehlszeile angegeben sind, werden nicht berücksichtigt.
 
-LIB können Sie die folgenden Bibliothek-Management-Aufgaben ausführen:
+Sie können LIB verwenden, um die folgenden Bibliotheksverwaltungsaufgaben auszuführen:
 
-- Um die Objekte in einer Bibliothek hinzufügen möchten, geben Sie den Dateinamen für die vorhandene Bibliothek und den Dateinamen für die neuen Objekte.
+- Um einer Bibliothek Objekte hinzuzufügen, geben Sie den Dateinamen für die vorhandene Bibliothek und die Dateinamen für die neuen Objekte an.
 
-- Bibliotheken zu kombinieren, geben Sie die Namen der Bibliothek. Sie können Objekte hinzufügen und Kombinieren von Bibliotheken mit einem einzigen LIB-Befehl.
+- Um Bibliotheken zu kombinieren, geben Sie die Bibliotheksdateinamen an. Sie können Objekte hinzufügen und Bibliotheken mit einem einzigen LIB-Befehl kombinieren.
 
-- Um eines Bibliothekmembers durch ein neues Objekt zu ersetzen, geben Sie die Bibliothek, die das Memberobjekt, das ersetzt werden und den Dateinamen für das neue Objekt (oder die Bibliothek, die er enthält). Wenn ein Objekt mit demselben Namen in mehr als eine Eingabedatei vorhanden ist, setzt LIB das letzte Objekt in der LIB-Befehl angegeben werden, in der Ausgabebibliothek. Wenn Sie ein Bibliothekmembers ersetzen, achten Sie darauf, dass Sie an das neue Objekt oder die Bibliothek nach der Bibliothek, die das alte Objekt enthält.
+- Um einen Bibliotheksmember durch ein neues Objekt zu ersetzen, geben Sie die Bibliothek mit dem zu ersetzenden Memberobjekt und den Dateinamen für das neue Objekt (oder die Bibliothek, die es enthält) an. Wenn ein Objekt mit demselben Namen in mehr als einer Eingabedatei vorhanden ist, legt LIB das letzte im Befehl LIB angegebene Objekt in die Ausgabebibliothek ein. Wenn Sie einen Bibliotheksmember ersetzen, müssen Sie das neue Objekt oder die neue Bibliothek nach der Bibliothek angeben, die das alte Objekt enthält.
 
-- Um ein Element aus einer Bibliothek zu löschen, verwenden Sie die/Remove-Option. LIB verarbeitet von/Remove nach der Kombination aller Eingabeobjekte, unabhängig von der Reihenfolge.
+- Um ein Mitglied aus einer Bibliothek zu löschen, verwenden Sie die Option /REMOVE. LIB verarbeitet alle Spezifikationen von /REMOVE, nachdem alle Eingabeobjekte kombiniert wurden, unabhängig von der Befehlszeilenreihenfolge.
 
 > [!NOTE]
->  Sie können nicht sowohl ein Element zu löschen und extrahieren Sie es in eine Datei in demselben Schritt. Sie müssen zuerst extrahieren Sie das Memberobjekt, das mithilfe von/Extract sind und anschließend Ausführen von LIB/Remove erneut mit. Dieses Verhalten unterscheidet sich von den 16-Bit-lib (für OMF-Bibliotheken) und in andere Microsoft-Produkte bereitgestellt.
+> Sie können ein Element nicht sowohl löschen als auch im gleichen Schritt in eine Datei extrahieren. Sie müssen zuerst das Memberobjekt mit /EXTRACT extrahieren und dann LIB erneut mit /REMOVE ausführen. Dieses Verhalten unterscheidet sich von dem der 16-Bit-LIB (für OMF-Bibliotheken), die in anderen Microsoft-Produkten bereitgestellt wird.
 
 ## <a name="see-also"></a>Siehe auch
 

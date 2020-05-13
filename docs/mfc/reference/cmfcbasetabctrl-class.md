@@ -238,12 +238,12 @@ helpviewer_keywords:
 - CMFCBaseTabCtrl [MFC], m_bActivateTabOnRightClick
 - CMFCBaseTabCtrl [MFC], m_bAutoDestroyWindow
 ms.assetid: 7270c55f-6f6e-4dd2-b0d2-291afeac3882
-ms.openlocfilehash: db82a3c9019655fae850002d9e664e5de5407aa6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 92728a1725cc1ceb9569c3c7f44918e56cf2d947
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367819"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754900"
 ---
 # <a name="cmfcbasetabctrl-class"></a>CMFCBaseTabCtrl Class
 
@@ -417,7 +417,7 @@ Die folgenden Tipps beziehen sich auf die `CMFCBaseTabCtrl Class` und alle Klass
 
 [CMFCBaseTabCtrl](../../mfc/reference/cmfcbasetabctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxbasetabctrl.h
 
@@ -425,7 +425,7 @@ Die folgenden Tipps beziehen sich auf die `CMFCBaseTabCtrl Class` und alle Klass
 
 Fügt der Liste der Symbole im `CMap m_mapAddedIcons` geschützten Mitglied ein Symbol hinzu.
 
-```
+```cpp
 void AddIcon(
     HICON hIcon,
     int iIcon);
@@ -494,7 +494,7 @@ virtual void ApplyRestoredTabInfo(BOOL bUseTabIndexes = FALSE);
 
 ## <a name="cmfcbasetabctrlautodestroywindow"></a><a name="autodestroywindow"></a>CMFCBaseTabCtrl::AutoDestroyWindow
 
-```
+```cpp
 void AutoDestroyWindow(BOOL bAutoDestroy = TRUE);
 ```
 
@@ -598,7 +598,7 @@ Wenn die von *nTabNum* angegebene Registerkarte nicht abnehmbar ist, schlägt di
 
 ## <a name="cmfcbasetabctrlenableactivatelastactive"></a><a name="enableactivatelastactive"></a>CMFCBaseTabCtrl::EnableActivateLastActive
 
-```
+```cpp
 void EnableActivateLastActive(BOOL bLastActive = TRUE);
 ```
 
@@ -612,7 +612,7 @@ void EnableActivateLastActive(BOOL bLastActive = TRUE);
 
 Steuert, ob das Framework beim Zeichnen einer Registerkarte die automatischen Hintergrundfarben verwendet.
 
-```
+```cpp
 void EnableAutoColor(BOOL bEnable = TRUE);
 ```
 
@@ -695,7 +695,7 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 Ermöglicht es dem Benutzer, die Tabstoppreihenfolge mit der Maus zu ändern.
 
-```
+```cpp
 void EnableTabSwap(BOOL bEnable);
 ```
 
@@ -733,7 +733,7 @@ Standardmäßig wird diese Methode von `CMFCBaseTabCtrl Class`der nicht unterst�
 
 ## <a name="cmfcbasetabctrlenterdragmode"></a><a name="enterdragmode"></a>CMFCBaseTabCtrl::EnterDragMode
 
-```
+```cpp
 void EnterDragMode();
 ```
 
@@ -1409,7 +1409,7 @@ Wenn das von *pNewWnd* angegebene Objekt nicht von der [CDockablePane-Klasse](..
 
 ## <a name="cmfcbasetabctrlinvalidatetab"></a><a name="invalidatetab"></a>CMFCBaseTabCtrl::InvalidateTab
 
-```
+```cpp
 void InvalidateTab(int iTab);
 ```
 
@@ -1944,7 +1944,7 @@ virtual BOOL RenameTab();
 
 Setzt die Bildliste für eine Instanz der [CMFCBaseTabCtrl-Klasse](../../mfc/reference/cmfcbasetabctrl-class.md)zurück.
 
-```
+```cpp
 void ResetImageList();
 ```
 
@@ -2019,7 +2019,7 @@ Standardmäßig ruft das Framework die Textfarbe von [GetSysColor](/windows/win3
 
 Legt die Farben des Registerkartensteuerelements fest, das das Framework im automatischen Farbmodus verwendet.
 
-```
+```cpp
 void SetAutoColors(const CArray<COLORREF,COLORREF>& arColors);
 ```
 
@@ -2038,7 +2038,7 @@ Um den Autocolor-Modus zu aktivieren, verwenden Sie die [CMFCBaseTabCtrl::Enable
 
 Legt die Wrapperklasse fest, die für nicht von der [CDockablePane Class](../../mfc/reference/cdockablepane-class.md)abgeleitete Objekte verwendet wird.
 
-```
+```cpp
 void SetDockingBarWrapperRTC(CRuntimeClass* pRTC);
 ```
 
@@ -2055,7 +2055,7 @@ Sie fügen Einem Registerkartensteuerelement Registerkarten hinzu, indem Sie die
 
 Aktiviert und deaktiviert die Verarbeitung von Präfixzeichen in Registerkartenbeschriftungen.
 
-```
+```cpp
 void SetDrawNoPrefix(
     BOOL bNoPrefix,
     BOOL bRedraw = TRUE);
@@ -2375,7 +2375,7 @@ virtual void SwapTabs(
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

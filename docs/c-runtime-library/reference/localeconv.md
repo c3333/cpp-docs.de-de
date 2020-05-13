@@ -1,8 +1,9 @@
 ---
 title: localeconv
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - localeconv
+- _o_localeconv
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-locale-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - localeconv function
 - locales, getting information on
 ms.assetid: 7ecdb1f2-88f5-4037-a0e7-c754ab003660
-ms.openlocfilehash: ca7113903e1ed6e9ffb94bef79beba41e09bfb71
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c154af87f135f5bf119de26ea8cd0be545ed5382
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953365"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916405"
 ---
 # <a name="localeconv"></a>localeconv
 
@@ -53,11 +55,11 @@ Die **localeconv** -Funktion ruft ausführliche Informationen zur numerischen Fo
 
 |Feld|Bedeutung|
 |-|-|
-decimal_point,<br/>_W_decimal_point|Zeiger auf Dezimaltrennzeichen für nicht monetäre Mengen.
+DECIMAL_POINT,<br/>_W_decimal_point|Zeiger auf Dezimaltrennzeichen für nicht monetäre Mengen.
 thousands_sep,<br/>_W_thousands_sep|Ein Zeiger auf ein Zeichen, das Gruppen von Ziffern nach links vom Dezimaltrennzeichen für nicht monetäre Mengen trennt.
-Gruppieren|**Ein Zeiger**auf eine ganze Zahl mit Vorzeichen, die die Größe jeder Gruppe von Ziffern in nicht monetären Mengen enthält.
-int_curr_symbol,<br/>_W_int_curr_symbol|Zeiger auf das internationale Währungssymbol für das aktuelle Gebiets Schema. Die ersten drei Zeichen geben das alphabetische internationale Währungssymbol an, wie im Standard *ISO 4217 – Codes für die Darstellung der Währung und Fonds* definiert. Das vierte Zeichen (unmittelbar vorausgehendes Zeichen NULL) trennt das internationale Währungssymbol von der monetären Menge.
-currency_symbol,<br/>_W_currency_symbol|Zeiger auf das lokale Währungssymbol für das aktuelle Gebiets Schema.
+Gruppierung|**Ein Zeiger**auf eine ganze Zahl mit Vorzeichen, die die Größe jeder Gruppe von Ziffern in nicht monetären Mengen enthält.
+Int_curr_symbol,<br/>_W_int_curr_symbol|Zeiger auf das internationale Währungssymbol für das aktuelle Gebiets Schema. Die ersten drei Zeichen geben das alphabetische internationale Währungssymbol an, wie im Standard *ISO 4217 – Codes für die Darstellung der Währung und Fonds* definiert. Das vierte Zeichen (unmittelbar vorausgehendes Zeichen NULL) trennt das internationale Währungssymbol von der monetären Menge.
+CURRENCY_SYMBOL,<br/>_W_currency_symbol|Zeiger auf das lokale Währungssymbol für das aktuelle Gebiets Schema.
 mon_decimal_point,<br/>_W_mon_decimal_point|Zeiger auf Dezimaltrennzeichen für monetäre Mengen.
 mon_thousands_sep,<br/>_W_mon_thousands_sep|Ein Zeiger auf das Trennzeichen für Gruppen von Ziffern auf der linken Seite der Dezimalstelle in der monetären Menge.
 mon_grouping|**Ein Zeiger**auf eine ganze Zahl mit Vorzeichen, die die Größe jeder Gruppe von Ziffern in monetären Mengen enthält.
@@ -78,7 +80,7 @@ Die **char** -Member der-Struktur sind kleine nicht negative Zahlen, keine Zeich
 
 Die Werte von **Gruppierung** und **Mon_grouping** werden gemäß den folgenden Regeln interpretiert:
 
-- **CHAR_MAX** : führen Sie keine weiteren Gruppierungen aus.
+- **CHAR_MAX** : keine weiteren Gruppierungen ausführen.
 
 - 0-das vorherige Element wird für jede der verbleibenden Ziffern verwendet.
 
@@ -114,22 +116,24 @@ Die Werte für **p_sign_posn** und **n_sign_posn** werden gemäß den folgenden 
 
 - 4: Signieren der Zeichenfolge unmittelbar nach dem Währungssymbol.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**localeconv**|\<locale.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Locale](../../c-runtime-library/locale.md)<br/>
 [setlocale](../../preprocessor/setlocale.md)<br/>
-[strcoll-Funktionen](../../c-runtime-library/strcoll-functions.md)<br/>
+[Funktionen von "strecoll"](../../c-runtime-library/strcoll-functions.md)<br/>
 [strftime, wcsftime, _strftime_l, _wcsftime_l](strftime-wcsftime-strftime-l-wcsftime-l.md)<br/>
 [strxfrm, wcsxfrm, _strxfrm_l, _wcsxfrm_l](strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)<br/>

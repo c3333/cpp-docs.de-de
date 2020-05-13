@@ -18,12 +18,12 @@ helpviewer_keywords:
 - CDaoException [MFC], m_pErrorInfo
 - CDaoException [MFC], m_scode
 ms.assetid: b2b01fa9-7ce2-42a1-842e-40f13dc50da4
-ms.openlocfilehash: a8a789f4dba06ffe376d8a8e955b026bb23af924
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 935d7870d68554d702e2ad762e83343cb518b2b8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369000"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754729"
 ---
 # <a name="cdaoexception-class"></a>CDaoException-Klasse
 
@@ -81,7 +81,7 @@ Weitere Informationen zur Ausnahmebehandlung im `CDaoException` Allgemeinen oder
 
 `CDaoException`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -138,7 +138,7 @@ Diese Informationen sind nützlich, um die Errors-Auflistung zu durchlaufen, um 
 
 Gibt Fehlerinformationen zu einem bestimmten Fehlerobjekt in der Errors-Auflistung zurück.
 
-```
+```cpp
 void GetErrorInfo(int nIndex);
 ```
 
@@ -211,7 +211,7 @@ Dies ist ein OLE-Code. Sie müssen diesen Wert selten verwenden, da in fast alle
 
 Informationen zu SCODE finden Sie im Thema [Struktur von OLE-Fehlercodes](/windows/win32/com/structure-of-com-error-codes) im Windows SDK. Der SCODE-Datentyp wird dem HRESULT-Datentyp zugeordnet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CException-Klasse](../../mfc/reference/cexception-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

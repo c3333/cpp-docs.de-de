@@ -5,12 +5,12 @@ ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::Box
 ms.assetid: b3d7ea37-e98a-4fbc-80b0-ad35e50250c6
-ms.openlocfilehash: ca8c9229d0ef5fa654f462282f257b1684984102
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7484bcda3f05a8a9e56a33222d0630d4597e1219
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404649"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81354757"
 ---
 # <a name="platformbox-class"></a>Platform::Box-Klasse
 
@@ -26,21 +26,21 @@ ref class Box abstract;
 
 **Header:** vccorlib.h
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
 ### <a name="members"></a>Member
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
-|[Box](#ctor) | Erstellt eine `Box`, die einen Wert vom angegebenen Typ kapseln kann. |
-|[Operator Box&lt;const T&gt;^](#box-const-t) | Ermöglicht Boxingkonvertierungen von einer `const`-Wertklasse `T` oder `enum`-Klasse `T` in `Box<T>`. |
-|[Operator Box&lt;const volatile T&gt;^](#box-const-volatile-t) | Ermöglicht Boxingkonvertierungen von einer `const volatile`-Wertklasse `T` oder einem `enum`-Typ `T` in `Box<T>`. |
-|[Operator Box&lt;T&gt;^](#box-t) | Ermöglicht Boxingkonvertierungen von einer `T`-Wertklasse in `Box<T>`. |
-|[Operator Box&lt;volatile T&gt;^](#box-volatile-t) | Ermöglicht Boxingkonvertierungen von einer `volatile`-Wertklasse `T` oder einem `enum`-Typ `T` in `Box<T>`. |
-|[Box:: T](#t) | Ermöglicht Boxingkonvertierungen von einer `T`-Wertklasse oder `enum`-Klasse `T` in `Box<T>`. |
+|[Feld](#ctor) | Erstellt eine `Box`, die einen Wert vom angegebenen Typ kapseln kann. |
+|[Operator&lt;Box const T&gt;^](#box-const-t) | Ermöglicht Boxingkonvertierungen von einer `const`-Wertklasse `T` oder `enum`-Klasse `T` in `Box<T>`. |
+|[Operator&lt;Box const volatile T&gt;^](#box-const-volatile-t) | Ermöglicht Boxingkonvertierungen von einer `const volatile`-Wertklasse `T` oder einem `enum`-Typ `T` in `Box<T>`. |
+|[Operator&lt;Box T&gt;^](#box-t) | Ermöglicht Boxingkonvertierungen von einer `T`-Wertklasse in `Box<T>`. |
+|[Operator&lt;Box volatile T&gt;^](#box-volatile-t) | Ermöglicht Boxingkonvertierungen von einer `volatile`-Wertklasse `T` oder einem `enum`-Typ `T` in `Box<T>`. |
+|[Box::operator T](#t) | Ermöglicht Boxingkonvertierungen von einer `T`-Wertklasse oder `enum`-Klasse `T` in `Box<T>`. |
 |[Value-Eigenschaft](#value) | Gibt den im `Box`-Objekt gekapselten Wert zurück. |
 
-## <a name="ctor"></a> Box:: Box-Konstruktor
+## <a name="boxbox-constructor"></a><a name="ctor"></a>Box::Box-Konstruktor
 
 Erstellt eine `Box`, die einen Wert vom angegebenen Typ kapseln kann.
 
@@ -55,7 +55,7 @@ Box(T valueArg);
 *valueArg*<br/>
 Der Typ des Werts, für den eine Boxingkonvertierung ausgeführt werden soll – beispielsweise `int`, `bool`, `float64`, `DateTime`.
 
-## <a name="box-const-t"></a> Box:: Box&lt;const T&gt;^-Operator
+## <a name="boxoperator-boxltconst-tgt-operator"></a><a name="box-const-t"></a>Box::operator&lt;Box&gt;const T - Operator
 
 Ermöglicht Boxingkonvertierungen von einer `const`-Wertklasse `T` oder `enum`-Klasse `T` in `Box<T>`.
 
@@ -68,13 +68,13 @@ operator Box<const T>^(const T valueType);
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine Wertklasse, eine Wertstruktur oder ein Enumerationstyp. Schließt die integrierten Typen in der [Standardnamespace](../cppcx/default-namespace.md).
+Eine Wertklasse, eine Wertstruktur oder ein Enumerationstyp. Schließt die integrierten Typen in den [Standardnamespace](../cppcx/default-namespace.md)ein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `Platform::Box<T>^` Instanz, die den ursprünglichen Wert steht in einer Verweisklasse geschachtelt.
+Eine `Platform::Box<T>^` Instanz, die den ursprünglichen Wert darstellt, der in einer Verweisklasse geschachtelt wurde.
 
-## <a name="box-const-volatile-t"></a> Box:: Box&lt;const volatile T&gt;^-Operator
+## <a name="boxoperator-boxltconst-volatile-tgt-operator"></a><a name="box-const-volatile-t"></a>Box::operator&lt;Box const&gt;volatile T - Operator
 
 Ermöglicht Boxingkonvertierungen von einer `const volatile`-Wertklasse `T` oder einem `enum`-Typ `T` in `Box<T>`.
 
@@ -87,13 +87,13 @@ operator Box<const volatile T>^(const volatile T valueType);
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in der [Standardnamespace](../cppcx/default-namespace.md).
+Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in den [Standardnamespace](../cppcx/default-namespace.md)ein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `Platform::Box<T>^` Instanz, die den ursprünglichen Wert steht in einer Verweisklasse geschachtelt.
+Eine `Platform::Box<T>^` Instanz, die den ursprünglichen Wert darstellt, der in einer Verweisklasse geschachtelt wurde.
 
-## <a name="box-t"></a> Box:: Box&lt;T&gt;^-Operator
+## <a name="boxoperator-boxlttgt-operator"></a><a name="box-t"></a>Box::operator&lt;Box&gt;T - Operator
 
 Ermöglicht Boxingkonvertierungen von einer `T`-Wertklasse in `Box<T>`.
 
@@ -106,13 +106,13 @@ operator Box<const T>^(const T valueType);
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in der [Standardnamespace](../cppcx/default-namespace.md).
+Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in den [Standardnamespace](../cppcx/default-namespace.md)ein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `Platform::Box<T>^` Instanz, die den ursprünglichen Wert steht in einer Verweisklasse geschachtelt.
+Eine `Platform::Box<T>^` Instanz, die den ursprünglichen Wert darstellt, der in einer Verweisklasse geschachtelt wurde.
 
-## <a name="box-volatile-t"></a> Box:: Box&lt;volatile T&gt;^-Operator
+## <a name="boxoperator-boxltvolatile-tgt-operator"></a><a name="box-volatile-t"></a>Box::operator&lt;Box&gt;volatile T - Operator
 
 Ermöglicht Boxingkonvertierungen von einer `volatile`-Wertklasse `T` oder einem `enum`-Typ `T` in `Box<T>`.
 
@@ -125,13 +125,13 @@ operator Box<volatile T>^(volatile T valueType);
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in der [Standardnamespace](../cppcx/default-namespace.md).
+Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in den [Standardnamespace](../cppcx/default-namespace.md)ein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `Platform::Box<T>^` Instanz, die den ursprünglichen Wert steht in einer Verweisklasse geschachtelt.
+Eine `Platform::Box<T>^` Instanz, die den ursprünglichen Wert darstellt, der in einer Verweisklasse geschachtelt wurde.
 
-## <a name="t"></a>  Box:: T-Operator
+## <a name="boxoperator-t-operator"></a><a name="t"></a>Box::operator T Operator
 
 Ermöglicht Boxingkonvertierungen von einer `T`-Wertklasse oder `enum`-Klasse `T` in `Box<T>`.
 
@@ -144,13 +144,13 @@ operator Box<T>^(T valueType);
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in der [Standardnamespace](../cppcx/default-namespace.md).
+Ein Enumerationstyp, eine Wertklasse oder eine Wertstruktur. Schließt die integrierten Typen in den [Standardnamespace](../cppcx/default-namespace.md)ein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `Platform::Box<T>^` Instanz, die den ursprünglichen Wert steht in einer Verweisklasse geschachtelt.
+Eine `Platform::Box<T>^` Instanz, die den ursprünglichen Wert darstellt, der in einer Verweisklasse geschachtelt wurde.
 
-## <a name="value"></a> Box:: Value-Eigenschaft
+## <a name="boxvalue-property"></a><a name="value"></a>Box::Value-Eigenschaft
 
 Gibt den im `Box`-Objekt gekapselten Wert zurück.
 

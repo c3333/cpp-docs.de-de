@@ -22,7 +22,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -48,12 +48,12 @@ helpviewer_keywords:
 - _ftcsrchr function
 - _mbsrchr_l function
 ms.assetid: 75cf2664-758e-49bb-bf6b-8a139cd474d2
-ms.openlocfilehash: b0aaa670cb6aa5af9e6f8a28234ba5c442d2f633
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2475eab34c6a18b3dc7a8a15145c184cea543aee
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365045"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911164"
 ---
 # <a name="strrchr-wcsrchr-_mbsrchr-_mbsrchr_l"></a>strrchr, wcsrchr, _mbsrchr, _mbsrchr_l
 
@@ -120,10 +120,10 @@ const unsigned char *_mbsrchr_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Zu suchende mit NULL endende Zeichenfolge.
 
-*C*<br/>
+*scher*<br/>
 Zu suchende Zeichen.
 
 *locale*<br/>
@@ -131,28 +131,28 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf das letzte Vorkommen von *c* in *str*oder NULL zurück, wenn *c* nicht gefunden wird.
+Gibt einen Zeiger auf das letzte Vorkommen von *c* in *Str*oder NULL zurück, wenn *c* nicht gefunden wurde.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die `strrchr` Funktion findet das letzte Vorkommen von *c* (konvertiert in **char**) in *str*. Die Suche enthält das abschließende NULL-Zeichen.
+Die `strrchr` -Funktion sucht das letzte Vorkommen von *c* (konvertiert in **char**) in *Str*. Die Suche enthält das abschließende NULL-Zeichen.
 
 `wcsrchr` und `_mbsrchr` sind Breitzeichen- und Multibytezeichenversionen von `strrchr`. Die Argumente und der Rückgabewert von `wcsrchr` sind Breitzeichen-Zeichenfolgen; die von `_mbsrchr` sind Mehrbyte-Zeichenfolgen.
 
-In C verwenden diese Funktionen einen **const-Zeiger** für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf **const** nimmt, gibt einen Zeiger auf **const**zurück; Die Version, die einen Zeiger auf nicht-**const** nimmt, gibt einen Zeiger auf nicht-**const**zurück. Die Makro-_CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **const-** als auch die**Nicht-const-Version** dieser Funktionen verfügbar sind. Wenn Sie das**Nicht-const-Verhalten** für beide C++-Überladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
+In C akzeptieren diese Funktionen einen **Konstanten** Zeiger für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf "Konstante" annimmt **, gibt einen Zeiger auf "** **konstant**" zurück. die Version, die einen Zeiger auf nicht-konstante annimmt **, gibt einen** Zeiger auf einen nicht**Konstanten**Wert zurück. Das Makro _CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **Konstanten** als auch die nicht**Konstanten** Versionen dieser Funktionen verfügbar sind. Wenn Sie das nicht**Konstante Verhalten für** beide C++-über Ladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
 
-`_mbsrchr` überprüft die eigenen Parameter. Wenn *str* NULL ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt `errno` werden darf, `_mbsrchr` wird AUF EINVAL gesetzt und gibt 0 zurück. `strrchr` und `wcsrchr` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
+`_mbsrchr` überprüft die eigenen Parameter. Wenn *Str* NULL ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, `errno` wird auf EINVAL festgelegt `_mbsrchr` und gibt 0 zurück. `strrchr` und `wcsrchr` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-Der Ausgabewert wird durch die Einstellung der LC_CTYPE Kategorieeinstellung des Gebietsschemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der Einstellung der LC_CTYPE Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
 |`_tcsrchr`|`strrchr`|`_mbsrchr`|`wcsrchr`|
-|**k.A.**|**k.A.**|`_mbsrchr_l`|**k.A.**|
+|**Nicht zutreffend**|**Nicht zutreffend**|`_mbsrchr_l`|**Nicht zutreffend**|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -168,9 +168,9 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 
 Ein Beispiel für die Verwendung von `strrchr` finden Sie unter [strchr](strchr-wcschr-mbschr-mbschr-l.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strchr, wcschr, _mbschr, _mbschr_l](strchr-wcschr-mbschr-mbschr-l.md)<br/>

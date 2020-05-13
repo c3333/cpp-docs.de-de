@@ -4,10 +4,10 @@ ms.date: 06/07/2019
 ms.assetid: 4bb8894b-c874-4a68-935e-b127d54e484f
 f1_keywords: []
 ms.openlocfilehash: 394cb501b4df6caed6a358ffa96ce0de5d187ae1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "79441475"
 ---
 # <a name="cc-properties-linux-c"></a>C/C++-Eigenschaften (Linux C++)

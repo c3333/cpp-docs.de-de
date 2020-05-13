@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - CHandle class
 ms.assetid: 883e9db5-40ec-4e29-9c74-4dd2ddd2e35d
-ms.openlocfilehash: 7c72ded75298ed69efe73c1a81abf404545ea9b9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4b883bdf3159c40f8d74866f04f655ae73d82a8a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81326925"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747695"
 ---
 # <a name="chandle-class"></a>CHandle-Klasse
 
@@ -66,7 +66,7 @@ Ein `CHandle` Objekt kann immer dann verwendet werden, wenn `CHandle` ein Handle
 > [!NOTE]
 > Einige API-Funktionen verwenden NULL als leeres oder ungültiges Handle, während andere INVALID_HANDLE_VALUE verwenden. `CHandle`verwendet nur NULL und behandelt INVALID_HANDLE_VALUE als echtes Handle. Wenn Sie eine API aufrufen, die INVALID_HANDLE_VALUE zurückgeben kann, sollten Sie nach diesem `CHandle` Wert suchen, bevor Sie [CHandle::Attach](#attach) aufrufen oder an den Konstruktor übergeben, und stattdessen NULL übergeben.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -74,7 +74,7 @@ Ein `CHandle` Objekt kann immer dann verwendet werden, wenn `CHandle` ein Handle
 
 Rufen Sie diese `CHandle` Methode auf, um das Objekt an ein vorhandenes Handle anzufügen.
 
-```
+```cpp
 void Attach(HANDLE h) throw();
 ```
 
@@ -122,7 +122,7 @@ Gibt das `CHandle` Objekt frei, indem [CHandle::Close](#close)aufgerufen wird.
 
 Rufen Sie diese `CHandle` Methode auf, um ein Objekt zu schließen.
 
-```
+```cpp
 void Close() throw();
 ```
 
@@ -187,6 +187,6 @@ operator HANDLE() const throw();
 
 Gibt den in [CHandle::m_h](#m_h)gespeicherten Wert zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

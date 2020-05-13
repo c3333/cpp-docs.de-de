@@ -26,7 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -66,12 +66,12 @@ helpviewer_keywords:
 - _tcsset_s function
 - mbsset_s function
 ms.assetid: dceb2909-6b41-4792-acb7-888e45bb8b35
-ms.openlocfilehash: 599c991e2e9b4cee1515decdaf1050311d844a68
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0338d84cbea864eca561c37f1d107a08f1c1e01e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317245"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911146"
 ---
 # <a name="_strset_s-_strset_s_l-_wcsset_s-_wcsset_s_l-_mbsset_s-_mbsset_s_l"></a>_strset_s, _strset_s_l, _wcsset_s, _wcsset_s_l, _mbsset_s, _mbsset_s_l
 
@@ -120,13 +120,13 @@ errno_t _mbsset_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Festzulegende mit NULL endende Zeichenfolge.
 
-*Sizeinbytes*<br/>
-Die Größe *str* des str-Puffers.
+*numberOfElements*<br/>
+Die Größe des *Str* -Puffers.
 
-*C*<br/>
+*scher*<br/>
 Zeicheneinstellung.
 
 *locale*<br/>
@@ -136,17 +136,17 @@ Zu verwendendes Gebietsschema.
 
 Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
-Diese Funktionen überprüfen ihre Argumente. Wenn *str* ein Nullzeiger ist oder das *argument numberOfElements* kleiner oder gleich 0 ist oder der übergebene Block nicht null-beendet ist, wird der ungültige Parameterhandler aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EINVAL** zurück und setzen **errno** auf **EINVAL**.
+Diese Funktionen überprüfen ihre Argumente. Wenn *Str* ein NULL-Zeiger ist, oder wenn das " *zahlofelements* "-Argument kleiner oder gleich 0 ist oder der übergebenen Block nicht auf NULL endet, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " zurück und legen " **errno** " auf " **EINVAL**" fest.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_strset_s-Funktion** legt alle Zeichen von *str* auf *c* (konvertiert in **char**) mit Ausnahme des beendenden Nullzeichens fest. **_wcsset_s** und **_mbsset_s** sind breit- und multibyte-Versionen von **_strset_s**. Die Datentypen der Argumente und Rückgabewerte unterscheiden sich entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **_strset_s** -Funktion legt alle Zeichen von *Str* auf *c* (konvertiert in **char**) mit Ausnahme des abschließenden NULL-Zeichens fest. **_wcsset_s** und **_mbsset_s** sind breit Zeichen-und multibytezeichenversionen von **_strset_s**. Die Datentypen der Argumente und Rückgabewerte unterscheiden sich entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -163,7 +163,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_strset_s_l**|\<tchar.h>|
 |**_wcsset_s**|\<string.h> oder \<wchar.h>|
 |**_wcsset_s_l**|\<tchar.h>|
-|**_mbsset_s**, **_mbsset_s_l**|\<mbstring.h>|
+|**_mbsset_s** **_mbsset_s_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -189,9 +189,9 @@ Before: Fill the string with something.
 After:  *******************************
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbset, _mbsnbset_l](mbsnbset-mbsnbset-l.md)<br/>

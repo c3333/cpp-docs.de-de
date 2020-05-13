@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CContextMenuManager [MFC], ShowPopupMenu
 - CContextMenuManager [MFC], TrackPopupMenu
 ms.assetid: 1de20640-243c-47e1-85de-1baa4153bc83
-ms.openlocfilehash: f322f40beabeb9a837dda01c95e9f950a07585d1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c676355ebf44d6cc02bfa66ac870757627ae5a58
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369420"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754809"
 ---
 # <a name="ccontextmenumanager-class"></a>CContextMenuManager-Klasse
 
@@ -91,7 +91,7 @@ Im folgenden Beispiel wird veranschaulicht, `CContextMenuManager` wie einem Obje
 
 `CContextMenuManager`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcontextmenumanager.h
 
@@ -187,7 +187,7 @@ Wenn diese Methode ein Menü findet, `GetMenuByName` das *mit lpszName*übereins
 
 Gibt die Liste der Menünamen zurück, die dem [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md)hinzugefügt wurden.
 
-```
+```cpp
 void GetMenuNames(CStringList& listOfNames) const;
 ```
 
@@ -262,7 +262,7 @@ Verwenden Sie die Methode [CContextMenuManager::LoadState,](#loadstate) um die K
 
 Steuert, ob der [CContextMenuManager](../../mfc/reference/ccontextmenumanager-class.md) das aktive Popupmenü schließt, wenn ein neues Popupmenü angezeigt wird.
 
-```
+```cpp
 void SetDontCloseActiveMenu (BOOL bSet = TRUE);
 ```
 
@@ -303,10 +303,10 @@ virtual CMFCPopupMenu* ShowPopupMenu(
 *uiMenuResId*<br/>
 [in] Die Ressourcen-ID des Menüs, das von dieser Methode angezeigt wird.
 
-*X*<br/>
+*x*<br/>
 [in] Der horizontale Versatz für das Kontextmenü in Clientkoordinaten.
 
-*y*<br/>
+*Y*<br/>
 [in] Der vertikale Versatz für das Kontextmenü in Clientkoordinaten
 
 *pWndOwner*<br/>
@@ -352,10 +352,10 @@ virtual UINT TrackPopupMenu(
 *hmenuPopup*<br/>
 [in] Das Handle des Kontextmenüs, das diese Methode anzeigt.
 
-*X*<br/>
+*x*<br/>
 [in] Der horizontale Versatz für das Kontextmenü in Clientkoordinaten.
 
-*y*<br/>
+*Y*<br/>
 [in] Der vertikale Versatz für das Kontextmenü in den Clientkoordinaten.
 
 *pWndOwner*<br/>
@@ -372,7 +372,7 @@ Die Menübefehls-ID des Befehls, den der Benutzer auswählt; 0, wenn der Benutze
 
 Diese Methode fungiert als modaler Aufruf, um ein Kontextmenü anzuzeigen. Die Anwendung fährt erst in der folgenden Zeile im Code fort, wenn der Benutzer entweder das Kontextmenü schließt oder einen Befehl auswählt. Eine alternative Methode, die Sie zum Anzeigen eines Kontextmenüs verwenden können, ist [CContextMenuManager::ShowPopupMenu](#showpopupmenu). Diese Methode ist kein modaler Aufruf und gibt die ID des ausgewählten Befehls nicht zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

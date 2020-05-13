@@ -8,11 +8,11 @@ helpviewer_keywords:
 - parentheses, expressions
 ms.assetid: b8636147-6982-408c-9e64-29e40678ee43
 ms.openlocfilehash: d0105556530161991b46c5ee25cd73f2f995063f
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62233740"
 ---
 # <a name="expressions-in-parentheses"></a>Ausdrücke in Klammern
 
@@ -22,7 +22,7 @@ Sie können jeden Operanden in Klammern einschließen, ohne den Typ oder den Wer
 ( 10 + 5 ) / 5
 ```
 
-Die Klammern um `10 + 5` bedeuten, dass der Wert von `10 + 5` zuerst ausgewertet und dann zum linken Operanden des Divisionsoperators (**/**) wird. Das Ergebnis von `( 10 + 5 ) / 5` lautet 3. Ohne die Klammern würde `10 + 5 / 5` als 11 ausgewertet werden.
+Die Klammern um `10 + 5` bedeuten, dass der Wert von `10 + 5` zuerst ausgewertet und dann zum linken Operanden des Divisionsoperators ( **/** ) wird. Das Ergebnis von `( 10 + 5 ) / 5` lautet 3. Ohne die Klammern würde `10 + 5 / 5` als 11 ausgewertet werden.
 
 Obwohl Klammern die Methode beeinflussen, wie die Operanden in einem Ausdruck gruppiert werden, können sie keine bestimmte Auswertungsreihenfolge in allen Fällen garantieren. Zum Beispiel stellen weder die Klammern noch die Gruppierung des folgenden Ausdrucks von links nach rechts den Wert von `i` in einem der Unterausdrücke sicher:
 

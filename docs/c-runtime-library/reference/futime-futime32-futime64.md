@@ -1,10 +1,12 @@
 ---
 title: _futime, _futime32, _futime64
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _futime64
 - _futime32
 - _futime
+- _o__futime32
+- _o__futime64
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +38,12 @@ helpviewer_keywords:
 - futime function
 - _futime32 function
 ms.assetid: b942ce8f-5cc7-4fa8-ab47-de5965eded53
-ms.openlocfilehash: 3de638f08882e2aae4743311730afcd888c43a60
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 615e436abf9d763e73d26db61d9063d5e586232b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956236"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909919"
 ---
 # <a name="_futime-_futime32-_futime64"></a>_futime, _futime32, _futime64
 
@@ -65,10 +68,10 @@ int _futime64(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor der geöffneten Datei
 
-*filetime*<br/>
+*FILETIME*<br/>
 Zeiger auf die Struktur, die das neue Änderungsdatum enthält
 
 ## <a name="return-value"></a>Rückgabewert
@@ -77,9 +80,11 @@ Gibt bei Erfolg 0 zurück. Wenn ein Fehler auftritt, wird der Handler für ungü
 
 ## <a name="remarks"></a>Hinweise
 
-Mit der **_futime** -Routine werden das Änderungsdatum und die Zugriffszeit in der geöffneten Datei, die mit *FD*verknüpft ist, festgelegt. **_futime** ist mit [_utime](utime-utime32-utime64-wutime-wutime32-wutime64.md)identisch, mit der Ausnahme, dass das-Argument der Dateideskriptor einer geöffneten Datei und nicht der Name einer Datei oder ein Pfad zu einer Datei ist. Die **_utimbuf** -Struktur enthält Felder für das neue Änderungsdatum und die Zugriffszeit. Beide Felder müssen gültige Werte enthalten. **_utimbuf32** und **_utimbuf64** sind mit **_utimbuf** identisch, mit Ausnahme der Verwendung der 32-Bit-und 64-Bit-Uhrzeittypen. **_futime** und **_utimbuf** verwenden einen 64-Bit-Uhrzeittyp, und **_futime** ist im Verhalten von **_futime64**identisch. Wenn Sie das alte Verhalten erzwingen müssen, definieren Sie **_USE_32BIT_TIME_T**. Dies bewirkt, dass **_futime** identisch mit **_futime32** ist, und bewirkt, dass die **_utimbuf** -Struktur den 32-Bit-Uhrzeittyp verwendet, wodurch Sie **__utimbuf32**entspricht.
+Mit der **_futime** -Routine werden das Änderungsdatum und die Zugriffszeit in der geöffneten Datei, die mit *FD*verknüpft ist, festgelegt. **_futime** ist mit [_utime](utime-utime32-utime64-wutime-wutime32-wutime64.md)identisch, mit der Ausnahme, dass das-Argument der Dateideskriptor einer geöffneten Datei und nicht der Name einer Datei oder ein Pfad zu einer Datei ist. Die **_utimbuf** Struktur enthält Felder für das neue Änderungsdatum und die Zugriffszeit. Beide Felder müssen gültige Werte enthalten. **_utimbuf32** und **_utimbuf64** sind mit **_utimbuf** identisch, mit Ausnahme der Verwendung der 32-Bit-und 64-Bit-Uhrzeittypen. **_futime** und **_utimbuf** einen 64-Bit-Uhrzeittyp verwenden, und **_futime** ist im Verhalten mit **_futime64**identisch. Wenn Sie das alte Verhalten erzwingen müssen, definieren Sie **_USE_32BIT_TIME_T**. Dies bewirkt, dass **_futime** identisch mit dem Verhalten **_futime32** und bewirkt, dass die **_utimbuf** Struktur den 32-Bit-Uhrzeittyp verwendet, wodurch Sie **__utimbuf32**entspricht.
 
-**_futime64**, das die **__utimbuf64** -Struktur verwendet, kann Datumsangaben bis 23:59:59 Uhr, 31. Dezember 3000, UTC, lesen und ändern. während ein **_futime32** -Aufrufvorgang fehlschlägt, wenn das Datum der Datei nach dem 18. Januar 2038 UTC 23:59:59 liegt. Der 1. Januar 1970 (Mitternacht) ist der älteste mögliche Datumsbereich für diese Funktionen.
+**_futime64**, der die **__utimbuf64** Struktur verwendet, kann Datumsangaben bis 23:59:59 Uhr, 31. Dezember 3000, UTC, lesen und ändern. während ein- **_futime32** fehlschlägt, wenn das Datum der Datei nach dem 18. Januar 2038 UTC 23:59:59 liegt. Der 1. Januar 1970 (Mitternacht) ist der älteste mögliche Datumsbereich für diese Funktionen.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -89,7 +94,7 @@ Mit der **_futime** -Routine werden das Änderungsdatum und die Zugriffszeit in 
 |**_futime32**|\<sys/utime.h>|\<errno.h>|
 |**_futime64**|\<sys/utime.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -155,6 +160,6 @@ Directory of Z:\crt
 File time modified
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>

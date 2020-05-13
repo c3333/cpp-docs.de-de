@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - write function
 - files [C++], writing to
 ms.assetid: 7b868c33-766f-4e1a-95a7-e8d25f0604c4
-ms.openlocfilehash: a616df570d266c335337d897da59a2a0ec69b40e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b56022f39264a200bf6fa550bffa8e5e0ed73cf0
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367396"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916708"
 ---
 # <a name="_write"></a>_write
 
@@ -51,10 +51,10 @@ int _write(
 
 ### <a name="parameters"></a>Parameter
 
-*Fd*<br/>
+*FD*<br/>
 Dateideskriptor der Datei, in die die Daten geschrieben werden.
 
-*Puffer*<br/>
+*ert*<br/>
 Zu schreibende Daten.
 
 *count*<br/>
@@ -62,21 +62,21 @@ Die Anzahl von Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn dies erfolgreich ist, **gibt _write** die Anzahl der geschriebenen Bytes zurück. Wenn der tatsächlich verbleibende Speicherplatz auf dem Datenträger kleiner als die Größe des Puffers ist, versucht die Funktion, auf den Datenträger zu schreiben, **schlägt _write** fehl und löscht keinen Inhalt des Puffers auf den Datenträger. Ein Rückgabewert von -1 gibt einen Fehler an. Wenn ungültige Parameter übergeben werden, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion -1 zurück, und **errno** wird auf einen von drei Werten gesetzt: **EBADF**, was bedeutet, dass der Dateideskriptor ungültig ist oder die Datei nicht zum Schreiben geöffnet wird. **ENOSPC**, was bedeutet, dass nicht mehr genügend Speicherplatz auf dem Gerät für den Betrieb vorhanden ist; oder **EINVAL**, was bedeutet, dass *der Puffer* ein Nullzeiger war oder dass eine ungerade *Anzahl* von Bytes übergeben wurde, um im Unicode-Modus in eine Datei geschrieben zu werden.
+Bei erfolgreicher Ausführung gibt **_write** die Anzahl der geschriebenen Bytes zurück. Wenn der tatsächliche Speicherplatz auf dem Datenträger kleiner ist als die Größe des Puffers, der von der Funktion auf den Datenträger geschrieben werden soll, **_write** fehl, und der Inhalt des Puffers wird nicht auf den Datenträger geleert. Der Rückgabewert-1 gibt einen Fehler an. Wenn ungültige Parameter übergeben werden, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück, und **errno** wird auf einen von drei Werten festgelegt: **EBADF**, was bedeutet, dass der Dateideskriptor ungültig ist oder die Datei nicht zum Schreiben geöffnet ist. **ENOSPC**, was bedeutet, dass auf dem Gerät nicht genügend Speicherplatz für den Vorgang vorhanden ist. oder **EINVAL**, d. h., der *Puffer* war ein NULL-Zeiger, oder es wurde eine ungerade *Anzahl* von Bytes an eine Datei im Unicode-Modus übermittelt.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-Wenn die Datei im Textmodus geöffnet wird, wird jedes Zeilenvorschubzeichen in der Ausgabe durch ein Wagen-Rücklaufpaar ersetzt. Die Ersetzung wirkt sich nicht auf den Rückgabewert aus.
+Wenn die Datei im Textmodus geöffnet ist, wird jedes Zeilenvorschub Zeichen durch ein Wagen Rücklauf-Zeilenvorschub-Paar in der Ausgabe ersetzt. Der Ersatz wirkt sich nicht auf den Rückgabewert aus.
 
-Wenn die Datei im Unicode-Übersetzungsmodus geöffnet wird, z. B. Wenn *fd* mit **_open** oder **_sopen** und einem Modusparameter geöffnet wird, der **_O_WTEXT**, **_O_U16TEXT**oder **_O_U8TEXT**enthält, oder wenn es mit **fopen** und einem Modusparameter geöffnet wird, der **ccs=UNICODE**, **ccs=UTF-16LE**oder **ccs=UTF-8**enthält, oder wenn der Modus mithilfe von **_setmode**in einen Unicode-Übersetzungsmodus geändert wird – wird der*Puffer* als Pointer **auf ein** Array von wchar_t interpretiert, die **UTF-16-Daten** enthält. Der Versuch, in diesem Modus eine ungerade Anzahl von Bytes zu schreiben, führt zu einem Parametervalidierungsfehler.
+Wenn die Datei im Unicode-Übersetzungsmodus geöffnet wird – z. b. Wenn *FD* mit **_open** oder **_sopen** geöffnet wird und ein Modusparameter **_O_WTEXT**enthält, **_O_U16TEXT**oder **_O_U8TEXT**oder wenn es mit **fopen** und einem Modusparameter, der **CCS = Unicode**, **CCS = UTF-16LE**oder **CCS = UTF-8**enthält, oder wenn der Modus in einen Unicode-Übersetzungsmodus geändert wird, mit **_setmode**–-*Puffer* als Zeiger auf ein Array von **wchar_t** interpretiert wird, das **UTF-16-** Daten enthält. Der Versuch, in diesem Modus eine ungerade Anzahl von Bytes zu schreiben, führt zu einem Parametervalidierungsfehler.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_write-Funktion** *schreibt Zählbytes* aus dem *Puffer* in die Datei, die *fd*zugeordnet ist. Der Schreibvorgang beginnt an der aktuellen Position des Dateizeigers (falls vorhanden) für die betreffende Datei. Wenn die Datei zum Anhängen geöffnet ist, beginnt der Vorgang am aktuellen Dateiende. Nach dem Schreibvorgang wird der Dateizeiger um die Anzahl der geschriebenen Bytes erhöht.
+Die **_write** -Funktion schreibt *count* -Bytes aus dem *Puffer* in die mit *FD*verknüpfte Datei. Der Schreibvorgang beginnt an der aktuellen Position des Dateizeigers (falls vorhanden) für die betreffende Datei. Wenn die Datei zum Anhängen geöffnet ist, beginnt der Vorgang am aktuellen Dateiende. Nach dem Schreibvorgang wird der Dateizeiger um die Anzahl der geschriebenen Bytes erweitert.
 
-Beim Schreiben in Dateien, die im Textmodus geöffnet werden, behandelt **_write** ein STRG+Z-Zeichen als logisches Ende der Datei. Beim Schreiben auf ein Gerät behandelt **_write** ein STRG+Z-Zeichen im Puffer als Ausgabeabschluss.
+Beim Schreiben in Dateien, die im Textmodus geöffnet wurden, behandelt **_write** ein STRG + Z-Zeichen als logisches Dateiende. Beim Schreiben auf ein Gerät behandelt **_write** ein STRG + Z-Zeichen im Puffer als Ausgabe Abschluss Zeichen.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -144,9 +144,9 @@ int main( void )
 Wrote 36 bytes to file.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [fwrite](fwrite.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>
 [_read](read.md)<br/>

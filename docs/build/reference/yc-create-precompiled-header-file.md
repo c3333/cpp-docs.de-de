@@ -15,58 +15,58 @@ helpviewer_keywords:
 - /Yc compiler option [C++]
 - Yc compiler option [C++]
 ms.assetid: 47c2e555-b4f5-46e6-906e-ab5cf21f0678
-ms.openlocfilehash: 0d902b9ebb35bc7f267cb67861b7be0763f378a6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 71a05df3adc74edfd814bb6dc15121e4a343dc4d
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62316703"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825755"
 ---
 # <a name="yc-create-precompiled-header-file"></a>/Yc (Datei der vorkompilierten Header erstellen)
 
-Weist den Compiler an, eine vorkompilierte Headerdatei (.pch) zu erstellen, die den Zustand der Kompilierung zu einem bestimmten Zeitpunkt darstellt.
+Weist den Compiler an, eine vorkompilierte Header Datei (. pch) zu erstellen, die den Zustand der Kompilierung zu einem bestimmten Zeitpunkt darstellt.
 
 ## <a name="syntax"></a>Syntax
 
-> __/Yc__<br/>
-> __/Yc__*filename*
+> __/Yc__\
+> __/Yc__*Dateiname*
 
 ## <a name="arguments"></a>Argumente
 
-*filename*<br/>
-Gibt eine Headerdatei (. h). Wenn dieses Argument verwendet wird, kompiliert der Compiler den gesamten Code bis zur und einschließlich der h-Datei.
+*Einfügen*<br/>
+Gibt eine Header Datei (. h) an. Wenn dieses Argument verwendet wird, kompiliert der Compiler den gesamten Code bis einschließlich der h-Datei.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn **"/ Yc"** wird ohne Argument angegeben, der Compiler kompiliert den gesamten Code bis zum Ende der Basis Quelldatei oder der Punkt in der Basisdatei, in denen eine [Hdrstop](../../preprocessor/hdrstop.md) -Direktive tritt auf. Die resultierende PCH-Datei hat den gleichen Basisnamen wie die Basis-Quelldatei, außer Sie geben eine andere Datei mit den **Hdrstop** Pragma oder **/fp** Option.
+Wenn **/Yc** ohne ein Argument angegeben wird, kompiliert der Compiler den gesamten Code bis zum Ende der Basis Quelldatei oder bis zu dem Punkt in der Basisdatei, an dem eine [hdrend](../../preprocessor/hdrstop.md) -Direktive auftritt. Die resultierende PCH-Datei hat denselben Basis Namen wie die Basis Quelldatei, es sei denn, Sie geben einen anderen Dateinamen mithilfe des **hdrstopps** -Pragmas oder der **/FP** -Option an.
 
-Der vorkompilierte Code wird in einer Datei gespeichert, mit einem Namen erstellen, die aus dem Basisnamen der Datei angegeben, mit der **"/ Yc"** Option und einer .pch-Erweiterung. Sie können auch die  [ /fp (Name. PCH-Datei)](fp-name-dot-pch-file.md) verwenden, um einen Namen für die vorkompilierte Headerdatei anzugeben.
+Der vorkompilierte Code wird in einer Datei gespeichert, deren Name aus dem Basis Namen der mit der **/Yc** -Option und der Erweiterung ". pch" angegebenen Datei erstellt wurde. Sie können auch den [/fp (Name) verwenden. PCH-Datei)](fp-name-dot-pch-file.md) , um einen Namen für die vorkompilierte Header Datei anzugeben.
 
-Bei Verwendung von __"/ Yc"__*Filename*, kompiliert der Compiler alle Code bis zur und einschließlich der angegebenen Datei für die nachfolgende Verwendung mit der ["/ Yu" (verwenden Sie vorkompilierte Headerdatei)](yu-use-precompiled-header-file.md) Option.
+Wenn Sie __/Yc__*filename*verwenden, kompiliert der Compiler den gesamten Code bis einschließlich der angegebenen Datei für die nachfolgende Verwendung mit der [/Yu-Option (Vorkompilierte Header Datei verwenden)](yu-use-precompiled-header-file.md) .
 
-Wenn die Optionen __"/ Yc"__*Filename* und __"/ Yu"__*Filename* auftreten, in der gleichen Befehlszeile, und verweisen oder impliziert wird, den gleichen Dateinamen __"/ Yc"__*Filename* hat Vorrang vor. Diese Funktion vereinfacht das Schreiben von Makefiles.
+Wenn die Optionen __/Yc__*filename* und __/Yu__*filename* in derselben Befehlszeile und sowohl auf den Verweis als auch auf den gleichen Dateinamen auftreten, hat __/Yc__*filename* Vorrang. Diese Funktion vereinfacht das Schreiben von Makefiles.
 
 Weitere Informationen zu vorkompilierten Headern finden Sie unter:
 
 - [/Y (Vorkompilierte Header)](y-precompiled-headers.md)
 
-- [Vorkompilierte Headerdateien](../creating-precompiled-header-files.md)
+- [Vorkompilierte Header Dateien](../creating-precompiled-header-files.md)
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Wählen Sie eine CPP-Datei. Die CPP-Datei muss #include die h-Datei, die vorkompilierte Headerinformationen enthält. Des Projekts **"/ Yc"** Einstellung kann auf der Dateiebene überschrieben werden.
+1. Wählen Sie eine CPP-Datei aus. Die CPP-Datei muss die. h-Datei #include, die vorkompilierte Header Informationen enthält. Die **/Yc** -Einstellung des Projekts kann auf Dateiebene überschrieben werden.
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Öffnen der **Konfigurationseigenschaften**, **C/C++-**, **vorkompilierte Header** Eigenschaftenseite.
+1. Öffnen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**, **C/C++**, **Vorkompilierte Header** .
 
-1. Ändern der **vorkompilierter Header** Eigenschaft.
+1. Ändern Sie die Eigenschaft des **vorkompilierten Headers** .
 
-1. Ändern Sie zum Festlegen der Dateiname der **vorkompilierte Headerdatei** Eigenschaft.
+1. Um den Dateinamen festzulegen, ändern Sie die Eigenschaft der **vorkompilierten Header Datei** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
-- Weitere Informationen finden Sie unter <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.PrecompiledHeaderThrough%2A> und <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UsePrecompiledHeader%2A>.
+- Prüfen Sie <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.PrecompiledHeaderThrough%2A> und <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UsePrecompiledHeader%2A>.
 
 ## <a name="example"></a>Beispiel
 
@@ -81,10 +81,10 @@ Betrachten Sie folgenden Code:
 // ...
 ```
 
-Wenn dieser Code kompiliert wird, mit dem Befehl `CL /YcMYAPP.H PROG.CPP`, speichert der Compiler alle die vorverarbeitung für AFXWIN.h, "RESOURCE.h", und MYAPP.h in einer vorkompilierten Headerdatei namens MYAPP.pch.
+Wenn dieser Code mit dem-Befehl `CL /YcMYAPP.H PROG.CPP`kompiliert wird, speichert der Compiler die gesamte Vorverarbeitung für "AFXWIN. h", "Resource. h" und "MyApp. h" in einer vorkompilierten Header Datei namens "MyApp. pch".
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
-[Vorkompilierte Headerdateien](../creating-precompiled-header-files.md)
+[Vorkompilierte Header Dateien](../creating-precompiled-header-files.md)

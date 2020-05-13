@@ -1,11 +1,13 @@
 ---
 title: isxdigit, iswxdigit, _isxdigit_l, _iswxdigit_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _iswxdigit_l
 - iswxdigit
 - isxdigit
 - _isxdigit_l
+- _o_iswxdigit
+- _o_isxdigit
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +21,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -38,12 +41,12 @@ helpviewer_keywords:
 - hexadecimal characters
 - iswxdigit function
 ms.assetid: c8bc5146-0b58-4e3f-bee3-f2318dd0f829
-ms.openlocfilehash: 18f360e66583dfbf5033f813deed0b56abc71260
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 3aefa39d9fabb2b8a3124955f3ab0787e9e174f3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953578"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916588"
 ---
 # <a name="isxdigit-iswxdigit-_isxdigit_l-_iswxdigit_l"></a>isxdigit, iswxdigit, _isxdigit_l, _iswxdigit_l
 
@@ -70,7 +73,7 @@ int _iswxdigit_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
 *locale*<br/>
@@ -84,7 +87,7 @@ Für das Gebiets Schema "C" unterstützt die **iswxdigit** -Funktion keine Unico
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix verwenden das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **isxdigit** und **_isxdigit_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich von 0 bis 0xFF (einschließlich) liegt. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
+Das Verhalten von **isxdigit** und **_isxdigit_l** ist nicht definiert, wenn *c* nicht EOF ist, oder im Bereich von 0 bis 0xFF (einschließlich). Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -92,19 +95,23 @@ Das Verhalten von **isxdigit** und **_isxdigit_l** ist nicht definiert, wenn *c*
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_istxdigit**|**isxdigit**|**isxdigit**|**iswxdigit**|
 
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**isxdigit**|\<ctype.h>|
 |**iswxdigit**|\<ctype.h> oder \<wchar.h>|
 |**_isxdigit_l**|\<ctype.h>|
 |**_iswxdigit_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

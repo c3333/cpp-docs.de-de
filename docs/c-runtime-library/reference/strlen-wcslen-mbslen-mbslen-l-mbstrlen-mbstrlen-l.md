@@ -1,6 +1,6 @@
 ---
 title: strlen, wcslen, _mbslen, _mbslen_l, _mbstrlen, _mbstrlen_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbslen
 - _mbslen_l
@@ -8,6 +8,10 @@ api_name:
 - wcslen
 - _mbstrlen_l
 - strlen
+- _o__mbslen
+- _o__mbslen_l
+- _o__mbstrlen
+- _o__mbstrlen_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -52,12 +57,12 @@ helpviewer_keywords:
 - strlen function
 - _mbslen function
 ms.assetid: 16462f2a-1e0f-4eb3-be55-bf1c83f374c2
-ms.openlocfilehash: 5b1d3f7483ec96cbcda7c72178613d81747c8060
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4dc50decb3c7c72aaa89b729b30d4581d32164c9
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947578"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919963"
 ---
 # <a name="strlen-wcslen-_mbslen-_mbslen_l-_mbstrlen-_mbstrlen_l"></a>strlen, wcslen, _mbslen, _mbslen_l, _mbstrlen, _mbstrlen_l
 
@@ -93,7 +98,7 @@ size_t _mbstrlen_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Mit NULL endende Zeichenfolge.
 
 *locale*<br/>
@@ -109,6 +114,8 @@ die Zeichenfolge wird von der Zeichenfolge als Einzel Byte-Zeichen **Folge inter
 
 **Sicherheitshinweis**: Diese Funktionen stellen eine mögliche Bedrohung aufgrund eines Pufferüberlaufproblems dar. Pufferüberlaufprobleme werden häufig bei Systemangriffen eingesetzt, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
@@ -117,20 +124,20 @@ die Zeichenfolge wird von der Zeichenfolge als Einzel Byte-Zeichen **Folge inter
 |**_tcsclen**|**strlen**|**_mbslen**|**wcslen**|
 |**_tcsclen_l**|**strlen**|**_mbslen_l**|**wcslen**|
 
-**_mbslen** und **_mbslen_l** geben die Anzahl von Multibytezeichen in einer Multibytezeichenfolge zurück, überprüfen jedoch nicht die Gültigkeit von Multibytezeichen. **_mbstrlen** und **_mbstrlen_l** testen die Gültigkeit von Multibytezeichen und erkennen Multibyte-Zeichen folgen. Wenn die an **_mbstrlen** oder **_mbstrlen_l** über gegebene Zeichenfolge ein ungültiges Multibytezeichen für die Codepage enthält, gibt die Funktion-1 zurück und legt **errno** auf **EILSEQ**fest.
+**_mbslen** und **_mbslen_l** geben die Anzahl von Multibytezeichen in einer Multibytezeichenfolge zurück, überprüfen jedoch nicht die Gültigkeit von Multibytezeichen. **_mbstrlen** und **_mbstrlen_l** auf die Gültigkeit von Multibytezeichen testen und multibytezeichensequenzen erkennen. Wenn die an _mbstrlen oder **_mbstrlen_l** **_mbstrlen** ungültige Zeichenfolge ein ungültiges Multibytezeichen für die Codepage enthält, gibt die Funktion-1 zurück und legt **errno** auf **EILSEQ**fest.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strlen**|\<string.h>|
 |**wcslen**|\<string.h> oder \<wchar.h>|
-|**_mbslen**, **_mbslen_l**|\<mbstring.h>|
-|**_mbstrlen**, **_mbstrlen_l**|\<stdlib.h>|
+|**_mbslen** **_mbslen_l**|\<mbstring.h>|
+|**_mbstrlen** **_mbstrlen_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -195,15 +202,15 @@ Length of 'ABCァD' : 5
 Bytes in 'ABCァD' : 6
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [setlocale, _wsetlocale](setlocale-wsetlocale.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>
 [strcmp, wcscmp, _mbscmp](strcmp-wcscmp-mbscmp.md)<br/>
-[strcoll-Funktionen](../../c-runtime-library/strcoll-functions.md)<br/>
+[Funktionen von "strecoll"](../../c-runtime-library/strcoll-functions.md)<br/>
 [strcpy, wcscpy, _mbscpy](strcpy-wcscpy-mbscpy.md)<br/>
 [strrchr, wcsrchr, _mbsrchr, _mbsrchr_l](strrchr-wcsrchr-mbsrchr-mbsrchr-l.md)<br/>
 [_strset, _strset_l, _wcsset, _wcsset_l, _mbsset, _mbsset_l](strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md)<br/>

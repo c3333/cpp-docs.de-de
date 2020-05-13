@@ -3,12 +3,12 @@ title: Remotearchiveigenschaften (C++ Linux)
 ms.date: 06/07/2019
 ms.assetid: 5ee1e44c-8337-4c3a-b2f3-35e4be954f9f
 f1_keywords: []
-ms.openlocfilehash: dc20eecef9947581ca87b9489285bc058a249e26
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 3b6f71d9cceccf0b0221be46bacb1294d84533cd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79446816"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364303"
 ---
 # <a name="remote-archive-properties-c-linux"></a>Remotearchiveigenschaften (C++ Linux)
 

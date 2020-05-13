@@ -1,6 +1,6 @@
 ---
 title: 'Bessel-Funktionen: _j0, _j1, _jn, _y0, _y1, _yn'
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _j0
 - _j1
@@ -8,6 +8,12 @@ api_name:
 - _y0
 - _y1
 - _yn
+- _o__j0
+- _o__j1
+- _o__jn
+- _o__y0
+- _o__y1
+- _o__yn
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -41,12 +48,12 @@ helpviewer_keywords:
 - _y1 function
 - _yn function
 ms.assetid: a21a8bf1-df9d-4ba0-a8c2-e7ef71921d96
-ms.openlocfilehash: 5420b34846998cdbcb4814d8319274f1a3516d91
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ef914d542d058898cf9b16478fd40ef4b0725674
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939456"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913466"
 ---
 # <a name="bessel-functions-_j0-_j1-_jn-_y0-_y1-_yn"></a>Bessel-Funktionen: _j0, _j1, _jn, _y0, _y1, _yn
 
@@ -79,7 +86,7 @@ double _yn(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert.
 
 *n*<br/>
@@ -87,31 +94,33 @@ Ganzzahlige Ordnung der Bessel-Funktion.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt eine Bessel-Funktion von *x*zurück. Wenn *x* in den **_y0**-, **_y1**-oder **_yn** -Funktionen negativ ist, legt die Routine **errno** auf **Edom**fest, druckt eine **_DOMAIN** -Fehlermeldung an **stderr**und gibt **_HUGE_VAL**zurück. Sie können die Fehlerbehandlung mithilfe von **_matherr**ändern.
+Jede dieser Routinen gibt eine Bessel-Funktion von *x*zurück. Wenn *x* in den Funktionen **_y0**, **_y1**oder **_yn** negativ ist, legt die Routine **errno** auf **Edom**fest, gibt eine **_DOMAIN** Fehlermeldung an **stderr**aus und gibt **_HUGE_VAL**zurück. Sie können die Fehlerbehandlung ändern, indem Sie **_matherr**verwenden.
 
 ## <a name="remarks"></a>Hinweise
 
-Die Routinen **_j0**, **_j1**und **_jn** geben Bessel-Funktionen der ersten Art zurück: Orders 0, 1 bzw. n.
+Die **_j0**-, **_j1**-und **_jn** Routinen geben Bessel-Funktionen der ersten Art zurück: Orders 0, 1 bzw. n.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|**UNGÜLTIG**|**_DOMAIN**|
+|± **QNAN**, **IND**|**Ungültig**|**_DOMAIN**|
 
-Die Routinen **_y0**, **_y1**und **_yn** geben Bessel-Funktionen der zweiten Art zurück: Orders 0, 1 bzw. n.
+Die **_y0**-, **_y1**-und **_yn** Routinen geben Bessel-Funktionen der zweiten Art zurück: Orders 0, 1 bzw. n.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|**UNGÜLTIG**|**_DOMAIN**|
-|± 0|**NULL**|**_SING**|
-|&#124;x&#124; < 0,0|**UNGÜLTIG**|**_DOMAIN**|
+|± **QNAN**, **IND**|**Ungültig**|**_DOMAIN**|
+|± 0|**ZERODIVIDE**|**_SING**|
+|&#124;x&#124; < 0,0|**Ungültig**|**_DOMAIN**|
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_j0**, **_j1**, **_jn**, **_y0**, **_y1**, **_yn**|\<cmath> (C++), \<math.h> (C, C++)|
+|**_j0**, **_j1**, **_jn**, **_y0**, **_y1** **_yn**|\<cmath> (C++), \<math.h> (C, C++)|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -154,7 +163,7 @@ Bessel functions for x = 2.387000:
    Second 4      _yn( 4, x )  -1.626833
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [_matherr](matherr.md)<br/>

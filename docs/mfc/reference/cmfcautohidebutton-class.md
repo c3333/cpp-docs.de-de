@@ -50,12 +50,12 @@ helpviewer_keywords:
 - CMFCAutoHideButton [MFC], ShowButton
 - CMFCAutoHideButton [MFC], UnSetAutoHideMode
 ms.assetid: c80e6b8b-25ca-4d12-9d27-457731028ab0
-ms.openlocfilehash: 84f17896cc3c4f5cd6099a9ccf7e4e000f43b1f1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3ea6ce13b8cca7e0130fe14459a832b476391b0c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369907"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751671"
 ---
 # <a name="cmfcautohidebutton-class"></a>CMFCAutoHideButton-Klasse
 
@@ -116,13 +116,13 @@ Das folgende Beispiel veranschaulicht das Erstellen eines `CMFCAutoHideButton`-O
 
 `CMFCAutoHideButton`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxautohidebutton.h
 
 ## <a name="cmfcautohidebuttonbringtotop"></a><a name="bringtotop"></a>CMFCAutoHideButton::BringToTop
 
-```
+```cpp
 void BringToTop();
 ```
 
@@ -379,7 +379,7 @@ Wenn Sie den Hintergrund für automatisches Ausblenden von Schaltflächen in `CM
 
 Zeigt die zugehörige [CDockablePane-Klasse](../../mfc/reference/cdockablepane-class.md)ein oder blendet sie aus.
 
-```
+```cpp
 void ShowAttachedWindow(BOOL bShow);
 ```
 
@@ -403,7 +403,7 @@ virtual void ShowButton(BOOL bShow);
 
 ## <a name="cmfcautohidebuttonmove"></a><a name="move"></a>CMFCAutoHideButton::Verschieben
 
-```
+```cpp
 void Move(int nOffset);
 ```
 
@@ -415,7 +415,7 @@ void Move(int nOffset);
 
 ## <a name="cmfcautohidebuttonreplacepane"></a><a name="replacepane"></a>CMFCAutoHideButton::ReplacePane
 
-```
+```cpp
 void ReplacePane(CDockablePane* pNewBar);
 ```
 
@@ -469,7 +469,7 @@ Gibt TRUE zurück, wenn die Schaltfläche "Auto ausblenden" hervorgehoben ist. a
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

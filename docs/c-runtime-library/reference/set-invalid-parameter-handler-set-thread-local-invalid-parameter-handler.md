@@ -1,9 +1,11 @@
 ---
 title: _set_invalid_parameter_handler, _set_thread_local_invalid_parameter_handler
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _set_invalid_parameter_handler
 - _set_thread_local_invalid_parameter_handler
+- _o__set_invalid_parameter_handler
+- _o__set_thread_local_invalid_parameter_handler
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +33,12 @@ helpviewer_keywords:
 - _set_invalid_parameter_handler function
 - _set_thread_local_invalid_parameter_handler function
 ms.assetid: c0e67934-1a41-4016-ad8e-972828f3ac11
-ms.openlocfilehash: d2e8dab92c70189533656bac359c794de2ad8002
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 404a865cceb5e4014969b15e9877761187af777b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857774"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914007"
 ---
 # <a name="_set_invalid_parameter_handler-_set_thread_local_invalid_parameter_handler"></a>_set_invalid_parameter_handler, _set_thread_local_invalid_parameter_handler
 
@@ -52,7 +55,7 @@ _invalid_parameter_handler _set_thread_local_invalid_parameter_handler(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Pnew*<br/>
 Der Funktionszeiger auf den neuen Handler für ungültige Parameter.
@@ -81,11 +84,13 @@ void _invalid_parameter(
 
 Das *Expression* -Argument ist eine Breite Zeichen folgen Darstellung des Argument Ausdrucks, der den Fehler ausgelöst hat. Das *Function* -Argument ist der Name der CRT-Funktion, die das ungültige Argument empfangen hat. Das *Datei* Argument ist der Name der CRT-Quelldatei, die die Funktion enthält. Das *Zeilen* Argument ist die Zeilennummer in dieser Datei. Das letzte Argument ist reserviert. Alle Parameter haben den Wert **null** , es sei denn, es wird eine Debugversion der CRT-Bibliothek verwendet.
 
-## <a name="requirements"></a>-Anforderungen
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_set_invalid_parameter_handler**, **_set_thread_local_invalid_parameter_handler**|C: \<stdlib.h><br /><br /> C++: \<cstdlib> oder \<stdlib.h>|
+|**_set_invalid_parameter_handler** **_set_thread_local_invalid_parameter_handler**|C: \<stdlib.h><br /><br /> C++: \<cstdlib> oder \<stdlib.h>|
 
 Die Funktionen **_set_invalid_parameter_handler** und **_set_thread_local_invalid_parameter_handler** sind Microsoft-spezifisch. Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -135,8 +140,8 @@ Invalid parameter detected in function common_vfprintf. File: minkernel\crts\ucr
 Expression: format != nullptr
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_get_invalid_parameter_handler, _get_thread_local_invalid_parameter_handler](get-invalid-parameter-handler-get-thread-local-invalid-parameter-handler.md)<br/>
-[CRT-Funktionsversionen mit erweiterter Sicherheit](../../c-runtime-library/security-enhanced-versions-of-crt-functions.md)<br/>
-[errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)<br/>
+[Erweiterte Versionen der CRT-Funktionen mit erweiterter Sicherheit](../../c-runtime-library/security-enhanced-versions-of-crt-functions.md)<br/>
+[errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)<br/>

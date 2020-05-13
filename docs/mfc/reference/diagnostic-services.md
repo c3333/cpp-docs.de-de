@@ -18,12 +18,12 @@ helpviewer_keywords:
 - diagnostics [MFC], diagnostic services
 - diagnostic functions and variables [MFC]
 ms.assetid: 8d78454f-9fae-49c2-88c9-d3fabd5393e8
-ms.openlocfilehash: 8db12a73d64641a52fea3056de8ab3180c9239b2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f952044f4320aea1a757559b3c9c51e8ffb7c3a6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365795"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751652"
 ---
 # <a name="diagnostic-services"></a>Diagnosedienste
 
@@ -124,7 +124,7 @@ Rufen Sie diese Funktion auf, um eine `AfxDebugBreak`Unterbrechung (am Speichero
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void AfxDebugBreak( );
 ```
 
@@ -132,7 +132,7 @@ void AfxDebugBreak( );
 
 `AfxDebugBreak`hat keine Auswirkungen in Releaseversionen einer MFC-Anwendung und sollte entfernt werden. Diese Funktion sollte nur in MFC-Anwendungen verwendet werden. Verwenden Sie die Win32-API-Version , `DebugBreak`um einen Bruch in Nicht-MFC-Anwendungen zu verursachen.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxver_.h
 
@@ -168,7 +168,7 @@ In der Release-Version von MFC wertet ASSERT den Ausdruck nicht aus und unterbri
 
 [!code-cpp[NVC_MFC_Utilities#44](../../mfc/codesnippet/cpp/diagnostic-services_2.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -203,7 +203,7 @@ Diese Funktion funktioniert nur für Klassen, die mit dem Makro [DECLARE_DYNAMIC
 > [!NOTE]
 > Diese Funktion ist nur in der Debug-Version von MFC verfügbar.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -235,7 +235,7 @@ Weitere Informationen und Beispiele finden Sie unter [Debuggen von MFC-Anwendung
 
 [!code-cpp[NVC_MFCCObjectSample#19](../../mfc/codesnippet/cpp/diagnostic-services_5.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -262,7 +262,7 @@ Sobald Sie diese Direktive eingefügt haben, fügt der Präprozessor DEBUG_NEW e
 > [!NOTE]
 > In früheren Versionen von MFC (4.1 und `#define` früher) mussten Sie die Anweisung nach allen Anweisungen setzen, die den IMPLEMENT_DYNCREATE oder IMPLEMENT_SERIAL Makros aufgerufen haben. Dies ist nicht mehr erforderlich.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -284,7 +284,7 @@ Das DEBUG_ONLY Makro entspricht dem `#ifdef _DEBUG` `#endif`umgebenden *Ausdruck
 
 [!code-cpp[NVC_MFC_Utilities#32](../../mfc/codesnippet/cpp/diagnostic-services_6.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -316,7 +316,7 @@ ENSURE_VALID ruft das ASSERT_VALID Makro auf (das sich nur in Debugbuilds auswir
 
 Wenn einer dieser Tests fehlschlägt, wird eine Warnmeldung auf die gleiche Weise wie ASSERT angezeigt. Das Makro löst bei Bedarf eine ungültige Argumentausnahme aus.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -346,7 +346,7 @@ static char THIS_FILE[] = __FILE__;
 // compiler recognizes.
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -367,7 +367,7 @@ In der Debugversion von MFC sendet dieses Makro die angegebene Zeichenfolge an d
 
 Weitere Informationen finden Sie unter [Debuggen von MFC-Anwendungen](/visualstudio/debugger/mfc-debugging-techniques).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -400,7 +400,7 @@ In der Release-Version von MFC wertet VERIFY den Ausdruck aus, druckt oder unter
 
 [!code-cpp[NVC_MFCDocView#198](../../mfc/codesnippet/cpp/diagnostic-services_7.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -424,7 +424,7 @@ Diese Variable wird nur in der Debugversion von MFC definiert. Weitere Informati
 
 [!code-cpp[NVC_MFC_Utilities#23](../../mfc/codesnippet/cpp/diagnostic-services_8.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -434,7 +434,7 @@ Interne Funktion, die MFC verwendet, um den Status eines Objekts während des De
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void AfxDump(const CObject* pOb);
 ```
 
@@ -449,7 +449,7 @@ Ein Zeiger auf ein Objekt einer `CObject`Klasse, die von abgeleitet wurde.
 
 Ihr Programmcode sollte `AfxDump`nicht aufrufen, `Dump` sondern stattdessen die Memberfunktion des entsprechenden Objekts aufrufen.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -475,7 +475,7 @@ int  afxMemDF;
 
 [!code-cpp[NVC_MFC_Utilities#30](../../mfc/codesnippet/cpp/diagnostic-services_9.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -483,7 +483,7 @@ int  afxMemDF;
 
 Diese Funktion testet den übergebenen SCODE, um festzustellen, ob es sich um einen Fehler handelt.
 
-```
+```cpp
 void AFXAPI AfxCheckError(SCODE sc);
 throw CMemoryException*
 throw COleException*
@@ -502,7 +502,7 @@ Diese Funktion kann verwendet werden, um die Rückgabewerte von Aufrufen von OLE
 
 [!code-cpp[NVC_MFCOleContainer#33](../../mfc/codesnippet/cpp/diagnostic-services_10.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -539,7 +539,7 @@ Diese Funktion funktioniert nur in der Debug-Version von MFC.
 
 [!code-cpp[NVC_MFCCObjectSample#26](../../mfc/codesnippet/cpp/diagnostic-services_11.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -547,7 +547,7 @@ Diese Funktion funktioniert nur in der Debug-Version von MFC.
 
 Rufen Sie diese Funktion auf, während Sie sich im Debugger befinden, um den Status eines Objekts während des Debuggens zu verwerfen.
 
-```
+```cpp
 void AfxDump(const CObject* pOb);
 ```
 
@@ -562,7 +562,7 @@ Ein Zeiger auf ein Objekt einer `CObject`Klasse, die von abgeleitet wurde.
 
 Ihr Programmcode sollte `AfxDump`nicht aufrufen, `Dump` sondern stattdessen die Memberfunktion des entsprechenden Objekts aufrufen.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -570,7 +570,7 @@ Ihr Programmcode sollte `AfxDump`nicht aufrufen, `Dump` sondern stattdessen die 
 
 Diese globale Funktion kann verwendet werden, um ein Abbild des aktuellen Stapels zu generieren.
 
-```
+```cpp
 void AFXAPI AfxDumpStack(DWORD dwTarget = AFX_STACK_DUMP_TARGET_DEFAULT);
 ```
 
@@ -638,7 +638,7 @@ So verwenden Sie diese Funktion erfolgreich:
 
 - Die Module, die Frames auf dem Stapel haben, müssen Debuginformationen enthalten. Wenn sie keine Debuginformationen enthalten, generiert die Funktion weiterhin eine Stapelablaufverfolgung, aber die Ablaufverfolgung wird weniger detailliert.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -668,7 +668,7 @@ Wenn Ihre Anwendung eine andere Bibliothek vor der MFC-Bibliothek lädt, werden 
 > [!NOTE]
 > Wenn Sie diese Methode verwenden, um das Speicherabbild des Arbeitsspeicherverlusts deaktivieren, erhalten Sie keine Berichte über tatsächliche Arbeitsspeicherverluste in Ihrer Anwendung. Sie sollten diese Methode nur verwenden, wenn Sie sicher sind, dass der Bericht über die Arbeitsspeicherverluste falsche Meldungen enthält.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -702,7 +702,7 @@ Weitere Informationen `AfxEnableMemoryTracking`zu finden Sie unter [Debuggen von
 
 [!code-cpp[NVC_MFC_Utilities#24](../../mfc/codesnippet/cpp/diagnostic-services_12.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -740,7 +740,7 @@ Außerdem wird die angegebene Größe mit der ursprünglichen zugewiesenen Grö�
 
 [!code-cpp[NVC_MFC_Utilities#27](../../mfc/codesnippet/cpp/diagnostic-services_13.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -780,7 +780,7 @@ Die Adresse ist nicht auf Blöcke beschränkt, die von **new**zugewiesen wurden.
 
 [!code-cpp[NVC_MFC_Utilities#28](../../mfc/codesnippet/cpp/diagnostic-services_14.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -812,7 +812,7 @@ In Nicht-Debug-Builds ein Wert ungleich Null, wenn *lpsz* nicht NULL ist; andern
 
 [!code-cpp[NVC_MFC_Utilities#29](../../mfc/codesnippet/cpp/diagnostic-services_15.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -850,7 +850,7 @@ Die Sequenznummer der Speicherzuordnung.
 
 Beachten Sie, dass die AFXAPI-Aufrufkonvention impliziert, dass der Angerufene die Parameter aus dem Stapel entfernen muss.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -858,7 +858,7 @@ Beachten Sie, dass die AFXAPI-Aufrufkonvention impliziert, dass der Angerufene d
 
 Ruft die angegebene Iterationsfunktion `CObject`für alle serialisierbaren -abgeleiteten Klassen im Speicherbereich der Anwendung auf.
 
-```
+```cpp
 void
 AFXAPI AfxDoForAllClasses(
     void (* pfn)(const CRuntimeClass* pClass, void* pContext),
@@ -886,7 +886,7 @@ Serialisierbare -abgeleitete `CObject`Klassen sind Klassen, die mit dem DECLARE_
 
 [!code-cpp[NVC_MFCCollections#114](../../mfc/codesnippet/cpp/diagnostic-services_17.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -894,7 +894,7 @@ Serialisierbare -abgeleitete `CObject`Klassen sind Klassen, die mit dem DECLARE_
 
 Führt die angegebene Iterationsfunktion für `CObject` alle Objekte aus, die von denen abgeleitet wurden, die mit **neuen**zugeordnet wurden.
 
-```
+```cpp
 void AfxDoForAllObjects(
     void (* pfn)(CObject* pObject, void* pContext),
     void* pContext);
@@ -921,7 +921,7 @@ Stapel-, globale oder eingebettete Objekte werden nicht aufgezählt. Der Zeiger,
 
 [!code-cpp[NVC_MFCCollections#116](../../mfc/codesnippet/cpp/diagnostic-services_19.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](mfc-macros-and-globals.md)<br/>
 [CObject::Dump](cobject-class.md#dump)

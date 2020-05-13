@@ -1,9 +1,11 @@
 ---
 title: fgets, fgetws
-ms.date: 07/11/2018
+ms.date: 4/2/2020
 api_name:
 - fgets
 - fgetws
+- _o_fgets
+- _o_fgetws
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - fgetws function
 - fgetts function
 ms.assetid: ad549bb5-df98-4ccd-a53f-95114e60c4fc
-ms.openlocfilehash: 3f68bee181ebb20eb7a0a2eaca02a72c4dc03616
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5c1d63eea6561af6ab7f51c147c92e184d3d11f8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957398"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912068"
 ---
 # <a name="fgets-fgetws"></a>fgets, fgetws
 
@@ -60,13 +63,13 @@ wchar_t *fgetws(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Speicherort für Daten.
 
 *numChars*<br/>
 Die maximale Anzahl der zu lesenden Zeichen
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -77,11 +80,13 @@ Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doser
 
 ## <a name="remarks"></a>Hinweise
 
-Die **Funktion "** Funktion" liest eine Zeichenfolge aus dem eingabestreamargument und speichert Sie in *Str*. **fgets** liest Zeichen von der aktuellen Streamposition in und einschließlich des ersten Zeilen Vorzeichens, bis zum Ende des Streams oder bis die Anzahl der gelesenen Zeichen gleich *NumChars* -1 ist, je nachdem, was zuerst eintritt. Das in *Str* gespeicherte Ergebnis wird mit einem NULL-Zeichen versehen. Das Zeilenumbruchzeichen wird, wenn es gelesen wird, in die Zeichenfolge aufgenommen.
+Die **Funktion "** Funktion" liest eine Zeichenfolge aus dem eingabestreamargument und speichert Sie in *Str*. *stream* **fgets** liest Zeichen von der aktuellen Streamposition in und einschließlich des ersten Zeilen Vorzeichens, bis zum Ende des Streams oder bis die Anzahl der gelesenen Zeichen gleich *NumChars* -1 ist, je nachdem, was zuerst eintritt. Das in *Str* gespeicherte Ergebnis wird mit einem NULL-Zeichen versehen. Das Zeilenumbruchzeichen wird, wenn es gelesen wird, in die Zeichenfolge aufgenommen.
 
 " **f** " ist eine breit Zeichen Version von " **f**".
 
-**fgetws** liest das breit Zeichen Argument *Str* als multibyte-Zeichenfolge oder Zeichenfolge mit breit Zeichen, je nachdem, ob der *Stream* im Textmodus oder Binärmodus geöffnet ist. Weitere Informationen zur Anwendung von Text- und Binärmodi in Unicode- und Multibyte-Stream-E/A finden Sie unter [Text- und Binärmodusdatei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md) und [Unicodestream-E/A im Text- und Binärmodus](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md).
+**fgetws** liest das breit Zeichen Argument *Str* als multibyte-Zeichenfolge oder Zeichenfolge mit breit Zeichen, je nachdem, ob der *Stream* im Textmodus oder Binärmodus geöffnet ist. Weitere Informationen zur Anwendung von Text- und Binärmodi in Unicode- und Multibyte-Stream-E/A finden Sie unter [Text- und Binärmodus-Datei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md) und [Unicode-Stream-E/A in Text- und Binärmodi](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -96,7 +101,7 @@ Die **Funktion "** Funktion" liest eine Zeichenfolge aus dem eingabestreamargume
 |**fgets**|\<stdio.h>|
 |**fgetws**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -130,7 +135,7 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Line one.

@@ -1,10 +1,13 @@
 ---
 title: fma, fmaf, fmal
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - fma
 - fmaf
 - fmal
+- _o_fma
+- _o_fmaf
+- _o_fmal
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +37,12 @@ helpviewer_keywords:
 - fmaf function
 - fmal function
 ms.assetid: 584a6037-da1e-4e86-9f0c-97aae86de0c0
-ms.openlocfilehash: 4ddc4061e5a24ee3b5176aedc569d134d85e0002
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: be3578aa9c66f329e191749b4506091bff69b1eb
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957105"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914952"
 ---
 # <a name="fma-fmaf-fmal"></a>fma, fmaf, fmal
 
@@ -80,10 +84,10 @@ long double fmal(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der erste zu multiplizierende Wert.
 
-*y*<br/>
+*Teenie*<br/>
 Der zweite zu multiplizierende Wert.
 
 *z*<br/>
@@ -91,11 +95,11 @@ Der hinzuzufügende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt `(x * y) + z`zurück. Der Rückgabewert wird dann mit dem aktuellen Rundungsformat gerundet.
+Gibt `(x * y) + z` zurück. Der Rückgabewert wird dann mit dem aktuellen Rundungsformat gerundet.
 
 Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
-|Problem|Zurück|
+|Problem|Rückgabewert|
 |-----------|------------|
 |*x* = unendlich, *y* = 0 oder<br /><br /> *x* = 0, *y* = unendlich|NaN|
 |*x* oder *y* = Exact ± unendlich, *z* = unendlich mit umgekehrtem Vorzeichen|NaN|
@@ -104,7 +108,7 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 |Überlaufbereichsfehler|± HUGE_VAL, ± HUGE_VALF oder ± HUGE_VALL|
 |Unterlaufbereichsfehler|Richtige Wert nach dem Runden|
 
-Fehler werden gemäß der Angaben in [_matherr](matherr.md) gemeldet.
+Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -112,15 +116,17 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **FMA** aufzurufe
 
 Diese Funktion berechnet den Wert mit unendlicher Genauigkeit und rundet das endgültige Ergebnis dann.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
-|**fma**, **fmaf**, **fmal**|\<math.h>|\<cmath>|
+|**FMA**, f **MAF**, **f**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [remainder, remainderf, remainderl](remainder-remainderf-remainderl.md)<br/>

@@ -32,12 +32,12 @@ helpviewer_keywords:
 - CMFCRibbonLinkCtrl [MFC], OpenLink
 - CMFCRibbonLinkCtrl [MFC], SetLink
 ms.assetid: 77ae1941-e0ab-4a9d-911e-1752d34c079b
-ms.openlocfilehash: 5d00c17b2ede654b9bdd214a8649f1237b9d9fdc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3c0cbe843aac172464683288d61e2aec2af60b68
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375119"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753559"
 ---
 # <a name="cmfcribbonlinkctrl-class"></a>CMFCRibbonLinkCtrl-Klasse
 
@@ -86,7 +86,7 @@ Nachdem Sie einen Hyperlink erstellt haben, fügen Sie ihn einem Bedienfeld hinz
 &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;[CMFCRibbonButton](../../mfc/reference/cmfcribbonbutton-class.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;[CMFCRibbonLinkCtrl](../../mfc/reference/cmfcribbonlinkctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxRibbonLinkCtrl.h
 
@@ -259,7 +259,7 @@ TRUE, wenn die zugehörige Webseite erfolgreich geöffnet wurde; andernfalls FAL
 
 Legt den Wert des Links fest.
 
-```
+```cpp
 void SetLink(LPCTSTR lpszLink);
 ```
 
@@ -268,7 +268,7 @@ void SetLink(LPCTSTR lpszLink);
 *lpszLink*<br/>
 [in] Gibt den Hyperlinktext an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

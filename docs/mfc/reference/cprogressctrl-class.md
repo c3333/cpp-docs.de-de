@@ -42,12 +42,12 @@ helpviewer_keywords:
 - CProgressCtrl [MFC], SetStep
 - CProgressCtrl [MFC], StepIt
 ms.assetid: 222630f4-1598-4026-8198-51649b1192ab
-ms.openlocfilehash: c5eb6a93cd68c2dafb76af3b0e42da8b56566e25
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c9e94e334318b32efcf8c9de681a78349ab12151
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364007"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751125"
 ---
 # <a name="cprogressctrl-class"></a>CProgressCtrl-Klasse
 
@@ -107,7 +107,7 @@ Weitere Informationen zur `CProgressCtrl`Verwendung von finden Sie unter [Steuer
 
 `CProgressCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -149,7 +149,7 @@ Gibt den Stil des Fortschrittsleistensteuerelements an. Wenden Sie eine beliebig
 - PBS_SMOOTH Zeigt eine schrittweise, reibungslose Füllung der Fortschrittsbalkensteuerung an. Ohne dieses Flag wird das Steuerelement mit Blöcken gefüllt.
 
 *Rect*<br/>
-Gibt die Größe und Position des Fortschrittsbalkensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt. Da es sich bei dem Steuerelement um ein untergeordnetes Fenster handelt, sind die angegebenen Koordinaten relativ zum Clientbereich des *pParentWnd*.
+Gibt die Größe und Position des Fortschrittsbalkensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt. Da es sich bei dem Steuerelement um ein untergeordnetes Fenster handelt, sind die angegebenen Koordinaten relativ zum Clientbereich des *pParentWnd*.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Fortschrittsleistensteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -191,7 +191,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Fortschrittsleistensteuerelements an. Wenden Sie eine beliebige Kombination von Fensterstilen an, die in [CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww) im Windows SDK beschrieben sind.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -263,7 +263,7 @@ Die Position des Fortschrittsleistensteuerelements ist nicht die physische Posit
 
 Ruft die aktuellen unteren und oberen Grenzwerte oder den Bereich des Fortschrittsleistensteuerelements ab.
 
-```
+```cpp
 void GetRange(
     int& nLower,
     int& nUpper);
@@ -495,7 +495,7 @@ Die Position des Fortschrittsleistensteuerelements ist nicht die physische Posit
 
 Legt die oberen und unteren Grenzen des Bereichs des Fortschrittsbalkensteuerelements fest und zeichnet die Leiste neu, um die neuen Bereiche widerzuspiegeln.
 
-```
+```cpp
 void SetRange(
     short nLower,
     short nUpper);
@@ -602,7 +602,7 @@ Das Schrittinkrement `CProgressCtrl::SetStep` wird von der Memberfunktion festge
 
 [!code-cpp[NVC_MFC_CProgressCtrl#10](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_16.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CAnimationSize [MFC], m_cxValue
 - CAnimationSize [MFC], m_cyValue
 ms.assetid: ea06d1b5-502c-44a3-82ca-8bd6ba6a9364
-ms.openlocfilehash: 80a90dfa37bc1d2c3c84e6451ae23af7ded767c2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1f4a5b8b52d8bd37d1ed83618e7451dd85f84c32
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369703"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755116"
 ---
 # <a name="canimationsize-class"></a>CAnimationSize-Klasse
 
@@ -94,7 +94,7 @@ Die CAnimationSize-Klasse kapselt zwei CAnimationVariable-Objekte und kann in An
 
 `CAnimationSize`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -102,7 +102,7 @@ Die CAnimationSize-Klasse kapselt zwei CAnimationVariable-Objekte und kann in An
 
 Fügt Übergänge für Breite und Höhe hinzu.
 
-```
+```cpp
 void AddTransition(
     CBaseTransition* pCXTransition,
     CBaseTransition* pCYTransition);
@@ -272,7 +272,7 @@ Diese Funktion ruft getValue intern auf. Wenn GetValue aus irgendeinem Grund feh
 
 Weist szSrc CAnimationSize zu.
 
-```
+```cpp
 void operator=(const CSize& szSrc);
 ```
 
@@ -289,7 +289,7 @@ Weist szSrc CAnimationSize zu. Es wird empfohlen, dies vor dem Starten der Anima
 
 Legt den Standardwert fest.
 
-```
+```cpp
 void SetDefaultValue(const CSize& szDefault);
 ```
 
@@ -302,6 +302,6 @@ Gibt die neue Standardgröße an.
 
 Verwenden Sie diese Funktion, um einen Standardwert für animationsobjekt festzulegen. Diese Methode weist Standardwerte der Größe breite und der Höhe der Animation zu. Außerdem werden zugrunde liegende COM-Objekte neu erstellt, wenn sie erstellt wurden. Wenn Sie dieses Animationsobjekt für Ereignisse (ValueChanged oder IntegerValueChanged) abonniert haben, müssen Sie diese Ereignisse erneut aktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

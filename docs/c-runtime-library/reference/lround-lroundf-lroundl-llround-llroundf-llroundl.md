@@ -1,6 +1,6 @@
 ---
 title: lround, lroundf, lroundl, llround, llroundf, llroundl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - llround
 - llroundf
@@ -8,6 +8,12 @@ api_name:
 - lroundf
 - lround
 - lroundl
+- _o_llround
+- _o_llroundf
+- _o_llroundl
+- _o_lround
+- _o_lroundf
+- _o_lroundl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +46,12 @@ helpviewer_keywords:
 - llroundf function
 - lroundl function
 ms.assetid: cfb88a35-54c6-469f-85af-f7d695dcfdd8
-ms.openlocfilehash: d849e838811abbed83499d6da283148650bab875
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 10d5e1284f756107cee03b970d026d9e2896adf2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953008"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911364"
 ---
 # <a name="lround-lroundf-lroundl-llround-llroundf-llroundl"></a>lround, lroundf, lroundl, llround, llroundf, llroundl
 
@@ -87,7 +94,7 @@ long long llroundl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -96,19 +103,21 @@ Die **lround** -Funktion und die **LlRound** -Funktion geben die nächste **Long
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|none|**_DOMAIN**|
+|± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
 ## <a name="remarks"></a>Hinweise
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **lround** oder **LlRound** aufzurufen, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm verwenden **lround** und **LlRound** immer einen **Double**-Wert.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**lround**, **lroundf**, **lroundl**, **LlRound**, **llroundf**, **llroundl**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -146,7 +155,7 @@ lroundl(3.500000) is 4
 lroundl(-3.500000) is -4
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

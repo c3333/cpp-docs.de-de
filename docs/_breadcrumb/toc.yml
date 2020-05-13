@@ -2,7 +2,7 @@
   tocHref: /
   topicHref: /
   items:
-    - name: Visual C++
+    - name: Microsoft C++
       tocHref: /cpp/
       topicHref: /cpp
       items:
@@ -16,7 +16,7 @@
             - name: C-Sprache
               tocHref: /cpp/c-language/
               topicHref: /cpp/c-language/c-language-reference
-            - name: C/C++-Präprozessor
+            - name: C-/C++-Präprozessor
               tocHref: /cpp/preprocessor/
               topicHref: /cpp/preprocessor/c-cpp-preprocessor-reference
             - name: Intrinsische Compilerfunktionen und Assemblysprache
@@ -32,7 +32,7 @@
                 - name: MASM
                   tocHref: /cpp/assembler/masm/
                   topicHref: /cpp/assembler/masm/microsoft-macro-assembler-reference
-            - name: C Runtime Library
+            - name: C-Laufzeitbibliothek
               tocHref: /cpp/c-runtime-library/
               topicHref: /cpp/c-runtime-library/c-run-time-library-reference
               items:
@@ -45,27 +45,27 @@
             - name: Windows
               tocHref: /cpp/windows/
               topicHref: /cpp/windows/overview-of-windows-programming-in-cpp
+              items: null
+            - name: ATL
+              tocHref: /cpp/atl/
+              topicHref: /cpp/atl/atl-com-desktop-components
+            - name: MFC
+              tocHref: /cpp/mfc/
+              topicHref: /cpp/mfc/mfc-desktop-applications
               items:
-                - name: ATL
-                  tocHref: /cpp/atl/
-                  topicHref: /cpp/atl/atl-com-desktop-components
-                - name: MFC
-                  tocHref: /cpp/mfc/
-                  topicHref: /cpp/mfc/mfc-desktop-applications
-                  items:
-                    - name: Referenz
-                      tocHref: /cpp/mfc/reference/
-                      topicHref: /cpp/mfc/reference/mfc-classes
-                - name: Freigegebene ATL-/MFC-Klassen
-                  tocHref: /cpp/atl-mfc-shared/
-                  topicHref: /cpp/atl-mfc-shared/atl-mfc-shared-classes
-                  items:
-                    - name: Referenz
-                      tocHref: /cpp/atl-mfc-shared/reference/
-                      topicHref: /cpp/atl-mfc-shared/reference/classes-shared-by-mfc-and-atl
-                - name: C++/CX
-                  tocHref: /cpp/cppcx/
-                  topicHref: /cpp/cppcx/visual-c-language-reference-c-cx
+                - name: Referenz
+                  tocHref: /cpp/mfc/reference/
+                  topicHref: /cpp/mfc/reference/mfc-classes
+            - name: Freigegebene ATL-/MFC-Klassen
+              tocHref: /cpp/atl-mfc-shared/
+              topicHref: /cpp/atl-mfc-shared/atl-mfc-shared-classes
+              items:
+                - name: Referenz
+                  tocHref: /cpp/atl-mfc-shared/reference/
+                  topicHref: /cpp/atl-mfc-shared/reference/classes-shared-by-mfc-and-atl
+            - name: C++/CX
+              tocHref: /cpp/cppcx/
+              topicHref: /cpp/cppcx/visual-c-language-reference-c-cx
             - name: Linux
               tocHref: /cpp/linux/
               topicHref: /cpp/linux/download-install-and-setup-the-linux-development-workload
@@ -87,7 +87,7 @@
                   topicHref: /cpp/data/odbc/open-database-connectivity-odbc
             - name: 'Durchführen von Codebearbeitung, -navigation und -umgestaltung'
               tocHref: /cpp/ide
-              topicHref: /cpp/overview-of-cpp-development
+              topicHref: /cpp/ide/read-and-understand-code-cpp
               items:
                 - name: IDE
                   tocHref: /cpp/ide/
@@ -96,13 +96,15 @@
               tocHref: /cpp/build/
               topicHref: /cpp/build/building-c-cpp-programs
               items:
-                - name: Buildverweis
+                - name: Buildreferenz
                   tocHref: /cpp/build/reference/
                   topicHref: /cpp/build/reference/c-cpp-building-reference
-                  items:
-                    - name: 'Compiler und Tools: Fehler und Warnungen'
-                      tocHref: /cpp/error-messages/
-                      topicHref: /cpp/error-messages/compiler-errors-1/c-cpp-build-errors
+            - name: Build Insights
+              tocHref: /cpp/build-insights/
+              topicHref: /cpp/build-insights/get-started-with-cpp-build-insights
+            - name: Fehler und Warnungen
+              tocHref: /cpp/error-messages/
+              topicHref: /cpp/error-messages/compiler-errors-1/c-cpp-build-errors
             - name: Portieren und Aktualisieren
               tocHref: /cpp/porting/
               topicHref: /cpp/porting/visual-cpp-porting-and-upgrading-guide

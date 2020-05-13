@@ -22,7 +22,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -53,12 +53,12 @@ helpviewer_keywords:
 - tcsrev function
 - _tcsrev function
 ms.assetid: 87863e89-4fa0-421c-af48-25d8516fe72f
-ms.openlocfilehash: 585cdae15572eca565d2779225737a014d5f7837
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d0f03f84045d6fc036e6c8111da7b8484f2b8622
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365043"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911157"
 ---
 # <a name="_strrev-_wcsrev-_mbsrev-_mbsrev_l"></a>_strrev, _wcsrev, _mbsrev, _mbsrev_l
 
@@ -87,7 +87,7 @@ unsigned char *_mbsrev_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Umzukehrende auf NULL endende Zeichenfolge.
 
 *locale*<br/>
@@ -97,25 +97,25 @@ Zu verwendendes Gebietsschema.
 
 Gibt einen Zeiger zur geänderten Zeichenfolge zurück. Kein Rückgabewert ist zur Fehleranzeige reserviert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_strrev-Funktion** kehrt die Reihenfolge der Zeichen in *str*um. Das abschließende NULL-Zeichen bleibt bestehen. **_wcsrev** und **_mbsrev** sind breit- und multibyte-Zeichen-Versionen von **_strrev**. Die Argumente und der Rückgabewert von **_wcsrev** sind Zeichenfolgen mit großen Zeichen. bei **_mbsrev** sind Zeichenfolgen mit mehreren Bytezeichen. Bei **_mbsrev**wird die Reihenfolge der Bytes in jedem Multibyte-Zeichen in *str* nicht geändert. Diese drei Funktionen verhalten sich andernfalls identisch.
+Die **_strrev** -Funktion kehrt die Reihenfolge der Zeichen in *Str*um. Das abschließende NULL-Zeichen bleibt bestehen. **_wcsrev** und **_mbsrev** sind breit Zeichen-und multibytezeichenversionen von **_strrev**. Die Argumente und der Rückgabewert von **_wcsrev** sind Zeichen folgen mit breit Zeichen. bei den **_mbsrev** handelt es sich um Multibyte-Zeichen folgen. Bei **_mbsrev**wird die Reihenfolge der Bytes in jedem Multibytezeichen in *Str* nicht geändert. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-**_mbsrev** überprüft seine Parameter. Wenn *string1* oder *string2* ein NULL-Zeiger ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, **gibt _mbsrev** **NULL** zurück und setzt **errno** auf **EINVAL**. **_strrev** und **_wcsrev** überprüfen ihre Parameter nicht.
+**_mbsrev** überprüft seine Parameter. Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, **_mbsrev** gibt _mbsrev **null** zurück und legt **errno** auf **EINVAL**fest. **_strrev** und **_wcsrev** überprüfen Ihre Parameter nicht.
 
-Der Ausgabewert wird durch die Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst. weitere Informationen finden Sie unter [setlocale, _wsetlocale.](setlocale-wsetlocale.md) Die Versionen dieser Funktionen sind identisch, mit der Ausnahme, dass die Versionen, die nicht über das **_l** Suffix verfügen, das aktuelle Gebietsschema verwenden und die, die über das **_l** Suffix verfügen, stattdessen den übergebenen Gebietsschemaparameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die Versionen dieser Funktionen sind identisch, mit der Ausnahme, dass diejenigen, die nicht über das **_l** -Suffix verfügen, das aktuelle Gebiets Schema verwenden, und diejenigen, die das **_l** Suffix haben, stattdessen den übergebenen Gebiets Schema Parameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 > [!IMPORTANT]
 > Diese Funktionen sind möglicherweise für Pufferüberlaufrisiken anfällig. Pufferüberläufe können für Systemangriffe eingesetzt werden, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tcsrev**|**_strrev**|**_mbsrev**|**_wcsrev**|
-|**k.A.**|**k.A.**|**_mbsrev_l**|**k.A.**|
+|**Nicht zutreffend**|**Nicht zutreffend**|**_mbsrev_l**|**Nicht zutreffend**|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -123,7 +123,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-------------|---------------------|
 |**_strrev**|\<string.h>|
 |**_wcsrev**|\<string.h> oder \<wchar.h>|
-|**_mbsrev**, **_mbsrev_l**|\<mbstring.h>|
+|**_mbsrev** **_mbsrev_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -157,9 +157,9 @@ int main( void )
 The string "Able was I ere I saw Elba" is a palindrome
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcpy, wcscpy, _mbscpy](strcpy-wcscpy-mbscpy.md)<br/>

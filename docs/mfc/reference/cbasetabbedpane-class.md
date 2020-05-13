@@ -62,12 +62,12 @@ helpviewer_keywords:
 - CBaseTabbedPane [MFC], SetAutoHideMode
 - CBaseTabbedPane [MFC], ShowTab
 ms.assetid: f22c0080-5b29-4a0a-8f74-8f0a4cd2dbcf
-ms.openlocfilehash: ce7c48263ed511545757c94d61552e6206e74a00
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b3ae0d69c385ba89cf75d682ce12c6f1f4e5112f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352856"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752973"
 ---
 # <a name="cbasetabbedpane-class"></a>CBaseTabbedPane-Klasse
 
@@ -151,7 +151,7 @@ Weitere Informationen zum Erstellen von Registerkartenbereichen finden Sie unter
 
 `CBaseTabbedPane`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxBaseTabbedPane.h
 
@@ -306,7 +306,7 @@ virtual void EnableSetCaptionTextToTabName(BOOL bEnable);
 
 Stellt die interne Registerkartenreihenfolge in einem Standardzustand wieder her.
 
-```
+```cpp
 void FillDefaultTabsOrderArray();
 ```
 
@@ -440,7 +440,7 @@ virtual void GetMinSize(CSize& size) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 [out] Ein `CSize` Objekt, das mit der minimal zulässigen Größe gefüllt ist.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -457,7 +457,7 @@ virtual void GetMinSize(CSize& size) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 [out] Ein `CSize` Objekt, das mit der minimal zulässigen Größe gefüllt ist.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -601,7 +601,7 @@ Rufen Sie diese Methode auf, um den durch den *parameter pBar* angegebenen Berei
 
 Legt fest, ob die Registerkarten-Steuerleiste automatisch zerstört wird.
 
-```
+```cpp
 void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 ```
 
@@ -700,7 +700,7 @@ Der Auto-Hide-Modus wird für jeden abnehmbaren Bereich im Registerkartenbereich
 
 Rufen Sie diese Methode auf, um einen Registerkartenbereich programmgesteuert in den auto-hide-Modus zu wechseln. Der Bereich muss an das Hauptrahmenfenster angedockt werden ( [CDockablePane::GetDefaultPaneDivider](../../mfc/reference/cdockablepane-class.md#getdefaultpanedivider) muss einen gültigen Zeiger auf den [CPaneDivider](../../mfc/reference/cpanedivider-class.md)zurückgeben).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

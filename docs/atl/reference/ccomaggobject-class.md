@@ -17,12 +17,12 @@ helpviewer_keywords:
 - aggregation [C++], ATL objects
 - CComAggObject class
 ms.assetid: 7aa90d69-d399-477b-880d-e2cdf0ef7881
-ms.openlocfilehash: 9f05e83c8d0a1fd68fce3228dea9cfeab6183c96
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b9200c9c396fc16b6df3f4c2f4c66fb7976316d4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321170"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748164"
 ---
 # <a name="ccomaggobject-class"></a>CComAggObject-Klasse
 
@@ -83,7 +83,7 @@ Weitere Informationen zur Aggregation finden Sie im Artikel [Grundlagen von ATL 
 
 `CComAggObject`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlcom.h
 
@@ -171,7 +171,7 @@ Ein Standard-HRESULT-Wert.
 
 Diese Methode wird während der Objektzerstörung aufgerufen und gibt den [m_contained-Member](#m_contained) frei.
 
-```
+```cpp
 void FinalRelease();
 ```
 
@@ -233,7 +233,7 @@ STDMETHOD_(ULONG, Release)();
 
 Gibt in `Release` Debugbuilds einen Wert zurück, der für Diagnosen oder Tests nützlich sein kann. Gibt in Nicht-Debug-Builds `Release` immer 0 zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CComObject-Klasse](../../atl/reference/ccomobject-class.md)<br/>
 [CComPolyObject-Klasse](../../atl/reference/ccompolyobject-class.md)<br/>

@@ -9,31 +9,31 @@ f1_keywords:
 helpviewer_keywords:
 - CA2CAEX class
 ms.assetid: 388e7c1d-a144-474c-a182-b15f69a74bd8
-ms.openlocfilehash: e6c727993b2907aaa551421a5d2d23e372b68917
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 505c1e369bc5949fea291a2172c16d5e52c75567
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319143"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168513"
 ---
 # <a name="ca2caex-class"></a>CA2CAEX-Klasse
 
-Diese Klasse wird von den Zeichenfolgenkonvertierungsmakros CA2CTEX und CT2CAEX sowie dem typedef CA2CA verwendet.
+Diese Klasse wird von Zeichen folgen Konvertierungs Makros CA2CTEX und CT2CAEX sowie von typedef CA2CA verwendet.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template<int t_nBufferLength = 128>
 class CA2CAEX
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *t_nBufferLength*<br/>
-Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Byte.
+Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Bytes.
 
 ## <a name="members"></a>Member
 
@@ -42,25 +42,25 @@ Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standar
 |Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CA2CAEX::CA2CAEX](#ca2caex)|Der Konstruktor.|
-|[CA2CAEX::CA2CAEX](#dtor)|Der Destruktor.|
+|[CA2CAEX:: ~ CA2CAEX](#dtor)|Der Destruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2CAEX::operator LPCSTR](#operator_lpcstr)|Konvertierungsoperator.|
+|[CA2CAEX:: Operator LPCSTR](#operator_lpcstr)|Konvertierungs Operator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2CAEX::m_psz](#m_psz)|Das Datenelement, das die Quellzeichenfolge speichert.|
+|[CA2CAEX:: m_psz](#m_psz)|Der Datenmember, der die Quell Zeichenfolge speichert.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie CA2CTEX, CT2CAEX oder CA2CA in Ihrem eigenen Code, es sei denn, zusätzliche Funktionen sind erforderlich.
+Wenn keine zusätzliche Funktionalität erforderlich ist, verwenden Sie CA2CTEX, CT2CAEX oder CA2CA in Ihrem eigenen Code.
 
-Diese Klasse ist sicher in Schleifen zu verwenden und überläuft den Stapel nicht. Standardmäßig verwenden die ATL-Konvertierungsklassen und -makros für die Konvertierung die ANSI-Codeseite des aktuellen Threads.
+Diese Klasse kann in Schleifen sicher verwendet werden und kann den Stapel nicht überlaufen. Standardmäßig verwenden die ATL-Konvertierungsklassen und -makros für die Konvertierung die ANSI-Codeseite des aktuellen Threads.
 
 Die folgenden Makros basieren auf dieser Klasse:
 
@@ -72,42 +72,42 @@ Die folgende typedef basiert auf dieser Klasse:
 
 - CA2CA
 
-Eine Erläuterung dieser Textkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros](string-conversion-macros.md).
+Eine Erläuterung dieser Text Konvertierungs Makros finden Sie unter [ATL-und MFC-Zeichen folgen-Konvertierungs Makros](string-conversion-macros.md).
 
 ## <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung dieser Zeichenfolgenkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros.](string-conversion-macros.md)
+Ein Beispiel für die Verwendung dieser Zeichen folgen Konvertierungs Makros finden Sie unter [ATL-und MFC-Zeichen folgen Konvertierungs Makros](string-conversion-macros.md) .
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlconv.h
+**Header:** ATL-v. h
 
 ## <a name="ca2caexca2caex"></a><a name="ca2caex"></a>CA2CAEX::CA2CAEX
 
 Der Konstruktor.
 
-```
+```cpp
 CA2CAEX(LPCSTR psz, UINT nCodePage) throw(...);
 CA2CAEX(LPCSTR psz) throw(...);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Psz*<br/>
-Die zu konvertierende Textzeichenfolge.
+*PSZ*<br/>
+Die zu konvertierende Text Zeichenfolge.
 
-*nCodePage*<br/>
-Nicht verwendet in dieser Klasse.
+*ncodepage*<br/>
+In dieser Klasse nicht verwendet.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Erstellt den Puffer, der für die Übersetzung erforderlich ist.
+Erstellt den für die Übersetzung erforderlichen Puffer.
 
-## <a name="ca2caexca2caex"></a><a name="dtor"></a>CA2CAEX::CA2CAEX
+## <a name="ca2caexca2caex"></a><a name="dtor"></a>CA2CAEX:: ~ CA2CAEX
 
 Der Destruktor.
 
-```
+```cpp
 ~CA2CAEX() throw();
 ```
 
@@ -115,27 +115,27 @@ Der Destruktor.
 
 Gibt den zugewiesenen Puffer frei.
 
-## <a name="ca2caexm_psz"></a><a name="m_psz"></a>CA2CAEX::m_psz
+## <a name="ca2caexm_psz"></a><a name="m_psz"></a>CA2CAEX:: m_psz
 
-Das Datenelement, das die Quellzeichenfolge speichert.
+Der Datenmember, der die Quell Zeichenfolge speichert.
 
-```
+```cpp
 LPCSTR m_psz;
 ```
 
-## <a name="ca2caexoperator-lpcstr"></a><a name="operator_lpcstr"></a>CA2CAEX::operator LPCSTR
+## <a name="ca2caexoperator-lpcstr"></a><a name="operator_lpcstr"></a>CA2CAEX:: Operator LPCSTR
 
-Konvertierungsoperator.
+Konvertierungs Operator.
 
-```
+```cpp
 operator LPCSTR() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Textzeichenfolge als Typ LPCSTR zurück.
+Gibt die Text Zeichenfolge als LPCSTR-Typ zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [CA2AEX-Klasse](../../atl/reference/ca2aex-class.md)<br/>
 [CA2WEX-Klasse](../../atl/reference/ca2wex-class.md)<br/>

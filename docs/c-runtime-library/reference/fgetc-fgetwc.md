@@ -1,9 +1,11 @@
 ---
 title: fgetc, fgetwc
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - fgetwc
 - fgetc
+- _o_fgetc
+- _o_fgetwc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,16 +36,16 @@ helpviewer_keywords:
 - reading characters from streams
 - fgetwc function
 ms.assetid: 13348b7b-dc86-421c-9d6c-611ca79c8338
-ms.openlocfilehash: 92f44c65802f3baed37078574577bf108bbcd09a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a9c064582e22e267b0c597ecd89df8a43ef0bbc4
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940890"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912867"
 ---
 # <a name="fgetc-fgetwc"></a>fgetc, fgetwc
 
-Liest ein Zeichen aus einem Stream
+Liest ein Zeichen aus einem Stream.
 
 ## <a name="syntax"></a>Syntax
 
@@ -57,12 +60,12 @@ wint_t fgetwc(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**fgetc** gibt das als **int** gelesene Zeichen zurück oder gibt **EOF** zurück, um einen Fehler oder ein Dateiende anzugeben. **fgetwc** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt **WEOF** zurück, um einen Fehler oder ein Dateiende anzugeben. Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden. Wenn ein Lesefehler auftritt, wird der Fehlerindikator für den Stream festgelegt. Wenn der Stream **null**ist, rufen **fgetc** und **fgetwc** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben **EOF**zurück.
+**fgetc** gibt das als **int** gelesene Zeichen zurück oder gibt **EOF** zurück, um einen Fehler oder ein Dateiende anzugeben. **fgetwc** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt **WEOF** zurück, um einen Fehler oder ein Dateiende anzugeben. Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden. Wenn ein Lesefehler auftritt, wird der Fehlerindikator für den Stream festgelegt. Wenn *stream* der Stream **null**ist, rufen **fgetc** und **fgetwc** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben **EOF**zurück.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -75,6 +78,8 @@ Jede dieser Funktionen liest ein einzelnes Zeichen von der aktuellen Position de
 Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nicht vor Störungen durch andere Threads geschützt.
 
 Weitere Informationen zur Verarbeitung von Breitzeichen und Multibytezeichen im Text- und Binärmodus finden Sie unter [Unicodestream-E/A im Text- und Binärmodus](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -89,7 +94,7 @@ Weitere Informationen zur Verarbeitung von Breitzeichen und Multibytezeichen im 
 |**fgetc**|\<stdio.h>|
 |**fgetwc**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -135,7 +140,7 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Line one.

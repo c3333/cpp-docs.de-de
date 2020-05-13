@@ -1,8 +1,9 @@
 ---
 title: _set_abort_behavior
-ms.date: 01/02/2018
+ms.date: 4/2/2020
 api_name:
 - _set_abort_behavior
+- _o__set_abort_behavior
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - aborting programs
 - _set_abort_behavior function
 - set_abort_behavior function
-ms.openlocfilehash: a63d4e77a91dafa4500d5fef8e9b5e94ee28cfbd
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 06f72597a384cc5c90b2e345e62e13dee96c4dca
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948669"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913128"
 ---
 # <a name="_set_abort_behavior"></a>_set_abort_behavior
 
@@ -54,7 +56,7 @@ unsigned int _set_abort_behavior(
 *flags*<br/>
 Neuer Wert der [Abbruch](abort.md) -Flags.
 
-*chel*<br/>
+*mask*<br/>
 Maske für die festzulegenden [Abbruch](abort.md) -Flags-Bits.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -63,15 +65,17 @@ Der alte Wert der Flags.
 
 ## <a name="remarks"></a>Hinweise
 
-Es gibt zwei [Abbruch](abort.md) -Flags: **_WRITE_ABORT_MSG** und **_CALL_REPORTFAULT**. **_WRITE_ABORT_MSG** bestimmt, ob eine hilfreiche Textnachricht gedruckt wird, wenn ein Programm nicht normal beendet wird. Die Meldung besagt, dass die Anwendung die [Abbruch](abort.md) -Funktion aufgerufen hat. Beim Standardverhalten wird die Meldung ausgeben. **_CALL_REPORTFAULT**, sofern festgelegt, gibt an, dass ein Watson-Absturz Abbild generiert und gemeldet wird, wenn [Abbruch](abort.md) aufgerufen wird. Standardmäßig ist die Absturzabbildberichterstellung in den Nichtdebugversionen aktiviert.
+Es gibt zwei [Abbruch](abort.md) -Flags: **_WRITE_ABORT_MSG** und **_CALL_REPORTFAULT**. **_WRITE_ABORT_MSG** bestimmt, ob eine hilfreiche Textnachricht gedruckt wird, wenn ein Programm nicht normal beendet wird. Die Meldung besagt, dass die Anwendung die [Abbruch](abort.md) -Funktion aufgerufen hat. Beim Standardverhalten wird die Meldung ausgeben. Wenn festgelegt ist, gibt **_CALL_REPORTFAULT**an, dass ein Watson-Absturz Abbild generiert und gemeldet wird, wenn [Abbruch](abort.md) aufgerufen wird. Standardmäßig ist die Absturzabbildberichterstellung in den Nichtdebugversionen aktiviert.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_set_abort_behavior**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -94,6 +98,6 @@ int main()
 Suppressing the abort message. If successful, this message will be the only output.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[abort](abort.md)<br/>
+[Abbruch](abort.md)<br/>

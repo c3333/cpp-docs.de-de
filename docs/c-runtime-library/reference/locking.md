@@ -1,8 +1,9 @@
 ---
 title: _locking
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _locking
+- _o__locking
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - files [C++], locking
 - _locking function
 ms.assetid: 099aaac1-d4ca-4827-aed6-24dff9844150
-ms.openlocfilehash: 4450c511b9d98c31b7e6a777f54f3bd8e0affbb7
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c1c211ffaa63a0e4711374b01b0530ed8db20dfb
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953267"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911547"
 ---
 # <a name="_locking"></a>_locking
 
@@ -51,7 +53,7 @@ int _locking(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor.
 
 *mode*<br/>
@@ -69,7 +71,7 @@ Die Anzahl der zu sperrenden Bytes.
 | **EACCES** | Sperrverletzung (Datei bereits gesperrt oder entsperrt). |
 | **EBADF** | Ungültiger Dateideskriptor. |
 | **EDEADLOCK** | Sperrverletzung. Wird zurückgegeben, wenn das **_LK_LOCK** -oder **_LK_RLCK** -Flag angegeben wird und die Datei nach 10 versuchen nicht gesperrt werden kann. |
-| **EINVAL** | **_Locking**wurde ein ungültiges Argument angegeben. |
+| **Eingabe** | **_Locking**wurde ein ungültiges Argument angegeben. |
 
 Wenn der Fehler aufgrund eines ungültigen Parameters entstanden ist, wie z.B. ein ungültiger Dateideskriptor, wird der Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben.
 
@@ -79,7 +81,7 @@ Die **_locking** -Funktion sperrt oder entsperrt *nbytes* -Bytes der Datei, die 
 
 Der *Modus* muss eine der folgenden Manifestkonstanten sein, die in „Locking.h“ definiert sind.
 
-|*Moduswert*|Effekt|
+|*Moduswert*|Wirkung|
 |-|-|
 | **_LK_LOCK** | Sperrt die angegebenen Bytes. Wenn die Bytes nicht gesperrt werden können, führt das Programm nach 1 Sekunde sofort einen neuen Versuch durch. Wenn nach 10 Versuchen die Bytes nicht gesperrt werden können, gibt die Konstante einen Fehler zurück. |
 | **_LK_NBLCK** | Sperrt die angegebenen Bytes. Wenn die Bytes nicht gesperrt werden können, gibt die Konstante einen Fehler zurück. |
@@ -87,15 +89,17 @@ Der *Modus* muss eine der folgenden Manifestkonstanten sein, die in „Locking.h
 | **_LK_RLCK** | Identisch mit **_LK_LOCK**. |
 | **_LK_UNLCK** | Entsperrt die angegebenen Bytes, die zuvor gesperrt sein mussten. |
 
-Mehrere Bereiche einer Datei, die sich nicht überschneiden, können gesperrt werden. Ein Bereich, der entsperrt wird, muss zuvor gesperrt worden sein. **_locking** führt keine angrenzenden Regionen zusammen. Wenn zwei gesperrte Bereiche nebeneinander liegen, muss jede Region separat entsperrt werden. Bereichen sollten nur über einen kurzen Zeitraum gesperrt sein und sollten entsperrt werden, bevor eine Datei geschlossen oder das Programm beendet wird.
+Mehrere Bereiche einer Datei, die sich nicht überschneiden, können gesperrt werden. Ein Bereich, der entsperrt wird, muss zuvor gesperrt worden sein. in **_locking** werden keine angrenzenden Regionen zusammengeführt. Wenn zwei gesperrte Bereiche nebeneinander liegen, muss jede Region separat entsperrt werden. Bereichen sollten nur über einen kurzen Zeitraum gesperrt sein und sollten entsperrt werden, bevor eine Datei geschlossen oder das Programm beendet wird.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_locking**|\<io.h> und \<sys/locking.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -166,8 +170,8 @@ No one can change these bytes while I'm reading them
 Now I'm done. Do what you will with them
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>

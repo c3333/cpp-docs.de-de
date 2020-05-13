@@ -1,8 +1,9 @@
 ---
 title: _callnewh
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _callnewh
+- _o__callnewh
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -24,12 +26,12 @@ f1_keywords:
 helpviewer_keywords:
 - _callnewh
 ms.assetid: 4dcb73e9-6384-4d12-a973-a8807d4de7a8
-ms.openlocfilehash: 3e14450538807b164897c335f7e37d82d8562314
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 3990d4b15c25cfd6c753c2b1d44c112971ff59af
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939382"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918802"
 ---
 # <a name="_callnewh"></a>_callnewh
 
@@ -50,10 +52,10 @@ Der Speicherplatz, den der [neue Operator](../../cpp/new-operator-cpp.md) zu bel
 
 ## <a name="return-value"></a>Rückgabewert
 
-|Wert|Description|
+|Value|Beschreibung|
 |-----------|-----------------|
-|0|Fehler Entweder ist kein neuer Handler installiert, oder es ist kein neuer Handler aktiv.|
-|1|Erfolglos Der neue Handler ist installiert und aktiv. Die Speicherbelegung kann wiederholt werden.|
+|0|Fehler: Entweder wurde kein neuer Handler installiert oder der neue Handler ist nicht aktiv.|
+|1|Erfolg: Der neue Handler wurde installiert und ist aktiv. Die Speicherbelegung kann wiederholt werden.|
 
 ## <a name="exceptions"></a>Ausnahmen
 
@@ -63,13 +65,15 @@ Diese Funktion löst [bad_alloc](../../standard-library/bad-alloc-class.md) aus,
 
 Der *neue Handler* wird aufgerufen, wenn der [neue Operator](../../cpp/new-operator-cpp.md) die Speicherbelegung nicht erfolgreich durchführen kann. Der neue Handler initialisiert dann möglicherweise einige entsprechende Aktionen, z. B. die Freigabe des Speichers, sodass nachfolgende Belegungen erfolgreich sind.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |_callnewh|internal.h|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_set_new_handler](set-new-handler.md)<br/>
 [_set_new_mode](set-new-mode.md)<br/>

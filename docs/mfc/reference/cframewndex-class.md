@@ -178,12 +178,12 @@ helpviewer_keywords:
 - CFrameWndEx [MFC], UpdateCaption
 - CFrameWndEx [MFC], WinHelp
 ms.assetid: 5830aca8-4a21-4f31-91f1-dd5477ffcc8d
-ms.openlocfilehash: 6073feb5cad5bda5e20f3ff5c16e1ed6d380bca7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 25d4c46d61c3f1b25d18a61a50ae9c2e8bdd8411
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373760"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752927"
 ---
 # <a name="cframewndex-class"></a>CFrameWndEx-Klasse
 
@@ -308,7 +308,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CFrameWndEx` eine Klasse von de
 
 [CFrameWndEx](../../mfc/reference/cframewndex-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxframewndex.h
 
@@ -316,7 +316,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CFrameWndEx` eine Klasse von de
 
 Passt das Layout des OLE-Clientelements und des Clientbereichs des Frames an.
 
-```
+```cpp
 void ActiveItemRecalcLayout();
 ```
 
@@ -380,7 +380,7 @@ virtual void DelayUpdateFrameMenu(HMENU hMenuAlt);
 
 Dockt den angegebenen Bereich an das Rahmenfenster an.
 
-```
+```cpp
 void DockPane(
     CBasePane* pBar,
     UINT nDockBarID=0,
@@ -498,7 +498,7 @@ Der *Parameter dwDockStyle* kann einen der folgenden Werte haben:
 
 Zeigt das Hauptmenü im Vollbildmodus an oder blendet es aus.
 
-```
+```cpp
 void EnableFullScreenMainMenu(BOOL bEnableMenu);
 ```
 
@@ -511,7 +511,7 @@ void EnableFullScreenMainMenu(BOOL bEnableMenu);
 
 Aktiviert den Vollbildmodus für das Rahmenfenster.
 
-```
+```cpp
 void EnableFullScreenMode(UINT uiFullScreenCmd);
 ```
 
@@ -532,7 +532,7 @@ Wenn Sie das Hauptmenü auf dem Bildschirm beibehalten möchten, rufen Sie [CFra
 
 Aktiviert oder deaktiviert das Laden des Andockstatus.
 
-```
+```cpp
 void EnableLoadDockState(BOOL bEnable=TRUE);
 ```
 
@@ -545,7 +545,7 @@ void EnableLoadDockState(BOOL bEnable=TRUE);
 
 Aktiviert oder deaktiviert die automatische Behandlung des Bereichsmenüs.
 
-```
+```cpp
 void EnablePaneMenu(
     BOOL bEnable,
     UINT uiCustomizeCmd,
@@ -1712,7 +1712,7 @@ afx_msg void OnSizing(
 
 Wird vom Framework aufgerufen, wenn sich die Systemfarben ändern.
 
-```
+```cpp
 void OnSysColorChange();
 ```
 
@@ -1963,7 +1963,7 @@ Diese Methode wird aufgerufen, wenn sich die Größe des Rahmenfensters geänder
 
 Hebt die Registrierung eines Bereichs auf und entfernt ihn aus dem Docking-Manager.
 
-```
+```cpp
 void RemovePaneFromDockManager(
     CBasePane* pControlBar,
     BOOL bDestroy,
@@ -1999,20 +1999,20 @@ Die [CDockingManager-Klasse](../../mfc/reference/cdockingmanager-class.md) über
 
 Stellt das Andocklayout im Indockingstatus wieder her, der in der Registrierung gespeichert ist.
 
-```
+```cpp
 void SetDockState(const CDockState& state);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Staat*<br/>
+*state*<br/>
 Der Andockstatus. Dieser Parameter wird ignoriert.
 
 ## <a name="cframewndexsetprintpreviewframe"></a><a name="setprintpreviewframe"></a>CFrameWndEx::SetPrintPreviewFrame
 
 Legt das Druckvorschaufensterfenster fest.
 
-```
+```cpp
 void SetPrintPreviewFrame(CFrameWnd* pWnd);
 ```
 
@@ -2027,7 +2027,7 @@ void SetPrintPreviewFrame(CFrameWnd* pWnd);
 
 Fügt benutzerdefinierte Befehle in ein Symbolleistenmenü ein.
 
-```
+```cpp
 void SetupToolbarMenu(
     CMenu& menu,
     const UINT uiViewUserToolbarCmdFirst,
@@ -2053,7 +2053,7 @@ Das Framework speichert benutzerdefinierte Befehle in einer Liste. Verwenden Sie
 
 Schaltet den Hauptframe zwischen Vollbildmodus und normaler Modus.
 
-```
+```cpp
 void ShowFullScreen();
 ```
 
@@ -2061,7 +2061,7 @@ void ShowFullScreen();
 
 Zeigt den angegebenen Bereich ein oder blendet ihn aus.
 
-```
+```cpp
 void ShowPane(
     CBasePane* pBar,
     BOOL bShow,
@@ -2087,7 +2087,7 @@ void ShowPane(
 
 Wird vom Framework aufgerufen, um die Fensterrahmenbeschriftung zu aktualisieren.
 
-```
+```cpp
 void UpdateCaption();
 ```
 
@@ -2113,7 +2113,7 @@ Der Hilfebefehl. Eine Liste möglicher Werte finden Sie unter [WinHelp](/windows
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

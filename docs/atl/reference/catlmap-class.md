@@ -1,5 +1,5 @@
 ---
-title: CAtlMap-Klasse
+title: Klasse von "Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlMap
@@ -37,20 +37,20 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlMap class
 ms.assetid: 5e2fe028-8e6d-4686-93df-1433d2080ec3
-ms.openlocfilehash: 1821532a4d5a3078202f180273b02945b8d8e4ba
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b79e6cbd796569e6ba11c96158099de6c30b310a
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260609"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168058"
 ---
-# <a name="catlmap-class"></a>CAtlMap-Klasse
+# <a name="catlmap-class"></a>Klasse von "Klasse"
 
-Diese Klasse stellt Methoden zum Erstellen und Verwalten von einem Map-Objekt.
+Diese Klasse stellt Methoden zum Erstellen und Verwalten eines Map-Objekts bereit.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <typename K,
           typename V,
           class KTraits = CElementTraits<K>,
@@ -58,124 +58,124 @@ template <typename K,
 class CAtlMap
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
-*K*<br/>
-Der Typ des Key-Element.
+*Km*<br/>
+Der Schlüssel Elementtyp.
 
-*V*<br/>
-Der Werttyp-Element.
+*Ramelow*<br/>
+Der Wert Elementtyp.
 
-*KTraits*<br/>
-Der Code, der zum Kopieren oder Verschieben von Hauptelementen verwendet wird. Finden Sie unter [CElementTraits-Klasse](../../atl/reference/celementtraits-class.md) Weitere Details.
+*Kmerkmalen*<br/>
+Der Code, der zum Kopieren oder Verschieben von Schlüsselelementen verwendet wird. Weitere Informationen finden Sie unter [celementtrait-Klasse](../../atl/reference/celementtraits-class.md) .
 
-*VTraits*<br/>
-Der Code zum Kopieren oder verschieben Elemente mit dem Wert verwendet.
+*Vmerkmalen*<br/>
+Der Code, der zum Kopieren oder Verschieben von Wert Elementen verwendet wird.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlMap::KINARGTYPE](#kinargtype)|Typ verwendet, wenn ein Schlüssel, als Eingabeargument übergeben wird|
-|[CAtlMap::KOUTARGTYPE](#koutargtype)|-Typ, wenn ein Schlüssel als ausgabeargument zurückgegeben wird.|
-|[CAtlMap::VINARGTYPE](#vinargtype)|Der Typ verwendet, wenn ein Wert als Eingabeargument übergeben wird.|
-|[CAtlMap::VOUTARGTYPE](#voutargtype)|Der Typ verwendet, wenn ein Wert als ausgabeargument übergeben wird.|
+|["", "", "".](#kinargtype)|Typ, der verwendet wird, wenn eine Taste als Eingabe Argument übermittelt wird|
+|["", "": Koutargtype](#koutargtype)|Der Typ, der verwendet wird, wenn eine Taste als Ausgabe Argument zurückgegeben wird.|
+|["": Vinargtype](#vinargtype)|Der Typ, der verwendet wird, wenn ein Wert als Eingabe Argument übermittelt wird.|
+|["": Voutargtype](#voutargtype)|Der Typ, der verwendet wird, wenn ein Wert als Ausgabe Argument ausgegeben wird.|
 
 ### <a name="public-classes"></a>Öffentliche Klassen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlMap::CPair-Klasse](#cpair_class)|Eine Klasse, die die Schlüssel-Wert-Elemente enthält.|
+|["Klasse": cpair-Klasse](#cpair_class)|Eine-Klasse, die die Schlüssel-und Wert Elemente enthält.|
 
-### <a name="cpair-data-members"></a>CPair-Datenmember
+### <a name="cpair-data-members"></a>Cpair-Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPair::m_key](#m_key)|Der Datenmember, die das wichtigste Element gespeichert wird.|
-|[CPair::m_value](#m_value)|Der Datenmember, speichern das Value-Element.|
+|[Cpair:: m_key](#m_key)|Der Datenmember, der das Schlüsselelement speichert.|
+|[Cpair:: m_value](#m_value)|Der Datenmember, der das Value-Element speichert.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlMap::CAtlMap](#catlmap)|Der Konstruktor.|
-|[CAtlMap::~CAtlMap](#dtor)|Der Destruktor.|
+|["":](#catlmap)|Der Konstruktor.|
+|["": ""](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlMap::AssertValid](#assertvalid)|Rufen Sie diese Methode, um eine ASSERTION verursacht, wenn die `CAtlMap` ist ungültig.|
-|[CAtlMap::DisableAutoRehash](#disableautorehash)|Rufen Sie diese Methode zum Deaktivieren der automatischen erneutes Hashing Durchführen von der `CAtlMap` Objekt.|
-|[CAtlMap::EnableAutoRehash](#enableautorehash)|Rufen Sie diese Methode zum Aktivieren der automatischen erneutes Hashing Durchführen von der `CAtlMap` Objekt.|
-|[CAtlMap::GetAt](#getat)|Rufen Sie diese Methode, um das Element an einer angegebenen Position in der Zuordnung zurück.|
-|[CAtlMap::GetCount](#getcount)|Rufen Sie diese Methode zum Abrufen der Anzahl der Elemente in der Zuordnung.|
-|[CAtlMap::GetHashTableSize](#gethashtablesize)|Rufen Sie diese Methode zum Ermitteln der Anzahl der Klassen in der Map-Hashtabelle.|
-|[CAtlMap::GetKeyAt](#getkeyat)|Rufen Sie diese Methode zum Abrufen des Schlüssels an der angegebenen Position in der `CAtlMap` Objekt.|
-|[CAtlMap::GetNext](#getnext)|Rufen Sie diese Methode, um einen Zeiger auf das nächste Element erhalten-Paar, in gespeichert der `CAtlMap` Objekt.|
-|[CAtlMap::GetNextAssoc](#getnextassoc)|Ruft das nächste Element durchlaufen werden können.|
-|[CAtlMap::GetNextKey](#getnextkey)|Rufen Sie diese Methode zum Abrufen des nächsten Schlüssels aus der `CAtlMap` Objekt.|
-|[CAtlMap::GetNextValue](#getnextvalue)|Rufen Sie diese Methode zum Abrufen des nächsten Wert aus der `CAtlMap` Objekt.|
-|[CAtlMap::GetStartPosition](#getstartposition)|Rufen Sie diese Methode, um eine Zuordnung Iteration starten.|
-|[CAtlMap::GetValueAt](#getvalueat)|Rufen Sie diese Methode zum Abrufen des Werts, der gespeichert wird, an der angegebenen Position in der `CAtlMap` Objekt.|
-|[CAtlMap::InitHashTable](#inithashtable)|Rufen Sie diese Methode, um die Hashtabelle zu initialisieren.|
-|[CAtlMap::IsEmpty](#isempty)|Rufen Sie diese Methode für ein Objekt für die leere Zuordnung testen.|
-|[CAtlMap::Lookup](#lookup)|Rufen Sie diese Methode zum Nachschlagen der Schlüssel oder Werte in der `CAtlMap` Objekt.|
-|[CAtlMap::Rehash](#rehash)|Rufen Sie diese rehash-Methode der `CAtlMap` Objekt.|
-|[CAtlMap::RemoveAll](#removeall)|Rufen Sie diese Methode, um alle Elemente entfernt werden sollen die `CAtlMap` Objekt.|
-|[CAtlMap::RemoveAtPos](#removeatpos)|Rufen Sie diese Methode, um das Element an der angegebenen Position im Entfernen der `CAtlMap` Objekt.|
-|[CAtlMap::RemoveKey](#removekey)|Rufen Sie diese Methode zum Entfernen eines Elements aus der `CAtlMap` Objekt anhand des angegebenen Schlüssels.|
-|[CAtlMap::SetAt](#setat)|Rufen Sie diese Methode zum Einfügen von einem Element-Paar in der Zuordnung.|
-|[CAtlMap::SetOptimalLoad](#setoptimalload)|Rufen Sie diese Methode, um die optimale Last legen die `CAtlMap` Objekt.|
-|[CAtlMap::SetValueAt](#setvalueat)|Rufen Sie diese Methode zum Ändern des Werts, der gespeichert wird, an der angegebenen Position in der `CAtlMap` Objekt.|
+|["": AssertValid](#assertvalid)|Rufen Sie diese Methode auf, um eine Assert `CAtlMap` -Methode auszulösen, wenn nicht gültig ist.|
+|[Ereignis ERMAP::D isableautorehash](#disableautorehash)|Ruft diese Methode auf, um das `CAtlMap` automatische Reaktivieren des Objekts zu deaktivieren.|
+|["", "": Enableautorehash](#enableautorehash)|Ruft diese Methode auf, um das `CAtlMap` automatische Reaktivieren des Objekts zu aktivieren.|
+|["": GetAt](#getat)|Mit dieser Methode wird das Element an einer angegebenen Position in der Zuordnung zurückgegeben.|
+|["Update Map:: GetCount"](#getcount)|Rufen Sie diese Methode auf, um die Anzahl der Elemente in der Zuordnung abzurufen.|
+|["", "": Gethashtablesize](#gethashtablesize)|Mit dieser Methode können Sie die Anzahl der Container in der Hash Tabelle der Zuordnung bestimmen.|
+|["": Getkeyat](#getkeyat)|Rufen Sie diese Methode auf, um den Schlüssel abzurufen, der an der `CAtlMap` angegebenen Position im-Objekt gespeichert ist.|
+|["": GetNext](#getnext)|Rufen Sie diese Methode auf, um einen Zeiger auf das nächste Element paar zu `CAtlMap` erhalten, das im-Objekt gespeichert ist.|
+|["": GetNextAssoc](#getnextassoc)|Ruft das nächste Element für die Iteration ab.|
+|["": Getnextkey](#getnextkey)|Rufen Sie diese Methode auf, um den nächsten Schlüssel `CAtlMap` aus dem-Objekt abzurufen.|
+|["": Getnextvalue](#getnextvalue)|Mit dieser Methode können Sie den nächsten Wert aus dem `CAtlMap` -Objekt abrufen.|
+|["": GetStartPosition](#getstartposition)|Mit dieser Methode wird eine Karten Iterations Methode gestartet.|
+|["": Getvalueat](#getvalueat)|Rufen Sie diese Methode auf, um den Wert abzurufen, der an einer `CAtlMap` bestimmten Position im-Objekt gespeichert ist.|
+|["": ""](#inithashtable)|Ruft diese Methode auf, um die Hash Tabelle zu initialisieren.|
+|["": IsEmpty](#isempty)|Mit dieser Methode können Sie auf ein leeres Map-Objekt testen.|
+|["": Lookup](#lookup)|Mit dieser Methode können Sie Schlüssel oder Werte im- `CAtlMap` Objekt suchen.|
+|["": ""](#rehash)|Ruft diese Methode auf, um das `CAtlMap` Objekt erneut zu durch drücken.|
+|["": Remote Map:: RemoveAll](#removeall)|Mit dieser Methode können Sie alle Elemente aus dem `CAtlMap` -Objekt entfernen.|
+|["": Removeatpos](#removeatpos)|Ruft diese Methode auf, um das Element an der angegebenen Position im `CAtlMap` Objekt zu entfernen.|
+|["": Removekey](#removekey)|Ruft diese Methode auf, um ein Element aus `CAtlMap` dem-Objekt mit dem angegebenen Schlüssel zu entfernen.|
+|["":](#setat)|Mit dieser Methode fügen Sie ein Element Paar in die Zuordnung ein.|
+|["": ""](#setoptimalload)|Ruft diese Methode auf, um die optimale Auslastung des `CAtlMap` -Objekts festzulegen.|
+|["", "": Setvalueat](#setvalueat)|Ruft diese Methode auf, um den Wert zu ändern, der an einer `CAtlMap` bestimmten Position im-Objekt gespeichert ist.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlMap::operator\[\]](catlmap-class.md#operator_at)|Ersetzt oder fügt ein neues Element auf der `CAtlMap`.|
+|[CAtlMap::operator\[\]](catlmap-class.md#operator_at)|Ersetzt oder fügt ein neues Element hinzu `CAtlMap`.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAtlMap` bietet Unterstützung für ein Array Zuordnung eines Typs, Verwalten von ungeordneten Bytearray wichtige Elemente und die zugehörigen Werte. Elemente (bestehend aus einem Schlüssel und Wert) werden gespeichert, wobei im verwendeten Hashalgorithmus, sodass eine große Menge von Daten effizient gespeichert und abgerufen werden.
+`CAtlMap`bietet Unterstützung für ein Mapping-Array eines beliebigen Typs, wobei ein ungeordnetes Array von Schlüsselelementen und die zugeordneten Werte verwaltet werden. Elemente (bestehend aus einem Schlüssel und einem Wert) werden mit einem Hash Algorithmus gespeichert, sodass eine große Datenmenge effizient gespeichert und abgerufen werden kann.
 
-Die *KTraits* und *VTraits* Parameter sind "traits"-Klassen, die alle zusätzlichen erforderlichen Code zum Kopieren oder Verschieben von Elementen enthalten.
+Bei den Parametern " *ktrait* " und " *vmerkmalen* " handelt es sich um Eigenschaften Klassen, die zusätzlichen Code zum Kopieren oder Verschieben von Elementen enthalten.
 
-Eine Alternative zum `CAtlMap` wird angeboten, indem die [CRBMap](../../atl/reference/crbmap-class.md) Klasse. `CRBMap` Außerdem werden die Schlüssel/Wert-Paare gespeichert, jedoch weist unterschiedliche Leistungsmerkmale. Die Zeit zum Einfügen eines Elements, suchen Sie nach einem Schlüssel, oder löschen ein Schlüssels aus einem `CRBMap` Objekt ist, der Reihenfolge *log(n)*, wobei *n* ist die Anzahl der Elemente. Für `CAtlMap`, alle diese Vorgänge in der Regel einen Konstanten Zeit dauern, dennoch Worst-Case-Szenarien möglicherweise eine Bestellung ist *n*. Aus diesem Grund in einem typischen Fall `CAtlMap` ist schneller.
+Eine Alternative zu `CAtlMap` wird von der [CRBMap](../../atl/reference/crbmap-class.md) -Klasse angeboten. `CRBMap`speichert auch Schlüssel-Wert-Paare, weist jedoch unterschiedliche Leistungsmerkmale auf. Der Zeitaufwand für das Einfügen eines Elements, das Suchen nach einem Schlüssel oder das Löschen eines Schlüssels `CRBMap` aus einem-Objekt ist "Order *Log (n)*", wobei *n* die Anzahl der Elemente ist. Bei `CAtlMap`nehmen alle diese Vorgänge in der Regel eine Konstante Zeit in Anspruch, obwohl die Groß-/Kleinschreibung für Szenarios möglicherweise die Reihenfolge *n*hat. Daher `CAtlMap` ist in einem typischen Fall schneller.
 
-Ein weiterer Unterschied zwischen `CRBMap` und `CAtlMap` wird offensichtlich, wenn die gespeicherte Elemente durchlaufen. In einem `CRBMap`, die Elemente in einer sortierten Reihenfolge besucht werden. In einem `CAtlMap`, die Elemente werden nicht sortiert werden und keine Reihenfolge abgeleitet werden kann.
+Der andere Unterschied `CRBMap` zwischen `CAtlMap` und wird offensichtlich, wenn die gespeicherten Elemente durchlaufen werden. In einem `CRBMap`werden die Elemente in sortierter Reihenfolge besucht. In einem `CAtlMap`werden die Elemente nicht sortiert, und es kann keine Reihenfolge abgeleitet werden.
 
-Wenn eine kleine Anzahl von Elementen gespeichert werden muss, erwägen Sie die Verwendung der [CSimpleMap](../../atl/reference/csimplemap-class.md) stattdessen.
+Wenn eine kleine Anzahl von Elementen gespeichert werden muss, sollten Sie stattdessen die [CSimpleMap](../../atl/reference/csimplemap-class.md) -Klasse verwenden.
 
-Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
+Weitere Informationen finden Sie unter [ATL](../../atl/atl-collection-classes.md)-Auflistungs Klassen.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcoll.h
+**Header:** atlcoll. h
 
-##  <a name="assertvalid"></a>  CAtlMap::AssertValid
+## <a name="catlmapassertvalid"></a><a name="assertvalid"></a>"": AssertValid
 
-Rufen Sie diese Methode, um eine ASSERTION verursacht, wenn die `CAtlMap` -Objekt ist ungültig.
+Rufen Sie diese Methode auf, um eine Assert `CAtlMap` -Methode auszulösen, wenn das Objekt nicht gültig ist.
 
-```
+```cpp
 void AssertValid() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In der Debug-Builds: Diese Methode eine ASSERTION verursacht, wenn die `CAtlMap` -Objekt ist ungültig.
+In Debugbuilds führt diese Methode eine Assert-Methode aus `CAtlMap` , wenn das Objekt nicht gültig ist.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="catlmap"></a>  CAtlMap::CAtlMap
+## <a name="catlmapcatlmap"></a><a name="catlmap"></a>"":
 
 Der Konstruktor.
 
-```
+```cpp
 CAtlMap(
     UINT nBins = 17,
     float fOptimalLoad = 0.75f,
@@ -186,98 +186,98 @@ CAtlMap(
 
 ### <a name="parameters"></a>Parameter
 
-*nBins*<br/>
-Die Anzahl der Klassen stellt Zeiger auf die gespeicherten Elemente. Finden Sie unter "Hinweise" weiter unten in diesem Thema finden Sie eine Erläuterung der Klassen ein.
+*nbins*<br/>
+Die Anzahl der Container, die Zeiger auf die gespeicherten Elemente bereitstellen. Weitere Informationen zu Containern finden Sie weiter unten in diesem Thema unter "Hinweise".
 
-*fOptimalLoad*<br/>
-Das optimale Auslastung-Verhältnis.
+*"f"*<br/>
+Das optimale Last Verhältnis.
 
-*fLoThreshold*<br/>
-Der untere Schwellenwert für die Load-Verhältnis.
+*flothreshold*<br/>
+Der untere Schwellenwert für das Lasten Verhältnis.
 
-*fHiThreshold*<br/>
-Der obere Schwellenwert für die Load-Verhältnis.
+*Wert für "f"*<br/>
+Der obere Schwellenwert für das Lasten Verhältnis.
 
-*nBlockSize*<br/>
+*nblocksize*<br/>
 Die Blockgröße.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`CAtlMap` verweist auf alle gespeicherten Elemente, indem Sie zunächst einen Index, wobei im verwendeten Hashalgorithmus für den Schlüssel. Dieser Index verweist auf eine "Bin" der einen Zeiger auf die gespeicherten Elemente enthält. Wenn die "bin" bereits verwendet wird, wird eine verknüpfte Liste erstellt, für den Zugriff auf die nachfolgenden Elemente. Durchlaufen eine Liste ist langsamer als die direkten Zugriff auf das richtige Element, und die Struktur der Zuordnung muss also speicheranforderungen anhand der Leistung abwägen. Die Standardparameter wurden ausgewählt, um gute Ergebnisse in den meisten Fällen liefern.
+`CAtlMap`verweist auf alle zugehörigen gespeicherten Elemente, indem zuerst ein Index mit einem Hash Algorithmus für den Schlüssel erstellt wird. Dieser Index verweist auf einen "bin", der einen Zeiger auf die gespeicherten Elemente enthält. Wenn der bin bereits verwendet wird, wird eine verknüpfte Liste erstellt, um auf die nachfolgenden Elemente zuzugreifen. Das Durchlaufen einer Liste ist langsamer als der direkte Zugriff auf das richtige Element. Daher muss die Karten Struktur die Speicheranforderungen gegen die Leistung ausgleichen. Die Standardparameter wurden in den meisten Fällen dazu ausgewählt, gute Ergebnisse zu liefern.
 
-Das Verhältnis der Auslastung ist das Verhältnis der Anzahl von Klassen, die Anzahl der Elemente in der Map-Objekt gespeichert. Wenn die Struktur der Zuordnung neu berechnet wird, die *fOptimalLoad* Parameterwert wird verwendet, um die Anzahl der erforderlichen Klassen zu berechnen. Dieser Wert kann geändert werden, mithilfe der [CAtlMap::SetOptimalLoad](#setoptimalload) Methode.
+Das Lasten Verhältnis ist das Verhältnis zwischen der Anzahl von Containern und der Anzahl der im Map-Objekt gespeicherten Elemente. Wenn die Karten Struktur neu berechnet wird, wird der Wert des *foptimzuad* -Parameters verwendet, um die Anzahl der erforderlichen Behälter zu berechnen. Dieser Wert kann [mithilfe der Methode](#setoptimalload) "-Methode (Methode)" von "Methode" geändert werden.
 
-Die *fLoThreshold* -Parameter ist der niedrigere Wert, der das Load-Verhältnis, bevor erreichen kann `CAtlMap` berechnet die optimale Größe der Zuordnung neu.
+Der *flothreshold* -Parameter ist der niedrigere Wert, den das Lasten Verhältnis erreichen `CAtlMap` kann, bevor die optimale Größe der Karte neu berechnet.
 
-Die *fHiThreshold* -Parameter ist der obere Wert, der das Load-Verhältnis, bevor erreichen kann die `CAtlMap` Objekts berechnet die optimale Größe der Zuordnung neu.
+Der Parameter " *shithreshold* " ist der obere Wert, den das Last Verhältnis erreichen `CAtlMap` kann, bevor das Objekt die optimale Größe der Zuordnung neu berechnet.
 
-Hierzu eine neuberechnung (erneutes Hashing durchführen genannt) ist standardmäßig aktiviert. Wenn Sie dabei ggf. deaktivieren, wenn Sie große Datenmengen gleichzeitig Aufruf eingeben möchten die [CAtlMap::DisableAutoRehash](#disableautorehash) Methode. Reaktivieren sie mit der [CAtlMap::EnableAutoRehash](#enableautorehash) Methode.
+Dieser neuberechnungs Prozess (wird als Wiederholung bezeichnet) ist standardmäßig aktiviert. Wenn Sie diesen Prozess deaktivieren möchten, wenn Sie vielleicht eine große Anzahl von Daten gleichzeitig eingeben, können Sie die Methode "Methode [::D isableautorehash](#disableautorehash) " aufrufen. Reaktivieren Sie Sie mit [der Methode](#enableautorehash) "" der Methode "Methode".
 
-Die *nBlockSize* -Parameter ist ein Maß für die Speichermenge belegt werden, wenn ein neues Element erforderlich ist. Größere Blöcke reduzieren Sie Aufrufe von Reservierungsroutinen Arbeitsspeicher jedoch mehr Ressourcen verwenden.
+Der *nblocksize* -Parameter ist ein Maß für den Umfang des Arbeitsspeichers, der zugeordnet wird, wenn ein neues Element erforderlich ist. Größere Blockgrößen reduzieren Aufrufe von Speicher Belegungs Routinen, verwenden jedoch weitere Ressourcen.
 
-Bevor alle Daten gespeichert werden können, ist es erforderlich, initialisieren Sie die Hashtabelle mit einem Aufruf von [CAtlMap::InitHashTable](#inithashtable).
+Bevor Daten gespeichert werden können, muss die Hash Tabelle mit einem [calllmap:: inithashtable](#inithashtable)-Befehl initialisiert werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#72](../../atl/codesnippet/cpp/catlmap-class_1.cpp)]
 
-##  <a name="dtor"></a>  CAtlMap:: ~ CAtlMap
+## <a name="catlmapcatlmap"></a><a name="dtor"></a>"": ""
 
 Der Destruktor.
 
-```
+```cpp
 ~CAtlMap() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt alle zugeordneten Ressourcen frei.
 
-##  <a name="cpair_class"></a>  CAtlMap::CPair-Klasse
+## <a name="catlmapcpair-class"></a><a name="cpair_class"></a>"Klasse": cpair-Klasse
 
-Eine Klasse, die die Schlüssel-Wert-Elemente enthält.
+Eine-Klasse, die die Schlüssel-und Wert Elemente enthält.
 
-```
+```cpp
 class CPair : public __POSITION
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Klasse wird verwendet, von den Methoden [CAtlMap::GetNext](#getnext) und [CAtlMap::Lookup](#lookup) Zugriff auf die Schlüssel-Wert-Elemente, die in der Zuordnungsstruktur gespeichert.
+Diese Klasse wird von [den Methoden "](#getnext) ", "", um auf die Schlüssel-und Wert Elemente [zuzugreifen, die](#lookup) in der Zuordnungs Struktur gespeichert sind.
 
-##  <a name="disableautorehash"></a>  CAtlMap::DisableAutoRehash
+## <a name="catlmapdisableautorehash"></a><a name="disableautorehash"></a>Ereignis ERMAP::D isableautorehash
 
-Rufen Sie diese Methode zum Deaktivieren der automatischen erneutes Hashing Durchführen von der `CAtlMap` Objekt.
+Ruft diese Methode auf, um das `CAtlMap` automatische Reaktivieren des Objekts zu deaktivieren.
 
-```
+```cpp
 void DisableAutoRehash() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn automatisches erneutes Hashing durchführen aktiviert ist (was sie in der Standardeinstellung ist), wird die Anzahl der Klassen in der Hashtabelle automatisch neu berechnet werden der Load-Wert (das Verhältnis der Anzahl von Klassen, die Anzahl der Elemente im Array gespeicherten) überschreitet die maximale oder minimale Werte zum Zeitpunkt die Zuordnung erstellt wurde angegeben.
+Wenn die automatische Wiederholung aktiviert ist (standardmäßig), wird die Anzahl der in der Hash Tabelle gespeicherten Behälter automatisch neu berechnet, wenn der Auslastungs Wert (das Verhältnis der Anzahl der Behälter mit der Anzahl der im Array gespeicherten Elemente) den maximalen oder minimalen Wert überschreitet, der zum Zeitpunkt der Erstellung der Zuordnung angegeben wurde.
 
-`DisableAutoRehash` ist besonders hilfreich, wenn eine große Anzahl von Elementen der Karte auf einmal hinzugefügt werden. Anstelle den rehashing Prozess auslösen, jedes Mal, wenn die Grenzwerte überschritten werden, es ist jedoch effizienter aufzurufende `DisableAutoRehash`, fügen Sie Elemente hinzu und rufen Sie zum Schluss [CAtlMap::EnableAutoRehash](#enableautorehash).
+`DisableAutoRehash`ist besonders nützlich, wenn der Karte gleichzeitig eine große Anzahl von Elementen hinzugefügt wird. Anstatt den Reaktivierungsprozess jedes Mal auszulösen, wenn die Grenzwerte überschritten werden, ist es effizienter `DisableAutoRehash` [, aufzurufen](#enableautorehash), die Elemente hinzuzufügen und schließlich "" "" "" ".
 
-##  <a name="enableautorehash"></a>  CAtlMap::EnableAutoRehash
+## <a name="catlmapenableautorehash"></a><a name="enableautorehash"></a>"", "": Enableautorehash
 
-Rufen Sie diese Methode zum Aktivieren der automatischen erneutes Hashing Durchführen von der `CAtlMap` Objekt.
+Ruft diese Methode auf, um das `CAtlMap` automatische Reaktivieren des Objekts zu aktivieren.
 
-```
+```cpp
 void EnableAutoRehash() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn automatisches erneutes Hashing durchführen aktiviert ist (was sie in der Standardeinstellung ist), wird die Anzahl der Klassen in der Hashtabelle automatisch neu berechnet werden der Load-Wert (das Verhältnis der Anzahl von Klassen, die Anzahl der Elemente im Array gespeicherten) überschreitet die maximale oder minimale Werte zum Zeitpunkt die Zuordnung wurde angegeben.
+Wenn die automatische Wiederholung aktiviert ist (standardmäßig), wird die Anzahl der in der Hash Tabelle gespeicherten Behälter automatisch neu berechnet, wenn der Auslastungs Wert (das Verhältnis der Anzahl der Behälter zur Anzahl der im Array gespeicherten Elemente) den maximalen oder minimalen Wert überschreitet, der zum Zeitpunkt der Erstellung der Zuordnung angegeben wird.
 
-`EnableAutoRefresh` wird am häufigsten verwendet, nach einem Aufruf von [CAtlMap::DisableAutoRehash](#disableautorehash).
+`EnableAutoRefresh`wird am häufigsten nach einem [calllmap::D isableautorehash](#disableautorehash)verwendet.
 
-##  <a name="getat"></a>  CAtlMap::GetAt
+## <a name="catlmapgetat"></a><a name="getat"></a>"": GetAt
 
-Rufen Sie diese Methode, um das Element an einer angegebenen Position in der Zuordnung zurück.
+Mit dieser Methode wird das Element an einer angegebenen Position in der Zuordnung zurückgegeben.
 
-```
+```cpp
 void GetAt(
     POSITION pos,
     KOUTARGTYPE key,
@@ -288,95 +288,95 @@ CPair* GetAt(POSITION& pos) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 *key*<br/>
-Der Vorlagenparameter, die den Typ des Schlüssels mit der Karte.
+Ein Vorlagen Parameter, der den Typ des Karten Schlüssels angibt.
 
 *value*<br/>
-Der Vorlagenparameter, der den Typ des Werts von der Karte angibt.
+Ein Vorlagen Parameter, der den Typ des Karten Werts angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf das aktuelle Paar von Schlüssel/Wert-Elementen, die in der Zuordnung gespeichert.
+Gibt einen Zeiger auf das aktuelle Paar von Schlüssel-Wert-Elementen zurück, die in der Zuordnung gespeichert sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In Debugbuilds wird ein Assertionsfehler auftreten, wenn *pos* gleich NULL ist.
+In Debugbuilds tritt ein Fehler auf, wenn *POS* gleich NULL ist.
 
-##  <a name="getcount"></a>  CAtlMap::GetCount
+## <a name="catlmapgetcount"></a><a name="getcount"></a>"Update Map:: GetCount"
 
-Rufen Sie diese Methode zum Abrufen der Anzahl der Elemente in der Zuordnung.
+Rufen Sie diese Methode auf, um die Anzahl der Elemente in der Zuordnung abzurufen.
 
-```
+```cpp
 size_t GetCount() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Anzahl der Elemente in der Map-Objekt zurück. Ein einzelnes Element ist ein Schlüssel/Wert-Paar.
+Gibt die Anzahl der Elemente im Map-Objekt zurück. Ein einzelnes Element ist ein Schlüssel-Wert-Paar.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="gethashtablesize"></a>  CAtlMap::GetHashTableSize
+## <a name="catlmapgethashtablesize"></a><a name="gethashtablesize"></a>"", "": Gethashtablesize
 
-Rufen Sie diese Methode zum Ermitteln der Anzahl der Klassen in der Map-Hashtabelle.
+Mit dieser Methode können Sie die Anzahl der Container in der Hash Tabelle der Zuordnung bestimmen.
 
-```
+```cpp
 UINT GetHashTableSize() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Anzahl der Klassen in der Hashtabelle zurück. Finden Sie unter [CAtlMap::CAtlMap](#catlmap) erläutert.
+Gibt die Anzahl der Container in der Hash Tabelle zurück. Eine [Erläuterung finden Sie](#catlmap) unter "".
 
-##  <a name="getkeyat"></a>  CAtlMap::GetKeyAt
+## <a name="catlmapgetkeyat"></a><a name="getkeyat"></a>"": Getkeyat
 
-Rufen Sie diese Methode zum Abrufen des Schlüssels an der angegebenen Position in der `CAtlMap` Objekt.
+Rufen Sie diese Methode auf, um den Schlüssel abzurufen, der an der `CAtlMap` angegebenen Position im-Objekt gespeichert ist.
 
-```
+```cpp
 const K& GetKeyAt(POSITION pos) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf den Schlüssel gespeichert, an der angegebenen Position in der `CAtlMap` Objekt.
+Gibt einen Verweis auf den Schlüssel zurück, der an der angegebenen Position `CAtlMap` im-Objekt gespeichert ist.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="getnext"></a>  CAtlMap::GetNext
+## <a name="catlmapgetnext"></a><a name="getnext"></a>"": GetNext
 
-Rufen Sie diese Methode, um einen Zeiger auf das nächste Element erhalten-Paar, in gespeichert der `CAtlMap` Objekt.
+Rufen Sie diese Methode auf, um einen Zeiger auf das nächste Element paar zu `CAtlMap` erhalten, das im-Objekt gespeichert ist.
 
-```
+```cpp
 CPair* GetNext(POSITION& pos) throw();
 const CPair* GetNext(POSITION& pos) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die nächsten Paar von Schlüssel/Wert-Elementen, die in der Zuordnung gespeicherten zurück. Die *pos* Position der Zähler wird nach jedem Aufruf aktualisiert. Wenn das abgerufene Element das letzte in der Zuordnung *pos* auf NULL festgelegt ist.
+Gibt einen Zeiger auf das nächste Paar von Schlüssel-Wert-Elementen zurück, die in der Zuordnung gespeichert sind. Der *POS* -Positionswert wird nach jedem-Aufrufpunkt aktualisiert. Wenn das abgerufene Element das letzte in der Zuordnung ist, wird *POS* auf NULL festgelegt.
 
-##  <a name="getnextassoc"></a>  CAtlMap::GetNextAssoc
+## <a name="catlmapgetnextassoc"></a><a name="getnextassoc"></a>"": GetNextAssoc
 
-Ruft das nächste Element durchlaufen werden können.
+Ruft das nächste Element für die Iteration ab.
 
-```
+```cpp
 void GetNextAssoc(
     POSITION& pos,
     KOUTARGTYPE key,
@@ -385,112 +385,112 @@ void GetNextAssoc(
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 *key*<br/>
-Der Vorlagenparameter, die den Typ des Schlüssels mit der Karte.
+Ein Vorlagen Parameter, der den Typ des Karten Schlüssels angibt.
 
 *value*<br/>
-Der Vorlagenparameter, der den Typ des Werts von der Karte angibt.
+Ein Vorlagen Parameter, der den Typ des Karten Werts angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die *pos* Position der Zähler wird nach jedem Aufruf aktualisiert. Wenn das abgerufene Element das letzte in der Zuordnung *pos* auf NULL festgelegt ist.
+Der *POS* -Positionswert wird nach jedem-Aufrufpunkt aktualisiert. Wenn das abgerufene Element das letzte in der Zuordnung ist, wird *POS* auf NULL festgelegt.
 
-##  <a name="getnextkey"></a>  CAtlMap::GetNextKey
+## <a name="catlmapgetnextkey"></a><a name="getnextkey"></a>"": Getnextkey
 
-Rufen Sie diese Methode zum Abrufen des nächsten Schlüssels aus der `CAtlMap` Objekt.
+Rufen Sie diese Methode auf, um den nächsten Schlüssel `CAtlMap` aus dem-Objekt abzurufen.
 
-```
+```cpp
 const K& GetNextKey(POSITION& pos) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt einen Verweis auf den nächsten Schlüssel in der Zuordnung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aktualisiert die aktuelle Position-Indikator *pos*. Wenn keine weiteren Einträge in der Zuordnung vorhanden sind, wird der Position Zähler auf NULL festgelegt.
+Aktualisiert den aktuellen Positions Leistungspunkt ( *POS*). Wenn in der Zuordnung keine weiteren Einträge vorhanden sind, wird der Positions-Counter auf NULL festgelegt.
 
-##  <a name="getnextvalue"></a>  CAtlMap::GetNextValue
+## <a name="catlmapgetnextvalue"></a><a name="getnextvalue"></a>"": Getnextvalue
 
-Rufen Sie diese Methode zum Abrufen des nächsten Wert aus der `CAtlMap` Objekt.
+Mit dieser Methode können Sie den nächsten Wert aus dem `CAtlMap` -Objekt abrufen.
 
-```
+```cpp
 V& GetNextValue(POSITION& pos) throw();
 const V& GetNextValue(POSITION& pos) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt einen Verweis auf den nächsten Wert in der Zuordnung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aktualisiert die aktuelle Position-Indikator *pos*. Wenn keine weiteren Einträge in der Zuordnung vorhanden sind, wird der Position Zähler auf NULL festgelegt.
+Aktualisiert den aktuellen Positions Leistungspunkt ( *POS*). Wenn in der Zuordnung keine weiteren Einträge vorhanden sind, wird der Positions-Counter auf NULL festgelegt.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="getstartposition"></a>  CAtlMap::GetStartPosition
+## <a name="catlmapgetstartposition"></a><a name="getstartposition"></a>"": GetStartPosition
 
-Rufen Sie diese Methode, um eine Zuordnung Iteration starten.
+Mit dieser Methode wird eine Karten Iterations Methode gestartet.
 
-```
+```cpp
 POSITION GetStartPosition() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt zurück, der die Anfangsposition oder NULL zurückgegeben wird, wenn die Zuordnung leer ist.
+Gibt die Startposition zurück, oder NULL wird zurückgegeben, wenn die Zuordnung leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aufruf dieser Methode eine Iteration für die Zuordnung zu starten, indem Sie eine POSITION zurückgegeben Wert übergeben werden kann, um die `GetNextAssoc` Methode.
+Mit dieser Methode können Sie eine Karten iterierung starten, indem Sie einen Positionswert zurückgeben, der `GetNextAssoc` an die-Methode übermittelt werden kann.
 
 > [!NOTE]
->  Die Sequenz der Iteration ist nicht vorhersagbar
+> Die Iterations Sequenz ist nicht vorhersagbar.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="getvalueat"></a>  CAtlMap::GetValueAt
+## <a name="catlmapgetvalueat"></a><a name="getvalueat"></a>"": Getvalueat
 
-Rufen Sie diese Methode zum Abrufen des Werts, der gespeichert wird, an der angegebenen Position in der `CAtlMap` Objekt.
+Rufen Sie diese Methode auf, um den Wert abzurufen, der an einer `CAtlMap` bestimmten Position im-Objekt gespeichert ist.
 
-```
+```cpp
 V& GetValueAt(POSITION pos) throw();
 const V& GetValueAt(POSITION pos) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf den Wert gespeichert, an der angegebenen Position in der `CAtlMap` Objekt.
+Gibt einen Verweis auf den-Wert zurück, der an der angegebenen `CAtlMap` Position im-Objekt gespeichert ist.
 
-##  <a name="inithashtable"></a>  CAtlMap::InitHashTable
+## <a name="catlmapinithashtable"></a><a name="inithashtable"></a>"": ""
 
-Rufen Sie diese Methode, um die Hashtabelle zu initialisieren.
+Ruft diese Methode auf, um die Hash Tabelle zu initialisieren.
 
-```
+```cpp
 bool InitHashTable(
     UINT nBins,
     bool bAllocNow = true);
@@ -498,59 +498,59 @@ bool InitHashTable(
 
 ### <a name="parameters"></a>Parameter
 
-*nBins*<br/>
-Die Anzahl der Klassen, die von der Hashtabelle verwendet werden soll. Finden Sie unter [CAtlMap::CAtlMap](#catlmap) erläutert.
+*nbins*<br/>
+Die Anzahl von Containern, die von der Hash Tabelle verwendet werden. Eine [Erläuterung finden Sie](#catlmap) unter "".
 
-*bAllocNow*<br/>
-Ein Flag Hinweis darauf, wenn der Speicher zugewiesen werden soll.
+*ballocnow*<br/>
+Ein Kennzeichen, das angibt, wann Speicher zugewiesen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, bei der erfolgreichen Initialisierung, bei "false".
+Gibt bei erfolgreicher Initialisierung true zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`InitHashTable` muss aufgerufen werden, bevor alle Elemente in der Hashtabelle gespeichert werden.  Wenn diese Methode nicht explizit aufgerufen wird, aufgerufen wird automatisch beim ersten ein Element hinzugefügt wird, mit der Anzahl der "bin" gemäß der `CAtlMap` Konstruktor.  Andernfalls die Zuordnung wird initialisiert mithilfe der neuen Anzahl von "bin" gemäß der *nBins* Parameter.
+`InitHashTable`muss aufgerufen werden, bevor Elemente in der Hash Tabelle gespeichert werden.  Wenn diese Methode nicht explizit aufgerufen wird, wird Sie automatisch aufgerufen, wenn ein Element mit der vom- `CAtlMap` Konstruktor angegebenen Anzahl von Klassen zum ersten Mal hinzugefügt wird.  Andernfalls wird die Zuordnung mit der durch den *nbins* -Parameter angegebenen neuen bin-Anzahl initialisiert.
 
-Wenn die *bAllocNow* Parameter ist "false", die vom der Hashtabelle benötigte Speicher wird nicht zugewiesen werden, bis es zuerst erforderlich ist. Dies kann nützlich sein, wenn es ist nicht sicher sind, wenn die Zuordnung verwendet wird.
+Wenn der Parameter " *ballocnow* " den Wert "false" hat, wird der von der Hash Tabelle benötigte Arbeitsspeicher erst zugewiesen, wenn er zum ersten Mal benötigt wird. Dies kann hilfreich sein, wenn es unsicher ist, ob die Zuordnung verwendet wird.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="isempty"></a>  CAtlMap::IsEmpty
+## <a name="catlmapisempty"></a><a name="isempty"></a>"": IsEmpty
 
-Rufen Sie diese Methode für ein Objekt für die leere Zuordnung testen.
+Mit dieser Methode können Sie auf ein leeres Map-Objekt testen.
 
-```
+```cpp
 bool IsEmpty() const throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn die Zuordnung leer ist, andernfalls FALSE.
+Gibt true zurück, wenn die Zuordnung leer ist, andernfalls false.
 
-##  <a name="kinargtype"></a>  CAtlMap::KINARGTYPE
+## <a name="catlmapkinargtype"></a><a name="kinargtype"></a>"", "", "".
 
-Der Typ verwendet, wenn ein Schlüssel als Eingabeargument übergeben wird.
+Der Typ, der verwendet wird, wenn eine Taste als Eingabe Argument übermittelt wird.
 
-```
+```cpp
 typedef KTraits::INARGTYPE KINARGTYPE;
 ```
 
-##  <a name="koutargtype"></a>  CAtlMap::KOUTARGTYPE
+## <a name="catlmapkoutargtype"></a><a name="koutargtype"></a>"", "": Koutargtype
 
--Typ, wenn ein Schlüssel als ausgabeargument zurückgegeben wird.
+Der Typ, der verwendet wird, wenn eine Taste als Ausgabe Argument zurückgegeben wird.
 
-```
+```cpp
 typedef KTraits::OUTARGTYPE KOUTARGTYPE;
 ```
 
-##  <a name="lookup"></a>  CAtlMap::Lookup
+## <a name="catlmaplookup"></a><a name="lookup"></a>"": Lookup
 
-Rufen Sie diese Methode zum Nachschlagen der Schlüssel oder Werte in der `CAtlMap` Objekt.
+Mit dieser Methode können Sie Schlüssel oder Werte im- `CAtlMap` Objekt suchen.
 
-```
+```cpp
 bool Lookup(KINARGTYPE key, VOUTARGTYPE value) const;
 const CPair* Lookup(KINARGTYPE key) const throw();
 CPair* Lookup(KINARGTYPE key) throw();
@@ -559,112 +559,112 @@ CPair* Lookup(KINARGTYPE key) throw();
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Gibt den Schlüssel, der identifiziert das Element gesucht werden soll.
+Gibt den Schlüssel an, der das Element identifiziert, das gesucht werden soll.
 
 *value*<br/>
-Variable, die den Wert der nachgeschlagenen empfängt.
+Eine Variable, die den aufsuchten Wert empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Form der Methode gibt "true", wenn der Schlüssel gefunden wird, andernfalls "false" zurück. Die zweite und dritte Formulare Geben Sie einen Zeiger auf eine [CPair](#cpair_class) die als eine Position für Aufrufe verwendet werden können [CAtlMap::GetNext](#getnext) und so weiter.
+Die erste Form der Methode gibt true zurück, wenn der Schlüssel gefunden wurde, andernfalls false. Das zweite und das dritte Formular geben einen Zeiger auf ein [cpair](#cpair_class) zurück, das als Position für Aufrufe von "" für Aufrufe von "" für ["-Aufrufe](#getnext) " verwendet werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`Lookup` verwendet einen Hashalgorithmus schnell und problemlos suchen des Map-Elements, das mit einem Schlüssel, der den angegebenen Schlüsselparameter genau übereinstimmt.
+`Lookup`verwendet einen Hash Algorithmus, um schnell das MAP-Element zu finden, das einen Schlüssel enthält, der exakt mit dem angegebenen Schlüsselparameter übereinstimmt.
 
-##  <a name="operator_at"></a>  CAtlMap::operator \[\]
+## <a name="catlmapoperator-"></a><a name="operator_at"></a>"-Operator": Operator\[\]
 
-Ersetzt oder fügt ein neues Element auf der `CAtlMap`.
+Ersetzt oder fügt ein neues Element hinzu `CAtlMap`.
 
-```
+```cpp
 V& operator[](kinargtype key) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der Schlüssel des Elements, das Hinzufügen oder ersetzen.
+Der Schlüssel des Elements, das hinzugefügt oder ersetzt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf den Wert, der dem angegebenen Schlüssel zugeordnet.
+Gibt einen Verweis auf den Wert zurück, der dem angegebenen Schlüssel zugeordnet ist.
 
 ### <a name="example"></a>Beispiel
 
-Wenn der Schlüssel bereits vorhanden ist, wird das Element ersetzt. Wenn der Schlüssel nicht vorhanden ist, wird ein neues Element hinzugefügt. Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Wenn der Schlüssel bereits vorhanden ist, wird das Element ersetzt. Wenn der Schlüssel nicht vorhanden ist, wird ein neues Element hinzugefügt. Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="rehash"></a>  CAtlMap::Rehash
+## <a name="catlmaprehash"></a><a name="rehash"></a>"": ""
 
-Rufen Sie diese rehash-Methode der `CAtlMap` Objekt.
+Ruft diese Methode auf, um das `CAtlMap` Objekt erneut zu durch drücken.
 
-```
+```cpp
 void Rehash(UINT nBins = 0);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nBins*<br/>
-Die neue Anzahl von Containern in der Hashtabelle verwendet werden soll. Finden Sie unter [CAtlMap::CAtlMap](#catlmap) erläutert.
+*nbins*<br/>
+Die neue Anzahl von Containern, die in der Hash Tabelle verwendet werden sollen. Eine [Erläuterung finden Sie](#catlmap) unter "".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn *nBins* ist 0 (null) `CAtlMap` berechnet eine angemessene Anzahl basierend auf der Anzahl der Elemente in der Zuordnung und der optimale Auslastung-Einstellung. Der rehashing Prozess erfolgt normalerweise automatisch, aber wenn [CAtlMap::DisableAutoRehash](#disableautorehash) wurde aufgerufen wird, diese Methode führt die erforderlichen Größe ändern.
+Wenn *nbins* den Wert 0 `CAtlMap` hat, berechnet basierend auf der Anzahl der Elemente in der Zuordnung und der optimalen Last Einstellung eine angemessene Zahl. Normalerweise erfolgt der Vorgang für die Wiederherstellung automatisch, aber wenn "" "" "," ", [:D](#disableautorehash) wenn" "" ".
 
-##  <a name="removeall"></a>  CAtlMap::RemoveAll
+## <a name="catlmapremoveall"></a><a name="removeall"></a>"": Remote Map:: RemoveAll
 
-Rufen Sie diese Methode, um alle Elemente entfernt werden sollen die `CAtlMap` Objekt.
+Mit dieser Methode können Sie alle Elemente aus dem `CAtlMap` -Objekt entfernen.
 
-```
+```cpp
 void RemoveAll() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Löscht die `CAtlMap` Objekt, das der belegte Arbeitsspeicher zum Speichern der Elemente.
+Löscht das `CAtlMap` -Objekt und gibt den Arbeitsspeicher frei, der zum Speichern der Elemente verwendet wird.
 
-##  <a name="removeatpos"></a>  CAtlMap::RemoveAtPos
+## <a name="catlmapremoveatpos"></a><a name="removeatpos"></a>"": Removeatpos
 
-Rufen Sie diese Methode, um das Element an der angegebenen Position im Entfernen der `CAtlMap` Objekt.
+Ruft diese Methode auf, um das Element an der angegebenen Position im `CAtlMap` Objekt zu entfernen.
 
-```
+```cpp
 void RemoveAtPos(POSITION pos) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Entfernt das Schlüssel/Wert-Paar, das an der angegebenen Position gespeichert. Der zum Speichern des Elements verwendete Arbeitsspeicher wird freigegeben. Die POSITION verweist *pos* ungültig, und behalten Sie während die POSITION der anderen Elemente in der Zuordnung gültig bleibt, sie sind nicht unbedingt die gleiche Reihenfolge.
+Entfernt das Schlüssel-Wert-Paar, das an der angegebenen Position gespeichert ist. Der zum Speichern des Elements verwendete Arbeitsspeicher wird freigegeben. Die Position, auf die von *POS* verwiesen wird, ist ungültig, und während die Position aller anderen Elemente in der Zuordnung gültig bleibt, behalten Sie nicht notwendigerweise dieselbe Reihenfolge bei.
 
-##  <a name="removekey"></a>  CAtlMap::RemoveKey
+## <a name="catlmapremovekey"></a><a name="removekey"></a>"": Removekey
 
-Rufen Sie diese Methode zum Entfernen eines Elements aus der `CAtlMap` Objekt anhand des angegebenen Schlüssels.
+Ruft diese Methode auf, um ein Element aus `CAtlMap` dem-Objekt mit dem angegebenen Schlüssel zu entfernen.
 
-```
+```cpp
 bool RemoveKey(KINARGTYPE key) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Die entsprechenden auf das Element-Paar, die Sie entfernen möchten.
+Der Schlüssel, der dem Element paar entspricht, das Sie entfernen möchten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn der Schlüssel gefunden und entfernt wurde, bei "false".
+Gibt true zurück, wenn der Schlüssel gefunden und entfernt wurde, false bei einem Fehler.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CAtlMap::CAtlMap](#catlmap).
+Weitere Informationen finden Sie im [Beispiel für "":](#catlmap)
 
-##  <a name="setat"></a>  CAtlMap::SetAt
+## <a name="catlmapsetat"></a><a name="setat"></a>"":
 
-Rufen Sie diese Methode zum Einfügen von einem Element-Paar in der Zuordnung.
+Mit dieser Methode fügen Sie ein Element Paar in die Zuordnung ein.
 
-```
+```cpp
 POSITION SetAt(
     KINARGTYPE key,
     VINARGTYPE value);
@@ -673,24 +673,24 @@ POSITION SetAt(
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der Schlüsselwert, Hinzufügen der `CAtlMap` Objekt.
+Der Schlüsselwert, der dem `CAtlMap` -Objekt hinzugefügt werden soll.
 
 *value*<br/>
-Der Wert, der zum Hinzufügen der `CAtlMap` Objekt.
+Der Wert, der dem `CAtlMap` -Objekt hinzugefügt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Position eines Schlüssel/Wert-Element-Paar in der `CAtlMap` Objekt.
+Gibt die Position des Schlüssel-Wert-Element Paars im- `CAtlMap` Objekt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`SetAt` ersetzt ein vorhandenes Element an, wenn ein passender Schlüssel gefunden wird. Wenn der Schlüssel nicht gefunden wird, wird ein neues Schlüssel/Wert-Paar erstellt.
+`SetAt`ersetzt ein vorhandenes Element, wenn ein übereinstimmender Schlüssel gefunden wird. Wenn der Schlüssel nicht gefunden wird, wird ein neues Schlüssel-Wert-Paar erstellt.
 
-##  <a name="setoptimalload"></a>  CAtlMap::SetOptimalLoad
+## <a name="catlmapsetoptimalload"></a><a name="setoptimalload"></a>"": ""
 
-Rufen Sie diese Methode, um die optimale Last legen die `CAtlMap` Objekt.
+Ruft diese Methode auf, um die optimale Auslastung des `CAtlMap` -Objekts festzulegen.
 
-```
+```cpp
 void SetOptimalLoad(
     float fOptimalLoad,
     float fLoThreshold,
@@ -700,27 +700,27 @@ void SetOptimalLoad(
 
 ### <a name="parameters"></a>Parameter
 
-*fOptimalLoad*<br/>
-Das optimale Auslastung-Verhältnis.
+*"f"*<br/>
+Das optimale Last Verhältnis.
 
-*fLoThreshold*<br/>
-Der untere Schwellenwert für die Load-Verhältnis.
+*flothreshold*<br/>
+Der untere Schwellenwert für das Lasten Verhältnis.
 
-*fHiThreshold*<br/>
-Der obere Schwellenwert für die Load-Verhältnis.
+*Wert für "f"*<br/>
+Der obere Schwellenwert für das Lasten Verhältnis.
 
-*bRehashNow*<br/>
-Flag zum angeben, wenn die Hashtabelle neu berechnet werden sollen.
+*brehashnow*<br/>
+Flag zum angeben, ob die Hash Tabelle neu berechnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode definiert den Wert für eine optimale Auslastung für die `CAtlMap` Objekt. Finden Sie unter [CAtlMap::CAtlMap](#catlmap) eine Erläuterung der verschiedenen Parameter. Wenn *bRehashNow* ist "true", und die Anzahl von Elementen außerhalb der minimalen und maximalen Werte, die Hashtabelle neu berechnet.
+Diese Methode definiert den optimalen ladewert für das `CAtlMap` -Objekt neu. Eine Erläuterung der verschiedenen [Parameter finden Sie](#catlmap) unter "". Wenn *brehashnow* den Wert true hat und die Anzahl der Elemente außerhalb der Mindest-und Höchstwerte liegt, wird die Hash Tabelle neu berechnet.
 
-##  <a name="setvalueat"></a>  CAtlMap::SetValueAt
+## <a name="catlmapsetvalueat"></a><a name="setvalueat"></a>"", "": Setvalueat
 
-Rufen Sie diese Methode zum Ändern des Werts, der gespeichert wird, an der angegebenen Position in der `CAtlMap` Objekt.
+Ruft diese Methode auf, um den Wert zu ändern, der an einer `CAtlMap` bestimmten Position im-Objekt gespeichert ist.
 
-```
+```cpp
 void SetValueAt(
     POSITION pos,
     VINARGTYPE value);
@@ -728,60 +728,60 @@ void SetValueAt(
 
 ### <a name="parameters"></a>Parameter
 
-*pos*<br/>
-Der Position Zähler, der von einem vorherigen Aufruf zurückgegebene [CAtlMap::GetNextAssoc](#getnextassoc) oder [CAtlMap::GetStartPosition](#getstartposition).
+*POS*<br/>
+Der Positions-Counter, der von einem vorherigen Befehl [von "](#getnextassoc) " für "" von "" für [CAtlMap::GetStartPosition](#getstartposition)"" ("" "" ")"
 
 *value*<br/>
-Der Wert, der zum Hinzufügen der `CAtlMap` Objekt.
+Der Wert, der dem `CAtlMap` -Objekt hinzugefügt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ändert das Value-Element gespeichert wird, an der angegebenen Position in der `CAtlMap` Objekt.
+Ändert das Value-Element, das an der angegebenen Position `CAtlMap` im-Objekt gespeichert ist.
 
-##  <a name="vinargtype"></a>  CAtlMap::VINARGTYPE
+## <a name="catlmapvinargtype"></a><a name="vinargtype"></a>"": Vinargtype
 
-Der Typ verwendet, wenn ein Wert als Eingabeargument übergeben wird.
+Der Typ, der verwendet wird, wenn ein Wert als Eingabe Argument übermittelt wird.
 
-```
+```cpp
 typedef VTraits::INARGTYPE VINARGTYPE;
 ```
 
-##  <a name="voutargtype"></a>  CAtlMap::VOUTARGTYPE
+## <a name="catlmapvoutargtype"></a><a name="voutargtype"></a>"": Voutargtype
 
-Der Typ verwendet, wenn ein Wert als ausgabeargument übergeben wird.
+Der Typ, der verwendet wird, wenn ein Wert als Ausgabe Argument ausgegeben wird.
 
-```
+```cpp
 typedef VTraits::OUTARGTYPE VOUTARGTYPE;
 ```
 
-##  <a name="m_key"></a>  CAtlMap::CPair::m_key
+## <a name="catlmapcpairm_key"></a><a name="m_key"></a>"": Cpair:: m_key
 
-Der Datenmember, die das wichtigste Element gespeichert wird.
+Der Datenmember, der das Schlüsselelement speichert.
 
-```
+```cpp
 const K m_key;
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*K*<br/>
-Der Typ des Key-Element.
+*Km*<br/>
+Der Schlüssel Elementtyp.
 
-##  <a name="m_value"></a>  CAtlMap::CPair::m_value
+## <a name="catlmapcpairm_value"></a><a name="m_value"></a>"": Cpair:: m_value
 
-Der Datenmember, speichern das Value-Element.
+Der Datenmember, der das Value-Element speichert.
 
-```
+```cpp
 V  m_value;
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*V*<br/>
-Der Werttyp-Element.
+*Ramelow*<br/>
+Der Wert Elementtyp.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Marquee-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [UpdatePV-Beispiel](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

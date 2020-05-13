@@ -1,8 +1,9 @@
 ---
 title: mbrlen
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - mbrlen
+- _o_mbrlen
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -24,12 +26,12 @@ f1_keywords:
 helpviewer_keywords:
 - mbrlen function
 ms.assetid: dde8dee9-e091-4c4c-81b3-639808885ae1
-ms.openlocfilehash: c9559731f39db35e03f640bb30b9af3fff00cf66
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: dd903aaf8b1c5772f2caaf58bda5d6c23bb59687
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952496"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920300"
 ---
 # <a name="mbrlen"></a>mbrlen
 
@@ -47,7 +49,7 @@ size_t mbrlen(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zeiger auf das nächste Byte, das in einer Multibytezeichenfolge überprüft werden soll.
 
 *count*<br/>
@@ -69,25 +71,27 @@ Einer der folgenden Werte:
 
 ## <a name="remarks"></a>Hinweise
 
-Die **mbrlen** -Funktion unter *sucht höchstens Anzahl Bytes beginnend* mit dem Byte, auf das *Str* zeigt, um die Anzahl von Bytes zu bestimmen, die zum Vervollständigen des nächsten multibytezeichens erforderlich sind, einschließlich der Verschiebe Sequenzen. Dies entspricht dem `mbrtowc(NULL, str, count, &mbstate)` -Befehl, bei dem *mbstate* entweder ein vom Benutzer bereitgestelltes **mbstate_t** -Objekt oder ein statisches internes Objekt ist, das von der Bibliothek bereitgestellt wird.
+Die **mbrlen** -Funktion unter *sucht höchstens Anzahl Bytes beginnend* mit dem Byte, auf das *Str* zeigt, um die Anzahl von Bytes zu bestimmen, die zum Vervollständigen des nächsten multibytezeichens erforderlich sind, einschließlich der Verschiebe Sequenzen. Dies entspricht dem-Befehl, `mbrtowc(NULL, str, count, &mbstate)` bei dem *mbstate* entweder ein vom Benutzer bereitgestelltes **mbstate_t** Objekt oder ein statisches internes Objekt ist, das von der Bibliothek bereitgestellt wird.
 
-Die **mbrlen** -Funktion speichert und verwendet den UMSCHALT Zustand eines unvollständigen multibytezeichens im *mbstate* -Parameter. Dies ermöglicht es **mbrlen** , bei Bedarf in der Mitte eines multibytezeichens neu zu starten, wobei höchstens *Anzahl* Bytes untersucht werden. Wenn *mbstate* ein NULL-Zeiger ist, verwendet **mbrlen** ein internes, statisches **mbstate_t** -Objekt zum Speichern des UMSCHALT Zustands. Da das interne **mbstate_t** -Objekt nicht Thread sicher ist, wird empfohlen, immer ihren eigenen *mbstate* -Parameter zuzuordnen und zu übergeben.
+Die **mbrlen** -Funktion speichert und verwendet den UMSCHALT Zustand eines unvollständigen multibytezeichens im *mbstate* -Parameter. Dies ermöglicht es **mbrlen** , bei Bedarf in der Mitte eines multibytezeichens neu zu starten, wobei höchstens *Anzahl* Bytes untersucht werden. Wenn *mbstate* ein NULL-Zeiger ist, verwendet **mbrlen** ein internes, statisches **mbstate_t** Objekt zum Speichern des UMSCHALT Zustands. Da das interne **mbstate_t** Objekt nicht Thread sicher ist, wird empfohlen, immer ihren eigenen *mbstate* -Parameter zuzuordnen und zu übergeben.
 
-Die **mbrlen** -Funktion unterscheidet [sich von _mbclen, Mblen, _mblen_l](mbclen-mblen-mblen-l.md) durch die Neustart Fähigkeit. Der Verschiebungs Zustand wird für nachfolgende Aufrufe der gleichen oder anderer Neu startbarer Funktionen in *mbstate* gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert.  Beispielsweise sollte eine Anwendung **wcsrlen** anstelle von **wcslen** verwenden, wenn ein nachfolgender **wcsr-** aufrufsausdruck anstelle von **wcstomb**verwendet wird.
+Die **mbrlen** -Funktion unterscheidet sich von [_mbclen, Mblen, _mblen_l](mbclen-mblen-mblen-l.md) durch die neustarbarkeit. Der Verschiebungs Zustand wird für nachfolgende Aufrufe der gleichen oder anderer Neu startbarer Funktionen in *mbstate* gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert.  Beispielsweise sollte eine Anwendung **wcsrlen** anstelle von **wcslen** verwenden, wenn ein nachfolgender **wcsr-** aufrufsausdruck anstelle von **wcstomb**verwendet wird.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|Nicht zutreffend|Nicht zutreffend|**mbrlen**|Nicht zutreffend|
+|nicht zutreffend|nicht zutreffend|**mbrlen**|nicht zutreffend|
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**mbrlen**|\<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -151,7 +155,7 @@ Code page: 932
 Character count: 25
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>

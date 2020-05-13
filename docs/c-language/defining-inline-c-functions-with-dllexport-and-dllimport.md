@@ -8,11 +8,11 @@ helpviewer_keywords:
 - dllexport attribute [C++]
 ms.assetid: 41418f7c-1c11-470b-bb2e-1f8269a239f0
 ms.openlocfilehash: 2e43f01b495a03e4f50295de42afa9b6c6b38173
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62234417"
 ---
 # <a name="defining-inline-c-functions-with-dllexport-and-dllimport"></a>Definieren von C-Inlinefunktionen mit dllexport und dllimport
 

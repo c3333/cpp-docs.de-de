@@ -1,5 +1,5 @@
 ---
-title: Ccontainedwindowt-Klasse
+title: CcontainedWindowT-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CContainedWindowT
@@ -22,19 +22,19 @@ helpviewer_keywords:
 - contained windows
 - CContainedWindowT class
 ms.assetid: cde0ca36-9347-4068-995a-d294dae57ca9
-ms.openlocfilehash: 2eae6e149cf6f7422d0653c1c15f46985d8d55c8
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 7b89346bbc62cdda808b193a199fdf121f052ebb
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69496847"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747745"
 ---
-# <a name="ccontainedwindowt-class"></a>Ccontainedwindowt-Klasse
+# <a name="ccontainedwindowt-class"></a>CcontainedWindowT-Klasse
 
-Diese Klasse implementiert ein Fenster, das in einem anderen-Objekt enthalten ist.
+Diese Klasse implementiert ein Fenster, das in einem anderen Objekt enthalten ist.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,57 +45,57 @@ class CContainedWindowT : public TBase
 
 #### <a name="parameters"></a>Parameter
 
-*Tbase*<br/>
-Die Basisklasse der neuen Klasse. Die Standardbasis Klasse ist `CWindow`.
+*TBase*<br/>
+Die Basisklasse Ihrer neuen Klasse. Die Standardbasisklasse `CWindow`ist .
 
 *TWinTraits*<br/>
-Eine Eigenschaften Klasse, die Stile für das Fenster definiert. Die Standardeinstellung ist `CControlWinTraits`.
+Eine Trait-Klasse, die Formatvorlagen für das Fenster definiert. Der Standardwert lautet `CControlWinTraits`.
 
 > [!NOTE]
-> [CContainedWindow](ccontainedwindowt-class.md) ist eine Spezialisierung von `CContainedWindowT`. Wenn Sie die Basisklasse oder die Merkmale ändern möchten, verwenden `CContainedWindowT` Sie direkt.
+> [CContainedWindow](ccontainedwindowt-class.md) ist eine `CContainedWindowT`Spezialisierung von . Wenn Sie die Basisklasse oder -merkmale `CContainedWindowT` ändern möchten, verwenden Sie dies direkt.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CContainedWindowT::CContainedWindowT](#ccontainedwindowt)|Konstruktor. Initialisiert Datenmember, um anzugeben, welche Meldungs Zuordnung die Nachrichten des enthaltenen Fensters verarbeitet.|
+|[CcontainedWindowT::CcontainedWindowT](#ccontainedwindowt)|Konstruktor. Initialisiert Datenmember, um anzugeben, welche Nachrichtenzuordnung die Nachrichten des enthaltenen Fensters verarbeitet.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CContainedWindowT::Create](#create)|Erstellt ein Fenster.|
+|[CcontainedWindowT::Erstellen](#create)|Erstellt ein Fenster.|
 |[CContainedWindowT::DefWindowProc](#defwindowproc)|Stellt die Standardverarbeitung von Nachrichten bereit.|
-|[CContainedWindowT::GetCurrentMessage](#getcurrentmessage)|Die gibt die aktuelle Nachricht zurück.|
-|[CContainedWindowT::RegisterWndSuperclass](#registerwndsuperclass)|Registriert die Fenster Klasse des enthaltenen Fensters.|
+|[CcontainedWindowT::GetCurrentMessage](#getcurrentmessage)|Die gibt die aktuelle Nachricht zurück.|
+|[CContainedWindowT::RegisterWndSuper-Klasse](#registerwndsuperclass)|Registriert die Fensterklasse des enthaltenen Fensters.|
 |[CContainedWindowT::SubclassWindow](#subclasswindow)|Erstellt Unterklassen eines Fensters.|
-|[CContainedWindowT::SwitchMessageMap](#switchmessagemap)|Ändert, welche Meldungs Zuordnung zum Verarbeiten der Nachrichten des enthaltenen Fensters verwendet wird.|
+|[CcontainedWindowT::SwitchMessageMap](#switchmessagemap)|Ändert, welche Meldungszuordnung zum Verarbeiten der Nachrichten des enthaltenen Fensters verwendet wird.|
 |[CContainedWindowT::UnsubclassWindow](#unsubclasswindow)|Stellt ein zuvor untergeordnetes Fenster wieder her.|
-|[CContainedWindowT::WindowProc](#windowproc)|Kum Verarbeitet Nachrichten, die an das enthaltene Fenster gesendet werden.|
+|[CContainedWindowT::WindowProc](#windowproc)|(Statisch) Verarbeitet Nachrichten, die an das enthaltene Fenster gesendet werden.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CContainedWindowT::m_dwMsgMapID](#m_dwmsgmapid)|Gibt an, welche Meldungs Zuordnung die Nachrichten des enthaltenen Fensters verarbeitet.|
-|[CContainedWindowT::m_lpszClassName](#m_lpszclassname)|Gibt den Namen einer vorhandenen Fenster Klasse an, auf der eine neue Fenster Klasse basieren soll.|
+|[CContainedWindowT::m_dwMsgMapID](#m_dwmsgmapid)|Gibt an, welche Meldungszuordnung die Nachrichten des enthaltenen Fensters verarbeitet.|
+|[CContainedWindowT::m_lpszClassName](#m_lpszclassname)|Gibt den Namen einer vorhandenen Fensterklasse an, auf der eine neue Fensterklasse basiert.|
 |[CContainedWindowT::m_pfnSuperWindowProc](#m_pfnsuperwindowproc)|Zeigt auf die ursprüngliche Fensterprozedur der Fensterklasse.|
-|[CContainedWindowT::m_pObject](#m_pobject)|Verweist auf das enthaltende Objekt.|
+|[CContainedWindowT::m_pObject](#m_pobject)|Zeigt auf das enthaltende Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CContainedWindowT`implementiert ein Fenster, das in einem anderen Objekt enthalten ist. `CContainedWindowT`die Fenster Prozedur verwendet eine Meldungs Zuordnung im enthaltenden Objekt, um Nachrichten an die entsprechenden Handler weiterzuleiten. Beim Erstellen eines `CContainedWindowT` -Objekts geben Sie an, welche Meldungs Zuordnung verwendet werden soll.
+`CContainedWindowT`implementiert ein Fenster, das in einem anderen Objekt enthalten ist. `CContainedWindowT`Die Fensterprozedur von verwendet eine Nachrichtenzuordnung im enthaltenden Objekt, um Nachrichten an die entsprechenden Handler weiterzuleiten. Beim Erstellen `CContainedWindowT` eines Objekts geben Sie an, welche Meldungszuordnung verwendet werden soll.
 
-`CContainedWindowT`ermöglicht es Ihnen, ein neues Fenster zu erstellen, indem Sie eine vorhandene Fenster Klasse überlagern. Die `Create` -Methode registriert zuerst eine Fenster Klasse, die auf einer vorhandenen Klasse basiert, `CContainedWindowT::WindowProc`aber verwendet. `Create`Anschließend wird ein Fenster erstellt, das auf dieser neuen Fenster Klasse basiert. Jede Instanz von `CContainedWindowT` kann eine andere Fenster Klasse überlagern.
+`CContainedWindowT`ermöglicht es Ihnen, ein neues Fenster zu erstellen, indem Sie eine vorhandene Fensterklasse überklassen. Die `Create` Methode registriert zuerst eine Fensterklasse, die auf `CContainedWindowT::WindowProc`einer vorhandenen Klasse basiert, aber verwendet. `Create`erstellt dann ein Fenster basierend auf dieser neuen Fensterklasse. Jede Instanz `CContainedWindowT` von kann eine andere Fensterklasse überlagern.
 
 `CContainedWindowT` unterstützt auch die Erstellung von Unterklassen von Fenstern. Die `SubclassWindow`-Methode fügt ein vorhandenes Fenster an das `CContainedWindowT`-Objekt an und ändert die Fensterprozedur in `CContainedWindowT::WindowProc`. Jede Instanz von `CContainedWindowT` kann ein anderes Fenster unterordnen.
 
 > [!NOTE]
->  Für ein bestimmtes `CContainedWindowT` Objekt wird entweder `Create` oder `SubclassWindow`aufgerufen. Sie sollten nicht beide Methoden für dasselbe Objekt aufrufen.
+> Rufen Sie `CContainedWindowT` für ein `Create` `SubclassWindow`bestimmtes Objekt entweder oder an. Sie sollten nicht beide Methoden für dasselbe Objekt aufrufen.
 
-Wenn Sie die Option **Steuerelement auf Grundlage von hinzufügen** im ATL-Projekt-Assistenten verwenden, fügt der `CContainedWindowT` Assistent der-Klasse, die das Steuerelement implementiert, automatisch einen Datenmember hinzu. Im folgenden Beispiel wird gezeigt, wie das enthaltene Fenster deklariert wird:
+Wenn Sie das **Steuerelement Hinzufügen basierend auf** der Option im ATL-Projekt-Assistenten verwenden, fügt der Assistent automatisch einen `CContainedWindowT` Datenmember zur Klasse hinzu, die das Steuerelement implementiert. Das folgende Beispiel zeigt, wie das enthaltene Fenster deklariert wird:
 
 [!code-cpp[NVC_ATL_Windowing#38](../../atl/codesnippet/cpp/ccontainedwindowt-class_1.h)]
 
@@ -103,12 +103,12 @@ Wenn Sie die Option **Steuerelement auf Grundlage von hinzufügen** im ATL-Proje
 
 [!code-cpp[NVC_ATL_Windowing#40](../../atl/codesnippet/cpp/ccontainedwindowt-class_3.h)]
 
-|Weitere Informationen finden Sie unter|Siehe|
+|Weitere Informationen über|Finden Sie unter|
 |--------------------------------|---------|
 |Erstellen von Steuerelementen|[ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md)|
 |Verwenden von Fenstern in ATL|[ATL-Fensterklassen](../../atl/atl-window-classes.md)|
 |ATL-Projekt-Assistent|[Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)|
-|Windows|[Windows](/windows/win32/winmsg/windows) und nachfolgende Themen in der Windows SDK|
+|Windows|[Windows](/windows/win32/winmsg/windows) und nachfolgende Themen im Windows SDK|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -116,13 +116,13 @@ Wenn Sie die Option **Steuerelement auf Grundlage von hinzufügen** im ATL-Proje
 
 `CContainedWindowT`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlwin. h
+**Kopfzeile:** atlwin.h
 
-##  <a name="ccontainedwindowt"></a>Ccontainedwindowt:: ccontainedwindowt
+## <a name="ccontainedwindowtccontainedwindowt"></a><a name="ccontainedwindowt"></a>CcontainedWindowT::CcontainedWindowT
 
-Der-Konstruktor initialisiert Datenmember.
+Der Konstruktor initialisiert Datenmember.
 
 ```
 CContainedWindowT(
@@ -139,31 +139,31 @@ CContainedWindowT(
 ### <a name="parameters"></a>Parameter
 
 *lpszClassName*<br/>
-in Der Name einer vorhandenen Fenster Klasse, auf der das enthaltene Fenster basieren soll.
+[in] Der Name einer vorhandenen Fensterklasse, auf der das enthaltene Fenster basiert.
 
 *pObject*<br/>
-in Ein Zeiger auf das enthaltende Objekt, das die Meldungs Zuordnung deklariert. Die Klasse dieses Objekts muss von [cmessagemap](../../atl/reference/cmessagemap-class.md)abgeleitet werden.
+[in] Ein Zeiger auf das enthaltende Objekt, das die Nachrichtenzuordnung deklariert. Die Klasse dieses Objekts muss von [CMessageMap](../../atl/reference/cmessagemap-class.md)abstammen.
 
 *dwMsgMapID*<br/>
-in Gibt die Meldungs Zuordnung an, mit der die Nachrichten des enthaltenen Fensters verarbeitet werden. Der Standardwert 0 gibt die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standard Meldungs Zuordnung an. Wenn Sie eine Alternative Nachrichten Zuordnung verwenden möchten, die mit [ALT_MSG_MAP (msgmapid)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben `msgMapID`Sie.
+[in] Identifiziert die Nachrichtenzuordnung, die die Nachrichten des enthaltenen Fensters verarbeitet. Der Standardwert 0 gibt die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standardmeldungszuordnung an. Um eine alternative Meldungszuordnung zu verwenden, die `msgMapID`mit [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben Sie .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie ein neues Fenster mithilfe von [Create](#create)erstellen möchten, müssen Sie den Namen einer vorhandenen Fenster Klasse für den *lpszClassName* -Parameter übergeben. Ein Beispiel finden Sie in der Übersicht über [CContainedWindow](../../atl/reference/ccontainedwindowt-class.md) .
+Wenn Sie ein neues Fenster über [Erstellen](#create)erstellen möchten, müssen Sie den Namen einer vorhandenen Fensterklasse für den Parameter *lpszClassName* übergeben. Ein Beispiel finden Sie in der [CContainedWindow-Übersicht.](../../atl/reference/ccontainedwindowt-class.md)
 
 Es gibt drei Konstruktoren:
 
-- Der Konstruktor mit drei Argumenten wird in der Regel als bezeichnet.
+- Der Konstruktor mit drei Argumenten ist das Konstruktor, das normalerweise aufgerufen wird.
 
-- Der-Konstruktor mit zwei Argumenten verwendet den Klassennamen `TBase::GetWndClassName`aus.
+- Der Konstruktor mit zwei Argumenten `TBase::GetWndClassName`verwendet den Klassennamen aus .
 
-- Der Konstruktor ohne Argumente wird verwendet, wenn Sie die Argumente später bereitstellen möchten. Sie müssen den Fenster Klassennamen, das Nachrichten Zuordnungs Objekt und die Meldungs Zuordnungs-ID `Create`angeben, wenn Sie einen späteren Zeitpunkt abrufen.
+- Der Konstruktor ohne Argumente wird verwendet, wenn Sie die Argumente später angeben möchten. Sie müssen beim späteren Aufruf `Create`den Namen der Fensterklasse, das Meldungszuordnungsobjekt und die Meldungszuordnungs-ID angeben.
 
-Wenn Sie ein vorhandenes Fenster über ein [Unterklassen Fenster](#subclasswindow)unterteilen, wird der Wert *lpszClassName* nicht verwendet. Daher können Sie NULL für diesen Parameter übergeben.
+Wenn Sie ein vorhandenes Fenster über [SubclassWindow](#subclasswindow)unterklassigen, wird der *wert lpszClassName* nicht verwendet. Daher können Sie NULL für diesen Parameter übergeben.
 
-##  <a name="create"></a>Ccontainedwindowt:: Create
+## <a name="ccontainedwindowtcreate"></a><a name="create"></a>CcontainedWindowT::Erstellen
 
-Ruft [registerwndsuperclass](#registerwndsuperclass) auf, um eine Fenster Klasse zu registrieren, die auf einer vorhandenen Klasse basiert, aber [ccontainedwindowt:: WindowProc](#windowproc)verwendet.
+Ruft [die RegisterWndSuperclass](#registerwndsuperclass) auf, um eine Fensterklasse zu registrieren, die auf einer vorhandenen Klasse basiert, aber [CContainedWindowT::WindowProc](#windowproc)verwendet.
 
 ```
 HWND Create(
@@ -202,52 +202,52 @@ HWND Create(
 ### <a name="parameters"></a>Parameter
 
 *lpszClassName*<br/>
-in Der Name einer vorhandenen Fenster Klasse, auf der das enthaltene Fenster basieren soll.
+[in] Der Name einer vorhandenen Fensterklasse, auf der das enthaltene Fenster basiert.
 
 *pObject*<br/>
-in Ein Zeiger auf das enthaltende Objekt, das die Meldungs Zuordnung deklariert. Die Klasse dieses Objekts muss von [cmessagemap](../../atl/reference/cmessagemap-class.md)abgeleitet werden.
+[in] Ein Zeiger auf das enthaltende Objekt, das die Nachrichtenzuordnung deklariert. Die Klasse dieses Objekts muss von [CMessageMap](../../atl/reference/cmessagemap-class.md)abstammen.
 
 *dwMsgMapID*<br/>
-in Gibt die Meldungs Zuordnung an, mit der die Nachrichten des enthaltenen Fensters verarbeitet werden. Der Standardwert 0 gibt die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standard Meldungs Zuordnung an. Wenn Sie eine Alternative Nachrichten Zuordnung verwenden möchten, die mit [ALT_MSG_MAP (msgmapid)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben `msgMapID`Sie.
+[in] Identifiziert die Nachrichtenzuordnung, die die Nachrichten des enthaltenen Fensters verarbeitet. Der Standardwert 0 gibt die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standardmeldungszuordnung an. Um eine alternative Meldungszuordnung zu verwenden, die `msgMapID`mit [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben Sie .
 
-*hWndParent*<br/>
-in Das Handle für das übergeordnete Fenster oder Besitzer Fenster.
+*hWndEltern*<br/>
+[in] Das Handle für das übergeordnete oder Besitzerfenster.
 
 *Rect*<br/>
-in Eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die die Position des Fensters angibt. Der `RECT` kann als Zeiger oder als Verweis übermittelt werden.
+[in] Eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Position des Fensters angibt. Der `RECT` kann durch Zeiger oder durch Verweis übergeben werden.
 
 *szWindowName*<br/>
-in Gibt den Namen des Fensters an. Der Standardwert ist NULL.
+[in] Gibt den Namen des Fensters an. Der Standardwert ist NULL.
 
 *dwStyle*<br/>
-in Der Stil des Fensters. Der Standardwert ist WS_CHILD &#124; WS_VISIBLE. Eine Liste möglicher Werte finden Sie unter " [kreatewindow](/windows/win32/api/winuser/nf-winuser-createwindoww) " in der Windows SDK.
+[in] Der Stil des Fensters. Der Standardwert ist &#124; WS_VISIBLE WS_CHILD. Eine Liste möglicher Werte finden Sie unter [CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww) im Windows SDK.
 
 *dwExStyle*<br/>
-in Der erweiterte Fenster Stil. Der Standardwert ist 0, d. h. kein erweiterter Stil. Eine Liste möglicher Werte finden Sie unter " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw) " in der Windows SDK.
+[in] Der erweiterte Fensterstil. Der Standardwert ist 0, d. h. kein erweiterter Stil. Eine Liste möglicher Werte finden Sie unter [CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw) im Windows SDK.
 
-*Menuorid*<br/>
-in Für ein untergeordnetes Fenster der Fenster Bezeichner. Für ein Fenster der obersten Ebene ein Menü Handle für das Fenster. Der Standardwert ist **0U**.
+*MenuOrID*<br/>
+[in] Bei einem untergeordneten Fenster die Fensterkennung. Für ein Fenster der obersten Ebene ein Menühandle für das Fenster. Der Standardwert ist **0U**.
 
 *lpCreateParam*<br/>
-in Ein Zeiger auf Fenster Erstellungs Daten. Eine vollständige Beschreibung finden Sie in der Beschreibung des letzten Parameters für " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw)".
+[in] Ein Zeiger auf Fenstererstellungsdaten. Eine vollständige Beschreibung finden Sie in der Beschreibung für den letzten Parameter [für CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, das Handle für das neu erstellte Fenster andernfalls NULL.
+Wenn dies erfolgreich ist, wird das Handle für das neu erstellte Fenster angezeigt. andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der vorhandene Fenster Klassenname wird in [m_lpszClassName](#m_lpszclassname)gespeichert. `Create`Anschließend wird ein Fenster erstellt, das auf dieser neuen Klasse basiert. Das neu erstellte Fenster wird automatisch an das `CContainedWindowT` -Objekt angefügt.
-
-> [!NOTE]
->  Nicht aufrufen `Create` , wenn Sie bereits [SubclassWindow](#subclasswindow)aufgerufen haben.
+Der vorhandene Fensterklassenname wird in [m_lpszClassName](#m_lpszclassname)gespeichert. `Create`erstellt dann ein Fenster basierend auf dieser neuen Klasse. Das neu erstellte Fenster `CContainedWindowT` wird automatisch an das Objekt angefügt.
 
 > [!NOTE]
->  Wenn 0 als Wert für den *menuorid-* Parameter verwendet wird, muss es als 0U (Standardwert) angegeben werden, um einen Compilerfehler zu vermeiden.
+> Rufen Sie `Create` nicht auf, wenn Sie bereits [SubclassWindow](#subclasswindow)aufgerufen haben.
 
-##  <a name="defwindowproc"></a>Ccontainedwindowt::D efwindowproc
+> [!NOTE]
+> Wenn 0 als Wert für den *Parameter MenuOrID* verwendet wird, muss es als 0U (der Standardwert) angegeben werden, um einen Compilerfehler zu vermeiden.
 
-Wird von [WindowProc](#windowproc) aufgerufen, um Meldungen zu verarbeiten, die nicht von der Meldungs Zuordnung behandelt werden.
+## <a name="ccontainedwindowtdefwindowproc"></a><a name="defwindowproc"></a>CContainedWindowT::DefWindowProc
+
+Wird von [WindowProc](#windowproc) aufgerufen, um Nachrichten zu verarbeiten, die nicht von der Nachrichtenzuordnung verarbeitet werden.
 
 ```
 LRESULT DefWindowProc()
@@ -260,25 +260,25 @@ LRESULT DefWindowProc(
 ### <a name="parameters"></a>Parameter
 
 *uMsg*<br/>
-in Die an das Fenster gesendete Nachricht.
+[in] Die an das Fenster gesendete Nachricht.
 
 *wParam*<br/>
-in Zusätzliche Nachrichten spezifische Informationen.
+[in] Zusätzliche nachrichtenspezifische Informationen.
 
 *lParam*<br/>
-in Zusätzliche Nachrichten spezifische Informationen.
+[in] Zusätzliche nachrichtenspezifische Informationen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das Ergebnis der Nachrichtenverarbeitung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In der Standard `DefWindowProc` Einstellung Ruft die Win32-Funktion [callwindowproc](/windows/win32/api/winuser/nf-winuser-callwindowprocw) auf, um die Nachrichten Informationen an die in [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)angegebene Fenster Prozedur zu senden.
+Ruft standardmäßig `DefWindowProc` die [Funktion CallWindowProc](/windows/win32/api/winuser/nf-winuser-callwindowprocw) Win32 auf, um die Nachrichteninformationen an die in [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)angegebene Fensterprozedur zu senden.
 
-##  <a name="getcurrentmessage"></a>Ccontainedwindowt:: GetCurrentMessage
+## <a name="ccontainedwindowtgetcurrentmessage"></a><a name="getcurrentmessage"></a>CcontainedWindowT::GetCurrentMessage
 
-Gibt die aktuelle Meldung zurück`m_pCurrentMsg`().
+Gibt die aktuelle`m_pCurrentMsg`Meldung zurück ( ).
 
 ```
 const _ATL_MSG* GetCurrentMessage();
@@ -286,69 +286,69 @@ const _ATL_MSG* GetCurrentMessage();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die aktuelle Meldung, gepackt in der `MSG` -Struktur.
+Die aktuelle Nachricht, die `MSG` in der Struktur gepackt ist.
 
-##  <a name="m_dwmsgmapid"></a>Ccontainedwindowt:: m_dwMsgMapID
+## <a name="ccontainedwindowtm_dwmsgmapid"></a><a name="m_dwmsgmapid"></a>CContainedWindowT::m_dwMsgMapID
 
-Enthält den Bezeichner der Meldungs Zuordnung, die derzeit für das enthaltene Fenster verwendet wird.
+Enthält den Bezeichner der Nachrichtenzuordnung, die derzeit für das enthaltene Fenster verwendet wird.
 
 ```
 DWORD m_dwMsgMapID;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Nachrichten Zuordnung muss im enthaltenden Objekt deklariert werden.
+Diese Meldungszuordnung muss im enthaltenden Objekt deklariert werden.
 
-Die Standard Meldungs Zuordnung, die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklariert wird, wird immer durch 0 (null) identifiziert. Eine Alternative Meldungs Zuordnung, die mit [ALT_MSG_MAP (msgmapid)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, `msgMapID`wird von identifiziert.
+Die Mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standardmeldungszuordnung wird immer mit Null gekennzeichnet. Eine alternative Meldungszuordnung, die mit [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, wird durch `msgMapID`identifiziert.
 
-`m_dwMsgMapID`wird zuerst vom-Konstruktor initialisiert und kann durch Aufrufen von [switchmessagemap](#switchmessagemap)geändert werden. Ein Beispiel finden Sie in der [Übersicht über ccontainedwindowt](../../atl/reference/ccontainedwindowt-class.md).
+`m_dwMsgMapID`wird zuerst vom Konstruktor initialisiert und kann durch Aufrufen von [SwitchMessageMap](#switchmessagemap)geändert werden. Ein Beispiel finden Sie in der [CContainedWindowT-Übersicht](../../atl/reference/ccontainedwindowt-class.md).
 
-##  <a name="m_lpszclassname"></a>Ccontainedwindowt:: m_lpszClassName
+## <a name="ccontainedwindowtm_lpszclassname"></a><a name="m_lpszclassname"></a>CContainedWindowT::m_lpszClassName
 
-Gibt den Namen einer vorhandenen Fenster Klasse an.
+Gibt den Namen einer vorhandenen Fensterklasse an.
 
 ```
 LPTSTR m_lpszClassName;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie ein Fenster erstellen, registriert [Create](#create) eine neue Fenster Klasse, die auf dieser vorhandenen Klasse basiert, aber [ccontainedwindowt:: WindowProc](#windowproc)verwendet.
+Wenn Sie ein Fenster erstellen, registriert [Create](#create) eine neue Fensterklasse, die auf dieser vorhandenen Klasse basiert, aber [CContainedWindowT::WindowProc](#windowproc)verwendet.
 
-`m_lpszClassName`wird vom-Konstruktor initialisiert. Ein Beispiel finden Sie in der Übersicht über [ccontainedwindowt](../../atl/reference/ccontainedwindowt-class.md) .
+`m_lpszClassName`wird vom Konstruktor initialisiert. Ein Beispiel finden Sie in der [CContainedWindowT-Übersicht.](../../atl/reference/ccontainedwindowt-class.md)
 
-##  <a name="m_pfnsuperwindowproc"></a>Ccontainedwindowt:: m_pfnSuperWindowProc
+## <a name="ccontainedwindowtm_pfnsuperwindowproc"></a><a name="m_pfnsuperwindowproc"></a>CContainedWindowT::m_pfnSuperWindowProc
 
-Wenn das enthaltene Fenster untergeordnet ist, `m_pfnSuperWindowProc` verweist auf die ursprüngliche Fenster Prozedur der Fenster Klasse.
+Wenn das enthaltene Fenster `m_pfnSuperWindowProc` unterklassifiziert ist, zeigt es auf die ursprüngliche Fensterprozedur der Fensterklasse.
 
 ```
 WNDPROC m_pfnSuperWindowProc;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das enthaltene Fenster eine übergeordnete Klasse ist, was bedeutet, dass es auf einer Fenster Klasse basiert, die eine `m_pfnSuperWindowProc` vorhandene Klasse ändert, verweist auf die Fenster Prozedur der vorhandenen Fenster Klasse.
+Wenn das enthaltene Fenster überklass ist, d. h. es basiert `m_pfnSuperWindowProc` auf einer Fensterklasse, die eine vorhandene Klasse ändert, zeigt es auf die Fensterprozedur der vorhandenen Fensterklasse.
 
-Die [defwindowproc](#defwindowproc) -Methode sendet Nachrichten Informationen an die in `m_pfnSuperWindowProc`gespeicherte Fenster Prozedur.
+Die [DefWindowProc-Methode](#defwindowproc) sendet Nachrichteninformationen an `m_pfnSuperWindowProc`die in gespeicherte Fensterprozedur .
 
-##  <a name="m_pobject"></a>Ccontainedwindowt:: m_pObject
+## <a name="ccontainedwindowtm_pobject"></a><a name="m_pobject"></a>CContainedWindowT::m_pObject
 
-Verweist auf das Objekt, das `CContainedWindowT` das Objekt enthält.
+Zeigt auf das `CContainedWindowT` Objekt, das das Objekt enthält.
 
 ```
 CMessageMap* m_pObject;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Container, dessen Klasse von [cmessagemap](../../atl/reference/cmessagemap-class.md)abgeleitet werden muss, deklariert die Nachrichten Zuordnung, die vom enthaltenen Fenster verwendet wird.
+Dieser Container, dessen Klasse von [CMessageMap](../../atl/reference/cmessagemap-class.md)ableiten muss, deklariert die Nachrichtenzuordnung, die vom enthaltenen Fenster verwendet wird.
 
-`m_pObject`wird vom-Konstruktor initialisiert. Ein Beispiel finden Sie in der Übersicht über [ccontainedwindowt](../../atl/reference/ccontainedwindowt-class.md) .
+`m_pObject`wird vom Konstruktor initialisiert. Ein Beispiel finden Sie in der [CContainedWindowT-Übersicht.](../../atl/reference/ccontainedwindowt-class.md)
 
-##  <a name="registerwndsuperclass"></a>Ccontainedwindowt:: registerwndsuperclass
+## <a name="ccontainedwindowtregisterwndsuperclass"></a><a name="registerwndsuperclass"></a>CContainedWindowT::RegisterWndSuper-Klasse
 
-Wird von [Create](#create) aufgerufen, um die Fenster Klasse des enthaltenen Fensters zu registrieren.
+Wird von [Create](#create) aufgerufen, um die Fensterklasse des enthaltenen Fensters zu registrieren.
 
 ```
 ATOM RegisterWndSuperClass();
@@ -356,15 +356,15 @@ ATOM RegisterWndSuperClass();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, ein Atom, das die Fenster Klasse eindeutig identifiziert, die registriert wird. andernfalls 0 (null).
+Wenn dies erfolgreich ist, ein Atom, das die registrierte Fensterklasse eindeutig identifiziert; andernfalls Null.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Fenster Klasse basiert auf einer vorhandenen Klasse, verwendet jedoch [ccontainedwindowt:: WindowProc](#windowproc). Der Name und die Fenster Prozedur der vorhandenen Fenster Klasse werden in [m_lpszClassName](#m_lpszclassname) bzw. [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)gespeichert.
+Diese Fensterklasse basiert auf einer vorhandenen Klasse, verwendet jedoch [CContainedWindowT::WindowProc](#windowproc). Der Name und die Fensterprozedur der vorhandenen Fensterklasse werden in [m_lpszClassName](#m_lpszclassname) bzw. [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)gespeichert.
 
-##  <a name="subclasswindow"></a>Ccontainedwindowt:: SubclassWindow
+## <a name="ccontainedwindowtsubclasswindow"></a><a name="subclasswindow"></a>CContainedWindowT::SubclassWindow
 
-Unterklassen das von *HWND* identifizierte Fenster und fügt es an das `CContainedWindowT` -Objekt an.
+Unterklassen das von *hWnd* identifizierte Fenster `CContainedWindowT` und fügen es an das Objekt an.
 
 ```
 BOOL SubclassWindow(HWND hWnd);
@@ -373,41 +373,41 @@ BOOL SubclassWindow(HWND hWnd);
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-in Das Handle für das Fenster, das untergeordnet wird.
+[in] Das Handle für das Fenster, das unterklassifiziert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn das Fenster erfolgreich untergeordnet ist. andernfalls false.
+TRUE, wenn das Fenster erfolgreich unterklassig ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das untergeordnete Fenster verwendet nun [ccontainedwindowt:: WindowProc](#windowproc). Die ursprüngliche Fenster Prozedur wird in [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)gespeichert.
+Das unterklassige Fenster verwendet jetzt [CContainedWindowT::WindowProc](#windowproc). Die ursprüngliche Fensterprozedur wird in [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)gespeichert.
 
 > [!NOTE]
->  Rufen `SubclassWindow` Sie nicht auf, wenn Sie " [Create](#create)" bereits aufgerufen haben.
+> Rufen Sie `SubclassWindow` nicht auf, wenn Sie bereits [Create](#create)aufgerufen haben.
 
-##  <a name="switchmessagemap"></a>Ccontainedwindowt:: switchmessagemap
+## <a name="ccontainedwindowtswitchmessagemap"></a><a name="switchmessagemap"></a>CcontainedWindowT::SwitchMessageMap
 
-Ändert, welche Meldungs Zuordnung zum Verarbeiten der Nachrichten des enthaltenen Fensters verwendet wird.
+Ändert, welche Meldungszuordnung zum Verarbeiten der Nachrichten des enthaltenen Fensters verwendet wird.
 
-```
+```cpp
 void SwitchMessageMap(DWORD dwMsgMapID);
 ```
 
 ### <a name="parameters"></a>Parameter
 
 *dwMsgMapID*<br/>
-in Der Bezeichner der Meldungs Zuordnung. Wenn Sie die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standard Meldungs Zuordnung verwenden möchten, übergeben Sie NULL. Wenn Sie eine Alternative Nachrichten Zuordnung verwenden möchten, die mit [ALT_MSG_MAP (msgmapid)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben `msgMapID`Sie.
+[in] Der Nachrichtenzuordnungsbezeichner. Um die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standardmeldungszuordnung zu verwenden, übergeben Sie Null. Um eine alternative Meldungszuordnung zu verwenden, die `msgMapID`mit [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben Sie .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Meldungs Zuordnung muss im enthaltenden Objekt definiert werden.
+Die Meldungszuordnung muss im enthaltenden Objekt definiert werden.
 
-Zunächst geben Sie den Bezeichner der Meldungs Zuordnung im Konstruktor an.
+Sie geben zunächst den Nachrichtenzuordnungsbezeichner im Konstruktor an.
 
-##  <a name="unsubclasswindow"></a>Ccontainedwindowt:: unsubclasswindow
+## <a name="ccontainedwindowtunsubclasswindow"></a><a name="unsubclasswindow"></a>CContainedWindowT::UnsubclassWindow
 
-Trennt das untergeordnete Fenster vom `CContainedWindowT` -Objekt und stellt die ursprüngliche Fenster Prozedur wieder her, die in [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)gespeichert ist.
+Trennt das unterklassige Fenster `CContainedWindowT` vom Objekt und stellt die ursprüngliche Fensterprozedur wieder her, die in [m_pfnSuperWindowProc](#m_pfnsuperwindowproc)gespeichert wurde.
 
 ```
 HWND UnsubclassWindow(BOOL bForce = FALSE);
@@ -416,19 +416,19 @@ HWND UnsubclassWindow(BOOL bForce = FALSE);
 ### <a name="parameters"></a>Parameter
 
 *bForce*<br/>
-in Legen Sie diese Einstellung auf "true" fest, um die Wiederherstellung der ursprünglichen Fenster Prozedur zu `CContainedWindowT` erzwingen, auch wenn die Fenster Prozedur für dieses Objekt derzeit nicht aktiv ist. Wenn *bForce* auf false festgelegt ist und die Fenster Prozedur für `CContainedWindowT` dieses Objekt zurzeit nicht aktiv ist, wird die ursprüngliche Fenster Prozedur nicht wieder hergestellt.
+[in] Legen Sie TRUE fest, dass die ursprüngliche Fensterprozedur wiederhergestellt `CContainedWindowT` wird, auch wenn die Fensterprozedur für dieses Objekt derzeit nicht aktiv ist. Wenn *bForce* auf FALSE festgelegt ist `CContainedWindowT` und die Fensterprozedur für dieses Objekt derzeit nicht aktiv ist, wird die ursprüngliche Fensterprozedur nicht wiederhergestellt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Handle für das Fenster, das zuvor untergeordnet ist. Wenn *bForce* auf false festgelegt ist und die Fenster Prozedur für `CContainedWindowT` dieses Objekt derzeit nicht aktiv ist, wird NULL zurückgegeben.
+Das Handle für das Fenster, das zuvor unterclassiert wurde. Wenn *bForce* auf FALSE gesetzt ist `CContainedWindowT` und die Fensterprozedur für dieses Objekt derzeit nicht aktiv ist, gibt NULL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode nur, wenn Sie die ursprüngliche Fenster Prozedur wiederherstellen möchten, bevor das Fenster zerstört wird. Andernfalls wird dies von [WindowProc](#windowproc) automatisch durchführt, wenn das Fenster zerstört wird.
+Verwenden Sie diese Methode nur, wenn Sie die ursprüngliche Fensterprozedur wiederherstellen möchten, bevor das Fenster zerstört wird. Andernfalls wird [WindowProc](#windowproc) dies automatisch tun, wenn das Fenster zerstört wird.
 
-##  <a name="windowproc"></a>Ccontainedwindowt:: WindowProc
+## <a name="ccontainedwindowtwindowproc"></a><a name="windowproc"></a>CContainedWindowT::WindowProc
 
-Diese statische Methode implementiert die Fenster Prozedur.
+Diese statische Methode implementiert die Fensterprozedur.
 
 ```
 static LRESULT CALLBACK WindowProc(
@@ -441,30 +441,30 @@ static LRESULT CALLBACK WindowProc(
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-in Das Handle für das Fenster.
+[in] Das Handle zum Fenster.
 
 *uMsg*<br/>
-in Die an das Fenster gesendete Nachricht.
+[in] Die an das Fenster gesendete Nachricht.
 
 *wParam*<br/>
-in Zusätzliche Nachrichten spezifische Informationen.
+[in] Zusätzliche nachrichtenspezifische Informationen.
 
 *lParam*<br/>
-in Zusätzliche Nachrichten spezifische Informationen.
+[in] Zusätzliche nachrichtenspezifische Informationen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das Ergebnis der Nachrichtenverarbeitung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`WindowProc`leitet Nachrichten an die von [m_dwMsgMapID](#m_dwmsgmapid)identifizierte Nachrichten Zuordnung. Bei Bedarf wird `WindowProc` [defwindowproc](#defwindowproc) für die weitere Nachrichtenverarbeitung aufgerufen.
+`WindowProc`leitet Nachrichten an die Nachrichtenzuordnung weiter, die von [m_dwMsgMapID](#m_dwmsgmapid)identifiziert wurde. `WindowProc` Ruft bei Bedarf [DefWindowProc](#defwindowproc) zur zusätzlichen Nachrichtenverarbeitung auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWindow-Klasse](../../atl/reference/cwindow-class.md)<br/>
 [CWindowImpl-Klasse](../../atl/reference/cwindowimpl-class.md)<br/>
 [CMessageMap-Klasse](../../atl/reference/cmessagemap-class.md)<br/>
 [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)<br/>
-[ALT_MSG_MAP (msgmapid)](message-map-macros-atl.md#alt_msg_map)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)

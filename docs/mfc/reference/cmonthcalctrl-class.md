@@ -90,12 +90,12 @@ helpviewer_keywords:
 - CMonthCalCtrl [MFC], SizeMinReq
 - CMonthCalCtrl [MFC], SizeRectToMin
 ms.assetid: a42f6bd6-ab5c-4335-82f8-839982fc64a2
-ms.openlocfilehash: da9d588811361d3dfd72d44d5b9ced8460d23936
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8c24c638d7006be112a53ec1e4f622ad528e348c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319757"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752817"
 ---
 # <a name="cmonthcalctrl-class"></a>CMonthCalCtrl-Klasse
 
@@ -187,7 +187,7 @@ Weitere Informationen zur Verwendung des Monatskalendersteuerelements finden Sie
 
 `CMonthCalCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdtctl.h
 
@@ -227,10 +227,10 @@ virtual BOOL Create(
 Gibt die Kombination von Windows-Formatvorlagen an, die auf das Monatskalendersteuerelement angewendet werden. Weitere Informationen zu den Stilen finden Sie unter [Monatskalendersteuerungsstile](/windows/win32/Controls/month-calendar-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur.](/previous-versions/dd162897\(v=vs.85\)) Enthält die Position und Größe des Monatskalendersteuerelements.
+Ein Verweis auf eine [RECT-Struktur.](/windows/win32/api/windef/ns-windef-rect) Enthält die Position und Größe des Monatskalendersteuerelements.
 
 *Pt*<br/>
-Ein Verweis [POINT](/previous-versions/dd162805\(v=vs.85\)) auf eine POINT-Struktur, die die Position des Monatskalendersteuerelements identifiziert.
+Ein Verweis [POINT](/windows/win32/api/windef/ns-windef-point) auf eine POINT-Struktur, die die Position des Monatskalendersteuerelements identifiziert.
 
 *pParentWnd*<br/>
 Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Monatskalendersteuerelements ist. Es darf nicht NULL sein.
@@ -523,7 +523,7 @@ BOOL GetMinReqRect(RECT* pRect) const;
 ### <a name="parameters"></a>Parameter
 
 *pRect*<br/>
-Ein Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die umkreisende Rechteckinformationen empfängt. Dieser Parameter muss eine gültige Adresse sein und darf nicht NULL sein.
+Ein Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die umkreisende Rechteckinformationen empfängt. Dieser Parameter muss eine gültige Adresse sein und darf nicht NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -808,7 +808,7 @@ Diese Methode sendet die [MCM_GETCURRENTVIEW](/windows/win32/Controls/mcm-getcur
 
 Legt die Breite des Rahmens des aktuellen Monatskalendersteuerelements fest.
 
-```
+```cpp
 void SetCalendarBorder(int cxyBorder);
 ```
 
@@ -840,7 +840,7 @@ Im folgenden Codebeispiel wird die Rahmenbreite des Monatskalendersteuerelements
 
 Legt die Standardbreite des Rahmens des aktuellen Monatskalendersteuerelements fest.
 
-```
+```cpp
 void SetCalendarBorderDefault();
 ```
 
@@ -1219,7 +1219,7 @@ Diese Memberfunktion implementiert das Verhalten der [MCM_SETSELRANGE](/windows/
 
 Legt das Kalendersteuerelement für den aktuellen Tag fest.
 
-```
+```cpp
 void SetToday(const COleDateTime& refDateTime);
 void SetToday(const CTime* pDateTime);
 void SetToday(const LPSYSTEMTIME pDateTime);
@@ -1290,11 +1290,11 @@ LPRECT SizeRectToMin(LPRECT lpRect);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*lpRect*|[in] Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die ein Rechteck definiert, das die gewünschte Anzahl von Kalendern enthält.|
+|*lpRect*|[in] Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die ein Rechteck definiert, das die gewünschte Anzahl von Kalendern enthält.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die ein Rechteck definiert, dessen Größe kleiner oder gleich dem durch den *Parameter lpRect* definierten Rechteck ist.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die ein Rechteck definiert, dessen Größe kleiner oder gleich dem durch den *Parameter lpRect* definierten Rechteck ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1302,7 +1302,7 @@ Diese Methode berechnet, wie viele Kalender in das durch den Parameter *lpRect* 
 
 Diese Methode sendet die [MCM_SIZERECTTOMIN](/windows/win32/Controls/mcm-sizerecttomin) Nachricht, die im Windows SDK beschrieben wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

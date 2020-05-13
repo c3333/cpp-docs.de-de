@@ -46,12 +46,12 @@ helpviewer_keywords:
 - CRgn [MFC], RectInRegion
 - CRgn [MFC], SetRectRgn
 ms.assetid: d904da84-76aa-481e-8780-b09485f49e64
-ms.openlocfilehash: 72ab4027880285a3c4cd24d586e163e1e01b98f2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e84526eec8f4fd4b1935fa39bc7f4ed3c4d5dd71
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368306"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754487"
 ---
 # <a name="crgn-class"></a>CRgn-Klasse
 
@@ -117,7 +117,7 @@ Weitere Informationen zur `CRgn`Verwendung finden Sie unter [Grafikobjekte](../.
 
 `CRgn`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -699,10 +699,10 @@ int OffsetRgn(POINT point);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die Anzahl der Einheiten an, die nach links oder rechts verschoben werden sollen.
 
-*y*<br/>
+*Y*<br/>
 Gibt die Anzahl der Einheiten an, die nach oben oder unten verschoben werden sollen.
 
 *Punkt*<br/>
@@ -762,10 +762,10 @@ BOOL PtInRegion(POINT point) const;
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des zu testenden Punktes an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des zu testenden Punkts an.
 
 *Punkt*<br/>
@@ -805,7 +805,7 @@ Ein Wert ungleich Null, wenn ein Teil des angegebenen Rechtecks innerhalb der Gr
 
 Erstellt einen rechteckigen Bereich.
 
-```
+```cpp
 void SetRectRgn(
     int x1,
     int y1,
@@ -838,7 +838,7 @@ Im Gegensatz zu [CreateRectRgn](#createrectrgn)weist es jedoch keinen zusätzlic
 
 Verwenden Sie diese `CreateRectRgn` Funktion anstelle der Memberfunktion, um Aufrufe an den lokalen Speicher-Manager zu vermeiden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

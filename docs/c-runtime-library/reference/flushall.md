@@ -1,8 +1,9 @@
 ---
 title: _flushall
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _flushall
+- _o__flushall
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - streams, flushing
 - _flushall function
 ms.assetid: 2cd73562-6d00-4ca2-b13c-80d0ae7870b5
-ms.openlocfilehash: dce7412ccc19d4870494851d366c059ff01de16a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1a53eeedd5dfa0f9c01fa5883a9db33e26e3ea17
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957141"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911623"
 ---
 # <a name="_flushall"></a>_flushall
 
@@ -52,11 +54,13 @@ int _flushall( void );
 
 Standardmäßig schreibt die **_flushall** -Funktion den Inhalt aller Puffer, die mit geöffneten Ausgabestreams verknüpft sind, in die entsprechenden Dateien. Aus allen Puffern, die geöffneten Eingabestreams zugeordnet sind, wird der aktuelle Inhalt gelöscht. (Diese Puffer werden normalerweise vom Betriebssystem verwaltet, das die optimale Zeit zum automatischen Schreiben der Daten auf den Datenträger bestimmt: wenn ein Puffer ist voll, wenn ein Stream geschlossen wird oder wenn ein Programm normal beendet wird, ohne die Streams zu schließen.)
 
-Wenn ein Lesevorgang auf einen **_flushall**-Aufrufe folgt, werden neue Daten aus den Eingabedateien in die Puffer gelesen. Alle Streams bleiben nach dem **_flushall**-Aufrufe geöffnet.
+Wenn ein Lesevorgang auf einen **_flushall**-Aufrufe folgt, werden neue Daten aus den Eingabedateien in die Puffer gelesen. Alle Streams bleiben nach dem aufzurufenden **_flushall**geöffnet.
 
-Mit der Datenträgercommitfunktion der Laufzeitbibliothek können Sie sicherstellen, dass wichtige Daten direkt auf den Datenträger anstatt in die Betriebssystempuffer geschrieben werden. Sie können diese Funktion aktivieren, ohne ein vorhandenes Programm umzuschreiben. Verknüpfen Sie hierzu die Objektdateien des Programms mit "Commode.obj". In der resultierenden ausführbaren Datei schreiben Aufrufe von **_flushall** den Inhalt aller Puffer auf den Datenträger. COMMODE. obj wirkt sich nur auf **_flushall** und [fflush](fflush.md) aus.
+Mit der Datenträgercommitfunktion der Laufzeitbibliothek können Sie sicherstellen, dass wichtige Daten direkt auf den Datenträger anstatt in die Betriebssystempuffer geschrieben werden. Wenn Sie ein vorhandenes Programm nicht umschreiben, können Sie diese Funktion aktivieren, indem Sie die Objektdateien des Programms mit "COMMODE. obj" verknüpfen. In der resultierenden ausführbaren Datei **_flushall** den Inhalt aller Puffer auf den Datenträger schreiben. COMMODE. obj wirkt sich nur auf **_flushall** und [fflush](fflush.md) aus.
 
 Weitere Informationen zum Steuern der Datenträgercommitfunktion finden Sie unter [Stream-E/A](../../c-runtime-library/stream-i-o.md), [fopen](fopen-wfopen.md) und [_fdopen](fdopen-wfdopen.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -64,7 +68,7 @@ Weitere Informationen zum Steuern der Datenträgercommitfunktion finden Sie unte
 |--------------|---------------------|
 |**_flushall**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -88,7 +92,7 @@ int main( void )
 There were 3 streams flushed
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [_commit](commit.md)<br/>

@@ -15,16 +15,16 @@ f1_keywords:
 helpviewer_keywords:
 - Map Class (C++/Cx)
 ms.assetid: 2b8cf968-1167-4898-a149-1195b32c1785
-ms.openlocfilehash: 81721d719a424250beed89f4a5656b3f2fc27922
-ms.sourcegitcommit: 4517932a67bbf2db16cfb122d3bef57a43696242
+ms.openlocfilehash: ff27f6c543a2326dd4318f66aae51b89092b28e2
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71816300"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032446"
 ---
 # <a name="platformcollectionsmap-class"></a>Platform::Collections::Map-Klasse
 
-Stellt eine *Zuordnung*dar, die eine Auflistung von Schlüssel-Wert-Paaren ist. Implementiert [Windows:: Foundation:: Collections:: iobservablemap](/uwp/api/windows.foundation.collections.iobservablemap_k_v_) , um die XAML- [Datenbindung](/windows/uwp/data-binding/data-binding-in-depth)zu unterstützen.
+Stellt eine *Zuordnung*dar, die eine Auflistung von Schlüssel-Wert-Paaren ist. Implementiert [Windows::Foundation::Collections::IObservableMap](/uwp/api/windows.foundation.collections.iobservablemap-2) zur Hilfe bei der XAML-Datenbindung . [data binding](/windows/uwp/data-binding/data-binding-in-depth)
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,67 +45,67 @@ Der Typ des Schlüssels im Schlüssel-Wert-Paar.
 Der Typ des Werts im Schlüssel-Wert-Paar.
 
 *C*<br/>
-Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortierschlüssel vergleichen kann, um deren relative Reihenfolge in der Map zu bestimmen. Standardmäßig ist [Std:: less\<K >](../standard-library/less-struct.md).
+Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortierschlüssel vergleichen kann, um deren relative Reihenfolge in der Map zu bestimmen. Standardmäßig [ist\<std::less K>](../standard-library/less-struct.md).
 
-*__is_valid_winrt_type ()* Eine vom Compiler generierte Funktion, die den Typ von *K* und *V* überprüft und eine benutzerfreundliche Fehlermeldung bereitstellt, wenn der Typ nicht in der Zuordnung gespeichert werden kann.
+*__is_valid_winrt_type()* Eine vom Compiler generierte Funktion, die den Typ *Von K* und *V* überprüft und eine Anzeigefehlermeldung bereitstellt, wenn der Typ nicht in der Karte gespeichert werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zulässige Typen sind:
+Folgende Typen sind zulässig:
 
 - Ganze Zahlen
 
-- Schnittstellen Klasse ^
+- Schnittstellenklasse
 
-- Öffentliche Verweisklasse^
+- Öffentliche Referenzklasse^
 
-- Wertstruktur
+- value struct
 
 - Öffentliche Enumerationsklasse
 
-Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-library/map-class.md). Dabei handelt es C++ sich um eine konkrete Implementierung der Typen [Windows:: Foundation:: Collections:: IMap < Windows:: Foundation:: Collections:: ikeyvaluepair\<K, V > >](/uwp/api/Windows.Foundation.Collections.IMap_K_V_) und [iobservablemap](/uwp/api/Windows.Foundation.Collections.IObservableMap_K_V_) , die über öffentliche Windows-Runtime Schnittstellen übergebenen werden. Wenn Sie versuchen, einen `Platform::Collections::Map` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts in [Windows:: Foundation:: Collections:: IMap\<K, V >](/uwp/api/Windows.Foundation.Collections.IMap_K_V_)ändern.
+Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-library/map-class.md). Es handelt sich um eine c++-konkrete Implementierung der [Windows::Foundation::Collections::IMap<Windows::Foundation::Collections::IKeyValuePair\<K,V>>](/uwp/api/windows.foundation.collections.imap-2) und [IObservableMap-Typen,](/uwp/api/windows.foundation.collections.iobservablemap-2) die über öffentliche Windows-Runtime-Schnittstellen übergeben werden. Wenn Sie versuchen, einen `Platform::Collections::Map` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder den Rückgabewert in [Windows::Foundation::Collections::IMap\<K,V>](/uwp/api/windows.foundation.collections.imap-2)ändern.
 
-Weitere Informationen finden Sie unter [Collections](../cppcx/collections-c-cx.md).
+Weitere Informationen finden Sie unter [Sammlungen](../cppcx/collections-c-cx.md).
 
 ### <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Map::Map](#ctor)|Initialisiert eine neue Instanz der Map-Klasse.|
+|[Karte::Karte](#ctor)|Initialisiert eine neue Instanz der Map-Klasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Map::Clear](#clear)|Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.|
-|[Map:: First](#first)|Gibt einen Iterator zurück, der das erste Element in der Zuordnung angibt.|
-|[Map::GetView](#getview)|Gibt eine schreibgeschützte Ansicht der aktuellen Zuordnung zurück; das heißt, eine [Platform::Collections::MapView Class](../cppcx/platform-collections-mapview-class.md).|
-|[Map::HasKey](#haskey)|Ermittelt, ob die aktuelle Map den angegebenen Schlüssel enthält.|
-|[Map::Insert](#insert)|Fügt das angegebene Schlüssel-Wert-Paar dem aktuellen Map-Objekt hinzu.|
-|[Map::Lookup](#lookup)|Ruft das Element am angegebenen Schlüssel im aktuellen Map-Objekt ab.|
-|[Map::Remove](#remove)|Löscht das angegebene Schlüssel-Wert-Paar aus dem aktuellen Map-Objekt.|
-|[Map::Size](#size)|Gibt die Anzahl von Elementen im aktuellen Map-Objekt zurück.|
+|[Karte::Clear](#clear)|Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.|
+|[Karte::Erste](#first)|Gibt einen Iterator zurück, der das erste Element in der Zuordnung angibt.|
+|[Karte::GetView](#getview)|Gibt eine schreibgeschützte Ansicht der aktuellen Zuordnung zurück; das heißt, eine [Platform::Collections::MapView Class](../cppcx/platform-collections-mapview-class.md).|
+|[Karte::HasKey](#haskey)|Ermittelt, ob die aktuelle Map den angegebenen Schlüssel enthält.|
+|[Karte::Einfügen](#insert)|Fügt das angegebene Schlüssel-Wert-Paar dem aktuellen Map-Objekt hinzu.|
+|[Karte::Lookup](#lookup)|Ruft das Element am angegebenen Schlüssel im aktuellen Map-Objekt ab.|
+|[Map::Remove](#remove)|Löscht das angegebene Schlüssel-Wert-Paar vom aktuellen Map-Objekt.|
+|[Karte::Größe](#size)|Gibt die Anzahl von Elementen im aktuellen Map-Objekt zurück.|
 
 ### <a name="events"></a>Ereignisse
 
 |||
 |-|-|
-|Name|Beschreibung|
-|[Map:: mapchanged](#mapchanged) -Ereignis|Tritt auf, wenn sich die Map ändert.|
+|Name|BESCHREIBUNG|
+|[Karte::MapChanged-Ereignis](#mapchanged)|Tritt auf, wenn sich die Map ändert.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `Map`
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
 **Namespace:** Platform::Collections
 
-## <a name="clear"></a>Map:: Clear-Methode
+## <a name="mapclear-method"></a><a name="clear"></a>Karte::Clear-Methode
 
 Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.
 
@@ -115,7 +115,7 @@ Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.
 virtual void Clear();
 ```
 
-## <a name="first"></a>Map:: First-Methode
+## <a name="mapfirst-method"></a><a name="first"></a>Karte::Erste Methode
 
 Gibt einen Iterator zurück, der das erste Element in der Zuordnung angibt, oder `nullptr`, wenn die Zuordnung leer ist.
 
@@ -130,13 +130,13 @@ Windows::Foundation::Collections::IKeyValuePair<K, V>^>^ First();
 
 Ein Iterator, der das erste Element in der Zuordnung angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine bequeme Möglichkeit, den von First () zurückgegebenen Iterator zu halten, besteht darin, den Rückgabewert einer Variablen zuzuweisen, die mit dem **automatischen** typableitungs Schlüsselwort deklariert wird. Beispielsweise `auto x = myMap->First();`.
+Eine bequeme Möglichkeit, den von First() zurückgegebenen Iterator zu halten, besteht darin, den Rückgabewert einer Variablen zuzuweisen, die mit dem Schlüsselwort **"Auto** type deduction" deklariert wird. Beispiel: `auto x = myMap->First();`.
 
-## <a name="getview"></a>Map:: GetView-Methode
+## <a name="mapgetview-method"></a><a name="getview"></a>Karte::GetView-Methode
 
-Gibt eine schreibgeschützte Ansicht der aktuellen Zuordnung zurück. Das heißt, eine [Platform:: Collections:: MapView-Klasse](../cppcx/platform-collections-mapview-class.md), die die Schnittstelle [Windows:: Foundation:: Collections:: imapview\<K, V >]/UWP/API/Windows.Foundation.Collections. IMapView_K_V_) implementiert.
+Gibt eine schreibgeschützte Ansicht der aktuellen Karte zurück. Das heißt, eine [Platform::Collections::MapView-Klasse](../cppcx/platform-collections-mapview-class.md), die die [Windows::Foundation::Collections::IMapView\<K,V->-Schnittstelle](/uwp/api/windows.foundation.collections.imapview-2) implementiert.
 
 ### <a name="syntax"></a>Syntax
 
@@ -146,9 +146,9 @@ Windows::Foundation::Collections::IMapView<K, V>^ GetView();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `MapView`-Objekt.
+Ein `MapView` -Objekt.
 
-## <a name="haskey"></a>Map:: Haskey-Methode
+## <a name="maphaskey-method"></a><a name="haskey"></a>Karte::HasKey-Methode
 
 Ermittelt, ob die aktuelle Map den angegebenen Schlüssel enthält.
 
@@ -161,13 +161,13 @@ bool HasKey(K key);
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der zum Suchen des Map-Elements verwendete Schlüssel. Der *Schlüsseltyp* lautet Typname *K*.
+Der zum Suchen des Map-Elements verwendete Schlüssel. Der *Schlüsseltyp* ist der TypName *K*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Schlüssel gefunden wird. andernfalls **false**.
+**true,** wenn der Schlüssel gefunden wird; andernfalls **false**.
 
-## <a name="insert"></a>Map:: Insert-Methode
+## <a name="mapinsert-method"></a><a name="insert"></a>Karte::Insert-Methode
 
 Fügt das angegebene Schlüssel-Wert-Paar dem aktuellen Map-Objekt hinzu.
 
@@ -180,16 +180,16 @@ virtual bool Insert(K key, V value);
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* lautet Typname *K*.
+Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* ist der TypName *K*.
 
-*Wert*<br/>
-Der Wertteil des Schlüssel-Wert-Paars. Der *Werttyp* ist Typname *V*.
+*value*<br/>
+Der Wertteil des Schlüssel-Wert-Paars. Der *Werttyp* ist typname *V*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Schlüssel eines vorhandenen Elements in der aktuellen Zuordnung mit *Key* übereinstimmt und der Wert Teil dieses Elements auf *value*festgelegt ist. **false** , wenn kein vorhandenes Element in der aktuellen Zuordnung mit *Key* übereinstimmt und die *Schlüssel* -und *Wert* Parameter in einem Schlüssel-Wert-Paar erstellt und dann der aktuellen Zuordnung hinzugefügt werden.
+**true,** wenn der Schlüssel eines vorhandenen Elements in der aktuellen Karte mit dem *Schlüssel* übereinstimmt und der Wertteil dieses Elements auf *Wert*festgelegt ist. **false,** wenn kein vorhandenes Element in der aktuellen Karte mit dem *Schlüssel* übereinstimmt und die *Schlüssel-* und *Wertparameter* zu einem Schlüssel-Wert-Paar gemacht und dann der aktuellen Karte hinzugefügt werden.
 
-## <a name="lookup"></a>Map:: Lookup-Methode
+## <a name="maplookup-method"></a><a name="lookup"></a>Karte::Lookup-Methode
 
 Ruft den Wert des Typs V ab, der mit dem angegebenen Schlüssel des Typs K verknüpft ist, sofern der Schlüssel vorhanden ist.
 
@@ -202,17 +202,17 @@ V Lookup(K key);
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der zum Suchen eines in der Zuordnung vorhandenen Elements verwendete Schlüssel. Der *Schlüsseltyp* lautet Typname *K*.
+Der zum Suchen eines in der Zuordnung vorhandenen Elements verwendete Schlüssel. Der *Schlüsseltyp* ist der TypName *K*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Wert, der mit dem *Schlüssel*gekoppelt ist. Der Typ des Rückgabewerts ist Typname *V*.
+Der Wert, der mit dem *Schlüssel*gekoppelt ist. Der Typ des Rückgabewerts ist der Typname *V*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Schlüssel nicht vorhanden ist, wird eine [Platform:: outoeboundsexception-Ausnahme](../cppcx/platform-outofboundsexception-class.md) ausgelöst.
+Wenn der Schlüssel nicht vorhanden ist, wird eine [Platform::OutOfBoundsException](../cppcx/platform-outofboundsexception-class.md) ausgelöst.
 
-## <a name="ctor"></a>Map:: Map-Konstruktor
+## <a name="mapmap-constructor"></a><a name="ctor"></a>Karte::Map-Konstruktor
 
 Initialisiert eine neue Instanz der Map-Klasse.
 
@@ -231,22 +231,22 @@ Map(
 
 ### <a name="parameters"></a>Parameter
 
-*InIt*<br/>
+*Init*<br/>
 Der Typname der aktuellen Map.
 
-*comp*<br/>
+*Comp*<br/>
 Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortierschlüssel vergleichen kann, um deren relative Reihenfolge in der Map zu bestimmen.
 
-*m*<br/>
-Ein Verweis oder ein [Rvalue-Wert](../cpp/lvalues-and-rvalues-visual-cpp.md) für einen `map Class`, der verwendet wird, um die aktuelle Zuordnung zu initialisieren.
+*M*<br/>
+Ein Verweis oder [rvalue](../cpp/lvalues-and-rvalues-visual-cpp.md) auf eine, `map Class` die zum Initialisieren der aktuellen Karte verwendet wird.
 
-*erstes*<br/>
+*first*<br/>
 Der Eingabeiterator des ersten Elements in einem Bereich von Elementen, die verwendet werden, um die aktuelle Map zu initialisieren.
 
 *last*<br/>
 Der Eingabeiterator des ersten Elements nach einem Bereich von Elementen, die verwendet werden, um die aktuelle Map zu initialisieren.
 
-## <a name="mapchanged"></a>Map:: mapchanged-Ereignis
+## <a name="mapmapchanged-event"></a><a name="mapchanged"></a>Karte::MapChanged-Ereignis
 
 Wird ausgelöst, wenn ein Element in eine Zuordnung eingefügt bzw. aus der Zuordnung entfernt wird.
 
@@ -258,15 +258,15 @@ event Windows::Foundation::Collections::MapChangedEventHandler<K,V>^ MapChanged;
 
 ### <a name="property-valuereturn-value"></a>Eigenschaftswert/Rückgabewert
 
-Ein [mapchangedeventhandler-\<K, V >](/uwp/api/windows.foundation.collections.mapchangedeventhandler) , der Informationen zum Objekt enthält, das das Ereignis ausgelöst hat, sowie die Art der Änderung, die aufgetreten ist. Siehe auch [imapchangedebug-args\<K >](/uwp/api/Windows.Foundation.Collections.IMapChangedEventArgs_K_) und [CollectionChange-Enumeration](/uwp/api/windows.foundation.collections.collectionchange).
+Ein [MapChangedEventHandler\<K,V>,](/uwp/api/windows.foundation.collections.mapchangedeventhandler-2) der Informationen über das Objekt enthält, das das Ereignis ausgelöst hat, und die Art der Änderungen, die aufgetreten sind. Siehe auch [IMapChangedEventArgs\<K>](/uwp/api/windows.foundation.collections.imapchangedeventargs-1) und [CollectionChange Enumeration](/uwp/api/windows.foundation.collections.collectionchange).
 
-## <a name="net-framework-equivalent"></a>.NET Framework-Entsprechung
+## <a name="net-framework-equivalent"></a>Entsprechung in .NET Framework
 
-Windows-Runtime-apps, C# die oder Visual Basic Project IMap\<k, v > als IDictionary\<k, v > verwenden.
+Windows-Runtime-Apps, die das IMap\<K,V-Projekt\<von C- oder Visual Basic-Projekt verwenden,> als IDictionary K,V>.
 
-## <a name="remove"></a>Map:: Remove-Methode
+## <a name="mapremove-method"></a><a name="remove"></a>Karte::Entfernungsmethode
 
-Löscht das angegebene Schlüssel-Wert-Paar aus dem aktuellen Map-Objekt.
+Löscht das angegebene Schlüssel-Wert-Paar vom aktuellen Map-Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -277,11 +277,11 @@ virtual void Remove(K key);
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* lautet Typname *K*.
+Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* ist der TypName *K*.
 
-## <a name="size"></a>Map:: size-Methode
+## <a name="mapsize-method"></a><a name="size"></a>Karte::Size-Methode
 
-Gibt die Anzahl der [Windows:: Foundation:: Collections:: ikeyvaluepair\<K, V >](/uwp/api/Windows.Foundation.Collections.IKeyValuePair_K_V_) Elemente in der Zuordnung zurück.
+Gibt die Anzahl von [Windows::Foundation::Collections::IKeyValuePair\<K,V>](/uwp/api/windows.foundation.collections.ikeyvaluepair-2) Elementen in der Karte zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -293,8 +293,8 @@ virtual property unsigned int Size;
 
 Die Anzahl von Elementen in der Zuordnung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Sammlungen (C++-CX)](collections-c-cx.md)<br/>
-[Platform-Namespace](platform-namespace-c-cx.md)<br/>
+[Sammlungen (C++/CX)](collections-c-cx.md)<br/>
+[Plattform-Namespace](platform-namespace-c-cx.md)<br/>
 [Erstellen von Windows-Runtime-Komponenten in C++](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)

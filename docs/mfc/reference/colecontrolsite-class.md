@@ -106,12 +106,12 @@ helpviewer_keywords:
 - COleControlSite [MFC], m_pWndCtrl
 - COleControlSite [MFC], m_rect
 ms.assetid: 43970644-5eab-434a-8ba6-56d144ff1e3f
-ms.openlocfilehash: 6cf12d017db1a1558b0dd915d9f3ba85894bee19
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 90c41a1be1a66cdceebb3f045a98167e56b7cf4c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366153"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753946"
 ---
 # <a name="colecontrolsite-class"></a>COleControlSite-Klasse
 
@@ -209,7 +209,7 @@ Um eine ActiveX-Steuerelementsite mit `COleControlSite`zu `COleControlSite`erste
 
 `COleControlSite`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxocc.h
 
@@ -454,7 +454,7 @@ Ein Wert ungleich Null, wenn das Fenster zuvor deaktiviert war, andernfalls 0.
 
 Gibt an, ob die Kontrollsite Ereignisse behandeln oder ignoriert, die von einem Steuerelement ausgelöst werden.
 
-```
+```cpp
 void FreezeEvents(BOOL bFreeze);
 ```
 
@@ -474,7 +474,7 @@ Wenn *bFreeze* TRUE ist, fordert die Kontrollsite das Steuerelement auf, fring-E
 
 Ruft Informationen über das Tastaturmnemonik- und Tastaturverhalten eines Steuerelements ab.
 
-```
+```cpp
 void GetControlInfo();
 ```
 
@@ -953,10 +953,10 @@ virtual void MoveWindow(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die neue Position der linken Seite des Fensters.
 
-*y*<br/>
+*Y*<br/>
 Die neue Position der Oberseite des Fensters.
 
 *nWidth*<br/>
@@ -1017,7 +1017,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Legt das Steuerelement als Standardschaltfläche fest.
 
-```
+```cpp
 void SetDefaultButton(BOOL bDefault);
 ```
 
@@ -1142,10 +1142,10 @@ virtual BOOL SetWindowPos(
 *pWndInsertAfter*<br/>
 Ein Zeiger auf das Fenster.
 
-*X*<br/>
+*x*<br/>
 Die neue Position der linken Seite des Fensters.
 
-*y*<br/>
+*Y*<br/>
 Die neue Position der Oberseite des Fensters.
 
 *Cx*<br/>
@@ -1215,7 +1215,7 @@ Gibt an, wie die Kontrollsite angezeigt werden soll. Es muss einer der folgenden
 
 Ein Wert ungleich Null, wenn das Fenster zuvor sichtbar war; 0, wenn das Fenster zuvor ausgeblendet war.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

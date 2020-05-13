@@ -1,6 +1,6 @@
 ---
 title: lrint, lrintf, lrintl, llrint, llrintf, llrintl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - lrint
 - lrintl
@@ -8,6 +8,12 @@ api_name:
 - llrint
 - llrintf
 - llrintl
+- _o_llrint
+- _o_llrintf
+- _o_llrintl
+- _o_lrint
+- _o_lrintf
+- _o_lrintl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -45,12 +52,12 @@ helpviewer_keywords:
 - llrintf function
 - llrintl function
 ms.assetid: 28ccd5b3-5e6f-434f-997d-a21d51b8ce7f
-ms.openlocfilehash: c7831842eb4d3c1eef9c4c9e83bbddb557cec0e3
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: effb146cac201a21651f21e3e5c040fbb68819a6
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857748"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911374"
 ---
 # <a name="lrint-lrintf-lrintl-llrint-llrintf-llrintl"></a>lrint, lrintf, lrintl, llrint, llrintf, llrintl
 
@@ -100,18 +107,18 @@ long long int llrintl(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu rundende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Wenn erfolgreich, wird der abgerundete ganzzahlige Wert von *x*zurückgegeben.
 
-|Problem:|Zurückgeben des|
+|Problem|Rückgabewert|
 |-----------|------------|
-|*x* liegt außerhalb des Bereichs des Rückgabe Typs.<br /><br /> *x* = ±<br /><br /> *x* = Nan|Löst **FE_INVALID** aus und gibt NULL (0) zurück.|
+|*x* liegt außerhalb des Bereichs des Rückgabe Typs.<br /><br /> *x* = ± \<br /><br /> *x* = Nan|Löst **FE_INVALID** aus und gibt NULL (0) zurück.|
 
 ## <a name="remarks"></a>Hinweise
 
@@ -121,7 +128,9 @@ Wenn *x* die Gleit Komma Entsprechung eines ganzzahligen Werts nicht darstellt, 
 
 **Microsoft-spezifisch**: Wenn das Ergebnis außerhalb des Bereichs des Rückgabe Typs liegt oder wenn der Parameter ein NaN oder unendlich ist, wird der Rückgabewert von der Implementierung definiert. Der Microsoft-Compiler gibt den Wert 0 (null) zurück.
 
-## <a name="requirements"></a>-Anforderungen
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
@@ -129,6 +138,6 @@ Wenn *x* die Gleit Komma Entsprechung eines ganzzahligen Werts nicht darstellt, 
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>

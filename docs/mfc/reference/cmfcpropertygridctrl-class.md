@@ -150,12 +150,12 @@ helpviewer_keywords:
 - CMFCPropertyGridCtrl [MFC], OnSelectCombo
 - CMFCPropertyGridCtrl [MFC], ValidateItemData
 ms.assetid: 95877cae-2311-4a2a-9031-0c8c3cf0a5f9
-ms.openlocfilehash: c52550c4b2ed09d97f44e7ed773f2568ec14893f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 844b206b2c34b82930116744bbbfd4d35ecacf15
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361925"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754139"
 ---
 # <a name="cmfcpropertygridctrl-class"></a>CMFCPropertyGridCtrl-Klasse
 
@@ -315,7 +315,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie ein Eigenschaftenraster-Steu
 
 [CMFCPropertyGridCtrl](../../mfc/reference/cmfcpropertygridctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxpropertygridctrl.h
 
@@ -380,7 +380,7 @@ Mit dieser Methode wird neu berechnet, wie das gesamte Eigenschaftenrastersteuer
 
 ## <a name="cmfcpropertygridctrlalwaysshowusertooltip"></a><a name="alwaysshowusertooltip"></a>CMFCPropertyGridCtrl::AlwaysShowUserToolTip
 
-```
+```cpp
 void AlwaysShowUserToolTip(BOOL bShow = TRUE);
 ```
 
@@ -552,7 +552,7 @@ TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
 Aktiviert oder deaktiviert den Beschreibungsbereich, der unter der Liste der Eigenschaften im Eigenschaftenrastersteuerelement angezeigt wird.
 
-```
+```cpp
 void EnableDescriptionArea(BOOL bEnable=TRUE);
 ```
 
@@ -569,7 +569,7 @@ Der Beschreibungsbereich wird am unteren Rand des Eigenschaftenrastersteuereleme
 
 Aktiviert oder deaktiviert das Headersteuerelement oben im Eigenschaftenrastersteuerelement.
 
-```
+```cpp
 void EnableHeaderCtrl(
     BOOL bEnable=TRUE,
     LPCTSTR lpszLeftColumn=_T("Property"),
@@ -610,7 +610,7 @@ TRUE, wenn der Bearbeitungsvorgang erfolgreich beendet wird; FALSE, wenn die ge�
 
 Führt ein Eigenschaftenrastersteuerelement durch und erweitert Eigenschaftselemente, bis die angegebene Eigenschaft sichtbar ist.
 
-```
+```cpp
 void EnsureVisible(
     CMFCPropertyGridProperty* pProp,
     BOOL bExpandParents=FALSE);
@@ -630,7 +630,7 @@ void EnsureVisible(
 
 Erweitert oder reduziert alle Eigenschaftenraster-Steuerelementknoten.
 
-```
+```cpp
 void ExpandAll(BOOL bExpand=TRUE);
 ```
 
@@ -808,7 +808,7 @@ Ein Zeiger auf das Eigenschaftsobjekt, das dem ausgewählten Element im Eigensch
 
 Ruft die benutzerdefinierten Farben ab, die derzeit für Eigenschaftenrastersteuerelementelemente definiert sind.
 
-```
+```cpp
 void GetCustomColors(
     COLORREF& clrBackground,
     COLORREF& clrText,
@@ -1225,7 +1225,7 @@ Verwenden Sie die [CMFCPropertyGridCtrl::SetVSDotNetLook-Methode,](#setvsdotnetl
 
 Gibt an, wie geänderte Eigenschaften angezeigt werden sollen.
 
-```
+```cpp
 void MarkModifiedProperties(
     BOOL bMark=TRUE,
     BOOL bRedraw=TRUE);
@@ -1376,7 +1376,7 @@ Standardmäßig sendet diese Methode die [AFX_WM_PROPERTY_CHANGED](../../mfc/ref
 
 Wird vom Framework aufgerufen, wenn eine Eigenschaft ausgewählt wird, die ein Kombinationsfeldsteuerelement enthält.
 
-```
+```cpp
 void OnSelectCombo();
 ```
 
@@ -1386,7 +1386,7 @@ void OnSelectCombo();
 
 Entfernt alle Eigenschaftsobjekte aus einem Eigenschaftenrastersteuerelement.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -1396,7 +1396,7 @@ void RemoveAll();
 
 Stellt die ursprünglichen Werte aller Eigenschaften wieder her.
 
-```
+```cpp
 void ResetOriginalValues(BOOL bRedraw=TRUE);
 ```
 
@@ -1411,7 +1411,7 @@ void ResetOriginalValues(BOOL bRedraw=TRUE);
 
 Legt den alphabetischen Modus fest oder setzt ihn zurück.
 
-```
+```cpp
 void SetAlphabeticMode(BOOL bSet=TRUE);
 ```
 
@@ -1428,7 +1428,7 @@ Wenn sich das Eigenschaftenrastersteuerelement im alphabetischen Modus befindet,
 
 Gibt den Text boolescher Beschriftungen an.
 
-```
+```cpp
 void SetBoolLabels(
     LPCTSTR lpszTrue,
     LPCTSTR lpszFalse);
@@ -1448,7 +1448,7 @@ void SetBoolLabels(
 
 Wählt eine Eigenschaft in einem Eigenschaftenrastersteuerelement aus.
 
-```
+```cpp
 void SetCurSel(
     CMFCPropertyGridProperty* pProp,
     BOOL bRedraw=TRUE);
@@ -1470,7 +1470,7 @@ Verwenden Sie diese Methode, um die Auswahl des aktuellen Elements im Eigenschaf
 
 Gibt benutzerdefinierte Farben für verschiedene Elemente des Eigenschaftenrastersteuerelements an.
 
-```
+```cpp
 void SetCustomColors(
     COLORREF clrBackground,
     COLORREF clrText,
@@ -1514,7 +1514,7 @@ Um die Darstellung einer bestimmten Eigenschaft anzupassen, leiten Sie eine Klas
 
 Gibt die Anzahl der Zeilen an, die im Beschreibungsabschnitt des aktuellen Eigenschaftenrastersteuerelements angezeigt werden sollen.
 
-```
+```cpp
 void SetDescriptionRows(int nDescRows);
 ```
 
@@ -1527,7 +1527,7 @@ void SetDescriptionRows(int nDescRows);
 
 Gibt an, ob die volle Breite des Kategorienamens für eine Gruppe von Eigenschaften im aktuellen Eigenschaftenrastersteuerelement angezeigt werden soll.
 
-```
+```cpp
 void SetGroupNameFullWidth(
     BOOL bGroupNameFullWidth = TRUE,
     BOOL bRedraw = TRUE);
@@ -1551,7 +1551,7 @@ Der *Gruppenname* und der *Kategoriename* der Begriffe werden in dieser Methode 
 
 Definiert ein Zeichen, das als Trennzeichen in einer Liste von Eigenschaftswerten verwendet wird.
 
-```
+```cpp
 void SetListDelimiter(TCHAR c);
 ```
 
@@ -1570,7 +1570,7 @@ Standardmäßig legt der Konstruktor [CMFCPropertyGridCtrl::CMFCPropertyGridCtrl
 
 Gibt an, ob das Framework die Namens- und Wertspalten des aktuellen Eigenschaftenrastersteuerelements neu zeichnet, wenn ein Benutzer die Größe der Spalten ändert.
 
-```
+```cpp
 void SetShowDragContext(BOOL bShowDragContext = TRUE);
 ```
 
@@ -1587,7 +1587,7 @@ Der Benutzer kann die Größe der Namens- und Wertspalten eines Eigenschaftenras
 
 Legt die Darstellung des Eigenschaftenrastersteuerelements auf den Stil fest, der in Visual Studio .NET verwendet wird.
 
-```
+```cpp
 void SetVSDotNetLook(BOOL bSet=TRUE);
 ```
 
@@ -1639,7 +1639,7 @@ Die [CMFCPropertyGridCtrl::EndEditItem-Methode](#endedititem) ruft diese Methode
 
 Wenn Sie diese Methode überschreiben, geben Sie TRUE zurück, wenn die angegebenen Eigenschaftendaten gültig sind. Andernfalls geben Sie FALSE zurück, in diesem Fall aktualisiert das Framework die Eigenschaft nicht.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

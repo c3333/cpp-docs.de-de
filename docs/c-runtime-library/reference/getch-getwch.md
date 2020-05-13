@@ -1,9 +1,11 @@
 ---
 title: _getch, _getwch
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _getch
 - _getwch
+- _o__getch
+- _o__getwch
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - _getch function
 - getwch function
 ms.assetid: cc116be7-cff2-4274-970f-5e7b18ccc05c
-ms.openlocfilehash: 122892945e8542afa7f9f944f984387db7c5ec8a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1c62bd0793fef0683007fe21df0fc0c2acdf1357
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955480"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919633"
 ---
 # <a name="_getch-_getwch"></a>_getch, _getwch
 
@@ -59,9 +62,11 @@ Gibt das gelesene Zeichen zurück. Es gibt keine Fehlerrückgabe.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_getch** -Funktion und die **_getwch** -Funktion lesen ein einzelnes Zeichen aus der Konsole, ohne das Zeichen zu wiederholen. Mit keiner dieser Funktionen kann STRG+C gelesen werden. Beim Lesen einer Steuertaste oder einer Pfeiltaste muss jede Funktion zweimal aufgerufen werden. Der erste Aufruf gibt 0 oder 0xE0 und der zweite Aufruf den tatsächlichen Tastencode zurück.
+Die Funktionen **_getch** und **_getwch** lesen ein einzelnes Zeichen aus der Konsole, ohne das Zeichen zu wiederholen. Mit keiner dieser Funktionen kann STRG+C gelesen werden. Beim Lesen einer Steuertaste oder einer Pfeiltaste muss jede Funktion zweimal aufgerufen werden. Der erste Aufruf gibt 0 oder 0xE0 und der zweite Aufruf den tatsächlichen Tastencode zurück.
 
 Diese Funktionen sperren den aufrufenden Thread und sind daher threadsicher. Nicht sperrende Versionen finden Sie unter [_getch_nolock _getwch_nolock](getch-nolock-getwch-nolock.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -71,12 +76,12 @@ Diese Funktionen sperren den aufrufenden Thread und sind daher threadsicher. Nic
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_getch**|\<conio.h>|
 |**_getwch**|\<conio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -114,9 +119,9 @@ abcdefy
 Type 'Y' when finished typing keys: Y
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_getche, _getwche](getche-getwche.md)<br/>
 [_cgets, _cgetws](../../c-runtime-library/cgets-cgetws.md)<br/>
 [getc, getwc](getc-getwc.md)<br/>

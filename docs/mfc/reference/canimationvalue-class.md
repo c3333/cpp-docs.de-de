@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CAnimationValue [MFC], GetAnimationVariableList
 - CAnimationValue [MFC], m_value
 ms.assetid: 78c5ae19-ede5-4f20-bfbe-68b467b603c2
-ms.openlocfilehash: 0437f0fc66f64ccb99157330154bf5aa4b5666b3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e020e3e123bb5dc96a623e7a41896d75c611b81e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321976"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755087"
 ---
 # <a name="canimationvalue-class"></a>CAnimationValue-Klasse
 
@@ -86,7 +86,7 @@ Die CAnimationValue-Klasse kapselt ein einzelnes CAnimationVariable-Objekt und k
 
 `CAnimationValue`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -94,7 +94,7 @@ Die CAnimationValue-Klasse kapselt ein einzelnes CAnimationVariable-Objekt und k
 
 Fügt einen Übergang hinzu, der auf einen Wert angewendet werden soll.
 
-```
+```cpp
 void AddTransition(CBaseTransition* pTransition);
 ```
 
@@ -239,7 +239,7 @@ Stellt die Konvertierung zwischen CAnimationValue und INT32 bereit. Diese Method
 
 Weist CAnimationValue einen DOUBLE-Wert zu.
 
-```
+```cpp
 void operator=(DOUBLE dblVal);
 void operator=(INT32 nVal);
 ```
@@ -260,7 +260,7 @@ Weist CAnimationValue einen DOUBLE-Wert zu. Dieser Wert wird als Standardwert f�
 
 Legt den Standardwert fest.
 
-```
+```cpp
 void SetDefaultValue(DOUBLE dblDefaultValue);
 ```
 
@@ -273,6 +273,6 @@ Gibt den Standardwert an.
 
 Verwenden Sie diese Methode, um einen Standardwert festzulegen. Ein Standardwert wird an die Anwendung zurückgegeben, wenn die Animation nicht gestartet wurde und/oder das zugrunde liegende COM-Objekt nicht erstellt wurde. Wenn das zugrunde liegende COM-Objekt, das in CAnimationVarible gekapselt wurde, bereits erstellt wurde, erstellt diese Methode es neu, daher müssen Sie möglicherweise enableValueChanged/EnableIntegerValueChanged-Methoden erneut aufrufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

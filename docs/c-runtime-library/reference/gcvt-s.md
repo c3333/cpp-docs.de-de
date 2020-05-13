@@ -1,8 +1,9 @@
 ---
 title: _gcvt_s
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _gcvt_s
+- _o__gcvt_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +34,12 @@ helpviewer_keywords:
 - strings [C++], converting from floating point
 - CVTBUFSIZE
 ms.assetid: 0a8d8a26-5940-4ae3-835e-0aa6ec1b0744
-ms.openlocfilehash: da36641f6a3ba8dc1da0894aedbfa390d2e796ae
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 83e34bffbe62bf07d2d3f9f649d12607b0e08be7
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73625049"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919425"
 ---
 # <a name="_gcvt_s"></a>_gcvt_s
 
@@ -62,16 +64,16 @@ errno_t _gcvt_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Puffer, um das Ergebnis der Konvertierung zu speichern
 
 *sizeInBytes*<br/>
 Größe des Puffers.
 
-*Wert*<br/>
+*value*<br/>
 Zu konvertierender Wert.
 
-*Ziffern*<br/>
+*Zahlen*<br/>
 Anzahl der gespeicherten signifikanten Ziffern.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -80,11 +82,11 @@ Null, wenn erfolgreich. Tritt ein Fehler aufgrund eines ungültigen Parameters a
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*buffer*|*sizeInBytes*|*Wert*|*Ziffern*|Return|Wert im *Puffer*|
+|*ert*|*sizeInBytes*|*value*|*Zahlen*|Rückgabewert|Wert im *Puffer*|
 |--------------|-------------------|-------------|--------------|------------|-----------------------|
-|**NULL**|any|any|any|**EINVAL**|Nicht geändert.|
-|Not **null** (zeigt auf gültigen Speicher)|Null|any|any|**EINVAL**|Nicht geändert.|
-|Not **null** (zeigt auf gültigen Speicher)|any|any|>= *sizin Bytes*|**EINVAL**|Nicht geändert.|
+|**Normal**|any|any|any|**Eingabe**|Nicht geändert.|
+|Not **null** (zeigt auf gültigen Speicher)|Null|any|any|**Eingabe**|Nicht geändert.|
+|Not **null** (zeigt auf gültigen Speicher)|any|any|>= *sizeInBytes*|**Eingabe**|Nicht geändert.|
 
 **Sicherheitsprobleme**
 
@@ -94,13 +96,15 @@ Null, wenn erfolgreich. Tritt ein Fehler aufgrund eines ungültigen Parameters a
 
 Die **_gcvt_s** -Funktion konvertiert einen Gleit Komma *Wert* in eine Zeichenfolge (mit einem Dezimaltrennzeichen und einem möglichen Byte) und speichert die Zeichenfolge im *Puffer*. der *Puffer* sollte groß genug sein, um den konvertierten Wert und ein abschließendes NULL-Zeichen zu berücksichtigen, das automatisch angefügt wird. Ein Puffer der Länge **_CVTBUFSIZE** ist für alle Gleit Komma Werte ausreichend. Wenn eine Puffergröße von *Ziffern* + 1 verwendet wird, überschreibt die Funktion das Ende des Puffers nicht. Stellen Sie daher sicher, dass Sie für diesen Vorgang einen ausreichenden Puffer angeben. **_gcvt_s** versucht, *Ziffern* Ziffern im Dezimal Format zu liefern. Wenn dies nicht möglich ist, werden *Ziffern* Ziffern im exponentiellen Format erzeugt. Bei der Konvertierung können Nachstellen von Nullen unterdrückt werden.
 
-Die Verwendung dieser Funktion in C++ wird durch eine Vorlagenüberladung vereinfacht. Eine Überladung kann automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+Die Verwendung dieser Funktion in C++ wird durch eine Überladung (als Vorlagen vorhanden) vereinfacht. Eine Überladung kann automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 Die Debugversion dieser Funktion füllt den Puffer zuerst mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_gcvt_s**|\<stdlib.h>|\<error.h>|
 
@@ -137,7 +141,7 @@ int main()
 Converted value: 1.2
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

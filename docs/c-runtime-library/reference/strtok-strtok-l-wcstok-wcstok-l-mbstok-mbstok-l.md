@@ -25,7 +25,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -53,12 +53,12 @@ helpviewer_keywords:
 - _tcstok_l function
 - strtok_l function
 ms.assetid: 904cb734-f0d7-4d77-ba81-4791ddf461ae
-ms.openlocfilehash: d228d9824c534a21e4a22797e4b070e6d8d0b179
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7d8f0d889d58fe776e53f78955fff7fd1cdfa40f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365195"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912635"
 ---
 # <a name="strtok-_strtok_l-wcstok-_wcstok_l-_mbstok-_mbstok_l"></a>strtok, _strtok_l, wcstok, _wcstok_l, _mbstok, _mbstok_l
 
@@ -101,10 +101,10 @@ unsigned char *_mbstok_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Strtoken*<br/>
+*strToken*<br/>
 Zeichenfolge, die mindestens ein Token enthält.
 
-*strDelimit*<br/>
+*"Straume"*<br/>
 Gruppe von Trennzeichen.
 
 *locale*<br/>
@@ -112,25 +112,25 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf das nächste Token zurück, das in *strToken*gefunden wurde. Die Funktionen geben **NULL** zurück, wenn keine weiteren Token gefunden werden. Jeder Aufruf ändert *strToken,* indem ein Nullzeichen durch das erste Trennzeichen ersetzt wird, das nach dem zurückgegebenen Token auftritt.
+Gibt einen Zeiger auf das nächste Token zurück, das in " *strautoken*" gefunden wurde. Die-Funktionen geben **null** zurück, wenn keine weiteren Token gefunden werden. Jeder-Befehl ändert " *ertotoken* ", indem er das erste Trennzeichen, das nach dem zurückgegebenen Token auftritt, durch ein NULL-Zeichen ersetzt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **strtok-Funktion** findet das nächste Token in *strToken*. Der Satz von Zeichen in *strDelimit* gibt mögliche Trennzeichen des Tokens an, die beim aktuellen Aufruf in *strToken* zu finden sind. **wcstok** und **_mbstok** sind breit-zeichen- und multibyte-Zeichen-Versionen von **strtok**. Die Argumente und der Rückgabewert von **wcstok** sind Zeichenfolgen mit großen Zeichen. bei **_mbstok** sind Zeichenfolgen mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
+Die " **strautok** "-Funktion findet das nächste Token in " *strautoken*". Der Zeichensatz in " *Strauch* " gibt mögliche Trennzeichen für das Token an, das in " *strautoken* " für den aktuellen-Befehl zu finden ist. **wcstok** und **_mbstok** sind breit Zeichen-und multibytezeichenversionen von " **Strauch**". Die Argumente und der Rückgabewert von **wcstok** sind Zeichen folgen mit breit Zeichen. bei den **_mbstok** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 > [!IMPORTANT]
 > Diese Funktionen stellen eine mögliche Bedrohung aufgrund eines Pufferüberlaufproblems dar. Pufferüberlaufprobleme werden häufig bei Systemangriffen eingesetzt, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-Beim ersten Aufruf von **strtok**überspringt die Funktion führende Trennzeichen und gibt einen Zeiger auf das erste Token in *strToken*zurück, wodurch das Token mit einem Nullzeichen beendet wird. Weitere Token können aus dem Rest von *strToken* durch eine Reihe von Aufrufen von **strtok**ausbrochen werden. Jeder Aufruf von **strtok** ändert *strToken,* indem ein Nullzeichen nach dem von diesem Aufruf zurückgegebenen **Token** eingefügt wird. Um das nächste Token aus *strToken*zu lesen, rufen Sie **strtok** mit einem **NULL-Wert** für das *argument strToken* auf. Das Argument **NULL** *strToken* bewirkt, dass **strtok** nach dem nächsten Token im geänderten *strToken*sucht. Das *argument strDelimit* kann einen beliebigen Wert von einem Aufruf zum nächsten annehmen, sodass der Satz von Trennzeichen variieren kann.
+Beim ersten **aufrutok**-Aufrufvorgang überspringt die Funktion führende Trennzeichen und gibt einen Zeiger auf das erste Token in " *strautoken*" zurück, wobei das Token mit einem NULL-Zeichen beendet wird. Weitere Token können aus dem Rest von " *strautoken* " durch eine Reihe von Aufrufen von " **strintok**" aufgeteilt werden. Jeder aufzurufende Befehl von " **Strauch** " ändert " *ertotoken* ", indem er ein NULL-Zeichen nach dem **Token** einfügt Um das nächste Token aus " *strautoken*" zu lesen, nennen Sie " **Strauch** " mit einem **null** -Wert *für das "* "-Argument "" Das **null** -" *strautoken* "-Argument bewirkt, dass " **strautok** " im geänderten " *strautoken*" nach dem nächsten Token sucht. Das " *chandelimit* "-Argument kann einen beliebigen Wert von einem Befehl zum nächsten annehmen, sodass der Satz von Trennzeichen variieren kann.
 
-Der Ausgabewert wird durch die Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md).
+Der Ausgabewert wird von der Einstellung der Einstellung der **LC_CTYPE** -Kategorie des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md).
 
-Die Versionen dieser Funktionen ohne das **_l** Suffix verwenden das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten. Die Versionen mit dem **Suffix _l** sind identisch, außer dass sie stattdessen den übergebenen Gebietsschemaparameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. Die Versionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 > [!NOTE]
 > Jede Funktion verwendet eine statische Variable eines lokalen Threads, um die Zeichenfolge in Token zu analysieren. Daher können mehrere Threads diese Funktionen gleichzeitig aufrufen, ohne dass unerwünschte Auswirkungen auftreten. Innerhalb eines einzelnen Threads ist es jedoch wahrscheinlich, dass ein überlappendes Aufrufen von einer dieser Funktionen zu Datenbeschädigung und ungenauen Ergebnissen führt. Beim Analysieren verschiedener Zeichenfolgen sollte zuerst eine Zeichenfolge zu Ende analysiert werden, bevor mit dem Analysieren der nächsten Zeichenfolge begonnen wird. Berücksichtigen Sie auch das mögliche Risiko, wenn Sie eine dieser Funktionen aus einer Schleife heraus aufrufen, in der eine andere Funktion aufgerufen wird. Wenn die andere Funktion eine dieser Funktionen verwendet, kommt es zu einer überlappenden Sequenz von Aufrufen und Datenbeschädigung ist die Folge.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -145,7 +145,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-------------|---------------------|
 |**strtok**|\<string.h>|
 |**wcstok**|\<string.h> oder \<wchar.h>|
-|**_mbstok**, **_mbstok_l**|\<mbstring.h>|
+|**_mbstok** **_mbstok_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -195,9 +195,9 @@ more
 tokens
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcspn, wcscspn, _mbscspn, _mbscspn_l](strcspn-wcscspn-mbscspn-mbscspn-l.md)<br/>

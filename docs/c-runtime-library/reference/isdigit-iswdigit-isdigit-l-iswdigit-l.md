@@ -1,11 +1,13 @@
 ---
 title: isdigit, iswdigit, _isdigit_l, _iswdigit_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _isdigit_l
 - iswdigit
 - _iswdigit_l
 - isdigit
+- _o_isdigit
+- _o_iswdigit
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +21,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -42,12 +45,12 @@ helpviewer_keywords:
 - _ismbcdigit_l function
 - _isdigit_l function
 ms.assetid: 350b0093-843a-47b0-954e-c1776e8a3853
-ms.openlocfilehash: 30944db0653e26b6130fb7a37ad87e8e81a343f5
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 70a370068ca05c430845a8eba83a73498384b067
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954389"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917589"
 ---
 # <a name="isdigit-iswdigit-_isdigit_l-_iswdigit_l"></a>isdigit, iswdigit, _isdigit_l, _iswdigit_l
 
@@ -74,7 +77,7 @@ int _iswdigit_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
 *locale*<br/>
@@ -95,19 +98,23 @@ Das Verhalten von **IsDigit** und **_isdigit_l** ist nicht definiert, wenn *c* n
 |**_istdigit**|**isdigit**|[_ismbcdigit](ismbcalnum-functions.md)|**iswdigit**|
 |**_istdigit_l**|**_isdigit_l**|[_ismbcdigit_l](ismbcalnum-functions.md)|**_iswdigit_l**|
 
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**isdigit**|\<ctype.h>|
 |**iswdigit**|\<ctype.h> oder \<wchar.h>|
 |**_isdigit_l**|\<ctype.h>|
 |**_iswdigit_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

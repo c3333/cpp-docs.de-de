@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - files [C++], changing permissions
 - _wchmod function
 ms.assetid: 92f7cb86-b3b0-4232-a599-b8c04a2f2c19
-ms.openlocfilehash: faceb49c921162da042f863abbebbe2ef0a52153
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b1bc89ce51fff44a847111d68cac8e8b3f58a635
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350089"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917005"
 ---
 # <a name="_chmod-_wchmod"></a>_chmod, _wchmod
 
@@ -55,33 +55,33 @@ int _wchmod( const wchar_t *filename, int pmode );
 
 ### <a name="parameters"></a>Parameter
 
-*Dateiname*<br/>
+*Einfügen*<br/>
 Name der vorhandenen Datei.
 
-*Pmode*<br/>
+*pmode*<br/>
 Berechtigungseinstellung für die Datei.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Diese Funktionen geben 0 zurück, wenn die Berechtigungseinstellung erfolgreich geändert wurde. Ein Rückgabewert von -1 gibt einen Fehler an. Wenn die angegebene Datei nicht gefunden werden konnte, wird **errno** auf **ENOENT**festgelegt. Wenn ein Parameter ungültig ist, wird **errno** auf **EINVAL**gesetzt.
+Diese Funktionen geben 0 zurück, wenn die Berechtigungseinstellung erfolgreich geändert wurde. Der Rückgabewert-1 gibt einen Fehler an. Wenn die angegebene Datei nicht gefunden werden konnte, wird **errno** auf **ENOENT**festgelegt. Wenn ein Parameter ungültig ist, wird **errno** auf **EINVAL**festgelegt.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_chmod-Funktion** ändert die Berechtigungseinstellung der Datei, die durch *filename*angegeben wird. Die Berechtigungseinstellung steuert den Lese- und Schreibzugriff auf die Datei. Der ganzzahlige Ausdruck *pmode* enthält eine oder beide der folgenden Manifestkonstanten, die in SYS-Stat.h definiert sind.
+Die **_chmod** -Funktion ändert die Berechtigungseinstellung der durch *filename*angegebenen Datei. Die Berechtigungseinstellung steuert den Lese- und Schreibzugriff auf die Datei. Der ganzzahlige Ausdruck " *pmode* " enthält eine oder beide der folgenden Manifest-Konstanten, die in "sys\status" definiert sind.
 
-| *Pmode* | Bedeutung |
+| *pmode* | Bedeutung |
 |-|-|
-| **\_S\_IREAD** | Nur Lesen zugelassen. |
-| **\_S\_IWRITE** | Schreiben erlaubt. (Lässt tatsächlich Lesen und Schreiben zu.) |
-| **\_S\_IREAD** &#124; ** \_\_S IWRITE** | Lesen und Schreiben erlaubt. |
+| **\_S\_Iread** | Nur Lesen zugelassen. |
+| **\_S\_iwrite** | Schreiben erlaubt. (Lässt tatsächlich Lesen und Schreiben zu.) |
+| **\_\_Iread** &#124; ** \_s\_iwrite** | Lesen und Schreiben erlaubt. |
 
-Wenn beide Konstanten angegeben werden, werden sie mit**\|** dem bitweisen oder Operator ( ) verbunden. Wenn keine Schreibberechtigung gewährt wird, kann die Datei nur gelesen werden. Hinweis: Alle Dateien sind stets lesbar; es ist nicht möglich, nur Schreibberechtigungen zu vergeben. Somit sind die Modi **_S_IWRITE** und **_S_IREAD** \| **_S_IWRITE** gleichwertig.
+Wenn beide Konstanten angegeben werden, werden Sie mit dem bitweisen OR-Operator (**\|**) verknüpft. Wenn keine Schreibberechtigung gewährt wird, kann die Datei nur gelesen werden. Hinweis: Alle Dateien sind stets lesbar; es ist nicht möglich, nur Schreibberechtigungen zu vergeben. Daher sind die Modi **_S_IWRITE** und **_S_IREAD** \| **_S_IWRITE** Äquivalent.
 
-**_wchmod** ist eine breit **gefächerte**Version von _chmod ; Das *Filename-Argument* für **_wchmod** ist eine Zeichenfolge mit großen Zeichen. **_wchmod** und **_chmod** verhalten sich ansonsten gleich.
+**_wchmod** ist eine breit Zeichen Version von **_chmod**. Das *filename* -Argument für **_wchmod** ist eine Zeichenfolge mit breit Zeichen. **_wchmod** und **_chmod** Verhalten sich andernfalls identisch.
 
-Diese Funktion überprüft ihre Parameter. Wenn *pmode* keine Kombination aus einer der Manifestkonstanten ist oder einen alternativen Satz von Konstanten enthält, ignoriert die Funktion diese einfach. Wenn *filename* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und die Funktion gibt -1 zurück.
+Diese Funktion überprüft ihre Parameter. Wenn *pmode* keine Kombination aus einer der Manifest-Konstanten ist oder einen alternativen Satz von Konstanten enthält, ignoriert die Funktion diese einfach. Wenn *filename* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt-1 zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -174,7 +174,7 @@ Access is denied.
 Mode set to read/write
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_access, _waccess](access-waccess.md)<br/>

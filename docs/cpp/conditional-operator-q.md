@@ -1,5 +1,5 @@
 ---
-title: 'Bedingter Operator: &quest;:'
+title: 'Bedingter &quest; Operator: :'
 ms.date: 11/04/2016
 f1_keywords:
 - '?:'
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - conditional operators [C++]
 - '? : operator'
 ms.assetid: 88643ee8-7100-4f86-880a-705ec22b6271
-ms.openlocfilehash: 8c00db06ed5c0347cb9c720e35bd3e517df2a13c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 4ba4c80d40450fd5975b047a1a4fca63146c5773
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80189577"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81337265"
 ---
-# <a name="conditional-operator-quest-"></a>Bedingter Operator: &quest;:
+# <a name="conditional-operator-quest-"></a>Bedingter &quest; Operator: :
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,9 +25,9 @@ expression ? expression : expression
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der bedingte Operator ( **?:** ) ist ein ternärer Operator (er benötigt drei Operanden). Der bedingte Operator funktioniert wie folgt:
+Der bedingte Operator (**? :**) ist ein ternärer Operator (es dauert drei Operanden). Der bedingte Operator funktioniert wie folgt:
 
-- Der erste Operand wird implizit in einen **booleschen**Wert konvertiert. Er wird ausgewertet, und alle Nebeneffekte werden vor dem nächsten Schritt abgeschlossen.
+- Der erste Operand wird implizit in **bool**konvertiert. Er wird ausgewertet, und alle Nebeneffekte werden vor dem nächsten Schritt abgeschlossen.
 
 - Wenn der erste Operand als **true** (1) ausgewertet wird, wird der zweite Operand ausgewertet.
 
@@ -39,7 +39,7 @@ Bedingte Ausdrücke besitzen Assoziativität von rechts nach links. Der erste Op
 
 - Wenn beide Operanden vom selben Typ sind, ist das Ergebnis von diesem Typ.
 
-- Wenn beide Operanden arithmetische oder Enumerationstypen sind, werden die üblichen arithmetischen Konvertierungen (in [Standard Konvertierungen](standard-conversions.md)abgedeckt) ausgeführt, um Sie in einen gemeinsamen Typ zu konvertieren.
+- Wenn beide Operanden arithmetische oder Enumerationstypen sind, werden die üblichen arithmetischen Konvertierungen (in [Standardkonvertierungen](standard-conversions.md)abgedeckt) durchgeführt, um sie in einen gemeinsamen Typ zu konvertieren.
 
 - Wenn beide Operanden Zeigertypen sind, oder wenn einer ein Zeigertyp und der andere ein konstanter Ausdruck ist, der 0 ergibt, werden Zeigerkonvertierungen ausgeführt, um sie in einen gemeinsamen Typ zu konvertieren.
 
@@ -54,7 +54,7 @@ Bedingte Ausdrücke besitzen Assoziativität von rechts nach links. Der erste Op
 Alle Kombinationen von zweiten und dritten Operanden, die nicht in der vorangehenden Liste enthalten sind, sind ungültig. Der Ergebnistyp ist der gemeinsame Typ, und es ist ein L-Wert, wenn die zweiten und dritten Operanden vom selben Typ und beide L-Werte sind.
 
 > [!WARNING]
->  Wenn die Typen der zweiten und dritten Operanden nicht identisch sind, werden komplexe Typkonvertierungsregeln gemäß C++-Standard aufgerufen. Diese Konvertierungen können zu unerwartetem Verhalten führen, einschließlich der Erstellung und Zerstörung von temporären Objekten. Aus diesem Grund empfehlen wir dringend, dass Sie entweder (1) keine benutzerdefinierten Typen als Operanden mit dem bedingten Operator verwenden oder (2) explizit jeden Operanden in einen gemeinsamen Typ umwandeln, wenn Sie benutzerdefinierte Typen verwenden.
+> Wenn die Typen der zweiten und dritten Operanden nicht identisch sind, werden komplexe Typkonvertierungsregeln gemäß C++-Standard aufgerufen. Diese Konvertierungen können zu unerwartetem Verhalten führen, einschließlich der Erstellung und Zerstörung von temporären Objekten. Aus diesem Grund empfehlen wir dringend, dass Sie entweder (1) keine benutzerdefinierten Typen als Operanden mit dem bedingten Operator verwenden oder (2) explizit jeden Operanden in einen gemeinsamen Typ umwandeln, wenn Sie benutzerdefinierte Typen verwenden.
 
 ## <a name="example"></a>Beispiel
 
@@ -70,7 +70,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
-[Bedingter Ausdrucksoperator](../c-language/conditional-expression-operator.md)
+[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[Conditional-Expression-Operator](../c-language/conditional-expression-operator.md)

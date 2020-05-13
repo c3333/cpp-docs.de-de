@@ -4,10 +4,10 @@ description: In diesem Artikel sind die Linux-Projekteigenschaften beschrieben, 
 ms.date: 01/14/2020
 ms.assetid: 56c800a9-3df9-4196-87b2-81adb00e4767
 ms.openlocfilehash: 832f10ca2c95e40ff7ece23462105fa49014aa5d
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "79446166"
 ---
 # <a name="general-properties-linux-c"></a>Allgemeine Eigenschaften (Linux C++)

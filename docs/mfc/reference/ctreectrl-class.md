@@ -162,12 +162,12 @@ helpviewer_keywords:
 - CTreeCtrl [MFC], SortChildren
 - CTreeCtrl [MFC], SortChildrenCB
 ms.assetid: 96e20031-6161-4143-8c12-8d1816c66d90
-ms.openlocfilehash: 6fe7b133fa01285f85dc28dc8d8ca01e027f4a5c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2b6c11600010bc9f97ab8c3a531d33c92c94e442
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373308"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752112"
 ---
 # <a name="ctreectrl-class"></a>CTreeCtrl Class
 
@@ -293,7 +293,7 @@ Weitere Informationen zur `CTreeCtrl`Verwendung finden Sie unter:
 
 `CTreeCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -315,7 +315,7 @@ virtual BOOL Create(
 Gibt den Stil des Strukturansichtssteuerelements an. Wenden Sie Fensterstile an, die unter [CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww)beschrieben werden, sowie eine beliebige Kombination von [Strukturansichtssteuerelementstilen,](/windows/win32/Controls/tree-view-control-window-styles) wie im Windows SDK beschrieben.
 
 *Rect*<br/>
-Gibt die Größe und Position des Strukturansichtssteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Gibt die Größe und Position des Strukturansichtssteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Strukturansichtssteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -361,7 +361,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Strukturansichtssteuerelements an. Wenden Sie Fensterstile an, die unter [CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww)beschrieben werden, sowie eine beliebige Kombination von [Strukturansichtssteuerelementstilen,](/windows/win32/Controls/tree-view-control-window-styles) wie im Windows SDK beschrieben.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -887,7 +887,7 @@ BOOL GetItemPartRect(
 |---------------|-----------------|
 |*hItem*|[in] Behandeln Sie ein Strukturansichtssteuerelement.|
 |*nTeil*|[in] Identifier für das Teil. Muss auf TVGIPR_BUTTON eingestellt werden.|
-|*lpRect*|[out] Zeiger auf eine [RECT-Struktur.](/previous-versions/dd162897\(v=vs.85\)) Wenn diese Methode erfolgreich ist, erhält die Struktur die Rechteckkoordinaten des von *hItem* und *nPart*angegebenen Teils.|
+|*lpRect*|[out] Zeiger auf eine [RECT-Struktur.](/windows/win32/api/windef/ns-windef-rect) Wenn diese Methode erfolgreich ist, erhält die Struktur die Rechteckkoordinaten des von *hItem* und *nPart*angegebenen Teils.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -928,7 +928,7 @@ BOOL GetItemRect(
 Das Handle eines Strukturansichtssteuerelements.
 
 *lpRect*<br/>
-Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das umgrenzende Rechteck empfängt. Die Koordinaten sind relativ zur oberen linken Ecke des Baumansichtssteuerelements.
+Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das umgrenzende Rechteck empfängt. Die Koordinaten sind relativ zur oberen linken Ecke des Baumansichtssteuerelements.
 
 *bTextOnly*<br/>
 Wenn dieser Parameter ungleich Null ist, enthält das umgrenzte Rechteck nur den Text des Elements. Andernfalls enthält sie die gesamte Zeile, die das Element im Strukturansichtssteuerelement einnimmt.
@@ -1833,7 +1833,7 @@ Zeiger auf die vorherige Bildliste, falls vorhanden; andernfalls NULL.
 
 Rufen Sie diese Funktion auf, um die Einzugsbreite für ein Strukturansichtssteuerelement festzulegen, und zeichnen Sie das Steuerelement neu, um die neue Breite widerzuspiegeln.
 
-```
+```cpp
 void SetIndent(UINT nIndent);
 ```
 
@@ -2269,7 +2269,7 @@ Um QuickInfos zu verwenden, geben `CTreeCtrl` Sie beim Erstellen des Objekts den
 
 Zeigt den Infotip für das angegebene Element im aktuellen Strukturansichtssteuerelement an.
 
-```
+```cpp
 void ShowInfoTip(HTREEITEM hItem);
 ```
 
@@ -2339,7 +2339,7 @@ Die Parameter *lParam1* und *lParam2* entsprechen dem `lParam` Element der [TVIT
 
 [!code-cpp[NVC_MFC_CTreeCtrl#39](../../mfc/reference/codesnippet/cpp/ctreectrl-class_47.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

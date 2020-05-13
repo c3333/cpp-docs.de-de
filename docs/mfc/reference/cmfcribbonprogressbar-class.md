@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CMFCRibbonProgressBar [MFC], SetPos
 - CMFCRibbonProgressBar [MFC], SetRange
 ms.assetid: de3d9f2e-ed59-480e-aa7d-08a33ab36c67
-ms.openlocfilehash: 063f8ce560af84d350abc0114644f6a63f969f95
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b7cbddbd4fca8379562b762fadbb3d2bda44f166
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368866"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753529"
 ---
 # <a name="cmfcribbonprogressbar-class"></a>CMFCRibbonProgressBar-Klasse
 
@@ -83,7 +83,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCRibbonProgressBar](../../mfc/reference/cmfcribbonprogressbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxRibbonProgressBar.h
 
@@ -203,7 +203,7 @@ virtual void OnDraw(CDC* pDC);
 
 Legt fest, dass die Fortschrittsleiste im unendlichen Modus funktioniert.
 
-```
+```cpp
 void SetInfiniteMode(BOOL bSet = TRUE);
 ```
 
@@ -220,7 +220,7 @@ Wenn sich der Fortschrittsbalken im unendlichen Modus befindet, wird dem Benutze
 
 Legt die aktuelle Position des Fortschrittsbalkens fest.
 
-```
+```cpp
 void SetPos(
     int nPos,
     BOOL bRedraw = TRUE);
@@ -242,7 +242,7 @@ Der festgelegte Bereich muss innerhalb des von der [CMFCRibbonProgressBar::SetRa
 
 Legt die minimalen und maximalen Werte für den Fortschrittsbalken fest.
 
-```
+```cpp
 void SetRange(
     int nMin,
     int nMax);
@@ -260,7 +260,7 @@ void SetRange(
 
 Verwenden Sie diese Methode, um den Bereich der Fortschrittsleiste zu definieren, indem Sie minimale und maximale Werte festlegen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

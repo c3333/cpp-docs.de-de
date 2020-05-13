@@ -4,12 +4,12 @@ description: vcpkg ist ein Befehlszeilen-Paket-Manager, der den Erwerb und die I
 ms.date: 01/10/2020
 ms.technology: cpp-ide
 ms.assetid: f50d459a-e18f-4b4e-814b-913e444cedd6
-ms.openlocfilehash: 7c3dddd62a66c746d92d2f931b97e354ee27d75f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 9dbeba1f55164ace01fb8bb26155dd9319ba62db
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422757"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81335405"
 ---
 # <a name="vcpkg-a-c-package-manager-for-windows-linux-and-macos"></a>vcpkg: ein C++-Paket-Manager für Windows, Linux und macOS
 
@@ -128,7 +128,7 @@ Führen Sie **vcpkg integrate install** aus, um Visual Studio Code unter Linux/M
 
 Mithilfe des Windows-Subsystems für Linux (WSL) können Sie Linux-Binärdateien auf einem Windows-Computer erstellen. Folgen Sie einfach der Anleitung zum [Einrichten von WSL unter Windows 10](/windows/wsl/install-win10), und konfigurieren Sie es mit der [Visual Studio-Erweiterung für Linux](https://blogs.msdn.microsoft.com/vcblog/2017/02/08/targeting-windows-subsystem-for-linux-from-visual-studio/). Es ist in Ordnung, wenn Sie alle erstellten Bibliotheken für Windows und Linux in demselben Ordner platzieren. Sie sind sowohl über Windows als auch über WSL zugänglich.
 
-## <a name="export_binaries_per_project"></a> Exportieren von kompilierten Binärdateien und Headern
+## <a name="export-compiled-binaries-and-headers"></a><a name="export_binaries_per_project"></a> Exportieren von kompilierten Binärdateien und Headern
 
 Es ist ineffizient, wenn alle Benutzer in einem Team gemeinsame Bibliotheken herunterladen und erstellen können. Ein einzelnes Teammitglied kann den Befehl **vcpkg export** verwenden, um eine gemeinsame ZIP-Datei der Binärdateien und Header oder ein NuGet-Paket zu erstellen. Die Freigabe für andere Teammitglieder ist anschließend ganz einfach möglich.
 

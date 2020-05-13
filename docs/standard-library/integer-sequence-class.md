@@ -14,12 +14,12 @@ helpviewer_keywords:
 - std::make_integer_sequence
 - std::index_sequence_for
 ms.assetid: 2cfdddee-819d-478e-bb78-c8a9c2696803
-ms.openlocfilehash: d0de2e56e1f6b8e68e5989f21ecd89b9646caa1b
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 3de64f7855b5158f1565580d305e2a6eeaf3e76f
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076470"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82031471"
 ---
 # <a name="integer_sequence-class"></a>integer_sequence-Klasse
 
@@ -37,10 +37,10 @@ struct integer_sequence
 *T*\
 Der Typ von Werten; muss sich um einen integralen Typ handeln: „bool“, „char“, „char16_t“, „char32_t“, „wchar_t“ oder signierte oder nicht signierte Ganzzahltypen.
 
-*Vals* -\
+*Vals*\
 Ein typenloses Parameterpaket, das eine Sequenz von Werten des integralen Typs T darstellt.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |||
 |-|-|
@@ -57,7 +57,7 @@ Das folgende Beispiel beruht auf dem ursprünglichen Vorschlag [N3658](https://w
 
 In der Funktion `a2t` ist `index_sequence` ein Alias von `integer_sequence` auf Grundlage des integralen Typs `size_t`. `make_index_sequence` ist ein Alias, der zum Zeitpunkt der Kompilierung eine nullbasierte `index_sequence` mit der gleichen Anzahl an Elementen wie das Array erstellt, das durch den Aufrufer weitergegeben wird. `a2t` übergibt `index_sequence` nach Wert an `a2t_`, wo der Ausdruck `a[I]...` entpackt`I` wird. Dann werden die Elemente an `make_tuple` übergeben, wo sie als einzelne Argumente verwendet werden. Wenn Sie Sequenz beispielsweise drei Elemente enthält, wird `make_tuple` als „make_tuple(a[0], a[1], a[2])“ aufgerufen. Die Arrayelemente an sich können von einem beliebigen Typ sein.
 
-Die Apply-Funktion akzeptiert ein [Std:: Tuple](../standard-library/tuple-class.md)und erzeugt eine `integer_sequence` mithilfe der `tuple_size` Helper-Klasse. Beachten Sie, dass [Std::d ecay_t](../standard-library/decay-class.md) erforderlich ist, da [tuple_size](../standard-library/tuple-size-class-tuple.md) nicht mit Verweis Typen funktioniert. Mithilfe der `apply_`-Funktion werden Tupel-Member entpackt und als getrennte Argumente an einen Funktionsaufruf weitergeleitet. In diesem Beispiel ist die Funktion ein einfacher Lambdaausdruck, der die Werte ausgibt.
+Die apply-Funktion akzeptiert ein [std::tuple](../standard-library/tuple-class.md)und `tuple_size` erzeugt mithilfe der Hilfsklasse eine. `integer_sequence` Beachten Sie, dass [std::decay_t](../standard-library/decay-class.md) erforderlich ist, da [tuple_size](../standard-library/tuple-size-class-tuple.md) nicht mit Referenztypen funktioniert. Mithilfe der `apply_`-Funktion werden Tupel-Member entpackt und als getrennte Argumente an einen Funktionsaufruf weitergeleitet. In diesem Beispiel ist die Funktion ein einfacher Lambdaausdruck, der die Werte ausgibt.
 
 ```cpp
 #include <stddef.h>
@@ -119,10 +119,10 @@ Verwenden Sie zum Erstellen einer `index_sequence` für ein Parameterpaket `inde
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-Header: \<type_traits\>
+Kopfzeile: \<type_traits\>
 
 Namepace: std
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Auslassungszeichen- und Variadic-Vorlagen](../cpp/ellipses-and-variadic-templates.md)
+[Ellipsis und Variadic Templates](../cpp/ellipses-and-variadic-templates.md)

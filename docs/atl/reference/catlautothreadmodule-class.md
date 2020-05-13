@@ -1,5 +1,5 @@
 ---
-title: CAtlAutoThreadModule-Klasse
+title: Klasse von "-Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlAutoThreadModule
@@ -7,52 +7,52 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlAutoThreadModule class
 ms.assetid: 3be834aa-55ef-403e-94ae-41979691b15f
-ms.openlocfilehash: 1ec66bf77d8dd705cb2e1e93f70a885ab96420a6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f4bd1071380bf3e31c69c593c5db81112fdf21de
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62247291"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168305"
 ---
-# <a name="catlautothreadmodule-class"></a>CAtlAutoThreadModule-Klasse
+# <a name="catlautothreadmodule-class"></a>Klasse von "-Klasse"
 
-Diese Klasse implementiert einen COM-Server in einem Thread-Pool, Apartment-Modell.
+Diese Klasse implementiert einen com-Server mit einem Thread im Pool.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 class CAtlAutoThreadModule : public CAtlAutoThreadModuleT<CAtlAutoThreadModule>
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAtlAutoThreadModule` leitet sich von [CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md) und implementiert einen COM-Server in einem Thread-Pool, Apartment-Modell. `CAtlAutoThreadModule` verwendet [CComApartment](../../atl/reference/ccomapartment-class.md) eine Wohnung für jeden Thread im Modul zu verwalten.
+`CAtlAutoThreadModule`wird von " [catlaudethreadmodulet](../../atl/reference/catlautothreadmodulet-class.md) " abgeleitet und implementiert einen Thread im Pool für den com-Server mit einem Thread Pool. `CAtlAutoThreadModule`verwendet [ccomapartment](../../atl/reference/ccomapartment-class.md) zum Verwalten eines Apartment für jeden Thread im Modul.
 
-Verwenden Sie die [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread) Makro in Definition der Klasse des Objekts an [CComClassFactoryAutoThread](../../atl/reference/ccomclassfactoryautothread-class.md) als die Klassenfactory. Sie sollten eine einzelne Instanz einer Klasse abgeleitet hinzufügen `CAtlAutoThreadModuleT` wie z. B. `CAtlAutoThreadModule`. Zum Beispiel:
+Sie müssen das [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread) -Makro in der Klassendefinition Ihres Objekts verwenden, um [ccomclassfactoryautothread](../../atl/reference/ccomclassfactoryautothread-class.md) als Klassenfactory anzugeben. Sie sollten dann eine einzelne Instanz einer von `CAtlAutoThreadModuleT` abgeleiteten Klasse hinzufügen, `CAtlAutoThreadModule`z. b.. Beispiel:
 
 `CAtlAutoThreadModule _AtlAutoModule; // name is immaterial.`
 
 > [!NOTE]
-> Diese Klasse ersetzt die veraltete [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md) Klasse.
+> Diese Klasse ersetzt die veraltete [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md) -Klasse.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `IAtlAutoThreadModule`
 
-[CAtlAutoThreadModuleT](../../atl/reference/catlautothreadmodulet-class.md)
+[""](../../atl/reference/catlautothreadmodulet-class.md)
 
 `CAtlAutoThreadModule`
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-[CAtlAutoThreadModuleT-Klasse](../../atl/reference/catlautothreadmodulet-class.md)<br/>
-[IAtlAutoThreadModule-Klasse](../../atl/reference/iatlautothreadmodule-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)<br/>
-[Modulklassen](../../atl/atl-module-classes.md)
+[Klasse von "-Klasse"](../../atl/reference/catlautothreadmodulet-class.md)<br/>
+[Iatlaudethreadmodule-Klasse](../../atl/reference/iatlautothreadmodule-class.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
+[Modul Klassen](../../atl/atl-module-classes.md)

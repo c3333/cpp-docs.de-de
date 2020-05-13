@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,16 +35,16 @@ helpviewer_keywords:
 - tanhf function
 - trigonometric functions
 - hyperbolic functions
-ms.openlocfilehash: 626252285a11ae4cbcb8bd2e5658512b85bfd3d3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d368f9ca99753e0749fe3c77a512c0d0c8975161
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81362617"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912299"
 ---
 # <a name="tanh-tanhf-tanhl"></a>tanh, tanhf, tanhl
 
-Berechnet die hyperbolische Tangente.
+Berechnet den hyperbolischen Tangens.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,22 +61,22 @@ long double tanh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **Tanh-Funktionen** geben die hyperbolische Tangente von *x*zurück. Es gibt keine Fehlerrückgabe.
+Die **tanh** -Funktionen geben den hyperbolischen Tangens von *x*zurück. Es gibt keine Fehlerrückgabe.
 
-|Eingabe|SEH-Ausnahme|**Matherr** Ausnahme|
+|Eingabe|SEH-Ausnahme|**Matherr** Distanzieren|
 |-----------|-------------------|-------------------------|
 |± QNAN,IND|Keine|_DOMAIN|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Tanh** aufrufen, die **Float-** oder **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **tanh** immer **doppelt**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **tanh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **tanh** immer Double und gibt **Double**zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -114,7 +114,7 @@ tan( 0.785398 ) = 1.000000
 tanh( 1.000000 ) = 0.761594
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>

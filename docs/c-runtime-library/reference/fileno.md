@@ -1,8 +1,9 @@
 ---
 title: _fileno
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _fileno
+- _o__fileno
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - _fileno function
 - streams, getting file handles
 ms.assetid: 86474174-2f17-4100-bcc4-352dd976c7b5
-ms.openlocfilehash: 586e390e100f5dc46a49b99c007016cf23ac68f0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 0ac0a8d2cf4185dab0aa3d335c16cf89da58c7a6
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957208"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919475"
 ---
 # <a name="_fileno"></a>_fileno
 
@@ -48,8 +50,8 @@ int _fileno(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
-Zeiger auf die **FILE**-Struktur.
+*Streich*<br/>
+Zeiger zur **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -64,13 +66,15 @@ Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doser
 
 Die **_fileno** -Routine gibt den Dateideskriptor zurück, der derzeit dem *Stream*zugeordnet ist. Diese Routine wird sowohl als Funktion und als Makro implementiert. Weitere Informationen zum Auswählen einer Implementierung finden Sie unter [Empfehlungen für die Wahl zwischen Funktionen und Macros](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**_fileno**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -96,7 +100,7 @@ The file descriptor for stdout is 1
 The file descriptor for stderr is 2
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [_fdopen, _wfdopen](fdopen-wfdopen.md)<br/>

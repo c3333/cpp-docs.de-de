@@ -1,8 +1,9 @@
 ---
 title: _getdrive
-ms.date: 09/19/2019
+ms.date: 4/2/2020
 api_name:
 - _getdrive
+- _o__getdrive
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - disk drives
 - _getdrive function
 ms.assetid: e40631a0-8f1a-4897-90ac-e1037ff30bca
-ms.openlocfilehash: 94d6c15270827cf61ec6086de8fa11251b435e2c
-ms.sourcegitcommit: f907b15f50a6b945d0b87c03af0050946157d701
+ms.openlocfilehash: c9c30fa288469d2382b3923e50f0486d6e190f17
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71158767"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913767"
 ---
 # <a name="_getdrive"></a>_getdrive
 
@@ -52,13 +54,17 @@ int _getdrive( void );
 
 Gibt das aktuelle (Standard-)Laufwerk zurück (1 = A, 2 = B usw.). Der Rückgabewert 0 (null) bedeutet, dass der aktuelle Pfad nicht mit dem Namen eines Buch Laufwerks, z. b. einem UNC-Pfad, beginnt. Oder es bedeutet, dass eine interne Puffer Zuordnung fehlgeschlagen ist. Wenn eine interne Zuordnung fehlschlägt `errno` , wird auf ENOMEM festgelegt.
 
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_getdrive**|\<direct.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -110,7 +116,7 @@ F: (Current directory is F:\)
 G: (Current directory is G:\)
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
 [_chdrive](chdrive.md)<br/>

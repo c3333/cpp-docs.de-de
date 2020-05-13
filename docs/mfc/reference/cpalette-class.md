@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CPalette [MFC], ResizePalette
 - CPalette [MFC], SetPaletteEntries
 ms.assetid: 8cd95498-53ed-4852-85e1-70e522541114
-ms.openlocfilehash: 83cd125fa7ab64aa39c606bc048022400d158e72
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f5740b3b073c4f564f9cac0fa04e5687ce1d8f00
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374765"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753678"
 ---
 # <a name="cpalette-class"></a>CPalette-Klasse
 
@@ -87,7 +87,7 @@ Weitere Informationen zur `CPalette`Verwendung finden Sie unter [Grafikobjekte](
 
 `CPalette`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -95,7 +95,7 @@ Weitere Informationen zur `CPalette`Verwendung finden Sie unter [Grafikobjekte](
 
 Ersetzt Einträge in der logischen `CPalette` Palette, die dem Objekt zugeordnet sind.
 
-```
+```cpp
 void AnimatePalette(
     UINT nStartIndex,
     UINT nNumEntries,
@@ -324,7 +324,7 @@ Wenn die logische Palette beim Aufrufen `SetPaletteEntries`der Anwendung in eine
 
 Weitere Informationen finden Sie unter [PALETTEENTRY](/previous-versions/dd162769\(v=vs.85\)) im Windows SDK.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel DIBLOOK](../../overview/visual-cpp-samples.md)<br/>
 [CGdiObject-Klasse](../../mfc/reference/cgdiobject-class.md)<br/>

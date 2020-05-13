@@ -1,9 +1,11 @@
 ---
 title: _mbsnbset_s, _mbsnbset_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsnbset_s_l
 - _mbsnbset_s
+- _o__mbsnbset_s
+- _o__mbsnbset_s_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +38,12 @@ helpviewer_keywords:
 - _tcsnset_s function
 - tcsnset_s_l function
 ms.assetid: 811f92c9-cc31-4bbd-8017-2d1bfc6fb96f
-ms.openlocfilehash: 7addd7e053816c462ae430443506445b878464a0
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: b4880e774d6ad1b07052529461910ceff6897351
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73625110"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915533"
 ---
 # <a name="_mbsnbset_s-_mbsnbset_s_l"></a>_mbsnbset_s, _mbsnbset_s_l
 
@@ -82,13 +85,13 @@ errno_t _mbsnbset_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zu ändernde Zeichenfolge.
 
 *size*<br/>
 Die Größe des Zeichenfolgenpuffers.
 
-*c*<br/>
+*scher*<br/>
 Einzelbyte- oder Multibytezeicheneinstellung.
 
 *count*<br/>
@@ -103,17 +106,19 @@ Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_mbsnbset_s** -Funktion und die **_mbsnbset_s_l** -Funktion legen höchstens die ersten Byte *Anzahl* von *Str* bis *c*fest. Wenn *count* größer als die Länge von *Str*ist, wird die Länge von *Str* anstelle von *count*verwendet. Wenn *c* ein Multibytezeichen ist und nicht vollständig in das letzte Byte festgelegt werden kann, das durch *count*angegeben wird, wird das letzte Byte mit einem leeren Zeichen aufgefüllt. **_mbsnbset_s** und **_mbsnbset_s_l** platzieren keinen abschließenden NULL-Wert am Ende von *Str*.
+Die **_mbsnbset_s** -und **_mbsnbset_s_l** Funktionen legen höchstens die ersten Byte *Anzahl* von *Str* bis *c*fest. Wenn *count* größer als die Länge von *Str*ist, wird die Länge von *Str* anstelle von *count*verwendet. Wenn *c* ein Multibytezeichen ist und nicht vollständig in das letzte Byte festgelegt werden kann, das durch *count*angegeben wird, wird das letzte Byte mit einem leeren Zeichen aufgefüllt. **_mbsnbset_s** und **_mbsnbset_s_l** platzieren keinen abschließenden NULL-Wert am Ende von *Str*.
 
 **_mbsnbset_s** und **_mbsnbset_s_l** ähneln **_mbsnset**, mit dem Unterschied, dass Sie die *Anzahl* von Bytes anstelle der *Anzahl* von Zeichen *c*festlegen.
 
 Wenn *Str* **null** oder *count* gleich NULL ist, generiert diese Funktion eine Ausnahme wegen eines ungültigen Parameters, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **null**zurück. Auch wenn *c* kein gültiges Multibytezeichen ist, wird **errno** auf **EINVAL** festgelegt, und stattdessen wird ein Leerzeichen verwendet.
 
-Der Ausgabewert wird von der Einstellung der **LC_CTYPE** -Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die **_mbsnbset_s** -Version dieser Funktion verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. die **_mbsnbset_s_l** -Version ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die **_mbsnbset_s** Version dieser Funktion verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. die **_mbsnbset_s_l** -Version ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 Die Verwendung dieser Funktionen in C++ wird durch Vorlagenüberladungen vereinfacht. Überladungen können automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -124,7 +129,7 @@ Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mi
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbset_s**|\<mbstring.h>|
 |**_mbsnbset_s_l**|\<mbstring.h>|
@@ -157,7 +162,7 @@ After:  **** is a test
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>
 [_strnset, _strnset_l, _wcsnset, _wcsnset_l, _mbsnset, _mbsnset_l](strnset-strnset-l-wcsnset-wcsnset-l-mbsnset-mbsnset-l.md)<br/>
 [_strset, _strset_l, _wcsset, _wcsset_l, _mbsset, _mbsset_l](strset-strset-l-wcsset-wcsset-l-mbsset-mbsset-l.md)<br/>

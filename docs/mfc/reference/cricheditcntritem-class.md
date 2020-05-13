@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CRichEditCntrItem [MFC], CRichEditCntrItem
 - CRichEditCntrItem [MFC], SyncToRichEditObject
 ms.assetid: 6c0b4efe-0fb8-4621-b5e1-fdcb8ec48c3b
-ms.openlocfilehash: b8158105d09d5cfc7c25512567a98121b194a82a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7b566fe7f1c0667dbcdb4976f79cd2e1597f48f6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368290"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752767"
 ---
 # <a name="cricheditcntritem-class"></a>CRichEditCntrItem-Klasse
 
@@ -63,7 +63,7 @@ Ein Beispiel für die Verwendung von Rich-Edit-Containerelementen in einer MFC-A
 
 `CRichEditCntrItem`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxrich.h
 
@@ -95,7 +95,7 @@ Weitere Informationen finden Sie in der [REOBJECT-Struktur](/windows/win32/api/r
 
 Rufen Sie diese Funktion auf, um den `CRichEditCntrltem` Geräteaspekt [DVASPECT](/windows/win32/api/wtypes/ne-wtypes-dvaspect), davon mit dem von *reo*angegebenen zu synchronisieren.
 
-```
+```cpp
 void SyncToRichEditObject(REOBJECT& reo);
 ```
 
@@ -108,7 +108,7 @@ Verweis auf eine [REOBJECT-Struktur,](/windows/win32/api/richole/ns-richole-reob
 
 Weitere Informationen finden Sie unter [DVASPECT](/windows/win32/api/wtypes/ne-wtypes-dvaspect) im Windows SDK.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel WORDPAD](../../overview/visual-cpp-samples.md)<br/>
 [COleClientItem-Klasse](../../mfc/reference/coleclientitem-class.md)<br/>

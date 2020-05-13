@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CMFCPropertySheet [MFC], SetIconsList
 - CMFCPropertySheet [MFC], SetLook
 ms.assetid: 01d93573-9698-440f-a6a4-5bebbee879dc
-ms.openlocfilehash: 6cdb2e966ca1878377fd26a6d4b9075090d32c3e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9b1bb2ce9a957b9cd9f7add983b4da7a228d7a1d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361804"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750062"
 ---
 # <a name="cmfcpropertysheet-class"></a>CMFCPropertySheet-Klasse
 
@@ -134,7 +134,7 @@ In der folgenden Abbildung wird ein Eigenschaftsblatt gezeigt, das im Stile eine
 
 [CMFCPropertySheet](../../mfc/reference/cmfcpropertysheet-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxpropertysheet.h
 
@@ -142,7 +142,7 @@ In der folgenden Abbildung wird ein Eigenschaftsblatt gezeigt, das im Stile eine
 
 Fügt dem Eigenschaftsblatt eine Seite hinzu.
 
-```
+```cpp
 void AddPage(CPropertyPage* pPage);
 ```
 
@@ -161,7 +161,7 @@ Wenn das Eigenschaftenblatt im Stil von Microsoft Outlook ist, zeigt das Framewo
 
 Fügt dem Struktursteuerelement eine neue Eigenschaftsseite hinzu.
 
-```
+```cpp
 void AddPageToTree(
     CMFCPropertySheetCategoryInfo* pCategory,
     CMFCPropertyPage* pPage,
@@ -261,7 +261,7 @@ Weitere Informationen finden Sie unter den Parametern für den [CPropertySheet::
 
 Reserviert oben auf jeder Seite Platz, um einen benutzerdefinierten Header zu zeichnen.
 
-```
+```cpp
 void EnablePageHeader(int nHeaderHeight);
 ```
 
@@ -414,7 +414,7 @@ TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
 Entfernt einen Knoten aus dem Struktursteuerelement.
 
-```
+```cpp
 void RemoveCategory(CMFCPropertySheetCategoryInfo* pCategory);
 ```
 
@@ -431,7 +431,7 @@ Verwenden Sie diese Methode, um einen Knoten, der auch als Kategorie bezeichnet 
 
 Entfernt eine Eigenschaftenseite aus dem Eigenschaftenblatt.
 
-```
+```cpp
 void RemovePage(CPropertyPage* pPage);
 void RemovePage(int nPage);
 ```
@@ -488,7 +488,7 @@ Weitere Informationen zu den Methoden, die diese Methode unterstützen, finden S
 
 Gibt das Erscheinungsbild des Eigenschaftsblatts an.
 
-```
+```cpp
 void SetLook(
     PropSheetLook look,
     int nNavControlWidth=100);
@@ -516,7 +516,7 @@ In der folgenden Tabelle sind die Enumerationswerte aufgeführt, die im *Look-Pa
 |`CMFCPropertySheet::PropSheetLook_OneNoteTabs`|Zeigt für jede Eigenschaftenseite eine Registerkarte im Format von Microsoft OneNote an. Das Framework zeigt Registerkarten oben auf dem Eigenschaftenblatt und Bildlaufpfeile an, wenn mehr Registerkarten vorhanden sind, als in eine einzelne Zeile passen.|
 |`CMFCPropertySheet::PropSheetLook_List`|Zeigt eine Liste auf der linken Seite des Eigenschaftenblatts an. Jedes Listenelement entspricht einer Eigenschaftenseite. Das Framework zeigt Bildlaufpfeile an, wenn mehr Listenelemente vorhanden sind, als in den sichtbaren Bereich der Liste passen.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

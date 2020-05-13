@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CMFCReBar [MFC], OnUpdateCmdUI
 - CMFCReBar [MFC], SetPaneAlignment
 ms.assetid: 02a60e29-6224-49c1-9e74-e0a7d9f8d023
-ms.openlocfilehash: a07f30fb00dd00e7a6315b8935731ccfc7500843
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 409c97aba64c97ecf0443d14a70848cc298a44ba
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361697"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750001"
 ---
 # <a name="cmfcrebar-class"></a>CMFCReBar-Klasse
 
@@ -86,7 +86,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CPane](../../mfc/reference/cpane-class.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CMFCReBar](../../mfc/reference/cmfcrebar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxRebar.h
 
@@ -210,7 +210,7 @@ virtual BOOL CanFloat() const;
 
 ## <a name="cmfcrebarenabledocking"></a><a name="enabledocking"></a>CMFCReBar::EnableDocking
 
-```
+```cpp
 void EnableDocking(DWORD dwDockStyle);
 ```
 
@@ -288,7 +288,7 @@ virtual void SetPaneAlignment(DWORD dwAlignment);
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -118,12 +118,12 @@ helpviewer_keywords:
 - CWinAppEx [MFC], StoreWindowPlacement
 - CWinAppEx [MFC], m_bForceImageReset
 ms.assetid: a3d3e053-3e22-463f-9444-c73abb1bb9d7
-ms.openlocfilehash: 1e022f09986f5d49ab2bba44c62cb716ce939a0c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b630a588d6c7ec81a22a9665deb0fa7517f90dc8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369616"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750648"
 ---
 # <a name="cwinappex-class"></a>CWinAppEx-Klasse
 
@@ -237,7 +237,7 @@ Nachdem Sie `CWinAppEx` sich in Ihre Anwendung integriert haben, können Sie ein
 
 [CWinAppEx](../../mfc/reference/cwinappex-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxwinappex.h
 
@@ -283,7 +283,7 @@ Die `CWinAppEx` Klasse verfügt über Initialisierungsmethoden, bietet Funktione
 
 Gibt an, ob die Anwendung die anfangse Größe und den Speicherort des Hauptrahmenfensters aus der Registrierung lädt.
 
-```
+```cpp
 void EnableLoadWindowPlacement(BOOL bEnable = TRUE);
 ```
 
@@ -1527,7 +1527,7 @@ Der Parameter *lpszEntry* ist der Name eines Registrierungseintrags, der sich un
 
 Wenn der von *lspzEntry* angegebene Schlüssel nicht vorhanden ist, wird er von dieser Methode erstellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

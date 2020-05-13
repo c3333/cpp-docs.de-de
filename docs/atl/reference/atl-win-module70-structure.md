@@ -1,5 +1,5 @@
 ---
-title: _ATL_WIN_MODULE70-Struktur
+title: _ATL_WIN_MODULE70 Struktur
 ms.date: 11/04/2016
 f1_keywords:
 - _ATL_WIN_MODULE70
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - _ATL_WIN_MODULE70 structure
 - ATL_WIN_MODULE70 structure
 ms.assetid: a0aaf3ea-ca77-46ec-bd53-4dfb61dffbea
-ms.openlocfilehash: 0b636d328852daf821269230aae443cef084578b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 770e78e4ad87338528aa654f5ecaa08b45315846
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260752"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168552"
 ---
-# <a name="atlwinmodule70-structure"></a>_ATL_WIN_MODULE70-Struktur
+# <a name="_atl_win_module70-structure"></a>_ATL_WIN_MODULE70 Struktur
 
-Windowing-Code in ATL verwendet
+Wird von windowingcode in ATL verwendet.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 struct _ATL_WIN_MODULE70 {
     UNIT cbSize;
     CRITICAL_SECTION m_csWindowCreate;
@@ -34,25 +34,25 @@ struct _ATL_WIN_MODULE70 {
 ## <a name="members"></a>Member
 
 `cbSize`<br/>
-Die Größe der Struktur, die für die versionsverwaltung verwendet werden soll.
+Die Größe der-Struktur, die für die Versionsverwaltung verwendet wird.
 
 `m_csWindowCreate`<br/>
-Verwendet, um die Serialisierung des Zugriffs auf Fenster-Registrierungscode. Wird intern verwendet, von ATL
+Wird verwendet, um den Zugriff auf den Fenster Registrierungscode zu serialisieren. Wird intern von ATL verwendet.
 
 `m_pCreateWndList`<br/>
-Zum Binden von Windows in ihre Objekte verwendet. Wird intern verwendet, von ATL
+Wird verwendet, um Fenster an Ihre Objekte zu binden. Wird intern von ATL verwendet.
 
 `m_rgWindowClassAtoms`<br/>
-Verwendet, um die Registrierungen für Fenster-Klasse nachverfolgt, damit sie ordnungsgemäß bei Beendigung des aufgehoben werden können. Wird intern verwendet, von ATL
+Wird verwendet, um die Registrierung von Fenster Klassen zu verfolgen, sodass Sie bei Beendigung ordnungsgemäß aufgehoben werden können. Wird intern von ATL verwendet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-[_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module) ist definiert als Typedef von `_ATL_WIN_MODULE70`.
+[_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module) ist als typedef von `_ATL_WIN_MODULE70`definiert.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Klassen und Strukturen](../../atl/reference/atl-classes.md)

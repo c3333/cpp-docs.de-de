@@ -3,10 +3,10 @@ title: Debuggereigenschaften (Linux C++) | Microsoft Docs
 ms.date: 06/07/2019
 ms.assetid: 0c1c0fcc-a49b-451c-a5cb-ce9711fac064
 ms.openlocfilehash: bebee7a2b3bcfd880a538acae35c9616b3b1bd46
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "79446177"
 ---
 # <a name="c-debugging-properties-linux-c"></a>C++-Debugeigenschaften (Linux C++)

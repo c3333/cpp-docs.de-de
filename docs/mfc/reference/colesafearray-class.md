@@ -60,12 +60,12 @@ helpviewer_keywords:
 - COleSafeArray [MFC], UnaccessData
 - COleSafeArray [MFC], Unlock
 ms.assetid: f45a5224-5f48-40ec-9ddd-287ef9740150
-ms.openlocfilehash: a7be9910b573cb5bc430d6608e75ce6661b71bc2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 10e9975bac776429a38bfc707215a9465ce35c2e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374863"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753774"
 ---
 # <a name="colesafearray-class"></a>COleSafeArray-Klasse
 
@@ -136,7 +136,7 @@ class COleSafeArray : public tagVARIANT
 
 `COleSafeArray`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -144,7 +144,7 @@ class COleSafeArray : public tagVARIANT
 
 Ruft einen Zeiger auf die Arraydaten ab.
 
-```
+```cpp
 void AccessData(void** ppvData);
 ```
 
@@ -165,7 +165,7 @@ Bei Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/cmemor
 
 Ordnet Speicher für ein sicheres Array zu.
 
-```
+```cpp
 void AllocData();
 ```
 
@@ -177,7 +177,7 @@ Bei Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/cmemor
 
 Weist Speicher für die Deskriptor eines sicheren Arrays zu.
 
-```
+```cpp
 void AllocDescriptor(DWORD dwDims);
 ```
 
@@ -194,7 +194,7 @@ Bei Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/cmemor
 
 Gibt dem Objekt die `VARIANT` `COleSafeArray` Kontrolle über die Daten in einem vorhandenen Array.
 
-```
+```cpp
 void Attach(VARIANT& varSrc);
 ```
 
@@ -215,7 +215,7 @@ Ein `VARIANT` -Objekt. Der *varSrc-Parameter* muss über die [VARTYPE-VT_ARRAY](
 
 Löscht das sichere Array.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -271,7 +271,7 @@ Bei Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/cmemor
 
 Erstellt eine Kopie eines vorhandenen sicheren Arrays.
 
-```
+```cpp
 void Copy(LPSAFEARRAY* ppsa);
 ```
 
@@ -288,7 +288,7 @@ Bei Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/cmemor
 
 Ordnet die Daten für das Array zu und initialisiert sie.
 
-```
+```cpp
 void Create(
     VARTYPE vtSrc,
     DWORD dwDims,
@@ -326,7 +326,7 @@ Diese Funktion löscht bei Bedarf die aktuellen Arraydaten. Bei einem Fehler lö
 
 Erstellt ein neues `COleSafeArray` eindimensionales Objekt.
 
-```
+```cpp
 void CreateOneDim(
     VARTYPE vtSrc,
     DWORD dwElements,
@@ -362,7 +362,7 @@ Bei einem Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/
 
 Zerstört einen vorhandenen Arraydeskriptor und alle Daten im Array.
 
-```
+```cpp
 void Destroy();
 ```
 
@@ -374,7 +374,7 @@ Wenn Objekte im Array gespeichert werden, wird jedes Objekt freigegeben. Bei Feh
 
 Zerstört alle Daten in einem sicheren Array.
 
-```
+```cpp
 void DestroyData();
 ```
 
@@ -386,7 +386,7 @@ Wenn Objekte im Array gespeichert werden, wird jedes Objekt freigegeben. Bei Feh
 
 Zerstört einen Deskriptor eines sicheren Arrays.
 
-```
+```cpp
 void DestroyDescriptor();
 ```
 
@@ -420,7 +420,7 @@ Bei einem Fehler löst die Funktion eine [COleException](../../mfc/reference/col
 
 Kopiert den Inhalt des sicheren `CByteArray`Arrays in eine .
 
-```
+```cpp
 void GetByteArray(CByteArray& bytes);
 ```
 
@@ -449,7 +449,7 @@ Die Anzahl der Dimensionen im sicheren Array.
 
 Ruft ein einzelnes Element des sicheren Arrays ab.
 
-```
+```cpp
 void GetElement(
     long* rgIndices,
     void* pvData);
@@ -489,7 +489,7 @@ Die Größe der Elemente eines sicheren Arrays in Bytes.
 
 Gibt die untere Grenze `COleSafeArray` für jede Dimension eines Objekts zurück.
 
-```
+```cpp
 void GetLBound(
     DWORD dwDim,
     long* pLBound);
@@ -531,7 +531,7 @@ Die Anzahl der Elemente im eindimensionalen sicheren Array.
 
 Gibt die Obergrenze für jede Dimension eines sicheren Arrays zurück.
 
-```
+```cpp
 void GetUBound(
     DWORD dwDim,
     long* pUBound);
@@ -557,7 +557,7 @@ Bei einem Fehler löst die Funktion eine [COleException](../../mfc/reference/col
 
 Erhöht die Sperranzahl eines Arrays und platziert einen Zeiger auf die Arraydaten im Arraydeskriptor.
 
-```
+```cpp
 void Lock();
 ```
 
@@ -640,7 +640,7 @@ CDumpContext& AFXAPI operator<<(
 
 Gibt einen Zeiger auf das element zurück, das durch die Indexwerte angegeben wird.
 
-```
+```cpp
 void PtrOfIndex(
     long* rgIndices,
     void** ppvData);
@@ -658,7 +658,7 @@ Zeiger auf das Element, das durch die Werte in *rgIndices*identifiziert wird.
 
 Weist ein einzelnes Element im Array zu.
 
-```
+```cpp
 void PutElement(
     long* rgIndices,
     void* pvData);
@@ -688,7 +688,7 @@ Bei Fehler löst die Funktion eine [CMemoryException](../../mfc/reference/cmemor
 
 Ändert die am wenigsten signifikante (rechts) gebundene Grenze eines sicheren Arrays.
 
-```
+```cpp
 void Redim(SAFEARRAYBOUND* psaboundNew);
 ```
 
@@ -705,7 +705,7 @@ Bei einem Fehler löst die Funktion eine [COleException](../../mfc/reference/col
 
 Ändert die Anzahl der Elemente `COleSafeArray` in einem eindimensionalen Objekt.
 
-```
+```cpp
 void ResizeOneDim(DWORD dwElements);
 ```
 
@@ -726,7 +726,7 @@ Bei einem Fehler löst die Funktion eine [COleException](../../mfc/reference/col
 
 Dekrementiert die Sperranzahl eines Arrays und macht `AccessData`den von abgerufenen Zeiger ungültig.
 
-```
+```cpp
 void UnaccessData();
 ```
 
@@ -742,7 +742,7 @@ Bei einem Fehler löst die Funktion eine [COleException](../../mfc/reference/col
 
 Dekrementiert die Sperranzahl eines Arrays, sodass es freigegeben oder in der Größe geändert werden kann.
 
-```
+```cpp
 void Unlock();
 ```
 
@@ -750,7 +750,7 @@ void Unlock();
 
 Diese Funktion wird aufgerufen, nachdem der Zugriff auf die Daten in einem Array abgeschlossen ist. Bei einem Fehler wird eine [COleException](../../mfc/reference/coleexception-class.md)ausgelöst.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [COleVariant-Klasse](../../mfc/reference/colevariant-class.md)<br/>

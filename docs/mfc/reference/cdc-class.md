@@ -402,12 +402,12 @@ helpviewer_keywords:
 - CDC [MFC], m_hAttribDC
 - CDC [MFC], m_hDC
 ms.assetid: 715b3334-cb2b-4c9c-8067-02eb7c66c8b2
-ms.openlocfilehash: 830c6d068a5074d0918107ca601c51d198a8a912
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d25cad720a4e1abb9bca6b3ab22eea0261f24b48
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375716"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753429"
 ---
 # <a name="cdc-class"></a>CDC-Klasse
 
@@ -676,7 +676,7 @@ Weitere Informationen `CDC`zu finden Sie unter [Gerätekontexte](../../mfc/devic
 
 `CDC`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -835,10 +835,10 @@ BOOL AngleArc(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der Mitte des Kreises an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der Mitte des Kreises an.
 
 *nRadius*<br/>
@@ -1059,10 +1059,10 @@ BOOL BitBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der oberen linken Ecke des Zielrechtecks an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der oberen linken Ecke des Zielrechtecks an.
 
 *nWidth*<br/>
@@ -1354,7 +1354,7 @@ Ein Windows-Gerätekontext.
 
 Verwenden Sie diese Funktion, wenn Sie OLE HIMETRIC-Größen geben und Pixel in HIMETRIC konvertieren.
 
-```
+```cpp
 void DPtoHIMETRIC(LPSIZE lpSize) const;
 ```
 
@@ -1371,7 +1371,7 @@ Wenn der Zuordnungsmodus des Gerätekontextobjekts MM_LOENGLISH, MM_HIENGLISH, M
 
 Konvertiert Geräteeinheiten in logische Einheiten.
 
-```
+```cpp
 void DPtoLP(
     LPPOINT lpPoints,
     int nCount = 1) const;
@@ -1402,7 +1402,7 @@ Die Funktion ordnet die Koordinaten jedes Punktes oder jeder Dimension einer Gr�
 
 Rufen Sie diese Memberfunktion auf, um ein dreidimensionales Rechteck zu zeichnen.
 
-```
+```cpp
 void Draw3dRect(
     LPCRECT lpRect,
     COLORREF clrTopLeft,
@@ -1428,10 +1428,10 @@ Gibt die Farbe der oberen und linken Seite des dreidimensionalen Rechtecks an.
 *clrBottomRight*<br/>
 Gibt die Farbe der unteren und rechten Seite des dreidimensionalen Rechtecks an.
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der oberen linken Ecke des dreidimensionalen Rechtecks an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der oberen linken Ecke des dreidimensionalen Rechtecks an.
 
 *Cx*<br/>
@@ -1452,7 +1452,7 @@ Das Rechteck wird mit der oberen und linken Seite in der Farbe gezeichnet, die v
 
 Rufen Sie diese Memberfunktion wiederholt auf, um ein Ziehrechteck neu zu zeichnen.
 
-```
+```cpp
 void DrawDragRect(
     LPCRECT lpRect,
     SIZE size,
@@ -1467,7 +1467,7 @@ void DrawDragRect(
 *lpRect*<br/>
 Zeigt auf eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das die logischen Koordinaten eines Rechtecks angibt – in diesem Fall die Endposition des neu gezeichneten Rechtecks.
 
-*Größe*<br/>
+*size*<br/>
 Gibt die Verschiebung von der oberen linken Ecke des äußeren Rahmens in die obere linke Ecke des inneren Rahmens (d. h. die Dicke des Rahmens) eines Rechtecks an.
 
 *lpRectLast*<br/>
@@ -1548,7 +1548,7 @@ Wenn eine `DrawEscape`Anwendung aufruft, werden die von *nInputSize* und *lpszIn
 
 Zeichnet ein Rechteck in dem Stil, der verwendet wird, um anzuzeigen, dass das Rechteck den Fokus hat.
 
-```
+```cpp
 void DrawFocusRect(LPCRECT lpRect);
 ```
 
@@ -1665,10 +1665,10 @@ BOOL DrawIcon(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der oberen linken Ecke des Symbols an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der oberen linken Ecke des Symbols an.
 
 *hIcon*<br/>
@@ -1767,7 +1767,7 @@ BOOL DrawState(
 *Pt*<br/>
 Gibt die Position des Bildes an.
 
-*Größe*<br/>
+*size*<br/>
 Gibt die Größe des Bildes an.
 
 *hBitmap*<br/>
@@ -2232,10 +2232,10 @@ BOOL ExtFloodFill(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des Punkts an, an dem die Füllung beginnt.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des Punkts an, an dem die Füllung beginnt.
 
 *crColor*<br/>
@@ -2287,10 +2287,10 @@ BOOL ExtTextOut(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der Zeichenzelle für das erste Zeichen in der angegebenen Zeichenfolge an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des oberen Rands der Zeichenzelle für das erste Zeichen in der angegebenen Zeichenfolge an.
 
 *nOptionen*<br/>
@@ -2345,7 +2345,7 @@ Nachdem sein Inneres gefüllt wurde, wird der Pfad aus dem Gerätekontext verwor
 
 Rufen Sie diese Memberfunktion auf, um ein bestimmtes Rechteck mit dem angegebenen Pinsel auszufüllen.
 
-```
+```cpp
 void FillRect(
     LPCRECT lpRect,
     CBrush* pBrush);
@@ -2403,7 +2403,7 @@ Der Pinsel muss entweder `CBrush` mit `CreateHatchBrush`den `CreatePatternBrush`
 
 Rufen Sie diese Memberfunktion auf, um das angegebene Rechteck mit der angegebenen Volltonfarbe zu füllen.
 
-```
+```cpp
 void FillSolidRect(
     LPCRECT lpRect,
     COLORREF clr);
@@ -2423,10 +2423,10 @@ Gibt das umgrenzende Rechteck (in logischen Einheiten) an. Sie können entweder 
 
 *clr* Gibt die Farbe an, die zum Ausfüllen des Rechtecks verwendet werden soll.
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der oberen linken Ecke des Rechtecks an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der oberen linken Ecke des Zielrechtecks an.
 
 *Cx*<br/>
@@ -2467,10 +2467,10 @@ BOOL FloodFill(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des Punkts an, an dem die Füllung beginnt.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des Punkts an, an dem die Füllung beginnt.
 
 *crColor*<br/>
@@ -2492,7 +2492,7 @@ Die `ExtFloodFill` Funktion bietet eine ähnliche Fähigkeit, aber mehr Flexibil
 
 Zeichnet einen Rahmen um das von *lpRect*angegebene Rechteck.
 
-```
+```cpp
 void FrameRect(
     LPCRECT lpRect,
     CBrush* pBrush);
@@ -3559,10 +3559,10 @@ COLORREF GetPixel(POINT point) const;
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des zu untersuchenden Punktes an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des zu untersuchenden Punktes an.
 
 *Punkt*<br/>
@@ -4089,10 +4089,10 @@ Gibt einen weiten Zeiger auf Daten an, die an die Ausgabefunktion übergeben wer
 *nCount*<br/>
 Gibt die Anzahl der Zeichen an, die ausgegeben werden sollen. Wenn dieser Parameter `GrayString` 0 ist, berechnet die Länge der Zeichenfolge (vorausgesetzt, *lpData* ist ein Zeiger auf die Zeichenfolge). Wenn *nCount* 1 ist und die Funktion, auf die von *lpfnOutput* verwiesen wird, 0 zurückgibt, wird das Bild angezeigt, aber nicht abgeblendet.
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der Startposition des Rechtecks an, das die Zeichenfolge umschließt.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der Startposition des Rechtecks an, das die Zeichenfolge umschließt.
 
 *nWidth*<br/>
@@ -4123,7 +4123,7 @@ Wenn sich das Framework im Vorschaumodus `GrayString` befindet, wird `TextOut` e
 
 Verwenden Sie diese Funktion, wenn Sie HIMETRIC-Größen von OLE in Pixel konvertieren.
 
-```
+```cpp
 void HIMETRICtoDP(LPSIZE lpSize) const;
 ```
 
@@ -4140,7 +4140,7 @@ Wenn der Zuordnungsmodus des Gerätekontextobjekts MM_LOENGLISH, MM_HIENGLISH, M
 
 Rufen Sie diese Funktion auf, um HIMETRIC-Einheiten in logische Einheiten zu konvertieren.
 
-```
+```cpp
 void HIMETRICtoLP(LPSIZE lpSize) const;
 ```
 
@@ -4206,7 +4206,7 @@ GDI schneidet alle nachfolgenden Ausgaben ab, um innerhalb der neuen Grenze zu p
 
 Kehrt den Inhalt des angegebenen Rechtecks um.
 
-```
+```cpp
 void InvertRect(LPCRECT lpRect);
 ```
 
@@ -4272,10 +4272,10 @@ BOOL LineTo(POINT point);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des Endpunkts für die Linie an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des Endpunkts für die Linie an.
 
 *Punkt*<br/>
@@ -4297,7 +4297,7 @@ Die Linie wird mit dem ausgewählten Stift gezeichnet. Die aktuelle Position wir
 
 Konvertiert logische Einheiten in Geräteeinheiten.
 
-```
+```cpp
 void LPtoDP(
     LPPOINT lpPoints,
     int nCount = 1) const;
@@ -4330,7 +4330,7 @@ Die x- und y-Koordinaten von Punkten sind 2-Byte-signierte Ganzzahlen im Bereich
 
 Rufen Sie diese Funktion auf, um logische Einheiten in HIMETRIC-Einheiten zu konvertieren.
 
-```
+```cpp
 void LPtoHIMETRIC(LPSIZE lpSize) const;
 ```
 
@@ -4390,10 +4390,10 @@ BOOL MaskBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der oberen linken Ecke des Zielrechtecks an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der oberen linken Ecke des Zielrechtecks an.
 
 *nWidth*<br/>
@@ -4479,10 +4479,10 @@ CPoint MoveTo(POINT point);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der neuen Position an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der neuen Position an.
 
 *Punkt*<br/>
@@ -4510,13 +4510,13 @@ int OffsetClipRgn(SIZE size);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die Anzahl der logischen Einheiten an, die nach links oder rechts verschoben werden sollen.
 
-*y*<br/>
+*Y*<br/>
 Gibt die Anzahl der logischen Einheiten an, die nach oben oder unten verschoben werden sollen.
 
-*Größe*<br/>
+*size*<br/>
 Gibt den zu versetzenden Betrag an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -4627,10 +4627,10 @@ BOOL PatBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate der oberen linken Ecke des Rechtecks an, die das Muster empfangen soll.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate der oberen linken Ecke des Rechtecks an, das das Muster empfangen soll.
 
 *nWidth*<br/>
@@ -5109,10 +5109,10 @@ BOOL PtVisible(POINT point) const;
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des Punktes an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des Punktes an.
 
 *Punkt*<br/>
@@ -5902,10 +5902,10 @@ CPoint SetBrushOrg(POINT point);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die x-Koordinate (in Geräteeinheiten) des neuen Ursprungs an. Dieser Wert muss im Bereich 0-7 liegen.
 
-*y*<br/>
+*Y*<br/>
 Gibt die y-Koordinate (in Geräteeinheiten) des neuen Ursprungs an. Dieser Wert muss im Bereich 0-7 liegen.
 
 *Punkt*<br/>
@@ -6170,10 +6170,10 @@ COLORREF SetPixel(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des festzulegenden Punktes an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des festzulegenden Punktes an.
 
 *crColor*<br/>
@@ -6209,10 +6209,10 @@ BOOL SetPixelV(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die x-Koordinate des festzulegenden Punktes in logischen Einheiten an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die y-Koordinate des festzulegenden Punktes in logischen Einheiten an.
 
 *crColor*<br/>
@@ -6493,7 +6493,7 @@ Gibt die x-Ausdehnung des Ansichtsfensters (in Geräteeinheiten) an.
 *Cy*<br/>
 Gibt die y-Ausdehnung des Ansichtsfensters (in Geräteeinheiten) an.
 
-*Größe*<br/>
+*size*<br/>
 Gibt die x- und y-Ausdehnungen des Ansichtsfensters (in Geräteeinheiten) an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -6531,10 +6531,10 @@ CPoint SetViewportOrg(POINT point);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die x-Koordinate (in Geräteeinheiten) des Ursprungs des Ansichtsfensters an. Der Wert muss sich innerhalb des Bereichs des Gerätekoordinatensystems befinden.
 
-*y*<br/>
+*Y*<br/>
 Gibt die y-Koordinate (in Geräteeinheiten) des Ursprungs des Ansichtsfensters an. Der Wert muss sich innerhalb des Bereichs des Gerätekoordinatensystems befinden.
 
 *Punkt*<br/>
@@ -6574,7 +6574,7 @@ Gibt die x-Ausdehnung (in logischen Einheiten) des Fensters an.
 *Cy*<br/>
 Gibt die y-Ausdehnung (in logischen Einheiten) des Fensters an.
 
-*Größe*<br/>
+*size*<br/>
 Gibt die x- und y-Ausdehnungen (in logischen Einheiten) des Fensters an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -6619,10 +6619,10 @@ CPoint SetWindowOrg(POINT point);
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des neuen Ursprungs des Fensters an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des neuen Ursprungs des Fensters an.
 
 *Punkt*<br/>
@@ -6744,10 +6744,10 @@ BOOL StretchBlt(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die x-Koordinate (in logischen Einheiten) der oberen linken Ecke des Zielrechtecks an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die y-Koordinate (in logischen Einheiten) der oberen linken Ecke des Zielrechtecks an.
 
 *nWidth*<br/>
@@ -6881,10 +6881,10 @@ CSize TabbedTextOut(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des Startpunkts der Zeichenfolge an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des Startpunkts der Zeichenfolge an.
 
 *lpszString*<br/>
@@ -6936,10 +6936,10 @@ BOOL TextOut(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die logische x-Koordinate des Anfangspunkts des Texts an.
 
-*y*<br/>
+*Y*<br/>
 Gibt die logische y-Koordinate des Anfangspunkts des Texts an.
 
 *lpszString*<br/>
@@ -7029,7 +7029,7 @@ Weitere Informationen finden Sie unter [TransparentBlt](/windows/win32/api/wingd
 
 Aktualisiert den Clientbereich des Gerätekontexts, indem die aktuellen Farben im Clientbereich pixelweise mit der Systempalette abgleichen.
 
-```
+```cpp
 void UpdateColors();
 ```
 
@@ -7057,7 +7057,7 @@ Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfal
 
 Diese Funktion ist nur erfolgreich, wenn es sich bei `CreatePen` dem aktuellen Stift um einen geometrischen Stift `CreatePen` handelt, der von der zweiten Version der Memberfunktion erstellt wurde, oder wenn der Stift mit der ersten Version von erstellt wurde und eine Breite von mehr als 1 in Geräteeinheiten aufweist. Der Gerätekontext muss einen geschlossenen Pfad enthalten. Alle Bzier-Kurven im Pfad werden in Sequenzen gerader Linien konvertiert, die die verbreiterten Kurven angrenzen. Daher bleiben keine Bzier-Kurven im `WidenPath` Pfad, nachdem aufgerufen wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

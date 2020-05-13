@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CMFCLinkCtrl [MFC], SizeToContent
 - CMFCLinkCtrl [MFC], OnDrawFocusRect
 ms.assetid: 80f3874d-7cc8-410e-9ff1-62a225f5034b
-ms.openlocfilehash: 1ef4e390d88f81d738d2ee18be6ba02843633011
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 79edff8be6e2c37baa938fc5b624253932609e17
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374400"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754250"
 ---
 # <a name="cmfclinkctrl-class"></a>CMFCLinkCtrl-Klasse
 
@@ -72,7 +72,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCLinkCtrl` wie die Größe eines
 
 [CMFCLinkCtrl](../../mfc/reference/cmfclinkctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxlinkctrl.h
 
@@ -102,7 +102,7 @@ virtual void OnDrawFocusRect(
 
 Zeigt eine angegebene URL als Schaltflächentext an.
 
-```
+```cpp
 void SetURL(LPCTSTR lpszURL);
 ```
 
@@ -117,7 +117,7 @@ void SetURL(LPCTSTR lpszURL);
 
 Legt das implizite Protokoll (z. B. "http:") der URL fest.
 
-```
+```cpp
 void SetURLPrefix(LPCTSTR lpszPrefix);
 ```
 
@@ -154,7 +154,7 @@ Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) das die neue 
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

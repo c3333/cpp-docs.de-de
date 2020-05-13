@@ -1,9 +1,11 @@
 ---
 title: mbstowcs, _mbstowcs_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - mbstowcs
 - _mbstowcs_l
+- _o__mbstowcs_l
+- _o_mbstowcs
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +20,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-convert-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +32,12 @@ helpviewer_keywords:
 - mbstowcs_l function
 - mbstowcs function
 ms.assetid: 96696b27-e068-4eeb-8006-3f7a0546ae6d
-ms.openlocfilehash: 3df851b08edfa9dfe5bf9b42b9abfd45a8939606
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 23dd4f2c98f99c0c526cb29553793574f2b7f7d3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952035"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915473"
 ---
 # <a name="mbstowcs-_mbstowcs_l"></a>mbstowcs, _mbstowcs_l
 
@@ -72,7 +75,7 @@ size_t _mbstowcs_l(
 ### <a name="parameters"></a>Parameter
 
 *wcstr*<br/>
-Die Adresse einer Breitzeichensequenz.
+Adresse einer Breitzeichensequenz.
 
 *mbstr*<br/>
 Adresse einer Multibyte-Zeichensequenz.
@@ -92,24 +95,26 @@ Wenn **mbstowcs** die Quell Zeichenfolge erfolgreich konvertiert, wird die Anzah
 
 ## <a name="remarks"></a>Hinweise
 
-Die **mbstowcs** -Funktion konvertiert eine maximale Anzahl von Multibytezeichen, auf die *mbstr* zeigt, auf eine Zeichenfolge mit entsprechenden breit Zeichen, die vom aktuellen Gebiets Schema bestimmt werden. Die resultierende breit Zeichen Zeichenfolge wird in der durch *wcstr*dargestellten Adresse gespeichert. Das Ergebnis ähnelt einer Reihe von Aufrufen von [mbtowc](mbtowc-mbtowc-l.md). Wenn **mbstowcs** das Single-Byte-Null Zeichen (' \ 0 ') erkennt, entweder vor oder wenn *count* auftritt, konvertiert es das NULL-Zeichen in ein breit Zeichen-NULL Zeichen (L ' \ 0 ') und wird beendet. Folglich ist die Zeichenfolge mit breit Zeichen bei *wcstr* nur dann NULL-terminiert, wenn während der Konvertierung ein NULL-Zeichen gefunden wird. Wenn die Sequenzen, auf die von *wcstr* und *mbstr* verwiesen wird, überlappen, ist das Verhalten nicht definiert.
+Die **mbstowcs** -Funktion konvertiert eine maximale Anzahl von Multibytezeichen, auf die *mbstr* zeigt, auf eine Zeichenfolge mit entsprechenden breit Zeichen, die vom aktuellen Gebiets Schema bestimmt werden. *count* Die resultierende breit Zeichen Zeichenfolge wird in der durch *wcstr*dargestellten Adresse gespeichert. Das Ergebnis ähnelt einer Reihe von Aufrufen von [mbtowc](mbtowc-mbtowc-l.md). Wenn **mbstowcs** das Single-Byte-Null Zeichen (' \ 0 ') erkennt, entweder vor oder wenn *count* auftritt, konvertiert es das NULL-Zeichen in ein breit Zeichen-NULL Zeichen (L ' \ 0 ') und wird beendet. Folglich ist die Zeichenfolge mit breit Zeichen bei *wcstr* nur dann NULL-terminiert, wenn während der Konvertierung ein NULL-Zeichen gefunden wird. Wenn die Sequenzen, auf die von *wcstr* und *mbstr* verwiesen wird, überlappen, ist das Verhalten nicht definiert.
 
 Wenn das *wcstr* -Argument **null**ist, gibt **mbstowcs** die Anzahl der breit Zeichen zurück, die sich aus der Konvertierung ergeben würden, ohne ein NULL-Terminator zu einschließen. Die Quellzeichenfolge muss auf NULL enden, damit der korrekte Wert zurückgegeben wird. Wenn Sie wollen, dass die resultierende Breitzeichenfolge auf NULL endet, fügen Sie dem Rückgabewert 1 hinzu.
 
-Wenn das *mbstr* -Argument **null**ist, oder wenn *count* > **INT_MAX**, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md) Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird errno auf **EINVAL** festgelegt, und die Funktion gibt-1 zurück.
+Wenn das *mbstr* -Argument **null**ist oder die *Anzahl* > **INT_MAX**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md) Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird errno auf **EINVAL** festgelegt, und die Funktion gibt-1 zurück.
 
 **mbstowcs** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_mbstowcs_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**mbstowcs**|\<stdlib.h>|
 |**_mbstowcs_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -206,7 +211,7 @@ Convert back to wide-character string:
    Hex value of first 2 wide characters: 0x3042 0x3043
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>

@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +34,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arcsine function
 ms.assetid: ca05f9ea-b711-49f6-9f32-2f4019abfd69
-ms.openlocfilehash: 424fee6995fae4a7f878054ede1bb85d33d1706d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cfee30270b8ed0daa5d600fec65659fbf07162fd
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81334130"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909271"
 ---
 # <a name="asin-asinf-asinl"></a>asin, asinf, asinl
 
@@ -60,38 +60,38 @@ long double asin( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Wert, dessen Arkussinus berechnet werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **asin-Funktion** gibt den Arcsin (die inverse Sinusfunktion) von *x* im Bereich -/2 bis 2 Radianten zurück.
+Die **ASIN** -Funktion gibt den Arkus Sinus (die umgekehrte Sinusfunktion) von x im Bereich von "Bereich-/2" bis " *x* 2" zurück.
 
-Wenn *x* kleiner als -1 oder größer als 1 ist, gibt **asin** standardmäßig eine unbestimmte Datei zurück.
+Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ASIN** standardmäßig einen unbestimmten Wert zurück.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
 |± ∞|**Ungültig**|**_DOMAIN**|
-|• **QNAN**, **IND**|Keine|**_DOMAIN**|
+|± **QNAN**, **IND**|Keine|**_DOMAIN**|
 |&#124;x&#124;>1|**Ungültig**|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überladung ermöglicht, können Sie Überladungen von **asin** mit **float** und **langen** **Doppelwerten** aufrufen. In einem C-Programm nimmt **asin** immer ein **Double**und gibt es zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ASIN** mit **float** -und **Long** **Double** -Werten aufzurufen. In einem C-Programm nimmt **ASIN** immer einen **Double**-Wert an und gibt ihn zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
-|**asin**, **asinf**, **asinl**|\<math.h>|\<cmath> oder \<math.h>|
+|**ASIN**, **asinf**, **asinl**|\<math.h>|\<cmath> oder \<math.h>|
 
 ## <a name="example"></a>Beispiel
 
 Weitere Informationen finden Sie unter [acos, acosf, acosl](acos-acosf-acosl.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acos, acosf, acosl](acos-acosf-acosl.md)<br/>

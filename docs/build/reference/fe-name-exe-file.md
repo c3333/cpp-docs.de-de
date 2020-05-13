@@ -10,41 +10,42 @@ helpviewer_keywords:
 - /Fe compiler option [C++]
 - Fe compiler option [C++]
 ms.assetid: 49f594fd-5e94-45fe-a1bf-7c9f2abb6437
-ms.openlocfilehash: 5901ef1997cfea84c97b6d91b30335ff7dbc1d9f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f0bd8f3a96555cc29d06f74fb44a73bbed32889b
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62292614"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825577"
 ---
 # <a name="fe-name-exe-file"></a>/Fe (Name der EXE-Datei)
 
-Gibt einen Namen und ein Verzeichnis für die .exe-Datei oder DLL, die vom Compiler erstellt wird.
+Gibt einen Namen und ein Verzeichnis für die exe-Datei oder dll an, die vom Compiler erstellt wurde.
 
 ## <a name="syntax"></a>Syntax
 
-> **/Fe**[_pathname_] **/Fe:** _pathname_
+> **/FE**[_Pfadname_] \
+> **/Fe:** _Pfadname_
 
 ### <a name="arguments"></a>Argumente
 
-*pathname*<br/>
-Der relativer oder absoluter Pfad und ein Basisdateiname oder ein relativer oder absoluter Pfad zu einem Verzeichnis oder den Basisdateinamen für die generierte ausführbare Datei verwenden.
+*Pfadnamen*<br/>
+Der relative oder absolute Pfad und Basis Dateiname oder der relative oder absolute Pfad zu einem Verzeichnis oder der Basis Dateiname, der für die generierte ausführbare Datei verwendet werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/FE** Option können Sie das Ausgabeverzeichnis, Name der ausführbaren Datei Ausgabe oder für die generierte ausführbare Datei angeben. Wenn *Pfadnamen* endet in einem Pfadtrennzeichen (**&#92;**), wird angenommen, dass nur das Ausgabeverzeichnis angeben. Andernfalls die letzte Komponente *Pfadnamen* dient als Basis Name der Ausgabedatei und der Rest des *Pfadnamen* gibt das Ausgabeverzeichnis an. Wenn *Pfadnamen* verfügt nicht über alle Trennzeichen im Pfad, es wird davon ausgegangen, dass im aktuellen Verzeichnis den Namen der Ausgabedatei an. Die *Pfadnamen* muss in doppelte Anführungszeichen eingeschlossen werden (**"**) Wenn sie keine Zeichen enthält, die nicht in einen kurzen Pfad verwenden, z. B. Leerzeichen befinden können erweiterte Zeichen oder Pfadkomponenten mehr als acht Zeichen lang.
+Mit der **/FE** -Option können Sie das Ausgabeverzeichnis, den ausführbaren Namen der Ausgabe oder beides für die generierte ausführbare Datei angeben. Wenn *Pfadnamen* in einem Pfad Trennzeichen (**&#92;**) endet, wird davon ausgegangen, dass nur das Ausgabeverzeichnis angegeben wird. Andernfalls wird die letzte Komponente von *Pfadnamen* als Basis Name der Ausgabedatei verwendet, und der Rest von *Pfadnamen* gibt das Ausgabeverzeichnis an. Wenn *Pfadnamen* keine Pfad Trennzeichen enthält, wird davon ausgegangen, dass der Name der Ausgabedatei im aktuellen Verzeichnis angegeben wird. Der *Pfadname* muss in doppelte Anführungszeichen (**"**) eingeschlossen werden, wenn er Zeichen enthält, die sich nicht in einem kurzen Pfad befinden dürfen, z. b. Leerzeichen, erweiterte Zeichen oder Pfad Komponenten, die mehr als acht Zeichen lang sind.
 
-Wenn die **/FE** nicht angegeben wird, oder wenn eine Datei, die Basis wurde kein Name angegeben *Pfadnamen*, der Compiler gibt der Ausgabedatei ein Standardname, der mit dem Basisnamen der ersten angegebenen Quell- oder Datei auf der Befehlszeile und die Erweiterung .exe oder .dll.
+Wenn die **/FE** -Option nicht angegeben ist oder ein Dateibasisname nicht in *Pfadnamen*angegeben ist, übergibt der Compiler der Ausgabedatei einen Standardnamen, wobei der Basisname der ersten Quell-oder Objektdatei, die in der Befehlszeile angegeben ist, und die Erweiterung. exe oder. dll verwendet wird.
 
-Bei Angabe der [/c (Kompilieren ohne Verknüpfen)](c-compile-without-linking.md) Option **/FE** hat keine Auswirkungen.
+Wenn Sie die Option [/c (Kompilieren ohne Verknüpfen)](c-compile-without-linking.md) angeben, hat **/FE** keine Auswirkung.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Öffnen der **Konfigurationseigenschaften** > **Linker** > **allgemeine** Eigenschaftenseite.
+1. Öffnen Sie die **Eigenschaften** > Seite**Allgemeine** Linker-Eigenschaft für den**Linker** > .
 
-1. Ändern der **Ausgabedatei** Eigenschaft. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Ändern Sie die Eigenschaft **Ausgabedatei** . Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -52,7 +53,7 @@ Bei Angabe der [/c (Kompilieren ohne Verknüpfen)](c-compile-without-linking.md)
 
 ## <a name="example"></a>Beispiel
 
-Die folgende Befehlszeile kompiliert und verknüpft alle C-Quelldateien im aktuellen Verzeichnis. Die resultierende ausführbare Datei heißt PROCESS.exe und wird in das Verzeichnis "C:\Users\User Name\repos\My Project\bin" erstellt.
+Die folgende Befehlszeile kompiliert alle C-Quelldateien und verknüpft Sie mit dem aktuellen Verzeichnis. Die resultierende ausführbare Datei hat den Namen "Process. exe" und wird im Verzeichnis "c:\benutzer\benutzername\repos\my project\bin" erstellt.
 
 ```
 CL /Fe"C:\Users\User Name\repos\My Project\bin\PROCESS" *.C
@@ -60,13 +61,13 @@ CL /Fe"C:\Users\User Name\repos\My Project\bin\PROCESS" *.C
 
 ## <a name="example"></a>Beispiel
 
-Die folgende Befehlszeile erstellt eine ausführbare Datei im `C:\BIN` mit den gleichen Basisnamen wie die ersten Quelldatei im aktuellen Verzeichnis:
+Mit der folgenden Befehlszeile wird eine ausführbare `C:\BIN` Datei in mit dem gleichen Basis Namen wie die erste Quelldatei im aktuellen Verzeichnis erstellt:
 
 ```
 CL /FeC:\BIN\ *.C
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausgabedatei (/F) Optionen](output-file-f-options.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>

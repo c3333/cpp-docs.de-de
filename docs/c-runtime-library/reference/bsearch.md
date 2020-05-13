@@ -17,7 +17,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - arrays [CRT], binary search
 - bsearch function
 ms.assetid: e0ad2f47-e7dd-49ed-8288-870457a14a2c
-ms.openlocfilehash: efad391eb2512cfa59cc3597430a84727676f27e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7843c1cd15a4bd39e1b24676402d635bd5f2de90
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333807"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913382"
 ---
 # <a name="bsearch"></a>bsearch
 
@@ -53,38 +53,38 @@ void *bsearch(
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
-Zeiger auf die zu suchende Taste.
+*key*\
+Zeiger auf den Schlüssel, nach dem gesucht werden soll.
 
-*Basis*\
-Zeiger auf die Basis der Suchdaten.
+*sock*\
+Ein Zeiger auf die Basis der Suchdaten.
 
-*Anzahl*\
+*number*\
 Anzahl der Elemente.
 
 *Breite*\
 Breite der Elemente.
 
-*Vergleichen*\
-Rückruffunktion, die zwei Elemente vergleicht. Der erste ist ein Zeiger auf den Schlüssel für die Suche, und der zweite ist ein Zeiger auf das Arrayelement, das mit dem Schlüssel verglichen werden soll.
+*vergleichbar*\
+Rückruffunktion, die zwei Elemente vergleicht. Der erste ist ein Zeiger auf den Schlüssel für die Suche, und der zweite ist ein Zeiger auf das Array Element, das mit dem Schlüssel verglichen werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**bsearch** gibt einen Zeiger auf ein Vorkommen des *Schlüssels* im Array zurück, auf das von *Base*verwiesen wird. Wenn der *Schlüssel* nicht gefunden wird, gibt die Funktion **NULL**zurück. Wenn das Array nicht in aufsteigender Reihenfolge sortiert ist oder doppelte Datensätze mit identischen Schlüsseln enthält, ist das Ergebnis nicht vorhersehbar.
+**bsearch** gibt einen Zeiger auf ein Vorkommen von *Key* in dem Array zurück, auf das von *Base*verwiesen wird. Wenn *Key* nicht gefunden wird, gibt die Funktion **null**zurück. Wenn das Array nicht in aufsteigender Reihenfolge sortiert ist oder doppelte Datensätze mit identischen Schlüsseln enthält, ist das Ergebnis nicht vorhersehbar.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **bsearch-Funktion** führt eine binäre Suche nach einem sortierten Array von *Zahlenelementen* durch, die jeweils eine Größe von *Breitenbytes* aufweisen. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *der Schlüssel* ist der gesuchte Wert. Der *Parameter compare* ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Arrayelement vergleicht. Es gibt einen der folgenden Werte zurück, die ihre Beziehung angeben:
+Die **bsearch** -Funktion führt eine binäre Suche eines sortierten Arrays von *Zahlen* Elementen durch, wobei jede *Breite* Byte groß ist. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *Key* ist der Wert, der gesucht wird. Der *Compare* -Parameter ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Array Element vergleicht. Sie gibt einen der folgenden Werte zurück, die ihre Beziehung angeben:
 
-|Wert, der von *der Vergleichsroutine* zurückgegeben wird|BESCHREIBUNG|
+|Von der *Vergleichs* Routine zurückgegebener Wert|Beschreibung|
 |-----------------------------------------|-----------------|
 |\< 0|Der Schlüssel ist kleiner als das Arrayelement.|
 |0|Schlüssel und Arrayelement sind gleich.|
 |> 0|Der Schlüssel ist größer als das Arrayelement.|
 
-Diese Funktion überprüft ihre Parameter. Wenn *compare*, *Key* oder *number* ist **NULL**, oder wenn *Basis* **NULL** ist und *Zahl* ist ungleich Null, oder wenn *breite* null ist, ruft die Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, `EINVAL` wird **errno** auf gesetzt, und die Funktion gibt **NULL**zurück.
+Diese Funktion überprüft ihre Parameter. Wenn *Compare*, *Key* oder *Number* **null**ist, oder wenn *Base* **null** und *Number* ungleich NULL ist, oder wenn *Width* gleich 0 (null) ist, ruft die Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf `EINVAL` festgelegt, und die Funktion gibt **null**zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -139,7 +139,7 @@ cat cow dog goat horse human pig rat
 cat found at 002F0F04
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Suchen und Sortieren](../../c-runtime-library/searching-and-sorting.md)\
 [_lfind](lfind.md)\

@@ -1,9 +1,11 @@
 ---
 title: _fputc_nolock, _fputwc_nolock
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _fputwc_nolock
 - _fputc_nolock
+- _o__fputc_nolock
+- _o__fputwc_nolock
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _fputtc_nolock function
 - _fputwc_nolock function
 ms.assetid: c63eb3ad-58fa-46d0-9249-9c25f815eab9
-ms.openlocfilehash: e49191dfd6e4d360a8dd3123d6a84320b4de8a08
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e25539bf6c6d590a787615e091ec68753cd1c93e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956942"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920139"
 ---
 # <a name="_fputc_nolock-_fputwc_nolock"></a>_fputc_nolock, _fputwc_nolock
 
@@ -62,11 +65,11 @@ wint_t _fputwc_nolock(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu schreibende Zeichen.
 
-*stream*<br/>
-Zeiger auf die **FILE**-Struktur.
+*Streich*<br/>
+Zeiger zur **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -76,7 +79,9 @@ Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Informationen zu F
 
 **_fputc_nolock** und **_fputwc_nolock** sind mit **fputc** und **fputwc**identisch, mit dem Unterschied, dass Sie nicht vor Störungen durch andere Threads geschützt sind. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsichere Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
 
-Die zwei Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **_fputc_nolock** unterstützt derzeit nicht die Ausgabe in einen Unicode-Stream.
+Die zwei Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. die Ausgabe in einen Unicode-Stream wird von **_fputc_nolock** derzeit nicht unterstützt.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -91,7 +96,7 @@ Die zwei Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geö
 |**_fputc_nolock**|\<stdio.h>|
 |**_fputwc_nolock**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -118,7 +123,7 @@ int main( void )
 This is a test of _fputc_nolock!!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [fgetc, fgetwc](fgetc-fgetwc.md)<br/>

@@ -6,16 +6,16 @@ helpviewer_keywords:
 - record scrolling [C++]
 - scrolling records
 ms.assetid: f8b13477-2a37-459e-a30c-806fb78165ac
-ms.openlocfilehash: 8bbacd6625e846381d2bafc8133e8b36efe51b1a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 14ef845c3029f1d9a30d257f91c1b33017b6ec8b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80213446"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336939"
 ---
 # <a name="command-handlers-for-record-scrolling--mfc-data-access"></a>Befehlshandler für das Scrollen von Datensätzen (MFC-Datenzugriff)
 
-Die [CRecordView](../mfc/reference/crecordview-class.md) -Klasse stellt die standardmäßige Befehls Behandlung für die folgenden Standard Befehle bereit:
+Die [CRecordView-Klasse](../mfc/reference/crecordview-class.md) bietet standardmäßige Befehlsbehandlung für die folgenden Standardbefehle:
 
 - ID_RECORD_MOVE_FIRST
 
@@ -25,11 +25,11 @@ Die [CRecordView](../mfc/reference/crecordview-class.md) -Klasse stellt die stan
 
 - ID_RECORD_MOVE_PREV
 
-Die `OnMove` Member-Funktion bietet standardmäßige Befehls Behandlung für alle vier Befehle, die von Datensatz zu Datensatz wechseln. Nachdem diese Befehle ausgegeben wurden, lädt RFX (oder DFX) den neuen Datensatz in die Recordset-Felder, und DDX verschiebt die Werte in die Steuerelemente des Datensatzformulars. Weitere Informationen zu RFX finden Sie unter [Daten Satz Feld Austausch (RFX)](../data/odbc/record-field-exchange-rfx.md).
+Die `OnMove` Memberfunktion bietet die Standardbefehlsbehandlung für alle vier Befehle, die von Datensatz zu Datensatz verschoben werden. Nachdem diese Befehle ausgegeben wurden, lädt RFX (oder DFX) den neuen Datensatz in die Recordset-Felder, und DDX verschiebt die Werte in die Steuerelemente des Datensatzformulars. Informationen zu RFX finden Sie unter [Datensatzfeldaustausch (RFX)](../data/odbc/record-field-exchange-rfx.md).
 
 > [!NOTE]
->  Verwenden Sie diese Standardbefehls-IDs für alle Benutzeroberflächenobjekte, die den standardmäßigen Navigationsbefehlen des Datensatzes zugeordnet sind.
+> Verwenden Sie diese Standardbefehls-IDs für alle Benutzeroberflächenobjekte, die den standardmäßigen Navigationsbefehlen des Datensatzes zugeordnet sind.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Unterstützen der Navigation in einer Daten Satz Ansicht](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)
+[Navigationsunterstützung in einer Datensatzansicht](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)

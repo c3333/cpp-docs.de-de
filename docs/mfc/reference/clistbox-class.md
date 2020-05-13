@@ -103,12 +103,12 @@ helpviewer_keywords:
 - CListBox [MFC], SetTopIndex
 - CListBox [MFC], VKeyToItem
 ms.assetid: 7ba3c699-c286-4cd9-9066-532c41ec05d1
-ms.openlocfilehash: 5bc66ab2775ebb9023c65c9decae205604c978c6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 171038ebaaed815aa687c200fe3210bde8000be3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372228"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753592"
 ---
 # <a name="clistbox-class"></a>CListBox-Klasse
 
@@ -236,7 +236,7 @@ Wenn Sie Speicher im `CListBox` Objekt zuweisen, `CListBox` überschreiben Sie d
 
 `CListBox`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -717,7 +717,7 @@ Der Doubleword-Wert war der *dwItemData-Parameter* eines [SetItemData-Aufrufs.](
 
 Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Listenfeldelement als Zeiger zugeordnet ist (**void** <strong>\*</strong>).
 
-```
+```cpp
 void* GetItemDataPtr(int nIndex) const;
 ```
 
@@ -1087,7 +1087,7 @@ Eine Beschreibung der `MEASUREITEMSTRUCT` Struktur finden Sie unter [CWnd::OnMea
 
 Entfernt alle Elemente aus einem Listenfeld.
 
-```
+```cpp
 void ResetContent();
 ```
 
@@ -1169,7 +1169,7 @@ Verwenden Sie diese Memberfunktion nur mit Listenfeldern mit mehreren Auswahlen.
 
 Legt den Anker in einem Listenfeld mit mehreren Auswahlen fest, um eine erweiterte Auswahl zu beginnen.
 
-```
+```cpp
 void SetAnchorIndex(int nIndex);
 ```
 
@@ -1220,7 +1220,7 @@ Wenn das Element nicht sichtbar ist, wird es in die Ansicht gescrollt.
 
 Legt die Breite in Pixeln aller Spalten in einem Listenfeld mit mehreren Spalten fest (erstellt mit dem [Stil LBS_MULTICOLUMN).](../../mfc/reference/styles-used-by-mfc.md#list-box-styles)
 
-```
+```cpp
 void SetColumnWidth(int cxWidth);
 ```
 
@@ -1266,7 +1266,7 @@ Um eine Auswahl in einem Listenfeld mit mehreren Auswahlen festzulegen oder zu e
 
 Legt die Breite in Pixel fest, durch die ein Listenfeld horizontal gescrollt werden kann.
 
-```
+```cpp
 void SetHorizontalExtent(int cxExtent);
 ```
 
@@ -1434,7 +1434,7 @@ Um ein Element aus einem Listenfeld mit einer Auswahl auszuwählen, verwenden Si
 
 Legt die Tabstopppositionen in einem Listenfeld fest.
 
-```
+```cpp
 void SetTabStops();
 BOOL SetTabStops(const int& cxEachStop);
 
@@ -1537,7 +1537,7 @@ Ein Rückgabewert von 0 oder höher gibt den Index eines Elements im Listenfeld 
 
 [!code-cpp[NVC_MFC_CListBox#41](../../mfc/codesnippet/cpp/clistbox-class_41.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CTRLTEST](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

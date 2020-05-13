@@ -1,8 +1,9 @@
 ---
 title: _findclose
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _findclose
+- _o__findclose
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - _findclose function
 - findclose function
 ms.assetid: 9216c573-0878-444c-b5d7-cdaf16fb9163
-ms.openlocfilehash: c67336cc12bcdee754edd40b91078faa83a17984
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: dffe2ff71f1eecaec78c75867ebb7e34a963ee3a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957319"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911809"
 ---
 # <a name="_findclose"></a>_findclose
 
@@ -48,11 +50,15 @@ int _findclose(
 ### <a name="parameters"></a>Parameter
 
 *bewältigen*<br/>
-Such handle, das von einem vorherigen-Befehl an **_findfirst**zurückgegeben wurde.
+Das Suchhandle, das von einem vorherigen- **_findfirst**zurückgegeben wurde.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Bei erfolgreicher Ausführung gibt **_findclose** 0 zurück. Andernfalls wird-1 zurückgegeben und **errno** auf **ENOENT**festgelegt, um anzugeben, dass keine weiteren übereinstimmenden Dateien gefunden werden konnten.
+
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -60,9 +66,9 @@ Bei erfolgreicher Ausführung gibt **_findclose** 0 zurück. Andernfalls wird-1 
 |--------------|---------------------|
 |**_findclose**|\<io.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Systemaufrufe](../../c-runtime-library/system-calls.md)<br/>
 [Dateinamen-Suchfunktionen](../../c-runtime-library/filename-search-functions.md)<br/>

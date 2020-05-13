@@ -1,8 +1,9 @@
 ---
 title: _get_pgmptr
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _get_pgmptr
+- _o__get_pgmptr
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,16 +30,16 @@ helpviewer_keywords:
 - pgmptr global variable
 - _pgmptr global variable
 ms.assetid: 29f16a9f-a685-4721-add3-7fad4f67eece
-ms.openlocfilehash: 4f9a3b19cc7eb1870b87ec46b7923987ec646e32
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a4a9bddfa861727e174325dc639868e3529162cd
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955763"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918215"
 ---
 # <a name="_get_pgmptr"></a>_get_pgmptr
 
-Ruft den aktuellen Wert der globalen Variablen " **_pgmptr** " ab.
+Ruft den aktuellen Wert der **_pgmptr** globalen Variablen ab.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,7 +52,7 @@ errno_t _get_pgmptr(
 ### <a name="parameters"></a>Parameter
 
 *pValue*<br/>
-Ein Zeiger auf eine Zeichenfolge, die mit dem aktuellen Wert der **_pgmptr** -Variablen aufgefüllt werden soll.
+Ein Zeiger auf eine Zeichenfolge, die mit dem aktuellen Wert der **_pgmptr** Variablen aufgefüllt werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -58,16 +60,18 @@ Gibt 0 (null) zurück, wenn der Vorgang erfolgreich war. Wenn ein Fehler auftrit
 
 ## <a name="remarks"></a>Hinweise
 
-**_Get_pgmptr** wird nur aufgerufen, wenn das Programm einen schmalen Einstiegspunkt hat, wie z. b. **Main ()** oder **WinMain ()** . Die globale Variable **_pgmptr** enthält den vollständigen Pfad zu der ausführbaren Datei, die dem Prozess zugeordnet ist. Weitere Informationen finden Sie unter [_pgmptr, _wpgmptr](../../c-runtime-library/pgmptr-wpgmptr.md).
+**_Get_pgmptr** nur dann aufgerufen, wenn das Programm einen schmalen Einstiegspunkt hat, z. b. **Main ()** oder **WinMain ()**. Die **_pgmptr** globale Variable enthält den vollständigen Pfad zu der ausführbaren Datei, die dem Prozess zugeordnet ist. Weitere Informationen finden Sie unter [_pgmptr, _wpgmptr](../../c-runtime-library/pgmptr-wpgmptr.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_get_pgmptr**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_get_wpgmptr](get-wpgmptr.md)<br/>

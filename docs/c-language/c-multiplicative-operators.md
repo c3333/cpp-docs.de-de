@@ -11,35 +11,35 @@ helpviewer_keywords:
 - slash (/) operator
 - multiplication operator [C++], multiplicative operators
 ms.assetid: 495471c9-319b-4eb4-bd97-039a025fd3a9
-ms.openlocfilehash: e06ef25c14f8073d2b8753b57c9593af7bb6c69f
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: f9f5f62e2326826e3087a8668cd9107da4b85388
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857124"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334994"
 ---
 # <a name="c-multiplicative-operators"></a>C-Multiplikationsoperatoren
 
-Die Multiplikationsoperatoren führen Multiplikations- (<strong>\*</strong>), Divisions- ( **/** ) und Restoperationen ( **%** ) aus.
+Die multiplikationsoperatoren führen<strong>\*</strong>Multiplikationsvorgänge ( ), Division (**/**), und Restvorgänge (**%**) aus.
 
 ## <a name="syntax"></a>Syntax
 
-*multiplicative-expression*: &nbsp;&nbsp;&nbsp;&nbsp;*cast-expression* &nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression* <strong>\*</strong> *cast-expression* &nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression* **/** *cast-expression* &nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression* **%** *cast-expression*
+*Multiplikativ-Ausdruck* &nbsp; &nbsp; &nbsp; &nbsp;: *Umwandlungsausdruck* &nbsp; &nbsp; &nbsp; &nbsp; *multiplikativ-ausdrucksexpression* <strong>\*</strong> *cast-expression* &nbsp; &nbsp; &nbsp; &nbsp; *multiplikativ-ausdrucksexpression* **/** *multiplizieren-expression* **%** *cast-expression* &nbsp; &nbsp; &nbsp; &nbsp; *multiplizierend-ausdrucksexpression*
 
-Die Operanden des Restoperators ( **%** ) müssen ganzzahlig sein. Die Operatoren der Multiplikation (<strong>\*</strong>) und der Division ( **/** ) können Operanden vom Typ Ganzzahl, Gleitkomma oder Zeiger akzeptieren. Dabei können sich die Operandentypen unterscheiden.
+Die Operanden des Restoperators**%**( ) müssen integral sein. Die Operatoren<strong>\*</strong>Multiplikation**/**( ) und Division ( ) können integrale oder schwebende Operanden verwenden; die Typen der Operanden können unterschiedlich sein.
 
 Die multiplikativen Operatoren führen die üblichen arithmetischen Konvertierungen für die Operanden aus. Der Ergebnistyp ist der Typ der Operanden nach der Konvertierung.
 
 > [!NOTE]
->  Da Konvertierungen, die von den Multiplikationsoperatoren ausgeführt werden, keine Überlauf- oder Unterlaufbedingungen vorsehen, gehen Informationen möglicherweise verloren, wenn das Ergebnis eines Multiplikationsvorgangs nach der Konvertierung nicht im Typ der Operanden dargestellt werden kann.
+> Da Konvertierungen, die von den Multiplikationsoperatoren ausgeführt werden, keine Überlauf- oder Unterlaufbedingungen vorsehen, gehen Informationen möglicherweise verloren, wenn das Ergebnis eines Multiplikationsvorgangs nach der Konvertierung nicht im Typ der Operanden dargestellt werden kann.
 
 Die multiplikativen C-Operatoren sind im Folgenden beschrieben:
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |--------------|-----------------|
 |<strong>\*</strong>|Der multiplikative C-Operator bewirkt die Multiplizierung seiner beiden Operanden.|
-|**/**|Der Divisionsoperator bewirkt, dass der erste Operanden durch den zweiten geteilt wird. Wenn zwei ganzzahlige Operanden dividiert werden und das Ergebnis keine ganze Zahl ist, wird sie gemäß den folgenden Regeln gekürzt:<br/><br/>– Das Ergebnis der Division durch 0 (null) ist entsprechend dem ANSI C-Standard nicht definiert. Der Microsoft C-Compiler generiert einen Fehler zur Kompilierzeit oder Laufzeit.<br/><br/>– Wenn beide Operanden positiv oder ohne Vorzeichen sind, wird das Ergebnis in Richtung 0 (null) abgeschnitten.<br/><br/>– Wenn einer der beiden Operanden negativ ist, ist es von der Implementierung abhängig, ob das Ergebnis der Operation die größte ganze Zahl kleiner oder gleich dem algebraischen Quotienten oder die kleinste ganze Zahl größer oder gleich dem algebraischen Quotienten ist. (Weitere Informationen finden Sie unten im Microsoft-spezifischen Abschnitt.)|
-|**%**|Das Ergebnis des Restoperators ist das Restergebnis, nachdem der erste Operand durch den zweiten Operanden geteilt wurde. Wenn die Division ungenau ist, wird das Ergebnis durch die folgenden Regeln bestimmt:<br/><br/>– Wenn der rechte Operand 0 (null) ist, ist das Ergebnis nicht definiert.<br/><br/>– Wenn beide Operanden positiv oder ohne Vorzeichen sind, ist das Ergebnis positiv.<br/><br/>– Wenn einer der beiden Operanden negativ und das Ergebnis ungenau ist, ist das Ergebnis von der Implementierung abhängig. (Weitere Informationen finden Sie unten im Microsoft-spezifischen Abschnitt.)|
+|**/**|Der Divisionsoperator bewirkt, dass der erste Operanden durch den zweiten geteilt wird. Wenn zwei ganzzahlige Operanden dividiert werden und das Ergebnis keine ganze Zahl ist, wird sie gemäß den folgenden Regeln gekürzt:<br/><br/>– Das Ergebnis der Division durch 0 (null) ist entsprechend dem ANSI C-Standard nicht definiert. Der Microsoft C-Compiler generiert einen Fehler zur Kompilierzeit oder Laufzeit.<br/><br/>– Wenn beide Operanden positiv oder ohne Vorzeichen sind, wird das Ergebnis in Richtung 0 (null) abgeschnitten.<br/><br/>– Wenn einer der beiden Operanden negativ ist, ist es von der Implementierung abhängig, ob das Ergebnis der Operation die größte ganze Zahl kleiner oder gleich dem algebraischen Quotienten oder die kleinste ganze Zahl größer oder gleich dem algebraischen Quotienten ist. (Siehe den Microsoft-spezifischen Abschnitt unten.)|
+|**%**|Das Ergebnis des Restoperators ist das Restergebnis, nachdem der erste Operand durch den zweiten Operanden geteilt wurde. Wenn die Division ungenau ist, wird das Ergebnis durch die folgenden Regeln bestimmt:<br/><br/>– Wenn der rechte Operand 0 (null) ist, ist das Ergebnis nicht definiert.<br/><br/>– Wenn beide Operanden positiv oder ohne Vorzeichen sind, ist das Ergebnis positiv.<br/><br/>– Wenn einer der beiden Operanden negativ und das Ergebnis ungenau ist, ist das Ergebnis von der Implementierung abhängig. (Siehe den Microsoft-spezifischen Abschnitt unten.)|
 
 ### <a name="microsoft-specific"></a>Microsoft-spezifisch
 
@@ -76,7 +76,7 @@ n = i % j;
 
 Diese Anweisung weist `n` den ganzzahligen Rest 1 zu, wenn 10 durch 3 dividiert wird.
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
 Das Zeichen für den Rest entspricht dem Zeichen des Divisors. Beispiel:
 
@@ -87,8 +87,8 @@ Das Zeichen für den Rest entspricht dem Zeichen des Divisors. Beispiel:
 
 In jedem Fall haben `50` und `2` dasselbe Zeichen.
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 
-[Multiplikationsoperatoren und der Modulus-Operator](../cpp/multiplicative-operators-and-the-modulus-operator.md)
+[Multiplikativoperatoren und der Modulus-Operator](../cpp/multiplicative-operators-and-the-modulus-operator.md)

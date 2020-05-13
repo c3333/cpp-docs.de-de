@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Assembly Language
 - Compiler Intrinsics
 ms.openlocfilehash: aa16d86d3a2588e8e073d40088b61a0a2aa7c74e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "66182420"
 ---
 # <a name="languages"></a>Sprachen

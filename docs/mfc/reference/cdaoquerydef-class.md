@@ -66,12 +66,12 @@ helpviewer_keywords:
 - CDaoQueryDef [MFC], m_pDAOQueryDef
 - CDaoQueryDef [MFC], m_pDatabase
 ms.assetid: 9676a4a3-c712-44d4-8c5d-d1cc78288d3a
-ms.openlocfilehash: 133746ff1e4a9453f9563347724a47855a8a3228
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ed298c40daa9485683d0b989e47b97fdce9f6562
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368950"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754711"
 ---
 # <a name="cdaoquerydef-class"></a>CDaoQueryDef-Klasse
 
@@ -187,7 +187,7 @@ Weitere Informationen finden Sie in den Themen "QueryDef Object", "QueryDefs Col
 
 `CDaoQueryDef`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -410,7 +410,7 @@ Die Anzahl der in der Abfrage definierten Felder.
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen zu einem Feld abzurufen, das in der querydef definiert ist.
 
-```
+```cpp
 void GetFieldInfo(
     int nIndex,
     CDaoFieldInfo& fieldinfo,
@@ -503,7 +503,7 @@ Weitere Informationen finden Sie in den Themen "Parameter object", "Parameters C
 
 Rufen Sie diese Memberfunktion auf, um Informationen über einen in der querydef definierten Parameter abzurufen.
 
-```
+```cpp
 void GetParameterInfo(
     int nIndex,
     CDaoParameterInfo& paraminfo,
@@ -714,7 +714,7 @@ Sobald die querydef geöffnet ist, können Sie die [Memberfunktion Execute](#exe
 
 Rufen Sie diese Memberfunktion auf, um die Verbindungszeichenfolge des querydef-Objekts festzulegen.
 
-```
+```cpp
 void SetConnect(LPCTSTR lpszConnect);
 ```
 
@@ -738,7 +738,7 @@ Weitere Informationen zur Struktur der Verbindungszeichenfolge und Beispiele fü
 
 Rufen Sie diese Memberfunktion auf, wenn Sie den Namen einer querydef ändern möchten, die nicht temporär ist.
 
-```
+```cpp
 void SetName(LPCTSTR lpszName);
 ```
 
@@ -755,7 +755,7 @@ Querydef-Namen sind eindeutige, benutzerdefinierte Namen. Sie können `SetName` 
 
 Rufen Sie diese Memberfunktion auf, um das Zeitlimit festzulegen, bevor eine Abfrage auf eine ODBC-Datenquelle zeitüberschreitung erfolgt.
 
-```
+```cpp
 void SetODBCTimeout(short nODBCTimeout);
 ```
 
@@ -805,7 +805,7 @@ Geben Sie den Wert `COleVariant` an, der als Objekt festgelegt werden soll. Info
 
 Rufen Sie diese Memberfunktion als Teil des Einrichtens einer SQL-Pass-Through-Abfrage für eine externe Datenbank auf.
 
-```
+```cpp
 void SetReturnsRecords(BOOL bReturnsRecords);
 ```
 
@@ -822,7 +822,7 @@ In einem solchen Fall müssen Sie die querydef `CDaoQueryDef` erstellen und ihre
 
 Rufen Sie diese Memberfunktion auf, um die SQL-Anweisung festzulegen, die von der querydef ausgeführt wird.
 
-```
+```cpp
 void SetSQL(LPCTSTR lpszSQL);
 ```
 
@@ -835,7 +835,7 @@ Eine Zeichenfolge, die eine vollständige SQL-Anweisung enthält, die für die A
 
 Eine typische `SetSQL` Verwendung von ist das Einrichten eines querydef-Objekts für die Verwendung in einer SQL-Pass-Through-Abfrage. (Die Syntax von SQL-Pass-Through-Abfragen auf Ihrem Ziel-DBMS finden Sie in der Dokumentation zu Ihrem DBMS.)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

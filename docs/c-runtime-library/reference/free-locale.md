@@ -1,8 +1,9 @@
 ---
 title: _free_locale
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _free_locale
+- _o__free_locale
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-locale-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - locales, freeing
 - _free_locale function
 ms.assetid: 1f08d348-ab32-4028-a145-6cbd51b49af9
-ms.openlocfilehash: 31a8e3191c5e370acb00aaf12e21f0c712c51dd1
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 8dbc424c00464966605cce5c44118b88eb5335d3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956746"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920439"
 ---
 # <a name="_free_locale"></a>_free_locale
 
@@ -55,19 +57,21 @@ Das freizugebende locale-Objekt
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_free_locale** -Funktion wird verwendet, um das Gebiets Schema Objekt freizugeben, das aus einem-Rückruf von **_get_current_locale** oder **_create_locale**abgerufen wurde.
+Die **_free_locale** -Funktion wird verwendet, um das Gebiets Schema Objekt freizugeben, das aus einem- **aufruf_get_current_locale** oder **_create_locale**abgerufen wird.
 
 Der vorherige Name dieser Funktion, **__free_locale** (mit zwei führenden unterstrichen), ist veraltet.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|**Routine**|Erforderlicher Header|
+|**Rout**|Erforderlicher Header|
 |---------------|---------------------|
 |**_free_locale**|\<locale.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_get_current_locale](get-current-locale.md)<br/>
 [_create_locale, _wcreate_locale](create-locale-wcreate-locale.md)<br/>

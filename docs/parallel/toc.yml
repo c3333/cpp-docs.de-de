@@ -1,0 +1,658 @@
+- name: Parallele Programmierung in MSVC
+  href: ../parallel/parallel-programming-in-visual-cpp.md
+- name: Automatische Parallelisierung und automatische Vektorisierung
+  href: ../parallel/auto-parallelization-and-auto-vectorization.md
+- name: C++ Accelerated Massive Parallelism (AMP)
+  expanded: false
+  items:
+    - name: C++ AMP (C++ Accelerated Massive Parallelism)
+      href: ../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md
+    - name: Übersicht über C++ AMP
+      href: ../parallel/amp/cpp-amp-overview.md
+    - name: Verwenden von Kacheln
+      href: ../parallel/amp/using-tiles.md
+    - name: C++ AMP in UWP-Apps
+      href: ../parallel/amp/using-cpp-amp-in-windows-store-apps.md
+    - name: 'Exemplarische Vorgehensweise: Matrizenmultiplikation'
+      href: ../parallel/amp/walkthrough-matrix-multiplication.md
+    - name: 'Exemplarische Vorgehensweise: Debuggen einer C++ AMP-Anwendung'
+      href: ../parallel/amp/walkthrough-debugging-a-cpp-amp-application.md
+    - name: 'Verwenden von Lambdaausdrücken, Funktionsobjekten und eingeschränkten Funktionen'
+      href: ../parallel/amp/using-lambdas-function-objects-and-restricted-functions.md
+    - name: Grafiken (C++ AMP)
+      href: ../parallel/amp/graphics-cpp-amp.md
+    - name: Verwenden von accelerator- und accelerator_view-Objekten
+      href: ../parallel/amp/using-accelerator-and-accelerator-view-objects.md
+    - name: Referenz (C++ AMP)
+      expanded: false
+      items:
+        - name: Referenz (C++ AMP)
+          href: ../parallel/amp/reference/reference-cpp-amp.md
+        - name: Concurrency-Namespace (C++ AMP)
+          expanded: false
+          items:
+            - name: Concurrency-Namespace (C++ AMP)
+              href: ../parallel/amp/reference/concurrency-namespace-cpp-amp.md
+            - name: Concurrency-Namespace-Funktionen (AMP)
+              href: ../parallel/amp/reference/concurrency-namespace-functions-amp.md
+            - name: Concurrency-Namespace-Enumerationen (AMP)
+              href: ../parallel/amp/reference/concurrency-namespace-enums-amp.md
+            - name: Concurrency-Namespace-Operatoren (AMP)
+              href: ../parallel/amp/reference/concurrency-namespace-operators-amp.md
+            - name: Concurrency-Namespace-Konstanten (AMP)
+              href: ../parallel/amp/reference/concurrency-namespace-constants-amp.md
+            - name: accelerator-Klasse
+              href: ../parallel/amp/reference/accelerator-class.md
+            - name: accelerator_view-Klasse
+              href: ../parallel/amp/reference/accelerator-view-class.md
+            - name: accelerator_view_removed-Klasse
+              href: ../parallel/amp/reference/accelerator-view-removed-class.md
+            - name: array-Klasse
+              href: ../parallel/amp/reference/array-class.md
+            - name: array_view-Klasse
+              href: ../parallel/amp/reference/array-view-class.md
+            - name: completion_future-Klasse
+              href: ../parallel/amp/reference/completion-future-class.md
+            - name: extent-Klasse (C++ AMP)
+              href: ../parallel/amp/reference/extent-class.md
+            - name: index-Klasse
+              href: ../parallel/amp/reference/index-class.md
+            - name: invalid_compute_domain-Klasse
+              href: ../parallel/amp/reference/invalid-compute-domain-class.md
+            - name: out_of_memory-Klasse
+              href: ../parallel/amp/reference/out-of-memory-class.md
+            - name: runtime_exception-Klasse
+              href: ../parallel/amp/reference/runtime-exception-class.md
+            - name: tile_barrier-Klasse
+              href: ../parallel/amp/reference/tile-barrier-class.md
+            - name: tiled_extent-Klasse
+              href: ../parallel/amp/reference/tiled-extent-class.md
+            - name: tiled_index-Klasse
+              href: ../parallel/amp/reference/tiled-index-class.md
+            - name: uninitialized_object-Klasse
+              href: ../parallel/amp/reference/uninitialized-object-class.md
+            - name: unsupported_feature-Klasse
+              href: ../parallel/amp/reference/unsupported-feature-class.md
+        - name: 'Concurrency::direct3d-Namespace'
+          expanded: false
+          items:
+            - name: 'Concurrency::direct3d-Namespace'
+              href: ../parallel/amp/reference/concurrency-direct3d-namespace.md
+            - name: 'Concurrency::direct3d-Namespace-Funktionen (AMP)'
+              href: ../parallel/amp/reference/concurrency-direct3d-namespace-functions-amp.md
+            - name: adopt_d3d_access_lock_t-Struktur
+              href: ../parallel/amp/reference/adopt-d3d-access-lock-t-structure.md
+            - name: scoped_d3d_access_lock-Klasse
+              href: ../parallel/amp/reference/scoped-d3d-access-lock-class.md
+        - name: 'Concurrency::fast_math-Namespace'
+          expanded: false
+          items:
+            - name: 'Concurrency::fast_math-Namespace'
+              href: ../parallel/amp/reference/concurrency-fast-math-namespace.md
+            - name: 'Concurrency::fast_math-Namespace-Funktionen'
+              href: ../parallel/amp/reference/concurrency-fast-math-namespace-functions.md
+        - name: 'Concurrency::graphics-Namespace'
+          expanded: false
+          items:
+            - name: 'Concurrency::graphics-Namespace'
+              href: ../parallel/amp/reference/concurrency-graphics-namespace.md
+            - name: 'Concurrency::graphics::direct3d-Namespace'
+              expanded: false
+              items:
+                - name: 'Concurrency::graphics::direct3d-Namespace'
+                  href: ../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md
+                - name: 'Concurrency::graphics::direct3d-Namespace-Funktionen'
+                  href: ../parallel/amp/reference/concurrency-graphics-direct3d-namespace-functions.md
+            - name: 'Concurrency::graphics-Namespace-Funktionen'
+              href: ../parallel/amp/reference/concurrency-graphics-namespace-functions.md
+            - name: 'Concurrency::graphics-Namespace-Enumerationen'
+              href: ../parallel/amp/reference/concurrency-graphics-namespace-enums.md
+            - name: double_2-Klasse
+              href: ../parallel/amp/reference/double-2-class.md
+            - name: double_3-Klasse
+              href: ../parallel/amp/reference/double-3-class.md
+            - name: double_4-Klasse
+              href: ../parallel/amp/reference/double-4-class.md
+            - name: float_2-Klasse
+              href: ../parallel/amp/reference/float-2-class.md
+            - name: float_3-Klasse
+              href: ../parallel/amp/reference/float-3-class.md
+            - name: float_4-Klasse
+              href: ../parallel/amp/reference/float-4-class.md
+            - name: int_2-Klasse
+              href: ../parallel/amp/reference/int-2-class.md
+            - name: int_3-Klasse
+              href: ../parallel/amp/reference/int-3-class.md
+            - name: int_4-Klasse
+              href: ../parallel/amp/reference/int-4-class.md
+            - name: norm-Klasse
+              href: ../parallel/amp/reference/norm-class.md
+            - name: norm_2-Klasse
+              href: ../parallel/amp/reference/norm-2-class.md
+            - name: norm_3-Klasse
+              href: ../parallel/amp/reference/norm-3-class.md
+            - name: norm_4-Klasse
+              href: ../parallel/amp/reference/norm-4-class.md
+            - name: sampler-Klasse
+              href: ../parallel/amp/reference/sampler-class.md
+            - name: short_vector-Struktur
+              href: ../parallel/amp/reference/short-vector-structure.md
+            - name: short_vector_traits-Struktur
+              href: ../parallel/amp/reference/short-vector-traits-structure.md
+            - name: texture-Klasse
+              href: ../parallel/amp/reference/texture-class.md
+            - name: texture_view-Klasse
+              href: ../parallel/amp/reference/texture-view-class.md
+            - name: writeonly_texture_view-Klasse
+              href: ../parallel/amp/reference/writeonly-texture-view-class.md
+            - name: uint_2-Klasse
+              href: ../parallel/amp/reference/uint-2-class.md
+            - name: uint_3-Klasse
+              href: ../parallel/amp/reference/uint-3-class.md
+            - name: uint_4-Klasse
+              href: ../parallel/amp/reference/uint-4-class.md
+            - name: unorm-Klasse
+              href: ../parallel/amp/reference/unorm-class.md
+            - name: unorm_2-Klasse
+              href: ../parallel/amp/reference/unorm-2-class.md
+            - name: unorm_3-Klasse
+              href: ../parallel/amp/reference/unorm-3-class.md
+            - name: unorm_4-Klasse
+              href: ../parallel/amp/reference/unorm-4-class.md
+        - name: 'Concurrency::precise_math-Namespace'
+          expanded: false
+          items:
+            - name: 'Concurrency::precise_math-Namespace'
+              href: ../parallel/amp/reference/concurrency-precise-math-namespace.md
+            - name: 'Concurrency::precise_math-Namespace-Funktionen'
+              href: ../parallel/amp/reference/concurrency-precise-math-namespace-functions.md
+- name: Concurrency Runtime (ConCRT)
+  expanded: false
+  items:
+    - name: Concurrency Runtime
+      href: ../parallel/concrt/concurrency-runtime.md
+    - name: Übersicht über die Concurrency Runtime
+      href: ../parallel/concrt/overview-of-the-concurrency-runtime.md
+    - name: Ausnahmebehandlung in der Concurrency Runtime
+      href: ../parallel/concrt/exception-handling-in-the-concurrency-runtime.md
+    - name: Diagnosetools für die parallele Ausführung (Concurrency Runtime)
+      href: ../parallel/concrt/parallel-diagnostic-tools-concurrency-runtime.md
+    - name: Erstellen von asynchronen Vorgängen in C++ für UWP-Apps
+      href: ../parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps.md
+    - name: Die Concurrency Runtime im Vergleich zu anderen Parallelitätsmodellen
+      expanded: false
+      items:
+        - name: Die Concurrency Runtime im Vergleich zu anderen Parallelitätsmodellen
+          href: ../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md
+        - name: Migrieren von OpenMP zur Concurrency Runtime
+          expanded: false
+          items:
+            - name: Migrieren von OpenMP zur Concurrency Runtime
+              href: ../parallel/concrt/migrating-from-openmp-to-the-concurrency-runtime.md
+            - name: 'Vorgehensweise: Konvertieren einer parallelen for-Schleife in OpenMP zur Verwendung der Concurrency Runtime'
+              href: ../parallel/concrt/how-to-convert-an-openmp-parallel-for-loop-to-use-the-concurrency-runtime.md
+            - name: 'Vorgehensweise: Konvertieren einer OpenMP-Schleife mit Abbruch zur Verwendung der Concurrency Runtime'
+              href: ../parallel/concrt/convert-an-openmp-loop-that-uses-cancellation.md
+            - name: 'Vorgehensweise: Konvertieren einer OpenMP-Schleife mit Ausnahmebehandlung zur Verwendung der Concurrency Runtime'
+              href: ../parallel/concrt/convert-an-openmp-loop-that-uses-exception-handling.md
+            - name: 'Vorgehensweise: Konvertieren einer OpenMP-Schleife mit einer reduction-Variable zur Verwendung der Concurrency Runtime'
+              href: ../parallel/concrt/convert-an-openmp-loop-that-uses-a-reduction-variable.md
+    - name: Parallel Patterns Library (PPL)
+      expanded: false
+      items:
+        - name: Parallel Patterns Library (PPL)
+          href: ../parallel/concrt/parallel-patterns-library-ppl.md
+        - name: Taskparallelität (Concurrency Runtime)
+          expanded: false
+          items:
+            - name: Taskparallelität (Concurrency Runtime)
+              href: ../parallel/concrt/task-parallelism-concurrency-runtime.md
+            - name: 'Vorgehensweise: Verwenden von parallel_invoke zum Schreiben einer Routine für paralleles Sortieren'
+              href: ../parallel/concrt/how-to-use-parallel-invoke-to-write-a-parallel-sort-routine.md
+            - name: 'Vorgehensweise: Ausführen von parallelen Vorgängen mithilfe von parallel_invoke'
+              href: ../parallel/concrt/how-to-use-parallel-invoke-to-execute-parallel-operations.md
+            - name: 'Vorgehensweise: Erstellen eines Tasks, der nach einer Verzögerung abgeschlossen wird'
+              href: ../parallel/concrt/how-to-create-a-task-that-completes-after-a-delay.md
+        - name: Parallele Algorithmen
+          expanded: false
+          items:
+            - name: Parallele Algorithmen
+              href: ../parallel/concrt/parallel-algorithms.md
+            - name: 'Vorgehensweise: Schreiben einer parallel_for-Schleife'
+              href: ../parallel/concrt/how-to-write-a-parallel-for-loop.md
+            - name: 'Vorgehensweise: Schreiben einer parallel_for_each-Schleife'
+              href: ../parallel/concrt/how-to-write-a-parallel-for-each-loop.md
+            - name: 'Vorgehensweise: Paralleles Ausführen von Zuordnungs- und Reduzierungsvorgängen'
+              href: ../parallel/concrt/how-to-perform-map-and-reduce-operations-in-parallel.md
+        - name: Parallele Container und Objekte
+          expanded: false
+          items:
+            - name: Parallele Container und Objekte
+              href: ../parallel/concrt/parallel-containers-and-objects.md
+            - name: 'Vorgehensweise: Erhöhen der Effizienz mithilfe von parallelen Containern'
+              href: ../parallel/concrt/how-to-use-parallel-containers-to-increase-efficiency.md
+            - name: 'Vorgehensweise: Verbessern der Leistung mithilfe von combinable'
+              href: ../parallel/concrt/how-to-use-combinable-to-improve-performance.md
+            - name: 'Vorgehensweise: Kombinieren von Gruppen mithilfe von combinable'
+              href: ../parallel/concrt/how-to-use-combinable-to-combine-sets.md
+        - name: Abbruch in der PPL
+          expanded: false
+          items:
+            - name: Abbruch in der PPL
+              href: ../parallel/concrt/cancellation-in-the-ppl.md
+            - name: 'Vorgehensweise: Verwenden eines Abbruchs zum Verlassen einer parallelen Schleife'
+              href: ../parallel/concrt/how-to-use-cancellation-to-break-from-a-parallel-loop.md
+            - name: 'Vorgehensweise: Verwenden der Ausnahmebehandlung zum Verlassen einer parallelen Schleife'
+              href: ../parallel/concrt/how-to-use-exception-handling-to-break-from-a-parallel-loop.md
+    - name: Asynchronous Agents Library
+      expanded: false
+      items:
+        - name: Asynchronous Agents Library
+          href: ../parallel/concrt/asynchronous-agents-library.md
+        - name: Asynchrone Agents
+          href: ../parallel/concrt/asynchronous-agents.md
+        - name: Asynchrone Meldungsblöcke
+          href: ../parallel/concrt/asynchronous-message-blocks.md
+        - name: Funktionen zum Übergeben von Meldungen
+          href: ../parallel/concrt/message-passing-functions.md
+        - name: 'Vorgehensweise: Implementieren verschiedener Producer-Consumer-Muster'
+          href: ../parallel/concrt/how-to-implement-various-producer-consumer-patterns.md
+        - name: 'Vorgehensweise: Bereitstellen von Arbeitsfunktionen für die call- und transformer-Klassen'
+          href: ../parallel/concrt/how-to-provide-work-functions-to-the-call-and-transformer-classes.md
+        - name: 'Vorgehensweise: Verwenden von transformer in einer Datenpipeline'
+          href: ../parallel/concrt/how-to-use-transformer-in-a-data-pipeline.md
+        - name: 'Vorgehensweise: Auswählen von abgeschlossenen Tasks'
+          href: ../parallel/concrt/how-to-select-among-completed-tasks.md
+        - name: 'Vorgehensweise: Ausgeben einer Meldung in regelmäßigen Intervallen'
+          href: ../parallel/concrt/how-to-send-a-message-at-a-regular-interval.md
+        - name: 'Vorgehensweise: Verwenden eines Meldungsblockfilters'
+          href: ../parallel/concrt/how-to-use-a-message-block-filter.md
+    - name: Synchronisierungsdatenstrukturen
+      expanded: false
+      items:
+        - name: Synchronisierungsdatenstrukturen
+          href: ../parallel/concrt/synchronization-data-structures.md
+        - name: Vergleichen der Synchronisierungsdatenstrukturen mit der Windows-API
+          href: ../parallel/concrt/comparing-synchronization-data-structures-to-the-windows-api.md
+    - name: Taskplaner (Concurrency Runtime)
+      expanded: false
+      items:
+        - name: Taskplaner (Concurrency Runtime)
+          href: ../parallel/concrt/task-scheduler-concurrency-runtime.md
+        - name: Planerinstanzen
+          expanded: false
+          items:
+            - name: Planerinstanzen
+              href: ../parallel/concrt/scheduler-instances.md
+            - name: 'Vorgehensweise: Verwalten einer Planerinstanz'
+              href: ../parallel/concrt/how-to-manage-a-scheduler-instance.md
+        - name: Planerrichtlinien
+          expanded: false
+          items:
+            - name: Planerrichtlinien
+              href: ../parallel/concrt/scheduler-policies.md
+            - name: 'Vorgehensweise: Angeben von bestimmten Planerrichtlinien'
+              href: ../parallel/concrt/how-to-specify-specific-scheduler-policies.md
+            - name: 'Vorgehensweise: Erstellen von Agents, die bestimmte Planerrichtlinien verwenden'
+              href: ../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md
+        - name: Planungsgruppen
+          expanded: false
+          items:
+            - name: Planungsgruppen
+              href: ../parallel/concrt/schedule-groups.md
+            - name: 'Vorgehensweise: Beeinflussen der Ausführungsreihenfolge mithilfe von Planungsgruppen'
+              href: ../parallel/concrt/how-to-use-schedule-groups-to-influence-order-of-execution.md
+        - name: Einfache Aufgaben
+          href: ../parallel/concrt/lightweight-tasks.md
+        - name: Kontexte
+          expanded: false
+          items:
+            - name: Kontexte
+              href: ../parallel/concrt/contexts.md
+            - name: 'Vorgehensweise: Implementieren eines kooperativen Semaphors mithilfe der Context-Klasse'
+              href: ../parallel/concrt/how-to-use-the-context-class-to-implement-a-cooperative-semaphore.md
+            - name: 'Vorgehensweise: Verwenden der Überzeichnung zum Ausgleichen der Latenz'
+              href: ../parallel/concrt/how-to-use-oversubscription-to-offset-latency.md
+        - name: Speicherverwaltungsfunktionen
+          expanded: false
+          items:
+            - name: Speicherverwaltungsfunktionen
+              href: ../parallel/concrt/memory-management-functions.md
+            - name: 'Vorgehensweise: Verbessern der Arbeitsspeicherleistung mithilfe von Alloc und Free'
+              href: ../parallel/concrt/how-to-use-alloc-and-free-to-improve-memory-performance.md
+    - name: Exemplarische Vorgehensweisen für die Concurrency Runtime
+      expanded: false
+      items:
+        - name: Exemplarische Vorgehensweisen für die Concurrency Runtime
+          href: ../parallel/concrt/concurrency-runtime-walkthroughs.md
+        - name: 'Exemplarische Vorgehensweise: Verbinden der Verwendung von Tasks und XML-HTTP-Anforderungen'
+          href: ../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md
+        - name: 'Exemplarische Vorgehensweise: Erstellen einer Agent-basierten Anwendung'
+          href: ../parallel/concrt/walkthrough-creating-an-agent-based-application.md
+        - name: 'Exemplarische Vorgehensweise: Erstellen eines Datenfluss-Agents'
+          href: ../parallel/concrt/walkthrough-creating-a-dataflow-agent.md
+        - name: 'Exemplarische Vorgehensweise: Erstellen eines Bildverarbeitungsnetzwerks'
+          href: ../parallel/concrt/walkthrough-creating-an-image-processing-network.md
+        - name: 'Exemplarische Vorgehensweise: Implementieren von Futures'
+          href: ../parallel/concrt/walkthrough-implementing-futures.md
+        - name: 'Exemplarische Vorgehensweise: Verhindern von Deadlocks mit join'
+          href: ../parallel/concrt/walkthrough-using-join-to-prevent-deadlock.md
+        - name: 'Exemplarische Vorgehensweise: Entfernen von Arbeit aus einem Benutzeroberflächenthread'
+          href: ../parallel/concrt/walkthrough-removing-work-from-a-user-interface-thread.md
+        - name: 'Exemplarische Vorgehensweise: Verwenden der Concurrency Runtime in einer COM-Anwendung'
+          href: ../parallel/concrt/walkthrough-using-the-concurrency-runtime-in-a-com-enabled-application.md
+        - name: 'Exemplarische Vorgehensweise: Anpassen von vorhandenem Code für die Verwendung einfacher Aufgaben'
+          href: ../parallel/concrt/walkthrough-adapting-existing-code-to-use-lightweight-tasks.md
+        - name: 'Exemplarische Vorgehensweise: Erstellen eines benutzerdefinierten Meldungsblocks'
+          href: ../parallel/concrt/walkthrough-creating-a-custom-message-block.md
+    - name: Bewährte Methoden für die Concurrency Runtime
+      expanded: false
+      items:
+        - name: Bewährte Methoden für die Concurrency Runtime
+          href: ../parallel/concrt/concurrency-runtime-best-practices.md
+        - name: Bewährte Methoden in der Parallel Patterns Library
+          href: ../parallel/concrt/best-practices-in-the-parallel-patterns-library.md
+        - name: Bewährte Methoden in der Asynchronous Agents Library
+          href: ../parallel/concrt/best-practices-in-the-asynchronous-agents-library.md
+        - name: Allgemein bewährte Methoden in der Concurrency Runtime
+          href: ../parallel/concrt/general-best-practices-in-the-concurrency-runtime.md
+    - name: Referenz
+      expanded: false
+      items:
+        - name: Referenz (Concurrency Runtime)
+          href: ../parallel/concrt/reference/reference-concurrency-runtime.md
+        - name: concurrency-Namespace
+          expanded: false
+          items:
+            - name: concurrency-Namespace
+              href: ../parallel/concrt/reference/concurrency-namespace.md
+            - name: concurrency-Namespace-Funktionen
+              href: ../parallel/concrt/reference/concurrency-namespace-functions.md
+            - name: concurrency-Namespace-Operatoren
+              href: ../parallel/concrt/reference/concurrency-namespace-operators.md
+            - name: concurrency-Namespace-Konstanten
+              href: ../parallel/concrt/reference/concurrency-namespace-constants1.md
+            - name: concurrency-Namespace-Enumerationen
+              href: ../parallel/concrt/reference/concurrency-namespace-enums.md
+            - name: affinity_partitioner-Klasse
+              href: ../parallel/concrt/reference/affinity-partitioner-class.md
+            - name: agent-Klasse
+              href: ../parallel/concrt/reference/agent-class.md
+            - name: auto_partitioner-Klasse
+              href: ../parallel/concrt/reference/auto-partitioner-class.md
+            - name: bad_target-Klasse
+              href: ../parallel/concrt/reference/bad-target-class.md
+            - name: call-Klasse
+              href: ../parallel/concrt/reference/call-class.md
+            - name: cancellation_token-Klasse
+              href: ../parallel/concrt/reference/cancellation-token-class.md
+            - name: cancellation_token_registration-Klasse
+              href: ../parallel/concrt/reference/cancellation-token-registration-class.md
+            - name: cancellation_token_source-Klasse
+              href: ../parallel/concrt/reference/cancellation-token-source-class.md
+            - name: choice-Klasse
+              href: ../parallel/concrt/reference/choice-class.md
+            - name: combinable-Klasse
+              href: ../parallel/concrt/reference/combinable-class.md
+            - name: concurrent_priority_queue-Klasse
+              href: ../parallel/concrt/reference/concurrent-priority-queue-class.md
+            - name: concurrent_queue-Klasse
+              href: ../parallel/concrt/reference/concurrent-queue-class.md
+            - name: concurrent_unordered_map-Klasse
+              href: ../parallel/concrt/reference/concurrent-unordered-map-class.md
+            - name: concurrent_unordered_multimap-Klasse
+              href: ../parallel/concrt/reference/concurrent-unordered-multimap-class.md
+            - name: concurrent_unordered_multiset-Klasse
+              href: ../parallel/concrt/reference/concurrent-unordered-multiset-class.md
+            - name: concurrent_unordered_set-Klasse
+              href: ../parallel/concrt/reference/concurrent-unordered-set-class.md
+            - name: concurrent_vector-Klasse
+              href: ../parallel/concrt/reference/concurrent-vector-class.md
+            - name: Context-Klasse
+              href: ../parallel/concrt/reference/context-class.md
+            - name: context_self_unblock-Klasse
+              href: ../parallel/concrt/reference/context-self-unblock-class.md
+            - name: context_unblock_unbalanced-Klasse
+              href: ../parallel/concrt/reference/context-unblock-unbalanced-class.md
+            - name: critical_section-Klasse
+              href: ../parallel/concrt/reference/critical-section-class.md
+            - name: CurrentScheduler-Klasse
+              href: ../parallel/concrt/reference/currentscheduler-class.md
+            - name: default_scheduler_exists-Klasse
+              href: ../parallel/concrt/reference/default-scheduler-exists-class.md
+            - name: DispatchState-Struktur
+              href: ../parallel/concrt/reference/dispatchstate-structure.md
+            - name: event-Klasse
+              href: ../parallel/concrt/reference/event-class.md
+            - name: IExecutionContext-Struktur
+              href: ../parallel/concrt/reference/iexecutioncontext-structure.md
+            - name: IExecutionResource-Struktur
+              href: ../parallel/concrt/reference/iexecutionresource-structure.md
+            - name: improper_lock-Klasse
+              href: ../parallel/concrt/reference/improper-lock-class.md
+            - name: improper_scheduler_attach-Klasse
+              href: ../parallel/concrt/reference/improper-scheduler-attach-class.md
+            - name: improper_scheduler_detach-Klasse
+              href: ../parallel/concrt/reference/improper-scheduler-detach-class.md
+            - name: improper_scheduler_reference-Klasse
+              href: ../parallel/concrt/reference/improper-scheduler-reference-class.md
+            - name: invalid_link_target-Klasse
+              href: ../parallel/concrt/reference/invalid-link-target-class.md
+            - name: invalid_multiple_scheduling-Klasse
+              href: ../parallel/concrt/reference/invalid-multiple-scheduling-class.md
+            - name: invalid_operation-Klasse
+              href: ../parallel/concrt/reference/invalid-operation-class.md
+            - name: invalid_oversubscribe_operation-Klasse
+              href: ../parallel/concrt/reference/invalid-oversubscribe-operation-class.md
+            - name: invalid_scheduler_policy_key-Klasse
+              href: ../parallel/concrt/reference/invalid-scheduler-policy-key-class.md
+            - name: invalid_scheduler_policy_thread_specification-Klasse
+              href: ../parallel/concrt/reference/invalid-scheduler-policy-thread-specification-class.md
+            - name: invalid_scheduler_policy_value-Klasse
+              href: ../parallel/concrt/reference/invalid-scheduler-policy-value-class.md
+            - name: IResourceManager-Struktur
+              href: ../parallel/concrt/reference/iresourcemanager-structure.md
+            - name: IScheduler-Struktur
+              href: ../parallel/concrt/reference/ischeduler-structure.md
+            - name: ISchedulerProxy-Struktur
+              href: ../parallel/concrt/reference/ischedulerproxy-structure.md
+            - name: ISource-Klasse
+              href: ../parallel/concrt/reference/isource-class.md
+            - name: ITarget-Klasse
+              href: ../parallel/concrt/reference/itarget-class.md
+            - name: IThreadProxy-Struktur
+              href: ../parallel/concrt/reference/ithreadproxy-structure.md
+            - name: ITopologyExecutionResource-Struktur
+              href: ../parallel/concrt/reference/itopologyexecutionresource-structure.md
+            - name: ITopologyNode-Struktur
+              href: ../parallel/concrt/reference/itopologynode-structure.md
+            - name: IUMSCompletionList-Struktur
+              href: ../parallel/concrt/reference/iumscompletionlist-structure.md
+            - name: IUMSScheduler-Struktur
+              href: ../parallel/concrt/reference/iumsscheduler-structure.md
+            - name: IUMSThreadProxy-Struktur
+              href: ../parallel/concrt/reference/iumsthreadproxy-structure.md
+            - name: IUMSUnblockNotification-Struktur
+              href: ../parallel/concrt/reference/iumsunblocknotification-structure.md
+            - name: IVirtualProcessorRoot-Struktur
+              href: ../parallel/concrt/reference/ivirtualprocessorroot-structure.md
+            - name: join-Klasse
+              href: ../parallel/concrt/reference/join-class.md
+            - name: location-Klasse
+              href: ../parallel/concrt/reference/location-class.md
+            - name: message-Klasse
+              href: ../parallel/concrt/reference/message-class.md
+            - name: message_not_found-Klasse
+              href: ../parallel/concrt/reference/message-not-found-class.md
+            - name: message_processor-Klasse
+              href: ../parallel/concrt/reference/message-processor-class.md
+            - name: missing_wait-Klasse
+              href: ../parallel/concrt/reference/missing-wait-class.md
+            - name: multi_link_registry-Klasse
+              href: ../parallel/concrt/reference/multi-link-registry-class.md
+            - name: multitype_join-Klasse
+              href: ../parallel/concrt/reference/multitype-join-class.md
+            - name: nested_scheduler_missing_detach-Klasse
+              href: ../parallel/concrt/reference/nested-scheduler-missing-detach-class.md
+            - name: network_link_registry-Klasse
+              href: ../parallel/concrt/reference/network-link-registry-class.md
+            - name: operation_timed_out-Klasse
+              href: ../parallel/concrt/reference/operation-timed-out-class.md
+            - name: ordered_message_processor-Klasse
+              href: ../parallel/concrt/reference/ordered-message-processor-class.md
+            - name: overwrite_buffer-Klasse
+              href: ../parallel/concrt/reference/overwrite-buffer-class.md
+            - name: progress_reporter-Klasse
+              href: ../parallel/concrt/reference/progress-reporter-class.md
+            - name: propagator_block-Klasse
+              href: ../parallel/concrt/reference/propagator-block-class.md
+            - name: reader_writer_lock-Klasse
+              href: ../parallel/concrt/reference/reader-writer-lock-class.md
+            - name: ScheduleGroup-Klasse
+              href: ../parallel/concrt/reference/schedulegroup-class.md
+            - name: Scheduler-Klasse
+              href: ../parallel/concrt/reference/scheduler-class.md
+            - name: scheduler_interface-Struktur
+              href: ../parallel/concrt/reference/scheduler-interface-structure.md
+            - name: scheduler_not_attached-Klasse
+              href: ../parallel/concrt/reference/scheduler-not-attached-class.md
+            - name: scheduler_ptr-Struktur (Concurrency Runtime)
+              href: ../parallel/concrt/reference/scheduler-ptr-structure-concurrency-runtime.md
+            - name: scheduler_resource_allocation_error-Klasse
+              href: ../parallel/concrt/reference/scheduler-resource-allocation-error-class.md
+            - name: scheduler_worker_creation_error-Klasse
+              href: ../parallel/concrt/reference/scheduler-worker-creation-error-class.md
+            - name: SchedulerPolicy-Klasse
+              href: ../parallel/concrt/reference/schedulerpolicy-class.md
+            - name: simple_partitioner-Klasse
+              href: ../parallel/concrt/reference/simple-partitioner-class.md
+            - name: single_assignment-Klasse
+              href: ../parallel/concrt/reference/single-assignment-class.md
+            - name: single_link_registry-Klasse
+              href: ../parallel/concrt/reference/single-link-registry-class.md
+            - name: source_block-Klasse
+              href: ../parallel/concrt/reference/source-block-class.md
+            - name: source_link_manager-Klasse
+              href: ../parallel/concrt/reference/source-link-manager-class.md
+            - name: static_partitioner-Klasse
+              href: ../parallel/concrt/reference/static-partitioner-class.md
+            - name: structured_task_group-Klasse
+              href: ../parallel/concrt/reference/structured-task-group-class.md
+            - name: target_block-Klasse
+              href: ../parallel/concrt/reference/target-block-class.md
+            - name: task-Klasse (Concurrency Runtime)
+              href: ../parallel/concrt/reference/task-class.md
+            - name: task_canceled-Klasse
+              href: ../parallel/concrt/reference/task-canceled-class.md
+            - name: task_completion_event-Klasse
+              href: ../parallel/concrt/reference/task-completion-event-class.md
+            - name: task_continuation_context-Klasse
+              href: ../parallel/concrt/reference/task-continuation-context-class.md
+            - name: task_group-Klasse
+              href: ../parallel/concrt/reference/task-group-class.md
+            - name: task_handle-Klasse
+              href: ../parallel/concrt/reference/task-handle-class.md
+            - name: task_options-Klasse (Concurrency Runtime)
+              href: ../parallel/concrt/reference/task-options-class-concurrency-runtime.md
+            - name: timer-Klasse
+              href: ../parallel/concrt/reference/timer-class.md
+            - name: transformer-Klasse
+              href: ../parallel/concrt/reference/transformer-class.md
+            - name: unbounded_buffer-Klasse
+              href: ../parallel/concrt/reference/unbounded-buffer-class.md
+            - name: unsupported_os-Klasse
+              href: ../parallel/concrt/reference/unsupported-os-class.md
+        - name: std-Namespace
+          expanded: false
+          items:
+            - name: std-Namespace
+              href: ../parallel/concrt/reference/std-namespace.md
+            - name: make_exception_ptr-Funktion
+              href: ../parallel/concrt/reference/make-exception-ptr-function.md
+        - name: stdx-Namespace
+          expanded: false
+          items:
+            - name: stdx-Namespace
+              href: ../parallel/concrt/reference/stdx-namespace.md
+            - name: declval-Funktion
+              href: ../parallel/concrt/reference/declval-function.md
+- name: OpenMP
+  expanded: false
+  items:
+    - name: OpenMP in MSVC
+      href: ../parallel/openmp/openmp-in-visual-cpp.md
+    - name: SIMD-Erweiterung
+      href: ../parallel/openmp/openmp-simd.md
+    - name: OpenMP - C- und C++-Anwendungsprogrammierschnittstelle
+      expanded: false
+      items:
+        - name: OpenMP - C- und C++-Anwendungsprogrammierschnittstelle
+          href: ../parallel/openmp/openmp-c-and-cpp-application-program-interface.md
+        - name: Einführung
+          href: ../parallel/openmp/1-introduction.md
+        - name: Anweisungen
+          href: ../parallel/openmp/2-directives.md
+        - name: Funktionen der Runtimebibliothek
+          href: ../parallel/openmp/3-run-time-library-functions.md
+        - name: Umgebungsvariablen
+          href: ../parallel/openmp/4-environment-variables.md
+        - name: Anhänge
+          items:
+            - name: Beispiele
+              href: ../parallel/openmp/a-examples.md
+            - name: Stubs für Funktionen der Runtimebibliothek
+              href: ../parallel/openmp/b-stubs-for-run-time-library-functions.md
+            - name: C- und C++-Grammatik in OpenMP
+              href: ../parallel/openmp/c-openmp-c-and-cpp-grammar.md
+            - name: schedule-Klausel
+              href: ../parallel/openmp/d-using-the-schedule-clause.md
+            - name: Durch die Implementierung definiertes Verhalten in OpenMP (C/C++)
+              href: ../parallel/openmp/e-implementation-defined-behaviors-in-openmp-c-cpp.md
+            - name: "Neue Funktionen und Erläuterungen in Version\_2.0"
+              href: ../parallel/openmp/f-new-features-and-clarifications-in-version-2-0.md
+    - name: Referenz zur OpenMP-Bibliothek
+      expanded: false
+      items:
+        - name: Referenz zur OpenMP-Bibliothek
+          href: ../parallel/openmp/reference/openmp-library-reference.md
+        - name: Anweisungen
+          href: ../parallel/openmp/reference/openmp-directives.md
+        - name: Klauseln
+          href: ../parallel/openmp/reference/openmp-clauses.md
+        - name: Funktionen
+          href: ../parallel/openmp/reference/openmp-functions.md
+        - name: Umgebungsvariablen
+          href: ../parallel/openmp/reference/openmp-environment-variables.md
+- name: Multithreadingunterstützung für älteren Code (Visual C++)
+  expanded: false
+  items:
+    - name: Multithreadingunterstützung für älteren Code (Visual C++)
+      href: ../parallel/multithreading-support-for-older-code-visual-cpp.md
+    - name: Multithreading bei C und Win32
+      expanded: false
+      items:
+        - name: Multithreading bei C und Win32
+          href: ../parallel/multithreading-with-c-and-win32.md
+        - name: Beispiel für ein C-Multithreadprogramm
+          href: ../parallel/sample-multithread-c-program.md
+        - name: Threadlokaler Speicher (TLS)
+          href: ../parallel/thread-local-storage-tls.md
+    - name: Multithreading mit C++ und MFC
+      expanded: false
+      items:
+        - name: Multithreading mit C++ und MFC
+          href: ../parallel/multithreading-with-cpp-and-mfc.md
+        - name: 'Multithreading: Erstellen von Benutzeroberflächenthreads'
+          href: ../parallel/multithreading-creating-user-interface-threads.md
+        - name: 'Multithreading: Erstellen von Arbeitsthreads'
+          href: ../parallel/multithreading-creating-worker-threads.md
+        - name: 'Multithreading: Verwendungsmöglichkeiten der Synchronisierungsklassen'
+          href: ../parallel/multithreading-when-to-use-the-synchronization-classes.md
+        - name: 'Multithreading: Verwendungsmöglichkeiten der Synchronisierungsklassen'
+          href: ../parallel/multithreading-how-to-use-the-synchronization-classes.md
+        - name: 'Multithreading: Beenden von Threads'
+          href: ../parallel/multithreading-terminating-threads.md
+        - name: 'Multithreading: Programmiertipps'
+          href: ../parallel/multithreading-programming-tips.md
+    - name: Multithreading und Gebietsschemas
+      href: ../parallel/multithreading-and-locales.md

@@ -1,11 +1,15 @@
 ---
 title: _isctype, iswctype, _isctype_l, _iswctype_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _isctype_l
 - iswctype
 - _iswctype_l
 - _isctype
+- _o__isctype
+- _o__isctype_l
+- _o__iswctype_l
+- _o_iswctype
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -41,12 +46,12 @@ helpviewer_keywords:
 - isctype function
 - _iswctype function
 ms.assetid: cf7509b7-12fc-4d95-8140-ad2eb98173d3
-ms.openlocfilehash: 9fefb852f8ebd34b932842ee4c12b53f79b29641
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 2261eab574a8bc206a02f9e505beff88cf4c7fcf
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954396"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918949"
 ---
 # <a name="_isctype-iswctype-_isctype_l-_iswctype_l"></a>_isctype, iswctype, _isctype_l, _iswctype_l
 
@@ -77,10 +82,10 @@ int _iswctype_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
-*desc*<br/>
+*DESC*<br/>
 Eigenschaft, für die der Test durchgeführt werden soll. Diese wird normalerweise mithilfe von ctype oder [wctype](wctype.md) abgerufen.
 
 *locale*<br/>
@@ -90,32 +95,36 @@ Das für alle gebietsschemaabhängigen Tests zu verwendende Gebietsschema.
 
 **_isctype** und **iswctype** geben einen Wert ungleich 0 (null) zurück, wenn *c* die vom *DESC* im aktuellen Gebiets Schema angegebene Eigenschaft oder 0 (null) aufweist. Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **_isctype** und **_isctype_l** ist nicht definiert, wenn *c* nicht EOF ist, oder im Bereich von 0 bis 0xFF (einschließlich). Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
+Das Verhalten von **_isctype** und **_isctype_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich von 0 bis 0xFF (einschließlich) liegt. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |---------------------|--------------------------------------|--------------------|-----------------------|
-|n/v|**_isctype**|n/v|**_iswctype**|
-|n/v|**_isctype_l**|n/v|**_iswctype_l**|
+|–|**_isctype**|–|**_iswctype**|
+|–|**_isctype_l**|–|**_iswctype_l**|
+
+## <a name="remarks"></a>Hinweise
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_isctype**|\<ctype.h>|
 |**iswctype**|\<ctype.h> oder \<wchar.h>|
 |**_isctype_l**|\<ctype.h>|
 |**_iswctype_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

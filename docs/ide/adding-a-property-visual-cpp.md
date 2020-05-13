@@ -12,16 +12,16 @@ helpviewer_keywords:
 - stock properties, about stock properties
 - stock properties
 ms.assetid: 37bd4db7-efd3-4faa-87ad-64902ed16a36
-ms.openlocfilehash: 5c472b74fee690c0cf33f78eca9e2e8462930eb8
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
-ms.translationtype: HT
+ms.openlocfilehash: 79b05fde362a44453aac45aa8dc269c9689ea8fc
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69509529"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751190"
 ---
 # <a name="add-a-property"></a>Hinzufügen einer Eigenschaft
 
-Sie können den [Assistenten zum Hinzufügen von Eigenschaften](#names-add-property-wizard) verwenden, um einer Schnittstelle in Ihrem Projekt eine Eigenschaft hinzuzufügen.
+Sie können den [Eigenschaften-Assistenten](#names-add-property-wizard) hinzufügen verwenden, um einer Schnittstelle in Ihrem Projekt eine Methode hinzuzufügen.
 
 **So fügen Sie Ihrem Objekt eine Eigenschaft hinzu:**
 
@@ -32,9 +32,9 @@ Sie können den [Assistenten zum Hinzufügen von Eigenschaften](#names-add-prope
 
 1. Wählen Sie im Kontextmenü **Hinzufügen** und dann **Eigenschaft hinzufügen** aus.
 
-1. Geben Sie im [Assistenten zum Hinzufügen von Eigenschaften](#names-add-property-wizard) die Informationen zum Erstellen der Eigenschaft an.
+1. Geben Sie im [Assistenten zum Hinzufügen](#names-add-property-wizard)der Eigenschaft die Informationen zum Erstellen der Eigenschaft an.
 
-1. Geben Sie alle Einstellungen der Interface Definition Language dieser Eigenschaft auf der Seite [IDL-Attribute](#idl-attributes-add-property-wizard) des Assistenten an.
+1. Geben Sie alle IDL-Einstellungen (Interface Definition Language) für die Eigenschaft auf der [Seite IDL-Attribute](#idl-attributes-add-property-wizard) des Assistenten an.
 
 1. Klicken Sie auf **Fertig stellen**, um die Eigenschaft hinzuzufügen.
 
@@ -46,21 +46,21 @@ Die Methoden `Get` und `Put` der Eigenschaft werden in der Klassenansicht als zw
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-- [Namen, Assistent zum Hinzufügen von Eigenschaften](#names-add-property-wizard)
-- [IDL-Attribute, Assistent zum Hinzufügen von Eigenschaften](#idl-attributes-add-property-wizard)
-- [Basiseigenschaften](#stock-properties)
+- [Namen, Eigenschaften-Assistent hinzufügen](#names-add-property-wizard)
+- [IDL-Attribute, Eigenschaften-Assistent hinzufügen](#idl-attributes-add-property-wizard)
+- [Bestandseigenschaften](#stock-properties)
 
 ## <a name="names-add-property-wizard"></a>Namen, Assistent zum Hinzufügen von Eigenschaften
 
 Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hinzuzufügen.
 
-- **Eigenschaftentyp**
+- **Eigenschaftstyp**
 
   Legt den Typ der Eigenschaft fest, die Sie hinzufügen. Geben Sie bei MFC-Disp-Schnittstellen einen eigenen Typ an, oder wählen Sie einen aus der vordefinierten Liste aus. Wenn Sie eine vordefinierte Implementierung einer Eigenschaft bereitstellen, wird **Eigenschaftentyp** auf den vordefinierten Typ festgelegt und kann nicht geändert werden.
 
 - **Eigenschaftenname**
 
-  Legt den Namen der Eigenschaft fest. Für MFC-Disp-Schnittstellen, die ActiveX-Steuerelementen zugeordnet sind, können Sie einen eigenen Namen angeben oder einen vordefinierten Eigenschaftennamen aus der Liste auswählen. Wenn Sie einen eigenen Eigenschaftennamen bereitstellen, ist der Implementierungstyp **Stock** (Vordefiniert) nicht verfügbar. Eine Beschreibung der Eigenschaften in der Liste finden Sie unter [Basiseigenschaften](#stock-properties).
+  Legt den Namen der Eigenschaft fest. Für MFC-Disp-Schnittstellen, die ActiveX-Steuerelementen zugeordnet sind, können Sie einen eigenen Namen angeben oder einen vordefinierten Eigenschaftennamen aus der Liste auswählen. Wenn Sie einen eigenen Eigenschaftennamen bereitstellen, ist der Implementierungstyp **Stock** (Vordefiniert) nicht verfügbar. Eine Beschreibung der Eigenschaften in der Liste finden Sie unter [Bestandseigenschaften.](#stock-properties)
 
   |Schnittstellentyp|BESCHREIBUNG|
   |--------------------|-----------------|
@@ -77,7 +77,7 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
 - **Benachrichtigungsfunktion**
 
-  Nur MFC-Schnittstellen Nur verfügbar, wenn Sie **Membervariable** unter **Implementierungstyp** festlegen. Legt den Namen der Benachrichtigungsfunktion fest, die aufgerufen wird, wenn die Eigenschaft geändert wird. Der Name der Benachrichtigungsfunktion ist standardmäßig auf `On`*PropertyName*`Changed` festgelegt. Sie können diesen Namen bearbeiten.
+  Nur MFC-Schnittstellen Nur verfügbar, wenn Sie **Membervariable** unter **Implementierungstyp** festlegen. Legt den Namen der Benachrichtigungsfunktion fest, die aufgerufen wird, wenn die Eigenschaft geändert wird. Standardmäßig ist der Name der Benachrichtigungsfunktion auf `On` *PropertyName*`Changed`festgelegt. Sie können diesen Namen bearbeiten.
 
 - **Get-Funktion**
 
@@ -94,7 +94,7 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
   |Implementierungstyp|BESCHREIBUNG|
   |-------------------------|-----------------|
   |**Stock**|Gibt eine vordefinierte Implementierung für die unter **Eigenschaftenname** ausgewählte Eigenschaft an. Der Standardwert. Weitere Informationen finden Sie unter [Basiseigenschaften](#stock-properties).<br /><br /> Wenn Sie **Stock** (Vordefiniert) angeben, werden **Eigenschaftentyp**, **Parametertyp** und **Parametername** abgeblendet.|
-  |**Membervariable**|Gibt an, dass die Eigenschaft als Membervariable hinzugefügt wird. Sie können benutzerdefinierte Eigenschaften und die meisten Basiseigenschaften als Membervariablen hinzufügen. Sie können die **Membervariable** für die Eigenschaften `Caption`, `hWnd` und `Text` nicht angeben.<br /><br /> Gibt Standardnamen unter **Variablenname** und **Benachrichtigungsfunktion** an. Sie können diesen Namen bearbeiten.|
+  |**Membervariable**|Gibt an, dass die Eigenschaft als Membervariable hinzugefügt wird. Sie können benutzerdefinierte Eigenschaften und die meisten Basiseigenschaften als Membervariablen hinzufügen. Sie können die **Membervariable** `Caption`für `hWnd`die `Text` , und die Eigenschaften nicht angeben.<br /><br /> Gibt Standardnamen unter **Variablenname** und **Benachrichtigungsfunktion** an. Sie können diesen Namen bearbeiten.|
   |**Get/Set-Methoden**|Gibt an, dass die Eigenschaft standardmäßig als `Get`*PropertyName*- und `Set`*PropertyName*-Funktion hinzugefügt wird. Diese Namen werden unter **Get-Funktion** und **Set-Funktion** angezeigt.<br /><br /> Sie können den standardmäßig festgelegten **Eigenschaftentyp** ändern, wodurch ein Wert an die Get-Funktion übergeben wird. Sie können Parameter für die Funktionen `Get` und `Set` angeben.|
 
 - **Get-Funktion**
@@ -112,7 +112,7 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
 - **Parameterattribute**
 
-  Nur ATL-Schnittstellen Legt fest, ob der Parameter, der durch **Parametername** festgelegt wurde, `in`, `out`, beides oder keines davon ist.
+  Nur ATL-Schnittstellen Legt fest, ob der `in`durch `out` **Parametername** angegebene Parameter , , beide oder keiner ist.
 
   |Option|BESCHREIBUNG|
   |------------|-----------------|
@@ -131,7 +131,7 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
   Zeigt die Liste der Attribute an, die zur Eigenschaft hinzugefügt werden sollen. Jedes Element in der Liste besteht aus dem Parameternamen, dem Parametertyp und den Attributen. Verwenden Sie **Hinzufügen** und **Entfernen**, um die Liste zu aktualisieren.
 
-- **Add**
+- **Hinzufügen**
 
   Fügt den Parameter hinzu, den Sie in **Parametername** und **Parametertyp** eingeben, zur **Parameterliste** hinzu. Wählen Sie **Hinzufügen** aus, um der Liste einen Parameter hinzuzufügen.
 
@@ -181,7 +181,7 @@ Nicht alle Optionen sind für alle Eigenschaftentypen verfügbar.
 
 Wenn Sie einer MFC-Disp-Schnittstelle mithilfe des [Assistenten zum Hinzufügen von Eigenschaften](#idl-attributes-add-property-wizard) eine Eigenschaft hinzufügen, können Sie auf der [Namen](../ide/names-add-property-wizard.md)-Seite des Assistenten eine Basiseigenschaft aus der Liste **Eigenschaftennamen** auswählen. Dort stehen die folgenden Eigenschaften zur Auswahl:
 
-|Name der Eigenschaft|BESCHREIBUNG|
+|Eigenschaftenname|BESCHREIBUNG|
 |-------------------|-----------------|
 |`Appearance`|Ruft einen Wert ab, der die Darstellung des Steuerelements bestimmt, oder legt diesen fest. Die Eigenschaft `Appearance` des Steuerelements kann dreidimensionale Anzeigeeffekte anzeigen oder ausblenden. Dies ist eine Lese-/Schreibumgebungseigenschaft.|
 |`BackColor`|Gibt die Ambient-Eigenschaft `BackColor` des Steuerelements zurück oder legt diese auf eine Palettenfarbe (RGB) oder eine vordefinierte Systemfarbe fest. Der Wert entspricht standardmäßig der Vordergrundfarbe des Containers des Steuerelements. Dies ist eine Lese-/Schreibumgebungseigenschaft.|
@@ -191,5 +191,5 @@ Wenn Sie einer MFC-Disp-Schnittstelle mithilfe des [Assistenten zum Hinzufügen 
 |`Font`|Gibt die Ambient-Schriftart des Steuerelements zurück oder legt diese fest. Wenn das Steuerelement über keine Schriftart verfügt, wird NULL zurückgegeben.|
 |`ForeColor`|Gibt die Ambient-Eigenschaft `ForeColor` des Steuerelements zurück oder legt diese fest.|
 |`hWnd`|Gibt die `hWnd`-Eigenschaft des Steuerelements zurück oder legt diese fest. `hWnd` verfügt nicht über den Implementierungstyp **Membervariable**.|
-|`ReadyState`|Gibt die `ReadyState`-Eigenschaft des Steuerelements zurück oder legt diese fest. Ein Steuerelement kann folgenden Status aufweisen: nicht initialisiert, initialisiert, wird geladen, interaktiv und abgeschlossen. Weitere Informationen finden Sie unter [READYSTATE](/previous-versions//aa768362\(v=vs.85\)) im *Internet SDK*.|
+|`ReadyState`|Gibt die `ReadyState`-Eigenschaft des Steuerelements zurück oder legt diese fest. Ein Steuerelement kann folgenden Status aufweisen: nicht initialisiert, initialisiert, wird geladen, interaktiv und abgeschlossen. Weitere Informationen finden Sie unter [READYSTATE](/previous-versions/aa768362\(v=vs.85\)) im *Internet SDK*.|
 |`Text`|Gibt den Text zurück, der in einem Steuerelement enthalten ist, oder legt diesen fest. `Text` verfügt nicht über den Implementierungstyp **Membervariable**.|

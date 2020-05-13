@@ -152,12 +152,12 @@ helpviewer_keywords:
 - CRichEditCtrl [MFC], StreamOut
 - CRichEditCtrl [MFC], Undo
 ms.assetid: 2be52788-822c-4c27-aafd-2471231e74eb
-ms.openlocfilehash: 07c3c864e91d8aebc8d70f54fed4286a24986208
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1c601d036d05048bff9b60f837140e8f7a873964
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368269"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754435"
 ---
 # <a name="cricheditctrl-class"></a>CRichEditCtrl-Klasse
 
@@ -281,7 +281,7 @@ Ein Beispiel für die Verwendung eines Rich-Edit-Steuerelements in einer MFC-Anw
 
 `CRichEditCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -377,7 +377,7 @@ Weitere Informationen finden Sie unter [EM_CHARFROMPOS](/windows/win32/Controls/
 
 Löscht (löscht) die aktuelle Auswahl (falls vorhanden) im Rich-Edit-Steuerelement.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -397,7 +397,7 @@ Weitere Informationen finden Sie unter [WM_CLEAR](/windows/win32/dataxchg/wm-cle
 
 Kopiert die aktuelle Auswahl (falls vorhanden) im Rich-Edit-Steuerelement in die Zwischenablage.
 
-```
+```cpp
 void Copy();
 ```
 
@@ -489,7 +489,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Bearbeitungssteuerelements an. Wenden Sie eine Kombination der Fensterstile an, die im Abschnitt ["Informationen](#create) **erstellen** und [bearbeiten"](/windows/win32/Controls/edit-control-styles)aufgeführt sind, die im Windows SDK beschrieben werden.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -525,7 +525,7 @@ Verwenden Sie [Erstellen,](#create) um das umfassende Windows-Bearbeitungssteuer
 
 Löschen (schneidet) die aktuelle Auswahl (falls vorhanden) im Rich-Edit-Steuerelement und kopiert den gelöschten Text in die Zwischenablage.
 
-```
+```cpp
 void Cut();
 ```
 
@@ -572,7 +572,7 @@ Weitere Informationen finden Sie unter [EM_DISPLAYBAND](/windows/win32/Controls/
 
 Setzt das Rückgängig-Flag dieses rich edit-Steuerelements zurück (löschen).
 
-```
+```cpp
 void EmptyUndoBuffer();
 ```
 
@@ -966,7 +966,7 @@ Diese Memberfunktion ist nur mit den asiatischsprachigen Versionen des Betriebss
 
 Ruft das Formatierungsrechteck für dieses `CRichEditCtrl` Objekt ab.
 
-```
+```cpp
 void GetRect(LPRECT lpRect) const;
 ```
 
@@ -1005,7 +1005,7 @@ Zu den Aktionen, die rückgängig gemacht oder erneut ausgeführt werden können
 
 Ruft die Grenzen der aktuellen Auswahl `CRichEditCtrl` in diesem Objekt ab.
 
-```
+```cpp
 void GetSel(CHARRANGE& cr) const;
 
 void GetSel(
@@ -1256,7 +1256,7 @@ Diese Memberfunktion ist nur für asiatischsprachige Versionen des Betriebssyste
 
 Ändert die Sichtbarkeit der Auswahl.
 
-```
+```cpp
 void HideSelection(
     BOOL bHide,
     BOOL bPerm);
@@ -1284,7 +1284,7 @@ Weitere Informationen finden Sie unter [EM_HIDESELECTION](/windows/win32/Control
 
 Beschränkt die Länge des Textes, den der Benutzer in ein Bearbeitungssteuerelement eingeben kann.
 
-```
+```cpp
 void LimitText(long nChars = 0);
 ```
 
@@ -1391,7 +1391,7 @@ Weitere Informationen finden Sie unter [EM_LINELENGTH](/windows/win32/Controls/e
 
 Scrollt den Text eines mehrzeiligen Bearbeitungssteuerelements.
 
-```
+```cpp
 void LineScroll(
     int nLines,
     int nChars = 0);
@@ -1421,7 +1421,7 @@ Weitere Informationen finden Sie unter [EM_LINESCROLL](/windows/win32/Controls/e
 
 Fügt die Daten aus der `CRichEditCtrl` Zwischenablage in die Einfügemarke, die Position der Einfügemarke, ein.
 
-```
+```cpp
 void Paste();
 ```
 
@@ -1439,7 +1439,7 @@ Weitere Informationen finden Sie unter [WM_PASTE](/windows/win32/dataxchg/wm-pas
 
 Fügt Daten in einem bestimmten Zwischenablageformat in dieses Objekt ein. `CRichEditCtrl`
 
-```
+```cpp
 void PasteSpecial(
     UINT nClipFormat,
     DWORD dvAspect = 0,
@@ -1508,7 +1508,7 @@ Weitere Informationen finden Sie unter [EM_REDO](/windows/win32/Controls/em-redo
 
 Ersetzt die aktuelle Auswahl `CRichEditCtrl` in diesem Objekt durch den angegebenen Text.
 
-```
+```cpp
 void ReplaceSel(
     LPCTSTR lpszNewText,
     BOOL bCanUndo = FALSE);
@@ -1540,7 +1540,7 @@ Weitere Informationen finden Sie unter [EM_REPLACESEL](/windows/win32/Controls/e
 
 Erzwingt, dass dieses `CRichEditCtrl` Objekt EN_REQUESTRESIZE Benachrichtigungen an das übergeordnete Fenster sendet.
 
-```
+```cpp
 void RequestResize();
 ```
 
@@ -1667,7 +1667,7 @@ Weitere Informationen finden Sie unter [EM_SETEVENTMASK](/windows/win32/Controls
 
 Legt das geänderte Flag für ein Bearbeitungssteuerelement fest oder löscht es.
 
-```
+```cpp
 void SetModify(BOOL bModified = TRUE);
 ```
 
@@ -1713,7 +1713,7 @@ Weitere Informationen finden Sie [unter EM_SETOLECALLBACK](/windows/win32/Contro
 
 Legt die Optionen `CRichEditCtrl` für dieses Objekt fest.
 
-```
+```cpp
 void SetOptions(
     WORD wOp,
     DWORD dwFlags);
@@ -1848,7 +1848,7 @@ Weitere Informationen finden Sie unter [EM_SETREADONLY](/windows/win32/Controls/
 
 Legt das Formatierungsrechteck für dieses `CRichEditCtrl` Objekt fest.
 
-```
+```cpp
 void SetRect(LPCRECT lpRect);
 ```
 
@@ -1871,7 +1871,7 @@ Weitere Informationen finden Sie unter [EM_SETRECT](/windows/win32/Controls/em-s
 
 Legt die Auswahl `CRichEditCtrl` in diesem Objekt fest.
 
-```
+```cpp
 void SetSel(
     long nStartChar,
     long nEndChar);
@@ -2076,7 +2076,7 @@ Diese Meldung ist nur in asiatischsprachigen Versionen des Betriebssystems verf�
 
 Verhindert, dass das Steuerelement zusätzliche Eingabeaktionen in die aktuelle Rückgängig-Aktion sammelt.
 
-```
+```cpp
 void StopGroupTyping();
 ```
 
@@ -2196,7 +2196,7 @@ Weitere Informationen finden Sie unter [EM_UNDO](/windows/win32/Controls/em-undo
 
   Siehe Beispiel für [CanUndo](#canundo).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel WORDPAD](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

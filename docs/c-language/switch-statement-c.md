@@ -1,34 +1,45 @@
 ---
-title: switch-Anweisung (C)
-ms.date: 11/04/2016
+title: switchAnweisung (C)
+ms.date: 04/25/2020
 f1_keywords:
 - switch
 helpviewer_keywords:
 - switch keyword [C]
 ms.assetid: fbede014-23bd-4ab1-8094-c8d9d9cb963a
-ms.openlocfilehash: 0f781147bf4ed020cf925ca29c2ba1b0f601cde1
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+no-loc:
+- switch
+- case
+- default
+- break
+ms.openlocfilehash: 5858447602a28dcc5573aa3138e869d106b5aa23
+ms.sourcegitcommit: 2f9ff2041d70c406df76c5053151192aad3937ea
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148191"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587376"
 ---
-# <a name="switch-statement-c"></a>switch-Anweisung (C)
+# <a name="switch-statement-c"></a>`switch`Anweisung (C)
 
-Die Anweisungen `switch` und **case** dienen dem Steuern von komplexen bedingten und Branchvorgängen. Mit der `switch`-Anweisung wird die Steuerung an eine Anweisung innerhalb des Texts übergeben.
+Die __`switch`__ - __`case`__ und-Anweisungen helfen, komplexe bedingte und Verzweigungs Vorgänge zu steuern. Die __`switch`__ -Anweisung überträgt die Steuerung an eine Anweisung innerhalb des Texts.
 
 ## <a name="syntax"></a>Syntax
 
-*selection-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**switch (** *expression* **)** *statement*
+> *`selection-statement`*:<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp; __`switch (`__&nbsp;*`expression`* &nbsp;__`)`__&nbsp;*`statement`*
 
-*labeled-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**case**  *constant-expression*  **:**  *statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**default :**  *statement*
+> *`labeled-statement`*:<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp; __`case`__&nbsp;*`constant-expression`*&nbsp;__`:`__&nbsp;*`statement`*<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp; __`default`__&nbsp;__`:`__&nbsp;*`statement`*
 
-Die Steuerung wird an die Anweisung übergeben, deren **case** *constant-expression* dem Wert von **switch (** *expression* **)** entspricht. Die `switch`-Anweisung kann eine beliebige Anzahl von **case**-Instanzen enthalten. Es können aber keine zwei case-Konstanten in der gleichen `switch`-Anweisung denselben Wert haben. Die Ausführung des Anweisungstexts beginnt bei der ausgewählten Anweisung und wird bis zum Ende des Texts fortgesetzt oder bis eine **break**-Anweisung die Steuerung aus dem Text übergibt.
+## <a name="remarks"></a>Bemerkungen
 
-Die Verwendung der `switch`-Anweisung sieht in etwa folgendermaßen aus:
+Eine __`switch`__ -Anweisung bewirkt, dass die Steuerung *`labeled-statement`* abhängig vom Wert von *`expression`* zu einer in Ihrem Anweisungs Text übertragen wird.
+
+Die Werte von *`expression`* und jeweils *`constant-expression`* müssen einen ganzzahligen Typ aufweisen. Ein *`constant-expression`* -Wert muss zum Zeitpunkt der Kompilierung einen eindeutigen Konstanten ganzzahligen Wert aufweisen.
+
+Das Steuerelement wird **`case`** an die *`constant-expression`* -Anweisung weitergeleitet, *`expression`* deren Wert dem Wert von entspricht. Die __`switch`__ -Anweisung kann eine beliebige Anzahl __`case`__ von-Instanzen enthalten. In derselben __`switch`__ Anweisung können *`constant-expression`* jedoch nicht zwei Werte denselben Wert aufweisen. Die Ausführung des __`switch`__ Anweisungs Texts beginnt bei der ersten Anweisung in oder nach der *`labeled-statement`* Übereinstimmung. Die Ausführung wird bis zum Ende des Texts fortgesetzt oder bis __`break`__ eine-Anweisung die Steuerung aus dem Text überträgt.
+
+Die __`switch`__ Verwendung der-Anweisung sieht in etwa wie folgt aus:
 
 ```C
 switch ( expression )
@@ -45,32 +56,32 @@ switch ( expression )
 }
 ```
 
-Sie können mit der **break**-Anweisung die Verarbeitung eines bestimmten Falls innerhalb der `switch`-Anweisung beenden und bis zum Ende der `switch`-Anweisung branchen. Ohne **break** wird das Programm mit dem nächsten Fall fortgesetzt, und die Anweisungen werden bis zu einer **break**-Anweisung oder dem Ende der Anweisung ausgeführt. In einigen Situationen ist diese Fortsetzung wünschenswert.
+Sie können die- __`break`__ Anweisung verwenden, um die Verarbeitung einer bestimmten beschrifteten Anweisung __`switch`__ innerhalb der-Anweisung zu beenden. Sie verzweigt sich bis zum Ende __`switch`__ der-Anweisung. Ohne __`break`__ wird das Programm mit der nächsten gekennzeichneten Anweisung fortgesetzt, und die Anweisungen werden __`break`__ ausgeführt, bis ein oder das Ende der Anweisung erreicht wird. Diese Fortsetzung ist in einigen Situationen möglicherweise erwünscht.
 
-Die **default**-Anweisung wird ausgeführt, wenn kein **case** *constant-expression* dem Wert von **switch (** *expression* **)** entspricht. Wenn die **default**-Anweisung ausgelassen und keine **case**-Übereinstimmung gefunden wird, wird keine der Anweisungen im `switch`-Text ausgeführt. Es kann höchstens eine **default**-Anweisung geben. Die **default**-Anweisung muss nicht am Ende stehen. Sie kann überall im Text der `switch`-Anweisung vorkommen. Eine **case**- oder **default**-Bezeichnung kann nur innerhalb einer `switch`-Anweisung angezeigt werden.
+Die __`default`__ -Anweisung wird ausgeführt, __`case`__ *`constant-expression`* wenn kein Wert gleich dem Wert von *`expression`* ist. Wenn keine __`default`__ -Anweisung vorhanden ist und keine __`case`__ Entsprechung gefunden wird, wird keine der Anweisungen im __`switch`__ Text ausgeführt. Es darf höchstens eine __`default`__ Anweisung vorhanden sein. Die __`default`__ -Anweisung muss nicht am Ende stehen. Es kann an beliebiger Stelle im Hauptteil der __`switch`__ Anweisung vorkommen. Eine __`case`__ - __`default`__ oder-Bezeichnung kann nur innerhalb __`switch`__ einer-Anweisung angezeigt werden.
 
-Der Typ des `switch` *expression* und des **case** *constant-expression* müssen ganzzahlig sein. Der Wert von jedem **case** *constant-expression* muss innerhalb des Anweisungstexts eindeutig sein.
+Der Typ von __`switch`__ *`expression`* und __`case`__ *`constant-expression`* muss ganzzahlig sein. Der Wert jedes __`case`__ *`constant-expression`* muss innerhalb des Anweisungs Texts eindeutig sein.
 
-Die **case**- und **default**-Bezeichnungen des `switch`-Anweisungstexts sind nur im ersten Test wichtig, in dem bestimmt wird, an welcher Stelle des Anweisungstexts die Ausführung beginnt. Switch-Anweisungen können geschachtelt werden. Alle statischen Variablen werden vor dem Ausführen in einer `switch`-Anweisung initialisiert.
+Die __`case`__ - __`default`__ und-Bezeichnungen __`switch`__ des-Anweisungs Texts sind nur im ersten Test wichtig, der bestimmt, wo die Ausführung im Anweisungs Text beginnt. __`switch`__-Anweisungen können eingebettet werden. Alle statischen Variablen werden vor dem Ausführen in einer __`switch`__ -Anweisung initialisiert.
 
 > [!NOTE]
-> Deklarationen können am Anfang der Verbundanweisung stehen, die den `switch`-Text bildet, aber in den Deklarationen enthaltene Initialisierungen werden nicht ausgeführt. Mit der `switch`-Anweisung wird die Steuerung direkt an eine ausführbare Anweisung innerhalb des Texts übertragen. Dabei werden die Zeilen umgangen, die Initialisierungen enthalten.
+> Deklarationen können am Anfang der Verbund Anweisung stehen, die den __`switch`__ Text bildet, aber in den Deklarationen enthaltene Initialisierungen werden nicht ausgeführt. Mit __`switch`__ der-Anweisung wird die Steuerung direkt an eine ausführbare Anweisung innerhalb des Texts übertragen. dabei werden die Zeilen umgangen, die Initialisierungen enthalten.
 
-In den folgenden Beispielen werden `switch`-Anweisungen veranschaulicht:
+In den folgenden Beispielen __`switch`__ werden-Anweisungen veranschaulicht:
 
 ```C
 switch( c )
 {
     case 'A':
-        capa++;
+        capital_a++;
     case 'a':
-        lettera++;
+        letter_a++;
     default :
         total++;
 }
 ```
 
-Alle drei Anweisungen des `switch`-Texts in diesem Beispiel werden ausgeführt, wenn `c` gleich `'A'` ist, da vor dem folgenden Fall keine **break**-Anweisung steht. Die Ausführungssteuerung wird auf die erste Anweisung (`capa++;`) übertragen und im verbleibenden Text der Reihe nach fortgeführt. Wenn `c` gleich `'a'` ist, werden `lettera` und `total` erhöht. Nur `total` wird erhöht, wenn `c` ungleich `'A'` oder `'a'` ist.
+Alle drei __`switch`__ Anweisungen des Texts in diesem Beispiel werden ausgeführt `c` `'A'`, wenn gleich ist, da keine __`break`__ Anweisung vor den folgenden __`case`__ erscheint. Die Ausführungssteuerung wird auf die erste Anweisung (`capital_a++;`) übertragen und im verbleibenden Text der Reihe nach fortgeführt. Wenn `c` gleich `'a'` ist, werden `letter_a` und `total` erhöht. Wird `total` nur inkrementiert, `'A'` Wenn `'a'` `c` nicht gleich oder ist.
 
 ```C
 switch( i )
@@ -87,29 +98,30 @@ switch( i )
 }
 ```
 
-In diesem Beispiel folgt eine **break**-Anweisung auf jede Anweisung des `switch`-Texts. Die **break**-Anweisung erzwingt eine Beendigung vom Anweisungstext, nachdem eine Anweisung ausgeführt wurde. Wenn `i` gleich -1 ist, wird nur `n` inkrementiert. Die **break**-Anweisung, die auf die `n++;`-Anweisung folgt, führt dazu, dass die Ausführungssteuerung aus dem Anweisungstext übergeben wird und die übrigen Anweisungen übersprungen werden. Wenn `i` gleich 0 ist, wird dementsprechend nur `z` erhöht. Wenn `i` gleich 1 ist, wird nur `p` erhöht. Die abschließende **break**-Anweisung ist nicht unbedingt erforderlich, da die Steuerung am Ende der Verbundanweisung aus dem Text übergeben wird, aus Gründen der Einheitlichkeit ist sie aber enthalten.
+In diesem Beispiel folgt eine __`break`__ -Anweisung auf jede Anweisung des __`switch`__ Texts. Die __`break`__ Anweisung erzwingt eine Beendigung aus dem Anweisungs Text, nachdem eine Anweisung ausgeführt wurde. Wenn `i` gleich -1 ist, wird nur `n` inkrementiert. Die __`break`__ folgende Anweisung `n++;` bewirkt, dass die Ausführungs Steuerung aus dem Anweisungs Text übergeben wird, wobei die restlichen Anweisungen umgangen werden. Wenn `i` gleich 0 ist, wird dementsprechend nur `z` erhöht. Wenn `i` gleich 1 ist, wird nur `p` erhöht. Die abschließende __`break`__ Anweisung ist nicht unbedingt erforderlich, da die Steuerung am Ende der Verbund Anweisung aus dem Text übergeht. Es ist aus Gründen der Konsistenz eingeschlossen.
 
-Eine einzelne Anweisung kann mehrere **case**-Bezeichnungen tragen, wie das folgende Beispiel zeigt:
+Eine einzelne Anweisung kann mehrere __`case`__ Bezeichnungen enthalten, wie im folgenden Beispiel gezeigt:
 
 ```C
-case 'a' :
-case 'b' :
-case 'c' :
-case 'd' :
-case 'e' :
-case 'f' :  hexcvt(c);
+switch( c )
+{
+    case 'a' :
+    case 'b' :
+    case 'c' :
+    case 'd' :
+    case 'e' :
+    case 'f' :  convert_hex(c);
+}
 ```
 
-In diesem Beispiel wird im Fall, dass *constant-expression* einem beliebigen Buchstaben zwischen `'a'` und `'f'` entspricht, die `hexcvt`-Funktion aufgerufen.
+In diesem Beispiel wird im Fall, dass *constant-expression* einem beliebigen Buchstaben zwischen `'a'` und `'f'` entspricht, die `convert_hex`-Funktion aufgerufen.
 
-**Microsoft-spezifisch**
+### <a name="microsoft-specific"></a>Microsoft-spezifisch
 
-In Microsoft C wird die Anzahl von case-Werten in einer `switch`-Anweisung nicht beschränkt. Die Anzahl wird nur durch den verfügbaren Speicher beschränkt. ANSI C erfordert, dass mindestens 257 case-Abschnitte in einer `switch`-Anweisung zulässig sind.
+Microsoft C schränkt die Anzahl von __`case`__ Werten in einer- __`switch`__ Anweisung nicht ein. Die Anzahl wird nur durch den verfügbaren Speicher beschränkt. ANSI C erfordert, dass mindestens __`case`__ 257 Bezeichnungen in einer __`switch`__ -Anweisung zulässig sind.
 
-Bei Microsoft C sind die Microsoft-Erweiterungen standardmäßig aktiviert. Verwenden Sie die /Za-Compileroption, um diese Erweiterungen zu deaktivieren.
+default Bei Microsoft C sind die Microsoft-Erweiterungen aktiviert. Verwenden Sie die [/Za](../build/reference/za-ze-disable-language-extensions.md) -Compileroption, um diese Erweiterungen zu deaktivieren.
 
-**Ende Microsoft-spezifisch**
+## <a name="see-also"></a>Weitere Informationen
 
-## <a name="see-also"></a>Siehe auch
-
-[switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)
+[switchAnweisung (C++)](../cpp/switch-statement-cpp.md)

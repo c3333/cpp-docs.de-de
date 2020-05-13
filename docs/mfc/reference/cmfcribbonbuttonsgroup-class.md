@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CMFCRibbonButtonsGroup [MFC], SetImages
 - CMFCRibbonButtonsGroup [MFC], SetParentCategory
 ms.assetid: b993d93e-fc1a-472f-a87f-1d7b7b499845
-ms.openlocfilehash: af5919ff2a72fc2aa1eeeb95fc93afbe9e743582
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d690e8bf306234e7b742a4c6a0917e5430d92d10
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375287"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754105"
 ---
 # <a name="cmfcribbonbuttonsgroup-class"></a>CMFCRibbonButtonsGroup-Klasse
 
@@ -89,7 +89,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCRibbonButtonsGroup](../../mfc/reference/cmfcribbonbuttonsgroup-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxribbonbuttonsgroup.h
 
@@ -97,7 +97,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 Fügt einer Gruppe eine Schaltfläche hinzu.
 
-```
+```cpp
 void AddButton(CMFCRibbonBaseElement* pButton);
 ```
 
@@ -110,7 +110,7 @@ void AddButton(CMFCRibbonBaseElement* pButton);
 
 Fügt einer Gruppe eine Liste von Schaltflächen hinzu.
 
-```
+```cpp
 void AddButtons(
     const CList<CMFCRibbonBaseElement*,CMFCRibbonBaseElement*>& lstButtons);
 ```
@@ -246,7 +246,7 @@ virtual void OnDrawImage(
 
 Entfernt alle Schaltflächen `CMFCRibbonButtonsGroup` aus dem Objekt.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -256,7 +256,7 @@ void RemoveAll();
 
 Weist der Gruppe der Menübandschaltflächen Bilder zu.
 
-```
+```cpp
 void SetImages(
     CMFCToolBarImages* pImages,
     CMFCToolBarImages* pHotImages,
@@ -296,7 +296,7 @@ virtual void SetParentCategory(CMFCRibbonCategory* pCategory);
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -1,8 +1,9 @@
 ---
 title: _lock_file
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _lock_file
+- _o__lock_file
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - _lock_file function
 - lock_file function
 ms.assetid: 75c7e0e6-efff-4747-b6ed-9bcf2b0894c3
-ms.openlocfilehash: 43030030d1674cfba24c1300487f576b7a2085ea
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e4f99203d5330a44b89239911e4a035a7958bf0b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953301"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911529"
 ---
 # <a name="_lock_file"></a>_lock_file
 
@@ -46,20 +48,22 @@ void _lock_file( FILE* file );
 
 ### <a name="parameters"></a>Parameter
 
-*datei*<br/>
+*Datei*<br/>
 Dateihandle.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_lock_file** -Funktion sperrt das **Datei** Objekt, das durch die *Datei*angegeben wird. Die zugrunde liegende Datei wird nicht von **_lock_file**gesperrt. Verwenden Sie [_unlock_file](unlock-file.md), um die Sperre der Datei aufzuheben. Aufrufe von **_lock_file** und **_unlock_file** müssen in einem Thread abgeglichen werden.
+Die **_lock_file** -Funktion sperrt das **Datei** Objekt, das durch die *Datei*angegeben wird. Die zugrunde liegende Datei ist nicht durch **_lock_file**gesperrt. Verwenden Sie [_unlock_file](unlock-file.md), um die Sperre der Datei aufzuheben. Aufrufe von **_lock_file** und **_unlock_file** müssen in einem Thread abgeglichen werden.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_lock_file**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -136,9 +140,9 @@ tS
 eFciornsdt
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>
 [_unlock_file](unlock-file.md)<br/>

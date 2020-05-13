@@ -1,10 +1,12 @@
 ---
 title: _ismbblead, _ismbblead_l
 description: Beschreibt die Funktionen der Microsoft C-Lauf Zeit Bibliothek (CRT) _ismbblead und _ismbblead_l.
-ms.date: 01/08/2020
+ms.date: 4/2/2020
 api_name:
 - _ismbblead_l
 - _ismbblead
+- _o__ismbblead
+- _o__ismbblead_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - ismbblead_l function
 - _istlead function
 ms.assetid: 2abc6f75-ed5c-472e-bfd0-e905a1835ccf
-ms.openlocfilehash: 6a7bb992eeeb9c66a7cbdea0ed34cf797d374617
-ms.sourcegitcommit: 7bd3567fc6a0e7124aab51cad63bbdb44a99a848
+ms.openlocfilehash: 7680793b71c4535ed75433ac98167e52a39896ba
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755031"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918669"
 ---
 # <a name="_ismbblead-_ismbblead_l"></a>_ismbblead, _ismbblead_l
 
@@ -59,12 +62,12 @@ int _ismbblead_l(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*c* -\
+*scher*\
 Die zu testende ganze Zahl.
 
-Gebiets *Schema\*
+*Konfigurations*\
 Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -81,15 +84,17 @@ Wenn das Gebiets Schema UTF-8 ist, gibt **_ismbblead** und **_ismbblead_l** imme
 
 **_ismbblead** und **_ismbblead_l** sind Microsoft-spezifisch, nicht Teil der Standard-C-Bibliothek. Wir empfehlen Ihnen nicht, Sie zu verwenden, wenn Sie portablen Code verwenden möchten. Verwenden Sie für die Standard-C-Kompatibilität stattdessen **mbrlen** .
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnungen von generischen Text Routinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_istlead**|Gibt immer "false" zurück|**_ismbblead**|Gibt immer "false" zurück|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_ismbblead**|\<mbctype.h> oder \<mbstring.h>|\<ctype.h>,* \<limits.h>, \<stdlib.h>|
 |**_ismbblead_l**|\<mbctype.h> oder \<mbstring.h>|\<ctype.h>,* \<limits.h>, \<stdlib.h>|
@@ -98,7 +103,7 @@ Wenn das Gebiets Schema UTF-8 ist, gibt **_ismbblead** und **_ismbblead_l** imme
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Byte Klassifizierung](../../c-runtime-library/byte-classification.md)\
 [_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)\

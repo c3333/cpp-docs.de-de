@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CMFCColorDialog [MFC], SetPageOne
 - CMFCColorDialog [MFC], SetPageTwo
 ms.assetid: 235bbbbc-a3b1-46e0-801b-fb55093ec579
-ms.openlocfilehash: 987e4f1e5e89c3c56b58adaad76cfd23d5e26c52
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1d4bd31d5095f572ee80f0357a2d7526482f1caa
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367722"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752547"
 ---
 # <a name="cmfccolordialog-class"></a>CMFCColorDialog-Klasse
 
@@ -104,7 +104,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie ein `CMFCColorDialog` Farbdi
 
 [!code-cpp[NVC_MFC_NewControls#3](../../mfc/reference/codesnippet/cpp/cmfccolordialog-class_1.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcolordialog.h
 
@@ -174,7 +174,7 @@ Die Farbpalette gibt die Farben an, die der Benutzer auswählen kann.
 
 Leitet eine Palette aus der Systempalette ab.
 
-```
+```cpp
 void RebuildPalette();
 ```
 
@@ -182,7 +182,7 @@ void RebuildPalette();
 
 Legt die aktuelle Farbe des Dialogfelds fest.
 
-```
+```cpp
 void SetCurrentColor(COLORREF rgb);
 ```
 
@@ -197,7 +197,7 @@ void SetCurrentColor(COLORREF rgb);
 
 Legt die aktuelle Farbe auf die Farbe in der aktuellen Palette fest, die sich am ähnlichsten befindet.
 
-```
+```cpp
 void SetNewColor(COLORREF rgb);
 ```
 
@@ -212,7 +212,7 @@ void SetNewColor(COLORREF rgb);
 
 Gibt explizit die roten, grünen und blauen Komponenten einer ausgewählten Farbe auf der ersten Eigenschaftenseite eines Farbdialogs an.
 
-```
+```cpp
 void SetPageOne(
     BYTE R,
     BYTE G,
@@ -236,7 +236,7 @@ void SetPageOne(
 
 Gibt explizit die roten, grünen und blauen Komponenten einer ausgewählten Farbe auf der zweiten Eigenschaftenseite eines Farbdialogs an.
 
-```
+```cpp
 void SetPageTwo(
     BYTE R,
     BYTE G,
@@ -256,7 +256,7 @@ void SetPageTwo(
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -26,7 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -63,12 +63,12 @@ helpviewer_keywords:
 - strnset_s function
 - _wcsnset_s function
 ms.assetid: 9cf1b321-b5cb-4469-b285-4c07cfbd8813
-ms.openlocfilehash: 62b0ecdc7d9e1afb93c4b15c37016ac687dc80d6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 123f8c4945d98ccf3dd94a48dbbb0fef3b35a8e5
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364458"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911223"
 ---
 # <a name="_strnset_s-_strnset_s_l-_wcsnset_s-_wcsnset_s_l-_mbsnset_s-_mbsnset_s_l"></a>_strnset_s, _strnset_s_l, _wcsnset_s, _wcsnset_s_l, _mbsnset_s, _mbsnset_s_l
 
@@ -123,13 +123,13 @@ errno_t _mbsnset_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Zu ändernde Zeichenfolge.
 
-*Sizeinbytes*<br/>
-Die Größe *str* des str-Puffers.
+*numberOfElements*<br/>
+Die Größe des *Str* -Puffers.
 
-*C*<br/>
+*scher*<br/>
 Zeicheneinstellung.
 
 *count*<br/>
@@ -142,19 +142,19 @@ Zu verwendendes Gebietsschema.
 
 Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
-Diese Funktionen überprüfen ihre Argumente. Wenn *str* keine gültige NULL-Termin-Zeichenfolge ist oder das Size-Argument kleiner oder gleich 0 ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen einen Fehlercode zurück und setzen **errno** auf diesen Fehlercode. Der Standardfehlercode ist **EINVAL,** wenn kein spezifischerer Wert angewendet wird.
+Diese Funktionen überprüfen ihre Argumente. Wenn *Str* keine gültige NULL-terminierte Zeichenfolge ist oder das Größen Argument kleiner oder gleich 0 ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen einen Fehlercode zurück und legen **errno** auf diesen Fehlercode fest. Der Standardfehler Code ist " **Deval** ", wenn kein spezifischeren Wert angewendet wird.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Diese Funktionen legen höchstens die ersten *Zählzeichen* von *str* bis *c*fest. Wenn die *Anzahl* größer als die Größe von *str*ist, wird die Größe von *str* anstelle von *count*verwendet. Ein Fehler tritt auf, wenn die *Anzahl* größer als *numberOfElements* ist und beide Parameter größer als die Größe von *str*sind.
+Diese Funktionen legen höchstens die ersten *count* -Zeichen von *Str* bis *c*fest. Wenn *count* größer als die Größe von *Str*ist, wird die Größe von *Str* anstelle von *count*verwendet. Es tritt ein Fehler auf, wenn die *Anzahl* größer als die Anzahl der *Nummerierungen* ist, und beide Parameter größer als die Größe von *Str*.
 
-**_wcsnset_s** und **_mbsnset_s** sind breit- und multibyte-Zeichen-Versionen von **_strnset_s**. Das Zeichenfolgenargument **von _wcsnset_s** ist eine Zeichenfolge mit großen Zeichen. die von **_mbsnset_s** ist eine Zeichenfolge mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**_wcsnset_s** und **_mbsnset_s** sind breit Zeichen-und multibytezeichenversionen von **_strnset_s**. Das Zeichen folgen Argument von **_wcsnset_s** ist eine Zeichenfolge mit breit Zeichen. Das **_mbsnset_s** ist eine amultibyte-Zeichenfolge. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -171,7 +171,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_strnset_s_l**|\<tchar.h>|
 |**_wcsnset_s**|\<string.h> oder \<wchar.h>|
 |**_wcsnset_s_l**|\<tchar.h>|
-|**_mbsnset_s**, **_mbsnset_s_l**|\<mbstring.h>|
+|**_mbsnset_s** **_mbsnset_s_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -197,9 +197,9 @@ Before: This is a test
 After:  **** is a test
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>

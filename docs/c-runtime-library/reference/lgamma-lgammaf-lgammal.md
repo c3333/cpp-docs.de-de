@@ -1,10 +1,13 @@
 ---
 title: lgamma, lgammaf, lgammal
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - lgamma
 - lgammaf
 - lgammal
+- _o_lgamma
+- _o_lgammaf
+- _o_lgammal
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +37,12 @@ helpviewer_keywords:
 - lgammal function
 - lgammaf function
 ms.assetid: 6e326c58-7077-481a-a329-c82ae56ae9e6
-ms.openlocfilehash: 9baf8f0fefb50cea6a5301aac9ffd48ff3cd5bde
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a610b0412b7e10949a810f4e360686292cff9ee3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953377"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916450"
 ---
 # <a name="lgamma-lgammaf-lgammal"></a>lgamma, lgammaf, lgammal
 
@@ -59,23 +63,23 @@ long double lgamma( long double x ); //C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu berechnende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Bei erfolgreicher Ausführung wird der natürliche Logarithmus des absoluten Werts der Gamma-Funktion von *x*zurückgegeben.
 
-|Problem|Zurück|
+|Problem|Rückgabewert|
 |-----------|------------|
 |*x* = Nan|NaN|
-|*x* = ±0|+INFINITY|
+|*x* = ± 0|+INFINITY|
 |*x*= negative ganze Zahl|+INFINITY|
-|± UNENDLICH|+INFINITY|
+|± Unendlich|+INFINITY|
 |pole-Fehler|+HUGE_VAL, +HUGE_VALF, oder +HUGE_VALL|
 |Überlaufbereichsfehler|± HUGE_VAL, ± HUGE_VALF oder ± HUGE_VALL|
 
-Fehler werden wie in [_matherr](matherr.md) angegeben gemeldet.
+Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -83,15 +87,17 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **lgamma** aufzur
 
 Wenn x eine rationale Zahl ist, gibt diese Funktion den Logarithmus der Fakultät von (x-1) zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**lgamma**, **lgammaf**, **lgammal**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [tgamma, tgammaf, tgammal](tgamma-tgammaf-tgammal.md)<br/>

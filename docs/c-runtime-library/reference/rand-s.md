@@ -1,8 +1,9 @@
 ---
 title: rand_s
-ms.date: 01/02/2018
+ms.date: 4/2/2020
 api_name:
 - rand_s
+- _o_rand_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +32,12 @@ helpviewer_keywords:
 - cryptographically secure random numbers
 - pseudorandom numbers
 - numbers, generating pseudorandom
-ms.openlocfilehash: 652521ab472736783ba1b4498ca7d7c3f297e7ee
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: cad1740e64c7bbda553ac1a6c777d7e2295152ba
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949654"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919541"
 ---
 # <a name="rand_s"></a>rand_s
 
@@ -58,11 +60,13 @@ Null, wenn erfolgreich, andernfalls ein Fehlercode. Wenn der Eingabe Zeiger _ran
 
 ## <a name="remarks"></a>Hinweise
 
-Die **rand_s** -Funktion schreibt eine Pseudo Zufalls-Ganzzahl im Bereich 0 bis **UINT_MAX** in den Eingabe Zeiger. Die **rand_s** -Funktion verwendet das Betriebssystem, um kryptografisch sichere Zufallszahlen zu generieren. Er verwendet nicht den von der [srand](srand.md) -Funktion generierten Ausgangswert und wirkt sich nicht auf die Zufallszahlen Sequenz aus, die von [Rand](rand.md)verwendet wird.
+Die **rand_s** -Funktion schreibt eine Pseudo Zufalls-Ganzzahl im Bereich 0, um an den Eingabe Zeiger zu **UINT_MAX** . Die **rand_s** Funktion verwendet das Betriebssystem, um kryptografisch sichere Zufallszahlen zu generieren. Er verwendet nicht den von der [srand](srand.md) -Funktion generierten Ausgangswert und wirkt sich nicht auf die Zufallszahlen Sequenz aus, die von [Rand](rand.md)verwendet wird.
 
 Die **rand_s** -Funktion erfordert, dass Konstante **_CRT_RAND_S** vor der Inklusions Anweisung definiert werden, damit die Funktion deklariert wird, wie im folgenden Beispiel gezeigt:
 
 ```C
+By default, this function's global state is scoped to the application. To change this, see [Global state in the CRT](../global-state.md).
+
 #define _CRT_RAND_S
 #include <stdlib.h>
 ```
@@ -71,7 +75,7 @@ Die **rand_s** -Funktion erfordert, dass Konstante **_CRT_RAND_S** vor der Inklu
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**rand_s**|\<stdlib.h>|
 
@@ -153,7 +157,7 @@ int main( void )
 65.0712
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [rand](rand.md)<br/>

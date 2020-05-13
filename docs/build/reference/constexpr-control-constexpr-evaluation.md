@@ -1,5 +1,5 @@
 ---
-title: / constexpr (Constexpr-Auswertung steuern)
+title: /constexpr (constexpr-Auswertung steuern)
 ms.date: 08/15/2017
 f1_keywords:
 - /constexpr
@@ -9,50 +9,50 @@ helpviewer_keywords:
 - -constexpr control constexpr evaluation [C++]
 - constexpr control constexpr evaluation [C++]
 ms.assetid: 76d56784-f5ad-401d-841d-09d1059e8b8c
-ms.openlocfilehash: 178acc548fb9c89dcfde104d2a12d85637440e28
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4d3f33a64dcebfc40778f81354cb5067a5239ace
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62294251"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825590"
 ---
-# <a name="constexpr-control-constexpr-evaluation"></a>/ constexpr (Constexpr-Auswertung steuern)
+# <a name="constexpr-control-constexpr-evaluation"></a>/constexpr (constexpr-Auswertung steuern)
 
-Verwenden der **/constexpr** Compileroptionen Steuerparameter für **"constexpr"** Auswertung zum Zeitpunkt der Kompilierung.
+Verwenden Sie die **/constexpr** -Compileroptionen zum Steuern von Parametern für die **constexpr** -Auswertung zur Kompilierzeit
 
 ## <a name="syntax"></a>Syntax
 
-> **/constexpr:depth**<em>N</em>
->  **/constexpr:backtrace**<em>N</em>
->  **/constexpr:steps**<em>N</em>
+> **/constexpr: Tiefe**<em>N</em>\
+> **/constexpr: Rückverfolgung**<em>N</em>\
+> **/constexpr: Schritte**<em>N</em>
 
 ## <a name="arguments"></a>Argumente
 
-**Tiefe**<em>N</em> schränken Sie die Tiefe von rekursiven **"constexpr"** Funktionsaufruf auf *N* Ebenen. Der Standardwert ist 512.
+**Tiefe**<em>n</em> beschränken Sie die Tiefe der rekursiven **constexpr** -Funktionsaufrufe auf *N* Ebenen. Der Standardwert liegt bei 512.
 
-**Backtrace**<em>N</em> anzeigen bis zu *N* **"constexpr"** auswertungen bei der Diagnose. Der Standard ist 10.
+**Rückverfolgung**<em>n</em> zeigt bis zu *N* **constexpr** -Auswertungen in der Diagnose an. Der Standardwert ist 10.
 
-**Schritte**<em>N</em> Terminate **"constexpr"** Auswertung nach *N* Schritte. Der Standardwert ist 100.000.
+**Schritte**<em>n</em> Beenden der **constexpr** -Auswertung nach *N* Schritten. Der Standardwert ist 100.000.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/constexpr** Compileroptionen steuern kompilierzeitauswertung von **"constexpr"** Ausdrücke. Evaluierungsschritte, Rekursionsebenen und Backtrace Tiefe werden gesteuert, um zu verhindern, dass den Compiler Ausgaben zu viel Zeit für **"constexpr"** Auswertung. Weitere Informationen zu den **"constexpr"** Language-Element, finden Sie unter ["constexpr" (C++)](../../cpp/constexpr-cpp.md).
+Die **/constexpr** -Compileroptionen steuern die Kompilierzeit Auswertung von **constexpr** -Ausdrücken. Bewertungsschritte, Rekursions Ebenen und Backtrace-Tiefe werden gesteuert, um zu verhindern, dass der Compiler zu viel Zeit für die **constexpr** -Auswertung ausgibt. Weitere Informationen zum **constexpr** -sprach Element finden Sie unter [constexpr (C++)](../../cpp/constexpr-cpp.md).
 
-Die **/constexpr** Optionen sind verfügbar ab der in Visual Studio 2015.
+Die **/constexpr** -Optionen sind ab Visual Studio 2015 verfügbar.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen des Projekts **Eigenschaftenseiten** Dialogfeld.
+1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** des Projekts.
 
-2. Unter **Konfigurationseigenschaften**, erweitern Sie die **C/C++-** Ordner, und wählen Sie die **Befehlszeile** Eigenschaftenseite.
+2. Erweitern Sie unter **Konfigurations Eigenschaften**den Ordner **C/C++** , und wählen Sie die Eigenschaften Seite **Befehlszeile** aus.
 
-3. Geben Sie ein beliebiges **/constexpr** Compileroptionen der **zusätzliche Optionen** Feld. Wählen Sie **OK** oder **übernehmen** zum Speichern der Änderungen.
+3. Geben Sie im Feld **zusätzliche Optionen** beliebige **/constexpr** -Compileroptionen ein. Wählen Sie **OK** oder **anwenden** aus, um die Änderungen zu speichern.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)

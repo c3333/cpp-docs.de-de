@@ -311,12 +311,12 @@ helpviewer_keywords:
 - CMFCToolBar [MFC], m_bDontScaleImages
 - CMFCToolBar [MFC], m_dblLargeImageRatio
 ms.assetid: e7679c01-fb94-44c0-98c6-3af955292fb5
-ms.openlocfilehash: dc1a8b1fc852ff1071b20ced64fc8e0686725a83
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9a90327bde693b87a53838da35adde21ed48dfbb
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375078"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754044"
 ---
 # <a name="cmfctoolbar-class"></a>CMFCToolBar-Klasse
 
@@ -530,7 +530,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 [!code-cpp[NVC_MFC_IEDemo#6](../../mfc/reference/codesnippet/cpp/cmfctoolbar-class_1.h)]
 [!code-cpp[NVC_MFC_IEDemo#8](../../mfc/reference/codesnippet/cpp/cmfctoolbar-class_2.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxtoolbar.h
 
@@ -652,7 +652,7 @@ Das Framework ruft diese Methode jedes Mal auf, wenn das Layout der Symbolleiste
 
 Berechnet die Größe der Symbolleiste neu.
 
-```
+```cpp
 void AdjustSize();
 ```
 
@@ -920,7 +920,7 @@ Das Framework ruft diese Methode auf, wenn eine Anwendung heruntergefahren wird.
 
 Gibt die Systemressourcen frei, die für gesperrte Symbolleistenbilder zugewiesen wurden.
 
-```
+```cpp
 void CleanUpLockedImages();
 ```
 
@@ -1139,7 +1139,7 @@ virtual void DrawSeparator(
 
 Aktiviert oder deaktiviert die Schaltfläche Anpassen, die auf der Symbolleiste angezeigt wird.
 
-```
+```cpp
 void EnableCustomizeButton(
     BOOL bEnable,
     int iCustomizeCmd,
@@ -1199,7 +1199,7 @@ Diese Methode erweitert die Basisklassenimplementierung [CBasePane::EnableDockin
 
 Aktiviert oder deaktiviert große Symbole auf Symbolleistenschaltflächen.
 
-```
+```cpp
 void EnableLargeIcons(BOOL bEnable);
 ```
 
@@ -1229,7 +1229,7 @@ static void EnableQuickCustomization(BOOL bEnable=TRUE);
 
 Aktiviert oder deaktiviert die Befehlsreflexion.
 
-```
+```cpp
 void EnableReflections(BOOL bEnable = TRUE);
 ```
 
@@ -1248,7 +1248,7 @@ Weitere Informationen zur Befehlsreflektion finden Sie unter [TN062: Nachrichten
 
 Aktiviert oder deaktiviert Textbeschriftungen unter Symbolleisten-Schaltflächenbildern.
 
-```
+```cpp
 void EnableTextLabels(BOOL bEnable=TRUE);
 ```
 
@@ -1343,7 +1343,7 @@ Ein Zeiger auf die Symbolleistenschaltfläche, falls vorhanden; oder NULL, wenn 
 
 Gibt die Befehls-ID, den Stil und den Bildindex der Schaltfläche an einem angegebenen Index zurück.
 
-```
+```cpp
 void GetButtonInfo(
     int nIndex,
     UINT& nID,
@@ -3211,7 +3211,7 @@ Im Explorer-Beispiel finden Sie ein Beispiel, das diese Methode verwendet.
 
 Legt die Befehls-, Stil- und Bild-ID einer Symbolleistenschaltfläche fest.
 
-```
+```cpp
 void SetButtonInfo(
     int nIndex,
     UINT nID,
@@ -3374,7 +3374,7 @@ Diese Methode passt das Layout jeder Symbolleiste in der Anwendung an und zeichn
 
 Gibt an, ob nicht verfügbare Schaltflächen auf der Symbolleiste abgeblendet sind oder ob schaltflächenverfügbare Bilder verwendet werden.
 
-```
+```cpp
 void SetGrayDisabledButtons(BOOL bGrayDisabledButtons);
 ```
 
@@ -3391,7 +3391,7 @@ Standardmäßig sind nicht verfügbare Schaltflächen abgeblendet.
 
 Legt die Höhe der Symbolleiste fest.
 
-```
+```cpp
 void SetHeight(int cyHeight);
 ```
 
@@ -3434,7 +3434,7 @@ BOOL SetHot(CMFCToolBarButton* pMenuButton);
 
 Gibt an, ob Symbolleistenschaltflächen hot-tracked sind.
 
-```
+```cpp
 void SetHotBorder(BOOL bShowHotBorder);
 ```
 
@@ -3468,7 +3468,7 @@ Weitere Informationen zu Schaltflächen mit der Symbolleiste mit heißem Nachver
 
 ## <a name="cmfctoolbarsetignoresettext"></a><a name="setignoresettext"></a>CMFCToolBar::SetIgnoreSetText
 
-```
+```cpp
 void SetIgnoreSetText(BOOL bValue);
 ```
 
@@ -3503,7 +3503,7 @@ Weitere Informationen zum Dialogfeld **Anpassen** finden Sie unter [CMFCToolBars
 
 Legt die Größe gesperrter Schaltflächen und gesperrter Bilder auf der Symbolleiste fest.
 
-```
+```cpp
 void SetLockedSizes(
     SIZE sizeButton,
     SIZE sizeImage,
@@ -3529,7 +3529,7 @@ Rufen Sie die [CMFCToolBar::GetLockedImageSize-Methode](#getlockedimagesize) auf
 
 ## <a name="cmfctoolbarsetmaskmode"></a><a name="setmaskmode"></a>CMFCToolBar::SetMaskMode
 
-```
+```cpp
 void SetMaskMode(BOOL bMasked);
 ```
 
@@ -3588,7 +3588,7 @@ Diese Methode löscht die vorherige Liste nicht zulässiger Befehle. Standardmä
 
 Positioniert die Symbolleiste und ihr Gleichgeordnetes in derselben Zeile.
 
-```
+```cpp
 void SetOneRowWithSibling();
 ```
 
@@ -3602,7 +3602,7 @@ Das Framework ruft die [CMFCToolBar::SetTwoRowsWithSibling-Methode](#settworowsw
 
 ## <a name="cmfctoolbarsetorigbuttons"></a><a name="setorigbuttons"></a>CMFCToolBar::SetOrigButtons
 
-```
+```cpp
 void SetOrigButtons(const CObList& lstOrigButtons);
 ```
 
@@ -3616,7 +3616,7 @@ void SetOrigButtons(const CObList& lstOrigButtons);
 
 Gibt an, ob ein Benutzer die Symbolleiste schließen kann.
 
-```
+```cpp
 void SetPermament(BOOL bPermament=TRUE);
 ```
 
@@ -3635,7 +3635,7 @@ Rufen Sie die [CMFCToolBar::CanBeClosed-Methode](#canbeclosed) auf, um zu bestim
 
 Gibt an, ob der übergeordnete Frame oder der Besitzer Befehle an die Symbolleiste sendet.
 
-```
+```cpp
 void SetRouteCommandsViaFrame(BOOL bValue);
 ```
 
@@ -3671,7 +3671,7 @@ Rufen Sie die [CMFCToolBar::GetShowTooltips-Methode](#getshowtooltips) auf, um z
 
 Gibt das gleichgeordnete Element der Symbolleiste an.
 
-```
+```cpp
 void SetSiblingToolBar(CMFCToolBar* pBrotherToolbar);
 ```
 
@@ -3716,7 +3716,7 @@ Rufen Sie die [CMFCToolBar::GetImageSize-Methode](#getimagesize) auf, um die Gr�
 
 Gibt die Eigenschaften einer Schaltfläche auf der Symbolleiste an.
 
-```
+```cpp
 void SetToolBarBtnText(
     UINT nBtnIndex,
     LPCTSTR szText=NULL,
@@ -3748,7 +3748,7 @@ In Debugbuilds generiert diese Methode einen Assertionsfehler, wenn *nBtnIndex* 
 
 Positioniert die Symbolleiste und ihr gleichgeordnetes Element in separaten Zeilen.
 
-```
+```cpp
 void SetTwoRowsWithSibling();
 ```
 
@@ -3840,7 +3840,7 @@ Das Framework ruft diese Methode auf, wenn eine Taste zusammen mit der Alt-Taste
 
 Aktualisiert den Status der angegebenen Schaltfläche.
 
-```
+```cpp
 void UpdateButton(int nIndex);
 ```
 
@@ -3898,7 +3898,7 @@ AFX_IMPORT_DATA static BOOL m_bDontScaleImages;
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

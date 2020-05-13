@@ -1,6 +1,6 @@
 ---
 title: log, logf, logl, log10, log10f, log10l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - log10f
 - logf
@@ -8,6 +8,8 @@ api_name:
 - log
 - log10l
 - logl
+- _o_log
+- _o_log10
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -43,12 +46,12 @@ helpviewer_keywords:
 - logf function
 - logarithms
 ms.assetid: 7adc77c2-04f7-4245-a980-21215563cfae
-ms.openlocfilehash: f610ead4d71a877051fdec8df2a1564089141eea
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 0acfbefb1fb01215e543538b9fdb8d554b10f8c1
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953228"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911484"
 ---
 # <a name="log-logf-logl-log10-log10f-log10l"></a>log, logf, logl, log10, log10f, log10l
 
@@ -74,7 +77,7 @@ long double log10( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Ein Wert, dessen Logarithmus gesucht wird.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -83,7 +86,7 @@ Die **Log** -Funktionen geben bei Erfolg den natürlichen Logarithmus (Basis *e*
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± QNAN, IND|none|_DOMAIN|
+|± QNAN, IND|Keine|_DOMAIN|
 |± 0|ZERODIVIDE|_SING|
 |*x* < 0|INVALID|_DOMAIN|
 
@@ -91,15 +94,17 @@ Die **Log** -Funktionen geben bei Erfolg den natürlichen Logarithmus (Basis *e*
 
 ## <a name="remarks"></a>Hinweise
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **Log** und **log10** , die **float** -oder **long Double** -Werte verwenden und zurückgeben, aufgerufen werden können. In einem C-Programm verwenden **Log** und **log10** immer einen **Double**-Wert.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Log** und **log10** , die **float** -oder **long Double** -Werte verwenden und zurückgeben, aufgerufen werden können. In einem C-Programm verwenden **Log** und **log10** immer einen **Double**-Wert.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**log**, **logf**, **logl**, **log10**, **log10f**, **log10l**|\<math.h>|
+|**Log**, **logf**, **logl**, **log10**, **log10f**, **log10l**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -156,7 +161,7 @@ int main()
 Log base 2 of 65536.000000 is 16.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md) <br/>
 [exp, expf, expl](exp-expf.md) <br/>

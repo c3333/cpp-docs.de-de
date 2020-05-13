@@ -1,8 +1,9 @@
 ---
 title: _fcvt_s
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _fcvt_s
+- _o__fcvt_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - floating-point functions, converting number to string
 - _fcvt_s function
 ms.assetid: 48671197-1d29-4c2b-a5d8-d2368f5f68a1
-ms.openlocfilehash: a7dcb9b7acc462d9570ee2cb7adb0dbd06df77c9
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 557a1d359c389f0eb7477aab4bf9cbb51558703a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623835"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920202"
 ---
 # <a name="_fcvt_s"></a>_fcvt_s
 
@@ -62,38 +64,38 @@ errno_t _fcvt_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Der angegebene Puffer, der das Ergebnis der Konvertierung enthält.
 
 *sizeInBytes*<br/>
 Die Größe des Puffers in Byte.
 
-*Wert*<br/>
+*value*<br/>
 Zu konvertierende Zahl.
 
 *count*<br/>
 Anzahl der Ziffern nach dem Dezimaltrennzeichen.
 
-*dec*<br/>
+*31.12.2012*<br/>
 Zeiger auf die gespeicherte Position der Dezimalstelle.
 
-*sign*<br/>
+*Gebärden*<br/>
 Zeiger auf den gespeicherten Zeichen-Indikator.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Null, wenn erfolgreich. Der Rückgabewert ist ein Fehlercode, wenn ein Fehler auftritt. Fehlercodes sind in Errno.h definiert. Eine Liste dieser Fehler finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-Bei einem in der folgenden Tabelle enthaltenen ungültigen Parameter wird von dieser Funktion der Handler für ungültige Parameter aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion " **errno** " auf " **EINVAL** " fest und gibt " **EINVAL**" zurück.
+Bei einem in der folgenden Tabelle enthaltenen ungültigen Parameter wird von dieser Funktion der Handler für ungültige Parameter aufgerufen, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion " **errno** " auf " **EINVAL** " fest und gibt " **EINVAL**" zurück.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*buffer*|*sizeInBytes*|Wert|count|dec|sign|Return|Wert im *Puffer*|
+|*ert*|*sizeInBytes*|value|count|dec|Signieren|Rückgabewert|Wert im *Puffer*|
 |--------------|-------------------|-----------|-----------|---------|----------|------------|-----------------------|
-|**NULL**|any|any|any|any|any|**EINVAL**|Nicht geändert.|
-|Not **null** (zeigt auf gültigen Speicher)|<=0|any|any|any|any|**EINVAL**|Nicht geändert.|
-|any|any|any|any|**NULL**|any|**EINVAL**|Nicht geändert.|
-|any|any|any|any|any|**NULL**|**EINVAL**|Nicht geändert.|
+|**Normal**|any|any|any|any|any|**Eingabe**|Nicht geändert.|
+|Not **null** (zeigt auf gültigen Speicher)|<=0|any|any|any|any|**Eingabe**|Nicht geändert.|
+|any|any|any|any|**Normal**|any|**Eingabe**|Nicht geändert.|
+|any|any|any|any|any|**Normal**|**Eingabe**|Nicht geändert.|
 
 ## <a name="security-issues"></a>Sicherheitsprobleme
 
@@ -109,9 +111,11 @@ Ein Puffer der Länge **_CVTBUFSIZE** ist für alle Gleit Komma Werte ausreichen
 
 Der Unterschied zwischen **_ecvt_s** und **_fcvt_s** ist die Interpretation des *count* -Parameters. **_ecvt_s** interpretiert *count* als die Gesamtanzahl der Ziffern in der Ausgabe Zeichenfolge, und **_fcvt_s** interpretiert *count* als die Anzahl der Ziffern nach dem Dezimaltrennzeichen.
 
-Die Verwendung dieser Funktion in C++ wird durch eine Vorlagenüberladung vereinfacht. Eine Überladung kann automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+Die Verwendung dieser Funktion in C++ wird durch eine Überladung (als Vorlagen vorhanden) vereinfacht. Eine Überladung kann automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 Die Debugversion dieser Funktion füllt den Puffer zuerst mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -155,7 +159,7 @@ int main()
 Converted value: 120000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

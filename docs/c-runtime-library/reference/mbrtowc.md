@@ -1,8 +1,9 @@
 ---
 title: mbrtowc
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - mbrtowc
+- _o_mbrtowc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -24,12 +26,12 @@ f1_keywords:
 helpviewer_keywords:
 - mbrtowc function
 ms.assetid: a1e87fcc-6de0-4ca1-bf26-508d28490286
-ms.openlocfilehash: b4c68ae8df9821d862b9f742d8a8ef7ace19c981
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a77049edba9a98d9e3e4df93ee2ba007a3eb7381
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952448"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919190"
 ---
 # <a name="mbrtowc"></a>mbrtowc
 
@@ -58,7 +60,7 @@ Adresse einer Sequenz von Bytes (ein Multibytezeichen).
 Anzahl zu überprüfender Bytes.
 
 *mbstate*<br/>
-Zeiger auf das Konvertierungzustandsobjekt. Wenn dieser Wert ein NULL-Zeiger ist, verwendet die Funktion ein statisches internes Konvertierungszustandsobjekt. Da das interne **mbstate_t** -Objekt nicht Thread sicher ist, wird empfohlen, immer Ihr eigenes *mbstate* -Argument zu übergeben.
+Zeiger auf das Konvertierungzustandsobjekt. Wenn dieser Wert ein NULL-Zeiger ist, verwendet die Funktion ein statisches internes Konvertierungszustandsobjekt. Da das interne **mbstate_t** Objekt nicht Thread sicher ist, wird empfohlen, immer Ihr eigenes *mbstate* -Argument zu übergeben.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -82,7 +84,9 @@ In diesem Fall werden der Wert der Argumente " *WCHAR* " und " *count* " ignorie
 
 Wenn *mbchar* kein NULL-Zeiger ist, untersucht die Funktion *count* Bytes aus *mbchar* , um die erforderliche Anzahl von Bytes zu bestimmen, die zum Vervollständigen des nächsten multibytezeichens erforderlich sind. Wenn das nächste Zeichen gültig ist, wird das entsprechende Multibytezeichen in *WCHAR* gespeichert, wenn es kein NULL-Zeiger ist. Wenn das Zeichen das entsprechende Breite Null-Zeichen ist, ist der resultierende Zustand von *mbstate* der anfängliche Konvertierungs Zustand.
 
-Die **mbrtowc** -Funktion unterscheidet [sich von mbtowc, _mbtowc_l](mbtowc-mbtowc-l.md) durch die Neustart Fähigkeit. Der Konvertierungs Zustand wird für nachfolgende Aufrufe der gleichen oder anderer Neu startbarer Funktionen in *mbstate* gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert.  Beispielsweise sollte eine Anwendung **wcsrlen** anstelle von **wcslen** verwenden, wenn ein nachfolgender **wcsr-** aufrufsausdruck anstelle von **wcstomb**verwendet wird.
+Die **mbrtowc** -Funktion unterscheidet [sich von mbtowc, _mbtowc_l](mbtowc-mbtowc-l.md) durch die neustarbarkeit. Der Konvertierungs Zustand wird für nachfolgende Aufrufe der gleichen oder anderer Neu startbarer Funktionen in *mbstate* gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert.  Beispielsweise sollte eine Anwendung **wcsrlen** anstelle von **wcslen** verwenden, wenn ein nachfolgender **wcsr-** aufrufsausdruck anstelle von **wcstomb**verwendet wird.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -205,11 +209,11 @@ WC String: AaBbCcÜïα∩≡xXyYzZ
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**mbrtowc**|\<wchar.h>|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>

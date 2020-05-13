@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CScrollBar [MFC], SetScrollRange
 - CScrollBar [MFC], ShowScrollBar
 ms.assetid: f3735ca5-73ea-46dc-918b-4d824c9fe47f
-ms.openlocfilehash: 761d7e9db650c6d95e916c85bd7456d9b1c647c5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2079e12eccde42fe8c456a7852a029f44ae3cd77
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318535"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754406"
 ---
 # <a name="cscrollbar-class"></a>CScrollBar-Klasse
 
@@ -95,7 +95,7 @@ Weitere Informationen zur `CScrollBar`Verwendung finden Sie unter [Steuerelement
 
 `CScrollBar`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -287,7 +287,7 @@ Die aktuelle Position ist ein relativer Wert, der vom aktuellen Bildlaufbereich 
 
 Kopiert die aktuellen minimalen und maximalen Bildlaufleistenpositionen für die angegebene Bildlaufleiste an die von *lpMinPos* und *lpMaxPos*angegebenen Positionen .
 
-```
+```cpp
 void GetScrollRange(
     LPINT lpMinPos,
     LPINT lpMaxPos) const;
@@ -375,7 +375,7 @@ Legen Sie *bRedraw* auf FALSE fest, wenn die Bildlaufleiste durch einen nachfolg
 
 Legt die minimalen und maximalen Positionswerte für die angegebene Scrollleiste fest.
 
-```
+```cpp
 void SetScrollRange(
     int nMinPos,
     int nMaxPos,
@@ -411,7 +411,7 @@ Die Differenz zwischen den von *nMinPos* und *nMaxPos* angegebenen Werten darf n
 
 Zeigt eine Bildlaufleiste ein oder blendet sie aus.
 
-```
+```cpp
 void ShowScrollBar(BOOL bShow = TRUE);
 ```
 
@@ -428,7 +428,7 @@ Eine Anwendung sollte diese Funktion nicht aufrufen, um eine Bildlaufleiste ausz
 
   Siehe Beispiel für [CScrollBar::Create](#create).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

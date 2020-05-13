@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CMFCToolBarsCustomizeDialog [MFC], OnInitDialog
 - CMFCToolBarsCustomizeDialog [MFC], PostNcDestroy
 ms.assetid: 78e2cddd-4f13-4097-afc3-1ad646a113f1
-ms.openlocfilehash: d47ecf45a7bbfc563be0c05cd15ee84d430f502f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 29e2c3d0238ac5a084ea916d95ad953f8c4aedce
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377364"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753401"
 ---
 # <a name="cmfctoolbarscustomizedialog-class"></a>CMFCToolBarsCustomizeDialog-Klasse
 
@@ -112,7 +112,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 `CMFCToolBarsCustomizeDialog`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxToolBarsCustomizeDialog.h
 
@@ -120,7 +120,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 F체gt eine Symbolleistenschaltfl채che in die Liste der Befehle auf der Seite **Befehle** ein.
 
-```
+```cpp
 void AddButton(
     UINT uiCategoryId,
     const CMFCToolBarButton& button,
@@ -187,7 +187,7 @@ Im Aufruf `AddMenuCommands`von ist *bPopup* FALSE. Daher f체gt diese Methode der
 
 F체gt elemente zur Liste der Befehle auf der Seite **Befehle** hinzu, um alle Elemente im angegebenen Men체 darzustellen.
 
-```
+```cpp
 void AddMenuCommands(
     const CMenu* pMenu,
     BOOL bPopup,
@@ -351,7 +351,7 @@ Rufen `Create` Sie die Methode erst auf, nachdem Sie die Klasse vollst채ndig ini
 
 Aktiviert oder deaktiviert das Erstellen neuer Symbolleisten mithilfe des Dialogfelds **Anpassen.**
 
-```
+```cpp
 void EnableUserDefinedToolbars(BOOL bEnable=TRUE);
 ```
 
@@ -391,7 +391,7 @@ Die `CMFCMousePropertyPage` Klasse verwendet diese Methode, um das Listenfeld f�
 
 F체llt das bereitgestellte `CComboBox` Objekt mit dem Namen jeder Befehlskategorie im Dialogfeld **Anpassen.**
 
-```
+```cpp
 void FillCategoriesComboBox(
     CComboBox& wndCategory,
     BOOL bAddEmpty = TRUE) const;
@@ -419,7 +419,7 @@ Die `CMFCToolBarsKeyboardPropertyPage` `CMFCKeyMapDialog` und-Klassen verwenden 
 
 F체llt das bereitgestellte `CListBox` Objekt mit dem Namen jeder Befehlskategorie im Dialogfeld **Anpassen.**
 
-```
+```cpp
 void FillCategoriesListBox(
     CListBox& wndCategory,
     BOOL bAddEmpty = TRUE) const;
@@ -705,7 +705,7 @@ Der Kategoriename muss eindeutig sein.
 
 Ersetzt eine Symbolleistenschaltfl채che im Listenfeld der Befehle auf der Seite **Befehle.**
 
-```
+```cpp
 void ReplaceButton(
     UINT uiCmd,
     const CMFCToolBarButton& button);
@@ -750,7 +750,7 @@ TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
 Die Benutzerkategorieeinstellung wird derzeit nicht vom Framework verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -46,12 +46,12 @@ helpviewer_keywords:
 - CDocTemplate [MFC], SetPreviewInfo
 - CDocTemplate [MFC], SetServerInfo
 ms.assetid: 14b41a1f-bf9d-4eac-b6a8-4c54ffcc77f6
-ms.openlocfilehash: 3376b8febe8ae4586ce649f3f83386875acb678f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 69b94a4188804f47c950ca31fb5cba80d85176e9
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375519"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753299"
 ---
 # <a name="cdoctemplate-class"></a>CDocTemplate-Klasse
 
@@ -127,7 +127,7 @@ Weitere Informationen `CDocTemplate`finden Sie unter [Dokumentvorlagen und den D
 
 `CDocTemplate`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -511,7 +511,7 @@ Un-Null, wenn erfolgreich; andernfalls 0.
 
 Bestimmt die Ressourcen für OLE-Container beim Bearbeiten eines ortsgebundenen OLE-Elements.
 
-```
+```cpp
 void SetContainerInfo(UINT nIDOleInPlaceContainer);
 ```
 
@@ -547,7 +547,7 @@ Informationen zum Standardtitel finden Sie `CDocTemplate::docName` in der Beschr
 
 Bestimmt die Ressourcen und Klassen, wenn das Serverdokument direkt eingebettet oder bearbeitet wird.
 
-```
+```cpp
 void SetServerInfo(
     UINT nIDOleEmbedding,
     UINT nIDOleInPlaceServer = 0,
@@ -603,7 +603,7 @@ Ein gültiger Zeiger `CFrameWnd` auf ein Objekt oder NULL, wenn die Erstellung f
 
 Richtet den Out-of-Process-Vorschauhandler ein.
 
-```
+```cpp
 void SetPreviewInfo(
     UINT nIDPreviewFrame,
     CRuntimeClass* pPreviewFrameClass = NULL,
@@ -623,7 +623,7 @@ Gibt einen Zeiger auf eine Laufzeitklasseninformationsstruktur der Vorschauansic
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

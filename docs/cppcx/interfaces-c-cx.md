@@ -2,12 +2,12 @@
 title: Schnittstellen (C++/CX)
 ms.date: 01/22/2017
 ms.assetid: 11034314-d54a-426d-923b-5ab7a6b9f8ce
-ms.openlocfilehash: b904f041e34bcf5fda78fed11aaad4998ba5208a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 716bf86eddf621244415033dae1b9c93ad1baba5
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366039"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032355"
 ---
 # <a name="interfaces-ccx"></a>Schnittstellen (C++/CX)
 
@@ -63,7 +63,7 @@ Wenn eine Verweisklasse mehrere Schnittstellen implementiert und diese Schnittst
 
 ## <a name="generic-interfaces"></a>Generische Schnittstellen
 
-In C++/CX `generic` wird das Schlüsselwort verwendet, um einen parametrisierten Windows-Runtime-Typ darzustellen. Ein parametrisierter Typ wird in Metadaten ausgegeben und kann durch jeden Code genutzt werden, der in einer Programmiersprache geschrieben ist, die Typparameter unterstützt. Die Windows-Runtime definiert einige generische Schnittstellen, z. B. [Windows::Foundation::Collections::IVector\<T>](/uwp/api/Windows.Foundation.Collections.IVector_T_)– unterstützt jedoch nicht die Erstellung öffentlicher benutzerdefinierter generischer Schnittstellen in C++/CX. Sie können jedoch private generische Schnittstellen erstellen.
+In C++/CX `generic` wird das Schlüsselwort verwendet, um einen parametrisierten Windows-Runtime-Typ darzustellen. Ein parametrisierter Typ wird in Metadaten ausgegeben und kann durch jeden Code genutzt werden, der in einer Programmiersprache geschrieben ist, die Typparameter unterstützt. Die Windows-Runtime definiert einige generische Schnittstellen, z. B. [Windows::Foundation::Collections::IVector\<T>](/uwp/api/windows.foundation.collections.ivector-1)– unterstützt jedoch nicht die Erstellung öffentlicher benutzerdefinierter generischer Schnittstellen in C++/CX. Sie können jedoch private generische Schnittstellen erstellen.
 
 So können Windows-Runtime-Typen zum Erstellen einer generischen Schnittstelle verwendet werden:
 
@@ -95,7 +95,7 @@ So können Windows-Runtime-Typen zum Erstellen einer generischen Schnittstelle v
 
 - Auf Vorlagen basierende Verweisklassen müssen privat sein. Sie können generische Schnittstellen implementieren und den Vorlagenparameter *T* an das generische Argument *T*übergeben. Jede Instanziierung einer vorlagenierten ref-Klasse ist selbst eine ref-Klasse.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Typensystem](../cppcx/type-system-c-cx.md)<br/>
 [C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>

@@ -1,8 +1,9 @@
 ---
 title: feof
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - feof
+- _o_feof
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -25,12 +27,12 @@ helpviewer_keywords:
 - end of file, testing for
 - feof function
 ms.assetid: 09081eee-7c4b-4189-861f-2fad95d3ec6d
-ms.openlocfilehash: cf6cfdb63689f5d69cc45dd407ecc6b08a7a7a73
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 2b3a8d35491272409ecf911fe2f98ca60b2b2b38
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941135"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920166"
 ---
 # <a name="feof"></a>feof
 
@@ -46,7 +48,7 @@ int feof(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -61,13 +63,15 @@ Die **feof** -Routine (sowohl als Funktion als auch als Makro implementiert) bes
 
 Wenn eine Datei z. b. 10 Bytes enthält und Sie 10 Bytes aus der Datei lesen, gibt **feof** 0 zurück, da sich der Dateizeiger am Ende der Datei befindet, weil Sie nicht versucht haben, über das Ende hinaus zu lesen. Erst nachdem Sie versucht haben, ein 11. Byte zu lesen **, wird ein** Wert ungleich 0 (null) zurückgegeben.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**feof**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -116,7 +120,7 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Number of bytes read = 19

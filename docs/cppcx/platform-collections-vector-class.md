@@ -21,16 +21,16 @@ f1_keywords:
 helpviewer_keywords:
 - Vector Class (C++/Cx)
 ms.assetid: aee8c076-9700-47c3-99b6-799fd3edb0ca
-ms.openlocfilehash: b2d08461b4ab57ed8479549c18c35c872d0eb9f1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 60c82a113bc19e9652af8c1ad531e1c479077f20
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81354376"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032121"
 ---
 # <a name="platformcollectionsvector-class"></a>Platform::Collections::Vector-Klasse
 
-Stellt eine sequenzielle Auflistung von Objekten dar, auf die einzeln über einen Index zugegriffen werden kann. Implementiert [Windows::Foundation::Collections::IObservableVector](/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) zur Hilfe bei der XAML-Datenbindung . [data binding](/windows/uwp/data-binding/data-binding-in-depth)
+Stellt eine sequenzielle Auflistung von Objekten dar, auf die einzeln über einen Index zugegriffen werden kann. Implementiert [Windows::Foundation::Collections::IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector-1) zur Hilfe bei der XAML-Datenbindung . [data binding](/windows/uwp/data-binding/data-binding-in-depth)
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,9 +61,9 @@ Folgende Typen sind zulässig:
 
 1. Öffentliche Enumerationsklasse
 
-Die **Vector-Klasse** ist die c++-Betonimplementierung der [Windows::Foundation::Collections::IVector-Schnittstelle.](/uwp/api/Windows.Foundation.Collections.IVector_T_)
+Die **Vector-Klasse** ist die c++-Betonimplementierung der [Windows::Foundation::Collections::IVector-Schnittstelle.](/uwp/api/windows.foundation.collections.ivector-1)
 
-Wenn Sie versuchen, einen **Vector-Typ** in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts in [Windows::Foundation::Collections::IVector](/uwp/api/Windows.Foundation.Collections.IVector_T_)ändern. Weitere Informationen finden Sie unter [Auflistungen (C++/CX)](../cppcx/collections-c-cx.md).
+Wenn Sie versuchen, einen **Vector-Typ** in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts in [Windows::Foundation::Collections::IVector](/uwp/api/windows.foundation.collections.ivector-1)ändern. Weitere Informationen finden Sie unter [Auflistungen (C++/CX)](../cppcx/collections-c-cx.md).
 
 ### <a name="members"></a>Member
 
@@ -96,13 +96,13 @@ Wenn Sie versuchen, einen **Vector-Typ** in einem öffentlichen Rückgabewert od
 |||
 |-|-|
 |Name|BESCHREIBUNG|
-|Ereignis [Windows::Foundation::Collection::VectorChangedEventHandler\<T>](/uwp/api/windows.foundation.collections.vectorchangedeventhandler)|Tritt auf, wenn sich der Vektor ändert.|
+|Ereignis [Windows::Foundation::Collection::VectorChangedEventHandler\<T>](/uwp/api/windows.foundation.collections.vectorchangedeventhandler-1)|Tritt auf, wenn sich der Vektor ändert.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `Vector`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
@@ -372,7 +372,7 @@ Eine [std::initializer_list](../standard-library/initializer-list-class.md) von 
 *N*<br/>
 Die Anzahl von Elementen in einer Auflistung von Objekten, die verwendet wird, um den aktuellen Vector zu initialisieren.
 
-*Größe*<br/>
+*size*<br/>
 Die Anzahl von Elementen im Vector.
 
 *value*<br/>
@@ -390,7 +390,7 @@ Das erste Element in einer Sequenz von Objekten, die verwendet werden, um den ak
 *last*<br/>
 Das letzte Element in einer Sequenz von Objekten, die verwendet werden, um den aktuellen Vector zu initialisieren. Die Art der *letzten* wird durch *perfekte Weiterleitung*übergeben. Weitere Informationen finden Sie unter [RValue-Verweisdeklarator: &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sammlungen (C++/CX)](collections-c-cx.md)<br/>
 [Plattform-Namespace](platform-namespace-c-cx.md)<br/>

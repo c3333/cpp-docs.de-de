@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +36,12 @@ helpviewer_keywords:
 - time, copying
 - _strtime_s function
 ms.assetid: 42acf013-c334-485d-b610-84c0af8a46ec
-ms.openlocfilehash: 771dfdb6bd8035fe8683d62d52b3b4980ecda215
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 54828bf894ffc9062125c9680ec087cdf929b1a2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81316936"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910938"
 ---
 # <a name="_strtime_s-_wstrtime_s"></a>_strtime_s, _wstrtime_s
 
@@ -70,10 +70,10 @@ errno_t _wstrtime_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Puffer*<br/>
+*ert*<br/>
 Ein mindestens 10 Bytes langer Puffer, in den die Zeit geschrieben wird.
 
-*Sizeinbytes*<br/>
+*numberOfElements*<br/>
 Die Größe des Puffers.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -84,30 +84,30 @@ Wenn ein Fehler auftritt, wird der Handler für ungültige Parameter aufgerufen,
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*Puffer*|*Sizeinbytes*|Rückgabewert|Inhalt des *Puffers*|
+|*ert*|*numberOfElements*|Rückgabewert|Inhalt des *Puffers*|
 |--------------|------------------------|------------|--------------------------|
-|**Null**|(alle)|**Einval**|Nicht geändert|
-|Nicht **NULL** (zeigt auf gültigen Puffer)|0|**Einval**|Nicht geändert|
-|Nicht **NULL** (zeigt auf gültigen Puffer)|0 < Größe < 9|**Einval**|leere Zeichenfolge|
-|Nicht **NULL** (zeigt auf gültigen Puffer)|Größe > 9|0|Aktuelle Zeit, wie sie in den Hinweisen angegeben wurde|
+|**Normal**|(alle)|**Eingabe**|Nicht geändert|
+|Not **null** (Verweis auf gültigen Puffer)|0|**Eingabe**|Nicht geändert|
+|Not **null** (Verweis auf gültigen Puffer)|0 < Größe < 9|**Eingabe**|leere Zeichenfolge|
+|Not **null** (Verweis auf gültigen Puffer)|Größe > 9|0|Aktuelle Zeit, wie sie in den Hinweisen angegeben wurde|
 
 ## <a name="security-issues"></a>Sicherheitsprobleme
 
-Das Übergeben eines ungültigen**Nicht-NULL-Werts** für den Puffer führt zu einer Zugriffsverletzung, wenn der Parameter *numberOfElements* größer als 9 ist.
+Wenn Sie einen ungültigen Wert ungleich**null** für den Puffer übergeben, führt dies zu einer Zugriffsverletzung, wenn der Parameter " *numofelements* " größer als 9 ist.
 
-Das Übergeben eines Werts für *numberOfElements,* der größer als die tatsächliche Größe des Puffers ist, führt zu einem Pufferüberlauf.
+Wenn Sie einen Wert für " *numofelements* " übergeben, der größer ist als die tatsächliche Größe des Puffers, führt dies zu einem Pufferüberlauf.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Diese Funktionen bieten sicherere Versionen von [_strtime](strtime-wstrtime.md) und [_wstrtime](strtime-wstrtime.md). Die **_strtime_s-Funktion** kopiert die aktuelle Ortszeit in den Puffer, auf den die *Timestr*zeigt. Die Zeit wird als **hh:mm:ss** formatiert, wobei **hh** zwei Ziffern ist, die die Stunde in 24-Stunden-Notation darstellen, **mm** ist zweistellig, die Minuten nach der Stunde und **ss** zweistellig, was Sekunden darstellt. Beispielsweise stellt die Zeichenfolge **18:23:44** 23 Minuten und 44 Sekunden nach 18 Uhr dar. Der Puffer muss mindestens 9 Bytes lang sein. Die tatsächliche Größe wird durch den zweiten Parameter angegeben.
+Diese Funktionen bieten sicherere Versionen von [_strtime](strtime-wstrtime.md) und [_wstrtime](strtime-wstrtime.md). Die **_strtime_s** -Funktion kopiert die aktuelle Ortszeit in den Puffer, auf den von *timestr*verwiesen wird. Die Uhrzeit ist als **hh: mm: SS** formatiert, wobei **HH** zwei Ziffern darstellt, die die Stunde in 24-Stunden-Notation darstellen, **mm** zwei Ziffern, die die Minuten nach der Stunde darstellen, und **SS** zwei Ziffern darstellt, die Sekunden darstellen. Die Zeichenfolge **18:23:44** stellt z. b. 23 Minuten und 44 Sekunden nach 6 Uhr dar. Der Puffer muss mindestens 9 Bytes lang sein. Die tatsächliche Größe wird durch den zweiten Parameter angegeben.
 
-**_wstrtime** ist eine breit **gefächerte**Version von _strtime ; Das Argument und der Rückgabewert von **_wstrtime** sind Zeichenfolgen mit großen Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+**_wstrtime** ist eine breit Zeichen Version von **_strtime**. Das Argument und der Rückgabewert von **_wstrtime** sind Zeichen folgen mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mapping"></a>Zuordnung generischer Textroutinen:
 
@@ -167,7 +167,7 @@ OS time:            14:37:49
 OS date:            04/25/03
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime_s, _wasctime_s](asctime-s-wasctime-s.md)<br/>

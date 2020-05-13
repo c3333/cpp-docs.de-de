@@ -6,12 +6,12 @@ ms.technology: cpp-language
 ms.assetid: 475da6e9-0d78-4b4e-bd23-f41c406c4efe
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: 8a5ffb5b3ab4bc80cb200b41752b19d1c958ece6
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 18f8db28fab83f795baced82a346f07d73256716
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80079372"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365237"
 ---
 # <a name="microsoft-c-language-conformance-table"></a>Microsoft C++-Sprachkonformität: Tabelle
 
@@ -385,33 +385,34 @@ __VS 2019 16.5__ gibt Features an, die in Visual Studio 2019 Version 16.5 unt
 
 ### <a name="notes"></a>Hinweise
 
-<a name="note_A"></a>__A__ Im Modus [/std:c++14](../build/reference/std-specify-language-standard-version.md) werden dynamische Ausnahmespezifikationen nicht implementiert, und `throw()` wird weiterhin als Synonym von `__declspec(nothrow)` behandelt. In C++17 wurden dynamische Ausnahmespezifikationen hauptsächlich durch P0003R5 entfernt. Nur `throw()` wurde noch nicht entfernt, weshalb es nun als veraltet markiert wird und als Synonym von `noexcept` behandelt werden muss. Im Modus [/std:c++17](../build/reference/std-specify-language-standard-version.md) entspricht MSVC nun dem Standard, da `throw()` das gleiche Verhalten wie `noexcept` aufweist (d. h. Erzwingung durch Beenden).
+<a name="note_A"></a> __A__ Im Modus [/std:c++14](../build/reference/std-specify-language-standard-version.md) werden dynamische Ausnahmespezifikationen nicht implementiert, und `throw()` wird weiterhin als Synonym von `__declspec(nothrow)` behandelt. In C++17 wurden dynamische Ausnahmespezifikationen hauptsächlich durch P0003R5 entfernt. Nur `throw()` wurde noch nicht entfernt, weshalb es nun als veraltet markiert wird und als Synonym von `noexcept` behandelt werden muss. Im Modus [/std:c++17](../build/reference/std-specify-language-standard-version.md) entspricht MSVC nun dem Standard, da `throw()` das gleiche Verhalten wie `noexcept` aufweist (d. h. Erzwingung durch Beenden).
 
 Die Compileroption [/Zc:noexceptTypes](../build/reference/zc-noexcepttypes.md) fordert das alte Verhalten von `__declspec(nothrow)` an. Wahrscheinlich wird `throw()` in C++20 entfernt. Es wurden neue Compilerwarnungen für Probleme mit Ausnahmespezifikationen unter [/std:c++17](../build/reference/std-specify-language-standard-version.md) und [/permissive-](../build/reference/permissive-standards-conformance.md) hinzugefügt, um die Codemigration aufgrund dieser Änderungen im Standard und unserer Implementierung zu erleichtern.
 
-<a name="note_B"></a>__B__ Wird im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) in Visual Studio 2017 Version 15.7 unterstützt. Weitere Informationen finden Sie im Blogbeitrag [Two-phase name lookup support comes to MSVC](https://devblogs.microsoft.com/cppblog/two-phase-name-lookup-support-comes-to-msvc/) (Unterstützung der Namenssuche in zwei Phasen in MSVC).
+<a name="note_B"></a> __B__ Wird im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) in Visual Studio 2017 Version 15.7 unterstützt. Weitere Informationen finden Sie im Blogbeitrag [Two-phase name lookup support comes to MSVC](https://devblogs.microsoft.com/cppblog/two-phase-name-lookup-support-comes-to-msvc/) (Unterstützung der Namenssuche in zwei Phasen in MSVC).
 
-<a name="note_C"></a>__C__ Der Support des Compilers für die C99-Präprozessorregeln ist in Visual Studio 2017 unvollständig. Wir haben den Präprozessor überarbeitet und die Auslieferung der Änderungen in Visual Studio 2017, Version 15.8, mit der Compileroption [/experimental:preprocessor](../build/reference/experimental-preprocessor.md) gestartet.
+<a name="note_C"></a> __C__ Der Support des Compilers für die C99-Präprozessorregeln ist in Visual Studio 2017 unvollständig. Wir haben den Präprozessor überarbeitet und die Auslieferung der Änderungen in Visual Studio 2017, Version 15.8, mit der Compileroption [/experimental:preprocessor](../build/reference/experimental-preprocessor.md) gestartet.
 
-<a name="note_D"></a>__D__ Unterstützt unter [/std:c++14](../build/reference/std-specify-language-standard-version.md) mit einer unterdrückbaren Warnung ([C4984](../error-messages/compiler-warnings/compiler-warning-c4984.md)).
+<a name="note_D"></a> __D__ Unterstützt unter [/std:c++14](../build/reference/std-specify-language-standard-version.md) mit einer unterdrückbaren Warnung ([C4984](../error-messages/compiler-warnings/compiler-warning-c4984.md)).
 
-<a name="note_E"></a>__E__ Dies ist eine völlig neue Implementierung, die nicht mit der vorherigen `std::experimental`-Version kompatibel ist. Sie ist aufgrund von Symlink-Unterstützung, Fehlerbehebungen und Änderungen des erforderlichen Standardverhaltens erforderlich. Wenn \<filesystem> verwendet wird, schließt dies aktuell das neue `std::filesystem`- und das vorherige `std::experimental::filesystem`-Element ein, und wenn \<experimental/filesystem> verwendet wird, schließt dies nur die alte experimentelle Implementierung ein. Die experimentelle Implementierung wird mit dem nächsten ABI unterbrechenden Release der Bibliotheken entfernt.
+<a name="note_E"></a> __E__ Dies ist eine völlig neue Implementierung, die nicht mit der vorherigen `std::experimental`-Version kompatibel ist. Sie ist aufgrund von Symlink-Unterstützung, Fehlerbehebungen und Änderungen des erforderlichen Standardverhaltens erforderlich. Wenn \<filesystem> verwendet wird, schließt dies aktuell das neue `std::filesystem`- und das vorherige `std::experimental::filesystem`-Element ein, und wenn \<experimental/filesystem> verwendet wird, schließt dies nur die alte experimentelle Implementierung ein. Die experimentelle Implementierung wird mit dem nächsten ABI unterbrechenden Release der Bibliotheken entfernt.
 
-<a name="note_G"></a>__G__ Unterstützt durch eine intrinsische Compilerfunktion.
+<a name="note_G"></a> __G__ Unterstützt durch eine intrinsische Compilerfunktion.
 
-<a name="note_14"></a>__14__ Diese C++17/20-Features sind immer aktiviert, auch wenn [/std:c++14](../build/reference/std-specify-language-standard-version.md) (Standard) angegeben ist. Grund dafür ist, dass das Feature vor der Einführung der **/std**-Optionen implementiert wurde, oder dass die bedingte Implementierung unerwünscht komplex war.
+<a name="note_14"></a> __14__ Diese C++17/20-Features sind immer aktiviert, auch wenn [/std:c++14](../build/reference/std-specify-language-standard-version.md) (Standard) angegeben ist. Grund dafür ist, dass das Feature vor der Einführung der **/std**-Optionen implementiert wurde, oder dass die bedingte Implementierung unerwünscht komplex war.
 
-<a name="note_17"></a>__17__ Diese Features werden durch die Compileroption [/std:c++17](../build/reference/std-specify-language-standard-version.md) (oder [/std:c++latest](../build/reference/std-specify-language-standard-version.md)) aktiviert.
+<a name="note_17"></a> __17__ Diese Features werden durch die Compileroption [/std:c++17](../build/reference/std-specify-language-standard-version.md) (oder [/std:c++latest](../build/reference/std-specify-language-standard-version.md)) aktiviert.
 
-<a name="note_20"></a>__20__ Diese Features werden durch die Compileroption [/std:c++latest](../build/reference/std-specify-language-standard-version.md) aktiviert. Wenn die C++ 20-Implementierung abgeschlossen ist, wird die neue Compileroption **/std:c++20** hinzugefügt. Unter dieser sind dieses Features ebenfalls verfügbar.
+<a name="note_20"></a> __20__ Diese Features werden durch die Compileroption [/std:c++latest](../build/reference/std-specify-language-standard-version.md) aktiviert. Wenn die C++ 20-Implementierung abgeschlossen ist, wird die neue Compileroption **/std:c++20** hinzugefügt. Unter dieser sind dieses Features ebenfalls verfügbar.
 
-<a name="note_byte"></a>__byte__ `std::byte` wird durch [/std:c++17](../build/reference/std-specify-language-standard-version.md) (oder [/std:c++latest](../build/reference/std-specify-language-standard-version.md)) aktiviert, da jedoch in einigen Fällen Konflikte mit den Windows SDK-Headern auftreten können, ist ein differenziertes Makro für die Abwahl vorhanden. Die Deaktivierung erfolgt durch Definieren von `_HAS_STD_BYTE` als `0`.
+<a name="note_byte"></a> __byte__ `std::byte` wird durch [/std:c++17](../build/reference/std-specify-language-standard-version.md) (oder [/std:c++latest](../build/reference/std-specify-language-standard-version.md)) aktiviert, da jedoch in einigen Fällen Konflikte mit den Windows SDK-Headern auftreten können, ist ein differenziertes Makro für die Abwahl vorhanden. Die Deaktivierung erfolgt durch Definieren von `_HAS_STD_BYTE` als `0`.
 
-<a name="note_C11"></a>__C11__ Die Universal CRT implementierte die Teile der C11-Standardbibliothek, die für C++17 erforderlich sind, mit Ausnahme der `strftime()`-Bezeichner in C99 für die alternative E/O-Konvertierung, dem exklusiven `fopen()`-Modus in C11 und der `aligned_alloc()`-Funktion in C11. Die Implementierung der letztgenannten Funktion ist unwahrscheinlich, da C11 `aligned_alloc()` auf eine Weise angibt, die mit der Microsoft-Implementierung von `free()` nicht kompatibel ist. Insbesondere muss `free()` in der Lage sein, hochgradig ausgerichtete Zuweisungen zu verarbeiten.
+<a name="note_C11"></a> __C11__ Die Universal CRT implementierte die Teile der C11-Standardbibliothek, die für C++17 erforderlich sind, mit Ausnahme der `strftime()`-Bezeichner in C99 für die alternative E/O-Konvertierung, dem exklusiven `fopen()`-Modus in C11 und der `aligned_alloc()`-Funktion in C11. Die Implementierung der letztgenannten Funktion ist unwahrscheinlich, da C11 `aligned_alloc()` auf eine Weise angibt, die mit der Microsoft-Implementierung von `free()` nicht kompatibel ist. Insbesondere muss `free()` in der Lage sein, hochgradig ausgerichtete Zuweisungen zu verarbeiten.
 
-<a name="note_rem"></a>__rem__ Diese Features wurden entfernt, als die Compileroption [/std:c++17](../build/reference/std-specify-language-standard-version.md) (oder [/std:c++latest](../build/reference/std-specify-language-standard-version.md)) angegeben wurde. Diese Features können erneut aktiviert werden, um die Umstellung auf neuere Sprachmodi zu vereinfachen, indem diese Makros verwendet werden: `_HAS_AUTO_PTR_ETC`, `_HAS_FUNCTION_ALLOCATOR_SUPPORT`, `_HAS_OLD_IOSTREAMS_MEMBERS` und `_HAS_UNEXPECTED`.
+<a name="note_rem"></a> __rem__ Diese Features wurden entfernt, als die Compileroption [/std:c++17](../build/reference/std-specify-language-standard-version.md) (oder [/std:c++latest](../build/reference/std-specify-language-standard-version.md)) angegeben wurde. Diese Features können erneut aktiviert werden, um die Umstellung auf neuere Sprachmodi zu vereinfachen, indem diese Makros verwendet werden: `_HAS_AUTO_PTR_ETC`, `_HAS_FUNCTION_ALLOCATOR_SUPPORT`, `_HAS_OLD_IOSTREAMS_MEMBERS` und `_HAS_UNEXPECTED`.
 
-<a name="note_charconv"></a>__charconv__ `from_chars()` und `to_chars()` sind für ganze Zahlen verfügbar. Die Zeitachse für `from_chars()` (Gleitkomma) und `to_chars()` (Gleitkomma) lautet wie folgt:
+<a name="note_charconv"></a> __charconv__ `from_chars()` und `to_chars()` sind für ganze Zahlen verfügbar. Die Zeitachse für `from_chars()` (Gleitkomma) und `to_chars()` (Gleitkomma) lautet wie folgt:
+
 - VS 2017 15.7: `from_chars()` (ganze Zahl) und `to_chars()`.
 - VS 2017 15.8: `from_chars()` (Gleitkomma).
 - VS 2017 15.9: `to_chars()`-Überladungen (Gleitkomma) für kürzeste Dezimalzahl.

@@ -1,8 +1,9 @@
 ---
 title: _cwait
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _cwait
+- _o__cwait
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-process-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -25,12 +27,12 @@ helpviewer_keywords:
 - cwait function
 - _cwait function
 ms.assetid: d9b596b5-45f4-4e03-9896-3f383cb922b8
-ms.openlocfilehash: b4be342ef528959bae22917bc59eef5a953aa4ae
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9e2e23acb041004b9e96d1c6558ae195ed522155
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70937752"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914793"
 ---
 # <a name="_cwait"></a>_cwait
 
@@ -54,26 +56,26 @@ intptr_t _cwait(
 *termstat*<br/>
 Zeiger auf einen Puffer, in dem der Ergebniscode des angegebenen Prozesses gespeichert wird, oder **null**.
 
-*procHandle*<br/>
+*prochandle*<br/>
 Das Handle für den Prozess, auf den gewartet werden soll (d. h. der Prozess, der beendet werden muss, bevor **_cwait** zurückgeben kann).
 
 *action*<br/>
-NULL: Wird von Windows-Betriebssystem Anwendungen ignoriert. für andere Anwendungen: Aktions Code, der für *prochandle*ausgeführt werden soll.
+NULL: wird von Windows-Betriebssystem Anwendungen ignoriert. für andere Anwendungen: Aktions Code, der für *prochandle*ausgeführt werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Wenn der angegebene Prozess erfolgreich abgeschlossen wurde, wird das Handle des angegebenen Prozesses zurückgegeben und *termstat* auf den Ergebniscode festgelegt, der vom angegebenen Prozess zurückgegeben wird. Andernfalls wird-1 zurückgegeben und **errno** wie folgt festgelegt.
 
-|Wert|Beschreibung|
+|Value|Beschreibung|
 |-----------|-----------------|
 |**ECHILD**|Es ist kein angegebener Prozess vorhanden, *prochandle* ist ungültig, oder der Aufrufen der [GetExitCodeProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess) -oder [WaitForSingleObject](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject) -API ist fehlgeschlagen.|
-|**EINVAL**|die *Aktion* ist ungültig.|
+|**Eingabe**|die *Aktion* ist ungültig.|
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_cwait** -Funktion wartet auf die Beendigung der Prozess-ID des angegebenen Prozesses, der von *prochandle*bereitgestellt wird. Der Wert von *prochandle* , der an **_cwait** übermittelt wird, sollte der Wert sein, der durch den-Rückruf der [_spawn](../../c-runtime-library/spawn-wspawn-functions.md) -Funktion zurückgegeben wird, die den angegebenen Prozess erstellt hat. Wenn die Prozess-ID beendet wird, bevor **_cwait** aufgerufen wird, wird **_cwait** sofort zurückgegeben. **_cwait** kann von jedem Prozess verwendet werden, um auf einen anderen bekannten Prozess zu warten, für den ein gültiges Handle (*prochandle*) vorhanden ist.
+Die **_cwait** -Funktion wartet auf die Beendigung der Prozess-ID des angegebenen Prozesses, der von *prochandle*bereitgestellt wird. Der Wert von *prochandle* , der an **_cwait** übermittelt wird, sollte der Wert sein, der durch den Aufrufder [_spawn](../../c-runtime-library/spawn-wspawn-functions.md) -Funktion zurückgegeben wird, die den angegebenen Prozess erstellt hat. Wenn die Prozess-ID beendet wird, bevor **_cwait** aufgerufen wird, wird **_cwait** sofort zurückgegeben. **_cwait** können von jedem Prozess verwendet werden, um auf einen anderen bekannten Prozess zu warten, für den ein gültiges Handle (*prochandle*) vorhanden ist.
 
 *termstat* verweist auf einen Puffer, in dem der Rückgabecode des angegebenen Prozesses gespeichert wird. Der Wert von *termstat* gibt an, ob der angegebene Prozess durch Aufrufen der Windows [ExitProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess) -API ordnungsgemäß beendet wurde. **ExitProcess** wird intern aufgerufen, wenn der angegebene Prozess **Exit** oder **_exit**aufruft, von **Main**zurückkehrt oder das Ende von **Main**erreicht. Weitere Informationen zu dem Wert, der durch *termstat*zurückgegeben wird, finden Sie unter [GetExitCodeProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess). Wenn **_cwait** mit einem **null** -Wert für *termstat*aufgerufen wird, wird der Rückgabecode des angegebenen Prozesses nicht gespeichert.
 
@@ -81,13 +83,15 @@ Der *Action* -Parameter wird vom Windows-Betriebssystem ignoriert, da Beziehunge
 
 Wenn *prochandle* nicht-1 oder-2 ist (Handles für den aktuellen Prozess oder Thread), wird das Handle geschlossen. Daher sollte in dieser Situation das zurückgegebene Handle nicht verwendet werden.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_cwait**|\<process.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -157,7 +161,7 @@ Hi, Dad. It's Carl.
 Hi, Dad. It's Dave.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>

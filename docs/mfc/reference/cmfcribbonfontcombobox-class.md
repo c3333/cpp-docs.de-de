@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CMFCRibbonFontComboBox [MFC], RebuildFonts
 - CMFCRibbonFontComboBox [MFC], SetFont
 ms.assetid: 33b4db50-df4f-45fa-8f05-2e6e73c31435
-ms.openlocfilehash: 822f4f6fe76bb5b82b455daec54ed96568ea6ba7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dbf28787e0c0f7d89586fbf98632bd9172c12eed
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375164"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754156"
 ---
 # <a name="cmfcribbonfontcombobox-class"></a>CMFCRibbonFontComboBox-Klasse
 
@@ -85,7 +85,7 @@ Nachdem Sie `CMFCRibbonFontComboBox` ein Objekt erstellt haben, fügen Sie es ei
 
 [CMFCRibbonFontComboBox](../../mfc/reference/cmfcribbonfontcombobox-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxRibbonComboBox.h
 
@@ -93,7 +93,7 @@ Nachdem Sie `CMFCRibbonFontComboBox` ein Objekt erstellt haben, fügen Sie es ei
 
 Füllt das Kombinationsfeld auf dem Menüband mit Schriftarten.
 
-```
+```cpp
 void BuildFonts(
     int nFontType = DEVICE_FONTTYPE | RASTER_FONTTYPE | TRUETYPE_FONTTYPE,
     BYTE nCharSet = DEFAULT_CHARSET,
@@ -167,7 +167,7 @@ const CMFCFontInfo* GetFontDesc(int iIndex = -1) const;
 
 Füllt das Kombinationsfeld auf dem Menüband mit Schriftarten eines zuvor angegebenen Schrifttyps, Zeichensatzes sowie Tonhöhe und Familie.
 
-```
+```cpp
 void RebuildFonts();
 ```
 
@@ -244,7 +244,7 @@ Pitch und die Familie (siehe LOGFONT in der Windows SDK-Dokumentation).
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

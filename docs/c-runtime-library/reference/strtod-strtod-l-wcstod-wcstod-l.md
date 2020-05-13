@@ -1,11 +1,15 @@
 ---
 title: strtod, _strtod_l, wcstod, _wcstod_l
-ms.date: 10/20/2017
+ms.date: 4/2/2020
 api_name:
 - wcstod
 - _wcstod_l
 - _strtod_l
 - strtod
+- _o__strtod_l
+- _o__wcstod_l
+- _o_strtod
+- _o_wcstod
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -45,12 +50,12 @@ helpviewer_keywords:
 - _strtod_l function
 - string conversion, to floating point values
 ms.assetid: 0444f74a-ba2a-4973-b7f0-1d77ba88c6ed
-ms.openlocfilehash: 5372525eb99dc9d39e31b10def0377c9aad5296c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 410d339789ef4a29a6760a4118f967b22f4f3a8c
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946494"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910878"
 ---
 # <a name="strtod-_strtod_l-wcstod-_wcstod_l"></a>strtod, _strtod_l, wcstod, _wcstod_l
 
@@ -81,7 +86,7 @@ double wcstod_l(
 
 ### <a name="parameters"></a>Parameter
 
-*strSource*<br/>
+*-Quelle*<br/>
 Zu konvertierende mit NULL endende Zeichenfolge.
 
 *endptr*<br/>
@@ -92,13 +97,15 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-" **dartod** " gibt den Wert der Gleit Komma Zahl zurück, es sei denn, die Darstellung würde einen Überlauf verursachen. in diesem Fall gibt die Funktion "+/-**HUGE_VAL**" zurück. Das Vorzeichen von **HUGE_VAL** stimmt mit dem Vorzeichen des Werts überein, der nicht dargestellt werden kann. " **Straume** " gibt "0" zurück, wenn keine Konvertierung ausgeführt werden kann oder ein Unterlauf auftritt.
+" **dartod** " gibt den Wert der Gleit Komma Zahl zurück, es sei denn, die Darstellung würde einen Überlauf verursachen. in diesem Fall gibt die Funktion +/-**HUGE_VAL**zurück. Das Vorzeichen des **HUGE_VAL** entspricht dem Vorzeichen des Werts, der nicht dargestellt werden kann. " **Straume** " gibt "0" zurück, wenn keine Konvertierung ausgeführt werden kann oder ein Unterlauf auftritt.
 
 **wcstod** gibt Werte analog zu " **strantod**" zurück. Bei beiden Funktionen wird **errno** auf **ERANGE** festgelegt, wenn ein Überlauf oder ein Unterlauf auftritt, und der Handler für ungültige Parameter wird aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
 ## <a name="remarks"></a>Hinweise
 
 Jede Funktion konvertiert die *Eingabe Zeichenfolge* in einen **Double**-Wert. Die " **strautod** "-Funktion konvertiert " *strausource* " in einen Wert mit doppelter Genauigkeit. der Wert von " **stretod** " stoppt das Lesen der Zeichenfolge " *Strauch* " beim ersten Zeichen, das nicht als Teil einer Zahl erkannt wird. Dies ist möglicherweise das beendende NULL-Zeichen. **wcstod** ist eine breit Zeichen Version von " **strantod**;". Das *unsource* -Argument ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -107,13 +114,13 @@ Jede Funktion konvertiert die *Eingabe Zeichenfolge* in einen **Double**-Wert. D
 |**_tcstod**|**strtod**|**strtod**|**wcstod**|
 |**_tcstod_l**|**_strtod_l**|**_strtod_l**|**_wcstod_l**|
 
-Die **LC_NUMERIC** -Kategorieeinstellung des aktuellen Gebiets Schemas bestimmt die Erkennung des Basispunkt Zeichens in " *strinsource*". Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema. **_strtod_l** ist mit **_strtod_l** identisch, *mit der Ausnahme* , dass Sie stattdessen das übergebene Gebiets Schema verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die **LC_NUMERIC** Kategorieeinstellung des aktuellen Gebiets Schemas bestimmt die Erkennung des Basispunkt Zeichens in " *strinsource*". Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema. **_strtod_l** ist mit **_strtod_l** identisch, außer dass Sie stattdessen *das* übergebene Gebiets Schema verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 Wenn *endptr* nicht **null**ist, wird ein Zeiger auf das Zeichen, das die Überprüfung beendet hat, an dem Speicherort gespeichert, auf den von *endptr*verwiesen wird. Wenn keine Konvertierung ausgeführt werden kann (keine gültigen Ziffern gefunden oder ungültige Basis angegeben), wird der Wert von " *strinsource* " an dem Speicherort gespeichert, auf den von *endptr*verwiesen wird.
 
 der Wert von " **stretod** *" erwartet eine Zeichenfolge mit einer* der folgenden Formen:
 
-[*Leerzeichen*] [*Sign*] {*Ziffern* [*Basis*-Ziffern &#124; *] Basis* *Ziffern*} [{**e** &#124; **e**} [*Sign*] *Ziffern*] [*Leerzeichen*] [*Sign*] {**0x** &#124; **0x**} {*Hexziffern* [*Basis* - *Hexziffern*] &#124;  *Basis-* *Hexziffern*} [{**p** &#124; **p**} [*Sign*] *Hexziffern*] [*Leerzeichen*] [*Sign*] {**INF** &#124; **Infinity**} [*Leerzeichen*] [ *Sign*] **NaN** [*Sequence*]
+[*Leerzeichen*] [*Sign*] {*Ziffern* [*Basis* - *Ziffern*] *&#124; Basis* *Ziffern*} [{**e** &#124; **e**} [*Sign*] *Ziffern*] [*Leerzeichen*] [*Sign*] {**0x** &#124; **0x**} {*Hexziffern* [*Basis* *Hexziffern*] &#124; *Basis* *-Hexziffern*} [{**p** &#124; **p**}*[Sign*] *Hexziffern*] [*Leerzeichen*] [*Sign*] {**INF** &#124; **unendlich**} [*Leerzeichen*] [*Sign*] **NaN** [*Sequence*]
 
 Die optionalen führenden *leer* Zeichen können aus Leerzeichen und Tabstopp Zeichen bestehen, die ignoriert werden. das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-); *Ziffern* sind eine oder mehrere Dezimalstellen. *Hexziffern* sind eine oder mehrere hexadezimale Ziffern. *Basis* ist das Basis-Punktzeichen, entweder ein Punkt (.) im Standard Gebiets Schema "C", oder der Gebiets Schema spezifische Wert, wenn das aktuelle Gebiets Schema anders *ist oder wenn das* Gebiets Schema angegeben ist. eine *Sequenz* ist eine Sequenz von alphanumerischen Zeichen oder Unterstrich Zeichen. In Dezimal-und hexadezimalen Zahlen Formularen, wenn keine Ziffern vor dem Basiszeichen stehen, muss mindestens eine Zeichenfolge nach dem Basispunkt Zeichen angezeigt werden. Im Dezimal Format kann ein Exponent folgen, der aus einem einführenden Buchstaben (**e** oder **e**) und einer optionalen Ganzzahl mit Vorzeichen besteht. Im hexadezimalen Format kann auf die hexadezimalen Ziffern ein Exponent folgen, der aus einem einführenden Buchstaben (**p** oder **p**) und einer optional signierten hexadezimalen Ganzzahl besteht, die den Exponent als Potenz von 2 darstellt. Wenn in beiden Formen weder ein Exponententeil noch ein Basiszeichen angezeigt wird, wird davon ausgegangen, dass ein Basiszeichen auf die letzte Ziffer in der Zeichenfolge folgt. Die Groß-/Kleinschreibung wird in den **INF** -und **NaN** -Formularen ignoriert. Das erste Zeichen, das nicht in eines dieser Formulare passt, hält den Scanvorgang an.
 
@@ -121,12 +128,12 @@ Die ucrt-Versionen dieser Funktionen unterstützen nicht die Konvertierung von E
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**strtod**, **_strtod_l**|C: &lt;stdlib.h> C++: &lt;cstdlib> oder &lt;stdlib.h> |
-|**wcstod**, **_wcstod_l**|C: &lt;stdlib.h> oder &lt;wchar.h> C++: &lt;cstdlib>, &lt;stdlib.h> oder &lt;wchar.h> |
+|" **strautod**", " **_strtod_l**|C: &lt;stdlib.h> C++: &lt;cstdlib> oder &lt;stdlib.h> |
+|**wcstod**, **_wcstod_l**|C: &lt;stdlib.h> or &lt;wchar.h> C++: &lt;cstdlib>, &lt;stdlib.h> or &lt;wchar.h> |
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -193,7 +200,7 @@ string = 10110134932
    Stopped scan at: 932
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

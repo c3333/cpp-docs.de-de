@@ -1,6 +1,6 @@
 ---
 title: SimpleEvent-Klasse
-description: Die C++ Referenz für den Build Insights SDK SimpleEvent-Klasse.
+description: Der C++ Build Insights SDK SimpleEvent-Klassenverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 4c30f81236138328322d8c870d4ad69d9988b49a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 414ff5c1af99acc612384c1ae39f6e12ab051275
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334589"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81324370"
 ---
 # <a name="simpleevent-class"></a>SimpleEvent-Klasse
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `SimpleEvent`-Klasse wird mit den Funktionen [matchevent](../functions/match-event.md), [matcheventinmitgliedfunction](../functions/match-event-in-member-function.md), [matcheventstack](../functions/match-event-stack.md)und [matcheventstackinmembership Function](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um eine Entsprechung für jedes einfache Ereignis In der [Ereignis Tabelle](../event-table.md) finden Sie alle Ereignisse, die mit der `SimpleEvent`-Klasse abgeglichen werden können.
+Die `SimpleEvent` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um jedem einfachen Ereignis zu entsprechen. In der [Ereignistabelle](../event-table.md) finden Sie alle Ereignisse, `SimpleEvent` die von der Klasse abgeglichen werden können.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,15 +37,15 @@ public:
 };
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
-Zusammen mit den geerbten Membern aus der [Ereignis](event.md) Basisklasse enthält die `SimpleEvent`-Klasse die folgenden Member:
+Zusammen mit den geerbten Membern aus `SimpleEvent` der [Ereignisbasisklasse](event.md) enthält die Klasse die folgenden Member:
 
 ### <a name="constructors"></a>Konstruktoren
 
 [SimpleEvent](#simple-event)
 
-## <a name="simple-event"></a>SimpleEvent
+## <a name="simpleevent"></a><a name="simple-event"></a>SimpleEvent
 
 ```cpp
 SimpleEvent(const RawEvent& event);

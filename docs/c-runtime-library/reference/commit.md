@@ -1,8 +1,9 @@
 ---
 title: _commit
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _commit
+- _o__commit
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - _commit function
 - committing files to disk
 ms.assetid: d0c74d3a-4f2d-4fb0-b140-2d687db3d233
-ms.openlocfilehash: b5a417deef48c89751f56feec480e90444728687
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 217bccbc4ebc937b89bca5cc127de72b7118481c
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939046"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918531"
 ---
 # <a name="_commit"></a>_commit
 
@@ -50,7 +52,7 @@ int _commit(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -63,17 +65,19 @@ Die **_commit** -Funktion zwingt das Betriebssystem, die mit *FD* verknüpfte Da
 
 Wenn *FD* ein ungültiger Dateideskriptor ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück, und **errno** ist auf **EBADF**festgelegt.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
+|Routine|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
 |**_commit**|\<io.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>
 [_read](read.md)<br/>

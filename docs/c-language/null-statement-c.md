@@ -8,11 +8,11 @@ helpviewer_keywords:
 - null values, expressions
 ms.assetid: 72576ce6-26d0-4379-be65-fee522088790
 ms.openlocfilehash: 4fdfa2283e40856ccaffd55daacb697b1344134b
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148451"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64343416"
 ---
 # <a name="null-statement-c"></a>NULL-Anweisung (C)
 
@@ -22,7 +22,7 @@ Eine "NULL-Anweisung" ist eine Anweisung, die nur ein Semikolon enthält. Sie ka
 
 > **;**
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Anweisungen wie **do**, **for**, **if** und `while` erfordern als Anweisungstext eine ausführbare Anweisung. Die NULL-Anweisung erfüllt die Syntaxanforderung in Fällen, die keinen substanziellen Anweisungstext benötigen.
 

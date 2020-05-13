@@ -1,10 +1,11 @@
 ---
 title: cosh, coshf, coshl
-ms.date: 04/11/2018
+ms.date: 4/2/2020
 api_name:
 - cosh
 - coshf
 - coshl
+- _o_cosh
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +33,12 @@ helpviewer_keywords:
 - coshl function
 - trigonometric functions
 - hyperbolic functions
-ms.openlocfilehash: 446988e67ca6e3b4a3839a9336f1ea4e2755c124
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e5e313f08fc7e6d00a1cffc9522d3c8a818cd152
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70938997"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917231"
 ---
 # <a name="cosh-coshf-coshl"></a>cosh, coshf, coshl
 
@@ -57,7 +59,7 @@ long double cosh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -68,26 +70,28 @@ Wenn das Ergebnis in einem **cosh**-, **coshf**-oder **coshl** -Befehl zu groß 
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|none|**_DOMAIN**|
-|*x* ≥ 7.104760e+002|**UNGENAUER**+**ÜBERLAUF**|**LÄUFEN**|
+|± **QNAN**, **IND**|Keine|**_DOMAIN**|
+|*x* 104760e e + 002|**ungenauer**+**Überlauf**|**Läufen**|
 
 ## <a name="remarks"></a>Hinweise
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **cosh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **cosh** immer einen **Double**-Wert an und gibt ihn zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
+|Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
-|**coshf**, **cosl**, **coshl**|\<math.h>|\<cmath> oder \<math.h>|
+|**coshf**, **COSL**, **coshl**|\<math.h>|\<cmath> oder \<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
 Siehe das Beispiel in [sinh, Sinhf, sinhl](sinh-sinhf-sinhl.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>

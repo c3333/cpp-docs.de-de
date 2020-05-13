@@ -1,9 +1,11 @@
 ---
 title: _cputs, _cputws
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _cputws
 - _cputs
+- _o__cputs
+- _o__cputws
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +36,12 @@ helpviewer_keywords:
 - console, sending strings to
 - cputws function
 ms.assetid: ec418484-0f8d-43ec-8d8b-198a556c659e
-ms.openlocfilehash: 46fce16078b9ce289d45ee4e62bb4076eaf5795a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 469b39e4e08f13af8d8ac3e679ed55c7afb240d2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942632"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917607"
 ---
 # <a name="_cputs-_cputws"></a>_cputs, _cputws
 
@@ -60,7 +63,7 @@ int _cputws(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Ausgabezeichenfolge.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -73,6 +76,8 @@ Die **_cputs** -Funktion schreibt die auf NULL endenden Zeichenfolge, auf die vo
 
 Diese Funktion überprüft seine Parameter. Wenn *Str* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und-1 wird zurückgegeben.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
@@ -81,12 +86,12 @@ Diese Funktion überprüft seine Parameter. Wenn *Str* **null**ist, wird der Han
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_cputs**|\<conio.h>|\<errno.h>|
 |**_cputws**|\<conio.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -149,7 +154,7 @@ Hello world (courtesy of _cputs)!
 Hello world (courtesy of _cputws)!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_putch, _putwch](putch-putwch.md)<br/>

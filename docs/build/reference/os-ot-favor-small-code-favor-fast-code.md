@@ -17,16 +17,16 @@ helpviewer_keywords:
 - Os compiler option [C++]
 - -Os compiler option [C++]
 ms.assetid: 9a340806-fa15-4308-892c-355d83cac0f2
-ms.openlocfilehash: 5bbdda07eacdb003515a40a93a232c0f8626ca89
-ms.sourcegitcommit: aed09c9c05e6b031c8a9f87a8d6bbdaf253485e8
+ms.openlocfilehash: 0eda9461b3ef730e0e0a832aa94a688e03c7e1bb
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67412242"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336186"
 ---
 # <a name="os-ot-favor-small-code-favor-fast-code"></a>/Os, /Ot (Kompakten Code bevorzugen, Schnellen Code bevorzugen)
 
-Minimiert oder maximiert die Größe von exe- und DLL.
+Minimiert oder maximiert die Größe von EXEs und DLLs.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,23 +35,23 @@ Minimiert oder maximiert die Größe von exe- und DLL.
 /Ot
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**/ OS** (kompakten Code bevorzugen) minimieren die Größe von exe- und DLL, indem Sie die Anweisung an den Compiler, Größe gegenüber Geschwindigkeit zu bevorzugen. Der Compiler kann viele C- und C++-Konstrukte auf mit ähnlichen Sequenzen von Computercode reduzieren. Gelegentlich abgewogen Größe und Geschwindigkeit. Die **/OS** und **/Ot** Optionen können Sie eine Präferenz gegenüber der anderen angeben:
+**/Os** (Favor Small Code) minimiert die Größe von EXEs und DLLs, indem der Compiler angewiesen wird, Größe gegenüber Geschwindigkeit zu bevorzugen. Der Compiler kann viele C- und C++-Konstrukte auf funktional ähnliche Sequenzen von Maschinencode reduzieren. Gelegentlich bieten diese Unterschiede Kompromisse von Größe zu Geschwindigkeit. Mit den Optionen **/Os** und **/Ot** können Sie eine Voreinstellung für eine einstellung zu einander angeben:
 
-**/ Ot** (bevorzugen, schnellen Code bevorzugen) maximiert die Geschwindigkeit von exe- und DLL, indem Sie die Anweisung an den Compiler, Geschwindigkeit gegenüber der Größe zu bevorzugen. (Dies ist die Standardeinstellung.) Der Compiler kann viele C- und C++-Konstrukte auf mit ähnlichen Sequenzen von Computercode reduzieren. In einigen Fällen abgewogen Größe und Geschwindigkeit. Die **/Ot** Option impliziert wird, durch die Geschwindigkeit maximieren (["/ O2"](o1-o2-minimize-size-maximize-speed.md)) Option. Die **"/ O2"** Option kombiniert mehrere Optionen für die sehr schnellen Code zu erzeugen.
+**/Ot** (Favor Fast Code) maximiert die Geschwindigkeit von EXEs und DLLs, indem er den Compiler anweist, Geschwindigkeit über Größe zu bevorzugen. (Dies ist die Standardeinstellung.) Der Compiler kann viele C- und C++-Konstrukte auf funktional ähnliche Sequenzen von Maschinencode reduzieren. Gelegentlich bieten diese Unterschiede Kompromisse von Größe zu Geschwindigkeit. Die Option **/Ot** wird durch die Option Geschwindigkeit maximieren ([/O2](o1-o2-minimize-size-maximize-speed.md)) impliziert. Die Option **/O2** kombiniert mehrere Optionen, um sehr schnellen Code zu erzeugen.
 
-Bei Verwendung von **/OS** oder **/Ot**, dann müssen Sie auch angeben ["/ Og"](og-global-optimizations.md) um den Code optimieren.
-
-> [!NOTE]
->  Informationen, die profilerstellung gesammelt werden, überschreiben Optimierungen, die andernfalls gültig wäre, wenn Sie angeben, **tatsächlich**, **/OS**, oder **/Ot**. Weitere Informationen [Profile-Guided Optimizations](../profile-guided-optimizations.md).
-
-**X86 bestimmte**
-
-Der folgende Beispielcode veranschaulicht den Unterschied zwischen den kompakten Code bevorzugen ( **/OS**) Optionen und schnellen Code bevorzugen ( **/Ot**) Option:
+Wenn Sie **/Os** oder **/Ot**verwenden, müssen Sie auch [/Og](og-global-optimizations.md) angeben, um den Code zu optimieren.
 
 > [!NOTE]
->  Im folgenden wird das erwartete Verhalten beschrieben, bei Verwendung **/OS** oder **/Ot**. Allerdings Compilerverhalten von Version zu Version möglicherweise verschiedene Optimierungen für den folgenden Code.
+> Informationen, die aus Profilerstellungstestläufen gesammelt werden, überschreiben Optimierungen, die andernfalls wirksam wären, wenn Sie **/Ob**, **/Os**oder **/Ot**angeben. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md).
+
+**x86-spezifisch**
+
+Der folgende Beispielcode veranschaulicht den Unterschied zwischen den Optionen "Kleiner Code favor" (**/Os**) und der Option "Schneller Code favorisieren" (**/Ot**):
+
+> [!NOTE]
+> Im Folgenden wird das erwartete Verhalten bei der Verwendung von **/Os** oder **/Ot**beschrieben. Das Compilerverhalten von Release zu Release kann jedoch zu unterschiedlichen Optimierungen für den folgenden Code führen.
 
 ```
 /* differ.c
@@ -65,14 +65,14 @@ int differ(int x)
 }
 ```
 
-Wie im Fragment von Computercode unten gezeigt wird, wenn DIFFER.c kompiliert wird für die Größe ( **/OS**), implementiert der Compiler die multiply-Ausdruck in der return-Anweisung explizit als ein multiplizieren, um eine kurze, aber langsamere Codesequenz zu erstellen:
+Wie im Fragment des Maschinencodes unten gezeigt, implementiert der Compiler, wenn DIFFER.c für Größe (**/Os**) kompiliert wird, den multiplizierten Ausdruck in der return-Anweisung explizit als Multiplikation, um eine kurze, aber langsamere Sequenz von Code zu erzeugen:
 
 ```
 mov    eax, DWORD PTR _x$[ebp]
 imul   eax, 71                  ; 00000047H
 ```
 
-Klicken Sie alternativ, wenn DIFFER.c für Geschwindigkeit kompiliert wird ( **/Ot**), implementiert der Compiler die multiply-Ausdruck in der return-Anweisung als eine Reihe von UMSCHALT und `LEA` Anweisungen, um eine schnelle, aber mehr Code zu erzeugen:
+Wenn DIFFER.c für Geschwindigkeit kompiliert wird (**/Ot**), implementiert der Compiler den Multiplikatorausdruck in der Return-Anweisung alternativ als eine Reihe von Verschiebungen und `LEA` Anweisungen, um eine schnelle, aber längere Sequenz von Code zu erzeugen:
 
 ```
 mov    eax, DWORD PTR _x$[ebp]
@@ -82,7 +82,7 @@ lea    eax, DWORD PTR [eax+eax*8]
 sub    eax, ecx
 ```
 
-**END X86 bestimmte**
+**END x86 Spezifisch**
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
@@ -90,9 +90,9 @@ sub    eax, ecx
 
 1. Klicken Sie auf den Ordner **C/C++** .
 
-1. Klicken Sie auf die **Optimierung** Eigenschaftenseite.
+1. Klicken Sie auf die Eigenschaftenseite **Optimierung.**
 
-1. Ändern der **Größe oder Geschwindigkeit bevorzugen** Eigenschaft.
+1. Ändern Sie die **Eigenschaft "Begünstigte Größe" oder "Geschwindigkeit".**
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 

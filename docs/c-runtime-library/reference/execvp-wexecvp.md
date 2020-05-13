@@ -1,9 +1,11 @@
 ---
 title: _execvp, _wexecvp
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _execvp
 - _wexecvp
+- _o__execvp
+- _o__wexecvp
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-process-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +33,12 @@ helpviewer_keywords:
 - wexecvp function
 - execvp function
 ms.assetid: a4db15df-b204-4987-be7c-de84c3414380
-ms.openlocfilehash: 60de62a61c78152cd4a2d8053da41a37a4091424
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 224649abffd836667641f3c83e5f777f8752d7bd
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941793"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915919"
 ---
 # <a name="_execvp-_wexecvp"></a>_execvp, _wexecvp
 
@@ -73,11 +76,11 @@ Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Der R�
 |-------------------|-----------------|
 |**E2BIG**|Für die Argumente und die Umgebungseinstellungen werden mehr als 32 KB Speicherplatz benötigt.|
 |**EACCES**|Für die angegebene Datei ist eine Sperr- oder Freigabeverletzung aufgetreten.|
-|**EINVAL**|Ungültiger Parameter.|
+|**Eingabe**|Ungültiger Parameter.|
 |**EMFILE**|Zu viele Dateien geöffnet (die angegebene Datei muss geöffnet werden, damit festgestellt werden kann, ob sie ausführbar ist).|
 |**ENOENT**|Die Datei oder der Pfad wurde nicht gefunden.|
 |**ENOEXEC**|Die angegebene Datei ist nicht ausführbar oder hat ein ungültiges Format für eine ausführbare Datei.|
-|**ENOMEM**|Es ist nicht genügend Arbeitsspeicher, um den neuen Prozess auszuführen; der verfügbare Arbeitsspeicher ist beschädigt; oder es ist ein ungültiger Block vorhanden, was darauf hinweist, dass der aufrufende Prozess nicht ordnungsgemäß zugeordnet wurde.|
+|**Umomem**|Es ist nicht genügend Arbeitsspeicher, um den neuen Prozess auszuführen; der verfügbare Arbeitsspeicher ist beschädigt; oder es ist ein ungültiger Block vorhanden, was darauf hinweist, dass der aufrufende Prozess nicht ordnungsgemäß zugeordnet wurde.|
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
@@ -85,7 +88,9 @@ Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_do
 
 Jede dieser Funktionen lädt einen neuen Prozess, führt diesen aus, übergibt ein Array von Zeigern auf Befehlszeilenargumente und verwendet die **path** -Umgebungsvariable, um die auszuführende Datei zu suchen.
 
-Die **_execvp** -Funktionen überprüfen Ihre Parameter. Wenn der *cmdname* ein NULL-Zeiger ist oder *argv* ein NULL-Zeiger oder ein Zeiger auf ein leeres Array ist oder wenn das Array als erstes Argument eine leere Zeichenfolge enthält, rufen diese Funktionen den Handler für ungültige Parameter auf, wie unter [Parameter Validierung beschrieben. ](../../c-runtime-library/parameter-validation.md). Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück. Es wird kein Prozess gestartet.
+Die **_execvp** Funktionen überprüfen Ihre Parameter. Wenn der *cmdname* ein NULL-Zeiger ist oder *argv* ein NULL-Zeiger oder ein Zeiger auf ein leeres Array ist oder wenn das Array als erstes Argument eine leere Zeichenfolge enthält, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück. Es wird kein Prozess gestartet.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -94,17 +99,17 @@ Die **_execvp** -Funktionen überprüfen Ihre Parameter. Wenn der *cmdname* ein 
 |**_execvp**|\<process.h>|\<errno.h>|
 |**_wexecvp**|\<process.h> oder \<wchar.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
 Siehe das Beispiel in [_exec-, _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[_exec- und _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
-[abort](abort.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[_exec, _wexec Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
+[Abbruch](abort.md)<br/>
 [atexit](atexit.md)<br/>
 [exit, _Exit, _exit](exit-exit-exit.md)<br/>
 [_onexit, _onexit_m](onexit-onexit-m.md)<br/>

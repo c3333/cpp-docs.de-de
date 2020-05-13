@@ -13,16 +13,16 @@ f1_keywords:
 helpviewer_keywords:
 - CDebugReportHook class
 ms.assetid: 798076c3-6e63-4286-83b8-aa1bbcd0c20c
-ms.openlocfilehash: 7187448b2ba2c9d3ab0399aa3e75ce8d757bfec1
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 8380556bbe007326156bf0ec0eefc23052e8e056
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69496774"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747720"
 ---
 # <a name="cdebugreporthook-class"></a>CDebugReportHook-Klasse
 
-Verwenden Sie diese Klasse, um Debugberichte an einen Named Pipe zu senden.
+Verwenden Sie diese Klasse, um Debugberichte an eine Named Pipe zu senden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,36 +34,36 @@ class CDebugReportHook
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDebugReportHook::CDebugReportHook](#cdebugreporthook)|Ruft [setpitzame](#setpipename), [setTimeout](#settimeout)und [sethook](#sethook)auf.|
-|[CDebugReportHook::~CDebugReportHook](#dtor)|Ruft [CDebugReportHook:: RemoveHook](#removehook)auf.|
+|[CDebugReportHook::CDebugReportHook](#cdebugreporthook)|Ruft [SetPipeName](#setpipename), [SetTimeout](#settimeout)und [SetHook](#sethook)auf.|
+|[CDebugReportHook::'CDebugReportHook](#dtor)|Ruft [CDebugReportHook::RemoveHook](#removehook)auf.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDebugReportHook::CDebugReportHookProc](#cdebugreporthookproc)|Kum Die benutzerdefinierte Berichtsfunktion, die mit dem Debug-Bericht Erstellungs Prozess der C-Laufzeit verknüpft ist.|
-|[CDebugReportHook::RemoveHook](#removehook)|Mit dieser Methode können Sie keine Debugberichte an den Named Pipe senden und den vorherigen berichtshook wiederherstellen.|
-|[CDebugReportHook::SetHook](#sethook)|Mit dieser Methode beginnen Sie mit dem Senden von debugberichten an den Named Pipe.|
-|[CDebugReportHook::SetPipeName](#setpipename)|Mit dieser Methode können Sie den Computer und den Namen der Pipe festlegen, an die die Debugberichte gesendet werden.|
-|[CDebugReportHook::SetTimeout](#settimeout)|Mit dieser Methode können Sie die Zeit in Millisekunden festlegen, die diese Klasse wartet, bis die Named Pipe verfügbar wird.|
+|[CDebugReportHook::CDebugReportHookProc](#cdebugreporthookproc)|(Statisch) Die benutzerdefinierte Berichtsfunktion, die in den C-Laufzeitdebug-Berichtsprozess eingebunden ist.|
+|[CDebugReportHook::RemoveHook](#removehook)|Rufen Sie diese Methode auf, um das Senden von Debugberichten an die named pipe zu beenden und den vorherigen Berichtshook wiederherzustellen.|
+|[CDebugReportHook::SetHook](#sethook)|Rufen Sie diese Methode auf, um mit dem Senden von Debugberichten an die named pipe zu beginnen.|
+|[CDebugReportHook::SetPipeName](#setpipename)|Rufen Sie diese Methode auf, um den Computer und den Namen der Pipe festzulegen, an die die Debugberichte gesendet werden.|
+|[CDebugReportHook::SetTimeout](#settimeout)|Rufen Sie diese Methode auf, um die Zeit in Millisekunden festzulegen, die diese Klasse wartet, bis die benannte Pipe verfügbar wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Erstellen Sie eine Instanz dieser Klasse in Debugbuilds ihrer Dienste oder Anwendungen, um Debugberichte an einen Named Pipe zu senden. Debugberichte werden durch Aufrufen von [_CrtDbgReport](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) oder mithilfe eines Wrappers für diese Funktion generiert, wie z. b. die Makros [ATLTRACE](debugging-and-error-reporting-macros.md#atltrace) und [ATLASSERT](debugging-and-error-reporting-macros.md#atlassert) .
+Erstellen Sie eine Instanz dieser Klasse in Debugbuilds Ihrer Dienste oder Anwendungen, um Debugberichte an eine Named Pipe zu senden. Debugberichte werden generiert, indem [_CrtDbgReport](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) oder ein Wrapper für diese Funktion wie die [Makros ATLTRACE](debugging-and-error-reporting-macros.md#atltrace) und [ATLASSERT](debugging-and-error-reporting-macros.md#atlassert) verwendet werden.
 
-Mit dieser Klasse können Sie Komponenten, die in nicht interaktiven [Fenster Stationen](/windows/win32/winstation/window-stations)ausgeführt werden, interaktiv Debuggen.
+Mithilfe dieser Klasse können Sie Komponenten, die in nicht interaktiven [Fensterstationen](/windows/win32/winstation/window-stations)ausgeführt werden, interaktiv debuggen.
 
-Beachten Sie, dass Debugberichte mithilfe des zugrunde liegenden Sicherheits Kontexts des Threads gesendet werden. Der Identitätswechsel ist vorübergehend deaktiviert, sodass Debugberichte in Situationen angezeigt werden können, in denen der Identitätswechsel von Benutzern mit geringen Rechten stattfindet, z. b. in Webanwendungen.
+Beachten Sie, dass Debugberichte mithilfe des zugrunde liegenden Sicherheitskontexts des Threads gesendet werden. Der Identitätswechsel ist vorübergehend deaktiviert, sodass Debugberichte in Situationen angezeigt werden können, in denen der Identitätswechsel von Benutzern mit niedrigen Berechtigungen stattfindet, z. B. in Webanwendungen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlutil. h
+**Kopfzeile:** atlutil.h
 
-##  <a name="cdebugreporthook"></a>CDebugReportHook:: CDebugReportHook
+## <a name="cdebugreporthookcdebugreporthook"></a><a name="cdebugreporthook"></a>CDebugReportHook::CDebugReportHook
 
-Ruft [setpitzame](#setpipename), [setTimeout](#settimeout)und [sethook](#sethook)auf.
+Ruft [SetPipeName](#setpipename), [SetTimeout](#settimeout)und [SetHook](#sethook)auf.
 
 ```
 CDebugReportHook(
@@ -75,25 +75,25 @@ CDebugReportHook(
 ### <a name="parameters"></a>Parameter
 
 *szMachineName*<br/>
-Der Name des Computers, an den die Debug-Ausgabe gesendet werden soll. Der Standardwert ist der lokale Computer.
+Der Name des Computers, an den die Debugausgabe gesendet werden soll. Standardwerte für den lokalen Computer.
 
 *szPipeName*<br/>
-Der Name des Named Pipe, an das die Debugausgabe gesendet werden soll.
+Der Name der benannten Pipe, an die die Debugausgabe gesendet werden soll.
 
 *dwTimeout*<br/>
-Die Zeit in Millisekunden, die diese Klasse wartet, bis die Named Pipe verfügbar wird.
+Die Zeit in Millisekunden, die diese Klasse wartet, bis die benannte Pipe verfügbar ist.
 
-##  <a name="dtor"></a>CDebugReportHook:: ~ CDebugReportHook
+## <a name="cdebugreporthookcdebugreporthook"></a><a name="dtor"></a>CDebugReportHook::'CDebugReportHook
 
-Ruft [CDebugReportHook:: RemoveHook](#removehook)auf.
+Ruft [CDebugReportHook::RemoveHook](#removehook)auf.
 
 ```
 ~CDebugReportHook() throw();
 ```
 
-##  <a name="cdebugreporthookproc"></a>CDebugReportHook:: cdebugreporthookproc
+## <a name="cdebugreporthookcdebugreporthookproc"></a><a name="cdebugreporthookproc"></a>CDebugReportHook::CDebugReportHookProc
 
-Die benutzerdefinierte Berichtsfunktion, die mit dem Debug-Bericht Erstellungs Prozess der C-Laufzeit verknüpft ist.
+Die benutzerdefinierte Berichtsfunktion, die in den C-Laufzeitdebug-Berichtsprozess eingebunden ist.
 
 ```
 static int __cdecl CDebugReportHookProc(
@@ -105,51 +105,51 @@ static int __cdecl CDebugReportHookProc(
 ### <a name="parameters"></a>Parameter
 
 *reportType*<br/>
-Der Berichtstyp (_CRT_WARN, _CRT_ERROR oder _CRT_ASSERT).
+Der Typ des Berichts (_CRT_WARN, _CRT_ERROR oder _CRT_ASSERT).
 
-*message*<br/>
-Die Meldungs Zeichenfolge.
+*Nachricht*<br/>
+Die Meldungszeichenfolge.
 
-*returnValue*<br/>
+*Returnvalue*<br/>
 Der Wert, der von [_CrtDbgReport](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md)zurückgegeben werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt false zurück, wenn der Hook die fragliche Nachricht vollständig verarbeitet, sodass keine weitere Berichterstellung erforderlich ist. Gibt true zurück `_CrtDbgReport` , wenn die Meldung auf die normale Weise melden soll.
+Gibt FALSE zurück, wenn der Hook die betreffende Nachricht vollständig verarbeitet, sodass keine weitere Meldung erforderlich ist. Gibt TRUE `_CrtDbgReport` zurück, wenn die Nachricht auf die normale Weise gemeldet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Berichterstattungs Funktion versucht, die Named Pipe zu öffnen und mit dem Prozess am anderen Ende zu kommunizieren. Wenn die Pipe ausgelastet ist, wartet die Berichterstattungs Funktion, bis die Pipe frei ist oder das Timeout abläuft. Das Timeout kann durch den Konstruktor oder durch einen [CDebugReportHook:: setTimeout](#settimeout)-Wert festgelegt werden.
+Die Berichtsfunktion versucht, die Named Pipe zu öffnen und mit dem Prozess am anderen Ende zu kommunizieren. Wenn die Pipe ausgelastet ist, wartet die Berichtsfunktion, bis die Pipe frei ist oder das Timeout abläuft. Das Timeout kann vom Konstruktor oder einem Aufruf von [CDebugReportHook::SetTimeout](#settimeout)festgelegt werden.
 
-Der Code in dieser Funktion wird im zugrunde liegenden Sicherheitskontext des aufrufenden Threads ausgeführt, d. h., der Identitätswechsel ist für die Dauer dieser Funktion deaktiviert.
+Der Code in dieser Funktion wird im zugrunde liegenden Sicherheitskontext des aufrufenden Threads ausgeführt, d. h. der Identitätswechsel ist für die Dauer dieser Funktion deaktiviert.
 
-##  <a name="removehook"></a>CDebugReportHook:: RemoveHook
+## <a name="cdebugreporthookremovehook"></a><a name="removehook"></a>CDebugReportHook::RemoveHook
 
-Mit dieser Methode können Sie keine Debugberichte an den Named Pipe senden und den vorherigen berichtshook wiederherstellen.
+Rufen Sie diese Methode auf, um das Senden von Debugberichten an die named pipe zu beenden und den vorherigen Berichtshook wiederherzustellen.
 
-```
+```cpp
 void RemoveHook() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft [_CrtSetReportHook2](../../c-runtime-library/reference/crtsetreporthook2-crtsetreporthookw2.md) auf, um den vorherigen berichtshook wiederherzustellen.
+Ruft [_CrtSetReportHook2](../../c-runtime-library/reference/crtsetreporthook2-crtsetreporthookw2.md) auf, um den vorherigen Berichtshaken wiederherzustellen.
 
-##  <a name="sethook"></a>CDebugReportHook:: abkthook
+## <a name="cdebugreporthooksethook"></a><a name="sethook"></a>CDebugReportHook::SetHook
 
-Mit dieser Methode beginnen Sie mit dem Senden von debugberichten an den Named Pipe.
+Rufen Sie diese Methode auf, um mit dem Senden von Debugberichten an die named pipe zu beginnen.
 
-```
+```cpp
 void SetHook() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft [_CrtSetReportHook2](../../c-runtime-library/reference/crtsetreporthook2-crtsetreporthookw2.md) auf, damit Debugberichte durch [cdebugreporthookproc](#cdebugreporthookproc) an die Named Pipe weitergeleitet werden. Mit dieser Klasse wird der vorherige berichtshook nachverfolgt, sodass er wieder hergestellt werden kann, wenn [RemoveHook](#removehook) aufgerufen wird.
+Ruft [_CrtSetReportHook2,](../../c-runtime-library/reference/crtsetreporthook2-crtsetreporthookw2.md) dass Debugberichte über [CDebugReportHookProc](#cdebugreporthookproc) an die Named Pipe weitergeleitet werden. Diese Klasse verfolgt den vorherigen Berichtshaken, sodass er wiederhergestellt werden kann, wenn [RemoveHook](#removehook) aufgerufen wird.
 
-##  <a name="setpipename"></a>CDebugReportHook:: setpipoame
+## <a name="cdebugreporthooksetpipename"></a><a name="setpipename"></a>CDebugReportHook::SetPipeName
 
-Mit dieser Methode können Sie den Computer und den Namen der Pipe festlegen, an die die Debugberichte gesendet werden.
+Rufen Sie diese Methode auf, um den Computer und den Namen der Pipe festzulegen, an die die Debugberichte gesendet werden.
 
 ```
 BOOL SetPipeName(
@@ -160,28 +160,28 @@ BOOL SetPipeName(
 ### <a name="parameters"></a>Parameter
 
 *szMachineName*<br/>
-Der Name des Computers, an den die Debug-Ausgabe gesendet werden soll.
+Der Name des Computers, an den die Debugausgabe gesendet werden soll.
 
 *szPipeName*<br/>
-Der Name des Named Pipe, an das die Debugausgabe gesendet werden soll.
+Der Name der benannten Pipe, an die die Debugausgabe gesendet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-##  <a name="settimeout"></a>CDebugReportHook:: setTimeout
+## <a name="cdebugreporthooksettimeout"></a><a name="settimeout"></a>CDebugReportHook::SetTimeout
 
-Mit dieser Methode können Sie die Zeit in Millisekunden festlegen, die diese Klasse wartet, bis die Named Pipe verfügbar wird.
+Rufen Sie diese Methode auf, um die Zeit in Millisekunden festzulegen, die diese Klasse wartet, bis die benannte Pipe verfügbar wird.
 
-```
+```cpp
 void SetTimeout(DWORD dwTimeout);
 ```
 
 ### <a name="parameters"></a>Parameter
 
 *dwTimeout*<br/>
-Die Zeit in Millisekunden, die diese Klasse wartet, bis die Named Pipe verfügbar wird.
+Die Zeit in Millisekunden, die diese Klasse wartet, bis die benannte Pipe verfügbar ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../atl/reference/atl-classes.md)

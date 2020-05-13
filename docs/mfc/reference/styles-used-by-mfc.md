@@ -194,12 +194,12 @@ helpviewer_keywords:
 - WS_EX_TRANSPARENT constant [MFC]
 - WS_EX_WINDOWEDGE constant [MFC]
 ms.assetid: d3b9af37-31b5-4c97-a8ad-189fd724b04c
-ms.openlocfilehash: 1fe8e0e167ee1fe6150487dfff436a72a2d55868
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 20e3a453fd04f0eead53d8ee985b51c7f534b662
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372913"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032394"
 ---
 # <a name="styles-used-by-mfc"></a>Von MFC verwendete Stile
 
@@ -235,7 +235,7 @@ In der folgenden Tabelle werden Schaltflächentypen aufgeführt. Sie können opt
 
 In der folgenden Tabelle werden Stile aufgeführt, die für Optionsfelder und Kontrollkästchen spezifisch sind. Diese Stile werden bei allen anderen Schaltflächentypen ignoriert. Sie können optional mindestens eine der folgenden Möglichkeiten auswählen.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_LEFTTEXT|Bei Kombination mit einem Optionsfeld- oder Kontrollkästchenstil wird der Text auf der linken Seite des Optionsfelds oder Kontrollkästchens angezeigt.|
 |BS_RIGHTBUTTON|Bei Kombination mit einem Optionsfeld- oder Kontrollkästchenstil wird der Text auf der linken Seite des Optionsfelds oder Kontrollkästchens angezeigt. Dieser Stil ist identisch mit dem BS_LEFTTEXT Stil.|
@@ -245,7 +245,7 @@ In der folgenden Tabelle werden Stile aufgeführt, die für Optionsfelder und Ko
 
 In der folgenden Tabelle werden die Optionen für horizontale und vertikale Textausrichtung aufgeführt. Sie können optional eine der folgenden Möglichkeiten auswählen.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_LEFT|Links richtet den Text im Schaltflächenrechteck aus. Wenn es sich bei der Schaltfläche jedoch um ein Kontrollkästchen oder ein Optionsfeld mit der BS_RIGHTBUTTON-Formats handelt, wird der Text auf der rechten Seite des Kontrollkästchens oder Optionsfelds links ausgerichtet.|
 |BS_RIGHT|Rechts richtet den Text im Schaltflächenrechteck aus. Wenn es sich bei der Schaltfläche jedoch um ein Kontrollkästchen oder ein Optionsfeld mit der BS_RIGHTBUTTON-Formats handelt, ist der Text rechts auf der rechten Seite des Kontrollkästchens oder Optionsfelds ausgerichtet.|
@@ -258,7 +258,7 @@ In der folgenden Tabelle werden die Optionen für horizontale und vertikale Text
 
 In der folgenden Tabelle sind die Optionen aufgeführt, die angeben, was in der Schaltfläche angezeigt wird. Schaltflächentypen, die nur Text anzeigen, ignorieren diese Stile. Sie können optional eine der folgenden Möglichkeiten auswählen.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_BITMAP|Gibt an, dass die Schaltfläche eine Bitmap anzeigt.|
 |BS_ICON|Gibt an, dass die Schaltfläche ein Symbol anzeigt.|
@@ -268,7 +268,7 @@ In der folgenden Tabelle sind die Optionen aufgeführt, die angeben, was in der 
 
 In der folgenden Tabelle werden zusätzliche Optionen aufgeführt, die Sie mit jedem Schaltflächentyp verwenden können. Sie können optional mindestens eine der folgenden Möglichkeiten auswählen.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_FLAT|Gibt an, dass die Schaltfläche zweidimensional ist und nicht zum Erstellen eines dreidimensionalen Bilds mit Standardschattierung gezeichnet wird.|
 |BS_MULTILINE|Bricht den Schaltflächentext in mehrere Zeilen um, wenn die Zeichenfolge für eine einzelne Zeile im Schaltflächenrechteck zu lang ist.|
@@ -278,7 +278,7 @@ In der folgenden Tabelle werden zusätzliche Optionen aufgeführt, die Sie mit j
 
 In MFC sind die folgenden Stile für Kombinationsfelder verfügbar. Weitere Informationen zu Kombinationsboxstilen in Windows finden Sie unter [Combo Box Styles (Windows)](/windows/win32/Controls/combo-box-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |CBS_AUTOHSCROLL|Scrollt automatisch den Text im Bearbeitungssteuerelement nach rechts, wenn der Benutzer ein Zeichen am Ende der Zeile eingibt. Wenn dieser Stil nicht festgelegt ist, ist nur Text zulässig, der in die rechteckige Begrenzung passt.|
 |CBS_DISABLENOSCROLL|Das Listenfeld zeigt eine deaktivierte vertikale Bildlaufleiste an, wenn das Listenfeld nicht genügend Elemente zum Scrollen enthält. Ohne diesen Stil wird die Scrollleiste ausgeblendet, wenn das Listenfeld nicht genügend Elemente enthält.|
@@ -298,7 +298,7 @@ In MFC sind die folgenden Stile für Kombinationsfelder verfügbar. Weitere Info
 
 Bearbeitungsstile gelten für [CEdit-Klassenobjekte.](../../mfc/reference/cedit-class.md) Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CEdit::Create](../../mfc/reference/cedit-class.md#create)an. Weitere Informationen zum Bearbeiten von Steuerelementstilen in Windows finden Sie unter Bearbeiten von [Steuerelementvorlagen (Windows)](/windows/win32/Controls/edit-control-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |ES_AUTOHSCROLL|Scrollt automatisch Text nach rechts um 10 Zeichen, wenn der Benutzer ein Zeichen am Ende der Zeile eingibt. Wenn der Benutzer die ENTER-Taste drückt, scrollt das Steuerelement den gesamten Text zurück an Position 0.|
 |ES_AUTOVSCROLL|Scrollt automatisch Text um eine Seite nach oben, wenn der Benutzer in der letzten Zeile die EINGABEtaste drückt.|
@@ -319,7 +319,7 @@ Bearbeitungsstile gelten für [CEdit-Klassenobjekte.](../../mfc/reference/cedit-
 
 Rahmenfensterstile gelten für [CFrameWnd](../../mfc/reference/cframewnd-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* von [CFrameWnd::Create](../../mfc/reference/cframewnd-class.md#create)an.
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |FWS_ADDTOTITLE|Gibt Informationen an, die an das Ende eines Rahmenfenstertitels angehängt werden sollen. Beispiel: "Microsoft Draw - Drawing in Document1". Sie können die Zeichenfolgen angeben, die auf der Registerkarte Dokumentvorlagenzeichenfolgen im Anwendungs-Assistenten angezeigt werden. Wenn Sie diese Option deaktivieren müssen, `CWnd::PreCreateWindow` überschreiben Sie die Memberfunktion.|
 |FWS_PREFIXTITLE|Zeigt den Dokumentnamen vor dem Anwendungsnamen in einem Framefenstertitel an. Beispiel: "Dokument - WordPad". Sie können die Zeichenfolgen angeben, die auf der Registerkarte Dokumentvorlagenzeichenfolgen im Anwendungs-Assistenten angezeigt werden. Wenn Sie diese Option deaktivieren müssen, `CWnd::PreCreateWindow` überschreiben Sie die Memberfunktion.|
@@ -329,7 +329,7 @@ Rahmenfensterstile gelten für [CFrameWnd](../../mfc/reference/cframewnd-class.m
 
 Listenfeldstile gelten für [CListBox-Klassenobjekte.](../../mfc/reference/clistbox-class.md) Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* von [CListBox::Create](../../mfc/reference/clistbox-class.md#create)an. Weitere Informationen zu Listenfeldstilen in Windows finden Sie unter [Listenfeldformatvorlagen (Windows)](/windows/win32/Controls/list-box-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |LBS_DISABLENOSCROLL|Das Listenfeld zeigt eine deaktivierte vertikale Bildlaufleiste an, wenn das Listenfeld nicht genügend Elemente zum Scrollen enthält. Ohne diesen Stil wird die Scrollleiste ausgeblendet, wenn das Listenfeld nicht genügend Elemente enthält.|
 |LBS_EXTENDEDSEL|Der Benutzer kann mehrere Elemente mit der UMSCHALTtaste und der Maus oder speziellen Tastenkombinationen auswählen.|
@@ -356,7 +356,7 @@ Die folgenden Meldungsfeldstile sind verfügbar.
 
 ### <a name="message-box-types"></a>Message-Box-Typen
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |MB_ABORTRETRYIGNORE|Das Meldungsfeld enthält drei Drucktasten: Abbrechen, Wiederholen und Ignorieren.|
 |Mb_ok|Das Meldungsfeld enthält einen Druckknopf: OK.|
@@ -367,7 +367,7 @@ Die folgenden Meldungsfeldstile sind verfügbar.
 
 ### <a name="message-box-modality"></a>Message-Box-Modalität
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |MB_APPLMODAL|Der Benutzer muss auf das Meldungsfeld antworten, bevor er die Arbeit im aktuellen Fenster fortsetzt. Der Benutzer kann jedoch zu den Fenstern anderer Anwendungen wechseln und in diesen Fenstern arbeiten. Der Standardwert ist MB_APPLMODAL, wenn weder MB_SYSTEMMODAL noch MB_TASKMODAL angegeben ist.|
 |MB_SYSTEMMODAL|Alle Anwendungen werden angehalten, bis der Benutzer auf das Meldungsfeld antwortet. Systemmodale Meldungsfelder werden verwendet, um den Benutzer über schwerwiegende, potenziell schädliche Fehler zu informieren, die sofortige Aufmerksamkeit erfordern und sparsam verwendet werden sollten.|
@@ -375,7 +375,7 @@ Die folgenden Meldungsfeldstile sind verfügbar.
 
 ### <a name="message-box-icons"></a>Message-Box-Symbole
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |MB_ICONEXCLAMATION|Im Meldungsfeld wird ein Ausrufezeichensymbol angezeigt.|
 |MB_ICONINFORMATION|Im Meldungsfeld wird ein Symbol angezeigt, das aus einem "I" in einem Kreis besteht.|
@@ -384,7 +384,7 @@ Die folgenden Meldungsfeldstile sind verfügbar.
 
 ### <a name="message-box-default-buttons"></a>Message-Box-Standardschaltflächen
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |MB_DEFBUTTON1|Die erste Schaltfläche ist die Standardeinstellung. Beachten Sie, dass die erste Schaltfläche immer die Standardeinstellung ist, es sei denn, MB_DEFBUTTON2 oder MB_DEFBUTTON3 angegeben ist.|
 |MB_DEFBUTTON2|Die zweite Schaltfläche ist die Standardschaltfläche.|
@@ -394,7 +394,7 @@ Die folgenden Meldungsfeldstile sind verfügbar.
 
 Scrollleistenstile gelten für [CScrollBar-Klassenobjekte.](../../mfc/reference/cscrollbar-class.md) Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CScrollBar::Create](../../mfc/reference/cscrollbar-class.md#create)an. Weitere Informationen zu Bildlaufleistensteuerelementen in Windows finden Sie unter [Scroll leistenSteuerformatvorlagen (Windows)](/windows/win32/Controls/scroll-bar-control-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |SBS_BOTTOMALIGN|Wird mit dem SBS_HORZ-Stil verwendet. Der untere Rand der Bildlaufleiste wird am unteren `Create` Rand des in der Memberfunktion angegebenen Rechtecks ausgerichtet. Die Bildlaufleiste hat die Standardhöhe für Systembildlaufleisten.|
 |SBS_HORZ|Bezeichnet eine horizontale Bildlaufleiste. Wenn weder die SBS_BOTTOMALIGN noch SBS_TOPALIGN Stil angegeben ist, weist die `Create` Bildlaufleiste die Höhe, Breite und Position auf, die in der Memberfunktion angegeben ist.|
@@ -411,14 +411,14 @@ Scrollleistenstile gelten für [CScrollBar-Klassenobjekte.](../../mfc/reference/
 
 Statische Stile gelten für [CStatic](../../mfc/reference/cstatic-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CStatic::Create](../../mfc/reference/cstatic-class.md#create)an. Weitere Informationen zu statischen Steuerelementstilen in Windows finden Sie unter [Statische Steuerelementstile (Windows)](/windows/win32/Controls/static-control-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |SS_BITMAP|Gibt an, dass eine Bitmap im statischen Steuerelement angezeigt werden soll. Der angegebene Text ist der Name einer Bitmap (kein Dateiname), die an anderer Stelle in der Ressourcendatei definiert ist. Der Stil ignoriert die Parameter nWidth und nHeight. Das Steuerelement wird automatisch an die Bitmap angepasst.|
 |Ss_blackframe|Gibt ein Feld mit einem Rahmen an, der mit der gleichen Farbe wie Fensterrahmen gezeichnet ist. Die Standardeinstellung ist schwarz.|
 |SS_BLACKRECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, die zum Zeichnen von Fensterrahmen verwendet wird. Die Standardeinstellung ist schwarz.|
 |SS_CENTER|Bezeichnet ein einfaches Rechteck und zeigt den angegebenen Text an, der im Rechteck zentriert ist. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die sich über das Ende einer Zeile erstrecken, werden automatisch an den Anfang der nächsten zentrierten Zeile umbrochen.|
 |SS_CENTERIMAGE|Gibt an, dass, wenn die Bitmap oder das Symbol kleiner als der Clientbereich des statischen Steuerelements ist, der Rest des Clientbereichs mit der Farbe des Pixels in der oberen linken Ecke der Bitmap oder des Symbols gefüllt ist. Wenn das statische Steuerelement eine einzelne Textzeile enthält, wird der Text vertikal im Clientbereich des Steuerelements zentriert.|
-|SS_ENDELLIPSIS|oder SS_PATHELLIPSIS Ersetzt bei Bedarf einen Teil der angegebenen Zeichenfolge durch Ellipsen, sodass das Ergebnis in das angegebene Rechteck passt. <br /><br />Sie können SS_END_ELLIPSIS angeben, um Zeichen am Ende der Zeichenfolge zu ersetzen, oder SS_PATHELLIPSIS Zeichen in der Mitte der Zeichenfolge ersetzen. Wenn die Zeichenfolge umgekehrte\\Schrägstriche ( ) enthält, behält SS_PATHELLIPSIS so viel textwie möglich nach dem letzten umgekehrten Schrägstrich bei.|
+|SS_ENDELLIPSIS|oder SS_PATHELLIPSIS Ersetzt bei Bedarf einen Teil der angegebenen Zeichenfolge durch Auslassungen, sodass das Ergebnis in das angegebene Rechteck passt. <br /><br />Sie können SS_END_ELLIPSIS angeben, um Zeichen am Ende der Zeichenfolge zu ersetzen, oder SS_PATHELLIPSIS Zeichen in der Mitte der Zeichenfolge ersetzen. Wenn die Zeichenfolge umgekehrte\\Schrägstriche ( ) enthält, behält SS_PATHELLIPSIS so viel textwie möglich nach dem letzten umgekehrten Schrägstrich bei.|
 |SS_ENHMETAFILE|Gibt an, dass eine erweiterte Metadatei im statischen Steuerelement angezeigt werden soll. Der angegebene Text ist der Name einer Metadatei. Ein erweitertes statisches Metadateisteuerelement hat eine feste Größe. Die Metadatei wird so skaliert, dass sie an den Clientbereich des statischen Steuerelements passt.|
 |SS_ETCHEDFRAME|Zeichnet den Rahmen des statischen Steuerelements mit dem EDGE_ETCHED Kantenstil.|
 |SS_ETCHEDHORZ|Zeichnet die oberen und unteren Ränder des statischen Steuerelements mit dem EDGE_ETCHED Kantenstil.|
@@ -439,13 +439,13 @@ Statische Stile gelten für [CStatic](../../mfc/reference/cstatic-class.md) Clas
 |SS_USERITEM|Gibt ein benutzerdefiniertes Element an.|
 |SS_WHITEFRAME|Gibt ein Feld mit einem Rahmen an, der mit der gleichen Farbe wie der Fensterhintergrund gezeichnet ist. Der Standardwert ist Weiß.|
 |SS_WHITERECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, die zum Ausfüllen des Fensterhintergrunds verwendet wird. Der Standardwert ist Weiß.|
-|SS_WORDELLIPSIS|Truncates Text, der nicht passt, und fügt Ellipsen hinzu.|
+|SS_WORDELLIPSIS|Truncates Text, der nicht passt, und fügt Auslassungen hinzu.|
 
 ## <a name="window-styles"></a><a name="window-styles"></a>Fensterstile
 
 Fensterstile gelten für [CWnd](../../mfc/reference/cwnd-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* von [CWnd::Create](../../mfc/reference/cwnd-class.md#create) oder [CWnd::CreateEx](../../mfc/reference/cwnd-class.md#createex)an. Weitere Informationen zu Fensterstilen in Windows finden Sie unter [Fensterformate (Windows)](/windows/win32/winmsg/window-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |Ws_border|   Erstellt ein Fenster mit einem Rahmen.|
 |WS_CAPTION|Erstellt ein Fenster mit einer Titelleiste (impliziert den stilWS_BORDER Stil). Kann nicht mit dem WS_DLGFRAME-Stil verwendet werden.|
@@ -479,7 +479,7 @@ Fensterstile gelten für [CWnd](../../mfc/reference/cwnd-class.md) Class-Objekte
 
 Erweiterte Fensterstile gelten für [CWnd](../../mfc/reference/cwnd-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwExStyle-Parameter* von [CWnd::CreateEx](../../mfc/reference/cwnd-class.md#createex)an. Weitere Informationen zu erweiterten Fensterstilen in Windows finden Sie unter [Erweiterte Fensterstile (Windows)](/windows/win32/winmsg/extended-window-styles).
 
-|Stil|BESCHREIBUNG|
+|Style|BESCHREIBUNG|
 |-----------|-----------------|
 |WS_EX_ACCEPTFILES|Gibt an, dass ein mit diesem Stil erstelltes Fenster Drag-and-Drop-Dateien akzeptiert.|
 |WS_EX_APPWINDOW|Erzwingt ein Fenster der obersten Ebene auf der Taskleiste, wenn das Fenster sichtbar ist.|
@@ -504,7 +504,7 @@ Erweiterte Fensterstile gelten für [CWnd](../../mfc/reference/cwnd-class.md) Cl
 |WS_EX_TRANSPARENT|Gibt an, dass ein fenster, das mit diesem Stil erstellt wurde, transparent sein soll. Das heißt, dass alle Fenster, die unter diesem Fenster liegen, nicht von dem Fenster verdeckt werden. Ein mit diesem Stil erstelltes Fenster empfängt WM_PAINT Nachrichten erst, nachdem alle darunter liegenden gleichgeordneten Fenster aktualisiert wurden.|
 |WS_EX_WINDOWEDGE|Gibt an, dass ein Fenster einen Rahmen mit einer erhöhten Kante hat.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Klassenübersicht](../../mfc/class-library-overview.md)<br/>
 [CWnd::Create](../../mfc/reference/cwnd-class.md#create)<br/>

@@ -1,35 +1,35 @@
 ---
-title: 'Vorgehensweise: Führen Sie DDX / DDV-Datenbindung mit Windows Forms'
+title: 'Gewusst wie: Do DDX-DDV Datenbindung mit Windows Forms'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - MFC [C++], hosting a Windows Forms Control
 - Windows Forms [C++], MFC support
 ms.assetid: b2957370-cf1f-4779-94ac-228cd393686c
-ms.openlocfilehash: 558c763fd18cd1569ff23435bf6156b3117f117d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 31629a4db2559112ba49f5c069b08de7abdfc2db
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387317"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754348"
 ---
-# <a name="how-to-do-ddxddv-data-binding-with-windows-forms"></a>Vorgehensweise: Führen Sie DDX/DDV-Datenbindung mit Windows Forms
+# <a name="how-to-do-ddxddv-data-binding-with-windows-forms"></a>Gewusst wie: DDX-/DDV-Datenbindung mit Windows Forms
 
-[DDX_ManagedControl](../mfc/reference/standard-dialog-data-exchange-routines.md#ddx_managedcontrol) Aufrufe [CWinFormsControl::CreateManagedControl](../mfc/reference/cwinformscontrol-class.md#createmanagedcontrol) zum Erstellen eines Steuerelements mit der Resource-Steuerelement-ID übereinstimmt. Bei Verwendung von `DDX_ManagedControl` für eine `CWinFormsControl` Control (im Assistenten generierte Code), sollten Sie nicht aufrufen `CreateManagedControl` explizit für das Steuerelement.
+[DDX_ManagedControl](../mfc/reference/standard-dialog-data-exchange-routines.md#ddx_managedcontrol) ruft [CWinFormsControl::CreateManagedControl](../mfc/reference/cwinformscontrol-class.md#createmanagedcontrol) auf, um ein Steuerelement zu erstellen, das der Ressourcensteuerungs-ID entspricht. Wenn Sie `DDX_ManagedControl` für `CWinFormsControl` ein Steuerelement (in vom Assistenten `CreateManagedControl` generiertem Code) verwenden, sollten Sie nicht explizit für dasselbe Steuerelement aufrufen.
 
-Rufen Sie `DDX_ManagedControl` in [Ddx_managedcontrol](../mfc/reference/cwnd-class.md#dodataexchange) zum Erstellen von Steuerelementen aus Ressourcen-IDs. Für den Datenaustausch verwendet müssen Sie nicht die DDX-/DDV-Funktionen mit Windows Forms-Steuerelemente verwenden. Sie können stattdessen fügen Sie Code für den Zugriff auf die Eigenschaften des verwalteten Steuerelements in der `DoDataExchange` Methode der Klasse Dialogfeld (oder Ansicht), wie im folgenden Beispiel gezeigt.
+Rufen `DDX_ManagedControl` Sie [CWnd::DoDataExchange](../mfc/reference/cwnd-class.md#dodataexchange) auf, um Steuerelemente aus Ressourcen-IDs zu erstellen. Für den Datenaustausch müssen Sie die DDX/DDV-Funktionen nicht mit Windows Forms-Steuerelementen verwenden. Stattdessen können Sie Code platzieren, um auf die `DoDataExchange` Eigenschaften des verwalteten Steuerelements in der Methode der Dialog- (oder Ansichts-)Klasse zuzugreifen, wie im folgenden Beispiel.
 
-Das folgende Beispiel zeigt, wie eine systemeigene C++-Zeichenfolge in ein Benutzersteuerelement .NET gebunden wird.
+Das folgende Beispiel zeigt, wie eine systemeigene C++-Zeichenfolge an ein .NET-Benutzersteuerelement gebunden wird.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden ist ein Beispiel der DDX-/DDV-Datenbindung einer MFC-Zeichenfolge `m_str` mit der benutzerdefinierten `NameText` Eigenschaft eines Steuerelements .NET.
+Im Folgenden finden Sie ein Beispiel für die DDX/DDV-Datenbindung einer MFC-Zeichenfolge `m_str` mit der benutzerdefinierten `NameText` Eigenschaft eines .NET-Benutzersteuerelements.
 
-Das Steuerelement wird erstellt, wenn [CDialog::](../mfc/reference/cdialog-class.md#oninitdialog) Aufrufe `CMyDlg::DoDataExchange` zum ersten Mal also keinen Code, der auf verweist `m_UserControl` müssen stammen, nachdem die `DDX_ManagedControl` aufrufen.
+Das Steuerelement wird erstellt, wenn [CDialog::OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog) zum ersten Mal aufruft, `CMyDlg::DoDataExchange` sodass jeder Code, der `m_UserControl` nach dem `DDX_ManagedControl` Aufruf stammen muss.
 
-Sie können diesen Code implementieren, in den MFC01-Anwendung, die Sie erstellt, in haben [Vorgehensweise: Erstellen des Benutzersteuerelements und Hosten in einem Dialogfeld](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md).
+Sie können diesen Code in der MFC01-Anwendung implementieren, die Sie unter [Gewusst wie: Erstellen der Benutzersteuerung und](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md)des Hosts in einem Dialogfeld erstellt haben.
 
-Platzieren Sie den folgenden Code in der Deklaration der CMFC01Dlg:
+Setzen Sie den folgenden Code in die Deklaration von CMFC01Dlg:
 
 ```
 class CMFC01Dlg : public CDialog
@@ -41,9 +41,9 @@ class CMFC01Dlg : public CDialog
 
 ## <a name="example"></a>Beispiel
 
-Platzieren Sie den folgenden Code in der Implementierung von CMFC01Dlg:
+Setzen Sie den folgenden Code in die Implementierung von CMFC01Dlg:
 
-```
+```cpp
 void CMFC01Dlg::DoDataExchange(CDataExchange* pDX)
 {
    CDialog::DoDataExchange(pDX);
@@ -60,11 +60,11 @@ void CMFC01Dlg::DoDataExchange(CDataExchange* pDX)
 
 ## <a name="example"></a>Beispiel
 
-Nun fügen wir die Handlermethode für einen Klick auf "OK". Klicken Sie auf die **Ressourcenansicht** Registerkarte. Doppelklicken Sie in der Ressourcenansicht auf `IDD_MFC01_DIALOG`. Die Dialogressource wird in Ressourcen-Editor angezeigt. Klicken Sie dann Doppelklicken auf die Schaltfläche "OK"...
+Nun fügen wir die Handlermethode für einen Klick auf die Schaltfläche OK hinzu. Klicken Sie auf die Registerkarte **Ressourcenansicht.** Doppelklicken Sie in der `IDD_MFC01_DIALOG`Ressourcenansicht auf . Die Dialogressource wird in Ressourcen-Editor angezeigt. Dann doppelklicken Sie auf die Schaltfläche OK..
 
-Definieren Sie wie folgt des Handlers.
+Definieren Sie den Handler wie folgt.
 
-```
+```cpp
 void CMFC01Dlg::OnBnClickedOk()
 {
    AfxMessageBox(CString(m_MyControl.GetControl()->textBox1->Text));
@@ -74,15 +74,15 @@ void CMFC01Dlg::OnBnClickedOk()
 
 ## <a name="example"></a>Beispiel
 
-Und die Implementierung von "bool" CMFC01Dlg::OnInitDialog() fügen die folgende Zeile hinzu.
+Und fügen Sie der Implementierung von BOOL CMFC01Dlg::OnInitDialog() die folgende Zeile hinzu.
 
 ```
 m_MyControl.GetControl()->textBox1->Text = "hello";
 ```
 
-Sie können jetzt erstellen und Ausführen der Anwendung. Beachten Sie, dass es sich bei einem beliebigen Text in das Textfeld in einem Popup-Meldungsfeld angezeigt wird, wenn die Anwendung geschlossen wird.
+Sie können die Anwendung jetzt erstellen und ausführen. Beachten Sie, dass Text im Textfeld beim Schließen der Anwendung in einem Popup-Meldungsfeld angezeigt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CWinFormsControl-Klasse](../mfc/reference/cwinformscontrol-class.md)<br/>
 [DDX_ManagedControl](../mfc/reference/standard-dialog-data-exchange-routines.md#ddx_managedcontrol)<br/>

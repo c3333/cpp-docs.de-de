@@ -82,12 +82,12 @@ helpviewer_keywords:
 - COleServerDoc [MFC], OnSetItemRects
 - COleServerDoc [MFC], OnShowDocument
 ms.assetid: a9cdd96a-e0ac-43bb-9203-2c29237e965c
-ms.openlocfilehash: b535cc23901ba39e4beeb66d8ca6bb18d4abe2b8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8e75ec5c00c614a225a059a2b3cf97a7a307c61c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376132"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753777"
 ---
 # <a name="coleserverdoc-class"></a>COleServerDoc-Klasse
 
@@ -184,7 +184,7 @@ Weitere Informationen zu Servern finden Sie im Artikel [Server: Implementieren e
 
 `COleServerDoc`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxole.h
 
@@ -192,7 +192,7 @@ Weitere Informationen zu Servern finden Sie im Artikel [Server: Implementieren e
 
 Aktiviert das zugehörige DocObject-Dokument.
 
-```
+```cpp
 void ActivateDocObject();
 ```
 
@@ -359,7 +359,7 @@ Es ruft [COleServerDoc::OnGetEmbeddedItem](#ongetembeddeditem)auf , eine virtuel
 
 Rufen `GetItemClipRect` Sie die Memberfunktion auf, um die Clipping-Rechteck-Koordinaten des Elements abzurufen, das bearbeitet wird.
 
-```
+```cpp
 void GetItemClipRect(LPRECT lpClipRect) const;
 ```
 
@@ -378,7 +378,7 @@ Das Zeichnen sollte nicht außerhalb des Zuschneiderechtecks erfolgen. Normalerw
 
 Rufen `GetItemPosition` Sie die Memberfunktion auf, um die Koordinaten des zu bearbeitenden Elements abzurufen.
 
-```
+```cpp
 void GetItemPosition(LPRECT lpPosRect) const;
 ```
 
@@ -469,7 +469,7 @@ Ein Wert `COleServerDoc` ungleich Null, wenn das Objekt aktiv ist; andernfalls 0
 
 Rufen Sie diese Funktion auf, um alle verknüpften Elemente, die mit dem Dokument verbunden sind, zu benachrichtigen, dass sich das Dokument geändert hat.
 
-```
+```cpp
 void NotifyChanged();
 ```
 
@@ -484,7 +484,7 @@ In der Regel rufen Sie diese Funktion auf, nachdem der Benutzer einige globale A
 
 Rufen Sie diese Funktion auf, um die Container darüber zu benachrichtigen, dass das Dokument geschlossen wurde.
 
-```
+```cpp
 void NotifyClosed();
 ```
 
@@ -496,7 +496,7 @@ Wenn der Benutzer den Befehl Schließen aus `NotifyClosed` dem `COleServerDoc`Me
 
 Rufen Sie diese Funktion auf, nachdem der Benutzer das Serverdokument umbenannt hat.
 
-```
+```cpp
 void NotifyRename(LPCTSTR lpszNewName);
 ```
 
@@ -513,7 +513,7 @@ Wenn der Benutzer den Befehl Speichern unter `NotifyRename` aus dem `COleServerD
 
 Rufen Sie diese Funktion auf, nachdem der Benutzer das Serverdokument speichert.
 
-```
+```cpp
 void NotifySaved();
 ```
 
@@ -855,7 +855,7 @@ Die Standardimplementierung ruft die [Memberfunktionen COleServerDoc::NotifySave
 
 Rufen Sie diese Memberfunktion auf, damit die Containeranwendung die Position des Elements ändert.
 
-```
+```cpp
 void RequestPositionChange(LPCRECT lpPosRect);
 ```
 
@@ -872,7 +872,7 @@ Diese Funktion wird in der `UpdateAllItems`Regel aufgerufen (in Verbindung mit )
 
 Rufen Sie diese Funktion auf, um die Containeranwendung anzuweisen, das eingebettete Objekt zu speichern.
 
-```
+```cpp
 void SaveEmbedding();
 ```
 
@@ -905,7 +905,7 @@ Positive Werte zeigen an, nach unten und rechts zu scrollen; negative Werte zeig
 
 Rufen Sie diese Funktion auf, um alle verknüpften Elemente, die mit dem Dokument verbunden sind, zu benachrichtigen, dass sich das Dokument geändert hat.
 
-```
+```cpp
 void UpdateAllItems(
     COleServerItem* pSender,
     LPARAM lHint = 0L,
@@ -941,7 +941,7 @@ In der Regel rufen Sie diese Funktion auf, nachdem der Benutzer das Serverdokume
 
 Diese Funktion `OnUpdate` ruft die Memberfunktion für jedes Element des Dokuments mit Ausnahme des sendenden Elements, der übergebenden *pHint*, *lHint*und *nDrawAspect*auf. Verwenden Sie diese Parameter, um Informationen zu den Elementen über die am Dokument vorgenommenen Änderungen zu übergeben. Sie können Informationen mit *lHint* kodieren oder eine `CObject`-abgeleitete Klasse definieren, um Informationen über die Änderungen zu speichern und ein Objekt dieser Klasse mit *pHint*zu übergeben. Überschreiben `OnUpdate` Sie die `COleServerItem`Memberfunktion in ihrer -derived-Klasse, um die Aktualisierung jedes Elements zu optimieren, je nachdem, ob sich die Darstellung geändert hat.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [COleLinkingDoc-Klasse](../../mfc/reference/colelinkingdoc-class.md)<br/>

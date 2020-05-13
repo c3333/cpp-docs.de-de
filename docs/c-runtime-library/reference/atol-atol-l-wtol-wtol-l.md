@@ -1,11 +1,15 @@
 ---
 title: atol, _atol_l, _wtol, _wtol_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - atol
 - _wtol_l
 - _wtol
 - _atol_l
+- _o__atol_l
+- _o__wtol
+- _o__wtol_l
+- _o_atol
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +51,12 @@ helpviewer_keywords:
 - wtol function
 - _wtol function
 ms.assetid: cedfc21c-2d64-4e9c-bd04-bdf60b12db46
-ms.openlocfilehash: 04a2951a48e6dd2c3820551e0fc603ad4ed81086
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 56f2efb4e7282cbcfb6a123f56797e2867d6bb4b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70943581"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913535"
 ---
 # <a name="atol-_atol_l-_wtol-_wtol_l"></a>atol, _atol_l, _wtol, _wtol_l
 
@@ -78,7 +83,7 @@ long _wtol_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -102,9 +107,11 @@ Das *Str* -Argument für **Atol** weist die folgende Form auf:
 
 Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert werden. das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-); und *Ziffern* sind eine oder mehrere Ziffern.
 
-**_wtol** ist mit **Atol** identisch, außer dass es eine Zeichenfolge mit breit Zeichen annimmt.
+**_wtol** ist mit **Atol** identisch, außer dass es eine Zeichenfolge mit breit Zeichen erfordert.
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -118,7 +125,7 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 |Routinen|Erforderlicher Header|
 |--------------|---------------------|
 |**atol**|\<stdlib.h>|
-|**_atol_l**, **_wtol**, **_wtol_l**|\<stdlib.h> und \<wchar.h>|
+|**_atol_l**, **_wtol** **_wtol_l**|\<stdlib.h> und \<wchar.h>|
 
 ## <a name="example"></a>Beispiel
 
@@ -169,7 +176,7 @@ Function: atol( "3336402735171707160320" ) = 2147483647
 Overflow condition occurred.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

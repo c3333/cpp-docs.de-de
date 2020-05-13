@@ -1,10 +1,12 @@
 ---
 title: _ftime_s, _ftime32_s, _ftime64_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ftime_s
 - _ftime64_s
 - _ftime32_s
+- _o__ftime32_s
+- _o__ftime64_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -38,12 +41,12 @@ helpviewer_keywords:
 - _ftime_s function
 - _ftime32_s function
 ms.assetid: d03080d9-a520-45be-aa65-504bdb197e8b
-ms.openlocfilehash: b45a22afc824a33e81170f954e6f99088b629f83
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a77d149f367c7f565141fbc3be1db1bfc3f3f362
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956325"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909955"
 ---
 # <a name="_ftime_s-_ftime32_s-_ftime64_s"></a>_ftime_s, _ftime32_s, _ftime64_s
 
@@ -75,13 +78,15 @@ Die **_ftime_s** -Funktion Ruft die aktuelle Ortszeit ab und speichert Sie in de
 |**dstflag**|Ein Wert ungleich null, wenn die Sommerzeit zurzeit für die lokale Zeitzone gültig ist. (Eine Erläuterung dazu, wie die Sommerzeit festgelegt wird, finden Sie unter [_tzset](tzset.md).)|
 |**millitm**|Sekundenbruchteile in Millisekunden|
 |**time**|Die Zeit in Sekunden seit dem 1. Januar 1970, Mitternacht (00: 00: 00) im UTC-Format|
-|**timezone**|Differenz in Minuten, westwärts zwischen UTC und der Ortszeit Der Wert von **Zeitzone** wird vom Wert der globalen Variablen **_timezone** festgelegt (siehe **_tzset**).|
+|**Zeitzone**|Differenz in Minuten, westwärts zwischen UTC und der Ortszeit Der Wert von **Zeitzone** wird vom Wert der globalen Variablen **_timezone** festgelegt (siehe **_tzset**).|
 
-Die **_ftime64_s** -Funktion, die die **__timeb64** -Struktur verwendet, ermöglicht das Ausdrücken von Dateierstellungs-Daten bis 23:59:59, 31. Dezember 3000, UTC; während **_ftime32_s** nur Datumsangaben 23:59:59 bis zum 18. Januar 2038 (UTC) darstellt. Der 1. Januar 1970 (Mitternacht) ist der älteste mögliche Datumsbereich für all diese Funktionen.
+Die **_ftime64_s** -Funktion, die die **__timeb64** -Struktur verwendet, ermöglicht das Ausdrücken von Dateierstellungs-Daten bis 23:59:59, 31. Dezember 3000, UTC; während **_ftime32_s** nur Datumsangaben 23:59:59 bis zum 18. Januar 2038 (UTC) darstellt. Der 1. Januar 1970 (Mitternacht) ist der älteste mögliche Datumsbereich für beide Funktionen.
 
-Die **_ftime_s** -Funktion entspricht **_ftime64_s**, und **_timeb** enthält eine 64-Bit-Zeit, es sei denn, **_USE_32BIT_TIME_T** ist definiert. in diesem Fall ist das alte Verhalten wirksam. **_ftime_s** verwendet eine 32-Bit-Zeit, und **_timeb** enthält eine 32-Bit-Zeit.
+Die **_ftime_s** -Funktion entspricht **_ftime64_s**, und **_timeb** enthält eine 64-Bit-Zeit, es sei denn, **_USE_32BIT_TIME_T** definiert ist. in diesem Fall ist das alte Verhalten wirksam. **_ftime_s** verwendet eine 32-Bit-Zeit, und **_timeb** enthält eine 32-Bit-Zeit.
 
 **_ftime_s** überprüft seine Parameter. Wenn ein NULL-Zeiger als *Timeptr*übergeben wird, ruft die Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt die Funktion **errno** auf **EINVAL**fest.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -91,7 +96,7 @@ Die **_ftime_s** -Funktion entspricht **_ftime64_s**, und **_timeb** enthält ei
 |**_ftime32_s**|\<sys/types.h> und \<sys/timeb.h>|
 |**_ftime64_s**|\<sys/types.h> und \<sys/timeb.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -150,9 +155,9 @@ Daylight savings time flag (1 means Daylight time is in effect): 1
 The time is Mon Apr 28 11:08:54.230 2003
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>
 [ctime, _ctime32, _ctime64, _wctime, _wctime32, _wctime64](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)<br/>
 [gmtime, _gmtime32, _gmtime64](gmtime-gmtime32-gmtime64.md)<br/>

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - COleStreamFile [MFC], GetStream
 - COleStreamFile [MFC], OpenStream
 ms.assetid: e4f93698-e17c-4a18-a7c0-4b4df8eb4d93
-ms.openlocfilehash: 1f53d3bd55fbff45257c06af2ab11f066d421a54
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 202f8381361881ce3b8b62f81da5bfb81a1f952d
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376096"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753760"
 ---
 # <a name="colestreamfile-class"></a>COleStreamFile-Klasse
 
@@ -74,7 +74,7 @@ Weitere Informationen finden Sie unter [IStream](/windows/win32/api/objidl/nn-ob
 
 `COleStreamFile`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxole.h
 
@@ -82,7 +82,7 @@ Weitere Informationen finden Sie unter [IStream](/windows/win32/api/objidl/nn-ob
 
 Ordnet dem `COleStreamFile` Objekt den mitgelieferten OLE-Stream zu.
 
-```
+```cpp
 void Attach(LPSTREAM lpStream);
 ```
 
@@ -241,7 +241,7 @@ Eine Dateiausnahme wird ausgelöst, wenn das Öffnen fehlschlägt und *pError* n
 
 Weitere Informationen finden Sie unter [IStorage::OpenStream](/windows/win32/api/objidl/nf-objidl-istorage-openstream) im Windows SDK.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CFile-Klasse](../../mfc/reference/cfile-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

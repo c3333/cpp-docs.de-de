@@ -31,12 +31,12 @@ helpviewer_keywords:
 - CComModule class
 - DLL modules [C++], ATL
 ms.assetid: f5face2c-8fd8-40e6-9ec3-54ab74701769
-ms.openlocfilehash: 652c5f078ddbaf8d3e333f7003d6515a94dd8f83
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5e30f847ff99a80ab19b880728472a339fd4cbe5
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327763"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747926"
 ---
 # <a name="ccommodule-class"></a>CComModule-Klasse
 
@@ -117,7 +117,7 @@ Zusätzlich zu `CComModule`, atL bietet [CComAutoThreadModule](../../atl/referen
 
 `CComModule`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlbase.h
 
@@ -465,7 +465,7 @@ Entfernt das Klassenobjekt. Diese Methode ist nur für EXEs verfügbar.
 
 Ab ATL 7.0 `CComModule` ist veraltet: siehe [ATL-Modulklassen](../../atl/atl-module-classes.md) für weitere Details.
 
-```
+```cpp
 void Term() throw();
 ```
 
@@ -688,6 +688,6 @@ Ein Standard-HRESULT-Wert.
 
 Weitere Informationen zu austauschbaren Parametern und Skripts finden Sie im Artikel [The ATL Registry Component (Registrar)](../../atl/atl-registry-component-registrar.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

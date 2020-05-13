@@ -1,0 +1,61 @@
+- name: Text und Zeichenfolgen in MSVC
+  href: ../text/text-and-strings-in-visual-cpp.md
+- name: Unicode und MBCS
+  expanded: false
+  items:
+    - name: Unicode und MBCS
+      href: ../text/unicode-and-mbcs.md
+    - name: Aktivierung der Internationalen Programmierung
+      href: ../text/international-enabling.md
+    - name: Strategien für die Internationalisierung
+      href: ../text/internationalization-strategies.md
+    - name: Gebietsschemas und Codepages
+      href: ../text/locales-and-code-pages.md
+    - name: Vorteile der Zeichensatzportabilität
+      href: ../text/benefits-of-character-set-portability.md
+- name: Unterstützung für Unicode
+  expanded: false
+  items:
+    - name: Unterstützung für Unicode
+      href: ../text/support-for-unicode.md
+    - name: Unterstützung für die Verwendung von wmain
+      href: ../text/support-for-using-wmain.md
+    - name: Zusammenfassung der Unicode-Programmierung
+      href: ../text/unicode-programming-summary.md
+- name: Unterstützung von Multibyte-Zeichensätzen (MBCS)
+  expanded: false
+  items:
+    - name: Unterstützung von Multibyte-Zeichensätzen (MBCS)
+      href: ../text/support-for-multibyte-character-sets-mbcss.md
+    - name: MBCS-Unterstützung in MSVC
+      href: ../text/mbcs-support-in-visual-cpp.md
+    - name: Tipps für die MBCS-Programmierung
+      expanded: false
+      items:
+        - name: Tipps für die MBCS-Programmierung
+          href: ../text/mbcs-programming-tips.md
+        - name: Allgemeine Ratschläge für die MBCS-Programmierung
+          href: ../text/general-mbcs-programming-advice.md
+        - name: Inkrementieren und Dekrementieren von Zeigern
+          href: ../text/incrementing-and-decrementing-pointers.md
+        - name: Byteindizes
+          href: ../text/byte-indices.md
+        - name: Letztes Zeichen einer Zeichenfolge
+          href: ../text/last-character-in-a-string.md
+        - name: Zeichenzuweisungen
+          href: ../text/character-assignment.md
+        - name: Zeichenvergleich
+          href: ../text/character-comparison.md
+        - name: Pufferüberlauf
+          href: ../text/buffer-overflow.md
+- name: Unterstützung von ANSI
+  href: ../text/support-for-ansi.md
+- name: Zuordnungen für generischen Text in „tchar.h“
+  expanded: false
+  items:
+    - name: Zuordnungen für generischen Text in „tchar.h“
+      href: ../text/generic-text-mappings-in-tchar-h.md
+    - name: Verwenden von TCHAR.H-Datentypen in _MBCS-Code
+      href: ../text/using-tchar-h-data-types-with-mbcs-code.md
+- name: 'Vorgehensweise: Konvertieren zwischen verschiedenen Zeichenfolgentypen'
+  href: ../text/how-to-convert-between-various-string-types.md

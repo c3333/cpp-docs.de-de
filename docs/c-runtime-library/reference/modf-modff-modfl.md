@@ -1,10 +1,11 @@
 ---
 title: modf, modff, modfl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - modff
 - modf
 - modfl
+- _o_modf
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +36,12 @@ helpviewer_keywords:
 - modff function
 - modfl function
 ms.assetid: b1c7abf5-d476-43ca-a03c-02072a86e32d
-ms.openlocfilehash: 32caadb787031dca0b0726c546a11c5cd6722b82
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: def04602cdeb0ad180bd4c51c02f570c94809784
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951539"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914637"
 ---
 # <a name="modf-modff-modfl"></a>modf, modff, modfl
 
@@ -60,10 +62,10 @@ long double modf( long double x, long double * intptr );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert.
 
-*intptr*<br/>
+*IntPtr*<br/>
 Zeiger auf gespeicherten Ganzzahlbereich.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -76,15 +78,17 @@ Die **modf** -Funktionen unterbrechen den Gleit Komma Wert *x* in Bruchteile und
 
 **modf** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **modf** abrufen können, die **float** -oder **Long** **Double** -Parameter verwenden und zurückgeben. In einem C-Programm übernimmt **modf** immer zwei Double-Werte und gibt einen Double-Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **modf** abrufen können, die **float** -oder **Long** **Double** -Parameter verwenden und zurückgeben. In einem C-Programm übernimmt **modf** immer zwei Double-Werte und gibt einen Double-Wert zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**modf**, **modff**, **modfl**|C: \<math.h><br /><br /> C++: , \<cmath> oder \<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -110,7 +114,7 @@ int main( void )
 For -14.876543, the fraction is -0.876543 and the integer is -14
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [frexp](frexp.md)<br/>

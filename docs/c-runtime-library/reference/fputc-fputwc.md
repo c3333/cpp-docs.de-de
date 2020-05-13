@@ -1,9 +1,11 @@
 ---
 title: fputc, fputwc
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - fputc
 - fputwc
+- _o_fputc
+- _o_fputwc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +34,12 @@ helpviewer_keywords:
 - fputwc function
 - fputc function
 ms.assetid: 5a0a593d-43f4-4fa2-a401-ec4e23de4d2f
-ms.openlocfilehash: 3d289e54bca53be52d0b308d759f4200eca8599c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 90091bff6a8ee3ced050c359ed540f45afe74f6b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956959"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910209"
 ---
 # <a name="fputc-fputwc"></a>fputc, fputwc
 
@@ -57,15 +60,15 @@ wint_t fputwc(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu schreibende Zeichen.
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **fputc**deutet der Rückgabewert von **EOF** auf einen Fehler hin. Bei **fputwc**weist der Rückgabewert **WEOF** auf einen Fehler hin. Wenn der Stream **null**ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben Sie **EOF** zurück und legen **errno** auf **EINVAL**fest.
+Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **fputc**deutet der Rückgabewert von **EOF** auf einen Fehler hin. Bei **fputwc**weist der Rückgabewert **WEOF** auf einen Fehler hin. Wenn *stream* der Stream **null**ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben Sie **EOF** zurück und legen **errno** auf **EINVAL**fest.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
@@ -79,10 +82,12 @@ Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nic
 
 Es folgen routinespezifische Hinweise.
 
-|-Routine zurückgegebener Wert|Hinweise|
+|Routine|Hinweise|
 |-------------|-------------|
 |**fputc**|Äquivalent zu **putc**, aber nur als Funktion und nicht als Funktion und Makro implementiert.|
 |**fputwc**|Breit Zeichen Version von **fputc**. Schreibt *c* als Multibytezeichen oder breit Zeichen, je nachdem, ob der *Stream* im Textmodus oder im Binärmodus geöffnet ist.|
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -97,7 +102,7 @@ Es folgen routinespezifische Hinweise.
 |**fputc**|\<stdio.h>|
 |**fputwc**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole –**stdin**, **stdout**und **stderr**– zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -124,7 +129,7 @@ int main( void )
 This is a test of fputc!!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [fgetc, fgetwc](fgetc-fgetwc.md)<br/>

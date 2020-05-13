@@ -1,10 +1,13 @@
 ---
 title: log2, log2f, log2l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - log2
 - log2l
 - log2f
+- _o_log2
+- _o_log2f
+- _o_log2l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,17 +20,18 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
 - apiref
 ms.assetid: 94d11b38-70b7-4d3a-94ac-523153c92b2e
-ms.openlocfilehash: bf1734ea2f96fa1c09b3b0d1f43b681fc31c8f9f
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 58da7790e6fbce915c16a02a1b0d972a6fe1049e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953170"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911420"
 ---
 # <a name="log2-log2f-log2l"></a>log2, log2f, log2l
 
@@ -59,7 +63,7 @@ long double log2l(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der Wert, um den Basis 2-Logarithmus zu bestimmen.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -68,21 +72,23 @@ Bei Erfolg wird return log2 *x*zurückgegeben.
 
 Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
-|Problem|Zurück|
+|Problem|Rückgabewert|
 |-----------|------------|
 |*x* < 0|NaN|
-|*x* = ±0|-UNENDLICH|
+|*x* = ± 0|-UNENDLICH|
 |*x* = 1|+0|
-|+UNENDLICH|+INFINITY|
+|+INFINITY|+INFINITY|
 |NaN|NaN|
 |Domänenfehler|NaN|
 |pole-Fehler|-HUGE_VAL, -HUGE_VALF, oder -HUGE_VALL|
 
-Fehler werden gemäß der Angaben in [_matherr](matherr.md) gemeldet.
+Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
 ## <a name="remarks"></a>Hinweise
 
 Wenn x eine ganze Zahl ist, gibt diese Funktion im Grunde den NULL basierten Index des signifikantesten 1 Bits von *x*zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -90,9 +96,9 @@ Wenn x eine ganze Zahl ist, gibt diese Funktion im Grunde den NULL basierten Ind
 |--------------|--------------|------------------|
 |**log2**, **log2f**, **log2l**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [exp2, exp2f, exp2l](exp2-exp2f-exp2l.md)<br/>

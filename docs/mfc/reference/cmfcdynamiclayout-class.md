@@ -15,12 +15,12 @@ f1_keywords:
 - AFXLAYOUT/CMFCDynamicLayout::LoadResource
 - AFXLAYOUT/CMFCDynamicLayout::SetMinSize
 ms.assetid: c2df2976-f049-47fc-9cf0-abe3e01948bc
-ms.openlocfilehash: b70deca78d079c6a95db225814fdc70528e48af9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 77dd3a84a0c76b92495bb062eeb83ff013933087
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367524"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752387"
 ---
 # <a name="cmfcdynamiclayout-class"></a>CMFCDynamicLayout-Klasse
 
@@ -79,7 +79,7 @@ class CMFCDynamicLayout : public CObject
 
 [CMFCDynamicLayout](../../mfc/reference/cmfctoolbarbutton-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxlayout.h
 
@@ -123,7 +123,7 @@ Die Position und Größe eines untergeordneten Steuerelements werden dynamisch g
 
 Fügt der Liste von Fenstern, die vom dynamischen Layout-Manager gesteuert werden, ein untergeordnetes Fenster hinzu, in der Regel ein Steuerelement.
 
-```
+```cpp
 void Adjust();
 ```
 
@@ -186,7 +186,7 @@ Die Position und Größe eines untergeordneten Steuerelements werden dynamisch g
 
 Ruft das Rechteck für den aktuellen Client-Bereich des Fensters ab.
 
-```
+```cpp
 void GetHostWndRect(CRect& rect,);
 ```
 
@@ -383,13 +383,13 @@ Ein [MoveSettings-Wert,](#movesettings_structure) der das angeforderte Verschieb
 
 Legt die Größe des Fensters fest, unterhalb derer das Layout nicht angepasst wird.
 
-```
+```cpp
 void SetMinSize(const CSize& size);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Die gewünschte Fenstergröße, unterhalb derer das Layout nicht angepasst wird.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -518,7 +518,7 @@ Ein [SizeSettings-Wert,](#sizesettings_structure) der das angeforderte Größenv
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -82,12 +82,12 @@ helpviewer_keywords:
 - std::regex_constants [C++], optimize
 - std::regex_constants [C++], collate
 ms.assetid: 4a69c0ba-c46d-46e4-bd29-6f4efb805f26
-ms.openlocfilehash: c8abca8109db9c781d63721b795feb01161fdb40
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: ee016e5cee1bde94a49a1b339d6910d60db4cea1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425232"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81331959"
 ---
 # <a name="regex_constants-namespace"></a>regex_constants-Namespace
 
@@ -103,7 +103,7 @@ namespace regex_constants {
 }
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Namespace `regex_constants` kapselt mehrere Flagtypen und ihre zugeordneten Flagwerte.
 
@@ -113,13 +113,13 @@ Der Namespace `regex_constants` kapselt mehrere Flagtypen und ihre zugeordneten 
 |[match_flag_type](#match_flag_type)|Flags für Optionen zum Vergleichen regulärer Ausdrücke.|
 |[syntax_option_type](#syntax_option_type)|Flags zum Auswählen von Syntaxoptionen.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Regex >
+**Header:** \<regex >
 
 **Namespace:** std
 
-## <a name="error_type"></a> regex_constants::error_type
+## <a name="regex_constantserror_type"></a><a name="error_type"></a>regex_constants::error_type
 
 Flags für die Berichterstellung bei Syntaxfehlern für reguläre Ausdrücke.
 
@@ -144,7 +144,7 @@ enum error_type
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein enumerierter Typ, der ein Objekt beschreibt, das Fehlerflags aufnehmen kann. Die unterschiedlichen Flagwerte sind:
 
@@ -180,7 +180,7 @@ Der Typ ist ein enumerierter Typ, der ein Objekt beschreibt, das Fehlerflags auf
 
 `error_backref`: Der Ausdruck enthielt einen ungültigen Rückverweis.
 
-## <a name="match_flag_type"></a> regex_constants::match_flag_type
+## <a name="regex_constantsmatch_flag_type"></a><a name="match_flag_type"></a>regex_constants::match_flag_type
 
 Flags für Optionen zum Vergleichen regulärer Ausdrücke.
 
@@ -204,7 +204,7 @@ enum match_flag_type
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist eine „Bitmaske“, die Optionen für den Vergleich einer Textsequenz mit einem regulären Ausdruck und Formatflags beschreibt, die beim Ersetzen von Text verwendet werden. Optionen können mit `|`kombiniert werden.
 
@@ -238,7 +238,7 @@ Formatflags:
 
 `format_first_only`: nach der ersten Übereinstimmung nicht nach weiteren Übereinstimmungen suchen
 
-## <a name="syntax_option_type"></a> regex_constants::syntax_option_type
+## <a name="regex_constantssyntax_option_type"></a><a name="syntax_option_type"></a>regex_constants::syntax_option_type
 
 Flags zum Auswählen von Syntaxoptionen.
 
@@ -260,7 +260,7 @@ enum syntax_option_type
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Bitmaskentyp, der Sprachenspezifizierer und Syntaxmodifikatoren beschreibt, die beim Kompilieren eines regulären Ausdrucks verwendet werden sollen. Optionen können mit `|`kombiniert werden. Es darf immer nur jeweils ein Sprachenspezifizierer verwendet werden.
 
@@ -292,9 +292,9 @@ Es gibt folgende Syntaxmodifikatoren:
 
 [\<regex>](../standard-library/regex.md)\
 [regex_error-Klasse](../standard-library/regex-error-class.md)\
-[\<Regex-> Funktionen](../standard-library/regex-functions.md)\
+[\<regex> Funktionen](../standard-library/regex-functions.md)\
 [regex_iterator-Klasse](../standard-library/regex-iterator-class.md)\
-[\<Regex-> Operatoren](../standard-library/regex-operators.md)\
+[\<regex> Operatoren](../standard-library/regex-operators.md)\
 [regex_token_iterator-Klasse](../standard-library/regex-token-iterator-class.md)\
 [regex_traits-Klasse](../standard-library/regex-traits-class.md)\
-[\<regex>-Typdefinitionen](../standard-library/regex-typedefs.md)
+[\<regex> typedefs](../standard-library/regex-typedefs.md)

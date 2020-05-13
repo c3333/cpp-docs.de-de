@@ -1,32 +1,32 @@
 ---
-title: Vcxproj. Filters-Dateien
+title: Vcxproj.filters Dateien
 ms.date: 09/25/2019
-description: Verwenden von Filter Dateien in Visual C++ Studio-Projekten zum Definieren von benutzerdefinierten logischen Ordnern für Dateien in Projektmappen-Explorer
+description: Verwenden von Filtern von Dateien in Visual Studio C++-Projekten zum Definieren benutzerdefinierter logischer Ordner für Dateien im Projektmappen-Explorer
 helpviewer_keywords:
 - vcxproj.filters
 - filters file [C++]
-ms.openlocfilehash: bdf40708a70d841cb3d3144fa8fa73a71e9e9ef2
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 57735246b543680243994b99b8c05c9ad1211f38
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80078276"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81335934"
 ---
-# <a name="vcxprojfilters-files"></a>Vcxproj. Filters-Dateien
+# <a name="vcxprojfilters-files"></a>vcxproj.filters Dateien
 
-Die *Filter* Datei (\*. vcxproj. Filters) ist eine XML-Datei im MSBuild-Format, die sich im Stamm Projektordner befindet. Gibt an, welche Dateitypen in welchem logischen Ordner in **Projektmappen-Explorer**werden. In der folgenden Abbildung befinden sich die *cpp* -Dateien unter dem Knoten **Quelldateien** . die *h* -Dateien befinden sich unter dem Knoten **Header Dateien** , und *ICO* -und *RC* -Dateien befinden sich unter **Ressourcen Dateien**. Diese Platzierung wird von der Filterdatei gesteuert.
+Die *Filterdatei* (\*.vcxproj.filters) ist eine XML-Datei im MSBuild-Format, die sich im Stammprojektordner befindet. Es gibt an, welche Dateitypen in welchen logischen Ordner im **Projektmappen-Explorer**gehen. In der folgenden Abbildung befinden sich die *CPP-Dateien* unter dem Knoten **Quelldateien.** Die *.h-Dateien* befinden sich unter dem **Header Files-Knoten** und *.ico-* und *.rc-Dateien* unter **Ressourcendateien**. Diese Platzierung wird durch die Filterdatei gesteuert.
 
-![Logische Ordner in Projektmappen-Explorer](media/solution-explorer-filters.png)
+![Logische Ordner im Projektmappen-Explorer](media/solution-explorer-filters.png)
 
 ## <a name="creating-a-custom-filters-file"></a>Erstellen einer benutzerdefinierten Filterdatei
 
-Diese Datei wird von Visual Studio automatisch erstellt. Bei Desktop Anwendungen lauten die vordefinierten logischen Ordner (Filter): **Quelldateien**, **Header Dateien** und **Ressourcen Dateien**. Andere Projekttypen, z. b. UWP, haben möglicherweise einen anderen Satz von Standardordnern. Visual Studio weist jedem Ordner automatisch bekannte Dateitypen zu. Wenn Sie einen Filter mit einem benutzerdefinierten Namen oder einem Filter erstellen möchten, der benutzerdefinierte Dateitypen enthält, können Sie im Stamm Ordner des Projekts oder unter einem vorhandenen Filter eine eigene Filterdatei erstellen. (**Verweise** und **externe Abhängigkeiten** sind spezielle Ordner, die nicht an der Filterung beteiligt sind.)
+Visual Studio erstellt diese Datei automatisch. Für Desktopanwendungen sind die vordefinierten logischen Ordner (Filter): **Quelldateien**, **Headerdateien** und **Ressourcendateien**. Andere Projekttypen wie UWP verfügen möglicherweise über einen anderen Satz von Standardordnern. Visual Studio weist jedem Ordner automatisch bekannte Dateitypen zu. Wenn Sie einen Filter mit einem benutzerdefinierten Namen oder einen Filter mit benutzerdefinierten Dateitypen erstellen möchten, können Sie eine eigene Filterdatei im Stammordner des Projekts oder unter einem vorhandenen Filter erstellen. (**Verweise** und **externe Abhängigkeiten** sind spezielle Ordner, die nicht am Filtern beteiligt sind.)
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt die Filterdatei für das Beispiel, das zuvor gezeigt wurde. Sie verfügt über eine flache Hierarchie. Das heißt, es gibt keine logischen logischen Ordner. Der `UniqueIdentifier` -Knoten ist optional. Es ermöglicht Visual Studio-Automatisierungs Schnittstellen, den Filter zu suchen. `Extensions` ist ebenfalls optional. Wenn einem Projekt eine neue Datei hinzugefügt wird, wird Sie dem obersten Filter mit einer übereinstimmenden Dateierweiterung hinzugefügt. Um einem bestimmten Filter eine Datei hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Filter, und wählen Sie **Neues Element hinzufügen**aus.
+Das folgende Beispiel zeigt die Filterdatei für die Beispielanzeige zuvor. Es hat eine flache Hierarchie; Mit anderen Worten, es gibt keine verschachtelten logischen Ordner. Der `UniqueIdentifier` -Knoten ist optional. Es ermöglicht Visual Studio-Automatisierungsschnittstellen, den Filter zu finden. `Extensions`ist ebenfalls optional. Wenn eine neue Datei zu einem Projekt hinzugefügt wird, wird sie dem obersten Filter mit einer übereinstimmenden Dateierweiterung hinzugefügt. Um eine Datei zu einem bestimmten Filter hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Filter, und wählen **Sie Neues Element hinzufügen**aus.
 
-Der `ItemGroup`, der die `ClInclude` Knoten enthält, wird beim ersten Start des Projekts erstellt. Wenn Sie Ihre eigenen vcxproj-Dateien erstellen, stellen Sie sicher, dass alle Projekt Elemente auch über einen Eintrag in der Filterdatei verfügen. Werte in einem `ClInclude` Knoten überschreiben die Standard Filterung auf der Grundlage von Dateierweiterungen. Wenn Sie Visual Studio verwenden, um dem Projekt ein neues Element hinzuzufügen, fügt die IDE einen einzelnen Datei Eintrag in der Filterdatei hinzu. Der Filter wird nicht automatisch neu zugewiesen, wenn Sie die Dateierweiterung ändern.
+Der, `ItemGroup` der `ClInclude` die Knoten enthält, wird beim ersten Start des Projekts erstellt. Wenn Sie eigene vcxproj-Dateien generieren, stellen Sie sicher, dass alle Projektelemente auch einen Eintrag in der Filterdatei haben. Werte in `ClInclude` einem Knoten überschreiben die Standardfilterung basierend auf Dateierweiterungen. Wenn Sie Visual Studio verwenden, um dem Projekt ein neues Element hinzuzufügen, fügt die IDE einen einzelnen Dateieintrag in der Filterdatei hinzu. Der Filter wird nicht automatisch neu zugewiesen, wenn Sie die Dateierweiterung ändern.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -91,7 +91,7 @@ Der `ItemGroup`, der die `ClInclude` Knoten enthält, wird beim ersten Start des
 </Project>
 ```
 
-Um geclusterte logische Ordner zu erstellen, deklarieren Sie alle Knoten in Filter `ItemGroup` wie unten gezeigt. Jeder untergeordnete Knoten muss den vollständigen logischen Pfad für das oberste übergeordnete Element deklarieren. Im folgenden Beispiel muss eine leere `ParentFilter` deklariert werden, da in späteren Knoten auf Sie verwiesen wird.
+Um verschachtelte logische Ordner zu erstellen, deklarieren Sie alle Knoten in Filtern, `ItemGroup` wie unten gezeigt. Jeder untergeordnete Knoten muss den vollständigen logischen Pfad für das oberste übergeordnete Element deklarieren. Im folgenden Beispiel muss `ParentFilter` ein leerer deklariert werden, da in späteren Knoten darauf verwiesen wird.
 
 ```xml
   <ItemGroup>

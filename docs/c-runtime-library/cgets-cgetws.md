@@ -1,9 +1,11 @@
 ---
 title: _cgets, _cgetws
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _cgetws
 - _cgets
+- _o__cgets
+- _o__cgetws
 api_location:
 - msvcr100.dll
 - msvcr110.dll
@@ -14,6 +16,7 @@ api_location:
 - msvcr110_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,22 +33,22 @@ helpviewer_keywords:
 - cgetws function
 - cgets function
 ms.assetid: 4d5e134a-58c3-4f62-befd-5d235b0212f4
-ms.openlocfilehash: 97a8de0a7fd0f278e6b0e3730a52ca3d0be6e07a
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 9ae7baaa01029dcf2c02f6ea80b6e816bb671596
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75298999"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917430"
 ---
 # <a name="_cgets-_cgetws"></a>_cgets, _cgetws
 
 Ruft eine Zeichenfolge aus der Konsole ab. Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).
 
 > [!IMPORTANT]
->  Diese Funktionen sind veraltet. Von Visual Studio 2015 an sind sie nicht in der CRT verfügbar. Dies sicheren Versionen dieser Funktionen, „_cgets_s“ und „_cgetws_s“, stehen noch zur Verfügung. Informationen zu diesen alternativen Funktionen finden Sie unter [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).
+> Diese Funktionen sind veraltet. Von Visual Studio 2015 an sind sie nicht in der CRT verfügbar. Dies sicheren Versionen dieser Funktionen, „_cgets_s“ und „_cgetws_s“, stehen noch zur Verfügung. Informationen zu diesen alternativen Funktionen finden Sie unter [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).
 
 > [!IMPORTANT]
->  Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -66,9 +69,9 @@ wchar_t *_cgetws(
 ); // C++ only
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für Daten.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -83,15 +86,17 @@ Da alle Bearbeitungsschlüssel aktiv sind, wenn `_cgets` oder `_cgetws` in einem
 
 In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../c-runtime-library/secure-template-overloads.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |`_cgetts`|`_cgets`|`_cgets`|`_cgetws`|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |`_cgets`|\<conio.h>|
 |`_cgetws`|\<conio.h> oder \<wchar.h>|
@@ -142,7 +147,7 @@ Line Length = 16
 Text = A line of input.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Konsole und Port-E/A](../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../c-runtime-library/console-and-port-i-o.md)<br/>
 [_getch, _getwch](../c-runtime-library/reference/getch-getwch.md)

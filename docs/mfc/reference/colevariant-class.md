@@ -20,12 +20,12 @@ helpviewer_keywords:
 - COleVariant [MFC], GetByteArrayFromVariantArray
 - COleVariant [MFC], SetString
 ms.assetid: e1b5cd4a-b066-4b9b-b48b-6215ed52d998
-ms.openlocfilehash: f907ed7c058f87cf03530411bc8fa4a3c108a4f0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7d8abea39a9baa3f447ca0d5f3ab1183367d531f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374824"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753718"
 ---
 # <a name="colevariant-class"></a>COleVariant-Klasse
 
@@ -85,7 +85,7 @@ Weitere Informationen zur `COleVariant` Klasse und deren Verwendung in der OLE-A
 
 `COleVariant`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -93,7 +93,7 @@ Weitere Informationen zur `COleVariant` Klasse und deren Verwendung in der OLE-A
 
 Rufen Sie diese Funktion auf, um `COleVariant` das angegebene [VARIANT-Objekt](/windows/win32/api/oaidl/ns-oaidl-variant) an das aktuelle Objekt anzuhängen.
 
-```
+```cpp
 void Attach(VARIANT& varSrc);
 ```
 
@@ -212,7 +212,7 @@ Weitere Informationen zu SCODE finden Sie unter [Struktur von COM-Fehlercodes](/
 
 Konvertiert den Typ des Variantenwerts in diesem `COleVariant` Objekt.
 
-```
+```cpp
 void ChangeType(VARTYPE vartype, LPVARIANT pSrc = NULL);
 ```
 
@@ -232,7 +232,7 @@ Weitere Informationen finden Sie in den Einträgen [VARIANT](/windows/win32/api/
 
 Löscht die `VARIANT`.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -263,7 +263,7 @@ Weitere Informationen finden Sie in den [Einträgen VARIANT](/windows/win32/api/
 
 Ruft ein Byte-Array aus einem vorhandenen Variantenarray ab
 
-```
+```cpp
 void GetByteArrayFromVariantArray(CByteArray& bytes);
 ```
 
@@ -381,7 +381,7 @@ Der `COleVariant` Operator**\<** Einfügen ( ) unterstützt Diagnose-Dumping und
 
 Legt die Zeichenfolge auf einen bestimmten Typ fest.
 
-```
+```cpp
 void SetString(LPCTSTR lpszSrc, VARTYPE vtSrc);
 ```
 
@@ -399,6 +399,6 @@ Der Parameter *vtSrc* muss VT_BSTR (UNICODE) oder VT_BSTRT (ANSI) sein. `SetStri
 
 Ein DAO-Recordset in einem Nicht-UNICODE-Build erwartet, dass Zeichenfolgen ANSI sind. Wenn Sie also kein `COleVariant` UNICODE-Recordset erstellen, müssen Sie für DAO-Funktionen, die Objekte verwenden, die Die Constructor-Form **COleVariant::COleVariant(** *lpszSrc* **,** *vtSrc* **mit** *vtSrc* auf VT_BSTRT (ANSI) festgelegt ist, oder mit `SetString` *vtSrc* verwenden, der auf VT_BSTRT festgelegt ist, um ANSI-Zeichenfolgen zu erstellen. Beispielsweise `COleVariant` verwenden `CDaoRecordset` die Funktionen [CDaoRecordset::Seek](../../mfc/reference/cdaorecordset-class.md#seek) und [CDaoRecordset::SetFieldValue](../../mfc/reference/cdaorecordset-class.md#setfieldvalue) Objekte als Parameter. Diese Objekte müssen ANSI sein, wenn das DAO-Recordset nicht UNICODE ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

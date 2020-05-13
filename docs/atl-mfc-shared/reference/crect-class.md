@@ -34,12 +34,12 @@ helpviewer_keywords:
 - LPRECT operator
 - RECT structure
 ms.assetid: dee4e752-15d6-4db4-b68f-1ad65b2ed6ca
-ms.openlocfilehash: c59ed587e2c8e51f5c08a026a7ee0b9d0af25168
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b99eca7fe3a9c84f8b79ef3d694e27b6dd74dcd9
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317708"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747055"
 ---
 # <a name="crect-class"></a>CRect-Klasse
 
@@ -128,7 +128,7 @@ Bei der `CRect` Verwendung überladener Operatoren `CRect`muss der erste Operand
 
 `CRect`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atltypes.h
 
@@ -242,7 +242,7 @@ void CMyDlg::OnPaint()
 
 Kopiert `lpSrcRect` das `CRect`Rechteck in .
 
-```
+```cpp
 void CopyRect(LPCRECT lpSrcRect) throw();
 ```
 
@@ -294,7 +294,7 @@ Gibt die linke `CRect`Position von an.
 *T*<br/>
 Gibt den oberen `CRect`Rand von an.
 
-*R*<br/>
+*r*<br/>
 Gibt die richtige `CRect`Position von an.
 
 *B*<br/>
@@ -309,7 +309,7 @@ Zeigt auf `RECT` die Struktur `CRect`mit den Koordinaten für .
 *Punkt*<br/>
 Gibt den Ursprungspunkt für das zu errichtende Rechteck an. Entspricht der linken oberen Ecke.
 
-*Größe*<br/>
+*size*<br/>
 Gibt die Verschiebung von der linken oberen Ecke in die untere rechte Ecke des zu errichtenden Rechtecks an.
 
 *topLeft*<br/>
@@ -366,7 +366,7 @@ ASSERT(rect5 == rect4);
 
 `DeflateRect`entleert `CRect` sich, indem er seine Seiten in Richtung seines Zentrums bewegt.
 
-```
+```cpp
 void DeflateRect(int x, int y) throw();
 void DeflateRect(SIZE size) throw();
 void DeflateRect(LPCRECT lpRect) throw();
@@ -375,13 +375,13 @@ void DeflateRect(int l, int t, int r, int b) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die Anzahl der Einheiten an, die `CRect`die linke und rechte Seite von entleeren sollen.
 
-*y*<br/>
+*Y*<br/>
 Gibt die Anzahl der Einheiten an, die `CRect`am oberen und unteren Rand von entleert werden sollen.
 
-*Größe*<br/>
+*size*<br/>
 Eine [GRÖSSE](/windows/win32/api/windef/ns-windef-size) oder [CSize,](csize-class.md) die die `CRect`Anzahl der zu entleerenden Einheiten angibt. Der `cx` Wert gibt die Anzahl der Einheiten an, die `cy` die linke und rechte Seite deflationieren sollen, und der Wert gibt die Anzahl der Einheiten an, die oben und unten entleert werden sollen.
 
 *lpRect*<br/>
@@ -393,7 +393,7 @@ Gibt die Anzahl der Einheiten an, `CRect`die die linke Seite von entleeren solle
 *T*<br/>
 Gibt die Anzahl der Einheiten an, `CRect`die am oberen Rand von entleert werden sollen.
 
-*R*<br/>
+*r*<br/>
 Gibt die Anzahl der Einheiten an, `CRect`die die rechte Seite von entleeren sollen.
 
 *B*<br/>
@@ -492,7 +492,7 @@ ASSERT(nHt == 40);
 
 `InflateRect`aufbläht, `CRect` indem man seine Seiten von seinem Zentrum wegbewegt.
 
-```
+```cpp
 void InflateRect(int x, int y) throw();
 void InflateRect(SIZE size) throw();
 void InflateRect(LPCRECT lpRect) throw();
@@ -501,13 +501,13 @@ void InflateRect(int l, int t, int r,  int b) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt die Anzahl der Einheiten an, die die `CRect`linke und rechte Seite von aufblasen sollen.
 
-*y*<br/>
+*Y*<br/>
 Gibt die Anzahl der Einheiten an, die `CRect`oben und unten von aufgeblasen werden sollen.
 
-*Größe*<br/>
+*size*<br/>
 Eine [GRÖßE](/windows/win32/api/windef/ns-windef-size) oder [CSize,](csize-class.md) die die Anzahl `CRect`der Einheiten angibt, die aufgeblasen werden sollen. Der `cx` Wert gibt die Anzahl der Einheiten an, die `cy` die linke und rechte Seite aufblasen sollen, und der Wert gibt die Anzahl der Einheiten an, die oben und unten aufgeblasen werden sollen.
 
 *lpRect*<br/>
@@ -519,7 +519,7 @@ Gibt die Anzahl der Einheiten an, die `CRect`auf der linken Seite von aufgeblase
 *T*<br/>
 Gibt die Anzahl der Einheiten an, `CRect`die am oberen Rand von aufgeblasen werden sollen.
 
-*R*<br/>
+*r*<br/>
 Gibt die Anzahl der Einheiten an, die `CRect`die rechte Seite von aufblasen sollen.
 
 *B*<br/>
@@ -647,13 +647,13 @@ ASSERT(!rectNotNull.IsRectNull());
 
 Rufen Sie diese Funktion auf, um das Rechteck in die absolute x-Koordinate zu verschieben, die durch *x*angegeben wird.
 
-```
+```cpp
 void MoveToX(int x) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die absolute x-Koordinate für die obere linke Ecke des Rechtecks.
 
 ### <a name="example"></a>Beispiel
@@ -670,17 +670,17 @@ ASSERT(rect == CRect(10, 0, 110, 100));
 
 Rufen Sie diese Funktion auf, um das Rechteck in die angegebenen absoluten x- und y-Koordinaten zu verschieben.
 
-```
+```cpp
 void MoveToXY(int x, int y) throw();
 void MoveToXY(POINT point) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Die absolute x-Koordinate für die obere linke Ecke des Rechtecks.
 
-*y*<br/>
+*Y*<br/>
 Die absolute y-Koordinate für die obere linke Ecke des Rechtecks.
 
 *Punkt*<br/>
@@ -699,13 +699,13 @@ ASSERT(rect == CRect(10, 10, 110, 110));
 
 Rufen Sie diese Funktion auf, um das Rechteck in die von *y*angegebene absolute y-Koordinate zu verschieben.
 
-```
+```cpp
 void MoveToY(int y) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*y*<br/>
+*Y*<br/>
 Die absolute y-Koordinate für die obere linke Ecke des Rechtecks.
 
 ### <a name="example"></a>Beispiel
@@ -721,7 +721,7 @@ ASSERT(rect == CRect(0, 10, 100, 110));
 
 Normalisiert, `CRect` so dass sowohl die Höhe als auch die Breite positiv sind.
 
-```
+```cpp
 void NormalizeRect() throw();
 ```
 
@@ -746,7 +746,7 @@ ASSERT(rect1 == rect2);
 
 Wird `CRect` um die angegebenen Offsets verschoben.
 
-```
+```cpp
 void OffsetRect(int x, int y) throw();
 void OffsetRect(POINT point) throw();
 void OffsetRect(SIZE size) throw();
@@ -754,16 +754,16 @@ void OffsetRect(SIZE size) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Gibt den Betrag an, der nach links oder rechts verschoben werden soll. Es muss negativ sein, sich nach links zu bewegen.
 
-*y*<br/>
+*Y*<br/>
 Gibt den Betrag an, der nach oben oder unten verschoben werden soll. Es muss negativ sein, nach oben zu kommen.
 
 *Punkt*<br/>
 Enthält eine [POINT-Struktur](/windows/win32/api/windef/ns-windef-point) oder ein [CPoint-Objekt,](cpoint-class.md) das beide Dimensionen angibt, um die verschoben werden soll.
 
-*Größe*<br/>
+*size*<br/>
 Enthält eine [SIZE-Struktur](/windows/win32/api/windef/ns-windef-size) oder ein [CSize-Objekt,](csize-class.md) das beide Dimensionen angibt, um die verschoben werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -810,7 +810,7 @@ Siehe Beispiel für [CRect::operator LPCRECT](#operator_lpcrect).
 
 Weist *srcRect* `CRect`zu .
 
-```
+```cpp
 void operator=(const RECT& srcRect) throw();
 ```
 
@@ -913,7 +913,7 @@ ASSERT(rect3 != test);
 
 Die ersten beiden `CRect` Überladungen werden um die angegebenen Offsets verschoben.
 
-```
+```cpp
 void operator+=(POINT point) throw();
 void operator+=(SIZE size) throw();
 void operator+=(LPCRECT lpRect) throw();
@@ -924,7 +924,7 @@ void operator+=(LPCRECT lpRect) throw();
 *Punkt*<br/>
 Eine [POINT-Struktur](/windows/win32/api/windef/ns-windef-point) oder ein [CPoint-Objekt,](cpoint-class.md) das die Anzahl der Einheiten angibt, die das Rechteck verschieben sollen.
 
-*Größe*<br/>
+*size*<br/>
 Eine [SIZE-Struktur](/windows/win32/api/windef/ns-windef-size) oder ein [CSize-Objekt,](csize-class.md) das die Anzahl der Einheiten angibt, die das Rechteck verschieben sollen.
 
 *lpRect*<br/>
@@ -951,7 +951,7 @@ ASSERT(rect1 == rect2);
 
 Die ersten beiden `CRect` Überladungen werden um die angegebenen Offsets verschoben.
 
-```
+```cpp
 void operator-=(POINT point) throw();
 void operator-=(SIZE size) throw();
 void operator-=(LPCRECT lpRect) throw();
@@ -962,7 +962,7 @@ void operator-=(LPCRECT lpRect) throw();
 *Punkt*<br/>
 Eine [POINT-Struktur](/windows/win32/api/windef/ns-windef-point) oder ein [CPoint-Objekt,](cpoint-class.md) das die Anzahl der Einheiten angibt, die das Rechteck verschieben sollen.
 
-*Größe*<br/>
+*size*<br/>
 Eine [SIZE-Struktur](/windows/win32/api/windef/ns-windef-size) oder ein [CSize-Objekt,](csize-class.md) das die Anzahl der Einheiten angibt, die das Rechteck verschieben sollen.
 
 *lpRect*<br/>
@@ -989,7 +989,7 @@ ASSERT(rect1 == rectResult);
 
 Legt `CRect` fest, dass `CRect` `rect`der Schnittpunkt von und .
 
-```
+```cpp
 void operator&=(const RECT& rect) throw();
 ```
 
@@ -1013,7 +1013,7 @@ Siehe Beispiel für [CRect::IntersectRect](#intersectrect).
 
 Legt `CRect` fest, dass `CRect` `rect`die Union von und .
 
-```
+```cpp
 void operator|=(const RECT& rect) throw();
 ```
 
@@ -1055,7 +1055,7 @@ CRect operator+(SIZE size) const throw();
 *Punkt*<br/>
 Eine [POINT-Struktur](/windows/win32/api/windef/ns-windef-point) oder ein [CPoint-Objekt,](cpoint-class.md) das die Anzahl der Einheiten angibt, die den Rückgabewert verschieben sollen.
 
-*Größe*<br/>
+*size*<br/>
 Eine [SIZE-Struktur](/windows/win32/api/windef/ns-windef-size) oder ein [CSize-Objekt,](csize-class.md) das die Anzahl der Einheiten angibt, die den Rückgabewert verschieben sollen.
 
 *lpRect*<br/>
@@ -1098,7 +1098,7 @@ CRect operator-(LPCRECT lpRect) const throw();
 *Punkt*<br/>
 Eine POINT-Struktur oder `CPoint` ein [PUNKTobjekt,](/windows/win32/api/windef/ns-windef-point) das die Anzahl der Einheiten angibt, die den Rückgabewert verschieben sollen.
 
-*Größe*<br/>
+*size*<br/>
 Eine SIZE-Struktur oder `CSize` ein [Objekt,](/windows/win32/api/windef/ns-windef-size) das die Anzahl der Einheiten angibt, die den Rückgabewert verschieben sollen.
 
 *lpRect*<br/>
@@ -1255,7 +1255,7 @@ ASSERT(rect.PtInRect(pt));
 
 Legt die `CRect` Bemaßungen von auf die angegebenen Koordinaten fest.
 
-```
+```cpp
 void SetRect(int x1, int y1, int x2, int y2) throw();
 ```
 
@@ -1285,7 +1285,7 @@ ASSERT(rect == CRect(256, 256, 512, 512));
 
 Macht `CRect` ein Nullrechteck, indem alle Koordinaten auf Null gesetzt werden.
 
-```
+```cpp
 void SetRectEmpty() throw();
 ```
 
@@ -1483,7 +1483,7 @@ int nWid = rect.Width();
 ASSERT(nWid == 60);
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CPoint-Klasse](cpoint-class.md)<br/>
 [CSize-Klasse](csize-class.md)<br/>

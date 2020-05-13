@@ -11,12 +11,12 @@ helpviewer_keywords:
 - macros [MFC], MBCS conversion macros
 - TN059
 ms.assetid: a2aab748-94d0-4e2f-8447-3bd07112a705
-ms.openlocfilehash: 0d63a87d0fddde30dd5cbb18207297a345d74b9c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 657381d8247aef14b2c725996dfeb11d0e0535fe
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366582"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749444"
 ---
 # <a name="tn059-using-mfc-mbcsunicode-conversion-macros"></a>TN059: Verwenden von MFC MBCS/Unicode-Umwandlungsmakros
 
@@ -114,7 +114,7 @@ Auch hier gibt es ähnliche Makros für textMETRIC, DEVMODE, BSTR und OLE zugewi
 
 Verwenden Sie die Makros nicht in einer engen Schleife. Sie möchten z. B. nicht die folgende Art von Code schreiben:
 
-```
+```cpp
 void BadIterateCode(LPCTSTR lpsz)
 {
     USES_CONVERSION;
@@ -126,7 +126,7 @@ void BadIterateCode(LPCTSTR lpsz)
 
 Der obige Code kann dazu führen, dass Megabyte Arbeitsspeicher `lpsz` auf dem Stapel zugewiesen werden, je nachdem, was der Inhalt der Zeichenfolge ist! Es dauert auch Zeit, um die Zeichenfolge für jede Iteration der Schleife zu konvertieren. Verschieben Sie stattdessen solche konstanten Konvertierungen aus der Schleife:
 
-```
+```cpp
 void MuchBetterIterateCode(LPCTSTR lpsz)
 {
     USES_CONVERSION;
@@ -140,7 +140,7 @@ void MuchBetterIterateCode(LPCTSTR lpsz)
 
 Wenn die Zeichenfolge nicht konstant ist, kapseln Sie den Methodenaufruf in eine Funktion. Dadurch kann der Konvertierungspuffer jedes Mal freigegeben werden. Beispiel:
 
-```
+```cpp
 void CallSomeMethod(int ii, LPCTSTR lpsz)
 {
     USES_CONVERSION;
@@ -192,7 +192,7 @@ return lpszT; // CString makes copy
 
 Die Makros sind einfach zu bedienen und einfach in Ihren Code einzufügen, aber wie Sie aus den obigen Vorbehalten erkennen können, müssen Sie vorsichtig sein, wenn Sie sie verwenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Technische Hinweise – nach Nummern geordnet](../mfc/technical-notes-by-number.md)<br/>
 [Technische Hinweise – nach Kategorien geordnet](../mfc/technical-notes-by-category.md)

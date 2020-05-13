@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Varbinary data type
 - Varchar data type
 ms.assetid: cf572c35-5275-45b5-83df-5f0e36114f40
-ms.openlocfilehash: f67d159fb600dcacd8eedd40e672edf18bddee9a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 55a68ba970d0a26163f426d51818c701c13ed051
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365509"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750280"
 ---
 # <a name="tn045-mfcdatabase-support-for-long-varcharvarbinary"></a>TN045: MFC- und Datenbankunterstützung für LONGVARCHAR und LONGVARBINARY
 
@@ -45,7 +45,7 @@ Dieser Ansatz ist einfach zu verstehen, und Sie arbeiten mit vertrauten Klassen.
 
 Die RFX-Funktionen für `CString` und `CByteArray` verfügen über ein zusätzliches Argument, mit dem Sie die Standardgröße des zugewiesenen Speichers überschreiben können, um den abgerufenen Wert für die Datenspalte zu enthalten. Beachten Sie das Argument nMaxLength in den folgenden Funktionsdeklarationen:
 
-```
+```cpp
 void AFXAPI RFX_Text(CFieldExchange* pFX,
     const char *szName,
     CString& value,
@@ -116,7 +116,7 @@ In diesem Fall muss sich die lange Datenspalte in der Auswahlliste des Recordset
 > [!NOTE]
 > Da Ihre lange Datenspalte nicht an das Framework gebunden ist, `CRecordset::Update` werden Änderungen an ihr nicht mit Aufrufen behandelt. Sie müssen die erforderlichen SQL **INSERT-** und **UPDATE-Anweisungen** selbst erstellen und senden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Technische Hinweise – nach Nummern geordnet](../mfc/technical-notes-by-number.md)<br/>
 [Technische Hinweise – nach Kategorien geordnet](../mfc/technical-notes-by-category.md)

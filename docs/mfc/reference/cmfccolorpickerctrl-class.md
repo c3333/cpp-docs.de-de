@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CMFCColorPickerCtrl [MFC], SetType
 - CMFCColorPickerCtrl [MFC], DrawCursor
 ms.assetid: b9bbd03c-beb0-4b55-9765-9985fd05e5dc
-ms.openlocfilehash: c3c11db448ab31324367b7f314cd6bfe44c2e96d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fe35ee5d6fc6484788a2636151c386689f4bdd96
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367691"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752535"
 ---
 # <a name="cmfccolorpickerctrl-class"></a>CMFCColorPickerCtrl-Klasse
 
@@ -128,7 +128,7 @@ Im folgenden Beispiel wird `CMFCColorPickerCtrl` veranschaulicht, wie ein `CMFCC
 
 [CMFCColorPickerCtrl](../../mfc/reference/cmfccolorpickerctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcolorpickerctrl.h
 
@@ -184,7 +184,7 @@ Der RGB-Wert der ausgewählten Farbe.
 
 Ruft die Farbton-, Luminanz- und Sättigungswerte der vom Benutzer ausgewählten Farbe ab.
 
-```
+```cpp
 void GetHLS(
     double* hue,
     double* luminance,
@@ -250,7 +250,7 @@ Die Sättigungskomponente der ausgewählten Farbe.
 
 Legt die aktuelle Farbe auf die Farbe fest, die durch die angegebenen RGB-Farbkomponenten oder das angegebene Zellsechseck definiert wird.
 
-```
+```cpp
 void SelectCellHexagon(
     BYTE R,
     BYTE G,
@@ -272,10 +272,10 @@ BOOL SelectCellHexagon(
 *B*<br/>
 [in] Die blaue Farbkomponente.
 
-*X*<br/>
+*x*<br/>
 [in] Die x-Koordinate des Cursors, die auf ein Zellsechseck zeigt.
 
-*y*<br/>
+*Y*<br/>
 [in] Die y-Koordinate des Cursors, die auf ein Zellsechseck zeigt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -292,7 +292,7 @@ Die zweite Überladung dieser Methode legt die aktuelle Farbe auf die Farbe des 
 
 Legt die aktuelle Farbe auf den angegebenen RGB-Farbwert fest.
 
-```
+```cpp
 void SetColor(COLORREF Color);
 ```
 
@@ -307,7 +307,7 @@ void SetColor(COLORREF Color);
 
 Legt die aktuelle Farbe auf den angegebenen HLS-Farbwert fest.
 
-```
+```cpp
 void SetHLS(
     double hue,
     double luminance,
@@ -335,7 +335,7 @@ void SetHLS(
 
 Ändert den Farbton der aktuell ausgewählten Farbe.
 
-```
+```cpp
 void SetHue(double Hue);
 ```
 
@@ -350,7 +350,7 @@ void SetHue(double Hue);
 
 Ändert die Luminanz der aktuell ausgewählten Farbe.
 
-```
+```cpp
 void SetLuminance(double Luminance);
 ```
 
@@ -365,7 +365,7 @@ void SetLuminance(double Luminance);
 
 Legt die Breite der Luminanzleiste im Farbauswahlsteuerelement fest.
 
-```
+```cpp
 void SetLuminanceBarWidth(int w);
 ```
 
@@ -382,7 +382,7 @@ Verwenden Sie diese Methode, um die Größe der Luminanzleiste zu ändern, die s
 
 Legt die erste ausgewählte Farbe fest.
 
-```
+```cpp
 void SetOriginalColor(COLORREF ref);
 ```
 
@@ -399,7 +399,7 @@ Rufen Sie diese Methode auf, wenn das Farbauswahlsteuerelement initialisiert wir
 
 Legt die aktuelle Farbpalette fest.
 
-```
+```cpp
 void SetPalette(CPalette* pPalette);
 ```
 
@@ -416,7 +416,7 @@ Die Farbpalette definiert das Array von Farben, das im Farbauswahlsteuerelement 
 
 Ändert die Sättigung der aktuell ausgewählten Farbe.
 
-```
+```cpp
 void SetSaturation(double Saturation);
 ```
 
@@ -431,7 +431,7 @@ void SetSaturation(double Saturation);
 
 Legt den Typ des anzuzeigenden Farbauswahlsteuerelements fest.
 
-```
+```cpp
 void SetType(COLORTYPE colorType);
 ```
 
@@ -446,7 +446,7 @@ Die Typen werden `CMFCColorPickerCtrl::COLORTYPE` durch die Enumeration definier
 
 Um einen Farbauswahlsteuerelementtyp anzugeben, rufen Sie diese Methode auf, bevor das Windows-Steuerelement erstellt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -1,9 +1,10 @@
 ---
 title: calloc
 description: Die C-Lauf Zeit Bibliotheksfunktion "cbelegc" ordnet NULL initialisierten Arbeitsspeicher zu.
-ms.date: 09/27/2019
+ms.date: 4/2/2020
 api_name:
 - calloc
+- _o_calloc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - memory allocation, arrays
 - calloc function
 ms.assetid: 17bb79a1-98cf-4096-90cb-1f9365cd6829
-ms.openlocfilehash: 228ec6d01a6f57ff98a9030f5a6d82e4c57388cd
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.openlocfilehash: 76243342233ea895b947d4aa4a246b316aa8f405
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685361"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918721"
 ---
 # <a name="calloc"></a>calloc
 
@@ -48,7 +50,7 @@ void *calloc(
 
 ### <a name="parameters"></a>Parameter
 
-*number*<br/>
+*Zahl*<br/>
 Anzahl der Elemente.
 
 *size*<br/>
@@ -62,11 +64,11 @@ Länge jedes Elements in Bytes.
 
 Die **czuzuordnungsfunktion** ordnet Speicherplatz für ein Array von *Zahlen* Elementen zu, die jeweils *eine Länge von* Bytes haben. Jedes Element wird auf 0 initialisiert.
 
-**calloc** legt **errno** auf " **endomem** " fest, wenn eine Speicher Belegung fehlschlägt oder wenn der angeforderte Arbeitsspeicher den Wert von **_HEAP_MAXREQ**überschreitet. Informationen hierzu und über andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+**calloc** legt **errno** auf " **endomem** " fest, wenn eine Speicher Belegung fehlschlägt oder wenn die Menge an Angeforderter Arbeitsspeicher **_HEAP_MAXREQ**überschreitet. Informationen hierzu und über andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
 Wenn die *Anzahl* oder *Größe* in der Microsoft-Implementierung NULL ist, gibt **czuzuordc** einen Zeiger auf einen zugeordneten Block ungleich 0 (null) zurück. Der Versuch, den zurückgegebenen Zeiger zu lesen oder zu schreiben, führt zu nicht definiertem Verhalten.
 
-**czuzuordnungs** verwendet C++ die [_set_new_mode](set-new-mode.md) -Funktion, um den *neuen handlermodus*festzulegen. Der neue handlermodus gibt an, ob **czuzubei** einem Fehler die neue Handlerroutine aufrufen soll, wie von [_set_new_handler](set-new-handler.md)festgelegt. Standardmäßig ruft **calloc** die neue Handlerroutine bei einem Fehler bei der Speicherzuweisung nicht auf. Sie können dieses Standardverhalten außer Kraft setzen, sodass, wenn **calloc** keinen Arbeitsspeicher zuordnen kann, die neue Handlerroutine genauso aufruft wie der **neue** Operator, wenn dieser aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
+**czuzuordnungs** verwendet die C++ [_set_new_mode](set-new-mode.md) -Funktion, um den *neuen handlermodus*festzulegen. Der neue handlermodus gibt an, ob **czuzubei** einem Fehler die neue Handlerroutine aufrufen soll, wie von [_set_new_handler](set-new-handler.md)festgelegt. Standardmäßig ruft **calloc** die neue Handlerroutine bei einem Fehler bei der Speicherzuweisung nicht auf. Sie können dieses Standardverhalten außer Kraft setzen, sodass, wenn **calloc** keinen Arbeitsspeicher zuordnen kann, die neue Handlerroutine genauso aufruft wie der **neue** Operator, wenn dieser aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
 
 ```C
 _set_new_mode(1);
@@ -74,17 +76,19 @@ _set_new_mode(1);
 
 frühzeitig in Ihrem Programm oder mit *NEWMODE verknüpfen. Obj* (siehe [Link Optionen](../../c-runtime-library/link-options.md)).
 
-Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **czuzuordc** in [_calloc_dbg](calloc-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [CRT-Debugheap](/visualstudio/debugger/crt-debug-heap-details).
+Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird " **czuzuordc** " in " [_calloc_dbg](calloc-dbg.md)" aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
 
-**czuweisung** ist als `__declspec(noalias)` und `__declspec(restrict)` gekennzeichnet, was bedeutet, dass die Funktion keine globalen Variablen ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
+**czuweisung** ist als und `__declspec(noalias)` `__declspec(restrict)`gekennzeichnet, was bedeutet, dass die Funktion keine globalen Variablen ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**calloc**|\<stdlib.h> und \<malloc.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -113,9 +117,9 @@ int main( void )
 Allocated 40 long integers
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherreservierung](../../c-runtime-library/memory-allocation.md)<br/>
-[free](free.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
+[Kosten](free.md)<br/>
 [malloc](malloc.md)<br/>
 [realloc](realloc.md)<br/>

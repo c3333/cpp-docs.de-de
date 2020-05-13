@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CDockState [MFC], SaveState
 - CDockState [MFC], m_arrBarInfo
 ms.assetid: 09e7c10b-3abd-4cb2-ad36-42420fe6bc36
-ms.openlocfilehash: 1c76bcda6465ca86b8da4778d3653cb23001b78b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9850486407ee7550ee866a10e656d45ad18fc196
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375556"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753258"
 ---
 # <a name="cdockstate-class"></a>CDockState-Klasse
 
@@ -66,7 +66,7 @@ Weitere Informationen zu Docking-Steuerleisten finden Sie in den Artikeln [Contr
 
 `CDockState`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxadv.h
 
@@ -74,7 +74,7 @@ Weitere Informationen zu Docking-Steuerleisten finden Sie in den Artikeln [Contr
 
 Rufen Sie diese Funktion auf, um `CDockState` alle im Objekt gespeicherten Andockinformationen zu löschen.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -102,7 +102,7 @@ Die Versionsunterstützung ermöglicht es einem überarbeiteten Balken, neue per
 
 Rufen Sie diese Funktion auf, um Statusinformationen aus der Registrierung oder abzurufen. INI-Datei.
 
-```
+```cpp
 void LoadState(LPCTSTR lpszProfileName);
 ```
 
@@ -127,7 +127,7 @@ CPtrArray m_arrBarInfo;
 
 Rufen Sie diese Funktion auf, um die Statusinformationen in der Registrierung oder zu speichern. INI-Datei.
 
-```
+```cpp
 void SaveState(LPCTSTR lpszProfileName);
 ```
 
@@ -140,7 +140,7 @@ Verweist auf eine Null-Teminat-Zeichenfolge, die den Namen eines Abschnitts in d
 
 Der Profilname ist der Abschnitt der Anwendung . INI-Datei oder die Registrierung, die die Statusinformationen der Steuerleiste enthält. `SaveState`speichert auch die aktuelle Bildschirmgröße. Sie können Steuerelementleisteninformationen aus der Registrierung oder abrufen. INI-Datei `LoadState`mit .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

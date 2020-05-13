@@ -1,10 +1,13 @@
 ---
 title: remainder, remainderf, remainderl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - remainderl
 - remainder
 - remainderf
+- _o_remainder
+- _o_remainderf
+- _o_remainderl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +34,12 @@ helpviewer_keywords:
 - remainderl
 - remainder
 ms.assetid: 5f721fb3-8b78-4597-9bc0-ca9bcd1f1d0e
-ms.openlocfilehash: 851f022325bb617cb2b0ae9a331b680b9d9fd303
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 6b2a1a94fa39f9e9474f7bc3da3150bf4134d35f
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949425"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917850"
 ---
 # <a name="remainder-remainderf-remainderl"></a>remainder, remainderf, remainderl
 
@@ -56,10 +60,10 @@ long double remainder( long double x, long double y ); /* C++ only */
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der Zähler.
 
-*y*<br/>
+*Teenie*<br/>
 Der Nenner.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -68,15 +72,17 @@ Der Gleit Komma Rest von *x* / *y*. Wenn der Wert von *y* 0,0 ist, gibt **Rest**
 
 ## <a name="remarks"></a>Hinweise
 
-Die **Rest** -Funktionen berechnen den Gleit Komma Rest *r* von *x* / *y* , sodass *x* = *n* \* *y* + *r*, wobei *n* die ganze Zahl, die dem Wert am nächsten liegt, bis zu *x* / *y* , und *n*ist auch immer, wenn &#124; *n* - *x* / *y* &#124; = 1/2 Wenn *r* = 0 ist, hat *r* das gleiche Vorzeichen wie *x*.
+Die **Rest** -Funktionen berechnen den Gleit Komma Rest *r* von *x* / *y* , d. h. *x* = *n* \* *y* + *r*, wobei *n*die Ganzzahl ist, die dem Wert am nächsten liegt, bis zu *x* / *y* , und *n*ist auch immer, wenn &#124; *n* - *x* / *y* &#124; = 1/2. Wenn *r* = 0 ist, hat *r* das gleiche Vorzeichen wie *x*.
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **Restwerten** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Rest** immer zwei **doppelte** Argumente an und gibt einen **Double**-Wert zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------|-|
-|**remainder**, **remainderf**, **remainderl**|\<math.h>|\<cmath> oder \<math.h>|
+|**Restwert, Restwert, Restwert** **remainderf** **remainderl**|\<math.h>|\<cmath> oder \<math.h>|
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -102,7 +108,7 @@ int main( void )
 The remainder of -10.00 / 3.00 is -1.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldiv, lldiv](ldiv-lldiv.md)<br/>

@@ -1,5 +1,5 @@
 ---
-title: CAtlFile-Klasse
+title: Klasse "-Klasse"
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlFile
@@ -20,23 +20,23 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlFile class
 ms.assetid: 93ed160b-af2a-448c-9cbe-e5fa46c199bb
-ms.openlocfilehash: 39f323874ccde5178722235b9beb34c2572407a1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 83a0a89bf6e2e21be33cf8c6003228111eff5394
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318967"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168110"
 ---
-# <a name="catlfile-class"></a>CAtlFile-Klasse
+# <a name="catlfile-class"></a>Klasse "-Klasse"
 
-Diese Klasse stellt einen dünnen Wrapper um die Windows-Dateiverarbeitungs-API bereit.
+Diese Klasse stellt einen schmalen Wrapper um die Windows-Datei Behandlungs-API bereit.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 class CAtlFile : public CHandle
 ```
 
@@ -46,33 +46,33 @@ class CAtlFile : public CHandle
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlFile::CAtlDatei](#catlfile)|Der Konstruktor.|
+|[Datendatei::](#catlfile)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlFile::Erstellen](#create)|Rufen Sie diese Methode auf, um eine Datei zu erstellen oder zu öffnen.|
-|[CAtlFile::Flush](#flush)|Rufen Sie diese Methode auf, um die Puffer für die Datei zu löschen und dazu zu führen, dass alle gepufferten Daten in die Datei geschrieben werden.|
-|[CAtlFile::GetOverlappedResult](#getoverlappedresult)|Rufen Sie diese Methode auf, um die Ergebnisse eines überlappenden Vorgangs für die Datei abzurufen.|
-|[CAtlFile::GetPosition](#getposition)|Rufen Sie diese Methode auf, um die aktuelle Dateizeigerposition aus der Datei abzurufen.|
-|[CAtlFile::GetSize](#getsize)|Rufen Sie diese Methode auf, um die Größe in Bytes der Datei abzurufen.|
-|[CAtlFile::LockRange](#lockrange)|Rufen Sie diese Methode auf, um einen Bereich in der Datei zu sperren, um zu verhindern, dass andere Prozesse darauf zugreifen.|
-|[CAtlFile::Lesen](#read)|Rufen Sie diese Methode auf, um Daten aus einer Datei zu lesen, die an der vom Dateizeiger angegebenen Position beginnt.|
-|[CAtlFile::Suchen](#seek)|Rufen Sie diese Methode auf, um den Dateizeiger der Datei zu verschieben.|
-|[CAtlFile::SetSize](#setsize)|Rufen Sie diese Methode auf, um die Größe der Datei festzulegen.|
-|[CAtlFile::UnlockRange](#unlockrange)|Rufen Sie diese Methode auf, um einen Bereich der Datei zu entsperren.|
-|[CAtlFile::Schreiben](#write)|Rufen Sie diese Methode auf, um Daten in die Datei zu schreiben, die an der vom Dateizeiger angegebenen Position beginnen.|
+|[Erstellungs Datei:: Create](#create)|Rufen Sie diese Methode auf, um eine Datei zu erstellen oder zu öffnen.|
+|[Datendatei:: Flush](#flush)|Rufen Sie diese Methode auf, um die Puffer für die Datei zu löschen und alle gepufferten Daten in die Datei zu schreiben.|
+|["", "", "".](#getoverlappedresult)|Mit dieser Methode können Sie die Ergebnisse eines überlappenden Vorgangs in der Datei abrufen.|
+|["-Datei": "Get Position"](#getposition)|Ruft diese Methode auf, um die aktuelle Dateizeiger Position aus der Datei abzurufen.|
+|[Datendatei:: GetSize](#getsize)|Mit dieser Methode können Sie die Größe der Datei in Byte abrufen.|
+|[Datendatei:: lockrange](#lockrange)|Wenn Sie diese Methode aufrufen, wird ein Bereich in der Datei gesperrt, um zu verhindern, dass andere Prozesse darauf zugreifen.|
+|["": Lesen](#read)|Ruft diese Methode auf, um Daten aus einer Datei zu lesen, beginnend an der durch den Dateizeiger gekennzeichneten Position.|
+|[-Datei-Datei:: Seek](#seek)|Mit dieser Methode wird der Dateizeiger der Datei verschoben.|
+|[Datendatei:: SetSize](#setsize)|Ruft diese Methode auf, um die Größe der Datei festzulegen.|
+|["": Unlockrange](#unlockrange)|Mit dieser Methode wird ein Bereich der Datei entsperrt.|
+|["Datendatei:: Schreiben"](#write)|Ruft diese Methode auf, um Daten in die Datei zu schreiben, beginnend an der durch den Dateizeiger gekennzeichneten Position.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlFile::m_pTM](#m_ptm)|Zeiger auf `CAtlTransactionManager` Objekt|
+|[Datendatei:: m_pTM](#m_ptm)|Zeiger auf `CAtlTransactionManager` Objekt|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Klasse, wenn die Anforderungen an die Dateiverarbeitung relativ einfach sind, aber mehr Abstraktion als die Windows-API bietet, ohne MFC-Abhängigkeiten einzubeziehen.
+Verwenden Sie diese Klasse, wenn die Datei Behandlungsanforderungen relativ einfach sind, aber mehr Abstraktion als die Windows-API erforderlich ist, ohne dass MFC-Abhängigkeiten eingeschlossen werden.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -82,13 +82,13 @@ Verwenden Sie diese Klasse, wenn die Anforderungen an die Dateiverarbeitung rela
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlfile.h
+**Header:** atlfile. h
 
-## <a name="catlfilecatlfile"></a><a name="catlfile"></a>CAtlFile::CAtlDatei
+## <a name="catlfilecatlfile"></a><a name="catlfile"></a>Datendatei::
 
 Der Konstruktor.
 
-```
+```cpp
 CAtlFile() throw();
 CAtlFile(CAtlTransactionManager* pTM = NULL) throw();
 CAtlFile(CAtlFile& file) throw();
@@ -98,23 +98,23 @@ explicit CAtlFile(HANDLE hFile) throw();
 ### <a name="parameters"></a>Parameter
 
 *Datei*<br/>
-Das Dateiobjekt.
+Das Datei Objekt.
 
-*hDatei*<br/>
-Das Dateihandle.
+*hFile*<br/>
+Das Datei handle.
 
-*Ptm*<br/>
+*pTM*<br/>
 Zeiger auf CAtlTransactionManager-Objekt
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Kopierkonstruktor überträgt den Besitz `CAtlFile` des Dateihandles vom ursprünglichen Objekt auf das neu erstellte Objekt.
+Der Kopierkonstruktor überträgt den Besitz des Datei Handles vom ursprünglichen `CAtlFile` -Objekt an das neu erstellte-Objekt.
 
-## <a name="catlfilecreate"></a><a name="create"></a>CAtlFile::Erstellen
+## <a name="catlfilecreate"></a><a name="create"></a>Erstellungs Datei:: Create
 
 Rufen Sie diese Methode auf, um eine Datei zu erstellen oder zu öffnen.
 
-```
+```cpp
 HRESULT Create(
     LPCTSTR szFilename,
     DWORD dwDesiredAccess,
@@ -127,56 +127,56 @@ HRESULT Create(
 
 ### <a name="parameters"></a>Parameter
 
-*szDateiname*<br/>
+*szFilename*<br/>
 Der Name der Datei.
 
 *dwDesiredAccess*<br/>
-Der gewünschte Zugriff. Siehe *dwDesiredAccess* in [CreateFile](/windows/win32/api/fileapi/nf-fileapi-createfilew) im Windows SDK.
+Der gewünschte Zugriff. Weitere Informationen finden Sie in der Windows SDK unter *dwDesiredAccess* in der [Datei](/windows/win32/api/fileapi/nf-fileapi-createfilew) "".
 
-*dwShareMode*<br/>
-Der Freigabemodus. Siehe *dwShareMode* in `CreateFile`.
+*dwsharemode*<br/>
+Der Freigabe Modus. Weitere Informationen finden Sie unter `CreateFile` *dwsharemode* in.
 
-*dwCreationDisposition*<br/>
-Die Schöpfungsdisposition. Siehe *dwCreationDisposition* in `CreateFile`.
+*dwkreationdisposition*<br/>
+Die Erstellungs Disposition. Weitere Informationen finden Sie unter *dwkreationdisposition* in `CreateFile`.
 
-*dwFlagsAndAttributes*<br/>
-Die Flags und Attribute. Siehe *dwFlagsAndAttributes* in `CreateFile`.
+*dwflagsandattribute*<br/>
+Die Flags und Attribute. Weitere Informationen finden Sie unter *dwflagsandattribute* in `CreateFile`.
 
 *lpsa*<br/>
-Die Sicherheitsattribute. Siehe *lpSecurityAttributes* in `CreateFile`.
+Die Sicherheits Attribute. Weitere Informationen finden Sie unter *lpsecurityattribute* in `CreateFile`.
 
-*hTemplateFile*<br/>
-Die Vorlagendatei. Siehe *hTemplateFile* in `CreateFile`.
+*htemplatefile*<br/>
+Die Vorlagen Datei. Weitere Informationen finden Sie unter *htemplatefile* in `CreateFile`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [CreateFile](/windows/win32/api/fileapi/nf-fileapi-createfilew) auf, um die Datei zu erstellen oder zu öffnen.
+Ruft "up [File](/windows/win32/api/fileapi/nf-fileapi-createfilew) " auf, um die Datei zu erstellen oder zu öffnen.
 
-## <a name="catlfileflush"></a><a name="flush"></a>CAtlFile::Flush
+## <a name="catlfileflush"></a><a name="flush"></a>Datendatei:: Flush
 
-Rufen Sie diese Methode auf, um die Puffer für die Datei zu löschen und dazu zu führen, dass alle gepufferten Daten in die Datei geschrieben werden.
+Rufen Sie diese Methode auf, um die Puffer für die Datei zu löschen und alle gepufferten Daten in die Datei zu schreiben.
 
-```
+```cpp
 HRESULT Flush() throw();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [FlushFileBuffers](/windows/win32/api/fileapi/nf-fileapi-flushfilebuffers) auf, um gepufferte Daten in die Datei zu löschen.
+Ruft [FlushFileBuffers](/windows/win32/api/fileapi/nf-fileapi-flushfilebuffers) auf, um gepufferte Daten in die Datei zu leeren.
 
-## <a name="catlfilegetoverlappedresult"></a><a name="getoverlappedresult"></a>CAtlFile::GetOverlappedResult
+## <a name="catlfilegetoverlappedresult"></a><a name="getoverlappedresult"></a>"", "", "".
 
-Rufen Sie diese Methode auf, um die Ergebnisse eines überlappenden Vorgangs für die Datei abzurufen.
+Mit dieser Methode können Sie die Ergebnisse eines überlappenden Vorgangs in der Datei abrufen.
 
-```
+```cpp
 HRESULT GetOverlappedResult(
     LPOVERLAPPED pOverlapped,
     DWORD& dwBytesTransferred,
@@ -185,104 +185,104 @@ HRESULT GetOverlappedResult(
 
 ### <a name="parameters"></a>Parameter
 
-*pOverlapped*<br/>
-Die überlappende Struktur. Siehe *lpOverlapped* in [GetOverlappedResult](/windows/win32/api/ioapiset/nf-ioapiset-getoverlappedresult) im Windows SDK.
+*poverlt*<br/>
+Die überlappende Struktur. Weitere Informationen finden Sie unter *lpoverllapp* in [gepoverlappedresult](/windows/win32/api/ioapiset/nf-ioapiset-getoverlappedresult) in der Windows SDK.
 
-*dwBytesTransferred*<br/>
-Die übertragenen Bytes. Siehe *lpNumberOfBytesTransferred* in `GetOverlappedResult`.
+*dwbytestransferred*<br/>
+Die übertragenen Bytes. Weitere Informationen finden Sie unter *lpnummeriofbytestransferred* in `GetOverlappedResult`.
 
-*bWarten*<br/>
-Die Warteoption. Siehe *bWarten* in `GetOverlappedResult`.
+*bwait*<br/>
+Die Wait-Option. Siehe *bwait* in `GetOverlappedResult`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [GetOverlappedResult](/windows/win32/api/ioapiset/nf-ioapiset-getoverlappedresult) auf, um die Ergebnisse eines überlappenden Vorgangs für die Datei abzubekommen.
+Ruft [gedeverlappedresult](/windows/win32/api/ioapiset/nf-ioapiset-getoverlappedresult) auf, um die Ergebnisse eines überlappenden Vorgangs für die Datei zu erhalten.
 
-## <a name="catlfilegetposition"></a><a name="getposition"></a>CAtlFile::GetPosition
+## <a name="catlfilegetposition"></a><a name="getposition"></a>"-Datei": "Get Position"
 
-Rufen Sie diese Methode auf, um die aktuelle Dateizeigerposition abzurufen.
+Mit dieser Methode können Sie die aktuelle Dateizeiger Position abrufen.
 
-```
+```cpp
 HRESULT GetPosition(ULONGLONG& nPos) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Npos*<br/>
+*NPOs*<br/>
 Die Position in Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [SetFilePointer](/windows/win32/api/fileapi/nf-fileapi-setfilepointer) auf, um die aktuelle Dateizeigerposition abzubekommen.
+Ruft [SetFilePointer](/windows/win32/api/fileapi/nf-fileapi-setfilepointer) auf, um die aktuelle Position des Dateizeigers zu erhalten.
 
-## <a name="catlfilegetsize"></a><a name="getsize"></a>CAtlFile::GetSize
+## <a name="catlfilegetsize"></a><a name="getsize"></a>Datendatei:: GetSize
 
-Rufen Sie diese Methode auf, um die Größe in Bytes der Datei abzurufen.
+Mit dieser Methode können Sie die Größe der Datei in Byte abrufen.
 
-```
+```cpp
 HRESULT GetSize(ULONGLONG& nLen) const throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nLen*<br/>
+*nlen*<br/>
 Die Anzahl der Bytes in der Datei.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [GetFileSize](/windows/win32/api/fileapi/nf-fileapi-getfilesize) auf, um die Größe in Bytes der Datei abzubekommen.
+Ruft [GetFileSize](/windows/win32/api/fileapi/nf-fileapi-getfilesize) auf, um die Größe der Datei in Bytes zu erhalten.
 
-## <a name="catlfilelockrange"></a><a name="lockrange"></a>CAtlFile::LockRange
+## <a name="catlfilelockrange"></a><a name="lockrange"></a>Datendatei:: lockrange
 
-Rufen Sie diese Methode auf, um einen Bereich in der Datei zu sperren, um zu verhindern, dass andere Prozesse darauf zugreifen.
+Wenn Sie diese Methode aufrufen, wird ein Bereich in der Datei gesperrt, um zu verhindern, dass andere Prozesse darauf zugreifen.
 
-```
+```cpp
 HRESULT LockRange(ULONGLONG nPos, ULONGLONG nCount) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Npos*<br/>
+*NPOs*<br/>
 Die Position in der Datei, an der die Sperre beginnen soll.
 
 *nCount*<br/>
-Die Länge des zu verriegelnden Bytebereichs.
+Die Länge des zu sperrenden Byte Bereichs.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [LockFile](/windows/win32/api/fileapi/nf-fileapi-lockfile) auf, um einen Bereich in der Datei zu sperren. Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Sie können mehr als einen Bereich einer Datei sperren, aber es sind keine überlappenden Bereiche zulässig. Wenn Sie eine Region mit [CAtlFile::UnlockRange](#unlockrange)entsperren, muss der Bytebereich genau dem Bereich entsprechen, der zuvor gesperrt war. `LockRange`führt keine angrenzenden Regionen zusammen; Wenn zwei gesperrte Bereiche nebeneinander liegen, müssen Sie jeden separat entsperren.
+Ruft [lockfile](/windows/win32/api/fileapi/nf-fileapi-lockfile) auf, um einen Bereich in der Datei zu sperren. Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Sie können mehr als einen Bereich einer Dateisperren, aber es sind keine überlappenden Bereiche zulässig. Wenn Sie eine [Region mithilfe von](#unlockrange)"" mit "" "" "" mit "" "". `LockRange`angrenzende Bereiche werden nicht zusammengeführt. Wenn zwei gesperrte Bereiche nebeneinander liegen, müssen Sie diese separat entsperren.
 
-## <a name="catlfilem_ptm"></a><a name="m_ptm"></a>CAtlFile::m_pTM
+## <a name="catlfilem_ptm"></a><a name="m_ptm"></a>Datendatei:: m_pTM
 
-Zeiger auf `CAtlTransactionManager` ein Objekt.
+Zeiger auf ein `CAtlTransactionManager` -Objekt.
 
-```
+```cpp
 CAtlTransactionManager* m_pTM;
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="catlfileread"></a><a name="read"></a>CAtlFile::Lesen
+## <a name="catlfileread"></a><a name="read"></a>"": Lesen
 
-Rufen Sie diese Methode auf, um Daten aus einer Datei zu lesen, die an der vom Dateizeiger angegebenen Position beginnt.
+Ruft diese Methode auf, um Daten aus einer Datei zu lesen, beginnend an der durch den Dateizeiger gekennzeichneten Position.
 
-```
+```cpp
 HRESULT Read(
     LPVOID pBuffer,
     DWORD nBufSize) throw();
@@ -309,31 +309,31 @@ HRESULT Read(
 *pBuffer*<br/>
 Zeiger auf den Puffer, der die aus der Datei gelesenen Daten empfängt.
 
-*nBufSize*<br/>
+*nbuf size*<br/>
 Die Puffergröße in Byte.
 
-*nBytesRead*<br/>
+*nbytesread*<br/>
 Die Anzahl der gelesenen Bytes.
 
-*pOverlapped*<br/>
-Die überlappende Struktur. Siehe *lpOverlapped* in [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile) im Windows SDK.
+*poverlt*<br/>
+Die überlappende Struktur. Weitere *Informationen finden Sie in* der [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile) Windows SDK.
 
-*pfnCompletionRoutine*<br/>
-Die Abschlussroutine. Siehe *lpCompletionRoutine* in [ReadFileEx](/windows/win32/api/fileapi/nf-fileapi-readfileex) im Windows SDK.
+*pfncompletionroutine*<br/>
+Die Vervollständigungs Routine. Weitere Informationen finden Sie unter *lpCompletionRoutine* in "read [fileex](/windows/win32/api/fileapi/nf-fileapi-readfileex) " in der Windows SDK.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die ersten drei Formulare rufen [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile)auf, den letzten [ReadFileEx,](/windows/win32/api/fileapi/nf-fileapi-readfileex) um Daten aus der Datei zu lesen. Verwenden Sie [CAtlFile::Seek,](#seek) um den Dateizeiger zu verschieben.
+Die ersten drei Formular Aufrufe " [Infofile](/windows/win32/api/fileapi/nf-fileapi-readfile)", die letzte " [infofileex](/windows/win32/api/fileapi/nf-fileapi-readfileex) " zum Lesen von Daten aus der Datei. Verwenden Sie "", um [den Dateizeiger](#seek) zu verschieben.
 
-## <a name="catlfileseek"></a><a name="seek"></a>CAtlFile::Suchen
+## <a name="catlfileseek"></a><a name="seek"></a>-Datei-Datei:: Seek
 
-Rufen Sie diese Methode auf, um den Dateizeiger der Datei zu verschieben.
+Mit dieser Methode wird der Dateizeiger der Datei verschoben.
 
-```
+```cpp
 HRESULT Seek(
     LONGLONG nOffset,
     DWORD dwFrom = FILE_CURRENT) throw();
@@ -342,69 +342,69 @@ HRESULT Seek(
 ### <a name="parameters"></a>Parameter
 
 *nOffset*<br/>
-Der Offset vom Von *dwFrom*angegebenen Startpunkt.
+Der Offset vom Startpunkt, der von *dwfrom*angegeben wird.
 
-*dwVon*<br/>
-Der Startpunkt (FILE_BEGIN, FILE_CURRENT oder FILE_END).
+*dwfrom*<br/>
+Der Ausgangspunkt (FILE_BEGIN, FILE_CURRENT oder FILE_END).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Ruft [SetFilePointer](/windows/win32/api/fileapi/nf-fileapi-setfilepointer) auf, um den Dateizeiger zu verschieben.
 
-## <a name="catlfilesetsize"></a><a name="setsize"></a>CAtlFile::SetSize
+## <a name="catlfilesetsize"></a><a name="setsize"></a>Datendatei:: SetSize
 
-Rufen Sie diese Methode auf, um die Größe der Datei festzulegen.
+Ruft diese Methode auf, um die Größe der Datei festzulegen.
 
-```
+```cpp
 HRESULT SetSize(ULONGLONG nNewLen) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*nNewLen*<br/>
+*nnewlen*<br/>
 Die neue Länge der Datei in Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Ruft [SetFilePointer](/windows/win32/api/fileapi/nf-fileapi-setfilepointer) und [SetEndOfFile](/windows/win32/api/fileapi/nf-fileapi-setendoffile) auf, um die Größe der Datei festzulegen. Bei der Rückgabe wird der Dateizeiger am Ende der Datei positioniert.
 
-## <a name="catlfileunlockrange"></a><a name="unlockrange"></a>CAtlFile::UnlockRange
+## <a name="catlfileunlockrange"></a><a name="unlockrange"></a>"": Unlockrange
 
-Rufen Sie diese Methode auf, um einen Bereich der Datei zu entsperren.
+Mit dieser Methode wird ein Bereich der Datei entsperrt.
 
-```
+```cpp
 HRESULT UnlockRange(ULONGLONG nPos, ULONGLONG nCount) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Npos*<br/>
+*NPOs*<br/>
 Die Position in der Datei, an der die Entsperrung beginnen soll.
 
 *nCount*<br/>
-Die Länge des freizuschaltenden Bytebereichs.
+Die Länge des zu entsperrenden Byte Bereichs.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft [UnlockFile](/windows/win32/api/fileapi/nf-fileapi-unlockfile) auf, um einen Bereich der Datei zu entsperren.
+Ruft [unlockfile](/windows/win32/api/fileapi/nf-fileapi-unlockfile) auf, um einen Bereich der Datei zu entsperren.
 
-## <a name="catlfilewrite"></a><a name="write"></a>CAtlFile::Schreiben
+## <a name="catlfilewrite"></a><a name="write"></a>"Datendatei:: Schreiben"
 
-Rufen Sie diese Methode auf, um Daten in die Datei zu schreiben, die an der vom Dateizeiger angegebenen Position beginnen.
+Ruft diese Methode auf, um Daten in die Datei zu schreiben, beginnend an der durch den Dateizeiger gekennzeichneten Position.
 
-```
+```cpp
 HRESULT Write(
     LPCVOID pBuffer,
     DWORD nBufSize,
@@ -427,27 +427,27 @@ HRESULT Write(
 *pBuffer*<br/>
 Der Puffer, der die Daten enthält, die in die Datei geschrieben werden sollen.
 
-*nBufSize*<br/>
+*nbuf size*<br/>
 Die Anzahl der Bytes, die aus dem Puffer übertragen werden sollen.
 
-*pOverlapped*<br/>
-Die überlappende Struktur. Siehe *lpOverlapped* in [WriteFile](/windows/win32/api/fileapi/nf-fileapi-writefile) im Windows SDK.
+*poverlt*<br/>
+Die überlappende Struktur. Weitere Informationen finden Sie unter *lpoverllapp* in " [Write File](/windows/win32/api/fileapi/nf-fileapi-writefile) " im Windows SDK.
 
-*pfnCompletionRoutine*<br/>
-Die Abschlussroutine. Siehe *lpCompletionRoutine* in [WriteFileEx](/windows/win32/api/fileapi/nf-fileapi-writefileex) im Windows SDK.
+*pfncompletionroutine*<br/>
+Die Vervollständigungs Routine. Weitere Informationen finden Sie unter " *lpCompletionRoutine* " in " [Write fileex](/windows/win32/api/fileapi/nf-fileapi-writefileex) " in der Windows SDK.
 
-*pnBytesWritten*<br/>
+*pnbyteswritten*<br/>
 Die geschriebenen Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die ersten drei Formulare rufen [WriteFile](/windows/win32/api/fileapi/nf-fileapi-writefile)auf, der letzte ruft [WriteFileEx](/windows/win32/api/fileapi/nf-fileapi-writefileex) auf, um Daten in die Datei zu schreiben. Verwenden Sie [CAtlFile::Seek,](#seek) um den Dateizeiger zu verschieben.
+In den ersten drei Formularen wird " [Write File](/windows/win32/api/fileapi/nf-fileapi-writefile)" aufgerufen, der letzte ruft "Write [fileex](/windows/win32/api/fileapi/nf-fileapi-writefileex) " auf, um Daten in die Datei zu schreiben. Verwenden Sie "", um [den Dateizeiger](#seek) zu verschieben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Marquee-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)<br/>

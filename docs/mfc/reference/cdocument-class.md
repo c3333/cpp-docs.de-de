@@ -120,12 +120,12 @@ helpviewer_keywords:
 - CDocument [MFC], m_clrRichPreviewTextColor
 - CDocument [MFC], m_lfRichPreviewFont
 ms.assetid: e5a2891d-e1e1-4599-8c7e-afa9b4945446
-ms.openlocfilehash: 2f8ba8d0b35bd72efa8f8d63dbefd689e645d768
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d356ba6b6134221c2fc9595fc6d78f91961c5b7f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374052"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753246"
 ---
 # <a name="cdocument-class"></a>CDocument-Klasse
 
@@ -252,7 +252,7 @@ Weitere Informationen `CDocument`zu finden Sie unter [Serialisierung](../../mfc/
 
 `CDocument`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -260,7 +260,7 @@ Weitere Informationen `CDocument`zu finden Sie unter [Serialisierung](../../mfc/
 
 Rufen Sie diese Funktion auf, um dem Dokument eine Ansicht anzufügen.
 
-```
+```cpp
 void AddView(CView* pView);
 ```
 
@@ -375,7 +375,7 @@ virtual POSITION FindChunk(
 *guid*<br/>
 Gibt die GUID eines zu suchenden Abschnitts an.
 
-*pid*<br/>
+*Pid*<br/>
 Gibt eine PID eines zu suchenden Blocks an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -765,7 +765,7 @@ Gibt ein umgrenzendes Rechteck des Bereichs an, in dem die Miniaturansicht gezei
 
 Sendet eine Nachricht über den residenten E-Mail-Host (falls vorhanden) mit dem Dokument als Anlage.
 
-```
+```cpp
 void OnFileSendMail();
 ```
 
@@ -979,7 +979,7 @@ virtual void OnUnloadHandler();
 
 Aktiviert den ID_FILE_SEND_MAIL Befehl, wenn Mail-Support (MAPI) vorhanden ist.
 
-```
+```cpp
 void OnUpdateFileSendMail(CCmdUI* pCmdUI);
 ```
 
@@ -1082,7 +1082,7 @@ Gibt die PID eines zu entfernenden Abschnitts an.
 
 Rufen Sie diese Funktion auf, um eine Ansicht von einem Dokument zu trennen.
 
-```
+```cpp
 void RemoveView(CView* pView);
 ```
 
@@ -1224,7 +1224,7 @@ Wenn Sie diese Funktion aufrufen, werden die Titel aller Rahmenfenster aktualisi
 
 Rufen Sie diese Funktion auf, nachdem das Dokument geändert wurde.
 
-```
+```cpp
 void UpdateAllViews(
     CView* pSender,
     LPARAM lHint = 0L,
@@ -1252,7 +1252,7 @@ Diese Funktion ruft die [CView::OnUpdate-Memberfunktion](../../mfc/reference/cvi
 
 [!code-cpp[NVC_MFCDocView#64](../../mfc/codesnippet/cpp/cdocument-class_9.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel MDIDOCVW](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel SNAPVW](../../overview/visual-cpp-samples.md)<br/>

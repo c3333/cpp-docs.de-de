@@ -50,12 +50,12 @@ helpviewer_keywords:
 - CList [MFC], RemoveTail
 - CList [MFC], SetAt
 ms.assetid: 6f6273c3-c8f6-47f5-ac2a-0a950379ae5d
-ms.openlocfilehash: 253cf12033af497115ad600e457630ae834cc69c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: adc065687f0c2c40b7e66326ff9d1e6210a6962c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372236"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754127"
 ---
 # <a name="clist-class"></a>CList-Klasse
 
@@ -134,7 +134,7 @@ Weitere Informationen zur `CList`Verwendung finden Sie im Artikel [Sammlungen](.
 
 `CList`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxtempl.h
 
@@ -291,7 +291,7 @@ const TYPE& GetAt(POSITION position) const;
 *TYP*<br/>
 Vorlagenparameter, der den Objekttyp in der Liste angibt.
 
-*Position*<br/>
+*position*<br/>
 Die Position in der Liste des zu erhaltenden Elements.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -515,7 +515,7 @@ POSITION InsertAfter(POSITION position, ARG_TYPE newElement);
 
 ### <a name="parameters"></a>Parameter
 
-*Position*<br/>
+*position*<br/>
 Ein POSITION-Wert, `GetNext`der `GetPrev`von `Find` einem vorherigen , oder Memberfunktionsaufruf zurückgegeben wird.
 
 *ARG_TYPE*<br/>
@@ -542,7 +542,7 @@ POSITION InsertBefore(POSITION position, ARG_TYPE newElement);
 
 ### <a name="parameters"></a>Parameter
 
-*Position*<br/>
+*position*<br/>
 Ein POSITION-Wert, `GetNext`der `GetPrev`von `Find` einem vorherigen , oder Memberfunktionsaufruf zurückgegeben wird.
 
 *ARG_TYPE*<br/>
@@ -583,7 +583,7 @@ Ein Wert ungleich Null, wenn diese Liste leer ist; andernfalls 0.
 
 Entfernt alle Elemente aus dieser Liste und gibt den zugeordneten Speicher frei.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -599,13 +599,13 @@ Es wird kein Fehler generiert, wenn die Liste bereits leer ist.
 
 Entfernt das angegebene Element aus dieser Liste.
 
-```
+```cpp
 void RemoveAt(POSITION position);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Position*<br/>
+*position*<br/>
 Die Position des Elements, das aus der Liste entfernt werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -670,7 +670,7 @@ Sie müssen sicherstellen, dass die `RemoveTail`Liste nicht leer ist, bevor Sie 
 
 Eine Variable vom Typ POSITION ist ein Schlüssel für die Liste.
 
-```
+```cpp
 void SetAt(POSITION pos, ARG_TYPE newElement);
 ```
 
@@ -695,7 +695,7 @@ Sie müssen sicherstellen, dass Ihr POSITION-Wert eine gültige Position in der 
 
 [!code-cpp[NVC_MFCCollections#55](../../mfc/codesnippet/cpp/clist-class_21.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel COLLECT](../../overview/visual-cpp-samples.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

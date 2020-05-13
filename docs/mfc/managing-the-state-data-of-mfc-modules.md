@@ -12,35 +12,35 @@ helpviewer_keywords:
 - multiple modules [MFC]
 - module state restored [MFC]
 ms.assetid: 81889c11-0101-4a66-ab3c-f81cf199e1bb
-ms.openlocfilehash: 0cdb368dc70b73ba70b3721fecdaf47de36686d5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c8e79f54ed586201a7d82327662643a9a241b8f4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62338368"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81357268"
 ---
 # <a name="managing-the-state-data-of-mfc-modules"></a>Verwalten der Statusdaten von MFC-Modulen
 
-Dieser Artikel beschreibt die Statusdaten von MFC-Modulen und wie dieser Status aktualisiert wird, wenn es sich bei der Ablauf der Ausführung (im Path-Code wird sich durch eine Anwendung, wenn die Ausführung) gibt, und bewirkt, dass ein Modul. Modulzustände mit den Makros AFX_MANAGE_STATE und METHOD_PROLOGUE wechseln, wird ebenfalls erläutert.
+In diesem Artikel werden die Statusdaten von MFC-Modulen erläutert und erläutert, wie dieser Status aktualisiert wird, wenn der Ausführungsfluss (der Pfadcode durch eine Anwendung bei der Ausführung führt) ein Modul ein- und verlässt. Auch Schaltmodulzustände mit den AFX_MANAGE_STATE und METHOD_PROLOGUE Makros werden diskutiert.
 
 > [!NOTE]
->  Das Begriff "Modul" Hier bezieht sich ein ausführbares Programm oder eine DLL (oder einen Satz von DLLs) an, die unabhängig vom Rest der Anwendung ausgeführt werden, verwendet jedoch eine gemeinsame Kopie der MFC-DLL. Ein ActiveX-Steuerelement ist ein typisches Beispiel für ein Modul.
+> Der Begriff "Modul" bezieht sich hier auf ein ausführbares Programm oder auf eine DLL (oder einen Satz von DLLs), die unabhängig vom Rest der Anwendung arbeiten, aber eine freigegebene Kopie der MFC-DLL verwenden. Ein ActiveX-Steuerelement ist ein typisches Beispiel für ein Modul.
 
-Wie in der folgenden Abbildung gezeigt wird, hat MFC Statusdaten für jedes Modul in einer Anwendung verwendet. Beispiele für diese Daten sind, wird der Windows-Instanz (für das Laden von Ressourcen verwendet), Zeiger auf die aktuelle `CWinApp` und `CWinThread` Objekte von einer Anwendung, einen Zähler für OLE-Modul und eine Vielzahl von Zuordnungen, die die Verbindungen zwischen verwalten Windows Objekt behandelt und die entsprechenden Instanzen von MFC-Objekten. Wenn eine Anwendung mehrere Module verwendet, die Daten der einzelnen Module ist jedoch nicht Anwendung breit. Stattdessen verfügt jedes Modul eine eigene Kopie der Daten für die MFC Zustand.
+Wie in der folgenden Abbildung dargestellt, verfügt MFC über Zustandsdaten für jedes Modul, das in einer Anwendung verwendet wird. Beispiele für diese Daten sind Windows-Instanzhandles (zum Laden `CWinApp` von `CWinThread` Ressourcen), Zeiger auf den aktuellen Wert und Objekte einer Anwendung, OLE-Modul-Verweisanzahlen und eine Vielzahl von Zuordnungen, die die Verbindungen zwischen Windows-Objekthandles und entsprechenden Instanzen von MFC-Objekten verwalten. Wenn eine Anwendung jedoch mehrere Module verwendet, sind die Zustandsdaten der einzelnen Module nicht anwendungsweit. Stattdessen verfügt jedes Modul über eine eigene private Kopie der Statusdaten der MFC.
 
-![Zustandsdaten eines einzelmoduls &#40;Anwendung&#41;](../mfc/media/vc387n1.gif "Zustandsdaten eines einzelmoduls &#40;Anwendung&#41;") <br/>
+![Zustandsdaten eines einzelnen Moduls &#40;Anwendung&#41;](../mfc/media/vc387n1.gif "Zustandsdaten eines einzelnen Moduls &#40;Anwendung&#41;") <br/>
 Zustandsdaten eines Einzelmoduls (Anwendung)
 
-Zustandsdaten des Moduls in einer Struktur enthalten ist, und es ist immer verfügbar, über einen Zeiger auf dieser Struktur. Wenn der Ausführungsablauf von einem bestimmten Modul eingibt, wie in der folgenden Abbildung gezeigt, muss der Status dieses Moduls den Status "current" oder "effektive" sein. Daher muss jeder Thread-Objekt einen Zeiger auf den effektiven Statusstruktur der Anwendung. Halten diesen Zeiger, die stets Zeiten ist wichtig, Verwalten des globalen Status der Anwendung und die Wahrung der Integrität des Moduls Zustand. Eine fehlerhafte Verwaltung des globalen Status kann zu unvorhersehbarem Anwendungsverhalten führen.
+Die Zustandsdaten eines Moduls sind in einer Struktur enthalten und stehen immer über einen Zeiger auf diese Struktur zur Verfügung. Wenn der Ausführungsfluss in ein bestimmtes Modul eintritt, wie in der folgenden Abbildung dargestellt, muss der Zustand dieses Moduls der "aktuelle" oder "effektive" Zustand sein. Daher verfügt jedes Threadobjekt über einen Zeiger auf die effektive Zustandsstruktur dieser Anwendung. Die Aktualisierung dieses Zeigers ist für die Verwaltung des globalen Status der Anwendung und die Aufrechterhaltung der Integrität des Status jedes Moduls von entscheidender Bedeutung. Eine falsche Verwaltung des globalen Status kann zu einem unvorhersehbaren Anwendungsverhalten führen.
 
 ![Zustandsdaten mehrerer Module](../mfc/media/vc387n2.gif "Zustandsdaten mehrerer Module") <br/>
 Zustandsdaten mehrerer Module
 
-Das heißt, ist jedes Modul für ordnungsgemäß Wechseln zwischen Modulzustände alle den-Einstiegspunkten verantwortlich. Ein "Einstiegspunkt" ist eine beliebige Stelle, über der Ablauf der Ausführung des Moduls Code eingeben können. Einstiegspunkte sind:
+Mit anderen Worten, jedes Modul ist für das korrekte Umschalten zwischen Denzuständen an allen Einstiegspunkten verantwortlich. Ein "Einstiegspunkt" ist ein beliebiger Ort, an dem der Ausführungsfluss in den Code des Moduls eingegeben werden kann. Zu den Einstiegspunkten gehören:
 
 - [Exportierte Funktionen in einer DLL](../mfc/exported-dll-function-entry-points.md)
 
-- [Memberfunktionen von COM-Schnittstellen](../mfc/com-interface-entry-points.md)
+- [Mitgliedsfunktionen von COM-Schnittstellen](../mfc/com-interface-entry-points.md)
 
 - [Fensterprozeduren](../mfc/window-procedure-entry-points.md)
 

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - structures, incomplete
 ms.assetid: 01bc0cf6-9fa7-458c-9371-ecbe54ea6aee
 ms.openlocfilehash: e7a5cd7624b55e7bce0fbd09451ab42426f5bc37
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232891"
 ---
 # <a name="incomplete-types"></a>Unvollständige Typen
 
@@ -44,7 +44,7 @@ Der **void**-Typ ist ein unvollständiger Typ, der nicht abgeschlossen werden ka
     }                   /* student structure now completed */
     ```
 
-- Um einen unvollständigen Arraytyp zu erstellen, müssen Sie einen Arraytyp ohne Angabe der Wiederholungsanzahl deklarieren. Beispiel:
+- Um einen unvollständigen Arraytyp zu erstellen, müssen Sie einen Arraytyp ohne Angabe der Wiederholungsanzahl deklarieren. Zum Beispiel:
 
     ```C
     char a[];  /* a has incomplete type */

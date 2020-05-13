@@ -1,8 +1,9 @@
 ---
 title: _setmbcp
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _setmbcp
+- _o__setmbcp
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-locale-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - _setmbcp function
 - multibyte code pages
 ms.assetid: cfde53b5-0b73-4684-81b1-a8d3aafc85de
-ms.openlocfilehash: a3408f04eb60a33a84c628c989ebc9c4c4a261df
-ms.sourcegitcommit: f38f770bfda1c174d2b81fabda7c893b15bd83a1
+ms.openlocfilehash: 18712661b2bda1eaaf0c583b922ad73a781b4abc
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77473875"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82918828"
 ---
 # <a name="_setmbcp"></a>_setmbcp
 
@@ -48,7 +50,7 @@ int _setmbcp(
 
 ### <a name="parameters"></a>Parameter
 
-*codepage*<br/>
+*Codepage*<br/>
 Neue Codepageeinstellung für gebietsschemaunabhängige Multibyte-Routinen.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -63,8 +65,8 @@ Die Multibyte-Codepage hat auch Auswirkungen auf die Multibyteverarbeitung durch
 
 ||||
 |-|-|-|
-|[_exec-Funktionen](../../c-runtime-library/exec-wexec-functions.md)|[_mktemp](mktemp-wmktemp.md)|[_stat](stat-functions.md)|
-|[_fullpath](fullpath-wfullpath.md)|[_spawn functions](../../c-runtime-library/spawn-wspawn-functions.md)|[_tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md)|
+|[_exec functions](../../c-runtime-library/exec-wexec-functions.md)|[_mktemp](mktemp-wmktemp.md)|[_stat](stat-functions.md)|
+|[_fullpath](fullpath-wfullpath.md)|[_spawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)|[_tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md)|
 |[_makepath](makepath-wmakepath.md)|[_splitpath](splitpath-wsplitpath.md)|[tmpnam](tempnam-wtempnam-tmpnam-wtmpnam.md)|
 
 Außerdem verarbeiten alle Lauf Zeit Bibliotheks Routinen, die Multibytezeichen- *argv* -oder *envp* -Programm Argumente als Parameter (z. b. die **_exec** -und **_spawn** Familien) empfangen, diese Zeichen folgen entsprechend der Multibytezeichen-Codepage. Aus diesem Grund werden diese Routinen auch durch einen **aufrufs_setmbcp** beeinflusst, der die Multibytezeichen-Codepage ändert.
@@ -83,15 +85,17 @@ Das *Codepage* -Argument kann auf einen der folgenden Werte festgelegt werden:
 
 - Jeder andere gültige Codepage-Wert, unabhängig davon, ob der Wert eine ANSI-, OEM-oder andere vom Betriebssystem unterstützte Codepage ist (mit Ausnahme von UTF-7, die nicht unterstützt wird).
 
-## <a name="requirements"></a>Voraussetzungen
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_setmbcp**|\<mbctype.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_getmbcp](getmbcp.md)<br/>
 [setlocale, _wsetlocale](setlocale-wsetlocale.md)<br/>

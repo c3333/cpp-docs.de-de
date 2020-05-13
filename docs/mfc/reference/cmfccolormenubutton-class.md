@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CMFCColorMenuButton [MFC], OnDraw
 - CMFCColorMenuButton [MFC], OnDrawOnCustomizeList
 ms.assetid: 42685704-e994-4f7b-9553-62283c27b754
-ms.openlocfilehash: 22208aec505033d372f5a80ba2a9641b1bd15874
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9c895573c626a890facfef689fce4b516aff5115
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367707"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752520"
 ---
 # <a name="cmfccolormenubutton-class"></a>CMFCColorMenuButton-Klasse
 
@@ -120,7 +120,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie eine Farbmenüschaltfläche 
 
 [CMFCColorMenuButton](../../mfc/reference/cmfccolormenubutton-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxcolormenubutton.h
 
@@ -193,7 +193,7 @@ Diese Methode wird vom Framework aufgerufen, wenn der Benutzer eine Farbmenüsch
 
 Aktiviert und deaktiviert eine "automatische" Schaltfläche, die über den regulären Farbschaltflächen positioniert ist. (Die Standard-System-Automatik-Taste ist mit **Automatisch**beschriftet.)
 
-```
+```cpp
 void EnableAutomaticButton(
     LPCTSTR lpszLabel,
     COLORREF colorAutomatic,
@@ -219,7 +219,7 @@ Die automatische Schaltfläche wendet die aktuelle Standardfarbe an.
 
 Ermöglicht die Anzeige dokumentspezifischer Farben anstelle von Systemfarben.
 
-```
+```cpp
 void EnableDocumentColors(
     LPCTSTR lpszLabel,
     BOOL bEnable=TRUE);
@@ -241,7 +241,7 @@ Verwenden Sie diese Methode, um die aktuellen Dokumentfarben oder die Systempale
 
 Aktiviert und deaktiviert eine "andere" Schaltfläche, die sich unterhalb der regulären Farbschaltflächen befindet. (Das Standardsystem "andere" Taste ist mit **Mehr Farben**beschriftet .)
 
-```
+```cpp
 void EnableOtherButton(
     LPCTSTR lpszLabel,
     BOOL bAltColorDlg=TRUE,
@@ -265,7 +265,7 @@ void EnableOtherButton(
 
 Ermöglicht die Möglichkeit, einen Farbbereich abzureißen.
 
-```
+```cpp
 void EnableTearOff(
     UINT uiID,
     int nVertDockColumns=-1,
@@ -533,7 +533,7 @@ static void SetColorName(
 
 Legt die Anzahl der Spalten fest, die in einem Farbauswahlsteuerelement [(CMFCColorBar-Objekt)](../../mfc/reference/cmfccolorbar-class.md) angezeigt werden sollen.
 
-```
+```cpp
 void SetColumnsNumber(int nColumns);
 ```
 
@@ -544,7 +544,7 @@ void SetColumnsNumber(int nColumns);
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

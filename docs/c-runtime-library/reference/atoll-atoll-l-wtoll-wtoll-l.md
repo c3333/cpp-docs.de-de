@@ -1,11 +1,15 @@
 ---
 title: atoll, _atoll_l, _wtoll, _wtoll_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wtoll
 - _atoll_l
 - _wtoll_l
 - atoll
+- _o__atoll_l
+- _o__wtoll
+- _o__wtoll_l
+- _o_atoll
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +41,12 @@ helpviewer_keywords:
 - _wtoll function
 - _atoll_l function
 ms.assetid: 5e85fcac-b351-4882-bff2-6e7c469b7fa8
-ms.openlocfilehash: f1b5fca9c3428bce26a8a40cf8271760fa97b10b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 89a4d94a98e58f4ef5489554e02866a8471ade20
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939480"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913521"
 ---
 # <a name="atoll-_atoll_l-_wtoll-_wtoll_l"></a>atoll, _atoll_l, _wtoll, _wtoll_l
 
@@ -68,7 +73,7 @@ long long _wtoll_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*SRT*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -96,7 +101,9 @@ Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert wer
 
 **_wtoll** ist mit dem **Atoll** identisch, außer dass es eine Zeichenfolge mit breit Zeichen als Parameter annimmt.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix sind identisch mit den Versionen, die nicht über das Suffix verfügen, mit dem Unterschied, dass Sie den Gebiets Schema Parameter verwenden, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **_l** -Suffix sind identisch mit den Versionen, die Sie nicht haben, mit dem Unterschied, dass Sie den Gebiets Schema Parameter verwenden, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -110,8 +117,8 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind identisch mit den Ve
 
 |Routinen|Erforderlicher Header|
 |--------------|---------------------|
-|**atoll**, **_atoll_l**|\<stdlib.h>|
-|**_wtoll**, **_wtoll_l**|\<stdlib.h> oder \<wchar.h>|
+|**Atoll**, **_atoll_l**|\<stdlib.h>|
+|**_wtoll** **_wtoll_l**|\<stdlib.h> oder \<wchar.h>|
 
 ## <a name="example"></a>Beispiel
 
@@ -163,7 +170,7 @@ Function: atoll("3336402735171707160320") = 9223372036854775807
 Overflow condition occurred.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

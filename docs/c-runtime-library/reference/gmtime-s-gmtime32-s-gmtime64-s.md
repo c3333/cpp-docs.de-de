@@ -1,10 +1,12 @@
 ---
 title: gmtime_s, _gmtime32_s, _gmtime64_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _gmtime32_s
 - gmtime_s
 - _gmtime64_s
+- _o__gmtime32_s
+- _o__gmtime64_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -38,12 +41,12 @@ helpviewer_keywords:
 - _gmtime_s function
 - _gmtime32_s function
 ms.assetid: 261c7df0-2b0c-44ba-ba61-cb83efaec60f
-ms.openlocfilehash: bcfc512022393c6a3e8a9cd97efe96d03b4877ab
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 152b0569d452fc48af7583b23c6a2449cb24d0d6
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954844"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916219"
 ---
 # <a name="gmtime_s-_gmtime32_s-_gmtime64_s"></a>gmtime_s, _gmtime32_s, _gmtime64_s
 
@@ -68,25 +71,25 @@ errno_t _gmtime64_s(
 
 ### <a name="parameters"></a>Parameter
 
-*tmDest*<br/>
+*tmdest*<br/>
 Zeiger auf eine [TM](../../c-runtime-library/standard-types.md) -Struktur. Die Felder der zurückgegebenen Struktur enthalten den ausgewerteten Wert des *Timer* -Arguments in UTC und nicht in Ortszeit.
 
-*sourceTime*<br/>
+*sourcetime*<br/>
 Zeiger auf die gespeicherte Zeit Die Zeit wird in Sekunden dargestellt, die seit dem 1. Januar 1970, Mitternacht (00:00: 00), verstrichen sind. Die Anzeige erfolgt im UTC-Format.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Null, wenn erfolgreich. Der Rückgabewert ist ein Fehlercode, wenn ein Fehler auftritt. Fehlercodes sind in Errno.h definiert. Eine Liste dieser Fehler finden Sie unter [errno](../../c-runtime-library/errno-constants.md).
+Null, wenn erfolgreich. Der Rückgabewert ist ein Fehlercode, wenn ein Fehler auftritt. Fehlercodes sind in errno. h definiert. eine Auflistung dieser Fehler finden Sie unter [errno](../../c-runtime-library/errno-constants.md).
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*tmDest*|*sourceTime*|Zurück|Wert in *tmdest*|
+|*tmdest*|*sourcetime*|Rückgabewert|Wert in *tmdest*|
 |-----------|------------|------------|--------------------|
-|**NULL**|any|**EINVAL**|Nicht geändert.|
-|Not **null** (zeigt auf gültigen Speicher)|**NULL**|**EINVAL**|Alle Felder auf -1 festgelegt.|
-|Nicht **null**|< 0|**EINVAL**|Alle Felder auf -1 festgelegt.|
+|**Normal**|any|**Eingabe**|Nicht geändert.|
+|Not **null** (zeigt auf gültigen Speicher)|**Normal**|**Eingabe**|Alle Felder auf -1 festgelegt.|
+|Nicht **null**|< 0|**Eingabe**|Alle Felder auf -1 festgelegt.|
 
-Im Fall der ersten zwei Fehlerbedingungen, wird der ungültige Parameterhandler aufgerufen, wie es unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
+Im Fall der ersten zwei Fehlerbedingungen, wird der ungültige Parameterhandler aufgerufen, so wie dies unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -107,19 +110,21 @@ Jedes der Struktur Felder hat den Typ " **int**", wie in der folgenden Tabelle d
 |**tm_year**|Jahr (aktuelles Jahr minus 1900).|
 |**tm_wday**|Wochentag (0-6; Sonntag = 0).|
 |**tm_yday**|Tag des Jahres (0-365; 1. Januar = 0).|
-|**tm_isdst**|Immer 0 für **gmtime_s**.|
+|**tm_isdst**|Für **gmtime_s**immer 0.|
 
-**_gmtime64_s**, das die **__time64_t** -Struktur verwendet, ermöglicht das Ausdrücken von Datumsangaben bis 23:59:59, 31. Dezember 3000, UTC; während **gmtime32_s** nur Datumsangaben 23:59:59 bis zum 18. Januar 2038,, UTC darstellen. Der 1. Januar 1970 (Mitternacht) ist der untere Datumsbereich für diese beiden Funktionen.
+**_gmtime64_s**, das die **__time64_t** Struktur verwendet, ermöglicht das Ausdrücken von Datumsangaben bis 23:59:59, 31. Dezember 3000, UTC; während **gmtime32_s** nur Datumsangaben 23:59:59 bis zum 18. Januar 2038 (UTC) darstellen. Der 1. Januar 1970 (Mitternacht) ist der untere Datumsbereich für diese beiden Funktionen.
 
-bei **gmtime_s** handelt es sich um eine Inline Funktion, die **_gmtime64_s** ergibt und **time_t** Äquivalent zu **__time64_t**ist. Wenn Sie den Compiler zwingen müssen, **time_t** als das alte 32-Bit- **time_t**zu interpretieren, können Sie **_USE_32BIT_TIME_T**definieren. Dies führt dazu, dass **gmtime_s** in **_gmtime32_s**angeordnet ist. Dies ist nicht zu empfehlen, weil bei Ihrer Anwendung nach dem 18. Januar 2038 ein Fehler auftreten kann. Die Verwendung dieses Makros ist auf 64-Bit-Plattformen nicht zulässig.
+**gmtime_s** ist eine Inline Funktion, die **_gmtime64_s** ergibt und **time_t** **__time64_t**entspricht. Wenn Sie den Compiler zwingen müssen, **time_t** als den alten 32-Bit- **time_t**zu interpretieren, können Sie **_USE_32BIT_TIME_T**definieren. Dies führt dazu, dass **gmtime_s** **_gmtime32_s**. Dies ist nicht zu empfehlen, weil Ihre Anwendung nach dem 18. Januar 2038 fehlschlagen kann. Die Verwendung dieses Makros ist auf 64-Bit-Plattformen nicht zulässig.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
+|Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|---------------------|-|
-|**gmtime_s**, **_gmtime32_s**, **_gmtime64_s**|\<time.h>|\<CTime-> \<oder Time. h >|
+|**gmtime_s**, **_gmtime32_s** **_gmtime64_s**|\<time.h>|\<CTime-> \<oder Time. h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -165,9 +170,9 @@ int main( void )
 Coordinated universal time is Fri Apr 25 20:12:33 2003
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime_s, _wasctime_s](asctime-s-wasctime-s.md)<br/>
 [ctime, _ctime32, _ctime64, _wctime, _wctime32, _wctime64](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)<br/>
 [_ftime, _ftime32, _ftime64](ftime-ftime32-ftime64.md)<br/>

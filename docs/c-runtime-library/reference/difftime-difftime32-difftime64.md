@@ -19,7 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -38,12 +38,12 @@ helpviewer_keywords:
 - _difftime64 function
 - difftime32 function
 ms.assetid: 4cc0ac2b-fc7b-42c0-8283-8c9d10c566d0
-ms.openlocfilehash: e2573f0bd5120796c0185c4dafe2699f8ceaae29
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e8d9ed3e33935c8e6c788380c02b9ae179dd06e8
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81348123"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82914776"
 ---
 # <a name="difftime-_difftime32-_difftime64"></a>difftime, _difftime32, _difftime64
 
@@ -59,27 +59,27 @@ double _difftime64( __time64_t timeEnd, __time64_t timeStart );
 
 ### <a name="parameters"></a>Parameter
 
-*timeEnd*<br/>
+*timeend*<br/>
 Uhrzeit Ende.
 
-*timeStart*<br/>
+*TimeStart sortierten*<br/>
 Uhrzeit Anfang.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**difftime** gibt die verstrichene Zeit in Sekunden zurück, von *timeStart* bis *timeEnd*. Der zurückgegebene Wert ist eine Gleitkommazahl mit doppelter Genauigkeit. Der zurückgegeben Wert ist möglicherweise 0, was auf einen Fehler hindeutet.
+**difftime** gibt die verstrichene Zeit in Sekunden zurück (von *TimeStart* bis *timeend*). Der zurückgegebene Wert ist eine Gleitkommazahl mit doppelter Genauigkeit. Der zurückgegeben Wert ist möglicherweise 0, was auf einen Fehler hindeutet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **difftime-Funktion** berechnet die Differenz zwischen den beiden angegebenen Zeitwerten *timeStart* und *timeEnd*.
+Die **difftime** -Funktion berechnet den Unterschied zwischen den beiden angegebenen Zeitwerten *TimeStart* und *timeend*.
 
-Der angegebene Zeitwert muss in den Bereich von **time_t**passen. **time_t** ist ein 64-Bit-Wert. Das Bereichsende wurde vom 18. Januar 2038, 23:59:59 UTC auf den 31. Dezember 3000, 23:59:59 verlegt. Der untere Bereich der **time_t** ist noch Mitternacht, 1. Januar 1970.
+Der angegebene Zeitwert muss in den Bereich der **time_t**passen. **time_t** ist ein 64-Bit-Wert. Das Bereichsende wurde vom 18. Januar 2038, 23:59:59 UTC auf den 31. Dezember 3000, 23:59:59 verlegt. Der untere Bereich der **time_t** ist nach wie vor Mitternacht, 1. Januar 1970.
 
-**difftime** ist eine Inline-Funktion, die entweder **_difftime32** oder **_difftime64** auswertet, je nachdem, ob **_USE_32BIT_TIME_T** definiert ist. _difftime32 und _difftime64 können direkt verwendet werden, um die Verwendung einer bestimmten Größe des time-Typs zu erzwingen.
+**difftime** ist eine Inline Funktion, die abhängig davon, ob **_USE_32BIT_TIME_T** definiert ist, entweder **_difftime32** oder **_difftime64** ergibt. _difftime32 und _difftime64 können direkt verwendet werden, um die Verwendung einer bestimmten Größe des time-Typs zu erzwingen.
 
-Diese Funktionen überprüfen ihre Parameter. Wenn einer der Parameter Null oder negativ ist, wird der Handler für ungültige Parameter aufgerufen, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen 0 zurück und setzen **errno** auf **EINVAL**.
+Diese Funktionen überprüfen ihre Parameter. Wenn einer der Parameter Null oder negativ ist, wird der Handler für ungültige Parameter aufgerufen, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen 0 zurück und legen **errno** auf **EINVAL**fest.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -147,7 +147,7 @@ Multiplying 2 floating point numbers 100 million times...
 Program takes      3 seconds.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [Zeitmanagement](../../c-runtime-library/time-management.md)<br/>

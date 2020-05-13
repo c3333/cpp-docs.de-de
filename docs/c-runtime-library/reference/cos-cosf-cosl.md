@@ -1,10 +1,11 @@
 ---
 title: cos, cosf, cosl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - cos
 - cosf
 - cosl
+- _o_cos
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +36,12 @@ helpviewer_keywords:
 - trigonometric functions
 - cosines, calculating
 ms.assetid: ae90435e-6b68-4a47-a81f-be87d5c08f16
-ms.openlocfilehash: 9ec612aa9f8c6eaf1731d62b654d45841cdfa159
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1aae123de5ef03af8bcaf8480a84327f88c457c5
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170254"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82917241"
 ---
 # <a name="cos-cosf-cosl"></a>cos, cosf, cosl
 
@@ -69,20 +71,22 @@ Der Kosinus von *x*. Wenn *x* größer oder gleich 263 oder kleiner oder gleich-
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± QNAN, IND|none|**_DOMAIN**|
+|± QNAN, IND|Keine|**_DOMAIN**|
 |± INF|**Ungültig**|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **cos** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **cos** immer einen **Double**-Wert an und gibt ihn zurück.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|---------------------|-|
 |**cos**, **cosh**, **cosf**|\<math.h>|\<cmath> oder \<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

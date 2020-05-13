@@ -74,12 +74,12 @@ helpviewer_keywords:
 - COleServerItem [MFC], OnShow
 - COleServerItem [MFC], m_sizeExtent
 ms.assetid: 80256df6-3888-4256-944b-787d4b2e6b0d
-ms.openlocfilehash: 5373075cf6dfc54e6e2368e46f48f317fcec64d9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bdb91168a7c0ae718ca7d7514448b55965186aa8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376118"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753744"
 ---
 # <a name="coleserveritem-class"></a>COleServerItem-Klasse
 
@@ -167,7 +167,7 @@ Weitere Informationen zu Servern und verwandten Themen finden Sie im Artikel [Se
 
 `COleServerItem`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxole.h
 
@@ -175,7 +175,7 @@ Weitere Informationen zu Servern und verwandten Themen finden Sie im Artikel [Se
 
 Rufen Sie diese Funktion auf, um die Präsentations- und Konvertierungsformate für das OLE-Element im angegebenen `COleDataSource` Objekt zu platzieren.
 
-```
+```cpp
 void AddOtherClipboardData(COleDataSource* pDataSource);
 ```
 
@@ -210,7 +210,7 @@ Flag, das angibt, ob das Objekt gelöscht werden kann, wenn ein Link zu ihm frei
 
 Rufen Sie diese Funktion auf, um das OLE-Element in die Zwischenablage zu kopieren.
 
-```
+```cpp
 void CopyToClipboard(BOOL bIncludeLink = FALSE);
 ```
 
@@ -275,7 +275,7 @@ Weitere Informationen dazu, wie Drag Delay-Informationen in der Registrierung od
 
 Rufen Sie diese Funktion auf, um das angegebene [COleDataSource-Objekt](../../mfc/reference/coledatasource-class.md) mit allen Daten auszufüllen, die in die Zwischenablage kopiert würden, wenn Sie [CopyToClipboard](#copytoclipboard) aufrufen (die gleichen Daten würden auch übertragen, wenn Sie [DoDragDrop](#dodragdrop)genannt haben).
 
-```
+```cpp
 void GetClipboardData(
     COleDataSource* pDataSource,
     BOOL bIncludeLink = FALSE,
@@ -339,7 +339,7 @@ Dadurch kann auf das Serverdokument, das Sie `COleServerItem` als Argument an de
 
 Rufen Sie diese Funktion auf, um die CF_EMBEDSOURCE Daten für ein OLE-Element abzurufen.
 
-```
+```cpp
 void GetEmbedSourceData(LPSTGMEDIUM lpStgMedium);
 ```
 
@@ -401,7 +401,7 @@ Weitere Informationen finden Sie unter [STGMEDIUM](/windows/win32/api/objidl/ns-
 
 Rufen Sie diese Funktion auf, um die CF_OBJECTDESCRIPTOR Daten für ein OLE-Element abzurufen.
 
-```
+```cpp
 void GetObjectDescriptorData(
     LPPOINT lpOffset,
     LPSIZE lpSize,
@@ -475,7 +475,7 @@ Die Standardimplementierung von [OnSetExtent](#onsetextent) legt diesen Member f
 
 Rufen Sie diese Funktion auf, nachdem das verknüpfte Element geändert wurde.
 
-```
+```cpp
 void NotifyChanged(DVASPECT nDrawAspect = DVASPECT_CONTENT);
 ```
 
@@ -903,7 +903,7 @@ Gibt den Aspekt des OLE-Elements an, dessen Grenzen angegeben werden. Dieser Par
 
 - DVASPECT_DOCPRINT-Element wird dargestellt, als ob es mit dem Befehl Drucken aus dem Menü Datei gedruckt würde.
 
-*Größe*<br/>
+*size*<br/>
 Eine [CSize-Struktur,](../../atl-mfc-shared/reference/csize-class.md) die die neue Größe des OLE-Elements angibt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -982,7 +982,7 @@ Die Standardimplementierung ruft [UpdateLink](../../mfc/reference/coleclientitem
 
 Rufen Sie diese Funktion auf, wenn Sie ein verknüpftes Element erstellen, um dessen Namen festzulegen.
 
-```
+```cpp
 void SetItemName(LPCTSTR lpszItemName);
 ```
 
@@ -995,7 +995,7 @@ Zeigen Sie auf den neuen Namen des Elements.
 
 Der Name muss innerhalb des Dokuments eindeutig sein. Wenn eine Serveranwendung aufgerufen wird, um ein verknüpftes Element zu bearbeiten, verwendet die Anwendung diesen Namen, um das Element zu finden. Sie müssen diese Funktion für eingebettete Elemente nicht aufrufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [CDocItem-Klasse](../../mfc/reference/cdocitem-class.md)<br/>

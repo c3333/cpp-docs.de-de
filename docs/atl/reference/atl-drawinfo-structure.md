@@ -1,5 +1,5 @@
 ---
-title: ATL_DRAWINFO-Struktur
+title: ATL_DRAWINFO Struktur
 ms.date: 11/04/2016
 f1_keywords:
 - ATL::ATL_DRAWINFO
@@ -8,20 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - ATL_DRAWINFO structure
 ms.assetid: dd2e2aa8-e8c5-403b-b4df-35c0f6f57fb7
-ms.openlocfilehash: 728a7eed418a6600c9247b91ff7b777dd458e621
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 00d93b3dd8b060a21b6ff4083bb9880d8d836a19
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69498010"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168617"
 ---
-# <a name="atl_drawinfo-structure"></a>ATL_DRAWINFO-Struktur
+# <a name="atl_drawinfo-structure"></a>ATL_DRAWINFO Struktur
 
 Enthält Informationen, die zum Rendern verschiedener Ziele verwendet werden, z. b. Drucker, Metadateien oder ActiveX-Steuerelemente.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 struct ATL_DRAWINFO {
     UINT cbSize;
     DWORD dwDrawAspect;
@@ -54,16 +54,16 @@ Der Teil des Ziels, der für den Zeichnungs Vorgang von Interesse ist. Die Inter
 Ein Zeiger auf eine [DVTARGETDEVICE](/windows/win32/api/objidl/ns-objidl-dvtargetdevice) -Struktur, die das Zeichnen von Optimierungen abhängig vom angegebenen Aspekt ermöglicht. Beachten Sie, dass neuere Objekte und Container, die optimierte Zeichnungs Schnittstellen unterstützen, diesen Member ebenfalls unterstützen. Ältere Objekte und Container, die keine optimierten Zeichnungs Schnittstellen unterstützen, geben für diesen Member immer NULL an.
 
 `hicTargetDev`<br/>
-Informations Kontext für das Zielgerät, auf das `ptd` von verwiesen wird, von dem das-Objekt gerätemetriken extrahieren und die Funktionen des Geräts testen kann. Wenn `ptd` NULL ist, sollte das Objekt den Wert `hicTargetDev` im Member ignorieren.
+Informations Kontext für das Zielgerät, auf das `ptd` von verwiesen wird, von dem das-Objekt gerätemetriken extrahieren und die Funktionen des Geräts testen kann. Wenn `ptd` NULL ist, sollte das Objekt den Wert im `hicTargetDev` Member ignorieren.
 
 `hdcDraw`<br/>
-Der Gerätekontext, auf dem gezeichnet werden soll. Bei einem fensterlosen Objekt befindet sich der `hdcDraw` Member `MM_TEXT` im Zuordnungs Modus, dessen logische Koordinaten mit den Client Koordinaten des enthaltenden Fensters übereinstimmen. Außerdem sollte sich der Gerätekontext in demselben Zustand befinden, der normalerweise von einer `WM_PAINT` Nachricht übermittelt wird.
+Der Gerätekontext, auf dem gezeichnet werden soll. Bei einem fensterlosen Objekt befindet sich der `hdcDraw` Member im `MM_TEXT` Zuordnungs Modus, dessen logische Koordinaten mit den Client Koordinaten des enthaltenden Fensters übereinstimmen. Außerdem sollte sich der Gerätekontext in demselben Zustand befinden, der normalerweise von einer `WM_PAINT` Nachricht übermittelt wird.
 
 `prcBounds`<br/>
-Ein Zeiger auf eine [RECTL](/previous-versions//dd162907\(v=vs.85\)) `hdcDraw` -Struktur, die das Rechteck in angibt, und in dem das Objekt gezeichnet werden soll. Dieser Member steuert die Positionierung und Streckung des Objekts. Dieser Member sollte NULL sein, um ein fensterloses direktes aktives Objekt zu zeichnen. In jeder anderen Situation ist NULL kein gültiger Wert und sollte zu einem `E_INVALIDARG` Fehlercode führen. Wenn der Container einen nicht-NULL-Wert an ein fensterloses Objekt übergibt, sollte das Objekt den angeforderten Aspekt in den angegebenen Gerätekontext und das angegebene Rechteck Rendering. Ein Container kann dies von einem fensterlosen Objekt anfordern, um eine zweite, nicht aktive Ansicht des Objekts zu erzeugen oder das Objekt zu drucken.
+Ein Zeiger auf eine [RECTL](/windows/win32/api/windef/ns-windef-rectl) `hdcDraw` -Struktur, die das Rechteck in angibt, und in dem das Objekt gezeichnet werden soll. Dieser Member steuert die Positionierung und Streckung des Objekts. Dieser Member sollte NULL sein, um ein fensterloses direktes aktives Objekt zu zeichnen. In jeder anderen Situation ist NULL kein gültiger Wert und sollte zu einem `E_INVALIDARG` Fehlercode führen. Wenn der Container einen nicht-NULL-Wert an ein fensterloses Objekt übergibt, sollte das Objekt den angeforderten Aspekt in den angegebenen Gerätekontext und das angegebene Rechteck Rendering. Ein Container kann dies von einem fensterlosen Objekt anfordern, um eine zweite, nicht aktive Ansicht des Objekts zu erzeugen oder das Objekt zu drucken.
 
 `prcWBounds`<br/>
-Wenn `hdcDraw` ein Metadatei-Gerätekontext ist (siehe [GetDeviceCaps](/windows/win32/api/wingdi/nf-wingdi-getdevicecaps) in der Windows SDK), ist dies ein Zeiger auf `RECTL` eine-Struktur, die das umschließende Rechteck in der zugrunde liegenden Metadatei angibt. Die Rechteck Struktur enthält den Fensterblock und den Fenster Ursprung. Diese Werte sind für das Zeichnen von Metadateien nützlich. Das durch `prcBounds` gekennzeichnete Rechteck ist innerhalb dieses `prcWBounds` Rechtecks geschachtelt; Sie befinden sich im selben Koordinaten Bereich.
+Wenn `hdcDraw` ein Metadatei-Gerätekontext ist (siehe [GetDeviceCaps](/windows/win32/api/wingdi/nf-wingdi-getdevicecaps) in der Windows SDK), ist dies ein Zeiger auf `RECTL` eine-Struktur, die das umschließende Rechteck in der zugrunde liegenden Metadatei angibt. Die Rechteck Struktur enthält den Fensterblock und den Fenster Ursprung. Diese Werte sind für das Zeichnen von Metadateien nützlich. Das durch `prcBounds` gekennzeichnete Rechteck ist innerhalb dieses `prcWBounds` Rechtecks geschachtelt. Sie befinden sich im selben Koordinaten Bereich.
 
 `bOptimize`<br/>
 Ein Wert ungleich 0 (null), wenn das Zeichnen des Steuer Elements optimiert werden soll, andernfalls 0. Wenn die Zeichnung optimiert ist, wird der Zustand des Geräte Kontexts automatisch wieder hergestellt, wenn Sie das Rendering abgeschlossen haben.
@@ -80,7 +80,7 @@ Die Breite und Höhe des Rechtecks, in das das Objekt gerendert wird. Der Zoomfa
 `ZoomDen`<br/>
 Die tatsächliche Breite und Höhe des Ziels.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die typische Verwendung dieser Struktur wäre das Abrufen von Informationen während des Renderings des Zielobjekts. Beispielsweise können Sie Werte aus ATL_DRAWINFO in der Überladung von [CComControlBase:: OnDrawAdvanced](ccomcontrolbase-class.md#ondrawadvanced)abrufen.
 
@@ -88,10 +88,10 @@ Diese Struktur speichert relevante Informationen, die verwendet werden, um die D
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlctl.h
+**Header:** atlctl. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Klassen und Strukturen](../../atl/reference/atl-classes.md)<br/>
 [IViewObject::D RAW](/windows/win32/api/oleidl/nf-oleidl-iviewobject-draw)<br/>
-[CComControlBase::OnDrawAdvanced](../../atl/reference/ccomcontrolbase-class.md#ondrawadvanced)
+[CComControlBase:: OnDrawAdvanced](../../atl/reference/ccomcontrolbase-class.md#ondrawadvanced)

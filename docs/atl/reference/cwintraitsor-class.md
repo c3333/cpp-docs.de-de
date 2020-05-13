@@ -10,19 +10,19 @@ helpviewer_keywords:
 - CWinTraitsOR class
 - window styles, default values for ATL
 ms.assetid: 1eb7b1e8-a9bd-411b-a30a-35a8a10af989
-ms.openlocfilehash: ec628fcde40d3cc4601d6b6ddf49fa5599ac5a86
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 825f79190c6f68cd1372154e4e02f430f545aa48
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62276730"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330286"
 ---
 # <a name="cwintraitsor-class"></a>CWinTraitsOR-Klasse
 
-Diese Klasse stellt eine Methode für die Standardisierung der Stile, die beim Erstellen eines Objekts im Fenster verwendet.
+Diese Klasse stellt eine Methode zum Standardisieren der Stile bereit, die beim Erstellen eines Fensterobjekts verwendet werden.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,35 +36,35 @@ class CWinTraitsOR
 #### <a name="parameters"></a>Parameter
 
 *t_dwStyle*<br/>
-Standard-Window-Stile.
+Standardfensterstile.
 
 *t_dwExStyle*<br/>
-Erweiterte Fensterstile wird standardmäßig.
+Standardmäßige erweiterte Fensterstile.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CWinTraitsOR::GetWndExStyle](#getwndexstyle)|Ruft die erweiterten Stile für die `CWinTraitsOR` Objekt.|
-|[CWinTraitsOR::GetWndStyle](#getwndstyle)|Ruft die standard-Formate für die `CWinTraitsOR` Objekt.|
+|[CWinTraitsOR::GetWndExStyle](#getwndexstyle)|Ruft die erweiterten Stile `CWinTraitsOR` für das Objekt ab.|
+|[CWinTraitsOR::GetWndStyle](#getwndstyle)|Ruft die Standardstile `CWinTraitsOR` für das Objekt ab.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dies [Fenstermerkmale](../../atl/understanding-window-traits.md) Klasse bietet eine einfache Methode für die Standardisierung der Stile, die für die Erstellung eines ATL-Fenster-Objekts verwendet. Verwenden Sie eine Spezialisierung dieser Klasse als Vorlagenparameter zu [CWindowImpl](../../atl/reference/cwindowimpl-class.md) oder einer anderen ATLs-Fensterklassen an der minimale Satz von Standard- und erweiterte Formate für zu verwendende Instanzen dieser Fensterklasse.
+Diese [Fenstertraitsklasse](../../atl/understanding-window-traits.md) bietet eine einfache Methode zum Standardisieren der Stile, die für die Erstellung eines ATL-Fensterobjekts verwendet werden. Verwenden Sie eine Spezialisierung dieser Klasse als Vorlagenparameter für [CWindowImpl](../../atl/reference/cwindowimpl-class.md) oder eine andere von ATL-Fensterklassen, um den Minimalsatz von Standard- und erweiterten Stilen anzugeben, die für Instanzen dieser Fensterklasse verwendet werden sollen.
 
-Eine Spezialisierung der diese Vorlage verwenden, sollten Sie sicherstellen, dass bestimmte Formate für alle Instanzen der Fensterklasse festgelegt sind, während andere Stile zulassen auf einer Basis pro Instanz im Aufruf von festgelegt werden [CWindowImpl:: Create](../../atl/reference/cwindowimpl-class.md#create).
+Verwenden Sie eine Spezialisierung dieser Vorlage, wenn Sie sicherstellen möchten, dass bestimmte Formatvorlagen für alle Instanzen der Fensterklasse festgelegt werden, während andere Stile auf Instanzbasis beim Aufruf von [CWindowImpl::Create](../../atl/reference/cwindowimpl-class.md#create)festgelegt werden können.
 
-Wenn Standardwert Window-Stile anzugeben, die verwendet werden, wenn keine anderen Arten im Aufruf angegeben werden sollen `CWindowImpl::Create`, verwenden Sie [CWinTraits](../../atl/reference/cwintraits-class.md) stattdessen.
+Wenn Sie Standardfensterstile bereitstellen möchten, die nur verwendet werden, wenn `CWindowImpl::Create`im Aufruf von keine anderen Formatvorlagen angegeben sind, verwenden Sie stattdessen [CWinTraits.](../../atl/reference/cwintraits-class.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlwin.h vorhanden
+**Kopfzeile:** atlwin.h
 
-##  <a name="getwndstyle"></a>  CWinTraitsOR::GetWndStyle
+## <a name="cwintraitsorgetwndstyle"></a><a name="getwndstyle"></a>CWinTraitsOR::GetWndStyle
 
-Mit dieser Funktion können Sie eine Kombination aus (mit logischen OR-Operators) die standard-Formate von Abrufen der `CWinTraits` Objekt und die Standardformatvorlagen, anhand des *T_dwStyle*.
+Rufen Sie diese Funktion auf, um eine Kombination (mit `CWinTraits` dem logischen ODER-Operator) der Standardstile des Objekts und der von *t_dwStyle*angegebenen Standardstile abzurufen.
 
 ```
 static DWORD GetWndStyle(DWORD dwStyle);
@@ -73,15 +73,15 @@ static DWORD GetWndStyle(DWORD dwStyle);
 ### <a name="parameters"></a>Parameter
 
 *dwStyle*<br/>
-Formatvorlagen, die für die Erstellung eines Fensters verwendet werden.
+Stile, die zum Erstellen eines Fensters verwendet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Kombination der Formate, die übergeben werden *DwStyle* und die Anwendungen gemäß `t_dwStyle`, mit dem logischen OR-Operator.
+Eine Kombination von Stilen, die in *dwStyle* `t_dwStyle`übergeben werden, und den standarddefinierten Stilen, die von angegeben werden, mit dem logischen OR-Operator.
 
-##  <a name="getwndexstyle"></a>  CWinTraitsOR::GetWndExStyle
+## <a name="cwintraitsorgetwndexstyle"></a><a name="getwndexstyle"></a>CWinTraitsOR::GetWndExStyle
 
-Mit dieser Funktion können Sie eine Kombination aus (mit logischen OR-Operators) die erweiterten Stile von Abrufen der `CWinTraits` Objekt und die Standardformatvorlagen, anhand des `t_dwStyle`.
+Rufen Sie diese Funktion auf, um eine Kombination (mit `CWinTraits` dem logischen ODER-Operator) der erweiterten Stile des Objekts und der von `t_dwStyle`angegebenen Standardstile abzurufen.
 
 ```
 static DWORD GetWndExStyle(DWORD dwExStyle);
@@ -90,13 +90,13 @@ static DWORD GetWndExStyle(DWORD dwExStyle);
 ### <a name="parameters"></a>Parameter
 
 *dwExStyle*<br/>
-Erweiterte Stile, die für die Erstellung eines Fensters verwendet werden.
+Erweiterte Stile, die zum Erstellen eines Fensters verwendet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Kombination von erweiterten Stile, die übergeben werden *DwExStyle* und standardmäßig vom angegebenen `t_dwExStyle`, mit dem logischen OR-Operator
+Eine Kombination aus erweiterten Stilen, die in *dwExStyle* übergeben werden, und Standardstilen, die von `t_dwExStyle`angegeben werden, mit dem logischen OR-Operator
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)<br/>
-[Einführung in Fenstermerkmale](../../atl/understanding-window-traits.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
+[Verstehen von Fenstereigenschaften](../../atl/understanding-window-traits.md)

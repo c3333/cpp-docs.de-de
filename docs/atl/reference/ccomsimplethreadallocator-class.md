@@ -11,16 +11,16 @@ helpviewer_keywords:
 - CComSimpleThreadAllocator class
 - ATL threads, allocating
 ms.assetid: 66b2166a-8c50-49fd-b8e4-7f293470327d
-ms.openlocfilehash: ef1f86ca832674ba5710083b08b67f0a775a7a33
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4a3cce492db4db9f46aeb4efe738ee6a594ddcfc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62246152"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81327344"
 ---
 # <a name="ccomsimplethreadallocator-class"></a>CComSimpleThreadAllocator-Klasse
 
-Diese Klasse verwaltet die threadauswahl für die Klasse `CComAutoThreadModule`.
+Diese Klasse verwaltet die `CComAutoThreadModule`Threadauswahl für die Klasse .
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,21 +32,21 @@ class CComSimpleThreadAllocator
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComSimpleThreadAllocator::GetThread](#getthread)|Wählt einen Thread.|
+|[CComSimpleThreadAllocator::GetThread](#getthread)|Wählt einen Thread aus.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CComSimpleThreadAllocator` verwaltet die threadauswahl für [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md). `CComSimpleThreadAllocator::GetThread` einfach durch jeden Thread und gibt das nächste in der Sequenz zurück.
+`CComSimpleThreadAllocator`verwaltet die Threadauswahl für [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md). `CComSimpleThreadAllocator::GetThread`durchläuft einfach jeden Thread und gibt den nächsten in der Sequenz zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Kopfzeile:** atlbase.h
 
-##  <a name="getthread"></a>  CComSimpleThreadAllocator::GetThread
+## <a name="ccomsimplethreadallocatorgetthread"></a><a name="getthread"></a>CComSimpleThreadAllocator::GetThread
 
-Wählt einen Thread durch Angabe des nächsten Threads in der Sequenz.
+Wählt einen Thread aus, indem der nächste Thread in der Sequenz angegeben wird.
 
 ```
 int GetThread(CComApartment* /* pApt */, int nThreads);
@@ -55,22 +55,22 @@ int GetThread(CComApartment* /* pApt */, int nThreads);
 ### <a name="parameters"></a>Parameter
 
 *pApt*<br/>
-In der Standardimplementierung des ATL verwendet nicht.
+Wird in der Standardimplementierung von ATL nicht verwendet.
 
 *nThreads*<br/>
-Die maximale Anzahl von Threads in der EXE-Modul.
+Die maximale Anzahl von Threads im EXE-Modul.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine ganze Zahl zwischen 0 (null) und (*nThreads* - 1). Identifiziert einen der Threads in der EXE-Modul.
+Eine ganze Zahl zwischen Null und (*nThreads* - 1). Identifiziert einen der Threads im EXE-Modul.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können außer Kraft setzen `GetThread` Geben Sie eine andere Methode der Auswahl oder vornehmen möchten verwenden die *pApt* Parameter.
+Sie können `GetThread` überschreiben, um eine andere Auswahlmethode bereitzustellen oder den *Parameter pApt* zu verwenden.
 
-`GetThread` wird aufgerufen, indem [CComAutoThreadModule::CreateInstance](../../atl/reference/ccomautothreadmodule-class.md#createinstance).
+`GetThread`wird von [CComAutoThreadModule::CreateInstance](../../atl/reference/ccomautothreadmodule-class.md#createinstance)aufgerufen.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComApartment-Klasse](../../atl/reference/ccomapartment-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

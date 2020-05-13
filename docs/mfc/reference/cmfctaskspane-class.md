@@ -194,12 +194,12 @@ helpviewer_keywords:
 - CMFCTasksPane [MFC], Update
 - CMFCTasksPane [MFC], OnActivateTasksPanePage
 ms.assetid: b456328e-2525-4642-b78b-9edd1a1a7d3f
-ms.openlocfilehash: d5c412b55d9037215f77b165dacb7cfc1a16ef17
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fbcdd6a99375272f440282e76290401ff658d52e
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375882"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753417"
 ---
 # <a name="cmfctaskspane-class"></a>CMFCTasksPane-Klasse
 
@@ -372,7 +372,7 @@ Das folgende Beispiel veranschaulicht das Erstellen eines `CMFCTasksPane`-Objekt
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDockablePane](../../mfc/reference/cdockablepane-class.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;`CMFCTasksPane`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxTasksPane.h
 
@@ -591,7 +591,7 @@ CMFCTasksPane();
 
 ## <a name="cmfctaskspanecollapseallgroups"></a><a name="collapseallgroups"></a>CMFCTasksPane::CollapseAllGroups
 
-```
+```cpp
 void CollapseAllGroups(BOOL bCollapse = TRUE);
 
 void CollapseAllGroups(
@@ -675,7 +675,7 @@ Das von dieser Methode erstellte Popupmenü enthält die Liste der Seiten im Auf
 
 Aktiviert oder deaktiviert die Animation, die auftritt, wenn eine Aufgabengruppe erweitert oder reduziert wird.
 
-```
+```cpp
 void EnableAnimation(BOOL bEnable = TRUE);
 ```
 
@@ -692,7 +692,7 @@ Standardmäßig ist die Animation aktiviert, die auftritt, wenn eine Aufgabengru
 
 Gibt an, ob ein Benutzer Aufgabengruppen reduzieren kann.
 
-```
+```cpp
 void EnableGroupCollapse(BOOL bEnable);
 ```
 
@@ -709,7 +709,7 @@ Eine task-Gruppe, die reduziert wird, zeigt nur die Gruppenbeschriftung an. die 
 
 Aktiviert Dropdown-Menüs auf den Navigationsschaltflächen **Weiter** und **Vorherige.**
 
-```
+```cpp
 void EnableHistoryMenuButtons(BOOL bEnable = TRUE);
 ```
 
@@ -728,7 +728,7 @@ Die Menüs enthalten den Verlauf der Aufgabenseiten, die der Benutzer verwendet 
 
 Aktiviert oder deaktiviert die Navigationssymbolleiste.
 
-```
+```cpp
 void EnableNavigationToolbar(
     BOOL bEnable = TRUE,
     UINT uiToolbarBmpRes = 0,
@@ -760,7 +760,7 @@ Standardmäßig zeigt das Framework die Navigationssymbolleiste nicht an. Wenn d
 
 ## <a name="cmfctaskspaneenableoffsetcustomcontrols"></a><a name="enableoffsetcustomcontrols"></a>CMFCTasksPane::EnableOffsetCustomControls
 
-```
+```cpp
 void EnableOffsetCustomControls(BOOL bEnable);
 ```
 
@@ -774,7 +774,7 @@ void EnableOffsetCustomControls(BOOL bEnable);
 
 Aktiviert Bildlaufschaltflächen anstelle einer Bildlaufleiste.
 
-```
+```cpp
 void EnableScrollButtons(BOOL bEnable = TRUE);
 ```
 
@@ -791,7 +791,7 @@ Standardmäßig zeigt das Framework Bildlaufschaltflächen im Aufgabenbereich an
 
 Aktiviert oder deaktiviert den Wortumbruch für den Text in Beschriftungen.
 
-```
+```cpp
 void EnableWrapLabels(BOOL bEnable = TRUE);
 ```
 
@@ -808,7 +808,7 @@ Standardmäßig wird der Text vom Framework nicht in Beschriftungen umbrochen. W
 
 Aktiviert oder deaktiviert den Wortumbruch für den Text in Aufgaben.
 
-```
+```cpp
 void EnableWrapTasks(BOOL bEnable = TRUE);
 ```
 
@@ -937,7 +937,7 @@ Der Standardabstand zwischen einem Aufgabenbereich und dem Rand des Clientbereic
 
 ## <a name="cmfctaskspanegetnextpages"></a><a name="getnextpages"></a>CMFCTasksPane::GetNextPages
 
-```
+```cpp
 void GetNextPages(CStringList& lstNextPages) const;
 ```
 
@@ -983,7 +983,7 @@ Die Anzahl der Seiten im Aufgabenbereich.
 
 ## <a name="cmfctaskspanegetpreviouspages"></a><a name="getpreviouspages"></a>CMFCTasksPane::GetPreviousPages
 
-```
+```cpp
 void GetPreviousPages(CStringList& lstPrevPages) const;
 ```
 
@@ -1468,7 +1468,7 @@ virtual BOOL PreTranslateMessage(MSG* pMsg);
 
 ## <a name="cmfctaskspanerecalclayout"></a><a name="recalclayout"></a>CMFCTasksPane::RecalcLayout
 
-```
+```cpp
 void RecalcLayout(BOOL bRedraw = TRUE);
 ```
 
@@ -1482,7 +1482,7 @@ void RecalcLayout(BOOL bRedraw = TRUE);
 
 Entfernt alle Gruppen auf der angegebenen Seite.
 
-```
+```cpp
 void RemoveAllGroups(int nPageIdx = 0);
 ```
 
@@ -1499,7 +1499,7 @@ Entfernt alle Gruppen auf der von *nPageIdx*angegebenen Seite oder alle Gruppen,
 
 Entfernt alle Seiten aus dem Aufgabenbereich mit Ausnahme der Standardseite (erste).
 
-```
+```cpp
 void RemoveAllPages();
 ```
 
@@ -1507,7 +1507,7 @@ void RemoveAllPages();
 
 Entfernt alle Aufgaben aus der angegebenen Gruppe.
 
-```
+```cpp
 void RemoveAllTasks(int nGroup);
 ```
 
@@ -1520,7 +1520,7 @@ void RemoveAllTasks(int nGroup);
 
 Entfernt eine Gruppe.
 
-```
+```cpp
 void RemoveGroup(int nGroup);
 ```
 
@@ -1539,7 +1539,7 @@ Wenn das Framework eine Gruppe entfernt, werden alle damit verbundenen Aufgaben 
 
 Entfernt eine angegebene Seite aus dem Aufgabenbereich.
 
-```
+```cpp
 void RemovePage(int nPageIdx);
 ```
 
@@ -1609,7 +1609,7 @@ virtual void Serialize(CArchive& ar);
 
 Aktiviert die angegebene Seite im Aufgabenbereich.
 
-```
+```cpp
 void SetActivePage(int nPageIdx);
 ```
 
@@ -1626,7 +1626,7 @@ Diese Methode bestätigt, ob *nPageIdx* ungültig ist.
 
 Legt den Beschriftungsnamen eines Aufgabenbereichs fest.
 
-```
+```cpp
 void SetCaption(LPCTSTR lpszName);
 ```
 
@@ -1643,7 +1643,7 @@ Wenn ein Aufgabenbereich über mehrere Seiten verfügt, verfügt die Standardsei
 
 Legt die Höhe einer Gruppenbeschriftung fest.
 
-```
+```cpp
 void SetGroupCaptionHeight(int n = -1);
 ```
 
@@ -1662,7 +1662,7 @@ Wenn *n* -1 ist, bestimmt das Framework den `CMFCVisualManager::GetTasksPaneGrou
 
 Legt den horizontalen Offset einer Gruppenbeschriftung fest.
 
-```
+```cpp
 void SetGroupCaptionHorzOffset(int n = -1);
 ```
 
@@ -1675,7 +1675,7 @@ void SetGroupCaptionHorzOffset(int n = -1);
 
 Legt den vertikalen Offset einer Gruppenbeschriftung fest.
 
-```
+```cpp
 void SetGroupCaptionVertOffset(int n = -1);
 ```
 
@@ -1736,7 +1736,7 @@ TRUE, wenn die Gruppentextfarbe erfolgreich geändert wurde; andernfalls FALSE.
 
 Legt den vertikalen Offset für eine Gruppe fest.
 
-```
+```cpp
 void SetGroupVertOffset(int n = -1);
 ```
 
@@ -1755,7 +1755,7 @@ Rufen Sie diese Methode auf, um die Ränder von Aufgabenbereichselementen anzupa
 
 Legt den horizontalen Rand fest.
 
-```
+```cpp
 void SetHorzMargin(int n = -1);
 ```
 
@@ -1807,7 +1807,7 @@ Diese Methode ordnet dem Aufgabenbereichssteuerelement eine Bildliste zu. Um das
 
 Legt den Beschriftungstext für eine Aufgabenbereichsseite fest.
 
-```
+```cpp
 void SetPageCaption(
     int nPageIdx,
     LPCTSTR lpszName);
@@ -1855,7 +1855,7 @@ TRUE, wenn der Aufgabenname erfolgreich festgelegt wurde; andernfalls FALSE.
 
 Legt den horizontalen Versatz für Aufgaben fest.
 
-```
+```cpp
 void SetTasksHorzOffset(int n = -1);
 ```
 
@@ -1874,7 +1874,7 @@ Der standardmäßige horizontale Offset beträgt 12 Pixel.
 
 ## <a name="cmfctaskspanesettasksiconhorzoffset"></a><a name="settasksiconhorzoffset"></a>CMFCTasksPane::SetTasksIconHorzOffset
 
-```
+```cpp
 void SetTasksIconHorzOffset(int n = -1);
 ```
 
@@ -1886,7 +1886,7 @@ void SetTasksIconHorzOffset(int n = -1);
 
 ## <a name="cmfctaskspanesettasksiconvertoffset"></a><a name="settasksiconvertoffset"></a>CMFCTasksPane::SetTasksIconVertOffset
 
-```
+```cpp
 void SetTasksIconVertOffset(int n = -1);
 ```
 
@@ -1930,7 +1930,7 @@ TRUE, wenn die Textfarbe für die Aufgabe erfolgreich festgelegt wurde; andernfa
 
 Legt den vertikalen Rand fest.
 
-```
+```cpp
 void SetVertMargin(int n = -1);
 ```
 
@@ -2069,7 +2069,7 @@ Diese Methode aktualisiert die Aufgabenbereichsbeschriftung, passt die Bildlaufl
 
 Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um benutzerdefinierten Code auszuführen, wenn das Framework den Aufgabenbereich aktualisiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

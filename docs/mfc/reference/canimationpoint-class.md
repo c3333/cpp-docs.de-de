@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CAnimationPoint [MFC], m_xValue
 - CAnimationPoint [MFC], m_yValue
 ms.assetid: 5dc4d46f-e695-4681-b15c-544b78b3e317
-ms.openlocfilehash: 19f02010b6b73573a4800152e40c592fd1736ad5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fcdd07efb46c97d27a9f1349c297688b5705f176
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369731"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81755144"
 ---
 # <a name="canimationpoint-class"></a>CAnimationPoint-Klasse
 
@@ -94,7 +94,7 @@ Die CAnimationPoint-Klasse kapselt zwei CAnimationVariable-Objekte und kann in A
 
 `CAnimationPoint`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -102,7 +102,7 @@ Die CAnimationPoint-Klasse kapselt zwei CAnimationVariable-Objekte und kann in A
 
 Fügt Übergänge für X- und Y-Koordinaten hinzu.
 
-```
+```cpp
 void AddTransition(
     CBaseTransition* pXTransition,
     CBaseTransition* pYTransition);
@@ -270,7 +270,7 @@ Diese Funktion ruft getValue intern auf. Wenn GetValue aus irgendeinem Grund feh
 
 Weist cAnimationPoint ptSrc zu.
 
-```
+```cpp
 void operator=(const CPoint& ptSrc);
 ```
 
@@ -287,7 +287,7 @@ Weist cAnimationPoint ptSrc zu. Es wird empfohlen, dies vor dem Starten der Anim
 
 Legt den Standardwert fest.
 
-```
+```cpp
 void SetDefaultValue(const POINT& ptDefault);
 ```
 
@@ -300,6 +300,6 @@ Gibt den Standardpunktwert an.
 
 Verwenden Sie diese Funktion, um einen Standardwert für animationsobjekt festzulegen. Diese Methode weist X- und Y-Koordinaten des Animationspunkts Standardwerte zu. Außerdem werden zugrunde liegende COM-Objekte neu erstellt, wenn sie erstellt wurden. Wenn Sie dieses Animationsobjekt für Ereignisse (ValueChanged oder IntegerValueChanged) abonniert haben, müssen Sie diese Ereignisse erneut aktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

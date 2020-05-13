@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +26,12 @@ f1_keywords:
 helpviewer_keywords:
 - btowc function
 ms.assetid: 99a46e02-6f86-4569-af79-5feca012add8
-ms.openlocfilehash: b4262f31c95b5272e3917f58a6c945577d401f16
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cbeff70674a257217c66d39475a2c809c9bd9559
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81333764"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913363"
 ---
 # <a name="btowc"></a>btowc
 
@@ -47,16 +47,16 @@ wint_t btowc(
 
 ### <a name="parameters"></a>Parameter
 
-*Charakter*<br/>
+*Art*<br/>
 Zu testende ganze Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt die Breitzeichendarstellung des Zeichens zurück, wenn die ganze Zahl ein gültiges Einzelbytezeichen im ersten Umschaltzustand darstellt. Gibt WEOF zurück, wenn die ganze Zahl ein EOF oder kein gültiges Einzelbytezeichen im ersten Umschaltzustand ist. Die Ausgabe dieser Funktion wird durch das aktuelle **LC_TYPE** Gebietsschema beeinflusst.
+Gibt die Breitzeichendarstellung des Zeichens zurück, wenn die ganze Zahl ein gültiges Einzelbytezeichen im ersten Umschaltzustand darstellt. Gibt WEOF zurück, wenn die ganze Zahl ein EOF oder kein gültiges Einzelbytezeichen im ersten Umschaltzustand ist. Die Ausgabe dieser Funktion ist vom aktuellen **LC_TYPE** Gebiets Schema betroffen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -66,6 +66,6 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [mbtowc, _mbtowc_l](mbtowc-mbtowc-l.md)<br/>

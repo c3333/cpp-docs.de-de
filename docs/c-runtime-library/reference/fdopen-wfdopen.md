@@ -1,9 +1,11 @@
 ---
 title: _fdopen, _wfdopen
-ms.date: 12/12/2017
+ms.date: 4/2/2020
 api_name:
 - _fdopen
 - _wfdopen
+- _o__fdopen
+- _o__wfdopen
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _tfdopen function
 - streams, associating with files
 ms.assetid: 262757ff-1e09-4472-a5b6-4325fc28f971
-ms.openlocfilehash: 5202c84cd1a9038faf68587f9207d376ed8c0af1
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 227f9e31c689b0259c429e2ffd9fce074903bd71
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941262"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920178"
 ---
 # <a name="_fdopen-_wfdopen"></a>_fdopen, _wfdopen
 
@@ -62,7 +65,7 @@ FILE *_wfdopen(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor der geöffneten Datei.
 
 *mode*<br/>
@@ -76,9 +79,11 @@ Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doser
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_fdopen** -Funktion ordnet einen e/a-Datenstrom mit der von *FD*identifizierten Datei zu und ermöglicht so, dass eine Datei, die für e/a auf niedriger Ebene geöffnet ist, gepuffert und formatiert wird. **_wfdopen** ist eine breit Zeichen Version von **_fdopen**. Das *Mode* -Argument für **_wfdopen** ist eine Zeichenfolge mit breit Zeichen. **_wfdopen** und **_fdopen** Verhalten sich andernfalls identisch.
+Die **_fdopen** -Funktion ordnet einen e/a-Datenstrom mit der von *FD*identifizierten Datei zu und ermöglicht so, dass eine Datei, die für e/a auf niedriger Ebene geöffnet ist, gepuffert und formatiert wird. **_wfdopen** ist eine breit Zeichen Version von **_fdopen**. Das *Mode* -Argument für **_wfdopen** ist eine Zeichenfolge mit breit Zeichen. **_wfdopen** und **_fdopen** andernfalls identisch.
 
-An **_fdopen** übertrage Dateideskriptoren sind im Besitz des zurückgegebenen **Datei Daten &#42;** Stroms. Wenn **_fdopen** erfolgreich ist, sollten Sie nicht [ \_close](close.md) für den Dateideskriptor aufzurufen. Wenn Sie [fclose](fclose-fcloseall.md) für die zurückgegebene **Datei &#42;** aufrufen, wird auch der Dateideskriptor geschlossen.
+Dateideskriptoren, die an **_fdopen** übermittelt werden, befinden sich im Besitz der zurückgegebenen **Datei #b0** Streams. Wenn **_fdopen** erfolgreich ist, sollten Sie nicht [ \_close](close.md) für den Dateideskriptor aufzurufen. Der Aufruf von [fclose](fclose-fcloseall.md) in der zurückgegebenen **Datei #b0** auch den Dateideskriptor schließt.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -90,42 +95,42 @@ Die Zeichenfolge im *Modus* gibt den Typ des Datei Zugriffs an, der für die Dat
 
 | *mode* | Zugriff |
 |--------|--------|
-| **"r"** | Öffnet zum Lesen. Wenn die Datei nicht vorhanden ist oder nicht gefunden werden kann, schlägt der **fopen** -Befehl fehl. |
-| **"w"** | Öffnet eine leere Datei zum Schreiben. Wenn die angegebene Datei vorhanden ist, wird ihr Inhalt zerstört. |
-| **„a“** | Öffnet zum Schreiben am Ende der Datei (Anhängen). Erstellt die Datei, wenn sie nicht vorhanden ist. |
-| **„r+“** | Öffnet sowohl zum Lesen als auch zum Schreiben. Die Datei muss vorhanden sein. |
-| **„w+“** | Öffnet eine leere Datei zum Lesen und Schreiben. Wenn die Datei vorhanden ist, wird ihr Inhalt zerstört. |
-| **„a+“** | Öffnet sich zum Lesen und Anfügen. Erstellt die Datei, wenn sie nicht vorhanden ist. |
+| **r** | Öffnet zum Lesen. Wenn die Datei nicht vorhanden ist oder nicht gefunden werden kann, schlägt der **fopen** -Befehl fehl. |
+| **Löw** | Öffnet eine leere Datei zum Schreiben. Wenn die angegebene Datei vorhanden ist, wird ihr Inhalt zerstört. |
+| **ein** | Öffnet zum Schreiben am Ende der Datei (Anhängen). Erstellt die Datei, wenn sie nicht vorhanden ist. |
+| **"r +"** | Öffnet sowohl zum Lesen als auch zum Schreiben. Die Datei muss vorhanden sein. |
+| **"w +"** | Öffnet eine leere Datei zum Lesen und Schreiben. Wenn die Datei vorhanden ist, wird ihr Inhalt zerstört. |
+| **"a +"** | Öffnet sich zum Lesen und Anfügen. Erstellt die Datei, wenn sie nicht vorhanden ist. |
 
-Wenn eine Datei mit dem Zugriffstyp **"a"** oder **"a +"** geöffnet wird, erfolgen alle Schreibvorgänge am Ende der Datei. Der Dateizeiger kann mithilfe von [fseek](fseek-fseeki64.md) oder [Rewind](rewind.md)neu positioniert werden. er wird jedoch immer wieder zurück an das Ende der Datei verschoben, bevor ein Schreibvorgang durchgeführt wird. Folglich können vorhandene Daten nicht überschrieben werden. Wenn der Zugriffstyp **"r +"** , **"w +"** oder **"a +** " angegeben wird, sind sowohl Lese-als auch Schreibvorgänge zulässig (die Datei ist zum Aktualisieren geöffnet). Wenn Sie jedoch zwischen lesen und schreiben wechseln, muss ein dazwischenliegende [fflush](fflush.md)-, [fsetpos](fsetpos.md)-, [fseek](fseek-fseeki64.md)-oder [Rewind](rewind.md) -Vorgang vorhanden sein. Wenn Sie möchten, können Sie die aktuelle Position für den [fsetpos](fsetpos.md) -oder [fseek](fseek-fseeki64.md) -Vorgang angeben.
+Wenn eine Datei mit dem Zugriffstyp **"a"** oder **"a +"** geöffnet wird, erfolgen alle Schreibvorgänge am Ende der Datei. Der Dateizeiger kann mithilfe von [fseek](fseek-fseeki64.md) oder [Rewind](rewind.md)neu positioniert werden. er wird jedoch immer wieder zurück an das Ende der Datei verschoben, bevor ein Schreibvorgang durchgeführt wird. Folglich können vorhandene Daten nicht überschrieben werden. Wenn der Zugriffstyp **"r +"**, **"w +"** oder **"a +** " angegeben wird, sind sowohl Lese-als auch Schreibvorgänge zulässig (die Datei ist zum Aktualisieren geöffnet). Wenn Sie jedoch zwischen lesen und schreiben wechseln, muss ein dazwischenliegende [fflush](fflush.md)-, [fsetpos](fsetpos.md)-, [fseek](fseek-fseeki64.md)-oder [Rewind](rewind.md) -Vorgang vorhanden sein. Wenn Sie möchten, können Sie die aktuelle Position für den [fsetpos](fsetpos.md) -oder [fseek](fseek-fseeki64.md) -Vorgang angeben.
 
 Zusätzlich zu den obigen Werten können die folgenden Zeichen auch im- *Modus* enthalten sein, um den Übersetzungsmodus für Zeilen Umleitungs Zeichen anzugeben:
 
-| *modus*modifizierer | Verhalten |
+| *mode* modusmodifizierer | Verhalten |
 |-----------------|----------|
-| **t** | Öffnen im Textmodus (übersetzt). Im Textmodus werden Wagenrücklauf-/Zeilenvorschub-Kombinationen (CR-LF) bei der Eingabe in einzelne Zeilenvorschübe (LF) übersetzt. LF-Zeichen werden bei der Ausgabe in CR-LF-Kombinationen übersetzt. Außerdem wird STRG+Z bei der Eingabe als EOF-Zeichen interpretiert. |
+| **Bund** | Öffnen im Textmodus (übersetzt). Im Textmodus werden Wagenrücklauf-/Zeilenvorschub-Kombinationen (CR-LF) bei der Eingabe in einzelne Zeilenvorschübe (LF) übersetzt. LF-Zeichen werden bei der Ausgabe in CR-LF-Kombinationen übersetzt. Außerdem wird STRG+Z bei der Eingabe als EOF-Zeichen interpretiert. |
 | **b** | Wird im binären (nicht übersetzten) Modus geöffnet. Alle Übersetzungen aus dem **t** -Modus werden unterdrückt. |
-| **c** | Aktivieren Sie das commitflag für den zugeordneten *Dateinamen* , damit der Inhalt des Datei Puffers direkt auf den Datenträger geschrieben wird, wenn **fflush** oder **_flushall** aufgerufen wird. |
-| **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardeinstellung. Dabei wird auch das globale Commitflag überschrieben, wenn Sie das Programm mit „Commode.obj“ verknüpfen. Der Standardwert des globalen Commitflags lautet „no-commit“, es sei denn, Sie verknüpfen das Programm explizit mit „Commode.obj“. |
+| **scher** | Aktivieren Sie das commitflag für den zugeordneten *Dateinamen* , damit der Inhalt des Datei Puffers direkt auf den Datenträger geschrieben wird, wenn entweder **fflush** oder **_flushall** aufgerufen wird. |
+| **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardeinstellung. Außerdem wird das globale commitflag überschrieben, wenn Sie das Programm mit COMMODE. obj verknüpfen. Der Standardwert des globalen commitflags lautet "No-Commit", es sei denn, Sie verknüpfen das Programm explizit mit COMMODE. obj. |
 
-Die *Optionen "* **t**", " **c**" und " **n** " sind **Microsoft-Erweiterungen** für " **_fdopen**". Verwenden Sie sie nicht, wenn Sie die ANSI-Portabilität beibehalten möchten.
+Die *Optionen "* **t**", " **c**" und " **n** " sind Microsoft-Erweiterungen für " **f Open** " und " **_fdopen** Verwenden Sie sie nicht, wenn Sie die ANSI-Portabilität beibehalten möchten.
 
-Wenn " **t** " oder " **b** " im *Modus*nicht angegeben wird, wird der Standard Übersetzungsmodus durch die globale Variable [ \_"f Mode](../../c-runtime-library/fmode.md)" definiert. Wenn **t** oder **b** dem Argument vorangestellt wird, schlägt die Funktion fehl und gibt NULL zurück. Eine Erörterung von Text- und Binärmodi finden Sie unter [Text- und Binärmodus-Datei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md).
+Wenn " **t** " oder " **b** " im *Modus*nicht angegeben wird, wird der Standard Übersetzungsmodus durch die globale Variable [ \_"f Mode](../../c-runtime-library/fmode.md)" definiert. Wenn **t** oder **b** dem Argument vorangestellt wird, schlägt die Funktion fehl und gibt NULL zurück. Eine Erörterung von Text- und Binärmodi finden Sie unter [Text- und Binärmodusdatei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md).
 
-Gültige Zeichen für die in **fopen** und **_fdopen** verwendete *modus*zeichenfolge entsprechen *Oflag* -Argumenten, die in [ \_Open](open-wopen.md) und [ \_sopen](sopen-wsopen.md)verwendet werden, wie in dieser Tabelle dargestellt:
+Gültige Zeichen für die in **fopen** und **_fdopen** verwendete *modus*zeichenfolge entsprechen *Oflag* -Argumenten, die in [\_Open](open-wopen.md) und [\_sopen](sopen-wsopen.md)verwendet werden, wie in dieser Tabelle dargestellt:
 
 |Zeichen in der *Mode* -Zeichenfolge|Entsprechender *Oflag* -Wert für **_open** und **_sopen**|
 |---------------------------------|---------------------------------------------------|
-|**a**|**\_O\_ wronly &#124; \_oAppend\_(normalerweise o wronly o** **\_ &#124; \_\_\_ &#124; \_\_ Anfügen**)|
-|**a+**|**\_&#124; O\_ rdwr\_o\_Append** (Normal **\_erweiseo\_rdwr &#124; \_ &#124; o Append\_oup\_\_** )|
-|**r**|**\_O\_RDONLY**|
-|**r +**|**\_O\_RDWR**|
-|**w**|**\_O\_wronly** ( **\_ &#124; \_\_i.d. a. &#124; " \_ owronly\_o" o trunc)\_**|
-|**w +**|**\_O\_rdwr** **\_ &#124; \_ &#124; \_\_(i. d. r. o\_rdwr o up o trunc)\_**|
-|**b**|**\_O\_-BINÄRDATEI**|
-|**t**|**\_O\_TEXT**|
-|**c**|None|
-|**n**|None|
+|**ein**|**\_O\_wronly &#124; \_o\_Append** (in der Regel ** \_\_o wronly &#124; \_o\_- \_Anweisung\_&#124; o Append**)|
+|**a +**|**\_O\_rdwr &#124; \_o\_Append** (i. d. ** \_r. o\_rdwr \_&#124;\_ \_o\_Append &#124; o | anfüat** )|
+|**r**|**\_O\_rdonly**|
+|**r +**|**\_O\_rdwr**|
+|**w**|**\_O\_wronly** (in der Regel ** \_o\_ \_wronly\_&#124; o- \_&#124;\_o trunc**)|
+|**w +**|**\_O\_rdwr** (in der Regel ** \_\_o rdwr &#124; \_o\_&#124; \_o\_trunc**)|
+|**b**|**\_O\_-Binärdatei**|
+|**Bund**|**\_O\_-Text**|
+|**scher**|Keine|
+|**n**|Keine|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -134,7 +139,7 @@ Gültige Zeichen für die in **fopen** und **_fdopen** verwendete *modus*zeichen
 |**_fdopen**|\<stdio.h>|
 |**_wfdopen**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -180,7 +185,7 @@ Line one
 Line two
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Lines in file: 2

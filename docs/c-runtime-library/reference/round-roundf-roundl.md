@@ -1,10 +1,13 @@
 ---
 title: round, roundf, roundl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - round
 - roundl
 - roundf
+- _o_round
+- _o_roundf
+- _o_roundl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +34,12 @@ helpviewer_keywords:
 - round function
 - roundf function
 ms.assetid: 6be90877-193c-4b80-a32b-c3eca33f9c6f
-ms.openlocfilehash: b92f4a94fff06fe6948701240b61040a610981f3
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1c35972b38f8e440788404b5891a78d16197d739
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949103"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916720"
 ---
 # <a name="round-roundf-roundl"></a>round, roundf, roundl
 
@@ -63,7 +67,7 @@ long double roundl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -72,19 +76,21 @@ Die **Round** -Funktionen geben einen Gleit Komma Wert zurück, der die nächste
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|none|**_DOMAIN**|
+|± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
 ## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Round** aufzurufen, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Round** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Round** aufzurufen, die **float** -und **Long** **Double** -Werte annehmen und zurückgeben. In einem C-Programm nimmt **Round** immer einen **Double**-Wert an und gibt ihn zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**Round**, **roundf**, **roundl**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -122,7 +128,7 @@ roundl(2.500000) is 3
 roundl(-2.500000) is -3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

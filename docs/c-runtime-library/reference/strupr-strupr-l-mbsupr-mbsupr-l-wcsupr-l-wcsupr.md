@@ -28,7 +28,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -70,12 +70,12 @@ helpviewer_keywords:
 - _tcsupr function
 - strings [C++], converting case
 ms.assetid: caac8f16-c233-41b6-91ce-575ec7061b77
-ms.openlocfilehash: 5127c6f0be6375585be3b321788ba04a91364e57
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c30aa9e1a73ba51931caff726837841f76922139
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81362894"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912336"
 ---
 # <a name="_strupr-_strupr_l-_mbsupr-_mbsupr_l-_wcsupr_l-_wcsupr"></a>_strupr, _strupr_l, _mbsupr, _mbsupr_l, _wcsupr_l, _wcsupr
 
@@ -139,7 +139,7 @@ unsigned char *_mbsupr_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Großzuschreibende Zeichenfolge.
 
 *locale*<br/>
@@ -149,17 +149,17 @@ Das zu verwendende Gebietsschema.
 
 Gibt einen Zeiger zur geänderten Zeichenfolge zurück. Da die Änderung an der jeweiligen Stelle ausgeführt wurde, gleicht der zurückgegebene Zeiger dem als das Eingabeargument übergebenen Zeiger. Kein Rückgabewert ist zur Fehleranzeige reserviert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_strupr-Funktion** konvertiert jeden Kleinbuchstaben in *Str* in Großbuchstaben. Die Konvertierung wird durch die **LC_CTYPE** Kategorieeinstellung des Gebietsschemas bestimmt. Andere Zeichen sind nicht betroffen. Weitere Informationen **zu LC_CTYPE**finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l** Suffix verwenden das aktuelle Gebietsschema; Die Versionen mit dem **Suffix _l** sind identisch, außer dass sie stattdessen das übergebene Gebietsschema verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die **_strupr** -Funktion konvertiert anstelle der einzelnen Kleinbuchstaben in *Str* in Großbuchstaben. Die Konvertierung wird durch die Einstellung der **LC_CTYPE** -Kategorie des Gebiets Schemas bestimmt. Andere Zeichen sind nicht betroffen. Weitere Informationen zu **LC_CTYPE**finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema. die Versionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-**_wcsupr** und **_mbsupr** sind breit-zeichen- und multibyte-Zeichen-Versionen von **_strupr**. Das Argument und der Rückgabewert von **_wcsupr** sind Zeichenfolgen mit großen Zeichen. bei **_mbsupr** sind Zeichenfolgen mit mehreren Bytezeichen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**_wcsupr** und **_mbsupr** sind breit Zeichen-und multibytezeichenversionen von **_strupr**. Das Argument und der Rückgabewert von **_wcsupr** sind Zeichen folgen mit breit Zeichen. bei den **_mbsupr** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-Wenn *str* ein Nullzeiger ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen die ursprüngliche Zeichenfolge zurück und setzen **errno** auf **EINVAL**.
+Wenn *Str* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md) Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen die ursprüngliche Zeichenfolge zurück und legen **errno** auf **EINVAL**fest.
 
 In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -172,9 +172,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_strupr**, **_strupr_l**|\<string.h>|
-|**_wcsupr**, **_wcsupr_l**|\<string.h> oder \<wchar.h>|
-|**_mbsupr**, **_mbsupr_l**|\<mbstring.h>|
+|**_strupr** **_strupr_l**|\<string.h>|
+|**_wcsupr** **_wcsupr_l**|\<string.h> oder \<wchar.h>|
+|**_mbsupr** **_mbsupr_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -182,8 +182,8 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Betrachten Sie das Beispiel für [_strlwr](strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Locale](../../c-runtime-library/locale.md)<br/>
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_strlwr, _wcslwr, _mbslwr, _strlwr_l, _wcslwr_l, _mbslwr_l](strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md)<br/>

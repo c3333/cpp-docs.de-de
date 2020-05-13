@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - IExecutionContext structure
 ms.assetid: f3108089-ecda-4b07-86db-3efae60c31e0
-ms.openlocfilehash: 45d65a5e16121d39233c3ceb801933aa1f5a5f8e
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 532247ca1776452ad32476d2bcdfafcee3481058
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138915"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81358803"
 ---
 # <a name="iexecutioncontext-structure"></a>IExecutionContext-Struktur
 
@@ -29,35 +29,35 @@ Eine Schnittstelle zu einem Ausführungskontext, der auf einem angegebenen virtu
 struct IExecutionContext;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IExecutionContext::D ispatch](#dispatch)|Die Methode, die aufgerufen wird, wenn ein Thread Proxy mit dem Ausführen eines bestimmten Ausführungs Kontexts beginnt. Dies sollte die Haupt Arbeitsroutine für Ihren Scheduler sein.|
-|[IExecutionContext:: GetId](#getid)|Gibt einen eindeutigen Bezeichner für den Ausführungs Kontext zurück.|
-|[IExecutionContext:: GetProxy](#getproxy)|Gibt eine Schnittstelle zum Thread Proxy zurück, der diesen Kontext ausführt.|
-|[IExecutionContext:: getscheduler](#getscheduler)|Gibt eine Schnittstelle zum Scheduler zurück, zu dem dieser Ausführungs Kontext gehört.|
-|[IExecutionContext:: SetProxy](#setproxy)|Ordnet diesem Ausführungs Kontext einen Thread Proxy zu. Der zugehörige Thread Proxy ruft diese Methode direkt vor der Ausführung der `Dispatch`-Methode des Kontexts auf.|
+|[IExecutionContext::Dispatch](#dispatch)|Die Methode, die aufgerufen wird, wenn ein Threadproxy mit der Ausführung eines bestimmten Ausführungskontexts beginnt. Dies sollte die Hauptarbeitsroutine für Ihren Planer sein.|
+|[IExecutionContext::GetId](#getid)|Gibt einen eindeutigen Bezeichner für den Ausführungskontext zurück.|
+|[IExecutionContext::GetProxy](#getproxy)|Gibt eine Schnittstelle an den Threadproxy zurück, der diesen Kontext ausführt.|
+|[IExecutionContext::GetScheduler](#getscheduler)|Gibt eine Schnittstelle an den Planer zurück, zu der dieser Ausführungskontext gehört.|
+|[IExecutionContext::SetProxy](#setproxy)|Ordnet diesem Ausführungskontext einen Threadproxy zu. Der zugeordnete Threadproxy ruft diese Methode auf, bevor `Dispatch` er mit der Ausführung der Kontextmethode beginnt.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie einen benutzerdefinierten Planer implementieren, der mit dem Ressourcen-Manager des Concurrency Runtime eine Schnittstelle erstellt, müssen Sie die `IExecutionContext`-Schnittstelle implementieren. Die von der Ressourcen-Manager erstellten Threads führen im Auftrag Ihres Zeit Planungs Moduls Aufgaben aus, indem Sie die `IExecutionContext::Dispatch`-Methode ausführen.
+Wenn Sie einen benutzerdefinierten Planer implementieren, der mit dem Ressourcen-Manager der Concurrency `IExecutionContext` Runtime in Verbindung steht, müssen Sie die Schnittstelle implementieren. Die vom Ressourcen-Manager erstellten Threads führen die Arbeit `IExecutionContext::Dispatch` im Auftrag Desplaners durch Ausführen der Methode aus.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `IExecutionContext`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** concrtrm. h
+**Kopfzeile:** concrtrm.h
 
 **Namespace:** Parallelität
 
-## <a name="dispatch"></a>IExecutionContext::D ispatch-Methode
+## <a name="iexecutioncontextdispatch-method"></a><a name="dispatch"></a>IExecutionContext::Dispatch-Methode
 
-Die Methode, die aufgerufen wird, wenn ein Thread Proxy mit dem Ausführen eines bestimmten Ausführungs Kontexts beginnt. Dies sollte die Haupt Arbeitsroutine für Ihren Scheduler sein.
+Die Methode, die aufgerufen wird, wenn ein Threadproxy mit der Ausführung eines bestimmten Ausführungskontexts beginnt. Dies sollte die Hauptarbeitsroutine für Ihren Planer sein.
 
 ```cpp
 virtual void Dispatch(_Inout_ DispatchState* pDispatchState) = 0;
@@ -65,12 +65,12 @@ virtual void Dispatch(_Inout_ DispatchState* pDispatchState) = 0;
 
 ### <a name="parameters"></a>Parameter
 
-*pdispatchstate*<br/>
-Ein Zeiger auf den Zustand, in dem dieser Ausführungs Kontext gesendet wird. Weitere Informationen zum Verteilungs Status finden Sie unter [DispatchState](dispatchstate-structure.md).
+*pDispatchState*<br/>
+Ein Zeiger auf den Status, unter dem dieser Ausführungskontext ausgelöst wird. Weitere Informationen zum Dispatchstatus finden Sie unter [DispatchState](dispatchstate-structure.md).
 
-## <a name="getid"></a>IExecutionContext:: GetId-Methode
+## <a name="iexecutioncontextgetid-method"></a><a name="getid"></a>IExecutionContext::GetId-Methode
 
-Gibt einen eindeutigen Bezeichner für den Ausführungs Kontext zurück.
+Gibt einen eindeutigen Bezeichner für den Ausführungskontext zurück.
 
 ```cpp
 virtual unsigned int GetId() const = 0;
@@ -78,17 +78,17 @@ virtual unsigned int GetId() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine eindeutige ganzzahlige Kennung.
+Ein eindeutiger Ganzzahlbezeichner.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie die-Methode `GetExecutionContextId`, um einen eindeutigen Bezeichner für das Objekt zu erhalten, das die `IExecutionContext` Schnittstelle implementiert, bevor Sie die-Schnittstelle als Parameter für Methoden verwenden, die vom Ressourcen-Manager bereitgestellt werden. Es wird erwartet, dass Sie denselben Bezeichner zurückgeben, wenn die `GetId`-Funktion aufgerufen wird.
+Sie sollten die `GetExecutionContextId` Methode verwenden, um einen eindeutigen `IExecutionContext` Bezeichner für das Objekt zu erhalten, das die Schnittstelle implementiert, bevor Sie die Schnittstelle als Parameter für Methoden verwenden, die vom Ressourcen-Manager bereitgestellt werden. Es wird erwartet, dass Sie `GetId` denselben Bezeichner zurückgeben, wenn die Funktion aufgerufen wird.
 
-Ein Bezeichner aus einer anderen Quelle kann zu undefiniertem Verhalten führen.
+Ein Bezeichner, der aus einer anderen Quelle abgerufen wird, kann zu einem undefinierten Verhalten führen.
 
-## <a name="getproxy"></a>IExecutionContext:: GetProxy-Methode
+## <a name="iexecutioncontextgetproxy-method"></a><a name="getproxy"></a>IExecutionContext::GetProxy-Methode
 
-Gibt eine Schnittstelle zum Thread Proxy zurück, der diesen Kontext ausführt.
+Gibt eine Schnittstelle an den Threadproxy zurück, der diesen Kontext ausführt.
 
 ```cpp
 virtual IThreadProxy* GetProxy() = 0;
@@ -96,15 +96,15 @@ virtual IThreadProxy* GetProxy() = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine `IThreadProxy`-Schnittstelle. Wenn der Thread Proxy des Ausführungs Kontexts nicht mit einem-`SetProxy`initialisiert wurde, muss die Funktion `NULL`zurückgeben.
+Eine `IThreadProxy`-Schnittstelle. Wenn der Threadproxy des Ausführungskontexts nicht mit `SetProxy`einem Aufruf `NULL`von initialisiert wurde, muss die Funktion zurückgeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Ressourcen-Manager ruft die `SetProxy`-Methode in einem Ausführungs Kontext auf, wobei eine `IThreadProxy`-Schnittstelle als Parameter verwendet wird, bevor die `Dispatch`-Methode für den im Kontext eingegeben wird. Es wird erwartet, dass Sie dieses Argument speichern und bei Aufrufen von `GetProxy()`zurückgeben.
+Der Ressourcen-Manager `SetProxy` ruft die Methode in `IThreadProxy` einem Ausführungskontext mit einer `Dispatch` Schnittstelle als Parameter auf, bevor die Methode im Kontext eingegeben wird. Es wird erwartet, dass Sie dieses `GetProxy()`Argument speichern und bei Aufrufen an zurückgeben.
 
-## <a name="getscheduler"></a>IExecutionContext:: getscheduler-Methode
+## <a name="iexecutioncontextgetscheduler-method"></a><a name="getscheduler"></a>IExecutionContext::GetScheduler-Methode
 
-Gibt eine Schnittstelle zum Scheduler zurück, zu dem dieser Ausführungs Kontext gehört.
+Gibt eine Schnittstelle an den Planer zurück, zu der dieser Ausführungskontext gehört.
 
 ```cpp
 virtual IScheduler* GetScheduler() = 0;
@@ -116,11 +116,11 @@ Eine `IScheduler`-Schnittstelle.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie müssen den Ausführungs Kontext mit einer gültigen `IScheduler`-Schnittstelle initialisieren, bevor Sie ihn als Parameter für Methoden verwenden, die vom Ressourcen-Manager bereitgestellt werden.
+Sie müssen den Ausführungskontext mit `IScheduler` einer gültigen Schnittstelle initialisieren, bevor Sie ihn als Parameter für Methoden verwenden, die vom Ressourcen-Manager bereitgestellt werden.
 
-## <a name="setproxy"></a>IExecutionContext:: SetProxy-Methode
+## <a name="iexecutioncontextsetproxy-method"></a><a name="setproxy"></a>IExecutionContext::SetProxy-Methode
 
-Ordnet diesem Ausführungs Kontext einen Thread Proxy zu. Der zugehörige Thread Proxy ruft diese Methode direkt vor der Ausführung der `Dispatch`-Methode des Kontexts auf.
+Ordnet diesem Ausführungskontext einen Threadproxy zu. Der zugeordnete Threadproxy ruft diese Methode auf, bevor `Dispatch` er mit der Ausführung der Kontextmethode beginnt.
 
 ```cpp
 virtual void SetProxy(_Inout_ IThreadProxy* pThreadProxy) = 0;
@@ -128,14 +128,14 @@ virtual void SetProxy(_Inout_ IThreadProxy* pThreadProxy) = 0;
 
 ### <a name="parameters"></a>Parameter
 
-*pthreadproxy*<br/>
-Eine Schnittstelle zum Thread Proxy, der in diesem Ausführungs Kontext in die `Dispatch` Methode eingegeben werden soll.
+*pThreadProxy*<br/>
+Eine Schnittstelle zum Threadproxy, die `Dispatch` im Begriff ist, die Methode in diesem Ausführungskontext einzugeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Es wird erwartet, dass Sie den Parameter `pThreadProxy` speichern und ihn bei einem Aufrufen der `GetProxy`-Methode zurückgeben. Der Ressourcen-Manager stellt sicher, dass der dem Ausführungs Kontext zugeordnete Thread Proxy nicht geändert wird, während der Thread Proxy die `Dispatch`-Methode ausführt.
+Es wird erwartet, `pThreadProxy` dass Sie den Parameter `GetProxy` speichern und bei einem Aufruf der Methode zurückgeben. Der Ressourcen-Manager stellt sicher, dass sich der dem Ausführungskontext zugeordnete Threadproxy nicht ändert, während der Threadproxy die `Dispatch` Methode ausführt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [IScheduler-Struktur](ischeduler-structure.md)<br/>

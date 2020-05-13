@@ -1,8 +1,9 @@
 ---
 title: frexp, frexpf, frexpl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - frexp
+- _o_frexp
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +32,12 @@ helpviewer_keywords:
 - frexp function
 - floating-point functions, mantissa and exponent
 ms.assetid: 9b020f2e-3967-45ec-a6a8-d467a071aa55
-ms.openlocfilehash: 3a67ced9bd6653a7c40c98a8cf015663c37457bb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d539a9ebb4042b18e6ec1ef8ed204a61cc7bb8cc
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956638"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911607"
 ---
 # <a name="frexp-frexpf-frexpl"></a>frexp, frexpf, frexpl
 
@@ -68,7 +70,7 @@ long double frexp(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert.
 
 *expptr*<br/>
@@ -80,9 +82,11 @@ Zeiger auf gespeicherten Integer-Exponenten
 
 ## <a name="remarks"></a>Hinweise
 
-Die **frexp** -Funktion teilt den Gleit Komma Wert (*x*) in eine Mantisse (*m*) und einen Exponenten (*n*) auf, sodass der absolute Wert von *m* größer oder gleich 0,5 und kleiner als 1,0 und *x*  =  ist. *m* * 2<sup>*n*</sup>. Der ganzzahlige Exponent *n* wird an dem Speicherort gespeichert, auf den von *expptr*verwiesen wird.
+Die **frexp** -Funktion teilt den Gleit Komma Wert (*x*) in eine Mantisse (*m*) und einen Exponenten (*n*) auf, sodass der absolute Wert von *m* größer oder gleich 0,5 und kleiner als 1,0 und *x* = *m* * 2<sup>*n*</sup>ist. Der ganzzahlige Exponent *n* wird an dem Speicherort gespeichert, auf den von *expptr*verwiesen wird.
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen können. In einem C-Programm übernimmt **frexp** immer einen **Double** -und einen **int** -Zeiger und gibt einen **Double**-Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen können. In einem C-Programm übernimmt **frexp** immer einen **Double** -und einen **int** -Zeiger und gibt einen **Double**-Wert zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -90,7 +94,7 @@ C++ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen könne
 |--------------|---------------------|
 |**frexp**, **frexpf**, **frexpl**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -117,7 +121,7 @@ int main( void )
 frexp( 16.400000, &n ) = 0.512500, n = 5
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldexp](ldexp.md)<br/>

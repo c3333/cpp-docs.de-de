@@ -29,12 +29,12 @@ helpviewer_keywords:
 - data transfer [C++], asynchronous
 - CBindStatusCallback class
 ms.assetid: 0f5da276-6031-4418-b2a9-a4750ef29e77
-ms.openlocfilehash: 6cdac444836574dd4d398571b71bb25363af5d3d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0ae7f4fcdba18be84d99140e395b6f2ac3db792a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81321239"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81748200"
 ---
 # <a name="cbindstatuscallback-class"></a>CBindStatusCallback-Klasse
 
@@ -117,7 +117,7 @@ Der asynchrone Moniker verwendet `OnData` die Rückruffunktion, um Ihre Anwendun
 
 `CBindStatusCallback`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlctl.h
 
@@ -274,7 +274,7 @@ ATL_PDATAAVAILABLE m_pFunc;
 
 Die Funktion, `m_pFunc` auf die von verwiesen wird, ist ein Member der Objektklasse und hat die folgende Syntax:
 
-```
+```cpp
 void Function_Name(
    CBindStatusCallback<T>* pbsc,
    BYTE* pBytes,
@@ -521,7 +521,7 @@ Jedes Mal, wenn Daten verfügbar sind, werden sie über `OnDataAvailable`an das 
 
 Die Funktion, auf die *pFunc* zeigt, ist ein Member der Klasse Ihres Objekts und hat die folgende Syntax:
 
-```
+```cpp
 void Function_Name(
     CBindStatusCallback<T>* pbsc,
     BYTE* pBytes,
@@ -534,6 +534,6 @@ Im folgenden Beispiel (aus dem [ASYNC-Beispiel)](../../overview/visual-cpp-sampl
 
 [!code-cpp[NVC_ATL_Windowing#87](../../atl/codesnippet/cpp/cbindstatuscallback-class_2.h)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

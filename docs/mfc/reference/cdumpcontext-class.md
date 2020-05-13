@@ -18,12 +18,12 @@ helpviewer_keywords:
 - CDumpContext [MFC], HexDump
 - CDumpContext [MFC], SetDepth
 ms.assetid: 98c52b2d-14b5-48ed-b423-479a4d1c60fa
-ms.openlocfilehash: aa549e5347bf2bd357fa3c28e81a0309ea4f4aff
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e89bbc5f263dc9303140e43914619090109b8315
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374005"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753211"
 ---
 # <a name="cdumpcontext-class"></a>CDumpContext-Klasse
 
@@ -87,7 +87,7 @@ Weitere Informationen `CDumpContext`zu finden Sie unter [Debuggen von MFC-Anwend
 
 `CDumpContext`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afx.h
 
@@ -145,7 +145,7 @@ Rufen Sie diese Memberfunktion auf, um das Element des angegebenen Typs als hexa
 
 Erzwingt, dass alle in Puffern verbleibenden Daten in die Datei geschrieben werden, die an den Dumpkontext angefügt ist.
 
-```
+```cpp
 void Flush();
 ```
 
@@ -173,7 +173,7 @@ Die Tiefe des Dumps, wie durch `SetDepth`festgelegt.
 
 Dumpt ein Array von Bytes aus, die als hexadezimale Zahlen formatiert sind.
 
-```
+```cpp
 void HexDump(
     LPCTSTR lpszLine,
     BYTE* pby,
@@ -249,7 +249,7 @@ Wenn Sie das IMPLEMENT_DYNAMIC oder IMPLEMENT_SERIAL-Makro in der Implementierun
 
 Legt die Tiefe für das Dump fest.
 
-```
+```cpp
 void SetDepth(int nNewDepth);
 ```
 
@@ -269,7 +269,7 @@ Wenn Sie einen primitiven `CObject` Typ oder einen einfachen Typ, der keine Zeig
 
 [!code-cpp[NVC_MFC_Utilities#16](../../mfc/codesnippet/cpp/cdumpcontext-class_6.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CFile-Klasse](../../mfc/reference/cfile-class.md)<br/>

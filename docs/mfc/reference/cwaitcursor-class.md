@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CWaitCursor [MFC], CWaitCursor
 - CWaitCursor [MFC], Restore
 ms.assetid: 5dfae2ff-d7b6-4383-b0ad-91e0868c67b3
-ms.openlocfilehash: 48ef8f9c965f54deafcc62451639f8c31021e900
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: aaa60e26d0a9bf99076f29124097b0629ce6f5d0
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373180"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754329"
 ---
 # <a name="cwaitcursor-class"></a>CWaitCursor-Klasse
 
@@ -65,7 +65,7 @@ Eine andere Möglichkeit, einen Wartecursor anzuzeigen, ist die Kombination von 
 
 `CWaitCursor`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -100,7 +100,7 @@ Sie können die Tatsache nutzen, dass der Destruktor am Ende des Blocks aufgeruf
 
 Um den Wartecursor wiederherzustellen, rufen Sie diese Funktion auf, nachdem Sie einen Vorgang ausgeführt haben, z. B. das Anzeigen eines Meldungs- oder Dialogfelds, wodurch der Wartecursor in einen anderen Cursor geändert werden kann.
 
-```
+```cpp
 void Restore();
 ```
 
@@ -114,7 +114,7 @@ Wenn Sie den Wartecursor wiederherstellen müssen, während Sie sich `CWaitCurso
 
 [!code-cpp[NVC_MFCWindowing#64](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_3.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CCmdTarget::BeginWaitCursor](../../mfc/reference/ccmdtarget-class.md#beginwaitcursor)<br/>

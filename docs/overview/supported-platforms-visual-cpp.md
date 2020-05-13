@@ -7,10 +7,10 @@ helpviewer_keywords:
 - platforms [C++]
 ms.assetid: 0d893056-4008-411a-b3d1-5f57fd7da95c
 ms.openlocfilehash: 049b28d23c7f5f5f023f3b2964577b75992c2998
-ms.sourcegitcommit: 5f276064779d90a4cfda758f89e0c0f1e4d1a188
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "75793829"
 ---
 # <a name="supported-platforms-visual-c"></a>Unterstützte Plattformen (Visual C++)

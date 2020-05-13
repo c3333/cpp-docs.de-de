@@ -16,7 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - aligned_msize function
 - _aligned_msize function
 ms.assetid: 10995edc-2110-4212-9ca9-5e0220a464f4
-ms.openlocfilehash: 21ae07c90bbf9a729a212a97b7de3e0916f8e2c6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e3ff243ba9a135cf660d09fc5b3690f531702aab
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350596"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912912"
 ---
 # <a name="_aligned_msize"></a>_aligned_msize
 
@@ -54,7 +54,7 @@ size_t _msize(
 *memblock*<br/>
 Zeiger zum Speicherblock.
 
-*Ausrichtung*<br/>
+*Richt*<br/>
 Der Ausrichtungswert, der eine ganzzahlige Potenz von 2 sein muss.
 
 *offset*<br/>
@@ -64,15 +64,15 @@ Der Offset in der Speicherbelegung zum Erzwingen der Ausrichtung.
 
 Gibt die Größe (in Bytes) als ganze Zahl ohne Vorzeichen zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_aligned_msize-Funktion** gibt die Größe des Speicherblocks, der durch einen Aufruf an [_aligned_malloc](aligned-malloc.md) oder [_aligned_realloc](aligned-realloc.md)zugeordnet ist, in Bytes zurück. Die *Ausrichtungs-* und *Offsetwerte* müssen mit den Werten identisch sein, die an die Funktion übergeben werden, die den Block zugewiesen hat.
+Die **_aligned_msize** -Funktion gibt die Größe des Speicherblocks (in Bytes) zurück, der durch einen [_aligned_malloc](aligned-malloc.md) -oder [_aligned_realloc](aligned-realloc.md)-aufrufungs-aufgerufen wird. Die *Ausrichtungs* -und *Offset* Werte müssen mit den Werten identisch sein, die an die Funktion, die den Block zugeordnet hat, übermittelt wurden.
 
-Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, **wird _aligned_msize** in [_aligned_msize_dbg aufgelöst.](aligned-msize-dbg.md) Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
+Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **_aligned_msize** in [_aligned_msize_dbg](aligned-msize-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
 
-Diese Funktion überprüft seine Parameter. Wenn *memblock* ein Nullzeiger ist oder *die Ausrichtung* keine Stärke von 2 ist, ruft **_msize** einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn der Fehler behandelt wird, setzt die Funktion **errno** auf **EINVAL** und gibt -1 zurück.
+Diese Funktion überprüft seine Parameter. Wenn *memblock* ein NULL-Zeiger ist oder die *Ausrichtung* keine Potenz von 2 ist, ruft **_msize** einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn der Fehler behandelt wird, legt die Funktion **errno** auf **EINVAL** fest und gibt-1 zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -86,6 +86,6 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../..
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherzuweisung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>

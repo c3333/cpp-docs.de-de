@@ -1,10 +1,11 @@
 ---
 title: strcpy, wcscpy, _mbscpy
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - strcpy
 - wcscpy
 - _mbscpy
+- _o_wcscpy
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +20,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -41,19 +43,19 @@ helpviewer_keywords:
 - _ftcscpy function
 - _mbscpy function
 ms.assetid: f97a4f81-e9ee-4f15-888a-0fa5d7094c5a
-ms.openlocfilehash: b54bdc2f930b805df036a1fa5d5b1595ea738b88
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: cb63dfc9ee817458393b7b544d04683b0d17918e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70958266"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915258"
 ---
 # <a name="strcpy-wcscpy-_mbscpy"></a>strcpy, wcscpy, _mbscpy
 
 Kopiert eine Zeichenfolge. Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [strcpy_s, wcscpy_s, _mbscpy_s](strcpy-s-wcscpy-s-mbscpy-s.md).
 
 > [!IMPORTANT]
-> **_mbscpy** kann nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> **_mbscpy** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -89,10 +91,10 @@ unsigned char *_mbscpy(
 
 ### <a name="parameters"></a>Parameter
 
-*strDestination*<br/>
+*"Ziel"*<br/>
 Zielzeichenfolge.
 
-*strSource*<br/>
+*-Quelle*<br/>
 Mit NULL endende Quellzeichenfolge.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -106,9 +108,11 @@ Die Funktion " **strincpy** " kopiert " *strinsource*", einschließlich des absc
 > [!IMPORTANT]
 > Da der Wert von " **strincpy** " in " *stredestination* " nicht vor dem Kopieren von " *rensource*" überprüft wird, ist dies eine mögliche Ursache von Pufferüberläufen. Deshalb wird empfohlen, stattdessen [strcpy_s](strcpy-s-wcscpy-s-mbscpy-s.md) zu verwenden.
 
-**wcscpy** und **_mbscpy** sind jeweils breit Zeichen-und multibytezeichenversionen von " **strincpy**". Die Argumente und der Rückgabewert von **wcscpy** sind Zeichen folgen mit breit Zeichen. bei den **_mbscpy** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
+**wcscpy** und **_mbscpy** sind bzw. breit Zeichen-und multibytezeichenversionen von " **strincpy**". Die Argumente und der Rückgabewert von **wcscpy** sind Zeichen folgen mit breit Zeichen. bei den **_mbscpy** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -118,13 +122,13 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strcpy**|\<string.h>|
 |**wcscpy**|\<string.h> oder \<wchar.h>|
 |**_mbscpy**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -161,9 +165,9 @@ int main( void )
 String = Hello world from strcpy and strcat!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [strcat, wcscat, _mbscat](strcat-wcscat-mbscat.md)<br/>
 [strcmp, wcscmp, _mbscmp](strcmp-wcscmp-mbscmp.md)<br/>
 [strncat, _strncat_l, wcsncat, _wcsncat_l, _mbsncat, _mbsncat_l](strncat-strncat-l-wcsncat-wcsncat-l-mbsncat-mbsncat-l.md)<br/>

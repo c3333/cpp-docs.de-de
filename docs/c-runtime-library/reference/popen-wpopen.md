@@ -1,10 +1,12 @@
 ---
 title: _popen, _wpopen
-description: Ein Verweis auf die Funktionen der Microsoft C-Lauf Zeit Bibliothek (CRT) _popen und _wpopen.
-ms.date: 01/28/2020
+description: Ein Verweis auf die Funktionen _popen der Microsoft C-Lauf Zeit Bibliothek ( _wpopenCRT) und.
+ms.date: 4/2/2020
 api_name:
 - _popen
 - _wpopen
+- _o__popen
+- _o__wpopen
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -46,12 +49,12 @@ no-loc:
 - _sys_errlist
 - _sys_nerr
 - EINVAL
-ms.openlocfilehash: 68531256fd688b50b659c885635ffa17d17773a5
-ms.sourcegitcommit: 684181561490e0d1955cf601d222f67f09af6d00
+ms.openlocfilehash: 37e5bb491234e46a0e3330bc2fd42c16e54793fc
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76894319"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915290"
 ---
 # <a name="_popen-_wpopen"></a>_popen, _wpopen
 
@@ -73,12 +76,12 @@ FILE *_wpopen(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*Befehls*\
+*s*\
 Befehl, der ausgeführt werden soll.
 
-*Modus*\
+*Spar*\
 Modus des zurückgegebenen Streams.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -93,15 +96,17 @@ Die **_popen** -Funktion erstellt eine Pipe. Anschließend führt Sie asynchron 
 
 |Zugriffsmodus|Beschreibung|
 |-|-|
-|**"r"**|Der aufrufende Prozess kann die Standardausgabe des erzeugten Befehls mit dem zurückgegebenen Stream lesen.|
-|**"w"**|Der aufrufende Prozess kann die Standardeingabe des erzeugten Befehls mit dem zurückgegebenen Stream schreiben.|
-|**"b"**|Öffnen im binären Modus.|
-|**"t"**|Öffnen im Textmodus.|
+|**r**|Der aufrufende Prozess kann die Standardausgabe des erzeugten Befehls mit dem zurückgegebenen Stream lesen.|
+|**Löw**|Der aufrufende Prozess kann die Standardeingabe des erzeugten Befehls mit dem zurückgegebenen Stream schreiben.|
+|**b**|Öffnen im binären Modus.|
+|**Bund**|Öffnen im Textmodus.|
 
 > [!NOTE]
 > Wenn die **_popen** -Funktion in einem Windows-Programm verwendet wird, gibt Sie einen ungültigen Dateizeiger zurück, der bewirkt, dass das Programm unbegrenzt nicht mehr reagiert. **_popen** funktioniert ordnungsgemäß in einer Konsolenanwendung. Informationen zum Erstellen einer Windows-Anwendung, die die Eingabe und Ausgabe umleitet, finden Sie unter [Erstellen eines untergeordneten Prozesses mit umgeleiteter Eingabe und Ausgabe](/windows/win32/ProcThread/creating-a-child-process-with-redirected-input-and-output) in der Windows SDK.
 
 **_wpopen** ist eine breit Zeichen Version von **_popen**. Das *path* -Argument für **_wpopen** ist eine Zeichenfolge mit breit Zeichen. **_wpopen** und **_popen** Verhalten sich andernfalls identisch.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -109,9 +114,9 @@ Die **_popen** -Funktion erstellt eine Pipe. Anschließend führt Sie asynchron 
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tpopen**|**_popen**|**_popen**|**_wpopen**|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_popen**|\<stdio.h>|
 |**_wpopen**|\<stdio.h> oder \<wchar.h>|
@@ -166,7 +171,7 @@ int main( void )
 }
 ```
 
-Bei dieser Ausgabe wird davon ausgegangen, dass sich im aktuellen Verzeichnis nur eine Datei mit der Dateinamenerweiterung `.c` befindet.
+Bei dieser Ausgabe wird davon ausgegangen, dass das aktuelle Verzeichnis nur eine Datei mit `.c` einer Dateinamenerweiterung enthält.
 
 ```Output
 Volume in drive C is CDRIVE
@@ -181,8 +186,8 @@ Directory of D:\proj\console\test1
 Process returned 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess-und Umgebungs Steuerungs](../../c-runtime-library/process-and-environment-control.md)\
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)\
 [_pclose](pclose.md)\
 [_pipe](pipe.md)

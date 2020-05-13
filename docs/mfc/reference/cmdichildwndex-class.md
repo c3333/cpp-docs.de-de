@@ -112,12 +112,12 @@ helpviewer_keywords:
 - CMDIChildWndEx [MFC], UnregisterTaskbarTab
 - CMDIChildWndEx [MFC], UpdateTaskbarTabIcon
 ms.assetid: d39fec06-0bd6-4271-917d-35aae3b24d8e
-ms.openlocfilehash: 92f3b95de3780a1593183c09b935db78c61a3a5f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cdc82ef48bacfe4d5b8d90222e7055c5fbe8b4a1
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370072"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754557"
 ---
 # <a name="cmdichildwndex-class"></a>CMDIChildWndEx-Klasse
 
@@ -219,7 +219,7 @@ Im folgenden Beispiel wird eine `CMDIChildWndEx`Klasse von ableiten. Dieser Code
 
 [CMDIChildWndEx](../../mfc/reference/cmdichildwndex-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxMDIChildWndEx.h
 
@@ -249,7 +249,7 @@ TRUE, wenn der Bereich erfolgreich beim Docking-Manager registriert wurde; ander
 
 Fügt einen Registerkartenbereich hinzu.
 
-```
+```cpp
 void AddTabbedPane(CDockablePane* pControlBar);
 ```
 
@@ -301,7 +301,7 @@ TRUE, wenn das Fenster **Windows** im Windows-Dialogfeld angezeigt werden kann; 
 
 Dockt einen Bereich an.
 
-```
+```cpp
 void DockPane(
     CBasePane* pBar,
     UINT nDockBarID = 0,
@@ -728,7 +728,7 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 
 Entfernt einen Bereich aus dem Docking-Manager.
 
-```
+```cpp
 void RemovePaneFromDockManager(
     CBasePane* pControlBar,
     BOOL bDestroy,
@@ -756,7 +756,7 @@ void RemovePaneFromDockManager(
 
 ## <a name="cmdichildwndexsetrelatedtabgroup"></a><a name="setrelatedtabgroup"></a>CMDIChildWndEx::SetRelatedTabGroup
 
-```
+```cpp
 void SetRelatedTabGroup(CMFCTabCtrl* p);
 ```
 
@@ -768,7 +768,7 @@ void SetRelatedTabGroup(CMFCTabCtrl* p);
 
 ## <a name="cmdichildwndexshowpane"></a><a name="showpane"></a>CMDIChildWndEx::ShowPane
 
-```
+```cpp
 void ShowPane(
     CBasePane* pBar,
     BOOL bShow,
@@ -807,7 +807,7 @@ Ein Handle zu einem Symbol, das auf der Registerkarte Windows 7-Taskleiste angez
 
 Entfernt das untergeordnete MDI-Element aus den Windows 7-Taskleisten-Registerkarten.
 
-```
+```cpp
 void UnregisterTaskbarTab(BOOL bCheckRegisteredMDIChildCount = TRUE);
 ```
 
@@ -841,7 +841,7 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 Legt Eigenschaften für eine Registerkarte der Windows 7-Taskleiste fest.
 
-```
+```cpp
 void SetTaskbarTabProperties(DWORD dwFlags);
 ```
 
@@ -856,7 +856,7 @@ Eine Kombination von STPFLAG-Werten. Weitere Informationen finden Sie unter [ITa
 
 Fügt das untergeordnete MDI-Element vor dem angegebenen Fenster auf Windows 7-Taskleistenregisterkarten ein.
 
-```
+```cpp
 void SetTaskbarTabOrder(CMDIChildWndEx* pWndBefore = NULL);
 ```
 
@@ -871,7 +871,7 @@ Ein Zeiger auf das untergeordnete MDI-Fenster, dessen Miniaturansicht links eing
 
 Aktiviert die entsprechende Windows 7-Taskleisten-Registerkarte.
 
-```
+```cpp
 void SetTaskbarTabActive();
 ```
 
@@ -1146,7 +1146,7 @@ Ein Zeiger auf `CMDITabProxyWnd` ein Objekt, das auf Windows 7-Taskleistenregist
 
 Aktiviert oder deaktiviert die automatische Auswahl eines Teils des Clientbereichs eines Fensters, der als Miniaturansicht dieses Fensters in der Taskleiste angezeigt wird.
 
-```
+```cpp
 void EnableTaskbarThumbnailClipRect(BOOL bEnable = TRUE);
 ```
 
@@ -1183,7 +1183,7 @@ virtual void ActivateTopLevelFrame();
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

@@ -10,28 +10,28 @@ f1_keywords:
 helpviewer_keywords:
 - CA2WEX class
 ms.assetid: 317d9ffb-e84f-47e8-beda-57e28fb19124
-ms.openlocfilehash: 927b9f5031bb6262c2f4a071b535802eb9e6990a
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a710034c5d94a8fb093a2b6a2a52373e2bab2d6d
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497951"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168500"
 ---
 # <a name="ca2wex-class"></a>CA2WEX-Klasse
 
 Diese Klasse wird von den Zeichen folgen Konvertierungs Makros CA2TEX, CA2CTEX, CT2WEX und CT2CWEX sowie von typedef CA2W verwendet.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <int t_nBufferLength = 128>
 class CA2WEX
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *t_nBufferLength*<br/>
 Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Bytes.
@@ -40,25 +40,25 @@ Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standar
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CA2WEX::CA2WEX](#ca2wex)|Der Konstruktor.|
 |[CA2WEX:: ~ CA2WEX](#dtor)|Der Destruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CA2WEX:: Operator LPWSTR](#operator_lpwstr)|Konvertierungs Operator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2WEX::m_psz](#m_psz)|Der Datenmember, der die Quell Zeichenfolge speichert.|
-|[CA2WEX::m_szBuffer](#m_szbuffer)|Der statische Puffer, der zum Speichern der konvertierten Zeichenfolge verwendet wird.|
+|[CA2WEX:: m_psz](#m_psz)|Der Datenmember, der die Quell Zeichenfolge speichert.|
+|[CA2WEX:: m_szBuffer](#m_szbuffer)|Der statische Puffer, der zum Speichern der konvertierten Zeichenfolge verwendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn keine zusätzliche Funktionalität erforderlich ist, verwenden Sie CA2TEX, CA2CTEX, CT2WEX, CT2CWEX oder CA2W in Ihrem Code.
 
@@ -92,60 +92,60 @@ Ein Beispiel für die Verwendung dieser Zeichen folgen Konvertierungs Makros fin
 
 **Header:** ATL-v. h
 
-##  <a name="ca2wex"></a>CA2WEX::CA2WEX
+## <a name="ca2wexca2wex"></a><a name="ca2wex"></a>CA2WEX::CA2WEX
 
 Der Konstruktor.
 
-```
+```cpp
 CA2WEX(LPCSTR psz, UINT nCodePage) throw(...);
 CA2WEX(LPCSTR psz) throw(...);
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
+*PSZ*<br/>
 Die zu konvertierende Text Zeichenfolge.
 
-*nCodePage*<br/>
+*ncodepage*<br/>
 Die Codepage, die zum Ausführen der Konvertierung verwendet wird. Weitere Informationen finden Sie in der Code Page-Parameter Diskussion für die Windows SDK-Funktion " [multibytedewidechar](/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar) ".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weist den Puffer zu, der im Übersetzungsprozess verwendet wird.
 
-##  <a name="dtor"></a>CA2WEX:: ~ CA2WEX
+## <a name="ca2wexca2wex"></a><a name="dtor"></a>CA2WEX:: ~ CA2WEX
 
 Der Destruktor.
 
-```
+```cpp
 ~CA2WEX() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt den zugewiesenen Puffer frei.
 
-##  <a name="m_psz"></a>CA2WEX::m_psz
+## <a name="ca2wexm_psz"></a><a name="m_psz"></a>CA2WEX:: m_psz
 
 Der Datenmember, der die Quell Zeichenfolge speichert.
 
-```
+```cpp
 LPWSTR m_psz;
 ```
 
-##  <a name="m_szbuffer"></a>CA2WEX::m_szBuffer
+## <a name="ca2wexm_szbuffer"></a><a name="m_szbuffer"></a>CA2WEX:: m_szBuffer
 
 Der statische Puffer, der zum Speichern der konvertierten Zeichenfolge verwendet wird.
 
-```
+```cpp
 wchar_t m_szBuffer[t_nBufferLength];
 ```
 
-##  <a name="operator_lpwstr"></a>CA2WEX:: Operator LPWSTR
+## <a name="ca2wexoperator-lpwstr"></a><a name="operator_lpwstr"></a>CA2WEX:: Operator LPWSTR
 
 Konvertierungs Operator.
 
-```
+```cpp
 operator LPWSTR() const throw();
 ```
 
@@ -153,11 +153,11 @@ operator LPWSTR() const throw();
 
 Gibt die Text Zeichenfolge als LPWSTR-Typ zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [CA2AEX-Klasse](../../atl/reference/ca2aex-class.md)<br/>
 [CA2CAEX-Klasse](../../atl/reference/ca2caex-class.md)<br/>
 [CW2AEX-Klasse](../../atl/reference/cw2aex-class.md)<br/>
 [CW2CWEX-Klasse](../../atl/reference/cw2cwex-class.md)<br/>
 [CW2WEX-Klasse](../../atl/reference/cw2wex-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

@@ -58,12 +58,12 @@ helpviewer_keywords:
 - CDaoDatabase [MFC], m_pDAODatabase
 - CDaoDatabase [MFC], m_pWorkspace
 ms.assetid: 8ff5b342-964d-449d-bef1-d0ff56aadf6d
-ms.openlocfilehash: debba137878da49921df83da7630003a7d62db2f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0fbc4ee3f2033f7507a1ed68493fa7e48bc62c51
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369015"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754740"
 ---
 # <a name="cdaodatabase-class"></a>CDaoDatabase-Klasse
 
@@ -157,7 +157,7 @@ Jede Datenbank verwaltet ihre eigenen Auflistungen von tabledef-, querydef-, rec
 
 `CDaoDatabase`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
@@ -315,7 +315,7 @@ Wenn Sie die Verschlüsselungskonstante weglassen, wird eine unverschlüsselte D
 
 Rufen Sie diese Memberfunktion auf, um eine Beziehung zwischen einem oder mehreren Feldern in einer Primärtabelle in der Datenbank und einem oder mehreren Feldern in einer fremden Tabelle (einer anderen Tabelle in der Datenbank) herzustellen.
 
-```
+```cpp
 void CreateRelation(
     LPCTSTR lpszName,
     LPCTSTR lpszTable,
@@ -378,7 +378,7 @@ Weitere Informationen finden Sie im Thema "CreateRelation-Methode" in der DAO-Hi
 
 Rufen Sie diese Memberfunktion auf, um die `CDaoDatabase` angegebene querydef – gespeicherte Abfrage – aus der QueryDefs-Auflistung des Objekts zu löschen.
 
-```
+```cpp
 void DeleteQueryDef(LPCTSTR lpszName);
 ```
 
@@ -397,7 +397,7 @@ Informationen zum Erstellen von querydef-Objekten finden Sie unter Klasse [CDaoQ
 
 Rufen Sie diese Memberfunktion auf, um eine vorhandene Beziehung aus der Relations-Auflistung des Datenbankobjekts zu löschen.
 
-```
+```cpp
 void DeleteRelation(LPCTSTR lpszName);
 ```
 
@@ -416,7 +416,7 @@ Weitere Informationen finden Sie im Thema "Methode löschen" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um die `CDaoDatabase` angegebene Tabelle und alle zugehörigen Daten aus der TableDefs-Auflistung des Objekts zu löschen.
 
-```
+```cpp
 void DeleteTableDef(LPCTSTR lpszName);
 ```
 
@@ -440,7 +440,7 @@ Weitere Informationen finden Sie im Thema "Methode löschen" in der DAO-Hilfe.
 
 Rufen Sie diese Memberfunktion auf, um eine Aktionsabfrage auszuführen oder eine SQL-Anweisung in der Datenbank auszuführen.
 
-```
+```cpp
 void Execute(
     LPCTSTR lpszSQL,
     int nOptions = dbFailOnError);
@@ -559,7 +559,7 @@ Die Anzahl der in der Datenbank definierten Abfragen.
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen zu einer in der Datenbank definierten Abfrage abzurufen.
 
-```
+```cpp
 void GetQueryDefInfo(
     int nIndex,
     CDaoQueryDefInfo& querydefinfo,
@@ -657,7 +657,7 @@ Um das Konzept einer Beziehung zu veranschaulichen, betrachten Sie eine Supplier
 
 Rufen Sie diese Memberfunktion auf, um Informationen über eine angegebene Beziehung in der Relations-Auflistung der Datenbank abzurufen.
 
-```
+```cpp
 void GetRelationInfo(
     int nIndex,
     CDaoRelationInfo& relinfo,
@@ -716,7 +716,7 @@ Die Anzahl der in der Datenbank definierten Tabledefs.
 
 Rufen Sie diese Memberfunktion auf, um verschiedene Arten von Informationen zu einer in der Datenbank definierten Tabelle abzurufen.
 
-```
+```cpp
 void GetTableDefInfo(
     int nIndex,
     CDaoTableDefInfo& tabledefinfo,
@@ -873,7 +873,7 @@ Sie können die Verbindungszeichenfolge auch für mehrere Ebenen der `CDaoDataba
 
 Rufen Sie diese Memberfunktion auf, um die Standardanzahl von Sekunden zu überschreiben, um vor nachfolgenden Vorgängen für die verbundene Datenbank ein Timeout zu ermöglichen.
 
-```
+```cpp
 void SetQueryTimeout(short nSeconds);
 ```
 
@@ -890,7 +890,7 @@ Der Standardwert für Abfragetimeouts beträgt 60 Sekunden. Nicht alle Datenbank
 
 Weitere Informationen finden Sie im Thema "QueryTimeout-Eigenschaft" in der DAO-Hilfe.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

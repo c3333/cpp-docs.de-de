@@ -25,7 +25,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -67,12 +67,12 @@ helpviewer_keywords:
 - fstrset function
 - _tcsset_l function
 ms.assetid: c42ded42-2ed9-4f06-a0a9-247ba305473a
-ms.openlocfilehash: 53a4fa3fecd021b42ec2b69b804cde35570b1a6d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 304f0cf5929dcce68402dd2f7dc2ce3b28e36db9
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81316892"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911113"
 ---
 # <a name="_strset-_strset_l-_wcsset-_wcsset_l-_mbsset-_mbsset_l"></a>_strset, _strset_l, _wcsset, _wcsset_l, _mbsset, _mbsset_l
 
@@ -115,10 +115,10 @@ unsigned char *_mbsset_l(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*SRT*<br/>
 Festzulegende mit NULL endende Zeichenfolge.
 
-*C*<br/>
+*scher*<br/>
 Zeicheneinstellung.
 
 *locale*<br/>
@@ -128,18 +128,18 @@ Zu verwendendes Gebietsschema.
 
 Gibt einen Zeiger zur geänderten Zeichenfolge zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_strset-Funktion** legt alle Zeichen (mit Ausnahme des beendenden Nullzeichens) von *str* auf *c*fest, konvertiert in **char**. **_wcsset** und **_mbsset_l** sind Breitzeichen- und Multibyte-Versionen von **_strset**, und die Datentypen der Argumente und Rückgabewerte variieren entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **_strset** -Funktion legt alle Zeichen (außer dem abschließenden NULL-Zeichen) von *Str* auf *c*fest, konvertiert in **char**. **_wcsset** und **_mbsset_l** sind breit Zeichen-und multibytezeichenversionen von **_strset**, und die Datentypen der Argumente und Rückgabewerte variieren entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
 
-**_mbsset** überprüft seine Parameter. Wenn *str* ein Nullzeiger ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, **gibt _mbsset** **NULL** zurück und setzt **errno** auf **EINVAL**. **_strset** und **_wcsset** überprüfen ihre Parameter nicht.
+**_mbsset** überprüft seine Parameter. Wenn *Str* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, **_mbsset** gibt _mbsset **null** zurück und legt **errno** auf **EINVAL**fest. **_strset** und **_wcsset** überprüfen Ihre Parameter nicht.
 
-Der Ausgabewert wird durch die Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst. weitere Informationen finden Sie unter [setlocale, _wsetlocale.](setlocale-wsetlocale.md) Die Versionen dieser Funktionen sind identisch, mit der Ausnahme, dass die Versionen, die nicht über das **_l** Suffix verfügen, das aktuelle Gebietsschema verwenden und die, die über das **_l** Suffix verfügen, stattdessen den übergebenen Gebietsschemaparameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die Versionen dieser Funktionen sind identisch, mit der Ausnahme, dass diejenigen, die nicht über das **_l** -Suffix verfügen, das aktuelle Gebiets Schema verwenden, und diejenigen, die das **_l** Suffix haben, stattdessen den übergebenen Gebiets Schema Parameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 > [!IMPORTANT]
 > Diese Funktionen sind möglicherweise für Pufferüberlaufrisiken anfällig. Pufferüberläufe können für Systemangriffe eingesetzt werden, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -156,7 +156,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_strset_l**|\<tchar.h>|
 |**_wcsset**|\<string.h> oder \<wchar.h>|
 |**_wcsset_l**|\<tchar.h>|
-|**_mbsset**, **_mbsset_l**|\<mbstring.h>|
+|**_mbsset** **_mbsset_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -184,9 +184,9 @@ Before: Fill the string with something.
 After:  *******************************
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbset, _mbsnbset_l](mbsnbset-mbsnbset-l.md)<br/>

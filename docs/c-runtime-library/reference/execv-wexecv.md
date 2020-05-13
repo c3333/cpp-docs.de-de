@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-process-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +33,12 @@ helpviewer_keywords:
 - wexecv function
 - execv function
 ms.assetid: 8dbaf7bc-9040-4316-a0c1-db7e866b52af
-ms.openlocfilehash: 638364afa75fa1b04b598370473dee48964c5763
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2c92321ebf31cf3dd1e446246674a437919e347b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81347890"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919690"
 ---
 # <a name="_execv-_wexecv"></a>_execv, _wexecv
 
@@ -65,32 +65,32 @@ intptr_t _wexecv(
 *cmdname*<br/>
 Pfad der auszuführenden Datei.
 
-*Argv*<br/>
+*argv*<br/>
 Array von Zeigern zu Parametern.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Ein Rückgabewert von -1 gibt einen Fehler an, in diesem Fall wird die globale Variable **errno** festgelegt.
+Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Der Rückgabewert-1 gibt einen Fehler an. in diesem Fall ist die globale Variable **errno** festgelegt.
 
-|**errno-Wert**|BESCHREIBUNG|
+|**errno** -Wert|Beschreibung|
 |-------------------|-----------------|
 |**E2BIG**|Für die Argumente und die Umgebungseinstellungen werden mehr als 32 KB Speicherplatz benötigt.|
 |**EACCES**|Für die angegebene Datei ist eine Sperr- oder Freigabeverletzung aufgetreten.|
-|**Einval**|Ungültiger Parameter.|
+|**Eingabe**|Ungültiger Parameter.|
 |**EMFILE**|Zu viele Dateien geöffnet (die angegebene Datei muss geöffnet werden, damit festgestellt werden kann, ob sie ausführbar ist).|
 |**ENOENT**|Die Datei oder der Pfad wurde nicht gefunden.|
 |**ENOEXEC**|Die angegebene Datei ist nicht ausführbar oder hat ein ungültiges Format für eine ausführbare Datei.|
-|**Enomem**|Es ist nicht genügend Arbeitsspeicher, um den neuen Prozess auszuführen; der verfügbare Arbeitsspeicher ist beschädigt; oder es ist ein ungültiger Block vorhanden, was darauf hinweist, dass der aufrufende Prozess nicht ordnungsgemäß zugeordnet wurde.|
+|**Umomem**|Es ist nicht genügend Arbeitsspeicher, um den neuen Prozess auszuführen; der verfügbare Arbeitsspeicher ist beschädigt; oder es ist ein ungültiger Block vorhanden, was darauf hinweist, dass der aufrufende Prozess nicht ordnungsgemäß zugeordnet wurde.|
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Jede dieser Funktionen lädt einen neuen Prozess, führt ihn aus und übergibt ein Array von Zeigern auf Befehlszeilenargumente.
 
-Die **_execv-Funktionen** überprüfen ihre Parameter. Wenn *cmdname* ein Nullzeiger ist oder *wenn argv* ein Nullzeiger ist, auf ein leeres Array zeigt oder wenn das Array eine leere Zeichenfolge als erstes Argument enthält, rufen die **_execv-Funktionen** den ungültigen Parameterhandler auf, wie in [Parametervalidation](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben -1 zurück. Es wird kein Prozess gestartet.
+Die **_execv** Funktionen überprüfen Ihre Parameter. Wenn *cmdname* ein NULL-Zeiger ist oder *argv* ein NULL-Zeiger oder ein Zeiger auf ein leeres Array ist, oder wenn das Array als erstes Argument eine leere Zeichenfolge enthält, rufen die **_execv** Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück. Es wird kein Prozess gestartet.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -105,11 +105,11 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../..
 
 Siehe das Beispiel in [_exec-, _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_exec, _wexec Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
-[Abbrechen](abort.md)<br/>
+[Abbruch](abort.md)<br/>
 [atexit](atexit.md)<br/>
 [exit, _Exit, _exit](exit-exit-exit.md)<br/>
 [_onexit, _onexit_m](onexit-onexit-m.md)<br/>

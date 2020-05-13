@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CInterpolatorBase [MFC], SetDuration
 - CInterpolatorBase [MFC], SetInitialValueAndVelocity
 ms.assetid: bbc3dce7-8398-47f9-b97e-e4fd2d737232
-ms.openlocfilehash: e5294aabc42301e2f874d5b8328d648f4deeb3c9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: efa08aa5dd556d7e136323c31451a9f33bd72ec6
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372352"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754945"
 ---
 # <a name="cinterpolatorbase-class"></a>CInterpolatorBase-Klasse
 
@@ -77,7 +77,7 @@ Dieser Handler wird erstellt `IUIAnimationTransitionFactory::CreateTransition` u
 
 `CInterpolatorBase`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxanimationcontroller.h
 
@@ -217,7 +217,7 @@ Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Es gibt E_FAIL zurü
 
 Speichert einen Zeiger auf den benutzerdefinierten Interpolator, der Ereignisse verarbeitet.
 
-```
+```cpp
 void SetCustomInterpolator(CCustomInterpolator* pInterpolator);
 ```
 
@@ -265,6 +265,6 @@ Die Geschwindigkeit der Variablen zu Beginn des Übergangs.
 
 Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Es gibt E_FAIL zurück, wenn CCustomInterpolator nicht festgelegt ist, oder eine benutzerdefinierte Implementierung FALSE von der SetInitialValueAndVelocity-Methode zurückgibt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

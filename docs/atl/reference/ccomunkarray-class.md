@@ -15,16 +15,16 @@ helpviewer_keywords:
 - connection points [C++], managing
 - CComUnkArray class
 ms.assetid: 5fd4b378-a7b5-4cc1-8866-8ab72a73639e
-ms.openlocfilehash: 7a73158e407279b529f76484e4c32f0a8a7a63c2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c1d2f0296394d3979ef4f152e3f902c89adf5b45
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62259455"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81327306"
 ---
 # <a name="ccomunkarray-class"></a>CComUnkArray-Klasse
 
-Diese Klasse speichert `IUnknown` Zeiger, die als Parameter verwendet werden soll, und die [IConnectionPointImpl](../../atl/reference/iconnectionpointimpl-class.md) Vorlagenklasse.
+Diese Klasse `IUnknown` speichert Zeiger und ist für die Verwendung als Parameter für die [IConnectionPointImpl-Vorlagenklasse](../../atl/reference/iconnectionpointimpl-class.md) konzipiert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,45 +36,45 @@ class CComUnkArray
 #### <a name="parameters"></a>Parameter
 
 *nMaxSize*<br/>
-Die maximale Anzahl von `IUnknown` Zeigern, die im statischen Array gespeichert werden können.
+Die maximale `IUnknown` Anzahl von Zeigern, die im statischen Array gehalten werden können.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CComUnkArray::CComUnkArray](#ccomunkarray)|Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComUnkArray::Add](#add)|Rufen Sie diese Methode zum Hinzufügen einer `IUnknown` Zeiger auf das Array.|
-|[CComUnkArray::begin](#begin)|Gibt einen Zeiger auf das erste `IUnknown` Zeiger in der Auflistung.|
-|[CComUnkArray::end](#end)|Gibt einen Zeiger auf eine Stelle hinter dem letzten `IUnknown` Zeiger in der Auflistung.|
-|[CComUnkArray::GetCookie](#getcookie)|Rufen Sie diese Methode, um das Cookie zugeordnet erhalten einen bestimmten `IUnknown` Zeiger.|
-|[CComUnkArray::GetUnknown](#getunknown)|Rufen Sie diese Methode zum Abrufen der `IUnknown` Zeiger, die einem angegebenen Cookie zugeordnet.|
-|[CComUnkArray::Remove](#remove)|Rufen Sie diese Methode zum Entfernen einer `IUnknown` Zeiger aus dem Array.|
+|[CComUnkArray::Hinzufügen](#add)|Rufen Sie diese `IUnknown` Methode auf, um dem Array einen Zeiger hinzuzufügen.|
+|[CComUnkArray::begin](#begin)|Gibt einen Zeiger auf `IUnknown` den ersten Zeiger in der Auflistung zurück.|
+|[CComUnkArray::ende](#end)|Gibt einen Zeiger auf einen `IUnknown` Zeiger hinter dem letzten Zeiger in der Auflistung zurück.|
+|[CComUnkArray::GetCookie](#getcookie)|Rufen Sie diese Methode auf, `IUnknown` um das Cookie abzurufen, das einem bestimmten Zeiger zugeordnet ist.|
+|[CComUnkArray::GetUnknown](#getunknown)|Rufen Sie diese `IUnknown` Methode auf, um den Zeiger abzurufen, der einem bestimmten Cookie zugeordnet ist.|
+|[CComUnkArray::Entfernen](#remove)|Rufen Sie diese `IUnknown` Methode auf, um einen Zeiger aus dem Array zu entfernen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CComUnkArray` enthält eine feste Anzahl von `IUnknown` Zeiger, die jeweils eine Schnittstelle für eine Verbindung verweist. `CComUnkArray` kann verwendet werden, als Parameter an die [IConnectionPointImpl](../../atl/reference/iconnectionpointimpl-class.md) Vorlagenklasse. `CComUnkArray<1>` ist eine Spezialisierung einer Klassenvorlage von `CComUnkArray` , die für einen Verbindungspunkt optimiert wurde.
+`CComUnkArray`enthält eine feste `IUnknown` Anzahl von Zeigern, jeweils eine Schnittstelle auf einem Verbindungspunkt. `CComUnkArray`kann als Parameter für die [IConnectionPointImpl-Vorlagenklasse](../../atl/reference/iconnectionpointimpl-class.md) verwendet werden. `CComUnkArray<1>`ist eine Vorlagenspezialisierung, die `CComUnkArray` für einen Verbindungspunkt optimiert wurde.
 
-Die `CComUnkArray` Methoden [beginnen](#begin) und [End](#end) kann zum Durchlaufen aller Verbindungspunkte (z. B., wenn ein Ereignis ausgelöst wird) verwendet werden.
+Die `CComUnkArray` Methoden [begin](#begin) and [end](#end) können verwendet werden, um alle Verbindungspunkte zu durchlaufen (z. B. wenn ein Ereignis ausgelöst wird).
 
-Finden Sie unter [Hinzufügen von Verbindungspunkten zu einem Objekt](../../atl/adding-connection-points-to-an-object.md) zeigen Sie ausführliche Informationen zum Automatisieren der Erstellung der Verbindung Proxys.
+Weitere Informationen zum Automatisieren der Erstellung von Verbindungspunktproxys finden Sie unter [Hinzufügen von Verbindungspunkten zu einem Objekt.](../../atl/adding-connection-points-to-an-object.md)
 
 > [!NOTE]
-> **Hinweis** Klasse [CComDynamicUnkArray](../../atl/reference/ccomdynamicunkarray-class.md) dient der **Klasse hinzufügen** Assistenten beim Erstellen eines Steuerelements die Verbindungspunkte hat. Wenn Sie die Anzahl von Verbindungspunkten manuell angeben möchten, ändern Sie den Verweis aus `CComDynamicUnkArray` zu `CComUnkArray<` *n* `>`, wobei *n* ist die Anzahl von Verbindungspunkten Erforderlich.
+> **Hinweis** Die Klasse [CComDynamicUnkArray](../../atl/reference/ccomdynamicunkarray-class.md) wird vom Assistenten zum Hinzufügen von **Klassen** verwendet, wenn ein Steuerelement mit Verbindungspunkten erstellt wird. Wenn Sie die Anzahl der Verbindungspunkte manuell angeben `CComDynamicUnkArray` möchten, ändern Sie den Verweis von `CComUnkArray<` *n* `>`, wobei *n* die Anzahl der erforderlichen Verbindungspunkte ist.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcom.h
+**Kopfzeile:** atlcom.h
 
-##  <a name="add"></a>  CComUnkArray::Add
+## <a name="ccomunkarrayadd"></a><a name="add"></a>CComUnkArray::Hinzufügen
 
-Rufen Sie diese Methode zum Hinzufügen einer `IUnknown` Zeiger auf das Array.
+Rufen Sie diese `IUnknown` Methode auf, um dem Array einen Zeiger hinzuzufügen.
 
 ```
 DWORD Add(IUnknown* pUnk);
@@ -82,16 +82,16 @@ DWORD Add(IUnknown* pUnk);
 
 ### <a name="parameters"></a>Parameter
 
-*pUnk*<br/>
-Rufen Sie diese Methode zum Hinzufügen einer `IUnknown` Zeiger auf das Array.
+*Punk*<br/>
+Rufen Sie diese `IUnknown` Methode auf, um dem Array einen Zeiger hinzuzufügen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Cookie, das den neu hinzugefügten Zeiger, oder 0 zugeordnet, wenn das Array nicht groß genug ist, enthält den neuen Zeiger ist.
+Gibt das Cookie zurück, das dem neu hinzugefügten Zeiger zugeordnet ist, oder 0, wenn das Array nicht groß genug ist, um den neuen Zeiger zu enthalten.
 
-##  <a name="begin"></a>  CComUnkArray::begin
+## <a name="ccomunkarraybegin"></a><a name="begin"></a>CComUnkArray::begin
 
-Gibt einen Zeiger auf den Anfang der Auflistung von `IUnknown` Schnittstellenzeigern.
+Gibt einen Zeiger auf den Anfang `IUnknown` der Auflistung von Schnittstellenzeigern zurück.
 
 ```
 IUnknown**
@@ -100,15 +100,15 @@ IUnknown**
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `IUnknown` Schnittstellenzeiger auf.
+Ein Zeiger auf `IUnknown` einen Schnittstellenzeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Auflistung enthält Zeiger auf die Schnittstellen, die lokal gespeichert werden, als `IUnknown`. Wandeln Sie jedes `IUnknown` echte Schnittstellentyp Schnittstelle, und klicken Sie dann über diese rufen. Sie müssen nicht zuerst für die Schnittstelle Abfragen.
+Die Auflistung enthält Zeiger auf Schnittstellen, `IUnknown`die lokal als gespeichert sind. Sie werfen `IUnknown` jede Schnittstelle in den echten Schnittstellentyp um und rufen sie dann durch. Sie müssen die Schnittstelle nicht zuerst abfragen.
 
-Vor der Verwendung der `IUnknown` -Schnittstelle, sollten Sie überprüfen, dass er nicht NULL ist.
+Bevor Sie `IUnknown` die Schnittstelle verwenden, sollten Sie überprüfen, ob es sich nicht um NULL handelt.
 
-##  <a name="ccomunkarray"></a>  CComUnkArray::CComUnkArray
+## <a name="ccomunkarrayccomunkarray"></a><a name="ccomunkarray"></a>CComUnkArray::CComUnkArray
 
 Der Konstruktor.
 
@@ -116,13 +116,13 @@ Der Konstruktor.
 CComUnkArray();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legt die Auflistung zum Speichern `nMaxSize` `IUnknown` Zeiger und initialisiert die Zeiger auf NULL.
+Legt die Auflistung `nMaxSize` `IUnknown` für Zeiger fest und initialisiert die Zeiger auf NULL.
 
-##  <a name="end"></a>  CComUnkArray::end
+## <a name="ccomunkarrayend"></a><a name="end"></a>CComUnkArray::ende
 
-Gibt einen Zeiger auf eine Stelle hinter dem letzten `IUnknown` Zeiger in der Auflistung.
+Gibt einen Zeiger auf einen `IUnknown` Zeiger hinter dem letzten Zeiger in der Auflistung zurück.
 
 ```
 IUnknown**
@@ -131,17 +131,17 @@ IUnknown**
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `IUnknown` Schnittstellenzeiger auf.
+Ein Zeiger auf `IUnknown` einen Schnittstellenzeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `CComUnkArray` Methoden `begin` und `end` können verwendet werden, um alle Verbindungspunkte, z. B. durchlaufen zu lassen, wenn ein Ereignis ausgelöst wird.
+Die `CComUnkArray` `begin` Methoden `end` und können verwendet werden, um alle Verbindungspunkte zu durchlaufen, z. B. wenn ein Ereignis ausgelöst wird.
 
 [!code-cpp[NVC_ATL_COM#44](../../atl/codesnippet/cpp/ccomunkarray-class_1.cpp)]
 
-##  <a name="getcookie"></a>  CComUnkArray::GetCookie
+## <a name="ccomunkarraygetcookie"></a><a name="getcookie"></a>CComUnkArray::GetCookie
 
-Rufen Sie diese Methode, um das Cookie zugeordnet erhalten einen bestimmten `IUnknown` Zeiger.
+Rufen Sie diese Methode auf, `IUnknown` um das Cookie abzurufen, das einem bestimmten Zeiger zugeordnet ist.
 
 ```
 DWORD WINAPI GetCookie(IUnknown** ppFind);
@@ -150,19 +150,19 @@ DWORD WINAPI GetCookie(IUnknown** ppFind);
 ### <a name="parameters"></a>Parameter
 
 *ppFind*<br/>
-Die `IUnknown` Zeiger für das dem zugehörigen Cookies erforderlich ist.
+Der `IUnknown` Zeiger, für den das zugehörige Cookie erforderlich ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das zugeordnete Cookie zurück der `IUnknown` Zeiger oder 0, wenn kein übereinstimmender `IUnknown` Zeiger befindet.
+Gibt das dem `IUnknown` Zeiger zugeordnete Cookie oder `IUnknown` 0 zurück, wenn kein übereinstimmender Zeiger gefunden wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es ist mehr als eine Instanz des gleichen `IUnknown` -Zeiger ist, diese Funktion gibt das Cookie für den ersten zurück.
+Wenn mehr als eine Instanz `IUnknown` desselben Zeigers vorhanden ist, gibt diese Funktion das Cookie für die erste zurück.
 
-##  <a name="getunknown"></a>  CComUnkArray::GetUnknown
+## <a name="ccomunkarraygetunknown"></a><a name="getunknown"></a>CComUnkArray::GetUnknown
 
-Rufen Sie diese Methode zum Abrufen der `IUnknown` Zeiger, die einem angegebenen Cookie zugeordnet.
+Rufen Sie diese `IUnknown` Methode auf, um den Zeiger abzurufen, der einem bestimmten Cookie zugeordnet ist.
 
 ```
 IUnknown* WINAPI GetUnknown(DWORD dwCookie);
@@ -171,15 +171,15 @@ IUnknown* WINAPI GetUnknown(DWORD dwCookie);
 ### <a name="parameters"></a>Parameter
 
 *dwCookie*<br/>
-Das Cookie für die zugeordneten `IUnknown` Zeiger ist erforderlich.
+Das Cookie, für `IUnknown` das der zugehörige Zeiger erforderlich ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die `IUnknown` Zeiger oder NULL, wenn keine übereinstimmenden Cookie gefunden wird.
+Gibt `IUnknown` den Zeiger oder NULL zurück, wenn kein übereinstimmendes Cookie gefunden wurde.
 
-##  <a name="remove"></a>  CComUnkArray::Remove
+## <a name="ccomunkarrayremove"></a><a name="remove"></a>CComUnkArray::Entfernen
 
-Rufen Sie diese Methode zum Entfernen einer `IUnknown` Zeiger aus dem Array.
+Rufen Sie diese `IUnknown` Methode auf, um einen Zeiger aus dem Array zu entfernen.
 
 ```
 BOOL Remove(DWORD dwCookie);
@@ -188,13 +188,13 @@ BOOL Remove(DWORD dwCookie);
 ### <a name="parameters"></a>Parameter
 
 *dwCookie*<br/>
-Das Cookie verweisen auf die `IUnknown` Zeiger aus dem Array entfernt werden soll.
+Das Cookie, das `IUnknown` auf den Zeiger verweist, der aus dem Array entfernt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn der Zeiger entfernt, andernfalls FALSE ist.
+Gibt TRUE zurück, wenn der Zeiger entfernt wird, andernfalls FALSE.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComDynamicUnkArray-Klasse](../../atl/reference/ccomdynamicunkarray-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

@@ -26,12 +26,12 @@ helpviewer_keywords:
 - Date data type, MFC encapsulation of
 - COleDateTimeSpan class
 ms.assetid: 7441526d-a30a-4019-8fb3-3fee6f897cbe
-ms.openlocfilehash: 7173fa0b6261ea718a02d399d944a1b5bb98b9f6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8f6a26c2724146f8723dee3ddce60ddce6995ec8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317742"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747153"
 ---
 # <a name="coledatetimespan-class"></a>COleDateTimeSpan-Klasse
 
@@ -95,7 +95,7 @@ A `COleDateTimeSpan` hält Zeit in Tagen.
 
 Weitere Informationen zu `COleDateTime` `COleDateTimeSpan` den und Klassen finden Sie im Artikel [Datum und Uhrzeit: Automatisierungssupport](../../atl-mfc-shared/date-and-time-automation-support.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** ATLComTime.h
 
@@ -678,7 +678,7 @@ Dieser Operator gibt den `COleDateTimeSpan` Wert dieses Werts als Gleitkommazahl
 
 Legt den Wert dieses Datums-/Zeitzeitwerts fest.
 
-```
+```cpp
 void SetDateTimeSpan(LONG lDays, int nHours, int nMins, int nSecs) throw();
 ```
 
@@ -715,13 +715,13 @@ Funktionen, die den Wert `COleDateTimeSpan` eines Objekts abfragen, finden Sie i
 
 Legt den Status (Gültigkeit) dieses `COleDateTimeSpan` Objekts fest.
 
-```
+```cpp
 void SetStatus(DateTimeSpanStatus status) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Status*<br/>
+*status*<br/>
 Der neue Statuswert `COleDateTimeSpan` für dieses Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -751,7 +751,7 @@ Eine kurze Beschreibung dieser Statuswerte finden Sie in der folgenden Liste:
 
 [!code-cpp[NVC_ATLMFC_Utilities#22](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_13.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [COleDateTime-Klasse](../../atl-mfc-shared/reference/coledatetime-class.md)<br/>
 [CTime-Klasse](../../atl-mfc-shared/reference/ctime-class.md)<br/>

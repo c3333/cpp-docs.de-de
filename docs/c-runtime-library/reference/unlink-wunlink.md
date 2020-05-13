@@ -1,9 +1,11 @@
 ---
 title: _unlink, _wunlink
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _unlink
 - _wunlink
+- _o__unlink
+- _o__wunlink
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,16 +38,16 @@ helpviewer_keywords:
 - files [C++], removing
 - _tunlink function
 ms.assetid: 5e4f5f1b-1e99-4391-9b18-9ac63c32fae8
-ms.openlocfilehash: 878a1b4aa009bc8528dfac1908ed26c7e3b269ae
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: af6fd6c7065529b43f5e275ce1d745d0031ddfb7
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957389"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909283"
 ---
 # <a name="_unlink-_wunlink"></a>_unlink, _wunlink
 
-Löschen einer Datei.
+Löschen Sie eine Datei.
 
 ## <a name="syntax"></a>Syntax
 
@@ -59,7 +62,7 @@ int _wunlink(
 
 ### <a name="parameters"></a>Parameter
 
-*filename*<br/>
+*Einfügen*<br/>
 Name der zu entfernenden Datei.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -70,7 +73,9 @@ Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_do
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_unlink** -Funktion löscht die durch *filename*angegebene Datei. **_wunlink** ist eine breit Zeichen Version von **_unlink**. Das *filename* -Argument von **_wunlink** ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **_unlink** -Funktion löscht die durch *filename*angegebene Datei. **_wunlink** ist eine breit Zeichen Version von **_unlink**. Das *filename* -Argument für **_wunlink** ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -80,12 +85,12 @@ Die **_unlink** -Funktion löscht die durch *filename*angegebene Datei. **_wunli
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_unlink**|\<io.h> und \<stdio.h>|
 |**_wunlink**|\<io.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="code-example"></a>Codebeispiel
 
@@ -117,8 +122,8 @@ This file will be deleted.
 Deleted 'CRT_UNLINK.TXT'
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_close](close.md)<br/>
 [remove, _wremove](remove-wremove.md)<br/>

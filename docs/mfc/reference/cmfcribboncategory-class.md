@@ -130,12 +130,12 @@ helpviewer_keywords:
 - CMFCRibbonCategory [MFC], SetName
 - CMFCRibbonCategory [MFC], SetTabColor
 ms.assetid: 99ba25b6-d060-4fdd-bfab-3c46c22981bb
-ms.openlocfilehash: a1653242675db0e235b58f2c4865bb838753c484
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9c72f70e373699addf952600a8d630bb320fa641
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375263"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749540"
 ---
 # <a name="cmfcribboncategory-class"></a>CMFCRibbonCategory-Klasse
 
@@ -252,7 +252,7 @@ Das folgende Diagramm zeigt eine Abbildung der Kategorie "Home" aus der RibbonAp
 
 `CMFCRibbonCategory`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxribboncategory.h
 
@@ -260,7 +260,7 @@ Das folgende Diagramm zeigt eine Abbildung der Kategorie "Home" aus der RibbonAp
 
 Fügt das angegebene Multifunktionsleistenelement dem Array von Multifunktionsleistenelementen hinzu, die im Anpassungsdialogfeld angezeigt werden.
 
-```
+```cpp
 void AddHidden(CMFCRibbonBaseElement* pElem);
 ```
 
@@ -475,7 +475,7 @@ Zeiger auf ein Multifunktionsleistenelement, wenn die Methode erfolgreich war; a
 
 Ruft alle Multifunktionsleistenelemente in der Menübandkategorie ab.
 
-```
+```cpp
 void GetElements(
     CArray <CMFCRibbonBaseElement*, CMFCRibbonBaseElement*>& arElements);
 ```
@@ -493,7 +493,7 @@ Multifunktionsleistenelemente, die für die Verwendung auf der Schnellzugriffssy
 
 Ruft alle Multifunktionsleistenelemente ab, die der angegebenen Befehls-ID zugeordnet sind.
 
-```
+```cpp
 void GetElementsByID(
     UINT uiCmdID,
     CArray <CMFCRibbonBaseElement*, CMFCRibbonBaseElement*>& arElements);
@@ -597,7 +597,7 @@ Die abgerufene Größe enthält den globalen Bildskalierungsfaktor.
 
 Ruft die Befehls-IDs für die Multifunktionsleistenelemente ab, die in der Menübandkategorie enthalten sind.
 
-```
+```cpp
 void GetItemIDsList(
     CList<UINT, UINT>& lstItems,
     BOOL bHiddenOnly = FALSE) const;
@@ -881,7 +881,7 @@ Die vertikale Position von Text in Pixel auf Multifunktionsleistenschaltflächen
 
 Ruft alle sichtbaren Elemente ab, die zur Menübandkategorie gehören.
 
-```
+```cpp
 void GetVisibleElements(
     CArray <CMFCRibbonBaseElement*,
     CMFCRibbonBaseElement*>& arElements);
@@ -1336,7 +1336,7 @@ virtual void ReposPanels(CDC* pDC);
 
 Definiert die Reihenfolge, in der die Multifunktionsleistenbereiche der Multifunktionsleistenkategorie reduziert werden.
 
-```
+```cpp
 void SetCollapseOrder(const CArray<int,int>& arCollapseOrder);
 ```
 
@@ -1363,7 +1363,7 @@ Im folgenden Beispiel wird `SetCollapseOrder` veranschaulicht, `CMFCRibbonCatego
 
 Legt fest, dass die benutzerdefinierten Daten der Menübandkategorie zugeordnet werden sollen.
 
-```
+```cpp
 void SetData(DWORD_PTR dwData);
 ```
 
@@ -1376,7 +1376,7 @@ void SetData(DWORD_PTR dwData);
 
 Weist der Multifunktionsleistenkategorie einen Keytip zu.
 
-```
+```cpp
 void SetKeys(LPCTSTR lpszKeys);
 ```
 
@@ -1393,7 +1393,7 @@ Keytips werden angezeigt, wenn der Benutzer die Alt-Taste oder die F10-Taste dr�
 
 Weist der Multifunktionsleistenkategorie einen Namen und einen Keytip zu.
 
-```
+```cpp
 void SetName(LPCTSTR lpszName);
 ```
 
@@ -1410,7 +1410,7 @@ Um den Keytip für die Multifunktionsleistenkategorie festzulegen, fügen Sie ei
 
 Legt die Farbe der Multifunktionsleistenkategorie fest.
 
-```
+```cpp
 void SetTabColor(AFX_RibbonCategoryColor color);
 ```
 
@@ -1439,7 +1439,7 @@ Farbe kann einer der folgenden Werte sein:
 
 - AFX_CategoryColor_Violet
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

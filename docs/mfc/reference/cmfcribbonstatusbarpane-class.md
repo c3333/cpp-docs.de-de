@@ -32,12 +32,12 @@ helpviewer_keywords:
 - CMFCRibbonStatusBarPane [MFC], StopAnimation
 - CMFCRibbonStatusBarPane [MFC], OnFinishAnimation
 ms.assetid: 5d034c3c-ecca-4267-b88c-0f55a2884dd0
-ms.openlocfilehash: 554b9fe364c6a213e038416a605c17cdd4f8e7d9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bb4e09eabab17061812ed22b2739d06accd57fee
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368800"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753505"
 ---
 # <a name="cmfcribbonstatusbarpane-class"></a>CMFCRibbonStatusBarPane-Klasse
 
@@ -95,7 +95,7 @@ Im folgenden Beispiel wird die Verwendung der unterschiedlichen Methoden in der 
 
 [CMFCRibbonStatusBarPane](../../mfc/reference/cmfcribbonstatusbarpane-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxribbonstatusbarpane.h
 
@@ -259,7 +259,7 @@ virtual void OnFinishAnimation();
 
 Definieren Sie den längsten Text, der im Statusleistenbereich ohne Abschneide angezeigt werden kann.
 
-```
+```cpp
 void SetAlmostLargeText(LPCTSTR lpszAlmostLargeText);
 ```
 
@@ -276,7 +276,7 @@ Die Bibliothek berechnet die Größe des Textes, die *lpszAlmostLargeText* angib
 
 Fügt dem Statusleistenbereich eine Bildliste an, die für Animationen verwendet werden kann.
 
-```
+```cpp
 void SetAnimationList(
     HBITMAP hBmpAnimationList,
     int cxAnimation=16,
@@ -310,7 +310,7 @@ TRUE, wenn die Bildliste erfolgreich an den Statusleistenbereich angefügt wurde
 
 Legt die Textausrichtung der Beschriftung des Statusleistenbereichs fest.
 
-```
+```cpp
 void SetTextAlign(int nAlign);
 ```
 
@@ -333,7 +333,7 @@ void SetTextAlign(int nAlign);
 
 Startet die Animation, die Sie dem Bereich zuweisen.
 
-```
+```cpp
 void StartAnimation(
     UINT nFrameDelay=500,
     UINT nDuration=-1);
@@ -355,11 +355,11 @@ Sie müssen ein Handle für eine `StartAnimation` Bildliste `SetAnimationList`an
 
 Beendet die Animation, die Sie dem Statusleistenbereich zugewiesen haben.
 
-```
+```cpp
 void StopAnimation();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

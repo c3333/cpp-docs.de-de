@@ -20,7 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +37,12 @@ helpviewer_keywords:
 - tgammaf function
 - tgammal function
 ms.assetid: f1bd2681-8af2-48a9-919d-5358fd068acd
-ms.openlocfilehash: d7e27e8b818a16cb0c18f58e2f40c0090dd13ecf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6f3eb1bd791e645407b09a99a8c8e96025ca47e3
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81362503"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912232"
 ---
 # <a name="tgamma-tgammaf-tgammal"></a>tgamma, tgammaf, tgammal
 
@@ -74,36 +74,36 @@ long double tgammal(
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
+*x*<br/>
 Der Wert, dessen Gamma gefunden werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, gibt das Gamma von *x*zurück.
+Wenn erfolgreich, wird das Gamma von *x*zurückgegeben.
 
-Ein Bereichsfehler kann auftreten, wenn die Größe von *x* zu groß oder zu klein für den Datentyp ist. Ein Domänenfehler oder Bereichsfehler kann auftreten, wenn *x* <= 0.
+Ein Bereichs Fehler kann auftreten, wenn die Größe von *x* für den Datentyp zu groß oder zu klein ist. Wenn *x* <= 0 ist, kann ein Domänen Fehler oder ein Bereichs Fehler auftreten.
 
 |Problem|Rückgabewert|
 |-----------|------------|
-|x = 0 €|•INFINITY|
+|x = ± 0|± Unendlich|
 |x = negative ganze Zahl|NaN|
-|x = -INFINITY|NaN|
+|x =-unendlich|NaN|
 |x = +INFINITY|+INFINITY|
 |x = NaN|NaN|
 |Domänenfehler|NaN|
-|pole-Fehler|HUGE_VAL, HUGE_VALF oder HUGE_VALL|
-|Überlaufbereichsfehler|HUGE_VAL, HUGE_VALF oder HUGE_VALL|
+|pole-Fehler|± HUGE_VAL, ± HUGE_VALF oder ± HUGE_VALL|
+|Überlaufbereichsfehler|± HUGE_VAL, ± HUGE_VALF oder ± HUGE_VALL|
 |Unterlaufbereichsfehler|Richtiger Wert nach dem Runden|
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **tgamma** aufrufen, die **Float-** und **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt **tgamma** immer eine **doppelte**.
+Da C++ das überladen zulässt, können Sie über Ladungen von **tgamma** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **tgamma** immer einen **Double**-Wert an und gibt ihn zurück.
 
 Wenn x eine natürliche Zahl ist, gibt diese Funktion die Fakultät von (x-1) zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -113,7 +113,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [lgamma, lgammaf, lgammal](lgamma-lgammaf-lgammal.md)<br/>

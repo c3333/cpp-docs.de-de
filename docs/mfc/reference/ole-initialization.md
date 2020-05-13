@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - OLE initialization
 ms.assetid: aa8a54a7-24c3-4344-b2c6-dbcf6084fa31
-ms.openlocfilehash: 39a6f28bfe38f254f15f441ed6305daa2cb5793e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fefb7eda242ffe15e85cd9f0e16e947a067044a0
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373033"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751223"
 ---
 # <a name="ole-initialization"></a>OLE-Initialisierung
 
@@ -31,7 +31,7 @@ Rufen Sie diese Funktion in `InitInstance` der Funktion des Anwendungsobjekts au
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void AfxEnableControlContainer( );
 ```
 
@@ -39,7 +39,7 @@ void AfxEnableControlContainer( );
 
 Weitere Informationen zu OLE-Steuerelementen (jetzt als ActiveX-Steuerelemente bezeichnet) finden Sie unter [ActiveX Control Topics](../mfc-activex-controls.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -69,10 +69,10 @@ Rufen Sie diese Funktion auf, um die OLE-Unterstützung für eine MFC-Anwendung 
 > [!NOTE]
 > MFC-Anwendungen müssen als Singlethread-Apartment (STA) initialisiert werden. Wenn Sie [CoInitializeEx](/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex) `InitInstance` in Ihrer Außerkraftsetzung aufrufen, geben Sie COINIT_APARTMENTTHREADED (anstelle COINIT_MULTITHREADED) an.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

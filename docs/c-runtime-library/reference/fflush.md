@@ -1,8 +1,9 @@
 ---
 title: fflush
-ms.date: 09/11/2019
+ms.date: 4/2/2020
 api_name:
 - fflush
+- _o_fflush
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - flushing
 - fflush function
 ms.assetid: 8bbc753f-dc74-4e77-b563-74da2835e92b
-ms.openlocfilehash: 4597a013054a549047b4467c5bfed605e55e7656
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: c5208c86484e1d9478f3879d91b32d57ba7c4a3a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80077337"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82912898"
 ---
 # <a name="fflush"></a>fflush
 
@@ -47,7 +49,7 @@ int fflush(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -57,7 +59,7 @@ Zeiger auf die **FILE**-Struktur.
 > [!NOTE]
 > Wenn **fflush** **EOF**zurückgibt, sind die Daten möglicherweise aufgrund eines Schreibfehlers verloren gegangen. Beim Einrichten eines kritischen Fehler Handlers ist es am sichersten, die Pufferung mit der **setvbuf** -Funktion zu aktivieren oder e/a-Routinen auf niedriger Ebene zu verwenden, wie z. b. **_open**, **_close**und **_write** anstelle der Stream-e/a-Funktionen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **fflush** -Funktion leert den Stream- *Stream*. Wenn der Stream im Schreibmodus oder im Updatemodus geöffnet wurde und der letzte Vorgang ein Schreibvorgang war, werden die Inhalte des Streampuffers in die zugrunde liegende Datei bzw. das Gerät geschrieben, und der Puffer wird verworfen. Wenn der Stream im Lesemodus geöffnet wurde, oder wenn der Stream über keinen Puffer verfügt, hat der Befehl **fflush** keine Auswirkung, und jeder Puffer wird beibehalten. Ein-Befehl von **fflush** negiert die Auswirkung eines früheren Aufrufens von **ungetc** für den Datenstrom. Der Stream bleibt nach dem Aufruf geöffnet.
 
@@ -69,13 +71,15 @@ Weitere Informationen zum Steuern der Datenträgercommitfunktion finden Sie unte
 
 Diese Funktion sperrt den aufrufenden Thread und ist threadsicher. Eine nicht sperrende Version finden Sie unter **_fflush_nolock**.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**fflush**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -1,9 +1,11 @@
 ---
 title: _mbsbtype, _mbsbtype_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsbtype_l
 - _mbsbtype
+- _o__mbsbtype
+- _o__mbsbtype_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +34,12 @@ helpviewer_keywords:
 - _mbsbtype_l function
 - mbsbtype_l function
 ms.assetid: 0d5dd91a-d32d-4f98-ac57-98dfc9e98eac
-ms.openlocfilehash: c474cad9027b7914a08816346e38e954a7200bb5
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c1431a2d0886ffd3d16b43abf82b7342c166273a
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952395"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82909478"
 ---
 # <a name="_mbsbtype-_mbsbtype_l"></a>_mbsbtype, _mbsbtype_l
 
@@ -76,8 +79,8 @@ Zu verwendendes Gebietsschema.
 
 |Rückgabewert|Bytetyp|
 |------------------|---------------|
-|**_MBC_SINGLE** (0)|Einzelbytezeichen. In der Codepage 932 gibt **_mbsbtype** beispielsweise 0 zurück, wenn das angegebene Byte im Bereich 0x20-0x7E oder 0xA1-0xDF liegt.|
-|**_MBC_LEAD** (1)|Führendes Byte des Multibytezeichens. In der Codepage 932 gibt **_mbsbtype** beispielsweise 1 zurück, wenn das angegebene Byte im Bereich 0x81-0x9F oder 0xE0-0xFC liegt.|
+|**_MBC_SINGLE** (0)|Einzelbytezeichen. In der Codepage 932 gibt **_mbsbtype** z. b. 0 (null) zurück, wenn das angegebene Byte im Bereich 0x20-0x7E oder 0xA1-0xDF liegt.|
+|**_MBC_LEAD** (1)|Führendes Byte des Multibytezeichens. In der Codepage 932 gibt **_mbsbtype** z. b. 1 zurück, wenn das angegebene Byte im Bereich 0x81-0x9F oder 0xE0-0xFC liegt.|
 |**_MBC_TRAIL** (2)|Nachfolgendes Byte des Multibytezeichens. In der Codepage 932 gibt **_mbsbtype** beispielsweise 2 zurück, wenn das angegebene Byte im Bereich 0x40-0x7E oder 0x80-0xFC liegt.|
 |**_MBC_ILLEGAL** (-1)|**Null** -Zeichenfolge, ungültiges Zeichen oder NULL-Byte gefunden vor dem Byte bei der Offset *Anzahl* in *mbstr*.|
 
@@ -89,17 +92,19 @@ Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas
 
 Wenn die Eingabe Zeichenfolge **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **_MBC_ILLEGAL**zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_mbsbtype**|\<mbstring.h>|\<mbctype.h>*|
 |**_mbsbtype_l**|\<mbstring.h>|\<mbctype.h>*|
 
 \* Für Manifestkonstanten, die als Rückgabewerte verwendet werden.
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Byteklassifizierung](../../c-runtime-library/byte-classification.md)<br/>

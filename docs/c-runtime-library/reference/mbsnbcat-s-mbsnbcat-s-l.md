@@ -1,9 +1,11 @@
 ---
 title: _mbsnbcat_s, _mbsnbcat_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsnbcat_s_l
 - _mbsnbcat_s
+- _o__mbsnbcat_s
+- _o__mbsnbcat_s_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +38,12 @@ helpviewer_keywords:
 - mbsnbcat_s_l function
 - tcsncat function
 ms.assetid: 2c9e9be7-d979-4a54-8ada-23428b6648a9
-ms.openlocfilehash: a148f4be503ee793e4e36855233edfc8fa8f165a
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: d731c94c879d0e4334dc3b57a19b94cc0378abaf
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73624345"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915633"
 ---
 # <a name="_mbsnbcat_s-_mbsnbcat_s_l"></a>_mbsnbcat_s, _mbsnbcat_s_l
 
@@ -105,21 +108,23 @@ Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
 |**Dest**|*sizeInBytes*|*src*|Rückgabewert|
 |------------|-------------------|-----------|------------------|
-|**NULL**|any|any|**EINVAL**|
-|Beliebig|<= 0|any|**EINVAL**|
-|Beliebig|any|**NULL**|**EINVAL**|
+|**Normal**|any|any|**Eingabe**|
+|Any|<= 0|any|**Eingabe**|
+|Any|any|**Normal**|**Eingabe**|
 
 Wenn eine dieser Fehlerbedingungen auftritt, generiert die Funktion einen Fehler über ungültige Parameter, wie dies unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn der Fehler behandelt wird, gibt die Funktion " **EINVAL** " zurück und legt " **errno** " auf " **EINVAL**" fest.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_mbsnbcat_s** -Funktion fügt höchstens die ersten Byte *Anzahl* von *src*an *dest*an. Wenn das Byte, das dem NULL-Zeichen in *dest* unmittelbar vorangestellt ist, ein führendes Byte ist, wird es durch das ursprüngliche Byte von *src*überschrieben. Andernfalls überschreibt das ursprüngliche Byte von *src* das abschließende Null-Zeichen von *dest*. Wenn ein NULL-Byte in *src* angezeigt wird, bevor *count* -Bytes angefügt werden, fügt **_mbsnbcat_s** alle Bytes von *src*bis zum NULL-Zeichen an. Wenn *count* größer als die Länge von *src*ist, wird die Länge von *src* anstelle der *Anzahl*verwendet. Die resultierende Zeichenfolge wird durch ein NULL-Zeichen beendet. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
+Die **_mbsnbcat_s** -Funktion fügt höchstens *die ersten Bytes* von *src*an *dest*an. Wenn das Byte, das dem NULL-Zeichen in *dest* unmittelbar vorangestellt ist, ein führendes Byte ist, wird es durch das ursprüngliche Byte von *src*überschrieben. Andernfalls überschreibt das ursprüngliche Byte von *src* das abschließende Null-Zeichen von *dest*. Wenn ein NULL-Byte in *src* angezeigt wird, bevor *count* -Bytes angefügt werden, fügt **_mbsnbcat_s** alle Bytes von *src*bis zum NULL-Zeichen an. Wenn *count* größer als die Länge von *src*ist, wird die Länge von *src* anstelle der *Anzahl*verwendet. Die resultierende Zeichenfolge wird durch ein NULL-Zeichen beendet. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
-Der Ausgabewert wird von der Einstellung der **LC_CTYPE** -Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die Versionen dieser Funktionen sind identisch, außer dass diejenigen ohne das **_l** -Suffix das aktuelle Gebiets Schema verwenden, und diejenigen mit dem **_l** -Suffix verwenden stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie [unter setlocale, _wsetlocale](setlocale-wsetlocale.md) . Die Versionen dieser Funktionen sind identisch, mit der Ausnahme, dass diejenigen, die nicht über das **_l** -Suffix verfügen, das aktuelle Gebiets Schema verwenden, und diejenigen, die das **_l** Suffix haben, stattdessen den übergebenen Gebiets Schema Parameter verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht. Die Überladungen können automatisch Rückschlüsse über die Pufferlänge ziehen, wodurch kein „size“-Argument angegeben werden muss. Zudem können sie automatisch ihre neueren und sichereren Funktionen zum Ersetzen von älteren, unsichereren Funktionen verwenden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -130,16 +135,16 @@ Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mi
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbcat_s**|\<mbstring.h>|
 |**_mbsnbcat_s_l**|\<mbstring.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcmp, _mbsnbcmp_l](mbsnbcmp-mbsnbcmp-l.md)<br/>
 [_strncnt, _wcsncnt, _mbsnbcnt, _mbsnbcnt_l, _mbsnccnt, _mbsnccnt_l](strncnt-wcsncnt-mbsnbcnt-mbsnbcnt-l-mbsnccnt-mbsnccnt-l.md)<br/>
 [_mbsnbcpy, _mbsnbcpy_l](mbsnbcpy-mbsnbcpy-l.md)<br/>

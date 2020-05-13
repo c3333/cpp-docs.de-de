@@ -1,8 +1,9 @@
 ---
 title: raise
-ms.date: 01/02/2018
+ms.date: 4/2/2020
 api_name:
 - raise
+- _o_raise
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - raise function
 - signals
 - programs [C++], sending signals to executing programs
-ms.openlocfilehash: bed377bb46abac252381344f0b1cf4339815a16e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 81b92404603820948a384b6ad33421251a27c13c
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949680"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919551"
 ---
 # <a name="raise"></a>raise
 
@@ -61,7 +63,7 @@ Bei Erfolg gibt **raise** 0 zurück . Andernfalls gibt es einen Wert ungleich 0 
 
 Die **raise**-Funktion sendet *sig* an das ausführende Programm. Wenn ein vorheriger Aufruf von **signal** eine Signalverarbeitungsfunktion für *sig* installiert hat, führt **raise** diese Funktion aus. Wenn keine Handlerfunktion installiert wurde, wird die dem Signalwert *sig* zugeordnete Standardaktion wie folgt ausgeführt.
 
-|Signal|Bedeutung|Default|
+|Signal|Bedeutung|Standard|
 |------------|-------------|-------------|
 |**SIGABRT**|Nicht ordnungsgemäße Beendigung|Beendet das aufrufende Programm mit Exitcode 3|
 |**SIGFPE**|Gleitkommafehler|Beendet das aufrufende Programm|
@@ -72,16 +74,18 @@ Die **raise**-Funktion sendet *sig* an das ausführende Programm. Wenn ein vorhe
 
 Wenn das Argument kein gültiges Signal gemäß den oberen Angaben ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn keine Behandlung erfolgt, legt die Funktion **errno** auf **EINVAL** fest und gibt einen Wert ungleich 0 (null) zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**raise**|\<signal.h>|
+|**__raise**|\<signal.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[abort](abort.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Abbruch](abort.md)<br/>
 [signal](signal.md)<br/>

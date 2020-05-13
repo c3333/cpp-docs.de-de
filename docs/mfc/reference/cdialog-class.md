@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CDialog [MFC], OnCancel
 - CDialog [MFC], OnOK
 ms.assetid: ca64b77e-2cd2-47e3-8eff-c2645ad578f9
-ms.openlocfilehash: cad762f426012d9d1931b96d54d8a53c9bab465d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 36913cfdd8beda31136176c966890a90077c1b30
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375647"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753368"
 ---
 # <a name="cdialog-class"></a>CDialog-Klasse
 
@@ -135,7 +135,7 @@ Weitere Informationen `CDialog`zu finden Sie unter [Dialogfelder](../../mfc/dial
 
 `CDialog`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -295,7 +295,7 @@ Wenn der Benutzer auf eine der Drucktasten im Dialogfeld klickt, z. B. OK oder A
 
 Rufen Sie diese Memberfunktion auf, um ein modales Dialogfeld zu beenden.
 
-```
+```cpp
 void EndDialog(int nResult);
 ```
 
@@ -338,7 +338,7 @@ Dies ist in der Regel eine OK-Schaltfläche.
 
 Verschiebt den Fokus auf das angegebene Steuerelement im Dialogfeld.
 
-```
+```cpp
 void GotoDlgCtrl(CWnd* pWndCtrl);
 ```
 
@@ -398,7 +398,7 @@ Dialogfelder, die ActiveX-Steuerelemente enthalten, erfordern zusätzliche Infor
 
 Rufen Sie an, um die Dialogfeldeinheiten eines Rechtecks in Bildschirmeinheiten zu konvertieren.
 
-```
+```cpp
 void MapDialogRect(LPRECT lpRect) const;
 ```
 
@@ -419,7 +419,7 @@ Die `MapDialogRect` Memberfunktion ersetzt die Dialogfeldeinheiten in *lpRect* d
 
 Verschiebt den Fokus auf das nächste Steuerelement im Dialogfeld.
 
-```
+```cpp
 void NextDlgCtrl() const;
 ```
 
@@ -522,7 +522,7 @@ Der Dialogdialog-Editor legt in der Regel die Dialogfeldschriftart als Teil der 
 
 Legt den Fokus auf das vorherige Steuerelement im Dialogfeld fest.
 
-```
+```cpp
 void PrevDlgCtrl() const;
 ```
 
@@ -534,7 +534,7 @@ Wenn sich der Fokus beim ersten Steuerelement im Dialogfeld befindet, wird er zu
 
 Ändert das Standard-Tastensteuerelement für ein Dialogfeld.
 
-```
+```cpp
 void SetDefID(UINT nID);
 ```
 
@@ -547,7 +547,7 @@ Gibt die ID des Drucktastensteuerelements an, das zum Standardsteuerelement wird
 
 Legt eine kontextsensitive Hilfe-ID für das Dialogfeld fest.
 
-```
+```cpp
 void SetHelpID(UINT nIDR);
 ```
 
@@ -556,7 +556,7 @@ void SetHelpID(UINT nIDR);
 *nIDR*<br/>
 Gibt die kontextsensitive Hilfe-ID an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel DLGCBR32](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DLGTEMPL](../../overview/visual-cpp-samples.md)<br/>

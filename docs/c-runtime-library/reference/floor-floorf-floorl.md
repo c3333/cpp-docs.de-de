@@ -1,10 +1,11 @@
 ---
 title: floor, floorf, floorl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - floorf
 - floorl
 - floor
+- _o_floor
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +34,12 @@ helpviewer_keywords:
 - calculating floors of values
 - floorl function
 ms.assetid: e9955f70-d659-414f-8050-132e13c8ff36
-ms.openlocfilehash: c646437b4a1d79ef79e53d79fcbc342e5360f3cd
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 3455e9f1fb7f49e686b2d7ae315a413c829f87ea
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957159"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911633"
 ---
 # <a name="floor-floorf-floorl"></a>floor, floorf, floorl
 
@@ -65,7 +67,7 @@ long double floorl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -74,21 +76,23 @@ Die **Floor** -Funktionen geben einen Gleit Komma Wert zurück, der die größte
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± QNAN,IND|none|_DOMAIN|
+|± QNAN,IND|Keine|_DOMAIN|
 
 **Floor** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
 ## <a name="remarks"></a>Hinweise
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **float** -und **Long** **Double** -Werte annehmen und zurückgeben. In einem C-Programm nimmt **Floor** immer einen **Double**-Wert an und gibt ihn zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Floor** immer einen **Double**-Wert an und gibt ihn zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**floor**, **floorf**, **floorl**|\<math.h>|
+|**Floor**, **floorf**, **floorl**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -125,7 +129,7 @@ The ceil of 2.8 is 3.000000
 The ceil of -2.8 is -2.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

@@ -1,11 +1,12 @@
 ---
 title: ldexp, ldexpf, ldexpl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - ldexp
 - ldexpf
 - ldexpl
 - _ldexpl
+- _o_ldexp
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +39,12 @@ helpviewer_keywords:
 - exponent, floating-point numbers
 - floating-point functions, mantissa and exponent
 ms.assetid: aa7f5310-3879-4f63-ae74-86a39fbdedfa
-ms.openlocfilehash: 7fabd00c7ddc5c430c158089b7e5769158b46328
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 95eb1eb3ca18e0e7d3450951c930a07f954bc299
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953505"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82916541"
 ---
 # <a name="ldexp-ldexpf-ldexpl"></a>ldexp, ldexpf, ldexpl
 
@@ -75,10 +77,10 @@ long double ldexpl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert.
 
-*exp*<br/>
+*Exp*<br/>
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -91,11 +93,13 @@ Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden 
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **LDE XP** aufzurufen, die **float** -oder **Long** **Double** -Typen annehmen. In einem C-Programm nimmt **ldebug** immer einen **Double** -und einen **int** -Wert und gibt einen **Double**-Wert zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|C-Header|C++-Header|
+|Routine|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**ldexp**, **ldexpf**, **ldexpl**|\<math.h>|\<cmath>|
+|**LDE XP**, **ldexpf**, **ldexpl**|\<math.h>|\<cmath>|
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -117,7 +121,7 @@ int main( void )
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 4.0 times two to the power of 3 is 32.0

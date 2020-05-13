@@ -132,12 +132,12 @@ helpviewer_keywords:
 - CDockablePane [MFC], m_bHideInAutoHideMode
 - CDockablePane [MFC], m_nSlideSteps
 ms.assetid: e2495f4c-765f-48f9-a2e2-e45e47608d91
-ms.openlocfilehash: ae8dbed46dbcd7d2bd317c2113b2195d0531bce9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6dc87b36442691eafbfab87ac001df731f0d03b4
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375606"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753339"
 ---
 # <a name="cdockablepane-class"></a>CDockablePane Class
 
@@ -309,7 +309,7 @@ Im folgenden Beispiel wird `CDockablePane` veranschaulicht, wie ein `CDockablePa
 
 [CDockablePane](../../mfc/reference/cdockablepane-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxDockablePane.h
 
@@ -881,7 +881,7 @@ Das Framework ruft diese Methode auf, um die Beschriftung eines andockbaren Bere
 
 Aktiviert oder deaktiviert den Autohide-Modus für diesen Bereich und für andere Bereiche im Container.
 
-```
+```cpp
 void EnableAutohideAll(BOOL bEnable = TRUE);
 ```
 
@@ -1438,7 +1438,7 @@ virtual void OnSlide(BOOL bSlideOut);
 
 Das Framework ruft diese Methode auf, wenn ein Bereich abgedockt wird.
 
-```
+```cpp
 void RemoveFromDefaultPaneDividier();
 ```
 
@@ -1476,7 +1476,7 @@ TRUE, wenn der Austausch erfolgreich ist; andernfalls FALSE.
 
 Wenn ein Bereich deserialisiert wird, ruft das Framework diese Methode auf, um den Standardbereichsteiler wiederherzustellen.
 
-```
+```cpp
 void RestoreDefaultPaneDivider();
 ```
 
@@ -1524,7 +1524,7 @@ Rufen Sie diese Methode auf, um einen andockbaren Bereich programmgesteuert in d
 
 Legt die Schaltfläche "Auto-Hide" und die Symbolleiste für das automatische Ausblenden für den Bereich fest.
 
-```
+```cpp
 void SetAutoHideParents(
     CMFCAutoHideBar* pToolBar,
     CMFCAutoHideButton* pBtn);
@@ -1542,7 +1542,7 @@ void SetAutoHideParents(
 
 Legt den Prozentsatz des Speicherplatzes fest, den ein Bereich in seinem Container belegt.
 
-```
+```cpp
 void SetLastPercentInPaneContainer(int n);
 ```
 
@@ -1559,7 +1559,7 @@ Das Framework passt den Bereich so an, dass der neue Wert verwendet wird, wenn d
 
 Legt den wiederhergestellten Standardbereichsteiler fest.
 
-```
+```cpp
 void SetRestoredDefaultPaneDivider(HWND hRestoredSlider);
 ```
 
@@ -1576,7 +1576,7 @@ Ein wiederhergestellter Standardbereichsteiler wird abgerufen, wenn ein Bereich 
 
 Legt die Laufzeitklasseninformationen für ein Registerkartenfenster fest, das erstellt wird, wenn zwei Bereiche zusammen andocken.
 
-```
+```cpp
 void SetTabbedPaneRTC(CRuntimeClass* pRTC);
 ```
 
@@ -1682,7 +1682,7 @@ Sie müssen einen Bereich abdocken, bevor Sie einen externen Vorgang ausführen,
 
 Das Framework schaltet automatisch Bereiche ab, bevor sie zerstört werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

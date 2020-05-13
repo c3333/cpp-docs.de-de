@@ -1,9 +1,11 @@
 ---
 title: _mbsnbicmp, _mbsnbicmp_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsnbicmp_l
 - _mbsnbicmp
+- _o__mbsnbicmp
+- _o__mbsnbicmp_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +40,12 @@ helpviewer_keywords:
 - mbsnbicmp function
 - _wcsnicmp function
 ms.assetid: ddb44974-8b0c-42f0-90d0-56c9350bae0c
-ms.openlocfilehash: c7a4d5def115101c9f3fbd6c53d649ab5b122f1c
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: e84e6b367c428dc26a1864db80f6828f7ec9c176
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79442835"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911835"
 ---
 # <a name="_mbsnbicmp-_mbsnbicmp_l"></a>_mbsnbicmp, _mbsnbicmp_l
 
@@ -73,7 +76,7 @@ Anzahl der zu vergleichenden Bytes.
 
 Der Rückgabewert gibt die Beziehung zwischen den untergeordneten Zeichenfolgen an.
 
-|Rückgabewert|BESCHREIBUNG|
+|Rückgabewert|Beschreibung|
 |------------------|-----------------|
 |< 0|*Zeichenfolge1* Teil Zeichenfolge kleiner als *Zeichenfolge2* Teil Zeichenfolge.|
 |0|*Zeichenfolge1* Teil Zeichenfolge, die mit *Zeichenfolge2* Teil Zeichenfolge identisch ist.|
@@ -81,7 +84,7 @@ Der Rückgabewert gibt die Beziehung zwischen den untergeordneten Zeichenfolgen 
 
 Bei einem Fehler gibt **_mbsnbicmp** **_NLSCMPERROR**zurück, das in String. h und mbstring. h definiert ist.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **_mbsnbicmp** -Funktion führt einen Ordinalvergleich von höchstens der ersten *Anzahl* von Bytes von *Zeichenfolge1* und *Zeichenfolge2*aus. Der Vergleich wird durchgeführt, indem jedes Zeichen in Kleinbuchstaben konvertiert wird. [_mbsnbcmp](mbsnbcmp-mbsnbcmp-l.md) ist eine Version von **_mbsnbicmp**, die Groß-/Kleinschreibung beachtet. Der Vergleich endet, wenn ein abschließendes NULL-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden. Wenn die Zeichen folgen gleich sind, wenn ein abschließende Null-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden, ist die kürzere Zeichenfolge geringer.
 
@@ -93,6 +96,8 @@ Abhängig von der Großschreibung ist der Vergleich von zwei Zeichenfolgen mit Z
 
 Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, ruft **_mbsnbicmp** den Handler für ungültige Parameter auf, wie unter [Parameter Validierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **_NLSCMPERROR** zurück und legt **errno** auf **EINVAL**fest.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
@@ -100,13 +105,13 @@ Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, ruft **_
 |**_tcsnicmp**|**_strnicmp**|**_mbsnbicmp**|**_wcsnicmp**|
 |**_tcsnicmp_l**|**_strnicmp_l**|**_mbsnbicmp_l**|**_wcsnicmp_l**|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbicmp**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -114,7 +119,7 @@ Weitere Informationen finden Sie im Beispiel [_mbsnbcmp _mbsnbcmp_l](mbsnbcmp-mb
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>
 [_mbsnbcmp, _mbsnbcmp_l](mbsnbcmp-mbsnbcmp-l.md)<br/>
 [_stricmp, _wcsicmp, _mbsicmp, _stricmp_l, _wcsicmp_l, _mbsicmp_l](stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md)<br/>

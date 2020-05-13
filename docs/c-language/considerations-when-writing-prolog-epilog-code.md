@@ -7,20 +7,20 @@ helpviewer_keywords:
 - __LOCAL_SIZE constant
 - stack, stack frame layout
 ms.assetid: 3b8addec-e809-48e4-b1d0-5bad133bd4b8
-ms.openlocfilehash: 52403fc45bbb68d693ef154bf39c5dd366dd10c5
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+ms.openlocfilehash: e1559c75808a72cd3f9674399bec036cf392b44f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56146481"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334579"
 ---
 # <a name="considerations-when-writing-prologepilog-code"></a>Überlegungen zum Schreiben von Prolog- und Epilogcode
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
-Vor dem Schreiben eigener Prolog- und Epilogcodesequenzen ist es wichtig, zu verstehen, wie der Stapelrahmen festgelegt ist. Es ist auch hilfreich zu wissen, wie die vordefinierte **__LOCAL_SIZE**-Konstante verwendet werden kann.
+Bevor Sie Ihre eigenen Prolog- und Epilog-Codesequenzen schreiben, ist es wichtig zu verstehen, wie der Stapelrahmen angeordnet ist. Es ist auch nützlich zu wissen, wie die **__LOCAL_SIZE** vordefinierten Konstante verwendet werden.
 
-##  <a name="_clang_c_stack_frame_layout"></a> Stapelrahmenlayout bei C
+## <a name="cstack-frame-layout"></a><a name="_clang_c_stack_frame_layout"></a>CStack-Rahmenlayout
 
 In diesem Beispiel wird der Standardprologcode veranschaulicht, der in einer 32-Bit-Funktion enthalten sein kann:
 
@@ -42,7 +42,7 @@ ret                          ; Return from function
 
 Der Stapel wächst immer nach unten (von hohen zu niedrigen Speicheradressen). Der Basiszeiger (`ebp`) zeigt auf den abgelegten `ebp`-Wert. Der Gültigkeitsbereich der lokalen Variablen beginnt bei `ebp-2`. Um auf lokale Variablen zuzugreifen, berechnen Sie einen Offset von `ebp`, indem Sie den entsprechenden Wert von `ebp` subtrahieren.
 
-##  <a name="_clang_the___local_size_constant"></a> Die __LOCAL_SIZE-Konstante
+## <a name="the-__local_size-constant"></a><a name="_clang_the___local_size_constant"></a> Die __LOCAL_SIZE-Konstante
 
 Der Compiler stellt eine Konstante, **__LOCAL_SIZE**, für die Verwendung im Inlineassemblerblock des Funktionsprologcodes bereit. Mit dieser Konstanten wird Speicherplatz für lokale Variablen im Stapelrahmen im benutzerdefinierten Prologcode zugeordnet.
 
@@ -79,7 +79,7 @@ __declspec ( naked ) func()
 }
 ```
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

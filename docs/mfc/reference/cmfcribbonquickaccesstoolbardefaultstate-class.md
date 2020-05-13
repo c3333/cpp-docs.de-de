@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CMFCRibbonQuickAccessToolBarDefaultState [MFC], CopyFrom
 - CMFCRibbonQuickAccessToolBarDefaultState [MFC], RemoveAll
 ms.assetid: eca99200-b87b-47ba-b2e8-2f3f2444b176
-ms.openlocfilehash: 56219e8ed1833f4b448ec6ffd3c16e9db3c66ada
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: eb6b36066f34036ae599a94f4d1c07b2c633e730
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368872"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753521"
 ---
 # <a name="cmfcribbonquickaccesstoolbardefaultstate-class"></a>CMFCRibbonQuickAccessToolBarDefaultState-Klasse
 
@@ -61,7 +61,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCRibbonQuickAccessToolbarDefault
 
 [!code-cpp[NVC_MFC_RibbonApp#21](../../mfc/reference/codesnippet/cpp/cmfcribbonquickaccesstoolbardefaultstate-class_1.cpp)]
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxribbonquickaccesstoolbar.h
 
@@ -69,7 +69,7 @@ Im folgenden Beispiel wird veranschaulicht, `CMFCRibbonQuickAccessToolbarDefault
 
 Fügt dem Standardstatus für die Quick Access Toolbar einen Befehl hinzu.
 
-```
+```cpp
 void AddCommand(
     UINT uiCmd,
     BOOL bIsVisible=TRUE);
@@ -91,7 +91,7 @@ Das Hinzufügen eines Befehls zum CMFCRibbonQuickAccessToolBarDefaultState führ
 
 Kopiert die Eigenschaften einer Quick Access Toolbar in eine andere.
 
-```
+```cpp
 void CopyFrom(const CMFCRibbonQuickAccessToolBarDefaultState& src);
 ```
 
@@ -120,7 +120,7 @@ Standardmäßig ist die Liste der Befehle, die die neue Instanz von [CMFRibbonQu
 
 Löscht die Liste der Standardbefehle in der Schnellzugriffssymbolleiste.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -128,7 +128,7 @@ void RemoveAll();
 
 Diese Funktion entfernt aus dieser Instanz alle Befehle, die die vorherigen Aufrufe von [CMFCRibbonQuickAccessToolBarDefaultState::AddCommand](#addcommand) hinzugefügt haben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

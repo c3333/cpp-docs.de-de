@@ -2,12 +2,12 @@
 title: Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 description: In diesem Artikel wird beschrieben, wie Sie C++-Linux-Projekte in Visual Studio konfigurieren, um AddressSanitizer verwenden zu können.
 ms.date: 06/07/2019
-ms.openlocfilehash: da7197981a431becfc1231dae96f7542062de675
-ms.sourcegitcommit: b3d19b5f59f3a5d90c24f9f16c73bad4c5eb6944
+ms.openlocfilehash: 80e9ab46c948f2062391ae723c3425c435bd4507
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71195876"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364313"
 ---
 # <a name="configure-linux-projects-to-use-address-sanitizer"></a>Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 

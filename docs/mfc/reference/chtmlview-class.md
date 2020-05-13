@@ -194,12 +194,12 @@ helpviewer_keywords:
 - CHtmlView [MFC], SetWidth
 - CHtmlView [MFC], Stop
 ms.assetid: 904976af-73de-4aba-84ac-cfae8e2be09a
-ms.openlocfilehash: 14f92e51ecf776aad5312335dade7dfcd154c3eb
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9956537dbbbc34c69f6f6a6da8174ab594418386
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352036"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752664"
 ---
 # <a name="chtmlview-class"></a>CHtmlView-Klasse
 
@@ -359,7 +359,7 @@ Die Ableitung der Ansichtsklasse der Anwendung aus `CHtmlView` stellt der Ansich
 
 `CHtmlView`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxhtml.h
 
@@ -390,7 +390,7 @@ Zeigt auf eine null-terminierte Zeichenfolge, die den Fensternamen darstellt.
 Gibt die Fensterstilattribute an. Standardmäßig werden die WS_VISIBLE- und WS_CHILD Windows-Stile festgelegt.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des Fensters angibt. Mit *dem rectDefault-Wert* kann Windows die Größe und Position des neuen Fensters angeben.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des Fensters angibt. Mit *dem rectDefault-Wert* kann Windows die Größe und Position des neuen Fensters angeben.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das übergeordnete Fenster des Steuerelements.
@@ -469,7 +469,7 @@ Ein Standard-HRESULT-Wert. Eine vollständige Auflistung möglicher Werte finden
 
 Rufen Sie diese Memberfunktion auf, um einen Befehl im WebBrowser oder Internet Explorer auszuführen.
 
-```
+```cpp
 void ExecWB(
     OLECMDID cmdID,
     OLECMDEXECOPT cmdexecopt,
@@ -960,7 +960,7 @@ Die aktuelle Breite des Fensters in Pixel.
 
 Navigiert rückwärts ein Element in der Verlaufsliste.
 
-```
+```cpp
 void GoBack();
 ```
 
@@ -972,7 +972,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Navigiert ein Element in der Verlaufsliste vorwärts.
 
-```
+```cpp
 void GoForward();
 ```
 
@@ -980,7 +980,7 @@ void GoForward();
 
 Navigiert zur aktuellen Homepage oder Startseite, die im Dialogfeld „Internetoptionen“ von Internet Explorer oder im Dialogfeld „Interneteigenschaften“ beim Zugriff aus der Systemsteuerung festgelegt ist.
 
-```
+```cpp
 void GoHome();
 ```
 
@@ -992,7 +992,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Navigiert zur aktuellen Suchseite, wie im Dialogfeld Internet Explorer-Internetoptionen oder im Dialogfeld Interneteigenschaften angegeben, auf die über die Systemsteuerung zugegriffen wird.
 
-```
+```cpp
 void GoSearch();
 ```
 
@@ -1029,7 +1029,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um zu der Ressource zu navigieren, die durch eine URL identifiziert wird.
 
-```
+```cpp
 void Navigate(
     LPCTSTR URL,
     DWORD dwFlags = 0,
@@ -1067,7 +1067,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um zu der Ressource zu navigieren, die durch eine URL identifiziert wird, oder zu der Datei, die durch einen vollständigen Pfad identifiziert wird.
 
-```
+```cpp
 void Navigate2(
     LPITEMIDLIST pIDL,
     DWORD dwFlags = 0,
@@ -1825,7 +1825,7 @@ Dadurch kann sich das Hostfenster des Objektsteuerelements genauso verhalten wie
 
 Rufen Sie diese Memberfunktion auf, um die Eigenschaft festzulegen, die einem bestimmten Objekt zugeordnet ist.
 
-```
+```cpp
 void PutProperty(
     LPCTSTR lpszProperty,
     const VARIANT& vtValue);
@@ -1935,7 +1935,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Lädt die URL oder Datei, die der Webbrowser gerade anzeigt, neu.
 
-```
+```cpp
 void Refresh();
 ```
 
@@ -1949,7 +1949,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Lädt die Datei, die Internet Explorer derzeit anzeigt, neu.
 
-```
+```cpp
 void Refresh2(int nLevel);
 ```
 
@@ -1968,7 +1968,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um die Adressleiste des Internet Explorer-Objekts ein- oder auszublenden.
 
-```
+```cpp
 void SetAddressBar(BOOL bNewValue);
 ```
 
@@ -1985,7 +1985,7 @@ Gilt für Internet Explorer. Wenn Sie diesen Aufruf mit einem WebBrowser-Steuere
 
 Rufen Sie diese Memberfunktion auf, um Internet Explorer entweder auf voll funktionsfähigen oder normalen Fenstermodus festzulegen.
 
-```
+```cpp
 void SetFullScreen(BOOL bNewValue);
 ```
 
@@ -2004,7 +2004,7 @@ Gilt für Internet Explorer. Wenn Sie diesen Aufruf mit einem WebBrowser-Steuere
 
 Rufen Sie diese Memberfunktion auf, um die Höhe des Internet Explorer-Hauptfensters festzulegen.
 
-```
+```cpp
 void SetHeight(long nNewValue);
 ```
 
@@ -2021,7 +2021,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Legt die horizontale Position des Internet Explorer-Hauptfensters fest.
 
-```
+```cpp
 void SetLeft(long nNewValue);
 ```
 
@@ -2034,7 +2034,7 @@ Die Bildschirmkoordinate des linken Rands des Hauptfensters.
 
 Rufen Sie diese Memberfunktion auf, um die Internet Explorer-Menüleiste ein- oder auszublenden.
 
-```
+```cpp
 void SetMenuBar(BOOL bNewValue);
 ```
 
@@ -2051,7 +2051,7 @@ Gilt für Internet Explorer. Wenn Sie diesen Aufruf mit einem WebBrowser-Steuere
 
 Rufen Sie diese Memberfunktion auf, um einen Wert festzulegen, der angibt, ob das WebBrowser-Steuerelement derzeit im Offlinemodus arbeitet.
 
-```
+```cpp
 void SetOffline(BOOL bNewValue);
 ```
 
@@ -2070,7 +2070,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um einen Wert festzulegen, der angibt, ob das WebBrowser-Steuerelement als Browser der obersten Ebene für die Zielnamensauflösung registriert ist.
 
-```
+```cpp
 void SetRegisterAsBrowser(BOOL bNewValue);
 ```
 
@@ -2089,7 +2089,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um einen Wert festzulegen, der angibt, ob das WebBrowser-Steuerelement als Ablageziel für die Navigation registriert ist.
 
-```
+```cpp
 void SetRegisterAsDropTarget(BOOL bNewValue);
 ```
 
@@ -2106,7 +2106,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um einen Wert festzulegen, der angibt, ob Dialogfelder angezeigt werden können.
 
-```
+```cpp
 void SetSilent(BOOL bNewValue);
 ```
 
@@ -2123,7 +2123,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um die Statusleiste anzuzeigen.
 
-```
+```cpp
 void SetStatusBar(BOOL bNewValue);
 ```
 
@@ -2140,7 +2140,7 @@ Gilt für Internet Explorer. Wenn Sie diesen Aufruf mit einem WebBrowser-Steuere
 
 Rufen Sie diese Memberfunktion auf, um einen Wert festzulegen, der angibt, ob sich das WebBrowser-Steuerelement im Theatermodus befindet.
 
-```
+```cpp
 void SetTheaterMode(BOOL bNewValue);
 ```
 
@@ -2159,7 +2159,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um die Internet Explorer-Symbolleiste ein- oder auszublenden.
 
-```
+```cpp
 void SetToolBar(int nNewValue);
 ```
 
@@ -2176,7 +2176,7 @@ Gilt für Internet Explorer. Wenn Sie diesen Aufruf mit einem WebBrowser-Steuere
 
 Rufen Sie diese Memberfunktion auf, um den Abstand zwischen dem internen oberen Rand des WebBrowser-Steuerelements und dem oberen Rand des Containers festzulegen.
 
-```
+```cpp
 void SetTop(long nNewValue);
 ```
 
@@ -2193,7 +2193,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Rufen Sie diese Memberfunktion auf, um den Sichtbarkeitsstatus des WebBrowser-Steuerelements festzulegen.
 
-```
+```cpp
 void SetVisible(BOOL bNewValue);
 ```
 
@@ -2210,7 +2210,7 @@ Betrifft Internet Explorer und WebBrowser.
 
 Legt die Breite des Internet Explorer-Hauptfensters fest.
 
-```
+```cpp
 void SetWidth(long nNewValue);
 ```
 
@@ -2223,7 +2223,7 @@ Die Breite des Internet Explorer-Hauptfensters in Pixel.
 
 Rufen Sie diese Memberfunktion auf, um alle ausstehenden Navigations- oder Download-Operationen abzubrechen und alle dynamischen Seitenelemente, wie Z. B. Hintergrundsounds und Animationen, zu beenden.
 
-```
+```cpp
 void Stop();
 ```
 
@@ -2231,7 +2231,7 @@ void Stop();
 
 Betrifft Internet Explorer und WebBrowser.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel-MFCIE](../../overview/visual-cpp-samples.md)<br/>
 [CFormView-Klasse](../../mfc/reference/cformview-class.md)<br/>

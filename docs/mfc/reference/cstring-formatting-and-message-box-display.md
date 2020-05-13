@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - CString objects [MFC], formatting and message boxes
 ms.assetid: d1068cf4-9cc5-4952-b9e7-d612c53cbc28
-ms.openlocfilehash: d30d26ecf0e72ee33affe3df5b88c438ff83bb6b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fa1fe8826543834872de5257a0f5d56b2ad9fc1c
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365994"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752671"
 ---
 # <a name="cstring-formatting-and-message-box-display"></a>CString-Formatierung und Meldungsfeldanzeige
 
@@ -26,7 +26,7 @@ Diese Gruppe von Funktionen enthält auch eine globale Routine zum Anzeigen eine
 |[AfxFormatString2](#afxformatstring2)|Ersetzt zwei Zeichenfolgen für die Formatzeichen "%1" und "%2" in einer Zeichenfolge, die in der Zeichenfolgentabelle enthalten ist.|
 |[AfxMessageBox](#afxmessagebox)|Zeigt ein Meldungsfeld an.|
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxwin.h
 
@@ -70,7 +70,7 @@ Diese Funktion gibt FALSE zurück, wenn entweder *lpszFullString* auf NULL geset
 
 [!code-cpp[NVC_MFC_Utilities#48](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_1.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxwin.h
 
@@ -78,7 +78,7 @@ Diese Funktion gibt FALSE zurück, wenn entweder *lpszFullString* auf NULL geset
 
 Ersetzt die Zeichenfolge, auf die *lpsz1* zeigt, für alle Instanzen der Zeichen "%1" in der Vorlagenzeichenfolgenressource, die von *nIDS*identifiziert wird.
 
-```
+```cpp
 void  AfxFormatString1(
     CString& rString,
     UINT nIDS,
@@ -106,7 +106,7 @@ Wenn die Formatzeichen "%1" mehr als einmal in der Zeichenfolge angezeigt werden
 
 [!code-cpp[NVC_MFC_Utilities#25](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_2.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxwin.h
 
@@ -114,7 +114,7 @@ Wenn die Formatzeichen "%1" mehr als einmal in der Zeichenfolge angezeigt werden
 
 Ersetzt die Zeichenfolge, auf die *lpsz1* zeigt, für alle Instanzen der Zeichen "%1" und die Zeichenfolge, auf die von *lpsz2* verwiesen wird, für alle Instanzen der Zeichen "%2" in der Vorlagenzeichenfolgenressource, die von *nIDS*identifiziert wird.
 
-```
+```cpp
 void AfxFormatString2(
     CString& rString,
     UINT nIDS,
@@ -146,7 +146,7 @@ Wenn die Formatzeichen "%1" oder "%2" mehr als einmal in der Zeichenfolge angeze
 
 [!code-cpp[NVC_MFC_Utilities#26](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_3.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxwin.h
 
@@ -212,7 +212,7 @@ Die zweite Form der Funktion verwendet die Zeichenfolgenressource mit der ID *nI
 
 [!code-cpp[NVC_MFCWindowing#133](../../mfc/reference/codesnippet/cpp/cstring-formatting-and-message-box-display_4.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)<br/>
 [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md)

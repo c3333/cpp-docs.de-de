@@ -1,8 +1,9 @@
 ---
 title: _gcvt
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _gcvt
+- _o__gcvt
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +33,12 @@ helpviewer_keywords:
 - strings [C++], converting from floating point
 - CVTBUFSIZE
 ms.assetid: 5761411e-c06b-409a-912f-810fe7f4bcb5
-ms.openlocfilehash: 3618f5571275783131c74c89f29218f89023f70e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d13ae6cee293036f0454b23e0349cabb2869be30
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956100"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919415"
 ---
 # <a name="_gcvt"></a>_gcvt
 
@@ -57,15 +59,15 @@ char *_gcvt(
 *value*<br/>
 Zu konvertierender Wert.
 
-*Ziffern*<br/>
+*Zahlen*<br/>
 Anzahl der gespeicherten signifikanten Ziffern.
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für das Ergebnis.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_gcvt** gibt einen Zeiger auf die Zeichenfolge der Ziffern zurück.
+**_gcvt** gibt einen Zeiger auf die Zeichenfolge zurück.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -73,15 +75,17 @@ Die **_gcvt** -Funktion konvertiert einen Gleit Komma *Wert* in eine Zeichenfolg
 
 Ein *Puffer* der Länge **_CVTBUFSIZE** ist für alle Gleit Komma Werte ausreichend.
 
-Diese Funktion überprüft ihre Parameter. Wenn der Puffer **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt **null**zurück.
+Diese Funktion überprüft ihre Parameter. Wenn *buffer* der Puffer **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt **null**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_gcvt**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -139,7 +143,7 @@ buffer: '-0.123456789012' (15 chars)
 buffer: '-1.23456789012e-002' (19 chars)
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

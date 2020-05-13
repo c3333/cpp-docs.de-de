@@ -6,12 +6,12 @@ helpviewer_keywords:
 - operators [C++], conditional
 - expressions [C++], conditional
 ms.assetid: c4f1a5ca-0844-44a7-a384-eca584d4e3dd
-ms.openlocfilehash: 9dc93a47d36af92fe370e3f56f504682d49bd1dd
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+ms.openlocfilehash: a64317c75e48111148053cc7efb62fb5a6d79f7f
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56150622"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749197"
 ---
 # <a name="conditional-expression-operator"></a>Bedingter Ausdrucksoperator
 
@@ -19,9 +19,9 @@ C hat einen ternären Operator: den bedingten Ausdrucksoperator (**? :**).
 
 ## <a name="syntax"></a>Syntax
 
-*conditional-expression*:<br/>
+*Bedingtkand*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR expression*  **?**  *expression* **:** *conditional-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR expression*  **?**  *Ausdruck*  **:**  *Bedingter Ausdruck*
 
 Der Ausdruck für *logical-OR-expression* muss über Ganzzahl-, Gleitkomma- oder Zeigertypen verfügen. Er wird hinsichtlich seiner Übereinstimmung mit 0 ausgewertet. Ein Sequenzpunkt folgt dem Ausdruck für *logical-OR-expression*. Die Auswertung der Operanden wird wie folgt ausgeführt:
 
@@ -55,7 +55,7 @@ j = ( i < 0 ) ? ( -i ) : ( i );
 
 In diesem Beispiel wird der absolute Wert von `i` dem Wert `j` zugewiesen. Wenn `i` kleiner als 0 ist, wird `-i` dem Wert `j` zugewiesen. Wenn `i` größer oder gleich 0 ist, wird `i` dem Wert `j` zugewiesen.
 
-```
+```cpp
 void f1( void );
 void f2( void );
 int x;
@@ -68,6 +68,6 @@ int y;
 
 In diesem Beispiel werden die zwei Funktionen `f1` und `f2` sowie die zwei Variablen `x` und `y` deklariert. Wenn die zwei Variablen später im Programm den gleichen Wert haben, wird die `f1`-Funktion aufgerufen. Andernfalls wird `f2` aufgerufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Bedingter Operator: ? :](../cpp/conditional-operator-q.md)

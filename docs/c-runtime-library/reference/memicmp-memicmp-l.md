@@ -1,9 +1,11 @@
 ---
 title: _memicmp, _memicmp_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _memicmp_l
 - _memicmp
+- _o__memicmp
+- _o__memicmp_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +33,12 @@ helpviewer_keywords:
 - memicmp_l function
 - _memicmp_l function
 ms.assetid: 0a6eb945-4077-4f84-935d-1aaebe8db8cb
-ms.openlocfilehash: a463b9c79a76879311bb811b38e4aabcfd6e7226
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 365b57dc300da5686895d66fa642e3870612c2ed
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951844"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915394"
 ---
 # <a name="_memicmp-_memicmp_l"></a>_memicmp, _memicmp_l
 
@@ -80,7 +83,7 @@ Der Rückgabewert gibt die Beziehung zwischen den Puffern an.
 |< 0|*buffer1* kleiner als *buffer2*.|
 |0|*buffer1* identisch mit *buffer2*.|
 |> 0|*buffer1* größer als *buffer2*.|
-|**_NLSCMPERROR**|Es ist ein Fehler aufgetreten.|
+|**_NLSCMPERROR**|Ein Fehler ist aufgetreten.|
 
 ## <a name="remarks"></a>Hinweise
 
@@ -90,14 +93,16 @@ Wenn entweder *buffer1* oder *buffer2* ein NULL-Zeiger ist, ruft diese Funktion 
 
 **_memicmp** verwendet das aktuelle Gebiets Schema für vom Gebiets Schema abhängiges Verhalten. **_memicmp_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_memicmp**|\<memory.h> oder \<string.h>|
 |**_memicmp_l**|\<memory.h> oder \<string.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -134,7 +139,7 @@ Compare 'Those Who Will Not Learn from' to 'THOSE WHO WILL NOT LEARN FROM'
 First is equal to second.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Pufferbearbeitung](../../c-runtime-library/buffer-manipulation.md)<br/>
 [_memccpy](memccpy.md)<br/>

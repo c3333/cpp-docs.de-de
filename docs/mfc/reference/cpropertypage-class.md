@@ -40,12 +40,12 @@ helpviewer_keywords:
 - CPropertyPage [MFC], SetModified
 - CPropertyPage [MFC], m_psp
 ms.assetid: d9000a21-aa81-4530-85d9-f43432afb4dc
-ms.openlocfilehash: 816948ea17f674c3cd693331502df33cce62610c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f46566eb562f1515e98aedf938ca68b225ee1b67
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364000"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751105"
 ---
 # <a name="cpropertypage-class"></a>CPropertyPage-Klasse
 
@@ -111,7 +111,7 @@ Weitere Informationen zum Einrichten eines Eigenschaftenblatts als Assistent fin
 
 `CPropertyPage`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxdlgs.h
 
@@ -119,7 +119,7 @@ Weitere Informationen zum Einrichten eines Eigenschaftenblatts als Assistent fin
 
 Rufen Sie diese Funktion auf, nachdem eine nicht wiederherstellbare Änderung an den Daten auf einer Seite eines modalen Eigenschaftenblatts vorgenommen wurde.
 
-```
+```cpp
 void CancelToClose();
 ```
 
@@ -137,7 +137,7 @@ Die `CancelToClose` Memberfunktion führt in einem moduslosen Eigenschaftenblatt
 
 Rufen Sie diese Memberfunktion auf, um ein `CPropertyPage` Objekt zu erstellen.
 
-```
+```cpp
 void Construct(
     UINT nIDTemplate,
     UINT nIDCaption = 0);
@@ -555,7 +555,7 @@ Wenn eine Seite einen Wert ungleich Null zurückgibt, sendet das Eigenschaftenbl
 
 Rufen Sie diese Memberfunktion auf, um die Schaltfläche Jetzt anwenden zu aktivieren oder zu deaktivieren, je nachdem, ob die Einstellungen auf der Eigenschaftenseite auf das entsprechende externe Objekt angewendet werden sollen.
 
-```
+```cpp
 void SetModified(BOOL bChanged = TRUE);
 ```
 
@@ -572,7 +572,7 @@ Das Framework verfolgt, welche Seiten "schmutzig" sind, d. h. Eigenschaftenseite
 
 [!code-cpp[NVC_MFCDocView#127](../../mfc/codesnippet/cpp/cpropertypage-class_17.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>

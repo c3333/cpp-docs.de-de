@@ -38,12 +38,12 @@ helpviewer_keywords:
 - CRectTracker [MFC], m_rect
 - CRectTracker [MFC], m_sizeMin
 ms.assetid: 99caa7f2-3c0d-4a42-bbee-e5d1d342d4ee
-ms.openlocfilehash: 4d262ab5f88481d56de1c236effb66fcbf6a706a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c3600bc5a945c24e91269bc280b4b8e99c54d4c8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368377"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750457"
 ---
 # <a name="crecttracker-class"></a>CRectTracker-Klasse
 
@@ -104,7 +104,7 @@ Weitere Informationen zur `CRectTracker`Verwendung finden Sie im Artikel [Tracke
 
 `CRectTracker`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxext.h
 
@@ -174,7 +174,7 @@ Der Standardkonstruktor initialisiert `CRectTracker` das Objekt mit den Werten a
 
 Rufen Sie diese Funktion auf, um die äußeren Linien und den inneren Bereich des Rechtecks zu zeichnen.
 
-```
+```cpp
 void Draw(CDC* pDC) const;
 ```
 
@@ -247,7 +247,7 @@ Die Standardimplementierung `GetHandleMask` von gibt die Maske der Bits zurück,
 
 Rufen Sie diese Funktion auf, um die Koordinaten des Rechtecks abzurufen.
 
-```
+```cpp
 void GetTrueRect(LPRECT lpTrueRect) const;
 ```
 
@@ -479,7 +479,7 @@ Diese Funktion erfasst die Maus, bis der Benutzer die linke Maustaste loslässt,
 
 Die Verfolgung erfolgt mit einer Gummiband-Auswahl vom unteren rechten Griff. Wenn invertieren zulässig ist, kann die Größe des Rechtecks durch Ziehen nach oben und nach links oder unten und nach rechts geändert werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel-TRACKER](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DRAWCLI](../../overview/visual-cpp-samples.md)<br/>

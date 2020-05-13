@@ -1,9 +1,11 @@
 ---
 title: mbtowc, _mbtowc_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - mbtowc
 - _mbtowc_l
+- _o__mbtowc_l
+- _o_mbtowc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +20,7 @@ api_location:
 - api-ms-win-crt-convert-l1-1-0.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +32,12 @@ helpviewer_keywords:
 - _mbtowc_l function
 - mbtowc_l function
 ms.assetid: dfd1c8a7-e73a-4307-9353-53b70b45d4d1
-ms.openlocfilehash: 655f5288738d2f2329b50a27381c00cb06e35e6d
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 54e50da06fbe009184894edc60b6267e372aefc1
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952021"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915413"
 ---
 # <a name="mbtowc-_mbtowc_l"></a>mbtowc, _mbtowc_l
 
@@ -78,14 +81,16 @@ Wenn **mbchar** nicht **null** ist und das Objekt, auf das *mbchar* verweist, ei
 
 Die **mbtowc** -Funktion konvertiert *Anzahl* oder weniger Bytes, auf die *mbchar*zeigt, wenn *mbchar* nicht **null**ist, auf ein entsprechendes breit Zeichen. **mbtowc** speichert das resultierende breit Zeichen bei *WCHAR,* Wenn *WCHAR* nicht **null**ist. **mbtowc** untersucht nicht mehr als **MB_CUR_MAX** bytes. **mbtowc** verwendet das aktuelle Gebiets Schema für vom Gebiets Schema abhängiges Verhalten. **_mbtowc_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**mbtowc**|\<stdlib.h>|
 |**_mbtowc_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -147,7 +152,7 @@ Attempt to convert a NULL pointer to a wide character:
    Bytes converted: 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [MultiByteToWideChar](/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar)<br/>

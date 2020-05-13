@@ -1,8 +1,9 @@
 ---
 title: _isatty
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _isatty
+- _o__isatty
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - _isatty function
 - checking character devices
 ms.assetid: 9f1b2e87-0cd7-4079-b187-f2b7ca15fcbe
-ms.openlocfilehash: 2d2ba2fdfeb1c8bffe47b0953f0629746d2eb599
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 16d67053cd05d567e4c732d4366bd121863d43f9
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954555"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919768"
 ---
 # <a name="_isatty"></a>_isatty
 
@@ -46,7 +48,7 @@ int _isatty( int fd );
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf das zu testende Gerät verweist.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -55,17 +57,19 @@ Dateideskriptor, der auf das zu testende Gerät verweist.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_isatty** -Funktion bestimmt, ob *FD* einem Zeichengerät (Terminal, Konsole, Drucker oder serieller Anschluss) zugeordnet ist.
+Die **_isatty** -Funktion bestimmt, ob *FD* einem Zeichengerät zugeordnet ist (Terminal, Konsole, Drucker oder serieller Anschluss).
 
 Diese Funktion überprüft den *FD* -Parameter. Wenn *FD* ein fehlerhafter Dateizeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion 0 zurück und legt **errno** auf **EBADF**fest.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_isatty**|\<io.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -97,6 +101,6 @@ int main( void )
 stdout has not been redirected to a file
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>

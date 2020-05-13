@@ -108,12 +108,12 @@ helpviewer_keywords:
 - CComboBox [MFC], SetTopIndex
 - CComboBox [MFC], ShowDropDown
 ms.assetid: 4e73b5df-0d2e-4658-9706-38133fb10513
-ms.openlocfilehash: df935bb924c7d8908b1166852dc553a73fc71ff3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dc803fb4ce137b256f4197afaec7bc3327e1e85a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369514"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754828"
 ---
 # <a name="ccombobox-class"></a>CComboBox-Klasse
 
@@ -196,7 +196,7 @@ Das aktuell ausgewählte Element (falls vorhanden) im Listenfeld wird im statisc
 
 In der folgenden Tabelle werden [styles](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)die drei Kombinationsfeldstile verglichen.
 
-|Stil|Wann ist das Listenfeld sichtbar?|Statisches oder Bearbeitungssteuerelement|
+|Style|Wann ist das Listenfeld sichtbar?|Statisches oder Bearbeitungssteuerelement|
 |-----------|-------------------------------|-----------------------------|
 |Einfach|Always|Edit (Bearbeiten)|
 |Drop-down|Wenn sie heruntergelassen werden|Edit (Bearbeiten)|
@@ -258,7 +258,7 @@ Wenn Sie ein `CComboBox` Objekt in ein anderes Fensterobjekt einbetten, müssen 
 
 `CComboBox`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
@@ -308,7 +308,7 @@ CComboBox();
 
 Löscht (löscht) die aktuelle Auswahl, falls vorhanden, im Bearbeitungssteuerelement des Kombinationsfelds.
 
-```
+```cpp
 void Clear();
 ```
 
@@ -357,7 +357,7 @@ Standardmäßig führt diese Memberfunktion nichts aus. Wenn Sie ein Kombination
 
 Kopiert die aktuelle Auswahl(en) im Bearbeitungssteuerelement des Kombinationsfelds im CF_TEXT Format in die Zwischenablage.
 
-```
+```cpp
 void Copy();
 ```
 
@@ -427,7 +427,7 @@ Wenden Sie die folgenden [Fensterstile](../../mfc/reference/styles-used-by-mfc.m
 
 Löscht (schneidet) die aktuelle Auswahl, falls vorhanden, im Kombinationsfeld-Bearbeitungssteuerelement und kopiert den gelöschten Text in der Zwischenablage im CF_TEXT Format.
 
-```
+```cpp
 void Cut();
 ```
 
@@ -674,7 +674,7 @@ BOOL GetCueBanner(
 
 In der ersten Überladung ein [CString-Objekt,](../../atl-mfc-shared/using-cstring.md) das den Cue-Banner-Text enthält, falls vorhanden; Andernfalls ein `CString` Objekt mit einer Länge von null.
 
-- oder -
+Oder
 
 In der zweiten Überladung TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
@@ -708,7 +708,7 @@ Der nullbasierte Index des aktuell ausgewählten Elements im Listenfeld eines Ko
 
 Rufen `GetDroppedControlRect` Sie die Memberfunktion auf, um die Bildschirmkoordinaten des sichtbaren (Dropdown-)Listenfelds eines Dropdown-Kombinationsfelds abzurufen.
 
-```
+```cpp
 void GetDroppedControlRect(LPRECT lprect) const;
 ```
 
@@ -850,7 +850,7 @@ Der 32-Bit-Wert kann mit dem *dwItemData-Parameter* eines [SetItemData-Memberfun
 
 Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinationsfeldelement als Zeiger zugeordnet ist (**void** <strong>\*</strong>).
 
-```
+```cpp
 void* GetItemDataPtr(int nIndex) const;
 ```
 
@@ -1125,7 +1125,7 @@ Eine Beschreibung der `MEASUREITEMSTRUCT` Struktur finden Sie unter [CWnd::OnMea
 
 Fügt die Daten aus der Zwischenablage in das Bearbeitungssteuerelement des Kombinationsfelds an der aktuellen Cursorposition ein.
 
-```
+```cpp
 void Paste();
 ```
 
@@ -1141,7 +1141,7 @@ Daten werden nur eingefügt, wenn die Zwischenablage Daten im CF_TEXT-Format ent
 
 Entfernt alle Elemente aus dem Listenfeld und bearbeitet die Steuerung eines Kombinationsfelds.
 
-```
+```cpp
 void ResetContent();
 ```
 
@@ -1337,7 +1337,7 @@ Das Scrollen im statischen Steuerelement ist deaktiviert, wenn die Elementliste 
 
 Legt die Breite in Pixel fest, mit der der Listenfeldteil des Kombinationsfelds horizontal gescrollt werden kann.
 
-```
+```cpp
 void SetHorizontalExtent(UINT nExtent);
 ```
 
@@ -1536,7 +1536,7 @@ Das System scrollt das Listenfeld, bis entweder das von *nIndex* angegebene Elem
 
 Zeigt das Listenfeld eines Kombinationsfelds mit dem [Stil CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder CBS_DROPDOWNLIST ein oder blendet [es](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) aus.
 
-```
+```cpp
 void ShowDropDown(BOOL bShowIt = TRUE);
 ```
 
@@ -1555,7 +1555,7 @@ Diese Memberfunktion hat keine Auswirkungen auf ein Kombinationsfeld, das mit de
 
   Siehe Beispiel für [CComboBox::GetDroppedState](#getdroppedstate).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel STRGBARS](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

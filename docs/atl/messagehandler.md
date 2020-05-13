@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - MessageHandler function
 ms.assetid: 8a0acf97-1b0d-4226-91b9-75446634a03c
-ms.openlocfilehash: aa044ef88ba3c872c2652cd774ac50024e52c68c
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 65a8ce08e4f8606f168b101aa4daba23ef541051
+ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69492314"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82168669"
 ---
 # <a name="messagehandler"></a>MessageHandler
 
@@ -18,7 +18,7 @@ ms.locfileid: "69492314"
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 LRESULT MessageHandler(
     UINT uMsg,
     WPARAM wParam,
@@ -28,14 +28,14 @@ LRESULT MessageHandler(
 
 ### <a name="parameters"></a>Parameter
 
-*uMsg*<br/>
+*Umschlag*<br/>
 Gibt die Meldung an.
 
 *wParam*<br/>
-Zusätzliche Nachrichten spezifische Informationen.
+Zusätzliche meldungsspezifische Informationen.
 
 *lParam*<br/>
-Zusätzliche Nachrichten spezifische Informationen.
+Zusätzliche meldungsspezifische Informationen.
 
 *bHandled*<br/>
 In der Meldungs Zuordnung wird *bbehandelte* auf `MessageHandler` true festgelegt, bevor aufgerufen wird. Wenn `MessageHandler` die Nachricht nicht vollständig verarbeitet, sollte *bbehandelte* auf false festgelegt werden, um anzugeben, dass die Nachricht weiterverarbeitet werden muss.
@@ -44,12 +44,12 @@ In der Meldungs Zuordnung wird *bbehandelte* auf `MessageHandler` true festgeleg
 
 Das Ergebnis der Nachrichtenverarbeitung. 0, wenn erfolgreich.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein Beispiel für die Verwendung dieses Nachrichten Handlers in einer Meldungs Zuordnung finden Sie unter [MESSAGE_HANDLER](reference/message-map-macros-atl.md#message_handler).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Implementieren eines Fensters](../atl/implementing-a-window.md)<br/>
-[Meldungszuordnungen](../atl/message-maps-atl.md)<br/>
+[Meldungs Zuordnungen](../atl/message-maps-atl.md)<br/>
 [WM_NOTIFY](/windows/win32/controls/wm-notify)

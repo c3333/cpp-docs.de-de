@@ -50,12 +50,12 @@ helpviewer_keywords:
 - CMFCRibbonStatusBar [MFC], SetInformation
 - CMFCRibbonStatusBar [MFC], OnDrawInformation
 ms.assetid: 921eb57f-3b40-49fa-a38c-3f2fb6dc2893
-ms.openlocfilehash: f76c2014cd3f6ed6e479fb66436224e675c69569
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8d90e01db022c33edd654e83af05e9986799f2b9
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368819"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754059"
 ---
 # <a name="cmfcribbonstatusbar-class"></a>CMFCRibbonStatusBar-Klasse
 
@@ -132,7 +132,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CMFCRibbonStatusBar](../../mfc/reference/cmfcribbonstatusbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxribbonstatusbar.h
 
@@ -140,7 +140,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 Fügt der Multifunktionsleistenstatusleiste ein dynamisches Element hinzu.
 
-```
+```cpp
 void AddDynamicElement(CMFCRibbonBaseElement* pElement);
 ```
 
@@ -157,7 +157,7 @@ Im Gegensatz zu regulären Elementen können dynamische Elemente nicht angepasst
 
 Fügt der Multifunktionsleistenstatusleiste ein neues Multifunktionsleistenelement hinzu.
 
-```
+```cpp
 void AddElement(
     CMFCRibbonBaseElement* pElement,
     LPCTSTR lpszLabel,
@@ -179,7 +179,7 @@ void AddElement(
 
 Fügt dem erweiterten Bereich der Multifunktionsleistenstatusleiste ein Multifunktionsleistenelement hinzu.
 
-```
+```cpp
 void AddExtendedElement(
     CMFCRibbonBaseElement* pElement,
     LPCTSTR lpszLabel,
@@ -205,7 +205,7 @@ Der erweiterte Bereich befindet sich rechts vom Statusleisten-Steuerelement.
 
 Fügt der Multifunktionsleistenstatusleiste ein Trennzeichen hinzu.
 
-```
+```cpp
 void AddSeparator();
 ```
 
@@ -477,7 +477,7 @@ virtual void RecalcLayout();
 
 Entfernt alle Elemente aus der Multifunktionsleistenstatusleiste.
 
-```
+```cpp
 void RemoveAll();
 ```
 
@@ -502,7 +502,7 @@ TRUE, wenn ein Element mit der angegebenen *uiID* entfernt wird. FALSE sonst.
 
 Aktiviert oder deaktiviert den Informationsmodus für die Multifunktionsleistenstatusleiste.
 
-```
+```cpp
 void SetInformation(LPCTSTR lpszInfo);
 ```
 
@@ -517,7 +517,7 @@ Verwenden Sie diese Methode, um die Statusleiste in den Informationsmodus zu ver
 
 Wenn lpszInfo NULL ist, wird die Statusleiste in den regulären Modus zurückversetzt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

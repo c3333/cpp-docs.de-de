@@ -96,12 +96,12 @@ helpviewer_keywords:
 - std::array [C++], size
 - std::array [C++], swap
 ms.assetid: fdfd43a5-b2b5-4b9e-991f-93bf10fb4293
-ms.openlocfilehash: 90c68d00475a622ec89b81cc86639f63b1190d02
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a6cda0f0c66624158f7c2abfeabb5f54678d21b0
+ms.sourcegitcommit: 7b12cc4a4d3fcb261d67420fc3dd18652730008f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364948"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82643646"
 ---
 # <a name="array-class-c-standard-library"></a>array-Klasse (C++-Standardvorlagenbibliothek)
 
@@ -116,7 +116,7 @@ class array;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |-|-|
 |`Ty`|Der Typ eines Elements.|
 |`N`|Die Anzahl der Elemente.|
@@ -132,37 +132,37 @@ class array;
 |[difference_type](#difference_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[Iterator](#iterator)|Der Typ eines Iterators für die gesteuerte Sequenz.|
 |[Zeiger](#pointer)|Der Typ eines Zeigers auf ein Element.|
-|[Verweis](#reference)|Der Typ eines Verweises auf ein Element.|
+|[Referenz](#reference)|Der Typ eines Verweises auf ein Element.|
 |[reverse_iterator](#reverse_iterator)|Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.|
-|[Size_type](#size_type)|Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.|
-|[Value_type](#value_type)|Der Typ eines Elements.|
+|[size_type](#size_type)|Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.|
+|[value_type](#value_type)|Der Typ eines Elements.|
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[array](#array)|Erstellt ein Arrayobjekt.|
-|[Zuweisen](#assign)|(Veraltet. Verwenden `fill`.) Ersetzt alle Elemente.|
-|[Auf](#at)|Greift auf ein Element an einer angegebenen Position zu.|
+|[assign](#assign)|Veralteten. Verwenden `fill`Sie.) Ersetzt alle Elemente.|
+|[at](#at)|Greift auf ein Element an einer angegebenen Position zu.|
 |[back (Zurück)](#back)|Greift auf das letzte Element zu.|
-|[Beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
+|[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cbegin](#cbegin)|Gibt einen für wahlfreien Zugriff eingerichteten konstanten Iterator auf das erste Element im Vektor zurück.|
 |[cend](#cend)|Gibt einen für wahlfreien Zugriff eingerichteten konstanten Iterator zurück, der unmittelbar hinter das Ende des Vektors zeigt.|
 |[crbegin](#crbegin)|Gibt einen konstanten Iterator zum ersten Element in einem umgekehrten Array zurück.|
 |[crend](#crend)|Gibt einen konstanten Iterator auf das Ende eines umgekehrten Arrays zurück.|
 |[Daten](#data)|Ruft die Adresse des ersten Elements ab.|
 |[empty](#empty)|Testet, ob Elemente vorhanden sind.|
-|[Ende](#end)|Legt das Ende der kontrollierten Sequenz fest.|
-|[Füllen](#fill)|Ersetzt alle Elemente durch einen angegebenen Wert.|
-|[Vorder-](#front)|Greift auf das erste Element zu.|
-|[Max_size](#max_size)|Ermittelt die Anzahl von Elementen.|
+|[end](#end)|Legt das Ende der kontrollierten Sequenz fest.|
+|[erfüllen](#fill)|Ersetzt alle Elemente durch einen angegebenen Wert.|
+|[Beifahrer](#front)|Greift auf das erste Element zu.|
+|[max_size](#max_size)|Ermittelt die Anzahl von Elementen.|
 |[rbegin](#rbegin)|Legt den Anfang der umgekehrten kontrollierten Sequenz fest.|
 |[rend](#rend)|Legt das Ende der umgekehrten kontrollierten Sequenz fest.|
-|[Größe](#size)|Ermittelt die Anzahl von Elementen.|
+|[size](#size)|Ermittelt die Anzahl von Elementen.|
 |[swap](#swap)|Vertauscht den Inhalt von zwei Containern.|
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Array::operator=](#op_eq)|Ersetzt die kontrollierte Sequenz.|
-|[Array::Operator\[\]](#op_at)|Greift auf ein Element an einer angegebenen Position zu.|
+|[Array:: Operator =](#op_eq)|Ersetzt die kontrollierte Sequenz.|
+|[Array::-Operator\[\]](#op_at)|Greift auf ein Element an einer angegebenen Position zu.|
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -174,13 +174,13 @@ array<int, 4> ai = { 1, 2, 3 };
 
 erstellt das Objekt `ai`, das vier ganzzahlige Werte enthält, initialisiert die ersten drei Elemente mit den Werten 1, 2 und 3 und das vierte Element mit 0.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** \<array>
 
 **Namespace:** std
 
-## <a name="arrayarray"></a><a name="array"></a>Array::array
+## <a name="arrayarray"></a><a name="array"></a>Array:: Array
 
 Erstellt ein Arrayobjekt.
 
@@ -199,7 +199,7 @@ Einzufügendes Objekt bzw. einzufügender Bereich.
 
 Der Standardkonstruktor `array()` bewirkt, dass die kontrollierte Sequenz nicht initialisiert (oder standardmäßig initialisiert) wird. Sie können ihn verwenden, um eine nicht initialisierte kontrollierte Sequenz festzulegen.
 
-`array(const array& right)` Der Kopierkonstruktor initialisiert die gesteuerte Sequenz mit der Sequenz [*rechts*`.begin()`, *rechts*`.end()`). Sie können ihn verwenden, um eine initialisierte kontrollierte Sequenz festzulegen, die eine Kopie einer Sequenz ist, die vom Array-Objekt *right* kontrolliert wird.
+`array(const array& right)` Der Kopierkonstruktor Initialisiert die gesteuerte Sequenz mit der Sequenz [*right*`.begin()`, *right*`.end()`). Sie können ihn verwenden, um eine initialisierte kontrollierte Sequenz festzulegen, die eine Kopie einer Sequenz ist, die vom Array-Objekt *right* kontrolliert wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -239,11 +239,11 @@ int main()
 0 1 2 3
 ```
 
-## <a name="arrayassign"></a><a name="assign"></a>Array::zuweisen
+## <a name="arrayassign"></a><a name="assign"></a>Array:: Assign
 
 In C++11 veraltet, wurde durch [fill](#fill) ersetzt. Ersetzt alle Elemente.
 
-## <a name="arrayat"></a><a name="at"></a>Array::at
+## <a name="arrayat"></a><a name="at"></a>Array:: at
 
 Greift auf ein Element an einer angegebenen Position zu.
 
@@ -255,12 +255,12 @@ constexpr const_reference at(size_type off) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Aus*\
+*abgeschrieben*\
 Position des Elements, auf das zugegriffen wird
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktionen geben einen Verweis auf das Element der gesteuerten Sequenz an *position off zurück.* Wenn diese Position ungültig ist, löst die Funktion ein Objekt der `out_of_range`-Klasse aus.
+Die Member-Funktionen geben einen Verweis auf das Element der kontrollierten Sequenz an der Position *Off*zurück. Wenn diese Position ungültig ist, löst die Funktion ein Objekt der `out_of_range`-Klasse aus.
 
 ### <a name="example"></a>Beispiel
 
@@ -289,7 +289,7 @@ int main()
 }
 ```
 
-## <a name="arrayback"></a><a name="back"></a>Array::zurück
+## <a name="arrayback"></a><a name="back"></a>Array:: Back
 
 Greift auf das letzte Element zu.
 
@@ -334,7 +334,7 @@ int main()
 3
 ```
 
-## <a name="arraybegin"></a><a name="begin"></a>Array::begin
+## <a name="arraybegin"></a><a name="begin"></a>Array:: begin
 
 Legt den Anfang der kontrollierten Sequenz fest.
 
@@ -379,9 +379,9 @@ int main()
 0
 ```
 
-## <a name="arraycbegin"></a><a name="cbegin"></a>Array::cbegin
+## <a name="arraycbegin"></a><a name="cbegin"></a>Array:: cbegin
 
-Gibt **const** einen const-Iterator zurück, der das erste Element im Bereich adressiert.
+Gibt einen **Konstanten** Iterator zurück, der das erste Element im Bereich adressiert.
 
 ```cpp
 const_iterator cbegin() const noexcept;
@@ -389,13 +389,13 @@ const_iterator cbegin() const noexcept;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein const-Random-Access-Iterator, der auf das erste Element des Bereichs oder die Position direkt `cbegin() == cend()`hinter dem Ende eines leeren Bereichs zeigt (für einen leeren Bereich, ). **const**
+Ein **konstanter** Random-Access-Iterator, der auf das erste Element des Bereichs zeigt oder die Position direkt hinter dem Ende eines leeren Bereichs (für einen leeren Bereich `cbegin() == cend()`).
 
 ### <a name="remarks"></a>Bemerkungen
 
 Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
-Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` Betrachten Sie im Beispiel einen veränderbaren (nicht-const) Container `cbegin()`jeder Art, der und unterstützt. **const** `begin()`
+Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` In diesem Beispiel sollte ein änderbarer (nicht **konstanter) Container**sein, der und `begin()` `cbegin()`unterstützt.
 
 ```cpp
 auto i1 = Container.begin();
@@ -405,9 +405,9 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator
 ```
 
-## <a name="arraycend"></a><a name="cend"></a>Array::cend
+## <a name="arraycend"></a><a name="cend"></a>Array:: cend
 
-Gibt **const** einen const-Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
+Gibt einen **Konstanten** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
 
 ```cpp
 const_iterator cend() const noexcept;
@@ -421,7 +421,7 @@ Ein Random-Access-Iterator, der auf eine Position unmittelbar nach dem Ende des 
 
 `cend` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
-Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` Betrachten Sie im Beispiel einen veränderbaren (nicht-const) Container `cend()`jeder Art, der und unterstützt. **const** `end()`
+Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` In diesem Beispiel sollte ein änderbarer (nicht **konstanter) Container**sein, der und `end()` `cend()`unterstützt.
 
 ```cpp
 auto i1 = Container.end();
@@ -433,7 +433,7 @@ auto i2 = Container.cend();
 
 Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
 
-## <a name="arrayconst_iterator"></a><a name="const_iterator"></a>Array::const_iterator
+## <a name="arrayconst_iterator"></a><a name="const_iterator"></a>Array:: const_iterator
 
 Der Typ eines konstanten Iterators für die gesteuerte Sequenz.
 
@@ -481,7 +481,7 @@ it1: 0 1 2 3
 it2: 0
 ```
 
-## <a name="arrayconst_pointer"></a><a name="const_pointer"></a>Array::const_pointer
+## <a name="arrayconst_pointer"></a><a name="const_pointer"></a>Array:: const_pointer
 
 Der Typ eines konstanten Zeigers auf ein Element.
 
@@ -525,7 +525,7 @@ int main()
 0
 ```
 
-## <a name="arrayconst_reference"></a><a name="const_reference"></a>Array::const_reference
+## <a name="arrayconst_reference"></a><a name="const_reference"></a>Array:: const_reference
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -569,7 +569,7 @@ int main()
 0
 ```
 
-## <a name="arrayconst_reverse_iterator"></a><a name="const_reverse_iterator"></a>Array::const_reverse_iterator
+## <a name="arrayconst_reverse_iterator"></a><a name="const_reverse_iterator"></a>Array:: const_reverse_iterator
 
 Der Typ eines konstanten umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -613,7 +613,7 @@ int main()
 3
 ```
 
-## <a name="arraycrbegin"></a><a name="crbegin"></a>Array::crbegin
+## <a name="arraycrbegin"></a><a name="crbegin"></a>Array:: crbegin
 
 Gibt einen konstanten Iterator zum ersten Element in einem umgekehrten Array zurück.
 
@@ -657,7 +657,7 @@ The first element of array is 1.
 The first element of the reversed array is 2.
 ```
 
-## <a name="arraycrend"></a><a name="crend"></a>Array::crend
+## <a name="arraycrend"></a><a name="crend"></a>Array:: crend
 
 Gibt einen konstanten Iterator zurück, der den Speicherort adressiert, der dem letzten Element in einem umgekehrten Array nachfolgt.
 
@@ -701,7 +701,7 @@ int main( )
 1
 ```
 
-## <a name="arraydata"></a><a name="data"></a>Array::data
+## <a name="arraydata"></a><a name="data"></a>Array::d ATA
 
 Ruft die Adresse des ersten Elements ab.
 
@@ -747,7 +747,7 @@ int main()
 0
 ```
 
-## <a name="arraydifference_type"></a><a name="difference_type"></a>Array::difference_type
+## <a name="arraydifference_type"></a><a name="difference_type"></a>Array::d ifference_type
 
 Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -791,7 +791,7 @@ int main()
 -4
 ```
 
-## <a name="arrayempty"></a><a name="empty"></a>Array::leer
+## <a name="arrayempty"></a><a name="empty"></a>Array:: Empty
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -841,7 +841,7 @@ false
 true
 ```
 
-## <a name="arrayend"></a><a name="end"></a>Array::End
+## <a name="arrayend"></a><a name="end"></a>Array:: End
 
 Legt das Ende der kontrollierten Sequenz fest.
 
@@ -887,7 +887,7 @@ int main()
 3
 ```
 
-## <a name="arrayfill"></a><a name="fill"></a>Array::füllen
+## <a name="arrayfill"></a><a name="fill"></a>Array:: Fill
 
 Löscht ein Array und kopiert die angegebenen Elemente in das leere Array.
 
@@ -899,7 +899,7 @@ void fill(const Type& val);
 
 |Parameter|BESCHREIBUNG|
 |-|-|
-|*Val*|Der Wert des Elements, das in das Array eingefügt wird.|
+|*ster*|Der Wert des Elements, das in das Array eingefügt wird.|
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -925,7 +925,7 @@ int main()
 
     v1.fill(3);
     cout << "v1 = ";
-    for (const auto& it : c0)
+    for (const auto& it : v1)
     {
         std::cout << " " << it;
     }
@@ -933,7 +933,7 @@ int main()
 }
 ```
 
-## <a name="arrayfront"></a><a name="front"></a>Array::front
+## <a name="arrayfront"></a><a name="front"></a>Array:: Front
 
 Greift auf das erste Element zu.
 
@@ -978,7 +978,7 @@ int main()
 0
 ```
 
-## <a name="arrayiterator"></a><a name="iterator"></a>Array::iterator
+## <a name="arrayiterator"></a><a name="iterator"></a>Array:: Iterator
 
 Der Typ eines Iterators für die gesteuerte Sequenz.
 
@@ -1027,7 +1027,7 @@ it1: 0 1 2 3
 it2: 0
 ```
 
-## <a name="arraymax_size"></a><a name="max_size"></a>Array::max_size
+## <a name="arraymax_size"></a><a name="max_size"></a>Array:: max_size
 
 Ermittelt die Anzahl von Elementen.
 
@@ -1070,7 +1070,7 @@ int main()
 4
 ```
 
-## <a name="arrayoperator"></a><a name="op_at"></a>Array::operator[]
+## <a name="arrayoperator"></a><a name="op_at"></a>Array:: Operator []
 
 Greift auf ein Element an einer angegebenen Position zu.
 
@@ -1082,14 +1082,14 @@ constexpr const_reference operator[](size_type off) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Aus*\
+*abgeschrieben*\
 Position des Elements, auf das zugegriffen wird
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktionen geben einen Verweis auf das Element der gesteuerten Sequenz an *position off zurück.* Wenn diese Position ungültig ist, ist das Verhalten nicht definiert.
+Die Member-Funktionen geben einen Verweis auf das Element der kontrollierten Sequenz an der Position *Off*zurück. Wenn diese Position ungültig ist, ist das Verhalten nicht definiert.
 
-Es ist auch eine Nicht-Member-Get-Funktion verfügbar, um einen Verweis auf ein Element eines **Arrays**abzurufen. [get](array-functions.md#get)
+Es ist auch eine nicht-Member- [Get](array-functions.md#get) -Funktion verfügbar, um einen Verweis auf ein Element eines **Arrays**zu erhalten.
 
 ### <a name="example"></a>Beispiel
 
@@ -1123,7 +1123,7 @@ int main()
 1 3
 ```
 
-## <a name="arrayoperator"></a><a name="op_eq"></a>Array::operator=
+## <a name="arrayoperator"></a><a name="op_eq"></a>Array:: Operator =
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -1138,7 +1138,7 @@ Der zu kopierende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Memberoperator weist jedes *Rechtselement* dem entsprechenden Element der `*this`gesteuerten Sequenz zu und gibt dann zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz *rechts*zu ersetzen.
+Der Member-Operator weist jedes Element von *right* dem entsprechenden Element der gesteuerten Sequenz zu und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1178,7 +1178,7 @@ int main()
 0 1 2 3
 ```
 
-## <a name="arraypointer"></a><a name="pointer"></a>Array::pointer
+## <a name="arraypointer"></a><a name="pointer"></a>Array::p
 
 Der Typ eines Zeigers auf ein Element.
 
@@ -1222,7 +1222,7 @@ int main()
 0
 ```
 
-## <a name="arrayrbegin"></a><a name="rbegin"></a>Array::rbegin
+## <a name="arrayrbegin"></a><a name="rbegin"></a>Array:: rbegin
 
 Legt den Anfang der umgekehrten kontrollierten Sequenz fest.
 
@@ -1267,7 +1267,7 @@ int main()
 3
 ```
 
-## <a name="arrayreference"></a><a name="reference"></a>Array::Referenz
+## <a name="arrayreference"></a><a name="reference"></a>Array:: Reference
 
 Der Typ eines Verweises auf ein Element.
 
@@ -1311,7 +1311,7 @@ int main()
 0
 ```
 
-## <a name="arrayrend"></a><a name="rend"></a>Array::rend
+## <a name="arrayrend"></a><a name="rend"></a>Array:: rend
 
 Legt das Ende der umgekehrten kontrollierten Sequenz fest.
 
@@ -1356,7 +1356,7 @@ int main()
 0
 ```
 
-## <a name="arrayreverse_iterator"></a><a name="reverse_iterator"></a>Array::reverse_iterator
+## <a name="arrayreverse_iterator"></a><a name="reverse_iterator"></a>Array:: reverse_iterator
 
 Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -1400,7 +1400,7 @@ int main()
 3
 ```
 
-## <a name="arraysize"></a><a name="size"></a>Array::Größe
+## <a name="arraysize"></a><a name="size"></a>Array:: size
 
 Ermittelt die Anzahl von Elementen.
 
@@ -1443,7 +1443,7 @@ int main()
 4
 ```
 
-## <a name="arraysize_type"></a><a name="size_type"></a>Array::size_type
+## <a name="arraysize_type"></a><a name="size_type"></a>Array:: size_type
 
 Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.
 
@@ -1487,7 +1487,7 @@ int main()
 4
 ```
 
-## <a name="arrayswap"></a><a name="swap"></a>Array::Swap
+## <a name="arrayswap"></a><a name="swap"></a>Array:: Swap
 
 Tauscht den Inhalt dieses Arrays mit dem eines anderen aus.
 
@@ -1502,9 +1502,9 @@ Container für den Tausch von Inhalten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion tauscht die `*this` gesteuerten Sequenzen zwischen und *rechts.* Sie führt verschiedene Elementzuweisungen und Konstruktoraufrufe proportional zu `N` durch.
+Die Member-Funktion tauscht die kontrollierten Sequenzen `*this` zwischen und *Rechts*aus. Sie führt verschiedene Elementzuweisungen und Konstruktoraufrufe proportional zu `N` durch.
 
-Es ist auch eine [Swap-Funktion](array-functions.md#swap) ohne Member verfügbar, um zwei **Arrayinstanzen** auszutauschen.
+Es ist auch eine [Swap](array-functions.md#swap) -Funktion ohne Member zum Austauschen von zwei **Array** Instanzen verfügbar.
 
 ### <a name="example"></a>Beispiel
 
@@ -1553,7 +1553,7 @@ int main()
 0 1 2 3
 ```
 
-## <a name="arrayvalue_type"></a><a name="value_type"></a>Array::value_type
+## <a name="arrayvalue_type"></a><a name="value_type"></a>Array:: value_type
 
 Der Typ eines Elements.
 
@@ -1600,6 +1600,6 @@ int main()
 0 1 2 3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<Array->](../standard-library/array.md)
+[\<Array>](../standard-library/array.md)

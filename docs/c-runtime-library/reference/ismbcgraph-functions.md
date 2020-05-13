@@ -1,6 +1,6 @@
 ---
 title: _ismbcgraph, _ismbcgraph_l, _ismbcprint, _ismbcprint_l, _ismbcpunct, _ismbcpunct_l, _ismbcblank, _ismbcblank_l, _ismbcspace, _ismbcspace_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ismbcpunct_l
 - _ismbcblank
@@ -12,6 +12,16 @@ api_name:
 - _ismbcspace_l
 - _ismbcspace
 - _ismbcgraph
+- _o__ismbcblank
+- _o__ismbcblank_l
+- _o__ismbcgraph
+- _o__ismbcgraph_l
+- _o__ismbcprint
+- _o__ismbcprint_l
+- _o__ismbcpunct
+- _o__ismbcpunct_l
+- _o__ismbcspace
+- _o__ismbcspace_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -24,6 +34,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -59,12 +70,12 @@ helpviewer_keywords:
 - _ismbcgraph_l function
 - _ismbcspace function
 ms.assetid: 8e0a5f47-ba64-4411-92a3-3c525d16e3be
-ms.openlocfilehash: 25136896555128339aaa4c79cec2ca9bf3ded43c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5f2c8b595de323994aa670a8e0fee9e562897e49
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953908"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919762"
 ---
 # <a name="_ismbcgraph-_ismbcgraph_l-_ismbcprint-_ismbcprint_l-_ismbcpunct-_ismbcpunct_l-_ismbcblank-_ismbcblank_l-_ismbcspace-_ismbcspace_l"></a>_ismbcgraph, _ismbcgraph_l, _ismbcprint, _ismbcprint_l, _ismbcpunct, _ismbcpunct_l, _ismbcblank, _ismbcblank_l, _ismbcspace, _ismbcspace_l
 
@@ -115,7 +126,7 @@ int _ismbcspace_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu bestimmendes Zeichen.
 
 *locale*<br/>
@@ -123,7 +134,7 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* < = 255 und es eine entsprechende **_ismbb** -Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
+Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* <= 255 und es eine entsprechende **_ismbb** Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
 
 Die Versionen dieser Funktionen sind identisch, außer dass diejenigen mit dem **_l** -Suffix das Gebiets Schema verwenden, das für Ihr vom Gebiets Schema abhängiges Verhalten anstelle des aktuellen Gebiets Schemas übergangen wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
@@ -131,17 +142,19 @@ Die Versionen dieser Funktionen sind identisch, außer dass diejenigen mit dem *
 
 Jede dieser Funktionen testet ein angegebenes Mehrbytezeichen auf eine angegebene Bedingung.
 
-|-Routine zurückgegebener Wert|Testbedingung|Beispiel für Codepage 932|
+|Routine|Testbedingung|Beispiel für Codepage 932|
 |-------------|--------------------|---------------------------|
-|**_ismbcgraph**|Grafik|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung jedes beliebigen ASCII-oder Katakana-Druck Zeichens ist, mit Ausnahme eines leer Zeichens ().|
+|**_ismbcgraph**|Graphic|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung jedes beliebigen ASCII-oder Katakana-Druck Zeichens ist, mit Ausnahme eines leer Zeichens ().|
 |**_ismbcprint**|Druckbar|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung jedes beliebigen ASCII-oder Katakana-druckbaren Zeichens einschließlich eines leer Zeichens () ist.|
 |**_ismbcpunct**|Interpunktion|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung jedes beliebigen ASCII-oder Katakana-Interpunktions Zeichens ist.|
 |**_ismbcblank**|Leerzeichen oder horizontaler Tabulator|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* ein Leerzeichen oder ein horizontales Tabstopp Zeichen ist: *c*= 0x20 oder *c*= 0x09.|
-|**_ismbcspace**|Leerraum|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* ein Leerzeichen ist: *c*= 0x20 oder 0x09 < =*c*< = 0x0D.|
+|**_ismbcspace**|Leerzeichen|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* ein Leerzeichen ist: *c*= 0x20 oder 0x09<=*c*<= 0x0D.|
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_ismbcgraph**|\<mbstring.h>|
 |**_ismbcgraph_l**|\<mbstring.h>|
@@ -154,17 +167,17 @@ Jede dieser Funktionen testet ein angegebenes Mehrbytezeichen auf eine angegeben
 |**_ismbcspace**|\<mbstring.h>|
 |**_ismbcspace_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
-[ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
-[_ismbb-Routinen](../../c-runtime-library/ismbb-routines.md)<br/>
+[_ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>
+[_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

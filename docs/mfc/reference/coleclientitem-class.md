@@ -164,12 +164,12 @@ helpviewer_keywords:
 - COleClientItem [MFC], OnScrollBy
 - COleClientItem [MFC], OnShowItem
 ms.assetid: 7f571b7c-2758-4839-847a-0cf1ef643128
-ms.openlocfilehash: c880b1fb724b533bb049666460948c6df661a03c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ce321c9709b752602a664142f283884f4d17b50b
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376283"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753959"
 ---
 # <a name="coleclientitem-class"></a>COleClientItem-Klasse
 
@@ -302,7 +302,7 @@ Weitere Informationen zur Verwendung der Containerschnittstelle finden Sie in de
 
 `COleClientItem`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxole.h
 
@@ -310,7 +310,7 @@ Weitere Informationen zur Verwendung der Containerschnittstelle finden Sie in de
 
 Rufen Sie diese Funktion auf, um das angegebene Verb anstelle von [DoVerb](#doverb) auszuführen, damit Sie Ihre eigene Verarbeitung durchführen können, wenn eine Ausnahme ausgelöst wird.
 
-```
+```cpp
 void Activate(
     LONG nVerb,
     CView* pView,
@@ -380,7 +380,7 @@ Dies wird automatisch von [COleConvertDialog::DoConvert](../../mfc/reference/col
 
 Rufen Sie diese Funktion auf, um ein [COleDataObject](../../mfc/reference/coledataobject-class.md) für den Zugriff auf die Daten im OLE-Element zu initialisieren.
 
-```
+```cpp
 void AttachDataObject(COleDataObject& rDataObject) const;
 ```
 
@@ -493,7 +493,7 @@ Weitere Informationen finden Sie unter [OleGetClipboard](/windows/win32/api/ole2
 
 Rufen Sie diese Funktion auf, um den Status eines OLE-Elements vom ausgeführten Zustand in den geladenen Zustand zu ändern, d. h. mit dem Handler im Arbeitsspeicher geladen, aber mit dem Server, der nicht ausgeführt wird.
 
-```
+```cpp
 void Close(OLECLOSE dwCloseOption = OLECLOSE_SAVEIFDIRTY);
 ```
 
@@ -578,7 +578,7 @@ Dies wird automatisch von [COleConvertDialog](../../mfc/reference/coleconvertdia
 
 Rufen Sie diese Funktion auf, um das OLE-Element in die Zwischenablage zu kopieren.
 
-```
+```cpp
 void CopyToClipboard(BOOL bIncludeLink = FALSE);
 ```
 
@@ -936,7 +936,7 @@ Weitere Informationen finden Sie unter OleCreateStaticFromData , OLERENDER und F
 
 Rufen Sie diese Funktion auf, um das OLE-Element zu deaktivieren und alle zugeordneten Ressourcen freizugeben.
 
-```
+```cpp
 void Deactivate();
 ```
 
@@ -952,7 +952,7 @@ Weitere Informationen finden Sie unter [IOleInPlaceObject::InPlaceDeactivate](/w
 
 Rufen Sie diese Funktion auf, wenn der Benutzer ein Element deaktiviert, das an Ort und Stelle aktiviert wurde.
 
-```
+```cpp
 void DeactivateUI();
 ```
 
@@ -968,7 +968,7 @@ Weitere Informationen finden Sie unter [IOleInPlaceObject::InPlaceDeactivate](/w
 
 Rufen Sie diese Funktion auf, um das OLE-Element aus dem Containerdokument zu löschen.
 
-```
+```cpp
 void Delete(BOOL bAutoDelete = TRUE);
 ```
 
@@ -1153,7 +1153,7 @@ Weitere Informationen finden Sie unter [IViewObject2::GetExtent](/windows/win32/
 
 Gibt die Klassen-ID des Elements in den Speicher zurück, auf den *pClassID*zeigt.
 
-```
+```cpp
 void GetClassID(CLSID* pClassID) const;
 ```
 
@@ -1172,7 +1172,7 @@ Weitere Informationen finden Sie unter [IPersist::GetClassID](/windows/win32/api
 
 Rufen Sie diese `COleDataSource` Funktion auf, um ein Objekt abzurufen, das alle Daten enthält, die durch einen Aufruf der [CopyToClipboard-Memberfunktion](#copytoclipboard) in der Zwischenablage platziert würden.
 
-```
+```cpp
 void GetClipboardData(
     COleDataSource* pDataSource,
     BOOL bIncludeLink = FALSE,
@@ -1400,7 +1400,7 @@ Eine ganzzahlige Nicht-Zeichen-Zahl mit einem der folgenden Werte:
 
 Rufen Sie diese Funktion auf, um die vom Benutzer sichtbare Zeichenfolge abzurufen, die den Typ des OLE-Elements beschreibt, z. B. "Word-Dokument".
 
-```
+```cpp
 void GetUserType(
     USERCLASSTYPE nUserClassType,
     CString& rString);
@@ -1977,7 +1977,7 @@ Rufen `Reload` Sie die Funktion auf, nachdem Sie das Element als Element eines a
 
 Führt die diesem Element zugeordnete Anwendung aus.
 
-```
+```cpp
 void Run();
 ```
 
@@ -2016,7 +2016,7 @@ Diese Funktion wird automatisch vom Änderungssymbol (und anderen Dialogfeldern,
 
 Rufen Sie diese Funktion auf, um anzugeben, wie viel Speicherplatz für das OLE-Element verfügbar ist.
 
-```
+```cpp
 void SetExtent(
     const CSize& size,
     DVASPECT nDrawAspect = DVASPECT_CONTENT);
@@ -2024,7 +2024,7 @@ void SetExtent(
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) das die Größeninformationen enthält.
 
 *nDrawAspect*<br/>
@@ -2040,7 +2040,7 @@ Weitere Informationen finden Sie unter [IOleObject::SetExtent](/windows/win32/ap
 
 Rufen Sie diese Funktion auf, um den Namen der Containeranwendung und den Namen des Containers für ein eingebettetes OLE-Element anzugeben.
 
-```
+```cpp
 void SetHostNames(
     LPCTSTR lpszHost,
     LPCTSTR lpszHostObj);
@@ -2117,7 +2117,7 @@ Weitere Informationen finden Sie unter [IOleInPlaceObject::SetObjectRects](/wind
 
 Rufen Sie diese Funktion auf, um die Option link-update für die Darstellung des angegebenen verknüpften Elements festzulegen.
 
-```
+```cpp
 void SetLinkUpdateOptions(OLEUPDATE dwUpdateOpt);
 ```
 
@@ -2185,7 +2185,7 @@ Bei verknüpften Elementen sucht die Funktion die Linkquelle, um eine neue Präs
 
 Weitere Informationen finden Sie unter [IOleLink::Update](/windows/win32/api/oleidl/nf-oleidl-iolelink-update) im Windows SDK.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel MFCBIND](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>

@@ -1,9 +1,11 @@
 ---
 title: _dupenv_s, _wdupenv_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _dupenv_s
 - _wdupenv_s
+- _o__dupenv_s
+- _o__wdupenv_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-environment-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - dupenv_s function
 - tdupenv_s function
 ms.assetid: b729ecc2-a31d-4ccf-92a7-5accedb8f8c8
-ms.openlocfilehash: f66828e0941c2324d75797cbb1fa77bdfa184205
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 39184eff5db511dfb920782c3e29bf2b0cc9340e
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942021"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915179"
 ---
 # <a name="_dupenv_s-_wdupenv_s"></a>_dupenv_s, _wdupenv_s
 
@@ -67,7 +70,7 @@ errno_t _wdupenv_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Puffer zum Speichern des Variablenwerts.
 
 *numberOfElements*<br/>
@@ -86,7 +89,7 @@ Wenn diese Funktionen nicht genügend Arbeitsspeicher zuordnen können, legen Si
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_dupenv_s** -Funktion durchsucht die Liste der Umgebungsvariablen nach *varname*. Wenn die Variable gefunden wird, ordnet **_dupenv_s** einen Puffer zu und kopiert den Wert der Variablen in den Puffer. Die Adresse und die Länge des Puffers werden in *buffer* und *nummerioements*zurückgegeben. Wenn Sie den Puffer selbst zuweisen, bietet **_dupenv_s** eine etwas bequemere Alternative zu [Getenv_s, _wgetenv_s](getenv-s-wgetenv-s.md).
+Die **_dupenv_s** -Funktion durchsucht die Liste der Umgebungsvariablen nach *varname*. Wenn die Variable gefunden wird, ordnet **_dupenv_s** einen Puffer zu und kopiert den Wert der Variablen in den Puffer. Die Adresse und die Länge des Puffers werden in *buffer* und *nummerioements*zurückgegeben. Wenn Sie den Puffer selbst zuweisen, bietet **_dupenv_s** eine komfortablere Alternative zu [Getenv_s, _wgetenv_s](getenv-s-wgetenv-s.md).
 
 > [!NOTE]
 > Das aufrufende Programm ist dafür zuständig, den Arbeitsspeicher durch Aufruf von [free](free.md) zu leeren.
@@ -95,11 +98,13 @@ Wenn die Variable nicht gefunden wird, wird *buffer* auf **null**festgelegt, der
 
 Wenn Sie nicht an der Größe des Puffers interessiert sind, können Sie **null** für " *numofelements*" übergeben.
 
-bei **_dupenv_s** wird im Windows-Betriebssystem die Groß-/Kleinschreibung nicht beachtet **_dupenv_s** verwendet die Kopie der Umgebung, auf die durch die globale Variable **_environ** verwiesen wird, um auf die Umgebung zuzugreifen. Eine Erläuterung zu **_environ**finden Sie in den Hinweisen unter [Getenv_s, _wgetenv_s](getenv-s-wgetenv-s.md) .
+beim Windows-Betriebssystem wird **_dupenv_s** die Groß-/Kleinschreibung nicht beachtet. **_dupenv_s** verwendet die Kopie der Umgebung, auf die die globale Variable verweist, um auf die Umgebung zuzugreifen **_environ** . Eine Erläuterung der **_environ**finden Sie in den Hinweisen in [getenv_s _wgetenv_s](getenv-s-wgetenv-s.md) .
 
 Der Wert in *buffer* ist eine Kopie des Werts der Umgebungsvariablen. eine Änderung der Umgebung hat keine Auswirkungen auf die Umgebung. Verwenden Sie die Funktion [_putenv_s, _wputenv_s](putenv-s-wputenv-s.md), um den Wert einer Umgebungsvariablen zu ändern.
 
-**_wdupenv_s** ist eine breit Zeichen Version von **_dupenv_s**. die Argumente von **_wdupenv_s** sind Zeichen folgen mit breit Zeichen. Die globale **_wenviron** -Variable ist eine breit Zeichen Version von **_environ**. Weitere Informationen zu **_wenviron**finden Sie in den Hinweisen unter [Getenv_s, _wgetenv_s](getenv-s-wgetenv-s.md) .
+**_wdupenv_s** ist eine breit Zeichen Version von **_dupenv_s**. die Argumente von **_wdupenv_s** sind Zeichen folgen mit breit Zeichen. Die **_wenviron** globale Variable ist eine breit Zeichen Version von **_environ**. Weitere Informationen zu **_wenviron**finden Sie in den Hinweisen in [getenv_s _wgetenv_s](getenv-s-wgetenv-s.md) .
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -109,12 +114,12 @@ Der Wert in *buffer* ist eine Kopie des Werts der Umgebungsvariablen. eine Ände
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_dupenv_s**|\<stdlib.h>|
 |**_wdupenv_s**|\<stdlib.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -142,10 +147,10 @@ pathext = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.pl
 nonexistentvariable = (null)
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[Umgebungskonstanten](../../c-runtime-library/environmental-constants.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Umgebungs Konstanten](../../c-runtime-library/environmental-constants.md)<br/>
 [_dupenv_s_dbg, _wdupenv_s_dbg](dupenv-s-dbg-wdupenv-s-dbg.md)<br/>
 [getenv_s, _wgetenv_s](getenv-s-wgetenv-s.md)<br/>
 [_putenv_s, _wputenv_s](putenv-s-wputenv-s.md)<br/>

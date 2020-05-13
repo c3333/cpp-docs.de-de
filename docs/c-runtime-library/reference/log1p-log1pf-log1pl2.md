@@ -1,10 +1,13 @@
 ---
 title: log1p, log1pf, log1pl2
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - log1p
 - log1pf
 - log1pl
+- _o_log1p
+- _o_log1pf
+- _o_log1pl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +37,12 @@ helpviewer_keywords:
 - log1pf function
 - log1pl function
 ms.assetid: a40d965d-b4f6-42f4-ba27-2395546f7c12
-ms.openlocfilehash: aad6675a832e1715c505026fe11ffe77f1f6d275
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 21bba72b204f975b806e43cdc6d36d8efa173b9b
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953217"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911428"
 ---
 # <a name="log1p-log1pf-log1pl"></a>log1p, log1pf, log1pl
 
@@ -70,7 +74,7 @@ long double log1pl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Das Gleitkommaargument.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -83,12 +87,12 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 |-----------|------------|-------------------|-----------|
 |+inf|+inf|||
 |Abbrüche|Identisch mit der Eingabe|UNDERFLOW||
-|±0|Identisch mit der Eingabe|||
+|± 0|Identisch mit der Eingabe|||
 |-1|-inf|DIVBYZERO|ERANGE|
 |< -1|nan|INVALID|EDOM|
 |-inf|nan|INVALID|EDOM|
-|±SNaN|Identisch mit der Eingabe|INVALID||
-|±QNaN, indefinite|Identisch mit der Eingabe|||
+|± Snan|Identisch mit der Eingabe|INVALID||
+|± QNAN, unbegrenzt|Identisch mit der Eingabe|||
 
 Der **errno** -Wert ist auf ERANGE festgelegt, wenn *x* =-1. Der **errno** -Wert ist auf **Edom** festgelegt, wenn *x* <-1.
 
@@ -100,15 +104,17 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **log1p** aufzuru
 
 Wenn *x* eine natürliche Zahl ist, gibt diese Funktion den Logarithmus der Fakultät von (*x* -1) zurück.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**log1p**, **log1pf**, **log1pl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [log2, log2f, log2l](log2-log2f-log2l.md)<br/>

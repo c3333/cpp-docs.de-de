@@ -42,12 +42,12 @@ helpviewer_keywords:
 - CD2DBitmapBrush [MFC], m_pBitmapBrush
 - CD2DBitmapBrush [MFC], m_pBitmapBrushProperties
 ms.assetid: 46ebbe34-66e0-44c8-af1d-d129e851de5e
-ms.openlocfilehash: e26202392bf4783598aec0dddfea514fce806a8c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8d0804c094204bc0e8ab420e20c8b6a6a35dc70a
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369303"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81754291"
 ---
 # <a name="cd2dbitmapbrush-class"></a>CD2DBitmapBrush-Klasse
 
@@ -116,7 +116,7 @@ class CD2DBitmapBrush : public CD2DBrush;
 
 `CD2DBitmapBrush`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxrendertarget.h
 
@@ -132,7 +132,7 @@ virtual ~CD2DBitmapBrush();
 
 F체gt vorhandene Ressourcenschnittstelle an das Objekt an
 
-```
+```cpp
 void Attach(ID2D1BitmapBrush* pResource);
 ```
 
@@ -200,7 +200,7 @@ Zeiger auf eine null-terminierte Zeichenfolge, die den Namen der Datei enth채lt.
 
 Initialisiert das Objekt
 
-```
+```cpp
 void CommonInit(D2D1_BITMAP_BRUSH_PROPERTIES* pBitmapBrushProperties);
 ```
 
@@ -346,7 +346,7 @@ Zeiger auf eine ID2D1BitmapBrush-Schnittstelle oder NULL, wenn das Objekt noch n
 
 Gibt die Bitmapquelle an, die dieser Pinsel zum Malen verwendet
 
-```
+```cpp
 void SetBitmap(CD2DBitmap* pBitmap);
 ```
 
@@ -359,7 +359,7 @@ Die bitmap-Quelle, die vom Pinsel verwendet wird
 
 Gibt an, wie der Pinsel die Bereiche horizontal kachelt, die sich 체ber seine Bitmap erstrecken.
 
-```
+```cpp
 void SetExtendModeX(D2D1_EXTEND_MODE extendModeX);
 ```
 
@@ -372,7 +372,7 @@ Ein Wert, der angibt, wie der Pinsel die Bereiche horizontal kachelt, die sich �
 
 Gibt an, wie der Pinsel die Bereiche vertikal kachelt, die sich 체ber seine Bitmap erstrecken
 
-```
+```cpp
 void SetExtendModeY(D2D1_EXTEND_MODE extendModeY);
 ```
 
@@ -385,7 +385,7 @@ Ein Wert, der angibt, wie der Pinsel die Bereiche vertikal kachelt, die sich 체b
 
 Gibt den Interpolationsmodus an, der verwendet wird, wenn die Pinselbitmap skaliert oder gedreht wird.
 
-```
+```cpp
 void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode);
 ```
 
@@ -394,6 +394,6 @@ void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode);
 *Interpolationmode*<br/>
 Der Interpolationsmodus, der verwendet wird, wenn die Pinselbitmap skaliert oder gedreht wird
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -220,12 +220,12 @@ helpviewer_keywords:
 - CHtmlEditCtrlBase [MFC], Unlink
 - CHtmlEditCtrlBase [MFC], UnorderList
 ms.assetid: e0cc74b4-8320-4570-b673-16c03d2ae266
-ms.openlocfilehash: 95de66a66d9c1a6f3abf992c5a9cd64ee1fe91ef
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8cb5d69ea6052b500ab7e92d2520ee70de597a83
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81352210"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752334"
 ---
 # <a name="chtmleditctrlbase-class"></a>CHtmlEditCtrlBase-Klasse
 
@@ -366,7 +366,7 @@ Der Name der abgeleiteten Klasse.
 
 `CHtmlEditCtrlBase`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxhtml.h
 
@@ -2088,7 +2088,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM FONTNAME-Befehls-ID](/previous-versions/aa769880\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_FONTNAME Befehls-ID](/previous-versions/aa769880\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetfontsize"></a><a name="setfontsize"></a>CHtmlEditCtrlBase::SetFontSize
 
@@ -2100,7 +2100,7 @@ HRESULT SetFontSize(unsigned short size) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Die HTML-Schriftgröße (1-7). Der Wert 0 legt die Schriftgröße auf 1 fest.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -2109,7 +2109,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM FONTSIZE-Befehls-ID](/previous-versions/aa769881\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_FONTSIZE Befehls-ID](/previous-versions/aa769881\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetforecolor"></a><a name="setforecolor"></a>CHtmlEditCtrlBase::SetForeColor
 
@@ -2134,7 +2134,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM FORECOLOR-Befehls-ID](/previous-versions/aa769882\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_FORECOLOR Befehls-ID](/previous-versions/aa769882\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetie5pastemode"></a><a name="setie5pastemode"></a>CHtmlEditCtrlBase::SetIE5PasteMode
 
@@ -2155,7 +2155,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM-IE50_PASTE_MODE-Befehls-ID](/previous-versions/aa769923\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_IE50_PASTE_MODE Befehls-ID](/previous-versions/aa769923\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetliveresize"></a><a name="setliveresize"></a>CHtmlEditCtrlBase::SetLiveResize
 
@@ -2176,7 +2176,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM LIVERESIZE-Befehls-ID](/previous-versions/aa769928\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_LIVERESIZE Befehls-ID](/previous-versions/aa769928\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetmultiselect"></a><a name="setmultiselect"></a>CHtmlEditCtrlBase::SetMultiSelect
 
@@ -2197,7 +2197,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM MULTIPLESELECTION-Befehls-ID](/previous-versions/aa769929\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_MULTIPLESELECTION Befehls-ID](/previous-versions/aa769929\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetoverridecursor"></a><a name="setoverridecursor"></a>CHtmlEditCtrlBase::SetOverrideCursor
 
@@ -2218,7 +2218,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM-OVERRIDE_CURSOR-Befehls-ID](/previous-versions/aa769932\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_OVERRIDE_CURSOR Befehls-ID](/previous-versions/aa769932\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetoverwritemode"></a><a name="setoverwritemode"></a>CHtmlEditCtrlBase::SetOverwriteMode
 
@@ -2239,7 +2239,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM OVERWRITE-Befehls-ID](/previous-versions/aa770016\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_OVERWRITE Befehls-ID](/previous-versions/aa770016\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetrespectvisindesign"></a><a name="setrespectvisindesign"></a>CHtmlEditCtrlBase::SetRespectVisInDesign
 
@@ -2260,7 +2260,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM-RESPECTVISIBILITY_INDESIGN-Befehls-ID](/previous-versions/aa770023\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_RESPECTVISIBILITY_INDESIGN Befehls-ID](/previous-versions/aa770023\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowalignedsitetags"></a><a name="setshowalignedsitetags"></a>CHtmlEditCtrlBase::SetShowAlignedSiteTags
 
@@ -2281,7 +2281,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWALIGNEDSITETAGS-Befehls-ID](/previous-versions/aa769947\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWALIGNEDSITETAGS Befehls-ID](/previous-versions/aa769947\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowalltags"></a><a name="setshowalltags"></a>CHtmlEditCtrlBase::SetShowAllTags
 
@@ -2302,7 +2302,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWALLTAGS-Befehls-ID](/previous-versions/aa769948\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWALLTAGS Befehls-ID](/previous-versions/aa769948\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowareatags"></a><a name="setshowareatags"></a>CHtmlEditCtrlBase::SetShowAreaTags
 
@@ -2323,7 +2323,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWAREATAGS-Befehls-ID](/previous-versions/aa769949\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWAREATAGS Befehls-ID](/previous-versions/aa769949\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowbrtags"></a><a name="setshowbrtags"></a>CHtmlEditCtrlBase::SetShowBRTags
 
@@ -2344,7 +2344,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWWBRTAGS-Befehls-ID](/previous-versions/aa769956\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWWBRTAGS Befehls-ID](/previous-versions/aa769956\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowcommenttags"></a><a name="setshowcommenttags"></a>CHtmlEditCtrlBase::SetShowCommentTags
 
@@ -2365,7 +2365,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWCOMMENTTAGS-Befehls-ID](/previous-versions/aa769950\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWCOMMENTTAGS Befehls-ID](/previous-versions/aa769950\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowmisctags"></a><a name="setshowmisctags"></a>CHtmlEditCtrlBase::SetShowMiscTags
 
@@ -2386,7 +2386,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWMISCTAGS-Befehls-ID](/previous-versions/aa769952\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWMISCTAGS Befehls-ID](/previous-versions/aa769952\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowscripttags"></a><a name="setshowscripttags"></a>CHtmlEditCtrlBase::SetShowScriptTags
 
@@ -2407,7 +2407,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWSCRIPTTAGS-Befehls-ID](/previous-versions/aa769953\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWSCRIPTTAGS Befehls-ID](/previous-versions/aa769953\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowstyletags"></a><a name="setshowstyletags"></a>CHtmlEditCtrlBase::SetShowStyleTags
 
@@ -2428,7 +2428,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWSTYLETAGS-Befehls-ID](/previous-versions/aa769954\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWSTYLETAGS Befehls-ID](/previous-versions/aa769954\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasesetshowunknowntags"></a><a name="setshowunknowntags"></a>CHtmlEditCtrlBase::SetShowUnknownTags
 
@@ -2449,7 +2449,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM SHOWUNKNOWNTAGS-Befehls-ID](/previous-versions/aa769955\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_SHOWUNKNOWNTAGS Befehls-ID](/previous-versions/aa769955\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasetextarea"></a><a name="textarea"></a>CHtmlEditCtrlBase::TextArea
 
@@ -2470,7 +2470,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM TEXTAREA-Befehls-ID](/previous-versions/aa769986\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_TEXTAREA Befehls-ID](/previous-versions/aa769986\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbasetextbox"></a><a name="textbox"></a>CHtmlEditCtrlBase::TextBox
 
@@ -2491,7 +2491,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM TEXTBOX-Befehls-ID](/previous-versions/aa769980\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_TEXTBOX Befehls-ID](/previous-versions/aa769980\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbaseunbookmark"></a><a name="unbookmark"></a>CHtmlEditCtrlBase::UnBookmark
 
@@ -2507,7 +2507,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM UNBOOKMARK-Befehls-ID](/previous-versions/aa770034\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_UNBOOKMARK Befehls-ID](/previous-versions/aa770034\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbaseunderline"></a><a name="underline"></a>CHtmlEditCtrlBase::Unterstreichen
 
@@ -2523,7 +2523,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM UNDERLINE-Befehls-ID](/previous-versions/aa770035\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_UNDERLINE Befehls-ID](/previous-versions/aa770035\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbaseunlink"></a><a name="unlink"></a>CHtmlEditCtrlBase::Unlink
 
@@ -2539,7 +2539,7 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM UNLINK-Befehls-ID](/previous-versions/aa770037\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_UNLINK Befehls-ID](/previous-versions/aa770037\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
 ## <a name="chtmleditctrlbaseunorderlist"></a><a name="unorderlist"></a>CHtmlEditCtrlBase::UnorderList
 
@@ -2560,9 +2560,9 @@ Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [IDM UNORDERLIST-Befehls-ID](/previous-versions/aa769987\(v=vs.85\)) an das WebBrowser-Steuerelement.
+Diese Methode sendet die [IDM_UNORDERLIST Befehls-ID](/previous-versions/aa769987\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [HTMLEdit-Beispiel](../../overview/visual-cpp-samples.md)

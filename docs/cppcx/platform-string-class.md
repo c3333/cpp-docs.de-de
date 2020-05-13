@@ -19,16 +19,16 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::String
 ms.assetid: 72dd04a4-a694-40d3-b899-eaa0b503eab8
-ms.openlocfilehash: 3c8c179c416ca744cace26cff3def0829f425664
-ms.sourcegitcommit: 8178d22701047d24f69f10d01ba37490e3d67241
+ms.openlocfilehash: 3f29c60d0d6a4618d97d8f750a048fcc18f976b5
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587916"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81322111"
 ---
 # <a name="platformstring-class"></a>Platform::String-Klasse
 
-Stellt eine sequenzielle Auflistung von Unicode-Zeichen dar, die zum Darstellen von Text verwendet werden. Weitere Informationen und [Beispiele finden Sie](../cppcx/strings-c-cx.md)unter Zeichen folgen.
+Stellt eine sequenzielle Auflistung von Unicode-Zeichen dar, die zum Darstellen von Text verwendet werden. Weitere Informationen und Beispiele finden Sie unter [Strings](../cppcx/strings-c-cx.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -43,66 +43,66 @@ public ref class String sealed : Object,
 
 Zwei Iteratorfunktionen, die nicht Member der Zeichenfolgenklasse sind, können mit der Vorlagenfunktion `std::for_each` verwendet werden, um die Zeichen in einem Zeichenfolgenobjekt aufzulisten.
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
 |`const char16* begin(String^ s)`|Gibt einen Zeiger auf den Anfang des angegebenen Zeichenfolgenobjekts zurück.|
 |`const char16* end(String^ s)`|Gibt einen Zeiger nach dem Ende des angegebenen Zeichenfolgenobjekts zurück.|
 
-### <a name="members"></a>Member
+## <a name="members"></a>Member
 
 Die Zeichenfolgenklasse erbt vom Objekt und den Schnittstellen IDisposable, IEquatable und IPrintable.
 
 Die Zeichenfolgenklasse verfügt auch über die folgenden Typen von Membern.
 
-**Konstruktoren**
+### <a name="constructors"></a>Konstruktoren
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
-|[String:: String](#ctor)|Initialisiert eine neue Instanz der Zeichenfolgenklasse.|
+|[String::String](#ctor)|Initialisiert eine neue Instanz der Zeichenfolgenklasse.|
 
-**Methoden**
+### <a name="methods"></a>Methoden
 
 Die Zeichenfolgenklasse erbt die Methoden Equals(), Finalize(), GetHashCode(), GetType(), MemberwiseClose() und ToString() von [Platform::Object Class](../cppcx/platform-object-class.md). Die Zeichenfolge hat auch die folgenden Methoden.
 
-|Methode|Beschreibung|
+|Methode|BESCHREIBUNG|
 |------------|-----------------|
-|[String:: begin](#begin)|Gibt einen Zeiger auf den Anfang der aktuellen Zeichenfolge zurück.|
-|[String:: CompareOrdinal](#compareordinal)|Vergleicht zwei `String` -Objekte durch Auswertung der numerischen Werte der entsprechenden Zeichen in den beiden Zeichenfolgenwerten, die durch die Objekte dargestellt werden.|
-|[String:: Concat](#concat)|Verkettet die Werte von zwei Zeichenfolgenobjekten.|
-|[Zeichenfolge::D ATA](#data)|Gibt einen Zeiger auf den Anfang der aktuellen Zeichenfolge zurück.|
-|[Zeichenfolge::D ispose](#dispose)|Gibt Ressourcen frei.|
-|[String:: End](#end)|Gibt einen Zeiger nach dem Ende der aktuellen Zeichenfolge zurück.|
-|[String:: Gleichheitszeichen](#equals)|Gibt an, ob das angegebene Objekt gleich dem aktuellen Objekt ist.|
-|[String:: GetHashCode](#gethashcode)|Gibt den Hashcode für diese Instanz zurück.|
-|[String:: IsEmpty](#isempty)|Gibt an, ob das aktuelle String-Objekt leer ist.|
-|[String:: isfastpass](#isfastpass)|Gibt an, ob das aktuelle String-Objekt an einem *fast-Pass* -Vorgang teilnimmt. Bei einem Fast-Pass-Vorgang wird die Verweiszählung angehalten.|
-|[String:: length](#length)|Ruft die Länge des aktuellen Zeichenfolgenobjekts ab.|
-|[String::-Zeichenfolge](#tostring)|Gibt ein neues Zeichenfolgenobjekt zurück, dessen Wert mit der aktuellen Zeichenfolge identisch ist.|
+|[String::Begin](#begin)|Gibt einen Zeiger auf den Anfang der aktuellen Zeichenfolge zurück.|
+|[String::CompareOrdinal](#compareordinal)|Vergleicht zwei `String` -Objekte durch Auswertung der numerischen Werte der entsprechenden Zeichen in den beiden Zeichenfolgenwerten, die durch die Objekte dargestellt werden.|
+|[String::Concat](#concat)|Verkettet die Werte von zwei Zeichenfolgenobjekten.|
+|[String::Data](#data)|Gibt einen Zeiger auf den Anfang der aktuellen Zeichenfolge zurück.|
+|[String::Dispose](#dispose)|Gibt Ressourcen frei.|
+|[String::Ende](#end)|Gibt einen Zeiger nach dem Ende der aktuellen Zeichenfolge zurück.|
+|[String::Equals](#equals)|Gibt an, ob das angegebene Objekt gleich dem aktuellen Objekt ist.|
+|[String::GetHashCode](#gethashcode)|Gibt den Hashcode für diese Instanz zurück.|
+|[String::IsEmpty](#isempty)|Gibt an, ob das aktuelle String-Objekt leer ist.|
+|[String::IsFastPass](#isfastpass)|Gibt an, ob das aktuelle String-Objekt an einem *Schnellpassvorgang* beteiligt ist. Bei einem Fast-Pass-Vorgang wird die Verweiszählung angehalten.|
+|[String::Länge](#length)|Ruft die Länge des aktuellen Zeichenfolgenobjekts ab.|
+|[String::ToString](#tostring)|Gibt ein neues Zeichenfolgenobjekt zurück, dessen Wert mit der aktuellen Zeichenfolge identisch ist.|
 
-**Operatoren**
+### <a name="operators"></a>Operatoren
 
 Die String-Klasse verfügt über die folgenden Operatoren.
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
-|[String:: Operator = =-Operator](#operator-equality)|Gibt an, ob zwei angegebene Zeichen folgen Objekte denselben Wert aufweisen.|
+|[String::operator== Operator](#operator-equality)|Gibt an, ob zwei angegebene String-Objekte denselben Wert haben.|
 |[operator+-Operator](#operator-plus)|Verkettet zwei Zeichenfolgeobjekte in ein neues Zeichenfolgeobjekt.|
-|[String:: Operator >-Operator](#operator-greater-than)|Gibt an, ob der Wert eines Zeichenfolgenobjekts größer als der Wert eines zweiten Zeichenfolgenobjekts ist.|
-|[String:: Operator > =-Operator](#operator-greater-than-or-equals)|Gibt an, ob der Wert eines String-Objekts größer oder gleich dem Wert eines zweiten String-Objekts ist.|
-|[String:: Operator! =-Operator](#operator-inequality)|Gibt an, ob zwei angegebene Zeichen folgen Objekte unterschiedliche Werte aufweisen.|
-|[String:: Operator <-Operator](#operator-less-than)|Gibt an, ob der Wert eines Zeichenfolgenobjekts kleiner als der Wert eines zweiten Zeichenfolgenobjekts ist.|
+|[String::operator> Operator](#operator-greater-than)|Gibt an, ob der Wert eines Zeichenfolgenobjekts größer als der Wert eines zweiten Zeichenfolgenobjekts ist.|
+|[String::operator>= Operator](#operator-greater-than-or-equals)|Gibt an, ob der Wert eines String-Objekts größer oder gleich dem Wert eines zweiten String-Objekts ist.|
+|[String::operator!= Operator](#operator-inequality)|Gibt an, ob zwei angegebene String-Objekte unterschiedliche Werte aufweisen.|
+|[String::operator< Operator](#operator-less-than)|Gibt an, ob der Wert eines Zeichenfolgenobjekts kleiner als der Wert eines zweiten Zeichenfolgenobjekts ist.|
 
 ### <a name="requirements"></a>Anforderungen
 
 **Mindestens unterstützter Client:** Windows 8
 
-**Mindestens unterstützter Server:** Windows Server 2012
+**Minimal unterstützter Server:** Windows Server 2012
 
 **Namespace:** Platform
 
 **Header** vccorlib.h (standardmäßig eingeschlossen)
 
-## <a name="begin"></a>String:: Begin-Methode
+## <a name="stringbegin-method"></a><a name="begin"></a>String::Begin-Methode
 
 Gibt einen Zeiger auf den Anfang der aktuellen Zeichenfolge zurück.
 
@@ -116,9 +116,9 @@ char16* Begin();
 
 Ein Zeiger auf den Anfang der aktuellen Zeichenfolge.
 
-## <a name="compareordinal"></a>String:: CompareOrdinal-Methode
+## <a name="stringcompareordinal-method"></a><a name="compareordinal"></a>String::CompareOrdinal-Methode
 
-Eine statische Methode, die zwei `String` Objekte vergleicht, indem die numerischen Werte der entsprechenden Zeichen in den beiden Zeichen folgen Werten ausgewertet werden, die von den-Objekten dargestellt werden.
+Statische Methode, die `String` zwei Objekte vergleicht, indem die numerischen Werte der entsprechenden Zeichen in den beiden Zeichenfolgenwerten ausgewertet werden, die von den Objekten dargestellt werden.
 
 ### <a name="syntax"></a>Syntax
 
@@ -144,7 +144,7 @@ Eine ganze Zahl, die die lexikalische Beziehung zwischen den beiden Vergleichswe
 |0|`str1` ist gleich `str2`.|
 |1|`str1` ist größer als `str2`.|
 
-## <a name="concat"></a>String:: Concat-Methode
+## <a name="stringconcat-method"></a><a name="concat"></a>String::Concat-Methode
 
 Verkettet die Werte von zwei Zeichenfolgenobjekten.
 
@@ -168,25 +168,25 @@ Ein neues Zeichenfolgen^-Objekt, dessen Wert die Verkettung der Werte von `str1`
 
 Wenn `str1``null` und `str2` ungleich null ist, wird `str1` zurückgegeben. Wenn `str2``null` und `str1` ungleich null ist, wird `str2` zurückgegeben. Wenn `str1` und `str2` beide `null` sind, wird die leere Zeichenfolge (L "") zurückgegeben.
 
-## <a name="data"></a>String::D ATA-Methode
+## <a name="stringdata-method"></a><a name="data"></a>String::Data-Methode
 
 Gibt einen Zeiger zum Anfang des Datenpuffers des Objekts als ein Array im C-Format mit `char16`-Elementen (`wchar_t`) zurück.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 const char16* Data();
 ```
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Anfang eines `const char16` Arrays von Unicode-Zeichen (`char16` ist eine typedef für `wchar_t`).
+Ein Zeiger auf den `const char16` Anfang eines Arrays`char16` von Unicode-Zeichen (ist ein typedef für `wchar_t`).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode zum Konvertieren von `Platform::String^` zu `wchar_t*`. Wenn das `String`-Objekt den Gültigkeitsbereich verlässt, ist die Gültigkeit des Datenzeigers nicht mehr sichergestellt. Um die Daten über die Lebensdauer des ursprünglichen `String` Objekts hinaus zu speichern, verwenden Sie [wcscpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md) , um das Array in den Arbeitsspeicher zu kopieren, den Sie selbst zugewiesen haben.
+Verwenden Sie diese Methode zum Konvertieren von `Platform::String^` zu `wchar_t*`. Wenn das `String`-Objekt den Gültigkeitsbereich verlässt, ist die Gültigkeit des Datenzeigers nicht mehr sichergestellt. Um die Daten über die `String` Lebensdauer des ursprünglichen Objekts hinaus zu speichern, verwenden Sie [wcscpy_s,](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md) um das Array in den Speicher zu kopieren, den Sie selbst zugewiesen haben.
 
-## <a name="dispose"></a>String::D ispose-Methode
+## <a name="stringdispose-method"></a><a name="dispose"></a>String::Dispose-Methode
 
 Gibt Ressourcen frei.
 
@@ -196,7 +196,7 @@ Gibt Ressourcen frei.
 virtual override void Dispose();
 ```
 
-## <a name="end"></a>String:: End-Methode
+## <a name="stringend-method"></a><a name="end"></a>String::End-Methode
 
 Gibt einen Zeiger nach dem Ende der aktuellen Zeichenfolge zurück.
 
@@ -210,11 +210,11 @@ char16* End();
 
 Ein Zeiger zur Übergabe des Endes der aktuellen Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-End () gibt Begin () + length zurück.
+End() gibt Begin() + Length zurück.
 
-## <a name="equals"></a>String:: Gleichheits Methode
+## <a name="stringequals-method"></a><a name="equals"></a>String::Equals-Methode
 
 Gibt an, ob die angegebene Zeichenfolge über den gleichen Wert wie das aktuelle Objekt verfügt.
 
@@ -227,18 +227,18 @@ bool String::Equals(String^ str);
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Das zu vergleichende Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn `str` gleich dem aktuellen Objekt ist. andernfalls **false**.
+**true,** wenn `str` es gleich dem aktuellen Objekt ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode entspricht der statischen [Zeichenfolge:: CompareOrdinal](#compareordinal). In der ersten Überladung wird erwartet, dass der Parameter `str` zu einem String^-Objekt umgewandelt werden kann.
+Diese Methode entspricht der statischen [String::CompareOrdinal](#compareordinal). In der ersten Überladung wird erwartet, dass der Parameter `str` zu einem String^-Objekt umgewandelt werden kann.
 
-## <a name="gethashcode"></a>String:: GetHashCode-Methode
+## <a name="stringgethashcode-method"></a><a name="gethashcode"></a>String::GetHashCode-Methode
 
 Gibt den Hashcode für diese Instanz zurück.
 
@@ -252,7 +252,7 @@ virtual override int GetHashCode();
 
 Der Hashcode für diese Instanz.
 
-## <a name="isempty"></a>String:: IsEmpty-Methode
+## <a name="stringisempty-method"></a><a name="isempty"></a>String::IsEmpty-Methode
 
 Gibt an, ob das aktuelle String-Objekt leer ist.
 
@@ -264,11 +264,11 @@ bool IsEmpty();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das aktuelle `String` Objekt **null** oder eine leere Zeichenfolge (L "") ist. andernfalls **false**.
+**true,** wenn `String` das aktuelle Objekt **null** oder die leere Zeichenfolge (L"") ist; andernfalls **false**.
 
-## <a name="isfastpass"></a>String:: isfastpass-Methode
+## <a name="stringisfastpass-method"></a><a name="isfastpass"></a>String::IsFastPass-Methode
 
-Gibt an, ob das aktuelle String-Objekt an einem *fast-Pass* -Vorgang teilnimmt. Bei einem Fast-Pass-Vorgang wird die Verweiszählung angehalten.
+Gibt an, ob das aktuelle String-Objekt an einem *Schnellpassvorgang* beteiligt ist. Bei einem Fast-Pass-Vorgang wird die Verweiszählung angehalten.
 
 ### <a name="syntax"></a>Syntax
 
@@ -278,15 +278,15 @@ bool IsFastPass();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das aktuelle `String` Objekt fast-Past ist. andernfalls **false**.
+**true,** wenn `String` das aktuelle Objekt schnell vorbei ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beim Aufruf einer Funktion, bei der ein Objekt mit Verweiszählung ein Parameter ist und die aufgerufene Funktion nur dieses Objekt liest, kann der Compiler die Verweiszählung sicher anhalten und die Aufrufleistung verbessern. Es gibt nichts nützliches, das Ihr Code mit dieser Eigenschaft ausführen kann. Das System behandelt alle Details.
 
-## <a name="length"></a>String:: Length-Methode
+## <a name="stringlength-method"></a><a name="length"></a>String::Length-Methode
 
-Ruft die Anzahl der Zeichen im aktuellen `String`-Objekt ab.
+Ruft die Anzahl der Zeichen `String` im aktuellen Objekt ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -296,9 +296,9 @@ unsigned int Length();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Zeichen im aktuellen `String`-Objekt.
+Die Anzahl der Zeichen `String` im aktuellen Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Länge einer Zeichenfolge ohne Zeichen ist null. Die Länge der folgenden Zeichenfolge ist 5:
 
@@ -307,11 +307,11 @@ String^ str = "Hello";
 int len = str->Length(); //len = 5
 ```
 
-Das Zeichen Array, das von der Zeichenfolge zurückgegeben wird [::D ATA](#data) verfügt über ein zusätzliches Zeichen, das das abschließende Null-Zeichen oder "\ 0" ist. Dieses Zeichen ist ebenfalls zwei Bytes lang.
+Das Zeichenarray, das von [String::Data](#data) zurückgegeben wird, hat ein zusätzliches Zeichen, das das beendende NULL oder '''''' ist. Dieses Zeichen ist ebenfalls zwei Bytes lang.
 
-## <a name="operator-plus"></a>String:: Operator +-Operator
+## <a name="stringoperator-operator"></a><a name="operator-plus"></a>String::operator+ Operator
 
-Verkettet zwei [Zeichen](../cppcx/platform-string-class.md) folgen Objekte in ein neues [Zeichen](../cppcx/platform-string-class.md) folgen Objekt.
+Verkettet zwei [String-Objekte](../cppcx/platform-string-class.md) in einem neuen [String-Objekt.](../cppcx/platform-string-class.md)
 
 ### <a name="syntax"></a>Syntax
 
@@ -329,13 +329,13 @@ Das zweite `String`-Objekt, dessen Inhalt `str1` angefügt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn *str1* gleich *str2*ist. andernfalls **false**.
+**wahr,** wenn *str1* gleich *str2*ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Operator erstellt ein `String^`-Objekt mit den Daten aus den zwei Operanden. Verwenden Sie es zur Vereinfachung, wenn nicht unbedingt extreme Leistung gefordert ist. Einige Aufrufe von "`+`" in einer Funktion werden sich wahrscheinlich nicht bemerkbar machen. Wenn Sie jedoch große Objekte oder Textdaten in einer kurzen Schleife bearbeiten, sollten Sie die standardmäßigen C++-Mechanismen und -typen verwenden.
 
-##  <a name="operator-equality"></a>String:: Operator = =-Operator
+## <a name="stringoperator-operator"></a><a name="operator-equality"></a>String::operator== Operator
 
 Gibt an, ob zwei angegebene Zeichenfolgenobjekte denselben Textwert haben.
 
@@ -355,15 +355,15 @@ Das zweite zu vergleichende `String`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Inhalt `str1` gleich `str2` ist. andernfalls **false**.
+**wahr,** wenn `str1` der Inhalt `str2`von gleich ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator entspricht [String:: CompareOrdinal](#compareordinal).
+Dieser Operator entspricht [String::CompareOrdinal](#compareordinal).
 
-##  <a name="operator-greater-than"></a>String:: Operator-&gt;
+## <a name="stringoperatorgt"></a><a name="operator-greater-than"></a>String::Operator&gt;
 
-Gibt an, ob der Wert eines `String` Objekts größer als der Wert eines zweiten `String`-Objekts ist.
+Gibt an, ob `String` der Wert eines Objekts `String` größer als der Wert eines zweiten Objekts ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -381,15 +381,15 @@ Das zweite `String`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Wert `str1` größer als der Wert von `str2` ist. andernfalls **false**.
+**true,** wenn `str1` der Wert von `str2`größer ist als der Wert von ; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator entspricht dem expliziten Aufrufen von [String:: CompareOrdinal](#compareordinal) und erhält ein Ergebnis, das größer als 0 (null) ist.
+Dieser Operator entspricht dem expliziten Aufrufen von [String::CompareOrdinal](#compareordinal) und dem Abrufen eines Ergebnisses größer als Null.
 
-## <a name="operator-greater-than-or-equals"></a>String:: Operator &gt; =
+## <a name="stringoperatorgt"></a><a name="operator-greater-than-or-equals"></a>String::Operator&gt;=
 
-Gibt an, ob der Wert eines `String` Objekts größer als oder gleich dem Wert eines zweiten `String`-Objekts ist.
+Gibt an, ob `String` der Wert eines Objekts größer `String` oder gleich dem Wert eines zweiten Objekts ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -407,11 +407,11 @@ Das zweite `String`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Wert von `str1` größer oder gleich dem Wert von `str2` ist. andernfalls **false**.
+**wahr,** wenn `str1` der Wert von größer oder `str2`gleich dem Wert von ist; andernfalls **false**.
 
-## <a name="operator-inequality"></a>String:: Operator! =
+## <a name="stringoperator"></a><a name="operator-inequality"></a>String::operator!=
 
-Gibt an, ob zwei angegebene `String`-Objekte unterschiedliche Werte aufweisen.
+Gibt an, `String` ob zwei angegebene Objekte unterschiedliche Werte aufweisen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -429,11 +429,11 @@ Das zweite zu vergleichende `String`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn `str1` nicht gleich `str2` ist. andernfalls **false**.
+**wahr,** wenn `str1` nicht `str2`gleich ist ; andernfalls **false**.
 
-## <a name="operator-less-than"></a>String:: Operator-&lt;
+## <a name="stringoperatorlt"></a><a name="operator-less-than"></a>String::Operator&lt;
 
-Gibt an, ob der Wert eines `String` Objekts kleiner als der Wert eines zweiten `String`-Objekts ist.
+Gibt an, ob `String` der Wert eines Objekts `String` kleiner als der Wert eines zweiten Objekts ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -451,11 +451,11 @@ Das zweite `String`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Wert von *str1* kleiner als der Wert von *str2*ist. andernfalls **false**.
+**true,** wenn der Wert von *str1* kleiner als der Wert von *str2*ist; andernfalls **false**.
 
-## <a name="ctor"></a>String:: String-Konstruktor
+## <a name="stringstring-constructor"></a><a name="ctor"></a>String::String-Konstruktor
 
-Initialisiert eine neue Instanz der `String`-Klasse mit einer Kopie der Eingabezeichen folgen Daten.
+Initialisiert eine neue Instanz `String` der Klasse mit einer Kopie der Eingabezeichenfolgendaten.
 
 ### <a name="syntax"></a>Syntax
 
@@ -473,18 +473,19 @@ Eine Reihe von Breitzeichen, die die Zeichenfolge initialisieren. char16
 *n*<br/>
 Eine Zahl, die die Länge der Zeichenfolge angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Leistung kritisch ist und Sie die Lebensdauer der Quell Zeichenfolge steuern, können Sie [Platform:: Strauch ingreferenzierung](../cppcx/platform-stringreference-class.md) anstelle der Zeichenfolge verwenden.
+Wenn die Leistung entscheidend ist und Sie die Lebensdauer der Quellzeichenfolge steuern, können Sie [Platform::StringReference](../cppcx/platform-stringreference-class.md) anstelle von String verwenden.
+
 ### <a name="example"></a>Beispiel
 
 ```cpp
 String^ s = L"Hello!";
 ```
 
-## <a name="tostring"></a>String::-Zeichenfolge
+## <a name="stringtostring"></a><a name="tostring"></a>String::ToString
 
-Gibt ein `String` Objekt zurück, dessen Wert mit der aktuellen Zeichenfolge identisch ist.
+Gibt `String` ein Objekt zurück, dessen Wert mit der aktuellen Zeichenfolge identisch ist.
 
 ### <a name="syntax"></a>Syntax
 

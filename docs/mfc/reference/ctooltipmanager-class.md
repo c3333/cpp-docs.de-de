@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CTooltipManager [MFC], SetTooltipText
 - CTooltipManager [MFC], UpdateTooltips
 ms.assetid: c71779d7-8b6e-47ef-8500-d4552731fe86
-ms.openlocfilehash: 37fcf47b7537e89974a61e6c50c41e164d555678
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4e721740fc100a34ea08dd7ff5f9291eea2d9b36
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365074"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752165"
 ---
 # <a name="ctooltipmanager-class"></a>CTooltipManager-Klasse
 
@@ -55,7 +55,7 @@ Verwenden Sie [die CMFCToolTipCtrl-Klasse](../../mfc/reference/cmfctooltipctrl-c
 
 [CTooltipManager](../../mfc/reference/ctooltipmanager-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxtooltipmanager.h
 
@@ -97,15 +97,15 @@ Gültige QuickInfo-Typen sind in der folgenden Tabelle aufgeführt:
 |------------------|----------------------|-------------------|
 |AFX_TOOLTIP_TYPE_BUTTON|Eine Schaltfläche.|CMFCButton|
 |AFX_TOOLTIP_TYPE_CAPTIONBAR|Eine Beschriftungsleiste.|CMFCCaptionBar|
-|AFX_TOOLTIP_TYPE_DEFAULT|Jedes Steuerelement, das nicht zu einer anderen Kategorie passt.|Keine|
+|AFX_TOOLTIP_TYPE_DEFAULT|Jedes Steuerelement, das nicht zu einer anderen Kategorie passt.|Keine.|
 |AFX_TOOLTIP_TYPE_DOCKBAR|Ein andockbarer Bereich.|CDockablePane|
-|AFX_TOOLTIP_TYPE_EDIT|Ein Textfeld.|Keine|
+|AFX_TOOLTIP_TYPE_EDIT|Ein Textfeld.|Keine.|
 |AFX_TOOLTIP_TYPE_MINIFRAME|Ein Miniframe.|CPaneFrameWnd|
-|AFX_TOOLTIP_TYPE_PLANNER|Ein Planer.|Keine|
+|AFX_TOOLTIP_TYPE_PLANNER|Ein Planer.|Keine.|
 |AFX_TOOLTIP_TYPE_RIBBON|Eine Bandleiste.|CMFCRibbonBar, CMFCRibbonPanelMenuBar|
 |AFX_TOOLTIP_TYPE_TAB|Ein Registerkartensteuerelement.|CMFCTabCtrl|
 |AFX_TOOLTIP_TYPE_TOOLBAR|Eine Symbolleiste.|CMFCToolBar, CMFCPopupMenuBar|
-|AFX_TOOLTIP_TYPE_TOOLBOX|Eine Toolbox.|Keine|
+|AFX_TOOLTIP_TYPE_TOOLBOX|Eine Toolbox.|Keine.|
 
 ## <a name="ctooltipmanagerdeletetooltip"></a><a name="deletetooltip"></a>CTooltipManager::DeleteToolTip
 
@@ -128,7 +128,7 @@ Rufen Sie diese Methode für jede [CToolTipCtrl-Klasse](../../mfc/reference/ctoo
 
 Passt die Darstellung des QuickInfo-Steuerelements für die angegebenen Windows-Steuerelementtypen an.
 
-```
+```cpp
 void SetTooltipParams(
     UINT nTypes,
     CRuntimeClass* pRTC=RUNTIME_CLASS(CMFCToolTipCtrl),
@@ -198,13 +198,13 @@ Der Wert von *nType* muss derselbe Wert wie der *nType-Parameter* von [CTooltipM
 
 Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
-```
+```cpp
 void UpdateTooltips();
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

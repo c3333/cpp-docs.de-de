@@ -5,12 +5,12 @@ helpviewer_keywords:
 - property page data transfer functions in MFC
 - property pages [MFC], global MFC functions
 ms.assetid: 734f88bc-c776-4136-9b0e-f45c761a45c1
-ms.openlocfilehash: 1064cd99d1820ae8865fa632c3097441172c78c4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6456a192a502a0fcc032eaefc667c90ecec86d42
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372996"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81751141"
 ---
 # <a name="property-pages-mfc"></a>Eigenschaftenseiten (MFC)
 
@@ -49,7 +49,7 @@ Im Folgenden finden Sie eine Liste von Makros, die zum Erstellen und Verwalten v
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer ganzzahligen Eigenschaft mit dem Index der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_CBIndex(
     CDataExchange* pDX,
     int id,
@@ -75,7 +75,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem von *id*angegeben
 
 Diese Funktion sollte vor `DDX_CBIndex` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -83,7 +83,7 @@ Diese Funktion sollte vor `DDX_CBIndex` dem entsprechenden Funktionsaufruf aufge
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft mit der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_CBString(
     CDataExchange* pDX,
     int id,
@@ -109,7 +109,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit der kombinationsfeldz
 
 Diese Funktion sollte vor `DDX_CBString` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -117,7 +117,7 @@ Diese Funktion sollte vor `DDX_CBString` dem entsprechenden Funktionsaufruf aufg
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft zu synchronisieren, die genau mit der aktuellen Auswahl in einem Kombinationsfeld auf der Eigenschaftenseite übereinstimmt.
 
-```
+```cpp
 void AFXAPI DDP_CBStringExact(
     CDataExchange* pDX,
     int id,
@@ -143,7 +143,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit der kombinationsfeldz
 
 Diese Funktion sollte vor `DDX_CBStringExact` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -151,7 +151,7 @@ Diese Funktion sollte vor `DDX_CBStringExact` dem entsprechenden Funktionsaufruf
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert der Eigenschaft mit dem zugeordneten Kontrollkästchen-Kontrollkästchen-Steuerelement für Eigenschaftenseiten zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_Check(
     CDataExchange* pDX,
     int id,
@@ -177,7 +177,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem von *id*angegeben
 
 Diese Funktion sollte vor `DDX_Check` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -185,7 +185,7 @@ Diese Funktion sollte vor `DDX_Check` dem entsprechenden Funktionsaufruf aufgeru
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Ganzzahleigenschaft mit dem Index der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_LBIndex(
     CDataExchange* pDX,
     int id,
@@ -211,7 +211,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit der von *id*angegeben
 
 Diese Funktion sollte vor `DDX_LBIndex` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -219,7 +219,7 @@ Diese Funktion sollte vor `DDX_LBIndex` dem entsprechenden Funktionsaufruf aufge
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_LBString(
     CDataExchange* pDX,
     int id,
@@ -245,7 +245,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit der von *id*angegeben
 
 Diese Funktion sollte vor `DDX_LBString` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -253,7 +253,7 @@ Diese Funktion sollte vor `DDX_LBString` dem entsprechenden Funktionsaufruf aufg
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um den Wert einer Zeichenfolgeneigenschaft zu synchronisieren, die genau mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaftenseite übereinstimmt.
 
-```
+```cpp
 void AFXAPI DDP_LBStringExact(
     CDataExchange* pDX,
     int id,
@@ -279,7 +279,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit der von *id*angegeben
 
 Diese Funktion sollte vor `DDX_LBStringExact` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -287,7 +287,7 @@ Diese Funktion sollte vor `DDX_LBStringExact` dem entsprechenden Funktionsaufruf
 
 Rufen Sie diese Funktion in `DoDataExchange` der Funktion Ihrer Eigenschaftenseite auf, um die Übertragung von Eigenschaftswerten von der Eigenschaftenseite auf das Steuerelement zu beenden, wenn Eigenschaftswerte gespeichert werden.
 
-```
+```cpp
 void AFXAPI DDP_PostProcessing(CDataExchange * pDX);
 ```
 
@@ -302,7 +302,7 @@ Diese Funktion sollte aufgerufen werden, nachdem alle Datenaustauschfunktionen a
 
 [!code-cpp[NVC_MFCAxCtl#15](../../mfc/reference/codesnippet/cpp/property-pages-mfc_1.cpp)]
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -310,7 +310,7 @@ Diese Funktion sollte aufgerufen werden, nachdem alle Datenaustauschfunktionen a
 
 Rufen Sie diese Funktion `DoPropExchange` in der Funktion des Steuerelements auf, um den Wert der Eigenschaft mit dem zugehörigen Optionsfeldsteuerelement der Eigenschaftenseite zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_Radio(
     CDataExchange* pDX,
     int id,
@@ -336,7 +336,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem durch *id*angegeb
 
 Diese Funktion sollte vor `DDX_Radio` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -344,7 +344,7 @@ Diese Funktion sollte vor `DDX_Radio` dem entsprechenden Funktionsaufruf aufgeru
 
 Rufen Sie diese Funktion `DoDataExchange` in der Funktion des Steuerelements auf, um den Wert der Eigenschaft mit dem zugehörigen Eigenschaftenseitensteuerelement zu synchronisieren.
 
-```
+```cpp
 void AFXAPI DDP_Text(
     CDataExchange* pDX,
     int id,
@@ -412,7 +412,7 @@ Der Eigenschaftsname der Steuerelementeigenschaft, die mit dem von *id*angegeben
 
 Diese Funktion sollte vor `DDX_Text` dem entsprechenden Funktionsaufruf aufgerufen werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -438,7 +438,7 @@ Starten Sie in der Implementierungsdatei (.cpp), die die Memberfunktionen für I
 
 Weitere Informationen zu Eigenschaftenseiten finden Sie im Artikel [ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -455,7 +455,7 @@ END_PROPPAGEIDS(class_name)
 *Class_name*<br/>
 Der Name der Steuerelementklasse, die die Eigenschaftenseite besitzt.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
@@ -476,10 +476,10 @@ Die eindeutige Klassen-ID einer Eigenschaftenseite.
 
 Alle PROPPAGEID-Makros müssen zwischen dem BEGIN_PROPPAGEIDS und END_PROPPAGEIDS Makros in der Implementierungsdatei des Steuerelements platziert werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

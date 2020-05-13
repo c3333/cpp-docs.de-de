@@ -160,12 +160,12 @@ helpviewer_keywords:
 - CDockingManager [MFC], m_nTimeOutBeforeDockingBarDock
 - CDockingManager [MFC], m_nTimeOutBeforeToolBarDock
 ms.assetid: 98e69c43-55d8-4f43-b861-4fda80ec1e32
-ms.openlocfilehash: 339e5d5e464aacb51d1c4ab8fe3c2957a3afbd4e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 76fd12b0817c99d0d08327f9d9156eadf3559dc5
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375581"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753328"
 ---
 # <a name="cdockingmanager-class"></a>CDockingManager-Klasse
 
@@ -302,7 +302,7 @@ Im folgenden Beispiel wird veranschaulicht, `CDockingManager` wie verschiedene `
 
 [CDockingManager](../../mfc/reference/cdockingmanager-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxDockingManager.h
 
@@ -318,7 +318,7 @@ BOOL AddDockSite(
 
 ### <a name="parameters"></a>Parameter
 
-*info*<br/>
+*Informationen*<br/>
 [in] Ein Verweis auf eine Infostruktur, die die Ausrichtung des Dockbereichs enthält.
 
 *ppDockBar*<br/>
@@ -332,7 +332,7 @@ TRUE, wenn der Dockbereich erfolgreich erstellt wurde; FALSE sonst.
 
 Fügt der Liste der ausgeblendeten MDI-Registerkartenfenster einen Ziehpunkt zu einem Balkenbereich hinzu.
 
-```
+```cpp
 void AddHiddenMDITabbedBar(CDockablePane* pBar);
 ```
 
@@ -455,7 +455,7 @@ Der *Parameter dwAlignment* kann einen der folgenden Werte haben:
 
 Ändert die Größe eines Andockbereichs im Autohide-Modus so, dass er die volle Breite oder Höhe des Clientbereichs des Frames benötigt, der von Docksites umgeben ist.
 
-```
+```cpp
 void AlignAutoHidePane(
     CPaneDivider* pDefaultSlider,
     BOOL bIsVisible = TRUE);
@@ -495,7 +495,7 @@ NULL, wenn die Symbolleiste zum automatischen Ausblenden nicht erstellt wurde. a
 
 Bringt die angedockten Balken mit der angegebenen Ausrichtung nach oben.
 
-```
+```cpp
 void BringBarsToTop(
     DWORD dwAlignment = 0,
     BOOL bExcludeDockedBars = TRUE);
@@ -513,7 +513,7 @@ void BringBarsToTop(
 
 Fügt einem Menü Namen von Docking-Bereichen und Symbolleisten hinzu.
 
-```
+```cpp
 void BuildPanesMenu(
     CMenu& menu,
     BOOL bToolbarsOnly);
@@ -531,7 +531,7 @@ void BuildPanesMenu(
 
 Berechnet das erwartete Rechteck eines angedockten Fensters.
 
-```
+```cpp
 void CalcExpectedDockedRect(
     CWnd* pWnd,
     CPoint ptMouse,
@@ -631,7 +631,7 @@ Der Andockstatus kann einer der folgenden Werte sein:
 
 Aktiviert oder deaktiviert das Laden des Andocklayouts aus der Registrierung.
 
-```
+```cpp
 void DisableRestoreDockState(BOOL bDisable = TRUE);
 ```
 
@@ -648,7 +648,7 @@ Rufen Sie diese Methode auf, wenn Sie das aktuelle Layout von Dockingbereichen u
 
 Dockt einen Bereich an einen anderen Bereich oder an ein Rahmenfenster an.
 
-```
+```cpp
 void DockPane(
     CBasePane* pBar,
     UINT nDockBarID = 0,
@@ -753,7 +753,7 @@ Standardmäßig wird dieses Menü nicht angezeigt.
 
 Weist die Bibliothek an, ein spezielles Kontextmenü mit einer Liste von Anwendungssymbolleisten und Docking-Bereichen anzuzeigen, wenn der Benutzer auf die rechte Maustaste klickt und die Bibliothek die WM_CONTEXTMENU-Nachricht verarbeitet.
 
-```
+```cpp
 void EnablePaneContextMenu(
     BOOL bEnable,
     UINT uiCustomizeCmd,
@@ -973,7 +973,7 @@ Ein Rechteck, das die äußeren Ränder des Rahmens enthält.
 
 Gibt eine Liste der Bereiche zurück, die zum Docking-Manager gehören. Dazu gehören alle schwebenden Bereiche.
 
-```
+```cpp
 void GetPaneList(
     CObList& lstBars,
     BOOL bIncludeAutohide = FALSE,
@@ -1043,7 +1043,7 @@ Die Klasse, die die Smart Docking-Parameter für den aktuellen Andock-Manager en
 
 Blendet einen Bereich aus, der sich im Autohide-Modus befindet.
 
-```
+```cpp
 void HideAutoHidePanes(
     CDockablePane* pBarToExclude = NULL,
     BOOL bImmediately = FALSE);
@@ -1070,7 +1070,7 @@ BOOL InsertDockSite(
 
 ### <a name="parameters"></a>Parameter
 
-*info*<br/>
+*Informationen*<br/>
 [in] Eine Struktur, die die Ausrichtungsinformationen zum Dockbereich enthält.
 
 *dwAlignToInsertAfter*<br/>
@@ -1221,7 +1221,7 @@ TRUE, wenn der Docking-Managerstatus erfolgreich geladen wurde; andernfalls FALS
 
 Sperrt das angegebene Fenster.
 
-```
+```cpp
 void LockUpdate(BOOL bLock);
 ```
 
@@ -1311,7 +1311,7 @@ virtual void OnActivateFrame(BOOL bActivate);
 
 Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldung verarbeitet.
 
-```
+```cpp
 void OnClosePopupMenu();
 ```
 
@@ -1340,7 +1340,7 @@ TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
 Wird vom Framework aufgerufen, wenn es ein Menü mit einer Liste von Bereichen erstellt.
 
-```
+```cpp
 void OnPaneContextMenu(CPoint point);
 ```
 
@@ -1448,7 +1448,7 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 
 Gibt die leeren Bereichscontainer frei.
 
-```
+```cpp
 void ReleaseEmptyPaneContainers();
 ```
 
@@ -1456,7 +1456,7 @@ void ReleaseEmptyPaneContainers();
 
 Entfernt den angegebenen ausgeblendeten Balkenbereich.
 
-```
+```cpp
 void RemoveHiddenMDITabbedBar(CDockablePane* pBar);
 ```
 
@@ -1486,7 +1486,7 @@ TRUE, wenn der angegebene Frame entfernt wird; FALSE sonst.
 
 Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der Liste im Docking-Manager.
 
-```
+```cpp
 void RemovePaneFromDockManager(
     CBasePane* pWnd,
     BOOL bDestroy,
@@ -1538,7 +1538,7 @@ TRUE, wenn der Bereich erfolgreich ersetzt wurde; FALSE sonst.
 
 Resorts die Rahmen in der Liste der Miniframes.
 
-```
+```cpp
 void ResortMiniFramesForZOrder();
 ```
 
@@ -1598,7 +1598,7 @@ TRUE immer.
 
 Schreibt den Andock-Manager in ein Archiv.
 
-```
+```cpp
 void Serialize(CArchive& ar);
 ```
 
@@ -1615,7 +1615,7 @@ Das Schreiben des Docking-Managers in ein Archiv umfasst die Bestimmung der Anza
 
 Legt die Größe, Breite und Höhe der Steuerleisten und des angegebenen Bereichs fest.
 
-```
+```cpp
 void SetAutohideZOrder(CDockablePane* pAHDockingBar);
 ```
 
@@ -1666,7 +1666,7 @@ virtual void SetDockState();
 
 Legt den Druckvorschaumodus der Balken fest, die in der Druckvorschau angezeigt werden.
 
-```
+```cpp
 void SetPrintPreviewMode(
     BOOL bPreview,
     CPrintPreviewState* pState);
@@ -1703,7 +1703,7 @@ Um die Standardsuche für intelligente Docking-Marker zu verwenden, übergeben S
 
 Zeigt die Fenster der Minirahmen an oder blendet sie aus.
 
-```
+```cpp
 void ShowDelayShowMiniFrames(BOOL bshow);
 ```
 
@@ -1733,7 +1733,7 @@ Immer FALSE
 
 Startet das intelligente Andocken des angegebenen Fensters entsprechend der Ausrichtung des Smart Docking Managers.
 
-```
+```cpp
 void StartSDocking(CWnd* pDockingWnd);
 ```
 
@@ -1746,7 +1746,7 @@ void StartSDocking(CWnd* pDockingWnd);
 
 Beendet das intelligente Andocken.
 
-```
+```cpp
 void StopSDocking();
 ```
 
@@ -1764,7 +1764,7 @@ Gibt einen der folgenden aufgezählten Werte zurück: AFX_SDT_DEFAULT, AFX_SDT_V
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

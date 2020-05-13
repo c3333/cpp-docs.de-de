@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CMFCHeaderCtrl [MFC], OnDrawSortArrow
 - CMFCHeaderCtrl [MFC], OnFillBackground
 ms.assetid: 2f5fbf7b-5c75-42db-9216-640b1628f777
-ms.openlocfilehash: 0a6b0cf39861ba995acff71fc40cf44ae5114642
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5140d02c5acbbc430c3b4d175da1933c79c702b3
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367460"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752354"
 ---
 # <a name="cmfcheaderctrl-class"></a>CMFCHeaderCtrl Class
 
@@ -100,7 +100,7 @@ Die `CMFCHeaderCtrl` Klasse zeichnet einen Sortierpfeil in einer Kopfsteuereleme
 
 [CMFCHeaderCtrl](../../mfc/reference/cmfcheaderctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxheaderctrl.h
 
@@ -130,7 +130,7 @@ Dieser Konstruktor initialisiert die folgenden Membervariablen auf die angegeben
 
 Aktiviert oder deaktiviert den *Sortiermodus mehrerer Spalten* für das aktuelle Headersteuerelement.
 
-```
+```cpp
 void EnableMultipleSort(BOOL bEnable=TRUE);
 ```
 
@@ -295,7 +295,7 @@ virtual void OnFillBackground(CDC* pDC);
 
 Entfernt die angegebene Spalte aus der Liste der Sortierspalten.
 
-```
+```cpp
 void RemoveSortColumn(int iColumn);
 ```
 
@@ -308,7 +308,7 @@ void RemoveSortColumn(int iColumn);
 
 Legt die Sortierreihenfolge einer angegebenen Spalte in einem Kopfsteuerelement fest.
 
-```
+```cpp
 void SetSortColumn(
     int iColumn,
     BOOL bAscending=TRUE,
@@ -336,7 +336,7 @@ FALSE, um zuerst alle Spalten aus der Liste der Sortierspalten zu entfernen und 
 
 Verwenden Sie diese Methode, um die Sortierreihenfolge einer Spalte festzulegen. Bei Bedarf fügt diese Methode die Spalte zur Liste der Sortierspalten hinzu. Das Headersteuerelement verwendet die Sortierreihenfolge, um einen Sortierpfeil zu zeichnen, der nach oben oder unten zeigt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

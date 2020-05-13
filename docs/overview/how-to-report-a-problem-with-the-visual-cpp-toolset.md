@@ -6,10 +6,10 @@ ms.technology: cpp-ide
 author: corob-msft
 ms.author: corob
 ms.openlocfilehash: 350e902501aca5cbe2b4022ec1f977719844644b
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "71685708"
 ---
 # <a name="how-to-report-a-problem-with-the-microsoft-c-toolset-or-documentation"></a>Melden eines Problems mit dem Microsoft C++-Toolset oder der -Dokumentation
@@ -244,7 +244,7 @@ Eine *vorverarbeitete Reproduktion* ist eine einzelne Quelldatei, die ein Proble
 
 1. Wechseln Sie zu dem Verzeichnis, das die Reproduktion Ihres Projekts enthält.
 
-1. Geben Sie im Konsolenfenster der Developer-Eingabeaufforderung den Befehl **cl /P** *Argumente* *Dateiname.cpp* ein. Verwenden Sie die oben erfasste Liste der Argumente als *Argumente*. *Dateiname.cpp* ist der Name Ihrer Reproduktionsquelldatei. Dieser Befehl repliziert die Befehlszeile, die Sie für die Reproduktion verwendet haben, beendet jedoch die Kompilierung nach dem Durchlauf des Präprozessors. Dann schreibt der Befehl den vorverarbeiteten Quellcode in die Datei *Dateiname.i*.
+1. Geben Sie im Konsolenfenster der Developer-Eingabeaufforderung den Befehl **cl /P***Argumente* *Dateiname.cpp* ein. Verwenden Sie die oben erfasste Liste der Argumente als *Argumente*. *Dateiname.cpp* ist der Name Ihrer Reproduktionsquelldatei. Dieser Befehl repliziert die Befehlszeile, die Sie für die Reproduktion verwendet haben, beendet jedoch die Kompilierung nach dem Durchlauf des Präprozessors. Dann schreibt der Befehl den vorverarbeiteten Quellcode in die Datei *Dateiname.i*.
 
 Wenn Sie eine C++- oder CX-Quellcodedatei vorverarbeiten oder das Feature „C++-Module“ verwenden, sind einige zusätzliche Schritte erforderlich. Weitere Informationen finden Sie in den folgenden Abschnitten.
 
@@ -296,7 +296,7 @@ Wenn Sie das Modulfeature des C++-Compilers verwenden, sind verschiedene Schritt
 
 1. Wechseln Sie zu dem Verzeichnis, das die Reproduktion Ihres Projekts enthält.
 
-1. Geben Sie im Konsolenfenster der Developer-Eingabeaufforderung den Befehl **cl /P** *Argumente* *Dateiname.cpp* ein. Die *Argumente* sind die oben erfassten Argumente, und *Dateiname.cpp* ist der Name der Quelldatei, die das Modul nutzt.
+1. Geben Sie im Konsolenfenster der Developer-Eingabeaufforderung den Befehl **cl /P***Argumente* *Dateiname.cpp* ein. Die *Argumente* sind die oben erfassten Argumente, und *Dateiname.cpp* ist der Name der Quelldatei, die das Modul nutzt.
 
 1. Ändern Sie das Verzeichnis, das das Reproduktionsprojekt enthält, das die Modulschnittstelle (die IFC-Ausgabe) erstellt hat.
 

@@ -1,9 +1,10 @@
 ---
 title: isascii, __isascii, iswascii
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - iswascii
 - __isascii
+- _o_iswascii
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +39,12 @@ helpviewer_keywords:
 - istascii function
 - iswascii function
 ms.assetid: ba4325ad-7cb3-4fb9-b096-58906d67971a
-ms.openlocfilehash: b7677819a4b138b08ed4ff97de38c091ce0e94fd
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 3e04b85c9ce7519593802c21311315d534dce6a5
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857787"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919788"
 ---
 # <a name="isascii-__isascii-iswascii"></a>isascii, __isascii, iswascii
 
@@ -61,9 +63,9 @@ int iswascii(
 #define isascii __isascii
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu testende ganze Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -74,7 +76,9 @@ Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn **c** eine 
 
 Sowohl **__isascii** als auch **iswascii** werden als Makros implementiert, es sei denn, das Präprozessormakro _CTYPE_DISABLE_MACROS definiert.
 
-Aus Gründen der Abwärtskompatibilität wird **isascii** nur dann als Makro implementiert, wenn [ &#95; &#95;stdc&#95; ](../../preprocessor/predefined-macros.md) nicht definiert oder als 0 definiert ist. Andernfalls ist es nicht definiert.
+Aus Gründen der Abwärtskompatibilität wird **isascii** nur dann als Makro implementiert, wenn [&#95;&#95;stdc-&#95;&#95;](../../preprocessor/predefined-macros.md) nicht definiert oder als 0 definiert ist. Andernfalls ist es nicht definiert.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -82,17 +86,17 @@ Aus Gründen der Abwärtskompatibilität wird **isascii** nur dann als Makro imp
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_istascii**|**__isascii**|**__isascii**|**iswascii**|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**isascii**, **__isascii**|C: \<ctype.h><br /><br /> C++: \<cctype> oder \<ctype.h>|
 |**iswascii**|C: \<wctype.h>, \<ctype.h>, oder \<wchar.h><br /><br /> C++: \<cwctype>, \<cctype>, \<wctype.h>, \<ctype.h>, oder \<wchar.h>|
 
 Die Funktionen **isascii**, **__isascii** und **iswascii** sind Microsoft-spezifisch. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>

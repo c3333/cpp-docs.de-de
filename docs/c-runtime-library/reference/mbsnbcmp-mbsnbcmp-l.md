@@ -1,9 +1,11 @@
 ---
 title: _mbsnbcmp, _mbsnbcmp_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsnbcmp
 - _mbsnbcmp_l
+- _o__mbsnbcmp
+- _o__mbsnbcmp_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +37,12 @@ helpviewer_keywords:
 - _tcsncmp function
 - _mbsnbcmp function
 ms.assetid: dbc99e50-cf85-4e57-a13f-067591f18ac8
-ms.openlocfilehash: 512fd2dae54afa4a37b2b3d3103ab090d81909fa
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: edba674a0873b1f0a5f37457235c0dc1a8210ded
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952302"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82911975"
 ---
 # <a name="_mbsnbcmp-_mbsnbcmp_l"></a>_mbsnbcmp, _mbsnbcmp_l
 
@@ -66,7 +69,7 @@ int _mbsnbcmp_l(
 
 ### <a name="parameters"></a>Parameter
 
-*string1*, *string2*<br/>
+*Zeichenfolge1*, *Zeichenfolge2*<br/>
 Die zu vergleichende Zeichenfolgen.
 
 *count*<br/>
@@ -85,17 +88,19 @@ Der Rückgabewert gibt die ordinalbeziehung zwischen den Teil Zeichenfolgen von 
 |0|*Zeichenfolge1* Teil Zeichenfolge ist mit *Zeichenfolge2* Teil Zeichenfolge identisch.|
 |> 0|*Zeichenfolge1* Teil Zeichenfolge ist größer als *Zeichenfolge2* Teil Zeichenfolge.|
 
-Bei einem Parameter Validierungs Fehler geben **_mbsnbcmp** und **_mbsnbcmp_l** **_NLSCMPERROR**zurück, das in \<String. h > und \<mbstring. h > definiert ist.
+Bei einem Parameter Validierungs Fehler geben **_mbsnbcmp** und **_mbsnbcmp_l** **_NLSCMPERROR**zurück, das in \<String. h> und \<mbstring. h> definiert ist.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_mbsnbcmp** -Funktionen vergleichen höchstens die ersten *Anzahl* Bytes in *Zeichenfolge1* und *Zeichenfolge2* und geben einen Wert zurück, der die Beziehung zwischen den untergeordneten Zeichen folgen angibt. **_mbsnbcmp** ist eine Version von **_mbsnbicmp**mit Beachtung der Groß-/Kleinschreibung. Im Gegensatz zu **_mbsnbcoll**wird **_mbsnbcmp** nicht von der Sortierreihenfolge des Gebiets Schemas beeinflusst. **_mbsnbcmp** erkennt multibytezeichensequenzen entsprechend der aktuellen Multibytezeichen- [Codepage](../../c-runtime-library/code-pages.md).
+Die **_mbsnbcmp** Funktionen vergleichen höchstens die ersten *Anzahl* Bytes in *Zeichenfolge1* und *Zeichenfolge2* und geben einen Wert zurück, der die Beziehung zwischen den untergeordneten Zeichen folgen angibt. **_mbsnbcmp** ist eine Version von **_mbsnbicmp**, die Groß-/Kleinschreibung beachtet. Im Gegensatz zu **_mbsnbcoll**wird **_mbsnbcmp** nicht von der Sortierreihenfolge des Gebiets Schemas beeinflusst. **_mbsnbcmp** erkennt multibytezeichensequenzen entsprechend der aktuellen Multibytezeichen- [Codepage](../../c-runtime-library/code-pages.md).
 
-**_mbsnbcmp** ähnelt **_mbsncmp**, mit der Ausnahme, dass **_mbsncmp** Zeichen folgen nach Zeichen und nicht nach Bytes vergleicht.
+**_mbsnbcmp** ähnelt **_mbsncmp**, außer dass **_mbsncmp** Zeichen folgen nach Zeichen und nicht nach Bytes vergleicht.
 
-Der Ausgabewert wird von der **LC_CTYPE** -Kategorieeinstellung des Gebiets Schemas beeinflusst, das die führenden Bytes und nachfolgenden Bytes von Multibytezeichen angibt. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die **_mbsnbcmp** -Funktion verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. Die **_mbsnbcmp_l** -Funktion ist beinahe identisch, verwendet jedoch stattdessen den *locale* -Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert wird von der **LC_CTYPE** Kategorieeinstellung des Gebiets Schemas beeinflusst, das die führenden Bytes und nachfolgenden Bytes von Multibytezeichen angibt. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die **_mbsnbcmp** -Funktion verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. Die **_mbsnbcmp_l** -Funktion ist beinahe identisch, verwendet jedoch stattdessen den *locale* -Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben die Funktionen **_NLSCMPERROR** und **errno** auf **EINVAL**fest.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -106,12 +111,12 @@ Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, rufen di
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbcmp**|\<mbstring.h>|
 |**_mbsnbcmp_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -150,7 +155,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Compare strings:
@@ -166,7 +171,7 @@ Result:   String 1 is equal to string 2
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>
 [_mbsnbicmp, _mbsnbicmp_l](mbsnbicmp-mbsnbicmp-l.md)<br/>
 [strncmp, wcsncmp, _mbsncmp, _mbsncmp_l](strncmp-wcsncmp-mbsncmp-mbsncmp-l.md)<br/>

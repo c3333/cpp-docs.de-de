@@ -55,12 +55,12 @@ helpviewer_keywords:
 - AFX_GLOBAL_DATA structure [MFC]
 - AFX_GLOBAL_DATA constructor
 ms.assetid: c7abf2fb-ad5e-4336-a01d-260c29ed53a2
-ms.openlocfilehash: 60f7513075e8da7e17f2113c01b954af5a690aaf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0361d535a31526c5f7b79fdd4eab046dad0435cc
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363672"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752871"
 ---
 # <a name="afx_global_data-structure"></a>AFX_GLOBAL_DATA-Struktur
 
@@ -150,7 +150,7 @@ Die meisten Daten in der `AFX_GLOBAL_DATA` -Struktur werden beim Start der Anwen
 
 `AFX_GLOBAL_DATA`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxglobals.h
 
@@ -170,7 +170,7 @@ TRUE gibt an, dass Alpha-Überblendungen unterstützt werden. andernfalls FALSE.
 
 Gibt Ressourcen frei, die vom Framework zugeordnet werden, z. B. Pinsel, Schriftarten und DLLs.
 
-```
+```cpp
 void CleanUp();
 ```
 
@@ -288,7 +288,7 @@ Ein Design definiert den visuellen Stil einer Anwendung. Ein Design wird nicht v
 
 Aktiviert oder deaktiviert Microsoft Active Accessibility-Unterstützung.
 
-```
+```cpp
 void EnableAccessibilitySupport(BOOL bEnable=TRUE);
 ```
 
@@ -404,7 +404,7 @@ BOOL GetNonClientMetrics(NONCLIENTMETRICS& info);
 
 ### <a name="parameters"></a>Parameter
 
-*info*<br/>
+*Informationen*<br/>
 [in, out] Eine [NONCLIENTMETRICS-Struktur,](/windows/win32/api/winuser/ns-winuser-nonclientmetricsw) die die skalierbaren Metriken enthält, die dem Nichtclientbereich eines nicht minimierten Fensters zugeordnet sind.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -676,7 +676,7 @@ Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` Konstruktor initialisiert dieses Element 
 
 Erkennt den aktuellen Zustand der Funktionen zum automatischen Ausblenden der Menüanimation und Taskleisten auf dem Desktop.
 
-```
+```cpp
 void OnSettingChange();
 ```
 
@@ -781,7 +781,7 @@ Diese Methode erstellt eine horizontale reguläre Schriftart, eine unterstrichen
 
 Initialisiert die logischen Schriftarten erneut, die vom Framework verwendet werden.
 
-```
+```cpp
 void UpdateFonts();
 ```
 
@@ -793,7 +793,7 @@ Weitere Informationen zu logischen `CFont::CreateFontIndirect`Schriftarten finde
 
 Initialisiert die Farben, die Farbtiefe, die Stifte, die Pinsel und die Bilder, die vom Framework verwendet werden.
 
-```
+```cpp
 void UpdateSysColors();
 ```
 
@@ -861,7 +861,7 @@ Ein Ganzzahlwert mit codierten Flags, die Positionen von automatischen Ausblendb
 
 Gibt Schnittstellen frei, `GetITaskbarList` `GetITaskbarList3` die über die und Methoden erhalten werden.
 
-```
+```cpp
 void ReleaseTaskBarRefs();
 ```
 
@@ -895,7 +895,7 @@ Ein Verweis auf eine Schnittstellen-ID.
 
 Gibt S_OK zurück, wenn erfolgreich; andernfalls einen Fehlerwert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../hierarchy-chart.md)<br/>
 [Strukturen, Stile, Rückrufe und Meldungszuordnungen](structures-styles-callbacks-and-message-maps.md)<br/>

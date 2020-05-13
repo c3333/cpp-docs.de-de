@@ -34,12 +34,12 @@ helpviewer_keywords:
 - dates, handling in MFC
 - time, handling in MFC
 ms.assetid: e718f294-16ec-4649-88b6-a4dbae5178fb
-ms.openlocfilehash: 610cbec6cb65d4e9616c5e0e0d64e729f39febcc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8ba09430427b6ece8ae5956912cbcc40fb33fcf2
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317750"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747162"
 ---
 # <a name="coledatetime-class"></a>COleDateTime-Klasse
 
@@ -136,7 +136,7 @@ Grundlegende arithmetische Operationen `COleDateTime` für die Werte verwenden d
 
 Weitere Informationen zu `COleDateTime` `COleDateTimeSpan` den und Klassen finden Sie im Artikel [Datum und Uhrzeit: Automatisierungssupport](../../atl-mfc-shared/date-and-time-automation-support.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** ATLComTime.h
 
@@ -296,7 +296,7 @@ Gibt eines der folgenden Gebietsschemaflags an:
 
 - VAR_DATEVALUEONLY Ignorieren Sie den Zeitabschnitt während der Analyse.
 
-*lcid*<br/>
+*Lcid*<br/>
 Gibt die Gebietsschema-ID an, die für die Konvertierung verwendet werden soll. Weitere Informationen zu Sprachbezeichnern finden Sie unter [Sprachbezeichner](/windows/win32/Intl/language-identifiers).
 
 *lpszFormat*<br/>
@@ -940,7 +940,7 @@ Gibt Flags für Gebietsschemaeinstellungen und Analyse an. Mindestens eine der f
 
 - VAR_DATEVALUEONLY Ignorieren Sie den Zeitabschnitt während der Analyse.
 
-*lcid*<br/>
+*Lcid*<br/>
 Gibt die Gebietsschema-ID an, die für die Konvertierung verwendet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1135,13 +1135,13 @@ Siehe Beispiel für [GetStatus](#getstatus).
 
 Legt den Status `COleDateTime` dieses Objekts fest.
 
-```
+```cpp
 void SetStatus(DateTimeStatus status) throw();
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Status*<br/>
+*status*<br/>
 Der neue Statuswert `COleDateTime` für dieses Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1224,7 +1224,7 @@ Weitere Informationen zu den `COleDateTime` Grenzwerten für Werte finden Sie im
 
 Siehe Beispiel für [SetDate](#setdate).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [COleVariant-Klasse](../../mfc/reference/colevariant-class.md)<br/>
 [CTime-Klasse](../../atl-mfc-shared/reference/ctime-class.md)<br/>

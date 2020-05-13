@@ -1,10 +1,12 @@
 ---
 title: getenv_s, _wgetenv_s
-description: Beschreibt die Funktionen der Microsoft C-Lauf Zeit Bibliothek getenv_s und _wgetenv_s.
-ms.date: 01/15/2020
+description: Beschreibt die Microsoft C-Lauf getenv_s Zeit _wgetenv_s Bibliothek und-Funktionen.
+ms.date: 4/2/2020
 api_name:
 - getenv_s
 - _wgetenv_s
+- _o__wgetenv_s
+- _o_getenv_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-environment-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -50,14 +53,14 @@ no-loc:
 - _tzset
 - _dupenv_s
 - _wdupenv_s
-ms.openlocfilehash: 1eb0adc8c92f1133fd929b9d877b2526c042855f
-ms.sourcegitcommit: e93f3e6a110fe38bc642055bdf4785e620d4220f
+ms.openlocfilehash: 0713ed5735916c31edaab1a178a5e9b1b7cf5377
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124006"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82913682"
 ---
-# <a name="opno-locgetenv_s-opno-loc_wgetenv_s"></a>getenv_s, _wgetenv_s
+# <a name="getenv_s-_wgetenv_s"></a>getenv_s, _wgetenv_s
 
 Ruft einen Wert aus der aktuellen Umgebung ab. Diese Versionen von [getenv, _wgetenv](getenv-wgetenv.md) enthalten Sicherheitserweiterungen, wie unter [Sicherheitserweiterungen im CRT](../../c-runtime-library/security-features-in-the-crt.md) beschrieben wird.
 
@@ -93,12 +96,12 @@ errno_t _wgetenv_s(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *pReturnValue*<br/>
 Die erforderliche Größe des Puffers, oder 0, wenn die Variable nicht gefunden wird.
 
-*buffer*<br/>
+*ert*<br/>
 Puffer zum Speichern des Werts der Umgebungsvariablen.
 
 *numberOfElements*<br/>
@@ -113,27 +116,27 @@ Null, wenn erfolgreich, andernfalls ein Fehlercode, wenn ein Fehler auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*pReturnValue*|*buffer*|*numberOfElements*|*varname*|Rückgabewert|
+|*pReturnValue*|*ert*|*numberOfElements*|*varname*|Rückgabewert|
 |--------------------|--------------|------------------------|---------------|------------------|
-|**NULL**|alle|alle|alle|**EINVAL**|
-|alle|**NULL**|>0|alle|**EINVAL**|
-|alle|alle|alle|**NULL**|**EINVAL**|
+|**Normal**|any|any|any|**Eingabe**|
+|any|**Normal**|>0|any|**Eingabe**|
+|any|any|any|**Normal**|**Eingabe**|
 
-Bei diesen Fehlerbedingungen wird ein Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen die Funktionen **errno** auf **EINVAL** fest und geben **EINVAL** zurück.
+Bei diesen Fehlerbedingungen wird ein Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen die Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
 
-Auch wenn der Puffer zu klein ist, geben diese Funktionen **ERANGE** zurück. Sie rufen keinen Handler für ungültige Parameter auf. Sie schreiben die erforderliche Puffergröße in *pReturnValue*und ermöglichen es Programmen, die Funktion erneut mit einem größeren Puffer aufzurufen.
+Wenn der Puffer zu klein ist, geben diese Funktionen auch **ERANGE**zurück. Sie rufen keinen Handler für ungültige Parameter auf. Sie schreiben die erforderliche Puffergröße in *pReturnValue*und ermöglichen es Programmen, die Funktion erneut mit einem größeren Puffer aufzurufen.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **getenv_s** -Funktion durchsucht die Liste der Umgebungsvariablen nach *varname*. beim Windows-Betriebssystem wird **getenv_s** die Groß-/Kleinschreibung nicht beachtet. **getenv_s** und [_putenv_s](putenv-s-wputenv-s.md) verwenden Sie die Kopie der Umgebung, auf die die globale **_environ** Variable verweist, um auf die Umgebung zuzugreifen. **getenv_s** funktioniert nur für die Datenstrukturen, auf die die Lauf Zeit Bibliothek zugreifen kann, und nicht für das Umgebungs Segment, das vom Betriebssystem für den Prozess erstellt wird. Programme, die das Argument " *TVP* " für [main](../../cpp/main-function-command-line-args.md) oder [wmain](../../cpp/main-function-command-line-args.md) verwenden, rufen daher möglicherweise ungültige Informationen ab.
+Die **getenv_s** -Funktion durchsucht die Liste der Umgebungsvariablen nach *varname*. beim Windows-Betriebssystem wird **getenv_s** die Groß-/Kleinschreibung nicht beachtet. **getenv_s** und [_putenv_s](putenv-s-wputenv-s.md) verwenden Sie die Kopie der Umgebung, auf die die globale **_environ** Variable verweist, um auf die Umgebung zuzugreifen. **getenv_s** funktioniert nur für die Datenstrukturen, auf die die Lauf Zeit Bibliothek zugreifen kann, und nicht für das Umgebungs Segment, das vom Betriebssystem für den Prozess erstellt wird. Programme, die das Argument " *TVP* " für [Main](../../cpp/main-function-command-line-args.md) oder [wmain](../../cpp/main-function-command-line-args.md) verwenden, rufen daher möglicherweise ungültige Informationen ab.
 
-**_wgetenv_s** ist eine breit Zeichen Version von **getenv_s** . Das Argument und der Rückgabewert von **_wgetenv_s** sind Zeichen folgen mit breit Zeichen. Die **_wenviron** globale Variable ist eine breit Zeichen Version von **_environ** .
+**_wgetenv_s** ist eine breit Zeichen Version von **getenv_s**. Das Argument und der Rückgabewert von **_wgetenv_s** sind Zeichen folgen mit breit Zeichen. Die **_wenviron** globale Variable ist eine breit Zeichen Version von **_environ**.
 
-In einem MBCS-Programm (z. b. in einem SBCS-ASCII-Programm) ist **_wenviron** anfänglich **null** , da die Umgebung aus Multibyte-Zeichen folgen besteht. Wenn bereits eine (MBCS)-Umgebung vorhanden ist, wird beim ersten [_wputenv](putenv-wputenv.md)oder beim ersten **_wgetenv_s** eine entsprechende breit Zeichen-Zeichen folgen Umgebung erstellt, auf die dann von **_wenviron** verwiesen wird.
+In einem MBCS-Programm (z. b. in einem SBCS-ASCII-Programm) ist **_wenviron** anfänglich **null** , da die Umgebung aus Multibyte-Zeichen folgen besteht. Wenn bereits eine (MBCS)-Umgebung vorhanden ist, wird beim ersten [_wputenv](putenv-wputenv.md)oder beim ersten **_wgetenv_s**eine entsprechende breit Zeichen-Zeichen folgen Umgebung erstellt, auf die dann von **_wenviron**verwiesen wird.
 
-Ähnlich in einem Unicode-Programm ( **_wmain**) ist **_environ** anfänglich **null** , da die Umgebung aus Zeichen folgen mit breit Zeichen besteht. Wenn bereits eine (Unicode)-Umgebung vorhanden ist, wird beim ersten [_putenv](putenv-wputenv.md)oder beim ersten **getenv_s** eine entsprechende MBCS-Umgebung erstellt, auf die dann von **_environ** verwiesen wird.
+Ähnlich in einem Unicode-Programm (**_wmain**) ist **_environ** anfänglich **null** , da die Umgebung aus Zeichen folgen mit breit Zeichen besteht. Wenn bereits eine (Unicode)-Umgebung vorhanden ist, wird beim ersten [_putenv](putenv-wputenv.md)oder beim ersten **getenv_s** eine entsprechende MBCS-Umgebung erstellt, auf die dann von **_environ**verwiesen wird.
 
-Wenn in einem Programm zwei Kopien der Umgebung (MBCS und Unicode) gleichzeitig vorhanden sind, muss das Laufzeitsystem beide Kopien verwalten, wodurch sich die Ausführungszeit verlangsamt. Wenn Sie z. b. **_putenv** aufzurufen, wird auch automatisch ein **_wputenv** ausgeführt, sodass die beiden Umgebungs Zeichenfolgen übereinstimmen.
+Wenn in einem Programm zwei Kopien der Umgebung (MBCS und Unicode) gleichzeitig vorhanden sind, muss das Laufzeitsystem beide Kopien verwalten, wodurch sich die Ausführungszeit verlangsamt. Wenn Sie z. b. **_putenv**aufzurufen, wird auch automatisch ein **_wputenv** ausgeführt, sodass die beiden Umgebungs Zeichenfolgen übereinstimmen.
 
 > [!CAUTION]
 > In seltenen Fällen, wenn das Laufzeitsystem sowohl eine Unicodeversion als auch eine Multibyteversion der Umgebung verwaltet, stimmen diese zwei Versionen möglicherweise nicht exakt überein. Dies liegt daran, dass die Zuordnung von einer eindeutigen Unicodezeichenfolge zu einer Multibyte-Zeichenfolge nicht unbedingt eindeutig ist, obwohl sich jede eindeutige Multibyte-Zeichenfolge einer eindeutigen Unicodezeichenfolge zuordnen lässt. Weitere Informationen finden Sie unter [_environ, _wenviron](../../c-runtime-library/environ-wenviron.md).
@@ -143,17 +146,19 @@ Wenn in einem Programm zwei Kopien der Umgebung (MBCS und Unicode) gleichzeitig 
 
 Die Verwendung dieser Funktionen in C++ wird durch Vorlagenüberladungen vereinfacht. Überladungen können automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tgetenv_s**|**getenv_s**|**getenv_s**|**_wgetenv_s**|
 
-Um den Wert der **TZ** -Umgebungsvariablen zu überprüfen oder zu ändern, verwenden Sie je nach Bedarf **getenv_s** , **_putenv** und **_tzset** . Weitere Informationen zu **TZ**finden Sie unter [_tzset](tzset.md) und [_daylight, _dstbias, _timezone und _tzname](../../c-runtime-library/daylight-dstbias-timezone-and-tzname.md).
+Um den Wert der **TZ** -Umgebungsvariablen zu überprüfen oder zu ändern, verwenden Sie je nach Bedarf **getenv_s**, **_putenv**und **_tzset**. Weitere Informationen zu **TZ**finden Sie unter [_tzset](tzset.md) und [_daylight, _dstbias, _timezone und _tzname](../../c-runtime-library/daylight-dstbias-timezone-and-tzname.md).
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**getenv_s**|\<stdlib.h>|
 |**_wgetenv_s**|\<stdlib.h> oder \<wchar.h>|
@@ -223,9 +228,9 @@ Original LIB variable is: c:\vctools\lib;c:\vctools\atlmfc\lib;c:\vctools\Platfo
 New LIB variable is: c:\mylib;c:\yourlib
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[Umgebungskonstanten](../../c-runtime-library/environmental-constants.md)<br/>
-[_putenv_wputenv](putenv-wputenv.md)<br/>
-[_dupenv_s_wdupenv_s](dupenv-s-wdupenv-s.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Umgebungs Konstanten](../../c-runtime-library/environmental-constants.md)<br/>
+[_putenv, _wputenv](putenv-wputenv.md)<br/>
+[_dupenv_s, _wdupenv_s](dupenv-s-wdupenv-s.md)<br/>

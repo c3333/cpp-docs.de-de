@@ -1,10 +1,11 @@
 ---
 title: fabs, fabsf, fabsl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - fabsf
 - fabs
 - fabsl
+- _o_fabs
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +37,12 @@ helpviewer_keywords:
 - fabs function
 - fabsl function
 ms.assetid: 23bca210-f408-4f5e-b46b-0ccaaec31e36
-ms.openlocfilehash: 155b0e4ced7eb4ea0ade5445a62fc385f0c157e9
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 7a65e3ef5b0d15e82ada07eef495600a50531f34
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941495"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920245"
 ---
 # <a name="fabs-fabsf-fabsl"></a>fabs, fabsf, fabsl
 
@@ -68,7 +70,7 @@ long double fabsl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -77,25 +79,27 @@ Die **Fabs** -Funktionen geben den absoluten Wert des Arguments *x*zurück. Es g
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± QNAN,IND|none|_DOMAIN|
+|± QNAN,IND|Keine|_DOMAIN|
 
 ## <a name="remarks"></a>Hinweise
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **Fabs** aufzurufen können, wenn Sie \<den cmath-> Header einschließen. In einem C-Programm nimmt **Fabs** immer einen **Double**-Wert an und gibt ihn zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Fabs** aufzurufen können, wenn Sie \<den cmath-> Header einschließen. In einem C-Programm nimmt **Fabs** immer einen **Double**-Wert an und gibt ihn zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|-----------------------|---------------------------|
-|**fabs**, **fabsf**, **fabsl**|\<math.h>|\<cmath> oder \<math.h>|
+|**Fabs**, **fabsf**, **fabsl**|\<math.h>|\<cmath> oder \<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
 Ein Beispiel hierfür finden Sie unter [abs](abs-labs-llabs-abs64.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [abs, labs, llabs, _abs64](abs-labs-llabs-abs64.md)<br/>

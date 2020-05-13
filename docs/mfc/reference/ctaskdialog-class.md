@@ -116,12 +116,12 @@ helpviewer_keywords:
 - CTaskDialog [MFC], ShowDialog
 - CTaskDialog [MFC], TaskDialogCallback
 ms.assetid: 1991ec98-ae56-4483-958b-233809c8c559
-ms.openlocfilehash: e9aeee31d2952d5362c983934ce85f0332f553fa
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 79f52d275d360cf8447b8977b8196ea5f95eacd8
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366634"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752285"
 ---
 # <a name="ctaskdialog-class"></a>CTaskDialog Class
 
@@ -245,7 +245,7 @@ Die folgende Abbildung `CTaskDialog` zeigt ein Beispiel, um die Position einiger
 ![Beispiel für CTaskDialog](../../mfc/reference/media/ctaskdialogsample.png "Beispiel für CTaskDialog") <br/>
 CTaskDialog-Beispiel
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Mindestes erforderliches Betriebssystem:** Windows Vista
 
@@ -255,7 +255,7 @@ CTaskDialog-Beispiel
 
 Fügt dem `CTaskDialog`ein neues Befehlsschaltflächensteuerelement hinzu.
 
-```
+```cpp
 void AddCommandControl(
     int nCommandControlID,
     const CString& strCaption,
@@ -291,7 +291,7 @@ Wenn der Benutzer ein Befehlsschaltflächensteuerelement auswählt, wird der `CT
 
 Fügt dem `CTaskDialog`ein Optionsfeld hinzu.
 
-```
+```cpp
 void CTaskDialog::AddRadioButton(
     int nRadioButtonID,
     const CString& strCaption,
@@ -648,7 +648,7 @@ Verwenden Sie diese Funktion, um zur Laufzeit zu bestimmen, ob der Computer, auf
 
 Fügt Befehlsschaltflächensteuerelemente mithilfe von Daten aus der Zeichenfolgentabelle hinzu.
 
-```
+```cpp
 void LoadCommandControls(
     int nIDCommandControlsFirst,
     int nIDCommandControlsLast);
@@ -676,7 +676,7 @@ Standardmäßig sind neue Befehlsschaltflächensteuerelemente aktiviert und erfo
 
 Fügt Optionssteuerelemente mithilfe von Daten aus der Zeichenfolgentabelle hinzu.
 
-```
+```cpp
 void LoadRadioButtons(
     int nIDRadioButtonsFirst,
     int nIDRadioButtonsLast);
@@ -930,7 +930,7 @@ Die Standardimplementierung gibt S_OK zurück.
 
 Entfernt alle Befehlsschaltflächensteuerelemente aus der `CTaskDialog`.
 
-```
+```cpp
 void RemoveAllCommandControls();
 ```
 
@@ -942,7 +942,7 @@ void RemoveAllCommandControls();
 
 Entfernt alle Optionsfelder aus `CTaskDialog`der .
 
-```
+```cpp
 void RemoveAllRadioButtons();
 ```
 
@@ -954,7 +954,7 @@ void RemoveAllRadioButtons();
 
 Aktualisiert ein Befehlsschaltflächensteuerelement auf der `CTaskDialog`.
 
-```
+```cpp
 void SetCommandControlOptions(
     int nCommandControlID,
     BOOL bEnabled,
@@ -984,7 +984,7 @@ Verwenden Sie diese Methode, um zu ändern, ob ein Befehlsschaltflächensteuerel
 
 Aktualisiert eine Teilmenge der allgemeinen Schaltflächen, die aktiviert werden sollen und eine UAC-Erhöhung erfordern.
 
-```
+```cpp
 void SetCommonButtonOptions(
     int nDisabledButtonMask,
     int nElevationButtonMask = 0);
@@ -1014,7 +1014,7 @@ Diese Methode aktiviert jede Schaltfläche, `CTaskDialog` die für die, aber nic
 
 Fügt dem allgemeine `CTaskDialog`Schaltflächen hinzu.
 
-```
+```cpp
 void SetCommonButtons(
     int nButtonMask,
     int nDisabledButtonMask = 0,
@@ -1050,7 +1050,7 @@ Standardmäßig sind alle gängigen Schaltflächen aktiviert und erfordern keine
 
 Aktualisiert den Inhalt `CTaskDialog`der .
 
-```
+```cpp
 void SetContent(const CString& strContent);
 ```
 
@@ -1071,7 +1071,7 @@ Der Inhalt `CTaskDialog` der Klasse ist der Text, der dem Benutzer im Hauptberei
 
 Gibt das Standardmäßige Befehlsschaltflächensteuerelement an.
 
-```
+```cpp
 void SetDefaultCommandControl(int nCommandControlID);
 ```
 
@@ -1094,7 +1094,7 @@ Diese Methode löst eine Ausnahme aus, wenn sie das von *nCommandControlID*angeg
 
 Gibt das Standardoptionsfeld an.
 
-```
+```cpp
 void SetDefaultRadioButton(int nRadioButtonID);
 ```
 
@@ -1117,7 +1117,7 @@ Diese Methode löst eine Ausnahme aus, wenn sie das von *nRadioButtonID*angegebe
 
 Passt die Breite `CTaskDialog`der an.
 
-```
+```cpp
 void SetDialogWidth(int nWidth = 0);
 ```
 
@@ -1140,7 +1140,7 @@ Wenn *nWidth* auf 0 gesetzt ist, legt diese Methode das Dialogfeld auf die Stand
 
 Aktualisiert den Erweiterungsbereich der `CTaskDialog`.
 
-```
+```cpp
 void SetExpansionArea(
     const CString& strExpandedInformation,
     const CString& strCollapsedLabel = _T(""),
@@ -1172,7 +1172,7 @@ Wenn `CTaskDialog` der zum ersten Mal angezeigt wird, `strCollapsedLabel` werden
 
 Aktualisiert das Fußzeilensymbol `CTaskDialog`der .
 
-```
+```cpp
 void SetFooterIcon(HICON hFooterIcon);
 void SetFooterIcon(LPCWSTR lpszFooterIcon);
 ```
@@ -1201,7 +1201,7 @@ A `CTaskDialog` kann nur `HICON` `LPCWSTR` ein oder als Fußzeilensymbol akzepti
 
 Aktualisiert den Text in der `CTaskDialog`Fußzeile der .
 
-```
+```cpp
 void SetFooterText(const CString& strFooterText);
 ```
 
@@ -1222,7 +1222,7 @@ Das Fußzeilensymbol wird neben dem Fußzeilentext `CTaskDialog`am unteren Rand 
 
 Aktualisiert das Hauptsymbol `CTaskDialog`der .
 
-```
+```cpp
 void SetMainIcon(HICON hMainIcon);
 void SetMainIcon(LPCWSTR lpszMainIcon);
 ```
@@ -1249,7 +1249,7 @@ A `CTaskDialog` kann nur `HICON` `LPCWSTR` ein oder als Hauptsymbol akzeptieren.
 
 Aktualisiert die Hauptanweisung `CTaskDialog`der .
 
-```
+```cpp
 void SetMainInstruction(const CString& strInstructions);
 ```
 
@@ -1270,7 +1270,7 @@ Die Hauptanweisung `CTaskDialog` der Klasse ist Text, der dem Benutzer in einer 
 
 Konfiguriert die Optionen `CTaskDialog`für die .
 
-```
+```cpp
 void SetOptions(int nOptionFlag);
 ```
 
@@ -1312,7 +1312,7 @@ In der folgenden Tabelle sind alle gültigen Optionen aufgeführt.
 
 Konfiguriert eine Rahmenleiste für `CTaskDialog` die und fügt sie dem Dialogfeld hinzu.
 
-```
+```cpp
 void SetProgressBarMarquee(
     BOOL bEnabled = TRUE,
     int nMarqueeSpeed = 0);
@@ -1342,7 +1342,7 @@ Diese Methode löst eine Ausnahme mit dem [ENSURE-Makro](diagnostic-services.md#
 
 Passt die Position der Fortschrittsleiste an.
 
-```
+```cpp
 void SetProgressBarPosition(int nProgressPos);
 ```
 
@@ -1363,7 +1363,7 @@ Diese Methode löst eine Ausnahme mit dem [ENSURE-Makro](diagnostic-services.md#
 
 Passt den Bereich der Fortschrittsleiste an.
 
-```
+```cpp
 void SetProgressBarRange(
     int nRangeMin,
     int nRangeMax);
@@ -1393,7 +1393,7 @@ Diese Methode löst eine Ausnahme mit dem [ENSURE-Makro](diagnostic-services.md#
 
 Legt den Status der Fortschrittsleiste `CTaskDialog`fest und zeigt sie auf der an.
 
-```
+```cpp
 void SetProgressBarState(int nState = PBST_NORMAL);
 ```
 
@@ -1424,7 +1424,7 @@ Sie können festlegen, wo die Fortschrittsleiste mit [CTaskDialog::SetProgressBa
 
 Aktiviert oder deaktiviert ein Optionsfeld.
 
-```
+```cpp
 void SetRadioButtonOptions(
     int nRadioButtonID,
     BOOL bEnabled);
@@ -1450,7 +1450,7 @@ Diese Methode löst eine Ausnahme mit dem [ENSURE-Makro](diagnostic-services.md#
 
 Legt den aktivierten Status des Kontrollkästchens Überprüfung fest.
 
-```
+```cpp
 void SetVerificationCheckbox(BOOL bChecked);
 ```
 
@@ -1467,7 +1467,7 @@ void SetVerificationCheckbox(BOOL bChecked);
 
 Legt den Text fest, der rechts neben dem Kontrollkästchen Überprüfung angezeigt wird.
 
-```
+```cpp
 void SetVerificationCheckboxText(CString& strVerificationText);
 ```
 
@@ -1488,7 +1488,7 @@ Diese Methode löst eine Ausnahme mit dem `CTaskDialog` [ENSURE-Makro](diagnosti
 
 Legt den Titel `CTaskDialog`der fest.
 
-```
+```cpp
 void SetWindowTitle(CString& strWindowTitle);
 ```
 
@@ -1618,7 +1618,7 @@ Die Werte für *wParam* und *lParam* hängen von der spezifischen generierten Na
 |TDN_HELP|Wird nicht verwendet.|Wird nicht verwendet.|
 |TDN_EXPANDO_BUTTON_CLICKED|0, wenn der Erweiterungsbereich eingestürzt ist; ungleich Null, wenn der Erweiterungstext angezeigt wird.|Wird nicht verwendet.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

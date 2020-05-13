@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CMouseManager [MFC], SaveState
 - CMouseManager [MFC], SetCommandForDblClk
 ms.assetid: a4d05017-4e44-4a40-8b57-4ece0de20481
-ms.openlocfilehash: d05a2e186f001a69310e99cec013193a4d1bff3b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1394a1b47a86022e37b11e032b87ee2a2a369862
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319724"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752812"
 ---
 # <a name="cmousemanager-class"></a>CMouseManager-Klasse
 
@@ -66,7 +66,7 @@ Sie sollten ein `CMouseManager` Objekt nicht manuell erstellen. Sie wird durch d
 
 `CMouseManager`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxmousemanager.h
 
@@ -184,7 +184,7 @@ Diese Methode durchsucht Ansichten, die mit [CMouseManager::AddView](#addview)re
 
 Ruft eine Liste aller registrierten Ansichtsnamen ab.
 
-```
+```cpp
 void GetViewNames(CStringList& listOfNames) const;
 ```
 
@@ -247,7 +247,7 @@ In den meisten Fällen müssen Sie diese Funktion nicht direkt aufrufen. Sie wir
 
 Ordnet einen benutzerdefinierten Befehl einer Ansicht zu, die zuerst beim Maus-Manager registriert ist.
 
-```
+```cpp
 void SetCommandForDblClk(
     int iViewId,
     UINT uiCmd);
@@ -267,7 +267,7 @@ Um einen benutzerdefinierten Befehl einer Ansicht zuzuordnen, müssen Sie die An
 
 Wenn *uiCmd* auf 0 gesetzt ist, ist die angegebene Ansicht keinem Befehl mehr zugeordnet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

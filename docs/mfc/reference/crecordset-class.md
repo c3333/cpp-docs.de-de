@@ -130,12 +130,12 @@ helpviewer_keywords:
 - CRecordset [MFC], m_strFilter
 - CRecordset [MFC], m_strSort
 ms.assetid: dd89a21d-ef39-4aab-891b-1e373d67c855
-ms.openlocfilehash: 264c9eda4860dfbe41d40c9b454ec40a1a274ba5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ab6cde9f478dc6f2e3cb0ba5bb338a3852f083fd
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368362"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81750503"
 ---
 # <a name="crecordset-class"></a>CRecordset-Klasse
 
@@ -257,7 +257,7 @@ Weitere Informationen zu Recordsets und Datensatzfeldaustausch finden Sie in den
 
 `CRecordset`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** afxdb.h
 
@@ -331,7 +331,7 @@ Weitere Informationen zur Lesezeichen- und Recordsetnavigation finden Sie in den
 
 Fordert an, dass die Datenquelle entweder einen laufenden asynchronen Vorgang oder einen Prozess von einem zweiten Thread abbricht.
 
-```
+```cpp
 void Cancel();
 ```
 
@@ -343,7 +343,7 @@ Beachten Sie, dass die MFC-ODBC-Klassen keine asynchrone Verarbeitung mehr verwe
 
 Bricht alle ausstehenden Aktualisierungen ab, die durch einen [Edit-](#edit) oder [AddNew-Vorgang](#addnew) verursacht werden, bevor [Update](#update) aufgerufen wird.
 
-```
+```cpp
 void CancelUpdate();
 ```
 
@@ -643,7 +643,7 @@ Der folgende Code `COutParamRecordset` geht `CRecordset`davon aus, dass es sich 
 
 Ruft den Lesezeichenwert für den aktuellen Datensatz ab.
 
-```
+```cpp
 void GetBookmark(CDBVariant& varBookmark);
 ```
 
@@ -711,7 +711,7 @@ Weitere Informationen finden Sie im Artikel [Recordset: Deklarieren einer Klasse
 
 Ruft Felddaten im aktuellen Datensatz ab.
 
-```
+```cpp
 void GetFieldValue(
     LPCTSTR lpszName,
     CDBVariant& varValue,
@@ -805,7 +805,7 @@ Weitere Informationen zum Erstellen von Recordsets finden Sie im Artikel [Record
 
 Ruft Informationen zu den Feldern im Recordset ab.
 
-```
+```cpp
 void GetODBCFieldInfo(
     LPCTSTR lpszName,
     CODBCFieldInfo& fieldinfo);
@@ -931,7 +931,7 @@ Weitere Informationen finden Sie in `SQLExtendedFetch` der ODBC-API-Funktion im 
 
 Bestimmt den Index des aktuellen Datensatzes im Recordset und ob der letzte Datensatz gesehen wurde.
 
-```
+```cpp
 void GetStatus(CRecordsetStatus& rStatus) const;
 ```
 
@@ -1337,7 +1337,7 @@ Weitere Informationen zur Recordset-Navigation finden Sie in den Artikeln [Recor
 
 Macht den ersten Datensatz im ersten Rowset zum aktuellen Datensatz.
 
-```
+```cpp
 void MoveFirst();
 ```
 
@@ -1369,7 +1369,7 @@ Weitere Informationen zur Recordset-Navigation finden Sie in den Artikeln [Recor
 
 Macht den ersten Datensatz im letzten vollständigen Rowset zum aktuellen Datensatz.
 
-```
+```cpp
 void MoveLast();
 ```
 
@@ -1399,7 +1399,7 @@ Weitere Informationen zur Recordset-Navigation finden Sie in den Artikeln [Recor
 
 Macht den ersten Datensatz im nächsten Rowset zum aktuellen Datensatz.
 
-```
+```cpp
 void MoveNext();
 ```
 
@@ -1429,7 +1429,7 @@ Weitere Informationen zur Recordset-Navigation finden Sie in den Artikeln [Recor
 
 Macht den ersten Datensatz im vorherigen Rowset zum aktuellen Datensatz.
 
-```
+```cpp
 void MovePrev();
 ```
 
@@ -1617,7 +1617,7 @@ Die folgenden Codebeispiele zeigen `Open` verschiedene Formen des Aufrufs.
 
 Aktualisiert die Daten und den Status für eine Zeile im aktuellen Rowset.
 
-```
+```cpp
 void RefreshRowset(
     WORD wRow,
     WORD wLockType = SQL_LOCK_NO_CHANGE);
@@ -1682,7 +1682,7 @@ In diesem Beispiel wird ein Recordset neu erstellt, um eine andere Sortierreihen
 
 Positioniert das Recordset auf dem Datensatz entsprechend der angegebenen Datensatznummer.
 
-```
+```cpp
 void SetAbsolutePosition(long nRows);
 ```
 
@@ -1711,7 +1711,7 @@ Weitere Informationen zur Recordset-Navigation und Lesezeichen finden Sie in den
 
 Positioniert das Recordset auf dem Datensatz, der das angegebene Lesezeichen enthält.
 
-```
+```cpp
 void SetBookmark(const CDBVariant& varBookmark);
 ```
 
@@ -1738,7 +1738,7 @@ Weitere Informationen zur Lesezeichen- und Recordsetnavigation finden Sie in den
 
 Kennzeichnet ein Felddatenelement des Recordsets als geändert oder unverändert.
 
-```
+```cpp
 void SetFieldDirty(void* pv, BOOL bDirty = TRUE);
 ```
 
@@ -1778,7 +1778,7 @@ Dies bedeutet, `param` dass Sie nicht alle `outputColumn` Felder auf NULL festle
 
 Kenntiert ein Felddatenelement des Recordsets als Null (insbesondere ohne Wert) oder als Nicht-Null.
 
-```
+```cpp
 void SetFieldNull(void* pv, BOOL bNull = TRUE);
 ```
 
@@ -1823,7 +1823,7 @@ Dies bedeutet, `param` dass Sie nicht alle `outputColumn` Felder auf NULL festle
 
 Legt den Sperrmodus auf "optimistische" Sperrung (Standard) oder "pessimistische" Sperre fest. Bestimmt, wie Datensätze für Aktualisierungen gesperrt werden.
 
-```
+```cpp
 void SetLockingMode(UINT nMode);
 ```
 
@@ -1844,7 +1844,7 @@ Rufen Sie diese Memberfunktion auf, wenn Sie angeben müssen, welche von zwei Da
 
 Flags einen Parameter als Null (speziell ohne Wert) oder als nicht Null.
 
-```
+```cpp
 void SetParamNull(
     int nIndex,
     BOOL bNull = TRUE);
@@ -1868,7 +1868,7 @@ Im Gegensatz zu [SetFieldNull](#setfieldnull)können Sie aufrufen, `SetParamNull
 
 Verschiebt den Cursor in eine Zeile innerhalb des aktuellen Rowsets.
 
-```
+```cpp
 void SetRowsetCursorPosition(WORD wRow, WORD wLockType = SQL_LOCK_NO_CHANGE);
 ```
 
@@ -1957,7 +1957,7 @@ Weitere Informationen `Update` zur Behandlung von Fehlern finden Sie im Artikel 
 
 Siehe den Artikel [Transaktion: Ausführen einer Transaktion in einem Recordset (ODBC)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

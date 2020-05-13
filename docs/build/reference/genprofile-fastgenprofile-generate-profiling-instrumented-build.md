@@ -10,65 +10,65 @@ helpviewer_keywords:
 - GENPROFILE
 - FASTGENPROFILE
 ms.assetid: deff5ce7-46f5-448a-b9cd-a7a83a6864c6
-ms.openlocfilehash: cf6327b175344f1e2914792eb47a4838e544ea24
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 19ddf56d92cc2d8fbbfaf635c8e1602443e35b5b
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62292210"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825784"
 ---
 # <a name="genprofile-fastgenprofile-generate-profiling-instrumented-build"></a>/GENPROFILE, /FASTGENPROFILE (Profilerstellung instrumentierenden Build generieren)
 
-Gibt die Generierung einer PGD-Datei durch den Linker an, um die profilgesteuerte Optimierung (PGO) zu unterstützen. **/ GENPROFILE** und **/fastgenprofile** verwenden unterschiedliche Standardparameter. Verwendung **/genprofile** , Geschwindigkeit und speicherauslastung während der profilerstellung mit einfacher Genauigkeit vorzuziehen. Verwendung **/fastgenprofile** , geringere speicherauslastung und Geschwindigkeit mit einfacher Genauigkeit vorzuziehen.
+Gibt die Generierung einer PGD-Datei durch den Linker an, um die profilgesteuerte Optimierung (PGO) zu unterstützen. **/GENPROFILE** und **/FASTGENPROFILE** verwenden unterschiedliche Standardparameter. Verwenden Sie **/GENPROFILE** , um Genauigkeit gegenüber Geschwindigkeit und Speicherauslastung bei der Profilerstellung zu bevorzugen. Verwenden Sie **/FASTGENPROFILE** , um eine geringere Speicherauslastung und Geschwindigkeit gegenüber der Genauigkeit zu bevorzugen.
 
 ## <a name="syntax"></a>Syntax
 
-> **/ GENPROFILE**[**:**{[**COUNTER32**|**COUNTER64**] | [ **EXACT**|**NOEXACT**] | **MEMMAX =**_#_|**MEMMIN =**_#_| [ **Pfad**|**NOPATH** ] | [ **TRACKEH** |**NOTRACKEH** ] | **PGD =**_Filename_}]<br/>
-> **/ FASTGENPROFILE**[**:**{[**COUNTER32**|**COUNTER64**] | [ **EXACT**|**NOEXACT**] | **MEMMAX =**_#_|**MEMMIN =**_#_| [ **Pfad**|**NOPATH** ] | [ **TRACKEH** |**NOTRACKEH** ] | **PGD =**_Filename_}]
+> **/GENPROFILE**[**:**{[**COUNTER32**|**COUNTER64**] | [ **exakte**|**noexact**] | **memmax =**_#_|**memmin =**_#_| [**Pfad**|**nopath** ] | [**trackeh** |**notrackeh** ] | **PGD =**_Dateiname_}] \
+> **/FASTGENPROFILE**[**:**{[**COUNTER32**|**COUNTER64**] | [ **exakte**|**noexact**] | **memmax =**_#_|**memmin =**_#_| [**Pfad**|**nopath** ] | [**trackeh** |**notrackeh** ] | **PGD =**_Dateiname_}]
 
 ### <a name="arguments"></a>Argumente
 
-Eines der folgenden Argumente angegeben werden kann, um **/genprofile** oder **/fastgenprofile**. Argumente, die hier aufgeführten getrennt durch einen senkrechten Strich (**|**) Zeichen schließen sich gegenseitig. Verwenden Sie ein Komma (**,**) Zeichen zum Trennen von Optionen.
+Eines der folgenden Argumente kann für **/GENPROFILE** oder **/FASTGENPROFILE**angegeben werden. Die hier aufgelisteten Argumente, getrennt durch ein**|** senkrechter Strich (), schließen sich gegenseitig aus. Verwenden Sie ein Komma (**,**) zum Trennen von Optionen.
 
 **COUNTER32** &#124; **COUNTER64**<br/>
-Verwenden Sie **COUNTER32** an die Verwendung von 32-Bit-Test-Leistungsindikatoren, und **COUNTER64** 64-Bit-Test-Leistungsindikatoren an. Beim Angeben von **/genprofile**, der Standardwert ist **COUNTER64**. Beim Angeben von **/fastgenprofile**, der Standardwert ist **COUNTER32**.
+Verwenden Sie **COUNTER32** , um die Verwendung von 32-Bit-Test Zählern anzugeben, und **COUNTER64** , um 64-Bit-testindikatoren anzugeben. Wenn Sie **/GENPROFILE**angeben, ist der Standardwert **COUNTER64**. Wenn Sie **/FASTGENPROFILE**angeben, ist der Standardwert **COUNTER32**.
 
-**EXACT** &#124; **NOEXACT**<br/>
-Verwendung **EXACT** um threadsichere Ineinandergreifende Inkremente für Tests anzugeben. **NOEXACT** gibt ungeschützte inkrementoperationen für Tests. Der Standardwert ist **NOEXACT**.
+**Exakte** &#124; **noexact**<br/>
+Verwenden Sie **Exact** , um Thread sichere, Interlocked Inkremente für Tests anzugeben. **Noexact** gibt ungeschützte Inkrement-Vorgänge für Tests an. Der Standardwert ist **noexact**.
 
-**MEMMAX**=*value*, **MEMMIN**=*value*<br/>
-Verwendung **MEMMAX** und **MEMMIN** an die maximalen und minimalen Reservierungsgrößen für Trainingsdaten im Arbeitsspeicher. Der Wert entspricht der Größe des in Bytes zu reservierenden Arbeitsspeichers. Standardmäßig werden diese Werte über eine interne Heuristik bestimmt.
+**Memmax**=*Wert*, **memmin**=-*Wert*<br/>
+Verwenden Sie **memmax** und **memmin** , um die maximalen und minimalen Reservierungs Größen für Trainingsdaten im Arbeitsspeicher anzugeben. Der Wert entspricht der Größe des in Bytes zu reservierenden Arbeitsspeichers. Standardmäßig werden diese Werte über eine interne Heuristik bestimmt.
 
-**PATH**  &#124; **NOPATH** <br/>
-Verwendung **Pfad** einen separaten Satz von PGO-Indikatoren für jeden eindeutigen Pfad zu einer Funktion angeben. Verwendung **NOPATH** auf nur einen Satz von Indikatoren für die einzelnen Funktionen anzugeben. Beim Angeben von **/genprofile**, der Standardwert ist **Pfad** . Beim Angeben von **/fastgenprofile**, der Standardwert ist **NOPATH** .
+**Pfad** &#124; **nopath** <br/>
+Verwenden Sie **path** , um einen separaten Satz von PGO-Indikatoren für jeden eindeutigen Pfad zu einer Funktion anzugeben. Verwenden Sie **nopath** , um nur einen Satz von Indikatoren für die einzelnen Funktionen anzugeben. Wenn Sie **/GENPROFILE**angeben, ist der Standard **Pfad** . Wenn Sie **/FASTGENPROFILE**angeben, lautet der Standardwert **nopath** .
 
-**TRACKEH**  &#124; **NOTRACKEH** <br/>
-Gibt an, ob zusätzliche Indikatoren verwendet werden sollen, um eine genaue Anzahl beizubehalten, wenn während des Trainings Ausnahmen ausgelöst werden. Verwendung **TRACKEH** um zusätzliche Indikatoren für eine genaue Anzahl anzugeben. Verwenden Sie **NOTRACKEH** um einzelne Indikatoren für Code anzugeben, die keine Ausnahme verwendet behandeln oder die ist nicht auftreten, Ausnahmen in Ihren trainingsszenarien.  Beim Angeben von **/genprofile**, der Standardwert ist **TRACKEH** . Beim Angeben von **/fastgenprofile**, der Standardwert ist **NOTRACKEH** .
+**Trackeh** &#124; **notrackeh** <br/>
+Gibt an, ob zusätzliche Indikatoren verwendet werden sollen, um eine genaue Anzahl beizubehalten, wenn während des Trainings Ausnahmen ausgelöst werden. Verwenden Sie **trackeh** , um zusätzliche Indikatoren für eine genaue Anzahl anzugeben. Verwenden Sie **notrackeh** , um einzelne Indikatoren für Code anzugeben, der keine Ausnahmebehandlung verwendet oder keine Ausnahmen in ihren Trainingsszenarien findet.  Wenn Sie **/GENPROFILE**angeben, lautet der Standardwert **trackeh** . Wenn Sie **/FASTGENPROFILE**angeben, lautet der Standardwert **notrackeh** .
 
-**PGD**=*filename*<br/>
+**PGD**=*Dateiname*<br/>
 Gibt einen Basisdateinamen für die PGD-Datei an. Standardmäßig wird vom Linker der Name der ausführbaren Basisbilddatei mit der Erweiterung PGD verwendet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/genprofile** und **/fastgenprofile** Optionen weisen den Linker aus, um die profilerstellung zur Unterstützung des anwendungstrainings für die profilgesteuerte Optimierung (PGO) erforderliche Datei zu generieren. Diese Optionen sind neu in Visual Studio 2015. Bevorzugen Sie diese Optionen, die als veraltet markierten **/LTCG: PGINSTRUMENT**, **/PGD** und **/POGOSAFEMODE** Optionen und die **PogoSafeMode**,  **VCPROFILE_ALLOC_SCALE** und **VCPROFILE_PATH** Umgebungsvariablen. Die vom Anwendungstraining generierten Informationen zur Profilerstellung werden als Eingabe verwendet, um während der Builderstellung Zieloptimierungen für vollständige Programme durchzuführen. Sie können zusätzliche Optionen festlegen, um die verschiedenen Features für die Profilerstellung während des App-Trainings und der App-Erstellung hinsichtlich der Leistung zu steuern. Die Standardoptionen von **/genprofile** möglichst genaue Ergebnisse zu erhalten, insbesondere bei großen, komplexen Multithread-apps. Die **/fastgenprofile** Option verwendet unterschiedliche Standardwerte für einen geringeren Arbeitsspeicherbedarf und eine schnellere Leistung während des Trainings zulasten der Genauigkeit.
+Die Optionen **/GENPROFILE** und **/FASTGENPROFILE** weisen den Linker an, die Instrumentations Datei zu generieren, die zum unterstützen von Anwendungs Schulungen für die Profil gesteuerte Optimierung (PGO) benötigt wird. Diese Optionen sind neu in Visual Studio 2015. Bevorzugen Sie diese Optionen für die veralteten **/LTCG: PGINSTRUMENT**-, **/PGD** -und **/POGOSAFEMODE** -Optionen und die Umgebungsvariablen **PogoSafeMode**, **VCPROFILE_ALLOC_SCALE** und **VCPROFILE_PATH** . Die vom Anwendungstraining generierten Informationen zur Profilerstellung werden als Eingabe verwendet, um während der Builderstellung Zieloptimierungen für vollständige Programme durchzuführen. Sie können zusätzliche Optionen festlegen, um die verschiedenen Features für die Profilerstellung während des App-Trainings und der App-Erstellung hinsichtlich der Leistung zu steuern. Die von **/GENPROFILE** angegebenen Standardoptionen führen zu den genauesten Ergebnissen, insbesondere für große, komplexe Multithread-apps. Die **/FASTGENPROFILE** -Option verwendet unterschiedliche Standardwerte für einen geringeren Speicherbedarf und eine schnellere Leistung während des Trainings, auf Kosten der Genauigkeit.
 
-Profilerstellungsinformationen aufgezeichnet wird, wenn Sie die instrumentierte app ausführen, nachdem Sie erstellt haben, mithilfe von **/genprofile** von **/fastgenprofile**. Diese Informationen werden erfasst, bei der Angabe der [/USERPROFILE angegeben](useprofile.md) Linkeroption, um die profilerstellung ausführen Schritt und dann verwendet, um den optimierten Buildschritt geführt. Weitere Informationen zum Trainieren Ihrer app und Details zu den erfassten Daten finden Sie unter [Profile-Guided Optimizations](../profile-guided-optimizations.md).
+Profil Erstellungs Informationen werden aufgezeichnet, wenn Sie die instrumentierte app ausführen, nachdem Sie mithilfe von **/GENPROFILE** of **/FASTGENPROFILE**erstellt haben. Diese Informationen werden aufgezeichnet, wenn Sie die [/UserProfile angegeben](useprofile.md) -Linkeroption angeben, um den Profil Erstellungs Schritt auszuführen, und dann zum Ausführen des optimierten Buildschritts verwendet werden. Weitere Informationen zum Trainieren Ihrer APP und Details zu den gesammelten Daten finden Sie unter [Profil gesteuerte Optimierungen](../profile-guided-optimizations.md).
 
-Sie müssen auch angeben, **"/ LTCG"** beim Angeben von **/genprofile** oder **/fastgenprofile**.
+Sie müssen auch **/LTCG** angeben, wenn Sie **/GENPROFILE** oder **/FASTGENPROFILE**angeben.
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Konfigurationseigenschaften** > **Linker** > **Befehlszeile** Eigenschaftenseite.
+1. Wählen Sie die Eigenschaften Seite für die**Linker** > **Linkerbefehlszeile** der **Configuration Properties** > 
 
-1. Geben Sie die **/genprofile** oder **/fastgenprofile** Optionen und Argumente in der **zusätzliche Optionen** Feld. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Geben Sie im Feld **zusätzliche Optionen** die Optionen und Argumente für **/GENPROFILE** oder **/FASTGENPROFILE** ein. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Linkerreferenz](linking.md)<br/>
 [MSVC-Linkeroptionen](linker-options.md)<br/>

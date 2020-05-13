@@ -36,12 +36,12 @@ helpviewer_keywords:
 - strings [C++], ATL class
 - CSimpleStringT class
 ms.assetid: 15814fcb-5b8f-4425-a97e-3b61fc9b48d8
-ms.openlocfilehash: dce33289699b9e7b7484d1feb6335476f93dee9b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 76d418c4f063d5787209ea72e7c681013eb37801
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317685"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81747032"
 ---
 # <a name="csimplestringt-class"></a>CSimpleStringT-Klasse
 
@@ -123,7 +123,7 @@ Der Zeichentyp der Zeichenfolgenklasse. Dabei kann es sich um eine der folgenden
 
 `CSimpleStringT`ist die Basisklasse für die verschiedenen Zeichenfolgenklassen, die von Visual C++ unterstützt werden. Es bietet minimale Unterstützung für die Speicherverwaltung des Zeichenfolgenobjekts und grundlegende Puffermanipulation. Weitere erweiterte Zeichenfolgenobjekte finden Sie unter [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** atlsimpstr.h
 
@@ -133,7 +133,7 @@ Fügt ein `CSimpleStringT` Objekt an `CSimpleStringT` ein vorhandenes Objekt an.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Append(const CSimpleStringT& strSrc);
 void Append(PCXSTR pszSrc, int nLength);
 void Append(PCXSTR pszSrc);
@@ -172,7 +172,7 @@ Fügt ein Zeichen an `CSimpleStringT` ein vorhandenes Objekt an.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void AppendChar(XCHAR ch);
 ```
 
@@ -316,7 +316,7 @@ Macht `CSimpleStringT` dieses Objekt zu einer leeren Zeichenfolge und gibt ggf. 
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Empty() throw();
 ```
 
@@ -339,7 +339,7 @@ Gibt zusätzlichen Speicher frei, der zuvor von der Zeichenfolge reserviert, abe
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void FreeExtra();
 ```
 
@@ -895,7 +895,7 @@ Ordnet dem `CSimpleStringT` Objekt eine bestimmte Menge an Bytes zu.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Preallocate( int nLength);
 ```
 
@@ -937,7 +937,7 @@ Gibt die Steuerung des von [GetBuffer](#getbuffer)zugewiesenen Puffers frei.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void ReleaseBuffer(int nNewLength = -1);
 ```
 
@@ -978,7 +978,7 @@ Gibt die Steuerung des von [GetBuffer](#getbuffer)zugewiesenen Puffers frei.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void ReleaseBufferSetLength(int nNewLength);
 ```
 
@@ -997,7 +997,7 @@ Legt ein einzelnes `CSimpleStringT` Zeichen aus einem Objekt fest.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void SetAt(int iChar, XCHAR ch);
 ```
 
@@ -1029,7 +1029,7 @@ Gibt den Speicher-Manager `CSimpleStringT` des Objekts an.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void SetManager(IAtlStringMgr* pStringMgr);
 ```
 
@@ -1057,7 +1057,7 @@ Legt die Zeichenfolge `CSimpleStringT` eines Objekts fest.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void SetString(PCXSTR pszSrc, int nLength);
 void SetString(PCXSTR pszSrc);
 ```
@@ -1130,7 +1130,7 @@ Kürt die Zeichenfolge auf die neue Länge.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void Truncate(int nNewLength);
 ```
 
@@ -1165,7 +1165,7 @@ Entsperrt den `CSimpleStringT` Puffer des Objekts.
 
 ### <a name="syntax"></a>Syntax
 
-```
+```cpp
 void UnlockBuffer() throw();
 ```
 
@@ -1189,7 +1189,7 @@ Zerstört ein `CSimpleStringT` -Objekt.
 
 Rufen Sie diese `CSimpleStringT` Methode auf, um das Objekt zu zerstören.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)

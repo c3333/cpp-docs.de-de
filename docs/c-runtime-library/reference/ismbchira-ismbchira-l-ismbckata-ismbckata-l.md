@@ -1,11 +1,15 @@
 ---
 title: _ismbchira, _ismbchira_l, _ismbckata, _ismbckata_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ismbckata
 - _ismbchira_l
 - _ismbchira
 - _ismbckata_l
+- _o__ismbchira
+- _o__ismbchira_l
+- _o__ismbckata
+- _o__ismbckata_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -43,12 +48,12 @@ helpviewer_keywords:
 - Hiragana
 - ismbckata function
 ms.assetid: 2db388a2-be31-489b-81c8-f6bf3f0582d3
-ms.openlocfilehash: 13f66c7450e05240f8bad6034bd56f5da6de20c0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 89c6aacbb6726165703d38e3ea519806b1f970d2
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953883"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82910695"
 ---
 # <a name="_ismbchira-_ismbchira_l-_ismbckata-_ismbckata_l"></a>_ismbchira, _ismbchira_l, _ismbckata, _ismbckata_l
 
@@ -78,7 +83,7 @@ int _ismbckata_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*scher*<br/>
 Zu testende Zeichen.
 
 *locale*<br/>
@@ -86,7 +91,7 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* < = 255 und es eine entsprechende **_ismbb** -Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
+Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* <= 255 und es eine entsprechende **_ismbb** Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
 
 ## <a name="remarks"></a>Hinweise
 
@@ -94,30 +99,32 @@ Jede dieser Funktionen testet ein angegebenes Mehrbytezeichen auf eine angegeben
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-|-Routine zurückgegebener Wert|Testbedingung (nur Codepage 932)|
+|Routine|Testbedingung (nur Codepage 932)|
 |-------------|-------------------------------------------|
-|**_ismbchira**|Doppelbyte-Hiragana-Zeichen: 0x829F < =*c*< = 0x82f 1.|
-|**_ismbchira_l**|Doppelbyte-Hiragana-Zeichen: 0x829F < =*c*< = 0x82f 1.|
-|**_ismbckata**|Doppelbyte-Katakana-Zeichen: 0x8340<=*c*<=0x8396.|
-|**_ismbckata_l**|Doppelbyte-Katakana-Zeichen: 0x8340<=*c*<=0x8396.|
+|**_ismbchira**|Doppelbyte Hiragana: 0x829F<=*c*<= 0x82f 1.|
+|**_ismbchira_l**|Doppelbyte Hiragana: 0x829F<=*c*<= 0x82f 1.|
+|**_ismbckata**|Doppelbyte Katakana: 0x8340<=*c*<= 0x8396.|
+|**_ismbckata_l**|Doppelbyte Katakana: 0x8340<=*c*<= 0x8396.|
 
-**Ende der Codepage 932 (spezifisch)**
+**Ende der Codepage 932-spezifisch**
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_ismbchira**|\<mbstring.h>|
 |**_ismbchira_l**|\<mbstring.h>|
 |**_ismbckata**|\<mbstring.h>|
 |**_ismbckata_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
-[ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[Zeichen Klassifizierung](../../c-runtime-library/character-classification.md)<br/>
+[_ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
+[is-, ISW-Routinen](../../c-runtime-library/is-isw-routines.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>

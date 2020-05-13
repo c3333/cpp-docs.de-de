@@ -182,12 +182,12 @@ helpviewer_keywords:
 - CToolBarCtrl [MFC], SetToolTips
 - CToolBarCtrl [MFC], SetWindowTheme
 ms.assetid: 8f2f8ad2-05d7-4975-8715-3f2eed795248
-ms.openlocfilehash: c8968e7a516b7ed699517f6557f7ccd4bcb20505
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 50d3174d4569392be72efdad338eeaac3154ec56
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365089"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752225"
 ---
 # <a name="ctoolbarctrl-class"></a>CToolBarCtrl-Klasse
 
@@ -349,7 +349,7 @@ Weitere Informationen zur `CToolBarCtrl`Verwendung finden Sie unter [Steuereleme
 
 `CToolBarCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -523,7 +523,7 @@ Sie sollten kein `CString` Objekt an diese Funktion übergeben, da es nicht `CSt
 
 Ändert die Größe des gesamten Symbolleistensteuerelements.
 
-```
+```cpp
 void AutoSize();
 ```
 
@@ -627,7 +627,7 @@ virtual BOOL Create(
 Gibt den Stil des Symbolleistensteuerelements an. Symbolleisten müssen immer den WS_CHILD Stil haben. Darüber hinaus können Sie eine beliebige Kombination von Symbolleistenstilen und Fensterstilen angeben, wie unter **Hinweise**beschrieben.
 
 *Rect*<br/>
-Gibt optional die Größe und Position des Symbolleistensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
+Gibt optional die Größe und Position des Symbolleistensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Symbolleistensteuerelements an. Es darf nicht NULL sein.
@@ -681,7 +681,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt den Stil des Symbolleistensteuerelements an. Symbolleisten müssen immer den WS_CHILD Stil haben. Darüber hinaus können Sie eine beliebige Kombination von Symbolleistenstilen und Fensterstilen angeben, wie im Abschnitt **"Hinweise"** unter [Erstellen](#create)beschrieben.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -713,7 +713,7 @@ Sie müssen [Create](#create) aufrufen, um die Symbolleiste nutzbar zu machen.
 
 Zeigt das Dialogfeld Symbolleiste anpassen an.
 
-```
+```cpp
 void Customize();
 ```
 
@@ -1040,7 +1040,7 @@ Diese Memberfunktion implementiert das Verhalten der Win32-Meldung [TB_GETIMAGEL
 
 Ruft die aktuelle Einfügemarke für die Symbolleiste ab.
 
-```
+```cpp
 void GetInsertMark(TBINSERTMARK* ptbim) const;
 ```
 
@@ -1085,7 +1085,7 @@ BOOL GetItemRect(
 Nullbasierter Index der Schaltfläche, für die Informationen abgerufen werden sollen.
 
 *lpRect*<br/>
-Adresse einer [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) oder eines [CRect-Objekts,](../../atl-mfc-shared/reference/crect-class.md) das die Koordinaten des umgrenzenden Rechtecks empfängt.
+Adresse einer [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) oder eines [CRect-Objekts,](../../atl-mfc-shared/reference/crect-class.md) das die Koordinaten des umgrenzenden Rechtecks empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1132,7 +1132,7 @@ Die maximale Anzahl von Textzeilen, die auf einer Symbolleistenschaltfläche ang
 
 Ruft die Metriken des `CToolBarCtrl` Objekts ab.
 
-```
+```cpp
 void GetMetrics(LPTBMETRICS ptbm) const;
 ```
 
@@ -1202,7 +1202,7 @@ BOOL GetRect(
 Der Schaltflächenbezeichner.
 
 *lpRect*<br/>
-Ein Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) um die umgrenzenden Rechteckinformationen zu empfangen.
+Ein Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) um die umgrenzenden Rechteckinformationen zu empfangen.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1325,7 +1325,7 @@ int HitTest(LPPOINT ppt) const;
 ### <a name="parameters"></a>Parameter
 
 *Ppt*<br/>
-Ein Zeiger auf eine [POINT-Struktur,](/previous-versions/dd162805\(v=vs.85\)) die die x-Koordinate des Treffertests im `x` Element `y` und die y-Koordinate des Treffertests im Element enthält. Die Koordinaten sind relativ zum Clientbereich der Symbolleiste.
+Ein Zeiger auf eine [POINT-Struktur,](/windows/win32/api/windef/ns-windef-point) die die x-Koordinate des Treffertests im `x` Element `y` und die y-Koordinate des Treffertests im Element enthält. Die Koordinaten sind relativ zum Clientbereich der Symbolleiste.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1428,7 +1428,7 @@ BOOL InsertMarkHitTest(
 ### <a name="parameters"></a>Parameter
 
 *Ppt*<br/>
-Ein Zeiger auf [POINT](/previous-versions/dd162805\(v=vs.85\)) eine POINT-Struktur, die die Treffertestkoordinaten relativ zum Clientbereich der Symbolleiste enthält.
+Ein Zeiger auf [POINT](/windows/win32/api/windef/ns-windef-point) eine POINT-Struktur, die die Treffertestkoordinaten relativ zum Clientbereich der Symbolleiste enthält.
 
 *ptbim*<br/>
 Ein Zeiger auf eine [TBINSERTMARK-Struktur,](/windows/win32/api/commctrl/ns-commctrl-tbinsertmark) die die Einfügemarkierungsinformationen empfängt.
@@ -1567,7 +1567,7 @@ Erwägen Sie, [GetState](#getstate) aufzurufen, wenn Sie mehr als einen Schaltfl
 
 Lädt Bitmaps in die Bildliste eines Symbolleistensteuerelements.
 
-```
+```cpp
 void LoadImages(
     int iBitmapID,
     HINSTANCE hinst);
@@ -1730,7 +1730,7 @@ Im folgenden Codebeispiel wird die Bitmap für die Standardsymbolleiste durch ei
 
 Stellt den Status des Symbolleistensteuerelements von dem Speicherort in der Registrierung wieder her, der durch die Parameter angegeben wird.
 
-```
+```cpp
 void RestoreState(
     HKEY hKeyRoot,
     LPCTSTR lpszSubKey,
@@ -1760,7 +1760,7 @@ Zeigt auf eine Zeichenfolge, die den Namen des abzurufenden Werts enthält. Wenn
 
 Speichert den Status des Symbolleistensteuerelements an der Durchdietäusung des Speicherorts in der Registrierung, die durch die Parameter angegeben wird.
 
-```
+```cpp
 void SaveState(
     HKEY hKeyRoot,
     LPCTSTR lpszSubKey,
@@ -1817,7 +1817,7 @@ BOOL SetBitmapSize(CSize size);
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Breite und Höhe der bitabgebildeten Bilder in Pixel.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1864,7 +1864,7 @@ BOOL SetButtonSize(CSize size);
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Breite und Höhe der Schaltflächen in Pixel.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1883,7 +1883,7 @@ Die Schaltflächengröße muss immer mindestens so groß sein wie die Bitmapgrö
 
 Gibt die Größe `TBBUTTON` der Struktur an.
 
-```
+```cpp
 void SetButtonStructSize(int nSize);
 ```
 
@@ -1950,7 +1950,7 @@ Gibt bei Erfolg einen Wert ungleich Null zurück; andernfalls Null.
 
 Legt das Farbschema des aktuellen Symbolleistensteuerelements fest.
 
-```
+```cpp
 void SetColorScheme(const COLORSCHEME* lpColorScheme);
 ```
 
@@ -2128,7 +2128,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Legt die aktuelle Einfügemarke für die Symbolleiste fest.
 
-```
+```cpp
 void SetInsertMark(TBINSERTMARK* ptbim);
 ```
 
@@ -2183,7 +2183,7 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 Legt die Metriken `CToolBarCtrl` des Objekts fest.
 
-```
+```cpp
 void SetMetrics(LPTBMETRICS ptbm);
 ```
 
@@ -2200,7 +2200,7 @@ Diese Memberfunktion emuliert die Funktionalität der [TB_SETMETRICS](/windows/w
 
 Legt das Besitzerfenster für das Symbolleistensteuerelement fest.
 
-```
+```cpp
 void SetOwner(CWnd* pWnd);
 ```
 
@@ -2279,7 +2279,7 @@ Im folgenden Codebeispiel wird festgelegt, dass die Druckbildliste mit der Stand
 
 Fordert das Symbolleistensteuerelement auf, die Größe der angeforderten Anzahl von Zeilen selbst zu ändern.
 
-```
+```cpp
 void SetRows(
     int nRows,
     BOOL bLarger,
@@ -2295,7 +2295,7 @@ Angeforderte Anzahl von Zeilen.
 Gibt an, ob mehr Zeilen oder weniger Zeilen verwendet werden sollen, wenn die Größe der Symbolleiste nicht auf die angeforderte Anzahl von Zeilen geändert werden kann.
 
 *lpRect*<br/>
-Zeigt auf das [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder die [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das neue umgrenzte Rechteck der Symbolleiste erhält.
+Zeigt auf das [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder die [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das neue umgrenzte Rechteck der Symbolleiste erhält.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -2341,7 +2341,7 @@ Diese Funktion ist besonders praktisch, wenn Sie mehr als einen der Schaltfläch
 
 Legt die Stile für ein Symbolleistensteuerelement fest.
 
-```
+```cpp
 void SetStyle(DWORD dwStyle);
 ```
 
@@ -2354,7 +2354,7 @@ Ein DWORD, das eine Kombination von [Symbolleistensteuerelementen enthält,](/wi
 
 Ordnet ein Werkzeugspitzensteuerelement einem Werkzeugleistensteuerelement zu.
 
-```
+```cpp
 void SetToolTips(CToolTipCtrl* pTip);
 ```
 
@@ -2384,7 +2384,7 @@ Der Rückgabewert wird nicht verwendet.
 
 Diese Memberfunktion emuliert die Funktionalität der [TB_SETWINDOWTHEME](/windows/win32/Controls/tb-setwindowtheme) Nachricht, wie im Windows SDK beschrieben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel-MFCIE](../../overview/visual-cpp-samples.md)<br/>

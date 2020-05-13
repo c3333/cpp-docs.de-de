@@ -9,16 +9,16 @@ helpviewer_keywords:
 - _pexit function
 - -Gh compiler option [C++]
 ms.assetid: 93181453-2676-42e5-bf63-3b19e07299b6
-ms.openlocfilehash: 077096cc296f2aa2128127493a84a91da9a067c5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5382ba90f490aaa12e9e55767fdf15170a69ced5
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62270912"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749226"
 ---
-# <a name="gh-enable-pexit-hook-function"></a>/GH (_pexit-Hookfunktion aktivieren)
+# <a name="gh-enable-_pexit-hook-function"></a>/GH (_pexit-Hookfunktion aktivieren)
 
-Ruft die `_pexit` Funktion am Ende jeder Methode oder Funktion.
+Ruft `_pexit` die Funktion am Ende jeder Methode oder Funktion auf.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,21 +26,21 @@ Ruft die `_pexit` Funktion am Ende jeder Methode oder Funktion.
 /GH
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `_pexit` Funktion ist nicht Teil einer Bibliothek, und es ist Ihre Aufgabe, geben Sie eine Definition für `_pexit`.
+Die `_pexit` Funktion ist nicht Teil einer Bibliothek und es liegt `_pexit`an Ihnen, eine Definition für bereitzustellen.
 
-Es sei denn, Sie planen, die explizit aufrufen `_pexit`, Sie müssen sich nicht um einen Prototyp bereitzustellen. Die Funktion muss angezeigt werden, als ob es den folgenden Prototyp hatte und Fördern Sie den Inhalt aller Register auf den Eintrag und pop die unveränderten Inhalt beim Beenden müssen:
+Wenn Sie nicht `_pexit`explizit aufrufen möchten, müssen Sie keinen Prototyp bereitstellen. Die Funktion muss so aussehen, als hätte sie den folgenden Prototyp, und sie muss den Inhalt aller Register beim Eintrag übertragen und den unveränderten Inhalt beim Beenden auffüllen:
 
-```
+```cpp
 void __declspec(naked) __cdecl _pexit( void );
 ```
 
-`_pexit` ist vergleichbar mit `_penter`; finden Sie unter [/GH (aktivieren _penter-Hookfunktion)](gh-enable-penter-hook-function.md) verdeutlicht, wie Sie schreiben eine `_pexit` Funktion.
+`_pexit`ist ähnlich `_penter`wie ; siehe [/Gh (Enable _penter Hook Function)](gh-enable-penter-hook-function.md) für `_pexit` ein Beispiel zum Schreiben einer Funktion.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
 1. Klicken Sie auf den Ordner **C/C++** .
 
@@ -52,7 +52,7 @@ void __declspec(naked) __cdecl _pexit( void );
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)

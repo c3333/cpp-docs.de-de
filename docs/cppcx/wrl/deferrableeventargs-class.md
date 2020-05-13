@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Microsoft::WRL::DeferrableEventArgs::GetDeferral method
 - Microsoft::WRL::DeferrableEventArgs::InvokeAllFinished method
 ms.assetid: ece89267-7b72-40e1-8185-550c865b070a
-ms.openlocfilehash: bae2472a75ab77f138fcee0951a6b869cc7c8e82
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 066918bf2c76b17f06871ee08be674be9b36c161
+ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372566"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82032459"
 ---
 # <a name="deferrableeventargs-class"></a>DeferrableEventArgs-Klasse
 
@@ -41,10 +41,10 @@ Die Klasse, die *TEventArgsInterface*implementiert.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                         | BESCHREIBUNG
------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------
-[DeferrableEventArgs::GetDeferral](#getdeferral)             | Ruft einen Verweis auf das [Deferral-Objekt](/uwp/api/windows.foundation.deferral) ab, das ein verzögertes Ereignis darstellt.
-[DeferrableEventArgs::InvokeAllFinished](#invokeallfinished) | Wird aufgerufen, um anzugeben, dass das Behandeln eines zurückgestellten Ereignisses abgeschlossen ist.
+| Name | BESCHREIBUNG |
+|--|--|
+| [DeferrableEventArgs::GetDeferral](#getdeferral) | Ruft einen Verweis auf das [Deferral-Objekt](/uwp/api/windows.foundation.deferral) ab, das ein verzögertes Ereignis darstellt. |
+| [DeferrableEventArgs::InvokeAllFinished](#invokeallfinished) | Wird aufgerufen, um anzugeben, dass das Behandeln eines zurückgestellten Ereignisses abgeschlossen ist. |
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -52,7 +52,7 @@ Instanzen dieser Klasse werden an die Ereignishandler für zurückgestellte Erei
 
 Die Klasse wird als erstes Argument in einem Ereignishandler für ein zurückgestelltes Ereignis angezeigt. Sie können die [GetDeferral-Methode](#getdeferral) aufrufen, um das [Deferral-Objekt](/uwp/api/windows.foundation.deferral) abzurufen, von dem Sie alle Informationen über das verzögerte Ereignis abrufen können. Wenn die Ereignisbehandlung abgeschlossen ist, müssen Sie „Complete“ für das Deferral-Objekt aufrufen. Sie sollten dann [InvokeAllFinished](#invokeallfinished) am Ende der Ereignishandlermethode aufrufen, wodurch sichergestellt wird, dass der Abschluss aller verzögerten Ereignisse ordnungsgemäß kommuniziert wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopfzeile:** event.h
 

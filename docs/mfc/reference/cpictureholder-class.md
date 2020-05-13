@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CPictureHolder [MFC], SetPictureDispatch
 - CPictureHolder [MFC], m_pPict
 ms.assetid: a4f59775-704a-41dd-b5bd-2e531c95127a
-ms.openlocfilehash: 067ea7238c48f2698d7bfe469e9c4be10129c065
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: edb93b05c1187d2c78f4c1120ee76282167c9b49
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364050"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81753597"
 ---
 # <a name="cpictureholder-class"></a>CPictureHolder-Klasse
 
@@ -85,7 +85,7 @@ Informationen zum Erstellen benutzerdefinierter Bildeigenschaften finden Sie im 
 
 `CPictureHolder`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Kopf:** afxctl.h
 
@@ -287,7 +287,7 @@ LPPICTURE m_pPict;
 
 Rendert das Bild im Rechteck, auf das *rcRender*verweist.
 
-```
+```cpp
 void Render(
     CDC* pDC,
     const CRect& rcRender,
@@ -309,7 +309,7 @@ Ein Rechteck, das das umgrenzende Rechteck des Objekts darstellt, das das Bild r
 
 Verbindet `CPictureHolder` das Objekt `IPictureDisp` mit einer Schnittstelle.
 
-```
+```cpp
 void SetPictureDispatch(LPPICTUREDISP pDisp);
 ```
 
@@ -318,7 +318,7 @@ void SetPictureDispatch(LPPICTUREDISP pDisp);
 *pDisp*<br/>
 Zeiger auf die `IPictureDisp` neue Schnittstelle.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CFontHolder-Klasse](../../mfc/reference/cfontholder-class.md)

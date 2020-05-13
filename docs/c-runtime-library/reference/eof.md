@@ -1,8 +1,9 @@
 ---
 title: _eof
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _eof
+- _o__eof
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - testing, for end-of-file
 - end of file
 ms.assetid: 265703f4-d07e-4005-abf3-b1d0cdd9e0b0
-ms.openlocfilehash: 5b5c27f1de3369369776dd030df21be05cf20b7a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5d00be1da0f329c43f1b6ea0f912ede74b307bbb
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942006"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82915054"
 ---
 # <a name="_eof"></a>_eof
 
@@ -50,7 +52,7 @@ int _eof(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*FD*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -61,13 +63,15 @@ Dateideskriptor, der auf die geöffnete Datei verweist.
 
 Die **_eof** -Funktion bestimmt, ob das Ende der mit *FD* verknüpften Datei erreicht wurde.
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|Optionaler Header|
 |--------------|---------------------|---------------------|
 |**_eof**|\<io.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -115,7 +119,7 @@ int main( void )
 This file contains some text.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Number of bytes read = 29
@@ -124,7 +128,7 @@ Number of bytes read = 29
 ## <a name="see-also"></a>Siehe auch
 
 [Fehlerbehandlung](../../c-runtime-library/error-handling-crt.md)<br/>
-[E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
+[E/a auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [clearerr](clearerr.md)<br/>
 [feof](feof.md)<br/>
 [ferror](ferror.md)<br/>

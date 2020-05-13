@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CMFCDropDownFrame [MFC], RecalcLayout
 - CMFCDropDownFrame [MFC], SetAutoDestroy
 ms.assetid: 09ff81a9-de00-43ec-9df9-b626f7728c4b
-ms.openlocfilehash: a5e95efe1880f1177490d55988ca1fe42c606b15
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 508b27acd0a2004b1b8f75fde0bddcdf91194948
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367543"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81752426"
 ---
 # <a name="cmfcdropdownframe-class"></a>CMFCDropDownFrame-Klasse
 
@@ -82,7 +82,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `CMFCDropDownFrame` Ein `CFrameW
 
 [CMFCDropDownFrame](../../mfc/reference/cmfcdropdownframe-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdropdowntoolbar.h
 
@@ -104,8 +104,8 @@ virtual BOOL Create(
 |-|-|
 |Parameter|Beschreibung|
 |*pWndParent*|[in] Das übergeordnete Fenster des Dropdown-Frames.|
-|*X*|[in] Die horizontale Bildschirmkoordinate für die Position des Down-Down-Frames.|
-|*y*|[in] Die vertikale Bildschirmkoordinate für die Position des Down-Down-Frames.|
+|*x*|[in] Die horizontale Bildschirmkoordinate für die Position des Down-Down-Frames.|
+|*Y*|[in] Die vertikale Bildschirmkoordinate für die Position des Down-Down-Frames.|
 |*pWndOriginToolbar*|[in] Die Symbolleiste mit den Dropdown-Schaltflächen, die diese Methode zum Auffüllen des neuen Dropdown-Frameobjekts verwendet.|
 
 ### <a name="return-value"></a>Rückgabewert
@@ -173,7 +173,7 @@ Das Framework ruft diese Methode auf, wenn der Dropdown-Frame erstellt oder die 
 
 Legt fest, ob das untergeordnete Dropdown-Symbolleistenfenster automatisch zerstört wird.
 
-```
+```cpp
 void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 ```
 
@@ -186,7 +186,7 @@ void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 
 Wenn *bAutoDestroy* TRUE ist, zerstört der `CMFCDropDownFrame` Destruktor das zugehörige Dropdown-Symbolleistenfenster. Der Standardwert ist TRUE.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

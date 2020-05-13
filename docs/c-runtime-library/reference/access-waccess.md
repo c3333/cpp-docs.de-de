@@ -18,7 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
-- api-ms-win-crt-private-l1-1-0
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +37,12 @@ helpviewer_keywords:
 - _waccess function
 - taccess function
 ms.assetid: ba34f745-85c3-49e5-a7d4-3590bd249dd3
-ms.openlocfilehash: 98726726e14aacec75ed99adfa33016b40affd17
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ae213768e30fa8120a80aaa30b3fe1b53e802d78
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81350874"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82920269"
 ---
 # <a name="_access-_waccess"></a>_access, _waccess
 
@@ -66,12 +66,12 @@ int _waccess(
 *path*<br/>
 Datei oder Verzeichnispfad.
 
-*Modus*<br/>
+*mode*<br/>
 Lese-/Schreibattribut.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt 0 zurück, wenn sich die Datei im angegebenen Modus befindet. Die Funktion gibt -1 zurück, wenn die benannte Datei nicht vorhanden ist oder nicht über den angegebenen Modus verfügt. in diesem `errno` Fall, wird wie in der folgenden Tabelle dargestellt festgelegt.
+Jede Funktion gibt 0 zurück, wenn sich die Datei im angegebenen Modus befindet. Die Funktion gibt-1 zurück, wenn die benannte Datei nicht vorhanden ist oder nicht über den angegebenen Modus verfügt. in diesem Fall wird `errno` festgelegt, wie in der folgenden Tabelle gezeigt.
 
 |||
 |-|-|
@@ -81,9 +81,9 @@ Jede Funktion gibt 0 zurück, wenn sich die Datei im angegebenen Modus befindet.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Bei Verwendung mit Dateien bestimmt die **_access-Funktion,** ob die angegebene Datei oder das angegebene Verzeichnis vorhanden ist, und weist die Attribute auf, die durch den Wert von *mode*angegeben sind. Bei Verwendung mit Verzeichnissen **bestimmt _access** nur, ob das angegebene Verzeichnis vorhanden ist. In Windows 2000 und neueren Betriebssystemen verfügen alle Verzeichnisse über Lese- und Schreibzugriff.
+Bei der Verwendung mit Dateien bestimmt die **_access** Funktion, ob die angegebene Datei bzw. das angegebene Verzeichnis vorhanden ist und über die durch den Wert des- *Modus*angegebenen Attribute verfügt. Bei der Verwendung mit Verzeichnissen bestimmt **_access** nur, ob das angegebene Verzeichnis vorhanden ist. in Windows 2000 und neueren Betriebssystemen haben alle Verzeichnisse Lese-und Schreibzugriff.
 
 |*Moduswert*|überprüft nur, ob die Datei|
 |------------------|---------------------|
@@ -94,11 +94,11 @@ Bei Verwendung mit Dateien bestimmt die **_access-Funktion,** ob die angegebene 
 
 Diese Funktion überprüft nur, ob die Datei oder das Verzeichnis schreibgeschützt sind. Es überprüft jedoch nicht die Dateisystem-Sicherheitseinstellungen. Dafür benötigen Sie ein Zugriffstoken. Weitere Informationen zur Dateisystemsicherheit finden Sie unter [Zugriffstoken](/windows/win32/SecAuthZ/access-tokens). Für diese Funktion gibt es eine ATL-Klasse. Weitere Informationen finden Sie unter [CAccessToken-Klasse](../../atl/reference/caccesstoken-class.md).
 
-**_waccess** ist eine breit gefächerte Version von **_access**; Das *Pfadargument* zu **_waccess** ist eine Zeichenfolge mit großen Zeichen. **_waccess** und **_access** verhalten sich ansonsten gleich.
+**_waccess** ist eine breit Zeichen Version von **_access**. Das *path* -Argument für **_waccess** ist eine Zeichenfolge mit breit Zeichen. **_waccess** und **_access** Verhalten sich andernfalls identisch.
 
-Diese Funktion überprüft ihre Parameter. Wenn *Pfad* NULL ist oder *der Modus* keinen gültigen Modus angibt, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die weitere Ausführung zugelassen wird, legt die Funktion `errno` auf `EINVAL` fest und gibt –1 zurück.
+Diese Funktion überprüft ihre Parameter. Wenn der *Pfad* NULL ist oder der *Modus* keinen gültigen Modus angibt, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt die Funktion `errno` auf `EINVAL` fest und gibt –1 zurück.
 
-Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -115,7 +115,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird **_access** verwendet, um die Datei mit dem Namen crt_ACCESS zu überprüfen. C, um zu sehen, ob es existiert und ob Schreiben erlaubt ist.
+Im folgenden Beispiel wird **_access** verwendet, um die Datei mit dem Namen crt_ACCESS zu überprüfen. C, um zu sehen, ob es vorhanden ist und ob Schreibvorgänge zulässig sind.
 
 ```C
 // crt_access.c
@@ -147,7 +147,7 @@ File crt_ACCESS.C exists.
 File crt_ACCESS.C does not have write permission.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_chmod, _wchmod](chmod-wchmod.md)<br/>

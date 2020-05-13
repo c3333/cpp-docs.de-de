@@ -1,6 +1,6 @@
 ---
 title: hypot, hypotf, hypotl, _hypot, _hypotf, _hypotl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _hypotf
 - hypot
@@ -8,6 +8,9 @@ api_name:
 - _hypot
 - _hypotl
 - hypotl
+- _o__hypot
+- _o__hypotf
+- _o_hypot
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +23,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0.dll
 api_type:
 - DLLExport
 topic_type:
@@ -40,12 +44,12 @@ helpviewer_keywords:
 - calculating hypotenuses
 - _hypot function
 ms.assetid: 6a13887f-bd53-43fc-9d77-5b42d6e49925
-ms.openlocfilehash: ac481366199023e4b45467599d2c66802ff65c23
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 16db920d6e7d3836eb4a395b2029e2f9329f2681
+ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168745"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82919835"
 ---
 # <a name="hypot-hypotf-hypotl-_hypot-_hypotf-_hypotl"></a>hypot, hypotf, hypotl, _hypot, _hypotf, _hypotl
 
@@ -89,21 +93,23 @@ Gleitkommawerte.
 
 Wenn erfolgreich, gibt **hypot** die Länge der Hypotenuse zurück. bei einem Überlauf gibt **hypot** inf (Infinity) zurück, und die **errno** -Variable wird auf **ERANGE**festgelegt. Sie können **_matherr** verwenden, um die Fehlerbehandlung zu ändern.
 
-Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **hypot** -Funktionen berechnen die Länge der Hypotenuse eines rechtwinkligen Dreiecks mit der Länge der beiden Seiten *x* und *y* (d. h. die Quadratwurzel von *x*<sup>2</sup> + *y*<sup>2</sup>).
 
 Die Versionen der Funktionen mit führenden Unterstrichen unterstützen die Kompatibilität mit früheren Standards. Ihr Verhalten ist mit den Versionen identisch, die keine führende Unterstriche haben. Es empfiehlt sich, die Versionen ohne führende Unterstriche für neuen Code zu verwenden.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**hypot**, **hypotf**, **hypotl**, **_hypot** **_hypotf**, **_hypotl**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -264,12 +264,12 @@ helpviewer_keywords:
 - CListCtrl [MFC], SubItemHitTest
 - CListCtrl [MFC], Update
 ms.assetid: fe08a1ca-4b05-4ff7-a12a-ee4c765a2197
-ms.openlocfilehash: 19939ce7dacc1b826e0a2f067c43fc65db328a54
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4b505912c69ffbb86ad3dae98f99531c477db693
+ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370166"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81749140"
 ---
 # <a name="clistctrl-class"></a>CListCtrl-Klasse
 
@@ -512,7 +512,7 @@ Standardmäßig zerstört ein Listenansichtssteuerelement die ihm zugewiesenen B
 
 `CListCtrl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -584,7 +584,7 @@ Der Parameter *nCode* gibt den Ausrichtungsstil an.
 
 Bricht den Bearbeitungsvorgang für Elementtext ab.
 
-```
+```cpp
 void CancelEditLabel();
 ```
 
@@ -618,7 +618,7 @@ virtual BOOL Create(
 Gibt die Formatvorlage des Listensteuerelements an. Wenden Sie eine beliebige Kombination von Listensteuerelementstilen auf das Steuerelement an. Eine vollständige Liste dieser Formatvorlagen finden Sie unter [Listenansichtsfensterformatvorlagen](/windows/win32/Controls/list-view-window-styles) im Windows SDK. Legen Sie erweiterte Stile fest, die für ein Steuerelement mit [SetExtendedStyle](#setextendedstyle)spezifisch sind.
 
 *Rect*<br/>
-Gibt die Größe und Position des Listensteuerelements an. Es kann entweder `CRect` ein Objekt oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) sein.
+Gibt die Größe und Position des Listensteuerelements an. Es kann entweder `CRect` ein Objekt oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) sein.
 
 *pParentWnd*<br/>
 Gibt das übergeordnete Fenster des Listensteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
@@ -666,7 +666,7 @@ Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der 
 Gibt die Formatvorlage des Listensteuerelements an. Wenden Sie eine beliebige Kombination von Listensteuerelementstilen auf das Steuerelement an. Eine vollständige Liste dieser Formatvorlagen finden Sie unter [Listenansichtsfensterformatvorlagen](/windows/win32/Controls/list-view-window-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
 Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
@@ -700,7 +700,7 @@ CImageList* CreateDragImage(
 Index des Elements, dessen Ziehbildliste erstellt werden soll.
 
 *lpPoint*<br/>
-Adresse einer [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die Anfangsposition der oberen linken Ecke des Bildes in Ansichtskoordinaten empfängt.
+Adresse einer [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die Anfangsposition der oberen linken Ecke des Bildes in Ansichtskoordinaten empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1413,7 +1413,7 @@ Im folgenden Codebeispiel `GetGroupInfoByIndex` wird die Methode veranschaulicht
 
 Ruft die Metriken einer Gruppe ab.
 
-```
+```cpp
 void GetGroupMetrics(PLVGROUPMETRICS pGroupMetrics) const;
 ```
 
@@ -1442,7 +1442,7 @@ BOOL GetGroupRect(
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*iGroupId*|[in] Gibt eine Gruppe an.|
-|*lpRect*|[in, out] Zeiger auf eine [RECT-Struktur.](/previous-versions/dd162897\(v=vs.85\)) Wenn diese Methode erfolgreich ist, empfängt die Struktur die Rechteckkoordinaten der Gruppe, die von *iGroupId*angegeben wird.|
+|*lpRect*|[in, out] Zeiger auf eine [RECT-Struktur.](/windows/win32/api/windef/ns-windef-rect) Wenn diese Methode erfolgreich ist, empfängt die Struktur die Rechteckkoordinaten der Gruppe, die von *iGroupId*angegeben wird.|
 |*iCoords*|[in] Gibt die rechteckigen Koordinaten an, die abgerufen werden sollen. Verwenden Sie einen der folgenden Werte:<br /><br /> - LVGGR_GROUP - (Standard) Koordinaten der gesamten erweiterten Gruppe.<br />- LVGGR_HEADER - Koordinaten nur der Kopfzeile (reduzierte Gruppe).<br />- LVGGR_SUBSETLINK - Koordinaten nur der Teilmengenverknüpfung (Markup-Teilmenge).|
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1451,7 +1451,7 @@ TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Aufrufer ist für die Zuweisung der [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) verantwortlich, auf die der Parameter *pRect* zeigt.
+Der Aufrufer ist für die Zuweisung der [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) verantwortlich, auf die der Parameter *pRect* zeigt.
 
 Diese Methode sendet die [LVM_GETGROUPRECT](/windows/win32/Controls/lvm-getgrouprect) Nachricht, die im Windows SDK beschrieben wird.
 
@@ -1791,7 +1791,7 @@ BOOL GetItemIndexRect(
 |*pItemIndex*|[in] Zeiger auf eine [LVITEMINDEX-Struktur](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) für das übergeordnete Element des Unterelements.<br /><br /> Der Aufrufer ist für die Zuweisung und Einstellung der Member der [LVITEMINDEX-Struktur](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) verantwortlich. Dieser Parameter darf nicht NULL sein.|
 |*iColumn*|[in] Nullbasierter Index einer Spalte im Steuerelement.|
 |*rectType*|[in] Teil des Unterelements Listenansicht, für das das umgrenzende Rechteck abgerufen wird. Geben Sie einen der folgenden Werte an.<br /><br /> LVIR_BOUNDS - Gibt das umschließende Rechteck des gesamten Unterelements zurück, einschließlich des Symbols und der Beschriftung.<br /><br /> LVIR_ICON - Gibt das umgrenzende Rechteck des Symbols oder des kleinen Symbols des Unterelements zurück.<br /><br /> LVIR_LABEL - Gibt das umgrenzende Rechteck des Unterelementtexts zurück.|
-|*pRect*|[out] Zeiger auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die Informationen über das umgrenzende Rechteck des Unterelements empfängt.<br /><br /> Der Aufrufer ist für die Zuweisung der [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) verantwortlich. Dieser Parameter darf nicht NULL sein.|
+|*pRect*|[out] Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die Informationen über das umgrenzende Rechteck des Unterelements empfängt.<br /><br /> Der Aufrufer ist für die Zuweisung der [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) verantwortlich. Dieser Parameter darf nicht NULL sein.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1845,7 +1845,7 @@ BOOL GetItemPosition(
 Der Index des Elements, dessen Position abgerufen werden soll.
 
 *lpPoint*<br/>
-Adresse einer [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die Position der oberen linken Ecke des Elements in Ansichtskoordinaten empfängt.
+Adresse einer [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die Position der oberen linken Ecke des Elements in Ansichtskoordinaten empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1884,7 +1884,7 @@ BOOL GetItemRect(
 Der Index des Elements, dessen Position abgerufen werden soll.
 
 *lpRect*<br/>
-Adresse einer [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die das umgrenzende Rechteck empfängt.
+Adresse einer [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das umgrenzende Rechteck empfängt.
 
 *nCode*<br/>
 Teil des Listenansichtselements, für das das umgrenzte Rechteck abgerufen werden soll. Dies kann einer der folgenden Werte sein:
@@ -2221,7 +2221,7 @@ BOOL GetOrigin(LPPOINT lpPoint) const;
 ### <a name="parameters"></a>Parameter
 
 *lpPoint*<br/>
-Adresse einer [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die den Ansichtsursprung empfängt.
+Adresse einer [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die den Ansichtsursprung empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -2532,7 +2532,7 @@ BOOL GetViewRect(LPRECT lpRect) const;
 ### <a name="parameters"></a>Parameter
 
 *lpRect*<br/>
-Adresse einer [RECT-Struktur.](/previous-versions/dd162897\(v=vs.85\))
+Adresse einer [RECT-Struktur.](/windows/win32/api/windef/ns-windef-rect)
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -2546,7 +2546,7 @@ Die Listenansicht muss sich in der Symbolansicht oder in der kleinen Symbolansic
 
 Ruft die aktuellen Arbeitsbereiche eines Listenansichtssteuerelements ab.
 
-```
+```cpp
 void GetWorkAreas(
     int nWorkAreas,
     LPRECT pRect) const;
@@ -2835,7 +2835,7 @@ int InsertMarkHitTest(
 ### <a name="parameters"></a>Parameter
 
 *pPoint*<br/>
-Ein Zeiger auf [POINT](/previous-versions/dd162805\(v=vs.85\)) eine POINT-Struktur, die die Treffertestkoordinaten relativ zum Clientbereich des Listensteuerelements enthält.
+Ein Zeiger auf [POINT](/windows/win32/api/windef/ns-windef-point) eine POINT-Struktur, die die Treffertestkoordinaten relativ zum Clientbereich des Listensteuerelements enthält.
 
 *plvim*<br/>
 Ein Zeiger auf eine [LVINSERTMARK-Struktur,](/windows/win32/api/commctrl/ns-commctrl-lvinsertmark) die die Einfügemarke angibt, die den durch den Punktparameter definierten Koordinaten am nächsten kommt.
@@ -3008,7 +3008,7 @@ Diese Memberfunktion emuliert die Funktionalität der [LVM_MOVEGROUP](/windows/w
 
 Verschiebt das angegebene Element in die angegebene Gruppe.
 
-```
+```cpp
 void MoveItemToGroup(
     int idItemFrom,
     int idGroupTo);
@@ -3059,7 +3059,7 @@ Die angegebenen Elemente werden erst neu gezeichnet, wenn das Listenansichtsfens
 
 Entfernt alle Gruppen aus einem Listenansichtssteuerelement.
 
-```
+```cpp
 void RemoveAllGroups();
 ```
 
@@ -3098,7 +3098,7 @@ BOOL Scroll(CSize size);
 
 ### <a name="parameters"></a>Parameter
 
-*Größe*<br/>
+*size*<br/>
 Ein `CSize` Objekt, das die Menge des horizontalen und vertikalen Scrollens in Pixel angibt. Das `y` Element der *Größe* wird durch die Höhe (in Pixel) der Zeile des Listenansichtssteuerelements dividiert, und das Steuerelement wird durch die resultierende Anzahl von Zeilen gescrollt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -3387,7 +3387,7 @@ Diese Methode sendet die [LVM_SETGROUPINFO](/windows/win32/Controls/lvm-setgroup
 
 Legt die Gruppenmetriken eines Listenansichtssteuerelements fest.
 
-```
+```cpp
 void SetGroupMetrics(PLVGROUPMETRICS pGroupMetrics);
 ```
 
@@ -3497,7 +3497,7 @@ Der Abstand (in Pixel) zwischen Symbolen auf der x-Achse.
 *Cy*<br/>
 Der Abstand (in Pixel) zwischen Symbolen auf der y-Achse.
 
-*Größe*<br/>
+*size*<br/>
 Ein `CSize` Objekt, das den Abstand (in Pixel) zwischen Symbolen auf der x- und y-Achse angibt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -3693,7 +3693,7 @@ Siehe Beispiel für [CListCtrl::HitTest](#hittest).
 
 Bereitet ein Listenansichtssteuerelement zum Hinzufügen einer großen Anzahl von Elementen vor.
 
-```
+```cpp
 void SetItemCount(int nItems);
 ```
 
@@ -3855,7 +3855,7 @@ BOOL SetItemPosition(
 Index des Artikels, dessen Position festgelegt werden soll.
 
 *Pt*<br/>
-Eine [POINT](/previous-versions/dd162805\(v=vs.85\)) POINT-Struktur, die die neue Position der oberen linken Ecke des Elements in Ansichtskoordinaten angibt.
+Eine [POINT](/windows/win32/api/windef/ns-windef-point) POINT-Struktur, die die neue Position der oberen linken Ecke des Elements in Ansichtskoordinaten angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -4156,7 +4156,7 @@ Diese Memberfunktion emuliert die Funktionalität der [LVM_SETVIEW](/windows/win
 
 Legt den Bereich fest, in dem Symbole in einem Listenansichtssteuerelement angezeigt werden können.
 
-```
+```cpp
 void SetWorkAreas(
     int nWorkAreas,
     LPRECT lpRect);
@@ -4423,7 +4423,7 @@ Diese Funktion ordnet auch das Listenansichtssteuerelement an, wenn es den stil 
 
 Siehe Beispiel für [CListCtrl::GetSelectedCount](#getselectedcount).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel ROWLIST](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](cwnd-class.md)<br/>
