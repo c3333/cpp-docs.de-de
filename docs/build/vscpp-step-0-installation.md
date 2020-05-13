@@ -1,4 +1,4 @@
----
+﻿---
 title: Installieren der C++-Unterstützung in Visual Studio
 description: Installieren der Visual Studio-Unterstützung für Visual C++
 ms.custom: mvc
@@ -40,7 +40,7 @@ Vor der Installation von Visual Studio:
 
 1. Führen Sie einen Neustart aus. Dadurch wird sichergestellt, dass keine ausstehenden Installationen oder Updates die Installation von Visual Studio behindern.
 
-1. Geben Sie Speicherplatz frei. Entfernen Sie nicht benötigte Dateien und Anwendungen z.B. mit der Datenträgerbereinigung-App von Ihrem %Systemlaufwerk%.
+4. Geben Sie Speicherplatz frei. Entfernen Sie nicht benötigte Dateien und Anwendungen z.B. mit der Datenträgerbereinigung-App von Ihrem %Systemlaufwerk%.
 
 Informationen zur parallelen Ausführung vorheriger Versionen von Visual Studio und Visual Studio 2019 finden Sie auf der Seite [Visual Studio 2019 – Zielplattformen und Kompatibilität](/visualstudio/releases/2019/compatibility/).
 
@@ -74,6 +74,10 @@ Nachdem das Installationsprogramm installiert wurde, können Sie es verwenden, u
    ![Visual Studio 2019: Installieren einer Arbeitsauslastung](../get-started/media/vs-installer-workloads.png)
 
    Wählen Sie für die C++-Zentrale die Arbeitsauslastung "Desktop-Entwicklung mit C++". Sie wird mit dem standardmäßigen Kern-Editor bereitgestellt, der die grundlegende Codebearbeitung für über 20 Sprachen, die Möglichkeit, Code aus einem beliebigen Ordner heraus zu öffnen und zu bearbeiten, ohne dass ein Projekt erforderlich ist, und die integrierte Quellcodekontrolle unterstützt.
+   
+   * Unterstützung für über 20 Sprachen
+   * Öffnen und Bearbeiten von Quellcode in einem beliebigen Ordner ohne Vorraussetzung eines Projekts
+   * integrierte Versionskontrolle für Quellcode
 
    Zusätzliche Workloads unterstützen andere Arten der C++-Entwicklung. Wählen Sie beispielsweise die Arbeitsauslastung "Universelle Windows-Plattformentwicklung" aus, um Apps zu erstellen, die die Windows-Runtime für den Microsoft Store verwenden. Wählen Sie "Spielentwicklung mit C++", um Spiele zu erstellen, die DirectX, Unreal und Cocos2d verwenden. Wählen Sie "Linux-Entwicklung mit C++", um Linux-Plattformen, einschließlich IoT-Entwicklung, anzusprechen.
 
@@ -121,7 +125,7 @@ Sie können den Speicherbedarf für die Installation von Visual Studio auf Ihrem
 
    Sie können die Suchergebnisse nach bestimmten Programmiersprachen filtern, indem Sie die Dropdownliste **Sprache** verwenden. Sie können außerdem die Listen **Plattform** und **Projekttyp** zum Filtern verwenden.
 
-1. Ihr neues Projekt wird dann in Visual Studio geöffnet, und Sie können damit anfangen, Code zu schreiben.
+3. Ihr neues Projekt wird dann in Visual Studio geöffnet, und Sie können damit anfangen, Code zu schreiben.
 
 ::: moniker-end
 

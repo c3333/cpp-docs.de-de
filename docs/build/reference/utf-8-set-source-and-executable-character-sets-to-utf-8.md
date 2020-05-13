@@ -1,6 +1,7 @@
----
+﻿---
 title: "\"/UTF-8\" (Quelle und ausführbare Zeichensätze festlegen UTF-8auf)"
 ms.date: 04/26/2020
+
 f1_keywords:
 - /utf-8
 helpviewer_keywords:
@@ -28,6 +29,8 @@ Gibt den Quell Zeichensatz und den Ausführungs Zeichensatz UTF-8als an.
 ## <a name="remarks"></a>Bemerkungen
 
 Sie können die **`/utf-8`** -Option verwenden, um die Quell-und Ausführungs Zeichensätze als mit UTF-8codiert festzulegen. Dies entspricht der Angabe **`/source-charset:utf-8 /execution-charset:utf-8`** von in der Befehlszeile. Jede dieser Optionen aktiviert auch die **`/validate-charset`** Option standardmäßig. Eine Liste der unterstützten Codepage-IDs und Zeichensatz Namen finden Sie unter [Code Page Identifier](/windows/win32/Intl/code-page-identifiers).
+Sie können **/utf-8** verwenden, um festzulegen, dass sowohl der Quell- als auch der Ausführungszeichensatz mittels UTF-8 codiert ist. Diese Option ist äquivalent zu **/source-Charset:utf-8** und **/execution-Charset:utf-8** in der Befehlszeile. Jede dieser Optionen aktiviert automatisch auch **/Validate-CharSet**. Eine Liste der unterstützten Codepagebezeichner und Zeichensätze finden Sie unter [Code Page Identifiers (Codepagebezeichner)](/windows/desktop/Intl/code-page-identifiers).
+
 
 Standardmäßig erkennt Visual Studio eine Byte Reihenfolge Markierung, um zu bestimmen, ob die Quelldatei in einem codierten Unicode-Format vorliegt UTF-16 , UTF-8z. b. oder. Wenn keine Byte Reihenfolge Markierung gefunden wird, wird davon ausgegangen, dass die Quelldatei mithilfe der aktuellen Benutzer Codepage codiert wird, es sei denn, Sie **`/utf-8`** haben mithilfe **`/source-charset`** der-Option oder der-Option eine Codepage angegeben. Visual Studio ermöglicht es Ihnen, den C++-Quellcode mit einer beliebigen Zahl von Zeichen Codierungen zu speichern. Weitere Informationen zu Quell-und Ausführungs Zeichensätzen finden Sie unter [Zeichensätze](../../cpp/character-sets.md) in der Sprachdokumentation.
 
@@ -40,6 +43,7 @@ Standardmäßig erkennt Visual Studio eine Byte Reihenfolge Markierung, um zu be
 1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **C/C++** > -**Befehlszeile** aus.
 
 1. Fügen Sie unter **zusätzliche Optionen**die **`/utf-8`** Option hinzu, um Ihre bevorzugte Codierung anzugeben.
+
 
 1. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
