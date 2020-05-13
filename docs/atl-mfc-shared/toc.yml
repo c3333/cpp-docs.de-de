@@ -1,0 +1,97 @@
+- name: Freigegebene ATL/MFC-Klassen
+  href: ../atl-mfc-shared/atl-mfc-shared-classes.md
+- name: ATL/MFC-Konzepte
+  expanded: true
+  items:
+    - name: ATL/MFC-Konzepte
+      href: ../atl-mfc-shared/atl-mfc-concepts.md
+    - name: Datum und Uhrzeit
+      expanded: false
+      items:
+        - name: 'Datum und Uhrzeit: Übersicht'
+          href: ../atl-mfc-shared/date-and-time.md
+        - name: DATE-Typ
+          href: ../atl-mfc-shared/date-type.md
+    - name: Zeichenfolgen (ATL/MFC)
+      expanded: false
+      items:
+        - name: Zeichenfolgen (ATL/MFC)
+          href: ../atl-mfc-shared/strings-atl-mfc.md
+        - name: Verwenden von CStringT
+          expanded: false
+          items:
+            - name: Verwenden von CStringT
+              href: ../atl-mfc-shared/using-cstringt.md
+            - name: Arbeitsspeicherverwaltung mit CStringT
+              expanded: false
+              items:
+                - name: Arbeitsspeicherverwaltung mit CStringT
+                  href: ../atl-mfc-shared/memory-management-with-cstringt.md
+                - name: Implementierung eines benutzerdefinierten Zeichenfolgen-Managers (grundlegende Methode)
+                  href: ../atl-mfc-shared/implementation-of-a-custom-string-manager-basic-method.md
+                - name: Vermeiden von Heapkonflikten
+                  href: ../atl-mfc-shared/avoidance-of-heap-contention.md
+                - name: Implementierung eines benutzerdefinierten Zeichenfolgen-Managers (fortgeschrittene Methode)
+                  href: ../atl-mfc-shared/implementation-of-a-custom-string-manager-advanced-method.md
+                - name: 'CFixedStringT: Beispiel eines benutzerdefinierten Zeichenfolgen-Managers'
+                  href: ../atl-mfc-shared/cfixedstringt-example-of-a-custom-string-manager.md
+            - name: Exportieren von Zeichenfolgenklassen mit CStringT
+              href: ../atl-mfc-shared/exporting-string-classes-using-cstringt.md
+        - name: Verwenden von CString
+          expanded: false
+          items:
+            - name: Verwenden von CString
+              href: ../atl-mfc-shared/using-cstring.md
+            - name: Grundlegende CString-Vorgänge
+              href: ../atl-mfc-shared/basic-cstring-operations.md
+            - name: Zeichenfolgendatenverwaltung
+              href: ../atl-mfc-shared/string-data-management.md
+            - name: CString-Semantik
+              href: ../atl-mfc-shared/cstring-semantics.md
+            - name: CString-Vorgänge bei Zeichenfolgen im C-Format
+              href: ../atl-mfc-shared/cstring-operations-relating-to-c-style-strings.md
+            - name: Zuweisen und Freigeben von Arbeitsspeicher für einen BSTR
+              href: ../atl-mfc-shared/allocating-and-releasing-memory-for-a-bstr.md
+            - name: CString-Ausnahmebereinigung
+              href: ../atl-mfc-shared/cstring-exception-cleanup.md
+            - name: CString-Argumentenübergabe
+              href: ../atl-mfc-shared/cstring-argument-passing.md
+            - name: Unterstützung für Unicode- und Multibyte-Zeichensätze (MBCS)
+              href: ../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md
+- name: Referenz
+  expanded: false
+  items:
+    - name: CSize-Klasse
+      href: ../atl-mfc-shared/reference/csize-class.md
+    - name: CTimeSpan-Klasse
+      href: ../atl-mfc-shared/reference/ctimespan-class.md
+    - name: COleDateTime-Klasse
+      href: ../atl-mfc-shared/reference/coledatetime-class.md
+    - name: CRect-Klasse
+      href: ../atl-mfc-shared/reference/crect-class.md
+    - name: Von MFC und ATL freigegebenen Klassen
+      href: ../atl-mfc-shared/reference/classes-shared-by-mfc-and-atl.md
+    - name: CPoint-Klasse
+      href: ../atl-mfc-shared/reference/cpoint-class.md
+    - name: CStringT-Klasse
+      href: ../atl-mfc-shared/reference/cstringt-class.md
+    - name: COleDateTimeSpan-Klasse
+      href: ../atl-mfc-shared/reference/coledatetimespan-class.md
+    - name: IAtlStringMgr-Klasse
+      href: ../atl-mfc-shared/reference/iatlstringmgr-class.md
+    - name: CFixedStringT-Klasse
+      href: ../atl-mfc-shared/reference/cfixedstringt-class.md
+    - name: CStrBufT-Klasse
+      href: ../atl-mfc-shared/reference/cstrbuft-class.md
+    - name: CFileTimeSpan-Klasse
+      href: ../atl-mfc-shared/reference/cfiletimespan-class.md
+    - name: CImage-Klasse
+      href: ../atl-mfc-shared/reference/cimage-class.md
+    - name: CStringData-Klasse
+      href: ../atl-mfc-shared/reference/cstringdata-class.md
+    - name: CFileTime-Klasse
+      href: ../atl-mfc-shared/reference/cfiletime-class.md
+    - name: CSimpleStringT-Klasse
+      href: ../atl-mfc-shared/reference/csimplestringt-class.md
+    - name: CTime-Klasse
+      href: ../atl-mfc-shared/reference/ctime-class.md
