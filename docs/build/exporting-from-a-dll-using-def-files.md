@@ -8,20 +8,20 @@ helpviewer_keywords:
 ms.assetid: 9d31eda2-184e-47de-a2ee-a93ebd603f8e
 ms.openlocfilehash: 6f7d58bcb42edd89527fff41b08a15321722a6cf
 ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/21/2020
 ms.locfileid: "80078520"
 ---
 # <a name="exporting-from-a-dll-using-def-files"></a>Exportieren aus einer DLL mithilfe von DEF-Dateien
 
-Eine Modul Definition oder DEF-Datei (*. def) ist eine Textdatei, die eine oder mehrere Modul Anweisungen enthält, die verschiedene Attribute einer DLL beschreiben. Wenn Sie das **__declspec (dllexport)** -Schlüsselwort nicht zum Exportieren der DLL-Funktionen verwenden, benötigt die DLL eine DEF-Datei.
+Eine Moduldefinitionsdatei oder DEF-Datei (*.def) ist eine Textdatei mit einer oder mehreren Modulanweisungen, die verschiedene Attribute einer DLL beschreiben. Wenn Sie für das Exportieren von DLL-Funktionen nicht das **__declspec(dllexport)** -Schlüsselwort verwenden, ist eine DEF-Datei für die DLL erforderlich.
 
-Eine minimale DEF-Datei muss die folgenden Modul Definitions Anweisungen enthalten:
+Eine DEF-Datei muss mindestens die folgenden Moduldefinitionsanweisungen enthalten:
 
-- Die erste Anweisung in der Datei muss die {1}LIBRARY{2}-Anweisung sein. Diese Anweisung identifiziert die DEF-Datei als zu einer DLL gehörend. Auf die {1}LIBRARY{2}-Anweisung folgt der Name der DLL. Der Linker speichert diesen Namen in der Importbibliothek der DLL.
+- Die erste Anweisung in der Datei muss die LIBRARY-Anweisung sein. Sie kennzeichnet die Zugehörigkeit der DEF-Datei zu einer DLL. Auf die LIBRARY-Anweisung folgt der Name der DLL. Der Linker speichert diesen Namen in der Importbibliothek der DLL.
 
-- Durch die {1}EXPORTS{2}-Anweisung werden die Namen und optional die Ordinalwerte der von der DLL exportierten Funktionen aufgelistet. Sie weisen der Funktion einen Ordinalwert zu, indem Sie dem Funktionsnamen ein @-Zeichen und eine Zahl nachstellen. Die Ordinalzahlen müssen sich in einem Bereich von 1 bis N befinden, wobei N die Gesamtzahl der von der DLL exportierten Funktionen angibt. Wenn Sie Funktionen nach Ordinalzahl exportieren möchten, finden Sie weitere [Informationen unter Exportieren von Funktionen aus einer DLL nach Ordinal anstelle des Namens](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md) und dieses Themas.
+- Durch die EXPORTS-Anweisung werden die Namen und optional die Ordinalwerte der von der DLL exportierten Funktionen aufgelistet. Sie weisen der Funktion einen Ordinalwert zu, indem Sie dem Funktionsnamen ein @-Zeichen und eine Zahl nachstellen. Die Ordinalzahlen müssen sich in einem Bereich von 1 bis N befinden, wobei N die Gesamtzahl der von der DLL exportierten Funktionen angibt. Informationen zum Exportieren von Funktionen anhand der Ordnungszahl finden Sie unter diesem Thema sowie unter [Exportieren von Funktionen aus einer DLL über die Ordnungszahl statt über den Namen](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md).
 
 Die DEF-Datei für eine DLL, die den Code für die Implementierung einer binären Suchstruktur enthält, könnte z. B. folgendermaßen aussehen:
 
@@ -34,14 +34,14 @@ EXPORTS
    Min   @4
 ```
 
-Wenn Sie den [MFC-DLL-Assistenten](../mfc/reference/mfc-dll-wizard.md) zum Erstellen einer MFC-DLL verwenden, erstellt der Assistent eine Skeleton DEF-Datei für Sie und fügt Sie automatisch dem Projekt hinzu. Fügen Sie die Namen der zu exportierenden Funktionen in diese Datei ein. Erstellen Sie die DEF-Datei für nicht-MFC-DLLs selbst, und fügen Sie Sie Ihrem Projekt hinzu. Wechseln Sie dann zu **Projekt** > **Eigenschaften** > **Linker** > **Eingabe** > **Modul Definitionsdatei** , und geben Sie den Namen der DEF-Datei ein. Wiederholen Sie diesen Schritt für jede Konfiguration und Plattform, oder führen Sie alles gleichzeitig aus, indem Sie **Konfiguration = alle Konfigurationen**und **Plattform = alle Plattformen**auswählen.
+Wenn Sie zum Erstellen einer MFC-DLL den [MFC-DLL-Assistenten](../mfc/reference/mfc-dll-wizard.md) verwenden, erstellt der Assistent eine DEF-Gerüstdatei und fügt sie automatisch dem Projekt hinzu. Fügen Sie die Namen der zu exportierenden Funktionen in diese Datei ein. Für MFC-fremde DLLs müssen Sie die DEF-Datei selbst erstellen und dem Projekt hinzufügen. Navigieren Sie dann zu **Projekt** > **Eigenschaften** > **Linker** > **Eingabe** > **Moduldefinitionsdatei**, und geben Sie den Namen der DEF-Datei ein. Wiederholen Sie diesen Schritt für jede Konfiguration und Plattform, oder führen Sie alles gleichzeitig aus, indem Sie **Konfiguration = Alle Konfigurationen** und **Plattform = Alle Plattformen** auswählen.
 
-Wenn Sie Funktionen in eine C++ Datei exportieren, müssen Sie entweder die ergänzten Namen in der DEF-Datei platzieren oder die exportierten Funktionen mit der Standard-c-Verknüpfung mithilfe von extern "c" definieren. Wenn Sie die ergänzten Namen in der DEF-Datei platzieren müssen, können Sie Sie mit dem [DUMPBIN](../build/reference/dumpbin-reference.md) -Tool oder mit der Option Linker [/map](../build/reference/map-generate-mapfile.md) abrufen. Beachten Sie, dass die vom Compiler erzeugten, ergänzten Namen compilerspezifisch sind. Wenn Sie die ergänzten Namen, die vom Microsoft C++ -Compiler (MSVC) erstellt werden, in eine DEF-Datei einfügen, müssen Anwendungen, die mit Ihrer DLL verknüpft werden, auch mit derselben Version von MSVC erstellt werden, sodass die ergänzten Namen in der aufrufenden Anwendung mit den exportierten Namen in der DEF-Datei der dll übereinstimmen.
+Wenn Sie Funktionen in eine C++-Datei exportieren, müssen Sie entweder die dekorierten Namen in die DEF-Datei einfügen oder die exportierten Funktionen unter Verwendung von extern „C“ mit der standardmäßigen C-Bindung definieren. Wenn Sie die dekorierten Namen in der DEF-Datei angeben müssen, können Sie diese mithilfe des Tools [DUMPBIN](../build/reference/dumpbin-reference.md) oder mit der [/MAP](../build/reference/map-generate-mapfile.md)-Linkeroption abrufen. Beachten Sie, dass die vom Compiler erzeugten, ergänzten Namen compilerspezifisch sind. Wenn Sie die vom Microsoft C++-Compiler (MSVC) erzeugten, dekorierten Namen in eine DEF-Datei einfügen, ist es erforderlich, dass Anwendungen, die mit der DLL verknüpft werden, mit derselben Version von MSVC erstellt wurden. Auf diese Weise wird gewährleistet, dass die ergänzten Namen in der aufrufenden Anwendung mit den exportierten Namen in der DEF-Datei der DLL übereinstimmen.
 
 > [!NOTE]
-> Eine mit Visual Studio 2015 entwickelte dll kann von Anwendungen verwendet werden, die mit Visual Studio 2017 oder Visual Studio 2019 erstellt wurden.
+> Eine mit Visual Studio 2015 erstellte DLL kann von Anwendungen verwendet werden, die mit Visual Studio 2017 oder Visual Studio 2019 erstellt wurden.
 
-Wenn Sie eine Erweiterungs- [dll](../build/extension-dlls-overview.md)entwickeln und mithilfe einer DEF-Datei exportieren, platzieren Sie den folgenden Code am Anfang und Ende der Header Dateien, die die exportierten Klassen enthalten:
+Wenn Sie eine [Erweiterungs-DLL](../build/extension-dlls-overview.md) erstellen und den Export über eine DEF-Datei vornehmen, fügen Sie den folgenden Code am Anfang und am Ende der Headerdateien ein, in denen die exportierten Klassen enthalten sind:
 
 ```
 #undef AFX_DATA
@@ -51,40 +51,40 @@ Wenn Sie eine Erweiterungs- [dll](../build/extension-dlls-overview.md)entwickeln
 #define AFX_DATA
 ```
 
-Diese Zeilen stellen sicher, dass MFC-Variablen, die intern verwendet oder den Klassen hinzugefügt werden, von der MFC-Erweiterungs-DLL exportiert (oder importiert) werden. Wenn Sie z. B. eine Klasse mithilfe von `DECLARE_DYNAMIC` ableiten, wird das Makro erweitert und Ihrer Klasse wird eine Membervariable `CRuntimeClass` hinzugefügt. Ohne diese vier Zeilen wird die DLL u. U. nicht einwandfrei kompiliert bzw. verknüpft, oder es tritt ein Fehler auf, wenn die Clientanwendung mit der DLL verknüpft wird.
+Diese Zeilen stellen sicher, dass MFC-Variablen, die intern verwendet bzw. Klassen hinzugefügt werden, von der Erweiterungs-MFC-DLL exportiert (bzw. importiert) werden. Wenn Sie z. B. eine Klasse mithilfe von `DECLARE_DYNAMIC` ableiten, wird das Makro erweitert und Ihrer Klasse wird eine Membervariable `CRuntimeClass` hinzugefügt. Ohne diese vier Zeilen wird die DLL u. U. nicht einwandfrei kompiliert bzw. verknüpft, oder es tritt ein Fehler auf, wenn die Clientanwendung mit der DLL verknüpft wird.
 
-Beim Erstellen der dll verwendet der Linker die DEF-Datei, um eine Exportdatei (. exp) und eine Import Bibliothek (LIB-Datei) zu erstellen. Anschließend verwendet der Linker die Exportdatei zum Erstellen der DLL-Datei. Ausführbare, implizit mit der DLL verknüpfte Dateien werden bei ihrer Erstellung mit der Importbibliothek verknüpft.
+Der Linker verwendet beim Erstellen der DLL die DEF-Datei, um eine Exportdatei (.exp) und eine Importbibliothek (.lib) zu erstellen. Anschließend verwendet der Linker die Exportdatei zum Erstellen der DLL-Datei. Ausführbare, implizit mit der DLL verknüpfte Dateien werden bei ihrer Erstellung mit der Importbibliothek verknüpft.
 
-Beachten Sie, dass MFC selbst DEF-Dateien verwendet, um Funktionen und Klassen aus "MFCx0. dll" zu exportieren.
+Beachten Sie, dass MFC selbst die DEF-Dateien verwendet, um Funktionen und Klassen aus MFCx0.dll zu exportieren.
 
-## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
+## <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
 
-- [Exportieren aus einer DLL mithilfe von __declspec (dllexport)](exporting-from-a-dll-using-declspec-dllexport.md)
+- [Exportieren aus einer DLL mithilfe von „__declspec(dllexport)“](exporting-from-a-dll-using-declspec-dllexport.md)
 
-- [Exportieren und Importieren mithilfe AFX_EXT_CLASS](exporting-and-importing-using-afx-ext-class.md)
+- [Exportieren und Importieren mithilfe von „AFX_EXT_CLASS“](exporting-and-importing-using-afx-ext-class.md)
 
-- [Exportieren C++ von Funktionen zur Verwendung in ausführbaren C-Dateien](exporting-cpp-functions-for-use-in-c-language-executables.md)
+- [Exportieren von C++-Funktionen zur Verwendung in ausführbaren C-Dateien](exporting-cpp-functions-for-use-in-c-language-executables.md)
 
-- [Exportieren von c-Funktionen zur Verwendung in C++ausführbaren c-oder-Programmier Dateien](exporting-c-functions-for-use-in-c-or-cpp-language-executables.md)
+- [Exportieren von C-Funktionen zur Verwendung in ausführbaren C- oder C++-Dateien](exporting-c-functions-for-use-in-c-or-cpp-language-executables.md)
 
-- [Bestimmen der zu verwendenden Export Methode](determining-which-exporting-method-to-use.md)
+- [Festlegen der Exportmethode](determining-which-exporting-method-to-use.md)
 
 - [Importieren in eine Anwendung mithilfe von __declspec(dllimport)](importing-into-an-application-using-declspec-dllimport.md)
 
-- [Initialisieren einer dll](run-time-library-behavior.md#initializing-a-dll)
+- [Initialisieren einer DLL](run-time-library-behavior.md#initializing-a-dll)
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
 - [DEF-Dateien](reference/module-definition-dot-def-files.md)
 
-- [Regeln für Modul Definitions Anweisungen](reference/rules-for-module-definition-statements.md)
+- [Regeln für Moduldefinitionsanweisungen](reference/rules-for-module-definition-statements.md)
 
-- [Ergänzte Namen](reference/decorated-names.md)
+- [Dekorierte Namen](reference/decorated-names.md)
 
 - [Importieren und Exportieren von Inlinefunktionen](importing-and-exporting-inline-functions.md)
 
 - [Gegenseitige Importe](mutual-imports.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Exportieren aus einer DLL](exporting-from-a-dll.md)

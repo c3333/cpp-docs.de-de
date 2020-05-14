@@ -14,7 +14,7 @@ helpviewer_keywords:
 ms.assetid: ebab23c8-6eb8-46f3-b21d-570cd8457a80
 ms.openlocfilehash: 5cf56375df417ac68b3e03d00f2bd7770ee571e8
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857137"
@@ -27,59 +27,59 @@ Eine Funktionsdefinition gibt den Namen der Funktion, die Typen und die Zahl der
 
 *translation-unit*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*external-declaration* <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*translation-unit* *external-declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Übersetzungseinheit* *externe-Deklaration*
 
 *external-declaration*: /\* Nur für externen (Datei-) Bereich zulässig \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*function-definition*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declaration*
 
 *function-definition*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers*<sub>opt</sub> *attribute-seq*<sub>opt</sub> *declarator* *declaration-list*<sub>opt</sub> *compound-statement*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer*<sub>opt</sub> *Attributsequenz*<sub>opt</sub> *Deklarator* *Deklarationsliste*<sub>opt</sub> *compound-Anweisung*
 
-/\* *Attribute-"-* " ist eine Microsoft-spezifische \*/
+/\* *Attributsequenz* ist Microsoft-spezifisch \*/
 
 Prototypparameter sind:
 
 *declaration-specifiers*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*storage-class-specifier* *declaration-specifiers*<sub>opt</sub> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declaration-specifiers*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *declaration-specifiers*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Speicherklassenspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Deklarationsspezifizierer*<sub>opt</sub>
 
 *declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-list* *declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsliste* *Deklaration*
 
 *declarator*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*pointer*<sub>opt</sub> *direct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Zeiger*<sub>opt</sub> *direkter-Deklarator*
 
 *direct-declarator*:/\* Ein Funktionsdeklarator \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator*  **(**  *parameter-type-list*  **)**  /\* Neuer Deklarator \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator*  **(**  *identifier-list*<sub>opt</sub> **)**  /\* Veralteter Deklarator \*/
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator*  **(**  *Parametertypliste*  **)**  /\* Neuer Deklarator \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator*  **(**  *Bezeichnerliste*<sub>opt</sub> **)**  /\* Veralteter Deklarator \*/
 
 Die Parameterliste in einer Definition verwendet diese Syntax:
 
 *parameter-type-list*: /\* Die Parameterliste \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*parameter-list* <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*parameter-list* **, ...**
+&nbsp;&nbsp;&nbsp;&nbsp;*Parameterliste* **, ...**
 
 *parameter-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*parameter-declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*parameter-list* **,**  *parameter-declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Parameterliste* **,**  *Parameterdeklaration*
 
 *parameter-declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers* *declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers* *abstract-declarator*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer* *Deklarator*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer* *abstrakter-Deklarator*<sub>opt</sub>
 
 Die Parameterliste in einer Funktionsdefinition im alten Format verwendet diese Syntax:
 
 *identifier-list*: /\* Verwendet in veralteten Funktionsdefinitionen und Deklarationen \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*identifier*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*identifier-list* **,** *identifier*
+&nbsp;&nbsp;&nbsp;&nbsp;*Bezeichnerliste* **,**  *Bezeichner*
 
 Die Syntax für den Funktionsrumpf lautet:
 
 *compound-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **{** *declaration-list*<sub>opt</sub> *statement-list*<sub>opt</sub> **}**
+&nbsp;&nbsp;&nbsp;&nbsp; **{** *Deklarationsliste*<sub>opt</sub> *Anweisungsliste*<sub>opt</sub> **}**
 
 Die einzigen Speicherklassenspezifizierer, die eine Funktionsdeklaration ändern können, sind **extern** und **static**. Der Bezeichner **extern** gibt an, dass von anderen Dateien auf die Funktion verwiesen werden kann; das bedeutet, der Funktionsname wird in den Linker exportiert. Der **static**-Bezeichner gibt an, dass auf die Funktion nicht von anderen Dateien verwiesen werden kann, d.h., der Name wird nicht vom Linker exportiert. Wenn keine Speicherklasse in einer Funktionsdefinition steht, wird **extern** angenommen. In jedem Fall ist die Funktion stets vom Definitionspunkt bis an das Ende der Datei sichtbar.
 

@@ -1,5 +1,5 @@
 ---
-title: C- C++ und ganzzahlige Limits
+title: Integer-Grenzwerte in C und C++
 ms.date: 10/21/2019
 helpviewer_keywords:
 - limits, integer
@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: 0c23cbd6-29fb-4d9c-b689-5984e19748de
 ms.openlocfilehash: 6940f36e37ec58ca8fe23c9062928cbf90b125bd
 ms.sourcegitcommit: ea9d78dbb93bf3f8841dde93dbc12bd66f6f32ff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/22/2019
 ms.locfileid: "72778375"
 ---
-# <a name="c-and-c-integer-limits"></a>C- C++ und ganzzahlige Limits
+# <a name="c-and-c-integer-limits"></a>Integer-Grenzwerte in C und C++
 
 **Microsoft-spezifisch**
 
-Die Grenzwerte für ganzzahlige Typen C++ in C und sind in der folgenden Tabelle aufgeführt. Diese Grenzwerte werden in der C-Standard Header Datei `<limits.h>` definiert. Der C++ Standard Bibliotheks Header `<limits>` enthält `<climits>`, der `<limits.h>` enthält.
+Die Grenzwerte für Integer-Datentypen in C und C++ sind in der folgenden Tabelle aufgeführt. Diese Grenzwerte werden in der Standardheaderdatei `<limits.h>` definiert. Der C++-Standardbibliotheksheader `<limits>` enthält `<climits>`, worin `<limits.h>` enthalten ist.
 
-Microsoft C gestattet auch die Deklaration von ganz Zahl Variablen mit Größenangabe, bei denen es sich um ganzzahlige Typen der Größe 8-, 16-, 32-oder 64-Bits handelt. Weitere Informationen zu Größen Ganzzahlen in C finden Sie unter [Integer Integer Types](../c-language/c-sized-integer-types.md).
+Microsoft C ermöglicht zudem die Deklaration von Variablen für ganze Zahlen mit angegebener Größe, die integrale Typen der Größe 8-, 16-, 32- oder 64-Bit sind. Weitere Informationen über ganze Zahlen mit angepasster Größe in C finden Sie unter [Integer-Datentypen mit angegebener Größe](../c-language/c-sized-integer-types.md).
 
 ## <a name="limits-on-integer-constants"></a>Grenzwerte für ganzzahlige Konstanten
 
@@ -41,9 +41,9 @@ Microsoft C gestattet auch die Deklaration von ganz Zahl Variablen mit Größena
 |**LONG_MIN**|Minimalwert für eine Variable vom Typ **long**.|-2147483647 - 1|
 |**LONG_MAX**|Maximalwert für eine Variable vom Typ **long**.|2147483647|
 |**ULONG_MAX**|Maximalwert für eine Variable vom Typ **unsigned long**.|4294967295 (0xffffffff)|
-|**LLONG_MIN**|Minimalwert für eine Variable vom Typ **Long Long**.|-9.223.372.036.854.775.807-1|
-|**LLONG_MAX**|Maximalwert für eine Variable vom Typ **Long Long**.|9,223,372,036,854,775,807|
-|**ULLONG_MAX**|Maximalwert für eine Variable vom Typ " **Ganzzahl ohne Vorzeichen long long**".|18446744073709551615 (0xFFFFFFFFFFFFFFFF)|
+|**LLONG_MIN**|Minimalwert für eine Variable vom Typ **long long**.|-9,223,372,036,854,775,807 - 1|
+|**LLONG_MAX**|Maximalwert für eine Variable vom Typ **long long**.|9,223,372,036,854,775,807|
+|**ULLONG_MAX**|Maximalwert für eine Variable vom Typ **unsigned long long**.|18,446,744,073,709,551,615 (0xffffffffffffffff)|
 
 Wenn ein Wert die größte Ganzzahldarstellung übersteigt, generiert der Microsoft-Compiler einen Fehler.
 

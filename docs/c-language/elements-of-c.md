@@ -7,7 +7,7 @@ helpviewer_keywords:
 ms.assetid: 20668a49-cab7-4153-a6d9-7439aac3ff3b
 ms.openlocfilehash: 52b20c5a8eccbf9e8a87cfa7e8fb01da846153d8
 ms.sourcegitcommit: ea9d78dbb93bf3f8841dde93dbc12bd66f6f32ff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/22/2019
 ms.locfileid: "72778450"
@@ -20,13 +20,13 @@ In diesem Abschnitt wird beschrieben, wie Token definiert und vom Compiler ausge
 
 Die folgenden Themen werden erörtert:
 
-- [Tokens (Tokens)](../c-language/c-tokens.md)
+- [Token](../c-language/c-tokens.md)
 
 - [Kommentare](../c-language/c-comments.md)
 
-- [Stichwörter](../c-language/c-keywords.md)
+- [Schlüsselwörter](../c-language/c-keywords.md)
 
-- [Identifiers (Bezeichner)](../c-language/c-identifiers.md)
+- [Bezeichner](../c-language/c-identifiers.md)
 
 - [Konstanten](../c-language/c-constants.md)
 
@@ -34,7 +34,7 @@ Die folgenden Themen werden erörtert:
 
 - [Interpunktions- und Sonderzeichen](../c-language/punctuation-and-special-characters.md)
 
-Der Abschnitt enthält auch Referenztabellen für [Trigraphen](../c-language/trigraphs.md), [Grenzwerte für Gleit Komma Konstanten](../c-language/limits-on-floating-point-constants.md), [C- C++ und ganzzahlige Grenzwerte](../c-language/cpp-integer-limits.md)und Escapesequenzen [.](../c-language/escape-sequences.md)
+Dieser Abschnitt enthält ebenfalls Referenztabellen für [Trigraphen](../c-language/trigraphs.md), [Grenzwerte für Gleitkommakonstanten](../c-language/limits-on-floating-point-constants.md), [Ganzzahlige Grenzen in C und C++](../c-language/cpp-integer-limits.md) und [Escapesequenzen](../c-language/escape-sequences.md).
 
 Operatoren sind Symbole (sowohl einzelne Zeichen als auch Zeichenkombinationen), die angeben, wie Werte bearbeitet werden sollen. Jedes Symbol wird als einzelne Einheit interpretiert, die als Token bezeichnet wird. Weitere Informationen finden Sie unter [Operatoren](../c-language/c-operators.md).
 

@@ -10,17 +10,17 @@ helpviewer_keywords:
 - function calls, arguments
 ms.assetid: 14cf0389-2265-41f0-9a96-f2223eb406ca
 ms.openlocfilehash: e60a7935cdddc116848b64461b064c5fd5cdd00a
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62313517"
 ---
 # <a name="arguments"></a>Argumente
 
 Die Argumente in einem Funktionsaufruf haben folgendes Format:
 
-> *expression* **(** *expression-list*<SUB>opt</SUB> **)** /*Funktionsaufruf*/
+> *Ausdruck* **(** *Ausdrucksliste*<SUB>opt</SUB> **)**  /* Funktionsaufruf */
 
 In einem Funktionsaufruf ist *expression-list* eine Liste von Ausdrücken (durch Kommas getrennt). Die Werte dieser letzten Ausdrücke sind die Argumente, die an die Funktion übergeben werden. Wenn die Funktion keine Argumente akzeptiert, sollte *expression-list* das Schlüsselwort `void` enthalten.
 

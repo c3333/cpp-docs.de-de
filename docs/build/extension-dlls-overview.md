@@ -17,15 +17,15 @@ ms.locfileid: "65221369"
 ---
 # <a name="mfc-extension-dlls-overview"></a>MFC-Erweiterungs-DLLs: Übersicht
 
-Eine MFC-Erweiterungs-DLL ist eine DLL, in der Regel wiederverwendbare von bestehenden Microsoft Foundation Class Library-Klassen abgeleitete Klassen implementiert. MFC-Erweiterungs-DLLs werden mit der Dynamic Link Library-Version von MFC (auch bekannt als die freigegebene Version von MFC) erstellt. MFC-Dateien (entweder Anwendungen oder regulären MFC-DLLs), die mit die freigegebene Version von MFC integriert sind, können eine MFC-Erweiterungs-DLL. Mit einer MFC-Erweiterungs-DLL können Sie neue benutzerdefinierte Klassen von MFC ableiten und dann anbieten dieser erweiterte Version von MFC für Anwendungen, die die DLL aufrufen.
+Eine MFC-Erweiterungs-DLL ist eine DLL, die typischerweise wiederverwendbare Klassen implementiert, die von bestehenden Klassen aus der Microsoft Foundation Class-Bibliothek abgeleitet wurden. MFC-Erweiterungs-DLLs werden mithilfe der DLL-Version von MFC erstellt (auch als freigegebene Version von MFC bekannt). Eine MFC-Erweiterungs-DLL kann ausschließlich von ausführbaren MFC-Dateien (entweder Anwendungen oder reguläre MFC-DLLs) verwendet werden, die mit der freigegebenen Version von MFC erstellt wurden. Mit einer MFC-Erweiterungs-DLL können Sie neue benutzerdefinierte Klassen von MFC ableiten und diese erweiterte MFC-Version anschließend Anwendungen zur Verfügung stellen, die die DLL aufrufen.
 
-Erweiterungs-DLLs können auch dazu verwendet werden, von MFC abgeleitete Objekte zwischen Anwendung und DLL zu übergeben. Die dem übergebenen Objekt zugeordneten Memberfunktionen befinden sich in dem Modul, in dem das Objekt erstellt wurde. Da diese Funktionen bei Verwendung der freigegebene DLL-Version von MFC ordnungsgemäß exportiert werden, können Sie kostenlos MFC übergeben oder Zeiger von MFC abgeleitete Objekte zwischen einer Anwendung und der MFC-Erweiterungs-DLLs geladen.
+Erweiterungs-DLLs können auch dazu verwendet werden, von MFC abgeleitete Objekte zwischen Anwendung und DLL zu übergeben. Die dem übergebenen Objekt zugeordneten Memberfunktionen befinden sich in dem Modul, in dem das Objekt erstellt wurde. Da diese Funktionen bei Verwendung der freigegebenen DLL-Version von MFC ordnungsgemäß exportiert werden, können problemlos Zeiger auf MFC-Objekte oder auf von MFC abgeleitete Objekte zwischen einer Anwendung und den von ihr geladenen MFC-Erweiterungs-DLLs übergeben werden.
 
-Ein Beispiel für eine DLL, die die grundlegenden Voraussetzungen für eine MFC-Erweiterungs-DLL erfüllt, finden Sie im MFC-Beispiel [DLLHUSK](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/advanced/dllhusk). Betrachten Sie insbesondere die Testdll1.cpp und Testdll2.cpp-Dateien.
+Ein Beispiel für eine DLL, die die grundlegenden Anforderungen an eine MFC-Erweiterungs-DLL erfüllt, finden Sie im MFC-Beispiel [DLLHUSK](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/advanced/dllhusk). Sehen Sie sich insbesondere die Dateien „Testdll1.cpp“ und „Testdll2.cpp“ an.
 
 ## <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
 
-- [MFC-Erweiterungs-DLLs initialisieren](run-time-library-behavior.md#initializing-extension-dlls)
+- [Initialisieren von MFC-Erweiterungs-DLLs](run-time-library-behavior.md#initializing-extension-dlls)
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
@@ -39,7 +39,7 @@ Ein Beispiel für eine DLL, die die grundlegenden Voraussetzungen für eine MFC-
 
 - [Reguläre, dynamisch mit MFC verknüpfte MFC-DLLs](regular-dlls-dynamically-linked-to-mfc.md)
 
-- [Erstellen eine MFC-DLL](../mfc/reference/mfc-dll-wizard.md)
+- [Erstellen einer MFC-DLL](../mfc/reference/mfc-dll-wizard.md)
 
 ## <a name="see-also"></a>Siehe auch
 

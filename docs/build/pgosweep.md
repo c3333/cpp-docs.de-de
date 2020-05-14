@@ -7,50 +7,50 @@ helpviewer_keywords:
 ms.assetid: f39dd3b7-1cd9-4c3b-8e8b-fb794744b757
 ms.openlocfilehash: 3ba31671fc3794e1cc959d86d914ba1eef2e01e4
 ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/24/2019
 ms.locfileid: "64341196"
 ---
 # <a name="pgosweep"></a>pgosweep
 
-Verwendet in der profilgesteuerten Optimierung ein, um alle Profildaten aus einem ausgeführten Programm der PGC-Datei zu schreiben.
+Wird in der profilgesteuerte Optimierung verwendet, um alle Profildaten aus einem laufenden Programm in die PGC-Datei zu schreiben
 
 ## <a name="syntax"></a>Syntax
 
-> **Pgosweep** [*Optionen*] *Image* *Pgcfile*
+> **pgosweep** [*Optionen*] *Image-* *pgc-Datei*
 
 ### <a name="parameters"></a>Parameter
 
 *options*<br/>
-(Optional) Die gültigen Werte für *Optionen* sind:
+(Optional) Die gültigen Werte für die *Optionen* lauten wie folgt:
 
-- **/?** oder **/help** zeigt die hilfemeldung an.
+- **/?** oder **/help** zeigt die Hilfemeldung an.
 
-- **/ noreset** behält die Anzahl die in die Common Language Runtime-Datenstrukturen.
+- **/noreset** behält die Anzahl in den Laufzeitdatenstrukturen bei.
 
-*image*<br/>
-Den vollständigen Pfad einer .exe oder .dll-Datei, die mithilfe der [/genprofile](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md), [/fastgenprofile](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md), oder [/LTCG: PGINSTRUMENT](reference/ltcg-link-time-code-generation.md) Option.
+*Bild*<br/>
+Der vollständiger Pfad einer EXE- oder DLL-Datei, die mithilfe der Option [/GENPROFILE](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md), [/FASTGENPROFILE](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md) oder [/LTCG:PGINSTRUMENT](reference/ltcg-link-time-code-generation.md) erstellt wurde
 
 *pgcfile*<br/>
-Die .pgc-Datei, in dem dieser Befehl die Daten Anzahl schreibt.
+Die PGC-Datei, in der dieser Befehl die Datenanzahl ausgibt
 
 ## <a name="remarks"></a>Hinweise
 
-Die **Pgosweep** Befehl funktioniert in Programmen, die mithilfe von erstellt wurden die [/genprofile oder/fastgenprofile](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md) Option oder der veralteten [/LTCG: PGINSTRUMENT](reference/ltcg-link-time-code-generation.md) Option. Es ein ausgeführtes Programm unterbricht und schreibt die Profildaten zu einer neuen PGC-Datei. Standardmäßig setzt der Befehl die Anzahl nach jedem Schreibvorgang zurück. Bei Angabe der **/noreset** -Option der Befehl Notieren Sie die Werte, aber nicht in das aktive Programm zurücksetzen. Diese Option erhalten Sie doppelte Daten, wenn Sie die Profildaten später abrufen.
+Der **pgosweep**-Befehl funktioniert für Programme, die mit der Option [/GENPROFILE oder /FASTGENPROFILE](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md) oder der veralteten [/LTCG:PGINSTRUMENT](reference/ltcg-link-time-code-generation.md)-Option erstellt wurden. Durch den Befehl wird ein Programm unterbrochen und Profildaten in eine neue PGC-Datei geschrieben. Standardmäßig setzt der Befehl die Anzahl nach jedem Schreibvorgang zurück. Wenn Sie die **/noreset**-Option angeben, werden die Werte vom Befehl aufgezeichnet, aber nicht im laufenden Programm zurückgesetzt. Mit dieser Option erhalten Sie doppelte Daten, wenn Sie die Profildaten zu einem späteren Zeitpunkt abrufen.
 
-Eine alternative Verwendung für **Pgosweep** besteht darin, Informationen zum Profil nur für den normalen Betrieb der Anwendung abzurufen. Sie können z. B. ausführen **Pgosweep** in Kürze zur Verfügung, nachdem Sie die Anwendung zu starten, und verwerfen die Datei. Dadurch würde Startkosten zugeordnete Profildaten entfernt. Sie können dann ausführen **Pgosweep** vor dem Beenden der Anwendung. Die gesammelten Daten verfügt nun über Profilinformationen nur ab dem Zeitpunkt, dass der Benutzer mit dem Programm interagieren kann.
+Eine Alternative zu **pgosweep** besteht darin, Profilinformationen nur für den normalen Anwendungsbetrieb abzurufen. Sie können beispielsweise **pgosweep** kurz nach Start der Anwendung ausführen und die Datei verwerfen. Dadurch werden die mit den Startkosten zugeordneten Profildaten entfernt. Anschließend können Sie **pgosweep** ausführen, bevor Sie die Anwendung beenden. Die gesammelten Daten verfügen dann nur über die Profilinformationen aus der Zeit, in der der Benutzer mit dem Programm interagieren konnte.
 
-Wenn Sie eine PGC-Datei benennen (mithilfe der *Pgcfile* Parameter) können Sie das Standardformat, handelt es sich *Appname! n*.pgc. Wenn Sie dieses Format verwenden, sucht der Compiler automatisch diese Daten in die **/LTCG/USERPROFILE angegeben** oder **/LTCG: PGO** Phase. Wenn Sie das Standardformat nicht verwenden, müssen Sie verwenden ["pgomgr"](pgomgr.md) die PGC-Dateien zusammenführen.
+Wenn Sie eine PGC-Datei benennen (mithilfe des *pgcfile*-Parameters), können Sie das Standardformat *appname!n*.pgc verwenden. Wenn Sie dieses Format verwenden, sucht der Compiler automatisch nach diesen Daten in der Phase **/LTCG /USEPROFILE** oder **/LTCG:PGO**. Wenn Sie das Standardformat nicht verwenden, müssen Sie [pgomgr](pgomgr.md) verwenden, um die PGC-Dateien zusammenzuführen.
 
 > [!NOTE]
-> Sie können dieses Tool nur von Visual Studio Developer-Eingabeaufforderung starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
+> Sie können dieses Tool nur über eine Visual Studio-Developer-Eingabeaufforderung starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
 
-Informationen zum Erfassen der Profildaten aus innerhalb der ausführbaren Datei, finden Sie unter ["PgoAutoSweep"](pgoautosweep.md).
+Informationen zum Erfassen der Profildaten in der ausführbaren Datei finden Sie unter [PgoAutoSweep](pgoautosweep.md).
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispielbefehl **Pgosweep** schreibt die aktuellen Profilinformationen für myapp.exe in MyApp! 1.pgc.
+In diesem Beispielbefehl werden von **pgosweep** die aktuellen Profilinformationen für „myapp.exe“ in „myapp!1.pgc“ geschrieben.
 
 `pgosweep myapp.exe myapp!1.pgc`
 

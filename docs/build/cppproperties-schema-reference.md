@@ -5,14 +5,14 @@ helpviewer_keywords:
 - CppProperties.json file [C++]
 ms.openlocfilehash: be6db52e1e62244e9f44db8ac86238242ab50ca0
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81328717"
 ---
 # <a name="cpppropertiesjson-reference"></a>CppProperties.json-Referenz
 
-Open Folder-Projekte, die CMake nicht verwenden, können Projektkonfigurationseinstellungen für IntelliSense in einer *CppProperties.json-Datei* speichern. (CMake-Projekte verwenden eine [CMakeSettings.json-Datei.)](customize-cmake-settings.md) Eine Konfiguration besteht aus Namen/Wert-Paaren und definiert #include Pfade, Compiler-Switches und andere Parameter. Weitere Informationen zum Hinzufügen von Konfigurationen in einem Projekt für offene Ordner finden Sie unter [Open Folder-Projekte für C++.](open-folder-projects-cpp.md) In den folgenden Abschnitten werden die verschiedenen Einstellungen zusammengefasst. Navigieren Sie zu *CppProperties_schema.json*, dessen vollständiger Pfad oben im Codeeditor angegeben wird, wenn *CppProperties.json* geöffnet ist.
+„Ordner öffnen“-Projekte, die CMake nicht verwenden, können Projektkonfigurationseinstellungen für IntelliSense in einer *CppProperties.json*-Datei speichern. (CMake-Projekte verwenden eine [CMakeSettings.json](customize-cmake-settings.md)-Datei.) Eine Konfiguration besteht aus Name/Wert-Paaren und definiert #include-Pfade, Compileroptionen und andere Parameter. Weitere Informationen zum Hinzufügen von Konfigurationen in einem „Ordner öffnen“-Projekt finden Sie unter [„Ordner öffnen“-Projekte für C++](open-folder-projects-cpp.md). In den folgenden Abschnitten werden die verschiedenen Einstellungen zusammengefasst. Navigieren Sie für eine vollständige Beschreibung des Schemas zu *CppProperties_schema.json*, wo am Anfang des Code-Editors der vollständige Pfad angezeigt wird, wenn die *CppProperties.json*-Datei geöffnet ist.
 
 ## <a name="configuration-properties"></a>Konfigurationseigenschaften
 
@@ -20,23 +20,23 @@ Eine Konfiguration kann folgende Eigenschaften aufweisen:
 
 |||
 |-|-|
-|`inheritEnvironments`| Gibt an, welche Umgebungen für diese Konfiguration gelten.|
-|`name`|Der Konfigurationsname, der in der Dropdown-Liste der C++-Konfiguration angezeigt wird|
-|`includePath`|Eine durch Kommas getrennte Liste von Ordnern, die im Include-Pfad angegeben werden sollen (Zuordnungen zu /I für die meisten Compiler)|
+|`inheritEnvironments`| Hiermit wird angegeben, für welche Umgebungen diese Konfiguration gilt.|
+|`name`|Dies ist der Konfigurationsname, der im Dropdownmenü für die C++-Konfiguration angezeigt wird.|
+|`includePath`|Dies ist die durch Trennzeichen getrennte Ordnerliste, die im Includepfad angegeben sein sollte (entspricht bei den meisten Compilern „/I“)|
 |`defines`|Die Liste der Makros, die definiert sein sollten (entspricht bei den meisten Compilern /D)|
 |`compilerSwitches`|Eine oder mehrere zusätzliche Optionen, die das Verhalten von IntelliSense beeinflussen können|
 |`forcedInclude`|Ein Header, der automatisch in jede Kompilierungseinheit eingefügt wird (entspricht /FI bei MSVC oder -include bei Clang)|
 |`undefines`|Die Liste der Makros, die nicht definiert sind (entspricht /U bei MSVC)|
-|`intelliSenseMode`|Die zu verwendende IntelliSense-Engine Sie können eine der vordefinierten architekturspezifischen Varianten für MSVC, gcc oder Clang angeben.|
-|`environments`|Benutzerdefinierte Sätze von Variablen, die sich wie Umgebungsvariablen in einer Eingabeaufforderung\< verhalten und auf die mit dem Befehlsaufforderung zugegriffen wird. VARIABLE>-Makro.|
+|`intelliSenseMode`|Die zu verwendende IntelliSense-Engine Sie können eine der vordefinierten, architekturspezifischen Varianten für MSVC, GCC oder Clang angeben.|
+|`environments`|Dies sind die benutzerdefinierten Variablen, die sich wie Umgebungsvariablen in einer Eingabeaufforderung verhalten und auf die über das Makro „${env.\<VARIABLE>}“ zugegriffen wird.|
 
 ### <a name="intellisensemode-values"></a>intelliSenseMode-Werte
 
 Der Code-Editor zeigt die verfügbaren Optionen an, wenn Sie mit der Eingabe beginnen:
 
-![Öffnen von Ordner IntelliSense](media/open-folder-intellisense-mode.png "Öffnen von Ordner IntelliSense")
+![IntelliSense: „Ordner öffnen“](media/open-folder-intellisense-mode.png "IntelliSense: „Ordner öffnen“")
 
-Dies sind die unterstützten Werte:
+Die folgenden Werte werden unterstützt:
 
 - windows-msvc-x86
 - windows-msvc-x64
@@ -58,13 +58,13 @@ Dies sind die unterstützten Werte:
 - linux-gcc-x64
 - linux-gcc-arm
 
-Hinweis: Die `msvc-x86` `msvc-x64` Werte werden nur aus Älterengründen unterstützt. Verwenden `windows-msvc-*` Sie stattdessen die Varianten.
+Hinweis: Die Werte `msvc-x86` und `msvc-x64` werden nur aus Legacygründen unterstützt. Verwenden Sie stattdessen die `windows-msvc-*`-Varianten.
 
 ## <a name="pre-defined-environments"></a>Vordefinierte Umgebungen
 
-Visual Studio stellt die folgenden vordefinierten Umgebungen für Microsoft C++ bereit, die der entsprechenden Entwicklereingabeaufforderung zugeordnet sind. Wenn Sie eine dieser Umgebungen erben, können Sie auf eine der Umgebungsvariablen verweisen, indem Sie die globale Eigenschaft `env` mit dieser Makrosyntax verwenden:\< VARIABLE>.
+Visual Studio bietet die folgenden vordefinierten Umgebungen für Microsoft C++, die der entsprechenden Developer-Eingabeaufforderung zugeordnet sind. Wenn Sie eine dieser Umgebungen erben, können Sie auf jede Umgebungsvariable verweisen, indem Sie die globale Eigenschaft `env` mit der folgenden Makrosyntax verwenden: ${env.\<VARIABLE>}.
 
-|Variablenname|BESCHREIBUNG|
+|Variablenname|Beschreibung|
 |-----------|-----------------|
 |vsdev|Die Standardumgebung von Visual Studio|
 |msvc_x86|Kompiliert mithilfe von x86-Tools für x86|
@@ -77,19 +77,19 @@ Visual Studio stellt die folgenden vordefinierten Umgebungen für Microsoft C++ 
 
 Wenn die Linux-Workload installiert ist, können folgende Umgebungen verwendet werden, um Linux und WSL remote anzuzielen:
 
-|Variablenname|BESCHREIBUNG|
+|Variablenname|Beschreibung|
 |-----------|-----------------|
 |linux_x86|Hiermit wird x86 Linux als Remotezielversion festgelegt.|
 |linux_x64|Hiermit wird x64 Linux als Remotezielversion festgelegt.|
 |linux_arm|Hiermit wird ARM Linux als Remotezielversion festgelegt.|
 
-## <a name="user-defined-environments"></a><a name="user_defined_environments"></a>Benutzerdefinierte Umgebungen
+## <a name="user-defined-environments"></a><a name="user_defined_environments"></a> Benutzerdefinierte Umgebungen
 
-Sie können die `environments` Eigenschaft optional verwenden, um Variablensätze in *CppProperties.json* entweder global oder pro Konfiguration zu definieren. Diese Variablen verhalten sich wie Umgebungsvariablen im Kontext eines Open Folder-Projekts\< und können mit dem Projekt .env aufgerufen werden. VARIABLE>-Syntax von *tasks.vs.json* und *launch.vs.json,* nachdem sie hier definiert wurden. Sie werden jedoch nicht unbedingt als tatsächliche Umgebungsvariablen in jeder Eingabeaufforderung festgelegt, die Visual Studio intern verwendet.
+Optional können Sie die `environments`-Eigenschaft verwenden, um Variablen in *CppProperties.json* entweder global oder pro Konfiguration zu definieren. Diese Variablen verhalten sich wie Umgebungsvariablen im Kontext eines „Ordner öffnen“-Projekts. Auf diese kann über die ${env.\<VARIABLE>}-Syntax von *tasks.vs.json* und *launch.vs.json* nach deren Definition zugegriffen werden. Allerdings werden sie in einer Eingabeaufforderung, die Visual Studio intern verwendet, nicht notwendigerweise als tatsächliche Umgebungsvariablen festgelegt.
 
-**Visual Studio 2019 Version 16.4 und höher:** Konfigurationsspezifische Variablen, die in *CppProperties.json* definiert sind, werden automatisch `inheritEnvironments`von Debugzielen und -aufgaben erfasst, ohne dass festgelegt werden muss. Debugziele werden automatisch mit der Umgebung gestartet, die Sie in *CppProperties.json*angeben.
+**Visual Studio 2019, Version 16.4 und höher:** Konfigurationsspezifische Variablen, die in *CppProperties.json* definiert sind, werden automatisch durch Debugziele und Aufgaben abgerufen, ohne dass `inheritEnvironments` festgelegt werden muss. Debugziele werden automatisch mit der von Ihnen in *CppProperties.json* angegebenen Umgebung gestartet.
 
-**Visual Studio 2019 Version 16.3 und früher:** Wenn Sie eine Umgebung verwenden, müssen Sie `inheritsEnvironments` sie in der Eigenschaft angeben, auch wenn die Umgebung als Teil derselben Konfiguration definiert ist. Die `environment` Eigenschaft gibt den Namen der Umgebung an. Das folgende Beispiel zeigt eine Beispielkonfiguration zum Aktivieren von IntelliSense für GCC in einer MSYS2-Installation. Beachten Sie, wie die Konfiguration die `mingw_64` Umgebung definiert `includePath` und erbt `INCLUDE` und wie die Eigenschaft auf die Variable zugreifen kann.
+**Visual Studio 2019, Version 16.3 und früher:** Wenn Sie eine Umgebung nutzen, müssen Sie diese in der `inheritsEnvironments`-Eigenschaft angeben, auch wenn die Umgebung als Teil derselben Konfiguration definiert ist. Die `environment`-Eigenschaft gibt den Namen der Umgebung an. Das folgende Beispiel zeigt eine Beispielkonfiguration zum Aktivieren von IntelliSense für GCC in einer MSYS2-Installation. Beachten Sie, dass die Konfiguration sowohl die `mingw_64`-Umgebung definiert als auch erbt und wie die `includePath`-Eigenschaft auf die `INCLUDE`-Variable zugreifen kann.
 
 ```json
 "configurations": [
@@ -119,21 +119,21 @@ Sie können die `environments` Eigenschaft optional verwenden, um Variablensätz
   ]
 ```
 
-Wenn Sie eine **Environments-Eigenschaft** innerhalb einer Konfiguration definieren, werden alle globalen Variablen mit demselben Namen überschrieben.
+Wenn Sie eine **Umgebungseigenschaft** innerhalb einer Konfiguration definieren, werden alle globalen Variablen mit demselben Namen überschrieben.
 
 ## <a name="built-in-macros"></a>Integrierte Makros
 
-Sie haben Zugriff auf die folgenden integrierten Makros in *CppProperties.json:*
+Sie können auf die folgenden integrierten Makros innerhalb von *CppProperties.json* zugreifen:
 
 |||
 |-|-|
-|`${workspaceRoot}`| Der vollständige Pfad zum Arbeitsbereichsordner|
-|`${projectRoot}`| Der vollständige Pfad zu dem Ordner, in dem *CppProperties.json* platziert wird|
-|`${env.vsInstallDir}`| Der vollständige Pfad zu dem Ordner, in dem die ausgeführte Instanz von Visual Studio installiert ist|
+|`${workspaceRoot}`| den vollständigen Pfad zum Arbeitsbereichordner|
+|`${projectRoot}`| den vollständigen Pfad zum Ordner von *CppProperties.json*|
+|`${env.vsInstallDir}`| den vollständigen Pfad zum Ordner, in dem die ausgeführte Instanz von Visual Studio installiert ist|
 
 ### <a name="example"></a>Beispiel
 
-Wenn Ihr Projekt über einen Include-Ordner verfügt und auch *windows.h* und andere allgemeine Header aus dem Windows SDK enthält, sollten Sie Ihre *CppProperties.json-Konfigurationsdatei* mit den folgenden Optionen aktualisieren:
+Wenn in Ihrem Projekt ein Includeordner sowie *windows.h* und andere allgemeine Header des Windows SDK vorhanden sind, sollten Sie die Konfigurationsdatei *CppProperties.json* mit folgenden Includeelementen aktualisieren:
 
 ```json
 {
@@ -160,10 +160,10 @@ Wenn Ihr Projekt über einen Include-Ordner verfügt und auch *windows.h* und an
 
 ## <a name="troubleshoot-intellisense-errors"></a>Problembehandlung für IntelliSense-Fehler
 
-Wenn sie den erwarteten IntelliSense nicht sehen, können Sie die Problembehandlung beheben, indem Sie zu **Tools** > **Options** > **Text Editor** > **C/C++** > **Advanced** gehen und die **Option Protokollierung** **auf true**aktivieren festlegen. Versuchen Sie zunächst, **die Protokollierungsebene** auf 5 und die **Protokollierungsfilter** auf 8 festzulegen.
+Wenn IntelliSense nicht so angezeigt wird, wie Sie es erwarten, können Sie ein Troubleshooting durchführen, indem Sie auf **Extras** > **Optionen** > **Text-Editor** > **C/C++**  > **Erweitert** klicken und **Protokollierung aktivieren** auf **True** festlegen. Versuchen Sie für den Beginn, den **Protokolliergrad** auf 5 und die **Protokollierungsfilter** auf 8 festzulegen.
 
 ![Diagnoseprotokollierung](media/diagnostic-logging.png)
 
-Die Ausgabe wird an das **Ausgabefenster** gepipetiert und ist sichtbar, wenn Sie **Ausgabe anzeigen aus: Visual C++ Log**auswählen. Die Ausgabe enthält unter anderem die Liste der tatsächlichen Includepfade, die IntelliSense zu verwenden versucht. Wenn die Pfade nicht mit denen in *CppProperties.json*übereinstimmen, versuchen Sie, den Ordner zu schließen und den *Unterordner .vs* zu löschen, der zwischengespeicherte Browserdaten enthält.
+Die Ausgabe wird an das **Ausgabefenster** weitergeleitet und ist sichtbar, wenn Sie auf die Option **Ausgabe anzeigen von: Visual C++-Protokoll** klicken. Die Ausgabe enthält u. a. die Liste der tatsächlichen Includepfade, die IntelliSense versucht zu verwenden. Wenn die Pfade nicht mit denen in der Datei *CppProperties.json* übereinstimmen, versuchen Sie, den Ordner zu schließen und den Unterordner *.vs* zu löschen, der die zwischengespeicherten Browserdaten enthält.
 
 Wenn Sie IntelliSense-Fehler beheben möchten, die von fehlenden Includepfaden verursacht wurden, öffnen Sie die **Fehlerliste**, und filtern Sie deren Ausgabe nach „Nur IntelliSense“ und dem Fehlercode E1696 „Die Datei ‚Dateiname‘ kann nicht geöffnet werden“.

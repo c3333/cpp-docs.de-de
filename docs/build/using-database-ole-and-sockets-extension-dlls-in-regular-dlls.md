@@ -1,5 +1,5 @@
 ---
-title: Verwenden von Datenbank-, OLE- und Sockets-MFC-Erweiterungs-DLLs in regulären MFC-DLLs
+title: Verwenden von MFC-Erweiterungs-DLLs für Datenbanken, OLE und Sockets in regulären MFC-DLLs
 ms.date: 11/04/2016
 helpviewer_keywords:
 - DLLs [C++], initializing
@@ -8,58 +8,58 @@ helpviewer_keywords:
 ms.assetid: 9f1d14a7-9e2a-4760-b3b6-db014fcdb7ff
 ms.openlocfilehash: d08822a04abe5a01883ad8aa1bd6d94269e810cc
 ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62314688"
 ---
-# <a name="using-database-ole-and-sockets-mfc-extension-dlls-in-regular-mfc-dlls"></a>Verwenden von Datenbank-, OLE- und Sockets-MFC-Erweiterungs-DLLs in regulären MFC-DLLs
+# <a name="using-database-ole-and-sockets-mfc-extension-dlls-in-regular-mfc-dlls"></a>Verwenden von MFC-Erweiterungs-DLLs für Datenbanken, OLE und Sockets in regulären MFC-DLLs
 
-Beim eine MFC-Erweiterungs-DLL aus einer regulären MFC-DLL zu verwenden, wenn die MFC-Erweiterungs-DLL nicht in einer drahtgebundenen der **CDynLinkLibrary** Kette Objekt von der regulären MFC DLL, die Sie in mindestens einer Gruppe von verwandten Problemen ausführen können. Da die Debugversionen der MFC-Datenbank-, OLE- und Sockets unterstützt DLLs werden als MFC-Erweiterungs-DLLs implementiert, werden möglicherweise angezeigt verfügt über ähnliche Probleme, wenn Sie diese MFC verwenden, auch wenn Sie nicht explizit eine eigene MFC-Erweiterungs-DLLs verwenden werden. Einige Symptome sind:
+Wenn Sie eine MFC-Erweiterungs-DLL aus einer regulären MFC-DLL verwenden und die MFC-Erweiterungs-DLL nicht mit der **CDynLinkLibrary**-Objektkette der regulären MFC-DLL verbunden ist, kann es vorkommen, dass ein oder mehrere dadurch begründete Probleme auftreten. Da die Debugversionen der MFC-Unterstützungs-DLLs für Datenbanken, OLE und Sockets als MFC-Erweiterungs-DLLs implementiert werden, treten bei Verwendung dieser MFC-Features möglicherweise selbst dann ähnliche Probleme auf, wenn Sie nicht explizit eine Ihrer eigenen MFC-Erweiterungs-DLLs verwenden. Dies sind einige Anzeichen:
 
-- Wenn in der MFC-Erweiterungs-DLL, die Nachricht definiert ein Objekt eines Typs der Klasse zu deserialisieren versucht, "Warnung: CYourClass kann nicht aus dem Archiv geladen werden. Klasse nicht definiert". wird im Debugfenster ABLAUFVERFOLGUNG und das Objekt kann nicht serialisiert.
+- Beim Deserialisieren eines Objekts eines Klassentyps, der in der MFC-Erweiterungs-DLL definiert ist, wird die Meldung "Warning: Cannot load CYourClass from archive. Class not defined." (Warnung: CYourClass konnte nicht aus dem Archiv geladen werden. Die Klasse ist nicht definiert.) im TRACE-Debugfenster ausgegeben, und das Objekt kann nicht serialisiert werden.
 
-- Eine Ausnahme, die ungültige Klasse kann ausgelöst werden.
+- Es wird eine Ausnahme ausgegeben, die angibt, dass es sich möglicherweise um eine ungültige Klasse handelt.
 
-- Ressourcen in die MFC-Erweiterungs-DLL nicht laden, da `AfxFindResourceHandle` gibt **NULL** oder eine falsche Ressource-Handle.
+- In der MFC-Erweiterungs-DLL gespeicherte Ressourcen können nicht geladen werden, da `AfxFindResourceHandle` **NULL** oder ein falsches Ressourcenhandle zurückgibt.
 
-- `DllGetClassObject`, `DllCanUnloadNow`, und die `UpdateRegistry`, `Revoke`, `RevokeAll`, und `RegisterAll` Memberfunktionen der `COleObjectFactory` Fehler beim Suchen einer Klassenfactory, die in der MFC-Erweiterungs-DLL definiert.
+- `DllGetClassObject` und `DllCanUnloadNow` sowie die Memberfunktionen `UpdateRegistry`, `Revoke`, `RevokeAll` und `RegisterAll` von `COleObjectFactory` können keine in der MFC-Erweiterungs-DLL definierte Klassenfactory finden.
 
-- `AfxDoForAllClasses` funktioniert nicht für alle Klassen in der MFC-Erweiterungs-DLL.
+- `AfxDoForAllClasses` funktioniert nicht für Klassen in der MFC-Erweiterungs-DLL.
 
-- MFC-Standarddatenbank, Sockets oder OLE-Ressourcen, die das Laden fehl. Z. B. **AfxLoadString**(**AFX_IDP_SQL_CONNECT_FAIL**) eine leere Zeichenfolge zurückgegeben, wenn die regulären MFC-DLL ordnungsgemäß die MFC-Datenbankklassen verwendet werden.
+- MFC-Datenbank-, Socket- oder OLE-Standardressourcen können nicht geladen werden. Beispielsweise gibt **AfxLoadString**(**AFX_IDP_SQL_CONNECT_FAIL**) eine leere Zeichenfolge zurück, auch wenn die reguläre MFC-DLL die MFC-Datenbankklassen ordnungsgemäß verwendet.
 
-Die Lösung dieser Probleme wird zum Erstellen und Exportieren eine Initialisierungsfunktion in der MFC-Erweiterungs-DLL, erstellt eine **CDynLinkLibrary** Objekt. Rufen Sie diese Initialisierungsfunktion, genau einmal aus jeder regulären MFC-DLL, die die MFC-Erweiterungs-DLL verwendet.
+Die Lösung für diese Probleme besteht darin, eine Initialisierungsfunktion in der MFC-Erweiterungs-DLL zu erstellen und zu exportieren, die ein **CDynLinkLibrary**-Objekt erstellt. Diese Initialisierungsfunktion wird von jeder regulären MFC-DLL, die die MFC-Erweiterungs-DLL verwendet, genau einmal aufgerufen.
 
-## <a name="mfc-ole-mfc-database-or-dao-or-mfc-sockets-support"></a>MFC OLE, MFC-Datenbank (oder DAO) oder Sockets MFC-Unterstützung
+## <a name="mfc-ole-mfc-database-or-dao-or-mfc-sockets-support"></a>MFC-Unterstützung für OLE, Datenbanken (oder DAO) oder Sockets
 
-Wenn Sie alle MFC-OLE, MFC-Datenbank (oder DAO) verwenden oder MFC-Sockets in der regulären MFC-DLL unterstützen, sind die MFC-Debugbuilds MFC-Erweiterungs-DLLs MFCOxxD.dll MFCDxxD.dll und MFCNxxD.dll (wobei Xx die Versionsnummer ist) automatisch verknüpft. Sie müssen für jede dieser DLLs, die Sie verwenden, eine vordefinierte Initialisierungsfunktion aufrufen.
+Wenn Sie in Ihrer regulären MFC-DLL die MFC-Unterstützung für OLE, Datenbanken (oder DAO) oder Sockets verwenden, werden die MFC-Erweiterungs-DLLs „MFCOxxD.dll“, „MFCDxxD.dll“ und „MFCNxxD.dll“ automatisch verknüpft (xx steht hier für die Versionsnummer). Sie müssen für jede dieser verwendeten DLLs eine vordefinierte Initialisierungsfunktion abrufen.
 
-Fügen Sie für die datenbankunterstützung, die einen Aufruf von `AfxDbInitModule` zu Ihrem regulären MFC DLL des `CWinApp::InitInstance` Funktion. Stellen Sie sicher, dass dieser Aufruf erfolgt vor dem Aufruf Basisklasse oder einem der hinzugefügten Code, der die MFCDxxD.dll zugreift. Diese Funktion akzeptiert keine Parameter und gibt "void" zurück.
+Fügen Sie zur Unterstützung von Datenbanken der `CWinApp::InitInstance`-Funktion Ihrer regulären MFC-DLL einen Aufruf von `AfxDbInitModule` hinzu. Stellen Sie sicher, dass dieser Aufruf vor einem Basisklassenaufruf oder einem beliebigen hinzugefügten Code erfolgt, der auf „MFCDxxD.dll“ zugreift. Diese Funktion nimmt keine Parameter an und gibt „void“ zurück.
 
-Fügen Sie einen Aufruf von für OLE-Unterstützung `AfxOleInitModule` zu Ihrem regulären MFC DLL des `CWinApp::InitInstance`. Beachten Sie, dass die **COleControlModule InitInstance** Funktionsaufrufe `AfxOleInitModule` bereits, wenn Sie ein OLE-Steuerelement erstellen und verwenden daher `COleControlModule`, sollten Sie diesen Aufruf nicht hinzufügen `AfxOleInitModule`.
+Fügen Sie zur Unterstützung von OLE der `CWinApp::InitInstance`-Funktion Ihrer regulären MFC-DLL einen Aufruf von `AfxOleInitModule` hinzu. Beachten Sie, dass die **COleControlModule InitInstance**-Funktion bereits `AfxOleInitModule` aufruft. Wenn Sie also ein OLE-Steuerelement entwickeln und `COleControlModule` verwenden, sollten Sie diesen Aufruf von `AfxOleInitModule` nicht hinzufügen.
 
-Für die Unterstützung für Sockets, fügen Sie einen Aufruf von `AfxNetInitModule` zu Ihrem regulären MFC DLL des `CWinApp::InitInstance`.
+Fügen Sie zur Unterstützung von Sockets der `CWinApp::InitInstance`-Funktion Ihrer regulären MFC-DLL einen Aufruf von `AfxNetInitModule` hinzu.
 
-Beachten Sie, dass von von MFC-DLLs Releasebuilds und Anwendungen Sie keine separate DLLs für die Datenbank, Sockets verwenden, oder OLE-Unterstützung. Allerdings ist es sicher ist, rufen diese Initialisierungsfunktionen im Releasemodus.
+Beachten Sie, dass Releasebuilds von MFC-DLLs und -Anwendungen keine separaten DLLs für die Unterstützung von Datenbanken, Sockets oder OLE verwenden. Es ist jedoch sicher, diese Initialisierungsfunktionen im Releasemodus aufzurufen.
 
-## <a name="cdynlinklibrary-objects"></a>CDynLinkLibrary-Objekten
+## <a name="cdynlinklibrary-objects"></a>CDynLinkLibrary-Objekte
 
-Während jeder der Vorgänge am Anfang dieses Themas erwähnt muss MFC nach einem gewünschten Wert oder Objekt zu suchen. Beispielsweise muss während der Deserialisierung MFC alle derzeit verfügbaren Runtime-Klassen entsprechend der Objekte in das Archiv mit ihren entsprechenden Laufzeitklasse durchsuchen.
+Bei allen Vorgängen, die am Anfang dieses Artikels erwähnt wurden, muss die MFC nach einem gewünschten Wert oder Objekt suchen. Beispielsweise muss die MFC während der Deserialisierung alle zurzeit verfügbaren Runtimeklassen durchsuchen, um Objekte im Archiv mit der entsprechenden Runtimeklasse abzugleichen.
 
-Im Rahmen diese Suchvorgänge, MFC durchsucht alle die MFC-Erweiterungs-DLLs verwendet Schritt für Schritt eine Kette von **CDynLinkLibrary** Objekte. **CDynLinkLibrary** Objekte automatisch zu einer Kette während deren Erstellung Anfügen und die Erstellung erfolgt jedes MFC-Erweiterungs-DLL im Gegenzug während der Initialisierung. Darüber hinaus weist jedem Modul (Anwendung oder regulären MFC-DLL) seine eigenen Kette von **CDynLinkLibrary** Objekte.
+Im Rahmen dieser Suchvorgänge scannt die MFC mithilfe einer Ketten von **CDynLinkLibrary**-Objekten alle verwendeten MFC-Erweiterungs-DLLs. **CDynLinkLibrary**-Objekte werden während ihrer Erstellung automatisch an eine Kette angefügt und wiederum von jeder MFC-Erweiterungs-DLL während der Initialisierung erstellt. Außerdem verfügt jedes Modul (Anwendung oder reguläre MFC-DLL) über eine eigene Kette von **CDynLinkLibrary**-Objekten.
 
-Für eine MFC-Erweiterungs-DLL in wired erhalten eine **CDynLinkLibrary** Kette, müssen sie erstellen eine **CDynLinkLibrary** Objekt im Kontext von jedem Modul, das die MFC-Erweiterungs-DLL verwendet. Aus diesem Grund, wenn eine MFC-Erweiterungs-DLL vor sich geht aus den regulären MFC-DLLs verwendet werden, er muss bereitstellen eine exportierten Initialisierungsfunktion, die erstellt eine **CDynLinkLibrary** Objekt. Alle regulären MFC-DLL mit der MFC-Erweiterung muss DLL exportierten Initialisierungsfunktion aufrufen.
+Damit eine MFC-Erweiterungs-DLL in eine **CDynLinkLibrary**-Kette eingebunden werden kann, muss sie ein **CDynLinkLibrary**-Objekt im Kontext jedes Moduls erstellen, das die MFC-Erweiterungs-DLL verwendet. Wenn eine MFC-Erweiterungs-DLL von regulären MFC-DLLs verwendet werden soll, muss sie daher eine exportierte Initialisierungsfunktion bereitstellen, die ein **CDynLinkLibrary**-Objekt erstellt. Jede reguläre MFC-DLL, die die MFC-Erweiterungs-DLL verwendet, muss die exportierte Initialisierungsfunktion aufrufen.
 
-Wenn eine MFC-Erweiterungs-DLL geht von einer MFC-Anwendung (.exe) und nie von einer regulären MFC DLL verwendet werden, genügt es, erstellen Sie die **CDynLinkLibrary** Objekt in der MFC-Erweiterungs-DLL des `DllMain`. Dies ist die Funktionsweise der MFC-DLL-Assistenten MFC-Erweiterungs-DLL-Code. Beim Laden einer MFC-Erweiterungs-DLL implizit `DllMain` lädt und ausführt, bevor die Anwendung jemals gestartet wird. Alle **CDynLinkLibrary** Erstellungen werden in eine verkabelte, die die MFC-DLL für eine MFC-Anwendung reserviert.
+Wenn eine MFC-Erweiterungs-DLL nur von einer MFC-Anwendung (.exe) und nie von einer regulären MFC-DLL verwendet wird, genügt es, das **CDynLinkLibrary**-Objekt in der `DllMain`-Funktion der MFC-Erweiterungs-DLL zu erstellen. Das ist genau das, was mithilfe des MFC-Erweiterungs-DLL-Codes des MFC-DLL-Assistenten gemacht wird. Beim impliziten Laden einer MFC-Erweiterungs-DLL wird `DllMain` vor dem Starten der Anwendung geladen und ausgeführt. Alle **CDynLinkLibrary**-Erstellungen werden in eine Standardkette eingebunden, die die MFC-DLL für eine MFC-Anwendung reserviert.
 
-Beachten Sie, dass es keine gute Idee, mehrere **CDynLinkLibrary** Objekte aus einer MFC-Erweiterungs-DLL in einer eine Kette, insbesondere dann, wenn die MFC-Erweiterungs-DLL dynamisch aus dem Arbeitsspeicher entladen werden. Rufen Sie die Initialisierungsfunktion nicht mehr als einmal von jedem beliebigen Modul ein.
+Beachten Sie, dass es nicht sinnvoll ist, mehrere **CDynLinkLibrary**-Objekte aus einer MFC-Erweiterungs-DLL in einer Kette zu verwenden, insbesondere, wenn die MFC-Erweiterungs-DLL dynamisch aus dem Arbeitsspeicher entladen wird. Die Initialisierungsfunktion kann nicht mehr als einmal von einem Modul aufgerufen werden.
 
 ## <a name="sample-code"></a>Beispielcode
 
-Dieser Beispielcode wird davon ausgegangen, dass die regulären MFC-DLL implizit mit der MFC-Erweiterungs-DLL verknüpft. Dies wird erreicht, indem Sie mit der Importbibliothek (.lib) von der MFC-Erweiterungs-DLL verknüpfen, beim Erstellen der regulären MFC-DLL.
+In diesem Beispielcode wird davon ausgegangen, dass die reguläre MFC-DLL implizit mit der MFC-Erweiterungs-DLL verknüpft wird. Dies wird erreicht, indem eine Verknüpfung mit der Importbibliothek (.lib) der MFC-Erweiterungs-DLL erfolgt, wenn die reguläre MFC-DLL erstellt wird.
 
-Die folgenden Zeilen sollten in der Quelle der MFC-Erweiterungs-DLL sein:
+Die Quelle der MFC-Erweiterungs-DLL sollte die folgenden Zeilen enthalten:
 
 ```
 // YourExtDLL.cpp:
@@ -92,7 +92,7 @@ extern "C" void WINAPI InitYourExtDLL()
 }
 ```
 
-Achten Sie darauf, dass Sie zum Exportieren der **InitYourExtDLL** Funktion. Dies kann mit **__declspec(dllexport)** oder in der DLLs DEF-Datei wie folgt:
+Stellen Sie sicher, dass Sie die **InitYourExtDLL**-Funktion exportieren. Dies erreichen Sie mithilfe von **__declspec(dllexport)** oder in der DEF-Datei der DLL wie folgt:
 
 ```
 // YourExtDLL.Def:
@@ -103,7 +103,7 @@ EXPORTS
     InitYourExtDLL
 ```
 
-Fügen Sie einen Aufruf an die `InitInstance` Mitglied der `CWinApp`-abgeleitete Objekt in jeder regulären MFC-DLL, die mit der MFC-Erweiterungs-DLL:
+Fügen Sie mit der MFC-Erweiterungs-DLL in jeder regulären MFC-DLL einen Aufruf für den `InitInstance`-Member des von `CWinApp` abgeleiteten Objekts hinzu:
 
 ```
 // YourRegularDLL.cpp:
@@ -132,9 +132,9 @@ BOOL CYourRegularDLL::InitInstance()
 
 ### <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
 
-- [MFC-Erweiterungs-DLLs initialisieren](run-time-library-behavior.md#initializing-extension-dlls)
+- [Initialisieren von MFC-Erweiterungs-DLLs](run-time-library-behavior.md#initializing-extension-dlls)
 
-- [Reguläre MFC-DLLs initialisieren](run-time-library-behavior.md#initializing-regular-dlls)
+- [Initialisieren regulärer MFC-DLLs](run-time-library-behavior.md#initializing-regular-dlls)
 
 ### <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
@@ -146,7 +146,7 @@ BOOL CYourRegularDLL::InitInstance()
 
 - [Verwenden von MFC als Teil einer DLL](../mfc/tn011-using-mfc-as-part-of-a-dll.md)
 
-- [DLL-Version von MFC](../mfc/tn033-dll-version-of-mfc.md)
+- [DLL-Version der MFC](../mfc/tn033-dll-version-of-mfc.md)
 
 ## <a name="see-also"></a>Siehe auch
 

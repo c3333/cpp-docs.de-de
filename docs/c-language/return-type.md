@@ -12,7 +12,7 @@ helpviewer_keywords:
 ms.assetid: 3e5b8a97-b341-48c5-8be8-8986980ef586
 ms.openlocfilehash: fe9280f434dd6267b03764df2ee663c494f007d8
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857033"
@@ -24,24 +24,24 @@ Der Rückgabetyp einer Funktion legt die Größe und den Typ des Werts fest, der
 ## <a name="syntax"></a>Syntax
 
 *function-definition*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers*<sub>opt</sub> *attribute-seq*<sub>opt</sub> *declarator* *declaration-list*<sub>opt</sub> *compound-statement*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer*<sub>opt</sub> *Attributsequenz*<sub>opt</sub> *Deklarator* *Deklarationsliste*<sub>opt</sub> *compound-Anweisung*
 
-/\* *Attribute-"-* " ist eine Microsoft-spezifische \*/
+/\* *Attributsequenz* ist Microsoft-spezifisch \*/
 
 *declaration-specifiers*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*storage-class-specifier* *declaration-specifiers*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declaration-specifiers*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *declaration-specifiers*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Speicherklassenspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Deklarationsspezifizierer*<sub>opt</sub>
 
 *type-specifier*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**void**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**char**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**short**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**int**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__int8** /\* Microsoft-spezifischer \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__int16** /\* Microsoft-spezifischer \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__int32** /\* Microsoft-spezifischer \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__int64** /\* Microsoft-spezifischer \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__int8** /\* Microsoft-spezifisch \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__int16** /\* Microsoft-spezifisch \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__int32** /\* Microsoft-spezifisch \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__int64** /\* Microsoft-spezifisch \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**long**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**float**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**double**<br/>

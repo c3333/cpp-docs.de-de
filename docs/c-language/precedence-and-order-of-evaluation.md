@@ -22,9 +22,9 @@ In der folgenden Tabelle werden die Rangfolge und Assoziativität (die Reihenfol
 
 ## <a name="precedence-and-associativity-of-c-operators"></a>Rangfolge und Assoziativität von C-Operatoren
 
-| Symbol <sup>1</sup> | Typ des Vorgangs | Assoziativität |
+| Symbol <sup>1</sup> | Typ der Operation | Assoziativität |
 |-------------|-----------------------|-------------------|
-| `[` `]` `(` `)` `.` `->`<br/>`++` `--` (Postfix) | Ausdruck | Von links nach rechts |
+| `[` `]` `(` `)` `.` `->`<br/>`++` `--` (Postfix) | expression | Von links nach rechts |
 | **sizeof** `&` `*` `+` `-` `~` `!`<br/>`++` `--` (Präfix) | Unär | Von rechts nach links |
 | *Typumwandlungen* | Unär | Von rechts nach links |
 | `*` `/` `%` | Multiplikativ | Von links nach rechts |
@@ -59,7 +59,7 @@ der zweite Operand, `y++`, nur ausgewertet, wenn `x` zutrifft (Wert ungleich Nul
 
 Die folgende Liste zeigt, wie der Compiler automatisch mehrere Musterausdrücke bindet:
 
-| Ausdruck | Automatische Bindung |
+| expression | Automatische Bindung |
 |----------------|-----------------------|
 | `a & b || c` | `(a & b) || c` |
 | `a = b || c` | `a = (b || c)` |

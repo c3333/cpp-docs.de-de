@@ -1,5 +1,5 @@
 ---
-title: Verarbeiten von Bibliotheken und Komponenten C++ in Projekten
+title: Verwenden von Bibliotheken und Komponenten in C++-Projekten
 ms.date: 12/10/2018
 f1_keywords:
 - VC.Project.References
@@ -9,48 +9,48 @@ helpviewer_keywords:
 ms.assetid: 12b8f571-0f21-40b3-9404-5318a57e9cb5
 ms.openlocfilehash: c7facb82054eed4ef28c52830b8a3079eecb7fdc
 ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "80169954"
 ---
-# <a name="consuming-libraries-and-components"></a>Verarbeiten von Bibliotheken und Komponenten
+# <a name="consuming-libraries-and-components"></a>Verwenden von Bibliotheken und Komponenten
 
-Häufig muss ein C++ Projektfunktionen aufrufen oder auf Daten in einer binären Datei zugreifen, wie z. b. statische Bibliothek (LIB-Dateien), dll, Windows-Runtime Komponente, COM-Komponente oder .NET-Assembly. In diesen Fällen müssen Sie das Projekt so konfigurieren, dass es diese Binärdatei zur Buildzeit finden kann. Die spezifischen Schritte richten sich nach dem Typ des Projekts, dem Typ der Binärdatei und dem, ob die Binärdatei in der gleichen Projekt Mappe wie das Projekt erstellt wird.
+In C++-Projekten ist oft der Aufruf von Funktionen oder der Zugriff auf Daten in einer Binärdatei wie einer statischen Bibliothek (LIB-Dateien), einer DLL, einer Komponente für Windows-Runtime, einer COM-Komponente oder einer .NET-Assembly erforderlich. In diesen Fällen müssen Sie das Projekt so konfigurieren, dass die Binärdatei zur Buildzeit gefunden werden kann. Die genauen Schritte hängen vom Typ Ihres Projekts, dem Typ der Binärdatei sowie davon ab, ob die Binärdatei in derselben Projektmappe wie Ihr Projekt erstellt wird.
 
-## <a name="consuming-libraries-downloaded-via-vcpkg"></a>Verarbeiten von Bibliotheken, die über vcpkg heruntergeladen wurden
+## <a name="consuming-libraries-downloaded-via-vcpkg"></a>Verwenden von über vcpkg heruntergeladenen Bibliotheken
 
-Wenn Sie eine Bibliothek nutzen möchten, die Sie mit dem **vcpkg** -Paket-Manager heruntergeladen haben, können Sie die nachfolgenden Anweisungen ignorieren. Weitere Informationen finden Sie [unter vcpkg C++ : ein Paket-Manager für Windows, Linux und MacOS](vcpkg.md#integrate-with-visual-studio-windows) .
+Wenn Sie eine Bibliothek verwenden möchten, die Sie mithilfe des Paket-Managers **vcpkg** heruntergeladen haben, können Sie die Anweisungen unten ignorieren. Weitere Informationen finden Sie unter [vcpkg: Ein C++-Paket-Manager für Windows, Linux und macOS](vcpkg.md#integrate-with-visual-studio-windows).
 
-## <a name="consuming-static-libraries"></a>Verwenden statischer Bibliotheken
+## <a name="consuming-static-libraries"></a>Verwenden von statischen Bibliotheken
 
-Wenn Ihr statisches Bibliotheksprojekt in derselben Projekt Mappe erstellt wird:
+Anleitung, wenn Ihr Projekt mit statischer Bibliothek in derselben Projektmappe erstellt wird:
 
-1. #<a name="include-the-header-files-for-the-static-library-using-quotation-marks-in-a-typical-solution-the-path-will-start-with-library-project-name-intellisense-will-help-you-find-it"></a>Schließen Sie die Header Datei (en) für die statische Bibliothek in Anführungszeichen ein. In einer typischen Lösung beginnt der Pfad mit `../<library project name>`. IntelliSense hilft Ihnen, es zu finden.
-2. Fügen Sie einen Verweis auf das statische Bibliotheksprojekt hinzu. Klicken Sie in **Projektmappen-Explorer** unter dem Knoten Anwendungsprojekt mit der rechten Maustaste auf **Verweise** , und wählen Sie **Verweis hinzufügen**aus.
+1. #<a name="include-the-header-files-for-the-static-library-using-quotation-marks-in-a-typical-solution-the-path-will-start-with-library-project-name-intellisense-will-help-you-find-it"></a>Schließen Sie die Headerdateien für die statische Bibliothek mithilfe von Anführungszeichen ein. In einer normalen Projektmappe beginnt der Pfad mit `../<library project name>`. IntelliSense unterstützt Sie bei der Suche danach.
+2. Fügen Sie einen Verweis auf das Projekt mit statischer Bibliothek hinzu. Klicken Sie im **Projektmappen-Explorer** unter dem Projektknoten der Anwendung auf die Option **Verweise**, und wählen Sie dort die Option **Verweis hinzufügen** aus.
 
-Wenn die statische Bibliothek nicht Teil der Projekt Mappe ist:
+Anleitung, wenn die statische Bibliothek nicht Teil der Projektmappe ist:
 
-1. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten Anwendungsprojekt, und wählen Sie dann **Eigenschaften**aus.
-2. Fügen Sie auf der Eigenschaften Seite für **VC + +-Verzeichnisse** den Pfad zum Verzeichnis hinzu, in dem sich die LIB-Datei in **Bibliotheks Pfaden** befindet, und fügen Sie den Pfad zu den Bibliotheks Header Dateien in den Includeverzeichnissen hinzu. **Include Directories**  
-3. Fügen Sie auf der Eigenschaften Seite **Linker > Eingabe** den Namen der LIB-Datei **zusätzlichen Abhängigkeiten**hinzu.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten des Anwendungsprojekts, und wählen Sie die Option **Eigenschaften** aus.
+2. Fügen Sie auf der Eigenschaftenseite **VC++-Verzeichnisse** unter **Bibliothekspfade** den Pfad zum Verzeichnis hinzu, in dem sich die LIB-Datei befindet, und fügen Sie unter **Includeverzeichnisse** den Pfad zu den Bibliotheksheaderdateien hinzu.  
+3. Fügen Sie auf der Eigenschaftenseite **Linker > Eingabe** den Namen der LIB-Datei unter **Zusätzliche Abhängigkeiten** hinzu.
 
-## <a name="dynamic-link-libraries"></a>Dynamic Link Libraries
+## <a name="dynamic-link-libraries"></a>Dynamic Link Librarys (DLLs)
 
-Wenn die dll als Teil derselben Projekt Mappe wie die Anwendung erstellt wird, führen Sie dieselben Schritte wie für eine statische Bibliothek aus.
+Wenn die DLL als Teil derselben Projektmappe wie die der Anwendung erstellt wird, befolgen Sie dieselben Schritte wie für eine statische Bibliothek.
 
-Wenn die dll nicht Teil der Anwendungslösung ist, benötigen Sie die DLL-Datei, die Header (e) mit Prototypen für die exportierten Funktionen und Klassen sowie eine LIB-Datei, die die erforderlichen Verknüpfungs Informationen bereitstellt.
+Wenn die DLL nicht Bestandteil der Projektmappe der Anwendung ist, benötigen Sie die DLL-Datei, die Header mit den Prototypen der exportierten Funktionen und Klassen und eine LIB-Datei, die die erforderlichen Verknüpfungsinformationen bereitstellt.
 
-1. Kopieren Sie die dll in den Ausgabeordner des Projekts oder in einen anderen Ordner im standardmäßigen Windows-Suchpfad für DLLs. Siehe [Such Reihenfolge der Dynamic-Link-Bibliothek](/windows/win32/dlls/dynamic-link-library-search-order).
-2. Führen Sie die Schritte 1-3 für statische Bibliotheken aus, um die Pfade zu den Headern und der LIB-Datei bereitzustellen.
+1. Kopieren Sie die DLL in den Ausgabeordner Ihres Projekts oder in einen anderen Ordner unter dem Standardsuchpfad für DLLs unter Windows. Weitere Informationen finden Sie unter [Suchreihenfolge für Dynamic Link Librarys](/windows/win32/dlls/dynamic-link-library-search-order).
+2. Befolgen Sie die Schritte 1–3 für statische Bibliotheken, um die Pfade zu den Headern und der LIB-Datei bereitzustellen.
 
 ## <a name="com-objects"></a>COM-Objekte
 
-Wenn Ihre Native C++ Anwendung ein COM-Objekt verwenden muss und dieses Objekt *registriert*ist, müssen Sie lediglich cokreateinstance aufrufen und die CLSID des Objekts übergeben. Das System findet es in der Windows-Registrierung und lädt es. Ein C++/CLI-Projekt kann ein COM-Objekt auf die gleiche Weise nutzen, oder durch Hinzufügen eines Verweises auf das Objekt aus der Liste **Verweise > com hinzufügen** und Verarbeiten dieses Objekts über seinen [Runtime Callable Wrapper](/dotnet/framework/interop/runtime-callable-wrapper).
+Wenn Ihre native C++-Anwendung ein COM-Objekt verwenden muss und dieses Objekt *registriert* ist, müssen Sie nur CoCreateInstance aufrufen und die CLSID des Objekts übergeben. Das System findet und lädt CoCreateInstance in der Windows-Registrierung. Ein C++-/CLI-Projekt kann ein COM-Objekt auf dieselbe Weise verwenden, oder indem ein Verweis darauf in der Liste **Verweise hinzufügen > COM** hinzugefügt und es über den dazugehörigen [Runtime Callable Wrapper](/dotnet/framework/interop/runtime-callable-wrapper) verwendet wird.
 
-## <a name="net-assemblies-and-windows-runtime-components"></a>.NET-Assemblys und Windows-Runtime Komponenten
+## <a name="net-assemblies-and-windows-runtime-components"></a>.NET-Assemblys und Windows-Runtimekomponenten
 
-In UWP- C++oder/CLI-Projekten nutzen Sie .NET-Assemblys oder Windows-Runtime Komponenten, indem Sie einen *Verweis* auf die Assembly oder Komponente hinzufügen. Unter dem Knoten **Verweise** in einem UWP- C++oder/CLI-Projekt sehen Sie Verweise auf häufig verwendete Komponenten. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten **Verweise** , um den **Verweis-Manager** aufzurate und die zusätzlichen Komponenten zu durchsuchen, die dem System bekannt sind. Klicken Sie auf die Schaltfläche **Durchsuchen** , um zu einem beliebigen Ordner zu navigieren, in dem sich eine benutzerdefinierte Da .NET-Assemblys und Windows-Runtime Komponenten integrierte Typinformationen enthalten, können Sie Ihre Methoden und Klassen anzeigen, indem Sie mit der rechten Maustaste klicken und **in Objektkatalog anzeigen**wählen.
+In UWP- oder C++-/CLI-Projekten verwenden Sie .NET-Assemblys oder Windows-Runtimekomponenten, indem Sie einen *Verweis* auf die Assembly oder Komponente hinzufügen. Unter dem Knoten **Verweise** in einem UWP- oder C++-/CLI-Projekt finden Sie Verweise auf häufig verwendete Komponenten. Klicken Sie mit der rechten Maustaste auf den Knoten **Verweise** im **Projektmappen-Explorer**, um den **Verweis-Manager** zu öffnen und weitere Komponenten zu durchsuchen, die dem System bekannt sind. Klicken Sie auf die Schaltfläche **Durchsuchen**, um zu Ordnern zu navigieren, in denen sich benutzerdefinierte Komponenten befinden. Da .NET-Assemblys und Windows-Runtimekomponenten integrierte Typinformationen enthalten, können Sie ihre Methoden und Klassen anzeigen, indem Sie mit der rechten Maustaste darauf klicken und die Option **Im Objektkatalog anzeigen** auswählen.
 
 ## <a name="reference-properties"></a>Verweiseigenschaften
 
@@ -82,7 +82,7 @@ ActiveX-Verweiseigenschaften sind nur für Verweise auf COM-Komponenten verfügb
 
 ### <a name="assembly-reference-properties-ccli"></a>Assemblyverweiseigenschaften (C++/CLI)
 
-Assemblyverweiseigenschaften sind nur für Verweise auf .NET Framework C++Assemblys in/CLI-Projekten verfügbar. Diese Eigenschaften werden nur angezeigt, wenn im Bereich **Verweise** eine .NET Framework Assembly ausgewählt wird. Die Eigenschaften können nicht geändert werden.
+Assemblyverweiseigenschaften sind nur für Verweise auf .NET Framework-Assemblys in C++-/CLI-Projekten verfügbar. Diese Eigenschaften werden nur angezeigt, wenn eine .NET Framework-Assembly im Bereich **Verweise** ausgewählt ist. Die Eigenschaften können nicht geändert werden.
 
 - **Relativer Pfad**
 
@@ -106,7 +106,7 @@ Die folgenden Eigenschaften stehen für verschiedene Arten von Verweisen zur Ver
 
 ### <a name="project-to-project-reference-properties"></a>Interprojektverweiseigenschaften
 
-Die folgenden Eigenschaften definieren einen *Projekt-zu-Projekt-Verweis* aus dem Projekt, das im Bereich **Verweise** ausgewählt ist, auf ein anderes Projekt in derselben Projekt Mappe. Weitere Informationen finden Sie unter [Verwalten von Verweisen in einem Projekt](/visualstudio/ide/managing-references-in-a-project).
+Die folgenden Eigenschaften definieren einen *Verweis zwischen Projekten* von dem im Bereich **Verweise** ausgewählten Projekt auf ein anderes Projekt in derselben Projektmappe. Weitere Informationen finden Sie unter [Verwalten von Verweisen in einem Projekt](/visualstudio/ide/managing-references-in-a-project).
 
 - **Bibliothekabhängigkeiten verknüpfen**
 
@@ -120,7 +120,7 @@ Die folgenden Eigenschaften definieren einen *Projekt-zu-Projekt-Verweis* aus de
 
    Wenn diese Eigenschaft **False**ist, fügt das Projektsystem nicht in das abhängige Projekt die OBJ-Dateien für die Bibliothek ein, die vom unabhängigen Projekt erstellt wurden. Folglich deaktiviert dieser Wert inkrementelles Verknüpfen. In der Regel geben Sie **False** an, da das Erstellen der Anwendung lange dauern kann, wenn viele unabhängige Projekte vorhanden sind.
 
-### <a name="read-only-reference-properties-com--net"></a>Schreibgeschützte Verweis Eigenschaften (com & .net)
+### <a name="read-only-reference-properties-com--net"></a>Schreibgeschützte Verweiseigenschaften (COM & .NET)
 
 Die folgenden Eigenschaften gelten für COM- und Assemblyverweise und können nicht geändert werden.
 
@@ -140,11 +140,11 @@ Die folgenden Eigenschaften gelten für COM- und Assemblyverweise und können ni
 
    Zeigt den Verzeichnispfad der Assembly an, auf die verwiesen wird.
 
-- **Identität**
+- **Identity**
 
    Für die .NET Framework-Assemblys wird der vollständige Pfad angezeigt. Zeigt die GUID für COM-Komponenten an.
 
-- **Label**
+- **Bezeichnung**
 
    Zeigt die Bezeichnung des Verweises an.
 
@@ -164,7 +164,7 @@ Die folgenden Eigenschaften gelten für COM- und Assemblyverweise und können ni
 
    Zeigt die Version der Assembly an, auf die verwiesen wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++Referenz zur Projekteigenschaften Seite](reference/property-pages-visual-cpp.md)<br>
+[Windows C++-Projekteigenschaftenseitenverweis](reference/property-pages-visual-cpp.md)<br>
 [Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio](working-with-project-properties.md)

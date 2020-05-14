@@ -10,11 +10,11 @@ helpviewer_keywords:
 - declaring enumerations
 ms.assetid: bd18f673-4dda-4bc1-92fd-d1ce10074910
 ms.openlocfilehash: bc238dd0088558233d84f8bbd15d06743e133449
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326013"
 ---
 # <a name="c-enumeration-declarations"></a>C-Enumerationsdeklarationen
 
@@ -27,7 +27,7 @@ In ANSI C weisen die Ausdrücke, die den Wert einer Enumeratorkonstante definier
 ## <a name="syntax"></a>Syntax
 
 *enum-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**enum** *identifier*<sub>opt</sub> **{** *enumerator-list* **}**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**enum** *Bezeichner*<sub>opt</sub> **{** *enumerator-list* **}**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**enum** *identifier*
 
 Der optionale Wert *identifier* benennt den von *enumerator-list* definierten Enumerationstyp. Dieser Bezeichner wird oft als „Tag“ der Enumeration bezeichnet, die von der Liste angegeben wird. Ein Typspezifizierer der Art

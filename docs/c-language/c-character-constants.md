@@ -8,27 +8,27 @@ helpviewer_keywords:
 - single quotation mark
 ms.assetid: 388ae7d7-2c3a-44d6-a507-63f541ecd2da
 ms.openlocfilehash: 5d87b57726f741cc96f2180de33cae01403786ec
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326299"
 ---
 # <a name="c-character-constants"></a>C-Zeichenkonstanten
 
-Eine „Zeichenkonstante“ wird gebildet, indem ein einzelnes Zeichen aus dem darstellbaren Zeichensatz in einfache Anführungszeichen (**' '**) eingeschlossen wird. Zeichenkonstanten werden verwendet, um Zeichen im [Ausführungszeichensatz](../c-language/execution-character-set.md) darzustellen.
+Eine „Zeichenkonstante“ wird gebildet, indem ein einzelnes Zeichen aus dem darstellbaren Zeichensatz in einfache Anführungszeichen ( **' '** ) eingeschlossen wird. Zeichenkonstanten werden verwendet, um Zeichen im [Ausführungszeichensatz](../c-language/execution-character-set.md) darzustellen.
 
 ## <a name="syntax"></a>Syntax
 
-*character-constant*: **'** *c-char-sequence* **'**
+*Zeichenkonstante*: **'** *c-char-Sequenz* **'**
 
-**L'** *c-char-sequence* **'**
+**L'** *c-char-Sequenz* **'**
 
 *c-char-sequence*: *c-char*
 
 *c-char-sequence c-char*
 
-*c-char*: Alle Elemente des Quellzeichensatzes mit Ausnahme von einfachem Anführungszeichen (**'**), umgekehrtem Schrägstrich (**\\**) oder Zeilenumbruchzeichen
+*c-char*: Alle Elemente des Quellzeichensatzes mit Ausnahme von einfachem Anführungszeichen ( **'** ), umgekehrtem Schrägstrich ( **\\** ) oder Zeilenumbruchzeichen
 
 *escape-sequence*
 
@@ -42,13 +42,13 @@ Eine „Zeichenkonstante“ wird gebildet, indem ein einzelnes Zeichen aus dem d
 
 **\\' \\" \\\ \\?**
 
-*octal-escape-sequence*: **\\**  *octal-digit*
+*oktale-Escapesequenz*: **\\**  *oktale-Ziffer*
 
-**\\** *octal-digit octal-digit*
+**\\**  *oktale-Ziffer oktale-Ziffer*
 
-**\\** *octal-digit octal-digit octal-digit*
+**\\**  *oktale-Ziffer oktale-Ziffer oktale-Ziffer*
 
-*hexadecimal-escape-sequence*: **\x**  *hexadecimal-digit*
+*hexadezimale-Escapesequenz*: **\x**  *hexadezimale-Ziffer*
 
 *hexadecimal-escape-sequence hexadecimal-digit*
 

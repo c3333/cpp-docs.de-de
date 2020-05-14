@@ -9,22 +9,22 @@ helpviewer_keywords:
 - arithmetic operators [C++], additive operators
 ms.assetid: bb8ac205-b061-41fc-8dd4-dab87c8b900c
 ms.openlocfilehash: 29bea87e56aa90a8deab7ad7280b3fbdfb45c82b
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326900"
 ---
 # <a name="c-additive-operators"></a>C-Operatoren (additiv)
 
-Die additiven Operatoren führen Additionen (**+**) und Subtraktionen (**-**) aus.
+Die additiven Operatoren führen Additionen ( **+** ) und Subtraktionen ( **-** ) aus.
 
 ## <a name="syntax"></a>Syntax
 
 *additive-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*additive-expression* **+** *multiplicative-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*additive-expression* **-** *multiplicative-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*additiver-Ausdruck* **+** *multiplikativer-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*additiver-Ausdruck* **-** *multiplikativer-Ausdruck*
 
 > [!NOTE]
 > Obwohl die Syntax für *additive-expression* auch *multiplicative-expression* enthält, heißt das nicht, dass Ausdrücke erforderlich sind, die Multiplikation verwenden. In der [Zusammenfassung der C-Sprachsyntax](../c-language/c-language-syntax-summary.md) finden Sie weitere Informationen über die Syntax für *multiplicative-expression*, *cast-expression* und *unary-expression*.

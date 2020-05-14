@@ -6,11 +6,11 @@ helpviewer_keywords:
 - declaring variables, simple
 ms.assetid: b07adf9d-9e79-4b64-8a34-e6fe1c7eccec
 ms.openlocfilehash: 27710dabe512332564ee557a9d022457d9fddc5c
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62158235"
 ---
 # <a name="simple-variable-declarations"></a>Einfache Variablendeklarationen
 
@@ -21,19 +21,19 @@ Variablendeklarationen erfordern Speicherklassen oder Typen (oder beides). Nicht
 ## <a name="syntax"></a>Syntax
 
 *declarator*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*pointer*<sub>opt</sub> *direct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Zeiger*<sub>opt</sub> *direkter-Deklarator*
 
 *direct-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*identifier*
 
 *identifier*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*nondigit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*identifier* *nondigit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*identifier* *digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Bezeichner* *keine Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Bezeichner* *Ziffer*
 
 Bei arithmetischen Typen, Struktur-, Union-, Enumerations- und void-Typen sowie für durch `typedef`-Namen dargestellte Typen können einfache Deklaratoren in einer Deklaration verwendet werden, da der Typspezifizierer alle Typisierungsinformationen bereitstellt. Zeiger-, Array- und Funktionstypen benötigen komplexere Deklaratoren.
 
-Sie können eine Liste mit durch Komma (**,**) getrennten Bezeichnern verwenden, um mehrere Variablen in der gleichen Deklaration anzugeben. Alle Variablen, die in der Deklaration definiert sind, weisen denselben Basistyp auf. Beispiel:
+Sie können eine Liste mit durch Komma ( **,** ) getrennten Bezeichnern verwenden, um mehrere Variablen in der gleichen Deklaration anzugeben. Alle Variablen, die in der Deklaration definiert sind, weisen denselben Basistyp auf. Zum Beispiel:
 
 ```C
 int x, y;        /* Declares two simple variables of type int */

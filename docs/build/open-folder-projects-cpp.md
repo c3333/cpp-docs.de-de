@@ -6,7 +6,7 @@ helpviewer_keywords:
 ms.assetid: abd1985e-3717-4338-9e80-869db5435175
 ms.openlocfilehash: 9264aa4bf77de406bdde9042ef9ec4251763f721
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81320962"
@@ -15,39 +15,39 @@ ms.locfileid: "81320962"
 
 ::: moniker range="vs-2015"
 
-Die Funktion Ordner öffnen ist in Visual Studio 2017 und höher verfügbar.
+Das Feature „Ordner öffnen“ ist in Visual Studio 2017 und höher verfügbar.
 
 ::: moniker-end
 
 ::: moniker range=">=vs-2017"
 
-In Visual Studio 2017 und höher können Sie das Feature „Ordner öffnen“ verwenden, um einen Ordner mit Quelldateien öffnen und sofort mit dem Programmieren beginnen zu können. Dabei wird unter anderem IntelliSense, das Durchsuchen, Refactoring und Debuggen unterstützt. Während Sie Dateien bearbeiten, erstellen, verschieben und löschen, verfolgt Visual Studio die Änderungen automatisch nach und aktualisiert den IntelliSense-Index kontinuierlich. Es werden keine SLN- oder VCXPROJ-Dateien geladen. Bei Bedarf können Sie benutzerdefinierte Tasks sowie Build- und Startparameter über einfache JSON-Dateien angeben. Mit dieser Funktion können Sie jedes Buildsystem von Drittanbietern in Visual Studio integrieren. Allgemeine Informationen zu „Ordner öffnen“ finden Sie unter [Entwickeln von Code in Visual Studio ohne Projekte oder Projektmappen](/visualstudio/ide/develop-code-in-visual-studio-without-projects-or-solutions).
+In Visual Studio 2017 und höher können Sie das Feature „Ordner öffnen“ verwenden, um einen Ordner mit Quelldateien öffnen und sofort mit dem Programmieren beginnen zu können. Dabei wird unter anderem IntelliSense, das Durchsuchen, Refactoring und Debuggen unterstützt. Während Sie Dateien bearbeiten, erstellen, verschieben und löschen, verfolgt Visual Studio die Änderungen automatisch nach und aktualisiert den IntelliSense-Index kontinuierlich. Es werden keine SLN- oder VCXPROJ-Dateien geladen. Bei Bedarf können Sie benutzerdefinierte Tasks sowie Build- und Startparameter über einfache JSON-Dateien angeben. Mit diesem Feature können Sie jedes beliebige Drittanbieterbuildsystem in Visual Studio integrieren. Allgemeine Informationen zu „Ordner öffnen“ finden Sie unter [Entwickeln von Code in Visual Studio ohne Projekte oder Projektmappen](/visualstudio/ide/develop-code-in-visual-studio-without-projects-or-solutions).
 
 ## <a name="cmake-and-qt"></a>CMake und Qt
 
-CMake ist als Komponente der C++-Desktop-Workload in die Visual Studio-IDE integriert. Der Workflow für CMake ist nicht identisch mit dem in diesem Artikel beschriebenen Workflow. Wenn Sie CMake verwenden, finden Sie weitere Informationen unter [CMake-Projekte in Visual Studio](cmake-projects-in-visual-studio.md). Sie können CMake auch zum Erstellen von Qt-Projekten oder die [Qt Visual Studio-Erweiterung](https://download.qt.io/development_releases/vsaddin/) für Visual Studio 2015 oder Visual Studio 2017 verwenden.
+CMake ist in die Visual Studio-IDE als Komponente der Workload für C++-Desktopentwicklung integriert. Der Workflow für CMake ist nicht identisch mit dem in diesem Artikel beschriebenen Workflow. Wenn Sie CMake verwenden, finden Sie unter [CMake-Projekte in Visual Studio](cmake-projects-in-visual-studio.md) weitere Informationen. Sie können auch CMake verwenden, um Qt-Projekten zu erstellen. Alternativ können Sie für Visual Studio 2015 oder 2017 die [Qt-Erweiterung für Visual Studio](https://download.qt.io/development_releases/vsaddin/) verwenden.
 
 ## <a name="other-build-systems"></a>Andere Buildsysteme
 
-Um die Visual Studio-IDE mit einem Buildsystem oder Compiler-Toolset zu verwenden, das nicht direkt aus dem Hauptmenü unterstützt wird, wählen Sie **Datei | Öffnen | Ordner** oder drücken **Sie Strg + Umschalt + Alt + O**. Navigieren Sie zu dem Ordner, der Ihre Quellcodedateien enthält. Um das Projekt zu erstellen, IntelliSense zu konfigurieren und Debugparameter festzulegen, fügen Sie drei JSON-Dateien hinzu:
+Wenn Sie die Visual Studio-IDE mit einem Buildsystem oder einem Compilertoolset verwenden möchten, das nicht direkt unterstützt wird, klicken Sie im Hauptmenü auf **Datei > Öffnen > Ordner**, oder drücken Sie **STRG+UMSCHALT+ALT+O**. Navigieren Sie zu dem Ordner, der Ihre Quellcodedateien enthält. Wenn Sie das Projekt erstellen, IntelliSense konfigurieren und Debugparameter festlegen möchten, fügen Sie drei JSON-Dateien hinzu:
 
 | | |
 |-|-|
 |CppProperties.json|Geben Sie benutzerdefinierte Konfigurationsinformationen für das Durchsuchen an. Erstellen Sie diese Datei bei Bedarf im Stammordner des Projekts. (Wird in CMake-Projekten nicht verwendet.)|
-|tasks.vs.json|Geben Sie benutzerdefinierte Buildbefehle an. Der Zugriff erfolgt über das Kontextmenüelement **Tasks konfigurieren** im **Projektmappen-Explorer**.|
+|tasks.vs.json|Angeben von benutzerdefinierten Buildbefehlen. Der Zugriff erfolgt über das Kontextmenüelement **Tasks konfigurieren** im **Projektmappen-Explorer**.|
 |launch.vs.json|Geben Sie Befehlszeilenargumente für den Debugger an. Der Zugriff erfolgt über das Kontextmenüelement **Einstellungen für Debuggen und Starten** im **Projektmappen-Explorer**.|
 
-## <a name="configure-code-navigation-with-cpppropertiesjson"></a>Konfigurieren der Codenavigation mit CppProperties.json
+## <a name="configure-code-navigation-with-cpppropertiesjson"></a>Konfigurieren der Codenavigation mithilfe von CppProperties.json
 
-Damit IntelliSense und Das Browsingverhalten wie **"Zur Definition"** ordnungsgemäß funktionieren, muss Visual Studio wissen, welchen Compiler Sie verwenden, wo sich die Systemheader befinden und wo sich zusätzliche Includedateien befinden, wenn sie sich nicht direkt in dem Ordner befinden, den Sie geöffnet haben (den Arbeitsbereichsordner). Um eine Konfiguration anzugeben, können Sie in der Dropdownliste in der Hauptsymbolleiste die Option **Konfigurationen verwalten** auswählen:
+Damit IntelliSense und das Verhalten von Suchen wie **Gehe zu Definition** ordnungsgemäß funktionieren, muss Visual Studio wissen, welchen Compiler Sie verwenden, wo sich die Systemheader befinden und wo weitere Includedateien zu finden sind, wenn sie sich nicht direkt in dem Ordner befinden, den Sie geöffnet haben (der Arbeitsbereichsordner). Zum Angeben einer Konfiguration können Sie im Dropdown in der Hauptsymbolleiste auf die Option **Konfigurationen verwalten** klicken:
 
-![Dropdown-Liste von Konfigurationen verwalten](media/manage-configurations-dropdown.png)
+![Dropdown „Konfigurationen verwalten“](media/manage-configurations-dropdown.png)
 
-Visual Studio bietet die folgenden Standardkonfigurationen:
+In Visual Studio stehen die folgenden Standardkonfigurationen zur Verfügung:
 
 ![Standardkonfigurationen](media/default-configurations.png)
 
-Wenn Sie z. B. **x64-Debug**auswählen, erstellt Visual Studio eine Datei mit dem Namen *CppProperties.json* in Ihrem Stammprojektordner:
+Wenn Sie beispielsweise **x64-Debug** auswählen, erstellt Visual Studio eine Datei namens *CppProperties.json* im Stammprojektordner:
 
 ```json
 {
@@ -73,14 +73,14 @@ Wenn Sie z. B. **x64-Debug**auswählen, erstellt Visual Studio eine Datei mit de
 }
 ```
 
-Diese Konfiguration erbt die Umgebungsvariablen der Visual Studio [x64 Developer Command Prompt](building-on-the-command-line.md). Eine dieser Variablen `INCLUDE` ist und Sie können hier `${env.INCLUDE}` mit dem Makro darauf verweisen. Die `includePath` Eigenschaft teilt Visual Studio mit, wo sie nach allen Quellen suchen soll, die sie für IntelliSense benötigt. In diesem Fall heißt es: "Schauen Sie sich alle Verzeichnisse an, die von der Include-Umgebungsvariablen angegeben wurden, sowie in allen Verzeichnissen in der aktuellen Arbeitsordnerstruktur." Die `name` Eigenschaft ist der Name, der in der Dropdownliste angezeigt wird, und kann alles sein, was Sie mögen. Die `defines` Eigenschaft stellt Hinweise für IntelliSense bereit, wenn sie auf bedingte Kompilierungsblöcke trifft. Die `intelliSenseMode` Eigenschaft stellt einige zusätzliche Hinweise basierend auf dem Compilertyp bereit. Für MSVC, GCC und Clang stehen mehrere Optionen zur Verfügung.
+Diese Konfiguration erbt die Umgebungsvariablen von der [x64-Developer-Eingabeaufforderung](building-on-the-command-line.md) in Visual Studio. Eine dieser Variablen ist `INCLUDE`, und Sie können hier auf sie verweisen, indem Sie das `${env.INCLUDE}`-Makro verwenden. Über die `includePath`-Eigenschaft erfährt Visual Studio, wo nach all den Quellen gesucht werden muss, die für IntelliSense benötigt werden. In diesem Fall wird Visual Studio angewiesen, in allen Verzeichnissen zu suchen, die von der INCLUDE-Umgebungsvariable angegeben werden, sowie in allen Verzeichnissen in der aktuellen Arbeitsordnerstruktur. Bei der `name`-Eigenschaft handelt es sich um den Name, der im Dropdown angezeigt wird. Sie können einen beliebigen Namen festlegen. Die `defines`-Eigenschaft stellt Hinweise für IntelliSense bereit, wenn Blöcke für die bedingte Kompilierung auftreten. Die `intelliSenseMode`-Eigenschaft stellt basierend auf dem Typ des Compilers weitere Hinweise bereit. Für MSVC, GCC und Clang stehen verschiedene Optionen zur Verfügung.
 
 > [!NOTE]
-> Wenn Visual Studio Einstellungen in *CppProperties.json*zu ignorieren scheint, versuchen Sie, Ihrer `!/CppProperties.json` *.gitignore-Datei* eine Ausnahme wie folgt hinzuzufügen: .
+> Wenn Visual Studio Einstellungen in *CppProperties.json* zu ignorieren scheint, versuchen Sie, Ihrer *GITIGNORE*-Datei folgendermaßen eine Ausnahme hinzuzufügen: `!/CppProperties.json`.
 
 ## <a name="default-configuration-for-mingw-w64"></a>Standardkonfiguration für MinGW-w64
 
-Wenn Sie die MinGW-W64-Konfiguration hinzufügen, sieht das JSON wie folgt aus:
+Wenn Sie die MinGW-W64-Konfiguration hinzufügen, sieht die JSON-Datei folgendermaßen aus:
 
 ```json
 {
@@ -109,21 +109,21 @@ Wenn Sie die MinGW-W64-Konfiguration hinzufügen, sieht das JSON wie folgt aus:
 }
 ```
 
-Beachten `environments` Sie den Block. Es definiert Eigenschaften, die sich wie Umgebungsvariablen verhalten und nicht nur in der Datei *CppProperties.json,* sondern auch in den anderen Konfigurationsdateien *task.vs.json* und *launch.vs.json*verfügbar sind. Die `Mingw64` Konfiguration erbt `mingw_w64` die Umgebung `INCLUDE` und verwendet ihre `includePath`Eigenschaft, um den Wert für anzugeben. Sie können dieser Arrayeigenschaft bei Bedarf weitere Pfade hinzufügen."
+Beachten Sie den `environments`-Block. Er definiert Eigenschaften, die sich wie Umgebungsvariablen verhalten und nicht nur in der *CppProperties.json*-Datei verfügbar sind, sondern auch in den Konfigurationsdateien *task.vs.json* und *launch.vs.json*. Die `Mingw64`-Konfiguration erbt die `mingw_w64`-Umgebung und verwendet die dazugehörige `INCLUDE`-Eigenschaft, um den Wert für `includePath` anzugeben. Sie können dieser Arrayeigenschaft bei Bedarf weitere Pfade hinzufügen.
 
-Die `intelliSenseMode` Eigenschaft wird auf einen Wert festgelegt, der für GCC geeignet ist. Weitere Informationen zu all diesen Eigenschaften finden Sie unter [CppProperties-Schemareferenz](cppproperties-schema-reference.md).
+Die `intelliSenseMode`-Eigenschaft wird auf einen Wert festgelegt, der für GCC geeignet ist. Weitere Informationen zu allen diesen Eigenschaften finden Sie unter [CppProperties.json-Referenz](cppproperties-schema-reference.md).
 
-Wenn alles ordnungsgemäß funktioniert, sehen Sie IntelliSense aus den GCC-Headern, wenn Sie den Mauszeiger über einen Typ bewegen:
+Wenn alles ordnungsgemäß funktioniert, wird IntelliSense in den GCC-Headern angezeigt, wenn Sie den Mauszeiger über einen Typ bewegen:
 
-![GCC IntelliSense](media/gcc-intellisense.png)
+![GCC-IntelliSense](media/gcc-intellisense.png)
 
-## <a name="enable-intellisense-diagnostics"></a>IntelliSense-Diagnose aktivieren
+## <a name="enable-intellisense-diagnostics"></a>Aktivieren von IntelliSense-Diagnosen
 
-Wenn sie den erwarteten IntelliSense nicht sehen, können Sie die Problembehandlung beheben, indem Sie zu **Tools** > **Options** > **Text Editor** > **C/C++** > **Advanced** gehen und die **Option Protokollierung** **auf true**aktivieren festlegen. Versuchen Sie zunächst, **die Protokollierungsebene** auf 5 und die **Protokollierungsfilter** auf 8 festzulegen.
+Wenn IntelliSense nicht so angezeigt wird, wie Sie es erwarten, können Sie ein Troubleshooting durchführen, indem Sie **Extras** > **Optionen** > **Text-Editor** > **C/C++**  > **Erweitert** aufrufen und **Protokollierung aktivieren** auf **True** festlegen. Versuchen Sie für den Beginn, den **Protokolliergrad** auf 5 festzulegen und die **Protokollierungsfilter** auf 8.
 
 ![Diagnoseprotokollierung](media/diagnostic-logging.png)
 
-Die Ausgabe wird an das **Ausgabefenster** gepipetiert und ist sichtbar, wenn Sie **Ausgabe anzeigen von: Visual C++ Log auswählen.* Die Ausgabe enthält unter anderem die Liste der tatsächlichen Includepfade, die IntelliSense zu verwenden versucht. Wenn die Pfade nicht mit denen in *CppProperties.json*übereinstimmen, versuchen Sie, den Ordner zu schließen und den *Unterordner .vs* zu löschen, der zwischengespeicherte Browserdaten enthält.
+Die Ausgabe wird an das **Ausgabefenster** weitergeleitet und ist sichtbar, wenn Sie die Option **Ausgabe anzeigen von: Visual C++-Protokoll* auswählen. Die Ausgabe enthält u. a. die Liste der tatsächlichen Includepfade, die IntelliSense versucht zu verwenden. Wenn die Pfade nicht mit denen in der Datei *CppProperties.json* übereinstimmen, versuchen Sie, den Ordner zu schließen und den *VS*-Unterordner zu löschen, der die zwischengespeicherten Browserdaten enthält.
 
 ### <a name="define-build-tasks-with-tasksvsjson"></a>Definieren von Buildtasks mit „tasks.vs.json“
 
@@ -131,7 +131,7 @@ Sie können Buildskripts oder andere externe Vorgänge in den Dateien automatisi
 
 ![Konfigurieren von Tasks für „Ordner öffnen“](media/configure-tasks.png)
 
-Dadurch wird die *Datei tasks.vs.json* in dem .vs-Ordner erstellt (oder geöffnet), den Visual Studio in Ihrem Stammprojektordner erstellt. Sie können in dieser Datei einen beliebigen Task definieren und diesen dann über das Kontextmenü des **Projektmappen-Explorers** aufrufen. Um das GCC-Beispiel fortzusetzen, zeigt der folgende Ausschnitt eine vollständige *tasks.vs.json-Datei* mit einer einzigen Aufgabe an, die *g++.exe* aufruft, um ein Projekt zu erstellen. Angenommen, das Projekt enthält eine einzelne Datei namens *hello.cpp*.
+Dadurch wird die *tasks.vs.json*-Datei im VS-Ordner erstellt (oder geöffnet), den Visual Studio im Stammordner des Projekts erstellt. Sie können in dieser Datei einen beliebigen Task definieren und diesen dann über das Kontextmenü des **Projektmappen-Explorers** aufrufen. Wenn das GCC-Beispiel fortgesetzt werden soll, zeigt der folgende Codeausschnitt eine vollständige *tasks.vs.json*-Datei mit einer einzelnen Aufgabe, die *g++.exe* aufruft, um ein Projekt zu erstellen. Nehmen Sie an, das Projekt enthält eine einzelne Datei namens *hello.cpp*.
 
 ```json
 {
@@ -154,9 +154,9 @@ Dadurch wird die *Datei tasks.vs.json* in dem .vs-Ordner erstellt (oder geöffne
 
 ```
 
-Die JSON-Datei wird im *Unterordner .vs* abgelegt. Um diesen Ordner anzuzeigen, klicken Sie oben im **Projektmappen-Explorer**auf die Schaltfläche **Alle Dateien anzeigen** . Sie können diese Aufgabe ausführen, indem Sie mit der rechten Maustaste auf den Stammknoten im **Projektmappen-Explorer** klicken und **Build hello**auswählen. Wenn die Aufgabe abgeschlossen ist, sollte eine neue Datei angezeigt werden, *hello.exe* im **Projektmappen-Explorer**.
+Die JSON-Datei wird in den *VS*-Unterordner platziert. Wenn dieser Ordner angezeigt werden soll, klicken Sie auf die Schaltfläche **Alle Dateien anzeigen** oben im **Projektmappen-Explorer**. Sie können diese Aufgabe ausführen, indem Sie mit der rechten Maustaste auf den Stammknoten im **Projektmappen-Explorer** klicken und **build hello** auswählen. Wenn die Aufgabe abgeschlossen ist, sollte im **Projektmappen-Explorer** eine neue Datei angezeigt werden: *hello.exe*.
 
-Sie können viele Arten von Aufgaben definieren. Das folgende Beispiel zeigt eine *tasks.vs.json-Datei,* die eine einzelne Aufgabe definiert. `taskLabel` definiert den Namen, der im Kontextmenü angezeigt wird. `appliesTo` definiert, für welche Dateien der Befehl ausgeführt werden kann. Die `command` Eigenschaft bezieht sich auf die COMSPEC-Umgebungsvariable, die den Pfad für die Konsole (*cmd.exe* unter Windows) identifiziert. Sie können ebenfalls auf Umgebungsvariablen verweisen, die in „CppProperties.json“ oder „CMakeSettings.json“ definiert sind. Die `args`-Eigenschaft gibt die Befehlszeile an, die aufgerufen werden soll. Das `${file}`-Makro ruft die ausgewählte Datei im **Projektmappen-Explorer** ab. Im folgenden Beispiel wird der Dateiname der aktuell ausgewählten CPP-Datei angezeigt.
+Sie können viele Arten von Aufgaben definieren. Das folgende Beispiel zeigt eine *tasks.vs.json-Datei*, die eine einzelne Aufgabe definiert. `taskLabel` definiert den Namen, der im Kontextmenü angezeigt wird. `appliesTo` definiert, für welche Dateien der Befehl ausgeführt werden kann. Die `command`-Eigenschaft bezieht sich auf die Umgebungsvariable COMSPEC, die den Pfad für die Konsole (*cmd.exe* unter Windows) identifiziert. Sie können ebenfalls auf Umgebungsvariablen verweisen, die in „CppProperties.json“ oder „CMakeSettings.json“ definiert sind. Die `args`-Eigenschaft gibt die Befehlszeile an, die aufgerufen werden soll. Das `${file}`-Makro ruft die ausgewählte Datei im **Projektmappen-Explorer** ab. Im folgenden Beispiel wird der Dateiname der aktuell ausgewählten CPP-Datei angezeigt.
 
 ```json
 {
@@ -173,13 +173,13 @@ Sie können viele Arten von Aufgaben definieren. Das folgende Beispiel zeigt ein
 }
 ```
 
-Nach dem Speichern *von tasks.vs.json*können Sie mit der rechten Maustaste auf eine *beliebige CPP-Datei* im Ordner klicken, im Kontextmenü die Option **Echo-Dateiname** auswählen und den Dateinamen im Ausgabefenster anzeigen.
+Wenn Sie *tasks.vs.json* gespeichert haben, können Sie mit der rechten Maustaste auf eine beliebige *CPP*-Datei im Ordner klicken und im Kontextmenü **Echo filename** auswählen. Anschließend wird der Dateiname im Ausgabefenster angezeigt.
 
 Weitere Informationen finden Sie unter [Tasks.vs.json schema reference (Tasks.vs.json-Schemareferenz)](tasks-vs-json-schema-reference-cpp.md).
 
 ### <a name="configure-debugging-parameters-with-launchvsjson"></a>Konfigurieren von Parametern für das Debuggen mithilfe von „launch.vs.json“
 
-Um die Befehlszeilenargumente und Debuganweisungen Ihres Programms anzupassen, klicken Sie mit der rechten Maustaste auf die ausführbare Datei im **Projektmappen-Explorer,** und wählen Sie **Debug- und Starteinstellungen**aus. Dadurch wird eine vorhandene *launch.vs.json-Datei* geöffnet, oder wenn keine vorhanden ist, wird eine neue Datei mit einer Reihe von minimalen Starteinstellungen erstellt. Zuerst haben Sie die Wahl, welche Art von Debugsitzung Sie konfigurieren möchten. Zum Debuggen eines MinGw-w64-Projekts wählen wir **C/C++ Launch für MinGW/Cygwin (gdb)**. Dadurch wird eine Startkonfiguration für die Verwendung von *gdb.exe* mit einigen fundierten Vermutungen über Standardwerte erstellt. Einer dieser Standardwerte `MINGW_PREFIX`ist . Sie können den Literalpfad ersetzen (wie unten `MINGW_PREFIX` gezeigt) oder Sie können eine Eigenschaft in *CppProperties.json*definieren:
+Wenn Sie die Befehlszeilenargumente Ihres Programms und die Debuganweisungen anpassen möchten, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die ausführbare Datei, und wählen Sie **Debug- und Starteinstellungen** aus. Dadurch wird eine vorhandene *launch.vs.json*-Datei geöffnet, oder, falls keine vorhanden ist, wird eine neue Datei mit minimal erforderlichen Starteinstellungen erstellt. Zunächst können Sie auswählen, welche Art von Debugsitzung Sie konfigurieren möchten. Wenn Sie ein MinGw-w64-Projekt debuggen möchten, wählen Sie **C/C++ Launch for MinGW/Cygwin (gdb)** aus. Dadurch wird eine Startkonfiguration erstellt, bei der *gdb.exe* mit einigen fundierten Vermutungen zu Standardwerten verwendet werden kann. Einer dieser Standardwerte ist `MINGW_PREFIX`. Sie können den Literalpfad wie unten gezeigt ersetzen, oder Sie definieren eine `MINGW_PREFIX`-Eigenschaft in *CppProperties.json*:
 
 ```json
 {
@@ -201,17 +201,17 @@ Um die Befehlszeilenargumente und Debuganweisungen Ihres Programms anzupassen, k
 
 ```
 
-Um mit dem Debuggen zu beginnen, wählen Sie die ausführbare Datei in der Dropdown-Liste des Debuggens aus, und klicken Sie dann auf den grünen Pfeil:
+Wählen Sie die ausführbare Datei im Debugdropdown aus, und klicken Sie dann auf den grünen Pfeil, um das Debuggen zu beginnen:
 
-![Debugger starten](media/launch-debugger-gdb.png)
+![Starten des Debuggers](media/launch-debugger-gdb.png)
 
-Es sollte das Dialogfeld Initialisieren des **Debuggers** und dann ein externes Konsolenfenster angezeigt werden, in dem das Programm ausgeführt wird.
+Das Dialogfeld **Initializing Debugger** (Debugger wird initialisiert) sollte angezeigt werden und danach ein externes Konsolenfenster, in dem Ihr Programm ausgeführt wird.
 
-Weitere Informationen finden Sie unter [launch.vs.json-Schemareferenz](launch-vs-schema-reference-cpp.md).
+Weitere Informationen finden Sie unter [Tasks.vs.json-Schemareferenz (C++)](launch-vs-schema-reference-cpp.md).
 
 ## <a name="launching-other-executables"></a>Starten anderer ausführbarer Dateien
 
-Sie können Starteinstellungen für jede ausführbare Datei auf Ihrem Computer definieren. Im folgenden Beispiel wird *7za* gestartet und zusätzliche Argumente `args` angegeben, indem sie dem JSON-Array hinzugefügt werden:
+Sie können Starteinstellungen für jede ausführbare Datei auf Ihrem Computer definieren. Im folgenden Beispiel wird *7za* gestartet und weitere Argumente angegeben, indem sie dem `args`-JSON-Array hinzugefügt werden:
 
 ```json
 {

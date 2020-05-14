@@ -3,11 +3,11 @@ title: Zusammenfassung der Ausdrücke
 ms.date: 06/14/2018
 ms.assetid: ed448953-687a-4b57-a1cb-12967bd770ea
 ms.openlocfilehash: 320baa51d54f00ac4fdb6633922a8bb36cf92a94
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50543493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62157817"
 ---
 # <a name="summary-of-expressions"></a>Zusammenfassung der Ausdrücke
 
@@ -15,99 +15,99 @@ ms.locfileid: "50543493"
 &nbsp;&nbsp;&nbsp;&nbsp;*identifier*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*constant*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*string-literal*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**(**  *expression*  **)**
+&nbsp;&nbsp;&nbsp;&nbsp; **(**  *Ausdruck*  **)**
 
 *expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*assignment-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*expression*  **,**  *assignment-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck*  **,**  *Zuweisungsausdruck*
 
 *constant-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*conditional-expression*
 
 *conditional-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*  **?**  *expression* **:** *conditional-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-OR-Ausdruck*  **?**  *Ausdruck*  **:**  *bedingter-Ausdruck*
 
 *assignment-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*conditional-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unary-expression* *assignment-operator* *assignment-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*unärer-Ausdruck* *Zuweisungsoperator* *Zuweisungsausdruck*
 
 *postfix-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*primary-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*  **[**  *expression*  **]**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*  **(**  *argument-expression-list*<sub>opt</sub> **)**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*  **.**  *identifier*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*  **->**  *identifier*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*  **++**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*  **--**
+&nbsp;&nbsp;&nbsp;&nbsp;*postfix-Ausdruck*  **[**  *Ausdruck*  **]**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*postfix-Ausdruck*  **(**  *argument-Ausdrucksliste*<sub>opt</sub> **)**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*postfix-Ausdruck*  **.**  *identifier*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*postfix-Ausdruck*  **->**  *Bezeichner*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*postfix-Ausdruck*  **++**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*postfix-Ausdruck*  **--**
 
 *argument-expression-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*assignment-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*argument-expression-list*  **,**  *assignment-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*argument-Ausdrucksliste*  **,**  *Zuweisungsausdruck*
 
 *unary-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*postfix-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**++**  *unary-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**--**  *unary-expression*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **++**  *unärer-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **--**  *unärer-Ausdruck*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*unary-operator*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*cast-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**sizeof**  *unary-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**sizeof (**  *type-name*  **)**
+&nbsp;&nbsp;&nbsp;&nbsp;**sizeof**  *unärer-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**sizeof (**  *Typname*  **)**
 
 *unary-operator*: Einer von<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**&** **&#42;** **+** **-** **~** **!**
+&nbsp;&nbsp;&nbsp;&nbsp; **&** **&#42;** **+** **-** **~** **!**
 
 *cast-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*unary-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**(** *type-name* **)** *cast-expression*
+&nbsp;&nbsp;&nbsp;&nbsp; **(**  *Typname*  **)**  *cast-Ausdruck*
 
 *multiplicative-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*cast-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression*  **&#42;**  *cast-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression*  **/**  *cast-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression*  **%**  *cast-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Multiplikationsausdruck*  **&#42;**  *cast-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Multiplikationsausdruck*  **/**  *cast-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Multiplikationsausdruck*  **%**  *cast-Ausdruck*
 
 *additive-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*multiplicative-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*additive-expression*  **+**  *multiplicative-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*additive-expression*  **-**  *multiplicative-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*additiver-Ausdruck*  **+**  *multiplikativer-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*additiver-Ausdruck*  **-**  *multiplikativer-Ausdruck*
 
 *shift-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*additive-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*shift-expression*  **\<\<**  *additive-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*shift-expression*  **>>**  *additive-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Verschiebeausdruck*  **\<\<**  *additiver-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Verschiebeausdruck*  **>>**  *additiver-Ausdruck*
 
 *relational-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*  **\<**  *shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*  **>**  *shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*  **\<=**  *shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*  **>=**  *shift-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck*  **\<**  *Verschiebeausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck*  **>**  *Verschiebeausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck*  **\<=**  *Verschiebeausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck*  **>=**  *Verschiebeausdruck*
 
 *equality-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*equality-expression*  **==**  *relational-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*equality-expression*  **!=**  *relational-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Gleichheitsausdruck*  **==**  *relationaler-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Gleichheitsausdruck*  **!=**  *relationaler-Ausdruck*
 
 *AND-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*equality-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*AND-expression*  **&**  *equality-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*AND-Ausdruck*  **&**  *Gleichheitsausdruck*
 
 *exclusive-OR-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*AND-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*exclusive-OR-expression*  **^**  *AND-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*exklusiver-OR-Ausdruck*  **^**  *AND-Ausdruck*
 
 *inclusive-OR-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*exclusive-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*inclusive-OR-expression*  **&#124;**  *exclusive-OR-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*inklusiver-OR-Ausdruck*  **&#124;**  *exklusiver-OR-Ausdruck*
 
 *logical-AND-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*inclusive-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-AND-expression*  **&&**  *inclusive-OR-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-AND-Ausdruck*  **&&**  *inklusiver-OR-Ausdruck*
 
 *logical-OR-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*logical-AND-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*  **&#124;&#124;**  *logical-AND-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-OR-Ausdruck*  **&#124;&#124;**  *logischer-AND-Ausdruck*
 
 ## <a name="see-also"></a>Siehe auch
 

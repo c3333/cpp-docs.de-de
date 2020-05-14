@@ -8,24 +8,24 @@ helpviewer_keywords:
 ms.assetid: 1acb1add-ac06-4134-a2fd-aff13d8c4c15
 ms.openlocfilehash: 373ce9fa2c2c96fac349940076873a4a637a9dbe
 ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/20/2019
 ms.locfileid: "75298713"
 ---
 # <a name="why-floating-point-numbers-may-lose-precision"></a>Warum Gleitkommazahlen an Genauigkeit verlieren können
 
-Dezimalwerte für Gleit Komma Werte verfügen im Allgemeinen nicht über eine exakte binäre Darstellung. Dies ist eine neben Auswirkung darauf, wie die CPU Gleit Komma Daten darstellt. Aus diesem Grund kann es zu einem Genauigkeits Verlust kommen, und einige Gleit Komma Vorgänge können zu unerwarteten Ergebnissen führen.
+Für Gleitkomma-Dezimalwerte gibt es in der Regel keine genaue binäre Darstellung. Dies ist eine Nebenwirkung davon, wie die CPU Gleitkommadaten darstellt. Aus diesem Grund kann es zu einem gewissen Genauigkeitsverlust kommen, und einige Gleitkommavorgänge können zu unerwarteten Ergebnissen führen.
 
-Dieses Verhalten ist das Ergebnis einer der folgenden:
+Dieses Verhalten hat eine der folgende Ursachen:
 
-- Die binäre Darstellung der Dezimalzahl ist möglicherweise nicht exakt.
+- Die binäre Darstellung der Dezimalzahl ist möglicherweise nicht genau.
 
-- Es gibt einen Typen Konflikt zwischen den verwendeten Zahlen (z. b. "float" und "Double").
+- Es gibt einen Typenkonflikt zwischen den verwendeten Zahlen (z. B. gleichzeitige Verwendung von „float“ und „double“).
 
-Um das Verhalten zu beheben, stellen die meisten Programmierer entweder sicher, dass der Wert größer oder kleiner als das benötigte ist, oder Sie erhalten und verwenden eine binäre codierte Decimal (BCD)-Bibliothek, die die Genauigkeit beibehält.
+Um dieses Verhalten zu korrigieren, stellen die meisten Programmierer entweder sicher, dass der Wert größer oder kleiner als erforderlich ist, oder sie verwenden eine zu diesem Zweck beschaffte Bibliothek für binär codierte Dezimalzahlen (BCD-Bibliothek), mit der die Genauigkeit gewahrt bleibt.
 
-Die binäre Darstellung von Gleit Komma Werten wirkt sich auf die Genauigkeit und Genauigkeit von Gleit Komma Berechnungen aus. Microsoft Visual C++ verwendet das [IEEE-Gleit Komma Format](ieee-floating-point-representation.md).
+Die binäre Darstellung von Gleitkommawerten wirkt sich auf die Präzision und Genauigkeit von Gleitkommaberechnungen aus. Microsoft Visual C++ verwendet das [IEEE-Gleitkommaformat](ieee-floating-point-representation.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -58,9 +58,9 @@ int main() {
 They are not equal! The value of c is  2.4679999352 or 2.468000
 ```
 
-## <a name="comments"></a>Comments
+## <a name="comments"></a>Kommentare
 
-Für Epsilon können Sie die Konstanten FLT_EPSILON verwenden, die für float als 1.192092896 e-07f definiert ist, oder DBL_EPSILON, das für Double AS 2.2204460492503131 e-016 definiert ist. Sie müssen float. h für diese Konstanten einschließen. Diese Konstanten werden als kleinste positive Zahl x definiert, sodass x + 1.0 nicht gleich 1,0 ist. Da es sich um eine sehr kleine Zahl handelt, sollten Sie benutzerdefinierte Toleranz für Berechnungen verwenden, die sehr große Zahlen umfassen.
+Für EPSILON können Sie die Konstante FLT_EPSILON, die für „float“ als 1.192092896e-07F definiert ist, oder die Konstante DBL_EPSILON, die für „double“ als 2.2204460492503131e-016 definiert ist, verwenden. Sie müssen für diese Konstanten „float.h“ einschließen. Diese Konstanten werden als kleinste positive Zahl x definiert, sodass x+1.0 nicht gleich 1.0 ist. Da es sich um eine sehr kleine Zahl handelt, sollten Sie eine benutzerdefinierte Toleranz für Berechnungen verwenden, die sehr große Zahlen umfassen.
 
 ## <a name="see-also"></a>Siehe auch
 

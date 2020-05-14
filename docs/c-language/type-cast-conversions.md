@@ -10,11 +10,11 @@ helpviewer_keywords:
 - type-cast conversions [C++]
 ms.assetid: 57ab5902-f12f-4326-a2f6-6282f1d4025a
 ms.openlocfilehash: d54e4c15f84ccecad629d48341e5d3ae26d8cecf
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62344940"
 ---
 # <a name="type-cast-conversions"></a>Typumwandlungskonvertierungen
 
@@ -24,10 +24,10 @@ Sie können Typumwandlungen verwenden, um Typen explizit zu konvertieren.
 
 *cast-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*unary-Ausdruck*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**(** *type-name* **)** *cast-expression*
+&nbsp;&nbsp;&nbsp;&nbsp; **(**  *Typname*  **)**  *cast-Ausdruck*
 
 *type-name*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*specifier-qualifier-list* *abstract-declarator*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Spezifizierer-/Qualifiziererliste* *abstrakter-Deklarator*<sub>opt</sub>
 
 *type-name* ist ein Typ, und *cast-expression* ist ein Wert, der in diesen Typ konvertiert wird. Ein Ausdruck mit einer Typumwandlung ist kein l-Wert. *cast-expression* wird wie bei einer Zuweisung zu einer Variablen des Typs *type-name* konvertiert. Die Konvertierungsregeln für Zuweisungen (unter [Zuweisungskonvertierungen](../c-language/assignment-conversions.md) beschrieben) gelten auch für Typumwandlungen. Die folgende Tabelle zeigt die Typen, die in jeden Typ umgewandelt werden können.
 
@@ -37,14 +37,14 @@ Sie können Typumwandlungen verwenden, um Typen explizit zu konvertieren.
 |-----------------------|-----------------------|
 |Ganzzahlige Typen|Ein beliebiger ganzzahliger Typ oder Gleitkommatyp oder Zeiger auf ein Objekt|
 |Gleitkomma|Beliebiger arithmetischer Typ|
-|Ein Zeiger auf ein Objekt oder (**void** <strong>\*</strong>)|Ein beliebiger ganzzahliger Typ (**void** <strong>\*</strong>), ein Zeiger auf ein Objekt oder ein Funktionszeiger|
+|Ein Zeiger auf ein Objekt oder (**void** <strong>\*</strong>)|Ein beliebiger Integer-Typ (**void** <strong>\*</strong>), ein Zeiger auf ein Objekt oder ein Funktionszeiger|
 |Funktionszeiger|Ein beliebiger ganzzahliger Typ, ein Zeiger auf ein Objekt oder einen Funktionszeiger|
 |Eine Struktur, Union oder ein Array|Keine|
 |void-Typ|Beliebiger Typ|
 
 Jeder Bezeichner kann in den `void`-Typ umgewandelt werden. Wenn jedoch der Typ, der in einem Typumwandlungsausdruck angegeben ist, nicht `void` ist, kann der Bezeichner, der in diesen Typ umgewandelt wird, kein `void`-Ausdruck sein. Jeder Ausdruck kann in `void` umgewandelt werden, aber ein Ausdruck vom Typ `void` kann nicht in einen anderen Typ umgewandelt werden. Beispielsweise kann die Rückgabe einer Funktion mit dem Rückgabetyp `void` nicht in einen anderen Typ umgewandelt werden.
 
-Beachten Sie, dass ein **void** <strong>\*</strong>-Ausdruck einen Typzeiger auf `void`, nicht den Typ `void` aufweist. Wenn ein Objekt in einen `void`-Typ umgewandelt wird, kann der resultierende Ausdruck keinem Element zugewiesen werden. Ebenso ist ein Typumwandlungsobjekt kein zulässiger l-Wert, sodass keine Zuweisung zu einem Typumwandlungsobjekt durchgeführt werden kann.
+Beachten Sie, dass ein **void** <strong>\*</strong>-Ausdruck einen Typzeiger auf `void` und nicht den Typ `void` aufweist. Wenn ein Objekt in einen `void`-Typ umgewandelt wird, kann der resultierende Ausdruck keinem Element zugewiesen werden. Ebenso ist ein Typumwandlungsobjekt kein zulässiger l-Wert, sodass keine Zuweisung zu einem Typumwandlungsobjekt durchgeführt werden kann.
 
 **Microsoft-spezifisch**
 

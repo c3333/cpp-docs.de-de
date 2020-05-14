@@ -4,7 +4,7 @@ ms.date: 11/04/2016
 ms.assetid: ce45d2fe-ec0e-459f-afb1-80ab6a7f0239
 ms.openlocfilehash: 1a230ca7d998316d2ec96e76b54ac60575acd2ee
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74856994"
@@ -18,49 +18,49 @@ ms.locfileid: "74856994"
 &nbsp;&nbsp;&nbsp;&nbsp;*selection-statement*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*iteration-statement*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*jump-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Try-außer-Statement-*  /\* \*Microsoft-spezifischen /<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*try-schließlich-Statement* /\* \*Microsoft-spezifischen /
+&nbsp;&nbsp;&nbsp;&nbsp;*try-except-Anweisung* /\* Microsoft-spezifisch \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*try-finally-Anweisung* /\* Microsoft-spezifisch \*/
 
 *jump-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**goto**  *identifier*  **;**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**goto**  *Bezeichner*  **;**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**continue ;**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**break ;**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**return** *expression*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;**return** *Ausdruck*<sub>opt</sub> **;**
 
 *compound-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **{** *declaration-list*<sub>opt</sub> *statement-list*<sub>opt</sub> **}**
+&nbsp;&nbsp;&nbsp;&nbsp; **{** *Deklarationsliste*<sub>opt</sub> *Anweisungsliste*<sub>opt</sub> **}**
 
 *declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-list* *declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsliste* *Deklaration*
 
 *statement-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*statement-list* *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;*Anweisungsliste* *Anweisung*
 
 *expression-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*expression*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck*<sub>opt</sub> **;**
 
 *iteration-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**while (**  *expression*  **)**  *statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**do**  *statement*  **while (**  *expression*  **) ;**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**for (**  *expression*<sub>opt</sub> **;** *expression*<sub>opt</sub> **;** *expression*<sub>opt</sub> **)** *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;**while (**  *Ausdruck*  **)**  *Anweisung*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**do**  *Anweisung*  **while (**  *Ausdruck*  **) ;**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**for (**  *Ausdruck*<sub>opt</sub> **;** *Ausdruck*<sub>opt</sub> **;** *Ausdruck*<sub>opt</sub> **)** *Anweisung*
 
 *selection-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**if (**  *expression*  **)**  *statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**if (**  *expression*  **)**  *statement*  **else**  *statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**switch (**  *expression*  **)**  *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;**if (**  *Ausdruck*  **)**  *Anweisung*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**if (**  *Ausdruck*  **)**  *Anweisung*  **else**  *Anweisung*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**switch (**  *Ausdruck*  **)**  *Anweisung*
 
 *labeled-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*identifier*  **:**  *statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**case**  *constant-expression*  **:**  *statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**default :**  *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;*Bezeichner*  **:**  *Anweisung*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**case**  *konstanter-Ausdruck*  **:**  *Anweisung*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**default :**  *Anweisung*
 
-*Try-außer-Statement*:/\* Microsoft-spezifischer \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__try**  *compound-statement* **__except (**  *expression*  **)**  *compound-statement*
+*try-except-Anweisung*:   /\* Microsoft-spezifisch \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__try**  *Verbundanweisung* **__except (**  *Ausdruck*  **)**  *Verbundanweisung*
 
-*try-endlich-Statement*:/\* Microsoft-spezifischer \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__try**  *compound-statement* **__finally**  *compound-statement*
+*try-finally-Anweisung*:   /\* Microsoft-spezifisch \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__try**  *Verbundanweisung* **__finally**  *Verbundanweisung*
 
 ## <a name="see-also"></a>Siehe auch
 

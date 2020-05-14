@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: f76db9d1-fc78-417f-b71f-18e545fc01c3
 ms.openlocfilehash: 2ca5299a5ab20b8985a520f25bb654ead0c25e2b
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81349743"
 ---
 # <a name="try-except-statement-c"></a>try-except-Anweisung (C)
 
-**Microsoft Specific**
+**Microsoft-spezifisch**
 
 Die **try-except**-Anweisung ist eine Microsoft-Erweiterung zur Programmiersprache C, mit deren Hilfe Anwendungen bei Ereignissen, die normalerweise zur Beendigung eines Programms führen, die Steuerung des Programms übernehmen können. Diese Ereignisse werden als Ausnahmen bezeichnet, und der Mechanismus, der die Ausnahmen behandelt, wird als strukturierte Ausnahmebehandlung bezeichnet.
 
@@ -27,9 +27,9 @@ Ausnahmen können entweder hardware- oder softwarebasiert sein. Auch wenn Anwend
 
 ## <a name="syntax"></a>Syntax
 
-*try-except-statement*: **__try**  *compound-statement*
+*try-except-Anweisung*: **__try**  *Verbundanweisung*
 
-**__except (**  *Ausdruck*  **)**  *zusammengesetzte Anweisung*
+**__except (**  *Ausdruck*  **)**  *Verbundanweisung*
 
 Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der `__except`-Klausel ist der Ausnahmehandler. Der Handler gibt eine Reihe von Aktionen an, die abgerufen werden, wenn eine Ausnahme während der Ausführung des geschützten Abschnitts ausgelöst wird. Die Ausführung erfolgt folgendermaßen:
 
@@ -94,7 +94,7 @@ in except           /* transfer control to selected handler */
 world               /* flow out of handler                  */
 ```
 
-**END Microsoft Spezifisch**
+**Ende Microsoft-spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

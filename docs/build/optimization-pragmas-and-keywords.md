@@ -8,37 +8,37 @@ helpviewer_keywords:
 ms.assetid: 66a94842-ef10-490a-88b3-51d1a568ead5
 ms.openlocfilehash: 192564d475da121a874b5a40de62b37d7f934ce7
 ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "80169798"
 ---
 # <a name="optimization-pragmas-and-keywords"></a>Pragmas und Schlüsselwörter für die Optimierung
 
-Mehrere Schlüsselwörter und Pragmas, die Sie im C- C++ oder Code-Code verwenden, beeinflussen die Optimierung:
+Verschiedene Schlüsselwörter und Pragmas, die Sie in Ihrem C- oder C++-Code verwenden, haben Einfluss auf die Optimierung:
 
 - [__asm](../assembler/inline/asm.md)
 
 - [__assume](../intrinsics/assume.md)
 
-- [Inline-, __inline-oder \__forceinline](../cpp/inline-functions-cpp.md)
+- [inline, __inline oder \__forceinline](../cpp/inline-functions-cpp.md)
 
 - [#pragma auto_inline](../preprocessor/auto-inline.md)
 
 - [#pragma check_stack](../preprocessor/check-stack.md)
 
-- [#pragma-Funktion](../preprocessor/function-c-cpp.md)
+- [#pragma function](../preprocessor/function-c-cpp.md)
 
 - [#pragma inline_depth](../preprocessor/inline-depth.md)
 
-- [#Pragma inline_recursion](../preprocessor/inline-recursion.md)
+- [#pragma inline_recursion](../preprocessor/inline-recursion.md)
 
-- [systeminterne #Pragma](../preprocessor/intrinsic.md)
+- [#pragma intrinsic](../preprocessor/intrinsic.md)
 
-- [#Pragma Optimieren](../preprocessor/optimize.md)
+- [#pragma optimize](../preprocessor/optimize.md)
 
-- [Register-Schlüsselwort](../cpp/storage-classes-cpp.md#register)
+- [Schlüsselwort register](../cpp/storage-classes-cpp.md#register)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Codeoptimierung](optimizing-your-code.md)

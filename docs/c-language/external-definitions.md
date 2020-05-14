@@ -6,24 +6,24 @@ helpviewer_keywords:
 - external linkage, variable declarations
 ms.assetid: 41e37bfc-b360-43b1-9972-28af2d365b20
 ms.openlocfilehash: 7a05cf730940246c82963afbe27f6fa344951aeb
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62233671"
 ---
 # <a name="external-definitions"></a>Externe Definitionen
 
 *translation-unit*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*external-declaration* <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*translation-unit* *external-declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Übersetzungseinheit* *externe-Deklaration*
 
 *external-declaration*: /\* Nur für externen (Datei-) Bereich zulässig \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*function-definition*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declaration*
 
 *function-definition*: /\* Der Deklarator hier ist der Funktionsdeklarator \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers*<sub>opt</sub> *declarator* *declaration-list*<sub>opt</sub> *compound-statement*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer*<sub>opt</sub> *Deklarator* *Deklarationsliste*<sub>opt</sub> *Verbundanweisung*
 
 ## <a name="see-also"></a>Siehe auch
 

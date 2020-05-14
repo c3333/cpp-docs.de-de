@@ -23,15 +23,15 @@ Die binären Gleichheits- und relationalen Operatoren vergleichen ihren ersten O
 
 *relational-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression* **&lt;** *shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression* **>** *shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression* **&lt;=** *shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relational-expression* **>=** *shift-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck* **&lt;** *Verschiebeausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck* **>** *Verschiebeausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck* **&lt;=** *Verschiebeausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck* **>=** *Verschiebeausdruck*
 
 *equality-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*equality-expression* **==** *relational-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*equality-expression* **!=** *relational-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Gleichheitsausdruck* **==** *relationaler-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Gleichheitsausdruck* **!=** *relationaler-Ausdruck*
 
 Mit den Gleichheits- und relationalen Operatoren werden die folgenden Beziehungen getestet:
 

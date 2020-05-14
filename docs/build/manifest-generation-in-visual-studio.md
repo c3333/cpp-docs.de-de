@@ -6,28 +6,28 @@ helpviewer_keywords:
 ms.assetid: 0af60aa9-d223-42cd-8426-b3fc543a2a81
 ms.openlocfilehash: f055e3d16dfc0ea4320883210458ae10daebdc45
 ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62273357"
 ---
 # <a name="manifest-generation-in-visual-studio"></a>Manifestgenerierung in Visual Studio
 
-Generieren einer Manifestdatei für ein bestimmtes Projekt kann gesteuert werden, in dem Projekt **Eigenschaftenseiten** Dialogfeld. Auf der **Konfigurationseigenschaften** auf **Linker**, klicken Sie dann **Manifestdatei**, klicken Sie dann **Manifest generieren**. Standardmäßig werden die Projekteigenschaften an neuen Projekten festgelegt, um eine Manifestdatei generieren. Jedoch ist es möglich, deaktivieren Sie die Generierung des Manifests für ein Projekt mit der **Manifest generieren** -Eigenschaft des Projekts. Wenn diese Eigenschaft auf festgelegt ist **Ja**, wird das Manifest für dieses Projekt generiert. Der Linker ignoriert Assemblyinformationen beim Auflösen von Abhängigkeiten des Anwendungscodes, und das Manifest nicht generiert.
+Die Generierung einer Manifestdatei für ein bestimmtes Projekt kann über das Projektdialogfeld **Eigenschaftenseiten** gesteuert werden. Klicken Sie auf der Registerkarte **Konfigurationseigenschaften** auf **Linker**, **Manifestdatei** und dann **Manifest generieren**. Die Projekteigenschaften eines neuen Projekts sind standardmäßig so festgelegt, dass eine Manifestdatei generiert wird. Es ist jedoch möglich, die Generierung des Manifests für ein Projekt mithilfe der Eigenschaft **Manifest generieren** des Projekts zu deaktivieren. Wenn diese Eigenschaft auf **Ja** festgelegt ist, wird das Manifest für dieses Projekt generiert. Andernfalls ignoriert der Linker beim Auflösen von Abhängigkeiten des Anwendungscodes Assemblyinformationen und generiert kein Manifest.
 
-Das Buildsystem von Visual Studio ermöglicht das Manifest in die endgültige Binärdatei der Anwendung-Datei eingebettet oder als externe Datei generiert werden. Dieses Verhalten wird gesteuert, indem die **Manifest einbetten** option die **Projekteigenschaften** Dialogfeld. Öffnen Sie zum Festlegen dieser Eigenschaft die **Manifesttool** Knoten, wählen Sie dann **ein- und Ausgabe**. Wenn das Manifest nicht eingebettet werden, ist als externe Datei generiert und im gleichen Verzeichnis wie die endgültige Binärdatei gespeichert. Wenn das Manifest eingebettet ist, bettet Visual Studio die endgültige Manifeste mithilfe des folgenden Prozesses:
+Das Buildsystem in Visual Studio ermöglicht, dass das Manifest in die endgültige binäre Anwendungsdatei eingebettet oder als externe Datei generiert wird. Dieses Verhalten wird durch die Option **Manifest einbetten** im Dialogfeld **Projekteigenschaften** gesteuert. Öffnen Sie den Knoten **Manifesttool**, und klicken Sie auf **Eingabe und Ausgabe**, um diese Eigenschaft festzulegen. Wenn das Manifest nicht eingebettet ist, wird es als externe Datei generiert und im gleichen Verzeichnis wie die endgültige Binärdatei gespeichert. Wenn das Manifest eingebettet ist, bettet Visual Studio die endgültigen Manifeste mithilfe des folgenden Prozesses ein:
 
-1. Nachdem Sie der Quellcode in Objektdateien kompiliert wird, erfasst der Linker Informationen der abhängigen Assembly an. Beim Verknüpfen der endgültigen Binärdatei, generiert der Linker ein intermediate-Manifest, das später verwendet wird, um die endgültige Manifest zu generieren.
+1. Nach der Kompilierung des Quellcodes in Objektdateien sammelt der Linker abhängige Assemblyinformationen. Beim Verknüpfen der endgültigen Binärdatei generiert der Linker ein Übergangsmanifest, das später zum Generieren des endgültigen Manifests verwendet wird.
 
-1. Nachdem der temporäre Bereitstellungsmanifest und das Verknüpfen abgeschlossen sind, wird das Manifesttool ausgeführt werden, um eine endgültige Manifest zusammenführen und speichern Sie sie als externe Datei.
+1. Nachdem das Übergangsmanifest erstellt und die Verknüpfung abgeschlossen ist, wird das Manifesttool ausgeführt, um ein endgültiges Manifest zusammenzuführen und es als externe Datei zu speichern.
 
-1. Das Projekt Buildsystem dann erkennt, ob das Manifest generiert, die für das Manifesttool unterschiedliche Informationen bereits in der Binärdatei eingebettetes Manifest enthält.
+1. Das Buildsystem des Projekts erkennt dann, ob das vom Manifesttool generierte Manifest andere Informationen enthält als das bereits in die Binärdatei eingebettete Manifest.
 
-1. Wenn das Manifest in die Binärdatei eingebettet unterscheidet sich von das Manifest generiert, die für das Manifesttool oder die Binärdatei kein eingebettetes Manifest enthält, Visual Studio ruft den Linker ein weiteres Mal die externe Manifestdatei als in die Binärdatei eingebettet ein die Ressource.
+1. Wenn sich das in die Binärdatei eingebettete Manifest von dem durch das Manifesttool generierte Manifest unterscheidet oder die Binärdatei kein eingebettetes Manifest enthält, ruft Visual Studio den Linker ein weiteres Mal auf, um die externe Manifestdatei als Ressource in die Binärdatei einzubetten.
 
-1. Wenn in der Binärdatei eingebettetes Manifest generiert, die für das Manifesttool identisch ist, wird der Build mit dem nächsten Schritt fortgesetzt.
+1. Wenn das in die Binärdatei eingebettete Manifest mit dem Manifest übereinstimmt, das durch das Manifesttool generiert wurde, fährt der Build mit den nächsten Buildschritten fort.
 
-Das Manifest in die endgültige Binärdatei als Textressource eingebettet ist, und es kann angezeigt werden, indem Sie die endgültige Binärdatei als Datei in Visual Studio öffnen. Um sicherzustellen, dass das Manifest auf die richtigen Bibliotheken verweist, die Schritte [Grundlegendes zu den Abhängigkeiten einer Visual C++-Anwendung](../windows/understanding-the-dependencies-of-a-visual-cpp-application.md) oder führen Sie die Vorschläge in beschrieben die [Problembehandlung](troubleshooting-c-cpp-isolated-applications-and-side-by-side-assemblies.md) Abschnitt.
+Das Manifest ist als Textressource in die endgültige Binärdatei eingebettet und kann angezeigt werden, indem die endgültige Binärdatei als Datei in Visual Studio geöffnet wird. Befolgen Sie die unter [Grundlegendes zu den Abhängigkeiten einer Visual C++-Anwendung](../windows/understanding-the-dependencies-of-a-visual-cpp-application.md) beschriebenen Schritte oder die Empfehlungen unter [Problembehandlung bei isolierten Anwendungen und parallelen Assemblys (C/C++)](troubleshooting-c-cpp-isolated-applications-and-side-by-side-assemblies.md), um sicherzustellen, dass das Manifest auf die richtigen Bibliotheken verweist.
 
 ## <a name="see-also"></a>Siehe auch
 
