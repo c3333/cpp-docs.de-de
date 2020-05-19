@@ -6,11 +6,11 @@ helpviewer_keywords:
 - bit fields
 ms.assetid: 9faf74c4-7fd5-4b44-ad18-04485193d06e
 ms.openlocfilehash: 62c982fa078182cb1902b6770f0a3713ca4ff7a8
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56150232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326494"
 ---
 # <a name="c-bit-fields"></a>C-Bitfelder
 
@@ -20,9 +20,9 @@ Neben Deklaratoren für Member einer Struktur oder Union kann ein Strukturdeklar
 
 *struct-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declarator*<sub>opt</sub> **:** *constant-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarator*<sub>opt</sub> **:** *konstanter-Ausdruck*
 
-*constant-expression* gibt die Breite des Felds in Bits an. *type-specifier* für `declarator` muss `unsigned int`, **signed int** oder `int` sein, und *constant-expression* muss ein nicht negativer Ganzzahlwert sein. Falls der Wert 0 (null) ist, weist die Deklaration keinen `declarator` auf. Arrays aus Bitfeldern, Zeiger auf Bitfelder und Funktionen, die Bitfelder zurückgeben, sind nicht zulässig. Der optionale `declarator` benennt das Bitfeld. Bitfelder können nur als Teil einer Struktur deklariert werden. Der address-of-Operator (**&**) kann nicht auf Bitfeldkomponenten angewendet werden.
+*constant-expression* gibt die Breite des Felds in Bits an. *type-specifier* für `declarator` muss `unsigned int`, **signed int** oder `int` sein, und *constant-expression* muss ein nicht negativer Ganzzahlwert sein. Falls der Wert 0 (null) ist, weist die Deklaration keinen `declarator` auf. Arrays aus Bitfeldern, Zeiger auf Bitfelder und Funktionen, die Bitfelder zurückgeben, sind nicht zulässig. Der optionale `declarator` benennt das Bitfeld. Bitfelder können nur als Teil einer Struktur deklariert werden. Der address-of-Operator ( **&** ) kann nicht auf Bitfeldkomponenten angewendet werden.
 
 Auf unbenannte Bitfelder kann nicht verwiesen werden, und deren Inhalt zur Laufzeit ist unvorhersehbar. Sie können als "Dummy"-Felder zu Ausrichtungszwecken verwendet werden. Ein unbenanntes Bitfeld, dessen Breite auf 0 festgelegt ist, garantiert, dass der Speicher für das in *struct-declaration-list* nachfolgende Element an einer `int`-Grenze beginnt.
 

@@ -17,29 +17,29 @@ ms.locfileid: "65220643"
 ---
 # <a name="importing-and-exporting"></a>Importieren und Exportieren
 
-Sie können Öffentliche Symbole in eine Anwendung importieren oder Exportieren von Funktionen aus einer DLL mithilfe von zwei Methoden:
+Sie können öffentliche Symbole in eine Anwendung importieren oder Funktionen aus einer DLL mithilfe von zwei Methoden exportieren:
 
-- Verwenden Sie eine Moduldefinitionsdatei (.def) beim Erstellen der DLL
+- Verwenden einer Moduldefinitionsdatei (DEF) beim Erstellen der DLL
 
-- Verwenden Sie die Schlüsselwörter **von "__declspec(dllimport)" "** oder **__declspec(dllexport)** in einer Funktionsdefinition in der hauptanwendung
+- Verwenden der Schlüsselwörter **__declspec(dllimport)** oder **__declspec(dllexport)** in einer Funktionsdefinition in der Hauptanwendung
 
-## <a name="using-a-def-file"></a>Dien .def-Datei
+## <a name="using-a-def-file"></a>Verwenden einer DEF-Datei
 
-Eine Moduldefinitionsdatei (.def) ist eine Textdatei mit einer oder mehreren Modulanweisungen, die verschiedene Attribute einer DLL beschreiben. Wenn Sie nicht verwenden **von "__declspec(dllimport)" "** oder **__declspec(dllexport)** zum Exportieren DLLs-Funktionen benötigt die DLL eine DEF-Datei.
+Eine Moduldefinitionsdatei (.def) ist eine Textdatei mit einer oder mehreren Modulanweisungen, die verschiedene Attribute einer DLL beschreiben. Wenn Sie **__declspec(dllimport)** oder **__declspec(dllexport)** nicht verwenden, um die Funktionen einer DLL zu exportieren, ist für die DLL eine DEF-Datei erforderlich.
 
-DEF-Dateien können [importieren in eine Anwendung](importing-using-def-files.md) oder [exportieren aus einer DLL](exporting-from-a-dll-using-def-files.md).
+Sie können DEF-Dateien verwenden, um [in eine Anwendung zu importieren](importing-using-def-files.md) oder [aus einer DLL zu exportieren](exporting-from-a-dll-using-def-files.md).
 
-## <a name="using-declspec"></a>__Declspec verwenden
+## <a name="using-__declspec"></a>Verwenden von __declspec
 
-Sie müssen nicht mit **von "__declspec(dllimport)" "** für Ihren Code ordnungsgemäß kompiliert, aber auf diese Weise können Sie den Compiler, besseren Code zu generieren. Der Compiler kann besseren Code zu generieren, da sie bestimmen kann, ob eine Funktion in einer DLL oder nicht vorhanden, sodass den Compiler Code erstellt, die eine Dereferenzierungsebene überspringt, die normalerweise in einem Funktionsaufruf vorhanden wäre, die eine DLL-Grenze überschritten. Sie müssen allerdings verwenden **von "__declspec(dllimport)" "** Variablen verwendet, die in einer DLL zu importieren.
+Sie müssen **__declspec(dllimport)** nicht verwenden, damit Ihr Code korrekt kompiliert wird. Tun Sie dies jedoch, kann der Compiler besseren Code generieren. Der Compiler kann besseren Code generieren, da er bestimmen kann, ob eine Funktion in einer DLL vorhanden ist oder nicht. Auf dieser Grundlage kann der Compiler Code erzeugen, der eine Ebene der Dereferenzierung überspringt, die normalerweise in einem Funktionsaufruf vorhanden wäre, der eine DLL-Grenze überschritten hat. Sie müssen jedoch **__declspec(dllimport)** verwenden, um Variablen zu importieren, die in einer DLL verwendet werden.
 
-Mit dem richtigen DEF-Datei EXPORTS-Abschnitt **__declspec(dllexport)** ist nicht erforderlich. **__declspec(dllexport)** bieten eine einfache Möglichkeit zum Exportieren von Funktionen aus einer .exe oder .dll-Datei, ohne über eine DEF-Datei hinzugefügt wurde.
+Wenn ein geeigneter Exportbereich in der DEF-Datei verwendet wird, ist **__declspec(dllexport)** nicht erforderlich. **__declspec(dllexport)** wurde hinzugefügt, um eine einfache Möglichkeit bieten zu können, Funktionen aus einer EXE- oder DLL-Datei exportieren zu können, ohne dass eine DEF-Datei verwendet werden muss.
 
-Das Format Portable Win32-Anwendung soll die Anzahl der Seiten zu minimieren, die abgefragt werden müssen, um Importe zu beheben. Zu diesem Zweck werden die Importadressen für ein Programm in einem zentralen Ort, dem Namen der Tabelle importieren. Dadurch wird nur ein oder zwei Seiten zu ändern, wenn diese Importe stellen Zugriff auf das Ladeprogramm.
+Das Win32-Format für portierbare ausführbare Dateien wurde so entworfen, dass die Anzahl von Seiten minimiert wird, die erforderlich sind, um Fehler bei Importen zu beheben. Dazu werden alle Importadressen für sämtliche Programme an einer Stelle namens Importadressentabelle platziert. Dadurch ist es möglich, dass das Ladeprogramm nur ein oder zwei Seiten bearbeitet, wenn auf diese Importe zugegriffen wird.
 
 ## <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
 
-- [Importieren in eine Anwendung](importing-into-an-application-using-declspec-dllimport.md)
+- [Importieren in eine Anwendung mithilfe von __declspec(dllimport)](importing-into-an-application-using-declspec-dllimport.md)
 
 - [Exportieren aus einer DLL](exporting-from-a-dll.md)
 

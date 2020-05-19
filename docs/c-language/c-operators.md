@@ -10,11 +10,11 @@ helpviewer_keywords:
 - binary data, binary expressions
 ms.assetid: 13bc4c8e-2dc9-4b23-9f3a-25064e8777ed
 ms.openlocfilehash: 139eedf54ab42ddc34b5c049abfcd1c2638c5efc
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50620076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326377"
 ---
 # <a name="c-operators"></a>C-Operatoren
 
@@ -44,11 +44,11 @@ Binäre Operatoren sind von links nach rechts angeordnet. C stellt die folgenden
 |**&&** **&#124;&#124;**|Logische Operatoren|
 |**,**|Operator für sequenzielle Auswertung|
 
-Der Basisoperator (**:>**), der von älteren Versionen des 16-Bit-C-Compilers von Microsoft unterstützt wird, ist in [Zusammenfassung der C-Sprachsyntax](../c-language/c-language-syntax-summary.md) beschrieben.
+Der Basisoperator ( **:>** ), der von älteren Versionen des 16-Bit-C-Compilers von Microsoft unterstützt wird, ist in [Zusammenfassung der C-Sprachsyntax](../c-language/c-language-syntax-summary.md) beschrieben.
 
 Der bedingte Ausdrucksoperator hat einen niedrigeren Rang als binäre Ausdrücke und unterscheidet sich von ihnen darin, dass er rechtsassoziativ ist.
 
-Zu Ausdrücken mit Operatoren zählen auch Zuweisungsausdrücke, die die unären oder binären Zuweisungsoperatoren verwenden. Die unären Zuweisungsoperatoren sind die Operatoren für Inkrement (**++**) und Dekrement (**--**). Die binären Zuweisungsoperatoren sind der Einfachzuweisungsoperator (**=**) und die Verbundzuweisungsoperatoren. Jeder Verbundzuweisungsoperator ist eine Kombination aus einem anderen binären Operators mit dem Einfachzuweisungsoperator.
+Zu Ausdrücken mit Operatoren zählen auch Zuweisungsausdrücke, die die unären oder binären Zuweisungsoperatoren verwenden. Die unären Zuweisungsoperatoren sind die Operatoren für Inkrement ( **++** ) und Dekrement ( **--** ). Die binären Zuweisungsoperatoren sind der Einfachzuweisungsoperator ( **=** ) und die Verbundzuweisungsoperatoren. Jeder Verbundzuweisungsoperator ist eine Kombination aus einem anderen binären Operators mit dem Einfachzuweisungsoperator.
 
 ## <a name="see-also"></a>Siehe auch
 

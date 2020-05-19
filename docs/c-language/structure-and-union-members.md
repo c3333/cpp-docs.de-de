@@ -11,19 +11,19 @@ helpviewer_keywords:
 - operators [C], member selection
 - structure member selection
 ms.assetid: bb1fe304-af49-4f98-808d-afdc99b3e319
-ms.openlocfilehash: db47362096506cf1c00f1ac566565b894253d798
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.openlocfilehash: b22f5a29a4dc088ea4f3db863d635badee048d2c
+ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151363"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82825690"
 ---
 # <a name="structure-and-union-members"></a>Struktur- und Unionmember
 
 Ein Memberauswahlausdruck bezieht sich auf Member von Strukturen und Unions. Ein solcher Ausdruck hat den Wert und Typ des ausgewählten Members.
 
-> *postfix-expression* **.** *Bezeichner*
-> *postfix-expression* **->** *Bezeichner*
+> *postfix-Ausdruck* **.** *Bezeichner*\
+> *postfix-Ausdruck* **->** *Bezeichner*
 
 Diese Liste beschreibt die zwei Arten von Memberauswahlausdrücken:
 
@@ -33,7 +33,7 @@ Diese Liste beschreibt die zwei Arten von Memberauswahlausdrücken:
 
 Die beiden Formen der Memberauswahlausdrücke verfügen über ähnliche Auswirkungen.
 
-Tatsächlich ist ein Ausdruck, der den Memberauswahloperator (**->**) enthält, eine Kurznotationsversion eines Ausdrucks, der den Punkt (**.**) verwendet, wenn der Ausdruck vor dem Punkt aus dem Dereferenzierungsoperator (<strong>\*</strong>) besteht, der auf einen Zeigerwert angewendet wird. Daher eignet sich
+Tatsächlich ist ein Ausdruck, der den Memberauswahloperator ( **->** ) enthält, eine Kurznotationsversion eines Ausdrucks, der den Punkt ( **.** ) verwendet, wenn der Ausdruck vor dem Punkt aus dem Dereferenzierungsoperator (<strong>\*</strong>) besteht, der auf einen Zeigerwert angewendet wird. Daher eignet sich
 
 ```cpp
 expression->identifier
@@ -72,7 +72,7 @@ Im obigen Beispiel wird die Adresse der `item`-Struktur dem `sp`-Member der Stru
 (item.sp)->a = 24;
 ```
 
-In diesem Beispiel wird der Zeigerausdruck `item.sp` mit dem Memberauswahloperator (**->**) verwendet, um dem Member `a` einen Wert zuzuweisen.
+In diesem Beispiel wird der Zeigerausdruck `item.sp` mit dem Memberauswahloperator ( **->** ) verwendet, um dem Member `a` einen Wert zuzuweisen.
 
 ```
 list[8].b = 12;

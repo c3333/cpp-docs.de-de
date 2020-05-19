@@ -1,5 +1,5 @@
 ---
-title: 'Exemplarische Vorgehensweise: Erstellen und Verwenden einer statischen Bibliothek (C++)'
+title: 'Exemplarische Vorgehensweise: Erstellen einer statischen Bibliothek (C++)'
 description: Verwenden Sie C++, um eine statische Bibliothek (.lib) in Visual Studio zu erstellen.
 ms.custom: get-started-article
 ms.date: 04/13/2020
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: 3cc36411-7d66-4240-851e-dacb9a8fd6ac
 ms.openlocfilehash: 7148cc1de7c06ae57d61560311b342a1fc9dda1f
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81335140"
 ---
 # <a name="walkthrough-create-and-use-a-static-library"></a>Exemplarische Vorgehensweise: Erstellen und Verwenden einer statischen Bibliothek
 
-In dieser schrittweise erläuterten exemplarischen Vorgehensweise wird die Erstellung einer statischen Bibliothek (LIB-Datei) für die Verwendung mit C++-Apps erläutert. Die Verwendung einer statischen Bibliothek stellt eine gute Möglichkeit zur Wiederverwendung von Code dar. Anstatt die gleichen Routinen in jeder App, die die Funktionalität erfordert, neu zu implementieren, schreiben Sie sie einmal in eine statische Bibliothek und verweisen dann auf sie aus den Apps. Code, der von einer statischen Bibliothek verknüpft ist, wird Teil Ihrer App – Sie müssen keine andere Datei installieren, um den Code zu verwenden.
+In dieser schrittweise erläuterten exemplarischen Vorgehensweise wird die Erstellung einer statischen Bibliothek (LIB-Datei) für die Verwendung mit C++-Apps erläutert. Die Verwendung einer statischen Bibliothek stellt eine gute Möglichkeit zur Wiederverwendung von Code dar. Anstatt in jeder App, für die eine bestimmte Funktion erforderlich ist, die gleichen Routinen immer wieder zu implementieren, schreiben Sie sie einmal in eine statische Bibliothek und verweisen dann in den Apps darauf. Code in einer statischen Bibliothek, auf den verwiesen wird, wird Teil der App. Sie müssen keine andere Datei installieren, um den Code zu verwenden.
 
 In dieser exemplarischen Vorgehensweise werden die folgenden Aufgaben behandelt:
 
@@ -24,9 +24,9 @@ In dieser exemplarischen Vorgehensweise werden die folgenden Aufgaben behandelt:
 
 - [Hinzufügen einer Klasse zur statischen Bibliothek](#AddClassToLib)
 
-- [Erstellen einer C++-Konsolen-App, die auf die statische Bibliothek verweist](#CreateAppToRefTheLib)
+- [Erstellen einer Konsolen-App in C++, die auf die statische Bibliothek verweist](#CreateAppToRefTheLib)
 
-- [Verwenden der Funktionalität aus der statischen Bibliothek in der App](#UseLibInApp)
+- [Verwenden der Funktionalität der statischen Bibliothek in der App](#UseLibInApp)
 
 - [Ausführen der App](#RunApp)
 
@@ -34,73 +34,73 @@ In dieser exemplarischen Vorgehensweise werden die folgenden Aufgaben behandelt:
 
 Grundlegende Kenntnisse der Programmiersprache C++.
 
-## <a name="create-a-static-library-project"></a><a name="CreateLibProject"></a>Erstellen eines statischen Bibliotheksprojekts
+## <a name="create-a-static-library-project"></a><a name="CreateLibProject"></a> Erstellen eines statischen Bibliotheksprojekts
 
-Die Anweisungen zum Erstellen des Projekts hängen von Ihrer Version von Visual Studio ab. Verwenden Sie das Versionsauswahlsteuerelement, um die **Version** Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Die Anweisungen für das Erstellen des Projekts variieren abhängig von Ihrer Version von Visual Studio. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker range="vs-2019"
 
-### <a name="to-create-a-static-library-project-in-visual-studio-2019"></a>So erstellen Sie ein statisches Bibliotheksprojekt in Visual Studio 2019
+### <a name="to-create-a-static-library-project-in-visual-studio-2019"></a>Erstellen eines statischen Bibliotheksprojekts in Visual Studio 2019
 
-1. Klicken Sie in der Menüleiste auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
+1. Klicken Sie in der Menüleiste auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
-1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++**, die **Plattform** auf **Windows** und den **Projekttyp** auf **Bibliothek** fest.
+1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Bibliothek** fest.
 
-1. Wählen Sie in der gefilterten Liste der Projekttypen **den Windows-Desktop-Assistenten**aus , und wählen Sie dann **Weiter**aus.
+1. Wählen Sie aus der gefilterten Projekttypliste **Windows-Desktopassistent** aus, und klicken Sie auf **Weiter**.
 
-1. Geben Sie im **Feld Konfigurieren der neuen Projektseite** *MathLibrary* in das Feld **Projektname** ein, um einen Namen für das Projekt anzugeben. Geben Sie *StaticMath* in das Feld **Projektmappenname ein.** Wählen Sie die Schaltfläche **Erstellen** aus, um das **Dialogfeld Windows Desktop Project** zu öffnen.
+1. Geben Sie auf der Seite **Neues Projekt konfigurieren** in das Feld **Projektname** den Namen *MathLibrary* ein, um einen Namen für das Projekt festzulegen. Geben Sie in das Feld **Projektmappenname** den Namen *StaticMath* ein. Klicken Sie auf die Schaltfläche **Erstellen**, um das Dialogfeld **Windows-Desktopprojekt** zu öffnen.
 
-1. Wählen Sie im Dialogfeld **Windows Desktop Project** unter **Anwendungstyp** **die Option Statische Bibliothek (.lib)** aus.
+1. Wählen Sie im Dialogfeld **Windows-Desktopprojekt** unter **Anwendungstyp** den Eintrag **Statische Bibliothek (.lib)** aus.
 
-1. Deaktivieren Sie unter **Zusätzliche Optionen**das Kontrollkästchen **Vorkompilierte Kopfzeile,** wenn diese option. Aktivieren Sie das Kontrollkästchen **Leeres Projekt.**
+1. Deaktivieren Sie unter **Zusätzliche Optionen** das Kontrollkästchen bei **Vorkompilierter Header**, wenn es aktiviert ist. Aktivieren Sie das Feld bei **Leeres Projekt**.
 
-1. Wählen Sie **OK,** um das Projekt zu erstellen.
+1. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 ::: moniker-end
 
 ::: moniker range="vs-2017"
 
-### <a name="to-create-a-static-library-project-in-visual-studio-2017"></a>So erstellen Sie ein statisches Bibliotheksprojekt in Visual Studio 2017
+### <a name="to-create-a-static-library-project-in-visual-studio-2017"></a>Erstellen eines statischen Bibliotheksprojekts in Visual Studio 2017
 
 1. Wählen Sie in der Menüleiste **Datei** > **Neu** > **Projekt** aus.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Installiertes** > **Visual C++** > **Windows Desktop**aus. Wählen Sie im mittleren Bereich **Windows-Desktop-Assistent** aus.
+1. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Visual C++**  > **Windows Desktop**. Wählen Sie im mittleren Bereich **Windows-Desktop-Assistent** aus.
 
-1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathLibrary.* Geben Sie im Feld **Lösungsname** einen Namen für die Projektmappe an, z. B. *StaticMath.* Klicken Sie auf die Schaltfläche **OK** .
+1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathLibrary*. Geben Sie im Feld **Projektmappenname** einen Namen für die Projektmappe an, z. B. *StaticMath*. Klicken Sie auf die Schaltfläche **OK** .
 
-1. Wählen Sie im Dialogfeld **Windows Desktop Project** unter **Anwendungstyp** **die Option Statische Bibliothek (.lib)** aus.
+1. Wählen Sie im Dialogfeld **Windows-Desktopprojekt** unter **Anwendungstyp** den Eintrag **Statische Bibliothek (.lib)** aus.
 
-1. Deaktivieren Sie unter **Zusätzliche Optionen**das Kontrollkästchen **Vorkompilierte Kopfzeile,** wenn diese option. Aktivieren Sie das Kontrollkästchen **Leeres Projekt.**
+1. Deaktivieren Sie unter **Zusätzliche Optionen** das Kontrollkästchen bei **Vorkompilierter Header**, wenn es aktiviert ist. Aktivieren Sie das Feld bei **Leeres Projekt**.
 
-1. Wählen Sie **OK,** um das Projekt zu erstellen.
+1. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 ::: moniker-end
 
 ::: moniker range="vs-2015"
 
-### <a name="to-create-a-static-library-project-in-visual-studio-2015"></a>So erstellen Sie ein statisches Bibliotheksprojekt in Visual Studio 2015
+### <a name="to-create-a-static-library-project-in-visual-studio-2015"></a>Erstellen eines statischen Bibliotheksprojekts in Visual Studio 2015
 
 1. Wählen Sie in der Menüleiste **Datei** > **Neu** > **Projekt** aus.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Installierte** > **Vorlagen** > **Visual C++** > **Win32**aus. Wählen Sie im mittleren Bereich **Win32-Konsolenanwendung**aus.
+1. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C++**  > **Win32**. Wählen Sie im mittleren Bereich **Win32-Konsolenanwendung**aus.
 
-1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathLibrary.* Geben Sie im Feld **Lösungsname** einen Namen für die Projektmappe an, z. B. *StaticMath.* Klicken Sie auf die Schaltfläche **OK** .
+1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathLibrary*. Geben Sie im Feld **Projektmappenname** einen Namen für die Projektmappe an, z. B. *StaticMath*. Klicken Sie auf die Schaltfläche **OK** .
 
-1. Wählen Sie im **Win32-Anwendungs-Assistenten** **Weiter**aus.
+1. Klicken Sie im **Win32-Anwendungs-Assistenten** auf **Weiter**.
 
-1. Wählen Sie auf der Seite **Anwendungseinstellungen** unter **Anwendungstyp**die Option **Statische Bibliothek**aus. Deaktivieren Sie unter **Zusätzliche Optionen**das Kontrollkästchen **Vorkompilierte Kopfzeile.** Wählen Sie **Fertig stellen** aus, um das Projekt zu erstellen.
+1. Wählen Sie auf der Seite **Anwendungseinstellungen** unter **Anwendungstyp** **Statische Bibliothek**aus. Deaktivieren Sie unter **Zusätzliche Optionen** das Kontrollkästchen bei **Vorkompilierter Header**. Klicken Sie auf **Fertig stellen**, um das Projekt zu erstellen.
 
 ::: moniker-end
 
-## <a name="add-a-class-to-the-static-library"></a><a name="AddClassToLib"></a>Hinzufügen einer Klasse zur statischen Bibliothek
+## <a name="add-a-class-to-the-static-library"></a><a name="AddClassToLib"></a> Hinzufügen einer Klasse zur statischen Bibliothek
 
 ### <a name="to-add-a-class-to-the-static-library"></a>So fügen Sie der statischen Bibliothek eine Klasse hinzu
 
-1. Um eine Headerdatei für eine neue Klasse zu erstellen, klicken Sie mit der rechten Maustaste, um das Kontextmenü für das **MathLibrary-Projekt** im **Projektmappen-Explorer**zu öffnen, und wählen Sie dann**Neues Element** **hinzufügen** > aus.
+1. Öffnen Sie per Rechtsklick das Kontextmenü für das Projekt **MathLibrary** im **Projektmappen-Explorer**, und klicken Sie dann auf **Hinzufügen** > **Neues Element**, um eine Headerdatei für eine neue Klasse zu erstellen.
 
-1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option Visual **C++** > **Code**aus. Wählen Sie im mittleren Bereich die Option **Headerdatei (.h)**. Geben Sie einen Namen für die Headerdatei an, z. *B. MathLibrary.h,* und wählen Sie dann die Schaltfläche **Hinzufügen** aus. Eine nahezu leere Headerdatei wird angezeigt.
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C++**  > **Code**. Wählen Sie im mittleren Bereich die Option **Headerdatei (.h)** . Geben Sie einen Namen für die Headerdatei an, z. B. *MathLibrary.h*, und klicken Sie auf die Schaltfläche **Hinzufügen**. Eine nahezu leere Headerdatei wird angezeigt.
 
-1. Fügen Sie eine Deklaration für eine Klasse hinzu, die für allgemeine mathematische Operationen wie Addition, Subtraktion, Multiplikation und Division benannt `Arithmetic` ist. Der Code sollte wie folgt aussehen:
+1. Fügen Sie eine Deklaration für eine Klasse mit dem Namen `Arithmetic` hinzu, die zur Ausführung geläufiger mathematischer Operationen wie Addition, Subtraktion, Multiplikation und Division dient. Der Code sollte diesem ähneln:
 
     ```cpp
     // MathLibrary.h
@@ -126,11 +126,11 @@ Die Anweisungen zum Erstellen des Projekts hängen von Ihrer Version von Visual 
     }
     ```
 
-1. Um eine Quelldatei für die neue Klasse zu erstellen, öffnen Sie das Kontextmenü für das **MathLibrary-Projekt** im **Projektmappen-Explorer**, und wählen Sie dann**Neues Element** **hinzufügen** > aus.
+1. Öffnen Sie das Kontextmenü für das Projekt **MathLibrary** im **Projektmappen-Explorer**, und klicken Sie dann auf **Hinzufügen** > **Neues Element**, um eine Quelldatei für die neue Klasse zu erstellen.
 
-1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** im mittleren Bereich **C++-Datei (.cpp)** aus. Geben Sie einen Namen für die Quelldatei an, z. *B. MathLibrary.cpp,* und wählen Sie dann die Schaltfläche **Hinzufügen** aus. Eine leere Quelldatei wird angezeigt.
+1. Klicken Sie im mittleren Bereich des Dialogfelds **Neues Element hinzufügen** auf **C++-Datei (.cpp)** . Geben Sie einen Namen für die Quelldatei an, z. B. *MathLibrary.cpp*, und klicken Sie auf die Schaltfläche **Hinzufügen**. Eine leere Quelldatei wird angezeigt.
 
-1. Verwenden Sie diese Quelldatei, `Arithmetic`um die Funktionalität für die Klasse zu implementieren. Der Code sollte wie folgt aussehen:
+1. Verwenden Sie diese Quelldatei zum Implementieren der Funktionalität für die Klasse `Arithmetic`. Der Code sollte diesem ähneln:
 
     ```cpp
     // MathLibrary.cpp
@@ -163,96 +163,96 @@ Die Anweisungen zum Erstellen des Projekts hängen von Ihrer Version von Visual 
     }
     ```
 
-1. Um die statische Bibliothek zu erstellen, **wählen** > Sie**Build-Lösung** in der Menüleiste erstellen aus. Der Build erstellt eine statische Bibliothek, *MathLibrary.lib*, die von anderen Programmen verwendet werden kann.
+1. Erstellen Sie die statische Bibliothek, indem Sie in der Menüleiste auf **Erstellen** > **Projektmappe erstellen** klicken. Dadurch wird eine statische Bibliothek erstellt, *MathLibrary.lib*, die in anderen Programmen verwendet werden kann.
 
    > [!NOTE]
-   > Beim Erstellen über die Befehlszeile von Visual Studio müssen Sie das Programm in zwei Schritten erstellen. Führen Sie `cl /c /EHsc MathLibrary.cpp` zunächst aus, um den Code zu kompilieren und eine Objektdatei mit dem Namen *MathLibrary.obj*zu erstellen. (Der `cl` Befehl ruft den Compiler Cl.exe `/c` auf, und die Option gibt Kompilierung ohne Verknüpfung an. Weitere Informationen finden Sie unter [/c (Kompilieren ohne Verknüpfung)](../build/reference/c-compile-without-linking.md).) Führen Sie `lib MathLibrary.obj` zweitens aus, um den Code zu verknüpfen und die statische Bibliothek *MathLibrary.lib*zu erstellen. (Mit dem `lib` Befehl wird der Bibliotheks-Manager, "Lib.exe", aufgerufen. Weitere Informationen finden Sie unter [LIB Reference](../build/reference/lib-reference.md).)
+   > Beim Erstellen über die Befehlszeile von Visual Studio müssen Sie das Programm in zwei Schritten erstellen. Führen Sie zunächst `cl /c /EHsc MathLibrary.cpp` aus, um den Code zu kompilieren und eine Objektdatei namens *MathLibrary.obj* zu erstellen. (Mit dem `cl`-Befehl wird der Compiler, "Cl.exe", aufgerufen, und mit der `/c`-Option wird Kompilieren ohne zu verknüpfen angegeben. Weitere Informationen finden Sie unter [/c (Kompilieren ohne Verknüpfen)](../build/reference/c-compile-without-linking.md).) Führen Sie anschließend `lib MathLibrary.obj` aus, um den Code zu verknüpfen und die statische Bibliothek *MathLibrary.lib* zu erstellen. (Mit dem `lib` Befehl wird der Bibliotheks-Manager, "Lib.exe", aufgerufen. Weitere Informationen finden Sie unter [LIB Reference](../build/reference/lib-reference.md).)
 
-## <a name="create-a-c-console-app-that-references-the-static-library"></a><a name="CreateAppToRefTheLib"></a>Erstellen einer C++-Konsolen-App, die auf die statische Bibliothek verweist
+## <a name="create-a-c-console-app-that-references-the-static-library"></a><a name="CreateAppToRefTheLib"></a> Erstellen einer Konsolen-App in C++, die auf die statische Bibliothek verweist
 
 ::: moniker range="vs-2019"
 
-### <a name="to-create-a-c-console-app-that-references-the-static-library-in-visual-studio-2019"></a>So erstellen Sie eine C++-Konsolen-App, die auf die statische Bibliothek in Visual Studio 2019 verweist
+### <a name="to-create-a-c-console-app-that-references-the-static-library-in-visual-studio-2019"></a>Erstellen einer Konsolen-App in C++, die auf die statische Bibliothek verweist, in Visual Studio 2019
 
-1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den obersten **Knoten, Solution 'StaticMath',** um das Kontextmenü zu öffnen. Wählen Sie**Neues Projekt** **hinzufügen** > aus, um das Dialogfeld **Neues Projekt hinzufügen** zu öffnen.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den obersten Knoten, die **Projektmappe „StaticMath“** , um das Kontextmenü zu öffnen. Klicken Sie auf **Hinzufügen** > **Neues Projekt**, um das Dialogfeld **Neues Projekt hinzufügen** zu öffnen.
 
-1. Legen Sie oben im Dialogfeld den **Projekttypfilter** auf **Konsole**fest.
+1. Legen Sie oben im Dialogfeld für den Filter **Projekttyp** **Konsole** fest.
 
-1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter**. Geben Sie auf der nächsten Seite *MathClient* in das Feld **Name** ein, um einen Namen für das Projekt anzugeben.
+1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter**. Geben Sie auf der nächsten Seite im Feld **Name** *MathClient* als Projektnamen an.
 
 1. Klicken Sie auf die Schaltfläche **Erstellen**, um das Clientprojekt zu erstellen.
 
-1. Nach dem Erstellen einer Konsolenanwendung wird ein leeres Programm für Sie erstellt. Die Quelldatei erhält denselben Namen, den Sie zuvor ausgewählt haben. Im Beispiel heißt es `MathClient.cpp`.
+1. Nach dem Erstellen einer Konsolenanwendung wird ein leeres Programm für Sie erstellt. Die Quelldatei erhält denselben Namen, den Sie zuvor ausgewählt haben. In diesem Beispiel heißt sie `MathClient.cpp`.
 
 ::: moniker-end
 
 ::: moniker range="vs-2017"
 
-### <a name="to-create-a-c-console-app-that-references-the-static-library-in-visual-studio-2017"></a>So erstellen Sie eine C++-Konsolen-App, die auf die statische Bibliothek in Visual Studio 2017 verweist
+### <a name="to-create-a-c-console-app-that-references-the-static-library-in-visual-studio-2017"></a>Erstellen einer Konsolen-App in C++, die auf die statische Bibliothek verweist, in Visual Studio 2017
 
-1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den obersten **Knoten, Solution 'StaticMath',** um das Kontextmenü zu öffnen. Wählen Sie**Neues Projekt** **hinzufügen** > aus, um das Dialogfeld **Neues Projekt hinzufügen** zu öffnen.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den obersten Knoten, die **Projektmappe „StaticMath“** , um das Kontextmenü zu öffnen. Klicken Sie auf **Hinzufügen** > **Neues Projekt**, um das Dialogfeld **Neues Projekt hinzufügen** zu öffnen.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt hinzufügen** die Option **Installiertes** > **Visual C++** > **Windows Desktop**aus. Wählen Sie im mittleren Bereich **Windows-Desktop-Assistent** aus.
+1. Klicken Sie im Dialogfeld **Neues Projekt hinzufügen** auf **Installiert** > **Visual C++**  > **Windows Desktop**. Wählen Sie im mittleren Bereich **Windows-Desktop-Assistent** aus.
 
-1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathClient.* Klicken Sie auf die Schaltfläche **OK** .
+1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathClient*. Klicken Sie auf die Schaltfläche **OK** .
 
-1. Wählen Sie im Dialogfeld **Windows Desktop Project** unter **Anwendungstyp**die Option **Konsolenanwendung (.exe)** aus.
+1. Wählen Sie im Dialogfeld **Windows-Desktopprojekt** unter **Anwendungstyp** den Eintrag **Konsolenanwendung (.exe)** aus.
 
-1. Deaktivieren Sie unter **Zusätzliche Optionen**das Kontrollkästchen **Vorkompilierte Kopfzeile,** wenn diese option.
+1. Deaktivieren Sie unter **Zusätzliche Optionen** das Kontrollkästchen bei **Vorkompilierter Header**, wenn es aktiviert ist.
 
-1. Wählen Sie **OK,** um das Projekt zu erstellen.
+1. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-1. Nach dem Erstellen einer Konsolenanwendung wird ein leeres Programm für Sie erstellt. Die Quelldatei erhält denselben Namen, den Sie zuvor ausgewählt haben. Im Beispiel heißt es `MathClient.cpp`.
+1. Nach dem Erstellen einer Konsolenanwendung wird ein leeres Programm für Sie erstellt. Die Quelldatei erhält denselben Namen, den Sie zuvor ausgewählt haben. In diesem Beispiel heißt sie `MathClient.cpp`.
 
 ::: moniker-end
 
 ::: moniker range="vs-2015"
 
-### <a name="to-create-a-c-console-app-that-references-the-static-library-in-visual-studio-2015"></a>So erstellen Sie eine C++-Konsolen-App, die auf die statische Bibliothek in Visual Studio 2015 verweist
+### <a name="to-create-a-c-console-app-that-references-the-static-library-in-visual-studio-2015"></a>Erstellen einer Konsolen-App in C++, die auf die statische Bibliothek verweist, in Visual Studio 2015
 
-1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den obersten **Knoten, Solution 'StaticMath',** um das Kontextmenü zu öffnen. Wählen Sie**Neues Projekt** **hinzufügen** > aus, um das Dialogfeld **Neues Projekt hinzufügen** zu öffnen.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den obersten Knoten, die **Projektmappe „StaticMath“** , um das Kontextmenü zu öffnen. Klicken Sie auf **Hinzufügen** > **Neues Projekt**, um das Dialogfeld **Neues Projekt hinzufügen** zu öffnen.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt hinzufügen** die Option **Installiertes** > **visuelles C++** > **Win32**aus. Wählen Sie im mittleren Bereich **Win32-Konsolenanwendung**aus.
+1. Klicken Sie im Dialogfeld **Neues Projekt hinzufügen** auf **Installiert** > **Visual C++**  > **Win32**. Wählen Sie im mittleren Bereich **Win32-Konsolenanwendung**aus.
 
-1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathClient.* Klicken Sie auf die Schaltfläche **OK** .
+1. Geben Sie im Feld **Name** einen Namen für das Projekt an, z. B. *MathClient*. Klicken Sie auf die Schaltfläche **OK** .
 
-1. Wählen Sie im Dialogfeld **Win32 Application Wizard** die Option **Weiter**aus.
+1. Klicken Sie im Dialogfeld **Win32-Anwendungs-Assistent** auf **Weiter**.
 
-1. Stellen Sie auf der Seite **Anwendungseinstellungen** unter **Anwendungstyp**sicher, dass die **Konsolenanwendung** ausgewählt ist. Unter **Zusätzliche Optionen**deaktivieren Sie die Option **Vorkompilierte Kopfzeile**, und aktivieren Sie dann das Kontrollkästchen **Leeres Projekt.** Wählen Sie **Fertig stellen** aus, um das Projekt zu erstellen.
+1. Stellen Sie sicher, dass auf der Seite **Anwendungseinstellungen** unter **Anwendungstyp** **Konsolenanwendung** ausgewählt ist. Deaktivieren Sie unter **Zusätzliche Optionen** das Kontrollkästchen bei **Vorkompilierter Header**, und aktivieren Sie dann das Kontrollkästchen bei **Leeres Projekt**. Klicken Sie auf **Fertig stellen**, um das Projekt zu erstellen.
 
-1. Um dem leeren Projekt eine Quelldatei hinzuzufügen, klicken Sie mit der rechten Maustaste, um das Kontextmenü für das **MathClient-Projekt** im **Projektmappen-Explorer**zu öffnen, und wählen Sie dann **Neues Element** **hinzufügen** > aus.
+1. Öffnen Sie per Rechtsklick das Kontextmenü für das Projekt **MathClient** im **Projektmappen-Explorer**, und klicken Sie dann auf **Hinzufügen** > **Neues Element**, um eine Quelldatei zum leeren Projekt hinzuzufügen.
 
-1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option Visual **C++** > **Code**aus. Wählen Sie im mittleren Bereich die Option **C++-Datei (.cpp)**. Geben Sie einen Namen für die Quelldatei an, z. *B. MathClient.cpp,* und wählen Sie dann die Schaltfläche **Hinzufügen** aus. Eine leere Quelldatei wird angezeigt.
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C++**  > **Code**. Wählen Sie im mittleren Bereich die Option **C++-Datei (.cpp)** . Geben Sie einen Namen für die Quelldatei an, z. B. *MathClient.cpp*, und klicken Sie auf die Schaltfläche **Hinzufügen**. Eine leere Quelldatei wird angezeigt.
 
 ::: moniker-end
 
-## <a name="use-the-functionality-from-the-static-library-in-the-app"></a><a name="UseLibInApp"></a>Verwenden der Funktionalität aus der statischen Bibliothek in der App
+## <a name="use-the-functionality-from-the-static-library-in-the-app"></a><a name="UseLibInApp"></a> Verwenden der Funktionalität der statischen Bibliothek in der App
 
 ### <a name="to-use-the-functionality-from-the-static-library-in-the-app"></a>So verwenden Sie die Funktionalität der statischen Bibliothek in der App
 
-1. Bevor Sie die mathematischen Routinen verwenden können, müssen Sie auf die erstellte statische Bibliothek verweisen. Öffnen Sie das Kontextmenü für das **MathClient-Projekt** im **Projektmappen-Explorer**, und wählen Sie dann**Referenz** **hinzufügen** > aus.
+1. Bevor Sie die mathematischen Routinen verwenden können, müssen Sie auf die erstellte statische Bibliothek verweisen. Öffnen Sie das Kontextmenü für das Projekt **MathClient** im **Projektmappen-Explorer**, und klicken Sie dann auf **Hinzufügen** > **Verweis**.
 
-1. Im Dialogfeld **Verweis hinzufügen** werden Bibliotheken aufgeführt, auf die Sie verweisen können. Auf der Registerkarte **Projekte** werden die Projekte in der aktuellen Projektmappe und alle Bibliotheken, auf die sie verweisen, aufgelistet. Öffnen Sie die Registerkarte **Projekte,** aktivieren Sie das Kontrollkästchen **MathLibrary,** und wählen Sie dann die Schaltfläche **OK** aus.
+1. Im Dialogfeld **Verweis hinzufügen** werden Bibliotheken aufgeführt, auf die Sie verweisen können. Auf der Registerkarte **Projekte** sind die Projekte in der aktuellen Projektmappe aufgeführt sowie die Bibliotheken, auf die in ihnen verwiesen wird. Öffnen Sie die Registerkarte **Projekte**, aktivieren Sie das Kontrollkästchen bei **MathLibrary**, und klicken Sie dann auf die Schaltfläche **OK**.
 
-1. Um auf `MathLibrary.h` die Headerdatei zu verweisen, müssen Sie den Pfad der eingeschlossenen Verzeichnisse ändern. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf **MathClient,** um das Kontextmenü zu öffnen. Wählen Sie **Eigenschaften** aus, um das Dialogfeld **MathClient-Eigenschaftenseiten** zu öffnen.
+1. Wenn Sie auf die Headerdatei `MathLibrary.h` verweisen möchten, müssen Sie den enthaltenen Verzeichnispfad ändern. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **MathClient**, um das Kontextmenü zu öffnen. Klicken Sie auf **Eigenschaften**, um das Dialogfeld **MathClient Eigenschaftenseiten** zu öffnen.
 
-1. Legen Sie im Dialogfeld **MathClient-Eigenschaftenseiten** die Dropdown-Liste **Konfiguration** auf **Alle Konfigurationen**fest. Legendenstellen **der Plattform** auf **Alle Plattformen**.
+1. Wählen Sie im Dialogfeld **MathClient Eigenschaftenseiten** in der Dropdownliste **Konfiguration** die Option **Alle Konfigurationen** aus. Wählen Sie in der Dropdownliste **Plattform** die Option **Alle Plattformen** aus.
 
-1. Wählen Sie die **Eigenschaftenseite "Konfigurationseigenschaften** > **C/C++** > **Allgemeine"** aus. Geben Sie in der Eigenschaft **Zusätzliche Include-Verzeichnisse** den Pfad des **MathLibrary-Verzeichnisses** an, oder suchen Sie danach.
+1. Navigieren Sie zur Eigenschaftenseite **Konfigurationseigenschaften** > **C/C++**  > **Allgemein**. Geben Sie bei der Eigenschaft **Zusätzliche Includeverzeichnisse** den Pfad des **MathLibrary**-Verzeichnisses an, oder suchen Sie danach.
 
    So suchen Sie nach dem Verzeichnispfad:
 
-   1. Öffnen Sie die Dropdownliste der **Eigenschaftswert für zusätzliche Include-Verzeichnisse,** und wählen Sie dann **Bearbeiten**aus.
+   1. Öffnen Sie die Dropdownliste für Eigenschaftswerte **Zusätzliche Includeverzeichnisse**, und klicken Sie dann auf **Bearbeiten**.
 
-   1. Doppelklicken Sie im Dialogfeld **Zusätzliche Stellverzeichnisse** oben im Textfeld. Wählen Sie dann die Auslassungstaste (**...**) am Ende der Zeile aus.
+   1. Doppelklicken Sie im Dialogfeld **Zusätzliche Includeverzeichnisse** in den oberen Bereich des Textfelds. Klicken Sie dann am Ende der Zeile auf die Schaltfläche mit den drei Punkten ( **...** ).
 
-   1. Navigieren Sie im Dialogfeld **Verzeichnis auswählen** auf einer Ebene nach oben, und wählen Sie dann das **Verzeichnis MathLibrary** aus. Wählen Sie dann die Schaltfläche **Ordner auswählen** aus, um Ihre Auswahl zu speichern.
+   1. Navigieren Sie im Dialogfeld **Verzeichnis auswählen** eine Ebene weiter nach oben, und klicken Sie dann auf das **MathLibrary**-Verzeichnis. Klicken Sie anschließend auf die Schaltfläche **Ordner auswählen**, um Ihre Auswahl zu speichern.
 
-   1. Wählen Sie im Dialogfeld **Zusätzliche Stellverzeichnisse** die Schaltfläche **OK** aus.
+   1. Klicken Sie im Dialogfeld **Zusätzliche Includeverzeichnisse** auf die Schaltfläche **OK**.
 
-   1. Wählen Sie im Dialogfeld **Eigenschaftenseiten** die Schaltfläche **OK** aus, um Ihre Änderungen am Projekt zu speichern.
+   1. Klicken Sie im Dialogfeld **Eigenschaftenseiten** auf die Schaltfläche **OK**, um Ihre Änderungen am Projekt zu speichern.
 
-1. Sie können nun `Arithmetic` die Klasse in `#include "MathLibrary.h"` dieser App verwenden, indem Sie den Header in Ihren Code einbeziehen. Ersetzen Sie `MathClient.cpp` den Inhalt von durch diesen Code:
+1. Sie können nun die Klasse `Arithmetic` in dieser App verwenden, indem Sie den Header `#include "MathLibrary.h"` in Ihrem Code verwenden. Ersetzen Sie den Inhalt von `MathClient.cpp` durch den folgenden Code:
 
     ```cpp
     // MathClient.cpp
@@ -279,15 +279,15 @@ Die Anweisungen zum Erstellen des Projekts hängen von Ihrer Version von Visual 
     }
     ```
 
-1. Um die ausführbare Datei zu erstellen, **wählen** > Sie**Build-Lösung** in der Menüleiste erstellen aus.
+1. Erstellen Sie die ausführbare Datei, indem Sie in der Menüleiste auf **Erstellen** > **Projektmappe erstellen** klicken.
 
-## <a name="run-the-app"></a><a name="RunApp"></a>Ausführen der App
+## <a name="run-the-app"></a><a name="RunApp"></a> Ausführen der App
 
 ### <a name="to-run-the-app"></a>So führen Sie die App aus
 
-1. Stellen Sie sicher, dass **MathClient** als Standardprojekt ausgewählt ist. Um es auszuwählen, klicken Sie mit der rechten Maustaste, um das Kontextmenü für **MathClient** im **Projektmappen-Explorer**zu öffnen, und wählen Sie dann **Als Startup-Projekt festlegen**aus.
+1. Stellen Sie sicher, dass **MathClient** als Standardprojekt ausgewählt ist. Öffnen Sie per Rechtsklick das Kontextmenü für das Projekt **MathClient** im **Projektmappen-Explorer**, und klicken Sie dann auf **Als Startprojekt festlegen**, um es als Standardprojekt auszuwählen.
 
-1. Um das Projekt auszuführen, wählen Sie in der Menüleiste **Debugstart** > **ohne Debuggen**aus. Die Ausgabe sollte wie folgt aussehen:
+1. Klicken Sie zum Ausführen des Projekts auf der Menüleiste auf **Debuggen** > **Starten ohne Debuggen**. Die Ausgabe sollte in etwa wie folgt aussehen:
 
     ```Output
     a + b = 106.4
@@ -298,5 +298,5 @@ Die Anweisungen zum Erstellen des Projekts hängen von Ihrer Version von Visual 
 
 ## <a name="see-also"></a>Siehe auch
 
-[Exemplarische Vorgehensweise: Erstellen und Verwenden einer dynamischen Verknüpfungsbibliothek (C++)](../build/walkthrough-creating-and-using-a-dynamic-link-library-cpp.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen und Verwenden einer Dynamic Link Library (C++)](../build/walkthrough-creating-and-using-a-dynamic-link-library-cpp.md)<br/>
 [Desktopanwendungen (Visual C++)](../windows/desktop-applications-visual-cpp.md)<br/>

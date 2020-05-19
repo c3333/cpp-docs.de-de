@@ -20,20 +20,20 @@ Ein „Zeichenfolgenliteral“ ist eine Folge von Zeichen aus dem Quellzeichensa
 ## <a name="syntax"></a>Syntax
 
 *string-literal*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **"** *s-char-sequence*<sub>opt</sub> **"**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**L"** *s-char-sequence*<sub>opt</sub> **"**
+&nbsp;&nbsp;&nbsp;&nbsp; **"** *s-char-Sequenz*<sub>opt</sub> **"**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**L"** *s-char-Sequenz*<sub>opt</sub> **"**
 
 *s-char-sequence*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*s-char*
 
-&nbsp;&nbsp;&nbsp;&nbsp;*s-char-sequence* *s-char*
+&nbsp;&nbsp;&nbsp;&nbsp;*s-char-Sequenz* *s-char*
 
 *s-char*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;alle Elemente des Quellzeichensatzes mit Ausnahme von doppelten Anführungszeichen ("), umgekehrtem Schrägstrich (\\) oder Zeilenumbruchzeichen
 
 &nbsp;&nbsp;&nbsp;&nbsp;*escape-sequence*
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Das unten gezeigte Beispiel ist ein einfaches Zeichenfolgenliteral:
 

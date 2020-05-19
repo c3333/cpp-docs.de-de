@@ -18,17 +18,17 @@ helpviewer_keywords:
 - global variables, lifetime
 ms.assetid: ff0b42cb-3f0f-49a3-a94f-d1d825d8ddfe
 ms.openlocfilehash: 962e5ef4cae1be142091d2a209b4c60c0b789e74
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232773"
 ---
 # <a name="lifetime"></a>Lebensdauer
 
 "Lebensdauer" ist der Zeitraum der Ausführung eines Programms, in dem eine Variable oder eine Funktion vorhanden ist. Die Speicherdauer des Bezeichners bestimmt dessen Lebensdauer.
 
-Ein Bezeichner, der mit dem *storage-class-specifier* **static** deklariert ist, hat eine statische Speicherdauer. Bezeichner mit statischer Speicherdauer (auch "global" genannt) weisen Speicher und einen definierten Wert für die Dauer eines Programms auf. Speicher wird reserviert, und der gespeicherte Wert des Bezeichners wird nur einmal, und zwar vor dem Programmstart, initialisiert. Ein Bezeichner, der mit externer oder interner Verknüpfung deklariert wird, hat auch eine statische Speicherdauer (Informationen finden Sie unter [Verknüpfung](../c-language/linkage.md)).
+Ein Bezeichner, der mit dem *Speicherklassenspezifizierer* **static** deklariert wird, weist eine statische Speicherdauer auf. Bezeichner mit statischer Speicherdauer (auch "global" genannt) weisen Speicher und einen definierten Wert für die Dauer eines Programms auf. Speicher wird reserviert, und der gespeicherte Wert des Bezeichners wird nur einmal, und zwar vor dem Programmstart, initialisiert. Ein Bezeichner, der mit externer oder interner Verknüpfung deklariert wird, hat auch eine statische Speicherdauer (Informationen finden Sie unter [Verknüpfung](../c-language/linkage.md)).
 
 Ein Bezeichner, der ohne den Speicherklassenspezifizierer **static** deklariert wird, hat eine automatische Speicherdauer, wenn er innerhalb einer Funktion deklariert wird. Ein Bezeichner mit automatischer Speicherdauer (ein "lokaler Bezeichner") weist Speicher und einen definierten Wert nur innerhalb des Blocks auf, in dem der Bezeichner definiert oder deklariert ist. Bei jedem Wechsel des Programms in diesen Block wird einem automatischen Bezeichner neuer Speicher zugeordnet. Wenn das Programm diesen Block beendet, verliert er seinen Speicher (und den Wert). Bezeichner, die in einer Funktion ohne Bindung deklariert werden, haben auch eine automatische Speicherdauer.
 

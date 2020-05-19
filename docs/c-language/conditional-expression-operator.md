@@ -8,20 +8,20 @@ helpviewer_keywords:
 ms.assetid: c4f1a5ca-0844-44a7-a384-eca584d4e3dd
 ms.openlocfilehash: a64317c75e48111148053cc7efb62fb5a6d79f7f
 ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "81749197"
 ---
 # <a name="conditional-expression-operator"></a>Bedingter Ausdrucksoperator
 
-C hat einen ternären Operator: den bedingten Ausdrucksoperator (**? :**).
+C hat einen ternären Operator: den bedingten Ausdrucksoperator ( **? :** ).
 
 ## <a name="syntax"></a>Syntax
 
-*Bedingtkand*:<br/>
+*conditional-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR expression*  **?**  *Ausdruck*  **:**  *Bedingter Ausdruck*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-OR-Ausdruck*  **?**  *Ausdruck*  **:**  *bedingter-Ausdruck*
 
 Der Ausdruck für *logical-OR-expression* muss über Ganzzahl-, Gleitkomma- oder Zeigertypen verfügen. Er wird hinsichtlich seiner Übereinstimmung mit 0 ausgewertet. Ein Sequenzpunkt folgt dem Ausdruck für *logical-OR-expression*. Die Auswertung der Operanden wird wie folgt ausgeführt:
 
@@ -68,6 +68,6 @@ int y;
 
 In diesem Beispiel werden die zwei Funktionen `f1` und `f2` sowie die zwei Variablen `x` und `y` deklariert. Wenn die zwei Variablen später im Programm den gleichen Wert haben, wird die `f1`-Funktion aufgerufen. Andernfalls wird `f2` aufgerufen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Bedingter Operator: ? :](../cpp/conditional-operator-q.md)

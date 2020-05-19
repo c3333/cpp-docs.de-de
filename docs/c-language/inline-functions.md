@@ -7,11 +7,11 @@ helpviewer_keywords:
 - functions [C++], inline functions
 ms.assetid: 00f4b2ff-8ad0-4165-9f4c-2ef157d03f31
 ms.openlocfilehash: ebe0fd3d785903c149999bd4ec8de9eabeabdb05
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56147256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62325545"
 ---
 # <a name="inline-functions"></a>Inlinefunktionen
 
@@ -23,7 +23,7 @@ Damit eine Funktion als Kandidat für das Inlining in Betracht gezogen werden ka
 
 Verwenden Sie dieses Format, um eine Inlinefunktion anzugeben:
 
-> **__inline** *type*<sub>opt</sub> *function-definition*
+> **__inline** *Typ*<sub>opt</sub> *Funktion-Definition*
 
 Die Verwendung von Inlinefunktionen generiert einen schnelleren Code und kann manchmal auch kleineren Code generierten als der entsprechende Funktionsaufruf. Das hat folgende Gründe:
 

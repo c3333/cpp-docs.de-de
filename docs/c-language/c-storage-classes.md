@@ -11,7 +11,7 @@ helpviewer_keywords:
 ms.assetid: 893fb929-f7a9-43dc-a0b3-29cb1ef845c1
 ms.openlocfilehash: 77aefe41fecf003218343710ef090eebf99446a8
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857111"
@@ -32,7 +32,7 @@ C stellt die folgenden Speicherklassenspezifizierer bereit:
 &nbsp;&nbsp;&nbsp;&nbsp;**static**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**extern**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**typedef**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__declspec (** *Extended-decl-modifier-LQ* **)**  /\* Microsoft-spezifischen \*/
+&nbsp;&nbsp;&nbsp;&nbsp; **__declspec (** *erweiterte-Deklarationsmodifizierersequenz* **)**  /\* Microsoft-spezifisch \*/
 
 Mit Ausnahme von `__declspec` können Sie in einer Deklaration nur einen *storage-class-specifier* im *declaration-specifier* verwenden. Wenn keine Speicherklassenspezifikation vorhanden ist, erstellen die Deklarationen in einem Block automatische Objekte.
 

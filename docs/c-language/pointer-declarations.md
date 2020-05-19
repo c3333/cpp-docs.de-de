@@ -8,11 +8,11 @@ helpviewer_keywords:
 - pointers, declarations
 ms.assetid: 8b3b7fc7-f44d-480d-b6f9-cebe4e5462a6
 ms.openlocfilehash: 0ee6e9e78f3793cd1912ece7f8627a4be68e929c
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232151"
 ---
 # <a name="pointer-declarations"></a>Zeigerdeklarationen
 
@@ -21,22 +21,22 @@ Eine *Zeigerdeklaration* benennt eine Zeigervariable und gibt den Typ des Objekt
 ## <a name="syntax"></a>Syntax
 
 *declarator*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*pointer*<sub>opt</sub> *direct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Zeiger*<sub>opt</sub> *direkter-Deklarator*
 
 *direct-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*identifier*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**(** *declarator* **)**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator* **[** *constant-expression*<sub>opt</sub> **]**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator* **(** *parameter-type-list* **)**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator* **(** *identifier-list*<sub>opt</sub> **)**
+&nbsp;&nbsp;&nbsp;&nbsp; **(** *Deklarator* **)**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator* **[** *konstanter-Ausdruck*<sub>opt</sub> **]**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator* **(** *Parametertypliste* **)**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator* **(** *Bezeichnerliste*<sub>opt</sub> **)**
 
 *pointer*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>\*</strong> *type-qualifier-list*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>\*</strong> *type-qualifier-list*<sub>opt</sub> *pointer*
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>\*</strong> *Typqualifiziererliste*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>\*</strong> *Typqualifiziererliste*<sub>opt</sub> *Zeiger*
 
 *type-qualifier-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier-list* *type-qualifier*
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifiziererliste* *Typqualifizierer*
 
 *type-specifier* gibt den Typ des Objekts an, wobei es sich um jeden Basis-, Struktur- oder Union-Typ handeln kann. Zeigervariablen können auf Funktionen, Arrays und andere Zeiger zeigen. (Weitere Informationen zum Deklarieren und Interpretieren komplexerer Zeigertypen finden Sie unter [Interpretieren von komplexeren Deklaratoren](../c-language/interpreting-more-complex-declarators.md).)
 

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - expressions [C++], constant
 ms.assetid: d48a6c47-e44c-4be2-9c8b-7944c7ef8de7
 ms.openlocfilehash: f6984c47ef8acde462a8e92e01b72ef26a61eddc
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50490531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62325740"
 ---
 # <a name="c-constant-expressions"></a>Konstante Ausdrücke in C
 
@@ -24,24 +24,24 @@ Ein konstanter Ausdruck wird nicht zur Laufzeit, sondern zur Kompilierzeit ausge
 
 *conditional-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression* **?** *expression* **:** *conditional-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-OR-Ausdruck* **?** *Ausdruck* **:** *bedingter-Ausdruck*
 
 *expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*assignment-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck* **,** *assignment-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck* **,** *Zuweisungsausdruck*
 
 *assignment-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*conditional-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unary-expression* *assignment-operator* *assignment-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*unärer-Ausdruck* *Zuweisungsoperator* *Zuweisungsausdruck*
 
 *assignment-operator*: eines der folgenden Zeichen:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**=** **&#42;=** **/=** **%=** **+=** **-=** **\<\<=** **>>=** **&=** **^=** **&#124;=**
+&nbsp;&nbsp;&nbsp;&nbsp; **=** **&#42;=** **/=** **%=** **+=** **-=** **\<\<=** **>>=** **&=** **^=** **&#124;=**
 
 Die Non-Terminals für den Strukturdeklarator, den Enumerator, den direkten Deklarator, den direkt-abstrakten Deklarator und die Anweisung mit Bezeichnung enthalten das Non-Terminal *constant-expression*.
 
 Ein ganzzahliger konstanter Ausdruck muss verwendet werden, um die Größe eines Bitfeldmembers einer Struktur, den Wert einer Enumerationskonstanten, die Größe eines Arrays oder den Wert einer **case**-Konstanten anzugeben.
 
-Konstante Ausdrücke, die in Präprozessoranweisungen verwendet werden, unterliegen zusätzlichen Einschränkungen. Daher werden sie als „eingeschränkte konstante Ausdrücke“ bezeichnet. Ein eingeschränkter konstanter Ausdruck darf keine **sizeof**-Ausdrücke, Enumerationskonstanten, Typumwandlungen in beliebige Typen oder Gleitkommakonstanten enthalten. Dagegen kann der spezielle konstante Ausdruck **defined (** _identifier_ **)** enthalten sein.
+Konstante Ausdrücke, die in Präprozessoranweisungen verwendet werden, unterliegen zusätzlichen Einschränkungen. Daher werden sie als „eingeschränkte konstante Ausdrücke“ bezeichnet. Ein eingeschränkter konstanter Ausdruck darf keine **sizeof**-Ausdrücke, Enumerationskonstanten, Typumwandlungen in beliebige Typen oder Gleitkommakonstanten enthalten. Dagegen kann der spezielle konstante Ausdruck **defined (** _Bezeichner_ **)** enthalten sein.
 
 ## <a name="see-also"></a>Siehe auch
 

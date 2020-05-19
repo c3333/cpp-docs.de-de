@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 74589126-df18-42c9-8739-26d60e148d6a
 ms.openlocfilehash: 4e3eb08c88db9d0ed4e47649014a600c3e0ccb78
 ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62295238"
 ---
 # <a name="pgomgr"></a>pgomgr
 
-Die .pgd-Datei hinzugefügt Profildaten von einer oder mehreren PGC-Dateien.
+Hiermit werden Profildaten von einer oder mehreren PGC-Dateien zur PGD-Datei hinzugefügt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,42 +23,42 @@ Die .pgd-Datei hinzugefügt Profildaten von einer oder mehreren PGC-Dateien.
 ### <a name="parameters"></a>Parameter
 
 *options*<br/>
-Die folgenden Optionen können angegeben werden, um **"pgomgr"**:
+Die folgenden Optionen können für **pgomgr** angegeben werden:
 
-- **/ help** oder **/?** Zeigt die verfügbare **"pgomgr"** Optionen.
+- **/help** oder **/?** Hiermit werden die verfügbaren **pgomgr**-Optionen angezeigt.
 
-- **/ clear** bewirkt, dass die PGD-Datei aller Profilinformationen gelöscht werden sollen. Sie nicht angeben, dass eine PGC-Datei beim **/clear** angegeben ist.
+- **/clear** bewirkt, dass die PGD-Datei aus allen Profilinformationen gelöscht wird. Sie können keine PGC-Datei angegeben, wenn **/clear** angegeben ist.
 
-- **/ detail** zeigt detaillierte Statistiken, einschließlich eines Diagramms Abdeckungsinformationen.
+- Mit **/detail** werden ausführliche Statistiken einschließlich Informationen zur Abdeckung mittels eines Flussdiagramms angezeigt.
 
-- **/ summary** zeigt pro Funktion Statistiken.
+- Mit **/summary** werden die Statistiken pro Funktion angezeigt.
 
-- **/ unique** bei Verwendung mit **/summary**, ergänzte Funktionsnamen anzeigen. Der Standardwert, wenn **/ eindeutige** nicht verwendet wird, wird für nicht ergänzte Funktionsnamen, die angezeigt werden.
+- **/unique** bewirkt bei der gemeinsamen Verwendung mit **/summary**, dass dekorierte Funktionsnamen angezeigt werden. Wenn **/unique** nicht verwendet wird, dient die Standardeinstellung der Anzeige von undekorierten Funktionsnamen.
 
-- **/ merge**\[**:**<em>n</em>] führt dazu, dass die Daten in der PGC-Datei oder Dateien, die die PGD-Datei hinzugefügt werden. Der optionale Parameter *n*, können Sie angeben, dass die Daten hinzugefügt werden sollen *n* Zeiten. Z. B. wenn ein Szenario im Allgemeinen fertig sechs Mal ist um widerzuspiegeln, wie oft dies durch den Kunden erfolgt, Sie können sie nur einmal in einem Testlauf und Hinzufügen der PGD-Datei mit sechsmal **"pgomgr" / Merge: 6**.
+- **/merge**\[ **:** <em>n</em>] bewirkt, dass die Daten in der/den PGC-Datei(en) zur PGD-Datei hinzugefügt werden. Mit dem optionalen Parameter *n* können Sie angeben, dass die Daten *n* Mal hinzugefügt werden sollen. Wenn ein Szenario beispielsweise zur Veranschaulichung der Verwendungshäufigkeit durch Kunden in der Regel sechs Mal ausgeführt wird, können Sie es in einem Testlauf einmal ausführen und es der PGD-Datei mit **pgomgr /merge:6** sechs Mal hinzufügen.
 
 *pgcfiles*<br/>
-Eine oder mehrere PGC-Dateien, deren Profildaten in die PGD-Datei zusammengeführt werden sollen. Sie können eine einzelne PGC-Datei oder mehrere PGC-Dateien angeben. Wenn Sie keine PGC-Dateien, angeben **"pgomgr"** alle PGC-Dateien, deren Dateinamen identisch mit der PGD-Datei sind, zusammengeführt.
+Hierbei handelt es sich um mindestens eine PGC-Datei, deren Profildaten Sie in der PGD-Datei zusammenführen möchten. Sie können eine einzelne oder mehrere PGC-Dateien angeben. Wenn Sie keine PGC-Dateien angeben, führt **pgomgr** alle PGC-Dateien zusammen, deren Dateinamen mit dem der PGD-Datei übereinstimmen.
 
 *pgdfile*<br/>
-Die .pgd-Datei, in der Sie Daten aus der PGC-Datei oder Dateien zusammengeführt werden.
+Dies ist die PGD-Datei, in der Sie Daten aus den PGC-Dateien zusammenführen.
 
 ## <a name="remarks"></a>Hinweise
 
 > [!NOTE]
-> Sie können dieses Tool nur von Visual Studio Developer-Eingabeaufforderung starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
+> Sie können dieses Tool nur über eine Developer-Eingabeaufforderung von Visual Studio starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
 
 ## <a name="example"></a>Beispiel
 
-Dieser Befehl im Beispiel wird die Datei myapp.pgd von Profildaten gelöscht:
+Mit diesem Beispielbefehl wird die Datei „myapp.pgd“ aus den Profildaten gelöscht:
 
 `pgomgr /clear myapp.pgd`
 
-Dieser Beispielbefehl hinzugefügt Profildaten in myapp1.pgc die PGD-Datei drei Mal:
+Dieser Beispielbefehl fügt der PGD-Datei die Profildaten in „myapp1.pgc“ dreimal hinzu:
 
 `pgomgr /merge:3 myapp1.pgc myapp.pgd`
 
-In diesem Beispiel werden der Datei myapp.pgd Profildaten aus allen Myapp # .pgc-Dateien hinzugefügt.
+In diesem Beispiel werden der Datei „myapp.pgd“ die Profildaten aus allen „myapp#.pgc“-Dateien hinzugefügt:
 
 `pgomgr -merge myapp1.pgd`
 

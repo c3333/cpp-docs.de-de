@@ -1,55 +1,55 @@
 ---
-title: Schema Referenz zu "Tasks. vs. JSON" (C++)
+title: Tasks.vs.json-Schemareferenz (C++)
 ms.date: 08/20/2019
 helpviewer_keywords:
 - tasks.vs.json file [C++]
 ms.assetid: abd1985e-3717-4338-9e80-869db5435175
 ms.openlocfilehash: cc6b2983d3cc3d40449357a554df5feee38c21d9
 ms.sourcegitcommit: 6c1960089b92d007fc28c32af1e4bef0f85fdf0c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/31/2019
 ms.locfileid: "75556655"
 ---
-# <a name="tasksvsjson-schema-reference-c"></a>Schema Referenz zu "Tasks. vs. JSON" (C++)
+# <a name="tasksvsjson-schema-reference-c"></a>Tasks.vs.json-Schemareferenz (C++)
 
-Fügen Sie die Datei " *Tasks. vs. JSON* " hinzu, um Visual Studio mitzuteilen, wie der Quellcode in einem geöffneten Ordner Projekt erstellt werden soll. Sie können hier beliebig eine beliebige Aufgabe definieren und Sie dann über das Kontextmenü **Projektmappen-Explorer** aufrufen. Cmake-Projekte verwenden diese Datei nicht, da alle Buildbefehle in " *CMakeLists. txt*" angegeben sind. Für andere Buildsysteme als cmake können Sie mit " *Tasks. vs. JSON* " Buildbefehle angeben und Buildskripts aufrufen. Allgemeine Informationen zur Verwendung von " *Tasks. vs. JSON*" finden Sie unter [Anpassen von Build-und Debugaufgaben für die Entwicklung "Ordner öffnen"](/visualstudio/ide/customize-build-and-debug-tasks-in-visual-studio).
+Fügen Sie eine *tasks.vs.json*-Datei hinzu, damit Visual Studio weiß, wie Ihr Quellcode in einem „Ordner öffnen“-Projekt erstellt werden soll. Sie können in dieser Datei eine beliebige Aufgabe definieren und diesen dann über das Kontextmenü des **Projektmappen-Explorers** aufrufen. CMake-Projekte verwenden diese Datei in der Regel nicht, da alle Buildbefehle in *CMakeLists.txt* angegeben sind. Bei anderen Buildsystemen als CMake können Sie in *tasks.vs.json* Ihre Buildbefehle angeben und Buildskripts aufrufen. Allgemeine Informationen zur Verwendung von *tasks.vs.json* finden Sie unter [Anpassen von Build- und Debugtasks für die Open Folder-Entwicklung](/visualstudio/ide/customize-build-and-debug-tasks-in-visual-studio).
 
-Eine Aufgabe verfügt über eine `type`-Eigenschaft, die einen von vier Werten aufweisen kann: `default`, `launch`, `remote`oder `msbuild`. Die meisten Tasks sollten `launch` verwenden, es sei denn, eine Remote Verbindung ist erforderlich.
+Eine Aufgabe hat eine `type`-Eigenschaft, die einen von vier Werten aufweisen kann: `default`, `launch`, `remote` oder `msbuild`. Die meisten Aufgaben sollten `launch` verwenden, es sei denn, eine Remoteverbindung ist erforderlich.
 
 ## <a name="default-properties"></a>Standardeigenschaften
 
-Die Standardeigenschaften sind für alle Arten von Tasks verfügbar:
+Die Standardeigenschaften sind für alle Aufgabentypen verfügbar:
 
 ||||
 |-|-|-|
 |**Property**|**Type**|**Beschreibung**|
-|`taskLabel`|string| (Erforderlich) Gibt die in der Benutzeroberfläche verwendete Aufgaben Bezeichnung an.|
-|`appliesTo`|string| (Erforderlich) Gibt an, für welche Dateien der Befehl ausgeführt werden kann. Die Verwendung von Platzhaltern wird unterstützt, z. b.: " *", "* . cpp", "/*. txt".|
-|`contextType`|string| Zulässige Werte: "Custom", "Build", "Clean", "Rebuild". Bestimmt, wo im Kontextmenü die Aufgabe angezeigt wird. Der Standardwert ist "Custom".|
-|`output`|string| Gibt ein Ausgabetag für Ihre Aufgabe an.|
-|`inheritEnvironments`|-Array| Gibt einen Satz von Umgebungsvariablen an, die von mehreren Quellen geerbt werden. Sie können Variablen in Dateien wie " *cmakesettings. JSON* " oder " *cppproperties. JSON* " definieren und für den Aufgaben Kontext verfügbar machen. **Visual Studio 16,4:** : Geben Sie Umgebungsvariablen pro Aufgabe mithilfe der `env.VARIABLE_NAME`-Syntax an. Um die Festlegung einer Variablen zu deaktivieren, legen Sie Sie auf "Null" fest.|
-|`passEnvVars`|boolean| Gibt an, ob zusätzliche Umgebungsvariablen in den Task Kontext eingeschlossen werden sollen. Diese Variablen unterscheiden sich von denen, die mit der `envVars`-Eigenschaft definiert wurden. Der Standardwert ist "true".|
+|`taskLabel`|string| (Erforderlich.) Gibt die in der Benutzeroberfläche verwendete Aufgabenbezeichnung an.|
+|`appliesTo`|string| (Erforderlich.) Gibt an, für welche Dateien der Befehl ausgeführt werden kann. Die Verwendung von Platzhaltern wird unterstützt, z. B. „ *“, „* .cpp“, „/*.txt“.|
+|`contextType`|string| Zulässige Werte sind: „custom“, „build“, „clean“ und „rebuild“. Bestimmt, wo im Kontextmenü die Aufgabe angezeigt wird. Der Standardwert ist „custom“.|
+|`output`|string| Gibt ein Ausgabetag für Ihren Task an.|
+|`inheritEnvironments`|array| Gibt mehrere Umgebungsvariablen an, die aus mehreren Quellen geerbt werden. Sie können Variablen in Dateien wie *CMakeSettings.json* oder *CppProperties.json* definieren und sie für den Aufgabenkontext verfügbar machen. **Visual Studio 16.4:** Geben Sie Umgebungsvariablen pro Aufgabe an. Verwenden Sie dazu die `env.VARIABLE_NAME`-Syntax. Wenn Sie die Festlegung einer Variable aufheben möchten, legen Sie sie auf „null“ fest.|
+|`passEnvVars`|boolean| Gibt an, ob zusätzliche Umgebungsvariablen für den Aufgabenkontext eingeschlossen werden sollen oder nicht. Diese Variablen unterscheiden sich von denen, die mithilfe der `envVars`-Eigenschaft definiert werden. Der Standardwert ist „True“.|
 
 ## <a name="launch-properties"></a>Starteigenschaften
 
-Wenn der Tasktyp `launch`ist, stehen folgende Eigenschaften zur Verfügung:
+Wenn der Aufgabentyp `launch` ist, sind die folgenden Eigenschaften verfügbar:
 
 ||||
 |-|-|-|
 |**Property**|**Type**|**Beschreibung**|
-|`command`|string| Gibt den vollständigen Pfad des zu startenden Prozesses oder Skripts an.|
-|`args`|-Array| Gibt eine durch Trennzeichen getrennte Liste von Argumenten an, die an den Befehl übermittelt werden.|
-|`launchOption`|string| Zulässige Werte: "None", "ContinueOnError", "IgnoreError". Gibt an, wie der Befehl beim Auftreten von Fehlern fortgesetzt wird.|
-|`workingDirectory`|string| Gibt das Verzeichnis an, in dem der Befehl ausgeführt wird. Der Standardwert ist das aktuelle Arbeitsverzeichnis des Projekts.|
-|`customLaunchCommand`|string| Gibt eine globale Bereichs Anpassung an, die angewendet werden soll, bevor der Befehl ausgeführt wird. Nützlich für das Festlegen von Umgebungsvariablen wie% Path%.|
-|`customLaunchCommandArgs`|string| Gibt Argumente für "customlaunchcommand" an. (Erfordert `customLaunchCommand`.)|
- `env`| Gibt eine Schlüssel-Wert-Liste von benutzerdefinierten Umgebungsvariablen an. Beispiel: "mytv": "myVal"|
-|`commands`|-Array| Gibt eine Liste der Befehle an, die in der Reihenfolge aufgerufen werden.|
+|`command`|string| Gibt den vollständigen Pfad des Prozesses oder Skripts für den Start an.|
+|`args`|array| Gibt eine durch Kommas getrennte Liste an Argumenten an, die an den Befehl übergeben werden.|
+|`launchOption`|string| Zulässige Werte: „None“, „ContinueOnError“, „IgnoreError“. Gibt an, wie der Befehl fortgesetzt werden soll, wenn Fehler auftreten.|
+|`workingDirectory`|string| Gibt das Verzeichnis an, in dem der Befehl ausgeführt wird. Standardwert: Das aktuelle Arbeitsverzeichnis des Projekts.|
+|`customLaunchCommand`|string| Gibt eine globale Bereichsanpassung an, die angewendet werden soll, bevor der Befehl ausgeführt wird. Dies ist hilfreich, wenn Umgebungsvariablen wie %PATH% festgelegt werden sollen.|
+|`customLaunchCommandArgs`|string| Gibt Argumente für customLaunchCommand an. (Erfordert `customLaunchCommand`.)|
+ `env`| Gibt eine Schlüssel-Wert-Liste benutzerdefinierter Umgebungsvariablen an. Beispiel: „myEnv“: „myVal“.|
+|`commands`|array| Gibt eine Liste von Befehlen an, die in Reihenfolge aufgerufen werden sollen.|
 
 ### <a name="example"></a>Beispiel
 
-Die folgenden Tasks rufen " *make. exe* " auf, wenn ein Makefile im Ordner bereitgestellt wird und die `Mingw64` Umgebung in " *cppproperties. JSON*" definiert wurde, wie in der [Schema Referenz "cppproperties. JSON](cppproperties-schema-reference.md#user_defined_environments)" gezeigt:
+Die folgenden Aufgaben rufen *make.exe* auf, wenn eine Makefile im Ordner bereitgestellt wird und die `Mingw64`-Umgebung in *CppProperties.json* definiert wurde. Sehen Sie sich dazu die [CppProperties.json-Schemareferenz](cppproperties-schema-reference.md#user_defined_environments) an:
 
 ```json
  {
@@ -80,30 +80,30 @@ Die folgenden Tasks rufen " *make. exe* " auf, wenn ein Makefile im Ordner berei
 }
 ```
 
-Diese Tasks können über das Kontextmenü aufgerufen werden, wenn Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf eine *cpp* -Datei klicken.
+Die Aufgaben können im Kontextmenü aufgerufen werden, wenn Sie mit der rechten Maustaste auf eine *CPP*-Datei im **Projektmappen-Explorer** klicken.
 
-## <a name="remote-properties"></a>Remote Eigenschaften
+## <a name="remote-properties"></a>Remoteeigenschaften
 
-Remote Aufgaben werden aktiviert, wenn Sie die Linux-Entwicklung C++ mit Arbeitsauslastung installieren und mithilfe des Visual Studio-Verbindungs-Managers eine Verbindung zu einem Remote Computer hinzufügen. Eine Remote Aufgabe führt Befehle auf einem Remote System aus und kann auch Dateien in Sie kopieren.
+Remoteaufgaben sind möglich, wenn Sie die Workload „Linux Entwicklung mit C++“ installieren und eine Verbindung zu einem Remotecomputer hinzufügen, indem Sie den Verbindungs-Manager in Visual Studio verwenden. Eine Remoteaufgabe führt Befehle auf einem Remotesystem aus und kann auch Dateien dorthin kopieren.
 
-Wenn der Tasktyp `remote`ist, stehen folgende Eigenschaften zur Verfügung:
+Wenn der Aufgabentyp `remote` ist, sind die folgenden Eigenschaften verfügbar:
 
 ||||
 |-|-|-|
 |**Property**|**Type**|**Beschreibung**|
-|`remoteMachineName`|string|Der Name des Remote Computers. Muss mit einem Computernamen im **Verbindungs-Manager**verglichen werden.|
-|`command`|string|Der Befehl, der an den Remote Computer gesendet werden soll. Standardmäßig werden Befehle im $Home Verzeichnis auf dem Remote System ausgeführt.|
-|`remoteWorkingDirectory`|string|Das aktuelle Arbeitsverzeichnis auf dem Remote Computer.|
-|`localCopyDirectory`|string|Das lokale Verzeichnis, das auf den Remote Computer kopiert werden soll. Der Standardwert ist das aktuelle Arbeitsverzeichnis.|
-|`remoteCopyDirectory`|string|Das Verzeichnis auf dem Remote Computer, in das `localCopyDirectory` kopiert wird.|
-|`remoteCopyMethod`|string| Die Methode, die für den Kopiervorgang verwendet werden soll. Zulässige Werte: "None", "SFTP", "rsync". "rsync" wird für große Projekte empfohlen.|
-|`remoteCopySourcesOutputVerbosity`|string| Zulässige Werte: "Normal", "ausführlich", "Diagnose".|
-|`rsyncCommandArgs`|string|Der Standardwert ist "-t--delete".|
-|`remoteCopyExclusionList`|-Array|Durch Trennzeichen getrennte Liste von Dateien in `localCopyDirectory`, die von Kopier Vorgängen ausgeschlossen werden sollen.|
+|`remoteMachineName`|string|Der Name des Remotecomputers. Dieser muss einem Computername im **Verbindungs-Manager** entsprechen.|
+|`command`|string|Der Befehl, um den Remotecomputer zu senden. Standardmäßig werden Befehle im $HOME-Verzeichnis auf dem Remotesystem ausgeführt.|
+|`remoteWorkingDirectory`|string|Das aktuelle Arbeitsverzeichnis auf dem Remotecomputer.|
+|`localCopyDirectory`|string|Das lokale Verzeichnis, das auf den Remotecomputer kopiert werden soll. Der Standardwert ist das aktuelle Arbeitsverzeichnis.|
+|`remoteCopyDirectory`|string|Das Verzeichnis auf dem Remotecomputer, in das `localCopyDirectory` kopiert wird.|
+|`remoteCopyMethod`|string| Die Methode, die für den Kopiervorgang verwendet wird. Zulässige Werte sind: „none“, „sftp“, „rsync“. „rsync“ wird für große Projekte empfohlen.|
+|`remoteCopySourcesOutputVerbosity`|string| Zulässige Werte: „Normal“, „Verbose“, „Diagnostic“.|
+|`rsyncCommandArgs`|string|Der Standard ist „-t --delete“.|
+|`remoteCopyExclusionList`|array|Durch Kommas getrennte Liste von Dateien in `localCopyDirectory`, die bei Kopiervorgängen ausgeschlossen werden sollen.|
 
 ### <a name="example"></a>Beispiel
 
-Die folgende Aufgabe wird im Kontextmenü angezeigt, wenn Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf " *Main. cpp* " klicken. Dies hängt von einem Remote Computer mit dem Namen `ubuntu` im **Verbindungs-Manager**ab. Der Task kopiert den aktuell geöffneten Ordner in Visual Studio in das `sample` Verzeichnis auf dem Remote Computer und ruft dann g + + auf, um das Programm zu erstellen.
+Die folgende Aufgabe wird im Kontextmenü angezeigt, wenn Sie mit der rechten Maustaste auf *main.cpp* im **Projektmappen-Explorer** klicken. Die Aufgabe hängt von einem Remotecomputer namens `ubuntu` im **Verbindungs-Manager** ab. Die Aufgabe kopiert den aktuellen Ordner in Visual Studio in das `sample`-Verzeichnis auf dem Remotecomputer und ruft dann g++ ab, um das Programm zu erstellen.
 
 ```json
 {
@@ -127,13 +127,13 @@ Die folgende Aufgabe wird im Kontextmenü angezeigt, wenn Sie in **Projektmappen
 
 ## <a name="msbuild-properties"></a>MSBuild-Eigenschaften
 
-Wenn der Tasktyp `msbuild`ist, stehen folgende Eigenschaften zur Verfügung:
+Wenn der Aufgabentyp `msbuild` ist, sind die folgenden Eigenschaften verfügbar:
 
 ||||
 |-|-|-|
 |**Property**|**Type**|**Beschreibung**|
-|`verbosity`|string| Gibt die Werte für die Buildausgabe des MSBuild-Projekts an: "quiet", "Minimal", "Normal", "detailliert", "Diagnose".|
-|`toolsVersion`|string| Gibt die Toolsetversion zum Erstellen des Projekts an, z. b. "2,0", "3,5", "4,0", "Current". Der Standardwert ist "Current".|
-|`globalProperties`|-Objekt|Gibt eine Schlüssel-Wert-Liste der globalen Eigenschaften an, die an das Projekt übergeben werden sollen, z. b. "Configuration": "Release"|
-|`properties`|-Objekt| Gibt eine Schlüssel-Wert-Liste mit zusätzlichen Projekteigenschaften an.|
-|`targets`|-Array| Gibt die Liste der Ziele an, die für das Projekt in der richtigen Reihenfolge aufgerufen werden. Wenn keine Angabe erfolgt, wird das Standardziel des Projekts verwendet.|
+|`verbosity`|string| Gibt die verbosityAllowed-Werte für die MSBuild-Projektbuildausgabe an: „Quiet“, „Minimal“, „Normal“, „Detailed“, „Diagnostic“.|
+|`toolsVersion`|string| Gibt die Toolsetversion an, mit der das Projekt erstellt werden soll, z. B. „2.0“, „3.5“, „4.0“, „Current“. Der Standardwert ist „Current“.|
+|`globalProperties`|Objekt|Gibt eine Schlüssel-Wert-Liste der globalen Eigenschaften an, die in das Projekt übergeben werden sollen, z. B. „Configuration“:„Release“.|
+|`properties`|Objekt| Gibt eine Schlüssel-Wert-Liste zusätzlicher nur für das Projekt geltender Eigenschaften an.|
+|`targets`|array| Gibt die Liste der Ziele an, die im Projekt der Reihe nach aufgerufen werden sollen. Das Standardziel des Projekts wird verwendet, wenn keines angegeben ist.|

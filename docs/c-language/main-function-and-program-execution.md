@@ -11,7 +11,7 @@ helpviewer_keywords:
 ms.assetid: 5984f1bd-072d-4e06-8640-122fb1454401
 ms.openlocfilehash: 28b0d826dc02376f952d3522f2f037eacd298b8e
 ms.sourcegitcommit: e93f3e6a110fe38bc642055bdf4785e620d4220f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/16/2020
 ms.locfileid: "76123941"
@@ -38,5 +38,5 @@ Eine Beschreibung der Breitzeichenversion von **main** finden Sie unter [Verwend
 
 ## <a name="see-also"></a>Siehe auch
 
-[Main-Funktion und Befehlszeilenargumente (C++)](../cpp/main-function-command-line-args.md)\
+[main-Funktion und Befehlszeilenargumente (C++)](../cpp/main-function-command-line-args.md)\
 [Analysieren von C-Befehlszeilenargumenten](../c-language/parsing-c-command-line-arguments.md)

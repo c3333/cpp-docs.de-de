@@ -13,7 +13,7 @@ helpviewer_keywords:
 ms.assetid: 7592e276-dd6e-4a74-90c8-e1ee35598ea3
 ms.openlocfilehash: 2f907fedcaaf9897749ee0eb6a7ea5a33e1af679
 ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/16/2020
 ms.locfileid: "79422835"
@@ -22,83 +22,83 @@ ms.locfileid: "79422835"
 
 Eine ausführbare Datei kann mit einer DLL durch eine der folgenden Methoden verknüpft werden (bzw. diese laden):
 
-- *Implizites verknüpfen*, bei dem das Betriebssystem die dll zur gleichen Zeit lädt wie die ausführbare Datei, die Sie verwendet. Die ausführbare Client Datei ruft die exportierten Funktionen der dll auf dieselbe Weise auf wie die Funktionen, die statisch verknüpft sind und in der ausführbaren Datei enthalten sind. Implizites verknüpfen wird manchmal als *statisches Laden* oder *dynamisches Verknüpfen der Ladezeit*bezeichnet.
+- *Implizite Verknüpfung*. Dabei lädt das Betriebssystem die DLL zur selben Zeit wie die ausführbare Datei, die sie verwendet. Die ausführbare Clientdatei ruft die exportierten Funktionen der DLL auf dieselbe Weise auf, wie wenn die Funktionen statisch verknüpft und in der ausführbaren Datei enthalten wären. Das implizite Verknüpfen wird gelegentlich auch als *statisches Laden* oder *dynamisches Verknüpfen zur Ladezeit* bezeichnet.
 
-- *Explizites verknüpfen*, bei dem das Betriebssystem die dll bei Bedarf zur Laufzeit lädt. Eine ausführbare Datei, die eine DLL durch explizites verknüpfen verwendet, muss die dll explizit laden und entladen. Außerdem muss ein Funktionszeiger für den Zugriff auf jede Funktion eingerichtet werden, die er aus der dll verwendet. Anders als Aufrufe von Funktionen in einer statisch verknüpften Bibliothek oder einer implizit verknüpften DLL muss die ausführbare Client Datei die exportierten Funktionen in einer explizit verknüpften DLL über Funktionszeiger aufrufen. Explizites verknüpfen wird manchmal als *dynamische Auslastung* oder *Lauf Zeit dynamische Verknüpfung*bezeichnet.
+- *Explizite Verknüpfung*. Hierbei lädt das Betriebssystem die DLL bei Bedarf zur Laufzeit. Eine ausführbare Datei, die eine DLL verwendet, indem eine explizite Verknüpfung hergestellt wird, muss die DLL explizit laden und entladen. Außerdem muss ein Funktionszeiger eingerichtet werden, um auf die einzelnen Funktionen zuzugreifen, die in der DLL verwendet werden. Im Gegensatz zu Funktionsaufrufen in einer statisch verknüpften Bibliothek oder implizit verknüpften DLL muss die ausführbare Clientdatei die exportierten Funktionen in einer explizit verknüpften DLL über Funktionszeiger aufrufen. Die explizite Verknüpfung wird gelegentlich auch als *dynamisches Laden* oder *dynamisches Verknüpfen zur Laufzeit* bezeichnet.
 
-Eine ausführbare Datei kann eine der beiden Verknüpfungs Methoden verwenden, um eine Verknüpfung mit der gleichen dll Außerdem schließen sich diese Methoden nicht gegenseitig aus. eine ausführbare Datei kann implizit mit einer DLL verknüpft werden, und eine andere kann explizit an Sie angehängt werden.
+Eine ausführbare Datei kann jede dieser beiden Verknüpfungsmethoden verwenden, um eine Verknüpfung zur selben DLL herzustellen. Außerdem schließen sich diese Methoden gegenseitig aus. Eine ausführbare Datei kann eine implizite Verknüpfung zu einer DLL herstellen, und eine andere könnten explizit mit ihr verknüpft sein.
 
 <a name="determining-which-linking-method-to-use"></a>
 
 ## <a name="determine-which-linking-method-to-use"></a>Ermitteln, welche Verknüpfungsmethode verwendet werden soll
 
-Ob implizites verknüpfen oder explizite Verknüpfungen verwendet werden müssen, ist eine architektonische Entscheidung, die Sie für Ihre Anwendung treffen müssen. Jede Methode weist Vor- und Nachteile auf.
+Ob implizite oder explizite Verknüpfung verwendet wird, ist eine architektonische Entscheidung, die Sie für Ihre Anwendung treffen müssen. Jede Methode weist Vor- und Nachteile auf.
 
 ### <a name="implicit-linking"></a>Implizite Verknüpfung
 
-Implizites verknüpfen tritt auf, wenn der Code einer Anwendung eine exportierte DLL-Funktion aufruft. Beim Kompilieren oder Assemblieren des Quellcodes für die aufrufende ausführbare Datei wird durch den DLL-Funktionsaufruf ein Verweis auf eine externe Funktion im Objektcode generiert. Um diesen externen Verweis aufzulösen, muss die Anwendung mit der Importbibliothek (LIB-Datei) verknüpft werden, die vom Ersteller der DLL bereitgestellt wird.
+Die implizite Verknüpfung findet statt, wenn der Code einer Anwendung eine exportierte DLL-Funktion aufruft. Beim Kompilieren oder Assemblieren des Quellcodes für die aufrufende ausführbare Datei wird durch den DLL-Funktionsaufruf ein Verweis auf eine externe Funktion im Objektcode generiert. Um diesen externen Verweis aufzulösen, muss die Anwendung mit der Importbibliothek (LIB-Datei) verknüpft werden, die vom Ersteller der DLL bereitgestellt wird.
 
 Die Importbibliothek enthält nur Code zum Laden der DLL sowie zum Implementieren von Funktionsaufrufen in der DLL. Wenn in einer Importbibliothek eine externe Funktion gefunden wird, wird der Linker informiert, dass der Code für diese Funktion in einer DLL enthalten ist. Um externe Verweise auf DLLs aufzulösen, fügt der Linker der ausführbaren Datei einfach Informationen hinzu. Dadurch wird dem System mitgeteilt, wo der DLL-Code zu finden ist, wenn der Prozess startet.
 
-Wenn vom System ein Programm gestartet wird, das dynamisch verknüpfte Verweise enthält, verwendet es die Informationen in der ausführbaren Programmdatei, um die benötigten DLLs zu finden. Wenn die dll nicht gefunden werden kann, beendet das System den Prozess und zeigt ein Dialogfeld an, das den Fehler meldet. Andernfalls ordnet das System die dll-Module dem Prozess Adressraum zu.
+Wenn vom System ein Programm gestartet wird, das dynamisch verknüpfte Verweise enthält, verwendet es die Informationen in der ausführbaren Programmdatei, um die benötigten DLLs zu finden. Wird die DLL nicht gefunden, beendet das System den Prozess und zeigt ein Dialogfeld mit einer entsprechenden Fehlermeldung an. Andernfalls ordnet das System die DLL-Module im Adressbereich des Prozesses zu.
 
-Wenn eine der DLLs über eine Einstiegspunkt Funktion für Initialisierungs-und Beendigungs Code verfügt, z. b. `DllMain`, ruft das Betriebssystem die Funktion auf. Über einen der Parameter, die an die Einstiegspunktfunktion übergeben werden, wird Code definiert, der angibt, dass die DLL an den Prozess angefügt wird. Wenn die Einstiegspunkt Funktion nicht "true" zurückgibt, beendet das System den Prozess und meldet den Fehler.
+Wenn eine der DLLs über eine Einstiegspunktfunktion für Initialisierungs- und Terminierungscode wie `DllMain` verfügt, ruft das Betriebssystem die Funktion auf. Über einen der Parameter, die an die Einstiegspunktfunktion übergeben werden, wird Code definiert, der angibt, dass die DLL an den Prozess angefügt wird. Wenn die Einstiegspunktfunktion nicht den Wert TRUE zurückgibt, beendet das System den Prozess mit einer entsprechenden Fehlermeldung.
 
 Schließlich ändert das System den ausführbaren Code des Prozesses, um Startadressen für die DLL-Funktionen bereitzustellen.
 
-Wie der Rest des Programmcodes ordnet das Lade Programm den DLL-Code dem Adressraum des Prozesses zu, wenn der Prozess gestartet wird. Das Betriebssystem lädt es nur bei Bedarf in den Arbeitsspeicher. Folglich haben die `PRELOAD`-und `LOADONCALL` Code Attribute, die von DEF-Dateien zum Steuern des Ladens in früheren Windows-Versionen verwendet werden, keine Bedeutung mehr.
+Wie der Rest des Codes eines Programms ordnet das Ladeprogramm DLL-Code in den Adressraum des Prozesses zu, wenn der Prozess gestartet wird. Das Betriebssystem lädt ihn nur bei Bedarf in den Arbeitsspeicher. Somit haben die von DEF-Dateien früherer Windows-Versionen verwendeten Codeattribute `PRELOAD` und `LOADONCALL`, durch die das Laden gesteuert wurde, ihre Bedeutung verloren.
 
 ### <a name="explicit-linking"></a>Explizite Verknüpfung
 
-Die meisten Anwendungen verwenden implizites verknüpfen, da es sich hierbei um die einfachste Verknüpfungs Methode handelt. Es gibt jedoch Situationen, in denen die explizite Verknüpfung erforderlich ist. Die folgenden Gründe sprechen häufig für die explizite Verknüpfung:
+Die meisten Anwendungen verwenden die implizite Verknüpfung, da diese Verknüpfungsmethode am einfachsten anzuwenden ist. Es gibt jedoch Situationen, in denen die explizite Verknüpfung erforderlich ist. Die folgenden Gründe sprechen häufig für die explizite Verknüpfung:
 
-- Die Anwendung kennt den Namen einer DLL, die Sie zum Zeitpunkt der Laufzeit lädt. Die Anwendung kann z. b. den Namen der dll und der exportierten Funktionen beim Start aus einer Konfigurationsdatei abrufen.
+- Die Anwendung kennt den Namen einer DLL, die sie lädt, bis zur Laufzeit nicht. Es ist z. B. möglich, dass die Anwendung den Namen der DLL und der exportierten Funktionen beim Start aus einer Konfigurationsdatei abrufen muss.
 
-- Ein Prozess, der implizites verknüpfen verwendet, wird vom Betriebssystem beendet, wenn die dll beim Prozessstart nicht gefunden wird. Ein Prozess, bei dem explizite Verknüpfungen verwendet werden, wird in dieser Situation nicht beendet, und es kann versucht werden, den Fehler zu beheben. So könnte der Prozess z. B. dem Benutzer den Fehler melden und ihn veranlassen, einen anderen Pfad für die DLL anzugeben.
+- Ein Prozess, der die implizite Verknüpfung verwendet, wird vom Betriebssystem beendet, wenn die DLL beim Starten des Prozesses nicht gefunden wird. Verwendet ein Prozess die explizite Verknüpfung, wird er in dieser Situation nicht beendet und kann versuchen, die Verarbeitung fortzusetzen. So könnte der Prozess z. B. dem Benutzer den Fehler melden und ihn veranlassen, einen anderen Pfad für die DLL anzugeben.
 
-- Ein Prozess, der implizites verknüpfen verwendet, wird auch beendet, wenn eine der DLLs, mit denen er verknüpft ist, eine `DllMain` Funktion hat, die fehlschlägt. Ein Prozess, bei dem explizite Verknüpfungen verwendet werden, wird in dieser Situation nicht beendet.
+- Ein Prozess, der die implizite Verknüpfung verwendet, wird auch beendet, wenn eine der DLLs, mit denen er verknüpft ist, eine fehlgeschlagene `DllMain`-Funktion enthält. Ein Prozess, der eine explizite Verknüpfung verwendet, wird in dieser Situation nicht beendet.
 
-- Eine Anwendung, die implizit mit zahlreichen DLLs verknüpft ist, wird u. U. langsam gestartet, da von Windows neben der Anwendung auch alle DLLs geladen werden. Um die Startleistung zu verbessern, verwendet eine Anwendung möglicherweise nur implizite Verknüpfungen für DLLs, die unmittelbar nach dem Laden erforderlich sind Die explizite Verknüpfung kann verwendet werden, um andere DLLs nur dann zu laden, wenn Sie benötigt werden.
+- Eine Anwendung, die implizit mit zahlreichen DLLs verknüpft ist, wird u. U. langsam gestartet, da von Windows neben der Anwendung auch alle DLLs geladen werden. Zur Verbesserung der Startleistung kann eine Anwendung auch nur eine implizite Verknüpfung für DLLs verwenden, die unmittelbar nach dem Laden erforderlich ist. Es könnte auch eine explizite Verknüpfung verwendet werden, um weitere DLLs nur bei Bedarf zu laden.
 
-- Bei der expliziten Verknüpfung entfällt die Notwendigkeit, die Anwendung mit einer Import Bibliothek zu verknüpfen. Wenn Änderungen in der dll bewirken, dass die Export Ordinalzahlen geändert werden, müssen Anwendungen nicht erneut verknüpft werden, wenn Sie `GetProcAddress` mit dem Namen einer Funktion und nicht mit einem Ordinalwert aufruft. Anwendungen, die implizites verknüpfen verwenden, müssen weiterhin mit der geänderten Import Bibliothek verknüpft werden.
+- Durch die explizite Verknüpfung entfällt die Notwendigkeit, die Anwendung mit einer Importbibliothek zu verknüpfen. Wenn Änderungen in der DLL dazu führen, dass sich die Exportordinalzahlen ändern, müssen Anwendungen keine neue Verknüpfung herstellen, wenn sie `GetProcAddress` mithilfe des Namens einer Funktion und nicht mit einem Ordinalwert aufrufen. Anwendungen, die die implizite Verknüpfung verwenden, müssen dennoch eine neue Verknüpfung mit der geänderten Importbibliothek herstellen.
 
 Beachten Sie die beiden folgenden Schwachstellen im Zusammenhang mit der expliziten Verknüpfung:
 
-- Wenn die dll über eine `DllMain` Einstiegspunkt Funktion verfügt, ruft das Betriebssystem die Funktion im Kontext des Threads auf, der `LoadLibrary`aufgerufen hat. Die Einstiegspunkt Funktion wird nicht aufgerufen, wenn die DLL bereits an den Prozess angefügt wurde, weil ein vorheriger Aufruf von `LoadLibrary`, der über keinen entsprechenden Aufruf der `FreeLibrary`-Funktion verfügt. Explizites verknüpfen kann Probleme verursachen, wenn die DLL eine `DllMain` Funktion verwendet, um jeden Thread eines Prozesses zu initialisieren, da alle Threads, die bereits vorhanden sind, wenn `LoadLibrary` (oder `AfxLoadLibrary`) aufgerufen wird, nicht initialisiert werden.
+- Wenn die DLL über eine `DllMain`-Einstiegspunktfunktion verfügt, ruft das Betriebssystem die Funktion im Kontext des Threads auf, durch den `LoadLibrary` aufgerufen wurde. Die Einstiegspunktfunktion wird nicht aufgerufen, wenn die DLL bereits an den Prozess angefügt ist, da es einen früheren Aufruf von `LoadLibrary` ohne entsprechenden Aufruf der `FreeLibrary`-Funktion gegeben hat. Explizites Verknüpfen kann Probleme verursachen, wenn die DLL eine `DllMain`-Funktion verwendet, um die einzelnen Threads eines Prozesses zu initialisieren, da jeder Thread, der bereits vorhanden war, als `LoadLibrary` (oder `AfxLoadLibrary`) aufgerufen wurde, nicht initialisiert wird.
 
-- Wenn eine DLL statische Blockdaten als `__declspec(thread)`deklariert, kann dies zu einem Schutz Fehler führen, wenn diese explizit verknüpft ist. Nachdem die dll durch einen Aufruf von `LoadLibrary`geladen wurde, verursacht Sie einen Schutz Fehler, wenn der Code auf diese Daten verweist. (Statische Blockdaten umfassen sowohl globale als auch lokale statische Elemente.) Daher sollten Sie beim Erstellen einer DLL die Verwendung des lokalen Thread Speichers vermeiden. Wenn dies nicht möglich ist, informieren Sie Ihre DLL-Benutzer über die möglichen Fehler beim dynamischen Laden der dll. Weitere Informationen finden Sie unter [Verwenden von lokalem Thread Speicher in einer Dynamic Link Library (Windows SDK)](/windows/win32/Dlls/using-thread-local-storage-in-a-dynamic-link-library).
+- Wenn eine DLL statische Daten als `__declspec(thread)` deklariert, kann dies zu einer Schutzverletzung führen, sobald explizit verknüpft wird. Nachdem die DLL durch einen Aufruf von `LoadLibrary` geladen wurde, verursacht sie eine Schutzverletzung, sobald vom Code auf diese Daten verwiesen wird. (Statische Daten umfassen sowohl globale als auch lokale statische Elemente.) Deshalb sollten Sie bei der Erstellung einer DLL auf die Verwendung von threadlokalem Speicher verzichten. Ist dies nicht möglich, informieren Sie Ihre DLL-Benutzer über mögliche Probleme beim dynamischen Laden Ihrer DLL. Weitere Informationen finden Sie unter [Verwenden von threadlokalem Speicher in einer DLL](/windows/win32/Dlls/using-thread-local-storage-in-a-dynamic-link-library).
 
 <a name="linking-implicitly"></a>
 
-## <a name="how-to-use-implicit-linking"></a>Verwenden impliziter Verknüpfungen
+## <a name="how-to-use-implicit-linking"></a>Verwenden impliziter Verknüpfung
 
-Um eine DLL durch implizites verknüpfen verwenden zu können, müssen ausführbare Client Dateien diese Dateien vom Anbieter der dll abrufen:
+Wenn Sie eine DLL durch implizite Verknüpfung verwenden möchten, müssen ausführbare Clientdateien die folgenden Dateien vom Anbieter der DLL erhalten:
 
-- Eine oder mehrere Header Dateien (. h-Dateien), die die Deklarationen der exportierten Daten, Funktionen C++ und Klassen in der dll enthalten. Die von der DLL exportierten Klassen, Funktionen und Daten müssen in der Header Datei als `__declspec(dllimport)` gekennzeichnet werden. Weitere Informationen finden Sie unter [dllexport, dllimport](../cpp/dllexport-dllimport.md).
+- Mindestens eine der Headerdateien (H-Dateien), die die Deklarationen der exportierten Daten, Funktionen und C++-Klassen in der DLL enthalten. Die Klassen, Funktionen und Daten, die von der DLL exportiert wurden, müssen in der Headerdatei mit `__declspec(dllimport)` markiert werden. Weitere Informationen finden Sie unter [dllexport, dllimport](../cpp/dllexport-dllimport.md).
 
-- Eine Import Bibliothek, die mit Ihrer ausführbaren Datei verknüpft werden soll. Der Linker erstellt die Import Bibliothek, wenn die dll erstellt wird. Weitere Informationen finden Sie unter [lib-Dateien als Eingabe](reference/dot-lib-files-as-linker-input.md)für den Linker.
+- Eine Importbibliothek zur Verknüpfung in Ihrer ausführbaren Datei. (Die Importbibliothek wird vom Linker erstellt, nachdem die DLL erstellt wurde.) Weitere Informationen finden Sie unter [LIB-Dateien als Linkereingabe](reference/dot-lib-files-as-linker-input.md).
 
-- Die tatsächliche dll-Datei.
+- Die DLL-Datei selbst.
 
-Um die Daten, Funktionen und Klassen in einer DLL durch implizites verknüpfen zu verwenden, muss jede Client Quelldatei die Header Dateien enthalten, die Sie deklarieren. Aus Codierungs Sicht entsprechen Aufrufe der exportierten Funktionen wie jeder andere Funktionsaufruf.
+Damit die Daten, Funktionen und Klassen in einer DLL durch implizites Verknüpfen verwendet werden können, müssen alle Clientquelldateien die Headerdateien enthalten und sie deklarieren. Hinsichtlich der Codierung unterscheiden sich die Aufrufe für exportierte Funktionen nicht von anderen Funktionsaufrufen.
 
-Um die ausführbare Client Datei zu erstellen, müssen Sie eine Verknüpfung mit der Import Bibliothek der dll herstellen. Wenn Sie ein externes Makefile-oder Buildsystem verwenden, geben Sie die Import Bibliothek zusammen mit den anderen Objektdateien oder Bibliotheken an, die Sie verknüpfen.
+Sie müssen eine Verknüpfung mit der Importbibliothek der DLL herstellen, um die aufrufende ausführbare Datei zu erstellen. Wenn Sie eine externe Makefile oder ein Buildsystem verwenden, geben Sie die Importbibliothek zusammen mit den anderen Objektdateien oder Bibliotheken an, die Sie verknüpfen.
 
-Das Betriebssystem muss in der Lage sein, die DLL-Datei beim Laden der aufrufenden ausführbaren Datei zu lokalisieren. Dies bedeutet, dass Sie bei der Installation der Anwendung entweder das vorhanden sein der DLL bereitstellen oder überprüfen müssen.
+Das Betriebssystem muss in der Lage sein, die DLL-Datei beim Laden der aufrufenden ausführbaren Datei zu lokalisieren. Das bedeutet, Sie müssen die DLL entweder bereitstellen oder ihre Existenz bestätigen, wenn Sie Ihre Anwendung installieren.
 
 <a name="linking-explicitly"></a>
 
-## <a name="how-to-link-explicitly-to-a-dll"></a>Explizites verknüpfen mit einer dll
+## <a name="how-to-link-explicitly-to-a-dll"></a>Explizites Verknüpfen mit einer DLL
 
-Um eine DLL durch explizites verknüpfen verwenden zu können, müssen Anwendungen einen Funktionsaufruf durchführen, um die dll zur Laufzeit explizit zu laden. Für die explizite Verknüpfung mit einer DLL muss eine Anwendung folgende Schritte ausführen:
+Wenn eine DLL durch explizite Verknüpfung verwendet werden soll, müssen Anwendungen einen Funktionsaufruf durchführen, um die DLL zur Laufzeit explizit zu laden. Für die explizite Verknüpfung mit einer DLL muss eine Anwendung folgende Schritte ausführen:
 
-- Rufen Sie [LoadLibraryEx](/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw) oder eine ähnliche Funktion zum Laden der dll und zum Abrufen eines Modul Handles auf.
+- [LoadLibraryEx](/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw) (oder eine ähnliche Funktion) aufrufen, um die DLL zu laden und ein Modulhandle zu erhalten.
 
-- Rufen Sie [GetProcAddress](getprocaddress.md) auf, um einen Funktionszeiger auf jede exportierte Funktion zu erhalten, die die Anwendung aufruft. Da Anwendungen die DLL-Funktionen über einen Zeiger aufzurufen, generiert der Compiler keine externen Verweise, sodass keine Verknüpfung mit einer Import Bibliothek erforderlich ist. Sie müssen jedoch über eine `typedef`-oder `using`-Anweisung verfügen, die die von Ihnen aufzurufende Rückruf Signatur der exportierten Funktionen definiert.
+- [GetProcAddress](getprocaddress.md) aufrufen, um einen Funktionszeiger auf jede exportierte Funktion zu erhalten, die durch die Anwendung aufgerufen wird. Da Anwendungen die DLL-Funktionen über einen Zeiger aufrufen, muss der Compiler keine externen Verweise generieren. Folglich ist es auch nicht erforderlich, eine Importbibliothek zu verknüpfen. Sie müssen jedoch über eine `typedef`- oder `using`-Anweisung verfügen, die die Aufrufsignatur der exportierten Funktionen definiert, die Sie aufrufen.
 
-- Rufen Sie [FreeLibrary](freelibrary-and-afxfreelibrary.md) auf, wenn Sie mit der dll abgeschlossen sind.
+- [FreeLibrary](freelibrary-and-afxfreelibrary.md) aufrufen, wenn die DLL nicht mehr benötigt wird.
 
-Diese Beispiel Funktion ruft beispielsweise `LoadLibrary` auf, um eine DLL mit dem Namen "myDll" zu laden, ruft `GetProcAddress` auf, um einen Zeiger auf eine Funktion mit dem Namen "DLLFunc1" zu erhalten, ruft die Funktion auf und speichert das Ergebnis und ruft dann `FreeLibrary` auf, um die dll zu entladen.
+Diese Beispielfunktion ruft beispielsweise `LoadLibrary` auf, um eine DLL namens „MyDLL“ zu laden, sie ruft `GetProcAddress` auf, um einen Zeiger auf eine Funktion namens „DLLFunc1“ zu erhalten, sie ruft die Funktion auf und speichert das Ergebnis und ruft dann `FreeLibrary` auf, um die DLL zu entladen.
 
 ```C
 #include "windows.h"
@@ -135,13 +135,13 @@ HRESULT LoadAndCallSomeFunction(DWORD dwParam1, UINT * puParam2)
 }
 ```
 
-Im Gegensatz zu diesem Beispiel sollten Sie in den meisten Fällen `LoadLibrary` und nur einmal in der Anwendung für eine bestimmte dll `FreeLibrary`. Dies trifft vor allem dann zu, wenn Sie mehrere Funktionen in der DLL aufrufen oder DLL-Funktionen wiederholt aufrufen.
+Im Gegensatz zu diesem Beispiel sollten Sie in den meisten Fällen `LoadLibrary` und `FreeLibrary` für eine bestimmte DLL nur einmal in Ihrer Anwendung aufrufen. Dies gilt insbesondere, wenn Sie mehrere Funktionen in der DLL aufrufen möchten oder DLL-Funktionen wiederholt aufrufen möchten.
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
 - [Arbeiten mit Importbibliotheken und Exportdateien](reference/working-with-import-libraries-and-export-files.md)
 
-- [Such Reihenfolge der Dynamic Link Library](/windows/win32/Dlls/dynamic-link-library-search-order)
+- [Dynamic Link Library-Suchreihenfolge](/windows/win32/Dlls/dynamic-link-library-search-order)
 
 ## <a name="see-also"></a>Siehe auch
 

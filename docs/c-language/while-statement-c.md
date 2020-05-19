@@ -8,11 +8,11 @@ helpviewer_keywords:
 - while keyword [C], syntax
 ms.assetid: d0c970b8-12a9-4827-afb2-a051111834b7
 ms.openlocfilehash: 4a789f248702f33342a19f95710a8ae313da1d94
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62344732"
 ---
 # <a name="while-statement-c"></a>while-Anweisung (C)
 
@@ -21,7 +21,7 @@ Mit der `while`-Anweisung können Sie eine Anweisung solange wiederholen, bis ei
 ## <a name="syntax"></a>Syntax
 
 *iteration-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**while (**  *expression*  **)**  *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;**while (**  *Ausdruck*  **)**  *Anweisung*
 
 Der *Ausdruck* muss einen arithmetischen Typ oder einen Zeigertyp aufweisen. Die Ausführung erfolgt folgendermaßen:
 

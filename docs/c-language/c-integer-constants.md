@@ -18,21 +18,21 @@ Eine *Ganzzahlkonstante* ist eine dezimale (Basis 10), oktale (Basis 8) oder hex
 ## <a name="syntax"></a>Syntax
 
 *integer-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*decimal-constant* *integer-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*octal-constant* *integer-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-constant* *integer-suffix*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Dezimalkonstante* *Integer-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Oktalkonstante* *Integer-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Hexadezimalkonstante* *Integer-Suffix*<sub>opt</sub>
 
 *decimal-constant*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*nonzero-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*decimal-constant* *digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Dezimalkonstante* *Ziffer*
 
 *octal-constant*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**0**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*octal-constant* *octal-digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Oktalkonstante* *Oktalziffer*
 
 *hexadecimal-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-prefix* *hexadecimal-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-constant* *hexadecimal-digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Hexadezimalpräfix* *Hexadezimalziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Hexadezimalkonstante* *Hexadezimalziffer*
 
 *hexadecimal-prefix*: eines der folgenden Zeichen<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**0x**  **0X**
@@ -49,11 +49,11 @@ Eine *Ganzzahlkonstante* ist eine dezimale (Basis 10), oktale (Basis 8) oder hex
 &nbsp;&nbsp;&nbsp;&nbsp;**A B C D E F**
 
 *integer-suffix*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-suffix* *long-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-suffix* *long-long-suffix*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-suffix* *64-bit-integer-suffix*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*long-suffix* *unsigned-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*long-long-suffix* *unsigned-suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-Suffix* *long-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-Suffix* *long-long-Suffix*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-Suffix* *64-Bit-Integer-Suffix*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*long-Suffix* *unsigned-suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*long-long-Suffix* *unsigned-suffix*<sub>opt</sub><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*64-bit-integer-suffix*
 
 *unsigned-suffix*: eines der folgenden Zeichen<br/>

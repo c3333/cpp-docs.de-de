@@ -12,25 +12,25 @@ helpviewer_keywords:
 - logical OR operator
 ms.assetid: c0a4e766-ad56-4300-bf76-b28dc0e19b43
 ms.openlocfilehash: 5df0c0f16bdf298c47a6a0699ec10c7392ab84ca
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50651268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326585"
 ---
 # <a name="c-logical-operators"></a>Logische C-Operatoren
 
-Die logischen Operatoren führen logical-AND-Vorgänge (**&&**) und logical-OR-Vorgänge (**||**) aus.
+Die logischen Operatoren führen logical-AND-Vorgänge ( **&&** ) und logical-OR-Vorgänge ( **||** ) aus.
 
 ## <a name="syntax"></a>Syntax
 
 *logical-AND-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*inclusive-OR-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-AND-expression*  **&&**  *inclusive-OR-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-AND-Ausdruck*  **&&**  *inklusiver-OR-Ausdruck*
 
 *logical-OR-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*logical-AND-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*logical-OR-expression*  **&#124;&#124;**  *logical-AND-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*logischer-OR-Ausdruck*  **&#124;&#124;**  *logischer-AND-Ausdruck*
 
 ## <a name="remarks"></a>Hinweise
 
@@ -38,7 +38,7 @@ Logische Operatoren führen nicht die üblichen arithmetischen Konvertierungen a
 
 Die logischen C-Operatoren sind im Folgenden beschrieben:
 
-|Operator|Beschreibung |
+|Operator|Beschreibung|
 |--------------|-----------------|
 |**&&**|Der logische AND-Operator gibt den Wert 1 an, wenn beide Operanden Werte ungleich 0 aufweisen. Wenn einer der beiden Operanden gleich 0 (null) ist, ist das Ergebnis 0 (null). Wenn der erste Operand einer logischen AND-Operation gleich 0 ist, wird der zweite Operand nicht ausgewertet.|
 |**&#124;&#124;**|Der logische OR-Operator führt eine inklusive OR-Operation für seinen Operanden aus. Das Ergebnis ist 0 (null), wenn beide Operanden den Wert 0 (null) aufweisen. Wenn einer der beiden Operanden einen Wert ungleich 0 (null) aufweist, ist das Ergebnis 1. Wenn der erste Operand einer logischen OR-Operation einen Wert ungleich 0 (null) aufweist, wird der zweite Operand nicht ausgewertet.|

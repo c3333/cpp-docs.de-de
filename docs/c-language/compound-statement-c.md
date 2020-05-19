@@ -6,11 +6,11 @@ helpviewer_keywords:
 - statements, compound
 ms.assetid: 32d1bf86-cbbc-42a9-ba3a-1be1c6c7754c
 ms.openlocfilehash: 42d4c1d21c3e98dfc0281a47a35e033852f8de18
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62312562"
 ---
 # <a name="compound-statement-c"></a>Verbundanweisung (C)
 
@@ -19,15 +19,15 @@ Eine Verbundanweisung (auch „Block“ genannt) wird in der Regel als Text eine
 ## <a name="syntax"></a>Syntax
 
 *compound-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**{** *declaration-list*<sub>opt</sub> *statement-list*<sub>opt</sub> **}**
+&nbsp;&nbsp;&nbsp;&nbsp; **{** *Deklarationsliste*<sub>opt</sub> *Anweisungsliste*<sub>opt</sub> **}**
 
 *declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-list* *declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsliste* *Deklaration*
 
 *statement-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*statement-list* *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;*Anweisungsliste* *Anweisung*
 
 Wenn Deklarationen vorhanden sind, müssen sie vor allen Anweisungen stehen. Der Gültigkeitsbereich eines Bezeichners, der am Anfang einer Verbundanweisung deklariert ist, reicht vom Deklarationspunkt bis an das Ende des Blocks. Es ist im gesamten Block sichtbar, es sei denn, eine Deklaration des gleichen Bezeichners ist in einem inneren Block vorhanden.
 

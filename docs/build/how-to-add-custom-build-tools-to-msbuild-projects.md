@@ -13,17 +13,17 @@ ms.locfileid: "65220718"
 ---
 # <a name="how-to-add-custom-build-tools-to-msbuild-projects"></a>Vorgehensweise: Hinzufügen von benutzerdefinierten Buildtools zu MSBuild-Projekten
 
-Ein benutzerdefiniertes Buildtool ist eine benutzerdefinierte Befehlszeilentool, das eine bestimmte Datei zugeordnet ist.
+Ein benutzerdefiniertes Buildtool ist ein benutzerdefiniertes Befehlszeilentool, das mit einer bestimmten Datei verknüpft ist.
 
-Geben Sie für eine bestimmte Datei in der Projektdatei (.vcxproj), die über die Befehlszeile ausführen "," alle weiteren anregungen mit "oder" Ausgabedateien "und" eine anzuzeigende Meldung. Wenn **MSBuild** feststellt, dass Ihre Ausgabedateien in Bezug auf Ihre Eingabedateien veraltet sind, wird die Meldung angezeigt und das Befehlszeilentool wird ausgeführt.
+Geben Sie für eine bestimmte Datei in der Projektdatei (.vcxproj) die auszuführende Befehlszeile, alle zusätzlichen Eingabe- oder Ausgabedateien sowie eine anzuzeigende Meldung an. Wenn **MSBuild** feststellt, dass Ihre Ausgabedateien in Bezug auf Ihre Eingabedateien veraltet sind, zeigt es die Meldung an, und das Befehlszeilentool wird ausgeführt.
 
-Um anzugeben, wenn das benutzerdefinierte Buildtool ausgeführt wird, verwenden Sie eine oder beide der `CustomBuildBeforeTargets` und `CustomBuildAfterTargets` XML-Elemente in der Projektdatei. Beispielsweise können Sie angeben, dass das benutzerdefinierte Buildtool ausgeführt werden, nach der MIDL-Compiler und vor der C/C++-Compiler. Geben Sie die `CustomBuildBeforeTargets` Element, das Tool ausführen, bevor ein bestimmtes Ziel ausgeführt wird; die `CustomBuildAfterTargets` Element, das Tool nach einem bestimmten Ziel, ausführen oder beide Elemente zum Ausführen des Tools zwischen der Ausführung von zwei Zielen. Wenn keines der Elemente angegeben wird, führt das benutzerdefinierte Buildtool an seinem Standardspeicherort, d. h. vor den **MIDL** Ziel.
+Um anzugeben, wann das benutzerdefinierte Buildtool ausgeführt wird, verwenden Sie eines oder beide der XML-Elemente `CustomBuildBeforeTargets` und `CustomBuildAfterTargets` in der Projektdatei. Sie könnten beispielsweise angeben, dass Ihr benutzerdefiniertes Buildtool nach dem MIDL-Compiler und vor dem C/C++-Compiler ausgeführt werden soll. Geben Sie das `CustomBuildBeforeTargets`-Element an, um das Tool auszuführen, bevor ein bestimmtes Ziel ausgeführt wird. Geben Sie das `CustomBuildAfterTargets`-Element an, um das Tool nach einem bestimmten Ziel auszuführen. Geben Sie beide Elemente an, um das Tool zwischen der Ausführung zweier Ziele auszuführen. Wenn keines der Elemente angegeben ist, wird das benutzerdefinierte Buildtool an seinem Standardspeicherort ausgeführt, d. h. vor dem **MIDL**-Ziel.
 
-Benutzerdefinierte Buildschritte und benutzerdefinierte Tools freigeben in angegebene Informationen die `CustomBuildBeforeTargets` und `CustomBuildAfterTargets` XML-Elemente. Geben Sie diese Ziele einmal in Ihrer Projektdatei hinzu.
+Benutzerdefinierte Buildschritte und benutzerdefinierte Buildtools nutzen die in den XML-Elementen `CustomBuildBeforeTargets` und `CustomBuildAfterTargets` angegebenen Informationen gemeinsam. Geben Sie diese Ziele einmal in der Projektdatei an.
 
-### <a name="to-add-a-custom-build-tool"></a>Ein benutzerdefiniertes Buildtool hinzufügen
+### <a name="to-add-a-custom-build-tool"></a>Hinzufügen eines benutzerdefinierten Buildtools
 
-1. Fügen Sie eine Elementgruppe in die Projektdatei aus, und fügen Sie ein Element für jede Eingabedatei. Geben Sie den Befehl, zusätzlicher Eingaben, Ausgaben und eine Nachricht als Elementmetadaten, ein, wie hier gezeigt. In diesem Beispiel wird davon ausgegangen, dass eine Datei "faq.txt" im selben Verzeichnis wie Ihr Projekt vorhanden ist.
+1. Fügen Sie der Projektdatei eine Elementgruppe hinzu, und fügen Sie für jede Eingabedatei ein Element hinzu. Geben Sie, wie hier gezeigt, den Befehl, zusätzliche Eingaben und Ausgaben sowie eine Meldung als Elementmetadaten an. In diesem Beispiel wird davon ausgegangen, dass eine Datei „faq.txt“ im selben Verzeichnis wie Ihr Projekt vorhanden ist.
 
     ```
     <ItemGroup>
@@ -35,9 +35,9 @@ Benutzerdefinierte Buildschritte und benutzerdefinierte Tools freigeben in angeg
     </ItemGroup>
     ```
 
-### <a name="to-define-where-in-the-build-the-custom-build-tools-will-execute"></a>Um zu definieren, in dem in den Build den benutzerdefinierten Buildtools ausgeführt wird.
+### <a name="to-define-where-in-the-build-the-custom-build-tools-will-execute"></a>So definieren Sie, an welcher Stelle im Build die benutzerdefinierten Buildtools ausgeführt werden
 
-1. Fügen Sie die folgende Eigenschaftengruppe zur Projektdatei hinzu. Sie müssen mindestens eines der Ziele angeben, jedoch können Sie die anderen weglassen, wenn Sie nur Buildschritt führen Sie vor dem (oder nach) interessiert sind ein bestimmtes Ziel. In diesem Beispiel führt die benutzerdefinierten Schritt nach dem Kompilieren, aber vor dem verknüpfen.
+1. Fügen Sie die folgende Eigenschaftengruppe zu der Projektdatei hinzu. Sie müssen mindestens eines der Ziele angeben. Sie können das andere Ziel weglassen, wenn es Ihnen nur darum geht, dass der Buildschritt vor (oder nach) einem bestimmten Ziel ausgeführt wird. In diesem Beispiel wird der benutzerdefinierte Schritt nach dem Kompilieren, aber vor dem Verknüpfen durchführt.
 
     ```
     <PropertyGroup>
@@ -49,5 +49,5 @@ Benutzerdefinierte Buildschritte und benutzerdefinierte Tools freigeben in angeg
 ## <a name="see-also"></a>Siehe auch
 
 [Exemplarische Vorgehensweise: Verwenden von MSBuild zum Erstellen eines C++-Projekts](walkthrough-using-msbuild-to-create-a-visual-cpp-project.md)<br/>
-[Vorgehensweise: Verwenden von Buildereignissen in MSBuild-Projekten](how-to-use-build-events-in-msbuild-projects.md)<br/>
-[Vorgehensweise: Hinzufügen eines benutzerdefinierten Buildschritts zu MSBuild-Projekten](how-to-add-a-custom-build-step-to-msbuild-projects.md)
+[How to: Verwenden von Buildereignissen in MSBuild-Projekten](how-to-use-build-events-in-msbuild-projects.md)<br/>
+[How to: Hinzufügen eines benutzerdefinierten Buildschritts zu MSBuild-Projekten](how-to-add-a-custom-build-step-to-msbuild-projects.md)

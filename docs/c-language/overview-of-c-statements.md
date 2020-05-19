@@ -10,7 +10,7 @@ helpviewer_keywords:
 ms.assetid: 0d49837a-5399-4881-b60c-af5f4e9720de
 ms.openlocfilehash: bfa6840553055202f26f55e1dc5971bfd047b2de
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857072"
@@ -33,9 +33,9 @@ C-Anweisungen bestehen aus Token, Ausdrücken und anderen Anweisungen. Eine Anwe
 
 [jump-statement](../c-language/break-statement-c.md)
 
-[Try-außer-Statement](../c-language/try-except-statement-c.md) /* Microsoft-spezifische \*/
+[try-except-Anweisung](../c-language/try-except-statement-c.md) /* Microsoft-spezifisch \*/
 
-die [try-schließlich-Anweisung](../c-language/try-finally-statement-c.md) /\* Microsoft-spezifischen \*/
+[try-finally-Anweisung](../c-language/try-finally-statement-c.md) /\* Microsoft-spezifisch \*/
 
 Häufig handelt es sich bei einem Anweisungstext um eine "Verbundanweisung ". Eine Verbundanweisung besteht aus anderen Anweisungen, die Schlüsselwörter enthalten können. Die Verbundanweisung steht in geschweiften Klammern ( **{ }** ). Alle anderen C-Anweisungen enden mit einem Semikolon ( **;** ). Das Semikolon ist ein Anweisungsabschlusszeichen.
 

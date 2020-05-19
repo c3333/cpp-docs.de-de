@@ -22,12 +22,12 @@ Ein *aggregierter* Typ ist eine Struktur, eine Union oder ein Arraytyp. Wenn ein
 ## <a name="syntax"></a>Syntax
 
 *initializer*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **{**  *initializer-list*  **}** /* Für Aggregatinitialisierung \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **{**  *initializer-list*  **, }**
+&nbsp;&nbsp;&nbsp;&nbsp; **{**  *Initialisiererliste*  **}** /* Für Aggregatinitialisierung \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **{**  *Initialisiererliste*  **, }**
 
 *initializer-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*initializer*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*initializer-list*  **,**  *initializer*
+&nbsp;&nbsp;&nbsp;&nbsp;*Initialisiererliste*  **,**  *Initialisierer*
 
 Die *initializer-list* ist eine Liste von durch Trennzeichen getrennten Initialisierungen. Jeder Initialisierer in der Liste ist entweder ein konstanter Ausdruck oder eine Initialisiererliste. Daher können Initialisierungslisten geschachtelt sein. Diese Form dient zur Initialisierung aggregierter Member eines aggregierten Typs, wie in den Beispielen in diesem Abschnitt gezeigt. Wenn der Initialisierer für einen automatischen Bezeichner jedoch ein einzelner Ausdruck ist, muss er kein konstanter Ausdruck sein. Er muss lediglich einen geeigneten Typ für die Zuweisung zum Bezeichner aufweisen.
 

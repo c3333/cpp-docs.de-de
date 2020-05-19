@@ -17,7 +17,7 @@ helpviewer_keywords:
 - builds (C++), custom build tools
 ms.openlocfilehash: dbce226b34503a9e8e70b6f19d9aa0c68ef487f3
 ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62314753"
@@ -30,7 +30,7 @@ Allgemeine Informationen zu benutzerdefinierten Buildtools und Buildschritten fi
 
 ### <a name="to-specify-a-custom-build-tool"></a>Angeben eines benutzerdefinierten Buildtools
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](working-with-project-properties.md).
 
 1. Klicken Sie auf **Konfigurationseigenschaften**, um das Feld **Konfiguration** zu aktivieren. Wählen Sie im Feld **Konfiguration** die Konfiguration aus, für die Sie ein benutzerdefiniertes Buildtool angeben möchten.
 
@@ -50,9 +50,9 @@ Allgemeine Informationen zu benutzerdefinierten Buildtools und Buildschritten fi
 
    - Geben Sie in der **Befehlszeile** einen Befehl so ein, wie Sie ihn über die Eingabeaufforderung eingeben würden. Geben Sie einen gültigen Befehl oder eine Batchdatei sowie alle erforderlichen Ein- und Ausgabedateien an. Geben Sie den Batchbefehl **call** vor dem Namen einer Batchdatei an, um sicherzustellen, dass alle nachfolgenden Befehle ausgeführt werden.
 
-      Mehrere Ein- und Ausgabedateien können symbolisch mit MSBuild-Makros angegeben werden. Informationen zum Speicherort der Dateien, oder die Namen der Dateigruppen angeben, finden Sie unter [gängige Makros für Buildbefehle und-Eigenschaften](reference/common-macros-for-build-commands-and-properties.md).
+      Mehrere Ein- und Ausgabedateien können symbolisch mit MSBuild-Makros angegeben werden. Weitere Informationen zum Angeben des Speicherorts von Dateien oder der Namen mehrerer Dateien finden Sie unter [Allgemeine Makros für MSBuild-Befehle und-Eigenschaften](reference/common-macros-for-build-commands-and-properties.md).
 
-      Da das Zeichen „%“ von MSBuild reserviert ist, ersetzen Sie jedes **%**-Escapezeichen durch die Escapesequenz für Hexadezimalzahlen **%25**, wenn Sie eine Umgebungsvariable angeben. Ersetzen Sie beispielsweise **%WINDIR%** durch **%25WINDIR%25**. MSBuild ersetzt jede **%25**-Sequenz mit dem **%**-Zeichen, bevor auf die Umgebungsvariablen zugegriffen wird.
+      Da das Zeichen „%“ von MSBuild reserviert ist, ersetzen Sie jedes **%** -Escapezeichen durch die Escapesequenz für Hexadezimalzahlen **%25**, wenn Sie eine Umgebungsvariable angeben. Ersetzen Sie beispielsweise **%WINDIR%** durch **%25WINDIR%25**. MSBuild ersetzt jede **%25**-Sequenz mit dem **%** -Zeichen, bevor auf die Umgebungsvariablen zugegriffen wird.
 
    - Geben Sie unter **Beschreibung** eine aussagekräftige Beschreibung des benutzerdefinierten Buildtools ein. Diese wird im **Ausgabefenster** ausgegeben, wenn das Buildsystem dieses Tool verarbeitet.
 

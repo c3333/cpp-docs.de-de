@@ -9,11 +9,11 @@ helpviewer_keywords:
 - embedded structures
 ms.assetid: 5be3be77-a236-4153-b574-7aa77675df7f
 ms.openlocfilehash: a17bb996f13fdbe11bb569c8af5669a9d0c5363f
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62157795"
 ---
 # <a name="structure-declarations"></a>Strukturdeklarationen
 
@@ -22,8 +22,8 @@ Eine "Strukturdeklaration" benennt einen Typ und gibt eine Sequenz von Variablen
 ## <a name="syntax"></a>Syntax
 
 *struct-or-union-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-or-union* *identifier*<sub>opt</sub> **{** *struct-declaration-list* **}**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-or-union* *identifier*
+&nbsp;&nbsp;&nbsp;&nbsp;*Struktur-oder-Union* *Bezeichner*<sub>opt</sub> **{** *Strukturdeklarationsliste* **}**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Struktur-oder-Union* *Bezeichner*
 
 *struct-or-union*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**struct**<br/>
@@ -31,21 +31,21 @@ Eine "Strukturdeklaration" benennt einen Typ und gibt eine Sequenz von Variablen
 
 *struct-declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-declaration-list* *struct-declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Strukturdeklarationsliste* *Strukturdeklaration*
 
 *struct-declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*specifier-qualifier-list* *struct-declarator-list* **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Spezifizierer-/Qualifiziererliste* *Strukturdeklaratorliste* **;**
 
 *specifier-qualifier-list*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *specifier-qualifier-list*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *specifier-qualifier-list*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Spezifizierer-/Qualifiziererliste*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Spezifizierer-/Qualifiziererliste*<sub>opt</sub>
 
 *struct-declarator-list*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-declarator* *struct-declarator-list* **,** *struct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Strukturdeklarator* *Strukturdeklaratorliste* **,** *Strukturdeklarator*
 
 *struct-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declarator*<sub>opt</sub> **:** *constant-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarator*<sub>opt</sub> **:** *konstanter-Ausdruck*
 
 Die Deklaration eines Strukturtyps hält keinen Platz für eine Struktur bereit. Es ist nur eine Vorlage für spätere Deklarationen von Strukturvariablen.
 
@@ -122,7 +122,7 @@ struct sample   /* Defines a structure named x */
 
 Die ersten beiden Member der Struktur sind eine `char`-Variable und ein Zeiger auf einen **float**-Wert. Der dritte Member, `next`, wird als Zeiger auf den definierten Strukturtyp deklariert (`sample`).
 
-Anonyme Strukturen können nützlich sein, wenn der angegebene Tag nicht benötigt wird. Dies ist der Fall, wenn eine Deklaration alle Strukturinstanzen definiert. Beispiel:
+Anonyme Strukturen können nützlich sein, wenn der angegebene Tag nicht benötigt wird. Dies ist der Fall, wenn eine Deklaration alle Strukturinstanzen definiert. Zum Beispiel:
 
 ```C
 struct
@@ -149,7 +149,7 @@ struct somestruct
 
 Der Compiler lässt ein Array ohne Größenangabe oder ein Array der Größe 0 (null) als letzten Member einer Struktur zu. Dies kann hilfreich sein, wenn sich die Größe eines konstanten Arrays in verschiedenen Situationen unterscheidet. Die Deklaration einer solchen Struktur sieht wie folgt aus:
 
-**struct** *identifier* **{** *set-of-declarations* *type* <em>array-name</em>**\[]; };**
+**Struktur** *Bezeichner* **{** *mehrere-Deklarationen* *Typ* <em>Arrayname</em> **\[]; };**
 
 Arrays ohne Größenangabe können nur als letzter Member einer Struktur angegeben werden. Die Strukturen, die Arraydeklarationen ohne Größenangabe enthalten, können in andere Strukturen geschachtelt werden, solange keine weiteren Member in anderen einschließenden Strukturen deklariert werden. Arrays von solchen Strukturen sind nicht zulässig. Der `sizeof`-Operator nimmt bei Anwendung auf eine Variable dieses Typs oder auf den Typ selbst 0 für die Größe des Arrays an.
 

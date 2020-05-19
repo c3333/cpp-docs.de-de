@@ -20,10 +20,10 @@ no-loc:
 ms.assetid: 6c3f3ed3-5593-463c-8f4b-b33742b455c6
 ms.openlocfilehash: d43a7a64b5a74f00833093ae8999d73edd7f5753
 ms.sourcegitcommit: c4cf8976939dd0e13e25b82930221323ba6f15d4
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83204162"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83389700"
 ---
 # <a name="switch-statement-c"></a>`switch`Anweisung (C++)
 
@@ -48,11 +48,11 @@ Ermöglicht die Auswahl von mehreren Codeabschnitten, abhängig vom Wert eines g
 
 ## <a name="remarks"></a>Hinweise
 
-Eine- __`switch`__ Anweisung bewirkt, dass die Steuerung *`labeled-statement`* abhängig vom Wert von zu einer in Ihrem Anweisungs Text übertragen wird *`condition`* .
+Eine __`switch`__ -Anweisung bewirkt, dass die Steuerung abhängig vom Wert *`condition`* auf eine *`labeled-statement`* im Anweisungstext übertragen wird.
 
 Muss einen ganzzahligen *`condition`* Typ aufweisen oder ein Klassentyp sein, der eine eindeutige Konvertierung in einen ganzzahligen Typ aufweist. Ganzzahlige herauf Stufung findet statt, wie in [Standard Konvertierungen](standard-conversions.md)beschrieben.
 
-Der __`switch`__ Anweisungs Text besteht aus einer Reihe von __`case`__ Bezeichnungen und einer optionalen __`default`__ Bezeichnung. Eine *`labeled-statement`* ist eine dieser Bezeichnungen und die folgenden Anweisungen. Die Anweisungen mit der Bezeichnung sind nicht syntaktische Anforderungen, aber die __`switch`__ Anweisung ist ohne sie bedeutungslos. Es können nicht zwei *`constant-expression`* Werte in- __`case`__ Anweisungen zu demselben Wert ausgewertet werden. Die __`default`__ Bezeichnung wird möglicherweise nur einmal angezeigt. Die- __`default`__ Anweisung wird häufig am Ende platziert, aber Sie kann an beliebiger __`switch`__ Stelle im Anweisungs Text angezeigt werden. Eine- __`case`__ oder- __`default`__ Bezeichnung kann nur innerhalb einer-Anweisung angezeigt werden __`switch`__ .
+Der __`switch`__ Anweisungs Text besteht aus einer Reihe von __`case`__ Bezeichnungen und einer optionalen __`default`__ Bezeichnung. Eine *`labeled-statement`* ist eine dieser Bezeichnungen und die folgenden Anweisungen. Die Anweisungen mit der Bezeichnung sind nicht syntaktische Anforderungen, aber die __`switch`__ Anweisung ist ohne sie bedeutungslos. Es können nicht zwei *`constant-expression`* Werte in- __`case`__ Anweisungen zu demselben Wert ausgewertet werden. Die __`default`__ Bezeichnung wird möglicherweise nur einmal angezeigt. Die- __`default`__ Anweisung wird häufig am Ende platziert, aber Sie kann an beliebiger __`switch`__ Stelle im Anweisungs Text angezeigt werden. Eine __`case`__ - oder __`default`__ -Bezeichnung kann nur innerhalb einer __`switch`__ -Anweisung erscheinen.
 
 Die *`constant-expression`* in jeder __`case`__ Bezeichnung wird in einen konstanten Wert konvertiert, der dem gleichen Typ wie entspricht *`condition`* . Anschließend wird es mit *`condition`* auf Gleichheit verglichen. Das Steuerelement wird an die erste Anweisung nach dem Wert weitergeleitet, der mit __`case`__ *`constant-expression`* dem Wert von übereinstimmt *`condition`* . Der resultierende Verhalten wird in der folgenden Tabelle gezeigt.
 
@@ -181,5 +181,5 @@ Microsoft C++ beschränkt die Anzahl der __`case`__ Werte in einer- __`switch`__
 
 ## <a name="see-also"></a>Siehe auch
 
-[Auswahl Anweisungen](../cpp/selection-statements-cpp.md)<br/>
+[Auswahlanweisungen](../cpp/selection-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

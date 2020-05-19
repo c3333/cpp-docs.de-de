@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 11003cd8-9046-4630-a189-a32bf3b88047
 ms.openlocfilehash: 3694478e22bfd2a3c58a72ba0c3ad2d15351bc9f
 ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/21/2020
 ms.locfileid: "80078691"
 ---
 # <a name="visual-studio-projects---c"></a>Visual Studio-Projekte: C++
 
-Ein *Visual Studio-Projekt* ist ein Projekt, das auf dem MSBuild-Buildsystem basiert. MSBuild ist das systemeigene Buildsystem für Visual Studio und ist im Allgemeinen das beste Buildsystem, das für Windows-spezifische Programme verwendet werden kann. MSBuild ist eng in Visual Studio integriert. Sie können MSBuild jedoch auch über die Befehlszeile verwenden. Für plattformübergreifende Projekte oder Projekte, die Open Source-Bibliotheken verwenden, wird empfohlen, [cmake-Projekte in Visual Studio](cmake-projects-in-visual-studio.md) in Visual Studio 2017 und höher zu verwenden. Informationen zum Aktualisieren von MSBuild-Projekten aus älteren Versionen von Visual Studio finden Sie [im C++ Microsoft-Handbuch zum Portieren und aktualisieren](../porting/visual-cpp-porting-and-upgrading-guide.md).
+Ein *Visual Studio-Projekt* ist ein Projekt, das auf dem MSBuild-Buildsystem basiert. MSBuild ist das native Buildsystem für Visual Studio und stellt im Allgemeinen das beste Buildsystem für Windows-spezifische Programme dar. MSBuild ist eng in Visual Studio integriert. Sie können MSBuild jedoch auch über die Befehlszeile verwenden. Für plattformübergreifende Projekte oder Projekte, die Open-Source-Bibliotheken verwenden, wird die Verwendung von [CMake-Projekten in Visual Studio](cmake-projects-in-visual-studio.md) in Visual Studio 2017 und höher empfohlen. Weitere Informationen zum Upgrade von MSBuild-Projekten aus älteren Versionen von Visual Studio finden Sie im [Leitfaden C++ zum Portieren und Aktualisieren von Microsoft](../porting/visual-cpp-porting-and-upgrading-guide.md).
 
 ## <a name="create-a-project"></a>Erstellen eines Projekts
 
@@ -37,7 +37,7 @@ Sie können C++-Projekte erstellen, indem Sie **Datei** > **Neu** > **Projekt** 
 
 ::: moniker-end
 
-Weitere Informationen zu allen in Visual Studio enthaltenen Standardprojektvorlagen finden Sie unter [C++-Projektvorlagen in Visual Studio](reference/visual-cpp-project-types.md). Sie können eigene Projektvorlagen erstellen. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen von Projektvorlagen](/visualstudio/ide/how-to-create-project-templates).
+Weitere Informationen zu allen in Visual Studio enthaltenen Standardprojektvorlagen finden Sie unter [C++-Projektvorlagen in Visual Studio](reference/visual-cpp-project-types.md). Sie können eigene Projektvorlagen erstellen. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen von Projektvorlagen](/visualstudio/ide/how-to-create-project-templates).
 
 Nachdem Sie ein Projekt erstellt haben, wird es im Fenster des [Projektmappen-Explorers](/visualstudio/ide/solutions-and-projects-in-visual-studio) angezeigt:
 
@@ -45,7 +45,7 @@ Nachdem Sie ein Projekt erstellt haben, wird es im Fenster des [Projektmappen-Ex
 
 Beim Erstellen eines neuen Projekts wird außerdem eine Projektmappendatei (SLN) erstellt. Sie können der Projektmappe weitere Projekte hinzufügen, indem Sie im **Projektmappen-Explorer** mit der rechten Maustaste darauf klicken. Die Projektmappendatei wird zum Koordinieren von Buildabhängigkeiten unter mehreren verwandten Projekten verwendet, leistet aber nicht viel mehr als das. Alle Compileroptionen werden auf Projektebene festgelegt.
 
-## <a name="add-items"></a>Elemente hinzufügen
+## <a name="add-items"></a>Hinzufügen von Elementen
 
 Fügen Sie Ihrem Projekt Quellcodedateien, Symbole oder beliebige andere Elemente hinzu, indem Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt klicken und **Hinzufügen > Neu** oder **Hinzufügen > Vorhanden** auswählen.
 
@@ -84,7 +84,7 @@ Hinzufügen beliebiger Befehle zum Buildprozess an festgelegten Punkten.
 [Erstellen eines Projekts aus vorhandenem Code](how-to-create-a-cpp-project-from-existing-code.md)<br/>
 Erstellen eines neuen Visual Studio-Projekts aus einer losen Sammlung von Quelldateien.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Projekte und Buildsysteme](projects-and-build-systems-cpp.md)<br>
-[Leitfaden C++ zum Portieren und Aktualisieren von Microsoft](../porting/visual-cpp-porting-and-upgrading-guide.md)
+[Microsoft C++-Handbuch: Portieren und Aktualisieren](../porting/visual-cpp-porting-and-upgrading-guide.md)

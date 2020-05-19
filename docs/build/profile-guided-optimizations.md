@@ -14,83 +14,83 @@ ms.locfileid: "64857328"
 ---
 # <a name="profile-guided-optimizations"></a>Profilgesteuerte Optimierungen
 
-Profilgesteuerte Optimierung (PGO) können Sie eine gesamte ausführbare Datei optimieren, bei denen der Optimierer Daten aus Testläufen der .exe oder .dll-Datei verwendet. Die Daten darstellt, die wahrscheinliche Leistung des Programms in einer produktionsumgebung.
+Mit der profilgesteuerten Optimierung (PGO) können Sie eine ganze ausführbare Datei optimieren, wobei der Optimierer Daten aus Testläufen der EXE- oder DLL-Datei verwendet. Die Daten repräsentieren die wahrscheinliche Leistung des Programms in einer Produktionsumgebung.
 
-Profilgesteuerte Optimierungen sind nur für systemeigene Ziele von X86 oder X64 verfügbar. Profilgesteuerte Optimierungen nicht verfügbar für ausführbare Dateien, die auf die common Language Runtime ausgeführt. Auch wenn Sie eine Assembly mit gemischten systemeigenen und verwalteten Code erzeugen (mithilfe der **"/ CLR"** -Compileroption), können keine Profilgesteuerte Optimierung für den systemeigenen Code. Wenn Sie versuchen, ein Projekt mit den folgenden Optionen festlegen, in der IDE zu erstellen, führt ein Buildfehler auf.
+Profilgesteuerte Optimierungen sind nur für native x86- oder x64-Ziele verfügbar. Profilgesteuerte Optimierungen sind nicht für ausführbare Dateien verfügbar, die in der Common Language Runtime ausgeführt werden. Auch wenn Sie eine Assembly mit einer Mischung aus nativem und verwaltetem Code (mithilfe der Compileroption **/clr**) erstellen, können Sie die profilgesteuerte Optimierung nicht für den nativen Code verwenden. Der Versuch, ein Projekt zu erstellen, bei dem diese Optionen in der IDE festgelegt sind, verursacht einen Buildfehler.
 
 > [!NOTE]
-> Informationen, die profilerstellung gesammelt werden, überschreiben Optimierungen, die andernfalls gültig wäre, wenn Sie angeben, **tatsächlich**, **/OS**, oder **/Ot**. Weitere Informationen finden Sie unter [/ob (Inlinefunktionserweiterung)](reference/ob-inline-function-expansion.md) und [/OS, / Ot (kompakten Code bevorzugen, schnellen Code bevorzugen)](reference/os-ot-favor-small-code-favor-fast-code.md).
+> Informationen, die bei Testläufen für die Profilerstellung erfasst wurden, setzen Optimierungen außer Kraft, die ansonsten wirksam wären, wenn Sie **/Ob**, **/Os** oder **/Ot** angeben. Weitere Informationen finden Sie unter [/Ob (Inlinefunktionserweiterung)](reference/ob-inline-function-expansion.md) und [/Os, /Ot (Kompakten Code bevorzugen, Schnellen Code bevorzugen)](reference/os-ot-favor-small-code-favor-fast-code.md).
 
-## <a name="steps-to-optimize-your-app"></a>Schritte zum Optimieren Ihrer app
+## <a name="steps-to-optimize-your-app"></a>Schritte zum Optimieren Ihrer App
 
-Um die profilgesteuerte Optimierung zu verwenden, folgendermaßen Sie vor, um Ihre app zu optimieren:
+Um die profilgesteuerte Optimierung zu verwenden, führen Sie die folgenden Schritte aus, um Ihre App zu optimieren:
 
-- Kompilieren Sie eine oder mehrere Quellcodedateien mit ["/ GL"](reference/gl-whole-program-optimization.md).
+- Kompilieren von einer oder mehreren Quellcodedateien mit [/GL](reference/gl-whole-program-optimization.md)
 
-   Jedes Modul mit erstellten **"/ GL"** untersucht werden kann, während der profilgesteuerten Optimierungstestläufe Laufzeitverhalten zu erfassen. Jedes Modul in einem Build mit profilgesteuerter Optimierung nicht für die Kompilierung mit **"/ GL"**. Allerdings nur die Module mit kompiliert **"/ GL"** instrumentierte und höher verfügbare ist, für die profilgesteuerte Optimierungen sind.
+   Jedes mit **/GL** erstellte Modul kann während der profilgesteuerten Optimierungstestläufe untersucht werden, um das Laufzeitverhalten aufzuzeichnen. Nicht jedes Modul in einem profilgesteuerten Optimierungsbuild muss mit **/GL** kompiliert werden. Jedoch werden nur die mit **/GL** kompilierten Module instrumentiert und sind später für profilgesteuerte Optimierungen verfügbar.
 
-- Verknüpfung mit ["/ LTCG"](reference/ltcg-link-time-code-generation.md) und [/genprofile oder/fastgenprofile](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md).
+- Link zu [/LTCG](reference/ltcg-link-time-code-generation.md) und [/GENPROFILE oder /FASTGENPROFILE](reference/genprofile-fastgenprofile-generate-profiling-instrumented-build.md)
 
-   Mit beiden **"/ LTCG"** und **/genprofile** oder **/fastgenprofile** erstellt eine `.pgd` -Datei, wenn die instrumentierte app ausgeführt wird. Nach dem Testlauf Daten hinzugefügt werden die `.pgd` -Datei, sie können als Eingabe für den nächsten Linkschritt (Erstellen des optimierten Images) verwendet werden. Beim angeben **/genprofile**, Sie können optional hinzufügen eine **PGD =**_Dateiname_ Argument an einen nicht standardmäßigen Namen oder Speicherort für die `.pgd` Datei. Die Kombination von **"/ LTCG"** und **/genprofile** oder **/fastgenprofile** Optionen des Linkers ersetzt die veraltete **/LTCG: PGINSTRUMENT** Linkeroption.
+   Durch die Verwendung von **/LTCG** und **/GENPROFILE** oder **/FASTGENPROFILE** wird eine `.pgd`-Datei erstellt, wenn die instrumentierte App ausgeführt wird. Nachdem die Testlaufdaten zur `.pgd`-Datei hinzugefügt wurden, kann diese als Eingabe für den nächsten Linkschritt (Erstellen des optimierten Images) verwendet werden. Wenn Sie **/GENPROFILE** angeben, können Sie optional ein Argument **PGD =** _Dateiname_ hinzufügen, um einen nicht standardmäßigen Namen oder Speicherort für die `.pgd`-Datei anzugeben. Die Kombination der Linkeroptionen **/LTCG** und **/GENPROFILE** oder **/FASTGENPROFILE** ersetzt die veraltete Linkeroption **/LTCG: PGINSTRUMENT**.
 
 - Profilieren der Anwendung
 
-   Jedes Mal eine profilierte EXE-Sitzung endet, oder eine profilierte DLL entladen wird, eine `appname!N.pgc` Datei erstellt wird. Ein `.pgc` Datei enthält Informationen zu einem bestimmten Anwendungstestlauf. *Appname* ist der Name der app, und *N* basiert eine Zahl ab 1 an, der um eins erhöht wird, auf die Anzahl der anderen `appname!N.pgc` Dateien im Verzeichnis. Sie können Löschen einer `.pgc` Datei, wenn der Testlauf ein Szenario darstellen nicht, die Sie optimieren möchten.
+   Jedes Mal, wenn eine profilierte EXE-Sitzung endet oder eine profilierte DLL entladen wird, wird eine `appname!N.pgc`-Datei erstellt. Eine `.pgc`-Datei enthält Informationen über einen bestimmten Anwendungstestlauf. *appname* ist der Name Ihrer App, und *N* ist eine Zahl, die mit 1 beginnt und entsprechend der Anzahl der anderen `appname!N.pgc`-Dateien im Verzeichnis erhöht wird. Sie können eine `.pgc`-Datei löschen, wenn der Testlauf kein zu optimierendes Szenario darstellt.
 
-   Während eines Testlaufs können Sie erzwingen, der aktuell geöffneten Abschlusses `.pgc` -Datei und die Erstellung eines neuen `.pgc` -Datei mit der [Pgosweep](pgosweep.md) (z. B., wenn das Ende eines Testszenarios mit Anwendung übereinstimmen, nicht-Hilfsprogramm Herunterfahren).
+   Während eines Testlaufs können Sie das Schließen der aktuell geöffneten `.pgc`-Datei und das Erstellen einer neuen `.pgc`-Datei mit dem [pgosweep](pgosweep.md)-Hilfsprogramm erzwingen (wenn beispielsweise das Ende eines Testszenarios nicht mit dem Beenden der Anwendung einhergeht).
 
-   Ihre Anwendung kann auch direkt aufrufen eine Funktion PGO ["PgoAutoSweep"](pgoautosweep.md), um die Profildaten zum Zeitpunkt des Aufrufs als Erfassen einer `.pgc` Datei. Sie können Ihnen eine präzisere Kontrolle über den Code behandelt, die von den erfassten Daten in Ihre `.pgc` Dateien. Ein Beispiel dafür, wie Sie diese Funktion verwenden, finden Sie die ["PgoAutoSweep"](pgoautosweep.md) Dokumentation.
+   Die Anwendung kann auch direkt eine PGO-Funktion aufrufen, [PgoAutoSweep](pgoautosweep.md), um die Profildaten zum Zeitpunkt des Aufrufs als `.pgc`-Datei zu erfassen. So können Sie den Code, der von den erfassten Daten in Ihren `.pgc`-Dateien abgedeckt wird, genauer kontrollieren. Ein Beispiel für die Verwendung dieser Funktion finden Sie in der [PgoAutoSweep](pgoautosweep.md)-Dokumentation.
 
-   Bei der Erstellung Ihres instrumentierten Builds standardmäßig erfolgt die Datensammlung im Modus "nicht threadsichere" die ist schneller, aber unpräzise. Mithilfe der **EXACT** Argument **/genprofile** oder **/fastgenprofile**, können Sie die Datensammlung angeben, im threadsicheren Modus, die eine genauere ist, aber langsamer. Diese Option ist auch verfügbar, wenn Sie, die als veraltet markierten festlegen [PogoSafeMode](environment-variables-for-profile-guided-optimizations.md#pogosafemode) Umgebungsvariablen oder die veraltete **/POGOSAFEMODE** -Linkeroption, wenn Sie Ihre instrumentierten Build erstellen.
+   Wenn Sie den instrumentierten Build erstellen, erfolgt die Datenerfassung standardmäßig im nicht threadsicheren Modus, der schneller, aber möglicherweise ungenau ist. Mit dem Argument **EXACT** für **/GENPROFILE** oder **/FASTGENPROFILE** können Sie die Datenerfassung im threadsicheren Modus festlegen, der präziser, aber langsamer ist. Diese Option ist auch verfügbar, wenn Sie beim Erstellen des instrumentierten Builds die veraltete [PogoSafeMode](environment-variables-for-profile-guided-optimizations.md#pogosafemode)-Umgebungsvariable oder die veraltete **/POGOSAFEMODE**-Linkeroption festlegen.
 
-- Verknüpfung mit **"/ LTCG"** und **/USERPROFILE angegeben**.
+- Link zu  **/LTCG** und **/USERPROFILE**
 
-   Sowohl die **"/ LTCG"** und [/USERPROFILE angegeben](reference/useprofile.md) Linkeroptionen zum Erstellen des optimierten Images. Dieser Schritt nimmt als Eingabe die `.pgd` Datei. Beim Angeben von **/USERPROFILE angegeben**, Sie können optional hinzufügen eine **PGD =**_Filename_ Argument an einen nicht standardmäßigen Namen oder Speicherort für die `.pgd` Datei. Sie können auch diesen Namen angeben, mit der veralteten **/PGD** -Linkeroption. Die Kombination von **"/ LTCG"** und **/USERPROFILE angegeben** ersetzt die veraltete **/LTCG: PGOPTIMIZE** und **/LTCG: PGUPDATE** Optionen des Linkers.
+   Verwenden Sie sowohl die Linkeroptionen **/LTCG** als auch [/USEPROFILE](reference/useprofile.md), um das optimierte Image zu erstellen. Bei diesem Schritt wird die `.pgd`-Datei als Eingabe verwendet. Wenn Sie **/USEPROFILE** angeben, können Sie optional ein Argument **PGD =** _Dateiname_ hinzufügen, um einen nicht standardmäßigen Namen oder Speicherort für die `.pgd`-Datei anzugeben. Sie können diesen Namen auch mit der veralteten **/PGD**-Linkeroption angeben. Die Kombination aus **/LTCG** und **/USERPROFILE** ersetzt die veralteten Linkeroptionen **/LTCG:PGOPTIMIZE** und **/LTCG:PGUPDATE**.
 
-Es ist auch möglich, die optimierte ausführbare Datei zu erstellen und zu einem späteren Zeitpunkt feststellen, dass zusätzliche Profilierung zum Erstellen eines weiter optimierten Images sinnvoll wäre. Wenn das instrumentierte Image und dessen `.pgd` Datei stehen zur Verfügung, die Ihnen zusätzliche Testläufe ausführen und Neuerstellen des optimierten Images mit neueren `.pgd` -Datei mit der gleichen **"/ LTCG"** und   **/USERPROFILE angegeben** Optionen des Linkers.
+Es ist sogar möglich, die optimierte ausführbare Datei zu erstellen und später zu ermitteln, ob eine zusätzliche Profilierung zum Erstellen eines weiter optimierten Images sinnvoll wäre. Wenn das instrumentierte Image und seine `.pgd`-Datei verfügbar sind, können Sie zusätzliche Testläufe ausführen und das optimierte Image mit der neueren `.pgd`-Datei neu erstellen, indem Sie die gleichen Linkeroptionen **/LTCG** und **/USEPROFILE** verwenden.
 
-## <a name="optimizations-performed-by-pgo"></a>Vom PGO durchgeführten Optimierungen
+## <a name="optimizations-performed-by-pgo"></a>Von PGO ausgeführte Optimierungen
 
-Die profilgesteuerte Optimierungen sind diese Prüfungen und Verbesserungen:
+Die profilgesteuerten Optimierungen umfassen diese Überprüfungen und Verbesserungen:
 
-- **Inlining** – beispielsweise, wenn eine Funktion A häufig Funktion B aufruft und Funktion B relativ klein, und klicken Sie dann mit profilgesteuerter Optimierung Funktion B Funktion a umgewandelt.
+- **Inlinefunktion**: Wenn beispielsweise eine Funktion A eine Funktion B häufig aufruft, und Funktion B relativ klein ist, wird bei der profilgesteuerten Optimierung Funktion B in eine Inlinefunktion von Funktion A umgewandelt.
 
-- **Virtuelles aufrufen Spekulatives** – Wenn ein virtueller oder anderer Aufruf über einen Funktionszeiger häufig eine bestimmte Funktion ausgerichtet ist, kann eine Profilgesteuerte Optimierung einen bedingt ausgeführten direkten Aufruf der häufig gezielte-Funktion, einfügen und der direkte Aufruf kann inline gesetzt werden.
+- **Spekulatives Laden virtueller Aufrufe**: Wenn ein virtueller oder anderer Aufruf über einen Funktionszeiger häufig eine bestimmte Funktion zum Ziel hat, kann bei einer profilgesteuerten Optimierung ein bedingt ausgeführter direkter Aufruf der häufig als Ziel dienenden Funktion eingefügt und der direkte Aufruf als Inlinefunktion umgesetzt werden.
 
-- **Registerzuweisung** -Optimierung, die basierend auf dem Profil führt zu besseren registerzuweisung.
+- **Registerzuteilung**: Die Optimierung auf der Grundlage von Profildaten führt zu einer besseren Registerzuteilung.
 
-- **Grundlegende Block Optimierung** -basisblockoptimierung ermöglicht, häufig ausgeführte basisblöcke, die innerhalb eines bestimmten Rahmens, der in den gleichen Satz von Seiten (Lokalität) platziert werden temporär ausgeführt. Sie minimiert die Anzahl der Seiten, die verwendet wird, die wodurch Speicher-Overhead reduziert wird.
+- **Basisblockoptimierung**: Die Basisblockoptimierung ermöglicht, dass häufig ausgeführte Basisblöcke, die temporär innerhalb eines bestimmten Rahmens ausgeführt werden, in derselben Seitengruppe platziert werden (Lokalität). Das minimiert die Anzahl der verwendeten Seiten und damit den Arbeitsspeicherverbrauch.
 
-- **Optimierung von Größe/Geschwindigkeit** -Funktionen, in denen das Programm die Ausführungszeit benötigt, können auf Geschwindigkeit optimiert werden.
+- **Optimierung von Größe/Geschwindigkeit**: Funktionen, für die das Programm die meiste Zeit benötigt, können auf Geschwindigkeit optimiert werden.
 
-- **Funktion Layout** – basierend auf das Aufrufdiagramm und Aufrufer-/Aufgerufener-Verhalten, profiliert Funktionen, die tendenziell denselben Ausführungspfad werden im selben Abschnitt platziert.
+- **Funktionslayout**: Auf Grundlage des Aufrufdiagramms und des profilierten Verhaltens von aufrufender/aufgerufener Funktion werden Funktionen, die tendenziell denselben Ausführungspfad verwenden, im selben Abschnitt platziert.
 
-- **Optimierung der bedingten Verzweigungen** – anhand von wertprüfungen, Profilgesteuerte Optimierungen können ermitteln, indem ein bestimmter Wert in einer Switch-Anweisung öfter als andere Werte verwendet wird.  Dieser Wert kann dann aus der switch-Anweisung herausgezogen werden.  Das gleiche erreichen Sie mit `if`... `else` Anweisungen, in denen der Optimierer sortieren kann, die `if`... `else` so, dass entweder die `if` oder `else` Block zuerst platziert wird, je nachdem welcher Block geht häufig "true".
+- **Optimierung der bedingten Verzweigung**: Mit den Wertetests lässt sich durch profilgesteuerte Optimierungen herausfinden, ob ein bestimmter Wert in einer switch-Anweisung öfter als andere Werte verwendet wird.  Dieser Wert kann dann aus der switch-Anweisung herausgezogen werden.  Dasselbe Verfahren kann bei `if`...`else`-Anweisungen verwendet werden, bei denen der Optimierer die `if`...`else`-Anweisungen so anordnen kann, dass abhängig davon, welcher Block häufiger den Wert „true“ ist, entweder der `if`- oder der `else`-Block zuerst platziert wird.
 
-- **Abtrennung von totem Code** -Code, der während der profilerstellung aufgerufen ist nicht in einen speziellen Bereich, der an das Ende der Gruppe von Abschnitten angehängt wird verschoben. Es bleibt in diesem Abschnitt aus der häufig verwendeten Seiten.
+- **Abtrennung von totem Code**: Während der Profilierung wird nicht aufgerufener Code in einen speziellen Bereich verschoben, der an das Ende der Gruppe von Abschnitten angehängt wird. Damit wird dieser Abschnitt effektiv von den oft verwendeten Seiten getrennt.
 
-- **Abtrennung von EH-Code** -da ausgeführter EH-Code nur außergewöhnlich ausgeführt wird, wird häufig in einen separaten Abschnitt verschoben werden. Es wird verschoben, wenn es sich bei profilgesteuerten Optimierungen ermittelt wird, dass die Ausnahmen nur unter seltenen Bedingungen eintreten.
+- **EH-Code-Trennung**: Da EH-Code nur in Ausnahmefällen ausgeführt wird, kann er oft in einen separaten Abschnitt verschoben werden. Es wird verschoben, wenn durch profilgesteuerte Optimierungen festgestellt werden kann, dass die Ausnahmen nur unter Ausnahmebedingungen auftreten.
 
-- **Systeminterner Speicher** –, ob eine systeminterne Funktion oder nicht erweitern hängt gibt an, ob es häufig aufgerufen wird. Eine systeminterne Funktion kann auch auf Grundlage der Blockgröße von Verschiebungen oder Kopien optimiert werden.
+- **Systeminterne Arbeitsspeicher**: Ob eine systeminterne Funktion erweitert werden soll oder nicht, hängt davon ab, ob sie häufig aufgerufen wird. Eine systeminterne Funktion kann auch auf Grundlage der Blockgröße von Verschiebungen oder Kopien optimiert werden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Erfahren Sie mehr über diese Umgebungsvariablen, Funktionen und Tools können Sie in der profilgesteuerten Optimierungen:
+Erfahren Sie mehr über diese Umgebungsvariablen, Funktionen und Tools, die Sie bei profilgesteuerten Optimierungen verwenden können:
 
-[Umgebungsvariablen für Profilgesteuerte Optimierungen](environment-variables-for-profile-guided-optimizations.md)<br/>
-Diese Variablen wurden verwendet, um das Laufzeitverhalten des Testszenarios zu anzugeben. Sie sind jetzt als veraltet markiert und durch neue Linkeroptionen ersetzt. In diesem Dokument erfahren Sie, wie Sie aus den Umgebungsvariablen in den Optionen des Linkers zu verschieben.
+[Umgebungsvariablen für profilgesteuerte Optimierungen](environment-variables-for-profile-guided-optimizations.md)<br/>
+Diese Variablen wurden verwendet, um das Laufzeitverhalten von Testszenarios anzugeben. Sie sind nun veraltet und wurden durch neue Linkeroptionen ersetzt. In diesem Dokument wird gezeigt, wie Sie von den Umgebungsvariablen zu den Linkeroptionen wechseln.
 
 [PgoAutoSweep](pgoautosweep.md)<br/>
-Eine Funktion, die Sie hinzufügen können, zu Ihrer app, geben Sie eine präzise `.pgc` Datei Data capture-Steuerelement.
+Eine Funktion, die Sie Ihrer App hinzufügen können, um eine differenzierte Steuerung der Datenerfassung für Datei `.pgc` bereitzustellen.
 
 [pgosweep](pgosweep.md)<br/>
-Ein Befehlszeilen-Hilfsprogramm, das alle Profildaten, schreibt die `.pgc` -Datei, schließt die `.pgc` Datei, und öffnet einen neuen `.pgc` Datei.
+Ein Befehlszeilen-Hilfsprogramm, das alle Profildaten in die `.pgc`-Datei schreibt, die `.pgc`-Datei schließt und eine neue `.pgc`-Datei öffnet.
 
 [pgomgr](pgomgr.md)<br/>
-Ein Befehlszeilen-Hilfsprogramm, mit dem Hinzufügen von Profildaten von einer oder mehreren `.pgc` von Dateien in die `.pgd` Datei.
+Ein Befehlszeilen-Hilfsprogramm, mit dem der `.pgd`-Datei Profildaten aus einer oder mehreren `.pgc`-Dateien hinzugefügt werden.
 
-[Vorgehensweise: Zusammenführen Sie mehrerer PGO-Profile in einem einzigen Profil](how-to-merge-multiple-pgo-profiles-into-a-single-profile.md)<br/>
-Beispiele für **"pgomgr"** Nutzung.
+[How to: Zusammenführen mehrerer PGO-Profile in einem einzigen Profil](how-to-merge-multiple-pgo-profiles-into-a-single-profile.md)<br/>
+Beispiele für **pgomgr**-Verwendung.
 
 ## <a name="see-also"></a>Siehe auch
 

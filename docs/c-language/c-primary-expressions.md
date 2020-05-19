@@ -21,11 +21,11 @@ Die Operanden in Ausdrücken werden als „primäre Ausdrücke“ bezeichnet.
 &nbsp;&nbsp;&nbsp;&nbsp;*identifier*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*constant*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*string-literal*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **(** *expression* **)**
+&nbsp;&nbsp;&nbsp;&nbsp; **(** *Ausdruck* **)**
 
 *expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*assignment-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck* **,** *assignment-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck* **,** *Zuweisungsausdruck*
 
 ## <a name="see-also"></a>Siehe auch
 
