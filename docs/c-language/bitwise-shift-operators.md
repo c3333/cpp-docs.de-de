@@ -8,22 +8,22 @@ helpviewer_keywords:
 - operators [C++], shift
 ms.assetid: d0485785-5c72-47e1-a7c0-0adde03ade23
 ms.openlocfilehash: acf31fbfbe534e3f7eba1492c5aaf173fcb8b31c
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56150414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62326026"
 ---
 # <a name="bitwise-shift-operators"></a>Bitweise Schiebeoperatoren
 
-Die Schiebeoperatoren verschieben ihren ersten Operanden um die Anzahl von Positionen nach links (**&lt;&lt;**) oder rechts (**>>**), wie es durch den zweiten Operanden angegeben wird.
+Die Schiebeoperatoren verschieben ihren ersten Operanden um die Anzahl von Positionen nach links ( **&lt;&lt;** ) oder rechts ( **>>** ), wie es durch den zweiten Operanden angegeben wird.
 
 ## <a name="syntax"></a>Syntax
 
 *shift-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*additive-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*shift-expression* **&lt;&lt;** *additive-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*shift-expression* **>>** *additive-expression*
+&nbsp;&nbsp;&nbsp;&nbsp;*Verschiebeausdruck* **&lt;&lt;** *additiver-Ausdruck*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Verschiebeausdruck* **>>** *additiver-Ausdruck*
 
 Beide Operanden müssen ganzzahlige Werte sein. Diese Operatoren führen die üblichen arithmetischen Konvertierungen aus. Der Typ des Ergebnisses ist der Typ des linken Operanden nach der Konvertierung.
 

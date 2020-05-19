@@ -5,11 +5,11 @@ helpviewer_keywords:
 - constants, C
 ms.assetid: 4158234c-e189-4e25-970f-52a04bc6380a
 ms.openlocfilehash: f927d977d818bed28c5fd7392f7933cd1a63ced3
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56150024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62157741"
 ---
 # <a name="summary-of-constants"></a>Zusammenfassung der Konstanten
 
@@ -20,49 +20,49 @@ ms.locfileid: "56150024"
 &nbsp;&nbsp;&nbsp;&nbsp;*character-constant*
 
 *floating-point-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*fractional-constant* *exponent-part*<sub>opt</sub> *floating-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*digit-sequence* *exponent-part* *floating-suffix*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Bruchteilkonstante* *Exponententeil*<sub>opt</sub> *Gleitkommasuffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Ziffernsequenz* *Exponententeil* *Gleitkommasuffix*<sub>opt</sub>
 
 *fractional-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*digit-sequence*<sub>opt</sub> **.** *digit-sequence*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*digit-sequence*  **.**
+&nbsp;&nbsp;&nbsp;&nbsp;*Ziffernsequenz*<sub>opt</sub> **.** *digit-sequence*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Ziffernsequenz*  **.**
 
 *exponent-part*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**e** *sign*<sub>opt</sub> *digit-sequence*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**E** *sign*<sub>opt</sub> *digit-sequence*
+&nbsp;&nbsp;&nbsp;&nbsp;**e** *Zeichen*<sub>opt</sub> *Ziffernsequenz*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**E** *Zeichen*<sub>opt</sub> *Ziffernsequenz*
 
 *sign*: eins der folgenden Zeichen<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**+ -**
+&nbsp;&nbsp;&nbsp;&nbsp; **+ -**
 
 *digit-sequence*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*digit-sequence* *digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Ziffernsequenz* *Ziffer*
 
 *floating-suffix* : eins der folgenden Zeichen<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**f l F L**
 
 *integer-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*decimal-constant* *integer-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*binary-constant* *integer-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*octal-constant* *integer-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-constant* *integer-suffix*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Dezimalkonstante* *Integer-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Binäronstante* *Integer-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Oktalonstante* *Integer-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Hexadezimalkonstante* *Integer-Suffix*<sub>opt</sub>
 
 *decimal-constant*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*nonzero-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*decimal-constant* *digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Dezimalkonstante* *Ziffer*
 
 *binary-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**0b** *binary-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**0B** *binary-digit*
+&nbsp;&nbsp;&nbsp;&nbsp;**0b** *binäre-Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**0B** *binäre-Ziffer*
 
 *octal-constant*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**0**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*octal-constant* *octal-digit*
+&nbsp;&nbsp;&nbsp;&nbsp;*Oktalkonstante* *Oktalziffer*
 
 *hexadecimal-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**0x**  *hexadecimal-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**0X** *hexadecimal-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-constant* *hexadecimal-digit*
+&nbsp;&nbsp;&nbsp;&nbsp;**0x**  *hexadezimale-Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**0X**  *hexadezimale-Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Hexadezimalkonstante* *Hexadezimalziffer*
 
 *nonzero-digit*: eines der folgenden Zeichen<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**1 2 3 4 5 6 7 8 9**
@@ -82,19 +82,19 @@ ms.locfileid: "56150024"
 &nbsp;&nbsp;&nbsp;&nbsp;**l L**
 
 *character-constant*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**'** *c-char-sequence* **'**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**L'** *c-char-sequence* **'**
+&nbsp;&nbsp;&nbsp;&nbsp; **'** *c-char-Sequenz* **'**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**L'** *c-char-Sequenz* **'**
 
 *integer-suffix*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-suffix* *long-suffix*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*long-suffix* *unsigned-suffix*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*unsigned-Suffix* *long-Suffix*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*long-Suffix* *unsigned-suffix*<sub>opt</sub>
 
 *c-char-sequence*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*c-char*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*c-char-sequence* *c-char*
+&nbsp;&nbsp;&nbsp;&nbsp;*c-char-Sequenz* *c-char*
 
 *c-char*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Alle Member des Quellzeichensatzes mit Ausnahme von einfachem Anführungszeichen (**'**), umgekehrtem Schrägstrich (**\\**) oder Zeilenumbruchzeichen „escape-sequence“
+&nbsp;&nbsp;&nbsp;&nbsp;Alle Member des Quellzeichensatzes mit Ausnahme von einfachem Anführungszeichen ( **'** ), umgekehrtem Schrägstrich ( **\\** ) oder Zeilenumbruchzeichen „escape-sequence“
 
 *escape-sequence*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*simple-escape-sequence*<br/>
@@ -102,17 +102,17 @@ ms.locfileid: "56150024"
 &nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-escape-sequence*
 
 *simple-escape-sequence*: eins der folgenden Zeichen<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**\a \b \f \n \r \t \v**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**\\' \\" \\\ \\?**
+&nbsp;&nbsp;&nbsp;&nbsp; **\a \b \f \n \r \t \v**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **\\' \\" \\\ \\?**
 
 *octal-escape-sequence*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**\\** *octal-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**\\** *octal-digit* *octal-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**\\** *octal-digit* *octal-digit* *octal-digit*
+&nbsp;&nbsp;&nbsp;&nbsp; **\\** *oktale-Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **\\** *oktale-Ziffer* *oktale-Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **\\** *oktale-Ziffer* *oktale-Ziffer* *oktale-Ziffer*
 
 *hexadecimal-escape-sequence*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**\x** *hexadecimal-digit*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*hexadecimal-escape-sequence* *hexadecimal-digit*
+&nbsp;&nbsp;&nbsp;&nbsp; **\x** *hexadezimale-Ziffer*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*hexadezimale-Escapesequenz* *hexadezimale-Ziffer*
 
 ## <a name="see-also"></a>Siehe auch
 

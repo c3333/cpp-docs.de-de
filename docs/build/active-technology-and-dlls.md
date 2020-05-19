@@ -17,9 +17,9 @@ ms.locfileid: "65220997"
 ---
 # <a name="active-technology-and-dlls"></a>Active Technology und DLLs
 
-Active Technology kann Objektserver vollständig innerhalb einer DLL implementiert werden. Dieser Typ des Servers wird in-Process-Server aufgerufen. MFC unterstützt vollständig in-Process-Server für alle Funktionen der visuellen Bearbeitung nicht hauptsächlich deshalb, weil Active-Technologie eine Möglichkeit, ein Server für Sie hook Hauptnachrichtenschleife des Containers nicht bereitstellt. MFC ist erforderlich, den Zugriff auf die Container-Anwendung-Nachrichtenschleife, Zugriffstasten und leerlaufzeitverarbeitung zu behandeln.
+Active Technology bietet die Möglichkeit, Objektserver vollständig innerhalb einer DLL zu implementieren. Dieser Servertyp wird In-Process-Server genannt. MFC unterstützt In-Process-Server nicht vollständig für alle Features der visuellen Bearbeitung. Der Hautgrund dafür ist, dass Active Technology keine Möglichkeit bietet, einen Server in die Hauptnachrichtenschleife des Containers einzuschließen. MFC benötigt den Zugriff auf die Nachrichtenschleife der Containeranwendung, um Zugriffstasten und die Leerlaufzeitverarbeitung zu verarbeiten.
 
-Wenn Sie einen Automatisierungsserver schreiben und der Server keine Benutzeroberfläche hat, können Sie Ihren Server in-Process-Server und vollständig abgelegt, um eine DLL-Datei.
+Wenn Sie einen Automatisierungsserver schreiben und dieser Server keine Benutzeroberfläche besitzt, können Sie aus Ihrem Server einen In-Process-Server generieren und diesen vollständig in eine DLL einfügen.
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 

@@ -23,7 +23,7 @@ helpviewer_keywords:
 ms.assetid: bd1f33c1-c6b9-4558-8a72-afb21aef3318
 ms.openlocfilehash: 64c642df4dd85e4aa09f90a143b8aa67c28b7dc2
 ms.sourcegitcommit: c51b2c665849479fa995bc3323a22ebe79d9d7ce
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "71998761"
@@ -36,16 +36,16 @@ In der folgenden Tabelle wird der Speicher zusammengefasst, welcher jedem Basist
 
 |Typ|Speicher|
 |----------|-------------|
-|**char**, **Ganzzahl ohne Vorzeichen char**, **signed char**|1 Byte|
+|**char**, **unsigned char**, **signed char**|1 Byte|
 |**short**, **unsigned short**|2 Bytes|
 |**int**, **unsigned int**|4 Bytes|
 |**long**, **unsigned long**|4 Bytes|
-|**Long Long**, **Ganzzahl ohne Vorzeichen long long**|8 Bytes|
+|**long long**, **unsigned long long**|8 Bytes|
 |**float**|4 Bytes|
 |**double**|8 Bytes|
 |**long double**|8 Bytes|
 
-Die C-Datentypen fallen in allgemeine Kategorien. Zu den ganzzahligen *Typen* zählen **int**, **char**, **Short**, **Long**und **Long Long**. Diese Typen können mit " **Signed** " oder " **Ganzzahl ohne Vorzeichen**" gekennzeichnet werden, und " **Ganzzahl ohne Vorzeichen** by" kann als Kurzform für " **Ganzzahl ohne Vorzeichen int**" verwendet werden. Enumerationstypen **(** Enumeration) werden für die meisten Zwecke auch als ganzzahlige Typen behandelt. Zu den Gleit *Komma Typen* zählen **float**, **Double**und **long Double**. Die *arithmetischen Typen* umfassen alle Gleit Komma-und ganzzahligen Typen.
+Die C-Datentypen fallen in allgemeine Kategorien. Die *integraler Typen* sind unter anderem **int**, **char**, **short**, **long** und **long long**. Diese Typen können mit **signed** (mit Vorzeichen) oder **unsigned** (ohne Vorzeichen) qualifiziert werden, und **unsigned** selbst kann als Kurzform für **unsigned int** verwendet werden. Enumerationstypen (**enum**) werden ebenfalls als integraler Typen für die meisten Zwecke behandelt. Die *Gleitkommatypen* enthalten **float**, **double** und **long double**. Die *arithmetischen Typen* umfassen alle Gleitkomma- und Ganzzahltypen.
 
 ## <a name="see-also"></a>Siehe auch
 

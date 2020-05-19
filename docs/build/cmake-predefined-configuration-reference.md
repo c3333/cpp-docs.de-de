@@ -6,7 +6,7 @@ helpviewer_keywords:
 - CMake redefined configurations
 ms.openlocfilehash: a88b5ebbf05e11dc05e012c5bfbcc718d3742fb3
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81323011"
@@ -15,7 +15,7 @@ ms.locfileid: "81323011"
 
 ::: moniker range="vs-2015"
 
-CMake-Projekte werden in Visual Studio 2017 und höher unterstützt.
+CMake-Projekte werden von Visual Studio 2017 und höher unterstützt.
 
 ::: moniker-end
 
@@ -34,7 +34,7 @@ In einem CMake-Projekt werden Buildkonfigurationen in einer „CMakeSettings.jso
 - MinGW Debug
 - MinGW Release
 
-Wenn Sie eine Konfiguration auswählen, wird sie der Datei *CMakeSettings.json* im Stammordner des Projekts hinzugefügt. Sie können sie dann zum Erstellen Ihres Projekts verwenden. Informationen zu den Konfigurationseigenschaften finden Sie unter [CMakeSettings-Referenz](cmakesettings-reference.md).
+Wenn Sie eine Konfiguration auswählen, wird diese zur Datei *CMakeSettings.json* im Stammordner des Projekts hinzugefügt. Sie können sie dann zum Erstellen Ihres Projekts verwenden. Weitere Informationen zu den Konfigurationseigenschaften finden Sie in der [CMakeSettings-Referenz](cmakesettings-reference.md).
 
 ## <a name="linux-predefined-build-configurations"></a>Vordefinierte Linux-Buildkonfigurationen:
 
@@ -361,23 +361,23 @@ In einem CMake-Projekt werden Buildkonfigurationen in einer „CMakeSettings.jso
 - x86 Debug
 - x86 Clang-Debug
 - x86 Release
-- x86 Clang Release
+- x86 Clang-Release
 - x64 Debug
 - x64 Clang-Debug
 - x64 Release
-- x64 Clang Release
+- x64 Clang-Release
 - Linux-Debug
 - Linux-Release
 - Linux-Clang-Debug
 - Linux-Clang-Release
-- Vorhandener Cache (Remote)
+- Vorhandener Cache (remote)
 - Vorhandener Cache
 - MinGW Debug
 - MinGW Release
-- WSL-Debuggen
-- WSL-Version
-- WSL Clang-Debug
-- WSL Clang-Version
+- WSL-Debug
+- WSL-Release
+- WSL-Clang-Debug
+- WSL-Clang-Release
 - Clang
 
 Wenn Sie eine Konfiguration auswählen, wird diese der Datei „CMakeSettings.json“ im Stammordner des Projekts hinzugefügt. Sie können sie dann zum Erstellen Ihres Projekts verwenden.
@@ -698,7 +698,7 @@ Wenn Sie eine Konfiguration auswählen, wird diese der Datei „CMakeSettings.js
 
 ## <a name="see-also"></a>Siehe auch
 
-[CMake-Projekte in Visual Studio](cmake-projects-in-visual-studio.md)<br/>
+[CMake Projects in Visual Studio (CMake-Projekte in Visual Studio)](cmake-projects-in-visual-studio.md)<br/>
 [Konfigurieren eines Linux CMake-Projekts](../linux/cmake-linux-project.md)<br/>
 [Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer](../linux/connect-to-your-remote-linux-computer.md)<br/>
 [Konfigurieren von CMake-Debugsitzungen](configure-cmake-debugging-sessions.md)<br/>

@@ -10,7 +10,7 @@ helpviewer_keywords:
 ms.assetid: d152f8e6-971e-432c-93ca-5a91400653c2
 ms.openlocfilehash: 9c42ce5b23e6f755dafd57bdb5a5f79cf1adb4ec
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857085"
@@ -22,35 +22,35 @@ Eine Funktionsdeklaration ist der Funktionsdefinition vorangestellt und gibt den
 ## <a name="syntax"></a>Syntax
 
 *declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers* *attribute-seq*<sub>opt</sub> *init-declarator-list*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer* *Attributsequenz*<sub>opt</sub> *Initialisierungsdeklaratorliste*<sub>opt</sub> **;**
 
-/\* *Attribute-"-* <sub>abwählopt</sub> " ist Microsoft-spezifisches \*/
+/\* *Attributsequenz*<sub>opt</sub> ist Microsoft-spezifisch \*/
 
 *declaration-specifiers*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*storage-class-specifier* *declaration-specifiers*<sub>opt</sub> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declaration-specifiers*<sub>opt</sub> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *declaration-specifiers*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Speicherklassenspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Deklarationsspezifizierer*<sub>opt</sub>
 
 *init-declarator-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*init-declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*init-declarator-list*  **,**  *init-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Initialisierungsdeklaratorliste*  **,**  *Initialisierungsdeklarator*
 
 *init-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declarator* **=** *initializer*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarator* **=** *Initialisierer*
 
 *declarator*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*pointer*<sub>opt</sub> *direct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Zeiger*<sub>opt</sub> *direkter-Deklarator*
 
 *direct-declarator*:/\* Ein Funktionsdeklarator \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator*  **(**  *parameter-type-list*  **)**   /\* Neuer Deklarator \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator*  **(**  *identifier-list*<sub>opt</sub> **)**  /\* Veralteter Deklarator \*/
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator*  **(**  *Parametertypliste*  **)**   /\* Neuer Deklarator \*/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator*  **(**  *Bezeichnerliste*<sub>opt</sub> **)**  /\* Veralteter Deklarator \*/
 
 Der Prototyp hat das gleiche Format wie die Funktionsdefinition. Allerdings schließt er mit einem Semikolon unmittelbar nach der schließenden Klammer und hat dementsprechend keinen Text. In jedem Fall muss der Rückgabetyp dem Rückgabetyp entsprechen, der in der Funktionsdefinition angegeben wird.
 
 Funktionsprototypen haben die folgenden wichtigen Verwendungen:
 
-- Sie legen den Rückgabetyp für Funktionen fest, die andere Typen als **int**zurückgeben. Obwohl Funktionen, die **int** -Werte zurückgeben, keine Prototypen erfordern, werden Prototypen empfohlen.
+- Sie legen den Rückgabetyp für Funktionen fest, die andere Typen als **int** zurückgeben. Obwohl Funktionen, die **int**-Werte zurückgeben, keine Prototypen erfordern, werden Prototypen empfohlen.
 
 - Ohne vollständige Prototypen werden Standardkonvertierungen ausgeführt, es wird jedoch nicht versucht, Typ oder Anzahl der Argumente anhand der Anzahl der Parameter zu überprüfen.
 

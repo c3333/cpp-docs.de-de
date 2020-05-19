@@ -13,11 +13,11 @@ helpviewer_keywords:
 - types [C], initializing
 ms.assetid: 73c516f5-c3ad-4d56-ab3b-f2a82b621104
 ms.openlocfilehash: 3cf7eddcf43a65a787de60c391863d6471be7bcf
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56151142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62232942"
 ---
 # <a name="initializing-scalar-types"></a>Initialisieren von skalaren Typen
 
@@ -26,20 +26,20 @@ Beim Initialisieren von skalaren Typen wird der Wert von *assignment-expression*
 ## <a name="syntax"></a>Syntax
 
 *declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers* *init-declarator-list*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer* *Initialisierungsdeklaratorliste*<sub>opt</sub> **;**
 
 *declaration-specifiers*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*storage-class-specifier* *declaration-specifiers*<sub>opt</sub> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declaration-specifiers*<sub>opt</sub> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *declaration-specifiers*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Speicherklassenspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Deklarationsspezifizierer*<sub>opt</sub>
 
 *init-declarator-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*init-declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*init-declarator-list* **,** *init-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Initialisierungsdeklaratorliste* **,** *Initialisierungsdeklarator*
 
 *init-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declarator* **=** *initializer* /\* Für skalare Initialisierung \*/
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarator* **=** *Initialisierer* /\* Für skalare Initialisierung \*/
 
 *initializer*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*assignment-expression*
@@ -48,7 +48,7 @@ Sie können Variablen jeden Typs initialisieren, vorausgesetzt, dass Sie die fol
 
 - Variablen, die auf der Dateigültigkeitsebene deklariert werden, können initialisiert werden. Wenn Sie eine Variable auf der externen Ebene nicht explizit initialisieren, wird diese standardmäßig mit 0 initialisiert.
 
-- Ein konstanter Ausdruck kann verwendet werden, um eine beliebige globale Variable zu initialisieren, die mit **static** *storage-class-specifier* deklariert wird. Variablen, die als **static** deklariert sind, werden initialisiert, wenn die Programmausführung beginnt. Wenn Sie eine globale **static**-Variable nicht explizit initialisieren, wird diese standardmäßig mit 0 (null) initialisiert, und jedem Member, der den Zeigertyp aufweist, wird ein NULL-Zeiger zugewiesen.
+- Ein konstanter Ausdruck kann verwendet werden, um eine beliebige globale Variable zu initialisieren, die mit dem *Speicherklassenspezifizierer* **static** deklariert wird. Variablen, die als **static** deklariert sind, werden initialisiert, wenn die Programmausführung beginnt. Wenn Sie eine globale **static**-Variable nicht explizit initialisieren, wird diese standardmäßig mit 0 (null) initialisiert, und jedem Member, der den Zeigertyp aufweist, wird ein NULL-Zeiger zugewiesen.
 
 - Variablen, die mit dem **auto**- oder **register**-Speicherklassenspezifizierer deklariert werden, werden jedes Mal initialisiert, wenn die Ausführungssteuerung an den Block übergeben wird, der die Deklaration enthält. Wenn Sie in der Deklaration einer **auto**- oder **register**-Variablen den Initialisierer weglassen, ist der Anfangswert der Variablen nicht definiert. Für automatische Werte und Registerwerte muss der Initialisierer keine Konstante sein, sondern kann ein beliebiger Ausdruck sein, der vorher definierte Werte und sogar Funktionsaufrufe enthält.
 

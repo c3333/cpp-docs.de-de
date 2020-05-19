@@ -7,11 +7,11 @@ helpviewer_keywords:
 - types [C], declarations
 ms.assetid: e92a3b82-9269-4bc6-834a-6f431ccac83e
 ms.openlocfilehash: b4bf7bc82cdf792e5a23f6d5533cc4d800fe4252
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62346105"
 ---
 # <a name="typedef-declarations"></a>Typedef-Deklarationen
 
@@ -22,7 +22,7 @@ Eine typedef-Deklaration wird auf die gleiche Weise wie eine Variable oder eine 
 ## <a name="syntax"></a>Syntax
 
 *declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers init-declarator-list*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer Initialisierungsdeklaratorliste*<sub>opt</sub> **;**
 
 *declaration-specifiers*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*storage-class-specifier declaration-specifiers*<sub>opt</sub> <br/>
@@ -51,7 +51,7 @@ Eine typedef-Deklaration wird auf die gleiche Weise wie eine Variable oder eine 
 
 Beachten Sie, dass in einer typedef-Deklaration keine Typen erstellt werden. Es werden Synonyme für vorhandene Typen oder Namen für Typen erstellt, die auf andere Weise angegeben werden können. Wenn ein typedef-Name als Typspezifizierer verwendet wird, kann er nur mit bestimmten Typspezifizierern kombiniert werden. Zulässige Modifizierer sind **const** und `volatile`.
 
-Typedef-Namen verwenden denselben Namespace wie gewöhnliche Bezeichner (weitere Informationen finden Sie unter [Namespaces](../c-language/name-spaces.md)). Aus diesem Grund kann ein Programm einen typedef-Namen und einen Bezeichner für den lokalen Gültigkeitsbereich mit dem gleichen Namen aufweisen. Beispiel:
+Typedef-Namen verwenden denselben Namespace wie gewöhnliche Bezeichner (weitere Informationen finden Sie unter [Namespaces](../c-language/name-spaces.md)). Aus diesem Grund kann ein Programm einen typedef-Namen und einen Bezeichner für den lokalen Gültigkeitsbereich mit dem gleichen Namen aufweisen. Zum Beispiel:
 
 ```C
 typedef char FlagType;

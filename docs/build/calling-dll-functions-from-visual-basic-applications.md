@@ -19,23 +19,23 @@ ms.locfileid: "65221198"
 ---
 # <a name="calling-dll-functions-from-visual-basic-applications"></a>Aufrufen von DLL-Funktionen aus Visual Basic-Anwendungen heraus
 
-Für Visual Basic-Anwendungen (oder Anwendungen in anderen Sprachen wie Pascal oder Fortran) Funktionen in einer C/C++-DLL aufrufen müssen die Funktionen exportiert werden bei Verwendung der richtigen Aufrufkonvention ohne vom Compiler namensergänzungen
+Damit Visual Basic-Anwendungen (oder Anwendungen in anderen Sprachen wie Pascal oder Fortran) Funktionen in einer C-/C++-DLL aufrufen können, müssen die Funktionen mit der richtigen Aufrufkonvention exportiert werden, ohne dass der Compiler Namensergänzungen vornimmt.
 
-Mithilfe von `__stdcall` wird zwar die richtige Aufrufkonvention für die Funktion erstellt (die aufgerufene Funktion bereinigt den Stapel, und die Parameter werden von rechts nach links übergeben), der Funktionsname wird jedoch unterschiedlich ergänzt. Daher werden beim **__declspec(dllexport)** wird verwendet, auf eine exportierte Funktion in einer DLL, wird der ergänzte Name exportiert.
+Mithilfe von `__stdcall` wird zwar die richtige Aufrufkonvention für die Funktion erstellt (die aufgerufene Funktion bereinigt den Stapel, und die Parameter werden von rechts nach links übergeben), der Funktionsname wird jedoch unterschiedlich ergänzt. Wenn **__declspec(dllexport)** daher für eine exportierte Funktion in einer DLL verwendet wird, wird der dekorierte Name exportiert.
 
-Die `__stdcall` namensergänzung beginnt der Symbolname mit einem Unterstrich ( **\_** ) und endet mit einem at-Zeichen (**\@**) Zeichens, gefolgt von der Anzahl von Bytes in der Argumentliste (dem erforderlichen Stapelplatz). Ist daher eine Funktion wie folgt deklariert:
+Durch die `__stdcall`-Namensergänzung beginnt der Symbolname mit einem Unterstrich ( **\_** ) und endet mit einem **\@** -Zeichen, gefolgt von der Anzahl der Bytes in der Argumentliste (dem erforderlichen Stapelplatz). Ist daher eine Funktion wie folgt deklariert:
 
 ```C
 int __stdcall func (int a, double b)
 ```
 
-wird als ergänzt `_func@12` in der Ausgabe.
+In diesem Fall wird dies in der Ausgabe als `_func@12` dekoriert.
 
 Durch die C-Aufrufkonvention (`__cdecl`) wird der Name mit `_func` ergänzt.
 
-Verwenden Sie zum Abrufen des ergänzten Namens [/MAP](reference/map-generate-mapfile.md). Verwenden von **__declspec(dllexport)** bewirkt Folgendes:
+Verwenden Sie [/MAP](reference/map-generate-mapfile.md), um den dekorierten Namen zu ermitteln. Die Verwendung von **__declspec(dllexport)** bewirkt Folgendes:
 
-- Wenn die Funktion der C-Aufrufkonvention exportiert wird (`__cdecl`), entfernt den führenden Unterstrich ( **\_** ) Wenn der Name wird exportiert.
+- Wenn die Funktion nach der C-Aufrufkonvention (`__cdecl`) exportiert wird, wird beim Export der führende Unterstrich ( **\_** ) entfernt.
 
 - Wenn für die exportierte Funktion nicht die C-Aufrufkonvention (z. B. `__stdcall`) verwendet wird, wird der ergänzte Name exportiert.
 
@@ -54,21 +54,21 @@ EXPORTS
    INITCODE=_InitCode@0
 ```
 
-Damit DLLs durch Programme in Visual Basic aufgerufen werden können, wird die in diesem Artikel erwähnte Aliastechnik in der DEF-Datei benötigt. Wenn das Aliasing im Visual Basic-Programm durchgeführt wird, ist es in der DEF-Datei nicht notwendig. Es kann hierzu in Visual Basic-Programm eine Aliasklausel Hinzufügen der [Declare](/dotnet/visual-basic/language-reference/statements/declare-statement) Anweisung.
+Damit DLLs durch Programme in Visual Basic aufgerufen werden können, wird die in diesem Artikel erwähnte Aliastechnik in der DEF-Datei benötigt. Wenn das Aliasing im Visual Basic-Programm durchgeführt wird, ist es in der DEF-Datei nicht notwendig. Zu diesem Zweck wird der [Declare](/dotnet/visual-basic/language-reference/statements/declare-statement)-Anweisung im Visual Basic-Programm eine Aliasklausel hinzugefügt.
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
 - [Exportieren aus einer DLL](exporting-from-a-dll.md)
 
-- [Exportieren aus einer DLL. DEF-Dateien](exporting-from-a-dll-using-def-files.md)
+- [Exportieren aus einer DLL mithilfe von DEF-Dateien](exporting-from-a-dll-using-def-files.md)
 
 - [Exportieren aus einer DLL mithilfe von __declspec(dllexport)](exporting-from-a-dll-using-declspec-dllexport.md)
 
-- [Exportieren von C++-Funktionen für die Verwendung in ausführbaren c-Dateien](exporting-cpp-functions-for-use-in-c-language-executables.md)
+- [Exportieren von C++-Funktionen zur Verwendung in ausführbaren C-Dateien](exporting-cpp-functions-for-use-in-c-language-executables.md)
 
-- [Bestimmen Sie die Exportmethode verwendet werden](determining-which-exporting-method-to-use.md)
+- [Festlegen der Exportmethode](determining-which-exporting-method-to-use.md)
 
-- [Ergänzte Namen](reference/decorated-names.md)
+- [Dekorierte Namen](reference/decorated-names.md)
 
 ## <a name="see-also"></a>Siehe auch
 

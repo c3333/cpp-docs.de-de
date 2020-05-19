@@ -5,11 +5,11 @@ helpviewer_keywords:
 - for keyword [C]
 ms.assetid: 560a8de4-19db-4868-9f18-dbe51b17900d
 ms.openlocfilehash: df00bcab2f9f9e51a6f37e19670b6cd240fa5cc4
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62233643"
 ---
 # <a name="for-statement-c"></a>for-Anweisung (C)
 
@@ -18,7 +18,7 @@ Mit der **for**-Anweisung können Sie eine Anweisung oder eine Verbundanweisung 
 ## <a name="syntax"></a>Syntax
 
 *iteration-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**for** **(** *init-expression*<sub>opt</sub> **;** *cond-expression*<sub>opt</sub> **;** *loop-expression*<sub>opt</sub> **)** *statement*
+&nbsp;&nbsp;&nbsp;&nbsp;**for** **(** *Initialisierungsausdruck*<sub>opt</sub> **;** *Bedingungsausdruck*<sub>opt</sub> **;** *Schleifenausdruck*<sub>opt</sub> **)** *Anweisung*
 
 Eine **for**-Anweisung wird wie folgt ausgeführt:
 
@@ -26,11 +26,11 @@ Eine **for**-Anweisung wird wie folgt ausgeführt:
 
 1. *cond-expression* wird ausgewertet, falls vorhanden. Dieser Ausdruck muss einen arithmetischen Typ oder einen Zeigertyp aufweisen. Er wird vor jeder Iteration ausgewertet. Drei Ergebnisse sind möglich:
 
-   - Wenn *cond-expression* **TRUE** ist (ungleich 0), wird *statement* ausgeführt; anschließend wird *loop-expression* ausgeführt, falls vorhanden. *loop-expression* wird nach dem Abschluss jeder Iteration ausgewertet. Für den zugehörigen Typ besteht keine Einschränkung. Nebeneffekte werden in der Reihenfolge ausgeführt. Der Prozess beginnt anschließend erneut mit der Auswertung von *cond-expression*.
+   - Wenn *cond-expression***TRUE** ist (ungleich 0), wird *statement* ausgeführt; anschließend wird *loop-expression* ausgeführt, falls vorhanden. *loop-expression* wird nach dem Abschluss jeder Iteration ausgewertet. Für den zugehörigen Typ besteht keine Einschränkung. Nebeneffekte werden in der Reihenfolge ausgeführt. Der Prozess beginnt anschließend erneut mit der Auswertung von *cond-expression*.
 
    - Wenn *cond-expression* weggelassen wird, gilt *cond-expression* dennoch als „TRUE“, und die Ausführung wird genau wie im vorherigen Absatz beschrieben fortgesetzt. Eine **for**-Anweisung ohne ein *cond-expression*-Argument wird nur beendet, wenn eine **break**- oder **return**-Anweisung innerhalb des Anweisungstexts ausgeführt wird, oder wenn **goto** (eine Anweisung mit Bezeichnung außerhalb des **for**-Anweisungstexts) ausgeführt wird.
 
-   - Wenn *cond-expression* **FALSE** ist (0), wird die **for**-Anweisung beendet und das Steuerelement an die nächste Anweisung im Programm weitergegeben.
+   - Wenn *cond-expression***FALSE** ist (0), wird die **for**-Anweisung beendet und das Steuerelement an die nächste Anweisung im Programm weitergegeben.
 
 Die **for**-Anweisung kann auch beendet werden, wenn eine **break**-, eine **goto**- oder eine **return**-Anweisung innerhalb des Anweisungstexts ausgeführt wird. Eine **continue**-Anweisung in einer **for**-Schleife führt zur Auswertung von *loop-expression*. Wenn eine **break**-Anweisung innerhalb einer **for**-Schleife ausgeführt wird, wird *loop-expression* weder ausgewertet noch ausgeführt. Diese Anweisung
 

@@ -7,7 +7,7 @@ helpviewer_keywords:
 ms.assetid: fcd2364c-c2a5-4fbf-9027-19dac4144cb5
 ms.openlocfilehash: 0ffda6522e632533b0aaa4ba146e8fad082ed435
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857059"
@@ -19,22 +19,22 @@ Eine "Deklaration" gibt die Interpretation und die Attribute eines Satzes von Be
 ## <a name="syntax"></a>Syntax
 
 *declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers* *attribute-seq*<sub>opt</sub> *init-declarator-list*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer* *Attributsequenz*<sub>opt</sub> *Initialisierungsdeklaratorliste*<sub>opt</sub> **;**
 
-/\* *-Attribut-"-abwählungsfrage*<sub>" ist Microsoft</sub> -spezifisch */
+/\* *Attributsequenz*<sub>opt</sub> ist Microsoft-spezifisch */
 
 *declaration-specifiers*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*storage-class-specifier* *declaration-specifiers*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *declaration-specifiers*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *declaration-specifiers*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Speicherklassenspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Deklarationsspezifizierer*<sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Deklarationsspezifizierer*<sub>opt</sub>
 
 *init-declarator-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*init-declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*init-declarator-list* **,** *init-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Initialisierungsdeklaratorliste* **,** *Initialisierungsdeklarator*
 
 *init-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declarator* **=** *initializer*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarator* **=** *Initialisierer*
 
 > [!NOTE]
 > Diese Syntax für *declaration* wird in den folgenden Abschnitten nicht wiederholt. Die Syntax in den folgenden Abschnitten beginnt normalerweise mit dem *declarator*-Nichtterminal.

@@ -1,77 +1,77 @@
 ---
 title: Aufrufkonvention bei x64-Systemen
-description: Details der standardmäßigen x64 ABI-Aufrufkonvention.
+description: Dieser Artikel enthält Details zu den ABI-Standardaufrufkonventionen bei x64-Systemen.
 ms.date: 12/17/2018
 ms.assetid: 41ca3554-b2e3-4868-9a84-f1b46e6e21d9
 ms.openlocfilehash: caf22172ea5e9c20280bce8e508d72fd30c00c5b
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81335133"
 ---
 # <a name="x64-calling-convention"></a>Aufrufkonvention bei x64-Systemen
 
-In diesem Abschnitt werden die Standardprozesse und -konventionen beschrieben, die eine Funktion (der Aufrufer) verwendet, um Aufrufe in eine andere Funktion (den Angerufenen) im x64-Code zu tätigen.
+In diesem Abschnitt werden die Standardprozesse und -konventionen beschrieben, die eine Funktion (Aufrufer) für Aufrufe in eine andere Funktion (Aufgerufener) in x64-Code verwendet.
 
-## <a name="calling-convention-defaults"></a>Aufrufkonventionsstandards
+## <a name="calling-convention-defaults"></a>Standardaufrufkonventionen
 
-Die x64 Application Binary Interface (ABI) verwendet standardmäßig eine Vier-Register-Fast-Call-Aufrufkonvention. In der Aufrufliste wird Speicherplatz als Schattenspeicher für Angerufene zum Speichern dieser Register reserviert. Es gibt eine strikte 1:1-Entsprechung zwischen den Argumenten zu einem Funktionsaufruf und den Registern, die für diese Argumente verwendet werden. Jedes Argument, das nicht in 8 Bytes passt oder nicht 1, 2, 4 oder 8 Bytes ist, muss als Verweis übergeben werden. Ein einzelnes Argument wird nie auf mehrere Register verteilt. Der x87-Registerstapel ist nicht verwendet und kann vom Angerufenen verwendet werden, muss jedoch über Funktionsaufrufe hinweg als flüchtig betrachtet werden. Alle Gleitkommaoperationen werden mit den 16 XMM-Registern durchgeführt. Ganzzahl-Argumente werden in den Registern RCX, RDX, R8 und R9 übergeben. Gleitkommaargumente werden in XMM0L, XMM1L, XMM2L und XMM3L übergeben. 16-Byte-Argumente werden als Verweis übergeben. Die Parameterübergabe wird ausführlich in [Parameter Passing](#parameter-passing)beschrieben. Zusätzlich zu diesen Registern gelten RAX, R10, R11, XMM4 und XMM5 als flüchtig. Alle anderen Register sind nicht flüchtig. Die Registernutzung wird in [Register usage](../build/x64-software-conventions.md#register-usage) und [Caller/Callee Saved Registers](#callercallee-saved-registers)detailliert dokumentiert.
+Die x64-ABI (Application Binary Interface, Binärschnittstelle) verwendet standardmäßig eine Schnellaufrufkonvention mit vier Registern. Der Speicherplatz wird in der Aufrufliste als Schattenspeicher für Aufgerufene zum Speichern dieser Register zugeordnet. Es gibt eine strikte 1:1-Entsprechung zwischen den Argumenten eines Funktionsaufrufs und den für diese Argumente verwendeten Registern. Jedes Argument, das nicht in acht Bytes passt oder einer Größe von einem, zwei, vier oder acht Bytes entspricht, muss als Verweis übergeben werden. Ein einzelnes Argument wird nie auf mehrere Register verteilt. Der x87-Registerstapel wird nicht verwendet und kann vom Aufgerufenen verwendet werden, muss jedoch bei Funktionsaufrufen als flüchtig angesehen werden. Alle Gleitkommavorgänge werden mithilfe der 16 XMM-Register ausgeführt. Ganzzahlige Argumente werden in die Register RCX, RDX, R8 und R9 übergeben. Gleitkommaargumente werden in XMM0L, XMM1L, XMM2L und XMM3L übergeben. Argumente mit einer Größe von 16 Bytes werden als Verweis übergeben. Die Parameterübergabe wird im Abschnitt [Parameterübergabe](#parameter-passing) ausführlich beschrieben. Zusätzlich zu diesen Registern werden RAX, R10, R11, XMM4 und XMM5 als flüchtig eingestuft. Alle anderen Register sind nicht flüchtig. Die Registerverwendung wird ausführlich im Artikel [Registerverwendung](../build/x64-software-conventions.md#register-usage) und im Abschnitt [Gespeicherte Register des Aufrufers und des Aufgerufenen](#callercallee-saved-registers) dieses Artikels beschrieben.
 
-Bei Prototypfunktionen werden alle Argumente vor dem Übergeben in die erwarteten Angerufenentypen konvertiert. Der Aufrufer ist für die Zuweisung von Platz für Parameter an den Angerufenen verantwortlich und muss immer genügend Platz zuweisen, um vier Registerparameter zu speichern, auch wenn der Angerufene nicht so viele Parameter verwendet. Diese Konvention vereinfacht die Unterstützung für nicht prototypisierte C-Sprachfunktionen und vararg C/C++-Funktionen. Bei vararg- oder nicht prototypierten Funktionen müssen alle Gleitkommawerte im entsprechenden Allgemeinen Register dupliziert werden. Alle Parameter, die über die ersten vier hinausgehen, müssen nach dem Schattenspeicher vor dem Aufruf auf dem Stapel gespeichert werden. Vararg Funktionsdetails finden Sie in [Varargs](#varargs). Unprototypisierte Funktionsinformationen sind in [Unprototyped Functions](#unprototyped-functions)detailliert.
+Bei Prototypfunktionen werden alle Argumente vor dem Übergeben in die erwarteten Typen für Aufgerufene konvertiert. Der Aufrufer ist dafür verantwortlich, dem Aufgerufenen Speicherplatz für Parameter und immer ausreichend Speicherplatz für vier Registerparameter zuzuweisen, auch wenn der Aufgerufene nicht so viele Parameter verwendet. Diese Konvention vereinfacht die Unterstützung für C-Sprachfunktionen und Vararg-C- oder -C++-Funktionen ohne Prototyp. Für Vararg-Funktionen oder Funktionen ohne Prototyp müssen alle Gleitkommawerte im entsprechenden allgemeinen Register dupliziert werden. Alle Parameter außerhalb der ersten vier müssen im Stapel nach dem Schattenspeicher und vor dem Aufruf gespeichert werden. Details zu Vararg-Funktionen finden Sie im Abschnitt [Varargs](#varargs). Informationen zu Funktionen ohne Prototyp finden Sie unter [Funktionen ohne Prototyp](#unprototyped-functions).
 
 ## <a name="alignment"></a>Ausrichtung
 
-Die meisten Strukturen sind an ihrer natürlichen Ausrichtung ausgerichtet. Die primären Ausnahmen sind der `malloc` Stapelzeiger und oder `alloca` Der Speicher, die an 16 Bytes ausgerichtet sind, um die Leistung zu verbessern. Die Ausrichtung über 16 Bytes muss manuell erfolgen, aber da 16 Bytes eine gemeinsame Ausrichtungsgröße für XMM-Vorgänge ist, sollte dieser Wert für den meisten Code funktionieren. Weitere Informationen zum Strukturlayout und zur Ausrichtung finden Sie unter [Typen und Speicher](../build/x64-software-conventions.md#types-and-storage). Informationen zum Stapellayout finden Sie unter [x64-Stack-Nutzung](../build/stack-usage.md).
+Die meisten Strukturen weisen ihre natürliche Ausrichtung auf. Die primären Ausnahmen sind der Stapelzeiger und der `malloc`- oder `alloca`-Arbeitsspeicher, die auf 16 Bytes ausgerichtet sind, um die Leistung zu unterstützen. Eine Ausrichtung auf über 16 Bytes muss manuell erfolgen. Da 16 Bytes jedoch einer gängigen Ausrichtungsgröße für XMM-Vorgänge entsprechen, sollte dieser Wert für einen Großteil des Codes funktionieren. Weitere Informationen zum Strukturlayout und zur Ausrichtung finden Sie unter [Typen und Speicher](../build/x64-software-conventions.md#types-and-storage). Weitere Informationen zum Stapellayout finden Sie unter [Verwendung von Stapeln bei x64-Systemen](../build/stack-usage.md).
 
-## <a name="unwindability"></a>Entwindbarkeit
+## <a name="unwindability"></a>Unentladbarkeit
 
-Blattfunktionen sind Funktionen, die keine nichtflüchtigen Register ändern. Eine Nicht-Blattfunktion kann nichtflüchtige RSP ändern, z. B. durch Aufrufen einer Funktion oder Zuweisung von zusätzlichem Stapelspeicher für lokale Variablen. Um nichtflüchtige Register wiederherzustellen, wenn eine Ausnahme behandelt wird, müssen Nicht-Blattfunktionen mit statischen Daten mit Anmerkungen beauft werden, die beschreiben, wie die Funktion ordnungsgemäß bei einer beliebigen Anweisung entwickelt wird. Diese Daten werden als *pdata*oder Prozedurdaten gespeichert, was wiederum auf *xdata*, die Ausnahmebehandlungsdaten, verweist. Die xdata enthält die Entladungsinformationen und kann auf zusätzliche pdata oder eine Ausnahmehandlerfunktion verweisen. Prologs und Epilogs sind stark eingeschränkt, so dass sie in xdata korrekt beschrieben werden können. Der Stapelzeiger muss in jedem Codebereich, der nicht Teil eines Epilogs oder Prologs ist, außer innerhalb von Blattfunktionen, an 16 Bytes ausgerichtet sein. Blattfunktionen können einfach durch Simulieren einer Rückgabe aufgelöst werden, sodass pdata und xdata nicht erforderlich sind. Einzelheiten zur richtigen Struktur von Funktionsprologs und Epilogs finden Sie unter [x64 prolog und epilog](../build/prolog-and-epilog.md). Weitere Informationen zur Ausnahmebehandlung sowie zur Ausnahmebehandlung und -entladung von pdata und xdata finden Sie unter [x64-Ausnahmebehandlung](../build/exception-handling-x64.md).
+Leaf-Funktionen sind Funktionen, die nicht flüchtige Register nicht ändern. Eine Non-Leaf-Funktion kann nicht flüchtige RSP-Dateien möglicherweise durch Aufrufen einer Funktion oder Zuweisen von zusätzlichem Stapelspeicher für lokale Variablen ändern. Non-Leaf-Funktionen müssen mit statischen Daten versehen sein, die beschreiben, wie die Funktion in einer beliebigen Anweisung ordnungsgemäß entladen wird, um beim Behandeln einer Ausnahme nicht flüchtige Register wiederherzustellen. Diese Daten werden als *pdata*- oder Prozedurdaten gespeichert, die sich wiederum auf *xdata*-Daten und somit die Ausnahme beziehen, mit der Daten verarbeitet werden. Die xdata-Daten enthalten die Entladungsinformationen und können auf zusätzliche pdata-Daten oder eine Ausnahmehandlerfunktion verweisen. Prologe und Epiloge sind stark eingeschränkt, sodass sie in xdata-Daten angemessen beschrieben werden können. Der Stapelzeiger muss (abgesehen von Leaf-Funktionen) in jedem Codebereich, der nicht Teil eines Epilogs oder Prologs ist, auf 16 Bytes ausgerichtet werden. Leaf-Funktionen können einfach durch Simulieren einer Rückgabe entladen werden, sodass pdata- und xdata-Daten nicht erforderlich sind. Ausführliche Informationen zur ordnungsgemäßen Struktur von Funktionsprologen und -epilogen finden Sie unter [Prolog und Epilog bei x64-Systemen](../build/prolog-and-epilog.md). Weitere Informationen zur Ausnahmebehandlung und dem Entladen von pdata- und xdata-Daten finden Sie unter [Ausnahmebehandlung bei x64-Systemen](../build/exception-handling-x64.md).
 
 ## <a name="parameter-passing"></a>Parameterübergabe
 
-Die ersten vier Ganzzahlargumente werden in Registern übergeben. Ganzzahlwerte werden in der Reihenfolge von links nach rechts in RCX, RDX, R8 und R9 übergeben. Argumente fünf und höher werden auf dem Stapel übergeben. Alle Argumente sind in Registern rechtsberechtigt, so dass der Angerufene die oberen Teile des Registers ignorieren und nur auf den erforderlichen Teil des Registers zugreifen kann.
+Die ersten vier ganzzahligen Argumente werden in Register übergeben. Ganzzahlige Werte werden der Reihenfolge nach von links nach rechts in RCX, RDX, R8 und R9 übergeben. Das fünfte Argument und alle darauf folgenden werden an den Stapel übergeben. Alle Argumente werden in Registern rechtsbündig ausgerichtet, sodass der Aufgerufene die oberen Bits des Registers ignorieren und nur auf den notwendigen Teil des Registers zugreifen kann.
 
-Alle Gleitkomma- und Doppelpräzisionsargumente in den ersten vier Parametern werden je nach Position in XMM0 - XMM3 übergeben. Die ganzzahligen Register RCX, RDX, R8 und R9, die normalerweise für diese Positionen verwendet würden, werden ignoriert, außer im Fall von varargs-Argumenten. Weitere Informationen finden Sie unter [Varargs](#varargs). Ebenso werden die XMM0 - XMM3-Register ignoriert, wenn das entsprechende Argument ein Ganzzahl- oder Zeigertyp ist.
+Alle Gleitkommaargumente und Gleitkommaargumente mit doppelter Genauigkeit in den ersten vier Parametern werden abhängig von der Position in XMM0 bis XMM3 übergeben. Die ganzzahligen Register RCX, RDX, R8 und R9, die normalerweise für diese Positionen verwendet werden, werden mit der Ausnahme von Varargs-Argumenten ignoriert. Weitere Informationen finden Sie unter [Varargs](#varargs). Ebenso werden die Register XMM0 bis XMM3 ignoriert, wenn das entsprechende Argument ein Integer oder ein Zeigertyp ist.
 
-[__m128](../cpp/m128.md) Typen, Arrays und Zeichenfolgen werden nie vom unmittelbaren Wert übergeben. Stattdessen wird ein Zeiger an den vom Aufrufer zugewiesenen Speicher übergeben. Strukturen und Unions der Größe 8, 16, 32 oder 64 Bits und __m64 Typen werden übergeben, als wären sie ganze Zahlen gleicher Größe. Strukturen oder Unions anderer Größen werden als Zeiger auf den vom Aufrufer zugewiesenen Speicher übergeben. Für diese Aggregattypen, die als \_Zeiger übergeben werden, einschließlich _m128, muss der vom Aufrufer zugewiesene temporäre Speicher 16-Byte ausgerichtet sein.
+Typen, Arrays und Zeichenfolgen vom [__m128](../cpp/m128.md)-Datentyp werden nie als unmittelbarer Wert übergeben. Stattdessen wird ein Zeiger an den vom Aufrufer zugeordneten Arbeitsspeicher übergeben. Strukturen und Unions mit einer Größe von 8, 16, 32 oder 64 Bits sowie __m64-Typen werden wie Integer der gleichen Größe übergeben. Strukturen oder Unions anderer Größen werden als Zeiger auf den vom Aufrufer zugeordneten Arbeitsspeicher übergeben. Für diese als Zeiger übergebenen Aggregattypen muss einschließlich des \__m128-Datentyps der vom Aufrufer zugewiesene temporäre Speicher auf 16 Byte ausgerichtet sein.
 
-Intrinsische Funktionen, die keinen Stapelspeicher zuweisen und keine anderen Funktionen aufrufen, verwenden manchmal andere flüchtige Register, um zusätzliche Registerargumente zu übergeben. Diese Optimierung wird durch die enge Bindung zwischen dem Compiler und der intrinsischen Funktionsimplementierung ermöglicht.
+Intrinsische Funktionen, die keinen Stapelbereich zuordnen und keine anderen Funktionen aufrufen, verwenden manchmal andere flüchtige Register, um zusätzliche Registerargumente zu übergeben. Diese Optimierung wird durch die enge Bindung zwischen dem Compiler und der Implementierung der intrinsischen Funktion ermöglicht.
 
-Der Angerufene ist dafür verantwortlich, die Registerparameter bei Bedarf in ihren Schattenraum zu werfen.
+Der Aufgerufene ist dafür verantwortlich, die Registerparameter bei Bedarf im Schattenspeicher zu sichern.
 
-Die folgende Tabelle fasst zusammen, wie Parameter übergeben werden:
+Die folgende Tabelle gibt Aufschluss über die Übergabeformen von Parametern:
 
-|Parametertyp|Wie bestanden|
+|Parametertyp|Übergabe|
 |--------------------|----------------|
-|Gleitkomma|Erste 4 Parameter - XMM0 bis XMM3. Andere gaben den Stapel weiter.|
-|Integer|Erste 4 Parameter - RCX, RDX, R8, R9. Andere gaben den Stapel weiter.|
-|Aggregate (8, 16, 32 oder 64 Bit) und __m64|Erste 4 Parameter - RCX, RDX, R8, R9. Andere gaben den Stapel weiter.|
-|Aggregate (sonstige)|Durch Zeiger. Erste 4 Parameter als Zeiger in RCX, RDX, R8 und R9 übergeben|
-|__m128|Durch Zeiger. Erste 4 Parameter als Zeiger in RCX, RDX, R8 und R9 übergeben|
+|Gleitkomma|Die ersten vier Parameter: XMM0 bis XMM3. Andere werden an den Stapel weitergegeben.|
+|Ganze Zahl|Die ersten vier Parameter: RCX, RDX, R8 und R9. Andere werden an den Stapel weitergegeben.|
+|Aggregate (8, 16, 32 oder 64 Bits) und __m64|Die ersten vier Parameter: RCX, RDX, R8 und R9. Andere werden an den Stapel weitergegeben.|
+|(Andere) Aggregate|Nach Zeiger. Die ersten vier Parameter werden als Zeiger in RCX, RDX, R8 und R9 übergeben.|
+|__m128|Nach Zeiger. Die ersten vier Parameter werden als Zeiger in RCX, RDX, R8 und R9 übergeben.|
 
-### <a name="example-of-argument-passing-1---all-integers"></a>Beispiel für Argument, das 1 - alle ganzen Zahlen übergibt
+### <a name="example-of-argument-passing-1---all-integers"></a>Beispiel 1 für Argumentübergabe: Alle Integerwerte
 
 ```cpp
 func1(int a, int b, int c, int d, int e);
 // a in RCX, b in RDX, c in R8, d in R9, e pushed on stack
 ```
 
-### <a name="example-of-argument-passing-2---all-floats"></a>Beispiel für Argument, das 2 - alle Floats
+### <a name="example-of-argument-passing-2---all-floats"></a>Beispiel 2 für Argumentübergabe: Alle Gleitkommawerte
 
 ```cpp
 func2(float a, double b, float c, double d, float e);
 // a in XMM0, b in XMM1, c in XMM2, d in XMM3, e pushed on stack
 ```
 
-### <a name="example-of-argument-passing-3---mixed-ints-and-floats"></a>Beispiel für Argument, das 3 - gemischte Ints und Floats passiert
+### <a name="example-of-argument-passing-3---mixed-ints-and-floats"></a>Beispiel 3 für Argumentübergabe: Kombination aus Integer- und Gleitkommawerten
 
 ```cpp
 func3(int a, double b, int c, float d);
 // a in RCX, b in XMM1, c in R8, d in XMM3
 ```
 
-### <a name="example-of-argument-passing-4--__m64-__m128-and-aggregates"></a>Beispiel für Argument, das \_4 -__m64, _m128 und Aggregate übergibt
+### <a name="example-of-argument-passing-4--__m64-__m128-and-aggregates"></a>Beispiel 4 für Argumentübergabe: __m64, \___m128 und Aggregate
 
 ```cpp
 func4(__m64 a, _m128 b, struct c, float d);
@@ -80,11 +80,11 @@ func4(__m64 a, _m128 b, struct c, float d);
 
 ## <a name="varargs"></a>VarArgs
 
-Wenn Parameter über varargs übergeben werden (z. B. Auslassungsargumente), gilt die Regelkonvention für die Übergabe von Registerparametern, einschließlich des Verschüttens des fünften und des nachfolgenden Arguments in den Stapel. Es liegt in der Verantwortung des Angerufenen, Argumente zu verwerfen, deren Adresse übernommen wurde. Nur für Gleitkommawerte müssen sowohl das Ganzzahlregister als auch das Gleitkommaregister den Wert enthalten, falls der Angerufene den Wert in den Ganzzahlregistern erwartet.
+Wenn Parameter über Varargs übergeben werden (z. B. Ellipsenargumente), wird die normale Übergabekonvention für Registrierungsparameter angewendet, einschließlich der Übertragung des fünften und der nachfolgenden Argumente an den Stapel. Es ist Aufgabe des Aufgerufenen, Argumente zu sichern, deren Adresse verwendet wird. Nur im Falle von Gleitkommawerten müssen sowohl das Integerregister als auch das Gleitkommaregister den Wert enthalten, falls der Aufgerufene den Wert in den Integerregistern erwartet.
 
-## <a name="unprototyped-functions"></a>Nicht prototypisierte Funktionen
+## <a name="unprototyped-functions"></a>Funktionen ohne Prototyp
 
-Bei Funktionen, die nicht vollständig prototypiert sind, übergibt der Aufrufer Ganzzahlwerte als Ganzzahlen und Gleitkommawerte als doppelte Genauigkeit. Nur bei Gleitkommawerten enthalten sowohl das Ganzzahlregister als auch das Gleitkommaregister den Gleitkommawert, falls der Angerufene den Wert in den Ganzzahlregistern erwartet.
+Bei Funktionen ohne Prototyp übergibt der Aufrufer ganzzahlige Werte als Integer und Gleitkommawerte als Werte mit doppelter Genauigkeit. Nur im Falle von Gleitkommawerten enthalten sowohl das Integerregister als auch das Gleitkommaregister den Gleitkommawert, falls der Aufgerufene den Wert in den Integerregistern erwartet.
 
 ```cpp
 func1();
@@ -95,13 +95,13 @@ func2() {   // RCX = 2, RDX = XMM1 = 1.0, and R8 = 7
 
 ## <a name="return-values"></a>Rückgabewerte
 
-Ein skalarer Rückgabewert, der in 64 Bit passen kann, wird über RAX zurückgegeben. Dies umfasst __m64 Typen. Nicht skalare Typen wie Floats, Doubles und Vektortypen wie [__m128](../cpp/m128.md), [__m128i](../cpp/m128i.md) [__m128d](../cpp/m128d.md) werden in XMM0 zurückgegeben. Der Status von nicht verwendeten Bits in dem in RAX oder XMM0 zurückgegebenen Wert ist nicht definiert.
+Ein skalarer Rückgabewert, der in 64 Bits passt, wird durch RAX zurückgegeben. Dazu gehören auch __m64-Typen. Nicht skalare Typen einschließlich Gleitkommazahlen, Werte mit doppelter Genauigkeit und Vektortypen (z. B. [__m128](../cpp/m128.md), [__m128i](../cpp/m128i.md) und [__m128d](../cpp/m128d.md)) werden in XMM0 zurückgegeben. Der Status von nicht verwendeten Bits in dem in RAX oder XMM0 zurückgegebenen Wert ist nicht definiert.
 
-Benutzerdefinierte Typen können als Wert von globalen Funktionen und statische Memberfunktionen zurückgegeben werden. Um einen benutzerdefinierten Typ nach Wert in RAX zurückzugeben, muss er eine Länge von 1, 2, 4, 8, 16, 32 oder 64 Bit haben. Es darf auch keinen benutzerdefinierten Konstruktor-, Destruktor- oder Kopierzuweisungsoperator haben. keine privaten oder geschützten nicht statischen Datenmember; keine nicht statischen Datenmember des Referenztyps; keine Basisklassen; keine virtuellen Funktionen; und keine Datenmember, die diese Anforderungen nicht auch erfüllen. (Dies ist im Grunde die Definition eines C++03 POD-Typs. Da sich die Definition im C++11-Standard geändert `std::is_pod` hat, wird die Verwendung für diesen Test nicht empfohlen.) Andernfalls übernimmt der Aufrufer die Verantwortung für die Zuweisung von Speicher und das Übergeben eines Zeigers für den Rückgabewert als erstes Argument. Nachfolgende Argumente werden dann um ein Argument nach rechts verschoben. Derselbe Zeiger muss vom Aufgerufenen in RAX zurückgegeben werden.
+Benutzerdefinierte Typen können als Wert von globalen Funktionen und statische Memberfunktionen zurückgegeben werden. Die Länge muss 1, 2, 4, 8, 16, 32 oder 64 Bits entsprechen, um einen benutzerdefinierten Typ als Wert in RAX zurückzugeben. Außerdem darf kein benutzerdefinierter Konstruktor, Destruktor oder Kopierzuweisungsoperator enthalten sein. Ebenfalls verboten sind private bzw. geschützte, nicht statische Datenmember, nicht statische Datenmember von Verweistypen, Basisklassen, virtuelle Funktionen und Datenmember, die diese Anforderungen nicht erfüllen. (Dies ist im Grunde die Definition eines C++03 POD-Typs. Da die Definition im Standard C++11 geändert wurde, sollte `std::is_pod` nicht für diesen Test verwendet werden.) Andernfalls übernimmt der Aufrufer die Verantwortung für die Speicherbelegung und die Übergabe eines Zeigers für den Rückgabewert als erstes Argument. Nachfolgende Argumente werden dann um ein Argument nach rechts verschoben. Derselbe Zeiger muss vom Aufgerufenen in RAX zurückgegeben werden.
 
 Diese Beispiele zeigen, wie Parameter und Rückgabewerte für Funktionen mit den angegebenen Deklarationen übergeben werden:
 
-### <a name="example-of-return-value-1---64-bit-result"></a>Beispiel für Rückgabewert 1 - 64-Bit-Ergebnis
+### <a name="example-of-return-value-1---64-bit-result"></a>Beispiel für Rückgabewert 1: Ergebnis 64 Bit
 
 ```Output
 __int64 func1(int a, float b, int c, int d, int e);
@@ -109,7 +109,7 @@ __int64 func1(int a, float b, int c, int d, int e);
 // callee returns __int64 result in RAX.
 ```
 
-### <a name="example-of-return-value-2---128-bit-result"></a>Beispiel für Rückgabewert 2 - 128-Bit-Ergebnis
+### <a name="example-of-return-value-2---128-bit-result"></a>Beispiel für Rückgabewert 2: Ergebnis 128 Bit
 
 ```Output
 __m128 func2(float a, double b, int c, __m64 d);
@@ -117,7 +117,7 @@ __m128 func2(float a, double b, int c, __m64 d);
 // callee returns __m128 result in XMM0.
 ```
 
-### <a name="example-of-return-value-3---user-type-result-by-pointer"></a>Beispiel für Rückgabewert 3 - Benutzertypergebnis nach Zeiger
+### <a name="example-of-return-value-3---user-type-result-by-pointer"></a>Beispiel für Rückgabewert 3: Ergebnis Benutzertyp als Zeiger
 
 ```Output
 struct Struct1 {
@@ -129,7 +129,7 @@ Struct1 func3(int a, double b, int c, float d);
 // callee returns pointer to Struct1 result in RAX.
 ```
 
-### <a name="example-of-return-value-4---user-type-result-by-value"></a>Beispiel für Rückgabewert 4 - Benutzertypergebnis nach Wert
+### <a name="example-of-return-value-4---user-type-result-by-value"></a>Beispiel für Rückgabewert 4: Ergebnis Benutzertyp als Wert
 
 ```Output
 struct Struct2 {
@@ -140,70 +140,70 @@ Struct2 func4(int a, double b, int c, float d);
 // callee returns Struct2 result by value in RAX.
 ```
 
-## <a name="callercallee-saved-registers"></a>Anrufer/Anrufer gespeicherte Register
+## <a name="callercallee-saved-registers"></a>Gespeicherte Register des Aufrufers und des Aufgerufenen
 
-Die Register RAX, RCX, RDX, R8, R9, R10, R11, XMM0-5 und die oberen Teile von YMM0-15 und ZMM0-15 gelten als flüchtig und müssen bei Funktionsaufrufen als zerstört betrachtet werden (sofern nicht anders durch Analysen wie die gesamte Programmoptimierung sicherheitsbedenzierbar). Bei AVX512VL sind die Register ZMM, YMM und XMM 16-31 flüchtig.
+Die Register RAX, RCX, RDX, R8, R9, R10, R11, XMM0-5 und die oberen Teile von YMM0-15 und ZMM0-15 gelten als flüchtig und müssen bei Funktionsaufrufen als zerstört angesehen werden (es sei denn, die Sicherheit ist durch eine Analyse wie z. B. eine Optimierung des gesamten Programms gewährleistet). Bei AVX512VL, ZMM, YMM und XMM sind die Register 16 bis 31 flüchtig.
 
-Die Register RBX, RBP, RDI, RSI, RSP, R12, R13, R14, R15 und XMM6-15 gelten als nichtflüchtig und müssen von einer Funktion, die sie verwendet, gespeichert und wiederhergestellt werden.
+Die Register RBX, RBP, RDI, RSI, RSP, R12, R13, R14, R15 und XMM6-15 gelten als nicht flüchtig und müssen von einer Funktion gespeichert und wieder hergestellt werden, die sie verwendet.
 
 ## <a name="function-pointers"></a>Funktionszeiger
 
-Funktionszeiger sind einfach Zeiger auf die Beschriftung der jeweiligen Funktion. Es gibt keine Inhaltsverzeichnisanforderungen (TOC) für Funktionszeiger.
+Funktionszeiger sind einfach nur Zeiger auf die Bezeichnung der jeweiligen Funktion. Es gibt keine Anforderungen für das Inhaltsverzeichnis für Funktionszeiger.
 
 ## <a name="floating-point-support-for-older-code"></a>Gleitkommaunterstützung für älteren Code
 
-Die MMX- und Gleitkomma-Stack-Register (MM0-MM7/ST0-ST7) bleiben über Kontextwechsel hinweg erhalten. Es gibt keine ausdrückliche Aufrufkonvention für diese Register. Die Verwendung dieser Register ist im Kernelmodus-Code strengstens untersagt.
+Die MMX- und Gleitkommastapelregister (MM0 bis MM7 und ST0 bis ST7) werden auch bei Kontextwechseln beibehalten. Es gibt keine explizite Aufrufkonvention für diese Register. Die Verwendung dieser Register ist im Kernelmoduscode strengstens untersagt.
 
 ## <a name="fpcsr"></a>FpCsr
 
-Der Registerstatus enthält auch das Steuerwort x87 FPU. Die Berufungskonvention schreibt vor, dass dieses Register nicht flüchtig ist.
+Der Registerzustand umfasst auch das x87-FPU-Steuerwort. Die Aufrufkonvention legt dieses Register als nicht flüchtig an.
 
-Das X87 FPU-Steuerwortregister wird zu Beginn der Programmausführung auf die folgenden Standardwerte gesetzt:
+Das x87-FPU-Steuerwortregister wird zu Beginn der Programmausführung auf die folgenden Standardwerte festgelegt:
 
-| Bits\[registrieren] | Einstellung |
+| Register\[bits] | Einstellung |
 |-|-|
-| FPCSR\[0:6] | Ausnahme masken alle 1 (alle Ausnahmen maskiert) |
-| FPCSR\[7] | Reserviert - 0 |
-| FPCSR\[8:9] | Präzisionssteuerung - 10B (doppelte Präzision) |
-| FPCSR\[10:11] | Rundungssteuerung - 0 (rund zum nächsten) |
-| FPCSR\[12] | Infinity-Steuerung - 0 (nicht verwendet) |
+| FPCSR\[0:6] | Ausnahme maskiert alle Einsen (1) (alle Ausnahmen maskiert) |
+| FPCSR\[7] | Reserviert: 0 |
+| FPCSR\[8:9] | Genauigkeitssteuerung: 10B (doppelte Genauigkeit) |
+| FPCSR\[10:11] | Rundungssteuerung: 0 (Runden auf nächste Zahl) |
+| FPCSR\[12] | Unendlichkeitssteuerung: 0 (nicht verwendet) |
 
-Ein Angerufener, der eines der Felder in FPCSR ändert, muss sie wiederherstellen, bevor er zu seinem Aufrufer zurückkehrt. Darüber hinaus muss ein Aufrufer, der eines dieser Felder geändert hat, sie auf ihre Standardwerte zurücksetzen, bevor er einen Angerufenen aufruft, es sei denn, der Aufrufer erwartet die geänderten Werte durch Vereinbarung.
+Ein Aufgerufener, der alle Felder in FpCsr ändert, muss diese vor der Rückgabe an den Aufrufer wiederherstellen. Darüber hinaus muss ein Aufrufer, der eines dieser Felder geändert hat, die Standardwerte wiederherstellen, bevor er einen Aufgerufenen aufruft, es sei denn, der Aufrufer erwartet die geänderten Werte.
 
-Es gibt zwei Ausnahmen von den Regeln über die Nicht-Volatilität der Kontrollflags:
+Es gibt zwei Ausnahmen für die Regeln bezüglich der Nichtflüchtigkeit der Steuerungsflags:
 
-1. In Funktionen, bei denen der dokumentierte Zweck der angegebenen Funktion darin besteht, die nichtflüchtigen FpCsr-Flags zu ändern.
+1. Dies ist bei Funktionen der Fall, bei denen der dokumentierte Zweck der angegebenen Funktion darin besteht, die nicht flüchtigen FpCsr-Flags zu ändern.
 
-1. Wenn es nachweislich richtig ist, dass die Verletzung dieser Regeln zu einem Programm führt, das sich wie ein Programm verhält, bei dem diese Regeln nicht verletzt werden, z. B. durch eine Ganzprogrammanalyse.
+1. Dies liegt vor, wenn dieser Verstoß gegen die Regeln tatsächlich dazu führt, dass sich ein Programm wie ein Programm verhält, bei dem die Regeln nicht verletzt werden (z. B. durch eine vollständige Programmanalyse).
 
 ## <a name="mxcsr"></a>MxCsr
 
-Der Registerstatus enthält auch MxCsr. Die aufrufende Konvention unterteilt dieses Register in einen flüchtigen und einen nichtflüchtigen Teil. Der flüchtige Teil besteht aus den sechs\[Statusflags in MXCSR 0:5],\[während der Rest des Registers, MXCSR 6:15], als nichtflüchtig gilt.
+Der Registrierungsstatus umfasst auch MxCsr. Die Aufrufkonvention dividiert dieses Register in einen flüchtigen und einen nicht flüchtigen Teil. Der flüchtige Teil besteht aus den sechs Statusflags in MXCSR\[0:5], während der Rest des Registers (MXCSR\[6:15]) als nicht flüchtig eingestuft wird.
 
-Der nichtflüchtige Teil wird zu Beginn der Programmausführung auf die folgenden Standardwerte festgelegt:
+Der nicht flüchtige Teil wird zu Beginn der Programmausführung auf die folgenden Standardwerte festgelegt:
 
-| Bits\[registrieren] | Einstellung |
+| Register\[bits] | Einstellung |
 |-|-|
-| MXCSR\[6] | Denormals sind Nullen - 0 |
-| MXCSR\[7:12] | Ausnahme masken alle 1 (alle Ausnahmen maskiert) |
-| MXCSR\[13:14] | Rundungssteuerung - 0 (rund zum nächsten) |
-| MXCSR\[15] | Flush auf Null für maskierten Unterlauf - 0 (aus) |
+| MXCSR\[6] | Denormalisiert alle Nullen: 0 |
+| MXCSR\[7:12] | Ausnahme maskiert alle Einsen (1) (alle Ausnahmen maskiert) |
+| MXCSR\[13:14] | Rundungssteuerung: 0 (Runden auf nächste Zahl) |
+| MXCSR\[15] | Zurücksetzung auf Null bei Unterlauf maskierter Werte: 0 (Aus) |
 
-Ein Angerufener, der eines der nichtflüchtigen Felder in MXCSR ändert, muss sie wiederherstellen, bevor er zu seinem Aufrufer zurückkehrt. Darüber hinaus muss ein Aufrufer, der eines dieser Felder geändert hat, sie auf ihre Standardwerte zurücksetzen, bevor er einen Angerufenen aufruft, es sei denn, der Aufrufer erwartet die geänderten Werte durch Vereinbarung.
+Ein Aufgerufener, der alle nicht flüchtigen Felder in MxCsr ändert, muss diese vor der Rückgabe an den Aufrufer wiederherstellen. Darüber hinaus muss ein Aufrufer, der eines dieser Felder geändert hat, die Standardwerte wiederherstellen, bevor er einen Aufgerufenen aufruft, es sei denn, der Aufrufer erwartet die geänderten Werte.
 
-Es gibt zwei Ausnahmen von den Regeln über die Nicht-Volatilität der Kontrollflags:
+Es gibt zwei Ausnahmen für die Regeln bezüglich der Nichtflüchtigkeit der Steuerungsflags:
 
-- In Funktionen, bei denen der dokumentierte Zweck der angegebenen Funktion darin besteht, die nichtflüchtigen MxCsr-Flags zu ändern.
+- Dies ist bei Funktionen der Fall, bei denen der dokumentierte Zweck der angegebenen Funktion darin besteht, die nicht flüchtigen MxCsr-Flags zu ändern.
 
-- Wenn es nachweislich richtig ist, dass die Verletzung dieser Regeln zu einem Programm führt, das sich wie ein Programm verhält, bei dem diese Regeln nicht verletzt werden, z. B. durch eine Ganzprogrammanalyse.
+- Dies liegt vor, wenn dieser Verstoß gegen die Regeln tatsächlich dazu führt, dass sich ein Programm wie ein Programm verhält, bei dem die Regeln nicht verletzt werden (z. B. durch eine vollständige Programmanalyse).
 
-Über den Zustand des flüchtigen Teils von MXCSR über eine Funktionsgrenze hinweg können keine Annahmen getroffen werden, es sei denn, dies wird in der Dokumentation einer Funktion ausdrücklich beschrieben.
+Es können keine Annahmen über den Status des flüchtigen Teils von MxCsr über eine Funktionsgrenze hinweg vorgenommen werden, es sei denn, dies wird ausdrücklich in der Dokumentation einer Funktion beschrieben.
 
 ## <a name="setjmplongjmp"></a>setjmp/longjmp
 
-Wenn Sie setjmpex.h oder setjmp.h einschließen, führen alle Aufrufe von [setjmp](../c-runtime-library/reference/setjmp.md) oder [longjmp](../c-runtime-library/reference/longjmp.md) zu einer Entladung, die Destruktoren und `__finally` Aufrufe aufruft.  Dies unterscheidet sich von x86, wobei die `__finally` Einbeziehung von setjmp.h dazu führt, dass Klauseln und Destruktoren nicht aufgerufen werden.
+Wenn Sie „setjmpex.h“ oder „setjmp.h“ einschließen, führen alle Aufrufe von [setjmp](../c-runtime-library/reference/setjmp.md) oder [longjmp](../c-runtime-library/reference/longjmp.md) zu einer Entladung, die Destruktoren und `__finally` aufruft.  Dies unterscheidet sich von x86, da das Einschließen von „setjmp.h“ hier dazu führt, dass `__finally`-Klauseln und Destruktoren nicht aufgerufen werden.
 
-Ein Aufruf `setjmp` zum Beibehalten des aktuellen Stapelzeigers, nicht flüchtiger Register und MxCsr-Register.  Ruft `longjmp` auf, um `setjmp` zur letzten Aufrufsite zurückzukehren, und setzt den Stapelzeiger, nicht flüchtige Register und MxCsr-Register `setjmp` in den Zustand zurück, der vom letzten Aufruf beibehalten wurde.
+Durch einen `setjmp`-Aufruf werden der aktuelle Stapelzeiger, nicht flüchtige Register und MxCsr-Register beibehalten.  Durch einen `longjmp`-Aufruf kehren Sie zur neuesten `setjmp`-Aufrufseite zurück, und der Stapelzeiger, nicht flüchtige Register und MxCsr-Register werden wieder in den Zustand zurückgesetzt, der vom neuesten `setjmp`-Aufruf beibehalten wurde.
 
 ## <a name="see-also"></a>Siehe auch
 

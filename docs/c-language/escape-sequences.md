@@ -72,7 +72,7 @@ Wenn einem Zeichen ein umgekehrter Schrägstrich vorangestellt ist, der nicht in
 
 Mithilfe von Escapesequenzen können Sie nicht grafische Steuerzeichen an ein Anzeigegerät senden. Beispielsweise wird das ESC-Zeichen ( **\033**) häufig als erstes Zeichen eines Steuerungsbefehls für ein Terminal oder einen Drucker verwendet. Einige Escapesequenzen sind gerätespezifisch. Die Escapesequenzen für vertikale Tabstopps und Seitenvorschübe ( **\v** und **\f**) beeinflussen beispielsweise die Bildschirmausgabe nicht, sondern sie führen die entsprechenden Druckervorgänge aus.
 
-Sie können den umgekehrten Schrägstrich ( **\\** ) auch als Fortsetzungszeichen verwenden. Wenn ein Zeilenumbruchzeichen (entsprechend dem Drücken der EINGABETASTE) direkt auf den umgekehrten Schrägstrich folgt, ignoriert der Compiler den umgekehrten Schrägstrich und das Zeilenumbruchzeichen und behandelt die nächste Zeile als Teil der vorherigen Zeile. Dies wird in erster Linie für Präprozessordefinitionen verwendet, die länger als eine einzige Zeile sind. Beispiel:
+Sie können den umgekehrten Schrägstrich ( **\\** ) auch als Fortsetzungszeichen verwenden. Wenn ein Zeilenumbruchzeichen (entsprechend dem Drücken der EINGABETASTE) direkt auf den umgekehrten Schrägstrich folgt, ignoriert der Compiler den umgekehrten Schrägstrich und das Zeilenumbruchzeichen und behandelt die nächste Zeile als Teil der vorherigen Zeile. Dies wird in erster Linie für Präprozessordefinitionen verwendet, die länger als eine einzige Zeile sind. Zum Beispiel:
 
 ```
 #define assert(exp) \

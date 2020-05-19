@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 2580735c-f5bf-46ab-9468-0696893d82be
 ms.openlocfilehash: c2e372ebe93b9240ac6f489e8b1aefc1fbbded80
 ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74857150"
@@ -27,13 +27,13 @@ Der erweiterte Attributsyntax zur Bezeichnung von Speicherklasseninformation ver
 ## <a name="syntax"></a>Syntax
 
 *storage-class-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__declspec (** *Extended-decl-modifier-LQ* **)**  /\* Microsoft-spezifischen \*/
+&nbsp;&nbsp;&nbsp;&nbsp; **__declspec (** *erweiterte-Deklarationsmodifizierersequenz* **)**  /\* Microsoft-spezifisch \*/
 
-*Extended-decl-modifier-* &nbsp;&nbsp;&nbsp;&nbsp;/\* Microsoft-spezifischen \*/<br/>
+*extended-decl-modifier-seq*:&nbsp;&nbsp;&nbsp;&nbsp;/\* Microsoft-spezifisch \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*extended-decl-modifier*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*extended-decl-modifier-seq* *extended-decl-modifier*
+&nbsp;&nbsp;&nbsp;&nbsp;*erweiterte-Deklarationsmodifizierersequenz* *erweiterter-Deklarationsmodifizierer*
 
-*Extended-decl-modifier*:&nbsp;&nbsp;&nbsp;&nbsp;/\* Microsoft-spezifischen \*/<br/>
+*extended-decl-modifier*:&nbsp;&nbsp;&nbsp;&nbsp;/\* Microsoft-spezifisch \*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**thread**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**naked**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**dllimport**<br/>

@@ -17,11 +17,11 @@ helpviewer_keywords:
 - static storage class specifiers
 ms.assetid: b76b623a-80ec-4d5d-859b-6cef422657ee
 ms.openlocfilehash: 941994f668fa035b569f9ccae2c301ebf42bcda6
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62157954"
 ---
 # <a name="storage-class-specifiers-for-external-level-declarations"></a>Speicherklassenspezifizierer für Deklarationen der externen Ebene
 
@@ -40,7 +40,7 @@ Eine externe Variablendeklaration, die auch die Variable initialisiert (implizit
 
 - Eine Variable, die Sie explizit für die externe Ebene initialisieren. Beispielsweise ist `int j = 3;` eine Definition für die Variable `j`.
 
-In den Variablendeklarationen auf der externen Ebene (d.h. außerhalb aller Funktionen) können Sie den Speicherklassenspezifizierer **static** oder `extern` verwenden oder diesen vollständig auslassen. Sie können die **auto**- und **register**-*storage-class-specifier*-Terminals nicht auf der externen Ebene verwenden.
+In den Variablendeklarationen auf der externen Ebene (d.h. außerhalb aller Funktionen) können Sie den Speicherklassenspezifizierer **static** oder `extern` verwenden oder diesen vollständig auslassen. Sie können die **auto**- und **register** *Speicherklassenspezifizierer*-Terminals nicht auf der externen Ebene verwenden.
 
 Sobald eine Variable auf der externen Ebene definiert wird, ist sie für den Rest der Übersetzungseinheit sichtbar. Die Variable ist vor ihrer Deklaration in derselben Quelldatei nicht sichtbar. Außerdem ist sie nicht in anderen Quelldateien des Programms sichtbar, es sei denn, eine verweisende Deklaration macht sie sichtbar, wie im Folgenden beschrieben.
 

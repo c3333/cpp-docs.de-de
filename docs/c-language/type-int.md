@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 0067ce9a-281e-491a-ae63-632952981e13
 ms.openlocfilehash: ebce276c8c4efa822601fe36652057b37e922570
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81334435"
@@ -20,11 +20,11 @@ Die Größe eines `int`-Elements mit oder ohne Vorzeichen ist die Standardgröß
 
 Die Typspezifizierer `int` und `unsigned int` (oder einfach `unsigned`) definieren bestimmte Funktionen der Programmiersprache C (z. B. den `enum`-Typ). In diesen Fällen bestimmen die Definitionen von `int` und "unsigned int" für eine bestimmte Implementierung den tatsächlichen Speicher.
 
-**Microsoft Specific**
+**Microsoft-spezifisch**
 
-Ganzzahlen mit Vorzeichen werden in der Zweierkomplementdarstellung ausgedrückt. Das wichtigste Bit enthält die Zeichen 1 für negative Werte und 0 für positive Werte und Null. Der Wertebereich wird in [C und C++ Ganzzahlgrenzen](../c-language/cpp-integer-limits.md)angegeben, die den LIMITS entnommen werden. H-Headerdatei.
+Ganzzahlen mit Vorzeichen werden in der Zweierkomplementdarstellung ausgedrückt. Das wichtigste Bit enthält das Vorzeichen: 1 für negative Werte, 0 für positive Werte und 0. Der Wertebereich ist unter [Integer-Grenzwerte in C und C++](../c-language/cpp-integer-limits.md) angegeben und stammt aus der LIMITS.H-Headerdatei.
 
-**END Microsoft Spezifisch**
+**Ende Microsoft-spezifisch**
 
 > [!NOTE]
 > Die int-Typspezifizierer sowie die unsignierten int-Typspezifizierer werden in C-Programmen viel verwendet, denn sie ermöglichen es dem jeweiligen Computer, Ganzzahlenwerte auf die für den betreffenden Computer effizienteste Art zu bearbeiten. Da die Größen von int-Typen und int-Typen ohne Vorzeichen variieren, sind Programme, die abhängig von einer bestimmten int-Größe sind, möglicherweise nicht auf andere Computern übertragbar. Um Programme übertragbarer zu gestalten, können Sie Ausdrücke mit dem sizeof-Operator (in [Der Operator sizeof](../c-language/sizeof-operator-c.md) erläutert) anstelle von hartcodierten Datengrößen verwenden.

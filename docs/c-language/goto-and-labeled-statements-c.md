@@ -10,7 +10,7 @@ helpviewer_keywords:
 ms.assetid: 3d0473dc-4b18-4fcc-9616-31a38499d7d7
 ms.openlocfilehash: b5e0d602332c87510b1fe5f59db3e497b88f0acb
 ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/20/2019
 ms.locfileid: "75299116"
@@ -21,15 +21,15 @@ Die Anweisung `goto` übertragt die Steuerung an eine Bezeichnung. Die angegeben
 
 ## <a name="syntax"></a>Syntax
 
-*statement*:<br/>
+*Anweisung*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*labeled-statement*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*jump-statement*
 
 *jump-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**goto**-*Bezeichner* **.**
+&nbsp;&nbsp;&nbsp;&nbsp;**goto**  *Bezeichner*  **;**
 
 *labeled-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Identifier* **:** -*Anweisung*
+&nbsp;&nbsp;&nbsp;&nbsp;*Bezeichner*  **:**  *Anweisung*
 
 Eine Anweisungsmarke ist nur für eine `goto`-Anweisung sinnvoll. In jedem anderen Kontext wird eine bezeichnete Anweisung ohne Berücksichtigung der Bezeichnung ausgeführt.
 

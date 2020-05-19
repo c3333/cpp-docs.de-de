@@ -6,7 +6,7 @@ helpviewer_keywords:
 ms.assetid: 52350d1c-c373-4868-923c-5e8be6f67adb
 ms.openlocfilehash: c93867f3be3b17f703c549aa5c05f3d327934c26
 ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/16/2020
 ms.locfileid: "79422715"
@@ -25,7 +25,7 @@ In dieser exemplarischen Vorgehensweise werden die folgenden Aufgaben veranschau
 
 - Verwenden von MSBuild für die Anpassung des Projekts
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Für diese exemplarische Vorgehensweise wird Folgendes benötigt:
 
@@ -233,7 +233,7 @@ Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um einen Releaseb
 
 ### <a name="using-msbuild-with-the-64-bit-compiler-and-tools"></a>Verwenden von MSBuild mit dem 64-Bit-Compiler und Tools
 
-Wenn Sie Visual Studio auf einer 64-Bit-Windows-Version installiert haben, werden standardmäßig die systemeigenen Tools sowie Cross Tools für 64-Bit x64 installiert. Sie können MSBuild konfigurieren, um den 64-Bit-Compiler und die Tools zur Erstellung Ihrer Anwendung zu verwenden, indem Sie die `PreferredToolArchitecture`-Eigenschaft festlegen. Diese Eigenschaft beeinflusst nicht die Projektkonfigurations- oder Plattformeigenschaften. Standardmäßig wird die 32-Bit-Version des Tools verwendet. Fügen Sie das folgende Eigenschaften Gruppenelement der Projektdatei "MyProject. vcxproj" nach dem `Microsoft.Cpp.default.props` \<Import/>-Element hinzu, um die 64-Bit-Version des Compilers und der Tools anzugeben:
+Wenn Sie Visual Studio auf einer 64-Bit-Windows-Version installiert haben, werden standardmäßig die systemeigenen Tools sowie Cross Tools für 64-Bit x64 installiert. Sie können MSBuild konfigurieren, um den 64-Bit-Compiler und die Tools zur Erstellung Ihrer Anwendung zu verwenden, indem Sie die `PreferredToolArchitecture`-Eigenschaft festlegen. Diese Eigenschaft beeinflusst nicht die Projektkonfigurations- oder Plattformeigenschaften. Standardmäßig wird die 32-Bit-Version des Tools verwendet. Fügen Sie zum Angeben der 64-Bit-Versionen des Compilers und der Tools das folgende Eigenschaftsgruppenelement der Projektdatei "Myproject.vcxproj" nach dem `Microsoft.Cpp.default.props` \<Import />-Element hinzu:
 
 ```xml
 <PropertyGroup>
@@ -247,7 +247,7 @@ Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um die 64-Bit-Too
 
 ### <a name="using-msbuild-with-a-different-toolset"></a>Verwenden von MSBuild mit einem anderen Toolset
 
-Wenn Sie die Toolsets und Bibliotheken für andere Versionen von Visual C++ installiert haben, kann MSBuild entweder Anwendungen für die aktuelle Visual C++-Version oder für die anderen installierten Versionen erstellen. Wenn Sie z. b. Visual Studio 2012 installiert haben, um das Visual C++ 11,0-Toolset für Windows XP anzugeben, fügen Sie das folgende Eigenschaften Gruppenelement der Projektdatei "MyProject. vcxproj" nach dem `Microsoft.Cpp.props` \<Import/>-Element hinzu:
+Wenn Sie die Toolsets und Bibliotheken für andere Versionen von Visual C++ installiert haben, kann MSBuild entweder Anwendungen für die aktuelle Visual C++-Version oder für die anderen installierten Versionen erstellen. Wenn Sie beispielsweise Visual Studio 2012 installiert haben, um das Visual C++ 11.0-Toolset für Windows XP anzugeben, fügen Sie das folgende Eigenschaftsgruppenelement der Projektdatei „Myproject.vcxproj“ nach dem Element `Microsoft.Cpp.props` \<Import /> hinzu:
 
 ```xml
 <PropertyGroup>
@@ -263,8 +263,8 @@ Geben Sie einen der folgenden Befehle ein, um das Projekt mit dem Visual C++ 11.
 
 MSBuild bietet verschiedene Möglichkeiten zur Anpassung des Buildprozesses. Die folgenden Themen zeigen, wie dem MSBuild-Projekt benutzerdefinierte Buildschritte, Tools und Ereignisse hinzugefügt werden:
 
-- [Vorgehensweise: Hinzufügen eines benutzerdefinierten Buildschritts zu MSBuild-Projekten](how-to-add-a-custom-build-step-to-msbuild-projects.md)
+- [How to: Hinzufügen eines benutzerdefinierten Buildschritts zu MSBuild-Projekten](how-to-add-a-custom-build-step-to-msbuild-projects.md)
 
-- [Vorgehensweise: Hinzufügen von benutzerdefinierten Buildtools zu MSBuild-Projekten](how-to-add-custom-build-tools-to-msbuild-projects.md)
+- [How to: Hinzufügen von benutzerdefinierten Buildtools zu MSBuild-Projekten](how-to-add-custom-build-tools-to-msbuild-projects.md)
 
-- [Vorgehensweise: Verwenden von Buildereignissen in MSBuild-Projekten](how-to-use-build-events-in-msbuild-projects.md)
+- [How to: Verwenden von Buildereignissen in MSBuild-Projekten](how-to-use-build-events-in-msbuild-projects.md)

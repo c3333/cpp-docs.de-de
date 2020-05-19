@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: aefdbf50-f603-488a-b0d7-ed737bae311d
 ms.openlocfilehash: 13a6a375d6200f73dd9845d057d1954c2b65485c
 ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62273416"
 ---
 # <a name="importing-using-def-files"></a>Importieren mithilfe von DEF-Dateien
 
-Wenn Sie auch verwenden **von "__declspec(dllimport)" "** zusammen mit einer DEF-Datei, Sie sollten die DEF-Datei, um die Daten anstelle von KONSTANTEN verwenden, um die Wahrscheinlichkeit zu verringern, dass falsche Codierung Probleme entstehen ändern:
+Wenn Sie sich dafür entscheiden, **__declspec(dllimport)** zusammen mit einer DEF-Datei zu verwenden, sollten Sie die DEF-Datei so anpassen, dass diese DATA anstelle von CONSTANT verwendet, um die Wahrscheinlichkeit zu reduzieren, dass ein Problem durch falsche Codierung entsteht:
 
 ```
 // project.def
@@ -26,16 +26,16 @@ EXPORTS
    ulDataInDll   DATA
 ```
 
-In der folgende Tabelle wird erläutert, weshalb.
+In der folgenden Tabelle wird der Grund dafür erläutert.
 
-|Stichwort|Gibt in der Importbibliothek her|Exporte|
+|Stichwort|Ausgabe in der Importbibliothek|Exports|
 |-------------|---------------------------------|-------------|
 |`CONSTANT`|`_imp_ulDataInDll`, `_ulDataInDll`|`_ulDataInDll`|
 |`DATA`|`_imp_ulDataInDll`|`_ulDataInDll`|
 
-Mithilfe von **von "__declspec(dllimport)" "** und Konstante enthält sowohl die `imp` Version und den nicht ergänzten Namen in der LIB-DLL-Importbibliothek, die erstellt wird, um die explizite Verknüpfung zu ermöglichen. Mithilfe von **von "__declspec(dllimport)" "** und Listen der Daten lediglich die `imp` Version des Namens.
+Wenn Sie **__declspec(dllimport)** und CONSTANT verwenden, werden sowohl die `imp`-Version als auch der undekorierte Name in der .lib-DLL-Importbibliothek aufgelistet, die so erstellt wird, dass sie eine explizite Verknüpfung zulässt. Wenn Sie **__declspec(dllimport)** und DATA verwenden, wird nur die `imp`-Version des Namens aufgeführt.
 
-Wenn Sie die Konstante verwenden, eine der folgenden Codekonstrukte kann verwendet werden für den Zugriff auf `ulDataInDll`:
+Wenn Sie CONSTANT verwenden, kann eines der folgenden Codekonstrukte verwendet werden, um auf `ulDataInDll` zuzugreifen:
 
 ```
 __declspec(dllimport) ULONG ulDataInDll; /*prototype*/
@@ -49,7 +49,7 @@ ULONG *ulDataInDll;      /*prototype*/
 if (*ulDataInDll == 0L)  /*sample code fragment*/
 ```
 
-Aber wenn Sie Daten in der DEF-Datei verwenden, nur mit der folgenden Definition kompiliertem Code kann greifen auf die Variable `ulDataInDll`:
+Wenn Sie in Ihrer DEF-Datei jedoch DATA verwenden, kann nur Code, der mit der folgenden Definition kompiliert wurde, auf die Variable `ulDataInDll` zugreifen:
 
 ```
 __declspec(dllimport) ULONG ulDataInDll;
@@ -57,9 +57,9 @@ __declspec(dllimport) ULONG ulDataInDll;
 if (ulDataInDll == 0L)   /*sample code fragment*/
 ```
 
-Konstante riskanter ist, da Sie vergessen, die zusätzliche Ebene der Dereferenzierung, Sie möglicherweise die Importadresstabelle Zeiger auf die Variable zugreifen könnten, nicht auf die Variable selbst. Diese Art von Problem kann häufig als eine zugriffsverletzung Ergebnissen führen, da die Importadresstabelle derzeit durch den Compiler und Linker schreibgeschützt ist.
+Die Verwendung von CONSTANT ist riskanter. Wenn Sie nämlich vergessen, die zusätzliche Dereferenzierung zu verwenden, greifen Sie möglicherweise auf den Zeiger der Importadresstabelle auf die Variable und nicht auf die Variable selbst zu. Diese Art von Problem kann sich oft als Zugriffsverletzung erweisen, da die Importadresstabelle derzeit durch den Compiler und den Linker schreibgeschützt ist.
 
-Der aktuelle MSVC-Linker gibt eine Warnung, solche Konstante in der DEF-Datei für diesen Fall berücksichtigen. Der einzige wirkliche Grund für die Konstante ist, wenn Sie eine Objektdatei, wo die Header-Datei nicht aufgeführt neu kompilieren können **von "__declspec(dllimport)" "** für den Prototyp.
+Der aktuelle MSVC-Linker gibt eine Warnung aus, wenn er CONSTANT in der DEF-Datei entdeckt, um auf diesen Fall hinzuweisen. Der einzig wahre Grund für die Verwendung von CONSTANT ist der Fall, dass Sie einige Objektdateien nicht kompilieren können, bei denen die Headerdatei **__declspec(dllimport)** nicht auf dem Prototyp aufgelistet hat.
 
 ## <a name="see-also"></a>Siehe auch
 

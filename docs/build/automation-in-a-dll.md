@@ -14,17 +14,17 @@ ms.locfileid: "65220921"
 ---
 # <a name="automation-in-a-dll"></a>Automatisierung in einer DLL
 
-Wenn Sie die Automatisierungsoption im MFC-DLL-Assistenten auswählen, erhalten Sie vom Assistenten Folgendes:
+Wenn Sie die Automatisierungsoption im MFC-DLL-Assistent auswählen, stellt Ihnen der Assistent Folgendes bereit:
 
-- Ein Starter-Objektbeschreibungssprache (. ODL)-Datei
+- Eine Object Description Language-Datei (.ODL) für den Start
 
-- Eine Include-Direktive in der Datei "stdafx.h" Afxole.h
+- Eine include-Anweisung in der STDAFX.h-Datei für Afxole.h
 
-- Eine Implementierung der `DllGetClassObject` -Funktion, die Aufrufe der **AfxDllGetClassObject** Funktion
+- Eine Implementierung der `DllGetClassObject`-Funktion, die die Funktion **AfxDllGetClassObject** aufruft
 
-- Eine Implementierung der `DllCanUnloadNow` -Funktion, die Aufrufe der **AfxDllCanUnloadNow** Funktion
+- Eine Implementierung der `DllCanUnloadNow`-Funktion, die die Funktion **AfxDllCanUnloadNow** aufruft
 
-- Eine Implementierung der `DllRegisterServer` -Funktion, die Aufrufe der [COleObjectFactory:: UpdateRegistryAll](../mfc/reference/coleobjectfactory-class.md#updateregistryall) Funktion
+- Eine Implementierung der `DllRegisterServer`-Funktion, die die Funktion [COleObjectFactory::UpdateRegistryAll](../mfc/reference/coleobjectfactory-class.md#updateregistryall) aufruft
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 

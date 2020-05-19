@@ -6,11 +6,11 @@ helpviewer_keywords:
 - expression statements
 ms.assetid: 1085982b-dc16-4c1e-9ddd-0cd85c8fe2e3
 ms.openlocfilehash: 736ed4fbbd9f87c675c0bb9566c6c31287e77917
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56148789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62233708"
 ---
 # <a name="expression-statement-c"></a>Ausdrucksanweisung (C)
 
@@ -19,7 +19,7 @@ Wenn eine Ausdrucksanweisung ausgeführt wird, wird der Ausdruck nach den in [Au
 ## <a name="syntax"></a>Syntax
 
 *expression-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*expression*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck*<sub>opt</sub> **;**
 
 Alle Nebeneffekte der Ausdrucksauswertung werden abgeschlossen, bevor die nächste Anweisung ausgeführt wird. Eine leere Ausdrucksanweisung wird als NULL-Anweisung bezeichnet. Weitere Informationen finden Sie unter [Die NULL-Anweisung](../c-language/null-statement-c.md).
 

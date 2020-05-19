@@ -21,7 +21,7 @@ Ein indexierte Ausdruck kann auch mehrere Indizes haben, wie folgt:
 expression1 [ expression2 ] [ expression3 ] ...
 ```
 
-indexierte Ausdrücke sind von links nach rechts angeordnet. Der äußerste linke indexierte Ausdruck *expression1* **[** *expression2* **]** wird zuerst ausgewertet. Die Adresse, die sich aus dem Hinzufügen von *expression1* und *expression2* ergibt, bildet einen Zeigerausdruck. Dann wird *expression3* zu diesem Zeigerausdruck hinzugefügt, um einen neuen Zeigerausdruck zu bilden. Dies geht so lange weiter, bis der letzte Subscriptausdruck hinzugefügt wurde. Der Dereferenzierungsoperator (<strong>\*</strong>) wird angewendet, nachdem der letzte indexierte Ausdruck ausgewertet ist, es sei denn, der finale Zeigerwert spricht einen Arraytypen an (siehe Beispiele unten).
+indexierte Ausdrücke sind von links nach rechts angeordnet. Der äußerste linke Indexausdruck *Ausdruck1* **[** *Ausdruck2* **]** wird zuerst ausgewertet. Die Adresse, die sich aus dem Hinzufügen von *expression1* und *expression2* ergibt, bildet einen Zeigerausdruck. Dann wird *expression3* zu diesem Zeigerausdruck hinzugefügt, um einen neuen Zeigerausdruck zu bilden. Dies geht so lange weiter, bis der letzte Subscriptausdruck hinzugefügt wurde. Der Dereferenzierungsoperator (<strong>\*</strong>) wird angewendet, nachdem der letzte indexierte Ausdruck ausgewertet ist, es sei denn, der finale Zeigerwert spricht einen Arraytypen an (siehe Beispiele unten).
 
 Ausdrücke mit mehreren Indizes verweisen auf Elemente aus "mehrdimensionalen Arrays". Ein mehrdimensionales Array ist ein Array, dessen Elemente Arrays sind. Beispielsweise ist das erste Element eines dreidimensionalen Arrays ein Array mit zwei Dimensionen.
 

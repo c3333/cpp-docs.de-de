@@ -7,11 +7,11 @@ helpviewer_keywords:
 - variant records
 ms.assetid: 978c6165-e0ae-4196-afa7-6d94e24f62f7
 ms.openlocfilehash: dbc85a467161457641dd86acf5f3720bf4e14247
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56149257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62291040"
 ---
 # <a name="union-declarations"></a>Union-Deklarationen
 
@@ -20,8 +20,8 @@ Eine „Unionsdeklaration“ gibt einen Satz Variablenwerte und optional ein Tag
 ## <a name="syntax"></a>Syntax
 
 *struct-or-union-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-or-union* *identifier*<sub>opt</sub> **{** *struct-declaration-list* **}**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-or-union* *identifier*
+&nbsp;&nbsp;&nbsp;&nbsp;*Struktur-oder-Union* *Bezeichner*<sub>opt</sub> **{** *Strukturdeklarationsliste* **}**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Struktur-oder-Union* *Bezeichner*
 
 *struct-or-union*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**struct**<br/>
@@ -29,20 +29,20 @@ Eine „Unionsdeklaration“ gibt einen Satz Variablenwerte und optional ein Tag
 
 *struct-declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-declaration-list* *struct-declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Strukturdeklarationsliste* *Strukturdeklaration*
 
 Der Unioninhalt wird definiert als
 
 *struct-declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*specifier-qualifier-list* *struct-declarator-list*  **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Spezifizierer-/Qualifiziererliste* *Strukturdeklaratorliste*  **;**
 
 *specifier-qualifier-list*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-specifier* *specifier-qualifier-list*<sub>opt</sub> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier* *specifier-qualifier-list*<sub>opt</sub>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typspezifizierer* *Spezifizierer-/Qualifiziererliste*<sub>opt</sub> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Typqualifizierer* *Spezifizierer-/Qualifiziererliste*<sub>opt</sub>
 
 *struct-declarator-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*struct-declarator-list*  **,**  *struct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Strukturdeklaratorliste*  **,**  *Strukturdeklarator*
 
 Eine Variable des Typs **Union** speichert einen der Werte, die von diesem Typ definiert sind. Die gleichen Regeln steuern Struktur- und Uniondeklarationen. Unions können auch Bitfelder aufweisen.
 

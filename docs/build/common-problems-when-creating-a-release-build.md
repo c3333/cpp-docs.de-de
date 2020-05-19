@@ -19,48 +19,48 @@ helpviewer_keywords:
 ms.assetid: 73cbc1f9-3e33-472d-9880-39a8e9977b95
 ms.openlocfilehash: 9bd1cafe40417872d42f2e9e1427e5f2eccad7a7
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81328864"
 ---
 # <a name="common-problems-when-creating-a-release-build"></a>Häufig auftretende Probleme beim Erstellen eines Releasebuilds
 
-Während der Entwicklung erstellen und testen Sie in der Regel mit einem Debugbuild Ihres Projekts. Wenn Sie dann Ihre Anwendung für einen Releasebuild erstellen, erhalten Sie möglicherweise eine Zugriffsverletzung.
+Während der Entwicklung verwenden Sie in der Regel einen Debugbuild des Projekts zum Erstellen und Testen. Wenn Sie Ihre Anwendung dann für einen Releasebuild erstellen, wird möglicherweise ein Zugriffsverstoß zurückgegeben.
 
-Die folgende Liste zeigt die primären Unterschiede zwischen einem Debug- und einem Release-Build (nondebug). Es gibt noch andere Unterschiede, aber im Folgenden sind die primären Unterschiede, die dazu führen würden, dass eine Anwendung in einem Release-Build fehlschlägt, wenn sie in einem Debugbuild funktioniert.
+In der nachstehenden Liste sind die Hauptunterschiede zwischen einem Debug- und einem Releasebuild (nicht für das Debugging) aufgeführt. Es gibt zwar weitere Unterschiede, die folgenden sind jedoch die wichtigsten, die dazu führen können, dass eine Anwendung in einem Releasebuild fehlschlägt, obwohl sie im Debugbuild funktioniert hat.
 
-- [Heap-Layout](#_core_heap_layout)
+- [Heaplayout](#_core_heap_layout)
 
 - [Kompilierung](#_core_compilation)
 
-- [Pointer-Unterstützung](#_core_pointer_support)
+- [Zeigerunterstützung](#_core_pointer_support)
 
 - [Optimierungen](#_core_optimizations)
 
-Informationen zum Abfangen von Releasebuildfehlern in Debugbuilds finden Sie in der Compileroption [/GZ (Catch Release-Build Errors in Debug Build).](reference/gz-enable-stack-frame-run-time-error-checking.md)
+Weitere Informationen zum Abfangen von Releasebuildfehlern in Debugbuilds finden Sie unter [/GZ (Aktivieren der Fehlerüberprüfung zur Laufzeit für den Stapelrahmen)](reference/gz-enable-stack-frame-run-time-error-checking.md).
 
-## <a name="heap-layout"></a><a name="_core_heap_layout"></a>Heap-Layout
+## <a name="heap-layout"></a><a name="_core_heap_layout"></a> Heaplayout
 
-Heap-Layout wird die Ursache für etwa neunzig Prozent der offensichtlichen Probleme sein, wenn eine Anwendung im Debuggen arbeitet, aber nicht veröffentlicht wird.
+Das Heaplayout ist die Ursache von ungefähr 90 % der auftretenden Probleme, wenn eine Anwendung im Debugbuild funktioniert, aber nicht im Releasebuild.
 
-Wenn Sie das Projekt für das Debuggen erstellen, verwenden Sie den Debugspeicherzuweisungser. Dies bedeutet, dass alle Speicherzuweisungen Schutzbytes um sie herum platziert haben. Diese Wächterbytes erkennen eine Speicherüberschreibung. Da sich das Heaplayout zwischen Release- und Debugversionen unterscheidet, verursacht ein Speicherüberschreiben möglicherweise keine Probleme in einem Debugbuild, hat jedoch möglicherweise katastrophale Auswirkungen in einem Releasebuild.
+Wenn Sie Ihr Projekt für das Debuggen erstellen, verwenden Sie die Debugspeicherzuweisung. Dies bedeutet, dass der Speicher um alle Speicherbelegungen herum mit Schutzbytes belegt wird. Diese Schutzbytes erkennen eine Speicherüberschreibung. Da sich das Heaplayout zwischen der Release- und der Debugversion unterscheidet, verursacht eine Speicherüberschreibung möglicherweise keine Probleme in einem Debugbuild, hat dann jedoch schwerwiegende Auswirkungen in einem Releasebuild.
 
-Weitere Informationen finden Sie unter [Überprüfen auf Speicherüberschreiben](checking-for-memory-overwrites.md) und [Verwenden des Debugbuilds zum Überprüfen auf Speicherüberschreibung](using-the-debug-build-to-check-for-memory-overwrite.md).
+Weitere Informationen finden Sie unter [Überprüfen auf Speicherüberschreibungen](checking-for-memory-overwrites.md) und [Verwenden des Debugbuilds für die Überprüfung auf Speicherüberschreibungen](using-the-debug-build-to-check-for-memory-overwrite.md).
 
-## <a name="compilation"></a><a name="_core_compilation"></a>Kompilierung
+## <a name="compilation"></a><a name="_core_compilation"></a> Kompilierung
 
-Viele der MFC-Makros und ein Großteil der MFC-Implementierung ändert sich, wenn Sie für die Veröffentlichung erstellen. Insbesondere wird das ASSERT-Makro in einem Releasebuild zu nichts ausgewertet, sodass keiner der in ASSERTs gefundenen Codes ausgeführt wird. Weitere Informationen finden Sie unter Prüfen von [ASSERT-Anweisungen](using-verify-instead-of-assert.md).
+Viele der MFC-Makros und der Großteil der MFC-Implementierung ändern sich, wenn Sie einen Releasebuild erstellen. Das ASSERT-Makro wird in einem Releasebuild beispielsweise zu nichts ausgewertet. Es wird also kein Code ausgeführt, der in einem ASSERT-Makro enthalten ist. Weitere Informationen finden Sie unter [Verwenden von VERIFY anstelle von ASSERT](using-verify-instead-of-assert.md).
 
-Einige Funktionen sind für eine höhere Geschwindigkeit im Release-Build vorgesehen. Optimierungen werden in der Regel in einem Releasebuild aktiviert. Es wird auch ein anderer Speicherallokator verwendet.
+Einige Funktionen sind Inlinefunktionen, um die Erstellung des Releasebuilds zu beschleunigen. Optimierungen sind in Releasebuilds im Allgemeinen aktiviert. Es wird außerdem eine andere Speicherzuweisung verwendet.
 
-## <a name="pointer-support"></a><a name="_core_pointer_support"></a>Pointer-Unterstützung
+## <a name="pointer-support"></a><a name="_core_pointer_support"></a> Zeigerunterstützung
 
-Das Fehlen von Debuginformationen entfernt den Abstand aus der Anwendung. In einem Releasebuild haben streunende Zeiger eine größere Chance, auf nicht initialisierten Speicher zu verweisen, anstatt auf Debuginformationen zu verweisen.
+Durch den Mangel an Debugginginformationen wird die Auffüllung Ihrer Anwendung entfernt. In einem Releasebuild ist die Wahrscheinlichkeit bei hängenden Zeigern höher, dass diese auf nicht initialisierten Speicher anstatt auf Debuginformationen zeigen.
 
-## <a name="optimizations"></a><a name="_core_optimizations"></a>Optimierungen
+## <a name="optimizations"></a><a name="_core_optimizations"></a> Optimierungen
 
-Je nach Art bestimmter Codesegmente kann der Optimierende Compiler unerwarteten Code generieren. Dies ist die am wenigsten wahrscheinliche Ursache für Release-Build-Probleme, aber es tritt gelegentlich auf. Eine Lösung finden Sie unter [Optimieren Ihres Codes](optimizing-your-code.md).
+Je nach der Beschaffenheit bestimmter Codesegmente kann der Optimierungscompiler unerwarteten Code generieren. Diese Ursache ist diejenige mit der geringsten Wahrscheinlichkeit, kommt jedoch gelegentlich vor. Weitere Informationen zur Lösung finden Sie unter [Optimieren Ihres Codes](optimizing-your-code.md).
 
 ## <a name="see-also"></a>Siehe auch
 

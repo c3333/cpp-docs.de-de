@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 18bb2826-17da-48e5-92a2-10e649f1bc9f
 ms.openlocfilehash: ac906925be551c6ee4da08e200d4028047b3d041
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81349881"
@@ -22,16 +22,16 @@ Ein Quellprogramm kann in eine oder mehrere "Quelldateien" oder in "Übersetzung
 
 *translation-unit*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*external-declaration* <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*translation-unit* *external-declaration*
+&nbsp;&nbsp;&nbsp;&nbsp;*Übersetzungseinheit* *externe-Deklaration*
 
-*externe Erklärung*:<br/>
+*external-declaration*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*function-definition*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Erklärung*
+&nbsp;&nbsp;&nbsp;&nbsp;*declaration*
 
 [Übersicht über Deklarationen](../c-language/overview-of-declarations.md) gibt die Syntax für das `declaration`-Nichtterminal an, und in der *Präprozessorreferenz* wird erläutert, wie die [Übersetzungseinheit](../preprocessor/phases-of-translation.md) verarbeitet wird.
 
 > [!NOTE]
-> Eine Erläuterung der ANSI-Syntaxkonventionen finden Sie in der Einführung in die [C Language Syntax Summary](../c-language/c-language-syntax-summary.md).
+> Eine Erläuterung der ANSI-Syntaxkonventionen erhalten Sie in der Einführung zur [Zusammenfassung der C-Sprachsyntax](../c-language/c-language-syntax-summary.md).
 
 Die Komponenten einer Übersetzungseinheit sind externe Deklarationen, die Funktionsdefinitionen und Bezeichnerdeklarationen enthalten. Diese Deklarationen und Definitionen können sich in den Quelldateien, Headerdateien, Bibliotheken und anderen Dateien befinden, die das Programm benötigt. Sie müssen jede Übersetzungseinheit kompilieren und die resultierenden Objektdateien verknüpfen, um ein Programm zu erstellen.
 

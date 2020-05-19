@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 514400c1-c322-4bf3-9e48-3047240b8a82
 ms.openlocfilehash: 61a6a9edd9faaf8afb06bb7bfdc619cddde3e6fc
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "81349614"
 ---
 # <a name="try-finally-statement-c"></a>try-finally-Anweisung (C)
 
-**Microsoft Specific**
+**Microsoft-spezifisch**
 
 Die `try-finally`-Anweisung ist eine Microsoft-Erweiterung zur Programmiersprache C, die es Zielanwendungen ermöglicht, den Bereinigungscode auszuführen, auch wenn die Ausführung eines Codeblocks unterbrochen wird. Die Bereinigung besteht aus Aufgaben wie z. B. Neuzuweisung von Arbeitsspeicher, Schließen von Dateien und Freigeben von Dateihandles. Die `try-finally`-Anweisung ist besonders nützlich für Routinen, in denen an mehreren Stellen eine Fehlerüberprüfung durchgeführt wird, die eine vorzeitige Rückgabe von der Routine verursachen könnte.
 
-*try-finally-statement*: **__try**  *compound-statement*
+*try-finally-Anweisung*: **__try**  *compound-Anweisung*
 
-**__finally**  *compound-statement*
+**__finally**  *compound-Anweisung*
 
 Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der `__finally`-Klausel ist der Beendigungshandler. Der Handler gibt eine Reihe von Aktionen an, die beim Verlassen des abgesicherten Abschnitts ausgeführt werden, ungeachtet dessen, ob der abgesicherte Abschnitt durch eine Ausnahme (ungewöhnlicher Abbruch) oder durch ein standardmäßiges Fortfahren (gewöhnlicher Abbruch) verlassen wird.
 
@@ -48,7 +48,7 @@ Der Beendigungshandler wird nicht aufgerufen, wenn ein Prozess während der Ausf
 
 Weitere Informationen zur Funktionsweise der `try-finally`-Anweisung finden Sie im Beispiel für die [try-except-Anweisung](../c-language/try-except-statement-c.md).
 
-**END Microsoft Spezifisch**
+**Ende Microsoft-spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -14,7 +14,7 @@ helpviewer_keywords:
 ms.assetid: e22127b1-9a2d-4876-b01d-c8f72cec3317
 ms.openlocfilehash: 50be8ae38f21d0a9f46c180abf179e1358b707cd
 ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "80168772"
@@ -25,21 +25,21 @@ Die bitweisen Operatoren führen bitweise AND ( **&** )-, bitweise exklusive OR 
 
 ## <a name="syntax"></a>Syntax
 
-*And-Expression*: &nbsp;&nbsp;*Gleichheits Ausdrucks* &nbsp;&nbsp;*und-Expression* **&** *Gleichheits Ausdruck*
+*AND-Ausdruck*: &nbsp;&nbsp;*Gleichheitsausdruck* &nbsp;&nbsp;*AND-Ausdruck* **&** *Gleichheitsausdruck*
 
-*exklusives OR-Expression*: &nbsp;&nbsp;*und-Expression* &nbsp;&nbsp;*exklusiven or* -Expression- **^** *und-Ausdruck*
+*exclusive-OR-expression*: &nbsp;&nbsp;*AND-Ausdruck* &nbsp;&nbsp;*exklusiver-OR-Ausdruck* **^** *AND-Ausdruck*
 
-*inclusive-or-Expression*: &nbsp;&nbsp;*exklusiven or-Expression* -&nbsp;&nbsp;*inklusiven* &#124; or-Expression- *Ausdruck*
+*inklusiver-OR-Ausdruck*: &nbsp;&nbsp;*exklusiver-OR-Ausdruck*&nbsp;&nbsp;*inklusiver-OR-Ausdruck* &#124; *exklusiver-OR-Ausdruck*
 
 Die Operanden für bitweise Operatoren müssen Ganzzahltypen aufweisen, aber ihre Typen können unterschiedlich sein. Diese Operatoren führen die üblichen arithmetischen Konvertierungen aus. Der Typ des Ergebnisses ist der Typ der Operanden nach der Konvertierung.
 
 Die bitweisen C-Operatoren sind im Folgenden beschrieben:
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
-|**&**|Der bitweise AND-Operator vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn beide Bits 1 sind, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 festgelegt.|
-|**^**|Der bitweise exklusive OR-Operator vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn ein Bit 0 und das andere 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 festgelegt.|
-|**&#124;**|Der bitweise inklusive OR-Operator vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn eines der Bits 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 festgelegt.|
+|**&**|Der bitweise AND-Operator vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn beide Bits 1 sind, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 (null) festgelegt.|
+|**^**|Der bitweise exklusive OR-Operator vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn ein Bit 0 (null) und das andere Bit 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 (null) festgelegt.|
+|**&#124;**|Der bitweise inklusive OR-Operator vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn jedes Bit 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 (null) festgelegt.|
 
 ## <a name="examples"></a>Beispiele
 
@@ -78,7 +78,7 @@ Das Ergebnis der bitweisen AND-Operation ist 96 dezimal.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Bitweiser AND-Operator (&)](../cpp/bitwise-and-operator-amp.md)<br/>
 [Bitweiser exklusiver OR-Operator: ^](../cpp/bitwise-exclusive-or-operator-hat.md)<br/>

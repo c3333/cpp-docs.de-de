@@ -7,11 +7,11 @@ helpviewer_keywords:
 - arrays [C++], declaring
 ms.assetid: 5f958b97-cef0-4058-bbc6-37c460aaed9b
 ms.openlocfilehash: 4bc75e86601da77758490544cc5b02c485dcee46
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
+ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56147775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62313544"
 ---
 # <a name="array-declarations"></a>Arraydeklarationen
 
@@ -20,21 +20,21 @@ Eine "Arraydeklaration" benennt das Array und gibt den Typ der Elemente an. Hier
 ## <a name="syntax"></a>Syntax
 
 *declaration*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration-specifiers* *init-declarator-list*<sub>opt</sub> **;**
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsspezifizierer* *Initialisierungsdeklaratorliste*<sub>opt</sub> **;**
 
 *init-declarator-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*init-declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*init-declarator-list*  **,**  *init-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Initialisierungsdeklaratorliste*  **,**  *Initialisierungsdeklarator*
 
 *init-declarator*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*declarator*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declarator* **=** *initializer*
+&nbsp;&nbsp;&nbsp;&nbsp;*Deklarator* **=** *Initialisierer*
 
 *declarator*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*pointer*<sub>opt</sub> *direct-declarator*
+&nbsp;&nbsp;&nbsp;&nbsp;*Zeiger*<sub>opt</sub> *direkter-Deklarator*
 
 *direct-declarator*:/\* Ein Funktionsdeklarator \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*direct-declarator*  **[** *constant-expression*<sub>opt</sub> **]**
+&nbsp;&nbsp;&nbsp;&nbsp;*direkter-Deklarator*  **[**  *konstanter-Ausdruck*<sub>opt</sub> **]**
 
 Da *constant-expression* optional ist, hat die Syntax zwei Formen:
 
@@ -42,13 +42,13 @@ Da *constant-expression* optional ist, hat die Syntax zwei Formen:
 
 - Die zweite Form deklariert eine Variable, die an einer anderen Stelle definiert wurde. Sie lässt das *constant-expression*-Argument in Klammern weg, aber nicht die Klammern. Sie können diese Form nur dann verwenden, wenn Sie das Array zuvor initialisiert und als Parameter oder als Verweis auf ein Array deklariert haben, das explizit an anderer Stelle im Programm definiert ist.
 
-Bei beiden Formen vergibt *direct-declarator* den Namen der Variable und kann den Typ der Variable ändern. Die Klammern (**[ ]**) nach *direct-declarator* ändern den Deklarator in einen Arraytyp.
+Bei beiden Formen vergibt *direct-declarator* den Namen der Variable und kann den Typ der Variable ändern. Die Klammern ( **[ ]** ) nach *direct-declarator* ändern den Deklarator in einen Arraytyp.
 
 Typqualifizierer können in der Deklaration eines Objekts des Arraytyps enthalten sein, die Qualifizierer gelten jedoch für die Elemente und nicht für das Array selbst.
 
 Sie können ein Array von Arrays (ein "mehrdimensionales" Array) deklarieren, indem Sie der Arraydeklaration eine Liste konstanter Ausdrücke in Klammern in dieser Form nachstellen:
 
-> *type-specifier* *declarator* **[** *constant-expression* **]** **[** *constant-expression* **]** ...
+> *Typspezifizierer* *Deklarator* **[** *konstanter-Ausdruck* **]** **[** *konstanter-Ausdruck* **]** ...
 
 Jeder *constant-expression* in Klammern definiert die Anzahl von Elementen in der angegebenen Dimension: zweidimensionale Arrays haben zwei Ausdrücke in Klammern, dreidimensionale Arrays haben drei usw. Sie können den ersten konstanten Ausdruck weglassen, wenn Sie das Array initialisiert und es als Parameter oder als Verweis auf ein Array deklariert haben, das explizit an anderer Stelle im Programm definiert ist.
 
