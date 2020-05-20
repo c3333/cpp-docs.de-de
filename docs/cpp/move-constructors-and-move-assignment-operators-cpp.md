@@ -4,16 +4,16 @@ ms.date: 03/05/2018
 helpviewer_keywords:
 - move constructor [C++]
 ms.assetid: e75efe0e-4b74-47a9-96ed-4e83cfc4378d
-ms.openlocfilehash: 81f717162e2c7bebc62a9deeb208700380f62cb8
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2c8fed15787ec4b347694d8c4e40bf7912f3421d
+ms.sourcegitcommit: d4da3693f83a24f840e320e35c24a4a07cae68e2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179366"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550770"
 ---
 # <a name="move-constructors-and-move-assignment-operators-c"></a>Bewegungskonstruktoren und Bewegungszuweisungsoperatoren (C++)
 
-In diesem Thema wird beschrieben, wie ein *bewegungskonstruktor* und ein Bewegungs Zuweisungs C++ Operator für eine Klasse geschrieben werden. Ein bewegungskonstruktor ermöglicht, dass die Ressourcen, die im Besitz eines Rvalue-Objekts sind, ohne Kopieren in einen lvalue verschoben werden. Weitere Informationen zur Verschiebungs Semantik finden Sie unter [rvalue reference declarator: & &](../cpp/rvalue-reference-declarator-amp-amp.md).
+In diesem Thema wird beschrieben, wie ein *bewegungskonstruktor* und ein Bewegungs Zuweisungs Operator für eine C++-Klasse geschrieben werden. Ein bewegungskonstruktor ermöglicht, dass die Ressourcen, die im Besitz eines Rvalue-Objekts sind, ohne Kopieren in einen lvalue verschoben werden. Weitere Informationen zur Verschiebungs Semantik finden Sie unter [rvalue reference declarator:  &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
 Dieses Thema baut auf der C++-Klasse `MemoryBlock` auf, mit der ein Arbeitsspeicherpuffer verwaltet wird.
 
@@ -174,7 +174,7 @@ Im folgenden Beispiel wird der vollständige Bewegungskonstruktor und der Bewegu
 
 ```cpp
 // Move constructor.
-MemoryBlock(MemoryBlock&& other)
+MemoryBlock(MemoryBlock&& other) noexcept
    : _data(nullptr)
    , _length(0)
 {
@@ -193,7 +193,7 @@ MemoryBlock(MemoryBlock&& other)
 }
 
 // Move assignment operator.
-MemoryBlock& operator=(MemoryBlock&& other)
+MemoryBlock& operator=(MemoryBlock&& other) noexcept
 {
    std::cout << "In operator=(MemoryBlock&&). length = "
              << other._length << "." << std::endl;
@@ -219,7 +219,7 @@ MemoryBlock& operator=(MemoryBlock&& other)
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird eine Verbesserung der Leistung Ihrer Anwendungen mithilfe von Bewegungssemantik veranschaulicht. Im Beispiel werden einem Vektorobjekt zwei Elemente hinzugefügt, daraufhin wird ein neues Element zwischen den beiden bestehenden Elementen eingefügt. Die `vector`-Klasse verwendet Verschiebungs Semantik, um den Einfügevorgang effizient auszuführen, indem die Elemente des Vektors verschoben werden, anstatt Sie zu kopieren.
+Im folgenden Beispiel wird eine Verbesserung der Leistung Ihrer Anwendungen mithilfe von Bewegungssemantik veranschaulicht. Im Beispiel werden einem Vektorobjekt zwei Elemente hinzugefügt, daraufhin wird ein neues Element zwischen den beiden bestehenden Elementen eingefügt. Die- `vector` Klasse verwendet Verschiebungs Semantik, um den Einfügevorgang effizient auszuführen, indem die Elemente des Vektors verschoben werden, anstatt Sie zu kopieren.
 
 ```cpp
 // rvalue-references-move-semantics.cpp
@@ -241,22 +241,22 @@ int main()
 }
 ```
 
-Hierdurch wird folgende Ausgabe generiert:
+Dieses Beispiel erzeugt die folgende Ausgabe:
 
 ```Output
 In MemoryBlock(size_t). length = 25.
 In MemoryBlock(MemoryBlock&&). length = 25. Moving resource.
 In ~MemoryBlock(). length = 0.
 In MemoryBlock(size_t). length = 75.
+In MemoryBlock(MemoryBlock&&). length = 75. Moving resource.
 In MemoryBlock(MemoryBlock&&). length = 25. Moving resource.
 In ~MemoryBlock(). length = 0.
-In MemoryBlock(MemoryBlock&&). length = 75. Moving resource.
 In ~MemoryBlock(). length = 0.
 In MemoryBlock(size_t). length = 50.
 In MemoryBlock(MemoryBlock&&). length = 50. Moving resource.
-In MemoryBlock(MemoryBlock&&). length = 50. Moving resource.
-In operator=(MemoryBlock&&). length = 75.
-In operator=(MemoryBlock&&). length = 50.
+In MemoryBlock(MemoryBlock&&). length = 25. Moving resource.
+In MemoryBlock(MemoryBlock&&). length = 75. Moving resource.
+In ~MemoryBlock(). length = 0.
 In ~MemoryBlock(). length = 0.
 In ~MemoryBlock(). length = 0.
 In ~MemoryBlock(). length = 25. Deleting resource.
@@ -289,7 +289,7 @@ In ~MemoryBlock(). length = 75. Deleting resource.
 
 Die Version dieses Beispiels mit Bewegungssemantik ist effizienter als die Version ohne Bewegungssemantik, da weniger Vorgänge zum Kopieren, zur Speicherbelegung und zur Freigabe der Speicherbelegung ausgeführt werden.
 
-## <a name="robust-programming"></a>Robuste Programmierung
+## <a name="robust-programming"></a>Stabile Programmierung
 
 Zur Vermeidung von Ressourcenverlusten geben Sie Ressourcen (z. B. Arbeitsspeicher, Dateihandles und Sockets) im Bewegungszuweisungsoperator immer frei.
 
@@ -299,7 +299,7 @@ Werden sowohl ein Bewegungskonstruktor als auch ein Bewegungszuweisungsoperator 
 
 ```cpp
 // Move constructor.
-MemoryBlock(MemoryBlock&& other)
+MemoryBlock(MemoryBlock&& other) noexcept
    : _data(nullptr)
    , _length(0)
 {
@@ -307,9 +307,9 @@ MemoryBlock(MemoryBlock&& other)
 }
 ```
 
-Die [Std:: Move](../standard-library/utility-functions.md#move) -Funktion behält die Rvalue-Eigenschaft des *anderen* Parameters bei.
+Die [Std:: Move](../standard-library/utility-functions.md#move) -Funktion konvertiert den lvalue `other` in einen Rvalue-Wert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Rvalue-Verweisdeklarator: &&](../cpp/rvalue-reference-declarator-amp-amp.md)<br/>
 [Std:: Move](../standard-library/utility-functions.md#move)
