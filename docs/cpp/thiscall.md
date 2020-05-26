@@ -1,41 +1,37 @@
 ---
 title: __thiscall
-ms.date: 11/04/2016
+ms.date: 05/22/2020
 f1_keywords:
 - __thiscall
 - __thiscall_cpp
 helpviewer_keywords:
 - __thiscall keyword [C++]
 ms.assetid: a6a22dd2-0101-4885-b33b-22f6057965df
-ms.openlocfilehash: 8772159dca71bb7605af5e5919425065423d503d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b9edc2cd8caa5fd5458f6a53c5fdb1f8a5e69914
+ms.sourcegitcommit: 5bb421fdf61d290cac93a03e16a6a80959accf6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188154"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854813"
 ---
-# <a name="__thiscall"></a>__thiscall
+# `__thiscall`
 
-**Microsoft-spezifisch**
+Die **Microsoft-spezifische** **`__thiscall`** Aufruf Konvention wird für C++-Klassenmember-Funktionen in der x86-Architektur verwendet. Dabei handelt es sich um die Standard Aufruf Konvention, die von Element Funktionen verwendet wird, die keine Variablen Argumente ( `vararg` Funktionen) verwenden.
 
-Die **__thiscall** Aufruf Konvention wird für Element Funktionen verwendet und ist die Standard Aufruf Konvention, die C++ von Element Funktionen verwendet wird, die keine Variablen Argumente verwenden. Unter **__thiscall**bereinigt der aufgerufene den Stapel, was für `vararg` Funktionen nicht möglich ist. Argumente werden von rechts nach links auf dem Stapel abgelegt, wobei **dieser** Zeiger über Register ECX und nicht auf dem Stapel in der x86-Architektur übergeben wird.
+Unter wird der Stapel durch den aufgerufenen **`__thiscall`** bereinigt, was für Funktionen nicht möglich ist `vararg` . Argumente werden von rechts nach links auf dem Stapel abgelegt. Der **`this`** Zeiger wird über Register ECX und nicht auf dem Stapel übermittelt.
 
-Ein Grund für die Verwendung von **__thiscall** ist in Klassen, deren Element Funktionen `__clrcall` standardmäßig verwenden. In diesem Fall können Sie **__thiscall** verwenden, um einzelne Member-Funktionen aus nativem Code aufrufbar zu machen.
+Auf arm-, ARM64-und x64-Computern **`__thiscall`** wird vom Compiler akzeptiert und ignoriert. Dies liegt daran, dass Sie standardmäßig eine Register basierte Aufruf Konvention verwenden.
 
-Beim Kompilieren mit [/clr: pure](../build/reference/clr-common-language-runtime-compilation.md)werden alle Funktionen und Funktionszeiger `__clrcall`, sofern nichts anderes angegeben ist. Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
+Ein Grund für die Verwendung **`__thiscall`** von ist die Verwendung von Klassen, deren Member-Funktionen **`__clrcall`** standardmäßig verwenden. In diesem Fall können Sie verwenden, **`__thiscall`** um einzelne Member-Funktionen aus nativem Code aufrufbar zu machen.
 
-In Releases vor Visual Studio 2005 konnte die **__thiscall** Aufruf Konvention nicht explizit in einem Programm angegeben werden, da **__thiscall** kein Schlüsselwort war.
+Beim Kompilieren mit [**`/clr:pure`**](../build/reference/clr-common-language-runtime-compilation.md) sind alle Funktionen und Funktionszeiger, **`__clrcall`** sofern nicht anders angegeben. Die **`/clr:pure`** **`/clr:safe`** Compileroptionen und sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-`vararg` Member-Funktionen verwenden die **__cdecl** Aufruf Konvention. Alle Funktionsargumente werden auf dem Stapel abgelegt, wobei **dieser** Zeiger zuletzt auf dem Stapel abgelegt wurde.
+`vararg`Member-Funktionen verwenden die **`__cdecl`** Aufruf Konvention. Alle Funktionsargumente werden auf dem Stapel abgelegt, wobei der **`this`** Zeiger zuletzt auf dem Stapel abgelegt wird.
 
-Da diese Aufrufkonvention nur für C++ gültig ist, gibt es kein Schema zur C-Namensergänzung.
+Da diese Aufruf Konvention nur auf C++ angewendet wird, verfügt sie über kein C-namens Dekorationsschema.
 
-Auf Arm-und x64-Computern wird **__thiscall** vom Compiler akzeptiert und ignoriert.
+Wenn Sie eine nicht statische Klassenmember-Funktion out-of-Line definieren, geben Sie den Modifizierer für die Aufruf Konvention nur in der Deklaration an. Sie müssen ihn nicht erneut in der Out-of-Line-Definition angeben. Der Compiler verwendet die Aufruf Konvention, die während der Deklaration zum Zeitpunkt der Definition angegeben wird.
 
-Wenn die Funktion bei nicht statischen Klassenfunktionen abweichend definiert ist, muss der Aufrufkonventionsmodifizierer nicht in der abweichenden Definition angegeben werden. Das bedeutet, dass für nicht statische Membermethoden der Klasse zum Zeitpunkt der Definition die während der Deklaration angegebene Aufrufkonvention angenommen wird.
-
-**Ende Microsoft-spezifisch**
-
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Argumentübergabe und Benennungskonventionen](../cpp/argument-passing-and-naming-conventions.md)
