@@ -1,6 +1,6 @@
 ---
 title: Datentypbereiche
-ms.date: 05/07/2019
+ms.date: 05/28/2020
 helpviewer_keywords:
 - float keyword [C++]
 - char keyword [C++]
@@ -35,12 +35,12 @@ helpviewer_keywords:
 - long int keyword [C++]
 - unsigned long int [C++]
 ms.assetid: 3691ceca-05fb-4b82-b1ae-5c4618cda91a
-ms.openlocfilehash: 8b4031eccccb432342790fef4da809542e77d669
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 81545bbd059685526fcf748e3f834ea73b4782c9
+ms.sourcegitcommit: 426e327c9f7c3a3b02300e3f924f9786d62958e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180263"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84206166"
 ---
 # <a name="data-type-ranges"></a>Datentypbereiche
 
@@ -68,45 +68,45 @@ Die Bereiche, die in der folgenden Tabelle angegeben werden, sind "inclusive-inc
 
 |Typname|Byte|Andere Namen|Wertebereich|
 |---------------|-----------|-----------------|---------------------|
-|**int**|4|**signed**|-2.147.483.648 bis 2.147.483.647|
-|**unsigned int**|4|**unsigned**|0 bis 4.294.967.295|
-|**__int8**|1|**char**|–128 bis 127|
-|**nicht signierte __int8**|1|**unsigned char**|0 bis 255|
-|**__int16**|2|**Short**, **short int**, **Signed short int**|-32.768 bis 32.767|
-|**nicht signierte __int16**|2|**Ganzzahl ohne Vorzeichen Short**, **Ganzzahl ohne Vorzeichen short int**|0 bis 65.535|
-|**__int32**|4|**Signed**, **signed int**, **int**|-2.147.483.648 bis 2.147.483.647|
-|**nicht signierte __int32**|4|**Ganzzahl ohne Vorzeichen**, **Ganzzahl ohne Vorzeichen int**|0 bis 4.294.967.295|
-|**__int64**|8|**Long Long**, **Signed Long Long**|-9.223.372.036.854.775.808 bis 9.223.372.036.854.775.807|
-|**__int64 ohne Vorzeichen**|8|**Ganzzahl ohne Vorzeichen long long**|0 bis 18.446.744.073.709.551.615|
-|**bool**|1|none|**false** oder **true**|
-|**char**|1|none|-128 bis 127 standardmäßig<br /><br /> 0 bis 255, falls mithilfe von [/J](../build/reference/j-default-char-type-is-unsigned.md) kompiliert|
-|**signed char**|1|none|–128 bis 127|
-|**unsigned char**|1|none|0 bis 255|
-|**short**|2|**short int**, **Signed short int**|-32.768 bis 32.767|
-|**unsigned short**|2|**unsigned short int**|0 bis 65.535|
-|**long**|4|**long int**, **Signed long int**|-2.147.483.648 bis 2.147.483.647|
-|**unsigned long**|4|**unsigned long int**|0 bis 4.294.967.295|
-|**langes long**|8|None (jedoch Äquivalent zu **__int64**)|-9.223.372.036.854.775.808 bis 9.223.372.036.854.775.807|
-|**Ganzzahl ohne Vorzeichen long long**|8|None (jedoch Äquivalent zu **Ganzzahl ohne Vorzeichen __int64**)|0 bis 18.446.744.073.709.551.615|
-|**enum**|Variiert|none| |
-|**float**|4|none|3.4E +/- 38 (7 Stellen)|
-|**double**|8|none|1.7E +/- 308 (15 Stellen)|
-|**long double**|identisch mit **Double**|none|identisch mit **Double**|
-|**wchar_t**|2|**__wchar_t**|0 bis 65.535|
+|`int`|4|`signed`|-2,147,483,648 bis 2,147,483,647|
+|`unsigned int`|4|`unsigned`|0 bis 4.294.967.295|
+|`__int8`|1|`char`|–128 bis 127|
+|`unsigned __int8`|1|`unsigned char`|0 bis 255|
+|`__int16`|2|`short`, `short int`, `signed short int`|–32.768 bis 32.767|
+|`unsigned __int16`|2|`unsigned short`, `unsigned short int`|0 bis 65.535|
+|`__int32`|4|`signed`, `signed int`, `int`|-2,147,483,648 bis 2,147,483,647|
+|`unsigned __int32`|4|`unsigned`, `unsigned int`|0 bis 4.294.967.295|
+|`__int64`|8|`long long`, `signed long long`|-9,223,372,036,854,775,808 bis 9,223,372,036,854,775,807|
+|`unsigned __int64`|8|`unsigned long long`|0 bis 18.446.744.073.709.551.615|
+|`bool`|1|Keine|`false` oder `true`|
+|`char`|1|Keine|-128 bis 127 standardmäßig<br /><br /> 0 bis 255, falls mithilfe von [/J](../build/reference/j-default-char-type-is-unsigned.md)kompiliert|
+|`signed char`|1|Keine|–128 bis 127|
+|`unsigned char`|1|Keine|0 bis 255|
+|`short`|2|`short int`, `signed short int`|–32.768 bis 32.767|
+|`unsigned short`|2|`unsigned short int`|0 bis 65.535|
+|`long`|4|`long int`, `signed long int`|-2,147,483,648 bis 2,147,483,647|
+|`unsigned long`|4|`unsigned long int`|0 bis 4.294.967.295|
+|`long long`|8|None (jedoch Äquivalent zu `__int64` )|-9,223,372,036,854,775,808 bis 9,223,372,036,854,775,807|
+|`unsigned long long`|8|None (jedoch Äquivalent zu `unsigned __int64` )|0 bis 18.446.744.073.709.551.615|
+|`enum`|Variiert|Keine| |
+|`float`|4|Keine|3.4E +/- 38 (7 Stellen)|
+|`double`|8|Keine|1.7E +/- 308 (15 Stellen)|
+|`long double`|identisch mit`double`|Keine|Identisch mit `double`|
+|`wchar_t`|2|`__wchar_t`|0 bis 65.535|
 
-Abhängig von der verwendeten Verwendung gibt eine Variable von **__wchar_t** entweder einen breit Zeichentyp oder einen Multibyte-Zeichentyp an. Verwenden Sie das Präfix `L` vor einem Zeichen oder einer Zeichenfolgenkonstante, um eine Breitzeichenkonstante festzulegen.
+Abhängig von der Verwendung wird durch die Variable `__wchar_t` entweder ein Breitzeichen oder ein Mehrbytezeichen angegeben. Verwenden `L` Sie das Präfix vor einem Zeichen oder einer Zeichen folgen Konstante, um eine breit Zeichen Konstante auszuwählen.
 
-" **Signed** " und " **Ganzzahl ohne Vorzeichen** " sind modifiziererer, die Sie mit einem beliebigen ganzzahligen Typ außer " **bool**" Beachten Sie **, dass char**, **signed char**und **Ganzzahl ohne Vorzeichen char** drei verschiedene Typen für Mechanismen wie überladen und Vorlagen sind.
+`signed` und `unsigned` sind Modifizierer, die mit jedem ganzzahligen Typ mit Ausnahme von `bool`verwendet werden können. Beachten Sie, dass `char`, `signed char`und `unsigned char` drei verschiedene Typen für Mechanismen wie Überladen und Vorlagen sind.
 
-Die int-Typen " **int** " und " **Ganzzahl ohne Vorzeichen int** " haben eine Größe von vier Bytes. Portabler Code sollte jedoch nicht von der Größe von **int** abhängen, da der Sprachstandard dies Implementierungs spezifisch ist.
+Der `int` -Typ und der- `unsigned int` Typ haben eine Größe von 4 Bytes. Portabler Code sollte jedoch nicht von der Größe von abhängen, `int` da der Sprachstandard dies Implementierungs spezifisch ist.
 
-C/C++ in Visual Studio bietet Unterstützung für ganzzahlige Typen mit angegebener Größe. Weitere Informationen finden Sie unter [__int8, \___int16, \___int32, \___int64](../cpp/int8-int16-int32-int64.md) und [Integer Limits (Integer Grenzen)](../cpp/integer-limits.md).
+C/C++ in Visual Studio bietet Unterstützung für ganzzahlige Typen mit angegebener Größe. Weitere Informationen finden Sie unter [__int8, \_ _int16, \_ _int32, \_ _int64](../cpp/int8-int16-int32-int64.md)und [ganzzahligen Grenzen](../cpp/integer-limits.md).
 
 Weitere Informationen zu den Einschränkungen der einzelnen Typen finden Sie unter [integrierte Typen](../cpp/fundamental-types-cpp.md).
 
 Der Bereich von Enumerationstypen variiert je nach Sprachkontext und angegebenen Compilerflags. Weitere Informationen finden Sie unter [C Enumeration Declarations (C-Enumerationsdeklarationen)](../c-language/c-enumeration-declarations.md) und [Enumerations (Enumerationen)](../cpp/enumerations-cpp.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Integrierte Typen](../cpp/fundamental-types-cpp.md)

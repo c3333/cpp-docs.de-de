@@ -1,6 +1,6 @@
 ---
 title: strcpy_s, wcscpy_s, _mbscpy_s, _mbscpy_s_l
-ms.date: 4/2/2020
+ms.date: 5/28/2020
 api_name:
 - wcscpy_s
 - _mbscpy_s
@@ -45,12 +45,12 @@ helpviewer_keywords:
 - tcscpy_s function
 - wcscpy_s function
 ms.assetid: 611326f3-7929-4a5d-a465-a4683af3b053
-ms.openlocfilehash: d2d13939f0edde278b96a9d82fcbe82b6abe5d0a
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: d8cfbc97f6c2a6d865a1436a276641a4d8f93713
+ms.sourcegitcommit: 426e327c9f7c3a3b02300e3f924f9786d62958e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911845"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84206192"
 ---
 # <a name="strcpy_s-wcscpy_s-_mbscpy_s-_mbscpy_s_l"></a>strcpy_s, wcscpy_s, _mbscpy_s, _mbscpy_s_l
 
@@ -116,7 +116,7 @@ errno_t _mbscpy_s_l(
 Speicherort des Zielzeichenfolgenpuffers.
 
 *dest_size*<br/>
-Größe des Ziel Zeichen folgen Puffers in **char** -Einheiten für schmale und Multi-Byte-Funktionen und **wchar_t** Einheiten für Wide Functions. Dieser Wert muss größer als 0 (null) und nicht größer als **RSIZE_MAX**sein.
+Größe des Ziel Zeichen folgen Puffers in **char** -Einheiten für schmale und Multi-Byte-Funktionen und **wchar_t** Einheiten für Wide Functions. Dieser Wert muss größer als 0 (null) und nicht größer als **RSIZE_MAX**sein. Stellen Sie sicher, dass diese Größe das Ende `NULL` nach der Zeichenfolge berücksichtigt.
 
 *src*<br/>
 Auf NULL endender Quellzeichenfolgepuffer.
@@ -132,8 +132,8 @@ Null (0), wenn erfolgreich; andernfalls ein Fehler.
 
 |*dest*|*dest_size*|*src*|Rückgabewert|Inhalt von *dest*|
 |----------------------|------------------------|-----------------|------------------|----------------------------------|
-|**Normal**|any|any|**Eingabe**|nicht geändert|
-|any|any|**Normal**|**Eingabe**|*dest*[0] auf 0 festgelegt|
+|**NULL**|any|any|**Eingabe**|nicht geändert|
+|any|any|**NULL**|**Eingabe**|*dest*[0] auf 0 festgelegt|
 |any|0 oder zu klein|any|**ERANGE**|*dest*[0] auf 0 festgelegt|
 
 ## <a name="remarks"></a>Hinweise
@@ -160,7 +160,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**strcpy_s**|\<string.h>|
 |**wcscpy_s**|\<string.h> oder \<wchar.h>|
@@ -231,7 +231,7 @@ int main(void)
 String = Hello world from wcscpy_s and wcscat_s!
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md) <br/>
 ["ercat", "wcscat", "_mbscat" _mbscat_l](strcat-wcscat-mbscat.md) <br/>
