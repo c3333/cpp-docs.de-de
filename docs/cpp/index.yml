@@ -1,0 +1,111 @@
+### YamlMime:Landing
+title: Dokumentation zu C++
+summary: Hier erfahren Sie, wie Sie C++ und die C++-Standardbibliothek verwenden.
+metadata:
+  title: 'C++-Dokumentation: Einstieg, Tutorials, Referenz'
+  description: Referenz für die C++-Programmierung für Benutzer von C++ und Microsoft Visual Studio
+  ms.topic: landing-page
+  ms.date: 05/08/2020
+  ms.openlocfilehash: d94a9821e28641c6297261f520359a7179006ff4
+  ms.sourcegitcommit: f7ebdfc3a260778c2ef938747cba1376c70ced15
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 05/27/2020
+  ms.locfileid: "84108620"
+landingContent:
+- title: Einführung in Visual C++ in Visual Studio
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Herunterladen von Visual Studio für Windows
+      url: https://visualstudio.microsoft.com/downloads
+    - text: Installieren der C/C++-Unterstützung in Visual Studio
+      url: ../build/vscpp-step-0-installation.md
+    - text: Ausschließliches Herunterladen der Befehlszeilenbuildtools
+      url: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019
+  - linkListType: get-started
+    links:
+    - text: Hallo Welt in Visual Studio mit C++
+      url: ../build/vscpp-step-1-create.md
+    - text: Erstellen eines Taschenrechners in C++
+      url: ../get-started/tutorial-console-cpp.md
+  - linkListType: video
+    links:
+    - text: 'Einführung in C++: Eine universelle Programmiersprache und Bibliothek'
+      url: https://channel9.msdn.com/Series/cplusplus-language-library
+  - linkListType: learn
+    links:
+    - text: Willkommen zurück bei C++ (Modern C++)
+      url: ../cpp/welcome-back-to-cpp-modern-cpp.md
+    - text: Beispiele und das Beispielarchiv
+      url: ../overview/visual-cpp-samples.md
+- title: Neuerungen bei C++ in Visual Studio
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Neuerungen bei C++ in Visual Studio
+      url: ../overview/what-s-new-for-visual-cpp-in-visual-studio.md
+    - text: Verbesserungen an C++ bei der Übereinstimmung mit Standards
+      url: ../overview/cpp-conformance-improvements.md
+  - linkListType: overview
+    links:
+    - text: Übersicht über die C++-Entwicklung in Visual Studio
+      url: ../overview/overview-of-cpp-development.md
+    - text: Unterstützte Plattformen
+      url: ../overview/supported-platforms-visual-cpp.md
+    - text: Hilfe und Communityressourcen
+      url: ../overview/visual-cpp-help-and-community.md
+    - text: Melden eines Problems oder Einreichen eines Vorschlags
+      url: ../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md
+- title: Verwenden des Compilers und der Tools
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: C/C++-Buildverweis
+      url: ../build/reference/c-cpp-building-reference.md
+    - text: Projekte und Buildsysteme
+      url: ../build/projects-and-build-systems-cpp.md
+    - text: Compilerreferenz
+      url: ../build/reference/compiling-a-c-cpp-program.md
+    - text: Linkerreferenz
+      url: ../build/reference/linking.md
+    - text: Zusätzliche Buildtools
+      url: ../build/reference/c-cpp-build-tools.md
+    - text: Fehler und Warnungen
+      url: ../error-messages/compiler-errors-1/c-cpp-build-errors.md
+- title: Programmiersprache C++
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: C++-Programmiersprachenreferenz
+      url: ../cpp/cpp-language-reference.md
+    - text: C++-Schlüsselwörter
+      url: ../cpp/keywords-cpp.md
+    - text: C++-Operatoren
+      url: ../cpp/cpp-built-in-operators-precedence-and-associativity.md
+    - text: C/C++-Präprozessorreferenz
+      url: ../preprocessor/c-cpp-preprocessor-reference.md
+- title: C++-Standardbibliothek
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Übersicht über die C++-Standardbibliothek
+      url: ../standard-library/cpp-standard-library-overview.md
+    - text: Referenz zur C++-Standardbibliothek nach Headern
+      url: ../standard-library/cpp-standard-library-header-files.md
+    - text: Container der C++-Standardbibliothek
+      url: ../standard-library/stl-containers.md
+    - text: Iterators
+      url: ../standard-library/iterators.md
+    - text: Algorithmen
+      url: ../standard-library/algorithms.md
+    - text: Allocators
+      url: ../standard-library/allocators.md
+    - text: Funktionsobjekte
+      url: ../standard-library/function-objects-in-the-stl.md
+    - text: iostream-Programmierung
+      url: ../standard-library/iostream-programming.md
+    - text: Reguläre Ausdrücke
+      url: ../standard-library/regular-expressions-cpp.md
+    - text: Dateisystemnavigation
+      url: ../standard-library/file-system-navigation.md
