@@ -1,0 +1,43 @@
+### YamlMime:Landing
+title: C++ Build Insights | Automatisieren der Analyse der Buildtoolkette
+summary: Verwenden Sie C++ Build Insights für Buildanalyse und -optimierung in Echtzeit und automatisch.
+metadata:
+  title: C++ Build Insights
+  description: Erfahren Sie, wie Sie Ihre Builds mit C++ Build Insights analysieren und optimieren.
+  ms.topic: landing-page
+  author: corob-msft
+  ms.author: corob
+  ms.date: 05/26/2020
+  ms.openlocfilehash: e5a165888026c1485b77bd2784e22b3c9b36684a
+  ms.sourcegitcommit: 0df64a1b518a238c943986a898f40d12347b712f
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84153538"
+landingContent:
+- title: Erfahren Sie, wie Ihr Build funktioniert
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Erste Schritte mit C++ Build Insights
+      url: get-started-with-cpp-build-insights.md
+  - linkListType: tutorial
+    links:
+    - text: vcperf und Windows Performance Analyzer
+      url: tutorials/vcperf-and-wpa.md
+    - text: Windows Performance Analyzer-Grundlagen
+      url: tutorials/wpa-basics.md
+- title: Messen der Buildleistung
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: vcperf-Befehle
+      url: reference/vcperf-commands.md
+    - text: Windows Performance Analyzer-Ansichten
+      url: reference/wpa-views.md
+- title: Erstellen Ihrer eigenen Buildleistungsanalyse
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: SDK-Referenz
+      url: reference/sdk/overview.md

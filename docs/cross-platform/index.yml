@@ -1,0 +1,49 @@
+### YamlMime:Landing
+title: Mobile Entwicklung mit C++ | Windows UWP, Android und iOS
+summary: Erstellen Sie mit Visual Studio native C++-Apps für iOS-, Android- und Windows-Geräte.
+metadata:
+  title: Mobile Entwicklung mit C++-Dokumentation
+  description: Erstellen Sie mit Visual Studio native C++-Apps für iOS-, Android- und Windows-Geräte.
+  ms.topic: landing-page
+  author: corob-msft
+  ms.author: corob
+  ms.date: 05/26/2020
+  ms.openlocfilehash: 7a858d9f26c106988156813b3f1f6bbe995e620a
+  ms.sourcegitcommit: 0df64a1b518a238c943986a898f40d12347b712f
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84153528"
+landingContent:
+- title: Erfahren Sie, wie Sie plattformübergreifende mobile Apps erstellen
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Installieren der plattformübergreifenden mobile Entwicklung mit C++
+      url: install-visual-cpp-for-cross-platform-mobile-development.md
+  - linkListType: overview
+    links:
+    - text: Überblick über die plattformübergreifende mobile Entwicklung mit C++
+      url: visual-cpp-for-cross-platform-mobile-development.md
+  - linkListType: tutorial
+    links:
+    - text: Erstellen einer OpenGL ES-Anwendung für Android und iOS
+      url: build-an-opengl-es-application-on-android-and-ios.md
+    - text: Erstellen einer Android Native Activity-App
+      url: create-an-android-native-activity-app.md
+  - linkListType: learn
+    links:
+    - text: Beispiele für die plattformübergreifende mobile Entwicklung
+      url: cross-platform-mobile-development-examples.md
+- title: Plattformübergreifende Referenz
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Referenz zur plattformübergreifenden Eigenschaftenseite für C++
+      url: cross-platform-prop-pages.md
+    - text: Dokumentation für die Universelle Windows-Plattform (UWP)
+      url: /cpp/cppcx/universal-windows-apps-cpp
+    - text: iOS-API-Dokumentation
+      url: https://developer.apple.com/reference
+    - text: Android-API-Dokumentation
+      url: https://developer.android.com/guide/index.html
