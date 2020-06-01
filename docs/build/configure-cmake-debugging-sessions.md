@@ -4,12 +4,12 @@ description: Hier wird die Verwendung von Visual Studio zum Konfigurieren der CM
 ms.date: 04/02/2020
 helpviewer_keywords:
 - CMake debugging
-ms.openlocfilehash: 8364e5b3dd3316a4ed7e754a104a14373040aa6e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f860d1ae78d401a9e5079e79684a053220deaa6c
+ms.sourcegitcommit: 3f91111c0350c0237fddb82766c290307f20e659
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328855"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83630521"
 ---
 # <a name="configure-cmake-debugging-sessions"></a>Konfigurieren von CMake-Debugsitzungen
 
@@ -97,7 +97,7 @@ In Visual 2019, Version 16.6 haben wir eine neue Debugkonfiguration von `type:
 - `name`: Dies ist ein Anzeigename zum Identifizieren der Konfiguration im Dropdownmenü **Startelement**.
 - `project`: Hiermit wird der relative Pfad zur Projektdatei angegeben. Normalerweise müssen Sie diesen Pfad beim Debuggen eines CMake-Projekts nicht ändern.
 - `projectTarget`: Hiermit wird das CMake-Ziel angegeben, das beim Erstellen des Projekts abgerufen werden soll. Visual Studio füllt diese Eigenschaft automatisch auf, wenn Sie *launch.vs.json* im **Menü „Debuggen“** oder in der **Targets View** (Zielansicht) eingeben. Dieser Zielwert muss mit dem Namen eines vorhandenen Debugziels übereinstimmen, das im Dropdownmenü **Startelement** aufgeführt wird.
-- `debuggerConfiguration`: Hiermit wird angegeben, welche Gruppe von Standarddebugwerten verwendet werden soll. In Visual Studio 2019, Version 16.6 ist `gdb` die einzige gültige Option. Frühere Versionen unterstützen auch `gdbserver`.
+- `debuggerConfiguration`: Hiermit wird angegeben, welche Gruppe von Standarddebugwerten verwendet werden soll. In Visual Studio 2019, Version 16.6 ist `gdb` die einzige gültige Option. Visual Studio 2019, Version 16.7 oder höher, bietet ebenfalls Unterstützung für `gdbserver`.
 - `args`: Dies sind die Befehlszeilenargumente, die beim Start an das zu debuggende Programm übergeben werden.
 - `env`: Diese zusätzlichen Umgebungsvariablen werden an das zu debuggende Programm übergeben. Beispielsweise `{"DISPLAY": "0.0"}`.
 - `processID`: Dies ist die Linux-Prozess-ID, an die angehängt werden soll. Diese wird nur beim Anhängen an einen Remoteprozess verwendet. Weitere Informationen finden Sie unter [Problembehandlung beim Anhängen an Prozesse mithilfe von gdb](https://github.com/Microsoft/MIEngine/wiki/Troubleshoot-attaching-to-processes-using-GDB).
@@ -109,6 +109,15 @@ In Visual 2019, Version 16.6 haben wir eine neue Debugkonfiguration von `type:
 - `cwd`: Wird standardmäßig auf `"${debugInfo.defaultWorkingDirectory}"` festgelegt. Dies ist der UNIX-Pfad zum Verzeichnis auf dem Remotesystem, auf dem `program` ausgeführt wird. Das Verzeichnis muss vorhanden sein.
 - `gdbpath`: Wird standardmäßig auf `/usr/bin/gdb` festgelegt. Dies ist der vollständige UNIX-Pfad zu dem zum Debuggen verwendeten `gdb`-Befehl. Dieser ist nur erforderlich, wenn eine benutzerdefinierte Version von `gdb` verwendet wird.
 - `preDebugCommand`: Dies ist ein Linux-Befehl, der unmittelbar vor dem Aufrufen von `gdb` ausgeführt wird. `gdb` wird nicht gestartet, bis der Befehl abgeschlossen ist. Sie können die Option verwenden, um ein Skript vor der Ausführung von `gdb` auszuführen.
+
+#### <a name="additional-options-allowed-with-the-gdbserver-configuration-167-or-later"></a>Mit der `gdbserver`-Konfiguration (16.7 oder höher) sind weitere Optionen zulässig.
+
+- `program`: Wird standardmäßig auf `"${debugInfo.fullTargetPath}"` festgelegt. Dies ist der UNIX-Pfad zu der zu debuggenden Anwendung. Dieser ist nur erforderlich, wenn dieser von dem der ausführbaren Zieldatei im Build- oder Bereitstellungsspeicherort abweicht.
+- `remoteMachineName`:  Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
+- `cwd`: Wird standardmäßig auf `"${debugInfo.defaultWorkingDirectory}"` festgelegt. Dies ist der vollständige UNIX-Pfad zum Verzeichnis auf dem Remotesystem, auf dem `program` ausgeführt wird. Das Verzeichnis muss vorhanden sein.
+- `gdbPath`: Wird standardmäßig auf `${debugInfo.vsInstalledGdb}` festgelegt. Dies ist der vollständige Windows-Pfad zum `gdb`-Befehl, der für das Debuggen verwendet wird. Entspricht standardmäßig `gdb` (wird mit der Linux-Entwicklung mit der C/C++-Workload installiert).
+- `gdbserverPath`: Wird standardmäßig auf `usr/bin/gdbserver` festgelegt. Dies ist der vollständige UNIX-Pfad zu dem zum Debuggen verwendeten `gdbserver`-Befehl.
+- `preDebugCommand`: Dies ist ein Linux-Befehl, der unmittelbar vor dem Start von `gdbserver` ausgeführt wird. `gdbserver` wird nicht gestartet, bis der Befehl abgeschlossen ist.
 
 #### <a name="deployment-options"></a>Bereitstellungsoptionen
 

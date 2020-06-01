@@ -2,12 +2,12 @@
 title: ARM64-Ausnahmebehandlung
 description: Hier werden die Konventionen für die Ausnahmebehandlung erklärt, und Sie erfahren, welche Daten von Windows auf ARM64 verwendet werden.
 ms.date: 11/19/2018
-ms.openlocfilehash: 2304c04c5e9be31299e30bb48771f7c9777d1cd5
-ms.sourcegitcommit: b9aaaebe6e7dc5a18fe26f73cc7cf5fce09262c1
+ms.openlocfilehash: abc77aa683e73a2740c71ffbd7ddead07f91ff7d
+ms.sourcegitcommit: 5bb421fdf61d290cac93a03e16a6a80959accf6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504483"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854826"
 ---
 # <a name="arm64-exception-handling"></a>ARM64-Ausnahmebehandlung
 
@@ -307,12 +307,7 @@ Die Entladungscodes werden der folgenden Tabelle entsprechend codiert. Alle Entl
 |`end`|            11100100: Ende des Entladungscodes, impliziert ret im Epilog |
 |`end_c`|        11100101: Ende des Entladungscodes im aktuellen verketteten Bereich |
 |`save_next`|        11100110: Das nächste nicht flüchtige Integer- oder FP-Registerpaar wird gespeichert. |
-|`arithmetic(add)`|    11100111'000zxxxx: Das Cookie reg(z) wird zu lr (0=x28, 1=sp); `add lr, lr, reg(z)` hinzugefügt. |
-|`arithmetic(sub)`|    11100111'001zxxxx: Subookie reg(z) von lr (0=x28, 1=sp); `sub lr, lr, reg(z)` |
-|`arithmetic(eor)`|    11100111'010zxxxx: eor-Vorgang für lr mit Cookie reg(z) (0=x28, 1=sp); `eor lr, lr, reg(z)` |
-|`arithmetic(rol)`|    11100111'0110xxxx: simulierter rol-Vorgang für lr mit Cookie reg (x28); xip0 = neg x28; `ror lr, xip0` |
-|`arithmetic(ror)`|    11100111'100zxxxx: ror-Vorgang für lr mit Cookie reg(z) (0=x28, 1=sp); `ror lr, lr, reg(z)` |
-| |            11100111: xxxz----: ----, reserviert |
+| |            11100111: reserviert |
 | |              11101xxx: Für folgende benutzerdefinierte Stapelfälle reserviert, wird nur für ASM-Routinen generiert. |
 | |              11101000: Benutzerdefinierter Stapel für MSFT_OP_TRAP_FRAME |
 | |              11101001: Benutzerdefinierter Stapel für MSFT_OP_MACHINE_FRAME |

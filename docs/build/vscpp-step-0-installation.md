@@ -1,21 +1,21 @@
-﻿---
-title: Installieren der C++-Unterstützung in Visual Studio
+---
+title: Installieren der Unterstützung für C und C++ in Visual Studio
 description: Installieren der Visual Studio-Unterstützung für Visual C++
 ms.custom: mvc
 ms.date: 04/02/2019
 ms.topic: tutorial
 ms.devlang: cpp
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: d3018bef9254a8eab557057c035cde84310a2452
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a850803b8804c2463cd3388ec2bcf0ad9f4f3610
+ms.sourcegitcommit: d4da3693f83a24f840e320e35c24a4a07cae68e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81335369"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550809"
 ---
-# <a name="install-c-support-in-visual-studio"></a>Installieren der C++-Unterstützung in Visual Studio
+# <a name="install-c-and-c-support-in-visual-studio"></a>Installieren der Unterstützung für C und C++ in Visual Studio
 
-Wenn Sie Visual Studio und die Visual C++-Tools noch nicht heruntergeladen und installiert haben, finden Sie hier Informationen zu den ersten Schritten.
+Wenn Sie Visual Studio und die Microsoft C/C++-Tools noch nicht heruntergeladen und installiert haben, finden Sie hier Informationen zu den ersten Schritten.
 
 ::: moniker range="vs-2019"
 
@@ -40,7 +40,7 @@ Vor der Installation von Visual Studio:
 
 1. Starten Sie den Computer neu. Dadurch wird sichergestellt, dass keine ausstehenden Installationen oder Updates die Installation von Visual Studio behindern.
 
-4. Geben Sie Speicherplatz frei. Entfernen Sie nicht benötigte Dateien und Anwendungen z.B. mit der Datenträgerbereinigung-App von Ihrem %Systemlaufwerk%.
+1. Geben Sie Speicherplatz frei. Entfernen Sie nicht benötigte Dateien und Anwendungen z.B. mit der Datenträgerbereinigung-App von Ihrem %Systemlaufwerk%.
 
 Informationen zur parallelen Ausführung vorheriger Versionen von Visual Studio und Visual Studio 2019 finden Sie auf der Seite [Visual Studio 2019 – Zielplattformen und Kompatibilität](/visualstudio/releases/2019/compatibility/).
 
@@ -73,12 +73,9 @@ Nach der Installation des Installationsprogramms können Sie dieses zum Anpassen
 
    ![Visual Studio 2019: Workload installieren](../get-started/media/vs-installer-workloads.png)
 
-   Klicken Sie für die C++-Unterstützung auf die Workload „Desktopentwicklung mit C++“. Sie wird mit dem standardmäßigen Kern-Editor bereitgestellt, der die grundlegende Codebearbeitung für über 20 Sprachen, die Möglichkeit, Code aus einem beliebigen Ordner heraus zu öffnen und zu bearbeiten, ohne dass ein Projekt erforderlich ist, und die integrierte Quellcodekontrolle unterstützt.
-   
-   Weitere Workloads unterstützen andere Arten der C++-Entwicklung. Wählen Sie beispielsweise die Workload „Entwicklung für die universelle Windows-Plattform“ zum Erstellen von Apps aus, die die Windows-Runtime für den Microsoft Store verwenden. Nutzen Sie „Spieleentwicklung mit C++“, um Spiele zu erstellen, die DirectX, Unreal und Cocos2d verwenden. Wählen Sie „Linux Entwicklung mit C++“ für Linux-Plattformen einschließlich der IoT-Entwicklung als Ziel.
-   * Öffnen und Bearbeiten von Quellcode in einem beliebigen Ordner ohne Vorraussetzung eines Projekts
-   * integrierte Versionskontrolle für Quellcode
+   Klicken Sie für die C and C++-Unterstützung auf die Workload „Desktopentwicklung mit C++“. Sie wird mit dem standardmäßigen Kern-Editor bereitgestellt, der die grundlegende Codebearbeitung für über 20 Sprachen, die Möglichkeit, Code aus einem beliebigen Ordner heraus zu öffnen und zu bearbeiten, ohne dass ein Projekt erforderlich ist, und die integrierte Quellcodekontrolle unterstützt.
 
+   Weitere Workloads unterstützen andere Arten der Entwicklung. Wählen Sie beispielsweise die Workload „Entwicklung für die universelle Windows-Plattform“ zum Erstellen von Apps aus, die die Windows-Runtime für den Microsoft Store verwenden. Nutzen Sie „Spieleentwicklung mit C++“, um Spiele zu erstellen, die DirectX, Unreal und Cocos2d verwenden. Wählen Sie „Linux Entwicklung mit C++“ für Linux-Plattformen einschließlich der IoT-Entwicklung als Ziel.
 
    Im Bereich **Details zur Installation** werden die enthaltenen und optionalen Komponenten aufgelistet, die von den einzelnen Workloads installiert werden. Sie können optionale Komponenten in dieser Liste aktivieren bzw. deaktivieren. Wählen Sie die optionalen Komponenten „MSVC v141“ oder „MSVC v140“, wenn Sie beispielsweise die Entwicklung mithilfe der Compilertoolsets von Visual Studio 2017 oder 2015 unterstützen möchten. Sie können die Unterstützung für die MFC, die Spracherweiterung für experimentelle Module, IncrediBuild und vieles mehr hinzufügen.
 
@@ -124,11 +121,11 @@ Sie können den Speicherbedarf für die Installation von Visual Studio auf Ihrem
 
    Sie können die Suchergebnisse nach bestimmten Programmiersprachen filtern, indem Sie die Dropdownliste **Sprache** verwenden. Sie können außerdem die Listen **Plattform** und **Projekttyp** zum Filtern verwenden.
 
-3. Ihr neues Projekt wird dann in Visual Studio geöffnet, und Sie können damit anfangen, Code zu schreiben.
+1. Ihr neues Projekt wird dann in Visual Studio geöffnet, und Sie können damit anfangen, Code zu schreiben.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="vs-2017"
 
 ## <a name="visual-studio-2017-installation"></a>Installation von Visual Studio 2017
 
@@ -162,7 +159,7 @@ Ausführliche Informationen zum Speicherplatz und den Betriebssystemanforderunge
 
    ![Workload „Desktopentwicklung mit C++“](media/desktop-development-with-cpp.png "Desktopentwicklung mit C++")
 
-   Wählen Sie für C++ die Workload **Desktopentwicklung mit C++** aus, und klicken Sie dann auf **Installieren**.
+   Wählen Sie für C und C++ die Workload **Desktopentwicklung mit C++** aus, und wählen Sie dann **Installieren** aus.
 
    ![Installieren der Workload „Desktopentwicklung mit C++“](media/vscpp-concierge-choose-workload.gif "Installieren der Workload „Desktopentwicklung mit C++“")
 
@@ -188,9 +185,9 @@ Ausführliche Informationen zum Speicherplatz und den Betriebssystemanforderunge
 
 ## <a name="visual-studio-2015-installation"></a>Installation von Visual Studio 2015
 
-Auf der Seite [Downloads älterer Versionen von Visual Studio](https://www.visualstudio.com/vs/older-downloads/) können Sie Visual Studio 2015 herunterladen. Führen Sie das Setupprogramm aus, klicken Sie auf **Benutzerdefinierte Installation**, und wählen Sie die C++-Komponente aus. Wenn Sie einer vorhandenen Visual Studio 2015-Installation die Unterstützung für C++ hinzufügen möchten, klicken Sie auf die Windows-Schaltfläche „Start“, und geben Sie **Programme hinzufügen** ein. Öffnen Sie das Programm aus der Ergebnisliste, und suchen Sie dann Ihre Visual Studio 2015-Installation in der Liste der installierten Programme. Doppelklicken Sie darauf, klicken Sie auf **Ändern**, und wählen Sie dann die Visual C++-Komponenten aus, die Sie installieren möchten.
+Auf der Seite [Downloads älterer Versionen von Visual Studio](https://www.visualstudio.com/vs/older-downloads/) können Sie Visual Studio 2015 herunterladen. Führen Sie das Setupprogramm aus, klicken Sie auf **Benutzerdefinierte Installation**, und wählen Sie die C++-Komponente aus. Wenn Sie einer vorhandenen Visual Studio 2015-Installation die Unterstützung für C und C++ hinzufügen möchten, klicken Sie auf die Windows-Schaltfläche „Start“, und geben Sie **Programme hinzufügen** ein. Öffnen Sie das Programm aus der Ergebnisliste, und suchen Sie dann Ihre Visual Studio 2015-Installation in der Liste der installierten Programme. Doppelklicken Sie darauf, klicken Sie auf **Ändern**, und wählen Sie dann die Visual C++-Komponenten aus, die Sie installieren möchten.
 
-In der Regel wird die Verwendung von Visual Studio 2017 empfohlen, auch wenn Sie dann Ihren Code mithilfe des Visual Studio 2015-Compilers kompilieren müssen. Weitere Informationen finden Sie unter [Use native multi-targeting in Visual Studio to build old projects (Verwenden der nativen Festlegung von Zielversionen in Visual Studio, um alte Projekte zu erstellen)](../porting/use-native-multi-targeting.md).
+In der Regel wird die Verwendung der aktuellen Visual Studio-Version selbst dann empfohlen, wenn Sie in diesem Fall Ihren Code mithilfe des Visual Studio 2015-Compilers kompilieren müssen. Weitere Informationen finden Sie unter [Use native multi-targeting in Visual Studio to build old projects (Verwenden der nativen Festlegung von Zielversionen in Visual Studio, um alte Projekte zu erstellen)](../porting/use-native-multi-targeting.md).
 
 ::: moniker-end
 
