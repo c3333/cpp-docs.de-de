@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.technology: cpp-ide
 helpviewer_keywords:
 - Visual C++, home page
-ms.openlocfilehash: f00ec21db29299549821aae09064f788f92bd667
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: adcf1334979fd083a4f32074f13b0bc204405a5c
+ms.sourcegitcommit: f7ebdfc3a260778c2ef938747cba1376c70ced15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365206"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84108431"
 ---
 # <a name="c-in-visual-studio"></a>C++ in Visual Studio
 
@@ -99,7 +99,7 @@ Informationen zum Erstellen von traditionellen nativen C++-Desktopanwendungen f�
 [.NET-Programmierung mit C++/CLI](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)<br/>
 Informationen zum Erstellen von DLLs, die die Interoperabilität zwischen nativen C++- und .NET-Programmen ermöglicht, die in Sprachen wie C# oder Visual Basic geschrieben werden.
 
-[Linux-Programmierung](../linux/index.md)<br/>
+[Linux-Programmierung](../linux/index.yml)<br/>
 Verwenden Sie die Visual Studio-IDE, um einen Linux-Remotecomputer für die Kompilierung mit GCC zu programmieren und bereitzustellen.
 
 [Erstellen von C/C++-DLLs in Visual Studio](../build/dlls-in-visual-cpp.md)<br/>
