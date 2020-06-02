@@ -3,7 +3,6 @@
 - name: 'Herunterladen, Installieren und Einrichten der Linux-Entwicklungsworkload'
   href: ../linux/download-install-and-setup-the-linux-development-workload.md
 - name: Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer
-  expanded: true
   items:
     - name: Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer
       href: ../linux/connect-to-your-remote-linux-computer.md
@@ -11,40 +10,43 @@
       href: ../linux/set-up-fips-compliant-secure-remote-linux-development.md
     - name: Referenz zu ConnectionManager
       href: ../linux/connectionmanager-reference.md
-- name: Erstellen eines neuen Linux-Projekts
-  href: ../linux/create-a-new-linux-project.md
-- name: Konfigurieren eines Linux-Projekts
-  href: ../linux/configure-a-linux-project.md
-- name: Erstellen und Konfigurieren eines Linux-CMake-Projekts
-  href: ../linux/cmake-linux-project.md
+- name: Erstellen von Linux-Projekten mit MSBuild in Visual Studio
+  items:
+    - name: Erstellen eines neuen Linux-Projekts
+      href: ../linux/create-a-new-linux-project.md
+    - name: Konfigurieren eines Linux-Projekts
+      href: ../linux/configure-a-linux-project.md
+    - name: 'Bereitstellen, Ausführen und Debuggen eines Linux-Projekts'
+      href: ../linux/deploy-run-and-debug-your-linux-project.md
+    - name: Referenz zur Linux-Projekteigenschaftenseite
+      items:
+        - name: Referenz zur Linux-Projekteigenschaftenseite
+          href: ../linux/prop-pages-linux.md
+        - name: Allgemeine Eigenschaften (Linux)
+          href: ../linux/prop-pages/general-linux.md
+        - name: Debugeigenschaften (Linux)
+          href: ../linux/prop-pages/debugging-linux.md
+        - name: VC++-Verzeichniseigenschaften (Linux)
+          href: ../linux/prop-pages/directories-linux.md
+        - name: Eigenschaften zum Kopieren von Quellen (Linux)
+          href: ../linux/prop-pages/copy-sources-project.md
+        - name: C-/C++-Eigenschaften (Linux)
+          href: ../linux/prop-pages/c-cpp-linux.md
+        - name: Linkereigenschaften (Linux)
+          href: ../linux/prop-pages/linker-linux.md
+        - name: Buildereigniseigenschaften (Linux)
+          href: ../linux/prop-pages/build-events-linux.md
+        - name: Eigenschaften benutzerdefinierter Buildschritte (Linux)
+          href: ../linux/prop-pages/custom-build-step-linux.md
+        - name: MakeFile-Projekteigenschaften (Linux)
+          href: ../linux/prop-pages/makefile-linux.md
+        - name: Remotearchiveigenschaften (Linux)
+          href: ../linux/prop-pages/remote-ar-linux.md
+- name: Erstellen von Linux-Projekten mit CMake in Visual Studio
+  items:
+    - name: Erstellen und Konfigurieren eines Linux-CMake-Projekts
+      href: ../linux/cmake-linux-project.md
+    - name: 'Tutorial: Erstellen plattformübergreifender C++-Projekte in Visual Studio'
+      href: ../build/get-started-linux-cmake.md
 - name: Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
   href: ../linux/linux-asan-configuration.md
-- name: 'Bereitstellen, Ausführen und Debuggen eines Linux-Projekts'
-  href: ../linux/deploy-run-and-debug-your-linux-project.md
-- name: 'Tutorial: Erstellen plattformübergreifender C++-Projekte in Visual Studio'
-  href: ../build/get-started-linux-cmake.md
-- name: Referenz zur Linux-Projekteigenschaftenseite
-  expanded: false
-  items:
-    - name: Referenz zur Linux-Projekteigenschaftenseite
-      href: ../linux/prop-pages-linux.md
-    - name: Allgemeine Eigenschaften (Linux)
-      href: ../linux/prop-pages/general-linux.md
-    - name: Debugeigenschaften (Linux)
-      href: ../linux/prop-pages/debugging-linux.md
-    - name: VC++-Verzeichniseigenschaften (Linux)
-      href: ../linux/prop-pages/directories-linux.md
-    - name: Eigenschaften zum Kopieren von Quellen (Linux)
-      href: ../linux/prop-pages/copy-sources-project.md
-    - name: C-/C++-Eigenschaften (Linux)
-      href: ../linux/prop-pages/c-cpp-linux.md
-    - name: Linkereigenschaften (Linux)
-      href: ../linux/prop-pages/linker-linux.md
-    - name: Buildereigniseigenschaften (Linux)
-      href: ../linux/prop-pages/build-events-linux.md
-    - name: Eigenschaften benutzerdefinierter Buildschritte (Linux)
-      href: ../linux/prop-pages/custom-build-step-linux.md
-    - name: MakeFile-Projekteigenschaften (Linux)
-      href: ../linux/prop-pages/makefile-linux.md
-    - name: Remotearchiveigenschaften (Linux)
-      href: ../linux/prop-pages/remote-ar-linux.md
