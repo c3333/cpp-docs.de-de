@@ -1,6 +1,6 @@
 ---
 title: ComPtr-Klasse
-ms.date: 07/26/2019
+ms.date: 06/02/2020
 ms.topic: reference
 f1_keywords:
 - client/Microsoft::WRL::ComPtr
@@ -51,12 +51,12 @@ helpviewer_keywords:
 - Microsoft::WRL::ComPtr::Swap method
 - Microsoft::WRL::ComPtr::~ComPtr, destructor
 ms.assetid: a6551902-6819-478a-8df7-b6f312ab1fb0
-ms.openlocfilehash: 89c09ede972f5bdd5da1dde810cad31733bdf338
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 612747fe0acfa29acc3f516f1257e80069d5395c
+ms.sourcegitcommit: d695bb727bd2b081af4d50127b0242a9a5bdce61
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372642"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84332252"
 ---
 # <a name="comptr-class"></a>ComPtr-Klasse
 
@@ -75,16 +75,16 @@ friend class ComPtr;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die Schnittstelle, `ComPtr` die der darstellt.
+Die-Schnittstelle, die der `ComPtr` darstellt.
 
 *U*<br/>
-Eine Klasse, zu `ComPtr` der der Strom ein Freund ist. (Die Vorlage, die diesen Parameter verwendet, ist geschützt.)
+Eine Klasse, zu der der aktuelle `ComPtr` ein Freund ist. (Die Vorlage, die diesen Parameter verwendet, ist geschützt.)
 
 ## <a name="remarks"></a>Bemerkungen
 
-`ComPtr<>`deklariert einen Typ, der den zugrunde liegenden Schnittstellenzeiger darstellt. Verwenden `ComPtr<>` Sie diese Funktion, um eine Variable`->`zu deklarieren, und verwenden Sie dann den Pfeilmemberzugriffsoperator ( ), um auf eine Schnittstellenmemberfunktion zuzugreifen.
+`ComPtr<>`deklariert einen Typ, der den zugrunde liegenden Schnittstellen Zeiger darstellt. Verwenden `ComPtr<>` Sie, um eine Variable zu deklarieren, und verwenden Sie dann den Pfeil Element Zugriffs Operator ( `->` ), um auf eine Schnittstellenmember-Funktion zuzugreifen.
 
-Weitere Informationen zu intelligenten Zeigern finden Sie im Unterabschnitt "COM Smart Pointers" des Themas [COM-Codierungspraktiken](/windows/win32/LearnWin32/com-coding-practices) in der MSDN-Bibliothek.
+Weitere Informationen zu intelligenten Zeigern finden Sie in der MSDN Library im Artikel [com-Codierungspraktiken](/windows/win32/LearnWin32/com-coding-practices) im unter Abschnitt "com Intelligent Pointer".
 
 ## <a name="members"></a>Member
 
@@ -92,76 +92,76 @@ Weitere Informationen zu intelligenten Zeigern finden Sie im Unterabschnitt "COM
 
 Name            | BESCHREIBUNG
 --------------- | ---------------------------------------------------------------
-`InterfaceType` | Ein Synonym für den typ, der durch den *Parameter T-Vorlage* angegeben wird.
+`InterfaceType` | Ein Synonym für den Typ, der vom *T* -Vorlagen Parameter angegeben wird.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 Name                             | BESCHREIBUNG
 -------------------------------- | --------------------------------------------------------------------------------------------------------------------
-[ComPtr::ComPtr](#comptr)        | Initialisiert eine neue Instanz der `ComPtr`-Klasse. Überladungen stellen Standard-, Kopier-, Verschiebe- und Konvertierungskonstruktoren bereit.
-[ComPtr::'ComPtr](#tilde-comptr) | Deinitialisiert eine Instanz `ComPtr`von .
+[Comptr:: comptr](#comptr)        | Initialisiert eine neue Instanz der Klasse `ComPtr`. Überladungen stellen Standard-, Kopier-, Verschiebe- und Konvertierungskonstruktoren bereit.
+[Comptr:: ~ comptr](#tilde-comptr) | Deinitialisiert eine Instanz von `ComPtr` .
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                      | BESCHREIBUNG
+name                                                      | BESCHREIBUNG
 --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[ComPtr::As](#as)                                         | Gibt `ComPtr` ein Objekt zurück, das die Schnittstelle darstellt, die durch den angegebenen Vorlagenparameter identifiziert wird.
-[ComPtr::AsIID](#asiid)                                   | Gibt `ComPtr` ein Objekt zurück, das die Schnittstelle darstellt, die durch die angegebene Schnittstellen-ID identifiziert wird.
-[ComPtr::AsWeak](#asweak)                                 | Ruft einen schwachen Verweis (WeakReference) auf das aktuelle Objekt ab.
-[ComPtr::Anfügen](#attach)                                 | Ordnet `ComPtr` dies dem Schnittstellentyp zu, der durch den aktuellen Vorlagentypparameter angegeben wird.
-[ComPtr::KopierenBis](#copyto)                                 | Kopiert die ihm zugeordnete `ComPtr` aktuelle oder angegebene Schnittstelle in den angegebenen Ausgabezeiger.
-[ComPtr::Detach](#detach)                                 | Entfernt dies `ComPtr` von der Schnittstelle, die es darstellt.
-[ComPtr::Get](#get)                                       | Ruft einen Zeiger auf die Schnittstelle ab, die dieser `ComPtr`zugeordnet ist.
-[ComPtr::GetAddressOf](#getaddressof)                     | Ruft die Adresse des [ptr_](#ptr) Datenmembers ab, der einen `ComPtr`Zeiger auf die schnittstelle enthält, die durch diese dargestellt wird.
-[ComPtr::ReleaseAndGetAddressOf](#releaseandgetaddressof) | Gibt die diesem `ComPtr` verknüpfte Schnittstelle frei und ruft dann die Adresse des ptr_-Datenmembers ab, der einen Zeiger auf die freigegebene Schnittstelle enthält. [ptr_](#ptr)
-[ComPtr::Reset](#reset)                                   | Gibt alle Verweise für den Zeiger auf die `ComPtr`Schnittstelle frei, die dieser zugeordnet ist.
-[ComPtr::Swap](#swap)                                     | Tauscht die vom `ComPtr` Aktuellen verwaltete Schnittstelle `ComPtr`mit der Schnittstelle aus, die von der angegebenen verwaltet wird.
+[Comptr:: As](#as)                                         | Gibt ein- `ComPtr` Objekt zurück, das die durch den angegebenen Vorlagen Parameter identifizierte Schnittstelle darstellt.
+[Comptr:: asiid](#asiid)                                   | Gibt ein- `ComPtr` Objekt zurück, das die durch die angegebene Schnittstellen-ID identifizierte Schnittstelle darstellt.
+[Comptr:: asweak](#asweak)                                 | Ruft einen schwachen Verweis (WeakReference) auf das aktuelle Objekt ab.
+[Comptr:: Attach](#attach)                                 | Ordnet diesen `ComPtr` dem Schnittstellentyp zu, der durch den aktuellen Template Type-Parameter angegeben wird.
+[Comptr:: CopyTo](#copyto)                                 | Kopiert die aktuelle oder angegebene-Schnittstelle, die diesem zugeordnet ist `ComPtr` , in den angegebenen Ausgabe Zeiger.
+[Comptr::D Etach](#detach)                                 | Trennt dieses `ComPtr` von der-Schnittstelle, die es darstellt.
+[Comptr:: Get](#get)                                       | Ruft einen Zeiger auf die-Schnittstelle ab, die diesem zugeordnet ist `ComPtr` .
+[Comptr:: getaddressof](#getaddressof)                     | Ruft die Adresse des [ptr_](#ptr) Datenmembers ab, der einen Zeiger auf die-Schnittstelle enthält, die von diesem dargestellt wird `ComPtr` .
+[Comptr:: releaseandgetaddressof](#releaseandgetaddressof) | Gibt die-Schnittstelle frei, die diesem zugeordnet `ComPtr` ist, und ruft dann die Adresse des [ptr_](#ptr) Datenmembers ab, der einen Zeiger auf die-Schnittstelle enthält, die freigegeben wurde.
+[ComPtr::Reset](#reset)                                   | Gibt die diesem zugeordnete-Schnittstelle frei `ComPtr` und gibt den neuen Verweis Zähler zurück.
+[Comptr:: Swap](#swap)                                     | Tauscht die Schnittstelle, die vom aktuellen verwaltet wird, `ComPtr` mit der vom angegebenen verwalteten Schnittstelle aus `ComPtr` .
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
 Name                                        | BESCHREIBUNG
 ------------------------------------------- | --------------------------------------------------------------------------------
-[ComPtr::InternalAddRef](#internaladdref)   | Inkrementiert die Referenzanzahl der `ComPtr`Schnittstelle, die dieser zugeordnet ist.
-[ComPtr::InterneFreigabe](#internalrelease) | Führt einen COM-Releasevorgang auf `ComPtr`der Schnittstelle aus, die dieser zugeordnet ist.
+[Comptr:: internaladressf](#internaladdref)   | Inkremente den Verweis Zähler der Schnittstelle, die diesem zugeordnet ist `ComPtr` .
+[Comptr:: internalrelease](#internalrelease) | Führt einen com-Releasevorgang für die Schnittstelle aus, die diesem zugeordnet ist `ComPtr` .
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 Name                                                                                           | BESCHREIBUNG
 ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------
-[ComPtr::Operator&](#operator-ampersand)                                                       | Ruft die Adresse der `ComPtr`aktuellen ab.
-[ComPtr::Operator->](#operator-arrow)                                                          | Ruft einen Zeiger auf den Typ ab, der durch den aktuellen Vorlagenparameter angegeben ist.
-[ComPtr::operator=](#operator-assign)                                                          | Weist der aktuellen `ComPtr`einen Wert zu.
-[ComPtr::operator==](#operator-equality)                                                       | Gibt an, ob zwei `ComPtr`-Objekte gleich sind.
-[ComPtr::operator!=](#operator-inequality)                                                     | Gibt an, ob zwei `ComPtr`-Objekte ungleich sind.
-[ComPtr::operator Microsoft::WRL::Details::BoolType](#operator-microsoft-wrl-details-booltype) | Gibt an, `ComPtr` ob ein die Objektlebensdauer einer Schnittstelle verwaltet.
+[Comptr:: Operator-&](#operator-ampersand)                                                       | Ruft die Adresse des aktuellen ab `ComPtr` .
+[Comptr:: Operator->](#operator-arrow)                                                          | Ruft einen Zeiger auf den Typ ab, der durch den aktuellen Vorlagenparameter angegeben ist.
+[Comptr:: Operator =](#operator-assign)                                                          | Weist dem aktuellen einen Wert zu `ComPtr` .
+[Comptr:: Operator = =](#operator-equality)                                                       | Gibt an, ob zwei `ComPtr`-Objekte gleich sind.
+[Comptr:: Operator! =](#operator-inequality)                                                     | Gibt an, ob zwei- `ComPtr` Objekte nicht gleich sind.
+[Comptr:: Operator Microsoft:: WRL::D etails:: booltype](#operator-microsoft-wrl-details-booltype) | Gibt an, ob ein- `ComPtr` Objekt die Objekt Lebensdauer einer Schnittstelle verwaltet.
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
 Name                 | BESCHREIBUNG
 -------------------- | ------------------------------------------------------------------------------------------
-[ComPtr::ptr_](#ptr) | Enthält einen Zeiger auf die Schnittstelle, die dieser `ComPtr`zugeordnet ist und von diesem verwaltet wird.
+[Comptr::p tr_](#ptr) | Enthält einen Zeiger auf die-Schnittstelle, die dieser zugeordnet ist und von diesem verwaltet wird `ComPtr` .
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `ComPtr`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="comptrcomptr"></a><a name="tilde-comptr"></a>ComPtr::'ComPtr
+## <a name="comptrcomptr"></a><a name="tilde-comptr"></a>Comptr:: ~ comptr
 
-Deinitialisiert eine Instanz `ComPtr`von .
+Deinitialisiert eine Instanz von `ComPtr` .
 
 ```cpp
 WRL_NOTHROW ~ComPtr();
 ```
 
-## <a name="comptras"></a><a name="as"></a>ComPtr::As
+## <a name="comptras"></a><a name="as"></a>Comptr:: As
 
-Gibt `ComPtr` ein Objekt zurück, das die Schnittstelle darstellt, die durch den angegebenen Vorlagenparameter identifiziert wird.
+Gibt ein- `ComPtr` Objekt zurück, das die durch den angegebenen Vorlagen Parameter identifizierte Schnittstelle darstellt.
 
 ```cpp
 template<typename U>
@@ -180,20 +180,20 @@ HRESULT As(
 *U*<br/>
 Die Schnittstelle, die durch den Parameter *p*dargestellt werden soll.
 
-*P*<br/>
-Ein `ComPtr` Objekt, das die durch den Parameter *U*angegebene Schnittstelle darstellt. Parameter *p* darf nicht `ComPtr` auf das aktuelle Objekt verweisen.
+*cker*<br/>
+Ein- `ComPtr` Objekt, das die durch den Parameter *U*angegebene Schnittstelle darstellt. Der Parameter " *p* " darf nicht auf das aktuelle `ComPtr` Objekt verweisen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Vorlage ist die Form, die Sie in Ihrem Code verwenden sollten. Die zweite Vorlage ist eine interne Hilfsspezialisierung, die C++-Sprachfeatures unterstützt, wie etwa das Schlüsselwort [auto](../../cpp/auto-cpp.md) zur Typableitung.
+Die erste Vorlage ist die Form, die Sie in Ihrem Code verwenden sollten. Die zweite Vorlage ist eine interne hilfsspezialisierung. Es unterstützt C++-sprach Features wie das [Auto](../../cpp/auto-cpp.md) -typableitungs Schlüsselwort.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="comptrasiid"></a><a name="asiid"></a>ComPtr::AsIID
+## <a name="comptrasiid"></a><a name="asiid"></a>Comptr:: asiid
 
-Gibt `ComPtr` ein Objekt zurück, das die Schnittstelle darstellt, die durch die angegebene Schnittstellen-ID identifiziert wird.
+Gibt ein- `ComPtr` Objekt zurück, das die durch die angegebene Schnittstellen-ID identifizierte Schnittstelle darstellt.
 
 ```cpp
 WRL_NOTHROW HRESULT AsIID(
@@ -207,14 +207,14 @@ WRL_NOTHROW HRESULT AsIID(
 *riid*<br/>
 Eine Schnittstellen-ID.
 
-*P*<br/>
-Wenn das Objekt über eine Schnittstelle verfügt, deren ID *riid*, ein doppelt indirekter Zeiger auf die durch den *riid-Parameter* angegebene Schnittstelle ist; Andernfalls ein Zeiger `IUnknown`auf .
+*cker*<br/>
+Wenn das Objekt über eine Schnittstelle verfügt, deren ID gleich *riid*ist, ein doppelter indirekter Zeiger auf die Schnittstelle, die vom *riid* -Parameter angegeben wird. Andernfalls ein Zeiger auf `IUnknown` .
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="comptrasweak"></a><a name="asweak"></a>ComPtr::AsWeak
+## <a name="comptrasweak"></a><a name="asweak"></a>Comptr:: asweak
 
 Ruft einen schwachen Verweis (WeakReference) auf das aktuelle Objekt ab.
 
@@ -226,16 +226,16 @@ HRESULT AsWeak(
 
 ### <a name="parameters"></a>Parameter
 
-*pWeakRef*<br/>
-Wenn dieser Vorgang abgeschlossen ist, wird ein Zeiger auf ein schwaches Referenzobjekt zeiger.
+*pweakref*<br/>
+Wenn dieser Vorgang abgeschlossen ist, ein Zeiger auf ein schwaches Verweis Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="comptrattach"></a><a name="attach"></a>ComPtr::Anfügen
+## <a name="comptrattach"></a><a name="attach"></a>Comptr:: Attach
 
-Ordnet `ComPtr` dies dem Schnittstellentyp zu, der durch den aktuellen Vorlagentypparameter angegeben wird.
+Ordnet diesen `ComPtr` dem Schnittstellentyp zu, der durch den aktuellen Template Type-Parameter angegeben wird.
 
 ```cpp
 void Attach(
@@ -245,12 +245,12 @@ void Attach(
 
 ### <a name="parameters"></a>Parameter
 
-*Andere*<br/>
+*außer*<br/>
 Ein Schnittstellentyp.
 
-## <a name="comptrcomptr"></a><a name="comptr"></a>ComPtr::ComPtr
+## <a name="comptrcomptr"></a><a name="comptr"></a>Comptr:: comptr
 
-Initialisiert eine neue Instanz der `ComPtr`-Klasse. Überladungen stellen Standard-, Kopier-, Verschiebe- und Konvertierungskonstruktoren bereit.
+Initialisiert eine neue Instanz der Klasse `ComPtr`. Überladungen stellen Standard-, Kopier-, Verschiebe- und Konvertierungskonstruktoren bereit.
 
 ```cpp
 WRL_NOTHROW ComPtr();
@@ -289,24 +289,24 @@ WRL_NOTHROW ComPtr(
 *U*<br/>
 Der Typ des *anderen* Parameters.
 
-*Andere*<br/>
-Ein Objekt vom Typ *U*.
+*außer*<br/>
+Ein Objekt vom Typ " *U*".
 
 ### <a name="return-value"></a>Rückgabewert
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor ist der Standardkonstruktor, der unvoreingenommen ein leeres Objekt erstellt. Der zweite Konstruktor gibt [__nullptr](../../extensions/nullptr-cpp-component-extensions.md)an, der explizit ein leeres Objekt erstellt.
+Der erste Konstruktor ist der Standardkonstruktor, der implizit ein leeres-Objekt erstellt. Der zweite Konstruktor gibt [__nullptr](../../extensions/nullptr-cpp-component-extensions.md)an, der explizit ein leeres-Objekt erstellt.
 
-Der dritte Konstruktor erstellt ein Objekt aus dem Objekt, das durch einen Zeiger angegeben wird. Der ComPtr besitzt nun das pointierte Gedächtnis und behält eine Referenzanzahl dafür bei.
+Der dritte Konstruktor erstellt ein-Objekt aus dem-Objekt, das durch einen-Zeiger angegeben wird. Der comptr besitzt jetzt den referenzierten Speicher und verwaltet einen Verweis Zähler.
 
-Der vierte und fünfte Konstruktor sind Kopierkonstruktoren. Der fünfte Konstruktor kopiert ein Objekt, wenn es in den aktuellen Typ umgewandelt werden kann.
+Der vierte und fünfte Konstruktor sind Kopierkonstruktoren. Der fünfte Konstruktor kopiert ein Objekt, wenn es in den aktuellen Typ konvertiert werden kann.
 
-Die sechsten und siebten Konstruktoren sind Bewegungskonstruktoren. Der siebte Konstruktor verschiebt ein Objekt, wenn es in den aktuellen Typ umgewandelt werden kann.
+Die sechsten und siebten Konstruktoren sind bewegungskonstruktoren. Der siebte Konstruktor verschiebt ein Objekt, wenn es in den aktuellen Typ konvertiert werden kann.
 
-## <a name="comptrcopyto"></a><a name="copyto"></a>ComPtr::KopierenBis
+## <a name="comptrcopyto"></a><a name="copyto"></a>Comptr:: CopyTo
 
-Kopiert die aktuelle oder angegebene `ComPtr` Schnittstelle, die dieser Schnittstelle zugeordnet ist, in den angegebenen Zeiger.
+Kopiert die aktuelle oder angegebene-Schnittstelle, die diesem zugeordnet ist `ComPtr` , in den angegebenen Zeiger.
 
 ```cpp
 HRESULT CopyTo(
@@ -329,27 +329,27 @@ HRESULT CopyTo(
 *U*<br/>
 Ein Typname.
 
-*Ptr*<br/>
-Wenn dieser Vorgang abgeschlossen ist, wird ein Zeiger auf die angeforderte Schnittstelle angezeigt.
+*ptr*<br/>
+Wenn dieser Vorgang abgeschlossen ist, ein Zeiger auf die angeforderte Schnittstelle.
 
 *riid*<br/>
 Eine Schnittstellen-ID.
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn erfolgreich; Andernfalls ein HRESULT, das `QueryInterface` angibt, warum der implizite Vorgang fehlgeschlagen ist.
+S_OK, wenn erfolgreich; andernfalls ein HRESULT, das angibt, warum der implizite `QueryInterface` Vorgang fehlgeschlagen ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Funktion gibt eine Kopie eines Zeigers `ComPtr`an die Schnittstelle zurück, die dieser zugeordnet ist. Diese Funktion gibt immer S_OK zurück.
+Die erste Funktion gibt eine Kopie eines Zeigers auf die-Schnittstelle zurück, die diesem zugeordnet ist `ComPtr` . Diese Funktion gibt immer S_OK zurück.
 
-Die zweite Funktion `QueryInterface` führt einen Vorgang `ComPtr` auf der Schnittstelle aus, die diesem für die schnittstelle zugeordnet ist, die durch den *riid-Parameter* angegeben wird.
+Die zweite Funktion führt einen- `QueryInterface` Vorgang für die-Schnittstelle aus, die diesem `ComPtr` für die durch den *riid* -Parameter angegebene Schnittstelle zugeordnet ist.
 
-Die dritte Funktion `QueryInterface` führt einen Vorgang `ComPtr` auf der Schnittstelle aus, die dieser Schnittstelle für die zugrunde liegende Schnittstelle des *U-Parameters* zugeordnet ist.
+Die dritte Funktion führt einen- `QueryInterface` Vorgang für die Schnittstelle aus, die diesem `ComPtr` für die zugrunde liegende Schnittstelle des *U* -Parameters zugeordnet ist.
 
-## <a name="comptrdetach"></a><a name="detach"></a>ComPtr::Detach
+## <a name="comptrdetach"></a><a name="detach"></a>Comptr::D Etach
 
-Trennt dieses `ComPtr` Objekt von der Schnittstelle, die es darstellt.
+Trennt dieses- `ComPtr` Objekt von der-Schnittstelle, die es darstellt.
 
 ```cpp
 T* Detach();
@@ -357,11 +357,11 @@ T* Detach();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die Schnittstelle, `ComPtr` die von diesem Objekt dargestellt wurde.
+Ein Zeiger auf die-Schnittstelle, die von diesem-Objekt dargestellt wurde `ComPtr` .
 
-## <a name="comptrget"></a><a name="get"></a>ComPtr::Get
+## <a name="comptrget"></a><a name="get"></a>Comptr:: Get
 
-Ruft einen Zeiger auf die Schnittstelle ab, die dieser `ComPtr`zugeordnet ist.
+Ruft einen Zeiger auf die-Schnittstelle ab, die diesem zugeordnet ist `ComPtr` .
 
 ```cpp
 T* Get() const;
@@ -369,11 +369,11 @@ T* Get() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf die Schnittstelle, die `ComPtr`dieser zugeordnet ist.
+Ein Zeiger auf die-Schnittstelle, die diesem zugeordnet ist `ComPtr` .
 
-## <a name="comptrgetaddressof"></a><a name="getaddressof"></a>ComPtr::GetAddressOf
+## <a name="comptrgetaddressof"></a><a name="getaddressof"></a>Comptr:: getaddressof
 
-Ruft die Adresse des [ptr_](#ptr) Datenmembers ab, der einen `ComPtr`Zeiger auf die schnittstelle enthält, die durch diese dargestellt wird.
+Ruft die Adresse des [ptr_](#ptr) Datenmembers ab, der einen Zeiger auf die-Schnittstelle enthält, die von diesem dargestellt wird `ComPtr` .
 
 ```cpp
 T* const* GetAddressOf() const;
@@ -384,9 +384,9 @@ T** GetAddressOf();
 
 Die Adresse einer Variablen.
 
-## <a name="comptrinternaladdref"></a><a name="internaladdref"></a>ComPtr::InternalAddRef
+## <a name="comptrinternaladdref"></a><a name="internaladdref"></a>Comptr:: internaladressf
 
-Inkrementiert die Referenzanzahl der `ComPtr`Schnittstelle, die dieser zugeordnet ist.
+Inkremente den Verweis Zähler der Schnittstelle, die diesem zugeordnet ist `ComPtr` .
 
 ```cpp
 void InternalAddRef() const;
@@ -396,21 +396,21 @@ void InternalAddRef() const;
 
 Diese Methode ist geschützt.
 
-## <a name="comptrinternalrelease"></a><a name="internalrelease"></a>ComPtr::InterneFreigabe
+## <a name="comptrinternalrelease"></a><a name="internalrelease"></a>Comptr:: internalrelease
 
-Führt einen COM-Releasevorgang auf `ComPtr`der Schnittstelle aus, die dieser zugeordnet ist.
+Führt einen com-Releasevorgang für die Schnittstelle aus, die diesem zugeordnet ist `ComPtr` .
 
 ```cpp
-void InternalRelease();
+unsigned long InternalRelease();
 ```
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode ist geschützt.
 
-## <a name="comptroperatoramp"></a><a name="operator-ampersand"></a>ComPtr::Operator&amp;
+## <a name="comptroperatoramp"></a><a name="operator-ampersand"></a>Comptr::-Operator&amp;
 
-Gibt die diesem `ComPtr` Objekt zugeordnete Schnittstelle frei `ComPtr` und ruft dann die Adresse des Objekts ab.
+Gibt die diesem-Objekt zugeordnete-Schnittstelle frei `ComPtr` und ruft dann die Adresse des- `ComPtr` Objekts ab.
 
 ```cpp
 Details::ComPtrRef<WeakRef> operator&()
@@ -420,13 +420,13 @@ const Details::ComPtrRef<const WeakRef> operator&() const
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein schwacher Verweis `ComPtr`auf den Strom .
+Ein schwacher Verweis auf den aktuellen `ComPtr` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode unterscheidet sich von [ComPtr::GetAddressOf](#getaddressof) dadurch, dass diese Methode einen Verweis auf den Schnittstellenzeiger freigibt. Verwenden `ComPtr::GetAddressOf` Sie diese Version, wenn Sie die Adresse des Schnittstellenzeigers benötigen, diese Schnittstelle jedoch nicht freigeben möchten.
+Diese Methode unterscheidet sich von [comptr:: getaddressof](#getaddressof) insofern, als diese Methode einen Verweis auf den Schnittstellen Zeiger freigibt. Verwenden `ComPtr::GetAddressOf` Sie, wenn Sie die Adresse des Schnittstellen Zeigers benötigen, diese Schnittstelle aber nicht freigeben möchten.
 
-## <a name="comptroperator-gt"></a><a name="operator-arrow"></a>ComPtr::operator-&gt;
+## <a name="comptroperator-gt"></a><a name="operator-arrow"></a>Comptr:: Operator-&gt;
 
 Ruft einen Zeiger auf den Typ ab, der durch den aktuellen Vorlagenparameter angegeben ist.
 
@@ -436,15 +436,15 @@ WRL_NOTHROW Microsoft::WRL::Details::RemoveIUnknown<InterfaceType>* operator->()
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf den Typ, der durch den aktuellen Vorlagentypnamen angegeben wird.
+Ein Zeiger auf den Typ, der durch den Namen des aktuellen Vorlagen Typs angegeben wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Hilfsfunktion entfernt unnötigen Overhead, der durch die Verwendung des STDMETHOD-Makros verursacht wird. Diese Funktion `IUnknown` `private` macht `virtual`Typen anstelle von .
+Diese Hilfsfunktion entfernt unnötigen mehr Aufwand, der durch die Verwendung des STDMETHOD-Makros verursacht wird. Diese Funktion macht- `IUnknown` Typen `private` anstelle von `virtual` .
 
-## <a name="comptroperator"></a><a name="operator-assign"></a>ComPtr::operator=
+## <a name="comptroperator"></a><a name="operator-assign"></a>Comptr:: Operator =
 
-Weist der aktuellen `ComPtr`einen Wert zu.
+Weist dem aktuellen einen Wert zu `ComPtr` .
 
 ```cpp
 WRL_NOTHROW ComPtr& operator=(
@@ -476,32 +476,32 @@ WRL_NOTHROW ComPtr& operator=(
 ### <a name="parameters"></a>Parameter
 
 *U*<br/>
-Eine Klasse.
+Eine-Klasse.
 
-*Andere*<br/>
-Ein Zeiger-, Verweis- oder rvalue-Verweis `ComPtr`auf einen Typ oder einen anderen .
+*außer*<br/>
+Ein Zeiger, ein Verweis oder ein rvalue-Verweis auf einen Typ oder einen anderen `ComPtr` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf `ComPtr`die aktuelle .
+Ein Verweis auf den aktuellen `ComPtr` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Version dieses Operators weist dem `ComPtr`aktuellen einen leeren Wert zu.
+Die erste Version dieses Operators weist dem aktuellen einen leeren Wert zu `ComPtr` .
 
-Wenn in der zweiten Version der Zuweisungsschnittstellenzeiger nicht `ComPtr` mit dem aktuellen Schnittstellenzeiger identisch ist, `ComPtr`wird der zweite Schnittstellenzeiger dem aktuellen zugewiesen.
+Wenn in der zweiten Version der Zuweisungs Schnittstellen Zeiger nicht mit dem aktuellen `ComPtr` Schnittstellen Zeiger identisch ist, wird der zweite Schnittstellen Zeiger dem aktuellen zugewiesen `ComPtr` .
 
-In der dritten Version wird der zuweisende Schnittstellenzeiger dem aktuellen `ComPtr`zugewiesen.
+In der dritten Version wird der dem aktuellen zugeordnete Schnittstellen Zeiger zugewiesen `ComPtr` .
 
-Wenn in der vierten Version der Schnittstellenzeiger des Zuweisungswerts `ComPtr` nicht mit dem aktuellen Schnittstellenzeiger identisch ist, wird der zweite Schnittstellenzeiger dem aktuellen `ComPtr`zugewiesen.
+Wenn in der vierten Version der Schnittstellen Zeiger des Zuweisungs Werts nicht mit dem aktuellen `ComPtr` Schnittstellen Zeiger identisch ist, wird der zweite Schnittstellen Zeiger dem aktuellen zugewiesen `ComPtr` .
 
-Die fünfte Version ist ein Kopieroperator; ein Verweis `ComPtr` auf eine wird `ComPtr`dem aktuellen zugewiesen.
+Die fünfte Version ist ein Kopier Operator. dem aktuellen wird ein Verweis auf ein `ComPtr` zugewiesen `ComPtr` .
 
-Die sechste Version ist ein Kopieroperator, der die Bewegungssemantik verwendet. ein rvalue-Verweis `ComPtr` auf einen, wenn ein Typ `ComPtr`statisch gegossen und dann dem aktuellen zugewiesen wird.
+Die sechste Version ist ein Kopier Operator, der Verschiebungs Semantik verwendet. ein rvalue-Verweis auf einen, `ComPtr` Wenn ein beliebiger Typ eine statische Umwandlung ist und dann dem aktuellen zugewiesen ist `ComPtr` .
 
-Die siebte Version ist ein Kopieroperator, der die Bewegungssemantik verwendet. Ein rvalue-Verweis `ComPtr` auf einen Vom Typ *U* wird `ComPtr`dann statisch gegossen und dem aktuellen zugewiesen.
+Die siebte Version ist ein Kopier Operator, der Verschiebungs Semantik verwendet. ein rvalue-Verweis auf einen `ComPtr` vom Typ *U* ist eine statische Umwandlung und wird dann dem aktuellen zugewiesen `ComPtr` .
 
-## <a name="comptroperator"></a><a name="operator-equality"></a>ComPtr::operator==
+## <a name="comptroperator"></a><a name="operator-equality"></a>Comptr:: Operator = =
 
 Gibt an, ob zwei `ComPtr`-Objekte gleich sind.
 
@@ -524,21 +524,21 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Eine*<br/>
+*ein*<br/>
 Ein Verweis auf ein `ComPtr`-Objekt.
 
-*B*<br/>
-Ein Verweis `ComPtr` auf ein anderes Objekt.
+*b*<br/>
+Ein Verweis auf ein anderes `ComPtr` Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der erste Operator `true` ergibt, wenn Objekt *a* gleich Objekt *b*ist; andernfalls `false`.
+Der erste Operator ergibt `true` , wenn Objekt *a* und Objekt *b*gleich sind, andernfalls `false` .
 
-Der zweite und `true` dritte Operator ergeben, `nullptr`wenn Objekt *a* gleich ist; andernfalls `false`.
+Der zweite und der dritte Operator ergeben sich, `true` Wenn Objekt *a* gleich ist, `nullptr` andernfalls `false` .
 
-## <a name="comptroperator"></a><a name="operator-inequality"></a>ComPtr::operator!=
+## <a name="comptroperator"></a><a name="operator-inequality"></a>Comptr:: Operator! =
 
-Gibt an, ob zwei `ComPtr`-Objekte ungleich sind.
+Gibt an, ob zwei- `ComPtr` Objekte nicht gleich sind.
 
 ```cpp
 bool operator!=(
@@ -559,21 +559,21 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Eine*<br/>
+*ein*<br/>
 Ein Verweis auf ein `ComPtr`-Objekt.
 
-*B*<br/>
-Ein Verweis `ComPtr` auf ein anderes Objekt.
+*b*<br/>
+Ein Verweis auf ein anderes `ComPtr` Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der erste Operator `true` ergibt, wenn Objekt *a* nicht gleich Objekt *b*ist; andernfalls `false`.
+Der erste Operator ergibt `true` , wenn Objekt *a* nicht gleich Objekt *b*ist; andernfalls `false` .
 
-Der zweite und `true` dritte Operator ergeben, `nullptr`wenn Objekt *a* nicht gleich ist; andernfalls `false`.
+Der zweite und der dritte Operator ergeben sich `true` , wenn Objekt *a* nicht gleich ist, `nullptr` andernfalls `false` .
 
-## <a name="comptroperator-microsoftwrldetailsbooltype"></a><a name="operator-microsoft-wrl-details-booltype"></a>ComPtr::operator Microsoft::WRL::Details::BoolType
+## <a name="comptroperator-microsoftwrldetailsbooltype"></a><a name="operator-microsoft-wrl-details-booltype"></a>Comptr:: Operator Microsoft:: WRL::D etails:: booltype
 
-Gibt an, `ComPtr` ob ein die Objektlebensdauer einer Schnittstelle verwaltet.
+Gibt an, ob ein- `ComPtr` Objekt die Objekt Lebensdauer einer Schnittstelle verwaltet.
 
 ```cpp
 WRL_NOTHROW operator Microsoft::WRL::Details::BoolType() const;
@@ -581,11 +581,11 @@ WRL_NOTHROW operator Microsoft::WRL::Details::BoolType() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn eine Schnittstelle mit `ComPtr`dieser verknüpft ist, wird die Adresse des [BoolStruct::Member-Datenmembers;](boolstruct-structure.md#member) andernfalls `nullptr`.
+Wenn eine Schnittstelle diesem zugeordnet ist `ComPtr` , die Adresse des [boolstruct:: Member](boolstruct-structure.md#member) -Datenmembers, andernfalls `nullptr` .
 
-## <a name="comptrptr_"></a><a name="ptr"></a>ComPtr::ptr_
+## <a name="comptrptr_"></a><a name="ptr"></a>Comptr::p tr_
 
-Enthält einen Zeiger auf die Schnittstelle, die dieser `ComPtr`zugeordnet ist und von diesem verwaltet wird.
+Enthält einen Zeiger auf die-Schnittstelle, die dieser zugeordnet ist und von diesem verwaltet wird `ComPtr` .
 
 ```cpp
 InterfaceType *ptr_;
@@ -593,11 +593,11 @@ InterfaceType *ptr_;
 
 ### <a name="remarks"></a>Bemerkungen
 
-`ptr_`ist ein internes, geschütztes Datenmitglied.
+`ptr_`ist ein interner, geschützter Datenmember.
 
-## <a name="comptrreleaseandgetaddressof"></a><a name="releaseandgetaddressof"></a>ComPtr::ReleaseAndGetAddressOf
+## <a name="comptrreleaseandgetaddressof"></a><a name="releaseandgetaddressof"></a>Comptr:: releaseandgetaddressof
 
-Gibt die diesem `ComPtr` verknüpfte Schnittstelle frei und ruft dann die Adresse des ptr_-Datenmembers ab, der einen Zeiger auf die freigegebene Schnittstelle enthält. [ptr_](#ptr)
+Gibt die-Schnittstelle frei, die diesem zugeordnet `ComPtr` ist, und ruft dann die Adresse des [ptr_](#ptr) Datenmembers ab, der einen Zeiger auf die-Schnittstelle enthält, die freigegeben wurde.
 
 ```cpp
 T** ReleaseAndGetAddressOf();
@@ -605,11 +605,11 @@ T** ReleaseAndGetAddressOf();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Adresse des [ptr_](#ptr) Datenmitglieds dieser `ComPtr`.
+Die Adresse des [ptr_](#ptr) Datenmembers dieses `ComPtr` .
 
-## <a name="comptrreset"></a><a name="reset"></a>ComPtr::Reset
+## <a name="comptrreset"></a><a name="reset"></a>Comptr:: Reset
 
-Gibt alle Verweise für den Zeiger auf die `ComPtr`Schnittstelle frei, die dieser zugeordnet ist.
+Gibt die diesem zugeordnete-Schnittstelle frei `ComPtr` und gibt den neuen Verweis Zähler zurück.
 
 ```cpp
 unsigned long Reset();
@@ -617,11 +617,11 @@ unsigned long Reset();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der freigegeben Verweise, sofern vorhanden.
+Die Anzahl der Verweise, die für die zugrunde liegende Schnittstelle verbleiben, sofern vorhanden.
 
-## <a name="comptrswap"></a><a name="swap"></a>ComPtr::Swap
+## <a name="comptrswap"></a><a name="swap"></a>Comptr:: Swap
 
-Tauscht die vom `ComPtr` Aktuellen verwaltete Schnittstelle `ComPtr`mit der Schnittstelle aus, die von der angegebenen verwaltet wird.
+Tauscht die Schnittstelle, die vom aktuellen verwaltet wird, `ComPtr` mit der vom angegebenen verwalteten Schnittstelle aus `ComPtr` .
 
 ```cpp
 void Swap(
@@ -635,5 +635,5 @@ void Swap(
 
 ### <a name="parameters"></a>Parameter
 
-*R*<br/>
+*r*<br/>
 Ein `ComPtr`.
