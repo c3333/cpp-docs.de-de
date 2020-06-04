@@ -1,51 +1,54 @@
 ---
-title: / CETCOMPAT (kompatibel mit Schattenstapel MEZ)
+title: /CETCOMPAT (mit Stapel Schatten Stapel kompatibel)
 ms.date: 02/19/2019
 f1_keywords:
 - /CETCOMPAT
 helpviewer_keywords:
 - /CETCOMPAT linker option
 - /CETCOMPAT
-ms.openlocfilehash: 0ed5d9d4f9f4f4dc5cd4fc19df4179e86e430187
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2c807d91d69b967fd62e01a077711dede5f55c44
+ms.sourcegitcommit: 7e011c68ca7547469544fac87001a33a37e1792e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62273247"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421299"
 ---
-# <a name="cetcompat-cet-shadow-stack-compatible"></a>/ CETCOMPAT (kompatibel mit Schattenstapel MEZ)
+# <a name="cetcompat-cet-shadow-stack-compatible"></a>/CETCOMPAT (mit Stapel Schatten Stapel kompatibel)
 
-Gibt an, ob ein ausführbares Image als kompatibel mit der ablaufsteuerung Erzwingung-Technologie (MEZ) Schattenstapel zu markieren.
+Gibt an, ob ein ausführbares Bild als kompatibel mit dem Schattenstapel (Control-Flow Enforcement Technology) markiert werden soll.
 
 ## <a name="syntax"></a>Syntax
 
-> **/CETCOMPAT**\[**:NO**]
+> **/CETCOMPAT** \[ **: Nein**]
 
 ## <a name="arguments"></a>Argumente
 
-**NO**<br/>
-Gibt an, dass die ausführbare Datei nicht mit MEZ Schattenstapel kompatibel gekennzeichnet werden soll.
+**Nein**<br/>
+Gibt an, dass die ausführbare Datei nicht als kompatibel mit dem Stapel Schatten Stapel gekennzeichnet werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ablaufsteuerung Erzwingung-Technologie (MEZ) Schattenstapel ist ein Computer-Prozessor-Feature, das bietet Funktionen zur Verteidigung gegen return objektorientierte Programmierung (ROP) Malware-Angriffe basierend. Weitere Informationen finden Sie unter [Intel ablaufsteuerung Erzwingung Technology Preview](https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf).
+Der Schatten Stapel der Steuerungsdaten Fluss Erzwingung (CET) ist eine Funktion des Computer Prozessors, die Funktionen zur Abwehr von auf der Basis von auf der Rückgabe orientierten Programmierung (ROP) basierenden Schadsoftware Weitere Informationen finden Sie unter [Intel Control Flow Enforcement Technology Preview](https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf).
 
-Die **/CETCOMPAT** Linkeroption weist den Linker an die Binärwerte als MEZ Schatten Stack kompatible zu markieren. **/CETCOMPAT:No** die Binärdatei als nicht kompatibel mit der Uhr CET Schattenstapel markiert. Wenn beide Optionen in der Befehlszeile angegeben werden, wird die letzte angegeben verwendet. Dieser Schalter ist derzeit nur für X86- und X64 Architekturen.
+Die **/CETCOMPAT** -Linkeroption weist den Linker an, die Binärdatei als "CET Shadow Stack-kompatibel" zu markieren. **/CETCOMPAT: Nein** kennzeichnet die Binärdatei nicht als nicht kompatibel mit dem Stapel Schatten Stapel. Wenn beide Optionen in der Befehlszeile angegeben werden, wird der letzte angegebene verwendet. Dieser Switch ist zurzeit nur auf x86-und x64-Architekturen anwendbar.
 
-Die **/CETCOMPAT** Option ist verfügbar ab der im Toolset Visual Studio 2019 Vorschau 3.
+Die **/CETCOMPAT** -Option ist ab dem Visual Studio 2019 Preview 3-Toolset verfügbar.
 
-### <a name="to-set-the-cetcompat-linker-option-in-visual-studio"></a>So legen Sie die /CETCOMPAT-Linkeroption in Visual Studio fest
+### <a name="to-set-the-cetcompat-linker-option-in-visual-studio"></a>So legen Sie die Option "/CETCOMPAT Linker" in Visual Studio fest
 
-1. Öffnen der **Eigenschaftenseiten** im Dialogfeld für das Projekt. Weitere Informationen finden Sie unter [Working with Project Properties (Arbeiten mit Projekteigenschaften)](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** für das Projekt. Weitere Informationen finden Sie unter [Working with Project Properties (Arbeiten mit Projekteigenschaften)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Konfigurationseigenschaften** > **Linker** > **Befehlszeile** Eigenschaftenseite.
+1. Wählen Sie die **Eigenschaften**  >  **Linker**  >  Seite**Erweiterte** Eigenschaft Linker Linker aus.
 
-1. In der **zusätzliche Optionen** fügen **/CETCOMPAT** oder **/CETCOMPAT:NO** und wählen Sie dann **OK** oder **übernehmen**zum Speichern der Änderungen.
+1. Wählen Sie die Eigenschaft "für den **Stapel Schatten Stapel kompatibel** "
+
+1. Wählen Sie im Dropdown-Steuerelement **Ja (/CETCOMPAT)** aus, um die eh-Fortsetzungs Metadaten zu aktivieren, oder **Nein (/CETCOMPAT: No)** , um es zu deaktivieren.
+
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 
-Diese Option ist keine programmgesteuerte Variante verfügbar sein.
+Diese Option hat keine programmgesteuerte Entsprechung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Linkeroptionen](linker-options.md)
+[Linker-Optionen](linker-options.md)

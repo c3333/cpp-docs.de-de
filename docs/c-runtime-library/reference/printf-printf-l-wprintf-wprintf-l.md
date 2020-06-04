@@ -41,12 +41,12 @@ helpviewer_keywords:
 - printf function, using
 - formatted text [C++]
 ms.assetid: 77a854ae-5b48-4865-89f4-f2dc5cf80f52
-ms.openlocfilehash: 3766ea24459423e730ab84ecae24d758d7f61e88
-ms.sourcegitcommit: 8c8ed02a6f3bcb5ee008e3fe30ba7595d7c4c922
+ms.openlocfilehash: 431c27a26fb549705abde28b08654ce47498e239
+ms.sourcegitcommit: 7e011c68ca7547469544fac87001a33a37e1792e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759237"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421324"
 ---
 # <a name="printf-_printf_l-wprintf-_wprintf_l"></a>printf, _printf_l, wprintf, _wprintf_l
 
@@ -92,7 +92,7 @@ Gibt die Anzahl gedruckter Zeichen oder einen negativen Wert zurück, wenn ein F
 
 Weitere Informationen zu **errno** und Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **printf** -Funktion formatiert und druckt eine Reihe von Zeichen und Werten für den **Standardausgabestream "stdout**". Wenn Argumente der *Format* Zeichenfolge folgen, muss die *Format* Zeichenfolge Spezifikationen enthalten, die das Ausgabeformat für die Argumente bestimmen. **printf** und [fprintf](fprintf-fprintf-l-fwprintf-fwprintf-l.md) Verhalten sich identisch, mit dem Unterschied, dass **printf** die Ausgabe in **stdout** und nicht in ein Ziel vom Typ **File**schreibt.
 
@@ -139,6 +139,9 @@ Line one
 |**wprintf**, **_wprintf_l**|\<stdio.h> oder \<wchar.h>|
 
 Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
+
+> [!IMPORTANT]
+> Ab Windows 10, Version 2004 (Build 19041), druckt die- `printf` Funktions Familie genau darstellbare Gleit Komma Zahlen gemäß den IEEE 754-Regeln für die Rundung. In früheren Versionen von Windows würden genau darstellbare Gleit Komma Zahlen, die auf ' 5 ' enden, immer aufgerundet werden. IEEE 754 gibt an, dass Sie auf die nächstgelegene, gerade Ziffer (auch bekannt als "Banker ung") gerundet werden müssen. Beispielsweise sollten sowohl 1,5 als auch 2,5 auf 2 gerundet werden. Zuvor war 1,5 auf 2 und 2,5 auf 3 gerundet. Diese Änderung wirkt sich nur auf genau darstellbare Zahlen aus. Beispielsweise wird 2,35 (bei Darstellung im Arbeitsspeicher näher an 2.35000000000000008) weiter auf 2,4 gerundet. Durch die Rundung durch diese Funktionen wird nun auch der von [fesetenv](fesetenv1.md)festgelegte Gleit Komma-Rundungs Modus respektiert. Zuvor wählte die Rundung immer FE_TONEAREST Verhalten. Diese Änderung betrifft nur Programme, die mit Visual Studio 2019, Version 16,2 und höher, erstellt wurden. Um das Legacy-Gleit Komma-Rundungs Verhalten zu verwenden, verknüpfen Sie mit [legacy_stdio_float_rounding. obj](../link-options.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -231,7 +234,7 @@ Address as:   0012FF3C
 [Syntax der Format Angabe: printf-und wprintf-Funktionen](../format-specification-syntax-printf-and-wprintf-functions.md)<br/>
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Konfigurations](../../c-runtime-library/locale.md)<br/>
 [fopen, _wfopen](fopen-wfopen.md)<br/>
 [_fprintf_p, _fprintf_p_l, _fwprintf_p, _fwprintf_p_l](fprintf-p-fprintf-p-l-fwprintf-p-fwprintf-p-l.md)<br/>
 [scanf, _scanf_l, wscanf, _wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
