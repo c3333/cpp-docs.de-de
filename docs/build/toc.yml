@@ -567,8 +567,10 @@
                   href: ../build/reference/gs-buffer-security-check.md
                 - name: /Gs (Stapelüberprüfungsaufrufe kontrollieren)
                   href: ../build/reference/gs-control-stack-checking-calls.md
-                - name: /guard (Ablaufsteuerungsschutz aktivieren)
+                - name: '/guard:cf (Ablaufsteuerungsschutz aktivieren)'
                   href: ../build/reference/guard-enable-control-flow-guard.md
+                - name: '/guard:ehcont (EH-Fortsetzungsmetadaten aktivieren)'
+                  href: ../build/reference/guard-enable-eh-continuation-metadata.md
                 - name: /GT (Fibersicheren lokalen Threadspeicher unterstützen)
                   href: ../build/reference/gt-support-fiber-safe-thread-local-storage.md
                 - name: /Gw (Globale Daten optimieren)
