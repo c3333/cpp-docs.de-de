@@ -1,6 +1,6 @@
 ---
 title: log, logf, logl, log10, log10f, log10l
-ms.date: 4/2/2020
+ms.date: 6/5/2020
 api_name:
 - log10f
 - logf
@@ -10,6 +10,8 @@ api_name:
 - logl
 - _o_log
 - _o_log10
+- _o_log10f
+- _o_logf
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -46,12 +48,12 @@ helpviewer_keywords:
 - logf function
 - logarithms
 ms.assetid: 7adc77c2-04f7-4245-a980-21215563cfae
-ms.openlocfilehash: 0acfbefb1fb01215e543538b9fdb8d554b10f8c1
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: ce01a16e173ba3afb7ad8a0d55303559519fe19e
+ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911484"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507039"
 ---
 # <a name="log-logf-logl-log10-log10f-log10l"></a>log, logf, logl, log10, log10f, log10l
 
@@ -92,7 +94,7 @@ Die **Log** -Funktionen geben bei Erfolg den natürlichen Logarithmus (Basis *e*
 
 **Log** und **log10** verfügen über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 C++ ermöglicht überladen, sodass Sie über Ladungen von **Log** und **log10** , die **float** -oder **long Double** -Werte verwenden und zurückgeben, aufgerufen werden können. In einem C-Programm verwenden **Log** und **log10** immer einen **Double**-Wert.
 
@@ -100,7 +102,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**Log**, **logf**, **logl**, **log10**, **log10f**, **log10l**|\<math.h>|
 
@@ -161,9 +163,9 @@ int main()
 Log base 2 of 65536.000000 is 16.000000
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md) <br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md) <br/>
 [exp, expf, expl](exp-expf.md) <br/>
 [_matherr](matherr.md) <br/>
 [pow, powf, powl](pow-powf-powl.md) <br/>

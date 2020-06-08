@@ -1,11 +1,12 @@
 ---
 title: cos, cosf, cosl
-ms.date: 4/2/2020
+ms.date: 6/5/2020
 api_name:
 - cos
 - cosf
 - cosl
 - _o_cos
+- _o_cosf
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -36,12 +37,12 @@ helpviewer_keywords:
 - trigonometric functions
 - cosines, calculating
 ms.assetid: ae90435e-6b68-4a47-a81f-be87d5c08f16
-ms.openlocfilehash: 1aae123de5ef03af8bcaf8480a84327f88c457c5
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 9007f043b64c666d463f46661cfa5f43646e26b7
+ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82917241"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84506896"
 ---
 # <a name="cos-cosf-cosl"></a>cos, cosf, cosl
 
@@ -74,7 +75,7 @@ Der Kosinus von *x*. Wenn *x* größer oder gleich 263 oder kleiner oder gleich-
 |± QNAN, IND|Keine|**_DOMAIN**|
 |± INF|**Ungültig**|**_DOMAIN**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **cos** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **cos** immer einen **Double**-Wert an und gibt ihn zurück.
 
@@ -82,7 +83,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
+|-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|---------------------|-|
 |**cos**, **cosh**, **cosf**|\<math.h>|\<cmath> oder \<math.h>|
 
@@ -92,9 +93,9 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Sehen Sie sich das Beispiel in [Sin, sinf, sinl](sin-sinf-sinl.md)an.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acos, acosf, acosl](acos-acosf-acosl.md)<br/>
 [asin, asinf, asinl](asin-asinf-asinl.md)<br/>
 [atan, atanf, atanl, atan2, atan2f, atan2l](atan-atanf-atanl-atan2-atan2f-atan2l.md)<br/>

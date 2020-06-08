@@ -1,7 +1,7 @@
 ---
 title: /permissive- (Übereinstimmung mit Standards)
-description: Referenzhandbuch für die Compileroption Microsoft C++ /permissive- (Standards conformance).
-ms.date: 04/14/2020
+description: Referenzhandbuch für die Compileroption Microsoft C++/permissive-(Standardkonformität).
+ms.date: 06/04/2020
 f1_keywords:
 - /permissive
 - VC.Project.VCCLCompilerTool.ConformanceMode
@@ -11,53 +11,53 @@ helpviewer_keywords:
 - Standards conformance compiler options
 - permissive compiler options [C++]
 ms.assetid: db1cc175-6e93-4a2e-9396-c3725d2d8f71
-ms.openlocfilehash: 695f84e64f07128ac7744dc99e736f2a71ab3e79
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3b5ddc4b4e9b70b2191a17d2201a441603182149
+ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81337402"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507026"
 ---
 # <a name="permissive--standards-conformance"></a>/permissive- (Übereinstimmung mit Standards)
 
-Geben Sie dem Compiler den Standardkonformitätsmodus an. Verwenden Sie diese Option, um Konformitätsprobleme im Code zu identifizieren und zu beheben, um sie sowohl korrekter als auch tragbarer zu gestalten.
+Legen Sie den Standard Konformitäts Modus für den Compiler fest. Verwenden Sie diese Option, um Kompatibilitätsprobleme in Ihrem Code zu identifizieren und zu beheben, um das Problem zu korrigieren und zu Portier barer zu machen.
 
 ## <a name="syntax"></a>Syntax
 
-> **/permissive-**
+> **`/permissive-`**
 
 ## <a name="remarks"></a>Bemerkungen
 
 Diese Option wird in Visual Studio 2017 und höher unterstützt.
 
-Sie können die Option **/permissive-** compiler verwenden, um das standardkonforme Compilerverhalten anzugeben. Diese Option deaktiviert freizügiges Verhalten und legt die [/Zc-Compileroptionen](zc-conformance.md) für die strikte Konformität fest. In der IDE wird durch diese Option auch der IntelliSense-Modul dazu verwendet, nicht konformen Code zu unterstreichen.
+Mit der **`/permissive-`** -Compileroption können Sie ein standardkonformes Compilerverhalten angeben. Mit dieser Option werden einschränkend sein Verhalten deaktiviert und die [**`/Zc`**](zc-conformance.md) Compileroptionen für strikte Konformität festgelegt. In der IDE bewirkt diese Option auch, dass die IntelliSense-Engine nicht konformen Code unterstreicht.
 
-Standardmäßig wird die Option **/permissive-** in neuen Projekten festgelegt, die von Visual Studio 2017 Version 15.5 und höher erstellt wurden. In früheren Versionen ist es nicht standardmäßig festgelegt. Wenn die Option festgelegt ist, generiert der Compiler Diagnosefehler oder Warnungen, wenn nicht standardmäßige Sprachkonstrukte im Code erkannt werden, einschließlich einiger häufiger Fehler im Code vor C++11.
+Standardmäßig wird die **`/permissive-`** Option in neuen Projekten festgelegt, die von Visual Studio 2017 Version 15,5 und höheren Versionen erstellt wurden. In früheren Versionen ist es nicht standardmäßig festgelegt. Wenn die Option festgelegt ist, generiert der Compiler Diagnosefehler oder Warnungen, wenn nicht standardmäßige Sprachkonstrukte im Code erkannt werden. Diese Konstrukte enthalten einige gängige Fehler in Pre-C + + 11-Code.
 
-Die **Option /permissive-** ist mit fast allen Headerdateien der neuesten Windows Kits kompatibel, z. B. dem Software Development Kit (SDK) oder dem Windows Driver Kit (WDK), beginnend im Windows Fall Creators SDK (10.0.16299.0). Ältere Versionen des SDK können aus verschiedenen Gründen der Quellcodeübereinstimmung unter **/permissive nicht** kompiliert werden. Der Compiler und SDKs werden auf verschiedenen Release-Timelines ausgeliefert, daher gibt es noch einige Probleme. Informationen zu bestimmten Headerdateiproblemen finden Sie unter [Windows-Headerprobleme](#windows-header-issues) unten.
+Die **`/permissive-`** Option ist mit fast allen Header Dateien der neuesten Windows-Kits kompatibel, z. b. Software Development Kit (SDK) oder Windows Driver Kit (WDK), beginnend mit dem Windows Fall Creators SDK (10.0.16299.0). Ältere Versionen des SDK können möglicherweise unter **`/permissive-`** aus verschiedenen Gründen der Code Konformität nicht kompiliert werden. Der Compiler und die SDBs werden unterschiedlichen releasezeitimelines ausgeliefert. es gibt jedoch einige verbleibende Probleme. Informationen zu bestimmten Header Dateien finden Sie weiter unten Unterprobleme mit dem [Windows-Header](#windows-header-issues) .
 
-Die Option **/permissive-** legt die Optionen [/Zc:referenceBinding](zc-referencebinding-enforce-reference-binding-rules.md), [/Zc:strictStrings](zc-strictstrings-disable-string-literal-type-conversion.md)und [/Zc:rvalueCast](zc-rvaluecast-enforce-type-conversion-rules.md) auf konformes Verhalten fest. Diese Optionen sind standardmäßig nicht konformes Verhalten. Sie können bestimmte **/Zc-Optionen** nach **/permissive-** in der Befehlszeile übergeben, um dieses Verhalten zu überschreiben.
+**`/permissive-`** Mit der-Option [**`/Zc:referenceBinding`**](zc-referencebinding-enforce-reference-binding-rules.md) werden die [**`/Zc:strictStrings`**](zc-strictstrings-disable-string-literal-type-conversion.md) Optionen, und auf ein [**`/Zc:rvalueCast`**](zc-rvaluecast-enforce-type-conversion-rules.md) konformes Verhalten festgelegt. Diese Optionen werden standardmäßig als nicht konformes Verhalten verwendet. Sie können bestimmte **`/Zc`** Optionen nach **`/permissive-`** in der Befehlszeile übergeben, um dieses Verhalten zu überschreiben.
 
-In Versionen des Compilers ab Visual Studio 2017 Version 15.3 legt die Option **/permissive-** die Option [/Zc:ternary](zc-ternary.md) fest. Der Compiler implementiert auch mehr Anforderungen für die zweiphasige Namenssuche. Wenn die Option **/permissive-** festgelegt ist, analysiert der Compiler Funktions- und Klassenvorlagendefinitionen und identifiziert abhängige und nicht abhängige Namen, die in den Vorlagen verwendet werden. In dieser Version wird nur eine Namensabhängigkeitsanalyse durchgeführt.
+In Versionen des Compilers ab Visual Studio 2017, Version 15,3, legt die- **`/permissive-`** Option die- [**`/Zc:ternary`**](zc-ternary.md) Option fest. Der Compiler implementiert auch weitere Anforderungen für die zweistufige Namenssuche. Wenn die **`/permissive-`** Option festgelegt ist, analysiert der Compiler Funktions-und Klassen Vorlagen Definitionen und identifiziert abhängige und nicht abhängige Namen, die in den Vorlagen verwendet werden. In dieser Version wird nur die namens Abhängigkeits Analyse durchgeführt.
 
-Umweltspezifische Erweiterungen und Sprachbereiche, die der Standard bis zur Implementierung überlässt, sind von **/permissive-** nicht betroffen. Beispielsweise werden die Microsoft-spezifische `__declspec`, Aufrufkonvention und strukturierte Ausnahmebehandlungsschlüsselwörter sowie Compilerspezifische Pragma-Direktiven oder Attribute vom Compiler nicht im **/permissive-Modus** gekennzeichnet.
+Umgebungs spezifische Erweiterungen und Sprachbereiche, die der Standard für die Implementierung verlässt, sind von nicht betroffen **`/permissive-`** . Beispielsweise werden die Microsoft-spezifischen `__declspec` Schlüsselwörter, die Aufruf Konvention und die strukturierte Ausnahmebehandlung sowie compilerspezifische pragma-Direktiven und-Attribute nicht vom Compiler im- **`/permissive-`** Modus gekennzeichnet.
 
-Die Option **/permissive-** verwendet die Konformitätsunterstützung in der aktuellen Compilerversion, um zu bestimmen, welche Sprachkonstrukte nicht konform sind. Die Option bestimmt nicht, ob ihr Code einer bestimmten Version des C++-Standards entspricht. Um die gesamte implementierte Compilerunterstützung für den neuesten Entwurfsstandard zu aktivieren, verwenden Sie die Option [/std:latest.](std-specify-language-standard-version.md) Um die Compilerunterstützung auf den aktuell implementierten C++17-Standard zu beschränken, verwenden Sie die Option [/std:c++17.](std-specify-language-standard-version.md) Um die Compilerunterstützung auf eine engere Übereinstimmung mit dem C++14-Standard zu beschränken, verwenden Sie die Option [/std:c++14,](std-specify-language-standard-version.md) die die Standardeinstellung ist.
+Die **`/permissive-`** -Option verwendet die Übereinstimmungs Unterstützung in der aktuellen Compilerversion, um zu bestimmen, welche Sprachkonstrukte nicht kompatibel sind. Die Option bestimmt nicht, ob Ihr Code einer bestimmten Version des C++-Standards entspricht. Um alle implementierten Compilerunterstützung für den neuesten Entwurfs Standard zu aktivieren, verwenden Sie die- [**`/std:c++latest`**](std-specify-language-standard-version.md) Option. Verwenden Sie die-Option, um die Compilerunterstützung auf den derzeit implementierten c++ 17-Standard einzuschränken [**`/std:c++17`**](std-specify-language-standard-version.md) . Um die Compilerunterstützung auf eine genauere Übereinstimmung mit dem c++ 14-Standard einzuschränken, verwenden Sie die- [**`/std:c++14`**](std-specify-language-standard-version.md) Option. Dies ist die Standardeinstellung.
 
-Nicht der gesamte C++11-, C++14- oder C++17-Standardcode wird vom MSVC-Compiler in allen Versionen von Visual Studio 2017 unterstützt. Abhängig von der Version von Visual Studio erkennt die Option **/permissive-** möglicherweise keine Probleme in Bezug auf einige Aspekte der zweiphasigen Namenssuche, indem ein nicht-const-Verweis auf einen temporären Verweis gebunden wird, das Kopieren init als direktes Init behandelt, mehrere benutzerdefinierte Konvertierungen in der Initialisierung oder alternative Token für logische Operatoren und andere nicht unterstützte Konformitätsbereiche ermöglicht. Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter [Nonstandard Behavior](../../cpp/nonstandard-behavior.md). Um das Beste aus **/permissive-** herausholen, aktualisieren Sie Visual Studio auf die neueste Version.
+Der MSVC-Compiler in allen Versionen von Visual Studio 2017 unterstützt nicht alle standardmäßig übereinstimmenden Codes von c++ 11, c++ 14 und c++ 17. Abhängig von der Version von Visual Studio erkennt die **`/permissive-`** Option möglicherweise keine Probleme in einigen Aspekten der zweistufigen Namenssuche, bindet einen nicht konstanten Verweis auf ein temporäres Element, behandelt Copy init als Direct init und ermöglicht mehrere benutzerdefinierte Konvertierungen in der Initialisierung oder Alternative Token für logische Operatoren sowie andere nicht unterstützte Konformitäts Bereiche. Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter [Nonstandard Behavior](../../cpp/nonstandard-behavior.md). Um optimal zu nutzen **`/permissive-`** , aktualisieren Sie Visual Studio auf die neueste Version.
 
 ### <a name="how-to-fix-your-code"></a>So beheben Sie Ihren Code
 
-Hier sind einige Beispiele für Code, der als nicht konform erkannt wird, wenn Sie **/permissive-** verwenden, zusammen mit vorgeschlagenen Möglichkeiten, die Probleme zu beheben.
+Im folgenden finden Sie einige Beispiele für Code, der als nicht kompatibel erkannt wird, wenn Sie verwenden **`/permissive-`** , zusammen mit empfohlenen Möglichkeiten, um die Probleme zu beheben.
 
-#### <a name="use-default-as-an-identifier-in-native-code"></a>Verwenden der Standardeinstellung als Bezeichner im systemeigenen Code
+#### <a name="use-default-as-an-identifier-in-native-code"></a>Standard als Bezeichner in nativem Code verwenden
 
 ```cpp
 void func(int default); // Error C2321: 'default' is a keyword, and
                         // cannot be used in this context
 ```
 
-#### <a name="look-up-members-in-dependent-base"></a>Nachschlagen von Mitgliedern in abhängiger Basis
+#### <a name="look-up-members-in-dependent-base"></a>Member in abhängiger Basis suchen
 
 ```cpp
 template <typename T>
@@ -85,7 +85,7 @@ void h() {
 }
 ```
 
-#### <a name="use-of-qualified-names-in-member-declarations"></a>Verwendung qualifizierter Namen in Mitgliedserklärungen
+#### <a name="use-of-qualified-names-in-member-declarations"></a>Verwendung qualifizierter Namen in Element Deklarationen
 
 ```cpp
 struct A {
@@ -95,7 +95,7 @@ struct A {
 };
 ```
 
-#### <a name="initialize-multiple-union-members-in-a-member-initializer"></a>Initialisieren mehrerer Gewerkschaftsmitglieder in einem Memberinitialisierer
+#### <a name="initialize-multiple-union-members-in-a-member-initializer"></a>Initialisieren mehrerer Unionmember in einem Members-Initialisierer
 
 ```cpp
 union U
@@ -110,7 +110,7 @@ union U
 };
 ```
 
-#### <a name="hidden-friend-name-lookup-rules"></a>Regeln für die Suche nach namen verborgenen Freunden
+#### <a name="hidden-friend-name-lookup-rules"></a>Such Regeln für ausgeblendete Friend-Namen
 
 ```cpp
 // Example 1
@@ -138,7 +138,7 @@ void g() {
 }
 ```
 
-#### <a name="use-scoped-enums-in-array-bounds"></a>Verwenden von bereichsgebundenen Enumerungen in Arraygrenzen
+#### <a name="use-scoped-enums-in-array-bounds"></a>Verwenden von Bereichs bezogenen Aufständen in Array Grenzen
 
 ```cpp
 enum class Color {
@@ -150,7 +150,7 @@ int data[Color::Blue]; // error C3411: 'Color' is not valid as the size
                        // Cast to type size_t or int to fix.
 ```
 
-#### <a name="use-for-each-in-native-code"></a>Verwendung für jeden in systemeigenem Code
+#### <a name="use-for-each-in-native-code"></a>Verwenden Sie für jedes in nativem Code.
 
 ```cpp
 void func() {
@@ -234,21 +234,21 @@ class ATL_NO_VTABLE CFooImpl : public ICustom,
 };
 ```
 
-#### <a name="ambiguous-conditional-operator-arguments"></a>Mehrdeutige bedingte Operatorargumente
+#### <a name="ambiguous-conditional-operator-arguments"></a>Mehrdeutige bedingte Operator Argumente
 
-In Versionen des Compilers vor Visual Studio 2017 Version 15.3 akzeptierte der `?:` Compiler Argumente an den bedingten Operator (oder ternären Operator), die vom Standard als mehrdeutig betrachtet werden. Im **/permissive-Modus** gibt der Compiler jetzt eine oder mehrere Diagnosen aus, wenn in früheren Versionen ohne Diagnose kompiliert wurde.
+In Versionen des Compilers vor Visual Studio 2017 Version 15,3 akzeptierte der Compiler Argumente für den bedingten Operator (oder ternären Operator) `?:` , die vom Standard als mehrdeutig angesehen werden. Im- **`/permissive-`** Modus gibt der Compiler nun eine oder mehrere Diagnosen in Fällen aus, die in früheren Versionen ohne Diagnose kompiliert wurden.
 
 Häufige Fehler, die sich aus dieser Änderung ergeben können, sind:
 
-- Fehler C2593: 'Operator ?' ist mehrdeutig
+- **`error C2593`**`: 'operator ?' is ambiguous`
 
-- Fehler C2679: binär '?': Es wurde kein Operator gefunden, der einen rechten Operanden vom Typ 'B' annimmt (oder es gibt keine akzeptable Konvertierung)
+- **`error C2679`**`: binary '?': no operator found which takes a right-hand operand of type 'B' (or there is no acceptable conversion)`
 
-- Fehler C2678: binär '?': kein Operator gefunden, der einen linken Operanden vom Typ 'A' nimmt (oder es gibt keine akzeptable Konvertierung)
+- **`error C2678`**`: binary '?': no operator found which takes a left-hand operand of type 'A' (or there is no acceptable conversion)`
 
-- Fehler C2446: ':': keine Konvertierung von 'B' in 'A'
+- **`error C2446`**`: ':': no conversion from 'B' to 'A'`
 
-Ein typisches Codemuster, das dieses Problem verursachen kann, ist, wenn eine Klasse C sowohl einen nicht expliziten Konstruktor eines anderen Typs T als auch einen nicht expliziten Konvertierungsoperator für Typ T bereitstellt. Im vorliegenden Fall sind sowohl die Konvertierung des zweiten Arguments in den Typ des dritten Arguments als auch die Konvertierung des dritten Arguments in den Typ des zweiten Arguments gültige Konvertierungen. Da beide gültig sind, ist sie gemäß dem Standard mehrdeutig.
+Ein typisches Code muster, das dieses Problem verursachen kann, ist, wenn eine Klasse C einen nicht expliziten Konstruktor von einem anderen Typ t und einen nicht expliziten Konvertierungs Operator für den Typ t bereitstellt. In diesem Fall handelt es sich bei der Konvertierung des zweiten Arguments in den Typ des dritten Arguments und bei der Konvertierung des dritten Arguments in den Typ des zweiten Arguments um gültige Konvertierungen. Da beide gültig sind, ist sie gemäß dem Standard mehrdeutig.
 
 ```cpp
 // Example 1: class that provides conversion to and initialization from some type T
@@ -268,7 +268,7 @@ auto y = cond ? 7 : int(a);
 auto z = cond ? A(7) : a;
 ```
 
-Es gibt eine wichtige Ausnahme von diesem allgemeinen Muster, wenn T einen der `const char *` `const char16_t *`null-terminierten Zeichenfolgentypen (z. B. , , usw.) darstellt und das eigentliche Argument für `?:` ein Zeichenfolgenliteral des entsprechenden Typs ist. C++17 hat die Semantik von C++14 geändert. Daher wird der Code in Beispiel 2 unter **/std:c++14** akzeptiert und unter **/std:c++17** abgelehnt, wenn **/Zc:ternary** oder **/permissive-** verwendet wird.
+Es gibt eine wichtige Ausnahme für dieses gängige Muster, wenn T einen der null-terminierten Zeichen folgen Typen (z. b., `const char *` `const char16_t *` usw.) darstellt und das eigentliche Argument für `?:` ein Zeichenfolgenliteralwert des entsprechenden Typs ist. C++ 17 hat die Semantik von c++ 14 geändert. Demzufolge wird der Code in Beispiel 2 unter akzeptiert **`/std:c++14`** und abgelehnt, **`/std:c++17`** Wenn **`/Zc:ternary`** oder **`/permissive-`** verwendet wird.
 
 ```cpp
 // Example 2: exception from the above
@@ -289,7 +289,7 @@ auto x = cond ? "A" : s;
 auto y = cond ? "A" : static_cast<const char*>(s);
 ```
 
-Ein weiterer Fall, in dem Fehler angezeigt werden, ist in bedingten Operatoren mit einem Argument vom Typ `void`. Dieser Fall kann in ASSERT-ähnlichen Makros üblich sein.
+Ein weiterer Fall, in dem möglicherweise Fehler auftreten, ist in bedingten Operatoren mit einem Argument vom Typ **`void`** . Dieser Fall kann in Assert-ähnlichen Makros häufig vorkommen.
 
 ```cpp
 // Example 3: void arguments
@@ -300,7 +300,7 @@ void myassert(const char* text, const char* file, int line);
 #define ASSERT_B(ex) (void)((ex) ? void() : myassert(#ex, __FILE__, __LINE__))
 ```
 
-Möglicherweise werden auch Fehler in der Vorlagenmetaprogrammierung angezeigt, bei denen sich die Ergebnistypen des bedingten Operators unter **/Zc:ternary** und **/permissive-** ändern können. Eine Möglichkeit, dieses Problem zu beheben, besteht darin, [std::remove_reference](../../standard-library/remove-reference-class.md) für den resultierenden Typ zu verwenden.
+Möglicherweise werden auch Fehler in der Vorlagen Metaprogrammierung angezeigt, bei denen sich die Ergebnistypen für bedingte Operatoren unter und ändern können **`/Zc:ternary`** **`/permissive-`** . Eine Möglichkeit, dieses Problem zu beheben, besteht in [`std::remove_reference`](../../standard-library/remove-reference-class.md) der Verwendung von für den resultierenden Typ.
 
 ```cpp
 // Example 4: different result types
@@ -314,7 +314,7 @@ const char (&z)[2] = count > 3 ? "A" : "B"; // const char* without /Zc:ternary
 
 #### <a name="two-phase-name-look-up"></a>Zwei-Phasen-Namenssuche
 
-Wenn die Option **/permissive-** festgelegt ist, analysiert der Compiler Funktions- und Klassenvorlagendefinitionen und identifiziert abhängige und nicht abhängige Namen, die in Vorlagen verwendet werden, wie es für die zweiphasige Namenssuche erforderlich ist. In Visual Studio 2017 Version 15.3 wird eine Namensabhängigkeitsanalyse durchgeführt. Insbesondere nicht abhängige Namen, die nicht im Kontext einer Vorlagendefinition deklariert werden, verursachen eine Diagnosemeldung, wie dies von den ISO C++-Standards gefordert wird. In Visual Studio 2017 Version 15.7 wird auch die Bindung nicht abhängiger Namen durchgeführt, die eine argumentabhängige Suche im Definitionskontext erfordern.
+Wenn die- **`/permissive-`** Option festgelegt ist, analysiert der Compiler Funktions-und Klassen Vorlagen Definitionen und identifiziert abhängige und nicht abhängige Namen, die in Vorlagen verwendet werden, wie für die zwei-Phasen-Namenssuche erforderlich. In Visual Studio 2017 Version 15,3 wird die namens Abhängigkeits Analyse durchgeführt. Insbesondere nicht abhängige Namen, die nicht im Kontext einer Vorlagen Definition deklariert werden, verursachen eine Diagnose Meldung gemäß den ISO C++-Standards. In Visual Studio 2017 Version 15,7 wird auch das Binden von nicht abhängigen Namen, für die ein Argument abhängiges suchen im Definitions Kontext erforderlich ist, vorgenommen.
 
 ```cpp
 // dependent base
@@ -340,17 +340,17 @@ int main()
 }
 ```
 
-Wenn Sie ein Legacyverhalten für die zweiphasige Suche wünschen, ansonsten aber **/permissive-** Verhalten wünschen, fügen Sie die Option **/Zc:twoPhase-** hinzu.
+Wenn Sie Legacy Verhalten für die zweistufige Suche wünschen, aber andernfalls Verhalten möchten **`/permissive-`** , fügen Sie die **`/Zc:twoPhase-`** Option hinzu.
 
-### <a name="windows-header-issues"></a>Probleme mit dem Windows-Header
+### <a name="windows-header-issues"></a>Windows-Header Probleme
 
-Die Option **/permissive-** ist zu streng für Versionen der Windows Kits vor Windows Fall Creators Update SDK (10.0.16299.0) oder dem Windows Driver Kit (WDK) Version 1709. Wir empfehlen Ihnen, auf die neuesten Versionen der Windows-Kits zu aktualisieren, um **/permissive-** in Ihrem Windows- oder Gerätetreibercode zu verwenden.
+Die **`/permissive-`** Option ist für Versionen der Windows-Kits vor dem Windows Fall Creators Update SDK (10.0.16299.0) oder Windows Driver Kit (WDK) Version 1709 zu streng. Es wird empfohlen, ein Update auf die neuesten Versionen der Windows-Kits durchführen, um Sie **`/permissive-`** in Ihrem Windows-oder Gerätetreiber Code zu verwenden.
 
-Bestimmte Headerdateien im Windows April 2018 Update SDK (10.0.17134.0), dem Windows Fall Creators Update SDK (10.0.16299.0) oder dem Windows Driver Kit (WDK) 1709 haben immer noch Probleme, die sie mit der Verwendung von **/permissive-** unvereinbar machen. Um diese Probleme zu umgehen, empfehlen wir, dass Sie die Verwendung dieser Header auf die Quellcodedateien beschränken, die sie benötigen, und die Option **/permissive-** entfernen, wenn Sie diese spezifischen Quellcodedateien kompilieren.
+Bestimmte Header Dateien im 2018 Windows-Update-SDK (10.0.17134.0), das Windows Fall Creators Update SDK (10.0.16299.0) oder das Windows-Treiberkit (WDK) 1709 haben weiterhin Probleme, die Sie mit der Verwendung von nicht kompatibel machen **`/permissive-`** . Um diese Probleme zu umgehen, empfiehlt es sich, die Verwendung dieser Header auf die Quell Code Dateien zu beschränken, die Sie benötigen, und die Option zu entfernen, **`/permissive-`** Wenn Sie diese speziellen Quell Code Dateien kompilieren.
 
-Diese WinRT WRL-Header, die im Windows April 2018 Update SDK (10.0.17134.0) veröffentlicht wurden, sind nicht mit **/permissive-** bereinigt. Um diese Probleme zu umgehen, verwenden Sie entweder nicht **/permissive-**, oder verwenden Sie **/permissive-** mit **/Zc:twoPhase-** wenn Sie mit diesen Headern arbeiten:
+Diese WinRT-WRL-Header, die im 2018 Windows SDK-Update SDK (10.0.17134.0) veröffentlicht wurden, sind mit nicht bereinigt **`/permissive-`** . Um diese Probleme zu umgehen, verwenden Sie entweder nicht **`/permissive-`** , oder verwenden **`/permissive-`** Sie mit, **`/Zc:twoPhase-`** Wenn Sie mit diesen Headern arbeiten:
 
-- Probleme in winrt/wrl/async.h
+- Probleme in WinRT/WRL/Async. h
 
    ```Output
    C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt\wrl\async.h(483): error C3861: 'TraceDelegateAssigned': identifier not found
@@ -359,15 +359,15 @@ Diese WinRT WRL-Header, die im Windows April 2018 Update SDK (10.0.17134.0) ver�
    C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt\wrl\async.h(513): error C3861: 'TraceProgressNotificationComplete': identifier not found
    ```
 
-- Problem in winrt/wrl/implements.h
+- Problem in WinRT/WRL/implementiert. h
 
    ```Output
    C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt\wrl\implements.h(2086): error C2039: 'SetStrongReference': is not a member of 'Microsoft::WRL::Details::WeakReferenceImpl'
    ```
 
-Diese Benutzermodus-Header, die im Windows April 2018 Update SDK (10.0.17134.0) veröffentlicht wurden, sind nicht mit **/permissive-** bereinigt. Um diese Probleme zu umgehen, verwenden Sie **/permissive-** nicht, wenn Sie mit diesen Headern arbeiten:
+Diese im Windows April 2018 Update SDK (10.0.17134.0) veröffentlichten benutzermodusheader sind nicht mit bereinigt **`/permissive-`** . Verwenden Sie **`/permissive-`** beim Arbeiten mit diesen Headern nicht, um diese Probleme zu umgehen:
 
-- Probleme in um/Tune.h
+- Probleme in "um/Tune. h"
 
    ```Output
    C:\ProgramFiles(x86)\Windows Kits\10\include\10.0.17134.0\um\tune.h(139): error C3861: 'Release': identifier not found
@@ -376,13 +376,13 @@ Diese Benutzermodus-Header, die im Windows April 2018 Update SDK (10.0.17134.0) 
    C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um\tune.h(1240): note: 'Release': function declaration must be available as none of the arguments depend on a template parameter
    ```
 
-- Ausgabe in um/spddkhlp.h
+- Problem in "um/spddkhlp. h"
 
    ```Output
    C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um\spddkhlp.h(759): error C3861: 'pNode': identifier not found
    ```
 
-- Probleme in um/refptrco.h
+- Probleme in "um/refptrco. h"
 
    ```Output
    C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um\refptrco.h(179): error C2760: syntax error: unexpected token 'identifier', expected 'type specifier'
@@ -390,11 +390,11 @@ Diese Benutzermodus-Header, die im Windows April 2018 Update SDK (10.0.17134.0) 
    C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um\refptrco.h(395): error C2760: syntax error: unexpected token 'identifier', expected 'type specifier'
    ```
 
-Diese Probleme sind spezifisch für Benutzermodusheader im Windows Fall Creators Update SDK (10.0.16299.0):
+Diese Probleme gelten speziell für Benutzermodus-Header im Windows Fall Creators Update SDK (10.0.16299.0):
 
-- Problem in um/Query.h
+- Problem in "um/Abfrage. h"
 
-   Bei Verwendung des **/permissive-** `tagRESTRICTION` Compiler-Switches wird die Struktur aufgrund des case(RTOr)-Members 'oder' nicht kompiliert.
+   Wenn Sie den- **`/permissive-`** Compilerschalter verwenden, wird die- `tagRESTRICTION` Struktur aufgrund des Case (rtor)-Members ' or ' nicht kompiliert.
 
    ```cpp
    struct tagRESTRICTION
@@ -416,21 +416,21 @@ Diese Probleme sind spezifisch für Benutzermodusheader im Windows Fall Creators
    };
    ```
 
-   Um dieses Problem zu beheben, kompilieren Sie Dateien, die Query.h enthalten, ohne die Option **/permissive-.**
+   Um dieses Problem zu beheben, kompilieren Sie Dateien, die "Query. h" enthalten, ohne die- **`/permissive-`** Option.
 
-- Ausgabe in um/cellularapi_oem.h
+- Problem in "um/cellularapi_oem. h"
 
-   Bei Verwendung des **/permissive-** Compiler-Schalters `enum UICCDATASTOREACCESSMODE` verursacht die Vorwärtsdeklaration eine Warnung:
+   Wenn Sie den- **`/permissive-`** Compilerschalter verwenden, verursacht die vorwärts Deklaration von `enum UICCDATASTOREACCESSMODE` eine Warnung:
 
    ```cpp
    typedef enum UICCDATASTOREACCESSMODE UICCDATASTOREACCESSMODE; // C4471
    ```
 
-   Die Vorwärtsdeklaration der nicht scoped enum ist eine Microsoft-Erweiterung. Um dieses Problem zu beheben, kompilieren Sie Dateien, die cellularapi_oem.h ohne die Option **/permissive-** enthalten, oder verwenden Sie die Option [/wd,](compiler-option-warning-level.md) um die Warnung C4471 zum Schweigen zu bringen.
+   Die vorwärts Deklaration von Enumeration ohne Bereichs Einschränkung ist eine Microsoft-Erweiterung. Um dieses Problem zu beheben, kompilieren Sie Dateien, die cellularapi_oem. h enthalten, ohne die- **`/permissive-`** Option, oder verwenden [**`/wd`**](compiler-option-warning-level.md) Sie die Option zum Stillen Warning C4471.
 
-- Problem in um/omscript.h
+- Problem in "um/omscript. h"
 
-   In C++03 ist eine Konvertierung von einem Zeichenfolgenliteral in BSTR (das ist ein typedef in 'wchar_t *') veraltet, aber zulässig. In C++11 ist die Konvertierung nicht mehr zulässig.
+   In c++ 03 ist eine Konvertierung eines Zeichenfolgenliterals in BSTR (eine typedef in "wchar_t *") veraltet, aber zulässig. In c++ 11 ist die Konvertierung nicht mehr zulässig.
 
    ```cpp
    virtual /* [id] */ HRESULT STDMETHODCALLTYPE setExpression(
@@ -439,31 +439,31 @@ Diese Probleme sind spezifisch für Benutzermodusheader im Windows Fall Creators
        /* [in][defaultvalue] */ __RPC__in BSTR language = L"") = 0; // C2440
    ```
 
-   Um dieses Problem zu beheben, kompilieren Sie Dateien, die omscript.h enthalten, ohne die Option **/permissive-** oder verwenden Sie stattdessen **/Zc:strictStrings-.**
+   Um dieses Problem zu beheben, kompilieren Sie Dateien, die "omscript. h" enthalten, ohne die- **`/permissive-`** Option, oder verwenden Sie **`/Zc:strictStrings-`** stattdessen.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-Verwenden Sie in Visual Studio 2017 Version 15.5 und höher wie folgt:
+Verwenden Sie in Visual Studio 2017 Version 15,5 und höheren Versionen folgendes Verfahren:
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** Ihres Projekts.
+1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** des Projekts.
 
-1. Wählen Sie die Eigenschaftenseite **"Konfigurationseigenschaften** > **C/C++** > **Language"** aus.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Sprache** aus.
 
-1. Ändern Sie den **Eigenschaftswert des Konformitätsmodus** in **Ja (/permissive-)**. Wählen Sie **OK** oder **Übernehmen,** um Ihre Änderungen zu speichern.
+1. Ändern Sie den Eigenschafts Wert für den **Konformitäts Modus** in **Ja (/permissive-)**. Wählen Sie **OK** oder **anwenden** aus, um die Änderungen zu speichern.
 
-Verwenden Sie in Versionen vor Visual Studio 2017 Version 15.5 dieses Verfahren:
+Verwenden Sie in Versionen vor Visual Studio 2017 Version 15,5 folgendes Verfahren:
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** Ihres Projekts.
+1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** des Projekts.
 
-1. Wählen Sie die Eigenschaftenseite **"Konfigurationseigenschaften** > **C/C++** > **Befehlszeile"** aus.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Befehlszeile** aus.
 
-1. Geben Sie die Option **/permissive-** compiler in das Feld **Zusätzliche Optionen** ein. Wählen Sie **OK** oder **Übernehmen,** um Ihre Änderungen zu speichern.
+1. Geben Sie die **/permissive-** -Compileroption im Feld **zusätzliche Optionen** ein. Wählen Sie **OK** oder **anwenden** aus, um die Änderungen zu speichern.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [MSVC-Compileroptionen](compiler-options.md)\
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)
