@@ -6,12 +6,12 @@ helpviewer_keywords:
 - database classes [MFC]
 - file classes [MFC]
 ms.assetid: 580b169c-e26e-4395-b128-5408d08c98fe
-ms.openlocfilehash: 0996810a2af835c5c98a4f3311d2411466d43583
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 8874b9f99d3a5756b4ce66e2f5732f856bdd7078
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79442401"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622631"
 ---
 # <a name="file-and-database-classes"></a>Klassen für Dateien und Datenbanken
 
@@ -19,14 +19,14 @@ Diese Klassen ermöglichen Ihnen das Speichern von Informationen in einer Datenb
 
 Die folgenden Klassen Kategorien unterstützen die Daten Persistenz.
 
-- [Datei-e/a-Klassen](../mfc/file-i-o-classes.md)
+- [Klassen für Datei-E/A](file-i-o-classes.md)
 
-- [OLE DB-Klassen](../mfc/ole-db-classes.md)
+- [OLE DB-Klassen](ole-db-classes.md)
 
-- [DAO-Klassen](../mfc/dao-classes.md)
+- [DAO-Klassen](dao-classes.md)
 
-- [ODBC-Klassen](../mfc/odbc-classes.md)
+- [ODBC-Klassen](odbc-classes.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Klassen Übersicht](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

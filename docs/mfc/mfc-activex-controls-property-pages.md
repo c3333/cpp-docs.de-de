@@ -10,112 +10,112 @@ helpviewer_keywords:
 - CPropertyPageDialog class [MFC]
 - MFC ActiveX controls [MFC], property pages
 ms.assetid: 1506f87a-9fd6-4505-8380-0dbc9636230e
-ms.openlocfilehash: c31d13e03483f8632f17a526da75ebe8e21bccbf
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3d22085daa503a7c778111718445920f98b98a89
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364565"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84615439"
 ---
 # <a name="mfc-activex-controls-property-pages"></a>MFC-ActiveX-Steuerelemente: Eigenschaftenseite
 
-Eigenschaftenseiten ermöglichen es einem ActiveX-Steuerelementbenutzer, ActiveX-Steuerelementeigenschaften anzuzeigen und zu ändern. Auf diese Eigenschaften wird zugegriffen, indem ein Dialogfeld mit Steuerelementeigenschaften aufgerufen wird, das eine oder mehrere Eigenschaftenseiten enthält, die eine angepasste, grafische Oberfläche zum Anzeigen und Bearbeiten der Steuerelementeigenschaften bereitstellen.
+Eigenschaften Seiten ermöglichen einem ActiveX-Steuerelement Benutzer das Anzeigen und Ändern der Eigenschaften von ActiveX-Steuerelementen. Sie können auf diese Eigenschaften zugreifen, indem Sie das Dialogfeld Steuerelement Eigenschaften aufrufen, das eine oder mehrere Eigenschaften Seiten enthält, die eine angepasste grafische Oberfläche zum Anzeigen und Bearbeiten der Steuerelement Eigenschaften bereitstellen.
 
 >[!IMPORTANT]
-> ActiveX ist eine legacy Technologie, die nicht für Neuentwicklungen verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ablösen, finden Sie unter [ActiveX Controls](activex-controls.md).
+> ActiveX ist eine ältere Technologie, die nicht für die neue Entwicklung verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ersetzen, finden Sie unter ActiveX-Steuer [Elemente](activex-controls.md).
 
-ActiveX-Steuerelementeigenschaftenseiten werden auf zwei Arten angezeigt:
+Die Eigenschaften Seiten des ActiveX-Steuer Elements werden auf zwei Arten angezeigt:
 
-- Wenn das Eigenschaftenverb (**OLEIVERB_PROPERTIES**) des Steuerelements aufgerufen wird, öffnet das Steuerelement ein Dialogfeld für modale Eigenschaften, das die Eigenschaftenseiten des Steuerelements enthält.
+- Wenn das Eigenschaften Verb (**OLEIVERB_PROPERTIES**) des-Steuer Elements aufgerufen wird, öffnet das-Steuerelement ein modales Eigenschaften Dialogfeld, das die Eigenschaften Seiten des-Steuer Elements enthält.
 
-- Der Container kann sein eigenes modusloses Dialogfeld anzeigen, das die Eigenschaftenseiten des ausgewählten Steuerelements anzeigt.
+- Der Container kann ein eigenes nicht modalem Dialogfeld anzeigen, in dem die Eigenschaften Seiten des ausgewählten Steuer Elements angezeigt werden.
 
-Das Dialogfeld Eigenschaften (in der folgenden Abbildung dargestellt) besteht aus einem Bereich zum Anzeigen der aktuellen Eigenschaftenseite, Registerkarten zum Wechseln zwischen Eigenschaftenseiten und einer Auflistung von Schaltflächen, die allgemeine Aufgaben ausführen, wie z. B. das Schließen des Eigenschaftenseitendialogs, das Abbrechen aller vorgenommenen Änderungen oder das sofortige Anwenden von Änderungen am ActiveX-Steuerelement.
+Das Dialogfeld Eigenschaften (in der folgenden Abbildung dargestellt) besteht aus einem Bereich zum Anzeigen der aktuellen Eigenschaften Seite, Registerkarten zum Wechseln zwischen Eigenschaften Seiten und einer Auflistung von Schaltflächen, die allgemeine Aufgaben ausführen, wie z. b. das Schließen des Dialog Felds der Eigenschaften Seite, das Abbrechen vorgenommene Änderungen oder das sofortige Anwenden von Änderungen auf das ActiveX-Steuerelement.
 
 ![Eigenschaftendialogfeld für Circ3](../mfc/media/vc373i1.gif "Eigenschaftendialogfeld für Circ3") <br/>
-Eigenschaften Dialogfeld
+Eigenschaften (Dialog Feld)
 
-In diesem Artikel werden Themen behandelt, die sich auf die Verwendung von Eigenschaftenseiten in einem ActiveX-Steuerelement beziehen. Dazu gehören:
+Dieser Artikel behandelt Themen im Zusammenhang mit der Verwendung von Eigenschaften Seiten in einem ActiveX-Steuerelement. Dazu gehören:
 
-- [Implementieren der Standardeigenschaftsseite für ein ActiveX-Steuerelement](#_core_implementing_the_default_property_page)
+- [Implementieren der Standardeigenschaften Seite für ein ActiveX-Steuerelement](#_core_implementing_the_default_property_page)
 
-- [Hinzufügen von Steuerelementen zu einer Eigenschaftenseite](#_core_adding_controls_to_a_property_page)
+- [Hinzufügen von Steuerelementen zu einer Eigenschaften Seite](#_core_adding_controls_to_a_property_page)
 
 - [Anpassen der DoDataExchange-Funktion](#_core_customizing_the_dodataexchange_function)
 
-Weitere Informationen zur Verwendung von Eigenschaftenseiten in einem ActiveX-Steuerelement finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verwendung von Eigenschaften Seiten in einem ActiveX-Steuerelement finden Sie in den folgenden Artikeln:
 
-- [MFC-ActiveX-Steuerelemente: Hinzufügen einer weiteren benutzerdefinierten Eigenschaftenseite](../mfc/mfc-activex-controls-adding-another-custom-property-page.md)
+- [MFC-ActiveX-Steuerelemente: Hinzufügen einer weiteren benutzerdefinierten Eigenschaftenseite](mfc-activex-controls-adding-another-custom-property-page.md)
 
-- [MFC-ActiveX-Steuerelemente: Verwenden von vordefinierten Eigenschaftenseiten](../mfc/mfc-activex-controls-using-stock-property-pages.md)
+- [MFC-ActiveX-Steuerelemente: Verwenden von vordefinierten Eigenschaftenseiten](mfc-activex-controls-using-stock-property-pages.md)
 
-Informationen zur Verwendung von Eigenschaftenblättern in einer anderen MFC-Anwendung als einem ActiveX-Steuerelement finden Sie unter [Eigenschaftenblätter](../mfc/property-sheets-mfc.md).
+Informationen zur Verwendung von Eigenschaften Blättern in einer MFC-Anwendung, die kein ActiveX-Steuerelement ist, finden Sie unter [Eigenschaften Blätter](property-sheets-mfc.md).
 
-## <a name="implementing-the-default-property-page"></a><a name="_core_implementing_the_default_property_page"></a>Implementieren der Standardeigenschaftsseite
+## <a name="implementing-the-default-property-page"></a><a name="_core_implementing_the_default_property_page"></a>Implementieren der Standardeigenschaften Seite
 
-Wenn Sie den ActiveX Control-Assistenten zum Erstellen des Steuerelementprojekts verwenden, stellt der ActiveX Control-Assistent eine Standardeigenschaftenseitenklasse für das von der [COlePropertyPage-Klasse](../mfc/reference/colepropertypage-class.md)abgeleitete Steuerelement bereit. Anfangs ist diese Eigenschaftenseite leer, Sie können jedoch ein beliebiges Dialogfeldsteuerelement oder eine Reihe von Steuerelementen hinzufügen. Da der ActiveX Control-Assistent standardmäßig nur eine Eigenschaftenseitenklasse erstellt, `COlePropertyPage`müssen mithilfe der Klassenansicht zusätzliche Eigenschaftenseitenklassen (ebenfalls abgeleitet von ) erstellt werden. Weitere Informationen zu diesem Verfahren finden Sie unter [MFC ActiveX-Steuerelemente: Hinzufügen einer weiteren benutzerdefinierten Eigenschaftenseite](../mfc/mfc-activex-controls-adding-another-custom-property-page.md).
+Wenn Sie das Steuerelement Projekt mit dem ActiveX-Steuerelement-Assistenten erstellen, stellt der ActiveX-Steuerelement-Assistent eine Standardeigenschaften Seiten Klasse für das von der [COlePropertyPage-Klasse](reference/colepropertypage-class.md)abgeleitete Steuerelement bereit. Diese Eigenschaften Seite ist zunächst leer, Sie können jedoch ein beliebiges Dialogfeld-Steuerelement oder einen Satz von Steuerelementen hinzufügen. Da der ActiveX-Steuerelement-Assistent standardmäßig nur eine Eigenschaften Seiten Klasse erstellt, müssen zusätzliche Eigenschaften Seiten Klassen (auch von abgeleitet `COlePropertyPage` ) mit Klassenansicht erstellt werden. Weitere Informationen zu diesem Verfahren finden Sie unter [MFC-ActiveX-Steuerelemente: Hinzufügen einer weiteren benutzerdefinierten Eigenschaften Seite](mfc-activex-controls-adding-another-custom-property-page.md).
 
-Das Implementieren einer Eigenschaftenseite (in diesem Fall die Standardeinstellung) ist ein dreistufiger Prozess:
+Das Implementieren einer Eigenschaften Seite (in diesem Fall die Standardeinstellung) ist ein dreistufiger Prozess:
 
-#### <a name="to-implement-a-property-page"></a>So implementieren Sie eine Eigenschaftenseite
+#### <a name="to-implement-a-property-page"></a>So implementieren Sie eine Eigenschaften Seite
 
-1. Fügen `COlePropertyPage`Sie dem Steuerelementprojekt eine -abgeleitete Klasse hinzu. Wenn das Projekt mit dem ActiveX Control Wizard erstellt wurde (wie in diesem Fall), ist die Standardeigenschaftenseitenklasse bereits vorhanden.
+1. Fügen Sie `COlePropertyPage` dem Steuerelement Projekt eine von abgeleitete Klasse hinzu. Wenn das Projekt mit dem ActiveX-Steuerelement-Assistenten erstellt wurde (wie in diesem Fall), ist die Standardeigenschaften Seiten Klasse bereits vorhanden.
 
-1. Verwenden Sie den Dialogdialogeditor, um der Eigenschaftenseitenvorlage Steuerelemente hinzuzufügen.
+1. Verwenden Sie den Dialog-Editor, um der Eigenschaften Seitenvorlage beliebige Steuerelemente hinzuzufügen.
 
-1. Passen `DoDataExchange` Sie die `COlePropertyPage`Funktion der -derived-Klasse an, um Werte zwischen dem Eigenschaftenseitensteuerelement und dem ActiveX-Steuerelement auszutauschen.
+1. Passen `DoDataExchange` Sie die Funktion der von `COlePropertyPage` abgeleiteten Klasse an, um Werte zwischen dem Steuerelement der Eigenschaften Seite und dem ActiveX-Steuerelement auszutauschen.
 
-Die folgenden Verfahren verwenden z. B. ein einfaches Steuerelement (mit dem Namen "Beispiel"). Das Beispiel wurde mit dem ActiveX Control Wizard erstellt und enthält nur die Stock Caption-Eigenschaft.
+Die folgenden Prozeduren verwenden z. b. ein einfaches Steuerelement (mit dem Namen "Sample"). Das Beispiel wurde mithilfe des ActiveX-Steuerelement-Assistenten erstellt und enthält nur die Eigenschaft Stock Caption.
 
-## <a name="adding-controls-to-a-property-page"></a><a name="_core_adding_controls_to_a_property_page"></a>Hinzufügen von Steuerelementen zu einer Eigenschaftenseite
+## <a name="adding-controls-to-a-property-page"></a><a name="_core_adding_controls_to_a_property_page"></a>Hinzufügen von Steuerelementen zu einer Eigenschaften Seite
 
-#### <a name="to-add-controls-to-a-property-page"></a>So fügen Sie Steuerelemente zu einer Eigenschaftenseite hinzu
+#### <a name="to-add-controls-to-a-property-page"></a>So fügen Sie einer Eigenschaften Seite Steuerelemente hinzu
 
-1. Öffnen Sie die Ressourcenansicht, wenn Das Steuerungsprojekt geöffnet ist.
+1. Öffnen Sie mit dem geöffneten Steuerelement Projekt Ressourcenansicht.
 
-1. Doppelklicken Sie **Dialog** auf das Dialog-Verzeichnissymbol.
+1. Doppelklicken Sie auf das Symbol für den **Dialog** Verzeichnis.
 
 1. Öffnen Sie das Dialogfeld IDD_PROPPAGE_SAMPLE.
 
-   Der ActiveX-Steuerelement-Assistent fügt den Namen des Projekts an das Ende der Dialog-ID an, in diesem Fall Beispiel.
+   Der ActiveX-Steuerelement-Assistent fügt den Namen des Projekts an das Ende der Dialog-ID an, in diesem Fallbeispiel.
 
-1. Ziehen Sie das ausgewählte Steuerelement aus der Toolbox in den Dialogfeldbereich.
+1. Ziehen Sie das ausgewählte Steuerelement per Drag & amp; Drop aus der Toolbox in den Dialogfeld Bereich.
 
-1. Für dieses Beispiel sind ein Textbeschriftungssteuerelement "Caption :" und ein Bearbeitungsfeldsteuerelement mit einem IDC_CAPTION Bezeichner ausreichend.
+1. In diesem Beispiel sind ein Text Bezeichnungs Steuerelement "Caption:" und ein Bearbeitungsfeld-Steuerelement mit einem IDC_CAPTION Bezeichner ausreichend.
 
-1. Klicken Sie auf der Symbolleiste auf **Speichern,** um Ihre Änderungen zu speichern.
+1. Klicken Sie auf der Symbolleiste auf **Speichern** , um die Änderungen zu speichern.
 
-Nachdem die Benutzeroberfläche geändert wurde, müssen Sie das Bearbeitungsfeld mit der Caption-Eigenschaft verknüpfen. Dies geschieht im folgenden Abschnitt, `CSamplePropPage::DoDataExchange` indem Sie die Funktion bearbeiten.
+Nachdem die Benutzeroberfläche geändert wurde, müssen Sie das Bearbeitungsfeld mit der Beschriftung-Eigenschaft verknüpfen. Dies erfolgt im folgenden Abschnitt, indem Sie die- `CSamplePropPage::DoDataExchange` Funktion bearbeiten.
 
 ## <a name="customizing-the-dodataexchange-function"></a><a name="_core_customizing_the_dodataexchange_function"></a>Anpassen der DoDataExchange-Funktion
 
-Mit der Eigenschaftsseite [CWnd::DoDataExchange](../mfc/reference/cwnd-class.md#dodataexchange) können Sie Eigenschaftenseitenwerte mit den tatsächlichen Werten der Eigenschaften im Steuerelement verknüpfen. Um Verknüpfungen herzustellen, müssen Sie die entsprechenden Eigenschaftenseitenfelder ihren jeweiligen Steuerelementeigenschaften zuordnen.
+Die Eigenschaften Seite [CWnd::D odataexchange](reference/cwnd-class.md#dodataexchange) -Funktion ermöglicht es Ihnen, Eigenschafts Seiten Werte mit den tatsächlichen Werten von Eigenschaften im Steuerelement zu verknüpfen. Zum Einrichten von Links müssen Sie die entsprechenden Eigenschaften Seiten Felder den jeweiligen Steuerelement Eigenschaften zuordnen.
 
-Diese Zuordnungen werden mithilfe der Eigenschaftenseite **DDP_-Funktionen** implementiert. Die **DDP_** Funktionen funktionieren wie die **DDX_** Funktionen, die in Standard-MFC-Dialogen verwendet werden, mit einer Ausnahme. Zusätzlich zum Verweis auf eine Membervariable nehmen **DDP_** Funktionen den Namen der Steuerelementeigenschaft an. Im Folgenden finden Sie `DoDataExchange` einen typischen Eintrag in der Funktion für eine Eigenschaftenseite.
+Diese Zuordnungen werden mithilfe der Eigenschaften Seite **DDP_** Funktionen implementiert. Die **DDP_** Funktionen funktionieren wie die **DDX_** Funktionen, die in MFC-Standard Dialogfeldern verwendet werden, mit einer Ausnahme. Zusätzlich zum Verweis auf eine Member-Variable verwenden **DDP_** Funktionen den Namen der Steuerelement Eigenschaft. Der folgende Eintrag ist ein typischer Eintrag in der- `DoDataExchange` Funktion für eine Eigenschaften Seite.
 
-[!code-cpp[NVC_MFC_AxUI#31](../mfc/codesnippet/cpp/mfc-activex-controls-property-pages_1.cpp)]
+[!code-cpp[NVC_MFC_AxUI#31](codesnippet/cpp/mfc-activex-controls-property-pages_1.cpp)]
 
-Diese Funktion ordnet die *m_caption* Membervariable der Eigenschaftenseite `DDP_TEXT` der Beschriftung mithilfe der Funktion zu.
+Diese Funktion ordnet die *m_caption* Member-Variable der Eigenschaften Seite der Beschriftung mithilfe der- `DDP_TEXT` Funktion zu.
 
-Nachdem Sie das Eigenschaftenseitensteuerelement eingefügt haben, müssen Sie mithilfe der `DDP_Text` oben beschriebenen Funktion eine Verknüpfung zwischen dem Eigenschaftenseitensteuerelement IDC_CAPTION und der tatsächlichen Steuerelementeigenschaft Beschriftung herstellen.
+Nachdem Sie das Eigenschaften Seiten-Steuerelement eingefügt haben, müssen Sie mithilfe der- `DDP_Text` Funktion wie oben beschrieben eine Verknüpfung zwischen dem Eigenschaften Seiten-Steuerelement, IDC_CAPTION und der eigentlichen Steuerelement Eigenschaft (Beschriftung) herstellen.
 
-[Eigenschaftenseiten](../mfc/reference/property-pages-mfc.md) sind für andere Dialogsteuerelementtypen verfügbar, z. B. Kontrollkästchen, Optionsfelder und Listenfelder. In der folgenden Tabelle sind die gesamten Eigenschaftenseiten **DDP_** Funktionen und deren Zwecke aufgeführt:
+[Eigenschaften Seiten](reference/property-pages-mfc.md) sind für andere Dialogfeld-Steuerelement Typen verfügbar, z. b. Kontrollkästchen, Options Felder und Listenfelder. In der folgenden Tabelle sind die gesamten Eigenschaften Seiten **DDP_** Funktionen und deren Zwecke aufgeführt:
 
-### <a name="property-page-functions"></a>Eigenschaftenseitenfunktionen
+### <a name="property-page-functions"></a>Eigenschaften Seitenfunktionen
 
-|Funktionsname|Verwenden Sie diese Funktion, um|
+|Funktionsname|Diese Funktion verwenden, um zu verknüpfen|
 |-------------------|-------------------------------|
-|`DDP_CBIndex`|Der Index der ausgewählten Zeichenfolge in einem Kombinationsfeld mit einer Steuerelementeigenschaft.|
-|`DDP_CBString`|Die ausgewählte Zeichenfolge in einem Kombinationsfeld mit einer Steuerelementeigenschaft. Die ausgewählte Zeichenfolge kann mit den gleichen Buchstaben wie der Wert der Eigenschaft beginnen, muss sie jedoch nicht vollständig übereinstimmen.|
-|`DDP_CBStringExact`|Die ausgewählte Zeichenfolge in einem Kombinationsfeld mit einer Steuerelementeigenschaft. Die ausgewählte Zeichenfolge und der Zeichenfolgenwert der Eigenschaft müssen genau übereinstimmen.|
-|`DDP_Check`|Ein Kontrollkästchen mit einer Steuerelementeigenschaft.|
-|`DDP_LBIndex`|Der Index der ausgewählten Zeichenfolge in einem Listenfeld mit einer Steuerelementeigenschaft.|
-|`DDP_LBString`|Die ausgewählte Zeichenfolge in einem Listenfeld mit einer Steuerelementeigenschaft. Die ausgewählte Zeichenfolge kann mit den gleichen Buchstaben wie der Wert der Eigenschaft beginnen, muss sie jedoch nicht vollständig übereinstimmen.|
-|`DDP_LBStringExact`|Die ausgewählte Zeichenfolge in einem Listenfeld mit einer Steuerelementeigenschaft. Die ausgewählte Zeichenfolge und der Zeichenfolgenwert der Eigenschaft müssen genau übereinstimmen.|
-|`DDP_Radio`|Ein Optionsfeld mit einer Steuereigenschaft.|
-|`DDP_Text`|Text mit einer Steuerelementeigenschaft.|
+|`DDP_CBIndex`|Der Index der ausgewählten Zeichenfolge in einem Kombinations Feld mit einer Steuerelement Eigenschaft.|
+|`DDP_CBString`|Die ausgewählte Zeichenfolge in einem Kombinations Feld mit einer Steuerelement Eigenschaft. Die ausgewählte Zeichenfolge kann mit denselben Buchstaben wie der Eigenschafts Wert beginnen, aber Sie muss nicht vollständig übereinstimmen.|
+|`DDP_CBStringExact`|Die ausgewählte Zeichenfolge in einem Kombinations Feld mit einer Steuerelement Eigenschaft. Die ausgewählte Zeichenfolge und der Zeichen folgen Wert der Eigenschaft müssen exakt übereinstimmen.|
+|`DDP_Check`|Ein Kontrollkästchen mit einer Steuerelement Eigenschaft.|
+|`DDP_LBIndex`|Der Index der ausgewählten Zeichenfolge in einem Listenfeld mit einer Steuerelement Eigenschaft.|
+|`DDP_LBString`|Die ausgewählte Zeichenfolge in einem Listenfeld mit einer Steuerelement Eigenschaft. Die ausgewählte Zeichenfolge kann mit denselben Buchstaben wie der Eigenschafts Wert beginnen, aber Sie muss nicht vollständig übereinstimmen.|
+|`DDP_LBStringExact`|Die ausgewählte Zeichenfolge in einem Listenfeld mit einer Steuerelement Eigenschaft. Die ausgewählte Zeichenfolge und der Zeichen folgen Wert der Eigenschaft müssen exakt übereinstimmen.|
+|`DDP_Radio`|Ein Optionsfeld mit einer Steuerelement Eigenschaft.|
+|`DDP_Text`|Text mit einer Steuerelement Eigenschaft.|
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md)<br/>
-[COlePropertyPage-Klasse](../mfc/reference/colepropertypage-class.md)
+[MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
+[COlePropertyPage-Klasse](reference/colepropertypage-class.md)

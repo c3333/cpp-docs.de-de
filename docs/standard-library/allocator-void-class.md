@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - allocator<void> class
 ms.assetid: abfb40f5-c600-46a6-b130-f42c6535b2bd
-ms.openlocfilehash: c8d787fe03dfe6f67fb8e228308ec74b6e7f620a
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: af29c70dca56b1e68eef3614357269c587a77ec9
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688532"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623678"
 ---
 # <a name="allocatorltvoidgt-class"></a>Allocator&lt;void&gt;-Klasse
 
@@ -41,12 +41,12 @@ class allocator<void> {
 
 ## <a name="remarks"></a>Hinweise
 
-Die Klasse spezialisiert explizit die Klassen Vorlagen [Zuweisung](../standard-library/allocator-class.md) für den Typ " **void**". Die Konstruktoren und der Zuweisungs Operator Verhalten sich genauso wie für die Klassen Vorlage, Sie definieren jedoch nur die folgenden Typen:
+Die Klasse spezialisiert explizit die Klassen Vorlagen [Zuweisung](allocator-class.md) für den Typ " **void**". Die Konstruktoren und der Zuweisungs Operator Verhalten sich genauso wie für die Klassen Vorlage, Sie definieren jedoch nur die folgenden Typen:
 
-- [const_pointer](../standard-library/allocator-class.md#const_pointer).
+- [const_pointer](allocator-class.md#const_pointer).
 
-- [pointer](../standard-library/allocator-class.md#pointer).
+- [Zeiger](allocator-class.md#pointer).
 
-- [value_type](../standard-library/allocator-class.md#value_type).
+- [value_type](allocator-class.md#value_type).
 
-- [binden](../standard-library/allocator-class.md#rebind), eine Vorlage für eine vorgebundene Klasse.
+- [binden](allocator-class.md#rebind), eine Vorlage für eine vorgebundene Klasse.

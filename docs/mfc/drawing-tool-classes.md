@@ -8,38 +8,38 @@ helpviewer_keywords:
 - screen output classes [MFC]
 - output classes [MFC]
 ms.assetid: e907bd89-38b5-47c9-b76a-95e0bf3bb41d
-ms.openlocfilehash: 96bda696a310fdd59a124abea2d29bc5001c3ab1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 161144161566293079d4c51324c5c481578ebd5b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407977"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626473"
 ---
 # <a name="drawing-tool-classes"></a>Klassen für Zeichenwerkzeuge
 
-Diese Klassen kapseln Zeichentools an, die verwendet werden, um auf einen Gerätekontext zu zeichnen.
+Diese Klassen Kapseln Zeichnungs Tools, die verwendet werden, um auf einem Gerätekontext zu zeichnen.
 
-[CGdiObject](../mfc/reference/cgdiobject-class.md)<br/>
-Die Basisklasse für die GDI-Zeichenbefehle Tools.
+[CGdiObject](reference/cgdiobject-class.md)<br/>
+Die Basisklasse für GDI-Zeichnungs Tools.
 
-[CBrush](../mfc/reference/cbrush-class.md)<br/>
-Kapselt einen GDI-Pinsel, der als der aktuelle Pinsel in einem Gerätekontext ausgewählt werden kann. Pinsel werden zum Ausfüllen der Innenbereiche der Objekte, die gerade gezeichnet wird.
+[CBrush](reference/cbrush-class.md)<br/>
+Kapselt einen GDI-Pinsel, der als aktueller Pinsel in einem Gerätekontext ausgewählt werden kann. Pinsel werden zum Auffüllen des Inneren von Objekten verwendet, die gezeichnet werden.
 
-[CPen](../mfc/reference/cpen-class.md)<br/>
-Kapselt einen GDI-Stift, der als der aktuelle Stift in einem Gerätekontext ausgewählt werden kann. Stifte werden verwendet, für die Rahmenlinien Objekte zeichnen.
+[CPen](reference/cpen-class.md)<br/>
+Kapselt einen GDI-Stift, der als aktueller Stift in einem Gerätekontext ausgewählt werden kann. Stifte werden zum Zeichnen der Rahmen Linien von Objekten verwendet.
 
-[CFont](../mfc/reference/cfont-class.md)<br/>
-Kapselt eine GDI-Schriftart, die als die aktuelle Schriftart in einem Gerätekontext ausgewählt werden kann.
+[CFont](reference/cfont-class.md)<br/>
+Kapselt eine GDI-Schriftart, die als aktuelle Schriftart in einem Gerätekontext ausgewählt werden kann.
 
-[CBitmap](../mfc/reference/cbitmap-class.md)<br/>
-Kapselt eine GDI-Bitmap, die eine Schnittstelle für die Bearbeitung von Bitmaps bereitstellt.
+[CBitmap](reference/cbitmap-class.md)<br/>
+Kapselt eine GDI-Bitmap, die eine Schnittstelle zum Bearbeiten von Bitmaps bereitstellt.
 
-[CPalette](../mfc/reference/cpalette-class.md)<br/>
-Kapselt eine GDI-Farbpalette für die Verwendung als Schnittstelle zwischen der Anwendung und ein Ausgabegerät "Farbe" z. B. eine Anzeige.
+[CPalette](reference/cpalette-class.md)<br/>
+Kapselt eine GDI-Farbpalette für die Verwendung als Schnittstelle zwischen der Anwendung und einem Farbausgabe Gerät, z. b. einer Anzeige.
 
-[CRectTracker](../mfc/reference/crecttracker-class.md)<br/>
-Zeigt an, und die Benutzeroberfläche zum Ändern der Größe und verschieben die rechteckige Objekte behandelt.
+[CRectTracker](reference/crecttracker-class.md)<br/>
+Zeigt die Benutzeroberfläche zum Ändern der Größe und zum Verschieben von rechteckigen Objekten an und behandelt diese.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

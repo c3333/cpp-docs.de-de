@@ -7,27 +7,27 @@ helpviewer_keywords:
 - CWnd objects [MFC]
 - CWnd objects [MFC], creating
 ms.assetid: f5ff91a6-4069-47d7-9177-1e6c80d3792c
-ms.openlocfilehash: 606593e3700f04972e031ef43eba0a7e8c134e79
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fbaad1b973ce944d94dd61bcd368f13e85d73261
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62241947"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626511"
 ---
 # <a name="creating-windows"></a>Erstellen von Fenstern
 
-Das Framework erstellt automatisch die meisten der benötigten Windows in einem Frameworkprogramm. [Erstellen von Dokument/Ansicht](../mfc/document-view-creation.md) zeigt, wie das Framework das Rahmenfenster zugeordneten Dokumenten und Ansichten erstellt. Aber für besondere Zwecke können Sie Ihre eigenen Windows erstellen, einschließlich der untergeordneten Fenstern von Fenstern oder Ansichten – zusätzlich zu den vom Framework bereitgestellten Windows.
+Das Framework erstellt automatisch den größten Teil der benötigten Fenster in einem Framework-Programm. Die [Erstellung von Dokumenten/](document-view-creation.md) Sichten zeigt, wie das Framework die mit Dokumenten und Ansichten verknüpften Rahmen Fenster erstellt. Für besondere Zwecke können Sie jedoch auch eigene Fenster erstellen – einschließlich ihrer eigenen untergeordneten Fenster von Frame Fenstern oder Ansichten – zusätzlich zu den Fenstern, die vom Framework bereitgestellt werden.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Registrieren von Fensterklassen""](../mfc/registering-window-classes.md) (im Gegensatz zu C++-Fensterobjekte)
+- [Registrieren des Fensters "Klassen"](registering-window-classes.md) (im Gegensatz zu C++ Window-Objekten)
 
-- [Bei der fenstererstellung fensterverwaltung](../mfc/general-window-creation-sequence.md)
+- [Allgemeine Fenster Erstellungs Sequenz](general-window-creation-sequence.md)
 
-- [Zerstören von Fensterobjekten](../mfc/destroying-window-objects.md)
+- [Zerstören von Fenster Objekten](destroying-window-objects.md)
 
-- [Arbeiten mit Fensterobjekten](../mfc/working-with-window-objects.md)
+- [Arbeiten mit Fenster Objekten](working-with-window-objects.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Fensterobjekte](../mfc/window-objects.md)
+[Fensterobjekte](window-objects.md)

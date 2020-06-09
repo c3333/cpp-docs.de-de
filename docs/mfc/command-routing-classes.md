@@ -7,25 +7,25 @@ helpviewer_keywords:
 - MFC, command routing
 - command routing [MFC], classes
 ms.assetid: 4b50e689-2c54-4e6c-90f0-37333e22b2a1
-ms.openlocfilehash: 264e931ba0468cdc44f27c55e5d259948c5392b5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d7ff275d373cf50ab8ebe52ed454bd25cd473e11
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406053"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624827"
 ---
 # <a name="command-routing-classes"></a>Klassen zur Befehlsweiterleitung
 
-Während der Benutzer mit der Anwendung interagiert, indem Sie die Menüs oder Schaltflächen Steuerleiste, mit der Maus auswählen, sendet die Anwendung Nachrichten aus dem betroffenen Benutzeroberflächen-Objekt, um ein Befehlsziel Objekt. Abgeleitet von befehlszielklassen `CCmdTarget` enthalten [CWinApp](../mfc/reference/cwinapp-class.md), [CWnd](../mfc/reference/cwnd-class.md), [CDocTemplate](../mfc/reference/cdoctemplate-class.md), [CDocument](../mfc/reference/cdocument-class.md), [CView](../mfc/reference/cview-class.md), und die Klassen, die von ihnen abgeleitet. Das Framework unterstützt das automatische routing, sodass Befehle vom derzeit aktiven in der Anwendung am besten geeigneten Objekt behandelt werden können.
+Wenn der Benutzer mit der Anwendung interagiert, indem er Menüs oder Schaltflächen der Steuerleiste mit der Maus auswählt, sendet die Anwendung Nachrichten vom betroffenen Benutzeroberflächen Objekt an ein entsprechendes Befehls Zielobjekt. Die von abgeleiteten Befehls Ziel `CCmdTarget` Klassen [umfassen CWinApp](reference/cwinapp-class.md), [CWnd](reference/cwnd-class.md), [CDocTemplate](reference/cdoctemplate-class.md), [CDocument](reference/cdocument-class.md), [CView](reference/cview-class.md)und die von ihnen abgeleiteten Klassen. Das Framework unterstützt das automatische Befehls Routing, sodass Befehle vom am besten geeigneten Objekt verarbeitet werden können, das derzeit in der Anwendung aktiv ist.
 
-Ein Objekt der Klasse `CCmdUI` UI-Befehl für das Update von Befehlsziele übergeben wird ([ON_UPDATE_COMMAND_UI](reference/message-map-macros-mfc.md#on_update_command_ui)) Handler, die Ihnen ermöglichen, den Zustand der Benutzeroberfläche für einen bestimmten Befehl zu aktualisieren (z. B. zu überprüfen oder entfernen die Überprüfung von Menüelementen). Sie rufen Memberfunktionen der `CCmdUI` Objekt, das den Zustand des UI-Objekts zu aktualisieren. Dieser Prozess ist identisch, ob das UI-Objekt, das einen bestimmten Befehl zugeordnet, ein Menüelement oder eine Schaltfläche oder beides ist.
+Ein Objekt der Klasse `CCmdUI` wird an die Befehls Ziele der Befehlszeilenschnittstelle ([ON_UPDATE_COMMAND_UI](reference/message-map-macros-mfc.md#on_update_command_ui)) übermittelt, damit Sie den Status der Benutzeroberfläche für einen bestimmten Befehl aktualisieren können (beispielsweise, um die Überprüfung aus Menü Elementen zu überprüfen oder zu entfernen). Sie können Member-Funktionen des- `CCmdUI` Objekts zum Aktualisieren des Status des UI-Objekts aufzurufen. Dieser Vorgang ist unabhängig davon, ob es sich bei dem Benutzeroberflächen Objekt, das einem bestimmten Befehl zugeordnet ist, um ein Menü Element oder eine Schaltfläche handelt.
 
-[CCmdTarget](../mfc/reference/ccmdtarget-class.md)<br/>
-Dient als Basisklasse für alle Objektklassen, die empfangen und auf Nachrichten antworten können.
+[CCmdTarget](reference/ccmdtarget-class.md)<br/>
+Dient als Basisklasse für alle Klassen von Objekten, die Nachrichten empfangen und darauf reagieren können.
 
-[CCmdUI](../mfc/reference/ccmdui-class.md)<br/>
-Stellt eine programmgesteuerte Schnittstelle zum Aktualisieren von Benutzeroberflächenobjekten wie z. B. Steuerleiste-Schaltflächen oder Menüelemente an. Das Zielobjekt für den Befehl aktiviert, deaktiviert, überprüft und/oder löscht das Benutzeroberflächen-Objekt mit diesem Objekt.
+[CCmdUI](reference/ccmdui-class.md)<br/>
+Stellt eine programmgesteuerte Schnittstelle zum Aktualisieren von Benutzeroberflächen Objekten, z. b. Menü Elemente oder Steuer leisten Schaltflächen, bereit. Das Befehls Zielobjekt aktiviert, deaktiviert, überprüft und/oder löscht das Benutzeroberflächen Objekt mit diesem-Objekt.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

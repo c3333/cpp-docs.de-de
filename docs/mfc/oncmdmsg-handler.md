@@ -10,21 +10,21 @@ helpviewer_keywords:
 - handlers, OnCmdMessage [MFC]
 - OnCmdMessage method [MFC]
 ms.assetid: 8df07024-506f-47e7-bba9-1c3bc5ad8ab6
-ms.openlocfilehash: 6ed2e4c09e2fe413d29ad9953dbb8a03c106e86c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5114fe53a5bac345eb6a55fb6c371f7bc1f698ef
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385296"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624029"
 ---
 # <a name="oncmdmsg-handler"></a>OnCmdMsg-Handler
 
-Um das routing von Befehlen zu erreichen, das Ziel jedes Befehls ruft die `OnCmdMsg` Memberfunktion das Ziel des nächsten Befehls in der Sequenz. Befehl zielt verwenden `OnCmdMsg` zu bestimmen, ob sie einen Befehl behandeln können und um sie zu einem anderen Befehlsziel weiterzuleiten, wenn sie nicht verarbeitet werden können.
+Um das Routing von Befehlen durchzuführen, ruft jedes Befehls Ziel die `OnCmdMsg` Member-Funktion des nächsten Befehls Ziels in der Sequenz auf. Befehls Ziele verwenden `OnCmdMsg` , um zu bestimmen, ob Sie einen Befehl verarbeiten und an ein anderes Befehls Ziel weiterleiten können, wenn Sie ihn nicht verarbeiten können.
 
-Kann jede Befehlsziel Klasse überschreiben, die `OnCmdMsg` Member-Funktion. Die Außerkraftsetzungen können jede Klasse Senden von Befehlen für ein bestimmtes Ziel für die nächsten. Ein Rahmenfenster, z. B. immer leitet Befehle für die aktuelle untergeordnete Fenster oder eine Sicht, wie in der Tabelle gezeigt [standardmäßige Befehlsweiterleitung](../mfc/command-routing.md).
+Jede Befehls Zielklasse kann die Member- `OnCmdMsg` Funktion überschreiben. Die über schreibungen ermöglichen es jeder Klasse, Befehle an ein bestimmtes nächstes Ziel weiterzuleiten. Ein Rahmen Fenster leitet z. b. Befehle immer an das aktuelle untergeordnete Fenster oder die Ansicht weiter, wie in der Tabelle [Standard Befehls Route](command-routing.md)gezeigt.
 
-Der Standardwert `CCmdTarget` Implementierung `OnCmdMsg` verwendet die meldungszuordnung der Befehlsziel Klasse für eine Handlerfunktion für jede Nachricht die Suche nach Erhalt des – auf die gleiche Weise, dass die standard-Nachrichten durchsucht werden. Wenn es sich um eine Übereinstimmung findet, wird den Handler. Meldungszuordnung Suche wird in erläutert [wie das Framework sucht Meldungszuordnungen](../mfc/how-the-framework-searches-message-maps.md).
+Die Standard `CCmdTarget` Implementierung von verwendet die Meldungs Zuordnung der `OnCmdMsg` Befehls Zielklasse, um nach einer Handlerfunktion für jede empfangene Befehlsnachricht zu suchen – auf dieselbe Weise, wie Standard Meldungen durchsucht werden. Wenn eine Entsprechung gefunden wird, wird der-Handler aufgerufen. Die Nachrichten-Zuordnungs Suche wird erläutert, [wie das Framework](how-the-framework-searches-message-maps.md)Meldungs Zuordnungen durchsucht.
 
 ## <a name="see-also"></a>Siehe auch
 
-[So ruft das Framework einen Handler auf](../mfc/how-the-framework-calls-a-handler.md)
+[So ruft das Framework einen Handler auf](how-the-framework-calls-a-handler.md)

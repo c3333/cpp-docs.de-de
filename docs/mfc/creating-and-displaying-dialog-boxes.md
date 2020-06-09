@@ -8,12 +8,12 @@ helpviewer_keywords:
 - MFC dialog boxes [MFC], creating
 - MFC dialog boxes [MFC], displaying
 ms.assetid: 1c5219ee-8b46-44bc-9708-83705d4f248b
-ms.openlocfilehash: 6d23e4d2c9249ce248eb8092963036f2ba5cacac
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.openlocfilehash: 649d64f8e8b894027b9d6850b62d357d79c1dafa
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685744"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616271"
 ---
 # <a name="creating-and-displaying-dialog-boxes"></a>Erstellen und Anzeigen von Dialogfeldern
 
@@ -21,13 +21,13 @@ Das Erstellen eines Dialog Objekts ist ein zweistufiges Vorgang. Erstellen Sie z
 
 ### <a name="dialog-creation"></a>Dialog Erstellung
 
-|Dialog Feld-Typ|Erstellen|
+|Dialogtyp|Erstellen|
 |-----------------|----------------------|
-|[Nicht modales](../mfc/creating-modeless-dialog-boxes.md)|Erstellen Sie `CDialog`, und nennen Sie dann `Create`-Member-Funktion.|
-|[Aufkommen](../mfc/creating-modal-dialog-boxes.md)|Erstellen Sie `CDialog`, und nennen Sie dann `DoModal`-Member-Funktion.|
+|[Modeless](creating-modeless-dialog-boxes.md)|Erstellen `CDialog` und dann Member-Funktion aufzurufen `Create` .|
+|[Aufkommen](creating-modal-dialog-boxes.md)|Erstellen `CDialog` und dann Member-Funktion aufzurufen `DoModal` .|
 
-Wenn Sie möchten, können Sie das Dialogfeld über eine [in-Memory-Dialogfeld Vorlage](../mfc/using-a-dialog-template-in-memory.md) erstellen, die Sie erstellt haben, anstatt aus einer Dialogfeld Vorlagen Ressource. Dies ist jedoch ein erweitertes Thema.
+Wenn Sie möchten, können Sie das Dialogfeld über eine [in-Memory-Dialogfeld Vorlage](using-a-dialog-template-in-memory.md) erstellen, die Sie erstellt haben, anstatt aus einer Dialogfeld Vorlagen Ressource. Dies ist jedoch ein erweitertes Thema.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Arbeiten mit Dialog Feldern in MFC](../mfc/life-cycle-of-a-dialog-box.md)
+[Arbeiten mit Dialogfeldern in MFC](life-cycle-of-a-dialog-box.md)

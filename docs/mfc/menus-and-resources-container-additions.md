@@ -16,53 +16,53 @@ helpviewer_keywords:
 - CONTAIN tutorial [MFC]
 - Links menu item [MFC]
 ms.assetid: 425448be-8ca0-412e-909a-a3a9ce845288
-ms.openlocfilehash: c8da58316f471f7b7d26e142cc1dd1ccaa6ad8b5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a082a75ef0292e190e597f29be0cdc0bd0b497ef
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364792"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626236"
 ---
 # <a name="menus-and-resources-container-additions"></a>Menüs und Ressourcen: Containererweiterungen
 
-In diesem Artikel werden die Änderungen erläutert, die an den Menüs und anderen Ressourcen in einer visuellen Bearbeitungscontaineranwendung vorgenommen werden müssen.
+In diesem Artikel werden die Änderungen erläutert, die an den Menüs und anderen Ressourcen in einer Anwendung für die visuelle Bearbeitung von Containern vorgenommen werden müssen.
 
-In Containeranwendungen müssen zwei Arten von Änderungen vorgenommen werden: Änderungen an vorhandenen Ressourcen zur Unterstützung der visuellen OLE-Bearbeitung und Hinzufügen neuer Ressourcen, die für die ortsnahe Aktivierung verwendet werden. Wenn Sie den Anwendungsassistenten zum Erstellen ihrer Containeranwendung verwenden, werden diese Schritte für Sie ausgeführt, sie erfordern jedoch möglicherweise eine gewisse Anpassung.
+In Container Anwendungen müssen zwei Arten von Änderungen vorgenommen werden: Änderungen an vorhandenen Ressourcen zur Unterstützung der visuellen OLE-Bearbeitung und zum Hinzufügen neuer Ressourcen, die für die direkte Aktivierung verwendet werden. Wenn Sie die Containeranwendung mit dem Anwendungs-Assistenten erstellen, werden diese Schritte für Sie ausgeführt, Sie erfordern jedoch möglicherweise einige Anpassungen.
 
-Wenn Sie den Anwendungsassistenten nicht verwenden, sollten Sie sich OCLIENT ansehen. RC, das Ressourcenskript für die OCLIENT-Beispielanwendung, um zu sehen, wie diese Änderungen implementiert werden. Siehe MFC OLE-Beispiel [OCLIENT](../overview/visual-cpp-samples.md).
+Wenn Sie den Anwendungs-Assistenten nicht verwenden, sollten Sie OCLIENT untersuchen. RC, das Ressourcen Skript für die OCLIENT-Beispielanwendung, um zu sehen, wie diese Änderungen implementiert werden. Weitere Informationen finden Sie unter MFC-OLE-Beispiel [OCLIENT](../overview/visual-cpp-samples.md).
 
 Zu den in diesem Artikel behandelten Themen gehören:
 
-- [Containermenü-Erweiterungen](#_core_container_menu_additions)
+- [Container-Menü Ergänzungen](#_core_container_menu_additions)
 
-- [Accelerator Table Ergänzungen](#_core_container_application_accelerator_table_additions)
+- [Erweiterungen der Zugriffstasten Tabelle](#_core_container_application_accelerator_table_additions)
 
-- [Zeichenfolgentabellenerweiterungen](#_core_string_table_additions_for_container_applications)
+- [Zeichen folgen Tabellen Ergänzungen](#_core_string_table_additions_for_container_applications)
 
-## <a name="container-menu-additions"></a><a name="_core_container_menu_additions"></a>Containermenü-Erweiterungen
+## <a name="container-menu-additions"></a><a name="_core_container_menu_additions"></a>Container-Menü Ergänzungen
 
-Sie müssen die folgenden Elemente zum Menü Bearbeiten hinzufügen:
+Sie müssen dem Menü Bearbeiten die folgenden Elemente hinzufügen:
 
 |Element|Zweck|
 |----------|-------------|
-|**Einfügen eines neuen Objekts**|Öffnet das Dialogfeld OLE-Objekt einfügen, um ein verknüpftes oder eingebettetes Element in das Dokument einzufügen.|
-|**Einfügen von Link**|Fügt einen Link zu dem Element in der Zwischenablage in das Dokument ein.|
-|**OLE Verb**|Ruft das primäre Verb des ausgewählten Elements auf. Der Text dieses Menüelements ändert sich, um das primäre Verb des ausgewählten Elements widerzuspiegeln.|
-|**Links**|Öffnet das Dialogfeld OLE-Bearbeitungsverknüpfungen, um vorhandene verknüpfte Elemente zu ändern.|
+|**Neues Objekt einfügen**|Öffnet das OLE-Dialogfeld "Objekt einfügen", um ein verknüpftes oder eingebettetes Element in das Dokument einzufügen.|
+|**Link einfügen**|Fügt einen Link zum Element in der Zwischenablage in das Dokument ein.|
+|**OLE-Verb**|Ruft das primäre Verb des ausgewählten Elements auf. Der Text dieses Menü Elements wird geändert, um das primäre Verb des ausgewählten Elements widerzuspiegeln.|
+|**Links**|Öffnet das Dialogfeld "Links bearbeiten", um vorhandene verknüpfte Elemente zu ändern.|
 
-Zusätzlich zu den in diesem Artikel aufgeführten Änderungen muss die Quelldatei AFXOLECL enthalten. RC, das für die Implementierung der Microsoft Foundation-Klassenbibliothek erforderlich ist. Einfügen von neuen Objekten ist die einzige erforderliche Menüerweiterung. Andere Elemente können hinzugefügt werden, aber die hier aufgeführten sind die häufigsten.
+Zusätzlich zu den in diesem Artikel aufgeführten Änderungen muss die Quelldatei AFXOLECL enthalten. RC, das für die Microsoft Foundation Class-Bibliothek-Implementierung erforderlich ist. Das Einfügen eines neuen Objekts ist die einzige erforderliche Menü Addition. Es können auch andere Elemente hinzugefügt werden, die hier aufgeführten werden jedoch am häufigsten aufgeführt.
 
-Sie müssen ein neues Menü für Ihre Containeranwendung erstellen, wenn Sie die ortsnahe Aktivierung enthaltener Elemente unterstützen möchten. Dieses Menü besteht aus dem gleichen Dateimenü und Fenster-Popup-Menüs, die verwendet werden, wenn Dateien geöffnet sind, aber es hat zwei Trennzeichen zwischen ihnen platziert. Diese Trennzeichen werden verwendet, um anzugeben, wo das Serverelement (Komponente) (Anwendung) seine Menüs platzieren soll, wenn es aktiviert ist. Weitere Informationen zu dieser Menü-Zusammenführungs-Technik finden Sie unter [Menüs und Ressourcen: Menüzusammenführen](../mfc/menus-and-resources-menu-merging.md).
+Sie müssen ein neues Menü für Ihre Containeranwendung erstellen, wenn Sie die direkte Aktivierung von enthaltenen Elementen unterstützen möchten. Dieses Menü besteht aus den gleichen Menü-und Fenster-Popup Menüs, die beim Öffnen von Dateien verwendet werden, aber es werden zwei Trennzeichen zwischen Ihnen platziert. Diese Trennzeichen werden verwendet, um anzugeben, wo das Server-(Komponenten-) Element (Anwendung) seine Menüs platzieren soll, wenn es direkt aktiviert wird. Weitere Informationen zu dieser Menü Zusammenführungs Methode finden Sie unter [Menüs und Ressourcen:](menus-and-resources-menu-merging.md)Zusammenführen von Menüs.
 
-## <a name="container-application-accelerator-table-additions"></a><a name="_core_container_application_accelerator_table_additions"></a>Container Application Accelerator-Tabellenerweiterungen
+## <a name="container-application-accelerator-table-additions"></a><a name="_core_container_application_accelerator_table_additions"></a>Hinzufügungen zu Container Application Accelerators
 
-Kleine Änderungen an den Beschleunigertabellenressourcen einer Containeranwendung sind erforderlich, wenn Sie die an Ort und Stelle aktivieren. Die erste Änderung ermöglicht es dem Benutzer, die Escape-Taste (ESC) zu drücken, um den an Ort und Stelle Bearbeitungsmodus abzubrechen. Fügen Sie der Hauptbeschleunigertabelle den folgenden Eintrag hinzu:
+Wenn Sie die direkte Aktivierung unterstützen, sind kleine Änderungen an den Zugriffstasten Tabellen Ressourcen einer Containeranwendung erforderlich. Die erste Änderung ermöglicht dem Benutzer, die Escape-Taste (ESC) zu drücken, um den direkten Bearbeitungsmodus abzubrechen. Fügen Sie der Tabelle Haupt Beschleunigung den folgenden Eintrag hinzu:
 
 |id|Schlüssel|type|
 |--------|---------|----------|
 |ID_CANCEL_EDIT_CNTR|VK_ESCAPE|**VIRTKEY**|
 
-Die zweite Änderung besteht darin, eine neue Beschleunigertabelle zu erstellen, die der neuen Menüressource entspricht, die für die ortsnahe Aktivierung erstellt wurde. Diese Tabelle enthält Einträge für die Menüs Datei und Fenster sowie den oben VK_ESCAPE Eintrag. Das folgende Beispiel ist die Beschleunigertabelle, die für die ortsspezifische Aktivierung im MFC-Beispiel [CONTAINER](../overview/visual-cpp-samples.md)erstellt wurde:
+Die zweite Änderung besteht darin, eine neue Zugriffstasten Tabelle zu erstellen, die der neuen Menü Ressource entspricht, die für die direkte Aktivierung erstellt wurde. Diese Tabelle enthält Einträge für die Datei-und Fenstermenüs zusätzlich zum oben aufgeführten VK_ESCAPE Eintrag. Das folgende Beispiel zeigt die Zugriffstasten Tabelle, die für die direkte Aktivierung im MFC-Beispiel [Container](../overview/visual-cpp-samples.md)erstellt wurde:
 
 |id|Schlüssel|type|
 |--------|---------|----------|
@@ -71,19 +71,19 @@ Die zweite Änderung besteht darin, eine neue Beschleunigertabelle zu erstellen,
 |ID_FILE_SAVE|STRG+S|**VIRTKEY**|
 |ID_FILE_PRINT|STRG+P|**VIRTKEY**|
 |ID_NEXT_PANE|VK_F6|**VIRTKEY**|
-|ID_PREV_PANE|SHIFT+VK_F6|**VIRTKEY**|
+|ID_PREV_PANE|UMSCHALT + VK_F6|**VIRTKEY**|
 |ID_CANCEL_EDIT_CNTR|VK_ESCAPE|**VIRTKEY**|
 
-## <a name="string-table-additions-for-container-applications"></a><a name="_core_string_table_additions_for_container_applications"></a>Zeichenfolgentabellenerweiterungen für Containeranwendungen
+## <a name="string-table-additions-for-container-applications"></a><a name="_core_string_table_additions_for_container_applications"></a>Zeichen folgen-Tabellen Ergänzungen für Container Anwendungen
 
-Die meisten Änderungen an Zeichenfolgentabellen für Containeranwendungen entsprechen den zusätzlichen Menüelementen, die in [Containermenü-Zugängen](#_core_container_menu_additions)erwähnt werden. Sie geben den Text an, der in der Statusleiste angezeigt wird, wenn jedes Menüelement angezeigt wird. Hier sind beispielsweise die Zeichenfolgentabelleneinträge, die der Anwendungsassistent generiert:
+Die meisten Änderungen an Zeichen folgen Tabellen für Container Anwendungen entsprechen den zusätzlichen Menü Elementen, die in den [Container-Menü Ergänzungen](#_core_container_menu_additions)erwähnt werden. Sie stellen den Text bereit, der in der Statusleiste angezeigt wird, wenn jedes Menü Element angezeigt wird. Im folgenden finden Sie ein Beispiel für die Zeichen folgen Tabelleneinträge, die der Anwendungs-Assistent generiert:
 
 |id|String|
 |--------|------------|
 |IDP_OLE_INIT_FAILED|Fehler bei der OLE-Initialisierung. Stellen Sie sicher, dass die OLE-Bibliotheken die richtige Version sind.|
-|IDP_FAILED_TO_CREATE|Fehler beim Erstellen des Objekts. Stellen Sie sicher, dass das Objekt in der Systemregistrierung eingegeben wurde.|
+|IDP_FAILED_TO_CREATE|Fehler beim Erstellen des Objekts. Stellen Sie sicher, dass das Objekt in der Systemregistrierung eingegeben wird.|
 
 ## <a name="see-also"></a>Siehe auch
 
-[Menüs und Ressourcen (OLE)](../mfc/menus-and-resources-ole.md)<br/>
-[Menüs und Ressourcen: Servererweiterungen](../mfc/menus-and-resources-server-additions.md)
+[Menüs und Ressourcen (OLE)](menus-and-resources-ole.md)<br/>
+[Menüs und Ressourcen: Servererweiterungen](menus-and-resources-server-additions.md)

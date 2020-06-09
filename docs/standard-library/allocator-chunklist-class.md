@@ -8,16 +8,16 @@ helpviewer_keywords:
 - stdext::allocator_chunklist
 - stdext::allocators [C++], allocator_chunklist
 ms.assetid: ea72ed0a-dfdb-4c8b-8096-e4baf567b80f
-ms.openlocfilehash: 46ae9c613b66e00658f09ad10f33b721c6948ff7
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: c2342d068293714871b3f79675dd0d0b9db83448
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456430"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617545"
 ---
-# <a name="allocatorchunklist-class"></a>allocator_chunklist-Klasse
+# <a name="allocator_chunklist-class"></a>allocator_chunklist-Klasse
 
-Beschreibt ein Objekt, das die Speicherbelegung und -freigabe für Objekte, die einen Zwischenspeicher des Typs [cache_chunklist](../standard-library/cache-chunklist-class.md) verwenden.
+Beschreibt ein Objekt, das die Speicherbelegung und -freigabe für Objekte, die einen Zwischenspeicher des Typs [cache_chunklist](cache-chunklist-class.md) verwenden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,18 +30,18 @@ class allocator_chunklist;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*Typ*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
 
 ## <a name="remarks"></a>Hinweise
 
-Das [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_CHUNKLIST, SYNC_DEFAULT, allocator_chunklist);`
+Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_CHUNKLIST, SYNC_DEFAULT, allocator_chunklist);`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<allocators>](allocators-header.md)

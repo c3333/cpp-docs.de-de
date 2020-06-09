@@ -7,14 +7,14 @@ helpviewer_keywords:
 - add_const class
 - add_const
 ms.assetid: 1262a1eb-8c9c-4dd6-9f43-88ba280182f1
-ms.openlocfilehash: 6f27a8e4bc0bea3a469d46a56e8885dabe5894df
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: c82a3fac8ef95da9e226ca3e2e9122b3c8774cbf
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456580"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620834"
 ---
-# <a name="addconst-class"></a>add_const-Klasse
+# <a name="add_const-class"></a>add_const-Klasse
 
 Erstellt den „const“-Typ aus „type“.
 
@@ -32,7 +32,7 @@ Der zu ändernde Typ.
 
 ## <a name="remarks"></a>Hinweise
 
-Eine Instanz des typmodifizierers enthält einen geänderten Typ, der *Ty* ist, wenn *Ty* ein Verweis, eine Funktion oder ein konstant qualifizierter Typ ist; andernfalls `const Ty`.
+Eine Instanz des typmodifizierers enthält einen geänderten Typ, der *Ty* ist, wenn *Ty* ein Verweis, eine Funktion oder ein konstant qualifizierter Typ ist; andernfalls `const Ty` .
 
 ## <a name="example"></a>Beispiel
 
@@ -58,13 +58,13 @@ int main()
 add_const<int> == int
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[remove_const-Klasse](../standard-library/remove-const-class.md)
+[<type_traits>](type-traits.md)\
+[remove_const-Klasse](remove-const-class.md)

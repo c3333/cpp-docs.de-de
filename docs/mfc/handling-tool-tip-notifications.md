@@ -7,43 +7,43 @@ helpviewer_keywords:
 - notifications [MFC], tool tips
 - tool tips [MFC], notifications
 ms.assetid: ddb93b5f-2e4f-4537-8053-3453c86e2bbb
-ms.openlocfilehash: 079dc26fdd355c5b5e3f89f28219902e5fd74a79
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 41e3dbfc2269f5fbf3c12dc00c19f8a2253fd16a
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62240234"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626449"
 ---
 # <a name="handling-tool-tip-notifications"></a>Behandeln von QuickInfo-Benachrichtigungen
 
-Bei Angabe der **TBSTYLE_TOOLTIPS** Stil, der Symbolleiste erstellt und verwaltet ein QuickInfo-Steuerelement. Eine QuickInfo ist ein kleines Popupfenster, das eine Textzeile, beschreibt eine Symbolleisten-Schaltfläche enthält. Die QuickInfo wird ausgeblendet, angezeigt werden, nur, wenn der Benutzer platziert den Cursor für eine Symbolleisten-Schaltfläche und bewirkt, dass sie es für ca. eine halbe Sekunde. Die QuickInfo wird neben dem Cursor angezeigt.
+Wenn Sie den **TBSTYLE_TOOLTIPS** Stil angeben, erstellt und verwaltet die Symbolleiste ein QuickInfo-Steuerelement. Eine QuickInfo ist ein kleines Popup Fenster, das eine Textzeile enthält, in der eine Symbolleisten Schaltfläche beschrieben wird. Die QuickInfo ist ausgeblendet und wird nur angezeigt, wenn der Benutzer den Cursor auf eine Symbolleisten Schaltfläche setzt und ihn für ungefähr eine halbe Sekunde verlässt. Die QuickInfo wird in der Nähe des Cursors angezeigt.
 
-Bevor die QuickInfo angezeigt wird, die **TTN_NEEDTEXT** -Nachricht wird auf der Symbolleiste des Fensters den beschreibenden Text für die Schaltfläche mit den abzurufenden gesendet. Wenn auf der Symbolleiste des Fensters ein `CFrameWnd` Fenster Tool-Tipps ohne jegliche zusätzliche Anstrengung, angezeigt werden, da `CFrameWnd` verfügt über eine Standard-Handler für die **TTN_NEEDTEXT** Benachrichtigung. Wenn die besitzende Fenster der Symbolleiste auf die nicht von abgeleitet ist `CFrameWnd`, z. B. ein Dialogfeld oder Formular anzeigen, müssen Sie das Hinzufügen eines Eintrags zur meldungszuordnung Ihres Besitzerfensters und bieten einen Benachrichtigungshandler in der meldungszuordnung. Der Eintrag zur meldungszuordnung Ihres Besitzerfensters lautet wie folgt aus:
+Bevor die QuickInfo angezeigt wird, wird die **TTN_NEEDTEXT** Benachrichtigungs Meldung an das Besitzer Fenster der Symbolleiste gesendet, um den beschreibenden Text für die Schaltfläche abzurufen. Wenn das Besitzer Fenster der Symbolleiste ein `CFrameWnd` Fenster ist, werden Quick Infos ohne zusätzlichen Aufwand angezeigt, da `CFrameWnd` über einen Standard Handler für die **TTN_NEEDTEXT** Benachrichtigung verfügt. Wenn das Besitzer Fenster der Symbolleiste nicht von abgeleitet ist (z. b. `CFrameWnd` ein Dialogfeld oder eine Formularansicht), müssen Sie der Meldungs Zuordnung Ihres Besitzer Fensters einen Eintrag hinzufügen und einen Benachrichtigungs Handler in der Meldungs Zuordnung bereitstellen. Der Eintrag für die Meldungs Zuordnung Ihres Besitzer Fensters lautet wie folgt:
 
-[!code-cpp[NVC_MFCControlLadenDialog#40](../mfc/codesnippet/cpp/handling-tool-tip-notifications_1.cpp)]
+[!code-cpp[NVC_MFCControlLadenDialog#40](codesnippet/cpp/handling-tool-tip-notifications_1.cpp)]
 
 ## <a name="remarks"></a>Hinweise
 
-*memberFxn*<br/>
-Die Memberfunktion aufgerufen werden, wenn der Text für diese Schaltfläche benötigt wird.
+*Mitgliedschaft*<br/>
+Die Member-Funktion, die aufgerufen werden soll, wenn Text für diese Schaltfläche benötigt wird.
 
-Beachten Sie, dass die Id der QuickInfo immer 0.
+Beachten Sie, dass die ID einer QuickInfo immer 0 ist.
 
-Zusätzlich zu den **TTN_NEEDTEXT** Benachrichtigung ein QuickInfo-Steuerelement kann die folgenden Benachrichtigungen senden zu einem Toolbar-Steuerelement:
+Zusätzlich zur **TTN_NEEDTEXT** Benachrichtigung kann ein QuickInfo-Steuerelement die folgenden Benachrichtigungen an ein ToolBar-Steuerelement senden:
 
 |benachrichtigungs-|Bedeutung|
 |------------------|-------------|
 |**TTN_NEEDTEXTA**|QuickInfo-Steuerelement erfordert ASCII-Text (nur Windows 95)|
-|**TTN_NEEDTEXTW**|QuickInfo-Steuerelement erfordert UNICODE-Text (nur Windows NT)|
-|**TBN_HOTITEMCHANGE**|Gibt an, dass das "heiß" (hervorgehobene) Element geändert wurde.|
-|**NM_RCLICK**|Gibt an, dass der Benutzer eine Schaltfläche mit der rechten Maustaste hat.|
-|**TBN_DRAGOUT**|Gibt an, der Benutzer auf die Schaltfläche geklickt hat, und ziehen den Zeiger der Schaltfläche weg. Es kann es sich um eine Anwendung zum Implementieren von Drag und drop aus einer Symbolleisten-Schaltfläche. Beim Empfang dieser Benachrichtigung die Anwendung beginnt das Drag und drop-Vorgangs.|
-|**TBN_DROPDOWN**|Gibt an, der Benutzer geklickt hat eine Schaltfläche, verwendet der **TBSTYLE_DROPDOWN** Stil.|
-|**TBN_GETOBJECT**|Gibt an, der Benutzer den Zeiger verschoben, über eine Schaltfläche, verwendet der **TBSTYLE_DROPPABLE** Stil.|
+|**TTN_NEEDTEXTW**|QuickInfo-Steuerelement erfordert Unicode-Text (nur Windows NT)|
+|**TBN_HOTITEMCHANGE**|Gibt an, dass sich das heiße (hervorgehobene) Element geändert hat.|
+|**NM_RCLICK**|Gibt an, dass der Benutzer rechts auf eine Schaltfläche geklickt hat.|
+|**TBN_DRAGOUT**|Gibt an, dass der Benutzer auf die Schaltfläche geklickt und den Mauszeiger auf die Schaltfläche gezogen hat. Sie ermöglicht es einer Anwendung, Drag & Drop über eine Symbolleisten Schaltfläche zu implementieren. Beim Empfang dieser Benachrichtigung startet die Anwendung den Drag & Drop-Vorgang.|
+|**TBN_DROPDOWN**|Gibt an, dass der Benutzer auf eine Schaltfläche geklickt hat, die den **TBSTYLE_DROPDOWN** Stil verwendet.|
+|**TBN_GETOBJECT**|Gibt an, dass der Benutzer den Mauszeiger über eine Schaltfläche bewegt hat, die den **TBSTYLE_DROPPABLE** Stil verwendet.|
 
-Eine Beispiel-Funktion und Weitere Informationen zu QuickInfos finden Sie [QuickInfos](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md).
+Eine Beispiel-Handlerfunktion und weitere Informationen zum Aktivieren von Quick Infos [finden Sie](tool-tips-in-windows-not-derived-from-cframewnd.md)unter Quick Infos.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CToolBarCtrl](../mfc/using-ctoolbarctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CToolBarCtrl](using-ctoolbarctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

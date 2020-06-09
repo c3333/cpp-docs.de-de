@@ -16,54 +16,54 @@ helpviewer_keywords:
 - MFC object relationships
 - thread objects [MFC]
 ms.assetid: 409ddd9b-66ad-4625-84f7-bf55a41d697b
-ms.openlocfilehash: 799035976ea55988a635f7dc9b667e87c48d8f7e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 17956c0b175e978c6e4e2fefcdad5f744929d457
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406163"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621838"
 ---
 # <a name="documents-views-and-the-framework"></a>Dokumente, Ansichten und das Framework
 
-Das Herzstück von MFC-Framework sind Sie die Konzepte von Dokument und Ansicht. Ein Dokument ist ein Datenobjekt in einer bearbeitungssitzung, mit denen der Benutzer interagiert. Er wird erstellt, indem die **neu** oder **öffnen** Befehl die **Datei** im Menü und wird in der Regel in einer Datei gespeichert. (Standard-MFC-Dokumente, die von Klasse abgeleitet `CDocument`, unterscheiden sich von aktive Dokumente und OLE-Dokumenten.) Eine Sicht ist ein Window-Objekt, das über die der Benutzer ein Dokument interagiert.
+Das Herzstück des MFC-Frameworks sind die Konzepte von Dokument und Sicht. Ein Dokument ist ein Datenobjekt, mit dem der Benutzer in einer Bearbeitungs Sitzung interagiert. Sie wird über den Befehl " **neu** " oder " **Öffnen** " im Menü " **Datei** " erstellt und in der Regel in einer Datei gespeichert. (Von der-Klasse abgeleitete Standard-MFC-Dokumente `CDocument` unterscheiden sich von aktiven Dokumenten und OLE-Verbund Dokumenten.) Eine Sicht ist ein Fenster Objekt, über das der Benutzer mit einem Dokument interagiert.
 
-Die wichtigsten Objekte in einer ausgeführten Anwendung sind:
+Die wichtigsten Objekte in einer laufenden Anwendung sind:
 
-- Das Dokument oder Dokumenten.
+- Das Dokument oder die Dokumente.
 
-   Die Dokumentklasse (abgeleitet von [CDocument](../mfc/reference/cdocument-class.md)) gibt an, die Daten Ihrer Anwendung.
+   Die von [CDocument](reference/cdocument-class.md)abgeleitete Dokument Klasse gibt die Daten Ihrer Anwendung an.
 
-   Wenn Sie OLE-Funktionen in Ihrer Anwendung möchten, leiten Sie die Dokumentklasse aus [COleDocument](../mfc/reference/coledocument-class.md) oder eine der davon abgeleiteten Klassen verwendet werden, je nach Art der Funktionalität, die Sie benötigen.
+   Wenn Sie OLE-Funktionalität in der Anwendung wünschen, leiten Sie die Dokument Klasse abhängig von dem benötigten Funktionstyp von [COleDocument](reference/coledocument-class.md) oder einer der abgeleiteten Klassen ab.
 
-- Die Ansicht oder Ansichten.
+- Die Ansicht oder Sichten.
 
-   Ihr View-Klasse (abgeleitet [CView](../mfc/reference/cview-class.md)) wird der Benutzer "-Fenster auf die Daten." Die Ansichtsklasse steuert, wie der Benutzer die Daten des Dokuments angezeigt, und mit ihm interagiert. In einigen Fällen sollten Sie ein Dokument, um mehrere Ansichten der Daten zu erhalten.
+   Ihre Ansichts Klasse (abgeleitet von [CView](reference/cview-class.md)) ist das "Fenster der Daten" des Benutzers. Die View-Klasse steuert, wie der Benutzer die Daten des Dokuments sieht und mit ihm interagiert. In einigen Fällen möchten Sie möglicherweise, dass ein Dokument mehrere Ansichten der Daten besitzt.
 
-   Wenn Sie das Durchführen eines Bildlaufs benötigen, leiten Sie von [CScrollView](../mfc/reference/cscrollview-class.md). Wenn die Ansicht eine Benutzeroberfläche, die in einer Dialogfeldvorlagen-Ressource angeordnet ist verfügt, leiten Sie von [CFormView](../mfc/reference/cformview-class.md). Klicken Sie für einfachen Text-Daten verwenden, oder ableiten [CEditView](../mfc/reference/ceditview-class.md). Für eine formularbasierte Datenzugriff-Anwendung wie z. B. ein Programm zur Dateneingabe abgeleitet [CRecordView](../mfc/reference/crecordview-class.md) (für ODBC). Auch verfügbar sind Klassen [CTreeView](../mfc/reference/ctreeview-class.md), [CListView](../mfc/reference/clistview-class.md), und [CRichEditView](../mfc/reference/cricheditview-class.md).
+   Wenn Sie einen Bildlauf ausführen möchten, leiten Sie von [CScrollView](reference/cscrollview-class.md)ab. Wenn Ihre Ansicht über eine Benutzeroberfläche verfügt, die in einer Dialogfeld Vorlagen-Ressource angeordnet ist, leiten Sie von [CFormView](reference/cformview-class.md)ab. Verwenden Sie für einfache Textdaten, oder leiten Sie Sie von [CEditView](reference/ceditview-class.md)ab. Leiten Sie für eine Formular basierte Datenzugriffs Anwendung (z. b. ein Dateneingabe Programm) von [CRecordView](reference/crecordview-class.md) (für ODBC) ab. Außerdem sind die Klassen [CTreeView](reference/ctreeview-class.md), [CListView](reference/clistview-class.md)und [CRichEditView](reference/cricheditview-class.md)verfügbar.
 
-- Die Frame-Fensters
+- Die Rahmen Fenster
 
-   Ansichten werden in "Dokumentrahmenfenster." angezeigt. In einer SDI-Anwendung ist das Dokumentrahmenfenster auch "im Hauptrahmenfenster" für die Anwendung. In einer MDI-Anwendung sind Dokumentfenster untergeordnete Fenster in einem Hauptrahmenfenster angezeigt. Die Klasse abgeleiteten Haupt-Rahmenfenster gibt an, die Stile und andere Merkmale der der Frame-Fensters, die Ihre Ansichten enthalten. Wenn Sie Rahmenfenster anpassen müssen, leiten Sie von [CFrameWnd](../mfc/reference/cframewnd-class.md) der Dokumentrahmenfenster für SDI-Anwendungen anpassen. Leiten Sie von [CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md) Hauptrahmenfenster für MDI-Anwendungen anpassen. Zudem leiten eine Klasse von [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md) , die unterschiedliche Arten von MDI-Dokumentrahmenfenstern anzupassen, die Ihre Anwendung unterstützt.
+   Sichten werden in "Dokument Rahmen Fenster" angezeigt. In einer SDI-Anwendung ist das Dokument Rahmen Fenster auch das "Hauptrahmen Fenster" für die Anwendung. In einer MDI-Anwendung werden Dokument Fenster in einem Hauptrahmen Fenster angezeigt. Die abgeleitete Hauptrahmen Fenster Klasse gibt die Stile und andere Eigenschaften der Rahmen Fenster an, die ihre Ansichten enthalten. Wenn Sie Frame Fenster anpassen müssen, leiten Sie von [CFrameWnd](reference/cframewnd-class.md) ab, um das Dokument Rahmen Fenster für SDI-Anwendungen anzupassen. Leiten Sie von [CMDIFrameWnd](reference/cmdiframewnd-class.md) ab, um das Hauptrahmen Fenster für MDI-Anwendungen anzupassen. Leiten Sie außerdem eine Klasse von [CMDIChildWnd](reference/cmdichildwnd-class.md) ab, um die verschiedenen Arten von MDI-Dokument Rahmen Fenstern anzupassen, die von der Anwendung unterstützt werden.
 
-- Die Dokumentvorlage oder Vorlagen
+- Die Dokument Vorlage oder Vorlagen
 
-   Eine Dokumentvorlage orchestriert die Erstellung von Dokumenten, Ansichten und Rahmenfenster. Eine bestimmter Dokumentvorlagen-Klasse, aus der Klasse abgeleiteten [CDocTemplate](../mfc/reference/cdoctemplate-class.md), erstellen und verwalten Sie alle geöffneten Dokumente eines bestimmten Typs. Anwendungen, die mehr als einen Typ des Dokuments zu unterstützen, haben mehrfache Dokumentvorlagen. Verwenden Sie Klasse [CSingleDocTemplate](../mfc/reference/csingledoctemplate-class.md) für SDI-Anwendungen oder Verwendungsklasse [CMultiDocTemplate](../mfc/reference/cmultidoctemplate-class.md) für MDI-Anwendungen.
+   Eine Dokument Vorlage orchestriert die Erstellung von Dokumenten, Sichten und Frame Fenstern. Eine bestimmte Dokumentvorlagen Klasse, die von der [CDocTemplate](reference/cdoctemplate-class.md)-Klasse abgeleitet wird, erstellt und verwaltet alle geöffneten Dokumente eines Typs. Anwendungen, die mehr als einen Dokumenttyp unterstützen, verfügen über mehrere Dokumentvorlagen. Verwenden Sie die [CSingleDocTemplate](reference/csingledoctemplate-class.md) -Klasse für SDI-Anwendungen, oder verwenden Sie die [CMultiDocTemplate](reference/cmultidoctemplate-class.md) -Klasse für MDI-Anwendungen.
 
-- Das Anwendungsobjekt
+- Das Anwendungs Objekt
 
-   Ihre Anwendungsklasse (abgeleitet [CWinApp](../mfc/reference/cwinapp-class.md)) steuert alle oben genannten Objekte und gibt das Verhalten der Anwendung wie z. B. die Initialisierung und Bereinigung an. Objekt von der Anwendung ein, und nur-Anwendung erstellt und verwaltet die Dokumentvorlagen aus, für jedes Dokument der Anwendung unterstützt werden.
+   Ihre Anwendungsklasse (abgeleitet von [CWinApp](reference/cwinapp-class.md)) steuert alle oben aufgeführten Objekte und gibt das Anwendungsverhalten an, z. b. die Initialisierung und Bereinigung. Das einzige Anwendungs Objekt der Anwendung erstellt und verwaltet die Dokumentvorlagen für alle Dokumenttypen, die von der Anwendung unterstützt werden.
 
-- Thread-Objekte
+- Thread Objekte
 
-   Wenn Ihre Anwendung separate Ausführungsthreads erstellt – beispielsweise, um Berechnungen im Hintergrund auszuführen, verwenden Sie Klassen, die von [CWinThread](../mfc/reference/cwinthread-class.md). [CWinApp](../mfc/reference/cwinapp-class.md) selbst stammt aus `CWinThread` und den primären Thread der Ausführung (oder der Hauptprozess) in Ihrer Anwendung darstellt. Sie können auch MFC in sekundären Threads verwenden.
+   Wenn die Anwendung separate Ausführungs Threads erstellt – z. b. zum Ausführen von Berechnungen im Hintergrund – verwenden Sie Klassen, die von [CWinThread](reference/cwinthread-class.md)abgeleitet werden. [CWinApp](reference/cwinapp-class.md) selbst wird von abgeleitet `CWinThread` und stellt den primären Ausführungs Thread (oder den Hauptprozess) in der Anwendung dar. Sie können MFC auch in sekundären Threads verwenden.
 
-In einer ausgeführten Anwendung reagieren auf Benutzeraktionen, eine gemeinsame von Befehlen und anderen Nachrichten verbunden sind kooperativ diese Objekte. Eine einzelne Application-Objekt verwaltet einen oder mehrere Dokumentvorlagen. Jede Dokumentvorlage erstellt und verwaltet eine oder mehrere Dokumente (je nachdem, ob die Anwendung SDI- oder MDI). Der Benutzer Ansichten und bearbeitet ein Dokument über eine Sicht, die in einem Rahmenfenster enthalten sind. Die folgende Abbildung zeigt die Beziehungen zwischen diesen Objekten für einer SDI-Anwendung.
+In einer ausgeführten Anwendung reagieren diese Objekte kooperativ auf Benutzeraktionen, die durch Befehle und andere Nachrichten verbunden sind. Ein einzelnes Anwendungs Objekt verwaltet eine oder mehrere Dokumentvorlagen. Jede Dokument Vorlage erstellt und verwaltet ein oder mehrere Dokumente (abhängig davon, ob die Anwendung SDI oder MDI ist). Der Benutzer zeigt ein Dokument an und bearbeitet es über eine Ansicht, die in einem Rahmen Fenster enthalten ist. Die folgende Abbildung zeigt die Beziehungen zwischen diesen Objekten für eine SDI-Anwendung.
 
-![Objekte in einer ausgeführten SDI-Anwendung](../mfc/media/vc386v1.gif "Objekte in einer ausgeführten SDI-Anwendung") <br/>
+![Objekte in einer laufenden SDI-Anwendung](../mfc/media/vc386v1.gif "Objekte in einer ausgeführten SDI-Anwendung") <br/>
 Objekte in einer ausgeführten SDI-Anwendung
 
-Die restlichen in dieser Artikelreihe wird erläutert, wie die Framework-Tools, den Assistenten zum MFC-Anwendungen und die Ressourcen-Editoren, die diese Objekte erstellen, wie diese zusammenarbeiten und wie Sie sie bei der Programmierung verwenden. Dokumente, Ansichten und Rahmenfenster werden ausführlicher in [Fensterobjekte](../mfc/window-objects.md) und [Dokument-/Ansichtarchitektur](../mfc/document-view-architecture.md).
+Der Rest dieser Artikel Familie erläutert, wie die Framework-Tools, der MFC-Anwendungs-Assistent und die Ressourcen-Editoren diese Objekte erstellen, wie Sie zusammenarbeiten und wie Sie Sie in der Programmierung verwenden. Dokumente, Ansichten und Rahmen Fenster werden in [Fenster Objekten](window-objects.md) und [Dokument-/Ansichtarchitektur](document-view-architecture.md)ausführlicher erläutert.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden der Klassen zum Schreiben von Anwendungen für Windows](../mfc/using-the-classes-to-write-applications-for-windows.md)
+[Verwenden der Klassen zum Schreiben von Anwendungen für Windows](using-the-classes-to-write-applications-for-windows.md)

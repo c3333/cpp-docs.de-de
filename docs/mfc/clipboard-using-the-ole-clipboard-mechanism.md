@@ -1,5 +1,5 @@
 ---
-title: 'Zwischenablage: Verwenden des OLE-Zwischenablage Mechanismus'
+title: 'Zwischenablage: Verwenden des OLE-Zwischenablagemechanismus'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - applications [OLE], Clipboard
@@ -8,18 +8,18 @@ helpviewer_keywords:
 - OLE Clipboard, formats
 - formats [MFC], Clipboard for OLE
 ms.assetid: 229cc610-5bb1-435e-bd20-2c8b9964d1af
-ms.openlocfilehash: 0f2c10f4a88b723d1ab9f4bb0ca903987359c9fd
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: da0b99e6c9c803f3c3a4c09d67853649a4bac314
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69508907"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626054"
 ---
-# <a name="clipboard-using-the-ole-clipboard-mechanism"></a>Zwischenablage: Verwenden des OLE-Zwischenablage Mechanismus
+# <a name="clipboard-using-the-ole-clipboard-mechanism"></a>Zwischenablage: Verwenden des OLE-Zwischenablagemechanismus
 
 OLE verwendet Standardformate und einige OLE-spezifische Formate zum Übertragen von Daten über die Zwischenablage.
 
-Wenn Sie Daten aus einer Anwendung Ausschneiden oder kopieren, werden die Daten in der Zwischenablage gespeichert, damit Sie später in Einfügevorgängen verwendet werden. Diese Daten befinden sich in einer Vielzahl von Formaten. Wenn ein Benutzer sich für das Einfügen von Daten aus der Zwischenablage entscheidet, kann die Anwendung auswählen, welche dieser Formate verwendet werden sollen. Die Anwendung sollte geschrieben werden, um das Format auszuwählen, das die meisten Informationen bereitstellt, es sei denn, der Benutzer fordert explizit ein bestimmtes Format mithilfe von "Einfügen" an. Bevor Sie fortfahren, sollten Sie die Themen zu [Datenobjekten und Datenquellen (OLE)](../mfc/data-objects-and-data-sources-ole.md) lesen. Sie beschreiben die Grundlagen der Funktionsweise von Datenübertragungen und deren Implementierung in Ihren Anwendungen.
+Wenn Sie Daten aus einer Anwendung Ausschneiden oder kopieren, werden die Daten in der Zwischenablage gespeichert, damit Sie später in Einfügevorgängen verwendet werden. Diese Daten befinden sich in einer Vielzahl von Formaten. Wenn ein Benutzer sich für das Einfügen von Daten aus der Zwischenablage entscheidet, kann die Anwendung auswählen, welche dieser Formate verwendet werden sollen. Die Anwendung sollte geschrieben werden, um das Format auszuwählen, das die meisten Informationen bereitstellt, es sei denn, der Benutzer fordert explizit ein bestimmtes Format mithilfe von "Einfügen" an. Bevor Sie fortfahren, sollten Sie die Themen zu [Datenobjekten und Datenquellen (OLE)](data-objects-and-data-sources-ole.md) lesen. Sie beschreiben die Grundlagen der Funktionsweise von Datenübertragungen und deren Implementierung in Ihren Anwendungen.
 
 Windows definiert eine Reihe von Standardformaten, die zum Übertragen von Daten über die Zwischenablage verwendet werden können. Dazu zählen Metadateien, Text, Bitmaps und andere. OLE definiert auch eine Reihe von OLE-spezifischen Formaten. Bei Anwendungen, die mehr Details benötigen, als von diesen Standardformaten angegeben werden, empfiehlt es sich, eigene benutzerdefinierte Zwischenablage Formate zu registrieren. Verwenden Sie hierfür die Win32-API-Funktion [RegisterClipboardFormat](/windows/win32/api/winuser/nf-winuser-registerclipboardformatw) .
 
@@ -33,16 +33,16 @@ Wenn Sie z. b. den Befehl "Ausschneiden" aktivieren möchten, können Sie einen 
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Kopieren und Einfügen von Daten](../mfc/clipboard-copying-and-pasting-data.md)
+- [Kopieren und Einfügen von Daten](clipboard-copying-and-pasting-data.md)
 
-- [Hinzufügen anderer Formate](../mfc/clipboard-adding-other-formats.md)
+- [Hinzufügen anderer Formate](clipboard-adding-other-formats.md)
 
-- [Verwenden der Windows-Zwischenablage](../mfc/clipboard-using-the-windows-clipboard.md)
+- [Verwenden der Windows-Zwischenablage](clipboard-using-the-windows-clipboard.md)
 
-- [OLE](../mfc/ole-background.md)
+- [OLE](ole-background.md)
 
-- [OLE-Datenobjekte und Datenquellen und einheitliche Datenübertragung](../mfc/data-objects-and-data-sources-ole.md)
+- [OLE-Datenobjekte und Datenquellen und einheitliche Datenübertragung](data-objects-and-data-sources-ole.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zwischenablage](../mfc/clipboard.md)
+[Zwischenablage](clipboard.md)

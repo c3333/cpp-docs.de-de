@@ -11,60 +11,60 @@ helpviewer_keywords:
 - painting classes [MFC]
 - output classes [MFC]
 ms.assetid: 35fd6435-a38e-42c6-a3fa-cd6f39370fc3
-ms.openlocfilehash: 1d76570e7bfd4ce587b3803235394ec5406d30b2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b15f5034604f9d6b67574288140b79b144692478
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410199"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84615363"
 ---
 # <a name="output-device-context-classes"></a>Klassen für die Ausgabe (Gerätekontext)
 
-Diese Klassen kapseln die verschiedenen Typen von Gerätekontexten, die in Windows verfügbar.
+Diese Klassen kapseln die verschiedenen Typen von Geräte Kontexten, die in Windows verfügbar sind.
 
-Die meisten der folgenden Klassen kapseln ein Handle für einen Windows-Gerätekontext. Ein Gerätekontext ist ein Windows-Objekt, das Informationen über die Zeichnungsattribute eines Geräts z. B. einer Bildschirmanzeige oder einen Drucker enthält. Alle Zeichenbefehle erfolgen über ein Gerät-Context-Objekt. Zusätzliche Klassen abgeleitet `CDC` spezielle Gerätekontext-Funktionen, einschließlich der Unterstützung für Windows-Metadateien zu kapseln.
+Die meisten der folgenden Klassen Kapseln ein Handle für einen Windows-Gerätekontext. Ein Gerätekontext ist ein Windows-Objekt, das Informationen über die Zeichnungs Attribute eines Geräts (z. b. eine Anzeige oder einen Drucker) enthält. Alle Zeichnungs Aufrufe werden über ein Gerätekontext Objekt durchgeführt. Zusätzliche Klassen, die von abgeleitet `CDC` werden, Kapseln spezialisierte Gerätekontext Funktionen, einschließlich der Unterstützung für Windows-Metadatendateien.
 
-[CDC](../mfc/reference/cdc-class.md)<br/>
-Die Basisklasse für Gerätekontexte. Direkt für den Zugriff auf die gesamte Anzeige und für den Zugriff auf Nondisplay-Kontexten wie z. B. Drucker verwendet.
+[CDC](reference/cdc-class.md)<br/>
+Die Basisklasse für Geräte Kontexte. Wird direkt für den Zugriff auf die gesamte Anzeige und für den Zugriff auf nicht Anzeige Kontexte wie Drucker verwendet.
 
-[CPaintDC](../mfc/reference/cpaintdc-class.md)<br/>
-Einen Anzeigekontext verwendet `OnPaint` Member-Funktionen von Windows. Ruft automatisch `BeginPaint` Erstellung und `EndPaint` bei Zerstörung.
+[CPaintDC](reference/cpaintdc-class.md)<br/>
+Ein Anzeige Kontext, der in den Element `OnPaint` Funktionen von Windows verwendet wird. Ruft `BeginPaint` bei der Erstellung und `EndPaint` bei der Zerstörung automatisch auf.
 
-[CClientDC](../mfc/reference/cclientdc-class.md)<br/>
-Einen Anzeigekontext für Windows Client-Bereichen. Beispielsweise verwendet, um in eine sofortige Reaktion auf Mausereignisse zu zeichnen.
+[CClientDC](reference/cclientdc-class.md)<br/>
+Ein Anzeige Kontext für Client Fensterbereiche. Wird beispielsweise verwendet, um eine sofortige Reaktion auf Mausereignisse zu zeichnen.
 
-[CWindowDC](../mfc/reference/cwindowdc-class.md)<br/>
-Einen Anzeigekontext für die gesamte Windows, einschließlich der Client und die nicht-Clientbereiche.
+[CWindowDC](reference/cwindowdc-class.md)<br/>
+Ein Anzeige Kontext für ganze Fenster, einschließlich des Client-und des nicht-Client Bereichs.
 
-[CMetaFileDC](../mfc/reference/cmetafiledc-class.md)<br/>
-Einen Gerätekontext für Windows-Metadateien. Eine Windows-Metadatei enthält eine Sequenz von Graphics Device Interface (GDI) Befehle, die wiedergegeben werden können, um ein Image zu erstellen. Die Memberfunktionen der Aufrufe einer `CMetaFileDC` in einer Metadatei aufgezeichnet werden.
+[CMetaFileDC](reference/cmetafiledc-class.md)<br/>
+Ein Gerätekontext für Windows-Metadatendateien. Eine Windows-Metadatei enthält eine Sequenz von-GDI-Befehlen (Graphics Device Interface), die zum Erstellen eines Bilds wiedergegeben werden können. Aufrufe, die an die Member-Funktionen eines vorgenommen `CMetaFileDC` werden, werden in einer Metadatei aufgezeichnet.
 
 ## <a name="related-classes"></a>Verwandte Klassen
 
 [CPoint](../atl-mfc-shared/reference/cpoint-class.md)<br/>
-Die Koordinate (X, y)-Paare enthält.
+Enthält Koordinatenpaare (x, y).
 
 [CSize](../atl-mfc-shared/reference/csize-class.md)<br/>
-Enthält paarweise zugeordneten Werte, relativen Positionen oder Entfernung an.
+Enthält eine Entfernung, relative Positionen oder gekoppelte Werte.
 
 [CRect](../atl-mfc-shared/reference/crect-class.md)<br/>
-Enthält die Koordinaten der rechteckige Bereiche.
+Enthält Koordinaten von rechteckigen Bereichen.
 
-[CRgn](../mfc/reference/crgn-class.md)<br/>
-Kapselt einen GDI-Bereich zum Bearbeiten von einen elliptischen, unregelmäßige oder polygonalen Bereich innerhalb eines Zeitfensters an. In Verbindung mit den Clipping-Memberfunktionen in der Klasse verwendet `CDC`.
+[CRgn](reference/crgn-class.md)<br/>
+Kapselt einen GDI-Bereich zum Bearbeiten eines elliptischen, polygonalen oder unregelmäßigen Bereichs innerhalb eines Fensters. Wird in Verbindung mit den Clipping-Member-Funktionen in der-Klasse verwendet `CDC` .
 
-[CRectTracker](../mfc/reference/crecttracker-class.md)<br/>
-Zeigt an, und die Benutzeroberfläche zum Ändern der Größe und verschieben die rechteckige Objekte behandelt.
+[CRectTracker](reference/crecttracker-class.md)<br/>
+Zeigt die Benutzeroberfläche zum Ändern der Größe und zum Verschieben von rechteckigen Objekten an und behandelt diese.
 
-[CColorDialog](../mfc/reference/ccolordialog-class.md)<br/>
-Stellt ein Standarddialogfeld für die Auswahl einer Farbe bereit.
+[CColorDialog](reference/ccolordialog-class.md)<br/>
+Stellt ein Standard Dialogfeld für die Auswahl einer Farbe bereit.
 
-[CFontDialog](../mfc/reference/cfontdialog-class.md)<br/>
-Stellt ein Standarddialogfeld für das Auswählen einer Schriftart an.
+[CFontDialog](reference/cfontdialog-class.md)<br/>
+Stellt ein Standard Dialogfeld zum Auswählen einer Schriftart bereit.
 
-[CPrintDialog](../mfc/reference/cprintdialog-class.md)<br/>
-Stellt ein Standarddialogfeld zum Drucken einer Datei bereit.
+[CPrintDialog](reference/cprintdialog-class.md)<br/>
+Stellt ein Standard Dialogfeld zum Drucken einer Datei bereit.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

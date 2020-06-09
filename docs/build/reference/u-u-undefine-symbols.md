@@ -1,6 +1,6 @@
 ---
 title: /U, /u (Symboldefinitionen aufheben)
-ms.date: 11/04/2016
+ms.date: 06/08/2020
 f1_keywords:
 - VC.Project.VCCLCompilerTool.UndefinePreprocessorDefinitions
 - VC.Project.VCCLWCECompilerTool.UndefinePreprocessorDefinitions
@@ -13,57 +13,55 @@ helpviewer_keywords:
 - /U compiler option [C++]
 - U compiler option [C++]
 ms.assetid: 7bc0474f-6d1f-419b-807d-0d8816763b2a
-ms.openlocfilehash: bfc03ebd5c900bf8bf81b4a50eed02111baf85ee
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4d7a2b3d5df2b22dc53eb7b58bfb78cdb1824b26
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62317002"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616662"
 ---
 # <a name="u-u-undefine-symbols"></a>/U, /u (Symboldefinitionen aufheben)
 
-Die **/u** -Compileroption hebt die Definition der angegebenen Präprozessorsymbols. Die **/u** -Compileroption hebt die Definition der Microsoft-spezifischen Symbole, die der Compiler definiert.
+Die- **`/U`** Compileroption definiert das angegebene Präprozessorsymbol nicht. Mit der- **`/u`** Compileroption werden die Microsoft-spezifischen Symbole, die der Compiler definiert, nicht definiert.
 
 ## <a name="syntax"></a>Syntax
 
-```
-/U[ ]symbol
-/u
-```
+> **`/U`**\[] (*Symbol* )\
+> **`/u`**
 
 ## <a name="arguments"></a>Argumente
 
-*symbol*<br/>
-Das Präprozessorsymbol aufgehoben werden soll.
+*Tick*<br/>
+Das zu definierenden Präprozessorsymbol.
 
 ## <a name="remarks"></a>Hinweise
 
-Weder die **/u** oder **/u** Option kann keine Symboldefinitionen erstellt mithilfe der **#define** Richtlinie.
+Keines der **`/U`** Optionen und **`/u`** kann die Definition eines Symbols aufheben, das mithilfe der- **`#define`** Direktive erstellt wurde.
 
-Die **/u** Option kann ein Symbol, das mithilfe von zuvor definiert wurde. hebt die **/d** Option.
+Mit der- **`/U`** Option kann ein Symbol, das zuvor mit der-Option definiert wurde, nicht mehr definiert werden **`/D`** .
 
-Standardmäßig definiert der Compiler die folgenden Microsoft-spezifische Symbole.
+Standardmäßig kann der Compiler eine große Anzahl von Microsoft-spezifischen Symbolen definieren. Dies sind einige gängige:
 
-|Symbol|Funktion|
-|------------|--------------|
-|_CHAR_UNSIGNED|Standardzeichentyp ist vorzeichenlos. Definiert, wenn die [/j](j-default-char-type-is-unsigned.md) angegeben wird.|
-|_CPPRTTI|Definiert für Code mit kompiliert die [/Gr](gr-enable-run-time-type-information.md) Option.|
-|_CPPUNWIND|Definiert für Code mit kompiliert die [/EHsc](eh-exception-handling-model.md) Option.|
-|_DLL|Definiert, wenn die [/MD](md-mt-ld-use-run-time-library.md) angegeben wird.|
-|_M_IX86|Standardmäßig auf 600 für X86 definierte Ziele.|
-|_MSC_VER|Weitere Informationen finden Sie unter [Predefined Macros](../../preprocessor/predefined-macros.md).|
-|_WIN32|Für WIN32-Anwendungen definiert. Immer definiert.|
-|_MT|Definiert, wenn die [/MD oder/MT](md-mt-ld-use-run-time-library.md) angegeben wird.|
+| Symbol | Funktion |
+|--|--|
+| `_CHAR_UNSIGNED` | Der Standard Zeichentyp ist "unsigned". Wird definiert, wenn die [**`/J`**](j-default-char-type-is-unsigned.md) Option angegeben wird. |
+| `_CPPRTTI` | Definiert für Code, der mit der-Option kompiliert wurde [**`/GR`**](gr-enable-run-time-type-information.md) . |
+| `_CPPUNWIND` | Definiert für Code, der mit der-Option kompiliert wurde [**`/EHsc`**](eh-exception-handling-model.md) . |
+| `_DLL` | Wird definiert, wenn die [**`/MD`**](md-mt-ld-use-run-time-library.md) Option angegeben wird. |
+| `_M_IX86` | Standardmäßig auf 600 für x86-Ziele definiert. |
+| `_MSC_VER` | Definiert als eindeutiger ganzzahliger Wert für jede Compilerversion. Weitere Informationen finden Sie unter [vordefinierte Makros](../../preprocessor/predefined-macros.md). |
+| `_WIN32` | Definiert für Win32-Anwendungen. Immer definiert. |
+| `_MT` | Wird definiert, wenn die Option [ **`/MD`** oder **`/MT`** ](md-mt-ld-use-run-time-library.md) angegeben wird. |
+
+Eine komplette Liste der Microsoft-spezifischen vordefinierten Makros finden Sie unter [vordefinierte Makros](../../preprocessor/predefined-macros.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Klicken Sie auf den Ordner **C/C++** .
+1. Wählen Sie die **Eigenschaften**  >  Seite Eigenschaften von**C/C++**  >  **erweitert** aus.
 
-1. Klicken Sie auf die **erweitert** Eigenschaftenseite.
-
-1. Ändern der **Präprozessordefinitionen** oder **alle Präprozessordefinitionen aufheben** Eigenschaften.
+1. Ändern Sie die **Präprozessordefinitionen undefine** , oder deaktivieren Sie alle Eigenschaften der **Präprozessordefinitionen** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -73,7 +71,7 @@ Standardmäßig definiert der Compiler die folgenden Microsoft-spezifische Symbo
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
-[/J (Standardzeichentyp ist „unsigned“)](j-default-char-type-is-unsigned.md)<br/>
-[/GR (Laufzeittypinfo aktivieren)](gr-enable-run-time-type-information.md)<br/>
-[/EH (Ausnahmebehandlungsmodell)](eh-exception-handling-model.md)<br/>
-[/MD, /MT, /LD (Laufzeitbibliothek verwenden)](md-mt-ld-use-run-time-library.md)
+[**`/J`**(Standardmäßiger char-Typ ist nicht signiert)](j-default-char-type-is-unsigned.md)<br/>
+[**`/GR`**(Lauf Zeittyp Informationen aktivieren)](gr-enable-run-time-type-information.md)<br/>
+[**`/EH`**(Ausnahme Behandlungsmodell)](eh-exception-handling-model.md)<br/>
+[**`/MD`**, **`/MT`** , **`/LD`** (Lauf Zeit Bibliothek verwenden)](md-mt-ld-use-run-time-library.md)

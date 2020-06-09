@@ -5,48 +5,48 @@ helpviewer_keywords:
 - Internet applications [MFC], getting started
 - Internet applications [MFC], first steps
 ms.assetid: 6377e9b8-07c4-4380-b63b-05f5a9061313
-ms.openlocfilehash: 1b0a8696e25054099cdbf208dd5a1f713bfbe6d3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6d8a542ada94bc52ee2000bc92ae0457ec87609c
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62164955"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617962"
 ---
 # <a name="mfc-internet-programming-tasks"></a>MFC-Internetprogrammierungsaufgaben
 
-Dieser Abschnitt enthält detaillierte Schritte für Ihre Anwendungen internetunterstützung hinzugefügt. Themen gehören wie den MFC-Klassen auf Internet-aktivieren einer vorhandenen Anwendung verwendet und wie Ihre vorhandene COM-Komponente Active Document-Unterstützung hinzugefügt. Möchten Sie ein Dokument mit minutengenauen Aktienkurse, die Pittsburgh footballergebnissen, erstellen und die aktuelle Temperatur in Antarktis Microsoft bietet eine Reihe von Technologien, mit denen Sie dies über das Internet unterstützen.
+Dieser Abschnitt enthält ausführliche Schritte zum Hinzufügen von Internet Unterstützung zu Ihren Anwendungen. In den Themen wird erläutert, wie Sie die MFC-Klassen verwenden, um Ihre vorhandenen Anwendungen per Internet zu aktivieren, und wie Sie der vorhandenen COM-Komponente eine aktive Dokument Unterstützung hinzufügen. Möchten Sie ein Dokument mit den neuesten Kurs Notierungen, den Fußball Ergebnissen von Pittsburgh und der aktuellen Temperatur in der Antarktis erstellen, bietet Microsoft eine Reihe von Technologien, die Sie über das Internet unterstützen.
 
-Aktive gehören ActiveX-Steuerelementen (früher OLE-Steuerelemente) und aktive Dokumente; WinInet für das einfache Weise abrufen und Speichern von Dateien über das Internet; und asynchronen Monikern effizient Daten heruntergeladen haben. Visual C++ bietet, dass der Assistenten können Sie schnell mit einem Starter-Anwendung beginnen. Eine Einführung zu diesen Technologien finden Sie unter [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md) und [MFC COM](../mfc/mfc-com.md).
+Zu den aktiven Technologien zählen ActiveX-Steuerelemente (früher OLE-Steuerelemente) und aktive Dokumente. WinInet für das einfache Abrufen und Speichern von Dateien über das Internet. und asynchrone Moniker für das effiziente herunterladen von Daten. Visual C++ stellt Assistenten bereit, mit denen Sie schnell mit einer Starter Anwendung loslegen können. Eine Einführung in diese Technologien finden Sie unter [Grundlagen der MFC-Internet Programmierung](mfc-internet-programming-basics.md) und [MFC-com](mfc-com.md).
 
-Haben Sie schon immer eine Datei für den FTP, aber noch nicht gelernten WinSock netzwerkprogrammierungs-Protokolle WinInet-Klassen kapseln und diese Protokolle, bietet Ihnen einen einfachen Satz von Funktionen, die Sie verwenden können, Schreiben Sie eine Client-Anwendung im Internet zum Herunterladen von Dateien Mithilfe von HTTP, FTP und Gopher. Sie können die WinInet verwenden, um Verzeichnisse auf Ihrer Festplatte ablegen oder auf der ganzen Welt zu suchen. Sie können transparent Sammeln von Daten mit unterschiedlichen Typen und stellt sie für den Benutzer in einer integrierten-Schnittstelle.
+Wenn Sie immer eine Datei FTP haben möchten, aber keine Winsock-und Netzwerk Programmierungs Protokolle gelernt haben, werden diese Protokolle von WinInet-Klassen gekapt, sodass Sie eine einfache Reihe von Funktionen bereitstellen können, mit denen Sie eine Client Anwendung im Internet schreiben können, um Dateien mithilfe von http, FTP und Gopher herunterzuladen. Sie können WinInet verwenden, um Verzeichnisse auf Ihrer Festplatte oder auf der ganzen Welt zu durchsuchen. Sie können Daten verschiedener Typen transparent erfassen und dem Benutzer in einer integrierten Oberfläche präsentieren.
 
-Haben Sie große Mengen von Daten asynchron herunterladen Moniker, geben Sie eine Lösung COM (Component Object Model) für progressives Rendering von großen Objekten. WinInet kann auch asynchron verwendet werden.
+Verfügen Sie über große Datenmengen, um asynchrone Moniker herunterzuladen, stellen Sie eine com-Lösung (Component Object Model) für das Progressive Rendering von großen Objekten bereit. WinInet kann auch asynchron verwendet werden.
 
-Die folgende Tabelle beschreibt ein paar Dinge, die mit diesen Technologien möglich.
+In der folgenden Tabelle werden einige der Aufgaben beschrieben, die Sie mit diesen Technologien erledigen können.
 
-|Sie haben|Sie möchten|Sie sollten|
+|Sie haben|Zweck|Sie sollten|
 |--------------|-----------------|----------------|
-|Ein Webserver.|Anmeldungen und ausführliche Informationen zu URL-Anforderungen nachverfolgt.|Schreiben Sie einen Filter, Anfordern von Benachrichtigungen für Logon-Ereignissen und URL-Zuordnung.|
-|Ein Webbrowser.|Geben Sie dynamischen Inhalt ein.|ActiveX-Steuerelemente und aktive Dokumente zu erstellen.|
-|Eine Dokument-basierte Anwendung.|Unterstützung für FTP eine Datei hinzufügen.|Verwenden Sie WinInet oder asynchrone Moniker.|
+|Ein Webserver.|Nachverfolgen von Anmeldungen und detaillierten Informationen zu URL-Anforderungen.|Schreiben Sie einen Filter, fordern Sie Benachrichtigungen für Anmelde Ereignisse und URL-Zuordnung an.|
+|Ein Webbrowser.|Dynamische Inhalte bereitstellen.|Erstellen von ActiveX-Steuerelementen und aktiven Dokumenten.|
+|Eine Dokument basierte Anwendung.|Unterstützung für FTP-Datei hinzufügen.|Verwenden Sie WinInet-oder asynchrone Moniker.|
 
-Finden Sie unter den folgenden Themen Weitere Informationen zum Einstieg:
+Weitere Informationen zu den ersten Schritten finden Sie in den folgenden Themen:
 
-- [Überlegungen zum Anwendungsentwurf](../mfc/application-design-choices.md)
+- [Überlegungen zum Anwendungsentwurf](application-design-choices.md)
 
-- [Schreiben von MFC-Anwendungen](../mfc/writing-mfc-applications.md)
+- [Schreiben von MFC-Anwendungen](writing-mfc-applications.md)
 
-- [ActiveX-Steuerelemente für das Internet](../mfc/activex-controls-on-the-internet.md)
+- [ActiveX-Steuerelemente für das Internet](activex-controls-on-the-internet.md)
 
-- [Upgrading eines vorhandenen ActiveX-Steuerelements](../mfc/upgrading-an-existing-activex-control.md)
+- [Upgrading eines vorhandenen ActiveX-Steuerelements](upgrading-an-existing-activex-control.md)
 
-- [Asynchrone Moniker im Internet](../mfc/asynchronous-monikers-on-the-internet.md)
+- [Asynchrone Moniker im Internet](asynchronous-monikers-on-the-internet.md)
 
-- [Testen von Internetanwendungen](../mfc/testing-internet-applications.md)
+- [Testen von Internetanwendungen](testing-internet-applications.md)
 
-- [Internetsicherheit](../mfc/internet-security-cpp.md)
+- [Internetsicherheit](internet-security-cpp.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Grundlagen der MFC-Internetprogrammierung](../mfc/mfc-internet-programming-basics.md)<br/>
-[Internetinformation – nach Aufgaben geordnet](../mfc/internet-information-by-task.md)
+[Grundlagen der MFC-Internetprogrammierung](mfc-internet-programming-basics.md)<br/>
+[Internetinformation – nach Aufgaben geordnet](internet-information-by-task.md)

@@ -9,36 +9,36 @@ helpviewer_keywords:
 - member variables [MFC], ActiveX controls in project
 - ActiveX control containers [MFC], ActiveX controls as member variables
 ms.assetid: 7898a336-440d-4a60-be43-cb062b807aee
-ms.openlocfilehash: 620a9ec58b3a5a8fcdac63626b81fbc4620de399
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 87cb560a1054a912a4e8574cfe2dee74d5e61fe6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371619"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625132"
 ---
 # <a name="activex-control-containers-connecting-an-activex-control-to-a-member-variable"></a>ActiveX-Steuerelementcontainer: Verbinden eines ActiveX-Steuerelements mit einer Membervariablen
 
-Die einfachste Möglichkeit, von der Steuerelementcontaineranwendung aus auf ein ActiveX-Steuerelement zuzugreifen, besteht darin, das ActiveX-Steuerelement einer Membervariablen der Dialogklasse zuzuordnen, die das Steuerelement enthält.
+Die einfachste Möglichkeit, über die Steuerelement Container-Anwendung auf ein ActiveX-Steuerelement zuzugreifen, besteht darin, das ActiveX-Steuerelement einer Element Variablen der Dialogfeld Klasse zuzuordnen, die das Steuerelement enthalten wird.
 
 > [!NOTE]
-> Dies ist nicht die einzige Möglichkeit, von einer Containerklasse aus auf ein eingebettetes Steuerelement zuzugreifen, aber für die Zwecke dieses Artikels ist es ausreichend.
+> Dies ist nicht die einzige Möglichkeit für den Zugriff auf ein eingebettetes Steuerelement aus einer Container Klasse, aber im Rahmen dieses Artikels genügt es.
 
-### <a name="adding-a-member-variable-to-the-dialog-class"></a>Hinzufügen einer Membervariablen zur Dialogklasse
+### <a name="adding-a-member-variable-to-the-dialog-class"></a>Hinzufügen einer Element Variablen zur Dialogfeld Klasse
 
-1. Klicken Sie in der Klassenansicht mit der rechten Maustaste auf die Hauptdialogklasse, um das Kontextmenü zu öffnen. Beispiel: `CContainerDlg`.
+1. Klicken Sie in Klassenansicht mit der rechten Maustaste auf die Haupt Dialogklasse, um das Kontextmenü zu öffnen. Beispiel: `CContainerDlg`.
 
-1. Klicken Sie im Kontextmenü auf **Hinzufügen** und dann **auf Variable hinzufügen**.
+1. Klicken Sie im Kontextmenü auf **Hinzufügen** , und fügen Sie dann **Variable hinzu**.
 
-1. Klicken Sie im Assistenten zum Hinzufügen von Mitgliedsvariablen auf **Steuerelementvariable**.
+1. Klicken Sie im Assistenten zum Hinzufügen von Element Variablen auf **Steuerungs Variable**.
 
-1. Wählen Sie im Listenfeld **Steuerungs-ID** die Steuer-ID des eingebetteten ActiveX-Steuerelements aus. Beispiel: `IDC_CIRCCTRL1`.
+1. Wählen Sie im Listenfeld Steuerelement- **ID** die Steuerelement-ID des eingebetteten ActiveX-Steuer Elements aus. Beispiel: `IDC_CIRCCTRL1`.
 
 1. Geben Sie im Feld **Variablenname** einen Namen ein.
 
-   *M_circctl*z. B. .
+   Beispielsweise *m_circctl*.
 
-1. Klicken Sie auf **Fertig stellen,** um Ihre Auswahl zu akzeptieren, und beenden Sie den Assistenten zum Hinzufügen von Mitgliedsvariablen.
+1. Klicken Sie auf **Fertig** stellen, um Ihre Auswahl zu akzeptieren und den Assistenten zum Hinzufügen von Mitgliedsvariablen
 
 ## <a name="see-also"></a>Siehe auch
 
-[ActiveX-Steuerelementcontainer](../mfc/activex-control-containers.md)
+[ActiveX-Steuerelementcontainer](activex-control-containers.md)

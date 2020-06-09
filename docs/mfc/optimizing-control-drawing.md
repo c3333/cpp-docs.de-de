@@ -4,48 +4,48 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - MFC ActiveX controls [MFC], optimizing
 ms.assetid: 29ff985d-9bf5-4678-b62d-aad12def75fb
-ms.openlocfilehash: 354ec1678747be57d387673f2611d526df8dfb47
-ms.sourcegitcommit: 0ad35b26e405bbde17dc0bd0141e72f78f0a38fb
+ms.openlocfilehash: 17cb7318e667fe4e16416d51e7e7fba02553cfe6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194732"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621017"
 ---
 # <a name="optimizing-control-drawing"></a>Optimieren der Steuerelementdarstellung
 
-Wenn ein Steuerelement angewiesen wird, um sich selbst in einem Container bereitgestellten Gerätekontext zu zeichnen, in der Regel GDI-Objekte (z. B. Stifte, Pinseln und Schriftarten) in den Gerätekontext auswählt, führt seine Zeichenvorgänge und stellt die vorherigen GDI-Objekte. Wenn der Container enthält mehrere Steuerelemente, die in den gleichen Gerätekontext gezeichnet werden soll, und jedes Steuerelement wählt die GDI-Objekte, die erfordert, kann Zeit gespeichert werden, wenn die Steuerelemente zuvor ausgewählten Objekte nicht einzeln wiederherstellen. Nachdem alle Steuerelemente gezeichnet wurden, kann die Container automatisch die ursprünglichen Objekte wiederherstellen.
+Wenn ein Steuerelement angewiesen wird, sich in einen vom Container bereitgestellten Gerätekontext zu zeichnen, wählt es normalerweise GDI-Objekte (z. b. Stifte, Pinsel und Schriftarten) in den Gerätekontext aus, führt seine Zeichnungsvorgänge aus und stellt die vorherigen GDI-Objekte wieder her. Wenn der Container mehrere Steuerelemente enthält, die in denselben Gerätekontext gezeichnet werden sollen, und jedes Steuerelement die erforderlichen GDI-Objekte auswählt, kann die Zeit gespart werden, wenn die Steuerelemente zuvor ausgewählte Objekte nicht einzeln wiederherstellen. Nachdem alle Steuerelemente gezeichnet wurden, kann der Container die ursprünglichen Objekte automatisch wiederherstellen.
 
-Um zu erkennen, ob ein Container diese Technik unterstützt, kann ein Steuerelement Aufrufen der [COleControl::IsOptimizedDraw](../mfc/reference/colecontrol-class.md#isoptimizeddraw) Member-Funktion. Wenn diese Funktion gibt **"true"** , das Steuerelement kann den normalen Schritt der Wiederherstellung der zuvor ausgewählten Objekte überspringen.
+Um zu ermitteln, ob ein Container dieses Verfahren unterstützt, kann ein Steuerelement die [COleControl:: IsOptimizedDraw](reference/colecontrol-class.md#isoptimizeddraw) -Member-Funktion aufrufen. Wenn diese Funktion " **true**" zurückgibt, kann das Steuerelement den normalen Schritt der Wiederherstellung der zuvor ausgewählten Objekte überspringen.
 
-Betrachten Sie ein Steuerelement, das Folgendes (nicht optimierte) muss `OnDraw` Funktion:
+Nehmen Sie ein Steuerelement mit der folgenden (nicht optimierten) `OnDraw` Funktion:
 
-[!code-cpp[NVC_MFC_AxOpt#15](../mfc/codesnippet/cpp/optimizing-control-drawing_1.cpp)]
+[!code-cpp[NVC_MFC_AxOpt#15](codesnippet/cpp/optimizing-control-drawing_1.cpp)]
 
-Stift und Pinsel in diesem Beispiel werden lokale Variablen, d. h., deren Destruktoren aufgerufen werden, wenn sie den gültigen Bereich verlassen (wenn die `OnDraw` Funktion enden). Die Destruktoren versucht, die die entsprechenden GDI-Objekte zu löschen. Aber sie sollten nicht gelöscht werden, wenn Sie planen, lassen Sie in den Gerätekontext Seitenbildlaufposition nach aktivierten `OnDraw`.
+Der Stift und der Pinsel in diesem Beispiel sind lokale Variablen, d. h., ihre Dekonstruktoren werden aufgerufen, wenn Sie den Gültigkeitsbereich verlassen (wenn die `OnDraw` Funktion beendet wird). Die dektoren versuchen, die entsprechenden GDI-Objekte zu löschen. Sie sollten jedoch nicht gelöscht werden, wenn Sie planen, Sie bei der Rückgabe von in den Gerätekontext auszuwählen `OnDraw` .
 
-Um zu verhindern, dass die [CPen](../mfc/reference/cpen-class.md) und [CBrush](../mfc/reference/cbrush-class.md) Objekte zerstört wird, wenn `OnDraw` abgeschlossen ist, in der Membervariablen anstelle von lokalen Variablen speichern. Fügen Sie in der Klassendeklaration des Steuerelements Deklarationen für zwei neue Membervariablen hinzu:
+Um zu verhindern, dass [CPen](reference/cpen-class.md) -und [CBrush](reference/cbrush-class.md) -Objekte zerstört werden `OnDraw` , wenn abgeschlossen ist, speichern Sie Sie in Element Variablen anstelle von lokalen Variablen. Fügen Sie in der Klassen Deklaration des Steuer Elements Deklarationen für zwei neue Element Variablen hinzu:
 
-[!code-cpp[NVC_MFC_AxOpt#16](../mfc/codesnippet/cpp/optimizing-control-drawing_2.h)]
-[!code-cpp[NVC_MFC_AxOpt#17](../mfc/codesnippet/cpp/optimizing-control-drawing_3.h)]
+[!code-cpp[NVC_MFC_AxOpt#16](codesnippet/cpp/optimizing-control-drawing_2.h)]
+[!code-cpp[NVC_MFC_AxOpt#17](codesnippet/cpp/optimizing-control-drawing_3.h)]
 
-Anschließend wird die `OnDraw` Funktion kann wie folgt umgeschrieben werden:
+Anschließend kann die `OnDraw` Funktion wie folgt umgeschrieben werden:
 
-[!code-cpp[NVC_MFC_AxOpt#18](../mfc/codesnippet/cpp/optimizing-control-drawing_4.cpp)]
+[!code-cpp[NVC_MFC_AxOpt#18](codesnippet/cpp/optimizing-control-drawing_4.cpp)]
 
-Dadurch wird verhindert, dass der Stift und Pinsel jedes Mal `OnDraw` aufgerufen wird. Die Verbesserung der Geschwindigkeit wird auf Kosten der zusätzliche Daten zu verwalten.
+Bei dieser Vorgehensweise wird die Erstellung des Stifts und Pinsels vermieden, wenn `OnDraw` aufgerufen wird. Die Geschwindigkeitsverbesserung umfasst die Kosten für die Wartung zusätzlicher Instanzdaten.
 
-Wenn die ForeColor oder BackColor-Eigenschaft geändert wird, muss der Stift oder Pinsel neu erstellt werden. Überschreiben Sie zu diesem Zweck die [Memberfunktionen OnForeColorChanged](../mfc/reference/colecontrol-class.md#onforecolorchanged) und [OnBackColorChanged](../mfc/reference/colecontrol-class.md#onbackcolorchanged) Memberfunktionen:
+Wenn sich die ForeColor-Eigenschaft oder die BackColor-Eigenschaft ändert, muss der Stift oder Pinsel erneut erstellt werden. Überschreiben Sie zu diesem Zweck die [OnForeColorChanged](reference/colecontrol-class.md#onforecolorchanged) -und [OnBackColorChanged](reference/colecontrol-class.md#onbackcolorchanged) -Member-Funktionen:
 
-[!code-cpp[NVC_MFC_AxOpt#19](../mfc/codesnippet/cpp/optimizing-control-drawing_5.cpp)]
+[!code-cpp[NVC_MFC_AxOpt#19](codesnippet/cpp/optimizing-control-drawing_5.cpp)]
 
-Abschließend, beseitigen unnötigen `SelectObject` Aufrufe ändern `OnDraw` wie folgt:
+Um zum Schluss unnötige Aufrufe zu vermeiden `SelectObject` , ändern Sie `OnDraw` wie folgt:
 
-[!code-cpp[NVC_MFC_AxOpt#20](../mfc/codesnippet/cpp/optimizing-control-drawing_6.cpp)]
+[!code-cpp[NVC_MFC_AxOpt#20](codesnippet/cpp/optimizing-control-drawing_6.cpp)]
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-ActiveX-Steuerelemente: Optimierung](../mfc/mfc-activex-controls-optimization.md)<br/>
-[COleControl-Klasse](../mfc/reference/colecontrol-class.md)<br/>
-[MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md)<br/>
-[MFC-ActiveX-Steuerelement-Assistent](../mfc/reference/mfc-activex-control-wizard.md)<br/>
-[MFC-ActiveX-Steuerelemente: Darstellen eines ActiveX-Steuerelements](../mfc/mfc-activex-controls-painting-an-activex-control.md)
+[MFC-ActiveX-Steuerelemente: Optimierung](mfc-activex-controls-optimization.md)<br/>
+[COleControl-Klasse](reference/colecontrol-class.md)<br/>
+[MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
+[MFC-ActiveX-Steuerelement-Assistent](reference/mfc-activex-control-wizard.md)<br/>
+[MFC-ActiveX-Steuerelemente: Darstellen eines ActiveX-Steuerelements](mfc-activex-controls-painting-an-activex-control.md)

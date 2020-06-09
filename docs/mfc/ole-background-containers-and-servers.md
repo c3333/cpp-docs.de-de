@@ -14,30 +14,30 @@ helpviewer_keywords:
 - containers [MFC], OLE container applications
 - server applications [MFC]
 ms.assetid: dafbb31d-096c-4654-b774-12900d832919
-ms.openlocfilehash: c154562e58cf8f37d77df61556fe25b19ca54c70
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 7c3130ab9d8dff6551ef0ecbec43e5422dbdc4c4
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64346125"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617914"
 ---
 # <a name="ole-background-containers-and-servers"></a>OLE-Hintergrund: Container und Server
 
-Eine Container-Anwendung ist eine Anwendung, die eingebettete oder verknüpfte Elemente in ihre eigenen Dokumente integrieren kann. Die Dokumente, die von einer Anwendung mit Containern verwalteten muss speichern und Anzeigen von Komponenten des OLE-Dokumente als auch die Daten, die von der Anwendung selbst erstellt. Eine Container-Anwendung muss auch Benutzern neue Elemente einfügen oder bearbeiten vorhandene Elemente von Server-Anwendungen bei Bedarf zu aktivieren. Die Anforderungen der Benutzeroberfläche einer Container-Anwendung finden Sie im Artikel [Container: Probleme mit der Benutzeroberfläche](../mfc/containers-user-interface-issues.md).
+Eine Containeranwendung ist eine Anwendung, die eingebettete oder verknüpfte Elemente in Ihre eigenen Dokumente integrieren kann. Die von einer Containeranwendung verwalteten Dokumente müssen OLE-Dokument Komponenten sowie die von der Anwendung selbst erstellten Daten speichern und anzeigen können. Eine Containeranwendung muss außerdem Benutzern das Einfügen neuer Elemente oder das Bearbeiten vorhandener Elemente ermöglichen, indem Server Anwendungen bei Bedarf aktiviert werden. Die Benutzeroberflächen Anforderungen einer Containeranwendung sind im Artikel [Container: Probleme mit der Benutzeroberfläche](containers-user-interface-issues.md)aufgeführt.
 
-Ein Server-Anwendung oder Komponente-Anwendung ist eine Anwendung, die Komponenten des OLE-Dokumente für die Verwendung von containeranwendungen erstellen können. In der Regel Unterstützung von serveranwendungen Drag & Drop oder kopieren ihre Daten in die Zwischenablage, sodass eine Container-Anwendung die Daten als ein eingebettetes oder verknüpftes Element einfügen kann. Eine Anwendung kann es sich um einen Container und ein Server sein.
+Eine Serveranwendung oder Komponenten Anwendung ist eine Anwendung, mit der OLE-Dokument Komponenten zur Verwendung durch Container Anwendungen erstellt werden können. Server Anwendungen unterstützen in der Regel Drag & Drop oder das Kopieren Ihrer Daten in die Zwischenablage, damit eine Containeranwendung die Daten als eingebettetes oder verknüpftes Element einfügen kann. Bei einer Anwendung kann es sich um einen Container und einen Server handeln.
 
-Die meisten Server sind eigenständige Anwendungen oder vollständige Server. Sie können entweder als eigenständige Anwendungen ausgeführt werden oder können mit einer containeranwendung gestartet werden. Ein Miniserver ist eine besondere Art von Serveranwendung, die nur von einem Container gestartet werden kann. Es kann nicht als eigenständige Anwendung ausgeführt werden. Microsoft Draw und Microsoft Graph-Server sind Beispiele für Miniserver.
+Die meisten Server sind eigenständige Anwendungen oder vollständige Server. Sie können entweder als eigenständige Anwendungen ausgeführt werden oder können von einer Containeranwendung gestartet werden. Ein Miniserver ist eine besondere Art von Serveranwendung, die nur von einem Container gestartet werden kann. Sie kann nicht als eigenständige Anwendung ausgeführt werden. Microsoft Draw-und Microsoft Graph-Server sind Beispiele für Miniservers.
 
-Container und Server kommunizieren nicht direkt. Stattdessen kommunizieren sie über die OLE-System Dynamic Link Libraries (DLL). Diese DLLs bieten Funktionen, die Container und Server aufrufen und den Container und Server bieten Rückruffunktionen, die die DLLs aufrufen.
+Container und Server kommunizieren nicht direkt. Stattdessen kommunizieren Sie über die OLE-System-DLL (Dynamic-Link Libraries). Diese DLLs stellen Funktionen bereit, die von Containern und Servern aufgerufen werden, und die Container und Server bieten Rückruf Funktionen, die von den DLLs aufgerufen werden.
 
-Verwenden diese Art der Kommunikation, muss ein Container nicht wissen, die Implementierungsdetails der Server-Anwendung. Sie können einen Container zum Akzeptieren von Elementen, die von einem beliebigen Server erstellt werden, ohne die Typen von Servern zu definieren, mit denen sie arbeiten kann. Daher kann der Benutzer einer containeranwendung zukünftige Anwendungen und Datenformate nutzen. Wenn diese neuen Anwendungen OLE-Komponenten sind, wird ein Verbunddokument Elemente erstellt, die von diesen Anwendungen integrieren können.
+Mit dieser Kommunikationsmethode muss ein Container die Implementierungsdetails der Serveranwendung nicht kennen. Dadurch kann ein Container von einem beliebigen Server erstellte Elemente akzeptieren, ohne die Server Typen definieren zu müssen, mit denen er arbeiten kann. Folglich kann der Benutzer einer Containeranwendung zukünftige Anwendungen und Datenformate nutzen. Wenn es sich bei diesen neuen Anwendungen um OLE-Komponenten handelt, kann ein Verbund Dokument von diesen Anwendungen erstellte Elemente integrieren.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE-Hintergrund](../mfc/ole-background.md)<br/>
-[OLE-Hintergrund: MFC-Implementierung](../mfc/ole-background-mfc-implementation.md)<br/>
-[Container](../mfc/containers.md)<br/>
-[Server](../mfc/servers.md)<br/>
-[Container: Clientelemente](../mfc/containers-client-items.md)<br/>
-[Server: Serverelemente](../mfc/servers-server-items.md)
+[OLE-Hintergrund](ole-background.md)<br/>
+[OLE-Hintergrund: MFC-Implementierung](ole-background-mfc-implementation.md)<br/>
+[Container](containers.md)<br/>
+[Server](servers.md)<br/>
+[Container: Clientelemente](containers-client-items.md)<br/>
+[Server: Serverelemente](servers-server-items.md)

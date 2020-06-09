@@ -8,27 +8,27 @@ helpviewer_keywords:
 - derived classes [MFC], functions often overridden
 - document classes [MFC], functions often overridden
 ms.assetid: e6a198e0-9799-43c0-83c5-04174d8b532c
-ms.openlocfilehash: 5998d5707eb741be0e8ac270f6ac5ce77a9ff8d8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 399230446977636cc8769efe32b8f86fad466b83
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62153267"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616117"
 ---
 # <a name="deriving-a-document-class-from-cdocument"></a>Ableiten einer Dokumentklasse von CDocument
 
-Dokumente enthalten, und die Daten Ihrer Anwendung zu verwalten. Um MFS-Anwendungsassistenten bereitgestellter Document-Klasse verwenden zu können, müssen Sie die folgenden Schritte ausführen:
+Dokumente enthalten und verwalten die Daten Ihrer Anwendung. Gehen Sie folgendermaßen vor, um die vom MFC-Anwendungs-Assistenten bereitgestellte Dokument Klasse zu verwenden:
 
-- Leiten Sie eine Klasse von `CDocument` für jeden Typ des Dokuments.
+- Leiten Sie eine Klasse von `CDocument` für jeden Dokumenttyp ab.
 
-- Hinzufügen von Membervariablen zum Speichern von Daten des Dokuments.
+- Fügen Sie Element Variablen zum Speichern der einzelnen Dokument Daten hinzu.
 
-- Außer Kraft setzen `CDocument`des `Serialize` Member-Funktion in der Dokumentklasse. `Serialize` schreibt, und die Daten des Dokuments zum und vom Datenträger liest.
+- Über `CDocument` schreiben `Serialize` Sie die Member-Funktion in der Document-Klasse. `Serialize`schreibt und liest die Daten des Dokuments in und von der Festplatte.
 
-## <a name="other-document-functions-often-overridden"></a>Oft überschrieben Dokumentfunktionen für andere
+## <a name="other-document-functions-often-overridden"></a>Andere Dokument Funktionen, die häufig überschrieben werden
 
-Sie können auch andere überschreiben möchten `CDocument` Memberfunktionen. Insbesondere werden oft müssen Sie überschreiben [OnNewDocument](../mfc/reference/cdocument-class.md#onnewdocument) und [OnOpenDocument](../mfc/reference/cdocument-class.md#onopendocument) zum Initialisieren des Dokuments ab-Datenmember und [DeleteContents](../mfc/reference/cdocument-class.md#deletecontents) zerstören dynamisch zugeordnete Daten. Informationen zu überschreibbaren Membern finden Sie in der Klasse [CDocument](../mfc/reference/cdocument-class.md) in die *MFC-Referenz*.
+Möglicherweise möchten Sie auch andere Element `CDocument` Funktionen überschreiben. Insbesondere müssen Sie " [OnNewDocument](reference/cdocument-class.md#onnewdocument) " und " [OnOpenDocument](reference/cdocument-class.md#onopendocument) " häufig überschreiben, um die Datenmember des Dokuments zu initialisieren, und " [deletecontent](reference/cdocument-class.md#deletecontents) ", um dynamisch zugeordnete Daten zu zerstören. Informationen zu über schreibbaren Membern finden Sie unter Class [CDocument](reference/cdocument-class.md) in der *MFC-Referenz*.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von Dokumenten](../mfc/using-documents.md)
+[Verwenden von Dokumenten](using-documents.md)
