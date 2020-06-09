@@ -5,62 +5,62 @@ helpviewer_keywords:
 - database classes [MFC], DAO
 - DAO [MFC], classes
 ms.assetid: b15d0cd6-328b-4288-9c19-d037a795db57
-ms.openlocfilehash: 7ae85cbeb7790cadb8c26dfbdb7a5163dbcd47c0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 51abd29ef4de5d70f4a5b2b6b14b53510e7876a1
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373518"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84615931"
 ---
 # <a name="dao-classes"></a>DAO-Klassen
 
-DAO wird mit Access-Datenbanken verwendet und wird über Office 2013 unterstützt. DAO 3.6 ist die endgültige Version und gilt als veraltet.
+DAO wird für Access-Datenbanken verwendet und wird von Office 2013 unterstützt. DAO 3,6 ist die endgültige Version, die als veraltet eingestuft wird.
 
-Diese Klassen arbeiten mit den anderen Anwendungsframeworkklassen, um einfachen Zugriff auf DAO-Datenbanken (Data Access Object) zu gewähren, die dasselbe Datenbankmodul wie Microsoft Visual Basic und Microsoft Access verwenden. Die DAO-Klassen können auch auf eine Vielzahl von Datenbanken zugreifen, für die ODBC-Treiber (Open Database Connectivity) verfügbar sind.
+Diese Klassen funktionieren mit den anderen Application Framework-Klassen, um einfachen Zugriff auf Datenzugriffs Objekt-Datenbanken (Data Access Object, DAO) zu erhalten, die dieselbe Datenbank-Engine wie Microsoft Visual Basic und Microsoft Access verwenden. Die DAO-Klassen können auch auf eine Vielzahl von Datenbanken zugreifen, für die Open Database Connectivity (ODBC)-Treiber verfügbar sind.
 
-Programme, die DAO-Datenbanken verwenden, `CDaoDatabase` verfügen `CDaoRecordset` über mindestens ein Objekt und ein Objekt.
+Programme, die DAO-Datenbanken verwenden, verfügen über mindestens ein `CDaoDatabase` -Objekt und ein- `CDaoRecordset` Objekt.
 
 > [!NOTE]
-> Die Visual C++-Umgebung und die Assistenten unterstützen DAO nicht mehr (obwohl die DAO-Klassen enthalten sind und Sie sie weiterhin verwenden können). Microsoft empfiehlt, ODBC für neue MFC-Projekte zu verwenden. Sie sollten DAO nur bei der Verwaltung vorhandener Anwendungen verwenden.
+> Die Visual C++ Umgebung und die Assistenten unterstützen DAO nicht mehr (obwohl die DAO-Klassen eingeschlossen sind und Sie Sie weiterhin verwenden können). Microsoft empfiehlt die Verwendung von ODBC für neue MFC-Projekte. Sie sollten DAO nur für die Wartung vorhandener Anwendungen verwenden.
 
-[CDaoWorkspace](../mfc/reference/cdaoworkspace-class.md)<br/>
-Verwaltet eine benannte, kennwortgeschützte Datenbanksitzung von der Anmeldung bis zur Abmeldung. Die meisten Programme verwenden den Standardarbeitsbereich.
+[CDaoWorkspace](reference/cdaoworkspace-class.md)<br/>
+Verwaltet eine benannte, Kenn Wort geschützte Daten banksitzung von der Anmeldung bis zum Abmelden. Die meisten Programme verwenden den Standard Arbeitsbereich.
 
-[CDaoDatabase](../mfc/reference/cdaodatabase-class.md)<br/>
-Eine Verbindung zu einer Datenbank, über die Sie die Daten bedienen können.
+[CDaoDatabase](reference/cdaodatabase-class.md)<br/>
+Eine Verbindung mit einer Datenbank, über die Sie mit den Daten arbeiten können.
 
-[CDaoRecordset](../mfc/reference/cdaorecordset-class.md)<br/>
+[CDaoRecordset](reference/cdaorecordset-class.md)<br/>
 Stellt eine Gruppe von Datensätzen dar, die aus einer Datenquelle ausgewählt wurden.
 
-[CDaoRecordView](../mfc/reference/cdaorecordview-class.md)<br/>
+[CDaoRecordView](reference/cdaorecordview-class.md)<br/>
 Eine Sicht, die Datenbankdatensätze in Steuerelementen anzeigt.
 
-[CDaoQueryDef](../mfc/reference/cdaoquerydef-class.md)<br/>
-Stellt eine Abfragedefinition dar, die normalerweise in einer Datenbank gespeichert ist.
+[CDaoQueryDef](reference/cdaoquerydef-class.md)<br/>
+Stellt eine Abfrage Definition dar, die in der Regel in einer Datenbank gespeichert ist.
 
-[CDaoTableDef](../mfc/reference/cdaotabledef-class.md)<br/>
+[CDaoTableDef](reference/cdaotabledef-class.md)<br/>
 Stellt die gespeicherte Definition einer Basistabelle oder einer angefügten Tabelle dar.
 
-[CDaoException](../mfc/reference/cdaoexception-class.md)<br/>
-Stellt eine Ausnahmebedingung dar, die sich aus den DAO-Klassen ergibt.
+[CDaoException](reference/cdaoexception-class.md)<br/>
+Stellt eine Ausnahme Bedingung dar, die sich aus den DAO-Klassen ergibt.
 
-[CDaoFieldExchange](../mfc/reference/cdaofieldexchange-class.md)<br/>
-Unterstützt die Routinen für den DAO-Datensatzfeldaustausch (DAO record field exchange, DFX), die von den DAO-Datenbankklassen verwendet werden. Normalerweise verwenden Sie diese Klasse nicht direkt.
+[CDaoFieldExchange](reference/cdaofieldexchange-class.md)<br/>
+Unterstützt die Routinen für den DAO-Datensatzfeldaustausch (DAO record field exchange, DFX), die von den DAO-Datenbankklassen verwendet werden. Diese Klasse wird normalerweise nicht direkt verwendet.
 
 ## <a name="related-classes"></a>Verwandte Klassen
 
-[CLongBinary](../mfc/reference/clongbinary-class.md)<br/>
-Kapselt ein Handle zum Speicher für ein binäres großes Objekt (BLOB), z. B. eine Bitmap. `CLongBinary`Objekte werden verwendet, um große Datenobjekte zu verwalten, die in Datenbanktabellen gespeichert sind.
+[CLongBinary](reference/clongbinary-class.md)<br/>
+Kapselt ein Handle für den Speicher für einen Binary Large Object (BLOB), z. b. eine Bitmap. `CLongBinary`Objekte werden verwendet, um große Datenobjekte zu verwalten, die in Datenbanktabellen gespeichert werden.
 
-[COleCurrency](../mfc/reference/colecurrency-class.md)<br/>
-Wrapper für den OLE-Automatisierungstyp **CURRENCY**, ein Festkomma-Arithmetiktyp, mit 15 Ziffern vor dem Dezimaltrennzeichen und 4 Ziffern danach.
+[COleCurrency](reference/colecurrency-class.md)<br/>
+Wrapper für die OLE-Automatisierungs **typwährung**, einen arithmetischen Typ mit festem Punkt, mit 15 Ziffern vor dem Dezimaltrennzeichen und vier Ziffern nach.
 
-[Coledatetime](../atl-mfc-shared/reference/coledatetime-class.md)<br/>
-Wrapper für den OLE-Automatisierungstyp **DATE**. Stellt Datums- und Uhrzeitwerte dar.
+[COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md)<br/>
+Wrapper für das **Datum**des OLE-Automatisierungs Typs. Stellt Datums-und Uhrzeitwerte dar.
 
-[COleVariant](../mfc/reference/colevariant-class.md)<br/>
-Wrapper für den OLE-Automatisierungstyp **VARIANT**. Daten in **VARIANT**s können in vielen Formaten gespeichert werden.
+[COleVariant](reference/colevariant-class.md)<br/>
+Wrapper für den OLE-Automatisierungstyp **Variant**. Daten in **Variant**s können in vielen Formaten gespeichert werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Klassenübersicht](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

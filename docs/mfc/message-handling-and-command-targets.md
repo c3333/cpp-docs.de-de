@@ -9,26 +9,26 @@ helpviewer_keywords:
 - IOleCommandTarget interface [MFC]
 - command routing [MFC], command targets
 ms.assetid: e45ce14c-e6b6-4262-8f3b-4e891e0ec2a3
-ms.openlocfilehash: 702cb96da13d6109c17a28e58c08a30af3f77fd4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cbcbce1e476fef0d076f9c25b46b3166c1eb5935
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62383801"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624349"
 ---
 # <a name="message-handling-and-command-targets"></a>Meldungsbehandlung und Befehlsziele
 
-Die Dispatch-Befehlsschnittstelle `IOleCommandTarget` definiert einen einfachen und erweiterbaren Mechanismus zum Abfragen und Befehle ausführen. Dieser Mechanismus ist einfacher als das Automation `IDispatch` da vollständig einen Standardsatz von Befehlen verwendet; Befehle müssen Sie nur selten Argumente und keine Typinformationen beteiligt ist (die typsicherheit wird auch die Befehlsargumente verringert).
+Die Befehls Dispatchschnittstelle `IOleCommandTarget` definiert einen einfachen und erweiterbaren Mechanismus zum Abfragen und Ausführen von Befehlen. Dieser Mechanismus ist einfacher als die Automatisierung `IDispatch` , da er vollständig auf einem Standardsatz von Befehlen basiert, Befehle nur selten Argumente haben und keine Typinformationen beteiligt sind (die Typsicherheit wird auch für Befehlsargumente verringert).
 
-In dem Design der Dispatchschnittstelle, jeden Befehl gehört zu einer "Befehlsgruppe" das selbst mit gekennzeichnet ist eine **GUID**. Jeder kann aus diesem Grund definieren Sie eine neue Gruppe und alle Befehle in dieser Gruppe, ohne dass die Notwendigkeit zur Koordinierung mit Microsoft oder einem anderen Hersteller zu definieren. (Dies ist im Wesentlichen die gleiche Art und Weise der Definition als eine **Dispinterface** plus **DispIDs** in Automation. Es gibt hier überlappen zwar dieser Befehl Weiterleitungsmechanismus nur für das Befehlsrouting und nicht für die Skripterstellung/Programmierbarkeit in großem Umfang als Automation Handles.)
+Im Entwurfs Schnittstellendesign der Befehls Verteilung gehört jeder Befehl zu einer Befehlsgruppe, die selbst durch eine **GUID**identifiziert wird. Daher kann jeder Benutzer eine neue Gruppe definieren und alle Befehle innerhalb dieser Gruppe definieren, ohne sich mit Microsoft oder einem anderen Hersteller koordinieren zu müssen. (Dies ist im Wesentlichen die gleiche Definition wie eine **dispinterface** Plus **DispIds** in Automation. Hier gibt es eine Überschneidung, obwohl dieser Befehls Routing Mechanismus nur für Befehls Routing und nicht für die Skript-/Programmierbarkeits-in großem Umfang als Automatisierungs Handles gilt.)
 
-`IOleCommandTarget` behandelt die folgenden Szenarien:
+`IOleCommandTarget`behandelt die folgenden Szenarien:
 
-- Wenn ein Objekt direkt aktiviert werden, nur des Objekts Symbolleisten sind in der Regel angezeigt, und des Objekts Symbolleisten möglicherweise Schaltflächen für einige der containerbefehle wie ist **Drucken**, **Seitenansicht**,  **Speichern Sie**, **neu**, **Zoom**, und andere. (Direkte Aktivierung Standards wird empfohlen, in der Objekte entfernen deaktiviert diese Schaltflächen über ihre Symbolleisten oder an mindestens werden. Dieser Entwurf ermöglicht diese Befehle aktiviert und noch an den richtigen Handler weitergeleitet werden.) Es gibt derzeit keinen Mechanismus für das Objekt, das diese Befehle aus, um den Container zu verteilen.
+- Wenn ein Objekt direkt aktiviert ist, werden in der Regel nur die Symbolleisten des-Objekts angezeigt, und die Symbolleisten des-Objekts verfügen möglicherweise über Schaltflächen für einige der Container Befehle wie " **Print**", " **Print Preview**", " **Save**", " **New**", " **Zoom**" und andere. (Bei direkten Aktivierungs Standards wird empfohlen, dass Objekte solche Schaltflächen aus ihren Symbolleisten entfernen oder zumindest deaktivieren. Dieser Entwurf ermöglicht es, dass diese Befehle aktiviert und dennoch an den richtigen Handler weitergeleitet werden.) Zurzeit gibt es keinen Mechanismus, mit dem das-Objekt diese Befehle an den Container verteilen kann.
 
-- Wenn ein aktiven Dokuments in einer active Document-Container (z. B. Office Binder) eingebettet ist, der Container müssen solche Senden von Befehlen **Drucken**, **Seiteneinrichtung**, **Eigenschaften**, und anderen für das enthaltene aktive Dokument.
+- Wenn ein aktives Dokument in einen aktiven Dokument Container (z. b. Office-Binder) eingebettet ist, muss der Container möglicherweise Befehle wie **Print**, **Page Setup**, **Properties**und andere an das enthaltene aktive Dokument senden.
 
-Dieses einfache Befehlsrouting über vorhandene Automation-Standards verarbeitet werden konnte und `IDispatch`. Jedoch der Aufwand im Zusammenhang mit `IDispatch` ist mehr als notwendig, damit `IOleCommandTarget` bietet eine einfachere Möglichkeit, die die gleichen enden zu erreichen:
+Dieses einfache Befehls Routing kann durch vorhandene Automatisierungs Standards und behandelt werden `IDispatch` . Der Aufwand, der mit verbunden ist `IDispatch` , ist jedoch mehr als erforderlich. es `IOleCommandTarget` bietet daher eine einfachere Möglichkeit, dieselben enden zu erreichen:
 
 ```
 interface IOleCommandTarget : IUnknown
@@ -47,8 +47,8 @@ interface IOleCommandTarget : IUnknown
     }
 ```
 
-Die `QueryStatus` Methode an dieser Stelle überprüft, ob eine bestimmte Reihe von Befehlen, die der Satz mit identifiziert wird eine **GUID**, wird unterstützt. Dieser Aufruf füllt ein Array von **OLECMD** Werte (Strukturen) mit der Liste der unterstützten Befehle sowie das Zurückgeben von Text, der den Namen der einen Befehl und/oder Statusinformationen Informationen beschreibt. Wenn der Aufrufer einen Befehl aufzurufen möchte, können sie den Befehl übergeben (und die Gruppe **GUID**) zu `Exec` zusammen mit Optionen und Argumente, Rückkehr einen Wert zurückgegeben.
+Die- `QueryStatus` Methode testet hier, ob eine bestimmte Gruppe von Befehlen, die mit einer **GUID**identifizierte Menge, unterstützt wird. Dieser Befehl füllt ein Array von **olecmd** -Werten (Strukturen) mit der unterstützten Liste der Befehle sowie der Rückgabe von Text auf, der den Namen eines Befehls und/oder Statusinformationen beschreibt. Wenn der Aufrufer einen Befehl aufrufen möchte, kann er den Befehl (und die Set- **GUID**) `Exec` zusammen mit Optionen und Argumenten an übergeben und einen Rückgabewert zurückerhalten.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Aktive Dokumente-Container](../mfc/active-document-containers.md)
+[Aktive Dokumente-Container](active-document-containers.md)

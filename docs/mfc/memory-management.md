@@ -8,12 +8,12 @@ helpviewer_keywords:
 - memory [MFC], managing
 - memory allocation [MFC], MFC
 ms.assetid: 934ac81b-d630-4232-88e5-ea74f7187987
-ms.openlocfilehash: 5d81bd0a8bdd24059951cba5c8b69751b3d1db86
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 464a31491f2c3017453bdd5bbdc8b059d348eb3c
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69508273"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626263"
 ---
 # <a name="memory-management"></a>Speicherverwaltung
 
@@ -25,21 +25,21 @@ Informationen zu nicht-MFC-Informationen zur Speicherverwaltung Unterprogramme f
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Frame Zuordnung](../mfc/memory-management-frame-allocation.md)
+- [Frame Zuordnung](memory-management-frame-allocation.md)
 
-- [Heap Zuordnung](../mfc/memory-management-heap-allocation.md)
+- [Heap Zuordnung](memory-management-heap-allocation.md)
 
-- [Belegen von Speicher für ein Array](../mfc/memory-management-examples.md)
+- [Belegen von Speicher für ein Array](memory-management-examples.md)
 
-- [Aufheben der Zuordnung von Arbeitsspeicher für ein Array aus dem Heap](../mfc/memory-management-examples.md)
+- [Aufheben der Zuordnung von Arbeitsspeicher für ein Array aus dem Heap](memory-management-examples.md)
 
-- [Belegen von Speicher für eine Datenstruktur](../mfc/memory-management-examples.md)
+- [Belegen von Speicher für eine Datenstruktur](memory-management-examples.md)
 
-- [Belegen von Speicher für ein Objekt](../mfc/memory-management-examples.md)
+- [Belegen von Speicher für ein Objekt](memory-management-examples.md)
 
-- [Größe von Speicherblöcken mit Größenänderung](../mfc/memory-management-resizable-memory-blocks.md)
+- [Größe von Speicherblöcken mit Größenänderung](memory-management-resizable-memory-blocks.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Konzepte](../mfc/mfc-concepts.md)<br/>
-[Allgemeine MFC-Themen](../mfc/general-mfc-topics.md)
+[Konzepte](mfc-concepts.md)<br/>
+[Allgemeine MFC-Themen](general-mfc-topics.md)

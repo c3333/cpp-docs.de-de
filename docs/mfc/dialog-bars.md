@@ -8,29 +8,29 @@ helpviewer_keywords:
 - dialog bars
 - dialog bars [MFC], about dialog bars
 ms.assetid: 485c8055-6bb0-4051-8417-dd2971499321
-ms.openlocfilehash: e4e843327daba6f0aa468cb07394165bc70fa7f0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 052e0b8a085c052f73d3c6540521f57fdfbb9c51
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389624"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624896"
 ---
 # <a name="dialog-bars"></a>Dialogleisten
 
-Eine Dialogleiste ist eine Symbolleiste, eine Art von [Steuerleiste](../mfc/control-bars.md) , jede Art von Steuerelement enthalten kann. Da sie die Merkmale eines nicht modalen Dialogfelds, hat eine [CDialogBar](../mfc/reference/cdialogbar-class.md) Objekt eine leistungsfähigere Symbolleiste bereitgestellt.
+Eine Dialog Leiste ist eine Symbolleiste, eine [Steuerleiste](control-bars.md) , die eine beliebige Art von Steuerelement enthalten kann. Da es die Eigenschaften eines nicht modalem Dialog Felds hat, bietet ein [CDialogBar](reference/cdialogbar-class.md) -Objekt eine leistungsfähigere Symbolleiste.
 
-Es gibt einige wichtige Unterschiede zwischen einer Symbolleiste und einen `CDialogBar` Objekt. Ein `CDialogBar` -Objekt wird erstellt, aus einer Dialogfeldvorlagen-Ressource, die Sie mit den Visual C++-Dialog-Editor erstellen und einem beliebigen Windows-Steuerelement enthalten kann. Der Benutzer kann vom Steuerelement steuern Registerkarte. Und Sie können angeben, dass ein Ausrichtungsart der Anpassung an die Dialogleiste mit einem beliebigen Teil der übergeordneten Rahmenfensters oder sogar um ihn beizubehalten, wenn das übergeordnete Element geändert wird. Die folgende Abbildung zeigt eine Dialogleiste mit einer Vielzahl von Steuerelementen.
+Es gibt mehrere wichtige Unterschiede zwischen einer Symbolleiste und einem- `CDialogBar` Objekt. Ein `CDialogBar` -Objekt wird aus einer Dialogfeld Vorlagen-Ressource erstellt, die Sie mit dem Dialogfeld-Editor für Visual C++ erstellen können, das beliebige Arten von Windows-Steuerelementen enthalten kann. Der Benutzer kann von Steuerelement zu Steuerelement Tab. Und Sie können einen Ausrichtungs Stil angeben, um die Dialog Leiste mit einem beliebigen Teil des übergeordneten Rahmen Fensters auszurichten, oder sogar, wenn die Größe des übergeordneten Elements geändert wird. Die folgende Abbildung zeigt eine Dialog Leiste mit einer Reihe von Steuerelementen.
 
 ![VC-Dialogleiste](../mfc/media/vc378t1.gif "VC-Dialogleiste") <br/>
-Eine Dialogleiste
+Eine Dialog Leiste
 
-In anderer Hinsicht, arbeiten mit einem `CDialogBar` Objekt ist, wie das Arbeiten mit einem nicht modalen Dialogfeld. Verwenden des Dialog-Editors zum Entwerfen und Erstellen der Dialogfeldressource an.
+Anders als bei einem-Objekt ist die Arbeit mit einem nicht modalem `CDialogBar` Dialogfeld identisch. Verwenden Sie den Dialog-Editor zum Entwerfen und Erstellen der Dialogfeld Ressource.
 
-Die Vorteile von Dialogleisten ist, dass sie Steuerelemente, die keine Schaltflächen enthalten können.
+Eine der Vorzüge von Dialog leisten ist, dass Sie andere Steuerelemente enthalten können als Schaltflächen.
 
-Während der normalen aus Ihren eigenen Klassen abgeleitet ist `CDialog`, werden nicht in der Regel eine eigenen Klasse für eine Dialogleiste abgeleitet. Dialogleisten sind Erweiterungen für ein Hauptfenster und alle Dialogleiste Steuerelemente-benachrichtigungsmeldungen, z. B. **BN_CLICKED** oder **EN_CHANGE-Ereignis**, an das übergeordnete Element des Dialogfelds Balken-, das Hauptfenster gesendet werden.
+Obwohl es normal ist, eigene Dialog Klassen von abzuleiten `CDialog` , leiten Sie in der Regel nicht Ihre eigene Klasse für eine Dialog Leiste ab. Dialog leisten sind Erweiterungen für ein Hauptfenster, und alle Dialog leisten-Benachrichtigungs Meldungen, wie **BN_CLICKED** oder **EN_CHANGE**, werden an das übergeordnete Element der Dialog Leiste, das Hauptfenster, gesendet.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Elemente der Benutzeroberfläche](../mfc/user-interface-elements-mfc.md)<br/>
+[Elemente der Benutzeroberfläche](user-interface-elements-mfc.md)<br/>
 [Beispiel](../overview/visual-cpp-samples.md)

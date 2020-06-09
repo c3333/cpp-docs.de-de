@@ -7,14 +7,14 @@ helpviewer_keywords:
 - add_pointer class
 - add_pointer
 ms.assetid: d8095cb0-6578-4143-b78f-87f82485298c
-ms.openlocfilehash: 759867a542aa128755ba31e090984eb5b3fe6963
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 8adeffd0352d04fe844b286ea7456c66e907a0a7
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456557"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84619262"
 ---
-# <a name="addpointer-class"></a>add_pointer-Klasse
+# <a name="add_pointer-class"></a>add_pointer-Klasse
 
 Wandelt einen angegebenen Typ in einen Zeiger auf den Typ um.
 
@@ -30,12 +30,12 @@ using add_pointer_t = typename add_pointer<T>::type;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der zu ändernde Typ.
 
 ## <a name="remarks"></a>Hinweise
 
-Der Member **typedef** `type` benennt den gleichen Typ wie `remove_reference<T>::type*`. Der Alias `add_pointer_t` ist eine Verknüpfung für den Zugriff auf die **typedef** `type`-Member.
+Der Member **typedef** `type` benennt den gleichen Typ wie `remove_reference<T>::type*` . Der Alias `add_pointer_t` ist eine Verknüpfung für den Zugriff auf die **typedef** -Member `type` .
 
 Da es unzulässig ist, einen Zeiger aus einem Verweis zu erstellen, wird der Verweis durch `add_pointer` ggf. vom angegebenen Typ entfernt, bevor der Zeiger auf den Typ erstellt wird. Daher können Sie einen Typ mit `add_pointer` verwenden, ohne sich überlegen zu müssen, ob der Typ ein Verweis ist.
 
@@ -63,13 +63,13 @@ int main()
 add_pointer_t<int> == int *
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[remove_pointer-Klasse](../standard-library/remove-pointer-class.md)
+[<type_traits>](type-traits.md)\
+[remove_pointer-Klasse](remove-pointer-class.md)

@@ -5,21 +5,21 @@ helpviewer_keywords:
 - controls [MFC], adding to property sheets
 - property sheets, adding controls
 ms.assetid: 24ad4c0b-c1db-4850-b9f0-34aae8d74571
-ms.openlocfilehash: 07b384b2db36ae59d4de8b99d9c07396ce793979
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 527c0a5ef6e9dc4fcc9d7668c12e15ec956b0e70
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394792"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616061"
 ---
 # <a name="adding-controls-to-a-property-sheet"></a>Hinzufügen von Steuerelementen zu einem Eigenschaftenblatt
 
-Standardmäßig weist ein Eigenschaftenblatt Fensterbereich für die Eigenschaftenseiten, den Index der Aktivierreihenfolge und die Schaltflächen OK, "Abbrechen", und übernehmen. (Ein nicht modalen Eigenschaftenblatts verfügt nicht über OK, Abbrechen, und wenden Sie die Schaltflächen.) Sie können andere Steuerelemente auf dem Eigenschaftenblatt hinzufügen. Beispielsweise können Sie ein Fenster "Vorschau" hinzufügen, rechts vom Seitenbereich Eigenschaft, um dem Benutzer angezeigt, was die aktuellen Einstellungen aussehen würde, wenn auf ein externes Objekt angewendet.
+Standardmäßig weist ein Eigenschaften Blatt den Fensterbereich für die Eigenschaften Seiten, den Registerkarten Index und die Schaltflächen "OK", "Abbrechen" und "anwenden" zu. (Ein nicht modalem Eigenschaften Blatt verfügt nicht über die Schaltflächen OK, Abbrechen und anwenden.) Sie können dem Eigenschaften Blatt weitere Steuerelemente hinzufügen. Beispielsweise können Sie rechts neben dem Eigenschaften Seitenbereich ein Vorschau Fenster hinzufügen, um dem Benutzer anzuzeigen, wie die aktuellen Einstellungen aussehen würden, wenn Sie auf ein externes Objekt angewendet werden.
 
-Sie können Steuerelemente hinzufügen, auf dem Eigenschaftenblatt-Dialogfeld in der `OnCreate` Handler. In der Regel das Hinzufügen weiterer Steuerelemente ist erforderlich, erweitern die Größe der dem Eigenschaftenblatt-Dialogfeld. Nach dem Aufruf der Basisklasse **CPropertySheet:: OnCreate**, rufen Sie [GetWindowRect](../mfc/reference/cwnd-class.md#getwindowrect) rufen Sie die Breite und Höhe des Fensters für das aktuell zugeordneten Eigenschaft Erweitern des Rechtecks Dimensionen, und rufen [MoveWindow](../mfc/reference/cwnd-class.md#movewindow) so ändern Sie die Größe des Fensters für die Eigenschaft.
+Sie können dem Eigenschaften Blatt-Dialogfeld Steuerelemente im-Handler hinzufügen `OnCreate` . Wenn Sie zusätzliche Steuerelemente berücksichtigen, müssen Sie die Größe des Eigenschaften Blatt Dialogfelds erweitern. Nachdem Sie die Basisklasse **CPropertySheet:: OnCreate**aufgerufen haben, rufen Sie [GetWindowRect](reference/cwnd-class.md#getwindowrect) auf, um die Breite und Höhe des aktuell zugeordneten Eigenschaften Blatt Fensters zu erhalten, erweitern Sie die Abmessungen des Rechtecks, und rufen Sie " [muvewindow](reference/cwnd-class.md#movewindow) " auf, um die Größe des Eigenschaften Blatt Fensters zu ändern.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Eigenschaftenblätter](../mfc/property-sheets-mfc.md)<br/>
-[CPropertyPage-Klasse](../mfc/reference/cpropertypage-class.md)<br/>
-[CPropertySheet-Klasse](../mfc/reference/cpropertysheet-class.md)
+[Eigenschaften Blätter](property-sheets-mfc.md)<br/>
+[CPropertyPage-Klasse](reference/cpropertypage-class.md)<br/>
+[CPropertySheet-Klasse](reference/cpropertysheet-class.md)

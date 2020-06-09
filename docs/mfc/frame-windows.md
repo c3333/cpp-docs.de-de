@@ -15,74 +15,74 @@ helpviewer_keywords:
 - MDI [MFC], frame windows
 - splitter windows [MFC], and frame windows
 ms.assetid: 40677339-8135-4f5e-aba6-3fced3078077
-ms.openlocfilehash: 939230753f25db38e6ba2f26340f40ddf74d23bf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 39c0b4b866fa123d8bcae639342c925570d96e1b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62219826"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625820"
 ---
 # <a name="frame-windows"></a>Rahmenfenster
 
-Wenn eine Anwendung unter Windows ausgeführt wird, interagiert der Benutzer, mit Dokumenten, die im Frame-Fensters angezeigt. Einem Dokumentrahmenfenster hat zwei Hauptkomponenten: den Frame und den Inhalt, der ihn umgibt. Einem Dokumentrahmenfenster möglich einen [Einzeldokumentoberfläche](../mfc/sdi-and-mdi.md) Rahmenfenster (SDI) oder ein [mehrerer dokumentoberflächen](../mfc/sdi-and-mdi.md) (MDI) untergeordneten Fensters. Windows verwaltet die meisten der Interaktion des Benutzers mit dem Rahmenfenster: verschieben und Ändern der Größe des Fensters, schließen, und minimieren und Maximieren es. Sie verwalten den Inhalt innerhalb des Rahmens.
+Wenn eine Anwendung unter Windows ausgeführt wird, interagiert der Benutzer mit Dokumenten, die in Frame Fenstern angezeigt werden. Ein Dokument Rahmen Fenster besteht aus zwei Hauptkomponenten: dem Frame und dem Inhalt, der von ihm umrahmt wird. Ein Dokument Rahmen Fenster kann ein [einzelnes Dokument Schnittstellen](sdi-and-mdi.md) Fenster (SDI) oder ein untergeordnetes MDI-Fenster ( [Multiple Document Interface](sdi-and-mdi.md) ) sein. Windows verwaltet den größten Teil der Interaktion des Benutzers mit dem Rahmen Fenster: Verschieben und Ändern der Größe des Fensters, Schließen des Fensters und minimieren und maximieren. Sie verwalten die Inhalte im Frame.
 
-## <a name="frame-windows-and-views"></a>Frame-Windows und Ansichten
+## <a name="frame-windows-and-views"></a>Rahmen Fenster und-Ansichten
 
-Das MFC-Framework verwendet Rahmenfenster für Ansichten. Die zwei Komponenten – Rahmen und Inhalt – dargestellt und von zwei verschiedenen Klassen in MFC verwaltet werden. Eine Rahmenfenster-Klasse verwaltet den Rahmen und eine View-Klasse verwaltet den Inhalt. Das Fenster ist ein untergeordnetes Element des Rahmenfensters. Zeichnen und andere Benutzerinteraktion mit dem Dokument erfolgen in der Ansicht Clientbereich, nicht das Rahmenfenster des Clientbereichs. Das Rahmenfenster bietet einen sichtbaren Rahmen um eine Ansicht, die mit einer Titelleiste und standard-Window-Steuerelemente, z. B. ein Steuerelementmenü, Schaltflächen zum Minimieren und Maximieren Sie das Fenster und Steuerelemente für das Ändern der Größe des Fensters. Die "Inhalt" bestehen des Clientbereichs des Fensters, das vollständig von einem untergeordneten Fenster belegt wird, die Ansicht. Die folgende Abbildung zeigt die Beziehung zwischen einem Rahmenfenster und einer Ansicht.
+Das MFC-Framework verwendet Rahmen Fenster, um Ansichten zu enthalten. Die beiden Komponenten – Frame und Content – werden von zwei verschiedenen Klassen in MFC dargestellt und verwaltet. Eine Frame Fenster Klasse verwaltet den Frame, und eine Ansichts Klasse verwaltet den Inhalt. Das Ansichts Fenster ist ein untergeordnetes Element des Rahmen Fensters. Das Zeichnen und andere Benutzerinteraktionen mit dem Dokument erfolgen im Client Bereich der Ansicht, nicht im Client Bereich des Rahmen Fensters. Das Rahmen Fenster bietet einen sichtbaren Rahmen um eine Ansicht, den Abschluss mit einer Titelleiste und Standardfenster Steuerelementen, wie z. b. ein Steuerelement Menü, Schaltflächen zum minimieren und maximieren des Fensters und Steuerelemente zum Ändern der Größe des Fensters. Der "Inhalt" besteht aus dem Client Bereich des Fensters, der vollständig von einem untergeordneten Fenster belegt wird – der Ansicht. Die folgende Abbildung zeigt die Beziehung zwischen einem Rahmen Fenster und einer Ansicht.
 
-![Frame-Fenster "Ansicht"](../mfc/media/vc37fx1.gif "Frame-Ansicht") <br/>
+![Rahmen Fensteransicht](../mfc/media/vc37fx1.gif "Rahmenfensteransicht") <br/>
 Rahmenfenster und -ansicht
 
-## <a name="frame-windows-and-splitter-windows"></a>Frame-Windows und Windows der Splitter
+## <a name="frame-windows-and-splitter-windows"></a>Rahmen Fenster und Splitter Fenster
 
-Eine andere allgemeine Anordnung ist das Rahmenfenster mehrere Ansichten, die in der Regel mithilfe von Rahmen um ein [Teilungsfenster](../mfc/multiple-document-types-views-and-frame-windows.md). In einem Splitterfenster ist das Rahmenfenster des Clientbereichs durch eines unterteilten Fensters belegt, die wiederum mehrere untergeordnete Fenster, Bereiche, die Ansichten sind aufgerufen.
+Eine weitere gängige Anordnung besteht darin, dass das Rahmen Fenster mehrere Ansichten einrichtet, in der Regel mithilfe eines [Splitter Fensters](multiple-document-types-views-and-frame-windows.md). In einem Splitter Fenster wird der Client Bereich des Frame Fensters von einem Splitter Fenster belegt, das wiederum über mehrere untergeordnete Fenster verfügt, die als Bereiche bezeichnet werden. Dies sind Ansichten.
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-**Rahmenfenster allgemeine Themen**
+**Allgemeine Rahmen Fenster Themen**
 
-- [Fensterobjekte](../mfc/window-objects.md)
+- [Fenster Objekte](window-objects.md)
 
-- [Klassen für Rahmenfenster](../mfc/frame-window-classes.md)
+- [Rahmen Fenster Klassen](frame-window-classes.md)
 
-- [Die vom Anwendungs-Assistenten erstellten Rahmenfensterklassen](../mfc/frame-window-classes-created-by-the-application-wizard.md)
+- [Die vom Anwendungs-Assistenten erstellten Frame-Window-Klassen](frame-window-classes-created-by-the-application-wizard.md)
 
-- [Frame-Window-Stile](../mfc/frame-window-styles-cpp.md)
+- [Rahmen Fenster Stile](frame-window-styles-cpp.md)
 
-- [Welche von Rahmenfenstern](../mfc/what-frame-windows-do.md)
+- [Funktionsumfang von Rahmen Fenstern](what-frame-windows-do.md)
 
-**Themen zur Verwendung von Frame Windows**
+**Themen zur Verwendung von Rahmen Fenstern**
 
-- [Verwenden von Rahmenfenstern](../mfc/using-frame-windows.md)
+- [Verwenden von Rahmen Fenstern](using-frame-windows.md)
 
-- [Erstellen eines Dokuments Rahmenfenster](../mfc/creating-document-frame-windows.md)
+- [Erstellen von Dokument Rahmen Fenstern](creating-document-frame-windows.md)
 
-- [Zerstören von Rahmenfenstern](../mfc/destroying-frame-windows.md)
+- [Zerstören von Rahmenfenstern](destroying-frame-windows.md)
 
-- [Verwalten von untergeordneten MDI-Fenster](../mfc/managing-mdi-child-windows.md)
+- [Verwalten von untergeordneten MDI-Fenstern](managing-mdi-child-windows.md)
 
-- [Verwalten der aktuellen Ansicht](../mfc/managing-the-current-view.md) in einem Rahmenfenster, das mehrere Ansichten enthält.
+- [Verwalten der aktuellen Ansicht](managing-the-current-view.md) in einem Rahmen Fenster, das mehr als eine Ansicht enthält
 
-- [Verwalten von Menüs, Steuerleisten und Zugriffstasten (andere Objekte, die das Rahmenfenster Speicherplatz freigeben)](../mfc/managing-menus-control-bars-and-accelerators.md)
+- [Verwalten von Menüs, Steuer leisten und Zugriffstasten (andere Objekte, die den Bereich des Rahmen Fensters teilen)](managing-menus-control-bars-and-accelerators.md)
 
-**Themen zur speziellen Funktionalitäten von Rahmenfenstern**
+**Themen zu speziellen Rahmen Fenster Funktionen**
 
-- [Ziehen und Ablegen von Dateien](../mfc/dragging-and-dropping-files-in-a-frame-window.md) im Datei-Explorer oder Datei-Manager in einem Rahmenfenster
+- [Ziehen und Ablegen von Dateien](dragging-and-dropping-files-in-a-frame-window.md) aus dem Datei-Explorer oder Datei-Manager in ein Rahmen Fenster
 
-- [Reagieren auf dynamischen Datenaustausch (DDE)](../mfc/responding-to-dynamic-data-exchange-dde.md)
+- [Reagieren auf den dynamischen Datenaustausch (DDE)](responding-to-dynamic-data-exchange-dde.md)
 
-- [Halbmodaler Zustand: Kontextbezogene (orchestrieren anderer Fensteraktionen) Windows-Hilfe](../mfc/orchestrating-other-window-actions.md)
+- [Semimodale Zustände: kontextbezogene Windows-Hilfe (orchestrieren anderer Fenster Aktionen)](orchestrating-other-window-actions.md)
 
-- [Halbmodaler Zustand: Drucken und die Seitenansicht (orchestrieren anderer Fensteraktionen)](../mfc/orchestrating-other-window-actions.md)
+- [Semimodale Zustände: Druck-und Druckvorschau (orchestrieren anderer Fenster Aktionen)](orchestrating-other-window-actions.md)
 
-**Themen zu anderen Arten von Windows**
+**Themen zu anderen Arten von Fenstern**
 
-- [Verwenden von Ansichten](../mfc/using-views.md)
+- [Verwenden von Ansichten](using-views.md)
 
-- [Dialogfelder](../mfc/dialog-boxes.md)
+- [Dialogfelder](dialog-boxes.md)
 
-- [Steuerelemente](../mfc/controls-mfc.md)
+- [Steuerelemente](controls-mfc.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Windows](../mfc/windows.md)
+[Windows](windows.md)

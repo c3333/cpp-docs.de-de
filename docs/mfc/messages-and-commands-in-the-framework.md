@@ -7,35 +7,35 @@ helpviewer_keywords:
 - events [MFC], event-driven programming
 - message-driven programming [MFC]
 ms.assetid: d799ed8c-6a9f-4f05-be5d-29cb5bc6d185
-ms.openlocfilehash: 4ddfd0a5ff506e17efeb63624b7cb8c6a8b1eda4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: db529e2a22b45de3c6f6a659874bbaa941187217
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62383788"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624288"
 ---
 # <a name="messages-and-commands-in-the-framework"></a>Meldungen und Befehle im Framework
 
-Für Microsoft Windows geschriebene Anwendungen werden "Message driven." Als Reaktion auf Ereignisse wie Mausklicks, Tastatureingaben, Fenster-Bewegungen und So weiter sendet Windows Nachrichten an das richtige Fenster an. Framework-Anwendungen Verarbeiten von Nachrichten von Windows wie jede andere Anwendung für Windows. Das Framework bietet jedoch auch einige Verbesserungen, die Verarbeitung von Nachrichten einfacher, besser verwaltbar und bessere gekapselten vornehmen.
+Anwendungen, die für Microsoft Windows geschrieben wurden, sind "Nachrichten orientiert". Als Reaktion auf Ereignisse wie Mausklicks, Tastatureingaben, Fenster Bewegungen usw. sendet Windows Meldungen an das richtige Fenster. Framework-Anwendungen verarbeiten Windows-Meldungen wie jede andere Anwendung für Windows. Das Framework bietet jedoch auch einige Erweiterungen, die die Verarbeitung von Nachrichten vereinfachen, besser verwaltierbar und besser gekapselt werden.
 
-Den folgenden Themen werden die wichtigsten Begriffe, die in den übrigen Artikel verwendet, um die Meldungen und Befehle besprechen:
+In den folgenden Themen werden die wichtigsten Begriffe erläutert, die in den restlichen Artikeln der Artikel Familie verwendet werden, um Nachrichten und Befehle zu erörtern:
 
-- [Meldungen](../mfc/messages.md)
+- [Meldungen](messages.md)
 
-- [Meldungshandler](../mfc/message-handlers.md)
+- [Meldungs Handler](message-handlers.md)
 
-- [Meldungskategorien](../mfc/message-categories.md)
+- [Meldungskategorien](message-categories.md)
 
-- [Windows-Nachrichten und Steuerelemente-benachrichtigungsmeldungen](../mfc/message-categories.md)
+- [Windows-Meldungen und Steuerelement Benachrichtigungs Meldungen](message-categories.md)
 
-- [Command-Meldungen](../mfc/message-categories.md)
+- [Befehls Meldungen](message-categories.md)
 
-- [Meldungszuordnungen](../mfc/mapping-messages.md)
+- [Meldungs Zuordnungen](mapping-messages.md)
 
-- [Benutzeroberflächenobjekte und Befehls-IDs](../mfc/user-interface-objects-and-command-ids.md)
+- [Benutzeroberflächen Objekte und Befehls-IDs](user-interface-objects-and-command-ids.md)
 
-- [Befehlsziele](../mfc/command-targets.md)
+- [Befehls Ziele](command-targets.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Meldungsbehandlung und Zuordnung](../mfc/message-handling-and-mapping.md)
+[Meldungsbehandlung und Zuordnung](message-handling-and-mapping.md)

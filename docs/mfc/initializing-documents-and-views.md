@@ -8,19 +8,19 @@ helpviewer_keywords:
 - initializing objects [MFC], document objects
 - initializing views [MFC]
 ms.assetid: 33cb8643-8a16-478c-bc26-eccc734e3661
-ms.openlocfilehash: 0cf9faecbb7e0d74c2199a1a829aa68241e1c019
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0e970d6e8a166283f82575b309cf023f48899403
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62297111"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626353"
 ---
 # <a name="initializing-documents-and-views"></a>Initialisieren von Dokumenten und Ansichten
 
-Dokumente werden auf zwei unterschiedliche Arten erstellt werden, damit die Dokumentklasse in beide Richtungen unterstützen muss. Erstens kann der Benutzer ein neues, leeres Dokument mit dem Befehl neue Datei erstellen. Initialisieren Sie das Dokument in der Überschreibung der in diesem Fall die [OnNewDocument](../mfc/reference/cdocument-class.md#onnewdocument) Memberfunktion der Klasse [CDocument](../mfc/reference/cdocument-class.md). Zweitens kann der Benutzer verwenden den Befehl zum Öffnen im Menü Datei auf ein neues Dokument erstellen, deren Inhalt aus einer Datei gelesen werden. Initialisieren Sie das Dokument in der Überschreibung der in diesem Fall die [OnOpenDocument](../mfc/reference/cdocument-class.md#onopendocument) Memberfunktion der Klasse `CDocument`. Wenn beide Initialisierungen identisch sind, können Sie eine allgemeine Memberfunktion aufrufen, aus beiden Außerkraftsetzungen oder `OnOpenDocument` Aufrufen `OnNewDocument` initialisieren ein sauberes Dokument, und schließen Sie dann den öffnen-Vorgang.
+Dokumente werden auf zwei verschiedene Arten erstellt, sodass die Dokument Klasse beide Methoden unterstützen muss. Zuerst kann der Benutzer ein neues, leeres Dokument mit dem Datei neuen Befehl erstellen. Initialisieren Sie in diesem Fall das Dokument in der Überschreibung der [OnNewDocument](reference/cdocument-class.md#onnewdocument) -Member-Funktion der [CDocument](reference/cdocument-class.md)-Klasse. Zweitens kann der Benutzer den Befehl Öffnen im Menü Datei verwenden, um ein neues Dokument zu erstellen, dessen Inhalt aus einer Datei gelesen wird. Initialisieren Sie in diesem Fall das Dokument in der Überschreibung der [OnOpenDocument](reference/cdocument-class.md#onopendocument) -Member-Funktion der-Klasse `CDocument` . Wenn beide Initialisierungen identisch sind, können Sie eine gemeinsame Member-Funktion sowohl von über schreibungen als auch von `OnOpenDocument` aufgerufen werden, `OnNewDocument` um ein sauberes Dokument zu initialisieren und dann den Öffnungsvorgang abzuschließen.
 
-Sichten werden erstellt, nachdem ihre Dokumente erstellt werden. Der beste Zeitpunkt zum Initialisieren Sie eine Ansicht ist nach das Framework erstellen, das Dokument, Rahmenfenster und anzeigen. Sie können die Ansicht initialisieren, durch Überschreiben der [OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate) Memberfunktion [CView](../mfc/reference/cview-class.md). Wenn Sie erneut initialisieren, oder passen Sie alles benötigen jedes Mal, wenn das Dokument ändert, können Sie überschreiben [OnUpdate](../mfc/reference/cview-class.md#onupdate).
+Sichten werden erstellt, nachdem Ihre Dokumente erstellt wurden. Die beste Zeit zum Initialisieren einer Ansicht ist, nachdem das Framework das Erstellen von Dokument, Rahmen Fenster und Ansicht abgeschlossen hat. Sie können Ihre Ansicht initialisieren, indem Sie die [OnInitialUpdate](reference/cview-class.md#oninitialupdate) -Member-Funktion von [CView](reference/cview-class.md)überschreiben. Wenn Sie jedes Mal, wenn das Dokument geändert wird, etwas neu initialisieren oder anpassen müssen, können Sie [OnUpdate](reference/cview-class.md#onupdate)überschreiben.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Initialisieren und Bereinigen von Dokumenten und Ansichten](../mfc/initializing-and-cleaning-up-documents-and-views.md)
+[Initialisieren und Bereinigen von Dokumenten und Ansichten](initializing-and-cleaning-up-documents-and-views.md)

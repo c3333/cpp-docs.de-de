@@ -4,16 +4,16 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - CObject class [MFC], FAQ
 ms.assetid: 809a8b99-a2f8-4e16-8b4b-023c94f4125c
-ms.openlocfilehash: 44a66473de6bbdccb6fe460ce6c2a5b94a2a556f
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 26670a944f04f200ce0969b2b7b71b194f972569
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79445141"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617187"
 ---
 # <a name="cobject-class-frequently-asked-questions"></a>CObject-Klasse: Häufig gestellte Fragen
 
-In diesem Abschnitt werden Fragen zu Klassen `CObject`behandelt.
+In diesem Abschnitt werden Fragen zur-Klasse behandelt `CObject` .
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
@@ -21,6 +21,6 @@ In diesem Abschnitt werden Fragen zu Klassen `CObject`behandelt.
 
 - [Was kostet mich, eine Klasse von CObject abzuleiten?](what-does-it-cost-me-to-derive-a-class-from-cobject-q.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CObject](../mfc/using-cobject.md)
+[Verwenden von CObject](using-cobject.md)

@@ -18,48 +18,48 @@ helpviewer_keywords:
 - containers [MFC], OLE container applications
 - OLE menus and resources [MFC]
 ms.assetid: 52bfa086-7d3d-466f-94c7-c7061f3bdb3a
-ms.openlocfilehash: 4e8f8c7fa8e24349a741b99822f13d5473373e17
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e705f28476df7b594f9648aee8317759211c66c9
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62225466"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626211"
 ---
 # <a name="menus-and-resources-ole"></a>Menüs und Ressourcen (OLE)
 
-Diese Gruppe von Artikeln wird erläutert, die Verwendung von Menüs und Ressourcen in MFC-OLE-dokumentanwendungen.
+In dieser Gruppe von Artikeln wird die Verwendung von Menüs und Ressourcen in MFC-OLE-Dokument Anwendungen erläutert.
 
-OLE visuelle Bearbeitung zusätzliche stellt Anforderungen an die im Menü und andere Ressourcen von OLE-dokumentanwendungen bereitgestellt werden, da es eine Reihe von Modi, in welchem beide Container gibt und serveranwendungen (Komponente) gestartet und verwendet werden können. Beispielsweise kann eine vollständige / Server-Anwendung in einem der folgenden drei Modi ausführen:
+Bei der OLE-visuellen Bearbeitung werden zusätzliche Anforderungen im Menü und in anderen von OLE-Dokument Anwendungen bereitgestellten Ressourcen gestellt, da es eine Reihe von Modi gibt, in denen Container-und Server Anwendungen (Komponenten Anwendungen) gestartet und verwendet werden können. Beispielsweise kann eine vollständige Serveranwendung in einem der folgenden drei Modi ausgeführt werden:
 
 - Eigenständig.
 
-- Direktes zum Bearbeiten eines Elements innerhalb des Kontexts eines Containers.
+- Direkt zum Bearbeiten eines Elements im Kontext eines Containers.
 
-- Zum Bearbeiten eines Elements im Kontext des jeweiligen Containers, oft in einem separaten Fenster geöffnet.
+- Öffnen Sie, um ein Element außerhalb des Kontexts seines Containers zu bearbeiten, häufig in einem separaten Fenster.
 
-Dies erfordert drei verschiedene Menülayouts, eine für jeden möglichen Modus der Anwendung. Zugriffstastentabellen sind auch für jeden neuen Modus erforderlich. Eine Container-Anwendung kann, oder es unterstützen möglicherweise keine direkte Aktivierung; Wenn dies der Fall ist, benötigt eine neue Menüstruktur und zugeordnete Zugriffstastentabellen.
+Hierfür sind drei separate Menü Layouts erforderlich, eine für jeden möglichen Modus der Anwendung. Zugriffstasten Tabellen sind auch für jeden neuen Modus erforderlich. Eine Containeranwendung unterstützt möglicherweise die direkte Aktivierung. Wenn dies der Fall ist, benötigen Sie eine neue Menüstruktur und zugehörige Zugriffstasten Tabellen.
 
-Direkte Aktivierung erfordert, dass die Container und Server-Anwendungen für Menüs, Symbolleisten und Status Leiste Speicherplatz aushandeln müssen. Alle Ressourcen müssen dabei bedenken entworfen werden. Der Artikel [Menüs und Ressourcen: Menü zusammenführen](../mfc/menus-and-resources-menu-merging.md) in diesem Thema ausführlich behandelt.
+Die direkte Aktivierung erfordert, dass die Container-und Server Anwendungen für den Menü-, Symbolleisten-und Status Leistenbereich aushandeln müssen. Alle Ressourcen müssen in diesem Sinne entworfen werden. Die Artikel [Menüs und-Ressourcen:](menus-and-resources-menu-merging.md) die Zusammenführung des Menüs behandelt dieses Thema ausführlich.
 
-Aufgrund dieser Probleme können mit der Anwendungs-Assistenten erstellte OLE-dokumentanwendungen bis zu vier separate Menüs und tabellenressourcen Accelerator haben. Diese werden aus den folgenden Gründen verwendet:
+Aufgrund dieser Probleme können OLE-Dokument Anwendungen, die mit dem Anwendungs-Assistenten erstellt wurden, bis zu vier separate Menüs und Zugriffstasten für Tabellen Ressourcen haben. Diese werden aus den folgenden Gründen verwendet:
 
-|Ressourcenname|Mit|
+|Ressourcenname|Verwendung|
 |-------------------|---------|
-|IDR_MAINFRAME|In einer MDI-Anwendung, wenn keine Datei geöffnet ist, oder in einer SDI-Anwendung, unabhängig vom geöffneten Dateien verwendet. Dies ist die standardmäßige Menü in nicht-OLE-Anwendungen verwendet.|
-|IDR_\<project>TYPE|In einer MDI-Anwendung verwendet, wenn Dateien geöffnet sind. Verwendet, wenn eine Anwendung eigenständig ausgeführt wird. Dies ist die standardmäßige Menü in nicht-OLE-Anwendungen verwendet.|
-|IDR_\<project>TYPE_SRVR_IP|Von den Server oder den Container verwendet, wenn ein Objekt öffnen vorhanden ist.|
-|IDR_\<project>TYPE_SRVR_EMB|Von einer Serveranwendung verwendet, wenn ein Objekt ohne Verwendung der direkten Aktivierung geöffnet wird.|
+|IDR_MAINFRAME|Wird in einer MDI-Anwendung verwendet, wenn keine Datei geöffnet ist, oder in einer SDI-Anwendung, unabhängig von geöffneten Dateien. Dies ist das Standardmenü, das in nicht-OLE-Anwendungen verwendet wird.|
+|IDR_- \<project> Typ|Wird in einer MDI-Anwendung verwendet, wenn Dateien geöffnet sind. Wird verwendet, wenn eine Anwendung eigenständig ausgeführt wird. Dies ist das Standardmenü, das in nicht-OLE-Anwendungen verwendet wird.|
+|IDR_ \<project> TYPE_SRVR_IP|Wird vom Server oder Container verwendet, wenn ein Objekt an Ort und Stelle geöffnet ist.|
+|IDR_ \<project> TYPE_SRVR_EMB|Wird von einer Serveranwendung verwendet, wenn ein Objekt ohne direkte Aktivierung geöffnet wird.|
 
-Jedes dieser Ressourcennamen darstellt ein Menü und, in der Regel einer Zugriffstastentabelle. Ein ähnliches Schema sollte in MFC-Anwendungen verwendet werden, die nicht mit der Anwendungs-Assistenten erstellt werden.
+Jeder dieser Ressourcennamen stellt ein Menü und in der Regel eine Zugriffstasten Tabelle dar. Ein ähnliches Schema sollte in MFC-Anwendungen verwendet werden, die nicht mit dem Anwendungs-Assistenten erstellt werden.
 
-Die folgenden Artikel behandeln die Themen im Zusammenhang mit Containern, Server und die direkte Aktivierung implementiert Zusammenführungsfunktion:
+In den folgenden Artikeln werden Themen im Zusammenhang mit Containern, Servern und der Zusammenführung des Menüs erläutert, die zum Implementieren der direkten Aktivierung erforderlich sind:
 
-- [Menüs und Ressourcen: Containererweiterungen](../mfc/menus-and-resources-container-additions.md)
+- [Menüs und Ressourcen: Containererweiterungen](menus-and-resources-container-additions.md)
 
-- [Menüs und Ressourcen: Servererweiterungen](../mfc/menus-and-resources-server-additions.md)
+- [Menüs und Ressourcen: Servererweiterungen](menus-and-resources-server-additions.md)
 
-- [Menüs und Ressourcen: Zusammenführen von Menüs](../mfc/menus-and-resources-menu-merging.md)
+- [Menüs und Ressourcen: Menüs schachteln](menus-and-resources-menu-merging.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE](../mfc/ole-in-mfc.md)
+[OLE](ole-in-mfc.md)

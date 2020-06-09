@@ -9,28 +9,28 @@ helpviewer_keywords:
 - methods [MFC]
 - status bars [MFC], creating
 ms.assetid: 9aeaf290-7099-4762-a5ba-9c26705333c9
-ms.openlocfilehash: a2301301d0012bd93ffedd0452dec140174402e0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9bdaa76dc68467dce1021d9b5f54eaafa248c529
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62383874"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624271"
 ---
 # <a name="methods-of-creating-a-status-bar"></a>Methoden zum Erstellen einer Statusleiste
 
-MFC bietet zwei Klassen zum Erstellen von Statusleisten: [CStatusBar](../mfc/reference/cstatusbar-class.md) und [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) (die dient als Wrapper für die allgemeine Windows-Steuerungs-API). `CStatusBar` bietet alle Funktionen der Statusleiste Standardsteuerelements, er automatisch interagiert mit Menüs und Symbolleisten, und viele der erforderlichen steuerelementeinstellungen für allgemeine und Strukturen für Sie; verarbeitet die resultierende ausführbare Datei in der Regel werden jedoch größer ist als mit erstellt `CStatusBarCtrl`.
+MFC stellt zwei Klassen zum Erstellen von Status leisten bereit: [CStatusBar](reference/cstatusbar-class.md) und [CStatusBarCtrl](reference/cstatusbarctrl-class.md) (die die Common Control API von Windows umschließt). `CStatusBar`stellt die gesamte Funktionalität der allgemeinen Steuerung der Statusleiste bereit, interagiert automatisch mit Menüs und Symbolleisten und verarbeitet viele der erforderlichen allgemeinen Steuerelement Einstellungen und-Strukturen für Sie. die resultierende ausführbare Datei ist jedoch normalerweise größer als die, die mit erstellt wird `CStatusBarCtrl` .
 
-`CStatusBarCtrl` Ergebnisse in eine kleinere ausführbare Datei, und Sie können in der Regel lieber mit `CStatusBarCtrl` , wenn Sie nicht beabsichtigen, die die Statusleiste in die MFC-Architektur integriert. Wenn Sie planen, verwenden Sie `CStatusBarCtrl` und die Statusleiste in der MFC-Architektur integriert, Sie müssen zusätzliche Sorgfalt Statusleisten-Steuerelement Manipulationen mit MFC zu kommunizieren. Diese Kommunikation ist nicht schwierig. Es ist jedoch zusätzliche Arbeit, die nicht benötigten ist bei Verwendung von `CStatusBar`.
+`CStatusBarCtrl`in der Regel führt dies zu einer kleineren ausführbaren Datei, und Sie können verwenden, `CStatusBarCtrl` Wenn Sie nicht beabsichtigen, die Statusleiste in die MFC-Architektur zu integrieren. Wenn Sie beabsichtigen, `CStatusBarCtrl` die Statusleiste in der MFC-Architektur zu verwenden und zu integrieren, müssen Sie zusätzliche Sorgfalt walten lassen, wenn Sie die Manipulationen von Status leisten Steuerelementen an MFC übermitteln. Diese Kommunikation ist nicht schwierig. Es handelt sich jedoch um zusätzliche Aufgaben, die bei der Verwendung von nicht benötigt werden `CStatusBar` .
 
-Visual C++ bietet zwei Möglichkeiten, um das allgemeine StatusBar-Steuerelement nutzen.
+Visual C++ bietet zwei Möglichkeiten, um das allgemeine Steuerelement für die Statusleiste zu nutzen.
 
-- Erstellen Sie die Statusleiste mit `CStatusBar`, und rufen dann [GetStatusBarCtrl](../mfc/reference/cstatusbar-class.md#getstatusbarctrl) für den Zugriff auf die `CStatusBarCtrl` Memberfunktionen.
+- Erstellen Sie die Statusleiste mithilfe `CStatusBar` von, und rufen Sie dann [CStatusBar:: GetStatusBarCtrl](reference/cstatusbar-class.md#getstatusbarctrl) auf, um Zugriff auf die Element Funktionen zu erhalten `CStatusBarCtrl` .
 
-- Erstellen Sie die Statusleiste mit [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)Konstruktor.
+- Erstellen Sie die Statusleiste mithilfe des [CStatusBarCtrl](reference/cstatusbarctrl-class.md)-Konstruktors.
 
-Beide Methoden erhalten Sie Zugriff auf die Memberfunktionen der das StatusBar-Steuerelement. Beim Aufruf `CStatusBar::GetStatusBarCtrl`, es gibt einen Verweis auf eine `CStatusBarCtrl` Objekt, damit Sie beide Sätze von Memberfunktionen verwenden können. Finden Sie unter [CStatusBar](../mfc/reference/cstatusbar-class.md) für Informationen zum Erstellen, und erstellen eine Statusleiste mit `CStatusBar`.
+Beide Methoden erhalten Zugriff auf die Element Funktionen des StatusBar-Steuer Elements. Wenn Sie `CStatusBar::GetStatusBarCtrl` den Befehl verwenden, wird ein Verweis auf ein-Objekt zurückgegeben, `CStatusBarCtrl` sodass Sie einen der beiden Member-Funktionen verwenden können. Weitere Informationen zum Erstellen und Erstellen einer Statusleiste mithilfe von finden Sie unter [CStatusBar](reference/cstatusbar-class.md) `CStatusBar` .
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CStatusBarCtrl](using-cstatusbarctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

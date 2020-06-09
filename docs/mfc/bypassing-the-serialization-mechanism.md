@@ -10,25 +10,25 @@ helpviewer_keywords:
 - serialization [MFC], role of framework
 - serialization [MFC], overriding
 ms.assetid: 48d4a279-b51c-4ba5-81cd-ed043312b582
-ms.openlocfilehash: 1937098de30884be327c67a698dbb0023be248bb
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: f47cac34f6cdbdae01af98ec28be5af17edf0e25
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345203"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620961"
 ---
 # <a name="bypassing-the-serialization-mechanism"></a>Umgehen des Serialisierungsmechanismus
 
-Wie Sie gesehen haben, bietet das Framework eine Standardmethode zum Lesen und Schreiben von Daten in und aus Dateien. Durch ein Archivobjekt serialisieren, ist die Anforderungen von einem hervorragenden viele Anwendungen geeignet. Eine solche Anwendung liest eine Datei vollständig in den Arbeitsspeicher, ermöglicht dem Benutzer die Datei zu aktualisieren und anschließend die aktualisierte Version wieder auf den Datenträger geschrieben.
+Wie Sie gesehen haben, bietet das Framework eine Standardmethode zum Lesen und Schreiben von Daten in und aus Dateien. Die Serialisierung über ein Archive-Objekt ist für die Anforderungen vieler Anwendungen geeignet. Eine solche Anwendung liest eine Datei vollständig in den Arbeitsspeicher, ermöglicht dem Benutzer, die Datei zu aktualisieren, und schreibt die aktualisierte Version dann wieder auf den Datenträger.
 
-Allerdings werden einige Anwendungen verarbeiten Daten sehr unterschiedlich, und für diese Anwendungen-Serialisierung durch ein Archiv ist nicht geeignet. Beispiele sind Datenbankprogramme, Programme, die nur die Teile von großen Dateien bearbeiten, Programme, die nur-Text-Dateien zu schreiben und Programme, die Datendateien gemeinsam nutzen.
+Einige Anwendungen arbeiten jedoch ganz anders, und für diese Anwendungen ist die Serialisierung über ein Archiv nicht geeignet. Beispiele hierfür sind Datenbankprogramme, Programme, die nur Teile großer Dateien bearbeiten, Programme, die nur-Text-Dateien schreiben, und Programme, die Datendateien freigeben.
 
-In diesen Fällen können Sie überschreiben die [Serialize](../mfc/reference/cobject-class.md#serialize) -Funktion in eine andere Weise für die Vermittlung von Dateiaktionen über eine [CFile](../mfc/reference/cfile-class.md) Objekt anstelle eines [CArchive](../mfc/reference/carchive-class.md) Objekt.
+In diesen Fällen können Sie die [serialize](reference/cobject-class.md#serialize) -Funktion auf eine andere Weise überschreiben, um Dateiaktionen über ein [CFile](reference/cfile-class.md) -Objekt anstelle eines [CArchive](reference/carchive-class.md) -Objekts zu vermitteln.
 
-Sie können die `Open`, `Read`, `Write`, `Close`, und `Seek` Memberfunktionen der Klasse `CFile` um eine Datei zu öffnen, bewegen Sie den Dateizeiger (seek) zu einem bestimmten Zeitpunkt in der Datei ein Datensatz (eine angegebene Anzahl von Bytes lesen ) zu diesem Zeitpunkt kann der Benutzer, aktualisieren Sie den Eintrag, und klicken Sie dann erneut auf demselben Zeitpunkt zu suchen und den Datensatz zurück in die Datei zu schreiben. Das Framework wird die Datei für Sie geöffnet, und können Sie die `GetFile` Memberfunktion der Klasse `CArchive` einen Zeiger zum Abrufen der `CFile` Objekt. Sie können für die Verwendung von noch mehr ausgefeilte und flexible, überschreiben die [OnOpenDocument](../mfc/reference/cdocument-class.md#onopendocument) und [OnSaveDocument](../mfc/reference/cdocument-class.md#onsavedocument) Memberfunktionen der Klasse `CWinApp`. Weitere Informationen finden Sie in der Klasse [CFile](../mfc/reference/cfile-class.md) in die *MFC-Referenz*.
+Sie können die `Open` -, `Read` - `Write` , `Close` -,-und-Element `Seek` Funktionen der-Klasse verwenden, `CFile` um eine Datei zu öffnen, den Dateizeiger (Seek) zu einem bestimmten Punkt in der Datei zu verschieben, einen Datensatz (eine angegebene Anzahl von Bytes) zu diesem Zeitpunkt zu lesen, den Benutzer zum Aktualisieren des Datensatzes zu verwenden und den Datensatz wieder in die Datei zu schreiben. Das Framework öffnet die Datei für Sie, und Sie können die Member- `GetFile` Funktion der-Klasse verwenden, `CArchive` um einen Zeiger auf das-Objekt zu erhalten `CFile` . Für eine noch anspruchsvollere und flexiblere Verwendung können Sie die Member-Funktionen von [OnOpenDocument](reference/cdocument-class.md#onopendocument) und [OnSaveDocument](reference/cdocument-class.md#onsavedocument) der-Klasse überschreiben `CWinApp` . Weitere Informationen finden Sie unter Class [CFile](reference/cfile-class.md) in der *MFC-Referenz*.
 
-In diesem Fall Ihre `Serialize` Außerkraftsetzung nichts, es sei denn, Sie beispielsweise so, dass sie das Lesen und Schreiben eines Datei Headers an, um es auf dem neuesten Stand zu halten, wenn das Dokument geschlossen wird.
+In diesem Szenario führt die `Serialize` außer Kraft Setzung keine Aktionen aus, es sei denn, Sie möchten einen Dateiheader lesen und schreiben, um ihn auf dem neuesten Stand zu halten, wenn das Dokument geschlossen wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von Dokumenten](../mfc/using-documents.md)
+[Verwenden von Dokumenten](using-documents.md)

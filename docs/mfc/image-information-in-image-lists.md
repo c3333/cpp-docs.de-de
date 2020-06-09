@@ -5,22 +5,22 @@ helpviewer_keywords:
 - CImageList class [MFC], image information in
 - image lists [MFC], image information in
 ms.assetid: 73c41543-fa91-405d-b15b-0feffa6a72c1
-ms.openlocfilehash: 7b83b7e5f7de6f8ccca95d732f71a5d73a97e943
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c12198c769585763095d22b73d11f7af3c9d6fc0
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62363517"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624496"
 ---
 # <a name="image-information-in-image-lists"></a>Bildinformationen in Bildlisten
 
-[CImageList](../mfc/reference/cimagelist-class.md) umfasst eine Reihe von Funktionen, die für das Abrufen von Informationen aus einer Bildliste. Die [GetImageInfo](../mfc/reference/cimagelist-class.md#getimageinfo) Member-Funktion füllt eine `IMAGEINFO` -Struktur mit Informationen über ein einzelnes Bild, einschließlich der Handles, die Bitmaps für Bild und die Maske, die Anzahl von Farbebenen und Bits pro Pixel und das umgebende Rechteck des Bilds in der Image-Bitmap. Sie können diese Informationen verwenden, die Bitmaps für das Image direkt zu bearbeiten.
+[CImageList](reference/cimagelist-class.md) enthält eine Reihe von Funktionen, mit denen Informationen aus einer Bildliste abgerufen werden. Die [getimageinfo](reference/cimagelist-class.md#getimageinfo) -Element Funktion füllt eine `IMAGEINFO` Struktur mit Informationen zu einem einzelnen Bild, einschließlich der Zieh Punkte der Bild-und Masken Bitmaps, der Anzahl von Farbebenen und Bits pro Pixel und des umgebenden Rechtecks des Bilds in der bildbitmap. Sie können diese Informationen verwenden, um die Bitmaps für das Image direkt zu bearbeiten.
 
-Die [GetImageCount](../mfc/reference/cimagelist-class.md#getimagecount) Member-Funktion ruft die Anzahl der Bilder in einer Bildliste ab.
+Die [GetImageCount](reference/cimagelist-class.md#getimagecount) -Member-Funktion Ruft die Anzahl der Bilder in einer Bildliste ab.
 
-Sie können ein Symbol, das basierend auf einem Bild und der Maske in einer Bildliste verwenden erstellen die [ExtractIcon](../mfc/reference/cimagelist-class.md#extracticon) Member-Funktion. Die Funktion gibt das Handle des neuen Symbols.
+Sie können ein Symbol auf der Grundlage eines Bilds und einer Maske in einer Bildliste erstellen, indem Sie die [ExtractIcon](reference/cimagelist-class.md#extracticon) -Member-Funktion verwenden. Die-Funktion gibt das Handle des neuen Symbols zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CImageList](../mfc/using-cimagelist.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CImageList](using-cimagelist.md)<br/>
+[Steuerelemente](controls-mfc.md)

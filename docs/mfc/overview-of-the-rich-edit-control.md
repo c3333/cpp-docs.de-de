@@ -4,27 +4,27 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - rich edit controls [MFC]
 ms.assetid: ad589b9f-a3fd-4820-bf1f-6b1965997e68
-ms.openlocfilehash: 9ef696bc348dfb18b797b487224b97261020e11c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b99a5c6faaae4679b6aef67f240febbfb0f596e8
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366870"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617710"
 ---
 # <a name="overview-of-the-rich-edit-control"></a>Übersicht über das RichEdit-Steuerelement
 
 > [!IMPORTANT]
-> Wenn Sie ein Rich-Edit-Steuerelement in einem Dialogfeld verwenden (unabhängig davon, ob Ihre Anwendung SDI, MDI oder Dialog-basiert ist), müssen Sie [AfxInitRichEdit](../mfc/reference/application-information-and-management.md#afxinitrichedit) einmal aufrufen, bevor das Dialogfeld angezeigt wird. Ein typischer Ort zum Aufrufen dieser `InitInstance` Funktion befindet sich in der Memberfunktion Ihres Programms. Sie müssen es nicht jedes Mal aufrufen, wenn Sie das Dialogfeld anzeigen, nur zum ersten Mal. Sie müssen nicht `AfxInitRichEdit` anrufen, wenn `CRichEditView`Sie mit arbeiten.
+> Wenn Sie ein Rich-Edit-Steuerelement in einem Dialogfeld verwenden (unabhängig davon, ob es sich um eine SDI-, MDI-oder Dialogfeld basierte Anwendung handelt), müssen Sie [afxiniterchedit](reference/application-information-and-management.md#afxinitrichedit) einmal aufzurufen, bevor das Dialogfeld angezeigt wird. Eine typische Stelle zum Abrufen dieser Funktion ist die Member-Funktion Ihres Programms `InitInstance` . Sie müssen Sie nicht für jedes Mal aufrufen, wenn Sie das Dialogfeld nur beim ersten Mal anzeigen. Wenn Sie mit arbeiten, müssen Sie nicht aufzurufen `AfxInitRichEdit` `CRichEditView` .
 
-Rich Edit-Steuerelemente ([CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)) bieten eine Programmierschnittstelle zum Formatieren von Text. Eine Anwendung muss jedoch alle Benutzeroberflächenkomponenten implementieren, die erforderlich sind, um formatierungsvorgänge für den Benutzer verfügbar zu machen. Das heißt, das Rich-Edit-Steuerelement unterstützt das Ändern der Zeichen- oder Absatzattribute des markierten Textes. Einige Beispiele für Zeichenattribute sind fett, Kursivschrift, Schriftfamilie und Punktgröße. Beispiele für Absatzattribute sind Ausrichtung, Ränder und Tabstopps. Es liegt jedoch an Ihnen, die Benutzeroberfläche bereitzustellen, unabhängig davon, ob es sich um Symbolleistenschaltflächen, Menüelemente oder ein Dialogfeld für Formatzeichen handelt. Es gibt auch Funktionen zum Abfragen des Rich-Edit-Steuerelements für die Attribute der aktuellen Auswahl. Verwenden Sie diese Funktionen, um die aktuellen Einstellungen für die Attribute anzuzeigen, z. B. das Festlegen eines Häkchens auf der Befehlsbenutzeroberfläche, wenn die Auswahl das Formatierungsattribut "Fettzeichen" aufweist.
+Rich Edit-Steuerelemente ([CRichEditCtrl](reference/cricheditctrl-class.md)) stellen eine Programmierschnittstelle zum Formatieren von Text bereit. Allerdings muss eine Anwendung alle Benutzeroberflächen Komponenten implementieren, die für das verfügbar machen von Formatierungs Vorgängen für den Benutzer erforderlich sind. Das heißt, das Rich Edit-Steuerelement unterstützt das Ändern der Zeichen-oder Absatz Attribute des ausgewählten Texts. Einige Beispiele für Zeichen Attribute sind fett formatiert, kursiv, Schriftfamilie und Punktgröße. Beispiele für Absatz Attribute sind Ausrichtung, Ränder und Tabstopps. Allerdings müssen Sie die Benutzeroberfläche bereitstellen, unabhängig davon, ob es sich um Symbolleisten-Schaltflächen, Menü Elemente oder ein Dialogfeld für Formatierungszeichen handelt. Es gibt auch Funktionen zum Abfragen des Rich Edit-Steuer Elements für die Attribute der aktuellen Auswahl. Verwenden Sie diese Funktionen, um die aktuellen Einstellungen für die Attribute anzuzeigen, indem Sie z. b. ein Häkchen auf der Befehls Benutzeroberfläche festlegen, wenn die Auswahl das Fett formatierte Zeichen Formatierungs Attribut aufweist.
 
-Weitere Informationen zur Zeichen- und Absatzformatierung finden Sie weiter unten in diesem Thema unter [Zeichenformatierung](../mfc/character-formatting-in-rich-edit-controls.md) und [Absatzformatierung.](../mfc/paragraph-formatting-in-rich-edit-controls.md)
+Weitere Informationen zur Zeichen-und Absatz Formatierung finden Sie unter [Zeichen Formatierung](character-formatting-in-rich-edit-controls.md) und [Absatz Formatierung](paragraph-formatting-in-rich-edit-controls.md) weiter unten in diesem Thema.
 
-Rich-Edit-Steuerelemente unterstützen fast alle Vorgänge und Benachrichtigungen, die mit mehrzeiligen Bearbeitungssteuerelementen verwendet werden. Daher können Anwendungen, die bereits Bearbeitungssteuerelemente verwenden, leicht geändert werden, um umfangreiche Bearbeitungssteuerelemente zu verwenden. Zusätzliche Meldungen und Benachrichtigungen ermöglichen Anwendungen den Zugriff auf die Funktionen, die für umfangreiche Bearbeitungssteuerelemente eindeutig sind. Informationen zu Bearbeitungssteuerelementen finden Sie unter [CBearbeiten](../mfc/reference/cedit-class.md).
+Rich Edit-Steuerelemente unterstützen fast alle Vorgänge und Benachrichtigungs Meldungen, die mit mehrzeiligen Bearbeitungs Steuerelementen verwendet werden. Daher können Anwendungen, die bereits Bearbeitungs Steuerelemente verwenden, problemlos geändert werden, um Rich Edit-Steuerelemente zu verwenden. Zusätzliche Meldungen und Benachrichtigungen ermöglichen Anwendungen den Zugriff auf die Funktionalität, die für Rich-Edit-Steuerelemente eindeutig ist. Weitere Informationen zum Bearbeiten von Steuerelementen finden Sie unter [CEdit](reference/cedit-class.md).
 
-Weitere Informationen zu Benachrichtigungen finden Sie weiter unten in diesem Thema unter [Benachrichtigungen aus einem Rich Edit Control.](../mfc/notifications-from-a-rich-edit-control.md)
+Weitere Informationen zu Benachrichtigungen finden Sie unter [Benachrichtigungen von einem Rich Edit-Steuer](notifications-from-a-rich-edit-control.md) Element weiter unten in diesem Thema.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CRichEditCtrl](../mfc/using-cricheditctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CRichEditCtrl](using-cricheditctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

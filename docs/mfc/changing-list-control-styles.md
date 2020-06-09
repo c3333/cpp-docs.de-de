@@ -6,31 +6,31 @@ helpviewer_keywords:
 - CListCtrl class [MFC], styles
 - CListCtrl class [MFC], changing styles
 ms.assetid: be74a005-0795-417c-9056-f6342aa74b26
-ms.openlocfilehash: 5f45e0549c3fc0f5747f8dd12a6310fafd7dd7bb
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e515f56f00aa45a14c24bcd635770e803f7f8e70
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370816"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84615989"
 ---
 # <a name="changing-list-control-styles"></a>Ändern der Stile von Listensteuerelementen
 
-Sie können den Fensterstil eines Listensteuerelements ([CListCtrl](../mfc/reference/clistctrl-class.md)) jederzeit nach dem Erstellen ändern. Durch Ändern des Fensterstils ändern Sie die Art der Ansicht, die das Steuerelement verwendet. Um beispielsweise den Explorer zu emulieren, können Sie Menüelemente oder Symbolleistenschaltflächen zum Wechseln des Steuerelements zwischen verschiedenen Ansichten angeben: Symbolansicht, Listenansicht usw.
+Sie können den Fenster Stil eines Listen Steuer Elements ([CListCtrl](reference/clistctrl-class.md)) jederzeit ändern, nachdem Sie es erstellt haben. Durch Ändern des Fenster Stils ändern Sie die Art der Ansicht, die vom Steuerelement verwendet wird. Wenn Sie z. b. den Explorer emulieren möchten, können Sie Menü Elemente oder Symbolleisten Schaltflächen angeben, um das Steuerelement zwischen verschiedenen Ansichten zu wechseln: Symbol Ansicht, Listenansicht usw.
 
-Wenn der Benutzer beispielsweise Ihr Menüelement auswählt, können Sie [GetWindowLong](/windows/win32/api/winuser/nf-winuser-getwindowlongw) aufrufen, um den aktuellen Stil des Steuerelements abzurufen, und dann [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) aufrufen, um den Stil zurückzusetzen. Weitere Informationen finden Sie unter [Verwenden von Listenansichtssteuerelementen](/windows/win32/Controls/using-list-view-controls) im Windows SDK.
+Wenn der Benutzer z. b. das Menü Element auswählt, können Sie [GetWindowLong](/windows/win32/api/winuser/nf-winuser-getwindowlongw) aufrufen, um den aktuellen Stil des Steuer Elements abzurufen, und dann [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) aufrufen, um den Stil zurückzusetzen. Weitere Informationen finden Sie unter [Verwenden von Listenansicht](/windows/win32/Controls/using-list-view-controls) -Steuerelementen in der Windows SDK.
 
-Verfügbare Stile werden unter [Erstellen](../mfc/reference/clistctrl-class.md#create)von aufgeführt. Die Stile **LVS_ICON**, **LVS_SMALLICON**, **LVS_LIST**und **LVS_REPORT** die vier Listensteuerelementansichten festlegen.
+Verfügbare Stile sind unter [Erstellen](reference/clistctrl-class.md#create)aufgeführt. Die Stile **LVS_ICON**, **LVS_SMALLICON**, **LVS_LIST**und **LVS_REPORT** bestimmen die vier Listen Steuerelement Ansichten.
 
 ## <a name="extended-styles"></a>Erweiterte Stile
 
-Zusätzlich zu den Standardformatvorlagen für ein Listensteuerelement gibt es einen weiteren Satz, der als erweiterte Stile bezeichnet wird. Diese Stile, die in [erweiterten Listenansichtsstilen](/windows/win32/Controls/extended-list-view-styles) im Windows SDK erläutert werden, bieten eine Vielzahl nützlicher Features, die das Verhalten des Listensteuerelements anpassen. Um das Verhalten eines bestimmten Stils (z. B. Hoverauswahl) zu implementieren, rufen Sie [CListCtrl::SetExtendedStyle](../mfc/reference/clistctrl-class.md#setextendedstyle)auf, um den erforderlichen Stil zu übergeben. Das folgende Beispiel veranschaulicht den Funktionsaufruf:
+Zusätzlich zu den Standard Stilen für ein Listen Steuerelement gibt es eine andere Gruppe, die als erweiterte Stile bezeichnet wird. Diese Stile, die unter [Erweiterte Listen Ansichts Stile](/windows/win32/Controls/extended-list-view-styles) in der Windows SDK erläutert werden, bieten eine Vielzahl nützlicher Features, die das Verhalten des Listen Steuer Elements anpassen. Um das Verhalten eines bestimmten Stils (z. b. die Auswahl des Mauszeigers) zu implementieren, führen Sie [CListCtrl:: abtextendedstyle](reference/clistctrl-class.md#setextendedstyle)aus, und übergeben Sie dabei den erforderlichen Stil. Das folgende Beispiel veranschaulicht den Funktions aufzurufen:
 
-[!code-cpp[NVC_MFCControlLadenDialog#22](../mfc/codesnippet/cpp/changing-list-control-styles_1.cpp)]
+[!code-cpp[NVC_MFCControlLadenDialog#22](codesnippet/cpp/changing-list-control-styles_1.cpp)]
 
 > [!NOTE]
-> Damit die Hoverauswahl funktioniert, müssen Sie auch **entweder LVS_EX_ONECLICKACTIVATE** oder **LVS_EX_TWOCLICKACTIVATE** aktiviert haben.
+> Damit die Hover-Auswahl funktioniert, müssen Sie auch entweder **LVS_EX_ONECLICKACTIVATE** oder **LVS_EX_TWOCLICKACTIVATE** aktiviert haben.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CListCtrl](../mfc/using-clistctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CListCtrl](using-clistctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

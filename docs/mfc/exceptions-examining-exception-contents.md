@@ -9,25 +9,25 @@ helpviewer_keywords:
 - try-catch exception handling [MFC], exception contents
 - throwing exceptions [MFC], exception contents
 ms.assetid: dfda4782-b969-4f60-b867-cc204ea7f33a
-ms.openlocfilehash: f6f9bca6f6b7ca9d104cb492c760ab89f7163afd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8554dda2f465aa058cea3d257c22ec38bc6e2c18
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406001"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625891"
 ---
 # <a name="exceptions-examining-exception-contents"></a>Ausnahmen: Untersuchen von Ausnahmeinhalten
 
-Obwohl eine **catch** des Blocks Argument kann von fast jeden Datentyps, die MFC-Funktionen Auslösen von Ausnahmen von Typen, die von der Klasse abgeleitet `CException`. Um eine von einer MFC-Funktion ausgelöste Ausnahme abzufangen, Sie schreiben eine **catch** blockieren, deren Argument ein Zeiger ist, auf eine `CException` Objekt (oder ein Objekt abgeleitet `CException`, z. B. `CMemoryException`). Überprüfen Sie je nach den genauen Typ der Ausnahme die Datenmember des Ausnahmeobjekts, um Informationen über die genaue Ursache der Ausnahme zu erfassen.
+Obwohl das-Argument eines **catch** -Blocks fast jeden Datentyp aufweisen kann, lösen die MFC-Funktionen Ausnahmen von Typen aus, die von der-Klasse abgeleitet werden `CException` . Wenn Sie eine Ausnahme abfangen möchten, die von einer MFC-Funktion ausgelöst wird, schreiben Sie einen **catch** -Block, dessen Argument ein Zeiger auf ein- `CException` Objekt ist (oder ein von abgeleitetes Objekt `CException` , z `CMemoryException` . b.). Abhängig vom exakten Typ der Ausnahme können Sie die Datenmember des Ausnahme Objekts überprüfen, um Informationen über die jeweilige Ursache der Ausnahme zu sammeln.
 
-Z. B. die `CFileException` Typ verfügt über die `m_cause` Datenmember, der einen enumerierten Typ enthält, der die Ursache für den Datei-Ausnahme angibt. Einige Beispiele für die möglichen Rückgabewerte sind `CFileException::fileNotFound` und `CFileException::readOnly`.
+Der- `CFileException` Typ verfügt beispielsweise über den- `m_cause` Datenmember, der einen enumerierten Typ enthält, der die Ursache der Datei Ausnahme angibt. Einige Beispiele für die möglichen Rückgabewerte sind `CFileException::fileNotFound` und `CFileException::readOnly` .
 
-Das folgende Beispiel zeigt, wie Sie den Inhalt von untersuchen einer `CFileException`. Andere Typen können auf ähnliche Weise untersucht werden.
+Im folgenden Beispiel wird gezeigt, wie der Inhalt eines untersucht wird `CFileException` . Andere Ausnahme Typen können ähnlich überprüft werden.
 
-[!code-cpp[NVC_MFCExceptions#13](../mfc/codesnippet/cpp/exceptions-examining-exception-contents_1.cpp)]
+[!code-cpp[NVC_MFCExceptions#13](codesnippet/cpp/exceptions-examining-exception-contents_1.cpp)]
 
-Weitere Informationen finden Sie unter [Ausnahmen: Freigeben von Objekten in Ausnahmen](../mfc/exceptions-freeing-objects-in-exceptions.md) und [Ausnahmen: Abfangen und Löschen von Ausnahmen](../mfc/exceptions-catching-and-deleting-exceptions.md).
+Weitere Informationen finden Sie unter [Ausnahmen: Freigeben von Objekten in Ausnahmen](exceptions-freeing-objects-in-exceptions.md) und [Ausnahmen: abfangen und Löschen von Ausnahmen](exceptions-catching-and-deleting-exceptions.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Ausnahmebehandlung](../mfc/exception-handling-in-mfc.md)
+[Ausnahmebehandlung](exception-handling-in-mfc.md)

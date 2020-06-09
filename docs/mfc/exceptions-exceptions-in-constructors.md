@@ -6,21 +6,21 @@ helpviewer_keywords:
 - throwing exceptions [MFC], in constructors
 - exceptions [MFC], in constructors
 ms.assetid: a78eae5a-5821-4b27-9478-1436320ed1e1
-ms.openlocfilehash: 0b11f5be18879d5ad4b9e204bb02e18b4617c6b7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4089f4d44f03c7de3432f137b5d28f74189e1cb9
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62405871"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624616"
 ---
 # <a name="exceptions-exceptions-in-constructors"></a>Ausnahmen: Ausnahmen in Konstruktoren
 
-Beim Auslösen von Ausnahmen in einem Konstruktor, beliebige Objekte und speicherreservierungen von Ihnen vorgenommenen vor dem Auslösen der Ausnahme, wie unter Bereinigen [Ausnahmen: Auslösen von Ausnahmen in eigenen Funktionen](../mfc/exceptions-throwing-exceptions-from-your-own-functions.md).
+Wenn Sie eine Ausnahme in einem Konstruktor auslösen, bereinigen Sie alle Objekte und Speicher Belegungen, die Sie vor dem Auslösen der Ausnahme erstellt haben, wie in [Ausnahmen: Auslösen von Ausnahmen von ihren eigenen Funktionen](exceptions-throwing-exceptions-from-your-own-functions.md)erläutert.
 
-Beim Auslösen von Ausnahmen in einem Konstruktor, wurde der Speicher für das Objekt selbst bereits mit der Zeit zugeordnet, die der Konstruktor aufgerufen wird. Daher wird der Compiler automatisch freigeben des Speicherplatzes durch das Objekt belegt wird, nachdem die Ausnahme ausgelöst wird.
+Wenn eine Ausnahme in einem Konstruktor ausgelöst wird, wurde der Speicher für das Objekt selbst bereits durch die Zeit zugewiesen, zu der der Konstruktor aufgerufen wird. Daher wird der von dem-Objekt belegte Arbeitsspeicher vom Compiler automatisch aufgehoben, nachdem die Ausnahme ausgelöst wurde.
 
-Weitere Informationen finden Sie unter [Ausnahmen: Freigeben von Objekten in Ausnahmen](../mfc/exceptions-freeing-objects-in-exceptions.md).
+Weitere Informationen finden Sie unter [Ausnahmen: Freigeben von Objekten in Ausnahmen](exceptions-freeing-objects-in-exceptions.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Ausnahmebehandlung](../mfc/exception-handling-in-mfc.md)
+[Ausnahmebehandlung](exception-handling-in-mfc.md)

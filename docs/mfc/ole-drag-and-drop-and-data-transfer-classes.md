@@ -8,29 +8,29 @@ helpviewer_keywords:
 - data transfer [MFC], OLE
 - data transfer classes [MFC]
 ms.assetid: c8ab2825-ed69-4b88-8ae6-f368b94726b8
-ms.openlocfilehash: 7e01b6d5a7d14e0af4ca760e6e601e91359c8ab1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 530b1772dfb623689facd5b14eebe9ed1eacd4fd
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79447614"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624142"
 ---
 # <a name="ole-drag-and-drop-and-data-transfer-classes"></a>OLE-Drag &amp; Drop- und Datenübertragungs-Klassen
 
 Diese Klassen werden in OLE-Datenübertragungen verwendet. Sie ermöglichen das Übertragen von Daten zwischen Anwendungen mithilfe der Zwischenablage oder per Drag & Drop.
 
-[COleDropSource](../mfc/reference/coledropsource-class.md)<br/>
+[COleDropSource](reference/coledropsource-class.md)<br/>
 Steuert den Drag & Drop-Vorgang von Anfang bis Ende. Diese Klasse bestimmt, wann der Zieh Vorgang beginnt und wann er endet. Außerdem wird während des Drag & Drop-Vorgangs Cursor Feedback angezeigt.
 
-[COleDataSource](../mfc/reference/coledatasource-class.md)<br/>
-Wird verwendet, wenn eine Anwendung Daten für eine Datenübertragung bereitstellt. `COleDataSource` können als objektorientiertes Zwischenablage Objekt angezeigt werden.
+[COleDataSource](reference/coledatasource-class.md)<br/>
+Wird verwendet, wenn eine Anwendung Daten für eine Datenübertragung bereitstellt. `COleDataSource`kann als objektorientiertes Zwischenablage Objekt angezeigt werden.
 
-[COleDropTarget](../mfc/reference/coledroptarget-class.md)<br/>
-Stellt das Ziel eines Drag & Drop-Vorgangs dar. Ein `COleDropTarget`-Objekt entspricht einem Fenster auf dem Bildschirm. Es bestimmt, ob Daten, die auf ihm abgelegt werden, akzeptiert und der tatsächliche Drop-Vorgang implementiert wird.
+[COleDropTarget](reference/coledroptarget-class.md)<br/>
+Stellt das Ziel eines Drag & Drop-Vorgangs dar. Ein- `COleDropTarget` Objekt entspricht einem Fenster auf dem Bildschirm. Es bestimmt, ob Daten, die auf ihm abgelegt werden, akzeptiert und der tatsächliche Drop-Vorgang implementiert wird.
 
-[COleDataObject](../mfc/reference/coledataobject-class.md)<br/>
-Wird als Empfängerseite zum `COleDataSource`verwendet. `COleDataObject`-Objekte ermöglichen den Zugriff auf die Daten, die von einem `COleDataSource`-Objekt gespeichert werden.
+[COleDataObject](reference/coledataobject-class.md)<br/>
+Wird als Empfängerseite für verwendet `COleDataSource` . `COleDataObject`-Objekte ermöglichen den Zugriff auf die von einem-Objekt gespeicherten Daten `COleDataSource` .
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Klassen Übersicht](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

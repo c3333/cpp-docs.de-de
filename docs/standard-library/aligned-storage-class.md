@@ -7,14 +7,14 @@ helpviewer_keywords:
 - aligned_storage class
 - aligned_storage
 ms.assetid: f255e345-1f05-4d07-81e4-017f420839fb
-ms.openlocfilehash: 8a4e907faa6175b9e03f5367d09501aaea388bce
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 741106888cdab63a75e090e860269f125c35efa6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456477"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623829"
 ---
-# <a name="alignedstorage-class"></a>aligned_storage-Klasse
+# <a name="aligned_storage-class"></a>aligned_storage-Klasse
 
 Erstellt einen entsprechend ausgerichteten Typ.
 
@@ -38,7 +38,7 @@ Die Objektausrichtung.
 
 ## <a name="remarks"></a>Hinweise
 
-Das `type` Vorlagenmember-Typdefinition ist ein Synonym für einen POD-Typ  mit Ausrichtungs Ausrichtung und Größen- *len*. *Align* muss `alignment_of<T>::value` bei einem Typ `T`oder der Standardausrichtung gleich sein.
+Das Vorlagenmember-Typdefinition `type` ist ein Synonym für einen POD-Typ *Align* mit Ausrichtungs Ausrichtung und Größen- *len*. *Align* muss `alignment_of<T>::value` bei einem Typ `T` oder der Standardausrichtung gleich sein.
 
 ## <a name="example"></a>Beispiel
 
@@ -64,13 +64,13 @@ alignment_of<int> == 4
 aligned to double == 8
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[alignment_of-Klasse](../standard-library/alignment-of-class.md)
+[<type_traits>](type-traits.md)\
+[alignment_of-Klasse](alignment-of-class.md)

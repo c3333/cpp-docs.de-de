@@ -6,27 +6,27 @@ helpviewer_keywords:
 - application class [MFC]
 - CWinApp class [MFC], overridables
 ms.assetid: 07183d5e-734b-45d9-a8b6-9dde4adac0b4
-ms.openlocfilehash: 28ba243bd755e25db5f2cb03d08013f082fbc918
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 7ae72a52c37582f8398ebc03f404ff105fe14650
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79447264"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624016"
 ---
 # <a name="overridable-cwinapp-member-functions"></a>Überschreibbare CWinApp-Memberfunktionen
 
-[CWinApp](../mfc/reference/cwinapp-class.md) stellt mehrere wichtige über schreibbare Element Funktionen bereit (`CWinApp` diese Member von der Klasse [CWinThread](../mfc/reference/cwinthread-class.md)überschreibt, von der `CWinApp` abgeleitet ist):
+[CWinApp](reference/cwinapp-class.md) bietet mehrere wichtige über schreibbare Element Funktionen ( `CWinApp` überschreibt diese Member von der Klasse [CWinThread](reference/cwinthread-class.md), von der `CWinApp` abgeleitet wird):
 
-- [InitInstance](../mfc/initinstance-member-function.md)
+- [InitInstance](initinstance-member-function.md)
 
-- [Ausführen](../mfc/run-member-function.md)
+- [Ausführen](run-member-function.md)
 
-- [ExitInstance](../mfc/exitinstance-member-function.md)
+- [ExitInstance](exitinstance-member-function.md)
 
-- [OnIdle](../mfc/onidle-member-function.md)
+- [OnIdle](onidle-member-function.md)
 
-Die einzige `CWinApp` Member-Funktion, die Sie überschreiben müssen, ist `InitInstance`.
+Die einzige `CWinApp` Member-Funktion, die Sie überschreiben müssen, ist `InitInstance` .
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[CWinApp: Die Anwendungsklasse](../mfc/cwinapp-the-application-class.md)
+[CWinApp: Die Anwendungsklasse](cwinapp-the-application-class.md)

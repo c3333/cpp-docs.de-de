@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - add_lvalue_reference
 ms.assetid: 9933afc2-ad0d-465d-98fe-7d547fa3efe2
-ms.openlocfilehash: 6317b6665adb7f3a06da564fcf049d0b64eb42e8
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 5f822e3393853c780bfe4ee86d5a5c799ec7646d
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456566"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617677"
 ---
-# <a name="addlvaluereference-class"></a>add_lvalue_reference-Klasse
+# <a name="add_lvalue_reference-class"></a>add_lvalue_reference-Klasse
 
 Wandelt den Typ in einen Verweis auf den Typ um.
 
@@ -29,12 +29,12 @@ using add_lvalue_reference_t = typename add_lvalue_reference<T>::type;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der zu ändernde Typ.
 
 ## <a name="remarks"></a>Hinweise
 
-Eine Instanz des typmodifizierers enthält einen geänderten Typ, der *t* ist, wenn *t* ein Lvalue-Verweis ist `T&`, andernfalls.
+Eine Instanz des typmodifizierers enthält einen geänderten Typ, der *t* ist, wenn *t* ein Lvalue-Verweis ist, andernfalls `T&` .
 
 ## <a name="example"></a>Beispiel
 
@@ -59,13 +59,13 @@ int main()
 add_lvalue_reference_t<int> == int
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[remove_reference-Klasse](../standard-library/remove-reference-class.md)
+[<type_traits>](type-traits.md)\
+[remove_reference-Klasse](remove-reference-class.md)

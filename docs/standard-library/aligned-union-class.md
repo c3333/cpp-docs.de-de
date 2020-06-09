@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - aligned_union
 ms.assetid: 9931a44d-3a67-4f29-a0f6-d47a7cf560ac
-ms.openlocfilehash: ae03802549f7791e51dccf1ea98a7b18929a4a4b
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: ae6ef629535238b9406216afd9f680a5c1e1afe0
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690110"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623791"
 ---
 # <a name="aligned_union-class"></a>aligned_union-Klasse
 
@@ -29,15 +29,15 @@ using aligned_union_t = typename aligned_union<Len, Types...>::type;
 
 ### <a name="parameters"></a>Parameter
 
-*Len* -\
+*Nest*\
 Der Ausrichtungswert für den größten Typ in der Union.
 
-*Typen*\
+*Solche*\
 Die unterschiedlichen Typen in der zugrunde liegenden Union.
 
 ## <a name="remarks"></a>Hinweise
 
-Verwenden Sie die Klassen Vorlage, um die Ausrichtung und Größe zu erhalten, die zum Speichern einer Union in nicht initialisiertem Speicher erforderlich sind. Der typedef-Member `type` benennt einen POD-Typ, der für die Speicherung eines beliebigen Typs geeignet ist, der in *Typen*aufgeführt ist die minimale Größe beträgt *len*. Der statische Member `alignment_value` vom Typ `std::size_t` enthält die strengste Ausrichtung, die für alle unter *Typen*aufgeführten Typen erforderlich ist.
+Verwenden Sie die Klassen Vorlage, um die Ausrichtung und Größe zu erhalten, die zum Speichern einer Union in nicht initialisiertem Speicher erforderlich sind. Der typedef-Member `type` benennt einen POD-Typ, der für die Speicherung eines beliebigen Typs geeignet ist, der in *Typen*aufgeführt ist. die Mindestgröße ist *len*. Der statische Member `alignment_value` vom Typ `std::size_t` enthält die strengste Ausrichtung, die für alle Typen erforderlich ist, die unter *Typen*aufgeführt sind.
 
 ## <a name="example"></a>Beispiel
 
@@ -77,13 +77,13 @@ int main()
 value of u->i is 1065353216
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[alignment_of-Klasse](../standard-library/alignment-of-class.md)
+[<type_traits>](type-traits.md)\
+[alignment_of-Klasse](alignment-of-class.md)

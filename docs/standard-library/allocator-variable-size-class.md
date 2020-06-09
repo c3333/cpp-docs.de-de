@@ -9,16 +9,16 @@ helpviewer_keywords:
 - stdext::allocator_variable_size
 - stdext::allocators [C++], allocator_variable_size
 ms.assetid: c3aa4105-ae45-4385-bbbe-9f23060478cb
-ms.openlocfilehash: bf243089ee8f4e26930e183b007a108e38f444e3
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 4e4c5ab0167d49c9ee892f39f18892edd004c3f6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68458154"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623705"
 ---
-# <a name="allocatorvariablesize-class"></a>allocator_variable_size-Klasse
+# <a name="allocator_variable_size-class"></a>allocator_variable_size-Klasse
 
-Beschreibt ein Objekt, das die Speicher Belegung und-Freigabe für Objekte des Typs *Type mithilfe eines* Caches vom Typ [cache_freelist](../standard-library/cache-freelist-class.md) mit einer von [Max_variable_size](../standard-library/max-variable-size-class.md)verwalteten Länge verwaltet.
+Beschreibt ein Objekt, das die Speicher Belegung und-Freigabe für Objekte des Typs *Type mithilfe eines Caches vom Typ* [cache_freelist](cache-freelist-class.md) mit einer Länge verwaltet, die von [Max_variable_size](max-variable-size-class.md)verwaltet wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,18 +31,18 @@ class allocator_variable_size;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*Typ*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
 
 ## <a name="remarks"></a>Hinweise
 
-Das [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST(stdext::allocators::max_variable_size), SYNC_DEFAULT, allocator_variable_size);`
+Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST(stdext::allocators::max_variable_size), SYNC_DEFAULT, allocator_variable_size);`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<allocators>](allocators-header.md)

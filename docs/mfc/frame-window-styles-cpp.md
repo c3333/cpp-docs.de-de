@@ -9,29 +9,29 @@ helpviewer_keywords:
 - MFC, frame windows
 - styles [MFC], windows
 ms.assetid: fc5058c1-eec8-48d8-9f76-3fc01cfa53f7
-ms.openlocfilehash: cade8e7e50779437feb73a94058dc62118c03c10
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3c22944537370a44aee1af1cf71281264ed4969b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62219742"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626453"
 ---
 # <a name="frame-window-styles-c"></a>Rahmenfensterstile (C++)
 
-Das Rahmenfenster, Sie mit dem Framework erhalten, eignen sich für die meisten Programme, aber Sie können zusätzliche Flexibilität erzielen, indem Sie mithilfe der erweiterten Funktionen [PreCreateWindow](../mfc/reference/cwnd-class.md#precreatewindow) und der globalen MFC-Funktion [AfxRegisterWndClass ](../mfc/reference/application-information-and-management.md#afxregisterwndclass). `PreCreateWindow` ist eine Memberfunktion der `CWnd`.
+Die Rahmen Fenster, die Sie mit dem Framework erhalten, eignen sich für die meisten Programme, Sie können jedoch zusätzliche Flexibilität erzielen, indem Sie die erweiterten Funktionen [prekreatewindow](reference/cwnd-class.md#precreatewindow) und die globale MFC-Funktion [AfxRegisterWndClass](reference/application-information-and-management.md#afxregisterwndclass)verwenden. `PreCreateWindow`ist eine Member-Funktion von `CWnd` .
 
-Wenn Sie anwenden, die **WS_HSCROLL** und **WS_VSCROLL** an das Hauptrahmenfenster, sie stattdessen auf angewendet werden die **MDICLIENT** -Fenster, sodass Benutzer, die scrollenkönnen**MDICLIENT** Bereich.
+Wenn Sie die **WS_HSCROLL** -und **WS_VSCROLL** Stile auf das Hauptrahmen Fenster anwenden, werden Sie stattdessen auf das **MdiClient** -Fenster angewendet, damit Benutzer einen Bildlauf im **MdiClient** -Bereich durchführen können.
 
-Wenn des Fensters des **FWS_ADDTOTITLE** Formatbit (die sie in der Standardeinstellung) festgelegt ist, wird die Sicht weist dem Rahmenfenster Titel, der in der Titelleiste des Fensters die, die basierend auf den Namen der Ansicht Dokument anzuzeigen.
+Wenn das **FWS_ADDTOTITLE** Stilbit des Fensters festgelegt ist (standardmäßig), teilt die Ansicht dem Rahmen Fenster mit, welcher Titel in der Titelleiste des Fensters auf der Grundlage des Dokument namens der Ansicht angezeigt werden soll.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Verwalten von untergeordneten MDI-Fenster (MDICLIENT)](../mfc/managing-mdi-child-windows.md), das Fenster in einer MDI-Frame, die die untergeordneten MDI-Fenster enthält.
+- Verwalten von untergeordneten [MDI-Fenstern (MdiClient)](managing-mdi-child-windows.md), das Fenster in einem MDI-Frame, der die untergeordneten MDI-Fenster enthält
 
-- [Ändern der Stile eines mit MFC erstellten Fensters](../mfc/changing-the-styles-of-a-window-created-by-mfc.md)
+- [Ändern der Stile eines mit MFC erstellten Fensters](changing-the-styles-of-a-window-created-by-mfc.md)
 
-- [Window-Stile](../mfc/reference/styles-used-by-mfc.md#window-styles)
+- [Fenster Stile](reference/styles-used-by-mfc.md#window-styles)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Rahmenfenster](../mfc/frame-windows.md)
+[Rahmenfenster](frame-windows.md)
