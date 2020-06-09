@@ -7,33 +7,33 @@ helpviewer_keywords:
 - user interfaces, OLE
 - applications [OLE], user interface
 ms.assetid: 61cb5d3e-1108-4e9b-b301-a8d8fcc586cb
-ms.openlocfilehash: b37b1439462e36787baee6a77413de3d56f2cca5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ce35bad80a348bc89ce67065d26f9a82f2feba52
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403973"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624206"
 ---
 # <a name="ole-mfc"></a>OLE (MFC)
 
-Implementieren von OLE-Funktionalität in Ihrem Programm wirkt sich auf der Benutzeroberfläche auf verschiedene Arten aus:
+Das Implementieren von OLE-Funktionen in Ihrem Programm wirkt sich auf die Benutzeroberfläche auf verschiedene Weise aus:
 
-- Visuelle Bearbeitung (direkte Aktivierung) zeigt die Benutzeroberfläche von einem anderen Programm in den Fenstern und Ihres Programms Menüs mit Elementen des anderen Programms ändert.
+- Bei der visuellen Bearbeitung (direkte Aktivierung) wird die Benutzeroberfläche eines anderen Programms in den Fenstern des Programms angezeigt, und die Menüs des Programms werden mit Elementen aus dem anderen Programm geändert.
 
-- Drag & Drop ermöglicht, Objekte, die innerhalb und zwischen Windows und auch zwischen Programmen zu ziehen.
+- Drag & Drop ermöglicht Benutzern das Ziehen von Objekten innerhalb und zwischen Fenstern und sogar zwischen Programmen.
 
-- Tracker visuelle Hinweise auf den Zustand der Objekte bereitzustellen, während der visuelle Bearbeitung und Drag & drop.
+- Tracker stellen visuelle Hinweise zum Zustand von Objekten während der visuellen Bearbeitung und zum Ziehen und ablegen bereit.
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
-- [OLE- und MFC](../mfc/ole-in-mfc.md)
+- [OLE und MFC](ole-in-mfc.md)
 
-- [Visuelle Bearbeitung (Aktivierung)](../mfc/activation-cpp.md)
+- [Visuelle Bearbeitung (Aktivierung)](activation-cpp.md)
 
-- [Drag & Drop](../mfc/drag-and-drop-ole.md)
+- [Drag & Drop](drag-and-drop-ole.md)
 
-- [Tracker](../mfc/trackers.md)
+- [Tracker](trackers.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Elemente der Benutzeroberfläche](../mfc/user-interface-elements-mfc.md)
+[Elemente der Benutzeroberfläche](user-interface-elements-mfc.md)

@@ -9,14 +9,14 @@ helpviewer_keywords:
 - stdext::allocators [C++], allocator_newdel
 - stdext::allocator_newdel
 ms.assetid: 62666cd2-3afe-49f7-9dd1-9bbbb154da98
-ms.openlocfilehash: d49a1596371e4a69873b826d3e756f263539d034
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: aa5012f6657b2676756d1d8023274a524b451df3
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68448311"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617462"
 ---
-# <a name="allocatornewdel-class"></a>allocator_newdel-Klasse
+# <a name="allocator_newdel-class"></a>allocator_newdel-Klasse
 
 Implementiert einen Allocator, der den **Operator Delete** verwendet, um einen Speicherblock freizugeben, und den **New-Operator** , um einen Speicherblock zuzuweisen.
 
@@ -31,18 +31,18 @@ class allocator_newdel;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*Typ*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
 
 ## <a name="remarks"></a>Hinweise
 
-Das [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST stdext::allocators::max_none), SYNC_DEFAULT, allocator_newdel);`
+Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST stdext::allocators::max_none), SYNC_DEFAULT, allocator_newdel);`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<allocators>](allocators-header.md)

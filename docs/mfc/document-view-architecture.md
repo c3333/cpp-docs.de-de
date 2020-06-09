@@ -1,5 +1,5 @@
 ---
-title: Dokument-/ Ansichtarchitektur
+title: Dokument-/Ansichtarchitektur
 ms.date: 11/19/2018
 helpviewer_keywords:
 - CView class [MFC], view architecture
@@ -12,69 +12,69 @@ helpviewer_keywords:
 - documents [MFC], MFC document/view model
 - document objects [MFC], document/view architecture
 ms.assetid: 6127768a-553f-462a-b01b-a5ee6068c81e
-ms.openlocfilehash: d1b1f80f44fdc66a3174ea75c15e139f98a4520b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a74aeba651d385cf3a5386e94ec20e4e56b7cd57
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389676"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624786"
 ---
 # <a name="documentview-architecture"></a>Dokument-/Ansichtsarchitektur
 
-Standardmäßig erstellt der MFC-Anwendung-Assistent ein Gerüst der Anwendung mit einer Dokumentklasse und eine View-Klasse. MFC trennt die datenverwaltung in diese beiden Klassen. Das Dokument speichert die Daten und Drucken der Daten und koordiniert das Aktualisieren von mehreren Ansichten der Daten. Die Ansicht werden die Daten angezeigt und verwaltet die Interaktion des Benutzers mit, einschließlich Auswahl und bearbeiten.
+Der MFC-Anwendungs-Assistent erstellt standardmäßig ein Anwendungs Skelett mit einer Dokument Klasse und einer Ansichts Klasse. MFC trennt die Datenverwaltung in diese beiden Klassen. Das Dokument speichert die Daten und verwaltet das Drucken der Daten und Koordinaten zum Aktualisieren mehrerer Sichten der Daten. In der Ansicht werden die Daten angezeigt und die Benutzerinteraktion mit dem Benutzer, einschließlich Auswahl und Bearbeitung, verwaltet.
 
-In diesem Modell wird ein MFC-Dokument-Objekt liest und schreibt Daten in den persistenten Speicher. Das Dokument kann auch eine Schnittstelle für die Daten bereitstellen, wo er sich befindet (z. B. in einer Datenbank). Ein separates Objekt verwaltet die Datenanzeige vom Rendern der Daten in einem Fenster zur Benutzerauswahl ein, und Bearbeiten von Daten. Die Ansicht Daten aus dem Dokument abgerufen und kommuniziert mit dem Dokument alle datenänderungen.
+In diesem Modell liest und schreibt ein MFC-Dokument Objektdaten in den persistenten Speicher. Das Dokument kann auch eine Schnittstelle zu den Daten bereitstellen, wo Sie sich befindet (z. b. in einer Datenbank). Ein separates Ansichts Objekt verwaltet die Datenanzeige, von der Darstellung der Daten in einem Fenster bis zur Benutzer Auswahl und Bearbeitung von Daten. In der Ansicht werden Anzeigedaten aus dem Dokument abgerufen, und es werden alle Datenänderungen an das Dokument übermittelt.
 
-Während Sie ganz einfach außer Kraft setzen oder ignorieren die Trennung von Dokument/Ansicht, stehen zwingendsten Gründe für die dieses Modell in den meisten Fällen führen vor. Eine der besten ist, Sie mehrere Ansichten des gleichen Dokuments, z. B. sowohl eine Tabelle und eine Diagrammsicht benötigen. Das Dokument/ansichtsmodel kann ein separates Objekt jeder Ansicht der Daten, während Code, die allgemeine Darstellung für alle Ansichten (z. B. eine berechnungs-Engine) im Dokument gespeichert werden können. Das Dokument übernommen, der Task alle Sichten aktualisiert, bei jeder Datenänderung.
+Obwohl Sie die Trennung von Dokumenten/Ansichten problemlos überschreiben oder ignorieren können, gibt es in den meisten Fällen überzeugende Gründe, dieses Modell zu befolgen. Eine der besten ist, wenn Sie mehrere Ansichten desselben Dokuments benötigen, z. b. eine Tabelle und eine Diagramm Ansicht. Mit dem Dokument-/ansichtenmodell kann ein separates Ansichts Objekt jede Ansicht der Daten darstellen, während sich der Code, der für alle Sichten (z. b. ein Berechnungsmodul) üblich ist, im Dokument befinden kann. Außerdem übernimmt das Dokument die Aufgabe, alle Sichten zu aktualisieren, wenn sich die Daten ändern.
 
-Der MFC Dokument-/Ansichtarchitektur erleichtert es, um mehrere Sichten, mehrere Dokumenttypen, Splitterfenster und andere wertvolle Benutzeroberflächen-Funktionen zu unterstützen.
+Die MFC-Dokument-/Ansichtarchitektur erleichtert die Unterstützung mehrerer Sichten, mehrerer Dokumenttypen, Splitter Fenster und anderer wertvoller Benutzeroberflächen Features.
 
-Die Teile von MFC-Framework sichtbarste sowohl für den Benutzer als auch die Programmierer sind das Dokument und Ansicht. Die meisten Schritte bei der Entwicklung einer Anwendung mit dem Framework wird in Ihrem Dokument und Anzeigen von Klassen zu schreiben. Diese Artikelreihe beschreibt:
+Die Teile des MFC-Frameworks, die sowohl für den Benutzer als auch für Sie, Programmierer, sichtbar sind, sind das Dokument und die Ansicht. Die meiste Arbeit bei der Entwicklung einer Anwendung mit dem Framework führt Sie in das Schreiben von Dokument-und Ansichts Klassen. In dieser Artikel Familie wird Folgendes beschrieben:
 
-- Im Sinne von Dokumenten und Ansichten und wie sie in das Framework interagieren.
+- Der Zweck von Dokumenten und Sichten und deren Interaktion im Framework.
 
-- Was Sie tun müssen, um diese zu implementieren.
+- Was Sie tun müssen, um Sie zu implementieren.
 
-Das Herzstück von Dokument/Ansicht stehen vier:
+Das Herzstück der Dokumente/Ansicht sind vier Schlüssel Klassen:
 
-Die [CDocument](../mfc/reference/cdocument-class.md) (oder [COleDocument](../mfc/reference/coledocument-class.md)) Klasse unterstützt Objekte, die zum Speichern oder Ihres Programms Daten steuern und stellt die Basisfunktionen für Programmierer definierte Document-Klassen bereit. Ein Dokument repräsentiert die Einheit von Daten, die der Benutzer normalerweise mit dem Befehl "Öffnen" im Menü Datei öffnet und speichert mit dem Befehl "Speichern" im Menü Datei.
+Die [CDocument](reference/cdocument-class.md) -Klasse (oder [COleDocument](reference/coledocument-class.md)) unterstützt Objekte, die zum Speichern oder Steuern der Programm Daten verwendet werden, und stellt die grundlegende Funktionalität für von einem Programmierer definierte Dokument Klassen bereit. Ein Dokument stellt die Einheit der Daten dar, die der Benutzer in der Regel mit dem Befehl Öffnen im Menü Datei öffnet, und speichert mit dem Befehl Speichern im Menü Datei.
 
-Die [CView](../mfc/reference/cview-class.md) (oder eines der vielen abgeleiteten Klassen) stellt die Basisfunktionen für Programmierer definierte Klassen bereit. Eine Sicht ist an ein Dokument angefügt und dient als Vermittler zwischen dem Dokument und der Benutzer: die Ansicht rendert ein Bild des Dokuments auf dem Bildschirm und Benutzereingaben als Vorgänge, bei dem Dokument interpretiert. Die Ansicht rendert auch das Bild zu drucken und Druckvorschau.
+Die [CView](reference/cview-class.md) (oder eine der vielen abgeleiteten Klassen) stellt die grundlegende Funktionalität für von Programmierern definierte Ansichts Klassen bereit. Eine Sicht wird an ein Dokument angefügt und fungiert als Vermittler zwischen dem Dokument und dem Benutzer: die Ansicht rendert ein Bild des Dokuments auf dem Bildschirm und interpretiert Benutzereingaben als Vorgänge für das Dokument. Die Ansicht rendert auch das Bild für Druck-und Druckvorschau.
 
-[CFrameWnd](../mfc/reference/cframewnd-class.md) (oder deren Varianten) unterstützt Objekte, die den Rahmen um eine oder mehrere Ansichten eines Dokuments enthält.
+[CFrameWnd](reference/cframewnd-class.md) (oder eine der zugehörigen Variationen) unterstützt Objekte, die den Frame um eine oder mehrere Ansichten eines Dokuments bereitstellen.
 
-[CDocTemplate](../mfc/reference/cdoctemplate-class.md) (oder [CSingleDocTemplate](../mfc/reference/csingledoctemplate-class.md) oder [CMultiDocTemplate](../mfc/reference/cmultidoctemplate-class.md)) unterstützt ein Objekt, das eine oder mehrere vorhandene Dokumente eines bestimmten Typs koordiniert und verwaltet, erstellen den richtigen Dokument anzeigen und Frame-Windows-Objekte für diesen Typ.
+[CDocTemplate](reference/cdoctemplate-class.md) (oder [CSingleDocTemplate](reference/csingledoctemplate-class.md) oder [CMultiDocTemplate](reference/cmultidoctemplate-class.md)) unterstützt ein Objekt, das ein oder mehrere vorhandene Dokumente eines bestimmten Typs koordiniert und das Erstellen der richtigen Dokument-, Ansichts-und Rahmen Fenster Objekte für diesen Typ verwaltet.
 
-Die folgende Abbildung zeigt die Beziehung zwischen einem Dokument und dessen Ansicht.
+Die folgende Abbildung zeigt die Beziehung zwischen einem Dokument und seiner Ansicht.
 
-![Die Ansicht ist Teil des Dokuments, das angezeigt wird,](../mfc/media/vc379n1.gif "Ansicht ist Teil des Dokuments, das angezeigt wird") <br/>
+![Die Ansicht ist Teil des angezeigten Dokuments](../mfc/media/vc379n1.gif "Die Ansicht ist Teil des angezeigten Dokuments") <br/>
 Dokument und Ansicht
 
-Die Implementierung von Dokument/Ansicht, in der Klassenbibliothek trennt die Daten selbst die Anzeige von Benutzervorgänge für die Daten. Alle Änderungen an den Daten werden über die Dokumentklasse verwaltet. Die Ansicht ruft diese Schnittstelle, um den Zugriff auf und die Daten aktualisieren.
+Die Dokument-/Ansicht-Implementierung in der Klassenbibliothek trennt die Daten selbst von der Anzeige und von Benutzer Vorgängen für die Daten. Alle Änderungen an den Daten werden über die Document-Klasse verwaltet. Die Ansicht ruft diese Schnittstelle auf, um auf die Daten zuzugreifen und diese zu aktualisieren.
 
-Dokumente, die zugehörigen Ansichten und die Frame-Fenster, die frame-Ansichten werden von einer Dokumentvorlage erstellt. Die Dokumentvorlage dient zum Erstellen und verwalten alle Dokumente eines Dokumenttyps.
+Dokumente, ihre zugeordneten Sichten und die Rahmen Fenster, in denen die Ansichten Frame laufen, werden von einer Dokument Vorlage erstellt. Die Dokument Vorlage ist für das Erstellen und Verwalten aller Dokumente eines Dokument Typs zuständig.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Ein Portrait der Dokument-/Ansichtarchitektur](../mfc/a-portrait-of-the-document-view-architecture.md)
+- [Ein Hochformat der Dokument-/Ansichtarchitektur](a-portrait-of-the-document-view-architecture.md)
 
-- [Vorteile der Dokument-/Ansichtarchitektur](../mfc/advantages-of-the-document-view-architecture.md)
+- [Vorteile der Dokument-/Ansichtarchitektur](advantages-of-the-document-view-architecture.md)
 
-- [Dokument und Ansicht-Klassen, die vom Anwendungs-Assistenten erstellt](../mfc/document-and-view-classes-created-by-the-mfc-application-wizard.md)
+- [Vom Anwendungs-Assistenten erstellte Dokument-und Ansichts Klassen](document-and-view-classes-created-by-the-mfc-application-wizard.md)
 
-- [Alternativen zur Dokument-/Ansichtarchitektur](../mfc/alternatives-to-the-document-view-architecture.md)
+- [Alternativen zur Dokument-/Ansichtarchitektur](alternatives-to-the-document-view-architecture.md)
 
-- [Hinzufügen mehrerer Ansichten zu einem Dokument](../mfc/adding-multiple-views-to-a-single-document.md)
+- [Hinzufügen mehrerer Ansichten zu einem Dokument](adding-multiple-views-to-a-single-document.md)
 
-- [Verwenden von Dokumenten](../mfc/using-documents.md)
+- [Verwenden von Dokumenten](using-documents.md)
 
-- [Verwenden von Ansichten](../mfc/using-views.md)
+- [Verwenden von Ansichten](using-views.md)
 
-- [Mehrere Dokumenttypen, Ansichten und Rahmenfenster](../mfc/multiple-document-types-views-and-frame-windows.md)
+- [Mehrere Dokumenttypen, Ansichten und Rahmenfenster](multiple-document-types-views-and-frame-windows.md)
 
-- [Initialisieren und Bereinigen von Dokumenten und Ansichten](../mfc/initializing-and-cleaning-up-documents-and-views.md)
+- [Initialisieren und Bereinigen von Dokumenten und Sichten](initializing-and-cleaning-up-documents-and-views.md)
 
-- [Initialisieren Sie Ihre eigenen Erweiterungen Dokument und Ansicht-Klassen](../mfc/creating-new-documents-windows-and-views.md)
+- [Initialisieren Sie Ihre eigenen Ergänzungen für die Dokument & Ansichts Klassen](creating-new-documents-windows-and-views.md)
 
 - [Verwenden von Datenbankklassen mit Dokumenten und Ansichten](../data/mfc-using-database-classes-with-documents-and-views.md)
 
@@ -84,9 +84,9 @@ Dokumente, die zugehörigen Ansichten und die Frame-Fenster, die frame-Ansichten
 
 ## <a name="see-also"></a>Siehe auch
 
-[Elemente der Benutzeroberfläche](../mfc/user-interface-elements-mfc.md)<br/>
-[Windows](../mfc/windows.md)<br/>
-[Rahmenfenster](../mfc/frame-windows.md)<br/>
-[Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](../mfc/document-templates-and-the-document-view-creation-process.md)<br/>
-[Erstellen von Dokument/Ansicht](../mfc/document-view-creation.md)<br/>
-[Erstellen neuer Dokumente, Fenster und Ansichten](../mfc/creating-new-documents-windows-and-views.md)
+[Elemente der Benutzeroberfläche](user-interface-elements-mfc.md)<br/>
+[Windows](windows.md)<br/>
+[Rahmenfenster](frame-windows.md)<br/>
+[Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](document-templates-and-the-document-view-creation-process.md)<br/>
+[Erstellen von Dokument/Ansicht](document-view-creation.md)<br/>
+[Erstellen neuer Dokumente, Fenster und Ansichten](creating-new-documents-windows-and-views.md)

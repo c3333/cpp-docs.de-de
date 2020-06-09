@@ -15,12 +15,12 @@ helpviewer_keywords:
 - dialog boxes [MFC], retrieving data
 - retrieving dialog box data
 ms.assetid: 7d373554-7330-43ae-abf1-4bb14e437b4a
-ms.openlocfilehash: 651ec5779e3fe1190ff1a3f0f807fb0187e348f8
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.openlocfilehash: 1aaeea11dd7916332ab0c281561550039ee03498
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616774"
 ---
 # <a name="dialog-data-exchange-and-validation"></a>Dialogdatenaustausch und -validierung
 
@@ -28,11 +28,11 @@ Dialog Datenaustausch (DDX) ist eine einfache Möglichkeit, die Steuerelemente i
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Dialog Datenaustausch](../mfc/dialog-data-exchange.md)
+- [Dialog Datenaustausch](dialog-data-exchange.md)
 
-- [Überprüfung von Dialog Daten](../mfc/dialog-data-validation.md)
+- [Überprüfung von Dialog Daten](dialog-data-validation.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dialogfelder](../mfc/dialog-boxes.md)<br/>
-[Arbeiten mit Dialog Feldern in MFC](../mfc/life-cycle-of-a-dialog-box.md)
+[Dialog Felder](dialog-boxes.md)<br/>
+[Arbeiten mit Dialogfeldern in MFC](life-cycle-of-a-dialog-box.md)

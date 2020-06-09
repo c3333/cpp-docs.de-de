@@ -9,161 +9,161 @@ helpviewer_keywords:
 - Internet applications [MFC], ActiveX controls
 - networks [MFC], downloading with ActiveX controls
 ms.assetid: 7ab943c8-2022-41df-9065-d629b616eeec
-ms.openlocfilehash: d268da8bef4facfb9259e6ce43648c8713464ec9
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
+ms.openlocfilehash: f06a6f6f71e922163fd95c59836c50b88b05ed3a
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65448189"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616478"
 ---
 # <a name="activex-controls-on-the-internet"></a>ActiveX-Steuerelemente für das Internet
 
-ActiveX-Steuerelemente sind die aktualisierte Version der Spezifikation OLE-Steuerelement.
+ActiveX-Steuerelemente sind die aktualisierte Version der OLE-Steuerelement Spezifikation.
 
 >[!IMPORTANT]
-> ActiveX ist eine veraltete Technologie, die nicht für Neuentwicklungen verwendet werden soll. Weitere Informationen finden Sie unter [ActiveX-Steuerelemente](activex-controls.md).
+> ActiveX ist eine ältere Technologie, die nicht für die neue Entwicklung verwendet werden sollte. Weitere Informationen finden Sie unter [ActiveX](activex-controls.md)-Steuerelemente.
 
-Steuerelemente sind eine primäre Architektur für die Entwicklung von programmierbaren Softwarekomponenten, die in einer Vielzahl von verschiedenen Containern, einschließlich COM-fähigen Webbrowser, über das Internet verwendet werden können. Alle ActiveX-Steuerelement kann ein Internet Steuerelement und kann der Funktionsumfang eines aktiven Dokuments oder Teil einer Webseite. Steuerelemente auf einer Webseite können mithilfe von Skripts miteinander kommunizieren.
+Steuerelemente sind eine primäre Architektur zum entwickeln programmierbarer Softwarekomponenten, die in einer Vielzahl verschiedener Container verwendet werden können, einschließlich com-fähiger Webbrowser im Internet. Jedes ActiveX-Steuerelement kann ein Internet Steuerelement sein und seine Funktionalität einem aktiven Dokument hinzufügen oder Teil einer Webseite sein. Steuerelemente auf einer Webseite können mithilfe der Skripterstellung miteinander kommunizieren.
 
-ActiveX-Steuerelemente sind nicht auf das Internet beschränkt. Ein ActiveX-Steuerelement kann auch in jedem Container verwendet werden, solange das Steuerelement die Schnittstellen erforderlich, die für diesen Container unterstützt.
+ActiveX-Steuerelemente sind nicht auf das Internet beschränkt. Ein ActiveX-Steuerelement kann auch in einem beliebigen Container verwendet werden, solange das Steuerelement die für diesen Container erforderlichen Schnittstellen unterstützt.
 
-**ActiveX-Steuerelemente verwenden mehrere Vorteile, u.a.:**
+**ActiveX-Steuerelemente haben mehrere Vorteile, einschließlich:**
 
-- Weniger erforderlichen Schnittstellen als vorherige OLE-Steuerelemente.
+- Weniger erforderliche Schnittstellen als vorherige OLE-Steuerelemente.
 
-- Die Möglichkeit, die nicht fensterlos sein und immer direkt aktiv.
+- Die Möglichkeit, fensterlose und immer direkte aktive zu sein.
 
-**Damit ein ActiveX-Steuerelement werden zu können, müssen ein Steuerelement:**
+**Um ein ActiveX-Steuerelement zu sein, muss ein Steuerelement folgende Aktionen ausführen:**
 
-- Unterstützung der `IUnknown` Schnittstelle.
+- Unterstützung der- `IUnknown` Schnittstelle.
 
-- Ein COM-Objekt sein.
+- Ist ein COM-Objekt.
 
-- Exportieren Sie **DLLRegisterServer** und **DLLUnRegisterServer**.
+- Exportieren Sie **DllRegisterServer** und **DllUnregisterServer**.
 
-- Unterstützen Sie zusätzliche Schnittstellen, wie für die Funktionalität erforderlich.
+- Unterstützen Sie zusätzliche Schnittstellen nach Bedarf für die Funktionalität.
 
-## <a name="making-your-existing-controls-internet-friendly"></a>Wie werden vorhandene Steuerelemente für das Internet geeignet
+## <a name="making-your-existing-controls-internet-friendly"></a>Die vorhandenen Steuerelemente Internet freundlich gestalten
 
-Entwerfen ein Steuerelement, das in einer Internet-Umgebung gut funktioniert, muss berücksichtigt werden den relativ niedrigen Übertragungsraten im Internet. Sie können Ihre vorhandenen Steuerelemente verwenden. Es gibt jedoch Maßnahmen, die Größe Ihres Codes zu verkleinern und Ihre Eigenschaften asynchron herunterladen sollten.
+Wenn Sie ein Steuerelement entwerfen, das in einer Internet Umgebung gut funktioniert, müssen Sie die relativ geringen Übertragungsraten im Internet berücksichtigen. Sie können vorhandene Steuerelemente verwenden. Es gibt jedoch Schritte, die Sie durchführen sollten, um die Größe Ihres Codes zu verkleinern und die Steuerelement Eigenschaften asynchron herunterzuladen.
 
-Führen Sie zur Verbesserung der Leistung der Steuerelemente diese Tipps zur Effizienz Aspekte aus:
+Um die Leistung Ihrer Steuerelemente zu verbessern, befolgen Sie die folgenden Tipps zu effizienzüberlegungen:
 
-- Implementieren Sie in diesem Artikel beschriebenen Techniken [ActiveX-Steuerelemente: Optimierung](../mfc/mfc-activex-controls-optimization.md).
+- Implementieren Sie die im Artikel ActiveX-Steuer [Elemente: Optimierung](mfc-activex-controls-optimization.md)beschriebenen Techniken.
 
 - Beachten Sie, wie ein Steuerelement instanziiert wird.
 
-- Asynchron sein; nicht von anderen Programmen zu halten.
+- Asynchron sein; halten Sie keine anderen Programme an.
 
-- Herunterladen von Daten in kleine Blöcke.
+- Laden Sie Daten in kleinen Blöcken herunter.
 
-   Beim Herunterladen von große Datenströme, z. B. Bitmaps oder Videodaten Zugriff auf die Daten asynchron in Zusammenarbeit mit dem Container eines Steuerelements. Ruft die Daten auf inkrementell oder progressive Weise arbeiten gemeinsam mit anderen Steuerelementen, die auch die Daten abgerufen werden können. Code kann auch asynchron heruntergeladen werden.
+   Wenn Sie große Datenströme wie Bitmaps oder Videodaten herunterladen, greifen Sie in Zusammenarbeit mit dem Container asynchron auf die Daten eines Steuer Elements zu. Rufen Sie die Daten inkrementell oder progressiv ab, und arbeiten Sie zusammen mit anderen Steuerelementen, die auch Daten abrufen können. Code kann auch asynchron heruntergeladen werden.
 
-- Herunterladen von Code und die Eigenschaften im Hintergrund.
+- Herunterladen von Code und Eigenschaften im Hintergrund.
 
-- Benutzeroberfläche aktiv ist, so schnell wie möglich.
+- Die Benutzeroberfläche wird so schnell wie möglich aktiviert.
 
-- Berücksichtigen Sie wie persistente Daten gespeichert werden, sowohl Eigenschaften als auch umfangreiche Daten-BLOBs (z. B. ein Bild oder Video Bitmapdaten).
+- Beachten Sie, wie persistente Daten gespeichert werden, sowohl Eigenschaften als auch große Daten-BLOB (z. b. ein Bitmap-Bild oder Videodaten).
 
-   Steuerelemente mit persistenten Daten, z. B. große Bitmaps oder AVI-Dateien an erfordern sorgfältig auf die Download-Methode. Ein Dokument oder eine Seite kann so bald wie möglich sichtbar, und ermöglicht dem Benutzer, die mit der Seite interagieren, während Steuerelemente die Daten im Hintergrund abgerufen.
+   Steuerelemente mit erheblichen Mengen von persistenten Daten, wie z. b. große Bitmaps oder AVI-Dateien, erfordern eine sorgfältige Aufmerksamkeit beim Herunterladen der Methode. Ein Dokument oder eine Seite kann so bald wie möglich sichtbar werden, und der Benutzer kann mit der Seite interagieren, während Steuerelemente Daten im Hintergrund abrufen.
 
-- Schreiben Sie effizientere Routinen, mit denen Codegröße und zur Laufzeit nach unten.
+- Schreiben Sie effiziente Routinen, um die Codegröße und die Lauf Zeit Zeit zu unterhalten.
 
-   Kleine Schaltfläche und Label-Steuerelemente, mit nur wenigen Bytes des persistenten Daten, eignen sich für die Verwendung in der Internet-Umgebung und die Arbeit auch im Browser.
+   Kleine Schaltflächen-und Bezeichnungs Steuerelemente, die nur wenige Bytes beständiger Daten verwenden, sind für die Verwendung in der Internet Umgebung geeignet und funktionieren gut in Browsern.
 
-- Beachten Sie, dass der Status in den Container übermittelt werden.
+- Der Fortschritt wird an den Container übermittelt.
 
-   Benachrichtigt den Container des Status des asynchronen Downloads, einschließlich der Benutzer für die Interaktion mit einer Seite beginnen kann, und der Download abgeschlossen ist. Der Container kann Fortschritt anzeigen (z. B. der Fortschritt in Prozent) an den Benutzer.
+   Benachrichtigen Sie den Status des Containers im asynchronen Download, z. b., wenn der Benutzer mit der Interaktion mit einer Seite beginnen kann und wenn der Download abgeschlossen ist. Der Container kann dem Benutzer den Fortschritt (z. b. "Prozent abgeschlossen") anzeigen.
 
-- Beachten Sie, wie die Steuerelemente auf dem Clientcomputer registriert sind.
+- Beachten Sie, wie Steuerelemente auf dem Client Computer registriert werden.
 
-## <a name="creating-a-new-activex-control"></a>Erstellen ein neues ActiveX-Steuerelement
+## <a name="creating-a-new-activex-control"></a>Erstellen eines neuen ActiveX-Steuer Elements
 
-Wenn Sie ein neues Steuerelement mit dem Assistenten zum Erstellen, können Sie auswählen, um Unterstützung für asynchrone Moniker sowie weitere Optimierungen zu aktivieren. Um Support, um die Eigenschaften von Steuerelementen asynchron herunterladen hinzuzufügen, gehen Sie folgendermaßen vor:
+Beim Erstellen eines neuen Steuer Elements mithilfe des Anwendungs-Assistenten können Sie die Unterstützung für asynchrone Moniker und andere Optimierungen aktivieren. Gehen Sie folgendermaßen vor, um die Unterstützung zum asynchronen Herunterladen von Steuerungseigenschaften hinzuzufügen:
 
-#### <a name="to-create-your-project-using-the-mfc-activex-control-wizard"></a>Zum Erstellen Ihres Projekts mithilfe von MFC-ActiveX-Steuerelement-Assistenten
+#### <a name="to-create-your-project-using-the-mfc-activex-control-wizard"></a>So erstellen Sie ein Projekt mit dem MFC-ActiveX-Steuerelement-Assistenten
 
-1. Klicken Sie auf **neu** auf die **Datei** Menü.
+1. Klicken Sie im Menü **Datei** auf **neu** .
 
-1. Wählen Sie **MFC-ActiveX-Steuerelement-Assistent** von Visual Studio C++ projiziert, und benennen Sie Ihr Projekt.
+1. Wählen Sie in den Visual Studio C++-Projekten den **MFC-ActiveX-Steuer** Element-Assistenten aus, und nennen Sie
 
-1. Auf der **Steuerelementeinstellungen** Seite **lädt Eigenschaften asynchron**. Nach Auswahl dieser Option richtet die Status "bereit"-Eigenschaft und den Status "bereit" geändert-Ereignis für Sie.
+1. Wählen Sie auf der Seite **Steuerungseinstellungen** die Option **Eigenschaften asynchron**laden aus. Wenn Sie diese Option auswählen, werden die Eigenschaft für den Bereitschafts Zustand und das Ereignis für den Status "bereit" angezeigt.
 
-   Sie können auch andere Optimierungen auswählen, wie z. B. **Fensterloser Aktivierung**, das in erläutert wird [ActiveX-Steuerelemente: Optimierung](../mfc/mfc-activex-controls-optimization.md).
+   Sie können auch andere Optimierungen auswählen, z. b. die **Fensterlose Aktivierung**, die unter ActiveX-Steuer [Elemente: Optimierung](mfc-activex-controls-optimization.md)beschrieben wird.
 
-1. Wählen Sie **Fertig stellen** zum Erstellen des Projekts.
+1. Klicken Sie auf **Fertig stellen**, um das Projekt zu erstellen.
 
-#### <a name="to-create-a-class-derived-from-cdatapathproperty"></a>Zum Erstellen einer Klasse abgeleitet CDataPathProperty
+#### <a name="to-create-a-class-derived-from-cdatapathproperty"></a>So erstellen Sie eine Klasse, die von CDataPathProperty abgeleitet ist
 
-1. Erstellen Sie eine Klasse, die von abgeleiteten `CDataPathProperty`.
+1. Erstellen Sie eine von abgeleitete Klasse `CDataPathProperty` .
 
-1. Fügen Sie in jeder der Quelldateien, die die Header-Datei für das Steuerelement enthält die Headerdatei für diese Klasse vor.
+1. Fügen Sie in jeder der Quelldateien, die die Header Datei für das Steuerelement enthalten, die Header Datei für diese Klasse hinzu.
 
-1. In dieser Klasse außer Kraft setzen `OnDataAvailable`. Diese Funktion wird aufgerufen, wenn die Daten für die Anzeige verfügbar sind. Wenn Daten verfügbar sind, können Sie es beliebig verarbeiten gewählten, z. B. durch progressiv rendern.
+1. Überschreiben Sie in dieser Klasse `OnDataAvailable` . Diese Funktion wird immer dann aufgerufen, wenn Daten für die Anzeige verfügbar sind. Wenn Daten verfügbar werden, können Sie Sie beliebig behandeln, z. b. durch progressiv Rendering.
 
-   Im folgenden Codeauszug wird ein einfaches Beispiel für schrittweise Anzeige von Daten in einem Bearbeitungssteuerelement. Beachten Sie die Verwendung des Flags **BSCF_FIRSTDATANOTIFICATION** , deaktivieren Sie das Steuerelement zum Bearbeiten.
+   Der folgende Code Ausschnitt ist ein einfaches Beispiel für die schrittweise Anzeige von Daten in einem Bearbeitungs Steuerelement. Beachten Sie die Verwendung der Flag- **BSCF_FIRSTDATANOTIFICATION** , um das Bearbeitungs Steuerelement zu löschen.
 
-   [!code-cpp[NVC_MFCActiveXControl#1](../mfc/codesnippet/cpp/activex-controls-on-the-internet_1.cpp)]
+   [!code-cpp[NVC_MFCActiveXControl#1](codesnippet/cpp/activex-controls-on-the-internet_1.cpp)]
 
-   Beachten Sie, dass Sie AFXCMN. H, um Sie verwenden die `CListCtrl` Klasse.
+   Beachten Sie, dass Sie AFXCMN einschließen müssen. H, um die-Klasse zu verwenden `CListCtrl` .
 
-1. Wenn das Steuerelement insgesamt ist Zustandsänderungen (z. B. von laden zu initialisiert oder interaktive Benutzer), Aufruf `COleControl::InternalSetReadyState`. Wenn das Steuerelement nur eine Path-Eigenschaft verfügt, können Sie Code hinzufügen, auf **BSCF_LASTDATANOTIFICATION** um dem Container zu benachrichtigen, dass der Download abgeschlossen ist. Zum Beispiel:
+1. Wenn sich der Gesamtstatus Ihres Steuer Elements ändert (z. b. vom Laden in initialisiert oder User Interactive), wird aufgerufen `COleControl::InternalSetReadyState` . Wenn das Steuerelement nur über eine Datenpfad Eigenschaft verfügt, können Sie Code auf **BSCF_LASTDATANOTIFICATION** hinzufügen, um den Container zu benachrichtigen, dass der Download beendet ist. Beispiel:
 
-   [!code-cpp[NVC_MFCActiveXControl#2](../mfc/codesnippet/cpp/activex-controls-on-the-internet_2.cpp)]
+   [!code-cpp[NVC_MFCActiveXControl#2](codesnippet/cpp/activex-controls-on-the-internet_2.cpp)]
 
-1. Überschreiben Sie `OnProgress`. In `OnProgress`, übergeben Sie eine Zahl, die den maximalen Bereich und eine Anzahl zeigt, wie weit in des aktuellen Downloads ist. Sie können diese Zahlen verwenden, um den Status wie z. B. den Prozentsatz der Fertigstellung an den Benutzer anzuzeigen.
+1. Überschreiben Sie `OnProgress`. In erhalten `OnProgress` Sie eine Zahl, die den maximalen Bereich anzeigt, und eine Zahl, die anzeigt, wie weit das aktuelle herunterladen ist. Mit diesen Zahlen können Sie dem Benutzer den Status, z. b. den Prozentsatz, anzeigen.
 
-Die nächste Prozedur fügt eine Eigenschaft für das Steuerelement gerade abgeleitete Klasse zu verwenden.
+Die nächste Prozedur fügt eine Eigenschaft zum-Steuerelement hinzu, um die soeben abgeleitete Klasse zu verwenden.
 
-#### <a name="to-add-a-property"></a>Zum Hinzufügen einer Eigenschaft
+#### <a name="to-add-a-property"></a>So fügen Sie eine Eigenschaft hinzu
 
-1. In **Klassenansicht**mit der rechten Maustaste auf die sich unter dem Bibliotheksknoten-Schnittstelle, und wählen Sie **hinzufügen**, klicken Sie dann **Eigenschaft hinzufügen**. Dies startet den **Assistent zum Hinzufügen von Eigenschaften**.
+1. Klicken Sie in **Klassenansicht**mit der rechten Maustaste auf die Schnittstelle unterhalb des Knotens Bibliothek, und wählen Sie **Hinzufügen**und dann **Eigenschaft hinzufügen** Dadurch wird der **Assistent zum Hinzufügen von Eigenschaften**gestartet.
 
-1. In der **Assistent zum Hinzufügen von Eigenschaften**, wählen die **Set/Get-Methoden** Optionsfeld, geben die **Eigenschaftennamen**, z. B. EditControlText, und wählen BSTR als die **Eigenschaftentyp**.
+1. Aktivieren Sie im **Assistenten zum Hinzufügen von Eigenschaften**das Optionsfeld **Set/Get Methods** , geben Sie den **Eigenschaftsnamen**(z. b. editcontroltext) ein, und wählen Sie BSTR als **Eigenschaftentyp**aus.
 
 1. Klicken Sie auf **Fertig stellen**.
 
-1. Deklarieren Sie eine Membervariable des Ihre `CDataPathProperty`-abgeleiteten Klasse in der ActiveX-Steuerelementklasse.
+1. Deklarieren Sie eine Member-Variable der von `CDataPathProperty` abgeleiteten Klasse in ihrer ActiveX-Steuerelement Klasse.
 
-   [!code-cpp[NVC_MFCActiveXControl#3](../mfc/codesnippet/cpp/activex-controls-on-the-internet_3.h)]
+   [!code-cpp[NVC_MFCActiveXControl#3](codesnippet/cpp/activex-controls-on-the-internet_3.h)]
 
-1. Implementieren Sie die `Get/Set`-Methoden. Für `Get`, die Zeichenfolge zurück. Für `Set`, laden Sie die Eigenschaft und der Aufruf `SetModifiedFlag`.
+1. Implementieren Sie die `Get/Set`-Methoden. Geben Sie für `Get` die Zeichenfolge zurück. Laden Sie für `Set` die-Eigenschaft, und fordern Sie auf `SetModifiedFlag` .
 
-   [!code-cpp[NVC_MFCActiveXControl#4](../mfc/codesnippet/cpp/activex-controls-on-the-internet_4.cpp)]
+   [!code-cpp[NVC_MFCActiveXControl#4](codesnippet/cpp/activex-controls-on-the-internet_4.cpp)]
 
-1. In [DoPropExchange](../mfc/reference/colecontrol-class.md#dopropexchange), fügen Sie die folgende Zeile hinzu:
+1. Fügen Sie in [DoPropExchange](reference/colecontrol-class.md#dopropexchange)die folgende Zeile hinzu:
 
-   [!code-cpp[NVC_MFCActiveXControl#5](../mfc/codesnippet/cpp/activex-controls-on-the-internet_5.cpp)]
+   [!code-cpp[NVC_MFCActiveXControl#5](codesnippet/cpp/activex-controls-on-the-internet_5.cpp)]
 
-1. Außer Kraft setzen [Sie ResetData](../mfc/reference/cdatapathproperty-class.md#resetdata) benachrichtigen Sie die Eigenschaft, die das Steuerelement zurücksetzen, indem Sie diese Zeile:
+1. Überschreiben Sie [ResetData](reference/cdatapathproperty-class.md#resetdata) , um die Eigenschaft zu benachrichtigen, indem Sie die folgende Zeile hinzufügen:
 
-   [!code-cpp[NVC_MFCActiveXControl#6](../mfc/codesnippet/cpp/activex-controls-on-the-internet_6.cpp)]
+   [!code-cpp[NVC_MFCActiveXControl#6](codesnippet/cpp/activex-controls-on-the-internet_6.cpp)]
 
-## <a name="deciding-whether-to-derive-from-cdatapathproperty-or-ccacheddatapathproperty"></a>Entscheiden, ob Sie von CDataPathProperty oder CCachedDataPathProperty abgeleitet werden
+## <a name="deciding-whether-to-derive-from-cdatapathproperty-or-ccacheddatapathproperty"></a>Entscheiden, ob von CDataPathProperty oder CCachedDataPathProperty abgeleitet werden soll
 
-Im vorherige Beispiel beschreibt die Schritte zum Ableiten des Steuerelements-Eigenschaft von `CDataPathProperty`. Dies ist eine gute Wahl, wenn Sie Daten in Echtzeit heruntergeladen haben, sich häufig ändert, und für die Sie müssen nicht alle Daten, aber nur der aktuelle Wert beibehalten. Ein Beispiel ist ein Börsenticker-Steuerelement.
+Im vorherigen Beispiel werden die Schritte zum Ableiten der-Eigenschaft des Steuer Elements von beschrieben `CDataPathProperty` . Dies ist eine gute Wahl, wenn Sie Echtzeitdaten herunterladen, die sich häufig ändern, und für die Sie nicht alle Daten beibehalten müssen, sondern nur den aktuellen Wert. Ein Beispiel hierfür ist ein Stock Ticker-Steuerelement.
 
-Sie können auch Ableiten aus `CCachedDataPathProperty`. In diesem Fall werden die heruntergeladenen Daten in einer Arbeitsspeicherdatei zwischengespeichert. Dies ist eine gute Wahl, wenn Sie alle heruntergeladene Daten beibehalten möchten, z. B. ein Steuerelement, das eine Bitmap progressiv rendert. In diesem Fall verfügt die Klasse eine Membervariable, die mit den Daten:
+Sie können auch von ableiten `CCachedDataPathProperty` . In diesem Fall werden die heruntergeladenen Daten in einer Speicherdatei zwischengespeichert. Dies ist eine gute Wahl, wenn Sie alle heruntergeladenen Daten beibehalten müssen, z. –. ein Steuerelement, das eine Bitmap progressiv rendert. In diesem Fall verfügt die-Klasse über eine Member-Variable, die Ihre Daten enthält:
 
 `CMemFile m_Cache;`
 
-In der ActiveX-Steuerelementklasse, können Sie diese Datei mit zugeordnetem Speicher in `OnDraw` zum Anzeigen der Daten. In das ActiveX-Steuerelement `CCachedDataPathProperty`-abgeleiteten Klasse außer Kraft setzen die Memberfunktion `OnDataAvailable` und das Steuerelement, nach dem Aufruf der basisklassenimplementierung ungültig.
+In ihrer ActiveX-Steuerelement Klasse können Sie diese Speicher Abbild Datei in verwenden, `OnDraw` um die Daten anzuzeigen. Überschreiben Sie in der von einem ActiveX-Steuerelement `CCachedDataPathProperty` abgeleiteten Klasse die Member-Funktion, und machen Sie `OnDataAvailable` das Steuerelement ungültig, nachdem Sie die Basisklassen Implementierung aufgerufen
 
-[!code-cpp[NVC_MFCActiveXControl#7](../mfc/codesnippet/cpp/activex-controls-on-the-internet_7.cpp)]
+[!code-cpp[NVC_MFCActiveXControl#7](codesnippet/cpp/activex-controls-on-the-internet_7.cpp)]
 
-## <a name="downloading-data-asynchronously-using-activex-controls"></a>Herunterladen von Daten, die asynchron mit ActiveX-Steuerelemente
+## <a name="downloading-data-asynchronously-using-activex-controls"></a>Asynchrones Laden von Daten mit ActiveX-Steuerelementen
 
-Herunterladen von Daten über ein Netzwerk sollten asynchron durchgeführt werden. Der Vorteil dieser Vorgehensweise ist, also, sofern eine große Datenmenge übertragen wird, oder wenn die Verbindung langsam ist, der Downloadprozess nicht andere Prozesse auf dem Client blockiert.
+Das Herunterladen von Daten über ein Netzwerk muss asynchron erfolgen. Der Vorteil besteht darin, dass bei einer großen Datenmenge oder bei einer langsamen Verbindung vom Downloadprozess keine anderen Prozesse auf dem Client blockiert werden.
 
-Asynchrone Moniker bieten eine Möglichkeit zum Herunterladen von Daten asynchron über ein Netzwerk. Ein Lesevorgang für eine asynchrone Moniker gibt sofort zurück, selbst wenn der Vorgang nicht abgeschlossen wurde.
+Asynchrone Moniker bieten eine Möglichkeit zum asynchronen Herunterladen von Daten über ein Netzwerk. Ein Lesevorgang für einen asynchronen Moniker wird sofort zurückgegeben, auch wenn der Vorgang nicht abgeschlossen wurde.
 
-Beispielsweise nur 10 Bytes verfügbar sind, und Lesen für eine 1-KB-Datei asynchron aufgerufen wird, Lesen nicht blockiert, jedoch mit den derzeit verfügbaren 10 Bytes zurückgibt.
+Wenn z. b. nur 10 Bytes verfügbar sind und lesen in einer 1K-Datei asynchron aufgerufen wird, wird lesen nicht blockiert, sondern mit den derzeit verfügbaren 10 Bytes zurückgegeben.
 
-Implementieren Sie [asynchronen Monikern](../mfc/asynchronous-monikers-on-the-internet.md) mithilfe der `CAsyncMonikerFile` Klasse. ActiveX-Steuerelemente können jedoch die `CDataPathProperty` -Klasse, die abgeleitet wird `CAsyncMonikerFile`, damit die asynchronen Eigenschaften implementieren.
+[Asynchrone Moniker](asynchronous-monikers-on-the-internet.md) werden mithilfe der- `CAsyncMonikerFile` Klasse implementiert. Allerdings können ActiveX-Steuerelemente die- `CDataPathProperty` Klasse verwenden, die von abgeleitet ist `CAsyncMonikerFile` , um die Implementierung von asynchronen Steuerelement Eigenschaften zu unterstützen.
 
-## <a name="displaying-a-control-on-a-web-page"></a>Anzeigen eines Steuerelements auf einer Webseite
+## <a name="displaying-a-control-on-a-web-page"></a>Anzeigen eines Steuer Elements auf einer Webseite
 
-Hier ist ein Beispiel für ein Object-Tag und die Attribute für das Einfügen eines Steuerelements auf einer Webseite ein.
+Im folgenden finden Sie ein Beispiel für ein Objekttag und Attribute für das Einfügen eines Steuer Elements auf einer Webseite.
 
 ```xml
 <OBJECT
@@ -181,17 +181,17 @@ Hier ist ein Beispiel für ein Object-Tag und die Attribute für das Einfügen e
 </OBJECT>
 ```
 
-## <a name="updating-an-existing-ole-control-to-use-new-activex-control-features"></a>Aktualisieren eines bestehenden OLE-Steuerelements zur Verwendung von neuen Funktionen von ActiveX-Steuerelement
+## <a name="updating-an-existing-ole-control-to-use-new-activex-control-features"></a>Aktualisieren eines vorhandenen OLE-Steuer Elements zur Verwendung der neuen ActiveX-Steuerelement Features
 
-Wenn das OLE-Steuerelement mit einer Version von Visual C++ vor 4.2 erstellt wurde, stehen die Schritte, die Sie ergreifen können, die die Leistung verbessern und Erweitern der Funktionalität. Eine ausführliche Erläuterung dieser Änderungen, finden Sie unter [ActiveX-Steuerelemente: Optimierung](../mfc/mfc-activex-controls-optimization.md).
+Wenn Ihr OLE-Steuerelement mit einer Version von Visual C++ vor 4,2 erstellt wurde, können Sie Maßnahmen ergreifen, um die Leistung zu verbessern und die Funktionalität zu verbessern. Eine ausführliche Erläuterung dieser Änderungen finden Sie unter ActiveX-Steuer [Elemente: Optimierung](mfc-activex-controls-optimization.md).
 
-Wenn Sie Unterstützung für asynchrone Eigenschaften auf ein vorhandenes Steuerelement hinzufügen, müssen Sie die Status "bereit" Eigenschaft hinzufügen und die `ReadyStateChange` Ereignis selbst. Fügen Sie im Konstruktor für das Steuerelement Folgendes hinzu:
+Wenn Sie einem vorhandenen Steuerelement Unterstützung für asynchrone Eigenschaften hinzufügen, müssen Sie die Eigenschaft "Ready State" und das `ReadyStateChange` Ereignis selbst hinzufügen. Fügen Sie im Konstruktor für das Steuerelement Folgendes hinzu:
 
-[!code-cpp[NVC_MFCActiveXControl#8](../mfc/codesnippet/cpp/activex-controls-on-the-internet_8.cpp)]
+[!code-cpp[NVC_MFCActiveXControl#8](codesnippet/cpp/activex-controls-on-the-internet_8.cpp)]
 
-Aktualisieren Sie den Status "bereit" während des Downloads des Codes durch den Aufruf [COleControl::InternalSetReadyState](../mfc/reference/colecontrol-class.md#internalsetreadystate). Sie rufen zentral `InternalSetReadyState` stammt aus der `OnProgress` Überschreiben von `CDataPathProperty`-abgeleitete Klasse.
+Wenn Sie den Code herunterladen, aktualisieren Sie den Status "bereit", indem Sie [COleControl:: InternalSetReadyState](reference/colecontrol-class.md#internalsetreadystate)aufrufen. Ein Ort, den Sie anrufen können, `InternalSetReadyState` ist die `OnProgress` außer Kraft setzung der von `CDataPathProperty` abgeleiteten Klasse.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Internetprogrammierungsaufgaben](../mfc/mfc-internet-programming-tasks.md)<br/>
-[Grundlagen der MFC-Internetprogrammierung](../mfc/mfc-internet-programming-basics.md)
+[MFC-Internetprogrammierungsaufgaben](mfc-internet-programming-tasks.md)<br/>
+[Grundlagen der MFC-Internetprogrammierung](mfc-internet-programming-basics.md)

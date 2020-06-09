@@ -10,35 +10,35 @@ helpviewer_keywords:
 - OLE [MFC], data objects
 - OLE [MFC], data sources
 ms.assetid: 8f68eed8-0ce8-4489-a4cc-f95554f89090
-ms.openlocfilehash: 485fa5c62aafa4c116a76547238325d2979bfdc4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dfe400dddfecce3e52337f7f449e975dff2ca83e
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62241193"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616222"
 ---
 # <a name="data-objects-and-data-sources-ole"></a>Datenobjekte und Datenquellen (OLE)
 
-Beim Ausführen einer Datenübertragung, entweder über die Zwischenablage oder Drag & Drop, enthält die Daten an eine Quelle und Ziel. Eine Anwendung gibt die Daten für das Kopieren und eine andere Anwendung akzeptiert das Element zum Einfügen. Jede Seite der Übertragung muss zum Durchführen verschiedener Vorgänge mit den gleichen Daten für die Übertragung erfolgreich ist. Die Microsoft Foundation Class (MFC)-Bibliothek bietet zwei Klassen, die jede Seite der Übertragung darstellen:
+Wenn Sie eine Datenübertragung entweder mithilfe der Zwischenablage oder Drag & Drop durchführen, verfügen die Daten über eine Quelle und ein Ziel. Eine Anwendung stellt die Daten zum Kopieren bereit, und eine andere Anwendung nimmt Sie zum Einfügen an. Jede Seite der Übertragung muss verschiedene Vorgänge für dieselben Daten durchführen, damit die Übertragung erfolgreich ist. Die MFC-Bibliothek (Microsoft Foundation Class) stellt zwei Klassen bereit, die jede Seite dieser Übertragung darstellen:
 
-- Datenquellen (wie von implementiert `COleDataSource` Objekte) darstellen die Quellseite der Datenübertragung. Sie werden durch die quellanwendung erstellt, wenn Daten in die Zwischenablage kopiert werden sollen, oder wenn Daten für einen Drag & Drop-Vorgang bereitgestellt werden.
+- Datenquellen (wie von `COleDataSource` Objekten implementiert) stellen die Quellseite der Datenübertragung dar. Sie werden von der Quell Anwendung erstellt, wenn Daten in die Zwischenablage kopiert werden sollen, oder wenn Daten für einen Drag & Drop-Vorgang bereitgestellt werden.
 
-- Datenobjekte (wie von implementiert `COleDataObject` Objekte) darstellen der Zielseite der Datenübertragung. Sie werden erstellt, wenn die Zielanwendung Daten, die gelöscht werden enthält, darin, oder wenn es angefordert wird, zum eines Einfügevorgangs aus der Zwischenablage.
+- Datenobjekte (wie von `COleDataObject` Objekten implementiert) stellen die Zielseite der Datenübertragung dar. Sie werden erstellt, wenn in der Zielanwendung Daten abgelegt werden, oder wenn Sie aufgefordert werden, einen Einfügevorgang aus der Zwischenablage auszuführen.
 
-In den folgenden Artikeln wird erläutert, wie Datenobjekte und Datenquellen in Ihren Anwendungen verwenden. Diese Informationen gelten für Container und Server-Anwendungen, da beide bei aufgerufen werden können, kopieren und Einfügen von Daten.
+In den folgenden Artikeln wird erläutert, wie Sie Datenobjekte und Datenquellen in Ihren Anwendungen verwenden. Diese Informationen gelten für Container-und Server Anwendungen, da beide möglicherweise aufgerufen werden, um Daten zu kopieren und einzufügen.
 
-- [Datenobjekte und Datenquellen: Erstellen und Löschen](../mfc/data-objects-and-data-sources-creation-and-destruction.md)
+- [Datenobjekte und Datenquellen: Erstellen und Zerstören](data-objects-and-data-sources-creation-and-destruction.md)
 
-- [Datenobjekte und Datenquellen: Bearbeitung](../mfc/data-objects-and-data-sources-manipulation.md)
+- [Datenobjekte und Datenquellen: Bearbeitung](data-objects-and-data-sources-manipulation.md)
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-[Drag & Drop](../mfc/drag-and-drop-ole.md)
+[Drag & Drop](drag-and-drop-ole.md)
 
-[Zwischenablage](../mfc/clipboard.md)
+[Zwischenablage](clipboard.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE](../mfc/ole-in-mfc.md)<br/>
-[COleDataObject-Klasse](../mfc/reference/coledataobject-class.md)<br/>
-[COleDataSource-Klasse](../mfc/reference/coledatasource-class.md)
+[OLE](ole-in-mfc.md)<br/>
+[COleDataObject-Klasse](reference/coledataobject-class.md)<br/>
+[COleDataSource-Klasse](reference/coledatasource-class.md)

@@ -5,64 +5,64 @@ helpviewer_keywords:
 - mdi [MFC], tabbed groups
 - tabbed grous [MFC]
 ms.assetid: 0a464f36-39b7-4e68-8b67-ec175de28377
-ms.openlocfilehash: 6b68d1bc06a6827ca94b05fa2760206f424d40fe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0c1bf925003d5081b2cdc837012a57585b1ace60
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62310839"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84624363"
 ---
 # <a name="mdi-tabbed-groups"></a>MDI-Gruppen im Registerkartenformat
 
-Die Gruppen im Registerkartenformat Funktion für mehrere Document Interface (MDI) ermöglicht Anwendungen für mehrere Dokumente Interface (MDI) eine oder mehrere Fenster im Registerformat angezeigt (oder Gruppen von Fenstern im Registerkartenformat, bekannt als *-Gruppen im Registerkartenformat*) in den Bereich des MDI-Client. Fenster im Registerkartenformat können vertikal oder horizontal ausgerichtet werden. Wenn eine Anwendung mehr als ein MDI-Gruppe im Registerkartenformat hostet, werden die Gruppen durch Splitterfenstern getrennt.
+Die MDI-Funktion (Multiple Document Interface) im Registerkarten Format ermöglicht es mehreren Dokumenten Schnittstellen (MDI)-Anwendungen, ein oder mehrere Fenster im Register Format (oder Gruppen von Fenstern im Registerkarten *Format) im*MDI-Client Bereich anzuzeigen. Die Fenster im Registerkarten Format können vertikal oder horizontal ausgerichtet werden. Wenn eine Anwendung mehr als eine MDI-Gruppe mit Registerkarten hostet, werden die Gruppen durch Splitters getrennt.
 
 ## <a name="features"></a>Features
 
-Im folgenden finden die Funktionen der im Registerkartenformat MDI-Gruppen:
+Im folgenden sind die Features der MDI-Gruppen im Registerkarten Format aufgeführt:
 
-- Eine Anwendung kann im Registerformat dynamisch erstellen.
+- Eine Anwendung kann Fenster im Registerkarten Format dynamisch erstellen.
 
-- Eine Anwendung kann im Registerformat Horizontales oder vertikales Ausrichten.
+- Eine Anwendung kann Fenster im Registerkarten Format horizontal oder vertikal ausrichten.
 
-- Gruppen von Fenstern im Registerkartenformat werden durch Splitterfenstern getrennt. Der Benutzer kann Gruppen im Registerkartenformat mithilfe des Splitters ändern.
+- Gruppen von Fenstern im Registerkarten Format werden durch Splitters getrennt. Der Benutzer kann die Größe der Gruppen im Registerkarten Format mithilfe des Splitters ändern.
 
-- Benutzer können die einzelne Registerkarten zwischen den Gruppen ziehen.
+- Der Benutzer kann einzelne Registerkarten zwischen Gruppen ziehen.
 
-- Der Benutzer kann auf einzelne Registerkarten, um neue Gruppen erstellen ziehen.
+- Der Benutzer kann einzelne Registerkarten ziehen, um neue Gruppen zu erstellen.
 
-- Der Benutzer kann Registerkarten zu verschieben oder neue Gruppen erstellen, über ein Kontextmenü.
+- Der Benutzer kann mithilfe eines Kontextmenüs Registerkarten verschieben oder neue Gruppen erstellen.
 
-- Eine Anwendung kann zu speichern und laden das Layout von Fenstern im Registerkartenformat.
+- Eine Anwendung kann das Layout von Fenstern im Registerkarten Format speichern und laden.
 
-- Eine Anwendung kann zu speichern und laden die Liste der MDI-Dokumente.
+- Eine Anwendung kann die Liste der MDI-Dokumente speichern und laden.
 
-- Eine Anwendung kann Zugriff auf einzelnen Registerkarten Gruppen und ihre Parameter zu ändern.
+- Eine Anwendung kann auf einzelne Gruppen im Registerkarten Format zugreifen und deren Parameter ändern.
 
-### <a name="using-mdi-tabbed-groups"></a>Mit der MDI-Gruppen im Registerkartenformat
+### <a name="using-mdi-tabbed-groups"></a>Verwenden von MDI-Gruppen im Registerkarten Format
 
-Im folgenden finden häufig mit im Registerkartenformat MDI-Gruppen ausgeführten Aufgaben:
+Im folgenden sind die Aufgaben aufgeführt, die häufig für MDI-Gruppen im Registerkarten Format ausgeführt
 
-- Rufen Sie zum Aktivieren im Registerkartenformat MDI-Gruppen für ein Hauptrahmenfenster [CMDIFrameWndEx:: Enablemditabbedgroups](../mfc/reference/cmdiframewndex-class.md#enablemditabbedgroups). Der zweite Parameter dieser Methode ist eine Instanz von der `CMDITabInfo` Klasse. Sie können die Standardparameter verwenden oder ändern Sie sie vor dem Aufruf `CMDIFrameWndEx::EnableMDITabbedGroups`.
+- Um MDI-Gruppen im Registerkarten Format für ein Hauptrahmen Fenster zu aktivieren, müssen Sie [CMDIFrameWndEx:: EnableMDITabbedGroups](reference/cmdiframewndex-class.md#enablemditabbedgroups)anfordern. Der zweite Parameter dieser Methode ist eine Instanz der- `CMDITabInfo` Klasse. Sie können die Standardparameter verwenden oder Sie vor dem Ausführen von ändern `CMDIFrameWndEx::EnableMDITabbedGroups` .
 
-- Klicken Sie zum Ändern der Eigenschaften einer MDI-Registerkarten-Gruppe zur Laufzeit erstellen oder Ändern einer `CMDITabInfo` Objekt, und rufen `CMDIFrameWndEx::EnableMDITabbedGroups` erneut
+- Erstellen oder ändern Sie ein `CMDITabInfo` -Objekt, und rufen Sie erneut auf, um die Eigenschaften einer MDI-Gruppe im Registerkarten Format zur Laufzeit zu ändern. `CMDIFrameWndEx::EnableMDITabbedGroups`
 
-- Zum Abrufen einer Liste der MDI-Fenster, rufen Sie `CMDIFrameWndEx::GetMDITabGroups`.
+- Rufen Sie auf, um eine Liste der MDI-Fenster im Registerkarten Format zu erhalten `CMDIFrameWndEx::GetMDITabGroups` .
 
-- Um eine neue MDI-Registerkarten Gruppe neben einer Gruppe mit aktiven im Registerkartenformat zu erstellen, rufen `CMDIFrameWndEx::MDITabNewGroup`.
+- Rufen Sie auf, um eine neue MDI-Gruppe im Registerkarten Format neben einer aktiven Gruppe im Registerkarten Format zu erstellen `CMDIFrameWndEx::MDITabNewGroup` .
 
-- Um den Eingabefokus auf das vorherige oder nächste Fenster der Registerkartengruppe verschieben möchten, rufen Sie `CMDIFrameWndEx::MDITabMoveToNextGroup`.
+- Um den Eingabefokus auf das vorherige oder nächste Fenster einer Gruppe im Registerkarten Format zu verschieben, geben Sie an `CMDIFrameWndEx::MDITabMoveToNextGroup` .
 
-- Um festzustellen, ob ein Fenster Mitglied der MDI-Formulars ist im Registerkartenformat in Gruppe-Aufruf `CMDIFrameWndEx::IsMemberOfMDITabGroup`.
+- , Um zu bestimmen, ob ein Fenster ein Member eines MDI-Gruppen Aufrufes im Registerkarten Format ist `CMDIFrameWndEx::IsMemberOfMDITabGroup` .
 
-- Um zu bestimmen, ob ein Hauptrahmenfenster MDI-Registerkarten oder im Registerkartenformat MDI-Gruppen aktiviert sind, rufen Sie `CMDIFrameWndEx::AreMDITabs`. Um nur zu bestimmen, ob im Registerkartenformat MDI-Gruppen aktiviert sind, rufen `CMDIFrameWndEx::IsMDITabbedGroup`.
+- Um zu ermitteln, ob die MDI-Registerkarten oder MDI-Gruppen im Registerkarten Format für ein Hauptrahmen Fenster aktiviert sind, können Sie `CMDIFrameWndEx::AreMDITabs` Um nur festzustellen, ob MDI-Gruppen im Registerkarten Format aktiviert sind, wird aufgerufen `CMDIFrameWndEx::IsMDITabbedGroup` .
 
-- Um ein Kontextmenü angezeigt wird, wenn der Benutzer klickt auf einer Registerkarte oder es in ein anderes in MDI-Registerkarten zieht, außer Kraft setzen `CMDIFrameWndEx::OnShowMDITabContextMenu` in die `CMDIFrameWndEx`-abgeleitete Klasse. Wenn Sie diese Methode nicht implementieren, wird die Anwendung nicht im Kontextmenü angezeigt.
+- Überschreiben Sie `CMDIFrameWndEx::OnShowMDITabContextMenu` in der von abgeleiteten Klasse, um ein Kontextmenü anzuzeigen, wenn der Benutzer auf eine Registerkarte klickt oder Sie in eine andere MDI-Gruppe mit Registerkarten zieht `CMDIFrameWndEx` . Wenn Sie diese Methode nicht implementieren, wird das Kontextmenü von der Anwendung nicht angezeigt.
 
-- Um das Layout der MDI-Registerkarten, Gruppen in einer Anwendung zu speichern, rufen `CMDIFrameWndEx::SaveMDIState`. Laden Sie eine zuvor gespeicherte MDI im Registerkartenformat auf Gruppenprofil, rufen Sie `CMDIFrameWndEx::LoadMDIState`. Sie können auch diese Methoden zum Laden oder speichern Sie die Liste der geöffneten Dokumente in einer MDI-Anwendung aufrufen. Weitere Informationen zum Speichern und Laden des MDI-Zustands finden Sie unter [CMDIFrameWndEx::LoadMDIState](../mfc/reference/cmdiframewndex-class.md#loadmdistate).
+- Um das Layout der MDI-Gruppen im Registerkarten Format in einer Anwendung zu speichern, wird aufgerufen `CMDIFrameWndEx::SaveMDIState` . Zum Laden eines zuvor gespeicherten MDI-Gruppen Profils im Registerkarten Format wird aufgerufen `CMDIFrameWndEx::LoadMDIState` . Diese Methoden können auch aufgerufen werden, um die Liste der geöffneten Dokumente in einer MDI-Anwendung zu laden oder zu speichern. Weitere Informationen zum Speichern und Laden des MDI-Zustands finden Sie unter [CMDIFrameWndEx:: loadmdistate](reference/cmdiframewndex-class.md#loadmdistate).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Elemente der Benutzeroberfläche](../mfc/user-interface-elements-mfc.md)<br/>
-[CMDIFrameWndEx-Klasse](../mfc/reference/cmdiframewndex-class.md)<br/>
-[CMDIChildWndEx-Klasse](../mfc/reference/cmdichildwndex-class.md)<br/>
-[CMDITabInfo-Klasse](../mfc/reference/cmditabinfo-class.md)
+[Elemente der Benutzeroberfläche](user-interface-elements-mfc.md)<br/>
+[CMDIFrameWndEx-Klasse](reference/cmdiframewndex-class.md)<br/>
+[CMDIChildWndEx-Klasse](reference/cmdichildwndex-class.md)<br/>
+[CMDITabInfo-Klasse](reference/cmditabinfo-class.md)

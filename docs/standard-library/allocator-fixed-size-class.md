@@ -9,16 +9,16 @@ helpviewer_keywords:
 - stdext::allocators [C++], allocator_fixed_size
 - stdext::allocator_fixed_size
 ms.assetid: 138f3ef8-b0b3-49c3-9486-58f2213c172f
-ms.openlocfilehash: 5ee506838ea723b82f04bba301c19c0149d986bf
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 124c49b22566e44989fd30a3274c2d121532eef4
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68450999"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617478"
 ---
-# <a name="allocatorfixedsize-class"></a>allocator_fixed_size-Klasse
+# <a name="allocator_fixed_size-class"></a>allocator_fixed_size-Klasse
 
-Beschreibt ein Objekt, das die Speicher Belegung und-Freigabe für Objekte des Typs *Type mithilfe eines* Caches vom Typ [cache_freelist](../standard-library/cache-freelist-class.md) mit einer von [Max_fixed_size](../standard-library/max-fixed-size-class.md)verwalteten Länge verwaltet.
+Beschreibt ein Objekt, das die Speicher Belegung und-Freigabe für Objekte des Typs *Type mithilfe eines Caches vom Typ* [cache_freelist](cache-freelist-class.md) mit einer Länge verwaltet, die von [Max_fixed_size](max-fixed-size-class.md)verwaltet wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,18 +31,18 @@ class allocator_fixed_size;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*Typ*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
 
 ## <a name="remarks"></a>Hinweise
 
-Das [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST(stdext::allocators::max_fixed_size<10>), SYNC_DEFAULT, allocator_fixed_size);`
+Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST(stdext::allocators::max_fixed_size<10>), SYNC_DEFAULT, allocator_fixed_size);`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<allocators>](allocators-header.md)

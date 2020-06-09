@@ -11,35 +11,35 @@ helpviewer_keywords:
 - Windows Clipboard [MFC]
 - Clipboard [MFC], Windows Clipboard API
 ms.assetid: 24415b42-9301-4a70-b69a-44c97918319f
-ms.openlocfilehash: 49111e4efd2a12264d61030fe038d80b974514c1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1b11bfe18443858de0dd7032f72fecadb1d6ebdd
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62326988"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626034"
 ---
 # <a name="clipboard-using-the-windows-clipboard"></a>Zwischenablage: Verwenden der Windows-Zwischenablage
 
-In diesem Thema wird beschrieben, wie Sie mit der standardmäßigen Windows-Zwischenablage-API in Ihrer MFC-Anwendung.
+In diesem Thema wird beschrieben, wie Sie die standardmäßige Windows-Zwischenablage-API in ihrer MFC-Anwendung verwenden
 
-Die meisten Anwendungen für Windows unterstützt Ausschneiden oder Kopieren von Daten in die Windows-Zwischenablage und Einfügen von Daten aus der Zwischenablage. Die zwischenablagedatenformate variieren zwischen Anwendungen. Das Framework unterstützt nur eine begrenzte Anzahl von Standardformaten der Zwischenablage für eine begrenzte Anzahl von Klassen. Normalerweise implementieren Sie die Zwischenablage-bezogenen Befehlen – Ausschneiden, kopieren und einfügen, auf das Menü "Bearbeiten" für die Ansicht. Die Klassenbibliothek definiert die Befehls-IDs für diese Befehle: **ID_EDIT_CUT**, **ID_EDIT_COPY**, und **ID_EDIT_PASTE**. Die Message-Line-Anweisungen sind auch definiert.
+Die meisten Anwendungen für Windows unterstützen das Ausschnitten oder Kopieren von Daten in die Windows-Zwischenablage und das Einfügen von Daten aus der Zwischenablage Die Zwischenablage Datenformate unterscheiden sich je nach Anwendung. Das Framework unterstützt für eine begrenzte Anzahl von Klassen nur eine begrenzte Anzahl von Zwischenablage Formaten. Normalerweise implementieren Sie die in der Zwischenablage bezogenen Befehle – Ausschneiden, kopieren und Einfügen – im Menü Bearbeiten für die Ansicht. Die Klassenbibliothek definiert die Befehls-IDs für diese Befehle: **ID_EDIT_CUT**, **ID_EDIT_COPY**und **ID_EDIT_PASTE**. Ihre Meldungs zeiligen Eingabe Aufforderungen werden ebenfalls definiert.
 
-[Meldungen und Befehle im Framework](../mfc/messages-and-commands-in-the-framework.md) wird erläutert, wie Menübefehle in Ihrer Anwendung zu behandeln, indem Sie den Menübefehl eine Handlerfunktion zuordnen. Solange Handlerfunktionen für die Zwischenablage-Befehle nicht auf das Menü "Bearbeiten" Ihrer Anwendung definiert ist, bleiben sie deaktiviert. Zum Schreiben von Handlerfunktionen für die Befehle zum Ausschneiden und kopieren implementieren Sie Auswahl in Ihrer Anwendung. Fragen Sie ab, um eine Handlerfunktion für den Befehl "Einfügen" zu schreiben, die Zwischenablage, um festzustellen, ob sie Daten in einem Format enthält, die Ihre Anwendung annehmen kann. Beispielsweise können zum Aktivieren des Kopierbefehls Sie einen Handler etwa wie folgt schreiben:
+[Nachrichten und Befehle im Framework](messages-and-commands-in-the-framework.md) wird erläutert, wie Menübefehle in der Anwendung behandelt werden, indem der Menübefehl einer Handlerfunktion zuordnet wird. Solange Ihre Anwendung keine Handlerfunktionen für die Zwischenablage Befehle im Menü Bearbeiten definiert, bleiben Sie deaktiviert. Um Handlerfunktionen für die Befehle zum Ausschneiden und kopieren zu schreiben, implementieren Sie die Auswahl in Ihrer Anwendung. Zum Schreiben einer Handlerfunktion für den Befehl Einfügen Fragen Sie die Zwischenablage ab, um festzustellen, ob Sie Daten in einem Format enthält, das Ihre Anwendung akzeptieren kann. Wenn Sie z. b. den Befehl kopieren aktivieren möchten, können Sie einen Handler schreiben, der etwa wie folgt aussieht:
 
 [!code-cpp[NVC_MFCListView#2](../atl/reference/codesnippet/cpp/clipboard-using-the-windows-clipboard_1.cpp)]
 
-Das Ausschneiden, kopieren und Einfügen-Befehle sind nur in bestimmten Fällen sinnvoll. Nur, wenn etwas ausgewählt ist und der Befehl "Einfügen", nur, wenn etwas in der Zwischenablage ist, sollte die Ausschneiden und kopieren Befehle aktiviert werden. Sie können dieses Verhalten angeben, durch die Definition der Update-Handlerfunktionen, die aktivieren oder deaktivieren diese Befehle je nach Kontext. Weitere Informationen finden Sie unter [wie Aktualisieren von Benutzeroberflächenobjekten](../mfc/how-to-update-user-interface-objects.md).
+Die Befehle zum Ausschneiden, kopieren und Einfügen sind nur in bestimmten Kontexten sinnvoll. Die Befehle zum Ausschneiden und kopieren sollten nur aktiviert werden, wenn etwas ausgewählt ist, und der Befehl Einfügen nur, wenn sich etwas in der Zwischenablage befindet. Sie können dieses Verhalten bereitstellen, indem Sie updatehandlerfunktionen definieren, die diese Befehle abhängig vom Kontext aktivieren oder deaktivieren. Weitere Informationen finden Sie unter [Aktualisieren von Benutzeroberflächen Objekten](how-to-update-user-interface-objects.md).
 
-Die Microsoft Foundation Class-Bibliothek bietet Unterstützung der Zwischenablage für die Textbearbeitung mit der `CEdit` und `CEditView` Klassen. Der OLE-Klassen vereinfachen zudem die implementierende Zwischenablageoperationen, die OLE-Elemente enthalten. Weitere Informationen zu den OLE-Klassen, finden Sie unter [Zwischenablage: Verwenden des OLE-Zwischenablagemechanismus](../mfc/clipboard-using-the-ole-clipboard-mechanism.md).
+Der Microsoft Foundation Class-Bibliothek stellt die Unterstützung der Zwischenablage für die Textbearbeitung mit den `CEdit` Klassen und bereit `CEditView` . Die OLE-Klassen vereinfachen auch das Implementieren von Zwischenablage Operationen, die OLE-Elemente einschließen. Weitere Informationen zu den OLE-Klassen finden [Sie unter Zwischenablage: Verwenden des OLE-Zwischenablage Mechanismus](clipboard-using-the-ole-clipboard-mechanism.md).
 
-Implementieren andere Menübefehle, z. B. "Rückgängig" Bearbeiten (**ID_EDIT_UNDO**) und "Wiederherstellen" (**ID_EDIT_REDO**), bleibt auch für Sie. Wenn Ihre Anwendung diese Befehle nicht unterstützt, können Sie sie aus der Ressourcendatei, die mit den Visual C++-Ressourcen-Editoren einfach löschen.
+Das Implementieren anderer Befehle zum Bearbeiten von Menüs, wie z. b. rückgängig (**ID_EDIT_UNDO**) und wiederholen (**ID_EDIT_REDO**), wird Ihnen ebenfalls überlassen. Wenn Ihre Anwendung diese Befehle nicht unterstützt, können Sie Sie mithilfe der Visual C++ Ressourcen-Editoren problemlos aus ihrer Ressourcen Datei löschen.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Kopieren und Einfügen von Daten](../mfc/clipboard-copying-and-pasting-data.md)
+- [Kopieren und Einfügen von Daten](clipboard-copying-and-pasting-data.md)
 
-- [Verwenden des OLE-zwischenablagemechanismus](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)
+- [Verwenden des OLE-Zwischenablage Mechanismus](clipboard-using-the-ole-clipboard-mechanism.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zwischenablage](../mfc/clipboard.md)
+[Zwischenablage](clipboard.md)

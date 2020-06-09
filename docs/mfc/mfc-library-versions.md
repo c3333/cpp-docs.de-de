@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MFC libraries
 - MFC, library versions
 - libraries [MFC], versions
-ms.openlocfilehash: b8e32366d9ff43bd6e5770f64f0ba9d8bf6e56ab
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: bf10d8b56f82714fa708b5409923e765206eb16d
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425700"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626130"
 ---
 # <a name="mfc-library-versions"></a>MFC-Bibliotheksversionen
 
@@ -77,9 +77,9 @@ MFC-Header Dateien enthalten auch Direktiven, die in allen erforderlichen Biblio
 
 Die MFC-Versionen der ANSI/MBCS-Bibliothek unterstützen sowohl Einzel Byte-Zeichensätze, wie z. b. ASCII, als auch Multibytezeichen-Zeichensätze wie Shift-JIS. Die Versionen der MFC-Unicode-Bibliothek unterstützen Unicode in der UTF-16LE-Zeichenfolge mit breit Zeichen. Verwenden Sie die ANSI/MBCS-Bibliotheksversionen von MFC für die UTF-8-codierte Unicode-Unterstützung.
 
-Verwenden Sie das Dialogfeld " **Projekteigenschaften** ", um die Projekt Konfiguration für die Verwendung von Einzel Byte-, Multibyte-oder breit Zeichen-Unicode-Zeichen folgen-und Zeichen Unterstützung in der IDE festzulegen. Legen Sie auf der Seite **Konfigurations Eigenschaften** > **Allgemein** die **Zeichensatz** -Eigenschaft auf **nicht festgelegt** fest, um einen Einzel Byte-Zeichensatz zu verwenden. Legen Sie die-Eigenschaft so fest, dass Sie einen **Multibytezeichen-** Zeichensatz verwendet, um einen Multibytezeichen-Zeichensatz zu verwenden, oder um Unicode- **Zeichensätze** für die Verwendung von Unicode als UTF-16-
+Verwenden Sie das Dialogfeld " **Projekteigenschaften** ", um die Projekt Konfiguration für die Verwendung von Einzel Byte-, Multibyte-oder breit Zeichen-Unicode-Zeichen folgen-und Zeichen Unterstützung in der IDE festzulegen. Legen Sie auf der Seite **Konfigurations Eigenschaften**  >  auf der Seite**Allgemein** fest, dass die **Zeichensatz** -Eigenschaft **nicht** auf einen Einzel Byte-Zeichensatz festgelegt ist. Legen Sie die-Eigenschaft so fest, dass Sie einen **Multibytezeichen-** Zeichensatz verwendet, um einen Multibytezeichen-Zeichensatz zu verwenden, oder um Unicode- **Zeichensätze** für die Verwendung von Unicode als UTF-16-
 
-MFC-Projekte verwenden das Präprozessorsymbol \_Unicode zum Angeben von UTF-16-Unicode-Unterstützung für breit Zeichen und \_MBCS, um die MBCS-Unterstützung anzugeben. Diese Optionen schließen sich in einem Projekt gegenseitig aus.
+MFC-Projekte verwenden das Präprozessorsymbol \_ Unicode zum Angeben von UTF-16-Unicode-Unterstützung für breit Zeichen und \_ MBCS zur Angabe der MBCS-Unterstützung. Diese Optionen schließen sich in einem Projekt gegenseitig aus.
 
 ## <a name="mfc-static-library-naming-conventions"></a>Benennungs Konventionen für statische MFC-Bibliothek
 
@@ -91,20 +91,20 @@ Dabei sind die in kursiv Kleinbuchstaben gezeigten Buchstaben Platzhalter für B
 
 |Bezeichner|Werte und Bedeutungen|
 |---------------|-------------------------|
-|*u*|ANSI/MBCS (N) oder Unicode (U); für Version ohne MFC-Steuerelemente in Dialogfeldern weglassen|
-|*c*|Version mit MFC-Steuerelementen in Dialogfeldern (CW) oder ohne (nmcd)|
+|*n*|ANSI/MBCS (N) oder Unicode (U); für Version ohne MFC-Steuerelemente in Dialogfeldern weglassen|
+|*scher*|Version mit MFC-Steuerelementen in Dialogfeldern (CW) oder ohne (nmcd)|
 |*d*|Debug oder Release: D = Debuggen; Spezifizierer für Release weglassen|
 
 Alle Bibliotheken, die in der folgenden Tabelle aufgeführt sind, sind im Verzeichnis "\atlmfc\lib" für unterstützte buildarchitekturen enthalten.
 
-|Bibliothek|Beschreibung|
+|Bibliothek|BESCHREIBUNG|
 |-------------|-----------------|
 |NAFXCW.LIB|MFC-Bibliothek für statische Links, Releaseversion|
 |NAFXCWD.LIB|MFC-Bibliothek für statische Links, Debugversion|
 |UAFXCW.LIB|MFC-Bibliothek mit statischem Link mit Unicode-Unterstützung, Releaseversion|
 |UAFXCWD.LIB|MFC-Bibliothek mit statischem Link mit Unicode-Unterstützung, Debugversion|
-|AFXNMCD.LIB|MFC-Bibliothek für statische Links ohne MFC-Dialogfeld Steuerelemente, Releaseversion|
-|AFXNMCDD.LIB|MFC-Bibliothek für statische Links ohne MFC-Dialogfeld Steuerelemente, Debugversion|
+|Afxnmcd. LIB|MFC-Bibliothek für statische Links ohne MFC-Dialogfeld Steuerelemente, Releaseversion|
+|Afxnmcdd. LIB|MFC-Bibliothek für statische Links ohne MFC-Dialogfeld Steuerelemente, Debugversion|
 
 Debugger-Dateien mit demselben Basis Namen und einer pdb-Erweiterung sind auch für jede der statischen Bibliotheken verfügbar.
 
@@ -129,16 +129,16 @@ Die Import Bibliotheken, die zum Erstellen von Anwendungen oder MFC-Erweiterungs
 
 Wenn Sie dynamisch eine Verbindung mit der freigegebenen DLL-Version von MFC herstellen, unabhängig davon, ob Sie von einer Anwendung oder einer MFC-Erweiterungs-DLL verwendet wird, müssen Sie die entsprechende MFC-*Version*einschließen. DLL oder MFC-*Version*U. dll, wenn Sie Ihr Produkt bereitstellen.
 
-Eine Liste der visuellen C++ DLLs, die mit Ihren Anwendungen verteilt werden können, finden Sie unter [verteilbarer Code für Microsoft Visual Studio 2017 und Microsoft Visual Studio 2017 SDK (einschließlich Hilfsprogrammen und Buildserver-Dateien)](/visualstudio/productinfo/2017-redistribution-vs) oder [verteilbarer Code für Visual Studio 2019](/visualstudio/releases/2019/redistribution).
+Eine Liste der Visual C++ DLLs, die mit Ihren Anwendungen verteilt werden können, finden Sie unter [verteilbarer Code für Microsoft Visual Studio 2017 und Microsoft Visual Studio 2017 SDK (einschließlich Hilfsprogrammen und Buildserver-Dateien)](/visualstudio/productinfo/2017-redistribution-vs) oder [verteilbarer Code für Visual Studio 2019](/visualstudio/releases/2019/redistribution).
 
 Weitere Informationen zur Unterstützung von MBCS und Unicode in MFC finden Sie [unter Unterstützung für Unicode-und Multibyte-Zeichensätze (MBCS)](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md).
 
 ## <a name="dynamic-link-library-support"></a>Dynamic Link Library-Unterstützung
 
-Zum Erstellen von DLLs, die von MFC-und nicht-MFC-ausführbaren Dateien verwendet werden können, können Sie entweder die statischen oder gemeinsamen MFC-Bibliotheken verwenden. Diese werden als "reguläre DLLs" oder "reguläre MFC-DLLs" bezeichnet, um Sie von MFC-Erweiterungs-DLLs zu unterscheiden, die nur von MFC-apps und MFC-DLLs verwendet werden können. Eine DLL, die mithilfe der statischen MFC-Bibliotheken erstellt wurde, wird in älteren verweisen manchmal als "rdll" bezeichnet, da MFC-DLL-Projekte das Präprozessorsymbol\_"- **rdll**" definieren. Eine DLL, die die freigegebenen MFC-DLLs verwendet, wird in älteren verweisen mitunter als AFXDLL bezeichnet, da Sie das Präprozessorsymbol **\_AFXDLL**definiert.
+Zum Erstellen von DLLs, die von MFC-und nicht-MFC-ausführbaren Dateien verwendet werden können, können Sie entweder die statischen oder gemeinsamen MFC-Bibliotheken verwenden. Diese werden als "reguläre DLLs" oder "reguläre MFC-DLLs" bezeichnet, um Sie von MFC-Erweiterungs-DLLs zu unterscheiden, die nur von MFC-apps und MFC-DLLs verwendet werden können. Eine DLL, die mit den statischen MFC-Bibliotheken erstellt wurde, wird in älteren verweisen manchmal als "rdll" bezeichnet, da MFC-DLL-Projekte das Präprozessorsymbol " ** \_ rdll**" definieren. Eine DLL, die die freigegebenen MFC-DLLs verwendet, wird in älteren verweisen mitunter als AFXDLL bezeichnet, da Sie das Präprozessorsymbol ** \_ AFXDLL**definiert.
 
 Wenn Sie das DLL-Projekt erstellen, indem Sie eine Verknüpfung mit den statischen MFC-Bibliotheken herstellen, kann die dll ohne die freigegebenen MFC-DLLs bereitgestellt werden. Wenn das DLL-Projekt mit der MFC-*Version*der Import Bibliotheken verknüpft ist. Lib oder MFC-*Version*U. lib Sie müssen die entsprechende MFC-*Version*der MFC-DLL bereitstellen. DLL oder MFC-*Version*U. dll und die dll. Weitere Informationen finden Sie unter [DLLs](../build/dlls-in-visual-cpp.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Allgemeine MFC-Themen](../mfc/general-mfc-topics.md)
+[Allgemeine MFC-Themen](general-mfc-topics.md)

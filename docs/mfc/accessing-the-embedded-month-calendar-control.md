@@ -9,35 +9,35 @@ helpviewer_keywords:
 - month calendar controls [MFC], changing the font
 - DateTimePicker control [MFC]
 ms.assetid: 355e97ed-cf81-4df3-a2f8-9ddbbde93227
-ms.openlocfilehash: 69270cc5663406f2c5d38ffccdbd35f39298a3d5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 66a9ef7fd49ea81ddac4779aa6d1c3f12fbe4c55
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81354180"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617379"
 ---
 # <a name="accessing-the-embedded-month-calendar-control"></a>Zugreifen auf das eingebettete Monatskalender-Steuerelement
 
-Auf das eingebettete Monatskalender-Steuerelementobjekt kann vom `CDateTimeCtrl` Objekt mit einem Aufruf der [GetMonthCalCtrl-Memberfunktion](../mfc/reference/cdatetimectrl-class.md#getmonthcalctrl) zugegriffen werden.
+Der Zugriff auf das eingebettete Monatskalender-Steuer Objekt ist vom- `CDateTimeCtrl` Objekt mit einem Aufrufen der [GetMonthCalCtrl](reference/cdatetimectrl-class.md#getmonthcalctrl) -Member-Funktion möglich.
 
 > [!NOTE]
-> Das eingebettete Monatskalendersteuerelement wird nur verwendet, wenn das Datums- und Uhrzeitauswahlsteuerelement nicht über den **DTS_UPDOWN** Stilsatz festgelegt ist.
+> Das eingebettete Monatskalender-Steuerelement wird nur verwendet, wenn das Steuerelement für die Datums-und Uhrzeit Auswahl nicht den **DTS_UPDOWN** Stil festgelegt hat.
 
-Dies ist nützlich, wenn Sie bestimmte Attribute ändern möchten, bevor das eingebettete Steuerelement angezeigt wird. Behandeln Sie dazu die **DTN_DROPDOWN** Benachrichtigung, rufen Sie das Monatskalendersteuerelement ab (mit [CDateTimeCtrl::GetMonthCalCtrl](../mfc/reference/cdatetimectrl-class.md#getmonthcalctrl)), und nehmen Sie Ihre Änderungen vor. Leider ist das Monatskalendersteuerelement nicht persistent.
+Dies ist nützlich, wenn Sie bestimmte Attribute ändern möchten, bevor das eingebettete Steuerelement angezeigt wird. Um dies zu erreichen, behandeln Sie die **DTN_DROPDOWN** Benachrichtigung, rufen Sie das Monatskalender-Steuerelement (mithilfe von [CDateTimeCtrl:: GetMonthCalCtrl](reference/cdatetimectrl-class.md#getmonthcalctrl)) ab, und nehmen Sie die Änderungen vor. Leider ist das Monatskalender-Steuerelement nicht persistent.
 
-Mit anderen Worten, wenn der Benutzer die Anzeige des Monatskalendersteuerelements anfordert, wird ein neues Monatskalendersteuerelement erstellt (vor der **DTN_DROPDOWN** Benachrichtigung). Das Steuerelement wird (nach der **DTN_CLOSEUP** Benachrichtigung) zerstört, wenn es vom Benutzer verworfen wird. Dies bedeutet, dass alle Attribute, die Sie ändern, bevor das eingebettete Steuerelement angezeigt wird, verloren gehen, wenn das eingebettete Steuerelement verworfen wird.
+Anders ausgedrückt: Wenn der Benutzer die Anzeige des Monatskalender-Steuer Elements anfordert, wird ein neues Monatskalender-Steuerelement erstellt (vor der **DTN_DROPDOWN** Benachrichtigung). Das Steuerelement wird (nach der **DTN_CLOSEUP** Benachrichtigung) zerstört, wenn es vom Benutzer verworfen wurde. Dies bedeutet, dass alle Attribute, die Sie ändern, bevor das eingebettete Steuerelement angezeigt wird, verloren gehen, wenn das eingebettete Steuerelement verworfen wird.
 
-Im folgenden Beispiel wird dieses Verfahren mithilfe eines Handlers für die **DTN_DROPDOWN-Benachrichtigung** veranschaulicht. Der Code ändert die Hintergrundfarbe des Monatskalendersteuerelements mit einem Aufruf von [SetMonthCalColor](../mfc/reference/cdatetimectrl-class.md#setmonthcalcolor), in Grau. Der Code lautet wie folgt:
+Das folgende Beispiel veranschaulicht dieses Verfahren mithilfe eines Handlers für die **DTN_DROPDOWN** Benachrichtigung. Im Code wird die Hintergrundfarbe des Monatskalender-Steuer Elements mit einem [callmonthcalcolor](reference/cdatetimectrl-class.md#setmonthcalcolor)-Befehl in Grau geändert. Der Code lautet wie folgt:
 
-[!code-cpp[NVC_MFCControlLadenDialog#5](../mfc/codesnippet/cpp/accessing-the-embedded-month-calendar-control_1.cpp)]
+[!code-cpp[NVC_MFCControlLadenDialog#5](codesnippet/cpp/accessing-the-embedded-month-calendar-control_1.cpp)]
 
-Wie bereits erwähnt, gehen alle Änderungen an den Eigenschaften des Monatskalendersteuerelements verloren, mit zwei Ausnahmen, wenn das eingebettete Steuerelement verworfen wird. Die erste Ausnahme, die Farben des Monatskalendersteuerelements, wurde bereits diskutiert. Die zweite Ausnahme ist die Schriftart, die vom Monatskalendersteuerelement verwendet wird. Sie können die Standardschriftart ändern, indem Sie [CDateTimeCtrl::SetMonthCalFont](../mfc/reference/cdatetimectrl-class.md#setmonthcalfont)aufrufen und das Handle einer vorhandenen Schriftart übergeben. Das folgende Beispiel `m_dtPicker` (wobei ist das Datums- und Uhrzeitsteuerungsobjekt) veranschaulicht eine mögliche Methode:
+Wie bereits erwähnt, gehen alle Änderungen an den Eigenschaften des Monatskalender-Steuer Elements mit zwei Ausnahmen verloren, wenn das eingebettete Steuerelement verworfen wird. Die erste Ausnahme, die Farben des Monatskalender-Steuer Elements, wurde bereits erläutert. Die zweite Ausnahme ist die Schriftart, die vom Monatskalender-Steuerelement verwendet wird. Sie können die Standard Schriftart ändern, indem Sie [CDateTimeCtrl:: SetMonthCalFont](reference/cdatetimectrl-class.md#setmonthcalfont)aufrufen, indem Sie das Handle einer vorhandenen Schriftart übergeben. Das folgende Beispiel (wobei `m_dtPicker` das Date-und Time-Steuerelement Objekt ist) veranschaulicht eine mögliche Methode:
 
-[!code-cpp[NVC_MFCControlLadenDialog#6](../mfc/codesnippet/cpp/accessing-the-embedded-month-calendar-control_2.cpp)]
+[!code-cpp[NVC_MFCControlLadenDialog#6](codesnippet/cpp/accessing-the-embedded-month-calendar-control_2.cpp)]
 
-Sobald die Schriftart geändert wurde, `CDateTimeCtrl::SetMonthCalFont`wird die neue Schriftart mit einem Aufruf von gespeichert und verwendet, wenn das nächste Mal ein Monatskalender angezeigt wird.
+Nachdem die Schriftart mit einem Aufruf von geändert wurde `CDateTimeCtrl::SetMonthCalFont` , wird die neue Schriftart gespeichert und verwendet, wenn ein Monatskalender das nächste Mal angezeigt wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CDateTimeCtrl](../mfc/using-cdatetimectrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CDateTimeCtrl](using-cdatetimectrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

@@ -1,5 +1,5 @@
 ---
-title: Ein Portrait der Dokument-/ Ansichtarchitektur die
+title: Ein Portrait der Dokument-/Ansichtarchitektur
 ms.date: 11/04/2016
 helpviewer_keywords:
 - documents [MFC], views
@@ -14,37 +14,37 @@ helpviewer_keywords:
 - document/view architecture [MFC], about document/view architecture
 - views [MFC], accessing document data from
 ms.assetid: 4e7f65dc-b166-45d8-bcd5-9bb0d399b946
-ms.openlocfilehash: 51f963acf5aacdfe4050a076d3bb0e651a92d021
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f0e71c42004b5409eeb6f5e2ddabd33296cf5f49
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392972"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623450"
 ---
 # <a name="a-portrait-of-the-documentview-architecture"></a>Ein Portrait der Dokument-/Ansichtarchitektur
 
-Dokumente und Ansichten werden in einer typischen MFC-Anwendung zugeordnet. Daten werden in das Dokument gespeichert, aber die Ansicht verfügt über privilegierte Zugriff auf die Daten. Die Trennung von Ansicht des Dokuments trennt die Speicherung und Wartung von Daten aus der Anzeige.
+Dokumente und Sichten werden in einer typischen MFC-Anwendung gepaart. Die Daten werden im Dokument gespeichert, aber die Sicht hat privilegierten Zugriff auf die Daten. Durch die Trennung eines Dokuments aus der Ansicht werden die Speicherung und Wartung von Daten von der Anzeige getrennt.
 
-## <a name="gaining-access-to-document-data-from-the-view"></a>Zugriff auf Daten aus der Sicht zu dokumentieren.
+## <a name="gaining-access-to-document-data-from-the-view"></a>Zugriff auf Dokument Daten aus der Ansicht
 
-Die Ansicht greift auf Daten eines Dokuments mit der [GetDocument](../mfc/reference/cview-class.md#getdocument) ordnungsgemäß verwendet werden, die einen Zeiger zurückgibt, auf das Dokument oder durch die Sicht eine C++-Klasse `friend` der Document-Klasse. Die Ansicht verwendet dann den Zugriff auf die Daten, um die Daten abzurufen, wenn er gezeichnet werden soll, oder in anderer Weise bearbeitet er bereit ist.
+Die Sicht greift entweder mit der [GetDocument](reference/cview-class.md#getdocument) -Funktion auf die Daten des Dokuments zu, die einen Zeiger auf das Dokument zurückgibt, oder durch Festlegen der Ansichts Klasse zu einem C++ `friend` der Document-Klasse. Die Sicht verwendet dann den Zugriff auf die Daten, um die Daten abzurufen, wenn Sie zum Zeichnen oder anderweitig bearbeiten bereit sind.
 
-Z. B. von der Ansicht [OnDraw](../mfc/reference/cview-class.md#ondraw) Memberfunktion wird die Sicht verwendet `GetDocument` einen Zeiger Dokument abrufen. Anschließend er diesen Zeiger, verwendet den Zugriff auf eine `CString` Datenmember in das Dokument. Die Ansicht übergibt die Zeichenfolge, die die `TextOut` Funktion. Der Code für dieses Beispiel finden Sie unter [Zeichnen in einer Ansicht](../mfc/drawing-in-a-view.md).
+Beispielsweise verwendet die-Sicht in der [OnDraw](reference/cview-class.md#ondraw) -Member-Funktion der Sicht, `GetDocument` um einen Dokument Zeiger zu erhalten. Anschließend wird dieser Zeiger verwendet, um auf einen `CString` Datenmember im Dokument zuzugreifen. Die Ansicht übergibt die Zeichenfolge an die `TextOut` Funktion. Den Code für dieses Beispiel finden Sie unter [Zeichnen in einer Ansicht](drawing-in-a-view.md).
 
-## <a name="user-input-to-the-view"></a>Benutzereingaben in der Ansicht
+## <a name="user-input-to-the-view"></a>Benutzereingabe für die Ansicht
 
-Die Sicht kann auch einen Mausklick innerhalb des Workflows als Auswahl oder Bearbeiten der Daten interpretiert werden. Auf ähnliche Weise können sie Tastatureingaben als Dateneingabe oder bearbeiten interpretiert. Nehmen Sie eine Zeichenfolge der Benutzereingabe in einer Ansicht, die Text verwaltet an. Die Ansicht erhält einen Zeiger auf das Dokument und verwendet den Zeiger auf die neuen Daten auf das Dokument, übergeben Sie die in eine Datenstruktur gespeichert.
+In der Ansicht kann auch ein Mausklick in sich selbst als Auswahl oder Bearbeitung von Daten interpretiert werden. Auf ähnliche Weise können Tastatureingaben als Dateneingabe oder-Bearbeitung interpretiert werden. Angenommen, der Benutzer gibt eine Zeichenfolge in einer Ansicht ein, die Text verwaltet. Die Ansicht erhält einen Zeiger auf das Dokument und verwendet den-Zeiger, um die neuen Daten an das Dokument zu übergeben, das in einer Datenstruktur gespeichert wird.
 
-## <a name="updating-multiple-views-of-the-same-document"></a>Aktualisieren mehrerer Ansichten des gleichen Dokuments
+## <a name="updating-multiple-views-of-the-same-document"></a>Aktualisieren mehrerer Ansichten desselben Dokuments
 
-In einer Anwendung mit mehreren Ansichten des gleichen Dokuments – z. B. ein Teilungsfenster in einem Text-Editor – die Ansicht übergibt die neuen Daten zuerst auf das Dokument. Anschließend ruft Sie des Dokuments [UpdateAllViews](../mfc/reference/cdocument-class.md#updateallviews) Memberfunktion, der allen Ansichten des Dokuments, das selbst aktualisieren, damit die neuen Daten darüber informiert werden. Diese synchronisiert die Sichten.
+In einer Anwendung mit mehreren Ansichten desselben Dokuments – z. b. ein Splitter Fenster in einem Text-Editor – übergibt die Ansicht zunächst die neuen Daten an das Dokument. Anschließend wird die [UpdateAllViews](reference/cdocument-class.md#updateallviews) -Member-Funktion des Dokuments aufgerufen, die alle Sichten des Dokuments anweist, sich selbst zu aktualisieren und die neuen Daten widerzuspiegeln. Dadurch werden die Ansichten synchronisiert.
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Vorteile der Dokument-/Ansichtarchitektur](../mfc/advantages-of-the-document-view-architecture.md)
+- [Vorteile der Dokument-/Ansichtarchitektur](advantages-of-the-document-view-architecture.md)
 
-- [Alternativen zur Dokument-/Ansichtarchitektur](../mfc/alternatives-to-the-document-view-architecture.md)
+- [Alternativen zur Dokument-/Ansichtarchitektur](alternatives-to-the-document-view-architecture.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dokument-/Ansichtsarchitektur](../mfc/document-view-architecture.md)
+[Dokument-/Ansichtarchitektur](document-view-architecture.md)

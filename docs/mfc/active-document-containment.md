@@ -8,35 +8,35 @@ helpviewer_keywords:
 - active document containers [MFC], about active document containers
 - MFC COM, active document containment
 ms.assetid: b8dfa74b-75ce-47df-b75e-fc87b7f7d687
-ms.openlocfilehash: dc13384454c4732d3efbf99def5d05dd4f2d44aa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1c524d6890cd7b86bcae2c40d8c602e7b04e751b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394962"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623434"
 ---
 # <a name="active-document-containment"></a>Active Document-Container
 
-Active Document-Container ist eine Technologie, die ein einzelnes Frame, in dem bietet Sie arbeiten mit Dokumenten, anstatt Sie zu erstellen und verwenden mehrere Frames der Anwendung für jeden Dokumenttyp zwingen. Es unterscheidet sich vom einfachen OLE-Technologie, OLE mit eingebetteten Objekten in einem Verbunddokument funktioniert in der nur ein einzelnes Inhaltselement aktiv sein kann. Mit active Document-Container aktivieren Sie ein ganzes Dokument (d. h. eine vollständige Anwendung, einschließlich der zugehörigen Menüs, Symbolleisten und So weiter), im Kontext eines einzelnen Frames.
+Die aktive Dokument Kapselung ist eine Technologie, die einen einzelnen Frame zum Arbeiten mit Dokumenten bereitstellt, anstatt Sie zu zwingen, mehrere Anwendungs Frames für jeden Dokumenttyp zu erstellen und zu verwenden. Dies unterscheidet sich von der grundlegenden OLE-Technologie, da OLE mit eingebetteten Objekten in einem Verbund Dokument funktioniert, in dem nur ein einzelnes Inhalts Element aktiv sein kann. Mit der aktiven Dokument Kapselung aktivieren Sie ein gesamtes Dokument (d. h. eine gesamte Anwendung, einschließlich der zugehörigen Menüs, Symbolleisten usw.) innerhalb des Kontexts eines einzelnen Frames.
 
-Die active Document Containment-Technologie wurde ursprünglich für Microsoft Office, Office Binder implementiert entwickelt. Allerdings ist die Technologie ist flexibel genug, um active Document-Container als Office Binder zu unterstützen und Dokumentserver als Office und Office-kompatiblen Anwendungen unterstützen.
+Die Active Document Containment-Technologie wurde ursprünglich für die Microsoft Office der Implementierung von Office-Binder entwickelt. Allerdings ist die Technologie flexibel genug, um aktive Dokument Container als Office-Binder zu unterstützen, und kann andere Dokument Server als Office-und Office-kompatible Anwendungen unterstützen.
 
-Die Anwendung, aktive Dokumente hostet, heißt ein [active Document-Container](../mfc/active-document-containers.md). Beispiele für solche Container sind die Microsoft Office Binder oder Microsoft Internet Explorer.
+Die Anwendung, die aktive Dokumente hostet, wird als [aktiver Dokument Container](active-document-containers.md)bezeichnet. Beispiele für derartige Container sind der Microsoft Office Binder oder Microsoft Internet Explorer.
 
-Active Document-Container wird implementiert, wie ein Satz von Erweiterungen zu OLE-Dokumente, die Verbunddokument-Technologie von OLE. Die Erweiterungen sind weitere Schnittstellen, mit die ein eingebettet werden, ein direktes Objekt ein ganzes Dokument anstelle eines einzelnen Teils eingebetteter Inhalt darstellen können. Wie bei der OLE-Serverdokumente, verwendet active Document-Container einen Container, der den Anzeigebereich für aktive Dokumente und -Server, die der Benutzer für die aktive Dokumente selbst-Schnittstelle und-Bearbeitung ermöglichen bereitstellt.
+Die aktive Dokument Kapselung wird als Satz von Erweiterungen für OLE-Dokumente implementiert, der Verbund Dokumenten Technologie von OLE. Bei den Erweiterungen handelt es sich um zusätzliche Schnittstellen, die es ermöglichen, dass ein einbettbares, direktes Objekt ein gesamtes Dokument anstelle eines einzelnen eingebetteten Inhalts darstellt. Wie bei OLE-Dokumenten verwendet die aktive Dokument Kapselung einen Container, der den Anzeigebereich für aktive Dokumente und Server bereitstellt, die die Benutzeroberfläche und die Bearbeitungsfunktionen für die aktiven Dokumente selbst bereitstellen.
 
-Ein [active Document-Server](../mfc/active-document-servers.md) ist eine Anwendung (z. B. Word, Excel oder PowerPoint), die eine oder mehrere active Document-Klassen unterstützt, in dem jedes Objekt selbst die Schnittstellen der datenverarbeitungserweiterung, mit denen das Objekt unterstützt, das in aktiviert werden können. ein geeignete Container.
+Ein [aktiver Dokument Server](active-document-servers.md) ist eine Anwendung (z. b. Word, Excel oder PowerPoint), die mindestens eine aktive Dokument Klasse unterstützt, wobei jedes Objekt selbst die Erweiterungs Schnittstellen unterstützt, mit denen das Objekt in einem geeigneten Container aktiviert werden kann.
 
-Ein [aktive Dokument](../mfc/active-documents.md) (bereitgestellt von einem aktiven Dokumentserver wie Word oder Excel) ist im Wesentlichen ein konventionelles Dokument, das als ein Objekt in einer anderen active Document-Container aus eingebettet ist. Im Gegensatz zu eingebetteten Objekten die aktive Dokumente haben vollständige Kontrolle über ihre Seiten aus, und die vollständige Benutzeroberfläche der Anwendung (mit allen Befehlen und Tools) für den Benutzer zu deren Bearbeitung verfügbar ist.
+Ein [aktives Dokument](active-documents.md) (das von einem aktiven Dokument Server wie z. b. Word oder Excel bereitgestellt wird) ist im Grunde ein herkömmliches Dokument, das in einem anderen aktiven Dokument Container als Objekt eingebettet ist. Im Gegensatz zu eingebetteten Objekten haben aktive Dokumente vollständige Kontrolle über Ihre Seiten, und die vollständige Oberfläche der Anwendung (mit allen zugehörigen Befehlen und Tools) ist für den Benutzer zur Bearbeitung verfügbar.
 
-Ein aktives Dokument besser zu verstehen unterscheiden sie von einem standard eingebettete OLE-Objekt. Klicken Sie nach OLE-Konvention ein eingebettetes Objekt ist eine, die auf der Seite des Dokuments angezeigt wird, die dieser besitzt, und das Dokument von einem OLE-Container verwaltet wird. Der Container enthält die eingebetteten Daten des Objekts mit dem Rest des Dokuments. Eingebettete Objekte sind jedoch begrenzt, als sie die Seite, auf dem sie angezeigt werden, nicht kontrollieren.
+Ein aktives Dokument ist am besten zu verstehen, indem es von einem OLE Embedded-Standard Objekt unterschieden wird. Nach der OLE-Konvention wird ein eingebettetes Objekt in der Seite des Dokuments angezeigt, das es besitzt, und das Dokument wird von einem OLE-Container verwaltet. Der Container speichert die Daten des eingebetteten Objekts mit dem restlichen Dokument. Eingebettete Objekte sind jedoch so eingeschränkt, dass Sie nicht die Seite steuern, auf der Sie angezeigt werden.
 
-Benutzer von einer containeranwendung für aktive Dokument können aktive Dokumente (Abschnitte in Office Binder bezeichnet) erstellen ihre bevorzugten Anwendungen verwenden, (vorausgesetzt, diese Anwendungen aktive Dokument aktiviert sind), aber der Benutzer das resultierende Projekt als verwalten können eine einzelne Entität, die einen eindeutigen Namen haben kann gespeichert, gedruckt, und So weiter. Auf die gleiche Weise kann ein Benutzer einen Internet-Browser das gesamte Netzwerk als auch lokale Dateisysteme, wie eine Speicherentität für einzelnes Dokument mit der Möglichkeit, die Dokumente in diesem Speicher an einem zentralen Ort zu durchsuchen behandelt werden.
+Benutzer einer aktiven Dokument Containeranwendung können aktive Dokumente (als Abschnitte in Office-Binder bezeichnet) mit Ihren bevorzugten Anwendungen erstellen (vorausgesetzt, diese Anwendungen sind als aktives Dokument aktiviert), aber die Benutzer können das resultierende Projekt als einzelne Entität verwalten, die eindeutig benannt, gespeichert, gedruckt usw. sein kann. Auf dieselbe Weise kann ein Benutzer eines Internet Browsers sowohl das gesamte Netzwerk als auch lokale Dateisysteme als eine einzelne Dokument Speicher Entität mit der Möglichkeit zum Durchsuchen der Dokumente in diesem Speicher von einem einzigen Speicherort aus behandeln.
 
 ## <a name="sample-programs"></a>Beispielprogramme
 
-- Die [MFCBIND](../overview/visual-cpp-samples.md) Beispiel veranschaulicht die Implementierung einer containeranwendung für aktive Dokument.
+- Das [MFCBIND](../overview/visual-cpp-samples.md) -Beispiel veranschaulicht die Implementierung einer aktiven Dokument Containeranwendung.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC COM](../mfc/mfc-com.md)
+[MFC COM](mfc-com.md)

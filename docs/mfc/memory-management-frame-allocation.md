@@ -18,27 +18,27 @@ helpviewer_keywords:
 - frame allocation [MFC]
 - frame variables [MFC]
 ms.assetid: 945a211a-6f4f-4679-bb6a-b0f2a0d4a6c1
-ms.openlocfilehash: 1acf2ce89e18dd64c166103b59b5eb7007214efd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1ecf1c08164d1a760fce62457a6019e767ed2605
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62352125"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626298"
 ---
 # <a name="memory-management-frame-allocation"></a>Speicherverwaltung: Rahmenzuordnung
 
-Zuweisung auf den Frame hat seinen Namen aus der "Stapelrahmen", der festgelegt wird einrichten, wenn eine Funktion aufgerufen wird. Der Stapelrahmen ist einem Bereich des Arbeitsspeichers, der vorübergehend enthält die Argumente der Funktion als auch für alle Variablen, die definiert sind, die für die Funktion lokal. Framevariablen werden häufig "Automatische" Variablen bezeichnet, da der Compiler automatisch den Speicherplatz für sie reserviert.
+Die Zuordnung im Frame übernimmt den Namen aus dem "Stapel Rahmen", der beim Aufruf einer Funktion eingerichtet wird. Der Stapel Rahmen ist ein Speicherbereich, der die Argumente für die Funktion und alle Variablen, die für die Funktion lokal definiert sind, vorübergehend enthält. Frame Variablen werden häufig als "automatische" Variablen bezeichnet, da der Compiler automatisch den Platz für diese Variablen zuordnet.
 
-Es gibt zwei wichtige Merkmale der Frame-Zuordnungen. Zuerst, wenn Sie eine lokale Variable definieren, wird genügend Speicherplatz auf dem Stapelrahmen, um die gesamte Variable speichern zugeordnet, selbst wenn es sich um ein großes Array oder eine Datenstruktur ist. Andererseits wird Framevariablen werden automatisch gelöscht, wenn sie den Gültigkeitsbereich verlassen:
+Es gibt zwei Hauptmerkmale von Frame Zuordnungen. Wenn Sie zunächst eine lokale Variable definieren, wird dem Stapel Rahmen genügend Speicherplatz zugeordnet, um die gesamte Variable zu speichern, auch wenn es sich um ein großes Array oder eine Datenstruktur handelt. Zweitens werden Frame Variablen automatisch gelöscht, wenn Sie den Gültigkeitsbereich verlassen:
 
-[!code-cpp[NVC_MFC_Utilities#10](../mfc/codesnippet/cpp/memory-management-frame-allocation_1.cpp)]
+[!code-cpp[NVC_MFC_Utilities#10](codesnippet/cpp/memory-management-frame-allocation_1.cpp)]
 
-Für lokale Variablen erfolgt dieser Übergang Bereich auf, wenn die Funktion beendet wird, aber den Rahmen einer-Framevariablen kleiner als eine Funktion werden können, wenn geschachtelte Klammern verwendet werden. Diese automatische Löschen von Framevariablen ist sehr wichtig. Im Fall von einfacher, primitiver Typen (z. B. **Int** oder **Byte**), Arrays oder Datenstrukturen, das automatische Löschen einfach gibt den Speicher frei, die von der Variablen verwendet. Da die Variable den Gültigkeitsbereich verlassen hat, kann es dennoch zugegriffen werden. Im Fall von C++-Objekten ist der Prozess des automatischen Löschvorgangs jedoch etwas komplizierter.
+Bei lokalen Funktions Variablen tritt dieser Bereichs Übergang auf, wenn die Funktion beendet wird, aber der Bereich einer Frame Variablen kann kleiner sein als eine Funktion, wenn die geschweiften Klammern verwendet werden. Das automatische Löschen von Frame Variablen ist äußerst wichtig. Bei einfachen primitiven Typen (z. b. **int** oder **Byte**), Arrays oder Datenstrukturen gibt der automatische Löschvorgang einfach den von der Variablen verwendeten Arbeitsspeicher frei. Da die Variable den Gültigkeitsbereich verlassen hat, kann auf Sie trotzdem nicht zugegriffen werden. Im Fall von C++-Objekten ist der Prozess der automatischen Löschung jedoch etwas komplizierter.
 
-Wenn ein Objekt als Framevariable definiert ist, wird seinem Konstruktor automatisch an der Stelle aufgerufen, in dem die Definition gefunden wird. Wenn das Objekt den Gültigkeitsbereich verlässt, wird dessen Destruktor automatisch aufgerufen, bevor der Speicher für das Objekt freigegeben wird. Diese automatische Konstruktion und Zerstörung können sehr nützlich sein, aber Sie müssen über die automatische Aufrufe, insbesondere der Destruktor sein.
+Wenn ein Objekt als Frame Variable definiert ist, wird der zugehörige Konstruktor automatisch an dem Punkt aufgerufen, an dem die Definition auftritt. Wenn das Objekt den Gültigkeitsbereich verlässt, wird der Dekonstruktor automatisch aufgerufen, bevor der Speicher für das Objekt freigegeben wird. Diese automatische Erstellung und Zerstörung kann sehr nützlich sein, aber Sie müssen die automatischen Aufrufe beachten, insbesondere für den Dekonstruktor.
 
-Der Hauptvorteil der Zuweisung von Objekten im Frame ist, dass sie automatisch gelöscht werden. Wenn Sie Ihre Objekte im Bereich zuordnen, müssen Sie kümmern vergessen haben Objekte einen Speicherverlust verursacht. (Ausführliche Informationen zu Speicherverlusten, finden Sie im Artikel [feststellen von Speicherverlusten in MFC](/previous-versions/visualstudio/visual-studio-2010/c99kz476(v=vs.100)).) Ein Nachteil von rahmenzuordnung ist Framevariablen außerhalb ihres Bereichs können nicht verwendet werden. Ein weiterer Faktor bei der Auswahl rahmenzuordnung im Vergleich zu Heapzuordnung ist, dass große Strukturen und-Objekten es oft besser ist, den Heap anstatt des Stapels für den Speicher verwenden, da Stapelspeicher häufig beschränkt ist.
+Der Hauptvorteil der Zuordnung von Objekten im Frame besteht darin, dass Sie automatisch gelöscht werden. Wenn Sie die Objekte im Frame zuordnen, müssen Sie sich keine Gedanken über vergessene Objekte machen, die Speicher Verluste verursachen. (Ausführliche Informationen zu Speicher Verlusten finden Sie im Artikel [Erkennen von Speicher Verlusten in MFC](/previous-versions/visualstudio/visual-studio-2010/c99kz476(v=vs.100)).) Ein Nachteil der Rahmen Zuordnung ist, dass Frame Variablen außerhalb ihres Bereichs nicht verwendet werden können. Ein weiterer Faktor bei der Auswahl von Frame Zuweisung und Heap Zuordnung ist, dass es bei großen Strukturen und Objekten häufig besser ist, den Heap anstelle des Stapels für den Speicher zu verwenden, da der Stapel Speicherplatz häufig eingeschränkt ist.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Speicherverwaltung](../mfc/memory-management.md)
+[Speicherverwaltung](memory-management.md)

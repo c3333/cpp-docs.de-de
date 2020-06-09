@@ -42,70 +42,70 @@ helpviewer_keywords:
 - EVENT_STOCK_READYSTATECHANGE event
 - EVENT_STOCK_KEYPRESS event
 ms.assetid: 3eeadc67-4b3d-4444-8caa-53054073988a
-ms.openlocfilehash: 79cd4fc572e55c67cc5a2cfe3a00e04f2a4a7850
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a97c08baaf3c11b0436e52bb4fd4ac380999d69a
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364686"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84615591"
 ---
 # <a name="mfc-activex-controls-adding-stock-events-to-an-activex-control"></a>MFC-ActiveX-Steuerelemente: Hinzufügen von vordefinierten Ereignissen zu einem ActiveX-Steuerelement
 
-Bestandsereignisse unterscheiden sich von benutzerdefinierten Ereignissen dadurch, dass sie automatisch von der Klasse [COleControl](../mfc/reference/colecontrol-class.md)ausgelöst werden. `COleControl`enthält vordefinierte Memberfunktionen, die Ereignisse aus allgemeinen Aktionen ausfeuern. Einige häufige Aktionen, die von `COleControl` implementiert werden, umfassen Ein- und Doppelklicks auf das Steuerelement, Tastaturereignisse und Änderungen im Zustand der Maustasten. Ereigniskarteneinträgen für Bestandsereignisse wird immer das Präfix EVENT_STOCK vorangestellt.
+Aktien Ereignisse unterscheiden sich von benutzerdefinierten Ereignissen darin, dass Sie automatisch von der Klasse [COleControl](reference/colecontrol-class.md)ausgelöst werden. `COleControl`enthält vordefinierte Element Funktionen, die Ereignisse auslösen, die sich aus häufigen Aktionen ergeben. Einige häufige Aktionen, die durch implementiert werden `COleControl` , umfassen ein-und Doppelklicks auf das Steuerelement, Tastatur Ereignisse und Änderungen im Zustand der Maustasten. Ereignis Zuordnungs Einträge für Aktien Ereignisse sind immer das EVENT_STOCK Präfix vorangestellt.
 
-## <a name="stock-events-supported-by-the-add-event-wizard"></a><a name="_core_stock_events_supported_by_classwizard"></a>Vom Add-Event-Assistenten unterstützte Bestandsereignisse
+## <a name="stock-events-supported-by-the-add-event-wizard"></a><a name="_core_stock_events_supported_by_classwizard"></a>Vom Assistenten zum Hinzufügen von Ereignissen unterstützte Aktien Ereignisse
 
-Die `COleControl` Klasse bietet zehn Bestandsereignisse, die in der folgenden Tabelle aufgeführt sind. Sie können die gewünschten Ereignisse in Ihrem Steuerelement mithilfe des [Assistenten zum Hinzufügen](../ide/add-event-wizard.md)von Ereignissen angeben.
+Die- `COleControl` Klasse stellt zehn Aktien Ereignisse bereit, die in der folgenden Tabelle aufgeführt sind. Mithilfe des [Assistenten zum Hinzufügen](../ide/add-event-wizard.md)von Ereignissen können Sie die gewünschten Ereignisse in Ihrem Steuerelement angeben.
 
-### <a name="stock-events"></a>Stock Events
+### <a name="stock-events"></a>Aktien Ereignisse
 
-|Ereignis|Brennfunktion|Kommentare|
+|Ereignis|Auslösen der Funktion|Kommentare|
 |-----------|---------------------|--------------|
-|Klicken Sie auf |**void FireClick( )**|Wird ausgelöst, wenn das Steuerelement die Maus erfasst, wird eine **beliebige BUTTONUP-Nachricht** (links, mitte oder rechts) empfangen, und die Schaltfläche wird über das Steuerelement freigegeben. Die Stock MouseDown- und MouseUp-Ereignisse treten vor diesem Ereignis auf.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_CLICK( )**|
-|Dblclick|**void FireDblClick( )**|Ähnlich wie Click, aber ausgelöst, wenn eine **BUTTONDBLCLK-Nachricht** empfangen wird.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_DBLCLICK( )**|
-|Fehler|**void FireError( SCODE***scode* **, LPCSTR** `lpszDescription` , **UINT**`nHelpID`**= 0 )**        |Wird ausgelöst, wenn ein Fehler innerhalb des ActiveX-Steuerelements außerhalb des Bereichs eines Methodenaufrufs oder Eigenschaftenzugriffs auftritt.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_ERROREVENT( )**|
-|KeyDown|**void FireKeyDown( kurz** `nChar` **, kurz**`nShiftState`**)**      |Wird ausgelöst, wenn eine `WM_SYSKEYDOWN` oder `WM_KEYDOWN` eine Nachricht empfangen wird.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_KEYDOWN( )**|
-|Keypress|**void FireKeyPress( kurz** <strong>\*</strong> `pnChar` **)**    |Wird ausgelöst, wenn eine `WM_CHAR` Nachricht empfangen wird.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_KEYPRESS( )**|
-|KeyUp|**void FireKeyUp( kurz** `nChar` **, kurz**`nShiftState`**)**      |Wird ausgelöst, wenn eine `WM_SYSKEYUP` oder `WM_KEYUP` eine Nachricht empfangen wird.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_KEYUP( )**|
-|Mousedown|**void FireMouseDown( kurz** `nButton` **, kurz** `nShiftState` **, float***x* **, float***y***)**          |Wird ausgelöst, wenn **BUTTONDOWN** (links, mitte oder rechts) empfangen wird. Die Maus wird unmittelbar vor dem Ausfeuern dieses Ereignisses erfasst.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_MOUSEDOWN( )**|
-|Mousemove|**void FireMouseMove( kurz** `nButton` **, kurz** `nShiftState` **, float***x* **, float***y***)**          |Wird ausgelöst, wenn eine WM_MOUSEMOVE Nachricht empfangen wird.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_MOUSEMOVE( )**|
-|Mouseup|**void FireMouseUp( kurz** `nButton` **, kurz** `nShiftState` **, float***x* **, float***y***)**          |Wird ausgelöst, wenn **BUTTONUP** (links, mitte oder rechts) empfangen wird. Die Mausaufnahme wird veröffentlicht, bevor dieses Ereignis ausgelöst wird.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_MOUSEUP( )**|
-|ReadyStateChange|**void FireReadyStateChange( )**|Wird ausgelöst, wenn ein Steuerelement aufgrund der empfangenen Datenmenge in den nächsten bereiten Zustand wechselt.<br /><br /> Ereigniskarteneintrag: **EVENT_STOCK_READYSTATECHANGE( )**|
+|Klicken|**void-"freclick ()"**|Wird ausgelöst, wenn das Steuerelement die Maus erfasst, eine beliebige **BUTTONUP** -Meldung (Links, zentriert oder rechts) empfangen wird und die Schaltfläche über dem Steuerelement losgelassen wird. Die Kurs-mousidown-und mousiup-Ereignisse treten vor diesem Ereignis auf.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_CLICK ()**|
+|DblClick|**void firedblclick ()**|Vergleichbar mit Click, aber ausgelöst, wenn eine **BUTTONDBLCLK** -Nachricht empfangen wird.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_DBLCLICK ()**|
+|Fehler|**void FireError (SCODE***SCODE* **, LPCSTR** `lpszDescription` **, uint** `nHelpID` **= 0)**        |Wird ausgelöst, wenn ein Fehler innerhalb des ActiveX-Steuer Elements außerhalb des Gültigkeits Bereichs eines Methoden Aufrufes oder Eigenschaften Zugriffs auftritt.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_ERROREVENT ()**|
+|KeyDown|**Feuer KeyDown (kurz** `nChar` **, kurz** `nShiftState` **)** leeren      |Wird ausgelöst, wenn eine- `WM_SYSKEYDOWN` oder- `WM_KEYDOWN` Meldung empfangen wird.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_KEYDOWN ()**|
+|KeyPress|**void Feuer KeyPress (Kurzform)** <strong>\*</strong> `pnChar` **)**    |Wird ausgelöst, wenn eine `WM_CHAR` Nachricht empfangen wird.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_KEYPRESS ()**|
+|KeyUp|**void Feuer KeyUp (Short** `nChar` **, Short** `nShiftState` **)**      |Wird ausgelöst, wenn eine- `WM_SYSKEYUP` oder- `WM_KEYUP` Meldung empfangen wird.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_KEYUP ()**|
+|MouseDown|**void firemouledown (Short** `nButton` **, Short** `nShiftState` **, float***x* **, float***y***)**          |Wird ausgelöst, wenn ein **buttondown** (Links, zentriert oder rechts) empfangen wird. Die Maus wird unmittelbar vor dem Auslösen dieses Ereignisses aufgezeichnet.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_MOUSEDOWN ()**|
+|MouseMove|**void firemoulemove (Short** `nButton` **, Short** `nShiftState` **, float***x* **, float***y***)**          |Wird ausgelöst, wenn eine WM_MOUSEMOVE Meldung empfangen wird.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_MOUSEMOVE ()**|
+|MouseUp|**void firemouberup (Short** `nButton` **, Short** `nShiftState` **, float***x* **, float***y***)**          |Wird ausgelöst, **Wenn eine beliebige** Schaltfläche (Links, zentriert oder rechts) empfangen wird. Die Maus Aufzeichnung wird freigegeben, bevor dieses Ereignis ausgelöst wird.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_MOUSEUP ()**|
+|"Leserystatechange"|**void firereadystatechange ()**|Wird ausgelöst, wenn ein Steuerelement aufgrund der empfangenen Datenmenge in den nächsten Status übergeht.<br /><br /> Ereignis Zuordnungs Eintrag: **EVENT_STOCK_READYSTATECHANGE ()**|
 
-## <a name="adding-a-stock-event-using-the-add-event-wizard"></a><a name="_core_adding_a_stock_event_using_classwizard"></a>Hinzufügen eines Stock-Ereignisses mithilfe des Assistenten zum Hinzufügen von Ereignis
+## <a name="adding-a-stock-event-using-the-add-event-wizard"></a><a name="_core_adding_a_stock_event_using_classwizard"></a>Hinzufügen eines Aktien Ereignisses mithilfe des Assistenten zum Hinzufügen von Ereignissen
 
-Das Hinzufügen von Bestandsereignissen erfordert weniger Arbeit als das Hinzufügen benutzerdefinierter `COleControl`Ereignisse, da das Auslösen des tatsächlichen Ereignisses automatisch von der Basisklasse behandelt wird. Mit dem folgenden Verfahren wird einem Steuerelement, das mit dem [MFC ActiveX Control Wizard](../mfc/reference/mfc-activex-control-wizard.md)entwickelt wurde, ein Bestandsereignis hinzugefügt. Das Ereignis, das als KeyPress bezeichnet wird, wird ausgelöst, wenn eine Taste gedrückt wird und das Steuerelement aktiv ist. Dieses Verfahren kann auch verwendet werden, um andere Bestandsereignisse hinzuzufügen. Ersetzen Sie den ausgewählten Bestandsereignisnamen für KeyPress.
+Das Hinzufügen von Aktien Ereignissen erfordert weniger Arbeit als das Hinzufügen von benutzerdefinierten Ereignissen, da das Auslösen des eigentlichen Ereignisses automatisch von der Basisklasse behandelt wird `COleControl` . Das folgende Verfahren fügt einem Steuerelement, das mit dem [MFC-ActiveX-Steuer](reference/mfc-activex-control-wizard.md)Element-Assistenten entwickelt wurde, ein Lager Ereignis hinzu. Das Ereignis, das als KeyPress bezeichnet wird, wird ausgelöst, wenn eine Taste gedrückt wird und das Steuerelement aktiv ist. Dieses Verfahren kann auch verwendet werden, um andere Aktien Ereignisse hinzuzufügen. Ersetzen Sie den Namen des ausgewählten Aktien Ereignisses durch KeyPress.
 
-#### <a name="to-add-the-keypress-stock-event-using-the-add-event-wizard"></a>So fügen Sie das KeyPress-Aktienereignis mithilfe des Add-Ereignis-Assistenten hinzu
+#### <a name="to-add-the-keypress-stock-event-using-the-add-event-wizard"></a>So fügen Sie das KeyPress-Aktien Ereignis mithilfe des Assistenten zum Hinzufügen von Ereignissen hinzu
 
 1. Laden Sie das Steuerelementprojekt.
 
-1. Klicken Sie in der Klassenansicht mit der rechten Maustaste auf Ihre ActiveX-Steuerelementklasse, um das Kontextmenü zu öffnen.
+1. Klicken Sie in Klassenansicht mit der rechten Maustaste auf Ihre ActiveX-Steuerelement Klasse, um das Kontextmenü zu öffnen.
 
-1. Klicken Sie im Kontextmenü auf **Hinzufügen** und dann auf **Ereignis hinzufügen**.
+1. Klicken Sie im Kontextmenü auf **Hinzufügen** , und klicken Sie dann auf **Ereignis hinzufügen**.
 
-   Dadurch wird der Assistenten zum Hinzufügen von Ereignisen geöffnet.
+   Daraufhin wird der Assistent zum Hinzufügen von Ereignissen geöffnet.
 
-1. Wählen Sie `KeyPress`in der Dropdown-Liste **Ereignisname** aus.
+1. Wählen Sie in der Dropdown Liste **Ereignis Name den Namen** aus `KeyPress` .
 
 1. Klicken Sie auf **Fertig stellen**.
 
-## <a name="add-event-wizard-changes-for-stock-events"></a><a name="_core_classwizard_changes_for_stock_events"></a>Hinzufügen von Ereignis-Assistenten-Änderungen für Aktienereignisse
+## <a name="add-event-wizard-changes-for-stock-events"></a><a name="_core_classwizard_changes_for_stock_events"></a>Hinzufügen von Änderungen des Ereignis-Assistenten für Bestands Ereignisse
 
-Da Bestandsereignisse von der Basisklasse des Steuerelements verarbeitet werden, ändert der Add-Ereignis-Assistent Ihre Klassendeklaration in keiner Weise. Das Ereignis wird der Ereigniszuordnung des Steuerelements hinzugefügt und ein Eintrag in seiner erstellt. IDL-Datei. Die folgende Zeile wird der Ereigniszuordnung des Steuerelements hinzugefügt, die sich in der Implementierung der Steuerelementklasse befindet (. CPP)-Datei:
+Da Bestands Ereignisse von der Basisklasse des Steuer Elements behandelt werden, ändert der Assistent zum Hinzufügen von Ereignissen Ihre Klassen Deklaration in keiner Weise. Das Ereignis wird der Ereignis Zuordnung des-Steuer Elements hinzugefügt, und es wird ein Eintrag in der erstellt. IDL-Datei. Die folgende Zeile wird der Ereignis Zuordnung des-Steuer Elements hinzugefügt, die sich in der Implementierung der Steuerelement Klasse befindet. Cpp-Datei:
 
-[!code-cpp[NVC_MFC_AxUI#5](../mfc/codesnippet/cpp/mfc-activex-controls-adding-stock-events-to-an-activex-control_1.cpp)]
+[!code-cpp[NVC_MFC_AxUI#5](codesnippet/cpp/mfc-activex-controls-adding-stock-events-to-an-activex-control_1.cpp)]
 
-Durch Hinzufügen dieses Codes wird ein KeyPress-Ereignis ausgelöst, wenn eine WM_CHAR Nachricht empfangen wird und das Steuerelement aktiv ist. Das KeyPress-Ereignis kann zu anderen Zeiten ausgelöst werden, `FireKeyPress`indem seine Löschfunktion (z. B. ) innerhalb des Steuercodes aufgerufen wird.
+Durch das Hinzufügen dieses Codes wird ein KeyPress-Ereignis ausgelöst, wenn eine WM_CHAR Nachricht empfangen wird und das Steuerelement aktiv ist. Das KeyPress-Ereignis kann zu anderen Zeitpunkten durch Aufrufen der auslösenden Funktion (z `FireKeyPress` . b.) aus dem Steuercode ausgelöst werden.
 
-Der Assistent zum Hinzufügen von Ereignis fügt die folgende Codezeile zum Steuerelement hinzu. IDL-Datei:
+Der Assistent zum Hinzufügen von Ereignissen fügt dem des-Steuer Elements die folgende Codezeile hinzu. IDL-Datei:
 
-[!code-cpp[NVC_MFC_AxUI#6](../mfc/codesnippet/cpp/mfc-activex-controls-adding-stock-events-to-an-activex-control_2.idl)]
+[!code-cpp[NVC_MFC_AxUI#6](codesnippet/cpp/mfc-activex-controls-adding-stock-events-to-an-activex-control_2.idl)]
 
-Diese Zeile ordnet das KeyPress-Ereignis seiner Standard-Dispatch-ID zu und ermöglicht es dem Container, das KeyPress-Ereignis zu antizipieren.
+Diese Zeile verknüpft das KeyPress-Ereignis mit der Standard-Dispatch-ID und ermöglicht dem Container, das KeyPress-Ereignis zu erwarten.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md)<br/>
-[MFC-ActiveX-Steuerelemente: Methoden](../mfc/mfc-activex-controls-methods.md)<br/>
-[COleControl-Klasse](../mfc/reference/colecontrol-class.md)
+[MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
+[MFC-ActiveX-Steuerelemente: Methoden](mfc-activex-controls-methods.md)<br/>
+[COleControl-Klasse](reference/colecontrol-class.md)

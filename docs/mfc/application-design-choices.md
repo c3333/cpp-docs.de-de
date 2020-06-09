@@ -11,84 +11,84 @@ helpviewer_keywords:
 - server applications [MFC], vs. client applications on Internet
 - client applications [MFC], vs. server applications on Internet
 ms.assetid: 9b96172c-b4d4-4c69-bfb2-226ce0de6d08
-ms.openlocfilehash: 89f3e5c108de1cf7b3b73a33a08e2c50b1333c92
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5ae6d5d3087720a1cfed3fcc33569ed4bed0ebfd
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374626"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616024"
 ---
 # <a name="application-design-choices"></a>Überlegungen zum Anwendungsentwurf
 
-In diesem Artikel werden einige der Entwurfsprobleme erläutert, die bei der Programmierung für das Internet zu berücksichtigen sind.
+In diesem Artikel werden einige der Entwurfs Probleme erläutert, die beim Programmieren für das Internet zu beachten sind.
 
 Zu den in diesem Artikel behandelten Themen gehören:
 
-- [Intranet Versus Internet](#_core_intranet_versus_internet)
+- [Intranet und Internet](#_core_intranet_versus_internet)
 
-- [Client- oder Serveranwendung](#_core_client_or_server_application)
+- [Client-oder Server Anwendung](#_core_client_or_server_application)
 
 - [Die Webseite](#_core_the_web_page)
 
-- [Browser oder Stand-Alone-Anwendung](#_core_browser_or_standalone)
+- [Browser oder eigenständige Anwendung](#_core_browser_or_standalone)
 
-- [KOM im Internet](#_core_com_on_the_internet)
+- [COM im Internet](#_core_com_on_the_internet)
 
-- [Client Data Download Services](#_core_client_data_download_services)
+- [Download Dienste für Client Daten](#_core_client_data_download_services)
 
-Wenn Sie jetzt mit dem Schreiben des Programms beginnen möchten, finden Sie weitere Informationen unter Schreiben von [MFC-Anwendungen](../mfc/writing-mfc-applications.md).
+Wenn Sie bereit sind, das Programm jetzt zu schreiben, finden Sie weitere Informationen unter [Schreiben von MFC-Anwendungen](writing-mfc-applications.md).
 
-## <a name="intranet-versus-internet"></a><a name="_core_intranet_versus_internet"></a>Intranet Versus Internet
+## <a name="intranet-versus-internet"></a><a name="_core_intranet_versus_internet"></a>Intranet und Internet
 
-Viele Anwendungen laufen im Internet und sind für jeden zugänglich, der über einen Browser und Internetzugang verfügt. Unternehmen implementieren auch Intranets, bei denen es sich um unternehmensweite Netzwerke handelt, die TCP/IP-Protokolle und Webbrowser verwenden. Intranets bieten eine leicht erweiterbare, zentrale Quelle für unternehmensweite Informationen. Sie können für das Upgrade von Software, für die Bereitstellung und Tabellierung von Umfragen, für den Kundensupport und für die Informationsbereitstellung verwendet werden. In der folgenden Tabelle werden die Features des Internets und der Intranets verglichen.
+Viele Anwendungen werden im Internet ausgeführt und sind für alle Benutzer mit Browser-und Internet Zugriff zugänglich. Unternehmen implementieren auch Intranets, bei denen es sich um unternehmensweite Netzwerke mit TCP/IP-Protokollen und Webbrowser handelt. Intranets bieten eine leicht erweiterbare, zentrale Quelle für unternehmensweite Informationen. Sie können zum Aktualisieren von Software, zum Bereitstellen und Tabulieren von Umfragen, zum Kundensupport und zur Informationsübermittlung verwendet werden. In der folgenden Tabelle werden die Features von Internet und Intranets verglichen.
 
 |Internet|Intranet|
 |--------------|--------------|
 |Geringe Bandbreite|Hohe Bandbreite|
 |Reduzierte Sicherheit von Daten und Systemen|Kontrollierter Zugriff auf Daten und Systeme|
-|Minimale Kontrolle des Inhalts|Hohe Kontrolle des Inhalts|
+|Minimale Kontrolle von Inhalten|Hohe Kontrolle über Inhalte|
 
-## <a name="client-or-server-application"></a><a name="_core_client_or_server_application"></a>Client- oder Serveranwendung
+## <a name="client-or-server-application"></a><a name="_core_client_or_server_application"></a>Client-oder Server Anwendung
 
-Ihre Anwendung kann auf einem Clientcomputer oder auf einem Servercomputer ausgeführt werden. Ihre Anwendung kann auch auf einem Server gespeichert und dann über das Internet heruntergeladen und auf einem Clientcomputer ausgeführt werden. MFC WinInet-Klassen werden für Clientanwendungen zum Herunterladen von Dateien verwendet. MFC- und asynchrone Monikerklassen werden zum Herunterladen von Dateien und Steuerelementeigenschaften verwendet. Klassen für ActiveX-Steuerelemente und Active-Dokumente werden für Clientanwendungen und für Anwendungen verwendet, die vom Server heruntergeladen werden, um auf einem Client ausgeführt zu werden.
+Die Anwendung kann auf einem Client Computer oder auf einem Server Computer ausgeführt werden. Die Anwendung kann auch auf einem Server gespeichert und dann über das Internet heruntergeladen und auf einem Client Computer ausgeführt werden. MFC-WinInet-Klassen werden für Client Anwendungen verwendet, um Dateien herunterzuladen. MFC-und asynchrone Monikerklassen werden verwendet, um Dateien herunterzuladen und Eigenschaften zu steuern. Klassen für ActiveX-Steuerelemente und aktive Dokumente werden für Client Anwendungen und Anwendungen verwendet, die vom Server zum Ausführen auf einem Client heruntergeladen werden.
 
-## <a name="the-web-page-html-active-documents-activex-controls"></a><a name="_core_the_web_page"></a>Die Webseite: HTML, Aktive Dokumente, ActiveX-Steuerelemente
+## <a name="the-web-page-html-active-documents-activex-controls"></a><a name="_core_the_web_page"></a>Die Webseite: HTML, aktive Dokumente, ActiveX-Steuerelemente
 
-Microsoft bietet mehrere Möglichkeiten zum Bereitstellen von Inhalten auf einer Webseite. Webseiten können Standard-HTML- oder HTML-Erweiterungen, z. B. das Objekt-Tag, verwenden, um dynamische Inhalte wie ActiveX-Steuerelemente bereitzustellen.
+Microsoft bietet verschiedene Methoden zum Bereitstellen von Inhalten auf einer Webseite. Webseiten können Standard-HTML-oder HTML-Erweiterungen, wie z. b. das Objekttag, verwenden, um dynamischen Inhalt wie ActiveX-Steuerelemente bereitzustellen.
 
-Webbrowser zeigen in der Regel HTML-Seiten an. Aktive Dokumente können die Daten Ihrer Anwendung auch in der einfachen Point-and-Click-Schnittstelle eines COM-fähigen Browsers anzeigen. Ihr Active-Dokumentserver kann Ihr Dokument mit einem vollständigen Frame im gesamten Clientbereich mit eigenen Menüs und Symbolleisten anzeigen.
+Webbrowser zeigen in der Regel HTML-Seiten an. Aktive Dokumente können die Daten Ihrer Anwendung auch in der einfachen Point-and-Click-Schnittstelle eines com-fähigen Browsers anzeigen. Der aktive Dokument Server kann das Dokument, den vollständigen Frame im gesamten Client Bereich, mit eigenen Menüs und Symbolleisten anzeigen.
 
-ActiveX-Steuerelemente, die Sie schreiben, können asynchron vom Server heruntergeladen und auf einer Webseite angezeigt werden. Sie können eine Skriptsprache wie VBScript verwenden, um eine clientseitige Validierung durchzuführen, bevor Sie Informationen an den Server senden.
+ActiveX-Steuerelemente, die Sie schreiben, können asynchron vom Server heruntergeladen und auf einer Webseite angezeigt werden. Sie können eine Skriptsprache wie VBScript verwenden, um die Client seitige Validierung vor dem Senden von Informationen an den Server auszuführen.
 
-## <a name="browser-or-stand-alone-application"></a><a name="_core_browser_or_standalone"></a>Browser oder Stand-Alone-Anwendung
+## <a name="browser-or-stand-alone-application"></a><a name="_core_browser_or_standalone"></a>Browser oder eigenständige Anwendung
 
-Sie können ActiveX-Steuerelemente schreiben, die in eine HTML-Seite eingebettet sind, und aktive Dokumentserver, die in einem Browser angezeigt werden. Sie können HTML-Seiten schreiben, die eine Schaltfläche enthalten, um eine Anforderung zum Ausführen Ihrer ISAPI-Anwendung auf einem Webserver zu senden. Sie können eine eigenständige Anwendung schreiben, die Internetprotokolle verwendet, um Dateien herunterzuladen und die Informationen für Ihren Benutzer anzuzeigen, ohne jemals eine Browseranwendung zu verwenden.
+Sie können ActiveX-Steuerelemente schreiben, die in eine HTML-Seite und aktive Dokument Server eingebettet sind, die in einem Browser angezeigt werden. Sie können HTML-Seiten schreiben, die eine Schaltfläche enthalten, um eine Anforderung zum Ausführen Ihrer ISAPI-Anwendung auf einem Webserver zu übermitteln. Sie können eine eigenständige Anwendung schreiben, die Internet Protokolle zum Herunterladen von Dateien und zum Anzeigen der Informationen für Ihren Benutzer verwendet, ohne eine Browser Anwendung zu verwenden.
 
-## <a name="com-on-the-internet"></a><a name="_core_com_on_the_internet"></a>KOM im Internet
+## <a name="com-on-the-internet"></a><a name="_core_com_on_the_internet"></a>COM im Internet
 
-ActiveX-Steuerelemente, aktive Dokumente und asynchrone Moniker verwenden alle COM-Technologien (Component Object Model).
+ActiveX-Steuerelemente, aktive Dokumente und asynchrone Moniker verwenden alle com-Technologien (Component Object Model).
 
-ActiveX-Steuerelemente stellen dynamischen Inhalt für Dokumente und Seiten auf Internetsites bereit. Mit COM können Sie ActiveX-Steuerelemente und Vollformatdokumente mithilfe von Active-Dokumenten erstellen.
+ActiveX-Steuerelemente stellen dynamische Inhalte für Dokumente und Seiten auf Internet Sites bereit. Mit com können Sie ActiveX-Steuerelemente und vollständige Frame Dokumente mithilfe aktiver Dokumente erstellen.
 
-Asynchrone Moniker stellen Funktionen bereit, mit denen ein Steuerelement in einer Internetumgebung gut funktionieren kann, einschließlich einer inkrementellen oder progressiven Möglichkeit zum Herunterladen von Daten. Steuerelemente müssen auch gut mit anderen Steuerelementen funktionieren, die ihre Daten auch asynchron gleichzeitig abrufen können.
+Asynchrone Moniker stellen Funktionen bereit, mit denen ein Steuerelement in einer Internet Umgebung gut funktionieren kann, einschließlich einer inkrementellen oder progressiven Möglichkeit zum Herunterladen von Daten. Steuerelemente müssen auch gut mit anderen Steuerelementen funktionieren, die Ihre Daten möglicherweise gleichzeitig asynchron abrufen.
 
-## <a name="client-data-download-services"></a><a name="_core_client_data_download_services"></a>Client Data Download Services
+## <a name="client-data-download-services"></a><a name="_core_client_data_download_services"></a>Download Dienste für Client Daten
 
-Zwei APIs-Sätze, die beim Übertragen von Daten an Ihren Client helfen, sind WinInet und asynchrone Moniker. Wenn Sie große .gif- und .avi-Dateien und ActiveX-Steuerelemente auf Ihrer HTML-Seite haben, können Sie die Reaktionsfähigkeit für den Benutzer erhöhen, indem Sie asynchron herunterladen, entweder durch asynchrone Moniker oder WinInet asynchron.
+Zwei Gruppen von APIs, die bei der Übertragung von Daten an Ihren Client helfen, sind WinInet-und asynchrone Moniker. Wenn Sie über umfangreiche GIF-und AVI-Dateien und ActiveX-Steuerelemente auf der HTML-Seite verfügen, können Sie die Reaktionsfähigkeit des Benutzers erhöhen, indem Sie asynchron herunterladen, indem Sie asynchrone Moniker verwenden oder WinInet asynchron verwenden.
 
-Eine häufige Aufgabe im Internet ist die Datenübertragung. Wenn Sie active-Technologie bereits verwenden (z. B. wenn Sie über ein ActiveX-Steuerelement verfügen), können Sie asynchrone Moniker verwenden, um Daten beim Herunterladen schrittweise zu rendern. Sie können WinInet verwenden, um Daten mithilfe gängiger Internetprotokolle wie HTTP, FTP und Gopher zu übertragen. Beide Methoden bieten Protokollunabhängigkeit und eine abstrakte Ebene für die Verwendung von WinSock und TCP/IP. Sie können [WinSock](../mfc/windows-sockets-in-mfc.md) weiterhin direkt verwenden.
+Eine gängige Aufgabe im Internet ist das Übertragen von Daten. Wenn Sie bereits aktive Technologie verwenden (z. b. Wenn Sie über ein ActiveX-Steuerelement verfügen), können Sie asynchrone Moniker verwenden, um beim Herunterladen progressiv Daten zu erzeugen. Sie können WinInet zum Übertragen von Daten mithilfe allgemeiner Internet Protokolle wie http, FTP und Gopher verwenden. Beide Methoden stellen die Protokoll Unabhängigkeit bereit und bieten eine abstrakte Ebene für die Verwendung von Winsock und TCP/IP. Sie können [Winsock](windows-sockets-in-mfc.md) weiterhin direkt verwenden.
 
-In der folgenden Tabelle werden verschiedene Möglichkeiten zusammengefasst, wie MFC zum Übertragen von Daten über das Internet verwendet werden kann.
+In der folgenden Tabelle werden verschiedene Möglichkeiten für die Verwendung von MFC zum Übertragen von Daten über das Internet zusammengefasst.
 
-|Verwenden Sie dieses Protokoll|Unter diesen Bedingungen|Verwenden dieser Klassen|
+|Dieses Protokoll verwenden|Unter diesen Bedingungen|Verwenden dieser Klassen|
 |-----------------------|----------------------------|-------------------------|
-|[Internet-Download mit asynchronen Monikern](../mfc/asynchronous-monikers-on-the-internet.md)|Für asynchrone Übertragung mit COM, ActiveX-Steuerelementen und jedem Internetprotokoll.|[CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md), [CDataPathProperty](../mfc/reference/cdatapathproperty-class.md)|
-|[WinInet](../mfc/win32-internet-extensions-wininet.md)|Für Internetprotokolle für HTTP, FTP und Gopher. Daten können synchron oder asynchron übertragen und in einem systemweiten Cache gespeichert werden.|[CInternetSession](../mfc/reference/cinternetsession-class.md), [CFtpFileFind](../mfc/reference/cftpfilefind-class.md), [CGopherFileFind](../mfc/reference/cgopherfilefind-class.md)und viele mehr.|
-|[Winsock](../mfc/windows-sockets-in-mfc.md)|Für maximale Effizienz und Kontrolle. Erfordert das Verständnis von Sockets und TCP/IP-Protokollen.|[CSocket](../mfc/reference/csocket-class.md), [CAsyncSocket](../mfc/reference/casyncsocket-class.md)|
+|[Internet Download mithilfe von asynchronen Monikern](asynchronous-monikers-on-the-internet.md)|Für die asynchrone Übertragung mit com, ActiveX-Steuerelementen und einem beliebigen Internet Protokoll.|[CAsyncMonikerFile](reference/casyncmonikerfile-class.md), [CDataPathProperty](reference/cdatapathproperty-class.md)|
+|[WinInet](win32-internet-extensions-wininet.md)|Für Internet Protokolle für http, FTP und Gopher. Daten können synchron oder asynchron übertragen und in einem systemweiten Cache gespeichert werden.|[Cinternetzession](reference/cinternetsession-class.md), [CFtpFileFind](reference/cftpfilefind-class.md), [CGopherFileFind](reference/cgopherfilefind-class.md)und vieles mehr.|
+|[Winsock](windows-sockets-in-mfc.md)|Für maximale Effizienz und Kontrolle. Erfordert Kenntnisse der Sockets-und TCP/IP-Protokolle.|[CSocket](reference/csocket-class.md), [CAsyncSocket](reference/casyncsocket-class.md)|
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Internetprogrammierungsaufgaben](../mfc/mfc-internet-programming-tasks.md)<br/>
-[Grundlagen der MFC-Internetprogrammierung](../mfc/mfc-internet-programming-basics.md)<br/>
-[Win32-Interneterweiterungen (WinInet)](../mfc/win32-internet-extensions-wininet.md)<br/>
-[Asynchrone Moniker im Internet](../mfc/asynchronous-monikers-on-the-internet.md)
+[MFC-Internetprogrammierungsaufgaben](mfc-internet-programming-tasks.md)<br/>
+[Grundlagen der MFC-Internetprogrammierung](mfc-internet-programming-basics.md)<br/>
+[Win32-Interneterweiterungen (WinInet)](win32-internet-extensions-wininet.md)<br/>
+[Asynchrone Moniker im Internet](asynchronous-monikers-on-the-internet.md)

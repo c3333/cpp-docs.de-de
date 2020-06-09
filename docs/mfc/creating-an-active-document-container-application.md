@@ -8,59 +8,59 @@ helpviewer_keywords:
 - MFC COM, active document containment
 - applications [MFC], active document container
 ms.assetid: 14e2d022-a6c5-4249-8712-706b0f4433f7
-ms.openlocfilehash: 965778fd5d17aa416b198c101edc3a445a39580b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 860a8531a96a0671c808dba13523b492026eafe0
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152942"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616354"
 ---
 # <a name="creating-an-active-document-container-application"></a>Erstellen einer Containeranwendung für aktive Dokumente
 
-Die einfachste und am häufigsten empfohlene Möglichkeit zum Erstellen einer containeranwendung für aktive Dokument ist zum Erstellen einer MFC-EXE-Container-Anwendung mithilfe des MFC-Assistenten, und passen Sie die Anwendung zur Unterstützung von active Document-Container.
+Die einfachste und am meisten empfohlene Methode zum Erstellen einer aktiven Dokument Containeranwendung ist das Erstellen einer MFC-exe-Containeranwendung mithilfe des MFC-Anwendungs-Assistenten und das anschließende Ändern der Anwendung zur Unterstützung der aktiven Dokument Kapselung.
 
-#### <a name="to-create-an-active-document-container-application"></a>Zum Erstellen einer containeranwendung für aktive Dokument
+#### <a name="to-create-an-active-document-container-application"></a>So erstellen Sie eine aktive Dokument Containeranwendung
 
-1. Von der **Datei** Menü klicken Sie auf **Projekt**aus der **neu** Untermenü.
+1. Klicken Sie im Menü **Datei** im Menü " **neu** " auf **Projekt**.
 
 1. Klicken Sie im linken Bereich auf **Visual C++** Projekttyp.
 
-1. Wählen Sie **MFC-Anwendung** im rechten Bereich.
+1. Wählen Sie im rechten Bereich die Option **MFC-Anwendung** aus.
 
-1. Nennen Sie das Projekt *MyProj*, klicken Sie auf **OK**.
+1. Nennen Sie das Projekt *MyProj*, und klicken Sie auf **OK**.
 
-1. Wählen Sie die **Verbunddokumente** Seite.
+1. Wählen Sie die Seite **Verbund Dokument Unterstützung** aus.
 
-1. Wählen Sie die **Container** oder **Container/Vollserver** Option.
+1. Wählen Sie die Option **Container** oder **Container/voll Server** aus.
 
-1. Wählen Sie die **Active Document-Container** Kontrollkästchen.
+1. Aktivieren Sie das Kontrollkästchen **Container für aktive Dokumente** .
 
 1. Klicken Sie auf **Fertig stellen**.
 
-1. Wenn der MFC-Anwendung-Assistent abgeschlossen ist, generieren die Anwendung, öffnen Sie mithilfe des Projektmappen-Explorer die folgenden Dateien:
+1. Wenn der MFC-Anwendungs-Assistent das Erstellen der Anwendung abgeschlossen hat, öffnen Sie die folgenden Dateien mit Projektmappen-Explorer:
 
-   - *MyProjview.cpp*
+   - *Myprojview. cpp*
 
-1. In *MyProjview.cpp*, nehmen Sie die folgenden Änderungen:
+1. Nehmen Sie in *myprojview. cpp*die folgenden Änderungen vor:
 
-   - In `CMyProjView::OnPreparePrinting`, ersetzen Sie den Inhalt für die Funktion, mit dem folgenden Code:
+   - Ersetzen Sie in `CMyProjView::OnPreparePrinting` den Funktions Inhalt durch den folgenden Code:
 
-     [!code-cpp[NVC_MFCDocView#56](../mfc/codesnippet/cpp/creating-an-active-document-container-application_1.cpp)]
+     [!code-cpp[NVC_MFCDocView#56](codesnippet/cpp/creating-an-active-document-container-application_1.cpp)]
 
-   `OnPreparePrinting` bietet Unterstützung für den Druck. Dieser Code ersetzt `DoPreparePrinting`, dies ist die Standard-print-Vorbereitung.
+   `OnPreparePrinting`bietet Druckunterstützung. Dieser Code ersetzt `DoPreparePrinting` , d. h. die Standarddruck Vorbereitung.
 
-   Active Document-Container bietet es sich um ein verbessertes Drucken Schema:
+   Die aktive Dokument Kapselung bietet ein verbessertes Druck Schema:
 
-   - Zunächst können Sie das aktive Dokument durch Aufrufen der `IPrint` Schnittstelle, und teilen Sie es selbst zu drucken. Dies unterscheidet sich vom vorherigen OLE-Kapselung, in dem der Container ein Bild des enthaltenen Elements auf den Drucker rendern musste `CDC` Objekt.
+   - Sie können zuerst das aktive Dokument über seine `IPrint` -Schnittstelle aufzurufen und es an sich selbst drucken. Dies unterscheidet sich von der vorherigen OLE-Kapselung, bei der der Container ein Bild des enthaltenen Elements auf dem Drucker Objekt Rendering musste `CDC` .
 
-   - Wenn dies fehlschlägt, teilen Sie enthaltenen Elements so drucken Sie selbst über seine `IOleCommandTarget` Schnittstelle
+   - Wenn dies nicht möglich ist, weisen Sie das enthaltene Element an, sich selbst über seine `IOleCommandTarget` Schnittstelle auszugeben
 
-   - Wenn dies fehlschlägt, stellen Sie Ihr eigenes Rendering des Elements.
+   - Wenn dies nicht möglich ist, erstellen Sie ein eigenes Rendering des Elements.
 
-   Die statische Memberfunktionen `COleDocObjectItem::OnPrint` und `COleDocObjectItem::OnPreparePrinting`, wie im vorherigen Code, implementiert dieses verbesserte drucken-Schema verarbeiten.
+   Die statischen Member `COleDocObjectItem::OnPrint` -Funktionen und `COleDocObjectItem::OnPreparePrinting` , wie im vorherigen Code implementiert, dieses verbesserte Druck Schema verarbeiten.
 
-1. Fügen Sie eigene Implementierung, und erstellen Sie die Anwendung.
+1. Fügen Sie eine beliebige Implementierung Ihrer eigenen hinzu, und erstellen Sie die Anwendung.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Aktive Dokumente-Container](../mfc/active-document-containment.md)
+[Active Document-Container](active-document-containment.md)

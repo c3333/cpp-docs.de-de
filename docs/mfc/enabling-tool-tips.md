@@ -7,23 +7,23 @@ helpviewer_keywords:
 - tool tips [MFC], initializing
 - tool tips [MFC], enabling
 ms.assetid: 06b7c889-7722-4ce6-8b88-9efa50fe6369
-ms.openlocfilehash: 892ed76ef7e021544505600110cd2569d6078312
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bdd5c54f9174c42e17db0be7e13ea31acfea2dcf
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62174951"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84615731"
 ---
 # <a name="enabling-tool-tips"></a>Erstellen von QuickInfos
 
-Sie können die QuickInfo-Unterstützung für Tools für die untergeordneten Steuerelemente eines Fensters (z. B. die Steuerelemente in einem Formular Ansichts- oder Dialogfeldobjekt) aktivieren.
+Sie können die QuickInfo-Unterstützung für die untergeordneten Steuerelemente eines Fensters aktivieren (z. b. die Steuerelemente in einer Formularansicht oder einem Dialogfeld).
 
-### <a name="to-enable-tool-tips-for-the-child-controls-of-a-window"></a>QuickInfos für die untergeordneten Steuerelemente eines Fensters aktivieren
+### <a name="to-enable-tool-tips-for-the-child-controls-of-a-window"></a>So aktivieren Sie Quick Infos für die untergeordneten Steuerelemente eines Fensters
 
-1. Rufen Sie `EnableToolTips` für das Fenster für die Sie QuickInfos bereitstellen möchten.
+1. Ruft `EnableToolTips` für das Fenster auf, für das Sie Quick Infos bereitstellen möchten.
 
-1. Geben Sie eine Zeichenfolge für jedes Steuerelement in Ihrer [TTN_NEEDTEXT-Benachrichtigung](../mfc/handling-ttn-needtext-notification-for-tool-tips.md) Handler. Der Handler ist in der meldungszuordnung des Fensters, das die untergeordneten Steuerelemente (z. B. Ihrem Formular-Klasse) enthält. Dieser Handler sollten Aufrufen eine Funktion, die das Steuerelement identifiziert, und legt **PszText** zum Angeben des Texts, die von der QuickInfo-Steuerelement verwendet.
+1. Geben Sie für jedes Steuerelement im [TTN_NEEDTEXT Benachrichtigungs](handling-ttn-needtext-notification-for-tool-tips.md) Handler eine Zeichenfolge an. Der Handler befindet sich in der Meldungs Zuordnung des Fensters, das die untergeordneten Steuerelemente enthält (z. b. Ihre Formular Ansichts Klasse). Dieser Handler sollte eine Funktion aufzurufen, die das-Steuerelement identifiziert und **pszText** festlegt, um den Text anzugeben, der vom QuickInfo-Steuerelement verwendet wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[QuickInfos in Fenstern, die nicht von CFrameWnd abgeleitet sind](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md)
+[QuickInfos in Fenstern, die nicht von CFrameWnd abgeleitet sind](tool-tips-in-windows-not-derived-from-cframewnd.md)

@@ -47,18 +47,18 @@ helpviewer_keywords:
 - NM_RDBLCLK notification [MFC]
 - TBN_GETBUTTONINFO notification [MFC]
 ms.assetid: 219ea08e-7515-4b98-85cb-47120f08c0a2
-ms.openlocfilehash: 67f40d0dc50a853a39cb9b60a938d8eafe8293c4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d88e1efe12fd5b31a9f78b8fe439ba1aefa72d1e
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370489"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625726"
 ---
 # <a name="handling-customization-notifications"></a>Behandeln von Anpassungsbenachrichtigungen
 
 Ein allgemeine Windows-Symbolleisten-Steuerelement verfügt über integrierte Funktionen zur Anpassung, einschließlich eines vom System definierten Anpassungsdialogfelds, das dem Benutzer das Einfügen, Löschen oder erneute Anordnen von Schaltflächen auf der Symbolleiste ermöglicht. Die Anwendung bestimmt, ob die Anpassungsfunktionen verfügbar sind und steuert das Ausmaß, bis zu dem der Benutzer die Symbolleiste anpassen kann.
 
-Sie können diese Anpassungsfunktionen dem Benutzer zur Verfügung stellen, indem Sie der Symbolleiste den **CCS_ADJUSTABLE-Stil** s. Die Anpassungsfunktionen ermöglichen es dem Benutzer, eine Schaltfläche an eine neue Position zu ziehen oder eine Schaltfläche zu entfernen, indem er sie von der Symbolleiste zieht. Darüber hinaus kann der Benutzer auf die Symbolleiste doppelklicken, um das Dialogfeld **Symbolleiste anpassen** anzuzeigen, in dem der Benutzer Symbolleistenschaltflächen hinzufügen, löschen und neu anordnen kann. Die Anwendung kann das Dialogfeld mithilfe der Memberfunktion [Customize](../mfc/reference/ctoolbarctrl-class.md#customize) anzeigen.
+Sie können diese Anpassungs Features für den Benutzer verfügbar machen, indem Sie der Symbolleiste die **CCS_ADJUSTABLE** -Formatvorlage erteilen. Die Anpassungsfunktionen ermöglichen es dem Benutzer, eine Schaltfläche an eine neue Position zu ziehen oder eine Schaltfläche zu entfernen, indem er sie von der Symbolleiste zieht. Darüber hinaus kann der Benutzer auf die Symbolleiste doppelklicken, um das Dialogfeld **Symbolleiste anpassen** anzuzeigen, in dem der Benutzer Symbolleistenschaltflächen hinzufügen, löschen und neu anordnen kann. Die Anwendung kann das Dialogfeld mithilfe der Memberfunktion [Customize](reference/ctoolbarctrl-class.md#customize) anzeigen.
 
 Das Symbolleistensteuerelement sendet bei jedem Schritt im Anpassungsvorgang Benachrichtigungsmeldungen an das übergeordnete Fenster. Wenn der Benutzer die UMSCHALT-Taste gedrückt hält und beginnt, eine Schaltfläche zu ziehen, übernimmt die Symbolleiste automatisch die Verarbeitung des Ziehvorgangs. Die Symbolleiste sendet die Benachrichtigungsmeldung **TBN_QUERYDELETE** an das übergeordnete Fenster, um zu bestimmen, ob die Schaltfläche gelöscht werden darf. Der Ziehvorgang endet, wenn das übergeordnete Fenster **FALSE**zurückgibt. Andernfalls erfasst die Symbolleiste die Mauseingabe und wartet darauf, dass der Benutzer die Maustaste freigibt.
 
@@ -80,15 +80,15 @@ Alle diese Nachrichten sind **WM_NOTIFY** -Nachrichten, und sie können in Ihrem
 ON_NOTIFY( wNotifyCode, idControl, memberFxn )
 ```
 
-- **wNotifyCode**
+- **wnotifycode schalten**
 
    ID-Code der Benachrichtigungsmeldung, wie etwa **TBN_BEGINADJUST**.
 
-- **idControl**
+- **idcontrol**
 
    Der Bezeichner des Steuerelements, das die Benachrichtigung gesendet.
 
-- **MemberFxn**
+- **Mitgliedschaft**
 
    Die Memberfunktion die aufgerufen werden soll, wenn diese Benachrichtigung empfangen wird.
 
@@ -114,13 +114,13 @@ typedef struct tagNMHDR {
 
 - **hwndFrom**
 
-   Das Fensterhandle des Steuerelements, das die Benachrichtigung sendet. Um dieses Handle in einen `CWnd` -Zeiger zu konvertieren, verwenden Sie [CWnd::FromHandle](../mfc/reference/cwnd-class.md#fromhandle).
+   Das Fensterhandle des Steuerelements, das die Benachrichtigung sendet. Um dieses Handle in einen `CWnd` -Zeiger zu konvertieren, verwenden Sie [CWnd::FromHandle](reference/cwnd-class.md#fromhandle).
 
 - **idFrom**
 
    ID des Steuerelements, das die Benachrichtigung sendet.
 
-- **Code**
+- **code**
 
    Benachrichtigungscode. Dieser Member kann ein für einen Steuerelementtyp spezifischer Wert sein, wie etwa **TBN_BEGINADJUST** oder **TTN_NEEDTEXT**, oder es kann einer der allgemeinen Benachrichtigungswerte sein, die unten aufgelistet sind:
 
@@ -162,7 +162,7 @@ typedef struct {
 
 - **tbButton**
 
-   **TBBUTTON-Struktur,** die Informationen über die Symbolleistenschaltfläche enthält, die der Benachrichtigung zugeordnet ist.
+   **TBBUTTON** -Struktur, die Informationen über die Symbolleisten-Schaltfläche enthält, die der Benachrichtigung zugeordnet ist.
 
 - **cchText**
 
@@ -176,45 +176,45 @@ Die Benachrichtigungen, die die Symbolleiste sendet, sind wie folgt:
 
 - **TBN_BEGINADJUST**
 
-   Wird gesendet, wenn der Benutzer mit dem Anpassen eines Symbolleistensteuerelements beginnt. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen zur Benachrichtigung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, wenn der Benutzer mit dem Anpassen eines Symbolleisten Steuer Elements beginnt. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen zur Benachrichtigung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 - **TBN_BEGINDRAG**
 
-   Wird gesendet, wenn der Benutzer beginnt, eine Schaltfläche in einem Symbolleistensteuerelement zu ziehen. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der gezogenen Schaltfläche. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, wenn der Benutzer beginnt, eine Schaltfläche in einem ToolBar-Steuerelement zu ziehen Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der gezogenen Schaltfläche. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 - **TBN_CUSTHELP**
 
-   Wird gesendet, wenn der Benutzer die Hilfeschaltfläche im Dialogfeld Symbolleiste anpassen auswählt. Kein Rückgabewert. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, wenn der Benutzer die Schaltfläche Hilfe im Dialogfeld Symbolleiste anpassen auswählt. Kein Rückgabewert. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 - **TBN_ENDADJUST**
 
-   Wird gesendet, wenn der Benutzer das Anpassen eines Symbolleistensteuerelements beendet. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, wenn der Benutzer das Anpassen eines Symbolleisten-Steuer Elements beendet. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 - **TBN_ENDDRAG**
 
-   Wird gesendet, wenn der Benutzer das Ziehen einer Schaltfläche in einem Symbolleistensteuerelement beendet. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der gezogenen Schaltfläche. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, wenn der Benutzer das Ziehen einer Schaltfläche in einem ToolBar-Steuerelement beendet. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der gezogenen Schaltfläche. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 - **TBN_GETBUTTONINFO**
 
-   Wird gesendet, wenn der Benutzer ein Symbolleistensteuerelement anpasst. Die Symbolleiste verwendet diese Benachrichtigungsmeldung zum Abrufen von Informationen, die vom Dialogfeld „Symbolleiste anpassen“ benötigt werden. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member gibt den nullbasierten Index einer Schaltfläche an. Die Member **pszText** und **cchText** geben die Adresse und die Länge des aktuellen Schaltflächentexts in Zeichen an. Eine Anwendung sollte die Struktur mit Informationen über die Schaltfläche auffüllen. Gibt **TRUE** zurück, wenn Schaltflächeninformationen in die Struktur kopiert wurden, andernfalls **FALSE** .
+   Wird gesendet, wenn der Benutzer ein Symbolleisten-Steuerelement anpasst. Die Symbolleiste verwendet diese Benachrichtigungsmeldung zum Abrufen von Informationen, die vom Dialogfeld „Symbolleiste anpassen“ benötigt werden. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member gibt den nullbasierten Index einer Schaltfläche an. Die Member **pszText** und **cchText** geben die Adresse und die Länge des aktuellen Schaltflächentexts in Zeichen an. Eine Anwendung sollte die Struktur mit Informationen über die Schaltfläche auffüllen. Gibt **TRUE** zurück, wenn Schaltflächeninformationen in die Struktur kopiert wurden, andernfalls **FALSE** .
 
 - **TBN_QUERYDELETE**
 
-   Wird gesendet, während der Benutzer eine Symbolleiste anpasst, um zu bestimmen, ob eine Schaltfläche aus einem Symbolleistensteuerelement gelöscht werden kann. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der zu löschenden Schaltfläche. Gibt **TRUE** zurück, um das Löschen der Schaltfläche zu erlauben oder **FALSE** , um das Löschen der Schaltfläche zu verhindern.
+   Wird gesendet, während der Benutzer eine Symbolleiste anpasst, um zu bestimmen, ob eine Schaltfläche aus einem Symbolleisten-Steuerelement gelöscht werden kann. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der zu löschenden Schaltfläche. Gibt **TRUE** zurück, um das Löschen der Schaltfläche zu erlauben oder **FALSE** , um das Löschen der Schaltfläche zu verhindern.
 
 - **TBN_QUERYINSERT**
 
-   Wird gesendet, während der Benutzer ein Symbolleistensteuerelement anpasst, um zu bestimmen, ob eine Schaltfläche links neben der angegebenen Schaltfläche eingefügt werden kann. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der einzufügenden Schaltfläche. Gibt **TRUE** zurück, um das Einfügen einer Schaltfläche vor der vorhandenen Schaltfläche zu erlauben oder **FALSE** , um das Einfügen der Schaltfläche zu verhindern.
+   Wird gesendet, während der Benutzer ein ToolBar-Steuerelement anpasst, um zu bestimmen, ob links neben der angegebenen Schaltfläche eine Schaltfläche eingefügt werden kann. Der Zeiger verweist auf eine **TBNOTIFY** -Struktur. Das **iItem** -Member enthält den nullbasierten Index der einzufügenden Schaltfläche. Gibt **TRUE** zurück, um das Einfügen einer Schaltfläche vor der vorhandenen Schaltfläche zu erlauben oder **FALSE** , um das Einfügen der Schaltfläche zu verhindern.
 
 - **TBN_RESET**
 
-   Wird gesendet, wenn der Benutzer den Inhalt des Dialogfelds Symbolleiste anpassen zurücksetzt. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, wenn der Benutzer den Inhalt des Dialog Felds Symbolleiste anpassen zurücksetzt. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 - **TBN_TOOLBARCHANGE**
 
-   Wird gesendet, nachdem der Benutzer ein Symbolleistensteuerelement angepasst hat. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
+   Wird gesendet, nachdem der Benutzer ein Symbolleisten-Steuerelement angepasst hat. Der Zeiger verweist auf eine **NMHDR** -Struktur, die Informationen über die Benachrichtigungsmeldung enthält. Der Handler muss keinen bestimmten Wert zurückgeben.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CToolBarCtrl](../mfc/using-ctoolbarctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CToolBarCtrl](using-ctoolbarctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

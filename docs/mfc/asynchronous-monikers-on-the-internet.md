@@ -10,60 +10,60 @@ helpviewer_keywords:
 - optimization [MFC], asynchronous downloading across Internet
 - Internet [MFC], asynchronous downloading
 ms.assetid: 418b0c64-0046-4dae-8118-c9c762b5822e
-ms.openlocfilehash: e7a7ea51bca134e965747db8aac7f8a62822c9eb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 74add1ad894f883c67eefab888898c0abf518b83
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62165839"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625036"
 ---
 # <a name="asynchronous-monikers-on-the-internet"></a>Asynchrone Moniker im Internet
 
-Im Internet werden neue Ansätze zum Anwendungsentwurf aufgrund der langsamen Netzwerkzugriff erfordert. Anwendungen sollten Netzwerkzugriff asynchron, um zu vermeiden, treten der Benutzeroberfläche ausführen. Die MFC-Klasse [CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md) asynchronen Unterstützung für das Herunterladen von Dateien enthält.
+Das Internet erfordert aufgrund des langsamen Netzwerk Zugriffs neue Ansätze für den Anwendungs Entwurf. Anwendungen sollten den Netzwerk Zugriff asynchron durchführen, um zu verhindern, dass die Benutzeroberfläche blockiert wird. Die MFC-Klasse [CAsyncMonikerFile](reference/casyncmonikerfile-class.md) bietet asynchrone Unterstützung für das Herunterladen von Dateien.
 
-Mit asynchronen Monikern können Sie die COM-Anwendung asynchron über das Internet herunterladen und Bereitstellen von progressives Rendering große Objekte wie Bitmaps und VRML Objekte erweitern. Asynchrone Moniker ermöglichen eine ActiveX-Steuerelementeigenschaft oder eine Datei im Internet heruntergeladen werden, ohne dass Sie die Antwort auf die Benutzeroberfläche blockiert.
+Mit asynchronen Monikern können Sie die COM-Anwendung so erweitern, dass Sie asynchron über das Internet heruntergeladen wird, und das Progressive Rendering von großen Objekten, wie z. b. Bitmaps und VRML-Objekten, ermöglichen. Asynchrone Moniker ermöglichen das Herunterladen einer ActiveX-Steuerelement Eigenschaft oder einer Datei im Internet, ohne dass die Antwort auf die Benutzeroberfläche blockiert wird.
 
-## <a name="advantages-of-asynchronous-monikers"></a>Vorteile der asynchronen Monikern
+## <a name="advantages-of-asynchronous-monikers"></a>Vorteile von asynchronen Monikern
 
-Sie können asynchrone Moniker zu verwenden:
+Sie können asynchrone Moniker für Folgendes verwenden:
 
-- Herunterladen Sie Code und Dateien, ohne zu blockieren.
+- Herunterladen von Code und Dateien ohne Blockierung.
 
-- Downloaden von Eigenschaften in ActiveX-Steuerelemente ohne zu blockieren.
+- Herunterladen von Eigenschaften in ActiveX-Steuerelementen ohne Blockierung
 
-- Empfang von Benachrichtigungen der Download wird ausgeführt.
+- Empfangen von Benachrichtigungen über den Download Fortschritt.
 
-- Nachverfolgen des Status "und" Status "bereit" Informationen ".
+- Verfolgen Sie den Status und die Statusinformationen.
 
-- Geben Sie Statusinformationen an den Benutzer ausgeführt.
+- Bereitstellen von Statusinformationen für den Benutzer über den Fortschritt.
 
-- Ermöglicht dem Benutzer einen Download jederzeit abbrechen.
+- Ermöglicht es dem Benutzer, einen Download jederzeit abzubrechen.
 
-## <a name="mfc-classes-for-asynchronous-monikers"></a>MFC-Klassen für den asynchronen Monikern
+## <a name="mfc-classes-for-asynchronous-monikers"></a>MFC-Klassen für asynchrone Moniker
 
-[CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md) ergibt sich aus [CMonikerFile](../mfc/reference/cmonikerfile-class.md), die wiederum von abgeleitet ist [COleStreamFile](../mfc/reference/colestreamfile-class.md). Ein `COleStreamFile` Objekt, das einen Stream von Daten; einen `CMonikerFile` -Objekt verwendet einen `IMoniker` zum Abrufen der Daten, und ein `CAsyncMonikerFile` Objekt erfolgt asynchron.
+[CAsyncMonikerFile](reference/casyncmonikerfile-class.md) ist von [CMonikerFile](reference/cmonikerfile-class.md)abgeleitet, das wiederum von [colestreamfile](reference/colestreamfile-class.md)abgeleitet ist. Ein `COleStreamFile` -Objekt stellt einen Datenstrom dar `CMonikerFile` . ein-Objekt verwendet, `IMoniker` um die Daten abzurufen, und ein- `CAsyncMonikerFile` Objekt führt dies asynchron aus.
 
-Asynchrone Moniker werden in erster Linie in internetfähige Anwendungen und ActiveX-Steuerelemente verwendet, um eine reaktionsfähige Benutzeroberfläche während der Übertragung von Dateien bereitzustellen. Ein gutes Beispiel hierfür ist die Verwendung von [CDataPathProperty](../mfc/reference/cdatapathproperty-class.md) zum Bereitstellen von asynchroner Eigenschaften für ActiveX-Steuerelemente.
+Asynchrone Moniker werden hauptsächlich in Internet fähigen Anwendungen und ActiveX-Steuerelementen verwendet, um während der Übertragung von Dateien eine reaktionsfähige Benutzeroberfläche bereitzustellen. Ein gutes Beispiel hierfür ist die Verwendung von [CDataPathProperty](reference/cdatapathproperty-class.md) , um asynchrone Eigenschaften für ActiveX-Steuerelemente bereitzustellen.
 
-## <a name="mfc-classes-for-data-paths-in-activex-controls"></a>MFC-Klassen für die Datenpfade in ActiveX-Steuerelementen
+## <a name="mfc-classes-for-data-paths-in-activex-controls"></a>MFC-Klassen für Daten Pfade in ActiveX-Steuerelementen
 
-Die MFC-Klassen `CDataPathProperty` und [CCachedDataPathProperty](../mfc/reference/ccacheddatapathproperty-class.md) implementieren Sie die Eigenschaften von ActiveX-Steuerelemente, die asynchron geladen werden können. Asynchrone Eigenschaften werden nach der Initiierung der synchronen geladen. Asynchrone ActiveX-Steuerelemente aufrufen wiederholt einen Rückruf, um die Verfügbarkeit neuer Daten während einer langwierigen Eigenschaft Exchange-Vorgangs anzugeben.
+Die MFC `CDataPathProperty` -Klassen und [CCachedDataPathProperty](reference/ccacheddatapathproperty-class.md) implementieren ActiveX-Steuerelement Eigenschaften, die asynchron geladen werden können. Asynchrone Eigenschaften werden nach der synchronen Initiierung geladen. Asynchrone ActiveX-Steuerelemente rufen wiederholt einen Rückruf auf, um die Verfügbarkeit neuer Daten während eines langen Eigenschaften Austauschvorgangs anzugeben.
 
-`CDataPathProperty` wird von `CAsyncMonikerFile` abgeleitet. `CCachedDataPathProperty` wird von `CDataPathProperty` abgeleitet. Um die asynchrone Eigenschaften in der ActiveX-Steuerelemente zu implementieren, leiten Sie eine Klasse von `CDataPathProperty` oder `CCachedDataPathProperty`, und überschreiben [OnDataAvailable](../mfc/reference/casyncmonikerfile-class.md#ondataavailable) und andere Benachrichtigungen Sie empfangen möchten.
+`CDataPathProperty` wird von `CAsyncMonikerFile` abgeleitet. `CCachedDataPathProperty` wird von `CDataPathProperty` abgeleitet. Um asynchrone Eigenschaften in ihren ActiveX-Steuerelementen zu implementieren, leiten Sie eine Klasse von `CDataPathProperty` oder ab `CCachedDataPathProperty` , und überschreiben Sie [ondataavailable](reference/casyncmonikerfile-class.md#ondataavailable) und andere Benachrichtigungen, die Sie empfangen möchten.
 
-#### <a name="to-download-a-file-using-asynchronous-monikers"></a>Zum Herunterladen einer Datei, die mithilfe von asynchroner Monikern
+#### <a name="to-download-a-file-using-asynchronous-monikers"></a>So laden Sie eine Datei mithilfe von asynchronen Monikern herunter
 
-1. Deklarieren Sie eine Klasse, die von abgeleiteten [CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md).
+1. Deklarieren Sie eine von [CAsyncMonikerFile](reference/casyncmonikerfile-class.md)abgeleitete Klasse.
 
-1. Außer Kraft setzen [OnDataAvailable](../mfc/reference/casyncmonikerfile-class.md#ondataavailable) zum Anzeigen der Daten.
+1. Überschreiben Sie [ondataavailable](reference/casyncmonikerfile-class.md#ondataavailable) , um die Daten anzuzeigen.
 
-1. Überschreiben Sie die anderen Memberfunktionen, z. B. [OnProgress](../mfc/reference/casyncmonikerfile-class.md#onprogress), [OnStartBinding](../mfc/reference/casyncmonikerfile-class.md#onstartbinding), und [OnStopBinding](../mfc/reference/casyncmonikerfile-class.md#onstopbinding).
+1. Überschreiben Sie andere Element Funktionen, einschließlich " [OnProgress](reference/casyncmonikerfile-class.md#onprogress)", " [onstartbinding](reference/casyncmonikerfile-class.md#onstartbinding)" und " [onstopbinding](reference/casyncmonikerfile-class.md#onstopbinding)".
 
-1. Deklarieren Sie eine Instanz dieser Klasse und verwenden sie zum Öffnen von URLs.
+1. Deklarieren Sie eine Instanz dieser Klasse, und verwenden Sie Sie zum Öffnen von URLs.
 
-Weitere Informationen zum Herunterladen von asynchron in einem ActiveX-Steuerelement, finden Sie unter [ActiveX-Steuerelemente für das Internet](../mfc/activex-controls-on-the-internet.md).
+Weitere Informationen zum asynchronen Herunterladen in einem ActiveX-Steuerelement finden Sie unter ActiveX-Steuer [Elemente im Internet](activex-controls-on-the-internet.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Internetprogrammierungsaufgaben](../mfc/mfc-internet-programming-tasks.md)<br/>
-[Grundlagen der MFC-Internetprogrammierung](../mfc/mfc-internet-programming-basics.md)
+[MFC-Internetprogrammierungsaufgaben](mfc-internet-programming-tasks.md)<br/>
+[Grundlagen der MFC-Internetprogrammierung](mfc-internet-programming-basics.md)

@@ -6,24 +6,24 @@ helpviewer_keywords:
 - tool tips [MFC], tool tip controls
 - tool tips [MFC], creating
 ms.assetid: b015e9f4-ddfb-49a4-a5a6-fa2d45e4d328
-ms.openlocfilehash: 2ba935f52f24f62dded3b89df1563454cf7e0335
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 26f31705068df009e906d50451efa9ea6572d7e6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62383890"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625456"
 ---
 # <a name="methods-of-creating-tool-tips"></a>Methoden zum Erstellen von QuickInfos
 
-MFC stellt drei Klassen zum Erstellen und verwalten das QuickInfo-Steuerelement: [CWnd](../mfc/reference/cwnd-class.md), [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md), [CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md) und [CMFCToolTipCtrl](../mfc/reference/cmfctooltipctrl-class.md). Der QuickInfo-Memberfunktionen in diesen Klassen zu umschließen der allgemeinen Windows-Steuerungs-API. Klasse `CToolBarCtrl` und Klasse `CToolTipCtrl` Klasse abgeleitet sind `CWnd`.
+MFC bietet drei Klassen zum Erstellen und Verwalten des QuickInfo-Steuer Elements: [CWnd](reference/cwnd-class.md), [CToolBarCtrl](reference/ctoolbarctrl-class.md), [CToolTipCtrl](reference/ctooltipctrl-class.md) und [CMFCToolTipCtrl](reference/cmfctooltipctrl-class.md). Die ToolTip-Member-Funktionen in diesen Klassen wrappen die Common Control API von Windows. Class `CToolBarCtrl` und Class `CToolTipCtrl` sind von der-Klasse abgeleitet `CWnd` .
 
-`CWnd` stellt vier Member-Funktionen zum Erstellen und Verwalten von QuickInfos bereit: [EnableToolTips](../mfc/reference/cwnd-class.md#enabletooltips), [CancelToolTips](../mfc/reference/cwnd-class.md#canceltooltips), [FilterToolTipMessage](../mfc/reference/cwnd-class.md#filtertooltipmessage), und [OnToolHitTest](../mfc/reference/cwnd-class.md#ontoolhittest). Finden Sie weitere Informationen, wie sie QuickInfos implementieren diese individuelle Memberfunktionen aus.
+`CWnd`bietet vier Member-Funktionen zum Erstellen und Verwalten von Quick Infos: [EnableToolTips](reference/cwnd-class.md#enabletooltips), [canceltooltips](reference/cwnd-class.md#canceltooltips), [FilterToolTipMessage](reference/cwnd-class.md#filtertooltipmessage)und [ontoolhittest](reference/cwnd-class.md#ontoolhittest). Weitere Informationen zur Implementierung von Quick Infos finden Sie in diesen einzelnen Element Funktionen.
 
-Wenn Sie erstellen eine Symbolleiste mit `CToolBarCtrl`, können Sie die QuickInfos für diese Symbolleiste direkt über die folgenden Member-Funktionen implementieren: [GetToolTips](../mfc/reference/ctoolbarctrl-class.md#gettooltips) und [SetToolTips](../mfc/reference/ctoolbarctrl-class.md#settooltips). Finden Sie unter diese einzelne Memberfunktionen und [behandeln Tool Tipp Benachrichtigungen](../mfc/handling-tool-tip-notifications.md) für Weitere Informationen, wie sie QuickInfos implementieren.
+Wenn Sie mithilfe von eine Symbolleiste erstellen `CToolBarCtrl` , können Sie Quick Infos für diese Symbolleiste direkt mithilfe der folgenden Member-Funktionen implementieren: [gettooltips](reference/ctoolbarctrl-class.md#gettooltips) und [SetToolTips](reference/ctoolbarctrl-class.md#settooltips). Weitere Informationen über die Implementierung von Quick Infos finden Sie in diesen einzelnen Element Funktionen und in der Behandlung von QuickInfo- [Benachrichtigungen](handling-tool-tip-notifications.md) .
 
-Die `CToolTipCtrl` Klasse stellt die Funktionalität Windows allgemeine QuickInfo-Steuerelements bereit. Ein einzelnes QuickInfo-Steuerelement kann es sich um Informationen zu mehr als ein Tool bereit. Ein Tool ist entweder ein Fenster, z. B. eines untergeordneten Fensters oder Steuerelements einen anwendungsdefinierten rechteckigen Bereich im Clientbereich eines Fensters. Die [CMFCToolTipCtrl](../mfc/reference/cmfctooltipctrl-class.md) Klasse leitet sich von `CToolTipCtrl` und stellt zusätzliche visuellen Stilen und Funktionen bereit.
+Die- `CToolTipCtrl` Klasse stellt die Funktionalität des allgemeinen Windows-QuickInfo-Steuer Elements bereit. Ein einzelnes QuickInfo-Steuerelement kann Informationen für mehr als ein Tool bereitstellen. Ein Tool ist entweder ein Fenster, z. b. ein untergeordnetes Fenster oder Steuerelement, oder ein Anwendungs definierter rechteckiger Bereich im Client Bereich eines Fensters. Die [CMFCToolTipCtrl](reference/cmfctooltipctrl-class.md) -Klasse wird von abgeleitet `CToolTipCtrl` und stellt zusätzliche visuelle Stile und Funktionen bereit.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CToolTipCtrl](../mfc/using-ctooltipctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CToolTipCtrl](using-ctooltipctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

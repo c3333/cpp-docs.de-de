@@ -7,21 +7,21 @@ helpviewer_keywords:
 - application wizards [MFC], document/view classes created
 - view classes [MFC], created by application wizards
 ms.assetid: 70c34a60-2701-4981-acea-c08a5787d8e6
-ms.openlocfilehash: 95b50e34d612c3b8f5dea2f8b469bd6c65182d41
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 766fe4efb37c199c5babb75ce2cb08ebf676cca6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408022"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616049"
 ---
 # <a name="document-and-view-classes-created-by-the-mfc-application-wizard"></a>Mithilfe des MFC-Anwendungs-Assistenten erstellte Dokument- und Ansichtsklassen
 
-MFC-Anwendung-Assistenten können Sie einen Vorsprung auf Ihrem Entwicklungs-Programm durch etwas grob strukturierte Dokument- und Ansichtsklassen für Sie zu erstellen. Sie können dann [ordnen Sie diese Klassen Befehle und Meldungen](../mfc/reference/mapping-messages-to-functions.md) und verwenden Sie die Visual C++ Quellcode-Editor, um deren Memberfunktionen schreiben.
+Der MFC-Anwendungs-Assistent bietet Ihnen einen Vorsprung in der Programmentwicklung, indem Sie für Sie ein Skelett Dokument und eine Ansichts Klasse erstellen. Anschließend können Sie den [Klassen Befehle und Nachrichten](reference/mapping-messages-to-functions.md) zuordnen und den Visual C++ Quellcode-Editor verwenden, um ihre Member-Funktionen zu schreiben.
 
-Die Dokumentenklasse, die vom MFC-Anwendungs-Assistenten erstellte ergibt sich aus der Klasse [CDocument](../mfc/reference/cdocument-class.md). Die View-Klasse abgeleitet ist [CView](../mfc/reference/cview-class.md). Die Namen an, dass die Anwendungs-Assistent diese Klassen bietet und die Dateien, die sie enthalten auf den Namen des Projekts basieren Geben Sie im Dialogfeld Anwendungs-Assistenten. Im Anwendungs-Assistenten können Sie die Seite generierten Klassen, um die Standardnamen zu ändern.
+Die vom MFC-Anwendungs-Assistenten erstellte Dokument Klasse wird von der [CDocument](reference/cdocument-class.md)-Klasse abgeleitet. Die Ansichts Klasse wird von [CView](reference/cview-class.md)abgeleitet. Die Namen, die der Anwendungs-Assistent für diese Klassen und die darin enthaltenen Dateien enthält, basieren auf dem Projektnamen, den Sie im Dialogfeld des Anwendungs-Assistenten angeben. Im Anwendungs-Assistenten können Sie die Seite generierte Klassen verwenden, um die Standardnamen zu ändern.
 
-Einige Anwendungen möglicherweise mehr als eine Dokumentklasse, Ansichtsklasse oder Rahmenfenster Klasse. Weitere Informationen finden Sie unter [mehrere Dokumenttypen, Ansichten und Frame Windows](../mfc/multiple-document-types-views-and-frame-windows.md).
+Einige Anwendungen benötigen möglicherweise mehr als eine Dokument Klasse, eine Ansichts Klasse oder eine Frame Fenster Klasse. Weitere Informationen finden Sie unter [mehrere Dokumenttypen, Ansichten und Rahmen Fenster](multiple-document-types-views-and-frame-windows.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dokument-/Ansichtsarchitektur](../mfc/document-view-architecture.md)
+[Dokument-/Ansichtarchitektur](document-view-architecture.md)
