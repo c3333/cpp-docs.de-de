@@ -8,36 +8,36 @@ helpviewer_keywords:
 - list views [MFC]
 - list controls [MFC], List view
 ms.assetid: 7aee1c48-b158-4399-be0b-be366993665e
-ms.openlocfilehash: 5c9612a22eab27d568c0dbb86d29ba031fe5985e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d308cfe83f02dcfe3687790c6638d268cc69fc24
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62365326"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621427"
 ---
 # <a name="list-control-and-list-view"></a>Listensteuerelement und Listenansichtsteuerelement
 
-Der Einfachheit halber kapselt MFC Listensteuerelement gibt es zwei Möglichkeiten. Sie können die Steuerelemente aufgelistet:
+Der Vorteil ist, dass MFC das Listen Steuerelement auf zwei Arten kapselt. Sie können Listen Steuerelemente verwenden:
 
-- Direkt durch das Einbetten einer [CListCtrl](../mfc/reference/clistctrl-class.md) Objekt in einem Dialogfeldklasse.
+- Direkt durch Einbetten eines [CListCtrl](reference/clistctrl-class.md) -Objekts in eine Dialogfeld Klasse.
 
-- Indirekt mithilfe der Klasse [CListView](../mfc/reference/clistview-class.md).
+- Indirekt, mithilfe der Klasse [CListView](reference/clistview-class.md).
 
-`CListView` erleichtert Ihnen die in der MFC Dokument-/Ansichtarchitektur, kapseln das Steuerelement ein Listensteuerelement integrieren wie [CEditView](../mfc/reference/ceditview-class.md) kapselt ein Bearbeitungssteuerelement: füllt das Steuerelement die gesamte Oberfläche der MFC-Ansicht. (Die Ansicht *ist* das Steuerelement, umgewandelt in `CListView`.)
+`CListView`vereinfacht das Integrieren eines Listen Steuer Elements mit der MFC-Dokument-/Ansichtarchitektur und kapselt das Steuerelement so, wie [CEditView](reference/ceditview-class.md) ein Bearbeitungs Steuerelement kapselt: das-Steuerelement füllt den gesamten Oberflächen Bereich einer MFC-Ansicht. (Die Ansicht *ist* das Steuerelement, umgewandelt in `CListView` .)
 
-Ein `CListView` Objekt erbt die [CCtrlView](../mfc/reference/cctrlview-class.md) und Basis-Klassen und fügt eine Memberfunktion, um das zugrunde liegende Listensteuerelement abzurufen. Verwenden Sie Mitglieder anzeigen, um mit der Sicht als Sicht arbeiten. Verwenden der [GetListCtrl](../mfc/reference/clistview-class.md#getlistctrl) Member-Funktion für den Zugriff auf das Listensteuerelement Member-Funktionen. Verwenden Sie diese Member zu:
+Ein `CListView` -Objekt erbt von [cctrlview](reference/cctrlview-class.md) und seinen Basisklassen und fügt eine Member-Funktion hinzu, um das zugrunde liegende Listen Steuerelement abzurufen. Verwenden Sie Member anzeigen, um mit der Ansicht als Ansicht zu arbeiten. Verwenden Sie die Member-Funktion von [GetListCtrl](reference/clistview-class.md#getlistctrl) , um Zugriff auf die Member-Funktionen des Listen Steuer Elements zu erhalten. Verwenden Sie diese Member für Folgendes:
 
-- Fügen Sie hinzu, löschen Sie oder bearbeiten Sie "Elemente" in der Liste.
+- Elemente in der Liste hinzufügen, löschen oder bearbeiten.
 
-- Festlegen Sie oder rufen Sie der Liste der Attribute von Steuerelementen ab.
+- Festlegen oder erhalten von Listen Steuerelement-Attributen.
 
-Abrufen eines Verweises auf die `CListCtrl` zugrunde liegende eine `CListView`, rufen Sie `GetListCtrl` aus Ihrer Listenansichtsklasse:
+Um einen Verweis auf den `CListCtrl` zugrunde liegenden a zu erhalten `CListView` , rufen `GetListCtrl` Sie von der Listen Ansichts Klasse auf:
 
 [!code-cpp[NVC_MFCListView#4](../atl/reference/codesnippet/cpp/list-control-and-list-view_1.cpp)]
 
-Dieses Thema beschreibt die beiden Möglichkeiten, das Strukturelement-Steuerelement zu verwenden.
+In diesem Thema werden beide Möglichkeiten zur Verwendung des Listen Steuer Elements beschrieben.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CListCtrl](../mfc/using-clistctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CListCtrl](using-clistctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

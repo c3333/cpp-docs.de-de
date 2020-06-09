@@ -7,29 +7,29 @@ helpviewer_keywords:
 - CHeaderCtrl class [MFC], header items in
 - controls [MFC], header
 ms.assetid: ac79ef1f-a671-4ab2-93e9-b1aa016a48bf
-ms.openlocfilehash: 31b6bcb134b62fc11df78a846b3c256a2ef69c14
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a70d1d9225d2ac8ef2f7ed3ad9f603a64a937bc7
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62239996"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620088"
 ---
 # <a name="header-items-in-a-header-control"></a>Headerelemente in einem Headersteuerelement
 
-Sie haben viel Kontrolle über das Aussehen und Verhalten des Header-Elemente, die einem Kopfzeilen-Steuerelement zu bilden ([CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)). Jedes Headerelement möglich, eine Zeichenfolge, eine Bitmap, ein Image aus einer Bildliste für die zugeordnete oder eine anwendungsdefinierte 32-Bit-Wert zugeordnet. Die Zeichenfolge, Bitmap oder Bild wird im Headerelement angezeigt.
+Sie haben eine beträchtliche Kontrolle über die Darstellung und das Verhalten der Header Elemente, die ein Header Steuerelement bilden ([CHeaderCtrl](reference/cheaderctrl-class.md)). Jedes Header Element kann eine Zeichenfolge, ein bitzugeordnetes Bild, ein Bild aus einer zugeordneten Bildliste oder einen Anwendungs definierten 32-Bit-Wert aufweisen. Die Zeichenfolge, die Bitmap oder das Bild werden im Header Element angezeigt.
 
-Sie können die Darstellung und Inhalt der neuen Elemente anpassen, wenn sie erstellt werden, indem Sie einen Aufruf [InsertItem](../mfc/reference/cheaderctrl-class.md#insertitem) oder durch Ändern eines vorhandenen Elements, mit einem Aufruf von [CHeaderCtrl:: GetItem](../mfc/reference/cheaderctrl-class.md#getitem) und [ CHeaderCtrl::SetItem](../mfc/reference/cheaderctrl-class.md#setitem).
+Sie können die Darstellung und den Inhalt neuer Elemente anpassen, wenn Sie erstellt werden, indem Sie einen [callcheaderctrl:: InsertItem](reference/cheaderctrl-class.md#insertitem) aufrufen oder ein vorhandenes Element ändern, indem Sie den Befehl " [CHeaderCtrl:: GetItem](reference/cheaderctrl-class.md#getitem) " und " [CHeaderCtrl:: abtitem](reference/cheaderctrl-class.md#setitem)" aufrufen.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Anpassen von Headerelementen](../mfc/customizing-the-header-item-s-appearance.md)
+- [Anpassen der Darstellung des Header Elements](customizing-the-header-item-s-appearance.md)
 
-- [Anordnen von Elementen im Headersteuerelement](../mfc/ordering-items-in-the-header-control.md)
+- [Anordnen von Elementen im Headersteuerelement](ordering-items-in-the-header-control.md)
 
-- [Bereitstellen von Drag & Drop-Unterstützung für die Headerelemente](../mfc/providing-drag-and-drop-support-for-header-items.md)
+- [Bereitstellen von Drag & Drop-Unterstützung für die Header Elemente](providing-drag-and-drop-support-for-header-items.md)
 
-- [Verwenden von Bildlisten in Headersteuerelementen](../mfc/using-image-lists-with-header-controls.md)
+- [Verwenden von Bildlisten mit Header Steuerelementen](using-image-lists-with-header-controls.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CHeaderCtrl](../mfc/using-cheaderctrl.md)
+[Verwenden von CHeaderCtrl](using-cheaderctrl.md)

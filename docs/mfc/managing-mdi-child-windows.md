@@ -12,30 +12,30 @@ helpviewer_keywords:
 - child windows [MFC]
 - MDI [MFC], frame windows
 ms.assetid: 1828d96e-a561-48ae-a661-ba9701de6bee
-ms.openlocfilehash: d4b4a4876f47452361b13837b0279f5bf98f8658
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6e8e3d0aa51eeea112597485a9221dcba4feda87
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62279338"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84618360"
 ---
 # <a name="managing-mdi-child-windows"></a>Verwalten von untergeordneten MDI-Fenstern
 
-MDI-Hauptrahmenfenster (eine pro Anwendung) enthalten spezielle untergeordnete Fenster MDICLIENT-Fenster. MDICLIENT-Fenster verwaltet, das den Clientbereich des Hauptrahmenfenster und selbst verfügt über die untergeordneten Fenster: die Dokumentfenster, das von abgeleiteten `CMDIChildWnd`. Da die Dokumentfenster-Frame-Fensters selbst (untergeordnete MDI-Fenster) sind, Sie können auch ihre eigenen untergeordnete Elemente verfügen. In allen diesen Fällen wird das übergeordnete Fenster zugehöriges untergeordnetes Fenster verwaltet, und Sie einige Befehle aus, um diese leitet.
+MDI-Hauptrahmen Fenster (eine pro Anwendung) enthalten ein spezielles untergeordnetes Fenster, das als MDICLIENT-Fenster bezeichnet wird. Das Fenster MdiClient verwaltet den Client Bereich des Hauptrahmen Fensters und verfügt über untergeordnete Fenster: das Dokument Fenster, das von abgeleitet wird `CMDIChildWnd` . Da es sich bei den Dokument Fenstern um Rahmen Fenster handelt (untergeordnete MDI-Fenster), können Sie auch über ihre eigenen untergeordneten Elemente verfügen. In allen diesen Fällen verwaltet das übergeordnete Fenster seine untergeordneten Fenster und leitet einige Befehle an Sie weiter.
 
-In einer MDI-Rahmenfenster verwaltet das Rahmenfenster der MDICLIENT-Fenster, in Verbindung mit Schiebeleisten-Steuerelemente neu positionieren. Die MDICLIENT-Fenster verwaltet wiederum alle MDI-untergeordneten Rahmenfenster. Die folgende Abbildung zeigt die Beziehung zwischen einer MDI-Rahmenfenster, das MDICLIENT-Fenster und seine untergeordneten Dokumentrahmenfenster.
+In einem MDI-Rahmen Fenster verwaltet das Rahmen Fenster das MDICLIENT-Fenster und positioniert es in Verbindung mit Steuer leisten neu. Das Fenster MdiClient verwaltet wiederum alle untergeordneten MDI-Rahmen Fenster. In der folgenden Abbildung wird die Beziehung zwischen einem MDI-Rahmen Fenster, dem MDICLIENT-Fenster und den zugehörigen untergeordneten Dokument Rahmen Fenstern veranschaulicht.
 
-![Untergeordnete Fenster in ein MDI-Rahmenfenster](../mfc/media/vc37gb1.gif "untergeordnete Fenster in ein MDI-Rahmenfenster") <br/>
+![Untergeordnete Fenster in einem MDI-Rahmenfenster](../mfc/media/vc37gb1.gif "Untergeordnete Fenster in einem MDI-Rahmenfenster") <br/>
 MDI-Rahmenfenster und untergeordnete Fenster
 
-Ein MDI-Rahmenfenster funktioniert auch in Verbindung mit der aktuellen untergeordneten MDI-Fensters, falls vorhanden. MDI-Rahmenfensters mitverwenden delegiert Command-Meldungen auf untergeordneten MDI-Fensters auf, bevor er versucht, diese selbst zu behandeln.
+Ein MDI-Rahmen Fenster funktioniert auch zusammen mit dem aktuellen untergeordneten MDI-Fenster, sofern vorhanden. Das MDI-Rahmen Fenster delegiert Befehls Meldungen an das untergeordnete MDI-Element, bevor es versucht, Sie selbst zu behandeln.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Erstellen eines Dokuments Rahmenfenster](../mfc/creating-document-frame-windows.md)
+- [Erstellen von Dokument Rahmen Fenstern](creating-document-frame-windows.md)
 
-- [Rahmenfensterstile](../mfc/frame-window-styles-cpp.md)
+- [Rahmen Fenster Stile](frame-window-styles-cpp.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von Rahmenfenstern](../mfc/using-frame-windows.md)
+[Verwenden von Rahmenfenstern](using-frame-windows.md)

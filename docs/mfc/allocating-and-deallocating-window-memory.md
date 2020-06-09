@@ -9,25 +9,25 @@ helpviewer_keywords:
 - window objects [MFC], deallocating memory for
 - storage for window objects [MFC], allocating
 ms.assetid: 7c962539-8461-4846-b5ca-fe3b15c313dc
-ms.openlocfilehash: 60f99c01c7a311c31602269b49efaf434d16827a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 02546559183d0e14973bc2e5ccb26a4570a39b1e
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394701"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623266"
 ---
 # <a name="allocating-and-deallocating-window-memory"></a>Reservieren und Freigeben von Fensterspeicher
 
-Verwenden Sie nicht die C++ **löschen** Operator, um eine Rahmenfenster oder die Sicht zu zerstören. Rufen Sie stattdessen die `CWnd` Memberfunktion `DestroyWindow`. Rahmenfenster, daher zugewiesen werden soll auf dem Heap mit dem Operator **neue**. Seien Sie vorsichtig beim Zuweisen der Frame-Fensters auf den Stapelrahmen oder Global. Andere Fenster sollte auf den Stapelrahmen möglichst zugeordnet werden.
+Verwenden Sie nicht den C++ **Delete** -Operator, um ein Rahmen Fenster oder eine Ansicht zu zerstören. Stattdessen wird die `CWnd` Member-Funktion aufgerufen `DestroyWindow` . Rahmen Fenster sollten daher auf dem Heap mit dem **New**-Operator zugeordnet werden. Seien Sie vorsichtig, wenn Sie Rahmen Fenster im Stapel Rahmen oder Global zuordnen. Andere Fenster sollten möglichst im Stapel Rahmen zugeordnet werden.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Erstellen von Fenstern](../mfc/creating-windows.md)
+- [Erstellen von Fenstern](creating-windows.md)
 
-- [Fensterzerstörungssequenz](../mfc/window-destruction-sequence.md)
+- [Fenster Zerstörungs Sequenz](window-destruction-sequence.md)
 
-- [Trennen eines CWnd von seinem HWND](../mfc/detaching-a-cwnd-from-its-hwnd.md)
+- [Trennen eines CWnd von seinem HWND](detaching-a-cwnd-from-its-hwnd.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zerstören von Fensterobjekten](../mfc/destroying-window-objects.md)
+[Zerstören von Fensterobjekten](destroying-window-objects.md)

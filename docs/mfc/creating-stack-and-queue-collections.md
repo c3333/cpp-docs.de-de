@@ -11,43 +11,43 @@ helpviewer_keywords:
 - stack collections
 - collections, queue
 ms.assetid: 3c7bc198-35f0-4fc3-aaed-6005a0f22638
-ms.openlocfilehash: 5b3427f7bb2e46435ddf2768bcbb816f9d7e5c1a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5db90422f78fc6ca3bc2a182f9569c33db56cad1
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371609"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623206"
 ---
 # <a name="creating-stack-and-queue-collections"></a>Erstellen von Stack- und Warteschlangenauflistungen
 
-In diesem Artikel wird erläutert, wie Sie aus MFC-Listenklassen andere Datenstrukturen, z. B. [Stapel](#_core_stacks) und [Warteschlangen,](#_core_queues)erstellen. Die Beispiele verwenden `CList`Klassen, die `CList` von abgeleitet sind, sie können jedoch direkt verwendet werden, es sei denn, Sie müssen Funktionen hinzufügen.
+In diesem Artikel wird erläutert, wie Sie andere Datenstrukturen (z. b. [Stapel](#_core_stacks) und [Warteschlangen](#_core_queues)) aus MFC-Listen Klassen erstellen. In den Beispielen werden von abgeleitete Klassen verwendet `CList` , Sie können jedoch direkt verwenden, `CList` es sei denn, Sie müssen Funktionen hinzufügen.
 
-## <a name="stacks"></a><a name="_core_stacks"></a>Stacks
+## <a name="stacks"></a><a name="_core_stacks"></a>Stöcke
 
-Da die Standardlistenauflistung sowohl einen Kopf als auch einen Schwanz hat, ist es einfach, eine abgeleitete Listenauflistung zu erstellen, die das Verhalten eines Last-in-First-Out-Stacks imitiert. Ein Stapel ist wie ein Stapel Von Tabletts in einer Cafeteria. Wenn Schalen dem Stapel hinzugefügt werden, werden sie auf den Stapel gesetzt. Das letzte hinzugefügte Fach ist das erste, das entfernt wird. Die Listenauflistungsmemberfunktionen `AddHead` und `RemoveHead` können verwendet werden, um Elemente speziell aus dem Kopf der Liste hinzuzufügen und zu entfernen. Daher ist das zuletzt hinzugefügte Element das erste, das entfernt wird.
+Da die Standard Listen Auflistung sowohl einen Head-als auch ein-Tail aufweist, ist es einfach, eine abgeleitete Listen Auflistung zu erstellen, die das Verhalten eines Last-in-First-Out-Stapels imitiert. Ein Stapel gleicht einem Stapel von Tabletts in einer Cafeteria. Beim Hinzufügen von Tabletts zum Stapel werden diese auf dem Stapel abgelegt. Die letzte hinzugefügte Leiste ist die erste, die entfernt werden soll. Die Member der Listen Auflistungs `AddHead` `RemoveHead` Elemente und können zum Hinzufügen und Entfernen von Elementen verwendet werden, die sich speziell am Anfang der Liste befinden. Daher ist das zuletzt hinzugefügte Element das erste zu entfernende Element.
 
-#### <a name="to-create-a-stack-collection"></a>So erstellen Sie eine Stapelsammlung
+#### <a name="to-create-a-stack-collection"></a>So erstellen Sie eine Stapel Sammlung
 
-1. Leiten Sie eine neue Listenklasse von einer der vorhandenen MFC-Listenklassen ab, und fügen Sie weitere Memberfunktionen hinzu, um die Funktionalität von Stapelvorgängen zu unterstützen.
+1. Leiten Sie eine neue Listen Klasse aus einer der vorhandenen MFC-Listen Klassen ab, und fügen Sie weitere Element Funktionen hinzu, um die Funktionalität von Stapel Vorgängen zu unterstützen.
 
-   Das folgende Beispiel zeigt, wie Sie Memberfunktionen hinzufügen, um Elemente auf den Stapel zu verschieben, einen Blick auf das obere Element des Stapels zu werfen und das oberste Element aus dem Stapel zu platzieren:
+   Im folgenden Beispiel wird gezeigt, wie Element Funktionen hinzugefügt werden, um Elemente auf den Stapel zu übertragen, das oberste Element des Stapels einzusehen und das oberste Element aus dem Stapel zu bewegen:
 
-   [!code-cpp[NVC_MFCCollections#20](../mfc/codesnippet/cpp/creating-stack-and-queue-collections_1.h)]
+   [!code-cpp[NVC_MFCCollections#20](codesnippet/cpp/creating-stack-and-queue-collections_1.h)]
 
-Beachten Sie, dass dieser `CObList` Ansatz die zugrunde liegende Klasse verfügbar macht. Der Benutzer kann `CObList` jede Memberfunktion aufrufen, unabhängig davon, ob dies für einen Stack sinnvoll ist oder nicht.
+Beachten Sie, dass dieser Ansatz die zugrunde liegende-Klasse verfügbar macht `CObList` . Der Benutzer kann jede `CObList` Member-Funktion, unabhängig davon, ob er für einen Stapel sinnvoll ist, aufruft.
 
 ## <a name="queues"></a><a name="_core_queues"></a>-Warteschlangen
 
-Da die Standardlistenauflistung sowohl einen Kopf als auch einen Schwanz hat, ist es auch einfach, eine abgeleitete Listenauflistung zu erstellen, die das Verhalten einer First-in-First-Out-Warteschlange imitiert. Eine Warteschlange ist wie eine Schlange von Menschen in einer Cafeteria. Die erste Person in der Reihe ist die erste, die bedient wird. Wenn immer mehr Leute kommen, gehen sie ans Ende der Linie, um zu warten, bis sie an der Reihe sind. Die Listenauflistungsmemberfunktionen `AddTail` können `RemoveHead` verwendet werden, um Elemente speziell aus dem Kopf oder Schwanz der Liste hinzuzufügen und zu entfernen. Daher ist das zuletzt hinzugefügte Element immer das letzte, das entfernt wird.
+Da die Standard Listen Auflistung sowohl eine Spitze als auch ein Ende hat, ist es auch einfach, eine abgeleitete Listen Auflistung zu erstellen, die das Verhalten einer First-in-First-Out-Warteschlange imitiert. Eine Warteschlange ist eine Reihe von Personen in einer Cafeteria. Die erste Person in der Zeile ist der erste, der verarbeitet werden soll. Wenn immer mehr Leute kommen, werden Sie an das Ende der Zeile weitergeleitet, um Ihre Zeit zu warten. Die Member der Listen Auflistungs `AddTail` `RemoveHead` Elemente und können zum Hinzufügen und Entfernen von Elementen verwendet werden, die sich speziell am Anfang oder am Ende der Liste befinden. Daher ist das zuletzt hinzugefügte Element immer das letzte, das entfernt werden soll.
 
-#### <a name="to-create-a-queue-collection"></a>So erstellen Sie eine Warteschlangensammlung
+#### <a name="to-create-a-queue-collection"></a>So erstellen Sie eine Warteschlangen Sammlung
 
-1. Leiten Sie eine neue Listenklasse aus einer der vordefinierten Listenklassen ab, die mit der Microsoft Foundation-Klassenbibliothek bereitgestellt werden, und fügen Sie weitere Memberfunktionen hinzu, um die Semantik von Warteschlangenvorgängen zu unterstützen.
+1. Leiten Sie eine neue Listen Klasse aus einer der vordefinierten Listen Klassen ab, die mit dem Microsoft Foundation Class-Bibliothek bereitgestellt werden, und fügen Sie weitere Element Funktionen zur Unterstützung der Semantik von Warteschlangen Vorgängen hinzu
 
-   Das folgende Beispiel zeigt, wie Sie Memberfunktionen anfügen können, um ein Element am Ende der Warteschlange hinzuzufügen und das Element von der Vorderseite der Warteschlange abzurufen.
+   Im folgenden Beispiel wird gezeigt, wie Sie Member-Funktionen anfügen können, um am Ende der Warteschlange ein Element hinzuzufügen und das Element vom Anfang der Warteschlange zu erhalten.
 
-   [!code-cpp[NVC_MFCCollections#21](../mfc/codesnippet/cpp/creating-stack-and-queue-collections_2.h)]
+   [!code-cpp[NVC_MFCCollections#21](codesnippet/cpp/creating-stack-and-queue-collections_2.h)]
 
 ## <a name="see-also"></a>Siehe auch
 
-[Sammlungen](../mfc/collections.md)
+[Sammlungen](collections.md)

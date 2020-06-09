@@ -10,31 +10,31 @@ helpviewer_keywords:
 - document frame windows [MFC], creating
 - MFC, frame windows
 ms.assetid: 8671e239-b76f-4dea-afa8-7024e6e58ff5
-ms.openlocfilehash: 66a951994a75cbd99debeb2c6511739411cdd470
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e15a2a6bc016bf23bc0decf529b4c3ffeecc3a4c
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62174028"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621947"
 ---
 # <a name="creating-document-frame-windows"></a>Erstellen von Dokumentrahmenfenstern
 
-[Erstellen von Dokument/Ansicht](../mfc/document-view-creation.md) zeigt, wie die [CDocTemplate](../mfc/reference/cdoctemplate-class.md) Objekt orchestriert, erstellen das Rahmenfenster, Dokument und Ansicht, und verbinden sie alle. Drei [CRuntimeClass](../mfc/reference/cruntimeclass-structure.md) Argumente für die `CDocTemplate` Konstruktor angegeben wird, das Rahmenfenster, Dokument und Ansichtsklassen, die die Dokumentvorlage dynamisch in Reaktion auf Benutzerbefehle wie z. B. den neuen Befehl in der Datei erstellt Menü oder den Befehl "Neues Fenster" ein MDI-Fensters im Menü ". Die Dokumentvorlage speichert diese Informationen für die spätere Verwendung auf, wenn es sich um ein Rahmenfenster für eine Ansicht und das Dokument erstellt.
+Die [Dokument-](document-view-creation.md) /ansichterstellung zeigt, wie das [CDocTemplate](reference/cdoctemplate-class.md) -Objekt die Erstellung des Frame Fensters, des Dokuments und der Ansicht orchestriert. Drei [CRuntimeClass](reference/cruntimeclass-structure.md) -Argumente für den `CDocTemplate` Konstruktor geben das Frame Fenster, das Dokument und die Ansichts Klassen an, die von der Dokument Vorlage dynamisch erstellt werden, als Reaktion auf Benutzer Befehle wie den neuen Befehl im Menü Datei oder den Befehl neuer Fenster in einem MDI-Fenstermenü. Diese Informationen werden von der Dokument Vorlage für die spätere Verwendung gespeichert, wenn ein Rahmen Fenster für eine Ansicht und ein Dokument erstellt wird.
 
-Für die [RUNTIME_CLASS](../mfc/reference/run-time-object-model-services.md#runtime_class) Mechanismus, dem abgeleiteten ordnungsgemäße Rahmenfensterklassen müssen deklariert werden, mit der [DECLARE_DYNCREATE](../mfc/reference/run-time-object-model-services.md#declare_dyncreate) Makro. Dies ist, da das Framework zum Erstellen von Dokument-Frame-Fensters mithilfe des Erstellungsmechanismus der dynamischen der Klasse muss `CObject`.
+Damit der [RUNTIME_CLASS](reference/run-time-object-model-services.md#runtime_class) Mechanismus ordnungsgemäß funktioniert, müssen die abgeleiteten Rahmen Fenster Klassen mit dem [DECLARE_DYNCREATE](reference/run-time-object-model-services.md#declare_dyncreate) -Makro deklariert werden. Dies liegt daran, dass das Framework Dokument Rahmen Fenster mithilfe des dynamischen Konstruktions Mechanismus der-Klasse erstellen muss `CObject` .
 
-Wenn der Benutzer einen Befehl, der ein Dokument erstellt auswählt, wird die Dokumentvorlage, erstellen Sie das Document-Objekt, seine Ansicht und das Rahmenfenster, das die Ansicht angezeigt wird vom Framework aufgerufen. Wenn sie die Dokumentrahmenfenster erstellt haben, handelt es sich bei der Dokumentvorlage erstellt ein Objekt der entsprechenden Klasse – eine abgeleitete Klasse [CFrameWnd](../mfc/reference/cframewnd-class.md) für die einer SDI-Anwendung oder [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md) für MDI-Formulars die Anwendung. Ruft das Framework klicken Sie dann auf das Rahmenfensterobjekt [LoadFrame](../mfc/reference/cframewnd-class.md#loadframe) Member-Funktion zum Abrufen von Informationen aus den Ressourcen und zum Erstellen des Windows-Fensters. Das Framework fügt das Handle des Fensters an das Rahmenfenster Objekt. Anschließend wird die Sicht als untergeordnetes Fenster des Rahmenfensters Dokument erstellt.
+Wenn der Benutzer einen Befehl auswählt, mit dem ein Dokument erstellt wird, ruft das Framework die Dokument Vorlage auf, um das Dokument Objekt, seine Ansicht und das Rahmen Fenster zu erstellen, in dem die Ansicht angezeigt wird. Wenn das Dokument Rahmen Fenster erstellt wird, erstellt die Dokument Vorlage ein Objekt der entsprechenden Klasse – eine Klasse, die von [CFrameWnd](reference/cframewnd-class.md) für eine SDI-Anwendung oder von [CMDIChildWnd](reference/cmdichildwnd-class.md) für eine MDI-Anwendung abgeleitet wurde. Das Framework ruft dann die [LoadFrame](reference/cframewnd-class.md#loadframe) -Member-Funktion des Frame-Window-Objekts auf, um Erstellungs Informationen aus den Ressourcen zu erhalten und das Windows-Fenster zu erstellen. Das Framework fügt das Fenster Handle an das Rahmen Fenster Objekt an. Anschließend wird die Ansicht als untergeordnetes Fenster des Dokument Rahmen Fensters erstellt.
 
-Seien Sie vorsichtig bei der Entscheidung [beim Initialisieren](../mfc/when-to-initialize-cwnd-objects.md) Ihre `CWnd`-abgeleitetes Objekt.
+Verwenden Sie Vorsicht bei der Entscheidung [, wann das von](when-to-initialize-cwnd-objects.md) abgeleitete Objekt initialisiert werden soll `CWnd` .
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Ableiten einer Klasse von CObject (die dynamische Erstellung-Mechanismus)](../mfc/deriving-a-class-from-cobject.md)
+- [Ableiten einer Klasse von CObject (der dynamische Erstellungs Mechanismus)](deriving-a-class-from-cobject.md)
 
-- [Dokument-/Ansicht-Erstellung (Vorlagen und Dokumentrahmenfenster-Erstellung)](../mfc/document-view-creation.md)
+- [Dokument-/ansichterstellung (Vorlagen und Rahmen Fenster Erstellung)](document-view-creation.md)
 
-- [Zerstören von Rahmenfenstern](../mfc/destroying-frame-windows.md)
+- [Zerstören von Rahmenfenstern](destroying-frame-windows.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von Rahmenfenstern](../mfc/using-frame-windows.md)
+[Verwenden von Rahmenfenstern](using-frame-windows.md)

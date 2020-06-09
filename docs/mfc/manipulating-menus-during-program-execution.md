@@ -8,19 +8,19 @@ helpviewer_keywords:
 - menus [MFC], manipulating during execution
 - menus during execution
 ms.assetid: 722c7c00-4be2-4967-877d-f96aaa604396
-ms.openlocfilehash: 00d045932a4b196e23a2853e87fe42f7722cfadd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0b7da3871cae21da45fbb449e703ff6d8bc5f0e7
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62365233"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622439"
 ---
 # <a name="manipulating-menus-during-program-execution"></a>Bearbeiten von Menüs während der Programmausführung
 
-Verwenden Sie Klasse `CMenu` zum Bearbeiten von Menüs und Menüelemente im laufenden Betrieb. `CMenu` ein Windows-HMENU-Handle kapselt, und stellt Memberfunktionen zum Arbeiten mit Menüs.
+Verwenden `CMenu` Sie die-Klasse, um Menüs und Menü Elemente im Handumdrehen zu bearbeiten. `CMenu`Kapselt ein Windows-HMENU-Handle und stellt Element Funktionen zum Arbeiten mit Menüs bereit.
 
-Finden Sie unter der Übersicht zur Klasse [CMenu](../mfc/reference/cmenu-class.md) Details.
+Weitere Informationen finden Sie in der Übersicht über die [CMenu](reference/cmenu-class.md) -Klasse.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Menüs](../mfc/menus-mfc.md)
+[Menüs](menus-mfc.md)

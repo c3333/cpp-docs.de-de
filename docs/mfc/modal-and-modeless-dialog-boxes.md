@@ -7,16 +7,16 @@ helpviewer_keywords:
 - MFC dialog boxes [MFC], modal
 - modal dialog boxes [MFC]
 ms.assetid: e83df336-5994-4b8f-8233-7942f997315b
-ms.openlocfilehash: 886229a2b66968bf76129ecb1da838bd36e66215
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.openlocfilehash: 857bb3ea9e66ca0be155413faea23c0aba2abc9e
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685183"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622206"
 ---
 # <a name="modal-and-modeless-dialog-boxes"></a>Modale und nicht modale Dialogfelder
 
-Sie können [CDialog](../mfc/reference/cdialog-class.md) -Klasse verwenden, um zwei Arten von Dialogfeldern zu verwalten:
+Sie können [CDialog](reference/cdialog-class.md) -Klasse verwenden, um zwei Arten von Dialogfeldern zu verwalten:
 
 - *Modale Dialogfelder*, die erfordern, dass der Benutzer antwortet, bevor das Programm fortgesetzt wird
 
@@ -32,9 +32,9 @@ Zum Erstellen eines Dialog Felds für das Programm sind die folgenden Schritte e
 
 1. Verbinden Sie die Steuer [Elemente der Dialogfeld Ressource mit Nachrichten Handlern](../windows/adding-event-handlers-for-dialog-box-controls.md) in der Dialogfeld Klasse.
 
-1. Fügen Sie Datenelemente hinzu, die den Steuerelementen des Dialog Felds zugeordnet sind, und, um die Überprüfungen des [Dialog](../mfc/dialog-data-exchange.md) Feld-und [Dialog Daten](../mfc/dialog-data-validation.md) für die Steuerelemente anzugeben
+1. Fügen Sie Datenelemente hinzu, die den Steuerelementen des Dialog Felds zugeordnet sind, und, um die Überprüfungen des [Dialog](dialog-data-exchange.md) Feld-und [Dialog Daten](dialog-data-validation.md) für die Steuerelemente anzugeben
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dialogfelder](../mfc/dialog-boxes.md)<br/>
-[Arbeiten mit Dialog Feldern in MFC](../mfc/life-cycle-of-a-dialog-box.md)
+[Dialog Felder](dialog-boxes.md)<br/>
+[Arbeiten mit Dialogfeldern in MFC](life-cycle-of-a-dialog-box.md)

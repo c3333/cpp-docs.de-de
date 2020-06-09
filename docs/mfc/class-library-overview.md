@@ -10,12 +10,12 @@ helpviewer_keywords:
 - class libraries, MFC
 - class libraries
 ms.assetid: 9b0e3152-ac39-4f52-91b4-f20aa3a674aa
-ms.openlocfilehash: 9b307c4993a1a7a397741864381c0739a1f4c4ea
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bf30f1b0aa83ef002337b76601f04c7103963441
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374581"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620748"
 ---
 # <a name="class-library-overview"></a>Übersicht über die Klassenbibliothek
 
@@ -23,100 +23,100 @@ Diese Übersicht kategorisiert und beschreibt die Klassen in Version 9.0 der Mic
 
 Die Klassen der Bibliothek werden hier in den folgenden Kategorien aufgeführt:
 
-- [Stammklasse: CObject](../mfc/root-class-cobject.md)
+- [Stammklasse: CObject](root-class-cobject.md)
 
-- [Klassen der MFC-Anwendungsarchitektur](../mfc/mfc-application-architecture-classes.md)
+- [Klassen der MFC-Anwendungsarchitektur](mfc-application-architecture-classes.md)
 
-  - [Klassen zur Anwendungs- und Threadunterstützung](../mfc/application-and-thread-support-classes.md)
+  - [Klassen zur Anwendungs- und Threadunterstützung](application-and-thread-support-classes.md)
 
-  - [Befehlsroutingklassen](../mfc/command-routing-classes.md)
+  - [Befehls Routing Klassen](command-routing-classes.md)
 
-  - [Dokumentklassen](../mfc/document-classes.md)
+  - [Dokumentklassen](document-classes.md)
 
-  - [Ansichtsklassen (Architektur)](../mfc/view-classes-architecture.md)
+  - [Ansichtsklassen (Architektur)](view-classes-architecture.md)
 
-  - [Klassen für Rahmenfenster (Architektur)](../mfc/frame-window-classes-architecture.md)
+  - [Klassen für Rahmenfenster (Architektur)](frame-window-classes-architecture.md)
 
-  - [Dokumentvorlagenklassen](../mfc/document-template-classes.md)
+  - [Dokumentvorlagenklassen](document-template-classes.md)
 
-- [Klassen für Fenster, Dialogfelder und Steuerelemente](../mfc/window-dialog-and-control-classes.md)
+- [Klassen für Fenster, Dialogfelder und Steuerelemente](window-dialog-and-control-classes.md)
 
-  - [Framefensterklassen (Windows)](../mfc/frame-window-classes-windows.md)
+  - [Rahmen Fenster Klassen (Windows)](frame-window-classes-windows.md)
 
-  - [Ansichtsklassen (Windows)](../mfc/view-classes-windows.md)
+  - [Ansichtsklassen (Windows)](view-classes-windows.md)
 
-  - [Dialogfeldklassen](../mfc/dialog-box-classes.md)
+  - [Dialogfeldklassen](dialog-box-classes.md)
 
-  - [Steuerelementklassen](../mfc/control-classes.md)
+  - [Steuerelementklassen](control-classes.md)
 
-  - [Klassen für Steuerleisten](../mfc/control-bar-classes.md)
+  - [Klassen für Steuerleisten](control-bar-classes.md)
 
-- [Klassen zum Zeichnen und Drucken](../mfc/drawing-and-printing-classes.md)
+- [Klassen zum Zeichnen und Drucken](drawing-and-printing-classes.md)
 
-  - [Klassen für die Ausgabe (Gerätekontext)](../mfc/output-device-context-classes.md)
+  - [Klassen für die Ausgabe (Gerätekontext)](output-device-context-classes.md)
 
-  - [Klassen für Zeichenwerkzeuge](../mfc/drawing-tool-classes.md)
+  - [Klassen für Zeichenwerkzeuge](drawing-tool-classes.md)
 
-- [Einfache Datentypklassen](../mfc/simple-data-type-classes.md)
+- [Einfache Datentyp Klassen](simple-data-type-classes.md)
 
-- [Klassen für Arrays, Listen und Zuordnungen](../mfc/array-list-and-map-classes.md)
+- [Klassen für Arrays, Listen und Zuordnungen](array-list-and-map-classes.md)
 
-  - [Vorlagenklassen für Arrays, Listen und Zuordnungen](../mfc/template-classes-for-arrays-lists-and-maps.md)
+  - [Vorlagenklassen für Arrays, Listen und Zuordnungen](template-classes-for-arrays-lists-and-maps.md)
 
-  - [Klassen für gebrauchsfertige Arrays](../mfc/ready-to-use-array-classes.md)
+  - [Klassen für gebrauchsfertige Arrays](ready-to-use-array-classes.md)
 
-  - [Klassen für gebrauchsfertige Listen](../mfc/ready-to-use-list-classes.md)
+  - [Klassen für gebrauchsfertige Listen](ready-to-use-list-classes.md)
 
-  - [Gebrauchsfertige Zuordnungsklassen](../mfc/ready-to-use-map-classes.md)
+  - [Gebrauchsfertige Zuordnungsklassen](ready-to-use-map-classes.md)
 
-- [Klassen für Dateien und Datenbanken](../mfc/file-and-database-classes.md)
+- [Klassen für Dateien und Datenbanken](file-and-database-classes.md)
 
-  - [Klassen für Datei-E/A](../mfc/file-i-o-classes.md)
+  - [Klassen für Datei-E/A](file-i-o-classes.md)
 
-  - [DAO-Klassen](../mfc/dao-classes.md)
+  - [DAO-Klassen](dao-classes.md)
 
-  - [ODBC-Klassen](../mfc/odbc-classes.md)
+  - [ODBC-Klassen](odbc-classes.md)
 
-  - [OLE DB-Klassen](../mfc/ole-db-classes.md)
+  - [OLE DB-Klassen](ole-db-classes.md)
 
-- [Klassen für Internet und Netzwerk](../mfc/internet-and-networking-classes.md)
+- [Klassen für Internet und Netzwerk](internet-and-networking-classes.md)
 
-  - [Windows Sockets-Klassen](../mfc/windows-sockets-classes.md)
+  - [Windows Sockets-Klassen](windows-sockets-classes.md)
 
-  - [Win32 Internet-Klassen](../mfc/win32-internet-classes.md)
+  - [Win32-Internet Klassen](win32-internet-classes.md)
 
-- [OLE-Klassen](../mfc/ole-classes.md)
+- [OLE-Klassen](ole-classes.md)
 
-  - [OLE-Containerklassen](../mfc/ole-container-classes.md)
+  - [OLE-Containerklassen](ole-container-classes.md)
 
-  - [OLE-Server-Klassen](../mfc/ole-server-classes.md)
+  - [OLE-Server-Klassen](ole-server-classes.md)
 
-  - [OLE Drag-and-Drop- und Datenübertragungsklassen](../mfc/ole-drag-and-drop-and-data-transfer-classes.md)
+  - [Drag & Drop-und Datenübertragung Klassen von OLE](ole-drag-and-drop-and-data-transfer-classes.md)
 
-  - [OLE-Common-Dialogfeldklassen](../mfc/ole-common-dialog-classes.md)
+  - [OLE-Common-Dialogfeldklassen](ole-common-dialog-classes.md)
 
-  - [OLE-Automatisierungsklassen](../mfc/ole-automation-classes.md)
+  - [OLE-Automatisierungsklassen](ole-automation-classes.md)
 
-  - [OLE-Steuerelementklassen](../mfc/ole-control-classes.md)
+  - [OLE-Steuerelementklassen](ole-control-classes.md)
 
-  - [Active Document-Klassen](../mfc/active-document-classes.md)
+  - [Active Document-Klassen](active-document-classes.md)
 
-  - [OLE-bezogene Klassen](../mfc/ole-related-classes.md)
+  - [OLE-bezogene Klassen](ole-related-classes.md)
 
-- [Debuggen und Ausnahmeklassen](../mfc/debugging-and-exception-classes.md)
+- [Debug-und Exception-Klassen](debugging-and-exception-classes.md)
 
-  - [Debugunterstützungsklassen](../mfc/debugging-support-classes.md)
+  - [Debugunterstützungsklassen](debugging-support-classes.md)
 
-  - [Ausnahmeklassen](../mfc/exception-classes.md)
+  - [Ausnahmeklassen](exception-classes.md)
 
-Im Abschnitt [Allgemeine Klassendesignphilosophie](../mfc/general-class-design-philosophy.md) wird erläutert, wie die MFC-Bibliothek gestaltet wurde.
+Im Abschnitt [allgemeine Klassen Entwurfs Philosophie](general-class-design-philosophy.md) wird erläutert, wie die MFC-Bibliothek entworfen wurde.
 
-Eine Übersicht über das Framework finden Sie unter [Verwenden der Klassen zum Schreiben](../mfc/using-the-classes-to-write-applications-for-windows.md)von Anwendungen für Windows . Einige der oben aufgelisteten Klassen sind Allzweckklassen, die außerhalb des Frameworks verwendet werden können und nützliche Abstraktionen wie Auflistungen, Ausnahmen, Dateien und Zeichenfolgen bereitstellen.
+Eine Übersicht über das Framework finden Sie unter [Verwenden der Klassen zum Schreiben von Anwendungen für Windows](using-the-classes-to-write-applications-for-windows.md). Einige der oben aufgelisteten Klassen sind Allzweckklassen, die außerhalb des Frameworks verwendet werden können und nützliche Abstraktionen wie Auflistungen, Ausnahmen, Dateien und Zeichenfolgen bereitstellen.
 
-Um die Vererbung einer Klasse anzuzeigen, verwenden Sie das [Klassenhierarchiediagramm](../mfc/hierarchy-chart.md).
+Verwenden Sie das [Klassen Hierarchie Diagramm](hierarchy-chart.md), um die Vererbung einer Klasse anzuzeigen.
 
-Zusätzlich zu den Klassen, die in dieser Übersicht aufgeführt sind, enthält die MFC-Bibliothek mehrere globale Funktionen, globale Variablen und Makros. Es gibt eine Übersicht und eine detaillierte Auflistung dieser im Thema [MFC-Makros und Globals](../mfc/reference/mfc-macros-and-globals.md), die dem alphabetischen Verweis auf die MFC-Klassen folgt.
+Zusätzlich zu den Klassen, die in dieser Übersicht aufgeführt sind, enthält die MFC-Bibliothek mehrere globale Funktionen, globale Variablen und Makros. Im Thema [MFC-Makros und Globals](reference/mfc-macros-and-globals.md)finden Sie eine Übersicht und eine ausführliche Auflistung, die auf den alphabetischen Verweis auf die MFC-Klassen folgt.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Desktopanwendungen](../mfc/mfc-desktop-applications.md)
+[MFC-Desktopanwendungen](mfc-desktop-applications.md)

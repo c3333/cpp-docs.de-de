@@ -7,31 +7,31 @@ helpviewer_keywords:
 - CListCtrl class [MFC], image lists
 - list items [MFC], image lists
 ms.assetid: 317d095f-f978-47da-acb6-7bfe7dd3bc69
-ms.openlocfilehash: d378c6e07280349f9995981ad794039ebc015b25
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 14abf72551d39b2d1b2069bd17da308b39d7f6cc
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81353048"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621401"
 ---
 # <a name="list-items-and-image-lists"></a>Listenelemente und Bildlisten
 
-Ein "Element" in einem Listensteuerelement ([CListCtrl](../mfc/reference/clistctrl-class.md)) besteht aus einem Symbol, einer Beschriftung und möglicherweise anderen Informationen (in "Unterpositionen").
+Ein "Item" in einem Listen Steuerelement ([CListCtrl](reference/clistctrl-class.md)) besteht aus einem Symbol, einer Bezeichnung und möglicherweise weiteren Informationen (in "SubItems").
 
-Die Symbole für Listensteuerelemente sind in Bildlisten enthalten. Eine Bildliste enthält Symbole in voller Größe, die in der Symbolansicht verwendet werden. Eine zweite, optionale Bildliste enthält kleinere Versionen derselben Symbole für die Verwendung in anderen Ansichten des Steuerelements. Eine dritte optionale Liste enthält "Zustandsbilder", z. B. Kontrollkästchen, um sie vor den kleinen Symbolen in bestimmten Ansichten anzuzeigen. Eine vierte optionale Liste enthält Bilder, die in einzelnen Kopfzeilenelementen des Listensteuerelements angezeigt werden.
+Die Symbole für Listen Steuerungselemente sind in Bildlisten enthalten. Eine Bildliste enthält Symbole in voller Größe, die in der Symbol Ansicht verwendet werden. Eine zweite, optionale Bildliste enthält kleinere Versionen derselben Symbole für die Verwendung in anderen Ansichten des Steuer Elements. Eine dritte optionale Liste enthält Bilder mit dem Status "State" (z. b. Kontrollkästchen) für die Anzeige vor den kleinen Symbolen in bestimmten Ansichten. Eine vierte optionale Liste enthält Bilder, die in einzelnen Header Elementen des Listen Steuer Elements angezeigt werden.
 
 > [!NOTE]
-> Wenn ein Listenansichtssteuerelement mit dem stilLVS_SHAREIMAGELISTS erstellt wird, sind Sie dafür verantwortlich, die Bildlisten zu zerstören, wenn sie nicht mehr verwendet werden. Geben Sie diesen Stil an, wenn Sie denselben Bildlisten mehreren Listenansichtssteuerelementen zuweisen. Andernfalls könnte mehr als ein Steuerelement versuchen, dieselbe Bildliste zu zerstören.
+> Wenn ein Listenansicht-Steuerelement mit dem LVS_SHAREIMAGELISTS-Format erstellt wird, sind Sie dafür verantwortlich, die Bildlisten zu zerstören, wenn Sie nicht mehr verwendet werden. Geben Sie diesen Stil an, wenn Sie denselben Bildlisten mehrere Listenansicht-Steuerelemente zuweisen. Andernfalls können mehr als ein Steuerelement versuchen, dieselbe Bildliste zu zerstören.
 
-Weitere Informationen zu Listenelementen finden Sie unter [Listenansicht von Bildlisten](/windows/win32/Controls/using-list-view-controls) und [Elementen und Unterelementen](/windows/win32/Controls/using-list-view-controls) im Windows SDK. Siehe auch Klasse [CImageList](../mfc/reference/cimagelist-class.md) in der *MFC-Referenz* und [Verwenden von CImageList](../mfc/using-cimagelist.md) in dieser Artikelfamilie.
+Weitere Informationen zu Listenelementen finden Sie Unterlisten [Ansichts Bildlisten](/windows/win32/Controls/using-list-view-controls) und [Elemente und unter Elemente](/windows/win32/Controls/using-list-view-controls) in der Windows SDK. Siehe auch Klasse [CImageList](reference/cimagelist-class.md) in der *MFC-Referenz* und [Verwenden von CImageList](using-cimagelist.md) in dieser Artikel Familie.
 
-Um ein Listensteuerelement zu erstellen, müssen Sie Bildlisten angeben, die beim Einfügen neuer Elemente in die Liste verwendet werden sollen. Im folgenden Beispiel wird *m_pImagelist* dieses Verfahren veranschaulicht, `CImageList` wobei m_pImagelist ein Zeiger des Typs und *m_listctrl* ein `CListCtrl` Datenmember ist.
+Zum Erstellen eines Listen Steuer Elements müssen Sie Bildlisten bereitstellen, die verwendet werden sollen, wenn Sie neue Elemente in die Liste einfügen. Im folgenden Beispiel wird dieses Verfahren veranschaulicht, bei dem *m_pImagelist* ein Zeiger vom Typ `CImageList` und *m_listctrl* ein `CListCtrl` Datenmember ist.
 
-[!code-cpp[NVC_MFCControlLadenDialog#19](../mfc/codesnippet/cpp/list-items-and-image-lists_1.cpp)]
+[!code-cpp[NVC_MFCControlLadenDialog#19](codesnippet/cpp/list-items-and-image-lists_1.cpp)]
 
-Wenn Sie jedoch nicht beabsichtigen, Symbole in der Listenansicht oder im Listensteuerelement anzuzeigen, benötigen Sie keine Bildlisten.
+Wenn Sie jedoch keine Symbole in der Listenansicht oder im Listen Steuerelement anzeigen möchten, benötigen Sie keine Bildlisten.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CListCtrl](../mfc/using-clistctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CListCtrl](using-clistctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

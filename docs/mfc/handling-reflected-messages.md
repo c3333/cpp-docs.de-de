@@ -5,27 +5,27 @@ helpviewer_keywords:
 - message handling [MFC], reflected messages
 - reflected messages, handling
 ms.assetid: 147a4e0c-51cc-4447-a8e1-c28b4cece578
-ms.openlocfilehash: 973e8cff24eca37b1806207d081636f0d1b38365
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8907b432cf4dabad33c0925b841f65dfc57c6295
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62240560"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620142"
 ---
 # <a name="handling-reflected-messages"></a>Behandeln von reflektierten Meldungen
 
-Nachricht, die Reflektion können Sie die Meldungen für ein Steuerelement, z. B. behandeln **WM_CTLCOLOR**, **WM_COMMAND**, und **WM_NOTIFY**, innerhalb des Steuerelements selbst. Dadurch wird das Steuerelement mehr unabhängige und übertragbare. Der Mechanismus funktioniert mit Windows-Standardsteuerelemente sowie mit ActiveX-Steuerelementen (früher OLE-Steuerelemente).
+Mithilfe der Nachrichten Reflektion können Sie Nachrichten für ein Steuerelement, z. b. **WM_CTLCOLOR**, **WM_COMMAND**und **WM_NOTIFY**, im Steuerelement selbst verarbeiten. Dadurch wird das Steuerelement eigenständig und portabel. Der Mechanismus funktioniert mit allgemeinen Windows-Steuerelementen und mit ActiveX-Steuerelementen (früher als OLE-Steuerelemente bezeichnet).
 
-Nachricht, die Reflektion können Sie die Wiederverwendung Ihrer `CWnd`-leichter abgeleiteten Klassen. Reflektion funktioniert über Message [CWnd:: OnChildNotify](../mfc/reference/cwnd-class.md#onchildnotify), mithilfe von speziellen **ON_XXX_REFLECT** message-Zuordnungseinträge: z. B. **ON_CTLCOLOR_REFLECT** und **ON_CONTROL_REFLECT**. [Technischer Hinweis 62](../mfc/tn062-message-reflection-for-windows-controls.md) Meldungsreflektion ausführlicher erläutert.
+Mithilfe der Nachrichten Reflektion können Sie die von `CWnd` abgeleiteten Klassen leichter wieder verwenden. Die Nachrichten Reflektion funktioniert mithilfe von [CWnd:: OnChildNotify](reference/cwnd-class.md#onchildnotify)mithilfe spezieller **ON_XXX_REFLECT** Zuordnungs Einträge in der Nachricht, z. b. **ON_CTLCOLOR_REFLECT** und **ON_CONTROL_REFLECT**. [Technische Notiz 62](tn062-message-reflection-for-windows-controls.md) erläutert die Nachrichten Spiegelung ausführlicher.
 
-## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun
+## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
-- [Erfahren Sie mehr über Meldungsreflektion](../mfc/tn062-message-reflection-for-windows-controls.md)
+- [Weitere Informationen zur Nachrichten Reflektion](tn062-message-reflection-for-windows-controls.md)
 
-- [Implementieren von Meldungsreflektion für ein allgemeines Steuerelement](../mfc/tn062-message-reflection-for-windows-controls.md)
+- [Implementieren der Nachrichten Reflektion für ein gemeinsames Steuerelement](tn062-message-reflection-for-windows-controls.md)
 
-- [Implementieren von Meldungsreflektion für ein ActiveX-Steuerelement](../mfc/mfc-activex-controls-subclassing-a-windows-control.md)
+- [Implementieren der Nachrichten Reflektion für ein ActiveX-Steuerelement](mfc-activex-controls-subclassing-a-windows-control.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Deklarieren von Meldungshandlerfunktionen](../mfc/declaring-message-handler-functions.md)
+[Deklarieren von Meldungshandlerfunktionen](declaring-message-handler-functions.md)

@@ -12,25 +12,25 @@ helpviewer_keywords:
 - application-specific events [MFC]
 - command routing [MFC], MFC
 ms.assetid: 39e68189-a580-40d0-9e35-bf5cd24a8ecf
-ms.openlocfilehash: 81b0749167391a841badff5494023a2ca5d3147e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 318ca9558d705ca483d41867a1fe2ad46c36666f
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407951"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622596"
 ---
 # <a name="how-the-framework-calls-your-code"></a>Wie das Framework Code aufruft
 
-Es ist entscheidend, um die Beziehung zwischen Quellcode und den Code in MFC-Framework zu verstehen. Wenn Ihre Anwendung ausgeführt wird, die meisten der ablaufsteuerung befindet sich in die Framework Code. Das Framework verwaltet die Nachrichtenschleife aus, die Nachrichten von Windows abruft, da der Benutzer Befehle auswählt, und Bearbeiten von Daten in einer Ansicht. Ereignisse, die das Framework selbst behandeln können verlassen überhaupt nicht auf Ihren Code. Das Framework beispielsweise weiß, wie Sie das Fenster zu schließen und beenden die Anwendung als Reaktion auf Benutzerbefehle. Wie sie diese Aufgaben behandelt, verwendet das Framework meldungshandlers und virtuelle C++-Funktionen erhalten Sie Gelegenheit, Antworten auf diese Ereignisse ebenfalls an. Ihr Code ist jedoch nicht im Steuerelement. Das Framework ist.
+Es ist wichtig, dass Sie die Beziehung zwischen dem Quellcode und dem Code im MFC-Framework verstehen. Wenn die Anwendung ausgeführt wird, befindet sich der größte Teil des Steuerungs Flusses im Code des Frameworks. Das Framework verwaltet die Nachrichten Schleife, die Nachrichten von Windows abruft, wenn der Benutzer Befehle auswählt und Daten in einer Ansicht bearbeitet. Ereignisse, die das Framework selbst verarbeiten kann, verlassen sich überhaupt nicht auf Ihren Code. Das Framework weiß z. b., wie Fenster geschlossen werden und wie die Anwendung als Reaktion auf Benutzer Befehle beendet wird. Beim Verarbeiten dieser Aufgaben verwendet das Framework Meldungs Handler und C++ Virtual Functions, um Ihnen die Möglichkeit zu bieten, auf diese Ereignisse zu reagieren. Der Code ist jedoch nicht in der Steuerung. Das Framework ist.
 
-Das Framework ruft Ihren Code für die anwendungsspezifische Ereignisse. Z. B. wenn der Benutzer einen Befehl auswählt, das Framework leitet den Befehl auf eine Sequenz von C++-Objekte: das aktuelle Ansicht- und Frame-Fenster, das die Ansicht des Dokuments Dokumentvorlage und das-Objekt zugeordnete Dokument. Wenn eines dieser Objekte den Befehl behandeln kann, wird dies durchgeführt, die entsprechenden Meldungshandler-Funktion aufrufen. Klicken Sie bei jedem Befehl der aufgerufene Code möglicherweise Ihre oder möglicherweise der Frameworks.
+Das Framework ruft den Code für anwendungsspezifische Ereignisse auf. Wenn der Benutzer z. b. einen Menübefehl auswählt, leitet das Framework den Befehl entlang einer Sequenz von C++-Objekten weiter: der aktuellen Ansicht und dem Rahmen Fenster, dem Dokument, das der Ansicht zugeordnet ist, der Dokument Vorlage des Dokuments und dem Anwendungs Objekt. Wenn eines dieser Objekte den Befehl verarbeiten kann, erfolgt dies, indem die entsprechende nachrichtenhandlerfunktion aufgerufen wird. Bei einem beliebigen Befehl kann der aufgerufene Code Ihr oder das Framework sein.
 
-Diese Anordnung ist Programmierern, die Erfahrung mit herkömmlichen Programmierung für Windows oder ereignisgesteuerte Programmierung vertraut.
+Diese Anordnung ist einem Programmierer, der mit der herkömmlichen Programmierung für Windows oder ereignisgesteuerte Programmierung vertraut ist, etwas vertraut.
 
-Sie werden in verwandten Themen lesen, was das Framework als er initialisiert und führt die Anwendung und dann bereinigt, wenn die Anwendung beendet wird. Es wird auch erläutert, in dem der Code, den Sie schreiben in passt.
+In verwandten Themen erfahren Sie, was das Framework tut, wenn es die Anwendung initialisiert und ausführt und dann bereinigt, wenn die Anwendung beendet wird. Sie werden auch verstehen, wo der von Ihnen geschriebene Code passt.
 
-Weitere Informationen finden Sie unter [von CWinApp-Klasse: Die Anwendungsklasse](../mfc/cwinapp-the-application-class.md) und [Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](../mfc/document-templates-and-the-document-view-creation-process.md).
+Weitere Informationen finden Sie unter [Class CWinApp: die Anwendungsklasse](cwinapp-the-application-class.md) und die [Dokumentvorlagen sowie der Erstellungs Vorgang für Dokumente und Ansichten](document-templates-and-the-document-view-creation-process.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Erstellen im Framework](../mfc/building-on-the-framework.md)
+[Erstellen im Framework](building-on-the-framework.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - handlers, command [MFC]
 - command routing
 ms.assetid: 9393a956-bdd4-47c5-9013-dbd680433f93
-ms.openlocfilehash: 8d1e1e59c56439c01655a1416df645ccc6922411
-ms.sourcegitcommit: 3caf5261b3ea80d9cf14038c116ba981d655cd13
+ms.openlocfilehash: e47ffd38b342301da32abae9690738ef83c0426b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70907619"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620690"
 ---
 # <a name="command-routing"></a>Befehlsrouting
 
@@ -31,18 +31,18 @@ Verschiedene Befehlszielklassen überprüfen ihre eigenen Meldungszuordnungen zu
 
 Wie teuer ist dieser Routing Mechanismus im Vergleich zu den Aktionen, die Ihr Handler als Reaktion auf einen Befehl durchführt, ist der Aufwand für das Routing gering. Beachten Sie, dass das Framework nur dann Befehle generiert, wenn der Benutzer mit einem Benutzeroberflächenobjekt interagiert.
 
-### <a name="_core_standard_command_route"></a> Standardmäßige Befehlsweiterleitung
+### <a name="standard-command-route"></a><a name="_core_standard_command_route"></a> Standardmäßige Befehlsweiterleitung
 
 |Wenn ein Objekt dieses Typs einen Befehl empfängt. . .|Es gibt sich selbst und anderen Befehlszielobjekten in der folgenden Reihenfolge eine Chance, den Befehl zu verarbeiten:|
 |----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-|MDI-Rahmenfenster (`CMDIFrameWnd`)|1.  Aktiver `CMDIChildWnd`<br />2.  Dieses Rahmenfenster<br />3.  Anwendung (`CWinApp`-Objekt)|
-|Dokumentrahmenfenster (`CFrameWnd`, `CMDIChildWnd`)|1.  Aktive Ansicht<br />2.  Dieses Rahmenfenster<br />3.  Anwendung (`CWinApp`-Objekt)|
-|Ansicht|1.  Diese Ansicht<br />2.  Der Ansicht angefügtes Dokument|
-|Dokument|1.  Dieses Dokument<br />2.  Dem Dokument angefügte Dokumentvorlage|
-|Dialogfeld|1.  Dieses Dialogfeld<br />2.  Fenster, das das Dialogfeld besitzt<br />3.  Anwendung (`CWinApp`-Objekt)|
+|MDI-Rahmenfenster (`CMDIFrameWnd`)|1. aktiv`CMDIChildWnd`<br />2. dieses Rahmen Fenster<br />3. Anwendung ( `CWinApp` Objekt)|
+|Dokumentrahmenfenster (`CFrameWnd`, `CMDIChildWnd`)|1. aktive Ansicht<br />2. dieses Rahmen Fenster<br />3. Anwendung ( `CWinApp` Objekt)|
+|Sicht|1. diese Ansicht<br />2. an die Ansicht angefügtes Dokument|
+|Dokument|1. dieses Dokument<br />2. Dokument Vorlage, die an das Dokument angefügt ist|
+|Dialogfeld|1. dieses Dialogfeld<br />2. Fenster, das das Dialogfeld besitzt<br />3. Anwendung ( `CWinApp` Objekt)|
 
 Wo nummerierte Einträge in der zweiten Spalte der vorstehenden Tabelle andere Objekte erwähnen, z. B. ein Dokument, finden Sie das entsprechende Element in der ersten Spalte. Wenn Sie z. B. in der zweiten Spalte lesen, dass die Sicht einen Befehl an sein Dokument weiterleitet, können Sie in der ersten Spalte im Eintrag „Dokument“ dem Routing weiter folgen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[So ruft das Framework einen Handler auf](../mfc/how-the-framework-calls-a-handler.md)
+[So ruft das Framework einen Handler auf](how-the-framework-calls-a-handler.md)

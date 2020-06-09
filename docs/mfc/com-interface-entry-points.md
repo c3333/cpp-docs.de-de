@@ -9,24 +9,24 @@ helpviewer_keywords:
 - MFC, managing state data
 - COM interfaces, entry points
 ms.assetid: 9e7421dc-0731-4748-9e1b-90acbaf26d77
-ms.openlocfilehash: eb8fc425d6b9849f6367d9b207e5181652386be3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 132dd7394119081dcaeb098c2088782ff5d40ae4
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62207851"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84619344"
 ---
 # <a name="com-interface-entry-points"></a>Einstiegspunkte für COM-Schnittstellen
 
-Verwenden Sie für die Member-Funktionen einer COM-Schnittstelle, die `METHOD_PROLOGUE` Makro, um den richtigen globalen Status verwalten, beim Aufrufen von Methoden einer exportierten Schnittstelle.
+Verwenden Sie für Element Funktionen einer COM-Schnittstelle das- `METHOD_PROLOGUE` Makro, um den richtigen globalen Zustand beizubehalten, wenn Methoden einer exportierten Schnittstelle aufgerufen werden.
 
-In der Regel Memberfunktionen von Schnittstellen implementiert, indem `CCmdTarget`-abgeleitete Objekte bereits verwenden Sie dieses Makro, geben Sie die automatische Initialisierung von der `pThis` Zeiger. Zum Beispiel:
+In der Regel verwenden Element Funktionen von Schnittstellen, die von von `CCmdTarget` abgeleiteten Objekten implementiert werden, dieses Makro, um die automatische Initialisierung des `pThis` Zeigers bereitzustellen. Beispiel:
 
-[!code-cpp[NVC_MFCConnectionPoints#5](../mfc/codesnippet/cpp/com-interface-entry-points_1.cpp)]
+[!code-cpp[NVC_MFCConnectionPoints#5](codesnippet/cpp/com-interface-entry-points_1.cpp)]
 
-Weitere Informationen finden Sie unter [technischen Hinweis 38](../mfc/tn038-mfc-ole-iunknown-implementation.md) auf MFC/OLE `IUnknown` Implementierung.
+Weitere Informationen finden Sie in der [technischen Notiz 38](tn038-mfc-ole-iunknown-implementation.md) für die MFC/OLE- `IUnknown` Implementierung.
 
-Die `METHOD_PROLOGUE` -Makro ist definiert als:
+Das- `METHOD_PROLOGUE` Makro wird wie folgt definiert:
 
 ```cpp
 #define METHOD_PROLOGUE(theClass, localClass) \
@@ -35,12 +35,12 @@ Die `METHOD_PROLOGUE` -Makro ist definiert als:
     AFX_MANAGE_STATE(pThis->m_pModuleState) \
 ```
 
-Der Teil des Makros für die Verwaltung von den globalen Zustand ist:
+Der Teil des Makros, der sich mit der Verwaltung des globalen Zustands beschäftigt, ist:
 
 `AFX_MANAGE_STATE( pThis->m_pModuleState )`
 
-In diesem Ausdruck *M_pModuleState* wird als eine Membervariable des enthaltenden Objekts. Es wird implementiert, indem die `CCmdTarget` Basisklasse und initialisiert wird, auf den entsprechenden Wert von `COleObjectFactory`, wenn das Objekt instanziiert wird.
+In diesem Ausdruck wird angenommen, dass es sich bei *m_pModuleState* um eine Member-Variable des enthaltenden Objekts handelt. Sie wird von der `CCmdTarget` -Basisklasse implementiert und mit dem entsprechenden Wert initialisiert `COleObjectFactory` , wenn das-Objekt instanziiert wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwalten der Statusdaten von MFC-Modulen](../mfc/managing-the-state-data-of-mfc-modules.md)
+[Verwalten der Statusdaten von MFC-Modulen](managing-the-state-data-of-mfc-modules.md)

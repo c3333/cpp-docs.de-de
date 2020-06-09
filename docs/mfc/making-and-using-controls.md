@@ -6,41 +6,41 @@ helpviewer_keywords:
 - Windows common controls [MFC], about common controls
 - common controls [MFC], about common controls
 ms.assetid: a252acad-3cc0-440e-bbc6-43eaaf8cb7bb
-ms.openlocfilehash: 6a31c783e19603eadb90fd0e6be99ff55f4eaeb7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f5fcb15a0cb7e336f6c818eb39b271f5f6e74af5
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62352176"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621356"
 ---
 # <a name="making-and-using-controls"></a>Erstellen und Verwenden von Steuerelementen
 
-Sie stellen die meisten Steuerelemente für Dialogfelder in der Visual C++ [Dialog-Editor](../windows/dialog-editor.md). Aber Sie können die Steuerelemente auch erstellen, in einem beliebigen Dialogfeld oder Fenster.
+Die meisten Steuerelemente für Dialogfelder werden im Dialogfeld- [Editor](../windows/dialog-editor.md)für Visual C++. Sie können jedoch auch Steuerelemente in einem beliebigen Dialogfeld oder Fenster erstellen.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Verwenden von Standardsteuerelementen in einem Dialogfeld](../mfc/using-common-controls-in-a-dialog-box.md)
+- [Verwenden von allgemeinen Steuerelementen in einem Dialogfeld](using-common-controls-in-a-dialog-box.md)
 
-- [Verwenden des Dialog-Editors zum Hinzufügen von Steuerelementen](../mfc/using-the-dialog-editor-to-add-controls.md)
+- [Verwenden des Dialog-Editors zum Hinzufügen von Steuerelementen](using-the-dialog-editor-to-add-controls.md)
 
-- [Manuelles Hinzufügen von Steuerelementen](../mfc/adding-controls-by-hand.md) (ohne den Dialog-Editor)
+- Manuelles [Hinzufügen von Steuerelementen](adding-controls-by-hand.md) (ohne den Dialog-Editor)
 
-- [Ableiten von Steuerelementen von einem Standardsteuerelement](../mfc/deriving-controls-from-a-standard-control.md)
+- [Ableiten von Steuerelementen von einem Standard Steuerelement](deriving-controls-from-a-standard-control.md)
 
-- [Verwenden eines Standardsteuerelements als untergeordnetes Fenster](../mfc/using-a-common-control-as-a-child-window.md)
+- [Verwenden eines allgemeinen Steuer Elements als untergeordnetes Fenster](using-a-common-control-as-a-child-window.md)
 
-- [Empfangen von Benachrichtigungen von Standardsteuerelementen](../mfc/receiving-notification-from-common-controls.md)
+- [Empfangen von Benachrichtigungen von allgemeinen Steuerelementen](receiving-notification-from-common-controls.md)
 
-- [Dialogdatenaustausch und -validierung](../mfc/dialog-data-exchange-and-validation.md)
+- [Dialogdatenaustausch und -validierung](dialog-data-exchange-and-validation.md)
 
-- [Typsicherer Zugriff auf Steuerelemente mit Code-Assistenten](../mfc/type-safe-access-to-controls-with-code-wizards.md)
+- [Typsicherer Zugriff auf Steuerelemente mit Code-Assistenten](type-safe-access-to-controls-with-code-wizards.md)
 
-- Einzelne Steuerelemente: finden Sie unter [Steuerelemente](../mfc/controls-mfc.md) Links zu allen allgemeine Steuerelemente
+- Einzelne Steuerelemente: siehe Steuer [Elemente](controls-mfc.md) für Links zu allen allgemeinen Steuerelementen
 
-- [Dialogfelder](../mfc/dialog-boxes.md)
+- [Dialogfelder](dialog-boxes.md)
 
-- [Dialogleisten](../mfc/dialog-bars.md)
+- [Dialog leisten](dialog-bars.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Steuerelemente](controls-mfc.md)

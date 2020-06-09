@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - customizations, MFC Extensions
 ms.assetid: 3b1b7532-8cc9-48dc-9bbe-7fd4060530b5
-ms.openlocfilehash: 42f4b21fb257646d4d505427760a8fe1c7056e77
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3b7597c3709ed700e82af94c78450ee5aff2d99b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62241692"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622960"
 ---
 # <a name="customization-for-mfc"></a>Anpassung für MFC
 
@@ -17,27 +17,27 @@ Dieses Thema enthält Tipps zum Anpassen einer MFC-Anwendung.
 
 ## <a name="general-customizations"></a>Allgemeine Anpassungen
 
-Sie können speichern und laden den Status Ihrer Anwendung in der Registrierung. Wenn Sie diese Option aktivieren, wird die Anwendung ihren ursprünglichen Zustand aus der Registrierung geladen. Wenn Sie das anfängliche docking-Layout für Ihre Anwendung ändern, müssen Sie die Registrierungsdaten für Ihre Anwendung zu löschen. Andernfalls überschreibt die Daten in der Registrierung alle Änderungen, die an das anfängliche Layout vorgenommen.
+Sie können den Status der Anwendung speichern und in die Registrierung laden. Wenn Sie diese Option aktivieren, lädt Ihre Anwendung ihren ursprünglichen Zustand aus der Registrierung. Wenn Sie das anfängliche Andock Layout für Ihre Anwendung ändern, müssen Sie die Registrierungsdaten für die Anwendung löschen. Andernfalls überschreiben die Daten in der Registrierung alle Änderungen, die Sie am ursprünglichen Layout vorgenommen haben.
 
-## <a name="class-specific-customizations"></a>Mandantenklassen geltenden Schemaanpassungen-Anpassungen
+## <a name="class-specific-customizations"></a>Klassenspezifische Anpassungen
 
-Zusätzliche Anpassungstipps finden Sie in den folgenden Themen:
+Weitere Anpassungs Tipps finden Sie in den folgenden Themen:
 
-- [CBasePane-Klasse](../mfc/reference/cbasepane-class.md)
+- [CBasePane-Klasse](reference/cbasepane-class.md)
 
-- [CDockablePane-Klasse](../mfc/reference/cdockablepane-class.md)
+- [CDockablePane-Klasse](reference/cdockablepane-class.md)
 
-- [CDockingManager-Klasse](../mfc/reference/cdockingmanager-class.md)
+- [CDockingManager-Klasse](reference/cdockingmanager-class.md)
 
-- [CMFCBaseTabCtrl-Klasse](../mfc/reference/cmfcbasetabctrl-class.md)
+- [CMFCBaseTabCtrl Class](reference/cmfcbasetabctrl-class.md)
 
-## <a name="additional-customization-tips"></a>Zusätzliche Anpassungstipps
+## <a name="additional-customization-tips"></a>Weitere Tipps zur Anpassung
 
-[Anpassen von Tastatur und Maus](../mfc/keyboard-and-mouse-customization.md)
+[Anpassung der Tastatur und Maus](keyboard-and-mouse-customization.md)
 
-[Benutzerdefinierte Tools](../mfc/user-defined-tools.md)
+[Benutzerdefinierte Tools](user-defined-tools.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Desktopanwendungen](../mfc/mfc-desktop-applications.md)<br/>
-[Sicherheitsauswirkungen der Anpassung](../mfc/security-implications-of-customization.md)
+[MFC-Desktopanwendungen](mfc-desktop-applications.md)<br/>
+[Sicherheitsauswirkungen der Anpassung](security-implications-of-customization.md)

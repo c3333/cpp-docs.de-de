@@ -9,29 +9,29 @@ helpviewer_keywords:
 - formats [MFC], Clipboard for OLE
 - Clipboard [MFC], formats
 ms.assetid: fd071996-ef8c-488b-81bd-89057095a201
-ms.openlocfilehash: f92a9a29da7f417d5ea5860c18e6ae1d9b20a05e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 88fef4b9c0cf37bb475e460c212765b17d4eb634
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62327053"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84626004"
 ---
 # <a name="clipboard-when-to-use-each-clipboard-mechanism"></a>Zwischenablage: Verwenden des jeweiligen Zwischenablagemechanismus
 
-Beachten Sie Folgendes in die Zwischenablage zu verwenden:
+Befolgen Sie diese Richtlinien in der Zwischenablage:
 
-- Mithilfe des OLE-zwischenablagemechanismus nun um neue Funktionen in der Zukunft zu aktivieren. Während der standardmäßigen Zwischenablage-API verwaltet wird, ist der OLE-Mechanismus die Zukunft der Datenübertragung an.
+- Verwenden Sie jetzt den OLE-Zwischenablage Mechanismus, um neue Funktionen in Zukunft zu aktivieren. Während die Standard-Zwischenablage-API verwaltet wird, ist der OLE-Mechanismus die Zukunft der Datenübertragung.
 
-- Verwenden Sie die OLE-zwischenablagemechanismus, wenn eine OLE-Anwendung schreiben, oder Sie möchten die OLE-Features wie z. B. Drag & drop.
+- Verwenden Sie den OLE-Zwischenablage Mechanismus, wenn Sie eine OLE-Anwendung schreiben oder eine der OLE-Funktionen wie Drag & Drop verwenden möchten.
 
-- Verwenden des OLE-zwischenablagemechanismus an, wenn Sie eine OLE-Formate bereitstellen.
+- Verwenden Sie bei der Bereitstellung von OLE-Formaten den OLE-Zwischenablage Mechanismus.
 
-## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun
+## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
-- [Verwenden des OLE-zwischenablagemechanismus](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)
+- [Verwenden des OLE-Zwischenablage Mechanismus](clipboard-using-the-ole-clipboard-mechanism.md)
 
-- [Verwenden Sie den Mechanismus der Windows-Zwischenablage](../mfc/clipboard-using-the-windows-clipboard.md)
+- [Verwenden des Windows-Zwischenablage Mechanismus](clipboard-using-the-windows-clipboard.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zwischenablage](../mfc/clipboard.md)
+[Zwischenablage](clipboard.md)

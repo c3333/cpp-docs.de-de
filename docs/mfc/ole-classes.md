@@ -9,47 +9,47 @@ helpviewer_keywords:
 - OLE classes [MFC]
 - OLE [MFC], classes
 ms.assetid: 4c2b2bca-fafb-4d2d-8498-9ed1e04011d2
-ms.openlocfilehash: 69eb604b3a343fd135c76a4bb3c17245ece62092
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 039f60f98a9109ca578b52db7d087a22d0440808
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62186403"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617838"
 ---
 # <a name="ole-classes"></a>OLE-Klassen
 
-Die OLE-Klassen können mit der anderen Anwendung Framework-Klassen zu einfachen Zugriff auf die ActiveX-API, sodass Ihre Programme eine einfache Möglichkeit, die die Leistungsfähigkeit von ActiveX-Steuerelementen für Ihre Benutzer bereitstellen. Mithilfe von ActiveX können Sie die folgenden Schritte ausführen:
+Die OLE-Klassen funktionieren mit den anderen Application Framework-Klassen, um einen einfachen Zugriff auf die ActiveX-API zu ermöglichen, sodass Ihre Programme eine einfache Möglichkeit bieten, Ihren Benutzern die Leistungsfähigkeit von ActiveX bereitzustellen. Mithilfe von ActiveX können Sie folgende Aktionen ausführen:
 
-- Erstellen Sie zusammengesetzter Dokumente, die ermöglichen Benutzern das Erstellen und Bearbeiten von Dokumenten mit Daten, die von mehreren Anwendungen, z. B. Text, Grafiken, Kalkulationstabellen, sound, erstellt oder andere Arten von Daten.
+- Erstellen Sie Verbund Dokumente, die es Benutzern ermöglichen, Dokumente zu erstellen und zu bearbeiten, die von mehreren Anwendungen erstellte Daten enthalten, einschließlich Text, Grafiken, Kalkulations Tabellen, Sound oder anderen Datentypen.
 
-- Erstellen Sie die OLE-Objekte, die im zusammengesetzten Dokumenten eingebettet werden können.
+- Erstellen von OLE-Objekten, die in Verbund Dokumenten eingebettet werden können
 
-- Verwenden Sie OLE- Drag & Drop zum Kopieren von Daten zwischen Anwendungen.
+- Verwenden Sie OLE Drag & Drop zum Kopieren von Daten zwischen Anwendungen.
 
-- Verwenden Sie Automation, um ein Programm mit einem anderen zu steuern.
+- Verwenden Sie Automation, um ein Programm mit einem anderen Programm zu steuern.
 
-- Erstellen von ActiveX-Steuerelemente und ActiveX-Steuerelementcontainer (früher OLE-Steuerelemente und OLE-Steuerelement-Container bzw.).
+- Erstellen Sie ActiveX-Steuerelemente und ActiveX-Steuerelement Container (früher als OLE-Steuerelemente bzw. OLE-Steuerungs Container bezeichnet).
 
-Die folgenden Kategorien von Klassen unterstützen ActiveX:
+Die folgenden Klassen Kategorien unterstützen ActiveX:
 
-- [OLE-Containerklassen](../mfc/ole-container-classes.md)
+- [OLE-Containerklassen](ole-container-classes.md)
 
-- [OLE-Serverklassen](../mfc/ole-server-classes.md)
+- [OLE-Server-Klassen](ole-server-classes.md)
 
-- [OLE-Drag & Drop- und Datenübertragungs-Klassen](../mfc/ole-drag-and-drop-and-data-transfer-classes.md)
+- [Drag & Drop-und Datenübertragung Klassen von OLE](ole-drag-and-drop-and-data-transfer-classes.md)
 
-- [OLE allgemeine Dialogfeldklassen](../mfc/ole-common-dialog-classes.md)
+- [OLE-Common-Dialogfeldklassen](ole-common-dialog-classes.md)
 
-- [OLE-Automatisierungsklassen](../mfc/ole-automation-classes.md)
+- [OLE-Automatisierungsklassen](ole-automation-classes.md)
 
-- [OLE-Steuerelementklassen](../mfc/ole-control-classes.md)
+- [OLE-Steuerelementklassen](ole-control-classes.md)
 
-- [Aktive Dokumente-Klassen](../mfc/active-document-classes.md)
+- [Active Document-Klassen](active-document-classes.md)
 
-- [OLE-bezogene Klassen](../mfc/ole-related-classes.md)
+- [OLE-bezogene Klassen](ole-related-classes.md)
 
-Um die Vererbung von einer Klasse anzuzeigen, verwenden die [Klassenhierarchiediagramm](../mfc/hierarchy-chart.md).
+Verwenden Sie das [Klassen Hierarchie Diagramm](hierarchy-chart.md), um die Vererbung einer Klasse anzuzeigen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassenübersicht](class-library-overview.md)

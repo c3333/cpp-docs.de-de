@@ -6,12 +6,12 @@ helpviewer_keywords:
 - month calendar controls [MFC], creating
 - month calendar controls [MFC]
 ms.assetid: 185cc642-85e9-4365-8a4c-d90b75b010f7
-ms.openlocfilehash: 9e430a86c2ac08bde0f031a4c91b9ae5c6f570f3
-ms.sourcegitcommit: 3caf5261b3ea80d9cf14038c116ba981d655cd13
+ms.openlocfilehash: 49d21bd4ce5aae23d5fc4c74567bc1c1d5a43570
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70907506"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84616235"
 ---
 # <a name="creating-the-month-calendar-control"></a>Erstellen des Monatskalender-Steuerelements
 
@@ -23,19 +23,19 @@ Wie das Monatskalender-Steuerelement erstellt wird, hängt davon ab, ob Sie das 
 
 1. Geben Sie alle Stile an, die im Dialogfeld "Eigenschaften" des Monatskalender-Steuer Elements erforderlich sind.
 
-1. Verwenden Sie den [Assistenten zum Hinzufügen](../ide/adding-a-member-variable-visual-cpp.md) von Element Variablen, um eine Member-Variable vom Typ [CMonthCalCtrl](../mfc/reference/cmonthcalctrl-class.md) mit der Control-Eigenschaft hinzuzufügen. Sie können diesen Member verwenden, um `CMonthCalCtrl` Member-Funktionen aufzurufen.
+1. Verwenden Sie den [Assistenten zum Hinzufügen](../ide/adding-a-member-variable-visual-cpp.md) von Element Variablen, um eine Member-Variable vom Typ [CMonthCalCtrl](reference/cmonthcalctrl-class.md) mit der Control-Eigenschaft hinzuzufügen. Sie können diesen Member verwenden, um `CMonthCalCtrl` Member-Funktionen aufzurufen.
 
-1. Verwenden Sie den [Klassen-Assistenten](reference/mfc-class-wizard.md) , um Handlerfunktionen in der Dialogfeld Klasse für beliebige Monats-Kalender Steuerelement-Benachrichtigungs Meldungen zuzuordnen, die Sie behandeln müssen. ([Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md))
+1. Verwenden Sie den [Klassen-Assistenten](reference/mfc-class-wizard.md) , um Handlerfunktionen in der Dialogfeld Klasse für beliebige Monats-Kalender Steuerelement-Benachrichtigungs Meldungen zuzuordnen, die Sie behandeln müssen. [Mapping Messages to Functions](reference/mapping-messages-to-functions.md)
 
-1. Legen Sie in [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog)alle zusätzlichen Stile für das `CMonthCalCtrl` -Objekt fest.
+1. Legen Sie in [OnInitDialog](reference/cdialog-class.md#oninitdialog)alle zusätzlichen Stile für das- `CMonthCalCtrl` Objekt fest.
 
 ### <a name="to-use-cmonthcalctrl-in-a-nondialog-window"></a>So verwenden Sie CMonthCalCtrl in einem nicht Dialogfeld Fenster
 
 1. Definieren Sie das Steuerelement in der Ansicht oder in der Fenster Klasse.
 
-1. Rufen Sie die [Create](../mfc/reference/cmonthcalctrl-class.md#create) Member-Funktion des Steuer Elements (möglicherweise in [OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate)) auf, möglicherweise so früh wie die [OnCreate](../mfc/reference/cwnd-class.md#oncreate) -Handlerfunktion des übergeordneten Fensters (wenn Sie das Steuerelement Unterklassen). Legen Sie die Stile für das-Steuerelement fest.
+1. Rufen Sie die [Create](reference/cmonthcalctrl-class.md#create) Member-Funktion des Steuer Elements (möglicherweise in [OnInitialUpdate](reference/cview-class.md#oninitialupdate)) auf, möglicherweise so früh wie die [OnCreate](reference/cwnd-class.md#oncreate) -Handlerfunktion des übergeordneten Fensters (wenn Sie das Steuerelement Unterklassen). Legen Sie die Stile für das-Steuerelement fest.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CMonthCalCtrl](../mfc/using-cmonthcalctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CMonthCalCtrl](using-cmonthcalctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

@@ -7,29 +7,29 @@ helpviewer_keywords:
 - command handling [MFC], calling handlers and code in MFC
 - command routing [MFC], MFC
 ms.assetid: d79bceba-4ff6-417a-9d52-6b6af62a909d
-ms.openlocfilehash: b48d8ac93ca33bd80f9a8a8369291f63fc623f5b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3fcfcbdd224db66550e7f0ff27de6313c85f856a
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62254006"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84618517"
 ---
 # <a name="how-the-framework-calls-a-handler"></a>Wie das Framework einen Handler aufruft
 
-In den folgenden Themen zunächst untersuchen, wie das Framework Befehle leitet, und überprüfen Sie, wie andere Nachrichten und das steuerelementbenachrichtigungen an Windows gesendet werden:
+In den folgenden Themen wird zuerst erläutert, wie das Framework Befehle weiterleitet, anschließend wird erläutert, wie andere Meldungen und Steuerelement Benachrichtigungen an Windows gesendet werden:
 
-- [Senden und Empfangen von Meldungen](../mfc/message-sending-and-receiving.md)
+- [Senden und empfangen von Nachrichten](message-sending-and-receiving.md)
 
-- [Wie nicht befehlsbasierte Meldungen ihre Handler erreichen](../mfc/how-noncommand-messages-reach-their-handlers.md)
+- [So erreichen nicht befehlsnachrichten ihre Handler](how-noncommand-messages-reach-their-handlers.md)
 
-- [Befehlsrouting](../mfc/command-routing.md)
+- [Befehls Routing](command-routing.md)
 
-- [Befehlsroutingerläuterung](../mfc/command-routing-illustration.md)
+- [Befehlsroutingerläuterung](command-routing-illustration.md)
 
-- [OnCmdMsg-Handler](../mfc/oncmdmsg-handler.md)
+- [Der OnCmdMsg-Handler](oncmdmsg-handler.md)
 
-- [Überschreiben des Standardbefehlsroutings](../mfc/overriding-the-standard-command-routing.md)
+- [Überschreiben des Standardbefehlsroutings](overriding-the-standard-command-routing.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Meldungsbehandlung und Zuordnung](../mfc/message-handling-and-mapping.md)
+[Meldungsbehandlung und Zuordnung](message-handling-and-mapping.md)

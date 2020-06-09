@@ -5,33 +5,33 @@ helpviewer_keywords:
 - Apply button in property sheet
 - property sheets, Apply button
 ms.assetid: 7e977015-59b8-406f-b545-aad0bfd8d55b
-ms.openlocfilehash: 30ee549a334a684deeb4a845f2fc49ee8bbe11db
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cd1254a31491e713513f0db0d4cf87baddd9bb23
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62240586"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84618612"
 ---
 # <a name="handling-the-apply-button"></a>Verwenden der Schaltfläche „Anwenden“
 
-Eigenschaftenblätter haben eine Funktion, die keine Standarddialogfelder: Sie ermöglichen den Benutzer, die Änderungen zu übernehmen, die sie vorgenommen haben, bevor Sie das Eigenschaftenblatt zu schließen. Dies erfolgt mithilfe der Schaltfläche "Übernehmen". Dieser Artikel beschreibt die Methoden, die Sie verwenden können, um diese Funktion ordnungsgemäß zu implementieren.
+Eigenschaften Blätter verfügen über eine Funktion, die Standard Dialogfelder nicht enthalten: Sie ermöglichen es dem Benutzer, Änderungen anzuwenden, die Sie vor dem Schließen des Eigenschaften Blatts vorgenommen haben. Dies erfolgt mithilfe der Schaltfläche anwenden. In diesem Artikel werden Methoden erläutert, die Sie zum ordnungsgemäßen implementieren dieses Features verwenden können.
 
-Modale Dialogfelder wenden diese Einstellungen in der Regel auf ein externes Objekt ein, klickt der Benutzer auf OK, um das Dialogfeld zu schließen. Das gleiche gilt für ein Eigenschaftenblatt: Wenn der Benutzer auf "OK" klickt, werden die neuen Einstellungen im Eigenschaftenblatt wirksam.
+Modale Dialogfelder wenden die Einstellungen in der Regel auf ein externes Objekt an, wenn der Benutzer auf OK klickt, um das Dialogfeld zu schließen. Das gleiche gilt für ein Eigenschaften Blatt: Wenn der Benutzer auf OK klickt, werden die neuen Einstellungen im Eigenschaften Blatt wirksam.
 
-Allerdings sollten Sie dem Benutzer ermöglichen, Einstellungen zu speichern, ohne das Eigenschaftendialogfeld für Blatt schließen zu müssen. Dies ist die Funktion der Schaltfläche "anwenden". Schaltfläche "anwenden" gilt die aktuellen Einstellungen in allen von den Eigenschaftenseiten für das externe Objekt statt nur die aktuellen Einstellungen der aktuellen Seite anwenden.
+Möglicherweise möchten Sie jedoch dem Benutzer gestatten, Einstellungen zu speichern, ohne das Dialogfeld Eigenschaften Blatt schließen zu müssen. Dies ist die Funktion der Schaltfläche anwenden. Die Schaltfläche anwenden wendet die aktuellen Einstellungen auf allen Eigenschaften Seiten auf das externe Objekt an, anstatt nur die aktuellen Einstellungen der aktuell aktiven Seite anzuwenden.
 
-Standardmäßig ist die Schaltfläche "anwenden" immer deaktiviert. Sie müssen Code schreiben, um die Schaltfläche "anwenden" jeweils richtigen Zeitpunkt zu aktivieren, und Sie müssen Code schreiben, implementieren Sie die Auswirkungen der anwenden, wie nachstehend beschrieben.
+Standardmäßig ist die Schaltfläche Anwenden immer deaktiviert. Sie müssen Code schreiben, um die Schaltfläche anwenden zu den entsprechenden Zeiten zu aktivieren, und Sie müssen Code schreiben, um die Auswirkung von Apply zu implementieren, wie unten erläutert.
 
-Wenn Sie nicht, die die Funktionalität für dem Benutzer zu bieten möchten, ist es nicht erforderlich, Schaltfläche "anwenden" zu entfernen. Sie können sie deaktiviert zu lassen, da häufig von Anwendungen, die Standardeigenschaft Blatt-Unterstützung in zukünftigen Versionen von Windows verwenden.
+Wenn Sie dem Benutzer nicht die Apply-Funktionalität anbieten möchten, ist es nicht erforderlich, die Schaltfläche anwenden zu entfernen. Sie können Sie deaktiviert lassen, wie es bei Anwendungen der Fall ist, die in zukünftigen Versionen von Windows eine standardmäßige Unterstützung für Eigenschaften Blätter verwenden.
 
-Aufrufen, um eine Seite als geändert melden, und aktivieren die Schaltfläche "Übernehmen", `CPropertyPage::SetModified( TRUE )`. Wenn eine der Seiten, die geändert wird, bleibt die Schaltfläche "anwenden" aktiviert ist, unabhängig davon, ob die derzeit aktive Seite geändert wurde.
+Um eine Seite als geändert zu melden und die Schaltfläche anwenden zu aktivieren, geben Sie an `CPropertyPage::SetModified( TRUE )` . Wenn einer der Seiten geändert wird, bleibt die Schaltfläche anwenden aktiviert, unabhängig davon, ob die derzeit aktive Seite geändert wurde.
 
-Rufen Sie [CPropertyPage::SetModified](../mfc/reference/cpropertypage-class.md#setmodified) jedes Mal, wenn der Benutzer alle Einstellungen auf der Seite ändert. Eine Möglichkeit zum erkennen, wenn ein Benutzer eine Einstellung auf der Seite ändert ist Handler für wertänderungen von Benachrichtigungen für jedes der Steuerelemente auf der Eigenschaftenseite implementieren, z.B. **EN_CHANGE-Ereignis** oder **BN_CLICKED**.
+Sie sollten [CPropertyPage:: SetModified](reference/cpropertypage-class.md#setmodified) aufrufen, wenn der Benutzereinstellungen auf der Seite ändert. Eine Möglichkeit, zu erkennen, wenn ein Benutzer eine Einstellung auf der Seite ändert, ist die Implementierung von Änderungs Benachrichtigungs Handlern für jedes der Steuerelemente auf der Eigenschaften Seite, z. b. **EN_CHANGE** oder **BN_CLICKED**.
 
-Um die Auswirkungen der Schaltfläche "anwenden" implementieren, muss das Eigenschaftenblatt der Besitzer oder ein anderes externes Objekt in der Anwendung, zum Anwenden der aktuellen Einstellungen auf den Eigenschaftenseiten informieren. Zur gleichen Zeit, sollte das Eigenschaftenblatt die Schaltfläche "anwenden" deaktivieren, indem Aufrufen `CPropertyPage::SetModified( FALSE )` für alle Seiten, die die Änderungen auf das externe Objekt angewendet.
+Zum Implementieren der Auswirkung der Schaltfläche anwenden muss das Eigenschaften Blatt seinen Besitzer oder ein anderes externes Objekt in der Anwendung anweisen, die aktuellen Einstellungen auf den Eigenschaften Seiten anzuwenden. Gleichzeitig sollte auf dem Eigenschaften Blatt die Schaltfläche anwenden deaktiviert werden, indem `CPropertyPage::SetModified( FALSE )` für alle Seiten aufgerufen wird, die Ihre Änderungen auf das externe Objekt angewendet haben.
 
-Ein Beispiel dieses Prozesses finden Sie im allgemeinen MFC-Beispiel [PROPDLG](../overview/visual-cpp-samples.md).
+Ein Beispiel für diesen Prozess finden Sie in der MFC-Beispiel [PROPDLG](../overview/visual-cpp-samples.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Eigenschaftenblätter](../mfc/property-sheets-mfc.md)
+[Eigenschaften Blätter](property-sheets-mfc.md)

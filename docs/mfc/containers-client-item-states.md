@@ -1,5 +1,5 @@
 ---
-title: 'Container: Clientelement-Zustände'
+title: 'Container: Client-Element-Zustände'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - OLE containers [MFC], client-item states
@@ -7,41 +7,41 @@ helpviewer_keywords:
 - lifetime, lifetime states and OLE container client items
 - client items and OLE containers
 ms.assetid: e7021caa-bd07-4adb-976e-f5f3d025bc53
-ms.openlocfilehash: 1453ba3f96e49cefc9014a93ebcfbcfe5c6bc905
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 927211ccec35d8ec26e2f76b971c59b80248ab96
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152851"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84625993"
 ---
-# <a name="containers-client-item-states"></a>Container: Clientelement-Zustände
+# <a name="containers-client-item-states"></a>Container: Client-Element-Zustände
 
-Dieser Artikel beschreibt die verschiedenen Zustände, die ein Clientelement, der während seiner Lebensdauer durchläuft.
+In diesem Artikel werden die verschiedenen Zustände erläutert, die ein Client Element während seiner Lebensdauer durchläuft.
 
-Ein Clientelement übergibt durchlaufen mehrere Zustände, wie sie erstellt haben, aktiviert, geändert und gespeichert haben. Jedes Mal, wenn das Element den Zustand ändert, das Framework ruft [COleClientItem:: OnChange](../mfc/reference/coleclientitem-class.md#onchange) mit der **OLE_CHANGED_STATE** Benachrichtigung. Der zweite Parameter ist ein Wert aus der `COleClientItem::ItemState` Enumeration. Sie können eine der folgenden sein:
+Ein Client Element durchläuft mehrere Zustände, wenn es erstellt, aktiviert, geändert und gespeichert wird. Jedes Mal, wenn sich der Zustand des Elements ändert, ruft das Framework [COleClientItem:: OnChange](reference/coleclientitem-class.md#onchange) mit der **OLE_CHANGED_STATE** Benachrichtigung auf. Der zweite Parameter ist ein Wert aus der- `COleClientItem::ItemState` Enumeration. Folgende Werte sind möglich:
 
-- *COleClientItem::emptyState*
+- *COleClientItem:: emptystate*
 
-- *COleClientItem::loadedState*
+- *COleClientItem:: loadedstate*
 
-- *COleClientItem::openState*
+- *COleClientItem:: openstate*
 
-- *COleClientItem::activeState*
+- *COleClientItem:: ActiveState*
 
-- *COleClientItem::activeUIState*
+- *COleClientItem:: activeuistate*
 
-In der leeren Zustand ist eine Client-Element nicht vollständig, aber ein Element. Arbeitsspeicher dafür zugeordnet wurde, aber es wurde noch nicht initialisiert wurde mit Daten für das OLE-Element. Dies ist der Status einer Client-Element befindet sich in, wenn durch einen Aufruf von Erstellung **neue** aber noch nicht im zweiten Schritt der typischen zweistufige Erstellung vorgenommen wurden.
+Im leeren Zustand ist ein Client Element noch nicht vollständig ein Element. Es wurde Arbeitsspeicher zugeordnet, aber noch nicht mit den Daten des OLE-Elements initialisiert. Dies ist der Zustand, in dem sich ein Client Element befindet, wenn es durch einen **New-New** -Befehl erstellt, aber noch nicht im zweiten Schritt der typischen zweistufigen Erstellung durchlaufen wurde.
 
-Im zweiten Schritt ausgeführt, die durch einen Aufruf von `COleClientItem::CreateFromFile` oder einem anderen `CreateFrom` *Xxxx* -Funktion, die das Element wird vollständig erstellt. OLE-Daten (aus einer Datei oder einer anderen Quelle, z. B. die Zwischenablage) zugeordnet wurde die `COleClientItem`-abgeleitetes Objekt. Nachdem das Element in den geladenen Zustand befindet.
+Im zweiten Schritt, der durch einen Rückruf von `COleClientItem::CreateFromFile` oder eine andere `CreateFrom` *xxxx* -Funktion ausgeführt wird, wird das Element vollständig erstellt. Die OLE-Daten (aus einer Datei oder einer anderen Quelle, z. b. der Zwischenablage), wurden dem von `COleClientItem` abgeleiteten Objekt zugeordnet. Nun befindet sich das Element im geladenen Zustand.
 
-Wenn ein Element verfügt über wurde in das Serverzertifikat-Fenster geöffnet, anstatt direkt in den Container Dokument geöffnet, ist es in den Zustand öffnen (oder voll geöffnet). In diesem Zustand wird in der Regel eine Schraffur gezeichnet, über die Darstellung des Elements im Fenster des Containers, um anzugeben, dass das Element an anderer Stelle aktiv ist.
+Wenn ein Element im Fenster des Servers geöffnet wurde und nicht im Dokument des Containers geöffnet ist, befindet es sich im geöffneten (oder vollständigen geöffneten) Zustand. In diesem Zustand wird in der Regel eine Kreuz Schraffur über die Darstellung des Elements im Fenster des Containers gezeichnet, um anzugeben, dass das Element an anderer Stelle aktiv ist.
 
-Wenn ein Element vorhanden aktiviert wurde, übergibt, in der Regel nur kurz gesagt, über den aktiven Status. Danach wechselt er in der Benutzeroberfläche im aktiven Status, in dem der Server die Menüs, Symbolleisten und andere Komponenten der Benutzeroberfläche mit denen des Containers zusammengeführt wurde. Das Vorhandensein dieser Komponenten der Benutzeroberfläche unterscheidet es sich um die Benutzeroberfläche im aktiven Status vom Zustand "aktiv". Andernfalls ähnelt der aktive Zustand der Benutzeroberfläche im aktiven Status. Wenn der Server zum Rückgängigmachen unterstützt, ist der Server erforderlich, um das OLE-Element wieder rückgängig zu machen Informationen beibehalten, bis die geladenen oder geöffneten Zustand erreicht.
+Wenn ein Element an Ort und Stelle aktiviert wurde, wird es normalerweise nur kurz durch den aktiven Status geleitet. Anschließend wechselt er in den aktiven Zustand der Benutzeroberfläche, in dem der Server seine Menüs, Symbolleisten und andere Benutzeroberflächen Komponenten mit denen des Containers zusammengeführt hat. Wenn diese Benutzeroberflächen Komponenten vorhanden sind, wird der aktive Zustand der UI vom aktiven Zustand unterschieden. Andernfalls ähnelt der aktive Zustand dem aktiven Zustand der UI. Wenn der Server rückgängig unterstützt, muss der Server die rückgängig-Zustandsinformationen des OLE-Elements aufbewahren, bis er den Status "geladen" oder "geöffnet" erreicht.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Container](../mfc/containers.md)<br/>
-[Activation (Aktivierung)](../mfc/activation-cpp.md)<br/>
-[Container: Clientelementbenachrichtigungen](../mfc/containers-client-item-notifications.md)<br/>
-[Tracker](../mfc/trackers.md)<br/>
-[CRectTracker-Klasse](../mfc/reference/crecttracker-class.md)
+[Container](containers.md)<br/>
+[Aktivierung](activation-cpp.md)<br/>
+[Container: Client-Element-Benachrichtigungen](containers-client-item-notifications.md)<br/>
+[Tracker](trackers.md)<br/>
+[CRectTracker-Klasse](reference/crecttracker-class.md)

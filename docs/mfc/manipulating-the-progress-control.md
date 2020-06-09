@@ -8,46 +8,46 @@ helpviewer_keywords:
 - controlling progress controls [MFC]
 - CProgressCtrl class [MFC], using
 ms.assetid: 9af561d1-980b-4003-a6da-ff79be15bf23
-ms.openlocfilehash: c9da6f8048adf1c7da184570ff7f94deee7441e5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3e3521a82854a85062f9b06bc33eb268d4b9c7a6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62279189"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622437"
 ---
 # <a name="manipulating-the-progress-control"></a>Bearbeiten des Statussteuerelements
 
-Es gibt drei Möglichkeiten zum Ändern der aktuellen Position des ein Statussteuerelement ([CProgressCtrl](../mfc/reference/cprogressctrl-class.md)).
+Es gibt drei Möglichkeiten, um die aktuelle Position eines Fortschritts Steuer Elements ([CProgressCtrl](reference/cprogressctrl-class.md)) zu ändern.
 
-- Die Position kann durch eine Menge von vordefinierten Inkrement geändert werden.
+- Die Position kann durch eine voreingestellte Inkrement-Menge geändert werden.
 
-- Die Position kann durch einen willkürlichen Zeitraum geändert werden.
+- Die Position kann um einen beliebigen Betrag geändert werden.
 
-- Die Position kann auf einen bestimmten Wert geändert werden.
+- Die Position kann in einen bestimmten Wert geändert werden.
 
-### <a name="to-change-the-position-by-a-preset-amount"></a>Um die Position, um einen vordefinierten Wert ändern
+### <a name="to-change-the-position-by-a-preset-amount"></a>So ändern Sie die Position um einen vordefinierten Betrag
 
-1. Verwenden der [SetStep](../mfc/reference/cprogressctrl-class.md#setstep) Memberfunktion versucht, die die Schrittweite festlegen. Standardmäßig ist dieser Wert 10. Dieser Wert wird in der Regel als eine der anfänglichen Einstellungen für das Steuerelement festgelegt. Step-Wert kann negativ sein.
+1. Verwenden Sie die Funktion [SetStep](reference/cprogressctrl-class.md#setstep) Member, um den Inkrement-Wert festzulegen. Standardmäßig ist dieser Wert 10. Dieser Wert wird in der Regel als eine der Anfangseinstellungen für das-Steuerelement festgelegt. Der Schrittwert kann negativ sein.
 
-1. Verwenden der [StepIt](../mfc/reference/cprogressctrl-class.md#stepit) Memberfunktion versucht, die die Position zu erhöhen. Dies bewirkt, dass das Steuerelement selbst neu zeichnet.
-
-    > [!NOTE]
-    >  `StepIt` führt dazu, dass die Position, um zu umschließen. Angenommen, einen Bereich von 1 -100, einen Schritt von 20 und eine Position des 90 `StepIt` wird die Position auf 10 festgelegt.
-
-### <a name="to-change-the-position-by-an-arbitrary-amount"></a>So ändern Sie die Position von einer beliebigen Anzahl
-
-1. Verwenden der [OffsetPos](../mfc/reference/cprogressctrl-class.md#offsetpos) Member-Funktion, um die Position ändern. `OffsetPos` negative Werte werden akzeptiert werden.
+1. Verwenden Sie die [StepIt](reference/cprogressctrl-class.md#stepit) -Member-Funktion, um die Position zu erhöhen. Dies bewirkt, dass das Steuerelement neu gezeichnet wird.
 
     > [!NOTE]
-    >  `OffsetPos`, im Gegensatz zu `StepIt`, der die Position wird nicht umbrochen. Die neue Position wird angepasst, damit Sie um innerhalb des Bereichs zu bleiben.
+    >  `StepIt`bewirkt, dass die Position eingebunden wird. Wenn z. b. ein Bereich von 1 -100, ein Schritt von 20 und eine Position 90 ist, `StepIt` wird die Position auf 10 festgelegt.
 
-### <a name="to-change-the-position-to-a-specific-value"></a>Um die Position auf einen bestimmten Wert ändern
+### <a name="to-change-the-position-by-an-arbitrary-amount"></a>So ändern Sie die Position um einen beliebigen Betrag
 
-1. Verwenden der [Memberfunktion SetPos](../mfc/reference/cprogressctrl-class.md#setpos) Memberfunktion versucht, die die Position auf einen bestimmten Wert festgelegt. Bei Bedarf wird angepasst, dass die neue Position innerhalb des Bereichs liegen.
+1. Verwenden Sie die [OffsetPos](reference/cprogressctrl-class.md#offsetpos) -Member-Funktion, um die Position zu ändern. `OffsetPos`akzeptiert negative Werte.
 
-In der Regel ist das Statussteuerelement ausschließlich für die Ausgabe verwendet. Verwenden Sie zum Abrufen der aktuellen Position ohne einen neuen Wert [GetPos](../mfc/reference/cprogressctrl-class.md#getpos).
+    > [!NOTE]
+    >  `OffsetPos`wird im Gegensatz zu `StepIt` nicht in die-Position eingebunden. Die neue Position wird so angepasst, dass Sie im Bereich bleibt.
+
+### <a name="to-change-the-position-to-a-specific-value"></a>So ändern Sie die Position in einen bestimmten Wert
+
+1. Verwenden Sie die Funktion [SetPos](reference/cprogressctrl-class.md#setpos) -Member, um die Position auf einen bestimmten Wert festzulegen. Bei Bedarf wird die neue Position so angepasst, dass Sie innerhalb des Bereichs liegt.
+
+In der Regel wird das Status Steuerelement nur für die Ausgabe verwendet. Verwenden Sie [GetPos](reference/cprogressctrl-class.md#getpos), um die aktuelle Position ohne Angabe eines neuen Werts zu erhalten.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CProgressCtrl](../mfc/using-cprogressctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CProgressCtrl](using-cprogressctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

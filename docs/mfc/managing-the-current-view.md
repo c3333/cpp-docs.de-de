@@ -11,21 +11,21 @@ helpviewer_keywords:
 - deactivating views [MFC]
 - current view in frame window [MFC]
 ms.assetid: 0a1cc22d-d646-4536-9ad2-3cb6d7092e4a
-ms.openlocfilehash: a926a9e31f7c43ab625220a4d759f6d536c2a77f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d2ce9d77234260ebcb1946dd381264fb6654a91c
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62173339"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621312"
 ---
 # <a name="managing-the-current-view"></a>Verwalten der aktuellen Ansicht
 
-Im Rahmen der Standardimplementierung von Rahmenfenstern verfolgt des ein Rahmenfenster eine derzeit aktive Ansicht. Wenn das Rahmenfenster auf mehr als eine Ansicht, z. B. in einem Splitterfenster enthält ist die aktuelle Ansicht die aktuellste Ansicht verwendet. Die aktive Ansicht ist unabhängig von der aktiven Fenster in Windows oder den aktuellen Eingabefokus.
+Im Rahmen der Standard Implementierung von Rahmen Fenstern verfolgt ein Rahmen Fenster eine derzeit aktive Ansicht. Wenn das Rahmen Fenster mehr als eine Ansicht enthält, wie z. b. in einem Splitter Fenster, ist die aktuelle Ansicht die letzte Ansicht, die verwendet wird. Die aktive Ansicht ist unabhängig vom aktiven Fenster in Windows oder dem aktuellen Eingabefokus.
 
-Wenn die aktive Ansicht ändert, ändert das Framework benachrichtigt die aktuelle Ansicht, indem er seine [OnActivateView](../mfc/reference/cview-class.md#onactivateview) Member-Funktion. Sie können feststellen, ob die Sicht wird aktiviert oder deaktiviert werden, indem Sie untersuchen `OnActivateView`des *bActivate* Parameter. In der Standardeinstellung `OnActivateView` setzt den Fokus auf der aktuellen Ansicht bei der Aktivierung. Sie können außer Kraft setzen `OnActivateView` ausführen, besondere Bearbeitung, wenn die Sicht deaktiviert oder erneut aktiviert wird. Beispielsweise empfiehlt es sich, bieten besondere visuelle Hinweise, um die aktive Ansicht von anderen, inaktive Sichten zu unterscheiden.
+Wenn sich die aktive Ansicht ändert, benachrichtigt das Framework die aktuelle Ansicht durch Aufrufen der [OnActivateView](reference/cview-class.md#onactivateview) -Member-Funktion. Sie können erkennen, ob die Ansicht aktiviert oder deaktiviert wird, indem Sie `OnActivateView` den *bactivate* -Parameter untersuchen. Standardmäßig `OnActivateView` legt den Fokus auf die aktuelle Ansicht bei Aktivierung fest. Sie können `OnActivateView` überschreiben, um eine spezielle Verarbeitung durchzuführen, wenn die Ansicht deaktiviert oder erneut aktiviert wird. Beispielsweise können Sie besondere visuelle Hinweise bereitstellen, um die aktive Ansicht von anderen, inaktiven Ansichten zu unterscheiden.
 
-Ein Rahmenfenster leitet Befehle aus, um die aktuelle (aktive) anzeigen, wie in beschrieben [Befehlsrouting](../mfc/command-routing.md), als Teil des standardbefehlsroutings.
+Ein Rahmen Fenster leitet Befehle an die aktuelle (aktive) Ansicht weiter, wie in [Befehls Routing](command-routing.md)als Teil des Standard Befehls Routings beschrieben.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von Rahmenfenstern](../mfc/using-frame-windows.md)
+[Verwenden von Rahmenfenstern](using-frame-windows.md)

@@ -4,18 +4,18 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - MFC, ANSI deprecated methods
 ms.assetid: c7c5a6fd-95e4-4bee-b3d5-d3826c30947d
-ms.openlocfilehash: 88fb249e053a88a93510cb8f6f9b3092d41a0113
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bbcae085b76e2dbce79265c0695c2b4e933553e2
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62153553"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84617000"
 ---
 # <a name="deprecated-ansi-apis"></a>Veraltete ANSI-APIs
 
-Die Microsoft Foundation Class (MFC)-Bibliothek ist die Migration in Bezug auf Klassen und Methoden, die auf den Unicode-Zeichensatz basieren. Daher sind die ANSI-Versionen mehrerer MFC-Methoden veraltet. Verwenden Sie in Ihren künftigen Anwendungen die Unicode-Versionen dieser Methoden.
+Die MFC-Bibliothek (Microsoft Foundation Class) wird zu Klassen und Methoden migriert, die auf dem Unicode-Zeichensatz basieren. Folglich sind die ANSI-Versionen mehrerer MFC-Methoden veraltet. Verwenden Sie die Unicode-Versionen dieser Methoden in zukünftigen Anwendungen.
 
-Beginnend mit Windows-Standardsteuerelemente, Version 6.1, Windows Vista gelieferten, sind die folgenden ANSI-Methoden veraltet.
+Beginnend mit allgemeinen Windows-Steuerelementen, Version 6,1, die in Windows Vista enthalten ist, sind die folgenden ANSI-Methoden veraltet.
 
 ## <a name="cbutton-class"></a>CButton-Klasse
 
@@ -152,4 +152,4 @@ AFX_ANSI_DEPRECATED HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
 
 ## <a name="see-also"></a>Siehe auch
 
-[Anforderungen für die Erstellung von Windows Vista-Standardsteuerelementen](../mfc/build-requirements-for-windows-vista-common-controls.md)
+[Anforderungen für die Erstellung von Windows Vista-Standardsteuerelementen](build-requirements-for-windows-vista-common-controls.md)

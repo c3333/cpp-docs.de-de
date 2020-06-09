@@ -5,23 +5,23 @@ helpviewer_keywords:
 - ActiveX control containers [MFC], inserting controls
 - ActiveX controls [MFC], adding to projects
 ms.assetid: bbb617ff-872f-43d8-b4d6-c49adb16b148
-ms.openlocfilehash: 5f2b964d337ee882bff8acd904ad2fcf64879f88
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1d2fc82628b3bcf842a6efb1d36ab9e8389fc0ba
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62338232"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84618496"
 ---
 # <a name="activex-control-containers-inserting-a-control-into-a-control-container-application"></a>ActiveX-Steuerelementcontainer: Einfügen eines Steuerelements in eine Steuerelementcontainer-Anwendung
 
-Bevor Sie ein ActiveX-Steuerelementcontainer-Anwendung ein ActiveX-Steuerelement zugreifen können, müssen Sie das ActiveX-Steuerelement hinzufügen, auf die Container-Anwendung mithilfe der [ActiveX-Steuerelement einfügen](../windows/insert-activex-control-dialog-box.md) Dialogfeld.
+Bevor Sie von einer ActiveX-Steuerelement Container-Anwendung aus auf ein ActiveX-Steuerelement zugreifen können, müssen Sie das ActiveX-Steuerelement mithilfe des Dialog Felds [ActiveX-Steuerelement einfügen](../windows/insert-activex-control-dialog-box.md) zur Containeranwendung hinzufügen.
 
-Um die ActiveX-Steuerelement-Container-Projekt ein ActiveX-Steuerelement hinzugefügt haben, finden Sie unter [anzeigen und Hinzufügen von ActiveX-Steuerelementen in einem Dialogfeld](../windows/viewing-and-adding-activex-controls-to-a-dialog-box.md).
+Informationen zum Hinzufügen eines ActiveX-Steuer Elements zum ActiveX-Steuerelement Container Projekt finden Sie unter [anzeigen und Hinzufügen von ActiveX-Steuerelementen zu einem Dialog Feld](../windows/viewing-and-adding-activex-controls-to-a-dialog-box.md)
 
-Nachdem Sie das Steuerelement hinzugefügt haben, müssen Sie eine Membervariable (des ActiveX-Steuerelements) die Dialogfeldklasse hinzu. Weitere Informationen zu dieser Vorgehensweise finden Sie unter [Hinzufügen einer Membervariablen](../ide/adding-a-member-variable-visual-cpp.md).
+Nachdem Sie das Steuerelement hinzugefügt haben, müssen Sie der Dialogfeld Klasse eine Element Variable (des ActiveX-Steuerelement Typs) hinzufügen. Weitere Informationen zu diesem Verfahren finden Sie unter [Hinzufügen einer Element Variablen](../ide/adding-a-member-variable-visual-cpp.md).
 
-Nachdem Sie hinzugefügt haben, der Membervariablen einer Klasse als eine Wrapperklasse, automatisch generiert und Ihrem Projekt hinzugefügt. Diese Klasse dient als Schnittstelle zwischen dem Steuerelementcontainer und das integrierte Steuerelement.
+Nachdem Sie die Element Variable hinzugefügt haben, wird eine Klasse, die als Wrapper Klasse bezeichnet wird, automatisch generiert und Ihrem Projekt hinzugefügt. Diese Klasse wird als Schnittstelle zwischen dem Steuerelement Container und dem eingebetteten Steuerelement verwendet.
 
 ## <a name="see-also"></a>Siehe auch
 
-[ActiveX-Steuerelementcontainer](../mfc/activex-control-containers.md)
+[ActiveX-Steuerelementcontainer](activex-control-containers.md)

@@ -2,12 +2,12 @@
 title: Konfigurieren eines C++ Projekts unter Linux in Visual Studio
 ms.date: 06/11/2019
 ms.assetid: 4d7c6adf-54b9-4b23-bd23-5de0c825b768
-ms.openlocfilehash: 50d5df0e25e82238297458ec7fedb955654e525b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c60fd678caef20d8b5a715b0e40bba6a37407709
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "80150965"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623597"
 ---
 # <a name="configure-a-linux-project"></a>Konfigurieren eines Linux-Projekts
 
@@ -126,7 +126,7 @@ Sie können die Protokollierung aktivieren, um Probleme zu beheben:
 ## <a name="see-also"></a>Siehe auch
 
 [Festlegen der Compiler- und Buildeigenschaften](../build/working-with-project-properties.md)<br/>
-[Allgemeine C++-Eigenschaften (Linux C++)](../linux/prop-pages/general-linux.md)<br/>
-[VC++-Verzeichnisse (Linux C++)](../linux/prop-pages/directories-linux.md)<br/>
-[Kopieren von Quellprojekteigenschaften (Linux C++)](../linux/prop-pages/copy-sources-project.md)<br/>
-[Buildereigniseigenschaften (Linux C++)](../linux/prop-pages/build-events-linux.md)
+[Allgemeine C++-Eigenschaften (Linux C++)](prop-pages/general-linux.md)<br/>
+[VC++-Verzeichnisse (Linux C++)](prop-pages/directories-linux.md)<br/>
+[Kopieren von Quellprojekteigenschaften (Linux C++)](prop-pages/copy-sources-project.md)<br/>
+[Buildereigniseigenschaften (Linux C++)](prop-pages/build-events-linux.md)

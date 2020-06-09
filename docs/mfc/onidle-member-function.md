@@ -10,24 +10,24 @@ helpviewer_keywords:
 - CWinApp class [MFC], OnIdle method [MFC]
 - message handling [MFC], OnIdle method [MFC]
 ms.assetid: 51adc874-0075-4f76-be1c-79283f46c10b
-ms.openlocfilehash: c7cdd5cd2327be1b90e7fdb3694353acf8adcafe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 17595713f942c7fe7784fa2a12adbcc583cad418
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394551"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84619846"
 ---
 # <a name="onidle-member-function"></a>OnIdle-Memberfunktion
 
-Wenn Sie keine Windows-Meldungen verarbeitet werden, um das Framework Ruft die [CWinApp](../mfc/reference/cwinapp-class.md) Memberfunktion [OnIdle](../mfc/reference/cwinapp-class.md#onidle) (beschrieben in der MFC-Bibliothek-Referenz).
+Wenn keine Windows-Meldungen verarbeitet werden, ruft das Framework die [CWinApp](reference/cwinapp-class.md) -Member-Funktion ( [OnIdle](reference/cwinapp-class.md#onidle) ) auf (beschrieben in der MFC-Bibliotheks Referenz).
 
-Außer Kraft setzen `OnIdle` Hintergrundaufgaben ausführen. Die Standard-Version aktualisiert den Zustand der Objekte der Benutzeroberfläche wie Symbolleisten-Schaltflächen und führt die Bereinigung der temporären Objekte, die vom Framework im Verlauf der Vorgänge erstellt. Die folgende Abbildung veranschaulicht, wie die Nachrichtenschleife aufruft `OnIdle` Wenn in der Warteschlange keine Nachrichten vorhanden sind.
+`OnIdle`Überschreiben, um Hintergrundaufgaben auszuführen. Die Standardversion aktualisiert den Zustand von Benutzeroberflächen Objekten, wie z. b. Symbolleisten Schaltflächen, und führt eine Bereinigung temporärer Objekte aus, die vom Framework im Verlauf der Vorgänge erstellt werden. In der folgenden Abbildung wird veranschaulicht, wie die Nachrichten Schleife aufruft, `OnIdle` Wenn keine Nachrichten in der Warteschlange vorhanden sind.
 
-![Message Loop-Prozess](../mfc/media/vc387c1.gif "nachrichtenschleifenprozess") <br/>
+![Nachrichten Schleifen Prozess](../mfc/media/vc387c1.gif "Nachrichtenschleifenprozess") <br/>
 Nachrichtenschleife
 
-Weitere Informationen, was Sie in der Leerlaufschleife tun können, finden Sie unter [Leerlaufschleifen-Verarbeitung](../mfc/idle-loop-processing.md).
+Weitere Informationen dazu, was Sie in der Leerlauf Schleife tun können, finden Sie unter [Leerlauf Schleifen Verarbeitung](idle-loop-processing.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[CWinApp: Die Anwendungsklasse](../mfc/cwinapp-the-application-class.md)
+[CWinApp: Die Anwendungsklasse](cwinapp-the-application-class.md)
