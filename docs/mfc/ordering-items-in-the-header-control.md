@@ -12,27 +12,27 @@ helpviewer_keywords:
 - SetOrderArray method [MFC]
 - header controls [MFC], ordering items
 ms.assetid: 5aaef872-75b5-49c5-8fed-6f9a81fca812
-ms.openlocfilehash: bae351d921c25993d6b7029f9052e1938179673b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c4b4711729c6c3a4b63d4ad05252a5c49df98a0c
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392649"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622136"
 ---
 # <a name="ordering-items-in-the-header-control"></a>Anordnen von Elementen im Headersteuerelement
 
-Nachdem Sie haben [einem Kopfzeilen-Steuerelement Elemente hinzugefügt](../mfc/adding-items-to-the-header-control.md), können Sie bearbeiten oder Abrufen von Informationen zu deren Reihenfolge mit den folgenden Funktionen:
+Nachdem Sie [einem Header Steuerelement Elemente hinzugefügt](adding-items-to-the-header-control.md)haben, können Sie mit den folgenden Funktionen Informationen zu Ihrer Bestellung bearbeiten oder erhalten:
 
-- [CHeaderCtrl:: GetOrderArray](../mfc/reference/cheaderctrl-class.md#getorderarray) und [CHeaderCtrl::SetOrderArray](../mfc/reference/cheaderctrl-class.md#setorderarray)
+- [CHeaderCtrl:: getor Array](reference/cheaderctrl-class.md#getorderarray) und [CHeaderCtrl:: abderarray](reference/cheaderctrl-class.md#setorderarray)
 
-   Ruft ab, und die links-nach-rechts-Reihenfolge der Headerelemente festgelegt.
+   Ruft die Reihenfolge der Header Elemente von links nach rechts ab und legt Sie fest.
 
-- [CHeaderCtrl::OrderToIndex](../mfc/reference/cheaderctrl-class.md#ordertoindex).
+- [CHeaderCtrl:: orderto Index](reference/cheaderctrl-class.md#ordertoindex).
 
-   Ruft den Indexwert für ein bestimmtes Headerelement ab.
+   Ruft den Indexwert für ein bestimmtes Header Element ab.
 
-Zusätzlich zu den vorherigen Memberfunktionen kann die HDS_DRAGDROP-Stil den Benutzer Drag & drop-Header-Elemente, in dem Kopfzeilen-Steuerelement. Weitere Informationen finden Sie unter [Bereitstellen von Drag & Drop-Unterstützung für Headerelemente](../mfc/providing-drag-and-drop-support-for-header-items.md).
+Zusätzlich zu den vorherigen Member-Funktionen ermöglicht das HDS_DRAGDROP Format dem Benutzer das ziehen und Ablegen von Header Elementen innerhalb des Header Steuer Elements. Weitere Informationen finden Sie [unter Bereitstellen von Drag & Drop-Unterstützung für Header Elemente](providing-drag-and-drop-support-for-header-items.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CHeaderCtrl](../mfc/using-cheaderctrl.md)
+[Verwenden von CHeaderCtrl](using-cheaderctrl.md)

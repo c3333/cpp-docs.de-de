@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Common Controls (MFC), build requirements
 - Common Controls (MFC)
 ms.assetid: 025f7d55-55a2-4dcd-8f62-02424e3dcc04
-ms.openlocfilehash: 9ea90f95ba8e704cba5b22c5e7338659f0c5f033
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: cf2139e04d2f72feb7951010caa351d67ccc5a93
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69630847"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84619740"
 ---
 # <a name="build-requirements-for-windows-common-controls"></a>Buildanforderungen für allgemeine Windows-Steuerelemente
 
@@ -52,6 +52,6 @@ Wenn Sie die Visual Studio-IDE verwenden, um eine neue MFC-Anwendung zu erstelle
 
 ## <a name="see-also"></a>Siehe auch
 
-[Allgemeine MFC-Themen](../mfc/general-mfc-topics.md)<br/>
-[Hierarchiediagramm](../mfc/hierarchy-chart.md)<br/>
-[Veraltete ANSI-APIs](../mfc/deprecated-ansi-apis.md)
+[Allgemeine MFC-Themen](general-mfc-topics.md)<br/>
+[Hierarchiediagramm](hierarchy-chart.md)<br/>
+[Veraltete ANSI-APIs](deprecated-ansi-apis.md)

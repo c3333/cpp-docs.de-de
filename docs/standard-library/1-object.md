@@ -8,14 +8,14 @@ f1_keywords:
 helpviewer_keywords:
 - _1 object
 ms.assetid: 30c3c480-ff31-4708-94be-7d0d65f243c9
-ms.openlocfilehash: 1c1f13d40e02ec6e099ef1e2c20fe1cac4a4ef93
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 8fdb53ea03031f2bf1634a105275c72263ee20e3
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246537"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620927"
 ---
-# <a name="1-object"></a>_1-Objekt
+# <a name="_1-object"></a>_1-Objekt
 
 Platzhalter für austauschbare Argumente.
 
@@ -29,7 +29,7 @@ namespace placeholders {
 
 ## <a name="remarks"></a>Hinweise
 
-Die Objekte `_1, _2, ... _M` sind Platzhalter festlegen, das das erste, zweite,..., n-te Argument in einem Funktionsaufruf in ein Objekt, das von zurückgegebene [binden](../standard-library/functional-functions.md#bind). Sie verwenden `_N`, um anzugeben, wo das n-te Argument bei Auswertung des Bindungsausdrucks eingefügt werden soll.
+Bei den Objekten `_1, _2, ... _M` handelt es sich um Platzhalter, die das erste, zweite,..., mth-Argument in einem Funktions aufrufeines Objekts festlegen, das von [Bind](functional-functions.md#bind)zurückgegeben wird. Sie verwenden `_N`, um anzugeben, wo das n-te Argument bei Auswertung des Bindungsausdrucks eingefügt werden soll.
 
 In dieser Implementierung lautet der Wert von `M` 20.
 
