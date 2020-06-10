@@ -6,29 +6,29 @@ helpviewer_keywords:
 - command handling [MFC], routing commands
 - command routing [MFC], OnCmdMsg handler
 ms.assetid: 4b7b4741-565f-4878-b076-fd85c670f87f
-ms.openlocfilehash: 56d131151f2284f12a3b46a9acd3cfbd3c8b0f47
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d362cfe54a9b5a562237c7bb9632edae6e58228b
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62164877"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622911"
 ---
 # <a name="command-routing-illustration"></a>Befehlsroutingerläuterung
 
-Um zu veranschaulichen, betrachten Sie eine Nachricht über ein Menüelement in einer MDI-Anwendung-Menü "Bearbeiten" Alle löschen aus. Nehmen wir an, dass die Handler-Funktion für diesen Befehl erfolgt eine Memberfunktion der Anwendung Dokumentklasse sein. Hier ist, wie dieses Befehls den Handler erreicht, nachdem der Benutzer das Menüelement auswählt:
+Um dies zu veranschaulichen, sollten Sie eine Befehls Meldung aus dem Menü Element Alle löschen im Menü Bearbeiten einer MDI-Anwendung in Erwägung nehmen. Angenommen, die Handlerfunktion für diesen Befehl ist eine Member-Funktion der Dokument Klasse der Anwendung. Dieser Befehl erreicht seinen Handler, nachdem der Benutzer das Menü Element ausgewählt hat:
 
-1. Das Hauptrahmenfenster empfängt die Nachricht zuerst an.
+1. Das Hauptrahmen Fenster empfängt zuerst die Befehls Meldung.
 
-1. Der MDI-Hauptrahmenfenster gibt dem momentan aktiven untergeordnete MDI-Fenster eine Möglichkeit, den Befehl behandeln.
+1. Das Haupt-MDI-Rahmen Fenster gibt dem momentan aktiven untergeordneten MDI-Fenster die Möglichkeit, den Befehl zu verarbeiten.
 
-1. Das standardmäßige routing von einem untergeordneten MDI-Rahmenfenster kann der Ansicht an der Befehlszeile vor dem Überprüfen ihre eigene meldungszuordnung.
+1. Durch das Standard Routing eines untergeordneten MDI-Rahmen Fensters erhält seine Ansicht eine Chance vor der Überprüfung der eigenen Meldungs Zuordnung.
 
-1. Die Ansicht ihre eigene meldungszuordnung zuerst überprüft und als Nächstes den Befehl leitet kein Handler auf, suchen, an dessen zugeordnete Dokument.
+1. Die Ansicht prüft zuerst Ihre eigene Meldungs Zuordnung und, ohne Handler zu suchen, leitet den Befehl als nächstes an das zugehörige Dokument weiter.
 
-1. Das Dokument überprüft seine meldungszuordnung und sucht nach einem Handler. Dieses Dokument-Memberfunktion aufgerufen wird, und das routing wird beendet.
+1. Das Dokument überprüft seine Meldungs Zuordnung und findet einen Handler. Diese dokumentmember-Funktion wird aufgerufen, und das Routing wird beendet.
 
-Wenn das Dokument keinen Handler hatte, würden sie als Nächstes den Befehl an seine Dokumentvorlage weiterleiten. Klicken Sie dann würde der Befehl, um die Ansicht, und klicken Sie dann das Rahmenfenster zurück. Das Rahmenfenster würde seine meldungszuordnung, aktivieren Sie zum Schluss. Wenn auch die Überprüfung fehlgeschlagen ist, würde der Befehl zurück an die Haupt-MDI-Rahmenfenster und dann auf das Anwendungsobjekt weitergeleitet werden, das endgültige Ziel nicht behandelten Befehle.
+Wenn das Dokument keinen Handler enthielt, wird der Befehl als nächstes an seine Dokument Vorlage weitergeleitet. Anschließend würde der Befehl an die Ansicht und dann an das Rahmen Fenster zurückgegeben. Schließlich würde das Rahmen Fenster seine Meldungs Zuordnung überprüfen. Wenn diese Überprüfung ebenfalls fehlgeschlagen ist, wird der Befehl zurück an das Haupt-MDI-Rahmen Fenster und dann an das Anwendungs Objekt weitergeleitet – das endgültige Ziel nicht behandelter Befehle.
 
 ## <a name="see-also"></a>Siehe auch
 
-[So ruft das Framework einen Handler auf](../mfc/how-the-framework-calls-a-handler.md)
+[So ruft das Framework einen Handler auf](how-the-framework-calls-a-handler.md)

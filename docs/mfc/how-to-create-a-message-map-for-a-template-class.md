@@ -1,40 +1,40 @@
 ---
-title: 'Vorgehensweise: Erstellen einer Meldungszuordnung für eine Vorlagenklasse'
+title: 'Gewusst wie: Erstellen einer Meldungszuordnung für eine Vorlagenklasse'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - template classes [MFC], creating message maps
 - message maps [MFC], template classes
 ms.assetid: 4e7e24f8-06df-4b46-82aa-7435c8650de3
-ms.openlocfilehash: 676e698a899327eee8305731b5d609b5b95ece76
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 65ddc77b4e8fd466c7d651e54e93a504b4858da1
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389501"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620064"
 ---
-# <a name="how-to-create-a-message-map-for-a-template-class"></a>Vorgehensweise: Erstellen einer Meldungszuordnung für eine Vorlagenklasse
+# <a name="how-to-create-a-message-map-for-a-template-class"></a>Gewusst wie: Erstellen einer Meldungszuordnung für eine Vorlagenklasse
 
-Nachrichtenzuordnung in MFC bietet eine effiziente Möglichkeit zum Weiterleiten von Windows-Nachrichten an eine geeignete Instanz des C++-Objekt. Beispiele für MFC-Nachricht Zuordnung Ziele sind Anwendungsklassen, Dokument und Anzeigen von Klassen, Steuerelementklassen und So weiter.
+Die Nachrichten Zuordnung in MFC bietet eine effiziente Möglichkeit zum Weiterleiten von Windows-Meldungen an eine entsprechende C++-Objektinstanz. Beispiele für MFC-Nachrichten Zuordnungs Ziele sind Anwendungs Klassen, Dokument-und Ansichts Klassen, Steuerelement Klassen usw.
 
-Herkömmliche MFC-meldungszuordnungen deklariert werden, mithilfe der [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) Makro, um den Anfang der meldungszuordnung, einen Makro-Eintrag für jede Methode Meldungshandler-Klasse zu deklarieren und schließlich die [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map)Makro, um das Ende der nachrichtenzuordnung zu deklarieren.
+Herkömmliche MFC-Nachrichten Zuordnungen werden mit dem [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) -Makro deklariert, um den Anfang der Meldungs Zuordnung zu deklarieren, einen Makro Eintrag für jede Methode der Nachrichten Handler-Klasse und schließlich das [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map) Makro, um das Ende der Meldungs Zuordnung zu deklarieren.
 
-Eine Einschränkung mit der [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) Makro tritt auf, wenn es in Verbindung mit einer Klasse mit Vorlagenargumenten verwendet wird. Bei Verwendung mit einer Vorlagenklasse bewirkt dieses Makro einen Fehler während der Kompilierung aufgrund der fehlenden Vorlagenparametern bei der makroerweiterung. Die [BEGIN_TEMPLATE_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_template_message_map) Makro wurde konzipiert, ordnet der Klassen, die mit einer einzelnen Template-Argument, um eigene Nachricht zu deklarieren.
+Eine Einschränkung mit dem [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) -Makro tritt auf, wenn Sie in Verbindung mit einer Klasse verwendet wird, die Vorlagen Argumente enthält. Bei Verwendung mit einer Vorlagen Klasse verursacht dieses Makro einen Kompilierzeitfehler aufgrund der fehlenden Vorlagen Parameter während der Makro Erweiterung. Das [BEGIN_TEMPLATE_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_template_message_map) -Makro wurde so entworfen, dass Klassen, die ein einzelnes Vorlagen Argument enthalten, ihre eigenen Meldungs Zuordnungen deklarieren können.
 
 ## <a name="example"></a>Beispiel
 
-Sehen Sie ein Beispiel, in dem die MFC-Bibliothek [CListBox](../mfc/reference/clistbox-class.md) Klasse wird erweitert, um eine Synchronisierung mit einer externen Datenquelle bereitzustellen. Die fiktive `CSyncListBox` Klasse wird folgendermaßen deklariert:
+Sehen Sie sich ein Beispiel an, in dem die MFC- [CListBox](reference/clistbox-class.md) -Klasse erweitert wird, um die Synchronisierung mit einer externen Datenquelle Die fiktive `CSyncListBox` Klasse wird wie folgt deklariert:
 
-[!code-cpp[NVC_MFC_CListBox#42](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_1.h)]
+[!code-cpp[NVC_MFC_CListBox#42](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_1.h)]
 
-Die `CSyncListBox` Klasse ist als Vorlagen für einen einzelnen Typ, die die Datenquelle beschreibt es mit synchronisiert werden. Sie deklariert außerdem drei Methoden, die in der meldungszuordnung der Klasse einbezogen werden: `OnPaint`, `OnDestroy`, und `OnSynchronize`. Die `OnSynchronize` Methode wird folgendermaßen implementiert:
+Die- `CSyncListBox` Klasse wird auf einem einzelnen Typ, der die Datenquelle beschreibt, mit der Sie synchronisiert wird, auf Vorlagen basieren. Außerdem werden drei Methoden deklariert, die an der Meldungs Zuordnung der-Klasse beteiligt `OnPaint` sind:, `OnDestroy` und `OnSynchronize` . Die- `OnSynchronize` Methode wird wie folgt implementiert:
 
-[!code-cpp[NVC_MFC_CListBox#43](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_2.cpp)]
+[!code-cpp[NVC_MFC_CListBox#43](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_2.cpp)]
 
-Die oben erwähnte Implementierung ermöglicht die `CSyncListBox` Klasse in einem beliebigen Klasse spezialisiert werden, die implementiert die `GetCount` -Methode, wie z. B. `CArray`, `CList`, und `CMap`. Die `StringizeElement` -Funktion ist eine Vorlagenfunktion, die durch den folgenden Prototyp:
+Die obige Implementierung ermöglicht es, `CSyncListBox` dass die-Klasse auf jeden Klassentyp spezialisiert wird, der die- `GetCount` Methode implementiert, z `CArray` . b., `CList` und `CMap` . Die- `StringizeElement` Funktion ist eine Vorlagen Funktion, die mit folgendem prototyptypisiert wird:
 
-[!code-cpp[NVC_MFC_CListBox#44](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_3.cpp)]
+[!code-cpp[NVC_MFC_CListBox#44](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_3.cpp)]
 
-Normalerweise würde wie folgt die meldungszuordnung für diese Klasse definiert werden:
+Normalerweise würde die Meldungs Zuordnung für diese Klasse folgendermaßen definiert werden:
 
 ```cpp
 BEGIN_MESSAGE_MAP(CSyncListBox, CListBox)
@@ -44,23 +44,23 @@ BEGIN_MESSAGE_MAP(CSyncListBox, CListBox)
 END_MESSAGE_MAP()
 ```
 
-wo **LBN_SYNCHRONIZE** ist eine benutzerdefinierte Nachricht, die von der Anwendung definiert, wie z. B.:
+Dabei ist **LBN_SYNCHRONIZE** eine benutzerdefinierte Benutzer Nachricht, die von der Anwendung definiert wird, z. b.:
 
-[!code-cpp[NVC_MFC_CListBox#45](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_4.cpp)]
+[!code-cpp[NVC_MFC_CListBox#45](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_4.cpp)]
 
-Die oben genannten Makro-Zuordnung wird nicht kompiliert werden, auf der Tatsache, dass die Vorlagenspezifikation für die `CSyncListBox` Klasse ist nicht vorhanden sein, bei der makroerweiterung. Die **BEGIN_TEMPLATE_MESSAGE_MAP** Makro löst dieses Problem durch die Aufnahme von des angegebenen Vorlagenparameter in das erweiterte Makro-Zuordnung. Die meldungszuordnung für diese Klasse wird:
+Die obige Makro Zuordnung wird aufgrund der Tatsache, dass die Vorlagen Spezifikation für die `CSyncListBox` Klasse während der Makro Erweiterung fehlt, nicht kompiliert. Das **BEGIN_TEMPLATE_MESSAGE_MAP** -Makro löst dies durch Einbeziehen des angegebenen Vorlagen Parameters in die erweiterte Makro Zuordnung. Die Meldungs Zuordnung für diese Klasse lautet wie folgt:
 
-[!code-cpp[NVC_MFC_CListBox#46](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_5.cpp)]
+[!code-cpp[NVC_MFC_CListBox#46](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_5.cpp)]
 
-Das folgende Beispiel zeigt, Beispiel für die Verwendung von der `CSyncListBox` -Klasse unter Verwendung einer `CStringList` Objekt:
+Im folgenden Beispiel wird die Verwendung der- `CSyncListBox` Klasse mithilfe eines- `CStringList` Objekts veranschaulicht:
 
-[!code-cpp[NVC_MFC_CListBox#47](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_6.cpp)]
+[!code-cpp[NVC_MFC_CListBox#47](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_6.cpp)]
 
-Zum Ausführen der Tests, die `StringizeElement` Funktion spezialisiert sein muss, um die Arbeit mit der `CStringList` Klasse:
+Um den Test abzuschließen, `StringizeElement` muss die Funktion für die Arbeit mit der- `CStringList` Klasse spezialisiert sein:
 
-[!code-cpp[NVC_MFC_CListBox#48](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_7.cpp)]
+[!code-cpp[NVC_MFC_CListBox#48](codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_7.cpp)]
 
 ## <a name="see-also"></a>Siehe auch
 
 [BEGIN_TEMPLATE_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_template_message_map)<br/>
-[Meldungsbehandlung und Zuordnung](../mfc/message-handling-and-mapping.md)
+[Meldungsbehandlung und Zuordnung](message-handling-and-mapping.md)

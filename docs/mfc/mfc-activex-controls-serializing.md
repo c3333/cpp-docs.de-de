@@ -15,84 +15,84 @@ helpviewer_keywords:
 - versioning ActiveX controls
 - wVerMajor global constant
 ms.assetid: 9d57c290-dd8c-4853-b552-6f17f15ebedd
-ms.openlocfilehash: d804486b612906f537b6ed1665dfc0cec5149826
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c06299f2fc7409476e4f5e5744ea11c962e3b173
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364548"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621199"
 ---
 # <a name="mfc-activex-controls-serializing"></a>MFC-ActiveX-Steuerelemente: Serialisierung
 
-In diesem Artikel wird erläutert, wie ein ActiveX-Steuerelement serialisiert wird. Serialisierung ist der Prozess des Lesens oder Schreibens von einem persistenten Speichermedium, z. B. einer Datenträgerdatei. Die Microsoft Foundation Class (MFC)-Bibliothek bietet integrierte `CObject`Unterstützung für die Serialisierung in der Klasse . `COleControl`erweitert diese Unterstützung auf ActiveX-Steuerelemente durch die Verwendung eines Eigenschaftenaustauschmechanismus.
+In diesem Artikel wird erläutert, wie ein ActiveX-Steuerelement serialisiert wird. Bei der Serialisierung wird ein dauerhaftes Speichermedium (z. b. eine Datenträger Datei) aus dem Lese-oder Schreibvorgang geschrieben. Die MFC-Bibliothek (Microsoft Foundation Class) bietet integrierte Unterstützung für die Serialisierung in der-Klasse `CObject` . `COleControl`erweitert diese Unterstützung durch die Verwendung eines Eigenschaften Austauschmechanismus auf ActiveX-Steuerelemente.
 
 >[!IMPORTANT]
-> ActiveX ist eine legacy Technologie, die nicht für Neuentwicklungen verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ablösen, finden Sie unter [ActiveX Controls](activex-controls.md).
+> ActiveX ist eine ältere Technologie, die nicht für die neue Entwicklung verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ersetzen, finden Sie unter ActiveX-Steuer [Elemente](activex-controls.md).
 
-Die Serialisierung für ActiveX-Steuerelemente wird durch Überschreiben von [COleControl::DoPropExchange](../mfc/reference/colecontrol-class.md#dopropexchange)implementiert. Diese Funktion, die beim Laden und Speichern des Steuerelementobjekts aufgerufen wird, speichert alle Eigenschaften, die mit einer Membervariablen oder einer Membervariablen mit Änderungsbenachrichtigung implementiert sind.
+Die Serialisierung für ActiveX-Steuerelemente wird durch Überschreiben von [COleControl::D opropexchange](reference/colecontrol-class.md#dopropexchange)implementiert. Diese Funktion, die beim Laden und Speichern des Steuerelement Objekts aufgerufen wird, speichert alle Eigenschaften, die mit einer Element Variablen oder einer Element Variablen mit Änderungs Benachrichtigung implementiert werden.
 
-In den folgenden Themen werden die wichtigsten Probleme im Zusammenhang mit der Serialisierung eines ActiveX-Steuerelements behandelt:
+In den folgenden Themen werden die wichtigsten Probleme im Zusammenhang mit der Serialisierung eines ActiveX-Steuer Elements behandelt:
 
-- Implementieren `DoPropExchange` der Funktion zur Serialisierung des Steuerobjekts
+- Implementieren `DoPropExchange` der Funktion zum Serialisieren des Steuerelement Objekts
 
 - [Anpassen des Serialisierungsprozesses](#_core_customizing_the_default_behavior_of_dopropexchange)
 
-- [Implementieren der Versionsunterstützung](#_core_implementing_version_support)
+- [Implementieren von Versions Unterstützung](#_core_implementing_version_support)
 
 ## <a name="implementing-the-dopropexchange-function"></a><a name="_core_implementing_the_dopropexchange_function"></a>Implementieren der DoPropExchange-Funktion
 
-Wenn Sie den ActiveX Control-Assistenten zum Generieren des Steuerelementprojekts verwenden, werden der Steuerelementklasse automatisch mehrere Standardhandlerfunktionen hinzugefügt, einschließlich der Standardimplementierung von [COleControl::DoPropExchange](../mfc/reference/colecontrol-class.md#dopropexchange). Das folgende Beispiel zeigt den Code, der Klassen hinzugefügt wurde, die mit dem ActiveX Control Wizard erstellt wurden:
+Wenn Sie den ActiveX-Steuerelement-Assistenten verwenden, um das Steuerelement Projekt zu generieren, werden der Steuerelement Klasse automatisch mehrere standardhandlerfunktionen hinzugefügt, einschließlich der Standard Implementierung von [COleControl::D opropexchange](reference/colecontrol-class.md#dopropexchange). Das folgende Beispiel zeigt den Code, der den mit dem ActiveX-Steuerelement-Assistenten erstellten Klassen hinzugefügt wird:
 
-[!code-cpp[NVC_MFC_AxUI#43](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_1.cpp)]
+[!code-cpp[NVC_MFC_AxUI#43](codesnippet/cpp/mfc-activex-controls-serializing_1.cpp)]
 
-Wenn Sie eine Eigenschaft persistent `DoPropExchange` machen möchten, ändern Sie dies, indem Sie der Eigenschaftsaustauschfunktion einen Aufruf hinzufügen. Das folgende Beispiel veranschaulicht die Serialisierung einer benutzerdefinierten Boolean CircleShape-Eigenschaft, bei der die CircleShape-Eigenschaft den Standardwert **TRUE**:
+Wenn Sie eine Eigenschaft als persistent festlegen möchten, ändern Sie `DoPropExchange` durch Hinzufügen eines Aufrufes der Eigenschaften Austausch Funktion. Im folgenden Beispiel wird die Serialisierung einer benutzerdefinierten booleschen CircleShape-Eigenschaft veranschaulicht, bei der die Eigenschaft "CircleShape" den Standardwert " **true**" aufweist:
 
-[!code-cpp[NVC_MFC_AxSer#1](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_2.cpp)]
-[!code-cpp[NVC_MFC_AxSer#2](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_3.cpp)]
+[!code-cpp[NVC_MFC_AxSer#1](codesnippet/cpp/mfc-activex-controls-serializing_2.cpp)]
+[!code-cpp[NVC_MFC_AxSer#2](codesnippet/cpp/mfc-activex-controls-serializing_3.cpp)]
 
-In der folgenden Tabelle sind die möglichen Eigenschaftenaustauschfunktionen aufgeführt, mit denen Sie die Eigenschaften des Steuerelements serialisieren können:
+In der folgenden Tabelle sind die möglichen Eigenschaften Austausch Funktionen aufgelistet, die Sie verwenden können, um die Eigenschaften des Steuer Elements zu serialisieren:
 
-|Eigenschaftenaustauschfunktionen|Zweck|
+|Eigenschaften Austausch Funktionen|Zweck|
 |---------------------------------|-------------|
-|**PX_Blob( )**|Serialisiert eine BLOB-Dateneigenschaft (Binary Large Object) vom Typ.|
-|**PX_Bool( )**|Serialisiert eine boolesche Eigenschaft vom Typ.|
-|**PX_Color( )**|Serialisiert eine Typfarbeigenschaft.|
-|**PX_Currency( )**|Serialisiert eine **CY-Eigenschaft** (Währung).|
-|**PX_Double( )**|Serialisiert eine **Typ-Double-Eigenschaft.**|
-|**PX_Font( )**|Serialisiert eine Font-Typeigenschaft.|
-|**PX_Float( )**|Serialisiert eine **float** typ float-Eigenschaft.|
-|**PX_IUnknown( )**|Serialisiert eine Eigenschaft `LPUNKNOWN`vom Typ .|
-|**PX_Long( )**|Serialisiert eine **long** type long-Eigenschaft.|
-|**PX_Picture( )**|Serialisiert eine Picture-Eigenschaft vom Typ.|
-|**PX_Short( )**|Serialisiert eine **short** type short-Eigenschaft.|
-|**PXstring( )**|Serialisiert eine `CString` Typeigenschaft.|
-|**PX_ULong( )**|Serialisiert eine **ULONG-Eigenschaft** vom Typ.|
-|**PX_UShort( )**|Serialisiert eine **USHORT-Eigenschaft** vom Typ.|
+|**PX_Blob ()**|Serialisiert eine Dateneigenschaft des Typs Binary Large Object (BLOB).|
+|**PX_Bool ()**|Serialisiert eine boolesche Eigenschaft des Typs.|
+|**PX_Color ()**|Serialisiert eine typfarb Eigenschaft.|
+|**PX_Currency ()**|Serialisiert eine Eigenschaft vom Typ **CY** (Currency).|
+|**PX_Double ()**|Serialisiert eine Eigenschaft vom Typ " **Double** ".|
+|**PX_Font ()**|Serialisiert eine Eigenschaft des Schriftart Typs.|
+|**PX_Float ()**|Serialisiert eine Eigenschaft vom Typ " **float** ".|
+|**PX_IUnknown ()**|Serialisiert eine Eigenschaft vom Typ `LPUNKNOWN` .|
+|**PX_Long ()**|Serialisiert eine **Long** -Eigenschaft des Typs.|
+|**PX_Picture ()**|Serialisiert eine Eigenschaft des Typs Bild.|
+|**PX_Short ()**|Serialisiert eine Eigenschaft vom Typ **Short** .|
+|**Pxstring ()**|Serialisiert eine `CString` Typeigenschaft.|
+|**PX_ULong ()**|Serialisiert eine **ulong** -Typ-Eigenschaft.|
+|**PX_UShort ()**|Serialisiert eine **UShort** -Eigenschaft des Typs.|
 
-Weitere Informationen zu diesen Eigenschaftenaustauschfunktionen finden Sie unter [Persistenz von OLE-Steuerelementen](../mfc/reference/persistence-of-ole-controls.md) in der *MFC-Referenz*.
+Weitere Informationen zu diesen Eigenschaften Austausch Funktionen finden Sie unter [Persistenz von OLE](reference/persistence-of-ole-controls.md) -Steuerelementen in der *MFC-Referenz*.
 
-## <a name="customizing-the-default-behavior-of-dopropexchange"></a><a name="_core_customizing_the_default_behavior_of_dopropexchange"></a>Anpassen des Standardverhaltens von DoPropExchange
+## <a name="customizing-the-default-behavior-of-dopropexchange"></a><a name="_core_customizing_the_default_behavior_of_dopropexchange"></a>Anpassen des Standard Verhaltens von "DoPropExchange"
 
-Die Standardimplementierung `DoPropertyExchange` von (wie im vorherigen Thema gezeigt) `COleControl`ruft die Basisklasse auf. Dadurch wird der Satz von Eigenschaften `COleControl`serialisiert, die automatisch von unterstützt werden, der mehr Speicherplatz verbraucht, als nur die benutzerdefinierten Eigenschaften des Steuerelements zu serialisieren. Durch das Entfernen dieses Aufrufs kann das Objekt nur die Eigenschaften serialisieren, die Sie für wichtig erachten. Alle Bestandseigenschaften, die das Steuerelement implementiert hat, werden beim Speichern oder Laden des Steuerelementobjekts nicht serialisiert, es sei denn, Sie fügen **explizit PX_** Aufrufe für sie hinzu.
+Die Standard Implementierung von `DoPropertyExchange` (wie im vorherigen Thema gezeigt) führt einen-Befehl für die-Basisklasse aus `COleControl` . Dadurch wird die Gruppe von Eigenschaften serialisiert, die von automatisch unterstützt `COleControl` werden. Dadurch wird mehr Speicherplatz verwendet, als nur die benutzerdefinierten Eigenschaften des Steuer Elements zu serialisieren. Wenn Sie diesen-Befehl entfernen, kann Ihr Objekt nur die Eigenschaften serialisieren, die Sie als wichtig bezeichnen. Alle Aktien Eigenschafts Zustände, die das Steuerelement implementiert hat, werden beim Speichern oder Laden des Steuerelement Objekts nicht serialisiert, es sei denn, Sie fügen explizit **PX_** Aufrufe für Sie hinzu.
 
-## <a name="implementing-version-support"></a><a name="_core_implementing_version_support"></a>Implementieren der Versionsunterstützung
+## <a name="implementing-version-support"></a><a name="_core_implementing_version_support"></a>Implementieren von Versions Unterstützung
 
-Die Versionsunterstützung ermöglicht es einem überarbeiteten ActiveX-Steuerelement, neue persistente Eigenschaften hinzuzufügen und dennoch den persistenten Zustand zu erkennen und zu laden, der von einer früheren Version des Steuerelements erstellt wurde. Um die Version eines Steuerelements als Teil seiner persistenten Daten verfügbar zu machen, `DoPropExchange` rufen Sie [COleControl::ExchangeVersion](../mfc/reference/colecontrol-class.md#exchangeversion) in der Funktion des Steuerelements auf. Dieser Aufruf wird automatisch eingefügt, wenn das ActiveX-Steuerelement mit dem ActiveX Control Wizard erstellt wurde. Sie kann entfernt werden, wenn keine Versionsunterstützung erforderlich ist. Die Kosten in der Kontrollgröße sind jedoch sehr gering (4 Byte) für die zusätzliche Flexibilität, die die Versionsunterstützung bietet.
+Versions Unterstützung ermöglicht einem überarbeiteten ActiveX-Steuerelement, neue persistente Eigenschaften hinzuzufügen, und kann weiterhin den persistenten Zustand erkennen und laden, der von einer früheren Version des-Steuer Elements erstellt wurde. Um die Version eines Steuer Elements als Teil der persistenten Daten verfügbar zu machen, müssen Sie [COleControl:: ExchangeVersion](reference/colecontrol-class.md#exchangeversion) in der-Funktion des-Steuer Elements aufzurufen `DoPropExchange` . Dieser Befehl wird automatisch eingefügt, wenn das ActiveX-Steuerelement mit dem ActiveX-Steuerelement-Assistenten erstellt wurde. Er kann entfernt werden, wenn keine Versions Unterstützung erforderlich ist. Die Kosten für die Größe der Kontrolle sind jedoch sehr gering (4 Bytes), um die von der Versions Unterstützung benötigte Flexibilität zu erhöhen.
 
-Wenn das Steuerelement nicht mit dem ActiveX Control `COleControl::ExchangeVersion` Wizard erstellt wurde, fügen Sie `DoPropExchange` einen Aufruf hinzu, `COleControl::DoPropExchange`indem Sie die folgende Zeile am Anfang Ihrer Funktion einfügen (vor dem Aufruf von):
+Wenn das Steuerelement nicht mit dem ActiveX-Steuerelement-Assistenten erstellt wurde, fügen Sie einen-Befehl hinzu, `COleControl::ExchangeVersion` indem Sie die folgende Zeile am Anfang der `DoPropExchange` Funktion einfügen (vor dem-Befehl `COleControl::DoPropExchange` ):
 
-[!code-cpp[NVC_MFC_AxSer#1](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_2.cpp)]
-[!code-cpp[NVC_MFC_AxSer#3](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_4.cpp)]
+[!code-cpp[NVC_MFC_AxSer#1](codesnippet/cpp/mfc-activex-controls-serializing_2.cpp)]
+[!code-cpp[NVC_MFC_AxSer#3](codesnippet/cpp/mfc-activex-controls-serializing_4.cpp)]
 
-Sie können jedes **DWORD** als Versionsnummer verwenden. Für Projekte, die vom `_wVerMinor` ActiveX Control Wizard generiert werden, werden sie `_wVerMajor` als Standard verwendet. Dabei handelt es sich um globale Konstanten, die in der Implementierungsdatei der ActiveX-Steuerelementklasse des Projekts definiert sind. Innerhalb des Rests `DoPropExchange` Ihrer Funktion können Sie [CPropExchange::GetVersion](../mfc/reference/cpropexchange-class.md#getversion) jederzeit aufrufen, um die Version abzurufen, die Sie speichern oder abrufen.
+Sie können ein beliebiges **DWORD** als Versionsnummer verwenden. Vom ActiveX-Steuerelement-Assistenten generierte Projekte verwenden `_wVerMinor` und `_wVerMajor` als Standard. Dabei handelt es sich um globale Konstanten, die in der Implementierungs Datei der ActiveX-Steuerelement Klasse des Projekts definiert sind. Innerhalb der restlichen `DoPropExchange` Funktion können Sie [CPropExchange:: GetVersion](reference/cpropexchange-class.md#getversion) jederzeit aufrufen, um die Version abzurufen, die Sie speichern oder abrufen.
 
-Im folgenden Beispiel verfügt Version 1 dieses Beispielsteuerelements nur über eine "ReleaseDate"-Eigenschaft. Version 2 fügt eine "OriginalDate"-Eigenschaft hinzu. Wenn das Steuerelement angewiesen wird, den persistenten Zustand aus der alten Version zu laden, initialisiert es die Membervariable für die neue Eigenschaft auf einen Standardwert.
+Im folgenden Beispiel hat Version 1 dieses Beispiel Steuer Elements nur eine "ReleaseDate"-Eigenschaft. In Version 2 wird eine "OriginalDate"-Eigenschaft hinzugefügt. Wenn das Steuerelement angewiesen wird, den persistenten Zustand aus der alten Version zu laden, wird die Element Variable für die neue Eigenschaft mit einem Standardwert initialisiert.
 
-[!code-cpp[NVC_MFC_AxSer#4](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_5.cpp)]
-[!code-cpp[NVC_MFC_AxSer#3](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_4.cpp)]
+[!code-cpp[NVC_MFC_AxSer#4](codesnippet/cpp/mfc-activex-controls-serializing_5.cpp)]
+[!code-cpp[NVC_MFC_AxSer#3](codesnippet/cpp/mfc-activex-controls-serializing_4.cpp)]
 
-Standardmäßig "konvertiert" ein Steuerelement alte Daten in das neueste Format. Wenn beispielsweise Version 2 eines Steuerelements Daten lädt, die in Version 1 gespeichert wurden, wird das Format version 2 geschrieben, wenn es erneut gespeichert wird. Wenn das Steuerelement Daten im zuletzt gelesenen **FALSE** Format speichern soll, `ExchangeVersion`übergeben Sie FALSE beim Aufruf als dritten Parameter. Dieser dritte Parameter ist optional und standardmäßig **TRUE.**
+Standardmäßig konvertiert ein Steuerelement alte Daten in das neueste Format. Wenn z. b. Version 2 eines Steuer Elements Daten lädt, die von Version 1 gespeichert wurden, wird das Format der Version 2 geschrieben, wenn es wieder gespeichert wird. Wenn Sie möchten, dass das Steuerelement Daten im letzten Lese Format speichert, übergeben Sie **false** beim Aufrufen von als dritten Parameter `ExchangeVersion` . Dieser dritte Parameter ist optional und ist standardmäßig " **true** ".
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md)
+[MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)

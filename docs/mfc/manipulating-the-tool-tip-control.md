@@ -5,36 +5,36 @@ helpviewer_keywords:
 - CToolTipCtrl class [MFC], manipulating tool tip attributes
 - tool tips [MFC], attributes
 ms.assetid: 3600afe5-712a-4b56-8456-96e85fe879af
-ms.openlocfilehash: d8c994748239871f17b878dd8ea7505a2a8a0b65
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 61bc35e8b19ba7645736b939acac6cdaa6cb7316
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62226156"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622422"
 ---
 # <a name="manipulating-the-tool-tip-control"></a>Bearbeiten des QuickInfo-Steuerelements
 
-Klasse `CToolTipCtrl` stellt eine Gruppe von der Members-Funktionen, die die verschiedenen Attribute des steuern die `CToolTipCtrl` -Objekt und das QuickInfo-Fenster.
+Die `CToolTipCtrl` -Klasse stellt eine Gruppe von Element Funktionen bereit, mit denen die verschiedenen Attribute des `CToolTipCtrl` -Objekts und des QuickInfo-Fensters gesteuert werden.
 
-Die ursprüngliche, Popup- und Wiederholungsdauern für QuickInfo-Fenster können festgelegt und, die mit Aufrufen von abgerufen [GetDelayTime](../mfc/reference/ctooltipctrl-class.md#getdelaytime) und [SetDelayTime](../mfc/reference/ctooltipctrl-class.md#setdelaytime).
+Die Anfangs-, Popup-und neueinblenden Dauer für die QuickInfo-Fenster können mit Aufrufen von [getdelta aytime](reference/ctooltipctrl-class.md#getdelaytime) und [setdelta Time](reference/ctooltipctrl-class.md#setdelaytime)festgelegt und abgerufen werden.
 
 Ändern Sie die Darstellung der QuickInfo-Fenster mit den folgenden Funktionen:
 
-- [GetMargin](../mfc/reference/ctooltipctrl-class.md#getmargin) und [SetMargin](../mfc/reference/ctooltipctrl-class.md#setmargin) ab oder legt die Breite zwischen dem QuickInfo-Rahmen und das Tool den QuickInfo-Text.
+- [GetMargin](reference/ctooltipctrl-class.md#getmargin) und [setMargin](reference/ctooltipctrl-class.md#setmargin) rufen die Breite zwischen dem QuickInfo-Rahmen und dem QuickInfo-Text ab und legt diese fest.
 
-- [GetMaxTipWidth](../mfc/reference/ctooltipctrl-class.md#getmaxtipwidth) und [SetMaxTipWidth](../mfc/reference/ctooltipctrl-class.md#setmaxtipwidth) ab oder legt die maximale Breite des Tools QuickInfo-Fensters.
+- [GetMaxTipWidth](reference/ctooltipctrl-class.md#getmaxtipwidth) und [SetMaxTipWidth](reference/ctooltipctrl-class.md#setmaxtipwidth) Ruft die maximale Breite des QuickInfo-Fensters ab und legt diese fest.
 
-- [GetTipBkColor](../mfc/reference/ctooltipctrl-class.md#gettipbkcolor) und [SetTipBkColor](../mfc/reference/ctooltipctrl-class.md#settipbkcolor) ab oder legt die Hintergrundfarbe des Tools QuickInfo-Fensters.
+- [Gettipbkcolor](reference/ctooltipctrl-class.md#gettipbkcolor) und [settipbkcolor](reference/ctooltipctrl-class.md#settipbkcolor) Ruft die Hintergrundfarbe des QuickInfo-Fensters ab und legt diese fest.
 
-- [GetTipTextColor](../mfc/reference/ctooltipctrl-class.md#gettiptextcolor) und [SetTipTextColor](../mfc/reference/ctooltipctrl-class.md#settiptextcolor) ab oder legt die Textfarbe des Tools QuickInfo-Fensters.
+- [Gettiptextcolor](reference/ctooltipctrl-class.md#gettiptextcolor) und [SetTipTextColor](reference/ctooltipctrl-class.md#settiptextcolor) Ruft die Textfarbe des QuickInfo-Fensters ab und legt diese fest.
 
-In der Reihenfolge für das QuickInfo-Steuerelement über wichtige Meldungen, z. B. WM_LBUTTONXXX-Nachrichten benachrichtigt werden müssen Sie die Nachrichten auf Ihre QuickInfo-Steuerelement weiterleiten. Die beste Methode für dieses Relay wird ein Aufruf von [CToolTipCtrl:: RelayEvent](../mfc/reference/ctooltipctrl-class.md#relayevent)in die `PreTranslateMessage` Funktion das besitzende Fenster. Das folgende Beispiel veranschaulicht eine mögliche Methode (vorausgesetzt, das QuickInfo-Steuerelement heißt `m_ToolTip`):
+Damit das QuickInfo-Steuerelement über wichtige Meldungen, z. b. WM_LBUTTONXXX Meldungen, benachrichtigt werden kann, müssen Sie die Nachrichten an das QuickInfo-Steuerelement weiterleiten. Die beste Methode für dieses Relay besteht darin, einen [CToolTipCtrl:: relayevent](reference/ctooltipctrl-class.md#relayevent)-Befehl in der- `PreTranslateMessage` Funktion des Besitzer Fensters aufzurufen. Das folgende Beispiel veranschaulicht eine mögliche Methode (vorausgesetzt, das QuickInfo-Steuerelement wird aufgerufen `m_ToolTip` ):
 
-[!code-cpp[NVC_MFCControlLadenDialog#41](../mfc/codesnippet/cpp/manipulating-the-tool-tip-control_1.cpp)]
+[!code-cpp[NVC_MFCControlLadenDialog#41](codesnippet/cpp/manipulating-the-tool-tip-control_1.cpp)]
 
-Um sofort eine QuickInfo-Fenster zu entfernen, rufen Sie die [Pop](../mfc/reference/ctooltipctrl-class.md#pop) Member-Funktion.
+Zum sofortigen Entfernen eines QuickInfo-Fensters müssen Sie die [Pop](reference/ctooltipctrl-class.md#pop) -Member-Funktion aufzurufen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von CToolTipCtrl](../mfc/using-ctooltipctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Verwenden von CToolTipCtrl](using-ctooltipctrl.md)<br/>
+[Steuerelemente](controls-mfc.md)

@@ -13,42 +13,42 @@ helpviewer_keywords:
 - events [MFC], ActiveX controls
 - OLE events [MFC]
 ms.assetid: e1e57e0c-206b-4923-a0b5-682c26564f74
-ms.openlocfilehash: 0d8a881d07a3e48673c6dc3298816d165273be0d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 129b805379fa68cb4f50ee1f8e3ac7d1b725d9ec
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392673"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622324"
 ---
 # <a name="mfc-activex-controls-events"></a>MFC-ActiveX-Steuerelemente: Ereignisse
 
-ActiveX-Steuerelemente verwenden Ereignisse, um einen Container zu informieren, den auf das Steuerelement der etwas passiert ist. Gängige Beispiele für Ereignisse enthalten, auf das Steuerelement Daten eingegeben haben, verwenden die Tastatur, und Änderungen in den Zustand des Steuerelements klickt. Wenn diese Aktionen auftreten, löst das Steuerelement eine Ereignis, um den Container zu benachrichtigen.
+ActiveX-Steuerelemente verwenden Ereignisse, um einen Container zu benachrichtigen, dass etwas mit dem Steuerelement geschehen ist. Häufige Beispiele für Ereignisse sind u. a. Klicks auf das Steuerelement, mit der Tastatur eingegebene Daten und Änderungen am Zustand des Steuer Elements. Wenn diese Aktionen auftreten, löst das Steuerelement ein Ereignis aus, um den Container zu benachrichtigen.
 
-Ereignisse werden auch Nachrichten bezeichnet.
+Ereignisse werden auch als Meldungen bezeichnet.
 
-MFC unterstützt zwei Arten von Ereignissen: vordefinierte und benutzerdefinierte. Vordefinierte Ereignisse sind die Ereignisse, die Klasse [COleControl](../mfc/reference/colecontrol-class.md) automatisch behandelt. Eine vollständige Liste der vordefinierten Ereignissen, finden Sie im Artikel [MFC-ActiveX-Steuerelemente: Hinzufügen von vordefinierten Ereignissen](../mfc/mfc-activex-controls-adding-stock-events-to-an-activex-control.md). Benutzerdefinierte Ereignisse ermöglichen ein Steuerelement die Möglichkeit, den Container zu benachrichtigen, wenn eine Aktion, die speziell für dieses Steuerelement stattfindet. Einige Beispiele sind eine Änderung in den internen Zustand eines Steuerelements oder der Empfang einer Fensternachricht bestimmte.
+MFC unterstützt zwei Arten von Ereignissen: Stock und Custom. Aktien Ereignisse sind Ereignisse, die von der Klasse [COleControl](reference/colecontrol-class.md) automatisch verarbeitet werden. Eine komplette Liste der Aktien Ereignisse finden Sie im Artikel [MFC-ActiveX-Steuerelemente: Hinzufügen von Aktien Ereignissen](mfc-activex-controls-adding-stock-events-to-an-activex-control.md). Mit benutzerdefinierten Ereignissen kann ein Steuerelement den Container Benachrichtigen, wenn eine für dieses Steuerelement spezifische Aktion auftritt. Einige Beispiele wären eine Änderung des internen Zustands eines Steuer Elements oder des Empfangs einer bestimmten Fenster Meldung.
 
-Für das Steuerelement, Ereignisse ordnungsgemäß auszulösen muss die Steuerelementklasse jedes Ereignis des Steuerelements auf eine Memberfunktion zuordnen, die aufgerufen werden soll, wenn das zugehörige Ereignis eintritt. Dieser Zuordnungsmechanismus (eine Event-Zuordnung bezeichnet) zeigt Informationen über das Ereignis und durch die Visual Studio ganz einfach aufrufen und bearbeiten die Ereignisse des Steuerelements. Dieses Event-Zuordnung wird deklariert, indem folgendes Makro auf, befindet sich in der Kopfzeile (. H)-Datei von der Klassendeklaration des Steuerelements:
+Damit das Steuerelement Ereignisse ordnungsgemäß auslösen kann, muss die Steuerelement Klasse jedes Ereignis des Steuer Elements einer Element Funktion zuordnen, die aufgerufen werden soll, wenn das zugehörige Ereignis auftritt. Dieser Zuordnungs Mechanismus (als Ereignis Zuordnung bezeichnet) zentralisiert Informationen über das Ereignis und ermöglicht es Visual Studio, auf einfache Weise auf die Ereignisse des Steuer Elements zuzugreifen und diese zu bearbeiten. Diese Ereignis Zuordnung wird durch das folgende Makro deklariert, das sich im-Header (befindet. H) der Deklaration der Steuerelement Klasse:
 
-[!code-cpp[NVC_MFC_AxUI#2](../mfc/codesnippet/cpp/mfc-activex-controls-events_1.h)]
+[!code-cpp[NVC_MFC_AxUI#2](codesnippet/cpp/mfc-activex-controls-events_1.h)]
 
-Nachdem die ereigniszuordnung deklariert wurde, muss er im Ihres Steuerelements-Implementierung definiert werden (. CPP)-Datei. Die folgenden Codezeilen definieren die ereigniszuordnung, die Ihrer Kontrolle bestimmter Ereignisse ausgelöst werden können:
+Nachdem die Ereignis Zuordnung deklariert wurde, muss Sie in der-Implementierung des-Steuer Elements () definiert werden. Cpp-Datei. Die folgenden Codezeilen definieren die Ereignis Zuordnung, sodass Ihr Steuerelement bestimmte Ereignisse auslösen kann:
 
-[!code-cpp[NVC_MFC_AxUI#3](../mfc/codesnippet/cpp/mfc-activex-controls-events_2.cpp)]
-[!code-cpp[NVC_MFC_AxUI#4](../mfc/codesnippet/cpp/mfc-activex-controls-events_3.cpp)]
+[!code-cpp[NVC_MFC_AxUI#3](codesnippet/cpp/mfc-activex-controls-events_2.cpp)]
+[!code-cpp[NVC_MFC_AxUI#4](codesnippet/cpp/mfc-activex-controls-events_3.cpp)]
 
-Wenn Sie die MFC-ActiveX-Steuerelement-Assistent zum Erstellen des Projekts verwenden, fügt es automatisch diese Zeilen hinzu. Wenn Sie nicht die MFC-ActiveX-Steuerelement-Assistenten verwenden, müssen Sie diese Zeilen auch manuell hinzufügen.
+Wenn Sie den MFC-ActiveX-Steuerelement-Assistenten verwenden, um das Projekt zu erstellen, werden diese Zeilen automatisch hinzugefügt. Wenn Sie den MFC-ActiveX-Steuerelement-Assistenten nicht verwenden, müssen Sie diese Zeilen manuell hinzufügen.
 
-In der Klassenansicht, können Sie vordefinierte Ereignisse, die von der Klasse unterstützt hinzufügen `COleControl` oder benutzerdefinierte Ereignisse, die Sie definieren. Für jedes neue Ereignis hinzugefügt Klassenansicht automatisch den ordnungsgemäßen Eintrag des Steuerelements Event-Zuordnung und des Steuerelements. IDL-Datei.
+Mit Klassenansicht können Sie `COleControl` die von Ihnen definierten Klassen-oder benutzerdefinierten Ereignisse hinzufügen, die von Ihnen definiert werden. Bei jedem neuen Ereignis fügt Klassenansicht automatisch den richtigen Eintrag der Ereignis Zuordnung des-Steuer Elements und der-Steuerelemente des-Steuer Elements hinzu. IDL-Datei.
 
-Zwei weitere Artikel behandeln Ereignisse im Detail:
+In zwei anderen Artikeln werden die Ereignisse ausführlich erläutert:
 
-- [MFC-ActiveX-Steuerelemente: Hinzufügen von vordefinierten Ereignissen](../mfc/mfc-activex-controls-adding-stock-events-to-an-activex-control.md)
+- [MFC-ActiveX-Steuerelemente: Hinzufügen von Aktien](mfc-activex-controls-adding-stock-events-to-an-activex-control.md)
 
-- [MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Ereignissen](../mfc/mfc-activex-controls-adding-custom-events.md)
+- [MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Ereignissen](mfc-activex-controls-adding-custom-events.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md)<br/>
-[MFC-ActiveX-Steuerelemente: Methoden](../mfc/mfc-activex-controls-methods.md)<br/>
-[COleControl-Klasse](../mfc/reference/colecontrol-class.md)
+[MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
+[MFC-ActiveX-Steuerelemente: Methoden](mfc-activex-controls-methods.md)<br/>
+[COleControl-Klasse](reference/colecontrol-class.md)

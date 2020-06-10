@@ -10,93 +10,93 @@ helpviewer_keywords:
 - serialization [MFC], collection classes
 - collection classes [MFC], deriving from nontemplate
 ms.assetid: 7230b2db-4283-4083-b098-eb231bf5b89e
-ms.openlocfilehash: 1901100996a776244b57efe0951795ceec3c630a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6ee4603f03ef8a95c218b0fe040e9606aab99ebb
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377262"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620010"
 ---
 # <a name="how-to-make-a-type-safe-collection"></a>Gewusst wie: Erstellen einer typsicheren Auflistung
 
-In diesem Artikel wird erläutert, wie Sie typsichere Sammlungen für Ihre eigenen Datentypen erstellen. Dabei werden folgende Themen behandelt:
+In diesem Artikel wird erläutert, wie typsichere Auflistungen für eigene Datentypen durchführen werden. Dabei werden folgende Themen behandelt:
 
-- [Verwenden von vorlagenbasierten Klassen für die Typsicherheit](#_core_using_template.2d.based_classes_for_type_safety)
+- [Verwenden von Vorlagen basierten Klassen für Typsicherheit](#_core_using_template.2d.based_classes_for_type_safety)
 
 - [Implementieren von Hilfsfunktionen](#_core_implementing_helper_functions)
 
-- [Verwenden von Nichtvorlagenauflistungsklassen](#_core_using_nontemplate_collection_classes)
+- [Verwenden von nicht Vorlagen Auflistungs Klassen](#_core_using_nontemplate_collection_classes)
 
-Die Microsoft Foundation-Klassenbibliothek stellt vordefinierte typsichere Sammlungen basierend auf C++-Vorlagen bereit. Da es sich um Vorlagen handelt, bieten diese Klassen typsicher und benutzerfreundlich, ohne dass die Typumwandlung und andere zusätzliche Arbeiten für die Verwendung einer Nichtvorlagenklasse für diesen Zweck zu erledigen sind. Das MFC-Beispiel [COLLECT](../overview/visual-cpp-samples.md) veranschaulicht die Verwendung vorlagenbasierter Auflistungsklassen in einer MFC-Anwendung. Verwenden Sie diese Klassen im Allgemeinen jedes Mal, wenn Sie neuen Sammlungscode schreiben.
+Der Microsoft Foundation Class-Bibliothek stellt vordefinierte typsichere Auflistungen basierend auf C++-Vorlagen bereit. Da es sich um Vorlagen handelt, helfen diese Klassen dabei, Typsicherheit und Benutzerfreundlichkeit zu bieten, ohne die Typumwandlung und andere zusätzliche Arbeitsschritte bei der Verwendung einer nicht-Vorlagen Klasse zu diesem Zweck. Die MFC- [Beispiel Sammlung](../overview/visual-cpp-samples.md) veranschaulicht die Verwendung von Vorlagen basierten Auflistungs Klassen in einer MFC-Anwendung. Im Allgemeinen verwenden Sie diese Klassen immer dann, wenn Sie neuen Auflistungs Code schreiben.
 
-## <a name="using-template-based-classes-for-type-safety"></a><a name="_core_using_template.2d.based_classes_for_type_safety"></a>Verwenden von vorlagenbasierten Klassen für die Typsicherheit
+## <a name="using-template-based-classes-for-type-safety"></a><a name="_core_using_template.2d.based_classes_for_type_safety"></a>Verwenden von Vorlagen basierten Klassen für Typsicherheit
 
 #### <a name="to-use-template-based-classes"></a>So verwenden Sie vorlagenbasierte Klassen
 
-1. Deklarieren Sie eine Variable des Auflistungsklassentyps. Beispiel:
+1. Deklarieren Sie eine Variable des Auflistungs Klassen Typs. Beispiel:
 
-   [!code-cpp[NVC_MFCCollections#7](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_1.cpp)]
+   [!code-cpp[NVC_MFCCollections#7](codesnippet/cpp/how-to-make-a-type-safe-collection_1.cpp)]
 
-1. Rufen Sie die Memberfunktionen des Auflistungsobjekts auf. Beispiel:
+1. Ruft die Element Funktionen des Auflistungs Objekts auf. Beispiel:
 
-   [!code-cpp[NVC_MFCCollections#8](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_2.cpp)]
+   [!code-cpp[NVC_MFCCollections#8](codesnippet/cpp/how-to-make-a-type-safe-collection_2.cpp)]
 
-1. Implementieren Sie bei Bedarf die [Hilfsfunktionen](../mfc/reference/collection-class-helpers.md) und [SerializeElements](../mfc/reference/collection-class-helpers.md#serializeelements). Informationen zum Implementieren dieser Funktionen finden Sie unter [Implementieren von Hilfsfunktionen](#_core_implementing_helper_functions).
+1. Implementieren Sie ggf. die [Hilfsfunktionen](reference/collection-class-helpers.md) und [SerializeElements](reference/collection-class-helpers.md#serializeelements). Weitere Informationen zum Implementieren dieser Funktionen finden Sie unter [Implementieren von Hilfsfunktionen](#_core_implementing_helper_functions).
 
-Dieses Beispiel zeigt die Deklaration einer Liste ganzer Zahlen. Der erste Parameter in Schritt 1 ist der Typ der Daten, die als Elemente der Liste gespeichert werden. Der zweite Parameter gibt an, wie die Daten an Memberfunktionen der Auflistungsklasse übergeben und von diesen zurückgegeben werden sollen, z. `Add` B. und `GetAt`.
+Dieses Beispiel zeigt die Deklaration einer Liste von ganzen Zahlen. Der erste Parameter in Schritt 1 ist der Typ der Daten, die als Elemente der Liste gespeichert werden. Der zweite Parameter gibt an, wie die Daten an Element Funktionen der Auflistungs Klasse übergeben und von diesen zurückgegeben werden, z `Add` `GetAt` . b. und.
 
 ## <a name="implementing-helper-functions"></a><a name="_core_implementing_helper_functions"></a>Implementieren von Hilfsfunktionen
 
-Die vorlagenbasierten Auflistungsklassen `CArray`, `CList`und `CMap` verwenden fünf globale Hilfsfunktionen, die Sie bei Bedarf für Ihre abgeleitete Auflistungsklasse anpassen können. Informationen zu diesen Hilfsfunktionen finden Sie unter [Auflistungsklassenhelfer](../mfc/reference/collection-class-helpers.md) in der *MFC-Referenz*. Die Implementierung der Serialisierungsfunktion ist für die meisten Verwendungen der vorlagenbasierten Auflistungsklassen erforderlich.
+Die Vorlagen basierten Auflistungs Klassen `CArray` , `CList` und `CMap` verwenden fünf globale Hilfsfunktionen, die Sie nach Bedarf für Ihre abgeleitete Auflistungs Klasse anpassen können. Weitere Informationen zu diesen Hilfsfunktionen finden Sie unter Auflistungs [Klassen](reference/collection-class-helpers.md) -Hilfsprogramme in der *MFC-Referenz*. Die Implementierung der Serialisierungsfunktion ist für die meisten Verwendungen der Vorlagen basierten Auflistungs Klassen erforderlich.
 
 ### <a name="serializing-elements"></a><a name="_core_serializing_elements"></a>Serialisieren von Elementen
 
-Die `CArray` `CList`, `CMap` und `SerializeElements` Klassen rufen Auflistungselemente auf, um sie in einem Archiv zu speichern oder aus einem Archiv zu lesen.
+Die `CArray` `CList` Klassen, und werden `CMap` aufgerufen `SerializeElements` , um Auflistungs Elemente zu speichern oder aus einem Archiv zu lesen.
 
-Die Standardimplementierung `SerializeElements` der Hilfsfunktion schreibt bitweise von den Objekten in das Archiv oder liest ein Bitweises aus dem Archiv in die Objekte, je nachdem, ob die Objekte im Archiv gespeichert oder aus dem Archiv abgerufen werden. Überschreiben, `SerializeElements` wenn diese Aktion nicht geeignet ist.
+Die Standard Implementierung der `SerializeElements` Hilfsfunktion führt einen bitweisen Schreibvorgang aus den Objekten in das Archiv oder einen bitweisen Lesevorgang aus dem Archiv auf die Objekte aus, je nachdem, ob die Objekte in dem Archiv gespeichert oder aus dem Archiv abgerufen werden. Überschreiben, `SerializeElements` Wenn diese Aktion nicht geeignet ist.
 
-Wenn Ihre Sammlung Objekte `CObject` speichert, `IMPLEMENT_SERIAL` die von der Sammlung abgeleitet wurden, und Sie das Makro `CArchive` in `CObject`der Implementierung der Auflistungselementklasse verwenden, können Sie die Vorteile der Serialisierungsfunktionalität nutzen, die in und: integriert ist:
+Wenn Ihre Auflistung von abgeleitete Objekte speichert `CObject` und Sie das- `IMPLEMENT_SERIAL` Makro in der Implementierung der Auflistungs Element-Klasse verwenden, können Sie die in und integrierte serialisierungsfunktionalität nutzen. `CArchive` `CObject`
 
-[!code-cpp[NVC_MFCCollections#9](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_3.cpp)]
+[!code-cpp[NVC_MFCCollections#9](codesnippet/cpp/how-to-make-a-type-safe-collection_3.cpp)]
 
-Die überladenen `CArchive` Einfügeoperatoren für den Aufruf `CObject::Serialize` (oder eine Außerkraftsetzung dieser Funktion) für jedes `CPerson` Objekt.
+Die überladenen einfügeoperatoren für den `CArchive` Rückruf `CObject::Serialize` (oder eine Überschreibung dieser Funktion) für jedes `CPerson` Objekt.
 
-## <a name="using-nontemplate-collection-classes"></a><a name="_core_using_nontemplate_collection_classes"></a>Verwenden von Nontemplate-Auflistungsklassen
+## <a name="using-nontemplate-collection-classes"></a><a name="_core_using_nontemplate_collection_classes"></a>Verwenden von nicht Vorlagen Auflistungs Klassen
 
-MFC unterstützt auch die Mitminadenklassen, die mit MFC-Version 1.0 eingeführt wurden. Diese Klassen basieren nicht auf Vorlagen. Sie können verwendet werden, um `CObject*`Daten `UINT` `DWORD`der `CString`unterstützten Typen , , und zu enthalten. Sie können diese vordefinierten Auflistungen (z. B. `CObList` `CObject`) verwenden, um Auflistungen von Objekten zu enthalten, die von abgeleitet wurden. MFC stellt auch andere vordefinierte Auflistungen `UINT` bereit, um`void`primitive Typen wie und void-Zeiger ( *) zu halten. Im Allgemeinen ist es jedoch häufig nützlich, eigene typsichere Sammlungen zu definieren, um Objekte einer spezifischeren Klasse und ihrer Derivate zu enthalten. Beachten Sie, dass dies mit den Auflistungsklassen, die nicht auf Vorlagen basieren, mehr Arbeit ist als die Verwendung der vorlagenbasierten Klassen.
+MFC unterstützt auch die Auflistungs Klassen, die mit MFC Version 1,0 eingeführt wurden. Diese Klassen basieren nicht auf Vorlagen. Sie können verwendet werden, um Daten der unterstützten Typen `CObject*` , `UINT` , `DWORD` und zu enthalten `CString` . Sie können diese vordefinierten Auflistungen (z. b.) verwenden, um Auflistungen `CObList` aller von abgeleiteten Objekte aufzunehmen `CObject` . MFC bietet auch andere vordefinierte Auflistungen, die primitive Typen wie `UINT` und void-Zeiger ( `void` *) enthalten. Im Allgemeinen ist es jedoch oft hilfreich, eigene typsichere Auflistungen zu definieren, die Objekte einer spezifischeren Klasse und ihrer Ableitungen enthalten. Beachten Sie, dass die Verwendung der Auflistungs Klassen, die nicht auf Vorlagen basieren, mehr Arbeit als die Verwendung der Vorlagen basierten Klassen ist.
 
-Es gibt zwei Möglichkeiten, typsichere Sammlungen mit den Nichtvorlagensammlungen zu erstellen:
+Es gibt zwei Möglichkeiten, typsichere Auflistungen mit den nicht Vorlagen Auflistungen zu erstellen:
 
-1. Verwenden Sie die Nichtvorlagensammlungen, bei Bedarf mit Typumwandlung. Dies ist der einfachere Ansatz.
+1. Verwenden Sie ggf. die Auflistungs-Auflistungen mit Typumwandlung. Dies ist der einfachere Ansatz.
 
-1. Ableiten und Erweitern einer nicht-vorlagentypsicheren Auflistung.
+1. Leiten Sie von ab, und erweitern Sie eine nicht Vorlagen-typsichere Auflistung.
 
-#### <a name="to-use-the-nontemplate-collections-with-type-casting"></a>So verwenden Sie die Nichtvorlagensammlungen mit Typumwandlung
+#### <a name="to-use-the-nontemplate-collections-with-type-casting"></a>So verwenden Sie die Auflistungs-Auflistungen mit Typumwandlung
 
-1. Verwenden Sie eine der Nichtvorlagenklassen, z. `CWordArray`B. direkt .
+1. Verwenden Sie eine der nicht Vorlagen Klassen, z `CWordArray` . b. direkt.
 
-   Sie können z. `CWordArray` B. einen erstellen und beliebige 32-Bit-Werte hinzufügen und diese dann abrufen. Es gibt nichts mehr zu tun. Sie verwenden nur die vordefinierte Funktionalität.
+   Beispielsweise können Sie einen erstellen `CWordArray` und ihm alle 32-Bit-Werte hinzufügen und diese dann abrufen. Es gibt nichts mehr zu tun. Sie verwenden einfach die vordefinierte Funktionalität.
 
-   Sie können auch eine vordefinierte `CObList`Auflistung verwenden, z. `CObject`B. , um alle von abgeleiteten Objekte zu halten. Eine `CObList` Auflistung ist definiert, um `CObject`Zeiger auf zu halten. Wenn Sie ein Objekt aus der Liste abrufen, müssen Sie das `CObList` Ergebnis möglicherweise in `CObject`den richtigen Typ umsetzen, da die Funktionen Zeiger auf zurückgeben. Wenn Sie beispielsweise `CPerson` Objekte in `CObList` einer Auflistung speichern, müssen Sie ein abgerufenes `CPerson` Element als Zeiger auf ein Objekt umsetzen. Im folgenden Beispiel `CObList` wird `CPerson` eine Auflistung zum Aufnehmen von Objekten verwendet:
+   Sie können auch eine vordefinierte Auflistung, z `CObList` . b., verwenden, um alle von abgeleiteten Objekte zu speichern `CObject` . Eine Auflistung `CObList` ist so definiert, dass Zeiger auf gespeichert werden `CObject` . Wenn Sie ein Objekt aus der Liste abrufen, müssen Sie das Ergebnis möglicherweise in den richtigen Typ umwandeln, da die `CObList` Funktionen Zeiger auf zurückgeben `CObject` . Wenn Sie z. b `CPerson` . Objekte in einer Auflistung speichern `CObList` , müssen Sie ein abgerufenes Element in einen Zeiger auf ein- `CPerson` Objekt umwandeln. Im folgenden Beispiel wird eine Auflistung `CObList` zum Speichern von- `CPerson` Objekten verwendet:
 
-   [!code-cpp[NVC_MFCCollections#10](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_4.cpp)]
+   [!code-cpp[NVC_MFCCollections#10](codesnippet/cpp/how-to-make-a-type-safe-collection_4.cpp)]
 
-   Diese Technik der Verwendung eines vordefinierten Sammlungstyps und Ggf. des Gießens kann für viele Ihrer Sammlungsanforderungen geeignet sein. Wenn Sie weitere Funktionen oder mehr Typsicherheit benötigen, verwenden Sie eine vorlagenbasierte Klasse, oder führen Sie das nächste Verfahren aus.
+   Dieses Verfahren, bei dem ein vordefinierter Auflistungstyp und eine Umwandlung nach Bedarf verwendet werden, ist möglicherweise für viele ihrer Sammlungs Anforderungen geeignet. Wenn Sie weitere Funktionen oder mehr Typsicherheit benötigen, verwenden Sie eine vorlagenbasierte Klasse, oder führen Sie das nächste Verfahren aus.
 
-#### <a name="to-derive-and-extend-a-nontemplate-type-safe-collection"></a>Ableiten und Erweitern einer nicht-vorlagensicheren Auflistung
+#### <a name="to-derive-and-extend-a-nontemplate-type-safe-collection"></a>So leiten Sie eine typsichere Sammlung ohne Vorlagen ab und erweitern diese
 
-1. Leiten Sie Ihre eigene Auflistungsklasse von einer der vordefinierten Nichtvorlagenklassen ab.
+1. Leiten Sie eine eigene Auflistungs Klasse von einer der vordefinierten nicht-Vorlagen Klassen ab.
 
-   Wenn Sie Ihre Klasse ableiten, können Sie typsichere Wrapperfunktionen hinzufügen, um eine typsichere Schnittstelle zu vorhandenen Funktionen bereitzustellen.
+   Wenn Sie die Klasse ableiten, können Sie typsichere Wrapper Funktionen hinzufügen, um eine typsichere Schnittstelle für vorhandene Funktionen bereitzustellen.
 
-   Wenn Sie z. B. `CObList` eine `CPerson` Liste abgeleitet haben, aus `AddHeadPerson` `GetHeadPerson`der Objekte enthalten sind, können Sie die Wrapperfunktionen und , wie unten gezeigt, hinzufügen.
+   Wenn Sie z. b. eine Liste von `CObList` für `CPerson` Objekte abgeleitet haben, können Sie die Wrapper Funktionen `AddHeadPerson` und hinzufügen `GetHeadPerson` , wie unten gezeigt.
 
-   [!code-cpp[NVC_MFCCollections#11](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_5.h)]
+   [!code-cpp[NVC_MFCCollections#11](codesnippet/cpp/how-to-make-a-type-safe-collection_5.h)]
 
-   Diese Wrapperfunktionen bieten eine typsichere Möglichkeit `CPerson` zum Hinzufügen und Abrufen von Objekten aus der abgeleiteten Liste. Sie können sehen, `GetHeadPerson` dass Sie für die Funktion einfach die Typumwandlung kapseln.
+   Diese Wrapper Funktionen bieten eine typsichere Möglichkeit zum Hinzufügen und Abrufen `CPerson` von Objekten aus der abgeleiteten Liste. Sie können sehen, dass Sie für die `GetHeadPerson` Funktion einfach die Typumwandlung Kapseln.
 
-   Sie können auch neue Funktionen hinzufügen, indem Sie neue Funktionen definieren, die die Funktionen der Auflistung erweitern, anstatt nur vorhandene Funktionen in typsichere Wrapper umzuschließen. Der Artikel [Löschen aller Objekte in einer CObject-Auflistung](../mfc/deleting-all-objects-in-a-cobject-collection.md) beschreibt beispielsweise eine Funktion zum Löschen aller in einer Liste enthaltenen Objekte. Diese Funktion könnte der abgeleiteten Klasse als Memberfunktion hinzugefügt werden.
+   Sie können auch neue Funktionen hinzufügen, indem Sie neue Funktionen definieren, mit denen die Funktionen der Auflistung erweitert werden, anstatt nur vorhandene Funktionen in typsicheren Wrapper zu umwickeln. Der Artikel zum [Löschen aller Objekte in einer CObject](deleting-all-objects-in-a-cobject-collection.md) -Auflistung beschreibt z. b. eine Funktion, mit der alle in einer Liste enthaltenen Objekte gelöscht werden. Diese Funktion kann der abgeleiteten Klasse als Member-Funktion hinzugefügt werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Sammlungen](../mfc/collections.md)
+[Sammlungen](collections.md)

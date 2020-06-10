@@ -10,19 +10,19 @@ helpviewer_keywords:
 - SafeInt class
 - SafeInt class, constructor
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-ms.openlocfilehash: c365b5cab5814d3992e6570949a69fc5d39c1dd3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a7c0de8b5fd64fb9746f4c503189fcad409f1e85
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373466"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620956"
 ---
 # <a name="safeint-class"></a>SafeInt-Klasse
 
 Erweitert die primitiven Ganzzahlen, um Ganzzahlüberlauf zu vermeiden, und ermöglicht Ihnen, verschiedene Typen von ganzen Zahlen zu vergleichen.
 
 > [!NOTE]
-> Die neueste Version dieser Bibliothek [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt)befindet sich unter .
+> Die neueste Version dieser Bibliothek finden Sie unter [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt) .
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,16 +42,16 @@ class SafeInt;
 | Parameter  |  Beschreibung |
 |---------|-----------------|
 | *rhs*      |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
-| *Ⅰ*        |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
-| *bits*     |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
+| *i*        |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
+| *Bohrer*     |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-| Name                          |  BESCHREIBUNG |
+| name                          |  Beschreibung |
 |---------------------------|--------------------|
-| [SafeInt::SafeInt](#safeint)  |  Der Standardkonstruktor. |
+| [Safeint:: safeint](#safeint)  |  Der Standardkonstruktor. |
 
 ### <a name="assignment-operators"></a>Zuweisungsoperatoren
 
@@ -162,7 +162,7 @@ class SafeInt;
 | &#124;=  |  `template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (U rhs) throw()` |
 | &#124;=  |  `template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (SafeInt<U, E> rhs) throw()` |
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die `SafeInt`-Klasse schützt vor Ganzzahlüberlauf in mathematischen Operationen. Betrachten Sie beispielsweise das Hinzufügen von zwei 8-Bit-Ganzzahlen: eine hat den Wert 200 und die zweite den Wert 100. Die richtige mathematische Operation wäre 200 + 100 = 300. Jedoch geht aufgrund des 8-Bit-Ganzzahllimits das obere Bit verloren, und der Compiler gibt 44 (300 - 2<sup>8</sup>) als Ergebnis zurück. Jeder Vorgang, der von dieser mathematischen Gleichung abhängig ist, wird unerwartetes Verhalten hervorrufen.
 
@@ -212,7 +212,7 @@ Int x = flag ? (int) SafeInt<unsigned int>(y) : -1;
 > [!NOTE]
 > Die `SafeInt`-Klasse akzeptiert zwar jede beliebige Ganzzahl, doch mit Typen ohne Vorzeichen ist ihre Leistung effizienter.
 
-`E` ist der Mechanismus zur Fehlerbehandlung, den `SafeInt` verwendet. Zwei Mechanismen für die Fehlerbehandlung werden mit der SafeInt-Bibliothek bereitgestellt. Die Standardrichtlinie ist `SafeIntErrorPolicy_SafeIntException`, die eine [SafeIntException-Klasse](../safeint/safeintexception-class.md)-Ausnahme auslöst, wenn ein Fehler auftritt. Die andere Richtlinie ist `SafeIntErrorPolicy_InvalidParameter`, wodurch das Programm beendet wird, wenn ein Fehler auftritt.
+`E` ist der Mechanismus zur Fehlerbehandlung, den `SafeInt` verwendet. Zwei Mechanismen für die Fehlerbehandlung werden mit der SafeInt-Bibliothek bereitgestellt. Die Standardrichtlinie ist `SafeIntErrorPolicy_SafeIntException`, die eine [SafeIntException-Klasse](safeintexception-class.md)-Ausnahme auslöst, wenn ein Fehler auftritt. Die andere Richtlinie ist `SafeIntErrorPolicy_InvalidParameter`, wodurch das Programm beendet wird, wenn ein Fehler auftritt.
 
 Es gibt zwei Optionen zur Optimierung der Fehlerrichtlinie. Die erste Option ist, den Parameter `E` beim Erstellen einer `SafeInt`-Instanz festzulegen. Verwenden Sie diese Option, wenn Sie die Fehlerbehandlungsrichtlinie für nur eine `SafeInt`-Instanz ändern möchten. Die andere Option ist, _SAFEINT_DEFAULT_ERROR_POLICY als Ihre benutzerdefinierte Fehlerbehandlungsklasse zu definieren, bevor Sie die `SafeInt`-Bibliothek einbeziehen. Verwenden Sie diese Option, wenn Sie die Standard-Fehlerbehandlungsrichtlinie für alle Instanzen der `SafeInt`-Klasse in Ihrem Code ändern möchten.
 
@@ -223,13 +223,13 @@ Es gibt zwei Optionen zur Optimierung der Fehlerrichtlinie. Die erste Option ist
 
 `SafeInt`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** „safeint.h“
 
 **Namespace:** msl::utilities
 
-## <a name="safeintsafeint"></a><a name="safeint"></a>SafeInt::SafeInt
+## <a name="safeintsafeint"></a><a name="safeint"></a>Safeint:: safeint
 
 Erstellt ein `SafeInt`-Objekt.
 
@@ -257,18 +257,18 @@ SafeInt (
 
 ### <a name="parameters"></a>Parameter
 
-*Ⅰ*<br/>
+*i*<br/>
 [in] Der Wert für das neue `SafeInt`-Objekt. Dabei muss es sich je nach Konstruktor um einen Parameter vom Typ „T“ oder „U“ handeln.
 
-*B*<br/>
+*b*<br/>
 [in] Der boolesche Wert für das neue `SafeInt`-Objekt.
 
-*U*<br/>
+*n*<br/>
 [in] Ein `SafeInt`-Objekt vom Typ „U“. Das neue `SafeInt`-Objekt hat den gleichen Wert wie *u*, ist aber vom Typ „T“.
 
 U Der in `SafeInt` gespeicherte Datentyp. Dies kann entweder ein boolescher Wert, ein Zeichen oder eine ganze Zahl sein. Wenn er ein ganzzahliger Typ ist, kann er mit oder ohne Vorzeichen sein und zwischen 8 und 64 Bits groß sein.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Eingabeparameter für den Konstruktor *i* oder *u* muss ein boolescher, Zeichen- oder Ganzzahltyp sein. Wenn es sich um einen anderen Parametertyp handelt, ruft die `SafeInt`-Klasse [static_assert](../cpp/static-assert.md) auf, um auf einen ungültigen Eingabeparameter hinzuweisen.
 

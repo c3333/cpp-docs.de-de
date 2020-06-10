@@ -12,43 +12,43 @@ helpviewer_keywords:
 - Windows API [MFC], encapsulation by MFC
 - encapsulated Win32 API [MFC]
 ms.assetid: 3be0fec8-9843-4119-ae42-ece993ef500b
-ms.openlocfilehash: 387f53e3123b6863fcf218da39c7c5e356eb8219
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.openlocfilehash: b02d5a1862a278f46591895f20f58a97367b5ab2
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303415"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84618786"
 ---
 # <a name="framework-mfc"></a>Framework (MFC)
 
-Ihre Arbeit mit dem MFC-Bibliotheks Framework (Microsoft Foundation Class) basiert größtenteils auf einigen Hauptklassen und mehreren visuellen C++ Tools. Einige Klassen Kapseln einen großen Teil der Win32-API (Application Programming Interface). Andere Klassen Kapseln Anwendungskonzepte, z. b. Dokumente, Ansichten und die Anwendung selbst. Andere kapseln OLE-Features und ODBC-und DAO-Datenzugriffs Funktionen.  (DAO wird durch Office 2013 unterstützt. DAO 3,6 ist die endgültige Version, die als veraltet eingestuft wird.)
+Ihre Arbeit mit dem MFC-Bibliotheks Framework (Microsoft Foundation Class) basiert größtenteils auf einigen Hauptklassen und mehreren Visual C++ Tools. Einige Klassen Kapseln einen großen Teil der Win32-API (Application Programming Interface). Andere Klassen Kapseln Anwendungskonzepte, z. b. Dokumente, Ansichten und die Anwendung selbst. Andere kapseln OLE-Features und ODBC-und DAO-Datenzugriffs Funktionen.  (DAO wird durch Office 2013 unterstützt. DAO 3,6 ist die endgültige Version, die als veraltet eingestuft wird.)
 
-Beispielsweise wird das Win32's-Konzept von Window von der MFC-Klasse `CWnd`gekapselt. Das heißt, eine C++ Klasse mit dem Namen `CWnd` kapselt oder umschließt das `HWND` handle, das ein Windows-Fenster darstellt. Ebenso kapselt Class `CDialog` Win32-Dialogfelder.
+Beispielsweise wird das Win32's-Konzept von Window von der MFC-Klasse gekapselt `CWnd` . Dies bedeutet, dass eine C++-Klasse `CWnd` mit dem Namen das Handle kapselt oder umschließt `HWND` , das ein Windows-Fenster darstellt. Ebenso `CDialog` kapselt die Klasse Win32-Dialogfelder.
 
-Kapselung bedeutet, C++ dass die-Klasse `CWnd`z. b. eine Member-Variable vom Typ `HWND`enthält, und die Member-Funktionen der Klasse Kapseln Aufrufe von Win32-Funktionen, die eine `HWND` als Parameter annehmen. Die Klassenmember-Funktionen haben normalerweise denselben Namen wie die Win32-Funktion, die Sie kapseln.
+Kapselung bedeutet, dass die C++-Klasse z. b. `CWnd` eine Member-Variable vom Typ enthält `HWND` , und die Member-Funktionen der Klasse Kapseln Aufrufe von Win32-Funktionen, die einen `HWND` als Parameter annehmen. Die Klassenmember-Funktionen haben normalerweise denselben Namen wie die Win32-Funktion, die Sie kapseln.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-[SDI und MDI](../mfc/sdi-and-mdi.md)
+[SDI und MDI](sdi-and-mdi.md)
 
-[Dokumente, Ansichten und das Framework](../mfc/documents-views-and-the-framework.md)
+[Dokumente, Ansichten und das Framework](documents-views-and-the-framework.md)
 
-[Assistenten und Ressourcen-Editoren](../mfc/wizards-and-the-resource-editors.md)
+[Assistenten und Ressourcen-Editoren](wizards-and-the-resource-editors.md)
 
 ## <a name="in-related-sections"></a>In verwandten Abschnitten
 
-[Erstellen im Framework](../mfc/building-on-the-framework.md)
+[Erstellen im Framework](building-on-the-framework.md)
 
-[So ruft das Framework Ihren Code auf](../mfc/how-the-framework-calls-your-code.md)
+[So ruft das Framework Ihren Code auf](how-the-framework-calls-your-code.md)
 
-[CWinApp: Die Anwendungsklasse](../mfc/cwinapp-the-application-class.md)
+[CWinApp: Die Anwendungsklasse](cwinapp-the-application-class.md)
 
-[Dokumentvorlagen und der Erstellungs Vorgang für Dokumente/Sichten](../mfc/document-templates-and-the-document-view-creation-process.md)
+[Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](document-templates-and-the-document-view-creation-process.md)
 
-[Meldungsbehandlung und Zuordnung](../mfc/message-handling-and-mapping.md)
+[Meldungsbehandlung und Zuordnung](message-handling-and-mapping.md)
 
-[Fensterobjekte](../mfc/window-objects.md)
+[Fensterobjekte](window-objects.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden der Klassen zum Schreiben von Anwendungen für Windows](../mfc/using-the-classes-to-write-applications-for-windows.md)
+[Verwenden der Klassen zum Schreiben von Anwendungen für Windows](using-the-classes-to-write-applications-for-windows.md)

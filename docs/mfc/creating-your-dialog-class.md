@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dialog classes [MFC], Add Class Wizard
 - dialog classes [MFC], creating
 ms.assetid: d5321741-da41-47a8-bb1c-6a0e8b28c4c1
-ms.openlocfilehash: b8275754d46e9d76933624af55335e956736319a
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.openlocfilehash: fab75268e39d75b67db435ebb8d0af6c0b8371fd
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685644"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620502"
 ---
 # <a name="creating-your-dialog-class"></a>Erstellen eigener Dialogfeldklassen
 
@@ -23,7 +23,7 @@ Durch das [Hinzufügen einer Klasse](../ide/adding-a-class-visual-cpp.md) wird e
 
 In der. h-Datei:
 
-- Eine Klassen Deklaration für die Dialogfeld Klasse. Die-Klasse wird von [CDialog](../mfc/reference/cdialog-class.md)abgeleitet.
+- Eine Klassen Deklaration für die Dialogfeld Klasse. Die-Klasse wird von [CDialog](reference/cdialog-class.md)abgeleitet.
 
 In der CPP-Datei:
 
@@ -31,9 +31,9 @@ In der CPP-Datei:
 
 - Ein Standardkonstruktor für das Dialogfeld.
 
-- Eine außer Kraft setzung der [DoDataExchange](../mfc/reference/cwnd-class.md#dodataexchange) -Member-Funktion. Bearbeiten Sie diese Funktion. Sie wird für Dialog Datenaustausch und Validierungs Funktionen verwendet, die weiter unten unter [Dialog Datenaustausch und Validierung](../mfc/dialog-data-exchange-and-validation.md)beschrieben werden.
+- Eine außer Kraft setzung der [DoDataExchange](reference/cwnd-class.md#dodataexchange) -Member-Funktion. Bearbeiten Sie diese Funktion. Sie wird für Dialog Datenaustausch und Validierungs Funktionen verwendet, die weiter unten unter [Dialog Datenaustausch und Validierung](dialog-data-exchange-and-validation.md)beschrieben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Erstellen einer Dialogfeldklasse mit Code-Assistenten](../mfc/creating-a-dialog-class-with-code-wizards.md)<br/>
-[Arbeiten mit Dialog Feldern in MFC](../mfc/life-cycle-of-a-dialog-box.md)
+[Erstellen einer Dialog Feld Klasse mit Code-Assistenten](creating-a-dialog-class-with-code-wizards.md)<br/>
+[Arbeiten mit Dialogfeldern in MFC](life-cycle-of-a-dialog-box.md)

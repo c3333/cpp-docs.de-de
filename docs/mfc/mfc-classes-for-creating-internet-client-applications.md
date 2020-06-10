@@ -8,44 +8,44 @@ helpviewer_keywords:
 - Internet client applications [MFC], MFC
 - Internet applications [MFC], MFC
 ms.assetid: 67d34117-9839-4f4b-8bb8-0e4a9471c606
-ms.openlocfilehash: 578fd5b72e6c04610aa862f1a6631895a32a9bfe
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d65a2e8b373f26fe928e4c3e7c0193aec4edf2d6
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81358220"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84618035"
 ---
 # <a name="mfc-classes-for-creating-internet-client-applications"></a>MFC-Klassen für das Erstellen von Internetclientanwendungen
 
-MFC bietet die folgenden Klassen und globalen Funktionen zum Schreiben von Internetclientanwendungen. Einrückung gibt an, dass eine Klasse von der nicht eingerückten Klasse darüber abgeleitet wird. `CGopherFile`und `CHttpFile` leiten `CInternetFile`sich z. B. von ab. Diese Klassen und globalen Funktionen werden in AFXINET deklariert. H, `CFileFind`außer , das in AFX deklariert wird. H.
+MFC stellt die folgenden Klassen und globalen Funktionen zum Schreiben von Internet Client Anwendungen bereit. Einzug gibt an, dass eine Klasse von der übergeordneten Klasse abgeleitet ist. `CGopherFile`und `CHttpFile` `CInternetFile` können z. b. von abgeleitet werden. Diese Klassen und globalen Funktionen werden in AFXINET deklariert. H, außer `CFileFind` , das in AFX deklariert wird. Micha.
 
 ## <a name="classes"></a>Klassen
 
-- [CInternetSession](../mfc/reference/cinternetsession-class.md)
+- [CInternetSession](reference/cinternetsession-class.md)
 
-- [CInternetConnection](../mfc/reference/cinternetconnection-class.md)
+- [CInternetConnection](reference/cinternetconnection-class.md)
 
-  - [CFtpConnection](../mfc/reference/cftpconnection-class.md)
+  - [CFtpConnection](reference/cftpconnection-class.md)
 
-  - [CGopherConnection](../mfc/reference/cgopherconnection-class.md)
+  - [CGopherConnection](reference/cgopherconnection-class.md)
 
-  - [CHttpConnection](../mfc/reference/chttpconnection-class.md)
+  - [CHttpConnection](reference/chttpconnection-class.md)
 
-- [CInternetFile](../mfc/reference/cinternetfile-class.md)
+- [CInternetFile](reference/cinternetfile-class.md)
 
-  - [CGopherFile](../mfc/reference/cgopherfile-class.md)
+  - [CGopherFile](reference/cgopherfile-class.md)
 
-  - [CHttpFile](../mfc/reference/chttpfile-class.md)
+  - [CHttpFile](reference/chttpfile-class.md)
 
-- [CFileFind](../mfc/reference/cfilefind-class.md)
+- [CFileFind](reference/cfilefind-class.md)
 
-  - [CFtpFileFind](../mfc/reference/cftpfilefind-class.md)
+  - [CFtpFileFind](reference/cftpfilefind-class.md)
 
-  - [CGopherFileFind](../mfc/reference/cgopherfilefind-class.md)
+  - [CGopherFileFind](reference/cgopherfilefind-class.md)
 
-- [CGopherLocator](../mfc/reference/cgopherlocator-class.md)
+- [CGopherLocator](reference/cgopherlocator-class.md)
 
-- [CInternetException](../mfc/reference/cinternetexception-class.md)
+- [CInternetException](reference/cinternetexception-class.md)
 
 ## <a name="global-functions"></a>Globale Funktionen
 
@@ -57,6 +57,6 @@ MFC bietet die folgenden Klassen und globalen Funktionen zum Schreiben von Inter
 
 ## <a name="see-also"></a>Siehe auch
 
-[Win32-Interneterweiterungen (WinInet)](../mfc/win32-internet-extensions-wininet.md)<br/>
-[Voraussetzungen für Internetclientklassen](../mfc/prerequisites-for-internet-client-classes.md)<br/>
-[Schreiben einer Internetclientanwendung mithilfe von MFC-WinInet-Klassen](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)
+[Win32-Interneterweiterungen (WinInet)](win32-internet-extensions-wininet.md)<br/>
+[Voraussetzungen für Internetclientklassen](prerequisites-for-internet-client-classes.md)<br/>
+[Schreiben einer Internetclientanwendung mithilfe von MFC-WinInet-Klassen](writing-an-internet-client-application-using-mfc-wininet-classes.md)

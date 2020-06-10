@@ -31,27 +31,27 @@ helpviewer_keywords:
 - SafeNotEquals function
 - SafeSubtract function
 ms.assetid: fdc208e5-5d8a-41a9-8271-567fd438958d
-ms.openlocfilehash: c1c5593aee19254d4348d4e8658ffe9c3f0cf1b2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 585fd30715ff3520245210badc0fde2e2f87ae13
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368252"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622062"
 ---
 # <a name="safeint-functions"></a>SafeInt-Funktionen
 
-Die SafeInt-Bibliothek stellt mehrere Funktionen bereit, die Sie verwenden können, ohne eine Instanz der [SafeInt-Klasse](../safeint/safeint-class.md) zu erstellen. Wenn Sie einen einzelnen mathematischen Vorgang vor Ganzzahlüberlauf schützen möchten, können Sie diese Funktionen verwenden. Wenn Sie mehrere mathematische Vorgänge schützen möchten, sollten Sie `SafeInt`-Objekte erstellen. Es ist jedoch effizienter, `SafeInt`-Objekte zu erstellen, anstatt diese Funktionen mehrmals zu verwenden.
+Die SafeInt-Bibliothek stellt mehrere Funktionen bereit, die Sie verwenden können, ohne eine Instanz der [SafeInt-Klasse](safeint-class.md) zu erstellen. Wenn Sie einen einzelnen mathematischen Vorgang vor Ganzzahlüberlauf schützen möchten, können Sie diese Funktionen verwenden. Wenn Sie mehrere mathematische Vorgänge schützen möchten, sollten Sie `SafeInt`-Objekte erstellen. Es ist jedoch effizienter, `SafeInt`-Objekte zu erstellen, anstatt diese Funktionen mehrmals zu verwenden.
 
 Mit diesen Funktionen können Sie mathematische Operationen mit zwei verschiedenen Typen von Parametern vergleichen oder ausführen, ohne sie zuerst in denselben Typ konvertieren zu müssen.
 
 Jede dieser Funktionen hat zwei Vorlagentypen: `T` und `U`. Jeder dieser Typen kann ein boolescher Wert, Zeichen oder integraler Typ sein. Integrale Typen können mit oder ohne Vorzeichen sein und eine beliebige Größe von 8 Bits bis 64 Bits haben.
 
 > [!NOTE]
-> Die neueste Version dieser Bibliothek [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt)befindet sich unter .
+> Die neueste Version dieser Bibliothek finden Sie unter [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt) .
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-Funktion                      | BESCHREIBUNG
+Funktion                      | Beschreibung
 ----------------------------- | --------------------------------------------------------------
 [SafeAdd](#safeadd)           | Addiert zwei Zahlen und schützt vor Überlauf.
 [SafeCast](#safecast)         | Wandelt einen Parametertyp in einen anderen Typ um.
@@ -63,10 +63,10 @@ Funktion                      | BESCHREIBUNG
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-`Section`                                                  | BESCHREIBUNG
+`Section`                                                  | Beschreibung
 -------------------------------------------------------- | ----------------------------------------------------
-[SafeInt](../safeint/safeint-class.md)                   | Die `SafeInt`-Klasse.
-[SafeIntException](../safeint/safeintexception-class.md) | Die Exception-Klasse, die für die SafeInt-Bibliothek spezifisch ist.
+[SafeInt](safeint-class.md)                   | Die `SafeInt`-Klasse.
+[SafeIntException](safeintexception-class.md) | Die Exception-Klasse, die für die SafeInt-Bibliothek spezifisch ist.
 
 ## <a name="safeadd"></a><a name="safeadd"></a>SafeAdd
 
@@ -83,10 +83,10 @@ inline bool SafeAdd (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu addierende Zahl. Muss vom Typ T sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu addierende Zahl. Muss vom Typ U sein.
 
 *result*<br/>
@@ -135,10 +135,10 @@ inline bool SafeDivide (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Der Divisor. Muss vom Typ T sein.
 
-*U*<br/>
+*n*<br/>
 [in] Der Dividend. Muss vom Typ U sein.
 
 *result*<br/>
@@ -162,17 +162,17 @@ inline bool SafeEquals (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu vergleichende Zahl. Muss vom Typ T sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu vergleichende Zahl. Muss vom Typ U sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true**, wenn *t* und *u* gleich sind, andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Methode verbessert `==`, da Sie mit `SafeEquals` zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -190,17 +190,17 @@ inline bool SafeGreaterThan (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu vergleichende Zahl. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu vergleichende Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true**, wenn *t* größer als *u* ist, andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SafeGreaterThan` erweitert den regulären Vergleichsoperator, da Sie damit zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -218,17 +218,17 @@ inline bool SafeGreaterThanEquals (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu vergleichende Zahl. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu vergleichende Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true**, wenn *t* größer als oder gleich *u* ist, andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SafeGreaterThanEquals` verbessert den Standardvergleichsoperator, da Sie damit zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -246,17 +246,17 @@ inline bool SafeLessThan (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste Zahl. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true**, wenn *t* kleiner als *u* ist, andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode verbessert den Standardvergleichsoperator, da Sie mit `SafeLessThan` zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -274,17 +274,17 @@ inline bool SafeLessThanEquals (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu vergleichende Zahl. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu vergleichende Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true**, wenn *t* kleiner als oder gleich *u* ist, andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SafeLessThanEquals` erweitert den regulären Vergleichsoperator, da Sie damit zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -303,10 +303,10 @@ inline bool SafeModulus (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Der Divisor. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Der Dividend. Muss vom Typ `U` sein.
 
 *result*<br/>
@@ -331,10 +331,10 @@ inline bool SafeMultiply (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu multiplizierende Zahl. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu multiplizierende Zahl. Muss vom Typ `U` sein.
 
 *result*<br/>
@@ -358,17 +358,17 @@ inline bool SafeNotEquals (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste zu vergleichende Zahl. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die zweite zu vergleichende Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true**, wenn *t* und *u* nicht gleich sind, andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Methode verbessert `!=`, da Sie mit `SafeNotEquals` zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -387,10 +387,10 @@ inline bool SafeSubtract (
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 [in] Die erste Zahl in der Subtraktion. Muss vom Typ `T` sein.
 
-*U*<br/>
+*n*<br/>
 [in] Die von *t* zu subtrahierende Zahl. Muss vom Typ `U` sein.
 
 *result*<br/>

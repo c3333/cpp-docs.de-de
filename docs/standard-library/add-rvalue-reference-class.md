@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - add_rvalue_reference Class
 ms.assetid: 76b0cb7c-1031-45d0-b409-f03ab0297580
-ms.openlocfilehash: 64694f2428c1dd536df4d242a17f3f011cfb290c
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 6d7cc1d45ed3b963de0a0a004c1696ddbf0af440
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456523"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623921"
 ---
-# <a name="addrvaluereference-class"></a>add_rvalue_reference-Klasse
+# <a name="add_rvalue_reference-class"></a>add_rvalue_reference-Klasse
 
 Erstellt einen rvalue-Verweistyp des Vorlagenparameters, wenn es sich dabei um einen Objekt- oder Funktionstyp handelt. Ansonsten ist der Typ aufgrund der Semantik der Verweisreduzierung der Gleiche wie der Vorlagenparameter.
 
@@ -29,14 +29,14 @@ using add_rvalue_reference_t = typename add_rvalue_reference<T>::type;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der zu ändernde Typ.
 
 ## <a name="remarks"></a>Hinweise
 
-Die `add_rvalue_reference` -Klasse verfügt über einen `type`Member mit dem Namen, bei dem es sich um einen Alias für den Typ eines Rvalue-Verweises auf den Vorlagen Parameter *T*handelt. Die Semantik der Verweis Reduzierung impliziert, dass für nicht-Objekt-und nicht-Funktions Typen t `T&&` ein *t*ist. Wenn *T* beispielsweise ein Lvalue-Verweistyp ist, `add_rvalue_reference<T>::type` ist der lvalue-Verweistyp und kein rvalue-Verweis.
+Die- `add_rvalue_reference` Klasse verfügt über einen Member mit dem Namen `type` , bei dem es sich um einen Alias für den Typ eines Rvalue-Verweises auf den Vorlagen Parameter *T*handelt. Die Semantik der Verweis Reduzierung impliziert, dass für nicht-Objekt-und nicht-Funktions *T*Typen t `T&&` ein *t*ist. Wenn *T* beispielsweise ein Lvalue-Verweistyp ist, `add_rvalue_reference<T>::type` ist der lvalue-Verweistyp und kein rvalue-Verweis.
 
-Zur einfacheren Handhabung definiert `add_rvalue_reference_t` `type` `add_rvalue_reference`type_traits > eine hilfsvorlage,, die das Element von Alias Aliase. \<
+Aus Gründen der praktische Definition \<type_traits> definiert eine hilfsvorlage, `add_rvalue_reference_t` die das-Element von Aliase Alias `type` `add_rvalue_reference` .
 
 ## <a name="example"></a>Beispiel
 
@@ -69,14 +69,14 @@ All static_assert tests of add_rvalue_reference passed.
 */
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Header: \<type_traits>
 
-Namespace: Std
+Namespace: std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[add_lvalue_reference-Klasse](../standard-library/add-lvalue-reference-class.md)\
-[is_rvalue_reference-Klasse](../standard-library/is-rvalue-reference-class.md)
+[<type_traits>](type-traits.md)\
+[add_lvalue_reference-Klasse](add-lvalue-reference-class.md)\
+[is_rvalue_reference-Klasse](is-rvalue-reference-class.md)

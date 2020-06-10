@@ -1,5 +1,5 @@
 ---
-title: Dokument-/-Erstellung
+title: Dokument-Sicht Erstellung
 ms.date: 11/04/2016
 helpviewer_keywords:
 - documents [MFC], creating
@@ -12,29 +12,29 @@ helpviewer_keywords:
 - MFC, documents
 - tables [MFC], objects each MFC object creates
 ms.assetid: bda14f41-ed50-439d-af9e-591174e7dd64
-ms.openlocfilehash: b5f9b783e8e14744a816fd63b327ed95d9da8e8a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5441827188f5bff98638cc85cd29e2efd79f8ae8
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62240784"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84620340"
 ---
 # <a name="documentview-creation"></a>Erstellen von Dokument/Ansicht
 
-Das Framework stellt Implementierungen von der **neu** und **öffnen** Befehle (unter anderem) die **Datei** Menü. Erstellen eines neuen Dokuments zugeordnete Ansicht und der zugehörigen Rahmenfenster ist eine gemeinschaftliche Arbeit zwischen dem Application-Objekt, eine Dokumentvorlage, das gerade erstellte Dokument und das neu erstellte Rahmenfenster. Die folgende Tabelle fasst zusammen, welche Objekte was erstellen.
+Das Framework stellt Implementierungen der **neuen** und **geöffneten** Befehle (unter anderem) im Menü **Datei** bereit. Die Erstellung eines neuen Dokuments und der zugehörigen Ansicht und des Rahmen Fensters ist ein kooperativer Aufwand zwischen dem Anwendungs Objekt, einer Dokument Vorlage, dem neu erstellten Dokument und dem neu erstellten Rahmen Fenster. In der folgenden Tabelle ist zusammengefasst, welche Objekte was erstellen.
 
-### <a name="object-creators"></a>Objektersteller
+### <a name="object-creators"></a>Objekt Ersteller
 
-|Creator|Wird erstellt|
+|Creator|Erstellt|
 |-------------|-------------|
-|Application-Objekt|Dokumentvorlage|
-|Dokumentvorlage|Dokument|
-|Dokumentvorlage|Rahmenfenster|
-|Rahmenfenster|Ansicht|
+|Anwendungsobjekt|Dokument Vorlage|
+|Dokument Vorlage|Dokument|
+|Dokument Vorlage|Rahmen Fenster|
+|Rahmen Fenster|Sicht|
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](../mfc/document-templates-and-the-document-view-creation-process.md)<br/>
-[Erstellen von Dokumentvorlagen](../mfc/document-template-creation.md)<br/>
-[Beziehungen zwischen MFC-Objekten](../mfc/relationships-among-mfc-objects.md)<br/>
-[Erstellen neuer Dokumente, Fenster und Ansichten](../mfc/creating-new-documents-windows-and-views.md)
+[Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](document-templates-and-the-document-view-creation-process.md)<br/>
+[Erstellen von Dokumentvorlagen](document-template-creation.md)<br/>
+[Beziehungen zwischen MFC-Objekten](relationships-among-mfc-objects.md)<br/>
+[Erstellen neuer Dokumente, Fenster und Ansichten](creating-new-documents-windows-and-views.md)

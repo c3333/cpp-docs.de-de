@@ -7,14 +7,14 @@ helpviewer_keywords:
 - add_volatile class
 - add_volatile
 ms.assetid: cde57277-d764-402d-841e-97611ebaab14
-ms.openlocfilehash: becea4ff52342a79d0b87ffe0022e2cf84c47949
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 1a4ad8a86b88cdfa98f043bb49ba6eeff8b090c9
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456534"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84619203"
 ---
-# <a name="addvolatile-class"></a>add_volatile-Klasse
+# <a name="add_volatile-class"></a>add_volatile-Klasse
 
 Wandelt einen **flüchtigen** Typ aus dem angegebenen Typ um.
 
@@ -30,12 +30,12 @@ using add_volatile_t = typename add_volatile<T>::type;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der zu ändernde Typ.
 
 ## <a name="remarks"></a>Hinweise
 
-Eine Instanz von `add_volatile<T>` verfügt über einen Member **typedef** `type` , der *t* ist, wenn *t* ein Verweis, eine Funktion oder ein flüchtiger qualifizierter Typ ist; andernfalls **flüchtig** *t*. Der Alias `add_volatile_t` ist eine Verknüpfung für den Zugriff auf die **typedef** `type`-Member.
+Eine Instanz von `add_volatile<T>` verfügt über einen Member **typedef** , der `type` *t* ist, wenn *t* ein Verweis, eine Funktion oder ein flüchtiger qualifizierter Typ ist; andernfalls **flüchtig** *t*. Der Alias `add_volatile_t` ist eine Verknüpfung für den Zugriff auf die **typedef** -Member `type` .
 
 ## <a name="example"></a>Beispiel
 
@@ -59,13 +59,13 @@ int main()
 add_volatile<int> == int
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[<type_traits>](../standard-library/type-traits.md)\
-[remove_volatile-Klasse](../standard-library/remove-volatile-class.md)
+[<type_traits>](type-traits.md)\
+[remove_volatile-Klasse](remove-volatile-class.md)

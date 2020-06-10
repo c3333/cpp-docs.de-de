@@ -25,106 +25,106 @@ helpviewer_keywords:
 - printing [MFC], pagination
 - documents [MFC], paginating
 ms.assetid: 69626b86-73ac-4b74-b126-9955034835ef
-ms.openlocfilehash: 87912c06a40740d25530235ee421c6c8bfa11aab
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c73692c315b07d6b690180886d494ee12f85f52d
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370736"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621057"
 ---
 # <a name="multipage-documents"></a>Mehrseitige Dokumente
 
-In diesem Artikel wird das Windows-Druckprotokoll beschrieben und erläutert, wie Dokumente gedruckt werden, die mehr als eine Seite enthalten. Der Artikel behandelt die folgenden Themen:
+In diesem Artikel wird das Windows-Druck Protokoll beschrieben und erläutert, wie Dokumente gedruckt werden, die mehr als eine Seite enthalten. In diesem Artikel werden die folgenden Themen behandelt:
 
-- [Druckprotokoll](#_core_the_printing_protocol)
+- [Druck Protokoll](#_core_the_printing_protocol)
 
-- [Überschreiben von Ansichtsklassenfunktionen](#_core_overriding_view_class_functions)
+- [Überschreiben von Ansichts Klassen Funktionen](#_core_overriding_view_class_functions)
 
 - [Paginierung](#_core_pagination)
 
-- [Druckerseiten im Vergleich zu Dokumentseiten](#_core_printer_pages_vs.._document_pages)
+- [Drucker Seiten im Vergleich zu Dokument Seiten](#_core_printer_pages_vs.._document_pages)
 
-- [Print-Time-Paginierung](#_core_print.2d.time_pagination)
+- [Druck Zeit Paginierung](#_core_print.2d.time_pagination)
 
-## <a name="the-printing-protocol"></a><a name="_core_the_printing_protocol"></a>Das Druckprotokoll
+## <a name="the-printing-protocol"></a><a name="_core_the_printing_protocol"></a>Das Druck Protokoll
 
-Um ein mehrseitiges Dokument zu drucken, interagieren das Framework und die Ansicht auf folgende Weise. Zuerst zeigt das Framework das Dialogfeld **Drucken** an, erstellt einen Gerätekontext für den Drucker und ruft die [StartDoc-Memberfunktion](../mfc/reference/cdc-class.md#startdoc) des [CDC-Objekts](../mfc/reference/cdc-class.md) auf. Anschließend ruft das Framework für jede Seite des Dokuments `CDC` die [StartPage-Memberfunktion](../mfc/reference/cdc-class.md#startpage) des Objekts auf, weist das Ansichtsobjekt an, die Seite zu drucken, und ruft die [EndPage-Memberfunktion](../mfc/reference/cdc-class.md#endpage) auf. Wenn der Druckermodus vor dem Starten einer bestimmten Seite geändert werden muss, ruft die Ansicht [ResetDC](../mfc/reference/cdc-class.md#resetdc)auf, wodurch die [DEVMODE-Struktur](/windows/win32/api/wingdi/ns-wingdi-devmodea) aktualisiert wird, die die neuen Druckermodusinformationen enthält. Wenn das gesamte Dokument gedruckt wurde, ruft das Framework die [EndDoc-Memberfunktion](../mfc/reference/cdc-class.md#enddoc) auf.
+Zum Drucken eines mehrseitigen Dokuments interagieren das Framework und die Ansicht wie folgt. Zuerst zeigt das Framework das Dialogfeld **Drucken** an, erstellt einen Gerätekontext für den Drucker und ruft die [StartDoc](reference/cdc-class.md#startdoc) -Member-Funktion des [CDC](reference/cdc-class.md) -Objekts auf. Dann ruft das Framework für jede Seite des Dokuments die [Startpage](reference/cdc-class.md#startpage) -Member-Funktion des- `CDC` Objekts auf, weist das Ansichts Objekt an, die Seite zu drucken, und ruft die [EndPage](reference/cdc-class.md#endpage) -Member-Funktion auf. Wenn der Drucker Modus vor dem Starten einer bestimmten Seite geändert werden muss, ruft die Ansicht [ResetDC](reference/cdc-class.md#resetdc)auf, wodurch die [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) -Struktur aktualisiert wird, die die neuen druckermodusinformationen enthält. Wenn das gesamte Dokument gedruckt wurde, ruft das Framework die [EndDoc](reference/cdc-class.md#enddoc) -Member-Funktion auf.
 
-## <a name="overriding-view-class-functions"></a><a name="_core_overriding_view_class_functions"></a>Überschreiben von Ansichtsklassenfunktionen
+## <a name="overriding-view-class-functions"></a><a name="_core_overriding_view_class_functions"></a>Überschreiben von Ansichts Klassen Funktionen
 
-Die [CView-Klasse](../mfc/reference/cview-class.md) definiert mehrere Memberfunktionen, die vom Framework während des Druckvorgangs aufgerufen werden. Durch Das Überschreiben dieser Funktionen in Ihrer Ansichtsklasse stellen Sie die Verbindungen zwischen der Drucklogik des Frameworks und der Drucklogik der Ansichtsklasse bereit. In der folgenden Tabelle sind diese Memberfunktionen aufgeführt.
+Die [CView](reference/cview-class.md) -Klasse definiert mehrere Element Funktionen, die während des Druckens vom Framework aufgerufen werden. Wenn Sie diese Funktionen in der Ansichts Klasse überschreiben, stellen Sie die Verbindungen zwischen der Druck Logik des Frameworks und der Druck Logik der Ansichts Klasse bereit. In der folgenden Tabelle sind diese Element Funktionen aufgeführt.
 
-### <a name="cviews-overridable-functions-for-printing"></a>Die überschreibbaren Funktionen von CView für den Druck
+### <a name="cviews-overridable-functions-for-printing"></a>Über schreibbare Funktionen von CView zum Drucken
 
-|Name|Grund für die Überbelegung|
+|name|Grund für das Überschreiben|
 |----------|---------------------------|
-|[OnPreparePrinting](../mfc/reference/cview-class.md#onprepareprinting)|So fügen Sie Werte in das Dialogfeld Drucken ein, insbesondere die Länge des Dokuments|
-|[OnBeginPrinting](../mfc/reference/cview-class.md#onbeginprinting)|So weisen Sie Schriftarten oder andere GDI-Ressourcen zu|
-|[OnPrepareDC](../mfc/reference/cview-class.md#onpreparedc)|So passen Sie Attribute des Gerätekontexts für eine bestimmte Seite an oder führen Druckzeitpaginierung durch|
-|[OnPrint](../mfc/reference/cview-class.md#onprint)|So drucken Sie eine bestimmte Seite|
-|[OnEndPrinting](../mfc/reference/cview-class.md#onendprinting)|So deallocateen Sie GDI-Ressourcen|
+|[OnPreparePrinting](reference/cview-class.md#onprepareprinting)|So fügen Sie Werte im Dialogfeld "Drucken" ein, insbesondere die Länge des Dokuments|
+|[OnBeginPrinting](reference/cview-class.md#onbeginprinting)|So weisen Sie Schriftarten oder andere GDI-Ressourcen zu|
+|[OnPrepareDC](reference/cview-class.md#onpreparedc)|So passen Sie die Attribute des Geräte Kontexts für eine bestimmte Seite an oder für die Druck Zeit Paginierung|
+|[OnPrint](reference/cview-class.md#onprint)|So drucken Sie eine bestimmte Seite|
+|[OnEndPrinting](reference/cview-class.md#onendprinting)|So teilen Sie GDI-Ressourcen auf|
 
-Sie können auch in anderen Funktionen druckbezogene Verarbeitungen übernehmen, aber diese Funktionen sind es, die den Druckprozess antreiben.
+Sie können auch druckbezogene Verarbeitung in anderen Funktionen durchführen, aber diese Funktionen sind die, die den Druckvorgang steuern.
 
-Die folgende Abbildung veranschaulicht die Schritte im Druckprozess `CView`und zeigt, wo die einzelnen Druckelementfunktionen aufgerufen werden. Im weiteren Verlauf dieses Artikels werden die meisten dieser Schritte ausführlicher erläutert. Weitere Teile des Druckprozesses werden im Artikel [Allocating GDI Resources](../mfc/allocating-gdi-resources.md)beschrieben.
+In der folgenden Abbildung werden die Schritte erläutert, die beim Druckprozess ausgeführt werden, und es wird gezeigt, wo die Druckelement Funktionen der einzelnen `CView` Funktionen aufgerufen werden. Im restlichen Teil dieses Artikels werden die meisten dieser Schritte ausführlicher erläutert. Weitere Teile des Druckvorgangs werden im Artikel [Zuordnen von GDI-Ressourcen](allocating-gdi-resources.md)beschrieben.
 
 ![Druckschleifenprozess](../mfc/media/vc37c71.gif "Druckschleifenprozess") <br/>
 Druckschleife
 
 ## <a name="pagination"></a><a name="_core_pagination"></a>Paginierung
 
-Das Framework speichert einen Großteil der Informationen über einen Druckauftrag in einer [CPrintInfo-Struktur.](../mfc/reference/cprintinfo-structure.md) Mehrere der Werte `CPrintInfo` in beziehen sich auf pagination; Auf diese Werte kann zugegriffen werden, wie in der folgenden Tabelle dargestellt.
+Das Framework speichert einen Großteil der Informationen zu einem Druckauftrag in einer [CPrintInfo](reference/cprintinfo-structure.md) -Struktur. Einige der Werte in `CPrintInfo` beziehen sich auf die Paginierung. diese Werte sind wie in der folgenden Tabelle dargestellt zugänglich.
 
-### <a name="page-number-information-stored-in-cprintinfo"></a>In CPrintInfo gespeicherte Seitennummerninformationen
+### <a name="page-number-information-stored-in-cprintinfo"></a>In CPrintInfo gespeicherte Informationen zur Seitenzahl
 
-|Membervariable oder<br /><br /> Funktionsname(e)|Seitenzahl referenziert|
+|Member-Variable oder<br /><br /> Funktionsname (n)|Seitenzahl referenziert|
 |-----------------------------------------------|----------------------------|
 |`GetMinPage`/`SetMinPage`|Erste Seite des Dokuments|
 |`GetMaxPage`/`SetMaxPage`|Letzte Seite des Dokuments|
-|`GetFromPage`|Erste Seite, die gedruckt werden soll|
+|`GetFromPage`|Erste zu druckende Seite|
 |`GetToPage`|Letzte zu druckende Seite|
-|`m_nCurPage`|Seite, die gerade gedruckt wird|
+|`m_nCurPage`|Die aktuell gedruckte Seite|
 
-Seitenzahlen beginnen bei 1, d. h., die erste Seite ist mit 1 nummeriert, nicht mit 0. Weitere Informationen zu diesen und anderen Mitgliedern von [CPrintInfo](../mfc/reference/cprintinfo-structure.md)finden Sie unter *MFC-Referenz*.
+Seitenzahlen beginnen bei 1, d. h. die erste Seite ist 1, nicht 0. Weitere Informationen zu diesen und anderen Membern von [CPrintInfo](reference/cprintinfo-structure.md)finden Sie in der *MFC-Referenz*.
 
-Zu Beginn des Druckvorgangs ruft das Framework die [OnPreparePrinting-Memberfunktion](../mfc/reference/cview-class.md#onprepareprinting) der `CPrintInfo` Ansicht auf und übergibt einen Zeiger an eine Struktur. Der Anwendungs-Assistent stellt `OnPreparePrinting` eine Implementierung des Aufrufts `CView` [DoPreparePrinting](../mfc/reference/cview-class.md#doprepareprinting), einer weiteren Memberfunktion von bereit. `DoPreparePrinting`ist die Funktion, die das Dialogfeld Drucken anzeigt und einen Druckergerätekontext erstellt.
+Zu Beginn des Druckvorgangs Ruft das Framework die [OnPreparePrinting](reference/cview-class.md#onprepareprinting) -Member-Funktion der Sicht auf und übergibt einen Zeiger auf eine- `CPrintInfo` Struktur. Der Anwendungs-Assistent stellt eine Implementierung von bereit, `OnPreparePrinting` die " [DoPreparePrinting](reference/cview-class.md#doprepareprinting)", eine andere Member-Funktion von, aufruft `CView` . `DoPreparePrinting`die Funktion, die das Dialogfeld Drucken anzeigt und einen Drucker Gerätekontext erstellt.
 
-Zu diesem Zeitpunkt weiß die Anwendung nicht, wie viele Seiten sich im Dokument befinden. Es verwendet die Standardwerte 1 und 0xFFFF für die Zahlen der ersten und letzten Seite des Dokuments. Wenn Sie wissen, wie viele Seiten `OnPreparePrinting` Ihr Dokument hat, überschreiben und rufen Sie [SetMaxPage]--brokenlink--(reference/cprintinfo-class.md-setmaxpage) für die `CPrintInfo` Struktur auf, bevor Sie es an `DoPreparePrinting`senden. Auf diese Weise können Sie die Länge des Dokuments angeben.
+An diesem Punkt weiß die Anwendung nicht, wie viele Seiten im Dokument enthalten sind. Dabei werden die Standardwerte 1 und 0xFFFF für die Zahlen der ersten und letzten Seite des Dokuments verwendet. Wenn Sie wissen, wie viele Seiten das Dokument enthält, überschreiben Sie, `OnPreparePrinting` und nennen Sie [SetMaxPage]--brokenlink--(Reference/CPrintInfo-Class. MD # SetMaxPage) für die `CPrintInfo` Struktur, bevor Sie Sie an senden `DoPreparePrinting` . Auf diese Weise können Sie die Länge des Dokuments angeben.
 
-`DoPreparePrinting`zeigt dann das Dialogfeld Drucken an. Wenn sie zurückgegeben `CPrintInfo` wird, enthält die Struktur die vom Benutzer angegebenen Werte. Wenn der Benutzer nur einen ausgewählten Seitenbereich drucken möchte, kann er die Start- und Endseitenzahlen im Dialogfeld Drucken angeben. Das Framework ruft diese `GetFromPage` Werte `GetToPage` mithilfe der und Funktionen von [CPrintInfo](../mfc/reference/cprintinfo-structure.md)ab. Wenn der Benutzer keinen Seitenbereich angibt, `GetMinPage` `GetMaxPage` ruft das Framework die zurückgegebenen Werte auf, um das gesamte Dokument zu drucken.
+`DoPreparePrinting`zeigt das Dialogfeld Drucken an. Wenn die-Struktur zurückgegeben wird, `CPrintInfo` enthält Sie die vom Benutzer festgelegten Werte. Wenn der Benutzer nur einen ausgewählten Seitenbereich drucken möchte, kann er die Start-und Endseiten Nummern im Dialogfeld Drucken angeben. Das Framework ruft diese Werte mithilfe der `GetFromPage` - `GetToPage` Funktion und der-Funktion von [CPrintInfo](reference/cprintinfo-structure.md)ab. Wenn der Benutzer keinen Seitenbereich angibt, ruft das Framework `GetMinPage` und `GetMaxPage` auf und verwendet die zurückgegebenen Werte, um das gesamte Dokument zu drucken.
 
-Für jede Seite eines dokuments, das gedruckt werden soll, ruft das Framework zwei Memberfunktionen in Ihrer Ansichtsklasse auf, [OnPrepareDC](../mfc/reference/cview-class.md#onpreparedc) und `CPrintInfo` [OnPrint](../mfc/reference/cview-class.md#onprint), und übergibt jede Funktion zwei Parameter: einen Zeiger auf ein [CDC-Objekt](../mfc/reference/cdc-class.md) und einen Zeiger auf eine Struktur. Jedes Mal, `OnPrepareDC` wenn `OnPrint`das Framework aufruft und , `CPrintInfo` gibt es einen anderen Wert im *m_nCurPage* Member der Struktur. Auf diese Weise teilt das Framework der Ansicht mit, welche Seite gedruckt werden soll.
+Für jede Seite eines Dokuments, das gedruckt werden soll, ruft das Framework zwei Member-Funktionen in ihrer Ansichts Klasse, [OnPrepareDC](reference/cview-class.md#onpreparedc) und [OnPrint](reference/cview-class.md#onprint), auf und übergibt jede Funktion mit zwei Parametern: einem Zeiger auf ein [CDC](reference/cdc-class.md) -Objekt und einem Zeiger auf eine- `CPrintInfo` Struktur. Jedes Mal, wenn das Framework `OnPrepareDC` und aufruft `OnPrint` , übergibt es einen anderen Wert in der *m_nCurPage* -Member der- `CPrintInfo` Struktur. Auf diese Weise teilt das Framework der Ansicht mit, welche Seite gedruckt werden soll.
 
-Die [OnPrepareDC-Memberfunktion](../mfc/reference/cview-class.md#onpreparedc) wird auch für die Bildschirmanzeige verwendet. Es nimmt Anpassungen am Gerätekontext vor, bevor das Zeichnen stattfindet. `OnPrepareDC`spielt eine ähnliche Rolle beim Drucken, aber es gibt `CDC` einige Unterschiede: Erstens stellt das Objekt einen Druckergerätekontext anstelle eines Bildschirmgerätekontexts dar, und zweitens wird ein `CPrintInfo` Objekt als zweiter Parameter übergeben. (Dieser Parameter ist `OnPrepareDC` **NULL,** wenn die Bildschirmanzeige aufgerufen wird.) Überschreiben, `OnPrepareDC` um Anpassungen am Gerätekontext basierend auf der Seite vorzunehmen, die gedruckt wird. Sie können z. B. den Herkunftsursprung des Ansichtsfensters und den Zuschneidebereich verschieben, um sicherzustellen, dass der entsprechende Teil des Dokuments gedruckt wird.
+Die [OnPrepareDC](reference/cview-class.md#onpreparedc) -Member-Funktion wird auch für die Bildschirm Anzeige verwendet. Vor dem Zeichnen erfolgt eine Anpassung des Geräte Kontexts. `OnPrepareDC`bietet eine ähnliche Rolle beim Drucken. es gibt jedoch einige Unterschiede: Erstens stellt das- `CDC` Objekt einen Drucker Gerätekontext anstelle eines Bildschirm-Geräte Kontexts dar, und zweitens wird ein- `CPrintInfo` Objekt als zweiter Parameter übergeben. (Dieser Parameter ist **null** , wenn `OnPrepareDC` für die Bildschirm Anzeige aufgerufen wird.) Überschreiben `OnPrepareDC` Sie, um den Gerätekontext basierend auf der zu Druck Ende Seite anzupassen. Beispielsweise können Sie den Viewportursprung und den Clippingbereich verschieben, um sicherzustellen, dass der entsprechende Teil des Dokuments gedruckt wird.
 
-Die [OnPrint-Memberfunktion](../mfc/reference/cview-class.md#onprint) führt den tatsächlichen Druck der Seite durch. Der Artikel [Wie Standarddruck ausgeführt wird,](../mfc/how-default-printing-is-done.md) wird gezeigt, wie das Framework [OnDraw](../mfc/reference/cview-class.md#ondraw) mit einem Druckergerätekontext aufruft, um den Druckvorgang durchzuführen. Genauer `OnPrint` gesagt ruft das `CPrintInfo` Framework eine Struktur und `OnPrint` einen Gerätekontext `OnDraw`auf und übergibt den Gerätekontext an . Überschreiben `OnPrint` Sie, um Rendering sendemittelzuführen, das nur während des Druckvorgangs und nicht für die Bildschirmanzeige ausgeführt werden soll. Zum Drucken von Kopf- oder Fußzeilen (weitere Informationen finden Sie im Artikel [Kopf- und Fußzeilen).](../mfc/headers-and-footers.md) Rufen `OnDraw` Sie dann von `OnPrint` der Außerkraftsetzung von auf, um das Rendering zu erledigen, das sowohl für die Bildschirmanzeige als auch für den Druck gemeinsam ist.
+Die Member-Funktion von [OnPrint](reference/cview-class.md#onprint) führt den eigentlichen Druck der Seite aus. Der Artikel [Funktionsweise des Standard Drucks](how-default-printing-is-done.md) zeigt, wie das Framework [OnDraw](reference/cview-class.md#ondraw) mit einem Drucker Gerätekontext aufruft, um den Druck auszuführen. Genauer ist, ruft das Framework `OnPrint` mit einer `CPrintInfo` Struktur und einem Gerätekontext auf und `OnPrint` übergibt den Gerätekontext an `OnDraw` . `OnPrint`Überschreiben Sie, um ein Rendering auszuführen, das nur während des Druckens und nicht für die Bildschirm Anzeige ausgeführt werden soll. Beispielsweise zum Drucken von Kopf-oder Fußzeilen (Weitere Informationen finden Sie in den Artikeln [Kopf-und Fußzeilen](headers-and-footers.md) ). Anschließend wird `OnDraw` von der-Überschreibung von aufgerufen `OnPrint` , um das gemeinsame Rendering für die Bildschirm Anzeige und den Druckvorgang durchzuführen
 
-Die Tatsache, dass `OnDraw` das Rendering sowohl für die Bildschirmanzeige als auch für den Druck erfolgt, bedeutet, dass Ihre Anwendung WYSIWYG ist: "Was Sie sehen, ist, was Sie bekommen." Angenommen, Sie schreiben keine WYSIWYG-Anwendung. Betrachten Sie beispielsweise einen Texteditor, der eine fett formatierte Schriftart zum Drucken verwendet, aber Steuercodes anzeigt, um fett formatierten Text auf dem Bildschirm anzuzeigen. In einer solchen Situation `OnDraw` verwenden Sie ausschließlich für die Bildschirmanzeige. Wenn Sie `OnPrint`überschreiben, ersetzen `OnDraw` Sie den Aufruf an durch einen Aufruf einer separaten Zeichnungsfunktion. Diese Funktion zeichnet das Dokument so, wie es auf Papier angezeigt wird, mit den Attributen, die Sie nicht auf dem Bildschirm anzeigen.
+Die Tatsache, dass `OnDraw` das Rendering sowohl für Bildschirm Anzeige als auch für Drucken durchführt, bedeutet, dass es sich bei der Anwendung um WYSIWYG handelt: "was Sie sehen." Nehmen Sie jedoch an, Sie schreiben keine WYSIWYG-Anwendung. Nehmen Sie beispielsweise einen Text-Editor, der eine Fett formatierte Schriftart zum Drucken verwendet, aber Steuercodes anzeigt, um fett formatierten Text auf dem Bildschirm anzuzeigen. In einer solchen Situation verwenden Sie `OnDraw` ausschließlich die Bildschirm Anzeige. Wenn Sie überschreiben `OnPrint` , ersetzen Sie den-Befehl durch einen-Befehl durch einen-Befehl `OnDraw` für eine separate Zeichnungs Funktion. Diese Funktion zeichnet das Dokument mit den Attributen, die nicht auf dem Bildschirm angezeigt werden, auf die Art und Weise, wie Sie auf dem Blatt angezeigt wird.
 
-## <a name="printer-pages-vs-document-pages"></a><a name="_core_printer_pages_vs.._document_pages"></a>Druckerseiten im Vergleich zu Dokumentseiten
+## <a name="printer-pages-vs-document-pages"></a><a name="_core_printer_pages_vs.._document_pages"></a>Drucker Seiten im Vergleich zu Dokument Seiten
 
-Wenn Sie sich auf Seitenzahlen beziehen, ist es manchmal notwendig, zwischen dem Konzept einer Seite durch den Drucker und dem Konzept einer Seite durch ein Dokument zu unterscheiden. Aus Der Sicht des Druckers ist eine Seite ein Blatt Papier. Ein Blatt Papier entspricht jedoch nicht unbedingt einer Seite des Dokuments. Wenn Sie z. B. einen Newsletter drucken, in dem die Blätter gefaltet werden sollen, kann ein Blatt Papier sowohl die erste als auch die letzte Seite des Dokuments nebeneinander enthalten. Wenn Sie eine Kalkulationstabelle drucken, besteht das Dokument ebenfalls überhaupt nicht aus Seiten. Stattdessen kann ein Blatt Papier die Zeilen 1 bis 20, die Spalten 6 bis 10 enthalten.
+Wenn Sie auf Seitenzahlen verweisen, ist es manchmal erforderlich, das Konzept einer Seite und das Konzept einer Seite eines Dokuments zu unterscheiden. Aus der Sicht des Druckers ist eine Seite ein Papierblatt. Ein Papierblatt ist jedoch nicht notwendigerweise gleich einer Seite des Dokuments. Wenn Sie z. b. einen Newsletter drucken, in dem die Blätter gefaltet werden sollen, kann ein Papierblatt nebeneinander sowohl die erste als auch die letzte Seite des Dokuments enthalten. Wenn Sie eine Kalkulations Tabelle drucken, besteht das Dokument auch nicht aus Seiten. Stattdessen kann ein Papierblatt die Zeilen 1 bis 20, Spalten 6 bis 10 enthalten.
 
-Alle Seitenzahlen in der [CPrintInfo-Struktur](../mfc/reference/cprintinfo-structure.md) beziehen sich auf Druckerseiten. Das Framework `OnPrepareDC` `OnPrint` ruft und einmal für jedes Blatt Papier, das durch den Drucker geht. Wenn Sie die [OnPreparePrinting-Funktion](../mfc/reference/cview-class.md#onprepareprinting) überschreiben, um die Länge des Dokuments anzugeben, müssen Sie Druckerseiten verwenden. Wenn es eine 1:1-Entsprechung gibt (d. h., eine Druckerseite entspricht einer Dokumentseite), ist dies einfach. Wenn hingegen Dokument- und Druckerseiten nicht direkt übereinstimmen, müssen Sie zwischen ihnen übersetzen. Erwägen Sie beispielsweise, eine Kalkulationstabelle zu drucken. Beim Überschreiben `OnPreparePrinting`müssen Sie berechnen, wie viele Blatt Papier zum Drucken der gesamten `SetMaxPage` Kalkulationstabelle `CPrintInfo`erforderlich sind, und diesen Wert dann beim Aufrufen der Memberfunktion von verwenden. Ebenso müssen Sie `OnPrepareDC`beim Überschreiben *m_nCurPage* in den Bereich der Zeilen und Spalten übersetzen, die auf diesem bestimmten Blatt angezeigt werden, und dann den Ursprung des Ansichtsfensters entsprechend anpassen.
+Alle Seitenzahlen in der [CPrintInfo](reference/cprintinfo-structure.md) -Struktur verweisen auf Drucker Seiten. Das Framework ruft `OnPrepareDC` und `OnPrint` einmal für jedes Papierblatt auf, das den Drucker übergibt. Wenn Sie die [OnPreparePrinting](reference/cview-class.md#onprepareprinting) -Funktion überschreiben, um die Länge des Dokuments anzugeben, müssen Sie Drucker Seiten verwenden. Wenn eine eins-zu-eins-Entsprechung vorliegt (d. h. eine Drucker Seite entspricht einer Dokument Seite), dann ist dies ganz einfach. Wenn auf der anderen Seite Dokument Seiten und Drucker Seiten nicht direkt übereinstimmen, müssen Sie zwischen Ihnen übersetzen. Sie sollten z. b. eine Tabelle drucken. Wenn Sie überschreiben `OnPreparePrinting` , müssen Sie berechnen, wie viele Papierblätter erforderlich sind, um die gesamte Kalkulations Tabelle auszugeben, und dann diesen Wert verwenden, wenn Sie die `SetMaxPage` Member-Funktion von Aufrufen `CPrintInfo` . Ebenso `OnPrepareDC` müssen Sie beim Überschreiben *m_nCurPage* in den Bereich der Zeilen und Spalten übersetzen, die auf dem jeweiligen Blatt angezeigt werden, und dann den Viewportursprung entsprechend anpassen.
 
-## <a name="print-time-pagination"></a><a name="_core_print.2d.time_pagination"></a>Print-Time Pagination
+## <a name="print-time-pagination"></a><a name="_core_print.2d.time_pagination"></a>Druck Zeit Paginierung
 
-In einigen Situationen weiß die Ansichtsklasse möglicherweise nicht im Voraus, wie lange das Dokument dauert, bis es tatsächlich gedruckt wurde. Angenommen, Ihre Anwendung ist nicht WYSIWYG, sodass die Länge eines Dokuments auf dem Bildschirm beim Drucken nicht der Länge entspricht.
+In einigen Fällen weiß Ihre Ansichts Klasse möglicherweise nicht im voraus, wie lange das Dokument ist, bis es tatsächlich gedruckt wurde. Nehmen Sie beispielsweise an, dass Ihre Anwendung nicht WYSIWYG ist, sodass die Länge eines Dokuments auf dem Bildschirm nicht der Länge entspricht, wenn Sie gedruckt werden.
 
-Dies verursacht ein Problem, wenn Sie [OnPreparePrinting](../mfc/reference/cview-class.md#onprepareprinting) für Ihre Ansichtsklasse `SetMaxPage` überschreiben: Sie können keinen Wert an die Funktion der [CPrintInfo-Struktur](../mfc/reference/cprintinfo-structure.md) übergeben, da Sie die Länge eines Dokuments nicht kennen. Wenn der Benutzer keine Seitenzahl angibt, die mit der Verwendung des Dialogfelds Drucken beendet werden soll, weiß das Framework nicht, wann die Druckschleife beendet werden soll. Die einzige Möglichkeit, zu bestimmen, wann die Druckschleife beendet werden soll, besteht darin, das Dokument auszudrucken und zu sehen, wann es endet. Die Ansichtsklasse muss beim Drucken nach dem Ende des Dokuments suchen und dann das Framework informieren, wenn das Ende erreicht ist.
+Dies verursacht ein Problem, wenn Sie [OnPreparePrinting](reference/cview-class.md#onprepareprinting) für Ihre Ansichts Klasse überschreiben: Sie können keinen Wert an die `SetMaxPage` Funktion der [CPrintInfo](reference/cprintinfo-structure.md) -Struktur übergeben, da Sie die Länge eines Dokuments nicht kennen. Wenn der Benutzer im Dialogfeld Drucken keine Seitenzahl angibt, die angehalten werden soll, weiß das Framework nicht, wann die Druck Schleife beendet werden soll. Die einzige Möglichkeit, zu bestimmen, wann die Druck Schleife beendet werden soll, besteht darin, das Dokument auszugeben und zu sehen, wann es endet. Ihre Ansichts Klasse muss das Ende des Dokuments während des Druckens überprüfen und dann das Framework informieren, wenn das Ende erreicht ist.
 
-Das Framework basiert auf der [OnPrepareDC-Funktion](../mfc/reference/cview-class.md#onpreparedc) Ihrer Ansichtsklasse, um ihr mitzuteilen, wann beendet werden soll. Nach jedem `OnPrepareDC`Aufruf von überprüft das `CPrintInfo` Framework ein Element der Struktur *namens m_bContinuePrinting*. Der Standardwert ist **TRUE.** Solange dies so bleibt, setzt das Framework die Druckschleife fort. Wenn es auf **FALSE**gesetzt ist, wird das Framework beendet. Um die Druckzeitpaginierung durchzuführen, überschreiben `OnPrepareDC` Sie, um zu überprüfen, ob das Ende des Dokuments erreicht wurde, und legen Sie *m_bContinuePrinting* auf **FALSE** fest.
+Das Framework basiert auf der [OnPrepareDC](reference/cview-class.md#onpreparedc) -Funktion Ihrer Ansichts Klasse, um Sie darüber zu informieren, wann Sie beendet werden soll. Nach jedem Aufruf `OnPrepareDC` von prüft das Framework einen Member der Struktur mit dem `CPrintInfo` Namen *m_bContinuePrinting*. Der Standardwert ist " **true".** Solange dies nicht der Fall ist, setzt das Framework die Druck Schleife fort. Wenn der Wert auf **false**festgelegt ist, wird das Framework angehalten. Überschreiben Sie zum Durchführen der Druck Zeit Paginierung, `OnPrepareDC` um zu überprüfen, ob das Ende des Dokuments erreicht wurde, und legen Sie *m_bContinuePrinting* auf **false** fest.
 
-Die Standardimplementierung `OnPrepareDC` von Sätzen *m_bContinuePrinting* auf **FALSE,** wenn die aktuelle Seite größer als 1 ist. Dies bedeutet, dass, wenn die Länge des Dokuments nicht angegeben wurde, das Framework davon ausgeht, dass das Dokument eine Seite lang ist. Eine Folge davon ist, dass Sie vorsichtig sein müssen, wenn Sie die Basisklassenversion von `OnPrepareDC`aufrufen. Gehen Sie nicht davon aus, dass *m_bContinuePrinting* **true** ist, nachdem sie die Basisklassenversion aufgerufen haben.
+Die Standard Implementierung von `OnPrepareDC` legt *m_bContinuePrinting* auf **false** fest, wenn die aktuelle Seite größer als 1 ist. Dies bedeutet Folgendes: Wenn die Länge des Dokuments nicht angegeben wurde, geht das Framework davon aus, dass das Dokument eine Seite lang ist. Eine Folge davon ist, dass Sie vorsichtig sein müssen, wenn Sie die Basisklassen Version von aufzurufen `OnPrepareDC` . Gehen Sie nicht davon aus, dass *m_bContinuePrinting* nach dem Aufruf der Basisklassen Version " **true** " ist.
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Kopf- und Fußzeilen](../mfc/headers-and-footers.md)
+- [Kopf-und Fußzeilen](headers-and-footers.md)
 
-- [Zuweisen von GDI-Ressourcen](../mfc/allocating-gdi-resources.md)
+- [Zuordnen von GDI-Ressourcen](allocating-gdi-resources.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Drucken](../mfc/printing.md)<br/>
-[CView-Klasse](../mfc/reference/cview-class.md)<br/>
-[CDC-Klasse](../mfc/reference/cdc-class.md)
+[Drucken](printing.md)<br/>
+[CView-Klasse](reference/cview-class.md)<br/>
+[CDC-Klasse](reference/cdc-class.md)

@@ -6,31 +6,31 @@ helpviewer_keywords:
 - MFC, managing state data
 - state management [MFC], exported DLLs
 ms.assetid: 3268666e-d24b-44f2-80e8-7c80f73b93ca
-ms.openlocfilehash: 129defe39a79fd38211a539a4a85d79d9a3c0998
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c521cad666864c728fd871b460cf0c92b815e414
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62405910"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84622644"
 ---
 # <a name="exported-dll-function-entry-points"></a>Einstiegspunkte für exportierte DLL-Funktionen
 
-Verwenden Sie für die exportierten Funktionen der DLL, die [AFX_MANAGE_STATE](reference/extension-dll-macros.md#afx_manage_state) Makro, um den richtigen globalen Status verwalten, beim Wechseln von der DLL-Modul zu DLL der aufrufenden Anwendung.
+Verwenden Sie für exportierte Funktionen einer DLL das [AFX_MANAGE_STATE](reference/extension-dll-macros.md#afx_manage_state) -Makro, um den richtigen globalen Zustand beizubehalten, wenn Sie vom dll-Modul zur dll der aufrufenden Anwendung wechseln.
 
-Wenn aufgerufen, um dieses Makro legt `pModuleState`, ein Zeiger auf ein `AFX_MODULE_STATE` Struktur, die globale Daten für das Modul als den effektiven Modulstatus für den Rest des enthaltenden Bereichs der Funktion enthält. Beim Verlassen des Bereichs, der das Makro enthält, wird der vorherige Modulstatus der effektiven automatisch wiederhergestellt.
+Beim Aufruf wird dieses Makro `pModuleState` , ein Zeiger auf eine- `AFX_MODULE_STATE` Struktur, die globale Daten für das Modul enthält, als effektiver Modul Zustand für den Rest des enthaltenden Bereichs der Funktion festgelegt. Wenn Sie den Bereich, der das Makro enthält, verlassen, wird der vorherige effektive Modul Zustand automatisch wieder hergestellt.
 
-Dieser Wechsel erfolgt durch Erstellen einer Instanz von einem `AFX_MODULE_STATE` -Klasse auf den Stapel. In seinem Konstruktor dieser Klasse erhält einen Zeiger auf den aktuellen Zustand in einer Membervariablen gespeichert und legt dann `pModuleState` als den neuen gültigen Modulstatus. In seinem Destruktor stellt diese Klasse in der Membervariablen als den effektiven Modulstatus gespeicherten Zeigers wieder her.
+Dieser Wechsel wird durch das Erstellen einer Instanz einer- `AFX_MODULE_STATE` Klasse im Stapel erreicht. In seinem Konstruktor erhält diese Klasse einen Zeiger auf den aktuellen Modul Zustand und speichert Sie in einer Element Variablen und legt dann `pModuleState` als neuen effektiven Modul Zustand fest. In seinem destrukturtor stellt diese Klasse den in der Member-Variable gespeicherten Zeiger als effektiven Modul Zustand wieder her.
 
-Wenn Sie eine exportierte Funktion, z. B. ein verfügen, die ein Dialogfeld, in der DLL, gestartet wird, müssen Sie den folgenden Code am Anfang der Funktion hinzufügen:
+Wenn Sie über eine exportierte Funktion verfügen, z. b. eine, die ein Dialogfeld in der dll startet, müssen Sie am Anfang der Funktion den folgenden Code hinzufügen:
 
-[!code-cpp[NVC_MFCConnectionPoints#6](../mfc/codesnippet/cpp/exported-dll-function-entry-points_1.cpp)]
+[!code-cpp[NVC_MFCConnectionPoints#6](codesnippet/cpp/exported-dll-function-entry-points_1.cpp)]
 
-Dies tauscht den aktuellen Modulstatus mit dem Status von zurückgegebenen [AfxGetStaticModuleState](reference/extension-dll-macros.md#afxgetstaticmodulestate) bis zum Ende des aktuellen Gültigkeitsbereichs.
+Dadurch wird der aktuelle Modul Zustand mit dem von [afxgetstaticmodulestate](reference/extension-dll-macros.md#afxgetstaticmodulestate) zurückgegebenen Zustand bis zum Ende des aktuellen Bereichs vertauscht.
 
-Probleme mit den Ressourcen-DLLs werden auftreten, wenn die `AFX_MANAGE_STATE` Makro wird nicht verwendet. Standardmäßig verwendet MFC Ressourcenhandle von der hauptanwendung beim Laden der Ressourcenvorlage an. Mit dieser Vorlage wird in der DLL tatsächlich gespeichert. Die Ursache ist, dass MFC modulstatusinformationen nicht durch gewechselt wurde die `AFX_MANAGE_STATE` Makro. Das Ressourcenhandle wird von MFCs-Modulstatus wiederhergestellt. Wechseln nicht den Zustand bewirkt, dass das Handle falsche Ressource verwendet werden.
+Probleme mit Ressourcen in DLLs treten auf, wenn das `AFX_MANAGE_STATE` Makro nicht verwendet wird. Standardmäßig verwendet MFC das Ressourcen Handle der Hauptanwendung, um die Ressourcen Vorlage zu laden. Diese Vorlage wird tatsächlich in der dll gespeichert. Die Ursache hierfür ist, dass die Modul Zustandsinformationen von MFC nicht durch das Makro gewechselt wurden `AFX_MANAGE_STATE` . Das Ressourcen Handle wird aus dem Modul Zustand von MFC wieder hergestellt. Wenn Sie den Modulstatus nicht wechseln, wird das falsche Ressourcen Handle verwendet.
 
-`AFX_MANAGE_STATE` muss nicht in jeder Funktion in der DLL eingefügt werden. Z. B. `InitInstance` aufgerufen werden kann, mit dem MFC-Code in die Anwendung ohne `AFX_MANAGE_STATE` Da MFC automatisch den Zustand vor dem verschiebt `InitInstance` und klicken Sie dann die Switches, die sie wieder nach `InitInstance` zurückgibt. Dasselbe gilt für alle meldungszuordnung Handler. Reguläre MFC-DLLs haben eine besondere master Fensterprozedur, die den Zustand automatisch wechselt vor dem Weiterleiten einer Nachricht.
+`AFX_MANAGE_STATE`muss nicht in jede Funktion in der DLL eingefügt werden. Beispielsweise `InitInstance` kann vom MFC-Code in der Anwendung aufgerufen werden, ohne dass `AFX_MANAGE_STATE` MFC den Modul Zustand automatisch vor verschiebt `InitInstance` und dann nach der Rückgabe von zurück wechselt `InitInstance` . Das gleiche gilt für alle Meldungs Zuordnungs Handler. Reguläre MFC-DLLs verfügen tatsächlich über eine spezielle Master Fenster Prozedur, mit der der Modul Zustand vor dem Weiterleiten von Nachrichten automatisch gewechselt wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwalten der Statusdaten von MFC-Modulen](../mfc/managing-the-state-data-of-mfc-modules.md)
+[Verwalten der Statusdaten von MFC-Modulen](managing-the-state-data-of-mfc-modules.md)

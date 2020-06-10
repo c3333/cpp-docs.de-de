@@ -4,23 +4,23 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - message maps [MFC], searching
 ms.assetid: fd1df878-5601-45d7-bd1f-b8f8e65b9a17
-ms.openlocfilehash: f78a5af86ce068460612218e336bed84393f4902
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a50070882d17188cc3251693cb523a7b77d532c3
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389540"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84621673"
 ---
 # <a name="how-the-framework-searches-message-maps"></a>Wie das Framework Meldungszuordnungen durchsucht
 
-Das Framework durchsucht die meldungszuordnung Tabelle nach Übereinstimmungen mit eingehenden Nachrichten. Sobald Sie eine Meldungszuordnungseintrags für jede Nachricht, dass eine Klasse behandeln und die entsprechenden Handler schreiben soll schreiben, ruft das Framework automatisch die Handler an. Die folgenden Themen erläutern die meldungszuordnung Suche:
+Das Framework durchsucht die Message-Map-Tabelle nach Übereinstimmungen mit eingehenden Nachrichten. Nachdem Sie einen Meldungs Zuordnungs Eintrag für jede Nachricht geschrieben haben, die eine Klasse verarbeiten und die entsprechenden Handler schreiben soll, ruft das Framework die Handler automatisch auf. In den folgenden Themen wird das Suchen nach Nachrichten Zuordnungen erläutert:
 
-- [Wo sich meldungszuordnungen befinden](../mfc/where-to-find-message-maps.md)
+- [Speicherort für Nachrichten Zuordnungen](where-to-find-message-maps.md)
 
-- [Abgeleitete meldungszuordnungen](../mfc/derived-message-maps.md)
+- [Abgeleitete Nachrichten Zuordnungen](derived-message-maps.md)
 
-- [Bereiche von Nachrichten, Befehls-IDs oder Steuerelement-IDs zuordnen auf einen handler](../mfc/handlers-for-message-map-ranges.md)
+- [Zuordnung von Bereichen von Nachrichten, Befehls-IDs oder Steuerelement-IDs zu einem Handler](handlers-for-message-map-ranges.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Meldungsbehandlung und Zuordnung](../mfc/message-handling-and-mapping.md)
+[Meldungsbehandlung und Zuordnung](message-handling-and-mapping.md)

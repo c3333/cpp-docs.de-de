@@ -1,41 +1,41 @@
 ---
-title: Vorteile der Dokument-/ Ansichtarchitektur
+title: Vorteile der Dokument-/Ansichtsarchitektur
 ms.date: 11/04/2016
 helpviewer_keywords:
 - views [MFC], advantages
 - document/view architecture [MFC], advantages of
 ms.assetid: 0bc27071-e120-4889-939c-ce1e61fb9cb3
-ms.openlocfilehash: e250630bf3c9714fc01ff66b66fba3ac0d5b1cc1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 80f7141ec62d509defdea361586399bd375df0d1
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394727"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623277"
 ---
 # <a name="advantages-of-the-documentview-architecture"></a>Vorteile der Dokument-/Ansichtarchitektur
 
-Der Hauptvorteil der MFC Dokument-/Ansichtarchitektur ist, dass die Architektur mehrere Ansichten des gleichen Dokuments besonders gut unterstützt. (Wenn mehrere Ansichten ist nicht erforderlich, und der kleinen Mehraufwand für Dokumente und Ansichten in Ihrer Anwendung eine übermäßige ist, können Sie die Architektur vermeiden. [Alternativen zur Dokument-/Ansichtarchitektur](../mfc/alternatives-to-the-document-view-architecture.md).)
+Der Hauptvorteil bei der Verwendung der MFC-Dokument-/Ansichtarchitektur besteht darin, dass die Architektur mehrere Ansichten desselben Dokuments besonders gut unterstützt. (Wenn Sie nicht mehrere Ansichten benötigen und der kleine mehr Aufwand von Dokument/Ansicht in Ihrer Anwendung übermäßig hoch ist, können Sie die Architektur vermeiden. [Alternativen zur Dokument-/Ansichtarchitektur](alternatives-to-the-document-view-architecture.md).)
 
-Nehmen wir an, dass Ihre Anwendung Benutzer, die numerische Daten im Arbeitsblatt-Format oder im Diagramm anzeigen kann. Benutzer sollten finden Sie unter gleichzeitig sowohl die unformatierten Daten in der Kalkulationstabelle und ein Diagramm, die sich aus den Daten ergibt. Diese separaten Ansichten können Sie in separaten Rahmenfenstern oder Splitter Bereiche in einem einzelnen Fenster angezeigt. Jetzt nehmen die Benutzer die Daten in die Tabelle und bearbeiten können die Änderungen sofort im Diagramm dargestellten.
+Angenommen, Ihre Anwendung ermöglicht Benutzern das Anzeigen numerischer Daten entweder in Tabellenform oder in Diagrammform. Ein Benutzer möchte möglicherweise sowohl die Rohdaten als auch die Daten in der Kalkulations Tabelle und ein Diagramm sehen, das sich aus den Daten ergibt. Diese separaten Sichten werden in separaten Rahmen Fenstern oder in Splitter Bereichen innerhalb eines einzelnen Fensters angezeigt. Angenommen, der Benutzer kann die Daten in der Kalkulations Tabelle bearbeiten und die Änderungen sehen, die im Diagramm sofort reflektiert werden.
 
-In MFC würde die Arbeitsblatt-Ansicht und der Diagrammansicht auf anderen Klassen abgeleitet von CView basiert. Beide Ansichten würde mit einem einzelnen Dokument-Objekt zugeordnet werden. Das Dokument speichert die Daten (oder vielleicht aus einer Datenbank erhält). Beide Ansichten auf das Dokument zugreifen, und zeigen die Daten, die sie daraus abrufen.
+In MFC basieren die tabellenkalkulationsansicht und die Diagramm Ansicht auf verschiedenen Klassen, die von CView abgeleitet werden. Beide Sichten werden einem einzelnen Dokument Objekt zugeordnet. Das Dokument speichert die Daten (oder bezieht Sie ggf. aus einer Datenbank). Beide Sichten greifen auf das Dokument zu und zeigen die Daten an, die Sie daraus abrufen.
 
-Wenn ein Benutzer aktualisiert eine der Ansichten, die Aufrufe anzeigen `CDocument::UpdateAllViews`. Die Funktion benachrichtigt alle Ansichten des Dokuments, und jeder Ansicht mit den neuesten Daten aus dem Dokument aktualisiert. Ein einziger Aufruf an `UpdateAllViews` synchronisiert die verschiedenen Ansichten.
+Wenn ein Benutzer eine der Ansichten aktualisiert, ruft der Ansichts Objekt auf `CDocument::UpdateAllViews` . Diese Funktion benachrichtigt alle Sichten des Dokuments, und jede Ansicht wird mit den neuesten Daten aus dem Dokument aktualisiert. Mit dem einzelnen-Befehl werden `UpdateAllViews` die unterschiedlichen Ansichten synchronisiert.
 
-Dieses Szenario wäre schwierig, Code ohne die Trennung von Daten aus der Ansicht, insbesondere dann, wenn die Ansichten der Daten selbst gespeichert. Dokument/Ansicht ist es einfach. Das Framework ermöglicht die meiste Arbeit Koordination für Sie.
+Dieses Szenario wäre schwierig zu programmieren, ohne dass Daten aus der Ansicht getrennt werden. Dies gilt insbesondere, wenn die Sichten die Daten selbst gespeichert haben. Mit Dokument/Ansicht ist es ganz einfach. Das Framework führt den größten Teil der Koordination für Sie aus.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
-- [Alternativen zur Dokument-/Ansicht](../mfc/alternatives-to-the-document-view-architecture.md)
+- [Alternativen zu Dokument/Ansicht](alternatives-to-the-document-view-architecture.md)
 
-- [CDocument](../mfc/reference/cdocument-class.md)
+- [CDocument](reference/cdocument-class.md)
 
-- [CView](../mfc/reference/cview-class.md)
+- [CView](reference/cview-class.md)
 
-- [CDocument::UpdateAllViews](../mfc/reference/cdocument-class.md#updateallviews)
+- [CDocument:: UpdateAllViews](reference/cdocument-class.md#updateallviews)
 
-- [CView::GetDocument](../mfc/reference/cview-class.md#getdocument)
+- [CView:: GetDocument](reference/cview-class.md#getdocument)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dokument-/Ansichtsarchitektur](../mfc/document-view-architecture.md)
+[Dokument-/Ansichtarchitektur](document-view-architecture.md)

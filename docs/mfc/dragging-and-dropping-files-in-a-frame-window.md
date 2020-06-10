@@ -10,19 +10,19 @@ helpviewer_keywords:
 - frame windows [MFC], dragging and dropping files in
 - drag and drop [MFC], Windows Explorer
 ms.assetid: 85560fe9-121b-4105-bd7b-216b966e19fa
-ms.openlocfilehash: 0129b939e0fe2afd5dd29623bb44418bfd16c20d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 42f21e2441f8ba3d2c6a13503c928880fe100f04
+ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62240659"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84623155"
 ---
 # <a name="dragging-and-dropping-files-in-a-frame-window"></a>Ziehen und Fallenlassen von Dateien in einem Rahmenfenster
 
-Das Rahmenfenster verwaltet eine Beziehung mit Datei-Explorer oder Datei-Manager.
+Das Rahmen Fenster verwaltet eine Beziehung mit dem Datei-Explorer oder Datei-Manager.
 
-Durch Hinzufügen von ein paar initialisieren aufruft, in der Überschreibung der der `CWinApp` Memberfunktion `InitInstance`, wie in beschrieben [CWinApp: Die Anwendungsklasse](../mfc/cwinapp-the-application-class.md), dass Ihr Rahmenfenster indirekt Öffnen von Dateien im Datei-Explorer oder Datei-Manager Drag & Drop in das Rahmenfenster. Finden Sie unter [Manager für Dateiserver Drag & Drop](../mfc/special-cwinapp-services.md).
+Durch das Hinzufügen einiger initialisierender Aufrufe in der Überschreibung der `CWinApp` Member `InitInstance` -Funktion, wie in [CWinApp: der Application-Klasse](cwinapp-the-application-class.md)beschrieben, kann Ihr Rahmen Fenster indirekt Dateien öffnen, die aus dem Datei-Explorer oder Datei-Manager gezogen und im Rahmen Fenster abgelegt werden. Siehe [Drag](special-cwinapp-services.md)& amp; Drop des Datei-Managers.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von Rahmenfenstern](../mfc/using-frame-windows.md)
+[Verwenden von Rahmenfenstern](using-frame-windows.md)
