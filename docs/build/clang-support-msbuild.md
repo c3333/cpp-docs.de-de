@@ -1,15 +1,15 @@
 ---
 title: Clang-/LLVM-Unterstützung in Visual Studio-Projekten
-ms.date: 08/30/2019
+ms.date: 06/02/2020
 ms.description: Configure a Visual Studio MSBuild project to use the Clang/LLVM toolchain.
 helpviewer_keywords:
 - Clang support for C++ MSBuild projects
-ms.openlocfilehash: 8d7d7fec979d3e7b8f665e56094ee1c309e3b686
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1a1dfef033bffd3d7f1d24233752d7beae11af8e
+ms.sourcegitcommit: d695bb727bd2b081af4d50127b0242a9a5bdce61
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323123"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84332278"
 ---
 # <a name="clangllvm-support-in-visual-studio-projects"></a>Clang-/LLVM-Unterstützung in Visual Studio-Projekten
 
@@ -35,7 +35,7 @@ Klicken Sie mit der rechten Maustaste auf den Projektknoten im **Projektmappen-E
 
 ![Clang-Komponenteninstallation](media/clang-msbuild-prop-page.png)
 
-Wenn Sie die Clang-Tools verwenden, die in Visual Studio enthalten sind, sind keine weiteren Schritte erforderlich. Bei Windows-Projekten ruft Visual Studio standardmäßig Clang im Modus [clang-cl](https://llvm.org/devmtg/2014-04/PDFs/Talks/clang-cl.pdf) auf und erstellt eine Verknüpfung mit der Microsoft-Implementierung der Standardbibliothek. Standardmäßig befindet sich **clang-cl.exe** unter `C:\Program Files (x86)\Microsoft Visual Studio\2019\Common7\IDE\CommonExtensions\Microsoft\Llvm\bin`.
+Wenn Sie die Clang-Tools verwenden, die in Visual Studio enthalten sind, sind keine weiteren Schritte erforderlich. Bei Windows-Projekten ruft Visual Studio standardmäßig Clang im Modus [clang-cl](https://llvm.org/devmtg/2014-04/PDFs/Talks/clang-cl.pdf) auf und erstellt eine Verknüpfung mit der Microsoft-Implementierung der Standardbibliothek. Standardmäßig befindet sich **clang-cl.exe** unter *%VCINSTALLDIR%\\Extras\\Llvm\\bin\\* und *%VCINSTALLDIR%\\Extras\\Llvm\\x64\\bin\\* .
 
 Wenn Sie eine benutzerdefinierte Clang-Installation verwenden, können Sie Änderungen unter **Projekt** > **Eigenschaften** > **VC++-Verzeichnisse** > **Konfigurationseigenschaften** > **Ausführbare Verzeichnisse** vornehmen, indem Sie dort das Stammverzeichnis der benutzerdefinierten Clang-Installation als erstes Verzeichnis hinzufügen. Alternativ können Sie den Wert der `LLVMInstallDir`-Eigenschaft ändern. Weitere Informationen finden Sie unter [Festlegen eines benutzerdefinierten LLVM-Speicherorts](#custom_llvm_location).
 
