@@ -5,12 +5,12 @@ helpviewer_keywords:
 - profile-guided optimizations
 - optimization, profile-guided [C++]
 ms.assetid: 2225c307-d3ae-42c1-8345-a5a959d132dc
-ms.openlocfilehash: 46619e77861b6a3a78d74ce6c6d9173a3a5f270f
-ms.sourcegitcommit: 283cb64fd7958a6b7fbf0cd8534de99ac8d408eb
+ms.openlocfilehash: 062f8fb8138446e4a00ba6501d6eeb8571625749
+ms.sourcegitcommit: 2d7550d0f375aafa428ef0fb2e3962e4232be28e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64857328"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84777317"
 ---
 # <a name="profile-guided-optimizations"></a>Profilgesteuerte Optimierungen
 
@@ -48,6 +48,9 @@ Um die profilgesteuerte Optimierung zu verwenden, führen Sie die folgenden Schr
    Verwenden Sie sowohl die Linkeroptionen **/LTCG** als auch [/USEPROFILE](reference/useprofile.md), um das optimierte Image zu erstellen. Bei diesem Schritt wird die `.pgd`-Datei als Eingabe verwendet. Wenn Sie **/USEPROFILE** angeben, können Sie optional ein Argument **PGD =** _Dateiname_ hinzufügen, um einen nicht standardmäßigen Namen oder Speicherort für die `.pgd`-Datei anzugeben. Sie können diesen Namen auch mit der veralteten **/PGD**-Linkeroption angeben. Die Kombination aus **/LTCG** und **/USERPROFILE** ersetzt die veralteten Linkeroptionen **/LTCG:PGOPTIMIZE** und **/LTCG:PGUPDATE**.
 
 Es ist sogar möglich, die optimierte ausführbare Datei zu erstellen und später zu ermitteln, ob eine zusätzliche Profilierung zum Erstellen eines weiter optimierten Images sinnvoll wäre. Wenn das instrumentierte Image und seine `.pgd`-Datei verfügbar sind, können Sie zusätzliche Testläufe ausführen und das optimierte Image mit der neueren `.pgd`-Datei neu erstellen, indem Sie die gleichen Linkeroptionen **/LTCG** und **/USEPROFILE** verwenden.
+
+> [!NOTE]
+> Bei den zwei Dateien `.pgc` und `.pgd` handelt es sich um Binärdateien. Wenn diese in einem Quellcodeverwaltungssystem gespeichert werden, werden jegliche automatischen Transformationen vermieden, die möglicherweise an Textdateien vorgenommen werden.
 
 ## <a name="optimizations-performed-by-pgo"></a>Von PGO ausgeführte Optimierungen
 
