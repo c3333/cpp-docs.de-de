@@ -1,21 +1,21 @@
 ---
 title: Aktualisieren von WINVER und _WIN32_WINNT
-description: Wann und wie Sie Winver-und _WIN32_WINNT-Makros in aktualisierten Visual C++ Studio-Projekten aktualisieren.
-ms.date: 01/22/2020
+description: Wann und wie aktualisieren Sie Winver-und _WIN32_WINNT Makros in aktualisierten Visual Studio C++-Projekten.
+ms.date: 06/19/2020
 helpviewer_keywords:
 - WINVER in an upgraded Visual Studio C++ project
 - _WIN32_WINNT in an upgraded Visual Studio C++ project
 ms.assetid: 6a1f1d66-ae0e-48a7-81c3-524d8e8f3447
-ms.openlocfilehash: b81c7967732c7b0c23ff0eb73d2a866a9b33713b
-ms.sourcegitcommit: b67b08472b6f1ee8f1c5684bba7056d3e0fc745f
+ms.openlocfilehash: a0faed612517bf26cd89473e1aef248fb9e7b33e
+ms.sourcegitcommit: 493fd8747f832e1facb9a76c437a25a5c9fb55f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725695"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141053"
 ---
 # <a name="update-winver-and-_win32_winnt"></a>Aktualisieren von WINVER und _WIN32_WINNT
 
-Wenn Sie die Windows SDK verwenden, können Sie angeben, auf welchen Versionen von Windows der Code ausgeführt werden kann. Die Präprozessormakros **winver** und **_WIN32_WINNT** geben die minimale Betriebssystemversion an, die der Code unterstützt. Visual Studio und der Microsoft C++ -compilersupport für Windows 7 SP1 und höher. Ältere Toolsets umfassen Unterstützung für Windows XP SP4, Windows Server 2003 SP4, Vista und Windows Server 2008. Windows 95, Windows 98, Windows Me, Windows NT und Windows 2000 werden nicht unterstützt.
+Wenn Sie die Windows SDK verwenden, können Sie angeben, auf welchen Versionen von Windows der Code ausgeführt werden kann. Die Präprozessormakros **winver** und **_WIN32_WINNT** geben die minimale Betriebssystemversion an, die der Code unterstützt. Visual Studio und die Microsoft C++-Compilerunterstützung für Windows 7 SP1 und höher. Ältere Toolsets umfassen Unterstützung für Windows XP SP2, Windows Server 2003 SP1, Vista und Windows Server 2008. Windows 95, Windows 98, Windows Me, Windows NT und Windows 2000 werden nicht unterstützt.
 
 Wenn Sie ein älteres Projekt aktualisieren, müssen Sie möglicherweise Ihre **winver** -oder **_WIN32_WINNT** -Makros aktualisieren. Wenn Ihnen Werte für eine nicht unterstützte Version von Windows zugewiesen sind, werden möglicherweise Kompilierungsfehler im Zusammenhang mit diesen Makros angezeigt.
 
@@ -92,10 +92,10 @@ Möglicherweise werden nicht alle diese Versionen von Windows in der Datei " *sd
 > [!NOTE]
 > Es ist nicht gewährleistet, dass die Werte auf jeden Fall funktionieren, wenn Sie interne MFC-Header in die Anwendung aufnehmen.
 
-Dieses Makro kann auch mithilfe der `/D`-Compileroption definiert werden. Weitere Informationen finden Sie unter [/D (Preprocessor Definitions)](../build/reference/d-preprocessor-definitions.md).
+Dieses Makro kann auch mithilfe der `/D`-Compileroption definiert werden. Weitere Informationen finden Sie unter [/D (Präprozessordefinitionen)](../build/reference/d-preprocessor-definitions.md).
 
 Weitere Informationen zur Bedeutung dieser Makros finden Sie unter [Verwenden der Windows-Header](/windows/win32/WinProg/using-the-windows-headers).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Änderungsverlauf von Visual C++](../porting/visual-cpp-change-history-2003-2015.md)

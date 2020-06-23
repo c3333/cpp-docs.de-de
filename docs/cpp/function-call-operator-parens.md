@@ -1,6 +1,6 @@
 ---
-title: 'Funktionsaufrufoperator: ()'
-ms.date: 11/04/2016
+title: 'Funktions Aufrufoperator: ()'
+ms.date: 06/11/2020
 helpviewer_keywords:
 - ( ) function call operator
 - function calls, C++ functions
@@ -10,48 +10,54 @@ helpviewer_keywords:
 - functions [C++], function-call operator
 - function call operator ()
 ms.assetid: 50c92e59-a4bf-415a-a6ab-d66c679ee80a
-ms.openlocfilehash: 08c60ff261e944ed5b54b51a013a6d331f212154
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+no-loc:
+- opt
+ms.openlocfilehash: 59fd36a5ae135c55813019f04b0f5df4be2800b3
+ms.sourcegitcommit: 2d7550d0f375aafa428ef0fb2e3962e4232be28e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179769"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84777304"
 ---
 # <a name="function-call-operator-"></a>Funktionsaufrufoperator: ()
 
-Ein Postfix-Expression, gefolgt vom Funktions aufrufsoperator **()** , gibt einen Funktions aufzurufen an.
+Ein Funktions aufzurufen ist eine Art von *`postfix-expression`* , die durch einen Ausdruck gebildet wird, der eine Funktion, gefolgt vom Funktions aufrufsoperator, angibt **`()`** . Ein-Objekt kann eine-Funktion deklarieren `operator ()` , die Funktions Aufrufsemantik für das-Objekt bereitstellt.
 
 ## <a name="syntax"></a>Syntax
 
-```
-postfix-expression
-( [argument-expression-list ] )
-```
+> *`postfix-expression`*:\
+> &nbsp;&nbsp;&nbsp;&nbsp;*`postfix-expression`* **`(`** *`argument-expression-list`* <sub>opt</sub> **`)`**
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die Argumente für den Funktionsaufrufoperator sind null oder mehr Ausdrücke, die durch Trennzeichen getrennt sind – die tatsächlichen Argumente der Funktion.
+Die Argumente für den Funktions Aufrufoperator stammen aus einer *`argument-expression-list`* , einer durch Trennzeichen getrennten Liste von Ausdrücken. Die Werte dieser Ausdrücke werden als Argumente an die Funktion übermittelt. Die *Argument-Expression-List* kann leer sein. Vor C++ 17 ist die Reihenfolge der Auswertung des Funktions Ausdrucks und der Argument Ausdrücke nicht angegeben und kann in beliebiger Reihenfolge auftreten. In c++ 17 und höher wird der Funktions Ausdruck vor allen Argument Ausdrücken oder Standardargumenten ausgewertet. Die Argument Ausdrücke werden in einer unbestimmten Reihenfolge ausgewertet.
 
-Der *Postfix-Expression* muss zu einer Funktions Adresse (z. b. einem Funktions Bezeichner oder dem Wert eines Funktions Zeigers) ausgewertet werden, und die *Argument-Expression-List* ist eine Liste von Ausdrücken (durch Kommas getrennt), deren Werte (die Argumente) an die Funktion übermittelt werden. Das *argument-expression-list*-Argument kann leer sein.
+Der *`postfix-expression`* identifiziert die aufzurufende Funktion. Es muss zu einer Funktions Adresse ausgewertet werden. Sie kann verschiedene Formen annehmen:
 
-Der *Postfix-Expression* muss einen der folgenden Typen aufweisen:
+- ein Funktions-oder Funktions Objektname oder-Zeiger,
+- ein Lvalue-Ausdruck, der auf ein Funktions-oder Funktions Objekt verweist.
+- ein Element Funktions Accessor, entweder explizit oder implizit.
+
+Die von angegebene Funktion *`postfix-expression`* kann eine überladene Funktion sein. Die üblichen Regeln für die Überladungs Auflösung bestimmen die tatsächlich aufzurufende Funktion.
+
+Einige Beispiel Deklarationen:
 
 - Funktion, die den Typ `T` zurückgibt. Eine Beispieldeklaration ist
 
     ```cpp
-    T func( int i )
+    T func( int i );
     ```
 
 - Zeiger auf eine Funktion, die den Typ `T` zurückgibt. Eine Beispieldeklaration ist
 
     ```cpp
-    T (*func)( int i )
+    T (*func)( int i );
     ```
 
 - Verweis auf eine Funktion, die den Typ `T` zurückgibt. Eine Beispieldeklaration ist
 
     ```cpp
-    T (&func)(int i)
+    T (&func)(int i);
     ```
 
 - Zeiger auf eine Memberfunktion dereferenziert die Rückgabe des Typs `T`. Beispiele für Funktionsaufrufe sind
@@ -97,7 +103,7 @@ Welcome to C++
 
 ## <a name="function-call-results"></a>Ergebnisse des Funktionsaufrufs
 
-Ein Funktionsaufruf wird zu einem r-value ausgewertet, es sei denn, die Funktion ist als Referenztyp deklariert. Funktionen mit dem Verweisrückgabetyp werden zu L-Werten ausgewertet und können wie folgt auf der linken Seite einer Zuweisungsanweisung verwendet werden:
+Ein Funktions Aufrufwert wird zu einem Rvalue ausgewertet, es sei denn, die Funktion wird als Verweistyp deklariert. Funktionen mit Verweis Rückgabe Typen werden als Lvalues ausgewertet. Diese Funktionen können auf der linken Seite einer Zuweisungsanweisung verwendet werden, wie hier zu sehen ist:
 
 ```cpp
 // expre_Function_Call_Results.cpp
@@ -129,9 +135,9 @@ int main()
 }
 ```
 
-Der vorangehende Code definiert eine Klasse mit dem Namen `Point`, die private Datenobjekte enthält, die *x* -und *y* -Koordinaten darstellen. Diese Datenobjekte müssen geändert und ihre Werte abgerufen werden. Dieses Programm ist nur einer von mehreren Entwürfen für eine solche Klasse. Eine Verwendung der Funktionen `GetX` und `SetX` oder `GetY` und `SetY` ist ein anderer möglicher Entwurf.
+Der vorangehende Code definiert eine Klasse `Point` mit dem Namen, die private Datenobjekte enthält, die *x* -und *y* -Koordinaten darstellen. Diese Datenobjekte müssen geändert und ihre Werte abgerufen werden. Dieses Programm ist nur einer von mehreren Entwürfen für eine solche Klasse. Eine Verwendung der Funktionen `GetX` und `SetX` oder `GetY` und `SetY` ist ein anderer möglicher Entwurf.
 
-Funktionen, die Klassentypen, Zeiger auf Klassentypen oder Verweise auf Klassentypen zurückgeben, können als linker Operand für Memberauswahloperatoren verwendet werden. Daher ist der folgende Code gültig:
+Funktionen, die Klassentypen, Zeiger auf Klassentypen oder Verweise auf Klassentypen zurückgeben, können als linker Operand für Memberauswahloperatoren verwendet werden. Der folgende Code ist zulässig:
 
 ```cpp
 // expre_Function_Results2.cpp
@@ -179,5 +185,5 @@ Funktionen können rekursiv aufgerufen werden. Weitere Informationen zu Funktion
 ## <a name="see-also"></a>Weitere Informationen
 
 [Postfixausdrücke](../cpp/postfix-expressions.md)<br/>
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[C++ integrierte Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [Funktionsaufruf](../c-language/function-call-c.md)
