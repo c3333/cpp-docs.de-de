@@ -1,13 +1,13 @@
 ---
 title: Konfigurieren eines C++ Projekts unter Linux in Visual Studio
-ms.date: 06/11/2019
+ms.date: 06/22/2020
 ms.assetid: 4d7c6adf-54b9-4b23-bd23-5de0c825b768
-ms.openlocfilehash: c60fd678caef20d8b5a715b0e40bba6a37407709
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 6bc38e925e366804c8fe37604066b7cc20e04f15
+ms.sourcegitcommit: f9344b09a734e8b05a7494415991a22b7aec5ae8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623597"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269740"
 ---
 # <a name="configure-a-linux-project"></a>Konfigurieren eines Linux-Projekts
 
@@ -122,6 +122,10 @@ Sie können die Protokollierung aktivieren, um Probleme zu beheben:
 ![Remoteprotokollierung](media/remote-logging-vs2019.png)
 
 ::: moniker-end
+
+## <a name="linux-target-locale"></a><a name="locale"></a> Linux-Zielgebietsschema
+
+Visual Studio-Spracheinstellungen werden nicht an Linux-Ziele weitergegeben, da Visual Studio installierte Pakete nicht verwaltet oder konfiguriert. Nachrichten, die im **Ausgabefenster** angezeigt werden (z. B. Buildfehler), werden mit der Sprache und dem Gebietsschema des Linux-Ziels angezeigt. Sie müssen Ihre Linux-Ziele für das gewünschte Gebietsschema konfigurieren.
 
 ## <a name="see-also"></a>Siehe auch
 

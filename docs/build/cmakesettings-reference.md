@@ -4,12 +4,12 @@ ms.date: 11/22/2019
 helpviewer_keywords:
 - CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
-ms.openlocfilehash: f9c864b66df86165090b7d6d6fc9c4fc51d65a5e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c80bb27761b8de91f7caee5932f28f1ec2ac0e29
+ms.sourcegitcommit: 166039ceea3256c26fb23920b96de4257b8cf149
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328890"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84946647"
 ---
 # <a name="cmakesettingsjson-schema-reference"></a>CMakeSettings.json-Schemareferenz
 
@@ -71,7 +71,7 @@ Eine `configuration` verfügt über die folgenden Eigenschaften:
 
 Da Ninja für schnelle Buildgeschwindigkeiten statt für Flexibilität und Funktionalität entwickelt wurde, ist dieser als Standardwert festgelegt. Einige CMake-Projekte können jedoch mit Ninja keinen ordnungsgemäßen Build durchführen. In diesem Fall können Sie CMake anweisen, stattdessen ein Visual Studio-Projekt zu erstellen.
 
-Öffnen Sie **CMake > CMake-Einstellungen ändern** über das Hauptmenü, um einen Visual Studio-Generator in Visual Studio 2017 anzugeben. Löschen Sie „Ninja“, und geben Sie „V“ ein. Dadurch wird IntelliSense aktiviert, und Sie können den gewünschten Generator auswählen.
+Öffnen Sie den Einstellungs-Editor über das Hauptmenü, indem Sie auf **CMake > CMake-Einstellungen** klicken, um einen Visual Studio-Generator in Visual Studio 2017 anzugeben. Löschen Sie „Ninja“, und geben Sie „V“ ein. Dadurch wird IntelliSense aktiviert, und Sie können den gewünschten Generator auswählen.
 
 Klicken Sie mit der rechten Maustaste auf die Datei *CMakeLists.txt* im **Projektmappen-Explorer**, und wählen Sie **CMake-Einstellungen für Projekt**>**Erweiterte Einstellungen anzeigen**>**CMake-Generator** aus, um einen Visual Studio-Generator in Visual Studio 2019 anzugeben.
 
@@ -128,7 +128,7 @@ Wenn in der aktiven Konfiguration ein Visual Studio-Generator angegeben ist, wir
 - `remotePreGenerateCommand`: Gibt den Befehl an, der vor der Ausführung von CMake zum Analysieren der Datei *CMakeLists.txt* ausgeführt werden soll.
 - `remotePrebuildCommand`: Gibt den Befehl an, der vor der Erstellung auf dem Remotecomputer ausgeführt wird.
 - `remotePostbuildCommand`: Gibt den Befehl an, der nach der Erstellung auf dem Remotecomputer ausgeführt wird.
-- `variables`: Enthält ein Name/Wert-Paar von CMake-Variablen, die als **-D** *_Name_=_Wert_* an CMake übergeben werden. Wenn die Buildanweisungen Ihres CMake-Projekts das direkte Hinzufügen aller Variablen zur *CMakeCache.txt*-Datei festlegen, wird empfohlen, diese stattdessen hier hinzuzufügen. Im folgenden Beispiel wird gezeigt, wie Sie die Name/Wert-Paare für das Toolset 14.14.26428 MSVC angeben können:
+- `variables`: Enthält ein Name/Wert-Paar von CMake-Variablen, die als **-D***_Name_=_Wert_* an CMake übergeben werden. Wenn die Buildanweisungen Ihres CMake-Projekts das direkte Hinzufügen aller Variablen zur *CMakeCache.txt*-Datei festlegen, wird empfohlen, diese stattdessen hier hinzuzufügen. Im folgenden Beispiel wird gezeigt, wie Sie die Name/Wert-Paare für das Toolset 14.14.26428 MSVC angeben können:
 
 ```json
 "variables": [

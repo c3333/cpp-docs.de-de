@@ -1,14 +1,14 @@
 ---
 title: Erstellen und Konfigurieren eines Linux CMake-Projekts in Visual Studio
 description: Hier erfahren Sie, wie Sie ein Linux CMake-Projekt in Visual Studio erstellen, konfigurieren, bearbeiten und kompilieren.
-ms.date: 05/03/2020
+ms.date: 06/22/2020
 ms.assetid: f8707b32-f90d-494d-ae0b-1d44425fdc25
-ms.openlocfilehash: c12e32801c992f6ba3675327b9ae537890202a4c
-ms.sourcegitcommit: 8a01ae145bc65f5bc90d6e47b4a1bdf47b073ee7
+ms.openlocfilehash: 2149b102c452149070d59c9645ce34a5977a6057
+ms.sourcegitcommit: f9344b09a734e8b05a7494415991a22b7aec5ae8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82765759"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269727"
 ---
 # <a name="create-and-configure-a-linux-cmake-project"></a>Erstellen und Konfigurieren eines Linux-CMake-Projekts
 
@@ -120,7 +120,13 @@ Wenn Sie ein Ziel ausgewählt haben, wird CMake zum Generieren des CMake-Caches 
 
 ![Generieren des CMake-Caches unter Linux](media/cmake-linux-1.png "Generieren des CMake-Caches unter Linux")
 
+### <a name="intellisense"></a>Intellisense
+
 Visual Studio kopiert automatisch Header vom Linux-Computer in ein Verzeichnis auf Ihrem lokalen Windows-Computer, um IntelliSense-Unterstützung für Header auf Linux-Remotesystemen bereitzustellen. Weitere Informationen finden Sie unter [IntelliSense für Remoteheader (Visual Studio 2017-Version 15.7 und höher)](configure-a-linux-project.md#remote_intellisense).
+
+### <a name="locale"></a>Gebietsschema
+
+Weitere Informationen finden Sie unter [Linux-Zielgebietsschema](configure-a-linux-project.md#locale).
 
 ## <a name="debug-the-cmake-project"></a><a name="debug_cmake_project"></a> Debuggen des CMake-Projekts
 
