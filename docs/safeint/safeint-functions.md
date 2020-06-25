@@ -1,6 +1,6 @@
 ---
 title: SafeInt-Funktionen
-ms.date: 10/22/2018
+ms.date: 06/23/2020
 ms.topic: reference
 f1_keywords:
 - SafeInt functions
@@ -31,16 +31,16 @@ helpviewer_keywords:
 - SafeNotEquals function
 - SafeSubtract function
 ms.assetid: fdc208e5-5d8a-41a9-8271-567fd438958d
-ms.openlocfilehash: 585fd30715ff3520245210badc0fde2e2f87ae13
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 9af34e7dcb13f54b824088fa81b6d5a7145c6ae5
+ms.sourcegitcommit: 8645408c7929558b8162f781776d0908d790a41c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84622062"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334923"
 ---
 # <a name="safeint-functions"></a>SafeInt-Funktionen
 
-Die SafeInt-Bibliothek stellt mehrere Funktionen bereit, die Sie verwenden können, ohne eine Instanz der [SafeInt-Klasse](safeint-class.md) zu erstellen. Wenn Sie einen einzelnen mathematischen Vorgang vor Ganzzahlüberlauf schützen möchten, können Sie diese Funktionen verwenden. Wenn Sie mehrere mathematische Vorgänge schützen möchten, sollten Sie `SafeInt`-Objekte erstellen. Es ist jedoch effizienter, `SafeInt`-Objekte zu erstellen, anstatt diese Funktionen mehrmals zu verwenden.
+Die SafeInt-Bibliothek stellt mehrere Funktionen bereit, die Sie verwenden können, ohne eine Instanz der [SafeInt-Klasse](safeint-class.md) zu erstellen. Wenn Sie einen einzelnen mathematischen Vorgang vor Ganzzahlüberlauf schützen möchten, können Sie diese Funktionen verwenden. Wenn Sie mehrere mathematische Vorgänge schützen möchten, sollten Sie `SafeInt`-Objekte erstellen. Es ist effizienter, Objekte zu erstellen `SafeInt` , als diese Funktionen mehrmals zu verwenden.
 
 Mit diesen Funktionen können Sie mathematische Operationen mit zwei verschiedenen Typen von Parametern vergleichen oder ausführen, ohne sie zuerst in denselben Typ konvertieren zu müssen.
 
@@ -136,10 +136,10 @@ inline bool SafeDivide (
 ### <a name="parameters"></a>Parameter
 
 *Bund*<br/>
-[in] Der Divisor. Muss vom Typ T sein.
+[in] Der Dividend. Muss vom Typ T sein.
 
 *n*<br/>
-[in] Der Dividend. Muss vom Typ U sein.
+[in] Der Divisor. Muss vom Typ U sein.
 
 *result*<br/>
 [out] Der Parameter, in dem `SafeDivide` das Ergebnis speichert.
@@ -150,7 +150,7 @@ inline bool SafeDivide (
 
 ## <a name="safeequals"></a><a name="safeequals"></a>SafeEquals
 
-Vergleicht zwei Zahlen auf Gleichheit.
+Vergleicht zwei Zahlen, um zu bestimmen, ob Sie gleich sind.
 
 ```cpp
 template<typename T, typename U>
@@ -250,7 +250,7 @@ inline bool SafeLessThan (
 [in] Die erste Zahl. Muss vom Typ `T` sein.
 
 *n*<br/>
-[in] Die zweite Zahl. Muss vom Typ `U` sein.
+in Die zweite Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -346,7 +346,7 @@ inline bool SafeMultiply (
 
 ## <a name="safenotequals"></a><a name="safenotequals"></a>SafeNotEquals
 
-Bestimmt, ob zwei Zahlen ungleich sind.
+Bestimmt, ob zwei Zahlen nicht gleich sind.
 
 ```cpp
 template<typename T, typename U>
@@ -366,7 +366,7 @@ inline bool SafeNotEquals (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn *t* und *u* nicht gleich sind, andernfalls **false**.
+**true** , wenn *t* und *u* nicht gleich sind. andernfalls **false**.
 
 ### <a name="remarks"></a>Hinweise
 

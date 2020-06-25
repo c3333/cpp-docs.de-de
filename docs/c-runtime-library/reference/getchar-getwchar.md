@@ -1,6 +1,6 @@
 ---
 title: getchar, getwchar
-ms.date: 4/2/2020
+ms.date: 06/23/2020
 api_name:
 - getchar
 - getwchar
@@ -33,12 +33,12 @@ helpviewer_keywords:
 - _gettchar function
 - standard input, reading from
 ms.assetid: 19fda588-3e33-415c-bb60-dd73c028086a
-ms.openlocfilehash: 2073f23583772f71489f1597b0df8e1e6abe2253
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: c6a02f16c3ee3d3e3bc4f86026719a1bd2885416
+ms.sourcegitcommit: 8645408c7929558b8162f781776d0908d790a41c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82920330"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334967"
 ---
 # <a name="getchar-getwchar"></a>getchar, getwchar
 
@@ -53,13 +53,15 @@ wint_t getwchar();
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt das gelesene Zeichen zurück. Um einen Lesefehler oder eine dateiendebedingung anzugeben, gibt **GetChar** **EOF**zurück, und **getwchar** gibt **WEOF**zurück. Verwenden Sie für **GetChar** **ferror** oder **feof** , um einen Fehler oder ein Dateiende zu überprüfen.
+Gibt das gelesene Zeichen zurück. Diese Funktionen warten auf Eingaben und geben nicht zurück, bis die Eingabe verfügbar ist.
+
+Um einen Lesefehler oder eine dateiendebedingung anzugeben, gibt **GetChar** **EOF**zurück, und **getwchar** gibt **WEOF**zurück. Verwenden Sie für **GetChar** **ferror** oder **feof** , um einen Fehler oder ein Dateiende zu überprüfen.
 
 ## <a name="remarks"></a>Hinweise
 
 Jede Routine liest ein einzelnes Zeichen aus **stdin** und erhöht den zugeordneten Dateizeiger, um auf das nächste Zeichen zu zeigen. **GetChar** ist mit [_fgetchar](fgetc-fgetwc.md)identisch, wird jedoch als Funktion und als Makro implementiert.
 
-Diese Funktionen sperren den aufrufenden Thread und sind daher threadsicher. Eine nicht sperrende Version finden Sie unter [_getc_nolock _getwc_nolock](getchar-nolock-getwchar-nolock.md).
+Diese Funktionen Sperren auch den aufrufenden Thread und sind Thread sicher. Eine nicht sperrende Version finden Sie unter [_getc_nolock _getwc_nolock](getchar-nolock-getwchar-nolock.md).
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -71,7 +73,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**GetChar**|\<stdio.h>|
 |**getwchar**|\<stdio.h> oder \<wchar.h>|
@@ -108,7 +110,7 @@ int main()
 This textInput was: This text
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [getc, getwc](getc-getwc.md)<br/>

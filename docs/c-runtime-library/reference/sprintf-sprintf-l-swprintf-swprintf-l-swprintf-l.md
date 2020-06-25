@@ -1,6 +1,6 @@
 ---
 title: sprintf, _sprintf_l, swprintf, _swprintf_l, __swprintf_l
-ms.date: 11/04/2016
+ms.date: 06/23/2020
 api_name:
 - __swprintf_l
 - sprintf
@@ -49,16 +49,16 @@ helpviewer_keywords:
 - sprintf_l function
 - formatted text [C++]
 ms.assetid: f6efe66f-3563-4c74-9455-5411ed939b81
-ms.openlocfilehash: c9a306788045fc6fe52da835029d32cfc42c0ed4
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9a3f10fc89d93717edfb032dea910040589c1254
+ms.sourcegitcommit: 8645408c7929558b8162f781776d0908d790a41c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70958287"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334950"
 ---
 # <a name="sprintf-_sprintf_l-swprintf-_swprintf_l-__swprintf_l"></a>sprintf, _sprintf_l, swprintf, _swprintf_l, __swprintf_l
 
-Schreiben Sie formatierte Daten in eine Zeichenfolge. Sicherere Versionen einiger dieser Funktionen sind verfügbar; siehe [sprintf_s, _sprintf_s_l, swprintf_s, _swprintf_s_l](sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md). Die sicheren Versionen von " **chanprintf** " und " **_swprintf_l** " verwenden keinen *count* -Parameter.
+Schreiben Sie formatierte Daten in eine Zeichenfolge. Sicherere Versionen einiger dieser Funktionen sind verfügbar; siehe [sprintf_s, _sprintf_s_l, swprintf_s, _swprintf_s_l](sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md). Die sicheren Versionen von " **tauprintf** " und " **_swprintf_l** " übernehmen die Größe des Puffers als Parameter.
 
 ## <a name="syntax"></a>Syntax
 
@@ -110,7 +110,7 @@ int _sprintf_l(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für die Ausgabe
 
 *count*<br/>
@@ -138,13 +138,13 @@ Die Anzahl geschriebener Zeichen oder-1, wenn ein Fehler aufgetreten ist. Wenn *
 Die **sprintf** -Funktion formatiert und speichert eine Reihe von Zeichen und Werten im *Puffer*. Jedes *Argument* (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation im- *Format*konvertiert und ausgegeben. Das Format besteht aus normalen Zeichen und hat die gleiche Form und Funktion wie das *Format* -Argument für [printf](printf-printf-l-wprintf-wprintf-l.md). Ein NULL-Zeichen wird nach dem letzten geschriebenen Zeichen angefügt. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 > [!IMPORTANT]
-> Mithilfe von **sprintf**gibt es keine Möglichkeit, die Anzahl der geschriebenen Zeichen einzuschränken. Dies bedeutet, dass der Code, der **sprintf** verwendet, für Pufferüberläufe anfällig ist. Verwenden Sie ggf. die Related-Funktion [_snprintf](snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md), die eine maximale Anzahl von Zeichen angibt, die in den *Puffer*geschrieben werden sollen, oder verwenden Sie [_scprintf](scprintf-scprintf-l-scwprintf-scwprintf-l.md) , um zu bestimmen, wie groß ein Puffer erforderlich ist. Stellen Sie außerdem sicher, dass das *Format* keine benutzerdefinierte Zeichenfolge ist.
+> Mithilfe von **sprintf**gibt es keine Möglichkeit, die Anzahl der geschriebenen Zeichen einzuschränken. Dies bedeutet, dass der Code, der **sprintf** verwendet, für Pufferüberläufe anfällig ist. Verwenden Sie ggf. die verwandte Funktion [_snprintf](snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md), die eine maximale Anzahl von Zeichen angibt, die in den *Puffer*geschrieben werden sollen, oder verwenden Sie [_scprintf](scprintf-scprintf-l-scwprintf-scwprintf-l.md) , um zu bestimmen, wie groß ein Puffer ist. Stellen Sie außerdem sicher, dass das *Format* keine benutzerdefinierte Zeichenfolge ist.
 
-" **tauprintf** " ist eine breit Zeichen Version von **sprintf**. die Zeigerargumente für " **tauprintf** " sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in " **tauprintf** " kann sich von der in **sprintf**unterscheiden. " **tauprintf** " und " **fwprintf** " Verhalten sich identisch, mit dem Unterschied, dass " **tauprintf** *" die Ausgabe* in eine Zeichenfolge anstatt in ein Ziel vom Typ " **File**" schreibt von Zeichen, die geschrieben werden sollen. Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
+" **tauprintf** " ist eine breit Zeichen Version von **sprintf**. die Zeigerargumente für " **tauprintf** " sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in " **tauprintf** " kann von **sprintf**abweichen. " **tauprintf** " und " **fwprintf** " Verhalten sich identisch, außer dass die Ausgabe von " **tauprintf** " in eine Zeichenfolge anstatt in ein Ziel vom Typ " **File**" geschrieben wird, und "WS- **f** " erfordert, dass der *count* -Parameter die maximale Anzahl von Zeichen Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
 " **tauprintf** " entspricht dem ISO-C-Standard, der den zweiten Parameter " *count*" vom Typ " **size_t**" erfordert. Um das alte, nicht dem Standard entsprechende Verhalten zu erzwingen, definieren Sie **_CRT_NON_CONFORMING_SWPRINTFS**. In einer zukünftigen Version wird das alte Verhalten möglicherweise entfernt. Daher sollte Code so geändert werden, dass das neue konforme Verhalten verwendet wird.
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -158,9 +158,9 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**sprintf**, **_sprintf_l**|\<stdio.h>|
-|**swprintf**, **_swprintf_l**|\<stdio.h> oder \<wchar.h>|
+|**swprintf** **_swprintf_l**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

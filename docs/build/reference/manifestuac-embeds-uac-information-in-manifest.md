@@ -1,6 +1,6 @@
 ---
 title: /MANIFESTUAC (bettet UAC-Informationen in Manifest ein)
-ms.date: 11/04/2016
+ms.date: 06/12/2020
 f1_keywords:
 - VC.Project.VCLinkerTool.UACUIAccess
 - VC.Project.VCLinkerTool.UACExecutionLevel
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - MANIFESTUAC linker option
 - -MANIFESTUAC linker option
 ms.assetid: 2d243c39-fa13-493c-b56f-d0d972a1603a
-ms.openlocfilehash: ecc30baabdcb60a030418e9643e2fcffe5ba8281
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 96719c6f6f5359afb03b967524b1f65db6dc664a
+ms.sourcegitcommit: 8645408c7929558b8162f781776d0908d790a41c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62321370"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334938"
 ---
 # <a name="manifestuac-embeds-uac-information-in-manifest"></a>/MANIFESTUAC (bettet UAC-Informationen in Manifest ein)
 
@@ -23,54 +23,53 @@ Gibt an, ob Informationen zur Benutzerkontensteuerung (UAC) in das Programmmanif
 
 ## <a name="syntax"></a>Syntax
 
-```
-/MANIFESTUAC
-/MANIFESTUAC:NO
-/MANIFESTUAC:fragment
-/MANIFESTUAC:level=_level
-/MANIFESTUAC:uiAccess=_uiAccess
-```
+> **`/MANIFESTUAC`**\
+> **`/MANIFESTUAC:NO`**\
+> **`/MANIFESTUAC:`**_`level`_\
+> **`/MANIFESTUAC:`**_`uiAccess`_\
+> **`/MANIFESTUAC:`**_`fragment`_
 
 ### <a name="parameters"></a>Parameter
 
-*fragment*<br/>
-Eine Zeichenfolge, die den `level`-Wert und den `uiAccess`-Wert enthält. Weitere Informationen finden Sie unter "Hinweise" weiter unten in diesem Thema.
+**`NO`**<br/>
+Der Linker bindet keine UAC-Informationen in das Programm Manifest ein.
 
-*_level*<br/>
-Einer der *"asInvoker"*, *"highestAvailable"*, oder *"requireAdministrator"*. Wird standardmäßig auf "asInvoker" festgelegt. Weitere Informationen finden Sie unter "Hinweise" weiter unten in diesem Thema.
+*`level`*<br/>
+**`level=`** gefolgt von einer von **`'asInvoker'`** , **`'highestAvailable'`** oder **`'requireAdministrator'`** . Der Standardwert ist **`'asInvoker'`** . Weitere Informationen finden Sie im Abschnitt [Hinweise](#remarks).
 
-*_uiAccess*<br/>
-**"true"** sollten Sie die Anwendung Sicherheitsebenen für Benutzeroberflächen umgehen und das Laufwerk input mit höheren Berechtigungen von Windows auf dem Desktop; andernfalls **"false"**. Standardmäßig **"false"**. Legen Sie auf **"true"** nur für barrierefreiheitsanwendungen mit Benutzeroberflächen.
+*`uiAccess`*<br/>
+**`uiAccess='true'`** Wenn die Anwendung die Schutz Ebenen der Benutzeroberfläche umgehen und Eingaben in Fenster mit höheren Berechtigungen auf dem Desktop steuern soll, andernfalls **`uiAccess='false'`** . Der Standardwert ist **`uiAccess='false'`** . Legen Sie dieses Argument **`uiAccess='true'`** nur für Barrierefreiheits Anwendungen von Benutzeroberflächen fest.
+
+*`fragment`*<br/>
+Eine Zeichenfolge, die die *`level`* -und- *`uiAccess`* Werte enthält. Kann optional in doppelte Anführungszeichen eingeschlossen werden. Weitere Informationen finden Sie im Abschnitt [Hinweise](#remarks).
 
 ## <a name="remarks"></a>Hinweise
 
-Wenn Sie mehrere /MANIFESTUAC-Optionen in der Befehlszeile eingeben, erhält die zuletzt eingegebene den Vorrang.
+Wenn Sie mehrere **`/MANIFESTUAC`** Optionen in der Befehlszeile angeben, hat der letzte eingegebene Vorrang.
 
-Für "/MANIFESTUAC:level" gibt es folgende Auswahlmöglichkeiten:
+Folgende Optionen stehen zur Auswahl **`/MANIFESTUAC:`** _`level`_ :
 
-- `asInvoker`: Die Anwendung wird mit den gleichen Berechtigungen wie der Prozess ausgeführt, die sie gestartet hat. Die Anwendung auf eine höhere Berechtigung erweitert werden kann, dazu **als Administrator ausführen**.
+- **`level='asInvoker'`**: Die Anwendung wird auf der gleichen Berechtigungsstufe wie der Prozess ausgeführt, der Sie gestartet hat. Sie können die Anwendung auf eine höhere Berechtigungsstufe erhöhen, indem Sie **als Administrator ausführen**auswählen.
 
-- "highestAvailable": Die Anwendung wird mit der höchsten Berechtigungsstufe ausgeführt werden, die dies möglich. Wenn der Benutzer, der die Anwendung startet, Mitglied der Gruppe "Administratoren" ist, entspricht diese Option "requireAdministrator". Wenn die höchste verfügbare Berechtigungsebene höher als die Ebene des öffnenden Prozesses ist, fordert das System zur Eingabe von Anmeldeinformationen auf.
+- **`level='highestAvailable'`**: Die Anwendung wird mit der höchsten Berechtigungsstufe ausgeführt. Wenn der Benutzer, der die Anwendung startet, Mitglied der Gruppe "Administratoren" ist, ist diese Option identisch mit **`level='requireAdministrator'`** . Wenn die höchste verfügbare Berechtigungsebene höher als die Ebene des öffnenden Prozesses ist, fordert das System zur Eingabe von Anmelde Informationen auf.
 
-- requireAdministrator: Die Anwendung wird mit Administratorberechtigungen ausgeführt. Der Benutzer, der die Anwendung startet, muss ein Mitglied der Gruppe "Administratoren" sein. Wenn der öffnende Prozess nicht mit Administratorrechten ausgeführt wird, fordert das System zur Eingabe von Anmeldeinformationen auf.
+- **`level='requireAdministrator'`**: Die Anwendung wird mit Administrator Berechtigungen ausgeführt. Der Benutzer, der die Anwendung startet, muss ein Mitglied der Gruppe "Administratoren" sein. Wenn der öffnende Prozess nicht mit Administrator Berechtigungen ausgeführt wird, fordert das System zur Eingabe von Anmelde Informationen auf.
 
-Sie können die Ebene und die uiAccess-Werte in einem Schritt angeben, indem Sie die /MANIFESTUAC:fragment-Option verwenden. Das Fragment muss das folgende Format aufweisen:
+Sie können den *`level`* -Wert und den- *`uiAccess`* Wert in einem Schritt mithilfe der- **`/MANIFESTUAC:`** _`fragment`_ Option angeben. Das Fragment muss das folgende Format aufweisen:
 
-```
-"level=[ asInvoker | highestAvailable | requireAdministrator ] uiAccess=[ true | false ]"
-```
+> **`/MANIFESTUAC:`** \[ **`"`** ] **`level=`** { **`'asInvoker'`** | **`'highestAvailable'`** | **`'requireAdministrator'`** } **`uiAccess=`** { **`'true'`** | **`'false'`** } \[ **`"`** ]
+
+Zum Beispiel:
+
+**`/MANIFESTUAC:"level='highestAvailable' uiAccess='true'"`**
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Erweitern Sie den Knoten **Konfigurationseigenschaften**.
+1. Wählen Sie die Eigenschaften Seite der linkermanifestressourcendatei aus **Configuration Properties**  >  **Linker**  >  **Manifest File** .
 
-1. Erweitern Sie die **Linker** Knoten.
-
-1. Wählen Sie die **Manifestdatei** Eigenschaftenseite.
-
-1. Ändern der **aktivieren User Account Control (UAC)**, **UAC-Ausführungsebene**, und **Schutz vor umgehen der Benutzeroberfläche für die Benutzerkontensteuerung** Eigenschaften.
+1. Ändern Sie die Eigenschaften **Benutzerkontensteuerung (User Account Control, UAC)**, **UAC-Ausführungs Ebene**und **UAC-Umgehung der UI-Schutz** .
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 
