@@ -12,33 +12,34 @@ helpviewer_keywords:
 ms.assetid: 50c92e59-a4bf-415a-a6ab-d66c679ee80a
 no-loc:
 - opt
-ms.openlocfilehash: 59fd36a5ae135c55813019f04b0f5df4be2800b3
-ms.sourcegitcommit: 2d7550d0f375aafa428ef0fb2e3962e4232be28e
+ms.openlocfilehash: 5bb87795d3e91d853dc0d269ee9d2aa3ba025c0e
+ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84777304"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85813549"
 ---
 # <a name="function-call-operator-"></a>Funktionsaufrufoperator: ()
 
-Ein Funktions aufzurufen ist eine Art von *`postfix-expression`* , die durch einen Ausdruck gebildet wird, der eine Funktion, gefolgt vom Funktions aufrufsoperator, angibt **`()`** . Ein-Objekt kann eine-Funktion deklarieren `operator ()` , die Funktions Aufrufsemantik für das-Objekt bereitstellt.
+Ein Funktionsaufruf ist eine Art von *`postfix-expression`* , die durch einen Ausdruck gebildet wird, der eine Funktion oder ein Aufruf bares Objekt ergibt, gefolgt vom Funktionsaufruf Operator **`()`** . Ein-Objekt kann eine-Funktion deklarieren `operator ()` , die Funktions Aufrufsemantik für das-Objekt bereitstellt.
 
 ## <a name="syntax"></a>Syntax
 
 > *`postfix-expression`*:\
-> &nbsp;&nbsp;&nbsp;&nbsp;*`postfix-expression`* **`(`** *`argument-expression-list`* <sub>opt</sub> **`)`**
+> &emsp;*`postfix-expression`* **`(`** *`argument-expression-list`* <sub>opt</sub> **`)`**
 
 ## <a name="remarks"></a>Hinweise
 
 Die Argumente für den Funktions Aufrufoperator stammen aus einer *`argument-expression-list`* , einer durch Trennzeichen getrennten Liste von Ausdrücken. Die Werte dieser Ausdrücke werden als Argumente an die Funktion übermittelt. Die *Argument-Expression-List* kann leer sein. Vor C++ 17 ist die Reihenfolge der Auswertung des Funktions Ausdrucks und der Argument Ausdrücke nicht angegeben und kann in beliebiger Reihenfolge auftreten. In c++ 17 und höher wird der Funktions Ausdruck vor allen Argument Ausdrücken oder Standardargumenten ausgewertet. Die Argument Ausdrücke werden in einer unbestimmten Reihenfolge ausgewertet.
 
-Der *`postfix-expression`* identifiziert die aufzurufende Funktion. Es muss zu einer Funktions Adresse ausgewertet werden. Sie kann verschiedene Formen annehmen:
+Der ergibt *`postfix-expression`* die aufzurufende Funktion. Sie kann verschiedene Formen annehmen:
 
-- ein Funktions-oder Funktions Objektname oder-Zeiger,
-- ein Lvalue-Ausdruck, der auf ein Funktions-oder Funktions Objekt verweist.
-- ein Element Funktions Accessor, entweder explizit oder implizit.
+- ein Funktions Bezeichner, der im aktuellen Gültigkeitsbereich oder im Gültigkeitsbereich eines der bereitgestellten Funktionsargumente sichtbar ist.
+- ein Ausdruck, der eine Funktion, einen Funktionszeiger, ein Aufruf bares Objekt oder einen Verweis auf einen Ausdruck ergibt.
+- ein Member-Funktions Accessor (explizit oder implizit)
+- ein dereferenzierter Zeiger auf eine Element Funktion.
 
-Die von angegebene Funktion *`postfix-expression`* kann eine überladene Funktion sein. Die üblichen Regeln für die Überladungs Auflösung bestimmen die tatsächlich aufzurufende Funktion.
+*`postfix-expression`* Kann ein überladener Funktions Bezeichner oder ein überladener Element Funktions Accessor sein. Die Regeln für die Überladungs Auflösung bestimmen die tatsächlich aufzurufende Funktion. Wenn die Member-Funktion virtuell ist, wird die aufzurufende Funktion zur Laufzeit bestimmt.
 
 Einige Beispiel Deklarationen:
 

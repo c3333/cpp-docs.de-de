@@ -1,6 +1,6 @@
 ---
 title: vsnprintf, _vsnprintf, _vsnprintf_l, _vsnwprintf, _vsnwprintf_l
-ms.date: 11/04/2016
+ms.date: 06/24/2020
 api_name:
 - _vsnprintf
 - _vsnprintf_l
@@ -55,12 +55,12 @@ helpviewer_keywords:
 - formatted text [C++]
 - vsnwprintf function
 ms.assetid: a97f92df-c2f8-4ea0-9269-76920d2d566a
-ms.openlocfilehash: abe34dc0f3baf9bdc63e0314ac70af3783d2bd9a
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 1cbb41d63669644f51b4d951d5b5507f64cf3da1
+ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857709"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85737591"
 ---
 # <a name="vsnprintf-_vsnprintf-_vsnprintf_l-_vsnwprintf-_vsnwprintf_l"></a>vsnprintf, _vsnprintf, _vsnprintf_l, _vsnwprintf, _vsnwprintf_l
 
@@ -140,9 +140,9 @@ int _vsnwprintf_l(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für die Ausgabe.
 
 *count*<br/>
@@ -163,15 +163,17 @@ Weitere Informationen finden Sie unter [Formatangaben](../../c-runtime-library/f
 
 Die **vsnprintf** -Funktion gibt die Anzahl der geschriebenen Zeichen zurück. das abschließende Null-Zeichen wird dabei nicht gezählt. Wenn die von *count* angegebene Puffergröße nicht ausreichend groß ist, um die durch *Format* und *argptr*angegebene Ausgabe zu enthalten, entspricht der Rückgabewert von **vsnprintf** der Anzahl der Zeichen, die geschrieben werden, ohne das NULL-Zeichen zu zählen, wenn die *Anzahl* ausreichend groß wäre. Wenn der Rückgabewert größer als *count* -1 ist, wurde die Ausgabe abgeschnitten. Der Rückgabewert „-1“ gibt an, dass ein Codierungsfehler aufgetreten ist.
 
-Sowohl **_vsnprintf** -als auch **_vsnwprintf** -Funktion geben die Anzahl der geschriebenen Zeichen zurück, wenn die Anzahl der zu schreibenden Zeichen kleiner oder gleich *der Anzahl ist.* Wenn die Anzahl der zu schreibenden Zeichen größer als *count*ist, geben diese Funktionen-1 zurück, um anzugeben, dass die Ausgabe abgeschnitten wurde.
+Sowohl **_vsnprintf** -als auch **_vsnwprintf** -Funktion geben die Anzahl der geschriebenen Zeichen zurück, wenn die Anzahl der zu schreibenden Zeichen kleiner als oder gleich *count*ist. Wenn die Anzahl der zu schreibenden Zeichen größer als *count*ist, geben diese Funktionen-1 zurück, um anzugeben, dass die Ausgabe abgeschnitten wurde.
 
-Der von allen diesen Funktionen zurückgegebene Wert enthält nicht das abschließende Zeichen NULL, unabhängig davon, ob es geschrieben wurde oder nicht. Wenn *count* 0 (null) ist, ist der zurückgegebene Wert die Anzahl von Zeichen, die von den Funktionen geschrieben werden, ohne abschließende NULL-Werte. Sie können dieses Ergebnis dazu verwenden, ausreichend Pufferspeicher für die Zeichenfolge und dessen abschließendes NULL-Zeichen zuzuordnen, und die Funktion dann erneut aufrufen, um den Puffer zu füllen.
+Der von all diesen Funktionen zurückgegebene Wert enthält nicht das abschließende NULL-Wert, egal, ob ein Wert geschrieben wird.
 
-Wenn *Format* **null**ist, oder wenn der Puffer **null** und *count* ungleich 0 (null) ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
+- Wenn *count* 0 (null) und *buffer* **null**ist, ist der zurückgegebene Wert die Anzahl von Zeichen, die von den Funktionen geschrieben werden. Der Wert berücksichtigt keinen abschließenden **null**-Wert. Sie können dieses Ergebnis dazu verwenden, ausreichend Pufferspeicher für die Zeichenfolge und dessen abschließendes NULL-Zeichen zuzuordnen, und die Funktion dann erneut aufrufen, um den Puffer zu füllen.
+- Wenn *count* NULL ist, aber der *Puffer* nicht **null**ist, wird nichts geschrieben, und die Funktion gibt zurück `-1` .
+- Wenn *Format* **null**ist, oder wenn *buffer* der Puffer **null** und *count* nicht gleich 0 ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
 
 ## <a name="remarks"></a>Hinweise
 
-Jede dieser Funktionen nimmt einen Zeiger auf eine Argumentliste, formatiert die Daten und schreibt bis zum *zählen* von Zeichen in den Speicher, auf den von *buffer*verwiesen wird. Die **vsnprintf** -Funktion schreibt immer einen NULL-Terminator, selbst wenn die Ausgabe abgeschnitten wird. Wenn **_vsnprintf** und **_vsnwprintf**verwendet werden, wird der Puffer nur dann mit Null beendet, wenn am Ende Platz vorhanden ist (d. h., wenn die Anzahl der zu schreibenden Zeichen kleiner als *die Anzahl ist).*
+Jede dieser Funktionen nimmt einen Zeiger auf eine Argumentliste, formatiert die Daten und schreibt bis zum *zählen* von Zeichen in den Speicher, auf den von *buffer*verwiesen wird. Die **vsnprintf** -Funktion schreibt immer einen NULL-Terminator, selbst wenn die Ausgabe abgeschnitten wird. Wenn **_vsnprintf** und **_vsnwprintf**verwendet werden, wird der Puffer nur dann mit Null beendet, wenn der Platz am Ende vorhanden ist (d. h., wenn die Anzahl der zu schreibenden Zeichen *kleiner als die Anzahl ist*).
 
 > [!IMPORTANT]
 > Um bestimmte Arten von Sicherheitsrisiken zu verhindern, stellen Sie sicher, dass das *Format* keine benutzerdefinierte Zeichenfolge ist. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
@@ -194,12 +196,12 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 |**_vsntprintf**|**_vsnprintf**|**_vsnprintf**|**_vsnwprintf**|
 |**_vsntprintf_l**|**_vsnprintf_l**|**_vsnprintf_l**|**_vsnwprintf_l**|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------------|-------------------------------|
-|**vsnprintf**, **_vsnprintf**, **_vsnprintf_l**|\<stdio.h>|\<stdio.h> oder \<cstdio>|
-|**_vsnwprintf**, **_vsnwprintf_l**|\<stdio.h> oder \<wchar.h>|\<stdio.h>, \<wchar.h>, \<cstdio> oder \<cwchar>|
+|**vsnprintf**, **_vsnprintf** **_vsnprintf_l**|\<stdio.h>|\<stdio.h> oder \<cstdio>|
+|**_vsnwprintf** **_vsnwprintf_l**|\<stdio.h> oder \<wchar.h>|\<stdio.h>, \<wchar.h>, \<cstdio> oder \<cwchar>|
 
 Die Funktionen **_vsnprintf**, **_vsnprintf_l**, **_vsnwprintf** und **_vsnwprintf_l** sind Microsoft-spezifisch. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -281,12 +283,12 @@ nSize: 9, buff: Hi there!
 nSize: 10, buff: Hi there!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf-Funktionen](../../c-runtime-library/vprintf-functions.md)<br/>
-[Syntax der Formatangabe: printf- und wprintf-Funktionen](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)<br/>
+[Syntax der Format Angabe: printf-und wprintf-Funktionen](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)<br/>
 [fprintf, _fprintf_l, fwprintf, _fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
 [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [va_arg, va_copy, va_end, va_start](va-arg-va-copy-va-end-va-start.md)<br/>

@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CFileException [MFC], m_lOsError
 - CFileException [MFC], m_strFileName
 ms.assetid: f6491bb9-bfbc-42fd-a952-b33f9b62323f
-ms.openlocfilehash: f58ba02862e9c0f0c0c0d24797be939276ca8035
-ms.sourcegitcommit: 8167c67d76de58a7c2df3b4dcbf3d53e3b151b77
+ms.openlocfilehash: 85ff8d77bda30bcf0b107f733098d07c4fd80283
+ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84664338"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85813521"
 ---
 # <a name="cfileexception-class"></a>CFileException-Klasse
 
@@ -45,7 +45,7 @@ class CFileException : public CException
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFileException:: CFileException](#cfileexception)|Erstellt ein `CFileException`-Objekt.|
 
@@ -61,13 +61,13 @@ class CFileException : public CException
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFileException:: m_cause](#m_cause)|Enthält portablen Code, der der Ausnahme Ursache entspricht.|
 |[CFileException:: m_lOsError](#m_loserror)|Enthält die zugehörige Betriebssystem-Fehlernummer.|
 |[CFileException:: m_strFileName](#m_strfilename)|Enthält den Namen der Datei für diese Ausnahme.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die `CFileException` -Klasse enthält öffentliche Datenmember, die den portablen Ursachen Code und die betriebssystemspezifische Fehlernummer enthalten. Die-Klasse stellt auch statische Member-Funktionen zum Auslösen von Datei Ausnahmen und zum Zurückgeben von Ursachen Codes für Betriebssystem Fehler und C-Laufzeitfehler bereit.
 
@@ -81,7 +81,7 @@ Die `CFileException` -Klasse enthält öffentliche Datenmember, die den portable
 
 `CFileException`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** AFX. h
 
@@ -107,7 +107,7 @@ Ein Betriebssystem spezifischer Grund für die Ausnahme, falls verfügbar. Der *
 *lpszarchivename*<br/>
 Verweist auf eine Zeichenfolge, die den Namen des Objekts enthält, `CFile` das die Ausnahme verursacht hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diesen Konstruktor nicht direkt, sondern nennen Sie stattdessen die globale Funktion [afxthrowfileexception](exception-processing.md#afxthrowfileexception).
 
@@ -131,7 +131,7 @@ Ein ganzzahliger Fehlercode, wie er in der Lauf Zeit Datei "errno" definiert ist
 
 Enumerationswert, der einem angegebenen Lauf Zeit Bibliotheks-Fehlerwert entspricht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Liste der möglichen Enumerationswerte finden Sie unter [CFileException:: m_cause](#m_cause) .
 
@@ -165,7 +165,7 @@ in Die maximale Anzahl von Zeichen, die im angegebenen Puffer enthalten sein kö
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der angegebene Puffer zu klein ist, wird die Fehlermeldung abgeschnitten.
 
@@ -183,7 +183,7 @@ Enthält Werte, die von einem `CFileException`-Enumerationstyp definiert wurden.
 int m_cause;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Datenmember ist eine öffentliche Variable vom Typ **int**. Die Enumeratoren und ihre Bedeutungen lauten wie folgt:
 
@@ -205,11 +205,11 @@ Dieser Datenmember ist eine öffentliche Variable vom Typ **int**. Die Enumerato
 | `CFileException::diskFull` | 13: der Datenträger ist voll. |
 | `CFileException::endOfFile` | 14: das Dateiende wurde erreicht. |
 
-    > [!NOTE]
-    >  These `CFileException` cause enumerators are distinct from the `CArchiveException` cause enumerators.
+> [!NOTE]
+> Diese `CFileException`-Ursachenenumeratoren unterscheiden sich von den `CArchiveException`-Ursachenenumeratoren.
 
-    > [!NOTE]
-    > `CArchiveException::generic` is deprecated. Use `genericException` instead. If **generic** is used in an application and built with /clr, the resulting syntax errors are not easy to decipher.
+> [!NOTE]
+> `CArchiveException::generic` ist veraltet. Verwenden Sie stattdessen `genericException`. Wenn **generisch** in einer Anwendung verwendet und mit/CLR erstellt wird, können die resultierenden Syntax Fehler nicht leicht entschlüsselt werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -223,7 +223,7 @@ Enthält den Fehlercode des Betriebssystems für diese Ausnahme.
 LONG m_lOsError;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Liste der Fehlercodes finden Sie in der technischen Anleitung Ihres Betriebssystems. Dieser Datenmember ist eine öffentliche Variable vom Typ Long.
 

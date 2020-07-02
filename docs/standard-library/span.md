@@ -5,16 +5,16 @@ f1_keywords:
 - <span>
 helpviewer_keywords:
 - span header
-ms.openlocfilehash: ebd0a30c677ea44f95e64e2d2ba010bc99cb412b
-ms.sourcegitcommit: 1a8fac06478da8bee1f6d70e25afbad94144af1a
+ms.openlocfilehash: 27f27acfa84a3ccc42586593747e4657146cbe39
+ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84226313"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85813534"
 ---
 # <a name="ltspangt"></a>&lt;Spanne&gt;
 
-Eine `span` ist eine Ansicht über einer zusammenhängenden Sequenz von-Objekten. Sie ermöglicht den schnellen und sicheren Zugriff. Anders als `vector` oder `array` werden die Elemente, auf die Sie Zugriff bietet, nicht "besitzen". 
+Eine `span` ist eine Ansicht über einer zusammenhängenden Sequenz von-Objekten. Sie ermöglicht den schnellen und sicheren Zugriff. Anders als `vector` oder `array` werden die Elemente, auf die Sie Zugriff bietet, nicht "besitzen".
 
 Ausführliche Informationen finden Sie unter [span class](span-class.md) . Im folgenden finden Sie ein Beispiel dafür, wie eine Spanne verwendet werden kann:
 

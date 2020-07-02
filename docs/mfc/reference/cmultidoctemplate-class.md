@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - CMultiDocTemplate [MFC], CMultiDocTemplate
 ms.assetid: 5b8aa328-e461-41d0-b388-00594535e119
-ms.openlocfilehash: 3b3f239b05b1cf7661929333e2d616acce6bedb0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: af950d188c4e02a38a39ed3c672f0f8c4161bee8
+ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319734"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85737485"
 ---
 # <a name="cmultidoctemplate-class"></a>CMultiDocTemplate-Klasse
 
@@ -27,35 +27,37 @@ class CMultiDocTemplate : public CDocTemplate
 
 ## <a name="members"></a>Member
 
+Die Member-Funktionen für diese Klasse sind virtuell. Dokumentation finden Sie unter [CDocTemplate](../../mfc/reference/cdoctemplate-class.md) und [CCmdTarget](../../mfc/reference/ccmdtarget-class.md) .
+
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMultiDocTemplate::CMultiDocTemplate](#cmultidoctemplate)|Erstellt ein `CMultiDocTemplate`-Objekt.|
+|[CMultiDocTemplate:: CMultiDocTemplate](#cmultidoctemplate)|Erstellt ein `CMultiDocTemplate`-Objekt.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Eine MDI-Anwendung verwendet das Hauptrahmenfenster als Arbeitsbereich, in dem der Benutzer null oder mehr Dokumentrahmenfenster öffnen kann, von denen jedes ein Dokument anzeigt. Eine ausführlichere Beschreibung der MDI finden Sie unter *Windows Interface Guidelines for Software Design*.
+Eine MDI-Anwendung verwendet das Hauptrahmen Fenster als Arbeitsbereich, in dem der Benutzer NULL oder mehr Dokument Rahmen Fenster öffnen kann, von denen jedes ein Dokument anzeigt. Eine ausführlichere Beschreibung des MDI finden Sie unter *Richtlinien für die Windows-Benutzeroberfläche für den Software Entwurf*.
 
-Eine Dokumentvorlage definiert die Beziehungen zwischen drei Klassentypen:
+Eine Dokument Vorlage definiert die Beziehungen zwischen drei Typen von Klassen:
 
-- Eine Dokumentklasse, die Sie von [CDocument](../../mfc/reference/cdocument-class.md)ableiten.
+- Eine Dokument Klasse, die Sie von [CDocument](../../mfc/reference/cdocument-class.md)ableiten.
 
-- Eine Ansichtsklasse, die Daten aus der oben aufgeführten Dokumentklasse anzeigt. Sie können diese Klasse von `CScrollView` [CView](../../mfc/reference/cview-class.md) `CEditView`, , `CFormView`oder ableiten. (Sie können `CEditView` es auch direkt verwenden.)
+- Eine Ansichts Klasse, die Daten aus der oben aufgeführten Dokument Klasse anzeigt. Sie können diese Klasse von [CView](../../mfc/reference/cview-class.md), `CScrollView` , `CFormView` oder ableiten `CEditView` . (Sie können auch `CEditView` direkt verwenden.)
 
-- Eine Rahmenfensterklasse, die die Ansicht enthält. Für eine MDI-Dokumentvorlage können Sie `CMDIChildWnd`diese Klasse von ableiten, oder wenn Sie das Verhalten der Dokumentrahmenfenster nicht anpassen müssen, können Sie [CMDIChildWnd](../../mfc/reference/cmdichildwnd-class.md) direkt verwenden, ohne eine eigene Klasse abzuleiten.
+- Eine Frame Fenster Klasse, die die Ansicht enthält. Bei einer MDI-Dokument Vorlage können Sie diese Klasse von ableiten `CMDIChildWnd` , oder Sie können [CMDIChildWnd](../../mfc/reference/cmdichildwnd-class.md) direkt verwenden, ohne dass Sie eine eigene Klasse ableiten müssen, wenn Sie das Verhalten der Dokument Rahmen Fenster nicht anpassen müssen.
 
-Eine MDI-Anwendung kann mehr als einen Dokumenttyp unterstützen, und Dokumente unterschiedlicher Art können gleichzeitig geöffnet sein. Ihre Anwendung verfügt über eine Dokumentvorlage für jeden unterstützten Dokumenttyp. Wenn Ihre MDI-Anwendung beispielsweise sowohl Tabellenkalkulationen als auch `CMultiDocTemplate` Textdokumente unterstützt, verfügt die Anwendung über zwei Objekte.
+Eine MDI-Anwendung kann mehr als einen Dokumenttyp unterstützen, und Dokumente unterschiedlicher Typen können gleichzeitig geöffnet werden. Die Anwendung verfügt über eine Dokument Vorlage für jeden Dokumenttyp, der von ihr unterstützt wird. Wenn die MDI-Anwendung z. b. sowohl Tabellen-als auch Textdokumente unterstützt, verfügt die Anwendung über zwei- `CMultiDocTemplate` Objekte.
 
-Die Anwendung verwendet die Dokumentvorlage(n), wenn der Benutzer ein neues Dokument erstellt. Wenn die Anwendung mehr als einen Dokumenttyp unterstützt, ruft das Framework die Namen der unterstützten Dokumenttypen aus den Dokumentvorlagen ab und zeigt sie in einer Liste im Dialogfeld Datei neu an. Nachdem der Benutzer einen Dokumenttyp ausgewählt hat, erstellt die Anwendung ein Dokumentklassenobjekt, ein Rahmenfensterobjekt und ein Ansichtsobjekt und fügt sie aneinander an.
+Die Anwendung verwendet die Dokument Vorlage (en), wenn der Benutzer ein neues Dokument erstellt. Wenn die Anwendung mehr als einen Dokumenttyp unterstützt, ruft das Framework die Namen der unterstützten Dokumenttypen aus den Dokumentvorlagen ab und zeigt Sie in einer Liste im Dialogfeld Datei neu an. Nachdem der Benutzer einen Dokumenttyp ausgewählt hat, erstellt die Anwendung ein Dokument Klassenobjekt, ein Rahmen Fenster Objekt und ein Ansichts Objekt und fügt sie einander an.
 
-Sie müssen keine Memberfunktionen außer `CMultiDocTemplate` dem Konstruktor aufrufen. Das Framework `CMultiDocTemplate` verarbeitet Objekte intern.
+Sie müssen keine Member-Funktionen von `CMultiDocTemplate` außer dem-Konstruktor aufzurufen. Das Framework verarbeitet- `CMultiDocTemplate` Objekte intern.
 
-Weitere Informationen `CMultiDocTemplate`finden Sie unter [Dokumentvorlagen und den Dokument-/Ansichtserstellungsprozess](../../mfc/document-templates-and-the-document-view-creation-process.md).
+Weitere Informationen zu `CMultiDocTemplate` finden Sie unter [Dokumentvorlagen und der Erstellungs Vorgang für Dokumente und Ansichten](../../mfc/document-templates-and-the-document-view-creation-process.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -67,7 +69,7 @@ Weitere Informationen `CMultiDocTemplate`finden Sie unter [Dokumentvorlagen und 
 
 **Header:** afxwin.h
 
-## <a name="cmultidoctemplatecmultidoctemplate"></a><a name="cmultidoctemplate"></a>CMultiDocTemplate::CMultiDocTemplate
+## <a name="cmultidoctemplatecmultidoctemplate"></a><a name="cmultidoctemplate"></a>CMultiDocTemplate:: CMultiDocTemplate
 
 Erstellt ein `CMultiDocTemplate`-Objekt.
 
@@ -81,10 +83,10 @@ CMultiDocTemplate(
 
 ### <a name="parameters"></a>Parameter
 
-*nIDResource*<br/>
-Gibt die ID der Ressourcen an, die mit dem Dokumenttyp verwendet werden. Dies kann Menü-, Symbol-, Beschleunigertabelle und Zeichenfolgenressourcen umfassen.
+*nidresource*<br/>
+Gibt die ID der Ressourcen an, die mit dem Dokumenttyp verwendet werden. Dies kann Menü, Symbol, Zugriffstasten Tabelle und Zeichen folgen Ressourcen umfassen.
 
-Die Zeichenfolgenressource besteht aus bis zu sieben Teilzeichenfolgen, die durch das Zeichen ''n' getrennt sind (das Zeichen ''n' wird als Platzhalter benötigt, wenn eine Teilzeichenfolge nicht enthalten ist; jedoch sind nachfolgende 'n'-Zeichen nicht erforderlich); Diese Teilzeichenfolgen beschreiben den Dokumenttyp. Informationen zu den Teilzeichenfolgen finden Sie unter [CDocTemplate::GetDocString](../../mfc/reference/cdoctemplate-class.md#getdocstring). Diese Zeichenfolgenressource befindet sich in der Ressourcendatei der Anwendung. Beispiel:
+Die Zeichen folgen Ressource besteht aus bis zu sieben Teil Zeichenfolgen, die durch das Zeichen ' \n ' getrennt sind (das Zeichen ' \n ' wird als Platzhalter benötigt, wenn keine Teil Zeichenfolge eingeschlossen wird. nachfolgende ' \n '-Zeichen sind jedoch nicht erforderlich); Diese Teil Zeichenfolgen beschreiben den Dokumenttyp. Weitere Informationen zu den Teil Zeichenfolgen finden Sie unter [CDocTemplate:: getdocstring](../../mfc/reference/cdoctemplate-class.md#getdocstring). Diese Zeichen folgen Ressource befindet sich in der Ressourcen Datei der Anwendung. Beispiel:
 
 ```RC
 // MYCALC.RC
@@ -94,32 +96,32 @@ BEGIN
 END
 ```
 
-Beachten Sie, dass die Zeichenfolge mit einem Zeichen ''n' beginnt. Dies liegt daran, dass die erste Teilzeichenfolge nicht für MDI-Anwendungen verwendet wird und daher nicht enthalten ist. Sie können diese Zeichenfolge mit dem Zeichenfolgen-Editor bearbeiten. Die gesamte Zeichenfolge wird als einzelner Eintrag im String-Editor und nicht als sieben separate Einträge angezeigt.
+Die Zeichenfolge beginnt mit dem Zeichen "\n", da die erste Teil Zeichenfolge nicht für MDI-Anwendungen verwendet wird und daher nicht eingeschlossen ist. Sie können diese Zeichenfolge mit dem Zeichen folgen-Editor bearbeiten. die gesamte Zeichenfolge wird als einzelner Eintrag im Zeichen folgen-Editor angezeigt, nicht als sieben separate Einträge.
 
 Weitere Informationen zu diesen Ressourcentypen finden Sie unter [Ressourcen-Editoren](../../windows/resource-editors.md).
 
-*pDocClass*<br/>
-Zeigt auf `CRuntimeClass` das Objekt der Dokumentklasse. Diese Klasse `CDocument`ist eine -abgeleitete Klasse, die Sie definieren, um Ihre Dokumente darzustellen.
+*pdocclass*<br/>
+Verweist auf das- `CRuntimeClass` Objekt der Document-Klasse. Diese Klasse ist eine `CDocument` von abgeleitete Klasse, die Sie zur Darstellung Ihrer Dokumente definieren.
 
-*pFrameClass*<br/>
-Zeigt auf `CRuntimeClass` das Objekt der Frame-Window-Klasse. Diese Klasse kann `CMDIChildWnd`eine -derived-Klasse `CMDIChildWnd` sein, oder sie kann selbst sein, wenn Sie das Standardverhalten für Die Dokumentrahmenfenster verwenden möchten.
+*pframeclass*<br/>
+Verweist auf das- `CRuntimeClass` Objekt der Frame-Window-Klasse. Diese Klasse kann eine von `CMDIChildWnd` abgeleitete Klasse sein, oder Sie kann `CMDIChildWnd` selbst sein, wenn Sie das Standardverhalten für die Dokument Rahmen Fenster benötigen.
 
-*pViewClass*<br/>
-Zeigt auf `CRuntimeClass` das Objekt der Ansichtsklasse. Diese Klasse `CView`ist eine -abgeleitete Klasse, die Sie zum Anzeigen Ihrer Dokumente definieren.
+*pviewclass*<br/>
+Verweist auf das- `CRuntimeClass` Objekt der Ansichts Klasse. Diese Klasse ist eine `CView` von abgeleitete Klasse, die Sie definieren, um Ihre Dokumente anzuzeigen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Weisen Sie `CMultiDocTemplate` dynamisch ein Objekt für jeden Dokumenttyp `CWinApp::AddDocTemplate` zu, `InitInstance` den Ihre Anwendung unterstützt, und übergeben Sie jedes Objekt von der Memberfunktion Ihrer Anwendungsklasse.
+Weisen `CMultiDocTemplate` Sie für jeden Dokumenttyp, der von der Anwendung unterstützt wird, dynamisch ein Objekt zu, und übergeben Sie jedes `CWinApp::AddDocTemplate` von der `InitInstance` Member-Funktion Ihrer Anwendungsklasse an.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#92](../../mfc/codesnippet/cpp/cmultidoctemplate-class_1.cpp)]
 
-Hier ist ein zweites Beispiel.
+Im folgenden finden Sie ein zweites Beispiel.
 
 [!code-cpp[NVC_MFCDocView#93](../../mfc/codesnippet/cpp/cmultidoctemplate-class_2.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CDocTemplate-Klasse](../../mfc/reference/cdoctemplate-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

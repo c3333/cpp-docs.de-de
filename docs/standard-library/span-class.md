@@ -51,12 +51,12 @@ helpviewer_keywords:
 - std::span [C++], rend
 - std::span [C++], size
 - std::span [C++], size_bytes
-ms.openlocfilehash: b76c1db2176c27983ccdcd4742f889f5a4d95af6
-ms.sourcegitcommit: 1a8fac06478da8bee1f6d70e25afbad94144af1a
+ms.openlocfilehash: e77f57bc56a75406745349e19d03bc26edc5470d
+ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84226319"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85813508"
 ---
 # <a name="span-class-c-standard-library"></a>Span-Klasse (C++-Standard Bibliothek)
 
@@ -100,7 +100,7 @@ class span;
 |[Spanne](#span)| Erstellen Sie eine `span` .|
 | **Iteratorunterstützung** | **Beschreibung** |
 |[beginnen](#begin) | Einen Iterator, der auf das erste Element in der Spanne zeigt, wird erhalten.|
-|[end](#end) | Einen Iterator, der auf das Ende der Spanne zeigt, wird erhalten. |
+|[Schließlich](#end) | Einen Iterator, der auf das Ende der Spanne zeigt, wird erhalten. |
 |[rbegin](#rbegin) | Rückgängigmachen eines umgekehrten Iterators, der auf das letzte Element der Spanne zeigt Das heißt, der Anfang der umgekehrten Spanne.|
 |[rend](#rend) | Rückgängigmachen eines umgekehrten Iterators, der auf den Vordergrund der Spanne zeigt Das heißt, das Ende der umgekehrten Spanne.|
 | **Zugriffs Elemente**| **Beschreibung** |
@@ -363,7 +363,7 @@ template <size_t count> constexpr auto first() const noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*count*\
+*Countdown*\
 Die Anzahl der Elemente von der Vorderseite dieser Spanne, die in die Teil Spanne eingefügt werden soll.  
 Die Anzahl der Elemente wird als Parameter für die Vorlage oder für die Funktion angegeben, wie unten gezeigt.
 
@@ -387,14 +387,14 @@ int main()
 {
     int a[] = { 0,1,2 };
     span<int> mySpan(a);
-    
+
     auto first2 = mySpan.first(2);
     cout << "mySpan.first(2): ";
     for (auto& i : first2)
     {
         cout << i;
     }
-    
+
     cout << "\nmySpan.first<2>: ";
     auto viewSpan = mySpan.first<2>();
     for (auto& i : viewSpan)
@@ -488,7 +488,7 @@ template <size_t count> constexpr span<element_type, count> last() const noexcep
 
 ### <a name="parameters"></a>Parameter
 
-*count*\
+*Countdown*\
 Die Anzahl der Elemente vom Ende, die diese Spanne in die unter Spanne eingefügt werden soll.
 Die Zahl kann wie unten dargestellt als Parameter für die Vorlage oder für die Funktion angegeben werden.
 
@@ -512,14 +512,14 @@ int main()
 {
     int a[] = { 0,1,2 };
     span<int> mySpan(a);
-    
+
     auto first2 = mySpan.last(2);
     cout << "mySpan.last(2): ";
     for (auto& i : last2)
     {
         cout << i;
     }
-    
+
     cout << "\nmySpan.last<2>: ";
     auto viewSpan = mySpan.last<2>();
     for (auto& i : viewSpan)
@@ -643,7 +643,7 @@ int main()
     span<int>::pointer ptr = &mySpan[2];
     *ptr = 9;
     cout << mySpan[2];
-    
+
     // const pointer
     span<int>::const_pointer cPtr = &mySpan[0];
     // *cPtr = 9; error - const
@@ -936,7 +936,7 @@ span(const span<T, OtherExtent>& other) noexcept
 *r*\
 Erstellen Sie eine Spanne aus einem Array.
 
-*count*\
+*Countdown*\
 Anzahl der Elemente, die sich in der Spanne befinden.
 
 *erstes*\
@@ -978,13 +978,13 @@ using namespace std;
 int main()
 {
     const int MAX=10;
-    
+
     int x[MAX];
     for (int i = 0; i < MAX; i++)
     {
         x[i] = i;
     }
-    
+
     span<int, MAX> span1{ x }; // fixed-size span: compiler error if size of x doesn't match template argument MAX
     span<int> span2{ x }; // size is inferred from x
     span<const int> span3 = span2; // converting constructor
@@ -1005,7 +1005,7 @@ constexpr auto subspan() const noexcept
 
 ### <a name="parameters"></a>Parameter
 
-*count*\
+*Countdown*\
 Die Anzahl der Elemente, die in der Teil Spanne eingefügt werden sollen. Wenn `count` `dynamic_extent` (der Standardwert) ist, wird die Teil Spanne von bis zum `offset` Ende dieser Spanne entnommen.
 
 *kompensieren*\
@@ -1031,7 +1031,7 @@ int main()
 {
     int a[] = { 0,1,2 };
     span<int> mySpan(a);
-    
+
     cout << "mySpan.subspan(1,2): ";
     for (auto& i : mySpan.subspan(1,2))
     {

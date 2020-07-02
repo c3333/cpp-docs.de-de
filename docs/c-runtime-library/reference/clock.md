@@ -28,12 +28,12 @@ helpviewer_keywords:
 - processor time used
 - calculating processor time used
 ms.assetid: 3e1853dd-498f-49ba-b06a-f2315f20904e
-ms.openlocfilehash: 836d0c6448adb4c99a251a0e97aa642e30362dcb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 660c97882151127cc6c1caa64bb27f5728f169fb
+ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939130"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85737466"
 ---
 # <a name="clock"></a>clock
 
@@ -47,13 +47,13 @@ clock_t clock( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die verstrichene Zeit seit der CRT-Initialisierung zu Beginn des Prozesses, gemessen in **CLOCKS_PER_SEC** -Einheiten pro Sekunde. Wenn die verstrichene Zeit nicht verfügbar ist oder die maximale positive Zeit überschreitet, die als **clock_t** -Typ aufgezeichnet werden kann, gibt `(clock_t)(-1)`die Funktion den Wert zurück.
+Die verstrichene Zeit seit der CRT-Initialisierung zu Beginn des Prozesses, gemessen in **CLOCKS_PER_SEC** Einheiten pro Sekunde. Wenn die verstrichene Zeit nicht verfügbar ist oder die maximale positive Zeit überschritten hat, die als **clock_t** Typ aufgezeichnet werden kann, gibt die Funktion den Wert zurück `(clock_t)(-1)` .
 
 ## <a name="remarks"></a>Hinweise
 
 Die **Clock** -Funktion gibt an, wie viel Zeit seit der CRT-Initialisierung während des Prozess Starts vergangen ist. Beachten Sie, dass diese Funktion nicht streng mit ISO C konform ist, welche die Netto-CPU-Zeit als Rückgabewert nennt. Verwenden Sie zum Abrufen von CPU-Zeiten die Win32-Funktion [GetProcessTimes](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesstimes). Um die verstrichene Zeit in Sekunden zu ermitteln, teilen Sie den von der **Clock** -Funktion zurückgegebenen Wert durch das Makro **CLOCKS_PER_SEC**.
 
-Wenn genug Zeit ist, kann der von **Clock** zurückgegebene Wert den maximalen positiven Wert von **clock_t**überschreiten. Wenn der Prozess länger ausgeführt wurde, ist der von der **Uhr** zurückgegebene `(clock_t)(-1)`Wert immer, wie vom ISO C99-Standard (7.23.2.1) und ISO C11 Standard (7.27.2.1) angegeben. Microsoft implementiert **clock_t** als **Long**, eine ganze Zahl mit Vorzeichen und 32 eine ganze Zahl mit Vorzeichen, und das **CLOCKS_PER_SEC** -Makro wird als 1000 definiert. Dies ergibt **einen maximalen Wert** für die Zeit Rückgabewert von 2147483,647 Sekunden oder etwa 24,8 Tage. Verlassen Sie sich nicht auf den von der **Uhr** zurückgegebenen Wert in Prozessen, die länger als diesen Zeitraum ausgeführt wurden. Sie können die 64-Bit- [Zeit](time-time32-time64.md) Funktion oder die Windows [QueryPerformanceCounter](/windows/win32/api/profileapi/nf-profileapi-queryperformancecounter) -Funktion verwenden, um Prozess verstrichene Zeiten von vielen Jahren aufzuzeichnen.
+Wenn genug Zeit ist, kann der von der **Uhr** zurückgegebene Wert den maximalen positiven Wert von **clock_t**überschreiten. Wenn der Prozess länger ausgeführt wurde, ist der von der **Uhr** zurückgegebene Wert immer `(clock_t)(-1)` , wie vom ISO C99-Standard (7.23.2.1) und ISO C11 Standard (7.27.2.1) angegeben. Microsoft implementiert **clock_t** als **Long**, eine ganze Zahl mit Vorzeichen und 32 eine ganze Zahl mit Vorzeichen, und das **CLOCKS_PER_SEC** -Makro wird als 1000 definiert. Dies ergibt **einen maximalen Wert** für die Zeit Rückgabewert von 2147483,647 Sekunden oder etwa 24,8 Tage. Verlassen Sie sich nicht auf den von der **Uhr** zurückgegebenen Wert in Prozessen, die länger als diesen Zeitraum ausgeführt wurden. Sie können die 64-Bit- [Zeit](time-time32-time64.md) Funktion oder die Windows [QueryPerformanceCounter](/windows/win32/api/profileapi/nf-profileapi-queryperformancecounter) -Funktion verwenden, um Prozess verstrichene Zeiten von vielen Jahren aufzuzeichnen.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -61,7 +61,7 @@ Wenn genug Zeit ist, kann der von **Clock** zurückgegebene Wert den maximalen p
 |-------------|---------------------|
 |**clock**|\<time.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -75,7 +75,7 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 #include <stdlib.h>
 #include <time.h>
 
-// Pauses for a specified number of milliseconds.
+// Pauses for a specified number of clock cycles.
 void do_sleep( clock_t wait )
 {
    clock_t goal;
@@ -114,8 +114,8 @@ Done!
 Time to do 600000000 empty loops is 1.354 seconds
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [difftime, _difftime32, _difftime64](difftime-difftime32-difftime64.md)<br/>
 [time, _time32, _time64](time-time32-time64.md)<br/>

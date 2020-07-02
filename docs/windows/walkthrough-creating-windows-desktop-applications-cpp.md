@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows applications [C++], Win32
 - Windows Desktop applications [C++]
 - Windows API [C++]
-ms.openlocfilehash: ac141c6ce9e4cce37b72808de488df7f94d116f7
-ms.sourcegitcommit: 426e327c9f7c3a3b02300e3f924f9786d62958e9
+ms.openlocfilehash: 1b084cab0e985f9ab8c593e22d972913130e4380
+ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84206205"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85813608"
 ---
 # <a name="walkthrough-create-a-traditional-windows-desktop-application-c"></a>Exemplarische Vorgehensweise: Erstellen einer herkömmlichen Windows-Desktop Anwendung (C++)
 
@@ -57,7 +57,7 @@ Führen Sie diese Schritte aus, um Ihr erstes Windows-Desktop Projekt zu erstell
 
    ![Neues Element zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-project-add-new-item-153.gif "Neues Element zum desktopapp-Projekt hinzufügen")
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen**.
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen** aus.
 
    ![Cpp-Datei zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-add-cpp-file-153.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
 
@@ -83,7 +83,7 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
    ![Neues Element zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-project-add-new-item-153.gif "Neues Element zum desktopapp-Projekt hinzufügen")
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen**.
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen** aus.
 
    ![Cpp-Datei zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-add-cpp-file-153.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
 
@@ -113,7 +113,7 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
    ![Neues Element zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-project-add-new-item-150.gif "Neues Element zum desktopapp-Projekt hinzufügen")
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen**.
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen** aus.
 
    ![Cpp-Datei zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-add-cpp-file-150.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
 
@@ -389,7 +389,7 @@ Als Nächstes erfahren Sie, wie Sie den Code für eine Windows-Desktop Anwendung
    ```
 
    `HDC`im Code ist ein Handle für einen Gerätekontext, der zum Zeichnen im Client Bereich des Fensters verwendet wird. Verwenden `BeginPaint` Sie die `EndPaint` Funktionen und, um die Zeichnung im Client Bereich vorzubereiten und abzuschließen. `BeginPaint`Gibt ein Handle für den Anzeigegeräte Kontext zurück, der zum Zeichnen im Client Bereich verwendet wird. `EndPaint`beendet die Zeichnungs Anforderung und gibt den Gerätekontext frei.
-   
+
 1. Eine Anwendung verarbeitet in der Regel viele andere Nachrichten. Beispielsweise [WM_CREATE](/windows/win32/winmsg/wm-create) , wenn ein Fenster erstmalig erstellt wird, und [WM_DESTROY](/windows/win32/winmsg/wm-destroy) , wenn das Fenster geschlossen wird. Der folgende Code zeigt eine grundlegende, jedoch vollständige `WndProc` -Funktion.
 
    ```cpp
@@ -590,6 +590,6 @@ Wie bereits versprochen, ist hier der gesamte Code für die funktionierende Anwe
 
 Herzlichen Glückwunsch! Sie haben diese exemplarische Vorgehensweise abgeschlossen und eine herkömmliche Windows-Desktop Anwendung erstellt.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows-Desktop Anwendungen](../windows/windows-desktop-applications-cpp.md)

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - std::error_category::message
 - std::error_category::name
 ms.assetid: e0a71e14-852d-4905-acd6-5f8ed426706d
-ms.openlocfilehash: 3ed2eceb60c2efa78181faea58a256b0e35d489f
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 136320ba3be36ec20fc08e0d83b1ce3274ed08ff
+ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076612"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85737560"
 ---
 # <a name="error_category-class"></a>error_category-Klasse
 
@@ -37,11 +37,11 @@ virtual ~error_category();
 error_category(const error_category&) = delete
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `error_category` wird von zwei vordefinierten Objekten implementiert: [generic_category](../standard-library/system-error-functions.md#generic_category) und [system_category](../standard-library/system-error-functions.md#system_category).
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="typedefs"></a>TypeDefs
 
@@ -54,7 +54,7 @@ error_category(const error_category&) = delete
 |||
 |-|-|
 |[default_error_condition](#default_error_condition)|Speichert den Fehlercodewert für ein Fehlerbedingungsobjekt.|
-|[equivalent](#equivalent)|Gibt einen Wert zurück, der angibt, ob Fehlerobjekte gleichwertig sind.|
+|[entsprechen](#equivalent)|Gibt einen Wert zurück, der angibt, ob Fehlerobjekte gleichwertig sind.|
 |[generic_category](#generic)||
 |[Nachricht](#message)|Gibt den Namen des angegebenen Fehlercodes zurück.|
 |[name](#name)|Gibt den Namen der Kategorie zurück.|
@@ -64,10 +64,10 @@ error_category(const error_category&) = delete
 
 |||
 |-|-|
-|[operator=](#op_as)||
-|[operator==](#op_eq_eq)|Prüft auf Gleichheit zwischen `error_category`-Objekten.|
-|[operator!=](#op_neq)|Prüft auf Ungleichheit zwischen `error_category`-Objekten.|
-|[operator<](#op_lt)|Testet, ob das [error_category](../standard-library/error-category-class.md)-Objekt kleiner ist als das `error_category`-Objekt, das für den Vergleich übergeben wurde.|
+|[Operator =](#op_as)||
+|[Operator = =](#op_eq_eq)|Prüft auf Gleichheit zwischen `error_category`-Objekten.|
+|[Operator! =](#op_neq)|Prüft auf Ungleichheit zwischen `error_category`-Objekten.|
+|[Operator<](#op_lt)|Testet, ob das [error_category](../standard-library/error-category-class.md)-Objekt kleiner ist als das `error_category`-Objekt, das für den Vergleich übergeben wurde.|
 
 ## <a name="default_error_condition"></a><a name="default_error_condition"></a>default_error_condition
 
@@ -79,16 +79,16 @@ virtual error_condition default_error_condition(int _Errval) const;
 
 ### <a name="parameters"></a>Parameter
 
-*_Errval*\
+`_Errval`\
 Der Fehlercodewert, der in [error_condition](../standard-library/error-condition-class.md) gespeichert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt `error_condition(_Errval, *this)` zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-### <a name="equivalent"></a><a name="equivalent"></a>entsprechen
+### <a name="equivalent"></a>Äquivalent in <a name="equivalent"></a>
 
 Gibt einen Wert zurück, der angibt, ob Fehlerobjekte gleichwertig sind.
 
@@ -115,7 +115,7 @@ Das zu vergleichende [error_code](../standard-library/error-code-class.md)-Objek
 
 **true** , wenn Kategorie und Wert gleich sind. andernfalls **false**.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Die erste Memberfunktion gibt `*this == _Cond.category() && _Cond.value() == _Errval` zurück.
 
@@ -137,16 +137,16 @@ virtual string message(error_code::value_type val) const = 0;
 
 #### <a name="parameters"></a>Parameter
 
-*Val* -\
+*ster*\
 Der zu beschreibende Fehlercodewert.
 
 #### <a name="return-value"></a>Rückgabewert
 
-Gibt einen beschreibenden Namen des Fehlercodes *Val* für die Kategorie zurück.
+Gibt einen beschreibenden Namen des Fehlercodes *Val* für die Kategorie zurück. Wenn der Fehlercode nicht erkannt wird, wird zurückgegeben `"unknown error"` .
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
-### <a name="name"></a><a name="name"></a>Benennen
+### <a name="name"></a><a name="name"></a>-Name
 
 Gibt den Namen der Kategorie zurück.
 
@@ -174,14 +174,14 @@ bool operator==(const error_category& right) const;
 
 #### <a name="parameters"></a>Parameter
 
-*Rechte*\
+*Richting*\
 Das Objekt, das auf Gleichheit getestet werden soll.
 
 #### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Objekte gleich sind; **FALSE**, wenn die Objekte nicht gleich sind.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Dieser Memberoperator gibt `this == &right` zurück.
 
@@ -195,18 +195,18 @@ bool operator!=(const error_category& right) const;
 
 #### <a name="parameters"></a>Parameter
 
-*Rechte*\
+*Richting*\
 Das Objekt, das auf Ungleichheit geprüft werden soll.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das `error_category` Objekt nicht gleich dem `error_category` Objekt ist, das *Rechts*übermittelt wurde. andernfalls **false**.
+**true** , wenn das `error_category` Objekt nicht gleich dem-Objekt ist, das `error_category` *Rechts*übermittelt wird; andernfalls **false**.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
-Der Memberoperator gibt `(!*this == right)` zurück.
+Der Memberoperator gibt `(!*this == right)`zurück.
 
-### <a name="operatorlt"></a><a name="op_lt"></a>-Operator&lt;
+### <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das [error_category](../standard-library/error-category-class.md)-Objekt kleiner ist als das `error_category`-Objekt, das für den Vergleich übergeben wurde.
 
@@ -216,16 +216,16 @@ bool operator<(const error_category& right) const;
 
 #### <a name="parameters"></a>Parameter
 
-*Rechte*\
+*Richting*\
 Das zu vergleichende `error_category`-Objekt.
 
 #### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn das Objekt, das an `error_category` übergeben wird, kleiner ist als das an `error_category` übergebene Objekt; andernfalls **FALSE**.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
-Der Memberoperator gibt `this < &right` zurück.
+Der Memberoperator gibt `this < &right`zurück.
 
 ### <a name="system_category"></a><a name="system"></a>system_category
 
@@ -241,6 +241,6 @@ Ein Typ, der den gespeicherten Fehlercodewert darstellt.
 typedef int value_type;
 ```
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Diese Typdefinition ist ein Synonym für **int**.

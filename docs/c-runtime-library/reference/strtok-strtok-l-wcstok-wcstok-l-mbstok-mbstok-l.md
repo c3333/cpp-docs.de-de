@@ -1,6 +1,6 @@
 ---
 title: strtok, _strtok_l, wcstok, _wcstok_l, _mbstok, _mbstok_l
-ms.date: 4/2/2020
+ms.date: 6/24/2020
 api_name:
 - _mbstok_l
 - _mbstok
@@ -53,12 +53,12 @@ helpviewer_keywords:
 - _tcstok_l function
 - strtok_l function
 ms.assetid: 904cb734-f0d7-4d77-ba81-4791ddf461ae
-ms.openlocfilehash: 7d8f0d889d58fe776e53f78955fff7fd1cdfa40f
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: bf59d34c17165f9f5165a5a4bdb82ad5a82c737e
+ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912635"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85737528"
 ---
 # <a name="strtok-_strtok_l-wcstok-_wcstok_l-_mbstok-_mbstok_l"></a>strtok, _strtok_l, wcstok, _wcstok_l, _mbstok, _mbstok_l
 
@@ -82,6 +82,11 @@ char *strtok_l(
 wchar_t *wcstok(
    wchar_t *strToken,
    const wchar_t *strDelimit
+);
+wchar_t *wcstok(
+   wchar_t *strToken,
+   const wchar_t *strDelimit,
+   wchar_t **context
 );
 wchar_t *wcstok_l(
    wchar_t *strToken,
@@ -110,6 +115,9 @@ Gruppe von Trennzeichen.
 *locale*<br/>
 Zu verwendendes Gebietsschema.
 
+*context*<br/>
+Zeigt auf den Arbeitsspeicher, der zum Speichern des internen Zustands des Parsers verwendet wird, damit der Parser fortgesetzt werden kann, wo er beim nächsten Aufruf von **wcstok**aufgehört hat.
+
 ## <a name="return-value"></a>Rückgabewert
 
 Gibt einen Zeiger auf das nächste Token zurück, das in " *strautoken*" gefunden wurde. Die-Funktionen geben **null** zurück, wenn keine weiteren Token gefunden werden. Jeder-Befehl ändert " *ertotoken* ", indem er das erste Trennzeichen, das nach dem zurückgegebenen Token auftritt, durch ein NULL-Zeichen ersetzt.
@@ -117,6 +125,8 @@ Gibt einen Zeiger auf das nächste Token zurück, das in " *strautoken*" gefunde
 ## <a name="remarks"></a>Hinweise
 
 Die " **strautok** "-Funktion findet das nächste Token in " *strautoken*". Der Zeichensatz in " *Strauch* " gibt mögliche Trennzeichen für das Token an, das in " *strautoken* " für den aktuellen-Befehl zu finden ist. **wcstok** und **_mbstok** sind breit Zeichen-und multibytezeichenversionen von " **Strauch**". Die Argumente und der Rückgabewert von **wcstok** sind Zeichen folgen mit breit Zeichen. bei den **_mbstok** handelt es sich um Multibyte-Zeichen folgen. Diese drei Funktionen verhalten sich andernfalls identisch.
+
+Die zwei Argument Version von **wcstok** ist nicht "Standard". Wenn Sie diese Version verwenden müssen, müssen Sie `_CRT_NON_CONFORMING_WCSTOK` vor Ihnen `#include <wchar.h>` (oder `#include <string.h>` ) definieren.
 
 > [!IMPORTANT]
 > Diese Funktionen stellen eine mögliche Bedrohung aufgrund eines Pufferüberlaufproblems dar. Pufferüberlaufprobleme werden häufig bei Systemangriffen eingesetzt, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
@@ -141,10 +151,11 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**strtok**|\<string.h>|
 |**wcstok**|\<string.h> oder \<wchar.h>|
+|**_wcstok_l**|<tchar.h>|
 |**_mbstok** **_mbstok_l**|\<mbstring.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
@@ -198,7 +209,7 @@ tokens
 ## <a name="see-also"></a>Weitere Informationen
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcspn, wcscspn, _mbscspn, _mbscspn_l](strcspn-wcscspn-mbscspn-mbscspn-l.md)<br/>
 [strspn, wcsspn, _mbsspn, _mbsspn_l](strspn-wcsspn-mbsspn-mbsspn-l.md)<br/>
