@@ -6,7 +6,6 @@ ms.technology: cpp-language
 ms.assetid: 76798022-5886-48e7-a7f2-f99352b15cbf
 ms.openlocfilehash: 0862f6b512f7278f878ade53b320ad5298bccf68
 ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/14/2020
 ms.locfileid: "80215097"
@@ -410,7 +409,7 @@ Weitere Informationen sind zu den Programmiermodellen, Plattformen, Sprachen und
 | [Beispiel für Netzwerkinformationen (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | In diesem Beispiel wird die Verwendung der Windows-Runtime Netzwerkinformations-APIs veranschaulicht. |
 | [Vereinfachtes Beispiel für Freihandeingaben (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | Dieses Beispiel veranschaulicht die Verwendung der Freihandfunktionalität in Windows Store-Apps. |
 | [StorageDataSource- und GetVirtualizedFilesVector-Beispiel (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | Dieses Beispiel zeigt, wie Bilder in der Bildbibliothek des Benutzers abgerufen und angezeigt werden. |
-| [Beispiel für Edge-basierten Gestenaufruf (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | Dieses Beispiel zeigt, wie Sie mit der `EdgeGesture`-Klasse auf Ereignisse lauschen, die in der Edge-basierten Benutzeroberfläche auftreten. |
+| [Beispiel für Microsoft Edge-basierten Gestenaufruf (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | Dieses Beispiel zeigt, wie Sie mit der `EdgeGesture`-Klasse auf Ereignisse lauschen, die in der Microsoft Edge-basierten Benutzeroberfläche auftreten. |
 | [Beispiel zum Überprüfen, ob die aktuelle Sitzung remote ist (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | Dieses Beispiel veranschaulicht die Verwendung der `Windows.System.RemoteDesktop`-API. |
 | [Beispiel für Anwendungsressourcen und Lokalisierung (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | In diesem Beispiel wird gezeigt, wie Anwendungsressourcen verwendet werden, um lokalisierbaren Inhalt von Anwendungscode zu trennen. Im Beispiel werden die Namespaces `Windows.ApplicationModel.Resources.Core` und `Windows.Globalization` und `WinJS.Resources` verwendet. |
 | [Beispiel für Kontextmenü (Windows 8)](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples) | Dieses Beispiel zeigt, wie ein Kontextmenü erstellt wird und wie das Standardkontextmenü durch Text ersetzt wird. In diesem Beispiel wird `Windows.UI.Popups`-API verwendet, einschließlich PopupMenu und oncontextmenu-Ereignis. |
