@@ -12,6 +12,7 @@ helpviewer_keywords:
 ms.assetid: 93181453-2676-42e5-bf63-3b19e07299b6
 ms.openlocfilehash: b8fc355503055af8b928874ced39cb8224901d3e
 ms.sourcegitcommit: 85d96eeb1ce41d9e1dea947f65ded672e146238b
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/07/2020
 ms.locfileid: "86058606"
@@ -24,7 +25,7 @@ Ruft die `_pexit` Funktion am Ende jeder Methode oder Funktion auf.
 
 > **`/GH`**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die `_pexit` Funktion ist nicht Teil einer Bibliothek. Es liegt an Ihnen, eine Definition für bereitzustellen `_pexit` .
 
@@ -50,7 +51,7 @@ Diese Deklaration ist für 64-Bit-Projekte nicht verfügbar.
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>

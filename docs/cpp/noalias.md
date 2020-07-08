@@ -1,36 +1,36 @@
 ---
 title: noalias
-ms.date: 02/09/2018
+ms.date: 07/07/2020
 f1_keywords:
 - noalias_cpp
 helpviewer_keywords:
 - noalias __declspec keyword
 - __declspec keyword [C++], noalias
 ms.assetid: efafa8b0-7f39-4edc-a81e-d287ae882c9b
-ms.openlocfilehash: 2eceffd10f97615859918991320ceebf577d094c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 70c1f4e8bfa426e858014a78febc424b473a89ae
+ms.sourcegitcommit: e17cc8a478b51739d67304d7d82422967b35f716
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62377438"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86127871"
 ---
-# <a name="noalias"></a>noalias
+# `noalias`
 
 **Microsoft-spezifisch**
 
-**Noalias** bedeutet, dass ein Funktionsaufruf nicht ändert oder sichtbaren globalen Zustand verweisen und nur den Speicher zeigt ändert *direkt* durch Zeigerparameter (Dereferenzierungen der ersten Ebene).
+**`noalias`** bedeutet, dass ein Funktions-oder Verweis auf den sichtbaren globalen Zustand nicht geändert wird, und dass nur der Speicher geändert wird, auf den *direkt* durch Zeiger Parameter verwiesen wird (Dereferenzierungen der ersten Ebene).
 
-Wenn eine Funktion als Anmerkung versehen ist **Noalias**, der Optimierer kann davon ausgehen, dass zusätzlich zu den Parametern selbst nur auf oberster Ebene auf Dereferenzierungen der Zeigerparameter auf die verwiesen wird oder innerhalb der Funktion geändert werden. Der sichtbare globale Zustand ist der Satz aller Daten, die nicht außerhalb des Kompilierungsbereichs definiert werden oder auf die nicht außerhalb des Kompilierungsbereichs verwiesen wird, und ihre Adresse wird nicht akzeptiert. Der kompilierungsbereich umfasst alle Quelldateien ([/LTCG (Link-Time Code Generation)](../build/reference/ltcg-link-time-code-generation.md) erstellt) oder eine einzelne Quelldatei (nicht-**"/ LTCG"** erstellen).
+Wenn eine Funktion als kommentiert wird **`noalias`** , kann der Optimierer davon ausgehen, dass nur die Parameter selbst und nur Dereferenzierungen der ersten Ebene von Zeiger Parametern in der Funktion referenziert oder geändert werden.
 
-Die **Noalias** -Anmerkung gilt nur innerhalb des Texts, der mit Anmerkungen versehenen Funktion. Markieren eine Funktion als **__declspec(noalias)** wirkt sich nicht auf das Aliasing von Zeigern, die von der Funktion zurückgegeben.
+Die-Anmerkung **`noalias`** gilt nur innerhalb des Texts der mit Anmerkungen versehene Funktion. Das Markieren einer Funktion als **`__declspec(noalias)`** wirkt sich nicht auf das Aliasing der von der Funktion zurückgegebenen Zeiger aus.
 
-Eine andere Anmerkung, die Aliasing auswirken können, finden Sie unter [__declspec(restrict)](../cpp/restrict.md).
+Weitere Anmerkungen, die sich auf Aliasing auswirken können, finden Sie unter [`__declspec(restrict)`](../cpp/restrict.md) .
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung von **__declspec(noalias)**.
+Im folgenden Beispiel wird die Verwendung von veranschaulicht **`__declspec(noalias)`** .
 
-Wenn die Funktion `multiply` , dass mit Anmerkungen zugreift versehen **__declspec(noalias)**, weist den Compiler, dass diese Funktion den globalen Status außer durch die Zeiger in der Parameterliste nicht ändert.
+Wenn die Funktion `multiply` , die auf den Speicher zugreift **`__declspec(noalias)`** , kommentiert wird, weist Sie den Compiler an, dass diese Funktion den globalen Zustand nicht ändert, außer durch die Zeiger in der Parameterliste.
 
 ```C
 // declspec_noalias.c
@@ -98,8 +98,8 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[__declspec](../cpp/declspec.md)<br/>
+[`__declspec`](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[__declspec(restrict)](../cpp/restrict.md)
+[`__declspec(restrict)`](../cpp/restrict.md)

@@ -11,6 +11,7 @@ helpviewer_keywords:
 ms.assetid: 585c1dc4-5184-4f01-98f4-80c1909744d7
 ms.openlocfilehash: 7b671cfdf5d5ce43024ac3e038c214396ac8679c
 ms.sourcegitcommit: 85d96eeb1ce41d9e1dea947f65ded672e146238b
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/07/2020
 ms.locfileid: "86058619"
@@ -23,7 +24,7 @@ Die **#Line** -Direktive weist den Präprozessor an, die gemeldeten Werte des Co
 
 > **`#line`***Ziffern Sequenz* ["*Dateiname*"]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Compiler verwendet die Zeilennummer und den optionalen Dateinamen, um auf Fehler zu verweisen, die während der Kompilierung gefunden werden. Die Zeilennummer verweist normalerweise auf die aktuelle Eingabezeile, und der Dateiname verweist auf die aktuelle Eingabedatei. Nach der Verarbeitung jeder Zeile wird die Zeilennummer erhöht.
 
@@ -72,6 +73,6 @@ In diesem Beispiel `ASSERT` verwendet das-Makro die vordefinierten Makros `__LIN
 __LINE__, __FILE__ );}
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Präprozessoranweisungen](../preprocessor/preprocessor-directives.md)
