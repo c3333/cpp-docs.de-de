@@ -1,6 +1,7 @@
 ---
 title: /Gh (_penter-Hookfunktion aktivieren)
-ms.date: 11/04/2016
+description: Beschreibt die/GH-Compileroption, um die angegebene _penter Funktion aufzurufen.
+ms.date: 07/06/2020
 f1_keywords:
 - _penter
 helpviewer_keywords:
@@ -9,28 +10,25 @@ helpviewer_keywords:
 - _penter function
 - -Gh compiler option [C++]
 ms.assetid: 1510a082-8a0e-486e-a309-6add814b494f
-ms.openlocfilehash: 87815b5f0e0450b84acbe3c35b7ef4f31216ec72
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
-ms.translationtype: MT
+ms.openlocfilehash: 96597d964e6a341aa25f4d52d34974949eb7b096
+ms.sourcegitcommit: 85d96eeb1ce41d9e1dea947f65ded672e146238b
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81749291"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86058580"
 ---
 # <a name="gh-enable-_penter-hook-function"></a>/Gh (_penter-Hookfunktion aktivieren)
 
-Verursacht einen Aufruf `_penter` der Funktion am Anfang jeder Methode oder Funktion.
+Bewirkt, dass die- `_penter` Funktion am Anfang jeder Methode oder Funktion aufgerufen wird.
 
 ## <a name="syntax"></a>Syntax
 
-```
-/Gh
-```
+> **`/Gh`**
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die `_penter` Funktion ist nicht Teil einer Bibliothek und es liegt `_penter`an Ihnen, eine Definition für bereitzustellen.
+Die `_penter` Funktion ist nicht Teil einer Bibliothek. Es liegt an Ihnen, eine Definition für bereitzustellen `_penter` .
 
-Wenn Sie nicht `_penter`explizit aufrufen möchten, müssen Sie keinen Prototyp bereitstellen. Die Funktion muss so aussehen, als hätte sie den folgenden Prototyp, und sie muss den Inhalt aller Register beim Eintrag übertragen und den unveränderten Inhalt beim Beenden auffüllen:
+`_penter`Sie müssen keinen Prototyp bereitstellen, es sei denn, Sie beabsichtigen, explizit aufzurufen. Die Funktion muss den Inhalt aller Register bei einem Eintrag per Push übersetzen und den unveränderten Inhalt beim Beenden per Pop übersetzen. Es muss wie folgt aussehen:
 
 ```cpp
 void __declspec(naked) __cdecl _penter( void );
@@ -42,11 +40,9 @@ Diese Deklaration ist für 64-Bit-Projekte nicht verfügbar.
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Klicken Sie auf den Ordner **C/C++** .
+1. Öffnen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Befehlszeile** .
 
-1. Klicken Sie auf die Eigenschaftenseite **Befehlszeile** .
-
-1. Geben Sie die Compileroption im Feld **Zusätzliche Optionen** ein.
+1. Geben Sie die Compileroption im Feld **zusätzliche Optionen** ein.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -54,18 +50,13 @@ Diese Deklaration ist für 64-Bit-Projekte nicht verfügbar.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wenn er `_penter` mit **/Gh**kompiliert wird, wie zweimal aufgerufen wird. einmal bei `main` der Eingabe der `x`Funktion und einmal bei der Eingabe der Funktion .
+Der folgende Code zeigt bei der Kompilierung mit **/GH**, wie `_penter` zweimal aufgerufen wird, einmal bei der Eingabe der Funktion `main` und einmal bei der Eingabe der Funktion `x` . Das Beispiel besteht aus zwei Quelldateien, die separat kompiliert werden.
 
 ```cpp
-// Gh_compiler_option.cpp
-// compile with: /Gh
+// local_penter.cpp
+// compile with: cl /EHsc /c local_penter.cpp
 // processor: x86
 #include <stdio.h>
-void x() {}
-
-int main() {
-   x();
-}
 
 extern "C" void __declspec(naked) __cdecl _penter( void ) {
    _asm {
@@ -93,12 +84,29 @@ extern "C" void __declspec(naked) __cdecl _penter( void ) {
 }
 ```
 
+```cpp
+// Gh_compiler_option.cpp
+// compile with: cl /EHsc /Gh Gh_compiler_option.cpp local_penter.obj
+// processor: x86
+#include <stdio.h>
+
+void x() {}
+
+int main() {
+   x();
+}
+```
+
+Wenn Sie ausführen, wird die lokale `_penter` Funktion beim Eintrag für `main` und aufgerufen `x` :
+
 ```Output
+
 In a function!
 In a function!
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
+[`/GH`(_Pexit Hook-Funktion aktivieren)](gh-enable-pexit-hook-function.md)
