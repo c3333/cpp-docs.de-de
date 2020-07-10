@@ -1,22 +1,22 @@
 ---
 title: Compilerwarnung (Stufe 3) C4996
 description: Erläutert, warum Compilerwarnung C4996 geschieht, und beschreibt, was damit zu tun ist.
-ms.date: 11/25/2019
+ms.date: 07/09/2020
 f1_keywords:
 - C4996
 helpviewer_keywords:
 - C4996
 ms.assetid: 926c7cc2-921d-43ed-ae75-634f560dd317
-ms.openlocfilehash: 98662dc0b5439c1f8857e4f2ad259793a4d03e41
-ms.sourcegitcommit: e17cc8a478b51739d67304d7d82422967b35f716
+ms.openlocfilehash: 9f834c548b2a6b291304bdbf0082659577bfd694
+ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "79425040"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86180980"
 ---
 # <a name="compiler-warning-level-3-c4996"></a>Compilerwarnung (Stufe 3) C4996
 
-Der Code verwendet eine Funktion, einen Klassenmember, eine Variable oder eine typedef, die als *veraltet*markiert ist. Symbole werden mithilfe eines __declspec-Modifizierers [(veraltet)](../../cpp/deprecated-cpp.md) oder des [ \[ \[ veralteten \] \] ](../../cpp/attributes.md) Attributs c++ 14 als veraltet markiert. Die tatsächliche C4996-Warnmeldung wird durch den- `deprecated` Modifizierer oder das-Attribut der Deklaration angegeben.
+Der Code verwendet eine Funktion, einen Klassenmember, eine Variable oder eine typedef, die als *veraltet*markiert ist. Symbole werden mithilfe eines- [`__declspec(deprecated)`](../../cpp/deprecated-cpp.md) Modifizierers oder des c++ 14-Attributs als veraltet markiert [`[[deprecated]]`](../../cpp/attributes.md) . Die tatsächliche C4996-Warnmeldung wird durch den- `deprecated` Modifizierer oder das-Attribut der Deklaration angegeben.
 
 > [!IMPORTANT]
 > Diese Warnung ist immer eine absichtliche Nachricht vom Autor der Header Datei, die das Symbol deklariert. Verwenden Sie das veraltete Symbol nicht, ohne die Konsequenzen zu verstehen.
@@ -29,19 +29,29 @@ Viele Funktionen, Element Funktionen, Vorlagen Funktionen und globale Variablen 
 
 Zum Beheben eines C4996 Problems wird in der Regel empfohlen, den Code zu ändern. Verwenden Sie stattdessen die vorgeschlagenen Funktionen und globalen Variablen. Wenn Sie die vorhandenen Funktionen oder Variablen aus Gründen der Portabilität verwenden müssen, können Sie die Warnung deaktivieren.
 
-Verwenden Sie das [Warning](../../preprocessor/warning.md) -Pragma, um die Warnung für eine bestimmte Codezeile zu deaktivieren `#pragma warning(suppress : 4996)` .
+### <a name="turn-off-the-warning-for-a-specific-line-of-code"></a>Deaktivieren Sie die Warnung für eine bestimmte Codezeile.
 
-Verwenden Sie das warning-Pragma, um die Warnung in einer Datei zu deaktivieren `#pragma warning(disable : 4996)` .
+Um die Warnung für eine bestimmte Codezeile zu deaktivieren, verwenden Sie das- [`warning`](../../preprocessor/warning.md) pragma `#pragma warning(suppress : 4996)` .
 
-Verwenden Sie die Befehlszeilenoption [/wd4996](../../build/reference/compiler-option-warning-level.md) , um die Warnung in Befehlszeilenbuilds Global zu deaktivieren.
+### <a name="turn-off-the-warning-within-a-file"></a>Deaktivieren Sie die Warnung in einer Datei.
+
+Um die Warnung in einer Datei für alle folgenden Elemente zu deaktivieren, verwenden Sie das warning-Pragma `#pragma warning(disable : 4996)` .
+
+### <a name="turn-off-the-warning-in-command-line-builds"></a>Deaktivieren Sie die Warnung in Befehlszeilenbuilds.
+
+Verwenden Sie die Befehlszeilenoption, um die Warnung in Befehlszeilenbuilds Global zu deaktivieren [`/wd4996`](../../build/reference/compiler-option-warning-level.md) .
+
+### <a name="turn-off-the-warning-for-a-project-in-visual-studio"></a>Deaktivieren der Warnung für ein Projekt in Visual Studio
 
 So deaktivieren Sie die Warnung für ein gesamtes Projekt in der Visual Studio-IDE:
 
 1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** für das Projekt. Informationen zur Verwendung des Dialog Felds "Eigenschaften Seiten" finden Sie unter [Eigenschaften Seiten](../../build/reference/property-pages-visual-cpp.md).
 
-1. Wählen Sie die Seite **Konfigurations Eigenschaften**  >  **C/C++**  >  **erweitert** aus.
+1. Wählen Sie die **Eigenschaften**  >  Seite Eigenschaften von**C/C++**  >  **erweitert** aus.
 
-1. Bearbeiten Sie die Eigenschaft **bestimmte Warnungen deaktivieren** , um hinzuzufügen `4996` . Wählen Sie **OK** aus, um die Änderungen zu übernehmen.
+1. Bearbeiten Sie die Eigenschaft **bestimmte Warnungen deaktivieren** , um hinzuzufügen *`4996`* . Wählen Sie **OK** aus, um die Änderungen zu übernehmen.
+
+### <a name="disable-the-warning-using-preprocessor-macros"></a>Deaktivieren der Warnung mithilfe von Präprozessormakros
 
 Sie können auch Präprozessormakros verwenden, um bestimmte bestimmte Klassen von veralnungs Warnungen zu deaktivieren, die in den Bibliotheken verwendet werden. Diese Makros werden nachfolgend beschrieben.
 
@@ -59,33 +69,33 @@ Im folgenden finden Sie einige der allgemeinen Quellen für C4996-Warnungen und-
 
 ## <a name="posix-function-names"></a>POSIX-Funktionsnamen
 
-**Der POSIX-Name für dieses Element ist veraltet. Verwenden Sie stattdessen den ISO C-und C++-konformen Namen:** *New-Name*. **Weitere Informationen finden Sie in der Online Hilfe.**
+**`The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name:`** _`new-name.`_ **`See online help for details.`**
 
 Microsoft hat einige POSIX-und Microsoft-spezifische Bibliotheksfunktionen in der CRT umbenannt, um die Einschränkungen C99 und c++ 03 für reservierte und globale Implementierungs definierte Namen einzuhalten. *Nur die Namen sind veraltet, nicht die Funktionen selbst*. In den meisten Fällen wurde dem Funktionsnamen ein führender unterstrich hinzugefügt, um einen übereinstimmenden Namen zu erstellen. Der Compiler gibt eine veralnungs Warnung für den ursprünglichen Funktionsnamen aus und schlägt den bevorzugten Namen vor.
 
 Um dieses Problem zu beheben, empfiehlt es sich in der Regel, den Code so zu ändern, dass die vorgeschlagenen Funktionsnamen verwendet werden. Die aktualisierten Namen sind jedoch Microsoft-spezifisch. Wenn Sie die vorhandenen Funktionsnamen aus Gründen der Portabilität verwenden müssen, können Sie diese Warnungen deaktivieren. Die Funktionen sind nach wie vor in der Bibliothek unter ihren ursprünglichen Namen verfügbar.
 
-Um veralnungs Warnungen für diese Funktionen zu deaktivieren, definieren Sie das Präprozessormakro ** \_ CRT \_ nonstdc \_ No \_ **. Sie können dieses Makro in der Befehlszeile definieren, indem Sie die-Option einschließen `/D_CRT_NONSTDC_NO_WARNINGS` .
+Definieren Sie das Präprozessormakro, um veralnungs Warnungen für diese Funktionen zu deaktivieren **`_CRT_NONSTDC_NO_WARNINGS`** . Sie können dieses Makro in der Befehlszeile definieren, indem Sie die-Option einschließen `/D_CRT_NONSTDC_NO_WARNINGS` .
 
 ## <a name="unsafe-crt-library-functions"></a>Unsichere CRT-Bibliotheksfunktionen
 
-**Diese Funktion oder Variable ist möglicherweise unsicher. Verwenden Sie** stattdessen eine *sichere Version* **. Zum Deaktivieren der Veraltung verwenden Sie \_ CRT \_ Secure No- \_ \_ Warnungen.  Weitere Informationen finden Sie in der Online Hilfe.**
+**`This function or variable may be unsafe. Consider using`** _`safe-version`_ **`instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.`**
 
 Microsoft hat einige CRT-und C++-Standard Bibliotheksfunktionen und Globals als veraltet markiert, da sicherere Versionen verfügbar sind. Die meisten der veralteten Funktionen ermöglichen den deaktivierten Lese-oder Schreibzugriff auf Puffer. Der Missbrauch kann zu schwerwiegenden Sicherheitsproblemen führen. Der Compiler gibt für diese Funktionen eine Veraltungswarnung aus und schlägt die bevorzugte Funktion vor.
 
-Um dieses Problem zu beheben, empfiehlt es sich, stattdessen die Funktion oder Variable " *sichere Version* " zu verwenden. Manchmal ist dies aus Gründen der Portabilität oder der Abwärtskompatibilität nicht möglich. Vergewissern Sie sich, dass es nicht möglich ist, dass ein Puffer überschreiben oder Überschreiben in Ihrem Code erfolgt. Anschließend können Sie die Warnung deaktivieren.
+Um dieses Problem zu beheben, empfiehlt es sich, stattdessen die Funktion oder Variable zu verwenden *`safe-version`* . Manchmal ist dies aus Gründen der Portabilität oder der Abwärtskompatibilität nicht möglich. Vergewissern Sie sich, dass es nicht möglich ist, dass ein Puffer überschreiben oder Überschreiben in Ihrem Code erfolgt. Anschließend können Sie die Warnung deaktivieren.
 
-Um veraltete Warnungen für diese Funktionen in der CRT zu deaktivieren, definieren Sie ** \_ CRT \_ Secure \_ No- \_ Warnungen**.
+Um veraltete Warnungen für diese Funktionen in der CRT zu deaktivieren, definieren Sie **`_CRT_SECURE_NO_WARNINGS`** .
 
-Um Warnungen zu veralteten globalen Variablen zu deaktivieren, definieren Sie ** \_ CRT \_ Secure \_ No- \_ Warnungen \_ Globals**.
+Um Warnungen zu veralteten globalen Variablen zu deaktivieren, definieren Sie **`_CRT_SECURE_NO_WARNINGS_GLOBALS`** .
 
 Weitere Informationen zu diesen veralteten Funktionen und Globals finden Sie unter [Sicherheitsfunktionen in der CRT](../../c-runtime-library/security-features-in-the-crt.md) und [sicheren Bibliotheken: C++-Standard Bibliothek](../../standard-library/safe-libraries-cpp-standard-library.md).
 
 ## <a name="unsafe-standard-library-functions"></a>Unsichere Standard Bibliotheksfunktionen
 
-__' Std::__*function_name*__:: deaktivierte \_ \_ Iteratoren:: \_ deprecate '-Aufruf an Std::__*function_name* **mit Parametern, die möglicherweise unsicher sind. bei diesem Aufruf wird vom Aufrufer geprüft, ob die übergebenen Werte richtig sind. Um diese Warnung zu deaktivieren, verwenden Sie-D \_ SCL \_ Secure \_ No \_ Warnungen. Weitere Informationen finden Sie in der Dokumentation zur Verwendung Visual C++ "geprüften Iteratoren"** .
+**`'std::`** *`function_name`* **`::_Unchecked_iterators::_Deprecate' Call to std::`** *`function_name`* **`with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'`**
 
-Diese Warnung wird in Debugbuilds angezeigt, da bestimmte Vorlagen Funktionen der C++-Standard Bibliothek die Parameter nicht auf Richtigkeit überprüfen. Häufig liegt es daran, dass der Funktion nicht genügend Informationen zur Verfügung stehen, um Container Grenzen zu überprüfen. Oder, da Iteratoren möglicherweise falsch mit der-Funktion verwendet werden. Diese Warnung hilft Ihnen, diese Funktionen zu identifizieren, da Sie möglicherweise eine Quelle von ernsten Sicherheitslücken in Ihrem Programm sind. Weitere Informationen finden Sie unter über [prüfte Iteratoren](../../standard-library/checked-iterators.md).
+In Visual Studio 2015 wird diese Warnung in Debug-Builds angezeigt, da bestimmte Vorlagen Funktionen der C++-Standard Bibliothek die Parameter nicht auf Richtigkeit überprüfen. Häufig liegt es daran, dass der Funktion nicht genügend Informationen zur Verfügung stehen, um Container Grenzen zu überprüfen. Oder, da Iteratoren möglicherweise falsch mit der-Funktion verwendet werden. Diese Warnung hilft Ihnen, diese Funktionen zu identifizieren, da Sie möglicherweise eine Quelle von ernsten Sicherheitslücken in Ihrem Programm sind. Weitere Informationen finden Sie unter über [prüfte Iteratoren](../../standard-library/checked-iterators.md).
 
 Diese Warnung wird z. b. im Debugmodus angezeigt, wenn Sie anstelle eines einfachen Arrays einen Element Zeiger an übergeben `std::copy` . Um dieses Problem zu beheben, verwenden Sie ein entsprechend deklariertes Array, sodass die Bibliothek die Array Blöcke überprüfen und die Begrenzungen überprüfen kann.
 
@@ -208,7 +218,7 @@ int main()
 }
 ```
 
-Wenn Sie überprüft haben, dass der Code keinen Pufferüberlauf Fehler aufweisen kann, können Sie diese Warnung deaktivieren. Um die Warnungen für diese Funktionen zu deaktivieren, definieren Sie ** \_ SCL \_ Secure \_ No- \_ Warnungen**.
+Wenn Sie überprüft haben, dass der Code keinen Pufferüberlauf Fehler aufweisen kann, können Sie diese Warnung deaktivieren. Um die Warnungen für diese Funktionen zu deaktivieren, definieren Sie **`_SCL_SECURE_NO_WARNINGS`** .
 
 ## <a name="checked-iterators-enabled"></a>Aktivierte Iteratoren aktiviert
 
@@ -240,21 +250,21 @@ C4996 kann auftreten, wenn Sie MFC-oder ATL-Funktionen verwenden, die aus Sicher
 
 Um dieses Problem zu beheben, wird dringend empfohlen, stattdessen den Code so zu ändern, dass aktualisierte Funktionen verwendet werden.
 
-Informationen zum Unterdrücken dieser Warnungen finden Sie unter [_AFX_SECURE_NO_WARNINGS](../../mfc/reference/diagnostic-services.md#afx_secure_no_warnings).
+Informationen zum Unterdrücken dieser Warnungen finden Sie unter [`_AFX_SECURE_NO_WARNINGS`](../../mfc/reference/diagnostic-services.md#afx_secure_no_warnings) .
 
 ## <a name="obsolete-crt-functions-and-variables"></a>Veraltete CRT-Funktionen und-Variablen
 
-**Diese Funktion oder Variable wurde durch neuere Bibliotheks-oder Betriebssystemfunktionen ersetzt. Verwenden Sie** stattdessen *new_item* **. Weitere Informationen finden Sie in der Online Hilfe.**
+**`This function or variable has been superseded by newer library or operating system functionality. Consider using`** *`new_item`* **`instead. See online help for details.`**
 
 Einige Bibliotheksfunktionen und globale Variablen wurden als veraltet gekennzeichnet. Diese Funktionen und Variablen werden möglicherweise in einer zukünftigen Version der Bibliothek entfernt. Der Compiler gibt für diese Elemente eine Veraltungswarnung aus und schlägt die bevorzugte Alternative vor.
 
 Um dieses Problem zu beheben, empfiehlt es sich, den Code so zu ändern, dass er die vorgeschlagene Funktion oder Variable verwendet.
 
-Um veralnungs Warnungen für diese Elemente zu deaktivieren, definieren Sie ** \_ CRT- \_ veraltete \_ keine \_ Warnungen**. Weitere Informationen finden Sie in der Dokumentation für die veraltete Funktion oder Variable.
+Um veraltete Warnungen für diese Elemente zu deaktivieren, definieren Sie **`_CRT_OBSOLETE_NO_WARNINGS`** . Weitere Informationen finden Sie in der Dokumentation für die veraltete Funktion oder Variable.
 
 ## <a name="marshaling-errors-in-clr-code"></a>Marshalling von Fehlern in CLR-Code
 
-C4996 kann auch auftreten, wenn Sie die CLR-Marshallingbibliothek verwenden. In diesem Fall ist C4996 ein Fehler, keine Warnung. Der Fehler tritt auf, wenn Sie [marshal_as](../../dotnet/marshal-as.md) für die Konvertierung zwischen zwei Datentypen verwenden, die eine [Marshal_context Klasse](../../dotnet/marshal-context-class.md)erfordern. Dieser Fehler kann auch angezeigt werden, wenn die Marshallingbibliothek keine Konvertierung unterstützt. Weitere Informationen über die Marshallingbibliothek finden Sie unter Übersicht über das Marshalling [in C++](../../dotnet/overview-of-marshaling-in-cpp.md).
+C4996 kann auch auftreten, wenn Sie die CLR-Marshallingbibliothek verwenden. In diesem Fall ist C4996 ein Fehler, keine Warnung. Der Fehler tritt [`marshal_as`](../../dotnet/marshal-as.md) auf, wenn Sie für die Konvertierung zwischen zwei Datentypen verwenden, die eine- [ `marshal_context` Klasse](../../dotnet/marshal-context-class.md)erfordern. Dieser Fehler kann auch angezeigt werden, wenn die Marshallingbibliothek keine Konvertierung unterstützt. Weitere Informationen über die Marshallingbibliothek finden Sie unter Übersicht über das Marshalling [in C++](../../dotnet/overview-of-marshaling-in-cpp.md).
 
 In diesem Beispiel wird C4996 generiert, da die Marshallingbibliothek einen Kontext für die Konvertierung von einem `System::String` in einen erfordert `const char *` .
 
@@ -279,7 +289,7 @@ int main() {
 
 ## <a name="example-user-defined-deprecated-function"></a>Beispiel: benutzerdefinierte veraltete Funktion
 
-Sie können das veraltet-Attribut in Ihrem eigenen Code verwenden, um Aufrufer zu warnen, wenn Sie die Verwendung bestimmter Funktionen nicht mehr empfehlen. In diesem Beispiel wird C4996 an zwei Stellen generiert: einer für die Zeile, in der die veraltete Funktion deklariert ist, und einer für die Zeile, in der die Funktion verwendet wird.
+Sie können das- `deprecated` Attribut in Ihrem eigenen Code verwenden, um Aufrufer zu warnen, wenn Sie die Verwendung bestimmter Funktionen nicht mehr empfehlen. In diesem Beispiel wird C4996 an zwei Stellen generiert: einer für die Zeile, in der die veraltete Funktion deklariert ist, und einer für die Zeile, in der die Funktion verwendet wird.
 
 ```cpp
 // C4996.cpp

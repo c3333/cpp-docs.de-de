@@ -1,5 +1,6 @@
 ---
 title: Inlinefunktionen [C++]
+description: Das C++-Inline Schlüsselwort kann verwendet werden, um dem Compiler Inline Funktionen vorzuschlagen.
 ms.date: 10/09/2018
 f1_keywords:
 - __forceinline_cpp
@@ -12,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - inline functions [C++], class members
 ms.assetid: 355f120c-2847-4608-ac04-8dda18ffe10c
-ms.openlocfilehash: 703c04873a733d068da025b595909ecc681ff147
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 454a727f0c002dc476e5fdab217efc3dea716e14
+ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374090"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86180708"
 ---
 # <a name="inline-functions-c"></a>Inlinefunktionen [C++]
 
@@ -25,7 +26,7 @@ Eine Funktion, die im Text einer Klassendeklaration definiert ist, ist eine Inli
 
 ## <a name="example"></a>Beispiel
 
-In der folgenden Klassendeklaration ist der `Account`-Konstruktor eine Inlinefunktion. Die `GetBalance`Memberfunktionen `Deposit`, `Withdraw` und werden nicht als **Inline** angegeben, können aber als Inlinefunktionen implementiert werden.
+In der folgenden Klassendeklaration ist der `Account`-Konstruktor eine Inlinefunktion. Die Member-Funktionen, `GetBalance` `Deposit` und `Withdraw` werden nicht als angegeben, **`inline`** sondern können als Inline Funktionen implementiert werden.
 
 ```cpp
 // Inline_Member_Functions.cpp
@@ -60,39 +61,39 @@ int main()
 ```
 
 > [!NOTE]
-> In der Klassendeklaration wurden die Funktionen ohne das **Inline-Schlüsselwort** deklariert. Das **Inline-Schlüsselwort** kann in der Klassendeklaration angegeben werden. das Ergebnis ist das gleiche.
+> In der Klassen Deklaration wurden die Funktionen ohne das- **`inline`** Schlüsselwort deklariert. Das- **`inline`** Schlüsselwort kann in der Klassen Deklaration angegeben werden. das Ergebnis ist identisch.
 
 Eine angegebene Inlinememberfunktion muss in jeder Kompilierungseinheit auf die gleiche Weise deklariert werden. Diese Einschränkung bewirkt, dass sich Inlinefunktionen wie instanziierte Funktionen verhalten. Außerdem muss es genau eine Definition einer Inlinefunktion geben.
 
-Eine Klassenmemberfunktion ist standardmäßig eine externe Verknüpfung, es **inline** sei denn, eine Definition für diese Funktion enthält den Inlinebezeichner. Das obige Beispiel zeigt, dass diese Funktionen nicht explizit mit dem **Inlinebezeichner** deklariert werden müssen. Die Verwendung von **Inline** in der Funktionsdefinition bewirkt, dass es sich um eine Inline-Funktion handelt. Es ist jedoch illegal, eine Funktion nach einem Aufruf dieser Funktion als **Inline-Funktion** zu deklarieren.
+Eine Klassenmember-Funktion verwendet standardmäßig die externe Verknüpfung, es sei denn, eine Definition für diese Funktion enthält den **`inline`** Spezifizierer Das vorherige Beispiel zeigt, dass Sie diese Funktionen nicht explizit mit dem- **`inline`** Spezifizierer deklarieren müssen. **`inline`** Die Verwendung von in der Funktionsdefinition bewirkt, dass es sich um eine Inline Funktion handelt. Es ist jedoch nicht zulässig, eine Funktion als **`inline`** nach einem Aufrufe dieser Funktion erneut zu deklarieren.
 
-## <a name="inline-__inline-and-__forceinline"></a>Inline, __inline \_und _forceinline
+## <a name="inline-__inline-and-__forceinline"></a>`inline`, `__inline` und `__forceinline`
 
-Die **Inline-** und __inline-Bezeichner weisen den Compiler an, eine Kopie des Funktionstexts an jedem Ort einzufügen, an dem die Funktion aufgerufen wird. **__inline**
+Die **`inline`** **`__inline`** Bearbeiter und weisen den Compiler an, eine Kopie des Funktions Texts an jeder Stelle einzufügen, an der die Funktion aufgerufen wird.
 
-Die Einfügung (bezeichnet als Inlineerweiterung oder Inlinekonstrukt) wird nur ausgeführt, wenn die Kosten-Nutzen-Analyse des Compilers dies als sinnvoll bewertet. Eine Inlineerweiterung verringert den Funktionsaufruf-Mehraufwand, möglicherweise auf Kosten der größeren Codegröße.
+Die Einfügung, die als *Inline Erweiterung* oder *Inlining*bezeichnet wird, tritt nur auf, wenn die kostengünstige Analyse des Compilers anzeigt, dass Sie sich lohnt. Die Inline Erweiterung minimiert den Funktions aufrufaufwand, um die potenziellen Kosten größerer Codegröße zu erhöhen.
 
-Das **Schlüsselwort __forceinline** überschreibt die Kosten-Nutzen-Analyse und stützt sich stattdessen auf das Urteil des Programmierers. Seien Sie vorsichtig, wenn Sie **__forceinline verwenden.** Die unterschiedslose Verwendung von **__forceinline** kann zu größerem Code mit nur marginalen Leistungssteigerungen oder in einigen Fällen sogar leistungsverlusten führen (z. B. aufgrund eines erhöhten Pagings einer größeren ausführbaren Datei).
+Das **`__forceinline`** Schlüsselwort überschreibt die Kostenvorteils Analyse und basiert stattdessen auf der Einschätzung des Programmierers. Seien Sie vorsichtig, wenn Sie verwenden **`__forceinline`** . Die willkürliche Verwendung von **`__forceinline`** kann zu größerem Code mit nur marginalen Leistungssteigerungen oder in einigen Fällen sogar zu Leistungseinbußen führen (z. b. aufgrund der zunehmenden Auslagerung einer größeren ausführbaren Datei).
 
 Die Verwendung von Inlinefunktionen kann das Programm schneller machen, da so der Mehraufwand vermieden wird, der Funktionsaufrufen zugeordnet ist. Inline erweiterte Funktionen unterliegen Codeoptimierungen, die für normale Funktionen nicht verfügbar sind.
 
-Der Compiler behandelt die Inlineerweiterungsoptionen und -Schlüsselwörter als Vorschläge. Es gibt keine Garantie, dass Funktionen inline gestellt werden. Sie können den Compiler nicht zwingen, eine bestimmte Funktion inzuline, auch nicht mit dem **Schlüsselwort __forceinline.** Beim Kompilieren mit **/clr**führt der Compiler keine Funktion ein, wenn Sicherheitsattribute auf die Funktion angewendet werden.
+Der Compiler behandelt die Inlineerweiterungsoptionen und -Schlüsselwörter als Vorschläge. Es gibt keine Garantie, dass Funktionen Inline geschaltet werden. Sie können den Compiler nicht zwingen, eine bestimmte Funktion Inline aufzusetzen, auch nicht mit dem- **`__forceinline`** Schlüsselwort. Beim Kompilieren mit führt **`/clr`** der Compiler eine Funktion nicht Inline aus, wenn auf die Funktion Sicherheits Attribute angewendet werden.
 
-Das **Inline-Schlüsselwort** ist nur in C++ verfügbar. Die **__inline-** und **__forceinline** Schlüsselwörter sind sowohl in C als auch in C++ verfügbar. Aus Kompatibilität mit früheren Versionen sind **_inline** und **_forceinline** Synonyme für **__inline**und **__forceinline,** es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) wird angegeben.
+Das **`inline`** Schlüsselwort ist nur in C++ verfügbar. Die **`__inline`** **`__forceinline`** Schlüsselwörter und sind sowohl in C als auch in C++ verfügbar. Aus Gründen der Kompatibilität mit früheren **`_inline`** Versionen **`_forceinline`** sind und Synonyme für **`__inline`** , und **`__forceinline`** es sei denn, die Compileroption [ `/Za` \( Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
-Das **Inline-Schlüsselwort** teilt dem Compiler mit, dass die Inlineerweiterung bevorzugt wird. Jedoch kann der Compiler eine separate Instanz der Funktion erstellen (instanziieren) und Standardaufrufbindungen erstellen, anstatt den Code inline einzufügen. Zwei Fälle, in denen dies auftreten kann, sind:
+Das- **`inline`** Schlüsselwort teilt dem Compiler mit, dass die Inline Erweiterung bevorzugt wird. Jedoch kann der Compiler eine separate Instanz der Funktion erstellen (instanziieren) und Standardaufrufbindungen erstellen, anstatt den Code inline einzufügen. Es gibt zwei Fälle, in denen dieses Verhalten auftreten kann:
 
 - Rekursive Funktionen.
 
 - Funktionen, auf die durch einen Zeiger an anderer Stelle in der Übersetzungseinheit verwiesen wird.
 
-Diese Gründe können, *wie andere,* nach Ermessen des Compilers die Inlining beeinträchtigen; Sie sollten nicht vom **Inlinebezeichner** abhängig sein, um eine Funktion inline zu machen.
+Diese Gründe können das Inlining beeinträchtigen, *wie es auch andere*nach dem Ermessen des Compilers ist. Sie sollten nicht von dem **`inline`** Spezifizierer abhängig sein, damit eine Funktion Inline ist.
 
-Wie bei normalen Funktionen so ist auch bei den Argumenten einer Inlinefunktion die Reihenfolge der Auswertung nicht festgelegt. Tatsächlich kann sie sich von der Reihenfolge unterscheiden, in der die Argumente ausgewertet werden, wenn sie mithilfe des normalen Funktionsaufrufprotokolls übergeben werden.
+Wie bei normalen Funktionen gibt es keine definierte Reihenfolge für die Argument Auswertung in einer Inline Funktion. Tatsächlich kann Sie sich von der Argument Auswertungs Reihenfolge unterscheiden, wenn Sie mit dem normalen Funktions aufrufsprotokoll übermittelt wird.
 
-Mit der Optimierungsoption [/Ob-Compiler](../build/reference/ob-inline-function-expansion.md) können Sie ermitteln, ob die Inline-Funktionserweiterung tatsächlich stattfindet.
+Die [`/Ob`](../build/reference/ob-inline-function-expansion.md) compileroptimierungs-Option hilft bei der Bestimmung, ob die Inline Funktionserweiterung tatsächlich auftritt.
 
-[/LTCG](../build/reference/ltcg-link-time-code-generation.md) führt modulübergreifendes Inlining durch, unabhängig davon, ob es im Quellcode angefordert wurde.
+[`/LTCG`](../build/reference/ltcg-link-time-code-generation.md)führt Modul übergreifende Inlining aus, unabhängig davon, ob es im Quellcode angefordert wird oder nicht.
 
 ### <a name="example-1"></a>Beispiel 1
 
@@ -106,7 +107,7 @@ inline int max( int a , int b ) {
 }
 ```
 
-Die Memberfunktionen einer Klasse können entweder mithilfe **inline** des Inline-Schlüsselworts oder durch Platzieren der Funktionsdefinition innerhalb der Klassendefinition inline deklariert werden.
+Die Member-Funktionen einer Klasse können Inline deklariert werden, entweder mithilfe des- **`inline`** Schlüssel Worts oder durch Platzieren der Funktionsdefinition innerhalb der Klassendefinition.
 
 ### <a name="example-2"></a>Beispiel 2
 
@@ -124,47 +125,47 @@ private:
 };
 ```
 
-**Microsoft Specific**
+**Microsoft-spezifisch**
 
-Das **Schlüsselwort __inline** entspricht **inline**.
+Das- **`__inline`** Schlüsselwort entspricht **`inline`** .
 
-Selbst bei **__forceinline**kann der Compiler nicht unter allen Umständen Code inline. Der Compiler kann keine Funktion inline setzen, wenn Folgendes der Fall ist:
+Auch mit **`__forceinline`** kann der Compiler nicht in allen Fällen Inline Code Inline codieren. Der Compiler kann eine Funktion nicht Inline Inline ausführen, wenn:
 
-- Die Funktion oder ihr Aufrufer werden mit /Ob0 kompiliert (die Standardoption für Debugbuilds).
+- Die-Funktion oder ihr Aufrufer wird mit kompiliert **`/Ob0`** (die Standardoption für Debugbuilds).
 
 - Die Funktion und der Aufrufer verwenden unterschiedliche Typen der Ausnahmebehandlung (C++-Ausnahmebehandlung zum einen, strukturierte Ausnahmebehandlung zum anderen).
 
 - Die Funktion weist eine variable Argumentliste auf.
 
-- Die Funktion verwendet eine Inlineassembly, es sei denn, sie wird mit /Og, /Ox, /O1, oder /O2 kompiliert.
+- Die Funktion verwendet eine Inlineassembly, es sei denn **`/Ox`** , Sie wird mit, **`/O1`** oder kompiliert **`/O2`** .
 
-- Die Funktion ist rekursiv und wird nicht von **#pragma inline_recursion(on)** begleitet. Mit dem Pragma werden rekursive Funktionen mit einer Standardtiefe von 16 Aufrufen inline gesetzt. Um die Inlining-Tiefe zu reduzieren, verwenden Sie [inline_depth](../preprocessor/inline-depth.md) Pragma.
+- Die Funktion ist rekursiv und hat nicht **`#pragma inline_recursion(on)`** festgelegt. Mit dem Pragma werden rekursive Funktionen mit einer Standardtiefe von 16 Aufrufen inline gesetzt. Verwenden Sie pragma, um die Inlining-Tiefe zu verringern [`inline_depth`](../preprocessor/inline-depth.md) .
 
 - Die Funktion ist virtuell und wird virtuell aufgerufen. Direkte Aufrufe virtueller Funktionen können inline gesetzt werden.
 
 - Das Programm akzeptiert die Adresse der Funktion, und der Aufruf erfolgt über den Zeiger auf die Funktion. Direkte Aufrufe von Funktionen, deren Adresse akzeptiert wurden, können inline gesetzt werden.
 
-- Die Funktion ist auch mit dem [nackten](../cpp/naked-cpp.md) [__declspec](../cpp/declspec.md) Modifikator gekennzeichnet.
+- Die-Funktion wird auch mit dem- [`naked`](../cpp/naked-cpp.md) [`__declspec`](../cpp/declspec.md) Modifizierer markiert.
 
-Wenn der Compiler eine mit **__forceinline**deklarierte Funktion nicht inlinen kann, generiert er eine Warnung der Ebene 1, außer wenn:
+Wenn der Compiler eine mit deklarierte Funktion nicht Inline ausführen kann **`__forceinline`** , generiert er eine Warnung der Stufe 1, ausgenommen:
 
-- Die Funktion wird mit /Od oder /Ob0 kompiliert. In diesen Fällen ist keine Inlining zu erwarten.
+- Die Funktion wird mit/od oder/Ob0. kompiliert. In diesen Fällen wird kein Inlining erwartet.
 
-- Die Funktion ist extern definiert, in einer eingeschlossenen Bibliothek oder einer anderen Übersetzungseinheit oder ist ein virtuelles Aufrufziel oder indirektes Aufrufziel. Der Compiler kann nicht inlineierten Code identifizieren, den er in der aktuellen Übersetzungseinheit nicht finden kann.
+- Die-Funktion wird extern, in einer enthaltenen Bibliothek oder einer anderen Übersetzungseinheit definiert, oder ist ein virtuelles oder indirektes aufrufsziel. Der Compiler kann keinen nicht Inline Code identifizieren, der in der aktuellen Übersetzungseinheit nicht gefunden werden kann.
 
-Rekursive Funktionen können inline bis zu einer [inline_depth](../preprocessor/inline-depth.md) vom inline_depth-Pragma angegebenen Tiefe bis zu maximal 16 Aufrufen ersetzt werden. Nach dieser Tiefe werden rekursive Funktionsaufrufe als Aufrufe einer Instanz der Funktion behandelt.  Die Tiefe, bis zu der rekursive Funktionen durch die Inlineheuristik geprüft werden, kann 16 nicht überschreiten. Das [inline_recursion](../preprocessor/inline-recursion.md) Pragma steuert die Inline-Erweiterung einer Funktion, die derzeit erweitert wird. Informationen finden Sie in der Compileroption [Inline-Function Expansion](../build/reference/ob-inline-function-expansion.md) (/Ob).
+Rekursive Funktionen können durch Inline Code zu einer durch das Pragma angegebenen Tiefe ersetzt werden [`inline_depth`](../preprocessor/inline-depth.md) , bis zu einem Maximum von 16 aufrufen. Nach dieser Tiefe werden rekursive Funktionsaufrufe als Aufrufe einer Instanz der Funktion behandelt.  Die Tiefe, in der rekursive Funktionen von der Inline-Heuristik überprüft werden, kann 16 nicht überschreiten. Das- [`inline_recursion`](../preprocessor/inline-recursion.md) pragma steuert die Inline Erweiterung einer Funktion, die zurzeit in der Erweiterung ist. Weitere Informationen finden Sie unter der/ob [-Compileroption (Inline Funktionserweiterung](../build/reference/ob-inline-function-expansion.md) ).
 
-**END Microsoft Spezifisch**
+**Ende Microsoft-spezifisch**
 
-Weitere Informationen zur **inline** Verwendung des Inline-Bezeichners finden Sie unter:
+Weitere Informationen zur Verwendung des **Inline** Spezifizierers finden Sie unter:
 
 - [Inline-Klassenmemberfunktionen](../cpp/inline-functions-cpp.md)
 
-- [Definieren von Inline-C++-Funktionen mit dllexport und dllimport](../cpp/defining-inline-cpp-functions-with-dllexport-and-dllimport.md)
+- [Definieren von C++-Inline Funktionen mit dllexport und DllImport](../cpp/defining-inline-cpp-functions-with-dllexport-and-dllimport.md)
 
 ## <a name="when-to-use-inline-functions"></a>Verwendungsmöglichkeiten von Inlinefunktionen
 
-Inlinefunktionen werden am besten für kleine Funktionen verwendet, z. B. Zugriff auf private Datenmember. Ein- oder zweispurige „Zugriffsmethoden“-Funktionen geben in erster Linie Zustandsinformationen über Objekte ab. Kurze Funktionen werden von der Restkapazität des Funktionsaufrufs beeinflusst. Längere Funktionen benötigen proportional weniger Zeit in der Aufruf-/Rückgabesequenz und profitieren weniger vom Inlining.
+Inlinefunktionen werden am besten für kleine Funktionen verwendet, z. B. Zugriff auf private Datenmember. Der Hauptzweck dieser ein-oder zweizeiligen "Accessor"-Funktionen besteht darin, Zustandsinformationen zu Objekten zurückzugeben. Kurze Funktionen sind sensibel für den Aufwand von Funktionsaufrufen. Längere Funktionen verbringen proportional weniger Zeit in der aufrufenden und der Rückgabe Sequenz und profitieren weniger von Inlining.
 
 Eine `Point` Klasse kann wie folgt definiert werden:
 
@@ -195,27 +196,27 @@ int main()
 }
 ```
 
-Angenommen, die Koordinatenmanipulation ist ein relativ häufiger Vorgang in einem Client`x` `y` einer solchen Klasse, wobei die beiden Accessorfunktionen (und im vorherigen Beispiel) angegeben werden, da **inline** in der Regel den Overhead für:
+Vorausgesetzt, die Koordinaten Manipulation ist ein relativ allgemeiner Vorgang in einem Client einer solchen Klasse, indem die beiden Accessorfunktionen ( `x` und `y` im vorangehenden Beispiel) angegeben werden, was in der **`inline`** Regel den mehr Aufwand für Folgendes spart:
 
 - Funktionsaufrufen (einschließlich der Parameterübergabe und -ablage der Adresse des Objekts auf dem Stapel)
 
 - Beibehaltung des Stapelrahmens des Aufrufers
 
-- Neuem Stapelrahmensetup
+- Neue Stapel Rahmen Einrichtung
 
 - Rückgabewertkommunikation
 
-- Wiederherstellung des alten Stapelrahmens
+- Wiederherstellen des alten Stapel Rahmens
 
 - Rückgabewert
 
-## <a name="inline-functions-vs-macros"></a>Inlinefunktionen im Vergleich zu Makros
+## <a name="inline-functions-vs-macros"></a>Inline Funktionen im Vergleich zu Makros
 
-Obwohl Inlinefunktionen Makros ähneln (da der Funktionscode zum Zeitpunkt des Aufrufs zur Kompilierzeit erweitert wird), werden Inlinefunktionen vom Compiler analysiert, während Makros vom Präprozessor erweitert werden. Folglich gibt es einige wichtige Unterschiede:
+Inline Funktionen sind Makros ähnlich, da der Funktionscode zum Zeitpunkt des Aufrufes zur Kompilierzeit erweitert wird. Inline Funktionen werden jedoch vom Compiler analysiert, und Makros werden durch den Präprozessor erweitert. Folglich gibt es einige wichtige Unterschiede:
 
 - Inlinefunktionen folgen allen Protokollen des Typs mit erzwungener Sicherheit auf normalen Funktionen.
 
-- Inlinefunktionen werden mit der gleichen Syntax wie jede andere Funktion angegeben, mit der Ausnahme, dass sie das **Inline-Schlüsselwort** in die Funktionsdeklaration aufnehmen.
+- Inline Funktionen werden mit der gleichen Syntax wie jede andere Funktion angegeben, mit dem Unterschied, dass Sie das- **`inline`** Schlüsselwort in die Funktionsdeklaration einschließen.
 
 - Die Ausdrücke, die als Argumente an Inlinefunktionen übergeben werden, werden einmal ausgewertet. In einigen Fällen können die Ausdrücke, die als Argumente an Makros übergeben werden, mehrmals ausgewertet werden.
 
@@ -238,9 +239,9 @@ int main() {
 // Sample Output:  Z
 ```
 
-Der Ausdruck `toupper(getc(stdin))` hat die Absicht, ein Zeichen vom`stdin`Konsolengerät ( ) zu lesen und ggf. in Großbuchstaben zu konvertieren.
+Die Absicht des Ausdrucks `toupper(getc(stdin))` besteht darin, dass ein Zeichen aus dem Konsolen Gerät () gelesen `stdin` und ggf. in Großbuchstaben konvertiert werden soll.
 
-Aufgrund der Implementierung des Makros wird `getc` einmal ausgeführt, um zu bestimmen, ob das Zeichen größer oder gleich "a" ist, und einmal, um zu bestimmen, ob es ist kleiner oder gleich "z" ist. Wenn es sich in diesem Bereich befindet, wird `getc` erneut ausgeführt, um das Zeichen in einen Großbuchstaben zu konvertieren. Dies bedeutet, dass das Programm auf zwei oder drei Zeichen wartet, obwohl es idealerweise nur auf eines warten sollte.
+Aufgrund der Implementierung des-Makros `getc` wird einmal ausgeführt, um zu bestimmen, ob das Zeichen größer oder gleich "a" ist, und einmal, um zu bestimmen, ob es kleiner oder gleich "z" ist. Wenn es sich in diesem Bereich befindet, wird `getc` erneut ausgeführt, um das Zeichen in einen Großbuchstaben zu konvertieren. Dies bedeutet, dass das Programm auf zwei oder drei Zeichen wartet, wenn im Idealfall nur auf eins gewartet werden soll.
 
 Inlinefunktionen beheben das zuvor beschriebene Problem:
 
@@ -265,7 +266,7 @@ Sample Input: a
 Sample Output: A
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[noinline](../cpp/noinline.md)<br/>
-[auto_inline](../preprocessor/auto-inline.md)
+[`noinline`](../cpp/noinline.md)<br/>
+[`auto_inline`](../preprocessor/auto-inline.md)

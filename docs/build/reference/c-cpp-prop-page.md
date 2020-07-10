@@ -1,33 +1,33 @@
 ---
-title: C-C++ /Projekteigenschaften (Visual Studio)
-description: Referenzhandbuch zu den Eigenschaften Seiteneigenschaften von VisualC++ Studio Microsoft C/Project.
-ms.date: 02/09/2020
+title: C/C++-Projekteigenschaften (Visual Studio)
+description: Referenzhandbuch zu den Eigenschaften Seiteneigenschaften von Visual Studio Microsoft C/C++-Projekt.
+ms.date: 07/08/2020
 ms.topic: article
 ms.assetid: 16375038-4917-4bd0-9a2a-26343c1708b7
-ms.openlocfilehash: fdfcaaebe8394fedd160c6c02e8c938543f845e2
-ms.sourcegitcommit: 8414cd91297dea88c480e208c7b5301db9972f19
+ms.openlocfilehash: 3366f6677bf976b6211dd27a8abb114765fb2abc
+ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77257753"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86180889"
 ---
-# <a name="cc-property-pages"></a>C/C++ Eigenschaften Seiten
+# <a name="cc-property-pages"></a>C/C++-Eigenschaften Seiten
 
-Die folgenden Eigenschaften Seiten finden Sie unter **Project** > **Properties** > **Configuration Properties** > **C/C++** :
+Die folgenden Eigenschaften Seiten finden Sie unter **Projekt**  >  **Eigenschaften**  >  **Konfigurations Eigenschaften**  >  **C/C++**:
 
-## <a name="cc-general-properties"></a>C/C++ allgemeine Eigenschaften
+## <a name="cc-general-properties"></a>Allgemeine C/C++-Eigenschaften
 
 ### <a name="additional-include-directories"></a>Zusätzliche Includeverzeichnisse
 
-Gibt mindestens ein Verzeichnis an, das dem include-Pfad hinzugefügt werden soll. Verwenden Sie Semikolons als Trennzeichen, wenn mehrere Verzeichnisse vorhanden sind. Legt [/I (Zusätzliche Includeverzeichnisse)](i-additional-include-directories.md)fest.
+Gibt mindestens ein Verzeichnis an, das dem include-Pfad hinzugefügt werden soll. Verwenden Sie Semikolons als Trennzeichen, wenn mehrere Verzeichnisse vorhanden sind. Sets [ `/I` (Zusätzliche Includeverzeichnisse)](i-additional-include-directories.md).
 
 ### <a name="additional-using-directories"></a>Zusätzliche #using Verzeichnisse
 
-Gibt ein oder mehrere Verzeichnisse an (getrennte Verzeichnisnamen mit einem Semikolon), die durchsucht werden sollen, um Namen aufzulösen, die an eine #using Direktive weitergegeben Legt [/AI](ai-specify-metadata-directories.md)fest.
+Gibt ein oder mehrere Verzeichnisse an (getrennte Verzeichnisnamen mit einem Semikolon), die durchsucht werden sollen, um Namen aufzulösen, die an eine #using Direktive weitergegeben Legt fest [`/AI`](ai-specify-metadata-directories.md) .
 
 ### <a name="debug-information-format"></a>Debuginformationsformat
 
-Gibt den Typ der Debuginformationen an, die vom Compiler generiert werden.  Diese Eigenschaft erfordert kompatible Linker-Einstellungen. Legt [/Z7,/Zi,/Zi (Debuginformationsformat)](z7-zi-zi-debug-information-format.md)fest.
+Gibt den Typ der Debuginformationen an, die vom Compiler generiert werden.  Diese Eigenschaft erfordert kompatible Linker-Einstellungen. Legt [ `/Z7` , `/Zi` , `/ZI` (Debuginformationsformat)](z7-zi-zi-debug-information-format.md).
 
 #### <a name="choices"></a>Auswahl
 
@@ -38,11 +38,11 @@ Gibt den Typ der Debuginformationen an, die vom Compiler generiert werden.  Dies
 
 ### <a name="support-just-my-code-debugging"></a>Unterstützung nur eigenen Code Debugging
 
-Fügt unterstützenden Code zum Aktivieren [nur eigenen Code](/visualstudio/debugger/just-my-code) Debuggens in dieser Kompilierungseinheit hinzu. Legt [/JMC](jmc.md)fest.
+Fügt unterstützenden Code zum Aktivieren [nur eigenen Code](/visualstudio/debugger/just-my-code) Debuggens in dieser Kompilierungseinheit hinzu. Legt fest [`/JMC`](jmc.md) .
 
 ### <a name="common-language-runtime-support"></a>Common Language Runtime-Unterstützung
 
-Verwenden Sie den .net-Lauf Zeit Dienst.  Dieser Switch ist mit anderen Switches nicht kompatibel. Ausführliche Informationen finden Sie in der Dokumentation zur [/CLR](clr-common-language-runtime-compilation.md) -Familie von Switches.
+Verwenden Sie den .net-Lauf Zeit Dienst.  Dieser Switch ist mit anderen Switches nicht kompatibel. Ausführliche Informationen finden Sie in der Dokumentation zur Gruppe " [`/clr`](clr-common-language-runtime-compilation.md) Switches".
 
 #### <a name="choices"></a>Auswahl
 
@@ -53,7 +53,7 @@ Verwenden Sie den .net-Lauf Zeit Dienst.  Dieser Switch ist mit anderen Switches
 
 ### <a name="consume-windows-runtime-extension"></a>Windows-Runtime Erweiterung verbrauchen
 
-Verwendet die Windows-Lauf Zeit Sprachen-Erweiterungen. Legt [/ZW](zw-windows-runtime-compilation.md)fest.
+Verwendet die Windows-Lauf Zeit Sprachen-Erweiterungen. Legt fest [`/ZW`](zw-windows-runtime-compilation.md) .
 
 ### <a name="suppress-startup-banner"></a>Startbanner unterdrücken
 
@@ -61,7 +61,7 @@ Unterdrückt die Anzeige des Anmelde Banners, wenn der Compiler startet und wäh
 
 ### <a name="warning-level"></a>Warnstufe
 
-Wählen Sie aus, wie streng der Compiler bei Codefehlern sein soll. Legt [/W0-/W4](compiler-option-warning-level.md)fest.
+Wählen Sie aus, wie streng der Compiler bei Codefehlern sein soll. Legt fest [`/W0` - `/W4`](compiler-option-warning-level.md) .
 
 #### <a name="choices"></a>Auswahl
 
@@ -74,11 +74,11 @@ Wählen Sie aus, wie streng der Compiler bei Codefehlern sein soll. Legt [/W0-/W
 
 ### <a name="treat-warnings-as-errors"></a>Warnungen als Fehler behandeln
 
-Behandelt Compilerwarnungen als Fehler. Bei einem neuen Projekt ist es möglicherweise sinnvoll, [/WX](wx-treat-linker-warnings-as-errors.md) in jeder Kompilierung zu verwenden. Lösen Sie alle Warnungen auf, um schwer zu suchende Code Fehler zu minimieren.
+Behandelt Compilerwarnungen als Fehler. Bei einem neuen Projekt ist es möglicherweise am besten, [`/WX`](wx-treat-linker-warnings-as-errors.md) bei jeder Kompilierung zu verwenden. Lösen Sie alle Warnungen auf, um schwer zu suchende Code Fehler zu minimieren.
 
 ### <a name="warning-version"></a>Warnungs Version
 
-Blenden Sie Warnungen aus, die nach einer bestimmten Version des Compilers eingeführt wurden. Legt [/WV: XX\[. yy\[. zzzzz\]\]](wx-treat-linker-warnings-as-errors.md)fest.
+Blenden Sie Warnungen aus, die nach einer bestimmten Version des Compilers eingeführt wurden. Legt fest [`/Wv:xx`\[`.yy`\[`.zzzzz`\]\]](wx-treat-linker-warnings-as-errors.md) .
 
 ### <a name="diagnostics-format"></a>Diagnose Format
 
@@ -92,13 +92,13 @@ Ermöglicht die umfassende Diagnose mit Spalten Informationen und Quell Kontext 
 
 ### <a name="sdl-checks"></a>SDL-Prüfungen
 
-Weitere empfohlene Überprüfungen für Security Development Lifecycle (SDL) umfasst das Aktivieren zusätzlicher Funktionen zur sicheren Codegenerierung und ermöglicht zusätzliche sicherheitsrelevante Warnungen als Fehler. Legt [/SDL,/SDL-](sdl-enable-additional-security-checks.md)fest.
+Weitere empfohlene Überprüfungen für Security Development Lifecycle (SDL) umfasst das Aktivieren zusätzlicher Funktionen zur sicheren Codegenerierung und ermöglicht zusätzliche sicherheitsrelevante Warnungen als Fehler. Legt [ `/sdl` , `/sdl-` ](sdl-enable-additional-security-checks.md)fest.
 
 ### <a name="multi-processor-compilation"></a>Kompilierung mit mehreren Prozessoren
 
 Kompilierung mit mehreren Prozessoren
 
-## <a name="cc-optimization-properties"></a>C/C++ Optimierungs Eigenschaften
+## <a name="cc-optimization-properties"></a>C/C++-Optimierungs Eigenschaften
 
 ### <a name="optimization"></a>Optimization
 
@@ -108,28 +108,28 @@ Wählen Sie die Option für die Codeoptimierung aus. Wählen Sie Benutzer defini
 
 - **Benutzerdefiniert**: Benutzerdefinierte Optimierung
 - **Deaktiviert**: Deaktivieren der Optimierung.
-- **Maximale Optimierung (Größe bevorzugen)** , äquivalent zu/og/OS/Oy/Ob2/GS/GF/Gy
-- **Maximale Optimierung (Geschwindigkeit bevorzugen)** : äquivalent zu/og/Oi/OT/Oy/Ob2/GS/GF/Gy
-- **Optimierungen (Geschwindigkeit bevorzugen)** : äquivalent zu/og/Oi/OT/Oy/Ob2
+- **Maximale Optimierung (Größe bevorzugen)** : äquivalent zu**`/Os /Oy /Ob2 /Gs /GF /Gy`**
+- **Maximale Optimierung (Geschwindigkeit bevorzugen)** : äquivalent zu**`/Oi /Ot /Oy /Ob2 /Gs /GF /Gy`**
+- **Optimierungen (Geschwindigkeit bevorzugen)** : äquivalent zu**`/Oi /Ot /Oy /Ob2`**
 
 ### <a name="inline-function-expansion"></a>Inline Funktionserweiterung
 
-Wählen Sie die Ebene der [Inline Funktions](../../cpp/inline-functions-cpp.md) Erweiterung für den Build aus. Legt [/ob1,/Ob2](ob-inline-function-expansion.md)fest.
+Wählen Sie die Ebene der [Inline Funktions](../../cpp/inline-functions-cpp.md) Erweiterung für den Build aus. Legt fest [`/Ob`](ob-inline-function-expansion.md) .
 
 #### <a name="choices"></a>Auswahl
 
 - **Standard**
 - **Deaktiviert** : deaktiviert die Inline Erweiterung, die standardmäßig aktiviert ist.
-- **Nur __inline** : erweitert nur Funktionen, die als **Inline**, `__inline`, `__forceinline`oder `__inline`gekennzeichnet sind. Oder in einer C++ Member-Funktion, die innerhalb einer Klassen Deklaration definiert ist.
-- **Alle geeigneten** -erweitert Funktionen, die als **Inline** oder `__inline` gekennzeichnet sind, sowie jede andere Funktion, die der Compiler auswählt. (Die Erweiterung erfolgt nach dem Ermessen des Compilers, häufig als *Automatisches inlining*bezeichnet.)
+- **Nur __inline** : erweitert nur Funktionen, die als **`inline`** , oder markiert sind `__forceinline` `__inline` . Oder in einer C++ Member-Funktion, die innerhalb einer Klassen Deklaration definiert ist.
+- **Alle geeigneten** -erweitert Funktionen **`inline`** , die als oder gekennzeichnet sind `__inline` , und jede andere Funktion, die der Compiler auswählt. (Die Erweiterung erfolgt nach dem Ermessen des Compilers, häufig als *Automatisches inlining*bezeichnet.)
 
 ### <a name="enable-intrinsic-functions"></a>Intrinsische Funktionen aktivieren
 
-Aktiviert intrinsische Funktionen.  Die Verwendung von intrinsischen Funktionen erzeugt schnelleren, aber möglicherweise größeren Code. Legt [/Oi](oi-generate-intrinsic-functions.md)fest.
+Aktiviert intrinsische Funktionen.  Die Verwendung von intrinsischen Funktionen erzeugt schnelleren, aber möglicherweise größeren Code. Legt fest [`/Oi`](oi-generate-intrinsic-functions.md) .
 
 ### <a name="favor-size-or-speed"></a>Größe oder Geschwindigkeit bevorzugen
 
-Gibt an, ob Codegröße oder Code Geschwindigkeit bevorzugt werden soll. "Globale Optimierung" muss aktiviert sein. Legt [/OT,/OS](os-ot-favor-small-code-favor-fast-code.md)fest.
+Gibt an, ob Codegröße oder Code Geschwindigkeit bevorzugt werden soll. "Globale Optimierung" muss aktiviert sein. Legt [ `/Ot` , `/Os` ](os-ot-favor-small-code-favor-fast-code.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
@@ -143,13 +143,13 @@ Unterdrückt die Erstellung von Framezeigern im Anrufstapel.
 
 ### <a name="enable-fiber-safe-optimizations"></a>Fiber-sichere Optimierungen aktivieren
 
-Aktiviert die Speicherplatz Optimierung bei Verwendung von Fibers und Thread lokalem Speicherzugriff. Legt [/gt](gt-support-fiber-safe-thread-local-storage.md)fest.
+Aktiviert die Speicherplatz Optimierung bei Verwendung von Fibers und Thread lokalem Speicherzugriff. Legt fest [`/GT`](gt-support-fiber-safe-thread-local-storage.md) .
 
 ### <a name="whole-program-optimization"></a>Optimierung des gesamten Programms
 
-Ermöglicht Modul übergreifende Optimierungen durch verzögern der Codegenerierung bis zur Verknüpfungs Zeit. Erfordert die Linkeroption "Link-Zeit Code Generierung". Legt [/GL](gl-whole-program-optimization.md)fest.
+Ermöglicht Modul übergreifende Optimierungen durch verzögern der Codegenerierung bis zur Verknüpfungs Zeit. Erfordert die Linkeroption "Link-Zeit Code Generierung". Legt fest [`/GL`](gl-whole-program-optimization.md) .
 
-## <a name="cc-preprocessor-properties"></a>C/C++ präprozessoreigenschaften
+## <a name="cc-preprocessor-properties"></a>C/C++-präprozessoreigenschaften
 
 ### <a name="preprocessor-definitions"></a>Präprozessordefinitionen
 
@@ -157,11 +157,11 @@ Definiert Vorverarbeitungssymbole für Ihre Quelldatei.
 
 ### <a name="undefine-preprocessor-definitions"></a>Präprozessordefinitionen aufheben
 
-Gibt mindestens eine aufgehobene Präprozessordefinition an. Legt [/U](u-u-undefine-symbols.md)fest.
+Gibt mindestens eine aufgehobene Präprozessordefinition an. Legt fest [`/U`](u-u-undefine-symbols.md) .
 
 ### <a name="undefine-all-preprocessor-definitions"></a>Alle Präprozessordefinitionen aufheben
 
-Hebt die Definition aller zuvor definierten Präprozessorwerte auf. Legt [/u](u-u-undefine-symbols.md)fest.
+Hebt die Definition aller zuvor definierten Präprozessorwerte auf. Legt fest [`/u`](u-u-undefine-symbols.md) .
 
 ### <a name="ignore-standard-include-paths"></a>Standardincludepfade ignorieren
 
@@ -169,7 +169,7 @@ Verhindert, dass der Compiler in Verzeichnissen, die in den INCLUDE-Umgebungsvar
 
 ### <a name="preprocess-to-a-file"></a>In einer Datei Vorverarbeiten
 
-Führt eine Vorverarbeitung C++ von C-und Quelldateien durch und schreibt die vorverarbeitete Ausgabe in eine Datei. Mit dieser Option wird die Kompilierung unterdrückt, und es wird keine *`.obj`* Datei erzeugt.
+Vorverarbeitet C-und C++-Quelldateien und schreibt die vorverarbeitete Ausgabe in eine Datei. Mit dieser Option wird die Kompilierung unterdrückt, und es wird keine *`.obj`* Datei erzeugt.
 
 ### <a name="preprocess-suppress-line-numbers"></a>Vorverarbeitung unterdrücken von Zeilennummern
 
@@ -177,17 +177,17 @@ Preprocess ohne #line Direktiven.
 
 ### <a name="keep-comments"></a>Kommentare beibehalten
 
-Unterdrückt die kommentarleiste aus dem Quellcode. erfordert, dass eine der Vorverarbeitungs Optionen festgelegt wird. Legt [/C](c-preserve-comments-during-preprocessing.md)fest.
+Unterdrückt die kommentarleiste aus dem Quellcode. erfordert, dass eine der Vorverarbeitungs Optionen festgelegt wird. Legt fest [`/C`](c-preserve-comments-during-preprocessing.md) .
 
-## <a name="cc-code-generation-properties"></a>Eigenschaften derC++ C/Code-Generierung
+## <a name="cc-code-generation-properties"></a>Eigenschaften der C/C++-Code Generierung
 
 ### <a name="enable-string-pooling"></a>Zeichen folgen Pooling aktivieren
 
-Der Compiler erstellt nur eine schreibgeschützte Kopie identischer Zeichen folgen im Programm Image. Dies führt zu kleineren Programmen, einer Optimierung, die als *Zeichen folgen Pooling*bezeichnet wird. [/O1,/O2](o-options-optimize-code.md)und [/Zi](z7-zi-zi-debug-information-format.md) legen die Option [/GF](gf-eliminate-duplicate-strings.md) automatisch fest.
+Der Compiler erstellt nur eine schreibgeschützte Kopie identischer Zeichen folgen im Programm Image. Dies führt zu kleineren Programmen, einer Optimierung, die als *Zeichen folgen Pooling*bezeichnet wird. die Option [ `/O1` `/O2` , ](o-options-optimize-code.md)und wird [`/ZI`](z7-zi-zi-debug-information-format.md) automatisch festgelegt [`/GF`](gf-eliminate-duplicate-strings.md) .
 
 ### <a name="enable-minimal-rebuild"></a>Minimale Neuerstellung aktivieren
 
-Aktiviert die minimale Neuerstellung, die bestimmt, ob C++ Quelldateien neu kompiliert werden C++ sollen, die geänderte Klassendefinitionen enthalten, die in Header *`.h`* Dateien gespeichert sind.
+Aktiviert die minimale Neuerstellung, die bestimmt, ob C++-Quelldateien, die geänderte C++-Klassendefinitionen enthalten, in Header Dateien gespeichert werden sollen *`.h`* .
 
 ### <a name="enable-c-exceptions"></a>C++-Ausnahmen aktivieren
 
@@ -195,18 +195,18 @@ Gibt das Ausnahmebehandlungsmodell an, das vom Compiler verwendet wird.
 
 #### <a name="choices"></a>Auswahl
 
-- **Ja bei SEH-Ausnahmen** : das Ausnahme Behandlungsmodell, das asynchrone (strukturierte) und synchroneC++() Ausnahmen abfängt. Legt [/EHa](eh-exception-handling-model.md)fest.
-- **Ja** , das Ausnahme Behandlungsmodell, das nur C++ Ausnahmen abfängt und den Compiler anweist, dass externe C-Funktionen nie C++ eine-Ausnahme auslösen. Legt [/EHsc](eh-exception-handling-model.md)fest.
-- **Ja bei extern c-Funktionen** : das Ausnahme Behandlungsmodell, das C++ nur Ausnahmen abfängt und den Compiler anweist, zu übernehmen, dass externe c-Funktionen eine Ausnahme auslösen. Legt [/EHS](eh-exception-handling-model.md)fest.
+- **Ja bei SEH-Ausnahmen** : das Ausnahme Behandlungsmodell, das asynchrone (strukturierte) und synchrone (C++) Ausnahmen abfängt. Legt fest [`/EHa`](eh-exception-handling-model.md) .
+- **Ja** , das Ausnahme Behandlungsmodell, das nur C++-Ausnahmen abfängt und den Compiler anweist, dass externe C-Funktionen nie eine C++-Ausnahme auslösen. Legt fest [`/EHsc`](eh-exception-handling-model.md) .
+- **Ja bei extern c-Funktionen** : das Ausnahme Behandlungsmodell, das nur C++-Ausnahmen abfängt und den Compiler anweist, zu übernehmen, dass externe c-Funktionen eine Ausnahme auslösen. Legt fest [`/EHs`](eh-exception-handling-model.md) .
 - **No** -keine Ausnahmebehandlung.
 
 ### <a name="smaller-type-check"></a>Kleinere Typüberprüfung
 
-Aktivieren Sie die Überprüfung der Konvertierung in kleinere Typen, nicht kompatibel mit einem anderen Optimierungstyp als "Debug". Legt [/RTCc](rtc-run-time-error-checks.md)fest.
+Aktivieren Sie die Überprüfung der Konvertierung in kleinere Typen, nicht kompatibel mit einem anderen Optimierungstyp als "Debug". Legt fest [`/RTCc`](rtc-run-time-error-checks.md) .
 
 ### <a name="basic-runtime-checks"></a>Grundlegende Lauf Zeit Prüfungen
 
-Grundlegende Lauf Zeit Fehlerüberprüfungen aktivieren, nicht kompatibel mit allen anderen Optimierungen als Debuggen. Legt [/RTCs,/RTCu,/RTC1](rtc-run-time-error-checks.md)fest.
+Grundlegende Lauf Zeit Fehlerüberprüfungen aktivieren, nicht kompatibel mit allen anderen Optimierungen als Debuggen. Legt [ `/RTCs` , `/RTCu` , `/RTC1` ](rtc-run-time-error-checks.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
@@ -217,18 +217,18 @@ Grundlegende Lauf Zeit Fehlerüberprüfungen aktivieren, nicht kompatibel mit al
 
 ### <a name="runtime-library"></a>Laufzeitbibliothek
 
-Dient zum Angeben der zu verknüpfenden Laufzeitbibliothek. Legt [/MT,/MTD,/MD,/MDD](md-mt-ld-use-run-time-library.md)fest.
+Dient zum Angeben der zu verknüpfenden Laufzeitbibliothek. Legt [ `/MT` , `/MTd` , `/MD` , `/MDd` ](md-mt-ld-use-run-time-library.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
 - **Multithread** : bewirkt, dass die Anwendung die statische Multithread-Version der Lauf Zeit Bibliothek verwendet.
 - **Multithread-Debug** : Definiert _DEBUG und _MT. Diese Option bewirkt auch, dass der Compiler den Bibliotheksnamen " *LIBCMTD. lib* " in der *`.obj`* Datei platziert, sodass der Linker " *LIBCMTD. lib* " zum Auflösen externer Symbole verwendet.
 - **Multithread-DLL** : bewirkt, dass Ihre Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Definiert _MT und _DLL und bewirkt, dass der Compiler den Bibliotheksnamen " *msvcrt. lib* " in der *`.obj`* Datei platziert.
-- **Multithreaded-Debug-DLL** : Definiert _DEBUG, _MT und _DLL und bewirkt, dass Ihre Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Außerdem bewirkt dies, dass der Compiler den Bibliotheksnamen " *msvcrtd. lib* " in der *`.obj`* -Datei platziert.
+- **Multithreaded-Debug-DLL** : Definiert _DEBUG, _MT und _DLL und bewirkt, dass Ihre Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Außerdem bewirkt dies, dass der Compiler den Bibliotheksnamen " *msvcrtd. lib* " in der *`.obj`* Datei platziert.
 
 ### <a name="struct-member-alignment"></a>Ausrichtung von Strukturmembern
 
-Gibt 1-, 2-, 4-oder 8-Byte-Begrenzungen für die Ausrichtung der Strukturmember an. Legt [/ZP](zp-struct-member-alignment.md)fest.
+Gibt 1-, 2-, 4-oder 8-Byte-Begrenzungen für die Ausrichtung der Strukturmember an. Legt fest [`/Zp`](zp-struct-member-alignment.md) .
 
 #### <a name="choices"></a>Auswahl
 
@@ -245,16 +245,16 @@ Die Sicherheitsprüfung hilft bei der Erkennung von Überläufen des Stapelpuffe
 
 #### <a name="choices"></a>Auswahl
 
-- **Sicherheitsüberprüfung deaktivieren**: Sicherheitsüberprüfung deaktivieren. Legt [/GS-](gs-buffer-security-check.md)fest.
-- **Sicherheitsüberprüfung aktivieren**: Sicherheitsüberprüfung aktivieren. Legt [/GS](gs-buffer-security-check.md)fest.
+- **Sicherheitsüberprüfung deaktivieren**: Sicherheitsüberprüfung deaktivieren. Legt fest [`/GS-`](gs-buffer-security-check.md) .
+- **Sicherheitsüberprüfung aktivieren**: Sicherheitsüberprüfung aktivieren. Legt fest [`/GS`](gs-buffer-security-check.md) .
 
-### <a name="control-flow-guard"></a>Ablauf Steuerungs Schutz
+### <a name="control-flow-guard"></a>Ablaufsteuerungsschutz
 
 Guard-Sicherheitsüberprüfung hilft bei der Erkennung von versuchen, eine Verteilung an einen ungültigen Codeblock durch
 
 #### <a name="choices"></a>Auswahl
 
-- **Ja** : Sicherheitsüberprüfung mit Schutz Sätzen aktivieren [/Guard: CF](guard-enable-control-flow-guard.md).
+- **Ja** , Sicherheitsüberprüfung mit Schutzgruppen aktivieren [`/guard:cf`](guard-enable-control-flow-guard.md) .
 - **Nein**
 
 ### <a name="enable-function-level-linking"></a>Funktionslevel-Linking aktivieren
@@ -263,29 +263,29 @@ Ermöglicht dem Compiler, einzelne Funktionen in Form von kompilierten Funktione
 
 ### <a name="enable-parallel-code-generation"></a>Parallele Code Generierung aktivieren
 
-Ermöglicht dem Compiler, parallelen Code für Schleifen zu generieren, die mit `#pragma loop(hint_parallel[(n)])` identifiziert werden, wenn die Optimierung aktiviert ist.
+Ermöglicht dem Compiler, parallelen Code für Schleifen zu generieren, die mithilfe von identifiziert werden, `#pragma loop(hint_parallel[(n)])` Wenn die Optimierung aktiviert ist.
 
 ### <a name="enable-enhanced-instruction-set"></a>Erweiterten Anweisungs Satz aktivieren
 
-Ermöglicht die Verwendung von Anweisungen, die auf Prozessoren mit erweiterten Anweisungs Sätzen gefunden werden. Zum Beispiel die Erweiterungen SSE, SSE2, AVX und AVX2 für IA-32. Und, die AVX-und AVX2-Erweiterungen für x64. Derzeit sind **`/arch:SSE`** und **`/arch:SSE2`** nur bei der Erstellung für die x86-Architektur verfügbar. Wenn keine Option angegeben ist, verwendet der Compiler Anweisungen, die auf Prozessoren gefunden werden, die SSE2 unterstützen. Die Verwendung erweiterter Anweisungen kann mit **`/arch:IA32`** deaktiviert werden. Weitere Informationen finden Sie unter [/arch (x86)](arch-x86.md), [/arch (x64)](arch-x64.md) und [/arch (Arm)](arch-arm.md).
+Ermöglicht die Verwendung von Anweisungen, die auf Prozessoren mit erweiterten Anweisungs Sätzen gefunden werden. Zum Beispiel die Erweiterungen SSE, SSE2, AVX und AVX2 für IA-32. Und, die AVX-und AVX2-Erweiterungen für x64. Derzeit **`/arch:SSE`** **`/arch:SSE2`** sind und nur verfügbar, wenn Sie für die x86-Architektur entwickeln. Wenn keine Option angegeben ist, verwendet der Compiler Anweisungen, die auf Prozessoren gefunden werden, die SSE2 unterstützen. Die Verwendung erweiterter Anweisungen kann mit deaktiviert werden **`/arch:IA32`** . Weitere Informationen finden Sie unter [`/arch (x86)`](arch-x86.md) [`/arch (x64)`](arch-x64.md) und [`/arch (ARM)`](arch-arm.md) .
 
 #### <a name="choices"></a>Auswahl
 
-- **Streaming SIMD Extensions** Streaming SIMD Extensions. Legt **`/arch:SSE`** fest.
-- **Streaming SIMD Extensions 2** -Streaming SIMD Extensions 2. Legt **`/arch:SSE2`** fest.
-- **Erweiterte Vektor Erweiterungen** -Erweiterte Vektor Erweiterungen. Legt **`/arch:AVX`** fest.
-- **Erweiterte Vektor Erweiterungen 2** -Erweiterte Vektor Erweiterungen 2. Legt **`/arch:AVX2`** fest.
-- **Keine erweiterten Anweisungen** -keine erweiterten Anweisungen. Legt **`/arch:IA32`** fest.
+- **Streaming SIMD Extensions** Streaming SIMD Extensions. Sationen**`/arch:SSE`**
+- **Streaming SIMD Extensions 2** -Streaming SIMD Extensions 2. Sationen**`/arch:SSE2`**
+- **Erweiterte Vektor Erweiterungen** -Erweiterte Vektor Erweiterungen. Sationen**`/arch:AVX`**
+- **Erweiterte Vektor Erweiterungen 2** -Erweiterte Vektor Erweiterungen 2. Sationen**`/arch:AVX2`**
+- **Keine erweiterten Anweisungen** -keine erweiterten Anweisungen. Sationen**`/arch:IA32`**
 - **Nicht festgelegt** -nicht festgelegt.
 
 ### <a name="floating-point-model"></a>Gleit Komma Modell
 
-Legt das Gleitkommamodell fest. Legt [/fp: präzise,/fp: Strict,/fp: fast](fp-specify-floating-point-behavior.md)fest.
+Legt das Gleitkommamodell fest. Legt [ `/fp:precise` , `/fp:strict` , `/fp:fast` ](fp-specify-floating-point-behavior.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
 - **Genau** : Standardwert. Verbessert die Konsistenz von Gleit Komma Tests auf Gleichheit und Ungleichheit.
-- **Strict** -das strengste Gleit Komma Modell. **`/fp:strict`** bewirkt, dass **`fp_contract`** deaktiviert und **`fenv_access`** wird. **`/fp:except`** impliziert und kann durch explizites angeben von **`/fp:except-`** deaktiviert werden. Bei Verwendung mit **`/fp:except-`** erzwingt **`/fp:strict`** strikte Gleit Komma Semantik, aber ohne Berücksichtigung von Ausnahme Ereignissen.
+- **Strict** -das strengste Gleit Komma Modell. **`/fp:strict`** bewirkt **`fp_contract`** , dass deaktiviert ist und **`fenv_access`** auf on gesetzt ist. **`/fp:except`** ist impliziert und kann durch explizites angeben von deaktiviert werden **`/fp:except-`** . Bei Verwendung mit **`/fp:except-`** **`/fp:strict`** erzwingt eine strikte Gleit Komma Semantik, aber ohne Berücksichtigung von Ausnahme Ereignissen.
 - **Schneller** : erstellt den schnellsten Code in den meisten Fällen.
 
 ### <a name="enable-floating-point-exceptions"></a>Gleit Komma Ausnahmen aktivieren
@@ -298,30 +298,30 @@ Wenn Hotpatching vor auf ON fest steht, stellt der Compiler sicher, dass die ers
 
 ### <a name="spectre-mitigation"></a>Spectre-Entschärfung
 
-Spectre-entschärfungen für CVE 2017-5753. Legt [/Qspectre](qspectre.md)fest.
+Spectre-entschärfungen für CVE 2017-5753. Legt fest [`/Qspectre`](qspectre.md) .
 
 #### <a name="choices"></a>Auswahl
 
 - **Aktiviert** : enable Spectre Entschärfungs Feature für CVE 2017-5753
 - **Deaktiviert** -nicht festgelegt.
 
-## <a name="cc-language-properties"></a>C/C++ Language-Eigenschaften
+## <a name="cc-language-properties"></a>C/C++-Spracheigenschaften
 
 ### <a name="disable-language-extensions"></a>Spracherweiterungen deaktivieren
 
-Unterdrückt oder aktiviert Spracherweiterungen. Legt [/Za](za-ze-disable-language-extensions.md)fest.
+Unterdrückt oder aktiviert Spracherweiterungen. Legt fest [`/Za`](za-ze-disable-language-extensions.md) .
 
 ### <a name="conformance-mode"></a>Konformitäts Modus
 
-Aktiviert oder unterdrückt den Konformitäts Modus. Legt [/permissive-](permissive-standards-conformance.md)fest.
+Aktiviert oder unterdrückt den Konformitäts Modus. Legt fest [`/permissive-`](permissive-standards-conformance.md) .
 
 ### <a name="treat-wchar_t-as-built-in-type"></a>Wchar_t als integrierten Typ behandeln
 
-Wenn diese Option angegeben ist, wird der Typ **wchar_t** zu einem systemeigenen Typ, der `__wchar_t` auf die gleiche Weise zugeordnet wird wie die **Kurzform** von `__int16`. [/Zc: wchar_t](zc-wchar-t-wchar-t-is-native-type.md) ist standardmäßig aktiviert.
+Wenn angegeben, wird der Typ zu einem systemeigenen Typ, der auf **`wchar_t`** `__wchar_t` die gleiche Weise wie **`short`** zugeordnet wird `__int16` . [`/Zc:wchar_t`](zc-wchar-t-wchar-t-is-native-type.md)ist standardmäßig aktiviert.
 
 ### <a name="force-conformance-in-for-loop-scope"></a>Konformität in for-Schleifen Bereich erzwingen
 
-Wird verwendet, um C++ Standardverhalten für die for-Anweisungs Schleifen mit Microsoft-Erweiterungen zu implementieren. Legt [/Za,/Ze (Spracherweiterungen deaktivieren](za-ze-disable-language-extensions.md)) fest. Standardmäßig ist[/Zc:forScope](zc-forscope-force-conformance-in-for-loop-scope.md) aktiviert.
+Wird zum Implementieren des standardmäßigen C++-Verhaltens für die for-Anweisung-Schleifen mit Microsoft-Erweiterungen verwendet. Legt fest [ `/Za` `/Ze` (Spracherweiterungen deaktivieren](za-ze-disable-language-extensions.md)). [`/Zc:forScope`](zc-forscope-force-conformance-in-for-loop-scope.md)ist standardmäßig aktiviert.
 
 ### <a name="remove-unreferenced-code-and-data"></a>Entfernen von nicht referenzierten Code und Daten
 
@@ -333,32 +333,32 @@ Wird verwendet, um einen Rvalue-Verweistyp als Ergebnis eines Umwandlungs Vorgan
 
 ### <a name="enable-run-time-type-information"></a>Laufzeit-Typeninformation aktivieren
 
-Fügt Code für die Überprüfung der C++-Objekttypen während der Laufzeit hinzu (Laufzeit-Typinformationen). Legt [/GR,/GR-](gr-enable-run-time-type-information.md)fest.
+Fügt Code für die Überprüfung der C++-Objekttypen während der Laufzeit hinzu (Laufzeit-Typinformationen). Legt [ `/GR` , `/GR-` ](gr-enable-run-time-type-information.md)fest.
 
 ### <a name="open-mp-support"></a>Open MP-Unterstützung
 
-Aktiviert OpenMP 2,0-Spracherweiterungen. Legt [/OpenMP](openmp-enable-openmp-2-0-support.md)fest.
+Aktiviert OpenMP 2,0-Spracherweiterungen. Legt fest [`/openmp`](openmp-enable-openmp-2-0-support.md) .
 
 ### <a name="c-language-standard"></a>C++-Sprachstandard
 
-Bestimmt den C++ Sprachstandard, den der Compiler ermöglicht. Verwenden Sie nach Möglichkeit die neueste Version. Legt [/Std: c++ 14,/Std: c++ 17,/Std: c + + Latest](std-specify-language-standard-version.md)fest.
+Bestimmt den C++-Sprachstandard, den der Compiler ermöglicht. Verwenden Sie nach Möglichkeit die neueste Version. Legt [ `/std:c++14` , `/std:c++17` , `/std:c++latest` ](std-specify-language-standard-version.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
 - **Standard**
 - **ISO c++ 14 Standard**
 - **ISO c++ 17 Standard**
-- **Vorschau: Features aus dem aktuellen C++ funktionierenden Entwurf**
+- **Vorschau: Features aus dem neuesten C++ Working Draft**
 
-### <a name="enable-c-modules-experimental"></a>Module C++ aktivieren (experimentell)
+### <a name="enable-c-modules-experimental"></a>C++-Module aktivieren (experimentell)
 
-Experimentelle Unterstützung C++ für die Module TS und die Standard Bibliotheks Module.
+Experimentelle Unterstützung für die Module "C++ modules TS" und "Standard Bibliothek".
 
-## <a name="cc-precompiled-headers-properties"></a>Eigenschaften vonC++ C/vorkompilierten Headern
+## <a name="cc-precompiled-headers-properties"></a>Eigenschaften von C/C++-vorkompilierten Headern
 
 ### <a name="createuse-precompiled-header"></a>Vorkompilierten Header erstellen/verwenden
 
-Ermöglicht die Erstellung oder Verwendung eines vorkompilierten Headers während der Erstellung. Legt [/Yc](yc-create-precompiled-header-file.md), [/Yu](yu-use-precompiled-header-file.md)fest.
+Ermöglicht die Erstellung oder Verwendung eines vorkompilierten Headers während der Erstellung. Legt [`/Yc`](yc-create-precompiled-header-file.md) , fest [`/Yu`](yu-use-precompiled-header-file.md) .
 
 #### <a name="choices"></a>Auswahl
 
@@ -368,29 +368,29 @@ Ermöglicht die Erstellung oder Verwendung eines vorkompilierten Headers währen
 
 ### <a name="precompiled-header-file"></a>Vorkompilierte Headerdatei
 
-Gibt den Header Dateinamen an, der beim Erstellen oder Verwenden einer vorkompilierten Header Datei verwendet werden soll. Legt [/Yc](yc-create-precompiled-header-file.md), [/Yu]] (Yu-use-prekompiliert-Header-File.MD) fest.
+Gibt den Header Dateinamen an, der beim Erstellen oder Verwenden einer vorkompilierten Header Datei verwendet werden soll. Legt [`/Yc`](yc-create-precompiled-header-file.md) , fest [`/Yu`](yu-use-precompiled-header-file.md) .
 
 ### <a name="precompiled-header-output-file"></a>Vorkompilierte Header Ausgabedatei
 
-Gibt den Pfad oder den Namen der generierten vorkompilierten Header Datei an. Legt [/FP](fp-name-dot-pch-file.md)fest.
+Gibt den Pfad oder den Namen der generierten vorkompilierten Header Datei an. Legt fest [`/Fp`](fp-name-dot-pch-file.md) .
 
-## <a name="cc-output-files-properties"></a>Eigenschaften vonC++ C/Output-Dateien
+## <a name="cc-output-files-properties"></a>Eigenschaften von C/C++-Ausgabedateien
 
 ### <a name="expand-attributed-source"></a>Attributierte Quelle erweitern
 
-Erstellen Sie eine Listen Datei mit erweiterten Attributen in die Quelldatei. Legt [/FX](fx-merge-injected-code.md)fest.
+Erstellen Sie eine Listen Datei mit erweiterten Attributen in die Quelldatei. Legt fest [`/Fx`](fx-merge-injected-code.md) .
 
-### <a name="assembler-output"></a>Assembler-Ausgabe
+### <a name="assembler-output"></a>Assemblyausgabe
 
-Gibt die Inhalte der Ausgabedatei für die Assemblysprache an. Legt [/FA,/FAC,/FAS,/FACS](fa-fa-listing-file.md)fest.
+Gibt die Inhalte der Ausgabedatei für die Assemblysprache an. Legt [ `/FA` , `/FAc` , `/FAs` , `/FAcs` ](fa-fa-listing-file.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
 - **Keine Auflistung** -keine Auflistung.
-- Assemblyausschließliches **auflisten** : Assemblycode; *`.asm`*
-- **Assembly mit Computercode** , Computer-und Assemblycode; *`.cod`*
-- **Assembly mit Quellcode** -Quell Code und Assemblycode; *`.asm`*
-- **Assembly, Computercode und Quellassembly** , Computercode und Quellcode; *`.cod`*
+- Assemblyausschließliches **auflisten** : Assemblycode;*`.asm`*
+- **Assembly mit Computercode** , Computer-und Assemblycode;*`.cod`*
+- **Assembly mit Quellcode** -Quell Code und Assemblycode;*`.asm`*
+- **Assembly, Computercode und Quellassembly** , Computercode und Quellcode;*`.cod`*
 
 ### <a name="use-unicode-for-assembler-listing"></a>Unicode für assemblyauflistung verwenden
 
@@ -398,82 +398,82 @@ Bewirkt, dass die Ausgabedatei im UTF-8-Format erstellt wird.
 
 ### <a name="asm-list-location"></a>ASM-Listen Speicherort
 
-Gibt den relativen Pfad oder Namen für die ASM-Listen Datei an. kann ein Datei-oder Verzeichnisname sein. Legt [/FA](fa-fa-listing-file.md)fest.
+Gibt den relativen Pfad oder Namen für die ASM-Listen Datei an. kann ein Datei-oder Verzeichnisname sein. Legt fest [`/Fa`](fa-fa-listing-file.md) .
 
 ### <a name="object-file-name"></a>Name der Objektdatei
 
-Gibt einen Namen an, um den Standardnamen der Objektdatei zu überschreiben. Dies kann ein Datei- oder Verzeichnisname sein. Legt [/FO](fo-object-file-name.md)fest.
+Gibt einen Namen an, um den Standardnamen der Objektdatei zu überschreiben. Dies kann ein Datei- oder Verzeichnisname sein. Legt fest [`/Fo`](fo-object-file-name.md) .
 
 ### <a name="program-database-file-name"></a>Programmdatenbank-Dateiname
 
-Gibt einen Namen für eine vom Compiler generierte PDB-Datei an. gibt auch den Basis Namen für die erforderliche vom Compiler generierte IDB-Datei an. kann ein Datei-oder Verzeichnisname sein. Legt [/FD](fd-program-database-file-name.md)fest.
+Gibt einen Namen für eine vom Compiler generierte PDB-Datei an. gibt auch den Basis Namen für die erforderliche vom Compiler generierte IDB-Datei an. kann ein Datei-oder Verzeichnisname sein. Legt fest [`/Fd`](fd-program-database-file-name.md) .
 
 ### <a name="generate-xml-documentation-files"></a>XML-Dokumentationsdateien generieren
 
-Gibt an, dass der Compiler XML-Dokumentations Kommentar Dateien generieren soll (. XDC). Legt [/doc](doc-process-documentation-comments-c-cpp.md)fest.
+Gibt an, dass der Compiler XML-Dokumentations Kommentar Dateien generieren soll (. XDC). Legt fest [`/doc`](doc-process-documentation-comments-c-cpp.md) .
 
 ### <a name="xml-documentation-file-name"></a>Name der XML-Dokumentations Datei
 
-Gibt den Namen der generierten XML-Dokumentationsdateien an. kann ein Datei-oder Verzeichnisname sein. Legt [/doc:\<Name >](doc-process-documentation-comments-c-cpp.md)fest.
+Gibt den Namen der generierten XML-Dokumentationsdateien an. kann ein Datei-oder Verzeichnisname sein. Legt fest [`/doc:`\<name>](doc-process-documentation-comments-c-cpp.md) .
 
-## <a name="cc-browse-information-properties"></a>Eigenschaften fürC++ C/Browseinformationen
+## <a name="cc-browse-information-properties"></a>C/C++-Eigenschaften zum Durchsuchen von Informationen
 
 ### <a name="enable-browse-information"></a>Browseinformationen aktivieren
 
-Gibt die Ebene der Browseinformationen in *`.bsc`* Datei an. Legt [/fr](fr-fr-create-dot-sbr-file.md)fest.
+Gibt die Ebene der Browseinformationen in der *`.bsc`* Datei an. Legt fest [`/FR`](fr-fr-create-dot-sbr-file.md) .
 
 ### <a name="browse-information-file"></a>Informationsdatei durchsuchen
 
-Gibt den optionalen Namen für die Browser Informationsdatei an. Legt [/fr\<Name >](fr-fr-create-dot-sbr-file.md)fest.
+Gibt den optionalen Namen für die Browser Informationsdatei an. Legt fest [`/FR`\<name>](fr-fr-create-dot-sbr-file.md) .
 
-## <a name="cc-advanced-properties"></a>C/C++ Advanced-Eigenschaften
+## <a name="cc-advanced-properties"></a>Erweiterte C/C++-Eigenschaften
 
 ### <a name="calling-convention"></a>Aufrufkonvention
 
-Wählen Sie die Standard Aufruf Konvention für Ihre Anwendung aus (kann von einer Funktion überschrieben werden). Legt [/GD,/GR,/gz,/GV](gd-gr-gv-gz-calling-convention.md)fest.
+Wählen Sie die Standard Aufruf Konvention für Ihre Anwendung aus (kann von einer Funktion überschrieben werden). Legt [ `/Gd` , `/Gr` , `/Gz` , `/Gv` ](gd-gr-gv-gz-calling-convention.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
-- **__cdecl** : gibt die __cdecl Aufruf Konvention für alle Funktionen außer C++ Element Funktionen und Funktionen an, die __stdcall oder __fastcall gekennzeichnet sind.
-- **__fastcall** : gibt die __fastcall Aufruf Konvention für alle Funktionen außer C++ Element Funktionen und Funktionen an, die __cdecl oder __stdcall gekennzeichnet sind. Alle __fastcall Funktionen müssen über Prototypen verfügen.
-- **__stdcall** : gibt die __stdcall Aufruf Konvention für alle Funktionen außer C++ Element Funktionen und Funktionen an, die __cdecl oder __fastcall gekennzeichnet sind. Alle __stdcall Funktionen müssen über Prototypen verfügen.
-- **__vectorcall** : gibt die __vectorcall Aufruf Konvention für alle Funktionen außer C++ Element Funktionen und Funktionen an, die __cdecl, __fastcall oder __stdcall gekennzeichnet sind. Alle __vectorcall Funktionen müssen über Prototypen verfügen.
+- **__cdecl** : gibt die `__cdecl` Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind `__stdcall` `__fastcall` .
+- **__fastcall** : gibt die `__fastcall` Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind `__cdecl` `__stdcall` . Alle `__fastcall`-Funktionen müssen Prototypen haben.
+- **__stdcall** : gibt die `__stdcall` Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind `__cdecl` `__fastcall` . Alle `__stdcall`-Funktionen müssen Prototypen haben.
+- **__vectorcall** : gibt die `__vectorcall` Aufruf Konvention für alle Funktionen mit Ausnahme der C++-Element Funktionen und-Funktionen an, die als `__cdecl` , oder markiert sind `__fastcall` `__stdcall` . Alle `__vectorcall`-Funktionen müssen Prototypen haben.
 
 ### <a name="compile-as"></a>Kompilieren als
 
-Wählen Sie die Option Kompilierungs Sprache für *`.c`* -und *`.cpp`* Dateien aus. Legt [/TC,/TP](tc-tp-tc-tp-specify-source-file-type.md)fest.
+Wählen Sie Kompilierungs Sprache für *`.c`* -und- *`.cpp`* Dateien aus. Legt [ `/TC` , `/TP` ](tc-tp-tc-tp-specify-source-file-type.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
 - **Standard**: die Standardeinstellung.
 - **Als C-Code kompilieren**: als C-Code kompilieren.
-- **Als C++-Code kompilieren**: als C++-Code kompilieren.
+- **Kompilieren Sie AS C++ Code** -Compile als C++-Code.
 
 ### <a name="disable-specific-warnings"></a>Bestimmte Warnungen deaktivieren
 
-Deaktiviert die angegebenen Warnungs Nummern. Fügen Sie die Warnungs Nummern in eine durch Semikolons getrennte Liste ein. Legt [/WD\<NUM >](compiler-option-warning-level.md)fest.
+Deaktiviert die angegebenen Warnungs Nummern. Fügen Sie die Warnungs Nummern in eine durch Semikolons getrennte Liste ein. Legt fest [`/wd`\<number>](compiler-option-warning-level.md) .
 
 ### <a name="forced-include-file"></a>Erzwungene Includedatei
 
-eine oder mehrere explizite Includedateien. Legt [/fi\<Name >](fi-name-forced-include-file.md)fest.
+eine oder mehrere explizite Includedateien. Legt fest [`/FI`\<name>](fi-name-forced-include-file.md) .
 
 ### <a name="forced-using-file"></a>Erzwungene #using Datei
 
-Gibt eine oder mehrere erzwungene #using Dateien an. Legt [/Fu\<Name >](fu-name-forced-hash-using-file.md)fest.
+Gibt eine oder mehrere erzwungene #using Dateien an. Legt fest [`/FU`\<name>](fu-name-forced-hash-using-file.md) .
 
 ### <a name="show-includes"></a>Includedateien anzeigen
 
-Generiert eine Liste der Includedateien mit Compilerausgabe. Legt [/showIncludes](showincludes-list-include-files.md)fest.
+Generiert eine Liste der Includedateien mit Compilerausgabe. Legt fest [`/showIncludes`](showincludes-list-include-files.md) .
 
 ### <a name="use-full-paths"></a>Vollständige Pfade verwenden
 
-Verwenden Sie vollständige Pfade in Diagnosemeldungen. Legt [/FC](fc-full-path-of-source-code-file-in-diagnostics.md)fest.
+Verwenden Sie vollständige Pfade in Diagnosemeldungen. Legt fest [`/FC`](fc-full-path-of-source-code-file-in-diagnostics.md) .
 
 ### <a name="omit-default-library-name"></a>Standard Bibliotheksnamen weglassen
 
-Schließt Standard Bibliotheksnamen nicht in *`.obj`* Dateien ein. Legt [/Zl](zl-omit-default-library-name.md)fest.
+Enthält keine Standard Bibliotheksnamen in *`.obj`* Dateien. Legt fest [`/Zl`](zl-omit-default-library-name.md) .
 
-### <a name="internal-compiler-error-reporting"></a>Interne compilerfehlerberichterstattung
+### <a name="internal-compiler-error-reporting"></a>Bericht für interne Compilerfehler
 
 > [!NOTE]
 > Diese Option ist veraltet. Ab Windows Vista wird die Fehlerberichterstattung durch [Windows-Fehlerberichterstattung (wer)](/windows/win32/wer/windows-error-reporting) -Einstellungen gesteuert.
@@ -484,4 +484,4 @@ Behandelt die spezifische Compilerwarnung als Fehler, wobei n eine Compilerwarnu
 
 ### <a name="additional-options"></a>Zusätzliche Optionen
 
-Zusätzliche Optionen
+Zusätzliche Optionen.

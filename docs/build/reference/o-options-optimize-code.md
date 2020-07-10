@@ -1,6 +1,7 @@
 ---
 title: /O-Optionen (Code optimieren)
-ms.date: 09/25/2017
+description: Die MSVC/O-Compileroptionen geben die zu verwendenden Compileroptimierungen an.
+ms.date: 07/08/2020
 f1_keywords:
 - VC.Project.VCCLCompilerTool.Optimization
 - /o
@@ -9,42 +10,42 @@ helpviewer_keywords:
 - performance, cle.exe compiler
 - cl.exe compiler, performance
 ms.assetid: 77997af9-5555-4b3d-aa57-6615b27d4d5d
-ms.openlocfilehash: ffd3023120f1d930a24ccef6fa297594062322df
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 36ef582787a3ec2d7aee1e589c70b48712d9d552
+ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62320421"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86180876"
 ---
-# <a name="o-options-optimize-code"></a>/O-Optionen (Code optimieren)
+# <a name="o-options-optimize-code"></a>`/O`Optionen (Code optimieren)
 
-Die **/o** Optionen steuern verschiedene Optimierungen, mit denen Sie Code für maximale Geschwindigkeit oder die minimale Größe zu erstellen.
+Die **`/O`** Optionen steuern verschiedene Optimierungen, die Sie beim Erstellen von Code für die maximale Geschwindigkeit oder minimale Größe unterstützen.
 
-- [/ O1](o1-o2-minimize-size-maximize-speed.md) legt eine Kombination verschiedener Optimierungen, die minimale Größencode generieren.
+- [`/O1`](o1-o2-minimize-size-maximize-speed.md)legt eine Kombination von Optimierungen fest, die einen minimalen Größen Code generieren.
 
-- [/ O2](o1-o2-minimize-size-maximize-speed.md) legt eine Kombination verschiedener Optimierungen, die Code für maximale Geschwindigkeit optimiert.
+- [`/O2`](o1-o2-minimize-size-maximize-speed.md)legt eine Kombination von Optimierungen fest, mit denen der Code für die maximale Geschwindigkeit optimiert wird.
 
-- [Tatsächlich](ob-inline-function-expansion.md) Inlinefunktionserweiterung steuert.
+- [`/Ob`](ob-inline-function-expansion.md)steuert die Inline Funktionserweiterung.
 
-- [/ Od](od-disable-debug.md) deaktiviert die Optimierung, um die Kompilierung zu beschleunigen und das Debuggen vereinfachen.
+- [`/Od`](od-disable-debug.md)deaktiviert die Optimierung, um die Kompilierung zu beschleunigen und das Debugging zu vereinfachen.
 
-- ["/ Og"](og-global-optimizations.md) aktiviert globale Optimierungen.
+- [`/Og`](og-global-optimizations.md)(veraltet) ermöglicht globale Optimierungen.
 
-- [/ Oi](oi-generate-intrinsic-functions.md) erstellt systeminterne Funktionen für die entsprechende Funktionsaufrufen.
+- [`/Oi`](oi-generate-intrinsic-functions.md)generiert intrinsische Funktionen für entsprechende Funktionsaufrufe.
 
-- [/ OS](os-ot-favor-small-code-favor-fast-code.md) weist den Compiler, Optimierungen der Größe gegenüber Optimierungen der Geschwindigkeit zu bevorzugen.
+- [`/Os`](os-ot-favor-small-code-favor-fast-code.md)weist den Compiler an, Optimierungen für die Größe gegenüber Optimierungen für die Geschwindigkeit zu bevorzugen.
 
-- [/ Ot](os-ot-favor-small-code-favor-fast-code.md) (Standardeinstellung) weist den Compiler, Optimierungen der Geschwindigkeit gegenüber Optimierungen der Größe zu bevorzugen.
+- [`/Ot`](os-ot-favor-small-code-favor-fast-code.md)(eine Standardeinstellung) weist den Compiler an, Optimierungen für Geschwindigkeit gegenüber Optimierungen für die Größe zu bevorzugen.
 
-- [/ Ox](ox-full-optimization.md) ist eine Kombination aus-Option, die einige der Optimierungen, die mit einem Schwerpunkt auf Geschwindigkeit auswählt. Es ist eine strikte Teilmenge der **"/ O2"** Optimierungen.
+- [`/Ox`](ox-full-optimization.md)bei handelt es sich um eine Kombination, die mehrere Optimierungen mit einem Schwerpunkt auf Geschwindigkeit auswählt. **`/Ox`** ist eine strikte Teilmenge der **`/O2`** Optimierungen.
 
-- [/ Oy](oy-frame-pointer-omission.md) unterdrückt die Erstellung von Framezeigern in der Aufrufliste für schnellere Funktionsaufrufe.
+- [`/Oy`](oy-frame-pointer-omission.md)unterdrückt die Erstellung von Frame Zeigern in der Aufruf Stapel für schnellere Funktionsaufrufe.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Sie können mehrere kombinieren **/o** Optionen in eine einzelne Option-Anweisung. Z. B. **/Odi** ist identisch mit **/od/Oi**. Bestimmte Optionen gegenseitig aus, und verursacht einen Compilerfehler, wenn Sie zusammen verwendet. Finden Sie unter den einzelnen **/o** Optionen für die Weitere Informationen.
+Sie können mehrere **`/O`** Optionen in einer einzelnen Options Anweisung kombinieren. Beispielsweise **`/Odi`** ist identisch mit **`/Od /Oi`** . Bestimmte Optionen schließen sich gegenseitig aus und verursachen einen Compilerfehler, wenn Sie gemeinsam verwendet werden. Weitere Informationen finden Sie unter den einzelnen **`/O`** Optionen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)

@@ -1,6 +1,7 @@
 ---
-title: /GT (Fiber-sicheren lokalen Thread-Speicher unterstützen)
-ms.date: 11/04/2016
+title: /GT (Fibersicheren lokalen Threadspeicher unterstützen)
+description: Die MSVC-Compileroption/gt ermöglicht sichere Optimierungen für Thread lokale Speicherdaten.
+ms.date: 07/08/2020
 f1_keywords:
 - VC.Project.VCCLCompilerTool.EnableFiberSafeOptimizations
 - /gt
@@ -12,44 +13,40 @@ helpviewer_keywords:
 - -GT compiler option [C++]
 - fiber-safe static thread-local storage compiler option [C++]
 ms.assetid: 071fec79-c701-432b-9970-457344133159
-ms.openlocfilehash: 417ac00a446f773a424553e42478a4f0cf58efc6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1b1d9f6514cec8c3d247f86be063f2ac3e0dfe72
+ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62291807"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86180811"
 ---
-# <a name="gt-support-fiber-safe-thread-local-storage"></a>/GT (Fiber-sicheren lokalen Thread-Speicher unterstützen)
+# <a name="gt-support-fiber-safe-thread-local-storage"></a>`/GT`(Fiber-sicheren lokalen Thread Speicher unterstützen)
 
-Unterstützt Fiber-Sicherheit für Daten, die mithilfe statischer lokaler Threadspeicher, d. h. Daten, die mit zugeordneten `__declspec(thread)`.
+Unterstützt die Fiber-Sicherheit für Daten, die mit statischem lokalen Thread Speicher zugewiesen werden, d. h. mit zugeordneten Daten `__declspec(thread)` .
 
 ## <a name="syntax"></a>Syntax
 
-```
-/GT
-```
+> **`/GT`**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Daten, die mit deklariert `__declspec(thread)` durch ein Array von lokalen Threadspeicher (TLS) verwiesen wird. Das TLS-Array ist, ein Array von Adressen, die für die einzelnen Threads vom System verwaltet wird. Jede Adresse in dieses Array gibt den Speicherort der lokalen Thread-Speicher.
+Auf Daten, die mit deklariert werden, `__declspec(thread)` wird durch ein TLS-Array (Thread-Local Storage) verwiesen. Das TLS-Array ist ein Array von Adressen, die vom System für jeden Thread verwaltet werden. Jede Adresse in diesem Array gibt den Speicherort der Thread lokalen Speicherdaten an.
 
-Eine Fiber ist ein einfaches Objekt, das besteht aus einem Stapel und einem Registerkontext und kann in verschiedenen Threads geplant werden. Eine Fiber kann auf jedem Thread ausgeführt. Da eine Fiber ausgelagert abrufen kann und höher auf einen anderen Thread neu gestartet, die Adresse des TLS-Arrays muss nicht zwischengespeichert oder optimiert werden als eine allgemeine Teilausdruck auf ein Funktionsaufruf (finden Sie unter den [/Og (globale Optimierungen)](og-global-optimizations.md) option Details). **/ Gt** wird verhindert, dass solche Optimierungen.
+Eine Fiber ist ein Lightweight-Objekt, das aus einem Stapel und einem Register Kontext besteht und für verschiedene Threads geplant werden kann. Eine Fiber kann in jedem Thread ausgeführt werden. Da eine Fiber möglicherweise ausgetauscht und später in einem anderen Thread neu gestartet wird, kann der Compiler die Adresse des TLS-Arrays nicht zwischenspeichern oder Sie als allgemeinen Teil Ausdruck für einen Funktions Aufruhe optimieren. **`/GT`** verhindert solche Optimierungen.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Klicken Sie auf den Ordner **C/C++** .
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Optimierung** aus.
 
-1. Klicken Sie auf die **Optimierung** Eigenschaftenseite.
-
-1. Ändern der **Fiber-sichere Optimierung aktivieren** Eigenschaft.
+1. Ändern Sie die Eigenschaft **Fiber-sichere Optimierungen aktivieren** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.EnableFiberSafeOptimizations%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
