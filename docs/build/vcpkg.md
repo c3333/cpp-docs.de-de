@@ -4,12 +4,12 @@ description: vcpkg ist ein Befehlszeilen-Paket-Manager, der den Erwerb und die I
 ms.date: 07/06/2020
 ms.technology: cpp-ide
 ms.assetid: f50d459a-e18f-4b4e-814b-913e444cedd6
-ms.openlocfilehash: 2a179a25a7332a93486d42750f06f18658991b30
-ms.sourcegitcommit: 85d96eeb1ce41d9e1dea947f65ded672e146238b
+ms.openlocfilehash: 7131f301a22b2834b04ef932f3cee426b04dc7e5
+ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86058645"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86373631"
 ---
 # <a name="vcpkg-a-c-package-manager-for-windows-linux-and-macos"></a>vcpkg: ein C++-Paket-Manager für Windows, Linux und macOS
 
@@ -167,7 +167,7 @@ Führen Sie **`vcpkg integrate install`** aus, um Visual Studio Code unter Linux
 
 ## <a name="target-linux-from-windows-via-wsl"></a>Erstellen von Dateien für Linux unter Windows mit WSL
 
-Mithilfe des Windows-Subsystems für Linux (WSL) können Sie Linux-Binärdateien auf einem Windows-Computer erstellen. Befolgen Sie die Anweisungen zum [Einrichten von WSL unter Windows 10](/windows/wsl/install-win10). Konfigurieren Sie dieses dann mithilfe der [Visual Studio-Erweiterung für Linux](https://blogs.msdn.microsoft.com/vcblog/2017/02/08/targeting-windows-subsystem-for-linux-from-visual-studio/). Es ist in Ordnung, wenn Sie alle erstellten Bibliotheken für Windows und Linux in demselben Ordner platzieren. Sie sind sowohl über Windows als auch über WSL zugänglich.
+Mithilfe des Windows-Subsystems für Linux (WSL) können Sie Linux-Binärdateien auf einem Windows-Computer erstellen. Befolgen Sie die Anweisungen zum [Einrichten von WSL unter Windows 10](/windows/wsl/install-win10). Konfigurieren Sie dieses dann mithilfe der [Visual Studio-Erweiterung für Linux](https://devblogs.microsoft.com/cppblog/targeting-windows-subsystem-for-linux-from-visual-studio/). Es ist in Ordnung, wenn Sie alle erstellten Bibliotheken für Windows und Linux in demselben Ordner platzieren. Sie sind sowohl über Windows als auch über WSL zugänglich.
 
 ## <a name="export-compiled-binaries-and-headers"></a><a name="export_binaries_per_project"></a> Exportieren von kompilierten Binärdateien und Headern
 
