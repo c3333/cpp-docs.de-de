@@ -1,15 +1,15 @@
 ---
 title: Verwenden von Regelsätzen zum Festlegen von C++-Regeln für die Ausführung
-ms.date: 04/28/2018
+ms.date: 07/13/2020
 ms.topic: conceptual
 f1_keywords:
 - vs.codeanalysis.rulesets.native
-ms.openlocfilehash: 233a5f8a549e33f63350115d90c7e7e6b5f6937b
-ms.sourcegitcommit: f9344b09a734e8b05a7494415991a22b7aec5ae8
+ms.openlocfilehash: 8b6d3fe8c8e441d4b233f2f4008d8aae9225726f
+ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85269714"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86373852"
 ---
 # <a name="use-rule-sets-to-specify-the-c-rules-to-run"></a>Verwenden von Regelsätzen zum Festlegen von C++-Regeln für die Ausführung
 
@@ -17,7 +17,7 @@ In Visual Studio können Sie einen benutzerdefinierten *Regelsatz* erstellen und
 
 **Visual Studio 2017 Version 15,7 und höher:** Sie können benutzerdefinierte Regelsätze mit einem beliebigen Text-Editor erstellen und diese in Befehlszeilenbuilds anwenden, unabhängig davon, welches Buildsystem Sie verwenden. Weitere Informationen finden Sie unter [/analyze: RuleSet](/cpp/build/reference/analyze-code-analysis).
 
-Ein C/C++-Projekt muss in der Visual Studio-IDE geöffnet sein, um einen benutzerdefinierten C++-Regelsatz in Visual Studio zu erstellen. Öffnen Sie dann einen Standardregel Satz im Regelsatz-Editor, und fügen Sie bestimmte Regeln hinzu bzw. entfernen Sie Sie, und ändern Sie optional die Aktion, die auftritt, wenn die Code Analyse festlegt, dass eine Regel verletzt wurde.
+Ein C/C++-Projekt muss in der Visual Studio-IDE geöffnet sein, um einen benutzerdefinierten C++-Regelsatz in Visual Studio zu erstellen. Anschließend öffnen Sie einen Standardregel Satz im Regelsatz-Editor und fügen dann bestimmte Regeln hinzu bzw. entfernen Sie. Optional können Sie auch die Aktion ändern, die auftritt, wenn die Code Analyse bestimmt, dass eine Regel verletzt wurde.
 
 Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen unter einem neuen Dateinamen. Der benutzerdefinierte Regelsatz wird dem Projekt automatisch zugewiesen.
 
@@ -236,17 +236,19 @@ Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das R
 
 Details zum Schema Element:
 
-- Tlokalisierung: Lokalisierungs Informationen einschließlich Name der RuleSet-Datei, Beschreibung der RuleSet-Datei, Name der Ressourcenassembly, die die lokalisierte Ressource enthält, und Basisname der lokalisierten Ressource.
-- Trulehintpath: Dateipfade, die als Hinweise für die Suche nach RuleSet-Dateien verwendet werden.
-- TName: Name der aktuellen RuleSet-Datei.
-- Tdescription: Beschreibung der aktuellen RuleSet-Datei.
-- Tinclude: Pfad zu einem eingeschlossenen RuleSet mit der Regel Aktion.
-- Tincludeall: Regel Aktion für alle Regeln.
-- Trule: Regel-ID mit Regel Aktion.
-- Trules: Sammlung von einer oder mehreren Regeln.
-- Truleset: das RuleSet-Dateiformat, das aus Lokalisierungs Informationen, Regel Hinweis Pfaden, einschließlich aller Informationen, Informationen, Informationen, Regel Informationen, Name, Beschreibung und Tool Versionsinformationen besteht.
-- Truleaction: Enumeration, die eine Regel Aktion beschreibt, z. b. Fehler, Warnung, Info, ausgeblendet oder keine.
-- Tincludeaction: Enumeration, die eine Regel Aktion beschreibt, z. b. Fehler, Warnung, Info, ausgeblendet, keine oder Standard.
-- Tincludeallaction: eine Enumeration, die eine Regel Aktion beschreibt, z. b. einen Fehler, eine Warnung, eine Information oder eine verborgene.
+| Schema-Element | BESCHREIBUNG |
+|--------------------|--------------|
+| `TLocalization` | Lokalisierungs Informationen einschließlich Name der RuleSet-Datei, Beschreibung der RuleSet-Datei, Name der Ressourcenassembly, die die lokalisierte Ressource enthält, und Basisname der lokalisierten Ressource |
+| `TRuleHintPaths` | Dateipfade, die als Hinweise für die Suche nach RuleSet-Dateien verwendet werden |
+| `TName` | Name der aktuellen RuleSet-Datei |
+| `TDescription` | Beschreibung der aktuellen RuleSet-Datei |
+| `TInclude` | Pfad zu einem eingeschlossenen RuleSet mit der Regel Aktion |
+| `TIncludeAll` | Regel Aktion für alle Regeln |
+| `TRule` | Regel-ID mit Regel Aktion |
+| `TRules` | Sammlung von mindestens einer Regel |
+| `TRuleSet` | Das RuleSet-Dateiformat, das aus Lokalisierungs Informationen, Regel Hinweis Pfaden, Informationen zu allen Informationen, Informationen zu Regeln, Informationen zum Namen, zur Beschreibung und Tools-Version besteht. |
+| `TRuleAction` | Enumeration, die eine Regel Aktion beschreibt, z. b. Fehler, Warnung, Info, ausgeblendet oder keine |
+| `TIncludeAction` | Enumeration, die eine Regel Aktion beschreibt, z. b. Fehler, Warnung, Info, ausgeblendet, keine oder Standard |
+| `TIncludeAllAction` | Enumeration, die eine Regel Aktion beschreibt, z. b. einen Fehler, eine Warnung, eine Information oder eine verborgene |
 
 Ein Beispiel für einen Regelsatz finden Sie unter so [Erstellen Sie einen Regelsatz in einem Text-Editor](#to-create-a-rule-set-in-a-text-editor)oder eines der standardmäßigen RuleSets, die in gespeichert sind `%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Rule Sets` .

@@ -4,16 +4,16 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - country/region strings
 ms.assetid: 5baf0ccf-0d9b-40dc-83bd-323705287930
-ms.openlocfilehash: 8556e005618a1b69c47498a07e218284dcb1164f
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: ea0ac6ab89179683d04f6b6233c6fa1996e51a1f
+ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79443435"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86373566"
 ---
-# <a name="countryregion-strings"></a>Country/Region Strings
+# <a name="countryregion-strings"></a>Sprache/Land-Zeichenfolgen
 
-Zeichenfolgen für Länder und Regionen können mit einer Sprachenzeichenfolge kombiniert werden, um eine Gebietsschemaspezifikation für die Funktionen `setlocale`, `_wsetlocale`, `_create_locale`und `_wcreate_locale` zu erstellen. Eine Liste der von den verschiedenen Windows-Betriebssystemversionen unterstützten Länder und Regionen finden Sie unter **Sprache**, **Ort** in der Spalte **Sprachtag** der Tabelle unter [Anhang A: Produktverhalten](https://msdn.microsoft.com/library/cc233982.aspx) in [MS-LCID]: Windows-Sprachcodebezeichner – Referenz. Ein Beispiel für Code, der verfügbare Gebietsschemanamen und zugehörige Werte aufzählt, finden Sie unter [NLS: Namenbasierte APIs – Beispiel](/windows/win32/intl/nls--name-based-apis-sample).
+Zeichenfolgen für Länder und Regionen können mit einer Sprachenzeichenfolge kombiniert werden, um eine Gebietsschemaspezifikation für die Funktionen `setlocale`, `_wsetlocale`, `_create_locale`und `_wcreate_locale` zu erstellen. Eine Liste der Länder-und Regions Namen, die von verschiedenen Windows-Betriebssystemversionen unterstützt werden, finden Sie in den Spalten " **Language**", " **Location**" und " **Language Tag** " der Tabelle in [Anhang A: Produktverhalten](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in \[ MS-LCID]: Referenz zur Windows-Sprach Code Kennung (LCID). Ein Beispiel für Code, der verfügbare Gebietsschemanamen und zugehörige Werte aufzählt, finden Sie unter [NLS: Namenbasierte APIs – Beispiel](/windows/win32/intl/nls--name-based-apis-sample).
 
 ## <a name="additional-supported-country-and-region-strings"></a>Weitere unterstützte Zeichenfolgen für Länder und Regionen
 
@@ -25,9 +25,9 @@ Die Implementierung der Microsoft C-Laufzeitbibliothek unterstützt auch die fol
 |britain|GBR|en-GB|
 |china|CHN|zh-CN|
 |Tschechisch|CZE|cs-CZ|
-|Großbritannien|GBR|en-GB|
+|england|GBR|en-GB|
 |great britain|GBR|en-GB|
-|Niederlande|NLD|nl-NL|
+|holland|NLD|nl-NL|
 |hong-kong|HKG|zh-HK|
 |new-zealand|NZL|en-NZ|
 |nz|NZL|en-NZ|
@@ -47,7 +47,7 @@ Die Implementierung der Microsoft C-Laufzeitbibliothek unterstützt auch die fol
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gebietsschema-Namen, Sprachen und Zeichenfolgen für Länder und Regionen](../c-runtime-library/locale-names-languages-and-country-region-strings.md)<br/>
-[Language Strings](../c-runtime-library/language-strings.md)<br/>
+[Gebiets Schema Namen, Sprachen und Länder-/regionszeichenfolgen](../c-runtime-library/locale-names-languages-and-country-region-strings.md)<br/>
+[Sprachzeichenfolgen](../c-runtime-library/language-strings.md)<br/>
 [setlocale, _wsetlocale](../c-runtime-library/reference/setlocale-wsetlocale.md)<br/>
 [_create_locale, _wcreate_locale](../c-runtime-library/reference/create-locale-wcreate-locale.md)

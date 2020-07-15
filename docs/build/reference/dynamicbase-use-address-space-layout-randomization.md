@@ -8,12 +8,12 @@ helpviewer_keywords:
 - /DYNAMICBASE linker option
 - DYNAMICBASE linker option
 ms.assetid: 6c0ced8e-fe9c-4b63-b956-eb8a55fbceb2
-ms.openlocfilehash: 66d6232ed43f9c842ebbb0e22b57c509cf610afa
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 206c054f383418e176e00f4155f9f6a25a37e253
+ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170058"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86373709"
 ---
 # <a name="dynamicbase-use-address-space-layout-randomization"></a>/DYNAMICBASE (Address Space Layout Randomization verwenden)
 
@@ -21,9 +21,9 @@ Gibt an, ob ein ausführbares Image generiert werden soll, das zur Ladezeit nach
 
 ## <a name="syntax"></a>Syntax
 
-> **/DynamicBase**[ **: No**]
+> **/DynamicBase**[**: No**]
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Option **/DynamicBase** ändert den Header eines *ausführbaren Images*, eine DLL-oder exe-Datei, um anzugeben, ob die Anwendung zur Ladezeit nach dem Zufallsprinzip neu erstellt werden soll, und ermöglicht die zufällige Zuordnung von virtuellen Adressen, die sich auf den Speicherort des virtuellen Speichers von Heaps, Stapeln und anderen Betriebssystem Zuordnungen auswirkt. Die **/DynamicBase** -Option gilt sowohl für 32-Bit-als auch für 64-Bit-Images. ASLR wird unter Windows Vista und höheren Betriebssystemen unterstützt. Die Option wird von älteren Betriebssystemen ignoriert.
 
@@ -33,7 +33,7 @@ Standardmäßig ist **/DynamicBase** aktiviert. Verwenden Sie **/DynamicBase: No
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Eigenschaften Seite Eigenschaften** von > **Linker** > **erweitert** aus.
+1. Wählen Sie die **Eigenschaften**  >  **Linker**  >  Seite**Erweiterte** Eigenschaft Linker Linker aus.
 
 1. Ändern Sie die Eigenschaft **zufällige Basisadresse** .
 
@@ -46,4 +46,4 @@ Standardmäßig ist **/DynamicBase** aktiviert. Verwenden Sie **/DynamicBase: No
 - [MSVC-Linkerreferenz](linking.md)
 - [MSVC-Linkeroptionen](linker-options.md)
 - [/HIGHENTROPYVA](highentropyva-support-64-bit-aslr.md)
-- [Schutzmaßnahmen für Windows ISV-Software](https://msdn.microsoft.com/library/bb430720.aspx)
+- [Schutzmaßnahmen für Windows ISV-Software](https://docs.microsoft.com/previous-versions/bb430720(v=msdn.10))
