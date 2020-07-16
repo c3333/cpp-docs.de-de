@@ -25,12 +25,12 @@ helpviewer_keywords:
 - Microsoft::WRL::FtmBase::ReleaseMarshalData method
 - Microsoft::WRL::FtmBase::UnmarshalInterface method
 ms.assetid: 275f3b71-2975-4f92-89e7-d351e96496df
-ms.openlocfilehash: d37cdddda8cf8894016ed80b9055fe106b1600f7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f28a850c365bc9a75d8e5b100e5e5cc0a1c5dc10
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371513"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404563"
 ---
 # <a name="ftmbase-class"></a>FtmBase-Klasse
 
@@ -48,7 +48,7 @@ class FtmBase :
 
 ## <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [RuntimeClass Class](runtimeclass-class.md).
+Weitere Informationen finden Sie unter [runtimeclass-Klasse](runtimeclass-class.md).
 
 ## <a name="members"></a>Member
 
@@ -56,39 +56,39 @@ Weitere Informationen finden Sie unter [RuntimeClass Class](runtimeclass-class.m
 
 | Name                         | BESCHREIBUNG                                        |
 | ---------------------------- | -------------------------------------------------- |
-| [FtmBase::FtmBase](#ftmbase) | Initialisiert eine neue Instanz der Klasse `FtmBase`. |
+| [Ftmbase:: ftmbase](#ftmbase) | Initialisiert eine neue Instanz der `FtmBase`-Klasse. |
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-| Name                                                               | BESCHREIBUNG                                                                                                                                                          |
+| name                                                               | BESCHREIBUNG                                                                                                                                                          |
 | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [FtmBase::CreateGlobalInterfaceTable](#createglobalinterfacetable) | Erstellt eine globale Schnittstellentabelle (GIT).                                                                                                                              |
-| [FtmBase::DisconnectObject](#disconnectobject)                     | Alle externen Verbindungen werden zwangsweise an ein Objekt freigegeben. Der Server des Objekts ruft die Implementierung dieser Methode vor dem Herunterfahren auf.                |
-| [FtmBase::GetMarshalSizeMax](#getmarshalsizemax)                   | Abrufen der Obergrenze für die Anzahl der Bytes, die zum Marshallen des angegebenen Schnittstellenzeigers für das angegebene Objekt erforderlich sind.                                                |
-| [FtmBase::GetUnmarshalClass](#getunmarshalclass)                   | Ruft die CLSID ab, die COM verwendet, um die DLL zu finden, die den Code für den entsprechenden Proxy enthält. COM lädt diese DLL, um eine nicht initialisierte Instanz des Proxys zu erstellen. |
-| [FtmBase::MarshalInterface](#marshalinterface)                     | Schreibt in einen Stream die Daten, die zum Initialisieren eines Proxyobjekts in einem Clientprozess erforderlich sind.                                                                          |
-| [FtmBase::ReleaseMarshalData](#releasemarshaldata)                 | Zerstört ein gemarshalltes Datenpaket.                                                                                                                                    |
-| [FtmBase::UnmarshalInterface](#unmarshalinterface)                 | Initialisiert einen neu erstellten Proxy und gibt einen Schnittstellenzeiger auf diesen Proxy zurück.                                                                                    |
+| [Ftmbase:: kreateglobalinterfaketable](#createglobalinterfacetable) | Erstellt eine globale Schnittstellen Tabelle (git).                                                                                                                              |
+| [Ftmbase::D isconnectobject](#disconnectobject)                     | Erzwingt die Freigabe aller externen Verbindungen zu einem Objekt. Der Server des-Objekts ruft vor dem Herunterfahren die Implementierung dieser Methode des Objekts auf.                |
+| [Ftmbase:: GetMarshalSizeMax](#getmarshalsizemax)                   | Gibt die obere Grenze für die Anzahl von Bytes an, die zum Mars Hallen des angegebenen Schnittstellen Zeigers für das angegebene Objekt benötigt werden.                                                |
+| [Ftmbase:: GetUnmarshalClass](#getunmarshalclass)                   | Ruft die CLSID ab, die com verwendet, um die dll zu suchen, die den Code für den entsprechenden Proxy enthält. COM lädt diese DLL, um eine nicht initialisierte Instanz des Proxys zu erstellen. |
+| [Ftmbase:: MarshalInterface](#marshalinterface)                     | Schreibt die Daten, die zum Initialisieren eines Proxy Objekts in einem Client Prozess erforderlich sind, in einen Stream.                                                                          |
+| [Ftmbase:: ReleaseMarshalData](#releasemarshaldata)                 | Zerstört ein gemarshalltes Datenpaket.                                                                                                                                    |
+| [Ftmbase:: UnmarshalInterface](#unmarshalinterface)                 | Initialisiert einen neu erstellten Proxy und gibt einen Schnittstellen Zeiger auf diesen Proxy zurück.                                                                                    |
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
 | Name                                | BESCHREIBUNG                                       |
 | ----------------------------------- | ------------------------------------------------- |
-| [FtmBase::marshaller_](#marshaller) | Enthält einen Verweis auf den Freithread-Marshaller. |
+| [Ftmbase:: marshaller_](#marshaller) | Enthält einen Verweis auf den freien Thread-Mars Haller. |
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `FtmBase`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** ftm.h
+**Header:** FTM. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="ftmbasecreateglobalinterfacetable"></a><a name="createglobalinterfacetable"></a>FtmBase::CreateGlobalInterfaceTable
+## <a name="ftmbasecreateglobalinterfacetable"></a><a name="createglobalinterfacetable"></a>Ftmbase:: kreateglobalinterfaketable
 
-Erstellt eine globale Schnittstellentabelle (GIT).
+Erstellt eine globale Schnittstellen Tabelle (git).
 
 ```cpp
 static HRESULT CreateGlobalInterfaceTable(
@@ -98,8 +98,8 @@ static HRESULT CreateGlobalInterfaceTable(
 
 ### <a name="parameters"></a>Parameter
 
-*Git*<br/>
-Wenn dieser Vorgang abgeschlossen ist, wird ein Zeiger auf eine globale Schnittstellentabelle angezeigt.
+*git*<br/>
+Wenn dieser Vorgang abgeschlossen ist, ein Zeiger auf eine globale Schnittstellen Tabelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -107,11 +107,11 @@ S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden `IGlobalInterfaceTable` Sie im `COM Interfaces` Thema im `COM Reference` Unterthema des Themas in der MSDN-Bibliothek.
+Weitere Informationen finden Sie unter [`IGlobalInterfaceTable`](https://docs.microsoft.com/windows/win32/api/objidl/nn-objidl-iglobalinterfacetable).
 
-## <a name="ftmbasedisconnectobject"></a><a name="disconnectobject"></a>FtmBase::DisconnectObject
+## <a name="ftmbasedisconnectobject"></a><a name="disconnectobject"></a>Ftmbase::D isconnectobject
 
-Alle externen Verbindungen werden zwangsweise an ein Objekt freigegeben. Der Server des Objekts ruft die Implementierung dieser Methode vor dem Herunterfahren auf.
+Erzwingt die Freigabe aller externen Verbindungen zu einem Objekt. Der Server des-Objekts ruft vor dem Herunterfahren die Implementierung dieser Methode des Objekts auf.
 
 ```cpp
 STDMETHODIMP DisconnectObject(
@@ -128,17 +128,17 @@ Für die zukünftige Verwendung reserviert. Muss 0 (null) sein.
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="ftmbaseftmbase"></a><a name="ftmbase"></a>FtmBase::FtmBase
+## <a name="ftmbaseftmbase"></a><a name="ftmbase"></a>Ftmbase:: ftmbase
 
-Initialisiert eine neue Instanz der Klasse `FtmBase`.
+Initialisiert eine neue Instanz der `FtmBase`-Klasse.
 
 ```cpp
 FtmBase();
 ```
 
-## <a name="ftmbasegetmarshalsizemax"></a><a name="getmarshalsizemax"></a>FtmBase::GetMarshalSizeMax
+## <a name="ftmbasegetmarshalsizemax"></a><a name="getmarshalsizemax"></a>Ftmbase:: GetMarshalSizeMax
 
-Abrufen der Obergrenze für die Anzahl der Bytes, die zum Marshallen des angegebenen Schnittstellenzeigers für das angegebene Objekt erforderlich sind.
+Gibt die obere Grenze für die Anzahl von Bytes an, die zum Mars Hallen des angegebenen Schnittstellen Zeigers für das angegebene Objekt benötigt werden.
 
 ```cpp
 STDMETHODIMP GetMarshalSizeMax(
@@ -154,34 +154,34 @@ STDMETHODIMP GetMarshalSizeMax(
 ### <a name="parameters"></a>Parameter
 
 *riid*<br/>
-Verweis auf den Bezeichner der zu marshallenden Schnittstelle.
+Verweis auf den Bezeichner der Schnittstelle, die gemarshallt werden soll.
 
-*Pv*<br/>
-Schnittstellenzeiger, der gemarshallt werden soll; kann NULL sein.
+*teuren*<br/>
+Der Schnittstellen Zeiger, der gemarshallt werden soll. kann NULL sein.
 
-*dwDestContext*<br/>
-Zielkontext, in dem die angegebene Schnittstelle nicht gemarshallt werden soll.
+*dwdestcontext*<br/>
+Ziel Kontext, in dem die angegebene Schnittstelle aus dem Marshalling entfernt werden soll.
 
-Geben Sie einen oder mehrere MSHCTX-Enumerationswerte an.
+Geben Sie mindestens einen mshctx-Enumerationswert an.
 
-Derzeit kann das Unmarshaling entweder in einer anderen Wohnung des aktuellen Prozesses (MSHCTX_INPROC) oder in einem anderen Prozess auf demselben Computer wie der aktuelle Prozess auftreten (MSHCTX_LOCAL).
+Zurzeit kann das Marshalling entweder in einem anderen Apartment des aktuellen Prozesses (MSHCTX_INPROC) oder in einem anderen Prozess auf demselben Computer wie der aktuelle Prozess (MSHCTX_LOCAL) erfolgen.
 
-*pvDestContext*<br/>
-Reserviert für die zukünftige Verwendung; muss NULL sein.
+*pvdestcontext*<br/>
+Für zukünftige Verwendung reserviert. muss NULL sein.
 
 *mshlflags*<br/>
-Flag, das angibt, ob die zu marshallenden Daten an den Clientprozess zurückgesendet werden sollen – der typische Fall – oder in eine globale Tabelle geschrieben werden, wo sie von mehreren Clients abgerufen werden können. Geben Sie einen oder mehrere MSHLFLAGS-Enumerationswerte an.
+Flag, das angibt, ob die zu gemarshallten Daten zurück an den Client Prozess übertragen werden sollen – der typische Fall – oder in eine globale Tabelle geschrieben werden, wo Sie von mehreren Clients abgerufen werden kann. Geben Sie mindestens einen mshlflags-Enumerationswert an.
 
-*pSize*<br/>
-Wenn dieser Vorgang abgeschlossen ist, zeigen Sie auf die obere Grenze für die Datenmenge, die in den Marshalling-Stream geschrieben werden soll.
+*Psize*<br/>
+Wenn dieser Vorgang abgeschlossen ist, Zeiger auf die obere Grenze der Datenmenge, die in den marshallingstream geschrieben werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls E_FAIL oder E_NOINTERFACE.
 
-## <a name="ftmbasegetunmarshalclass"></a><a name="getunmarshalclass"></a>FtmBase::GetUnmarshalClass
+## <a name="ftmbasegetunmarshalclass"></a><a name="getunmarshalclass"></a>Ftmbase:: GetUnmarshalClass
 
-Ruft die CLSID ab, die COM verwendet, um die DLL zu finden, die den Code für den entsprechenden Proxy enthält. COM lädt diese DLL, um eine nicht initialisierte Instanz des Proxys zu erstellen.
+Ruft die CLSID ab, die com verwendet, um die dll zu suchen, die den Code für den entsprechenden Proxy enthält. COM lädt diese DLL, um eine nicht initialisierte Instanz des Proxys zu erstellen.
 
 ```cpp
 STDMETHODIMP GetUnmarshalClass(
@@ -197,23 +197,23 @@ STDMETHODIMP GetUnmarshalClass(
 ### <a name="parameters"></a>Parameter
 
 *riid*<br/>
-Verweis auf den Bezeichner der zu marshallenden Schnittstelle.
+Verweis auf den Bezeichner der Schnittstelle, die gemarshallt werden soll.
 
-*Pv*<br/>
-Zeiger auf die zu marshallende Schnittstelle; kann NULL sein, wenn der Aufrufer keinen Zeiger auf die gewünschte Schnittstelle hat.
+*teuren*<br/>
+Zeiger auf die-Schnittstelle, die gemarshallt werden soll. kann NULL sein, wenn der Aufrufer nicht über einen Zeiger auf die gewünschte Schnittstelle verfügt.
 
-*dwDestContext*<br/>
-Zielkontext, in dem die angegebene Schnittstelle nicht gemarshallt werden soll.
+*dwdestcontext*<br/>
+Ziel Kontext, in dem die angegebene Schnittstelle aus dem Marshalling entfernt werden soll.
 
-Geben Sie einen oder mehrere MSHCTX-Enumerationswerte an.
+Geben Sie mindestens einen mshctx-Enumerationswert an.
 
-Das Unmarshaling kann entweder in einer anderen Wohnung des aktuellen Prozesses (MSHCTX_INPROC) oder in einem anderen Prozess auf demselben Computer wie der aktuelle Prozess (MSHCTX_LOCAL) erfolgen.
+Das Marshalling kann entweder in einem anderen Apartment des aktuellen Prozesses (MSHCTX_INPROC) oder in einem anderen Prozess auf demselben Computer wie der aktuelle Prozess (MSHCTX_LOCAL) erfolgen.
 
-*pvDestContext*<br/>
-Reserviert für die zukünftige Verwendung; muss NULL sein.
+*pvdestcontext*<br/>
+Für zukünftige Verwendung reserviert. muss NULL sein.
 
 *mshlflags*<br/>
-Wenn dieser Vorgang abgeschlossen ist, zeigen Sie auf die CLSID, die zum Erstellen eines Proxys im Clientprozess verwendet werden soll.
+Wenn dieser Vorgang abgeschlossen ist, Zeiger auf die CLSID, die zum Erstellen eines Proxys im Client Prozess verwendet werden soll.
 
 *pCid*
 
@@ -221,9 +221,9 @@ Wenn dieser Vorgang abgeschlossen ist, zeigen Sie auf die CLSID, die zum Erstell
 
 S_OK, wenn erfolgreich; andernfalls S_FALSE.
 
-## <a name="ftmbasemarshalinterface"></a><a name="marshalinterface"></a>FtmBase::MarshalInterface
+## <a name="ftmbasemarshalinterface"></a><a name="marshalinterface"></a>Ftmbase:: MarshalInterface
 
-Schreibt in einen Stream die Daten, die zum Initialisieren eines Proxyobjekts in einem Clientprozess erforderlich sind.
+Schreibt die Daten, die zum Initialisieren eines Proxy Objekts in einem Client Prozess erforderlich sind, in einen Stream.
 
 ```cpp
 STDMETHODIMP MarshalInterface(
@@ -238,47 +238,47 @@ STDMETHODIMP MarshalInterface(
 
 ### <a name="parameters"></a>Parameter
 
-*pStm*<br/>
-Zeiger auf den Stream, der während des Marshallings verwendet werden soll.
+*pstm*<br/>
+Zeiger auf den Stream, der beim Marshalling verwendet werden soll.
 
 *riid*<br/>
-Verweis auf den Bezeichner der zu marshallenden Schnittstelle. Diese Schnittstelle muss von der `IUnknown` -Schnittstelle abgeleitet werden.
+Verweis auf den Bezeichner der Schnittstelle, die gemarshallt werden soll. Diese Schnittstelle muss von der `IUnknown` -Schnittstelle abgeleitet werden.
 
-*Pv*<br/>
-Zeiger auf den zu marshallenden Schnittstellenzeiger; kann NULL sein, wenn der Aufrufer keinen Zeiger auf die gewünschte Schnittstelle hat.
+*teuren*<br/>
+Zeiger auf den Schnittstellen Zeiger, der gemarshallt werden soll. kann NULL sein, wenn der Aufrufer nicht über einen Zeiger auf die gewünschte Schnittstelle verfügt.
 
-*dwDestContext*<br/>
-Zielkontext, in dem die angegebene Schnittstelle nicht gemarshallt werden soll.
+*dwdestcontext*<br/>
+Ziel Kontext, in dem die angegebene Schnittstelle aus dem Marshalling entfernt werden soll.
 
-Geben Sie einen oder mehrere MSHCTX-Enumerationswerte an.
+Geben Sie mindestens einen mshctx-Enumerationswert an.
 
-Das Unmarshaling kann in einer anderen Wohnung des aktuellen Prozesses (MSHCTX_INPROC) oder in einem anderen Prozess auf demselben Computer wie der aktuelle Prozess auftreten (MSHCTX_LOCAL).
+Das Marshalling kann in einem anderen Apartment des aktuellen Prozesses (MSHCTX_INPROC) oder in einem anderen Prozess auf demselben Computer wie der aktuelle Prozess (MSHCTX_LOCAL) erfolgen.
 
-*pvDestContext*<br/>
+*pvdestcontext*<br/>
 Für die zukünftige Verwendung reserviert. Muss 0 (null) sein.
 
 *mshlflags*<br/>
-Gibt an, ob die zu marshallenden Daten an den Clientprozess zurückgesendet werden sollen – der typische Fall – oder in eine globale Tabelle geschrieben werden sollen, wo sie von mehreren Clients abgerufen werden können.
+Gibt an, ob die zu gemarshallten Daten zurück an den Client Prozess übertragen werden sollen – der typische Fall – oder in eine globale Tabelle geschrieben werden, wo Sie von mehreren Clients abgerufen werden kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK Der Schnittstellenzeiger wurde erfolgreich gemarshallt.
+, S_OK der Schnittstellen Zeiger erfolgreich gemarshallt wurde.
 
-E_NOINTERFACE Die angegebene Schnittstelle wird nicht unterstützt.
+E_NOINTERFACE die angegebene Schnittstelle nicht unterstützt wird.
 
-STG_E_MEDIUMFULL Der Stream ist voll.
+STG_E_MEDIUMFULL der Stream voll ist.
 
-E_FAIL Der Vorgang ist fehlgeschlagen.
+E_FAIL Vorgang ist fehlgeschlagen.
 
-## <a name="ftmbasemarshaller_"></a><a name="marshaller"></a>FtmBase::marshaller_
+## <a name="ftmbasemarshaller_"></a><a name="marshaller"></a>Ftmbase:: marshaller_
 
-Enthält einen Verweis auf den Freithread-Marshaller.
+Enthält einen Verweis auf den freien Thread-Mars Haller.
 
 ```cpp
 Microsoft::WRL::ComPtr<IMarshal> marshaller_; ;
 ```
 
-## <a name="ftmbasereleasemarshaldata"></a><a name="releasemarshaldata"></a>FtmBase::ReleaseMarshalData
+## <a name="ftmbasereleasemarshaldata"></a><a name="releasemarshaldata"></a>Ftmbase:: ReleaseMarshalData
 
 Zerstört ein gemarshalltes Datenpaket.
 
@@ -290,16 +290,16 @@ STDMETHODIMP ReleaseMarshalData(
 
 ### <a name="parameters"></a>Parameter
 
-*pStm*<br/>
-Zeigen Sie auf einen Stream, der das zu zerstörende Datenpaket enthält.
+*pstm*<br/>
+Zeiger auf einen Stream, der das zu zerstörende Datenpaket enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="ftmbaseunmarshalinterface"></a><a name="unmarshalinterface"></a>FtmBase::UnmarshalInterface
+## <a name="ftmbaseunmarshalinterface"></a><a name="unmarshalinterface"></a>Ftmbase:: UnmarshalInterface
 
-Initialisiert einen neu erstellten Proxy und gibt einen Schnittstellenzeiger auf diesen Proxy zurück.
+Initialisiert einen neu erstellten Proxy und gibt einen Schnittstellen Zeiger auf diesen Proxy zurück.
 
 ```cpp
 STDMETHODIMP UnmarshalInterface(
@@ -311,15 +311,15 @@ STDMETHODIMP UnmarshalInterface(
 
 ### <a name="parameters"></a>Parameter
 
-*pStm*<br/>
-Zeiger auf den Stream, von dem aus der Schnittstellenzeiger nicht gemarshallt werden soll.
+*pstm*<br/>
+Ein Zeiger auf den Stream, aus dem der Schnittstellen Zeiger nicht gemarshallt werden soll.
 
 *riid*<br/>
-Verweis auf den Bezeichner der Schnittstelle, die nicht gemarshallt werden soll.
+Verweis auf den Bezeichner der Schnittstelle, die gemarshallt werden soll.
 
-*Ppv*<br/>
-Wenn dieser Vorgang abgeschlossen ist, wird die Adresse einer Zeigervariablen, die den in *riid*angeforderten Schnittstellenzeiger empfängt. Wenn dieser Vorgang erfolgreich ist, enthält **ppv* den angeforderten Schnittstellenzeiger der Schnittstelle, die nicht gemarshallt werden soll.
+*PPV*<br/>
+Wenn dieser Vorgang abgeschlossen ist, die Adresse einer Zeiger Variablen, die den in *riid*angeforderten Schnittstellen Zeiger empfängt. Wenn dieser Vorgang erfolgreich ist, enthält **PPV* den angeforderten Schnittstellen Zeiger der Schnittstelle, die gemarshallt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn erfolgreich; andernfalls E_NOINTERFACE oder E_FAIL.
+S_OK, wenn erfolgreich; Andernfalls E_NOINTERFACE oder E_FAIL.

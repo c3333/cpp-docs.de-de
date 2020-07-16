@@ -2,54 +2,54 @@
 title: Typsystem (C++/CX)
 ms.date: 02/03/2017
 ms.assetid: b67bee8a-b526-4872-969e-ef22724e88fe
-ms.openlocfilehash: bc45a835e37ff4e3ea239d253078bf50eab1b2ff
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: f4a6ea32681ad033b5db9451682c764f0a6d8959
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740907"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404625"
 ---
 # <a name="type-system-ccx"></a>Typsystem (C++/CX)
 
-Mithilfe der Windows-Runtime Architektur können Sie/CX, Visual Basic C++, Visual C# und JavaScript verwenden, um apps und Komponenten zu schreiben, die direkt auf die Windows-API zugreifen und mit anderen Windows-Runtime-apps und-Komponenten zusammenarbeiten. Universelle Windows-Plattform apps, die in in C++ systemeigenen Code kompiliert werden und direkt in der CPU ausgeführt werden. Universelle Windows-Plattform apps, die in C# geschrieben werden oder Visual Basic in Microsoft Intermediate Language (MSIL) kompiliert und im Common Language Runtime (CLR) ausgeführt werden. Universelle Windows-Plattform in JavaScript geschriebenen apps werden in einer Laufzeitumgebung ausgeführt. Die Windows-Runtime Betriebssystemkomponenten selbst sind in C++ geschrieben und werden als System eigener Code ausgeführt. Alle diese Komponenten und universelle Windows-Plattform-apps kommunizieren direkt über die Windows-Runtime Application Binary Interface (ABI).
+Mithilfe der Windows-Runtime-Architektur können Sie C++/CX, Visual Basic, Visual c# und JavaScript verwenden, um apps und Komponenten zu schreiben, die direkt auf die Windows-API zugreifen und mit anderen Windows-Runtime-apps und-Komponenten zusammenarbeiten. Universelle Windows-Plattform in C++ geschriebenen apps werden in nativen Code kompiliert, der direkt in der CPU ausgeführt wird. Universelle Windows-Plattform apps, die in c# geschrieben sind, oder Visual Basic in Microsoft Intermediate Language (MSIL) kompiliert und im Common Language Runtime (CLR) ausgeführt werden. Universelle Windows-Plattform in JavaScript geschriebenen apps werden in einer Laufzeitumgebung ausgeführt. Die Windows-Runtime Betriebssystemkomponenten selbst sind in C++ geschrieben und werden als System eigener Code ausgeführt. Alle diese Komponenten und universelle Windows-Plattform-apps kommunizieren direkt über die Windows-Runtime Application Binary Interface (ABI).
 
-Um die Unterstützung für die Windows-Runtime in einer C++ modernen Sprache zu aktivieren, C++hat Microsoft/CX. erstellt. C++/CX bietet integrierte Basis Typen und Implementierungen von grundlegenden Windows-Runtime Typen, mit denen C++ apps und Komponenten über die ABI mit in anderen Sprachen geschriebenen apps kommunizieren können. Sie können beliebige Windows-Runtime Typen nutzen oder Klassen, Strukturen, Schnittstellen und andere benutzerdefinierte Typen erstellen, die von anderen universelle Windows-Plattform-apps und-Komponenten verwendet werden können. eine universelle Windows-Plattform-APP, die in C++/CX geschrieben ist, kann C++ auch reguläre Klassen und Strukturen verwenden, sofern Sie keine öffentliche Barrierefreiheit haben.
+Um die Unterstützung für die Windows-Runtime in einer modernen C++-Sprache zu aktivieren, hat Microsoft das C++-/CX. C++/CX bietet integrierte Basis Typen und Implementierungen von grundlegenden Windows-Runtime Typen, mit denen C++-apps und-Komponenten über die ABI mit in anderen Sprachen geschriebenen apps kommunizieren können. Sie können beliebige Windows-Runtime Typen nutzen oder Klassen, Strukturen, Schnittstellen und andere benutzerdefinierte Typen erstellen, die von anderen universelle Windows-Plattform-apps und-Komponenten verwendet werden können. eine universelle Windows-Plattform-APP, die in C++ geschrieben ist/CX kann auch reguläre C++-Klassen und-Strukturen verwenden, solange Sie keine öffentliche Barrierefreiheit haben.
 
 Eine ausführliche Diskussion der C++/CX-Sprachprojektion und ihrer Funktionsweise finden Sie in folgenden Blogbeiträgen:
 
-1. [C++/CX Teil 0 von \[n\]: Eine Einführung](https://blogs.msdn.microsoft.com/vcblog/2012/08/29/ccx-part-0-of-n-an-introduction)
+- [C++/CX Teil 0 von \[ n \] : eine Einführung](https://devblogs.microsoft.com/cppblog/ccx-part-0-of-n-an-introduction/)
 
-1. [C++/CX Teil 1 von \[n\]: Eine einfache Klasse](https://blogs.msdn.microsoft.com/vcblog/2012/09/05/ccx-part-1-of-n-a-simple-class)
+- [C++/CX Teil 1 von \[ n \] : einfache Klasse](https://devblogs.microsoft.com/cppblog/ccx-part-1-of-n-a-simple-class/)
 
-1. [C++/CX Teil 2 von \[n\]: Typen, die Hüte haben](https://blogs.msdn.microsoft.com/vcblog/2012/09/17/ccx-part-2-of-n-types-that-wear-hats)
+- [C++/CX Teil 2 von \[ n \] : Typen mit hüten](https://devblogs.microsoft.com/cppblog/ccx-part-2-of-n-types-that-wear-hats/)
 
-1. [C++/CX Teil 3 von \[n\]: Unterkonstruktion](https://blogs.msdn.microsoft.com/vcblog/2012/10/05/ccx-part-3-of-n-under-construction/)
+- [C++/CX Teil 3 von \[ n \] : in Bearbeitung](https://devblogs.microsoft.com/cppblog/ccx-part-3-of-n-under-construction/)
 
-1. [C++/CX Teil 4 von \[n\]: Statische Element Funktionen](https://blogs.msdn.microsoft.com/vcblog/2012/10/19/ccx-part-4-of-n-static-member-functions)
+- [C++/CX Teil 4 von \[ n \] : statische Element Funktionen](https://devblogs.microsoft.com/cppblog/ccx-part-4-of-n-static-member-functions/)
 
 ## <a name="windows-metadata-winmd-files"></a>Windows-Metadatendateien (.winmd)
 
-Wenn Sie eine universelle Windows-Plattform-App kompilieren, die in C++geschrieben ist, generiert der Compiler die ausführbare Datei im systemeigenen Computercode und generiert außerdem eine separate Windows-Metadatendatei (. winmd), die Beschreibungen der öffentlichen Windows-Runtime Typen, die Klassen, Strukturen, Enumerationen, Schnittstellen, parametrisierte Schnittstellen und Delegaten einschließen. Das Format der Metadaten ähnelt dem Format, das in den .NET Framework-Assemblys verwendet wird.  In einer C++-Komponente enthält die WinMD-Datei nur Metadaten. Der ausführbare Code befindet sich in einer separaten Datei. Dies ist der Fall für die Windows-Runtime Komponenten, die in Windows enthalten sind. Der WinMD-Dateiname muss übereinstimmen oder ein Präfix des Stammnamenspace im Quellcode sein. (Für die .NET Framework-Sprachen sind in einer WinMD-Datei wie in einer .NET Framework-Assembly sowohl Code als auch Metadaten enthalten.)
+Wenn Sie eine universelle Windows-Plattform-App kompilieren, die in C++ geschrieben ist, generiert der Compiler die ausführbare Datei im systemeigenen Computercode und generiert außerdem eine separate Windows-Metadatendatei (. winmd), die Beschreibungen der öffentlichen Windows-Runtime Typen enthält, einschließlich Klassen, Strukturen, Enumerationen, Schnittstellen, parametrisierte Schnittstellen und Delegaten. Das Format der Metadaten ähnelt dem Format, das in den .NET Framework-Assemblys verwendet wird.  In einer C++-Komponente enthält die WinMD-Datei nur Metadaten. Der ausführbare Code befindet sich in einer separaten Datei. Dies ist der Fall für die Windows-Runtime Komponenten, die in Windows enthalten sind. Der WinMD-Dateiname muss übereinstimmen oder ein Präfix des Stammnamenspace im Quellcode sein. (Für die .NET Framework-Sprachen sind in einer WinMD-Datei wie in einer .NET Framework-Assembly sowohl Code als auch Metadaten enthalten.)
 
 Die Metadaten in der WinMD-Datei stellen die veröffentlichte Oberfläche des Codes dar. Veröffentlichte Typen sind für andere universelle Windows-Plattformen sichtbar, unabhängig davon, in welcher Sprache diese anderen apps geschrieben sind. Daher können die Metadaten oder der veröffentlichte Code nur Typen enthalten, die vom Windows-Runtime Type System angegeben werden. C++-spezifische Sprachkonstrukte wie reguläre Klassen, Arrays, Vorlagen oder STL-Container können nicht in Metadaten veröffentlicht werden, da eine JavaScript- oder C#-Clientapp sie nicht verwenden kann.
 
-Ob ein Typ oder eine Methode in den Metadaten sichtbar ist, hängt davon ab, welche Zugriffsmodifizierer auf diesen Typ oder diese Methode angewendet werden. Um sichtbar zu sein, muss ein Typ sowohl in einem Namespace als auch als öffentlich deklariert werden. Eine nicht öffentliche Verweisklasse ist als interner Hilfsprogrammtyp im Code zugelassen, wird jedoch nicht in den Metadaten angezeigt. Es sind jedoch auch in einer öffentlichen Verweisklasse nicht unbedingt alle Member sichtbar. In der folgenden Tabelle wird die Beziehung C++ zwischen zugriffsspezifiziererbezeichgern in einer öffentlichen Verweis Klasse und Windows-Runtime Sichtbarkeit von Metadaten aufgelistet:
+Ob ein Typ oder eine Methode in den Metadaten sichtbar ist, hängt davon ab, welche Zugriffsmodifizierer auf diesen Typ oder diese Methode angewendet werden. Um sichtbar zu sein, muss ein Typ sowohl in einem Namespace als auch als öffentlich deklariert werden. Eine nicht öffentliche Verweisklasse ist als interner Hilfsprogrammtyp im Code zugelassen, wird jedoch nicht in den Metadaten angezeigt. Es sind jedoch auch in einer öffentlichen Verweisklasse nicht unbedingt alle Member sichtbar. In der folgenden Tabelle wird die Beziehung zwischen C++-zugriffsspezifiziererbezeichgern in einer öffentlichen Verweis Klasse und Windows-Runtime Sichtbarkeit von Metadaten aufgelistet
 
 |||
 |-|-|
 |**In Metadaten veröffentlicht**|**Nicht in Metadaten veröffentlicht**|
-|public|private|
+|öffentlich|private|
 |protected|internal|
 |public protected|private protected|
 
-Mit dem **Objektkatalog** können Sie den Inhalt von WinMD-Dateien anzeigen. Die Windows-Runtime Komponenten, die in Windows enthalten sind, befinden sich in der Datei Windows. winmd. Die default. winmd-Datei enthält die grundlegenden Typen, die C++in/CX verwendet werden, und Platform. winmd enthält zusätzliche Typen aus dem Platform-Namespace. Standardmäßig sind diese drei winmd-Dateien in jedem C++ Projekt für universelle Windows-Plattform-Apps enthalten.
+Mit dem **Objektkatalog** können Sie den Inhalt von WinMD-Dateien anzeigen. Die Windows-Runtime Komponenten, die in Windows enthalten sind, befinden sich in der Datei Windows. winmd. Die default. winmd-Datei enthält die grundlegenden Typen, die in C++/CX verwendet werden, und Platform. winmd enthält zusätzliche Typen aus dem Platform-Namespace. Standardmäßig sind diese drei winmd-Dateien in jedem C++-Projekt für universelle Windows-Plattform-Apps enthalten.
 
 > [!TIP]
-> Die im [Platform::Collections Namespace](../cppcx/platform-collections-namespace.md) vorhandenen Typen sind in der WinMD-Datei nicht sichtbar, da sie nicht öffentlich sind. Es sind private C++-spezifische Implementierungen der Schnittstellen, die in `Windows::Foundation::Collections`definiert sind. Eine Windows-Runtime-APP, die in JavaScript geschrieben C# ist oder nicht weiß, was eine [Platform:: Collections:: Vector-Klasse](../cppcx/platform-collections-vector-class.md) ist, aber `Windows::Foundation::Collections::IVector`Sie kann einen nutzen. Die `Platform::Collections` -Typen werden in der Datei collection.h definiert.
+> Die im [Platform::Collections Namespace](../cppcx/platform-collections-namespace.md) vorhandenen Typen sind in der WinMD-Datei nicht sichtbar, da sie nicht öffentlich sind. Es sind private C++-spezifische Implementierungen der Schnittstellen, die in `Windows::Foundation::Collections`definiert sind. Eine Windows-Runtime-APP, die in JavaScript oder c# geschrieben ist, weiß nicht, was eine [Platform:: Collections:: Vector-Klasse](../cppcx/platform-collections-vector-class.md) ist, aber Sie kann einen Nutzen `Windows::Foundation::Collections::IVector` . Die `Platform::Collections` -Typen werden in der Datei collection.h definiert.
 
 ## <a name="windows-runtime-type-system-in-ccx"></a>Windows-Runtime Type System in C++/CX
 
-In den folgenden Abschnitten werden die wichtigsten Features des Windows-Runtime Typsystems und deren Unterstützung in C++/CX. beschrieben.
+In den folgenden Abschnitten werden die wichtigsten Features des Windows-Runtime Typsystems beschrieben und die Unterstützung in C++/CX.
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -63,7 +63,7 @@ Weitere Informationen finden Sie unter [Namespaces und Typsichtbarkeit](../cppcx
 
 Die Windows-Runtime definiert die folgenden grundlegenden Typen: UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Char16, Boolean und String. C++/CX unterstützt die grundlegenden numerischen Typen im Standard Namespace wie UInt16, UInt32, UInt64, Int16, Int32, Int64, float32, float64 und char16. Boolean und String werden auch im Plattformnamespace definiert.
 
-C++/CX definiert auch Uint8, das entspricht `unsigned char`, das im Windows-Runtime nicht unterstützt wird und in öffentlichen APIs nicht verwendet werden kann.
+C++/CX definiert auch Uint8 `unsigned char` . Dies entspricht, das im Windows-Runtime nicht unterstützt wird und in öffentlichen APIs nicht verwendet werden kann.
 
 Ein elementarer Typ kann auf NULL festlegbar gemacht werden, indem er in einer [Platform::IBox Interface](../cppcx/platform-ibox-interface.md) -Schnittstelle umgebrochen wird. Weitere Informationen finden Sie unter [Wertklassen und Strukturen](../cppcx/value-classes-and-structs-c-cx.md)definiert sind.
 
@@ -71,7 +71,7 @@ Weitere Informationen über grundlegende Typen finden Sie unter [Grundlegende Ty
 
 ### <a name="strings"></a>Zeichenfolgen
 
-Eine Windows-Runtime Zeichenfolge ist eine unveränderliche Sequenz von 16-Bit-Unicode-Zeichen. Eine Windows-Runtime Zeichenfolge wird `Platform::String^`als projiziert. Diese Klasse stellt Methoden zum Erstellen und Bearbeiten von Zeichenfolgen zur Verfügung und ermöglicht, Zeichenfolgen in und aus `wchar_t`zu konvertieren.
+Eine Windows-Runtime Zeichenfolge ist eine unveränderliche Sequenz von 16-Bit-Unicode-Zeichen. Eine Windows-Runtime Zeichenfolge wird als projiziert `Platform::String^` . Diese Klasse stellt Methoden zum Erstellen und Bearbeiten von Zeichenfolgen zur Verfügung und ermöglicht, Zeichenfolgen in und aus `wchar_t`zu konvertieren.
 
 Weitere Informationen finden Sie unter [Zeichenfolgen](../cppcx/strings-c-cx.md)definiert sind.
 
@@ -115,7 +115,7 @@ Eine Eigenschaft ist ein öffentliches Datenmember beliebiger Windows-Runtime Ty
 
 Weitere Informationen finden Sie unter [Eigenschaften](../cppcx/properties-c-cx.md)definiert sind.
 
-### <a name="windows-runtime-collections-in-ccx"></a>Windows-Runtime von Sammlungen C++in/CX
+### <a name="windows-runtime-collections-in-ccx"></a>Windows-Runtime Auflistungen in C++/CX
 
 Der Windows-Runtime definiert einen Satz von Schnittstellen für Auflistungs Typen, die von jeder Sprache auf eigene Weise implementiert werden. C++/CX stellt Implementierungen in der [Platform:: Collections:: Vector-Klasse](../cppcx/platform-collections-vector-class.md), [Platform:: Collections:: Map-Klasse](../cppcx/platform-collections-map-class.md)und anderen verwandten, konkreten Auflistungs Typen bereit, die mit ihren STL-Entsprechungen (Standard Template Library) kompatibel sind.
 
@@ -135,13 +135,13 @@ Weitere Informationen finden Sie unter [Schnittstellen](../cppcx/interfaces-c-cx
 
 ### <a name="enums"></a>Enumerationen
 
-Eine Enumerationsklasse in Windows-Runtime ähnelt einer Bereichs bezogenen Enumeration C++in. Der zugrunde liegende Typ ist int32, es sei denn, das Attribut [Flags] kommt zur Anwendung. Dann ist der zugrunde liegende Typ uint32.
+Eine Enumerationsklasse in Windows-Runtime ähnelt einer Bereichs bezogenen Enumeration in C++. Der zugrunde liegende Typ ist int32, es sei denn, das Attribut [Flags] kommt zur Anwendung. Dann ist der zugrunde liegende Typ uint32.
 
 Weitere Informationen finden Sie unter [Enumerationen](../cppcx/enums-c-cx.md)definiert sind.
 
 ### <a name="delegates"></a>Delegaten
 
-Ein Delegat in der Windows-Runtime ist analog zu einem Std:: Function- C++Objekt in. Es ist eine spezielle Verweisklasse, mit deren Hilfe vom Client bereitgestellte Funktionen aufgerufen werden, die kompatible Signaturen enthalten.  Delegaten werden am häufigsten in der Windows-Runtime als Typ eines Ereignisses verwendet.
+Ein Delegat in der Windows-Runtime ist analog zu einem Std:: Function-Objekt in C++. Es ist eine spezielle Verweisklasse, mit deren Hilfe vom Client bereitgestellte Funktionen aufgerufen werden, die kompatible Signaturen enthalten.  Delegaten werden am häufigsten in der Windows-Runtime als Typ eines Ereignisses verwendet.
 
 Weitere Informationen finden Sie unter [Delegaten](../cppcx/delegates-c-cx.md).
 
@@ -151,11 +151,11 @@ In C++/CX können Sie benutzerdefinierte Ausnahmetypen, [std::exception](../stan
 
 Weitere Informationen finden Sie unter [Ausnahmen](../cppcx/exceptions-c-cx.md)definiert sind.
 
-### <a name="events"></a>Ereignisse
+### <a name="events"></a>Events
 
 Ein Ereignis ist ein öffentlicher Member in einer Verweisklasse oder einer Referenzstruktur mit einem Delegattyp als Typ. Ein Ereignis kann nur durch die besitzende Klasse aufgerufen, d. h. ausgelöst werden. Clientcode kann jedoch eigene Funktionen bereitstellen, die als Ereignishandler bezeichnet werden. Diese Ereignishandler werden aufgerufen, wenn die besitzende Klasse das Ereignis auslöst.
 
-Weitere Informationen finden Sie unter [Ereignisse](../cppcx/events-c-cx.md)definiert sind.
+Weitere Informationen finden Sie unter [Ereignisse](../cppcx/events-c-cx.md).
 
 ### <a name="casting"></a>Umwandlung
 
@@ -169,9 +169,9 @@ Eine geschachtelte Variable ist ein Werttyp, der in einem Referenztyp in Situati
 
 Weitere Informationen finden Sie unter [Boxing](../cppcx/boxing-c-cx.md)definiert sind.
 
-### <a name="attributes"></a>Attribute
+### <a name="attributes"></a>Attributes
 
-Ein Attribut ist ein Metadatenwert, der auf beliebige Windows-Runtime Typen oder Typmember angewendet und zur Laufzeit überprüft werden kann. Der-Windows-Runtime definiert einen Satz allgemeiner Attribute im `Windows::Foundation::Metadata` -Namespace. Benutzerdefinierte Attribute in öffentlichen Schnittstellen werden von Windows-Runtime in dieser Version nicht unterstützt.
+Ein Attribut ist ein Metadatenwert, der auf beliebige Windows-Runtime Typen oder Typmember angewendet und zur Laufzeit überprüft werden kann. Der-Windows-Runtime definiert einen Satz allgemeiner Attribute im- `Windows::Foundation::Metadata` Namespace. Benutzerdefinierte Attribute in öffentlichen Schnittstellen werden von Windows-Runtime in dieser Version nicht unterstützt.
 
 ## <a name="api-deprecation"></a>API-Veraltung
 
@@ -179,6 +179,6 @@ Beschreibt, wie öffentliche APIs als veraltet markiert werden, indem das Attrib
 
 Weitere Informationen finden Sie unter [Veraltete Typen und](../cppcx/deprecating-types-and-members-c-cx.md)Member.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)
+[C++/CX-Sprachreferenz](../cppcx/visual-c-language-reference-c-cx.md)

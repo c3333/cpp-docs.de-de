@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -HIGHENTROPYVA editbin option
 - /HIGHENTROPYVA editbin option
 ms.assetid: ef4b7c63-440d-40ca-b39d-edefb3217505
-ms.openlocfilehash: b2ff9929de74d99fbc45e4f4ff38fd6b939697bc
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 1adc12c0673764460b4af5eb7cf3b394d9666e81
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373826"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404099"
 ---
 # <a name="highentropyva"></a>/HIGHENTROPYVA
 
@@ -21,16 +21,17 @@ Gibt an, ob das ausführbare Image 64-bit-ASLR mit hoher Entropie unterstützt.
 
 ## <a name="syntax"></a>Syntax
 
-> **/HIGHENTROPYVA**[**: No**]
+> **`/HIGHENTROPYVA`**[**`:NO`**]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option ändert den Header eines *ausführbaren Images*, eine DLL-Datei oder exe-Datei, um anzugeben, ob ASLR mit 64-Bit-Adressen unterstützt wird. Wenn diese Option auf einer ausführbaren Datei und allen Modulen festgelegt wird, von denen sie abhängt, kann ein 64-Bit-ASLR unterstützendes Betriebssystem für die Segmente des ausführbaren Images zur Ladezeit ein Rebase ausführen, indem zufällige Adressen in einem virtuellen 64-Bit-Adressbereich verwendet werden. Aufgrund dieses großen Adressbereichs ist es für einen Angreifer schwieriger, den Ort eines bestimmten Speicherbereichs zu schätzen.
+Diese Option ändert den Header einer *ausführbaren Bilddatei* (z. b. eine- *`.dll`* oder- *`.exe`* Datei), um Unterstützung für 64-Bit-Address ASLR anzugeben. Um einen Effekt zu erzielen, legen Sie die-Option für die ausführbare Datei und alle Module fest, von denen Sie abhängt. Dann können Betriebssysteme, die 64-Bit-ASLR unterstützen, die Segmente des ausführbaren Images zur Ladezeit mithilfe von zufälligen virtuellen 64-Bit-Adressen neu anordnen. Aufgrund dieses großen Adressbereichs ist es für einen Angreifer schwieriger, den Ort eines bestimmten Speicherbereichs zu schätzen.
 
-Standardmäßig aktiviert der Linker **/HIGHENTROPYVA** für ausführbare 64-Bit-Images. Diese Option erfordert [/LARGEADDRESSAWARE](largeaddressaware.md), das auch standardmäßig für 64-Bit-Images aktiviert ist. **/HIGHENTROPYVA** ist nicht auf ausführbare 32-Bit-Images anwendbar, bei denen die Option ignoriert wird. Um diese Option explizit zu deaktivieren, verwenden Sie **/HIGHENTROPYVA: No**. Damit diese Option wirksam wird, muss auch die [/DynamicBase](dynamicbase.md) -Option festgelegt werden.
+Standardmäßig aktiviert der Linker **`/HIGHENTROPYVA`** ausführbare 64-Bit-Images. Diese Option erfordert sowohl [`/DYNAMICBASE`](dynamicbase.md) als [`/LARGEADDRESSAWARE`](largeaddressaware.md) auch, die standardmäßig auch für 64-Bit-Images aktiviert sind. **`/HIGHENTROPYVA`** gilt nicht für ausführbare 32-Bit-Images, bei denen die Option ignoriert wird. Um diese Option explizit zu deaktivieren, verwenden Sie **`/HIGHENTROPYVA:NO`** .
 
 ## <a name="see-also"></a>Siehe auch
 
-- [EDITBIN-Optionen](editbin-options.md)
-- [/DYNAMICBASE](dynamicbase.md)
-- [Schutzmaßnahmen für Windows ISV-Software](https://docs.microsoft.com/previous-versions/bb430720(v=msdn.10))
+[EDITBIN-Optionen](editbin-options.md)\
+[`/DYNAMICBASE`](dynamicbase.md)\
+[`/LARGEADDRESSAWARE`](largeaddressaware.md)\
+[Schutzmaßnahmen für Windows ISV-Software](https://docs.microsoft.com/previous-versions/bb430720(v=msdn.10))

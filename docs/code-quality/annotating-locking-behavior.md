@@ -27,12 +27,12 @@ f1_keywords:
 - _Lock_level_order_
 - _Lock_kind_event_
 ms.assetid: 07769c25-9b97-4ab7-b175-d1c450308d7a
-ms.openlocfilehash: 8966d982b7bcbe9844a7bf1ec3088c2a9424b23a
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: c9079ac35c4219495b62cd1f4aa2f8ecbbdcf8c9
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "79467054"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404023"
 ---
 # <a name="annotating-locking-behavior"></a>Hinzufügen einer Anmerkung zum Sperrverhalten
 
@@ -64,24 +64,24 @@ In der folgenden Tabelle sind die Sperr Anmerkungen aufgeführt.
 
 |Anmerkung|BESCHREIBUNG|
 |----------------|-----------------|
-|`_Acquires_exclusive_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine exklusive Sperrenanzahl des Sperr Objekts erhöht wird, das durch `expr`benannt wird.|
-|`_Acquires_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um einen Schritt um die Sperrenanzahl des Sperr Objekts erhöht wird, das durch `expr`benannt wird.|
-|`_Acquires_nonreentrant_lock_(expr)`|Die von `expr` benannte Sperre wird abgerufen.  Wenn die Sperre bereits besteht, wird ein Fehler gemeldet.|
-|`_Acquires_shared_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine Anzahl der freigegebenen Sperren des Sperr Objekts, das von `expr`benannt wird, inkreliert wird.|
-|`_Create_lock_level_(name)`|Eine Anweisung, die das Symbol deklariert, `name` eine Sperr Ebene sein kann, damit Sie in den Anmerkungen `_Has_Lock_level_` und `_Lock_level_order_`verwendet werden kann.|
+|`_Acquires_exclusive_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine exklusive Sperr Anzahl des Sperr Objekts, das durch benannt wird, inkreliert `expr` .|
+|`_Acquires_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine die Sperrenanzahl des Sperr Objekts, das durch benannt wird, inkreliert `expr` .|
+|`_Acquires_nonreentrant_lock_(expr)`|Die Sperre, die von benannt `expr` wird, wird abgerufen.  Wenn die Sperre bereits besteht, wird ein Fehler gemeldet.|
+|`_Acquires_shared_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine Anzahl der freigegebenen Sperren des Sperr Objekts, das durch benannt wird, inkreliert `expr` .|
+|`_Create_lock_level_(name)`|Eine Anweisung, die das Symbol `name` als Sperr Ebene deklariert, damit Sie in den Anmerkungen und verwendet werden kann `_Has_Lock_level_` `_Lock_level_order_` .|
 |`_Has_lock_kind_(kind)`|Kommentiert alle-Objekte, um die Typinformationen eines Ressourcen Objekts zu verfeinern. Manchmal wird ein gemeinsamer Typ für verschiedene Arten von Ressourcen verwendet, und der überladene Typ reicht nicht aus, um die semantischen Anforderungen zwischen verschiedenen Ressourcen zu unterscheiden. Im folgenden finden Sie eine Liste vordefinierter `kind` Parameter:<br /><br /> `_Lock_kind_mutex_`<br /> Sperrenkind-ID für Mutexes.<br /><br /> `_Lock_kind_event_`<br /> Sperrenkind-ID für Ereignisse.<br /><br /> `_Lock_kind_semaphore_`<br /> Sperrenkind-ID für Semaphore.<br /><br /> `_Lock_kind_spin_lock_`<br /> Sperrenkind-ID für Spin-sperren.<br /><br /> `_Lock_kind_critical_section_`<br /> Sperrenkind-ID für kritische Abschnitte.|
-|`_Has_lock_level_(name)`|Kommentiert ein Lock-Objekt und übergibt ihm die Sperr Ebene `name`.|
-|`_Lock_level_order_(name1, name2)`|Eine-Anweisung, die die Sperr Anordnung zwischen `name1` und `name2`ermöglicht.  Sperren, die über eine Ebene `name1` verfügen, müssen vor Sperren mit der Ebene `name2`abgerufen werden.|
-|`_Post_same_lock_(expr1, expr2)`|Kommentiert eine Funktion und gibt an, dass die beiden sperren, `expr1` und `expr2`im Post-Zustand so behandelt werden, als wären Sie das gleiche Sperr Objekt.|
-|`_Releases_exclusive_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine exklusive Sperrenanzahl des Sperr Objekts, das von `expr`benannt wird, dekreliert.|
-|`_Releases_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um eine Sperrenanzahl des Sperr Objekts, das von `expr`benannt wird, dekreliert.|
-|`_Releases_nonreentrant_lock_(expr)`|Die Sperre, die von `expr` benannt wird, wird freigegeben. Wenn die Sperre derzeit nicht aufrechterhalten wird, wird ein Fehler gemeldet.|
-|`_Releases_shared_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um einen Wert für die Anzahl der freigegebenen Sperren des Sperr Objekts, das von `expr`benannt wird, verringert.|
-|`_Requires_lock_held_(expr)`|Kommentiert eine Funktion und gibt an, dass die Sperrenanzahl des Objekts, das von `expr` benannt ist, mindestens eins ist.|
-|`_Requires_lock_not_held_(expr)`|Kommentiert eine Funktion und gibt an, dass die Sperrenanzahl des Objekts, das von `expr` benannt ist, in der vorab Zustand 0 (null) ist.|
+|`_Has_lock_level_(name)`|Kommentiert ein Sperr Objekt und gibt ihm die Sperr Ebene von `name` .|
+|`_Lock_level_order_(name1, name2)`|Eine-Anweisung, die die Sperr Anordnung zwischen `name1` und ermöglicht `name2` .  Sperren, die über eine Ebene verfügen, `name1` müssen vor Sperren mit Ebene abgerufen werden `name2` .|
+|`_Post_same_lock_(expr1, expr2)`|Kommentiert eine Funktion und gibt an, dass die beiden Sperren im Post-Zustand `expr1` `expr2` so behandelt werden, als wären Sie das gleiche Sperr Objekt.|
+|`_Releases_exclusive_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die-Funktion im Post-Zustand um eine exklusive Sperrenanzahl des Sperr Objekts dekregiert, das von benannt wird `expr` .|
+|`_Releases_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die-Funktion im Post-Zustand um eine Sperrenanzahl des Sperr Objekts dekregiert, das durch benannt wird `expr` .|
+|`_Releases_nonreentrant_lock_(expr)`|Die Sperre, die von benannt `expr` wird, wird freigegeben. Wenn die Sperre derzeit nicht aufrechterhalten wird, wird ein Fehler gemeldet.|
+|`_Releases_shared_lock_(expr)`|Kommentiert eine Funktion und gibt an, dass die Funktion im Post-Zustand um einen Wert für die freigegebene Sperre des Sperr Objekts, das durch benannt wird, dekregiert `expr` .|
+|`_Requires_lock_held_(expr)`|Kommentiert eine Funktion und gibt an, dass die Sperrenanzahl des Objekts, das durch benannt ist, mindestens `expr` eins ist.|
+|`_Requires_lock_not_held_(expr)`|Kommentiert eine Funktion und gibt an, dass die Sperrenanzahl des Objekts, das durch benannt ist, in der Vorbedingung `expr` 0 (null) ist.|
 |`_Requires_no_locks_held_`|Kommentiert eine Funktion und gibt an, dass die Sperr Anzahl aller Sperren, die der Prüfung bekannt sind, 0 (null) ist.|
-|`_Requires_shared_lock_held_(expr)`|Kommentiert eine Funktion und gibt an, dass die freigegebene Sperrenanzahl des Objekts, das von `expr` benannt ist, mindestens eins ist.|
-|`_Requires_exclusive_lock_held_(expr)`|Kommentiert eine Funktion und gibt an, dass im Voraus die exklusive Sperr Anzahl des Objekts, das von `expr` benannt ist, mindestens eins ist.|
+|`_Requires_shared_lock_held_(expr)`|Kommentiert eine Funktion und gibt an, dass die freigegebene Sperrenanzahl des Objekts, das durch benannt ist, mindestens `expr` eins ist.|
+|`_Requires_exclusive_lock_held_(expr)`|Kommentiert eine Funktion und gibt an, dass im Voraus die exklusive Sperr Anzahl des Objekts, das durch benannt ist, mindestens `expr` eins ist.|
 
 ## <a name="sal-intrinsics-for-unexposed-locking-objects"></a>Systeminterne SAL-Funktionen für nicht verfügbare Sperrobjekte
 
@@ -100,23 +100,23 @@ In der folgenden Tabelle sind die Anmerkungen für den Zugriff auf freigegebene 
 
 |Anmerkung|BESCHREIBUNG|
 |----------------|-----------------|
-|`_Guarded_by_(expr)`|Kommentiert eine Variable und gibt an, dass bei jedem Zugriff auf die Variable die Sperrenanzahl des Sperr Objekts, das von `expr` benannt wird, mindestens eins ist.|
-|`_Interlocked_`|Kommentiert eine Variable und entspricht `_Guarded_by_(_Global_interlock_)`.|
+|`_Guarded_by_(expr)`|Kommentiert eine Variable und gibt an, dass bei jedem Zugriff auf die Variable die Sperrenanzahl des Sperr Objekts, das durch benannt ist, mindestens `expr` eins ist.|
+|`_Interlocked_`|Kommentiert eine Variable und entspricht `_Guarded_by_(_Global_interlock_)` .|
 |`_Interlocked_operand_`|Der mit Anmerkungen versehene Funktionsparameter ist der Ziel Operand einer der verschiedenen Interlocked-Funktionen.  Diese Operanden müssen über bestimmte zusätzliche Eigenschaften verfügen.|
-|`_Write_guarded_by_(expr)`|Kommentiert eine Variable und gibt an, dass bei jeder Änderung der Variablen die Sperrenanzahl des Sperr Objekts, das von `expr` benannt ist, mindestens eins ist.|
+|`_Write_guarded_by_(expr)`|Kommentiert eine Variable und gibt an, dass bei jeder Änderung der Variablen die Sperrenanzahl des Sperr Objekts, das durch benannt ist, mindestens `expr` eins ist.|
 
 ## <a name="smart-lock-and-raii-annotations"></a>Smart Lock-und RAII-Anmerkungen
 
-Smart Locks wrappen in der Regel Native Sperren und verwalten ihre Lebensdauer. In der folgenden Tabelle werden Anmerkungen aufgelistet, die mit intelligenten Sperren und RAII-Codierungs Mustern mit Unterstützung für `move` Semantik verwendet werden können.
+Smart Locks wrappen in der Regel Native Sperren und verwalten ihre Lebensdauer. In der folgenden Tabelle sind Anmerkungen aufgelistet, die mit intelligenten Sperren und RAII-Codierungs Mustern mit Unterstützung für Semantik verwendet werden können `move` .
 
 |Anmerkung|BESCHREIBUNG|
 |----------------|-----------------|
 |`_Analysis_assume_smart_lock_acquired_`|Weist den Analyzer an, zu übernehmen, dass eine Smart Lock abgerufen wurde. Diese Anmerkung erwartet einen verweissperrentyp als Parameter.|
 |`_Analysis_assume_smart_lock_released_`|Weist den Analyzer an, zu übernehmen, dass eine Smart Lock freigegeben wurde. Diese Anmerkung erwartet einen verweissperrentyp als Parameter.|
-|`_Moves_lock_(target, source)`|Beschreibt `move constructor` Vorgang, der den Sperr Zustand vom `source`-Objekt an den `target`überträgt. Der `target` wird als neu konstruiertes Objekt betrachtet, sodass jeder Zustand, der zuvor aufgetreten ist, verloren geht und durch den `source` Status ersetzt wird. Die `source` wird auch auf einen sauberen Zustand zurückgesetzt, der keine Sperr Anzahl oder kein Alias Ziel aufweist, aber Aliase, die darauf zeigen, bleiben unverändert.|
-|`_Replaces_lock_(target, source)`|Beschreibt `move assignment operator` Semantik, bei der die Ziel Sperre freigegeben wird, bevor der Status aus der Quelle übertragen wird. Dies kann als eine Kombination von `_Moves_lock_(target, source)` angesehen werden, denen ein `_Releases_lock_(target)`vorangestellt ist.|
-|`_Swaps_locks_(left, right)`|Beschreibt das Standard `swap` Verhalten, bei dem davon ausgegangen wird, dass-Objekte `left` und `right` ihren Zustand austauschen. Der ausgetauschte Status umfasst ggf. Sperr Anzahl und Aliasing-Ziel. Aliase, die auf die `left` und `right` Objekte zeigen, bleiben unverändert.|
-|`_Detaches_lock_(detached, lock)`|Beschreibt ein Szenario, in dem ein Lock Wrapper Type die Trennung der enthaltenen Ressource zulässt. Dies ähnelt der Funktionsweise von `std::unique_ptr` mit dem internen Zeiger: Sie ermöglicht es Programmierern, den Zeiger zu extrahieren und den intelligenten Zeiger Container in einem sauberen Zustand zu belassen. Eine ähnliche Logik wird von `std::unique_lock` unterstützt und kann in benutzerdefinierten sperrwrappern implementiert werden. Die getrennte Sperre behält ihren Zustand (sofern vorhanden) bei, während der Wrapper zurückgesetzt wird, sodass er keine Sperr Anzahl und kein Alias Ziel enthält, während seine eigenen Aliase beibehalten werden. Es gibt keinen Vorgang für Sperr Zählungen (freigeben und erwerben). Diese Anmerkung verhält sich genau wie `_Moves_lock_`, mit der Ausnahme, dass das getrennte Argument `return` und nicht `this`sein sollte.|
+|`_Moves_lock_(target, source)`|Beschreibt `move constructor` den Vorgang, der den Sperr Zustand von dem- `source` Objekt an den überträgt `target` . Der `target` wird als neu konstruiertes Objekt betrachtet, sodass jeder Zustand, den er hatte, verloren geht und durch den Zustand ersetzt wird `source` . Der `source` wird auch auf einen sauberen Zustand zurückgesetzt, ohne dass eine Sperrenanzahl oder ein Alias Ziel vorhanden ist, aber Aliase, die darauf zeigen, bleiben unverändert.|
+|`_Replaces_lock_(target, source)`|Beschreibt die `move assignment operator` Semantik, bei der die Ziel Sperre freigegeben wird, bevor der Status aus der Quelle übertragen wird. Dies kann als eine Kombination von `_Moves_lock_(target, source)` vorangestellt werden `_Releases_lock_(target)` .|
+|`_Swaps_locks_(left, right)`|Beschreibt das Standard `swap` Verhalten, bei dem davon ausgegangen wird, dass `left` -Objekte und `right` ihren Zustand austauschen. Der ausgetauschte Status umfasst ggf. Sperr Anzahl und Aliasing-Ziel. Aliase, die auf die `left` Objekte und zeigen, `right` bleiben unverändert.|
+|`_Detaches_lock_(detached, lock)`|Beschreibt ein Szenario, in dem ein Lock Wrapper Type die Trennung der enthaltenen Ressource zulässt. Dies ähnelt der Funktionsweise `std::unique_ptr` von mit dem internen Zeiger: Sie ermöglicht es Programmierern, den Zeiger zu extrahieren und den intelligenten Zeiger Container in einem sauberen Zustand zu belassen. Eine ähnliche Logik wird von unterstützt `std::unique_lock` und kann in benutzerdefinierten sperrwrappern implementiert werden. Die getrennte Sperre behält ihren Zustand (sofern vorhanden) bei, während der Wrapper zurückgesetzt wird, sodass er keine Sperr Anzahl und kein Alias Ziel enthält, während seine eigenen Aliase beibehalten werden. Es gibt keinen Vorgang für Sperr Zählungen (freigeben und erwerben). Diese Anmerkung verhält sich genau so `_Moves_lock_` , als ob das getrennte Argument `return` nicht sein sollte `this` .|
 
 ## <a name="see-also"></a>Weitere Informationen
 
@@ -126,6 +126,5 @@ Smart Locks wrappen in der Regel Native Sperren und verwalten ihre Lebensdauer. 
 - [Hinzufügen einer Anmerkung zum Funktionsverhalten](../code-quality/annotating-function-behavior.md)
 - [Hinzufügen einer Anmerkung zu Strukturen und Klassen](../code-quality/annotating-structs-and-classes.md)
 - [Angeben, wann und wo eine Anmerkung gültig ist](../code-quality/specifying-when-and-where-an-annotation-applies.md)
-- [Systeminterne Funktionen](../code-quality/intrinsic-functions.md)
+- [Intrinsische Funktionen](../code-quality/intrinsic-functions.md)
 - [Empfohlene Vorgehensweisen und Beispiele](../code-quality/best-practices-and-examples-sal.md)
-- [Blog des Code Analyseteams](https://blogs.msdn.microsoft.com/codeanalysis/)

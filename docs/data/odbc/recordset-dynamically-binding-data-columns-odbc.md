@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data binding [C++], columns in recordsets
 - columns [C++], binding to recordsets
 ms.assetid: bff67254-d953-4ae4-9716-91c348cb840b
-ms.openlocfilehash: e26e62b0e8d613c1a09b077e3bf8d01d1eabba66
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f00fb92726cc37fe2bb0e95dc36e5fc1b6df201d
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367053"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86403867"
 ---
 # <a name="recordset-dynamically-binding-data-columns-odbc"></a>Recordset: Dynamisches Binden von Datenspalten (ODBC)
 
@@ -26,7 +26,7 @@ Recordsets verwalten bindende Tabellenspalten, die Sie zur Entwurfszeit angeben.
 - [Dynamisches Binden von Spalten zur Laufzeit](#_core_how_to_bind_columns_dynamically)
 
 > [!NOTE]
-> Dieses Thema bezieht sich auf von `CRecordset` abgeleitete Objekte, in denen das gesammelte Abrufen von Zeilen nicht implementiert wurde. Die hier beschriebenen Vorgehensweisen sind grundsätzlich nicht zu empfehlen, wenn Sie gesammeltes Abrufen (Massenabrufen) von Zeilen verwenden. Weitere Informationen zum Abrufen von Massenzeilen finden Sie unter [Recordset: Abrufen von Datensätzen in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
+> Dieses Thema bezieht sich auf von `CRecordset` abgeleitete Objekte, in denen das gesammelte Abrufen von Zeilen nicht implementiert wurde. Die hier beschriebenen Vorgehensweisen sind grundsätzlich nicht zu empfehlen, wenn Sie gesammeltes Abrufen (Massenabrufen) von Zeilen verwenden. Weitere Informationen zum Abrufen von Massen Zeilen finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammel Operation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
 
 ## <a name="when-you-might-bind-columns-dynamically"></a><a name="_core_when_you_might_bind_columns_dynamically"></a> Gründe für dynamisches Binden von Spalten
 
@@ -45,7 +45,7 @@ Mit wenig zusätzlichem Code können Sie:
 
 Das Recordset enthält weiterhin Datenmember für die Spalten, die Ihnen zur Entwurfszeit bekannt waren. Außerdem enthält es wenig zusätzlichen Code, in dem dynamisch ermittelt wird, ob Ihrer Zieltabelle neue Spalten hinzugefügt wurden. Ist dies der Fall, werden diese neuen Spalten im zusätzlichen Code an dynamisch zugeordneten Speicher (anstatt an Recordset-Datenmember) gebunden.
 
-In diesem Thema geht es nicht um andere dynamische Bindungsfälle, etwa gelöschte Tabellen oder Spalten. Für diese Fälle müssen Sie ODBC-API-Aufrufe direkter verwenden. Informationen finden hierzu Sie in der ODBC SDK *Programmer's Reference* auf der MSDN Library-CD.
+In diesem Thema geht es nicht um andere dynamische Bindungsfälle, etwa gelöschte Tabellen oder Spalten. Für diese Fälle müssen Sie ODBC-API-Aufrufe direkter verwenden. Weitere Informationen finden Sie in der [ODBC Programmer es Reference](/sql/odbc/reference/odbc-programmer-s-reference).
 
 ## <a name="how-to-bind-columns-dynamically"></a><a name="_core_how_to_bind_columns_dynamically"></a> Dynamisches Binden von Spalten
 
@@ -81,7 +81,7 @@ Dynamisches Binden von hinzugefügten Spalten zur Laufzeit erfordert die folgend
 
    Ein Ansatz besteht darin, dynamische Listen zu erstellen: eine für die Namen der neuen Spalten, eine weitere für deren Ergebniswerte und eine dritte für deren Datentypen (falls erforderlich). Diese Listen, insbesondere die Werteliste, stellen Sie die Informationen und den notwendigen Speicher für die Bindung bereit. Die folgende Abbildung veranschaulicht das Erstellen der Listen.
 
-   ![Erstellen von Listen von Spalten, die dynamisch gebunden werden sollen](../../data/odbc/media/vc37w61.gif "Listen für dynamisch gebundene Spalten werden erstellt")<br/>
+   ![Auflisten von Spalten, die dynamisch gebunden werden sollen](../../data/odbc/media/vc37w61.gif "Listen für dynamisch gebundene Spalten werden erstellt")<br/>
    Erstellen von Listen für dynamisch gebundene Spalten
 
 1. Fügen Sie für jede hinzugefügte Spalte einen RFX-Funktionsaufruf in der `DoFieldExchange`-Funktion Ihres Hauptrecordsets hinzu. Diese RFX Aufrufe erledigen das Abrufen eines Datensatzes, einschließlich der zusätzlichen Spalten, und das Binden der Spalten an Recordset-Datenmember oder an den Speicher, den Sie dynamisch für diese bereitgestellt haben.
@@ -139,14 +139,14 @@ Richten Sie im nächsten Schritt Speicherorte für die Spalten ein, die dynamisc
 
 1. Erstellen Sie Werte-dynamischer-Spalten, parallel zu Dynamisch-zu-bindende-Spalten, um die Werte der Daten in jeder Spalte aufzunehmen.
 
-   Die Abbildung zeigt z. B. Dynamic-Column-Values (Liste `CString` 4) mit einem Element: ein Objekt, das die tatsächliche Telefonnummer für den aktuellen Datensatz enthält: "555-1212".
+   Die Abbildung zeigt z. b. dynamische Spaltenwerte (List 4) mit einem Element: ein- `CString` Objekt, das die tatsächliche Telefonnummer für den aktuellen Datensatz enthält: "555-1212".
 
    Im üblichsten Fall enthält Werte-dynamischer-Spalten Elemente des Typs `CString`. Arbeiten Sie mit Spalten, die unterschiedliche Datentypen haben können, benötigen Sie eine Liste, die Elemente mit einer Vielzahl von Typen enthalten kann.
 
-Das Ergebnis der vorherigen Prozeduren sind zwei Hauptlisten: Columns-to-Bind-Dynamically mit den Namen von Spalten und Dynamic-Column-Values, die die Werte in den Spalten für den aktuellen Datensatz enthalten.
+Das Ergebnis der vorangegangenen Prozeduren sind zwei Haupt Listen: Spalten-zu-Bindung-dynamisch mit den Namen von Spalten und dynamischen Spaltenwerten, die die Werte in den Spalten für den aktuellen Datensatz enthalten.
 
 > [!TIP]
-> Wenn die neuen Spalten nicht alle denselben Datentyp haben, sollten Sie eine weitere Liste erstellen, die Elemente enthält, die jeweils den Typ jedes entsprechenden Elements in der Spaltenliste definieren. (Sie können hierfür die Werte AFX_RFX_BOOL, AFX_RFX_BYTE und so weiter verwenden, wenn Sie dies möchten. Diese Konstanten werden in AFXDB definiert. H.) Wählen Sie einen Listentyp basierend auf der Darstellung der Spaltendatentypen aus.
+> Wenn die neuen Spalten nicht alle denselben Datentyp haben, sollten Sie eine weitere Liste erstellen, die Elemente enthält, die jeweils den Typ jedes entsprechenden Elements in der Spaltenliste definieren. (Sie können hierfür die Werte AFX_RFX_BOOL, AFX_RFX_BYTE und so weiter verwenden, wenn Sie dies möchten. Diese Konstanten werden in AFXDB definiert. H.) wählen Sie basierend auf der Darstellung der Spaltendatentypen einen Listentyp aus.
 
 ### <a name="adding-rfx-calls-to-bind-the-columns"></a><a name="_core_adding_rfx_calls_to_bind_the_columns"></a> Hinzufügen von RFX-Aufrufen, um die Spalten zu binden
 
@@ -171,7 +171,7 @@ Weitere Informationen über RFX-Funktionen finden Sie unter [MFC-Makros, globale
 
 Wenn das Framework `DoFieldExchange` während des `Open`-Vorgangs aufruft, um Spalten an das Recordset zu binden, werden diese Spalten durch die RFX-Aufrufe für die statischen Spalten gebunden. Anschließend werden in der Schleife wiederholt RFX-Funktionen für die dynamischen Spalten aufgerufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
 [Recordset: Arbeiten mit großen Datenelementen (ODBC)](../../data/odbc/recordset-working-with-large-data-items-odbc.md)

@@ -5,16 +5,16 @@ helpviewer_keywords:
 - C++ native multi-targeting
 - upgrading Visual C++ applications, retargeting
 ms.assetid: b115aabe-a9dc-4525-90d3-367d97ea20c9
-ms.openlocfilehash: 70acf3b5b78e0bc58555ef3f1f8e72e8aed74dd5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 14100a70fa3bb883d257017eaf9174c5340317b4
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81353266"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404807"
 ---
 # <a name="use-native-multi-targeting-in-visual-studio-to-build-old-projects"></a>Verwenden von nativen Zielversionen in Visual Studio, um alte Projekte zu erstellen
 
-Normalerweise wird empfohlen, dass Sie Ihre Projekte aktualisieren, wenn Sie die neueste Version von Visual Studio installieren. Die Kosten der Aktualisierung Ihrer Projekte und des Codes werden in der Regel durch die Vorteile der neuen IDE, des Compilers, der Bibliotheken und Tools ausgeglichen. Wir wissen jedoch, dass Sie einige Projekte möglicherweise nicht aktualisiert können. Möglicherweise gibt es Binärdateien, die an ältere Bibliotheken oder Plattformen gebunden sind, die Sie aus Wartungsgründen nicht aktualisieren können. Ihr Code kann womöglich nicht standardmäßige Sprachkonstrukte verwenden, die Fehler verursachen würden, wenn sie an einen aktuelleren Compiler verschoben werden würden. Ihr Code könnte sich auf Bibliotheken eines Drittanbieters verlassen, die für eine bestimmte Version von Visual C++ kompiliert sind. Alternativ können Sie Bibliotheken für andere erstellen, die auf eine bestimmte ältere Version von Visual C++ abzielen müssen.
+Normalerweise wird empfohlen, dass Sie Ihre Projekte aktualisieren, wenn Sie die neueste Version von Visual Studio installieren. Die Kosten der Aktualisierung Ihrer Projekte und des Codes werden in der Regel durch die Vorteile der neuen IDE, des Compilers, der Bibliotheken und Tools ausgeglichen. Wir wissen jedoch, dass Sie einige Projekte möglicherweise nicht aktualisiert können. Sie verfügen möglicherweise über Binärdateien, die an ältere Bibliotheken oder Plattformen gebunden sind, die aus Wartungsgründen nicht aktualisiert werden können. Ihr Code kann womöglich nicht standardmäßige Sprachkonstrukte verwenden, die Fehler verursachen würden, wenn sie an einen aktuelleren Compiler verschoben werden würden. Ihr Code könnte sich auf Bibliotheken eines Drittanbieters verlassen, die für eine bestimmte Version von Visual C++ kompiliert sind. Alternativ können Sie Bibliotheken für andere erstellen, die auf eine bestimmte ältere Version von Visual C++ abzielen müssen.
 
 Glücklicherweise können Sie zum Erstellen von Projekten, die auf ältere Compiler-Toolsets und Bibliotheken ausgerichtet sind, Visual Studio 2017 und Visual Studio 2015 verwenden. Sie müssen kein Projekt von Visual Studio 2010, Visual Studio 2012, Visual Studio 2013 oder Visual Studio 2015 upgraden, um Vorteile aus den neuen Features der IDE zu ziehen:
 
@@ -24,7 +24,7 @@ Glücklicherweise können Sie zum Erstellen von Projekten, die auf ältere Compi
 - Neue Tools zur Codenavigation und Suche
 - Neue C++-Schnellkorrekturen und Erweiterungen für Productivity Power Tools
 
-Sie können auch auf Visual Studio 2008-Projekte abzielen, doch diese können nicht unverändert verwendet werden. Weitere Informationen finden Sie im Abschnitt **Anweisungen für Visual Studio 2008.**
+Sie können auch auf Visual Studio 2008-Projekte abzielen, doch diese können nicht unverändert verwendet werden. Weitere Informationen finden Sie im Abschnitt **Anleitung für Visual Studio 2008** .
 
 Die neuesten Versionen von Visual Studio unterstützen die native Festlegung von Zielversionen und Roundtripping für Projekte. Die native Festlegung von Zielversionen ist Möglichkeit der neuesten IDE für die Entwicklung mithilfe von Toolsets, die von vorherigen Versionen von Visual Studio installiert wurden. Die Roundtrip-Funktion ist die Fähigkeit der neuesten IDE, ohne jede Änderung an dem Projekt eine frühere Version der IDE erstellte Projekte zu laden. Wenn Sie die neueste Version von Visual Studio zusammen mit Ihrer aktuellen Version installieren, können Sie die neue Version der IDE mit dem Compiler und den Tools aus der aktuellen Version verwenden, um Ihre Projekte zu erstellen. Andere Mitglieder Ihres Teams können weiterhin die Projekte in der älteren Version von Visual Studio verwenden.
 
@@ -44,16 +44,16 @@ Wenn Sie kein Upgrade durchführen möchten, führt Visual Studio keine Änderun
 
 ## <a name="instructions-for-visual-studio-2008"></a>Anweisungen für Visual Studio 2008
 
-Visual Studio 2008 verfügte über ein eigenes dediziertes Buildsystem für C++ namens **VCBuild**. Ab Visual Studio 2010 wurden C++-Projekte in Visual Studio so verändert, dass sie **MSBuild** verwendeten. Das bedeutet, dass Sie unabhängig davon, ob Sie ein permanentes Upgrade oder multi-targeting durchführen, einen Aktualisierungsschritt durchlaufen müssen, um Ihre Visual Studio 2008-Projekte in der neuesten Version von Visual Studio zu erstellen. Ihr aktualisiertes Projekt erstellt noch immer Binärdateien, die mit den Binärdateien, die mithilfe der IDE von Visual Studio 2008 erstellt wurden, voll kompatibel sind.
+Visual Studio 2008 verfügte über ein eigenes dediziertes Buildsystem für C++ namens " **VCBuild**". Ab Visual Studio 2010 wurden C++-Projekte in Visual Studio so verändert, dass sie **MSBuild** verwendeten. Dies bedeutet, dass Sie bei einer permanenten oder fest Zuweisungs basierten Aktualisierung einen Aktualisierungs Schritt durchführen müssen, um Ihre Visual Studio 2008-Projekte in der neuesten Version von Visual Studio zu erstellen. Ihr aktualisiertes Projekt erstellt noch immer Binärdateien, die mit den Binärdateien, die mithilfe der IDE von Visual Studio 2008 erstellt wurden, voll kompatibel sind.
 
-Zunächst müssen Sie zusätzlich zur aktuellen Visual Studio-Version Visual Studio 2010 auf demselben Computer erstellen, auf dem sich Visual Studio 2008 befindet. Nur Visual Studio 2010 **MSBuild** installiert die MSBuild-Skripts, die für Visual Studio 2008-Projekte erforderlich sind.
+Zunächst müssen Sie zusätzlich zur aktuellen Visual Studio-Version Visual Studio 2010 auf demselben Computer erstellen, auf dem sich Visual Studio 2008 befindet. Nur Visual Studio 2010 installiert die **MSBuild** -Skripts, die für das Ziel von Visual Studio 2008-Projekten erforderlich sind.
 
 Als Nächstes müssen Sie Ihre Visual Studio 2008-Projektmappen und -Projekte auf die aktuelle Version von Visual Studio aktualisieren. Es wird empfohlen, eine Sicherung Ihrer Projekt- und Projektmappendateien zu erstellen, bevor Sie das Upgrade durchführen. Damit der Upgradeprozess beginnen kann, öffnen Sie die Projektmappe in der aktuellen Version von Visual Studio. Wenn Sie die Aufforderung zur Aktualisierung erhalten, überprüfen Sie die dargestellte Information, und wählen Sie dann **OK** aus, um mit dem Upgrade zu beginnen. Wenn Sie mehr als ein Projekt in der Projektmappe haben, müssen Sie den Assistenten zum Erstellen neuer VCXPROJ-Projektdateien parallel mit den vorhandenen VCPROJ-Dateien aktualisieren. Solange Sie noch über eine Kopie der ursprünglichen SLN-Datei verfügen, hat das Upgrade keinen anderen Einfluss auf Ihre vorhandenen Visual Studio 2008-Projekte.
 
 > [!NOTE]
-> Die folgenden Schritte gelten nur für Szenarien mit mehrfacher Ausrichtung. Wenn Sie beabsichtigen, das Projekt dauerhaft auf ein späteres Toolset zu aktualisieren, besteht der nächste Schritt darin, das Projekt zu speichern, es in Visual Studio 2019 zu öffnen und die dort auftretenden Buildprobleme zu beheben.
+> Die folgenden Schritte gelten nur für Szenarien mit mehreren Zielanwendungen. Wenn Sie beabsichtigen, das Projekt dauerhaft auf ein späteres Toolset zu aktualisieren, müssen Sie im nächsten Schritt das Projekt speichern, in Visual Studio 2019 öffnen und die dort angezeigten Buildprobleme beheben.
 
-Wenn das Upgrade abgeschlossen ist und der Protokollbericht Fehler oder Warnungen für Ihre Projekte ausgibt, überprüfen Sie diese sorgfältig. Die Konvertierung von **VCBuild** in **MSBuild** kann Probleme verursachen. Stellen Sie sicher, dass Sie alle Aktionselemente verstehen und implementieren, die im Bericht aufgeführt sind. Weitere Informationen zum Aktualisierungsprotokollbericht und Probleme, die beim Konvertieren von **VCBuild** in **MSBuild**auftreten können, finden Sie in diesem [Blogbeitrag c++ Native Multi-Targeting.](https://blogs.msdn.microsoft.com/vcblog/2009/12/08/c-native-multi-targeting/)
+Wenn das Upgrade abgeschlossen ist und der Protokollbericht Fehler oder Warnungen für Ihre Projekte ausgibt, überprüfen Sie diese sorgfältig. Die Konvertierung von **VCBuild** in **MSBuild** kann zu Problemen führen. Stellen Sie sicher, dass Sie alle Aktionselemente verstehen und implementieren, die im Bericht aufgeführt sind. Weitere Informationen zum upgradeberichtsbericht und zu Problemen, die möglicherweise beim Umrechnen von **VCBuild** in **MSBuild**auftreten, finden Sie in diesem C++-Blogbeitrag zur [nativen](https://devblogs.microsoft.com/cppblog/c-native-multi-targeting/) Feststellung von Ziel
 
 Wenn das Projektupgrade abgeschlossen ist, und Sie alle Probleme in der Protokolldatei behoben haben, ist Ihre Lösung tatsächlich auf das neueste Toolset ausgerichtet. Als letzten Schritt ändern Sie die Eigenschaften für jedes Projekt in der Projektmappe, um das Toolset von Visual Studio 2008 zu verwenden. Öffnen Sie mithilfe der Lösung, die in der aktuellen Visual Studio-Version geladen ist, für jedes Projekt das Dialogfeld **Eigenschaftenseiten** des Projekts: Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie anschließend **Eigenschaften** aus. Ändern Sie im Dialogfeld **Eigenschaftenseiten** den Wert der Dropdownliste **Konfiguration** in **Alle Konfigurationen**. Wählen Sie unter **Konfigurationseigenschaften**die Option **Allgemein** aus, und ändern Sie dann **Plattformtoolset** in **Visual Studio 2008 (v90)**.
 
@@ -67,7 +67,7 @@ Die derzeit verfügbaren Downloads, finden Sie unter [Herunterladen älterer Vis
 
 Wenn diese Produkte installiert sind, wird die Eigenschaftendropdownliste **Plattformtoolset** im Dialogfeld **Eigenschaftenseiten** automatisch aktualisiert, um die verfügbaren Toolsets anzuzeigen. Sie können jetzt die neueste Version von Visual Studio verwenden, um Projekte für diese älteren Versionen des Toolsets zu erstellen, ohne sie zu konvertieren oder zu aktualisieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Aktualisieren von Projekten aus früheren Versionen von Visual C++](upgrading-projects-from-earlier-versions-of-visual-cpp.md)<br/>
-[Verbesserungen der C++-Konformität in Visual Studio 2015](../overview/cpp-conformance-improvements.md)
+[Verbesserungen der C++-Konformität in Visual Studio](../overview/cpp-conformance-improvements.md)

@@ -4,60 +4,58 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - COM interfaces, adding classes
 ms.assetid: 96152afd-9374-4649-a6ab-b0fa2a5592a3
-ms.openlocfilehash: 7a866c0e6b772a992f5ae81dbb17646765f172e6
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: 6fa1dd3985fd5b565bcc4b4727f41960d1f4f5d0
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65708337"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405129"
 ---
 # <a name="add-class-from-typelib-wizard"></a>Assistent zum Hinzufügen von Klassen aus der Typbibliothek
 
 ::: moniker range="vs-2019"
 
-Dieser Assistent ist nicht in Visual Studio-2019 und höher verfügbar.
+Dieser Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
 ::: moniker range="<=vs-2017"
 
-Verwenden Sie diesen Assistenten, eine MFC-Klasse aus einer verfügbaren Typbibliothek hinzufügen. Der Assistent erstellt eine Klasse für jede Schnittstelle, die Sie über die ausgewählte Bibliothek hinzufügen.
+Mit diesem Assistenten können Sie eine MFC-Klasse aus einer verfügbaren Typbibliothek hinzufügen. Der Assistent erstellt eine Klasse für jede Schnittstelle, die Sie aus der ausgewählten Typbibliothek hinzufügen.
 
-- **Klasse einfügen von**
+- **Klasse hinzufügen aus**
 
    Gibt den Speicherort der Typbibliothek an, aus der die Klasse erstellt wird.
 
-   |Option|Beschreibung|
+   |Option|BESCHREIBUNG|
    |------------|-----------------|
-   |**Registry**|Die Typbibliothek ist im System registriert. Registrierte Typbibliotheken werden unter **Verfügbare Typbibliotheken** aufgeführt.|
+   |**Registrierung**|Die Typbibliothek ist im System registriert. Registrierte Typbibliotheken werden unter **Verfügbare Typbibliotheken** aufgeführt.|
    |**Datei**|Die Typbibliothek ist nicht unbedingt im System registriert, sondern in einer Datei enthalten. Sie müssen den Dateispeicherort unter **Speicherort** angeben.|
 
 - **Verfügbare Typbibliotheken**
 
-   Listet die derzeit im System registrierten Typbibliotheken. Wählen Sie eine Typbibliothek aus der Liste anzuzeigenden die Schnittstellen in den **Schnittstellen** Liste.
+   Listet die Typbibliotheken auf, die derzeit im System registriert sind. Wählen Sie eine Typbibliothek aus dieser Liste aus, um die zugehörigen Schnittstellen in der Liste der **Schnittstellen** anzuzeigen.
 
-   Finden Sie unter "Inside Distributed COM: Geben Sie Bibliotheken und Sprachintegration"in der MSDN Library Weitere Informationen zu den Typbibliotheken werden registriert.
+- **Location**
 
-- **Position**
-
-   Gibt den Speicherort der Typbibliothek. Wenn Sie unter **Add Class From** (Klasse hinzufügen aus) auf **Datei** klicken, können Sie den Speicherort der Datei angeben, die die Typbibliothek enthält. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten, um nach dem Speicherort der Datei zu suchen.
+   Gibt den Speicherort der Typbibliothek an. Wenn Sie unter **Add Class From** (Klasse hinzufügen aus) auf **Datei** klicken, können Sie den Speicherort der Datei angeben, die die Typbibliothek enthält. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten, um nach dem Speicherort der Datei zu suchen.
 
 - **Schnittstellen**
 
-   Listet die Schnittstellen in der Typbibliothek, die derzeit im ausgewählten der **Verfügbare Typbibliotheken** Liste.
+   Listet die Schnittstellen in der Typbibliothek auf, die derzeit in der Liste **Verfügbare Typbibliotheken** ausgewählt ist.
 
-   |Schaltfläche „Übertragen“|Beschreibung|
+   |Schaltfläche „Übertragen“|BESCHREIBUNG|
    |---------------------|-----------------|
-   |**>**|Fügt die Schnittstelle hinzu, die derzeit in der Liste **Schnittstellen** ausgewählt ist. Abgeblendet, wenn keine Benutzeroberfläche aktiviert ist.|
-   |**>>**|Fügt alle Schnittstellen in der Typbibliothek, die derzeit im ausgewählten der **Verfügbare Typbibliotheken** Liste.|
-   |**\<**|Entfernt die Klasse, die derzeit in der Liste **Generierte Klassen** ausgewählt ist. Abgeblendet, wenn keine Klasse derzeit, in ausgewählt ist der **generierte Klassen** Liste.|
-   |**\<\<**|Entfernt alle Klassen in der Liste **Generierte Klassen**. Abgeblendete If der **generierte Klassen** Liste ist leer.|
+   |**>**|Fügt die Schnittstelle hinzu, die derzeit in der Liste **Schnittstellen** ausgewählt ist. Abgetrübt, wenn keine Schnittstelle ausgewählt ist.|
+   |**>>**|Fügt alle Schnittstellen in der Typbibliothek hinzu, die derzeit in der Liste **Verfügbare Typbibliotheken** ausgewählt ist.|
+   |**\<**|Entfernt die Klasse, die derzeit in der Liste **Generierte Klassen** ausgewählt ist. Abgetrübt, wenn derzeit keine Klasse in der Liste der **generierten Klassen** ausgewählt ist.|
+   |**\<\<**|Entfernt alle Klassen in der Liste **Generierte Klassen**. Abgetrübt, wenn die Liste der **generierten Klassen** leer ist.|
 
 - **Generierte Klassen**
 
-   Gibt die Klassennamen an, die aus den Schnittstellen generiert werden sollen, die mithilfe der Schaltfläche **>** oder **>>** hinzugefügt wurden. Sie können dieses Kontrollkästchen, um eine Klasse auszuwählen, und klicken Sie dann die nach-oben oder nach-unten-Taste in der Liste einen Bildlauf klicken, der Anzeige von jeder Klassenname in der **Klasse** Feld und der Dateiname in der **Datei** Feld, dass der Assistent, wenn generiert Sie Klicken Sie auf **Fertig stellen**. Sie können nur eine Klasse in diesem Feld auswählen.
+   Gibt die Klassennamen an, die von den Schnittstellen generiert werden, die mithilfe der **>** Schaltfläche oder hinzugefügt wurden **>>** Sie können auf dieses Kontrollkästchen klicken, um eine Klasse auszuwählen. verwenden Sie dann die nach-oben-oder nach-unten-Taste, um in der Liste einen Bildlauf durchführen, und sehen Sie sich die einzelnen Klassennamen **Finish**im Feld **Klasse** und Dateiname im Feld **Datei** an, die der Assistent generiert Sie können nur eine Klasse in diesem Feld auswählen.
 
-   Sie können eine Klasse entfernen, indem Sie diese in der Liste auswählen und auf **<** klicken. Sie müssen nicht so entfernen Sie alle Klassen im Klassen generiert eine Klasse auswählen. durch Klicken auf **<<**, entfernen Sie alle Klassen in der **generierte Klassen** Feld.
+   Sie können eine Klasse entfernen, indem Sie Sie in dieser Liste auswählen und dann auf klicken **<** . Sie müssen keine Klasse im Feld Generierte Klassen auswählen, um alle Klassen zu entfernen. Sie können alle Klassen im Feld **Generierte Klassen** entfernen, indem Sie auf **<<** klicken.
 
 - **Klasse**
 
@@ -71,7 +69,7 @@ Verwenden Sie diesen Assistenten, eine MFC-Klasse aus einer verfügbaren Typbibl
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Klasse aus einer Typbibliothek](../../mfc/reference/adding-an-mfc-class-from-a-type-library.md)<br/>
 [Automatisierungsclients: Verwenden von Typbibliotheken](../../mfc/automation-clients-using-type-libraries.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - SAL annotations
 - code analysis, annotation
 ms.assetid: a16e47d0-6f3e-4ed6-8883-459b2874e9a4
-ms.openlocfilehash: bfd6a58c7dc8664dce91906279a62380768a5c65
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: 1d47608137e2a9d9ed13740a5f4424cc0aff2902
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "79467114"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86403893"
 ---
 # <a name="using-sal-annotations-to-reduce-cc-code-defects"></a>Verwenden von SAL-Anmerkungen zum Reduzieren von C/C++-Codefehlern
 
@@ -44,17 +44,13 @@ In den Artikeln in diesem Abschnitt der Dokumentation werden Aspekte von Sal er�
 
      Listet die SAL-Anmerkungen auf, die die Bedingung oder den Gültigkeitsbereich (Platzierung) von anderen SAL-Anmerkungen angeben.
 
-- [Systeminterne Funktionen](../code-quality/intrinsic-functions.md)
+- [Intrinsische Funktionen](../code-quality/intrinsic-functions.md)
 
      Listet die systeminternen SAL-Anmerkungen auf.
 
 - [Empfohlene Vorgehensweisen und Beispiele](../code-quality/best-practices-and-examples-sal.md)
 
      Enthält Beispiele, die zeigen, wie SAL-Anmerkungen verwendet werden. Erläutert auch gängige Fehler.
-
-## <a name="related-resources"></a>Zugehörige Ressourcen
-
-[Blog des Code Analyseteams](https://blogs.msdn.microsoft.com/codeanalysis/)
 
 ## <a name="see-also"></a>Weitere Informationen
 

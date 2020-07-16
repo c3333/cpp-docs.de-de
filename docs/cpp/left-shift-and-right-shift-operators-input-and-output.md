@@ -1,5 +1,5 @@
 ---
-title: Left Shift-und Right Shift-&gt; &gt; Operatoren (und &lt; &lt;)
+title: Left Shift-und Right Shift-Operatoren ( &gt; &gt; und &lt; &lt; )
 ms.date: 08/13/2018
 f1_keywords:
 - <<
@@ -13,26 +13,26 @@ helpviewer_keywords:
 - shift operators [C++]
 - operators [C++], shift
 ms.assetid: 25fa0cbb-5fdd-4657-8745-b35f7d8f1606
-ms.openlocfilehash: 2020c2dbbf8ff91ee692366f55c836be0b3dddb0
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: 7cde299d305219f2bd0e53a9f19c2ca35a8c7b69
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825914"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404769"
 ---
-# <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>Left Shift-und Right Shift-&gt; &gt; Operatoren (und &lt; &lt;)
+# <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>Left Shift-und Right Shift-Operatoren ( &gt; &gt; und &lt; &lt; )
 
-Die bitweisen Verschiebungs Operatoren sind der Right Shift-Operator**&gt;**(), der die Bits von *Shift-Expression* nach rechts verschiebt, und der Links Schiebe Operator (**&lt;**), der die Bits von *Shift-Expression* nach links verschiebt. <sup>1</sup>
+Die bitweisen Verschiebungs Operatoren sind der Right Shift-Operator ( **&gt;&gt;** ), der die Bits von *Shift-Expression* nach rechts verschiebt, und der Links Schiebe Operator ( **&lt;&lt;** ), der die Bits von *Shift-Expression* nach links verschiebt. <sup>1</sup>
 
 ## <a name="syntax"></a>Syntax
 
-> " *Shift-Expression* `<<` *Additives-Expression* "\
-> *shift-expression* `>>` *additive-expression*
+> *Shift-Ausdruck* `<<` *Additives Ausdruck*\
+> *Verschiebeausdruck* `>>` *additiver-Ausdruck*
 
 ## <a name="remarks"></a>Bemerkungen
 
 > [!IMPORTANT]
-> Die folgenden Beschreibungen und Beispiele sind unter Windows für x86-und x64-Architekturen gültig. Die Implementierung der Operatoren Left Shift und Right Shift unterscheidet sich deutlich von Windows für ARM-Geräte. Weitere Informationen finden Sie im Abschnitt "Shift-Operatoren" des Blogbeitrags [Hello Arm](https://blogs.msdn.com/b/vcblog/archive/2012/10/25/hello-arm-exploring-undefined-unspecified-and-implementation-defined-behavior-in-c.aspx) .
+> Die folgenden Beschreibungen und Beispiele sind unter Windows für x86-und x64-Architekturen gültig. Die Implementierung der Operatoren Left Shift und Right Shift unterscheidet sich deutlich von Windows für ARM-Geräte. Weitere Informationen finden Sie im Abschnitt "Shift-Operatoren" des Blogbeitrags [Hello Arm](https://devblogs.microsoft.com/cppblog/hello-arm-exploring-undefined-unspecified-and-implementation-defined-behavior-in-c/) .
 
 ## <a name="left-shifts"></a>Verschiebungen nach links
 
@@ -195,7 +195,7 @@ int main() {
 }
 ```
 
-## <a name="additional-details"></a>Weitere Details
+## <a name="additional-details"></a>Zusätzliche Details
 
 Das Ergebnis einer Verschiebungs Operation ist nicht definiert, wenn *Additives Ausdruck* negativ ist oder wenn *Additives Ausdruck* größer oder gleich der Anzahl der Bits im (höher gestuften) *Shift-Ausdruck*ist. Wenn *Additives Ausdruck* 0 ist, wird kein Verschiebungs Vorgang ausgeführt.
 
@@ -224,9 +224,9 @@ int main() {
 
 <sup>1</sup> im folgenden finden Sie die Beschreibung der Shift-Operatoren in der ISO-Spezifikation c++ 11 (INCITS/ISO/IEC 14882-2011 [2012]), Abschnitte 5.8.2 und 5.8.3.
 
-Der Wert von `E1 << E2` ist `E1` nach links verschobene `E2`-Bitpositionen; frei gewordene Bitpositionen werden mit Nullen angefüllt. Wenn `E1` einen nicht signierten Typ hat, ist der Wert des Ergebnisses **E1 × 2**<sup>**E2**</sup>, wobei das reduzierte Modulo eins mehr als der maximale Wert ist, der im Ergebnistyp dargestellt werden kann. Wenn `E1` andernfalls über einen signierten Typ und einen nicht negativen Wert verfügt und **E1 × 2**<sup>**E2**</sup> im entsprechenden nicht signierten Typ des Ergebnis Typs dargestellt werden kann, ist dieser Wert, der in den Ergebnistyp konvertiert wird, der resultierende Wert. Andernfalls ist das Verhalten nicht definiert.
+Der Wert von `E1 << E2` ist `E1` nach links verschobene `E2`-Bitpositionen; frei gewordene Bitpositionen werden mit Nullen angefüllt. Wenn `E1` einen nicht signierten Typ hat, ist der Wert des Ergebnisses **E1 × 2**<sup>**E2**</sup>, wobei das reduzierte Modulo eins mehr als der maximale Wert ist, der im Ergebnistyp dargestellt werden kann. Wenn andernfalls `E1` einen signierten Typ und einen nicht negativen Wert aufweist und **E1 × 2**<sup>**E2**</sup> im entsprechenden nicht signierten Typ des Ergebnis Typs dargestellt werden kann, ist dieser Wert, der in den Ergebnistyp konvertiert wird, der resultierende Wert; andernfalls ist das Verhalten nicht definiert.
 
-Der Wert von `E1 >> E2` ist `E1` nach rechts verschobene `E2`-Bitpositionen. Wenn `E1` einen nicht signierten Typ hat oder `E1` wenn einen signierten Typ und einen nicht negativen Wert hat, ist der Wert des Ergebnisses der integrale Teil des quotients von **E1/2**<sup>**E2**</sup>. Wenn `E1` einen signierten Typ und einen negativen Wert hat, ist der Ergebniswert durch die Implementierung definiert.
+Der Wert von `E1 >> E2` ist `E1` nach rechts verschobene `E2`-Bitpositionen. Wenn `E1` einen nicht signierten Typ hat oder wenn `E1` einen signierten Typ und einen nicht negativen Wert hat, ist der Wert des Ergebnisses der integrale Teil des quotients von **E1/2**<sup>**E2**</sup>. Wenn `E1` einen signierten Typ und einen negativen Wert hat, ist der Ergebniswert durch die Implementierung definiert.
 
 ## <a name="see-also"></a>Weitere Informationen
 

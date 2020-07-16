@@ -42,12 +42,12 @@ helpviewer_keywords:
 - _tcsftime function
 - time strings
 ms.assetid: 6330ff20-4729-4c4a-82af-932915d893ea
-ms.openlocfilehash: 9d262371369681cbbd5975a733950d6c4150fd88
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 57fdd61a966cbeab07c0aeafdad0f6e6fb97cca1
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82920018"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404319"
 ---
 # <a name="strftime-wcsftime-_strftime_l-_wcsftime_l"></a>strftime, wcsftime, _strftime_l, _wcsftime_l
 
@@ -109,7 +109,7 @@ Wenn die Gesamtzahl der Zeichen, einschließlich des abschließenden NULL-Werts,
 
 Die Anzahl der Zeichen in " *strindest* " ist gleich der Anzahl der Literalzeichen im *Format* sowie aller Zeichen, die dem *Format* über Formatierungscodes hinzugefügt werden können. Das abschließende NULL-Zeichen einer Zeichenfolge wird nicht im Rückgabewert berücksichtigt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Funktionen " **strinftime** " und " **wcsftime** " formatieren den **TM** -Zeitwert in *Timeptr* gemäß dem angegebenen *Format* Argument und speichern das Ergebnis *im Puffer.* Maximal werden *MaxSize* -Zeichen in die Zeichenfolge eingefügt. Eine Beschreibung der Felder in der *Timeptr* -Struktur finden Sie unter [Asctime](asctime-wasctime.md). **WCSF Time** ist die breit Zeichen Entsprechung von " **strautime**;". das zugehörige Zeichen folgen Zeiger-Argument verweist auf eine breit Zeichen-Zeichenfolge. Anderenfalls verhalten sich diese Funktionen identisch.
 
@@ -123,7 +123,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tcsftime**|**strftime**|**strftime**|**wcsftime**|
 
-Das *Format* -Argument besteht aus mindestens einem Code. wie in **printf**wird den Formatierungscodes ein Prozentzeichen (**%**) vorangestellt. Zeichen, die nicht mit **%** beginnen, werden unverändert in den *schnellsten*kopiert. Die **LC_TIME** Kategorie des aktuellen Gebiets Schemas wirkt sich auf die Ausgabe Formatierung von " **Strauch Zeit**" aus. (Weitere Informationen zu **LC_TIME**finden Sie unter [setlocale](setlocale-wsetlocale.md).) Die Funktionen " **Strauch Zeit** " und " **WCSF Time** " verwenden das aktuell festgelegte Gebiets Schema. Die **_strftime_l** -und **_wcsftime_l** Versionen dieser Funktionen sind nahezu identisch, verwenden jedoch das Gebiets Schema als Parameter und verwenden diesen anstelle des aktuell festgelegten Gebiets Schemas. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Das *Format* -Argument besteht aus mindestens einem Code. wie in **printf**wird den Formatierungscodes ein Prozentzeichen () vorangestellt **%** . Zeichen, die nicht mit beginnen, **%** werden unverändert in den *schnellsten*kopiert. Die **LC_TIME** Kategorie des aktuellen Gebiets Schemas wirkt sich auf die Ausgabe Formatierung von " **Strauch Zeit**" aus. (Weitere Informationen zu **LC_TIME**finden Sie unter [setlocale](setlocale-wsetlocale.md).) Die Funktionen " **Strauch Zeit** " und " **WCSF Time** " verwenden das aktuell festgelegte Gebiets Schema. Die **_strftime_l** -und **_wcsftime_l** Versionen dieser Funktionen sind nahezu identisch, verwenden jedoch das Gebiets Schema als Parameter und verwenden diesen anstelle des aktuell festgelegten Gebiets Schemas. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 Die Funktionen von " **Strauch Zeit** " unterstützen diese Formatierungscodes:
 
@@ -168,7 +168,7 @@ Die Funktionen von " **Strauch Zeit** " unterstützen diese Formatierungscodes:
 |**% Z**|Der Name des Gebiets Schemas oder der Zeit Zonen Abkürzung, abhängig von den Registrierungs Einstellungen. keine Zeichen, wenn Zeitzone unbekannt ist|
 |**%%**|Prozentzeichen (%)|
 
-Wie in der **printf** -Funktion kann **#** das-Flag jedem Formatierungs Code als Präfix vorangestellt werden. In diesem Fall wird die Bedeutung des Formatcodes wie folgt geändert.
+Wie in der **printf** -Funktion kann das- **#** Flag jedem Formatierungs Code als Präfix vorangestellt werden. In diesem Fall wird die Bedeutung des Formatcodes wie folgt geändert.
 
 |Formatcode|Bedeutung|
 |-----------------|-------------|
@@ -179,9 +179,12 @@ Wie in der **printf** -Funktion kann **#** das-Flag jedem Formatierungs Code als
 
 Das von **% V**, **% g**und **% g**erzeugte Jahr 8601 Woche und Wochen basiertes Jahr verwendet eine Woche, die am Montag beginnt, wobei Woche 1 die Woche ist, die den 4. Januar enthält. Dies ist die erste Woche, die mindestens vier Tage im Jahr umfasst. Wenn der erste Montag des Jahres 2., 3. oder 4. ist, sind die vorangehenden Tage Teil der letzten Woche des vorhergehenden Jahres. Für diese Tage wird **% V** durch 53 ersetzt, und sowohl **% g** als auch **% g** werden durch die Ziffern des vorangehenden Jahres ersetzt.
 
+> [!NOTE]
+> Bei Verwendung einer der `strftime` Funktionen mit einem `tm` Zeiger, der von zurückgegeben wird `gmtime` , sind die Werte, die über die `%Z` -und- `%z` Spezifizierer gedruckt werden, nicht exakt. Dies liegt daran, dass die `tm` vom C-Standard angegebene Struktur nicht die Informationen für den Zeit Zonen Namen und den Offset enthält. Stattdessen werden die Zeitzoneninformationen über die globalen Variablen [ `_timezone` und `_dstbias` ](../../c-runtime-library/daylight-dstbias-timezone-and-tzname.md)aufgefüllt.
+
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**strftime**|\<time.h>|
 |**wcsftime**|\<time.h> oder \<wchar.h>|
@@ -196,8 +199,8 @@ Ein Beispiel hierfür finden Sie unter [time](time-time32-time64.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Locale](../../c-runtime-library/locale.md) <br/>
-[Zeitmanagement](../../c-runtime-library/time-management.md) <br/>
+[Gebietsschema](../../c-runtime-library/locale.md) <br/>
+[Zeitverwaltung](../../c-runtime-library/time-management.md) <br/>
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md) <br/>
 [localeconv](localeconv.md) <br/>
 [setlocale, _wsetlocale](setlocale-wsetlocale.md) <br/>

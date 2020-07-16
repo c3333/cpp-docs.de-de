@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - C1083
 ms.assetid: 97e52df3-e79c-4f85-8f1e-bbd1057d55e7
-ms.openlocfilehash: b982c3adf59789f6c48e7e0f54ed4e71539692ad
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: 87f3440dc71246c3a925ed3d64f8ccf1b2c28cd1
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69630772"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404280"
 ---
 # <a name="fatal-error-c1083"></a>Schwerwiegender Fehler C1083
 
 > Die *filetype* -Datei kann nicht geöffnet werden: "*File*": *Message*
 
-Der Compiler generiert einen C1083-Fehler, wenn er eine erforderliche Datei nicht finden kann. Es gibt viele mögliche Ursachen für diesen Fehler. Ein falscher includesuchpfad oder fehlende oder falsch benannte Header Dateien sind die häufigsten Ursachen, aber andere Dateitypen und Probleme können auch C1083 verursachen. Im folgenden sind einige der häufigsten Gründe aufgeführt, warum der Compiler diesen Fehler generiert.
+Der Compiler generiert einen C1083-Fehler, wenn er eine erforderliche Datei nicht finden kann. Es gibt zahlreiche mögliche Ursachen für diesen Fehler. Ein falscher includesuchpfad oder fehlende oder falsch benannte Header Dateien sind die häufigsten Ursachen, aber andere Dateitypen und Probleme können auch C1083 verursachen. Im folgenden sind einige der häufigsten Gründe aufgeführt, warum der Compiler diesen Fehler generiert.
 
 ## <a name="the-specified-file-name-is-wrong"></a>Der angegebene Dateiname ist falsch
 
-Der Name einer Datei wurde möglicherweise falsch geschrieben werden. Ein auf ein Objekt angewendeter
+Der Name einer Datei wurde möglicherweise falsch geschrieben werden. Beispiel:
 
 `#include <algorithm.h>`
 
-Die von Ihnen gewünschte Datei wird möglicherweise nicht gefunden. Die C++ meisten Header Dateien der Standard Bibliothek verfügen nicht über die Dateinamenerweiterung ". h". Der \<Algorithmus >-Headers wird von dieser `#include` Direktive nicht gefunden. Um dieses Problem zu beheben, überprüfen Sie, ob der richtige Dateiname eingegeben wurde, wie in diesem Beispiel:
+Die von Ihnen gewünschte Datei wird möglicherweise nicht gefunden. Die meisten Header Dateien der C++-Standard Bibliothek verfügen nicht über die Dateinamenerweiterung ". h". Der- \<algorithm> Header wurde von dieser `#include` Direktive nicht gefunden. Um dieses Problem zu beheben, überprüfen Sie, ob der richtige Dateiname eingegeben wurde, wie in diesem Beispiel:
 
 `#include <algorithm>`
 
-Bestimmte Header der C-Laufzeitbibliothek befinden sich in einem Unterverzeichnis des Standardincludeverzeichnisses. Wenn Sie z. b. "sys/types. h" einschließen möchten, müssen Sie den Namen des `#include` sys-Unterverzeichnisses in die-Direktive einschließen:
+Bestimmte Header der C-Laufzeitbibliothek befinden sich in einem Unterverzeichnis des Standardincludeverzeichnisses. Wenn Sie z. b. "sys/types. h" einschließen möchten, müssen Sie den Namen des sys-Unterverzeichnisses in die- `#include` Direktive einschließen:
 
 `#include <sys/types.h>`
 
@@ -45,7 +45,7 @@ Wenn der Name in spitzen Klammern eingeschlossen ist,
 
 `#include <stdio.h>`
 
-der Compiler folgt einem Suchpfad, der durch die Buildumgebung, die **/I** -Compileroption, die **/X** -Compileroption und die **include** -Umgebungsvariable definiert wird. Weitere Informationen, einschließlich spezifischer Details zu der Such Reihenfolge, die zum Suchen einer Datei verwendet wird, finden Sie unter [#include-Direktive (C/C++)](../../preprocessor/hash-include-directive-c-cpp.md) und #Import- [Direktive](../../preprocessor/hash-import-directive-cpp.md).
+der Compiler folgt einem Suchpfad, der durch die Buildumgebung, die **/I** -Compileroption, die **/X** -Compileroption und die **include** -Umgebungsvariable definiert wird. Weitere Informationen, einschließlich spezifischer Details zur Such Reihenfolge, die zum Suchen einer Datei verwendet wird, finden Sie unter [#include-Direktive (C/C++)](../../preprocessor/hash-include-directive-c-cpp.md) und [#Import Direktive](../../preprocessor/hash-import-directive-cpp.md).
 
 Wenn sich die Includedateien in einem anderen Verzeichnis relativ zum Quellverzeichnis befinden und Sie einen relativen Pfad in den Include-Direktiven verwenden, müssen Sie anstelle von spitzen Klammern doppelte Anführungszeichen verwenden. Wenn sich die Header Datei "MyHeader. h" beispielsweise in einem Unterverzeichnis der Projekt Quellen mit dem Namen "Headers" befindet, kann in diesem Beispiel die Datei nicht gefunden werden, und es wird C1083 verursacht:
 
@@ -55,19 +55,19 @@ Dieses Beispiel funktioniert jedoch:
 
 `#include "headers\myheader.h"`
 
-Relative Pfade können auch mit Verzeichnissen im Include-Suchpfad verwendet werden. Wenn Sie der **include** -Umgebungsvariablen oder dem Pfad der Includeverzeichnisse in Visual Studio ein Verzeichnis hinzufügen, fügen Sie auch keinen Teil des Pfads zu den Include-Direktiven hinzu. Wenn sich ihre Kopfzeile z. b. unter \path\example\headers\myheader.h befindet, und Sie "\path\example\headers\" in Visual Studio zum Ordner " **include** - `#include` Verzeichnisse" hinzufügen, verweist ihre Direktive auf die Datei als
+Relative Pfade können auch mit Verzeichnissen im Include-Suchpfad verwendet werden. Wenn Sie der **include** -Umgebungsvariablen oder dem Pfad der **Includeverzeichnisse** in Visual Studio ein Verzeichnis hinzufügen, fügen Sie auch keinen Teil des Pfads zu den Include-Direktiven hinzu. Wenn sich ihre Kopfzeile z. b. unter \path\example\headers\myheader.h befindet, und Sie "\path\example\headers\" in Visual Studio zum Ordner " **include-Verzeichnisse** " hinzufügen, `#include` verweist ihre Direktive auf die Datei als
 
 `#include <headers\myheader.h>`
 
-die Datei wurde nicht gefunden. Verwenden Sie den korrekten Pfad relativ zu dem Verzeichnis, das im Include-Suchpfad angegeben ist. In diesem Beispiel können Sie den Include-Suchpfad in \path\example\, ändern oder das Header \ Path-Segment aus der `#include` -Direktive entfernen.
+die Datei wurde nicht gefunden. Verwenden Sie den korrekten Pfad relativ zu dem Verzeichnis, das im Include-Suchpfad angegeben ist. In diesem Beispiel können Sie den Include-Suchpfad in \path\example ändern \, oder das Header \ Path-Segment aus der- `#include` Direktive entfernen.
 
 ## <a name="third-party-library-issues-and-vcpkg"></a>Drittanbieter-Bibliotheks Probleme und vcpkg
 
-Wenn dieser Fehler angezeigt wird, wenn Sie versuchen, eine Bibliothek eines Drittanbieters als Teil Ihres Builds zu konfigurieren, sollten Sie die Verwendung von [vcpkg](../../vcpkg.md), dem visuellen C++ Paket-Manager, zum Installieren und Erstellen der Bibliothek in Erwägung gezogen. Vcpkg unterstützt eine große und wachsende [Liste von Bibliotheken von Drittanbietern](https://github.com/Microsoft/vcpkg/tree/master/ports)und legt alle Konfigurations Eigenschaften und Abhängigkeiten, die für erfolgreiche Builds erforderlich sind, als Teil des Projekts fest. Weitere Informationen finden Sie im zugehörigen [visuellen C++ Blog](https://blogs.msdn.microsoft.com/vcblog/2016/09/19/vcpkg-a-tool-to-acquire-and-build-c-open-source-libraries-on-windows/) Beitrag.
+Wenn dieser Fehler angezeigt wird, wenn Sie versuchen, eine Drittanbieter Bibliothek als Teil Ihres Builds zu konfigurieren, sollten Sie die Verwendung von [vcpkg](../../vcpkg.md), einem C++ Package Manager, zum Installieren und Erstellen der Bibliothek in Erwägung gezogen. vcpkg unterstützt eine große und wachsende [Liste von Bibliotheken von Drittanbietern](https://github.com/Microsoft/vcpkg/tree/master/ports)und legt alle Konfigurations Eigenschaften und Abhängigkeiten, die für erfolgreiche Builds erforderlich sind, als Teil des Projekts fest.
 
 ## <a name="the-file-is-in-your-project-but-not-the-include-search-path"></a>Die Datei befindet sich in Ihrem Projekt, aber nicht im Include-Suchpfad.
 
-Auch wenn Header Dateien in **Projektmappen-Explorer** als Teil eines Projekts aufgeführt sind, werden die Dateien nur vom Compiler gefunden, wenn Sie von einer `#include` -oder `#import` -Direktive in einer Quelldatei referenziert werden und sich in einem include-Suchpfad befinden. Für unterschiedliche Buildtypen können unterschiedliche Suchpfade verwendet werden. Die **/X** -Compileroption kann verwendet werden, um Verzeichnisse aus dem Include-Suchpfad auszuschließen. Dadurch können für verschiedene Builds unterschiedliche Includedateien verwendet werden, die denselben Namen besitzen, sich aber in unterschiedlichen Verzeichnissen befinden. Dies ist eine Alternative zur bedingten Kompilierung mithilfe von Präprozessorbefehlen. Weitere Informationen zur **/X** -Compileroption finden Sie unter [/X (Standard mäßige Includepfade ignorieren)](../../build/reference/x-ignore-standard-include-paths.md).
+Auch wenn Header Dateien in **Projektmappen-Explorer** als Teil eines Projekts aufgeführt sind, werden die Dateien nur vom Compiler gefunden, wenn Sie von einer- `#include` oder `#import` -Direktive in einer Quelldatei referenziert werden und sich in einem include-Suchpfad befinden. Für unterschiedliche Buildtypen können unterschiedliche Suchpfade verwendet werden. Die **/X** -Compileroption kann verwendet werden, um Verzeichnisse aus dem Include-Suchpfad auszuschließen. Dadurch können für verschiedene Builds unterschiedliche Includedateien verwendet werden, die denselben Namen besitzen, sich aber in unterschiedlichen Verzeichnissen befinden. Dies ist eine Alternative zur bedingten Kompilierung mithilfe von Präprozessorbefehlen. Weitere Informationen zur **/X** -Compileroption finden Sie unter [/X (Standard mäßige Includepfade ignorieren)](../../build/reference/x-ignore-standard-include-paths.md).
 
 Korrigieren Sie zur Behebung dieses Problems den Pfad, den der Compiler für die Suche nach der eingeschlossenen oder importierten Datei verwendet. Ein neues Projekt verwendet standardmäßige include-Suchpfade. Möglicherweise müssen Sie den Include-Suchpfad ändern, um ein Verzeichnis für das Projekt hinzuzufügen. Wenn Sie in der Befehlszeile kompilieren, fügen Sie den Pfad zur **include** -Umgebungsvariablen oder der **/I** -Compileroption hinzu, um den Pfad zur Datei anzugeben.
 
@@ -75,7 +75,7 @@ Korrigieren Sie zur Behebung dieses Problems den Pfad, den der Compiler für die
 
 ## <a name="the-command-line-include-or-lib-environment-is-not-set"></a>Die Befehlszeilen-oder lib-Umgebung ist nicht festgelegt.
 
-Beim Aufrufen des Compilers über die Befehlszeile werden Suchpfade oft mithilfe von Umgebungsvariablen angegeben. Wenn der von der **include** -oder **lib** -Umgebungsvariablen beschriebene Suchpfad nicht ordnungsgemäß festgelegt ist, kann ein C1083-Fehler generiert werden. Wir empfehlen dringend die Verwendung einer Eingabe Aufforderungs Verknüpfung für Entwickler, um die grundlegende Umgebung für Befehlszeilenbuilds festzulegen. Weitere Informationen finden Sie unter [Build C/C++ in der Befehlszeile](../../build/building-on-the-command-line.md). Weitere Informationen zur Verwendung von Umgebungsvariablen finden [Sie unter Gewusst wie: Verwenden Sie Umgebungsvariablen in einem](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)Build.
+Beim Aufrufen des Compilers über die Befehlszeile werden Suchpfade oft mithilfe von Umgebungsvariablen angegeben. Wenn der von der **include** -oder **lib** -Umgebungsvariablen beschriebene Suchpfad nicht ordnungsgemäß festgelegt ist, kann ein C1083-Fehler generiert werden. Wir empfehlen dringend die Verwendung einer Eingabe Aufforderungs Verknüpfung für Entwickler, um die grundlegende Umgebung für Befehlszeilenbuilds festzulegen. Weitere Informationen finden Sie unter [Build C/C++ in der Befehlszeile](../../build/building-on-the-command-line.md). Weitere Informationen zur Verwendung von Umgebungsvariablen finden Sie unter Gewusst [wie: Verwenden von Umgebungsvariablen in einem Build](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build).
 
 ## <a name="the-file-may-be-locked-or-in-use"></a>Die Datei ist möglicherweise gesperrt oder wird verwendet.
 
@@ -91,9 +91,9 @@ Wenn ein Projekt zur Verwendung vorkompilierter Header konfiguriert ist, müssen
 
 ## <a name="additional-causes"></a>Weitere Ursachen
 
-- Sie haben ein SDK oder eine Bibliothek von Drittanbietern installiert, aber nach der Installation des SDKs oder der Bibliothek haben Sie noch kein neues Entwickler-Eingabe Aufforderungs Fenster geöffnet. Wenn das SDK oder die Bibliothek dem Includepfad Dateien hinzufügt, müssen Sie möglicherweise ein neues Entwickler-Eingabe Aufforderungs Fenster öffnen, um diese Umgebungsvariablen Änderungen zu übernehmen.
+- Sie haben ein SDK oder eine Bibliothek von Drittanbietern installiert, aber nach der Installation des SDKs oder der Bibliothek haben Sie noch kein neues Entwickler-Eingabe Aufforderungs Fenster geöffnet. Wenn das SDK **oder die Bibliothek** dem Includepfad Dateien hinzufügt, müssen Sie möglicherweise ein neues Entwickler-Eingabe Aufforderungs Fenster öffnen, um diese Umgebungsvariablen Änderungen zu übernehmen.
 
-- Die Datei verwendet verwalteten Code, aber die Compileroption **/CLR** ist nicht angegeben. Weitere Informationen finden Sie unter [/clr (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md).
+- Die Datei verwendet verwalteten Code, aber die Compileroption **/CLR** ist nicht angegeben. Weitere Informationen finden Sie unter [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md).
 
 - Die Datei wird mit einer anderen **/analyze** -compileroptionseinstellung kompiliert, als für die Vorkompilierung der Header verwendet wird. Wenn die Header für ein Projekt vorkompiliert werden, sollten alle dieselben **/analyze** -Einstellungen verwenden. Weitere Informationen finden Sie unter [/analyze (Codeanalyse)](../../build/reference/analyze-code-analysis.md).
 
@@ -107,7 +107,7 @@ Wenn ein Projekt zur Verwendung vorkompilierter Header konfiguriert ist, müssen
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird ein C1083-Fehler generiert, wenn `"test.h"` die Header Datei nicht im Quellverzeichnis oder im Include-Suchpfad vorhanden ist.
+Im folgenden Beispiel wird ein C1083-Fehler generiert, wenn die Header Datei `"test.h"` nicht im Quellverzeichnis oder im Include-Suchpfad vorhanden ist.
 
 ```cpp
 // C1083.cpp
@@ -116,8 +116,8 @@ Im folgenden Beispiel wird ein C1083-Fehler generiert, wenn `"test.h"` die Heade
 #include "stdio.h"  // OK
 ```
 
-Weitere Informationen zum Erstellen von C/C++ Projekten in der IDE oder über die Befehlszeile sowie Informationen zum Festlegen von Umgebungsvariablen finden Sie unter [Projekte und](../../build/projects-and-build-systems-cpp.md)Buildsysteme.
+Weitere Informationen zum Erstellen von C/C++-Projekten in der IDE oder über die Befehlszeile sowie Informationen zum Festlegen von Umgebungsvariablen finden Sie unter [Projekte und Buildsysteme](../../build/projects-and-build-systems-cpp.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [MSBuild-Eigenschaften](/visualstudio/msbuild/msbuild-properties)

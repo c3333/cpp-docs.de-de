@@ -8,16 +8,16 @@ f1_keywords:
 - C5001
 - C5012
 ms.assetid: d8f4844a-f414-42ab-b9a5-925a5da9d365
-ms.openlocfilehash: 4f105558d7795210e1edb2470af4e50326f49de6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1cdbb40d06d2b3da7e6444e3a6743c6e6ae1c874
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80182200"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404999"
 ---
 # <a name="vectorizer-and-parallelizer-messages"></a>Vektorisierungs- und Parallelisierungsmeldungen
 
-Sie können C++ die Microsoft-Compileroptionen [/QPAR-Report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) und [/Qvec-Report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md) verwenden, um die [Automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) so festzulegen, dass Ursachen Codes und Informationsmeldungen über Ihre Aktivität ausgegeben werden. Dieser Artikel beschreibt die Ursachencodes und Nachrichten.
+Sie können die Microsoft C++-Compileroptionen [/QPAR-Report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) und [/Qvec-Report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md) verwenden, um die [Automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) so festzulegen, dass Grund Codes und Informationsmeldungen über Ihre Aktivität ausgegeben werden. Dieser Artikel beschreibt die Ursachencodes und Nachrichten.
 
 ## <a name="informational-messages"></a><a name="BKMK_InformationalMessages"></a>Informationsmeldungen
 
@@ -641,7 +641,7 @@ Die 13*xx* -Ursachen Codes gelten für den Vectorizer.
 |1302|`Loop is a "do-while".`|
 |1303|`Too few loop iterations for vectorization to provide value.`|
 |1304|`Loop includes assignments that are of different sizes.`|
-|1\.305|`Not enough type information.`|
+|1305|`Not enough type information.`|
 
 ```cpp
 void code_1300(int *A, int *B)
@@ -964,10 +964,10 @@ void code_1505(int *A, int *B)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Fehler undC++ Warnungen für C/Compiler und Buildtools](../compiler-errors-1/c-cpp-build-errors.md)
-[Automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) \
-[Automatische Vektorisierung in Visual Studio 2012 – Übersicht](https://blogs.msdn.microsoft.com/nativeconcurrency/2012/04/12/auto-vectorizer-in-visual-studio-2012-overview/) \
-[#pragma Schleife ()](../../preprocessor/loop.md) \
-[/Q-Optionen (Low-Level-Vorgänge)](../../build/reference/q-options-low-level-operations.md) \
-[/QPAR-Report (Berichts Ebene mit automatischer Parallelisierung)](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) \
-[/Qvec-report (Berichtebene der automatischen Vektorisierung)](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)
+[Fehler und Warnungen](../compiler-errors-1/c-cpp-build-errors.md) 
+ für C/C++-Compiler und Buildtools [Automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) \
+[Automatische Vektorisierung in Visual Studio 2012 – Übersicht](/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview) \
+[#pragma-Schleife ()](../../preprocessor/loop.md) \
+[/Q-Optionen (Vorgänge auf niedriger Ebene)](../../build/reference/q-options-low-level-operations.md) \
+[/QPAR-Report (Berichts Ebene für die automatische Parallelisierung)](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) \
+[/Qvec-Report (Bericht Ebene für automatische Vektorisierung)](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)

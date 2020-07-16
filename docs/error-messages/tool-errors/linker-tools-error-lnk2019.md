@@ -1,6 +1,6 @@
 ---
 title: Linkertoolfehler LNK2019
-description: Alles über den Microsoft Visual Studio Linker-Fehler LNK2019 und erläutert, wie er in C und C++ Code diagnostiziert und korrigiert wird.
+description: Alles zum Microsoft Visual Studio Linker-Fehler LNK2019 und zur Diagnose und Korrektur in C-und C++-Code.
 ms.date: 01/15/2020
 f1_keywords:
 - LNK2019
@@ -28,16 +28,16 @@ no-loc:
 - SYMBOLS
 - DUMPBIN
 - UNDNAME
-ms.openlocfilehash: 0e741c1442f9762c4cf5f9b891c4cd7c38103dfe
-ms.sourcegitcommit: e93f3e6a110fe38bc642055bdf4785e620d4220f
+ms.openlocfilehash: fd44543dd553a80ee05fc0978308487e58357626
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76123915"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405064"
 ---
 # <a name="linker-tools-error-lnk2019"></a>Linkertoolfehler LNK2019
 
-> nicht aufgelöstes externes Symbol '*Symbol*' in Funktion '*Funktion*' referenziert
+> nicht aufgelöstes extern Al-Symbol '*Symbol*' in Funktion '*Funktion*' referenziert
 
 Der kompilierte Code für die *Funktion* erstellt einen Verweis oder einen Code, aber der Linker kann die Symbol Definition nicht in einer der Bibliotheken oder Objektdateien *finden, die verknüpft werden sollen*.
 
@@ -45,13 +45,13 @@ Auf diese Fehlermeldung folgt ein schwerwiegender Fehler [Linkertoolfehler LNK11
 
 ## <a name="possible-causes"></a>Mögliche Ursachen
 
-Es gibt viele Möglichkeiten, diesen Fehler zu erhalten. Alle Elemente beinhalten einen Verweis auf eine Funktion oder Variable, die der Linker nicht *Auflösen*konnte, oder es wurde eine Definition für gefunden. Der Compiler kann erkennen, wenn ein Symbol nicht *deklariert*ist, aber er kann nicht erkennen, wenn das Symbol nicht *definiert*ist. Das liegt daran, dass sich die Definition in einer anderen Quelldatei oder Bibliothek befinden kann. Wenn auf ein Symbol verwiesen wird, aber nie definiert, generiert der Linker einen nicht aufgelösten externen symbolfehler.
+Es gibt viele Möglichkeiten, diesen Fehler zu erhalten. Alle Elemente beinhalten einen Verweis auf eine Funktion oder Variable, die der Linker nicht *Auflösen*konnte, oder es wurde eine Definition für gefunden. Der Compiler kann erkennen, wenn ein Symbol nicht *deklariert*ist, aber er kann nicht erkennen, wenn das Symbol nicht *definiert*ist. Das liegt daran, dass sich die Definition in einer anderen Quelldatei oder Bibliothek befinden kann. Wenn auf ein Symbol verwiesen wird, aber nie definiert, generiert der Linker einen nicht aufgelösten extern Al-symbolfehler.
 
 Hier sind einige der häufigsten Probleme aufgeführt, die zum Fehler LNK2019 führen:
 
 ### <a name="the-source-file-that-contains-the-definition-of-the-symbol-isnt-compiled"></a>Die Quelldatei, die die Definition des Symbols enthält, ist nicht kompiliert.
 
-Stellen Sie in Visual Studio sicher, dass die Quelldatei, die das Symbol definiert, als Teil des Projekts kompiliert wird. Überprüfen Sie das zwischen Verzeichnis der Buildausgabe auf eine entsprechende obj-Datei. Wenn die Quelldatei nicht kompiliert ist, klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Datei, und wählen Sie **Eigenschaften** aus, um die Eigenschaften der Datei zu überprüfen. Auf den **Konfigurations Eigenschaften** > Seite **Allgemein** sollte der **Elementtyp** **CC++ /Compiler**angezeigt werden. Stellen Sie in der Befehlszeile sicher, dass die Quelldatei, die die Definition enthält, kompiliert ist.
+Stellen Sie in Visual Studio sicher, dass die Quelldatei, die das Symbol definiert, als Teil des Projekts kompiliert wird. Überprüfen Sie das zwischen Verzeichnis der Buildausgabe auf eine entsprechende obj-Datei. Wenn die Quelldatei nicht kompiliert ist, klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Datei, und wählen Sie **Eigenschaften** aus, um die Eigenschaften der Datei zu überprüfen. Auf der Seite "allgemeine **Konfigurations Eigenschaften**"  >  **General** sollte ein **Elementtyp** des **C/C++-Compilers**angezeigt werden. Stellen Sie in der Befehlszeile sicher, dass die Quelldatei, die die Definition enthält, kompiliert ist.
 
 ### <a name="the-object-file-or-library-that-contains-the-definition-of-the-symbol-isnt-linked"></a>Die Objektdatei oder-Bibliothek, die die Definition des Symbols enthält, ist nicht verknüpft.
 
@@ -71,17 +71,17 @@ LNK2019 kann auftreten, wenn eine Deklaration in einer Header Datei vorhanden is
 
 ### <a name="the-calling-convention-is-different-between-the-function-declaration-and-the-function-definition"></a>Die Aufruf Konvention unterscheidet sich zwischen der Funktionsdeklaration und der Funktionsdefinition.
 
-Aufruf Konventionen ([__cdecl](../../cpp/cdecl.md), [__stdcall](../../cpp/stdcall.md), [__fastcall](../../cpp/fastcall.md)oder [__vectorcall](../../cpp/vectorcall.md)) werden als Teil des ergänzten Namens codiert. Stellen Sie sicher, dass die Aufruf Konvention identisch ist.
+Aufruf Konventionen ( [__cdecl](../../cpp/cdecl.md) , [__stdcall](../../cpp/stdcall.md) , [__fastcall](../../cpp/fastcall.md) oder [__vectorcall](../../cpp/vectorcall.md) ) werden als Teil des ergänzten Namens codiert. Stellen Sie sicher, dass die Aufruf Konvention identisch ist.
 
-### <a name="a-symbol-is-defined-in-a-c-file-but-declared-without-using-opno-locextern-c-in-a-c-file"></a>Ein Symbol ist in einer C-Datei definiert, wurde aber ohne Verwendung von extern "C" C++ in einer Datei deklariert.
+### <a name="a-symbol-is-defined-in-a-c-file-but-declared-without-using-extern-c-in-a-c-file"></a>Ein Symbol ist in einer C-Datei definiert, wurde aber ohne Verwendung von extern "C" in einer C++-Datei deklariert.
 
-Symbole, die in einer als C kompilierten Datei definiert sind, haben andere ergänzte Namen als Symbole C++ , die in einer Datei deklariert sind, es sei denn, Sie verwenden einen [extern C](../../cpp/using-extern-to-specify-linkage.md) -Modifizierer. Stellen Sie sicher, dass die Deklaration der Kompilierungs Verknüpfung für jedes Symbol entspricht. Auch wenn Sie ein Symbol in einer C++-Datei definieren, die von einem C-Programm verwendet wird, verwenden Sie `extern "C"` in der Definition.
+Symbole, die in einer als C kompilierten Datei definiert sind, haben andere ergänzte Namen als Symbole, die in einer C++-Datei deklariert sind, es sei denn, Sie verwenden einen [ extern C](../../cpp/using-extern-to-specify-linkage.md) -Modifizierer Stellen Sie sicher, dass die Deklaration der Kompilierungs Verknüpfung für jedes Symbol entspricht. Auch wenn Sie ein Symbol in einer C++-Datei definieren, die von einem C-Programm verwendet wird, verwenden Sie `extern "C"` in der Definition.
 
-### <a name="a-symbol-is-defined-as-opno-locstatic-and-then-later-referenced-outside-the-file"></a>Ein Symbol wird als static definiert und später außerhalb der Datei referenziert.
+### <a name="a-symbol-is-defined-as-static-and-then-later-referenced-outside-the-file"></a>Ein Symbol wird als definiert static und später außerhalb der Datei referenziert.
 
-Anders als in C, verfügen [globale Konstanten](../../error-messages/tool-errors/global-constants-in-cpp.md) in C++ über eine `static` -Verknüpfung. Um diese Einschränkung zu umgehen, können Sie die `const` -Initialisierungen in eine Headerdatei einfügen und diesen Header anschließend in die CPP-Dateien einfügen, oder Sie deklarieren die Variable als nicht konstant und verwenden einen konstanten Verweis, um darauf zuzugreifen.
+Im Gegensatz zu C haben [globale const Ameisen](../../error-messages/tool-errors/global-constants-in-cpp.md) in C++ eine `static` Verknüpfung. Um diese Einschränkung zu umgehen, können Sie die `const` Initialisierungen in eine Header Datei einfügen und diesen Header in die CPP-Dateien einschließen, oder Sie können die Variable als nicht Ant festlegen const und einen Ant- const Verweis verwenden, um darauf zuzugreifen.
 
-### <a name="a-opno-locstatic-member-of-a-class-isnt-defined"></a>Ein static Member einer Klasse ist nicht definiert.
+### <a name="a-static-member-of-a-class-isnt-defined"></a>Ein static Member einer Klasse ist nicht definiert.
 
 Ein static Klassenmember muss eine eindeutige Definition aufweisen oder gegen die eindefinitions Regel verstoßen. Ein static Klassenmember, der nicht Inline definiert werden kann, muss mithilfe seines voll qualifizierten Namens in einer Quelldatei definiert werden. Wenn er überhaupt nicht definiert ist, generiert der Linker LNK2019.
 
@@ -91,11 +91,11 @@ In früheren Versionen von Visual Studio war dieses Abhängigkeits Niveau ausrei
 
 ### <a name="an-entry-point-isnt-defined"></a>Ein Einstiegspunkt ist nicht definiert.
 
-Der Anwendungscode muss einen geeigneten Einstiegspunkt definieren: `main` oder `wmain` für Konsolen Anwendungen und `WinMain` oder `wWinMain` für Windows-Anwendungen. Weitere Informationen finden Sie unter [main Funktion und Befehlszeilenargumente](../../cpp/main-function-command-line-args.md) oder [WinMain Funktion](/windows/win32/api/winbase/nf-winbase-winmain). Wenn Sie einen benutzerdefinierten Einstiegspunkt verwenden möchten, geben Sie die Linkeroption [/Entry (Einstiegspunkt Symbol)](../../build/reference/entry-entry-point-symbol.md) an.
+Der Anwendungscode muss einen geeigneten Einstiegspunkt definieren: `main` oder `wmain` für Konsolen Anwendungen und `WinMain` oder `wWinMain` für Windows-Anwendungen. Weitere Informationen finden Sie unter [ main Funktions-und Befehlszeilenargumente](../../cpp/main-function-command-line-args.md) oder [ WinMain Funktion](/windows/win32/api/winbase/nf-winbase-winmain). Wenn Sie einen benutzerdefinierten Einstiegspunkt verwenden möchten, geben Sie die Linkeroption [/Entry (Einstiegspunkt Symbol)](../../build/reference/entry-entry-point-symbol.md) an.
 
 ### <a name="you-build-a-console-application-by-using-settings-for-a-windows-application"></a>Sie erstellen eine Konsolenanwendung mithilfe von Einstellungen für eine Windows-Anwendung.
 
-Wenn die Fehlermeldung mit dem nicht aufgelösten **externen Symbol vergleichbar ist WinMain in Funktions function_name referenziert**, verknüpfen Sie mithilfe von **/Subsystem: Console** anstelle von **/Subsystem: Windows**. Weitere Informationen zu dieser Einstellung und Anweisungen zum Festlegen dieser Eigenschaft in Visual Studio finden Sie unter [/SUBSYSTEM (Specify Subsystem)](../../build/reference/subsystem-specify-subsystem.md).
+Wenn die Fehlermeldung dem nicht aufgelösten Al-Symbol ähnelt, ** extern auf das WinMain in der Funktions** *function_name*verwiesen wird, verknüpfen Sie es mit **/Subsystem: Console** anstelle von **/Subsystem: Windows**. Weitere Informationen zu dieser Einstellung und Anweisungen zum Festlegen dieser Eigenschaft in Visual Studio finden Sie unter [/SUBSYSTEM (Specify Subsystem)](../../build/reference/subsystem-specify-subsystem.md).
 
 ### <a name="you-attempt-to-link-64-bit-libraries-to-32-bit-code-or-32-bit-libraries-to-64-bit-code"></a>Sie versuchen, 64-Bit-Bibliotheken mit 32-Bit-Code oder 32-Bit-Bibliotheken in 64-Bit-Code zu verknüpfen.
 
@@ -111,25 +111,25 @@ Automatische Variablen (mit Funktionsgültigkeitsbereich) können nur im Rahmen 
 
 ### <a name="you-call-intrinsic-functions-or-pass-argument-types-to-intrinsic-functions-that-arent-supported-on-your-target-architecture"></a>Sie können intrinsische Funktionen oder Argument Typen an intrinsische Funktionen übergeben, die von der Zielarchitektur nicht unterstützt werden.
 
-Wenn Sie z. b. eine AVX2 intrinsisch verwenden, aber nicht die [/ARCH:AVX2](../../build/reference/arch-x86.md) -Compileroption angeben, geht der Compiler davon aus, dass die systeminterne Funktion eine externe Funktion ist. Anstelle einer Inlineanweisung generiert der Compiler einen Aufruf an ein externes Symbol mit demselben Namen wie die intrinsische Funktion. Wenn der Linker versucht, die Definition dieser fehlende Funktion zu finden, wird LNK2019 generiert. Stellen Sie sicher, dass Sie nur systeminterne und von der Zielarchitektur unterstützte Typen verwenden.
+Wenn Sie z. b. eine systeminterne AVX2 Funktion verwenden, aber nicht die [ / ARCH AVX2 :](../../build/reference/arch-x86.md) -Compileroption angeben, geht der Compiler davon aus, dass die intrinsische extern Funktion eine Al-Funktion ist Anstatt eine Inline Anweisung zu generieren, generiert der Compiler einen-Befehl extern mit dem gleichen Namen wie das systeminterne-Symbol. Wenn der Linker versucht, die Definition dieser fehlende Funktion zu finden, wird LNK2019 generiert. Stellen Sie sicher, dass Sie nur systeminterne und von der Zielarchitektur unterstützte Typen verwenden.
 
-### <a name="you-mix-code-that-uses-native-opno-locwchar_t-with-code-that-doesnt"></a>Sie mischen Code, der systemeigene wchar_t mit Code verwendet, der nicht
+### <a name="you-mix-code-that-uses-native-wchar_t-with-code-that-doesnt"></a>Sie mischen Code, der Native wchar_t mit Code verwendet, der nicht
 
-C++die sprach Konformität, die in Visual Studio 2005 durchgeführt wurde, wurde standardmäßig **wchar_t** einen systemeigenen Typ hergestellt. Wenn nicht alle Dateien mit der gleichen **/Zc:wchar_t** Einstellungen kompiliert wurden, werden Typverweise möglicherweise nicht in kompatible Typen aufgelöst. Stellen Sie sicher, dass **wchar_t** Typen in allen Bibliotheks-und Objektdateien kompatibel sind. Aktualisieren Sie entweder aus einer **wchar_t** typedef, oder verwenden Sie beim Kompilieren konsistente **/Zc:wchar_t** -Einstellungen.
+C++-sprach Konformität in Visual Studio 2005 hat **wchar_t** standardmäßig einen systemeigenen Typ hergestellt. Wenn nicht alle Dateien mit denselben **/Zc: wchar_t ** -Einstellungen kompiliert wurden, werden Typverweise möglicherweise nicht in kompatible Typen aufgelöst. Stellen Sie sicher, dass **wchar_t** die Typen in allen Bibliotheks-und Objektdateien kompatibel sind. Aktualisieren Sie entweder aus einer **wchar_t** typedef, oder verwenden Sie beim Kompilieren konsistente **/Zc: wchar_t ** settings-Einstellungen.
 
 ## <a name="third-party-library-issues-and-vcpkg"></a>Drittanbieter-Bibliotheks Probleme und vcpkg
 
-Wenn dieser Fehler angezeigt wird, wenn Sie versuchen, eine Bibliothek eines Drittanbieters als Teil Ihres Builds zu konfigurieren, sollten Sie die Verwendung von [vcpkg](../../vcpkg.md), dem Visual C++ Package Manager, zum Installieren und Erstellen der Bibliothek in Erwägung gezogen. Vcpkg unterstützt eine große und wachsende [Liste von Bibliotheken von Drittanbietern](https://github.com/Microsoft/vcpkg/tree/master/ports). Dabei werden alle Konfigurations Eigenschaften und Abhängigkeiten festgelegt, die für erfolgreiche Builds als Teil des Projekts erforderlich sind. Weitere Informationen finden Sie im zugehörigen [visuellen C++ Blog](https://blogs.msdn.microsoft.com/vcblog/2016/09/19/vcpkg-a-tool-to-acquire-and-build-c-open-source-libraries-on-windows/) Beitrag.
+Wenn dieser Fehler angezeigt wird, wenn Sie versuchen, eine Drittanbieter Bibliothek als Teil Ihres Builds zu konfigurieren, sollten Sie die Verwendung von [vcpkg](../../vcpkg.md), einem C++ Package Manager, zum Installieren und Erstellen der Bibliothek in Erwägung gezogen. vcpkg unterstützt eine große und wachsende [Liste von Bibliotheken von Drittanbietern](https://github.com/Microsoft/vcpkg/tree/master/ports). Dabei werden alle Konfigurations Eigenschaften und Abhängigkeiten festgelegt, die für erfolgreiche Builds als Teil des Projekts erforderlich sind.
 
 ## <a name="diagnosis-tools"></a>Diagnosetools
 
-Manchmal ist es schwierig festzustellen, warum der Linker eine bestimmte Symbol Definition nicht finden kann. Häufig besteht das Problem darin, dass Sie den Code, der die Definition enthält, nicht in Ihren Build eingefügt haben. Oder Buildoptionen haben andere ergänzte Namen für externe Symbole erstellt. Es gibt mehrere Tools und Optionen, die Ihnen bei der Diagnose von LNK2019 Fehlern helfen können.
+Manchmal ist es schwierig festzustellen, warum der Linker eine bestimmte Symbol Definition nicht finden kann. Häufig besteht das Problem darin, dass Sie den Code, der die Definition enthält, nicht in Ihren Build eingefügt haben. Oder Build-Optionen haben unterschiedliche ergänzte Namen für extern Al-Symbole erstellt. Es gibt mehrere Tools und Optionen, die Ihnen bei der Diagnose von LNK2019 Fehlern helfen können.
 
-- Mithilfe der Option [/VERBOSE](../../build/reference/verbose-print-progress-messages.md) Linkeroption können Sie bestimmen, auf welche Dateien der Linker verweist. Mit dieser Option können Sie überprüfen, ob die Datei mit der Definition des Symbols in Ihrem Build enthalten ist.
+- [/VERBOSE](../../build/reference/verbose-print-progress-messages.md)Mithilfe der Option Linker können Sie feststellen, auf welche Dateien der Linker verweist. Mit dieser Option können Sie überprüfen, ob die Datei mit der Definition des Symbols in Ihrem Build enthalten ist.
 
-- Mithilfe [/](../../build/reference/dash-exports.md) der Optionen EXPORTSund [/SYMBOLS](../../build/reference/symbols.md) des **DUMPBIN** Hilfsprogramms können Sie ermitteln, welche Symbole in den dll-und Objekt-oder Bibliotheksdateien definiert sind. Stellen Sie sicher, dass die exportierten ergänzten Namen den ergänzten Namen entsprechen, die der Linker sucht.
+- [/EXPORTS](../../build/reference/dash-exports.md)Mithilfe der [/SYMBOLS](../../build/reference/symbols.md) Optionen und des **DUMPBIN** Hilfsprogramms können Sie ermitteln, welche Symbole in den dll-und Objekt-oder Bibliotheksdateien definiert sind. Stellen Sie sicher, dass die exportierten ergänzten Namen den ergänzten Namen entsprechen, die der Linker sucht.
 
-- Das **UNDNAME** -Hilfsprogramm kann Ihnen das entsprechende nicht ergänzte externe Symbol für einen ergänzten Namen anzeigen.
+- Das **UNDNAME** Hilfsprogramm kann Ihnen das entsprechende nicht ergänzte extern Al-Symbol für einen ergänzten Namen anzeigen.
 
 ## <a name="examples"></a>Beispiele
 
@@ -137,7 +137,7 @@ Hier sind einige Beispiele für Code aufgeführt, der einen Fehler LNK2019 verur
 
 ### <a name="a-symbol-is-declared-but-not-defined"></a>Ein Symbol wurde deklariert, aber nicht definiert
 
-In diesem Beispiel wird eine externe Variable deklariert, aber nicht definiert:
+In diesem Beispiel ist eine extern Al-Variable deklariert, aber nicht definiert:
 
 ```cpp
 // LNK2019.cpp
@@ -149,7 +149,7 @@ int main() {
 }
 ```
 
-Im folgenden finden Sie ein weiteres Beispiel, in dem eine Variable und eine Funktion als `extern` deklariert werden, aber keine Definition bereitgestellt wird:
+Es folgt ein weiteres Beispiel, in dem eine Variable und eine Funktion als deklariert werden, `extern` aber keine Definition bereitgestellt wird:
 
 ```cpp
 // LNK2019c.cpp
@@ -164,9 +164,9 @@ void f() {
 int main() {}
 ```
 
-Der Linker generiert LNK2019, es sei denn, `i` und `g` werden in einer der Dateien definiert, die im Build enthalten sind. Sie können die Fehler beheben, indem Sie die Quellcodedatei mit den Definitionen in die Kompilierung einbeziehen. Alternativ können Sie obj-oder LIB-Dateien, die die Definitionen enthalten, an den Linker übergeben.
+`i` `g` Der Linker generiert LNK2019, es sei denn, und werden in einer der Dateien definiert, die im Build enthalten sind. Sie können die Fehler beheben, indem Sie die Quellcodedatei mit den Definitionen in die Kompilierung einbeziehen. Alternativ können Sie obj-oder LIB-Dateien, die die Definitionen enthalten, an den Linker übergeben.
 
-### <a name="a-opno-locstatic-data-member-is-declared-but-not-defined"></a>Ein static Datenmember wurde deklariert, aber nicht definiert.
+### <a name="a-static-data-member-is-declared-but-not-defined"></a>Ein static Datenmember wurde deklariert, aber nicht definiert.
 
 LNK2019 kann auch auftreten, wenn ein static Datenmember deklariert, aber nicht definiert ist. Im folgenden Beispiel wird LNK2019 generiert und gezeigt, wie Sie diesen Fehler beheben.
 
@@ -217,9 +217,9 @@ int main() {
 }
 ```
 
-### <a name="inconsistent-opno-locwchar_t-type-definitions"></a>Inkonsistente wchar_t Typdefinitionen
+### <a name="inconsistent-wchar_t-type-definitions"></a>Inkonsistente wchar_t Typdefinitionen
 
-In diesem Beispiel wird eine DLL mit einem Export erstellt, der `WCHAR`verwendet, der in `wchar_t`aufgelöst wird.
+In diesem Beispiel wird eine DLL mit einem Export erstellt `WCHAR` , der verwendet, der in aufgelöst wird `wchar_t` .
 
 ```cpp
 // LNK2019g.cpp
@@ -242,8 +242,8 @@ int main() {
 }
 ```
 
-Um diesen Fehler zu beheben, ändern Sie `unsigned short` in `wchar_t` oder `WCHAR`, oder kompilieren Sie "LNK2019g. cpp mithilfe von **/Zc:wchar_t-** .
+Um diesen Fehler zu beheben, ändern `unsigned short` Sie in `wchar_t` oder `WCHAR` , oder kompilieren Sie "LNK2019g. cpp mithilfe von **/Zc: wchar_t - **.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-Weitere Informationen zu möglichen Ursachen und Lösungen für LNK2001 finden Sie in der Stack Overflow Frage, [was ein nicht definierter Verweis/nicht aufgelöstes externes Symbol ist, und wie kann ich das Problem beheben?](https://stackoverflow.com/q/12573816/2002113).
+Weitere Informationen zu möglichen Ursachen und Lösungen für LNK2001 finden Sie in der Stack Overflow Frage [Was ist ein nicht definierter Verweis/nicht aufgelöstes extern symbolfehler und wie kann ich das Problem beheben?](https://stackoverflow.com/q/12573816/2002113).

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Internet content [MFC]
 - WinInet classes [MFC]
 ms.assetid: 6df2dfd0-6e3f-4587-9d01-2a32f00f8a6f
-ms.openlocfilehash: 3265bffb393eeff1d8a04a41357e2b138aa0ebf7
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: c9825cdcb5cb0963a4e0d3acdeb36dfee54b70fc
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84615572"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405025"
 ---
 # <a name="mfc-internet-programming-basics"></a>Grundlagen der MFC-Internetprogrammierung
 
@@ -68,11 +68,9 @@ MFC stellt Klassen bereit, die die Internet Programmierung unterstützen. Sie k�
 
 - [ATL-Unterstützung für DHTML-Steuerelemente](../atl/atl-support-for-dhtml-controls.md)
 
-## <a name="web-sites-for-more-information"></a><a name="_core_web_sites_for_more_information"></a>Websites Weitere Informationen
+## <a name="websites-for-more-information"></a><a name="_core_web_sites_for_more_information"></a>Websites Weitere Informationen
 
-Weitere Informationen zur Microsoft-Internet Technologie finden Sie auf der [MSDN-Website (Microsoft Developer Network)](https://go.microsoft.com/fwlink/p/?linkid=56322) . (Links können ohne vorherige Ankündigung geändert werden.)
-
-Diese Website für Entwickler enthält Informationen zur Verwendung von Microsoft-Entwicklungs Tools und-Technologien sowie zu den wichtigsten Geschichten zu aktuellen und bevorstehenden Konferenzen. Auf dieser Seite können Sie zu vielen verwandten Entwickler Standorten springen, einschließlich der .net-und XML-Entwickler Zentren. Sie können auch Beta-sdche und-Beispiele herunterladen.
+Weitere Informationen zur Microsoft-Internet Technologie finden Sie unter [Microsoft-Dokumentation](https://docs.microsoft.com/).
 
 Der [World Wide Web Consortium (W3C)](https://go.microsoft.com/fwlink/p/?linkid=37125) veröffentlicht Spezifikationen für HTML-, http-, CGI-und andere World Wide Web-Technologien.
 
