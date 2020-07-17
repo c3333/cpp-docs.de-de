@@ -30,7 +30,7 @@
       href: ../build/vscpp-step-1-create.md
     - name: Erstellen und Ausführen eines C++-Konsolen-App-Projekts
       href: ../build/vscpp-step-2-build.md
-    - name: Erstellen der zweiten C++-App
+    - name: Erstellen eines Konsolenrechners in C++
       href: ../get-started/tutorial-console-cpp.md
     - name: Erstellen einer UWP-App
       href: /windows/uwp/cpp-and-winrt-apis/get-started
@@ -79,7 +79,7 @@
       items:
         - name: Sprachen
           href: ../overview/languages-cpp.md
-        - name: 'C#-Sprachreferenz'
+        - name: C#-Sprachreferenz
           href: ../c-language/c-language-reference.md
         - name: C++-Programmiersprachenreferenz
           href: ../cpp/cpp-language-reference.md

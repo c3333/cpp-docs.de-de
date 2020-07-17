@@ -6,12 +6,12 @@ metadata:
   description: Referenz für die C++-Programmierung für Benutzer von C++ und Microsoft Visual Studio
   ms.topic: landing-page
   ms.date: 05/08/2020
-  ms.openlocfilehash: d94a9821e28641c6297261f520359a7179006ff4
-  ms.sourcegitcommit: f7ebdfc3a260778c2ef938747cba1376c70ced15
+  ms.openlocfilehash: 599559aa1b5f1bd992646b5bacc3f1c51fcf070f
+  ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/27/2020
-  ms.locfileid: "84108620"
+  ms.lasthandoff: 07/15/2020
+  ms.locfileid: "86404949"
 landingContent:
 - title: Einführung in Visual C++ in Visual Studio
   linkLists:
@@ -27,7 +27,7 @@ landingContent:
     links:
     - text: Hallo Welt in Visual Studio mit C++
       url: ../build/vscpp-step-1-create.md
-    - text: Erstellen eines Taschenrechners in C++
+    - text: Erstellen eines Konsolenrechners in C++
       url: ../get-started/tutorial-console-cpp.md
   - linkListType: video
     links:
