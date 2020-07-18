@@ -5,12 +5,12 @@ f1_keywords:
 - LNK1318
 helpviewer_keywords:
 - LNK1318
-ms.openlocfilehash: a61c11a9cbb25fea6fddc0bf1c5c4c2a7af1cf4f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: cce2c03783039a62b5cb6f60ecf8d76b23589483
+ms.sourcegitcommit: e15b46ea7888dbdd7e0bb47da76aeed680c3c1f3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80183578"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86446700"
 ---
 # <a name="linker-tools-error-lnk1318"></a>Linkertoolfehler LNK1318
 
@@ -24,7 +24,7 @@ Da die Fehlerquelle nicht üblich ist, stehen nur allgemeine Ratschläge zum Beh
 
 - Führen Sie einen sauberen Vorgang in den buildverzeichnissen aus, und führen Sie dann einen vollständigen Build der Projekt Mappe aus.
 
-- Starten Sie den Computer neu, oder überprüfen Sie, ob die Prozesse "mspdbsrv. exe" oder "nicht verfügbar" sind
+- Starten Sie den Computer neu, oder überprüfen Sie, ob mspdbsrv.exe Prozesse nicht reagiert oder nicht reagiert, und beenden Sie Sie in Task Manager.
 
 - Deaktivieren Sie die antivirenüberprüfungen in Ihren Projekt Verzeichnissen.
 
@@ -32,4 +32,4 @@ Da die Fehlerquelle nicht üblich ist, stehen nur allgemeine Ratschläge zum Beh
 
 - Versuchen Sie, mit dem 64-Bit-gehosteten Toolset zu entwickeln.
 
-- Serialisieren Sie Verknüpfungen, um bei Bedarf parallele Link Probleme zu vermeiden. Dieser Fehler kann verursacht werden, wenn "mspdbsrv. exe" von einer Instanz von Link gestartet wird und heruntergefahren wird, bevor eine andere Instanz von Link verwendet wird. Der Nachteil dieser Lösung ist, dass die Erstellung Ihrer Projekt Builds erheblich länger dauern kann.
+- Serialisieren Sie Verknüpfungen, um bei Bedarf parallele Link Probleme zu vermeiden. Dieser Fehler kann verursacht werden, wenn mspdbsrv.exe durch eine Instanz von Link gestartet wird und heruntergefahren wird, bevor eine andere Instanz von Link verwendet wird. Der Nachteil dieser Lösung ist, dass die Erstellung Ihrer Projekt Builds erheblich länger dauern kann.
