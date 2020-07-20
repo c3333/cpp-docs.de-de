@@ -9,12 +9,12 @@ helpviewer_keywords:
 - compiling programs [C++]
 - command-line applications [C++], native
 ms.assetid: b200cfd1-0440-498f-90ee-7ecf92492dc0
-ms.openlocfilehash: c24fdfdaef612059d5c2fbaaa58f10d83f5fe3a8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8af104598f56aa6c8eb5a9a87905324700da3d37
+ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81335232"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86373670"
 ---
 # <a name="walkthrough-compiling-a-native-c-program-on-the-command-line"></a>Exemplarische Vorgehensweise: Kompilieren eines nativen C++-Programms über die Befehlszeile
 
@@ -130,7 +130,7 @@ Die Buildtools für Visual Studio installieren nur die Befehlszeilencompiler, To
    > Wenn eine Fehlermeldung wie z. B. "'cl' is not recognized as an internal or external command, operable program or batch file" („cl“ wurde nicht als interner oder externer Befehl, ausführbares Programm oder Batchdatei erkannt.), Fehler C1034 oder Fehler LNK1104 ausgegeben wird, ist die Developer-Eingabeaufforderung nicht ordnungsgemäß eingerichtet. Weitere Informationen zum Beheben dieses Problems finden Sie im Abschnitt **Öffnen einer Developer-Eingabeaufforderung**.
 
    > [!NOTE]
-   > Überprüfen Sie den Quellcode, um Fehler zu beheben, ihn zu speichern und den Compiler dann noch mal auszuführen, wenn Sie einen anderen Compiler- oder Linkerfehler oder eine andere Warnung erhalten. Verwenden Sie das Suchfeld auf dieser MSDN-Seite, um nach der Fehlernummer zu suchen und Informationen zu bestimmten Fehlern zu erhalten.
+   > Überprüfen Sie den Quellcode, um Fehler zu beheben, ihn zu speichern und den Compiler dann noch mal auszuführen, wenn Sie einen anderen Compiler- oder Linkerfehler oder eine andere Warnung erhalten. Verwenden Sie das Suchfeld, um nach der Fehlernummer zu suchen und Informationen zu bestimmten Fehlern zu erhalten.
 
 1. Geben Sie zum Ausführen des hello.exe-Programms an der Eingabeaufforderung `hello`ein.
 
@@ -146,7 +146,7 @@ Die Buildtools für Visual Studio installieren nur die Befehlszeilencompiler, To
 
 Dieses „Hello World!“-Beispiel ist die einfachste Form eines C++-Programms. In realen Programmen sind in der Regel Headerdateien, weitere Quelldateien und Links zu Bibliotheken enthalten.
 
-Sie können die Schritte in dieser exemplarischen Vorgehensweise verwenden, um Ihren eigenen C++-Code zu erstellen, anstatt den gezeigten Beispielcode einzugeben. Mit diesen Schritten können Sie auch viele C++-Codebeispielprogramme erstellen, die Sie auch an anderer Stelle finden. Sie können Ihren Quellcode verwenden und Ihre Apps in jedem beschreibbaren Verzeichnis erstellen. Standardmäßig erstellt die Visual Studio-IDE Projekte in Ihrem Benutzerordner in einem *source\\repos*-Unterordner. Ältere Versionen können Projekte im Ordner *Dokumente\\Visual Studio \<version>\\* Projekte* ablegen.
+Sie können die Schritte in dieser exemplarischen Vorgehensweise verwenden, um Ihren eigenen C++-Code zu erstellen, anstatt den gezeigten Beispielcode einzugeben. Mit diesen Schritten können Sie auch viele C++-Codebeispielprogramme erstellen, die Sie auch an anderer Stelle finden. Sie können Ihren Quellcode verwenden und Ihre Apps in jedem beschreibbaren Verzeichnis erstellen. Standardmäßig erstellt die Visual Studio-IDE Projekte in Ihrem Benutzerordner in einem *source\\repos*-Unterordner. Ältere Versionen können Projekte im Ordner *Dokumente\\Visual Studio \<version>\\* Projects* ablegen.
 
 Wenn Sie ein Programm mit zusätzlichen Quellcodedateien kompilieren möchten, geben Sie alle in der Befehlszeile ein. Beispiel:
 
