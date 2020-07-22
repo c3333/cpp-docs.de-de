@@ -3,12 +3,12 @@ title: Bereitstellen, Ausführen und Debuggen Ihres C++-Projekts unter Linux in 
 description: Informationen zum Kompilieren, Ausführen und Debuggen von Code auf dem Remoteziel in einem C++-Projekt unter Linux in Visual Studio.
 ms.date: 06/07/2019
 ms.assetid: f7084cdb-17b1-4960-b522-f84981bea879
-ms.openlocfilehash: e68feab3a71cd5bb3f6b88eee52f0872ef4bb213
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: df095d5561bea6dac94b9faa139c83c197802bbf
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "80077836"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404410"
 ---
 # <a name="deploy-run-and-debug-your-linux-project"></a>Bereitstellen, Ausführen und Debuggen eines Linux-Projekts
 
@@ -195,7 +195,7 @@ Wenn Sie die vollständige Kontrolle über Ihre Bereitstellung wünschen, könne
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-- Informationen zum Debuggen von ARM-Geräten unter Linux finden Sie im folgenden Blogbeitrag: [Debugging an embedded ARM device in Visual Studio (Debuggen eines eingebetteten ARM-Geräts in Visual Studio)](https://blogs.msdn.microsoft.com/vcblog/2018/01/10/debugging-an-embedded-arm-device-in-visual-studio/).
+- Informationen zum Debuggen von ARM-Geräten unter Linux finden Sie im folgenden Blogbeitrag: [Debugging an embedded ARM device in Visual Studio (Debuggen eines eingebetteten ARM-Geräts in Visual Studio)](https://devblogs.microsoft.com/cppblog/debugging-an-embedded-arm-device-in-visual-studio/).
 
 ## <a name="see-also"></a>Siehe auch
 
