@@ -3,12 +3,12 @@ title: Hilfe und Community für Visual C++
 ms.date: 11/30/2017
 ms.technology: cpp-ide
 ms.assetid: 6bc23c18-fcd9-47bc-bff2-17537700be4a
-ms.openlocfilehash: eb266354b818e95583c0d236c19209963a34f1f5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 66ff4844e34d1d3c781791b5e250387d6ac2a0d1
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "75791692"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405077"
 ---
 # <a name="visual-c-help-and-community"></a>Hilfe und Community für Visual C++
 
@@ -18,13 +18,13 @@ So erhalten Sie Informationen über das Schreiben von C++-Code und die Verwendun
 
 |Titel|Beschreibung|
 |-----------|-----------------|
-|[Entwickler-Codebeispiele](https://code.msdn.microsoft.com/)|Enthält herunterladbaren Beispielcode von Microsoft und Mitwirkenden aus der Community.|
+|[Entwickler-Codebeispiele](https://docs.microsoft.com/samples)|Enthält herunterladbaren Beispielcode von Microsoft und Mitwirkenden aus der Community.|
 
 ## <a name="product-documentation"></a>Produktdokumentation
 
 |Titel|Beschreibung|
 |-----------|-----------------|
-|[C++ in Visual Studio](visual-cpp-in-visual-studio.md)|Enthält Verweise auf und Dokumentation zu Visual C++. Teil der MSDN Library.|
+|[C++ in Visual Studio](visual-cpp-in-visual-studio.md)|Enthält Verweise auf und Dokumentation zu Visual C++.|
 |[Windows Developer Center](https://developer.microsoft.com/windows/)|Enthält Informationen zur Verwendung von C++ und anderen Sprachen zum Entwickeln von Apps für Windows 10. Teil des Windows Developer Centers. Der C++-Inhalt befindet sich unter dem Knoten Dokumente > Sprachverzeichnis.|
 
 ### <a name="online-and-offline-documentation"></a>Online- und Offlinedokumentation
@@ -37,9 +37,9 @@ Viele Abschnitte der Dokumentation sind auch im PDF-Format verfügbar. Diese Abs
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-|Titel|Beschreibung|
+|Titel|BESCHREIBUNG|
 |-----------|-----------------|
-|[Visual C++-Team-Blog](https://blogs.msdn.microsoft.com/vcblog/)|Enthält Beiträge zu verschiedenen Themen von Experten aus dem Visual C++-Produktteam.|
+|[C++-Teamblog](https://devblogs.microsoft.com/cppblog/)|Enthält Beiträge zu verschiedenen Themen von Experten aus dem C++-Produktteam von Microsoft.|
 |[Channel 9](https://channel9.msdn.com/)|Enthält Videointerviews und -vorlesungen. Verwenden Sie das Suchfeld auf der Channel 9-Homepage, um C++-Inhalt zu suchen.|
 |[Visual Studio](https://visualstudio.microsoft.com/)|Enthält Artikel und Neuigkeiten zu Visual Studio und verwandte Entwicklungstools.|
-|[MSDN-Foren](https://social.msdn.microsoft.com/Forums/home?category=visualc) und [Entwicklercommunity](https://developercommunity.visualstudio.com)|Offizielle Microsoft-Foren, in denen Sie Fragen zu C++ posten und Antworten von Microsoft und Experten aus der Community erhalten können.|
+|[MSDN-Foren](https://social.msdn.microsoft.com/Forums/) und Visual Studio-[Entwicklercommunity](https://developercommunity.visualstudio.com)|Offizielle Microsoft-Foren, in denen Sie Fragen zu C++ posten und Antworten von Microsoft und Experten aus der Community erhalten können.|

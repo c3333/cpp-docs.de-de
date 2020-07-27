@@ -1,19 +1,19 @@
 ---
-title: Erstellen eines C++-Konsolen-App-Projekts
+title: Erstellen eines Konsolenrechners in C++
 description: Erstellen einer „Hallo Welt“-Konsolen-App und einer Taschenrechner-App in Visual C++
 ms.custom: mvc
 ms.date: 08/19/2019
 ms.topic: tutorial
 ms.devlang: cpp
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: 27522a6960546dc935ea3d9bce974eb36789c0aa
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b292d5b8e1db7415aed6427f2327788e08a28a20
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "80079287"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86404449"
 ---
-# <a name="create-a-c-console-app-project"></a>Erstellen eines C++-Konsolen-App-Projekts
+# <a name="create-a-console-calculator-in-c"></a>Erstellen eines Konsolenrechners in C++
 
 ::: moniker range=">=vs-2019"
 
@@ -381,7 +381,7 @@ Herzlichen Glückwunsch! Sie haben den Code für die Rechner-App fertiggestellt,
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-[Weitere Informationen zu Visual Studio für C++](https://blogs.msdn.microsoft.com/vcblog/2017/04/21/getting-started-with-visual-studio-for-c-and-cpp-development/)
+[Weitere Informationen zu Visual Studio für C++](https://devblogs.microsoft.com/cppblog/getting-started-with-visual-studio-for-c-and-cpp-development/)
 
 ::: moniker-end
 
@@ -752,6 +752,6 @@ Herzlichen Glückwunsch! Sie haben den Code für die Rechner-App fertiggestellt,
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-[Weitere Informationen zu Visual Studio für C++](https://blogs.msdn.microsoft.com/vcblog/2017/04/21/getting-started-with-visual-studio-for-c-and-cpp-development/)
+[Weitere Informationen zu Visual Studio für C++](https://devblogs.microsoft.com/cppblog/getting-started-with-visual-studio-for-c-and-cpp-development/)
 
 ::: moniker-end

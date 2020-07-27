@@ -3,12 +3,12 @@ title: Neuerungen bei C++ in Visual Studio
 ms.date: 05/19/2020
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: 7c36112f5d0f7f0475782eb40e31179e67ac4485
-ms.sourcegitcommit: 3f91111c0350c0237fddb82766c290307f20e659
+ms.openlocfilehash: 6813a119453bfd365763269169f1291fa165bdcd
+ms.sourcegitcommit: e15b46ea7888dbdd7e0bb47da76aeed680c3c1f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83630489"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86446869"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
@@ -20,7 +20,7 @@ Visual Studio 2019 enthält viele Updates und Fixes für die C++-Umgebung von Mi
 
 - Verbesserte Unterstützung für C++17-Features und Korrekturen der Genauigkeit sowie experimentelle Unterstützung für C++20-Features wie Module und Coroutinen. Ausführliche Informationen finden Sie unter [C++ Conformance Improvements in Visual Studio 2019 (Verbesserungen bei der Übereinstimmung mit C++-Standards in Visual Studio 2019)](cpp-conformance-improvements.md).
 
-- Die Option `/std:c++latest` schließt nun C++20-Features ein, deren Entwicklung möglicherweise noch nicht abgeschlossen ist. Hierzu gehört beispielsweise die Unterstützung des C++20-Operators \<=> („Spaceship“) für Dreifachvergleiche.
+- Die Option `/std:c++latest` schließt nun C++20-Features ein, deren Entwicklung möglicherweise noch nicht abgeschlossen ist. Hierzu gehört beispielsweise die Unterstützung des C++20-Operators \<=>> („Spaceship“) für Dreifachvergleiche.
 
 - Die C++-Compileroption `/Gm` ist nun veraltet. Es empfiehlt sich, die `/Gm`-Option in Buildskripts zu deaktivieren, wenn sie explizit festgelegt wurde. Sie können die Warnung für die veraltete Option allerdings auch für `/Gm` ignorieren, da sie bei Verwendung der Einstellung „Warnungen als Fehler behandeln“ (`/WX`) nicht als Fehler behandelt wird.
 
@@ -359,7 +359,7 @@ Es sind weitere Verbesserungen an der Standardbibliothek in Visual Studio 2017 
 ### <a name="conformance-improvements"></a>Verbesserungen bei der Übereinstimmung mit Standards
 
 - Wir haben \<any\>, \<string_view\>, `apply()` und `make_from_tuple()` hinzugefügt.
-- Es wurden \<optional\>, \<variant\>, `shared_ptr::weak_type`, und \<cstdalign\> hinzugefügt.
+- \<optional\>, \<variant\>, `shared_ptr::weak_type` und \<cstdalign\> wurden hinzugefügt.
 - C++14 `constexpr` wurde in `min(initializer_list)`, `max(initializer_list)` und `minmax(initializer_list)` und `min_element()`, `max_element()` und `minmax_element()` hinzugefügt.
 
 Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabelle](../visual-cpp-language-conformance.md).
@@ -377,7 +377,7 @@ Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabell
 - `static_assert(false, "message")` wurde in `#error message` geändert. Dies verbessert die Compilerdiagnose, da `#error` die Kompilierung sofort beendet.
 - Die Standardbibliothek markiert Funktionen nicht mehr als `__declspec(dllimport)`. Für moderne Linkertechnologien ist dies nicht mehr erforderlich.
 - SFINAE wurde in Standardvorlagenargumente extrahiert, wodurch der Code im Vergleich zu Rückgabetypen und Funktionsargumenttypen übersichtlicher wurde.
-- \<Zufällige\> Debugüberprüfungen verwenden jetzt die üblichen Mechanismen der Standardbibliothek anstelle der internen Funktion `_Rng_abort()`, die `fputs()` für **stderr** aufgerufen hat. Die Implementierung dieser Funktion wurde für Binärkompatibilität beibehalten. Sie wird in der nächsten binärinkompatiblen Version der Standardbibliothek entfernt.
+- Debugüberprüfungen in \<random\> verwenden jetzt die üblichen Mechanismen der Standardbibliothek anstelle der internen Funktion `_Rng_abort()`, die `fputs()` für **stderr** aufgerufen hat. Die Implementierung dieser Funktion wurde für Binärkompatibilität beibehalten. Sie wird in der nächsten binärinkompatiblen Version der Standardbibliothek entfernt.
 
 ##### <a name="visual-studio-2017-version-155"></a>Visual Studio 2017 Version 15.5
 
@@ -598,7 +598,7 @@ Die Visual C++ Build-Tools (zuvor als eigenständiges Produkt verfügbar) sind j
 
 ## <a name="linux-development-with-c"></a>Linux-Entwicklung mit C++
 
-Die beliebte Erweiterung [Visual C++ für Linux-Entwicklung](https://visualstudiogallery.msdn.microsoft.com/725025cf-7067-45c2-8d01-1e0fd359ae6e) ist nun Bestandteil von Visual Studio. Diese Installation bietet alles, was Sie zum Entwickeln und Debuggen von C++-Anwendungen in einer Linux-Umgebung benötigen.
+Die beliebte Erweiterung [Visual C++ für Linux-Entwicklung](https://marketplace.visualstudio.com/items?itemName=VisualCppDevLabs.VisualCforLinuxDevelopment) ist nun Bestandteil von Visual Studio. Diese Installation bietet alles, was Sie zum Entwickeln und Debuggen von C++-Anwendungen in einer Linux-Umgebung benötigen.
 
 ##### <a name="visual-studio-2017-version-152"></a>Visual Studio 2017 Version 15.2
 

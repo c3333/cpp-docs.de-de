@@ -3,12 +3,12 @@ title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
 ms.date: 05/18/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
 ms.technology: cpp-language
-ms.openlocfilehash: c7c93de8b0e4c266290b858c76e7b34fccc0cabd
-ms.sourcegitcommit: 3f91111c0350c0237fddb82766c290307f20e659
+ms.openlocfilehash: 7796728c869e39270ee9e8fe82fb5e0e9a3a8630
+ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83630500"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405103"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
@@ -237,7 +237,7 @@ void f() {
 - `starts_with()` und `ends_with()` für `basic_string` und `basic_string_view`.
 - `contains()` für assoziative Container.
 - `remove()`, `remove_if()` und `unique()` für `list` und `forward_list` geben nun `size_type` zurück.
-- `shift_left()` und `shift_right()` wurden zu \<algorithm> hinzugefügt.
+- `shift_left()` und `shift_right()` wurden \<algorithm> hinzugefügt.
 
 ## <a name="conformance-improvements-in-162"></a><a name="improvements_162"></a> Verbesserungen der Konformität in 16.2
 
@@ -376,7 +376,7 @@ bool neq(const S& lhs, const S& rhs) {
 
 ### <a name="standard-library-improvements"></a>Verbesserungen der Standardbibliothek
 
-- \<charcharv > `to_chars()` mit fester/wissenschaftlicher Genauigkeit (Die allgemeine Genauigkeit ist derzeit für Version 16.4 geplant.)
+- \<charconv> `to_chars()` mit fester/wissenschaftlicher Genauigkeit (Die allgemeine Genauigkeit ist derzeit für Version 16.4 geplant.)
 - [P0020R6](https://wg21.link/p0020r6): atomic\<float>, atomic\<double>, atomic\<long double>
 - [P0463R1](https://wg21.link/p0463r1): endian
 - [P0482R6](https://wg21.link/p0482r6): Bibliotheksunterstützung für char8_t
@@ -456,7 +456,7 @@ Sie können die Fehler im vorherigen Beispiel vermeiden, indem Sie konsistent **
 
 ### <a name="standard-library-improvements"></a>Verbesserungen der Standardbibliothek
 
-Die nicht standardmäßigen Header \<stdexcpt.h> und \<typeinfo.h> wurden entfernt. Code, der diese enthält, sollte stattdessen die standardmäßigen Header \<exception> und \<typeinfo> enthalten.
+Die nicht standardmäßigen Header \<stdexcpt.h> und \<typeinfo.h> wurden entfernt. Code, der diese enthält, sollte stattdessen jeweils die standardmäßigen Header \<exception> und \<typeinfo> enthalten.
 
 ## <a name="conformance-improvements-in-visual-studio-2019-version-164"></a><a name="improvements_164"></a> Verbesserungen der Konformität in Visual Studio 2019, Version 16.4
 
@@ -1288,7 +1288,7 @@ Die makro-ersetzende Schlüsselworterzwingung \<xkeycheck.h> der Standardbibliot
 
 Ein nicht beabsichtigter `static_cast` von `std::string`, der für den Standard nicht erforderlich ist und versehentlich C4244-Warnungen unterdrückt hat, wurde entfernt. Beim Versuch, `std::string::string(const wchar_t*, const wchar_t*)` aufzurufen, wird nun ordnungsgemäß die Warnung „C4244 `narrowing a wchar_t into a char`“ ausgelöst.
 
-### <a name="various-filesystem-correctness-fixes"></a>Verschiedene Korrekturen der Genauigkeit von \<filesystem>
+### <a name="various-filesystem-correctness-fixes"></a>Unterschiedliche \<filesystem>-Korrekturen der Genauigkeit
 
 - Das Fehlschlagen von `std::filesystem::last_write_time` beim Versuch, den letzten Schreibzugriff eines Verzeichnisses zu ändern, wurde behoben.
 - Der Konstruktor `std::filesystem::directory_entry` speichert nun ein fehlgeschlagenes Ergebnis, anstatt eine Ausnahme auszulösen, wenn ein nicht vorhandener Zielpfad angegeben wird.
@@ -1322,7 +1322,7 @@ Die `reserve`-Funktion für ungeordnete Container reserviert N-Elemente nun tats
 
 - Zuvor führten einige Zeitwerte, die an die Parallelitätsbibliothek übergeben wurden, zu einem Überlauf, z. B. `condition_variable::wait_for(seconds::max())`. Diese mittlerweile behobenen Überläufe haben das Verhalten in einem scheinbar willkürlichen 29-tägigen Zyklus geändert (wenn von den zugrundeliegenden Win32-APIs akzeptierte uint32_t Millisekunden zu einem Überlauf führten).
 
-- Der \<ctime>-Header deklariert `timespec` und `timespec_get` jetzt nicht nur im globalen Namespace, sondern auch im Namespace `std` ordnungsgemäß.
+- Der \<ctime>-Header deklariert `timespec` und `timespec_get` im Namespace `std` jetzt ordnungsgemäß und im globalen Namespace.
 
 ### <a name="various-fixes-for-containers"></a>Verschiedene Fehlerbehebungen für Container
 
@@ -1410,7 +1410,7 @@ Der Microsoft C++-Compiler in Visual Studio 2017 ist mit Unterstützung für g
 
 ### <a name="c11-expression-sfinae-support-in-more-libraries"></a>C++11: Unterstützung für SFINAE für Ausdrücke in mehr Bibliotheken
 
-Die Unterstützung für den SFINAE-Ausdruck wird im Compiler weiterhin verbessert. Dies ist für die Vorlagenargumentableitung und -ersetzung erforderlich, bei der die Ausdrücke **decltype** und **constexpr** möglicherweise als Vorlagenparameter angezeigt werden. Weitere Informationen finden Sie unter [Expression SFINAE improvements in Visual Studio 2017 RC (Verbesserungen der SFINAE für Ausdrücke in Visual Studio 2017)](https://blogs.msdn.microsoft.com/vcblog/2016/06/07/expression-sfinae-improvements-in-vs-2015-update-3).
+Die Unterstützung für den SFINAE-Ausdruck wird im Compiler weiterhin verbessert. Dies ist für die Vorlagenargumentableitung und -ersetzung erforderlich, bei der die Ausdrücke **decltype** und **constexpr** möglicherweise als Vorlagenparameter angezeigt werden. Weitere Informationen finden Sie unter [Expression SFINAE improvements in Visual Studio 2017 RC (Verbesserungen der SFINAE für Ausdrücke in Visual Studio 2017)](https://devblogs.microsoft.com/cppblog/expression-sfinae-improvements-in-vs-2015-update-3/).
 
 ### <a name="c14-nsdmi-for-aggregates"></a>C++14: NSDMI für Aggregate
 
@@ -1542,7 +1542,7 @@ Die Standardbibliothek wurde aufgrund von C++17-Compileränderungen aktualisiert
 
 ### <a name="c17-library-fundamentals-v1"></a>C++17-Bibliotheksgrundlagen V1
 
-[P0220R1](https://wg21.link/p0220r1) integriert die technische Spezifikation der Bibliotheksgrundlagen für C++17 in die Standardbibliothek. Umfasst Updates für \<experimental/tuple>, \<experimental/optional>, \<experimental/functional>, \<experimental/any>, \<experimental/string_view>, \<experimental/memory>, \<experimental/memory_resource> und \<experimental/algorithm>.
+[P0220R1](https://wg21.link/p0220r1) integriert die technische Spezifikation der Bibliotheksgrundlagen für C++17 in die Standardbibliothek. Enthält Updates zu \<experimental/tuple>, \<experimental/optional>, \<experimental/functional>, \<experimental/any>, \<experimental/string_view>, \<experimental/memory>, \<experimental/memory_resource>, und \<experimental/algorithm>.
 
 ### <a name="c17-improving-class-template-argument-deduction-for-the-standard-library"></a>C++17: Verbessern der Vorlagenargumentableitung für die Standardvorlagenbibliothek
 
@@ -2996,7 +2996,7 @@ struct D : B<T>
 D<int> d;
 ```
 
-Um den Fehler zu beheben, ändern Sie den B()-Ausdruck zu „B\<T>()“.
+Ändern Sie den B()-Ausdruck zu „B\<T>T>()“, um den Fehler zu beheben.
 
 ### <a name="constexpr-aggregate-initialization"></a>**constexpr**-Aggregatinitialisierung
 
@@ -3166,7 +3166,7 @@ int main()
 }
 ```
 
-Verwenden Sie `offsetof` wie über \<cstddef>: definiert, um den Fehler zu beheben:
+Verwenden Sie `offsetof` wie über \<cstddef> definiert, um den Fehler zu beheben:
 
 ```cpp
 #include <cstddef>
