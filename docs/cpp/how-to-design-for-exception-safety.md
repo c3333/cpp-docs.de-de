@@ -4,12 +4,12 @@ ms.custom: how-to
 ms.date: 11/19/2019
 ms.topic: conceptual
 ms.assetid: 19ecc5d4-297d-4c4e-b4f3-4fccab890b3d
-ms.openlocfilehash: 48a2f5a94eb2695c0a08a0ae397d02080e7e1261
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 732a46166c99396c5d55a7d2acd834b58f3d2b2e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74246513"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87187802"
 ---
 # <a name="how-to-design-for-exception-safety"></a>Vorgehensweise: Entwerfen der Ausnahme Sicherheit
 
@@ -85,7 +85,7 @@ public:
 
 ### <a name="use-the-raii-idiom-to-manage-resources"></a>Verwenden der RAII-Sprache zum Verwalten von Ressourcen
 
-Um die Ausnahme sicher zu sein, muss eine Funktion sicherstellen, dass Objekte, die Sie mit `malloc` oder **New** zugewiesen haben, zerstört werden, und alle Ressourcen wie Datei Handles werden geschlossen oder freigegeben, auch wenn eine Ausnahme ausgelöst wird. Der *Resource Acquisition Is Initialization* (RAII)-Ausdruck verknüpft die Verwaltung solcher Ressourcen mit der Lebensdauer automatischer Variablen. Wenn eine Funktion den Bereich verlässt, indem sie normal oder aufgrund einer Ausnahme zurückgegeben wird, werden die Destruktoren für alle vollständig konstruierten automatischen Variablen aufgerufen. Ein RAII-Wrapperobjekt wie beispielsweise ein intelligenter Zeiger ruft die entsprechende delete- oder close-Funktion in seinem Destruktor auf. In ausnahmesicherem Code ist es sehr wichtig, den Besitz von jeder Ressource sofort an eine Art von RAII-Objekt zu übergeben. Beachten Sie, dass die `vector`, `string`, `make_shared`, `fstream`und ähnliche Klassen den Erwerb der Ressource für Sie verarbeiten.  `unique_ptr` und herkömmliche `shared_ptr` Konstruktionen sind jedoch besonders spezifisch, da der Benutzer anstelle des Objekts die Ressourcen Erfassung durchführen kann. aus diesem Grund zählen Sie als *Ressourcen Freigabe* , aber Sie sind als RAII fragwürdig.
+Um die Ausnahme sicher zu sein, muss eine Funktion sicherstellen, dass Objekte, die Sie mit oder zugewiesen haben `malloc` **`new`** , zerstört werden, und alle Ressourcen wie Datei Handles werden geschlossen oder freigegeben, auch wenn eine Ausnahme ausgelöst wird. Der *Resource Acquisition Is Initialization* (RAII)-Ausdruck verknüpft die Verwaltung solcher Ressourcen mit der Lebensdauer automatischer Variablen. Wenn eine Funktion den Bereich verlässt, indem sie normal oder aufgrund einer Ausnahme zurückgegeben wird, werden die Destruktoren für alle vollständig konstruierten automatischen Variablen aufgerufen. Ein RAII-Wrapperobjekt wie beispielsweise ein intelligenter Zeiger ruft die entsprechende delete- oder close-Funktion in seinem Destruktor auf. In ausnahmesicherem Code ist es sehr wichtig, den Besitz von jeder Ressource sofort an eine Art von RAII-Objekt zu übergeben. Beachten Sie, dass die `vector` `string` Klassen,, `make_shared` , `fstream` und ähnliche Klassen den Erwerb der Ressource für Sie verarbeiten.  Allerdings `unique_ptr` sind und herkömmliche `shared_ptr` Konstruktionen besonders spezifisch, da der Benutzer anstelle des-Objekts die Ressourcen Erfassung durchführen kann. Daher werden Sie als *Ressourcen Freigabe mit Zerstörung* , aber als RAII-Vorgänge gezählt.
 
 ## <a name="the-three-exception-guarantees"></a>Die drei Ausnahme Garantien
 
@@ -119,7 +119,7 @@ Die integrierten Datentypen sind alle NO-FAIL, und die Standardbibliothekstypen 
 
 - Lassen Sie Ausnahmen nicht von Destruktoren auslösen. Ein allgemeiner Grundsatz von C++ besagt, dass Destruktoren nie zulassen dürfen, dass eine Ausnahme in der Aufrufliste nach oben weitergegeben wird. Wenn ein Destruktor einen Vorgang ausführen muss, der möglicherweise eine Ausnahme auslösen kann, muss er dies in einem try/catch-Block durchführen und die Ausnahme behalten. Die Standardbibliothek stellt diese Garantie für alle von ihr definierten Destruktoren bereit.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md)<br/>
-[Vorgehensweise: Verbinden von Code, der Ausnahmen zulässt, mit Code ohne Ausnahmen](how-to-interface-between-exceptional-and-non-exceptional-code.md)
+[Modern C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md)<br/>
+[Gewusst wie: Schnittstelle zwischen Ausnahme-und nicht-Ausnahme Code](how-to-interface-between-exceptional-and-non-exceptional-code.md)

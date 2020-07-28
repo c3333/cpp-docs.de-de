@@ -36,12 +36,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arccosine function
 ms.assetid: 00b89c48-8faf-4824-aa95-fa4349a4975d
-ms.openlocfilehash: c6e6b1da823f050d20d47ecbad96d4e0b58fa452
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: b6188c585d2f3b7f2bce1a50569e6bae60ee4942
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916892"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220768"
 ---
 # <a name="acos-acosf-acosl"></a>acos, acosf, acosl
 
@@ -77,15 +77,15 @@ Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ACOS** standardmäßig ei
 |± QNAN,IND|Keine|_DOMAIN|
 |&#124;x&#124;>1|INVALID|_DOMAIN|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ACOS** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **ACOS** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ACOS** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm nimmt **ACOS** immer eine an und gibt Sie zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|Optionale Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
 |**ACOS**, **Acosf**, **acosl**|\<math.h>|\<errno.h>|
 
@@ -141,7 +141,7 @@ Arccosine of 0.000000 = 1.570796
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [asin, asinf, asinl](asin-asinf-asinl.md)<br/>
 [atan, atanf, atanl, atan2, atan2f, atan2l](atan-atanf-atanl-atan2-atan2f-atan2l.md)<br/>
 [cos, cosf, cosl](cos-cosf-cosl.md)<br/>

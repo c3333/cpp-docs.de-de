@@ -1,5 +1,5 @@
 ---
-title: Speicherbelegung
+title: Speicherzuweisung
 ms.date: 11/04/2016
 f1_keywords:
 - c.memory
@@ -8,29 +8,29 @@ helpviewer_keywords:
 - memory, managing
 - memory, allocation
 ms.assetid: b4470556-a128-4782-9943-2ccf7a7d9979
-ms.openlocfilehash: bcc9865b149c2289f99f6ee13f31179ae58a15e1
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 2adfd0de21a5dc7a1f3aa65041a6b8a9a9cf1d69
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57742796"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87189505"
 ---
-# <a name="memory-allocation"></a>Speicherbelegung
+# <a name="memory-allocation"></a>Speicherzuweisung
 
 Verwenden Sie diese Routinen zur Belegung, Freigabe und erneuten Belegung von Speicherplatz.
 
 ## <a name="memory-allocation-routines"></a>Speicherbelegungsroutinen
 
-|-Routine zurückgegebener Wert|Verwendung|
+|-Routine zurückgegebener Wert|Zweck|
 |-------------|---------|
 |[_alloca](../c-runtime-library/reference/alloca.md), [_malloca](../c-runtime-library/reference/malloca.md)|Belegen von Speicher im Stapel|
 |[calloc](../c-runtime-library/reference/calloc.md)|Belegen von Speicher für ein Array mit Initialisierung aller Bytes im belegten Block auf 0|
 |[_calloc_dbg](../c-runtime-library/reference/calloc-dbg.md)|Debugversion von **calloc**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[operator delete](../c-runtime-library/operator-delete-crt.md)|Freigeben eines belegten Blocks|
+|[Operator löschen](../c-runtime-library/operator-delete-crt.md)|Freigeben eines belegten Blocks|
 |[operator delete&#91;&#93;](../c-runtime-library/delete-operator-crt.md)|Freigeben eines belegten Blocks|
 |[_expand](../c-runtime-library/reference/expand.md)|Erweitern oder Verkleinern eines Speicherblocks, ohne diesen zu bewegen|
 |[_expand_dbg](../c-runtime-library/reference/expand-dbg.md)|Debugversion von **_expand**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[free](../c-runtime-library/reference/free.md)|Freigeben eines belegten Blocks|
+|[Kosten](../c-runtime-library/reference/free.md)|Freigeben eines belegten Blocks|
 |[_free_dbg](../c-runtime-library/reference/free-dbg.md)|Debugversion von **free**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
 |[_freea](../c-runtime-library/reference/freea.md)|Freigeben eines belegten Blocks aus dem Stapel|
 |[_get_heap_handle](../c-runtime-library/reference/get-heap-handle.md)|Abrufen des Win32 HANDLEs aus dem CRT-Heap.|
@@ -49,9 +49,9 @@ Verwenden Sie diese Routinen zur Belegung, Freigabe und erneuten Belegung von Sp
 |[_query_new_mode](../c-runtime-library/reference/query-new-mode.md)|Zurückgeben einer Ganzzahl, die den von **_set_new_mode** für **malloc** festgelegten neuen Handlermodus anzeigt.|
 |[realloc](../c-runtime-library/reference/realloc.md)|Erneute Belegung eines Blocks zur neuen Größe|
 |[_realloc_dbg](../c-runtime-library/reference/realloc-dbg.md)|Debugversion von **realloc**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)|Aktivieren des Fehlerbehandlungsmechanismus, wenn der Operator **new** zu einem Fehler führt (also kein Speicher belegt wird), sowie Aktivieren der Kompilierung von C++-Standardbibliotheken|
+|[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)|Aktivieren des Fehler Behandlungs Mechanismus, wenn der **`new`** Operator fehlschlägt (um Speicher zuzuweisen) und die Kompilierung von C++-Standard Bibliotheken aktivieren|
 |[_set_new_mode](../c-runtime-library/reference/set-new-mode.md)|Festlegen eines neuen Handlermodus für **malloc**|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>

@@ -33,12 +33,12 @@ helpviewer_keywords:
 - cabsf function
 - cabsl function
 ms.assetid: 6b8eb453-cc8f-4972-bebf-351cbdfdfc15
-ms.openlocfilehash: 62f297bba116550f572725a6bde094e5407777a4
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ac31df51490880cdd831a34c8adeed9223aafc21
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939413"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220742"
 ---
 # <a name="cabs-cabsf-cabsl"></a>cabs, cabsf, cabsl
 
@@ -73,9 +73,9 @@ Eine komplexe Zahl.
 
 Der absolute Wert von *z*.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Cabs** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und **float** -oder **Long** **Double** -Werte zurückgeben. In einem C-Programm nimmt **Cabs** immer einen **_Dcomplex** -Wert und gibt einen **Double** -Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Cabs** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und-oder-Werte zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **Cabs** immer einen **_Dcomplex** Wert und gibt einen **`double`** Wert zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -83,9 +83,9 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **Cabs** aufzuruf
 |-------------|--------------|------------------|
 |**Cabs**, **cabsf**, **cabsl**|\<complex.h>|\<ccomplex>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [norm, normf, norml](norm-normf-norml1.md)<br/>

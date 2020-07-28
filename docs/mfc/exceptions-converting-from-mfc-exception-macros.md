@@ -14,18 +14,18 @@ helpviewer_keywords:
 - catch blocks [MFC], delimiting
 - exception handling [MFC], converting exceptions
 ms.assetid: bd3ac3b3-f3ce-4fdd-a168-a2cff13ed796
-ms.openlocfilehash: 8a936a0af9927aa0dc453a93c98676a77f4ad6dc
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: e8e7f47b66f4263ed55d73c0aac1fda73d72393c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84621753"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87183811"
 ---
 # <a name="exceptions-converting-from-mfc-exception-macros"></a>Ausnahmen: Umwandeln von MFC-Ausnahmemakros
 
 Dies ist ein erweitertes Thema.
 
-In diesem Artikel wird erläutert, wie vorhandener Code, der mit Microsoft Foundation Class-Makros – **try**, **catch**, **throw**usw. – geschrieben wurde, mit den Schlüsselwörtern " **try**", " **catch**" und " **throw**" der C++-Ausnahmebehandlung konvertiert wird Dabei werden folgende Themen behandelt:
+In diesem Artikel wird erläutert, wie vorhandener Code, der mit Microsoft Foundation Class-Makros – **try**, **catch**, **throw**usw. – geschrieben wurde, für die Verwendung der Schlüsselwörter für die C++-Ausnahmebehandlung **`try`** , und verwendet wird **`catch`** **`throw`** . Dabei werden folgende Themen behandelt:
 
 - [Konvertierungs Vorteile](#_core_advantages_of_converting)
 
@@ -39,7 +39,7 @@ Die wichtigsten Vorteile der-Typumwandlung sind:
 
 - Code, der die C++-Ausnahme Behandlungs Schlüsselwörter verwendet, wird in eine etwas kleinere kompiliert. EXE oder. DLL.
 
-- Die Schlüsselwörter der C++-Ausnahmebehandlung sind vielseitiger: Sie können Ausnahmen eines beliebigen Datentyps behandeln, der kopiert werden kann (**int**, **float**, **char**usw.), während die Makros nur Ausnahmen von Klassen und Klassen behandeln, die davon `CException` abgeleitet sind.
+- Die C++-Schlüsselwörter für die Ausnahmebehandlung sind vielseitiger: Sie können Ausnahmen eines beliebigen Datentyps behandeln, der kopiert werden kann ( **`int`** , **`float`** , **`char`** usw.), während die Makros Ausnahmen nur von Klassen und Klassen behandeln, die davon `CException` abgeleitet sind.
 
 Der Hauptunterschied zwischen den Makros und den Schlüsselwörtern besteht darin, dass der Code, der die Makros verwendet, automatisch eine abgefangene Ausnahme löscht, wenn die Ausnahme den Gültigkeitsbereich verlässt. Code, der die Schlüsselwörter verwendet, ist nicht erforderlich, daher müssen Sie eine abgefangene Ausnahme explizit löschen. Weitere Informationen finden Sie im Artikel [Ausnahmen: abfangen und Löschen von Ausnahmen](exceptions-catching-and-deleting-exceptions.md).
 
@@ -53,7 +53,7 @@ Ein weiterer Unterschied ist die Syntax. Die Syntax für Makros und Schlüsselw�
 
    Beachten Sie das Komma zwischen dem Klassennamen und dem Namen des Objekt Zeigers.
 
-   Die Ausnahme Deklaration für das **catch** -Schlüsselwort verwendet diese Syntax:
+   Die Ausnahme Deklaration für das- **`catch`** Schlüsselwort verwendet diese Syntax:
 
    **catch (** *exception_type* *exception_name* **)**
 
@@ -63,11 +63,11 @@ Ein weiterer Unterschied ist die Syntax. Die Syntax für Makros und Schlüsselw�
 
    Mit den Makros beginnt das **catch** -Makro (mit den zugehörigen Argumenten) mit dem ersten catch-Block. Das **AND_CATCH** -Makro beginnt mit nachfolgenden catch-Blöcken, und das **END_CATCH** -Makro beendet die Sequenz der catch-Blöcke.
 
-   Mit den Schlüsselwörtern beginnt das **catch** -Schlüsselwort (mit seiner Ausnahme Deklaration) jeden catch-Block. Es ist kein Pendant zum **END_CATCH** -Makro vorhanden. der catch-Block endet mit der schließenden geschweifte Klammer.
+   Mit den-Schlüsselwörtern **`catch`** beginnt das-Schlüsselwort (mit seiner Ausnahme Deklaration) jeden catch-Block. Es ist kein Pendant zum **END_CATCH** -Makro vorhanden. der catch-Block endet mit der schließenden geschweifte Klammer.
 
 3. Der Throw-Ausdruck:
 
-   Die Makros verwenden **THROW_LAST** , um die aktuelle Ausnahme erneut auszulösen. Das **throw** -Schlüsselwort ohne Argument hat denselben Effekt.
+   Die Makros verwenden **THROW_LAST** , um die aktuelle Ausnahme erneut auszulösen. Das **`throw`** Schlüsselwort ohne Argument hat denselben Effekt.
 
 ## <a name="doing-the-conversion"></a><a name="_core_doing_the_conversion"></a>Durchführung der Konvertierung
 
@@ -77,17 +77,17 @@ Ein weiterer Unterschied ist die Syntax. Die Syntax für Makros und Schlüsselw�
 
 2. Ersetzen oder löschen Sie alle Vorkommen der folgenden Makros:
 
-   **Versuchen** Sie es (durch **try**ersetzen).
+   **Versuchen** Sie es (ersetzen Sie es durch **`try`** ).
 
-   **Catch** (durch **catch**ersetzen)
+   **Catch** (durch ersetzen **`catch`** )
 
-   **AND_CATCH** (durch **catch**ersetzen)
+   **AND_CATCH** (durch Ersetzen ersetzt **`catch`** )
 
    **END_CATCH** (Löschen)
 
-   **Throw** (durch **throw**ersetzen)
+   **Throw** (durch ersetzen **`throw`** )
 
-   **THROW_LAST** (durch **throw**ersetzen)
+   **THROW_LAST** (durch Ersetzen ersetzt **`throw`** )
 
 3. Ändern Sie die Makro Argumente so, dass Sie gültige Ausnahme Deklarationen bilden.
 
@@ -95,7 +95,7 @@ Ein weiterer Unterschied ist die Syntax. Die Syntax für Makros und Schlüsselw�
 
    [!code-cpp[NVC_MFCExceptions#6](codesnippet/cpp/exceptions-converting-from-mfc-exception-macros_1.cpp)]
 
-   zu
+   auf
 
    [!code-cpp[NVC_MFCExceptions#7](codesnippet/cpp/exceptions-converting-from-mfc-exception-macros_2.cpp)]
 
@@ -111,6 +111,6 @@ Der Code im nächsten Beispiel verwendet die C++ Exception-Schlüsselwörter, da
 
 Weitere Informationen finden Sie unter [Ausnahmen: Verwenden von MFC-Makros und C++-Ausnahmen](exceptions-using-mfc-macros-and-cpp-exceptions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausnahmebehandlung](exception-handling-in-mfc.md)<br/>

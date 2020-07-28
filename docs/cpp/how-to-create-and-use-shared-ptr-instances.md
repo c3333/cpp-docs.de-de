@@ -1,15 +1,15 @@
 ---
-title: 'Vorgehensweise: Erstellen und Verwenden von shared_ptr Instanzen'
+title: 'Vorgehensweise: Erstellen und Verwenden von shared_ptr-Instanzen'
 ms.custom: how-to
 ms.date: 11/19/2019
 ms.topic: conceptual
 ms.assetid: 7d6ebb73-fa0d-4b0b-a528-bf05de96518e
-ms.openlocfilehash: 9820e4cd2d1b981d82760fc1cea4e07c85792177
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 44d375f72cf409df1e67b72dd76e196051dacf93
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74245832"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87187958"
 ---
 # <a name="how-to-create-and-use-shared_ptr-instances"></a>Vorgehensweise: Erstellen und Verwenden von shared_ptr Instanzen
 
@@ -72,17 +72,17 @@ int main()
 
 ## <a name="example-1"></a>Beispiel 1
 
-Verwenden Sie nach Möglichkeit die Funktion [make_shared](../standard-library/memory-functions.md#make_shared) zum Erstellen eines `shared_ptr`, wenn die Speicherressource zum ersten Mal erstellt wird. `make_shared` ist Ausnahme sicher. Die Funktion verwendet den gleichen Aufruf zum Zuweisen des Arbeitsspeichers für den Kontrollblock und die Ressource, wodurch der Konstruktionsmehraufwand verringert wird. Wenn Sie `make_shared` nicht verwenden, müssen Sie einen expliziten `new`-Ausdruck zum Erstellen des Objekts verwenden, bevor Sie es an den `shared_ptr`-Konstruktor übergeben. Das folgende Beispiel zeigt verschiedene Möglichkeiten zum Deklarieren und Initialisieren eines `shared_ptr` zusammen mit einem neuen Objekt.
+Verwenden Sie nach Möglichkeit die Funktion [make_shared](../standard-library/memory-functions.md#make_shared) zum Erstellen eines `shared_ptr`, wenn die Speicherressource zum ersten Mal erstellt wird. `make_shared` ist ausnahmesicher. Die Funktion verwendet den gleichen Aufruf zum Zuweisen des Arbeitsspeichers für den Kontrollblock und die Ressource, wodurch der Konstruktionsmehraufwand verringert wird. Wenn Sie nicht verwenden `make_shared` , müssen Sie einen expliziten Ausdruck verwenden, **`new`** um das Objekt zu erstellen, bevor Sie es an den- `shared_ptr` Konstruktor übergeben. Das folgende Beispiel zeigt verschiedene Möglichkeiten zum Deklarieren und Initialisieren eines `shared_ptr` zusammen mit einem neuen Objekt.
 
 [!code-cpp[stl_smart_pointers#1](codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_1.cpp)]
 
-## <a name="example-2"></a>Beispiel 2
+## <a name="example-2"></a>Beispiel 2
 
 Im folgenden Beispiel wird veranschaulicht, wie `shared_ptr`-Instanzen deklariert und initialisiert werden, die den gemeinsamen Besitz eines Objekts übernehmen, das bereits von einem anderen `shared_ptr` zugeordnet wurde. Angenommen, `sp2` ist ein initialisierter `shared_ptr`.
 
 [!code-cpp[stl_smart_pointers#2](codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_2.cpp)]
 
-## <a name="example-3"></a>Beispiel 3
+## <a name="example-3"></a>Beispiel 3
 
 `shared_ptr` ist auch in Containern der C++ Standardbibliothek hilfreich, wenn Sie die Algorithmen verwenden, die Elemente kopieren. Sie können Elemente in einem `shared_ptr` umschließen und sie dann in andere Container kopieren. Voraussetzung ist, dass der zugrunde liegende Arbeitsspeicher solange gültig ist, wie Sie ihn benötigen, und nicht länger. Im folgenden Beispiel wird die Verwendung des `remove_copy_if`-Algorithmus für `shared_ptr`-Instanzen in einem Vektor dargestellt.
 
@@ -90,7 +90,7 @@ Im folgenden Beispiel wird veranschaulicht, wie `shared_ptr`-Instanzen deklarier
 
 ## <a name="example-4"></a>Beispiel 4
 
-Sie können `dynamic_pointer_cast`, `static_pointer_cast` und `const_pointer_cast` zum Umwandeln eines `shared_ptr` verwenden. Diese Funktionen ähneln den `dynamic_cast`-, `static_cast`- und `const_cast`-Operatoren. Im folgenden Beispiel wird das Testen des abgeleiteten Typs jedes Elements in einem Vektor mit `shared_ptr` für Basisklassen sowie das Kopieren der Elemente und das Anzeigen der zugehörigen Informationen gezeigt.
+Sie können `dynamic_pointer_cast`, `static_pointer_cast` und `const_pointer_cast` zum Umwandeln eines `shared_ptr` verwenden. Diese Funktionen ähneln den **`dynamic_cast`** **`static_cast`** **`const_cast`** Operatoren, und. Im folgenden Beispiel wird das Testen des abgeleiteten Typs jedes Elements in einem Vektor mit `shared_ptr` für Basisklassen sowie das Kopieren der Elemente und das Anzeigen der zugehörigen Informationen gezeigt.
 
 [!code-cpp[stl_smart_pointers#5](codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_4.cpp)]
 
@@ -116,6 +116,6 @@ Das folgende Beispiel zeigt, wie der `shared_ptr` verschiedene Vergleichsoperato
 
 [!code-cpp[stl_smart_pointers#3](codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_6.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Intelligente Zeiger (Modern C++)](smart-pointers-modern-cpp.md)

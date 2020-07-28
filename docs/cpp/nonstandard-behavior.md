@@ -6,18 +6,18 @@ helpviewer_keywords:
 - Microsoft-specific, compiler behavior
 - nonstandard behavior, compliance and compatibility
 ms.assetid: a57dea27-dc79-4f64-8a83-017e84841773
-ms.openlocfilehash: d3bb4ca843833cfe9e027f694f25c989895487bb
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f31938c78e443bb53a286f79661d86b7a6e9edbc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80161034"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87186541"
 ---
 # <a name="nonstandard-behavior"></a>Nicht dem Standard entsprechendes Verhalten
 
-In den folgenden Abschnitten werden einige der Stellen aufgelistet, an denen die C++ Microsoft-Implementierung von nicht C++ dem Standard entspricht. Die unten angegebenen Abschnittszahlen beziehen sich auf die Abschnittszahlen im C++ 11-Standard (ISO/IEC 14882:2011(E)).
+In den folgenden Abschnitten werden einige der Stellen aufgelistet, an denen die Microsoft-Implementierung von C++ nicht mit dem C++-Standard übereinstimmt. Die unten angegebenen Abschnittszahlen beziehen sich auf die Abschnittszahlen im C++ 11-Standard (ISO/IEC 14882:2011(E)).
 
-Die Liste der compilerlimits, die sich von den im C++ Standard definierten unterscheiden, wird in [compilerlimits](../cpp/compiler-limits.md)angegeben.
+Die Liste der compilerlimits, die sich von den im C++-Standard definierten unterscheiden, wird in [compilerlimits](../cpp/compiler-limits.md)angegeben.
 
 ## <a name="covariant-return-types"></a>Kovariante Rückgabetypen
 
@@ -38,7 +38,7 @@ class B : virtual A
 
 ## <a name="binding-nondependent-names-in-templates"></a>Bindung von nicht abhängigen Namen in Vorlagen
 
-Der Microsoft C++ -Compiler unterstützt derzeit keine Bindung von nicht abhängigen Namen, wenn eine Vorlage anfänglich verarbeitet wird. Dies entspricht nicht Abschnitt 14.6.3, Absatz 7 der C++ ISO-Spezifikation. Das kann zu Überladungen führen, die deklariert werden, nachdem die Vorlage (aber bevor die Vorlage instanziiert wird) angezeigt werden kann.
+Der Microsoft C++-Compiler unterstützt derzeit keine Bindung von nicht abhängigen Namen, wenn eine Vorlage anfänglich verarbeitet wird. Dies entspricht nicht Abschnitt 14.6.3, Absatz 7 der C++ ISO-Spezifikation. Das kann zu Überladungen führen, die deklariert werden, nachdem die Vorlage (aber bevor die Vorlage instanziiert wird) angezeigt werden kann.
 
 ```cpp
 #include <iostream>
@@ -75,7 +75,7 @@ Weitere Informationen zu Ausnahme Spezifikationen finden Sie unter [Ausnahme Spe
 
 ## <a name="char_traitseof"></a>char_traits::eof()
 
-Der C++ Standardstatus, dass [char_traits:: EOF](../standard-library/char-traits-struct.md#eof) keinem gültigen `char_type` Wert entsprechen darf. Der Microsoft C++ -Compiler erzwingt diese Einschränkung für Typ " **char**", aber nicht für den Typ " **wchar_t**". Dies entspricht nicht der Anforderung in Tabelle 62, in Abschnitt 12.1.1 der C++ ISO-Spezifikation. Das unten gezeigte Beispiel veranschaulicht dies.
+Der C++-Standard gibt an, dass [char_traits:: EOF](../standard-library/char-traits-struct.md#eof) keinem gültigen Wert entsprechen darf `char_type` . Der Microsoft C++-Compiler erzwingt diese Einschränkung für Typ **`char`** , jedoch nicht für Typ **`wchar_t`** . Dies entspricht nicht der Anforderung in Tabelle 62, in Abschnitt 12.1.1 der C++ ISO-Spezifikation. Das unten gezeigte Beispiel veranschaulicht dies.
 
 ```cpp
 #include <iostream>
@@ -94,4 +94,4 @@ int main()
 
 ## <a name="storage-location-of-objects"></a>Speicherort für Objekte
 
-Der C++-Standard (Abschnitt 1,8, Absatz 6) erfordert vollständige C++-Objekte, um eindeutige Speicherpositionen zu haben. Bei Microsoft C++gibt es jedoch Fälle, in denen Typen ohne Datenmember für die Lebensdauer des Objekts einen Speicherort mit anderen Typen gemeinsam verwenden.
+Der C++-Standard (Abschnitt 1,8, Absatz 6) erfordert vollständige C++-Objekte, um eindeutige Speicherpositionen zu haben. Bei Microsoft C++ gibt es jedoch Fälle, in denen Typen ohne Datenmember für die Lebensdauer des Objekts einen Speicherort mit anderen Typen gemeinsam verwenden.

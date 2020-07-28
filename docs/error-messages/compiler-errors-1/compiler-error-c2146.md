@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2146
 ms.assetid: 6bfb7de6-6723-4486-9350-c66ef88d7a64
-ms.openlocfilehash: 8dc7b521243c4eafdc22fab851812b6c12b004cf
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: c1a790902af92d72eb73be7fc2321762ab01fd8c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74755914"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214762"
 ---
 # <a name="compiler-error-c2146"></a>Compilerfehler C2146
 
 Syntax Fehler: Fehlendes "Token" vor Bezeichner "Bezeichner"
 
-Der Compiler hat `token` erwartet und `identifier` gefunden.  Mögliche Ursachen:
+Der Compiler hat `token` Stattdessen erwartet und gefunden `identifier` .  Mögliche Ursachen:
 
 1. Rechtschreibfehler oder Groß-/Kleinschreibung
 
@@ -46,7 +46,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio .NET 2003: Fehlendes `typename` Schlüsselwort erfolgt ist.
+Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio .NET 2003: Fehlendes **`typename`** Schlüsselwort abgeschlossen wurde.
 
 Das folgende Beispiel wird in Visual Studio .NET 2002 kompiliert, schlägt jedoch in Visual Studio .NET 2003 fehl:
 

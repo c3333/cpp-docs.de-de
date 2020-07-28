@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - Make function
 ms.assetid: 66704143-df99-4a95-904d-ed99607e1034
-ms.openlocfilehash: ffd0967b741475b260eef80ec24d56874a6bcb1f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0f2e81e3cd757214805817af2a355a93c1cfd096
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80213810"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220469"
 ---
 # <a name="make-function"></a>Make-Funktion
 
@@ -165,7 +165,7 @@ ComPtr<T> Make();
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine benutzerdefinierte Klasse, die von `WRL::RuntimeClass`erbt.
+Eine benutzerdefinierte Klasse, die von erbt `WRL::RuntimeClass` .
 
 *TArg1*<br/>
 Der Typ des Arguments 1, das an die angegebene Lauf Zeit Klasse übermittelt wird.
@@ -223,7 +223,7 @@ Argument 9, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Ein `ComPtr<T>` Objekt, wenn erfolgreich; Andernfalls `nullptr`.
+Ein- `ComPtr<T>` Objekt, wenn erfolgreich, andernfalls **`nullptr`** .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -237,4 +237,4 @@ Weitere Informationen finden Sie unter Gewusst [wie: direktes Instanziieren von 
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)
+[Microsoft:: WRL-Namespace](microsoft-wrl-namespace.md)

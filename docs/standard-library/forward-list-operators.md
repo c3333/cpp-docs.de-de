@@ -16,18 +16,18 @@ helpviewer_keywords:
 - std::operatoroperator&gt=; (forward_list)
 - std::operatoroperator&lt; (forward_list)
 - std::operatoroperator&lt;= (forward_list)
-ms.openlocfilehash: 1ddfb56c7ff68ec10c7bb56af3495e4042acb83c
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: beb02a8353c6c5187dd0fa0171518c753eee7868
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427086"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87193340"
 ---
 # <a name="ltforward_listgt-operators"></a>&lt;forward_list&gt;-Operatoren
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
-Testet, ob das Weiterleitungslistenobjekt links vom Operator gleich dem Weiterleitungslistenobjekt rechts vom Operator ist.
+Testet, ob das Listenobjekt links vom Operator gleich dem Listenobjekt rechts vom Operator ist
 
 ```cpp
 bool operator==(
@@ -37,19 +37,19 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `forward_list`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `forward_list`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Vorlagen Funktion überlädt `operator==`, um zwei Objekte der Klassen Vorlagen `forward_list`zu vergleichen. Die Funktion gibt `distance(left.begin(), end()) == distance(right.begin(),right.end()) && equal(left. begin(),left. end(),right.begin())`zurück.
+Diese Vorlagen Funktion überlädt `operator==` , um zwei Objekte der Klassen Vorlage zu vergleichen `forward_list` . Die Funktion gibt `distance(left.begin(), end()) == distance(right.begin(),right.end()) && equal(left. begin(),left. end(),right.begin())` zurück.
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
-Testet, ob das Listenobjekt links vom Operator ungleich dem Listenobjekt rechts vom Operator ist
+Testet, ob das Weiterleitungslistenobjekt links vom Operator ungleich dem Listenobjekt rechts vom Operator ist.
 
 ```cpp
 bool operator!=(
@@ -59,23 +59,23 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `forward_list`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `forward_list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Listen ungleich sind; **FALSE**, wenn die Listen gleich sind.
+**`true`**, wenn die Listen nicht gleich sind. , **`false`** Wenn die Listen gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die dritte Vorlagenfunktion gibt `!(left == right)` zurück.
+Diese Vorlagenfunktion gibt `!(left == right)` zurück.
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
-Testet, ob das Listenobjekt links vom Operator kleiner als das Listenobjekt auf der rechten Seite ist.
+Testet, ob das Listenobjekt links vom Operator kleiner als das Listenobjekt auf der rechten Seite ist
 
 ```cpp
 bool operator<(
@@ -85,23 +85,23 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `forward_list`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `forward_list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Liste links vom Operator kleiner als, aber ungleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Liste links vom Operator kleiner als, aber nicht gleich der Liste rechts vom Operator ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Vorlagen Funktion überlädt `operator<`, um zwei Objekte der Klassen Vorlagen `forward_list`zu vergleichen. Die Funktion gibt `lexicographical_compare(lhs. begin(), lhs. end(), rhs.begin(), rhs.end())`zurück.
+Diese Vorlagen Funktion überlädt `operator<` , um zwei Objekte der Klassen Vorlage zu vergleichen `forward_list` . Die Funktion gibt `lexicographical_compare(lhs. begin(), lhs. end(), rhs.begin(), rhs.end())` zurück.
 
-## <a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
-Testet, ob das Listenobjekt links vom Operator kleiner als oder gleich dem Listenobjekt rechts vom Operator ist.
+Testet, ob das Listenobjekt links vom Operator kleiner als oder gleich dem Listenobjekt rechts vom Operator ist
 
 ```cpp
 bool operator<=(
@@ -111,23 +111,23 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `forward_list`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `forward_list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die dritte Vorlagenfunktion gibt `!(right < left)` zurück.
+Diese Vorlagenfunktion gibt `!(right < left)` zurück.
 
-## <a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
-Testet, ob das Listenobjekt links vom Operator größer als das Listenobjekt auf der rechten Seite ist.
+Testet, ob das Listenobjekt links vom Operator größer als das Listenobjekt auf der rechten Seite ist
 
 ```cpp
 bool operator>(
@@ -137,23 +137,23 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `forward_list`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `forward_list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die dritte Vorlagenfunktion gibt `right < left` zurück.
+Diese Vorlagenfunktion gibt `right < left` zurück.
 
-## <a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
-Testet, ob das Listenobjekt links vom Operator größer als oder gleich dem Listenobjekt rechts vom Operator ist
+Testet, ob das Listenobjekt links vom Operator größer als oder gleich dem Listenobjekt rechts vom Operator ist.
 
 ```cpp
 bool operator>=(
@@ -163,16 +163,16 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `forward_list`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `forward_list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die vorwärts Liste links vom Operator größer als oder gleich der vorwärts Liste auf der rechten Seite des Operators ist. andernfalls **false**.
+**`true`**, wenn die vorwärts Liste links vom Operator größer als oder gleich der vorwärts Liste auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `!(left < right)` zurück.
+Diese Vorlagenfunktion gibt `!(left < right)` zurück.

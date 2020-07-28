@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - .ERRNZ directive
 ms.assetid: 373a9222-140f-4505-8dec-ef370a069ebf
-ms.openlocfilehash: a53bf013e02c4a7d541b7574e5ab38cc7257591b
-ms.sourcegitcommit: 0781c69b22797c41630601a176b9ea541be4f2a3
+ms.openlocfilehash: dff5fa6a1b35387b625f1aaae20a71c2d2d7547b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75313885"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87190805"
 ---
-# <a name="errnz"></a>**.ERRNZ**
+# `.ERRNZ`
 
 Generiert einen Fehler, wenn *Expression* true (ungleich null) ist.
 
 ## <a name="syntax"></a>Syntax
 
-> **. ERRNZ** - *Ausdruck* ⟦ __,__ *Message*⟧
+> **`.ERRNZ`***Expression* ⟦ **`,`** *Message*⟧
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Direktivenverweis](directives-reference.md)\
 [MASM-BNF-Grammatik](masm-bnf-grammar.md)

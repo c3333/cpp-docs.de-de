@@ -2,12 +2,12 @@
 title: Partielle Klassen (C++/CX)
 ms.date: 12/30/2016
 ms.assetid: 69d93575-636c-4564-8cca-6dfba0c7e328
-ms.openlocfilehash: 703f12498e0f2c68448e2b3896d3d5f906aba779
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 1f5583354481248e8df201be200fe99da61791dd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740472"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87185462"
 ---
 # <a name="partial-classes-ccx"></a>Partielle Klassen (C++/CX)
 
@@ -17,23 +17,23 @@ Eine partielle Klasse ist ein Konstrukt, das Szenarien unterstützt, in denen Si
 
 Um eine partielle Klasse zu definieren, verwenden Sie das Schlüsselwort `partial` direkt vor dem Klassenschlüssel. Andernfalls wäre dies eine normale Klassendefinition. Ein Schlüsselwort wie `partial ref class` ist ein Kontextschlüsselwort, das Leerzeichen enthält. Partielle Definitionen werden in den folgenden Konstrukten unterstützt.
 
-- `class` oder `struct`
+- **`class`** oder **`struct`**
 
-- `ref class` oder `ref struct`
+- **`ref class`** oder **`ref struct`**
 
-- `value class` oder `value struct`
+- **`value class`** oder **`value struct`**
 
-- `enum` oder `enum class`
+- **`enum`** oder **`enum class`**
 
-- `ref interface`, `interface class`, `interface struct`oder `__interface`
+- `ref interface`, **`interface class`** , **`interface struct`** oder **' __interface**
 
-- `union`
+- **`union`**
 
-Dieses Beispiel zeigt eine partielle `ref class`:
+Dieses Beispiel veranschaulicht eine partielle **`ref class`** :
 
 [!code-cpp[cx_partial#01](../cppcx/codesnippet/CPP/partialclassexample/class1.h#01)]
 
-## <a name="contents"></a>Inhalt
+## <a name="contents"></a>Inhalte
 
 Eine partielle Klassendefinition kann alles enthalten, was die vollständige Klassendefinition enthalten kann, wenn das Schlüsselwort `partial` ausgelassen wird. Mit einer Ausnahme schließt dies jedes gültige Konstrukt ein, z. B. Basisklassen, Datenmember, Memberfunktionen, Enumerationen, Friend-Deklarationen und Attribute. Inlinedefinitionen statischer Datenmember sind zulässig.
 
@@ -61,7 +61,7 @@ Es kann null oder mehr partielle Klassendefinitionen für jede vollständige Def
 
 Jede partielle Klassendefinition einer Klasse muss lexikalisch der einen vollständigen Definition dieser Klasse vorausgehen, braucht jedoch Vorwärtsdeklarationen der Klasse nicht vorauszugehen. Wenn es keine vollständige Definition der Klasse gibt, können die partiellen Klassendeklarationen nur Vorwärtsdeklarationen sein.
 
-Alle Klassenschlüssel, z. B. `class` und `struct` , müssen übereinstimmen. Beispielsweise ist der Code `partial class X {}; struct X {};`ein.
+Alle Klassen Schlüssel, z **`class`** . b. und, müssen mit identisch sein **`struct`** . Beispielsweise ist der Code `partial class X {}; struct X {};`ein.
 
 Das folgende Beispiel zeigt Anzahl und Reihenfolge. Bei der letzten partiellen Deklaration tritt ein Fehler auf, da die Klasse bereits definiert ist.
 
@@ -85,7 +85,7 @@ Eine partielle Klasse kann keine Vorlage sein.
 
 Eine partielle Klasse kann nicht über eine Übersetzungseinheit hinausgehen.
 
-Das Schlüsselwort `partial` wird nur in Verbindung mit dem Schlüsselwort `ref class` oder dem Schlüsselwort `value class` unterstützt.
+Das `partial` Schlüsselwort wird nur in Kombination mit dem- **`ref class`** Schlüsselwort oder dem **`value class`** Schlüsselwort unterstützt.
 
 ### <a name="examples"></a>Beispiele
 
@@ -95,8 +95,8 @@ Im folgenden Beispiel wird die Klasse `Address` für zwei Codedateien definiert.
 
 [!code-cpp[cx_partial#09](../cppcx/codesnippet/CPP/partialclassexample/address.h#09)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Typsystem](../cppcx/type-system-c-cx.md)<br/>
-[C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
-[Referenz zu Namespaces](../cppcx/namespaces-reference-c-cx.md)
+[Typensystem](../cppcx/type-system-c-cx.md)<br/>
+[C++/CX-Sprachreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
+[Namespaces-Referenz](../cppcx/namespaces-reference-c-cx.md)

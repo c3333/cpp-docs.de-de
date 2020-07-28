@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - C4611
 ms.assetid: bd90d0a6-75f9-4e97-968d-dda6773e9fd8
-ms.openlocfilehash: 7de4cdf0eacb1b9848a4350f1d223da1fd47d1fc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2ce261b36344126d541a9b453c88f7f8289ecba0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80198301"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214333"
 ---
 # <a name="compiler-warning-level-4-c4611"></a>Compilerwarnung (Stufe 1) C4600
 
-die Interaktion zwischen "Function" C++ und der Objekt Zerstörung ist nicht portabel.
+die Interaktion zwischen "Function" und der C++-Objekt Zerstörung ist nicht portabel.
 
-Auf einigen Plattformen unterstützen C++ Funktionen, die **catch** enthalten, möglicherweise keine Objekt Semantik der Zerstörung, wenn Sie außerhalb des gültigen Bereichs liegen.
+Auf einigen Plattformen unterstützen Funktionen, die enthalten, **`catch`** möglicherweise keine C++-Objekt Semantik der Zerstörung, wenn außerhalb des gültigen Bereichs.
 
-Um unerwartetes Verhalten zu vermeiden, sollten Sie **catch** in-Funktionen vermeiden, die über Konstruktoren und debugtoren verfügen.
+Um unerwartetes Verhalten zu vermeiden, sollten Sie nicht **`catch`** in Funktionen verwenden, die über Konstruktoren und debugtoren verfügen.
 
 Diese Warnung wird nur einmal ausgegeben. siehe [pragma warning](../../preprocessor/warning.md).

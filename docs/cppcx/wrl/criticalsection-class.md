@@ -19,16 +19,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::CriticalSection::CriticalSection, constructor
 - Microsoft::WRL::Wrappers::CriticalSection::TryLock method
 ms.assetid: f2e0a024-71a3-4f6b-99ea-d93a4a608ac4
-ms.openlocfilehash: 5deb89e795d1886ca316886ae1ea260ce1f36fd1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b95e512f89ee1ff32ca9f1bea51bce643d185a2e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372589"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220521"
 ---
 # <a name="criticalsection-class"></a>CriticalSection-Klasse
 
-Stellt ein kritisches Abschnittsobjekt dar.
+Stellt ein kritisches Abschnitts Objekt dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,44 +42,44 @@ class CriticalSection;
 
 Name                                                        | BESCHREIBUNG
 ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------
-[CriticalSection::CriticalSection](#criticalsection)        | Initialisiert ein Synchronisierungsobjekt, das einem Mutex-Objekt ähnelt, aber nur von den Threads eines einzelnen Prozesses verwendet werden kann.
-[CriticalSection::-CriticalSection](#tilde-criticalsection) | Deinitialisiert und zerstört das `CriticalSection` aktuelle Objekt.
+[CriticalSection:: CriticalSection](#criticalsection)        | Initialisiert ein Synchronisierungs Objekt, das einem Mutex-Objekt ähnelt, aber nur von den Threads eines einzelnen Prozesses verwendet werden kann.
+[CriticalSection:: ~ CriticalSection](#tilde-criticalsection) | Deinitialisiert und zerstört das aktuelle- `CriticalSection` Objekt.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                 | BESCHREIBUNG
+name                                 | BESCHREIBUNG
 ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------
-[CriticalSection::IsValid](#isvalid) | Gibt an, ob der aktuelle kritische Abschnitt gültig ist.
-[CriticalSection::Lock](#lock)       | Wartet auf den Besitz des angegebenen kritischen Abschnittsobjekts. Die Funktion wird zurückgegeben, wenn dem aufrufenden Thread der Besitz gewährt wird.
-[CriticalSection::TryLock](#trylock) | Versucht, einen kritischen Abschnitt ohne Blockierung einzugeben. Wenn der Aufruf erfolgreich ist, übernimmt der aufrufende Thread den Besitz des kritischen Abschnitts.
+[CriticalSection:: IsValid](#isvalid) | Gibt an, ob der aktuelle kritische Abschnitt gültig ist.
+[CriticalSection:: Lock](#lock)       | Wartet auf den Besitz des angegebenen kritischen Abschnitts Objekts. Die Funktion gibt zurück, wenn dem aufrufenden Thread der Besitz erteilt wird.
+[CriticalSection:: TryLock](#trylock) | Versucht, einen kritischen Abschnitt einzugeben, ohne zu blockieren. Wenn der Aufruf erfolgreich ist, übernimmt der aufrufende Thread den Besitz des kritischen Abschnitts.
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
 Name                        | BESCHREIBUNG
 --------------------------- | ----------------------------------------
-[CriticalSection::cs_](#cs) | Deklariert ein kritisches Abschnittsdatenelement.
+[CriticalSection:: cs_](#cs) | Deklariert einen kritischen Abschnitts Datenmember.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `CriticalSection`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** corewrappers.h
+**Header:** corewrappers. h
 
-**Namespace:** Microsoft::WRL::Wrappers
+**Namespace:** Microsoft:: WRL:: Wrapper
 
-## <a name="criticalsectioncriticalsection"></a><a name="tilde-criticalsection"></a>CriticalSection::-CriticalSection
+## <a name="criticalsectioncriticalsection"></a><a name="tilde-criticalsection"></a>CriticalSection:: ~ CriticalSection
 
-Deinitialisiert und zerstört das `CriticalSection` aktuelle Objekt.
+Deinitialisiert und zerstört das aktuelle- `CriticalSection` Objekt.
 
 ```cpp
 WRL_NOTHROW ~CriticalSection();
 ```
 
-## <a name="criticalsectioncriticalsection"></a><a name="criticalsection"></a>CriticalSection::CriticalSection
+## <a name="criticalsectioncriticalsection"></a><a name="criticalsection"></a>CriticalSection:: CriticalSection
 
-Initialisiert ein Synchronisierungsobjekt, das einem Mutex-Objekt ähnelt, aber nur von den Threads eines einzelnen Prozesses verwendet werden kann.
+Initialisiert ein Synchronisierungs Objekt, das einem Mutex-Objekt ähnelt, aber nur von den Threads eines einzelnen Prozesses verwendet werden kann.
 
 ```cpp
 explicit CriticalSection(
@@ -89,16 +89,16 @@ explicit CriticalSection(
 
 ### <a name="parameters"></a>Parameter
 
-*Spincount*<br/>
-Die Spinanzahl für das kritische Abschnittsobjekt. Der Standardwert ist 0.
+*spincount*<br/>
+Die drehanzahl für das kritische Abschnitts Objekt. Der Standardwert ist 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zu kritischen Abschnitten und `InitializeCriticalSectionAndSpinCount` Spincounts `Synchronization` finden Sie in der Funktion im Abschnitt der Windows-API-Dokumentation.
+Weitere Informationen zu kritischen Abschnitten und spincounts finden Sie unter der- `InitializeCriticalSectionAndSpinCount` Funktion im `Synchronization` Abschnitt der Windows-API-Dokumentation.
 
-## <a name="criticalsectioncs_"></a><a name="cs"></a>CriticalSection::cs_
+## <a name="criticalsectioncs_"></a><a name="cs"></a>CriticalSection:: cs_
 
-Deklariert ein kritisches Abschnittsdatenelement.
+Deklariert einen kritischen Abschnitts Datenmember.
 
 ```cpp
 CRITICAL_SECTION cs_;
@@ -106,9 +106,9 @@ CRITICAL_SECTION cs_;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieses Datenelement ist geschützt.
+Dieser Datenmember ist geschützt.
 
-## <a name="criticalsectionisvalid"></a><a name="isvalid"></a>CriticalSection::IsValid
+## <a name="criticalsectionisvalid"></a><a name="isvalid"></a>CriticalSection:: IsValid
 
 Gibt an, ob der aktuelle kritische Abschnitt gültig ist.
 
@@ -118,11 +118,11 @@ bool IsValid() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Standardmäßig wird immer **true**zurückgegeben.
+Standardmäßig gibt immer zurück **`true`** .
 
-## <a name="criticalsectionlock"></a><a name="lock"></a>CriticalSection::Lock
+## <a name="criticalsectionlock"></a><a name="lock"></a>CriticalSection:: Lock
 
-Wartet auf den Besitz des angegebenen kritischen Abschnittsobjekts. Die Funktion wird zurückgegeben, wenn dem aufrufenden Thread der Besitz gewährt wird.
+Wartet auf den Besitz des angegebenen kritischen Abschnitts Objekts. Die Funktion gibt zurück, wenn dem aufrufenden Thread der Besitz erteilt wird.
 
 ```cpp
 SyncLock Lock();
@@ -134,20 +134,20 @@ SyncLock Lock();
 
 ### <a name="parameters"></a>Parameter
 
-*Cs*<br/>
-Ein vom Benutzer angegebenes kritisches Abschnittsobjekt.
+*CS*<br/>
+Ein vom Benutzer angegebenes kritisches Abschnitts Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Sperrobjekt, das zum Entsperren des aktuellen kritischen Abschnitts verwendet werden kann.
+Ein Sperr Objekt, das zum Entsperren des aktuellen kritischen Abschnitts verwendet werden kann.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `Lock` erste Funktion wirkt sich auf das aktuelle kritische Abschnittsobjekt aus. Die `Lock` zweite Funktion betrifft einen vom Benutzer angegebenen kritischen Abschnitt.
+Die erste `Lock` Funktion wirkt sich auf das aktuelle kritische Abschnitts Objekt aus. Die zweite `Lock` Funktion wirkt sich auf einen vom Benutzer angegebenen kritischen Abschnitt aus.
 
-## <a name="criticalsectiontrylock"></a><a name="trylock"></a>CriticalSection::TryLock
+## <a name="criticalsectiontrylock"></a><a name="trylock"></a>CriticalSection:: TryLock
 
-Versucht, einen kritischen Abschnitt ohne Blockierung einzugeben. Wenn der Aufruf erfolgreich ist, übernimmt der aufrufende Thread den Besitz des kritischen Abschnitts.
+Versucht, einen kritischen Abschnitt einzugeben, ohne zu blockieren. Wenn der Aufruf erfolgreich ist, übernimmt der aufrufende Thread den Besitz des kritischen Abschnitts.
 
 ```cpp
 SyncLock TryLock();
@@ -159,13 +159,13 @@ static SyncLock TryLock(
 
 ### <a name="parameters"></a>Parameter
 
-*Cs*<br/>
-Ein vom Benutzer angegebenes kritisches Abschnittsobjekt.
+*CS*<br/>
+Ein vom Benutzer angegebenes kritisches Abschnitts Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn der kritische Abschnitt erfolgreich eingegeben wurde oder der aktuelle Thread bereits Eigentümer des kritischen Abschnitts ist. Null, wenn ein anderer Thread bereits den kritischen Abschnitt besitzt.
+Ein Wert ungleich 0 (null), wenn der kritische Abschnitt erfolgreich eingegeben wurde oder der aktuelle Thread bereits den kritischen Abschnitt besitzt. 0 (null), wenn ein anderer Thread bereits den kritischen Abschnitt besitzt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `TryLock` erste Funktion wirkt sich auf das aktuelle kritische Abschnittsobjekt aus. Die `TryLock` zweite Funktion betrifft einen vom Benutzer angegebenen kritischen Abschnitt.
+Die erste `TryLock` Funktion wirkt sich auf das aktuelle kritische Abschnitts Objekt aus. Die zweite `TryLock` Funktion wirkt sich auf einen vom Benutzer angegebenen kritischen Abschnitt aus.

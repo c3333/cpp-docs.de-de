@@ -15,16 +15,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::ImplementsHelper::FillArrayWithIid method
 - Microsoft::WRL::Details::ImplementsHelper::IidCount constant
 ms.assetid: b857ba80-81bd-4e53-92b6-210991954243
-ms.openlocfilehash: e33842f574df5617fb40c5b3f6bb8324d5ba7c1e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d7908670b67df7dbf7b2b74e98f8b59cf30f8e96
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371399"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87184942"
 ---
 # <a name="implementshelper-structure"></a>ImplementsHelper-Struktur
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,20 +35,20 @@ friend struct Details::ImplementsHelper;
 
 ### <a name="parameters"></a>Parameter
 
-*RuntimeClassFlagsT*<br/>
-Ein Feld mit Flags, das einen oder mehrere [RuntimeClassType-Enumeratoren](runtimeclasstype-enumeration.md) angibt.
+*Runtimeclassflagst*<br/>
+Ein Feld von Flags, das einen oder mehrere [runtimeclasstype](runtimeclasstype-enumeration.md) -Enumeratoren angibt.
 
-*ILst*<br/>
+*Ilst*<br/>
 Eine Liste der Schnittstellen-IDs.
 
-*IsDelegateToClass*<br/>
-Geben Sie **true an,** wenn die aktuelle Instanz von `Implements` eine Basisklasse der ersten Schnittstellen-ID in *ILst*ist. andernfalls **false**.
+*Isdelegatedeclass*<br/>
+Geben Sie **`true`** an, ob die aktuelle Instanz von `Implements` eine Basisklasse der ersten Schnittstellen-ID in *ilst*ist, und andernfalls **`false`** .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Hilft bei der Implementierung der [Implements-Struktur.](implements-structure.md)
+Hilft [bei der Implementierung der implementierten](implements-structure.md) -Struktur.
 
-Diese Vorlage durchläuft eine Liste von Schnittstellen und fügt sie als `QueryInterface`Basisklassen sowie als Informationen hinzu, die zum Aktivieren erforderlich sind.
+Diese Vorlage durchläuft eine Liste mit Schnittstellen und fügt sie als Basisklassen und als erforderliche Informationen zum Aktivieren von hinzu `QueryInterface` .
 
 ## <a name="members"></a>Member
 
@@ -56,24 +56,24 @@ Diese Vorlage durchläuft eine Liste von Schnittstellen und fügt sie als `Query
 
 Name                                                    | BESCHREIBUNG
 ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------
-[ImplementsHelper::CanCastTo](#cancastto)               | Ruft einen Zeiger auf die angegebene Schnittstellen-ID ab.
-[ImplementsHelper::CastToUnknown](#casttounknown)       | Ruft einen Zeiger auf `IUnknown` die zugrunde `Implements` liegende Schnittstelle für die aktuelle Struktur ab.
-[ImplementsHelper::FillArrayWithIid](#fillarraywithiid) | Fügt die durch den aktuellen Vorlagenparameter Null in das angegebene Arrayelement angegebene Schnittstellen-ID ein.
-[ImplementsHelper::IidCount](#iidcount)                 | Enthält die Anzahl der implementierten Schnittstellen-IDs im aktuellen `Implements` Objekt.
+[Implemenshelper:: CanCastTo](#cancastto)               | Ruft einen Zeiger auf die angegebene Schnittstellen-ID ab.
+[Implemenshelper:: castto Unknown](#casttounknown)       | Ruft einen Zeiger auf die zugrunde liegende- `IUnknown` Schnittstelle für die aktuelle- `Implements` Struktur ab.
+[Implemenshelper:: fillarraywithiid](#fillarraywithiid) | Fügt die vom aktuellen nullte-Vorlagen Parameter angegebene Schnittstellen-ID in das angegebene Array Element ein.
+[Implemenshelper:: iidcount](#iidcount)                 | Enthält die Anzahl der implementierten Schnittstellen-IDs im aktuellen- `Implements` Objekt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `ImplementsHelper`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="implementshelpercancastto"></a><a name="cancastto"></a>ImplementsHelper::CanCastTo
+## <a name="implementshelpercancastto"></a><a name="cancastto"></a>Implemenshelper:: CanCastTo
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 HRESULT CanCastTo(
@@ -92,10 +92,10 @@ HRESULT CanCastTo(
 *riid*<br/>
 Verweis auf eine Schnittstellen-ID.
 
-*Ppv*<br/>
-Wenn dieser Vorgang erfolgreich ist, wird ein Zeiger auf die schnittstelle angezeigt, die von *riid* oder *iid*angegeben wird.
+*PPV*<br/>
+Wenn dieser Vorgang erfolgreich ist, ein Zeiger auf die durch *riid* oder *IID*angegebene Schnittstelle.
 
-*Iid*<br/>
+*IID*<br/>
 Verweis auf eine Schnittstellen-ID.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -106,9 +106,9 @@ S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
 Ruft einen Zeiger auf die angegebene Schnittstellen-ID ab.
 
-## <a name="implementshelpercasttounknown"></a><a name="casttounknown"></a>ImplementsHelper::CastToUnknown
+## <a name="implementshelpercasttounknown"></a><a name="casttounknown"></a>Implemenshelper:: castto Unknown
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 IUnknown* CastToUnknown();
@@ -116,15 +116,15 @@ IUnknown* CastToUnknown();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf die `IUnknown` zugrunde liegende Schnittstelle.
+Ein Zeiger auf die zugrunde liegende- `IUnknown` Schnittstelle.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft einen Zeiger auf `IUnknown` die zugrunde `Implements` liegende Schnittstelle für die aktuelle Struktur ab.
+Ruft einen Zeiger auf die zugrunde liegende- `IUnknown` Schnittstelle für die aktuelle- `Implements` Struktur ab.
 
-## <a name="implementshelperfillarraywithiid"></a><a name="fillarraywithiid"></a>ImplementsHelper::FillArrayWithIid
+## <a name="implementshelperfillarraywithiid"></a><a name="fillarraywithiid"></a>Implemenshelper:: fillarraywithiid
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 void FillArrayWithIid(
@@ -135,18 +135,18 @@ void FillArrayWithIid(
 ### <a name="parameters"></a>Parameter
 
 *Index*<br/>
-Ein nullbasierter Index, der das Startarrayelement für diesen Vorgang angibt. Wenn dieser Vorgang abgeschlossen ist, wird der *Index* um 1 erhöht.
+Ein NULL basierter Index, der das Start Array Element für diesen Vorgang angibt. Wenn dieser Vorgang abgeschlossen ist, wird der *Index* um 1 erhöht.
 
-*iids*<br/>
+*IIDs*<br/>
 Ein Array vom Typ IIDs.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Fügt die durch den aktuellen Vorlagenparameter Null in das angegebene Arrayelement angegebene Schnittstellen-ID ein.
+Fügt die vom aktuellen nullte-Vorlagen Parameter angegebene Schnittstellen-ID in das angegebene Array Element ein.
 
-## <a name="implementshelperiidcount"></a><a name="iidcount"></a>ImplementsHelper::IidCount
+## <a name="implementshelperiidcount"></a><a name="iidcount"></a>Implemenshelper:: iidcount
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 static const unsigned long IidCount;
@@ -154,4 +154,4 @@ static const unsigned long IidCount;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Enthält die Anzahl der implementierten Schnittstellen-IDs im aktuellen `Implements` Objekt.
+Enthält die Anzahl der implementierten Schnittstellen-IDs im aktuellen- `Implements` Objekt.

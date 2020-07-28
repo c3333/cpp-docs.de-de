@@ -42,16 +42,16 @@ helpviewer_keywords:
 - _strtoull_l function
 - wcstoull function
 ms.assetid: 36dac1cc-e901-40a0-8802-63562d6d01df
-ms.openlocfilehash: 95b64b96de1919e430a8114678cbb3db2d513c78
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 9664ee4c671796ad8805c19c93d5a5fd289c80ae
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912423"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87189115"
 ---
 # <a name="strtoull-_strtoull_l-wcstoull-_wcstoull_l"></a>strtoull, _strtoull_l, wcstoull, _wcstoull_l
 
-Konvertiert eine Zeichenfolge in einen langenganzzahligen Wert ohne Vorzeichen.
+Konvertiert Zeichen folgen in einen **`unsigned long long`** ganzzahligen Wert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -100,9 +100,9 @@ Zu verwendendes Gebietsschema.
 
 Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Jede dieser Funktionen konvertiert die *Eingabe Zeichenfolge* von " **Ganzzahl ohne Vorzeichen** **long** " in **einen ganzzahligen** Wert ohne Vorzeichen.
+Jede dieser Funktionen konvertiert die *Eingabe Zeichenfolge* in einen **`unsigned long long`** ganzzahligen Wert.
 
 *mit "* **strautoull** " wird das Lesen der Zeichenfolge "" mit dem ersten Zeichen beendet, das nicht als Teil einer Zahl erkannt werden kann. Dies kann das abschließende Null-Zeichen sein, oder es kann das erste numerische Zeichen sein, das größer oder gleich der *Basis*ist. Die Einstellung der **LC_NUMERIC** Kategorie des Gebiets Schemas bestimmt die Erkennung des Basis Zeichens in " *strinsource*". Weitere Informationen finden Sie unter [setlocale, _wsetlocale](setlocale-wsetlocale.md). " **straull** " und " **wcstoull** " verwenden das aktuelle Gebiets Schema. **_strtoull_l** und **_wcstoull_l** stattdessen das übergebene Gebiets Schema verwenden, aber andernfalls identisch. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
@@ -121,13 +121,13 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 " **Strauch** " erwartet, dass " *Strauch* " auf eine Zeichenfolge der folgenden Form verweist:
 
-> [*Leerzeichen*] [{**+** &#124; **-**}] [**0** [{ **x** &#124; **x** }]] [*Ziffern* &#124; *Buchstaben*]
+> [*Leerzeichen*] [{ **+** &#124; **-** }] [**0** [{ **x** &#124; **x** }]] [*Ziffern* &#124; *Buchstaben*]
 
-Ein Leerraum kann aus *Leerzeichen und* Tabstopp Zeichen bestehen, die ignoriert werden. *Ziffern* sind eine oder mehrere Dezimalstellen. *Buchstaben* sind mindestens einer der Buchstaben "a" bis "z" (oder "a" bis "z"). Das erste Zeichen, das dieser Form nicht entspricht, beendet die Überprüfung. Wenn die *Basis* zwischen 2 und 36 ist, wird Sie als Basis der Zahl verwendet. Wenn *Base* den Wert 0 hat, werden die ersten Zeichen der Zeichenfolge, auf die von " *darsource* " verwiesen wird, zur Bestimmung der Basis verwendet. Wenn das erste Zeichen "0 " und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als oktale ganze Zahl interpretiert. Wenn das erste Zeichen "0" und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als hexadezimale ganze Zahl interpretiert. Wenn das erste Zeichen "1" bis "9 " ist, wird die Zeichenfolge als ganze Dezimalzahl interpretiert. Den Buchstaben „a“ bis „z“ (bzw. „A“ bis „Z“) werden die Werten 10 bis 35 zugewiesen. Es sind nur Buchstaben zulässig, deren zugewiesene Werte kleiner als *base* sind. Das erste Zeichen außerhalb des Bereichs der Basis beendet die Überprüfung. Wenn die *Basis* beispielsweise 0 und das erste überprüfte Zeichen "0" ist, wird eine ganze Oktalzahl angenommen und ein "8"-oder "9"-Zeichen beendet die Überprüfung. " **Strauch** " lässt ein Pluszeichen (**+**) oder ein Minuszeichen**-**() als Präfix zu. ein führendes Minuszeichen gibt an, dass der Rückgabewert negiert wird.
+Ein Leerraum kann aus *Leerzeichen und* Tabstopp Zeichen bestehen, die ignoriert werden. *Ziffern* sind eine oder mehrere Dezimalstellen. *Buchstaben* sind mindestens einer der Buchstaben "a" bis "z" (oder "a" bis "z"). Das erste Zeichen, das dieser Form nicht entspricht, beendet die Überprüfung. Wenn die *Basis* zwischen 2 und 36 ist, wird Sie als Basis der Zahl verwendet. Wenn *Base* den Wert 0 hat, werden die ersten Zeichen der Zeichenfolge, auf die von " *darsource* " verwiesen wird, zur Bestimmung der Basis verwendet. Wenn das erste Zeichen "0 " und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als oktale ganze Zahl interpretiert. Wenn das erste Zeichen "0" und das zweite Zeichen nicht "x" oder "X" ist, wird die Zeichenfolge als hexadezimale ganze Zahl interpretiert. Wenn das erste Zeichen "1" bis "9 " ist, wird die Zeichenfolge als ganze Dezimalzahl interpretiert. Den Buchstaben „a“ bis „z“ (bzw. „A“ bis „Z“) werden die Werten 10 bis 35 zugewiesen. Es sind nur Buchstaben zulässig, deren zugewiesene Werte kleiner als *base* sind. Das erste Zeichen außerhalb des Bereichs der Basis beendet die Überprüfung. Wenn die *Basis* beispielsweise 0 und das erste überprüfte Zeichen "0" ist, wird eine ganze Oktalzahl angenommen und ein "8"-oder "9"-Zeichen beendet die Überprüfung. " **Strauch** " lässt ein Pluszeichen ( **+** ) oder ein Minuszeichen ( **-** ) als Präfix zu. ein führendes Minuszeichen gibt an, dass der Rückgabewert negiert wird.
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**strtoull**|\<stdlib.h>|
 |**wcstoull**|\<stdlib.h> oder \<wchar.h>|
@@ -143,10 +143,10 @@ Ein Beispiel hierfür finden Sie unter [strtod](strtod-strtod-l-wcstod-wcstod-l.
 ## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [localeconv](localeconv.md)<br/>
 [setlocale, _wsetlocale](setlocale-wsetlocale.md)<br/>
-[Funktionen zur Konvertierung von Zeichenfolgen in numerische Werte](../../c-runtime-library/string-to-numeric-value-functions.md)<br/>
+[Funktionen für Zeichen folgen in numerische Werte](../../c-runtime-library/string-to-numeric-value-functions.md)<br/>
 [strtod, _strtod_l, wcstod, _wcstod_l](strtod-strtod-l-wcstod-wcstod-l.md)<br/>
 [strtol, wcstol, _strtol_l, _wcstol_l](strtol-wcstol-strtol-l-wcstol-l.md)<br/>
 [strtoul, _strtoul_l, wcstoul, _wcstoul_l](strtoul-strtoul-l-wcstoul-wcstoul-l.md)<br/>

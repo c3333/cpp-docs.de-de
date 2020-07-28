@@ -7,21 +7,21 @@ helpviewer_keywords:
 - macros, directives
 - MASM (Microsoft Macro Assembler), inline assembly macro directives
 ms.assetid: 83643a09-1699-40a8-8ef2-13502bc4ac2c
-ms.openlocfilehash: 38b73346fc52f6b5efe478f8eb960ad049fae924
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 964f70aeef6e0e62ac4b941b2cc26d3e7c7ef466
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80169278"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87191793"
 ---
 # <a name="masm-macro-directives-in-inline-assembly"></a>MASM-Makrodirektiven in der Inlineassembly
 
 **Microsoft-spezifisch**
 
-Der Inline Assembler ist kein Makro Assembler. Sie können keine MASM-Makro Direktiven (**Makro**, `REPT`, **IRC**, `IRP`und `ENDM`) oder Makro Operatoren ( **<>** , **!** , **&** , `%`und `.TYPE`) verwenden. Ein `__asm`-Block kann jedoch C-Präprozessordirektiven verwenden. Weitere Informationen finden [Sie C++ unter Verwenden von C oder in __asm-Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md) .
+Der Inline Assembler ist kein Makro Assembler. Sie können keine MASM-Makro Direktiven (**Makro**, `REPT` , **IRC**, `IRP` , und `ENDM` ) oder Makro Operatoren ( **<>** , **!**, **&** , `%` und `.TYPE` ) verwenden. Ein- **`__asm`** Block kann jedoch C-Präprozessordirektiven verwenden. Weitere Informationen finden [Sie unter Verwenden von C oder C++ in __asm-Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md) .
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Verwenden der Assemblysprache in __asm-Blöcken](../../assembler/inline/using-assembly-language-in-asm-blocks.md)<br/>
+[Verwenden der Assemblysprache in __asm Blöcken](../../assembler/inline/using-assembly-language-in-asm-blocks.md)<br/>

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3491
 ms.assetid: 7f0e71b2-46a0-4d25-bd09-6158a280f509
-ms.openlocfilehash: 78f90ee1c44a0d42e529a027b1e7fc90a0da3cdb
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f6f20d9af424fdd4254fc15e0580d62b9dfba144
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74738322"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87184474"
 ---
 # <a name="compiler-error-c3491"></a>Compilerfehler C3491
 
@@ -21,7 +21,7 @@ Ein nicht änderbarer Lambda-Ausdruck kann den Wert einer Variablen nicht änder
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-- Deklarieren Sie den Lambda-Ausdruck mit dem `mutable` -Schlüsselwort, oder
+- Deklarieren Sie den Lambda Ausdruck mit dem- **`mutable`** Schlüsselwort, oder
 
 - übergeben Sie die Variable per Verweis an die Erfassungsliste des Lambda-Ausdrucks.
 
@@ -41,7 +41,7 @@ int main()
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird der Fehler C3491 durch Deklarieren des Lambda-Ausdrucks mit dem `mutable` -Schlüsselwort behoben:
+Im folgenden Beispiel wird C3491 aufgelöst, indem der Lambda-Ausdruck mit dem- **`mutable`** Schlüsselwort deklariert wird:
 
 ```cpp
 // C3491b.cpp
@@ -53,6 +53,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)

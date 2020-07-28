@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2107
 ms.assetid: 2866a121-884e-4bb5-8613-36de5817000e
-ms.openlocfilehash: e492f58717a8356da54f7f26bd0d5db905f858a0
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 1be2ebb82aca481df9efbbc4ccdd54466ae60a3f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74745875"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214788"
 ---
 # <a name="compiler-error-c2107"></a>Compilerfehler C2107
 
@@ -21,7 +21,7 @@ Die Indexschreibweise wurde für einen Ausdruck verwendet, dessen Ergebnis kein 
 
 ## <a name="example"></a>Beispiel
 
-C2107 kann auftreten, wenn Sie den `this`-Zeiger eines Werttyps falsch verwenden, um auf den Standardindexer des Typs zuzugreifen. Weitere Informationen finden Sie unter [Semantik des this-Zeigers](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Semantics_of_the_this_pointer).
+C2107 kann auftreten, wenn Sie fälschlicherweise den **`this`** Zeiger eines Werttyps verwenden, um auf den Standardindexer des Typs zuzugreifen. Weitere Informationen finden Sie unter [Semantik des this-Zeigers](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Semantics_of_the_this_pointer).
 
 Im folgenden Beispiel wird C2107 generiert.
 

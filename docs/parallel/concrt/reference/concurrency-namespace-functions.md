@@ -33,12 +33,12 @@ f1_keywords:
 - ppltasks/concurrency::when_all
 - ppltasks/concurrency::when_any
 ms.assetid: 520a6dff-9324-4df2-990d-302e3050af6a
-ms.openlocfilehash: 2eb5b908d66b221e9efae20ba04e2963805798ab
-ms.sourcegitcommit: e15b46ea7888dbdd7e0bb47da76aeed680c3c1f3
+ms.openlocfilehash: 86324d126fa1c3b659e6500579c4a1d220874094
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86446605"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182745"
 ---
 # <a name="concurrency-namespace-functions"></a>concurrency-Namespace-Funktionen
 
@@ -54,7 +54,7 @@ ms.locfileid: "86446605"
 |[make_greedy_join](#make_greedy_join)|[make_join](#make_join)|[make_task](#make_task)|
 |[parallel_buffered_sort](#parallel_buffered_sort)|[parallel_for](#parallel_for)|[parallel_for_each](#parallel_for_each)|
 |[parallel_invoke](#parallel_invoke)|[parallel_radixsort](#parallel_radixsort)|[parallel_reduce](#parallel_reduce)|
-|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[empfangen](#receive)|
+|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[medizinisch](#receive)|
 |[run_with_cancellation_token](#run_with_cancellation_token)|[send](#send)|[set_ambient_scheduler](#set_ambient_scheduler)|
 |[set_task_execution_resources](#set_task_execution_resources)|[swap](#swap)|[task_from_exception](#task_from_exception)|
 |[task_from_result](#task_from_result)|[try_receive](#try_receive)|[Warte](#wait)|
@@ -110,7 +110,7 @@ Ein Verweis auf die zu sendenden Daten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die Nachricht vor der Rückgabe der Methode akzeptiert wurde, andernfalls **false** .
+**`true`**, wenn die Nachricht vor der Rückgabe der Methode akzeptiert wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -199,7 +199,7 @@ Mehrere nachfolgende Aufrufe dieser Methode geben die gleiche Instanz des Ressou
 
 ## <a name="create_task"></a><a name="create_task"></a>create_task
 
-Erstellt ein ppl- [Aufgaben](task-class.md) Objekt. Das Element `create_task` kann überall dort verwendet werden, wo Sie einen Aufgabenkonstruktor verwendet hätten. Es wird hauptsächlich der Einfachheit halber bereitgestellt, da es beim Erstellen eines Tasks die Verwendung des `auto`-Schlüsselwort ermöglicht.
+Erstellt ein ppl- [Aufgaben](task-class.md) Objekt. Das Element `create_task` kann überall dort verwendet werden, wo Sie einen Aufgabenkonstruktor verwendet hätten. Es wird hauptsächlich aus Gründen der praktische bereitgestellt, da es die Verwendung des- **`auto`** Schlüssel Worts beim Erstellen von Aufgaben ermöglicht.
 
 ```cpp
 template<typename T>
@@ -408,7 +408,7 @@ Die von der Funktion ausgelöste interne Abbruch Ausnahme sollte nicht abgefange
 
 ## <a name="is_current_task_group_canceling"></a><a name="is_current_task_group_canceling"></a>is_current_task_group_canceling
 
-Gibt zurück, ob die Aufgabengruppe, die gerade inline auf dem aktuellen Kontext ausgeführt wird, in diesem Moment (oder in Kürze) einen Abbruch durchführt. Beachten Sie, dass `false` zurückgegeben wird, wenn auf dem aktuellen Kontext zurzeit inline keine Aufgabengruppe ausgeführt wird.
+Gibt zurück, ob die Aufgabengruppe, die gerade inline auf dem aktuellen Kontext ausgeführt wird, in diesem Moment (oder in Kürze) einen Abbruch durchführt. Beachten Sie, dass zurückgegeben wird, wenn derzeit keine Aufgaben Gruppe im aktuellen Kontext Inline ausgeführt wird **`false`** .
 
 ```cpp
 bool __cdecl is_current_task_group_canceling();
@@ -416,7 +416,7 @@ bool __cdecl is_current_task_group_canceling();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die derzeit ausgeführte Aufgaben Gruppe abgebrochen wird, andernfalls **false** .
+**`true`**, wenn die derzeit ausgeführte Aufgaben Gruppe abgebrochen wird, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -601,7 +601,7 @@ Die Funktion, die aufgerufen wird, um die durch das-Objekt dargestellte Arbeit a
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `task_handle` -Objekt.
+Ein `task_handle`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -679,7 +679,7 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hin
 Eine Instanz einer C++-Standard Bibliothek kompatiblen Speicherzuweisung.
 
 *_Func*<br/>
-Ein benutzerdefiniertes Prädikat Funktions Objekt, das das Vergleichskriterium definiert, das von aufeinander folgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück. Diese Vergleichoperatorfunktion muss eine strikte schwache Sortierung auf Elementenpaare der Sequenz anwenden.
+Ein benutzerdefiniertes Prädikat Funktions Objekt, das das Vergleichskriterium definiert, das von aufeinander folgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück. Diese Vergleichoperatorfunktion muss eine strikte schwache Sortierung auf Elementenpaare der Sequenz anwenden.
 
 *_Chunk_size*<br/>
 Die imitige Größe eines Blocks, der für die parallele Ausführung in zwei Spalten aufgeteilt wird.
@@ -767,7 +767,7 @@ Der Wert, um den bei der Iteration von nach ein Schritt durchlaufen werden soll 
 Die Funktion, die bei jeder Iterationen ausgeführt werden soll. Dabei kann es sich um einen Lambda-Ausdruck, einen Funktionszeiger oder ein beliebiges Objekt handeln, das eine Version des Funktions aufrufoperators mit der Signatur unterstützt `void operator()(_Index_type)` .
 
 *_Part*<br/>
-Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um einen `const` [auto_partitioner](auto-partitioner-class.md) `&` , `const` [static_partitioner](static-partitioner-class.md) `&` `const` [simple_partitioner](simple-partitioner-class.md) `&` oder um [affinity_partitioner](affinity-partitioner-class.md) `&` Wenn ein [affinity_partitioner](affinity-partitioner-class.md) Objekt verwendet wird, muss es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis handeln, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
+Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um einen **`const`** [auto_partitioner](auto-partitioner-class.md) `&` , **`const`** [static_partitioner](static-partitioner-class.md) `&` **`const`** [simple_partitioner](simple-partitioner-class.md) `&` oder um [affinity_partitioner](affinity-partitioner-class.md) `&` Wenn ein [affinity_partitioner](affinity-partitioner-class.md) Objekt verwendet wird, muss es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis handeln, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -811,7 +811,7 @@ Ein Iterator, der die Position hinter dem letzten Element adressiert, das in die
 Ein benutzerdefiniertes Funktions Objekt, das auf jedes Element im Bereich angewendet wird.
 
 *_Part*<br/>
-Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um einen `const` [auto_partitioner](auto-partitioner-class.md) `&` , `const` [static_partitioner](static-partitioner-class.md) `&` `const` [simple_partitioner](simple-partitioner-class.md) `&` oder um [affinity_partitioner](affinity-partitioner-class.md) `&` Wenn ein [affinity_partitioner](affinity-partitioner-class.md) Objekt verwendet wird, muss es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis handeln, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
+Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um einen **`const`** [auto_partitioner](auto-partitioner-class.md) `&` , **`const`** [static_partitioner](static-partitioner-class.md) `&` **`const`** [simple_partitioner](simple-partitioner-class.md) `&` oder um [affinity_partitioner](affinity-partitioner-class.md) `&` Wenn ein [affinity_partitioner](affinity-partitioner-class.md) Objekt verwendet wird, muss es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis handeln, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1209,7 +1209,7 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements in dem Ber
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der sortiert werden soll.
 
 *_Func*<br/>
-Ein benutzerdefiniertes Prädikat Funktions Objekt, das das Vergleichskriterium definiert, das von aufeinander folgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück. Diese Vergleichoperatorfunktion muss eine strikte schwache Sortierung auf Elementenpaare der Sequenz anwenden.
+Ein benutzerdefiniertes Prädikat Funktions Objekt, das das Vergleichskriterium definiert, das von aufeinander folgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück. Diese Vergleichoperatorfunktion muss eine strikte schwache Sortierung auf Elementenpaare der Sequenz anwenden.
 
 *_Chunk_size*<br/>
 Die minimale Größe eines Blocks, der für die parallele Ausführung in zwei Spalten aufgeteilt wird.
@@ -1325,7 +1325,7 @@ Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressi
 Ein benutzerdefiniertes unäres Funktions Objekt, das auf jedes Element im Quellbereich angewendet wird.
 
 *_Part*<br/>
-Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um einen `const` [auto_partitioner](auto-partitioner-class.md) `&` , `const` [static_partitioner](static-partitioner-class.md) `&` `const` [simple_partitioner](simple-partitioner-class.md) `&` oder um [affinity_partitioner](affinity-partitioner-class.md) `&` Wenn ein [affinity_partitioner](affinity-partitioner-class.md) Objekt verwendet wird, muss es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis handeln, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
+Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um einen **`const`** [auto_partitioner](auto-partitioner-class.md) `&` , **`const`** [static_partitioner](static-partitioner-class.md) `&` **`const`** [simple_partitioner](simple-partitioner-class.md) `&` oder um [affinity_partitioner](affinity-partitioner-class.md) `&` Wenn ein [affinity_partitioner](affinity-partitioner-class.md) Objekt verwendet wird, muss es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis handeln, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
 
 *First2*<br/>
 Ein Eingabeiterator, der die Position des ersten Elements im zweiten Quellbereich adressiert.
@@ -1452,7 +1452,7 @@ Ein Verweis auf die zu sendenden Daten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die Nachricht akzeptiert wurde, andernfalls **false** .
+**`true`**, wenn die Nachricht akzeptiert wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1605,7 +1605,7 @@ Der Name für das angegebene Objekt.
 
 ## <a name="try_receive"></a><a name="try_receive"></a>try_receive
 
-Eine allgemeine try-receive-Implementierung, mit der ein Kontext Daten von genau einer Quelle suchen und die akzeptierten Werte filtern kann. Wenn die Daten nicht bereit sind, gibt die Methode " **false**" zurück.
+Eine allgemeine try-receive-Implementierung, mit der ein Kontext Daten von genau einer Quelle suchen und die akzeptierten Werte filtern kann. Wenn die Daten nicht bereit sind, gibt die Methode zurück **`false`** .
 
 ```cpp
 template <class T>
@@ -1643,7 +1643,7 @@ Eine Filterfunktion, die bestimmt, ob Nachrichten akzeptiert werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `bool` Wert, der angibt, ob eine Nutzlast in eingefügt wurde `_value` .
+Ein **`bool`** Wert, der angibt, ob eine Nutzlast in eingefügt wurde `_value` .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1696,7 +1696,7 @@ Das `task_options`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Aufgabe, die erfolgreich abgeschlossen wird, wenn alle Eingabe Aufgaben erfolgreich abgeschlossen wurden. Wenn die Eingabeaufgaben vom Typ `T` sind, wird die Ausgabe dieser Funktion `task<std::vector<T>>` sein. Wenn die Eingabeaufgaben vom Typ `void` sind, ist die Ausgabeaufgabe auch `task<void>`.
+Eine Aufgabe, die erfolgreich abgeschlossen wird, wenn alle Eingabe Aufgaben erfolgreich abgeschlossen wurden. Wenn die Eingabeaufgaben vom Typ `T` sind, wird die Ausgabe dieser Funktion `task<std::vector<T>>` sein. Wenn die Eingabe Aufgaben vom Typ sind, ist **`void`** die Ausgabe Aufgabe ebenfalls ein `task<void>` .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1749,7 +1749,7 @@ Das Abbruchtoken, das den Abbruch der zurückgegebenen Aufgabe steuert. Wenn Sie
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Aufgabe, die erfolgreich abgeschlossen ist, wenn eine der Eingabeaufgaben erfolgreich abgeschlossen wurde. Wenn die Eingabeaufgaben vom Typ `T` sind, ist die Ausgabe dieser Funktion `task<std::pair<T, size_t>>>`, wobei das erste Element des Paares das Ergebnis der letzten Aufgabe ist, und das zweite Element der Index der beendeten Aufgabe. Wenn die Eingabeaufgaben vom Typ `void` sind, ist die Ausgabe `task<size_t>`, wobei das Ergebnis der Index der abgeschlossenen Aufgabe ist.
+Eine Aufgabe, die erfolgreich abgeschlossen ist, wenn eine der Eingabeaufgaben erfolgreich abgeschlossen wurde. Wenn die Eingabeaufgaben vom Typ `T` sind, ist die Ausgabe dieser Funktion `task<std::pair<T, size_t>>>`, wobei das erste Element des Paares das Ergebnis der letzten Aufgabe ist, und das zweite Element der Index der beendeten Aufgabe. Wenn die Eingabe Aufgaben vom Typ sind **`void`** , ist die Ausgabe eine `task<size_t>` , bei der es sich bei dem Ergebnis um den Index der abgeschlossenen Aufgabe handelt.
 
 ### <a name="remarks"></a>Bemerkungen
 

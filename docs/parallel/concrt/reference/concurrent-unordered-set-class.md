@@ -13,16 +13,16 @@ f1_keywords:
 helpviewer_keywords:
 - concurrent_unordered_set class
 ms.assetid: c61f9a9a-4fd9-491a-9251-e300737ecf4b
-ms.openlocfilehash: 0671a3c1996ca85a9c2cf5a386821c3d52c1bf50
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 8dbce21efcd6c1df31d42702aa3e8eeecf6d9114
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143152"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87194042"
 ---
 # <a name="concurrent_unordered_set-class"></a>concurrent_unordered_set-Klasse
 
-Die `concurrent_unordered_set`-Klasse ist ein Parallelitäts sicherer Container, der eine Sequenz von Elementen vom Typ K variabler Länge steuert. Die Sequenz wird so dargestellt, dass Parallelitäts sicheres anfügen, Element Zugriff, iteratorzugriff und iteratortraversal-Vorgänge ermöglicht wird. Die Parallelitäts Sicherheit bedeutet, dass Zeiger oder Iteratoren immer gültig sind. Es handelt sich nicht um eine Garantie der Element Initialisierung oder einer bestimmten Durchlauf Reihenfolge.
+Die `concurrent_unordered_set` -Klasse ist ein Parallelitäts sicherer Container, der eine Sequenz von Elementen vom Typ K variabler Länge steuert. Die Sequenz wird so dargestellt, dass Parallelitäts sicheres anfügen, Element Zugriff, iteratorzugriff und iteratortraversal-Vorgänge ermöglicht wird. Die Parallelitäts Sicherheit bedeutet, dass Zeiger oder Iteratoren immer gültig sind. Es handelt sich nicht um eine Garantie der Element Initialisierung oder einer bestimmten Durchlauf Reihenfolge.
 
 ## <a name="syntax"></a>Syntax
 
@@ -43,7 +43,7 @@ _Allocator_type,
 
 ### <a name="parameters"></a>Parameter
 
-*K*<br/>
+*Km*<br/>
 Der Schlüsseltyp.
 
 *_Hasher*<br/>
@@ -55,7 +55,7 @@ Der Gleichheitsvergleich-Funktionsobjekttyp. Dieses Argument ist optional, und d
 *_Allocator_type*<br/>
 Der Typ, der das gespeicherte Zuordnungsobjekt darstellt, das Details zur Zuordnung und zur Freigabe des Arbeitsspeichers für den gleichzeitigen ungeordneten Satz kapselt. Dieses Argument ist optional, und der Standardwert ist `std::allocator<K>`.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
@@ -85,7 +85,7 @@ Der Typ, der das gespeicherte Zuordnungsobjekt darstellt, das Details zur Zuordn
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[hash_function](#hash_function)|Gibt das gespeicherte Hashfunktionsobjekt zurück.|
 |[insert](#insert)|Ist überladen. Fügt dem `concurrent_unordered_set`-Objekt Elemente hinzu.|
@@ -97,11 +97,11 @@ Der Typ, der das gespeicherte Zuordnungsobjekt darstellt, das Details zur Zuordn
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[operator=](#operator_eq)|Ist überladen. Weist den Inhalt eines anderen `concurrent_unordered_set`-Objekts diesem Objekt zu. Diese Methode ist nicht nebenläufigkeitssicher.|
+|[Operator =](#operator_eq)|Ist überladen. Weist den Inhalt eines anderen `concurrent_unordered_set`-Objekts diesem Objekt zu. Diese Methode ist nicht nebenläufigkeitssicher.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ausführliche Informationen zur `concurrent_unordered_set`-Klasse finden Sie unter [parallele Container und Objekte](../../../parallel/concrt/parallel-containers-and-objects.md).
+Ausführliche Informationen zur `concurrent_unordered_set` -Klasse finden Sie unter [parallele Container und Objekte](../../../parallel/concrt/parallel-containers-and-objects.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -117,7 +117,7 @@ Ausführliche Informationen zur `concurrent_unordered_set`-Klasse finden Sie unt
 
 **Namespace:** Parallelität
 
-## <a name="begin"></a>beginnen
+## <a name="begin"></a><a name="begin"></a>beginnen
 
 Gibt einen Iterator zurück, der auf das erste Element im gleichzeitigen Container zeigt. Diese Methode ist nebenläufigkeitssicher.
 
@@ -131,7 +131,7 @@ const_iterator begin() const;
 
 Ein Iterator für das erste Element im gleichzeitigen Container.
 
-## <a name="cbegin"></a>cbegin
+## <a name="cbegin"></a><a name="cbegin"></a>cbegin
 
 Gibt einen const-Iterator zurück, der auf das erste Element im gleichzeitigen Container zeigt. Diese Methode ist nebenläufigkeitssicher.
 
@@ -143,7 +143,7 @@ const_iterator cbegin() const;
 
 Ein const-Iterator für das erste Element im gleichzeitigen Container.
 
-## <a name="cend"></a>cend
+## <a name="cend"></a><a name="cend"></a>cend
 
 Gibt einen const-Iterator zurück, der auf den Speicherort verweist, der dem letzten Element im gleichzeitigen Container nachfolgt. Diese Methode ist nebenläufigkeitssicher.
 
@@ -155,7 +155,7 @@ const_iterator cend() const;
 
 Ein const-Iterator für den Speicherort, der dem letzten Element im gleichzeitigen Container nachfolgt.
 
-## <a name="clear"></a>Klartext
+## <a name="clear"></a><a name="clear"></a>Klartext
 
 Löscht alle Elemente im gleichzeitigen Container. Diese Funktion ist nicht Parallelitäts sicher.
 
@@ -163,7 +163,7 @@ Löscht alle Elemente im gleichzeitigen Container. Diese Funktion ist nicht Para
 void clear();
 ```
 
-## <a name="ctor"></a>concurrent_unordered_set
+## <a name="concurrent_unordered_set"></a><a name="ctor"></a>concurrent_unordered_set
 
 Erstellt einen parallelen ungeordneten Satz.
 
@@ -220,19 +220,19 @@ Das `concurrent_unordered_set`-Quellobjekt, aus dem Elemente kopiert oder versch
 
 ### <a name="remarks"></a>Bemerkungen
 
-Alle Konstruktoren speichern ein zuordnerobjekt `_Allocator` und initialisieren den ungeordneten Satz.
+Alle Konstruktoren speichern ein `_Allocator` zuordnerobjekt und initialisieren den ungeordneten Satz.
 
 Der erste Konstruktor gibt eine leere anfängliche Menge an und gibt explizit die Anzahl der zu verwendenden Bucket, Hash Funktion, Gleichheits Funktion und Zuordnungs Typen an.
 
 Der zweite Konstruktor gibt eine Zuweisung für den ungeordneten Satz an.
 
-Der dritte Konstruktor gibt Werte an, die vom iteratorbereich (`_Begin``_End`) bereitgestellt werden.
+Der dritte Konstruktor gibt Werte an, die vom iteratorbereich [,) bereitgestellt werden `_Begin` `_End` .
 
-Der vierte und fünfte Konstruktor geben eine Kopie der gleichzeitigen ungeordneten Menge `_Uset`an.
+Der vierte und fünfte Konstruktor geben eine Kopie der gleichzeitigen ungeordneten Menge an `_Uset` .
 
-Der letzte Konstruktor gibt eine Verschiebung des gleichzeitigen ungeordneten Satzes `_Uset`an.
+Der letzte Konstruktor gibt eine Verschiebung des gleichzeitigen ungeordneten Satzes an `_Uset` .
 
-## <a name="count"></a>Countdown
+## <a name="count"></a><a name="count"></a>Countdown
 
 Zählt die Anzahl der Elemente, die mit einem angegebenen Schlüssel übereinstimmen. Diese Funktion ist Parallelitäts sicher.
 
@@ -243,13 +243,13 @@ size_type count(const key_type& KVal) const;
 ### <a name="parameters"></a>Parameter
 
 *Kval*<br/>
-Der Schlüssel, nach dem gesucht werden soll.
+Der zu suchende Schlüssel.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt an, wie oft der Schlüssel im Container angezeigt wird.
 
-## <a name="empty"></a>leer
+## <a name="empty"></a><a name="empty"></a>leer
 
 Testet, ob keine Elemente vorhanden sind. Diese Methode ist nebenläufigkeitssicher.
 
@@ -259,13 +259,13 @@ bool empty() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der gleichzeitige Container leer ist, andernfalls **false** .
+**`true`**, wenn der parallele Container leer ist, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Wenn gleichzeitige Einfügungen vorhanden sind, ändert sich der gleichzeitige Container möglicherweise sofort nach dem Aufruf dieser Funktion, bevor der Rückgabewert gerade gelesen wird.
 
-## <a name="end"></a>Schließlich
+## <a name="end"></a><a name="end"></a>Schließlich
 
 Gibt einen Iterator zurück, der auf den Speicherort verweist, der dem letzten Element im gleichzeitigen Container nachfolgt. Diese Methode ist nebenläufigkeitssicher.
 
@@ -279,7 +279,7 @@ const_iterator end() const;
 
 Ein Iterator für den Speicherort, der dem letzten Element im gleichzeitigen Container nachfolgt.
 
-## <a name="equal_range"></a>equal_range
+## <a name="equal_range"></a><a name="equal_range"></a>equal_range
 
 Sucht einen Bereich, der einem angegebenen Schlüssel entspricht. Diese Funktion ist Parallelitäts sicher.
 
@@ -306,7 +306,7 @@ Ein [paar](../../../standard-library/pair-structure.md) , bei dem das erste Elem
 
 Gleichzeitige Einfügungen können bewirken, dass nach dem BEGIN-Iterator und vor dem End-Iterator zusätzliche Schlüssel eingefügt werden.
 
-## <a name="find"></a>sich
+## <a name="find"></a><a name="find"></a>sich
 
 Sucht ein Element, das einem angegebenen Schlüssel entspricht. Diese Funktion ist Parallelitäts sicher.
 
@@ -323,9 +323,9 @@ Der Schlüsselwert, der gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Iterator, der auf die Position des ersten Elements verweist, das mit dem angegebenen Schlüssel übereinstimmt, oder der Iterator `end()`, wenn kein solches Element vorhanden ist.
+Ein Iterator, der auf die Position des ersten Elements verweist, das mit dem angegebenen Schlüssel übereinstimmt, oder der Iterator, `end()` Wenn kein solches Element vorhanden ist.
 
-## <a name="get_allocator"></a>get_allocator
+## <a name="get_allocator"></a><a name="get_allocator"></a>get_allocator
 
 Gibt das gespeicherte Zuweisungsobjekt für diesen gleichzeitigen Container zurück. Diese Methode ist nebenläufigkeitssicher.
 
@@ -337,7 +337,7 @@ allocator_type get_allocator() const;
 
 Das gespeicherte Zuweisungsobjekt für diesen gleichzeitigen Container.
 
-## <a name="hash_function"></a>hash_function
+## <a name="hash_function"></a><a name="hash_function"></a>hash_function
 
 Gibt das gespeicherte Hashfunktionsobjekt zurück.
 
@@ -349,7 +349,7 @@ hasher hash_function() const;
 
 Das gespeicherte Hash Funktions Objekt.
 
-## <a name="insert"></a>setze
+## <a name="insert"></a><a name="insert"></a>setze
 
 Fügt dem `concurrent_unordered_set`-Objekt Elemente hinzu.
 
@@ -384,7 +384,7 @@ typename std::enable_if<!std::is_same<const_iterator,
 *_Iterator*<br/>
 Der zum Einfügen verwendete iteratortyp.
 
-*B*<br/>
+*Ramelow*<br/>
 Der Typ des Werts, der in den Satz eingefügt wurde.
 
 *value*<br/>
@@ -405,15 +405,15 @@ Ein paar, das einen Iterator und einen booleschen Wert enthält. Weitere Details
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion bestimmt, ob ein Element X in der Sequenz vorhanden ist, deren Schlüssel der entsprechenden Reihenfolge `value`. Wenn dies nicht der Fall ist, wird ein solches Element X erstellt und mit `value`initialisiert. Die-Funktion bestimmt dann den Iterator `where`, der X festlegt. Wenn eine Einfügung aufgetreten ist, gibt die Funktion `std::pair(where, true)`zurück. Andernfalls wird `std::pair(where, false)`zurückgegeben.
+Die erste Member-Funktion bestimmt, ob ein Element X in der Sequenz vorhanden ist, deren Schlüssel eine entsprechende Reihenfolge aufweist `value` . Wenn dies nicht der Fall ist, wird ein solches Element X erstellt und mit initialisiert `value` . Die-Funktion bestimmt dann den Iterator `where` , der X festlegt. Wenn eine Einfügung aufgetreten ist, gibt die Funktion zurück `std::pair(where, true)` . Andernfalls wird `std::pair(where, false)`zurückgegeben.
 
-Die zweite Member-Funktion gibt Insert (`value`) zurück, wobei `_Where` als Ausgangspunkt innerhalb der kontrollierten Sequenz verwendet wird, um nach der Einfügemarke zu suchen.
+Die zweite Member-Funktion gibt Insert ( `value` ) zurück, wobei `_Where` als Ausgangspunkt innerhalb der kontrollierten Sequenz verwendet wird, um nach der Einfügemarke zu suchen.
 
-Die dritte Member-Funktion fügt die Sequenz von Element Werten aus dem Bereich [`first``last`) ein.
+Die dritte Member-Funktion fügt die Sequenz von Element Werten aus dem Bereich [ `first` , `last` ) ein.
 
-Die letzten zwei Element Funktionen Verhalten sich identisch mit den ersten beiden, mit dem Unterschied, dass `value` zum Erstellen des eingefügten Werts verwendet wird.
+Die letzten zwei Element Funktionen Verhalten sich identisch mit den ersten beiden, außer dass `value` zum Erstellen des eingefügten Werts verwendet wird.
 
-## <a name="key_eq"></a>key_eq
+## <a name="key_eq"></a><a name="key_eq"></a>key_eq
 
 Gibt das gespeicherte Gleichheitsvergleich-Funktionsobjekt zurück.
 
@@ -425,7 +425,7 @@ key_equal key_eq() const;
 
 Das gespeicherte Gleichheitsvergleichsfunktionsobjekt.
 
-## <a name="load_factor"></a>load_factor
+## <a name="load_factor"></a><a name="load_factor"></a>load_factor
 
 Berechnet den aktuellen Ladefaktor des Containers und gibt diesen zurück. Der Ladefaktor ist die Anzahl der Elemente im Container dividiert durch die Anzahl der Bucket.
 
@@ -437,7 +437,7 @@ float load_factor() const;
 
 Der Ladefaktor für den Container.
 
-## <a name="max_load_factor"></a>max_load_factor
+## <a name="max_load_factor"></a><a name="max_load_factor"></a>max_load_factor
 
 Ruft den maximalen Ladefaktor des Containers ab oder legt ihn fest. Der maximale Ladefaktor ist die größte Anzahl von Elementen, als in einem Bucket vorhanden sein können, bevor der Container seine interne Tabelle vergrößert.
 
@@ -455,7 +455,7 @@ void max_load_factor(float _Newmax);
 
 Die erste Memberfunktion gibt den gespeicherten maximalen Lastfaktor zurück. Die zweite Member-Funktion gibt keinen Wert zurück, löst jedoch eine [Out_of_range](../../../standard-library/out-of-range-class.md) Ausnahme aus, wenn der angegebene Lastfaktor ungültig ist.
 
-## <a name="max_size"></a>max_size
+## <a name="max_size"></a><a name="max_size"></a>max_size
 
 Gibt die maximale Größe des gleichzeitigen Containers zurück, der durch die Zuweisung bestimmt wird. Diese Methode ist nebenläufigkeitssicher.
 
@@ -471,7 +471,7 @@ Die maximale Anzahl von Elementen, die in diesen gleichzeitigen Container eingef
 
 Dieser obere Grenzwert ist möglicherweise höher als der tatsächliche Container.
 
-## <a name="operator_eq"></a>Operator =
+## <a name="operator"></a><a name="operator_eq"></a>Operator =
 
 Weist den Inhalt eines anderen `concurrent_unordered_set`-Objekts diesem Objekt zu. Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -492,9 +492,9 @@ Ein Verweis auf das `concurrent_unordered_set`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Nach dem Löschen vorhandener Elemente in einem gleichzeitigen ungeordneten Satz `operator=` kopiert oder verschiebt den Inhalt `_Uset` in den gleichzeitigen ungeordneten Satz.
+Nachdem alle vorhandenen Elemente in einem gleichzeitigen ungeordneten Satz gelöscht wurden, `operator=` kopiert oder verschiebt den Inhalt von `_Uset` in den gleichzeitigen ungeordneten Satz.
 
-## <a name="rehash"></a>rehash
+## <a name="rehash"></a><a name="rehash"></a>rehash
 
 Erstellt die Hashtabelle neu.
 
@@ -513,7 +513,7 @@ Die Memberfunktion ändert die Anzahl der Buckets in mindestens `_Buckets` und e
 
 Es wird eine [Out_of_range](../../../standard-library/out-of-range-class.md) Ausnahme ausgelöst, wenn die Anzahl der bucketwerte ungültig ist (entweder 0 oder größer als die maximale Anzahl von Buchern).
 
-## <a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a>Größe
 
 Gibt die Anzahl der Elemente in diesem gleichzeitigen Container zurück. Diese Methode ist nebenläufigkeitssicher.
 
@@ -529,7 +529,7 @@ Die Anzahl der Elemente im Container.
 
 Wenn gleichzeitige Einfügungen vorhanden sind, kann sich die Anzahl der Elemente im gleichzeitigen Container unmittelbar nach dem Aufruf dieser Funktion ändern, bevor der Rückgabewert gerade gelesen wird.
 
-## <a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
 Vertauscht den Inhalt von zwei `concurrent_unordered_set`-Objekten. Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -542,7 +542,7 @@ void swap(concurrent_unordered_set& _Uset);
 *_Uset*<br/>
 Das `concurrent_unordered_set` Objekt, mit dem getauscht werden soll.
 
-## <a name="unsafe_begin"></a>unsafe_begin
+## <a name="unsafe_begin"></a><a name="unsafe_begin"></a>unsafe_begin
 
 Gibt einen Iterator zum ersten Element in diesem Container für einen bestimmten Bucket zurück.
 
@@ -561,7 +561,7 @@ Der Bucket-Index.
 
 Ein Iterator, der auf den Anfang des Bucket zeigt.
 
-## <a name="unsafe_bucket"></a>unsafe_bucket
+## <a name="unsafe_bucket"></a><a name="unsafe_bucket"></a>unsafe_bucket
 
 Gibt den Bucket-Index zurück, dem ein bestimmter Schlüssel in diesem Container zugeordnet ist.
 
@@ -578,7 +578,7 @@ Der Element Schlüssel, nach dem gesucht wird.
 
 Der Bucket-Index für den Schlüssel in diesem Container.
 
-## <a name="unsafe_bucket_count"></a>unsafe_bucket_count
+## <a name="unsafe_bucket_count"></a><a name="unsafe_bucket_count"></a>unsafe_bucket_count
 
 Gibt die aktuelle Anzahl der Bucket in diesem Container zurück.
 
@@ -590,7 +590,7 @@ size_type unsafe_bucket_count() const;
 
 Die aktuelle Anzahl von Buchern in diesem Container.
 
-## <a name="unsafe_bucket_size"></a>unsafe_bucket_size
+## <a name="unsafe_bucket_size"></a><a name="unsafe_bucket_size"></a>unsafe_bucket_size
 
 Gibt die Anzahl der Elemente in einem bestimmten Bucket dieses Containers zurück.
 
@@ -607,7 +607,7 @@ Der zu suchende Bucket.
 
 Die aktuelle Anzahl von Buchern in diesem Container.
 
-## <a name="unsafe_cbegin"></a>unsafe_cbegin
+## <a name="unsafe_cbegin"></a><a name="unsafe_cbegin"></a>unsafe_cbegin
 
 Gibt einen Iterator zum ersten Element in diesem Container für einen bestimmten Bucket zurück.
 
@@ -624,7 +624,7 @@ Der Bucket-Index.
 
 Ein Iterator, der auf den Anfang des Bucket zeigt.
 
-## <a name="unsafe_cend"></a>unsafe_cend
+## <a name="unsafe_cend"></a><a name="unsafe_cend"></a>unsafe_cend
 
 Gibt einen Iterator an den Speicherort zurück, der dem letzten Element in einem bestimmten Bucket nachfolgt.
 
@@ -641,7 +641,7 @@ Der Bucket-Index.
 
 Ein Iterator, der auf den Anfang des Bucket zeigt.
 
-## <a name="unsafe_end"></a>unsafe_end
+## <a name="unsafe_end"></a><a name="unsafe_end"></a>unsafe_end
 
 Gibt einen Iterator für das letzte Element in diesem Container für einen bestimmten Bucket zurück.
 
@@ -660,7 +660,7 @@ Der Bucket-Index.
 
 Ein Iterator, der auf das Ende des Bucket zeigt.
 
-## <a name="unsafe_erase"></a>unsafe_erase
+## <a name="unsafe_erase"></a><a name="unsafe_erase"></a>unsafe_erase
 
 Entfernt Elemente aus der `concurrent_unordered_set` an angegebenen Positionen. Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -694,11 +694,11 @@ Die ersten beiden Member-Funktionen geben einen Iterator zurück, der das erste 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Memberfunktion entfernt das Element, auf das durch `_Where` gezeigt wird. Die zweite Member-Funktion entfernt die Elemente im Bereich [`_Begin``_End`).
+Die erste Memberfunktion entfernt das Element, auf das durch `_Where` gezeigt wird. Die zweite Member-Funktion entfernt die Elemente im Bereich [ `_Begin` , `_End` ).
 
 Die dritte Member-Funktion entfernt die Elemente im Bereich, der durch [equal_range](#equal_range)(kval) begrenzt ist.
 
-## <a name="unsafe_max_bucket_count"></a>unsafe_max_bucket_count
+## <a name="unsafe_max_bucket_count"></a><a name="unsafe_max_bucket_count"></a>unsafe_max_bucket_count
 
 Gibt die maximale Anzahl von bucketin diesem Container zurück.
 
@@ -712,5 +712,5 @@ Die maximale Anzahl von Buchern in diesem Container.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace](concurrency-namespace.md)<br/>
+[Parallelitäts Namespace](concurrency-namespace.md)<br/>
 [Parallele Container und Objekte](../../../parallel/concrt/parallel-containers-and-objects.md)

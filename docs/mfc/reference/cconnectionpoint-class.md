@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CConnectionPoint [MFC], OnAdvise
 - CConnectionPoint [MFC], QuerySinkInterface
 ms.assetid: f0f23a1e-5e8c-41a9-aa6c-1a4793b28e8f
-ms.openlocfilehash: ce72c156ab31b742a42d2960923fc56afff656c0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f428ec597e0e4a56788fae2455eff80b286fda39
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369432"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87183083"
 ---
 # <a name="cconnectionpoint-class"></a>CConnectionPoint-Klasse
 
@@ -47,62 +47,62 @@ class CConnectionPoint : public CCmdTarget
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CConnectionPoint::CConnectionPoint](#cconnectionpoint)|Erstellt ein `CConnectionPoint`-Objekt.|
+|[CConnectionPoint:: CConnectionPoint](#cconnectionpoint)|Erstellt ein `CConnectionPoint`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CConnectionPoint::GetConnections](#getconnections)|Ruft alle Verbindungspunkte in einer Verbindungszuordnung ab.|
-|[CConnectionPoint::GetContainer](#getcontainer)|Ruft den Container des Steuerelements ab, das eigentümer der Verbindungszuordnung ist.|
-|[CConnectionPoint::GetIID](#getiid)|Ruft die Schnittstellen-ID eines Verbindungspunkts ab.|
-|[CConnectionPoint::GetMaxConnections](#getmaxconnections)|Ruft die maximale Anzahl von Verbindungspunkten ab, die von einem Steuerelement unterstützt werden.|
-|[CConnectionPoint::GetNextConnection](#getnextconnection)|Ruft einen Zeiger auf das Verbindungselement bei *pos*ab.|
-|[CConnectionPoint::GetStartPosition](#getstartposition)|Startet eine Karteniteration, indem ein POSITION-Wert `GetNextConnection` zurückgegeben wird, der an einen Aufruf übergeben werden kann.|
-|[CConnectionPoint::OnAdvise](#onadvise)|Wird vom Framework beim Herstellen oder Aufbrechen von Verbindungen aufgerufen.|
-|[CConnectionPoint::QuerySinkInterface](#querysinkinterface)|Ruft einen Zeiger auf die angeforderte Senkenschnittstelle ab.|
+|[CConnectionPoint:: GetConnections](#getconnections)|Ruft alle Verbindungspunkte in einer Verbindungs Zuordnung ab.|
+|[CConnectionPoint:: getContainer](#getcontainer)|Ruft den Container des Steuer Elements ab, das die Verbindungs Zuordnung besitzt.|
+|[CConnectionPoint:: getiid](#getiid)|Ruft die Schnittstellen-ID eines Verbindungs Punkts ab.|
+|[CConnectionPoint:: getmaxconnections](#getmaxconnections)|Ruft die maximale Anzahl von Verbindungs Punkten ab, die von einem-Steuerelement unterstützt werden.|
+|[CConnectionPoint:: GetNextConnection](#getnextconnection)|Ruft einen Zeiger auf das Verbindungselement bei *POS*ab.|
+|[CConnectionPoint:: GetStartPosition](#getstartposition)|Startet eine Karten iterierung durch Zurückgeben eines Positions Werts, der an einen-Befehl übermittelt werden kann `GetNextConnection` .|
+|[CConnectionPoint:: on-Empfehlung](#onadvise)|Wird vom Framework aufgerufen, wenn Verbindungen hergestellt oder unterbrochen werden.|
+|[CConnectionPoint:: querysink Interface](#querysinkinterface)|Ruft einen Zeiger auf die angeforderte Senke Schnittstelle ab.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Im Gegensatz zu normalen OLE-Schnittstellen, die zum Implementieren und Verfügbarmachen der Funktionalität eines OLE-Steuerelements verwendet werden, implementiert ein Verbindungspunkt eine ausgehende Schnittstelle, die Aktionen für andere Objekte initiieren kann, z. B. das Auslösen von Ereignissen und Änderungsbenachrichtigungen.
+Im Gegensatz zu normalen OLE-Schnittstellen, die verwendet werden, um die Funktionalität eines OLE-Steuer Elements zu implementieren und verfügbar zu machen, implementiert ein Verbindungspunkt eine ausgehende Schnittstelle, die Aktionen für andere Objekte initiieren kann, wie das Auslösen von Ereignissen und das Ändern von Benachrichtigungen.
 
-Eine Verbindung besteht aus zwei Teilen: dem Objekt, das die Schnittstelle aufruft, die als "Quelle" bezeichnet wird, und dem Objekt, das die Schnittstelle implementiert, das als "Sink" bezeichnet wird. Durch das Aussetzen eines Verbindungspunkts ermöglicht eine Quelle Senken, Verbindungen zu sich selbst herzustellen. Über den Verbindungspunktmechanismus erhält ein Quellobjekt einen Zeiger auf die Implementierung einer Gruppe von Memberfunktionen in der Senke. Um beispielsweise ein von der Senke implementiertes Ereignis zu ausgelöst, kann die Quelle die entsprechende Methode der Implementierung der Senke aufrufen.
+Eine Verbindung besteht aus zwei Teilen: dem Objekt, das die-Schnittstelle aufruft, als "Quelle" bezeichnet, und dem Objekt, das die-Schnittstelle implementiert, so genannte "Sink". Durch die Bereitstellung eines Verbindungs Punkts ermöglicht eine Quelle senken, Verbindungen mit sich selbst herzustellen. Durch den Verbindungspunkt Mechanismus erhält ein Quell Objekt einen Zeiger auf die Implementierung der Senke eines Satzes von Element Funktionen. Um z. b. ein von der Senke implementiertes Ereignis auszulösen, kann die Quelle die entsprechende Methode der Senke-Implementierung aufzurufen.
 
-Standardmäßig implementiert `COleControl`eine -derived-Klasse zwei Verbindungspunkte: einen für Ereignisse und einen für Eigenschaftenänderungsbenachrichtigungen. Diese Verbindungen werden bzw. zum Auslösen von Ereignissen und zum Notifizieren einer Senke (z. B. des Containers des Steuerelements) verwendet, wenn sich ein Eigenschaftswert geändert hat. Unterstützung für OLE-Steuerelemente zum Implementieren zusätzlicher Verbindungspunkte wird ebenfalls bereitgestellt. Für jeden zusätzlichen Verbindungspunkt, der in Ihrer Steuerelementklasse implementiert ist, müssen Sie einen "Verbindungsteil" deklarieren, der den Verbindungspunkt implementiert. Wenn Sie einen oder mehrere Verbindungspunkte implementieren, müssen Sie auch eine einzelne "Verbindungszuordnung" in Ihrer Steuerelementklasse deklarieren.
+Standardmäßig implementiert eine von `COleControl` abgeleitete Klasse zwei Verbindungspunkte: einen für Ereignisse und einen für Benachrichtigungen über Eigenschafts Änderungen. Diese Verbindungen werden verwendet, um Ereignisse auszulösen und eine Senke (z. b. den Container des Steuer Elements) zu benachrichtigen, wenn sich ein Eigenschafts Wert geändert hat. Die Unterstützung wird auch für OLE-Steuerelemente zur Implementierung zusätzlicher Verbindungspunkte bereitgestellt. Für jeden zusätzlichen Verbindungspunkt, der in der Steuerelement Klasse implementiert ist, müssen Sie einen "Verbindungsteil" deklarieren, der den Verbindungspunkt implementiert. Wenn Sie einen oder mehrere Verbindungspunkte implementieren, müssen Sie auch eine einzelne "Verbindungs Zuordnung" in der Steuerelement Klasse deklarieren.
 
-Das folgende Beispiel veranschaulicht eine einfache Verbindungszuordnung `Sample` und einen Verbindungspunkt für das OLE-Steuerelement, das aus zwei Codefragmenten besteht: Der erste Teil deklariert die Verbindungszuordnung und den Punkt; die zweite implementiert diese Karte und Punkt. Das erste Fragment wird in die Deklaration der Steuerelementklasse unter dem **geschützten** Abschnitt eingefügt:
+Das folgende Beispiel veranschaulicht eine einfache Verbindungs Zuordnung und einen Verbindungspunkt für das `Sample` OLE-Steuerelement, bestehend aus zwei Code Fragmenten: der erste Teil deklariert die Verbindungs Zuordnung und den Punkt. die zweite implementiert diese Karte und diesen Punkt. Das erste Fragment wird in die Deklaration der Steuerelement Klasse im Abschnitt eingefügt **`protected`** :
 
 [!code-cpp[NVC_MFCConnectionPoints#7](../../mfc/codesnippet/cpp/cconnectionpoint-class_1.h)]
 
-Die BEGIN_CONNECTION_PART und END_CONNECTION_PART-Makros `XSampleConnPt` eine eingebettete Klasse (abgeleitet von ) deklarieren, die `CConnectionPoint`diesen bestimmten Verbindungspunkt implementiert. Wenn Sie `CConnectionPoint` Memberfunktionen überschreiben oder eigene Memberfunktionen hinzufügen möchten, deklarieren Sie diese zwischen diesen beiden Makros. Beispielsweise überschreibt das CONNECTION_IID `CConnectionPoint::GetIID` Makro die Memberfunktion, wenn sie zwischen diesen beiden Makros platziert wird.
+Die Makros BEGIN_CONNECTION_PART und END_CONNECTION_PART deklarieren eine eingebettete Klasse `XSampleConnPt` (abgeleitet von `CConnectionPoint` ), die diesen speziellen Verbindungspunkt implementiert. Wenn Sie Element `CConnectionPoint` Funktionen überschreiben oder eigene Element Funktionen hinzufügen möchten, deklarieren Sie Sie zwischen diesen beiden Makros. Das CONNECTION_IID-Makro überschreibt z. b. die-Element `CConnectionPoint::GetIID` Funktion, wenn diese zwischen diesen beiden Makros platziert wird.
 
-Das zweite Codefragment wird in die Implementierungsdatei (. CPP) Ihrer Kontrollklasse. Dieser Code implementiert die Verbindungszuordnung, die den `SampleConnPt`zusätzlichen Verbindungspunkt enthält:
+Das zweite Code Fragment wird in die Implementierungs Datei () eingefügt. Cpp) Ihrer Steuerelement Klasse. Dieser Code implementiert die Verbindungs Zuordnung, die den zusätzlichen Verbindungspunkt umfasst `SampleConnPt` :
 
 [!code-cpp[NVC_MFCConnectionPoints#2](../../mfc/codesnippet/cpp/cconnectionpoint-class_2.cpp)]
 
-Nachdem diese Codefragmente eingefügt wurden, macht das OLE-Beispielsteuerelement `ISampleSink` einen Verbindungspunkt für die Schnittstelle verfügbar.
+Nachdem diese Code Fragmente eingefügt wurden, macht das OLE-Beispiel Steuerelement einen Verbindungspunkt für die- `ISampleSink` Schnittstelle verfügbar.
 
-In der Regel unterstützen Verbindungspunkte "Multicasting", d. h. die Möglichkeit, an mehrere Senken zu senden, die mit derselben Schnittstelle verbunden sind. Das folgende Codefragment veranschaulicht, wie Multicastings durch Durchlaufen jeder Senke auf einem Verbindungspunkt erreicht werden:
+Verbindungspunkte unterstützen in der Regel "Multicasting", was die Möglichkeit zum Übertragen an mehrere senken mit derselben Schnittstelle ist. Im folgenden Code Fragment wird veranschaulicht, wie Multicasting durchlaufen der einzelnen senken an einem Verbindungspunkt erreicht wird:
 
 [!code-cpp[NVC_MFCConnectionPoints#4](../../mfc/codesnippet/cpp/cconnectionpoint-class_3.cpp)]
 
-In diesem Beispiel wird der aktuelle `SampleConnPt` Satz von Verbindungen `CConnectionPoint::GetConnections`auf dem Verbindungspunkt mit einem Aufruf von abgerufen. Es iteriert dann durch `ISampleSink::SinkFunc` die Verbindungen und ruft jede aktive Verbindung auf.
+In diesem Beispiel wird der aktuelle Satz von Verbindungen auf dem `SampleConnPt` Verbindungspunkt mit einem-Befehl abgerufen `CConnectionPoint::GetConnections` . Anschließend durchläuft Sie die Verbindungen und ruft `ISampleSink::SinkFunc` für jede aktive Verbindung auf.
 
-Weitere Informationen zur `CConnectionPoint`Verwendung finden Sie im Artikel [Verbindungspunkte](../../mfc/connection-points.md).
+Weitere Informationen zur Verwendung von `CConnectionPoint` finden Sie im Artikel [Verbindungspunkte](../../mfc/connection-points.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
 `CConnectionPoint`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
-## <a name="cconnectionpointcconnectionpoint"></a><a name="cconnectionpoint"></a>CConnectionPoint::CConnectionPoint
+## <a name="cconnectionpointcconnectionpoint"></a><a name="cconnectionpoint"></a>CConnectionPoint:: CConnectionPoint
 
 Erstellt ein `CConnectionPoint`-Objekt.
 
@@ -110,7 +110,7 @@ Erstellt ein `CConnectionPoint`-Objekt.
 CConnectionPoint();
 ```
 
-## <a name="cconnectionpointgetconnections"></a><a name="getconnections"></a>CConnectionPoint::GetConnections
+## <a name="cconnectionpointgetconnections"></a><a name="getconnections"></a>CConnectionPoint:: GetConnections
 
 Rufen Sie diese Funktion auf, um alle aktiven Verbindungen für einen Verbindungspunkt abzurufen.
 
@@ -120,11 +120,11 @@ const CPtrArray* GetConnections();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein Array aktiver Verbindungen (Senken). Einige zeigers im Array sind möglicherweise NULL. Jeder Nicht-NULL-Zeiger in diesem Array kann mithilfe eines Umwandlungsoperators sicher in einen Zeiger auf die Senkenschnittstelle konvertiert werden.
+Ein Zeiger auf ein Array von aktiven Verbindungen (senken). Einige der Zeiger im Array können NULL sein. Jeder nicht-NULL-Zeiger in diesem Array kann mithilfe eines Umwandlungs Operators sicher in einen Zeiger auf die Senkenschnittstelle konvertiert werden.
 
-## <a name="cconnectionpointgetcontainer"></a><a name="getcontainer"></a>CConnectionPoint::GetContainer
+## <a name="cconnectionpointgetcontainer"></a><a name="getcontainer"></a>CConnectionPoint:: getContainer
 
-Wird vom Framework aufgerufen, um den `IConnectionPointContainer` für den Verbindungspunkt abzurufen.
+Wird von Framework aufgerufen, um den `IConnectionPointContainer` für den Verbindungspunkt abzurufen.
 
 ```
 virtual LPCONNECTIONPOINTCONTAINER GetContainer();
@@ -132,15 +132,15 @@ virtual LPCONNECTIONPOINTCONTAINER GetContainer();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, ein Zeiger auf den Container; andernfalls NULL.
+Bei Erfolg ein Zeiger auf den Container. andernfalls NULL.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion wird in der Regel vom BEGIN_CONNECTION_PART Makro implementiert.
+Diese Funktion wird in der Regel durch das BEGIN_CONNECTION_PART-Makro implementiert.
 
-## <a name="cconnectionpointgetiid"></a><a name="getiid"></a>CConnectionPoint::GetIID
+## <a name="cconnectionpointgetiid"></a><a name="getiid"></a>CConnectionPoint:: getiid
 
-Wird vom Framework aufgerufen, um die Schnittstellen-ID eines Verbindungspunkts abzurufen.
+Wird von Framework aufgerufen, um die Schnittstellen-ID eines Verbindungs Punkts abzurufen.
 
 ```
 virtual REFIID GetIID() = 0;
@@ -148,15 +148,15 @@ virtual REFIID GetIID() = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf die Schnittstellen-ID des Verbindungspunkts.
+Ein Verweis auf die Schnittstellen-ID des Verbindungs Punkts.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, um die Schnittstellen-ID für diesen Verbindungspunkt zurückzugeben.
 
-## <a name="cconnectionpointgetmaxconnections"></a><a name="getmaxconnections"></a>CConnectionPoint::GetMaxConnections
+## <a name="cconnectionpointgetmaxconnections"></a><a name="getmaxconnections"></a>CConnectionPoint:: getmaxconnections
 
-Wird vom Framework aufgerufen, um die maximale Anzahl von Verbindungen abzurufen, die vom Verbindungspunkt unterstützt werden.
+Wird von Framework aufgerufen, um die maximale Anzahl von Verbindungen abzurufen, die vom Verbindungspunkt unterstützt werden.
 
 ```
 virtual int GetMaxConnections();
@@ -164,17 +164,17 @@ virtual int GetMaxConnections();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die maximale Anzahl von Verbindungen, die vom Steuerelement unterstützt werden, oder -1, wenn keine Begrenzung vorhanden ist.
+Die maximale Anzahl von Verbindungen, die vom Steuerelement unterstützt werden, oder-1, wenn keine Begrenzung erreicht ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Standardimplementierung gibt -1 zurück, was auf keine Begrenzung hinweist.
+Die Standard Implementierung gibt "-1" zurück, was bedeutet, dass keine Begrenzung
 
-Überschreiben Sie diese Funktion, wenn Sie die Anzahl der Senken begrenzen möchten, die eine Verbindung mit dem Steuerelement herstellen können.
+Überschreiben Sie diese Funktion, wenn Sie die Anzahl der senken begrenzen möchten, die eine Verbindung mit dem Steuerelement herstellen können.
 
-## <a name="cconnectionpointgetnextconnection"></a><a name="getnextconnection"></a>CConnectionPoint::GetNextConnection
+## <a name="cconnectionpointgetnextconnection"></a><a name="getnextconnection"></a>CConnectionPoint:: GetNextConnection
 
-Ruft einen Zeiger auf das Verbindungselement bei *pos*ab.
+Ruft einen Zeiger auf das Verbindungselement bei *POS*ab.
 
 ```
 LPUNKNOWN GetNextConnection(POSITION& pos) const;
@@ -182,24 +182,24 @@ LPUNKNOWN GetNextConnection(POSITION& pos) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Pos*<br/>
-Gibt einen Verweis auf einen POSITION-Wert an, der von einem vorherigen `GetNextConnection` oder [GetStartPosition-Aufruf](#getstartposition) zurückgegeben wird.
+*POS*<br/>
+Gibt einen Verweis auf einen Positionswert an, der von einem vorherigen `GetNextConnection` oder [GetStartPosition](#getstartposition) -Befehl zurückgegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf das Verbindungselement, das durch *pos*oder NULL angegeben wird.
+Ein Zeiger auf das von *POS*angegebene Verbindungselement oder NULL.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion ist besonders nützlich, um alle Elemente in der Verbindungszuordnung zu durchlaufen. Überspringen Sie beim Iterieren alle NULLs, die von dieser Funktion zurückgegeben werden.
+Diese Funktion ist besonders nützlich für das Durchlaufen aller Elemente in der Verbindungs Zuordnung. Überspringen Sie beim durchlaufen alle Nullen, die von dieser Funktion zurückgegeben werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCConnectionPoints#4](../../mfc/codesnippet/cpp/cconnectionpoint-class_3.cpp)]
 
-## <a name="cconnectionpointgetstartposition"></a><a name="getstartposition"></a>CConnectionPoint::GetStartPosition
+## <a name="cconnectionpointgetstartposition"></a><a name="getstartposition"></a>CConnectionPoint:: GetStartPosition
 
-Startet eine Karteniteration, indem ein POSITION-Wert zurückgegeben wird, der an einen [GetNextConnection-Aufruf](#getnextconnection) übergeben werden kann.
+Startet eine Karten iterierung durch Zurückgeben eines Positions Werts, der an einen [GetNextConnection](#getnextconnection) -Befehl übermittelt werden kann.
 
 ```
 POSITION GetStartPosition() const;
@@ -207,19 +207,19 @@ POSITION GetStartPosition() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein POSITION-Wert, der eine Startposition für die Iterierung der Karte angibt; oder NULL, wenn die Karte leer ist.
+Ein Positionswert, der eine Anfangs Position zum Durchlaufen der Zuordnung angibt. oder NULL, wenn die Zuordnung leer ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Iterationssequenz ist nicht vorhersagbar. Daher hat das "erste Element in der Karte" keine besondere Bedeutung.
+Die Iterations Sequenz ist nicht vorhersagbar. Daher hat das "erste Element in der Zuordnung" keine besondere Bedeutung.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CConnectionPoint::GetNextConnection](#getnextconnection).
+  Weitere Informationen finden Sie im Beispiel für [CConnectionPoint:: GetNextConnection](#getnextconnection).
 
-## <a name="cconnectionpointonadvise"></a><a name="onadvise"></a>CConnectionPoint::OnAdvise
+## <a name="cconnectionpointonadvise"></a><a name="onadvise"></a>CConnectionPoint:: on-Empfehlung
 
-Wird vom Framework aufgerufen, wenn eine Verbindung hergestellt oder unterbrochen wird.
+Wird von Framework aufgerufen, wenn eine Verbindung hergestellt oder getrennt wird.
 
 ```
 virtual void OnAdvise(BOOL bAdvise);
@@ -227,18 +227,18 @@ virtual void OnAdvise(BOOL bAdvise);
 
 ### <a name="parameters"></a>Parameter
 
-*bAdvise*<br/>
-TRUE, wenn eine Verbindung hergestellt wird; andernfalls FALSE.
+*bEmpfehlung*<br/>
+TRUE, wenn eine Verbindung hergestellt wird. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Bei der Standardimplementierung wird keine Aktion ausgeführt.
 
-Überschreiben Sie diese Funktion, wenn Sie eine Benachrichtigung wünschen, wenn Senken eine Verbindung zum Verbindungspunkt herstellen oder die Verbindung zum Verbindungspunkt trennen sollen.
+Überschreiben Sie diese Funktion, wenn Sie benachrichtigt werden möchten, wenn senken eine Verbindung mit Ihrem Verbindungspunkt herstellen oder diese trennen.
 
-## <a name="cconnectionpointquerysinkinterface"></a><a name="querysinkinterface"></a>CConnectionPoint::QuerySinkInterface
+## <a name="cconnectionpointquerysinkinterface"></a><a name="querysinkinterface"></a>CConnectionPoint:: querysink Interface
 
-Ruft einen Zeiger auf die angeforderte Senkenschnittstelle ab.
+Ruft einen Zeiger auf die angeforderte Senke Schnittstelle ab.
 
 ```
 virtual HRESULT QuerySinkInterface(
@@ -248,17 +248,17 @@ virtual HRESULT QuerySinkInterface(
 
 ### <a name="parameters"></a>Parameter
 
-*pUnkSink*<br/>
+*punksink*<br/>
 Der Bezeichner der angeforderten Senkenschnittstelle.
 
-*ppSchnittstelle*<br/>
-Ein Zeiger auf den Schnittstellenzeiger, der von *pUnkSink*identifiziert wird. Wenn das Objekt diese Schnittstelle \* nicht unterstützt, wird *ppInterface* auf NULL gesetzt.
+*ppinterface*<br/>
+Ein Zeiger auf den Schnittstellen Zeiger, der von " *punksink*" identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, \* wird *ppinterface* auf NULL festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)

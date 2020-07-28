@@ -33,12 +33,12 @@ helpviewer_keywords:
 - crealf function
 - creall function
 ms.assetid: fa3ac62f-7aa3-4238-a71f-d6b00cd0c7c8
-ms.openlocfilehash: 4dcdf60fee6d57b5561b72b477aa1a8bb31f35f4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 14d7bc25e514a217a6ab1160d41895ce2473b409
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171215"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87189349"
 ---
 # <a name="creal-crealf-creall"></a>creal, crealf, creall
 
@@ -68,15 +68,15 @@ Der reelle Teil von *z*.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von der-Funktion **aufrufen, die** **_Fcomplex** -oder **_Lcomplex** -Werte annehmen, und **float** -oder **long Double** -Werte zurückgeben. In einem C-Programm nimmt die- **Funktion immer einen** **_Dcomplex** Wert und gibt einen **Double** -Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von der-Funktion **aufrufen, die** **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und-oder-Werte zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt die Benutzer Zugriffs **Funktion immer einen** **_Dcomplex** Wert und gibt einen **`double`** Wert zurück.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-|Routine|C-Header|C++-Header|
+|-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
 |"|" **, "** **kreal**", " **alle** "|\<complex.h>|\<ccomplex>|
 
-Die Typen **_Fcomplex**, **_Dcomplex**und **_Lcomplex** sind Microsoft-spezifische Entsprechungen der nicht implementierten systemeigenen C99-Typen **float _Complex**, **Double _Complex**und **long Double _Complex**bzw. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Typen **_Fcomplex**, **_Dcomplex**und **_Lcomplex** sind Microsoft-spezifische Entsprechungen der nicht implementierten systemeigenen C99-Typen **float _Complex**, **Double _Complex**und **long Double _Complex**bzw. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 

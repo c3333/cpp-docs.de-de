@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - __noop keyword [C++]
 ms.assetid: 81ac6e97-7bf8-496b-b3c4-fd02837573e5
-ms.openlocfilehash: aec4df98413bf34ac1e2966d012bb905edd4775e
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: e12855127e417472eb88c951b71881240b808013
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857930"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214203"
 ---
 # <a name="__noop"></a>__noop
 
 **Microsoft-spezifisch**
 
-Der `__noop` systeminterne Wert gibt an, dass eine Funktion ignoriert werden soll. Die Argumentliste wird analysiert, aber es wird kein Code für die Argumente generiert. Es ist für die Verwendung in globalen Debugfunktionen vorgesehen, die eine Variable Anzahl von Argumenten akzeptieren.
+Der systeminterne Wert **`__noop`** gibt an, dass eine Funktion ignoriert werden soll. Die Argumentliste wird analysiert, aber es wird kein Code für die Argumente generiert. Es ist für die Verwendung in globalen Debugfunktionen vorgesehen, die eine Variable Anzahl von Argumenten akzeptieren.
 
-Der Compiler konvertiert die `__noop` intrinsisch zum Zeitpunkt der Kompilierung in 0.
+Der Compiler konvertiert den systeminternen zum Zeitpunkt der **`__noop`** Kompilierung in 0.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie Sie `__noop`verwenden können.
+Der folgende Code zeigt, wie Sie verwenden können **`__noop`** .
 
 ```cpp
 // compiler_intrinsics__noop.cpp
@@ -46,5 +46,5 @@ int main() {
 
 ## <a name="see-also"></a>Siehe auch
 
-Systeminterne [Compilerfunktionen](../intrinsics/compiler-intrinsics.md)\
-[Stichwörter](../cpp/keywords-cpp.md)
+[Systeminterne Compilerfunktionen](../intrinsics/compiler-intrinsics.md)\
+[Schlüsselwörter](../cpp/keywords-cpp.md)

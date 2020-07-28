@@ -21,16 +21,16 @@ helpviewer_keywords:
 - islessequal function
 - islessgreater function
 - isunordered function
-ms.openlocfilehash: 748360cae1dd0ee43645dee369c60c835246ed03
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 907b26f4e1824d7ef5c7c1a36b4e4d8ccb74c978
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62333702"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220716"
 ---
 # <a name="isgreater-isgreaterequal-isless-islessequal-islessgreater-isunordered"></a>isgreater, isgreaterequal, isless, islessequal, islessgreater, isunordered
 
-Bestimmt die Reihenfolge Beziehung zwischen zwei Gleitkommawerten.
+Bestimmt die Reihenfolge Beziehung zwischen zwei Gleit Komma Werten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -107,33 +107,33 @@ inline bool isunordered(
 ### <a name="parameters"></a>Parameter
 
 *x*, *y*<br/>
-Der zu vergleichenden Gleitkommazahlen-Punktwerte.
+Die zu vergleichenden Gleit Komma Werte.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Vergleichen in alle Vergleiche unendliche von der gleichen Anmeldebenutzeroberfläche als gleichwertig. Minus unendlich ist kleiner als jedes beliebige endlicher Wert oder plus unendlich. Plus unendlich ist größer als alle endlicher Wert oder minus unendlich. Nullen sind gleich, unabhängig von der Anmeldung. NaN-Werte sind nicht kleiner als, gleich oder größer als ein beliebiger Wert, einschließlich einer anderen NaN.
+Bei allen vergleichen werden Unendlichkeiten desselben Zeichens als gleich verglichen. Minus unendlich ist kleiner als jeder endliche Wert oder positiv unendlich. "Positiv unendlich" ist größer als jeder endliche Wert oder minus unendlich. Nullen sind unabhängig vom Vorzeichen gleich. Nans sind nicht kleiner, gleich oder größer als ein beliebiger Wert, einschließlich eines anderen NaN-Werts.
 
-Wenn kein Argument ein NaN-Wert, die Makros, die Sortierung ist **Isgreater**, **Isgreaterequal**, **Isless**, und **Islessequal** ungleich NULL zurück Wert, wenn die angegebene Sortierung Beziehung zwischen *x* und *y* gilt. Diese Makros geben 0 zurück, wenn eine oder beide Argumente NaN-Werte sind oder die Sortierung Beziehung auf "false" festgelegt ist. Die Funktion Formulare Verhalten sich die gleiche Weise, aber zurückgeben **"true"** oder **"false"**.
+Wenn keines der Argumente ein NaN ist, geben die Bestell Makros **isgreater**, **isgreaterequal**, **isless**und **islessequal** einen Wert ungleich 0 (null) zurück, wenn die angegebene Reihenfolge Beziehung zwischen *x* und *y* true ist. Diese Makros geben 0 zurück, wenn ein oder beide Argumente Nane sind oder wenn die Reihenfolge Beziehung false lautet. Die Funktionsformen Verhalten sich auf dieselbe Weise, geben aber **`true`** oder zurück **`false`** .
 
-Die **Islessgreater** Makro gibt einen Wert ungleich NULL zurück, wenn *x* und *y* sind keine NaN-Werte, und *x* ist entweder kleiner oder größer als *y*. Es gibt 0 zurück, wenn eine oder beide Argumente NaN-Werte sind oder wenn die Werte gleich sind. Das Formular für die Funktion verhält sich genauso, gibt jedoch **"true"** oder **"false"**.
+Das **islessgreater** -Makro gibt einen Wert ungleich 0 (null) zurück, wenn sowohl *x* als auch *y* nicht Nane sind und *x* entweder kleiner als oder größer als *y*ist. Es wird 0 zurückgegeben, wenn eines oder beide Argumente Nane sind oder wenn die Werte gleich sind. Das Funktions Formular verhält sich wie, gibt jedoch **`true`** oder zurück **`false`** .
 
-Die **Isunordered** Makro gibt einen Wert ungleich NULL zurück, falls *x*, *y*, oder NaN-Werte. Andernfalls wird 0 (null) zurückgegeben. Das Formular für die Funktion verhält sich genauso, gibt jedoch **"true"** oder **"false"**.
+Das **isungeordnete** -Makro gibt einen Wert ungleich 0 (null) zurück, wenn entweder *x*, *y*oder beides Nane sind. Andernfalls wird 0 zurückgegeben. Das Funktions Formular verhält sich wie, gibt jedoch **`true`** oder zurück **`false`** .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieser Vergleichsvorgänge werden als Makros, die beim Kompilieren als C++ und als Inline-Vorlagenfunktionen beim Kompilieren als C++ implementiert.
+Diese Vergleichs Vorgänge werden als Makros implementiert, wenn Sie als C kompiliert werden, und als Inline Vorlagen Funktionen, wenn Sie als C++ kompiliert werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------------|-------------------------------|
-| **isgreater**, **isgreaterequal**, **isless**,<br/>**islessequal**, **islessgreater**, **isunordered** | \<math.h> | \<math.h> or \<cmath> |
+| **isgreater**, **isgreaterequal**, **isless**,<br/>**islessequal**, **islessgreater**, **isunsortiert** | \<math.h> | \<math.h> oder \<cmath> |
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [isfinite, _finite, _finitef](finite-finitef.md)<br/>
 [isinf](isinf.md)<br/>
 [isnan, _isnan, _isnanf](isnan-isnan-isnanf.md)<br/>

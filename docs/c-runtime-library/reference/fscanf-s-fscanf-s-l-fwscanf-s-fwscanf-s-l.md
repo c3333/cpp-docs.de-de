@@ -43,12 +43,12 @@ helpviewer_keywords:
 - streams [C++], reading formatted data from
 - fscanf_s_l function
 ms.assetid: b6e88194-714b-4322-be82-1cc0b343fe01
-ms.openlocfilehash: ceeba78aa70d3569742415551d20296d726d896e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ff4fa01fe53794ed04f087f264021de9beea4ba9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956560"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220690"
 ---
 # <a name="fscanf_s-_fscanf_s_l-fwscanf_s-_fwscanf_s_l"></a>fscanf_s, _fscanf_s_l, fwscanf_s, _fwscanf_s_l
 
@@ -83,7 +83,7 @@ int _fwscanf_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 *format*<br/>
@@ -101,14 +101,14 @@ Jede dieser Funktionen gibt die Anzahl der Felder zurück, die erfolgreich konve
 
 Diese Funktionen überprüfen ihre Parameter. Wenn der *Stream* ein ungültiger Dateizeiger ist oder *Format* ein NULL-Zeiger ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **EOF** zurück und legen **errno** auf **EINVAL**fest.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **fscanf_s** -Funktion liest Daten aus der aktuellen *Streamposition* in die Speicherorte, die durch das- *Argument* angegeben werden (falls vorhanden). Jedes *Argument* muss ein Zeiger auf eine Variable eines Typs sein, der einem Typspezifizierer im- *Format*entspricht. *Format* steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie das *Format* -Argument für **scanf_s**; eine Beschreibung des *Formats*finden Sie unter [formatangabefelder: scanf-und wscanf-Funktionen](../../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md) .  **fwscanf_s** ist eine breit Zeichen Version von **fscanf_s**. das Format Argument für **fwscanf_s** ist eine Zeichenfolge mit breit Zeichen. Diese Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **fscanf_s** unterstützt derzeit keine Eingaben aus einem Unicode-Stream.
 
-Der Hauptunterschied zwischen den sichereren Funktionen (mit dem Suffix " **_s** ") und den anderen Versionen besteht darin, dass für die sichereren Funktionen die Größe in Zeichen jedes **c**-, **c**-, **s**-, **s**-und **[** Type-Felds erforderlich ist. wird als Argument an die Variable geleitet, die unmittelbar auf die Variable folgt Weitere Informationen finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) und [scanf-Breitenangabe](../../c-runtime-library/scanf-width-specification.md).
+Der Hauptunterschied zwischen den sichereren Funktionen (mit dem **_s** Suffix) und den anderen Versionen besteht darin, dass die sichereren Funktionen die Größe in Zeichen jedes **c**-, **c**-, **s**-, **s**-und **[** Type-Felds als Argument direkt nach der Variablen weitergeben müssen. Weitere Informationen finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) und [scanf-Breitenangabe](../../c-runtime-library/scanf-width-specification.md).
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**.
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
@@ -119,14 +119,14 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 |**_ftscanf_s**|**fscanf_s**|**fscanf_s**|**fwscanf_s**|
 |**_ftscanf_s_l**|**_fscanf_s_l**|**_fscanf_s_l**|**_fwscanf_s_l**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**fscanf_s**, **_fscanf_s_l**|\<stdio.h>|
-|**fwscanf_s**, **_fwscanf_s_l**|\<stdio.h> oder \<wchar.h>|
+|**fscanf_s** **_fscanf_s_l**|\<stdio.h>|
+|**fwscanf_s** **_fwscanf_s_l**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -183,7 +183,7 @@ a-string
 x
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [_cscanf_s, _cscanf_s_l, _cwscanf_s, _cwscanf_s_l](cscanf-s-cscanf-s-l-cwscanf-s-cwscanf-s-l.md)<br/>

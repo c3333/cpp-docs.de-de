@@ -34,12 +34,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arcsine function
 ms.assetid: ca05f9ea-b711-49f6-9f32-2f4019abfd69
-ms.openlocfilehash: cfee30270b8ed0daa5d600fec65659fbf07162fd
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 98f7babfbfcbfcdbf36b79b70aac33f002e3bc90
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909271"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87189440"
 ---
 # <a name="asin-asinf-asinl"></a>asin, asinf, asinl
 
@@ -75,15 +75,15 @@ Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ASIN** standardmäßig ei
 |± **QNAN**, **IND**|Keine|**_DOMAIN**|
 |&#124;x&#124;>1|**Ungültig**|**_DOMAIN**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ASIN** mit **float** -und **Long** **Double** -Werten aufzurufen. In einem C-Programm nimmt **ASIN** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ASIN** mit **`float`** -und-Werten aufzurufen **`long double`** . In einem C-Programm übernimmt **ASIN** immer und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
+|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
 |**ASIN**, **asinf**, **asinl**|\<math.h>|\<cmath> oder \<math.h>|
 
@@ -93,7 +93,7 @@ Weitere Informationen finden Sie unter [acos, acosf, acosl](acos-acosf-acosl.md)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acos, acosf, acosl](acos-acosf-acosl.md)<br/>
 [atan, atanf, atanl, atan2, atan2f, atan2l](atan-atanf-atanl-atan2-atan2f-atan2l.md)<br/>
 [cos, cosf, cosl](cos-cosf-cosl.md)<br/>

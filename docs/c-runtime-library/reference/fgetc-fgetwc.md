@@ -36,12 +36,12 @@ helpviewer_keywords:
 - reading characters from streams
 - fgetwc function
 ms.assetid: 13348b7b-dc86-421c-9d6c-611ca79c8338
-ms.openlocfilehash: a9c064582e22e267b0c597ecd89df8a43ef0bbc4
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 5f8d4b1fcdc2d4d4de712ee79742025db74b6452
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912867"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87189284"
 ---
 # <a name="fgetc-fgetwc"></a>fgetc, fgetwc
 
@@ -65,9 +65,9 @@ Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**fgetc** gibt das als **int** gelesene Zeichen zurück oder gibt **EOF** zurück, um einen Fehler oder ein Dateiende anzugeben. **fgetwc** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt **WEOF** zurück, um einen Fehler oder ein Dateiende anzugeben. Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden. Wenn ein Lesefehler auftritt, wird der Fehlerindikator für den Stream festgelegt. Wenn *stream* der Stream **null**ist, rufen **fgetc** und **fgetwc** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben **EOF**zurück.
+**fgetc** gibt das als gelesene Zeichen als zurück **`int`** oder gibt **EOF** zurück, um einen Fehler oder ein Dateiende anzugeben. **fgetwc** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt **WEOF** zurück, um einen Fehler oder ein Dateiende anzugeben. Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden. Wenn ein Lesefehler auftritt, wird der Fehlerindikator für den Stream festgelegt. Wenn *stream* der Stream **null**ist, rufen **fgetc** und **fgetwc** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben **EOF**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen liest ein einzelnes Zeichen von der aktuellen Position der Datei, die dem *Stream*zugeordnet ist. Die Funktion erhöht dann den zugeordneten Dateizeiger (sofern definiert), um auf das nächste Zeichen zu zeigen. Wenn der Stream am Dateiende ist, wird der Dateiende-Indikator für den Stream festgelegt.
 
@@ -87,7 +87,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_fgettc**|**fgetc**|**fgetc**|**fgetwc**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|

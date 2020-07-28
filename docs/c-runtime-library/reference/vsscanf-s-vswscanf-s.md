@@ -24,12 +24,12 @@ f1_keywords:
 - vswscanf_s
 - _vstscanf_s
 ms.assetid: 7b732e68-c6f4-4579-8917-122f5a7876e1
-ms.openlocfilehash: bacda4288a6745ea57c31e68e515ae7b37418096
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9150642a6a21198ae43bdea5f33cc5a8f0b6a581
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946010"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87188998"
 ---
 # <a name="vsscanf_s-vswscanf_s"></a>vsscanf_s, vswscanf_s
 
@@ -52,13 +52,13 @@ int vswscanf_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Gespeicherte Daten
 
 *format*<br/>
 Formatsteuerzeichenfolge. Weitere Informationen finden Sie unter [Format Specification Fields: scanf and wscanf Functions (Formatspezifikationsfelder: Funktionen scanf und wscanf)](../../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md).
 
-*arglist*<br/>
+*Arglist*<br/>
 Variablenargumentenliste.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -69,7 +69,7 @@ Wenn *buffer* oder *Format* ein **null** -Zeiger ist, wird der Handler für ung�
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (errno, _doserrno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **vsscanf_s** -Funktion liest Daten aus dem Puffer in die *Speicher* Orte, die von jedem Argument in der *Arglist* -Argumentliste angegeben werden. Die Argumente in der Argumentliste geben Zeiger auf Variablen an, die einen Typ haben, der einem Typspezifizierer im- *Format*entspricht. Anders als die weniger sichere Version von **vsscanf**ist ein Puffergrößen Parameter erforderlich, wenn Sie die tyfeldzeichen **c**, **c**, **s**, **s**oder String-Control Sets verwenden, die in **[]** eingeschlossen sind. Nach jedem Pufferparameter, der dies erfordert, muss die Puffergröße in Zeichen als zusätzlicher Parameter angegeben werden.
 
@@ -78,9 +78,9 @@ Die Puffergröße enthält das abschließende NULL-Zeichen. Ein Feld für die Br
 Weitere Informationen finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) und [scanf-Typenfeldzeichen](../../c-runtime-library/scanf-type-field-characters.md).
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**.
 
-Das *Format* -Argument steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie das *Format* -Argument für die **scanf_s** -Funktion. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
+Das *Format* -Argument steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie das *Format* -Argument für die **scanf_s** Funktion. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 **vswscanf_s** ist eine breit Zeichen Version von **vsscanf_s**. die Argumente für **vswscanf_s** sind Zeichen folgen mit breit Zeichen. **vsscanf_s** verarbeitet keine Multibytezeichen-hexadezimal Zeichen. **vswscanf_s** verarbeitet keine Unicode-Hexadezimal-oder-Kompatibilitäts Zonen Zeichen in voller Breite. Andernfalls Verhalten sich **vswscanf_s** und **vsscanf_s** identisch.
 
@@ -97,7 +97,7 @@ Das *Format* -Argument steuert die Interpretation der Eingabefelder und hat die 
 |**vsscanf_s**|\<stdio.h>|
 |**vswscanf_s**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -151,11 +151,11 @@ Integer:  = 15
 Real:     = 15.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [scanf, _scanf_l, wscanf, _wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
 [sscanf, _sscanf_l, swscanf, _swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
 [sscanf_s, _sscanf_s_l, swscanf_s, _swscanf_s_l](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [vsscanf, vswscanf](vsscanf-vswscanf.md)<br/>

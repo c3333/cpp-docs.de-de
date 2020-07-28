@@ -2,18 +2,18 @@
 title: Compilerwarnung (Stufen 3 und 4) C4244
 ms.date: 11/04/2016
 ms.assetid: f116bb09-c479-4b4e-a647-fe629a1383f6
-ms.openlocfilehash: a12bee4591df8a7a952dc741c4b26c637bb5256c
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: cadba931af9c4497ec78938c37f94fe13daab0af
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74991074"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214320"
 ---
 # <a name="compiler-warning-levels-3-and-4-c4244"></a>Compilerwarnung (Stufen 3 und 4) C4244
 
 'conversion': Umwandlung von 'type1' in 'type2', Datenverlust ist möglich
 
-Ein ganzzahliger Typ wird in einen kleineren ganzzahligen Typ konvertiert. Dies ist eine Warnung der Stufe 4, wenn *Typ1* `int` und *Typ2* kleiner als `int`ist. Andernfalls ist es eine Ebene 3 (ein Wert vom Typ [__int64](../../cpp/int8-int16-int32-int64.md) einer Variablen vom Typ "`unsigned int`" zugewiesen). Möglicherweise ist ein Datenverlust aufgetreten.
+Ein ganzzahliger Typ wird in einen kleineren ganzzahligen Typ konvertiert. Dies ist eine Warnung der Stufe 4, *type1* wenn Typ1 **`int`** und *Typ2* kleiner als ist **`int`** . Andernfalls ist es eine Ebene 3 (ein Wert vom Typ [__int64](../../cpp/int8-int16-int32-int64.md) einer Variablen vom Typ zugewiesen **`unsigned int`** ). Möglicherweise ist ein Datenverlust aufgetreten.
 
 Wenn C4244 angezeigt wird, sollten Sie das Programm für das Verwenden von kompatiblen Typen ändern Logik zu Ihrem Code hinzufügen, um sicherzustellen, dass der Bereich möglicher Werte immer mit den verwendeten Typen kompatibel sind.
 

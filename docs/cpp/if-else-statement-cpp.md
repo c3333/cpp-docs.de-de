@@ -1,7 +1,7 @@
 ---
 title: if-else-Anweisung (C++)
 ms.date: 07/20/2019
-description: Verwenden Sie If-Else- C++ Anweisungen in, um bedingte Verzweigungen zu steuern.
+description: Verwenden Sie if-else-Anweisungen in C++, um bedingte Verzweigungen zu steuern.
 f1_keywords:
 - else_cpp
 - if_cpp
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - if keyword [C++]
 - else keyword [C++]
 ms.assetid: f8c45cde-6bce-42ae-81db-426b3dbd4caa
-ms.openlocfilehash: fd2736d80d68249773c9aa6cf7cb9edffdaadac4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a9256e32c89890635c5473a85b4bb3b56bec26d4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80178430"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87187568"
 ---
 # <a name="if-else-statement-c"></a>if-else-Anweisung (C++)
 
-Steuert den bedingten Branch. Anweisungen im *If-Block* werden nur ausgeführt, wenn der *if-Expression* einen Wert ungleich 0 (null) ergibt (oder true). Wenn der Wert des *Ausdrucks* ungleich 0 (null) ist, werden *Anweisung1* und alle anderen Anweisungen im Block ausgeführt, und der Else-Block wird übersprungen. Wenn der Wert von *Expression* NULL ist, wird der If-Block ausgelassen, und der Else-Block wird ausgeführt, falls vorhanden. Ausdrücke, die als ungleich NULL ausgewertet werden, sind
+Steuert den bedingten Branch. Anweisungen im *If-Block* werden nur ausgeführt, wenn der *if-Expression* einen Wert ungleich 0 (null) ergibt (oder **`true`** ). Wenn der Wert des *Ausdrucks* ungleich 0 (null) ist, werden *Anweisung1* und alle anderen Anweisungen im Block ausgeführt, und der Else-Block wird übersprungen. Wenn der Wert von *Expression* NULL ist, wird der If-Block ausgelassen, und der Else-Block wird ausgeführt, falls vorhanden. Ausdrücke, die als ungleich NULL ausgewertet werden, sind
 
-- TRUE
+- **`true`**
 - ein nicht-NULL-Zeiger,
 - ein arithmetischer Wert ungleich 0 (null) oder
 - ein Klassentyp, der eine eindeutige Konvertierung in einen arithmetischen, booleschen oder Zeigertyp definiert. (Informationen zu Konvertierungen finden Sie unter [Standard Konvertierungen](../cpp/standard-conversions.md).)
@@ -113,7 +113,7 @@ int main()
 
 ## <a name="if-statement-with-an-initializer"></a><a name="if_with_init"></a>if-Anweisung mit einem Initialisierer
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): eine **if** -Anweisung kann auch einen Ausdruck enthalten, der eine benannte Variable deklariert und initialisiert. Verwenden Sie diese Form der if-Anweisung, wenn die Variable nur im Bereich des If-Blocks benötigt wird.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): eine- **`if`** Anweisung kann auch einen Ausdruck enthalten, der eine benannte Variable deklariert und initialisiert. Verwenden Sie diese Form der if-Anweisung, wenn die Variable nur im Bereich des If-Blocks benötigt wird.
 
 ## <a name="example"></a>Beispiel
 
@@ -159,11 +159,11 @@ int main()
 }
 ```
 
-In allen Formen der **if** -Anweisung wird *Ausdruck*, der einen beliebigen Wert außer einer Struktur aufweisen kann, ausgewertet, einschließlich aller Nebeneffekte. Das Steuerelement **wird** von der if-Anweisung an die nächste Anweisung im Programm weitergeleitet, es sei denn, *eine der Anweisungen s enthält*eine [break](../cpp/break-statement-cpp.md)-, [Continue](../cpp/continue-statement-cpp.md)-oder [goto](../cpp/goto-statement-cpp.md)-Anweisung.
+In allen Formen der- **`if`** Anweisung wird *Expression*, der einen beliebigen Wert außer einer Struktur aufweisen kann, ausgewertet, einschließlich aller Nebeneffekte. Die Steuerung wird von der- **`if`** Anweisung an die nächste Anweisung im Programm weitergeleitet, es sei denn, eine der Anweisungen s enthält eine [break](../cpp/break-statement-cpp.md)-, [Continue](../cpp/continue-statement-cpp.md)-oder [goto](../cpp/goto-statement-cpp.md) *-Anweisung*.
 
-Die **else** -Klausel einer `if...else`-Anweisung ist mit der nächstliegenden **if** -Anweisung in demselben Bereich verknüpft, der nicht über eine entsprechende **else** -Anweisung verfügt.
+Die-Klausel einer- **`else`** `if...else` Anweisung ist der nächstgelegenen vorangehenden **`if`** Anweisung in demselben Bereich zugeordnet, der keine entsprechende- **`else`** Anweisung hat.
 
-## <a name="a-nameif_constexpr-if-constexpr-statements"></a><a name="if_constexpr">, wenn constexpr-Anweisungen
+## <a name="a-nameif_constexpr-if-constexpr-statements"></a><a name="if_constexpr">if-Anweisungen (constexpr)
 
 **Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): in Funktions Vorlagen können Sie mit einer **if constexpr** -Anweisung Kompilierzeit-Verzweigungs Entscheidungen treffen, ohne auf mehrere Funktions Überladungen zurückgreifen zu müssen. Sie können z. b. eine einzelne Funktion schreiben, die das Entpacken von Parametern behandelt (keine NULL-Parameter Überladung erforderlich):
 
@@ -190,4 +190,4 @@ void f(T&& t, Rest&&... r)
 
 [Auswahlanweisungen](../cpp/selection-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)
+[Switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)

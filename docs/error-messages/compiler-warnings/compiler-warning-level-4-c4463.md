@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4463
 ms.assetid: a07ae70c-db4e-472b-8b58-9137d9997323
-ms.openlocfilehash: e125a532f87533958ec43ed5580665ad4108856b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: acc7957493942a9c0e19ce098b74ed0b5d75a12d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400798"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214359"
 ---
 # <a name="compiler-warning-level-4-c4463"></a>Compilerwarnung (Stufe 4) C4463
 
-> Überlauf; Zuweisen von *Wert* zu Bit-Feld, das nur Werte enthalten kann *Low_value* zu *High_value*
+> Läufen Zuweisen eines *Werts* zu einem Bitfeld, das nur Werte aus *low_value* enthalten kann, die *high_value*
 
-Die zugewiesene *Wert* liegt außerhalb des Bereichs von Werten, die der Bit-Feld enthalten kann. Typen mit Vorzeichen Bitfeld verwenden das höherwertige bit für das Zeichen, wenn also *n* ist die Größe des Bereichs Bitfeld für die Vorzeichen von Bitfeldern-2<sup>n-1</sup> auf 2<sup>n-1</sup>1, während ohne Vorzeichen Bitfelder müssen einen Bereich von 0 bis 2<sup>n</sup>-1.
+Der zugewiesene *Wert* liegt außerhalb des Bereichs von Werten, die das Bitfeld enthalten kann. Signierte bitfeldtypen verwenden das höchst wertige Bit für das Vorzeichen, d. h., wenn *n* die bitfeldgröße ist, ist der Bereich für signierte Bitfelder-2<sup>n-1</sup> bis 2<sup>n-1</sup>-1, während nicht signierte Bitfelder einen Bereich von 0 bis 2<sup>n</sup>-1 aufweisen.
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird C4463 generiert, da versucht wird, weisen Sie den Wert 3 ein Bitfeld des Typs `int` mit einer Größe von 2, die über einen Bereich von-2 bis 1 verfügt.
+In diesem Beispiel wird C4463 generiert, da versucht wird, einen Wert von 3 einem Bitfeld vom Typ **`int`** mit einer Größe von 2 zuzuweisen, der einen Bereich zwischen-2 und 1 aufweist.
 
-Um dieses Problem zu beheben, können Sie den zugewiesenen Wert einen im zulässigen Bereich ändern. Das Bitfeld zum Speichern von Werten ohne Vorzeichen im Bereich von 0 bis 3 vorgesehen ist, können Sie ändern die Art der Anmeldung zu `unsigned`. Wenn das Feld zum Speichern der Werte in den Bereich-4 bis 3 vorgesehen ist, können Sie die Größe des Bit-Feld auf 3 ändern.
+Um dieses Problem zu beheben, können Sie den zugewiesenen Wert in einen Wert im zulässigen Bereich ändern. Wenn das Bitfeld für die Aufbewahrung von Werten ohne Vorzeichen im Bereich von 0 bis 3 vorgesehen ist, können Sie den Deklarationstyp in ändern **`unsigned`** . Wenn das Feld Werte im Bereich von-4 bis 3 enthalten soll, können Sie die bitfeldgröße in 3 ändern.
 
 ```cpp
 // C4463_overflow.cpp

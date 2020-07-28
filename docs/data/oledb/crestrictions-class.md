@@ -13,12 +13,12 @@ helpviewer_keywords:
 - CRestrictions class
 - Open method
 ms.assetid: 0aaa2364-641c-4318-b110-7446aada4b4f
-ms.openlocfilehash: 4a4c86987ceff0f04986d32011ba941e0d2319fe
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9fb911b469497a007550c042ade97b5a463e78fe
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211301"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220443"
 ---
 # <a name="crestrictions-class"></a>CRestrictions-Klasse
 
@@ -47,7 +47,7 @@ Ein Zeiger auf die GUID für das Schema.
 
 **Header:** Atldbsch. h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -82,7 +82,7 @@ in Gibt ein vorhandenes Sitzungs Objekt an, mit dem eine Verbindung mit der Date
 in Gibt die Einschränkungen für das Schemarowset an.
 
 *bbind*<br/>
-in Gibt an, ob die Spalten Zuordnung automatisch gebunden werden soll. Der Standardwert ist **true**, was bewirkt, dass die Spalten Zuordnung automatisch gebunden wird. Wenn *bbind* auf **false** festgelegt wird, wird die automatische Bindung der Spalten Zuordnung verhindert, sodass Sie die Bindung manuell vornehmen können. (Manuelle Bindung ist für OLAP-Benutzer besonders interessant.)
+in Gibt an, ob die Spalten Zuordnung automatisch gebunden werden soll. Der Standardwert ist **`true`** . Dadurch wird die Spalten Zuordnung automatisch gebunden. Wenn Sie *bbind* auf festlegen, wird **`false`** die automatische Bindung der Spalten Zuordnung verhindert, sodass Sie die Bindung manuell vornehmen können. (Manuelle Bindung ist für OLAP-Benutzer besonders interessant.)
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -97,5 +97,5 @@ Informationen zu den definierten Einschränkungen der einzelnen [Schemarowsets f
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
-[Schemarowset-Klassen und Typedef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
+[Schemarowset-Klassen und typedef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C1045
 ms.assetid: 766c2f89-4ecd-4281-adaa-14b270cc0829
-ms.openlocfilehash: 2d1b1bb626e420f972993d73063e798b16e447a7
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 677575c95e3e46d4bbb1bf04f8657e98f1e0a06b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80204595"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220326"
 ---
 # <a name="fatal-error-c1045"></a>Schwerwiegender Fehler C1045
 
 Compilerlimit : Zu tiefe Schachtelung von Linkerangaben
 
-Geschachtelte Externe überschreiten das Compilerlimit. Geschachtelte Externe sind mit dem externen Verknüpfungstyp zulässig, z. B. `extern` "C++". Reduzieren Sie die Anzahl der geschachtelten Externe, um den Fehler zu beheben.
+Geschachtelte Externe überschreiten das Compilerlimit. Als externer Verbindungstyp, z **`extern`** . b. "C++", sind eingefügte externale zulässig. Reduzieren Sie die Anzahl der geschachtelten Externe, um den Fehler zu beheben.

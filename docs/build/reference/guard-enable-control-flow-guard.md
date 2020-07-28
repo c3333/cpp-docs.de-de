@@ -5,12 +5,12 @@ f1_keywords:
 - /guard
 - VC.Project.VCCLCompilerTool.ControlFlowGuard
 ms.assetid: be495323-f59f-4cf3-a6b6-8ee69e6a19dd
-ms.openlocfilehash: e6a8a1545b97976cbe82d1c81b0e70c3dac3a266
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8661f94e0ee35f8d5e2c8caba1fc01bbf4072876
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62270802"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87190688"
 ---
 # <a name="guard-enable-control-flow-guard"></a>/guard (Ablaufsteuerungsschutz aktivieren)
 
@@ -22,11 +22,11 @@ Aktivieren der Compilergenerierung von Ablaufsteuerungsschutz-Sicherheitsüberpr
 /guard:cf[-]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Option **/guard:cf** veranlasst den Compiler, die Ablaufsteuerung für indirekte Aufrufziele zum Zeitpunkt der Kompilierung zu analysieren und dann Code einzufügen, um die Ziele zur Laufzeit zu überprüfen. Standardmäßig ist **/guard:cf** deaktiviert und muss explizit aktiviert werden. Um diese Option explizit zu deaktivieren, verwenden Sie **/guard:cf-**.
 
-**Visual Studio 2017 und höher:** Diese Option fügt schützt für **wechseln** -Anweisungen, die generiert Tabellen zu wechseln.
+**Visual Studio 2017 und**höher: diese Option fügt Wächter für **`switch`** Anweisungen hinzu, die Sprung Tabellen generieren.
 
 Wenn die **/guard:cf** Ablaufsteuerungsschutz-Option (Control Flow Guard, CFG) angegeben wurde, fügen der Compiler und der Linker zusätzliche Laufzeitsicherheitsüberprüfungen zum Erkennen von Versuchen, den Code zu beschädigen, ein. Beim Kompilieren und Verknüpfen werden alle indirekten Aufrufe im Code analysiert, um jede Stelle zu finden, die der Code erreichen kann, wenn er ordnungsgemäß ausgeführt wird. Diese Informationen werden in zusätzlichen Strukturen in den Headern der Binärdateien gespeichert. Der Compiler fügt auch eine Überprüfung vor jedem indirekten Aufruf in Ihren Code ein, um sicherzustellen, dass das Ziel eine der überprüften Positionen ist. Wenn die Überprüfung zur Laufzeit auf einem CFG-fähigen Betriebssystem fehlschlägt, schließt das Betriebssystem das Programm.
 
@@ -40,7 +40,7 @@ Code, der mithilfe von **/guard:cf** kompiliert wird, kann mit Bibliotheken und 
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
 1. Wählen Sie **Konfigurationseigenschaften**, **C/C++**, **Codegenerierung**aus.
 
@@ -48,7 +48,7 @@ Code, der mithilfe von **/guard:cf** kompiliert wird, kann mit Bibliotheken und 
 
 1. Wählen Sie im Dropdown-Steuerelement **Ja** aus, um den Ablaufsteuerungsschutz zu aktivieren, oder **Nein** , um ihn zu deaktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

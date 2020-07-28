@@ -8,12 +8,12 @@ helpviewer_keywords:
 - white space, in C++ identifiers
 - identifiers [C++]
 ms.assetid: 03a0dfb1-4530-4cdf-8295-5ea4dca4c1b8
-ms.openlocfilehash: c905d6acc52f2f4f2a7bf3e92426f76adf25390e
-ms.sourcegitcommit: 28eae422049ac3381c6b1206664455dbb56cbfb6
+ms.openlocfilehash: 2d16dd318cd42b6294ef60edf44a16ccaf47b99b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66450313"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87187672"
 ---
 # <a name="identifiers-c"></a>Bezeichner (C++)
 
@@ -62,7 +62,7 @@ Diese Unicode-Codepunkt-Zahlenbereiche sind, mit Ausnahme des ersten, ebenfalls 
 
 **Microsoft-spezifisch**
 
-Nur die ersten 2048 Zeichen aus Microsoft C++-Bezeichnern sind signifikant. Namen für benutzerdefinierte Typen werden vom Compiler "ergänzt", damit die Typinformationen beibehalten werden. Der resultierende Name, einschließlich der Typinformationen, darf nicht länger als 2048 Zeichen sein. (Finden Sie unter [ergänzte Namen](../build/reference/decorated-names.md) für Weitere Informationen.) Folgende Faktoren können die Länge eines ergänzten Bezeichners beeinflussen:
+Nur die ersten 2048 Zeichen aus Microsoft C++-Bezeichnern sind signifikant. Namen für benutzerdefinierte Typen werden vom Compiler "ergänzt", damit die Typinformationen beibehalten werden. Der resultierende Name, einschließlich der Typinformationen, darf nicht länger als 2048 Zeichen sein. (Weitere Informationen finden Sie unter ergänzte [Namen](../build/reference/decorated-names.md) .) Faktoren, die die Länge eines ergänzten Bezeichners beeinflussen können, sind:
 
 - Gibt an, ob der Bezeichner ein Objekt eines benutzerdefinierten Typs angibt oder einen von einem benutzerdefinierten Typ abgeleiteten Typ.
 
@@ -70,7 +70,7 @@ Nur die ersten 2048 Zeichen aus Microsoft C++-Bezeichnern sind signifikant. Name
 
 - Die Anzahl von Argumenten für eine Funktion.
 
-Das Dollarzeichen `$` ist ein gültiges Bezeichnerzeichen in der Microsoft C++ Compiler (MSVC). MSVC können Sie die tatsächlichen Zeichen durch die zulässigen Bereiche der Universelle Zeichennamen in Bezeichnern dargestellt wird. Damit Sie diese Zeichen verwenden können, müssen Sie die Datei speichern, indem Sie eine Dateicodierungs-Codepage verwenden, die die Zeichen enthält.  In diesem Beispiel wird gezeigt, wie Sie sowohl erweiterte Zeichen als auch universelle Zeichennamen austauschbar in Ihrem Code verwenden können.
+Das Dollarzeichen `$` ist ein gültiges Bezeichnerzeichen im Microsoft C++-Compiler (MSVC). Mit MSVC können Sie auch die tatsächlichen Zeichen verwenden, die durch die zulässigen Bereiche der universellen Zeichennamen in bezeichnerwerten dargestellt werden. Damit Sie diese Zeichen verwenden können, müssen Sie die Datei speichern, indem Sie eine Dateicodierungs-Codepage verwenden, die die Zeichen enthält.  In diesem Beispiel wird gezeigt, wie Sie sowohl erweiterte Zeichen als auch universelle Zeichennamen austauschbar in Ihrem Code verwenden können.
 
 ```cpp
 // extended_identifier.cpp
@@ -87,16 +87,16 @@ int main() {
 }
 ```
 
-Der Bereich der in einem Bezeichner zulässigen Zeichen ist weniger restriktiv, wenn C++ /CLI-Code kompiliert wird. Im Code mit/CLR kompiliert entsprechen [Standard ECMA-335: Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
+Der Bereich der in einem Bezeichner zulässigen Zeichen ist weniger restriktiv, wenn C++ /CLI-Code kompiliert wird. Bezeichner in Code, der mit „/clr“ kompiliert wurde, müssen dem folgenden Standard entsprechen:  [Standard ECMA-335: Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 **Ende Microsoft-spezifisch**
 
 Das erste Zeichen eines Bezeichners muss ein Buchstabe des Alphabets (Großbuchstabe oder Kleinbuchstabe) oder ein Unterstrich ( **_** ) sein. Da bei C++-Bezeichnern die Groß- und Kleinschreibung berücksichtigt wird, unterscheidet sich `fileName` von `FileName`.
 
-Für Bezeichner muss eine andere Schreibweise gewählt werden als für Schlüsselwörter. Bezeichner, die Schlüsselwörter enthalten, sind gültig. Z. B. `Pint` ist ein gültiger Bezeichner, obwohl er enthält **Int**, dies ist ein Schlüsselwort.
+Für Bezeichner muss eine andere Schreibweise gewählt werden als für Schlüsselwörter. Bezeichner, die Schlüsselwörter enthalten, sind gültig. Beispielsweise `Pint` ist ein gültiger Bezeichner, obwohl er enthält, bei dem es sich um **`int`** ein Schlüsselwort handelt.
 
-Verwendung von zwei aufeinander folgenden unterstrichen ( **__** ) in einen Bezeichner oder eines einzelnen vorangestellten Unterstrichs, gefolgt von einem Großbuchstaben beginnen, ist für die reserviert C++ Implementierungen in allen Bereichen. Sie sollten es vermeiden, einen einzelnen vorangestellten Unterstrich gefolgt von einem Kleinbuchstaben für Dateibereiche zu verwenden, da Konflikte mit aktuellen oder zukünftigen reservierten Bezeichnern auftreten können.
+Die Verwendung von zwei aufeinander folgenden unterstrichen ( **__** ) in einem Bezeichner oder einem einzelnen führenden Unterstrich, gefolgt von einem Großbuchstaben, ist für C++-Implementierungen in allen Bereichen reserviert. Sie sollten es vermeiden, einen einzelnen vorangestellten Unterstrich gefolgt von einem Kleinbuchstaben für Dateibereiche zu verwenden, da Konflikte mit aktuellen oder zukünftigen reservierten Bezeichnern auftreten können.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Lexikalische Konventionen](../cpp/lexical-conventions.md)

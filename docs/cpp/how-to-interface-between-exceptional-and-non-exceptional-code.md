@@ -4,26 +4,26 @@ ms.custom: how-to
 ms.date: 11/19/2019
 ms.topic: conceptual
 ms.assetid: fd5bb4af-5665-46a1-a321-614b48d4061e
-ms.openlocfilehash: fccc40302ab7bd43b3e6b2f87eef488c7813c9be
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 88dacda9b20f351eb67dde24a8335bdcbba27dd3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74245612"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87187698"
 ---
 # <a name="how-to-interface-between-exceptional-and-non-exceptional-code"></a>Gewusst wie: Schnittstelle zwischen Ausnahme-und nicht-Ausnahme Code
 
 In diesem Artikel wird beschrieben, wie die konsistente Ausnahmebehandlung in einem C++-Modul implementiert wird und wie diese Ausnahmen zu und von Fehlercodes an den Ausnahmegrenzen übertragen werden.
 
-Manchmal muss ein C++-Modul eine Verbindung mit Code herstellen, der keine Ausnahmen verwendet (Nicht-Ausnahmecode). Eine solche Schnittstelle wird als *Ausnahme Grenze*bezeichnet. Sie können z. B. die Win32-Funktion `CreateFile` im C++-Programm aufrufen. `CreateFile` löst keine Ausnahmen aus. Stattdessen werden Fehlercodes festgelegt, die von der `GetLastError` Funktion abgerufen werden können. Wenn das C++-Programm wichtig ist, möchten Sie vielleicht über eine konsistente ausnahmenbasierte Fehlerbehandlungsrichtlinie für das Programm verfügen. Und Sie möchten wahrscheinlich keine Ausnahmen verwerfen, nur weil Sie über eine Verbindung mit Nicht-Ausnahmencode verfügen. Ebenso wenig möchten Sie auf Ausnahmen basierende und nicht auf Ausnahmen basierende Fehlerrichtlinien im C++-Modul kombinieren.
+Manchmal muss ein C++-Modul eine Verbindung mit Code herstellen, der keine Ausnahmen verwendet (Nicht-Ausnahmecode). Eine solche Schnittstelle wird als *Ausnahme Grenze*bezeichnet. Sie können z. B. die Win32-Funktion `CreateFile` im C++-Programm aufrufen. `CreateFile` löst keine Ausnahmen aus. Stattdessen werden Fehlercodes festgelegt, die von der `GetLastError`-Funktion abgerufen werden können. Wenn das C++-Programm wichtig ist, möchten Sie vielleicht über eine konsistente ausnahmenbasierte Fehlerbehandlungsrichtlinie für das Programm verfügen. Und Sie möchten wahrscheinlich keine Ausnahmen verwerfen, nur weil Sie über eine Verbindung mit Nicht-Ausnahmencode verfügen. Ebenso wenig möchten Sie auf Ausnahmen basierende und nicht auf Ausnahmen basierende Fehlerrichtlinien im C++-Modul kombinieren.
 
-## <a name="calling-non-exceptional-functions-from-c"></a>Aufrufen von nicht Ausnahme Funktionen ausC++
+## <a name="calling-non-exceptional-functions-from-c"></a>Aufrufen von nicht Ausnahme Funktionen aus C++
 
 Wenn Sie eine Nicht-Ausnahmefunktion von C++ aufrufen, kann diese Funktion in einer C++-Funktion umschlossen werden, die alle Fehler erkennt und dann möglicherweise eine Ausnahme auslöst. Beim Entwerfen einer solchen Wrapperfunktion legen Sie zuerst fest, welche Art von Ausnahmegarantie bereitgestellt wird: die starke Garantie, die grundlegende Garantie oder die Nothrow-Garantie. Als nächstes entwerfen Sie die Funktion so, dass alle Ressourcen, z. B. Dateihandles, ordnungsgemäß freigegeben werden, wenn eine Ausnahme ausgelöst wird. In der Regel bedeutet dies, dass Sie intelligente Zeiger oder ähnliche Ressourcen-Manager zum Erwerben der Ressourcen verwenden. Weitere Informationen zu Entwurfs Überlegungen finden Sie unter Gewusst [wie: Entwerfen für die Ausnahme Sicherheit](how-to-design-for-exception-safety.md).
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt C++-Funktionen, die die Win32-Funktionen `CreateFile` und `ReadFile` intern verwenden, um zwei Dateien zu öffnen und zu lesen.  Die `File`-Klasse ist ein RAII-Wrapper (Resource Acquisition Is Initialization) für die Dateihandles. Sein Konstruktor erkennt den Zustand "Datei nicht gefunden" und löst eine Ausnahme aus, um den Fehler in der Aufrufliste des C++-Moduls weiterzugeben (in diesem Beispiel die `main()`-Funktion.) Wenn eine Ausnahme ausgelöst wird, nachdem ein `File`-Objekt vollständig erstellt wurde, ruft der Destruktor automatisch `CloseHandle` auf, um das Dateihandle freizugeben. (Wenn Sie dies bevorzugen, können Sie die Active Template Library (ATL)-`CHandle` Klasse für denselben Zweck oder eine `unique_ptr` in Verbindung mit einem benutzerdefinierten Deleter verwenden.) Die Funktionen, die Win32-und CRT-APIs aufzurufen, C++ erkennen Fehler und lösen dann mithilfe der lokal definierten `ThrowLastErrorIf`-Funktion Ausnahmen aus, die wiederum die von der `runtime_error`-Klasse abgeleitete `Win32Exception`-Klasse verwendet. Alle Funktionen in diesem Beispiel stellen eine starke Ausnahmegarantie bereit. Wenn an irgendeinem Punkt in diesen Funktionen eine Ausnahme ausgelöst wird, kommt es nicht zum Verlust von Ressourcen und es wird keine Programmzustand geändert.
+Das folgende Beispiel zeigt C++-Funktionen, die die Win32-Funktionen `CreateFile` und `ReadFile` intern verwenden, um zwei Dateien zu öffnen und zu lesen.  Die `File`-Klasse ist ein RAII-Wrapper (Resource Acquisition Is Initialization) für die Dateihandles. Sein Konstruktor erkennt den Zustand "Datei nicht gefunden" und löst eine Ausnahme aus, um den Fehler in der Aufrufliste des C++-Moduls weiterzugeben (in diesem Beispiel die `main()`-Funktion.) Wenn eine Ausnahme ausgelöst wird, nachdem ein `File`-Objekt vollständig erstellt wurde, ruft der Destruktor automatisch `CloseHandle` auf, um das Dateihandle freizugeben. (Wenn Sie dies bevorzugen, können Sie die-Active Template Library (ATL)- `CHandle` Klasse für diesen Zweck oder eine-Klasse `unique_ptr` in Verbindung mit einem benutzerdefinierten Deleter verwenden.) Die Funktionen, die Win32-und CRT-APIs aufzurufen, erkennen Fehler und lösen dann mithilfe der lokal definierten-Funktion C++-Ausnahmen `ThrowLastErrorIf` aus, die wiederum die- `Win32Exception` Klasse verwendet, die von der-Klasse abgeleitet wird `runtime_error` . Alle Funktionen in diesem Beispiel stellen eine starke Ausnahmegarantie bereit. Wenn an irgendeinem Punkt in diesen Funktionen eine Ausnahme ausgelöst wird, kommt es nicht zum Verlust von Ressourcen und es wird keine Programmzustand geändert.
 
 ```cpp
 // compile with: /EHsc
@@ -191,7 +191,7 @@ BOOL DiffFiles2(const string& file1, const string& file2)
 }
 ```
 
-Bei Konvertierungen von Ausnahmen in Fehlercodes besteht ein mögliches Problem darin, dass Fehlercodes häufig nicht die umfangreichen Informationen enthalten, die eine Ausnahme speichern kann. Um dies zu beheben, können Sie einen **catch** -Block für jeden bestimmten Ausnahmetyp bereitstellen, der ausgelöst werden kann, und die Protokollierung ausführen, um die Details der Ausnahme aufzuzeichnen, bevor Sie in einen Fehlercode konvertiert wird. Dieser Ansatz kann zu einer großen Code Wiederholung führen, wenn mehrere Funktionen denselben Satz von **catch** -Blöcken verwenden. Eine gute Möglichkeit zur Vermeidung von Code Wiederholungen besteht darin, diese Blöcke in eine private Utility-Funktion zu umgestalten, die die **try** -und **catch** -Blöcke implementiert und ein Funktions Objekt akzeptiert, das im **try** -Block aufgerufen wird. Übergeben Sie den Code in jeder öffentlichen Funktion als Lambda-Ausdruck an die Hilfsfunktion.
+Bei Konvertierungen von Ausnahmen in Fehlercodes besteht ein mögliches Problem darin, dass Fehlercodes häufig nicht die umfangreichen Informationen enthalten, die eine Ausnahme speichern kann. Um dies zu beheben, können Sie einen **`catch`** -Block für jeden bestimmten Ausnahmetyp bereitstellen, der ausgelöst werden kann, und die Protokollierung ausführen, um die Details der Ausnahme aufzuzeichnen, bevor Sie in einen Fehlercode konvertiert wird. Dieser Ansatz kann zu einer großen Code Wiederholung führen, wenn mehrere Funktionen denselben Satz von Blöcken verwenden **`catch`** . Eine gute Möglichkeit zur Vermeidung von Code Wiederholungen besteht darin, diese Blöcke in eine private Utility-Funktion zu umgestalten, die die **`try`** Blöcke und implementiert **`catch`** und ein Funktions Objekt akzeptiert, das im-Block aufgerufen wird **`try`** . Übergeben Sie den Code in jeder öffentlichen Funktion als Lambda-Ausdruck an die Hilfsfunktion.
 
 ```cpp
 template<typename Func>
@@ -232,9 +232,9 @@ bool DiffFiles3(const string& file1, const string& file2)
 }
 ```
 
-Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](lambda-expressions-in-cpp.md).
+Weitere Informationen zu Lambda-Ausdrücken finden Sie unter [Lambda-Ausdrücke](lambda-expressions-in-cpp.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md)<br/>
-[Vorgehensweise: Entwurfsrichtlinien für sichere Ausnahmebehandlung](how-to-design-for-exception-safety.md)<br/>
+[Modern C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md)<br/>
+[Vorgehensweise: Entwerfen der Ausnahme Sicherheit](how-to-design-for-exception-safety.md)<br/>

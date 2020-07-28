@@ -1,5 +1,5 @@
 ---
-title: '/Guard: ehtt (Aktivierung von eh-Fortsetzungs Metadaten)'
+title: /guard:ehcont (EH-Fortsetzungsmetadaten aktivieren)
 description: 'Referenzhandbuch zur Microsoft C++/Guard: ehconfiguration-Compileroption.'
 ms.date: 06/03/2020
 f1_keywords:
@@ -8,14 +8,14 @@ f1_keywords:
 helpviewer_keywords:
 - /guard:ehcont
 - /guard:ehcont compiler option
-ms.openlocfilehash: e8775b331440e932efb16148ee15acf1c740cd6e
-ms.sourcegitcommit: 7e011c68ca7547469544fac87001a33a37e1792e
+ms.openlocfilehash: c1b960bf13a6a7b7ff67996c9fa5119075216dae
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421359"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87190519"
 ---
-# <a name="guardehcont-enable-eh-continuation-metadata"></a>/Guard: ehtt (Aktivierung von eh-Fortsetzungs Metadaten)
+# <a name="guardehcont-enable-eh-continuation-metadata"></a>/guard:ehcont (EH-Fortsetzungsmetadaten aktivieren)
 
 Aktiviert die Generierung von eh-Fortsetzungs Metadaten (EHAs) durch den Compiler.
 
@@ -33,7 +33,7 @@ Die [Steuerungs Technologie für die Ablauf Steuerung ("CET")](https://software.
 
 Wenn Schatten Stapel verfügbar sind, um die Verwendung von ROP-Angriffen zu verhindern, fahren Angreifer mit anderen exploittechniken fort. Eine Methode, die Sie verwenden können, besteht darin, den Anweisungs Zeiger Wert innerhalb der [Kontext](/windows/win32/api/winnt/ns-winnt-context) Struktur zu beschädigen. Diese Struktur wird an Systemaufrufe weitergeleitet, die die Ausführung eines Threads umleiten, `NtContinue` z [`RtlRestoreContext`](/windows/win32/api/winnt/nf-winnt-rtlrestorecontext) . b [`SetThreadContext`](/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadcontext) ., und. Die `CONTEXT` Struktur wird im Arbeitsspeicher gespeichert. Die Beschädigung des Anweisungs Zeigers, der in enthalten ist, kann dazu führen, dass die Ausführung der Ausführung durch die Systemaufrufe an eine von Angreifern Derzeit `NTContinue` kann mit einem beliebigen Fortsetzungs Punkt aufgerufen werden. Daher ist es von entscheidender Bedeutung, den Anweisungs Zeiger zu validieren, wenn Schatten Stapel aktiviert sind.
 
-`RtlRestoreContext`und `NtContinue` werden beim Entladen der strukturierten Ausnahmebehandlung (SEH) zum Entladen in den Zielframe verwendet, der den `__except` Block enthält. `__except`Es ist nicht zu erwarten, dass sich der Anweisungs Zeiger des Blocks auf dem Schatten Stapel befindet, da er die Validierung des Anweisungs Zeigers fehlschlägt. Der **`/guard:ehcont`** Compilerschalter generiert eine "eh-Fortsetzungs Tabelle". Sie enthält eine sortierte Liste der RVAs aller gültigen Fortsetzungs Ziele für die Ausnahmebehandlung in der Binärdatei. `NtContinue`prüft zunächst den Schatten Stapel auf den vom Benutzer bereitgestellten Anweisungs Zeiger, und wenn der Anweisungs Zeiger dort nicht gefunden wird, wird die eh-Fortsetzungs Tabelle in der Binärdatei überprüft, die den Anweisungs Zeiger enthält. Wenn die enthaltende Binärdatei nicht mit der Tabelle kompiliert wurde, kann aus Gründen der Kompatibilität mit Legacy Binärdateien `NtContinue` fortgesetzt werden. Es ist wichtig, zwischen Legacy-Binärdateien zu unterscheiden, die keine EHAND-Daten enthalten, und Binärdateien, die ehint-Daten, aber keine Tabelleneinträge enthalten. Der erste Wert ermöglicht alle Adressen innerhalb der Binärdatei als gültige Fortsetzungs Ziele. Letztere lässt keine Adresse in der Binärdatei als gültiges Fortsetzungs Ziel zu.
+`RtlRestoreContext`und `NtContinue` werden beim Entladen der strukturierten Ausnahmebehandlung (SEH) zum Entladen in den Zielframe verwendet, der den **`__except`** Block enthält. **`__except`** Es ist nicht zu erwarten, dass sich der Anweisungs Zeiger des Blocks auf dem Schatten Stapel befindet, da er die Validierung des Anweisungs Zeigers fehlschlägt. Der **`/guard:ehcont`** Compilerschalter generiert eine "eh-Fortsetzungs Tabelle". Sie enthält eine sortierte Liste der RVAs aller gültigen Fortsetzungs Ziele für die Ausnahmebehandlung in der Binärdatei. `NtContinue`prüft zunächst den Schatten Stapel auf den vom Benutzer bereitgestellten Anweisungs Zeiger, und wenn der Anweisungs Zeiger dort nicht gefunden wird, wird die eh-Fortsetzungs Tabelle in der Binärdatei überprüft, die den Anweisungs Zeiger enthält. Wenn die enthaltende Binärdatei nicht mit der Tabelle kompiliert wurde, kann aus Gründen der Kompatibilität mit Legacy Binärdateien `NtContinue` fortgesetzt werden. Es ist wichtig, zwischen Legacy-Binärdateien zu unterscheiden, die keine EHAND-Daten enthalten, und Binärdateien, die ehint-Daten, aber keine Tabelleneinträge enthalten. Der erste Wert ermöglicht alle Adressen innerhalb der Binärdatei als gültige Fortsetzungs Ziele. Letztere lässt keine Adresse in der Binärdatei als gültiges Fortsetzungs Ziel zu.
 
 Die **`/guard:ehcont`** -Option muss an den Compiler und den Linker weitergegeben werden, um die RVAs für ein Fortsetzungs Ziel für eine Binärdatei zu generieren. Wenn die Binärdatei mit einem einzigen `cl` -Befehl erstellt wird, übergibt der Compiler die Option an den Linker. Der Compiler übergibt auch die [**`/guard:cf`**](guard-enable-control-flow-guard.md) Option an den Linker. Wenn Sie separat kompilieren und verknüpfen, müssen diese Optionen sowohl für den Compiler als auch für den Linker-Befehl festgelegt werden.
 

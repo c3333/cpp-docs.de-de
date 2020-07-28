@@ -7,26 +7,26 @@ helpviewer_keywords:
 - __asm keyword [C++], data members
 - structure types in __asm blocks
 ms.assetid: e99f5a28-0381-4090-8ece-6af8f2436a49
-ms.openlocfilehash: b4341f87226118906749dcdb18b9227e68be6a23
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8fbe855c2f5de96d81e6c8a27c4bfcee0864f12c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318088"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87193041"
 ---
 # <a name="accessing-c-or-c-data-in-__asm-blocks"></a>Zugreifen auf C- oder C++-Daten in __asm-Blöcken
 
-**Microsoft Specific**
+**Microsoft-spezifisch**
 
-Eine große Bequemlichkeit der Inline-Assembly ist die Möglichkeit, auf C- oder C++-Variablen nach Namen zu verweisen. Ein `__asm` Block kann auf alle Symbole verweisen, einschließlich Variablennamen, die sich im Bereich befinden, in dem der Block angezeigt wird. Wenn z. B. `var` die Variable C im Gültigkeitsbereich ist, wird die Anweisung
+Eine gute Möglichkeit der Inlineassembly ist die Möglichkeit, auf C-oder C++-Variablen anhand des Namens zu verweisen. Ein- **`__asm`** Block kann auf beliebige Symbole, einschließlich Variablennamen, verweisen, die sich im Bereich befinden, in dem der-Block angezeigt wird. Wenn sich z. b. die C-Variable im Gültigkeits `var` Bereich befindet, wird die Anweisung
 
 ```cpp
 __asm mov eax, var
 ```
 
-speichert den `var` Wert von in EAX.
+speichert den Wert von `var` in eax.
 
-Wenn eine Klasse, Struktur oder ein Union-Member einen eindeutigen Namen hat, kann ein `__asm` Block `typedef` nur mit dem Membernamen darauf verweisen, ohne die Variable oder den Namen vor dem Periodenoperator (**.**) anzugeben. Wenn der Membername jedoch nicht eindeutig ist, `typedef` müssen Sie eine Variable oder einen Namen unmittelbar vor dem Periodenoperator platzieren. Beispielsweise geben die Strukturtypen im `same_name` folgenden Beispiel die Freigabe als Membername:.
+Wenn ein Klassen-, Struktur-oder Union-Member einen eindeutigen Namen hat, kann ein- **`__asm`** Block nur mit dem Elementnamen darauf verweisen, ohne die Variable oder den **`typedef`** Namen vor dem period-Operator (**.**) anzugeben. Wenn der Elementname jedoch nicht eindeutig ist, müssen Sie eine Variable oder einen **`typedef`** Namen direkt vor dem period-Operator platzieren. Beispielsweise werden die Strukturtypen in der folgenden Beispiel Freigabe `same_name` als Elementname angezeigt:.
 
 Wenn Sie Variablen mit den Typen deklarieren
 
@@ -35,7 +35,7 @@ struct first_type hal;
 struct second_type oat;
 ```
 
-Alle Verweise auf `same_name` den Member müssen `same_name` den Variablennamen verwenden, da er nicht eindeutig ist. Das Mitglied `weasel` hat jedoch einen eindeutigen Namen, sodass Sie nur mit seinem Mitgliedsnamen darauf verweisen können:
+alle Verweise auf den Member `same_name` müssen den Variablennamen verwenden, da `same_name` nicht eindeutig ist. Der Member `weasel` hat jedoch einen eindeutigen Namen, sodass Sie ihn nur mit seinem Elementnamen verweisen können:
 
 ```cpp
 // InlineAssembler_Accessing_C_asm_Blocks.cpp
@@ -68,12 +68,12 @@ int main()
 }
 ```
 
-Beachten Sie, dass das Weglassen des Variablennamens lediglich eine Codierungs-Komfort ist. Es werden dieselben Assemblyanweisungen generiert, unabhängig davon, ob der Variablenname vorhanden ist oder nicht.
+Beachten Sie, dass das Weglassen des Variablen namens lediglich ein Codierungsaufwand ist. Die gleichen Assemblyanweisungen werden unabhängig davon generiert, ob der Variablenname vorhanden ist.
 
-Sie können ohne Rücksicht auf Zugriffsbeschränkungen auf Datenmember in C++ zugreifen. Sie können jedoch keine Memberfunktionen aufrufen.
+Sie können in C++ auf Datenelemente zugreifen, ohne die Zugriffsbeschränkungen zu berücksichtigen. Es ist jedoch nicht möglich, Element Funktionen aufzurufen.
 
-**END Microsoft Spezifisch**
+**Ende Microsoft-spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verwenden von C oder C++ in __asm-Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)<br/>
+[Verwenden von C oder C++ in __asm Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)<br/>

@@ -6,14 +6,14 @@ helpviewer_keywords:
 - MBCS data type
 - _MBCS data type
 ms.assetid: 48f471e7-9d2b-4a39-b841-16a0e15c0a18
-ms.openlocfilehash: b86cbc6d99cbc6969536934c1583ba5207a53629
-ms.sourcegitcommit: 9e85c2e029d06b4c1c69837437468718b4d54908
-ms.translationtype: HT
+ms.openlocfilehash: d1aab0c21a348e4b1a6e85a7adb7f7f8ea1587b2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57814435"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87188634"
 ---
-# <a name="using-tcharh-data-types-with-mbcs"></a>Verwenden von TCHAR.H-Datentypen mit _MBCS
+# <a name="using-tcharh-data-types-with-_mbcs"></a>Verwenden von TCHAR.H-Datentypen mit _MBCS
 
 **Microsoft-spezifisch**
 
@@ -21,7 +21,7 @@ Wie aus die Tabelle mit den Zuordnungen für generische Textroutinen hervorgeht 
 
 - Eine SBCS-Routine, die ordnungsgemäß Multibytes, Zeichen und Zeichenfolgen verarbeitet. In diesem Fall werden Zeichenfolgenargumente vom Typ **char&#42;** erwartet. Zum Beispiel wird **_tprintf** zu **printf** zugeordnet. Die Zeichenfolgenargumente für **printf** sind vom Typ **char&#42;**. Wenn Sie generischen Text vom Datentyp **_TCHAR** für Ihre Zeichenfolgentypen verwenden, stimmen die formalen und tatsächlichen Parametertypen für **printf** überein, da **_TCHAR&#42;** zu **char&#42;** zugeordnet wird.
 
-- Eine MBCS-spezifische Routine. In diesem Fall werden Zeichenfolgenargumente vom Typ __unsigned char&#42;__ erwartet. Zum Beispiel wird **_tcsrev** zu **_mbsrev** zugeordnet, was eine Zeichenfolge vom Typ __unsigned char&#42;__ erwartet und zurückgibt. Wenn Sie erneut den generischen Text vom Datentyp **_TCHAR** für Ihre Zeichenfolgentypen verwenden, kommt es möglicherweise zu einem Typenkonflikt, da **_TCHAR** dem Typ **char** zugeordnet wird.
+- Eine MBCS-spezifische Routine. In diesem Fall werden Zeichenfolgenargumente vom Typ __unsigned char&#42;__ erwartet. Zum Beispiel wird **_tcsrev** zu **_mbsrev** zugeordnet, was eine Zeichenfolge vom Typ __unsigned char&#42;__ erwartet und zurückgibt. Wenn Sie den **_TCHAR** generischen Text Datentyp für Ihre Zeichen folgen Typen verwenden, gibt es einen potenziellen Typkonflikt, da **_TCHAR** dem-Typ zugeordnet ist **`char`** .
 
 Im Folgenden werden drei Lösungen vorgestellt, um einen solchen Typenkonflikt (und die daraus resultierenden C-Compilerwarnungen oder C++-Compilerfehler) zu verhindern:
 
@@ -60,7 +60,7 @@ Im Folgenden werden drei Lösungen vorgestellt, um einen solchen Typenkonflikt (
    #define _tcschr _mbschr
    ```
 
-Wenn Sie diesen Ansatz verwenden, müssen Sie in jedem Fall sicherstellen, dass die entsprechenden Datentypen für Zeichenfolgenargumente und -rückgabewerte verwendet werden. Zum Sicherstellen einer ordnungsgemäßen Typübereinstimmung können Sie die Typumwandlung oder generischen Text des Datentyps **_TXCHAR** verwenden. **_TXCHAR** wird in SBCS-Code dem Typ **char** zugeordnet, in MBCS-Code jedoch dem Typ **unsigned char**. Weitere Informationen zu generischen Textmakros finden Sie unter [Zuordnungen für generischen Text](../c-runtime-library/generic-text-mappings.md).
+Wenn Sie diesen Ansatz verwenden, müssen Sie in jedem Fall sicherstellen, dass die entsprechenden Datentypen für Zeichenfolgenargumente und -rückgabewerte verwendet werden. Zum Sicherstellen einer ordnungsgemäßen Typübereinstimmung können Sie die Typumwandlung oder generischen Text des Datentyps **_TXCHAR** verwenden. **_TXCHAR** wird dem Typ **`char`** in SBCS-Code zugeordnet, ist aber dem Typ **`unsigned char`** im MBCS-Code zugeordnet. Weitere Informationen zu generischen Textmakros finden Sie unter [Zuordnungen für generischen Text](../c-runtime-library/generic-text-mappings.md).
 
 **Ende Microsoft-spezifisch**
 

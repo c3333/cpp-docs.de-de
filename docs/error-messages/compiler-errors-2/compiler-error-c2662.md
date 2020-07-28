@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2662
 ms.assetid: e172c2a4-f29e-4034-8232-e7dc6f83689f
-ms.openlocfilehash: b2fa2643898fed510aa7cf0f483b538ebb33b033
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 5e2dd6b01db5f7d3026f14c5032ab4623eb6fb58
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74760451"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220287"
 ---
 # <a name="compiler-error-c2662"></a>Compilerfehler C2662
 
 "Funktion": der this-Zeiger kann nicht von "Typ1" in "Typ2" konvertiert werden.
 
-Der Compiler konnte den `this` Zeiger nicht von `type1` in `type2`konvertieren.
+Der Compiler konnte den Zeiger nicht **`this`** von `type1` in konvertieren `type2` .
 
-Dieser Fehler kann verursacht werden, wenn eine nicht-`const` Member-Funktion für ein `const`-Objekt aufgerufen wird.  Mögliche Lösungen:
+Dieser Fehler kann verursacht werden, wenn eine nicht- **`const`** Member-Funktion für ein-Objekt aufgerufen wird **`const`** .  Mögliche Lösungen:
 
-- Entfernen Sie die `const` aus der Objekt Deklaration.
+- Entfernen Sie **`const`** aus der Objekt Deklaration.
 
-- Fügen Sie `const` der Member-Funktion hinzu.
+- Fügen Sie **`const`** der Member-Funktion hinzu.
 
 Im folgenden Beispiel wird C2662 generiert:
 
@@ -41,7 +41,7 @@ int main() {
 }
 ```
 
-Beim Kompilieren mit **/CLR**können Sie keine Funktion für einen `const` oder `volatile` qualifizierten verwalteten Typ aufzurufen. Sie können keine konstantenmember-Funktion einer verwalteten Klasse deklarieren, sodass Sie keine Methoden für verwaltete verwaltete Objekte abrufen können.
+Beim Kompilieren mit **/CLR**können Sie keine Funktion für einen oder einen **`const`** **`volatile`** qualifizierten verwalteten Typ abrufen. Sie können keine konstantenmember-Funktion einer verwalteten Klasse deklarieren, sodass Sie keine Methoden für verwaltete verwaltete Objekte abrufen können.
 
 ```cpp
 // C2662_b.cpp

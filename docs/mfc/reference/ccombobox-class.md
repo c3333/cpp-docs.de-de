@@ -108,12 +108,12 @@ helpviewer_keywords:
 - CComboBox [MFC], SetTopIndex
 - CComboBox [MFC], ShowDropDown
 ms.assetid: 4e73b5df-0d2e-4658-9706-38133fb10513
-ms.openlocfilehash: dc803fb4ce137b256f4197afaec7bc3327e1e85a
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 4e7eba94084a96c833136e4c92de481fdc435c7e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81754828"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87183109"
 ---
 # <a name="ccombobox-class"></a>CComboBox-Klasse
 
@@ -131,126 +131,126 @@ class CComboBox : public CWnd
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComboBox::CComboBox](#ccombobox)|Erstellt ein `CComboBox`-Objekt.|
+|[CComboBox:: CComboBox](#ccombobox)|Erstellt ein `CComboBox`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComboBox:: AddString](#addstring)|Fügt eine Zeichenfolge am Ende der Liste im Listenfeld eines Kombinationsfelds oder an der sortierten Position für Listenfelder mit dem Stil CBS_SORT hinzu.|
-|[CComboBox::Löschen](#clear)|Löscht (löscht) die aktuelle Auswahl, falls vorhanden, im Bearbeitungssteuerelement.|
-|[CComboBox::CompareItem](#compareitem)|Wird vom Framework aufgerufen, um die relative Position eines neuen Listenelements in einem sortierten, vom Besitzer gezeichneten Kombinationsfeld zu bestimmen.|
-|[CComboBox::Kopieren](#copy)|Kopiert die aktuelle Auswahl,, falls vorhanden, in die Zwischenablage im CF_TEXT Format.|
-|[CComboBox::Erstellen](#create)|Erstellt das Kombinationsfeld und `CComboBox` fügt es an das Objekt an.|
-|[CComboBox::Schnitt](#cut)|Löscht (schneidet) die aktuelle Auswahl,, falls vorhanden, im Bearbeitungssteuerelement und kopiert den gelöschten Text in der Zwischenablage im CF_TEXT Format.|
-|[CComboBox::DeleteItem](#deleteitem)|Wird vom Framework aufgerufen, wenn ein Listenelement aus einem vom Besitzer gezeichneten Kombinationsfeld gelöscht wird.|
-|[CComboBox::DeleteString](#deletestring)|Löscht eine Zeichenfolge aus dem Listenfeld eines Kombinationsfelds.|
-|[CComboBox::Dir](#dir)|Fügt dem Listenfeld eines Kombinationsfelds eine Liste mit Dateinamen hinzu.|
-|[CComboBox::DrawItem](#drawitem)|Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines vom Besitzer gezeichneten Kombinationsfelds ändert.|
-|[CComboBox::FindString](#findstring)|Sucht die erste Zeichenfolge, die das angegebene Präfix im Listenfeld eines Kombinationsfelds enthält.|
-|[CComboBox::FindStringExact](#findstringexact)|Sucht die erste Listenfeldzeichenfolge (in einem Kombinationsfeld), die mit der angegebenen Zeichenfolge übereinstimmt.|
-|[CComboBox::GetComboBoxInfo](#getcomboboxinfo)|Ruft Informationen zum `CComboBox` Objekt ab.|
-|[CComboBox::GetCount](#getcount)|Ruft die Anzahl der Elemente im Listenfeld eines Kombinationsfelds ab.|
-|[CComboBox::GetCueBanner](#getcuebanner)|Ruft den Cue-Text ab, der für ein Kombinationsfeldsteuerelement angezeigt wird.|
-|[CComboBox::GetCurSel](#getcursel)|Ruft den Index des aktuell ausgewählten Elements (falls vorhanden) im Listenfeld eines Kombinationsfelds ab.|
-|[CComboBox::GetDroppedControlRect](#getdroppedcontrolrect)|Ruft die Bildschirmkoordinaten des sichtbaren (nach unten fallengelassenen) Listenfelds eines Dropdown-Kombinationsfelds ab.|
-|[CComboBox::GetDroppedState](#getdroppedstate)|Bestimmt, ob das Listenfeld eines Dropdown-Kombinationsfelds sichtbar ist (nach unten fallen gelassen).|
-|[CComboBox::GetDroppedWidth](#getdroppedwidth)|Ruft die minimale zulässige Breite für den Dropdown-Listenfeldteil eines Kombinationsfelds ab.|
-|[CComboBox::GetEditSel](#geteditsel)|Ruft die Anfangs- und Endzeichenpositionen der aktuellen Auswahl im Bearbeitungssteuerelement eines Kombinationsfelds ab.|
-|[CComboBox::GetExtendedUI](#getextendedui)|Bestimmt, ob ein Kombinationsfeld über die Standardbenutzeroberfläche oder die erweiterte Benutzeroberfläche verfügt.|
-|[CComboBox::GetHorizontalExtent](#gethorizontalextent)|Gibt die Breite in Pixel zurück, in der der Listenfeldteil des Kombinationsfelds horizontal gescrollt werden kann.|
-|[CComboBox::GetItemData](#getitemdata)|Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinationsfeldelement zugeordnet ist.|
-|[CComboBox::GetItemDataPtr](#getitemdataptr)|Ruft den von der Anwendung bereitgestellten 32-Bit-Zeiger ab, der dem angegebenen Kombinationsfeldelement zugeordnet ist.|
-|[CComboBox::GetItemHeight](#getitemheight)|Ruft die Höhe von Listenelementen in einem Kombinationsfeld ab.|
-|[CComboBox::GetLBText](#getlbtext)|Ruft eine Zeichenfolge aus dem Listenfeld eines Kombinationsfelds ab.|
-|[CComboBox::GetLBTextLen](#getlbtextlen)|Ruft die Länge einer Zeichenfolge im Listenfeld eines Kombinationsfelds ab.|
-|[CComboBox::GetLocale](#getlocale)|Ruft den Gebietsschemabezeichner für ein Kombinationsfeld ab.|
-|[CComboBox::GetMinVisible](#getminvisible)|Ruft die minimale Anzahl sichtbarer Elemente in der Dropdownliste des aktuellen Kombinationsfelds ab.|
-|[CComboBox::GetTopIndex](#gettopindex)|Gibt den Index des ersten sichtbaren Elements im Listenfeldteil des Kombinationsfelds zurück.|
-|[CComboBox::InitStorage](#initstorage)|Ordnet Speicherblöcke für Elemente und Zeichenfolgen im Listenfeldteil des Kombinationsfelds vorab zu.|
+|[CComboBox:: AddString](#addstring)|Fügt eine Zeichenfolge am Ende der Liste im Listenfeld eines Kombinations Felds oder an der sortierten Position für Listenfelder mit dem CBS_SORT Stil hinzu.|
+|[CComboBox:: Clear](#clear)|Löscht (löscht) die aktuelle Auswahl, sofern vorhanden, im Bearbeitungs Steuerelement.|
+|[CComboBox:: compareitem](#compareitem)|Wird von Framework aufgerufen, um die relative Position eines neuen Listen Elements in einem sortierten, vom Besitzer gezeichneten Kombinations Feld zu bestimmen.|
+|[CComboBox:: Copy](#copy)|Kopiert die aktuelle Auswahl, sofern vorhanden, in CF_TEXT Format in die Zwischenablage.|
+|[CComboBox:: Create](#create)|Erstellt das Kombinations Feld und fügt es an das- `CComboBox` Objekt an.|
+|[CComboBox:: Cut](#cut)|Löscht (schneidet) die aktuelle Auswahl im Bearbeitungs Steuerelement, sofern vorhanden, und kopiert den gelöschten Text in die Zwischenablage in CF_TEXT Format.|
+|[CComboBox::D eleteitem](#deleteitem)|Wird von Framework aufgerufen, wenn ein Listenelement aus einem vom Besitzer gezeichneten Kombinations Feld gelöscht wird.|
+|[CComboBox::D eletestring](#deletestring)|Löscht eine Zeichenfolge aus dem Listenfeld eines Kombinations Felds.|
+|[CComboBox::D IR](#dir)|Fügt dem Listenfeld eines Kombinations Felds eine Liste von Dateinamen hinzu.|
+|[CComboBox::D rawitem](#drawitem)|Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines von einem Besitzer gezeichneten Kombinations Felds ändert.|
+|[CComboBox:: FindString](#findstring)|Sucht die erste Zeichenfolge, die das angegebene Präfix enthält, im Listenfeld eines Kombinations Felds.|
+|[CComboBox:: FindStringExact](#findstringexact)|Sucht die erste Listenfeld Zeichenfolge (in einem Kombinations Feld), die der angegebenen Zeichenfolge entspricht.|
+|[CComboBox:: getcomboboxinfo](#getcomboboxinfo)|Ruft Informationen über das `CComboBox` Objekt ab.|
+|[CComboBox:: GetCount](#getcount)|Ruft die Anzahl der Elemente im Listenfeld eines Kombinations Felds ab.|
+|[CComboBox:: getcuebanner](#getcuebanner)|Ruft den Hinweis Text ab, der für ein Kombinations Feld-Steuerelement angezeigt wird.|
+|[CComboBox:: getcurrsel](#getcursel)|Ruft den Index des derzeit ausgewählten Elements (sofern vorhanden) im Listenfeld eines Kombinations Felds ab.|
+|[CComboBox:: getdroppedcontrolrect](#getdroppedcontrolrect)|Ruft die Bildschirm Koordinaten des sichtbaren (Dropdown-) Listen Felds eines Dropdown-Kombinations Felds ab.|
+|[CComboBox:: getdroppedstate](#getdroppedstate)|Bestimmt, ob das Listenfeld eines Dropdown-Kombinations Felds sichtbar (abgelegt) ist.|
+|[CComboBox:: getdroppeer-DTH](#getdroppedwidth)|Ruft die minimale zulässige Breite für den Dropdown-Listenfeld Teil eines Kombinations Felds ab.|
+|[CComboBox:: geteditsel](#geteditsel)|Ruft die Position des Anfangs-und des Endzeichens der aktuellen Auswahl im Bearbeitungs Steuerelement eines Kombinations Felds ab.|
+|[CComboBox:: getextendedui](#getextendedui)|Bestimmt, ob ein Kombinations Feld über die Standardbenutzer Oberfläche oder die erweiterte Benutzeroberfläche verfügt.|
+|[CComboBox:: gethorizontalblock](#gethorizontalextent)|Gibt die Breite in Pixel zurück, in der der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.|
+|[CComboBox:: GetItemData](#getitemdata)|Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinations Feld Element zugeordnet ist.|
+|[CComboBox:: getitemdataptr](#getitemdataptr)|Ruft den von der Anwendung bereitgestellten 32-Bit-Zeiger ab, der dem angegebenen Kombinations Feld Element zugeordnet ist.|
+|[CComboBox:: GetItemHeight](#getitemheight)|Ruft die Höhe der Listenelemente in einem Kombinations Feld ab.|
+|[CComboBox:: getlbtext](#getlbtext)|Ruft eine Zeichenfolge aus dem Listenfeld eines Kombinations Felds ab.|
+|[CComboBox:: getlbtextlen](#getlbtextlen)|Ruft die Länge einer Zeichenfolge im Listenfeld eines Kombinations Felds ab.|
+|[CComboBox:: getLocale](#getlocale)|Ruft den Gebiets Schema Bezeichner für ein Kombinations Feld ab.|
+|[CComboBox:: getminvisible](#getminvisible)|Ruft die Mindestanzahl sichtbarer Elemente in der Dropdown Liste des aktuellen Kombinations Felds ab.|
+|[CComboBox:: gettopindex](#gettopindex)|Gibt den Index des ersten sichtbaren Elements im Listenfeld Bereich des Kombinations Felds zurück.|
+|[CComboBox:: InitStorage](#initstorage)|Ordnet Speicherblöcke für Elemente und Zeichen folgen im Listenfeld Bereich des Kombinations Felds vorab zu.|
 |[CComboBox::InsertString](#insertstring)|Fügt eine Zeichenfolge in das Listenfeld eines Kombinationsfelds ein.|
-|[CComboBox::LimitText](#limittext)|Beschränkt die Länge des Textes, den der Benutzer in das Bearbeitungssteuerelement eines Kombinationsfelds eingeben kann.|
-|[CComboBox::MeasureItem](#measureitem)|Wird vom Framework aufgerufen, um Kombinationsfelddimensionen zu bestimmen, wenn ein vom Besitzer gezeichnetes Kombinationsfeld erstellt wird.|
-|[CComboBox::Paste](#paste)|Fügt die Daten aus der Zwischenablage in das Bearbeitungssteuerelement an der aktuellen Cursorposition ein. Daten werden nur eingefügt, wenn die Zwischenablage Daten im CF_TEXT-Format enthält.|
-|[CComboBox::ResetContent](#resetcontent)|Entfernt alle Elemente aus dem Listenfeld und bearbeitet die Steuerung eines Kombinationsfelds.|
-|[CComboBox::SelectString](#selectstring)|Sucht im Listenfeld eines Kombinationsfelds nach einer Zeichenfolge, und wenn die Zeichenfolge gefunden wird, wählt sie die Zeichenfolge im Listenfeld aus und kopiert die Zeichenfolge in das Bearbeitungssteuerelement.|
-|[CComboBox::SetCueBanner](#setcuebanner)|Legt den Cue-Text fest, der für ein Kombinationsfeldsteuerelement angezeigt wird.|
-|[CComboBox::SetCurSel](#setcursel)|Wählt eine Zeichenfolge im Listenfeld eines Kombinationsfelds aus.|
-|[CComboBox::SetDroppedWidth](#setdroppedwidth)|Legt die minimale zulässige Breite für den Dropdown-Listenfeldteil eines Kombinationsfelds fest.|
-|[CComboBox::SetEditSel](#seteditsel)|Wählt Zeichen im Bearbeitungssteuerelement eines Kombinationsfelds aus.|
-|[CComboBox::SetExtendedUI](#setextendedui)|Wählt entweder die Standardbenutzeroberfläche oder die erweiterte Benutzeroberfläche für ein Kombinationsfeld mit dem CBS_DROPDOWN oder CBS_DROPDOWNLIST Stil aus.|
-|[CComboBox::SetHorizontalExtent](#sethorizontalextent)|Legt die Breite in Pixel fest, mit der der Listenfeldteil des Kombinationsfelds horizontal gescrollt werden kann.|
-|[CComboBox::SetItemData](#setitemdata)|Legt den 32-Bit-Wert fest, der dem angegebenen Element in einem Kombinationsfeld zugeordnet ist.|
-|[CComboBox::SetItemDataPtr](#setitemdataptr)|Legt den 32-Bit-Zeiger fest, der dem angegebenen Element in einem Kombinationsfeld zugeordnet ist.|
-|[CComboBox::SetItemHeight](#setitemheight)|Legt die Höhe von Listenelementen in einem Kombinationsfeld oder die Höhe des Abschnitts "Bearbeiten-Steuerelement" (oder statischen Text) eines Kombinationsfelds fest.|
-|[CComboBox::SetLocale](#setlocale)|Legt den Gebietsschemabezeichner für ein Kombinationsfeld fest.|
-|[CComboBox::SetMinVisibleItems](#setminvisibleitems)|Legt die minimale Anzahl sichtbarer Elemente in der Dropdownliste des aktuellen Kombinationsfelds fest.|
-|[CComboBox::SetTopIndex](#settopindex)|Weist den Listenfeldteil des Kombinationsfelds an, das Element mit dem angegebenen Index oben anzuzeigen.|
-|[CComboBox::ShowDropDown](#showdropdown)|Zeigt das Listenfeld eines Kombinationsfelds mit dem Format CBS_DROPDOWN oder CBS_DROPDOWNLIST ein oder blendet es aus.|
+|[CComboBox:: limittext](#limittext)|Schränkt die Länge des Texts ein, den der Benutzer in das Bearbeitungs Steuerelement eines Kombinations Felds eingeben kann.|
+|[CComboBox:: MeasureItem](#measureitem)|Wird von Framework aufgerufen, um Kombinations Feld Dimensionen zu bestimmen, wenn ein vom Besitzer gezeichnetes Kombinations Feld erstellt wird.|
+|[CComboBox::P Aste](#paste)|Fügt die Daten aus der Zwischenablage an der aktuellen Cursorposition in das Bearbeitungs Steuerelement ein. Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format enthält.|
+|[CComboBox:: resetcontent](#resetcontent)|Entfernt alle Elemente aus dem Listenfeld und bearbeitet das Steuerelement eines Kombinations Felds.|
+|[CComboBox:: SelectString](#selectstring)|Sucht im Listenfeld eines Kombinations Felds nach einer Zeichenfolge, und wenn die Zeichenfolge gefunden wird, wählt die Zeichenfolge im Listenfeld aus und kopiert die Zeichenfolge in das Bearbeitungs Steuerelement.|
+|[CComboBox:: setcuebanner](#setcuebanner)|Legt den Hinweis Text fest, der für ein Kombinations Feld-Steuerelement angezeigt wird.|
+|[CComboBox:: setcurrsel](#setcursel)|Wählt eine Zeichenfolge im Listenfeld eines Kombinations Felds aus.|
+|[CComboBox:: setdroppeer-DTH](#setdroppedwidth)|Legt die minimale zulässige Breite für den Dropdown-Listenfeld Teil eines Kombinations Felds fest.|
+|[CComboBox:: fest.](#seteditsel)|Wählt Zeichen im Bearbeitungs Steuerelement eines Kombinations Felds aus.|
+|[CComboBox:: abtextendedui](#setextendedui)|Wählt entweder die Standardbenutzer Oberfläche oder die erweiterte Benutzeroberfläche für ein Kombinations Feld aus, das die CBS_DROPDOWN oder CBS_DROPDOWNLIST Format hat.|
+|[CComboBox:: CComboBox::](#sethorizontalextent)|Legt die Breite in Pixel fest, in der der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.|
+|[CComboBox:: "abtitemdata"](#setitemdata)|Legt den 32-Bit-Wert fest, der dem angegebenen Element in einem Kombinations Feld zugeordnet ist.|
+|[CComboBox:: "abtitemdataptr"](#setitemdataptr)|Legt den 32-Bit-Zeiger fest, der dem angegebenen Element in einem Kombinations Feld zugeordnet ist.|
+|[CComboBox::-Elementhöhe](#setitemheight)|Legt die Höhe von Listenelementen in einem Kombinations Feld oder die Höhe des Bearbeitungs Steuer Elements (oder statischer Text) eines Kombinations Felds fest.|
+|[CComboBox:: setlocale](#setlocale)|Legt den Gebiets Schema Bezeichner für ein Kombinations Feld fest.|
+|[CComboBox:: setminvisibleitems](#setminvisibleitems)|Legt die Mindestanzahl sichtbarer Elemente in der Dropdown Liste des aktuellen Kombinations Felds fest.|
+|[CComboBox:: settopindex](#settopindex)|Weist den Listenfeld Bereich des Kombinations Felds an, das Element mit dem angegebenen Index im oberen Bereich anzuzeigen.|
+|[CComboBox:: ShowDropDown](#showdropdown)|Blendet das Listenfeld eines Kombinations Felds ein, das die CBS_DROPDOWN oder CBS_DROPDOWNLIST Format aufweist, oder blendet es aus.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein Kombinationsfeld besteht aus einem Listenfeld, das entweder mit einem statischen Steuerelement oder einem Bearbeitungssteuerelement kombiniert wird. Der Listenfeldteil des Steuerelements kann jederzeit angezeigt werden oder nur dann herunterfallen, wenn der Benutzer den Dropdownpfeil neben dem Steuerelement auswählt.
+Ein Kombinations Feld besteht aus einem Listenfeld, das entweder mit einem statischen Steuerelement oder einem Bearbeitungs Steuerelement kombiniert wird. Der Listenfeld Bereich des Steuer Elements kann jederzeit angezeigt werden, oder er wird nur angezeigt, wenn der Benutzer den Dropdown Pfeil neben dem Steuerelement auswählt.
 
-Das aktuell ausgewählte Element (falls vorhanden) im Listenfeld wird im statischen oder Bearbeitungssteuerelement angezeigt. Wenn das Kombinationsfeld den Dropdownlistenstil hat, kann der Benutzer außerdem das Anfangszeichen eines der Elemente in der Liste eingeben, und das Listenfeld wird, falls sichtbar, das nächste Element mit diesem Anfangszeichen hervorgehoben.
+Das aktuell ausgewählte Element (sofern vorhanden) im Listenfeld wird im Steuerelement "statisch" oder "Bearbeiten" angezeigt. Wenn das Kombinations Feld das Dropdown-Listenformat aufweist, kann der Benutzer außerdem das erste Zeichen eines der Elemente in der Liste eingeben, und im Listenfeld wird das nächste Element mit dem ersten Zeichen hervorgehoben.
 
-In der folgenden Tabelle werden [styles](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)die drei Kombinationsfeldstile verglichen.
+In der folgenden Tabelle werden die drei Kombinations Feld [Stile](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)verglichen.
 
-|Style|Wann ist das Listenfeld sichtbar?|Statisches oder Bearbeitungssteuerelement|
+|Stil|Wenn das Listenfeld ist sichtbar ist|Static-oder Edit-Steuerelement|
 |-----------|-------------------------------|-----------------------------|
-|Einfach|Always|Edit (Bearbeiten)|
-|Drop-down|Wenn sie heruntergelassen werden|Edit (Bearbeiten)|
-|Dropdownliste|Wenn sie heruntergelassen werden|statischen|
+|Einfach|Always|Bearbeiten|
+|Drop-down|Beim Ablegen|Bearbeiten|
+|Dropdownliste|Beim Ablegen|statischen|
 
-Sie können `CComboBox` ein Objekt entweder aus einer Dialogfeldvorlage oder direkt im Code erstellen. Rufen Sie in beiden Fällen `CComboBox` zuerst `CComboBox` den Konstruktor auf, um das Objekt zu erstellen. rufen Sie dann die [Memberfunktion Erstellen](#create) auf, `CComboBox` um das Steuerelement zu erstellen und es an das Objekt anzufügen.
+Sie können ein- `CComboBox` Objekt entweder aus einer Dialogfeld Vorlage oder direkt im Code erstellen. Rufen Sie in beiden Fällen zuerst den Konstruktor `CComboBox` auf, um das Objekt zu erstellen `CComboBox` , und rufen Sie dann die [Create](#create) Member-Funktion auf, um das Steuerelement zu erstellen und es an das Objekt anzufügen `CComboBox`
 
-Wenn Sie Windows-Benachrichtigungen verarbeiten möchten, die von einem Kombinationsfeld an das übergeordnete Element gesendet werden (in der Regel eine von `CDialog`abgeleitete Klasse), fügen Sie der übergeordneten Klasse für jede Nachricht einen Nachrichtenzuordnungseintrag und eine Message-Handler-Memberfunktion hinzu.
+Wenn Sie die von einem Kombinations Feld gesendeten Windows-Benachrichtigungs Meldungen an das übergeordnete Element (in der Regel eine von abgeleitete Klasse) verarbeiten möchten `CDialog` , fügen Sie der übergeordneten Klasse für jede Nachricht einen Message-Map-Eintrag und eine nachrichtenhandlermember-Funktion hinzu.
 
-Jeder Nachrichtenzuordnungseintrag hat die folgende Form:
+Jeder Nachrichten Zuordnungs Eintrag hat die folgende Form:
 
-**\_ON-Benachrichtigung**_Notification_ **(** _id_, _memberFxn_ **)**
+`ON_Notification( id, memberFxn )`
 
-wobei `id` die untergeordnete Fenster-ID des Kombinationsfeldsteuerelements `memberFxn` angegeben wird, das die Benachrichtigung sendet, und der Name der übergeordneten Memberfunktion ist, die Sie geschrieben haben, um die Benachrichtigung zu behandeln.
+dabei `id` gibt die ID des untergeordneten Fensters des Kombinations Feld-Steuer Elements an, das die Benachrichtigung sendet `memberFxn` , und ist der Name der übergeordneten Element Funktion, die Sie zum Verarbeiten der Benachrichtigung geschrieben haben.
 
-Der Funktionsprototyp des Übergeordneten ist wie folgt:
+Der Prototyp der übergeordneten Funktion ist wie folgt:
 
-**afx_msg** `void` afx_msg `memberFxn` **( );**
+`afx_msg void memberFxn( );`
 
-Die Reihenfolge, in der bestimmte Benachrichtigungen gesendet werden, kann nicht vorhergesagt werden. Insbesondere kann eine CBN_SELCHANGE Benachrichtigung entweder vor oder nach einer CBN_CLOSEUP Benachrichtigung erfolgen.
+Die Reihenfolge, in der bestimmte Benachrichtigungen gesendet werden, kann nicht vorhergesagt werden. Insbesondere kann eine CBN_SELCHANGE Benachrichtigung entweder vor oder nach einer CBN_CLOSEUP Benachrichtigung auftreten.
 
-Potenzielle Nachrichtenzuordnungseinträge sind die folgenden:
+Mögliche Nachrichten Zuordnungs Einträge sind folgende:
 
-- ON_CBN_CLOSEUP (Windows 3.1 und höher)) Das Listenfeld eines Kombinationsfelds wurde geschlossen. Diese Benachrichtigung wird nicht für ein Kombinationsfeld mit dem [Stil CBS_SIMPLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) gesendet.
+- ON_CBN_CLOSEUP (Windows 3,1 und höher) Das Listenfeld eines Kombinations Felds wurde geschlossen. Diese Benachrichtigungs Meldung wird nicht für ein Kombinations Feld mit dem [CBS_SIMPLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format gesendet.
 
-- ON_CBN_DBLCLK Der Benutzer doppelklickt im Listenfeld eines Kombinationsfelds auf eine Zeichenfolge. Diese Benachrichtigung wird nur für ein Kombinationsfeld mit dem Stil CBS_SIMPLE gesendet. Bei einem Kombinationsfeld mit dem [Format stil CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) kann kein Doppelklick ausgeführt werden, da mit einem einzigen Klick das Listenfeld ausgeblendet wird.
+- ON_CBN_DBLCLK der Benutzer auf eine Zeichenfolge im Listenfeld eines Kombinations Felds doppelklickt. Diese Benachrichtigungs Meldung wird nur für ein Kombinations Feld mit dem CBS_SIMPLE-Format gesendet. Ein Kombinations Feld mit dem [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format kann nicht angezeigt werden, da ein einzelner Klick das Listenfeld verbirgt.
 
-- ON_CBN_DROPDOWN Das Listenfeld eines Kombinationsfelds wird heruntergelassen (sichtbar gemacht). Diese Benachrichtigung kann nur für ein Kombinationsfeld mit dem Stil CBS_DROPDOWN oder CBS_DROPDOWNLIST auftreten.
+- ON_CBN_DROPDOWN das Listenfeld eines Kombinations Felds in der Dropdown Liste angezeigt wird (sichtbar). Diese Benachrichtigungs Meldung kann nur für ein Kombinations Feld mit der CBS_DROPDOWN oder CBS_DROPDOWNLIST Formatvorlagen auftreten.
 
-- ON_CBN_EDITCHANGE Der Benutzer hat eine Aktion ausgeführt, die den Text im Abschnitt "Bearbeiten- und Steuerelement" eines Kombinationsfelds geändert haben könnte. Im Gegensatz zur CBN_EDITUPDATE Nachricht wird diese Nachricht gesendet, nachdem Windows den Bildschirm aktualisiert hat. Es wird nicht gesendet, wenn das Kombinationsfeld den CBS_DROPDOWNLIST Stil hat.
+- ON_CBN_EDITCHANGE der Benutzer eine Aktion durchgeführt hat, die möglicherweise den Text im Bearbeitungs Steuerelement-Teil eines Kombinations Felds geändert hat. Anders als bei der CBN_EDITUPDATE Meldung wird diese Nachricht gesendet, nachdem der Bildschirm von Windows aktualisiert wurde. Er wird nicht gesendet, wenn das Kombinations Feld den CBS_DROPDOWNLIST Stil hat.
 
-- ON_CBN_EDITUPDATE Der Bearbeitungssteuerungsteil eines Kombinationsfelds wird geänderten Text anzeigen. Diese Benachrichtigung wird gesendet, nachdem das Steuerelement den Text formatiert hat, aber bevor der Text angezeigt wird. Es wird nicht gesendet, wenn das Kombinationsfeld den CBS_DROPDOWNLIST Stil hat.
+- ON_CBN_EDITUPDATE der Bearbeitungs Steuerungsteil eines Kombinations Felds ist im Begriff, geänderten Text anzuzeigen. Diese Benachrichtigung wird gesendet, nachdem das Steuerelement den Text formatiert hat, aber bevor der Text angezeigt wird. Er wird nicht gesendet, wenn das Kombinations Feld den CBS_DROPDOWNLIST Stil hat.
 
-- ON_CBN_ERRSPACE Das Kombinationsfeld kann nicht genügend Arbeitsspeicher zuweisen, um eine bestimmte Anforderung zu erfüllen.
+- ON_CBN_ERRSPACE das Kombinations Feld kann nicht genügend Arbeitsspeicher zuordnen, um eine bestimmte Anforderung zu erfüllen.
 
-- ON_CBN_SELENDCANCEL (Windows 3.1 und höher) Gibt an, dass die Auswahl des Benutzers abgebrochen werden soll. Der Benutzer klickt auf ein Element und dann auf ein anderes Fenster oder Steuerelement, um das Listenfeld eines Kombinationsfelds auszublenden. Diese Benachrichtigung wird vor dem CBN_CLOSEUP Benachrichtigung gesendet, um anzugeben, dass die Auswahl des Benutzers ignoriert werden soll. Die CBN_SELENDCANCEL oder CBN_SELENDOK Benachrichtigungwirdwird, auch wenn die CBN_CLOSEUP Benachrichtigung s/ nicht gesendet wird (wie im Fall eines Kombinationsfelds mit dem Format CBS_SIMPLE).
+- ON_CBN_SELENDCANCEL (Windows 3,1 und höher) Gibt an, dass die Auswahl des Benutzers abgebrochen werden soll. Der Benutzer klickt auf ein Element und klickt dann auf ein anderes Fenster oder Steuerelement, um das Listenfeld eines Kombinations Felds auszublenden. Diese Benachrichtigungs Meldung wird vor der CBN_CLOSEUP Benachrichtigungs Meldung gesendet, um anzugeben, dass die Auswahl des Benutzers ignoriert werden soll. Die CBN_SELENDCANCEL-oder CBN_SELENDOK Benachrichtigungs Meldung wird gesendet, auch wenn die CBN_CLOSEUP Benachrichtigungs Meldung nicht gesendet wird (wie im Fall eines Kombinations Felds mit dem CBS_SIMPLE Format).
 
-- ON_CBN_SELENDOK Der Benutzer wählt ein Element aus und drückt dann entweder die ENTER-Taste oder klickt auf die DOWN ARROW-Taste, um das Listenfeld eines Kombinationsfelds auszublenden. Diese Benachrichtigung wird vor der CBN_CLOSEUP Nachricht gesendet, um anzugeben, dass die Auswahl des Benutzers als gültig betrachtet werden soll. Die CBN_SELENDCANCEL oder CBN_SELENDOK Benachrichtigungwirdwird, auch wenn die CBN_CLOSEUP Benachrichtigung s/ nicht gesendet wird (wie im Fall eines Kombinationsfelds mit dem Format CBS_SIMPLE).
+- ON_CBN_SELENDOK der Benutzer ein Element auswählt, und dann entweder die EINGABETASTE drücken oder auf die nach-unten-Taste klicken, um das Listenfeld eines Kombinations Felds auszublenden. Diese Benachrichtigungs Meldung wird vor der CBN_CLOSEUP Nachricht gesendet, um anzugeben, dass die Auswahl des Benutzers als gültig betrachtet werden soll. Die CBN_SELENDCANCEL-oder CBN_SELENDOK Benachrichtigungs Meldung wird gesendet, auch wenn die CBN_CLOSEUP Benachrichtigungs Meldung nicht gesendet wird (wie im Fall eines Kombinations Felds mit dem CBS_SIMPLE Format).
 
-- ON_CBN_KILLFOCUS Das Kombinationsfeld verliert den Eingabefokus.
+- ON_CBN_KILLFOCUS das Kombinations Feld den Eingabefokus verliert.
 
-- ON_CBN_SELCHANGE Die Auswahl im Listenfeld eines Kombinationsfelds wird geändert, da der Benutzer entweder in das Listenfeld klickt oder die Auswahl mithilfe der Pfeiltasten ändert. Bei der Verarbeitung dieser Nachricht kann der Text im Bearbeitungssteuerelement `GetLBText` des Kombinationsfelds nur über oder eine andere ähnliche Funktion abgerufen werden. `GetWindowText`kann nicht verwendet werden.
+- ON_CBN_SELCHANGE die Auswahl im Listenfeld eines Kombinations Felds so geändert wird, dass der Benutzer entweder auf das Listenfeld klickt oder die Auswahl mithilfe der Pfeiltasten ändert. Bei der Verarbeitung dieser Nachricht kann der Text im Bearbeitungs Steuerelement des Kombinations Felds nur über `GetLBText` oder eine andere ähnliche Funktion abgerufen werden. `GetWindowText`kann nicht verwendet werden.
 
-- ON_CBN_SETFOCUS Das Kombinationsfeld empfängt den Eingabefokus.
+- ON_CBN_SETFOCUS das Kombinations Feld den Eingabefokus erhält.
 
-Wenn Sie `CComboBox` ein Objekt in einem Dialogfeld (über eine Dialogfeldressource) erstellen, wird das `CComboBox` Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
+Wenn Sie ein- `CComboBox` Objekt in einem Dialogfeld (über eine Dialogfeld Ressource) erstellen, `CComboBox` wird das Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
 
-Wenn Sie ein `CComboBox` Objekt in ein anderes Fensterobjekt einbetten, müssen Sie es nicht zerstören. Wenn Sie `CComboBox` das Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie `CComboBox` das Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie **das Objekt** löschen aufrufen, um es zu zerstören, wenn das Windows-Kombinationsfeld zerstört wird.
+Wenn Sie ein- `CComboBox` Objekt in ein anderes Fenster Objekt einbetten, müssen Sie es nicht zerstören. Wenn Sie das `CComboBox` Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie das- `CComboBox` Objekt auf dem Heap mithilfe der- **`new`** Funktion erstellen, müssen Sie für das-Objekt aufzurufen, **`delete`** um es zu zerstören, wenn das Windows-Kombinations Feld zerstört wird.
 
-**Hinweis** Wenn Sie WM_KEYDOWN- und WM_CHAR-Nachrichten verarbeiten möchten, müssen Sie die Bearbeitungs- und Listenfeldsteuerelemente des Kombinationsfelds unterklassieren, Klassen von `CEdit` und `CListBox`ableiten und Handler für diese Nachrichten zu den abgeleiteten Klassen hinzufügen. Weitere Informationen finden Sie unter [CWnd::SubclassWindow](../../mfc/reference/cwnd-class.md#subclasswindow).
+**Hinweis** Wenn Sie WM_KEYDOWN-und WM_CHAR-Nachrichten verarbeiten möchten, müssen Sie die Steuerelemente für die Bearbeitung und das Listenfeld des Kombinations Felds unterteilen, Klassen von `CEdit` und ableiten `CListBox` und den abgeleiteten Klassen Handler für diese Nachrichten hinzufügen. Weitere Informationen finden Sie unter [CWnd:: SubclassWindow](../../mfc/reference/cwnd-class.md#subclasswindow).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -262,9 +262,9 @@ Wenn Sie ein `CComboBox` Objekt in ein anderes Fensterobjekt einbetten, müssen 
 
 **Header:** afxwin.h
 
-## <a name="ccomboboxaddstring"></a><a name="addstring"></a>CComboBox::AddString
+## <a name="ccomboboxaddstring"></a><a name="addstring"></a>CComboBox:: AddString
 
-Fügt dem Listenfeld eines Kombinationsfelds eine Zeichenfolge hinzu.
+Fügt eine Zeichenfolge in das Listenfeld eines Kombinations Felds ein.
 
 ```
 int AddString(LPCTSTR lpszString);
@@ -272,27 +272,27 @@ int AddString(LPCTSTR lpszString);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszString*<br/>
-Zeigt auf die null-terminierte Zeichenfolge, die hinzugefügt werden soll.
+*lpszstring*<br/>
+Verweist auf die mit NULL endende Zeichenfolge, die hinzugefügt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn der Rückgabewert größer oder gleich 0 ist, ist er der nullbasierte Index für die Zeichenfolge im Listenfeld. Der Rückgabewert ist CB_ERR wenn ein Fehler auftritt. Der Rückgabewert ist CB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge verfügbar ist.
+Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies der null basierte Index der Zeichenfolge im Listenfeld. Der Rückgabewert ist CB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist CB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge zur Verfügung steht.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Listenfeld nicht mit dem [Stil CBS_SORT](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) erstellt wurde, wird die Zeichenfolge am Ende der Liste hinzugefügt. Andernfalls wird die Zeichenfolge in die Liste eingefügt, und die Liste wird sortiert.
+Wenn das Listenfeld nicht mit dem [CBS_SORT](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil erstellt wurde, wird die Zeichenfolge am Ende der Liste hinzugefügt. Andernfalls wird die Zeichenfolge in die Liste eingefügt, und die Liste wird sortiert.
 
 > [!NOTE]
-> Diese Funktion wird vom `ComboBoxEx` Windows-Steuerelement nicht unterstützt. Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx-Steuerelemente](/windows/win32/Controls/comboboxex-controls) im Windows SDK.
+> Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
-Um eine Zeichenfolge an einer bestimmten Position [InsertString](#insertstring) in der Liste einzufügen, verwenden Sie die InsertString-Memberfunktion.
+Um eine Zeichenfolge in eine bestimmte Position in der Liste einzufügen, verwenden Sie die [InsertString](#insertstring) -Member-Funktion.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#3](../../mfc/reference/codesnippet/cpp/ccombobox-class_1.cpp)]
 
-## <a name="ccomboboxccombobox"></a><a name="ccombobox"></a>CComboBox::CComboBox
+## <a name="ccomboboxccombobox"></a><a name="ccombobox"></a>CComboBox:: CComboBox
 
 Erstellt ein `CComboBox`-Objekt.
 
@@ -304,9 +304,9 @@ CComboBox();
 
 [!code-cpp[NVC_MFC_CComboBox#1](../../mfc/reference/codesnippet/cpp/ccombobox-class_2.cpp)]
 
-## <a name="ccomboboxclear"></a><a name="clear"></a>CComboBox::Löschen
+## <a name="ccomboboxclear"></a><a name="clear"></a>CComboBox:: Clear
 
-Löscht (löscht) die aktuelle Auswahl, falls vorhanden, im Bearbeitungssteuerelement des Kombinationsfelds.
+Löscht (löscht) die aktuelle Auswahl, sofern vorhanden, im Bearbeitungs Steuerelement des Kombinations Felds.
 
 ```cpp
 void Clear();
@@ -314,15 +314,15 @@ void Clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um die aktuelle Auswahl zu löschen und den gelöschten Inhalt in der Zwischenablage zu platzieren, verwenden Sie die Funktion [Member ausschneiden.](#cut)
+Um die aktuelle Auswahl zu löschen und den gelöschten Inhalt in die Zwischenablage einzufügen, verwenden Sie die Funktion zum [Ausschneiden](#cut) von Membern.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#4](../../mfc/reference/codesnippet/cpp/ccombobox-class_3.cpp)]
 
-## <a name="ccomboboxcompareitem"></a><a name="compareitem"></a>CComboBox::CompareItem
+## <a name="ccomboboxcompareitem"></a><a name="compareitem"></a>CComboBox:: compareitem
 
-Wird vom Framework aufgerufen, um die relative Position eines neuen Elements im Listenfeldteil eines sortierten Kombinationsfelds für besitzerzeichnen zu bestimmen.
+Wird von Framework aufgerufen, um die relative Position eines neuen Elements im Listenfeld Abschnitt eines sortierten Besitzers zu bestimmen.
 
 ```
 virtual int CompareItem(LPCOMPAREITEMSTRUCT lpCompareItemStruct);
@@ -330,32 +330,32 @@ virtual int CompareItem(LPCOMPAREITEMSTRUCT lpCompareItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpCompareItemStruct*<br/>
-Ein langer Zeiger auf eine [COMPAREITEMSTRUCT-Struktur.](/windows/win32/api/winuser/ns-winuser-compareitemstruct)
+*lpcompareitemstruct*<br/>
+Ein langer Zeiger auf eine [compareitemstruct](/windows/win32/api/winuser/ns-winuser-compareitemstruct) -Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die relative Position der beiden `COMPAREITEMSTRUCT` in der Struktur beschriebenen Elemente an. Dabei kann es sich um einen der folgenden Werte handeln:
+Gibt die relative Position der beiden in der-Struktur beschriebenen Elemente an `COMPAREITEMSTRUCT` . Dabei kann es sich um einen der folgenden Werte handeln:
 
 |Wert|Bedeutung|
 |-----------|-------------|
-|- 1|Artikel 1 sortiert vor Artikel 2.|
-|0|Artikel 1 und Artikel 2 sortieren die gleiche.|
-|1|Artikel 1 sortiert nach Artikel 2.|
+|- 1|Element 1 wird vor Element 2 sortiert.|
+|0|Element 1 und Element 2 Sortieren dasselbe.|
+|1|Element 1 sortiert nach Element 2.|
 
-Eine Beschreibung von `COMPAREITEMSTRUCT`finden Sie unter [CWnd::OnCompareItem](../../mfc/reference/cwnd-class.md#oncompareitem) .
+Eine Beschreibung von finden Sie unter [CWnd:: oncompareitem](../../mfc/reference/cwnd-class.md#oncompareitem) `COMPAREITEMSTRUCT` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt diese Memberfunktion nichts aus. Wenn Sie ein Kombinationsfeld zum Zeichnen von Besitzern mit dem Stil LBS_SORT erstellen, müssen Sie diese Memberfunktion überschreiben, um das Framework beim Sortieren neuer Elemente zu unterstützen, die dem Listenfeld hinzugefügt wurden.
+Standardmäßig führt diese Member-Funktion keine Aktion aus. Wenn Sie ein Kombinations Feld zum Erstellen eines Besitzers mit dem LBS_SORT Stil erstellen, müssen Sie diese Element Funktion überschreiben, damit das Framework beim Sortieren neuer Elemente, die dem Listenfeld hinzugefügt werden, behilflich ist.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#5](../../mfc/reference/codesnippet/cpp/ccombobox-class_4.cpp)]
 
-## <a name="ccomboboxcopy"></a><a name="copy"></a>CComboBox::Kopieren
+## <a name="ccomboboxcopy"></a><a name="copy"></a>CComboBox:: Copy
 
-Kopiert die aktuelle Auswahl(en) im Bearbeitungssteuerelement des Kombinationsfelds im CF_TEXT Format in die Zwischenablage.
+Kopiert die aktuelle Auswahl, sofern vorhanden, in das Bearbeitungs Steuerelement des Kombinations Felds in CF_TEXT Format in die Zwischenablage.
 
 ```cpp
 void Copy();
@@ -365,9 +365,9 @@ void Copy();
 
 [!code-cpp[NVC_MFC_CComboBox#6](../../mfc/reference/codesnippet/cpp/ccombobox-class_5.cpp)]
 
-## <a name="ccomboboxcreate"></a><a name="create"></a>CComboBox::Erstellen
+## <a name="ccomboboxcreate"></a><a name="create"></a>CComboBox:: Create
 
-Erstellt das Kombinationsfeld und `CComboBox` fügt es an das Objekt an.
+Erstellt das Kombinations Feld und fügt es an das- `CComboBox` Objekt an.
 
 ```
 virtual BOOL Create(
@@ -379,17 +379,17 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*dwStyle*<br/>
-Gibt den Stil des Kombinationsfelds an. Wenden Sie eine beliebige Kombination von [Kombinationsbox-Stilen](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) auf das Feld an.
+*dwstyle*<br/>
+Gibt den Stil des Kombinations Felds an. Wenden Sie eine beliebige Kombination von Kombinations [Feld Stilen](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) auf das Feld an.
 
 *Rect*<br/>
-Zeigt auf die Position und Größe des Kombinationsfelds. Kann eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein `CRect` Objekt sein.
+Zeigt auf die Position und die Größe des Kombinations Felds. Kann eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein- `CRect` Objekt sein.
 
-*pParentWnd*<br/>
-Gibt das übergeordnete Fenster des Kombinationsfelds (in der Regel a `CDialog`) an. Es darf nicht NULL sein.
+*pparser*<br/>
+Gibt das übergeordnete Fenster des Kombinations Felds an (normalerweise ein `CDialog` ). Er darf nicht NULL sein.
 
 *nID*<br/>
-Gibt die Steuer-ID des Kombinationsfelds an.
+Gibt die Steuerelement-ID des Kombinations Felds an.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -397,35 +397,35 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen `CComboBox` ein Objekt in zwei Schritten. Rufen Sie zunächst den Konstruktor auf, und rufen Sie dann `Create` `CComboBox` auf, das Windows-Kombinationsfeld erstellt und an das Objekt anfügt.
+Sie erstellen ein- `CComboBox` Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen und dann aufgerufen `Create` , wodurch das Windows-Kombinations Feld erstellt und an das-Objekt angefügt wird `CComboBox` .
 
-Bei `Create` der Ausführung sendet Windows die [Nachrichten WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate), [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate), [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)und [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) Nachrichten an das Kombinationsfeld.
+Wenn `Create` ausgeführt wird, sendet Windows die [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate)-, [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate)-, [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)-und [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) -Meldungen an das Kombinations Feld.
 
-Diese Nachrichten werden standardmäßig von den Memberfunktionen [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate), [OnCreate](../../mfc/reference/cwnd-class.md#oncreate), [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize)und `CWnd` [OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) in der Basisklasse verarbeitet. Um die Standardnachrichtenbehandlung zu erweitern, `CComboBox`leiten Sie eine Klasse von ab , fügen Sie der neuen Klasse eine Nachrichtenzuordnung hinzu, und überschreiben Sie die vorherigen Message-Handler-Memberfunktionen. Überschreiben `OnCreate`Sie z. B., um die erforderliche Initialisierung für eine neue Klasse durchzuführen.
+Diese Nachrichten werden standardmäßig von den Element Funktionen " [onnccreate](../../mfc/reference/cwnd-class.md#onnccreate)", " [OnCreate](../../mfc/reference/cwnd-class.md#oncreate)", " [onnccalcsize](../../mfc/reference/cwnd-class.md#onnccalcsize)" und " [ongetminmaxinfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) " in der `CWnd` Basisklasse verarbeitet. Um die standardmäßige Meldungs Behandlung zu erweitern, leiten Sie eine Klasse von ab `CComboBox` , fügen Sie der neuen Klasse eine Meldungs Zuordnung hinzu, und überschreiben Sie die zuvor genannten nachrichtenhandlerelementfunktionen. Überschreiben `OnCreate` Sie z. b., um die erforderliche Initialisierung für eine neue Klasse auszuführen.
 
-Wenden Sie die folgenden [Fensterstile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf ein Kombinationsfeldsteuerelement an. :
+Wenden Sie die folgenden [Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf ein Kombinations Feld-Steuerelement an. :
 
-- WS_CHILD Immer
+- Immer WS_CHILD
 
-- WS_VISIBLE In der Regel
+- WS_VISIBLE in der Regel
 
-- WS_DISABLED Selten
+- WS_DISABLED selten
 
-- WS_VSCROLL So fügen Sie vertikales Scrollen für das Listenfeld im Kombinationsfeld hinzu
+- WS_VSCROLL, um ein vertikales Scrollen für das Listenfeld im Kombinations Feld hinzuzufügen.
 
-- WS_HSCROLL So fügen Sie horizontales Scrollen für das Listenfeld im Kombinationsfeld hinzu
+- WS_HSCROLL, um im Kombinations Feld einen horizontalen Bildlauf für das Listenfeld hinzuzufügen.
 
-- WS_GROUP Zu Gruppensteuerelementen
+- WS_GROUP zum Gruppieren von Steuerelementen
 
-- WS_TABSTOP So schließen Sie das Kombinationsfeld in die Tabstoppreihenfolge ein
+- WS_TABSTOP, um das Kombinations Feld in der Tabstopps-Reihenfolge einzuschließen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#2](../../mfc/reference/codesnippet/cpp/ccombobox-class_6.cpp)]
 
-## <a name="ccomboboxcut"></a><a name="cut"></a>CComboBox::Schnitt
+## <a name="ccomboboxcut"></a><a name="cut"></a>CComboBox:: Cut
 
-Löscht (schneidet) die aktuelle Auswahl, falls vorhanden, im Kombinationsfeld-Bearbeitungssteuerelement und kopiert den gelöschten Text in der Zwischenablage im CF_TEXT Format.
+Löscht (schneidet) die aktuelle Auswahl im Kombinations Feld-Bearbeitungs Steuerelement, sofern vorhanden, und kopiert den gelöschten Text in die Zwischenablage in CF_TEXT Format.
 
 ```cpp
 void Cut();
@@ -433,15 +433,15 @@ void Cut();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um die aktuelle Auswahl zu löschen, ohne den gelöschten Text in der Zwischenablage zu platzieren, rufen Sie die Funktion [Member löschen](#clear) auf.
+Um die aktuelle Auswahl zu löschen, ohne den gelöschten Text in der Zwischenablage zu platzieren, müssen [Sie die Funktion zum Löschen von](#clear) Membern
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#7](../../mfc/reference/codesnippet/cpp/ccombobox-class_7.cpp)]
 
-## <a name="ccomboboxdeleteitem"></a><a name="deleteitem"></a>CComboBox::DeleteItem
+## <a name="ccomboboxdeleteitem"></a><a name="deleteitem"></a>CComboBox::D eleteitem
 
-Wird vom Framework aufgerufen, wenn der Benutzer ein `CComboBox` Element aus einem Besitzerzeichnungsobjekt löscht oder das Kombinationsfeld zerstört.
+Wird von Framework aufgerufen, wenn der Benutzer ein Element aus einem owner-draw- `CComboBox` Objekt löscht oder das Kombinations Feld zerstört.
 
 ```
 virtual void DeleteItem(LPDELETEITEMSTRUCT lpDeleteItemStruct);
@@ -449,20 +449,20 @@ virtual void DeleteItem(LPDELETEITEMSTRUCT lpDeleteItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpDeleteItemStruct*<br/>
-Ein langer Zeiger auf eine Windows [DELETEITEMSTRUCT-Struktur,](/windows/win32/api/winuser/ns-winuser-deleteitemstruct) die Informationen zum gelöschten Element enthält. Eine Beschreibung dieser Struktur finden Sie unter [CWnd::OnDeleteItem.](../../mfc/reference/cwnd-class.md#ondeleteitem)
+*lpdeleteitemstruct*<br/>
+Ein langer Zeiger auf eine Windows [deleteitemstruct](/windows/win32/api/winuser/ns-winuser-deleteitemstruct) -Struktur, die Informationen über das gelöschte Element enthält. Eine Beschreibung dieser Struktur finden Sie unter [CWnd:: ondeleteitem](../../mfc/reference/cwnd-class.md#ondeleteitem) .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um das Kombinationsfeld nach Bedarf neu zu zeichnen.
+Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um das Kombinations Feld bei Bedarf neu zu zeichnen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#8](../../mfc/reference/codesnippet/cpp/ccombobox-class_8.cpp)]
 
-## <a name="ccomboboxdeletestring"></a><a name="deletestring"></a>CComboBox::DeleteString
+## <a name="ccomboboxdeletestring"></a><a name="deletestring"></a>CComboBox::D eletestring
 
-Löscht das Element in Position *nIndex* aus dem Kombinationsfeld.
+Löscht das Element in der Position *nIndex* aus dem Kombinations Feld.
 
 ```
 int DeleteString(UINT nIndex);
@@ -471,23 +471,23 @@ int DeleteString(UINT nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den Index für die Zeichenfolge an, die gelöscht werden soll.
+Gibt den Index der zu löschenden Zeichenfolge an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn der Rückgabewert größer oder gleich 0 ist, handelt es sich um eine Anzahl der Zeichenfolgen, die in der Liste verbleiben. Der Rückgabewert ist CB_ERR, wenn *nIndex* einen Index angibt, der größer als die Anzahl der Elemente in der Liste ist.
+Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies die Anzahl der Zeichen folgen, die in der Liste verbleiben. Der Rückgabewert ist CB_ERR, wenn *nIndex* einen Index angibt, der größer als die Anzahl der Elemente in der Liste ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Alle Elemente, die *nach nIndex* folgen, bewegen sich nun um eine Position nach unten. Wenn z. B. ein Kombinationsfeld zwei Elemente enthält, führt das Löschen des ersten Elements dazu, dass sich das verbleibende Element jetzt an der ersten Position befindet. *nIndex*=0 für das Element an der ersten Position.
+Alle Elemente nach *nIndex* werden nun um eine Position nach unten verschoben. Wenn ein Kombinations Feld z. b. zwei Elemente enthält, führt das Löschen des ersten Elements dazu, dass das restliche Element jetzt an der ersten Position liegt. *nIndex*= 0 für das Element an der ersten Position.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#9](../../mfc/reference/codesnippet/cpp/ccombobox-class_9.cpp)]
 
-## <a name="ccomboboxdir"></a><a name="dir"></a>CComboBox::Dir
+## <a name="ccomboboxdir"></a><a name="dir"></a>CComboBox::D IR
 
-Fügt dem Listenfeld eines Kombinationsfelds eine Liste mit Dateinamen oder Laufwerken hinzu.
+Fügt dem Listenfeld eines Kombinations Felds eine Liste von Dateinamen oder Laufwerken hinzu.
 
 ```
 int Dir(
@@ -497,43 +497,43 @@ int Dir(
 
 ### <a name="parameters"></a>Parameter
 
-*Attr*<br/>
-Kann eine beliebige Kombination der in [CFile::GetStatus](../../mfc/reference/cfile-class.md#getstatus) beschriebenen **Enumerumwerte** oder eine beliebige Kombination der folgenden Werte sein:
+*attr*<br/>
+Kann eine beliebige Kombination der **`enum`** in [CFile:: GetStatus](../../mfc/reference/cfile-class.md#getstatus) beschriebenen Werte sein oder eine beliebige Kombination der folgenden Werte sein:
 
 - DDL_READWRITE Datei kann aus gelesen oder geschrieben werden.
 
-- DDL_READONLY Datei kann gelesen, aber nicht geschrieben werden.
+- DDL_READONLY Datei kann aus gelesen werden, aber nicht in geschrieben.
 
-- DDL_HIDDEN Datei ist ausgeblendet und wird nicht in einer Verzeichnisliste angezeigt.
+- DDL_HIDDEN Datei ist ausgeblendet und wird nicht in einer Verzeichnis Auflistung angezeigt.
 
-- DDL_SYSTEM Datei ist eine Systemdatei.
+- DDL_SYSTEM Datei ist eine System Datei.
 
-- DDL_DIRECTORY Der von *lpszWildCard* angegebene Name gibt ein Verzeichnis an.
+- DDL_DIRECTORY der von *lpszwildcard* angegebene Name ein Verzeichnis angibt.
 
 - DDL_ARCHIVE Datei wurde archiviert.
 
-- DDL_DRIVES Alle Laufwerke einschließen, die dem von *lpszWildCard*angegebenen Namen entsprechen.
+- DDL_DRIVES alle Laufwerke einschließen, die dem von *lpszwildcard*angegebenen Namen entsprechen.
 
-- DDL_EXCLUSIVE Exklusive Flagge. Wenn das exklusive Flag festgelegt ist, werden nur Dateien des angegebenen Typs aufgelistet. Andernfalls werden Dateien des angegebenen Typs zusätzlich zu "normalen" Dateien aufgelistet.
+- DDL_EXCLUSIVE exklusives Flag. Wenn das exklusive Flag festgelegt ist, werden nur Dateien des angegebenen Typs aufgelistet. Andernfalls werden Dateien des angegebenen Typs zusätzlich zu "normalen" Dateien aufgelistet.
 
-*lpszWildCard*<br/>
-Zeigt auf eine Dateispezifikationszeichenfolge. Die Zeichenfolge kann Platzhalter enthalten (z. B. *.\*).
+*lpszwildcard*<br/>
+Verweist auf eine Datei Spezifikations Zeichenfolge. Die Zeichenfolge kann Platzhalter enthalten (z. b. *. \* ).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn der Rückgabewert größer oder gleich 0 ist, ist er der Null-basierte Index des letzten Dateinamens, der der Liste hinzugefügt wurde. Der Rückgabewert ist CB_ERR wenn ein Fehler auftritt. Der Rückgabewert ist CB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolgen verfügbar ist.
+Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies der null basierte Index des letzten Datei namens, der der Liste hinzugefügt wurde. Der Rückgabewert ist CB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist CB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichen folgen verfügbar ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion wird vom `ComboBoxEx` Windows-Steuerelement nicht unterstützt. Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx-Steuerelemente](/windows/win32/Controls/comboboxex-controls) im Windows SDK.
+Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#10](../../mfc/reference/codesnippet/cpp/ccombobox-class_10.cpp)]
 
-## <a name="ccomboboxdrawitem"></a><a name="drawitem"></a>CComboBox::DrawItem
+## <a name="ccomboboxdrawitem"></a><a name="drawitem"></a>CComboBox::D rawitem
 
-Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines Besitzer-Zeichnungs-Kombinationsfelds ändert.
+Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines Kombinations Felds für den Besitzer zeichnet.
 
 ```
 virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
@@ -541,22 +541,22 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpDrawItemStruct*<br/>
-Ein Zeiger auf eine [DRAWITEMSTRUCT-Struktur,](/windows/win32/api/winuser/ns-winuser-drawitemstruct) die Informationen über den erforderlichen Zeichnungstyp enthält.
+*lpdrawitemstruct*<br/>
+Ein Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das `itemAction` Element `DRAWITEMSTRUCT` der Struktur definiert die Zeichnungsaktion, die ausgeführt werden soll. Eine Beschreibung dieser Struktur finden Sie unter [CWnd::OnDrawItem.](../../mfc/reference/cwnd-class.md#ondrawitem)
+Der- `itemAction` Member der- `DRAWITEMSTRUCT` Struktur definiert die Zeichnungs Aktion, die ausgeführt werden soll. Eine Beschreibung dieser Struktur finden Sie unter [CWnd:: OnDrawItem](../../mfc/reference/cwnd-class.md#ondrawitem) .
 
-Standardmäßig führt diese Memberfunktion nichts aus. Überschreiben Sie diese Memberfunktion, um `CComboBox` die Zeichnung für ein Besitzerzeichnungsobjekt zu implementieren. Bevor diese Memberfunktion beendet wird, sollte die Anwendung alle GDI-Objekte (Graphics Device Interface) wiederherstellen, die für den in *lpDrawItemStruct*bereitgestellten Anzeigekontext ausgewählt wurden.
+Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, um das Zeichnen für ein owner-draw-Objekt zu implementieren `CComboBox` Bevor diese Member-Funktion beendet wird, sollte die Anwendung alle GDI-Objekte (Graphics Device Interface) wiederherstellen, die für den in *lpdrawitemstruct*angegebenen Anzeige Kontext ausgewählt wurden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#11](../../mfc/reference/codesnippet/cpp/ccombobox-class_11.cpp)]
 
-## <a name="ccomboboxfindstring"></a><a name="findstring"></a>CComboBox::FindString
+## <a name="ccomboboxfindstring"></a><a name="findstring"></a>CComboBox:: FindString
 
-Sucht die erste Zeichenfolge, die das angegebene Präfix im Listenfeld eines Kombinationsfelds enthält, wählt aber nicht aus.
+Sucht die erste Zeichenfolge, die das angegebene Präfix enthält, und wählt Sie nicht aus dem Listenfeld eines Kombinations Felds aus.
 
 ```
 int FindString(
@@ -566,27 +566,27 @@ int FindString(
 
 ### <a name="parameters"></a>Parameter
 
-*nStartAfter*<br/>
-Enthält den nullbasierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche am Ende des Listenfelds angelangt ist, wird sie vom oberen Rand des Listenfelds zurück zu dem von *nStartAfter*angegebenen Element fortgesetzt. Wenn -1, wird das gesamte Listenfeld von Anfang an durchsucht.
+*nstartafter*<br/>
+Enthält den NULL basierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche das Ende des Listen Felds erreicht, wird Sie vom oberen Rand des Listen Felds zurück zu dem durch *nstartafter*angegebenen Element. Wenn-1, wird das gesamte Listenfeld von Anfang an durchsucht.
 
-*lpszString*<br/>
-Verweist auf die null-terminierte Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche ist großfliegt, daher kann diese Zeichenfolge eine beliebige Kombination aus Groß- und Kleinbuchstaben enthalten.
+*lpszstring*<br/>
+Verweist auf die auf NULL endenden Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche erfolgt unabhängig von der Groß-/Kleinschreibung, sodass diese Zeichenfolge eine beliebige Kombination von Groß-und Kleinbuchstaben enthalten kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn der Rückgabewert größer oder gleich 0 ist, ist er der nullbasierte Index des übereinstimmenden Elements. Es ist CB_ERR, ob die Suche erfolglos war.
+Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies der null basierte Index des übereinstimmenden Elements. Es ist CB_ERR, wenn die Suche nicht erfolgreich war.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion wird vom `ComboBoxEx` Windows-Steuerelement nicht unterstützt. Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx-Steuerelemente](/windows/win32/Controls/comboboxex-controls) im Windows SDK.
+Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#12](../../mfc/reference/codesnippet/cpp/ccombobox-class_12.cpp)]
 
-## <a name="ccomboboxfindstringexact"></a><a name="findstringexact"></a>CComboBox::FindStringExact
+## <a name="ccomboboxfindstringexact"></a><a name="findstringexact"></a>CComboBox:: FindStringExact
 
-Rufen `FindStringExact` Sie die Memberfunktion auf, um die erste Listenfeldzeichenfolge (in einem Kombinationsfeld) zu finden, die mit der in *lpszFind*angegebenen Zeichenfolge übereinstimmt.
+Ruft die `FindStringExact` Member-Funktion auf, um die erste Listenfeld Zeichenfolge (in einem Kombinations Feld) zu suchen, die mit der in *lpszfind*angegebenen Zeichenfolge übereinstimmt.
 
 ```
 int FindStringExact(
@@ -596,27 +596,27 @@ int FindStringExact(
 
 ### <a name="parameters"></a>Parameter
 
-*nIndexStart*<br/>
-Gibt den nullbasierten Index des Elements vor dem ersten zu durchsuchenden Element an. Wenn die Suche am Ende des Listenfelds angelangt ist, wird sie vom oberen Rand des Listenfelds zurück zu dem von *nIndexStart*angegebenen Element fortgesetzt. Wenn *nIndexStart* -1 ist, wird das gesamte Listenfeld von Anfang an durchsucht.
+*nindexstart*<br/>
+Gibt den NULL basierten Index des Elements vor dem ersten zu durchsuchenden Element an. Wenn die Suche das Ende des Listen Felds erreicht, wird Sie vom oberen Rand des Listen Felds zurück zu dem durch *nindexstart*angegebenen Element. Wenn *nindexstart* den Wert-1 aufweist, wird das gesamte Listenfeld von Anfang an durchsucht.
 
-*lpszFind*<br/>
-Zeigt auf die null-terminierte Zeichenfolge, nach der gesucht werden soll. Diese Zeichenfolge kann einen vollständigen Dateinamen enthalten, einschließlich der Erweiterung. Bei der Suche wird die Groß-/Kleinschreibung nicht beachtet, sodass diese Zeichenfolge eine beliebige Kombination aus Groß- und Kleinbuchstaben enthalten kann.
+*lpszfind*<br/>
+Zeigt auf die zu suchende NULL-terminierte Zeichenfolge. Diese Zeichenfolge kann einen kompletten Dateinamen enthalten, einschließlich der Erweiterung. Bei der Suche wird die Groß-/Kleinschreibung nicht beachtet, sodass diese Zeichenfolge eine beliebige Kombination von Groß-und Kleinbuchstaben enthalten kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der nullbasierte Index des übereinstimmenden Elements oder CB_ERR, wenn die Suche nicht erfolgreich war.
+Der null basierte Index des übereinstimmenden Elements oder CB_ERR, wenn die Suche nicht erfolgreich war.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Kombinationsfeld mit einem Besitzerzeichnungsstil, `FindStringExact` jedoch ohne [den CBS_HASSTRINGS-Stil](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) erstellt wurde, wird versucht, den Doppelwortwert mit dem Wert von *lpszFind*abzugleichen.
+Wenn das Kombinations Feld mit einem Besitzer Zeichnungs Stil, aber ohne den [CBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil erstellt wurde, `FindStringExact` versucht, den Double Word-Wert mit dem Wert von *lpszfind*abzugleichen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#13](../../mfc/reference/codesnippet/cpp/ccombobox-class_13.cpp)]
 
-## <a name="ccomboboxgetcomboboxinfo"></a><a name="getcomboboxinfo"></a>CComboBox::GetComboBoxInfo
+## <a name="ccomboboxgetcomboboxinfo"></a><a name="getcomboboxinfo"></a>CComboBox:: getcomboboxinfo
 
-Ruft Informationen für `CComboBox` das Objekt ab.
+Ruft Informationen für das- `CComboBox` Objekt ab.
 
 ```
 BOOL GetComboBoxInfo(PCOMBOBOXINFO pcbi) const;
@@ -625,19 +625,19 @@ BOOL GetComboBoxInfo(PCOMBOBOXINFO pcbi) const;
 ### <a name="parameters"></a>Parameter
 
 *pcbi*<br/>
-Ein Zeiger auf die [COMBOBOXINFO-Struktur.](/windows/win32/api/winuser/ns-winuser-comboboxinfo)
+Ein Zeiger auf die [comboboxinfo](/windows/win32/api/winuser/ns-winuser-comboboxinfo) -Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
+Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion emuliert die Funktionalität der [CB_GETCOMBOBOXINFO](/windows/win32/Controls/cb-getcomboboxinfo) Nachricht, wie im Windows SDK beschrieben.
+Diese Member-Funktion emuliert die Funktionalität der [CB_GETCOMBOBOXINFO](/windows/win32/Controls/cb-getcomboboxinfo) Nachricht, wie in der Windows SDK beschrieben.
 
-## <a name="ccomboboxgetcount"></a><a name="getcount"></a>CComboBox::GetCount
+## <a name="ccomboboxgetcount"></a><a name="getcount"></a>CComboBox:: GetCount
 
-Rufen Sie diese Memberfunktion auf, um die Anzahl der Elemente im Listenfeldteil eines Kombinationsfelds abzurufen.
+Mit dieser Member-Funktion können Sie die Anzahl der Elemente im Listenfeld Teil eines Kombinations Felds abrufen.
 
 ```
 int GetCount() const;
@@ -645,15 +645,15 @@ int GetCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Elemente. Die zurückgegebene Anzahl ist größer als der Indexwert des letzten Elements (der Index ist nullbasiert). Es ist CB_ERR, wenn ein Fehler auftritt.
+Die Anzahl der Elemente. Die zurückgegebene Anzahl ist ein Wert größer als der Indexwert des letzten Elements (der Index ist NULL basiert). Dies ist CB_ERR, wenn ein Fehler auftritt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#14](../../mfc/reference/codesnippet/cpp/ccombobox-class_14.cpp)]
 
-## <a name="ccomboboxgetcuebanner"></a><a name="getcuebanner"></a>CComboBox::GetCueBanner
+## <a name="ccomboboxgetcuebanner"></a><a name="getcuebanner"></a>CComboBox:: getcuebanner
 
-Ruft den Cue-Text ab, der für ein Kombinationsfeldsteuerelement angezeigt wird.
+Ruft den Hinweis Text ab, der für ein Kombinations Feld-Steuerelement angezeigt wird.
 
 ```
 CString GetCueBanner() const;
@@ -667,26 +667,26 @@ BOOL GetCueBanner(
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*lpszText*|[out] Zeiger auf einen Puffer, der den Cue-Bannertext empfängt.|
-|*cchText*|[in] Größe des Puffers, auf den der Parameter *lpszText* verweist.|
+|*lpszText*|vorgenommen Zeiger auf einen Puffer, der den Hinweis Banner Text empfängt.|
+|*cchText*|in Größe des Puffers, auf den der *lpszText* -Parameter verweist.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-In der ersten Überladung ein [CString-Objekt,](../../atl-mfc-shared/using-cstring.md) das den Cue-Banner-Text enthält, falls vorhanden; Andernfalls ein `CString` Objekt mit einer Länge von null.
+In der ersten Überladung ein [CString](../../atl-mfc-shared/using-cstring.md) -Objekt, das den Hinweis Banner Text enthält, wenn es vorhanden ist. andernfalls ein- `CString` Objekt, das die Länge 0 (null) aufweist.
 
 Oder
 
-In der zweiten Überladung TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
+In der zweiten Überladung true, wenn diese Methode erfolgreich ist. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Cue-Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombinationsfeldsteuerelements angezeigt wird. Der Cue-Text wird angezeigt, bis der Benutzer Eingaben bereitstellt.
+Der Hinweis Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombinations Feld-Steuer Elements angezeigt wird. Der Hinweis Text wird angezeigt, bis der Benutzereingaben eingibt.
 
-Diese Methode sendet die [CB_GETCUEBANNER](/windows/win32/Controls/cb-getcuebanner) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [CB_GETCUEBANNER](/windows/win32/Controls/cb-getcuebanner) Nachricht, die in der Windows SDK beschrieben wird.
 
-## <a name="ccomboboxgetcursel"></a><a name="getcursel"></a>CComboBox::GetCurSel
+## <a name="ccomboboxgetcursel"></a><a name="getcursel"></a>CComboBox:: getcurrsel
 
-Rufen Sie diese Memberfunktion auf, um zu bestimmen, welches Element im Kombinationsfeld ausgewählt ist.
+Diese Member-Funktion wird aufgerufen, um zu bestimmen, welches Element im Kombinations Feld ausgewählt ist.
 
 ```
 int GetCurSel() const;
@@ -694,19 +694,19 @@ int GetCurSel() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der nullbasierte Index des aktuell ausgewählten Elements im Listenfeld eines Kombinationsfelds oder CB_ERR, wenn kein Element ausgewählt ist.
+Der null basierte Index des derzeit ausgewählten Elements im Listenfeld eines Kombinations Felds oder CB_ERR, wenn kein Element ausgewählt ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-`GetCurSel`gibt einen Index in die Liste zurück.
+`GetCurSel`Gibt einen Index in die Liste zurück.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#15](../../mfc/reference/codesnippet/cpp/ccombobox-class_15.cpp)]
 
-## <a name="ccomboboxgetdroppedcontrolrect"></a><a name="getdroppedcontrolrect"></a>CComboBox::GetDroppedControlRect
+## <a name="ccomboboxgetdroppedcontrolrect"></a><a name="getdroppedcontrolrect"></a>CComboBox:: getdroppedcontrolrect
 
-Rufen `GetDroppedControlRect` Sie die Memberfunktion auf, um die Bildschirmkoordinaten des sichtbaren (Dropdown-)Listenfelds eines Dropdown-Kombinationsfelds abzurufen.
+Rufen `GetDroppedControlRect` Sie die Member-Funktion auf, um die Bildschirm Koordinaten des sichtbaren (Dropdown-) Listen Felds eines Dropdown-Kombinations Felds abzurufen.
 
 ```cpp
 void GetDroppedControlRect(LPRECT lprect) const;
@@ -715,15 +715,15 @@ void GetDroppedControlRect(LPRECT lprect) const;
 ### <a name="parameters"></a>Parameter
 
 *lprect*<br/>
-Zeigt auf die [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Koordinaten empfangen soll.
+Verweist auf die [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die die Koordinaten empfangen soll.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#16](../../mfc/reference/codesnippet/cpp/ccombobox-class_16.cpp)]
 
-## <a name="ccomboboxgetdroppedstate"></a><a name="getdroppedstate"></a>CComboBox::GetDroppedState
+## <a name="ccomboboxgetdroppedstate"></a><a name="getdroppedstate"></a>CComboBox:: getdroppedstate
 
-Rufen `GetDroppedState` Sie die Memberfunktion auf, um zu bestimmen, ob das Listenfeld eines Dropdown-Kombinationsfelds sichtbar ist (nach unten fallen gelassen).
+Ruft die `GetDroppedState` Member-Funktion auf, um zu bestimmen, ob das Listenfeld eines Dropdown-Kombinations Felds sichtbar (gelöscht) ist.
 
 ```
 BOOL GetDroppedState() const;
@@ -731,15 +731,15 @@ BOOL GetDroppedState() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn das Listenfeld sichtbar ist; andernfalls 0.
+Ungleich 0 (null), wenn das Listenfeld sichtbar ist. andernfalls 0.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#17](../../mfc/reference/codesnippet/cpp/ccombobox-class_17.cpp)]
 
-## <a name="ccomboboxgetdroppedwidth"></a><a name="getdroppedwidth"></a>CComboBox::GetDroppedWidth
+## <a name="ccomboboxgetdroppedwidth"></a><a name="getdroppedwidth"></a>CComboBox:: getdroppeer-DTH
 
-Rufen Sie diese Funktion auf, um die minimal zulässige Breite (in Pixel) des Listenfelds eines Kombinationsfelds abzurufen.
+Rufen Sie diese Funktion auf, um die minimale zulässige Breite des Listen Felds eines Kombinations Felds in Pixel abzurufen.
 
 ```
 int GetDroppedWidth() const;
@@ -747,21 +747,21 @@ int GetDroppedWidth() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, die minimal zulässige Breite, in Pixel; andernfalls CB_ERR.
+Bei Erfolg die zulässige Mindestbreite in Pixel. Andernfalls CB_ERR.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion gilt nur für Kombinationsfelder mit dem [CBS_DROPDOWN-](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST-Stil.](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)
+Diese Funktion gilt nur für Kombinations Felder mit dem [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Stil.
 
-Standardmäßig ist die zulässige Mindestbreite des Dropdown-Listenfelds 0. Die minimal zulässige Breite kann durch Aufrufen von [SetDroppedWidth](#setdroppedwidth)festgelegt werden. Wenn der Listenfeldteil des Kombinationsfelds angezeigt wird, ist seine Breite größer als die minimale zulässige Breite oder die Breite des Kombinationsfelds.
+Standardmäßig ist die zulässige Mindestbreite für das Dropdown-Listenfeld 0. Die zulässige Mindestbreite kann durch Aufrufen von [setdroppeer-DTH](#setdroppedwidth)festgelegt werden. Wenn der Listenfeld Bereich des Kombinations Felds angezeigt wird, ist seine Breite die größere der minimal zulässigen Breite oder der Kombinations Feldbreite.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [SetDroppedWidth](#setdroppedwidth).
+  Weitere Informationen finden Sie im Beispiel für [setdroppeer-DTH](#setdroppedwidth).
 
-## <a name="ccomboboxgeteditsel"></a><a name="geteditsel"></a>CComboBox::GetEditSel
+## <a name="ccomboboxgeteditsel"></a><a name="geteditsel"></a>CComboBox:: geteditsel
 
-Ruft die Anfangs- und Endzeichenpositionen der aktuellen Auswahl im Bearbeitungssteuerelement eines Kombinationsfelds ab.
+Ruft die Position des Anfangs-und des Endzeichens der aktuellen Auswahl im Bearbeitungs Steuerelement eines Kombinations Felds ab.
 
 ```
 DWORD GetEditSel() const;
@@ -769,15 +769,15 @@ DWORD GetEditSel() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein 32-Bit-Wert, der die Startposition im Wort niedriger Ordnung und die Position des ersten nicht ausgewählten Zeichens nach dem Ende der Auswahl im Wort hoher Ordnung enthält. Wenn diese Funktion in einem Kombinationsfeld ohne Bearbeitungssteuerelement verwendet wird, wird CB_ERR zurückgegeben.
+Ein 32-Bit-Wert, der die Anfangsposition in dem nieder wertigen Wort und die Position des ersten nicht ausgewählten Zeichens nach dem Ende der Auswahl im höherwertigen Wort enthält. Wenn diese Funktion in einem Kombinations Feld ohne Bearbeitungs Steuerelement verwendet wird, wird CB_ERR zurückgegeben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#18](../../mfc/reference/codesnippet/cpp/ccombobox-class_18.cpp)]
 
-## <a name="ccomboboxgetextendedui"></a><a name="getextendedui"></a>CComboBox::GetExtendedUI
+## <a name="ccomboboxgetextendedui"></a><a name="getextendedui"></a>CComboBox:: getextendedui
 
-Rufen `GetExtendedUI` Sie die Memberfunktion auf, um zu bestimmen, ob ein Kombinationsfeld über die Standardbenutzeroberfläche oder die erweiterte Benutzeroberfläche verfügt.
+Die Member-Funktion wird aufgerufen `GetExtendedUI` , um zu bestimmen, ob ein Kombinations Feld über die Standardbenutzer Oberfläche oder die erweiterte Benutzeroberfläche verfügt.
 
 ```
 BOOL GetExtendedUI() const;
@@ -785,15 +785,15 @@ BOOL GetExtendedUI() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn das Kombinationsfeld über die erweiterte Benutzeroberfläche verfügt; andernfalls 0.
+Ungleich 0 (null), wenn das Kombinations Feld über die erweiterte Benutzeroberfläche verfügt. andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die erweiterte Benutzeroberfläche kann wie folgt identifiziert werden:
 
-- Wenn Sie auf das statische Steuerelement klicken, wird das Listenfeld nur für Kombinationsfelder mit dem [Stil CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) angezeigt.
+- Wenn Sie auf das statische Steuerelement klicken, wird das Listenfeld nur für Kombinations Felder mit dem [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil angezeigt.
 
-- Wenn Sie die TASTE DOWN ARROW drücken, wird das Listenfeld angezeigt (F4 ist deaktiviert).
+- Wenn Sie die nach-unten-Taste drücken, wird das Listenfeld angezeigt (F4 ist deaktiviert).
 
 Das Scrollen im statischen Steuerelement ist deaktiviert, wenn die Elementliste nicht sichtbar ist (Pfeiltasten sind deaktiviert).
 
@@ -801,9 +801,9 @@ Das Scrollen im statischen Steuerelement ist deaktiviert, wenn die Elementliste 
 
 [!code-cpp[NVC_MFC_CComboBox#19](../../mfc/reference/codesnippet/cpp/ccombobox-class_19.cpp)]
 
-## <a name="ccomboboxgethorizontalextent"></a><a name="gethorizontalextent"></a>CComboBox::GetHorizontalExtent
+## <a name="ccomboboxgethorizontalextent"></a><a name="gethorizontalextent"></a>CComboBox:: gethorizontalblock
 
-Ruft aus dem Kombinationsfeld die Breite in Pixel ab, mit der der Listenfeldteil des Kombinationsfelds horizontal gescrollt werden kann.
+Ruft die Breite in Pixel ab, um die der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.
 
 ```
 UINT GetHorizontalExtent() const;
@@ -811,19 +811,19 @@ UINT GetHorizontalExtent() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die scrollbare Breite des Listenfeldteils des Kombinationsfelds in Pixel.
+Die scrollbare Breite des Listenfeld Teils des Kombinations Felds in Pixel.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dies gilt nur, wenn der Listenfeldteil des Kombinationsfelds über eine horizontale Bildlaufleiste verfügt.
+Dies gilt nur, wenn der Listenfeld Bereich des Kombinations Felds über eine horizontale Schiebe Leiste verfügt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#20](../../mfc/reference/codesnippet/cpp/ccombobox-class_20.cpp)]
 
-## <a name="ccomboboxgetitemdata"></a><a name="getitemdata"></a>CComboBox::GetItemData
+## <a name="ccomboboxgetitemdata"></a><a name="getitemdata"></a>CComboBox:: GetItemData
 
-Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinationsfeldelement zugeordnet ist.
+Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinations Feld Element zugeordnet ist.
 
 ```
 DWORD_PTR GetItemData(int nIndex) const;
@@ -832,23 +832,23 @@ DWORD_PTR GetItemData(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den nullbasierten Index eines Elements im Listenfeld des Kombinationsfelds.
+Enthält den NULL basierten Index eines Elements im Listenfeld des Kombinations Felds.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der dem Element zugeordnete 32-Bit-Wert oder CB_ERR, wenn ein Fehler auftritt.
+Der 32-Bit-Wert, der dem Element zugeordnet ist, oder CB_ERR, wenn ein Fehler auftritt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der 32-Bit-Wert kann mit dem *dwItemData-Parameter* eines [SetItemData-Memberfunktionsaufrufs](#setitemdata) festgelegt werden. Verwenden `GetItemDataPtr` Sie die Memberfunktion, wenn der abzuholende 32-Bit-Wert ein Zeiger (**void )** <strong>\*</strong>ist.
+Der 32-Bit-Wert kann mit dem *dwitemdata* -Parameter eines [SetItemData](#setitemdata) -Member-Funktions Aufrufes festgelegt werden. Verwenden `GetItemDataPtr` Sie die Member-Funktion, wenn der 32-Bit-Wert, der abgerufen werden soll, ein-Zeiger ist ( **`void`** <strong>\*</strong> ).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#21](../../mfc/reference/codesnippet/cpp/ccombobox-class_21.cpp)]
 
-## <a name="ccomboboxgetitemdataptr"></a><a name="getitemdataptr"></a>CComboBox::GetItemDataPtr
+## <a name="ccomboboxgetitemdataptr"></a><a name="getitemdataptr"></a>CComboBox:: getitemdataptr
 
-Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinationsfeldelement als Zeiger zugeordnet ist (**void** <strong>\*</strong>).
+Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinations Feld Element als Zeiger () zugeordnet ist **`void`** <strong>\*</strong> .
 
 ```cpp
 void* GetItemDataPtr(int nIndex) const;
@@ -857,19 +857,19 @@ void* GetItemDataPtr(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den nullbasierten Index eines Elements im Listenfeld des Kombinationsfelds.
+Enthält den NULL basierten Index eines Elements im Listenfeld des Kombinations Felds.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ruft einen Zeiger oder -1 ab, wenn ein Fehler auftritt.
+Ruft einen Zeiger ab, oder-1, wenn ein Fehler auftritt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#22](../../mfc/reference/codesnippet/cpp/ccombobox-class_22.cpp)]
 
-## <a name="ccomboboxgetitemheight"></a><a name="getitemheight"></a>CComboBox::GetItemHeight
+## <a name="ccomboboxgetitemheight"></a><a name="getitemheight"></a>CComboBox:: GetItemHeight
 
-Rufen `GetItemHeight` Sie die Memberfunktion auf, um die Höhe von Listenelementen in einem Kombinationsfeld abzurufen.
+Rufen `GetItemHeight` Sie die Member-Funktion auf, um die Höhe der Listenelemente in einem Kombinations Feld abzurufen.
 
 ```
 int GetItemHeight(int nIndex) const;
@@ -878,19 +878,19 @@ int GetItemHeight(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt die Komponente des Kombinationsfelds an, dessen Höhe abgerufen werden soll. Wenn der *nIndex-Parameter* -1 ist, wird die Höhe des Abschnitts "Edit-Control" (oder statischer Text) des Kombinationsfelds abgerufen. Wenn das Kombinationsfeld den [Stil CBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) hat, gibt *nIndex* den nullbasierten Index des Listenelements an, dessen Höhe abgerufen werden soll. Andernfalls sollte *nIndex* auf 0 gesetzt werden.
+Gibt die Komponente des Kombinations Felds an, dessen Höhe abgerufen werden soll. Wenn der Parameter *nIndex* den Wert-1 hat, wird die Höhe des Abschnitts Edit-Control (oder Static-Text) des Kombinations Felds abgerufen. Wenn das Kombinations Feld den [CBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil hat, gibt *nIndex* den NULL basierten Index des Listen Elements an, dessen Höhe abgerufen werden soll. Andernfalls sollte *nIndex* auf 0 festgelegt werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Höhe des angegebenen Elements in einem Kombinationsfeld in Pixel. Der Rückgabewert beim Auftreten eines Fehlers ist CB_ERR.
+Die Höhe des angegebenen Elements in einem Kombinations Feld in Pixel. Der Rückgabewert beim Auftreten eines Fehlers ist CB_ERR.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#23](../../mfc/reference/codesnippet/cpp/ccombobox-class_23.cpp)]
 
-## <a name="ccomboboxgetlbtext"></a><a name="getlbtext"></a>CComboBox::GetLBText
+## <a name="ccomboboxgetlbtext"></a><a name="getlbtext"></a>CComboBox:: getlbtext
 
-Ruft eine Zeichenfolge aus dem Listenfeld eines Kombinationsfelds ab.
+Ruft eine Zeichenfolge aus dem Listenfeld eines Kombinations Felds ab.
 
 ```
 int GetLBText(
@@ -905,29 +905,29 @@ void GetLBText(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den nullbasierten Index der zu kopierenden Listenfeldzeichenfolge.
+Enthält den NULL basierten Index der zu kopierenden Listenfeld Zeichenfolge.
 
 *lpszText*<br/>
-Zeigt auf einen Puffer, der die Zeichenfolge empfangen soll. Der Puffer muss über ausreichend Speicherplatz für die Zeichenfolge und ein beendendes NULL-Zeichen verfügen.
+Verweist auf einen Puffer, der die Zeichenfolge empfangen soll. Der Puffer muss über ausreichend Speicherplatz für die Zeichenfolge und ein abschließendes NULL-Zeichen verfügen.
 
-*rString*<br/>
+*RString*<br/>
 Ein Verweis auf eine `CString`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Länge (in Bytes) der Zeichenfolge, ohne das beendende Nullzeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert CB_ERR.
+Die Länge (in Byte) der Zeichenfolge ohne das abschließende Null Zeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert CB_ERR.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die zweite Form dieser Memberfunktion `CString` füllt ein Objekt mit dem Text des Elements.
+Die zweite Form dieser Member-Funktion füllt ein `CString` -Objekt mit dem Text des Elements.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#24](../../mfc/reference/codesnippet/cpp/ccombobox-class_24.cpp)]
 
-## <a name="ccomboboxgetlbtextlen"></a><a name="getlbtextlen"></a>CComboBox::GetLBTextLen
+## <a name="ccomboboxgetlbtextlen"></a><a name="getlbtextlen"></a>CComboBox:: getlbtextlen
 
-Ruft die Länge einer Zeichenfolge im Listenfeld eines Kombinationsfelds ab.
+Ruft die Länge einer Zeichenfolge im Listenfeld eines Kombinations Felds ab.
 
 ```
 int GetLBTextLen(int nIndex) const;
@@ -936,19 +936,19 @@ int GetLBTextLen(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den nullbasierten Index der Listenfeldzeichenfolge.
+Enthält den NULL basierten Index der Listenfeld Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Länge der Zeichenfolge in Bytes, mit Ausnahme des beendenden Nullzeichens. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert CB_ERR.
+Die Länge der Zeichenfolge in Bytes, ohne das abschließende Null Zeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert CB_ERR.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CComboBox::GetLBText](#getlbtext).
+  Weitere Informationen finden Sie im Beispiel für [CComboBox:: getlbtext](#getlbtext).
 
-## <a name="ccomboboxgetlocale"></a><a name="getlocale"></a>CComboBox::GetLocale
+## <a name="ccomboboxgetlocale"></a><a name="getlocale"></a>CComboBox:: getLocale
 
-Ruft das Gebietsschema ab, das vom Kombinationsfeld verwendet wird.
+Ruft das vom Kombinations Feld verwendete Gebiets Schema ab.
 
 ```
 LCID GetLocale() const;
@@ -956,19 +956,19 @@ LCID GetLocale() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der LCID-Wert (Locale Identifier) für die Zeichenfolgen im Kombinationsfeld.
+Der LCID-Wert (Locale Identifier) für die Zeichen folgen im Kombinations Feld.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Gebietsschema wird z. B. verwendet, um die Sortierreihenfolge der Zeichenfolgen in einem sortierten Kombinationsfeld zu bestimmen.
+Das Gebiets Schema wird z. b. verwendet, um die Sortierreihenfolge der Zeichen folgen in einem sortierten Kombinations Feld zu bestimmen.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CComboBox::SetLocale](#setlocale).
+  Weitere Informationen finden Sie im Beispiel für [CComboBox:: setlocale](#setlocale).
 
-## <a name="ccomboboxgetminvisible"></a><a name="getminvisible"></a>CComboBox::GetMinVisible
+## <a name="ccomboboxgetminvisible"></a><a name="getminvisible"></a>CComboBox:: getminvisible
 
-Ruft die minimale Anzahl sichtbarer Elemente in der Dropdownliste des aktuellen Kombinationsfeldsteuerelements ab.
+Ruft die Mindestanzahl sichtbarer Elemente in der Dropdown Liste des aktuellen Kombinations Feld-Steuer Elements ab.
 
 ```
 int GetMinVisible() const;
@@ -976,15 +976,15 @@ int GetMinVisible() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die minimale Anzahl sichtbarer Elemente in der aktuellen Dropdownliste.
+Die Mindestanzahl sichtbarer Elemente in der aktuellen Dropdown Liste.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [CB_GETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [CB_GETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die in der Windows SDK beschrieben wird.
 
-## <a name="ccomboboxgettopindex"></a><a name="gettopindex"></a>CComboBox::GetTopIndex
+## <a name="ccomboboxgettopindex"></a><a name="gettopindex"></a>CComboBox:: gettopindex
 
-Ruft den nullbasierten Index des ersten sichtbaren Elements im Listenfeldteil des Kombinationsfelds ab.
+Ruft den NULL basierten Index des ersten sichtbaren Elements im Listenfeld Bereich des Kombinations Felds ab.
 
 ```
 int GetTopIndex() const;
@@ -992,19 +992,19 @@ int GetTopIndex() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Null-basierte Index des ersten sichtbaren Elements im Listenfeldteil des Kombinationsfelds, wenn erfolgreich, CB_ERR andernfalls.
+Der null basierte Index des ersten sichtbaren Elements im Listenfeld Bereich des Kombinations Felds, wenn erfolgreich, CB_ERR andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Zunächst befindet sich Element 0 oben im Listenfeld, aber wenn das Listenfeld gescrollt wird, befindet sich möglicherweise ein anderes Element oben.
+Zuerst befindet sich Element 0 am oberen Rand des Listen Felds, aber wenn im Listenfeld ein Bildlauf durchgeführt wird, befindet sich möglicherweise ein anderes Element im oberen Bereich.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#25](../../mfc/reference/codesnippet/cpp/ccombobox-class_25.cpp)]
 
-## <a name="ccomboboxinitstorage"></a><a name="initstorage"></a>CComboBox::InitStorage
+## <a name="ccomboboxinitstorage"></a><a name="initstorage"></a>CComboBox:: InitStorage
 
-Reserviert Speicher zum Speichern von Listenfeldelementen im Listenfeldteil des Kombinationsfelds.
+Weist Arbeitsspeicher zum Speichern von Listenfeld Elementen im Listenfeld Bereich des Kombinations Felds zu.
 
 ```
 int InitStorage(
@@ -1014,29 +1014,29 @@ int InitStorage(
 
 ### <a name="parameters"></a>Parameter
 
-*nItems*<br/>
-Gibt die Anzahl der hinzuzufügenden Elemente an.
+*nitems*<br/>
+Gibt die Anzahl der hinzu zufügenden Elemente an.
 
 *nBytes*<br/>
-Gibt die Speichermenge in Bytes an, die für Elementzeichenfolgen reserviert werden soll.
+Gibt die Größe des Arbeitsspeichers in Bytes an, der für Element Zeichenfolgen belegt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn dies erfolgreich ist, kann die maximale Anzahl von Elementen, die der Listenfeldteil des Kombinationsfelds speichern kann, bevor eine Speicherumverteilung erforderlich ist, andernfalls CB_ERRSPACE, d. h. nicht genügend Arbeitsspeicher verfügbar ist.
+Wenn erfolgreich, wird die maximale Anzahl von Elementen, die der Listenfeld Bereich des Kombinations Felds speichern kann, bevor eine Speicher Belegungs Zuordnung benötigt wird, andernfalls CB_ERRSPACE, was bedeutet, dass nicht genügend Arbeitsspeicher verfügbar ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, bevor Sie dem Listenfeldteil des `CComboBox`eine große Anzahl von Elementen hinzufügen.
+Diese Funktion wird aufgerufen, bevor dem Listenfeld Teil des eine große Anzahl von Elementen hinzugefügt wird `CComboBox` .
 
-Nur Windows 95/98: Der *parameter wParam* ist auf 16-Bit-Werte beschränkt. Dies bedeutet, dass Listenfelder nicht mehr als 32.767 Elemente enthalten dürfen. Obwohl die Anzahl der Elemente eingeschränkt ist, ist die Gesamtgröße der Elemente in einem Listenfeld nur durch den verfügbaren Speicher begrenzt.
+Nur Windows 95/98: der *wParam* -Parameter ist auf 16-Bit-Werte beschränkt. Dies bedeutet, dass Listenfelder nicht mehr als 32.767 Elemente enthalten dürfen. Obwohl die Anzahl der Elemente eingeschränkt ist, wird die Gesamtgröße der Elemente in einem Listenfeld nur durch den verfügbaren Arbeitsspeicher beschränkt.
 
-Diese Funktion beschleunigt die Initialisierung von Listenfeldern mit einer großen Anzahl von Elementen (mehr als 100). Es ordnet die angegebene Speichermenge vor, so dass nachfolgende [AddString](#addstring)-, [InsertString-](#insertstring)und [Dir-Funktionen](#dir) die kürzest mögliche Zeit in Anspruch nehmen. Sie können Schätzungen für die Parameter verwenden. Wenn Sie überschätzen, wird etwas zusätzlicher Speicher zugewiesen. Wenn Sie unterschätzen, wird die normale Zuordnung für Artikel verwendet, die den vorab zugewiesenen Betrag überschreiten.
+Diese Funktion beschleunigt die Initialisierung von Listenfeldern, die über eine große Anzahl von Elementen verfügen (mehr als 100). Dadurch wird die angegebene Arbeitsspeicher Menge vorab zugeordnet, sodass nachfolgende [AddString](#addstring)-, [InsertString](#insertstring)-und [dir](#dir) -Funktionen die kürzeste mögliche Zeit beanspruchen. Sie können Schätzwerte für die Parameter verwenden. Wenn Sie den Wert überschätzen, wird ein zusätzlicher Arbeitsspeicher zugewiesen. Wenn Sie unterschätzen, wird die normale Zuordnung für Elemente verwendet, die den vorab zugeordneten Betrag überschreiten.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#26](../../mfc/reference/codesnippet/cpp/ccombobox-class_26.cpp)]
 
-## <a name="ccomboboxinsertstring"></a><a name="insertstring"></a>CComboBox::InsertString
+## <a name="ccomboboxinsertstring"></a><a name="insertstring"></a>CComboBox:: InsertString
 
 Fügt eine Zeichenfolge in das Listenfeld eines Kombinationsfelds ein.
 
@@ -1049,9 +1049,9 @@ int InsertString(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den nullbasierten Index der Position im Listenfeld, die die Zeichenfolge aufnehmen soll. Wenn dieser Parameter -1 ist, wird die Zeichenfolge am Ende der Liste hinzugefügt.
+Enthält den nullbasierten Index der Position im Listenfeld, die die Zeichenfolge aufnehmen soll. Wenn dieser Parameter-1 ist, wird die Zeichenfolge am Ende der Liste hinzugefügt.
 
-*lpszString*<br/>
+*lpszstring*<br/>
 Zeigt auf die einzufügende nullterminierte Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1063,15 +1063,15 @@ Der nullbasierte Index der Position, an der die Zeichenfolge eingefügt wurde. D
 Im Gegensatz zur Memberfunktion [AddString](#addstring) bewirkt die `InsertString` -Memberfunktion nicht die Sortierung einer Liste mit der Formatvorlage [CBS_SORT](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) .
 
 > [!NOTE]
-> Diese Funktion wird vom `ComboBoxEx` Windows-Steuerelement nicht unterstützt. Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx-Steuerelemente](/windows/win32/Controls/comboboxex-controls) im Windows SDK.
+> Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#27](../../mfc/reference/codesnippet/cpp/ccombobox-class_27.cpp)]
 
-## <a name="ccomboboxlimittext"></a><a name="limittext"></a>CComboBox::LimitText
+## <a name="ccomboboxlimittext"></a><a name="limittext"></a>CComboBox:: limittext
 
-Beschränkt die Länge des Textes in Bytes, den der Benutzer in das Bearbeitungssteuerelement eines Kombinationsfelds eingeben kann.
+Schränkt die Länge des Texts in Bytes ein, der vom Benutzer in das Bearbeitungs Steuerelement eines Kombinations Felds eingegeben werden kann.
 
 ```
 BOOL LimitText(int nMaxChars);
@@ -1079,26 +1079,26 @@ BOOL LimitText(int nMaxChars);
 
 ### <a name="parameters"></a>Parameter
 
-*nMaxChars*<br/>
-Gibt die Länge (in Bytes) des Textes an, den der Benutzer eingeben kann. Wenn dieser Parameter 0 ist, wird die Textlänge auf 65.535 Bytes festgelegt.
+*nmaxchars*<br/>
+Gibt die Länge (in Byte) des Texts an, den der Benutzer eingeben kann. Wenn dieser Parameter 0 ist, wird die Textlänge auf 65.535 Bytes festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich Null, wenn erfolgreich. Wenn ein Kombinationsfeld mit dem Stil [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder für ein Kombinationsfeld ohne Bearbeitungssteuerelement aufgerufen wird, wird der Rückgabewert CB_ERR.
+Ungleich NULL, wenn erfolgreich. Wenn ein Kombinations Feld mit der Format [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder einem Kombinations Feld ohne Bearbeitungs Steuerelement aufgerufen wird, wird der Rückgabewert CB_ERR.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Kombinationsfeld nicht über den Stil [CBS_AUTOHSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)verfügt, hat das Festlegen des Textlimits auf die Größe des Bearbeitungssteuerelements keine Auswirkungen.
+Wenn das Kombinations Feld nicht über die Format [CBS_AUTOHSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)verfügt, wirkt sich das Festlegen des Text Limits auf einen höheren Wert als die Größe des Bearbeitungs Steuer Elements aus.
 
-`LimitText`beschränkt nur den Text, den der Benutzer eingeben kann. Sie hat keine Auswirkungen auf Text, der sich bereits im Bearbeitungssteuerelement befindet, wenn die Nachricht gesendet wird, und auch nicht die Länge des Textes, der in das Bearbeitungssteuerelement kopiert wird, wenn eine Zeichenfolge im Listenfeld ausgewählt ist.
+`LimitText`beschränkt nur den Text, den der Benutzer eingeben kann. Sie hat keine Auswirkung auf einen Text, der sich bereits im Bearbeitungs Steuerelement befindet, wenn die Nachricht gesendet wird, und wirkt sich auch nicht auf die Länge des Texts aus, der in das Bearbeitungs Steuerelement kopiert wird, wenn eine Zeichenfolge im Listenfeld ausgewählt ist.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#28](../../mfc/reference/codesnippet/cpp/ccombobox-class_28.cpp)]
 
-## <a name="ccomboboxmeasureitem"></a><a name="measureitem"></a>CComboBox::MeasureItem
+## <a name="ccomboboxmeasureitem"></a><a name="measureitem"></a>CComboBox:: MeasureItem
 
-Wird vom Framework aufgerufen, wenn ein Kombinationsfeld mit einem Besitzerzeichnungsstil erstellt wird.
+Wird von Framework aufgerufen, wenn ein Kombinations Feld mit einer Art von Besitzer zeichnen erstellt wird.
 
 ```
 virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
@@ -1106,24 +1106,24 @@ virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpMeasureItemStruct*<br/>
-Ein langer Zeiger auf eine [MEASUREITEMSTRUCT-Struktur.](/windows/win32/api/winuser/ns-winuser-measureitemstruct)
+*lpmeasureitemstruct*<br/>
+Ein langer Zeiger auf eine [measureitemstruct](/windows/win32/api/winuser/ns-winuser-measureitemstruct) -Struktur.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt diese Memberfunktion nichts aus. Überschreiben Sie diese Memberfunktion, und füllen Sie die `MEASUREITEMSTRUCT` Struktur aus, um Windows über die Dimensionen des Listenfelds im Kombinationsfeld zu informieren. Wenn das Kombinationsfeld mit dem [Stil CBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) erstellt wird, ruft das Framework diese Memberfunktion für jedes Element im Listenfeld auf. Andernfalls wird dieses Element nur einmal aufgerufen.
+Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, und füllen Sie die `MEASUREITEMSTRUCT` Struktur aus, um Fenster über die Abmessungen des Listen Felds im Kombinations Feld zu informieren. Wenn das Kombinations Feld mit dem [CBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Format erstellt wird, ruft das Framework diese Member-Funktion für jedes Element im Listenfeld auf. Andernfalls wird dieser Member nur einmal aufgerufen.
 
-Die Verwendung des CBS_OWNERDRAWFIXED-Stils in einem Mit-Besitzer-Zeichnungs-Kombinationsfeld, das mit der [SubclassDlgItem-Memberfunktion](../../mfc/reference/cwnd-class.md#subclassdlgitem) erstellt wurde, `CWnd` beinhaltet weitere Programmierüberlegungen. Siehe die Diskussion in [Technical Note 14](../../mfc/tn014-custom-controls.md).
+Die Verwendung des CBS_OWNERDRAWFIXED Stils in einem mit der [SubclassDlgItem](../../mfc/reference/cwnd-class.md#subclassdlgitem) -Member-Funktion von erstellten Kombinations Feld "Besitzer zeichnen" `CWnd` umfasst weitere Programmier Überlegungen. Weitere Informationen finden Sie in der [technischen Notiz 14](../../mfc/tn014-custom-controls.md).
 
-Eine Beschreibung der `MEASUREITEMSTRUCT` Struktur finden Sie unter [CWnd::OnMeasureItem.](../../mfc/reference/cwnd-class.md#onmeasureitem)
+Eine Beschreibung der Struktur finden Sie unter [CWnd:: OnMeasureItem](../../mfc/reference/cwnd-class.md#onmeasureitem) `MEASUREITEMSTRUCT` .
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#29](../../mfc/reference/codesnippet/cpp/ccombobox-class_29.cpp)]
 
-## <a name="ccomboboxpaste"></a><a name="paste"></a>CComboBox::Paste
+## <a name="ccomboboxpaste"></a><a name="paste"></a>CComboBox::P Aste
 
-Fügt die Daten aus der Zwischenablage in das Bearbeitungssteuerelement des Kombinationsfelds an der aktuellen Cursorposition ein.
+Fügt die Daten aus der Zwischenablage in das Bearbeitungs Steuerelement des Kombinations Felds an der aktuellen Cursorposition ein.
 
 ```cpp
 void Paste();
@@ -1131,15 +1131,15 @@ void Paste();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Daten werden nur eingefügt, wenn die Zwischenablage Daten im CF_TEXT-Format enthält.
+Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format enthält.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#30](../../mfc/reference/codesnippet/cpp/ccombobox-class_30.cpp)]
 
-## <a name="ccomboboxresetcontent"></a><a name="resetcontent"></a>CComboBox::ResetContent
+## <a name="ccomboboxresetcontent"></a><a name="resetcontent"></a>CComboBox:: resetcontent
 
-Entfernt alle Elemente aus dem Listenfeld und bearbeitet die Steuerung eines Kombinationsfelds.
+Entfernt alle Elemente aus dem Listenfeld und bearbeitet das Steuerelement eines Kombinations Felds.
 
 ```cpp
 void ResetContent();
@@ -1149,9 +1149,9 @@ void ResetContent();
 
 [!code-cpp[NVC_MFC_CComboBox#31](../../mfc/reference/codesnippet/cpp/ccombobox-class_31.cpp)]
 
-## <a name="ccomboboxselectstring"></a><a name="selectstring"></a>CComboBox::SelectString
+## <a name="ccomboboxselectstring"></a><a name="selectstring"></a>CComboBox:: SelectString
 
-Sucht im Listenfeld eines Kombinationsfelds nach einer Zeichenfolge, und wenn die Zeichenfolge gefunden wird, wählt sie die Zeichenfolge im Listenfeld aus und kopiert sie in das Bearbeitungssteuerelement.
+Sucht im Listenfeld eines Kombinations Felds nach einer Zeichenfolge, und wenn die Zeichenfolge gefunden wird, wählt die Zeichenfolge im Listenfeld aus und kopiert sie in das Bearbeitungs Steuerelement.
 
 ```
 int SelectString(
@@ -1161,29 +1161,29 @@ int SelectString(
 
 ### <a name="parameters"></a>Parameter
 
-*nStartAfter*<br/>
-Enthält den nullbasierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche am Ende des Listenfelds angelangt ist, wird sie vom oberen Rand des Listenfelds zurück zu dem von *nStartAfter*angegebenen Element fortgesetzt. Wenn -1, wird das gesamte Listenfeld von Anfang an durchsucht.
+*nstartafter*<br/>
+Enthält den NULL basierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche das Ende des Listen Felds erreicht, wird Sie vom oberen Rand des Listen Felds zurück zu dem durch *nstartafter*angegebenen Element. Wenn-1, wird das gesamte Listenfeld von Anfang an durchsucht.
 
-*lpszString*<br/>
-Verweist auf die null-terminierte Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche ist großfliegt, daher kann diese Zeichenfolge eine beliebige Kombination aus Groß- und Kleinbuchstaben enthalten.
+*lpszstring*<br/>
+Verweist auf die auf NULL endenden Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche erfolgt unabhängig von der Groß-/Kleinschreibung, sodass diese Zeichenfolge eine beliebige Kombination von Groß-und Kleinbuchstaben enthalten kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der nullbasierte Index des ausgewählten Elements, wenn die Zeichenfolge gefunden wurde. Wenn die Suche nicht erfolgreich war, wird der Rückgabewert CB_ERR und die aktuelle Auswahl wird nicht geändert.
+Der null basierte Index des ausgewählten Elements, wenn die Zeichenfolge gefunden wurde. Wenn die Suche nicht erfolgreich war, wird der Rückgabewert CB_ERR, und die aktuelle Auswahl wird nicht geändert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Eine Zeichenfolge wird nur ausgewählt, wenn ihre Anfangszeichen (vom Startpunkt) mit den Zeichen in der Präfixzeichenfolge übereinstimmen.
+Eine Zeichenfolge wird nur ausgewählt, wenn die Anfangs Zeichen (vom Startpunkt) mit den Zeichen in der Präfix Zeichenfolge verglichen werden.
 
-Beachten Sie, dass die `SelectString` und `FindString` Memberfunktionen `SelectString` beide eine Zeichenfolge finden, aber die Memberfunktion wählt auch die Zeichenfolge aus.
+Beachten Sie, dass die `SelectString` -und-Element `FindString` Funktionen beide eine Zeichenfolge suchen, aber die `SelectString` Member-Funktion wählt auch die Zeichenfolge aus.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#32](../../mfc/reference/codesnippet/cpp/ccombobox-class_32.cpp)]
 
-## <a name="ccomboboxsetcuebanner"></a><a name="setcuebanner"></a>CComboBox::SetCueBanner
+## <a name="ccomboboxsetcuebanner"></a><a name="setcuebanner"></a>CComboBox:: setcuebanner
 
-Legt den Cue-Text fest, der für ein Kombinationsfeldsteuerelement angezeigt wird.
+Legt den Hinweis Text fest, der für ein Kombinations Feld-Steuerelement angezeigt wird.
 
 ```
 BOOL SetCueBanner(LPCTSTR lpszText);
@@ -1193,33 +1193,33 @@ BOOL SetCueBanner(LPCTSTR lpszText);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*lpszText*|[in] Zeiger auf einen null-terminierten Puffer, der den Cue-Text enthält.|
+|*lpszText*|in Ein Zeiger auf einen null-terminierten Puffer, der den Hinweis Text enthält.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
+TRUE, wenn die Methode erfolgreich ist. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Cue-Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombinationsfeldsteuerelements angezeigt wird. Der Cue-Text wird angezeigt, bis der Benutzer Eingaben bereitstellt.
+Der Hinweis Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombinations Feld-Steuer Elements angezeigt wird. Der Hinweis Text wird angezeigt, bis der Benutzereingaben eingibt.
 
-Diese Methode sendet die [CB_SETCUEBANNER](/windows/win32/Controls/cb-setcuebanner) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [CB_SETCUEBANNER](/windows/win32/Controls/cb-setcuebanner) Nachricht, die in der Windows SDK beschrieben wird.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird die Variable *m_combobox*definiert, die für den programmgesteuerten Zugriff auf das Kombinationsfeldsteuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
+Im folgenden Codebeispiel wird die-Variable definiert, *m_combobox*, die für den programmgesteuerten Zugriff auf das Kombinations Feld-Steuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
 
 [!code-cpp[NVC_MFC_CComboBox_s1#1](../../mfc/reference/codesnippet/cpp/ccombobox-class_33.h)]
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird das Cue-Banner für das Kombinationsfeldsteuerelement festgelegt.
+Im folgenden Codebeispiel wird das Hinweis Banner für das Kombinations Feld-Steuerelement festgelegt.
 
 [!code-cpp[NVC_MFC_CComboBox_s1#2](../../mfc/reference/codesnippet/cpp/ccombobox-class_34.cpp)]
 
-## <a name="ccomboboxsetcursel"></a><a name="setcursel"></a>CComboBox::SetCurSel
+## <a name="ccomboboxsetcursel"></a><a name="setcursel"></a>CComboBox:: setcurrsel
 
-Wählt eine Zeichenfolge im Listenfeld eines Kombinationsfelds aus.
+Wählt eine Zeichenfolge im Listenfeld eines Kombinations Felds aus.
 
 ```
 int SetCurSel(int nSelect);
@@ -1228,23 +1228,23 @@ int SetCurSel(int nSelect);
 ### <a name="parameters"></a>Parameter
 
 *nWählen*<br/>
-Gibt den nullbasierten Index der auszuwählenden Zeichenfolge an. Wenn -1, wird jede aktuelle Auswahl im Listenfeld entfernt, und das Bearbeitungssteuerelement wird gelöscht.
+Gibt den NULL basierten Index der auszuwählen Zeichenfolge an. Wenn-1, wird die aktuelle Auswahl im Listenfeld entfernt, und das Bearbeitungs Steuerelement wird gelöscht.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der nullbasierte Index des ausgewählten Elements, wenn die Nachricht erfolgreich ist. Der Rückgabewert ist CB_ERR, wenn *nSelect* größer als die Anzahl der Elemente in der Liste ist oder wenn *nSelect* auf -1 gesetzt ist, wodurch die Auswahl entfernt wird.
+Der null basierte Index des Elements, das ausgewählt wird, wenn die Nachricht erfolgreich ist. Der Rückgabewert ist CB_ERR, wenn *nselect* größer als die Anzahl der Elemente in der Liste ist oder wenn *nselect* auf-1 festgelegt ist, wodurch die Auswahl gelöscht wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bei Bedarf wird im Listenfeld ein Bildlauf der Zeichenfolge in die Ansicht durchgeführt (wenn das Listenfeld sichtbar ist). Der Text im Bearbeitungssteuerelement des Kombinationsfelds wird geändert, um die neue Auswahl widerzuspiegeln. Jede vorherige Auswahl im Listenfeld wird entfernt.
+Bei Bedarf führt das Listenfeld einen Bildlauf in der Zeichenfolge durch (wenn das Listenfeld sichtbar ist). Der Text im Bearbeitungs Steuerelement des Kombinations Felds wird so geändert, dass die neue Auswahl angezeigt wird. Jede vorherige Auswahl im Listenfeld wird entfernt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#33](../../mfc/reference/codesnippet/cpp/ccombobox-class_35.cpp)]
 
-## <a name="ccomboboxsetdroppedwidth"></a><a name="setdroppedwidth"></a>CComboBox::SetDroppedWidth
+## <a name="ccomboboxsetdroppedwidth"></a><a name="setdroppedwidth"></a>CComboBox:: setdroppeer-DTH
 
-Rufen Sie diese Funktion auf, um die zulässige Mindestbreite (in Pixel) des Listenfelds eines Kombinationsfelds festzulegen.
+Mit dieser Funktion können Sie die minimale zulässige Breite des Listen Felds eines Kombinations Felds in Pixel festlegen.
 
 ```
 int SetDroppedWidth(UINT nWidth);
@@ -1252,26 +1252,26 @@ int SetDroppedWidth(UINT nWidth);
 
 ### <a name="parameters"></a>Parameter
 
-*nWidth*<br/>
-Die minimal zulässige Breite des Listenfeldteils des Kombinationsfelds in Pixel.
+*nwidth*<br/>
+Die minimale zulässige Breite des Listenfeld Teils des Kombinations Felds in Pixel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn dies erfolgreich ist, wird die neue Breite des Listenfelds andernfalls CB_ERR.
+Bei Erfolg die neue Breite des Listen Felds, andernfalls CB_ERR.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion gilt nur für Kombinationsfelder mit dem [CBS_DROPDOWN-](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST-Stil.](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)
+Diese Funktion gilt nur für Kombinations Felder mit dem [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Stil.
 
-Standardmäßig ist die zulässige Mindestbreite des Dropdown-Listenfelds 0. Wenn der Listenfeldteil des Kombinationsfelds angezeigt wird, ist seine Breite größer als die minimale zulässige Breite oder die Breite des Kombinationsfelds.
+Standardmäßig ist die zulässige Mindestbreite für das Dropdown-Listenfeld 0. Wenn der Listenfeld Bereich des Kombinations Felds angezeigt wird, ist seine Breite die größere der minimal zulässigen Breite oder der Kombinations Feldbreite.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#34](../../mfc/reference/codesnippet/cpp/ccombobox-class_36.cpp)]
 
-## <a name="ccomboboxseteditsel"></a><a name="seteditsel"></a>CComboBox::SetEditSel
+## <a name="ccomboboxseteditsel"></a><a name="seteditsel"></a>CComboBox:: fest.
 
-Wählt Zeichen im Bearbeitungssteuerelement eines Kombinationsfelds aus.
+Wählt Zeichen im Bearbeitungs Steuerelement eines Kombinations Felds aus.
 
 ```
 BOOL SetEditSel(
@@ -1281,30 +1281,30 @@ BOOL SetEditSel(
 
 ### <a name="parameters"></a>Parameter
 
-*nStartChar*<br/>
-Gibt die Startposition an. Wenn die Startposition auf -1 festgelegt ist, wird jede vorhandene Auswahl entfernt.
+*nstartchar*<br/>
+Gibt die Anfangsposition an. Wenn die Anfangsposition auf-1 festgelegt ist, wird eine vorhandene Auswahl entfernt.
 
-*nEndChar*<br/>
-Gibt die Endposition an. Wenn die Endposition auf -1 festgelegt ist, wird der gesamte Text von der Startposition bis zum letzten Zeichen im Bearbeitungssteuerelement ausgewählt.
+*nendchar*<br/>
+Gibt die Endposition an. Wenn die Endposition auf-1 festgelegt ist, wird der gesamte Text von der Anfangsposition bis zum letzten Zeichen im Bearbeitungs Steuerelement ausgewählt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn die Memberfunktion erfolgreich ist; andernfalls 0. Es ist `CComboBox` CB_ERR, ob [der CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil oder kein Listenfeld vorhanden ist.
+Ungleich 0 (null), wenn die Member-Funktion erfolgreich ist. andernfalls 0. Es ist CB_ERR, wenn `CComboBox` das [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format aufweist oder nicht über ein Listenfeld verfügt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Positionen sind nullbasiert. Um das erste Zeichen des Bearbeitungssteuerelements auszuwählen, geben Sie eine Startposition von 0 an. Die Endposition ist für das Zeichen direkt nach dem letzten Zeichen auszuwählen. Um beispielsweise die ersten vier Zeichen des Bearbeitungssteuerelements auszuwählen, verwenden Sie eine Startposition von 0 und eine Endposition von 4.
+Die Positionen sind NULL basiert. Um das erste Zeichen des Bearbeitungs Steuer Elements auszuwählen, geben Sie die Anfangsposition 0 an. Die Endposition ist für das Zeichen direkt nach dem letzten Zeichen, das ausgewählt werden soll. Wenn Sie z. b. die ersten vier Zeichen des Bearbeitungs Steuer Elements auswählen möchten, verwenden Sie die Startposition 0 und die Endposition 4.
 
 > [!NOTE]
-> Diese Funktion wird vom `ComboBoxEx` Windows-Steuerelement nicht unterstützt. Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx-Steuerelemente](/windows/win32/Controls/comboboxex-controls) im Windows SDK.
+> Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CComboBox::GetEditSel](#geteditsel).
+  Weitere Informationen finden Sie im Beispiel für [CComboBox:: geteditsel](#geteditsel).
 
-## <a name="ccomboboxsetextendedui"></a><a name="setextendedui"></a>CComboBox::SetExtendedUI
+## <a name="ccomboboxsetextendedui"></a><a name="setextendedui"></a>CComboBox:: abtextendedui
 
-Rufen `SetExtendedUI` Sie die Memberfunktion auf, um entweder die Standardbenutzeroberfläche oder die erweiterte Benutzeroberfläche für ein Kombinationsfeld mit dem [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST-Stil](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) auszuwählen.
+Mit der `SetExtendedUI` Member-Funktion können Sie entweder die Standardbenutzer Oberfläche oder die erweiterte Benutzeroberfläche für ein Kombinations Feld auswählen, das die [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format hat.
 
 ```
 int SetExtendedUI(BOOL bExtended = TRUE);
@@ -1312,8 +1312,8 @@ int SetExtendedUI(BOOL bExtended = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bErweitert*<br/>
-Gibt an, ob das Kombinationsfeld die erweiterte Benutzeroberfläche oder die Standardbenutzeroberfläche verwenden soll. Der Wert TRUE wählt die erweiterte Benutzeroberfläche aus. der Wert FALSE wählt die Standardbenutzeroberfläche aus.
+*bexgepflegte*<br/>
+Gibt an, ob das Kombinations Feld die erweiterte Benutzeroberfläche oder die Standardbenutzer Oberfläche verwenden soll. Der Wert true wählt die erweiterte Benutzeroberfläche aus. mit dem Wert false wird die Standardbenutzer Oberfläche ausgewählt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1323,19 +1323,19 @@ CB_OKAY, wenn der Vorgang erfolgreich ist, oder CB_ERR, wenn ein Fehler auftritt
 
 Die erweiterte Benutzeroberfläche kann wie folgt identifiziert werden:
 
-- Wenn Sie auf das statische Steuerelement klicken, wird das Listenfeld nur für Kombinationsfelder mit dem Stil CBS_DROPDOWNLIST angezeigt.
+- Wenn Sie auf das statische Steuerelement klicken, wird das Listenfeld nur für Kombinations Felder mit dem CBS_DROPDOWNLIST Stil angezeigt.
 
-- Wenn Sie die TASTE DOWN ARROW drücken, wird das Listenfeld angezeigt (F4 ist deaktiviert).
+- Wenn Sie die nach-unten-Taste drücken, wird das Listenfeld angezeigt (F4 ist deaktiviert).
 
 Das Scrollen im statischen Steuerelement ist deaktiviert, wenn die Elementliste nicht sichtbar ist (die Pfeiltasten sind deaktiviert).
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CComboBox::GetExtendedUI](#getextendedui).
+  Weitere Informationen finden Sie im Beispiel für [CComboBox:: getextendedui](#getextendedui).
 
-## <a name="ccomboboxsethorizontalextent"></a><a name="sethorizontalextent"></a>CComboBox::SetHorizontalExtent
+## <a name="ccomboboxsethorizontalextent"></a><a name="sethorizontalextent"></a>CComboBox:: CComboBox::
 
-Legt die Breite in Pixel fest, mit der der Listenfeldteil des Kombinationsfelds horizontal gescrollt werden kann.
+Legt die Breite (in Pixel) fest, um die der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.
 
 ```cpp
 void SetHorizontalExtent(UINT nExtent);
@@ -1343,20 +1343,20 @@ void SetHorizontalExtent(UINT nExtent);
 
 ### <a name="parameters"></a>Parameter
 
-*nExtent*<br/>
-Gibt die Anzahl der Pixel an, mit der der Listenfeldteil des Kombinationsfelds horizontal gescrollt werden kann.
+*nextent*<br/>
+Gibt die Anzahl der Pixel an, um die der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Breite des Listenfelds kleiner als dieser Wert ist, scrollt die horizontale Bildlaufleiste horizontal Elemente im Listenfeld. Wenn die Breite des Listenfelds gleich oder größer als dieser Wert ist, wird die horizontale Bildlaufleiste ausgeblendet oder, wenn das Kombinationsfeld den [Stil CBS_DISABLENOSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) hat, deaktiviert.
+Wenn die Breite des Listen Felds kleiner als dieser Wert ist, führt die horizontale Schiebe Leiste im Listenfeld einen horizontalen Bildlauf durch. Wenn die Breite des Listen Felds größer oder gleich diesem Wert ist, wird die horizontale Schiebe Leiste ausgeblendet oder, wenn das Kombinations Feld den [CBS_DISABLENOSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil hat, deaktiviert.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#35](../../mfc/reference/codesnippet/cpp/ccombobox-class_37.cpp)]
 
-## <a name="ccomboboxsetitemdata"></a><a name="setitemdata"></a>CComboBox::SetItemData
+## <a name="ccomboboxsetitemdata"></a><a name="setitemdata"></a>CComboBox:: "abtitemdata"
 
-Legt den 32-Bit-Wert fest, der dem angegebenen Element in einem Kombinationsfeld zugeordnet ist.
+Legt den 32-Bit-Wert fest, der dem angegebenen Element in einem Kombinations Feld zugeordnet ist.
 
 ```
 int SetItemData(
@@ -1367,10 +1367,10 @@ int SetItemData(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält einen nullbasierten Index für das festzulegende Element.
+Enthält einen NULL basierten Index für das festzulegende Element.
 
-*dwItemData*<br/>
-Enthält den neuen Wert, der dem Artikel zugeordnet werden soll.
+*dwitemdata*<br/>
+Enthält den neuen Wert, der dem Element zugeordnet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1378,15 +1378,15 @@ CB_ERR, wenn ein Fehler auftritt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden `SetItemDataPtr` Sie die Memberfunktion, wenn das 32-Bit-Element ein Zeiger sein soll.
+Verwenden `SetItemDataPtr` Sie die Member-Funktion, wenn das 32-Bit-Element ein Zeiger sein soll.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#36](../../mfc/reference/codesnippet/cpp/ccombobox-class_38.cpp)]
 
-## <a name="ccomboboxsetitemdataptr"></a><a name="setitemdataptr"></a>CComboBox::SetItemDataPtr
+## <a name="ccomboboxsetitemdataptr"></a><a name="setitemdataptr"></a>CComboBox:: "abtitemdataptr"
 
-Legt den 32-Bit-Wert, der dem angegebenen Element zugeordnet ist, in einem Kombinationsfeld als den angegebenen Zeiger (**void** <strong>\*</strong>) fest.
+Legt den 32-Bit-Wert, der dem angegebenen Element in einem Kombinations Feld zugeordnet ist, als den angegebenen Zeiger ( **`void`** <strong>\*</strong> ) fest.
 
 ```
 int SetItemDataPtr(
@@ -1397,10 +1397,10 @@ int SetItemDataPtr(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält einen nullbasierten Index für das Element.
+Enthält einen NULL basierten Index für das Element.
 
 *pData*<br/>
-Enthält den Zeiger, der dem Artikel zugeordnet werden soll.
+Enthält den Zeiger, der dem Element zugeordnet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1408,15 +1408,15 @@ CB_ERR, wenn ein Fehler auftritt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Zeiger bleibt für die Lebensdauer des Kombinationsfelds gültig, auch wenn sich die relative Position des Elements innerhalb des Kombinationsfelds ändern kann, wenn Elemente hinzugefügt oder entfernt werden. Daher kann sich der Index des Elements innerhalb des Felds ändern, aber der Zeiger bleibt zuverlässig.
+Dieser Zeiger bleibt für die Lebensdauer des Kombinations Felds gültig, auch wenn die relative Position des Elements im Kombinations Feld geändert werden kann, wenn Elemente hinzugefügt oder entfernt werden. Daher kann der Index des Elements innerhalb des Felds geändert werden, aber der Zeiger bleibt zuverlässig.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#37](../../mfc/reference/codesnippet/cpp/ccombobox-class_39.cpp)]
 
-## <a name="ccomboboxsetitemheight"></a><a name="setitemheight"></a>CComboBox::SetItemHeight
+## <a name="ccomboboxsetitemheight"></a><a name="setitemheight"></a>CComboBox::-Elementhöhe
 
-Rufen `SetItemHeight` Sie die Memberfunktion auf, um die Höhe von Listenelementen in einem Kombinationsfeld oder die Höhe des Abschnitts "Bearbeiten-Steuerelement" (oder statischen Text) eines Kombinationsfelds festzulegen.
+Ruft die `SetItemHeight` Member-Funktion auf, um die Höhe von Listenelementen in einem Kombinations Feld oder die Höhe des Bearbeitungs Steuer Elements (oder statischer Text) eines Kombinations Felds festzulegen.
 
 ```
 int SetItemHeight(
@@ -1427,14 +1427,14 @@ int SetItemHeight(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt an, ob die Höhe von Listenelementen oder die Höhe des Abschnitts "Bearbeiten-Steuerelement" (oder "statischer Text" des Kombinationsfelds festgelegt ist.
+Gibt an, ob die Höhe von Listenelementen oder die Höhe des Bearbeitungs Steuer Elements (oder statischer Text) des Kombinations Felds festgelegt wird.
 
-Wenn das Kombinationsfeld den [CBS_OWNERDRAWVARIABLE-Stil](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) hat, gibt *nIndex* den nullbasierten Index des Listenelements an, dessen Höhe festgelegt werden soll. Andernfalls muss *nIndex* 0 sein, und die Höhe aller Listenelemente wird festgelegt.
+Wenn das Kombinations Feld den [CBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil hat, gibt *nIndex* den NULL basierten Index des Listen Elements an, dessen Höhe festgelegt werden soll. Andernfalls muss *nIndex* den Wert 0 aufweisen, und die Höhe aller Listenelemente wird festgelegt.
 
-Wenn *nIndex* -1 ist, ist die Höhe des Abschnitts "Edit-Control" oder "Static-Text" des Kombinationsfelds festzulegen.
+Wenn *nIndex* den Wert-1 hat, muss die Höhe des Abschnitts Edit-Control oder Static-Text im Kombinations Feld festgelegt werden.
 
-*cyItemHeight*<br/>
-Gibt die Höhe der Kombinationsboxkomponente, die durch *nIndex*identifiziert wird, in Pixel an.
+*cyitemheight*<br/>
+Gibt die Höhe der durch *nIndex*identifizierten Kombinations Feld Komponente in Pixel an.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1442,15 +1442,15 @@ CB_ERR, wenn der Index oder die Höhe ungültig ist. andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Höhe des Abschnitts "Bearbeiten-Steuerelement" (oder statisches Text) des Kombinationsfelds wird unabhängig von der Höhe der Listenelemente festgelegt. Eine Anwendung muss sicherstellen, dass die Höhe des Abschnitts "Bearbeiten-Steuerelement" (oder "statischer Text" nicht kleiner als die Höhe eines bestimmten Listenfeldelements ist.
+Die Höhe des Bearbeitungs Steuerelement-Teils (oder statischer Text) des Kombinations Felds wird unabhängig von der Höhe der Listenelemente festgelegt. Eine Anwendung muss sicherstellen, dass die Höhe des Bearbeitungs Steuer Elements (oder statischer Text) nicht kleiner ist als die Höhe eines bestimmten Listenfeld Elements.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#38](../../mfc/reference/codesnippet/cpp/ccombobox-class_40.cpp)]
 
-## <a name="ccomboboxsetlocale"></a><a name="setlocale"></a>CComboBox::SetLocale
+## <a name="ccomboboxsetlocale"></a><a name="setlocale"></a>CComboBox:: setlocale
 
-Legt den Gebietsschemabezeichner für dieses Kombinationsfeld fest.
+Legt den Gebiets Schema Bezeichner für dieses Kombinations Feld fest.
 
 ```
 LCID SetLocale(LCID nNewLocale);
@@ -1458,24 +1458,24 @@ LCID SetLocale(LCID nNewLocale);
 
 ### <a name="parameters"></a>Parameter
 
-*nNewLocale*<br/>
-Der neue Gebietsschemabezeichner (LCID), der für das Kombinationsfeld festgelegt werden soll.
+*nnewlocale*<br/>
+Der neue LCID-Wert (Locale Identifier), der für das Kombinations Feld festgelegt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der vorherige Gebietsschemabezeichner (LCID) für dieses Kombinationsfeld.
+Der vorherige LCID-Wert (Locale Identifier) für dieses Kombinations Feld.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn `SetLocale` nicht aufgerufen wird, wird das Standardgebietsschema vom System abgerufen. Dieses Systemstandardgebietsschema kann mithilfe der regionalen (oder internationalen) Anwendung der Systemsteuerung geändert werden.
+Wenn `SetLocale` nicht aufgerufen wird, wird das Standard Gebiets Schema vom System abgerufen. Dieses Standard Gebiets Schema für das System kann mithilfe der regionalen (oder internationalen) Anwendung der Systemsteuerung geändert werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#39](../../mfc/reference/codesnippet/cpp/ccombobox-class_41.cpp)]
 
-## <a name="ccomboboxsetminvisibleitems"></a><a name="setminvisibleitems"></a>CComboBox::SetMinVisibleItems
+## <a name="ccomboboxsetminvisibleitems"></a><a name="setminvisibleitems"></a>CComboBox:: setminvisibleitems
 
-Legt die minimale Anzahl sichtbarer Elemente in der Dropdownliste des aktuellen Kombinationsfeldsteuerelements fest.
+Legt die Mindestanzahl sichtbarer Elemente in der Dropdown Liste des aktuellen Kombinations Feld-Steuer Elements fest.
 
 ```
 BOOL SetMinVisibleItems(int iMinVisible);
@@ -1485,31 +1485,31 @@ BOOL SetMinVisibleItems(int iMinVisible);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*iMinVisible*|[in] Gibt die minimale Anzahl sichtbarer Elemente an.|
+|*nicht unsichtbar*|in Gibt die Mindestanzahl von sichtbaren Elementen an.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
+TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [CB_SETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [CB_SETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die in der Windows SDK beschrieben wird.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird die Variable *m_combobox*definiert, die für den programmgesteuerten Zugriff auf das Kombinationsfeldsteuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
+Im folgenden Codebeispiel wird die-Variable definiert, *m_combobox*, die für den programmgesteuerten Zugriff auf das Kombinations Feld-Steuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
 
 [!code-cpp[NVC_MFC_CComboBox_s1#1](../../mfc/reference/codesnippet/cpp/ccombobox-class_33.h)]
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel werden 20 Elemente in die Dropdownliste eines Kombinationsfeldsteuerelements eingefügt. Anschließend wird angegeben, dass mindestens 10 Elemente angezeigt werden, wenn ein Benutzer den Dropdown-Pfeil drückt.
+Im folgenden Codebeispiel werden 20 Elemente in die Dropdown Liste eines Kombinations Feld-Steuer Elements eingefügt. Anschließend wird festgelegt, dass mindestens 10 Elemente angezeigt werden, wenn ein Benutzer auf den Dropdown Pfeil drückt.
 
 [!code-cpp[NVC_MFC_CComboBox_s1#2](../../mfc/reference/codesnippet/cpp/ccombobox-class_34.cpp)]
 
-## <a name="ccomboboxsettopindex"></a><a name="settopindex"></a>CComboBox::SetTopIndex
+## <a name="ccomboboxsettopindex"></a><a name="settopindex"></a>CComboBox:: settopindex
 
-Stellt sicher, dass ein bestimmtes Element im Listenfeldteil des Kombinationsfelds sichtbar ist.
+Stellt sicher, dass ein bestimmtes Element im Listenfeld Bereich des Kombinations Felds angezeigt wird.
 
 ```
 int SetTopIndex(int nIndex);
@@ -1518,23 +1518,23 @@ int SetTopIndex(int nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den nullbasierten Index des Listenfeldelements an.
+Gibt den NULL basierten Index des Listenfeld Elements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Null, wenn erfolgreich, oder CB_ERR, wenn ein Fehler auftritt.
+NULL, wenn erfolgreich, oder CB_ERR, wenn ein Fehler auftritt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das System scrollt das Listenfeld, bis entweder das von *nIndex* angegebene Element oben im Listenfeld angezeigt wird oder der maximale Bildlaufbereich erreicht wurde.
+Das System führt einen Bildlauf durch das Listenfeld durch, bis entweder das von *nIndex* angegebene Element oben im Listenfeld angezeigt wird oder der maximale scrollbereich erreicht wurde.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#40](../../mfc/reference/codesnippet/cpp/ccombobox-class_42.cpp)]
 
-## <a name="ccomboboxshowdropdown"></a><a name="showdropdown"></a>CComboBox::ShowDropDown
+## <a name="ccomboboxshowdropdown"></a><a name="showdropdown"></a>CComboBox:: ShowDropDown
 
-Zeigt das Listenfeld eines Kombinationsfelds mit dem [Stil CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder CBS_DROPDOWNLIST ein oder blendet [es](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) aus.
+Blendet das Listenfeld eines Kombinations Felds ein, das die [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format aufweist, oder blendet es aus.
 
 ```cpp
 void ShowDropDown(BOOL bShowIt = TRUE);
@@ -1542,28 +1542,28 @@ void ShowDropDown(BOOL bShowIt = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bShowIt*<br/>
-Gibt an, ob das Dropdown-Listenfeld angezeigt oder ausgeblendet werden soll. Der Wert TRUE zeigt das Listenfeld an. Mit dem Wert FALSE wird das Listenfeld ausgeblendet.
+*bshowit*<br/>
+Gibt an, ob das Dropdown-Listenfeld angezeigt oder ausgeblendet werden soll. Der Wert true zeigt das Listenfeld an. Der Wert false blendet das Listenfeld aus.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig wird in einem Kombinationsfeld dieses Stils das Listenfeld angezeigt.
+Standardmäßig wird in einem Kombinations Feld dieses Stils das Listenfeld angezeigt.
 
-Diese Memberfunktion hat keine Auswirkungen auf ein Kombinationsfeld, das mit dem [Stil CBS_SIMPLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) erstellt wurde.
+Diese Member-Funktion hat keine Auswirkung auf ein Kombinations Feld, das mit dem [CBS_SIMPLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Stil erstellt wurde.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CComboBox::GetDroppedState](#getdroppedstate).
+  Weitere Informationen finden Sie im Beispiel für [CComboBox:: getdroppedstate](#getdroppedstate).
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[MFC-Beispiel STRGBARS](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel-CTRLBARS](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [CButton-Klasse](../../mfc/reference/cbutton-class.md)<br/>
-[CEdit Class](../../mfc/reference/cedit-class.md)<br/>
+[CEdit-Klasse](../../mfc/reference/cedit-class.md)<br/>
 [CListBox-Klasse](../../mfc/reference/clistbox-class.md)<br/>
-[CScrollBar-Klasse](../../mfc/reference/cscrollbar-class.md)<br/>
-[CStatic-Klasse](../../mfc/reference/cstatic-class.md)<br/>
+[Cscrollbar-Klasse](../../mfc/reference/cscrollbar-class.md)<br/>
+[Cstatic-Klasse](../../mfc/reference/cstatic-class.md)<br/>
 [CDialog-Klasse](../../mfc/reference/cdialog-class.md)

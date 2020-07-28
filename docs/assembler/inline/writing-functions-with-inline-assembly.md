@@ -7,18 +7,18 @@ helpviewer_keywords:
 - assembler [C++], writing functions
 - __asm keyword [C++], in functions
 ms.assetid: b5df8a04-fdc7-4622-8c9e-e4b618927497
-ms.openlocfilehash: 5416a29477651c496d83e6ee215a2cb88ba26e3b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 3ce42147693f0c4c180076c627ef88c182745186
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80169057"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87191000"
 ---
 # <a name="writing-functions-with-inline-assembly"></a>Schreiben von Funktionen mit der Inlineassembly
 
 **Microsoft-spezifisch**
 
-Wenn Sie eine Funktion mit Inline-Assemblycode schreiben, ist es einfach, Argumente an die Funktion zu übergeben und einen Wert aus der Funktion zurückzugeben. Die folgenden Beispiele vergleichen eine Funktion, die zuerst für einen separaten Assembler geschrieben und anschließend für den Inline Assembler umgeschrieben wurde. Die Funktion, die als `power2`bezeichnet wird, empfängt zwei Parameter und multipliziert den ersten Parameter um 2 mit der Potenz des zweiten Parameters. Die-Funktion wird für einen separaten Assembler geschrieben und könnte wie folgt aussehen:
+Wenn Sie eine Funktion mit Inline-Assemblycode schreiben, ist es einfach, Argumente an die Funktion zu übergeben und einen Wert aus der Funktion zurückzugeben. Die folgenden Beispiele vergleichen eine Funktion, die zuerst für einen separaten Assembler geschrieben und anschließend für den Inline Assembler umgeschrieben wurde. Die Funktion, die aufgerufen wird, `power2` empfängt zwei Parameter und multipliziert den ersten Parameter um 2 mit der Potenz des zweiten Parameters. Die-Funktion wird für einen separaten Assembler geschrieben und könnte wie folgt aussehen:
 
 ```asm
 ; POWER.ASM
@@ -42,11 +42,11 @@ _TEXT   ENDS
         END
 ```
 
-Da es für einen separaten Assembler geschrieben ist, erfordert die Funktion eine separate Quelldatei und Assembly und Verknüpfungs Schritte. C- C++ und Funktionsargumente werden in der Regel an den Stapel weitergegeben, sodass diese Version der `power2`-Funktion über ihre Positionen im Stapel auf ihre Argumente zugreift. (Beachten Sie, dass die **Model** -Direktive, die in MASM und einigen anderen Assemblern verfügbar ist, auch über den Namen auf Stapel Argumente und lokale Stapel Variablen zugreifen kann.)
+Da es für einen separaten Assembler geschrieben ist, erfordert die Funktion eine separate Quelldatei und Assembly und Verknüpfungs Schritte. C-und C++-Funktionsargumente werden in der Regel an den Stapel weitergegeben, sodass diese Version der `power2` Funktion über ihre Positionen im Stapel auf ihre Argumente zugreift. (Beachten Sie, dass die **Model** -Direktive, die in MASM und einigen anderen Assemblern verfügbar ist, auch über den Namen auf Stapel Argumente und lokale Stapel Variablen zugreifen kann.)
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm schreibt die `power2`-Funktion mit Inline-Assemblycode:
+Dieses Programm schreibt die `power2` Funktion mit Inline-Assemblycode:
 
 ```cpp
 // Power2_inline_asm.c
@@ -74,12 +74,12 @@ int power2( int num, int power )
 }
 ```
 
-Die Inline Version der `power2`-Funktion verweist auf ihre Argumente anhand ihres Namens und wird in derselben Quelldatei wie der Rest des Programms angezeigt. Diese Version erfordert auch weniger Assemblyanweisungen.
+Die Inline Version der- `power2` Funktion verweist auf ihre Argumente anhand ihres Namens und wird in derselben Quelldatei wie der Rest des Programms angezeigt. Diese Version erfordert auch weniger Assemblyanweisungen.
 
-Da die Inline Version von `power2` keine C `return`-Anweisung ausführt, wird eine harmlose Warnung ausgelöst, wenn Sie die Kompilierung mit der Warnstufe 2 oder höher durchführen. Die Funktion gibt einen Wert zurück, aber der Compiler kann dies nicht erkennen, wenn eine `return` Anweisung fehlt. Sie können [#pragma Warnung](../../preprocessor/warning.md) verwenden, um die Generierung dieser Warnung zu deaktivieren.
+Da die Inline Version von `power2` keine C- **`return`** Anweisung ausführt, wird eine harmlose Warnung ausgelöst, wenn Sie die Kompilierung mit der Warnstufe 2 oder höher durchführen. Die Funktion gibt einen Wert zurück, der Compiler kann dies jedoch nicht erkennen, wenn eine-Anweisung nicht vorhanden ist **`return`** . Sie können [#pragma Warnung](../../preprocessor/warning.md) verwenden, um die Generierung dieser Warnung zu deaktivieren.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Verwenden von C oder C++ in __asm-Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)<br/>
+[Verwenden von C oder C++ in __asm Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)<br/>

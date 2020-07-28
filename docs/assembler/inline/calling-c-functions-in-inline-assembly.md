@@ -9,18 +9,18 @@ helpviewer_keywords:
 - inline assembly, calling functions
 - __asm keyword [C++], calling functions
 ms.assetid: f8a8d568-d175-4e23-9b24-36ef60a4cab3
-ms.openlocfilehash: 94bbfda3a5fd15885f3d8276d506541418a9489f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 73be1142747dc608d683e6bd847639b9df718a13
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80169590"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87192625"
 ---
 # <a name="calling-c-functions-in-inline-assembly"></a>Aufrufen von C-Funktionen in der Inlineassembly
 
 **Microsoft-spezifisch**
 
-Ein `__asm`-Block kann c-Funktionen, einschließlich c-Bibliotheks Routinen, aufruft. Im folgenden Beispiel wird die `printf` Bibliotheks Routine aufgerufen:
+Ein- **`__asm`** Block kann c-Funktionen, einschließlich c-Bibliotheks Routinen, aufruft. Im folgenden Beispiel wird die `printf` Bibliotheks Routine aufgerufen:
 
 ```cpp
 // InlineAssembler_Calling_C_Functions_in_Inline_Assembly.cpp
@@ -56,10 +56,10 @@ Da Funktionsargumente auf dem Stapel weitergegeben werden, übertragen Sie einfa
 printf( format, hello, world );
 ```
 
-Das Beispiel überträgt Zeiger auf `world`, `hello`und `format`in dieser Reihenfolge und ruft dann `printf`auf.
+Das Beispiel überträgt Zeiger auf `world` , `hello` und `format` in dieser Reihenfolge und ruft dann auf `printf` .
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>
+[Inline Assembler](../../assembler/inline/inline-assembler.md)<br/>

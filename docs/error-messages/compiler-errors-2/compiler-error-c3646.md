@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3646
 ms.assetid: 4391ead2-9637-4ca3-aeda-5a991b18d66d
-ms.openlocfilehash: 13a3ebeb6e7783687abc73cd0dcc018abe827809
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5c11133fbf28cfb98de1367955c00c899e8b1042
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80200472"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214528"
 ---
 # <a name="compiler-error-c3646"></a>Compilerfehler C3646
 
@@ -21,7 +21,7 @@ ms.locfileid: "80200472"
 
 Der Compiler hat an der Position, an der er einen Überschreibungsspezifizierer erwartet hat, ein Token gefunden, aber das Token wurde vom Compiler nicht erkannt.
 
-Wenn der unbekannte *Spezifizierer* beispielsweise **_NOEXCEPT**ist, ersetzen Sie ihn durch das Schlüsselwort **noaußer**.
+Wenn der unbekannte *Spezifizierer* beispielsweise **_NOEXCEPT**ist, ersetzen Sie ihn durch das-Schlüsselwort **`noexcept`** .
 
 Weitere Informationen finden Sie unter [Überschreibungsspezifizierer](../../extensions/override-specifiers-cpp-component-extensions.md).
 

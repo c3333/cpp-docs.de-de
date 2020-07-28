@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4180
 ms.assetid: 40c91bd4-37f1-4d59-a4f3-d5ddab68239b
-ms.openlocfilehash: f542951424325db727fc6d4ba7ac449095bdac83
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 4a153d2ec5d2cc8850f3c27390862d3cd0e70bed
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80175960"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214476"
 ---
 # <a name="compiler-warning-level-1-c4180"></a>Compilerwarnung (Stufe 1) C4180
 
 Auf Funktionstyp angewendeter Qualifizierer ist ohne Bedeutung; wird ignoriert
 
-Ein Qualifizierer, z. B. **const**, wird auf einen durch `typedef`definierten Funktionstyp angewendet.
+Ein Qualifizierer, z **`const`** . b., wird auf einen Funktionstyp angewendet, der durch definiert wird **`typedef`** .
 
 ## <a name="example"></a>Beispiel
 

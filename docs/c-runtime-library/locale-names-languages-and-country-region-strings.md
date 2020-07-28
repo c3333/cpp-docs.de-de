@@ -8,12 +8,12 @@ helpviewer_keywords:
 - setlocale function
 - language strings
 ms.assetid: a0e5a0c5-5602-4da0-b65f-de3d6c8530a2
-ms.openlocfilehash: 5a430154c9ad31a9776eeb2ba569fa0da33fac81
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: ae4b695682e00ef2f26287957400344ddd96dff4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373549"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87189674"
 ---
 # <a name="ucrt-locale-names-languages-and-countryregion-strings"></a>UCRT: Gebietsschemanamen, Sprachen und Zeichenfolgen für Länder und Regionen
 
@@ -34,7 +34,7 @@ Beim *code-page*-Wert handelt es sich um die dem Gebietsschema zugeordnete ANSI/
 
 Wenn Sie nur die Codepage zum Angeben des Gebietsschemas verwenden, werden Standardsprache und Standardland/-region des Benutzers verwendet, die von [GetUserDefaultLocaleName](/windows/win32/api/winnls/nf-winnls-getuserdefaultlocalename) abgerufen werden. Wenn Sie beispielsweise `".1254"` (ANSI-Code für Türkisch) als Gebietsschema für einen für Englisch (USA) konfigurierten Benutzer angeben, wird `English_United States.1254` als Gebietsschema gespeichert. Die Verwendung dieser Form wird nicht empfohlen, da sie zu inkonsistentem Verhalten führen kann.
 
-Ein *locale*-Argumentwert von `C` gibt die Umgebung mit minimaler ANSI-Konformität für die C-Übersetzung an. Das `C`-Gebietsschema geht davon aus, dass jeder **char**-Datentyp 1 Byte und sein Wert immer kleiner als 256 ist. Wenn *locale* auf eine leere Zeichenfolge zeigt, ist das Gebietsschema die durch die Implementierung definierte native Umgebung.
+Ein *locale*-Argumentwert von `C` gibt die Umgebung mit minimaler ANSI-Konformität für die C-Übersetzung an. Das Gebiets Schema `C` geht davon aus, dass jeder **`char`** Datentyp 1 Byte und sein Wert immer kleiner als 256 ist. Wenn *locale* auf eine leere Zeichenfolge zeigt, ist das Gebietsschema die durch die Implementierung definierte native Umgebung.
 
 Sie können für die Funktionen `setlocale` und `_wsetlocale` alle Gebietsschemakategorien gleichzeitig mithilfe der `LC_ALL` -Kategorie angeben. Die Kategorien können alle auf das gleiche Gebietsschema festgelegt werden, oder Sie können jede Kategorie einzeln festlegen, indem Sie ein Gebietsschemaargument mit dieser Form verwenden:
 

@@ -2,12 +2,12 @@
 title: Grafiken (C++ AMP)
 ms.date: 11/04/2016
 ms.assetid: 190a98a4-5f7d-442e-866b-b374ca74c16f
-ms.openlocfilehash: 393fadbba90b135e6394cf848668b4957a6d7ce2
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: e0ea4de44f5215f47fe8c1a5e018bd91a82708ac
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404833"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182810"
 ---
 # <a name="graphics-c-amp"></a>Grafiken (C++ AMP)
 
@@ -21,11 +21,11 @@ C++ amp enthält mehrere APIs im Namespace " [parallelcurrency:: graphics](../..
 
 ## <a name="the-norm-and-unorm-types"></a>Die Typen "norm" und "unorm"
 
-Der `norm` -Typ und der- `unorm` Typ sind skalare Typen, die den Bereich der **float** -Werte einschränken. Dies wird als " *Klammer*" bezeichnet. Diese Typen können explizit aus anderen skalaren Typen erstellt werden. Bei der Umwandlung wird der Wert zuerst in **float** umgewandelt und dann an den jeweiligen Bereich gebunden, der in Norm [-1,0, 1,0] oder unorm [0,0, 1,0] zulässig ist. Das Umwandeln von +/- Unendlich gibt +/-1 zurück. Das Umwandeln von NaN ist nicht definiert. Ein "norm"-Wert kann ohne Datenverlust implizit aus einem unorm-Wert erstellt werden. Der implizite Konvertierungsoperator zu "float" ist für diese Typen definiert. Binäre Operatoren werden zwischen diesen Typen und anderen integrierten skalaren Typen wie z. b. **float** und **int**: +,-, \* ,/, = =,! =, >, \<, > =, <= definiert. Die Verbund Zuweisungs Operatoren werden ebenfalls unterstützt: + =,-=, \* =,/=. Der unäre Negationsoperator (-) wird für norm-Typen definiert.
+Der `norm` -Typ und der- `unorm` Typ sind skalare Typen, die den Wertebereich einschränken **`float`** . Dies wird als " *Klammer*" bezeichnet. Diese Typen können explizit aus anderen skalaren Typen erstellt werden. Bei der Umwandlung wird der Wert zuerst in umgewandelt **`float`** und dann an den jeweiligen Bereich gebunden, der in Norm [-1,0, 1,0] oder unorm [0,0, 1,0] zulässig ist. Das Umwandeln von +/- Unendlich gibt +/-1 zurück. Das Umwandeln von NaN ist nicht definiert. Ein "norm"-Wert kann ohne Datenverlust implizit aus einem unorm-Wert erstellt werden. Der implizite Konvertierungsoperator zu "float" ist für diese Typen definiert. Binäre Operatoren werden zwischen diesen Typen und anderen integrierten skalaren Typen, z. b. **`float`** und **`int`** , definiert: +,-, \* ,/, = =,! =, >, \<, > =, <=. Die Verbund Zuweisungs Operatoren werden ebenfalls unterstützt: + =,-=, \* =,/=. Der unäre Negationsoperator (-) wird für norm-Typen definiert.
 
 ## <a name="short-vector-library"></a>Kurzvektorbibliothek
 
-Die kurz Vektor Bibliothek bietet einige Funktionen des [Vektor Typs](https://go.microsoft.com/fwlink/p/?linkid=248500) , der in HLSL definiert ist und in der Regel verwendet wird, um Texels zu definieren. Ein Kurzvektor ist eine Datenstruktur, die ein bis vier Werte desselben Typs enthält. Die unterstützten Typen sind **Double**, **float**, **int**, `norm` , `uint` und `unorm` . In der folgenden Tabelle werden Typnamen aufgeführt. Für jeden Typ gibt es auch eine entsprechende **typedef** , die keinen Unterstrich im Namen hat. Die Typen mit unterstrichen befinden sich im [Namespace "parallelcurrency:: graphics](../../parallel/amp/reference/concurrency-graphics-namespace.md)". Die Typen, die keine Unterstriche aufweisen, befinden sich im [Namespace "parallelcurrency:: Graphics::d irect3d](../../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md) ", sodass Sie eindeutig von den grundlegenden Typen wie **__int8** und **__int16**getrennt sind.
+Die kurz Vektor Bibliothek bietet einige Funktionen des [Vektor Typs](https://go.microsoft.com/fwlink/p/?linkid=248500) , der in HLSL definiert ist und in der Regel verwendet wird, um Texels zu definieren. Ein Kurzvektor ist eine Datenstruktur, die ein bis vier Werte desselben Typs enthält. Die unterstützten Typen sind **`double`** , **`float`** , **`int`** , `norm` , `uint` und `unorm` . In der folgenden Tabelle werden Typnamen aufgeführt. Für jeden Typ gibt es auch einen entsprechenden **`typedef`** , der keinen Unterstrich im Namen hat. Die Typen mit unterstrichen befinden sich im [Namespace "parallelcurrency:: graphics](../../parallel/amp/reference/concurrency-graphics-namespace.md)". Die Typen, die keine Unterstriche aufweisen, befinden sich im [Namespace "parallelcurrency:: Graphics::d irect3d](../../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md) ", sodass Sie eindeutig von den grundlegenden Typen, wie z. b. und, getrennt sind **`__int8`** **`__int16`** .
 
 ||Length 2|Länge 3|Länge 4|
 |-|--------------|--------------|--------------|
@@ -63,7 +63,7 @@ Die Kurzvektorbibliothek unterstützt das Accessorkonstrukt `vector_type.identif
 
 Viele GPUs haben Hardware und Caches, die für den Abruf von Pixeln und Texeln und zum Rendern von Images und Texturen optimiert sind. Die [Textur \<T,N> ](../../parallel/amp/reference/texture-class.md) Klasse, bei der es sich um eine Container Klasse für Textobjekte handelt, macht die Textur Funktionen dieser GPUs verfügbar. Ein Texel kann Folgendes sein:
 
-- Ein **int**, `uint` , **float**, **Double**, `norm` oder `unorm` Scalar.
+- Ein-,-,-,-,- **`int`** `uint` oder- **`float`** **`double`** `norm` `unorm` Skalar.
 
 - Ein Kurzvektor, der zwei oder vier Komponenten enthält. Die einzige Ausnahme ist `double_4`, die unzulässig ist.
 
@@ -214,7 +214,7 @@ Verwenden Sie die [Textur:: Set](reference/texture-class.md#set) -Methode, um in
 
 - T ist nur eine skalare Komponente. (Kurzvektoren sind nicht zulässig.)
 
-- T ist nicht " **Double**", " `norm` or" `unorm` .
+- T ist nicht **`double`** , `norm` oder `unorm` .
 
 - Die `texture::bits_per_scalar_element`-Eigenschaft lautet 32.
 

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2860
 ms.assetid: ccc83553-90ed-4e94-b5e9-38b58ae38e31
-ms.openlocfilehash: 6a6bb4bc12e791e36a31ffc4cf417e21cb71dbdd
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 25ae5f0ffee659dee2e0ac388da207a5165ecc8e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74760966"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214567"
 ---
 # <a name="compiler-error-c2860"></a>Compilerfehler C2860
 
 "void" darf kein Argumenttyp sein, mit Ausnahme von "(void)".
 
-Type `void` kann nicht als Argumenttyp mit anderen Argumenten verwendet werden.
+Der Typ **`void`** kann nicht als Argumenttyp mit anderen Argumenten verwendet werden.
 
 Im folgenden Beispiel wird C2860 generiert:
 

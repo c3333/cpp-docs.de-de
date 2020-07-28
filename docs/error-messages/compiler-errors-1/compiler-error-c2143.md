@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2143
 ms.assetid: 1d8d1456-e031-4965-9240-09a6e33ba81c
-ms.openlocfilehash: ed4bc7eea85e5263d59817082caed99bde3d75d5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 310083a650f842c6c0f0912efe1ceddb66c4fd6f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62353481"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214749"
 ---
 # <a name="compiler-error-c2143"></a>Compilerfehler C2143
 
-Syntaxfehler: Fehlendes "ttoken1" vor "token2"
+Syntax Fehler: Fehlendes ' ttoken1 ' vor ' Token2 '
 
-Der Compiler erwartet ein bestimmtes Tokens (d. h. ein Sprachelement außer Leerzeichen) und stattdessen ein anderes Token gefunden.
+Der Compiler hat ein bestimmtes Token (d. h. ein anderes sprach Element als Leerraum) erwartet und stattdessen ein anderes Token gefunden.
 
-Überprüfen Sie die [C++-Sprachreferenz](../../cpp/cpp-language-reference.md) um zu bestimmen, in denen Code syntaktisch falsch ist. Da der Compiler diesen Fehler zu melden kann, nachdem er die Zeile trifft, die das Problem verursacht, überprüfen Sie mehrere Codezeilen, die den Fehler vorausgegangen sind.
+Überprüfen Sie die [C++-Sprachreferenz](../../cpp/cpp-language-reference.md) , um zu bestimmen, wo Code syntaktisch falsch ist. Da der Compiler diesen Fehler möglicherweise meldet, nachdem er auf die Zeile stößt, die das Problem verursacht hat, überprüfen Sie mehrere Codezeilen, die dem Fehler vorangestellt sind.
 
 C2143 kann in verschiedenen Situationen auftreten.
 
-Er kann auftreten, wenn ein Operator, der einen Namen qualifiziert werden kann (`::`, `->`, und `.`) muss das Schlüsselwort folgen `template`, wie in diesem Beispiel:
+Dies kann vorkommen, wenn einem Operator, der einen Namen ( `::` , `->` und) qualifizieren kann `.` , das-Schlüsselwort folgen muss **`template`** , wie in diesem Beispiel:
 
 ```cpp
 class MyClass
@@ -35,7 +35,7 @@ class MyClass
 };
 ```
 
-Standardmäßig C++ setzt voraus, dass `Ty::PutFuncType` keine Vorlage ist; daher die folgenden `<` interpretiert wird, wie ein kleiner-als-Zeichen.  Sie müssen weisen dem Compiler explizit, die `PutFuncType` ist eine Vorlage aus, so dass sie ordnungsgemäß für die Spitze Klammer analysieren kann. Um diesen Fehler zu korrigieren, verwenden die `template` Schlüsselwort auf dem abhängigen Namen des Typs, wie hier gezeigt:
+Standardmäßig geht C++ davon aus, dass `Ty::PutFuncType` keine Vorlage `<` ist. Daher wird Folgendes als Vorzeichen interpretiert.  Sie müssen dem Compiler explizit mitteilen, dass `PutFuncType` es sich um eine Vorlage handelt, sodass die Spitze Klammer ordnungsgemäß analysiert werden kann. Um diesen Fehler zu beheben, verwenden Sie das **`template`** Schlüsselwort für den Namen des abhängigen Typs, wie hier gezeigt:
 
 ```cpp
 class MyClass
@@ -47,7 +47,7 @@ class MyClass
 };
 ```
 
-C2143 kann auftreten, wenn **"/ CLR"** wird verwendet, und ein `using` Anweisung einen Syntaxfehler aufweist:
+C2143 kann auftreten, wenn **/CLR** verwendet wird und eine- **`using`** Direktive einen Syntax Fehler aufweist:
 
 ```cpp
 // C2143a.cpp
@@ -56,7 +56,7 @@ using namespace System.Reflection;   // C2143
 using namespace System::Reflection;
 ```
 
-Er kann auch auftreten, wenn Sie versuchen, eine Quellcodedatei mit CLR-Syntax ohne auch Kompilieren **"/ CLR"**:
+Dies kann auch auftreten, wenn Sie versuchen, eine Quell Code Datei mithilfe der CLR-Syntax zu kompilieren, ohne auch **/CLR**zu verwenden:
 
 ```cpp
 // C2143b.cpp
@@ -70,7 +70,7 @@ int main() {
 }
 ```
 
-Das erste nicht-Leerzeichen, das folgt eine `if` Anweisung muss es sich um eine linke Klammer. Der Compiler kann nicht alles übersetzen:
+Das erste Zeichen, das kein Leerzeichen ist, das auf eine-Anweisung folgt, **`if`** muss eine linke Klammer sein. Der Compiler kann nichts anderes übersetzen:
 
 ```cpp
 // C2143c.cpp
@@ -85,7 +85,7 @@ int main() {
 }
 ```
 
-C2143 tritt auf, wenn eine schließende geschweifte Klammer, Klammern oder durch Semikolon fehlt in der Zeile, in dem der Fehler erkannt wird, oder auf eine der Zeilen unmittelbar vor:
+C2143 kann auftreten, wenn eine schließende geschweifte Klammer, Klammer oder Semikolon in der Zeile fehlt, in der der Fehler erkannt wird, oder in einer der oben genannten Zeilen:
 
 ```cpp
 // C2143d.cpp
@@ -96,7 +96,7 @@ class X {
 } x;
 ```
 
-Oder wenn ein ungültiges Tag in einer Klassendeklaration:
+Oder wenn ein ungültiges Tag in einer Klassen Deklaration vorliegt:
 
 ```cpp
 // C2143e.cpp
@@ -108,7 +108,7 @@ class + {};   // C2143 + is an invalid tag name
 class ValidName {};   // OK
 ```
 
-Oder wenn eine Bezeichnung nicht an eine Anweisung angefügt ist. Wenn eine Bezeichnung allein eingefügt werden soll, z. B. am Ende einer verbundanweisung, fügen Sie es an eine null-Anweisung:
+Oder wenn eine Bezeichnung nicht an eine-Anweisung angefügt ist. Wenn Sie eine Bezeichnung selbst platzieren müssen, z. b. am Ende einer Verbund Anweisung, fügen Sie Sie an eine NULL-Anweisung an:
 
 ```cpp
 // C2143f.cpp
@@ -122,7 +122,7 @@ void func1() {
 }
 ```
 
-Der Fehler kann auftreten, wenn ein nicht qualifizierter Aufruf mit einem Typ in der C++-Standardbibliothek erfolgt:
+Der Fehler kann auftreten, wenn ein nicht qualifizierter-Rückruf an einen Typ in der C++-Standard Bibliothek erfolgt:
 
 ```cpp
 // C2143g.cpp
@@ -132,7 +132,7 @@ static vector<char> bad;   // C2143
 static std::vector<char> good;   // OK
 ```
 
-Oder es ist ein fehlendes `typename` Schlüsselwort:
+Oder es fehlt ein **`typename`** Schlüsselwort:
 
 ```cpp
 // C2143h.cpp
@@ -164,7 +164,7 @@ template void PrintType(float i, float j){}   // C2143
 template void PrintType(float i, float j);   // OK
 ```
 
-Klicken Sie in einem C-Programm Variablen müssen am Anfang der Funktion deklariert werden, und sie können nicht deklariert werden, nachdem die Funktion nicht-Declaration-Anweisungen ausführt.
+In einem C-Programm müssen Variablen am Anfang der Funktion deklariert werden, und Sie können nicht deklariert werden, nachdem die Funktion nicht Deklarations Anweisungen ausgeführt hat.
 
 ```C
 // C2143j.c

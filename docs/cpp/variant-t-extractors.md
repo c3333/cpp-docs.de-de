@@ -48,12 +48,12 @@ helpviewer_keywords:
 - operator BYTE
 - operator IUnknown
 ms.assetid: 33c1782f-045a-4673-9619-1d750efc83a9
-ms.openlocfilehash: 685df7285e58e0cf2ceeded5ac27641364897298
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a1b7c713b5d82ff54250b622f2d4afe17abac468
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187699"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87185605"
 ---
 # <a name="_variant_t-extractors"></a>_variant_t-Extraktoren
 
@@ -87,32 +87,32 @@ operator unsigned __int64() const;
 
 ## <a name="remarks"></a>Bemerkungen
 
-Extrahiert Rohdaten aus einem gekapselten `VARIANT`. Wenn die `VARIANT` nicht bereits den richtigen Typ hat, wird `VariantChangeType` verwendet, um eine Konvertierung zu versuchen, und bei einem Fehler wird ein Fehler generiert:
+Extrahiert Rohdaten aus einem gekapselten `VARIANT` . Wenn `VARIANT` nicht bereits der richtige Typ ist, `VariantChangeType` wird verwendet, um eine Konvertierung zu versuchen, und bei einem Fehler wird ein Fehler generiert:
 
-- **Operator Short ()** Extrahiert einen **kurzen** ganzzahligen Wert.
+- **Operator Short ()** Extrahiert einen **`short`** ganzzahligen Wert.
 
-- **Operator Long ()** Extrahiert einen **Long** Integer-Wert.
+- **Operator Long ()** Extrahiert einen **`long`** ganzzahligen Wert.
 
-- **Operator float ()** Extrahiert einen numerischen **float** -Wert.
+- **Operator float ()** Extrahiert einen **`float`** numerischen Wert.
 
-- **Operator Double ()** Extrahiert einen **doppelten** ganzzahligen Wert.
+- **Operator Double ()** Extrahiert einen **`double`** ganzzahligen Wert.
 
-- **Operator CY ()** Extrahiert ein `CY`-Objekt.
+- **Operator CY ()** Extrahiert ein- `CY` Objekt.
 
-- **Operator bool ()** Extrahiert einen **booleschen** Wert.
+- **Operator bool ()** Extrahiert einen **`bool`** Wert.
 
 - **Operator Decimal ()** Extrahiert einen `DECIMAL` Wert.
 
 - **Operator Byte ()** Extrahiert einen `BYTE` Wert.
 
-- **Operator _bstr_t ()** Extrahiert eine Zeichenfolge, die in einem `_bstr_t` Objekt gekapselt ist.
+- **Operator _bstr_t ()** Extrahiert eine Zeichenfolge, die in einem-Objekt gekapselt ist `_bstr_t` .
 
-- **Operator IDispatch\*()** Extrahiert einen dispinterface-Zeiger aus einem gekapselten `VARIANT`. `AddRef` für den resultierenden Zeiger aufgerufen wird, müssen Sie `Release` aufrufen, um Sie freizugeben.
+- der **Operator IDispatch \* ()** extrahiert einen dispinterface-Zeiger aus einem gekapselten `VARIANT` . `AddRef`wird für den resultierenden Zeiger aufgerufen, sodass Sie aufrufen können, `Release` um ihn freizugeben.
 
-- **Operator IUnknown\*()** Extrahiert einen COM-Schnittstellen Zeiger aus einem gekapselten `VARIANT`. `AddRef` für den resultierenden Zeiger aufgerufen wird, müssen Sie `Release` aufrufen, um Sie freizugeben.
+- der **Operator IUnknown \* ()** extrahiert einen COM-Schnittstellen Zeiger aus einem gekapselten `VARIANT` . `AddRef`wird für den resultierenden Zeiger aufgerufen, sodass Sie aufrufen können, `Release` um ihn freizugeben.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_variant_t-Klasse](../cpp/variant-t-class.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - shift operators [C++]
 - operators [C++], shift
 ms.assetid: 25fa0cbb-5fdd-4657-8745-b35f7d8f1606
-ms.openlocfilehash: 7cde299d305219f2bd0e53a9f19c2ca35a8c7b69
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 4cdb353c950313396b331dc7ba01b3ea392ed0f8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404769"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87186957"
 ---
 # <a name="left-shift-and-right-shift-operators-gtgt-and-ltlt"></a>Left Shift-und Right Shift-Operatoren ( &gt; &gt; und &lt; &lt; )
 
@@ -176,7 +176,7 @@ int main() {
 
 Die Ausdrücke auf beiden Seiten eines Schiebeoperators müssen vom Typ „Ganzzahl“ sein. Ganzzahlige Erweiterungen werden gemäß den in [Standard Konvertierungen](standard-conversions.md)beschriebenen Regeln ausgeführt. Der Ergebnistyp ist mit dem Typ des höher *gestuften Shift-Ausdrucks*identisch.
 
-Im folgenden Beispiel wird eine Variable vom Typ **char** zu **int**herauf gestuft.
+Im folgenden Beispiel wird eine Variable vom Typ **`char`** zu einem herauf gestuft **`int`** .
 
 ```cpp
 #include <iostream>

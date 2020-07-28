@@ -37,12 +37,12 @@ helpviewer_keywords:
 - acosh function
 - acoshl function
 ms.assetid: 6985c4d7-9e2a-44ce-9a9b-5a43015f15f7
-ms.openlocfilehash: d0d691e394b0a508ca439934abdcdef1e1dfc95d
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: a6883c23d06115c8775dd919123671feac380b99
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913028"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220755"
 ---
 # <a name="acosh-acoshf-acoshl"></a>acosh, acoshf, acoshl
 
@@ -68,20 +68,20 @@ Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **acosh** -Funktionen geben den umgekehrten hyberbolischen Kosinus (hyperbolischen Arkus Kosinus) von *x*zurück. Diese Funktionen sind für die Domäne *x* 1 gültig. Wenn *x* kleiner als 1 ist, `errno` wird auf `EDOM` festgelegt, und das Ergebnis ist ein stilles Nan. Wenn *x* eine Stille Nan, unbegrenzt oder unendlich ist, wird derselbe Wert zurückgegeben.
+Die **acosh** -Funktionen geben den umgekehrten hyberbolischen Kosinus (hyperbolischen Arkus Kosinus) von *x*zurück. Diese Funktionen sind für die Domäne *x* 1 gültig. Wenn *x* kleiner als 1 ist, `errno` wird auf festgelegt, `EDOM` und das Ergebnis ist ein stilles Nan. Wenn *x* eine Stille Nan, unbegrenzt oder unendlich ist, wird derselbe Wert zurückgegeben.
 
 |Eingabe|SEH-Ausnahme|`_matherr` -Ausnahme|
 |-----------|-------------------|--------------------------|
 |± QNAN, IND, INF|Keine|Keine|
 |*x* < 1|Keine|Keine|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie C++ verwenden, können Sie über Ladungen von **acosh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **acosh** immer Double und gibt **Double**zurück.
+Wenn Sie C++ verwenden, können Sie über Ladungen von **acosh** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **acosh** immer an und gibt es zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
@@ -119,7 +119,7 @@ acosh( 1.324609 ) = 0.785398
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [asinh, asinhf, asinhl](asinh-asinhf-asinhl.md)<br/>
 [atanh, atanhf, atanhl](atanh-atanhf-atanhl.md)<br/>
 [cosh, coshf, coshl](cosh-coshf-coshl.md)<br/>

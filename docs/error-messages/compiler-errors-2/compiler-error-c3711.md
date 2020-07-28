@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3711
 ms.assetid: 26d581cc-2153-4ee0-b814-a371184be3e1
-ms.openlocfilehash: 7f2414a51321bf249e3ac049a7048f41b71cb856
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: bf8d1ea745ed96d782fdc95d825e278e894066ef
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74753405"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220183"
 ---
 # <a name="compiler-error-c3711"></a>Compilerfehler C3711
 
 "Methode": eine nicht verwaltete Ereignis Quell Methode muss "void" oder einen ganzzahligen Typ zurückgeben.
 
-Sie haben in der Ereignis Quelle eine Methode definiert, die nicht "void" oder einen ganzzahligen Typ zurückgegeben hat. Um diesen Fehler zu beheben, stellen Sie fest, dass das Ereignis und der Ereignishandler den Rückgabetyp `void` oder einen ganzzahligen Typ wie `int` oder `long`haben.
+Sie haben in der Ereignis Quelle eine Methode definiert, die nicht "void" oder einen ganzzahligen Typ zurückgegeben hat. Legen Sie zum Beheben dieses Fehlers fest, dass das Ereignis und der Ereignishandler den Rückgabetyp oder einen ganzzahligen **`void`** Typ wie **`int`** oder aufweisen **`long`** .
 
 Im folgenden Beispiel wird C3711 generiert:
 

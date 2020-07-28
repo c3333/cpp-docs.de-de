@@ -7,12 +7,12 @@ helpviewer_keywords:
 - decrement operators [C++]
 - decrement operators [C++], types of
 ms.assetid: 5423c6ce-3999-4a77-92f6-ad540add1b1d
-ms.openlocfilehash: 40ae12130fdced9fd958c3b8316fa3b718ca9b5b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 10cda57b74a7da57f2d48b91854b5d37c8d181f1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374131"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87186983"
 ---
 # <a name="increment-and-decrement-operator-overloading-c"></a>Überladen von Inkrementierungs- und Dekrementierungsoperatoren (C++)
 
@@ -22,10 +22,10 @@ Die Inkrement- und Dekrementoperatoren gehören einer speziellen Kategorie an, d
 
 - Prädekrement und Postdekrement
 
-Wenn Sie überladene Operator-Funktionen schreiben, kann es hilfreich sein, separate Versionen für die Präfix- und Postfix-Versionen dieser Operatoren zu implementieren. Um zwischen den beiden zu unterscheiden, wird die folgende Regel beachtet: Die Präfixform des Operators wird genau auf die gleiche Weise deklariert wie jeder andere unäre Operator; Das postfix-Formular akzeptiert ein zusätzliches Argument vom Typ **int**.
+Wenn Sie überladene Operator-Funktionen schreiben, kann es hilfreich sein, separate Versionen für die Präfix- und Postfix-Versionen dieser Operatoren zu implementieren. Um zwischen den beiden zu unterscheiden, wird die folgende Regel beachtet: das Präfix Format des Operators wird genau so deklariert wie jeder andere unäre Operator. Das postfix-Formular akzeptiert ein zusätzliches Argument vom Typ **`int`** .
 
 > [!NOTE]
-> Wenn Sie einen überladenen Operator für die Postfixform des Inkrement- oder Dekrementoperators angeben, muss das zusätzliche Argument vom Typ **int**sein. Wenn Sie einen anderen Typ angeben, wird ein Fehler generiert.
+> Wenn Sie einen überladenen Operator für die Postfix-Form des Inkrement-oder Dekrementoperators angeben, muss das zusätzliche Argument vom Typ sein **`int`** . bei Angabe eines beliebigen anderen Typs wird ein Fehler generiert.
 
 Das folgende Beispiel zeigt, wie Präfix- und Postfix-Inkrement- und Dekrementoperatoren für die Klasse `Point` definiert werden:
 
@@ -97,7 +97,7 @@ friend Point& operator--( Point& )      // Prefix decrement
 friend Point& operator--( Point&, int ) // Postfix decrement
 ```
 
-Das Argument vom Typ **int,** das die Postfixform des Inkrement- oder Dekrementoperators bezeichnet, wird nicht häufig zum Übergeben von Argumenten verwendet. Es enthält in der Regel den Wert 0. Es kann jedoch wie folgt verwendet werden:
+Das Argument vom Typ **`int`** , das die Postfix-Form des Inkrement-oder Dekrementoperators angibt, wird häufig nicht zum Übergeben von Argumenten verwendet. Es enthält in der Regel den Wert 0. Es kann jedoch wie folgt verwendet werden:
 
 ```cpp
 // increment_and_decrement2.cpp
@@ -124,8 +124,8 @@ int main()
 }
 ```
 
-Es gibt keine Syntax für die Verwendung von Inkrement- oder Dekrementoperatoren, um diese Werte auf eine andere Weise zu übertragen als durch expliziten Aufruf, wie im vorangehenden Code dargestellt. Eine einfachere Möglichkeit, diese Funktionalität zu implementieren, besteht**+=** darin, den Additions-/Zuweisungsoperator ( ) zu überlasten.
+Es gibt keine Syntax für die Verwendung von Inkrement- oder Dekrementoperatoren, um diese Werte auf eine andere Weise zu übertragen als durch expliziten Aufruf, wie im vorangehenden Code dargestellt. Eine einfachere Möglichkeit, diese Funktionalität zu implementieren, besteht darin, den Additions-/Zuweisungs Operator () zu überladen **+=** .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Operatorüberladung](../cpp/operator-overloading.md)
+[Operator Überladung](../cpp/operator-overloading.md)
