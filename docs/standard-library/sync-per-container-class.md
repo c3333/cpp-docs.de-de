@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - sync_per_container class
 ms.assetid: 0b4b2904-b668-4d94-a422-d4f919cbffab
-ms.openlocfilehash: 2c60911b5469cbf74944c9f63af44f2351790280
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d38307c4ae19e5f87d0dbcca8943dc1c3f239917
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376550"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232897"
 ---
 # <a name="sync_per_container-class"></a>sync_per_container-Klasse
 
@@ -28,7 +28,7 @@ class sync_per_container
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Cache*|Der Cachetyp, der diesem Synchronisierungsfilter zugeordnet werden soll. Dieser kann [cache_chunklist](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
@@ -38,13 +38,13 @@ class sync_per_container
 |-|-|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="sync_per_containerequals"></a><a name="equals"></a>sync_per_container::gleich
+## <a name="sync_per_containerequals"></a><a name="equals"></a>Sync_per_container:: ist Gleichheits
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -54,17 +54,17 @@ bool equals(const sync_per_container<Cache>& Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Cache*|Das Cache-Objekt des Synchronisierungsfilters.|
 |*Andere*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Memberfunktion gibt immer **false**zurück.
+Die Member-Funktion gibt immer zurück **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

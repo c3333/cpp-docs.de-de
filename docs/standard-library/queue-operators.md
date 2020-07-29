@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::operator&lt; (queue)
 - std::operator&lt;= (queue)
 - std::operator== (queue)
-ms.openlocfilehash: 420d717b34b6c17587f8790701906e06ab008d96
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 8c02e79e6a300f23ac31ea876c9d4576cfe5e9a8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425250"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232923"
 ---
 # <a name="ltqueuegt-operators"></a>&lt;queue&gt;-Operatoren
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das queue-Objekt links vom Operator ungleich dem queue-Objekt rechts vom Operator ist.
 
@@ -35,17 +35,17 @@ bool operator!=(const queue <Type, Container>& left, const queue <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `queue`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `queue`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlangen ungleich sind; **FALSE**, wenn die Warteschlangen gleich sind.
+**`true`**, wenn die Warteschlangen nicht gleich sind. , **`false`** Wenn Warteschlangen gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Warteschlangen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -92,7 +92,7 @@ The queues q1 and q2 are not equal.
 The queues q1 and q3 are equal.
 ```
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das queue-Objekt links vom Operator kleiner ist als das queue-Objekt rechts vom Operator.
 
@@ -102,17 +102,17 @@ bool operator<(const queue <Type, Container>& left, const queue <Type, Container
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `queue`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `queue`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlange links vom Operator kleiner als, aber ungleich der Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Warteschlange Links vom Operator kleiner als und nicht gleich der Warteschlange rechts vom Operator ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als“ zwischen zwei Warteschlangenobjekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -155,7 +155,7 @@ The queue q1 is less than the queue q2.
 The queue q1 is not less than the queue q3.
 ```
 
-## <a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das queue-Objekt links vom Operator kleiner gleich dem queue-Objekt rechts vom Operator ist.
 
@@ -165,17 +165,17 @@ bool operator<=(const queue <Type, Container>& left, const queue <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `queue`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `queue`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlange links vom Operator strikt kleiner als die Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Warteschlange Links vom Operator strikt kleiner als die Warteschlange auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als oder gleich“ zwischen zwei Warteschlangenobjekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -220,7 +220,7 @@ The queue q1 is greater than the queue q2.
 The queue q1 is less than or equal to the queue q3.
 ```
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Warteschlangenobjekt links vom Operator gleich dem Warteschlangenobjekt rechts vom Operator ist.
 
@@ -230,17 +230,17 @@ bool operator==(const queue <Type, Container>& left, const queue <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `queue`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `queue`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlangen ungleich sind; **FALSE**, wenn die Warteschlangen gleich sind.
+**`true`**, wenn die Warteschlangen nicht gleich sind. , **`false`** Wenn Warteschlangen gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Warteschlangen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -286,7 +286,7 @@ The queues q1 and q2 are not equal.
 The queues q1 and q3 are equal.
 ```
 
-## <a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das queue-Objekt links vom Operator größer ist als das queue-Objekt rechts vom Operator.
 
@@ -296,17 +296,17 @@ bool operator>(const queue <Type, Container>& left, const queue <Type, Container
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `queue`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `queue`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlange links vom Operator strikt kleiner als die Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Warteschlange Links vom Operator strikt kleiner als die Warteschlange auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „größer als“ zwischen zwei Warteschlangenobjekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -352,7 +352,7 @@ The queue q1 is not greater than the queue q2.
 The queue q1 is greater than the queue q3.
 ```
 
-## <a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das queue-Objekt links vom Operator größer gleich dem queue-Objekt rechts vom Operator ist.
 
@@ -362,17 +362,17 @@ bool operator>=(const queue <Type, Container>& left, const queue <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `queue`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `queue`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlange links vom Operator strikt kleiner als die Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Warteschlange Links vom Operator strikt kleiner als die Warteschlange auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Warteschlangen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 

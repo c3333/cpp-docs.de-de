@@ -12,12 +12,12 @@ helpviewer_keywords:
 - stdext::sync_none [C++], deallocate
 - stdext::sync_none [C++], equals
 ms.assetid: f7473cee-14f3-4fe1-88bc-68cd085e59e1
-ms.openlocfilehash: 046cbca30b6cdef2dc4e7dbbe2791d52384d9f25
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4caf2cc2b6aa7494f343d10709f3190cb41631be
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376574"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232910"
 ---
 # <a name="sync_none-class"></a>sync_none-Klasse
 
@@ -32,7 +32,7 @@ class sync_none
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |`Cache`|Der Cachetyp, der diesem Synchronisierungsfilter zugeordnet werden soll. Dieser kann [cache_chunklist](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
@@ -40,17 +40,17 @@ class sync_none
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
-|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[allocate](#allocate)|Belegt einen Speicherblock.|
+|[DEALLOCATE](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="sync_noneallocate"></a><a name="allocate"></a>sync_none::zuweisen
+## <a name="sync_noneallocate"></a><a name="allocate"></a>Sync_none:: zuordnen
 
 Belegt einen Speicherblock.
 
@@ -60,7 +60,7 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
@@ -68,7 +68,7 @@ void *allocate(std::size_t count);
 
 Die Memberfunktion gibt `cache.allocate(count)` zurück, wobei `cache` das Cache-Objekt ist.
 
-## <a name="sync_nonedeallocate"></a><a name="deallocate"></a>sync_none::deallocate
+## <a name="sync_nonedeallocate"></a><a name="deallocate"></a>Sync_none::d ezuordnen
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -78,16 +78,16 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
-|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
+|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion ruft `cache.deallocate(ptr, count)` auf, wobei `cache` das Cache-Objekt darstellt.
 
-## <a name="sync_noneequals"></a><a name="equals"></a>sync_none::gleich
+## <a name="sync_noneequals"></a><a name="equals"></a>Sync_none:: ist Gleichheits
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -97,17 +97,17 @@ bool equals(const sync<Cache>& Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Cache*|Das Cache-Objekt des Synchronisierungsfilters.|
 |*Andere*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Memberfunktion gibt immer **true**zurück.
+Die Member-Funktion gibt immer zurück **`true`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

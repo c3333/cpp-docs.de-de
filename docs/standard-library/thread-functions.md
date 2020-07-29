@@ -14,12 +14,12 @@ helpviewer_keywords:
 - std::sleep_until [C++]
 - std::swap [C++]
 - std::yield [C++]
-ms.openlocfilehash: bb0a0a12ec2882701447804f9c88d1776a196cb7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 130328ca07de28e14eedd7fdc99fb8946f26c5cb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375836"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232858"
 ---
 # <a name="ltthreadgt-functions"></a>&lt;thread&gt;-Funktionen
 
@@ -57,7 +57,7 @@ Ein [Dauer](../standard-library/duration-class.md)-Objekt, das ein Zeitintervall
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Funktion blockiert den aufrufenden Thread mindestens für die Zeit, die von *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
+Die-Funktion sperrt den aufrufenden Thread zumindest für die Zeit, die durch *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
 
 ## <a name="sleep_until"></a><a name="sleep_until"></a>sleep_until
 
@@ -79,9 +79,9 @@ Stellt einen Zeitpunkt dar.
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="swap"></a><a name="swap"></a>Swap
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
-Vertauscht die Zustände von zwei **Threadobjekten.**
+Vertauscht die Zustände von zwei `thread`-Objekten.
 
 ```cpp
 void swap(thread& Left, thread& Right) noexcept;
@@ -89,17 +89,17 @@ void swap(thread& Left, thread& Right) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Das linke **Threadobjekt.**
+*Linken*\
+Das linke `thread`-Objekt.
 
 *Richting*\
-Das richtige **Threadobjekt.**
+Das rechte `thread`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Funktion ruft `Left.swap(Right)` auf.
 
-## <a name="yield"></a><a name="yield"></a>Ertrag
+## <a name="yield"></a><a name="yield"></a>Yield
 
 Signalisiert dem Betriebssystem, andere Threads auszuführen, auch wenn der aktuelle Thread normalerweise weiterhin ausgeführt werden würde.
 
@@ -109,4 +109,4 @@ inline void yield() noexcept;
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<Gewinde>](../standard-library/thread.md)
+[\<thread>](../standard-library/thread.md)

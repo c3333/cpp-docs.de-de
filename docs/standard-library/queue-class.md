@@ -22,12 +22,12 @@ helpviewer_keywords:
 - std::queue [C++], push
 - std::queue [C++], size
 ms.assetid: 28c20ab0-3a72-4185-9e0f-5a44eea0e204
-ms.openlocfilehash: 512b9499e63933a71a27a87f91a3bef8a65339e1
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 331ca298507e0ebecac0376f660feefdafd9d99d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425256"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232936"
 ---
 # <a name="queue-class"></a>queue-Klasse
 
@@ -42,27 +42,27 @@ class queue
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*\
+*Sorte*\
 Der in der Warteschlange zu speichernde Elementdatentyp.
 
-*Container*\
+*Kum*\
 Der Typ des zugrunde liegenden Containers, der verwendet wird, um die Warteschlange zu implementieren.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Elemente der-`Type` Klasse, die im ersten Vorlagen Parameter eines Queue-Objekts festgelegt wurden, sind mit [value_type](#value_type) Synonym und müssen mit dem Typ des Elements in der zugrunde liegenden Container Klasse `Container`, das durch den zweiten Vorlagen Parameter festgelegt ist, identisch sein. Der `Type` muss zugewiesen werden können, sodass es möglich ist, Objekte dieses Typs zu kopieren und Variablen dieses Typs Werte zuzuweisen.
+Die Elemente der-Klasse, die `Type` im ersten Vorlagen Parameter eines Queue-Objekts festgelegt sind, entsprechen [value_type](#value_type) und müssen mit dem Typ des Elements in der zugrunde liegenden Container Klasse, `Container` die durch den zweiten Vorlagen Parameter festgelegt ist, identisch sein. `Type`Muss zugewiesen werden können, sodass es möglich ist, Objekte dieses Typs zu kopieren und Variablen dieses Typs Werte zuzuweisen.
 
-Geeignete zugrunde liegende Containerklassen für die Warteschlange sind [Deque](../standard-library/deque-class.md) und [List](../standard-library/list-class.md)oder ein beliebiger anderer Sequenz Container, der die Vorgänge von `front`, `back`, `push_back`und `pop_front`unterstützt. Die zugrunde liegende Containerklasse wird im Containeradapter gekapselt, der nur den begrenzten Satz der Memberfunktionen des Sequenzcontainers als öffentliche Schnittstelle verfügbar macht.
+Geeignete zugrunde liegende Containerklassen für die Warteschlange sind [Deque](../standard-library/deque-class.md) und [List](../standard-library/list-class.md)oder ein beliebiger anderer Sequenz Container, der die Vorgänge von `front` , `back` , und unterstützt `push_back` `pop_front` . Die zugrunde liegende Containerklasse wird im Containeradapter gekapselt, der nur den begrenzten Satz der Memberfunktionen des Sequenzcontainers als öffentliche Schnittstelle verfügbar macht.
 
-Die Warteschlangen Objekte sind bei und nur dann vergleichbar, wenn die Elemente der Klasse `Type` auf Gleichheit vergleichbar sind und kleiner als vergleichbar sind, wenn die Elemente der Klasse `Type` kleiner als vergleichbar sind.
+Die Warteschlangen Objekte sind bei und nur dann vergleichbar, wenn die Elemente der Klasse auf `Type` Gleichheit vergleichbar sind, und sind nur dann weniger als vergleichbar, wenn die Elemente der Klasse `Type` kleiner als vergleichbar sind.
 
 Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek definiert werden: Stapel, Warteschlangen und Warteschlangen mit hoher Priorität. Jede schränkt die Funktionalität von einigen zugrunde liegenden Containerklassen ein, um eine präzise gesteuerte Oberfläche für eine Standarddatenstruktur anzubieten.
 
-- Die [Stapelklasse](../standard-library/stack-class.md) unterstützt eine LIFO-Datenstruktur (Last In – First Out). Eine gute Analogie, um sich dies zu merken, ist ein Stapel von Tellern. Elemente (Teller) können eingefügt, überprüft oder nur vom Anfang des Stapels entnommen werden, was dem letzten Element am Ende des Basiscontainers entspricht. Die Beschränkung, nur auf das oberste Element zuzugreifen, ist der Grund für die Verwendung der stack-Klasse.
+- Die [Stack-Klasse](../standard-library/stack-class.md) unterstützt eine LIFO-Datenstruktur (Last in, First Out). Eine gute Analogie, um sich dies zu merken, ist ein Stapel von Tellern. Elemente (Teller) können eingefügt, überprüft oder nur vom Anfang des Stapels entnommen werden, was dem letzten Element am Ende des Basiscontainers entspricht. Die Beschränkung, nur auf das oberste Element zuzugreifen, ist der Grund für die Verwendung der stack-Klasse.
 
-- Die queue-Klasse unterstützt eine FIFO-Datenstruktur (First In – First Out). Eine gute Analogie, um sich dies zu merken, sind Personen, die an einem Bankschalter anstehen. Elemente (Personen) können am Ende der Schlange hinzugefügt werden und vom Anfang der Schlange entfernt werden. Sowohl der Anfang als auch das Ende einer Schlange können überprüft werden. Die in dieser Weise umgesetzte Beschränkung, nur auf das vorderste und das hinterste Element zugreifen zu können, ist der Grund für das Verwenden der Warteschlangenklasse.
+- Die Warteschlangenklasse unterstützt eine FIFO-Datenstruktur (First In – First Out). Eine gute Analogie, um sich dies zu merken, sind Personen, die an einem Bankschalter anstehen. Elemente (Personen) können am Ende der Schlange hinzugefügt werden und vom Anfang der Schlange entfernt werden. Sowohl der Anfang als auch das Ende einer Schlange können überprüft werden. Die in dieser Weise umgesetzte Beschränkung, nur auf das vorderste und das hinterste Element zugreifen zu können, ist der Grund für das Verwenden der Warteschlangenklasse.
 
-- In der [Warteschlangenklasse mit hoher Priorität](../standard-library/priority-queue-class.md) sind deren Elemente so sortiert, dass sich das größte Element immer an der obersten Position befindet. Die Klasse unterstützt Einfügen eines Elements sowie die Prüfung und Entfernung des obersten Elements. Eine gute Analogie, um sich dies zu merken, sind Personen, die in einer Schlange stehen, in der sie nach Alter, Größe oder einem anderen Kriterium angeordnet sind.
+- In der [priority_queue-Klasse](../standard-library/priority-queue-class.md) sind deren Elemente so sortiert, dass sich das größte Element immer an der obersten Position befindet. Die Klasse unterstützt Einfügen eines Elements sowie die Prüfung und Entfernung des obersten Elements. Eine gute Analogie, um sich dies zu merken, sind Personen, die in einer Schlange stehen, in der sie nach Alter, Größe oder einem anderen Kriterium angeordnet sind.
 
 ## <a name="members"></a>Member
 
@@ -70,7 +70,7 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 
 |||
 |-|-|
-|[queue](#queue)|Erstellt ein `queue`-Objekt, das leer oder eine Kopie eines Basiscontainerobjekts ist.|
+|[Ei](#queue)|Erstellt ein `queue`-Objekt, das leer oder eine Kopie eines Basiscontainerobjekts ist.|
 
 ### <a name="typedefs"></a>TypeDefs
 
@@ -80,18 +80,18 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 |[size_type](#size_type)|Eine Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in `queue` darstellen kann.|
 |[value_type](#value_type)|Ein Typ, der den Typ des Objekts angibt, das in einem `queue`-Objekt als Element gespeichert wird.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |||
 |-|-|
-|[Rückseite](#back)|Gibt ein Verweis auf das letzte und das zuletzt hinzugefügte Element auf der Rückseite des `queue` zurück.|
-|[leer](#empty)|Testet, ob das `queue`-Objekt ist leer.|
-|[Vorderseite](#front)|Gibt einen Verweis auf das erste Element auf der Vorderseite von `queue` zurück.|
-|[pop](#pop)|Entfernt ein Element vom Anfang der `queue`.|
+|[Zurück](#back)|Gibt ein Verweis auf das letzte und das zuletzt hinzugefügte Element auf der Rückseite des `queue` zurück.|
+|[empty](#empty)|Testet, ob das `queue`-Objekt ist leer.|
+|[Beifahrer](#front)|Gibt einen Verweis auf das erste Element auf der Vorderseite von `queue` zurück.|
+|[Chor](#pop)|Entfernt ein Element vom Anfang der `queue`.|
 |[push](#push)|Fügt am Ende der `queue` ein Element hinzu.|
 |[size](#size)|Gibt die Anzahl von Elementen in der `queue` zurück.|
 
-## <a name="back"></a>Zurück
+## <a name="back"></a><a name="back"></a>Zurück
 
 Gibt einen Verweis auf das letzte und das zuletzt hinzugefügte Element auf der Rückseite der Warteschlange zurück.
 
@@ -105,11 +105,11 @@ const_reference back() const;
 
 Das letzte Element der Warteschlange. Wenn die Warteschlange leer ist, ist der Rückgabewert nicht definiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Rückgabewert von `back` einem `const_reference` zugewiesen wird, kann das Warteschlangenobjekt nicht geändert werden. Wenn der Rückgabewert von `back` einem `reference`zugewiesen wird, kann das Warteschlangen Objekt geändert werden.
+Wenn der Rückgabewert von `back` einem `const_reference` zugewiesen wird, kann das Warteschlangenobjekt nicht geändert werden. Wenn der Rückgabewert von `back` einem zugewiesen wird `reference` , kann das Warteschlangen Objekt geändert werden.
 
-Wenn [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) beim Kompilieren als 1 oder 2 definiert ist, tritt beim Zugriff auf ein Element in einer leeren Warteschlange ein Laufzeitfehler auf.  Weitere Informationen finden Sie unter [Checked Iterators](../standard-library/checked-iterators.md) .
+Wenn [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) beim Kompilieren als 1 oder 2 definiert ist, tritt beim Zugriff auf ein Element in einer leeren Warteschlange ein Laufzeitfehler auf.  Weitere Informationen finden Sie unter [Überprüfte Iteratoren](../standard-library/checked-iterators.md) .
 
 ### <a name="example"></a>Beispiel
 
@@ -137,7 +137,7 @@ int main( )
 }
 ```
 
-## <a name="container_type"></a>container_type
+## <a name="container_type"></a><a name="container_type"></a>container_type
 
 Ein Typ, der den anzupassenden Basiscontainer bereitstellt.
 
@@ -145,9 +145,9 @@ Ein Typ, der den anzupassenden Basiscontainer bereitstellt.
 typedef Container container_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `Container`dar. Zwei Sequenzcontainerklassen der C++-Standardbibliothek — die Listklasse und die Standarddoppelschlangenklasse — erfüllen die Anforderungen, um als Basiscontainer für ein Warteschlangenobjekt verwendet zu werden. Benutzerdefinierte Typen, die diese Anforderung erfüllen, können auch verwendet werden.
+Der Type stellt ein Synonym für den Vorlagenparameter `Container` dar. Zwei Sequenzcontainerklassen der C++-Standardbibliothek — die Listklasse und die Standarddoppelschlangenklasse — erfüllen die Anforderungen, um als Basiscontainer für ein Warteschlangenobjekt verwendet zu werden. Benutzerdefinierte Typen, die diese Anforderung erfüllen, können auch verwendet werden.
 
 Weitere Informationen zu `Container` finden Sie im Abschnitt „Hinweise“ des Themas [Warteschlangenklasse](../standard-library/queue-class.md).
 
@@ -155,7 +155,7 @@ Weitere Informationen zu `Container` finden Sie im Abschnitt „Hinweise“ des 
 
 Im Beispiel für [Warteschlange](#queue) wird verdeutlicht, wie ein `container_type` deklariert und verwendet wird.
 
-## <a name="empty"></a>leer
+## <a name="empty"></a><a name="empty"></a>leer
 
 Testet, ob eine Warteschlange leer ist.
 
@@ -165,7 +165,7 @@ bool empty() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Warteschlange leer ist; **FALSE**, wenn die Warteschlange nicht leer ist.
+**`true`**, wenn die Warteschlange leer ist. , **`false`** Wenn die Warteschlange nicht leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -201,7 +201,7 @@ The queue q1 is not empty.
 The queue q2 is empty.
 ```
 
-## <a name="front"></a>Beifahrer
+## <a name="front"></a><a name="front"></a>Beifahrer
 
 Gibt einen Verweis auf das erste Element auf der Vorderseite einer Warteschlange zurück.
 
@@ -215,13 +215,13 @@ const_reference front() const;
 
 Das erste Element der Warteschlange. Wenn die Warteschlange leer ist, ist der Rückgabewert nicht definiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Rückgabewert von `front` einem `const_reference` zugewiesen wird, kann das Warteschlangenobjekt nicht geändert werden. Wenn der Rückgabewert von `front` einem `reference`zugewiesen wird, kann das Warteschlangen Objekt geändert werden.
+Wenn der Rückgabewert von `front` einem `const_reference` zugewiesen wird, kann das Warteschlangenobjekt nicht geändert werden. Wenn der Rückgabewert von `front` einem zugewiesen wird `reference` , kann das Warteschlangen Objekt geändert werden.
 
-Die Member-Funktion gibt eine `reference` an das erste Element der kontrollierten Sequenz zurück, die nicht leer sein darf.
+Die Member-Funktion gibt ein `reference` an das erste Element der kontrollierten Sequenz zurück, das nicht leer sein darf.
 
-Wenn [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) beim Kompilieren als 1 oder 2 definiert ist, tritt beim Zugriff auf ein Element in einer leeren Warteschlange ein Laufzeitfehler auf.  Weitere Informationen finden Sie unter [Checked Iterators](../standard-library/checked-iterators.md) .
+Wenn [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) beim Kompilieren als 1 oder 2 definiert ist, tritt beim Zugriff auf ein Element in einer leeren Warteschlange ein Laufzeitfehler auf.  Weitere Informationen finden Sie unter [Überprüfte Iteratoren](../standard-library/checked-iterators.md) .
 
 ### <a name="example"></a>Beispiel
 
@@ -253,7 +253,7 @@ int main() {
 }
 ```
 
-## <a name="pop"></a>Chor
+## <a name="pop"></a><a name="pop"></a>Chor
 
 Entfernt ein Element von der Vorderseite der Warteschlange.
 
@@ -261,7 +261,7 @@ Entfernt ein Element von der Vorderseite der Warteschlange.
 void pop();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Warteschlange darf nicht leer sein, damit die Memberfunktion angewendet wird. Am Anfang der Warteschlange befindet sich das zuletzt hinzugefügte Element und es ist das letzte Element am Ende des Containers.
 
@@ -309,7 +309,7 @@ After a pop the queue length is 2.
 After a pop, the element at the front of the queue is 20.
 ```
 
-## <a name="push"></a>Push
+## <a name="push"></a><a name="push"></a>Push
 
 Fügt am Ende der Warteschlange ein Element hinzu.
 
@@ -319,10 +319,10 @@ void push(const Type& val);
 
 ### <a name="parameters"></a>Parameter
 
-*Val* -\
+*ster*\
 Das Element, das am Ende der Warteschlange hinzugefügt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 An der Rückseite der Warteschlange befinden sich die zuletzt hinzugefügten Elemente und das letzte Element am Ende des Containers.
 
@@ -358,7 +358,7 @@ The queue length is 3.
 The element at the front of the queue is 10.
 ```
 
-## <a name="queue"></a>Ei
+## <a name="queue"></a><a name="queue"></a>-Warteschlange
 
 Erstellt eine Warteschlange, die leer oder eine Kopie eines Basiscontainerobjekts ist.
 
@@ -370,10 +370,10 @@ explicit queue(const container_type& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte*\
-Der **const**-Container, dessen Kopie die erstellte Warteschlange sein soll.
+*Richting*\
+Der **`const`** Container, dessen Kopie die erstellte Warteschlange sein soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Basisstandardcontainer für die Warteschlange ist die Doppelschlange. Sie können auch die Liste als Basiscontainer angeben, Sie können jedoch keinen Vektor angeben, da die erforderliche `pop_front`-Memberfunktion fehlt.
 
@@ -425,7 +425,7 @@ The element at the front of queue q5 is 1.
 The element at the back of queue q5 is 2.
 ```
 
-## <a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a>Größe
 
 Gibt die Anzahl der Elemente in der Warteschlange zurück.
 
@@ -466,7 +466,7 @@ The queue length is 1.
 The queue length is now 2.
 ```
 
-## <a name="size_type"></a>size_type
+## <a name="size_type"></a><a name="size_type"></a>size_type
 
 Ein Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in einer Warteschlange darstellen kann.
 
@@ -474,7 +474,7 @@ Ein Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in einer Warteschl
 typedef typename Container::size_type size_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für das `size_type` des Basiscontainers, der von der Warteschlange angepasst wurde.
 
@@ -482,7 +482,7 @@ Der Typ ist ein Synonym für das `size_type` des Basiscontainers, der von der Wa
 
 Im Beispiel für [queue::front](#front) wird verdeutlicht, wie ein `size_type` deklariert und verwendet wird.
 
-## <a name="value_type"></a>value_type
+## <a name="value_type"></a><a name="value_type"></a>value_type
 
 Ein Typ, der den Objekttyp angibt, der als Element in einer Warteschlange gespeichert wird.
 
@@ -490,7 +490,7 @@ Ein Typ, der den Objekttyp angibt, der als Element in einer Warteschlange gespei
 typedef typename Container::value_type value_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für das `value_type` des Basiscontainers, der von der Warteschlange angepasst wurde.
 
@@ -526,5 +526,5 @@ The element at the front of the queue is 69.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

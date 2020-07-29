@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::piecewise_linear_distribution [C++], param_type
 - std::piecewise_linear_distribution [C++], param_type
 ms.assetid: cd141152-7163-4754-8f98-c6d6500005e0
-ms.openlocfilehash: 7d9e1f1b9af3002faa9e2d9b20b7ee76dce35aea
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 085ab8eda0a07decf69d139382a272700bebac7b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372085"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232975"
 ---
 # <a name="piecewise_linear_distribution-class"></a>piecewise_linear_distribution-Klasse
 
@@ -81,7 +81,7 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType*\
-Der Gleitkommaergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -106,7 +106,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="example"></a>Beispiel
 
@@ -213,13 +213,13 @@ Distribution for 100 samples:
    14-15 :::::
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="piecewise_linear_distributionpiecewise_linear_distribution"></a><a name="piecewise_linear_distribution"></a>piecewise_linear_distribution::piecewise_linear_distribution
+## <a name="piecewise_linear_distributionpiecewise_linear_distribution"></a><a name="piecewise_linear_distribution"></a>piecewise_linear_distribution::p iecewise_linear_distribution
 
 Erstellt die Verteilung.
 
@@ -249,19 +249,19 @@ explicit piecewise_linear_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*firstI*\
+*firsti*\
 Ein Eingabeiterator für das erste Element im Verteilungsbereich.
 
-*lastI*\
+*lasti*\
 Ein Eingabeiterator für das letzte Element im Verteilungsbereich.
 
 *firstW*\
 Ein Eingabeiterator für das erste Element im Gewichtsbereich.
 
-*Intervallen*\
+*Abstände*\
 Ein [initializer_list](../cpp/initializers.md) mit den Verteilungsintervallen.
 
-*Count*\
+*Countdown*\
 Die Anzahl von Elementen im Verteilungsbereich.
 
 *xmin*\
@@ -271,9 +271,9 @@ Der niedrigste Wert im Verteilungsbereich.
 Der höchste Wert im Verteilungsbereich. Muss größer als *xmin* sein.
 
 *weightfunc*\
-Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der Parameter als auch der Rückgabewert müssen in **Double konvertierbar**sein.
+Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der-Parameter als auch der Rückgabewert müssen in konvertierbar sein **`double`** .
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -290,7 +290,7 @@ piecewise_linear_distribution(
     InputIteratorW firstW);
 ```
 
-erstellt ein Verteilungsobjekt mit itnervals aus Iteratoren über die Sequenz [ `firstI`, `lastI`) und eine übereinstimmende Gewichtssequenz ab *firstW*.
+erstellt ein Verteilungs Objekt mit Intervallen von Iteratoren über die Sequenz [ `firstI` , `lastI` ) und eine entsprechende Gewichtungs Sequenz, beginnend bei *firstw*.
 
 Der Initialisiererlistenkonstruktor
 
@@ -301,7 +301,7 @@ piecewise_linear_distribution(
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungsobjekt mit Intervallen *intervals* aus den Initialisierungslistenintervallen und Gewichtungen, die aus der Funktion *weightfunc*generiert werden.
+erstellt ein Verteilungs Objekt mit Intervallen aus den initialisiererlistenintervallen und Gewichtungen, die aus der Funktion " *weightfunc*" generiert werden. *intervals*
 
 Der als
 
@@ -314,7 +314,7 @@ piecewise_linear_distribution(
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungsobjekt mit gleichmäßig verteilten *Zählintervallen* über `xmin,xmax`[ ], wobei jede Intervallgewichtung entsprechend der Funktion *weightfunc*zugewiesen wird, und *weightfunc* muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, die beide in `double`. **Voraussetzung:**`xmin < xmax`.
+erstellt ein Verteilungs Objekt mit gleichmäßig über [] verteilten *Zähl* Intervallen und `xmin,xmax` weist jedem Intervall Gewichtungs Gewichtungen entsprechend der *weightfunc*-Funktion zu. *weightfunc* muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, der beide in konvertierbar sind **`double`** . **Vorbedingung:** `xmin < xmax` .
 
 Der als
 
@@ -322,9 +322,9 @@ Der als
 explicit piecewise_linear_distribution(const param_type& parm);
 ```
 
-erstellt ein Verteilungsobjekt unter Verwendung von *parm* als gespeicherte Parameterstruktur.
+erstellt ein Verteilungs *Objekt mit einem* Parameter als gespeicherte Parameter Struktur.
 
-## <a name="piecewise_linear_distributionparam_type"></a><a name="param_type"></a>piecewise_linear_distribution::param_type
+## <a name="piecewise_linear_distributionparam_type"></a><a name="param_type"></a>piecewise_linear_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -352,10 +352,10 @@ Siehe Konstruktorparameter für [piecewise_linear_distribution](#piecewise_linea
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`xmin < xmax`
+**Vorbedingung:**`xmin < xmax`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)
