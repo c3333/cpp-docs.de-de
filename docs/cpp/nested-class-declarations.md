@@ -9,12 +9,12 @@ helpviewer_keywords:
 - declaring classes [C++]
 - declarations, nested classes
 ms.assetid: c02e471d-b7f9-41b8-8ef6-2323f006dbd5
-ms.openlocfilehash: 8ace21e3c8ced72b34898a716eae882a3750c8ef
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 672156e65e223be45c91558ed91065859566a8b9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367901"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227282"
 ---
 # <a name="nested-class-declarations"></a>Geschachtelte Klassendeklarationen
 
@@ -54,7 +54,7 @@ int main()
 }
 ```
 
-`BufferedIO::BufferedInput`und `BufferedIO::BufferedOutput` werden `BufferedIO`innerhalb deklariert. Diese Klassennamen sind außerhalb des gültigen Bereichs der Klasse `BufferedIO` nicht sichtbar. Ein Objekt vom Typ `BufferedIO` enthält jedoch keine Objekte des Typs `BufferedInput` oder `BufferedOutput`.
+`BufferedIO::BufferedInput`und `BufferedIO::BufferedOutput` werden innerhalb von deklariert `BufferedIO` . Diese Klassennamen sind außerhalb des gültigen Bereichs der Klasse `BufferedIO` nicht sichtbar. Ein Objekt vom Typ `BufferedIO` enthält jedoch keine Objekte des Typs `BufferedInput` oder `BufferedOutput`.
 
 Geschachtelte Klassen können Namen, Typnamen, Namen statischer Member und Enumeratoren nur aus der einschließenden Klasse direkt verwenden. Um Namen von anderen Klassenmembern zu verwenden, müssen Sie Zeiger, Verweise oder Objektnamen verwenden.
 
@@ -134,13 +134,13 @@ int main()
 }
 ```
 
-Im vorherigen Beispiel wird die Syntax *mit qualifiziertem Typnamen* verwendet, um den Funktionsnamen zu deklarieren. Die Deklaration:
+Im vorherigen Beispiel wird die Syntax des *qualifizierten Typnamens* verwendet, um den Funktionsnamen zu deklarieren. Die Deklaration:
 
 ```cpp
 BufferedIO::BufferedInput::read()
 ```
 
-bedeutet "die `read`-Funktion, die ein Member der `BufferedInput`-Klasse ist, die im Bereich der `BufferedIO`-Klasse liegt". Da diese Deklaration die Syntax *des qualifizierten Typnamens* verwendet, sind Konstrukte der folgenden Form möglich:
+bedeutet "die `read`-Funktion, die ein Member der `BufferedInput`-Klasse ist, die im Bereich der `BufferedIO`-Klasse liegt". Da diese Deklaration die *qualified-Type-Name-* Syntax verwendet, sind Konstrukte der folgenden Form möglich:
 
 ```cpp
 typedef BufferedIO::BufferedInput BIO_INPUT;
@@ -148,7 +148,7 @@ typedef BufferedIO::BufferedInput BIO_INPUT;
 int BIO_INPUT::read()
 ```
 
-Die vorangehende Deklaration entspricht der vorherigen, verwendet jedoch anstelle der Klassennamen einen **typedef-Namen.**
+Die vorangehende Deklaration entspricht der vorherigen Deklaration, aber Sie verwendet einen **`typedef`** Namen anstelle der Klassennamen.
 
 ## <a name="friend-functions-in-nested-classes"></a>Friend-Funktionen in geschachtelten Klassen
 

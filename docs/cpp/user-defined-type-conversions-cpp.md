@@ -22,18 +22,18 @@ helpviewer_keywords:
 - conversions [C++], by constructors
 - data type conversion [C++], explicit
 ms.assetid: d40e4310-a190-4e95-a34c-22c5c20aa0b9
-ms.openlocfilehash: e74d5b3a748a9aab22a6a9d83c4d6c4bd3379df4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e7889a7365a6b3a362804d3dad4b2fefc3780d01
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374680"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227035"
 ---
 # <a name="user-defined-type-conversions-c"></a>Benutzerdefinierte Typkonvertierungen (C++)
 
-Eine *Konvertierung* erzeugt einen neuen Wert eines Typs aus einem Wert eines anderen Typs. *Standardkonvertierungen* sind in die C++-Sprache integriert und unterstützen die integrierten Typen, und Sie können *benutzerdefinierte Konvertierungen* erstellen, um Konvertierungen in, von oder zwischen benutzerdefinierten Typen durchzuführen.
+Eine *Konvertierung* erzeugt einen neuen Wert eines Typs aus einem Wert eines anderen Typs. *Standard Konvertierungen* werden in die C++-Sprache integriert und unterstützen die integrierten Typen, und Sie können *benutzerdefinierte Konvertierungen* erstellen, um Konvertierungen in, aus oder zwischen benutzerdefinierten Typen auszuführen.
 
-Die Standardkonvertierungen konvertieren zwischen integrierten Typen, zwischen Zeigern oder Verweisen auf Typen, die durch Vererbung verwandt sind, von und zu void-Zeigern und zum NULL-Zeiger. Weitere Informationen finden Sie unter [Standardkonvertierungen](../cpp/standard-conversions.md). Benutzerdefinierte Konvertierungen konvertieren zwischen benutzerdefinierten Typen oder zwischen benutzerdefinierten Typen und integrierten Typen. Sie können sie als [Konvertierungskonstruktoren](#ConvCTOR) oder als [Konvertierungsfunktionen](#ConvFunc)implementieren.
+Die Standardkonvertierungen konvertieren zwischen integrierten Typen, zwischen Zeigern oder Verweisen auf Typen, die durch Vererbung verwandt sind, von und zu void-Zeigern und zum NULL-Zeiger. Weitere Informationen finden Sie unter [Standard Konvertierungen](../cpp/standard-conversions.md). Benutzerdefinierte Konvertierungen konvertieren zwischen benutzerdefinierten Typen oder zwischen benutzerdefinierten Typen und integrierten Typen. Sie können als [konvertierungskonstruktoren](#ConvCTOR) oder als [Konvertierungs Funktionen](#ConvFunc)implementiert werden.
 
 Konvertierungen können entweder explizit sein—wenn ein Programmierer einen Typen z. B. durch eine Umwandlung oder direkte Initialisierung in einen anderen Typen konvertiert—oder implizit—wenn die Sprache oder das Programm einen anderen Typen als den vom Programmierer angegeben verlangt.
 
@@ -47,7 +47,7 @@ Implizite Konvertierungen werden in den folgenden Fällen ausgeführt:
 
 - Wenn ein Ausdruck, der eine Bedingungsanweisung, ein Schleifenkonstrukt oder einen Switch kontrolliert, nicht den richtigen Ergebnistyp für diese Kontrolle hat.
 
-- Wenn ein an einen Operator übergebener Operand nicht vom gleichen Typ ist wie der entsprechende Operand-Parameter. Für integrierte Operatoren müssen beide Operanden vom gleichen Typ sein und werden in einen gemeinsamen Typen konvertiert, der beide Operanden darstellen kann. Weitere Informationen finden Sie unter [Standardkonvertierungen](standard-conversions.md). Für benutzerdefinierte Operatoren müssen alle Operanden vom gleichen Typ sein wie der entsprechende Operand-Parameter.
+- Wenn ein an einen Operator übergebener Operand nicht vom gleichen Typ ist wie der entsprechende Operand-Parameter. Für integrierte Operatoren müssen beide Operanden vom gleichen Typ sein und werden in einen gemeinsamen Typen konvertiert, der beide Operanden darstellen kann. Weitere Informationen finden Sie unter [Standard Konvertierungen](standard-conversions.md). Für benutzerdefinierte Operatoren müssen alle Operanden vom gleichen Typ sein wie der entsprechende Operand-Parameter.
 
 Wenn eine Standardkonvertierung eine implizite Konvertierung nicht ausführen kann, kann der Compiler eine benutzerdefinierte Konvertierung verwenden, optional gefolgt von einer zusätzlichen Standardkonvertierung zur Vervollständigung.
 
@@ -55,25 +55,25 @@ Wenn zwei oder mehrere benutzerdefinierte Konvertierungen mit derselben Konverti
 
 - Mehrfachvererbung. Die Konvertierung ist in mehr als einer Basisklasse definiert.
 
-- Mehrdeutige Funktionsaufrufe. Die Konvertierung ist gleichzeitig als Konvertierungskonstruktor des Zieltyps und als Konvertierungsfunktion des Quelltyps definiert. Weitere Informationen finden Sie unter [Konvertierungsfunktionen](#ConvFunc).
+- Mehrdeutige Funktionsaufrufe. Die Konvertierung ist gleichzeitig als Konvertierungskonstruktor des Zieltyps und als Konvertierungsfunktion des Quelltyps definiert. Weitere Informationen finden Sie unter [Konvertierungs Funktionen](#ConvFunc).
 
 Mehrdeutigkeiten können normalerweise aufgelöst werden, in dem der Name des betreffenden Typs vollständiger angegeben wird, oder durch eine explizite Umwandlung zur Klarstellung Ihrer Absicht.
 
-Sowohl Konvertierungskonstruktoren als auch Konvertierungsfunktionen folgen den Regeln für die Memberzugriffssteuerung. Die Zugänglichkeit der Konvertierungen wird jedoch nur berücksichtigt, wenn eine eindeutige Konvertierung ermittelt werden kann. Eine Konvertierung kann also auch dann mehrdeutig sein, wenn die Zugriffsebene einer konkurrierenden Konvertierung deren Ausführung verhindern würde. Weitere Informationen zur Barrierefreiheit von Mitgliedern finden Sie unter [Member Zugriffssteuerung](../cpp/member-access-control-cpp.md).
+Sowohl Konvertierungskonstruktoren als auch Konvertierungsfunktionen folgen den Regeln für die Memberzugriffssteuerung. Die Zugänglichkeit der Konvertierungen wird jedoch nur berücksichtigt, wenn eine eindeutige Konvertierung ermittelt werden kann. Eine Konvertierung kann also auch dann mehrdeutig sein, wenn die Zugriffsebene einer konkurrierenden Konvertierung deren Ausführung verhindern würde. Weitere Informationen zur Barrierefreiheit von Membern finden Sie unter [Member Access Control](../cpp/member-access-control-cpp.md).
 
 ## <a name="the-explicit-keyword-and-problems-with-implicit-conversion"></a>Das Schlüsselwort explicit und Probleme mit impliziter Konvertierung
 
 Wenn Sie eine benutzerdefinierte Konvertierung erstellen, kann der Compiler diese standardmäßig für implizite Konvertierungen verwenden. Manchmal ist dies erwünscht, aber in anderen Fällen können die einfachen Regeln des Compilers für implizite Konvertierungen dazu führen, dass dieser unerwünschten Code akzeptiert.
 
-Ein bekanntes Beispiel für eine implizite Konvertierung, die Probleme verursachen kann, ist die Konvertierung in **bool**. Es gibt viele Gründe, warum Sie einen Klassentyp erstellen möchten, der in einem booleschen Kontext verwendet werden kann, z. B. damit er zum Steuern einer **if-Anweisung** oder -Schleife verwendet werden kann, aber wenn der Compiler eine benutzerdefinierte Konvertierung in einen integrierten Typ durchführt, kann der Compiler anschließend eine zusätzliche Standardkonvertierung anwenden. Die Absicht dieser zusätzlichen Standardkonvertierung ist es, Dinge wie die Promotion von **kurz** nach **int**zu ermöglichen, aber sie öffnet auch die Tür für weniger offensichtliche Konvertierungen – z. B. von **bool** nach **int**, wodurch Ihr Klassentyp in ganzzahligen Kontexten verwendet werden kann, die Sie nie beabsichtigt haben. Dieses spezielle Problem wird als *Safe Bool Problem*bezeichnet. Diese Art von Problem ist, wo das **explizite** Schlüsselwort helfen kann.
+Ein bekanntes Beispiel für eine implizite Konvertierung, die Probleme verursachen kann, ist die Konvertierung in **`bool`** . Es gibt viele Gründe, warum Sie einen Klassentyp erstellen können, der in einem booleschen Kontext verwendet werden kann, z. –. zum Steuern einer **`if`** Anweisung oder Schleife – aber wenn der Compiler eine benutzerdefinierte Konvertierung in einen integrierten Typ ausführt, kann der Compiler später eine zusätzliche Standard Konvertierung anwenden. Der Zweck dieser zusätzlichen Standard Konvertierung besteht darin, Dinge wie die herauf Stufung von **`short`** auf zuzulassen **`int`** , aber auch die Tür für weniger offensichtliche Konvertierungen zu öffnen, z. – **`bool`** . von zu **`int`** , sodass Ihr Klassentyp in ganzzahligen Kontexten verwendet werden kann, die Sie nie vorgesehen haben. Dieses spezielle Problem wird als *sicheres boolescher Problem*bezeichnet. Bei dieser Art von Problem kann das- **`explicit`** Schlüsselwort helfen.
 
-Das **schlüsselexplizite** Schlüsselwort teilt dem Compiler mit, dass die angegebene Konvertierung nicht zum Ausführen impliziter Konvertierungen verwendet werden kann. Wenn Sie die syntaktische Bequemlichkeit impliziter Konvertierungen wollten, bevor das **explizite** Schlüsselwort eingeführt wurde, mussten Sie entweder die unbeabsichtigten Folgen akzeptieren, die implizite Konvertierung manchmal erstellt hat, oder weniger bequeme, benannte Konvertierungsfunktionen als Problemumgehung verwenden. Mithilfe des **expliziten** Schlüsselworts können Sie nun bequeme Konvertierungen erstellen, die nur zum Ausführen expliziter Umwandlungen oder direkter Initialisierung verwendet werden können, und dies führt nicht zu der Art von Problemen, die durch das Safe Bool-Problem veranschaulicht werden.
+Das **`explicit`** Schlüsselwort weist den Compiler an, dass die angegebene Konvertierung nicht zum Ausführen impliziter Konvertierungen verwendet werden kann. Wenn Sie die syntaktische Bequemlichkeit impliziter Konvertierungen wünschen, bevor das- **`explicit`** Schlüsselwort eingeführt wurde, mussten Sie entweder die unbeabsichtigten Folgen akzeptieren, die manchmal von der impliziten Konvertierung erstellt wurden, oder weniger praktische, benannte Konvertierungs Funktionen als Problem Umgehung verwenden. Mithilfe des- **`explicit`** Schlüssel Worts können Sie nun bequeme Konvertierungen erstellen, die nur zum Ausführen expliziter Umwandlungen oder direkter Initialisierung verwendet werden können. Dies führt nicht zu der Art von Problemen, die durch das sichere boolesche Problem verdeutlicht werden.
 
-Das **explizite** Schlüsselwort kann auf Konvertierungskonstruktoren seit C++98 und auf Konvertierungsfunktionen seit C++11 angewendet werden. Die folgenden Abschnitte enthalten weitere Informationen zur Verwendung des **expliziten** Schlüsselworts.
+Das **`explicit`** Schlüsselwort kann seit c++ 98 auf konvertierungskonstruktoren und Konvertierungs Funktionen seit c++ 11 angewendet werden. Die folgenden Abschnitte enthalten weitere Informationen zur Verwendung des- **`explicit`** Schlüssel Worts.
 
 ## <a name="conversion-constructors"></a><a name="ConvCTOR"></a>Konvertierungskonstruktoren
 
-Konvertierungskonstruktoren definieren Konvertierungen von benutzerdefinierten oder integrierten Typen zu einem benutzerdefinierten Typ. Im folgenden Beispiel wird ein Konvertierungskonstruktor veranschaulicht, **double** der vom integrierten `Money`Typ double in einen benutzerdefinierten Typ konvertiert.
+Konvertierungskonstruktoren definieren Konvertierungen von benutzerdefinierten oder integrierten Typen zu einem benutzerdefinierten Typ. Das folgende Beispiel veranschaulicht einen konvertierungskonstruktor, der vom integrierten-Typ **`double`** in einen benutzerdefinierten Typ konvertiert `Money` .
 
 ```cpp
 #include <iostream>
@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
 }
 ```
 
-Beachten Sie, dass der erste Aufruf der Funktion `display_balance`, die ein Argument vom Typ `Money` entgegennimmt, keine Konvertierung erfordert, da das Argument bereits vom korrekten Typ ist. Beim zweiten Aufruf von `display_balance`ist jedoch eine Konvertierung erforderlich, da der Typ `49.95`des Arguments, ein **Double** mit dem Wert von , nicht das ist, was die Funktion erwartet. Die Funktion kann diesen Wert nicht direkt verwenden, aber da es eine**double**Konvertierung vom Typ des Arguments`Money`– double – `Money` in den Typ des übereinstimmenden Parameters – gibt, wird ein temporärer Wert des Typs aus dem Argument erstellt und zum Abschließen des Funktionsaufrufs verwendet. Beachten Sie im `display_balance`dritten Aufruf von , dass das Argument kein **double** `9.99`ist, sondern ein **float** mit dem Wert – und dennoch kann der Funktionsaufruf abgeschlossen werden, da der Compiler `Money` eine Standardkonvertierung durchführen kann – in diesem Fall von **float** zu **double**– und dann die benutzerdefinierte Konvertierung von **double** in durchführen, um die erforderliche Konvertierung abzuschließen.
+Beachten Sie, dass der erste Aufruf der Funktion `display_balance`, die ein Argument vom Typ `Money` entgegennimmt, keine Konvertierung erfordert, da das Argument bereits vom korrekten Typ ist. Beim zweiten-Aufrufe von ist jedoch `display_balance` eine Konvertierung erforderlich, da der Typ des Arguments, ein **`double`** mit dem Wert `49.95` , nicht das von der Funktion erwartete Wert ist. Die Funktion kann diesen Wert nicht direkt verwenden, aber da es eine Konvertierung vom Typ des Arguments – **`double`** – in den Typ des entsprechenden Parameters – – gibt, `Money` wird ein temporärer Wert des Typs `Money` aus dem-Argument erstellt und zum Vervollständigen des Funktions Aufrufes verwendet. Beachten Sie im dritten-Befehl `display_balance` , dass das-Argument kein ist **`double`** , sondern stattdessen ein **`float`** mit dem Wert `9.99` – und der Funktions Aufrufvorgang trotzdem abgeschlossen werden kann, da der Compiler eine Standard Konvertierung durchführen kann – in diesem Fall von **`float`** bis **`double`** – und anschließend die benutzerdefinierte Konvertierung von in, **`double`** `Money` um die erforderliche Konvertierung abzuschließen.
 
 ### <a name="declaring-conversion-constructors"></a>Deklarieren von Konvertierungskonstruktoren
 
@@ -120,7 +120,7 @@ Beim Deklarieren von Konvertierungskonstruktoren gelten die folgenden Regeln:
 
 ### <a name="explicit-conversion-constructors"></a>Explizite Konvertierungskonstruktoren
 
-Wenn ein Konvertierungskonstruktor **explizit**deklariert wird, kann er nur zur direkten Initialisierung eines Objekts oder zum Ausführen einer expliziten Umwandlung verwendet werden. Damit wird verhindert, dass Funktionen, die ein Argument vom Klassentyp erwarten, ebenfalls implizit Argument vom Quelltyp des Konvertierungskonstruktors akzeptieren. Außerdem wird verhindert, dass der Klassentyp aus einem Wert des Quelltyps durch Kopieren initialisiert wird. Das folgende Beispiel zeigt die Definition eines expliziten Konvertierungskonstruktors und dessen Auswirkungen auf die Wohlgeformtheit des Codes.
+Wenn ein konvertierungskonstruktor als deklariert wird **`explicit`** , kann er nur verwendet werden, um die direkte Initialisierung eines Objekts auszuführen oder eine explizite Umwandlung auszuführen. Damit wird verhindert, dass Funktionen, die ein Argument vom Klassentyp erwarten, ebenfalls implizit Argument vom Quelltyp des Konvertierungskonstruktors akzeptieren. Außerdem wird verhindert, dass der Klassentyp aus einem Wert des Quelltyps durch Kopieren initialisiert wird. Das folgende Beispiel zeigt die Definition eines expliziten Konvertierungskonstruktors und dessen Auswirkungen auf die Wohlgeformtheit des Codes.
 
 ```cpp
 #include <iostream>
@@ -151,13 +151,13 @@ int main(int argc, char* argv[])
 }
 ```
 
-In diesem Beispiel können Sie den expliziten Konvertierungskonstruktor weiterhin für die direkte Initialisierung von `payable` verwenden. Falls Sie jedoch `Money payable = 79.99;` durch Kopieren initialisieren, erhalten Sie einen Fehler. Der erste Aufruf von `display_balance` ist nicht betroffen, da das Argument vom korrekten Typ ist. Der zweite Aufruf von `display_balance` führt zu einem Fehler, da der Konvertierungskonstruktor nicht für implizite Konvertierungen verwendet werden kann. Der dritte `display_balance` Aufruf ist aufgrund der `Money`expliziten Umwandlung in legal, beachten Sie jedoch, dass der Compiler immer noch dazu beigetragen hat, die Umwandlung abzuschließen, indem er eine implizite Umwandlung von **float** zu **double**einfügt.
+In diesem Beispiel können Sie den expliziten Konvertierungskonstruktor weiterhin für die direkte Initialisierung von `payable` verwenden. Falls Sie jedoch `Money payable = 79.99;` durch Kopieren initialisieren, erhalten Sie einen Fehler. Der erste Aufruf von `display_balance` ist nicht betroffen, da das Argument vom korrekten Typ ist. Der zweite Aufruf von `display_balance` führt zu einem Fehler, da der Konvertierungskonstruktor nicht für implizite Konvertierungen verwendet werden kann. Der dritte-Anspruch `display_balance` ist aufgrund der expliziten Umwandlung in zulässig `Money` , aber beachten Sie, dass der Compiler trotzdem geholfen hat, die Umwandlung abzuschließen, indem Sie eine implizite Umwandlung von in eingefügt haben **`float`** **`double`** .
 
 Obwohl die Vorzüge impliziter Konvertierungen verlockend sind, können diese zu schwer auffindbaren Bugs führen. Als Standardregel sollten alle Konvertierungskonstruktoren explizit sein, es sei denn, Sie möchten eine bestimmte Konvertierung implizit erlauben.
 
-## <a name="conversion-functions"></a><a name="ConvFunc"></a>Konvertierungsfunktionen
+## <a name="conversion-functions"></a><a name="ConvFunc"></a>Konvertierungs Funktionen
 
-Konvertierungsfunktionen definieren Konvertierungen von einem benutzerdefinierten Typ zu anderen Typen. Diese Funktionen werden manchmal auch als "Umwandlungsoperatoren" bezeichnet, da sie zusammen mit Konvertierungskonstruktoren aufgerufen werden, wenn ein Wert zu einem anderen Typ umgewandelt wird. Im folgenden Beispiel wird eine Konvertierungsfunktion veranschaulicht, `Money`die vom benutzerdefinierten Typ , in einen integrierten Typ, **double**konvertiert:
+Konvertierungsfunktionen definieren Konvertierungen von einem benutzerdefinierten Typ zu anderen Typen. Diese Funktionen werden manchmal auch als "Umwandlungsoperatoren" bezeichnet, da sie zusammen mit Konvertierungskonstruktoren aufgerufen werden, wenn ein Wert zu einem anderen Typ umgewandelt wird. Das folgende Beispiel veranschaulicht eine Konvertierungs Funktion, die vom benutzerdefinierten Typ `Money` in einen integrierten Typ konvertiert **`double`** :
 
 ```cpp
 #include <iostream>
@@ -179,9 +179,9 @@ void display_balance(const Money balance)
 }
 ```
 
-Beachten Sie, `amount` dass die Membervariable privat gemacht wird und dass eine öffentliche `amount`Konvertierungsfunktion in typ **double** eingeführt wird, nur um den Wert von zurückzugeben. In der Funktion `display_balance` erfolgt eine implizite Konvertierung, wenn der Wert von `balance` durch den Operator zum Einfügen des Datenstroms `<<` in die Standardausgabe geschrieben wird. Da für den benutzerdefinierten `Money`Typ kein Stream-Insertion-Operator definiert ist, es jedoch einen für den integrierten Typ **double**gibt, kann der Compiler die Konvertierungsfunktion von `Money` zu **double** verwenden, um den Stream-Insertion-Operator zu erfüllen.
+Beachten Sie, dass die Member `amount` -Variable privat ist und dass eine öffentliche Konvertierungs Funktion in **`double`** den Typ eingeführt wird, um den Wert von zurückzugeben `amount` . In der Funktion `display_balance` erfolgt eine implizite Konvertierung, wenn der Wert von `balance` durch den Operator zum Einfügen des Datenstroms `<<` in die Standardausgabe geschrieben wird. Da für den benutzerdefinierten Typ kein Operator für das Einfügen von Datenströmen definiert ist `Money` , aber einen für den integrierten Typ gibt **`double`** , kann der Compiler die Konvertierungs Funktion von `Money` bis verwenden, **`double`** um den Operator für den Datenstrom Einfügung zu erfüllen.
 
-Konvertierungsfunktionen werden an abgeleitete Klassen vererbt. Konvertierungsfunktionen in abgeleiteten Klassen überschreiben geerbte Konvertierungsfunktionen nur dann, wenn diese zum exakt gleichen Typ konvertieren. Beispielsweise überschreibt eine benutzerdefinierte Konvertierungsfunktion des abgeleiteten **Klassenoperators int** keine benutzerdefinierte Konvertierungsfunktion des Basisklassenoperators **short**, obwohl die Standardkonvertierungen eine Konvertierungsbeziehung zwischen **int** und **short**definieren.
+Konvertierungsfunktionen werden an abgeleitete Klassen vererbt. Konvertierungsfunktionen in abgeleiteten Klassen überschreiben geerbte Konvertierungsfunktionen nur dann, wenn diese zum exakt gleichen Typ konvertieren. Beispielsweise überschreibt eine benutzerdefinierte Konvertierungs Funktion des abgeleiteten Klassen **Operators int** weder – noch einen Einfluss – eine benutzerdefinierte Konvertierungs Funktion des Basisklassen **Operators Short**, auch wenn die Standard Konvertierungen eine Konvertierungs Beziehung zwischen **`int`** und definieren **`short`** .
 
 ### <a name="declaring-conversion-functions"></a>Deklarieren von Konvertierungsfunktionen
 
@@ -225,4 +225,4 @@ void display_balance(const Money balance)
 }
 ```
 
-Hier wurde der Konvertierungsfunktionsoperator **double** explizit gemacht, und in der `display_balance` Funktion zur Durchführung der Konvertierung wurde eine explizite Umwandlung in typ **double** eingeführt. Ohne diese Umwandlung wäre der Compiler nicht in der Lage, den geeigneten Operator zum Einfügen des Datenstroms `<<` für den Typ `Money` zu ermitteln, und ein Fehler wäre die Folge.
+Hier wurde der Konvertierungs Funktions **Operator "Double** " explizit erstellt, und in der Funktion wurde eine explizite Umwandlung in **`double`** den Typ eingeführt, `display_balance` um die Konvertierung auszuführen. Ohne diese Umwandlung wäre der Compiler nicht in der Lage, den geeigneten Operator zum Einfügen des Datenstroms `<<` für den Typ `Money` zu ermitteln, und ein Fehler wäre die Folge.

@@ -2,16 +2,16 @@
 title: Namensauflösung für abhängige Typen
 ms.date: 11/04/2016
 ms.assetid: 34066bb4-0c79-4fd8-bda7-539a60a277ab
-ms.openlocfilehash: e9954eab2793f9adf0de75775563df0ae6f063f3
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: de40bd056fe351e679ff32d9908c068ea4c6752a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80161152"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227308"
 ---
 # <a name="name-resolution-for-dependent-types"></a>Namensauflösung für abhängige Typen
 
-Verwenden Sie **Typname** für qualifizierte Namen in Vorlagen Definitionen, um dem Compiler mitzuteilen, dass der angegebene qualifizierte Name einen Typ identifiziert. Weitere Informationen finden Sie unter [Typname](../cpp/typename.md).
+Verwenden **`typename`** Sie für qualifizierte Namen in Vorlagen Definitionen, um dem Compiler mitzuteilen, dass der angegebene qualifizierte Name einen Typ identifiziert. Weitere Informationen finden Sie unter [Typname](../cpp/typename.md).
 
 ```cpp
 // template_name_resolution1.cpp
@@ -40,7 +40,7 @@ int main()
 Name resolved by using typename keyword.
 ```
 
-Bei der Namenssuche nach abhängigen Namen werden Namen aus dem Kontext der Vorlagen Definition überprüft – im folgenden Beispiel wird dieser Kontext `myFunction(char)`– und der Kontext der Vorlagen Instanziierung gefunden. Im folgenden Beispiel wird die Vorlage in "Main" instanziiert. Daher ist der `MyNamespace::myFunction` ab dem Zeitpunkt der Instanziierung sichtbar und wird als bessere Entsprechung ausgewählt. Wenn `MyNamespace::myFunction` umbenannt wurde, wird stattdessen `myFunction(char)` aufgerufen.
+Bei der Namenssuche nach abhängigen Namen werden Namen aus dem Kontext der Vorlagen Definition untersucht – im folgenden Beispiel findet dieser Kontext `myFunction(char)` – und den Kontext der Vorlagen Instanziierung. Im folgenden Beispiel wird die Vorlage in "Main" instanziiert. Daher ist der `MyNamespace::myFunction` ab dem Zeitpunkt der Instanziierung sichtbar und wird als bessere Entsprechung ausgewählt. Wenn `MyNamespace::myFunction` umbenannt wurde, wird stattdessen `myFunction(char)` aufgerufen.
 
 Alle Namen werden aufgelöst, als ob sie abhängige Namen wären. Dennoch wird empfohlen, vollqualifizierte Namen zu verwenden, wenn ein möglicher Konflikte besteht.
 
@@ -121,6 +121,6 @@ int main() {
 
 Eine Übereinstimmung mit den Mehrdeutigkeitsregeln ist erforderlich, da C++ standardmäßig annimmt, dass `AY::Rebind` keine Vorlage ist, und der Compiler deshalb folgenden "`<`"-Code als "less-than" interpretiert. Er muss wissen, dass `Rebind` eine Vorlage darstellt, sodass er "`<`" ordnungsgemäß als spitze Klammer analysieren kann.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Namensauflösung](../cpp/templates-and-name-resolution.md)

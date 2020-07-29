@@ -10,12 +10,12 @@ helpviewer_keywords:
 - functions [C++], scope
 - scope, C++ names
 ms.assetid: 81fecbb0-338b-4325-8332-49f33e716352
-ms.openlocfilehash: a5b5601c89991fbe1a148ebaf781fe2ad6a9dfc4
-ms.sourcegitcommit: c4cf8976939dd0e13e25b82930221323ba6f15d4
+ms.openlocfilehash: 5cff7a4607201175c7095a87134850583b76d636
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83204135"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227087"
 ---
 # <a name="scope-c"></a>Gültigkeitsbereich (C++)
 
@@ -31,9 +31,9 @@ Es gibt sechs Arten von Bereichen:
 
 - **Lokaler Bereich** Ein in einer Funktion oder einem Lambda deklarierter Name, einschließlich der Parameternamen, verfügt über einen lokalen Gültigkeitsbereich. Sie werden häufig als "Locals" bezeichnet. Sie sind nur ab dem Zeitpunkt der Deklaration bis zum Ende der Funktion oder des Lambda-Texts sichtbar. Der lokale Gültigkeitsbereich ist eine Art von Block Bereich, der weiter unten in diesem Artikel erläutert wird.
 
-- **Klassen Bereich** Namen von Klassenmembern verfügen über einen Klassen Bereich, der unabhängig vom Zeitpunkt der Deklaration in der Klassendefinition erweitert wird. Der Zugriff auf Klassenmember wird weiter durch die **öffentlichen**, **privaten**und **geschützten** Schlüsselwörter gesteuert. Auf öffentliche oder geschützte Member kann nur mithilfe der Member-Selection-Operatoren (zugegriffen werden **.** oder **->** ) oder Zeiger-auf-Member-Operatoren (**.** <strong>\*</strong> oder **->** <strong>\*</strong> ).
+- **Klassen Bereich** Namen von Klassenmembern verfügen über einen Klassen Bereich, der unabhängig vom Zeitpunkt der Deklaration in der Klassendefinition erweitert wird. Der Zugriff auf Klassenmember wird weiter durch die **`public`** **`private`** Schlüsselwörter, und gesteuert **`protected`** . Auf öffentliche oder geschützte Member kann nur mithilfe der Member-Selection-Operatoren (zugegriffen werden **.** oder **->** ) oder Zeiger-auf-Member-Operatoren (**.** <strong>\*</strong> oder **->** <strong>\*</strong> ).
 
-- **Anweisungs Bereich** Namen, die in einer **for**-, **if**-, **while**-oder **Switch** -Anweisung deklariert sind, sind bis zum Ende des Anweisungsblocks sichtbar.
+- **Anweisungs Bereich** Namen, die in einer-,-,- **`for`** **`if`** oder-Anweisung deklariert werden, **`while`** **`switch`** sind bis zum Ende des Anweisungsblocks sichtbar.
 
 - **Funktionsbereich** Eine [Bezeichnung](labeled-statements.md) weist einen Funktionsbereich auf, was bedeutet, dass Sie in einem Funktions Rumpf auch vor dem Zeitpunkt der Deklaration sichtbar ist. Der Funktionsbereich ermöglicht das Schreiben von-Anweisungen, wie `goto cleanup` vor dem `cleanup` Deklarieren der Bezeichnung.
 
@@ -58,7 +58,7 @@ i = 0
 
 ## <a name="hiding-class-names"></a>Ausblenden von Klassennamen
 
-Sie können Klassennamen ausblenden, indem Sie eine Funktion, ein Objekt, eine Variable oder einen Enumerator im gleichen Bereich deklarieren. Der Klassenname kann jedoch weiterhin aufgerufen werden, wenn die Schlüsselwort **Klasse**vorangestellt ist.
+Sie können Klassennamen ausblenden, indem Sie eine Funktion, ein Objekt, eine Variable oder einen Enumerator im gleichen Bereich deklarieren. Der Klassenname kann jedoch weiterhin aufgerufen werden, wenn das-Schlüsselwort vorangestellt ist **`class`** .
 
 ```cpp
 // hiding_class_names.cpp
@@ -94,18 +94,18 @@ int main()
 > [!NOTE]
 > An jeder Stelle, für die der Klassenname ( `Account` ) aufgerufen wird, muss die schlüsselwortklasse verwendet werden, um Sie von dem globalen Variablen Konto unterscheiden zu können. Diese Regel gilt nicht, wenn der Klassenname auf der linken Seite des Bereichsauflösungsoperators (::) auftritt. Namen auf der linken Seite des Bereichsauflösungsoperators gelten immer als Klassennamen.
 
-Im folgenden Beispiel wird veranschaulicht, wie ein Zeiger auf ein Objekt vom Typ `Account` mithilfe des **Class** -Schlüssel Worts deklariert wird:
+Im folgenden Beispiel wird veranschaulicht, wie ein Zeiger auf ein Objekt des Typs `Account` mit dem- **`class`** Schlüsselwort deklariert wird:
 
 ```cpp
 class Account *Checking = new class Account( Account );
 ```
 
-Der `Account` im Initialisierer (in Klammern) in der vorangehenden Anweisung verfügt über einen globalen Gültigkeitsbereich. er ist vom Typ " **Double**".
+Der `Account` im Initialisierer (in Klammern) in der vorangehenden Anweisung verfügt über einen globalen Gültigkeitsbereich. er ist vom Typ **`double`** .
 
 > [!NOTE]
 > Die in diesem Beispiel dargestellte Wiederverwendung von Bezeichnernamen gilt als schlechter Programmierstil.
 
-Informationen zur Deklaration und Initialisierung von Klassen Objekten finden Sie unter [Klassen, Strukturen und Unions](../cpp/classes-and-structs-cpp.md). Weitere Informationen zum Verwenden der **New** -und **Delete** -Operatoren für freie Speicher finden Sie unter [New-und DELETE-Operatoren](new-and-delete-operators.md).
+Informationen zur Deklaration und Initialisierung von Klassen Objekten finden Sie unter [Klassen, Strukturen und Unions](../cpp/classes-and-structs-cpp.md). Weitere Informationen zur Verwendung der **`new`** **`delete`** -und-Freispeicher Operatoren finden Sie unter [New-und DELETE-Operatoren](new-and-delete-operators.md).
 
 ## <a name="hiding-names-with-global-scope"></a>Ausblenden von Namen mit globalem Bereich
 

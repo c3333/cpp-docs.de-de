@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - __raise keyword [C++]
 ms.assetid: 6f1ae418-5f0f-48b6-9f6e-8ea7e66b239a
-ms.openlocfilehash: eb3ab24378071663b2a6a1abab700b81c3172419
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: db6ba1693e4d3144b95530646b061e9cd7a58a5a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317234"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227126"
 ---
 # <a name="__raise"></a>__raise
 
@@ -26,9 +26,9 @@ __raise method-declarator;
 
 ## <a name="remarks"></a>Bemerkungen
 
-Aus verwaltetem Code kann ein Ereignis nur innerhalb der Klasse ausgelöst werden, in der es definiert ist. Weitere Informationen finden Sie [unter Ereignis.](../extensions/event-cpp-component-extensions.md)
+Aus verwaltetem Code kann ein Ereignis nur innerhalb der Klasse ausgelöst werden, in der es definiert ist. Weitere Informationen finden Sie unter [Event](../extensions/event-cpp-component-extensions.md) .
 
-Das Schlüsselwort **__raise** bewirkt, dass ein Fehler ausgesendet wird, wenn Sie ein Nichtereignis aufrufen.
+Das-Schlüsselwort **`__raise`** bewirkt, dass ein Fehler ausgegeben wird, wenn Sie ein nicht--Ereignis aufzurufen.
 
 > [!NOTE]
 > Eine von einer Vorlage gebildete Klasse oder Struktur kann keine Ereignisse enthalten.
@@ -61,6 +61,6 @@ int main() {
 
 ## <a name="see-also"></a>Siehe auch
 
-[Keywords](../cpp/keywords-cpp.md)<br/>
-[Ereignisbehandlung](../cpp/event-handling.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
+[Ereignis Behandlung](../cpp/event-handling.md)<br/>
 [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md)

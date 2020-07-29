@@ -7,22 +7,22 @@ helpviewer_keywords:
 - novtable __declspec keyword
 - __declspec keyword [C++], novtable
 ms.assetid: cfef09c5-8c1e-4b14-8a72-7d726ded4484
-ms.openlocfilehash: d101e73f2f8d476c50b1b80b8daa7994151d43af
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ccf544608bcba83af17702767562ef93d775b5a9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80177832"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227256"
 ---
 # <a name="novtable"></a>novtable
 
 **Microsoft-spezifisch**
 
-Dies ist ein **__declspec** Erweitertes Attribut.
+Dies ist ein **`__declspec`** Erweitertes Attribut.
 
-Diese Form von **__declspec** kann auf jede Klassen Deklaration angewendet werden, sollte jedoch nur auf reine Schnittstellen Klassen angewendet werden, d. h. auf Klassen, die nie selbst instanziiert werden. Der **__declspec** hindert den Compiler daran, Code zum Initialisieren des vfptr in den Konstruktoren und dem debugtor der-Klasse zu erstellen. In vielen Fällen werden hierdurch die einzigen Verweise auf "vtable" entfernt, die der Klasse zugeordnet sind, sodass der Linker diese entfernt. Die Verwendung dieser Form von **__declspec** kann zu einer erheblichen Verringerung der Codegröße führen.
+Diese Form von **`__declspec`** kann auf jede Klassen Deklaration angewendet werden, sollte jedoch nur auf reine Schnittstellen Klassen angewendet werden, d. h. auf Klassen, die nie selbst instanziiert werden. Der **`__declspec`** verhindert, dass der Compiler Code zum Initialisieren des vfptr in den Konstruktoren und debuggingklassen der Klasse erzeugt. In vielen Fällen werden hierdurch die einzigen Verweise auf "vtable" entfernt, die der Klasse zugeordnet sind, sodass der Linker diese entfernt. Die Verwendung dieser Form von **`__declspec`** kann zu einer erheblichen Verringerung der Codegröße führen.
 
-Wenn Sie versuchen, eine mit " **novtable** " markierte Klasse zu instanziieren und dann auf einen Klassenmember zuzugreifen, erhalten Sie eine Zugriffsverletzung (Access Verletzung, AV).
+Wenn Sie versuchen, eine mit markierte Klasse zu instanziieren **`novtable`** und dann auf einen Klassenmember zuzugreifen, erhalten Sie eine Zugriffsverletzung (Access Verletzung, AV).
 
 ## <a name="example"></a>Beispiel
 
@@ -55,7 +55,7 @@ In Y
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[__declspec](../cpp/declspec.md)<br/>
+[`__declspec`](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

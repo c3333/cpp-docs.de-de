@@ -1,34 +1,34 @@
 ---
-title: Headerdateien (C++)
+title: Header Dateien (C++)
 ms.date: 12/11/2019
 helpviewer_keywords:
 - header files [C++]
-ms.openlocfilehash: 4ab6a2b2626cde94f35678bc9ec789b80d493b8f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0b76773b8b7d55645c807588fe41b242df9eea2f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367229"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227451"
 ---
-# <a name="header-files-c"></a>Headerdateien (C++)
+# <a name="header-files-c"></a>Header Dateien (C++)
 
-Die Namen von Programmelementen wie Variablen, Funktionen, Klassen usw. müssen deklariert werden, bevor sie verwendet werden können. Sie können z. B. `x = 42` nicht einfach schreiben, ohne vorher "x" zu deklarieren.
+Die Namen der Programmelemente (z. b. Variablen, Funktionen, Klassen usw.) müssen deklariert werden, bevor Sie verwendet werden können. Beispielsweise können Sie nicht einfach schreiben, `x = 42` ohne zuerst "x" zu deklarieren.
 
 ```cpp
 int x; // declaration
 x = 42; // use x
 ```
 
-Die Deklaration teilt dem Compiler mit, ob es sich bei dem Element um ein **int**, ein **double**, eine **Funktion**, eine **Klasse** oder etwas anderes handelt.  Darüber hinaus muss jeder Name (direkt oder indirekt) in jeder CPP-Datei deklariert werden, in der er verwendet wird. Wenn Sie ein Programm kompilieren, wird jede .cpp-Datei unabhängig in eine Kompilierungseinheit kompiliert. Der Compiler weiß nicht, welche Namen in anderen Kompilierungseinheiten deklariert werden. Das bedeutet, dass Sie, wenn Sie eine Klasse oder Funktion oder eine globale Variable definieren, eine Deklaration dieses Dings in jeder zusätzlichen CPP-Datei bereitstellen müssen, die sie verwendet. Jede Deklaration dieses Dings muss in allen Dateien genau identisch sein. Eine leichte Inkonsistenz führt zu Fehlern oder unbeabsichtigtem Verhalten, wenn der Linker versucht, alle Kompilierungseinheiten in einem einzigen Programm zusammenzuführen.
+Die-Deklaration teilt dem Compiler mit, ob das Element ein **`int`** , ein **`double`** , eine **Funktion**, ein oder ein anderes Element ist **`class`** .  Außerdem muss jeder Name (direkt oder indirekt) in jeder cpp-Datei deklariert werden, in der er verwendet wird. Wenn Sie ein Programm kompilieren, wird jede cpp-Datei unabhängig in eine Kompilierungseinheit kompiliert. Der Compiler weiß nicht, welche Namen in anderen Kompilierungs Einheiten deklariert werden. Das heißt, wenn Sie eine Klasse oder eine Funktion oder eine globale Variable definieren, müssen Sie in jeder zusätzlichen cpp-Datei, die Sie verwendet, eine Deklaration dieser Funktion bereitstellen. Jede Deklaration dieses Objekts muss in allen Dateien genau identisch sein. Eine geringfügige Inkonsistenz führt zu Fehlern oder unbeabsichtigtem Verhalten, wenn der Linker versucht, alle Kompilierungs Einheiten in einem einzigen Programm zusammenzuführen.
 
-Um das Fehlerpotenzial zu minimieren, hat C++ die Konvention angenommen, *Headerdateien* zum Speichern von Deklarationen zu verwenden. Sie erstellen die Deklarationen in einer Headerdatei und verwenden dann die #include-Direktive in jeder CPP-Datei oder einer anderen Headerdatei, die diese Deklaration erfordert. Die #include-Direktive fügt vor der Kompilierung eine Kopie der Headerdatei direkt in die CPP-Datei ein.
+Um das Fehlerpotenzial zu minimieren, hat C++ die Konvention zur Verwendung von *Header Dateien* zum enthalten von Deklarationen übernommen. Sie nehmen die Deklarationen in einer Header Datei vor und verwenden dann die #include-Direktive in jeder cpp-Datei oder einer anderen Header Datei, die diese Deklaration erfordert. Die #include-Direktive fügt vor der Kompilierung eine Kopie der Header Datei direkt in die CPP-Datei ein.
 
 > [!NOTE]
-> In Visual Studio 2019 wird die *modules* C++20-Modulfunktion als Verbesserung und eventueller Ersatz für Headerdateien eingeführt. Weitere Informationen finden Sie unter [Übersicht über Module in C++](modules-cpp.md).
+> In Visual Studio 2019 wird das Feature "c++ 20 *modules* " als Verbesserung und schließlich Ersetzung für Header Dateien eingeführt. Weitere Informationen finden Sie unter [Übersicht über Module in C++](modules-cpp.md).
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt eine allgemeine Möglichkeit, eine Klasse zu deklarieren und dann in einer anderen Quelldatei zu verwenden. Wir beginnen mit der Headerdatei `my_class.h`. Sie enthält eine Klassendefinition, weist jedoch darauf hin, dass die Definition unvollständig ist. die Memberfunktion `do_something` ist nicht definiert:
+Das folgende Beispiel zeigt eine gängige Methode zum Deklarieren einer Klasse und deren Verwendung in einer anderen Quelldatei. Wir beginnen mit der Header Datei, `my_class.h` . Sie enthält eine Klassendefinition, aber beachten Sie, dass die Definition unvollständig ist. die Member-Funktion `do_something` ist nicht definiert:
 
 ```cpp
 // my_class.h
@@ -43,9 +43,9 @@ namespace N
 }
 ```
 
-Erstellen Sie als Nächstes eine Implementierungsdatei (in der Regel mit einer CPP-Erweiterung oder einer ähnlichen Erweiterung). Wir rufen die Datei my_class.cpp auf und stellen eine Definition für die Memberdeklaration bereit. Wir fügen `#include` eine Direktive für die Datei "my_class.h" hinzu, um die my_class-Erklärung an `<iostream>` dieser Stelle in `std::cout`die .cpp-Datei einfügen zu lassen, und wir schließen ein, um die Deklaration für einzuschließen. Beachten Sie, dass Anführungszeichen für Headerdateien im gleichen Verzeichnis wie die Quelldatei und für Standardbibliotheksheader verwendet werden. Außerdem haben viele Standardbibliotheksheader keine .h oder eine andere Dateierweiterung.
+Erstellen Sie als nächstes eine Implementierungs Datei (in der Regel mit einer cpp-Erweiterung oder einer ähnlichen Erweiterung). Wir nennen die Datei my_class. cpp und geben eine Definition für die Element Deklaration an. Wir fügen eine- `#include` Direktive für die Datei "my_class. h" hinzu, damit die my_class Deklaration an dieser Stelle in die CPP-Datei eingefügt wird, und wir schließen ein, um `<iostream>` die Deklaration für abzurufen `std::cout` . Beachten Sie, dass Anführungszeichen für Header Dateien im gleichen Verzeichnis wie die Quelldatei verwendet werden und spitzen Klammern für die Header der Standardbibliothek verwendet werden. Außerdem verfügen viele Standard Bibliotheks Header nicht über die Dateierweiterung ". h" oder eine andere Dateierweiterung.
 
-In der Implementierungsdatei können wir optional eine **using-Anweisung** verwenden, um zu vermeiden, dass jede Erwähnung von "my_class" oder "cout" mit "N::" oder "std::" qualifiziert werden muss.  Setzen Sie keine **Anweisungen** in Ihre Headerdateien!
+In der Implementierungs Datei können wir optional eine-Anweisung verwenden, **`using`** um zu vermeiden, dass Sie jede Erwähnung von "my_class" oder "cout" mit "N::" oder "Std::" qualifizieren müssen.  Fügen Sie keine- **`using`** Anweisungen in Ihre Header Dateien ein.
 
 ```cpp
 // my_class.cpp
@@ -61,7 +61,7 @@ void my_class::do_something()
 }
 ```
 
-Jetzt können `my_class` wir in einer anderen .cpp-Datei verwenden. Wir #include die Headerdatei, sodass der Compiler die Deklaration abruft. Der Compiler muss nur wissen, dass my_class eine Klasse `do_something()`ist, die über eine öffentliche Memberfunktion namens verfügt.
+Nun können wir `my_class` in einer anderen cpp-Datei verwenden. Wir #include die Header Datei, sodass der Compiler die Deklaration abruft. Der Compiler muss wissen, dass my_class eine Klasse ist, die über eine öffentliche Member-Funktion mit dem Namen verfügt `do_something()` .
 
 ```cpp
 // my_program.cpp
@@ -77,11 +77,11 @@ int main()
 }
 ```
 
-Nachdem der Compiler die Kompilierung jeder .cpp-Datei in .obj-Dateien abgeschlossen hat, übergibt er die .obj-Dateien an den Linker. Wenn der Linker die Objektdateien zusammenführt, findet er genau eine Definition für my_class; es befindet sich in der .obj-Datei, die für my_class.cpp erstellt wurde, und der Build ist erfolgreich.
+Nachdem der Compiler das Kompilieren der CPP-Datei in OBJ-Dateien abgeschlossen hat, übergibt er die OBJ-Dateien an den Linker. Wenn der Linker die Objektdateien zusammenfasst, findet er genau eine Definition für my_class; Sie befindet sich in der obj-Datei, die für my_class. cpp erstellt wurde, und der Build ist erfolgreich.
 
-## <a name="include-guards"></a>Einschließen von Wächtern
+## <a name="include-guards"></a>Schutz einschließen
 
-In der Regel verfügen Headerdateien `#pragma once` über einen Include *Guard* oder eine Direktive, um sicherzustellen, dass sie nicht mehrmals in eine einzelne CPP-Datei eingefügt werden.
+Header Dateien verfügen in der Regel über einen *include-Wächter* oder eine- `#pragma once` Direktive, um sicherzustellen, dass Sie nicht mehrmals in eine einzelne cpp-Datei eingefügt werden.
 
 ```cpp
 // my_class.h
@@ -100,22 +100,22 @@ namespace N
 #endif /* MY_CLASS_H */
 ```
 
-## <a name="what-to-put-in-a-header-file"></a>Was in eine Headerdatei zu setzen
+## <a name="what-to-put-in-a-header-file"></a>Was Sie in eine Header Datei einfügen müssen
 
-Da eine Headerdatei möglicherweise von mehreren Dateien enthalten ist, kann sie keine Definitionen enthalten, die mehrere Definitionen mit demselben Namen erzeugen können. Die folgenden Sind nicht zulässig oder gelten als sehr schlechte Praxis:
+Da eine Header Datei möglicherweise von mehreren Dateien eingeschlossen werden kann, kann Sie keine Definitionen enthalten, die möglicherweise mehrere Definitionen desselben Namens enthalten. Folgendes ist nicht zulässig oder wird als äußerst schlechte Vorgehensweise angesehen:
 
-- integrierte Typdefinitionen im Namespace oder globalen Bereich
-- Nicht-Inline-Funktionsdefinitionen
-- Nicht-Const-Variablendefinitionen
-- Aggregierte Definitionen
+- integrierte Typdefinitionen im Namespace oder globalen Gültigkeitsbereich
+- nicht Inline Funktionsdefinitionen
+- nicht konstanten Variablen Definitionen
+- Aggregat Definitionen
 - Unbenannte Namespaces
 - using-Direktiven
 
-Die Verwendung **using** der using-Direktive verursacht nicht notwendigerweise einen Fehler, kann aber möglicherweise ein Problem verursachen, da sie den Namespace in jede CPP-Datei, die diesen Header direkt oder indirekt enthält, in den Gültigkeitsbereich bringt.
+Die Verwendung der- **`using`** Direktive löst nicht notwendigerweise einen Fehler aus, kann jedoch zu einem Problem führen, da der Namespace in jeder cpp-Datei, die diesen Header direkt oder indirekt enthält, in den Gültigkeitsbereich eingefügt wird.
 
-## <a name="sample-header-file"></a>Beispielheaderdatei
+## <a name="sample-header-file"></a>Beispiel Header Datei
 
-Das folgende Beispiel zeigt die verschiedenen Arten von Deklarationen und Definitionen, die in einer Headerdatei zulässig sind:
+Das folgende Beispiel zeigt die verschiedenen Arten von Deklarationen und Definitionen, die in einer Header Datei zulässig sind:
 
 ```cpp
 // sample.h

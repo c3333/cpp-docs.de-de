@@ -8,12 +8,12 @@ helpviewer_keywords:
 - operator = [C++], variant
 - = operator [C++], with specific Visual C++ objects
 ms.assetid: 77622723-6e49-4dec-9e0f-fa74028f1a3c
-ms.openlocfilehash: 402251592a87b723d75fd1b2cd0786be7b17dbfc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2db26a378526cd5f48992cb32ea46e9677125e66
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187621"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226957"
 ---
 # <a name="_variant_toperator-"></a>_variant_t::operator =
 
@@ -119,40 +119,40 @@ _variant_t& operator=(
 
 Der Operator weist dem `_variant_t`-Objekt einen neuen Wert zu:
 
-- **Operator = (** *varSrc* **)** Weist einem `_variant_t` Objekt eine vorhandene `VARIANT` zu.
+- **Operator = (**  *varSrc*  **)** Weist einem-Objekt ein vorhandenes `VARIANT` zu `_variant_t` .
 
-- **Operator = (** *pvarSrc* **)** Weist einem `_variant_t` Objekt eine vorhandene `VARIANT` zu.
+- **Operator = (**  *pvarSrc*  **)** Weist einem-Objekt ein vorhandenes `VARIANT` zu `_variant_t` .
 
-- **Operator = (** *var_t_Src* **)** Weist einem `_variant_t`-Objekt ein vorhandenes `_variant_t`-Objekt zu.
+- **Operator = (**  *var_t_Src*  **)** Weist ein vorhandenes- `_variant_t` Objekt einem- `_variant_t` Objekt zu.
 
-- **Operator = (** *SSRC* **)** Weist einem `_variant_t`-Objekt einen **kurzen** ganzzahligen Wert zu.
+- **Operator = (**  *SSRC*  **)** Weist einem- **`short`** Objekt einen ganzzahligen Wert zu `_variant_t` .
 
-- **Operator = (** `lSrc` **)** Weist einem `_variant_t`-Objekt einen **langen** ganzzahligen Wert zu.
+- **Operator = (** `lSrc` **)** weist einen **`long`** ganzzahligen Wert einem- `_variant_t` Objekt zu.    
 
-- **Operator = (** *flgsrc* **)** Weist einem `_variant_t`-Objekt einen numerischen **float** -Wert zu.
+- **Operator = (**  *flgsrc*  **)** Weist einem- **`float`** Objekt einen numerischen Wert zu `_variant_t` .
 
-- **Operator = (** *dblsrc* **)** Weist einem `_variant_t`-Objekt einen **doppelten** numerischen Wert zu.
+- **Operator = (**  *dblsrc*  **)** Weist einem- **`double`** Objekt einen numerischen Wert zu `_variant_t` .
 
-- **Operator = (** *cysrc* **)** Weist einem `_variant_t`-Objekt ein `CY`-Objekt zu.
+- **Operator = (**  *cysrc*  **)** Weist ein- `CY` Objekt einem- `_variant_t` Objekt zu.
 
-- **Operator = (** *bstrausrc* **)** Weist einem `_variant_t`-Objekt ein `BSTR`-Objekt zu.
+- **Operator = (**  *bstrausrc*  **)** Weist ein- `BSTR` Objekt einem- `_variant_t` Objekt zu.
 
-- **Operator = (**  *wstrinsrc*  **)** Weist einer `_variant_t`-Objekt eine Unicode-Zeichenfolge zu.
+- **Operator = (**  *wstrinsrc*  **)** Weist einem-Objekt eine Unicode-Zeichenfolge zu `_variant_t` .
 
-- **Operator = (** `strSrc` **)** Weist einer `_variant_t`-Objekt eine Multibytezeichenfolge zu.
+- **Operator = (** `strSrc` **)** weist einem-Objekt eine Multibytezeichenfolge zu `_variant_t` .    
 
-- **Operator = (** `bSrc` **)** Weist einem `_variant_t` Objekt einen **booleschen** Wert zu.
+- **Operator = (** `bSrc` **)** weist einem- **`bool`** Objekt einen Wert zu `_variant_t` .  
 
-- **Operator = (** *pdispsrc* **)** Weist einem `_variant_t`-Objekt ein `VT_DISPATCH`-Objekt zu.
+- **Operator = (**  *pdispsrc*  **)** Weist ein- `VT_DISPATCH` Objekt einem- `_variant_t` Objekt zu.
 
-- **Operator = (** *piunknownsrc* **)** Weist einem `_variant_t`-Objekt ein `VT_UNKNOWN`-Objekt zu.
+- **Operator = (**  *piunknownsrc*  **)** Weist ein- `VT_UNKNOWN` Objekt einem- `_variant_t` Objekt zu.
 
-- **Operator = (** *decsrc* **)** Weist einem `_variant_t`-Objekt einen `DECIMAL` Wert zu.
+- **Operator = (**  *decsrc*  **)** Weist einem- `DECIMAL` Objekt einen Wert zu `_variant_t` .
 
-- **Operator = (** `bSrc` **)** Weist einem `_variant_t`-Objekt einen `BYTE` Wert zu.
+- **Operator = (** `bSrc` **)** weist einem- `BYTE` Objekt einen Wert zu `_variant_t` .  
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_variant_t-Klasse](../cpp/variant-t-class.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - operator != [C++], relational operators
 - == operator [C++], with specific Visual C++ objects
 ms.assetid: 141bacb8-41a2-44dd-b3c0-4ad1f884f4ea
-ms.openlocfilehash: e0d7ea1a0bcaf8329cff0cdfb0c01154f3c5a73b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6e0296a2bf4ce97e41fdf6208c3dd1c6b91215dc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187569"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226938"
 ---
 # <a name="_variant_t-relational-operators"></a>_variant_t-Operatoren (relational)
 
@@ -44,21 +44,21 @@ bool operator!=(
 #### <a name="parameters"></a>Parameter
 
 *varSrc*<br/>
-Eine `VARIANT`, die mit dem `_variant_t` Objekt verglichen werden soll.
+Ein `VARIANT` , der mit dem-Objekt verglichen werden soll `_variant_t` .
 
 *pSrc*<br/>
-Ein Zeiger auf den `VARIANT`, der mit dem `_variant_t` Objekt verglichen werden soll.
+Ein Zeiger auf den `VARIANT` , der mit dem-Objekt verglichen werden soll `_variant_t` .
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt **true** zurück, wenn der Vergleich den Wert enthält, andernfalls **false** .
+Gibt zurück **`true`** , wenn der Vergleich den Wert enthält, **`false`** andernfalls.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Vergleicht ein `_variant_t` Objekt mit einem `VARIANT`und testet auf Gleichheit oder Ungleichheit.
+Vergleicht ein- `_variant_t` Objekt mit einem `VARIANT` und testet auf Gleichheit oder Ungleichheit.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_variant_t-Klasse](../cpp/variant-t-class.md)

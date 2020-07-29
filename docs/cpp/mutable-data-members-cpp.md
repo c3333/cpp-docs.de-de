@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - mutable keyword [C++]
 ms.assetid: ebe89746-3d36-43a8-8d69-f426af23f551
-ms.openlocfilehash: db3a9594a77a9ada971213eaea74a9842bd96a54
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9370952f503850fbc296c3df912d4a0fafe163f0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179340"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227347"
 ---
 # <a name="mutable-data-members-c"></a>Änderbare Datenmember (C++)
 
-Dieses Schlüsselwort kann nur auf nicht statische und nicht konstante Datenmember einer Klasse angewendet werden. Wenn ein Datenmember als **änderbar**deklariert ist, ist es zulässig, diesem Datenmember aus einer **Konstanten** Element Funktion einen Wert zuzuweisen.
+Dieses Schlüsselwort kann nur auf nicht statische und nicht konstante Datenmember einer Klasse angewendet werden. Wenn ein Datenmember deklariert wird **`mutable`** , ist es zulässig, diesem Datenmember aus einer Element Funktion einen Wert zuzuweisen **`const`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,7 +25,7 @@ mutable member-variable-declaration;
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der folgende Code wird z. b. ohne Fehler kompiliert, weil `m_accessCount` als **änderbar**deklariert wurde und daher durch `GetFlag` geändert werden kann, auch wenn `GetFlag` eine Konstante Element Funktion ist.
+Der folgende Code wird z. b. ohne Fehler kompiliert, weil als `m_accessCount` deklariert wurde **`mutable`** und daher durch geändert werden kann, `GetFlag` Obwohl `GetFlag` eine Konstante Member-Funktion ist.
 
 ```cpp
 // mutable.cpp
@@ -47,6 +47,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)

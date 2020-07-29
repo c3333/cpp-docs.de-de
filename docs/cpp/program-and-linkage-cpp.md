@@ -2,12 +2,12 @@
 title: Übersetzungseinheiten und Verknüpfungen (C++)
 ms.date: 12/11/2019
 ms.assetid: a6493ba0-24e2-4c89-956e-9da1dea660cb
-ms.openlocfilehash: e964a3c70c138caf8848e6a6366097cbfb90f548
-ms.sourcegitcommit: f7ebdfc3a260778c2ef938747cba1376c70ced15
+ms.openlocfilehash: 5a166efc7ae926f6b028c35007b0972d0a652d6d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84108393"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227191"
 ---
 # <a name="translation-units-and-linkage"></a>Übersetzungseinheiten und Verknüpfungen
 
@@ -44,7 +44,7 @@ In einigen Fällen kann es erforderlich sein, eine globale Variable oder Klasse 
 
 Eine *Free-Funktion* ist eine Funktion, die im globalen oder im Namespace-Gültigkeitsbereich definiert ist. Nicht konstante globale Variablen und freie Funktionen haben standardmäßig eine *externe Verknüpfung*. Sie sind in allen Übersetzungseinheiten des Programms sichtbar. Daher kann kein anderes globales Objekt den Namen haben. Ein Symbol mit *interner Verknüpfung* oder *ohne Verknüpfung* ist nur innerhalb der Übersetzungseinheit sichtbar, in der es deklariert ist. Wenn ein Name eine interne Verknüpfung aufweist, kann derselbe Name in einer anderen Übersetzungseinheit vorhanden sein. Innerhalb von Klassendefinitionen oder Funktions Texten deklarierte Variablen haben keine Verknüpfung.
 
-Sie können erzwingen, dass ein globaler Name eine interne Verknüpfung hat, indem Sie ihn explizit als **statisch**deklarieren. Dadurch wird die Sichtbarkeit auf dieselbe Übersetzungseinheit beschränkt, in der Sie deklariert ist. In diesem Kontext bedeutet **static** etwas anderes als bei Anwendung auf lokale Variablen.
+Sie können erzwingen, dass ein globaler Name eine interne Verknüpfung hat, indem Sie ihn explizit als deklarieren **`static`** . Dadurch wird die Sichtbarkeit auf dieselbe Übersetzungseinheit beschränkt, in der Sie deklariert ist. In diesem Kontext **`static`** bedeutet etwas anderes als bei Anwendung auf lokale Variablen.
 
 Die folgenden Objekte haben standardmäßig eine interne Verknüpfung:
 
@@ -53,7 +53,7 @@ Die folgenden Objekte haben standardmäßig eine interne Verknüpfung:
 - Typedefs
 - statische Objekte im Namespace-Gültigkeitsbereich
 
-Um einem konstanten Objekt eine externe Verknüpfung zuzuweisen, deklarieren Sie es als **extern** , und weisen Sie ihm einen Wert zu:
+Um einem konstanten Objekt eine externe Verknüpfung zu verleihen, deklarieren Sie es als, **`extern`** und weisen Sie ihm einen Wert zu:
 
 ```cpp
 extern const int value = 42;

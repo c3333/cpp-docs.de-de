@@ -1,19 +1,19 @@
 ---
-title: Rvalue-Referenzdeklarator:&amp;&amp;
+title: Rvalue-verweisdedeklarator:&amp;&amp;
 ms.date: 11/04/2016
 f1_keywords:
 - '&&'
 helpviewer_keywords:
 - '&& rvalue reference declarator'
 ms.assetid: eab0ce3a-c5a3-4992-aa70-6a8ab1f7491d
-ms.openlocfilehash: 53729cca7c259bc2d3b792ddc3509d5fc3bd255a
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 65eec84447043b89ff94b77b7aed22b1b06f58e3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81749831"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227100"
 ---
-# <a name="rvalue-reference-declarator-ampamp"></a>Rvalue-Referenzdeklarator:&amp;&amp;
+# <a name="rvalue-reference-declarator-ampamp"></a>Rvalue-verweisdedeklarator:&amp;&amp;
 
 Enthält einen Verweis auf einen rvalue-Ausdruck.
 
@@ -25,17 +25,17 @@ type-id && cast-expression
 
 ## <a name="remarks"></a>Bemerkungen
 
-Mit rvalue-Verweisen haben Sie die Möglichkeit, einen lvalue von einem rvalue zu unterscheiden. Lvalue-Verweise und rvalue-Verweise sind syntaktisch und semantisch ähnlich, folgen jedoch etwas unterschiedlichen Regeln. Weitere Informationen zu Lvalues und Rvalues finden Sie unter [Lvalues und Rvalues](../cpp/lvalues-and-rvalues-visual-cpp.md). Weitere Informationen zu lvalue-Referenzen finden Sie unter [Lvalue Reference Declarator: &](../cpp/lvalue-reference-declarator-amp.md).
+Mit rvalue-Verweisen haben Sie die Möglichkeit, einen lvalue von einem rvalue zu unterscheiden. Lvalue-Verweise und rvalue-Verweise sind syntaktisch und semantisch ähnlich, folgen jedoch etwas unterschiedlichen Regeln. Weitere Informationen zu Lvalues und Rvalues finden Sie unter [Lvalues und Rvalues](../cpp/lvalues-and-rvalues-visual-cpp.md). Weitere Informationen zu lvalue-verweisen finden Sie unter [Lvalue Reference declarator: &](../cpp/lvalue-reference-declarator-amp.md).
 
-In den folgenden Abschnitten wird beschrieben, wie rvalue-Referenzen die Implementierung von *Bewegungssemantik* und *perfekter Weiterleitung*unterstützen.
+In den folgenden Abschnitten wird beschrieben, wie Rvalue-Verweise die Implementierung von Verschiebungs *Semantik* und *perfekter Weiterleitung*unterstützen.
 
 ## <a name="move-semantics"></a>Verschiebesemantik
 
-Rvalue-Referenzen unterstützen die Implementierung von *Move-Semantik*, die die Leistung Ihrer Anwendungen erheblich steigern kann. Mithilfe der Verschiebesemantik können Sie Code schreiben, der Ressourcen (wie dynamisch zugeordneten Speicher) von einem Objekt zu einem anderen überträgt. Die Verschiebesemantik funktioniert, da sie das Übertragen von Ressourcen von temporären Objekten ermöglicht, auf die nicht an anderer Stelle im Programm verwiesen werden kann.
+Rvalue-Verweise unterstützen die Implementierung der Verschiebungs *Semantik*, wodurch die Leistung Ihrer Anwendungen erheblich gesteigert werden kann. Mithilfe der Verschiebesemantik können Sie Code schreiben, der Ressourcen (wie dynamisch zugeordneten Speicher) von einem Objekt zu einem anderen überträgt. Die Verschiebesemantik funktioniert, da sie das Übertragen von Ressourcen von temporären Objekten ermöglicht, auf die nicht an anderer Stelle im Programm verwiesen werden kann.
 
-Um die Verschiebungssemantik zu implementieren, stellen Sie in der Regel einen *Verschiebungskonstruktor* und optional einen Verschiebungszuweisungsoperator (**operator=**) für Ihre Klasse bereit. Kopier- und Zuordnungsvorgänge, deren Quellen rvalues sind, nutzen dann automatisch die Verschiebesemantik. Im Gegensatz zum standardmäßigen Kopierkonstruktor stellt der Compiler keinen standardmäßigen Bewegungskonstruktor bereit. Weitere Informationen zum Schreiben eines Verschiebungskonstruktors und zur Verwendung in der Anwendung finden Sie unter Verschieben von [Konstruktoren und Verschieben von Zuweisungsoperatoren (C++)](../cpp/move-constructors-and-move-assignment-operators-cpp.md).
+Zum Implementieren der Verschiebungs Semantik stellen Sie in der Regel einen *bewegungskonstruktor* und optional einen Verschiebungs Zuweisungs Operator (**Operator =**) zu ihrer Klasse bereit. Kopier- und Zuordnungsvorgänge, deren Quellen rvalues sind, nutzen dann automatisch die Verschiebesemantik. Im Gegensatz zum standardmäßigen Kopierkonstruktor stellt der Compiler keinen standardmäßigen Bewegungskonstruktor bereit. Weitere Informationen zum Schreiben eines bewegungskonstruktors und zur Verwendung in der Anwendung finden Sie unter [bewegungskonstruktoren und Bewegungs Zuweisungs Operatoren (C++)](../cpp/move-constructors-and-move-assignment-operators-cpp.md).
 
-Sie können auch gewöhnliche Funktionen und Operatoren überladen, um die Verschiebesemantik zu nutzen. Visual Studio 2010 führt die Bewegungssemantik in die C++-Standardbibliothek ein. Beispielsweise implementiert die `string`-Klasse Vorgänge, die Verschiebesemantik ausführen. Betrachten Sie das folgende Beispiel, in dem mehrere Zeichenfolgen verkettet werden und das Ergebnis ausgegeben wird:
+Sie können auch gewöhnliche Funktionen und Operatoren überladen, um die Verschiebesemantik zu nutzen. In Visual Studio 2010 wird die Verschiebungs Semantik in die C++-Standard Bibliothek eingeführt. Beispielsweise implementiert die `string`-Klasse Vorgänge, die Verschiebesemantik ausführen. Betrachten Sie das folgende Beispiel, in dem mehrere Zeichenfolgen verkettet werden und das Ergebnis ausgegeben wird:
 
 ```cpp
 // string_concatenation.cpp
@@ -51,7 +51,7 @@ int main()
 }
 ```
 
-Vor Visual Studio 2010 weist jeder Aufruf von **Operator+** ein neues temporäres `string` Objekt (einen rvalue) zu und gibt es zurück. **operator+** kann keine Zeichenfolge an die andere anhängen, da nicht bekannt ist, ob es sich bei den Quellzeichenfolgen um lvalues oder rvalues handelt. Wenn die Quellzeichenfolgen beide lvalues sind, wird möglicherweise an anderer Stelle im Programm auf sie verwiesen, und sie dürfen deshalb nicht geändert werden. Mithilfe von rvalue-Referenzen kann **operator+** so geändert werden, dass rvalues genommen wird, auf die an anderer Stelle im Programm nicht verwiesen werden kann. Daher kann **operator+** jetzt eine Zeichenfolge an eine andere anhängen. Dadurch kann die Anzahl dynamischer Speicherbelegungen beträchtlich reduziert werden, die die `string`-Klasse ausführen muss. Weitere Informationen zur `string` Klasse finden Sie unter [basic_string Klasse](../standard-library/basic-string-class.md).
+Vor Visual Studio 2010 ordnet jeder **Operator +-Operator +** ein neues temporäres `string` Objekt (einen Rvalue) zu und gibt dieses zurück. der **Operator +** kann eine Zeichenfolge nicht an die andere anfügen, da er nicht weiß, ob die Quell Zeichenfolgen Lvalues oder Rvalues sind. Wenn die Quellzeichenfolgen beide lvalues sind, wird möglicherweise an anderer Stelle im Programm auf sie verwiesen, und sie dürfen deshalb nicht geändert werden. Durch die Verwendung von Rvalue-verweisen kann **Operator +** geändert werden, um Rvalues zu verwenden, auf die an anderer Stelle im Programm nicht verwiesen werden kann. Daher kann **Operator +** nun eine Zeichenfolge an eine andere anfügen. Dadurch kann die Anzahl dynamischer Speicherbelegungen beträchtlich reduziert werden, die die `string`-Klasse ausführen muss. Weitere Informationen zur- `string` Klasse finden Sie unter [Basic_string-Klasse](../standard-library/basic-string-class.md).
 
 Die Verschiebesemantik ist auch hilfreich, wenn der Compiler keine Rückgabewertoptimierung (Return Value Optimization, RVO) oder benannte Rückgabewertoptimierung (Named Return Value Optimization, NRVO) verwenden kann. In diesen Fällen ruft der Compiler den Verschiebekonstruktor auf, wenn der Typ diesen definiert.
 
@@ -59,15 +59,15 @@ Das Beispiel zum Einfügen eines Elements in ein `vector`-Objekt hilft Ihnen, di
 
 Um die Verschiebesemantik im `vector`-Beispiel zu nutzen, können Sie einen Bewegungskonstruktor schreiben, um Daten von einem Objekt in ein anderes zu verschieben.
 
-Weitere Informationen zur Einführung der Verschiebungssemantik in die C++-Standardbibliothek in Visual Studio 2010 finden Sie unter [C++ Standardbibliothek](../standard-library/cpp-standard-library-reference.md).
+Weitere Informationen zur Einführung der Verschiebungs Semantik in die C++-Standardbibliothek in Visual Studio 2010 finden Sie unter [C++-Standardbibliothek](../standard-library/cpp-standard-library-reference.md).
 
 ## <a name="perfect-forwarding"></a>Perfekte Weiterleitung
 
-Perfekte Weiterleitung reduziert die Notwendigkeit überladener Funktionen und hilft, das Weiterleitungsproblem zu vermeiden. Das *Weiterleitungsproblem* kann auftreten, wenn Sie eine generische Funktion schreiben, die Verweise als Parameter verwendet und diese Parameter an eine andere Funktion weiterleitet (oder *weiterleitet).* Wenn beispielsweise die generische Funktion einen Parameter vom Typ `const T&` akzeptiert, kann die aufgerufene Funktion den Wert dieses Parameters nicht ändern. Wenn die generische Funktion einen Parameter vom Typ `T&` akzeptiert, dann kann die Funktion nicht mithilfe eines rvalue (z. B. eines temporären Objekts oder Ganzzahlliterals) aufgerufen werden.
+Perfekte Weiterleitung reduziert die Notwendigkeit überladener Funktionen und hilft, das Weiterleitungsproblem zu vermeiden. Das *Weiterleitungs Problem* kann auftreten, wenn Sie eine generische Funktion schreiben, die Verweise als Parameter annimmt, und Sie diese Parameter an eine andere Funktion übergibt (oder weiter *leitet*). Wenn beispielsweise die generische Funktion einen Parameter vom Typ `const T&` akzeptiert, kann die aufgerufene Funktion den Wert dieses Parameters nicht ändern. Wenn die generische Funktion einen Parameter vom Typ `T&` akzeptiert, dann kann die Funktion nicht mithilfe eines rvalue (z. B. eines temporären Objekts oder Ganzzahlliterals) aufgerufen werden.
 
 Um dieses Problem zu lösen, müssen Sie normalerweise überladene Versionen der generischen Funktion bereitstellen, die sowohl `T&` als auch `const T&` für jeden ihrer Parameter akzeptieren. Dadurch erhöht sich die Anzahl von überladenen Funktionen exponentiell mit der Anzahl von Parametern. Mit rvalue-Verweisen können Sie eine Version einer Funktion schreiben, die beliebige Argumente akzeptiert und diese an eine andere Funktion weiterleitet, als wäre die andere Funktion direkt aufgerufen worden.
 
-Betrachten Sie das folgende Beispiel, in dem vier Typen, `W`, `X`, `Y` und `Z`, deklariert werden. Der Konstruktor für jeden Typ verwendet eine andere Kombination aus **const-** und non-const-lvalue-Referenzen als Parameter.**const**
+Betrachten Sie das folgende Beispiel, in dem vier Typen, `W`, `X`, `Y` und `Z`, deklariert werden. Der Konstruktor für jeden Typ hat eine andere Kombination von **`const`** -und nicht- **`const`** Lvalue-verweisen als Parameter.
 
 ```cpp
 struct W
@@ -124,7 +124,7 @@ T* factory(A1&& a1, A2&& a2)
 }
 ```
 
-In diesem Beispiel werden rvalue-Verweise als Parameter für die `factory`-Funktion verwendet. Der Zweck der [funktion::forward](../standard-library/utility-functions.md#forward) besteht darin, die Parameter der Factory-Funktion an den Konstruktor der Vorlagenklasse weiterzuleiten.
+In diesem Beispiel werden rvalue-Verweise als Parameter für die `factory`-Funktion verwendet. Der Zweck der [Std:: Forward](../standard-library/utility-functions.md#forward) -Funktion besteht darin, die Parameter der factoryfunktion an den Konstruktor der Vorlagen Klasse weiterzuleiten.
 
 Das folgende Beispiel zeigt die `main`-Funktion, die die überarbeitete `factory`-Funktion verwendet, um Instanzen der Klassen `W`, `X`, `Y` und `Z` zu erstellen. Die überarbeitete `factory`-Funktion leitet ihre Parameter (entweder lvalues oder rvalues) an den entsprechenden Klassenkonstruktor weiter.
 
@@ -148,7 +148,7 @@ int main()
 
 **Sie können eine Funktion überladen, damit ein lvalue-Verweis und ein rvalue-Verweis akzeptiert werden.**
 
-Durch Überladen einer Funktion, um einen const-lvalue-Verweis oder einen rvalue-Verweis zu übernehmen, können Sie Code schreiben, der zwischen nicht veränderbaren Objekten (lwerten) und veränderbaren temporären Werten (rvalues) unterscheidet. **const** Sie können ein Objekt an eine Funktion übergeben, die einen rvalue-Verweis annimmt, es sei denn, das Objekt ist als **const**markiert. Das folgende Beispiel zeigt die `f`-Funktion, die überladen ist, damit ein lvalue-Verweis und ein rvalue-Verweis akzeptiert wird. Die `main`-Funktion ruft `f` sowohl mit lvalue als auch mit rvalue auf.
+Wenn Sie eine Funktion überlasten, um einen **`const`** Lvalue-Verweis oder einen rvalue-Verweis zu übernehmen, können Sie Code schreiben, der zwischen nicht änderbaren Objekten (Lvalues) und änderbaren temporären Werten (Rvalues) unterscheidet. Sie können ein Objekt an eine Funktion übergeben, die einen rvalue-Verweis annimmt, es sei denn, das Objekt ist als markiert **`const`** . Das folgende Beispiel zeigt die `f`-Funktion, die überladen ist, damit ein lvalue-Verweis und ein rvalue-Verweis akzeptiert wird. Die `main`-Funktion ruft `f` sowohl mit lvalue als auch mit rvalue auf.
 
 ```cpp
 // reference-overload.cpp
@@ -240,7 +240,7 @@ In diesem Beispiel übergibt die `main`-Funktion einen rvalue an `f`. Der Text v
 
 - **Sie können ein lvalue-Verweis in einen rvalue-Verweis umwandeln.**
 
-Mit der Funktion C++ Standard library [std::move](../standard-library/utility-functions.md#move) können Sie ein Objekt in einen rvalue-Verweis auf dieses Objekt konvertieren. Alternativ können Sie das **Schlüsselwort static_cast** verwenden, um einen lvalue in einen rvalue-Verweis umzuwerfen, wie im folgenden Beispiel gezeigt:
+Die [Std:: Move](../standard-library/utility-functions.md#move) -Funktion der C++-Standard Bibliothek ermöglicht es Ihnen, ein Objekt in einen rvalue-Verweis auf dieses Objekt zu konvertieren. Alternativ können Sie das- **`static_cast`** Schlüsselwort verwenden, um einen lvalue-Wert in einen rvalue-Verweis umzuwandeln, wie im folgenden Beispiel gezeigt:
 
 ```cpp
 // cast-reference.cpp
@@ -281,9 +281,9 @@ In g(MemoryBlock&&).
 
 **Funktionsvorlagen leiten ihre Vorlagenargumenttypen ab und verwenden dann Verweisreduzierungsregeln.**
 
-Es ist üblich, eine Funktionsvorlage zu schreiben, die ihre Parameter an eine andere Funktion übergibt (oder *weiterleitet).* Es ist wichtig zu wissen, wie die Ableitung des Vorlagentyps für Funktionsvorlagen, die rvalue-Verweise akzeptieren, funktioniert.
+Es ist üblich, eine Funktions Vorlage zu schreiben, die ihre Parameter an eine andere Funktion übergibt (oder weiter *leitet*). Es ist wichtig zu wissen, wie die Ableitung des Vorlagentyps für Funktionsvorlagen, die rvalue-Verweise akzeptieren, funktioniert.
 
-Wenn das Funktionsargument ein rvalue ist, geht der Compiler davon aus, dass das Argument ein rvalue-Verweis ist. Wenn Sie beispielsweise einen rvalue-Verweis auf ein Objekt vom Typ `X` an eine Vorlagenfunktion übergeben, die Typ `T&&` als Parameter akzeptiert, geht die Vorlagenargumentableitung davon aus, dass `T``X` sein muss. Daher weist der Parameter den Typ `X&&` auf. Wenn das Funktionsargument ein lvalue oder **const** lvalue ist, leitet der Compiler seinen Typ als lvalue-Referenz oder **const** lvalue-Referenz dieses Typs ab.
+Wenn das Funktionsargument ein rvalue ist, geht der Compiler davon aus, dass das Argument ein rvalue-Verweis ist. Wenn Sie beispielsweise einen rvalue-Verweis auf ein Objekt vom Typ `X` an eine Vorlagenfunktion übergeben, die Typ `T&&` als Parameter akzeptiert, geht die Vorlagenargumentableitung davon aus, dass `T``X` sein muss. Daher weist der Parameter den Typ `X&&` auf. Wenn das Funktions Argument ein Lvalue oder ein **`const`** Lvalue ist, leitet der Compiler seinen Typ als Lvalue-Verweis oder **`const`** Lvalue-Verweis dieses Typs ab.
 
 Im folgenden Beispiel wird eine Strukturvorlage deklariert und dann für verschiedene Verweistypen spezialisiert. Die `print_type_and_value`-Funktion akzeptiert einen rvalue-Verweis als Parameter und leitet ihn an die entsprechende spezialisierte Version der `S::print`-Methode weiter. Die `main`-Funktion zeigt die verschiedenen Möglichkeiten, die `S::print`-Methode aufzurufen.
 
@@ -405,10 +405,10 @@ Vorlagenargumentableitung ist ein wichtiger Bestandteil der Implementierung der 
 
 Rvalue-Verweise unterscheiden lvalues von rvalues. Sie können Ihnen helfen, die Leistung der Anwendungen zu verbessern, indem die Notwendigkeit unnötiger Speicherbelegungs- und Kopiervorgänge beseitigt wird. Sie können damit auch eine Version einer Funktion schreiben, die beliebige Argumente akzeptiert und diese an eine andere Funktion weiterleitet, als wäre die andere Funktion direkt aufgerufen worden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [Lvalue-Verweisdeklarator: &](../cpp/lvalue-reference-declarator-amp.md)<br/>
 [Lvalues und Rvalues](../cpp/lvalues-and-rvalues-visual-cpp.md)<br/>
 [Bewegungskonstruktoren und Bewegungszuweisungsoperatoren (C++)](../cpp/move-constructors-and-move-assignment-operators-cpp.md)<br/>
-[C++-Standardbibliothek](../standard-library/cpp-standard-library-reference.md)
+[C++-Standard Bibliothek](../standard-library/cpp-standard-library-reference.md)

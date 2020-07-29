@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - false keyword [C++]
 ms.assetid: cc13aec5-1f02-4d38-8dbf-5473ea2b354f
-ms.openlocfilehash: f363e309b91e44472447d040aa36752750afec6f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d6162bdde3dea0d245a0c83c1d52b06003fee16c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188934"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227490"
 ---
 # <a name="false-c"></a>false (C++)
 
-Das Schlüsselwort ist einer der beiden Werte für eine Variable vom Typ [bool](../cpp/bool-cpp.md) oder ein bedingter Ausdruck (ein bedingter Ausdruck ist jetzt ein **echter** boolescher Ausdruck). Wenn `i` z. b. eine Variable vom Typ **bool**ist, weist die `i = false;`-Anweisung `i`**false** zu.
+Das Schlüsselwort ist einer der beiden Werte für eine Variable vom Typ [bool](../cpp/bool-cpp.md) oder ein bedingter Ausdruck (ein bedingter Ausdruck ist jetzt ein **`true`** boolescher Ausdruck). Wenn z. b `i` . eine Variable vom Typ ist **`bool`** , wird die- `i = false;` Anweisung zugewiesen **`false`** `i` .
 
 ## <a name="example"></a>Beispiel
 
@@ -37,6 +37,6 @@ int main()
 0
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)

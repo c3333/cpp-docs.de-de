@@ -7,16 +7,16 @@ helpviewer_keywords:
 - namespaces [C++], unqualified names in
 - using keyword [C++]
 ms.assetid: 4184e2b1-3adc-408e-b5f3-0b3f8b554723
-ms.openlocfilehash: d762ea36e83d2384b7bb50c2914f6a634c134d15
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 3aa0c7c4615aaf5eae9f4eae534e52167bf79ff0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187842"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227022"
 ---
 # <a name="using-declaration"></a>using-Deklaration
 
-Die **using** -Deklaration führt einen Namen in den deklarativen Bereich ein, in dem die using-Deklaration angezeigt wird.
+Die- **`using`** Deklaration führt einen Namen in den deklarativen Bereich ein, in dem die using-Deklaration angezeigt wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,15 +27,15 @@ using declarator-list ;
 
 ### <a name="parameters"></a>Parameter
 
-*Name des "netsted-Name-Specifiers* " Eine Sequenz von Namespace-, Klassen-oder Enumerationsnamen und Bereichs Auflösungs Operatoren (::), die durch einen Bereichs Auflösungs Operator beendet werden. Ein einzelner Bereichs Auflösungs Operator kann verwendet werden, um einen Namen aus dem globalen Namespace einzuführen. Das Schlüsselwort **tykame** ist optional und kann verwendet werden, um abhängige Namen aufzulösen, wenn Sie in eine Klassen Vorlage aus einer Basisklasse eingefügt werden.
+*Name des "netsted-Name-Specifiers* " Eine Sequenz von Namespace-, Klassen-oder Enumerationsnamen und Bereichs Auflösungs Operatoren (::), die durch einen Bereichs Auflösungs Operator beendet werden. Ein einzelner Bereichs Auflösungs Operator kann verwendet werden, um einen Namen aus dem globalen Namespace einzuführen. Das Schlüsselwort **`typename`** ist optional und kann verwendet werden, um abhängige Namen aufzulösen, wenn Sie in eine Klassen Vorlage aus einer Basisklasse eingefügt werden.
 
 nicht *qualifizierte-ID* Ein nicht qualifizierter ID-Ausdruck, bei dem es sich um einen Bezeichner, einen überladenen Operator Namen, einen benutzerdefinierten literaloperator oder einen Namen für eine Konvertierungs Funktion, einen klassendedekonstruktor oder einen Vorlagen Namen und eine Argumentliste handelt
 
-*Deklarator-List* Eine durch Trennzeichen getrennte Liste von [**typoame** *],* die als nicht gekennzeichnete ID-Deklaratoren, gefolgt von den *Auslassungs* Zeichen, optional.
+*Deklarator-List* Eine durch Trennzeichen getrennte Liste von [], die als nicht gekennzeichnete **`typename`** ID-Deklaratoren (nicht *nested-name-specifier* *qualifiziert-ID* ), gefolgt von einem Auslassungs Zeichen, und optional.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine using-Deklaration führt einen nicht qualifizierten Namen als Synonym für eine an anderer Stelle deklarierte Entität ein. Er ermöglicht die Verwendung eines einzelnen Namens aus einem bestimmten Namespace ohne explizite Qualifizierung in dem Deklarations Bereich, in dem er angezeigt wird. Dies steht im Gegensatz zur [using-Direktive](../cpp/namespaces-cpp.md#using_directives), mit der *alle* Namen in einem Namespace ohne Qualifikation verwendet werden können. Das **using** -Schlüsselwort wird auch für [Typaliase](../cpp/aliases-and-typedefs-cpp.md)verwendet.
+Eine using-Deklaration führt einen nicht qualifizierten Namen als Synonym für eine an anderer Stelle deklarierte Entität ein. Er ermöglicht die Verwendung eines einzelnen Namens aus einem bestimmten Namespace ohne explizite Qualifizierung in dem Deklarations Bereich, in dem er angezeigt wird. Dies steht im Gegensatz zur [using-Direktive](../cpp/namespaces-cpp.md#using_directives), mit der *alle* Namen in einem Namespace ohne Qualifikation verwendet werden können. Das **`using`** Schlüsselwort wird auch für [Typaliase](../cpp/aliases-and-typedefs-cpp.md)verwendet.
 
 ## <a name="example"></a>Beispiel
 
@@ -167,7 +167,7 @@ In A::g
 
 Wenn eine using-Deklaration erfolgt, verweist das von der Deklaration erstellte Synonym nur auf Definitionen, die zum Zeitpunkt der using-Deklaration gültig waren. Definitionen, die nach der using-Deklaration einem Namespace hinzugefügt werden, sind ungültige Synonyme.
 
-Ein Name, der durch eine **using** -Deklaration definiert ist, ist ein Alias für seinen ursprünglichen Namen. Er wirkt sich nicht auf den Typ, die Verknüpfung oder andere Attribute der ursprünglichen Deklaration aus.
+Ein Name, der durch eine **`using`** Deklaration definiert ist, ist ein Alias für seinen ursprünglichen Namen. Er wirkt sich nicht auf den Typ, die Verknüpfung oder andere Attribute der ursprünglichen Deklaration aus.
 
 ```cpp
 // post_declaration_namespace_additions.cpp
@@ -217,7 +217,7 @@ Im Beispiel oben veranlasst die `using B::i`-Anweisung, dass eine zweite `int i`
 
 ## <a name="example"></a>Beispiel
 
-Eine lokale Funktionsdeklaration kann nicht den gleichen Namen und Typ wie eine Funktion haben, die von einer using-Deklaration eingeführt wird. Beispiel:
+Eine lokale Funktionsdeklaration kann nicht den gleichen Namen und Typ wie eine Funktion haben, die von einer using-Deklaration eingeführt wird. Zum Beispiel:
 
 ```cpp
 // functions_in_namespaces2.cpp
@@ -325,7 +325,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Namespaces](../cpp/namespaces-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

@@ -19,24 +19,24 @@ helpviewer_keywords:
 - throwing exceptions [C++]
 - throw keyword [C++], throw() vs. throw(...)
 ms.assetid: 15e6a87b-b8a5-4032-a7ef-946c644ba12a
-ms.openlocfilehash: 03f7f6f5a1a2842ad7fb0ba2715fada130277e70
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 4108d24b2c285b9d55d514dffae7b2efda1b3f86
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187985"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227061"
 ---
 # <a name="try-throw-and-catch-statements-c"></a>try-, throw- und catch-Anweisungen (C++)
 
-Um die Ausnahmebehandlung in C++zu implementieren, verwenden Sie **try**-, **throw**-und **catch** -Ausdrücke.
+Um die Ausnahmebehandlung in C++ zu implementieren, verwenden Sie die **`try`** **`throw`** Ausdrücke, und **`catch`** .
 
-Verwenden Sie zuerst einen **try** -Block, um eine oder mehrere Anweisungen einzuschließen, die möglicherweise eine Ausnahme auslösen.
+Verwenden Sie zunächst einen- **`try`** Block, um eine oder mehrere-Anweisungen einzuschließen, die möglicherweise eine Ausnahme auslösen.
 
-Ein **throw** -Ausdruck signalisiert, dass eine Ausnahme Bedingung – oft ein Fehler – in einem **try** -Block aufgetreten ist. Sie können ein Objekt eines beliebigen Typs als Operand eines **throw** -Ausdrucks verwenden. Normalerweise wird dieses Objekt verwendet, um Informationen über den Fehler zu kommunizieren. In den meisten Fällen wird empfohlen, die [Std:: Exception](../standard-library/exception-class.md) -Klasse oder eine der abgeleiteten Klassen zu verwenden, die in der Standardbibliothek definiert sind. Wenn eine davon nicht passend ist, wird empfohlen, dass Sie Ihre eigene Ausnahmeklasse von `std::exception` ableiten.
+Ein- **`throw`** Ausdruck signalisiert, dass in einem-Block eine Ausnahme Bedingung – oft ein Fehler – aufgetreten ist **`try`** . Sie können ein Objekt eines beliebigen Typs als Operand eines-Ausdrucks verwenden **`throw`** . Normalerweise wird dieses Objekt verwendet, um Informationen über den Fehler zu kommunizieren. In den meisten Fällen wird empfohlen, die [Std:: Exception](../standard-library/exception-class.md) -Klasse oder eine der abgeleiteten Klassen zu verwenden, die in der Standardbibliothek definiert sind. Wenn eine davon nicht passend ist, wird empfohlen, dass Sie Ihre eigene Ausnahmeklasse von `std::exception` ableiten.
 
-Um Ausnahmen zu behandeln, die möglicherweise ausgelöst werden, implementieren Sie mindestens einen **catch** -Block direkt nach einem **try** -Block. Jeder **catch** -Block gibt den Typ der Ausnahme an, die er verarbeiten kann.
+Um Ausnahmen zu behandeln, die möglicherweise ausgelöst werden, implementieren Sie einen oder mehrere **`catch`** Blöcke direkt nach einem- **`try`** Block. Jeder- **`catch`** Block gibt den Typ der Ausnahme an, die er verarbeiten kann.
 
-Dieses Beispiel zeigt einen **try** -Block und seine Handler. Nehmen Sie an, dass `GetNetworkResource()` Daten über eine Netzwerkverbindung erhält und dass die beiden Ausnahmetypen benutzerdefinierte Klassen sind, die von `std::exception` abgeleitet sind. Beachten Sie, dass die Ausnahmen durch einen **Konstanten** Verweis in der **catch** -Anweisung abgefangen werden. Es wird empfohlen, dass Sie die Ausnahmen nach Wert auslösen und sie durch einen const-Verweis abfangen.
+Dieses Beispiel zeigt einen **`try`** -Block und seine Handler. Nehmen Sie an, dass `GetNetworkResource()` Daten über eine Netzwerkverbindung erhält und dass die beiden Ausnahmetypen benutzerdefinierte Klassen sind, die von `std::exception` abgeleitet sind. Beachten Sie, dass die Ausnahmen **`const`** als Verweis in der-Anweisung abgefangen werden **`catch`** . Es wird empfohlen, dass Sie die Ausnahmen nach Wert auslösen und sie durch einen const-Verweis abfangen.
 
 ## <a name="example"></a>Beispiel
 
@@ -74,9 +74,9 @@ MyData GetNetworkResource()
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der Code nach der **try** -Klausel ist der geschützte Abschnitt des Codes. Der **throw** -Ausdruck *löst – aus*, d. h. löst – eine Ausnahme aus. Der Codeblock nach der **catch** -Klausel ist der Ausnahmehandler. Dies ist der Handler, der die Ausnahme *abfängt* , die ausgelöst wird, wenn die Typen in den **throw** -und **catch** -Ausdrücken kompatibel sind. Eine Liste der Regeln, die die Typübereinstimmung in **catch** -Blöcken steuern, finden Sie unter [wie catch-Blöcke ausgewertet werden](../cpp/how-catch-blocks-are-evaluated-cpp.md). Wenn die **catch** -Anweisung eine Ellipse (...) anstelle eines Typs angibt, verarbeitet der **catch** -Block jeden Ausnahmetyp. Wenn Sie mit der [/EHa](../build/reference/eh-exception-handling-model.md) -Option kompilieren, können diese C-strukturierte Ausnahmen und vom systemgenerierte oder von der Anwendung generierte asynchrone Ausnahmen wie z. b. Speicherschutz, Division durch 0 (null) und Gleit Komma Verletzungen enthalten. Da **catch** -Blöcke in der Programm Reihenfolge verarbeitet werden, um einen übereinstimmenden Typ zu finden, muss ein Ellipsen Handler der letzte Handler für den zugeordneten **try** -Block sein. Verwenden Sie `catch(...)` mit Vorsicht. Lassen Sie nicht zu, dass ein Programm fortgesetzt wird, es sei denn der catch-Block kann die spezifische Ausnahme, die abgefangen wird, behandeln. Normalerweise wird ein `catch(...)`-Block verwendet, um Fehler zu protokollieren und eine spezielle Bereinigung vor dem Beenden der Programmausführung auszuführen.
+Der Code nach der- **`try`** Klausel ist der geschützte Abschnitt des Codes. Der **`throw`** Ausdruck *throws*löst – aus, d. h. löst – eine Ausnahme aus. Der Codeblock nach der- **`catch`** Klausel ist der Ausnahmehandler. Dies ist der Handler, der die Ausnahme *abfängt* , die ausgelöst wird, wenn die Typen in den **`throw`** **`catch`** Ausdrücken und kompatibel sind. Eine Liste der Regeln, die die Typübereinstimmung in- **`catch`** Blöcken steuern, finden Sie unter [wie catch-Blöcke ausgewertet werden](../cpp/how-catch-blocks-are-evaluated-cpp.md). Wenn die **`catch`** Anweisung ein Auslassungs Zeichen (...) anstelle eines Typs angibt, verarbeitet der- **`catch`** Block jeden Ausnahmetyp. Wenn Sie mit der [/EHa](../build/reference/eh-exception-handling-model.md) -Option kompilieren, können diese C-strukturierte Ausnahmen und vom systemgenerierte oder von der Anwendung generierte asynchrone Ausnahmen wie z. b. Speicherschutz, Division durch 0 (null) und Gleit Komma Verletzungen enthalten. Da **`catch`** Blöcke in der Programm Reihenfolge verarbeitet werden, um einen übereinstimmenden Typ zu finden, muss ein Ellipsen Handler der letzte Handler für den zugeordneten- **`try`** Block sein. Verwenden Sie `catch(...)` mit Vorsicht. Lassen Sie nicht zu, dass ein Programm fortgesetzt wird, es sei denn der catch-Block kann die spezifische Ausnahme, die abgefangen wird, behandeln. Normalerweise wird ein `catch(...)`-Block verwendet, um Fehler zu protokollieren und eine spezielle Bereinigung vor dem Beenden der Programmausführung auszuführen.
 
-Ein **throw** -Ausdruck ohne Operanden löst die Ausnahme erneut aus, die gerade verarbeitet wird. Wir empfehlen diese Form, wenn die Ausnahme erneut ausgelöst wird, denn dadurch wird die originale polymorphe Typinformation der Ausnahme bewahrt. Ein solcher Ausdruck sollte nur in einem **catch** -Handler oder in einer Funktion verwendet werden, die von einem **catch** -Handler aufgerufen wird. Das erneut ausgelöste Ausnahmeobjekt ist das ursprüngliche Ausnahmeobjekt (keine Kopie).
+Ein- **`throw`** Ausdruck, der über keinen Operanden verfügt, löst die derzeit behandelte Ausnahme erneut aus. Wir empfehlen diese Form, wenn die Ausnahme erneut ausgelöst wird, denn dadurch wird die originale polymorphe Typinformation der Ausnahme bewahrt. Ein solcher Ausdruck sollte nur in einem **`catch`** Handler oder einer Funktion verwendet werden, die von einem Handler aufgerufen wird **`catch`** . Das erneut ausgelöste Ausnahmeobjekt ist das ursprüngliche Ausnahmeobjekt (keine Kopie).
 
 ```cpp
 try {
@@ -91,9 +91,9 @@ catch(...) {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)<br/>
+[Modern C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Nicht behandelte C++-Ausnahmen](../cpp/unhandled-cpp-exceptions.md)<br/>
 [__uncaught_exception](../c-runtime-library/reference/uncaught-exception.md)

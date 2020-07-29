@@ -11,26 +11,26 @@ helpviewer_keywords:
 - operators [C++], overloading
 - operator overloading
 ms.assetid: 56ad4c4f-dd0c-45e0-adaa-08fe98cb1f8e
-ms.openlocfilehash: a16f68088ffffd6c3cf38f5ae3adda5f2d59fb57
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 822bd5efb3125e69ff60aa42ba6419969cace403
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188570"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227230"
 ---
 # <a name="operator-overloading"></a>Überladen von Operatoren
 
-Das **Operator** Schlüsselwort deklariert eine Funktion, die angibt, welches *Operator-Symbol* bei der Anwendung auf Instanzen einer Klasse bedeutet. Dadurch erhält der Operator mehrere Bedeutungen, oder er wird "überladen". Der Compiler unterscheidet zwischen verschiedenen Bedeutungen eines Operators, indem er die Typen seiner Operanden überprüft.
+Das- **`operator`** Schlüsselwort deklariert eine Funktion, die angibt, welches *Operator-Symbol* bei der Anwendung auf Instanzen einer Klasse bedeutet. Dadurch erhält der Operator mehrere Bedeutungen, oder er wird "überladen". Der Compiler unterscheidet zwischen verschiedenen Bedeutungen eines Operators, indem er die Typen seiner Operanden überprüft.
 
 ## <a name="syntax"></a>Syntax
 
-> *Type* **Operator** *Operator-Symbol* **(** *Parameterliste* **)**
+> *Typ* **`operator`** *Operator-Symbol* **(** *Parameterliste* **)**
 
 ## <a name="remarks"></a>Bemerkungen
 
 Sie können die Funktion der meisten integrierten Operatoren global oder klassenweise neu definieren. Überladene Operatoren werden als Funktionen implementiert.
 
-Der Name eines überladenen Operators ist **Operator** *x*, wobei *x* der Operator ist, wie er in der folgenden Tabelle angezeigt wird. Wenn Sie z. b. den Additions Operator überladen möchten, definieren Sie eine Funktion mit dem Namen **Operator +** . Um den Additions-/Zuweisungs Operator **+=** zu überladen, definieren Sie eine Funktion mit dem Namen **Operator + =** .
+Der Name eines überladenen Operators ist **`operator`** *x*, wobei *x* der Operator ist, wie er in der folgenden Tabelle angezeigt wird. Wenn Sie z. b. den Additions Operator überladen möchten, definieren Sie eine Funktion mit dem Namen **Operator +**. Um den Additions-/Zuweisungs Operator zu überladen, **+=** definieren Sie eine Funktion mit dem Namen **Operator + =**.
 
 ### <a name="redefinable-operators"></a>Neu definierbare Operatoren
 
@@ -79,25 +79,25 @@ Der Name eines überladenen Operators ist **Operator** *x*, wobei *x* der Operat
 |**&#124;=**|Bitweise inklusive OR-Zuweisung|Binary|
 |**&#124;&#124;**|Logisches OR|Binary|
 |**~**|Einerkomplement|Unäroperatoren|
-|**delete**|Löschen|—|
-|**Neu**|Neu|—|
+|**`delete`**|Löschen|—|
+|**`new`**|Neu|—|
 |Konvertierungsoperatoren|Konvertierungsoperatoren|Unäroperatoren|
 
 <sup>1</sup> es sind zwei Versionen der unären Inkrement-und Dekrementoperatoren vorhanden: "Preincrement" und "postincrement".
 
 Weitere Informationen finden Sie unter [Allgemeine Regeln für die Überladung von Operatoren](../cpp/general-rules-for-operator-overloading.md) . Die Einschränkungen für die verschiedenen Kategorien von überladenen Operatoren werden in den folgenden Themen beschrieben:
 
-- [Unary Operators (Unäre Operatoren)](../cpp/overloading-unary-operators.md)
+- [Unäre Operatoren](../cpp/overloading-unary-operators.md)
 
 - [Binäre Operatoren](../cpp/binary-operators.md)
 
 - [Zuweisung](../cpp/assignment.md)
 
-- [Funktionsaufruf](../cpp/function-call-cpp.md)
+- [Funktionsaufrufe](../cpp/function-call-cpp.md)
 
 - [Indizierung](../cpp/subscripting.md)
 
-- [Zugriff auf Klassenmember](../cpp/member-access.md)
+- [Klassenmemberzugriff](../cpp/member-access.md)
 
 - [Inkrement und Dekrement](../cpp/increment-and-decrement-operator-overloading-cpp.md).
 
@@ -110,7 +110,7 @@ Die Operatoren, die in der folgenden Tabelle aufgeführt sind, können nicht üb
 |Operator|Name|
 |-|-|
 |**.**|Memberauswahl|
-|**.&#42;**|Pointer-to-member-Auswahl|
+|**. &#42;**|Pointer-to-member-Auswahl|
 |**::**|Bereichsauflösung|
 |**? :**|Bedingt|
 |**#**|Präprozessorkonvertierung in Zeichenfolge|
@@ -170,13 +170,13 @@ int main() {
 
 - [Zuweisung](../cpp/assignment.md)
 
-- [Funktionsaufruf](../cpp/function-call-cpp.md)
+- [Funktionsaufrufe](../cpp/function-call-cpp.md)
 
 - [Indizierung](../cpp/subscripting.md)
 
-- [Memberzugriff](../cpp/member-access.md)
+- [Mitgliederzugriff](../cpp/member-access.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)
