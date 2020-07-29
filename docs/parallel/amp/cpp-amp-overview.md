@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C++ Accelerated Massive Parallelism, overview
 - C++ Accelerated Massive Parallelism
 ms.assetid: 9e593b06-6e3c-43e9-8bae-6d89efdd39fc
-ms.openlocfilehash: 5c9819c1d9167bea9a9bedeef2ac44798d5a121f
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 249170e1e29d3ca8c488d15be8fa4ccd2b9070c1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404846"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222757"
 ---
 # <a name="c-amp-overview"></a>Übersicht über C++ AMP
 
@@ -60,7 +60,7 @@ Die wichtigen Teile des Codes lauten wie folgt:
 
 - Daten: Die Daten bestehen aus drei Arrays. Alle haben den gleichen Rang (Eins) und die gleiche Länge (Fünf).
 
-- Iteration: Die erste `for`-Schleife stellt einen Mechanismus für das Durchlaufen der Elemente in den Arrays bereit. Der Code, der zur Berechnung der Summen ausgeführt werden soll, befindet sich im ersten `for`-Block.
+- Iteration: die erste **`for`** Schleife stellt einen Mechanismus zum Durchlaufen der Elemente in den Arrays bereit. Der Code, den Sie ausführen möchten, um die Summen zu berechnen, ist im ersten **`for`** Block enthalten.
 
 - Index: Über die Variable `idx` wird auf die einzelnen Elemente der Arrays zugegriffen.
 
@@ -238,7 +238,7 @@ In der folgenden Tabelle werden die Übereinstimmungen und Unterschiede zwischen
 
 Freigegebener Arbeitsspeicher ist der Arbeitsspeicher, auf den sowohl die CPU als auch die Zugriffstaste zugreifen kann. Durch die Verwendung von freigegebenem Arbeitsspeicher entfällt bzw. reduziert sich der Mehraufwand zum Kopieren von Daten zwischen CPU und der Zugriffstaste erheblich. Obwohl der Arbeitsspeicher freigegeben wird, kann darauf nicht von CPU und der Zugriffstaste gleichzeitig zugegriffen werden. In diesem Fall kommt es zu einem nicht definierten Verhalten.
 
-Mithilfe von `array`-Objekten kann die Verwendung von freigegebenem Arbeitsspeicher präzise gesteuert werden, sofern die zugeordnete Zugriffstaste dies unterstützt. Ob eine Zugriffstaste freigegebenen Speicher unterstützt, wird durch die [supports_cpu_shared_memory](reference/accelerator-class.md#supports_cpu_shared_memory) -Eigenschaft der Zugriffstaste bestimmt, die **true** zurückgibt, wenn Shared Memory unterstützt wird. Wenn Shared Memory unterstützt wird, wird die standardmäßige [access_type Enumeration](reference/concurrency-namespace-enums-amp.md#access_type) für Speicher Belegungen auf der Zugriffstaste durch die- `default_cpu_access_type` Eigenschaft bestimmt. Standardmäßig wird für `array`- und `array_view`-Objekte der gleiche `access_type` wie für das primäre zugeordnete `accelerator`-Objekt verwendet.
+Mithilfe von `array`-Objekten kann die Verwendung von freigegebenem Arbeitsspeicher präzise gesteuert werden, sofern die zugeordnete Zugriffstaste dies unterstützt. Ob eine Zugriffstaste freigegebenen Speicher unterstützt, wird durch die [supports_cpu_shared_memory](reference/accelerator-class.md#supports_cpu_shared_memory) -Eigenschaft der Zugriffstaste bestimmt, die zurückgibt, **`true`** Wenn Shared Memory unterstützt wird. Wenn Shared Memory unterstützt wird, wird die standardmäßige [access_type Enumeration](reference/concurrency-namespace-enums-amp.md#access_type) für Speicher Belegungen auf der Zugriffstaste durch die- `default_cpu_access_type` Eigenschaft bestimmt. Standardmäßig wird für `array`- und `array_view`-Objekte der gleiche `access_type` wie für das primäre zugeordnete `accelerator`-Objekt verwendet.
 
 Indem Sie die [Array:: cpu_access_type-Datenmember](reference/array-class.md#cpu_access_type) -Eigenschaft eines `array` explizit festlegen, können Sie die Verwendung von frei gegebenem Arbeitsspeicher präzise steuern, damit Sie die App basierend auf den Speicherzugriffs Mustern der berechnungskerne für die Leistungsmerkmale der Hardware optimieren können. Ein `array_view`-Objekt verfügt über das gleiche `cpu_access_type`-Objekt wie das `array`, dem es zugeordnet ist; oder wenn das array_view-Objekt ohne eine Datenquelle erstellt wird, spiegelt sein `access_type`-Objekt die Umgebung, in der die erste Speicherbelegung erfolgte. Das bedeutet, dass es sich bei einem Erstzugriff durch den Host (CPU) so verhält, als ob es über eine CPU-Datenquelle erstellt wurde und es gibt das `access_type`-Objekt des  `accelerator_view`-Objekts frei, das durch die Erfassung zugeordnet wird. Wenn jedoch auf sie zunächst von einem `accelerator_view`-Objekt zugegriffen wird, dann verhält es sich, als ob es über ein `array`-Objekt erstellt wurde, das auf diesem `accelerator_view`-Objekt erstellt wurde. Es wird das `array`-Objekt des `access_type`-Objekts freigegeben.
 
@@ -431,7 +431,7 @@ for (int i = 0; i <4; i++) {
 
 ## <a name="math-libraries"></a>Mathematische Bibliotheken
 
-C++ AMP enthält zwei mathematische Bibliotheken. Die Bibliothek mit doppelter Genauigkeit im Namespace "Parallelität [::p recise_math](../../parallel/amp/reference/concurrency-precise-math-namespace.md) bietet Unterstützung für Funktionen mit doppelter Genauigkeit. Sie unterstützt auch Funktionen mit einfacher Genauigkeit, obwohl die Unterstützung doppelter Genauigkeit auf der Hardware noch benötigt wird. Sie entspricht der [C99-Spezifikation (ISO/IEC 9899)](https://go.microsoft.com/fwlink/p/?linkid=225887). Der Beschleuniger muss doppelte Genauigkeit vollständig unterstützen. Sie können bestimmen, ob dies geschieht, indem Sie den Wert des [Datenmembers Accelerator:: supports_double_precision](reference/accelerator-class.md#supports_double_precision)überprüfen. Die fast Math Library im [Namespace "parallelcurrency:: fast_math](../../parallel/amp/reference/concurrency-fast-math-namespace.md)" enthält einen weiteren Satz mathematischer Funktionen. Diese Funktionen, die nur `float`-Operanden unterstützen, werden schneller ausgeführt, sind jedoch nicht so präzise wie die Funktionen in der mathematischen Bibliothek mit doppelter Genauigkeit. Die Funktionen sind in der \<amp_math.h> Header Datei enthalten, und alle werden mit deklariert `restrict(amp)` . Die Funktionen in der \<cmath> Header Datei werden in die `fast_math` -und- `precise_math` Namespaces importiert. Das Schlüsselwort " **einschränken** " wird verwendet, um die \<cmath> Version und die C++ amp Version zu unterscheiden. Der folgende Code berechnet mithilfe der schnellen Methode den Logarithmus zur Basis 10 jedes Werts, der in der Berechnungsdomäne enthalten ist.
+C++ AMP enthält zwei mathematische Bibliotheken. Die Bibliothek mit doppelter Genauigkeit im Namespace "Parallelität [::p recise_math](../../parallel/amp/reference/concurrency-precise-math-namespace.md) bietet Unterstützung für Funktionen mit doppelter Genauigkeit. Sie unterstützt auch Funktionen mit einfacher Genauigkeit, obwohl die Unterstützung doppelter Genauigkeit auf der Hardware noch benötigt wird. Sie entspricht der [C99-Spezifikation (ISO/IEC 9899)](https://go.microsoft.com/fwlink/p/?linkid=225887). Der Beschleuniger muss doppelte Genauigkeit vollständig unterstützen. Sie können bestimmen, ob dies geschieht, indem Sie den Wert des [Datenmembers Accelerator:: supports_double_precision](reference/accelerator-class.md#supports_double_precision)überprüfen. Die fast Math Library im [Namespace "parallelcurrency:: fast_math](../../parallel/amp/reference/concurrency-fast-math-namespace.md)" enthält einen weiteren Satz mathematischer Funktionen. Diese Funktionen, die nur **`float`** Operanden unterstützen, werden schneller ausgeführt, sind aber nicht so präzise wie in der mathematischen Bibliothek mit doppelter Genauigkeit. Die Funktionen sind in der \<amp_math.h> Header Datei enthalten, und alle werden mit deklariert `restrict(amp)` . Die Funktionen in der \<cmath> Header Datei werden in die `fast_math` -und- `precise_math` Namespaces importiert. Das **`restrict`** Schlüsselwort wird verwendet, um die \<cmath> Version und die C++ amp Version zu unterscheiden. Der folgende Code berechnet mithilfe der schnellen Methode den Logarithmus zur Basis 10 jedes Werts, der in der Berechnungsdomäne enthalten ist.
 
 ```cpp
 #include <amp.h>
@@ -465,7 +465,7 @@ C++ AMP enthält eine Grafikbibliothek, die für die Programmierung beschleunigt
 
 - [writeonly_texture_view-Klasse](../../parallel/amp/reference/writeonly-texture-view-class.md): bietet schreibgeschützten Zugriff auf eine beliebige Textur.
 
-- Short Vector Library: definiert einen Satz von kurzen Vektor Typen der Länge 2, 3 und 4, die auf **int**, `uint` , **float**, **Double**, [Norm](../../parallel/amp/reference/norm-class.md)oder [unorm](../../parallel/amp/reference/unorm-class.md)basieren.
+- Short Vector Library: definiert einen Satz von kurzen Vektor Typen der Länge 2, 3 und 4, die auf **`int`** , `uint` , **`float`** , **`double`** , [Norm](../../parallel/amp/reference/norm-class.md)oder [unorm](../../parallel/amp/reference/unorm-class.md)basieren.
 
 ## <a name="universal-windows-platform-uwp-apps"></a>Universelle Windows-Plattform-Apps (UWP)
 

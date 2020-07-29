@@ -18,14 +18,14 @@ helpviewer_keywords:
 - std::condition_variable_any::wait
 - std::condition_variable_any::wait_for
 - std::condition_variable_any::wait_until
-ms.openlocfilehash: 7ecf13974404ec6e223d5d3e7387a70526eeefcc
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 9187bddef456f131982d39fd64dacea5953b959b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68244649"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222562"
 ---
-# <a name="conditionvariableany-class"></a>condition_variable_any-Klasse
+# <a name="condition_variable_any-class"></a>condition_variable_any-Klasse
 
 Verwenden Sie die `condition_variable_any`-Klasse, um ein Ereignis mit jeglichem `mutex`-Typ zu erwarten.
 
@@ -43,17 +43,17 @@ class condition_variable_any;
 |-|-|
 |[condition_variable_any](#condition_variable_any)|Erstellt ein `condition_variable_any`-Objekt.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |||
 |-|-|
 |[notify_all](#notify_all)|Hebt die Blockierung aller Threads auf, die das `condition_variable_any`-Objekt erwarten.|
 |[notify_one](#notify_one)|Hebt die Blockierung von einem der Threads, die auf das `condition_variable_any`-Objekt warten, auf.|
-|[wait](#wait)|Blockiert einen Thread.|
+|[Warte](#wait)|Blockiert einen Thread.|
 |[wait_for](#wait_for)|Blockiert einen Thread und legt ein Zeitintervall fest, nachdem die Blockierung des Threads aufgehoben wird.|
 |[wait_until](#wait_until)|Blockiert einen Thread und legt einen maximalen Zeitpunkt fest, an dem die Blockierung des Threads aufgehoben wird.|
 
-## <a name="condition_variable_any"></a> condition_variable_any
+## <a name="condition_variable_any"></a><a name="condition_variable_any"></a>condition_variable_any
 
 Erstellt ein `condition_variable_any`-Objekt.
 
@@ -61,11 +61,11 @@ Erstellt ein `condition_variable_any`-Objekt.
 condition_variable_any();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn nicht genügend Arbeitsspeicher verfügbar ist, gibt der Konstruktor ein [system_error](../standard-library/system-error-class.md)-Objekt mit einem `not_enough_memory`-Fehlercode aus. Wenn das Objekt nicht erstellt werden kann, da eine andere Ressource nicht verfügbar ist, wird vom Konstruktor ein `system_error`-Objekt mit einem `resource_unavailable_try_again`-Fehlercode ausgelöst.
 
-## <a name="notify_all"></a> notify_all
+## <a name="notify_all"></a><a name="notify_all"></a>notify_all
 
 Hebt die Blockierung aller Threads auf, die das `condition_variable_any`-Objekt erwarten.
 
@@ -73,7 +73,7 @@ Hebt die Blockierung aller Threads auf, die das `condition_variable_any`-Objekt 
 void notify_all() noexcept;
 ```
 
-## <a name="notify_one"></a> notify_one
+## <a name="notify_one"></a><a name="notify_one"></a>notify_one
 
 Hebt die Blockierung von einem der Threads, die auf das `condition_variable_any`-Objekt warten auf.
 
@@ -81,7 +81,7 @@ Hebt die Blockierung von einem der Threads, die auf das `condition_variable_any`
 void notify_one() noexcept;
 ```
 
-## <a name="wait"></a> Warte
+## <a name="wait"></a><a name="wait"></a>Warte
 
 Blockiert einen Thread.
 
@@ -99,9 +99,9 @@ void wait(Lock& Lck, Predicate Pred);
 Ein `mutex`-Objekt jeglichen Typs.
 
 *Pred*\
-Ein Ausdruck, der gibt **"true"** oder **"false"** .
+Jeder Ausdruck, der **`true`** oder zurückgibt **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Methode sperrt, bis das `condition_variable_any`-Objekt durch einen Aufruf von [notify_one](../standard-library/condition-variable-class.md#notify_one) oder [notify_all](../standard-library/condition-variable-class.md#notify_all) signalisiert wurde. Sie kann auch falsch aktiviert werden.
 
@@ -112,7 +112,7 @@ while (!Pred())
     wait(Lck);
 ```
 
-## <a name="wait_for"></a> wait_for
+## <a name="wait_for"></a><a name="wait_for"></a>wait_for
 
 Blockiert einen Thread und legt ein Zeitintervall fest, nachdem die Blockierung des Threads aufgehoben wird.
 
@@ -133,17 +133,17 @@ Ein `mutex`-Objekt jeglichen Typs.
 Ein `chrono::duration`-Objekt, das die Zeitdauer vor der Aktivierung des Threads angibt.
 
 *Pred*\
-Ein Ausdruck, der gibt **"true"** oder **"false"** .
+Jeder Ausdruck, der **`true`** oder zurückgibt **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die erste Methode `cv_status::timeout` , wenn der Wartevorgang wird, wenn beendet *Rel_time* ist abgelaufen. Andernfalls gibt diese Methode `cv_status::no_timeout` zurück.
+Die erste Methode gibt zurück, `cv_status::timeout` Wenn der Warte Vorgang beendet wird, wenn *Rel_time* abgelaufen ist. Andernfalls gibt diese Methode `cv_status::no_timeout` zurück.
 
-Die zweite Methode gibt den Wert der *Pred*.
+Die zweite Methode gibt den Wert von *pred*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Methode blockiert, bis die `condition_variable_any` Objekt wird durch einen Aufruf von signalisiert [Notify_one](../standard-library/condition-variable-class.md#notify_one) oder [Notify_all](../standard-library/condition-variable-class.md#notify_all), oder bis das Zeitintervall *Rel_time* ist abgelaufen. Sie kann auch falsch aktiviert werden.
+Die erste Methode wird blockiert, bis das `condition_variable_any` Objekt durch einen Aufruf von [notify_one](../standard-library/condition-variable-class.md#notify_one) oder [notify_all](../standard-library/condition-variable-class.md#notify_all)oder bis zur verstrichenen Zeitspanne *Rel_time* signalisiert wird. Sie kann auch falsch aktiviert werden.
 
 Die zweite Methode führt tatsächlich den folgenden Code aus.
 
@@ -155,7 +155,7 @@ while(!Pred())
 return true;
 ```
 
-## <a name="wait_until"></a> wait_until
+## <a name="wait_until"></a><a name="wait_until"></a>wait_until
 
 Blockiert einen Thread und legt einen maximalen Zeitpunkt fest, an dem die Blockierung des Threads aufgehoben wird.
 
@@ -188,17 +188,17 @@ Ein Mutex-Objekt.
 Ein [chrono::time_point](../standard-library/time-point-class.md)-Objekt
 
 *Pred*\
-Ein Ausdruck, der gibt **"true"** oder **"false"** .
+Jeder Ausdruck, der **`true`** oder zurückgibt **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Methoden, die Zurückgeben einer `cv_status` Retoure `cv_status::timeout` , wenn der Wartevorgang wird, wenn beendet *Abs_time* abgelaufen ist. Andernfalls geben diese Methoden `cv_status::no_timeout` zurück.
+Methoden, die einen Typ zurückgeben, `cv_status` geben zurück, `cv_status::timeout` Wenn der Warte Vorgang beendet wird, wenn *Abs_time* abläuft. Andernfalls geben diese Methoden `cv_status::no_timeout` zurück.
 
-Methoden, die Zurückgeben einer `bool` Rückgabe des Werts der *Pred*.
+Methoden, die zurückgeben, **`bool`** geben den Wert von *pred*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Methode blockiert, bis die `condition_variable` Objekt wird durch einen Aufruf von signalisiert [Notify_one](../standard-library/condition-variable-class.md#notify_one) oder [Notify_all](../standard-library/condition-variable-class.md#notify_all), oder bis *Abs_time*. Sie kann auch falsch aktiviert werden.
+Die erste Methode wird blockiert, bis das `condition_variable` Objekt durch einen [notify_one](../standard-library/condition-variable-class.md#notify_one) -oder [notify_all](../standard-library/condition-variable-class.md#notify_all)-Aufrufwert oder bis *Abs_time*signalisiert wird. Sie kann auch falsch aktiviert werden.
 
 Die zweite Methode führt tatsächlich den folgenden Code aus.
 

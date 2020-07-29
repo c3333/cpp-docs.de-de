@@ -1,17 +1,17 @@
 ---
-title: defaultvtable (C++ com-Attribut)
+title: defaultvtable (com-Attribut C++)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.defaultvtable
 helpviewer_keywords:
 - defaultvtable attribute
 ms.assetid: 5b3ed483-f69e-44dd-80fc-952028eb9d73
-ms.openlocfilehash: a15b3552e6b67fb0347a14c48414741edf31ac93
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2da0d8070f961f1ae0fc075585eb28881f712fb4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168265"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215256"
 ---
 # <a name="defaultvtable"></a>defaultvtable
 
@@ -30,7 +30,7 @@ Die angegebene Schnittstelle, für die die Standard-Vtable für das COM-Objekt f
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **defaultvtable** C++ -Attribut verfügt über die gleiche Funktionalität wie das Attribut " [defaultvtable](/windows/win32/Midl/defaultvtable) " in der Mitte.
+Das **defaultvtable** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut [defaultvtable](/windows/win32/Midl/defaultvtable) .
 
 ## <a name="example"></a>Beispiel
 
@@ -68,8 +68,8 @@ class CMyC3 : public IMyI3 {};
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|**coclass**|
 |**Ungültige Attribute**|Keine|
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - custom attributes, defining
 ms.assetid: 3abac928-4d55-4ea6-8cf6-8427a4ad79f1
-ms.openlocfilehash: f51b0210fff4db5be359fa94237f4d7c77b4fef2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 185517720af7e61f6a04068e8868d258a51f262f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214889"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215321"
 ---
 # <a name="custom-c"></a>custom (C++)
 
@@ -36,7 +36,7 @@ Ein Wert, der in eine Variante eingefügt werden kann.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **benutzerdefinierte** C++ Attribut bewirkt, dass Informationen in die Typbibliothek eingefügt werden. Sie benötigen ein Tool, das den benutzerdefinierten Wert aus der Typbibliothek liest.
+Das **benutzerdefinierte** C++-Attribut bewirkt, dass Informationen in die Typbibliothek eingefügt werden. Sie benötigen ein Tool, das den benutzerdefinierten Wert aus der Typbibliothek liest.
 
 Das **benutzerdefinierte** Attribut verfügt über die gleiche Funktionalität wie das [benutzerdefinierte](/windows/win32/Midl/custom) Attribut "Mittel l".
 
@@ -46,8 +46,8 @@ Das **benutzerdefinierte** Attribut verfügt über die gleiche Funktionalität w
 
 |||
 |-|-|
-|**Betrifft**|Nicht-com **-Schnittstelle**, **Klasse**, Enumeration **s,** `idl_module` Methoden, Schnittstellenmember, Schnittstellenparameter, **typedef**s, **Union**s, **Struktur**s|
-|**Wiederholbar**|Ja|
+|**Zielgruppe**|Nicht-com- **Schnittstelle**, **`class`** , **`enum`** s, `idl_module` Methoden, Schnittstellenmember, Schnittstellenparameter, s **`typedef`** **`union`** , **`struct`** s, s|
+|**REPEATABLE**|Ja|
 |**Erforderliche Attribute**|**Co-Klasse** (bei Verwendung für die Klasse)|
 |**Ungültige Attribute**|Keine|
 
@@ -57,8 +57,8 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)
+[Schnittstellen Attribute](interface-attributes.md)

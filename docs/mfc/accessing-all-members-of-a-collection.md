@@ -15,12 +15,12 @@ helpviewer_keywords:
 - ', '
 - ', '
 ms.assetid: 7bbae518-062e-4393-81f9-b22abd2e5f59
-ms.openlocfilehash: 0d8b5491ee5321171ef358308f3c1548e43953d3
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: cc058e6e4bf0058adb13f83e7ea071ebb4570ec4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84616497"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214177"
 ---
 # <a name="accessing-all-members-of-a-collection"></a>Zugreifen auf alle Elemente einer Auflistung
 
@@ -42,11 +42,11 @@ Die folgenden Verfahren zeigen, wie Sie die drei Haupttypen von Auflistungen, di
 
    Dieses Beispiel verwendet ein typisiertes Zeigerarray, das enthält Zeiger auf `CPerson` -Objekte enthält. Das Array wird von der Klasse `CObArray`abgeleitet, eine der nicht auf Vorlagen basierenden, vordefinierten Klassen. `GetAt` gibt einen Zeiger auf ein `CPerson` -Objekt zurück. Für typisierte Zeigerauflistungsklassen – Arrays oder Listen – gibt der erste Parameter die Basisklasse an; der zweite Parameter gibt den zu speichernden Typ an.
 
-   `CTypedPtrArray`Mit der-Klasse wird auch **der []** -Operator überladen, sodass Sie die übliche Array-Index-Syntax für den Zugriff auf Elemente eines Arrays verwenden können. Eine Alternative zur Anweisung im Hauptteil der obigen **for** -Schleife ist
+   `CTypedPtrArray`Mit der-Klasse wird auch **der []** -Operator überladen, sodass Sie die übliche Array-Index-Syntax für den Zugriff auf Elemente eines Arrays verwenden können. Eine Alternative zur Anweisung im Hauptteil der **`for`** obigen Schleife ist
 
    [!code-cpp[NVC_MFCCollections#13](codesnippet/cpp/accessing-all-members-of-a-collection_2.cpp)]
 
-   Dieser Operator ist in den **const** - und nicht-**const** -Versionen vorhanden. Die **const** -Version, die für **const** -Arrays aufgerufen wird, können nur auf der rechten Seite einer Zuweisungsanweisung angezeigt werden.
+   Dieser Operator ist sowohl in **`const`** als auch in nicht-- **`const`** Versionen vorhanden. Die **`const`** Version, die für Arrays aufgerufen wird **`const`** , kann nur auf der rechten Seite einer Zuweisungsanweisung angezeigt werden.
 
 ### <a name="to-iterate-a-list"></a><a name="_core_to_iterate_a_list"></a> So durchlaufen Sie eine Liste
 
@@ -73,6 +73,6 @@ Die folgenden Verfahren zeigen, wie Sie die drei Haupttypen von Auflistungen, di
 
 Weitere Informationen finden Sie unter [Löschen aller Objekte in einer CObject-Sammlung](deleting-all-objects-in-a-cobject-collection.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sammlungen](collections.md)

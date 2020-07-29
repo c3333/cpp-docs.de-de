@@ -29,12 +29,12 @@ helpviewer_keywords:
 - _TEXT type
 - _T type
 ms.assetid: 4e573c05-8800-468b-ae5f-76ff7409835e
-ms.openlocfilehash: 60dc4329ae4c908b9bd168584c71c42c12634bb2
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: d77ac4fa9afcd5a6b8f86261c7a3ba466adc64a4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57749099"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215152"
 ---
 # <a name="data-type-mappings"></a>Datentypzuordnungen
 
@@ -44,22 +44,22 @@ Entsprechende Informationen finden Sie unter [Using TCHAR.H Data Types with _MBC
 
 ### <a name="generic-text-data-type-mappings"></a>Generische Textzuordnungen von Datentypen
 
-|Generischer Textname von<br /><br /> Datentypen|SBCS (_UNICODE,<br /><br /> _MBCS nicht<br /><br /> definiert)|_MBCS<br /><br /> Definition|_UNICODE<br /><br /> Definition|
+|Generischer Textname von<br /><br /> Datentypen|SBCS (_UNICODE,<br /><br /> _MBCS nicht<br /><br /> definiert)|_MBCS<br /><br /> definiert|_UNICODE<br /><br /> definiert|
 |--------------------------------------|----------------------------------------------------|------------------------|---------------------------|
-|`_TCHAR`|`char`|`char`|`wchar_t`|
+|`_TCHAR`|**`char`**|**`char`**|**`wchar_t`**|
 |`_tfinddata_t`|`_finddata_t`|`_finddata_t`|`_wfinddata_t`|
 |`_tfinddata64_t`|`__finddata64_t`|`__finddata64_t`|`__wfinddata64_t`|
 |`_tfinddatai64_t`|`_finddatai64_t`|`_finddatai64_t`|`_wfinddatai64_t`|
-|`_TINT`|`int`|`int`|`wint_t`|
-|`_TSCHAR`|`signed char`|`signed char`|`wchar_t`|
-|`_TUCHAR`|`unsigned char`|`unsigned char`|`wchar_t`|
-|`_TXCHAR`|`char`|`unsigned char`|`wchar_t`|
+|`_TINT`|**`int`**|**`int`**|`wint_t`|
+|`_TSCHAR`|**`signed char`**|**`signed char`**|**`wchar_t`**|
+|`_TUCHAR`|**`unsigned char`**|**`unsigned char`**|**`wchar_t`**|
+|`_TXCHAR`|**`char`**|**`unsigned char`**|**`wchar_t`**|
 |`_T` oder `_TEXT`|Ohne Auswirkung (wird vom Präprozessor entfernt)|Ohne Auswirkung (wird vom Präprozessor entfernt)|`L` (konvertiert das nächste Zeichen oder die nächste Zeichenfolge in die Unicode-Entsprechung)|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Allgemeintext-Zuordnungen](../c-runtime-library/generic-text-mappings.md)<br/>
+[Zuordnungen für generischen Text](../c-runtime-library/generic-text-mappings.md)<br/>
 [Zuordnungen von Konstanten und globalen Variablen](../c-runtime-library/constant-and-global-variable-mappings.md)<br/>
-[Routinezuordnungen](../c-runtime-library/routine-mappings.md)<br/>
-[Beispiel für ein Programm mit generischem Text](../c-runtime-library/a-sample-generic-text-program.md)<br/>
-[Using Generic-Text Mappings (Verwenden von Zuordnungen für generischen Text)](../c-runtime-library/using-generic-text-mappings.md)
+[Routine Zuordnungen](../c-runtime-library/routine-mappings.md)<br/>
+[Ein Beispiel für ein generisches Text Programm](../c-runtime-library/a-sample-generic-text-program.md)<br/>
+[Verwenden von Zuordnungen für generischen Text](../c-runtime-library/using-generic-text-mappings.md)

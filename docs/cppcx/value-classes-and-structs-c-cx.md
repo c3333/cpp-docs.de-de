@@ -5,16 +5,16 @@ helpviewer_keywords:
 - value struct
 - value class
 ms.assetid: 262a0992-9721-4c02-8297-efc07d90e5a4
-ms.openlocfilehash: 4a4897f0a3b5c95ffb58e5c9666a2d764d71b3ec
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 3350af722993d6b23efa3dc9dbd5a7c33ee5165b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81752894"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214944"
 ---
 # <a name="value-classes-and-structs-ccx"></a>Wertklassen und Strukturen (C++/CX)
 
-Eine *Wertstruktur* oder *Wertklasse* ist ein Windows-Runtime-kompatibler POD ("einfache alte Datenstruktur"). Sie verfügt über eine feste Größe und besteht nur aus Feldern. Anders als eine Verweisklasse hat sie keine Eigenschaften.
+Eine *Wert Struktur* oder *Wert Klasse* ist ein Windows-Runtime kompatibler Pod ("Plain Old Data Structure"). Sie verfügt über eine feste Größe und besteht nur aus Feldern. Anders als eine Verweisklasse hat sie keine Eigenschaften.
 
 Die folgenden Beispiele zeigen, wie Wertstrukturen deklariert und initialisiert werden.
 
@@ -48,17 +48,17 @@ Die folgenden Beispiele zeigen, wie Wertstrukturen deklariert und initialisiert 
     ts3.str = "Another way to init a value struct.";
 ```
 
-Wenn eine Variable eines Werttyps einer anderen Variablen zugewiesen wird, wird der Wert kopiert, damit jede der beiden Variablen eine eigene Kopie der Daten besitzt. Eine *Wertstruktur* ist eine Struktur fester Größe, die nur öffentliche Datenfelder enthält und durch das Schlüsselwort `value struct` deklariert wird.
+Wenn eine Variable eines Werttyps einer anderen Variablen zugewiesen wird, wird der Wert kopiert, damit jede der beiden Variablen eine eigene Kopie der Daten besitzt. Eine *Wert* Struktur ist eine Struktur fester Größe, die nur öffentliche Datenfelder enthält und mit dem- **`value struct`** Schlüsselwort deklariert wird.
 
-Eine *Wertklasse* entspricht `value struct` , außer dass den zugehörigen Felder explizit öffentliche Zugreifbarkeit zugeordnet werden muss. Sie wird durch das Schlüsselwort `value class` deklariert.
+Eine *Wert Klasse* ist wie eine **`value struct`** , außer dass ihren Feldern explizit öffentliche Barrierefreiheit zugewiesen werden muss. Sie wird mit dem- **`value class`** Schlüsselwort deklariert.
 
-Eine Wertstruktur oder Wertklasse kann als Felder nur grundlegende `Platform::String^`numerische Typen, Enumerumklassen, , oder [Platform::IBox \<T>,](../cppcx/platform-ibox-interface.md) wobei T ein numerischer Typ oder eine Enumerumklasse oder Wertklasse oder -struktur ist. Ein `IBox<T>^` -Feld kann den Wert `nullptr`haben. Auf diese Weise implementiert C++ das Konzept der auf *NULL festlegbaren Werttypen*.
+Eine Wert Struktur oder Wert Klasse kann als Felder nur grundlegende numerische Typen, `Platform::String^` Enumerationsklassen, oder [Platform:: iBox \<T> ^ ](../cppcx/platform-ibox-interface.md) enthalten, wobei T ein numerischer Typ oder eine Enumerationsklasse oder eine Wert Klasse oder eine Struktur ist. Ein `IBox<T>^` Feld kann den Wert – haben **`nullptr`** . auf diese Weise implementiert C++ das Konzept von auf NULL festleg *baren Werttypen*.
 
 Eine Wertklasse oder Wertstruktur, die einen `Platform::String^` - oder `IBox<T>^` -Typ als Member enthält, das nicht `memcpy`-fähig ist.
 
-Da alle Member einer `value class` oder `value struct` öffentlich sind und in Metadaten ausgegeben werden, sind C++-Standardtypen als Member nicht zulässig. Dies unterscheidet sich von Verweisklassen, die `private` oder `internal` C++-Standardtypen enthalten können.
+Da alle Member einer **`value class`** oder **`value struct`** öffentlich sind und in Metadaten ausgegeben werden, sind Standard-C++-Typen als Member nicht zulässig. Dies unterscheidet sich von Verweis Klassen, die **`private`** oder **`internal`** C++-Standardtypen enthalten können.
 
-Im folgenden Codefragment werden die `Coordinates` - und `City` -Typen als Wertstrukturen deklariert. Beachten Sie, dass einer der `City` -Datenmember ein `GeoCoordinates` -Typ ist. Eine `value struct` kann andere Wertstrukturen als Member enthalten.
+Im folgenden Codefragment werden die `Coordinates` - und `City` -Typen als Wertstrukturen deklariert. Beachten Sie, dass einer der `City` -Datenmember ein `GeoCoordinates` -Typ ist. Eine **`value struct`** kann andere Wert Strukturen als Member enthalten.
 
 [!code-cpp[cx_classes#07](../cppcx/codesnippet/CPP/classesstructs/class1.h#07)]
 
@@ -90,7 +90,7 @@ Sie können auch ein Zeigersymbol (*) verwenden, um einen Werttyp als Verweis zu
 
 ## <a name="nullable-value-types"></a>Auf NULL festlegbare Werttypen
 
-Wie bereits erwähnt, kann eine Wertklasse oder Wertstruktur ein Feld vom Typ [Platform::IBox\<T>.](../cppcx/platform-ibox-interface.md) `IBox<int>^` Ein solches Feld kann jeden beliebigen numerischen Wert haben, der für den Typ `int` gültig ist, oder er kann den Wert `nullptr`haben. Sie können ein auf NULL festlegbares Feld als Argument an eine Methode, deren Parameter als optional deklariert ist, oder an eine beliebige andere Stelle übergeben, für die ein Werttyp keinen Wert haben muss.
+Wie bereits erwähnt, kann eine Wert Klasse oder eine Wert Struktur ein Feld vom Typ [Platform:: iBox \<T> ^ ](../cppcx/platform-ibox-interface.md)aufweisen, z `IBox<int>^` . –.. Ein solches Feld kann einen beliebigen numerischen Wert haben, der für den **`int`** Typ gültig ist, oder er kann den Wert haben **`nullptr`** . Sie können ein auf NULL festlegbares Feld als Argument an eine Methode, deren Parameter als optional deklariert ist, oder an eine beliebige andere Stelle übergeben, für die ein Werttyp keinen Wert haben muss.
 
 Im folgenden Beispiel wird veranschaulicht, wie eine Struktur mit einem auf NULL festlegbaren Feld initialisiert wird.
 
@@ -150,6 +150,6 @@ public:
 ## <a name="see-also"></a>Weitere Informationen
 
 [Typsystem (C++-CX)](../cppcx/type-system-c-cx.md)<br/>
-[C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
+[C++/CX-Sprachreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
 [Namespaces-Referenz](../cppcx/namespaces-reference-c-cx.md)<br/>
 [Verweisklassen und Strukturen (C++/CX)](../cppcx/ref-classes-and-structs-c-cx.md)

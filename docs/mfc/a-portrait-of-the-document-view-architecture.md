@@ -1,5 +1,5 @@
 ---
-title: Ein Portrait der Dokument-/Ansichtarchitektur
+title: Ein Hochformat der Dokument-/Ansichtsarchitektur
 ms.date: 11/04/2016
 helpviewer_keywords:
 - documents [MFC], views
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - document/view architecture [MFC], about document/view architecture
 - views [MFC], accessing document data from
 ms.assetid: 4e7f65dc-b166-45d8-bcd5-9bb0d399b946
-ms.openlocfilehash: f0e71c42004b5409eeb6f5e2ddabd33296cf5f49
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 8c7bb4add1ebce62147f0bd5403f693cbec87e91
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623450"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214190"
 ---
 # <a name="a-portrait-of-the-documentview-architecture"></a>Ein Portrait der Dokument-/Ansichtarchitektur
 
@@ -27,7 +27,7 @@ Dokumente und Sichten werden in einer typischen MFC-Anwendung gepaart. Die Daten
 
 ## <a name="gaining-access-to-document-data-from-the-view"></a>Zugriff auf Dokument Daten aus der Ansicht
 
-Die Sicht greift entweder mit der [GetDocument](reference/cview-class.md#getdocument) -Funktion auf die Daten des Dokuments zu, die einen Zeiger auf das Dokument zurückgibt, oder durch Festlegen der Ansichts Klasse zu einem C++ `friend` der Document-Klasse. Die Sicht verwendet dann den Zugriff auf die Daten, um die Daten abzurufen, wenn Sie zum Zeichnen oder anderweitig bearbeiten bereit sind.
+Die Sicht greift entweder mit der [GetDocument](reference/cview-class.md#getdocument) -Funktion auf die Daten des Dokuments zu, die einen Zeiger auf das Dokument zurückgibt, oder durch Festlegen der Ansichts Klasse zu einem C++ **`friend`** der Document-Klasse. Die Sicht verwendet dann den Zugriff auf die Daten, um die Daten abzurufen, wenn Sie zum Zeichnen oder anderweitig bearbeiten bereit sind.
 
 Beispielsweise verwendet die-Sicht in der [OnDraw](reference/cview-class.md#ondraw) -Member-Funktion der Sicht, `GetDocument` um einen Dokument Zeiger zu erhalten. Anschließend wird dieser Zeiger verwendet, um auf einen `CString` Datenmember im Dokument zuzugreifen. Die Ansicht übergibt die Zeichenfolge an die `TextOut` Funktion. Den Code für dieses Beispiel finden Sie unter [Zeichnen in einer Ansicht](drawing-in-a-view.md).
 
@@ -45,6 +45,6 @@ In einer Anwendung mit mehreren Ansichten desselben Dokuments – z. b. ein Spli
 
 - [Alternativen zur Dokument-/Ansichtarchitektur](alternatives-to-the-document-view-architecture.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dokument-/Ansichtarchitektur](document-view-architecture.md)

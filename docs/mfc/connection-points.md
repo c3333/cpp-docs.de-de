@@ -15,12 +15,12 @@ helpviewer_keywords:
 - CCmdTarget class [MFC], and connection points
 - sinks, connection points
 ms.assetid: bc9fd7c7-8df6-4752-ac8c-0b177442c88d
-ms.openlocfilehash: 1a8fc4742b8bf686edf75f3b98cc283b9bf9881b
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: c14d8247be2abdf828b88e728bd930691ec6571f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84620731"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214151"
 ---
 # <a name="connection-points"></a>Verbindungspunkte
 
@@ -37,7 +37,7 @@ MFC implementiert dieses Modell in den Klassen [CConnectionPoint](reference/ccon
 
 Für jeden Verbindungspunkt, der in der Klasse implementiert ist, müssen Sie einen Verbindungsteil deklarieren, der den Verbindungspunkt implementiert. Wenn Sie einen oder mehrere Verbindungspunkte implementieren, müssen Sie auch eine einzelne Verbindungs Zuordnung in der Klasse deklarieren. Eine Verbindungs Zuordnung ist eine Tabelle mit Verbindungs Punkten, die vom ActiveX-Steuerelement unterstützt werden.
 
-Die folgenden Beispiele veranschaulichen eine einfache Verbindungs Zuordnung und einen Verbindungspunkt. Im ersten Beispiel werden die Verbindungs Zuordnung und der Punkt deklariert. im zweiten Beispiel werden die Karte und der Punkt implementiert. Beachten Sie, dass `CMyClass` eine von `CCmdTarget` abgeleitete Klasse sein muss. Im ersten Beispiel wird Code in der Klassen Deklaration im **geschützten** Abschnitt eingefügt:
+Die folgenden Beispiele veranschaulichen eine einfache Verbindungs Zuordnung und einen Verbindungspunkt. Im ersten Beispiel werden die Verbindungs Zuordnung und der Punkt deklariert. im zweiten Beispiel werden die Karte und der Punkt implementiert. Beachten Sie, dass `CMyClass` eine von `CCmdTarget` abgeleitete Klasse sein muss. Im ersten Beispiel wird Code in der Klassen Deklaration im **`protected`** Abschnitt eingefügt:
 
 [!code-cpp[NVC_MFCConnectionPoints#1](codesnippet/cpp/connection-points_1.h)]
 
@@ -64,6 +64,6 @@ Verbindungspunkte unterstützen in der Regel "Multicasting" – die Möglichkeit
 
 In diesem Beispiel wird der aktuelle Satz von Verbindungen auf dem `SampleConnPt` Verbindungspunkt mit einem-Befehl abgerufen `CConnectionPoint::GetConnections` . Anschließend durchläuft Sie die Verbindungen und ruft `ISampleSink::SinkFunc` für jede aktive Verbindung auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC COM](mfc-com.md)

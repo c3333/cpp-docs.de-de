@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - is_destructible
 ms.assetid: 3bb9b718-1ad5-49ae-93cc-92b93b546b4d
-ms.openlocfilehash: 80592a6fca274533a798b2f5a2459d336ee2c301
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: cd3c54684fe08a77d3a8774cd6a2554db9fb0c9c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68452731"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215685"
 ---
-# <a name="isdestructible-class"></a>is_destructible-Klasse
+# <a name="is_destructible-class"></a>is_destructible-Klasse
 
 Testet, ob der Typ „destructible“ ist.
 
@@ -26,19 +26,19 @@ struct is_destructible;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typprädikats ist "true", wenn der Typ " *T* " ein deerbarer Typ ist; andernfalls "false". „destructible“-Typen sind Referenztypen, Objekttypen und Typen, bei denen für einige Typen `U` gleich `remove_all_extents_t<T>` der nicht ausgewertete Operand `std::declval<U&>.~U()` wohlgeformt ist. Andere Typen, einschließlich unvollständiger Typen, **void**und Funktionstypen, sind keine Typen, die nicht zerstört werden können.
+Eine Instanz des typprädikats ist "true", wenn der Typ " *T* " ein deerbarer Typ ist; andernfalls "false". „destructible“-Typen sind Referenztypen, Objekttypen und Typen, bei denen für einige Typen `U` gleich `remove_all_extents_t<T>` der nicht ausgewertete Operand `std::declval<U&>.~U()` wohlgeformt ist. Andere Typen, einschließlich unvollständiger Typen, **`void`** und Funktionstypen, sind keine Typen, die nicht zerstört werden können.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

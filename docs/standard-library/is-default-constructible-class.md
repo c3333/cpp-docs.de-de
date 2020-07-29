@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - is_default_constructible
 ms.assetid: dd8f1c44-dae5-4258-891f-c5e048d94092
-ms.openlocfilehash: 451f43435132876fcfbbabe37c613d3c9efef30e
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 6e31220fa6b15d958e94e82322467cd73e1c3a6f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68452787"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215698"
 ---
-# <a name="isdefaultconstructible-class"></a>is_default_constructible-Klasse
+# <a name="is_default_constructible-class"></a>is_default_constructible-Klasse
 
 Testet, ob ein Typ einen Standardkonstruktor besitzt.
 
@@ -26,12 +26,12 @@ struct is_default_constructible;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typprädikats ist true, wenn der Typ *T* ein Klassentyp ist, der einen Standardkonstruktor aufweist; andernfalls false. Dies entspricht dem Prädikat `is_constructible<T>`. Der Typ " *T* " muss ein kompletter Typ, " **void**" oder ein Array mit unbekannter Grenze sein.
+Eine Instanz des typprädikats ist true, wenn der Typ *T* ein Klassentyp ist, der einen Standardkonstruktor aufweist; andernfalls false. Dies entspricht dem Prädikat `is_constructible<T>`. Der Typ *T* muss ein kompletter Typ, **`void`** , oder ein Array mit unbekannter Grenze sein.
 
 ## <a name="example"></a>Beispiel
 
@@ -67,12 +67,12 @@ is_default_constructible<Simple> == true
 is_default_constructible<Simple2> == false
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

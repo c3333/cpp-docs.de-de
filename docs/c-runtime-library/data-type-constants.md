@@ -139,12 +139,12 @@ helpviewer_keywords:
 - SIZE_MAX constant
 - RSIZE_MAX constant
 ms.assetid: c0f1c405-0465-41d5-b5ff-e81cdb6f1622
-ms.openlocfilehash: c4ffbf294083131f29ffe957fd0434182fbb8f99
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
-ms.translationtype: HT
+ms.openlocfilehash: d9d053611fb733d55424d01be2bab030fc49e6e0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50636929"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215165"
 ---
 # <a name="data-type-constants"></a>Datentypkonstanten
 
@@ -159,29 +159,29 @@ Diese Konstanten geben den Bereich für die integralen Datentypen an. Um diese K
 ```
 
 > [!NOTE]
-> Die [/J](../build/reference/j-default-char-type-is-unsigned.md)-Compileroption ändert den Standard von **char** in **unsigned**.
+> Mit der- [`/J`](../build/reference/j-default-char-type-is-unsigned.md) Compileroption wird der **`char`** Standardtyp von **`signed char`** in geändert **`unsigned char`** .
 
-|Konstante|Wert|Beschreibung |
+|Konstante|Wert|BESCHREIBUNG|
 |--------------|-----------|-------------|
-|**CHAR_BIT**|8|Die Anzahl der Bits in einem **char**|
-|**SCHAR_MIN**|(–128)|signed **char**-Mindestwert|
-|**SCHAR_MAX**|127|signed **char**-Höchstwert|
-|**UCHAR_MAX**|255 (0xff)|**unsigned** **char**-Höchstwert|
-|**CHAR_MIN**|–128 (0 bei Verwendung der **/J**-Option)|**char**-Mindestwert|
-|**CHAR_MAX**|-127 (255 bei Verwendung der **/J**-Option)|**char**-Höchstwert|
-|**MB_LEN_MAX**|5|Die maximale Anzahl der Bytes in **char** in Multibyte|
-|**SHRT_MIN**|-32768|signed **short**-Mindestwert|
-|**SHRT_MAX**|32767|signed **short**-Höchstwert|
-|**USHRT_MAX**|65535 (0xffff)|**unsigned** **short**-Höchstwert|
-|**INT_MIN**|(–2147483647 – 1)|signed **int**-Mindestwert|
-|**INT_MAX**|2147483647|signed **int**-Höchstwert|
-|**UINT_MAX**|4294967295 (0xffffffff)|**unsigned** **int**-Höchstwert|
-|**LONG_MIN**|(–2147483647L – 1)|signed **long**-Mindestwert|
-|**LONG_MAX**|2147483647L|signed **long**-Höchstwert|
-|**ULONG_MAX**|4294967295UL (0xfffffffful)|**unsigned** **long**-Höchstwert|
-|**LLONG_MIN**|(–9223372036854775807LL – 1)|signed **long** **long**-Mindestwert oder **__int64**-Mindestwert|
-|**LLONG_MAX**|9223372036854775807LL|signed **long** **long**-Höchstwert oder **__int64**-Höchstwert|
-|**ULLONG_MAX**|0xffffffffffffffffull|**unsigned** **long** **long**-Höchstwert|
+|**CHAR_BIT**|8|Anzahl von Bits in einem**`char`**|
+|**SCHAR_MIN**|(–128)|Minimal **`signed char`** Wert|
+|**SCHAR_MAX**|127|Maximal **`signed char`** Wert|
+|**UCHAR_MAX**|255 (0xff)|Maximal **`unsigned char`** Wert|
+|**CHAR_MIN**|(-128) (0, wenn die **`/J`** Option verwendet wird)|Minimal **`char`** Wert|
+|**CHAR_MAX**|127 (255 if- **`/J`** Option)|Maximal **`char`** Wert|
+|**MB_LEN_MAX**|5|Maximale Anzahl von Bytes in Multibytezeichen**`char`**|
+|**SHRT_MIN**|-32768|Minimal **`signed short`** Wert|
+|**SHRT_MAX**|32767|Maximal **`signed short`** Wert|
+|**USHRT_MAX**|65535 (0xffff)|Maximal **`unsigned short`** Wert|
+|**INT_MIN**|(–2147483647 – 1)|Minimal **`signed int`** Wert|
+|**INT_MAX**|2147483647|Maximal **`signed int`** Wert|
+|**UINT_MAX**|4294967295 (0xffffffff)|Maximal **`unsigned int`** Wert|
+|**LONG_MIN**|(–2147483647L – 1)|Minimal **`signed long`** Wert|
+|**LONG_MAX**|2147483647L|Maximal **`signed long`** Wert|
+|**ULONG_MAX**|4294967295UL (0xfffffffful)|Maximal **`unsigned long`** Wert|
+|**LLONG_MIN**|(–9223372036854775807LL – 1)|Minimal **`signed long long`** oder **`__int64`** Wert|
+|**LLONG_MAX**|9223372036854775807LL|Maximum **`signed long long`** oder **`__int64`** Wert|
+|**ULLONG_MAX**|0xffffffffffffffffull|Maximal **`unsigned long long`** Wert|
 |**_I8_MIN**|(-127i8 - 1)|8-Bit-Mindestwert (signed)|
 |**_I8_MAX**|127i8|8-Bit-Höchstwert (signed)|
 |**_UI8_MAX**|0xffui8|8-Bit-Höchstwert (unsigned)|
@@ -202,13 +202,13 @@ Diese Konstanten geben den Bereich für die integralen Datentypen an. Um diese K
 
 ## <a name="floating-point-type-constants"></a>Gleitkommatypkonstanten
 
-Folgende Konstanten geben den Bereich und andere Merkmale der Datentypen **long** **double**, **double** und **float** an. Um diese Konstanten zu verwenden, schließen Sie den „float.h“-Header in Ihre Quelldatei ein:
+Die folgenden Konstanten gibt den Bereich und andere Eigenschaften der **`long double`** **`double`** Datentypen, und an **`float`** . Um diese Konstanten zu verwenden, schließen Sie den „float.h“-Header in Ihre Quelldatei ein:
 
 ```C
 #include <float.h>
 ```
 
-|Konstante|Wert|Beschreibung |
+|Konstante|Wert|BESCHREIBUNG|
 |--------------|-----------|-----------------|
 |**DBL_DECIMAL_DIG**|17|Anzahl der Dezimalstellen der Rundungsgenauigkeit|
 |**DBL_DIG**|15|Anzahl der Dezimalstellen der Genauigkeit|
@@ -250,6 +250,6 @@ Folgende Konstanten geben den Bereich und andere Merkmale der Datentypen **long*
 |**LDBL_TRUE_MIN**|4.9406564584124654e-324|Positiver subnormaler Mindestwert|
 |**DECIMAL_DIG**|das gleiche wie **DBL_DECIMAL_DIG**|Standard (doppelte) Dezimalstellen der Rundungsgenauigkeit|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Globale Konstanten](../c-runtime-library/global-constants.md)

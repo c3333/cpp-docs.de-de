@@ -7,12 +7,12 @@ helpviewer_keywords:
 - add_pointer class
 - add_pointer
 ms.assetid: d8095cb0-6578-4143-b78f-87f82485298c
-ms.openlocfilehash: 8adeffd0352d04fe844b286ea7456c66e907a0a7
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 74e8cf037f8adfb6fdd9338c3cd95e2363f8de75
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84619262"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222614"
 ---
 # <a name="add_pointer-class"></a>add_pointer-Klasse
 
@@ -33,9 +33,9 @@ using add_pointer_t = typename add_pointer<T>::type;
 *Bund*\
 Der zu ändernde Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Member **typedef** `type` benennt den gleichen Typ wie `remove_reference<T>::type*` . Der Alias `add_pointer_t` ist eine Verknüpfung für den Zugriff auf die **typedef** -Member `type` .
+Der Member **`typedef`** `type` benennt den gleichen Typ wie `remove_reference<T>::type*` . Der Alias `add_pointer_t` ist eine Verknüpfung für den Zugriff auf den Member **`typedef`** `type` .
 
 Da es unzulässig ist, einen Zeiger aus einem Verweis zu erstellen, wird der Verweis durch `add_pointer` ggf. vom angegebenen Typ entfernt, bevor der Zeiger auf den Typ erstellt wird. Daher können Sie einen Typ mit `add_pointer` verwenden, ohne sich überlegen zu müssen, ob der Typ ein Verweis ist.
 
@@ -69,7 +69,7 @@ add_pointer_t<int> == int *
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](type-traits.md)\
 [remove_pointer-Klasse](remove-pointer-class.md)

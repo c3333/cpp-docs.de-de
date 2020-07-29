@@ -20,16 +20,16 @@ helpviewer_keywords:
 - std::condition_variable::wait
 - std::condition_variable::wait_for
 - std::condition_variable::wait_until
-ms.openlocfilehash: 999e236433ec4f3f2f52abb06855004a89169fa6
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: a737b122e8fd9b782b0ddbe599ac8959f1929aab
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427164"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222549"
 ---
 # <a name="condition_variable-class"></a>condition_variable-Klasse
 
-Verwenden Sie die `condition_variable`-Klasse, um ein Ereignis zu erwarten, wenn Sie über ein `mutex` des Typs `unique_lock<mutex>` verfügen. Objekte dieses Typs bieten möglicherweise mehr Leistung als Objekte des Typs [condition_variable_any<unique_lock\<<mutex>>](../standard-library/condition-variable-any-class.md).
+Verwenden Sie die `condition_variable`-Klasse, um ein Ereignis zu erwarten, wenn Sie über ein `mutex` des Typs `unique_lock<mutex>` verfügen. Objekte dieses Typs haben möglicherweise eine bessere Leistung als Objekte vom Typ [condition_variable_any<\<mutex> > unique_lock](../standard-library/condition-variable-any-class.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,7 +45,7 @@ class condition_variable;
 |-|-|
 |[condition_variable](#condition_variable)|Erstellt ein `condition_variable`-Objekt.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |||
 |-|-|
@@ -56,7 +56,7 @@ class condition_variable;
 |[wait_for](#wait_for)|Blockiert einen Thread und legt ein Zeitintervall fest, nachdem die Blockierung des Threads aufgehoben wird.|
 |[wait_until](#wait_until)|Blockiert einen Thread und legt einen maximalen Zeitpunkt fest, an dem die Blockierung des Threads aufgehoben wird.|
 
-## <a name="condition_variable"></a>condition_variable
+## <a name="condition_variable"></a><a name="condition_variable"></a>condition_variable
 
 Erstellt ein `condition_variable`-Objekt.
 
@@ -64,11 +64,11 @@ Erstellt ein `condition_variable`-Objekt.
 condition_variable();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn nicht genügend Arbeitsspeicher verfügbar ist, gibt der Konstruktor ein [system_error](../standard-library/system-error-class.md)-Objekt mit einem `not_enough_memory`-Fehlercode aus. Wenn das Objekt nicht erstellt werden kann, da eine andere Ressource nicht verfügbar ist, wird vom Konstruktor ein `system_error`-Objekt mit einem `resource_unavailable_try_again`-Fehlercode ausgelöst.
 
-## <a name="native_handle"></a>native_handle
+## <a name="native_handle"></a><a name="native_handle"></a>native_handle
 
 Gibt den implementierungsspezifischen Typ zurück, der das „condition_variable“-Handle darstellt.
 
@@ -80,7 +80,7 @@ native_handle_type native_handle();
 
 `native_handle_type` wird als Zeiger auf interne Datenstrukturen Concurrency Runtime von Concurrency Runtime definiert.
 
-## <a name="notify_all"></a>notify_all
+## <a name="notify_all"></a><a name="notify_all"></a>notify_all
 
 Hebt die Blockierung aller Threads auf, die das `condition_variable`-Objekt erwarten.
 
@@ -88,7 +88,7 @@ Hebt die Blockierung aller Threads auf, die das `condition_variable`-Objekt erwa
 void notify_all() noexcept;
 ```
 
-## <a name="notify_one"></a>notify_one
+## <a name="notify_one"></a><a name="notify_one"></a>notify_one
 
 Hebt die Blockierung von einem der Threads, die auf das `condition_variable`-Objekt warten auf.
 
@@ -96,7 +96,7 @@ Hebt die Blockierung von einem der Threads, die auf das `condition_variable`-Obj
 void notify_one() noexcept;
 ```
 
-## <a name="wait"></a>Warte
+## <a name="wait"></a><a name="wait"></a>Warte
 
 Blockiert einen Thread.
 
@@ -109,13 +109,13 @@ void wait(unique_lock<mutex>& Lck, Predicate Pred);
 
 ### <a name="parameters"></a>Parameter
 
-*Lck* -\
-Ein [unique_lock\<mutex>](../standard-library/unique-lock-class.md)-Objekt
+*Lck*\
+Ein [unique_lock \<mutex> ](../standard-library/unique-lock-class.md) -Objekt.
 
-*Pred-* \
-Jeder Ausdruck, der **true** oder **false**zurückgibt.
+*Pred*\
+Jeder Ausdruck, der **`true`** oder zurückgibt **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Methode sperrt, bis das `condition_variable`-Objekt durch einen Aufruf von [notify_one](#notify_one) oder [notify_all](#notify_all) signalisiert wurde. Sie kann auch falsch aktiviert werden.
 
@@ -126,7 +126,7 @@ while(!Pred())
     wait(Lck);
 ```
 
-## <a name="wait_for"></a>wait_for
+## <a name="wait_for"></a><a name="wait_for"></a>wait_for
 
 Blockiert einen Thread und legt ein Zeitintervall fest, nachdem die Blockierung des Threads aufgehoben wird.
 
@@ -145,22 +145,22 @@ bool wait_for(
 
 ### <a name="parameters"></a>Parameter
 
-*Lck* -\
-Ein [unique_lock\<mutex>](../standard-library/unique-lock-class.md)-Objekt
+*Lck*\
+Ein [unique_lock \<mutex> ](../standard-library/unique-lock-class.md) -Objekt.
 
 *Rel_time*\
 Ein `chrono::duration`-Objekt, das die Zeitdauer vor der Aktivierung des Threads angibt.
 
-*Pred-* \
-Jeder Ausdruck, der **true** oder **false**zurückgibt.
+*Pred*\
+Jeder Ausdruck, der **`true`** oder zurückgibt **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Methode gibt `cv_status::timeout` zurück, wenn der Warte Vorgang beendet wird, wenn *Rel_time* abgelaufen ist. Andernfalls gibt diese Methode `cv_status::no_timeout` zurück.
+Die erste Methode gibt zurück, `cv_status::timeout` Wenn der Warte Vorgang beendet wird, wenn *Rel_time* abgelaufen ist. Andernfalls gibt diese Methode `cv_status::no_timeout` zurück.
 
 Die zweite Methode gibt den Wert von *pred*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Methode wird blockiert, bis das `condition_variable` Objekt durch einen Aufruf von [notify_one](#notify_one) oder [notify_all](#notify_all) oder bis zur verstrichenen Zeitspanne *Rel_time* signalisiert wird. Sie kann auch falsch aktiviert werden.
 
@@ -174,7 +174,7 @@ while(!Pred())
 return true;
 ```
 
-## <a name="wait_until"></a>wait_until
+## <a name="wait_until"></a><a name="wait_until"></a>wait_until
 
 Blockiert einen Thread und legt einen maximalen Zeitpunkt fest, an dem die Blockierung des Threads aufgehoben wird.
 
@@ -203,22 +203,22 @@ bool wait_until(
 
 ### <a name="parameters"></a>Parameter
 
-*Lck* -\
-Ein [unique_lock\<mutex>](../standard-library/unique-lock-class.md)-Objekt
+*Lck*\
+Ein [unique_lock \<mutex> ](../standard-library/unique-lock-class.md) -Objekt.
 
 *Abs_time*\
 Ein [chrono::time_point](../standard-library/time-point-class.md)-Objekt
 
-*Pred-* \
-Jeder Ausdruck, der **true** oder **false**zurückgibt.
+*Pred*\
+Jeder Ausdruck, der **`true`** oder zurückgibt **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Methoden, die einen `cv_status` Typ zurückgeben, geben `cv_status::timeout` zurück, wenn der Warte Vorgang beendet wird, wenn *Abs_time* abläuft. Andernfalls geben diese Methoden `cv_status::no_timeout` zurück.
+Methoden, die einen Typ zurückgeben, `cv_status` geben zurück, `cv_status::timeout` Wenn der Warte Vorgang beendet wird, wenn *Abs_time* abläuft. Andernfalls geben diese Methoden `cv_status::no_timeout` zurück.
 
-Methoden, die einen **booleschen** Wert zurückgeben, geben den Wert von *pred*zurück.
+Methoden, die zurückgeben, **`bool`** geben den Wert von *pred*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Methode blockiert, bis das `condition_variable`-Objekt durch einen Aufruf von [notify_one](#notify_one) oder [notify_all](#notify_all) signalisiert wurde, oder bis `Abs_time`. Sie kann auch falsch aktiviert werden.
 
@@ -234,7 +234,7 @@ return true;
 
 Bei der dritten und vierten Methode wird einen Zeiger auf ein Objekt des Typs `xtime`, verwendet, um das `chrono::time_point`-Objekt zu ersetzen. Mit dem `xtime`-Objekt wird die maximale Zeit angegeben, die auf ein Signal gewartet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[<condition_variable>](../standard-library/condition-variable.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[<CONDITION_VARIABLE>](../standard-library/condition-variable.md)

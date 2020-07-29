@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - tuple class
 ms.assetid: c38749be-ae4d-41f3-98ea-6aa3250de9a3
-ms.openlocfilehash: 9890a6a9dea1671f14b66897a80f4b49861dff2b
-ms.sourcegitcommit: 8414cd91297dea88c480e208c7b5301db9972f19
+ms.openlocfilehash: 04fd3ec6ce3363d118174025823279a80dd00f0b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77257103"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215542"
 ---
 # <a name="tuple-class"></a>Tupelklasse
 
@@ -41,12 +41,12 @@ class tuple {
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
 ## <a name="remarks"></a>Bemerkungen
 
-In der Klassen Vorlage wird ein Objekt beschrieben, das N-Objekte vom Typ `T1`speichert, `T2`,..., `TN`, wobei `0 <= N <= Nmax`. Der Umfang einer tupelinstanz `tuple<T1, T2, ..., TN>` die Anzahl `N` der Vorlagen Argumente. Der Index des Vorlagen Arguments `Ti` und des entsprechenden gespeicherten Werts dieses Typs ist `i - 1`. Wenn wir also die Typen von 1 bis n in dieser Dokumentation Zahlen, liegen die entsprechenden Indexwerte zwischen 0 und n-1.
+Die Klassen Vorlage beschreibt ein Objekt, das N-Objekte der Typen speichert, `T1` `T2` ,..., `TN` bzw., wobei `0 <= N <= Nmax` . Der Umfang einer tupelinstanz `tuple<T1, T2, ..., TN>` ist die Anzahl `N` der Vorlagen Argumente. Der Index des Vorlagen Arguments `Ti` und des entsprechenden gespeicherten Werts dieses Typs ist `i - 1` . Wenn wir also die Typen von 1 bis n in dieser Dokumentation Zahlen, liegen die entsprechenden Indexwerte zwischen 0 und n-1.
 
 ## <a name="example"></a>Beispiel
 
@@ -116,7 +116,7 @@ The tuples in the vector are
 ( 3, 0.033, three ).
 ```
 
-## <a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a>Operator =
 
 Weist ein `tuple`-Objekt zu.
 
@@ -137,15 +137,15 @@ template <class U1, class U2>
 
 ### <a name="parameters"></a>Parameter
 
-Nicht *-* \
+*UN*\
 Der Typ des N-ten kopierten Tupelelements.
 
-*Rechte*\
+*Richting*\
 Das Tupel, aus dem kopiert werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die ersten beiden Member-Operatoren weisen die Elemente von *right* den entsprechenden Elementen `*this`zu. Der dritte Memberoperator weist dem Element am Index 0 von `right.first``*this` zu und dem Element am Index 1 `right.second`. Alle drei Memberoperatoren geben `*this` zurück.
+Die ersten beiden Member-Operatoren weisen die Elemente von *right* den entsprechenden Elementen von zu **`*this`** . Der dritte Member-Operator weist `right.first` das-Element am Index 0 von **`*this`** und `right.second` dem-Element bei Index 1 zu. Alle drei Member-Operatoren geben zurück **`*this`** .
 
 Die restlichen Memberoperatoren sind analog zu früheren, aber mit [Rvalue Reference Declarator: &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
@@ -198,7 +198,7 @@ int main()
 x 4
 ```
 
-## <a name="tuple_swap"></a>Wechsel
+## <a name="swap"></a><a name="tuple_swap"></a>Wechsel
 
 Tauscht die Elemente zweier Tupel aus.
 
@@ -209,17 +209,17 @@ template <class... Types>
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Tupel, dessen Elemente mit den Elementen des Tupels *Rechts*ausgetauscht werden sollen.
 
-*Rechte*\
+*Richting*\
 Ein *Tupel,* dessen Elemente mit denen des Tupels ausgetauscht werden sollen.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Funktion führt `left.swap(right)` aus.
 
-## <a name="tuple"></a>Tupel
+## <a name="tuple"></a><a name="tuple"></a>Tupel
 
 Erstellt ein `tuple`-Objekt.
 
@@ -246,10 +246,10 @@ template <class U1, class U2>
 
 ### <a name="parameters"></a>Parameter
 
-Nicht *-* \
+*UN*\
 Der Typ des N-ten kopierten Tupelelements.
 
-*Rechte*\
+*Richting*\
 Das Tupel, aus dem kopiert werden soll.
 
 ### <a name="remarks"></a>Bemerkungen

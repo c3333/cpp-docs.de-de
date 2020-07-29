@@ -4,29 +4,29 @@ ms.date: 11/04/2016
 f1_keywords:
 - <condition_variable>
 ms.assetid: 8567f7cc-20bd-42a7-9137-87c46f878009
-ms.openlocfilehash: e63dc5a494f471997c28be8b2cd237aba45a6fd6
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: d13b58fc05055ceecb6472003d7682c41c76e23d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68457381"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222536"
 ---
-# <a name="ltconditionvariablegt"></a>&lt;condition_variable&gt;
+# <a name="ltcondition_variablegt"></a>&lt;condition_variable&gt;
 
 Definiert die Klassen [condition_variable](../standard-library/condition-variable-class.md) und [condition_variable_any](../standard-library/condition-variable-any-class.md), mit denen die Objekte erstellt werden, die auf das Eintreten einer Bedingung warten.
 
 Für diesen Header wird "Concurrency Runtime (ConcRT)" verwendet, sodass er zusammen mit anderen ConcRT-Mechanismen verwendet werden kann. Weitere Informationen finden Sie unter [Concurrency Runtime](../parallel/concrt/concurrency-runtime.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<condition_variable>
+**Header:**\<condition_variable>
 
 **Namespace:** std
 
 > [!NOTE]
 > In Code, der mit **/CLR**kompiliert wird, wird dieser Header blockiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Code, der auf eine Bedingungsvariable wartet, muss auch einen `mutex` verwenden. Ein aufrufender Thread muss den `mutex` vor dem Aufrufen der Funktionen, die auf die Bedingungsvariable warten, sperren. Der `mutex` ist dann gesperrt, wenn die aufgerufene Funktion zurückgegeben wird. Die `mutex` ist nicht gesperrt, während der Thread auf das Eintreten der Bedingung wartet. Damit keine unvorhersehbaren Ergebnisse produziert werden, muss jeder Thread, der auf eine Bedingungsvariable wartet, das gleiche `mutex` Objekt verwenden.
 
@@ -49,9 +49,9 @@ Die `condition_variable_any`- und `condition_variable`- Klassen verfügen über 
 
 - `wait_for` wartet, bis zu einer angegebenen Dauer (`time interval`).
 
-Jede dieser Methoden verfügt über zwei überladene Versionen. Eine davon wartet einfach und kann fälschlicherweise aufwachen. Die andere verwendet ein zusätzliches Vorlagenargument, das ein Prädikat definiert. Die Methode wird erst zurückgegeben, wenn das Prädikat " **true**" ist.
+Jede dieser Methoden verfügt über zwei überladene Versionen. Eine davon wartet einfach und kann fälschlicherweise aufwachen. Die andere verwendet ein zusätzliches Vorlagenargument, das ein Prädikat definiert. Die-Methode gibt erst dann zurück, wenn das Prädikat ist **`true`** .
 
-Jede Klasse verfügt auch über zwei Methoden, mit denen eine Bedingungs Variable benachrichtigt wird, dass die Bedingung **true**ist.
+Jede Klasse verfügt auch über zwei Methoden, mit denen eine Bedingungs Variable benachrichtigt wird, dass Ihre Bedingung ist **`true`** .
 
 - `notify_one` weckt einen der Threads auf, der auf die Bedingungsvariable wartet.
 
@@ -65,8 +65,8 @@ void notify_all_at_thread_exit(condition_variable& cond, unique_lock<mutex> lk);
 enum class cv_status { no_timeout, timeout };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[condition_variable-Klasse](../standard-library/condition-variable-class.md)\
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[CONDITION_VARIABLE-Klasse](../standard-library/condition-variable-class.md)\
 [condition_variable_any-Klasse](../standard-library/condition-variable-any-class.md)

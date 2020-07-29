@@ -17,12 +17,12 @@ helpviewer_keywords:
 - optimization, linker
 - /OPT linker option
 ms.assetid: 8f229863-5f53-48a8-9478-243a647093ac
-ms.openlocfilehash: 5c0ab3579fcb9633c435305a8b02b0c3f73d7a6f
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: 874c4b974348d1bef8c8c3837f46c1c27d6d304b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825703"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215191"
 ---
 # <a name="opt-optimizations"></a>/OPT (Optimierungen)
 
@@ -30,9 +30,9 @@ Steuert die Optimierungen, die während eines Builds von LINK ausgeführt werden
 
 ## <a name="syntax"></a>Syntax
 
-> **/OPT:**{**ref** | **NOREF**} \
-> **/OPT:**{**ICF**[**=**_Iterationen_] | **NOICF**} \
-> **/OPT:**{**LBR** | **nolbr**}
+> **/OPT:**{**ref**  |  **NOREF**} \
+> **/OPT:**{**ICF**[ **=** _Iterationen_] | **NOICF**} \
+> **/OPT:**{**LBR**  |  **nolbr**}
 
 ## <a name="arguments"></a>Argumente
 
@@ -42,22 +42,22 @@ Steuert die Optimierungen, die während eines Builds von LINK ausgeführt werden
 
 Wenn/OPT: REF aktiviert ist, entfernt Link nicht referenzierte Paketfunktionen und-Daten, die als *COMDATs*bezeichnet werden. Diese Optimierung ist als transitive COMDAT-Eliminierung bekannt. Die Option **/OPT: Ref** deaktiviert auch die inkrementelle Verknüpfung.
 
-Inline Funktionen und Member-Funktionen, die innerhalb einer Klassen Deklaration definiert sind, sind immer COMDATs. Alle Funktionen in einer Objektdatei werden in COMDATs erstellt, wenn Sie mithilfe der [/Gy](gy-enable-function-level-linking.md) -Option kompiliert werden. Zum Platzieren von **Konstanten** Daten in COMDATs müssen Sie diese mithilfe `__declspec(selectany)`von deklarieren. Informationen zum Angeben von Daten zum Entfernen oder Falten finden Sie unter [Selectany](../../cpp/selectany.md).
+Inline Funktionen und Member-Funktionen, die innerhalb einer Klassen Deklaration definiert sind, sind immer COMDATs. Alle Funktionen in einer Objektdatei werden in COMDATs erstellt, wenn Sie mithilfe der [/Gy](gy-enable-function-level-linking.md) -Option kompiliert werden. Zum Platzieren **`const`** von Daten in COMDATs müssen Sie diese mithilfe von deklarieren `__declspec(selectany)` . Informationen zum Angeben von Daten zum Entfernen oder Falten finden Sie unter [Selectany](../../cpp/selectany.md).
 
 Standardmäßig wird **/OPT: Ref** vom Linker aktiviert, es sei denn, **/OPT: NOREF** oder [/Debug](debug-generate-debug-info.md) wurde angegeben. Um diese Standardeinstellung zu überschreiben und unreferenzierte COMDATs im Programm beizubehalten, geben Sie **/OPT: NOREF**an. Sie können die [/include](include-force-symbol-references.md) -Option verwenden, um das Entfernen eines bestimmten Symbols zu überschreiben.
 
 Wenn [/Debug](debug-generate-debug-info.md) angegeben wird, ist der Standardwert für **/opt** **NOREF**, und alle Funktionen werden im Image beibehalten. Um diese Standardeinstellung zu überschreiben und einen Debugbuild zu optimieren, geben Sie **/OPT: Ref**an. Dadurch kann die Größe Ihrer ausführbaren Datei reduziert werden, und Sie kann auch in Debugbuilds eine sinnvolle Optimierung sein. Es wird empfohlen, auch **/OPT: NOICF** anzugeben, um identische Funktionen in Debugbuilds beizubehalten. Dadurch wird es einfacher, in Funktionen, die andernfalls gefaltet würden, Stapelüberwachungen zu lesen und Haltepunkte festzulegen.
 
-**ICF**\[**=**-_Iterationen_] &#124; **NOICF**
+**ICF** \[ **=** _Iterationen_] &#124; **NOICF**
 
-Verwenden Sie **ICF**\[**=**-_Iterationen_], um eine identische COMDAT-Faltung auszuführen. Redundante COMDATs können aus der Linkerausgabe entfernt werden. Der optionale *Iterationen* Parameter gibt an, wie oft die Symbole für Duplikate durchlaufen werden. Die Standard Anzahl von Iterationen ist 1. Zusätzliche Iterationen können mehr Duplikate auffinden, die bei der Faltung in vorherigen Iterationen unentdeckt blieben.
+Verwenden Sie **ICF**- \[ **=** _Iterationen_], um eine identische COMDAT-Faltung auszuführen. Redundante COMDATs können aus der Linkerausgabe entfernt werden. Der optionale *Iterationen* Parameter gibt an, wie oft die Symbole für Duplikate durchlaufen werden. Die Standard Anzahl von Iterationen ist 1. Zusätzliche Iterationen können mehr Duplikate auffinden, die bei der Faltung in vorherigen Iterationen unentdeckt blieben.
 
 Standardmäßig wird **/OPT: ICF** durch den Linker aktiviert, es sei denn, **/OPT: NOICF** oder [/Debug](debug-generate-debug-info.md) wurde angegeben. Um diese Standardeinstellung zu überschreiben und zu verhindern, dass COMDATs im Programm gefaltet werden, geben Sie **/OPT: NOICF**an.
 
 In einem Debugbuild müssen Sie explizit **/OPT: ICF** angeben, um die COMDAT-Faltung zu aktivieren. Da **/OPT: ICF** identische Daten oder Funktionen zusammenführen kann, kann es jedoch die Funktionsnamen ändern, die in Stapel Überwachungen angezeigt werden. Außerdem kann es unmöglich sein, in bestimmten Funktionen Haltepunkte festzulegen oder einige Daten im Debugger zu untersuchen. Außerdem können Sie unerwartete Funktionen verwenden, wenn Sie den Code in Einzelschritten durchlaufen. Das Verhalten des Codes ist identisch, aber die Debugger-Präsentation kann sehr verwirrend sein. Daher empfiehlt es sich nicht, **/OPT: ICF** in Debugbuilds zu verwenden, es sei denn, die Vorteile von geringerem Code überwiegen diese Nachteile.
 
 > [!NOTE]
-> Da **/OPT: ICF** bewirken kann, dass dieselbe Adresse verschiedenen Funktionen oder schreibgeschützten Datenmembern (d **. h. Konstanten** Variablen bei der Kompilierung mit **/Gy**) zugewiesen wird, kann Sie ein Programm unterbrechen, das von eindeutigen Adressen für Funktionen oder schreibgeschützte Datenmember abhängt. Weitere Informationen finden Sie unter [/Gy (Funktionslevel-Linking aktivieren)](gy-enable-function-level-linking.md).
+> Da **/OPT: ICF** bewirken kann, dass dieselbe Adresse verschiedenen Funktionen oder schreibgeschützten Datenmembern zugewiesen wird (d. h. **`const`** Variablen bei der Kompilierung mit **/Gy**), kann Sie ein Programm unterbrechen, das von eindeutigen Adressen für Funktionen oder schreibgeschützte Datenmember abhängt. Weitere Informationen finden Sie unter [/Gy (Funktionslevel-Linking aktivieren)](gy-enable-function-level-linking.md).
 
 **LBR** &#124; **nolbr**
 
@@ -83,7 +83,7 @@ Die **/opt** -Argumente werden häufig für Projekte festgelegt, die mit dem Dia
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die Eigenschaften Seite für die**Linker** > -**Optimierung** der **Konfigurations Eigenschaften** > .
+1. Wählen Sie die Eigenschaften Seite für die Linker-Optimierung der **Konfigurations Eigenschaften**  >  **Linker**  >  **Optimization** .
 
 1. Ändern Sie eine der folgenden Eigenschaften:
 
@@ -95,7 +95,7 @@ Die **/opt** -Argumente werden häufig für Projekte festgelegt, die mit dem Dia
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die Eigenschaften Seite für die**Linker** > **Linkerbefehlszeile** der **Configuration Properties** > 
+1. Wählen Sie die **Eigenschaften**Seite für die  >  **Linker**  >  **Linkerbefehlszeile** der Configuration Properties
 
 1. Geben Sie die Option in **zusätzliche Optionen**ein:
 

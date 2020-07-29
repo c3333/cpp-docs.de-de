@@ -22,12 +22,12 @@ helpviewer_keywords:
 - GetMoniker method
 - Open method
 ms.assetid: 25805f1b-26e3-402f-af83-1b5fe5ddebf7
-ms.openlocfilehash: d0fa5f381dba4f67934007d59dbdaf4450bcfb60
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2a48acb8a961d76c34d2ba85ede5c827c880f400
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211795"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214918"
 ---
 # <a name="cenumerator-class"></a>CEnumerator-Klasse
 
@@ -44,14 +44,14 @@ class CEnumerator :
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
 |||
 |-|-|
 |[Suchen](#find)|Durchsucht die verfügbaren Anbieter (Datenquellen) mit dem angegebenen Namen.|
-|[GetMoniker](#getmoniker)|Ruft die `IMoniker`-Schnittstelle für den aktuellen Datensatz ab.|
+|[GetMoniker](#getmoniker)|Ruft die- `IMoniker` Schnittstelle für den aktuellen Datensatz ab.|
 |[Öffnen](#open)|Öffnet den Enumerator.|
 
 ## <a name="remarks"></a>Bemerkungen
@@ -75,11 +75,11 @@ in Der Name, nach dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Name gefunden wurde. Andernfalls lautet der Wert **false**.
+**`true`**, wenn der Name gefunden wurde. Andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Name wird dem `SOURCES_NAME`-Member der [ISourcesRowset](/previous-versions/windows/desktop/ms715969(v=vs.85)) -Schnittstelle zugeordnet.
+Dieser Name wird dem- `SOURCES_NAME` Member der [ISourcesRowset](/previous-versions/windows/desktop/ms715969(v=vs.85)) -Schnittstelle zugeordnet.
 
 ## <a name="cenumeratorgetmoniker"></a><a name="getmoniker"></a>Cenenerator:: getmoniker
 
@@ -126,9 +126,9 @@ HRESULT Open(const CEnumerator& enumerator) throw();
 in Ein Zeiger auf einen Moniker für einen Enumerator.
 
 *pclsid*<br/>
-in Ein Zeiger auf die `CLSID` eines Enumerators.
+in Ein Zeiger auf den `CLSID` eines Enumerators.
 
-*enumerator*<br/>
+*Enumerator*<br/>
 in Ein Verweis auf einen Enumerator.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -139,4 +139,4 @@ Ein HRESULT-Standard.
 
 [DBViewer](../../overview/visual-cpp-samples.md)<br/>
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

@@ -23,16 +23,16 @@ f1_keywords:
 helpviewer_keywords:
 - __uncaught_exception
 ms.assetid: 4d9b75c6-c9c7-4876-b761-ea9ab1925e96
-ms.openlocfilehash: 0130776ec2511aefd42d1700f950d97738e9fb14
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1eb06abbda7978acf578555f966f0857dff02053
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945946"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211631"
 ---
 # <a name="__uncaught_exception"></a>__uncaught_exception
 
-Gibt an, ob eine oder mehrere Ausnahmen ausgelöst wurden, aber noch nicht vom entsprechenden **catch** -Block einer [try-catch-](../../cpp/try-throw-and-catch-statements-cpp.md) Anweisung behandelt wurden.
+Gibt an, ob eine oder mehrere Ausnahmen ausgelöst wurden, aber noch nicht vom entsprechenden- **`catch`** Block einer [try-catch-](../../cpp/try-throw-and-catch-statements-cpp.md) Anweisung behandelt wurden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -43,16 +43,16 @@ bool __uncaught_exception(
 
 ## <a name="return-value"></a>Rückgabewert
 
-**true** ab dem Zeitpunkt, zu dem eine Ausnahme in einem **try** -Block ausgelöst wird, bis der entsprechende **catch** -Block initialisiert wird. andernfalls **false**.
+**`true`** ab dem Zeitpunkt, zu dem eine Ausnahme in einem-Block ausgelöst wird, **`try`** bis der entsprechende- **`catch`** Block initialisiert wurde, andernfalls **`false`** .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |__uncaught_exception|eh.h|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [try-, throw- und catch-Anweisungen (C++)](../../cpp/try-throw-and-catch-statements-cpp.md)<br/>

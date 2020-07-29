@@ -10,16 +10,16 @@ helpviewer_keywords:
 - BOOL operator
 - reference::operator bool
 ms.assetid: b0e57869-18cc-4296-9061-da502f30120d
-ms.openlocfilehash: ca2d21a7706248cd84ca3591eb717e4081972f9c
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: bb757fee9d6ec824a99557c409b1c4f02f48db5d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68452120"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215386"
 ---
 # <a name="vectorltboolgtreferenceoperator-bool"></a>vector&lt;bool&gt;::reference::operator bool
 
-Stellt eine implizite Konvertierung von `vector<bool>::reference` in **bool**bereit.
+Stellt eine implizite Konvertierung von `vector<bool>::reference` in bereit **`bool`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,19 +29,19 @@ operator bool() const;
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der boolesche Wert des Elements des [vector\<bool>](../standard-library/vector-bool-class.md)-Objekts.
+Der boolesche Wert des Elements des [Vektor \<bool> ](../standard-library/vector-bool-class.md) Objekts.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das `vector<bool>`-Objekt kann von diesem Operator nicht geändert werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<vector>
+**Header:**\<vector>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[vector\<bool>::reference-Klasse](../standard-library/vector-bool-reference-class.md)\
-[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)
+[Vector \<bool> :: Reference-Klasse](../standard-library/vector-bool-reference-class.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

@@ -11,16 +11,16 @@ helpviewer_keywords:
 - variant/std::variant::emplace
 - variant/std::variant::index
 - variant/std::variant::valueless_by_exception
-ms.openlocfilehash: 9bfdf644374a0b825fd0ca02bf4164a766cb42a3
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: e34704b0ad8cf8fbaf8ee9514583f9597be40122
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269302"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215399"
 ---
 # <a name="variant-class"></a>Variant-Klasse
 
-Jede Instanz von Variant-Wert zu jedem Zeitpunkt enthält entweder einen Wert von einem der anderen Typen, oder sie keinen Wert enthält.
+Jede Instanz von Variant zu einem beliebigen Zeitpunkt enthält entweder einen Wert von einem der alternativen Typen oder hat keinen Wert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,24 +35,24 @@ template <class... Types>
 
 |||
 |-|-|
-|[Variant](#variant)|Konstruiert ein Objekt vom Typ `variant`.|
+|[variant](#variant)|Konstruiert ein Objekt vom Typ `variant`.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |||
 |-|-|
 |[emplace](#emplace)|Erstellt einen neuen enthaltenen Wert.|
-|[index](#index)|Gibt den Index eines enthaltenen Werts.|
+|[Index](#index)|Gibt den Index eines enthaltenen Werts zurück.|
 |[swap](#swap)||
-|[valueless_by_exception](#emplace)|Gibt **"false"** , wenn die Variante einen Wert enthält.|
+|[valueless_by_exception](#emplace)|Gibt zurück, **`false`** Wenn die Variante einen Wert enthält.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[operator=](#op_eq)|Ersetzt die Variante mit einer Kopie einer anderen Variante.|
+|[Operator =](#op_eq)|Ersetzt die Variante durch eine Kopie einer anderen Variante.|
 
-## <a name="emplace"></a> emplace-
+## <a name="emplace"></a><a name="emplace"></a>emplace
 
 Erstellt einen neuen enthaltenen Wert.
 
@@ -67,17 +67,17 @@ template <size_t I, class U, class... Args>
     variant_alternative_t<I, variant<Types...>>& emplace(initializer_list<U>, Args&&...);
 ```
 
-## <a name="index"></a> Index
+## <a name="index"></a><a name="index"></a>Sin
 
-Gibt den Index eines enthaltenen Werts.
+Gibt den Index eines enthaltenen Werts zurück.
 
 ```cpp
 constexpr size_t index() const noexcept;
 ```
 
-## <a name="variant"></a> Variant
+## <a name="variant"></a><a name="variant"></a>Konfigur
 
-Konstruiert ein Objekt vom Typ `variant`. Enthält auch einen Destruktor.
+Konstruiert ein Objekt vom Typ `variant`. Schließt außerdem einen Dekonstruktor ein.
 
 ```cpp
 constexpr variant() noexcept(see below);
@@ -116,12 +116,12 @@ template <class Alloc, size_t I, class U, class... Args>
 
 ### <a name="parameters"></a>Parameter
 
-*Al*\
+*Irdische*\
 Die mit diesem Objekt zu verwendende Zuweisungsklasse.
 
-## <a name="op_eq"></a> Operator =
+## <a name="operator"></a><a name="op_eq"></a>Operator =
 
-Ersetzt die Variante mit einer Kopie einer anderen Variante.
+Ersetzt die Variante durch eine Kopie einer anderen Variante.
 
 ```cpp
 variant& operator=(const variant&);
@@ -130,15 +130,15 @@ template <class T>
     variant& operator=(T&&) noexcept(see below);
 ```
 
-## <a name="swap"></a> Swap
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
 ```cpp
 void swap(variant&) noexcept(see below);
 ```
 
-## <a name="valueless"></a> valueless_by_exception
+## <a name="valueless_by_exception"></a><a name="valueless"></a>valueless_by_exception
 
-Gibt **"false"** , wenn die Variante einen Wert enthält.
+Gibt zurück, **`false`** Wenn die Variante einen Wert enthält.
 
 ```cpp
 constexpr bool valueless_by_exception() const noexcept;

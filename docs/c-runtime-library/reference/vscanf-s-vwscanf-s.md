@@ -24,12 +24,12 @@ f1_keywords:
 - vscanf_s
 - vwscanf_s
 ms.assetid: 23a1c383-5b01-4887-93ce-534a1e38ed93
-ms.openlocfilehash: 4d08679d08fb5b212306cbaeec200d16803a85ef
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9fb58e38362d709ef6d203c5602aa32727efa763
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945399"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215100"
 ---
 # <a name="vscanf_s-vwscanf_s"></a>vscanf_s, vwscanf_s
 
@@ -53,7 +53,7 @@ int vwscanf_s(
 *format*<br/>
 Formatsteuerzeichenfolge.
 
-*arglist*<br/>
+*Arglist*<br/>
 Variablenargumentenliste.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -62,18 +62,18 @@ Gibt die Anzahl von Feldern zurück, die erfolgreich konvertiert und zugewiesen 
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (errno, _doserrno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **vscanf_s** -Funktion liest Daten aus dem Standardeingabestream **stdin** und schreibt die Daten in die Speicherorte, die von der *Arglist* -Argumentliste angegeben werden. Jedes Argument in der Liste muss ein Zeiger auf eine Variable eines Typs sein, der einem Typspezifizierer im- *Format*entspricht. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
-**vwscanf_s** ist eine breit Zeichen Version von **vscanf_s**. Das *Format* Argument für **vwscanf_s** ist eine Zeichenfolge mit breit Zeichen. **vwscanf_s** und **vscanf_s** Verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **vscanf_s** unterstützt keine Eingabe aus einem Unicode-Stream.
+**vwscanf_s** ist eine breit Zeichen Version von **vscanf_s**. Das *Format* Argument für **vwscanf_s** ist eine Zeichenfolge mit breit Zeichen. **vwscanf_s** und **vscanf_s** Verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **vscanf_s** unterstützt keine Eingaben aus einem Unicode-Stream.
 
-Im Gegensatz zu **vscanf** und **vwscanf**müssen für **vscanf_s** und **vwscanf_s** die Puffergröße für alle Eingabeparameter vom Typ **c**, **c**, **s**, **s**oder Zeichen folgen-Steuerungs Sätzen, die in **[] eingeschlossen sind, angegeben werden.** . Die Puffergröße in Zeichen wird als zusätzlicher Parameter direkt nach dem Zeiger auf den Puffer oder die Variable übergeben. Die Puffergröße in Zeichen für eine **wchar_t** -Zeichenfolge entspricht nicht der Größe in Bytes.
+Im Gegensatz zu **vscanf** und **vwscanf**müssen für **vscanf_s** und **vwscanf_s** die Puffergröße für alle Eingabeparameter vom Typ **c**, **c**, **s**, **s**oder Zeichen folgen-Steuerungs Sätzen, die in **[]** eingeschlossen sind, angegeben werden. Die Puffergröße in Zeichen wird als zusätzlicher Parameter direkt nach dem Zeiger auf den Puffer oder die Variable übergeben. Die Puffergröße in Zeichen für eine **`wchar_t`** Zeichenfolge entspricht nicht der Größe in Bytes.
 
 Die Puffergröße enthält das abschließende NULL-Zeichen. Sie können ein Feld für die Breitenangabe verwenden, um sicherzustellen, dass das eingelesene Token in den Puffer passt. Wenn kein Feld für die Breiteangabe verwendet wird und das eingelesen Token zu groß für den Puffer ist, wird nichts in diesen Puffer geschrieben.
 
 > [!NOTE]
-> Der *size* -Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**.
+> Der *size* -Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**.
 
 Weitere Informationen finden Sie unter [scanf Width Specification (scanf-Breitenangabe)](../../c-runtime-library/scanf-width-specification.md).
 
@@ -92,7 +92,7 @@ Weitere Informationen finden Sie unter [Format Specification Fields: scanf and w
 |**vscanf_s**|\<stdio.h>|
 |**wscanf_s**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -157,11 +157,11 @@ The number of fields input is 6
 The contents are: 36 92.300003 y n Wide characters
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
 [scanf, _scanf_l, wscanf, _wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
 [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)<br/>

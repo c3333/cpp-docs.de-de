@@ -53,18 +53,18 @@ helpviewer_keywords:
 - top_item member [STL/CLR]
 - value_type member [STL/CLR]
 ms.assetid: 6ee96b9f-8a33-4cf7-b7e0-6535c24bdefb
-ms.openlocfilehash: 18c94df643371f7b645ac9658a51d133d53f3403
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5f5cfbb4f6125c1c72550018735b377e1507ab08
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80208324"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87214885"
 ---
 # <a name="stack-stlclr"></a>stack (STL/CLR)
 
-Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die über den letzten Zugriff verfügt. Sie verwenden den Container Adapter `stack`, um einen zugrunde liegenden Container als Push-Down-Stapel zu verwalten.
+Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die über den letzten Zugriff verfügt. Sie verwenden den Container Adapter `stack` , um einen zugrunde liegenden Container als Push-Down-Stapel zu verwalten.
 
-In der folgenden Beschreibung ist `GValue` identisch mit dem *Wert* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^`. Ebenso ist `GContainer` identisch mit dem *Container* , es sei denn, es handelt sich um einen Verweistyp. in diesem Fall ist es `Container^`.
+In der Beschreibung unten `GValue` ist mit dem *Wert* identisch, es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^` . Ebenso `GContainer` ist identisch mit dem *Container* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Container^` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -88,13 +88,13 @@ Der Typ des zugrunde liegenden Containers.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<cliext/Stack >
+**Header:**\<cliext/stack>
 
 **Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |[stack::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
 |[stack::container_type (STL/CLR)](#container_type)|Der Typ des zugrunde liegenden Containers.|
@@ -124,25 +124,25 @@ Der Typ des zugrunde liegenden Containers.
 |Operator|BESCHREIBUNG|
 |--------------|-----------------|
 |[stack::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
-|[operator!= (stack) (STL/CLR)](#op_neq)|Bestimmt, ob ein `stack` Objekt nicht gleich einem anderen `stack` Objekt ist.|
-|[operator< (stack) (STL/CLR)](#op_lt)|Bestimmt, ob ein `stack` Objekt kleiner als ein anderes `stack`-Objekt ist.|
-|[operator<= (stack) (STL/CLR)](#op_lteq)|Bestimmt, ob ein `stack`-Objekt kleiner als oder gleich einem anderen `stack`-Objekt ist.|
-|[operator== (stack) (STL/CLR)](#op_eq)|Bestimmt, ob ein `stack` Objekt gleich einem anderen `stack`-Objekt ist.|
-|[operator> (stack) (STL/CLR)](#op_gt)|Bestimmt, ob ein `stack` Objekt größer als ein anderes `stack`-Objekt ist.|
-|[operator>= (stack) (STL/CLR)](#op_gteq)|Bestimmt, ob ein `stack` Objekt größer als oder gleich einem anderen `stack` Objekt ist.|
+|[Operator! = (Stack) (STL/CLR)](#op_neq)|Bestimmt, ob ein-Objekt ungleich einem `stack` anderen `stack` Objekt ist.|
+|[Operator< (Stapel) (STL/CLR)](#op_lt)|Bestimmt, ob ein- `stack` Objekt kleiner als ein anderes- `stack` Objekt ist.|
+|[Operator<= (Stack) (STL/CLR)](#op_lteq)|Bestimmt, ob ein- `stack` Objekt kleiner als oder gleich einem anderen- `stack` Objekt ist.|
+|[operator== (stack) (STL/CLR)](#op_eq)|Bestimmt, ob ein- `stack` Objekt gleich einem anderen- `stack` Objekt ist.|
+|[Operator> (Stapel) (STL/CLR)](#op_gt)|Bestimmt, ob ein- `stack` Objekt größer als ein anderes- `stack` Objekt ist.|
+|[Operator>= (Stack) (STL/CLR)](#op_gteq)|Bestimmt, ob ein- `stack` Objekt größer als oder gleich einem anderen- `stack` Objekt ist.|
 
 ## <a name="interfaces"></a>Schnittstellen
 
 |Schnittstelle|BESCHREIBUNG|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
-|IStack\<Wert, Container >|Verwalten Sie einen generischen Container Adapter.|
+|IStack\<Value, Container>|Verwalten Sie einen generischen Container Adapter.|
 
 ## <a name="remarks"></a>Bemerkungen
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er durch einen zugrunde liegenden Container (vom Typ *Container*) steuert und freigibt, der *Wert* Elemente speichert und Bedarfs gesteuert wächst. Das-Objekt schränkt den Zugriff auf Push und Pop nur das letzte Element ein und implementiert eine letzte in-Out-Warteschlange (auch als LIFO-Warteschlange oder Stapel bezeichnet).
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ## <a name="stackassign-stlclr"></a><a name="assign"></a>Stack:: Assign (STL/CLR)
 
@@ -156,12 +156,12 @@ void assign(stack<Value, Container>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Der einzufügende Container Adapter.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion weist `right.get_container()` dem zugrunde liegenden Container zu. Sie verwenden Sie, um den gesamten Inhalt des Stapels zu ändern.
+Die Member-Funktion weist `right.get_container()` den zugrunde liegenden Container zu. Sie verwenden Sie, um den gesamten Inhalt des Stapels zu ändern.
 
 ### <a name="example"></a>Beispiel
 
@@ -354,7 +354,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Stack:: Size (STL/CLR)](../dotnet/stack-size-stl-clr.md)`() == 0`. Sie verwenden es, um zu testen, ob der Stapel leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Stack:: Size (STL/CLR)](../dotnet/stack-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob der Stapel leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -471,7 +471,7 @@ typedef GValue generic_value;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt. (`GValue` ist entweder `value_type` oder `value_type^`, wenn `value_type` ein Ref-Typ ist.)
+Der Typ beschreibt ein Objekt vom Typ `GValue` , das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt. ( `GValue` ist entweder `value_type` oder, `value_type^` Wenn `value_type` ein Ref-Typ ist.)
 
 ### <a name="example"></a>Beispiel
 
@@ -571,12 +571,12 @@ stack <Value, Container>% operator=(stack <Value, Container>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Zu Kopier der Container Adapter.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
+Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann zurück **`*this`** . Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -673,7 +673,7 @@ void push(value_type val);
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion fügt ein Element mit einem Wert `val` am Ende der kontrollierten Sequenz ein. Sie verwenden es, um ein weiteres Element an den Stapel anzufügen.
+Die Member-Funktion fügt ein Element mit `val` dem Wert am Ende der kontrollierten Sequenz ein. Sie verwenden es, um ein weiteres Element an den Stapel anzufügen.
 
 ### <a name="example"></a>Beispiel
 
@@ -763,7 +763,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur sicher sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Stack:: Empty (STL/CLR)](../dotnet/stack-empty-stl-clr.md)`()`.
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Stack:: Empty (STL/CLR)](../dotnet/stack-empty-stl-clr.md) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -869,7 +869,7 @@ explicit stack(container_type% wrapped);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Objekt, das kopiert werden soll.
 
 *nür*<br/>
@@ -887,13 +887,13 @@ Der Konstruktor:
 
 `stack(stack<Value, Container>% right);`
 
-erstellt einen umschpackten Container, der eine Kopie von `right.get_container()`ist. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Stapel Objekt *Rechts*gesteuert wird.
+erstellt einen umschpackten Container, der eine Kopie von ist `right.get_container()` . Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Stapel Objekt *Rechts*gesteuert wird.
 
 Der Konstruktor:
 
 `stack(stack<Value, Container>^ right);`
 
-erstellt einen umschpackten Container, der eine Kopie von `right->get_container()`ist. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Stapel Objekt `*right`gesteuert wird.
+erstellt einen umschpackten Container, der eine Kopie von ist `right->get_container()` . Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Stapel Objekt gesteuert wird `*right` .
 
 Der Konstruktor:
 
@@ -1161,15 +1161,15 @@ template<typename Value,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(left == right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden Stapel Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(left == right)` . Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden Stapel Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1217,7 +1217,7 @@ a b d
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-stack-stlclr"></a><a name="op_lt"></a>Operator&lt; (Stapel) (STL/CLR)
+## <a name="operatorlt-stack-stlclr"></a><a name="op_lt"></a>Operator &lt; (Stapel) (STL/CLR)
 
 Der Stapel ist kleiner als der Vergleich.
 
@@ -1232,15 +1232,15 @@ template<typename Value,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position `i` für die `!(right[i] < left[i])` auch true ist, dass `left[i] < right[i]`. Andernfalls wird `left->`[Stack:: Size (STL/CLR)-](../dotnet/stack-size-stl-clr.md)`() <` zurückgegeben `right->size()` Sie damit testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
+Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls `left->` wird [Stack:: Size (STL/CLR)](../dotnet/stack-size-stl-clr.md) zurückgegeben, `() <` `right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1288,7 +1288,7 @@ a b d
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-stack-stlclr"></a><a name="op_lteq"></a>Operator&lt;= (Stack) (STL/CLR)
+## <a name="operatorlt-stack-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (Stack) (STL/CLR)
 
 Stapel kleiner oder gleich-Vergleich.
 
@@ -1303,15 +1303,15 @@ template<typename Value,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(right < left)`zurück. Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(right < left)` . Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1374,15 +1374,15 @@ template<typename Value,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i``left[i] ==` `right[i]`. Sie verwenden es, um zu überprüfen, ob *Links* mit *right* dem Element by-Element verglichen werden.
+Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i` `left[i] ==` `right[i]` . Sie verwenden es, um zu überprüfen, ob *Links* mit *right* dem Element by-Element verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1430,7 +1430,7 @@ a b d
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-stack-stlclr"></a><a name="op_gt"></a>Operator&gt; (Stapel) (STL/CLR)
+## <a name="operatorgt-stack-stlclr"></a><a name="op_gt"></a>Operator &gt; (Stapel) (STL/CLR)
 
 Der Stapel ist größer als der Vergleich.
 
@@ -1445,15 +1445,15 @@ template<typename Value,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `right` `<` `left`zurück. Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `right` `<` `left` . Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1501,7 +1501,7 @@ a b d
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-stack-stlclr"></a><a name="op_gteq"></a>Operator&gt;= (Stack) (STL/CLR)
+## <a name="operatorgt-stack-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (Stack) (STL/CLR)
 
 Stapel größer oder gleich-Vergleich.
 
@@ -1516,15 +1516,15 @@ template<typename Value,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(left < right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(left < right)` . Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 

@@ -35,12 +35,12 @@ helpviewer_keywords:
 - tanhf function
 - trigonometric functions
 - hyperbolic functions
-ms.openlocfilehash: d368f9ca99753e0749fe3c77a512c0d0c8975161
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 9e280e489d5da5d66a48b72b38fe22a6943b7318
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912299"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215113"
 ---
 # <a name="tanh-tanhf-tanhl"></a>tanh, tanhf, tanhl
 
@@ -72,15 +72,15 @@ Die **tanh** -Funktionen geben den hyperbolischen Tangens von *x*zurück. Es gib
 |-----------|-------------------|-------------------------|
 |± QNAN,IND|Keine|_DOMAIN|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **tanh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **tanh** immer Double und gibt **Double**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **tanh** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **tanh** immer und gibt diesen Wert zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header (C)|Erforderlicher Header (C)|
+|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C)|
 |-------------|---------------------|-|
 |**tanh**, **tanhf**, **tanhl**|\<math.h>|\<cmath> oder \<math.h>|
 
@@ -116,7 +116,7 @@ tanh( 1.000000 ) = 0.761594
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>
 [asinh, asinhf, asinhl](asinh-asinhf-asinhl.md)<br/>
 [atanh, atanhf, atanhl](atanh-atanhf-atanhl.md)<br/>

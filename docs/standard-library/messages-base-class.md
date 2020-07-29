@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - messages_base class
 ms.assetid: 9aad38c6-4c13-445d-b096-364bd0836efb
-ms.openlocfilehash: 79b6cb5f0b0c219e959f53fdc667f4c8af273cef
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: b0fe7d66842fb77c6fd03f62b012babcbc9f7f3a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68451852"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215646"
 ---
-# <a name="messagesbase-class"></a>messages_base-Klasse
+# <a name="messages_base-class"></a>messages_base-Klasse
 
-Die Basisklasse beschreibt einen **int** -Typ für den Katalog von Meldungen.
+Die-Basisklasse beschreibt einen- **`int`** Typ für den Katalog von Meldungen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,16 +26,16 @@ struct messages_base : locale::facet {
 };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der typkatalog ist ein Synonym für den Typ " **int** ", der die möglichen Rückgabewerte von "Messages:: [Do_open](../standard-library/messages-class.md#do_open)" beschreibt.
+Der typkatalog ist ein Synonym für **`int`** den Typ, der die möglichen Rückgabewerte aus "Messages:: [Do_open](../standard-library/messages-class.md#do_open)" beschreibt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<locale>
+**Header:**\<locale>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

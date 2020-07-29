@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - extent structure
 ms.assetid: edb5de3d-3935-4dbb-8365-4cc6c4fb0269
-ms.openlocfilehash: 3e8dae7b76ea2efc852486a19f5d298cda477012
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: b9fd0ffb0c3ac6e0b80823e9f31c3615a045262b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77126720"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222731"
 ---
 # <a name="extent-class-c-amp"></a>extent-Klasse (C++ AMP)
 
@@ -41,37 +41,37 @@ Der Rang des `extent`-Objekts.
 
 **Namespace:** Parallelität
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Block-Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `extent`.|
+|[Block-Konstruktor](#ctor)|Initialisiert eine neue Instanz der `extent`-Klasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[contains](#contains)|Überprüft, ob das angegebene `extent`-Objekt über den angegebenen Rang verfügt.|
 |[size](#size)|Gibt die lineare Gesamtgröße des Wertebereichs zurück (in der Einheit Elemente).|
-|[Stein](#tile)|Erzeugt ein `tiled_extent`-Objekt mit den Kachelwertebereichen, die durch angegebene Dimensionen festgelegt werden.|
+|[tile](#tile)|Erzeugt ein `tiled_extent`-Objekt mit den Kachelwertebereichen, die durch angegebene Dimensionen festgelegt werden.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[operator-](#operator_min)|Gibt ein neues `extent`-Objekt zurück, das erstellt wird, indem die `index`-Elemente von den entsprechenden `extent`-Elementen subtrahiert werden.|
-|[operator--](#operator_min_min)|Dekrementiert jedes Element des `extent`-Objekts.|
-|[operator%=](#operator_mod_eq)|Berechnet den Modul (Rest) jedes Elements im `extent`-Objekt, wenn dieses Element durch eine Zahl dividiert wird.|
-|[operator*=](#operator_star_eq)|Multipliziert jedes Element des `extent`-Objekts mit einer Zahl.|
-|[operator/=](#operator_min_eq)|Dividiert jedes Element des `extent`-Objekts durch eine Zahl.|
-|[Block:: Operator\[\]](#operator_at)|Gibt das Element am angegebenen Index zurück.|
-|[operator+](#operator_add)|Gibt ein neues `extent`-Objekt zurück, das durch Hinzufügen der entsprechenden `index`- und `extent`-Elemente erstellt wird.|
-|[operator++](#operator_add_add)|Inkrementiert jedes Element des `extent`-Objekts.|
-|[operator+=](#operator_add_eq)|Fügt die angegebene Zahl jedem Element des `extent`-Objekts hinzu.|
-|[operator=](#operator_eq)|Kopiert den Inhalt eines anderen `extent`-Objekts in dieses Objekt.|
-|[operator-=](#operator_min_eq)|Subtrahiert die angegebene Anzahl von jedem Element des `extent`-Objekts.|
+|[KOM](#operator_min)|Gibt ein neues `extent`-Objekt zurück, das erstellt wird, indem die `index`-Elemente von den entsprechenden `extent`-Elementen subtrahiert werden.|
+|[Operator--](#operator_min_min)|Dekrementiert jedes Element des `extent`-Objekts.|
+|[Operator% =](#operator_mod_eq)|Berechnet den Modul (Rest) jedes Elements im `extent`-Objekt, wenn dieses Element durch eine Zahl dividiert wird.|
+|[Operator * =](#operator_star_eq)|Multipliziert jedes Element des `extent`-Objekts mit einer Zahl.|
+|[Operator/=](#operator_min_eq)|Dividiert jedes Element des `extent`-Objekts durch eine Zahl.|
+|[Block::-Operator\[\]](#operator_at)|Gibt das Element am angegebenen Index zurück.|
+|[Operator +](#operator_add)|Gibt ein neues `extent`-Objekt zurück, das durch Hinzufügen der entsprechenden `index`- und `extent`-Elemente erstellt wird.|
+|[Operator + +](#operator_add_add)|Inkrementiert jedes Element des `extent`-Objekts.|
+|[Operator + =](#operator_add_eq)|Fügt die angegebene Zahl jedem Element des `extent`-Objekts hinzu.|
+|[Operator =](#operator_eq)|Kopiert den Inhalt eines anderen `extent`-Objekts in dieses Objekt.|
+|[Operator-=](#operator_min_eq)|Subtrahiert die angegebene Anzahl von jedem Element des `extent`-Objekts.|
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
@@ -83,7 +83,7 @@ Der Rang des `extent`-Objekts.
 
 `extent`
 
-## <a name="contains"></a>Inhalt
+## <a name="contains"></a><a name="contains"></a>Inhalt
 
 Gibt an, ob der angegebene [Indexwert](index-class.md) im ' Block '-Objekt enthalten ist.
 
@@ -100,9 +100,9 @@ Der zu testende `index`-Wert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der angegebene *Indexwert* im `extent` Objekt enthalten ist. andernfalls **false**.
+**`true`**, wenn der angegebene *Indexwert* im- `extent` Objekt enthalten ist, andernfalls **`false`** .
 
-## <a name="ctor"></a>Ausdehnung
+## <a name="extent"></a><a name="ctor"></a>Ausdehnung
 
 Initialisiert eine neue Instanz der "Block"-Klasse.
 
@@ -139,11 +139,11 @@ Ein `extent`-Objekt, auf dem das neue `extent`-Objekt basiert.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der Standardkonstruktor initialisiert ein `extent` Objekt, das den Rang drei hat.
+Der Standardkonstruktor initialisiert ein- `extent` Objekt, das den Rang drei hat.
 
 Wenn ein Array verwendet wird, um ein `extent`-Objekt zu erstellen, muss die Länge des Arrays mit dem Rang des `extent`-Objekts übereinstimmen.
 
-## <a name="operator_mod_eq"></a>Operator% =
+## <a name="operator"></a><a name="operator_mod_eq"></a>Operator% =
 
 Berechnet den Modulo (Rest) jedes Elements im ' Block ', wenn dieses Element durch eine Zahl dividiert wird.
 
@@ -162,7 +162,7 @@ Die Zahl, für die der Modulo gefunden werden soll.
 
 Das `extent`-Objekt.
 
-## <a name="operator_star_eq"></a>Operator * =
+## <a name="operator"></a><a name="operator_star_eq"></a>Operator * =
 
 Multipliziert jedes Element im ' Block '-Objekt mit der angegebenen Zahl.
 
@@ -181,7 +181,7 @@ Die zu multiplizierende Zahl.
 
 Das `extent`-Objekt.
 
-## <a name="operator_add"></a>Operator +
+## <a name="operator"></a><a name="operator_add"></a>Operator +
 
 Gibt ein neues `extent`-Objekt zurück, das durch Hinzufügen der entsprechenden `index`- und `extent`-Elemente erstellt wird.
 
@@ -200,7 +200,7 @@ Das `index`-Objekt, das die hinzuzufügenden Elemente enthält.
 
 Das neue `extent`-Objekt.
 
-## <a name="operator_add_add"></a>Operator + +
+## <a name="operator"></a><a name="operator_add_add"></a>Operator + +
 
 Inkremente jedes Element des "Block"-Objekts.
 
@@ -213,9 +213,9 @@ extent<_Rank> operator++(int)restrict(amp,cpu);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Für den Präfixoperator das `extent`-Objekt (`*this`). Für den Suffixoperator ein neues `extent`-Objekt.
+Für den Prefix-Operator das- `extent` Objekt ( **`*this`** ). Für den Suffixoperator ein neues `extent`-Objekt.
 
-## <a name="operator_add_eq"></a>Operator + =
+## <a name="operator"></a><a name="operator_add_eq"></a>Operator + =
 
 Fügt die angegebene Zahl jedem Element des Block-Objekts hinzu.
 
@@ -236,7 +236,7 @@ Die Zahl, der Index oder der Wertebereich, die bzw. der hinzugefügt werden soll
 
 Das resultierende `extent`-Objekt.
 
-## <a name="operator_min"></a>KOM
+## <a name="operator-"></a><a name="operator_min"></a>KOM
 
 Erstellt ein neues `extent`-Objekt durch Subtrahieren der einzelnen Elemente im angegebenen `index`-Objekt vom entsprechenden Element in diesem `extent`-Objekt.
 
@@ -255,7 +255,7 @@ Das `index`-Objekt, das die zu subtrahierenden Elemente enthält.
 
 Das neue `extent`-Objekt.
 
-## <a name="operator_min_min"></a>Operator--
+## <a name="operator--"></a><a name="operator_min_min"></a>Operator--
 
 Dekremente jedes Element im ' Block '-Objekt.
 
@@ -268,9 +268,9 @@ extent<_Rank> operator--(int)restrict(amp,cpu);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Für den Präfixoperator das `extent`-Objekt (`*this`). Für den Suffixoperator ein neues `extent`-Objekt.
+Für den Prefix-Operator das- `extent` Objekt ( **`*this`** ). Für den Suffixoperator ein neues `extent`-Objekt.
 
-## <a name="operator_div_eq"></a>Operator/=
+## <a name="operator"></a><a name="operator_div_eq"></a>Operator/=
 
 Dividiert jedes Element im ' Block '-Objekt durch die angegebene Zahl.
 
@@ -289,7 +289,7 @@ Die Zahl, durch die dividiert wird.
 
 Das `extent`-Objekt.
 
-## <a name="operator_min_eq"></a>Operator-=
+## <a name="operator-"></a><a name="operator_min_eq"></a>Operator-=
 
 Subtrahiert die angegebene Zahl von jedem Element des "Block"-Objekts.
 
@@ -310,7 +310,7 @@ Die zu subtrahierende Zahl.
 
 Das resultierende `extent`-Objekt.
 
-## <a name="operator_eq"></a>Operator =
+## <a name="operator"></a><a name="operator_eq"></a>Operator =
 
 Kopiert den Inhalt eines anderen ' Block '-Objekts in dieses Objekt.
 
@@ -329,7 +329,7 @@ Das `extent`-Objekt, aus dem kopiert werden soll.
 
 Ein Verweis auf das `extent`-Objekt.
 
-## <a name="operator_at"></a>Block:: Operator \[\]
+## <a name="extentoperator-"></a><a name="operator_at"></a>Block::-Operator\[\]
 
 Gibt das Element am angegebenen Index zurück.
 
@@ -349,7 +349,7 @@ Eine ganze Zahl von 0 durch den Rang minus 1.
 
 Das Element am angegebenen Index.
 
-## <a name="rank_constant"></a>gehören
+## <a name="rank"></a><a name="rank_constant"></a>gehören
 
 Speichert den Rang des ' Block '-Objekts.
 
@@ -359,9 +359,9 @@ Speichert den Rang des ' Block '-Objekts.
 static const int rank = _Rank;
 ```
 
-## <a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a>Größe
 
-Gibt die lineare Gesamtgröße des `extent` Objekts zurück (in Einheiten von Elementen).
+Gibt die gesamte lineare Größe des- `extent` Objekts zurück (in Einheiten von Elementen).
 
 ### <a name="syntax"></a>Syntax
 
@@ -369,7 +369,7 @@ Gibt die lineare Gesamtgröße des `extent` Objekts zurück (in Einheiten von El
 unsigned int size() const restrict(amp,cpu);
 ```
 
-## <a name="tile"></a>Stein
+## <a name="tile"></a><a name="tile"></a>Stein
 
 Erzeugt ein tiled_extent-Objekt mit den angegebenen Kacheldimensionen.
 
@@ -395,4 +395,4 @@ Die unwichtigste Komponente des unterteilten Wertebereichs.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+[Parallelitäts Namespace (C++ amp)](concurrency-namespace-cpp-amp.md)

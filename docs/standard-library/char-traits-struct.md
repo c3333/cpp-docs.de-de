@@ -27,12 +27,12 @@ helpviewer_keywords:
 - char_traits struct
 - char_traits class
 ms.assetid: 568e59f0-4521-4207-9223-9dcf6a16d620
-ms.openlocfilehash: 3d707ff963170b6b4f14ad1f04e9420b8062b520
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 834572e96d9d8c19ae5d75a57dfa6c0053ae0ec5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366705"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222601"
 ---
 # <a name="char_traits-struct"></a>char_traits-Struktur
 
@@ -47,16 +47,16 @@ struct char_traits;
 
 ### <a name="parameters"></a>Parameter
 
-*Chartype*\
+*CharType*\
 Der Datentyp des Elements.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenstruktur beschreibt verschiedene Zeichenmerkmale für typ `CharType`. Die Klassenvorlage [basic_string](../standard-library/basic-string-class.md) sowie mehrere iostream-Klassenvorlagen, einschließlich [basic_ios](../standard-library/basic-ios-class.md), verwenden `CharType`diese Informationen, um Elemente vom Typ zu bearbeiten. Ein solcher Elementtyp darf weder explizite Erstellung noch explizite Zerstörung erfordern. Er muss einen Standardkonstruktor, einen Kopierkonstruktor und einen Zuweisungsoperator mit der erwarteten Semantik bereitstellen. Eine bitweise Kopie muss dieselbe Auswirkung wie eine Zuweisung haben. Keine der Memberfunktionen der char_traits-Struktur kann Ausnahmen auslösen.
+Die Vorlagen Struktur beschreibt verschiedene Zeichen Merkmale für den Typ `CharType` . Die Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) und mehrere iostream-Klassen Vorlagen, einschließlich [basic_ios](../standard-library/basic-ios-class.md), verwenden diese Informationen zum Bearbeiten von Elementen des Typs `CharType` . Ein solcher Elementtyp darf weder explizite Erstellung noch explizite Zerstörung erfordern. Er muss einen Standardkonstruktor, einen Kopierkonstruktor und einen Zuweisungsoperator mit der erwarteten Semantik bereitstellen. Eine bitweise Kopie muss dieselbe Auswirkung wie eine Zuweisung haben. Keine der Memberfunktionen der char_traits-Struktur kann Ausnahmen auslösen.
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Ein Typ von Zeichen.|
 |[int_type](#int_type)|Ein ganzzahliger Typ, der ein Zeichen des Typs `char_type` oder ein Dateiendezeichen (End-of-File, EOF) darstellen kann.|
@@ -68,29 +68,29 @@ Die Vorlagenstruktur beschreibt verschiedene Zeichenmerkmale für typ `CharType`
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Zuweisen](#assign)|Weist den Wert eines Zeichens einem anderen zu.|
-|[Vergleichen](#compare)|Vergleicht zwei Zeichenfolgen bis zu einer angegebenen Anzahl von Zeichen.|
-|[Kopieren](#copy)|Kopiert eine angegebene Anzahl von Zeichen aus einer Zeichenfolge in eine andere. Veraltet. Verwenden Sie stattdessen [char_traits::_Copy_s](#copy_s).|
+|[assign](#assign)|Weist den Wert eines Zeichens einem anderen zu.|
+|[vergleichbar](#compare)|Vergleicht zwei Zeichenfolgen bis zu einer angegebenen Anzahl von Zeichen.|
+|[copy](#copy)|Kopiert eine angegebene Anzahl von Zeichen aus einer Zeichenfolge in eine andere. Veraltet. Verwenden Sie stattdessen [char_traits::_Copy_s](#copy_s).|
 |[_Copy_s](#copy_s)|Kopiert eine angegebene Anzahl von Zeichen aus einer Zeichenfolge in eine andere.|
-|[Eof](#eof)|Gibt das Zeichen für Dateiende (End-of-File, EOF) zurück.|
-|[Eq](#eq)|Überprüft, ob zwei `char_type`-Zeichen gleich sind.|
+|[EOF](#eof)|Gibt das Zeichen für Dateiende (End-of-File, EOF) zurück.|
+|[eq](#eq)|Überprüft, ob zwei `char_type`-Zeichen gleich sind.|
 |[eq_int_type](#eq_int_type)|Überprüft, ob zwei Zeichen, die als `int_type`s angegeben sind, gleich sind.|
 |[find](#find)|Sucht nach dem ersten Vorkommen eines angegebenen Zeichens in einem Bereich von Zeichen.|
 |[length](#length)|Gibt die Länge einer Zeichenfolge zurück.|
-|[Lt](#lt)|Überprüft, ob ein Zeichen kleiner als ein anderes ist.|
-|[bewegen](#move)|Kopiert eine angegebene Anzahl von Zeichen in einer Sequenz in eine andere, möglicherweise überlappende, Sequenz. Veraltet. Verwenden Sie stattdessen [char_traits::_Move_s](#move_s).|
+|[lt](#lt)|Überprüft, ob ein Zeichen kleiner als ein anderes ist.|
+|[move](#move)|Kopiert eine angegebene Anzahl von Zeichen in einer Sequenz in eine andere, möglicherweise überlappende, Sequenz. Veraltet. Verwenden Sie stattdessen [char_traits::_Move_s](#move_s).|
 |[_Move_s](#move_s)|Kopiert eine angegebene Anzahl von Zeichen in einer Sequenz in eine andere, möglicherweise überlappende, Sequenz.|
 |[not_eof](#not_eof)|Überprüft, ob ein Zeichen das Zeichen für Dateiende (End-of-File, EOF) ist.|
 |[to_char_type](#to_char_type)|Konvertiert ein `int_type`-Zeichen in das entsprechende `char_type`-Zeichen und gibt das Ergebnis zurück.|
 |[to_int_type](#to_int_type)|Konvertiert ein `char_type`-Zeichen in das entsprechende `int_type`-Zeichen und gibt das Ergebnis zurück.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<string>
+**Header:**\<string>
 
 **Namespace:** std
 
-## <a name="char_traitsassign"></a><a name="assign"></a>char_traits::zuweisen
+## <a name="char_traitsassign"></a><a name="assign"></a>Char_traits:: Assign
 
 Weist einen Zeichenwert einem anderen Zeichenwert oder einem Bereich von Elementen in einer Zeichenfolge zu.
 
@@ -105,12 +105,12 @@ static char_type *assign(char_type* strTo,
 
 ### <a name="parameters"></a>Parameter
 
-**_** *CharFrom* Das Zeichen, dessen Wert zugewiesen werden soll.
+**_** *Charfrom* das Zeichen, dessen Wert zugewiesen werden soll.
 
 *_CharTo*\
 Das Element, dem der Zeichenwert zugewiesen werden soll.
 
-*strTo*\
+*zu*\
 Das Zeichenfolgen- oder Zeichenarray, dessen ersten Elementen Zeichenwerte zugewiesen werden sollen.
 
 *_Num*\
@@ -118,7 +118,7 @@ Die Anzahl der Elemente, denen Werte zugewiesen werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die zweite Memberfunktion gibt einen Zeiger auf die Zeichenfolge zurück, deren erste *_Num* Elemente Werte *_CharFrom*zugewiesen wurden.
+Die zweite Member-Funktion gibt einen Zeiger auf die Zeichenfolge zurück, deren ersten *_Num* Elementen Werte *_CharFrom*zugewiesen wurden.
 
 ### <a name="example"></a>Beispiel
 
@@ -161,7 +161,7 @@ The target string s1 is: abcd-1234-abcd
 The result1 = assign ( s1 , 4 , 'f' ) is: ffff-1234-abcd
 ```
 
-## <a name="char_traitschar_type"></a><a name="char_type"></a>char_traits::char_type
+## <a name="char_traitschar_type"></a><a name="char_type"></a>Char_traits:: char_type
 
 Ein Typ von Zeichen.
 
@@ -177,7 +177,7 @@ Der Type stellt ein Synonym für den Vorlagenparameter `CharType` dar.
 
 Im Beispiel für [copy](#copy) wird verdeutlicht, wie `char_type` deklariert und verwendet wird.
 
-## <a name="char_traitscompare"></a><a name="compare"></a>char_traits::vergleichen
+## <a name="char_traitscompare"></a><a name="compare"></a>Char_traits:: Compare
 
 Vergleicht zwei Zeichenfolgen bis zu einer angegebenen Anzahl von Zeichen.
 
@@ -241,7 +241,7 @@ int main() {
 }
 ```
 
-## <a name="char_traitscopy"></a><a name="copy"></a>char_traits::kopie
+## <a name="char_traitscopy"></a><a name="copy"></a>Char_traits:: Copy
 
 Kopiert eine angegebene Anzahl von Zeichen aus einer Zeichenfolge in eine andere.
 
@@ -255,7 +255,7 @@ static char_type *copy(char_type* _To,
 
 ### <a name="parameters"></a>Parameter
 
-*_to*\
+*_To*\
 Das Element am Anfang des Zeichenfolgen- oder Zeichenarrays, das die kopierte Zeichenfolgensequenz empfangen soll.
 
 *_From*\
@@ -303,7 +303,7 @@ The destination string is: ABCD-1234
 The result1 = copy ( s1 , s2 , 4 ) is: ABCD-1234-abcd
 ```
 
-## <a name="char_traits_copy_s"></a><a name="copy_s"></a>char_traits::_Copy_s
+## <a name="char_traits_copy_s"></a><a name="copy_s"></a>Char_traits:: _Copy_s
 
 Kopiert eine angegebene Anzahl von Zeichen aus einer Zeichenfolge in eine andere.
 
@@ -317,16 +317,16 @@ static char_type *_Copy_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Dest*\
+*dest*\
 Das Zeichenfolgen- oder Zeichenarray, das die kopierte Zeichenfolgensequenz empfangen soll.
 
 *dest_size*\
-Die Größe von *dest*. Wenn `char_type` ist **char**, dann ist diese Größe in Bytes. Wenn `char_type` **wchar_t**, dann ist diese Größe in Worten.
+Die Größe von *dest*. Wenn `char_type` ist **`char`** , dann wird diese Größe in Bytes angezeigt. Wenn `char_type` ist **`wchar_t`** , dann ist diese Größe in Wörtern.
 
 *_From*\
 Das zu kopierende Quellzeichenfolgen- oder -zeichenarray.
 
-*Count*\
+*Countdown*\
 Die Anzahl der zu kopierenden Elemente.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -368,7 +368,7 @@ The destination string is: ABCD-1234
 The result1 = _Copy_s(s1, char_traits<char>::length(s1), s2, 4) is: ABCD-1234-abcd
 ```
 
-## <a name="char_traitseof"></a><a name="eof"></a>char_traits::eof
+## <a name="char_traitseof"></a><a name="eof"></a>Char_traits:: EOF
 
 Gibt das Zeichen für Dateiende (End-of-File, EOF) zurück.
 
@@ -382,9 +382,9 @@ Das EOF-Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein Wert, der das Ende der Datei darstellt (z. B. EOF oder WEOF).
+Ein-Wert, der das Ende der Datei darstellt (z. b. EOF oder WEOF).
 
-Gemäß C++-Standard darf dieser Wert keinem gültigen `char_type`-Wert entsprechen. Der Microsoft C++-Compiler erzwingt diese Einschränkung für typ **char**, jedoch nicht für typ **wchar_t**. Das unten gezeigte Beispiel veranschaulicht dies.
+Gemäß C++-Standard darf dieser Wert keinem gültigen `char_type`-Wert entsprechen. Der Microsoft C++-Compiler erzwingt diese Einschränkung für Typ **`char`** , jedoch nicht für Typ **`wchar_t`** . Das unten gezeigte Beispiel veranschaulicht dies.
 
 ### <a name="example"></a>Beispiel
 
@@ -419,7 +419,7 @@ The eof marker for char_traits<char> is: -1
 The eof marker for char_traits<wchar_t> is: 65535
 ```
 
-## <a name="char_traitseq"></a><a name="eq"></a>char_traits::eq
+## <a name="char_traitseq"></a><a name="eq"></a>Char_traits:: EQ
 
 Überprüft, ob zwei `char_type`-Zeichen gleich sind.
 
@@ -437,7 +437,7 @@ Das zweite von zwei Zeichen, die auf Gleichheit getestet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das erste Zeichen gleich dem zweiten Zeichen ist; andernfalls **FALSE**.
+**`true`**, wenn das erste Zeichen gleich dem zweiten Zeichen ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -479,7 +479,7 @@ The character ch1 is not equal to the character ch2.
 The character ch1 is equal to the character ch3.
 ```
 
-## <a name="char_traitseq_int_type"></a><a name="eq_int_type"></a>char_traits::eq_int_type
+## <a name="char_traitseq_int_type"></a><a name="eq_int_type"></a>Char_traits:: Eq_int_type
 
 Prüft, ob zwei Zeichen, die als `int_type` dargestellt sind, gleich sind oder nicht.
 
@@ -490,14 +490,14 @@ static bool eq_int_type(const int_type& _Ch1, const int_type& _Ch2);
 ### <a name="parameters"></a>Parameter
 
 *_Ch1*\
-Das erste der beiden Zeichen, die `int_type`auf Gleichheit als s getestet werden sollen.
+Das erste der beiden Zeichen, die auf Gleichheit als s getestet werden sollen `int_type` .
 
 *_Ch2*\
 Das zweite der beiden zwei Zeichen, die auf Gleichheit als `int_type` getestet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das erste Zeichen gleich dem zweiten Zeichen ist; andernfalls **FALSE**.
+**`true`**, wenn das erste Zeichen gleich dem zweiten Zeichen ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -564,7 +564,7 @@ The int_type representation of character ch1
 is equal to the int_type representation of ch3.
 ```
 
-## <a name="char_traitsfind"></a><a name="find"></a>char_traits::finden
+## <a name="char_traitsfind"></a><a name="find"></a>Char_traits:: Find
 
 Sucht nach dem ersten Vorkommen eines angegebenen Zeichens in einem Bereich von Zeichen.
 
@@ -576,7 +576,7 @@ static const char_type* find(const char_type* str,
 
 ### <a name="parameters"></a>Parameter
 
-*Str*\
+*SRT*\
 Das erste zu suchende Zeichen in der Zeichenfolge.
 
 *_Num*\
@@ -631,7 +631,7 @@ of the character 'd' is: d-1234-abcd
 The result2 of the search is NULL.
 ```
 
-## <a name="char_traitsint_type"></a><a name="int_type"></a>char_traits::int_type
+## <a name="char_traitsint_type"></a><a name="int_type"></a>Char_traits:: int_type
 
 Ein ganzzahliger Typ, der ein Zeichen des Typs `char_type` oder ein Dateiendezeichen (End-of-File, EOF) darstellen kann.
 
@@ -641,13 +641,13 @@ typedef long int_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Es muss möglich sein, cast `CharType` einen `int_type` Wert `CharType` des Typs einzugeben, um dann wieder zu geben, ohne den ursprünglichen Wert zu ändern.
+Es muss möglich sein, einen Wert vom Typ in und `CharType` `int_type` dann zurück in umzuwandeln, `CharType` ohne den ursprünglichen Wert zu ändern.
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [eq_int_type](#eq_int_type) wird verdeutlicht, wie `int_type` deklariert und verwendet wird.
 
-## <a name="char_traitslength"></a><a name="length"></a>char_traits::Länge
+## <a name="char_traitslength"></a><a name="length"></a>Char_traits:: length
 
 Gibt die Länge einer Zeichenfolge zurück.
 
@@ -657,7 +657,7 @@ static size_t length(const char_type* str);
 
 ### <a name="parameters"></a>Parameter
 
-*Str*\
+*SRT*\
 Die C-Zeichenfolge, deren Länge gemessen wird.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -690,7 +690,7 @@ The C-string str1 is: Hello
 The length of C-string str1 is: 5.
 ```
 
-## <a name="char_traitslt"></a><a name="lt"></a>char_traits::lt
+## <a name="char_traitslt"></a><a name="lt"></a>Char_traits:: lt
 
 Überprüft, ob ein Zeichen kleiner als ein anderes ist.
 
@@ -708,7 +708,7 @@ Das zweite von zwei Zeichen, die auf „kleiner als“ geprüft werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das erste Zeichen kleiner ist als das zweite Zeichen; andernfalls **FALSE**.
+**`true`**, wenn das erste Zeichen kleiner als das zweite Zeichen ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -749,7 +749,7 @@ The character ch1 is less than the character ch2.
 The character ch3 is not less than the character ch2.
 ```
 
-## <a name="char_traitsmove"></a><a name="move"></a>char_traits::bewegen
+## <a name="char_traitsmove"></a><a name="move"></a>Char_traits:: Move
 
 Kopiert eine angegebene Anzahl von Zeichen einer Sequenz in eine andere, möglicherweise überlappende, Sequenz.
 
@@ -763,7 +763,7 @@ static char_type *move(char_type* _To,
 
 ### <a name="parameters"></a>Parameter
 
-*_to*\
+*_To*\
 Das Element am Anfang des Zeichenfolgen- oder Zeichenarrays, das die kopierte Zeichenfolgensequenz empfangen soll.
 
 *_From*\
@@ -774,7 +774,7 @@ Die Anzahl von Elementen, die aus der Quellzeichenfolge kopiert werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das erste Element *_To* in die Zeichenfolge oder das Zeichenarray kopiert, um die kopierte Zeichenfolge von Zeichen zu erhalten.
+Das erste Element, das in das Zeichen folgen-oder Zeichen Array kopiert *_To* , das die kopierte Zeichenfolge empfangen soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -826,7 +826,7 @@ The source/destination string sToFrom2 is: abcd-1234-ABCD
 The result2 = move ( sToFrom2 , findc , 8 ) is: cd-1234-4-ABCD
 ```
 
-## <a name="char_traits_move_s"></a><a name="move_s"></a>char_traits::_Move_s
+## <a name="char_traits_move_s"></a><a name="move_s"></a>Char_traits:: _Move_s
 
 Kopiert eine angegebene Anzahl von Zeichen einer Sequenz in eine andere, möglicherweise überlappende, Sequenz.
 
@@ -840,21 +840,21 @@ static char_type *_Move_s(
 
 ### <a name="parameters"></a>Parameter
 
-*Dest*\
+*dest*\
 Das Element am Anfang des Zeichenfolgen- oder Zeichenarrays, das die kopierte Zeichenfolgensequenz empfangen soll.
 
 *dest_size*\
-Die Größe von *dest*. Wenn `char_type` ist **char**, dann ist dies in Bytes. Wenn `char_type` **wchar_t**ist, dann ist dies in Worten.
+Die Größe von *dest*. Wenn den Wert `char_type` **`char`** hat, wird dieser in Bytes angezeigt. Wenn `char_type` ist **`wchar_t`** , dann ist dies das Wort.
 
 *_From*\
 Das Element am Anfang des Quellzeichenfolgen- oder -zeichenarrays, das kopiert werden soll.
 
-*Count*\
+*Countdown*\
 Die Anzahl von Elementen, die aus der Quellzeichenfolge kopiert werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das erste Element *dest* in die Zeichenfolge oder das Zeichenarray kopiert, das auf die kopierte Zeichenfolge von Zeichen ausgerichtet ist.
+Das erste Element, das in das Zeichen folgen-oder Zeichen Array kopiert wird, das die *kopierte Zeichen* Folge empfangen soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -906,7 +906,7 @@ The source/destination string sToFrom2 is: abcd-1234-ABCD
 The result2 = _Move_s(sToFrom2, char_traits<char>::length(sToFrom2), findc, 8) is: cd-1234-4-ABCD
 ```
 
-## <a name="char_traitsnot_eof"></a><a name="not_eof"></a>char_traits::not_eof
+## <a name="char_traitsnot_eof"></a><a name="not_eof"></a>Char_traits:: Not_eof
 
 Prüft, ob es sich bei einem Zeichen nicht um das Dateiendezeichen (End-of-File, EOF) handelt.
 
@@ -921,9 +921,9 @@ Das als `int_type` dargestellte Zeichen, für das geprüft werden soll, ob es da
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die `int_type` Darstellung des getesteten `int_type` Zeichens, wenn der Zeichen nicht der des EOF-Zeichens entspricht.
+Die `int_type` Darstellung des getesteten Zeichens, wenn der `int_type` des Zeichens nicht gleich dem des EOF-Zeichens ist.
 
-Wenn der `int_type`-Wert des Zeichens gleich dem EOF-`int_type`-Wert ist, dann **FALSE**.
+Wenn der Zeichen `int_type` Wert gleich dem EOF- `int_type` Wert ist, dann **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -978,7 +978,7 @@ The eofTest1 returns: 120, which is the character: x.
 The eofTest2 indicates int2 is an EOF character.
 ```
 
-## <a name="char_traitsoff_type"></a><a name="off_type"></a>char_traits::off_type
+## <a name="char_traitsoff_type"></a><a name="off_type"></a>Char_traits:: off_type
 
 Ein ganzzahliger Typ, der Offsets zwischen Positionen in einem Stream darstellen kann.
 
@@ -990,7 +990,7 @@ typedef streamoff off_type;
 
 Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das einen Byte-Offset speichern kann, der an verschiedenen Streampositionierungsvorgängen beteiligt ist. In der Regel ist dies ein Synonym für [streamoff](../standard-library/ios-typedefs.md#streamoff), weist aber im Wesentlichen dieselben Eigenschaften auf wie dieser Typ.
 
-## <a name="char_traitspos_type"></a><a name="pos_type"></a>char_traits::pos_type
+## <a name="char_traitspos_type"></a><a name="pos_type"></a>Char_traits::p os_type
 
 Ein ganzzahliger Typ, der Positionen in einem Stream darstellen kann.
 
@@ -1002,7 +1002,7 @@ typedef streampos pos_type;
 
 Der Typ beschreibt ein Objekt, das alle Informationen speichern kann, die zum Wiederherstellen eines beliebigen Dateipositionsindikators innerhalb eines Streams erforderlich sind. In der Regel ist dies ein Synonym für [streampos](../standard-library/ios-typedefs.md#streampos), weist aber stets im Wesentlichen dieselben Eigenschaften auf wie dieser Typ.
 
-## <a name="char_traitsstate_type"></a><a name="state_type"></a>char_traits::state_type
+## <a name="char_traitsstate_type"></a><a name="state_type"></a>Char_traits:: state_type
 
 Ein Typ, der den Konvertierungsstatus für Multibytezeichen in einem Stream darstellt.
 
@@ -1014,7 +1014,7 @@ typedef implementation-defined state_type;
 
 Der Typ beschreibt ein Objekt, das einen Konvertierungszustand repräsentieren kann. In der Regel ist dies ein Synonym für `mbstate_t`, weist aber stets im Wesentlichen dieselben Eigenschaften auf wie dieser Typ.
 
-## <a name="char_traitsto_char_type"></a><a name="to_char_type"></a>char_traits::to_char_type
+## <a name="char_traitsto_char_type"></a><a name="to_char_type"></a>Char_traits:: To_char_type
 
 Konvertiert ein `int_type`-Zeichen in das entsprechende `char_type`-Zeichen und gibt das Ergebnis zurück.
 
@@ -1031,7 +1031,7 @@ Das `int_type`-Zeichen, das als `char_type` dargestellt werden soll.
 
 Das `char_type`-Zeichen, das dem `int_type`-Zeichen entspricht.
 
-Ein Wert von *_Ch,* der nicht als solcher dargestellt werden kann, ergibt ein nicht angegebenes Ergebnis.
+Ein Wert *_Ch* , der nicht als solche dargestellt werden kann, ergibt ein nicht bestimmtes Ergebnis.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1120,7 +1120,7 @@ The recovered char_type of ch1 is equal to the original ch1.
 The recovered char_type of ch2 is equal to the original ch2.
 ```
 
-## <a name="char_traitsto_int_type"></a><a name="to_int_type"></a>char_traits::to_int_type
+## <a name="char_traitsto_int_type"></a><a name="to_int_type"></a>Char_traits:: To_int_type
 
 Konvertiert ein `char_type`-Zeichen in das entsprechende `int_type`-Zeichen und gibt das Ergebnis zurück.
 
@@ -1143,7 +1143,7 @@ Die Konvertierungsvorgänge `to_int_type` und [to_char_type](#to_char_type) sind
 
 `to_int_type` ( `to_char_type` ( *x* ) ) == *x*
 
-für `int_type` jedes *x*, und
+für jedes `int_type` *x*und
 
 `to_char_type` ( `to_int_type` ( *x* ) ) == *x*
 
@@ -1223,6 +1223,6 @@ The recovered char_type of ch1 is equal to the original ch1.
 The recovered char_type of ch2 is equal to the original ch2.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)
