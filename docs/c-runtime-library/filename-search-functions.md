@@ -20,12 +20,12 @@ helpviewer_keywords:
 - find function
 - _wfind function
 ms.assetid: 2bc2f8ef-44e4-4271-b3e8-666d36fde828
-ms.openlocfilehash: 331d43f3e3a88786f8dac0a6f609f988beea9dbb
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: fb5cc0e18d150d4171e33038e27810989c0f503b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75300306"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226241"
 ---
 # <a name="filename-search-functions"></a>Dateinamen-Suchfunktionen
 
@@ -37,7 +37,7 @@ Diese Funktionen suchen nach angegebenen Dateinamen und schließen die Suche ab:
 
 - [_findclose](../c-runtime-library/reference/findclose.md)
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die `_findfirst` -Funktion stellt Informationen über das erste Vorkommen eines Dateinamens zur Verfügung, der mit der im Argument `filespec` angegebenen Datei übereinstimmt. Sie können in `filespec` beliebige Kombinationen von Platzhalterzeichen verwenden, die vom Hostbetriebssystem unterstützt werden.
 
@@ -62,12 +62,12 @@ Die Länge der Datei in Byte.
 
 Die Felder `time_create` und `time_access` sind in Dateisystemen, die das Anzeigen des Zeitpunkts der Erstellung und des letzten Zugriffs nicht unterstützen, immer „-1L“. FAT-(File-Allocation-Table)-Systeme sind z.B. derartige Dateisysteme.
 
-`_MAX_PATH` ist in „stdlib.h“ als 260 Bytes definiert.
+`_MAX_PATH` ist in „Stdlib.h“ als 260 Byte definiert.
 
 Sie können keine Zielattribute angeben (wie etwa `_A_RDONLY`), um den Suchvorgang einzuschränken. Diese Attribute werden im Feld `attrib` der Struktur `_finddata_t` zurückgegeben und können die folgenden Werte aufweisen (die in „IO.h“ definiert sind). Die Benutzer sollten nicht darauf vertrauen, dass dies die einzigen möglichen Werte des Felds `attrib` sind.
 
 `_A_ARCH`<br/>
-Archivieren. Bei jeder Änderung der Datei festgelegt und durch den **BACKUP** -Befehl zu löschen. Wert: 0x20.
+Archiv. Bei jeder Änderung der Datei festgelegt und durch den **BACKUP** -Befehl zu löschen. Wert: 0x20.
 
 `_A_HIDDEN`<br/>
 Versteckte Datei. Im allgemeinen mithilfe des DIR-Befehls nicht angezeigt, sofern nicht die Option **/AH** verwendet wird. Gibt Informationen über normale Dateien und über Dateien, die dieses Attribut aufweisen, zurück. Wert: 0x02.
@@ -88,7 +88,7 @@ Systemdatei. In der Regel mit dem Befehl **DIR** nicht angezeigt, es sei denn, d
 
 Die `_find` -Funktionen können verschachtelt werden. Wenn ein Aufruf von `_findfirst` oder `_findnext` beispielsweise feststellt, dass sich die Datei in einem Unterverzeichnis befindet, kann eine neue Suche mit einem weiteren Aufruf von `_findfirst` oder `_findnext`eingeleitet werden.
 
-`_wfindfirst` und `_wfindnext` sind Breitzeichenversionen von `_findfirst` und `_findnext`. Das Strukturargument der Breitzeichenversionen weist den Datentyp `_wfinddata_t` auf, der in „IO.h“ und in „Wchar.h“ definiert ist. Die Felder dieses Datentyps sind die gleichen wie die des `_finddata_t` -Datentyps, mit dem Unterschied, dass in `_wfinddata_t` das Namensfeld den Typ `wchar_t` statt des Typs `char`aufweist. Andernfalls verhalten sich `_wfindfirst` und `_wfindnext` identisch mit `_findfirst` und `_findnext`.
+`_wfindfirst` und `_wfindnext` sind Breitzeichenversionen von `_findfirst` und `_findnext`. Das Strukturargument der Breitzeichenversionen weist den Datentyp `_wfinddata_t` auf, der in „IO.h“ und in „Wchar.h“ definiert ist. Die Felder dieses Datentyps sind identisch mit denen des `_finddata_t` Datentyps, mit dem Unterschied, dass im `_wfinddata_t` Feld Name vom Typ und nicht **`wchar_t`** vom Typ ist **`char`** . Andernfalls verhalten sich `_wfindfirst` und `_wfindnext` identisch mit `_findfirst` und `_findnext`.
 
 `_findfirst` und `_findnext` verwenden den 64-Bit-Uhrzeittyp. Wenn Sie stattdessen den alten 32-Bit-Uhrzeittyp verwenden müssen, können Sie `_USE_32BIT_TIME_T`definieren. Die Versionen dieser Funktionen, die das `32` -Suffix im Namen aufweisen, verwenden den 32-Bit-Uhrzeittyp, und die mit dem `64` -Suffix verwenden den 64-Bit-Uhrzeittyp.
 
@@ -100,11 +100,11 @@ Die Funktionen `_findfirst32i64`, `_findnext32i64`, `_wfindfirst32i64`und `_wfin
 |---------------|---------------|--------------------|
 |`_finddata_t`, `_wfinddata_t`|`__time64_t`|`_fsize_t`|
 |`_finddata32_t`, `_wfinddata32_t`|`__time32_t`|`_fsize_t`|
-|`__finddata64_t`, `__wfinddata64_t`|`__time64_t`|`__int64`|
-|`_finddata32i64_t`, `_wfinddata32i64_t`|`__time32_t`|`__int64`|
+|`__finddata64_t`, `__wfinddata64_t`|`__time64_t`|**`__int64`**|
+|`_finddata32i64_t`, `_wfinddata32i64_t`|`__time32_t`|**`__int64`**|
 |`_finddata64i32_t`, `_wfinddata64i32_t`|`__time64_t`|`_fsize_t`|
 
-`_fsize_t` ist für `unsigned long` eine `typedef` (32 Bits).
+`_fsize_t`ist eine **`typedef`** für **`unsigned long`** (32 Bits).
 
 ## <a name="example"></a>Beispiel
 
@@ -158,4 +158,4 @@ N   N   N   Y   test.c       Wed Feb 06 14:30:44 2002        312
 
 ## <a name="see-also"></a>Siehe auch
 
-[Systemaufrufe](../c-runtime-library/system-calls.md)
+[System Aufrufe](../c-runtime-library/system-calls.md)

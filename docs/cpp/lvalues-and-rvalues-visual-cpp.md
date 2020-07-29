@@ -5,16 +5,16 @@ helpviewer_keywords:
 - R-values [C++]
 - L-values [C++]
 ms.assetid: a8843344-cccc-40be-b701-b71f7b5cdcaf
-ms.openlocfilehash: 23625ddf44d16a4dc408b87f27b9cdfba7a9cbd4
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: b4b3ba5fdbc11ec97870b0f06fd1aabd3b57f5ca
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80077234"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225968"
 ---
 # <a name="lvalues-and-rvalues-c"></a>Lvalues und Rvalues (C++)
 
-Jeder C++ Ausdruck weist einen Typ auf, der zu einer *Wert Kategorie*gehört. Die Wert Kategorien bilden die Grundlage für Regeln, die Compiler beim Erstellen, kopieren und Verschieben von temporären Objekten während der Ausdrucks Auswertung befolgen müssen.
+Jeder C++-Ausdruck verfügt über einen-Typ und gehört zu einer *Wert Kategorie*. Die Wert Kategorien bilden die Grundlage für Regeln, die Compiler beim Erstellen, kopieren und Verschieben von temporären Objekten während der Ausdrucks Auswertung befolgen müssen.
 
 Der c++ 17-Standard definiert Ausdruckswert Kategorien wie folgt:
 
@@ -26,9 +26,9 @@ Der c++ 17-Standard definiert Ausdruckswert Kategorien wie folgt:
 
 Im folgenden Diagramm werden die Beziehungen zwischen den Kategorien veranschaulicht:
 
-![C++Ausdruckswert Kategorien](media/value_categories.png "C++Ausdruckswert Kategorien")
+![C++-Ausdruckswert Kategorien](media/value_categories.png "C++-Ausdruckswert Kategorien")
 
-Ein Lvalue verfügt über eine Adresse, auf die das Programm zugreifen kann. Beispiele für lvalue-Ausdrücke sind Variablennamen, einschließlich **Konstanten** Variablen, Array Elementen, Funktionsaufrufen, die einen Lvalue-Verweis, Bitfelder, Unions und Klassenmember zurückgeben.
+Ein Lvalue verfügt über eine Adresse, auf die das Programm zugreifen kann. Beispiele für lvalue-Ausdrücke sind Variablennamen, einschließlich **`const`** Variablen, Array Elemente, Funktionsaufrufe, die einen Lvalue-Verweis, Bitfelder, Unions und Klassenmember zurückgeben.
 
 Ein prvalue-Ausdruck hat keine Adresse, auf die das Programm zugreifen kann. Beispiele für prvalue-Ausdrücke sind Literale, Funktionsaufrufe, die einen nicht Verweistyp zurückgeben, sowie temporäre Objekte, die während der Ausdrucks Auswertung erstellt werden, auf die jedoch nur der Compiler zugreifen kann.
 
@@ -66,9 +66,9 @@ int main()
 > [!NOTE]
 > Die Beispiele zu diesem Thema veranschaulichen die korrekte und falsche Verwendung, wenn Operatoren nicht überladen werden. Indem Sie Operatoren überladen, können Sie aus einem Ausdruck wie `j * 4` einen lvalue machen.
 
-Die Begriffe *Lvalue* und *Rvalue* werden häufig verwendet, wenn Sie auf Objekt Verweise verweisen. Weitere Informationen zu verweisen finden Sie unter [Lvalue Reference declarator: &](../cpp/lvalue-reference-declarator-amp.md) und [rvalue reference declarator: & &](../cpp/rvalue-reference-declarator-amp-amp.md).
+Die Begriffe *Lvalue* und *Rvalue* werden häufig verwendet, wenn Sie auf Objekt Verweise verweisen. Weitere Informationen zu verweisen finden Sie unter [Lvalue Reference declarator: &](../cpp/lvalue-reference-declarator-amp.md) und [rvalue reference declarator:  &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Grundlegende Konzepte](../cpp/basic-concepts-cpp.md)<br/>
 [Lvalue-Verweisdeklarator: &](../cpp/lvalue-reference-declarator-amp.md)<br/>

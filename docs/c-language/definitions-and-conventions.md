@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - nonterminals definition
 ms.assetid: f9b3cf5f-6a7c-4a10-9b18-9d4a43efdaeb
-ms.openlocfilehash: 0ff3f8b447e29f0da59405a7c0286d7a696b4613
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9da9a566ef0b8d34a1a3d64dd2b8ce659194e6ce
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62234432"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226378"
 ---
 # <a name="definitions-and-conventions"></a>Definitionen und Konventionen
 
@@ -28,7 +28,7 @@ Die Syntaxkonventionen verwenden verschiedene Schriftartattribute für unterschi
 |Attribut|Beschreibung|
 |---------------|-----------------|
 |*nonterminal*|Kursivschrift gibt Nichtterminale an.|
-|**const**|Fett formatierte Terminale sind literale, reservierte Symbole und Wörter, die wie gezeigt eingegeben werden müssen. Bei Zeichen in diesem Kontext wird immer die Groß-/Kleinschreibung beachtet.|
+|**`const`**|Fett formatierte Terminale sind literale, reservierte Symbole und Wörter, die wie gezeigt eingegeben werden müssen. Bei Zeichen in diesem Kontext wird immer die Groß-/Kleinschreibung beachtet.|
 |<sub>opt</sub>|Nichtterminale, auf die <sub>opt</sub> folgt, sind immer optional.|
 |Standardschriftart|Zeichen des in dieser Schriftart beschriebenen oder aufgeführten Satzes können als Terminals in C-Anweisungen verwendet werden.|
 

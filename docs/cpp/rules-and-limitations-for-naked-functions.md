@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - naked functions [C++]
 ms.assetid: ff203858-2dd3-4a76-8a57-d0d06817adef
-ms.openlocfilehash: 1eb2875514621e567701b6197d3ad6695457506b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 3dd089e13323e1811cf9d7c7717612313f2cef7d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80178950"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225851"
 ---
 # <a name="rules-and-limitations-for-naked-functions"></a>Regeln und Einschränkungen für Naked-Funktionen
 
@@ -17,7 +17,7 @@ ms.locfileid: "80178950"
 
 Die folgenden Regeln und Einschränkungen treffen auf naked-Funktionen zu:
 
-- Die **Return** -Anweisung ist nicht zulässig.
+- Die **`return`** Anweisung ist nicht zulässig.
 
 - Konstrukte für die strukturierte Ausnahmebehandlung und C++-Ausnahmebehandlung sind nicht zulässig, da sie über den Stapelrahmen entladen werden müssen.
 
@@ -31,9 +31,9 @@ Die folgenden Regeln und Einschränkungen treffen auf naked-Funktionen zu:
 
 - Sie können C++-Klassenobjekte nicht im lexikalischen Bereich der Funktion deklarieren. Sie können jedoch Objekte in einem geschachtelten Block deklarieren.
 
-- Das **Naked** -Schlüsselwort wird beim Kompilieren mit [/CLR](../build/reference/clr-common-language-runtime-compilation.md)ignoriert.
+- Das- **`naked`** Schlüsselwort wird beim Kompilieren mit [/CLR](../build/reference/clr-common-language-runtime-compilation.md)ignoriert.
 
-- Wenn für [__fastcall](../cpp/fastcall.md) Naked-Funktionen ein Verweis in C/C++ Code auf eines der Register Argumente vorhanden ist, sollte der Prolog Code die Werte von speichern, die sich bei dem Stapel Speicherort für diese Variable registrieren. Beispiel:
+- Wenn für [__fastcall](../cpp/fastcall.md) Naked-Funktionen ein Verweis in C/C++-Code auf eines der Register Argumente vorhanden ist, sollte der Prolog Code die Werte von speichern, die sich bei dem Stapel Speicherort für diese Variable registrieren. Zum Beispiel:
 
 ```cpp
 // nkdfastcl.cpp
@@ -72,6 +72,6 @@ __declspec(naked) int __fastcall  power(int i, int j) {
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Naked-Funktionsaufrufe](../cpp/naked-function-calls.md)

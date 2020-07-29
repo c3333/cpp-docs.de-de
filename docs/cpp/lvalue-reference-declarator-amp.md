@@ -1,5 +1,5 @@
 ---
-title: 'Lvalue-verweisdedeklarator: &amp;'
+title: Lvalue-verweisdedeklarator:&amp;
 ms.date: 11/04/2016
 f1_keywords:
 - '&'
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - reference operator
 - '& operator [C++], reference operator'
 ms.assetid: edf0513d-3dcc-4663-b276-1269795dda51
-ms.openlocfilehash: 595f2b683d2abb4cdc8a328dc6e86338ab90f214
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 30dd6ba9cb91395f72124cad71908a4e6bcdf7dd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80178066"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225981"
 ---
-# <a name="lvalue-reference-declarator-amp"></a>Lvalue-verweisdedeklarator: &amp;
+# <a name="lvalue-reference-declarator-amp"></a>Lvalue-verweisdedeklarator:&amp;
 
 Enthält die Adresse eines Objekts, verhält sich jedoch syntaktisch wie ein Objekt.
 
@@ -30,7 +30,7 @@ Sie können sich einen lvalue-Verweis als einen anderen Namen für ein Objekt vo
 
 Jedes Objekt, dessen Adresse in einen angegebenen Zeigertyp konvertiert werden kann, kann auch in den ähnlichen Referenztyp konvertiert werden. Beispielsweise kann jedes Objekt, dessen Adresse in den Typ `char *` konvertiert werden kann, auch in den Typ `char &` konvertiert werden.
 
-Verwechseln Sie keine Verweis Deklarationen mit der Verwendung des [address-of-Operators](../cpp/address-of-operator-amp.md). Wenn dem `&`*Bezeichner* ein Typ vorangestellt ist, z. b. **int** oder **char**, wird der *Bezeichner* als Verweis auf den Typ deklariert. Wenn `&`*Bezeichner* keinem Typ vorangestellt ist, ist die Verwendung der des address-of-Operators.
+Verwechseln Sie keine Verweis Deklarationen mit der Verwendung des [address-of-Operators](../cpp/address-of-operator-amp.md). Wenn dem `&` *Bezeichner* ein Typ vorangestellt ist, z **`int`** **`char`** . b. oder, wird der *Bezeichner* als Verweis auf den Typ deklariert. Wenn dem `&` *Bezeichner* kein Typ vorangestellt ist, ist die Verwendung der des address-of-Operators.
 
 ## <a name="example"></a>Beispiel
 
@@ -71,9 +71,9 @@ int main()
 Bill is 40
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Referenzen](../cpp/references-cpp.md)<br/>
 [Verweistyp-Funktionsargumente](../cpp/reference-type-function-arguments.md)<br/>
-[Verweistyp-Funktionsrückgaben](../cpp/reference-type-function-returns.md)<br/>
+[Verweistyp-Funktions Rückgabe](../cpp/reference-type-function-returns.md)<br/>
 [Verweise auf Zeiger](../cpp/references-to-pointers.md)

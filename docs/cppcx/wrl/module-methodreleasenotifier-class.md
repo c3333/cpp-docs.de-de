@@ -15,16 +15,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Module::MethodReleaseNotifier::MethodReleaseNotifier, constructor
 - Microsoft::WRL::Module::MethodReleaseNotifier::object_ data member
 ms.assetid: 5c2902be-964b-488f-9f1c-adf504995cbc
-ms.openlocfilehash: c641f150b6f029facffa62f7b47c7da32138735e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5b0e5766fda878acb1fdc54a79ce162444eb06de
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371287"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225721"
 ---
 # <a name="modulemethodreleasenotifier-class"></a>Module::MethodReleaseNotifier-Klasse
 
-Ruft einen Ereignishandler auf, wenn das letzte Objekt im aktuellen Modul freigegeben wird. Der Ereignishandler wird von einem Objekt und seinem Zeiger-zu-eine-Methoden-Member angegeben.
+Ruft einen Ereignishandler auf, wenn das letzte-Objekt im aktuellen Modul freigegeben wird. Der-Ereignishandler wird von einem-Objekt und seinem Pointer-to-a-method-Member angegeben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,28 +36,28 @@ class MethodReleaseNotifier : public ReleaseNotifier;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Typ des Objekts, dessen Memberfunktion der Ereignishandler ist.
+Der Typ des Objekts, dessen Member-Funktion der Ereignishandler ist.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                                                                                 | BESCHREIBUNG
+Name                                                                                                 | Beschreibung
 ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------
-[Modul::MethodReleaseNotifier::MethodReleaseNotifier](#methodreleasenotifier-methodreleasenotifier) | Initialisiert eine neue Instanz der Klasse `Module::MethodReleaseNotifier`.
+[Module:: methodreleasenotifier:: methodreleasenotifier](#methodreleasenotifier-methodreleasenotifier) | Initialisiert eine neue Instanz der `Module::MethodReleaseNotifier`-Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                                   | BESCHREIBUNG
+name                                                                   | Beschreibung
 ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------
-[Modul::MethodReleaseNotifier::Invoke](#methodreleasenotifier-invoke) | Ruft den Ereignishandler auf, der dem aktuellen `Module::MethodReleaseNotifier` Objekt zugeordnet ist.
+[Module:: methodreleasenotifier:: aufrufen](#methodreleasenotifier-invoke) | Ruft den Ereignishandler auf, der dem aktuellen-Objekt zugeordnet ist `Module::MethodReleaseNotifier` .
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-Name                                                                    | BESCHREIBUNG
+Name                                                                    | Beschreibung
 ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------
-[Modul::MethodReleaseNotifier::method_](#methodreleasenotifier-method) | Hält einen Zeiger auf den Ereignishandler für das aktuelle `Module::MethodReleaseNotifier` Objekt.
-[Modul::MethodReleaseNotifier::object_](#methodreleasenotifier-object) | Hält einen Zeiger auf das Objekt, dessen Memberfunktion `Module::MethodReleaseNotifier` der Ereignishandler für das aktuelle Objekt ist.
+[Module:: methodreleasenotifier:: method_](#methodreleasenotifier-method) | Enthält einen Zeiger auf den-Ereignishandler für das aktuelle- `Module::MethodReleaseNotifier` Objekt.
+[Module:: methodreleasenotifier:: object_](#methodreleasenotifier-object) | Enthält einen Zeiger auf das-Objekt, dessen Member-Funktion der Ereignishandler für das aktuelle- `Module::MethodReleaseNotifier` Objekt ist.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -65,31 +65,31 @@ Name                                                                    | BESCHR
 
 `MethodReleaseNotifier`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** module.h
+**Header:** Module. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="modulemethodreleasenotifierinvoke"></a><a name="methodreleasenotifier-invoke"></a>Modul::MethodReleaseNotifier::Invoke
+## <a name="modulemethodreleasenotifierinvoke"></a><a name="methodreleasenotifier-invoke"></a>Module:: methodreleasenotifier:: aufrufen
 
-Ruft den Ereignishandler auf, der dem aktuellen `Module::MethodReleaseNotifier` Objekt zugeordnet ist.
+Ruft den Ereignishandler auf, der dem aktuellen-Objekt zugeordnet ist `Module::MethodReleaseNotifier` .
 
 ```cpp
 void Invoke();
 ```
 
-## <a name="modulemethodreleasenotifiermethod_"></a><a name="methodreleasenotifier-method"></a>Modul::MethodReleaseNotifier::method_
+## <a name="modulemethodreleasenotifiermethod_"></a><a name="methodreleasenotifier-method"></a>Module:: methodreleasenotifier:: method_
 
-Hält einen Zeiger auf den Ereignishandler für das aktuelle `Module::MethodReleaseNotifier` Objekt.
+Enthält einen Zeiger auf den-Ereignishandler für das aktuelle- `Module::MethodReleaseNotifier` Objekt.
 
 ```cpp
 void (T::* method_)();
 ```
 
-## <a name="modulemethodreleasenotifiermethodreleasenotifier"></a><a name="methodreleasenotifier-methodreleasenotifier"></a>Modul::MethodReleaseNotifier::MethodReleaseNotifier
+## <a name="modulemethodreleasenotifiermethodreleasenotifier"></a><a name="methodreleasenotifier-methodreleasenotifier"></a>Module:: methodreleasenotifier:: methodreleasenotifier
 
-Initialisiert eine neue Instanz der Klasse `Module::MethodReleaseNotifier`.
+Initialisiert eine neue Instanz der `Module::MethodReleaseNotifier`-Klasse.
 
 ```cpp
 MethodReleaseNotifier(
@@ -102,18 +102,18 @@ MethodReleaseNotifier(
 
 ### <a name="parameters"></a>Parameter
 
-*Objekt*<br/>
-Ein Objekt, dessen Memberfunktion ein Ereignishandler ist.
+*object*<br/>
+Ein Objekt, dessen Member-Funktion ein Ereignishandler ist.
 
-*Methode*<br/>
-Die Memberfunktion des *Parameterobjekts,* das der Ereignishandler ist.
+*method*<br/>
+Die Member-Funktion des Parameter *Objekts* , das der Ereignishandler ist.
 
-*Release*<br/>
-Geben `true` Sie an, dass das Aufrufen der zugrunde liegenden [Module::ReleaseNotifier::Release()-Methode](module-releasenotifier-class.md#releasenotifier-release) aktiviert werden soll. Andernfalls geben `false`Sie an.
+*Abgabe*<br/>
+Geben **`true`** Sie an, um den Aufruf der zugrunde liegenden [Module:: releasenotifier:: Release ()](module-releasenotifier-class.md#releasenotifier-release) -Methode zu aktivieren; andernfalls geben Sie an **`false`** .
 
-## <a name="modulemethodreleasenotifierobject_"></a><a name="methodreleasenotifier-object"></a>Modul::MethodReleaseNotifier::object_
+## <a name="modulemethodreleasenotifierobject_"></a><a name="methodreleasenotifier-object"></a>Module:: methodreleasenotifier:: object_
 
-Hält einen Zeiger auf das Objekt, dessen Memberfunktion `Module::MethodReleaseNotifier` der Ereignishandler für das aktuelle Objekt ist.
+Enthält einen Zeiger auf das-Objekt, dessen Member-Funktion der Ereignishandler für das aktuelle- `Module::MethodReleaseNotifier` Objekt ist.
 
 ```cpp
 T* object_;

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - return keyword [C++], syntax
 - return keyword [C++]
 ms.assetid: a498903a-056a-4df0-a6cf-72f633a62210
-ms.openlocfilehash: c8ea796ab40a2090ed9853377f7c9415914bc0e8
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6a1ed4f374f133abd0233826d1b58896d49576cf
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80178981"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225864"
 ---
 # <a name="return-statement-c"></a>return-Anweisung (C++)
 
@@ -26,15 +26,15 @@ return [expression];
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klausel `expression` wird, sofern vorhanden, in den Typ konvertiert, der in der Funktionsdeklaration angegeben wird, als ob eine Initialisierung durchgeführt würde. Durch die Konvertierung vom Typ des Ausdrucks in den **Rückgabetyp** der Funktion können temporäre Objekte erstellt werden. Weitere Informationen darüber, wie und wann temporare erstellt werden, finden Sie unter [temporäre Objekte](../cpp/temporary-objects.md).
+Die Klausel `expression` wird, sofern vorhanden, in den Typ konvertiert, der in der Funktionsdeklaration angegeben wird, als ob eine Initialisierung durchgeführt würde. Durch die Konvertierung vom Typ des Ausdrucks in den **`return`** Typ der Funktion können temporäre Objekte erstellt werden. Weitere Informationen darüber, wie und wann temporare erstellt werden, finden Sie unter [temporäre Objekte](../cpp/temporary-objects.md).
 
-Der Wert der `expression`-Klausel wird an die aufrufende Funktion zurückgegeben. Wenn der Ausdruck ausgelassen wird, wird der Rückgabewert der Funktion nicht definiert. Konstruktoren und Dekonstruktoren sowie Funktionen vom Typ **void**können keinen Ausdruck in der **Return** -Anweisung angeben. Funktionen aller anderen Typen müssen in der **Return** -Anweisung einen Ausdruck angeben.
+Der Wert der `expression`-Klausel wird an die aufrufende Funktion zurückgegeben. Wenn der Ausdruck ausgelassen wird, wird der Rückgabewert der Funktion nicht definiert. Konstruktoren und Dekonstruktoren sowie Funktionen vom Typ **`void`** können keinen Ausdruck in der Anweisung angeben **`return`** . Funktionen aller anderen Typen müssen einen Ausdruck in der Anweisung angeben **`return`** .
 
-Wenn die Ablauf Steuerung den Block beendet, der die Funktionsdefinition einschließt, ist das Ergebnis das gleiche wie beim Ausführen einer **Return** -Anweisung ohne Ausdruck. Dies ist ungültig bei Funktionen, die mit Rückgabewert deklariert werden.
+Wenn die Ablauf Steuerung den Block beendet, der die Funktionsdefinition einschließt, ist das Ergebnis das gleiche wie beim **`return`** Ausführen einer Anweisung ohne Ausdruck. Dies ist ungültig bei Funktionen, die mit Rückgabewert deklariert werden.
 
-Eine Funktion kann eine beliebige Anzahl von **Return** -Anweisungen aufweisen.
+Eine Funktion kann eine beliebige Anzahl von- **`return`** Anweisungen aufweisen.
 
-Im folgenden Beispiel wird ein Ausdruck mit einer **Return** -Anweisung verwendet, um die größte von zwei Ganzzahlen abzurufen.
+Im folgenden Beispiel wird ein-Ausdruck mit einer- **`return`** Anweisung verwendet, um die größte von zwei Ganzzahlen abzurufen.
 
 ## <a name="example"></a>Beispiel
 
@@ -56,7 +56,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Sprunganweisungen](../cpp/jump-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

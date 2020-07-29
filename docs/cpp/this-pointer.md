@@ -1,43 +1,43 @@
 ---
-title: this-Zeiger
-description: Der this Zeiger ist ein vom Compiler generierter Zeiger auf das aktuelle-Objekt in nicht statischen Element Funktionen.
+title: :::no-loc(this):::-Zeiger
+description: 'Der :::no-loc(this)::: -Zeiger ist ein vom Compiler generierter Zeiger auf das aktuelle-Objekt in nicht statischen Element Funktionen.'
 ms.date: 01/22/2020
 f1_keywords:
-- this_cpp
+- :::no-loc(this):::_cpp
 helpviewer_keywords:
 - nonstatic member functions [C++]
-- pointers, to class instance
-- this pointer
+- 'pointers, to :::no-loc(class)::: instance'
+- ':::no-loc(this)::: pointer'
 ms.assetid: 92e3256a-4ad9-4d46-8be1-d77fad90791f
 no-loc:
-- this
-- class
-- struct
-- union
-- sizeof
-- const
-- volatile
-ms.openlocfilehash: 58bba2edd7a457c624b747b5a65d209995852848
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+- ':::no-loc(this):::'
+- ':::no-loc(class):::'
+- ':::no-loc(struct):::'
+- ':::no-loc(union):::'
+- ':::no-loc(sizeof):::'
+- ':::no-loc(const):::'
+- ':::no-loc(volatile):::'
+ms.openlocfilehash: c851beaba7fe1091ffd7827714f90307303058c1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518334"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225825"
 ---
-# <a name="opno-locthis-pointer"></a>this-Zeiger
+# <a name="no-locthis-pointer"></a>:::no-loc(this):::-Zeiger
 
-Der **this** Zeiger ist ein Zeiger, auf den nur innerhalb der nicht statischen Element Funktionen eines **class** , **struct** oder **union** Typs zugegriffen werden kann. Er zeigt auf das Objekt, für das die Memberfunktion aufgerufen wird. Statische Member-Funktionen verfügen nicht über einen **this** -Zeiger.
+Der **`:::no-loc(this):::`** Zeiger ist ein Zeiger, auf den nur innerhalb der nicht statischen Member-Funktionen eines- **`:::no-loc(class):::`** ,-oder-Typs zugegriffen werden kann **`:::no-loc(struct):::`** **`:::no-loc(union):::`** . Er zeigt auf das Objekt, für das die Memberfunktion aufgerufen wird. Statische Member-Funktionen verfügen nicht über einen- **`:::no-loc(this):::`** Zeiger.
 
 ## <a name="syntax"></a>Syntax
 
 ```cpp
-this
-this->member-identifier
+:::no-loc(this):::
+:::no-loc(this):::->member-identifier
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der **this** Zeiger eines Objekts ist nicht Teil des Objekts selbst. Dies wird im Ergebnis einer **sizeof** -Anweisung für das-Objekt nicht widergespiegelt. Wenn eine nicht statische Member-Funktion für ein Objekt aufgerufen wird, übergibt der Compiler die Adresse des Objekts als verborgenes Argument an die Funktion. Folgender Funktionsaufruf kann beispielsweise:
+Der Zeiger eines Objekts **`:::no-loc(this):::`** ist nicht Teil des Objekts selbst. Das Ergebnis einer- **`:::no-loc(sizeof):::`** Anweisung für das-Objekt wird nicht berücksichtigt. Wenn eine nicht statische Member-Funktion für ein Objekt aufgerufen wird, übergibt der Compiler die Adresse des Objekts als verborgenes Argument an die Funktion. Folgender Funktionsaufruf kann beispielsweise:
 
 ```cpp
 myDate.setMonth( 3 );
@@ -49,39 +49,39 @@ kann wie folgt interpretiert werden:
 setMonth( &myDate, 3 );
 ```
 
-Die Adresse des Objekts ist innerhalb der Member-Funktion als **this** Zeiger verfügbar. Die meisten **this** Zeiger verwenden implizit. Es ist jedoch nicht erforderlich, ein explizites **this** zu verwenden, wenn Sie auf Mitglieder der classverweisen. Beispiel:
+Die Adresse des Objekts ist innerhalb der Member-Funktion als Zeiger verfügbar **`:::no-loc(this):::`** . Die meisten **`:::no-loc(this):::`** Zeiger Verwendungen sind implizit. Es ist jedoch nicht erforderlich, eine explizite zu verwenden, **`:::no-loc(this):::`** Wenn auf Member von verwiesen wird :::no-loc(class)::: . Beispiel:
 
 ```cpp
 void Date::setMonth( int mn )
 {
    month = mn;            // These three statements
-   this->month = mn;      // are equivalent
-   (*this).month = mn;
+   :::no-loc(this):::->month = mn;      // are equivalent
+   (*:::no-loc(this):::).month = mn;
 }
 ```
 
-Der Ausdruck `*this` wird häufig verwendet, um das aktuelle Objekt aus einer Memberfunktion zurückzugeben:
+Der-Ausdruck **`*:::no-loc(this):::`** wird häufig verwendet, um das aktuelle-Objekt aus einer Member-Funktion zurückzugeben:
 
 ```cpp
-return *this;
+return *:::no-loc(this):::;
 ```
 
-Der **this** Zeiger wird auch zum Schutz vor selbst verweisen verwendet:
+Der **`:::no-loc(this):::`** Zeiger wird auch verwendet, um sich gegen den selbst Verweis zu schützen:
 
 ```cpp
-if (&Object != this) {
+if (&Object != :::no-loc(this):::) {
 // do not execute in cases of self-reference
 ```
 
 > [!NOTE]
-> Da der **this** Zeiger nicht änderbar ist, sind Zuweisungen zum **this** Zeiger nicht zulässig. Frühere Implementierungen der C++ zulässigen Zuweisung zu **this** .
+> Da der **`:::no-loc(this):::`** Zeiger nicht änderbar ist, sind Zuweisungen zum **`:::no-loc(this):::`** Zeiger nicht zulässig. Frühere Implementierungen von C++ ermöglichten die Zuweisung zu **`:::no-loc(this):::`** .
 
-Gelegentlich wird der **this** Zeiger direkt verwendet, z. –. zum Bearbeiten von selbstreferenziellen Datenstrukturen, bei denen die Adresse des aktuellen-Objekts erforderlich ist.
+Gelegentlich wird der **`:::no-loc(this):::`** Zeiger direkt verwendet – z. b., um selbstreferenzielle Daten zu bearbeiten :::no-loc(struct)::: , wobei die Adresse des aktuellen-Objekts erforderlich ist.
 
 ## <a name="example"></a>Beispiel
 
 ```cpp
-// this_pointer.cpp
+// :::no-loc(this):::_pointer.cpp
 // compile with: /EHsc
 
 #include <iostream>
@@ -89,11 +89,11 @@ Gelegentlich wird der **this** Zeiger direkt verwendet, z. –. zum Bearbeiten v
 
 using namespace std;
 
-class Buf
+:::no-loc(class)::: Buf
 {
 public:
     Buf( char* szBuffer, size_t sizeOfBuffer );
-    Buf& operator=( const Buf & );
+    Buf& operator=( :::no-loc(const)::: Buf & );
     void Display() { cout << buffer << endl; }
 
 private:
@@ -113,9 +113,9 @@ Buf::Buf( char* szBuffer, size_t sizeOfBuffer )
     }
 }
 
-Buf& Buf::operator=( const Buf &otherbuf )
+Buf& Buf::operator=( :::no-loc(const)::: Buf &otherbuf )
 {
-    if( &otherbuf != this )
+    if( &otherbuf != :::no-loc(this)::: )
     {
         if (buffer)
             delete [] buffer;
@@ -124,7 +124,7 @@ Buf& Buf::operator=( const Buf &otherbuf )
         buffer = new char[sizeOfBuffer];
         strcpy_s( buffer, sizeOfBuffer, otherbuf.buffer );
     }
-    return *this;
+    return *:::no-loc(this):::;
 }
 
 int main()
@@ -148,60 +148,60 @@ my buffer
 your buffer
 ```
 
-## <a name="type-of-the-opno-locthis-pointer"></a>Der Typ des this Zeigers.
+## <a name="type-of-the-no-locthis-pointer"></a>Der Typ des :::no-loc(this)::: Zeigers.
 
-Der Typ des **this** Zeigers kann in der Funktionsdeklaration durch die Schlüsselwörter **const** und **volatile** geändert werden. Um eine Funktion mit einem dieser Attribute zu deklarieren, fügen Sie das Schlüsselwort (e) nach der Funktions Argumentliste hinzu.
+Der **`:::no-loc(this):::`** Zeigertyp kann in der Funktionsdeklaration durch die **`:::no-loc(const):::`** -und- **`:::no-loc(volatile):::`** Schlüsselwörter geändert werden. Um eine Funktion mit einem dieser Attribute zu deklarieren, fügen Sie das Schlüsselwort (e) nach der Funktions Argumentliste hinzu.
 
 Sehen Sie sich ein Beispiel an:
 
 ```cpp
-// type_of_this_pointer1.cpp
-class Point
+// type_of_:::no-loc(this):::_pointer1.cpp
+:::no-loc(class)::: Point
 {
-    unsigned X() const;
+    unsigned X() :::no-loc(const):::;
 };
 int main()
 {
 }
 ```
 
-Der vorangehende Code deklariert eine Member-Funktion `X`, in der der **this** Zeiger als **const** Zeiger auf ein **const** Objekt behandelt wird. Es können Kombinationen von *CV-mod-List-* Optionen verwendet werden, aber Sie ändern immer das Objekt, auf das der **this** Zeiger zeigt, nicht der Zeiger selbst. In der folgenden Deklaration werden Funktions `X`deklariert, wobei der **this** Zeiger ein **const** Zeiger auf ein **const** Objekt ist:
+Der vorangehende Code deklariert eine Member-Funktion, `X` , in der der **`:::no-loc(this):::`** Zeiger als **`:::no-loc(const):::`** Zeiger auf ein- **`:::no-loc(const):::`** Objekt behandelt wird. Es können Kombinationen von *CV-mod-List-* Optionen verwendet werden, aber Sie ändern immer das Objekt, auf das der **`:::no-loc(this):::`** Zeiger zeigt, nicht den Zeiger selbst. In der folgenden Deklaration `X` wird eine Funktion deklariert, bei der der **`:::no-loc(this):::`** Zeiger ein **`:::no-loc(const):::`** Zeiger auf ein- **`:::no-loc(const):::`** Objekt ist:
 
 ```cpp
-// type_of_this_pointer2.cpp
-class Point
+// type_of_:::no-loc(this):::_pointer2.cpp
+:::no-loc(class)::: Point
 {
-    unsigned X() const;
+    unsigned X() :::no-loc(const):::;
 };
 int main()
 {
 }
 ```
 
-Der Typ der **this** in einer Member-Funktion wird durch die folgende Syntax beschrieben. Die *CV-qualifiziererliste* wird vom Deklarator der Element Funktion bestimmt. Sie kann **const** oder **volatile** (oder beides) sein. *class-Type* ist der Name des class:
+Der Typ von **`:::no-loc(this):::`** in einer Member-Funktion wird durch die folgende Syntax beschrieben. Die *CV-qualifiziererliste* wird vom Deklarator der Element Funktion bestimmt. Der Wert kann **`:::no-loc(const):::`** oder **`:::no-loc(volatile):::`** (oder beides) sein. * :::no-loc(class)::: -Type* ist der Name des :::no-loc(class)::: :
 
-[*CV-Qualifizierer-List*] *class* **\* const this**
+[*CV-Qualifizierer-List*] * :::no-loc(class)::: -Typ* ** \* :::no-loc(const)::: :::no-loc(this)::: **
 
-Dies bedeutet, dass der **this** Zeiger immer ein const Zeiger ist. Sie kann nicht neu zugewiesen werden.  The **const** or **volatile** qualifiers used in the member function declaration apply to the class instance the **this** pointer points at, in the scope of that function.
+Dies bedeutet, dass der **`:::no-loc(this):::`** Zeiger immer ein :::no-loc(const)::: Zeiger ist. Sie kann nicht neu zugewiesen werden.  Die **`:::no-loc(const):::`** **`:::no-loc(volatile):::`** in der Deklaration der Element Funktion verwendeten-oder-Qualifizierer gelten für die- :::no-loc(class)::: Instanz **`:::no-loc(this):::`** , auf die der Zeiger verweist, im Gültigkeitsbereich dieser Funktion.
 
 In der folgenden Tabelle wird näher erläutert, wie diese Modifizierer funktionieren.
 
-### <a name="semantics-of-opno-locthis-modifiers"></a>Semantics of this modifiers
+### <a name="semantics-of-no-locthis-modifiers"></a>Semantik von :::no-loc(this)::: modifiziererzeichen
 
 |Modifizierer|Bedeutung|
 |--------------|-------------|
-|**const**|Can't change member data; can't invoke member functions that aren't **const** .|
-|**volatile**|Member data is loaded from memory each time it's accessed; disables certain optimizations.|
+|**`:::no-loc(const):::`**|Elementdaten können nicht geändert werden. Es können keine Element Funktionen aufgerufen werden, die nicht sind **`:::no-loc(const):::`** .|
+|**`:::no-loc(volatile):::`**|Elementdaten werden jedes Mal aus dem Arbeitsspeicher geladen, wenn darauf zugegriffen wird. Deaktiviert bestimmte Optimierungen.|
 
-It's an error to pass a **const** object to a member function that isn't **const** .
+Es ist ein Fehler, ein- **`:::no-loc(const):::`** Objekt an eine Member-Funktion zu übergeben, die nicht ist **`:::no-loc(const):::`** .
 
-Similarly, it's also an error to pass a **volatile** object to a member function that isn't **volatile** .
+Ebenso ist es auch ein Fehler, ein- **`:::no-loc(volatile):::`** Objekt an eine Member-Funktion zu übergeben, die nicht ist **`:::no-loc(volatile):::`** .
 
-Member functions declared as **const** can't change member data — in such functions, the **this** pointer is a pointer to a **const** object.
+Member-Funktionen, die als deklarierte Element **`:::no-loc(const):::`** Daten nicht geändert werden können – in solchen Funktionen **`:::no-loc(this):::`** ist der Zeiger ein Zeiger auf ein- **`:::no-loc(const):::`** Objekt.
 
 > [!NOTE]
-> Constructors and destructors can't be declared as **const** or **volatile** . They can, however, be invoked on **const** or **volatile** objects.
+> Con :::no-loc(struct)::: ORS und de :::no-loc(struct)::: ORS können nicht als oder deklariert werden **`:::no-loc(const):::`** **`:::no-loc(volatile):::`** . Sie können jedoch für-oder-Objekte aufgerufen werden **`:::no-loc(const):::`** **`:::no-loc(volatile):::`** .
 
 ## <a name="see-also"></a>Siehe auch
 
-[Stichwörter](../cpp/keywords-cpp.md)
+[Schlüsselwörter](../cpp/keywords-cpp.md)

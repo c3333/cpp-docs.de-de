@@ -8,12 +8,12 @@ helpviewer_keywords:
 - math routines
 - floating-point numbers
 ms.assetid: e4fcaf69-5c8e-4854-a9bb-1f412042131e
-ms.openlocfilehash: a0ee21378a6feb7ada39dc00f0e181672470e231
-ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.openlocfilehash: ca1648719a4a98efc56ea3f543336b803c81c40f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821511"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226228"
 ---
 # <a name="math-and-floating-point-support"></a>Mathematische Unterstützung und Gleitkommaunterstützung
 
@@ -21,11 +21,11 @@ Die universelle C-Laufzeitbibliothek (UCRT) stellt viele integrale Funktionen un
 
 Viele der Gleitkommafunktionen in der mathematischen Bibliothek haben unterschiedliche Implementierungen für verschiedene CPU-Architekturen. Die 32-Bit-x86-CRT hat möglicherweise eine andere Implementierung als die 64-Bit x64 CRT. Darüber hinaus haben möglicherweise einige der Funktionen mehrere Implementierungen für eine bestimmte CPU-Architektur. Eine möglichst effiziente Implementierung wird je nach den von der CPU unterstützten Anweisungssets dynamisch zur Laufzeit ausgewählt. In der 32-Bit-x86-CRT haben einige Funktionen eine x87- und eine SSE2-Implementierung. Wenn eine CPU verwendet wird, die SSE2 unterstützt, wird die schnellere SSE2-Implementierung verwendet. Wenn eine CPU verwendet wird, die SSE2 nicht unterstützt, wird die langsamere x87-Implementierung verwendet. Da verschiedene Implementierungen der Funktionen der mathematischen Bibliothek verschiedene CPU-Anweisungen und andere Algorithmen verwenden, um Ergebnisse zu erzielen, unterscheiden sich die Ergebnisse in den verschiedenen CPUs möglicherweise. In den meisten Fällen liegen die Ergebnisse innerhalb +/-1 ULP des korrekt gerundeten Ergebnisses, die tatsächlichen Ergebnisse können jedoch in den CPUs variieren.
 
-16-Bit-Vorgängerversionen von Microsoft C/C++ und Microsoft Visual C++ unterstützten den Typ **long double** als einen 80-Bit-präziser Gleitkomma-Datentyp. In späteren Versionen von Visual C++ ist der **long double**-Datentyp ein 64-Bit-präziser Gleitkomma-Datentyp, der identisch mit Typ **double** ist. Der Compiler behandelt **long double** und **double** als unterschiedliche Typen. Die **long double**-Funktionen stimmen jedoch mit ihren **double**-Gegenstücken überein. Die CRT stellt **long double**-Versionen der mathematischen Funktionen für die ISO C99-Quellcodekompatibilität bereit. Beachten Sie aber, dass die binäre Darstellung von anderen Compilern abweichen kann.
+Frühere 16-Bit-Versionen von Microsoft C/C++ und Microsoft Visual C++ den- **`long double`** Typ als Gleit Komma-Datentyp mit einer Genauigkeit von 80 Bit unterstützt. In höheren Versionen von Visual C++ ist der **`long double`** Datentyp ein Gleit Komma-Datentyp mit 64-Bit-Genauigkeit, der mit dem-Typ identisch ist **`double`** . Der Compiler behandelt **`long double`** und **`double`** als unterschiedliche Typen, aber die **`long double`** Funktionen sind identisch mit Ihren **`double`** Entsprechungen. Die CRT stellt **`long double`** Versionen der mathematischen Funktionen für die ISO C99-Quell Code Kompatibilität bereit. Beachten Sie jedoch, dass die binäre Darstellung von anderen Compilern abweichen kann.
 
 ## <a name="supported-math-and-floating-point-routines"></a>Unterstützte mathematische und Gleitkommaroutinen
 
-|-Routine zurückgegebener Wert|Mit|
+|-Routine zurückgegebener Wert|Zweck|
 |-|-|
 [abs, labs, llabs, _abs64](../c-runtime-library/reference/abs-labs-llabs-abs64.md)|Berechnet den absoluten Wert eines Ganzzahltyps
 [acos, acosf, acosl](../c-runtime-library/reference/acos-acosf-acosl.md)|Berechnet den Arkuskosinus
@@ -34,9 +34,9 @@ Viele der Gleitkommafunktionen in der mathematischen Bibliothek haben unterschie
 [asinh, asinhf, asinhl](../c-runtime-library/reference/asinh-asinhf-asinhl.md)|Berechnet den hyperbolischen Arkussinus
 [atan, atanf, atanl, atan2, atan2f, atan2l](../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)|Berechnet den Arkustangens
 [atanh, atanhf, atanhl](../c-runtime-library/reference/atanh-atanhf-atanhl.md)|Berechnet den hyperbolischen Arkustangens
-[_atodbl, _atodbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine gebietsschemaspezifische Zeichenfolge in einen **double**-Wert
-[atof, _atof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Zeichenfolge in einen **double**-Wert
-[_atoflt, _atoflt_l, _atoldbl, _atoldbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine gebietsschemaspezifische Zeichenfolge in einen **float**- oder **long double**-Wert
+[_atodbl, _atodbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine Gebiets Schema spezifische Zeichenfolge in eine.**`double`**
+[atof, _atof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Zeichenfolge in eine**`double`**
+[_atoflt, _atoflt_l, _atoldbl, _atoldbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine Gebiets Schema spezifische Zeichenfolge in eine **`float`** oder eine**`long double`**
 [cbrt, cbrtf, cbrtl](../c-runtime-library/reference/cbrt-cbrtf-cbrtl.md)|Berechnet die Kubikwurzel
 [ceil, ceilf, ceill](../c-runtime-library/reference/ceil-ceilf-ceill.md)|Berechnet den Höchstwert
 [_chgsign, _chgsignf, _chgsignl](../c-runtime-library/reference/chgsign-chgsignf-chgsignl.md)|Berechnet das additive Inverse (Gegenzahl)
@@ -47,7 +47,7 @@ Viele der Gleitkommafunktionen in der mathematischen Bibliothek haben unterschie
 [cos, cosf, cosl](../c-runtime-library/reference/cos-cosf-cosl.md)|Berechnet den Sinus
 [cosh, coshf, coshl](../c-runtime-library/reference/cosh-coshf-coshl.md)|Berechnet den hyperbolischen Sinus
 [div, ldiv, lldiv](../c-runtime-library/reference/div.md)|Berechnet den Quotienten und den Rest von zwei ganzzahligen Werten
-[_ecvt](../c-runtime-library/reference/ecvt.md), [ecvt](../c-runtime-library/reference/posix-ecvt.md)|Konvertiert einen **double**-Wert in eine Zeichenfolge
+[_ecvt](../c-runtime-library/reference/ecvt.md), [ecvt](../c-runtime-library/reference/posix-ecvt.md)|Konvertiert einen **`double`** in eine Zeichenfolge.
 [_ecvt_s](../c-runtime-library/reference/ecvt-s.md)|Eine sicherere Version von **_ecvt**
 [erf, erff, erfl](../c-runtime-library/reference/erf-erff-erfl-erfc-erfcf-erfcl.md)|Berechnet die Fehlerfunktion
 [erfc, erfcf, erfcl](../c-runtime-library/reference/erf-erff-erfl-erfc-erfcf-erfcl.md)|Berechnet die komplementäre Fehlerfunktion
@@ -91,18 +91,18 @@ Viele der Gleitkommafunktionen in der mathematischen Bibliothek haben unterschie
 [isinf](../c-runtime-library/reference/isinf.md)|Bestimmt, ob ein Gleitkommawert endlich ist
 [isnan, _isnan, _isnanf](../c-runtime-library/reference/isnan-isnan-isnanf.md)|Testet einen Gleitkommawert auf NaN
 [isnormal](../c-runtime-library/reference/isnormal.md)|Testet, ob ein Gleitkommawert sowohl unendlich als auch subnormal ist
-[_j0, _j1, _jn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|Berechnet die Bessel-Funktion
+[_j0, _j1 _jn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|Berechnet die Bessel-Funktion
 [ldexp, ldexpf, ldexpl](../c-runtime-library/reference/ldexp.md)|Berechnet x*2<sup>n</sup>
 [lgamma, lgammaf, lgammal](../c-runtime-library/reference/lgamma-lgammaf-lgammal.md)|Berechnet den natürlichen Logarithmus des absoluten Werts der Gammafunktion
-[llrint, llrintf, llrintl](../c-runtime-library/reference/lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)|Rundet einen Gleitkommawert auf den nächsten Wert von **long long**
-[llround, llroundf, llroundl](../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)|Rundet einen Gleitkommawert auf den nächsten Wert von **long long**
+[llrint, llrintf, llrintl](../c-runtime-library/reference/lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)|Rundet einen Gleit Komma Wert auf den nächstgelegenen **`long long`** Wert.
+[llround, llroundf, llroundl](../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)|Rundet einen Gleit Komma Wert auf den nächstgelegenen **`long long`** Wert.
 [log, logf, logl, log10, log10f, log10l](../c-runtime-library/reference/log-logf-log10-log10f.md)|Berechnet den natürlichen Logarithmus oder den Logarithmus zur Basis 10
 [log1p, log1pf, log1pl](../c-runtime-library/reference/log1p-log1pf-log1pl2.md)|Berechnet den natürlichen Logarithmus von 1+x
 [log2, log2f, log2l](../c-runtime-library/reference/log2-log2f-log2l.md)|Berechnet den Logarithmus zur Basis 2
 [logb, logbf, logbl, _logb, _logbf](../c-runtime-library/reference/logb-logbf-logbl-logb-logbf.md)|Gibt den Exponenten eines Gleitkommawerts zurück
-[lrint, lrintf, lrintl](../c-runtime-library/reference/lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)|Rundet einen Gleitkommawert auf den nächsten Wert von **long**
+[lrint, lrintf, lrintl](../c-runtime-library/reference/lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)|Rundet einen Gleit Komma Wert auf den nächstgelegenen **`long`** Wert.
 [_lrotl, _lrotr](../c-runtime-library/reference/lrotl-lrotr.md)|Rotiert einen ganzzahligen Wert nach links oder rechts
-[lround, lroundf, lroundl](../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)|Rundet einen Gleitkommawert auf den nächsten Wert von **long**
+[lround, lroundf, lroundl](../c-runtime-library/reference/lround-lroundf-lroundl-llround-llroundf-llroundl.md)|Rundet einen Gleit Komma Wert auf den nächstgelegenen **`long`** Wert.
 [_matherr](../c-runtime-library/reference/matherr.md)|Der Standardhandler für mathematische Fehler
 [__max](../c-runtime-library/reference/max.md)|Ein Makro, das den größeren von zwei Werten zurückgibt
 [__min](../c-runtime-library/reference/min.md)|Ein Makro, das den kleineren von zwei Werten zurückgibt
@@ -126,14 +126,14 @@ Viele der Gleitkommafunktionen in der mathematischen Bibliothek haben unterschie
 [sinh, sinhf, sinhl](../c-runtime-library/reference/sinh-sinhf-sinhl.md)|Berechnet den hyperbolischen Sinus
 [sqrt, sqrtf, sqrtl](../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)|Berechnet die Quadratwurzel
 [_status87, _statusfp, _statusfp2](../c-runtime-library/reference/status87-statusfp-statusfp2.md)|Ruft das Gleitkommastatuswort ab
-[strtof, _strtof_l](../c-runtime-library/reference/strtof-strtof-l-wcstof-wcstof-l.md)|Konvertiert eine Zeichenfolge in einen **float**-Wert.
-[strtold, _strtold_l](../c-runtime-library/reference/strtold-strtold-l-wcstold-wcstold-l.md)|Konvertiert eine Zeichenfolge in einen **Long** **Double** -
+[strtof, _strtof_l](../c-runtime-library/reference/strtof-strtof-l-wcstof-wcstof-l.md)|Konvertiert eine Zeichenfolge in eine**`float`**
+[strtold, _strtold_l](../c-runtime-library/reference/strtold-strtold-l-wcstold-wcstold-l.md)|Konvertiert eine Zeichenfolge in eine**`long double`**
 [tan, tanf, tanl](../c-runtime-library/reference/tan-tanf-tanl.md)|Berechnet den Tangens
 [tanh, tanhf, tanhl](../c-runtime-library/reference/tanh-tanhf-tanhl.md)|Berechnet den hyperbolischen Tangens
 [tgamma, tgammaf, tgammal](../c-runtime-library/reference/tgamma-tgammaf-tgammal.md)|Berechnet die Gammafunktion
 [trunc, truncf, truncl](../c-runtime-library/reference/trunc-truncf-truncl.md)|Verkürzt die Nachkommastellen
-[_wtof, _wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine breite Zeichenfolge in einen **double**-Wert
-[_y0, _y1, _yn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|Berechnet die Bessel-Funktion
+[_wtof, _wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Breite Zeichenfolge in eine**`double`**
+[_y0, _y1 _yn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|Berechnet die Bessel-Funktion
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -3,12 +3,12 @@ title: Einführung in SAL
 ms.date: 11/04/2016
 ms.topic: conceptual
 ms.assetid: a94d6907-55f2-4874-9571-51d52d6edcfd
-ms.openlocfilehash: fe48e31e5f4390915c4f3b5b6bf9c09bbd9fffe1
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 78a254bca6a90826d47f20ee9909a8cc66e23e28
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86403984"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226046"
 ---
 # <a name="understanding-sal"></a>Einführung in SAL
 
@@ -78,7 +78,7 @@ Diese Implementierung enthält einen allgemeinen Fehler, der von einem Fehler au
 
 SAL definiert vier grundlegende Arten von Parametern, die nach Verwendungs Mustern kategorisiert werden.
 
-|Category|Parameter Anmerkung|BESCHREIBUNG|
+|Category|Parameter Anmerkung|Beschreibung|
 |--------------|--------------------------|-----------------|
 |**Eingabe in aufgerufene Funktion**|`_In_`|Daten werden an die aufgerufene Funktion weitergegeben und als schreibgeschützt behandelt.|
 |**Eingabe in aufgerufene Funktion und Ausgabe an Aufrufer**|`_Inout_`|Verwendbare Daten werden an die Funktion geleitet und potenziell geändert.|
@@ -359,7 +359,7 @@ Visual Studio Code Analyse überprüft, ob diese Funktion vor der `*pInt` Derefe
 
 ### <a name="example-the-_success_-annotation-in-combination-with-_out_"></a>Beispiel: die \_ Erfolgs \_ Anmerkung in Kombination mit " \_ out"\_
 
-Anmerkungen können auf die meisten-Objekte angewendet werden.  Vor allem können Sie eine ganze Funktion mit Anmerkungen versehen.  Eine der offensichtlichsten Merkmale einer Funktion besteht darin, dass Sie erfolgreich ausgeführt werden kann oder fehlschlägt. Wie bei der Zuordnung zwischen einem Puffer und seiner Größe kann C/C++ die Funktion jedoch nicht als Erfolg oder Fehler Ausdrücken. Mithilfe der-Anmerkung `_Success_` können Sie angeben, wie erfolgreich eine Funktion aussieht.  Der Parameter für die `_Success_` Anmerkung ist nur ein Ausdruck, der angibt, dass die Funktion erfolgreich war, wenn Sie true ist. Der Ausdruck kann alles sein, was der Anmerkung-Parser behandeln kann. Die Auswirkungen der Anmerkungen, die nach der Rückgabe der Funktion auftreten, sind nur anwendbar, wenn die Funktion erfolgreich ausgeführt wird. Dieses Beispiel zeigt `_Success_` , wie mit mit interagiert `_Out_` , um das richtige zu tun. Sie können das Schlüsselwort verwenden `return` , um den Rückgabewert darzustellen.
+Anmerkungen können auf die meisten-Objekte angewendet werden.  Vor allem können Sie eine ganze Funktion mit Anmerkungen versehen.  Eine der offensichtlichsten Merkmale einer Funktion besteht darin, dass Sie erfolgreich ausgeführt werden kann oder fehlschlägt. Wie bei der Zuordnung zwischen einem Puffer und seiner Größe kann C/C++ die Funktion jedoch nicht als Erfolg oder Fehler Ausdrücken. Mithilfe der-Anmerkung `_Success_` können Sie angeben, wie erfolgreich eine Funktion aussieht.  Der Parameter für die `_Success_` Anmerkung ist nur ein Ausdruck, der angibt, dass die Funktion erfolgreich war, wenn Sie true ist. Der Ausdruck kann alles sein, was der Anmerkung-Parser behandeln kann. Die Auswirkungen der Anmerkungen, die nach der Rückgabe der Funktion auftreten, sind nur anwendbar, wenn die Funktion erfolgreich ausgeführt wird. Dieses Beispiel zeigt `_Success_` , wie mit mit interagiert `_Out_` , um das richtige zu tun. Sie können das Schlüsselwort verwenden **`return`** , um den Rückgabewert darzustellen.
 
 ```cpp
 _Success_(return != false) // Can also be stated as _Success_(return)
@@ -398,7 +398,7 @@ Im folgenden finden Sie einige Richtlinien:
 
 Oder Sie können alle Parameter mit Anmerkungen versehen, um die Absicht zu vereinfachen und zu überprüfen, ob Anmerkungen durchgeführt wurden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 - [Verwenden von SAL-Anmerkungen zum Reduzieren von C/C++-Codefehlern](../code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects.md)
 - [Hinzufügen einer Anmerkung zu Funktionsparametern und Rückgabewerten](../code-quality/annotating-function-parameters-and-return-values.md)

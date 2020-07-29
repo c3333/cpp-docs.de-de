@@ -7,16 +7,16 @@ helpviewer_keywords:
 - class types [C++], class statements
 - class keyword [C++]
 ms.assetid: dd23c09f-6598-4069-8bff-69c7f2518b9f
-ms.openlocfilehash: c1b9d8f6510dfe15644f0e47cad7e0aecbac36c9
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6475bc3703ce1bd7cf6103f4be8c12edc36e98b9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180975"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226007"
 ---
 # <a name="class-c"></a>class (C++)
 
-Das **Class** -Schlüsselwort deklariert einen Klassentyp oder definiert ein Objekt eines Klassen Typs.
+Das- **`class`** Schlüsselwort deklariert einen Klassentyp oder definiert ein Objekt eines Klassen Typs.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,7 +35,7 @@ class [ms-decl-spec] [tag [: base-list ]]
 Optionale Vorlagenspezifikationen. Weitere Informationen finden Sie unter [Vorlagen](templates-cpp.md).
 
 *class*<br/>
-Das **Class** -Schlüsselwort.
+Das **`class`** Schlüsselwort.
 
 *MS-decl-spec*<br/>
 Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie unter [__declspec](../cpp/declspec.md) -Schlüsselwort.
@@ -49,8 +49,8 @@ Optionale Liste von Klassen oder Strukturen, von denen diese Klasse ihre Member 
 *Mitgliederliste*<br/>
 Liste von Klassenmembern. Weitere Informationen finden Sie unter [Übersicht über Klassenmember](../cpp/class-member-overview.md) .
 
-*declarators*<br/>
-Deklaratorliste, die die Namen von mindestens einer Instanz eines Klassentyps festlegt. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der Klasse **öffentlich**sind. Dies kommt häufiger in Strukturen vor, deren Datenmember standardmäßig **öffentlich** sind, als in Klassen. Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](../cpp/overview-of-declarators.md) .
+*Deklaratoren*<br/>
+Deklaratorliste, die die Namen von mindestens einer Instanz eines Klassentyps festlegt. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der-Klasse sind **`public`** . Dies kommt häufiger in Strukturen vor, deren Datenmember **`public`** Standardmäßig sind, als in Klassen. Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](../cpp/overview-of-declarators.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -78,7 +78,6 @@ Informationen zu verwalteten Klassen und Strukturen in C++/CLI und C++/CX finden
 
 #include <iostream>
 #include <string>
-#define TRUE = 1
 using namespace std;
 
 class dog
@@ -141,7 +140,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)

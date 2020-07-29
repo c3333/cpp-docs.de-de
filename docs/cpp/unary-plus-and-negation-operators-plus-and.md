@@ -11,12 +11,12 @@ helpviewer_keywords:
 - + operator [C++], unary operators
 - + operator
 ms.assetid: 2c58c4f4-0d92-4ae3-9d0c-1a6157875cc1
-ms.openlocfilehash: e640d18dc3755385188e166c57ad5e912ac24fb4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: de90cd2068f9b701167a340fe0b335e2a6c93102
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160592"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225799"
 ---
 # <a name="unary-plus-and-negation-operators--and--"></a>Unärer Plus- und Negationsoperatoren: + und -
 
@@ -31,7 +31,7 @@ ms.locfileid: "80160592"
 
 Das Ergebnis des unären plus-Operators ( **+** ) ist der Wert seines Operanden. Der Operand für den unären Plus-Operator muss ein arithmetischer Typ sein.
 
-Ganzzahlige Erweiterung wird für ganzzahlige Operanden ausgeführt. Der resultierende Typ ist der Typ, in den der Operand heraufgestuft wird. Folglich ergibt der Ausdruck `+ch`, wobei `ch` vom Typ **char**ist, den Typ **int**. der Wert ist unverändert. Weitere Informationen zur Ausführung der herauf Stufung finden Sie unter [Standard Konvertierungen](standard-conversions.md) .
+Ganzzahlige Erweiterung wird für ganzzahlige Operanden ausgeführt. Der resultierende Typ ist der Typ, in den der Operand heraufgestuft wird. Daher ergibt der Ausdruck `+ch` , wobei `ch` vom Typ ist **`char`** , **`int`** den Typ. der Wert ist unverändert. Weitere Informationen zur Ausführung der herauf Stufung finden Sie unter [Standard Konvertierungen](standard-conversions.md) .
 
 ## <a name="--operator"></a>--Operator
 
@@ -45,7 +45,7 @@ Eine unäre Negation von Mengen ohne Vorzeichen wird ausgeführt, indem der Wert
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)
+[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

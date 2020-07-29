@@ -10,12 +10,12 @@ helpviewer_keywords:
 - SQL Server projects, retrieving aggregate values from recordsets
 - SQL aggregate values, retrieving from recordsets
 ms.assetid: 94500662-22a4-443e-82d7-acbe6eca447b
-ms.openlocfilehash: 9ebbe78191d0c4140baf3557637ba2103886577d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b9e70716ad90a14bbed552d47f48d5a3317e5a62
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368652"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225708"
 ---
 # <a name="recordset-obtaining-sums-and-other-aggregate-results-odbc"></a>Recordset: Abrufen von Summen und anderen Aggregatergebnissen (ODBC)
 
@@ -36,7 +36,7 @@ In diesem Thema wird erläutert, wie Aggregatergebnisse mit den folgenden [SQL](
 
 - **COUNT**: Zählt die Anzahl der Datensätze in einer Spalte mit einem beliebigen Datentyp.
 
-Sie können diese SQL-Funktionen verwenden, um statistische Informationen zu den Datensätzen in einer Datenquelle abzurufen, statt Datensätze aus der Datenquelle zu extrahieren. Das Recordset, das erstellt wird, besteht in der Regel aus einem einzigen Datensatz (wenn alle Spalten Aggregate sind), der einen Wert enthält. (Es gibt möglicherweise mehr als einen Datensatz, wenn Sie eine **GROUP BY-Klausel** verwendet haben.) Dieser Wert ist das Ergebnis der Berechnung oder Extraktion, die von der SQL-Funktion durchgeführt wird.
+Sie können diese SQL-Funktionen verwenden, um statistische Informationen zu den Datensätzen in einer Datenquelle abzurufen, statt Datensätze aus der Datenquelle zu extrahieren. Das Recordset, das erstellt wird, besteht in der Regel aus einem einzigen Datensatz (wenn alle Spalten Aggregate sind), der einen Wert enthält. (Es können mehrere Datensätze vorhanden sein, wenn Sie eine **Group by** -Klausel verwendet haben.) Dieser Wert ist das Ergebnis der Berechnung oder Extraktion, die von der SQL-Funktion ausgeführt wird.
 
 > [!TIP]
 > Wenn Sie eine **GROUP BY**-SQL-Klausel (und möglicherweise eine **HAVING**-Klausel) zu Ihrer SQL-Anweisung hinzufügen möchten, fügen Sie diese am Ende von `m_strFilter` an. Beispiel:
@@ -50,13 +50,13 @@ Sie können die Anzahl von Datensätzen, aus denen Sie Aggregatergebnisse abrufe
 > [!CAUTION]
 > Einige Aggregationsoperatoren geben einen Wert mit einem Datentyp zurück, der sich vom Datentyp der Spalten unterscheidet, über die die Operatoren aggregieren.
 
-- **SUM** und **AVG** geben möglicherweise den nächstgrößeren Datentyp zurück (z. B. führt ein Aufrufen mit `int` zur Rückgabe von **LONG** oder **double**).
+- **Sum** und **AVG** geben möglicherweise den nächsten größeren Datentyp zurück (z. b. wenn mit aufgerufen wird, **`int`** gibt **Long** oder zurück **`double`** ).
 
 - **COUNT** gibt üblicherweise **LONG** zurück, unabhängig vom Typ der Zielspalte.
 
 - **MAX** und **MIN** geben den Datentyp zurück, den die Spalte hat, die sie berechnen.
 
-     Der **Klasse hinzufügen**-Assistent erstellt beispielsweise `long` `m_lSales`, um eine Sales-Spalte einzubinden, aber Sie müssen dies durch ein `double m_dblSumSales`-Datenmember ersetzen, um das aggregierte Ergebnis zu berücksichtigen. Siehe folgendes Beispiel.
+     Der Assistent zum **Hinzufügen von Klassen** erstellt beispielsweise, **`long`** `m_lSales` um eine Verkaufs Spalte aufzunehmen, aber Sie müssen dies durch einen `double m_dblSumSales` Datenmember ersetzen, um das Aggregat Ergebnis aufzunehmen. Siehe folgendes Beispiel.
 
 #### <a name="to-obtain-an-aggregate-result-for-a-recordset"></a>So rufen Sie ein aggregiertes Ergebnis für ein Recordset ab
 
@@ -85,7 +85,7 @@ Wenn Sie eine [CRecordView](../../mfc/reference/crecordview-class.md)-Klasse ver
 DDX_FieldText(pDX, IDC_SUMSALES, m_pSet->m_lSales, m_pSet);
 ```
 
-in:
+Nach:
 
 ```
 DDX_FieldText(pDX, IDC_SUMSALES, m_pSet->m_dblSumSales, m_pSet);
@@ -94,4 +94,4 @@ DDX_FieldText(pDX, IDC_SUMSALES, m_pSet->m_dblSumSales, m_pSet);
 ## <a name="see-also"></a>Siehe auch
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
-[Recordset: Datensatzauswahl durch Recordsets (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)
+[Recordset: Wie Recordsets Datensätze auswählen (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)

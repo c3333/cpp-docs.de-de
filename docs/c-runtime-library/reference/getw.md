@@ -28,12 +28,12 @@ helpviewer_keywords:
 - integers, getting from streams
 - getw function
 ms.assetid: ef75facc-b84e-470f-9f5f-8746c90822a0
-ms.openlocfilehash: fc1dfcc54259dfe40d2fc37be1e1c0ab63ab7c4a
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 786246afbb8ce4f733f733af75af3a70ce33006d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916314"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226215"
 ---
 # <a name="_getw"></a>_getw
 
@@ -56,15 +56,15 @@ Zeiger zur **FILE**-Struktur.
 
 **_getw** gibt den gelesenen ganzzahligen Wert zurück. Der Rückgabewert von **EOF** gibt entweder einen Fehler oder ein Dateiende an. Da der **EOF** -Wert auch ein berechtigter ganzzahliger Wert ist, verwenden Sie " **feof** " oder " **ferror** ", um eine dateiendebedingung oder eine Fehlerbedingung zu überprüfen. Wenn *stream* der Stream **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **EOF**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_getw** -Funktion liest den nächsten binären Wert vom Typ " **int** " aus der Datei, die dem *Stream* zugeordnet ist, und erhöht den zugeordneten Dateizeiger (sofern vorhanden), um auf das nächste ungelesene Zeichen zu zeigen. **_getw** nimmt keine besondere Ausrichtung von Elementen im Stream an. Probleme beim Portieren können mit **_getw** auftreten, da die Größe des **int** -Typs und die Reihenfolge von Bytes innerhalb des Typs " **int** " zwischen Systemen unterschiedlich sind.
+Die **_getw** -Funktion liest den nächsten binären Wert des Typs **`int`** aus der mit *Stream* verknüpften Datei und erhöht den zugeordneten Dateizeiger (sofern vorhanden), um auf das nächste ungelesene Zeichen zu zeigen. **_getw** nimmt keine besondere Ausrichtung von Elementen im Stream an. Probleme mit der Portierung können mit **_getw** auftreten, da die Größe des **`int`** Typs und die Reihenfolge der Bytes innerhalb des **`int`** Typs über Systeme hinweg unterschiedlich sind.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_getw**|\<stdio.h>|
 

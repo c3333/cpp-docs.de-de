@@ -1,12 +1,12 @@
 ---
-title: setlocale, _wsetlocale
-description: Beschreibt die Funktionen setlocale der Microsoft C-Lauf Zeit Bibliothek ( _wsetlocaleCRT) und.
+title: ':::no-loc(setlocale):::, :::no-loc(_wsetlocale):::'
+description: 'Beschreibt die Funktionen der Microsoft C-Lauf Zeit Bibliothek (CRT) :::no-loc(setlocale)::: und :::no-loc(_wsetlocale)::: .'
 ms.date: 4/2/2020
 api_name:
-- _wsetlocale
-- setlocale
-- _o__wsetlocale
-- _o_setlocale
+- ':::no-loc(_wsetlocale):::'
+- ':::no-loc(setlocale):::'
+- '_o_:::no-loc(_wsetlocale):::'
+- '_o_:::no-loc(setlocale):::'
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -25,40 +25,40 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- _wsetlocale
-- _tsetlocale
-- setlocale
+- ':::no-loc(_wsetlocale):::'
+- '_t:::no-loc(setlocale):::'
+- ':::no-loc(setlocale):::'
 helpviewer_keywords:
-- wsetlocale function
-- setlocale function
-- tsetlocale function
+- 'w:::no-loc(setlocale)::: function'
+- ':::no-loc(setlocale)::: function'
+- 't:::no-loc(setlocale)::: function'
 - locales, defining
-- _tsetlocale function
+- '_t:::no-loc(setlocale)::: function'
 - defining locales
-- _wsetlocale function
+- ':::no-loc(_wsetlocale)::: function'
 ms.assetid: 3ffb684e-5990-4202-9553-b5339af9520d
 no-loc:
-- setlocale
-- _wsetlocale
-ms.openlocfilehash: 312fd8e9f794368d334ea353e2c92241d701ab0b
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+- ':::no-loc(setlocale):::'
+- ':::no-loc(_wsetlocale):::'
+ms.openlocfilehash: 05e4e96297e2237ed6768e05ff4cacfd63744e1a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82918856"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226137"
 ---
-# <a name="setlocale-_wsetlocale"></a>setlocale, _wsetlocale
+# <a name="no-locsetlocale-no-loc_wsetlocale"></a>:::no-loc(setlocale):::, :::no-loc(_wsetlocale):::
 
 Legt das Laufzeitgebietsschema fest oder ruft es ab.
 
 ## <a name="syntax"></a>Syntax
 
 ```C
-char *setlocale(
+char *:::no-loc(setlocale):::(
    int category,
    const char *locale
 );
-wchar_t *_wsetlocale(
+wchar_t *:::no-loc(_wsetlocale):::(
    int category,
    const wchar_t *locale
 );
@@ -79,7 +79,7 @@ Wenn ein gültiges Gebiets Schema und eine gültige *Kategorie* angegeben werden
 Beispiel: Der Aufruf
 
 ```C
-setlocale( LC_ALL, "en-US" );
+:::no-loc(setlocale):::( LC_ALL, "en-US" );
 ```
 
 legt alle Kategorien fest und gibt nur folgende Zeichenfolge zurück
@@ -88,13 +88,13 @@ legt alle Kategorien fest und gibt nur folgende Zeichenfolge zurück
 en-US
 ```
 
-Sie können die von **setlocale** zurückgegebene Zeichenfolge kopieren, um diesen Teil der Gebiets Schema Informationen des Programms wiederherzustellen. Globaler oder lokaler Thread Speicher wird für die von **setlocale**zurückgegebene Zeichenfolge verwendet. Spätere Aufrufe von **setlocale** überschreiben die Zeichenfolge, wodurch die von früheren Aufrufen zurückgegebenen Zeichen folgen Zeiger ungültig werden.
+Sie können die von zurückgegebene Zeichenfolge kopieren, **:::no-loc(setlocale):::** um diesen Teil der Gebiets Schema Informationen des Programms wiederherzustellen. Globaler oder lokaler Thread Speicher wird für die von zurückgegebene Zeichenfolge verwendet **:::no-loc(setlocale):::** . Später wird aufgerufen **:::no-loc(setlocale):::** , um die Zeichenfolge zu überschreiben, wodurch von früheren Aufrufen zurückgegebene Zeichen folgen Zeiger ungültig werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie die **setlocale** -Funktion, um einige oder alle der aktuellen Programm Gebiets Schema Informationen festzulegen, zu ändern oder abzufragen, die durch Gebiets Schema und *Kategorie* *angegeben werden.* *locale* bezieht sich auf den Ort (Land/Region und Sprache), für den Sie bestimmte Aspekte des Programms anpassen können. Vom Gebietsschema abhängig sind u. a. Datumsformat und Währungsformat. Wenn Sie das Gebiets Schema auf die Standard Zeichenfolge für eine Sprache festlegen, die mehrere Formulare auf dem Computer unterstützt, sollten Sie den Rückgabewert **setlocale** überprüfen, *um festzustellen* , welche Sprache wirksam ist. Wenn Sie z. b. *locale* auf "Chinesisch" festlegen, kann der Rückgabewert entweder "Chinesisch-vereinfacht" oder "Chinesisch (traditionell)" lauten.
+Verwenden **:::no-loc(setlocale):::** Sie die Funktion, um einige oder alle der aktuellen Programm Gebiets Schema Informationen festzulegen, zu ändern oder *locale* abzufragen, die vom Gebiets Schema und der *Kategorie*angegeben werden. *locale* bezieht sich auf den Ort (Land/Region und Sprache), für den Sie bestimmte Aspekte des Programms anpassen können. Vom Gebietsschema abhängig sind u. a. Datumsformat und Währungsformat. Wenn Sie das Gebiets Schema auf die Standard Zeichenfolge für eine Sprache *festlegen, die* mehrere Formulare auf dem Computer unterstützt, sollten Sie den Rückgabewert überprüfen, um festzustellen, **:::no-loc(setlocale):::** welche Sprache wirksam ist. Wenn Sie z. b. *locale* auf "Chinesisch" festlegen, kann der Rückgabewert entweder "Chinesisch-vereinfacht" oder "Chinesisch (traditionell)" lauten.
 
-**_wsetlocale** ist eine breit Zeichen Version von **setlocale**; Das Gebiets Schema Argument *und der Rückgabe* Wert von **_wsetlocale** sind Zeichen folgen mit breit Zeichen. **_wsetlocale** und **setlocale** Verhalten sich andernfalls identisch.
+**:::no-loc(_wsetlocale):::** ist eine breit Zeichen Version von **:::no-loc(setlocale):::** . das Gebiets *locale* Schema Argument und der Rückgabewert von **:::no-loc(_wsetlocale):::** sind Zeichen folgen mit breit Zeichen. **:::no-loc(_wsetlocale):::** und **:::no-loc(setlocale):::** Verhalten sich andernfalls identisch.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -102,7 +102,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
-|**_tsetlocale**|**setlocale**|**setlocale**|**_wsetlocale**|
+|**_t:::no-loc(setlocale):::**|**:::no-loc(setlocale):::**|**:::no-loc(setlocale):::**|**:::no-loc(_wsetlocale):::**|
 
 Das *Category* -Argument gibt die Teile der Gebiets Schema Informationen eines Programms an, die betroffen sind. Die für die *Kategorie* verwendeten Makros und die betroffenen Teile des Programms lauten wie folgt:
 
@@ -117,22 +117,22 @@ Das *Category* -Argument gibt die Teile der Gebiets Schema Informationen eines P
 
 Diese Funktion überprüft den Kategorienparameter. Wenn der Category-Parameter keiner der in der vorherigen Tabelle angegebenen Werte ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt die Funktion **errno** auf **EINVAL** fest und gibt **null**zurück.
 
-Das *locale* -Argument ist ein Zeiger auf eine Zeichenfolge, die das Gebiets Schema angibt. Weitere Informationen zum *Format des Gebiets Schema Arguments finden* Sie unter Gebiets Schema [Namen, Sprachen und Länder-](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)/regionszeichenfolgen. Wenn *locale* auf eine leere Zeichenfolge zeigt, ist das Gebietsschema die durch die Implementierung definierte native Umgebung. Der Wert **C** gibt die minimale ANSI-konforme Umgebung für die C-Übersetzung an. Das **C** -Gebiets Schema geht davon aus, dass alle **char** -Datentypen 1 Byte sind und ihr Wert immer kleiner als 256 ist.
+Das *locale* -Argument ist ein Zeiger auf eine Zeichenfolge, die das Gebiets Schema angibt. Weitere Informationen zum *Format des Gebiets Schema Arguments finden* Sie unter Gebiets Schema [Namen, Sprachen und Länder-](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)/regionszeichenfolgen. Wenn *locale* auf eine leere Zeichenfolge zeigt, ist das Gebietsschema die durch die Implementierung definierte native Umgebung. Der Wert **C** gibt die minimale ANSI-konforme Umgebung für die C-Übersetzung an. Das **C** -Gebiets Schema geht davon aus, dass alle **`char`** Datentypen 1 Byte sind und ihr Wert immer kleiner als 256 ist.
 
 Zum Programmstart wird die Entsprechung der folgenden Anweisung ausgeführt:
 
-`setlocale( LC_ALL, "C" );`
+`:::no-loc(setlocale):::( LC_ALL, "C" );`
 
-Das *locale* -Argument kann einen Gebiets Schema Namen, eine Sprachen Zeichenfolge, eine Sprachen Zeichenfolge und Länder-/Regionscode, eine Codepage oder eine Sprachen Zeichenfolge, einen Länder-/Regionscode und eine Codepage annehmen. Der Satz verfügbarer Gebiets Schema Namen, Sprachen, Länder-/Regionscodes und Codepages umfasst alle vom Windows-NLS API unterstützten Gebiets Schema Namen. Der von **setlocale** unterstützte Satz von Gebiets Schema Namen wird in Gebiets Schema [Namen, Sprachen und Zeichen folgen für Länder/Regionen](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)beschrieben. Die von **setlocale** unterstützten sprach-und Länder-/regionszeichenfolgen werden in [sprach](../../c-runtime-library/language-strings.md) Zeichenfolgen und Zeichen folgen für [Länder/Regionen](../../c-runtime-library/country-region-strings.md)aufgeführt. Wie empfehlen die Gebietsschema-Namensform aus Gründen der Leistung und leichteren Verwaltung von Gebietsschema-Zeichenfolgen, die in Code eingebettet sind oder für den Speicher serialisiert sind. Es ist weniger wahrscheinlich, dass Gebietsschema-Zeichenfolgen durch eine Betriebssystemaktualisierung geändert werden, als dies bei der Namensform für Sprache und Land/Region der Fall ist.
+Das *locale* -Argument kann einen Gebiets Schema Namen, eine Sprachen Zeichenfolge, eine Sprachen Zeichenfolge und Länder-/Regionscode, eine Codepage oder eine Sprachen Zeichenfolge, einen Länder-/Regionscode und eine Codepage annehmen. Der Satz verfügbarer Gebiets Schema Namen, Sprachen, Länder-/Regionscodes und Codepages umfasst alle vom Windows-NLS API unterstützten Gebiets Schema Namen. Der von unterstützte Satz von Gebiets Schema Namen wird in Gebiets Schema **:::no-loc(setlocale):::** [Namen, Sprachen und Zeichen folgen für Länder/Regionen](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)beschrieben. Die von unterstützten sprach-und Länder-/regionszeichenfolgen **:::no-loc(setlocale):::** werden in [sprach](../../c-runtime-library/language-strings.md) Zeichenfolgen und Zeichen folgen für [Länder/Regionen](../../c-runtime-library/country-region-strings.md)aufgeführt. Wie empfehlen die Gebietsschema-Namensform aus Gründen der Leistung und leichteren Verwaltung von Gebietsschema-Zeichenfolgen, die in Code eingebettet sind oder für den Speicher serialisiert sind. Es ist weniger wahrscheinlich, dass Gebietsschema-Zeichenfolgen durch eine Betriebssystemaktualisierung geändert werden, als dies bei der Namensform für Sprache und Land/Region der Fall ist.
 
-Ein als Gebiets *Schema Argument* übergebener NULL-Zeiger weist **setlocale** an, die internationale Umgebung abzufragen, anstatt sie festzulegen. Wenn das *locale* -Argument ein NULL-Zeiger ist, wird die aktuelle Gebiets Schema Einstellung des Programms nicht geändert. Stattdessen gibt **setlocale** einen Zeiger auf die Zeichenfolge zurück, die der *Kategorie* des aktuellen Gebiets Schemas des Threads zugeordnet ist. Wenn das *Category* -Argument **LC_ALL**ist, gibt die Funktion eine Zeichenfolge zurück, die die aktuelle Einstellung der einzelnen Kategorien angibt, getrennt durch Semikolons. Beispiel: Die Reihenfolge der Aufrufe
+Ein als Gebiets *Schema Argument* übergebener NULL-Zeiger weist **:::no-loc(setlocale):::** an, die internationale Umgebung abzufragen, anstatt sie festzulegen. Wenn das *locale* -Argument ein NULL-Zeiger ist, wird die aktuelle Gebiets Schema Einstellung des Programms nicht geändert. Stattdessen **:::no-loc(setlocale):::** gibt einen Zeiger auf die Zeichenfolge zurück, die der *Kategorie* des aktuellen Gebiets Schemas des Threads zugeordnet ist. Wenn das *Category* -Argument **LC_ALL**ist, gibt die Funktion eine Zeichenfolge zurück, die die aktuelle Einstellung der einzelnen Kategorien angibt, getrennt durch Semikolons. Beispiel: Die Reihenfolge der Aufrufe
 
 ```C
 // Set all categories and return "en-US"
-setlocale(LC_ALL, "en-US");
+:::no-loc(setlocale):::(LC_ALL, "en-US");
 // Set only the LC_MONETARY category and return "fr-FR"
-setlocale(LC_MONETARY, "fr-FR");
-printf("%s\n", setlocale(LC_ALL, NULL));
+:::no-loc(setlocale):::(LC_MONETARY, "fr-FR");
+printf("%s\n", :::no-loc(setlocale):::(LC_ALL, NULL));
 ```
 
 gibt Folgendes zurück:
@@ -145,81 +145,81 @@ Dabei handelt es sich um die Zeichenfolge, die der **LC_ALL** Kategorie zugeordn
 
 Die folgenden Beispiele beziehen sich auf die **LC_ALL** Kategorie. Beide Zeichen folgen ". OCP "und". ACP "kann anstelle einer Code Page Nummer verwendet werden, um die Verwendung der standardmäßigen OEM-Codepage des Benutzers und der standardmäßigen ANSI-Codepage des Benutzers für den jeweiligen Gebiets Schema Namen anzugeben.
 
-- `setlocale( LC_ALL, "" );`
+- `:::no-loc(setlocale):::( LC_ALL, "" );`
 
    Legt das Gebietsschema auf den Standardwert fest, der die vom Betriebssystem abgerufene voreingestellte ANSI-Benutzercodepage ist. Der Gebiets Schema Name wird auf den Wert festgelegt, der von [getuserdefaultlocalename](/windows/win32/api/winnls/nf-winnls-getuserdefaultlocalename)zurückgegeben wird. Die Codepage wird auf den von [GetACP](/windows/win32/api/winnls/nf-winnls-getacp)zurückgegebenen Wert festgelegt.
 
-- `setlocale( LC_ALL, ".OCP" );`
+- `:::no-loc(setlocale):::( LC_ALL, ".OCP" );`
 
    Legt das Gebiets Schema auf die aktuelle OEM-Codepage fest, die vom Betriebssystem abgerufen wird. Der Gebiets Schema Name wird auf den Wert festgelegt, der von [getuserdefaultlocalename](/windows/win32/api/winnls/nf-winnls-getuserdefaultlocalename)zurückgegeben wird. Die Codepage wird auf den [LOCALE_IDEFAULTCODEPAGE](/windows/win32/intl/locale-idefault-constants) Wert für den Benutzer-Standard Gebiets Schema Namen von [GetLocaleInfoEx](/windows/win32/api/winnls/nf-winnls-getlocaleinfoex)festgelegt.
 
-- `setlocale( LC_ALL, ".ACP" );`
+- `:::no-loc(setlocale):::( LC_ALL, ".ACP" );`
 
    Legt das Gebietsschema auf die vom Betriebssystem abgerufene voreingestellte ANSI-Benutzercodepage fest. Der Gebiets Schema Name wird auf den Wert festgelegt, der von [getuserdefaultlocalename](/windows/win32/api/winnls/nf-winnls-getuserdefaultlocalename)zurückgegeben wird. Die Codepage wird auf den [LOCALE_IDEFAULTANSICODEPAGE](/windows/win32/intl/locale-idefault-constants) Wert für den Benutzer-Standard Gebiets Schema Namen von [GetLocaleInfoEx](/windows/win32/api/winnls/nf-winnls-getlocaleinfoex)festgelegt.
 
-- `setlocale( LC_ALL, "<localename>" );`
+- `:::no-loc(setlocale):::( LC_ALL, "<localename>" );`
 
-   Legt das Gebiets Schema auf den Gebiets Schema Namen fest, der von * \<localename>* angegeben wird. Die Codepage wird von [GetLocaleInfoEx](/windows/win32/api/winnls/nf-winnls-getlocaleinfoex)auf den [LOCALE_IDEFAULTANSICODEPAGE](/windows/win32/intl/locale-idefault-constants) Wert für den angegebenen Gebiets Schema Namen festgelegt.
+   Legt das Gebiets Schema auf den Gebiets Schema Namen fest, der durch angegeben wird *\<localename>* . Die Codepage wird von [GetLocaleInfoEx](/windows/win32/api/winnls/nf-winnls-getlocaleinfoex)auf den [LOCALE_IDEFAULTANSICODEPAGE](/windows/win32/intl/locale-idefault-constants) Wert für den angegebenen Gebiets Schema Namen festgelegt.
 
-- `setlocale( LC_ALL, "<language>_<country>" );`
+- `:::no-loc(setlocale):::( LC_ALL, "<language>_<country>" );`
 
-   Legt das Gebiets Schema auf die Sprache und das Land/die Region fest, die durch * \<sprach>* und * \<Land>* angegeben werden, sowie die Standard Codepage, die vom Host Betriebssystem abgerufen wird. Die Codepage wird von [GetLocaleInfoEx](/windows/win32/api/winnls/nf-winnls-getlocaleinfoex)auf den [LOCALE_IDEFAULTANSICODEPAGE](/windows/win32/intl/locale-idefault-constants) Wert für den angegebenen Gebiets Schema Namen festgelegt.
+   Legt das Gebiets Schema auf die Sprache und das Land/die Region fest, die durch *\<language>* und angegeben *\<country>* werden, sowie die Standard Codepage, die vom Host Betriebssystem abgerufen wird. Die Codepage wird von [GetLocaleInfoEx](/windows/win32/api/winnls/nf-winnls-getlocaleinfoex)auf den [LOCALE_IDEFAULTANSICODEPAGE](/windows/win32/intl/locale-idefault-constants) Wert für den angegebenen Gebiets Schema Namen festgelegt.
 
-- `setlocale( LC_ALL, "<language>_<country>.<code_page>" );`
+- `:::no-loc(setlocale):::( LC_ALL, "<language>_<country>.<code_page>" );`
 
-   Legt das Gebiets Schema auf die Sprache, das Land/die Region und die Codepage fest, die durch die * \<Sprachen>*, * \<Land>* und * \<code_page>* Zeichenfolgen angegeben werden. Sie können verschiedene Kombinationen von Sprache, Land/Region und Codepage verwenden. Bei diesem Aufruf wird beispielsweise das Gebetsschema auf Französisch (Kanada) festgelegt, mit der Codepage 1252:
+   Legt das Gebiets Schema auf die Sprache, das Land/die Region und die Codepage fest, die durch die Zeichen folgen *\<language>* , und angegeben werden *\<country>* *\<code_page>* . Sie können verschiedene Kombinationen von Sprache, Land/Region und Codepage verwenden. Bei diesem Aufruf wird beispielsweise das Gebetsschema auf Französisch (Kanada) festgelegt, mit der Codepage 1252:
 
-   `setlocale( LC_ALL, "French_Canada.1252" );`
+   `:::no-loc(setlocale):::( LC_ALL, "French_Canada.1252" );`
 
    Bei diesem Aufruf wird das Gebietsschema auf Französisch (Kanada) mit der voreingestellten ANSI-Codepage festgelegt:
 
-   `setlocale( LC_ALL, "French_Canada.ACP" );`
+   `:::no-loc(setlocale):::( LC_ALL, "French_Canada.ACP" );`
 
    Bei diesem Aufruf wird das Gebietsschema auf Französisch (Kanada) mit der voreingestellten OEM-Codepage festgelegt:
 
-   `setlocale( LC_ALL, "French_Canada.OCP" );`
+   `:::no-loc(setlocale):::( LC_ALL, "French_Canada.OCP" );`
 
-- `setlocale( LC_ALL, "<language>" );`
+- `:::no-loc(setlocale):::( LC_ALL, "<language>" );`
 
-   Legt das Gebiets Schema auf die Sprache fest, die durch * \<sprach>* angegeben wird, und verwendet das Standardland bzw. die Standard Region für die angegebene Sprache und die Benutzer-Standard-ANSI-Codepage für das Land bzw. die Region, das vom Host Betriebssystem abgerufen wird. Beispielsweise sind die folgenden Aufrufe von **setlocale** funktional äquivalent:
+   Legt das Gebiets Schema auf die Sprache fest, die von angegeben *\<language>* wird, und verwendet das Standardland bzw. die Standard Region für die angegebene Sprache und die Benutzer-Standard-ANSI-Codepage für das Land bzw. die Region, das vom Host Betriebssystem abgerufen wird. Beispielsweise sind die folgenden Aufrufe von **:::no-loc(setlocale):::** funktional äquivalent:
 
-   `setlocale( LC_ALL, "en-US" );`
+   `:::no-loc(setlocale):::( LC_ALL, "en-US" );`
 
-   `setlocale( LC_ALL, "English" );`
+   `:::no-loc(setlocale):::( LC_ALL, "English" );`
 
-   `setlocale( LC_ALL, "English_United States.1252" );`
+   `:::no-loc(setlocale):::( LC_ALL, "English_United States.1252" );`
 
    Aus Leistungsgründen und wegen der Wartbarkeit wird die erste Form empfohlen.
 
-- `setlocale( LC_ALL, ".<code_page>" );`
+- `:::no-loc(setlocale):::( LC_ALL, ".<code_page>" );`
 
    Legt die Codepage auf den Wert fest, der durch *<Codepage>* angegeben ist, wobei zugleich das Standardland bzw. die Standardregion und Sprache (gemäß der Definition vom Hostbetriebssystem) für die angegebene Codepage verwendet wird.
 
-Die Kategorie muss entweder **LC_ALL** oder **LC_CTYPE** sein, damit eine Änderung der Codepage wirksam wird. Wenn z. b. das Standardland bzw. die Standard Region und die Sprache des Host Betriebssystems "USA" und "Englisch" sind, sind die folgenden beiden Aufrufe von **setlocale** funktional äquivalent:
+Die Kategorie muss entweder **LC_ALL** oder **LC_CTYPE** sein, damit eine Änderung der Codepage wirksam wird. Wenn z. b. das Standardland bzw. die Standard Region und die Sprache des Host Betriebssystems "USA" und "Englisch" sind, sind die folgenden beiden Aufrufe von **:::no-loc(setlocale):::** funktional äquivalent:
 
-`setlocale( LC_ALL, ".1252" );`
+`:::no-loc(setlocale):::( LC_ALL, ".1252" );`
 
-`setlocale( LC_ALL, "English_United States.1252");`
+`:::no-loc(setlocale):::( LC_ALL, "English_United States.1252");`
 
-Weitere Informationen finden Sie unter [setlocale](../../preprocessor/setlocale.md)-Pragmadirektive in der [C/C++-Präprozessorreferenz](../../preprocessor/c-cpp-preprocessor-reference.md).
+Weitere Informationen finden Sie in der [:::no-loc(setlocale):::](../../preprocessor/:::no-loc(setlocale):::.md) pragma-Direktive in der [C/C++-Präprozessorreferenz](../../preprocessor/c-cpp-preprocessor-reference.md).
 
-Die Funktion [_configthreadlocale](configthreadlocale.md) wird verwendet, um zu steuern, ob **setlocale** das Gebiets Schema aller Threads in einem Programm oder nur das Gebiets Schema des aufrufenden Threads beeinflusst.
+Mithilfe der Funktion [_configthreadlocale](configthreadlocale.md) wird gesteuert, ob **:::no-loc(setlocale):::** das Gebiets Schema aller Threads in einem Programm oder nur das Gebiets Schema des aufrufenden Threads beeinflusst.
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**setlocale**|\<locale.h>|
-|**_wsetlocale**|\<locale.h> oder \<wchar.h>|
+|**:::no-loc(setlocale):::**|\<locale.h>|
+|**:::no-loc(_wsetlocale):::**|\<locale.h> oder \<wchar.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
 ```C
-// crt_setlocale.c
+// crt_:::no-loc(setlocale):::.c
 //
-// This program demonstrates the use of setlocale when
+// This program demonstrates the use of :::no-loc(setlocale)::: when
 // using two independent threads.
 //
 
@@ -263,7 +263,7 @@ uintptr_t __stdcall SecondThreadFunc( void* pArguments )
 
     // Set the thread locale
     printf("The thread locale is now set to %s.\n",
-           setlocale(LC_ALL, locale));
+           :::no-loc(setlocale):::(LC_ALL, locale));
 
     // Retrieve the date string from the helper function
     if (get_date(str) == 0)
@@ -289,7 +289,7 @@ int main()
 
     // Set the locale of the main thread to US English.
     printf("The thread locale is now set to %s.\n",
-           setlocale(LC_ALL, "en-US"));
+           :::no-loc(setlocale):::(LC_ALL, "en-US"));
 
     // Create the second thread with a German locale.
     // Our thread function takes an argument of the locale to use.
@@ -318,7 +318,7 @@ The thread locale is now set to de-DE.
 The time in de-DE locale is: 'Mittwoch, 12. Mai 2004'
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Gebiets Schema Namen, Sprachen und Länder-/regionszeichenfolgen](../../c-runtime-library/locale-names-languages-and-country-region-strings.md)\
 [_configthreadlocale](configthreadlocale.md)\
