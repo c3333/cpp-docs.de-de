@@ -1,5 +1,5 @@
 ---
-title: '#using-Direktive (C++/CLI)'
+title: '#using-Anweisung (C++/CLI)'
 ms.date: 08/29/2019
 f1_keywords:
 - friend_as_cpp
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - LIBPATH environment variable
 - preprocessor, directives
 ms.assetid: 870b15e5-f361-40a8-ba1c-c57d75c8809a
-ms.openlocfilehash: 5dae5c277055157aef5451c19ee020fbbd2aaccb
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 0da255957e92a570750da2687bf1444df2e6ab13
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70220201"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219429"
 ---
 # <a name="using-directive-ccli"></a>#using-Direktive (C++/CLI)
 
@@ -25,56 +25,56 @@ Importiert Metadaten in ein Programm, das mit [/CLR](../build/reference/clr-comm
 
 ## <a name="syntax"></a>Syntax
 
-> **#using** *Datei* [**as_friend**]
+> **`#using`***Datei* [ **`as_friend`** ]
 
 ### <a name="parameters"></a>Parameter
 
 *Datei*\
-Eine DLL-, EXE-, NETMODULE- oder OBJ-Datei für MSIL. Ein auf ein Objekt angewendeter
+Eine MSIL-Datei (Microsoft Intermediate Language) *`.dll`* ,, *`.exe`* *`.netmodule`* oder *`.obj`* . Beispiel:
 
 `#using <MyComponent.dll>`
 
-**as_friend**\
+**`as_friend`**\
 Gibt an, dass auf alle Typen in der *Datei* zugegriffen werden kann. Weitere Informationen finden Sie unter Friend-Assemblys [(C++)](../dotnet/friend-assemblies-cpp.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-bei der *Datei* kann es sich um eine MSIL-Datei (Microsoft Intermediate Language) handeln, die Sie für die verwalteten Daten und verwalteten Konstrukte importieren. Wenn eine DLL-Datei ein Assemblymanifest enthält, werden alle DLLs, auf die im Manifest verwiesen wird, importiert, und die Assembly, die Sie erstellt, listet die *Datei* in den Metadaten als Assemblyverweis auf.
+bei der *Datei* kann es sich um eine MSIL-Datei (Microsoft Intermediate Language) handeln, die Sie für die verwalteten Daten und verwalteten Konstrukte importieren. Wenn eine DLL ein Assemblymanifest enthält, werden alle DLLs importiert, auf die im Manifest verwiesen wird. In der Assembly, die Sie erstellt haben, wird die *Datei* in den Metadaten als Assemblyverweis aufgelistet.
 
-Wenn die *Datei* keine Assembly enthält (wenn die *Datei* ein Modul ist) und Sie nicht beabsichtigen, Typinformationen aus dem Modul in der aktuellen (assemblyanwendung) zu verwenden, haben Sie die Möglichkeit, nur anzugeben, dass das Modul Teil der Assembly ist. Verwenden Sie [/ASSEMBLYMODULE](../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md). Die Typen im Modul wären dann für jede Anwendung verfügbar, die auf die Assembly verweist.
+Möglicherweise enthält die *Datei* keine Assembly (die*Datei* ist ein Modul), und Sie beabsichtigen nicht, Typinformationen aus dem Modul in der aktuellen (assemblyanwendung) zu verwenden. Sie können angeben, dass das Modul Teil der Assembly ist, indem Sie [/ASSEMBLYMODULE](../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md)verwenden. Die Typen im Modul wären dann für jede Anwendung verfügbar, die auf die Assembly verweist.
 
-Eine Alternative zur Verwendung von **#using** ist die [/Fu](../build/reference/fu-name-forced-hash-using-file.md) -Compileroption.
+Eine Alternative zur Verwendung von **`#using`** ist die [/Fu](../build/reference/fu-name-forced-hash-using-file.md) -Compileroption.
 
-. exe-Assemblys, die an **#using** weitergegeben werden, sollten mithilfe eines der .net Visual Studio-Compiler C#(z. b. Visual Basic oder Visual) kompiliert werden.  Der Versuch, Metadaten von einer EXE-Assembly zu importieren, die mit `/clr` kompiliert wurde, führt zu einem Ausnahmefehler beim Laden der Datei.
+. exe-Assemblys, die an übergeben **`#using`** werden, sollten mithilfe eines der .net Visual Studio-Compiler (z. b. Visual Basic oder Visual c#) kompiliert werden.  Der Versuch, Metadaten aus einer exe-Assembly zu importieren, die mit kompiliert wurde, **`/clr`** führt zu einer Datei Lade Ausnahme.
 
 > [!NOTE]
-> Eine Komponente, auf die mit **#using** verwiesen wird, kann mit einer anderen Version der Datei ausgeführt werden, die zur Kompilierzeit importiert wurde, wodurch eine Client Anwendung unerwartete Ergebnisse liefert.
+> Eine Komponente, auf die mit verwiesen wird **`#using`** , kann mit einer anderen Version der Datei ausgeführt werden, die zur Kompilierzeit importiert wurde, wodurch eine Client Anwendung unerwartete Ergebnisse liefert.
 
 Damit der Compiler einen Typ in einer Assembly (nicht in einem Modul) erkennen kann, muss er gezwungen werden, den Typ aufzulösen. Sie können dies erzwingen, indem Sie z. b. eine Instanz des Typs definieren. Es gibt weitere Möglichkeiten, Typnamen in einer Assembly für den Compiler aufzulösen. Wenn Sie z. b. von einem Typ in einer Assembly erben, wird der Typname dem Compiler bekannt.
 
-Beim Importieren von Metadaten, die aus Quellcode erstellt wurden, der [__declspec (Thread)](../cpp/thread.md)verwendet hat, wird die Thread Semantik nicht in den Metadaten beibehalten. Beispielsweise verfügt eine mit **__declspec (Thread)** deklarierte Variable, die in einem Programm kompiliert wurde, das für die .NET Framework Common Language Runtime erstellt und dann über **#using**importiert wurde, keine **__declspec (Thread)** -Semantik für die Variable.
+Beim Importieren von Metadaten, die aus Quellcode erstellt wurden [`__declspec(thread)`](../cpp/thread.md) , der verwendet wurde, wird die Thread Semantik nicht in den Metadaten beibehalten. Beispielsweise hat eine mit deklarierte Variable **`__declspec(thread)`** , die in einem Programm kompiliert wurde, das für die .NET Framework Common Language Runtime erstellt und dann über importiert wird, **`#using`** keine **`__declspec(thread)`** Semantik für die Variable.
 
-Alle importierten Typen (sowohl verwaltete als auch native) in einer Datei, auf die von **#using** verwiesen wird, sind verfügbar, aber der Compiler behandelt systemeigene Typen als Deklarationen, nicht als Definitionen.
+Alle importierten Typen (sowohl verwaltete als auch native) in einer Datei, auf die von verwiesen **`#using`** wird, sind verfügbar, aber der Compiler behandelt systemeigene Typen als Deklarationen, nicht als Definitionen.
 
-Auf "mscorlib.dll" wird automatisch beim Kompilieren mit `/clr` verwiesen.
+Auf mscorlib.dll wird beim Kompilieren mit automatisch verwiesen **`/clr`** .
 
-Die LIBPATH-Umgebungsvariable gibt die Verzeichnisse an, die durchsucht werden sollen, wenn der Compiler an **#using**über gegebene Dateinamen auflöst.
+Die LIBPATH-Umgebungsvariable gibt die Verzeichnisse an, die durchsucht werden sollen, wenn der Compiler Dateinamen auflöst, **`#using`** die an an
 
 Der Compiler sucht nach Verweisen im folgenden Pfad:
 
-- Ein Pfad, der in der **#using** -Anweisung angegeben ist.
+- Ein Pfad, der in der-Anweisung angegeben ist **`#using`** .
 
 - Das aktuelle Verzeichnis.
 
 - Das .NET Framework-Systemverzeichnis.
 
-- Mit der [/AI](../build/reference/ai-specify-metadata-directories.md) -Compileroption hinzugefügte Verzeichnisse.
+- Mit der-Compileroption hinzugefügte Verzeichnisse [`/AI`](../build/reference/ai-specify-metadata-directories.md) .
 
 - Verzeichnisse der LIBPATH-Umgebungsvariable.
 
 ## <a name="example"></a>Beispiel
 
-Wenn Sie eine Assembly (C) erstellen und auf eine Assembly (B) verweisen, die selbst auf eine andere Assembly (a) verweist, müssen Sie nicht explizit auf Assembly A verweisen, es sei denn, Sie verwenden explizit einen der Typen in C.
+Sie können eine Assembly erstellen, die auf eine zweite Assembly verweist, die wiederum auf eine dritte Assembly verweist. Sie müssen nur explizit auf die dritte Assembly verweisen, wenn Sie explizit einen ihrer Typen verwenden.
 
 ```cpp
 // using_assembly_A.cpp
@@ -97,7 +97,7 @@ public:
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel gibt es keinen Compilerfehler für den Verweis auf *using_assembly_A. dll*, da das Programm keinen der in *using_assembly_A. cpp*definierten Typen verwendet.
+Im folgenden Beispiel meldet der Compiler keinen Fehler, wenn auf *using_assembly_A.dll*verwiesen wird, da das Programm keinen der in *using_assembly_A. cpp*definierten Typen verwendet.
 
 ```cpp
 // using_assembly_C.cpp
@@ -109,6 +109,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Präprozessordirektiven](../preprocessor/preprocessor-directives.md)
+[Präprozessoranweisungen](../preprocessor/preprocessor-directives.md)

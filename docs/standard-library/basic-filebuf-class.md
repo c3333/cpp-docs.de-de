@@ -40,12 +40,12 @@ helpviewer_keywords:
 - std::basic_filebuf [C++], uflow
 - std::basic_filebuf [C++], underflow
 ms.assetid: 3196ba5c-bf38-41bd-9a95-70323ddfca1a
-ms.openlocfilehash: ae1b6b9460ec58aec319196e3c116bd29c3e80e4
-ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
+ms.openlocfilehash: 7dc244cde3d77ad99add1c35716779a55eac9263
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85737505"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219312"
 ---
 # <a name="basic_filebuf-class"></a>basic_filebuf-Klasse
 
@@ -66,12 +66,12 @@ Das grundlegende Element des Dateipuffers.
 *Stadtrat*\
 Die Merkmale des grundlegenden Elements des Datei Puffers (in der Regel `char_traits<Char_T>` ).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Klassen Vorlage beschreibt einen Streampuffer, der die Übertragung von Elementen des Typs *Char_T*steuert, dessen Zeichen Merkmale durch die Klasse *TR*bestimmt werden, in eine und aus einer Sequenz von Elementen, die in einer externen Datei gespeichert sind.
 
 > [!NOTE]
-> Objekte des Typs `basic_filebuf` werden mit einem internen Puffer des Typs __Char \* __ erstellt, unabhängig von dem, der `char_type` durch den Typparameter *Char_T*angegeben wird. Dies bedeutet, dass eine Unicode-Zeichenfolge (die **wchar_t** Zeichen enthält) in eine ANSI-Zeichenfolge (die **Zeichen enthält)** konvertiert wird, bevor Sie in den internen Puffer geschrieben wird. Erstellen Sie zum Speichern von Unicode-Zeichen folgen im Puffer einen neuen Puffer vom Typ **wchar_t** und legen Sie ihn mit der- [`basic_streambuf::pubsetbuf`](../standard-library/basic-streambuf-class.md#pubsetbuf) `()` Methode fest. Ein Beispiel, in dem dieses Verhalten veranschaulicht wird, finden Sie im Folgenden.
+> Objekte des Typs `basic_filebuf` werden mit einem internen Puffer des Typs __Char \* __ erstellt, unabhängig von dem, der `char_type` durch den Typparameter *Char_T*angegeben wird. Dies bedeutet, dass eine Unicode-Zeichenfolge ( **`wchar_t`** die Zeichen enthält) in eine ANSI-Zeichenfolge (mit Zeichen) konvertiert wird, **`char`** bevor Sie in den internen Puffer geschrieben wird. Erstellen Sie zum Speichern von Unicode-Zeichen folgen im Puffer einen neuen Puffer vom Typ, **`wchar_t`** und legen Sie ihn mit der- [`basic_streambuf::pubsetbuf`](../standard-library/basic-streambuf-class.md#pubsetbuf) `()` Methode fest. Ein Beispiel, in dem dieses Verhalten veranschaulicht wird, finden Sie im Folgenden.
 
 Ein Objekt der-Klasse `basic_filebuf<Char_T, Tr>` speichert einen Dateizeiger, der das-Objekt festlegt, das `FILE` den einer geöffneten Datei zugeordneten Stream steuert. Es speichert zudem Zeiger zu zwei Dateikonvertierungs-Facets für die Verwendung durch die geschützten Memberfunktionen [overflow](#overflow) und [underflow](#underflow). Weitere Informationen finden Sie unter [`basic_filebuf::open`](#open).
 
@@ -202,7 +202,7 @@ Hex Dump of wwHello.txt - note that output is wchar_t chars:
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Verknüpft einen Typnamen mit dem `Char_T`-Vorlagenparameter.|
 |[int_type](#int_type)|Stellt den Typ im Bereich von `basic_filebuf` dem Typ desselben Namens im Bereich `Tr` gleich.|
@@ -227,7 +227,7 @@ Hex Dump of wwHello.txt - note that output is wchar_t chars:
 |[uflow](../standard-library/basic-streambuf-class.md#uflow)|Die geschützte virtuelle Funktion versucht, das aktuelle Element aus dem Eingabestream zu extrahieren.|
 |[Unterlauf](#underflow)|Die geschützte virtuelle Funktion versucht, das aktuelle Element aus dem Eingabestream zu extrahieren.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<fstream>
 
@@ -243,7 +243,7 @@ basic_filebuf();
 basic_filebuf(basic_filebuf&& right);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Konstruktor speichert einen NULL-Zeiger in allen Zeigern, die den Eingabe- und Ausgabepuffer steuern. Außerdem wird ein NULL-Zeiger im Dateizeiger gespeichert.
 
@@ -269,11 +269,11 @@ basic_filebuf<Char_T, Tr> *close();
 
 Die Memberfunktion gibt einen NULL-Zeiger zurück, wenn der Dateizeiger ein NULL-Zeiger ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`close` ruft `fclose(fp)` auf. Wenn diese Funktion einen Wert zurückgibt, der ungleich Null ist, gibt die Funktion einen NULL-Zeiger zurück. Andernfalls wird **this** zurückgegeben, um anzugeben, dass die Datei erfolgreich geschlossen wurde.
+`close` ruft `fclose(fp)` auf. Wenn diese Funktion einen Wert zurückgibt, der ungleich Null ist, gibt die Funktion einen NULL-Zeiger zurück. Andernfalls wird zurückgegeben, **`this`** um anzugeben, dass die Datei erfolgreich geschlossen wurde.
 
-Wenn bei einem großen Stream Einfügungen seit dem Öffnen des Streams oder seit dem letzten Aufruf von aufgetreten sind, `streampos` Ruft die Funktion auf [`overflow`](#overflow) . Außerdem wird eine beliebige Sequenz eingefügt, die zum Wiederherstellen des ursprünglichen Konvertierungs Zustands erforderlich ist `fac` `fac.unshift` Jedes erstellte Element `byte` vom Typ **char** wird in den zugeordneten Stream geschrieben, der durch den Dateizeiger festgelegt wird, `fp` als ob durch aufeinander folgende Aufrufe des Formulars `fputc(byte, fp)` . Wenn der- `fac.unshift` oder-Schreibvorgang fehlschlägt, kann die Funktion nicht erfolgreich ausgeführt werden.
+Wenn bei einem großen Stream Einfügungen seit dem Öffnen des Streams oder seit dem letzten Aufruf von aufgetreten sind, `streampos` Ruft die Funktion auf [`overflow`](#overflow) . Außerdem wird eine beliebige Sequenz eingefügt, die zum Wiederherstellen des ursprünglichen Konvertierungs Zustands erforderlich ist `fac` `fac.unshift` Jedes erstellte Element `byte` vom Typ **`char`** wird in den zugeordneten Stream geschrieben, der durch den Dateizeiger festgelegt wird, `fp` als ob durch aufeinander folgende Aufrufe des Formulars `fputc(byte, fp)` . Wenn der- `fac.unshift` oder-Schreibvorgang fehlschlägt, kann die Funktion nicht erfolgreich ausgeführt werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -342,7 +342,7 @@ bool is_open() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Dateizeiger nicht NULL ist.
+**`true`**, wenn der Dateizeiger nicht NULL ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -413,9 +413,9 @@ Der standardmäßige Datei öffnende Schutz, der dem *shflag* -Parameter in [_fs
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn der Puffer bereits geöffnet ist oder der Dateizeiger ein NULL-Zeiger ist, gibt die Funktion einen NULL-Zeiger zurück. Andernfalls wird **this** zurückgegeben.
+Wenn der Puffer bereits geöffnet ist oder der Dateizeiger ein NULL-Zeiger ist, gibt die Funktion einen NULL-Zeiger zurück. Andernfalls wird zurückgegeben **`this`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion verwendet einen `FILE *` , um die zu sichern, `basic_filebuf` als hätten Sie aufgerufen [`fopen/wfopen`](../c-runtime-library/reference/fopen-wfopen.md) `(filename, strmode)` . `strmode`wird bestimmt von `mode & ~(` [`ate`](../standard-library/ios-base-class.md#openmode) `|` [`binary`](../standard-library/ios-base-class.md#openmode) `)` :
 
@@ -454,7 +454,7 @@ Ein rvalue-Verweis auf ein [basic_filebuf](../standard-library/basic-filebuf-cla
 
 Gibt __* this__zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Member-Operator ersetzt den Inhalt des-Objekts, indem er den Inhalt von *right*verwendet, der als rvalue-Verweis behandelt wird. Weitere Informationen finden Sie unter [rvalue reference declarator:  &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
@@ -475,7 +475,7 @@ Das Zeichen, das in den Puffer eingefügt werden soll, oder `traits_type::eof` .
 
 Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird zurückgegeben `traits_type::eof` . Andernfalls wird zurückgegeben `traits_type::` [`not_eof`](../standard-library/char-traits-struct.md#not_eof) `(_Meta)` .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt `_Meta != traits_type::` [`eof`](../standard-library/char-traits-struct.md#eof) an, dass die Funktion für geschützte virtuelle Member versucht, das Element `ch = traits_type::` [`to_char_type`](../standard-library/char-traits-struct.md#to_char_type) `(_Meta)` in den Ausgabepuffer einzufügen. Hierfür gibt es verschiedene Möglichkeiten:
 
@@ -502,7 +502,7 @@ Das Zeichen, das in den Puffer eingefügt werden soll, oder `traits_type::eof`.
 
 Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird zurückgegeben `traits_type::eof` . Andernfalls wird zurückgegeben `traits_type::` [`not_eof`](../standard-library/char-traits-struct.md#not_eof) `(_Meta)` .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die geschützte virtuelle Memberfunktion versetzt ein Element zurück in den Eingabepuffer und ernennt es dann zum aktuellen Element (wird mit dem nächsten Zeiger darauf gezeigt). Wenn der Wert ist `_Meta == traits_type::` [`eof`](../standard-library/char-traits-struct.md#eof) , ist das Element, das zurück abgelegt werden soll, das, das sich bereits vor dem aktuellen Element im Stream befindet. Andernfalls wird dieses Element durch ersetzt `ch = traits_type::` [`to_char_type`](../standard-library/char-traits-struct.md#to_char_type) `(_Meta)` . Ein Element kann auf verschiedene Arten durch die Funktion wiederhergestellt werden:
 
@@ -510,7 +510,7 @@ Die geschützte virtuelle Memberfunktion versetzt ein Element zurück in den Ein
 
 - Wenn die Funktion eine `putback` Position verfügbar machen kann, kann Sie dies tun, den nächsten Zeiger auf einen Punkt an dieser Position festlegen und `ch` an dieser Position speichern.
 
-- Wenn die Funktion ein Element auf den Eingabestream zurücksetzen kann, ist dies möglich, z. b. durch Aufrufen von `ungetc` für ein Element des Typs **char**.
+- Wenn die Funktion ein Element auf den Eingabestream zurücksetzen kann, ist dies möglich, z. b. durch Aufrufen von `ungetc` für ein Element des Typs **`char`** .
 
 ## <a name="basic_filebufpos_type"></a><a name="pos_type"></a>basic_filebuf::p os_type
 
@@ -546,7 +546,7 @@ Gibt den Modus für die Zeigerposition an. Standardmäßig können Lese- und Sch
 
 Gibt die neue Position oder eine ungültige Streamposition zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion der geschützten virtuellen Member versucht, die aktuellen Positionen für die kontrollierten Streams zu ändern. Für ein Objekt der Klasse [`basic_filebuf`](../standard-library/basic-filebuf-class.md) `<Char_T, Tr>` kann eine Streamposition durch ein Objekt vom Typ dargestellt werden `fpos_t` , in dem ein Offset und alle Zustandsinformationen gespeichert werden, die zum Analysieren eines breiten Streams benötigt werden. Der Offset 0 (null) verweist auf das erste Element des Streams. (Ein Objekt vom Typ [`pos_type`](../standard-library/basic-streambuf-class.md#pos_type) speichert mindestens ein- `fpos_t` Objekt.)
 
@@ -576,13 +576,13 @@ Gibt den Modus für die Zeigerposition an. Standardmäßig können Lese- und Sch
 
 Wenn der Dateizeiger `fp` ein NULL-Zeiger ist, schlägt die Funktion fehl. Andernfalls versucht Sie, die Streamposition durch Aufrufen von zu ändern `fsetpos(fp, &fposn)` , wobei `fposn` das Objekt ist, das `fpos_t` in gespeichert wird `pos` . Wenn diese Funktion erfolgreich ausgeführt wurde, gibt die Funktion `pos` zurück. Andernfalls gibt sie eine ungültige Streamposition zurück. Vergleichen Sie den Rückgabewert mit `pos_type(off_type(-1))`, um festzustellen, ob die Streamposition ungültig ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion der geschützten virtuellen Member versucht, die aktuellen Positionen für die kontrollierten Streams zu ändern. Für ein Objekt der Klasse [`basic_filebuf`](../standard-library/basic-filebuf-class.md) `<Char_T, Tr>` kann eine Streamposition durch ein Objekt vom Typ dargestellt werden `fpos_t` , in dem ein Offset und alle Zustandsinformationen gespeichert werden, die zum Analysieren eines breiten Streams benötigt werden. Der Offset 0 (null) verweist auf das erste Element des Streams. (Ein Objekt vom Typ `pos_type` speichert mindestens ein `fpos_t`-Objekt.)
 
 Bei einer Datei, die sowohl zum Lesen als auch zum Schreiben geöffnet wird, werden sowohl die Eingabe- als auch Ausgabestreams zusammen positioniert. Um zwischen einfügen und extrahieren zu wechseln, muss entweder oder aufgerufen werden [`pubseekoff`](../standard-library/basic-streambuf-class.md#pubseekoff) [`pubseekpos`](../standard-library/basic-streambuf-class.md#pubseekpos) . Aufrufe von `pubseekoff` (und zu `seekoff` ) haben verschiedene Einschränkungen für Textstreams, binäre Streams und Breite Streams.
 
-Bei einem breiten Stream ruft die Funktion [overflow](#overflow) auf, wenn seit der Öffnung des Streams oder des letzten Aufrufs von `streampos` Einfügungen vorgenommen wurden. Außerdem wird eine beliebige Sequenz eingefügt, die zum Wiederherstellen des ursprünglichen Konvertierungs Zustands erforderlich ist `fac` `fac.unshift` Jedes erstellte Element `byte` vom Typ **char** wird in den zugeordneten Stream geschrieben, der durch den Dateizeiger festgelegt wird, `fp` als ob durch aufeinander folgende Aufrufe des Formulars `fputc(byte, fp)` . Wenn der- `fac.unshift` oder-Schreibvorgang fehlschlägt, kann die Funktion nicht erfolgreich ausgeführt werden.
+Bei einem breiten Stream ruft die Funktion [overflow](#overflow) auf, wenn seit der Öffnung des Streams oder des letzten Aufrufs von `streampos` Einfügungen vorgenommen wurden. Außerdem wird eine beliebige Sequenz eingefügt, die zum Wiederherstellen des ursprünglichen Konvertierungs Zustands erforderlich ist `fac` `fac.unshift` Jedes erstellte Element `byte` vom Typ **`char`** wird in den zugeordneten Stream geschrieben, der durch den Dateizeiger festgelegt wird, `fp` als ob durch aufeinander folgende Aufrufe des Formulars `fputc(byte, fp)` . Wenn der- `fac.unshift` oder-Schreibvorgang fehlschlägt, kann die Funktion nicht erfolgreich ausgeführt werden.
 
 ## <a name="basic_filebufsetbuf"></a><a name="setbuf"></a>basic_filebuf:: setbuf
 
@@ -606,9 +606,9 @@ Größe des Puffers.
 
 Die geschützte Memberfunktion gibt Null zurück, wenn der Dateizeiger `fp` ein NULL-Zeiger ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`setbuf`Ruft `setvbuf( fp, (char*) _Buffer, _IOFBF, count * sizeof( Char_T))` auf, um das Array von Elementen zu bieten, `count` beginnend bei *_Buffer* als Puffer für den Stream. Wenn diese Funktion einen Wert zurückgibt, der ungleich Null ist, gibt die Funktion einen NULL-Zeiger zurück. Andernfalls wird **this** zurückgegeben, um den Erfolg zu signalisieren.
+`setbuf`Ruft `setvbuf( fp, (char*) _Buffer, _IOFBF, count * sizeof( Char_T))` auf, um das Array von Elementen zu bieten, `count` beginnend bei *_Buffer* als Puffer für den Stream. Wenn diese Funktion einen Wert zurückgibt, der ungleich Null ist, gibt die Funktion einen NULL-Zeiger zurück. Andernfalls wird zurückgegeben, **`this`** um einen Erfolg zu signalisieren.
 
 ## <a name="basic_filebufswap"></a><a name="swap"></a>basic_filebuf:: Swap
 
@@ -655,13 +655,13 @@ virtual int_type underflow();
 
 Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird zurückgegeben `traits_type::` [`eof`](../standard-library/char-traits-struct.md#eof) . Andernfalls wird zurückgegeben `ch` , wie im Abschnitt "Hinweise" beschrieben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die geschützte virtuelle Member-Funktion versucht, das aktuelle Element `ch` aus dem Eingabestream zu extrahieren, und gibt das Element als zurück `traits_type::` [`to_int_type`](../standard-library/char-traits-struct.md#to_int_type) `(ch)` . Hierfür gibt es verschiedene Möglichkeiten:
 
 - Wenn eine Lese Position verfügbar ist, nimmt Sie `ch` als das an der Lese Position gespeicherte Element an und verschiebt den nächsten Zeiger für den Eingabepuffer.
 
-- Sie kann ein oder mehrere Elemente des Typs **char**lesen, wie dies bei aufeinander folgenden Aufrufen des Formulars der Fall `fgetc(fp)` ist, und Sie in ein Element `ch` des Typs konvertieren, indem Sie `Char_T` den Dateikonvertierungs-Facette `fac` zum Aufrufen bei `fac.in` Bedarf verwenden. Wenn ein Lesevorgang oder eine Konvertierung fehlschlägt, kann die Funktion nicht erfolgreich ausgeführt werden.
+- Sie kann ein oder mehrere Elemente des Typs lesen **`char`** , wie dies bei aufeinander folgenden Aufrufen des Formulars der Fall `fgetc(fp)` ist, und diese in ein Element `ch` des Typs konvertieren, indem Sie `Char_T` den Dateikonvertierungs-Facette `fac` zum Aufrufen bei `fac.in` Bedarf verwenden. Wenn ein Lesevorgang oder eine Konvertierung fehlschlägt, kann die Funktion nicht erfolgreich ausgeführt werden.
 
 ## <a name="see-also"></a>Weitere Informationen
 

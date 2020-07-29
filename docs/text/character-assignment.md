@@ -5,16 +5,16 @@ helpviewer_keywords:
 - characters [C++], assignments
 - MBCS [C++], character assignments
 ms.assetid: dcc329cd-92df-4e20-817d-364be62ff28f
-ms.openlocfilehash: 88c42435d336ba78e87c9acfe3ada5fddbd18fb8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0f627f88ca2b1d3533d3690cd0316ee047a327ad
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410745"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217310"
 ---
 # <a name="character-assignment"></a>Zeichenzuweisungen
 
-Das folgende Beispiel, in dem die **während** Schleife durchsucht eine Zeichenfolge, die alle Zeichen mit Ausnahme von "X" in einer anderen Zeichenfolge kopiert:
+Sehen Sie sich das folgende Beispiel an, in dem die- **`while`** Schleife eine Zeichenfolge scannt und alle Zeichen außer "X" in eine andere Zeichenfolge kopiert:
 
 ```cpp
 while( *sz2 )
@@ -26,7 +26,7 @@ while( *sz2 )
 }
 ```
 
-Der Code kopiert das Byte am `sz2` auf den Speicherort verweist `sz1`, inkrementiert dann `sz1` das nächste Byte empfangen. Aber wenn das nächste Zeichen im `sz2` ist ein Doppelbyte-Zeichen, die Zuweisung zu `sz1` nur das erste Byte kopiert. Der folgende Code verwendet wird, eine portable Funktion, die die Zeichen sicher zu kopieren und inkrementieren `sz1` und `sz2` richtig:
+Der Code kopiert das Byte an `sz2` in den Speicherort, auf den von verwiesen `sz1` wird, und erhöht dann `sz1` das nächste Byte. Wenn das nächste Zeichen in `sz2` ein Doppelbyte Zeichen ist, kopiert die Zuweisung `sz1` nur das erste Byte. Im folgenden Code wird eine Portable Funktion verwendet, um das Zeichen sicher und ein anderes zu kopieren und ordnungsgemäß zu erhöhen `sz1` `sz2` :
 
 ```cpp
 while( *sz2 )
@@ -42,7 +42,7 @@ while( *sz2 )
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Tipps für die MBCS-Programmierung](../text/mbcs-programming-tips.md)<br/>
-[Zeichenvergleich](../text/character-comparison.md)
+[Zeichen Vergleich](../text/character-comparison.md)

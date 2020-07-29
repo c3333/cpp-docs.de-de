@@ -7,12 +7,12 @@ helpviewer_keywords:
 - version attribute
 - version information, version attribute
 ms.assetid: db6ce5d8-82c2-4329-b1a8-8ca2f67342cb
-ms.openlocfilehash: e5fcf80ef753a869b8798d6ab9c8e9f8ecff16fd
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b537f56c39c33abc52897cf53ea2cc0fb24ee458
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80165989"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213800"
 ---
 # <a name="version-c"></a>version (C++)
 
@@ -31,7 +31,7 @@ Die Versionsnummer des `coclass`. Wenn nichts angegeben wird, wird 1,0 in die ID
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Versions** C++ Attribut verfügt über die gleiche Funktionalität wie das runl-Attribut der [Version](/windows/win32/Midl/version) und wird an die generierte IDL-Datei übermittelt.
+Das **Version** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut der runl- [Version](/windows/win32/Midl/version) und wird an die generierte IDL-Datei übermittelt.
 
 ## <a name="example"></a>Beispiel
 
@@ -43,8 +43,8 @@ Ein Beispiel für die Verwendung der- **Version**finden Sie im [bindbare](bindab
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|**coclass**|
 |**Ungültige Attribute**|Keine|
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - source attribute
 ms.assetid: 1878d05d-7709-4e97-b114-c62f38f5140e
-ms.openlocfilehash: 5f961513b948c3195aea864d97313ac09e97344e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 274e446aecc4d0d7096211bbae88e0f170ae44a2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166223"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213826"
 ---
 # <a name="source-c"></a>source (C++)
 
@@ -25,12 +25,12 @@ Gibt für eine Klasse die Quell Schnittstellen der COM-Objekte für Verbindungsp
 
 ### <a name="parameters"></a>Parameter
 
-*Web*<br/>
+*interfaces*<br/>
 Eine oder mehrere Schnittstellen, die Sie angeben, wenn Sie das Quell Attribut auf eine Klasse anwenden. Dieser Parameter wird nicht verwendet, wenn die Quelle auf eine Eigenschaft oder Methode angewendet wird.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Quell** C++ Attribut verfügt über die gleiche Funktionalität wie das Mittel l- [Quell](/windows/win32/Midl/source) Attribut.
+Das **Source** C++-Attribut verfügt über die gleiche Funktionalität wie das- [Quell](/windows/win32/Midl/source) Attribut.
 
 Sie können das [default](default-cpp.md) -Attribut verwenden, um die standardmäßige Quell Schnittstelle für ein Objekt anzugeben.
 
@@ -74,9 +74,9 @@ class NN : public b
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**, **Schnittstelle**|
-|**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|`coclass` (wenn auf Klasse oder Struktur angewendet)|
+|**Zielgruppe**|**`class`**, **`struct`** ,- **Schnittstelle**|
+|**REPEATABLE**|Nein|
+|**Erforderliche Attribute**|`coclass`(bei Anwendung auf Klasse oder Struktur)|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
@@ -85,5 +85,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [coclass](coclass.md)

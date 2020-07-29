@@ -11,12 +11,12 @@ f1_keywords:
 ms.assetid: 06b863b3-65be-4ded-a72e-6e1eb1531077
 helpviewer_keywords:
 - std::chrono [C++], duration
-ms.openlocfilehash: 3669935bf094f476ca24a8170a0388dff29e0a0c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 454c03aeb1a4666543a28759d02405a512453ffc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368754"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217791"
 ---
 # <a name="duration-class"></a>duration-Klasse
 
@@ -54,34 +54,34 @@ Mit dem Vorlagenargument `Rep` wird der Typ beschrieben, der zum Aufnehmen der A
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[count](#count)|Gibt die Anzahl von Zeiteinheiten im Zeitintervall zurück.|
 |[max](#max)|Statisch. Gibt den maximal zulässigen Wert des Vorlagenparameters `Ref` zurück.|
 |[min](#min)|Statisch. Gibt den niedrigsten zulässigen Wert des Vorlagenparameters `Ref` zurück.|
-|[Null](#zero)|Statisch. Tatsächlich wird `Rep`(0) zurückgegeben.|
+|[Zins](#zero)|Statisch. Tatsächlich wird `Rep`(0) zurückgegeben.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Dauer::Operator-](#operator-)|Gibt eine Kopie des `duration`-Objekts zusammen mit einer negierten Taktanzahl zurück.|
-|[Dauer::Operator--](#operator--)|Verringert die gespeicherte Taktanzahl.|
-|[Dauer::operator=](#op_eq)|Reduziert die gespeicherte Taktanzahl-Modulo um einen angegebenen Wert.|
-|[Dauer::Operator*=](#op_star_eq)|Multipliziert die gespeicherte Taktanzahl mit einem angegebenen Wert.|
-|[Dauer::operator/=](#op_div_eq)|Dividiert die gespeicherte Taktanzahl durch die Taktanzahl eines angegebenen `duration`-Objekts.|
-|[Dauer::operator+](#op_add)|Gibt `*this` zurück.|
-|[Dauer::operator++](#op_add_add)|Erhöht die gespeicherte Taktanzahl.|
-|[Dauer::operator+=](#op_add_eq)|Fügt der gespeicherten Taktanzahl die Taktanzahl eines angegebenen `duration`-Objekts hinzu.|
-|[Dauer::operator-=](#operator-_eq)|Subtrahiert die Taktanzahl eines angegebenen `duration`-Objekts von der gespeicherten Taktanzahl.|
+|[Duration:: Operator-](#operator-)|Gibt eine Kopie des `duration`-Objekts zusammen mit einer negierten Taktanzahl zurück.|
+|[Duration:: Operator--](#operator--)|Verringert die gespeicherte Taktanzahl.|
+|[Duration:: Operator =](#op_eq)|Reduziert die gespeicherte Taktanzahl-Modulo um einen angegebenen Wert.|
+|[Duration:: Operator * =](#op_star_eq)|Multipliziert die gespeicherte Taktanzahl mit einem angegebenen Wert.|
+|[Duration:: Operator/=](#op_div_eq)|Dividiert die gespeicherte Taktanzahl durch die Taktanzahl eines angegebenen `duration`-Objekts.|
+|[Duration:: Operator +](#op_add)|Gibt zurück **`*this`** .|
+|[Duration:: Operator + +](#op_add_add)|Erhöht die gespeicherte Taktanzahl.|
+|[Duration:: Operator + =](#op_add_eq)|Fügt der gespeicherten Taktanzahl die Taktanzahl eines angegebenen `duration`-Objekts hinzu.|
+|[Duration:: Operator-=](#operator-_eq)|Subtrahiert die Taktanzahl eines angegebenen `duration`-Objekts von der gespeicherten Taktanzahl.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** \<chrono>
+**Header:**\<chrono>
 
 **Namespace:** std::chrono
 
-## <a name="durationcount"></a><a name="count"></a>Dauer::zählen
+## <a name="durationcount"></a><a name="count"></a>Dauer:: count
 
 Ruft die Anzahl von Zeiteinheiten im Zeitintervall ab.
 
@@ -93,7 +93,7 @@ constexpr Rep count() const;
 
 Die Anzahl von Zeiteinheiten im Zeitintervall.
 
-## <a name="durationduration-constructor"></a><a name="duration"></a>Dauer::dUration Konstruktor
+## <a name="durationduration-constructor"></a><a name="duration"></a>Dauer::d urationskonstruktor
 
 Erstellt ein `duration`-Objekt.
 
@@ -112,30 +112,30 @@ constexpr duration(const duration<Rep2, Period2>& Dur);
 *Rep2*\
 Ein arithmetischer Typ, der die Anzahl von Zeiteinheiten darstellt.
 
-*Zeitraum2*\
+*Period2*\
 Eine `std::ratio`-Vorlagenspezialisierung zur Darstellung des Zeitraums von Zeiteinheiten in Sekunden.
 
 *R*\
 Die Anzahl der Zeiteinheiten der Standardperiode.
 
-*Dur*\
-Die Anzahl der Ticks des Perioden, die durch *Periode2*angegeben werden.
+*Local*\
+Die Anzahl der Ticks des durch *Period2*angegebenen Zeitraums.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Vom Standardkonstruktor wird ein nicht initialisiertes Objekt erstellt. Durch die Wertinitialisierung mithilfe von leeren Klammern wird ein Objekt initialisiert, das ein Zeitintervall mit null Zeiteinheiten darstellt.
 
-Der zweite, ein Vorlagenargumentkonstruktor erstellt ein Objekt, das ein Zeitintervall von `std::ratio<1>`R-Takt-Ticks mit einem Standardzeitraum von darstellt. *R* Um eine Abrundung der Tick-Anzahlen zu vermeiden, ist es ein Fehler, ein Dauerobjekt aus `duration::rep` einem Repräsentationstyp *Rep2* zu erstellen, das als Gleitkommatyp behandelt werden kann, wenn er nicht als Gleitkommatyp behandelt werden kann.
+Mit dem zweiten, einem Vorlagen Argument-Konstruktor wird ein-Objekt erstellt, das ein Zeitintervall von *R* -Takt Ticks mit einem Standard Zeitraum von darstellt `std::ratio<1>` . Um das Abrunden der Takt Anzahl zu vermeiden, ist es ein Fehler, ein Duration-Objekt aus einem Darstellungstyp zu erstellen *Rep2* , das als Gleit kommatyp behandelt werden kann, wenn `duration::rep` nicht als Gleit kommatyp behandelt werden kann.
 
-Der dritte, zwei Vorlagenargumentkonstruktor erstellt ein Objekt, das ein Zeitintervall darstellt, dessen Länge das Zeitintervall ist, das von *Dur*angegeben wird. Um die Verkürzung von Taktanzahlen zu vermeiden, ist das Erstellen eines Dauerobjekts aus einem anderen Dauerobjekt, dessen Typ mit dem Zieltyp *unvereinbar* ist, ein Fehler.
+Der dritte, zwei Vorlagen Argument-Konstruktor erstellt ein-Objekt, das ein Zeitintervall darstellt, dessen Länge das von *Dur*angegebene Zeitintervall ist. Um die Verkürzung von Taktanzahlen zu vermeiden, ist das Erstellen eines Dauerobjekts aus einem anderen Dauerobjekt, dessen Typ mit dem Zieltyp *unvereinbar* ist, ein Fehler.
 
-Ein `D1`-Dauertyp ist mit einem anderen Dauertyp `D2`*unvereinbar*, wenn `D2` nicht als Gleitkommatyp behandelt werden kann und [ratio_divide\<D1::period, D2::period>::type::den](../standard-library/ratio.md) nicht 1 ist.
+Ein Duration `D1` -Typ ist mit einem anderen Duration-Typ nicht *verwendbar* , `D2` Wenn nicht als Gleit `D2` kommatyp behandelt werden kann und [ratio_divide \<D1::period, D2::period> :: Type::d en](../standard-library/ratio.md) nicht 1 ist.
 
-Sofern *Rep2* nicht implizit `rep` in `treat_as_floating_point<rep>`"True" *holds true* oder `treat_as_floating_point<Rep2>` *"false"* konvertiert ist oder false hält, nimmt der zweite Konstruktor nicht an der Überladungsauflösung teil. Weitere Informationen finden Sie unter [<type_traits>](../standard-library/type-traits.md).
+Wenn *Rep2* nicht implizit in konvertierbar ist `rep` und entweder " `treat_as_floating_point<rep>` *true* " oder " `treat_as_floating_point<Rep2>` *false" enthält*, wird der zweite Konstruktor nicht an der Überladungs Auflösung beteiligt. Weitere Informationen finden Sie unter [<type_traits>](../standard-library/type-traits.md).
 
 Sofern kein Überlauf in die Konvertierung induziert wurde und `treat_as_floating_point<rep>` nicht *TRUE* ist bzw. beide `ratio_divide<Period2, period>::den` nicht 1 entsprechen und `treat_as_floating_point<Rep2>` nicht *FALSE* ist, wird der dritte Konstruktor nicht an der Überladungsauflösung beteiligt. Weitere Informationen finden Sie unter [<type_traits>](../standard-library/type-traits.md).
 
-## <a name="durationmax"></a><a name="max"></a>Dauer::max
+## <a name="durationmax"></a><a name="max"></a>Dauer:: Max
 
 Statische Methode, von der die Obergrenze für Werte vom Vorlagenparametertyp `Ref` zurückgegeben wird.
 
@@ -147,7 +147,7 @@ static constexpr duration max();
 
 Tatsächlich wird `duration(duration_values<rep>::max())` zurückgegeben.
 
-## <a name="durationmin"></a><a name="min"></a>Dauer::min
+## <a name="durationmin"></a><a name="min"></a>Dauer:: min
 
 Statische Methode, von der die Untergrenze für Werte vom Vorlagenparametertyp `Ref` zurückgegeben wird.
 
@@ -159,7 +159,7 @@ static constexpr duration min();
 
 Tatsächlich wird `duration(duration_values<rep>::min())` zurückgegeben.
 
-## <a name="durationoperator-"></a><a name="operator-"></a>Dauer::Operator-
+## <a name="durationoperator-"></a><a name="operator-"></a>Duration:: Operator-
 
 Gibt eine Kopie des `duration`-Objekts zusammen mit einer negierten Taktanzahl zurück.
 
@@ -167,7 +167,7 @@ Gibt eine Kopie des `duration`-Objekts zusammen mit einer negierten Taktanzahl z
 constexpr duration operator-() const;
 ```
 
-## <a name="durationoperator--"></a><a name="operator--"></a>Dauer::Operator--
+## <a name="durationoperator--"></a><a name="operator--"></a>Duration:: Operator--
 
 Verringert die gespeicherte Taktanzahl.
 
@@ -179,11 +179,11 @@ duration operator--(int);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Methode gibt `*this` zurück.
+Die erste Methode gibt zurück **`*this`** .
 
-Die zweite Methode gibt eine Kopie von `*this` zurück, die vor dem Verringern erstellt wird.
+Die zweite Methode gibt eine Kopie von zurück **`*this`** , die vor dem Dekrement erstellt wird.
 
-## <a name="durationoperator"></a><a name="op_eq"></a>Dauer::operator=
+## <a name="durationoperator"></a><a name="op_eq"></a>Duration:: Operator =
 
 Reduziert die gespeicherte Taktanzahl-Modulo um einen angegebenen Wert.
 
@@ -196,13 +196,13 @@ duration& operator%=(const duration& Div);
 ### <a name="parameters"></a>Parameter
 
 *Div*\
-Für die erste Methode stellt *Div* eine Tick-Anzahl dar. Für die zweite *Div* Methode `duration` ist Div ein Objekt, das eine Tick-Anzahl enthält.
+Für die erste Methode stellt *div* eine Takt Anzahl dar. Bei der zweiten Methode ist *div* ein- `duration` Objekt, das eine Takt Anzahl enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das `duration`-Objekt nach dem Modulo-Vorgang wird ausgeführt.
 
-## <a name="durationoperator"></a><a name="op_star_eq"></a>Dauer::Operator*=
+## <a name="durationoperator"></a><a name="op_star_eq"></a>Duration:: Operator * =
 
 Multipliziert die gespeicherte Taktanzahl mit einem angegebenen Wert.
 
@@ -219,7 +219,7 @@ Ein Wert des von `duration::rep` angegebenen Typs.
 
 Das `duration`-Objekt nach Ausführung der Multiplikation.
 
-## <a name="durationoperator"></a><a name="op_div_eq"></a>Dauer::operator/=
+## <a name="durationoperator"></a><a name="op_div_eq"></a>Duration:: Operator/=
 
 Dividiert die gespeicherte Taktanzahl mit einem angegebenen Wert.
 
@@ -236,15 +236,15 @@ Ein Wert des von `duration::rep` angegebenen Typs.
 
 Das `duration`-Objekt nach Ausführung der Division.
 
-## <a name="durationoperator"></a><a name="op_add"></a>Dauer::operator+
+## <a name="durationoperator"></a><a name="op_add"></a>Duration:: Operator +
 
-Gibt `*this` zurück.
+Gibt zurück **`*this`** .
 
 ```cpp
 constexpr duration operator+() const;
 ```
 
-## <a name="durationoperator"></a><a name="op_add_add"></a>Dauer::operator++
+## <a name="durationoperator"></a><a name="op_add_add"></a>Duration:: Operator + +
 
 Erhöht die gespeicherte Taktanzahl.
 
@@ -256,11 +256,11 @@ duration operator++(int);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Methode gibt `*this` zurück.
+Die erste Methode gibt zurück **`*this`** .
 
-Die zweite Methode gibt eine Kopie von `*this` zurück, die vor dem Inkrementieren erstellt wird.
+Die zweite Methode gibt eine Kopie von zurück **`*this`** , die vor dem Inkrement erstellt wird.
 
-## <a name="durationoperator"></a><a name="op_add_eq"></a>Dauer::operator+=
+## <a name="durationoperator"></a><a name="op_add_eq"></a>Duration:: Operator + =
 
 Fügt der gespeicherten Taktanzahl die Taktanzahl eines angegebenen `duration`-Objekts hinzu.
 
@@ -270,14 +270,14 @@ duration& operator+=(const duration& Dur);
 
 ### <a name="parameters"></a>Parameter
 
-*Dur*\
-Ein `duration` -Objekt.
+*Local*\
+Ein `duration`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das `duration`-Objekt nach Ausführung der Addition.
 
-## <a name="durationoperator-"></a><a name="operator-_eq"></a>Dauer::operator-=
+## <a name="durationoperator-"></a><a name="operator-_eq"></a>Duration:: Operator-=
 
 Subtrahiert die Taktanzahl eines angegebenen `duration`-Objekts von der gespeicherten Taktanzahl.
 
@@ -287,22 +287,22 @@ duration& operator-=(const duration& Dur);
 
 ### <a name="parameters"></a>Parameter
 
-*Dur*\
-Ein `duration` -Objekt.
+*Local*\
+Ein `duration`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das `duration`-Objekt nach Ausführung der Subtraktion.
 
-## <a name="durationzero"></a><a name="zero"></a>Dauer::Null
+## <a name="durationzero"></a><a name="zero"></a>Duration:: Zero
 
-Gibt `duration(duration_values<rep>::zero())` zurück.
+Gibt `duration(duration_values<rep>::zero())`zurück.
 
 ```cpp
 static constexpr duration zero();
 ```
 
-## <a name="durationoperator-mod"></a><a name="op_mod_eq"></a>Dauer::operator mod=
+## <a name="durationoperator-mod"></a><a name="op_mod_eq"></a>Duration:: Operator mod =
 
 Reduziert die gespeicherte Taktanzahl-Modulo Div oder Div.count().
 
@@ -319,8 +319,8 @@ Der Divisor, der ein Duration-Objekt oder ein Wert ist, der Taktzähler darstell
 
 Die erste Memberfunktion reduziert die gespeicherte Taktanzahl-Modulo Div und gibt *dies zurück. Die zweite Memberfunktion reduziert die gespeicherte Taktanzahl-Modulo Div.count() und gibt \*dies zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Header-Dateien-Referenz](../standard-library/cpp-standard-library-header-files.md)\
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
 [\<chrono>](../standard-library/chrono.md)\
 [duration_values-Struktur](../standard-library/duration-values-structure.md)

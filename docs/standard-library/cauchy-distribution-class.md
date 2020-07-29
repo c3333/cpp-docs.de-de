@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::cauchy_distribution [C++], param_type
 - std::cauchy_distribution [C++], param_type
 ms.assetid: 21522351-f2f1-46d9-97f0-d358c932356c
-ms.openlocfilehash: ea75395c14c0babf5a047e7ae8f937e2a237b445
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 965ad6751938c07a0a62fedc8f65d53f9f6d2b04
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317120"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217830"
 ---
 # <a name="cauchy_distribution-class"></a>cauchy_distribution-Klasse
 
@@ -71,14 +71,14 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType*\
-Der Gleitkomma-Ergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 *URNG*\
-Die einheitliche Zufallszahlengenerator-Engine. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Die einheitliche Zufallszahlengenerator-Engine. Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Gleitkommatyps erzeugt, oder typ **doppelt,** wenn keine bereitgestellt wird, verteilt gemäß der Cauchy-Verteilung. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Gleit Komma Typs produziert **`double`** . Wenn kein entsprechend der caukie-Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -95,7 +95,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 Ausführliche Informationen über die Cauchy-Verteilung finden Sie im Wolfram MathWorld-Artikel [Cauchy Distribution (Cauchy-Verteilung)](https://go.microsoft.com/fwlink/p/?linkid=400523).
 
@@ -234,13 +234,13 @@ Distribution for 10 samples:
     10: 35.2531547063
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="cauchy_distributioncauchy_distribution"></a><a name="cauchy_distribution"></a>cauchy_distribution::cauchy_distribution
+## <a name="cauchy_distributioncauchy_distribution"></a><a name="cauchy_distribution"></a>cauchy_distribution:: cauchy_distribution
 
 Erstellt die Verteilung.
 
@@ -251,24 +251,24 @@ explicit cauchy_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*Eine*\
+*ein*\
 Der `a`-Verteilungsparameter.
 
-*B*\
+*b*\
 Der `b`-Verteilungsparameter.
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete `param_type`-Struktur.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`0.0 < b`
+**Vorbedingung:**`0.0 < b`
 
 Mit dem ersten Konstruktor wird ein Objekt erstellt, in dessen gespeichertem `a`-Wert der Wert *a* enthalten ist und dessen gespeicherter `b`-Wert den Wert *b* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="cauchy_distributionparam_type"></a><a name="param_type"></a>cauchy_distribution::param_type
+## <a name="cauchy_distributionparam_type"></a><a name="param_type"></a>cauchy_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -286,10 +286,10 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*Eine*\
+*ein*\
 Der `a`-Verteilungsparameter.
 
-*B*\
+*b*\
 Der `b`-Verteilungsparameter.
 
 *Richting*\
@@ -297,10 +297,10 @@ Das mit diesem `param_type`-Objekt zu vergleichende Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`0.0 < b`
+**Vorbedingung:**`0.0 < b`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)

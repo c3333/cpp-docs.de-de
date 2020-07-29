@@ -29,12 +29,12 @@ helpviewer_keywords:
 - std::bit_xor [C++]
 - std::cref [C++]
 ms.assetid: c34d0b45-50a7-447a-9368-2210d06339a4
-ms.openlocfilehash: d5a1b0d106774ede13b0e23d4bacb8fbbc47d28f
-ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
+ms.openlocfilehash: 472200d6941867387d99ab52c08a70467f802f62
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80150679"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219117"
 ---
 # <a name="ltfunctionalgt-functions"></a>&lt;functional&gt;-Funktionen
 
@@ -65,41 +65,41 @@ template <class RTy, class FT, class T1, class T2, ..., class TN>
 
 ### <a name="parameters"></a>Parameter
 
-*Fey*\
+*Gänsehaut*\
 Der Typ des aufzurufenden Objekts.
 
-*TN* -\
+*TN*\
 Der Typ des n-ten Aufrufarguments.
 
-*FN* -\
+*Extreme*\
 Das aufzurufende Objekt.
 
-*tN* -\
+*tN*\
 Das n-te Aufrufargument.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Typen `FT, T1, T2, ..., TN` müssen kopierbar sein, und `INVOKE(fn, t1, ..., tN)` müssen ein gültiger Ausdruck für einige Werte `w1, w2, ..., wN`sein.
+Die Typen `FT, T1, T2, ..., TN` müssen kopierbar sein, und es `INVOKE(fn, t1, ..., tN)` muss sich um einen gültigen Ausdruck für einige Werte handeln `w1, w2, ..., wN` .
 
-Die erste Vorlagenfunktion gibt einen weiterleitenden Aufrufwrapper `g` mit einem schwachen Ergebnistyp zurück. Die Auswirkungen von `g(u1, u2, ..., uM)` sind `INVOKE(f, v1, v2, ..., vN,` [invoke_result](../standard-library/invoke-result-class.md)`<FT cv (V1, V2, ..., VN)>::type)`, wobei `cv` die CV-Qualifizierer `g` ist und die Werte und Typen der gebundenen Argumente `v1, v2, ..., vN` wie unten angegeben bestimmt werden. Damit binden Sie Argumente an aufrufbare Objekte, um aufrufbare Objekte mit einer angepassten Argumentliste zu erhalten.
+Die erste Vorlagenfunktion gibt einen weiterleitenden Aufrufwrapper `g` mit einem schwachen Ergebnistyp zurück. Der Effekt von `g(u1, u2, ..., uM)` ist `INVOKE(f, v1, v2, ..., vN,` [invoke_result](../standard-library/invoke-result-class.md) `<FT cv (V1, V2, ..., VN)>::type)` , wobei `cv` die CV-Qualifizierer von sind `g` und die Werte und Typen der gebundenen Argumente `v1, v2, ..., vN` wie unten angegeben bestimmt werden. Damit binden Sie Argumente an aufrufbare Objekte, um aufrufbare Objekte mit einer angepassten Argumentliste zu erhalten.
 
 Die zweite Vorlagenfunktion gibt einen weiterleitenden Aufrufwrapper `g` mit einem geschachtelten Typ `result_type` zurück, der ein Synonym für `RTy` darstellt. `g(u1, u2, ..., uM)` bewirkt `INVOKE(f, v1, v2, ..., vN, RTy)`, wo `cv` der CV-Qualifizierer von `g` ist, und die Werte und Typen der gebundenen Argumente `v1, v2, ..., vN` wie unten beschrieben bestimmt werden. Damit binden Sie Argumente an aufrufbare Objekte, um aufrufbare Objekte mit einer angepassten Argumentliste und einem angegebenen Rückgabetypen zu erhalten.
 
-Die Werte des gebundenen Arguments `v1, v2, ..., vN` und ihre entsprechenden Typen `V1, V2, ..., VN` hängen folgendermaßen vom Typ `ti` des entsprechenden Arguments `Ti` im Aufruf an `bind` und an die CV-Qualifizierern`cv` des Aufrufwrappers `g` ab:
+Die Werte des gebundenen Arguments `v1, v2, ..., vN` und ihre entsprechenden Typen `V1, V2, ..., VN` hängen folgendermaßen vom Typ `Ti` des entsprechenden Arguments `ti` im Aufruf an `bind` und an die CV-Qualifizierern`cv` des Aufrufwrappers `g` ab:
 
 wenn `ti` Typ `reference_wrapper<T>` ist, ist das Argument `vi``ti.get()`, und sein Typ `Vi` ist `T&`;
 
-Wenn `std::is_bind_expression<Ti>::value` den Wert **true** hat, wird das Argument `vi` `ti(u1, u2, ..., uM)`, und sein Typ `Vi` `result_of<Ti` `cv` `(U1&, U2&, ..., UN&>::type`;
+Wenn der Wert von `std::is_bind_expression<Ti>::value` ist **`true`** , ist das Argument `vi` `ti(u1, u2, ..., uM)` , und sein Typ `Vi` ist `result_of<Ti` `cv` `(U1&, U2&, ..., UN&>::type` ;
 
-Wenn der Wert `j` `std::is_placeholder<Ti>::value` nicht 0 (null) ist, wird das Argument `vi` `uj` und sein Typ `Vi` `Uj&`ist.
+Wenn der Wert `j` von `std::is_placeholder<Ti>::value` nicht 0 (null) `vi` ist, ist das Argument `uj` , und sein Typ `Vi` ist `Uj&` ;
 
-Andernfalls wird das Argument `vi` `ti`, und sein Typ `Vi` `Ti` `cv` `&`.
+Andernfalls ist das `vi` -Argument, `ti` und sein Typ `Vi` ist `Ti` `cv` `&` .
 
 Hat man beispielsweise eine Funktion `f(int, int)`, gibt der Ausdruck `bind(f, _1, 0)` einen weiterleitenden Aufrufwrapper `cw` zurück, sodass `cw(x)``f(x, 0)` aufruft. Der Ausdruck `bind(f, 0, _1)` gibt einen weiterleitenden Aufrufwrapper `cw` zurück, sodass `cw(x)``f(0, x)` aufruft.
 
-Die Anzahl der Argumente in einem Aufruf von `bind` und das Argument `fn` müssen gleich der Anzahl der Argumente sein, die an das Aufruf Bare Objekt `fn`übermittelt werden können. Beispielsweise ist `bind(cos, 1.0)` richtig, und sowohl `bind(cos)` als auch `bind(cos, _1, 0.0)` sind falsch.
+Die Anzahl der Argumente in einem Aufruf von `bind` und das-Argument `fn` müssen gleich der Anzahl der Argumente sein, die an das Aufruf Bare Objekt übermittelt werden können `fn` . Beispielsweise `bind(cos, 1.0)` ist richtig, und sowohl `bind(cos)` als auch `bind(cos, _1, 0.0)` sind falsch.
 
-Die Anzahl von Argumenten in dem Funktionsaufruf an den Aufrufwrapper, der von `bind` zurückgegeben wurde, muss mindestens so hoch sein wie der höchste nummerierte Wert von `is_placeholder<PH>::value` für alle Platzhalterargumente in dem Aufruf an `bind`. Beispielsweise ist `bind(cos, _2)(0.0, 1.0)` korrekt (und gibt `cos(1.0)`) zurück, und `bind(cos, _2)(0.0)` ist falsch.
+Die Anzahl von Argumenten in dem Funktionsaufruf an den Aufrufwrapper, der von `bind` zurückgegeben wurde, muss mindestens so hoch sein wie der höchste nummerierte Wert von `is_placeholder<PH>::value` für alle Platzhalterargumente in dem Aufruf an `bind`. Beispielsweise `bind(cos, _2)(0.0, 1.0)` ist korrekt (und gibt zurück `cos(1.0)` ), und `bind(cos, _2)(0.0)` ist falsch.
 
 ### <a name="example"></a>Beispiel
 
@@ -163,10 +163,10 @@ template <class Operation, class Type>
 
 ### <a name="parameters"></a>Parameter
 
-*Func* -\
+*Func*\
 Das binäre Funktionsobjekt, das in ein unäres Funktionsobjekt konvertiert werden soll.
 
-*Linker*\
+*linken*\
 Der Wert, an den das erste Argument des binären Funktionsobjekts gebunden werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -177,7 +177,7 @@ Das unäre Funktions Objekt, das sich aus der Bindung des ersten Arguments des b
 
 Funktions Binder sind eine Art von Funktions Adaptor. Da Sie Funktions Objekte zurückgeben, können Sie in bestimmten Typen von Funktions Komposition verwendet werden, um kompliziertere und leistungsfähigere Ausdrücke zu erstellen.
 
-Wenn *Func* ein Objekt vom Typ `Operation` und `c` eine Konstante ist, dann ist `bind1st( func, c )` der gleiche wie der [binder1st](../standard-library/binder1st-class.md) -Klassenkonstruktor `binder1st<Operation>(func, c)`, und es ist bequemer zu verwenden.
+Wenn *Func* ein Objekt vom Typ `Operation` und `c` eine Konstante ist, dann `bind1st( func, c )` ist der gleiche wie der [binder1st](../standard-library/binder1st-class.md) -Klassenkonstruktor `binder1st<Operation>(func, c)` , und er ist bequemer zu verwenden.
 
 ### <a name="example"></a>Beispiel
 
@@ -257,10 +257,10 @@ template <class Operation, class Type>
 
 ### <a name="parameters"></a>Parameter
 
-*Func* -\
+*Func*\
 Das binäre Funktionsobjekt, das in ein unäres Funktionsobjekt konvertiert werden soll.
 
-*Rechte*\
+*Richting*\
 Der Wert, an den das zweite Argument des binären Funktionsobjekts gebunden werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -271,7 +271,7 @@ Das unäre Funktions Objekt Ergebnis, das das zweite Argument des binären Funkt
 
 Funktions Binder sind eine Art von Funktions Adaptor. Da Sie Funktions Objekte zurückgeben, können Sie in bestimmten Typen von Funktions Komposition verwendet werden, um kompliziertere und leistungsfähigere Ausdrücke zu erstellen.
 
-Wenn *Func* ein Objekt vom Typ `Operation` und `c` eine Konstante ist, dann ist `bind2nd(func, c)` der gleiche wie der [binder2nd](../standard-library/binder2nd-class.md) -Klassenkonstruktor `binder2nd<Operation>(func, c)`und bequemer zu verwenden.
+Wenn *Func* ein Objekt vom Typ `Operation` und `c` eine Konstante ist, dann `bind2nd(func, c)` ist identisch mit dem [binder2nd](../standard-library/binder2nd-class.md) -Klassenkonstruktor `binder2nd<Operation>(func, c)` , und es ist bequemer, zu verwenden.
 
 ### <a name="example"></a>Beispiel
 
@@ -342,7 +342,7 @@ The number of elements in v1 less than 10 is: 2.
 
 ## <a name="bit_and"></a><a name="bit_and"></a>bit_and
 
-Ein vordefiniertes Funktions Objekt, das eine bitweise AND-Operation (binäres `operator&`) für die Argumente durchführt.
+Ein vordefiniertes Funktions Objekt, das eine bitweise AND-Operation (Binary `operator&` ) für die Argumente durchführt.
 
 ```cpp
 template <class Type = void>
@@ -364,13 +364,13 @@ struct bit_and<void>
 
 ### <a name="parameters"></a>Parameter
 
-*Type*, *T*, *U*\
+*Typ*, *T*, *U*\
 Jeder Typ, der ein `operator&`-Element unterstützt, das Operanden angegebener oder abgeleiteter Typen akzeptiert.
 
-*Linker*\
+*Linken*\
 Der linke Operand des bitweisen AND-Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage bewirkt eine perfekte Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *T*.
 
-*Rechte*\
+*Richting*\
 Der rechte Operand des bitweisen AND-Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage ist perfekt für die Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *U*.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -383,7 +383,7 @@ Das `bit_and`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Dat
 
 ## <a name="bit_not"></a><a name="bit_not"></a>bit_not
 
-Ein vordefiniertes Funktions Objekt, das einen bitweisen Komplement (Not)-Vorgang (unäres `operator~`) für sein Argument durchführt. In c++ 14 hinzugefügt.
+Ein vordefiniertes Funktions Objekt, das einen bitweisen Komplement (Not)-Vorgang (unärer Vorgang `operator~` ) für sein Argument durchführt. In c++ 14 hinzugefügt.
 
 ```cpp
 template <class Type = void>
@@ -403,10 +403,10 @@ struct bit_not<void>
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*\
+*Sorte*\
 Ein Typ, der ein unäres `operator~`-Element unterstützt.
 
-*Rechte*\
+*Richting*\
 Der Operand des bitweisen komplementären Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage bewirkt eine perfekte Weiterleitung eines lvalue-oder rvalue-Verweis Arguments des abgeleiteten *typtyps*.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -419,7 +419,7 @@ Das `bit_not`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Dat
 
 ## <a name="bit_or"></a><a name="bit_or"></a>bit_or
 
-Ein vordefiniertes Funktions Objekt, das eine bitweise OR-Operation (`operator|`) auf den Argumenten durchführt.
+Ein vordefiniertes Funktions Objekt, das eine bitweise OR-Operation ( `operator|` ) auf die Argumente durchführt.
 
 ```cpp
 template <class Type = void>
@@ -441,13 +441,13 @@ struct bit_or<void>
 
 ### <a name="parameters"></a>Parameter
 
-*Type*, *T*, *U*\
+*Typ*, *T*, *U*\
 Jeder Typ, der ein `operator|`-Element unterstützt, das Operanden angegebener oder abgeleiteter Typen akzeptiert.
 
-*Linker*\
+*Linken*\
 Der linke Operand des bitweisen OR-Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage bewirkt eine perfekte Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *T*.
 
-*Rechte*\
+*Richting*\
 Der rechte Operand des bitweisen OR-Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage ist perfekt für die Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *U*.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -460,7 +460,7 @@ Das `bit_or`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Date
 
 ## <a name="bit_xor"></a><a name="bit_xor"></a>bit_xor
 
-Ein vordefiniertes Funktions Objekt, das eine bitweise XOR-Operation (binäres `operator^`) für die Argumente durchführt.
+Ein vordefiniertes Funktions Objekt, das eine bitweise XOR-Operation (Binary `operator^` ) für die Argumente durchführt.
 
 ```cpp
 template <class Type = void>
@@ -482,13 +482,13 @@ struct bit_xor<void>
 
 ### <a name="parameters"></a>Parameter
 
-*Type*, *T*, *U*\
+*Typ*, *T*, *U*\
 Jeder Typ, der ein `operator^`-Element unterstützt, das Operanden angegebener oder abgeleiteter Typen akzeptiert.
 
-*Linker*\
+*Linken*\
 Der linke Operand des bitweisen XOR-Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage bewirkt eine perfekte Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *T*.
 
-*Rechte*\
+*Richting*\
 Der rechte Operand des bitweisen XOR-Vorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage ist perfekt für die Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *U*.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -513,10 +513,10 @@ reference_wrapper<const Ty> cref(const reference_wrapper<Ty>& arg);
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Genossenschaft*\
 Der Typ des zu umschließenden Arguments.
 
-*arg*\
+*gebeut*\
 Das zu umschließende Argument.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -567,38 +567,38 @@ invoke_result_t<Callable, Args...>
 
 ### <a name="parameters"></a>Parameter
 
-*Aufruf Bare*\
+*Callable*\
 Der Typ des aufzurufenden Objekts.
 
 *Args*\
 Die Typen der callgumente.
 
-*FN* -\
+*Extreme*\
 Das aufzurufende Objekt.
 
 *args*\
 Den Aufrufargumente.
 
-*Spezifikations*\
-Die **noaußer** -Spezifikation `std::is_nothrow_invocable_v<Callable, Args>)`.
+*ziertes*\
+Die- **`noexcept`** Spezifikation `std::is_nothrow_invocable_v<Callable, Args>)` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ruft das Aufruf Bare Objekt " *FN* " mithilfe der Parameter " *args*" auf. `INVOKE(std::forward<Callable>(fn), std::forward<Args>(args)...)`, wobei die Pseudo Funktion `INVOKE(f, t1, t2, ..., tN)` eines der folgenden Elemente bedeutet:
+Ruft das Aufruf Bare Objekt " *FN* " mithilfe der Parameter " *args*" auf. Effektiv, `INVOKE(std::forward<Callable>(fn), std::forward<Args>(args)...)` , wobei die Pseudo Funktion `INVOKE(f, t1, t2, ..., tN)` eines der folgenden Punkte bedeutet:
 
-- `(t1.*f)(t2, ..., tN)`, wenn `f` ein Zeiger auf eine Memberfunktion der Klasse `T` und `t1` ist, ist ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt eines Typs, der von `T` abgeleitet wird. Das heißt, wenn `std::is_base_of<T, std::decay_t<decltype(t1)>>::value` "true" ist.
+- `(t1.*f)(t2, ..., tN)`, wenn `f` ein Zeiger auf eine Memberfunktion der Klasse `T` und `t1` ist, ist ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt eines Typs, der von `T` abgeleitet wird. Das heißt, wenn den Wert `std::is_base_of<T, std::decay_t<decltype(t1)>>::value` true hat.
 
-- `(t1.get().*f)(t2, ..., tN)`, wenn `f` ein Zeiger auf eine Element Funktion der Klasse `T` ist und `std::decay_t<decltype(t1)>` eine Spezialisierung `std::reference_wrapper`ist.
+- `(t1.get().*f)(t2, ..., tN)`Wenn `f` ein Zeiger auf eine Member-Funktion der `T` -Klasse ist und `std::decay_t<decltype(t1)>` eine Spezialisierung von ist `std::reference_wrapper` .
 
-- `((*t1).*f)(t2, ..., tN)`, wenn `f` ein Zeiger auf eine Element Funktion der Klasse `T` ist und `t1` keiner der vorherigen Typen ist.
+- `((*t1).*f)(t2, ..., tN)`Wenn `f` ein Zeiger auf eine Member-Funktion der `T` -Klasse ist und `t1` keiner der vorherigen Typen ist.
 
-- `t1.*f`, wenn N == 1 und `f` ein Zeiger auf Memberdaten einer Klasse `T` und `t1` ist, ist ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt eines Typs, der von `T` abgeleitet wird.  Das heißt, wenn `std::is_base_of<T, std::decay_t<decltype(t1)>>::value` "true" ist.
+- `t1.*f`, wenn N == 1 und `f` ein Zeiger auf Memberdaten einer Klasse `T` und `t1` ist, ist ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt eines Typs, der von `T` abgeleitet wird.  Das heißt, wenn den Wert `std::is_base_of<T, std::decay_t<decltype(t1)>>::value` true hat.
 
-- `t1.get().*f`, wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `std::decay_t<decltype(t1)>` eine Spezialisierung `std::reference_wrapper`ist.
+- `t1.get().*f`Wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `std::decay_t<decltype(t1)>` eine Spezialisierung von ist `std::reference_wrapper` .
 
-- `(*t1).*f`, wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `t1` keiner der vorherigen Typen ist.
+- `(*t1).*f`Wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `t1` keiner der vorherigen Typen ist.
 
-- In allen anderen Fällen `f(t1, t2, ..., tN)`.
+- `f(t1, t2, ..., tN)` in allen anderen Fällen.
 
 Weitere Informationen zum Ergebnistyp eines Aufruf baren Objekts finden Sie unter [invoke_result](invoke-result-class.md). Informationen zu Prädikaten für Aufruf Bare Typen finden Sie unter [is_invocable-, is_invocable_r-, is_nothrow_invocable is_nothrow_invocable_r-Klassen](is-invocable-classes.md).
 
@@ -687,19 +687,19 @@ unspecified mem_fn(RTy Ty::*pm);
 
 ### <a name="parameters"></a>Parameter
 
-*Rty* -\
+*Eigenschaft*\
 Der Rückgabetyp der umschlossenen Funktion.
 
-*Ty* -\
+*Genossenschaft*\
 Der Typ des Memberfunktionszeigers.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt einen einfachen Wrapper `cw`mit einem schwachen Ergebnistyp zurück, sodass der Ausdruck `cw(t, a2, ..., aN)` identisch mit dem `INVOKE(pm, t, a2, ..., aN)`ist. Sie löst keine Ausnahmen aus.
+Die Vorlagen Funktion gibt einen einfachen Wrapper `cw` mit einem schwachen Ergebnistyp zurück, sodass der Ausdruck mit `cw(t, a2, ..., aN)` identisch ist `INVOKE(pm, t, a2, ..., aN)` . Sie löst keine Ausnahmen aus.
 
-Der zurückgegebene Wrapper für den Rückruf wird von `std::unary_function<cv Ty*, RTy>` abgeleitet (und definiert den als Synonym für " *rty* " `result_type` als Synonym und den Typ "schsted" `argument_type` als Synonym für `cv Ty*`) nur dann, wenn die *typty* ein Zeiger auf eine Element Funktion mit CV-Qualifier-`cv` ist, der keine Argumente annimmt.
+Der zurückgegebene-Rückruf Wrapper wird von abgeleitet `std::unary_function<cv Ty*, RTy>` (und definiert den schsted `result_type` -Typ als Synonym für *rty* und den schsted-Typ `argument_type` als Synonym für `cv Ty*` ), nur wenn die *typty* ein Zeiger auf eine Member-Funktion mit CV-Qualifizierer ist `cv` , der keine Argumente annimmt.
 
-Der zurückgegebene Wrapper für den Rückruf wird von `std::binary_function<cv Ty*, T2, RTy>` abgeleitet (und definiert den als Synonym für " *rty*" `result_type` als Synonym, den als Synonym für `cv Ty*``first argument_type` als Synonym für "" und den Typ "schsted Type" als Synonym für `second argument_type`), wenn die *typty* ein Zeiger auf eine Element Funktion mit CV-Qualifier ist, der ein Argument vom Typ "`T2`" annimmt.`cv``T2`
+Der zurückgegebene-Aufrufwrapper wird von abgeleitet `std::binary_function<cv Ty*, T2, RTy>` (und definiert den `result_type` schsted-Typ als Synonym für *rty*, den schsted-Typ `first argument_type` als Synonym für `cv Ty*` und den schsted-Typ `second argument_type` als Synonym für `T2` ), wenn die *typty* ein Zeiger auf eine Element Funktion mit CV-Qualifizierer ist, `cv` der ein Argument vom Typ annimmt `T2` .
 
 ### <a name="example"></a>Beispiel
 
@@ -759,12 +759,12 @@ const_mem_fun1_t<Result, Type, Arg> mem_fun(Result (Type::* pMem)(Arg) const);
 
 ### <a name="parameters"></a>Parameter
 
-*pMem* -\
+*pMem*\
 Ein Zeiger auf die Memberfunktion der Klasse `Type`, die in ein Funktionsobjekt konvertiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **const**- oder **non_const**-Funktionsobjekt des Typs `mem_fun_t` oder `mem_fun1_t`.
+Ein- **`const`** oder- **Non_const** Funktions Objekt vom Typ `mem_fun_t` oder `mem_fun1_t` .
 
 ### <a name="example"></a>Beispiel
 
@@ -846,12 +846,12 @@ const_mem_fun1_ref_t<Result, Type, Arg> mem_fun_ref(Result (T::* pMem)(Arg) cons
 
 ### <a name="parameters"></a>Parameter
 
-*pMem* -\
+*pMem*\
 Ein Zeiger auf die Memberfunktion der Klasse `Type`, die in ein Funktionsobjekt konvertiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein konstantenobjekt oder `non_const` Funktions Objekt vom Typ **`mem_fun_ref_t` oder `mem_fun1_ref_t`** .
+Ein- **`const`** oder- `non_const` Funktions Objekt des Typs `mem_fun_ref_t` oder `mem_fun1_ref_t` .
 
 ### <a name="example"></a>Beispiel
 
@@ -951,7 +951,7 @@ Ein unäres Prädikat, das die Negation des modifizierten unären Prädikats ist
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn eine `unary_negate` aus einem unären Prädikat `predicate(x)`erstellt wird, wird `!predicate(x)`zurückgegeben.
+Wenn ein `unary_negate` aus einem unären Prädikat erstellt wird `predicate(x)` , wird zurückgegeben `!predicate(x)` .
 
 ### <a name="example"></a>Beispiel
 
@@ -1014,7 +1014,7 @@ binary_negate<BinaryPredicate> not2(const BinaryPredicate& func);
 
 ### <a name="parameters"></a>Parameter
 
-*Func* -\
+*Func*\
 Das zu negierende binäre Prädikat.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1023,7 +1023,7 @@ Ein binäres Prädikat, das die Negation des modifizierten binären Prädikats i
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn eine `binary_negate` aus einem binären Prädikat `binary_predicate(x, y)`erstellt wird, wird `!binary_predicate(x, y)`zurückgegeben.
+Wenn ein `binary_negate` aus einem binären Prädikat erstellt wird `binary_predicate(x, y)` , wird zurückgegeben `!binary_predicate(x, y)` .
 
 ### <a name="example"></a>Beispiel
 
@@ -1081,7 +1081,7 @@ Resorted vector v1 = ( 26500 19169 18467 6334 6262 6262 41 )
 
 ## <a name="not_fn"></a><a name="not_fn"></a>not_fn
 
-Die `not_fn`-Funktions Vorlage nimmt ein Aufruf bares Objekt an und gibt ein Aufruf bares Objekt zurück. Wenn das zurückgegebene Aufruf Bare Objekt später mit einigen Argumenten aufgerufen wird, übergibt es diese an das ursprüngliche Aufruf Bare Objekt und negiert das Ergebnis logisch. Es behält das Konstante Qualifikations-und wertkategorieverhalten des umschaufenen Aufruf baren Objekts bei. `not_fn` ist in c++ 17 neu und ersetzt die veralteten `std::not1`, `std::not2`, `std::unary_negate`und `std::binary_negate`.
+Die `not_fn` Funktions Vorlage nimmt ein Aufruf bares Objekt an und gibt ein Aufruf bares Objekt zurück. Wenn das zurückgegebene Aufruf Bare Objekt später mit einigen Argumenten aufgerufen wird, übergibt es diese an das ursprüngliche Aufruf Bare Objekt und negiert das Ergebnis logisch. Es behält das Konstante Qualifikations-und wertkategorieverhalten des umschaufenen Aufruf baren Objekts bei. `not_fn`ist neu in c++ 17 und ersetzt die veralteten `std::not1` , `std::not2` , `std::unary_negate` und `std::binary_negate` .
 
 ```cpp
 template <class Callable>
@@ -1090,12 +1090,12 @@ template <class Callable>
 
 ### <a name="parameters"></a>Parameter
 
-*Func* -\
+*Func*\
 Ein Aufruf bares Objekt, das verwendet wird, um den Weiterleitungs Aufruf Wrapper zu erstellen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt einen aufrufswrapper wie `return call_wrapper(std::forward<Callable>(func))`zurück, der auf dieser reinen Ausstellungs Klasse basiert:
+Die Vorlagen Funktion gibt einen aufrufswrapper wie zurück `return call_wrapper(std::forward<Callable>(func))` , basierend auf dieser reinen Ausstellungs Klasse:
 
 ```cpp
 class call_wrapper
@@ -1124,7 +1124,7 @@ private:
 };
 ```
 
-Der explizite Konstruktor für das Aufruf Bare Objekt " *Func* " erfordert den Typ "`std::decay_t<Callable>`", um die Anforderungen von `MoveConstructible`zu erfüllen, und `is_constructible_v<FD, Callable>` muss "true" sein. Er initialisiert das umschaufene Aufruf Bare Objekt `fd` aus `std::forward<Callable>(func)`und löst jede Ausnahme aus, die durch die Konstruktion von `fd`ausgelöst wird.
+Der explizite Konstruktor für das Aufruf Bare Objekt " *Func* " erfordert `std::decay_t<Callable>` den Typ, um die Anforderungen von zu erfüllen `MoveConstructible` , und `is_constructible_v<FD, Callable>` muss "true" sein. Sie initialisiert das umschaufene Aufruf Bare Objekt `fd` aus `std::forward<Callable>(func)` und löst jede Ausnahme aus, die durch die Konstruktion von ausgelöst wird `fd` .
 
 Der Wrapper macht die durch die lvalue-oder rvalue-Verweis Kategorie und die Konstante Qualifizierung unterschieden, wie hier gezeigt:
 
@@ -1135,7 +1135,7 @@ template<class... Args> auto operator()(Args&&... args) && -> decltype(!declval<
 template<class... Args> auto operator()(Args&&... args) const&& -> decltype(!declval<invoke_result_t<FD const(Args...)>>());
 ```
 
-Die ersten beiden sind identisch mit `return !std::invoke(fd, std::forward<Args>(args)...)`. Die zweiten beiden sind identisch mit `return !std::invoke(std::move(fd), std::forward<Args>(args)...)`.
+Die ersten beiden sind identisch mit `return !std::invoke(fd, std::forward<Args>(args)...)` . Die zweiten beiden sind identisch mit `return !std::invoke(std::move(fd), std::forward<Args>(args)...)` .
 
 ### <a name="example"></a>Beispiel
 
@@ -1193,14 +1193,14 @@ pointer_to_binary_function<Arg1, Arg2, Result, Result (*)(Arg1, Arg2)> ptr_fun(R
 
 ### <a name="parameters"></a>Parameter
 
-*pFunc* -\
+*pFunc*\
 Der unäre oder binäre Funktionszeiger, der in eine anwendbare Funktion konvertiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Vorlagen Funktion gibt die unäre Funktion [Pointer_to_unary_function](../standard-library/pointer-to-unary-function-class.md) <`Arg`, **Ergebnis**> (\* `pfunc`) zurück.
+Die erste Vorlagen Funktion gibt die unäre Funktion zurück [Pointer_to_unary_function](../standard-library/pointer-to-unary-function-class.md)  < `Arg` , **Ergebnis**> ( \* `pfunc` ).
 
-Die zweite Vorlagen Funktion gibt die binäre Funktion [pointer_to_binary_function](../standard-library/pointer-to-binary-function-class.md) \<**arg1**, **arg2**, **Result**> (\* `pfunc`) zurück.
+Die zweite Vorlagen Funktion gibt binäre Funktions [pointer_to_binary_function](../standard-library/pointer-to-binary-function-class.md) \<**Arg1**, **Arg2**, **Result**> ( \* `pfunc` ) zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1313,18 +1313,18 @@ template <class FT>
 
 ### <a name="parameters"></a>Parameter
 
-*Ft* -\
+*GRA*\
 Der vom Funktionsobjekt gesteuerte Typ.
 
-*F1* -\
+*1*\
 Das erste Funktionsobjekt.
 
-*F2* -\
+*Drücken*\
 Das zweite Funktionsobjekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Funktion gibt `f1.swap(f2)`zurück.
+Die Funktion gibt `f1.swap(f2)` zurück.
 
 ### <a name="example"></a>Beispiel
 

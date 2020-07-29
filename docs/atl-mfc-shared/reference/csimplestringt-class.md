@@ -36,16 +36,16 @@ helpviewer_keywords:
 - strings [C++], ATL class
 - CSimpleStringT class
 ms.assetid: 15814fcb-5b8f-4425-a97e-3b61fc9b48d8
-ms.openlocfilehash: 76d418c4f063d5787209ea72e7c681013eb37801
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: bbbab04ff311d874fc209d2c46fadda57e79a222
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81747032"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219091"
 ---
 # <a name="csimplestringt-class"></a>CSimpleStringT-Klasse
 
-Diese Klasse `CSimpleStringT` stellt ein Objekt dar.
+Diese Klasse stellt ein- `CSimpleStringT` Objekt dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -57,13 +57,13 @@ class CSimpleStringT
 ### <a name="parameters"></a>Parameter
 
 *BaseType*<br/>
-Der Zeichentyp der Zeichenfolgenklasse. Dabei kann es sich um eine der folgenden Methoden handeln:
+Der Zeichentyp der Zeichen folgen Klasse. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- **char** (für ANSI-Zeichenfolgen).
+- **`char`**(für ANSI-Zeichen folgen).
 
-- **wchar_t** (für Unicode-Zeichenfolgen).
+- **`wchar_t`**(für Unicode-Zeichen folgen).
 
-- TCHAR (für ANSI- und Unicode-Zeichenfolgen).
+- Tchar (für ANSI-und Unicode-Zeichen folgen).
 
 ## <a name="members"></a>Member
 
@@ -71,65 +71,65 @@ Der Zeichentyp der Zeichenfolgenklasse. Dabei kann es sich um eine der folgenden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleStringT::PCXSTR](#pcxstr)|Ein Zeiger auf eine konstante Zeichenfolge.|
-|[CSimpleStringT::PXSTR](#pxstr)|Ein Zeiger auf eine Zeichenfolge.|
+|[CSimpleStringT::P cxstr](#pcxstr)|Ein Zeiger auf eine Konstantenzeichenfolge.|
+|[CSimpleStringT::P xstr](#pxstr)|Ein Zeiger auf eine Zeichenfolge.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleStringT::CSimpleStringT](#ctor)|Erstellt `CSimpleStringT` Objekte auf verschiedene Weise.|
-|[CSimpleStringT::'csimplestringt](#dtor)|Destruktor.|
+|[CSimpleStringT::CSimpleStringT](#ctor)|Erstellt- `CSimpleStringT` Objekte auf verschiedene Weise.|
+|[CSimpleStringT:: ~ CSimpleStringT](#dtor)|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleStringT::Anfügen](#append)|Fügt ein `CSimpleStringT` Objekt an `CSimpleStringT` ein vorhandenes Objekt an.|
-|[CSimpleStringT::AppendChar](#appendchar)|Fügt ein Zeichen an `CSimpleStringT` ein vorhandenes Objekt an.|
-|[CSimpleStringT::CopyChars](#copychars)|Kopiert ein Zeichen oder Zeichen in eine andere Zeichenfolge.|
-|[CSimpleStringT::CopyCharsÜberlappend](#copycharsoverlapped)|Kopiert ein Zeichen oder Zeichen in eine andere Zeichenfolge, in der sich die Puffer überlappen.|
-|[CSimpleStringT::Leer](#empty)|Erzwingt, dass eine Zeichenfolge eine Länge von Null hat.|
-|[CSimpleStringT::FreeExtra](#freeextra)|Gibt zusätzlichen Speicher frei, der zuvor vom Zeichenfolgenobjekt zugewiesen wurde.|
-|[CSimpleStringT::GetAllocLength](#getalloclength)|Ruft die zugewiesene `CSimpleStringT` Länge eines Objekts ab.|
-|[CSimpleStringT::Getat](#getat)|Gibt das Zeichen an einer bestimmten Position zurück.|
-|[CSimpleStringT::GetBuffer](#getbuffer)|Gibt einen Zeiger auf die `CSimpleStringT`Zeichen in einer zurück.|
-|[CSimpleStringT::GetBufferSetLength](#getbuffersetlength)|Gibt einen Zeiger auf die `CSimpleStringT`Zeichen in einem zurück, der auf die angegebene Länge abgeschnitten wird.|
-|[CSimpleStringT::GetLength](#getlength)|Gibt die Anzahl der `CSimpleStringT` Zeichen in einem Objekt zurück.|
-|[CSimpleStringT::GetManager](#getmanager)|Ruft den Speicher-Manager `CSimpleStringT` des Objekts ab.|
-|[CSimpleStringT::GetString](#getstring)|Ruft die Zeichenfolge ab|
-|[CsimpleStringt::IsEmpty](#isempty)|Testet, `CSimpleStringT` ob ein Objekt keine Zeichen enthält.|
-|[CSimpleStringT::LockBuffer](#lockbuffer)|Deaktiviert die Verweiszählung und schützt die Zeichenfolge im Puffer.|
-|[CSimpleStringT::Pzuteilung](#preallocate)|Weist eine bestimmte Speichermenge für den Zeichenpuffer zu.|
-|[CSimpleStringT::ReleaseBuffer](#releasebuffer)|Gibt die Steuerung des `GetBuffer`Puffers frei, der von zurückgegeben wird.|
-|[CSimpleStringT::ReleaseBufferSetLength](#releasebuffersetlength)|Gibt die Steuerung des `GetBuffer`Puffers frei, der von zurückgegeben wird.|
-|[CSimpleStringT::Setat](#setat)|Legt ein Zeichen an einer bestimmten Position fest.|
-|[CSimpleStringT::SetManager](#setmanager)|Legt den Speicher-Manager eines `CSimpleStringT` Objekts fest.|
-|[CSimpleStringT::SetString](#setstring)|Legt die Zeichenfolge `CSimpleStringT` eines Objekts fest.|
-|[CSimpleStringT::StringLength](#stringlength)|Gibt die Anzahl der Zeichen in der angegebenen Zeichenfolge zurück.|
-|[CSimpleStringT::Truncate](#truncate)|Kürt die Zeichenfolge auf eine angegebene Länge.|
-|[CSimpleStringT::UnlockBuffer](#unlockbuffer)|Aktiviert die Referenzzählung und gibt die Zeichenfolge im Puffer frei.|
+|[CSimpleStringT:: Append](#append)|Fügt ein- `CSimpleStringT` Objekt an ein vorhandenes- `CSimpleStringT` Objekt an.|
+|[CSimpleStringT:: AppendChar](#appendchar)|Fügt ein Zeichen an ein vorhandenes- `CSimpleStringT` Objekt an.|
+|[CSimpleStringT:: copychars](#copychars)|Kopiert ein Zeichen oder Zeichen in eine andere Zeichenfolge.|
+|[CSimpleStringT:: copycharsoverlgetauscht](#copycharsoverlapped)|Kopiert ein Zeichen oder Zeichen in eine andere Zeichenfolge, in der sich die Puffer überlappen.|
+|[CSimpleStringT:: Empty](#empty)|Erzwingt eine Zeichenfolge mit einer Länge von 0 (null).|
+|[CSimpleStringT:: freextra](#freeextra)|Gibt zusätzlichen Arbeitsspeicher frei, der zuvor durch das Zeichen folgen Objekt belegt wurde.|
+|[CSimpleStringT:: getalloclength](#getalloclength)|Ruft die zugeordnete Länge eines- `CSimpleStringT` Objekts ab.|
+|[CSimpleStringT:: GetAt](#getat)|Gibt das Zeichen an der angegebenen Position zurück.|
+|[CSimpleStringT:: GetBuffer](#getbuffer)|Gibt einen Zeiger auf die Zeichen in einer zurück `CSimpleStringT` .|
+|[CSimpleStringT:: getbuffersetlength](#getbuffersetlength)|Gibt einen Zeiger auf die Zeichen in einem-Wert zurück `CSimpleStringT` , der auf die angegebene Länge abgeschnitten wird.|
+|[CSimpleStringT:: GetLength](#getlength)|Gibt die Anzahl von Zeichen in einem- `CSimpleStringT` Objekt zurück.|
+|[CSimpleStringT:: GetManager](#getmanager)|Ruft den Speicher-Manager des- `CSimpleStringT` Objekts ab.|
+|[CSimpleStringT:: GetString](#getstring)|Ruft die Zeichenfolge ab.|
+|[CSimpleStringT:: IsEmpty](#isempty)|Testet, ob ein- `CSimpleStringT` Objekt keine Zeichen enthält.|
+|[CSimpleStringT:: LockBuffer](#lockbuffer)|Deaktiviert die Verweis Zählung und schützt die Zeichenfolge im Puffer.|
+|[CSimpleStringT::P neu zuordnen](#preallocate)|Ordnet eine bestimmte Arbeitsspeicher Menge für den Zeichen Puffer zu.|
+|[CSimpleStringT:: ReleaseBuffer](#releasebuffer)|Gibt die Steuerung des von zurückgegebenen Puffers frei `GetBuffer` .|
+|[CSimpleStringT:: ReleaseBufferSetLength](#releasebuffersetlength)|Gibt die Steuerung des von zurückgegebenen Puffers frei `GetBuffer` .|
+|[CSimpleStringT:: *](#setat)|Legt ein Zeichen an der angegebenen Position fest.|
+|[CSimpleStringT:: setmanager](#setmanager)|Legt den Speicher-Manager eines- `CSimpleStringT` Objekts fest.|
+|[CSimpleStringT:: SetString](#setstring)|Legt die Zeichenfolge eines- `CSimpleStringT` Objekts fest.|
+|[CSimpleStringT:: StringLength](#stringlength)|Gibt die Anzahl der Zeichen in der angegebenen Zeichenfolge zurück.|
+|[CSimpleStringT:: TRUNCATE](#truncate)|Verkürzt die Zeichenfolge auf eine angegebene Länge.|
+|[CSimpleStringT:: UnlockBuffer](#unlockbuffer)|Aktiviert die Verweis Zählung und gibt die Zeichenfolge im Puffer frei.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleStringT::operator PCXSTR](#operator_pcxstr)|Greift direkt auf Zeichen `CSimpleStringT` zu, die in einem Objekt als Zeichenfolge im C-Stil gespeichert sind.|
-|[CSimpleStringT::operator\[\]](#operator_at)|Gibt das Zeichen an einer bestimmten `GetAt`Position zurück – Operatorerersetzung für .|
-|[CSimpleStringT::operator +=](#operator_add_eq)|Verkettet eine neue Zeichenfolge am Ende einer vorhandenen Zeichenfolge.|
-|[CSimpleStringT::operator =](#operator_eq)|Weist einem `CSimpleStringT` Objekt einen neuen Wert zu.|
+|[CSimpleStringT:: Operator PCXSTR](#operator_pcxstr)|Greift direkt auf in einem- `CSimpleStringT` Objekt gespeicherte Zeichen als Zeichenfolge im C-Format zu.|
+|[CSimpleStringT::operator\[\]](#operator_at)|Gibt das Zeichen an der angegebenen Position – Operator Ersetzung für zurück `GetAt` .|
+|[CSimpleStringT:: Operator + =](#operator_add_eq)|Verkettet eine neue Zeichenfolge am Ende einer vorhandenen Zeichenfolge.|
+|[CSimpleStringT:: Operator =](#operator_eq)|Weist einem-Objekt einen neuen Wert zu `CSimpleStringT` .|
 
 ### <a name="remarks"></a>Bemerkungen
 
-`CSimpleStringT`ist die Basisklasse für die verschiedenen Zeichenfolgenklassen, die von Visual C++ unterstützt werden. Es bietet minimale Unterstützung für die Speicherverwaltung des Zeichenfolgenobjekts und grundlegende Puffermanipulation. Weitere erweiterte Zeichenfolgenobjekte finden Sie unter [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md).
+`CSimpleStringT`ist die Basisklasse für die verschiedenen Zeichen folgen Klassen, die von Visual C++ unterstützt werden. Sie bietet minimale Unterstützung für die Speicherverwaltung des Zeichen folgen Objekts und der grundlegenden Puffer Bearbeitung. Erweiterte Zeichen folgen Objekte finden Sie unter [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md).
 
 ### <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlsimpstr.h
+**Header:** atlsimpstr. h
 
-## <a name="csimplestringtappend"></a><a name="append"></a>CSimpleStringT::Anfügen
+## <a name="csimplestringtappend"></a><a name="append"></a>CSimpleStringT:: Append
 
-Fügt ein `CSimpleStringT` Objekt an `CSimpleStringT` ein vorhandenes Objekt an.
+Fügt ein- `CSimpleStringT` Objekt an ein vorhandenes- `CSimpleStringT` Objekt an.
 
 ### <a name="syntax"></a>Syntax
 
@@ -141,18 +141,18 @@ void Append(PCXSTR pszSrc);
 
 #### <a name="parameters"></a>Parameter
 
-*strSrc*<br/>
-Das `CSimpleStringT` anzuhängende Objekt.
+*"Straume"*<br/>
+Das `CSimpleStringT` anzufügende Objekt.
 
 *pszSrc*<br/>
-Ein Zeiger auf eine Zeichenfolge, die die anzuhängenden Zeichen enthält.
+Ein Zeiger auf eine Zeichenfolge, die die anzufügenden Zeichen enthält.
 
-*nLänge*<br/>
+*nlength*<br/>
 Die Anzahl der anzufügenden Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode `CSimpleStringT` auf, `CSimpleStringT` um ein vorhandenes Objekt an ein anderes Objekt anzuhängen.
+Rufen Sie diese Methode auf, um ein vorhandenes `CSimpleStringT` Objekt an ein anderes Objekt anzufügen `CSimpleStringT` .
 
 ### <a name="example"></a>Beispiel
 
@@ -166,9 +166,9 @@ str1.Append(str2);
 ASSERT(_tcscmp(str1, _T("Soccer is an elegant game")) == 0);
 ```
 
-## <a name="csimplestringtappendchar"></a><a name="appendchar"></a>CSimpleStringT::AppendChar
+## <a name="csimplestringtappendchar"></a><a name="appendchar"></a>CSimpleStringT:: AppendChar
 
-Fügt ein Zeichen an `CSimpleStringT` ein vorhandenes Objekt an.
+Fügt ein Zeichen an ein vorhandenes- `CSimpleStringT` Objekt an.
 
 ### <a name="syntax"></a>Syntax
 
@@ -178,16 +178,16 @@ void AppendChar(XCHAR ch);
 
 #### <a name="parameters"></a>Parameter
 
-*Ch*<br/>
-Das anzuhängende Zeichen
+*ch*<br/>
+Das anzufügende Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um das `CSimpleStringT` angegebene Zeichen an das Ende eines vorhandenen Objekts anzuhängen.
+Rufen Sie diese Funktion auf, um das angegebene Zeichen an das Ende eines vorhandenen `CSimpleStringT` Objekts anzufügen.
 
-## <a name="csimplestringtcopychars"></a><a name="copychars"></a>CSimpleStringT::CopyChars
+## <a name="csimplestringtcopychars"></a><a name="copychars"></a>CSimpleStringT:: copychars
 
-Kopiert ein Zeichen oder `CSimpleStringT` Zeichen in ein Objekt.
+Kopiert ein Zeichen oder Zeichen in ein- `CSimpleStringT` Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -200,18 +200,18 @@ static void CopyChars(
 
 #### <a name="parameters"></a>Parameter
 
-*pchDest*<br/>
+*pchdest*<br/>
 Ein Zeiger auf eine Zeichenfolge.
 
-*pchSrc*<br/>
+*pchsrc*<br/>
 Ein Zeiger auf eine Zeichenfolge, die die zu kopierenden Zeichen enthält.
 
-*nChars*<br/>
-Die Anzahl der zu kopierenden *pchSrc-Zeichen.*
+*nchars*<br/>
+Die Anzahl der zu kopierenden *pchsrc* -Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um Zeichen aus *pchSrc* in die *pchDest-Zeichenfolge* zu kopieren.
+Diese Methode wird aufgerufen, um Zeichen aus *pchsrc* in die *pchdest* -Zeichenfolge zu kopieren.
 
 ### <a name="example"></a>Beispiel
 
@@ -225,9 +225,9 @@ str.CopyChars(str.GetBuffer(), pszSrc, 12);
 _tprintf_s(_T("%s\n"), str);
 ```
 
-## <a name="csimplestringtcopycharsoverlapped"></a><a name="copycharsoverlapped"></a>CSimpleStringT::CopyCharsÜberlappend
+## <a name="csimplestringtcopycharsoverlapped"></a><a name="copycharsoverlapped"></a>CSimpleStringT:: copycharsoverlgetauscht
 
-Kopiert ein Zeichen oder `CSimpleStringT` Zeichen in ein Objekt.
+Kopiert ein Zeichen oder Zeichen in ein- `CSimpleStringT` Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -240,22 +240,22 @@ static void CopyCharsOverlapped(
 
 #### <a name="parameters"></a>Parameter
 
-*pchDest*<br/>
+*pchdest*<br/>
 Ein Zeiger auf eine Zeichenfolge.
 
-*pchSrc*<br/>
+*pchsrc*<br/>
 Ein Zeiger auf eine Zeichenfolge, die die zu kopierenden Zeichen enthält.
 
-*nChars*<br/>
-Die Anzahl der zu kopierenden *pchSrc-Zeichen.*
+*nchars*<br/>
+Die Anzahl der zu kopierenden *pchsrc* -Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um Zeichen aus *pchSrc* in die *pchDest-Zeichenfolge* zu kopieren. Im `CopyChars` `CopyCharsOverlapped` Gegensatz zu bietet eine sichere Methode zum Kopieren aus Zeichenpuffern, die möglicherweise überlappen.
+Diese Methode wird aufgerufen, um Zeichen aus *pchsrc* in die *pchdest* -Zeichenfolge zu kopieren. Im Gegensatz zu `CopyChars` `CopyCharsOverlapped` stellt eine sichere Methode zum Kopieren aus Zeichen Puffern bereit, die möglicherweise überlappen.
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [CSimpleStringT::CopyChars](#copychars), `CSimpleStringT::SetString` oder den Quellcode für (befindet sich in atlsimpstr.h).
+Weitere Informationen finden Sie im Beispiel für [CSimpleStringT:: copychars](#copychars)oder den Quellcode für `CSimpleStringT::SetString` (in atlsimpstr. h).
 
 ## <a name="csimplestringtcsimplestringt"></a><a name="ctor"></a>CSimpleStringT::CSimpleStringT
 
@@ -272,28 +272,28 @@ explicit CSimpleStringT(IAtlStringMgr* pStringMgr) throw();
 
 #### <a name="parameters"></a>Parameter
 
-*strSrc*<br/>
-Ein `CSimpleStringT` vorhandenes Objekt, `CSimpleStringT` das in dieses Objekt kopiert werden soll.
+*"Straume"*<br/>
+Ein vorhandenes- `CSimpleStringT` Objekt, das in dieses-Objekt kopiert werden soll `CSimpleStringT` .
 
-*pchSrc*<br/>
-Ein Zeiger auf ein Array von Zeichen der Länge *nLength*, nicht null beendet.
+*pchsrc*<br/>
+Ein Zeiger auf ein Array von Zeichen der Länge *nlength*, nicht Null beendet.
 
 *pszSrc*<br/>
-Eine null-terminierte Zeichenfolge, die `CSimpleStringT` in dieses Objekt kopiert werden soll.
+Eine mit NULL endende Zeichenfolge, die in dieses-Objekt kopiert werden soll `CSimpleStringT` .
 
-*nLänge*<br/>
-Eine Anzahl der Zeichen `pch`in .
+*nlength*<br/>
+Die Anzahl der Zeichen in `pch` .
 
-*pStringMgr*<br/>
-Ein Zeiger auf den Speicher-Manager des `CSimpleStringT` Objekts. Weitere Informationen `IAtlStringMgr` zu und `CSimpleStringT`Speicherverwaltung für finden Sie unter [Speicherverwaltung und CStringT](../memory-management-with-cstringt.md).
+*pstringmgr*<br/>
+Ein Zeiger auf den Speicher-Manager des- `CSimpleStringT` Objekts. Weitere Informationen zu `IAtlStringMgr` und zur Speicherverwaltung für `CSimpleStringT` finden Sie unter [Speicherverwaltung und CStringT](../memory-management-with-cstringt.md).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Erstellt ein neues `CSimpleStringT`-Objekt. Da die Konstruktoren die Eingabedaten in neuen zugewiesenen Speicher kopieren, können Speicherausnahmen auftreten.
+Erstellt ein neues `CSimpleStringT`-Objekt. Da die Konstruktoren die Eingabedaten in neuen zugeordneten Speicher kopieren, können Arbeitsspeicher Ausnahmen entstehen.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird `CSimpleStringT::CSimpleStringT` die Verwendung von atL **typedef** `CSimpleString`veranschaulicht. `CSimpleString`ist eine häufig verwendete Spezialisierung `CSimpleStringT`der Klassenvorlage .
+Im folgenden Beispiel wird die Verwendung von `CSimpleStringT::CSimpleStringT` mithilfe von ATL veranschaulicht **`typedef`** `CSimpleString` . `CSimpleString`ist eine häufig verwendete Spezialisierung der Klassen Vorlage `CSimpleStringT` .
 
 ```cpp
 CSimpleString s1(pMgr);
@@ -310,9 +310,9 @@ CSimpleString s5(_T("xxxxxx"), 6, pMgr);
 // s5 = "xxxxxx"
 ```
 
-## <a name="csimplestringtempty"></a><a name="empty"></a>CSimpleStringT::Leer
+## <a name="csimplestringtempty"></a><a name="empty"></a>CSimpleStringT:: Empty
 
-Macht `CSimpleStringT` dieses Objekt zu einer leeren Zeichenfolge und gibt ggf. Speicher frei.
+Macht dieses `CSimpleStringT` Objekt zu einer leeren Zeichenfolge und gibt Arbeitsspeicher entsprechend frei.
 
 ### <a name="syntax"></a>Syntax
 
@@ -322,7 +322,7 @@ void Empty() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [Strings: CString Exception Cleanup](../cstring-exception-cleanup.md).
+Weitere Informationen finden Sie unter [String: CString Exception Cleanup](../cstring-exception-cleanup.md).
 
 ### <a name="example"></a>Beispiel
 
@@ -333,9 +333,9 @@ CSimpleString s(pMgr);
 ASSERT(s.IsEmpty());
 ```
 
-## <a name="csimplestringtfreeextra"></a><a name="freeextra"></a>CSimpleStringT::FreeExtra
+## <a name="csimplestringtfreeextra"></a><a name="freeextra"></a>CSimpleStringT:: freextra
 
-Gibt zusätzlichen Speicher frei, der zuvor von der Zeichenfolge reserviert, aber nicht mehr benötigt wurde.
+Gibt zusätzlichen Arbeitsspeicher frei, der zuvor von der Zeichenfolge zugeordnet, aber nicht mehr benötigt wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -345,7 +345,7 @@ void FreeExtra();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dadurch sollte der vom Zeichenfolgenobjekt verbrauchte Speicheraufwand reduziert werden. Die Methode ordnet den Puffer auf die exakte Länge um, die von [GetLength](#getlength)zurückgegeben wird.
+Dadurch sollte der Arbeitsspeicher Aufwand reduziert werden, der vom Zeichen folgen Objekt beansprucht wird. Die-Methode ordnet den Puffer wieder der exakten Länge zu, die von [GetLength](#getlength)zurückgegeben wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -376,7 +376,7 @@ _tprintf_s(_T("Alloc length is %d, String length is %d\n"),
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Ausgabe aus diesem Beispiel ist wie folgt:
+Die Ausgabe dieses Beispiels lautet wie folgt:
 
 ```Output
 Alloc length is 1031, String length is 1024
@@ -384,9 +384,9 @@ Alloc length is 1031, String length is 15
 Alloc length is 15, String length is 15
 ```
 
-## <a name="csimplestringtgetalloclength"></a><a name="getalloclength"></a>CSimpleStringT::GetAllocLength
+## <a name="csimplestringtgetalloclength"></a><a name="getalloclength"></a>CSimpleStringT:: getalloclength
 
-Ruft die zugewiesene `CSimpleStringT` Länge eines Objekts ab.
+Ruft die zugeordnete Länge eines- `CSimpleStringT` Objekts ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -396,15 +396,15 @@ int GetAllocLength() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Zeichen, die für dieses Objekt reserviert sind.
+Die Anzahl der Zeichen, die diesem-Objekt zugeordnet sind.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um `CSimpleStringT` die Anzahl der Zeichen zu bestimmen, die für dieses Objekt zugewiesen wurden. Ein Beispiel für das Aufrufen dieser Funktion finden Sie unter [FreeExtra.](#freeextra)
+Mit dieser Methode können Sie die Anzahl der Zeichen bestimmen, die diesem Objekt zugeordnet sind `CSimpleStringT` . Ein Beispiel für den Aufruf dieser Funktion finden Sie unter " [freextra](#freeextra) ".
 
-## <a name="csimplestringtgetat"></a><a name="getat"></a>CSimpleStringT::Getat
+## <a name="csimplestringtgetat"></a><a name="getat"></a>CSimpleStringT:: GetAt
 
-Gibt ein Zeichen `CSimpleStringT` aus einem Objekt zurück.
+Gibt ein Zeichen aus einem- `CSimpleStringT` Objekt zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -414,29 +414,29 @@ XCHAR GetAt(int iChar) const;
 
 #### <a name="parameters"></a>Parameter
 
-*iChar*<br/>
-Nullbasierter Index des Zeichens im `CSimpleStringT` Objekt. Der *iChar-Parameter* muss größer oder gleich 0 und kleiner als der von [GetLength](#getlength)zurückgegebene Wert sein. Andernfalls `GetAt` wird eine Ausnahme generiert.
+*IChar*<br/>
+NULL basierter Index des Zeichens im- `CSimpleStringT` Objekt. Der- *IChar* -Parameter muss größer oder gleich 0 und kleiner als der von [GetLength](#getlength)zurückgegebene Wert sein. Andernfalls `GetAt` wird von eine Ausnahme generiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine, `XCHAR` die das Zeichen an der angegebenen Position in der Zeichenfolge enthält.
+Ein `XCHAR` , das das Zeichen an der angegebenen Position in der Zeichenfolge enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um das von *iChar*angegebene Zeichen zurückzugeben. Der überladene Subscript -**[]**) `GetAt`Operator ist ein praktischer Alias für . Der NULL-Terminator ist adressierbar, ohne `GetAt`eine Ausnahme mithilfe von zu generieren. Es wird jedoch nicht `GetLength`von gezählt, und der zurückgegebene Wert ist 0.
+Mit dieser Methode wird das von *IChar*angegebene Zeichen zurückgegeben. Der überladene Index Operator (**[]**) ist ein bequemer Alias für `GetAt` . Das NULL-Terminator ist adressierbar, ohne dass eine Ausnahme mithilfe von erzeugt wird `GetAt` . Sie wird jedoch nicht von gezählt `GetLength` , und der zurückgegebene Wert ist 0.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird `CSimpleStringT::GetAt`veranschaulicht, wie verwendet wird.
+Im folgenden Beispiel wird die Verwendung von veranschaulicht `CSimpleStringT::GetAt` .
 
 ```cpp
 CSimpleString s(_T("abcdef"), pMgr);
 ASSERT(s.GetAt(2) == _T('c'));
 ```
 
-## <a name="csimplestringtgetbuffer"></a><a name="getbuffer"></a>CSimpleStringT::GetBuffer
+## <a name="csimplestringtgetbuffer"></a><a name="getbuffer"></a>CSimpleStringT:: GetBuffer
 
-Gibt einen Zeiger auf den internen `CSimpleStringT` Zeichenpuffer für das Objekt zurück.
+Gibt einen Zeiger auf den internen Zeichen Puffer für das- `CSimpleStringT` Objekt zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -447,28 +447,28 @@ PXSTR GetBuffer();
 
 #### <a name="parameters"></a>Parameter
 
-*nMinBufferLength*<br/>
-Die minimale Anzahl von Zeichen, die der Zeichenpuffer enthalten kann. Dieser Wert enthält keinen Speicherplatz für einen Nullabschluss.
+*nminbufferlength*<br/>
+Die Mindestanzahl von Zeichen, die der Zeichen Puffer enthalten kann. Dieser Wert enthält keinen Platz für ein NULL-Terminator.
 
-Wenn *nMinBufferLength* größer als die Länge `GetBuffer` des aktuellen Puffers ist, zerstört der aktuelle Puffer, ersetzt ihn durch einen Puffer der angeforderten Größe und setzt die Anzahl der Objektverweise auf Null zurück. Wenn Sie zuvor [LockBuffer](#lockbuffer) für diesen Puffer aufgerufen haben, gehen Sie von der Puffersperre aus.
+Wenn *nminbufferlength* größer ist als die Länge des aktuellen Puffers, `GetBuffer` zerstört den aktuellen Puffer, ersetzt ihn durch einen Puffer der angeforderten Größe und setzt den Objekt Verweis Zähler auf 0 (null) zurück. Wenn Sie zuvor [Lock Buffer](#lockbuffer) für diesen Puffer aufgerufen haben, verlieren Sie die Puffer Sperre.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `PXSTR` Zeiger auf den (null-terminierten) Zeichenpuffer des Objekts.
+Ein `PXSTR` Zeiger auf den (null-terminierten) Zeichen Puffer des Objekts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, `CSimpleStringT` um den Pufferinhalt des Objekts zurückzugeben. Die `PXSTR` zurückgegebene ist keine Konstante und `CSimpleStringT` ermöglicht daher eine direkte Änderung der Inhalte.
+Ruft diese Methode auf, um den Pufferinhalt des-Objekts zurückzugeben `CSimpleStringT` . Der zurückgegebene `PXSTR` ist keine Konstante und ermöglicht daher die direkte `CSimpleStringT` Inhalts Änderung.
 
-Wenn Sie den zurückgegebenen `GetBuffer` Zeiger verwenden, um den Zeichenfolgeninhalt zu `CSimpleStringT` ändern, müssen Sie [ReleaseBuffer](#releasebuffer) aufrufen, bevor Sie andere Membermethoden verwenden.
+Wenn Sie den Zeiger verwenden, der von zurückgegeben `GetBuffer` wird, um den Inhalt der Zeichenfolge zu ändern, müssen Sie [ReleaseBuffer](#releasebuffer) vor der Verwendung anderer Element Methoden aufzurufen `CSimpleStringT` .
 
-Die von `GetBuffer` ihr zurückgegebene Adresse ist `ReleaseBuffer` nach `CSimpleStringT` dem Aufruf `CSimpleStringT` möglicherweise ungültig, da zusätzliche Vorgänge dazu führen können, dass der Puffer umverteilt wird. Der Puffer wird nicht umverteilt, wenn Sie `CSimpleStringT`die Länge der nicht ändern.
+Die von zurückgegebene Adresse `GetBuffer` ist nach dem-Rückruf möglicherweise nicht gültig, `ReleaseBuffer` da zusätzliche `CSimpleStringT` Vorgänge dazu führen können, dass der `CSimpleStringT` Puffer neu zugewiesen wird. Wenn Sie die Länge von nicht ändern, wird der Puffer nicht neu zugeordnet `CSimpleStringT` .
 
-Der Pufferspeicher wird automatisch `CSimpleStringT` freigegeben, wenn das Objekt zerstört wird.
+Der Puffer Arbeitsspeicher wird automatisch freigegeben, wenn das `CSimpleStringT` Objekt zerstört wird.
 
-Wenn Sie die Zeichenfolgenlänge selbst nachverfolgen, sollten Sie das beendende Nullzeichen nicht anhängen. Sie müssen jedoch die letzte Zeichenfolgenlänge angeben, wenn Sie den Puffer mit `ReleaseBuffer`freigeben. Wenn Sie ein beendendes NULL-Zeichen anhängen, sollten Sie -1 (Standard) für die Länge übergeben. `ReleaseBuffer`bestimmt dann die Pufferlänge.
+Wenn Sie die Zeichen folgen Länge selbst nachverfolgen, sollten Sie das abschließende Null-Zeichen nicht anfügen. Sie müssen jedoch die endgültige Zeichen folgen Länge angeben, wenn Sie den Puffer mit freigeben `ReleaseBuffer` . Wenn Sie ein abschließendes NULL-Zeichen anfügen, sollten Sie-1 (Standard) für die Länge übergeben. `ReleaseBuffer`bestimmt dann die Pufferlänge.
 
-Wenn nicht genügend Arbeitsspeicher `GetBuffer` vorhanden ist, um die Anforderung zu erfüllen, löst diese Methode eine CMemoryException* aus.
+Wenn nicht genügend Arbeitsspeicher vorhanden ist, um die Anforderung zu erfüllen `GetBuffer` , löst diese Methode eine cmemoryexception * aus.
 
 ### <a name="example"></a>Beispiel
 
@@ -483,9 +483,9 @@ ASSERT(_tcscmp(s, _T("Hello")) == 0);
 s.ReleaseBuffer();
 ```
 
-## <a name="csimplestringtgetbuffersetlength"></a><a name="getbuffersetlength"></a>CSimpleStringT::GetBufferSetLength
+## <a name="csimplestringtgetbuffersetlength"></a><a name="getbuffersetlength"></a>CSimpleStringT:: getbuffersetlength
 
-Gibt einen Zeiger auf den internen `CSimpleStringT` Zeichenpuffer für das Objekt zurück, der bei Bedarf abgeschnitten oder vergrößert wird, um genau der in *nLength*angegebenen Länge zu entsprechen.
+Gibt einen Zeiger auf den internen Zeichen Puffer für das- `CSimpleStringT` Objekt zurück, wobei seine Länge bei Bedarf abgeschnitten oder vergrößert wird, um genau mit der in *nlength*angegebenen Länge übereinzustimmen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -495,32 +495,32 @@ PXSTR GetBufferSetLength(int nLength);
 
 #### <a name="parameters"></a>Parameter
 
-*nLänge*<br/>
-Die genaue Größe `CSimpleStringT` des Zeichenpuffers in Zeichen.
+*nlength*<br/>
+Die genaue Größe des `CSimpleStringT` Zeichen Puffers in Zeichen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `PXSTR` Zeiger auf den (null-terminierten) Zeichenpuffer des Objekts.
+Ein `PXSTR` Zeiger auf den (null-terminierten) Zeichen Puffer des Objekts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um eine `CSimpleStringT` angegebene Länge des internen Puffers des Objekts abzurufen. Der `PXSTR` zurückgegebene Zeiger ist nicht **const** `CSimpleStringT` und ermöglicht somit eine direkte Änderung des Inhalts.
+Rufen Sie diese Methode auf, um eine angegebene Länge des internen Puffers des- `CSimpleStringT` Objekts abzurufen. Der zurückgegebene `PXSTR` Zeiger ist nicht **`const`** und ermöglicht somit eine direkte `CSimpleStringT` Inhalts Änderung.
 
-Wenn Sie den von [GetBufferSetLength](#getbuffersetlength) zurückgegebenen Zeiger verwenden, um den Zeichenfolgeninhalt zu ändern, rufen Sie den `ReleaseBuffer` internen Status auf, `CsimpleStringT` bevor Sie andere `CSimpleStringT` Methoden verwenden.
+Wenn Sie den von [getbuffersetlength](#getbuffersetlength) zurückgegebenen Zeiger verwenden, um den Inhalt der Zeichenfolge zu ändern, müssen Sie aufrufen, `ReleaseBuffer` um den internen Zustand von zu aktualisieren, `CsimpleStringT` bevor Sie eine andere `CSimpleStringT` Methode verwenden.
 
-Die von `GetBufferSetLength` ihr zurückgegebene Adresse ist `ReleaseBuffer` nach `CSimpleStringT` dem Aufruf `CSimpleStringT` möglicherweise ungültig, da zusätzliche Vorgänge dazu führen können, dass der Puffer umverteilt wird. Der Puffer wird nicht neu zugewiesen, wenn `CSimpleStringT`Sie die Länge der nicht ändern.
+Die von zurückgegebene Adresse `GetBufferSetLength` ist nach dem-Rückruf möglicherweise nicht gültig, `ReleaseBuffer` da zusätzliche `CSimpleStringT` Vorgänge dazu führen können, dass der `CSimpleStringT` Puffer neu zugewiesen wird. Der Puffer wird nicht neu zugewiesen, wenn Sie die Länge von nicht ändern `CSimpleStringT` .
 
-Der Pufferspeicher wird automatisch `CSimpleStringT` freigegeben, wenn das Objekt zerstört wird.
+Der Puffer Arbeitsspeicher wird automatisch freigegeben, wenn das `CSimpleStringT` Objekt zerstört wird.
 
-Wenn Sie die Zeichenfolgenlänge selbst nachverfolgen, fügen Sie das beendende Nullzeichen nicht an. Sie müssen die letzte Zeichenfolgenlänge angeben, `ReleaseBuffer`wenn Sie den Puffer mithilfe von freigeben. Wenn Sie `ReleaseBuffer`beim Aufrufen ein beendendes NULL-Zeichen anhängen, übergeben Sie `ReleaseBuffer`-1 `ReleaseBuffer` (Standardeinstellung) für die Länge an , und führen sie auf dem Puffer aus, `strlen` um seine Länge zu bestimmen.
+Wenn Sie die Zeichen folgen Länge selbst nachverfolgen, fügen Sie das abschließende Null-Zeichen nicht an. Sie müssen die endgültige Zeichen folgen Länge angeben, wenn Sie den Puffer mit freigeben `ReleaseBuffer` . Wenn Sie beim-Befehl ein abschließendes NULL-Zeichen anfügen, `ReleaseBuffer` übergeben Sie-1 (Standard) für die Länge an `ReleaseBuffer` und `ReleaseBuffer` führt einen für `strlen` den Puffer aus, um seine Länge zu bestimmen.
 
-Weitere Informationen zur Referenzzählung finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verweis Zählung finden Sie in den folgenden Artikeln:
 
-- [Verwalten der Objektlebensdauer durch Referenzzählung](/windows/win32/com/managing-object-lifetimes-through-reference-counting) im Windows SDK.
+- [Verwalten von Objekt Lebensdauern durch Verweis Zählung](/windows/win32/com/managing-object-lifetimes-through-reference-counting) in der Windows SDK.
 
-- [Implementieren der Referenzzählung](/windows/win32/com/implementing-reference-counting) im Windows SDK.
+- [Implementieren der Verweis Zählung](/windows/win32/com/implementing-reference-counting) in der Windows SDK.
 
-- Regeln für die [Verwaltung von Referenzanzahlen](/windows/win32/com/rules-for-managing-reference-counts) im Windows SDK.
+- [Regeln zum Verwalten der Verweis Anzahl](/windows/win32/com/rules-for-managing-reference-counts) in der Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
@@ -540,9 +540,9 @@ str += _T(" soccer is best!");
 ASSERT(_tcscmp(str, _T("Cup soccer is best!")) == 0);
 ```
 
-## <a name="csimplestringtgetlength"></a><a name="getlength"></a>CSimpleStringT::GetLength
+## <a name="csimplestringtgetlength"></a><a name="getlength"></a>CSimpleStringT:: GetLength
 
-Gibt die Anzahl der `CSimpleStringT` Zeichen im Objekt zurück.
+Gibt die Anzahl der Zeichen im- `CSimpleStringT` Objekt zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -552,17 +552,17 @@ int GetLength() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Anzahl der Zeichen in der Zeichenfolge.
+Die Anzahl der Zeichen in der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um die Anzahl der Zeichen im Objekt zurückzugeben. Die Anzahl enthält keinen Null-Terminator.
+Mit dieser Methode wird die Anzahl der Zeichen im-Objekt zurückgegeben. Die Anzahl enthält keinen null-Terminator.
 
-Zählt bei Multibyte-Zeichensätzen `GetLength` (MBCS) jedes 8-Bit-Zeichen; Das heißt, ein Lead- und Trailbyte in einem Multibyte-Zeichen werden als zwei Bytes gezählt. Ein Beispiel für das Aufrufen dieser Funktion finden Sie unter [FreeExtra.](#freeextra)
+Bei Multibytezeichen-Zeichensätzen (MBCS) `GetLength` zählt jedes 8-Bit-Zeichen, d. h., ein Lead-und ein nachfolgendes Byte in einem Multibytezeichen werden als zwei Bytes gezählt. Ein Beispiel für den Aufruf dieser Funktion finden Sie unter " [freextra](#freeextra) ".
 
-## <a name="csimplestringtgetmanager"></a><a name="getmanager"></a>CSimpleStringT::GetManager
+## <a name="csimplestringtgetmanager"></a><a name="getmanager"></a>CSimpleStringT:: GetManager
 
-Ruft den Speicher-Manager `CSimpleStringT` des Objekts ab.
+Ruft den Speicher-Manager des- `CSimpleStringT` Objekts ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -572,13 +572,13 @@ IAtlStringMgr* GetManager() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Speicher-Manager für das `CSimpleStringT` Objekt.
+Ein Zeiger auf den Speicher-Manager für das- `CSimpleStringT` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, `CSimpleStringT` um den vom Objekt verwendeten Speicher-Manager abzurufen. Weitere Informationen zu Speicher-Managern und Zeichenfolgenobjekten finden Sie unter [Speicherverwaltung und CStringT](../memory-management-with-cstringt.md).
+Rufen Sie diese Methode auf, um den vom-Objekt verwendeten Speicher-Manager abzurufen `CSimpleStringT` . Weitere Informationen zu Speicher-Managern und Zeichen folgen Objekten finden Sie unter [Speicherverwaltung und CStringT](../memory-management-with-cstringt.md).
 
-## <a name="csimplestringtgetstring"></a><a name="getstring"></a>CSimpleStringT::GetString
+## <a name="csimplestringtgetstring"></a><a name="getstring"></a>CSimpleStringT:: GetString
 
 Ruft die Zeichenfolge ab.
 
@@ -590,14 +590,14 @@ PCXSTR GetString() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf eine null-terminierte Zeichenfolge.
+Ein Zeiger auf eine NULL-terminierte Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, `CSimpleStringT` um die dem Objekt zugeordnete Zeichenfolge abzurufen.
+Rufen Sie diese Methode auf, um die dem-Objekt zugeordnete Zeichenfolge abzurufen `CSimpleStringT` .
 
 > [!NOTE]
-> Der `PCXSTR` zurückgegebene Zeiger ist **const** und `CSimpleStringT` lässt keine direkte Änderung von Inhalten zu.
+> Der zurückgegebene `PCXSTR` Zeiger ist, **`const`** und lässt keine direkte Inhalts Änderung zu `CSimpleStringT` .
 
 ### <a name="example"></a>Beispiel
 
@@ -609,9 +609,9 @@ str += _T("Cup soccer is best!");
 _tprintf_s(_T("%s"), str.GetString());
 ```
 
-## <a name="csimplestringtisempty"></a><a name="isempty"></a>CsimpleStringt::IsEmpty
+## <a name="csimplestringtisempty"></a><a name="isempty"></a>CSimpleStringT:: IsEmpty
 
-Testet `CSimpleStringT` ein Objekt für den leeren Zustand.
+Testet ein- `CSimpleStringT` Objekt auf die leere Bedingung.
 
 ### <a name="syntax"></a>Syntax
 
@@ -621,11 +621,11 @@ bool IsEmpty() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE `CSimpleStringT` zurück, wenn das Objekt eine Länge von 0 hat. andernfalls FALSE.
+Gibt true zurück, wenn das `CSimpleStringT` Objekt eine Länge von 0 hat; andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um zu bestimmen, ob das Objekt eine leere Zeichenfolge enthält.
+Ruft diese Methode auf, um zu bestimmen, ob das Objekt eine leere Zeichenfolge enthält.
 
 ### <a name="example"></a>Beispiel
 
@@ -636,9 +636,9 @@ CSimpleString s(pMgr);
 ASSERT(s.IsEmpty());
 ```
 
-## <a name="csimplestringtlockbuffer"></a><a name="lockbuffer"></a>CSimpleStringT::LockBuffer
+## <a name="csimplestringtlockbuffer"></a><a name="lockbuffer"></a>CSimpleStringT:: LockBuffer
 
-Deaktiviert die Verweiszählung und schützt die Zeichenfolge im Puffer.
+Deaktiviert die Verweis Zählung und schützt die Zeichenfolge im Puffer.
 
 ### <a name="syntax"></a>Syntax
 
@@ -648,30 +648,30 @@ PXSTR LockBuffer();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf `CSimpleStringT` ein Objekt oder eine null-terminierte Zeichenfolge.
+Ein Zeiger auf ein- `CSimpleStringT` Objekt oder eine NULL terminierte Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um den Puffer des `CSimpleStringT` Objekts zu sperren. Durch `LockBuffer`Aufrufen erstellen Sie eine Kopie der Zeichenfolge mit einer -1 für die Referenzanzahl. Wenn der Referenzanzahlwert -1 ist, wird die Zeichenfolge im Puffer als "gesperrt" betrachtet. In einem gesperrten Zustand ist die Zeichenfolge auf zwei Arten geschützt:
+Ruft diese Methode auf, um den Puffer des-Objekts zu sperren `CSimpleStringT` . Wenn `LockBuffer` Sie aufrufen, erstellen Sie eine Kopie der Zeichenfolge mit dem-1 für den Verweis Zähler. Wenn der Verweis Zählerwert-1 ist, wird die Zeichenfolge im Puffer als "gesperrt" eingestuft. Die Zeichenfolge ist im gesperrten Zustand auf zweierlei Weise geschützt:
 
-- Keine andere Zeichenfolge kann einen Verweis auf die Daten in der gesperrten Zeichenfolge abrufen, auch wenn diese Zeichenfolge der gesperrten Zeichenfolge zugewiesen ist.
+- Keine andere Zeichenfolge kann einen Verweis auf die Daten in der gesperrten Zeichenfolge erhalten, auch wenn diese Zeichenfolge der gesperrten Zeichenfolge zugewiesen ist.
 
 - Die gesperrte Zeichenfolge verweist nie auf eine andere Zeichenfolge, auch wenn diese andere Zeichenfolge in die gesperrte Zeichenfolge kopiert wird.
 
-Indem Sie die Zeichenfolge im Puffer sperren, stellen Sie sicher, dass der exklusive Halt der Zeichenfolge für den Puffer intakt bleibt.
+Wenn Sie die Zeichenfolge im Puffer sperren, stellen Sie sicher, dass die exklusive Aufbewahrung der Zeichenfolge im Puffer intakt bleibt.
 
-Nachdem Sie mit `LockBuffer`abgeschlossen haben, rufen Sie [UnlockBuffer](#unlockbuffer) auf, um die Referenzanzahl auf 1 zurückzusetzen.
+Nachdem Sie mit fertig sind `LockBuffer` , müssen Sie [UnlockBuffer](#unlockbuffer) aufzurufen, um den Verweis Zähler auf 1 zurückzusetzen.
 
 > [!NOTE]
-> Wenn Sie [GetBuffer](#getbuffer) für einen gesperrten `GetBuffer` `nMinBufferLength` Puffer aufrufen und den Parameter auf größer als die Länge des aktuellen Puffers festlegen, gehen die Puffersperre verloren. Ein solcher `GetBuffer` Aufruf, um den aktuellen Puffer zu zerstören, ersetzt ihn durch einen Puffer der angeforderten Größe und setzt die Verweisanzahl auf Null zurück.
+> Wenn Sie [GetBuffer](#getbuffer) für einen gesperrten Puffer aufrufen und der- `GetBuffer` Parameter auf einen Wert `nMinBufferLength` größer als die Länge des aktuellen Puffers festgelegt wird, verlieren Sie die Puffer Sperre. Ein solcher Rückruf `GetBuffer` von zerstört den aktuellen Puffer, ersetzt ihn durch einen Puffer der angeforderten Größe und setzt den Verweis Zähler auf 0 (null) zurück.
 
-Weitere Informationen zur Referenzzählung finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verweis Zählung finden Sie in den folgenden Artikeln:
 
-- [Verwalten von Objektlebensdauern durch Referenzzählung](/windows/win32/com/managing-object-lifetimes-through-reference-counting) im Windows SDK
+- [Verwalten von Objekt Lebensdauern durch Verweis Zählung](/windows/win32/com/managing-object-lifetimes-through-reference-counting) in der Windows SDK
 
-- [Implementieren der Referenzzählung](/windows/win32/com/implementing-reference-counting) im Windows SDK
+- [Implementieren der Verweis Zählung](/windows/win32/com/implementing-reference-counting) in der Windows SDK
 
-- Regeln für die [Verwaltung von Referenzanzahlen](/windows/win32/com/rules-for-managing-reference-counts) im Windows SDK
+- [Regeln zum Verwalten der Verweis Anzahl](/windows/win32/com/rules-for-managing-reference-counts) in der Windows SDK
 
 ### <a name="example"></a>Beispiel
 
@@ -687,9 +687,9 @@ _tprintf_s(_T("%c"), ch);
 str.UnlockBuffer();
 ```
 
-## <a name="csimplestringtoperator"></a><a name="operator_at"></a>CSimpleStringT::operator\[\]
+## <a name="csimplestringtoperator"></a><a name="operator_at"></a>CSimpleStringT:: Operator\[\]
 
-Rufen Sie diese Funktion auf, um auf ein einzelnes Zeichen des Zeichenarrays zuzugreifen.
+Mit dieser Funktion können Sie auf ein einzelnes Zeichen des Zeichen Arrays zugreifen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -699,15 +699,15 @@ XCHAR operator[](int iChar) const;
 
 #### <a name="parameters"></a>Parameter
 
-*iChar*<br/>
-Nullbasierter Index eines Zeichens in der Zeichenfolge.
+*IChar*<br/>
+NULL basierter Index eines Zeichens in der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Operator überladene Subskripte (**[]**) gibt ein einzelnes Zeichen zurück, das durch den nullbasierten Index in *iChar*angegeben wird. Dieser Operator ist ein [GetAt](#getat) bequemer Ersatz für die GetAt-Memberfunktion.
+Der überladene Index Operator (**[]**) gibt ein einzelnes Zeichen zurück, das durch den NULL basierten Index in *IChar*angegeben wird. Dieser Operator ist ein bequemer Ersatz für die [GetAt](#getat) -Member-Funktion.
 
 > [!NOTE]
-> Sie können den Operator subscript (**[]**) verwenden, `CSimpleStringT`um den Wert eines Zeichens in einem `CSimpleStringT`abzubekommen, aber Sie können es nicht verwenden, um den Wert eines Zeichens in einem zu ändern.
+> Sie können den Index Operator (**[]**) verwenden, um den Wert eines Zeichens in einer zu erhalten `CSimpleStringT` . Sie können ihn jedoch nicht zum Ändern des Werts eines Zeichens in einem verwenden `CSimpleStringT` .
 
 ### <a name="example"></a>Beispiel
 
@@ -718,9 +718,9 @@ CSimpleString s(_T("abc"), pMgr);
 ASSERT(s[1] == _T('b'));
 ```
 
-## <a name="csimplestringtoperator-"></a><a name="operator_at"></a>CSimpleStringT::operator\[\]
+## <a name="csimplestringtoperator-"></a><a name="operator_at"></a>CSimpleStringT:: Operator\[\]
 
-Rufen Sie diese Funktion auf, um auf ein einzelnes Zeichen des Zeichenarrays zuzugreifen.
+Mit dieser Funktion können Sie auf ein einzelnes Zeichen des Zeichen Arrays zugreifen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -730,19 +730,19 @@ XCHAR operator[](int iChar) const;
 
 ### <a name="parameters"></a>Parameter
 
-*iChar*<br/>
-Nullbasierter Index eines Zeichens in der Zeichenfolge.
+*IChar*<br/>
+NULL basierter Index eines Zeichens in der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Operator überladene Subskripte (**[]**) gibt ein einzelnes Zeichen zurück, das durch den nullbasierten Index in *iChar*angegeben wird. Dieser Operator ist ein [GetAt](#getat) bequemer Ersatz für die GetAt-Memberfunktion.
+Der überladene Index Operator (**[]**) gibt ein einzelnes Zeichen zurück, das durch den NULL basierten Index in *IChar*angegeben wird. Dieser Operator ist ein bequemer Ersatz für die [GetAt](#getat) -Member-Funktion.
 
 > [!NOTE]
-> Sie können den Operator subscript (**[]**) verwenden, `CSimpleStringT`um den Wert eines Zeichens in einem `CSimpleStringT`abzubekommen, aber Sie können es nicht verwenden, um den Wert eines Zeichens in einem zu ändern.
+> Sie können den Index Operator (**[]**) verwenden, um den Wert eines Zeichens in einer zu erhalten `CSimpleStringT` . Sie können ihn jedoch nicht zum Ändern des Werts eines Zeichens in einem verwenden `CSimpleStringT` .
 
-## <a name="csimplestringtoperator-"></a><a name="operator_add_eq"></a>CSimpleStringT::operator +=
+## <a name="csimplestringtoperator-"></a><a name="operator_add_eq"></a>CSimpleStringT:: Operator + =
 
-Verknüpft eine neue Zeichenfolge oder ein neues Zeichen mit dem Ende einer vorhandenen Zeichenfolge.
+Fügt eine neue Zeichenfolge oder ein Zeichen am Ende einer vorhandenen Zeichenfolge an.
 
 ### <a name="syntax"></a>Syntax
 
@@ -759,17 +759,17 @@ CSimpleStringT& operator +=(wchar_t ch);
 #### <a name="parameters"></a>Parameter
 
 *pszSrc*<br/>
-Ein Zeiger auf eine null-terminierte Zeichenfolge.
+Ein Zeiger auf eine NULL-terminierte Zeichenfolge.
 
-*strSrc*<br/>
-Ein Zeiger auf `CSimpleStringT` ein vorhandenes Objekt.
+*"Straume"*<br/>
+Ein Zeiger auf ein vorhandenes- `CSimpleStringT` Objekt.
 
-*Ch*<br/>
+*ch*<br/>
 Das Zeichen, das angefügt werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Operator `CSimpleStringT` akzeptiert ein anderes Objekt oder ein Zeichen. Beachten Sie, dass Speicherausnahmen auftreten können, wenn Sie diesen Verkettungsoperator `CSimpleStringT` verwenden, da möglicherweise neuer Speicher für Zeichen zugewiesen wird, die diesem Objekt hinzugefügt wurden.
+Der-Operator akzeptiert ein anderes- `CSimpleStringT` Objekt oder ein-Zeichen. Beachten Sie, dass Arbeitsspeicher Ausnahmen auftreten können, wenn Sie diesen Verkettungs Operator verwenden, da neuer Speicher für Zeichen zugeordnet werden kann, die diesem-Objekt hinzugefügt werden `CSimpleStringT` .
 
 ### <a name="example"></a>Beispiel
 
@@ -780,9 +780,9 @@ CSimpleString str(_T("abc"), pMgr);
 ASSERT(_tcscmp((str += _T("def")), _T("abcdef")) == 0);
 ```
 
-## <a name="csimplestringtoperator-"></a><a name="operator_eq"></a>CSimpleStringT::operator =
+## <a name="csimplestringtoperator-"></a><a name="operator_eq"></a>CSimpleStringT:: Operator =
 
-Weist einem `CSimpleStringT` Objekt einen neuen Wert zu.
+Weist einem-Objekt einen neuen Wert zu `CSimpleStringT` .
 
 ### <a name="syntax"></a>Syntax
 
@@ -794,14 +794,14 @@ CSimpleStringT& operator =(const CSimpleStringT& strSrc);
 #### <a name="parameters"></a>Parameter
 
 *pszSrc*<br/>
-Ein Zeiger auf eine null-terminierte Zeichenfolge.
+Ein Zeiger auf eine NULL-terminierte Zeichenfolge.
 
-*strSrc*<br/>
-Ein Zeiger auf `CSimpleStringT` ein vorhandenes Objekt.
+*"Straume"*<br/>
+Ein Zeiger auf ein vorhandenes- `CSimpleStringT` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Zielzeichenfolge (die linke Seite) bereits groß genug ist, um die neuen Daten zu speichern, wird keine neue Speicherzuweisung durchgeführt. Beachten Sie, dass Speicherausnahmen auftreten können, wenn Sie den Zuweisungsoperator verwenden, da häufig neuer Speicher für das resultierende `CSimpleStringT` Objekt reserviert wird.
+Wenn die Ziel Zeichenfolge (die linke Seite) bereits groß genug ist, um die neuen Daten zu speichern, wird keine neue Speicher Belegung ausgeführt. Beachten Sie, dass Arbeitsspeicher Ausnahmen auftreten können, wenn Sie den Zuweisungs Operator verwenden, da der neue Speicher häufig zum Speichern des resultierenden Objekts zugeordnet wird `CSimpleStringT` .
 
 ### <a name="example"></a>Beispiel
 
@@ -827,9 +827,9 @@ s1 = _T("x");
 ASSERT(_tcscmp(s1, _T("x")) == 0);
 ```
 
-## <a name="csimplestringtoperator-pcxstr"></a><a name="operator_pcxstr"></a>CSimpleStringT::operator PCXSTR
+## <a name="csimplestringtoperator-pcxstr"></a><a name="operator_pcxstr"></a>CSimpleStringT:: Operator PCXSTR
 
-Greift direkt auf Zeichen `CSimpleStringT` zu, die in einem Objekt als Zeichenfolge im C-Stil gespeichert sind.
+Greift direkt auf in einem- `CSimpleStringT` Objekt gespeicherte Zeichen als Zeichenfolge im C-Format zu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -839,11 +839,11 @@ operator PCXSTR() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeichenzeiger auf die Daten der Zeichenfolge.
+Ein Zeichen Zeiger auf die Daten der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Es werden keine Zeichen kopiert. es wird nur ein Zeiger zurückgegeben. Seien Sie vorsichtig mit diesem Operator. Wenn Sie `CString` ein Objekt ändern, nachdem Sie den Zeichenzeiger erhalten haben, können Sie eine Neuzuweisung des Speichers verursachen, die den Zeiger ungültig macht.
+Es werden keine Zeichen kopiert. Es wird nur ein-Zeiger zurückgegeben. Seien Sie vorsichtig mit diesem Operator. Wenn Sie ein- `CString` Objekt ändern, nachdem Sie den Zeichen Zeiger abgerufen haben, können Sie eine erneute Zuweisung des Arbeitsspeichers bewirken, der den Zeiger für ungültig erklärt.
 
 ### <a name="example"></a>Beispiel
 
@@ -879,9 +879,9 @@ wcout << strSports;
 wcout << (PCWSTR)strSports;
 ```
 
-## <a name="csimplestringtpcxstr"></a><a name="pcxstr"></a>CSimpleStringT::PCXSTR
+## <a name="csimplestringtpcxstr"></a><a name="pcxstr"></a>CSimpleStringT::P cxstr
 
-Ein Zeiger auf eine konstante Zeichenfolge.
+Ein Zeiger auf eine Konstantenzeichenfolge.
 
 ### <a name="syntax"></a>Syntax
 
@@ -889,9 +889,9 @@ Ein Zeiger auf eine konstante Zeichenfolge.
 typedef ChTraitsBase< BaseType >::PCXSTR PCXSTR;
 ```
 
-## <a name="csimplestringtpreallocate"></a><a name="preallocate"></a>CSimpleStringT::Pzuteilung
+## <a name="csimplestringtpreallocate"></a><a name="preallocate"></a>CSimpleStringT::P neu zuordnen
 
-Ordnet dem `CSimpleStringT` Objekt eine bestimmte Menge an Bytes zu.
+Ordnet eine bestimmte Byte Menge für das- `CSimpleStringT` Objekt zu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -901,14 +901,14 @@ void Preallocate( int nLength);
 
 #### <a name="parameters"></a>Parameter
 
-*nLänge*<br/>
-Die genaue Größe `CSimpleStringT` des Zeichenpuffers in Zeichen.
+*nlength*<br/>
+Die genaue Größe des `CSimpleStringT` Zeichen Puffers in Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, `CSimpleStringT` um dem Objekt eine bestimmte Puffergröße zuzuweisen.
+Verwenden Sie diese Methode, um eine bestimmte Puffergröße für das- `CSimpleStringT` Objekt zuzuordnen.
 
-`CSimpleStringT`generiert eine STATUS_NO_MEMORY Ausnahme, wenn sie keinen Speicherplatz für den Zeichenpuffer zuweisen kann. Standardmäßig wird die Speicherzuweisung von WIN32-API-Funktionen `HeapAlloc` oder `HeapReAlloc`von ausgeführt.
+`CSimpleStringT`generiert eine STATUS_NO_MEMORY Ausnahme, wenn kein Speicherplatz für den Zeichen Puffer belegt werden kann. Die Speicher Belegung wird standardmäßig von den Win32-API-Funktionen oder durchgeführt `HeapAlloc` `HeapReAlloc` .
 
 ### <a name="example"></a>Beispiel
 
@@ -921,7 +921,7 @@ str.Preallocate(100);
 _tprintf_s(_T("Allocated length: %d\n"), str.GetAllocLength());
 ```
 
-## <a name="csimplestringtpxstr"></a><a name="pxstr"></a>CSimpleStringT::PXSTR
+## <a name="csimplestringtpxstr"></a><a name="pxstr"></a>CSimpleStringT::P xstr
 
 Ein Zeiger auf eine Zeichenfolge.
 
@@ -931,9 +931,9 @@ Ein Zeiger auf eine Zeichenfolge.
 typedef ChTraitsBase< BaseType >::PXSTR PXSTR;
 ```
 
-## <a name="csimplestringtreleasebuffer"></a><a name="releasebuffer"></a>CSimpleStringT::ReleaseBuffer
+## <a name="csimplestringtreleasebuffer"></a><a name="releasebuffer"></a>CSimpleStringT:: ReleaseBuffer
 
-Gibt die Steuerung des von [GetBuffer](#getbuffer)zugewiesenen Puffers frei.
+Gibt die Steuerung des Puffers frei, der von [GetBuffer](#getbuffer)zugeordnet wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -943,12 +943,12 @@ void ReleaseBuffer(int nNewLength = -1);
 
 #### <a name="parameters"></a>Parameter
 
-*nNewLength*<br/>
-Die neue Länge der Zeichenfolge in Zeichen, ohne einen Null-Terminator zu zählen. Wenn die Zeichenfolge null beendet ist, legt `CSimpleStringT` der Standardwert -1 die Größe auf die aktuelle Länge der Zeichenfolge fest.
+*nnewlength*<br/>
+Die neue Länge der Zeichenfolge in Zeichen, wobei kein NULL-Terminator gezählt wird. Wenn die Zeichenfolge NULL-terminiert ist, legt der Standardwert-1 die `CSimpleStringT` Größe auf die aktuelle Länge der Zeichenfolge fest.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um den Puffer des Zeichenfolgenobjekts neu zuzuweisen oder freizugeben. Wenn Sie wissen, dass die Zeichenfolge im Puffer null beendet ist, können Sie das Argument *nNewLength* weglassen. Wenn Ihre Zeichenfolge nicht null beendet ist, verwenden Sie *nNewLength,* um ihre Länge anzugeben. Die von [GetBuffer zurückgegebene](#getbuffer) Adresse ist `ReleaseBuffer` nach `CSimpleStringT` dem Aufruf oder einem anderen Vorgang ungültig.
+Verwenden Sie diese Methode, um den Puffer des Zeichen folgen Objekts neu zuzuordnen oder freizugeben. Wenn Sie wissen, dass die Zeichenfolge im Puffer NULL ist, können Sie das *nnewlength* -Argument weglassen. Wenn die Zeichenfolge nicht NULL endet, verwenden Sie *nnewlength* , um die Länge anzugeben. Die von [GetBuffer](#getbuffer) zurückgegebene Adresse ist nach dem Aufrufen von `ReleaseBuffer` oder einem anderen `CSimpleStringT` Vorgang ungültig.
 
 ### <a name="example"></a>Beispiel
 
@@ -972,9 +972,9 @@ ASSERT(s.GetLength() == 3);
 // Length still 3
 ```
 
-## <a name="csimplestringtreleasebuffersetlength"></a><a name="releasebuffersetlength"></a>CSimpleStringT::ReleaseBufferSetLength
+## <a name="csimplestringtreleasebuffersetlength"></a><a name="releasebuffersetlength"></a>CSimpleStringT:: ReleaseBufferSetLength
 
-Gibt die Steuerung des von [GetBuffer](#getbuffer)zugewiesenen Puffers frei.
+Gibt die Steuerung des Puffers frei, der von [GetBuffer](#getbuffer)zugeordnet wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -984,16 +984,16 @@ void ReleaseBufferSetLength(int nNewLength);
 
 #### <a name="parameters"></a>Parameter
 
-*nNewLength*<br/>
-Die Länge der freizugebenden Zeichenfolge
+*nnewlength*<br/>
+Die Länge der Zeichenfolge, die freigegeben wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion ist funktional ähnlich wie [ReleaseBuffer,](#releasebuffer) mit der Ausnahme, dass eine gültige Länge für das Zeichenfolgenobjekt übergeben werden muss.
+Diese Funktion ähnelt dem [ReleaseBuffer](#releasebuffer) , mit dem Unterschied, dass eine gültige Länge für das Zeichen folgen Objekt bestehen muss.
 
-## <a name="csimplestringtsetat"></a><a name="setat"></a>CSimpleStringT::Setat
+## <a name="csimplestringtsetat"></a><a name="setat"></a>CSimpleStringT:: *
 
-Legt ein einzelnes `CSimpleStringT` Zeichen aus einem Objekt fest.
+Legt ein einzelnes Zeichen aus einem- `CSimpleStringT` Objekt fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1003,15 +1003,15 @@ void SetAt(int iChar, XCHAR ch);
 
 #### <a name="parameters"></a>Parameter
 
-*iChar*<br/>
-Nullbasierter Index des Zeichens im `CSimpleStringT` Objekt. Der *iChar-Parameter* muss größer oder gleich 0 und kleiner als der von [GetLength](#getlength)zurückgegebene Wert sein.
+*IChar*<br/>
+NULL basierter Index des Zeichens im- `CSimpleStringT` Objekt. Der- *IChar* -Parameter muss größer oder gleich 0 und kleiner als der von [GetLength](#getlength)zurückgegebene Wert sein.
 
-*Ch*<br/>
-Der neue Charakter.
+*ch*<br/>
+Das neue Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um das Zeichen in *iChar*zu überschreiben. Diese Methode vergrößert die Zeichenfolge nicht, wenn *iChar* die Grenzen der vorhandenen Zeichenfolge überschreitet.
+Mit dieser Methode wird das Zeichen, das sich bei *IChar*befindet, überschrieben. Diese Methode vergrößert die Zeichenfolge nicht, wenn *IChar* die Begrenzungen der vorhandenen Zeichenfolge überschreitet.
 
 ### <a name="example"></a>Beispiel
 
@@ -1023,9 +1023,9 @@ s.SetAt(1, _T('a'));
 ASSERT(_tcscmp(s, _T("aacdef")) == 0);
 ```
 
-## <a name="csimplestringtsetmanager"></a><a name="setmanager"></a>CSimpleStringT::SetManager
+## <a name="csimplestringtsetmanager"></a><a name="setmanager"></a>CSimpleStringT:: setmanager
 
-Gibt den Speicher-Manager `CSimpleStringT` des Objekts an.
+Gibt den Speicher-Manager des- `CSimpleStringT` Objekts an.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1035,12 +1035,12 @@ void SetManager(IAtlStringMgr* pStringMgr);
 
 #### <a name="parameters"></a>Parameter
 
-*pStringMgr*<br/>
+*pstringmgr*<br/>
 Ein Zeiger auf den neuen Speicher-Manager.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um `CSimpleStringT` einen neuen Speicher-Manager anzugeben, der vom Objekt verwendet wird. Weitere Informationen zu Speicher-Managern und Zeichenfolgenobjekten finden Sie unter [Speicherverwaltung und CStringT](../memory-management-with-cstringt.md).
+Mit dieser Methode können Sie einen neuen Speicher-Manager angeben, der vom-Objekt verwendet wird `CSimpleStringT` . Weitere Informationen zu Speicher-Managern und Zeichen folgen Objekten finden Sie unter [Speicherverwaltung und CStringT](../memory-management-with-cstringt.md).
 
 ### <a name="example"></a>Beispiel
 
@@ -1051,9 +1051,9 @@ CSimpleString s(pMgr);
 s.SetManager(pCustomMgr);
 ```
 
-## <a name="csimplestringtsetstring"></a><a name="setstring"></a>CSimpleStringT::SetString
+## <a name="csimplestringtsetstring"></a><a name="setstring"></a>CSimpleStringT:: SetString
 
-Legt die Zeichenfolge `CSimpleStringT` eines Objekts fest.
+Legt die Zeichenfolge eines- `CSimpleStringT` Objekts fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1065,22 +1065,22 @@ void SetString(PCXSTR pszSrc);
 #### <a name="parameters"></a>Parameter
 
 *pszSrc*<br/>
-Ein Zeiger auf eine null-terminierte Zeichenfolge.
+Ein Zeiger auf eine NULL-terminierte Zeichenfolge.
 
-*nLänge*<br/>
-Eine Anzahl der Zeichen in *pszSrc*.
+*nlength*<br/>
+Die Anzahl der Zeichen in *pszSrc*.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Kopieren Sie eine `CSimpleStringT` Zeichenfolge in das Objekt. `SetString`überschreibt die älteren Zeichenfolgendaten im Puffer.
+Kopieren Sie eine Zeichenfolge in das- `CSimpleStringT` Objekt. `SetString`überschreibt die älteren Zeichen folgen Daten im Puffer.
 
-Beide Versionen `SetString` von überprüfen, ob *pszSrc* ein Nullzeiger ist, und, falls dies der Fall ist, werfen sie einen E_INVALIDARG Fehler aus.
+Beide Versionen von `SetString` überprüfen, ob *pszSrc* ein NULL-Zeiger ist, und wenn dies der Fall ist, lösen Sie einen E_INVALIDARG Fehler aus.
 
-Die Ein-Parameter-Version von `SetString` erwartet, dass *pszSrc* auf eine null-terminierte Zeichenfolge verweist.
+Die 1-Parameter-Version von erwartet, dass `SetString` *pszSrc* auf eine mit NULL endenden Zeichenfolge verweist.
 
-Die Zwei-Parameter-Version von `SetString` erwartet auch, dass *pszSrc* eine null-terminierte Zeichenfolge ist. Es verwendet *nLength* als Zeichenfolgenlänge, es sei denn, es wird zuerst ein Null-Terminator.
+Die zwei-Parameter-Version von `SetString` erwartet auch, dass *pszSrc* eine NULL-terminierte Zeichenfolge ist. Es wird *nlength* als Zeichen folgen Länge verwendet, es sei denn, es findet zuerst ein NULL-Terminator.
 
-Die Zwei-Parameter-Version von `SetString` überprüft auch, ob *pszSrc* `CSimpleStringT`auf eine Position im aktuellen Puffer in zeigt. Verwendet in diesem `SetString` speziellen Fall eine Speicherkopiefunktion, die die Zeichenfolgendaten nicht überschreibt, wenn sie die Zeichenfolgendaten zurück in den Puffer kopiert.
+Die zwei-Parameter-Version von `SetString` prüft auch, ob *pszSrc* auf eine Position im aktuellen Puffer in verweist `CSimpleStringT` . In diesem speziellen Fall wird `SetString` von eine Speicher Kopierfunktion verwendet, die die Zeichen folgen Daten nicht überschreibt, da die Zeichen folgen Daten zurück in ihren Puffer kopiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1093,7 +1093,7 @@ s.SetString(_T("Soccer"), 6);
 ASSERT(_tcscmp(s, _T("Soccer")) == 0);
 ```
 
-## <a name="csimplestringtstringlength"></a><a name="stringlength"></a>CSimpleStringT::StringLength
+## <a name="csimplestringtstringlength"></a><a name="stringlength"></a>CSimpleStringT:: StringLength
 
 Gibt die Anzahl der Zeichen in der angegebenen Zeichenfolge zurück.
 
@@ -1105,16 +1105,16 @@ ATL_NOINLINE static int StringLength(PCXSTR psz) throw();
 
 #### <a name="parameters"></a>Parameter
 
-*Psz*<br/>
-Ein Zeiger auf eine null-terminierte Zeichenfolge.
+*PSZ*<br/>
+Ein Zeiger auf eine NULL-terminierte Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Zeichen in *psz*; nicht zählen einen Null-Terminator.
+Die Anzahl der Zeichen in *PSZ*; ein NULL-Terminator wird nicht gezählt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um die Anzahl der Zeichen in der Zeichenfolge abzurufen, auf die *psz*zeigt.
+Rufen Sie diese Methode auf, um die Anzahl der Zeichen in der Zeichenfolge abzurufen, auf die von *PSZ*verwiesen wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -1124,9 +1124,9 @@ Das folgende Beispiel veranschaulicht die Verwendung von `CSimpleStringT::String
 ASSERT(CSimpleString::StringLength(_T("soccer")) == 6);
 ```
 
-## <a name="csimplestringttruncate"></a><a name="truncate"></a>CSimpleStringT::Truncate
+## <a name="csimplestringttruncate"></a><a name="truncate"></a>CSimpleStringT:: TRUNCATE
 
-Kürt die Zeichenfolge auf die neue Länge.
+Verkürzt die Zeichenfolge auf die neue Länge.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1136,15 +1136,15 @@ void Truncate(int nNewLength);
 
 #### <a name="parameters"></a>Parameter
 
-*nNewLength*<br/>
+*nnewlength*<br/>
 Die neue Länge der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um den Inhalt der Zeichenfolge auf die neue Länge zu abschneiden.
+Ruft diese Methode auf, um den Inhalt der Zeichenfolge auf die neue Länge zu kürzen.
 
 > [!NOTE]
-> Dies wirkt sich nicht auf die zugewiesene Länge des Puffers aus. Informationen zum Verringern oder Erhöhen des aktuellen Puffers finden Sie unter [FreeExtra](#freeextra) und [Preallocate](#preallocate).
+> Dies wirkt sich nicht auf die zugeordnete Länge des Puffers aus. Informationen zum Verkleinern oder Vergrößern des aktuellen Puffers finden Sie unter " [freextra](#freeextra) " und " [prezuordnen](#preallocate)".
 
 ### <a name="example"></a>Beispiel
 
@@ -1159,9 +1159,9 @@ _tprintf_s(_T("Allocated length: %d\n"), str.GetLength());
 _tprintf_s(_T("Contents: %s\n"), str);
 ```
 
-## <a name="csimplestringtunlockbuffer"></a><a name="unlockbuffer"></a>CSimpleStringT::UnlockBuffer
+## <a name="csimplestringtunlockbuffer"></a><a name="unlockbuffer"></a>CSimpleStringT:: UnlockBuffer
 
-Entsperrt den `CSimpleStringT` Puffer des Objekts.
+Entsperrt den Puffer des- `CSimpleStringT` Objekts.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1171,11 +1171,11 @@ void UnlockBuffer() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um die Referenzanzahl der Zeichenfolge auf 1 zurückzusetzen.
+Mit dieser Methode wird der Verweis Zähler der Zeichenfolge auf 1 zurückgesetzt.
 
-Der `CSimpleStringT` Destruktor `UnlockBuffer` ruft automatisch auf, um sicherzustellen, dass der Puffer nicht gesperrt wird, wenn der Destruktor aufgerufen wird. Ein Beispiel für diese Methode finden Sie unter [LockBuffer](#lockbuffer).
+Der `CSimpleStringT` Dekonstruktor ruft automatisch `UnlockBuffer` auf, um sicherzustellen, dass der Puffer nicht gesperrt ist, wenn der Dekonstruktor aufgerufen wird. Ein Beispiel für diese Methode finden Sie unter [LockBuffer](#lockbuffer).
 
-## <a name="csimplestringtcsimplestringt"></a><a name="dtor"></a>CSimpleStringT::'csimplestringt
+## <a name="csimplestringtcsimplestringt"></a><a name="dtor"></a>CSimpleStringT:: ~ CSimpleStringT
 
 Zerstört ein `CSimpleStringT` -Objekt.
 
@@ -1187,9 +1187,9 @@ Zerstört ein `CSimpleStringT` -Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese `CSimpleStringT` Methode auf, um das Objekt zu zerstören.
+Mit dieser Methode wird das `CSimpleStringT` Objekt zerstört.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
+[Gemeinsam genutzte ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)

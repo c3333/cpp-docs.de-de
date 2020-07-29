@@ -9,12 +9,12 @@ helpviewer_keywords:
 - width fields, printf function
 - precision fields, printf function
 ms.assetid: 664b1717-2760-4c61-bd9c-22eee618d825
-ms.openlocfilehash: cf2ef152d8c5ae0209a8a5cca85862f2f03a8f70
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: 122536ae79c9b7d634677c6b7ec7fc4974f52b4a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825861"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218753"
 ---
 # <a name="format-specification-syntax-printf-and-wprintf-functions"></a>Syntax der Formatangabe: printf- und wprintf-Funktionen
 
@@ -40,15 +40,15 @@ Eine grundlegende Formatspezifikation enthält nur das Prozentzeichen und ein *T
 <a name="type"></a>
 
 > [!NOTE]
-> In Visual Studio 2015 wurden `printf` die `scanf` -und die-Funktions Familie als **Inline** deklariert und in `<stdio.h>` die `<conio.h>` Header und verschoben. Wenn Sie älteren Code migrieren, kann *LNK2019* in Verbindung mit diesen Funktionen angezeigt werden. Weitere Informationen finden Sie unter [Visual C++ Änderungs Verlauf 2003-2015](../porting/visual-cpp-change-history-2003-2015.md#stdio_and_conio).
+> In Visual Studio 2015 `printf` wurden die-und die- `scanf` Funktions Familie als deklariert **`inline`** und in `<stdio.h>` die `<conio.h>` Header und verschoben. Wenn Sie älteren Code migrieren, kann *LNK2019* in Verbindung mit diesen Funktionen angezeigt werden. Weitere Informationen finden Sie unter [Visual C++ Änderungs Verlauf 2003-2015](../porting/visual-cpp-change-history-2003-2015.md#stdio_and_conio).
 
 ## <a name="type-conversion-specifier"></a>Typkonvertierungsspezifizierer
 
 Das *Typ*-Konvertierungsspezifiziererzeichen gibt an, ob das entsprechende Argument als Zeichen, Zeichenfolge, Zeiger, ganze Zahl oder Gleitkommazahl interpretiert werden soll. Das *Typ*zeichen ist das einzige erforderliche Konvertierungsangabenfeld und erscheint nach allen optionalen Feldern.
 
-Die Argumente, die der Formatzeichenfolge folgen, werden nach dem entsprechenden *Typ*zeichen und dem optionalen [Größen](#size)präfix interpretiert. Konvertierungen für die Zeichentypen `char` und `wchar_t` werden durch **c** oder **C** angegeben, und Einzelbyte- und Multibyte- oder Breitzeichen-Zeichenfolgen werden je nach benötigter Formatierungsfunktion durch **s** oder **S** angegeben. Zeichen-und Zeichen folgen Argumente, die mithilfe von **c** und **s** angegeben werden `char` , `char*` werden `printf` als und von familienfunktionen `wchar_t` oder `wchar_t*` als `wprintf` und nach familienfunktionen interpretiert. Zeichen und Zeichenfolgenargumente, die durch **C** und **S** angegeben werden, werden von den `printf`-Familienfunktionen als `wchar_t` und `wchar_t*` oder von den `wprintf`-Familienfunktionen als `char` und `char*` interpretiert. Dieses Verhalten ist Microsoft-spezifisch.
+Die Argumente, die der Formatzeichenfolge folgen, werden nach dem entsprechenden *Typ*zeichen und dem optionalen [Größen](#size)präfix interpretiert. Konvertierungen für Zeichen **`char`** Typen und **`wchar_t`** werden mithilfe von **c** oder **c**angegeben, und Einzel Byte-und Multibyte-oder breit Zeichen-Zeichen folgen werden mithilfe von **s** oder **s**angegeben, je nachdem, welche Formatierungsfunktion verwendet wird. Zeichen-und Zeichen folgen Argumente, die mithilfe von **c** und **s** angegeben werden, werden als **`char`** und **`char*`** von `printf` familienfunktionen oder als **`wchar_t`** und `wchar_t*` nach `wprintf` familienfunktionen interpretiert. Zeichen-und Zeichen folgen Argumente, die mithilfe von **C** und **S** angegeben werden, werden als **`wchar_t`** und `wchar_t*` von `printf` familienfunktionen oder als **`char`** und **`char*`** nach `wprintf` familienfunktionen interpretiert. Dieses Verhalten ist Microsoft-spezifisch.
 
-Ganzzahlige Typen `short`wie `int`, `long`, `long long`, und Ihre `unsigned` Varianten werden mithilfe von **d**, **i**, **o**, **u**, **x**und **x**angegeben. Gleit `float`Komma Typen wie, `double`und `long double` **werden mithilfe von**, **a**, **e**, **e**, **f**, **f**, **g**und **g**angegeben. Wenn Sie nicht durch ein *Größen* Präfix geändert werden, werden ganzzahlige Argumente standardmäßig `int` in den-Typ umgewandelt, und Gleit Komma Argumente werden `double`in umgewandelt. Bei 64-Bit-Systemen ist `int` ein 32-Bit-Wert. Daher werden ganze 64-Bit-Zahlen verkürzt, wenn sie für Ausgabe formatiert werden, sofern nicht ein *Größen*präfix von **ll** oder **I64** verwendet wird. Durch **p** angegebene Zeigertypen verwenden die Standardzeigergröße für die Plattform.
+Ganzzahlige Typen **`short`** wie **`int`** , **`long`** ,, **`long long`** und Ihre **`unsigned`** Varianten werden mithilfe von **d**, **i**, **o**, **u**, **x**und **x**angegeben. Gleit Komma Typen wie **`float`** , **`double`** und **`long double`** werden mithilfe von, **a**, **e**, **a** **e**, **f**, **f**, **g**und **g**angegeben. Wenn Sie nicht durch ein *Größen* Präfix geändert werden, werden ganzzahlige Argumente standardmäßig in den **`int`** -Typ umgewandelt, und Gleit Komma Argumente werden in umgewandelt **`double`** . Auf 64-Bit-Systemen **`int`** ist ein 32-Bit-Wert. Daher werden 64-Bit-Ganzzahlen abgeschnitten, wenn Sie für die Ausgabe formatiert werden, es sei denn, es wird ein *Größen* Präfix von **ll** oder **I64** verwendet. Durch **p** angegebene Zeigertypen verwenden die Standardzeigergröße für die Plattform.
 
 > [!NOTE]
 > **Microsoft-spezifisch:**\
@@ -60,24 +60,24 @@ Ganzzahlige Typen `short`wie `int`, `long`, `long long`, und Ihre `unsigned` Var
 |--------------------|--------------|-------------------|
 |**scher**|Zeichen|Gibt bei Verwendung mit `printf`-Funktionen ein Einzelbytezeichen und bei Verwendung mit `wprintf`-Funktionen ein Breitzeichen an.|
 |**C**|Zeichen|Gibt bei Verwendung mit `printf`-Funktionen ein Breitzeichen und bei Verwendung mit `wprintf`-Funktionen ein Einzelbytezeichen an.|
-|**d**|Ganze Zahl|Ganze Dezimalzahl mit Vorzeichen|
-|**Ich**|Ganze Zahl|Ganze Dezimalzahl mit Vorzeichen|
-|**'**|Ganze Zahl|Oktale ganze Zahl ohne Vorzeichen|
-|**u**|Ganze Zahl|Ganze Dezimalzahl ohne Vorzeichen|
-|**x**|Ganze Zahl|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „abcdef“.|
-|**X**|Ganze Zahl|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „ABCDEF“.|
-|**Fresser**|Gleitkomma|Signierter Wert, der das Format [-]*d. dddd*__e ±__*DD*\[*d*] hat, wobei *d* eine Dezimalstelle ist, *dddd* eine oder mehrere Dezimalstellen in Abhängigkeit von der angegebenen Genauigkeit oder sechs standardmäßig und *DD*\[*d*] zwei oder drei Dezimalstellen sind, abhängig vom [Ausgabeformat](../c-runtime-library/set-output-format.md) und der Größe des Exponenten.|
+|**d**|Integer|Ganze Dezimalzahl mit Vorzeichen|
+|**i**|Integer|Ganze Dezimalzahl mit Vorzeichen|
+|**'**|Integer|Oktale ganze Zahl ohne Vorzeichen|
+|**n**|Integer|Ganze Dezimalzahl ohne Vorzeichen|
+|**x**|Integer|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „abcdef“.|
+|**X**|Integer|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „ABCDEF“.|
+|**e**|Gleitkomma|Signierter Wert, der das Format [-]*d. dddd*__e ±__*DD* \[ *d*] hat, wobei *d* eine Dezimalstelle ist, *dddd* eine oder mehrere Dezimalstellen in Abhängigkeit von der angegebenen Genauigkeit oder sechs standardmäßig und *DD* \[ *d*] zwei oder drei Dezimalstellen sind, abhängig vom [Ausgabeformat](../c-runtime-library/set-output-format.md) und der Größe des Exponenten.|
 |**Fresser**|Gleitkomma|Identisch mit dem **e**-Format mit der Ausnahme, dass **E** anstelle von **e** den Exponenten einführt.|
-|**c**|Gleitkomma|Ein Wert mit Vorzeichen im Format [–]*dddd*__.__*dddd*, wobei *dddd* eine oder mehrere Dezimalstellen sind. Die Anzahl der Ziffern vor dem Dezimaltrennzeichen ist abhängig von der Größe der Zahl, und die Anzahl der Ziffern nach dem Dezimaltrennzeichen ist abhängig von der angeforderten Genauigkeit oder standardmäßig sechs.|
+|**f**|Gleitkomma|Ein Wert mit Vorzeichen im Format [–]*dddd*__.__*dddd*, wobei *dddd* eine oder mehrere Dezimalstellen sind. Die Anzahl der Ziffern vor dem Dezimaltrennzeichen ist abhängig von der Größe der Zahl, und die Anzahl der Ziffern nach dem Dezimaltrennzeichen ist abhängig von der angeforderten Genauigkeit oder standardmäßig sechs.|
 |**C**|Gleitkomma|Identisch mit dem Format **f**, außer dass die infinity- und die NaN-Ausgabe groß geschrieben werden.|
-|**selbst**|Gleitkomma|Werte mit Vorzeichen werden im **f**- oder **e**-Format angezeigt, je nachdem, was für den angegebenen Wert und die Genauigkeit kompakter ist. Das **e**-Format wird nur verwendet, wenn der Exponent des Werts kleiner als -4 oder größer als oder gleich dem *precision*-Argument ist. Nachfolgende Nullen werden abgeschnitten, und das Dezimaltrennzeichen wird nur angezeigt, wenn eine oder mehrere Ziffern darauf folgen.|
+|**g**|Gleitkomma|Werte mit Vorzeichen werden im **f**- oder **e**-Format angezeigt, je nachdem, was für den angegebenen Wert und die Genauigkeit kompakter ist. Das **e**-Format wird nur verwendet, wenn der Exponent des Werts kleiner als -4 oder größer als oder gleich dem *precision*-Argument ist. Nachfolgende Nullen werden abgeschnitten, und das Dezimaltrennzeichen wird nur angezeigt, wenn eine oder mehrere Ziffern darauf folgen.|
 |**G**|Gleitkomma|Identisch mit dem **g**-Format mit der Ausnahme, dass **E** anstelle von **e** den Exponenten einführt (falls zutreffend).|
 |**ein**|Gleitkomma|Ein hexadezimaler Gleitkommawert mit Vorzeichen mit doppelter Genauigkeit in der Form [−]0x*h.hhhh*__p±__*dd*, wobei *h.hhhh* die hexadezimalen Ziffern (aus Kleinbuchstaben) der Mantisse sind und *dd* eine oder mehrere Ziffern für den Exponenten darstellt. Die Genauigkeit gibt die Anzahl der Ziffern nach dem Punkt an.|
 |**A**|Gleitkomma|Ein hexadezimaler Gleitkommawert mit Vorzeichen mit doppelter Genauigkeit mit der Form [−]0X*h.hhhh*__P±__*dd*, wobei *h.hhhh* die hexadezimalen Ziffern (aus Großbuchstaben) der Mantisse sind und *dd* eine oder mehrere Ziffern für den Exponenten darstellt. Die Genauigkeit gibt die Anzahl der Ziffern nach dem Punkt an.|
 |**n**|Zeiger auf eine ganze Zahl|Anzahl der Zeichen, die bisher erfolgreich in den Stream oder Puffer geschrieben wurden. Dieser Wert wird in der ganzen Zahl gespeichert, deren Adresse als Argument angegeben ist. Die Größe des Integers, auf den gezeigt wird, kann durch ein Präfix mit Argumentengrößenangabe gesteuert werden. Der **n**-Bezeichner ist standardmäßig deaktiviert. Weitere Informationen finden Sie im wichtigen Sicherheitshinweis.|
 |**cker**|Zeigertyp|Zeigt das Argument als Adresse in Hexadezimalziffern an.|
-|**s**|String|Gibt bei Verwendung mit `printf`-Funktionen eine Einzelbyte- oder Multibyte-Zeichenfolge und bei Verwendung mit `wprintf`-Funktionen eine Breitzeichenfolge an. Zeichen werden bis zum ersten NULL-Zeichen oder bis zum *precision*-Wert angezeigt.|
-|**Hymnen**|String|Gibt bei Verwendung mit `printf`-Funktionen eine Breitzeichenfolge und bei Verwendung mit `wprintf`-Funktionen eine Einzelbyte- oder Multibyte-Zeichenfolge an. Zeichen werden bis zum ersten NULL-Zeichen oder bis zum *precision*-Wert angezeigt.|
+|**s**|Zeichenfolge|Gibt bei Verwendung mit `printf`-Funktionen eine Einzelbyte- oder Multibyte-Zeichenfolge und bei Verwendung mit `wprintf`-Funktionen eine Breitzeichenfolge an. Zeichen werden bis zum ersten NULL-Zeichen oder bis zum *precision*-Wert angezeigt.|
+|**S**|Zeichenfolge|Gibt bei Verwendung mit `printf`-Funktionen eine Breitzeichenfolge und bei Verwendung mit `wprintf`-Funktionen eine Einzelbyte- oder Multibyte-Zeichenfolge an. Zeichen werden bis zum ersten NULL-Zeichen oder bis zum *precision*-Wert angezeigt.|
 |**Z**|`ANSI_STRING`- oder `UNICODE_STRING`-Struktur|Wenn die Adresse einer [ANSI_STRING](/windows/win32/api/ntdef/ns-ntdef-string)- oder [UNICODE_STRING](/windows/win32/api/ntdef/ns-ntdef-_unicode_string)-Struktur als Argument übergeben wird, wird die Zeichenfolge, die im Puffer angezeigt wird und auf die vom `Buffer`-Feld der Struktur gezeigt wird, übergeben. Verwenden Sie ein *size*-Längenpräfix von **w**, um ein `UNICODE_STRING`-Argument anzugeben, z.B. `%wZ`. Das `Length`-Feld der Struktur muss auf die Länge der Zeichenfolge in Bytes festgelegt sein. Das `MaximumLength`-Feld der Struktur muss auf die Länge des Puffers in Bytes festgelegt sein.<br /><br /> In der Regel wird das **Z**-Typzeichen nur in Treiberdebugfunktionen mit einer Formatangabe verwendet, z.B. `dbgPrint` und `kdPrint`.|
 
 Ab Visual Studio 2015 entspricht die formatierte Ausgabe dem C99-Standard, wenn das Argument, das einem Gleitkomma-Konvertierungsspezifizierer (**a**, **A**, **e**, **E**, **f**, **F**, **g**, **G**) entspricht, unendlich, unbestimmt oder NaN ist. In dieser Tabelle ist die formatierte Ausgabe aufgeführt:
@@ -126,18 +126,18 @@ Das erste optionale Feld in einer Konvertierungsangabe enthält *Flag-Anweisunge
 |**0**|Wenn *width* das Vorzeichen **0** hat, werden führende Nullen hinzugefügt, bis die minimale Breite erreicht ist. Wenn **0** und **-** jeweils erscheinen, wird **0** ignoriert. Wenn **0** für ein Integerformat angegeben wird (**i**, **u**, **x**, **X**, **o**, **d**) und auch eine Genauigkeitsangabe vorhanden ist, z.B. `%04.d`, wird **0** ignoriert. Wird **0** für das Gleitkommaformat **a** oder **A** angegeben, werden führende Nullen der Mantisse nach dem Präfix `0x` oder `0X` vorangestellt.|Keine Auffüllung.|
 |**Leerzeichen** („ “)|Verwenden Sie ein Leerzeichen, um dem Ausgabewert ein Präfix hinzuzufügen, wenn er signiert und positiv ist. Das Leerzeichen wird ignoriert, wenn jeweils das Leerzeichen- und das „+“-Flag erscheinen.|Es wird kein Leerzeichen angezeigt.|
 |**#**|Bei Verwendung mit dem Format **o**, **x** oder **X** verwendet das Flag **#** jeweils 0, 0x oder 0X, um jeden Ausgabewert ungleich null ein Präfix hinzuzufügen.|Es wird kein Leerzeichen angezeigt.|
-||Wenn Sie mit dem Format **e**, **e**, **f**, **f**, **a**oder **einem** verwendet wird, erzwingt **#** das-Flag, dass der Ausgabewert einen Dezimaltrennzeichen enthält.|Dezimaltrennzeichen werden nur dann angezeigt, wenn Ziffern darauf folgen.|
+||Wenn Sie mit dem Format **e**, **e**, **f**, **f**, **a**oder **einem** verwendet wird, erzwingt das-Flag, dass **#** der Ausgabewert einen Dezimaltrennzeichen enthält.|Dezimaltrennzeichen werden nur dann angezeigt, wenn Ziffern darauf folgen.|
 ||Bei Verwendung mit dem Format **g** oder **G**, zwingt das Flag **#** den Ausgabewert, ein Dezimaltrennzeichen zu enthalten und verhindert das Abschneiden von Nachkommanullen.<br /><br /> Bei Verwendung mit **c**, **d**, **i**, **u** oder **s** wird dies ignoriert.|Dezimaltrennzeichen werden nur dann angezeigt, wenn Ziffern darauf folgen. Nachfolgende Nullen werden abgeschnitten.|
 
 <a name="width"></a>
 
 ## <a name="width-specification"></a>Breitenangabe
 
-In einer Konvertierungsangabe, erscheint das optionale Feld für die Breitenangabe nach jedem *flags*-Zeichen. Das Argument *width* ist eine nicht-negative ganze Dezimalzahl, die die minimale Anzahl von Zeichen steuert, die ausgegeben werden. Wenn die Anzahl der Zeichen im Ausgabewert kleiner als die angegebene Breite ist, werden Links oder rechts neben den Werten Leerzeichen hinzugefügt – je nachdem, ob das Flag für die linke Ausrichtung (**-**) angegeben ist – bis die minimale Breite erreicht ist. Wenn *width* das Vorzeichen 0 hat, werden dem Integer oder den Gleitkommakonvertierungen Nullen hinzugefügt, bis die minimale Breite erreicht ist. Eine Ausnahme ist, wenn die Konvertierung auf infinity oder NaN festgelegt ist.
+In einer Konvertierungsangabe, erscheint das optionale Feld für die Breitenangabe nach jedem *flags*-Zeichen. Das Argument *width* ist eine nicht-negative ganze Dezimalzahl, die die minimale Anzahl von Zeichen steuert, die ausgegeben werden. Wenn die Anzahl der Zeichen im Ausgabewert kleiner als die angegebene Breite ist, werden Links oder rechts neben den Werten Leerzeichen hinzugefügt – je nachdem, ob das Flag für die linke Ausrichtung ( **-** ) angegeben ist – bis die minimale Breite erreicht ist. Wenn *width* das Vorzeichen 0 hat, werden dem Integer oder den Gleitkommakonvertierungen Nullen hinzugefügt, bis die minimale Breite erreicht ist. Eine Ausnahme ist, wenn die Konvertierung auf infinity oder NaN festgelegt ist.
 
 Die Breitenangabe sorgt nie dafür, dass ein Wert abgeschnitten wird. Wenn die Anzahl der Zeichen im Ausgabewert größer als die angegebene Breite ist oder wenn *width* nicht angegeben ist, werden alle Zeichen des Werts ausgegeben, unterliegen aber der Spezifikation *precision*.
 
-Wenn die Genauigkeitsangabe ein Sternchen (`*`) ist, stellt ein `int`-Argument aus der Argumentliste den Wert bereit. In der Argumentliste muss das *width*-Argument vor dem Wert stehen, der formatiert wird, wie im folgenden Beispiel gezeigt:
+Wenn die Width-Angabe ein Sternchen ( `*` ) ist, stellt ein **`int`** Argument aus der Argumentliste den Wert bereit. In der Argumentliste muss das *width*-Argument vor dem Wert stehen, der formatiert wird, wie im folgenden Beispiel gezeigt:
 
 `printf("%0*d", 5, 3);  /* 00003 is output */`
 
@@ -153,7 +153,7 @@ Im Gegensatz zu den Breitenangabe kann die Genauigkeitsangabe den Ausgabewert ab
 
 `printf( "%.0d", 0 );      /* No characters output */`
 
-Wenn die Genauigkeitsangabe ein Sternchen (\*) ist, stellt ein `int`-Argument aus der Argumentliste den Wert bereit. In der Argumentliste muss das *precision*-Argument vor dem Wert stehen, der formatiert wird, wie im folgenden Beispiel gezeigt:
+Wenn die Genauigkeits Angabe ein Sternchen ( \* ) ist, stellt ein **`int`** Argument aus der Argumentliste den Wert bereit. In der Argumentliste muss das *precision*-Argument vor dem Wert stehen, der formatiert wird, wie im folgenden Beispiel gezeigt:
 
 `printf( "%.*f", 3, 3.14159265 );  /* 3.142 output */`
 
@@ -163,19 +163,19 @@ Das *Typ*zeichen bestimmt entweder die Interpretation von *precision* oder die S
 
 |type|Bedeutung|Standard|
 |----------|-------------|-------------|
-|**a**, **A**|Die Genauigkeit gibt die Anzahl der Ziffern nach dem Punkt an.|Die Standardgenauigkeit beträgt 13. Wenn die Genauigkeit 0 beträgt, wird kein Dezimaltrennzeichen gedruckt **#** , es sei denn, das-Flag wird verwendet.|
+|**a**, **A**|Die Genauigkeit gibt die Anzahl der Ziffern nach dem Punkt an.|Die Standardgenauigkeit beträgt 13. Wenn die Genauigkeit 0 beträgt, wird kein Dezimaltrennzeichen gedruckt, es sei denn, das- **#** Flag wird verwendet.|
 |**c**, **c**|Die Genauigkeit hat keine Auswirkung.|Zeichen wird gedruckt.|
 |**d**, **i**, **o**, **u**, **x**, **X**|Die Genauigkeit gibt die minimale Anzahl der zu druckenden Ziffern an. Wenn die Anzahl der Ziffern im Argument kleiner als *precision* ist, wird der Ausgabewert auf der linken Seite mit Nullen aufgefüllt. Der Wert wird nicht abgeschnitten, wenn die Anzahl der Ziffern *precision* überschreitet.|Die Standardgenauigkeit beträgt 1.|
 |**e**, **E**|Die Genauigkeit gibt die Anzahl der zu druckenden Ziffern nach dem Dezimaltrennzeichen an. Die letzte gedruckte Ziffer ist gerundet.|Die Standardgenauigkeit beträgt 6. Wenn *precision* 0 ist oder der Punkt (.) angezeigt wird, ohne dass eine Zahl folgt, wird kein Dezimaltrennzeichen gedruckt.|
-|**f**, **F**|Der Genauigkeitswert gibt die Anzahl der Ziffern nach dem Dezimaltrennzeichen an. Wenn ein Dezimaltrennzeichen angezeigt wird, wird mindestens eine Ziffer davor angezeigt. Der Wert wird auf die entsprechende Anzahl an Stellen gerundet.|Die Standardgenauigkeit beträgt 6. Wenn *precision* 0 beträgt, oder wenn der Punkt (.) ohne eine ihm nachfolgende Zahl angezeigt wird, wird kein Dezimaltrennzeichen gedruckt.|
+|**f**, **f**|Der Genauigkeitswert gibt die Anzahl der Ziffern nach dem Dezimaltrennzeichen an. Wenn ein Dezimaltrennzeichen angezeigt wird, wird mindestens eine Ziffer davor angezeigt. Der Wert wird auf die entsprechende Anzahl an Stellen gerundet.|Die Standardgenauigkeit beträgt 6. Wenn *precision* 0 beträgt, oder wenn der Punkt (.) ohne eine ihm nachfolgende Zahl angezeigt wird, wird kein Dezimaltrennzeichen gedruckt.|
 |**g**, **G**|Die Genauigkeit gibt die maximale Anzahl an gedruckten signifikanten Stellen an.|Sechs signifikante Stellen werden gedruckt, und nachfolgende Nullen werden abgeschnitten.|
-|**s**, **S**|Die Genauigkeit gibt die maximale Anzahl der zu druckenden Zeichen an. Es werden nicht mehr als *precision* Zeichen gedruckt.|Zeichen werden gedruckt, bis ein Null-Zeichen gefunden wird.|
+|**s**, **s**|Die Genauigkeit gibt die maximale Anzahl der zu druckenden Zeichen an. Es werden nicht mehr als *precision* Zeichen gedruckt.|Zeichen werden gedruckt, bis ein Null-Zeichen gefunden wird.|
 
 <a name="size"></a>
 
 ## <a name="argument-size-specification"></a>Angabe der Argumentgröße
 
-In einer Konvertierungsangabe ist das *size*-Feld ein Argumentlängenmodifizierer für den Konvertierungsspezifizierer*typ*. Das *size*-Feld fungiert als Präfix für das *Typ*feld; **hh**, **h**, **j**, **l** (L als Kleinbuchstabe), **L**, **ll**, **t**, **w**, **z**, **I** (i als Großbuchstabe), **I32** und **I64** geben je nach dem Konvertierungsspezifizierer, den sie ändern, die „Größe“ des entsprechenden Arguments an: lang oder kurz, 32 Bit oder 64 Bit, Einzelbytezeichen oder Breitzeichen. Diese Größenpräfixe werden zusammen mit *Typ*zeichen in den Familien `printf` und `wprintf` der Funktionen verwendet, um der Interpretation von Argumentlängen gemäß der Darstellung in der folgenden Tabelle anzugeben. Das *size*-Feld ist für einige Argumenttypen optional. Wenn kein Größenpräfix angegeben ist, konsumiert das Formatierungsprogramm ganzzahlige Argumente, z.B. `char`, `short`, `int`, `long` mit oder ohne Vorzeichen und Aufzählungstypen, wie etwa 32-Bit `int`-Typen und `float`, `double` sowie `long double`, während Gleitkommaargumente als 64-Bit-`double`-Typen konsumiert werden. Dieses Verhalten stimmt mit den standardmäßigen Typerweiterungsregeln für Listen von Variablenargumenten überein. Weitere Informationen zur Argument herauf Stufung finden Sie unter Ellipsen und Standardargumente in [postfix Ausdrücken](../cpp/postfix-expressions.md). Sowohl auf 32-Bit als auch auf 64-Bit-Systemen muss die Konvertierungsangabe eines ganzzahligen 64-Bit-Arguments das Größenpräfix **ll** oder **I64** beinhalten. Andernfalls ist das Verhalten des Formatierungsprogramms nicht definiert.
+In einer Konvertierungsangabe ist das *size*-Feld ein Argumentlängenmodifizierer für den Konvertierungsspezifizierer*typ*. Das *size*-Feld fungiert als Präfix für das *Typ*feld; **hh**, **h**, **j**, **l** (L als Kleinbuchstabe), **L**, **ll**, **t**, **w**, **z**, **I** (i als Großbuchstabe), **I32** und **I64** geben je nach dem Konvertierungsspezifizierer, den sie ändern, die „Größe“ des entsprechenden Arguments an: lang oder kurz, 32 Bit oder 64 Bit, Einzelbytezeichen oder Breitzeichen. Diese Größenpräfixe werden zusammen mit *Typ*zeichen in den Familien `printf` und `wprintf` der Funktionen verwendet, um der Interpretation von Argumentlängen gemäß der Darstellung in der folgenden Tabelle anzugeben. Das *size*-Feld ist für einige Argumenttypen optional. Wenn kein Größen Präfix angegeben wird, verwendet das formatierungspunkt ganzzahlige Argumente – z. b. signierte oder unsignierte **`char`** , **`short`** , **`int`** , **`long`** , und Enumerationstypen – als 32-Bit- **`int`** Typen, und- **`float`** , **`double`** -und **`long double`** -Gleit Komma Argumente werden als 64-Bit- **`double`** Typen verwendet. Dieses Verhalten stimmt mit den standardmäßigen Typerweiterungsregeln für Listen von Variablenargumenten überein. Weitere Informationen zur Argument herauf Stufung finden Sie unter Ellipsen und Standardargumente in [postfix Ausdrücken](../cpp/postfix-expressions.md). Sowohl auf 32-Bit als auch auf 64-Bit-Systemen muss die Konvertierungsangabe eines ganzzahligen 64-Bit-Arguments das Größenpräfix **ll** oder **I64** beinhalten. Andernfalls ist das Verhalten des Formatierungsprogramms nicht definiert.
 
 Einige Typen weisen in 32-Bit- und 64-Bit-Code verschiedene Größen auf. Beispielsweise ist `size_t` in für x86-Systeme kompiliertem Code 32 Bit lang, bei Code für X64-Systeme jedoch 64 Bit lang. Zum Erstellen von plattformunabhängigem Formatierungscode für Typen mit variabler Breite können Sie einen Argumentgrößenmodifizierer mit variabler Breite verwenden. Verwenden Sie alternativ einen Argumentgrößenmodifizierer mit 64-Bit, und stufen Sie den Argumenttyp mit variabler Breite explizit auf 64 Bit herauf. Der Microsoft-spezifische Argumentgrößenmodifizierer **I** (i als Großbuchstabe) verarbeitet Integerargumente mit variabler Breite. Es empfiehlt sich jedoch, die typspezifischen Modifizierer **j**, **t** und **z** für Portabilität zu verwenden.
 
@@ -183,30 +183,30 @@ Einige Typen weisen in 32-Bit- und 64-Bit-Code verschiedene Größen auf. Beispi
 
 |Angabe von|Präfix|Mit Typspezifizierer|
 |----------------|----------------|-------------------------|
-|`char`<br />`unsigned char`|**hh**|**d**, **i**, **o**, **u**, **x** oder **X**|
-|`short int`<br />`short unsigned int`|**Micha**|**d**, **i**, **o**, **u**, **x** oder **X**|
-|`__int32`<br />`unsigned __int32`|**I32**|**d**, **i**, **o**, **u**, **x** oder **X**|
-|`__int64`<br />`unsigned __int64`|**I64**|**d**, **i**, **o**, **u**, **x** oder **X**|
+|**`char`**<br />**`unsigned char`**|**hh**|**d**, **i**, **o**, **u**, **x** oder **X**|
+|**`short int`**<br />**`short unsigned int`**|**h**|**d**, **i**, **o**, **u**, **x** oder **X**|
+|**`__int32`**<br />**`unsigned __int32`**|**I32**|**d**, **i**, **o**, **u**, **x** oder **X**|
+|**`__int64`**<br />**`unsigned __int64`**|**I64**|**d**, **i**, **o**, **u**, **x** oder **X**|
 |`intmax_t`<br />`uintmax_t`|**j** oder **I64**|**d**, **i**, **o**, **u**, **x** oder **X**|
-|`long double`|**l** (L als Kleinbuchstabe) oder **L**|**a**, **A**, **e**, **E**, **f**, **F**, **g** oder **G**|
-|`long int`<br />`long unsigned int`|**l** (L als Kleinbuchstabe)|**d**, **i**, **o**, **u**, **x** oder **X**|
-|`long long int`<br />`unsigned long long int`|**ll** (LL in Kleinbuchstaben)|**d**, **i**, **o**, **u**, **x** oder **X**|
+|**`long double`**|**l** (L als Kleinbuchstabe) oder **L**|**a**, **A**, **e**, **E**, **f**, **F**, **g** oder **G**|
+|**`long int`**<br />**`long unsigned int`**|**l** (L als Kleinbuchstabe)|**d**, **i**, **o**, **u**, **x** oder **X**|
+|**`long long int`**<br />**`unsigned long long int`**|**ll** (LL in Kleinbuchstaben)|**d**, **i**, **o**, **u**, **x** oder **X**|
 |`ptrdiff_t`|**t** oder **I** (i als Großbuchstabe)|**d**, **i**, **o**, **u**, **x** oder **X**|
 |`size_t`|**z** oder **I** (i als Großbuchstabe)|**d**, **i**, **o**, **u**, **x** oder **X**|
-|Einzelbytezeichen|**Micha**|**c** oder **c**|
+|Einzelbytezeichen|**h**|**c** oder **c**|
 |Breitzeichen|**l** (L als Kleinbuchstabe) oder **w**|**c** oder **c**|
-|Einzelbytezeichenfolge|**Micha**|**s**, **S** oder **Z**|
+|Einzelbytezeichenfolge|**h**|**s**, **S** oder **Z**|
 |Breitzeichenfolge|**l** (L als Kleinbuchstabe) oder **w**|**s**, **S** oder **Z**|
 
-Die Typen `ptrdiff_t` und `size_t` sind `__int32` oder `unsigned __int32` auf 32-Bit-Plattformen und `__int64` oder `unsigned __int64` auf 64-Bit-Plattformen. Die Größenpräfixe **I** (i als Großbuchstabe), **j**, **t** und **z** übernehmen die richtige Argumentbreite für die Plattform.
+Die `ptrdiff_t` `size_t` Typen und sind **`__int32`** oder **`unsigned __int32`** auf 32-Bit-Plattformen und **`__int64`** oder **`unsigned __int64`** auf 64-Bit-Plattformen. Die Größenpräfixe **I** (i als Großbuchstabe), **j**, **t** und **z** übernehmen die richtige Argumentbreite für die Plattform.
 
-Obwohl `long double` in Visual C++ ein gesonderter Typ ist, hat er die gleiche interne Darstellung wie `double`.
+In Visual C++, obwohl **`long double`** ein eindeutiger Typ ist, hat er die gleiche interne Darstellung wie **`double`** .
 
-Ein **hc**- oder **hC**-Typspezifizierer ist mit **c** in `printf`-Funktionen und mit **C** in `wprintf`-Funktionen synonym. Ein **LC**- **, LC**-, **WC**-oder **WC** -Typspezifizierer ist `printf` mit **c** in-Funktionen `wprintf` und mit **c** in-Funktionen Synonym. Ein **hs**- oder **hS**-Typspezifizierer ist mit **s** in `printf`-Funktionen und mit **S** in `wprintf`-Funktionen synonym. Ein **ls**-, **lS**-, **ws**- oder **wS**-Typspezifizierer ist mit **S** in `printf`-Funktionen und mit **s** in `wprintf`-Funktionen synonym.
+Ein **hc**- oder **hC**-Typspezifizierer ist mit **c** in `printf`-Funktionen und mit **C** in `wprintf`-Funktionen synonym. Ein **LC**-, **LC**-, **WC**-oder **WC** -Typspezifizierer ist mit **c** in `printf` -Funktionen und mit **c** in- `wprintf` Funktionen Synonym. Ein **hs**- oder **hS**-Typspezifizierer ist mit **s** in `printf`-Funktionen und mit **S** in `wprintf`-Funktionen synonym. Ein **ls**-, **lS**-, **ws**- oder **wS**-Typspezifizierer ist mit **S** in `printf`-Funktionen und mit **s** in `wprintf`-Funktionen synonym.
 
 > [!NOTE]
 > **Microsoft-spezifisch:**\
-> Die Präfixe der Argumentgrößenmodifizierer **I** (i als Großbuchstabe), **I32**, **I64** und **w** sind Microsoft-Erweiterungen und nicht ISO C-konform. Das **h**-Präfix, wenn es mit Daten des Typs `char` und das **I**-Präfix (Kleinbuchstabe „l“), wenn es mit Daten des Typs `double` verwendet wird, sind Microsoft-Erweiterungen.
+> Die Präfixe der Argumentgrößenmodifizierer **I** (i als Großbuchstabe), **I32**, **I64** und **w** sind Microsoft-Erweiterungen und nicht ISO C-konform. Das **h** -Präfix, wenn es mit Daten des Typs **`char`** und dem **l** -Präfix (Kleinbuchstaben) verwendet wird, wenn es mit Daten des Typs verwendet wird, **`double`** sind Microsoft-Erweiterungen.
 
 ## <a name="see-also"></a>Weitere Informationen
 

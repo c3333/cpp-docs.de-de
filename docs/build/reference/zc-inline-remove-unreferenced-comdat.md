@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Zc compiler options (C++)
 - /Zc:inline
 ms.assetid: a4c94224-1d73-4bea-a9d5-4fa73dc924df
-ms.openlocfilehash: 42791b2e337fb9a9724a165145e757152b8d679d
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: 290252262254521c024d7b0d6355472199d1f55d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518243"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218961"
 ---
 # <a name="zcinline-remove-unreferenced-comdat"></a>/Zc:inline (unreferenzierte COMDAT entfernen)
 
@@ -23,15 +23,15 @@ Entfernt nicht referenzierte Daten oder Funktionen, die COMDATs sind oder nur ü
 
 ## <a name="syntax"></a>Syntax
 
-> **/Zc:inline**[ **-** ]
+> **/Zc: Inline**[ **-** ]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn **/Zc: Inline** angegeben wird, gibt der Compiler keine Symbol Informationen für nicht referenzierte COMDAT-Funktionen oder-Daten aus. Oder für Daten oder Funktionen, die nur über interne Verknüpfungen verfügen. Diese Optimierung vereinfacht einige der Aufgaben, die der Linker in Releasebuilds durchführt, oder wenn Sie die Linkeroption [/OPT: Ref](opt-optimizations.md) angeben. Diese Compileroptimierung kann die Größe der obj-Datei erheblich reduzieren und die Linker-Geschwindigkeit verbessern. Die-Compileroption ist nicht aktiviert, wenn Sie Optimierungen deaktivieren ([/od](od-disable-debug.md)). Oder, wenn Sie [/GL (Optimierung des ganzen Programms)](gl-whole-program-optimization.md)angeben.
 
-Standardmäßig ist diese Option deaktiviert ( **/Zc: Inline-** ) in Befehlszeilenbuilds. Die [/permissive-](permissive-standards-conformance.md) -Option aktiviert **/Zc: Inline**nicht. In MSBuild-Projekten wird die Option von den **Konfigurations Eigenschaften** > **CC++ /**  > **Sprache** festgelegt > **Entfernen von nicht referenzierten Code und der Daten** Eigenschaft, die standardmäßig auf " **Yes** " festgelegt ist.
+Standardmäßig ist diese Option deaktiviert (**/Zc: Inline-**) in Befehlszeilenbuilds. Die [/permissive-](permissive-standards-conformance.md) -Option aktiviert **/Zc: Inline**nicht. In MSBuild-Projekten wird die-Option durch die **Konfigurations Eigenschaften**  >  **C/C++**  >  **Language**  >  **Remove unreferenzierten Code und die Daten** Eigenschaft festgelegt, die standardmäßig auf **Yes** festgelegt ist.
 
-Wenn **/Zc: Inline** angegeben ist, erzwingt der Compiler die Anforderung c++ 11, dass für alle Funktionen, die deklariert wurden `inline` eine Definition in derselben Übersetzungseinheit verfügbar sein muss, wenn Sie verwendet werden. Wenn die Option nicht angegeben wird, lässt der Microsoft-Compiler nicht kompatiblen Code zu, der Funktionen aufruft, die `inline` deklariert sind, auch wenn keine Definition sichtbar ist. Weitere Informationen finden Sie unter „C++11-Standard“ in den Abschnitten 3.2 und 7.1.2. Diese Compileroption wurde in Visual Studio 2013 Update 2 eingeführt.
+Wenn **/Zc: Inline** angegeben ist, erzwingt der Compiler die c++ 11-Anforderung, dass alle deklarierten Funktionen über **`inline`** eine Definition verfügen müssen, die in derselben Übersetzungseinheit verfügbar ist, wenn Sie verwendet werden. Wenn die Option nicht angegeben wird, lässt der Microsoft-Compiler nicht kompatiblen Code zu, der Funktionen aufruft, die auch dann deklariert werden, **`inline`** Wenn keine Definition sichtbar ist. Weitere Informationen finden Sie unter „C++11-Standard“ in den Abschnitten 3.2 und 7.1.2. Diese Compileroption wurde in Visual Studio 2013 Update 2 eingeführt.
 
 Aktualisieren Sie den nicht kompatiblen Code, um die **/Zc: Inline** -Option zu verwenden.
 
@@ -77,9 +77,9 @@ int main() {
 }
 ```
 
-Wenn **/Zc: Inline** aktiviert ist, verursacht derselbe Code einen [LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md) -Fehler, da der Compiler keinen nicht Inline-Code Körper für `Example::inline_call` in "example. obj" ausgibt. Dies bewirkt, dass der nicht-Inline-Aufrufe in `main` auf ein nicht definiertes externes Symbol verweist.
+Wenn **/Zc: Inline** aktiviert ist, verursacht derselbe Code einen [LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md) -Fehler, da der Compiler keinen nicht Inline-Code Körper für `Example::inline_call` in example. obj ausgibt. Dies bewirkt, dass der nicht-Inline-Aufrufvorgang in `main` auf ein nicht definiertes externes Symbol verweist.
 
-Zur Fehlerbehebung können Sie das Schlüsselwort `inline` aus der Deklaration von `Example::inline_call` entfernen, die Definition von `Example::inline_call` in die Headerdatei verschieben oder die Implementierung von `Example` in main.cpp verschieben. Im nächsten Beispiel wird die Definition in die Headerdatei verschoben, in der sie für jeden Aufrufer sichtbar ist, der den Header enthält.
+Um diesen Fehler zu beheben, können Sie das- **`inline`** Schlüsselwort aus der Deklaration von entfernen `Example::inline_call` , die Definition von `Example::inline_call` in die Header Datei verschieben oder die Implementierung von `Example` in "Main. cpp" verschieben. Im nächsten Beispiel wird die Definition in die Headerdatei verschoben, in der sie für jeden Aufrufer sichtbar ist, der den Header enthält.
 
 ```cpp
 // example2.h
@@ -125,10 +125,10 @@ Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **C++ C/**  > **Sprache** aus.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Sprache** aus.
 
 1. Ändern Sie die Eigenschaft **nicht referenzierten Code und die Daten entfernen** , und klicken Sie dann auf **OK**.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [/Zc (Übereinstimmung)](zc-conformance.md)<br/>

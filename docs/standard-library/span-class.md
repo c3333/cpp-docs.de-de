@@ -51,12 +51,12 @@ helpviewer_keywords:
 - std::span [C++], rend
 - std::span [C++], size
 - std::span [C++], size_bytes
-ms.openlocfilehash: e77f57bc56a75406745349e19d03bc26edc5470d
-ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
+ms.openlocfilehash: 86ef4afcb5e6e7a9d244a8c2f2126bec7e1ace75
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85813508"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217453"
 ---
 # <a name="span-class-c-standard-library"></a>Span-Klasse (C++-Standard Bibliothek)
 
@@ -86,8 +86,8 @@ class span;
 
 | **Typdefinitionen** | **Beschreibung** |
 |-|-|
-| [const_pointer](#pointer) | Der Typ eines Zeigers auf ein- `const` Element. |
-| [const_reference](#reference) | Der Typ eines Verweises auf ein- `const` Element. |
+| [const_pointer](#pointer) | Der Typ eines Zeigers auf ein- **`const`** Element. |
+| [const_reference](#reference) | Der Typ eines Verweises auf ein- **`const`** Element. |
 | [difference_type](#difference_type) | Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen. |
 | [element_type](#element_type) | Der Typ eines SPAN-Elements. |
 | [Iterator](#iterator) | Der Typ eines Iterators für eine Spanne. |
@@ -95,17 +95,17 @@ class span;
 | [Referenz](#reference) | Der Typ eines Verweises auf ein Element. |
 | [reverse_iterator](#reverse_iterator) | Der Typ eines umgekehrten Iterators für eine Spanne. |
 | [size_type](#size_type) | Der Typ für das Ergebnis der Entfernung ohne Vorzeichen zwischen zwei Elementen in der Spanne. |
-| [value_type](#value_type) | Der Typ eines Elements ohne- `const` oder- `volatile` Qualifikation. |
+| [value_type](#value_type) | Der Typ eines Elements ohne- **`const`** oder- **`volatile`** Qualifikation. |
 | **Konstruktoren** | **Beschreibung** |
-|[Spanne](#span)| Erstellen Sie eine `span` .|
+|[Spanne](#span)| Erstellen Sie ein `span`.|
 | **Iteratorunterstützung** | **Beschreibung** |
 |[beginnen](#begin) | Einen Iterator, der auf das erste Element in der Spanne zeigt, wird erhalten.|
-|[Schließlich](#end) | Einen Iterator, der auf das Ende der Spanne zeigt, wird erhalten. |
+|[end](#end) | Einen Iterator, der auf das Ende der Spanne zeigt, wird erhalten. |
 |[rbegin](#rbegin) | Rückgängigmachen eines umgekehrten Iterators, der auf das letzte Element der Spanne zeigt Das heißt, der Anfang der umgekehrten Spanne.|
 |[rend](#rend) | Rückgängigmachen eines umgekehrten Iterators, der auf den Vordergrund der Spanne zeigt Das heißt, das Ende der umgekehrten Spanne.|
 | **Zugriffs Elemente**| **Beschreibung** |
 |[Zurück](#back) | Das letzte Element in der Spanne wird angezeigt.|
-|[Daten](#data) | Die Adresse des ersten Elements in der Spanne erhalten.|
+|[data](#data) | Die Adresse des ersten Elements in der Spanne erhalten.|
 |[Beifahrer](#front) | Das erste Element in der Spanne wird angezeigt.|
 |[KOM\[\]](#op_at) | Greift auf ein Element an einer angegebenen Position zu.|
 | **Beobachter** | **Beschreibung** |
@@ -120,13 +120,13 @@ class span;
 |[span:: Operator =](#op_eq)| Ersetzen Sie die Spanne.|
 |[span::-Operator\[\]](#op_at)| Das Element an der angegebenen Position. |
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Alle Element Funktionen weisen eine `span` Konstante Zeit Komplexität auf.
 
 Anders als `array` oder `vector` werden die darin enthaltenen Elemente von einem span-Element nicht "Besitzer". Eine Spanne gibt keinen Speicherplatz für die darin enthaltenen Elemente frei, da Sie nicht den Speicher für diese Objekte besitzt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<span>
 
@@ -270,7 +270,7 @@ Der Typ der Elemente in der Spanne.
 using element_type = T;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ wird `T` beim Erstellen einer Spanne aus dem Vorlagen Parameter entnommen.
 
@@ -306,7 +306,7 @@ constexpr bool empty() const noexcept;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt zurück, `true` Wenn `this->size() == 0` . Andernfalls `false`.
+Gibt zurück, **`true`** Wenn `this->size() == 0` . Andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -336,7 +336,7 @@ constexpr iterator end() const noexcept;
 
 Ein Iterator, der direkt hinter das Ende der Spanne zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `end` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
@@ -371,7 +371,7 @@ Die Anzahl der Elemente wird als Parameter für die Vorlage oder für die Funkti
 
 Eine Spanne, die `count` Elemente von der Vorderseite dieser Spanne enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie die Vorlagen Version dieser Funktion, wenn dies möglich `count` ist, um zur Kompilierzeit zu überprüfen und Informationen über die Spanne beizubehalten, da Sie einen spannen Bereich mit fester Größe zurückgibt.
 
@@ -451,7 +451,7 @@ Der Typ eines Iterators überspannen Elemente.
 using iterator = implementation-defined-iterator-type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Typ dient als Iterator für die Elemente in einer Spanne.
 
@@ -496,7 +496,7 @@ Die Zahl kann wie unten dargestellt als Parameter für die Vorlage oder für die
 
 Eine Spanne, die die letzten `count` Elemente aus dieser Spanne enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie die Vorlagen Version dieser Funktion, wenn dies möglich `count` ist, um zur Kompilierzeit zu überprüfen und Informationen über die Spanne beizubehalten, da Sie einen spannen Bereich mit fester Größe zurückgibt.
 
@@ -588,7 +588,7 @@ Die Spanne, die dieser zugewiesen werden soll.
 
 `*this`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Zuweisung bewirkt eine flache Kopie des Daten Zeigers und der Größe. Eine flache Kopie ist sicher, weil ein `span` keinen Speicher für die darin enthaltenen Elemente zuweist.
 
@@ -619,7 +619,7 @@ int main()
 
 ## <a name="spanpointer"></a><a name="pointer"></a> `span::pointer`
 
-Die Typen für einen Zeiger und einen `const` Zeiger auf ein span-Element.
+Die Typen für einen Zeiger und einen **`const`** Zeiger auf ein span-Element.
 
 ```cpp
 using pointer = T*;
@@ -693,7 +693,7 @@ int main()
 
 ## <a name="spanreference"></a><a name="reference"></a> `span::reference`
 
-Die Typen für einen Verweis und ein `const` Verweis auf ein span-Element.
+Die Typen für einen Verweis und ein **`const`** Verweis auf ein span-Element.
 
 ```cpp
 using reference = T&;
@@ -740,7 +740,7 @@ constexpr reverse_iterator rend() const noexcept;
 
 Ein umgekehrter Iterator für den Platzhalter, der auf das letzte Element in der umgekehrten Spanne folgt. Das heißt, der Platzhalter vor dem ersten Element in der nicht umgekehrten Spanne.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `rend`wird bei einer umgekehrten Spanne verwendet, so wie [span:: End](#end) bei einer Spanne verwendet wird. Verwenden Sie es, um zu testen, ob ein umgekehrter Iterator das Ende seiner Spanne erreicht hat.
 
@@ -954,7 +954,7 @@ Erstellen Sie eine Kopie dieser Spanne.
 *r*\
 Erstellen Sie eine Spanne aus diesem Bereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Spanne gibt keinen Speicher für Elemente in der Spanne frei, da Sie nicht die Speicherung der darin enthaltenen Objekte besitzt.
 
@@ -1015,7 +1015,7 @@ Die Position in dieser Spanne, an der die Teil Spanne gestartet werden soll.
 
 Eine Spanne, beginnend bei `offset` in dieser Spanne. Enthält- `count` Elemente.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Vorlagen Version dieser Funktion ist verfügbar, die die Anzahl zur Kompilierzeit überprüft, wodurch Informationen über die Spanne beibehalten werden, indem ein fester Wertebereich zurückgegeben wird.
 
@@ -1058,7 +1058,7 @@ mySpan.subspan<1>: 12
 
 ## <a name="spanvalue_type"></a><a name="value_type"></a> `span::value_type`
 
-Der Typ des Elements in der Spanne ohne- `const` oder- `volatile` Qualifikation.
+Der Typ des Elements in der Spanne ohne- **`const`** oder- **`volatile`** Qualifikation.
 
 ```cpp
 using value_type = std::remove_cv_t<T>;

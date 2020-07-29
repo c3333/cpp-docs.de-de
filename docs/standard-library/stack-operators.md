@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::operator&lt; (stack)
 - std::operator&lt;= (stack)
 - std::operator== (stack)
-ms.openlocfilehash: 169698d30edd4a7995cb05e1909c1ffc38b0b6ef
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: ac694e517279e43a501bb8289544e5da5ddba72b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425070"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217414"
 ---
 # <a name="ltstackgt-operators"></a>&lt;stack&gt;-Operatoren
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das Stack-Objekt links vom Operator ungleich dem Stack-Objekt rechts vom Operator ist.
 
@@ -35,17 +35,17 @@ bool operator!=(const stack <Type, Container>& left, const stack <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `stack`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `stack`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn Stacks oder Stacks ungleich sind, **FALSE**, wenn Stacks oder Stacks gleich sind.
+**`true`**, wenn die Stapel oder Stapel nicht gleich sind. , **`false`** Wenn Stapel oder Stapel gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Stapel-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Stacks sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -90,7 +90,7 @@ The stacks s1 and s2 are not equal.
 The stacks s1 and s3 are equal.
 ```
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das Stapelobjekt links vom Operator kleiner als das Stapelobjekt rechts vom Operator ist.
 
@@ -100,17 +100,17 @@ bool operator<(const stack <Type, Container>& left, const stack <Type, Container
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `stack`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `stack`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Stack links vom Operator kleiner als und ungleich dem Stack rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Stapel Links vom Operator kleiner als und ungleich dem Stapel auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -174,7 +174,7 @@ The stack s1 is greater than or equal to the stack s3.
 The stack s1 from the top down is: ( 8 6 4 2 ).
 ```
 
-## <a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das Stapelobjekt links vom Operator kleiner gleich dem Stapelobjekt rechts vom Operator ist.
 
@@ -184,17 +184,17 @@ bool operator<=(const stack <Type, Container>& left, const stack <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `stack`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `stack`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Stack links vom Operator kleiner als oder gleich dem Stack rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Stapel Links vom Operator kleiner als oder gleich dem Stapel auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als oder gleich“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -241,7 +241,7 @@ The stack s1 is greater than the stack s2.
 The stack s1 is less than or equal to the stack s3.
 ```
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Stack-Objekt links vom Operator gleich dem Stack-Objekt rechts vom Operator ist.
 
@@ -251,17 +251,17 @@ bool operator==(const stack <Type, Container>& left, const stack <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `stack`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `stack`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn Stacks oder Stacks gleich sind, **FALSE**, wenn Stacks oder Stacks ungleich sind.
+**`true`**, wenn die Stapel oder Stapel gleich sind. , **`false`** Wenn Stapel oder Stapel nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Stacks sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -306,7 +306,7 @@ The stacks s1 and s2 are not equal.
 The stacks s1 and s3 are equal.
 ```
 
-## <a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das Stapelobjekt links vom Operator größer als das Stapelobjekt rechts vom Operator ist.
 
@@ -316,17 +316,17 @@ bool operator>(const stack <Type, Container>& left, const stack <Type, Container
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `stack`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `stack`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Stack links vom Operator größer als oder gleich dem Stack rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Stapel Links vom Operator größer als und ungleich dem Stapel auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „größer als“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -375,7 +375,7 @@ The stack s1 is not greater than the stack s2.
 The stack s1 is greater than the stack s3.
 ```
 
-## <a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das Stapelobjekt links vom Operator größer gleich dem Stapelobjekt rechts vom Operator ist.
 
@@ -385,17 +385,17 @@ bool operator>=(const stack <Type, Container>& left, const stack <Type, Containe
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `stack`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `stack`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Stack links vom Operator strikt kleiner als der Stack rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Stapel Links vom Operator strikt kleiner als der Stapel auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „größer als oder gleich“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 

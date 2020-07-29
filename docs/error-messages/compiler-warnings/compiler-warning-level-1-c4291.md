@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4291
 ms.assetid: c2b95dea-38f2-4609-9104-707c30798da4
-ms.openlocfilehash: c1972236e30be4e6ca738b606b00398f5c7860e0
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: e45856702eef7f24595d10b81f39047d8f9a08b2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81754856"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221002"
 ---
 # <a name="compiler-warning-level-1-c4291"></a>Compilerwarnung (Stufe 1) C4291
 
-'Deklaration': kein übereinstimmender Operatorlöschen gefunden; Speicher wird nicht freigegeben, wenn die Initialisierung eine Ausnahme auslöst
+' Deklaration ': Es wurde kein passender Operator gelöscht gefunden. der Arbeitsspeicher wird nicht freigegeben, wenn die Initialisierung eine Ausnahme auslöst.
 
-Es wird eine [neue](../../cpp/new-operator-cpp.md) Platzierung verwendet, für die es keine Platzierung [löschen](../../cpp/delete-operator-cpp.md)gibt.
+Eine Platzierung [New](../../cpp/new-operator-cpp.md) wird verwendet, für die kein Platzierungs [Lösch](../../cpp/delete-operator-cpp.md)Vorgang erfolgt.
 
-Wenn Speicher für ein Objekt mit dem Operator **new**reserviert wird, wird der Konstruktor des Objekts aufgerufen. Wenn der Konstruktor eine Ausnahme auslöst, sollte der für das Objekt reservierte Speicher verteilt werden. Dies kann nur geschehen, wenn eine **Operatorlöschfunktion** vorhanden ist, die mit dem Operator **new**übereinstimmt.
+Wenn Arbeitsspeicher für ein Objekt mit Operator zugewiesen wird **`new`** , wird der Konstruktor des Objekts aufgerufen. Wenn der Konstruktor eine Ausnahme auslöst, sollte der Arbeitsspeicher, der dem Objekt zugeordnet wurde, die Zuordnung aufgehoben werden. Dies kann nur dann erfolgen, wenn eine Operator **`delete`** Funktion vorhanden ist, die mit dem Operator übereinstimmt **`new`** .
 
-Wenn Sie den Operator **new** ohne zusätzliche Argumente verwenden und mit den Optionen [/GX](../../build/reference/gx-enable-exception-handling.md), [/EHs](../../build/reference/eh-exception-handling-model.md)oder /EHa kompilieren, um die Ausnahmebehandlung zu aktivieren, generiert der Compiler Code zum **Aufrufen von Operatordelete,** wenn der Konstruktor eine Ausnahme auslöst.
+Wenn Sie den-Operator **`new`** ohne zusätzliche Argumente verwenden und mit den Optionen [/GX](../../build/reference/gx-enable-exception-handling.md), [/EHS](../../build/reference/eh-exception-handling-model.md)oder/EHa kompilieren, um die Ausnahmebehandlung zu aktivieren, generiert der Compiler Code, um den Operator aufzurufen, **`delete`** Wenn der Konstruktor eine Ausnahme auslöst.
 
-Wenn Sie das Platzierungsformular des **neuen** Operators (das Formular mit Argumenten zusätzlich zur Größe der Zuordnung) verwenden und der Konstruktor des Objekts eine Ausnahme auslöst, generiert der Compiler weiterhin Code zum Aufrufen von Operator **delete**. Dies wird jedoch nur der Fall sein, wenn eine Platzierungsform des **Operatorslöschens** vorhanden ist, die mit dem Platzierungsformular des **neuen** Operators übereinstimmt, der den Speicher zugewiesen hat. Beispiel:
+Wenn Sie das Platzierungs Formular des Operators verwenden **`new`** (das Formular mit Argumenten zusätzlich zur Größe der Zuordnung) und der Konstruktor des Objekts eine Ausnahme auslöst, generiert der Compiler weiterhin Code, um Operator aufzurufen. Dies geschieht **`delete`** jedoch nur, wenn eine Platzierungs Form des Operators vorhanden ist, **`delete`** die mit der Platzierungs Form des Operators übereinstimmt, **`new`** der den Arbeitsspeicher zugewiesen hat. Beispiel:
 
 ```cpp
 // C4291.cpp
@@ -74,7 +74,7 @@ int main(void)
 }
 ```
 
-Im obigen Beispiel wird die Warnung C4291 generiert, da keine Platzierungsform für den **Operatordelete** definiert wurde, die mit der Platzierungsform des Operators **new**übereinstimmt. Um das Problem zu lösen, fügen Sie den folgenden Code über **main**ein. Beachten Sie, dass alle **überladenen Operatorlöschfunktionsparameter** mit denen des überladenen Operators **new**übereinstimmen, mit Ausnahme des ersten Parameters.
+Im obigen Beispiel wird die Warnung C4291 generiert, da keine Platzierungs Form von Operator definiert wurde, die mit **`delete`** der Platzierungs Form des Operators übereinstimmt **`new`** . Um das Problem zu beheben, fügen Sie den folgenden Code oberhalb von **Main**ein. Beachten Sie, dass alle überladenen Operator **`delete`** Funktionsparameter mit denen des überladenen Operators **`new`** , mit Ausnahme des ersten Parameters, identisch sind.
 
 ```cpp
 void operator delete(void* pMem, char* pszFilename, int nLine)

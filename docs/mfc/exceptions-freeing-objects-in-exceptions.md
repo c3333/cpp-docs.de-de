@@ -11,12 +11,12 @@ helpviewer_keywords:
 - throwing exceptions [MFC], after destroying
 - exception handling [MFC], destroying objects
 ms.assetid: 3b14b4ee-e789-4ed2-b8e3-984950441d97
-ms.openlocfilehash: e4fafd12d22f6ff7635380e139f60c110a193d9d
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: a02b71609ec19d6106153bf67e9d56b860cfdfff
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84622828"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217934"
 ---
 # <a name="exceptions-freeing-objects-in-exceptions"></a>Ausnahmen: Freigeben von Objekten in Ausnahmen
 
@@ -30,9 +30,9 @@ Ausnahmen, die vom Framework oder von Ihrer Anwendung ausgelöst werden, unterbr
 
 Hierfür gibt es zwei primäre Methoden.
 
-- Behandeln Sie Ausnahmen lokal mithilfe der Schlüsselwörter "Try" und " **catch** ", und zerstören **Sie** alle Objekte mit einer Anweisung.
+- Behandeln Sie Ausnahmen lokal mithilfe **`try`** der **`catch`** Schlüsselwörter und, und zerstören Sie dann alle Objekte mit einer Anweisung.
 
-- Zerstören Sie alle-Objekte im **catch** -Block, bevor Sie die Ausnahme außerhalb des-Blocks zur weiteren Behandlung auslösen.
+- Zerstören Sie alle-Objekte im- **`catch`** Block, bevor Sie die Ausnahme außerhalb des-Blocks zur weiteren Behandlung auslösen.
 
 Diese beiden Ansätze sind unten als Lösungen für das folgende problematische Beispiel dargestellt:
 
@@ -50,7 +50,7 @@ Dieses neue Beispiel richtet einen Ausnahmehandler ein, um die Ausnahme abzufang
 
 ## <a name="throwing-exceptions-after-destroying-objects"></a><a name="_core_throwing_exceptions_after_destroying_objects"></a>Auslösen von Ausnahmen nach dem Zerstören von Objekten
 
-Eine andere Möglichkeit, Ausnahmen zu behandeln, besteht darin, Sie an den nächsten äußeren Ausnahme behandlungskontext zu übergeben. In Ihrem **catch** -Block können Sie einige Bereinigungs Vorgänge für Ihre lokal zugeordneten Objekte durchführen und dann die Ausnahme für zur weiteren Verarbeitung auslösen.
+Eine andere Möglichkeit, Ausnahmen zu behandeln, besteht darin, Sie an den nächsten äußeren Ausnahme behandlungskontext zu übergeben. In Ihrem- **`catch`** Block können Sie einige Bereinigungs Vorgänge für Ihre lokal zugeordneten Objekte ausführen und dann die Ausnahme für zur weiteren Verarbeitung auslösen.
 
 Die auslösende Funktion muss möglicherweise Heap Objekte nicht mehr zuordnen. Wenn die Funktion immer das Heap Objekt zuordnet, bevor Sie im Normalfall zurückgegeben wird, sollte die Funktion die Zuordnung des Heap Objekts vor dem Auslösen der Ausnahme auch aufgehoben. Wenn die Funktion die Zuordnung des Objekts in der Regel vor der Rückgabe im Normalfall jedoch nicht durchführt, müssen Sie sich für eine Fall Weise entscheiden, ob die Zuordnung des Heap Objekts aufgehoben werden soll.
 
@@ -64,6 +64,6 @@ Wenn Sie Funktionen aufzurufen, die Ausnahmen auslösen können, können Sie **t
 
 Weitere Informationen finden Sie unter [Ausnahmen: abfangen und Löschen von Ausnahmen](exceptions-catching-and-deleting-exceptions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausnahmebehandlung](exception-handling-in-mfc.md)

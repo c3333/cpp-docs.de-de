@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3541
 ms.assetid: 252cfd4c-5fd2-415e-a17d-6b0c254350db
-ms.openlocfilehash: 1308ff91bcebabc5495b015321494f3457cf2d1e
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 32926d0ef9343bad9ed73458e4d52d317b628109
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761503"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221041"
 ---
 # <a name="compiler-error-c3541"></a>Compilerfehler C3541
 
 "Typ": typeid kann nicht auf einen Typ angewendet werden, der "Auto" enthält.
 
-Der [typeid](../../extensions/typeid-cpp-component-extensions.md) -Operator kann nicht auf den angezeigtem Typ angewendet werden, weil er den `auto` Spezifizierer enthält.
+Der [typeid](../../extensions/typeid-cpp-component-extensions.md) -Operator kann nicht auf den angezeigtem Typ angewendet werden, weil er den **`auto`** Spezifizierer enthält.
 
 ## <a name="example"></a>Beispiel
 
@@ -38,5 +38,5 @@ int main() {
 ## <a name="see-also"></a>Siehe auch
 
 [Auto-Schlüsselwort](../../cpp/auto-keyword.md)<br/>
-[/Zc:auto (Variablentyp ableiten)](../../build/reference/zc-auto-deduce-variable-type.md)<br/>
-[typeid](../../extensions/typeid-cpp-component-extensions.md)
+[/Zc: Auto (Variablentyp ableiten)](../../build/reference/zc-auto-deduce-variable-type.md)<br/>
+[TypeId](../../extensions/typeid-cpp-component-extensions.md)

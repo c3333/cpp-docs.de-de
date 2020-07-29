@@ -8,22 +8,22 @@ helpviewer_keywords:
 - tracking references
 - '% tracking reference [C++]'
 ms.assetid: 142a7269-ab69-4b54-a6d7-833bef06228f
-ms.openlocfilehash: ccd31b3e334dc5a4cd2e48b94c9dbe85cf13c16b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 93f56580f35ffc1f6e517905467c3deb92922f5f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368234"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218012"
 ---
 # <a name="tracking-reference-operator-ccli-and-ccx"></a>Nachverfolgungsverweisoperator (C++/CLI und C++/CX)
 
-Ein *Tracking-Verweis* (`%`) verhält sich wie`&`ein gewöhnlicher C++-Verweis ( ), mit der Ausnahme, dass, wenn ein Objekt einem Tracking-Verweis zugewiesen wird, die Referenzanzahl des Objekts erhöht wird.
+Ein nach *Verfolgungs Verweis* ( `%` ) verhält sich wie ein normaler C++ Reference ( `&` ), mit dem Unterschied, dass bei Zuweisung eines Objekts zu einem nach Verfolgungs Verweis der Verweis Zähler des Objekts inkrementiert wird.
 
 ## <a name="all-platforms"></a>Alle Plattformen
 
 Ein Nachverfolgungsverweis verfügt über die folgenden Eigenschaften.
 
-- Die Zuweisung eines Objekts zu einem Nachverfolgungsverweis bewirkt, dass die Referenzanzahl des Objekts erhöht wird.
+- Die Zuweisung eines Objekts zu einem nach Verfolgungs Verweis bewirkt, dass der Verweis Zähler des Objekts inkrementiert wird.
 
 - Wenn Sie einen `*` dereferenzieren, ist das Ergebnis ein nativer Verweis (`&`). Wenn Sie einen `^` dereferenzieren, ist das Ergebnis ein Nachverfolgungsverweis (`%`). Solange Sie über einen `%` zu einem Objekt verfügen, bleibt das Objekt im Speicher erhalten.
 
@@ -31,7 +31,7 @@ Ein Nachverfolgungsverweis verfügt über die folgenden Eigenschaften.
 
 - Nachverfolgungsverweise gelten für Werttypen und Handles (beispielsweise `String^`).
 
-- Einem Nachverfolgungsverweis kann kein NULL- oder **nullptr**-Wert zugewiesen werden. Ein Nachverfolgungsverweis kann einem anderen gültigen Objekt so oft wie erforderlich neu zugewiesen werden.
+- Einem nach Verfolgungs Verweis kann kein NULL-Wert oder-Wert zugewiesen werden **`nullptr`** . Ein Nachverfolgungsverweis kann einem anderen gültigen Objekt so oft wie erforderlich neu zugewiesen werden.
 
 - Ein Nachverfolgungsverweis kann nicht als unärer Adressenübernahmeoperator (Take-Address-Operator) verwendet werden.
 
@@ -75,7 +75,7 @@ Die Verwendung eines systemeigenen C++-Verweises auf ein Objekt auf dem Heap der
 
 Weitere Informationen über Nachverfolgungsverweise in C++/CLI finden Sie unter:
 
-- [Vorgehensweise: Verwenden von Nachverfolgungsverweisen in C++/CLI](../dotnet/how-to-use-tracking-references-in-cpp-cli.md)
+- [Gewusst wie: Verwenden von nach Verfolgungs verweisen in C++/CLI](../dotnet/how-to-use-tracking-references-in-cpp-cli.md)
 
 ### <a name="examples"></a>Beispiele
 

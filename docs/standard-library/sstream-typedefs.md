@@ -11,24 +11,24 @@ f1_keywords:
 - iosfwd/std::wstringbuf
 - iosfwd/std::wstringstream
 ms.assetid: d102edd2-ecea-4a35-a398-cf96e58dd422
-ms.openlocfilehash: c25d3fa66b5105ad2e1ff5a08ebdde90d1d156be
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a549b413a58e138cda279cd6f3f3e2afc68c6aa6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81336633"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217427"
 ---
 # <a name="ltsstreamgt-typedefs"></a>&lt;sstream&gt;-Typdefinitionen
 
 ||||
 |-|-|-|
-|[istringstream](#istringstream)|[ostringstream](#ostringstream)|[stringbuf](#stringbuf)|
-|[Stringstream](#stringstream)|[wistringstream](#wistringstream)|[wostringstream](#wostringstream)|
+|[istringstream](#istringstream)|[ostringstream](#ostringstream)|[Stringbuf](#stringbuf)|
+|[stringstream](#stringstream)|[wistringstream](#wistringstream)|[wostringstream](#wostringstream)|
 |[wstringbuf](#wstringbuf)|[wstringstream](#wstringstream)|
 
 ## <a name="istringstream"></a><a name="istringstream"></a>istringstream
 
-Erstellt einen `basic_istringstream` Typ, der auf einen **char-Vorlagenparameter** spezialisiert ist.
+Erstellt einen Typ, `basic_istringstream` der auf einen **`char`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_istringstream<char> istringstream;
@@ -36,11 +36,11 @@ typedef basic_istringstream<char> istringstream;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_istringstream](../standard-library/basic-istringstream-class.md), spezialisiert auf Elemente vom Typ **char**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [basic_istringstream](../standard-library/basic-istringstream-class.md), die auf Elemente des Typs spezialisiert ist **`char`** .
 
 ## <a name="ostringstream"></a><a name="ostringstream"></a>ostringstream
 
-Erstellt einen `basic_ostringstream` Typ, der auf einen **char-Vorlagenparameter** spezialisiert ist.
+Erstellt einen Typ, `basic_ostringstream` der auf einen **`char`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_ostringstream<char> ostringstream;
@@ -48,11 +48,11 @@ typedef basic_ostringstream<char> ostringstream;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_ostringstream](../standard-library/basic-ostringstream-class.md), spezialisiert auf Elemente vom Typ **char**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [Basic_ostringstream](../standard-library/basic-ostringstream-class.md), die auf Elemente des Typs spezialisiert ist **`char`** .
 
-## <a name="stringbuf"></a><a name="stringbuf"></a>stringbuf
+## <a name="stringbuf"></a><a name="stringbuf"></a>Stringbuf
 
-Erstellt einen `basic_stringbuf` Typ, der auf einen **char-Vorlagenparameter** spezialisiert ist.
+Erstellt einen Typ, `basic_stringbuf` der auf einen **`char`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_stringbuf<char> stringbuf;
@@ -60,11 +60,11 @@ typedef basic_stringbuf<char> stringbuf;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_stringbuf](../standard-library/basic-stringbuf-class.md), spezialisiert auf Elemente vom Typ **char**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [Basic_stringbuf](../standard-library/basic-stringbuf-class.md), die auf Elemente des Typs spezialisiert ist **`char`** .
 
-## <a name="stringstream"></a><a name="stringstream"></a>Stringstream
+## <a name="stringstream"></a><a name="stringstream"></a>stringstream
 
-Erstellt einen `basic_stringstream` Typ, der auf einen **char-Vorlagenparameter** spezialisiert ist.
+Erstellt einen Typ, `basic_stringstream` der auf einen **`char`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_stringstream<char> stringstream;
@@ -72,11 +72,11 @@ typedef basic_stringstream<char> stringstream;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_stringstream](../standard-library/basic-stringstream-class.md), spezialisiert auf Elemente vom Typ **char**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [basic_stringstream](../standard-library/basic-stringstream-class.md), die auf Elemente des Typs spezialisiert ist **`char`** .
 
 ## <a name="wistringstream"></a><a name="wistringstream"></a>wistringstream
 
-Erstellt einen `basic_istringstream` Typ, der auf einen **wchar_t** Vorlagenparameter spezialisiert ist.
+Erstellt einen Typ, `basic_istringstream` der auf einen **`wchar_t`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_istringstream<wchar_t> wistringstream;
@@ -84,11 +84,11 @@ typedef basic_istringstream<wchar_t> wistringstream;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_istringstream](../standard-library/basic-istringstream-class.md), spezialisiert auf Elemente vom Typ **wchar_t**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [basic_istringstream](../standard-library/basic-istringstream-class.md), die auf Elemente des Typs spezialisiert ist **`wchar_t`** .
 
 ## <a name="wostringstream"></a><a name="wostringstream"></a>wostringstream
 
-Erstellt einen `basic_ostringstream` Typ, der auf einen **wchar_t** Vorlagenparameter spezialisiert ist.
+Erstellt einen Typ, `basic_ostringstream` der auf einen **`wchar_t`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_ostringstream<wchar_t> wostringstream;
@@ -96,11 +96,11 @@ typedef basic_ostringstream<wchar_t> wostringstream;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_ostringstream](../standard-library/basic-ostringstream-class.md), spezialisiert auf Elemente vom Typ **wchar_t**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [Basic_ostringstream](../standard-library/basic-ostringstream-class.md), die auf Elemente des Typs spezialisiert ist **`wchar_t`** .
 
 ## <a name="wstringbuf"></a><a name="wstringbuf"></a>wstringbuf
 
-Erstellt einen `basic_stringbuf` Typ, der auf einen **wchar_t** Vorlagenparameter spezialisiert ist.
+Erstellt einen Typ, `basic_stringbuf` der auf einen **`wchar_t`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_stringbuf<wchar_t> wstringbuf;
@@ -108,11 +108,11 @@ typedef basic_stringbuf<wchar_t> wstringbuf;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_stringbuf](../standard-library/basic-stringbuf-class.md), spezialisiert auf Elemente vom Typ **wchar_t**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [Basic_stringbuf](../standard-library/basic-stringbuf-class.md), die auf Elemente des Typs spezialisiert ist **`wchar_t`** .
 
 ## <a name="wstringstream"></a><a name="wstringstream"></a>wstringstream
 
-Erstellt einen `basic_stringstream` Typ, der auf einen **wchar_t** Vorlagenparameter spezialisiert ist.
+Erstellt einen Typ, `basic_stringstream` der auf einen **`wchar_t`** Vorlagen Parameter spezialisiert ist.
 
 ```cpp
 typedef basic_stringstream<wchar_t> wstringstream;
@@ -120,8 +120,8 @@ typedef basic_stringstream<wchar_t> wstringstream;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_stringstream](../standard-library/basic-stringstream-class.md), spezialisiert auf Elemente vom Typ **wchar_t**.
+Der Typ ist ein Synonym für eine Klassen Vorlagen [basic_stringstream](../standard-library/basic-stringstream-class.md), die auf Elemente des Typs spezialisiert ist **`wchar_t`** .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<sstream>](../standard-library/sstream.md)

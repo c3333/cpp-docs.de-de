@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generic interfaces
 - interfaces, generic [C++}
 ms.assetid: f3da788a-ba83-4db7-9dcf-9b95a8fb9d1a
-ms.openlocfilehash: 35dba37f1441144a3f7276388be1f61bebc84139
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f5a74eaafa7ff348079ec367a7c2318f86081f15
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80182018"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218025"
 ---
 # <a name="generic-interfaces-ccli"></a>Generische Schnittstellen (C++/CLI)
 
@@ -36,7 +36,7 @@ Weitere Informationen zu Schnittstellen finden Sie unter [Schnittstellenklasse](
 (Optional) Zusätzliche deklarative Informationen. Weitere Informationen zu Attributen und Attributklassen finden Sie unter **Attribute**.
 
 *class-key*<br/>
-**class** oder **typename**.
+**`class`** oder **`typename`**
 
 *type-parameter-identifier(s)*<br/>
 Durch Trennzeichen getrennte Liste mit Bezeichnern.
@@ -56,7 +56,7 @@ Der Name der Schnittstelle.
 *interface-body*<br/>
 Deklarationen der Schnittstellenmember.
 
-*declarators*<br/>
+*Deklaratoren*<br/>
 (Optional) Deklarationen von Variablen, basierend auf diesem Typ.
 
 ## <a name="example"></a>Beispiel
@@ -313,6 +313,6 @@ The integer field contains: 1234
 The String field contains: My string
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

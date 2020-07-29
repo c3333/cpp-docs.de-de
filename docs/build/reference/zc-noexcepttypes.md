@@ -8,16 +8,16 @@ helpviewer_keywords:
 - Zc:noexceptTypes
 - -Zc:noexceptTypes
 ms.assetid: 1cbf7e3c-0f82-4f91-84dd-612bcf26d2c6
-ms.openlocfilehash: 0f833209938ccc09cbc37235788b6f719d4d12d4
-ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
+ms.openlocfilehash: 09817372e818a05c389a083aac5f04e03b1ab0e1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506870"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218948"
 ---
 # <a name="zcnoexcepttypes-c17-noexcept-rules"></a>/Zc:noexceptTypes (noexcept-Regeln für C++17)
 
-Der c++ 17-Standard erstellt `throw()` einen Alias für `noexcept` , entfernt `throw(` *`type-list`* `)` und und ermöglicht das `throw(...)` einschließen bestimmter Typen `noexcept` . Diese Änderung kann eine Reihe von Problemen mit der Quell Kompatibilität in Code verursachen, der c++ 14 oder früher entspricht. Die **`/Zc:noexceptTypes`** Option gibt die Konformität mit dem c++ 17-Standard an. **`/Zc:noexceptTypes-`** ermöglicht das Verhalten von c++ 14 und früher, wenn Code im c++ 17-Modus kompiliert wird.
+Der c++ 17-Standard erstellt `throw()` einen Alias für **`noexcept`** , entfernt `throw(` *`type-list`* `)` und und ermöglicht das `throw(...)` einschließen bestimmter Typen **`noexcept`** . Diese Änderung kann eine Reihe von Problemen mit der Quell Kompatibilität in Code verursachen, der c++ 14 oder früher entspricht. Die **`/Zc:noexceptTypes`** Option gibt die Konformität mit dem c++ 17-Standard an. **`/Zc:noexceptTypes-`** ermöglicht das Verhalten von c++ 14 und früher, wenn Code im c++ 17-Modus kompiliert wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -79,7 +79,7 @@ Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter
 
 1. Ändern Sie die Eigenschaft **zusätzliche Optionen** so, dass oder einschließt, *`/Zc:noexceptTypes`* *`/Zc:noexceptTypes-`* und wählen Sie dann **OK**aus.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [**`/Zc`** Konformitäts](zc-conformance.md)\
 [noexcept](../../cpp/noexcept-cpp.md)\

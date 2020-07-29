@@ -7,18 +7,18 @@ helpviewer_keywords:
 - cvtsi2ss instruction
 - _mm_cvtsi64x_ss intrinsic
 ms.assetid: 01e5d321-c18a-46fd-a6f6-324364514e1f
-ms.openlocfilehash: 0e9bacc56f212e804467d1c6e0159a1749235976
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: a8227fcb482267946ea7ba08ee352c43e1ac6f6e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70217455"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217999"
 ---
 # <a name="_mm_cvtsi64x_ss"></a>_mm_cvtsi64x_ss
 
 **Microsoft-spezifisch**
 
-Generiert die erweiterte x64-Version der 64-Bit-Ganzzahl mit Gleit Komma Zahlen in skalare Gleit Komma Wert`cvtsi2ss`Anweisung mit einfacher Genauigkeit.
+Generiert die erweiterte x64-Version der 64-Bit-Ganzzahl mit Gleit Komma Zahlen in skalare Gleit Komma Wert Anweisung mit einfacher Genauigkeit `cvtsi2ss` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,26 +32,26 @@ __m128 _mm_cvtsi64x_ss(
 ### <a name="parameters"></a>Parameter
 
 *ein*\
-in Eine `__m128` -Struktur, die vier Gleit Komma Werte mit einfacher Genauigkeit enthält.
+in Eine-Struktur, die **`__m128`** vier Gleit Komma Werte mit einfacher Genauigkeit enthält.
 
 *b*\
 in Eine 64-Bit-Ganzzahl, die in einen Gleit Komma Wert konvertiert werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Eine `__m128` -Struktur, deren erster Gleit Komma Wert das Ergebnis der Konvertierung ist. Die anderen drei Werte werden unverändert aus *einer*kopiert.
+Eine- **`__m128`** Struktur, deren erster Gleit Komma Wert das Ergebnis der Konvertierung ist. Die anderen drei Werte werden unverändert aus *einer*kopiert.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`_mm_cvtsi64x_ss`|x64|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `__m128` -Struktur stellt ein XMM-Register dar, sodass die systeminterne Funktion den Wert *b* aus dem System Arbeitsspeicher in ein XMM-Register verschieben kann.
+Die- **`__m128`** Struktur stellt ein XMM-Register dar, sodass die systeminterne Funktion den Wert *b* aus dem System Arbeitsspeicher in ein XMM-Register verschieben kann.
 
 Diese Routine ist nur als systeminterne Funktion verfügbar.
 
@@ -92,4 +92,4 @@ int main()
 ## <a name="see-also"></a>Siehe auch
 
 [__m128](../cpp/m128.md)\
-[Systeminterne Compilerfunktionen](../intrinsics/compiler-intrinsics.md)
+[Intrinsische Compilerfunktionen](../intrinsics/compiler-intrinsics.md)

@@ -1,5 +1,5 @@
 ---
-title: CStrBufT-Klasse
+title: Cstrinbuft-Klasse
 ms.date: 10/18/2018
 f1_keywords:
 - CStrBufT
@@ -13,16 +13,16 @@ helpviewer_keywords:
 - CStrBufT class
 - shared classes, CStrBufT
 ms.assetid: 6b50fa8f-87e8-4ed4-a229-157ce128710f
-ms.openlocfilehash: 71d7b6f7d53e9613b1ac26013d73c1dbd1ef0aab
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 4d9d0b403e572d6fdea65355702467c89587cc3a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81746929"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219078"
 ---
-# <a name="cstrbuft-class"></a>CStrBufT-Klasse
+# <a name="cstrbuft-class"></a>Cstrinbuft-Klasse
 
-Diese Klasse bietet eine `GetBuffer` automatische `ReleaseBuffer` Ressourcenbereinigung `CStringT` für ein vorhandenes Objekt und ruft es auf.
+Diese Klasse ermöglicht die automatische Ressourcen Bereinigung für `GetBuffer` -und- `ReleaseBuffer` Aufrufe für ein vorhandenes- `CStringT` Objekt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,14 +33,14 @@ class CStrBufT
 
 #### <a name="parameters"></a>Parameter
 
-*TCharType*<br/>
-Der Zeichentyp `CStrBufT` der Klasse. Dabei kann es sich um eine der folgenden Methoden handeln:
+*Tchartype*<br/>
+Der Zeichentyp der `CStrBufT` Klasse. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- **char** (für ANSI-Zeichenketten)
+- **`char`**(für ANSI-Zeichen folgen)
 
-- **wchar_t** (für Unicode-Zeichenfolgen)
+- **`wchar_t`**(für Unicode-Zeichen folgen)
 
-- TCHAR (für ANSI- und Unicode-Zeichenfolgen)
+- Tchar (für ANSI-und Unicode-Zeichen folgen)
 
 ## <a name="members"></a>Member
 
@@ -48,49 +48,49 @@ Der Zeichentyp `CStrBufT` der Klasse. Dabei kann es sich um eine der folgenden M
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|PCXSTR|Ein Zeiger auf eine konstante Zeichenfolge.|
-|PXSTR|Ein Zeiger auf eine Zeichenfolge.|
-|`StringType`|Der Zeichenfolgentyp, dessen Puffer durch Spezialisierungen dieser Klassenvorlage bearbeitet werden soll.|
+|PCXSTR|Ein Zeiger auf eine Konstantenzeichenfolge.|
+|Pxstr|Ein Zeiger auf eine Zeichenfolge.|
+|`StringType`|Der Zeichen folgertyp, dessen Puffer durch Spezialisierungs Informationen dieser Klassen Vorlage manipuliert werden soll.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStrBufT::CStrBufT](#cstrbuft)|Der Konstruktor für das Zeichenfolgenpufferobjekt.|
+|[Cstrinbuft:: cstrinbuft](#cstrbuft)|Der Konstruktor für das Zeichen folgen Puffer Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStrBufT::SetLength](#setlength)|Legt die Zeichenpufferlänge des zugeordneten Zeichenfolgenobjekts fest.|
+|[Cstrinbuft:: SetLength](#setlength)|Legt die Länge des Zeichen Puffers des zugeordneten Zeichen folgen Objekts fest.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStrBufT::operator PCXSTR](#operator_pcxstr)|Ruft einen **const-Zeiger** auf den Zeichenpuffer des zugeordneten Zeichenfolgenobjekts ab.|
-|[CStrBufT::operator PXSTR](#operator_pxstr)|Ruft einen Zeiger auf den Zeichenpuffer des zugeordneten Zeichenfolgenobjekts ab.|
+|[Cstrinbuft:: Operator PCXSTR](#operator_pcxstr)|Ruft einen **`const`** Zeiger auf den Zeichen Puffer des zugeordneten Zeichen folgen Objekts ab.|
+|[Cstrinbuft:: Operator pxstr](#operator_pxstr)|Ruft einen Zeiger auf den Zeichen Puffer des zugeordneten Zeichen folgen Objekts ab.|
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStrBufT::AUTO_LENGTH](#auto_length)|Bestimmen Sie automatisch die neue Länge der Zeichenfolge bei der Freigabe.|
-|[CStrBufT::SET_LENGTH](#set_length)|Festlegen der Länge des Zeichenfolgenobjekts zur GetBuffer-Zeit|
+|[Cstrinbuft:: AUTO_LENGTH](#auto_length)|Die neue Länge der Zeichenfolge wird bei der Freigabe automatisch festgelegt.|
+|[Cstrinbuft:: SET_LENGTH](#set_length)|Festlegen der Länge des Zeichen folgen Objekts zur GetBuffer-Zeit|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse wird als Wrapperklasse zum Ersetzen von Aufrufen von [GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) `ReleaseBuffer`und [ReleaseBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)oder [GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength) und verwendet.
+Diese Klasse wird als Wrapper Klasse zum Ersetzen von Aufrufen von [GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) und [ReleaseBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)oder [getbuffersetlength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength) und verwendet `ReleaseBuffer` .
 
-In erster Linie als `CStrBufT` Hilfsklasse konzipiert, bietet eine bequeme Möglichkeit für einen Entwickler, mit dem `ReleaseBuffer`Zeichenpuffer eines Zeichenfolgenobjekts zu arbeiten, ohne sich Gedanken darüber zu machen, wie oder wann er aufruft. Dies ist möglich, da das Wrapperobjekt bei einer Ausnahme oder mehreren beendenden Codepfaden natürlich aus dem Gültigkeitsbereich verschwindet. dadurch, dass der Destruktor die Zeichenfolgenressource freigibt.
+Ist hauptsächlich als `CStrBufT` Hilfsklasse konzipiert und stellt einem Entwickler eine bequeme Möglichkeit zur Verfügung, mit dem Zeichen Puffer eines String-Objekts zu arbeiten, ohne sich Gedanken darüber machen zu müssen, wie oder wann aufgerufen werden soll `ReleaseBuffer` . Dies ist möglich, da das Wrapper Objekt im Falle einer Ausnahme oder mehrerer beendigender Codepfade den Gültigkeitsbereich verlässt. bewirkt, dass der Dekonstruktor die Zeichen folgen Ressource freigibt.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlsimpstr.h
+**Header:** atlsimpstr. h
 
-## <a name="cstrbuftauto_length"></a><a name="auto_length"></a>CStrBufT::AUTO_LENGTH
+## <a name="cstrbuftauto_length"></a><a name="auto_length"></a>Cstrinbuft:: AUTO_LENGTH
 
-Bestimmen Sie automatisch die neue Länge der Zeichenfolge bei der Freigabe.
+Die neue Länge der Zeichenfolge wird bei der Freigabe automatisch festgelegt.
 
 ```
 static const DWORD AUTO_LENGTH = 0x01;
@@ -98,11 +98,11 @@ static const DWORD AUTO_LENGTH = 0x01;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bestimmen Sie automatisch die neue Länge der Zeichenfolge bei der Freigabe. Die Zeichenfolge muss null-beendet sein.
+Die neue Länge der Zeichenfolge wird bei der Freigabe automatisch festgelegt. Die Zeichenfolge muss auf Null enden.
 
-## <a name="cstrbuftcstrbuft"></a><a name="cstrbuft"></a>CStrBufT::CStrBufT
+## <a name="cstrbuftcstrbuft"></a><a name="cstrbuft"></a>Cstrinbuft:: cstrinbuft
 
-Erstellt ein Pufferobjekt.
+Erstellt ein Puffer Objekt.
 
 ```
 CStrBufT(StringType& str, int nMinLength, DWORD dwFlags = AUTO_LENGTH) throw(...);
@@ -111,28 +111,28 @@ explicit CStrBufT(StringType& str) throw(...);
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
-Das dem Puffer zugeordnete Zeichenfolgenobjekt. In der Regel verwendet der Entwickler die `CStrBuf` vordefinierten typdefs von `CStrBufA` (TCHAR-Variante),**(char-Variante)** und `CStrBufW` (**wchar_t** Variante).
+*str*<br/>
+Das Zeichen folgen Objekt, das dem Puffer zugeordnet ist. In der Regel verwendet der Entwickler die vordefinierten Typedefs von `CStrBuf` (TCHAR Variant), `CStrBufA` ( **`char`** Variant) und `CStrBufW` ( **`wchar_t`** Variant).
 
-*nMinLength*<br/>
-Die Mindestlänge des Zeichenpuffers.
+*nminlength*<br/>
+Die minimale Länge des Zeichen Puffers.
 
 *dwFlags*<br/>
-Bestimmt, ob die Zeichenfolgenlänge automatisch bestimmt wird. Dabei kann es sich um eine der folgenden Methoden handeln:
+Bestimmt, ob die Zeichen folgen Länge automatisch bestimmt wird. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- AUTO_LENGTH String-Länge wird automatisch bestimmt, wenn [CSimpleStringT::Release](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer) aufgerufen wird. Die Zeichenfolge muss null-beendet sein. Standardwert.
+- AUTO_LENGTH Zeichen folgen Länge wird automatisch festgelegt, wenn [CSimpleStringT:: Release](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer) aufgerufen wird. Die Zeichenfolge muss auf Null enden. Standardwert.
 
-- SET_LENGTH String-Länge wird festgelegt, wenn [CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) aufgerufen wird.
+- SET_LENGTH Zeichen folgen Länge wird festgelegt, wenn [CSimpleStringT:: GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) aufgerufen wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Erstellt einen Zeichenfolgenpuffer für das zugeordnete Zeichenfolgenobjekt. Während der Konstruktion wird [CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) oder [CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength) aufgerufen.
+Erstellt einen Zeichen folgen Puffer für das zugeordnete String-Objekt. Während der Konstruktion wird [CSimpleStringT:: GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) oder [CSimpleStringT:: getbuffersetlength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength) aufgerufen.
 
-Beachten Sie, dass der Kopierkonstruktor **privat**ist.
+Beachten Sie, dass der Kopierkonstruktor ist **`private`** .
 
-## <a name="cstrbuftoperator-pcxstr"></a><a name="operator_pcxstr"></a>CStrBufT::operator PCXSTR
+## <a name="cstrbuftoperator-pcxstr"></a><a name="operator_pcxstr"></a>Cstrinbuft:: Operator PCXSTR
 
-Greift direkt auf Zeichen zu, die im zugeordneten Zeichenfolgenobjekt als Zeichenfolge im C-Stil gespeichert sind.
+Greift direkt auf Zeichen zu, die im zugeordneten String-Objekt als Zeichenfolge im C-Format gespeichert sind.
 
 ```
 operator PCXSTR() const throw();
@@ -140,15 +140,15 @@ operator PCXSTR() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeichenzeiger auf die Daten der Zeichenfolge.
+Ein Zeichen Zeiger auf die Daten der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um einen Zeiger auf den Zeichenpuffer eines Zeichenfolgenobjekts zurückzugeben. Der Inhalt des Zeichenfolgenobjekts kann mit diesem Zeiger nicht geändert werden.
+Diese Funktion wird aufgerufen, um einen Zeiger auf den Zeichen Puffer eines Zeichen folgen Objekts zurückzugeben. Der Inhalt des String-Objekts kann mit diesem Zeiger nicht geändert werden.
 
-## <a name="cstrbuftoperator-pxstr"></a><a name="operator_pxstr"></a>CStrBufT::operator PXSTR
+## <a name="cstrbuftoperator-pxstr"></a><a name="operator_pxstr"></a>Cstrinbuft:: Operator pxstr
 
-Greift direkt auf Zeichen zu, die im zugeordneten Zeichenfolgenobjekt als Zeichenfolge im C-Stil gespeichert sind.
+Greift direkt auf Zeichen zu, die im zugeordneten String-Objekt als Zeichenfolge im C-Format gespeichert sind.
 
 ```
 operator PXSTR() throw();
@@ -156,21 +156,21 @@ operator PXSTR() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeichenzeiger auf die Daten der Zeichenfolge.
+Ein Zeichen Zeiger auf die Daten der Zeichenfolge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um einen Zeiger auf den Zeichenpuffer eines Zeichenfolgenobjekts zurückzugeben. Der Entwickler kann den Inhalt des Zeichenfolgenobjekts mit diesem Zeiger ändern.
+Diese Funktion wird aufgerufen, um einen Zeiger auf den Zeichen Puffer eines Zeichen folgen Objekts zurückzugeben. Der Entwickler kann den Inhalt des Zeichen folgen Objekts mit diesem Zeiger ändern.
 
-## <a name="cstrbuftpcxstr"></a><a name="pcxstr"></a>CStrBufT::PCXSTR
+## <a name="cstrbuftpcxstr"></a><a name="pcxstr"></a>Cstrinbuft::P cxstr
 
-Ein Zeiger auf eine konstante Zeichenfolge.
+Ein Zeiger auf eine Konstantenzeichenfolge.
 
 ```
 typedef CSimpleStringT<TCharType>::PCXSTR PCXSTR;
 ```
 
-## <a name="cstrbuftpxstr"></a><a name="pxstr"></a>CStrBufT::PXSTR
+## <a name="cstrbuftpxstr"></a><a name="pxstr"></a>Cstrinbuft::P xstr
 
 Ein Zeiger auf eine Zeichenfolge.
 
@@ -178,9 +178,9 @@ Ein Zeiger auf eine Zeichenfolge.
 typedef CSimpleStringT<TCharType>::PXSTR PXSTR;
 ```
 
-## <a name="cstrbuftset_length"></a><a name="set_length"></a>CStrBufT::SET_LENGTH
+## <a name="cstrbuftset_length"></a><a name="set_length"></a>Cstrinbuft:: SET_LENGTH
 
-Legen Sie die Länge `GetBuffer` des Zeichenfolgenobjekts zum Zeitpunkt fest.
+Legen Sie die Länge des Zeichen folgen Objekts zum `GetBuffer` Zeitpunkt fest.
 
 ```
 static const DWORD SET_LENGTH = 0x02;
@@ -188,13 +188,13 @@ static const DWORD SET_LENGTH = 0x02;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Legen Sie die Länge des Zeichenfolgenobjekts zur GetBuffer-Zeit fest.
+Legen Sie die Länge des Zeichen folgen Objekts zur GetBuffer-Zeit fest.
 
-Legt fest, ob [CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) und [CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength) aufgerufen werden, wenn das Zeichenfolgenpufferobjekt erstellt wird.
+Bestimmt, ob [CSimpleStringT:: GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer) und [CSimpleStringT:: getbuffersetlength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength) aufgerufen werden, wenn das Zeichen folgen Puffer Objekt erstellt wird.
 
-## <a name="cstrbuftsetlength"></a><a name="setlength"></a>CStrBufT::SetLength
+## <a name="cstrbuftsetlength"></a><a name="setlength"></a>Cstrinbuft:: SetLength
 
-Legt die Länge des Zeichenpuffers fest.
+Legt die Länge des Zeichen Puffers fest.
 
 ```cpp
 void SetLength(int nLength);
@@ -202,19 +202,19 @@ void SetLength(int nLength);
 
 ### <a name="parameters"></a>Parameter
 
-*nLänge*<br/>
-Die neue Länge des Zeichenpuffers des Zeichenfolgenobjekts.
+*nlength*<br/>
+Die neue Länge des Zeichen Puffers des Zeichen folgen Objekts.
 
 > [!NOTE]
-> Muss kleiner oder gleich der im Konstruktor von `CStrBufT`angegebenen minimalen Pufferlänge sein.
+> Muss kleiner oder gleich der minimalen Pufferlänge sein, die im Konstruktor von angegeben ist `CStrBufT` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um die Länge der Zeichenfolge festzulegen, die durch das Pufferobjekt dargestellt wird.
+Mit dieser Funktion wird die Länge der Zeichenfolge festgelegt, die durch das Buffer-Objekt dargestellt wird.
 
-## <a name="cstrbuftstringtype"></a><a name="stringtype"></a>CStrBufT::StringType
+## <a name="cstrbuftstringtype"></a><a name="stringtype"></a>Cstrinbuft:: StringType
 
-Der Zeichenfolgentyp, dessen Puffer durch Spezialisierungen dieser Klassenvorlage bearbeitet werden soll.
+Der Zeichen folgertyp, dessen Puffer durch Spezialisierungs Informationen dieser Klassen Vorlage manipuliert werden soll.
 
 ```
 typedef CSimpleStringT<TCharType> StringType;
@@ -222,9 +222,9 @@ typedef CSimpleStringT<TCharType> StringType;
 
 ### <a name="remarks"></a>Bemerkungen
 
-`TCharType`ist der Zeichentyp, der zum Spezialisieren der Klassenvorlage verwendet wird.
+`TCharType`der Zeichentyp, der verwendet wird, um die Klassen Vorlage zu spezialisieren.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
+[Gemeinsam genutzte ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)

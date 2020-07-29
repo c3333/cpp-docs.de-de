@@ -90,12 +90,12 @@ helpviewer_keywords:
 - SetParamStatus method
 - SetParamString method
 ms.assetid: 5f22626e-e80d-491f-8b3b-cedc50331960
-ms.openlocfilehash: 9c326c337ff210ef9de26b3fd88c0d853832b260
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b7125390013e417123f09a5cc7f58be9ea87db56
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211867"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216465"
 ---
 # <a name="cdynamicparameteraccessor-class"></a>CDynamicParameterAccessor-Klasse
 
@@ -109,9 +109,9 @@ class CDynamicParameterAccessor : public CDynamicAccessor
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**: atldbcli.h
+**Header**: atldbcli. h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -199,9 +199,9 @@ vorgenommen Der Zeiger auf den Arbeitsspeicher, der die Daten enthält, die aus 
 
 ### <a name="return-value"></a>Rückgabewert
 
-Für nicht auf Vorlagen basierende Versionen verweist auf den Speicher, der die aus dem Puffer abgerufenen Daten enthält. Bei Vorlagen Versionen wird bei Fehler **true** oder **false** zurückgegeben.
+Für nicht auf Vorlagen basierende Versionen verweist auf den Speicher, der die aus dem Puffer abgerufenen Daten enthält. Bei Vorlagen Versionen wird **`true`** bei Erfolg oder **`false`** bei Fehler zurückgegeben.
 
-Verwenden Sie `GetParam`, um nicht-Zeichenfolge-Parameterdaten aus dem Puffer abzurufen. Verwenden Sie [getparamstring](../../data/oledb/cdynamicparameteraccessor-getparamstring.md) , um Zeichen folgen Parameterdaten aus dem Puffer abzurufen.
+Verwenden `GetParam` Sie, um nicht-Zeichenfolge-Parameterdaten aus dem Puffer abzurufen. Verwenden Sie [getparamstring](../../data/oledb/cdynamicparameteraccessor-getparamstring.md) , um Zeichen folgen Parameterdaten aus dem Puffer abzurufen.
 
 ## <a name="cdynamicparameteraccessorgetparamcount"></a><a name="getparamcount"></a>CDynamicParameterAccessor:: getparamcount
 
@@ -248,7 +248,7 @@ enum DBPARAMIOENUM {
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
 ## <a name="cdynamicparameteraccessorgetparamlength"></a><a name="getparamlength"></a>CDynamicParameterAccessor:: getparamlength
 
@@ -273,7 +273,7 @@ vorgenommen Ein Zeiger auf die Variable, die die Länge des angegebenen Paramete
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste außer Kraft Setzung gibt bei Erfolg **true** oder **false** zurück. Die zweite außer Kraft Setzung verweist auf den Arbeitsspeicher, der die Länge des Parameters enthält.
+Die erste außer Kraft Setzung gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück. Die zweite außer Kraft Setzung verweist auf den Arbeitsspeicher, der die Länge des Parameters enthält.
 
 ## <a name="cdynamicparameteraccessorgetparamname"></a><a name="getparamname"></a>CDynamicParameterAccessor:: getparamname
 
@@ -317,7 +317,7 @@ vorgenommen Ein Zeiger auf die Variable, die den DBStatus-Status des angegebenen
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste außer Kraft Setzung gibt bei Erfolg **true** oder **false** zurück. Die zweite außer Kraft Setzung verweist auf den Speicher, der den Status des angegebenen Parameters enthält.
+Die erste außer Kraft Setzung gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück. Die zweite außer Kraft Setzung verweist auf den Speicher, der den Status des angegebenen Parameters enthält.
 
 ## <a name="cdynamicparameteraccessorgetparamstring"></a><a name="getparamstring"></a>CDynamicParameterAccessor:: getparamstring
 
@@ -347,7 +347,7 @@ bool GetParamString(DBORDINAL nParam,
 in Die Parameter Nummer (Offset von 1). Der Parameter 0 ist für Rückgabewerte reserviert. Die Parameter Nummer ist der Index des Parameters, der auf der Reihenfolge des SQL-oder gespeicherten Prozedur Aufrufes basiert. Ein Beispiel finden Sie unter [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) .
 
 *stroutput*<br/>
-vorgenommen Die ANSI (`CSimpleStringA`)-oder Unicode-Zeichen folgen Daten des angegebenen Parameters (`CSimpleStringW`). Übergeben Sie einen Parameter vom Typ `CString`, z. b.:
+vorgenommen Die ANSI ( `CSimpleStringA` )-oder Unicode ( `CSimpleStringW` )-Zeichen folgen Daten des angegebenen Parameters. Sie sollten einen Parameter des Typs übergeben `CString` , z. b.:
 
 [!code-cpp[NVC_OLEDB_Consumer#9](../../data/oledb/codesnippet/cpp/cdynamicparameteraccessor-getparamstring_1.cpp)]
 
@@ -359,13 +359,13 @@ vorgenommen Ein Zeiger auf die Größe des Puffers, auf den von *pbuffer* verwie
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
-Wenn *pbuffer* den Wert NULL hat, legt diese Methode die erforderliche Puffergröße im Speicher fest, auf den *pmaxlen* zeigt, und gibt **true** zurück, ohne die Daten zu kopieren.
+Wenn *pbuffer* den Wert NULL hat, legt diese Methode die erforderliche Puffergröße im Speicher fest, auf die von *pmaxlen* verwiesen wird, und gibt zurück, **`true`** ohne die Daten zu kopieren.
 
 Diese Methode schlägt fehl, wenn der Puffer *pbuffer* nicht groß genug ist, um die gesamte Zeichenfolge zu enthalten.
 
-Verwenden Sie `GetParamString`, um Zeichen folgen Parameterdaten aus dem Puffer abzurufen. Verwenden Sie [GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md) , um nicht-Zeichenfolge-Parameterdaten aus dem Puffer abzurufen.
+Verwenden `GetParamString` Sie, um Zeichen folgen Parameterdaten aus dem Puffer abzurufen. Verwenden Sie [GetParam](../../data/oledb/cdynamicparameteraccessor-getparam.md) , um nicht-Zeichenfolge-Parameterdaten aus dem Puffer abzurufen.
 
 ## <a name="cdynamicparameteraccessorgetparamtype"></a><a name="getparamtype"></a>CDynamicParameterAccessor:: GetParamType
 
@@ -388,7 +388,7 @@ vorgenommen Ein Zeiger auf die Variable, die den Datentyp des angegebenen Parame
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
 ## <a name="cdynamicparameteraccessorsetparam"></a><a name="setparam"></a>CDynamicParameterAccessor:: SetParam
 
@@ -429,9 +429,9 @@ in Der Status der DBStatus-Spalte. Informationen zu DBStatus-Werten finden Sie u
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
-Verwenden Sie `SetParam`, um nicht-Zeichen folgen Parameterdaten im Puffer festzulegen. Verwenden Sie [setparamstring](../../data/oledb/cdynamicparameteraccessor-setparamstring.md) , um Zeichen folgen Parameterdaten im Puffer festzulegen.
+Verwenden `SetParam` Sie, um nicht-Zeichen folgen Parameterdaten im Puffer festzulegen. Verwenden Sie [setparamstring](../../data/oledb/cdynamicparameteraccessor-setparamstring.md) , um Zeichen folgen Parameterdaten im Puffer festzulegen.
 
 ## <a name="cdynamicparameteraccessorsetparamlength"></a><a name="setparamlength"></a>CDynamicParameterAccessor:: setparamlength
 
@@ -454,7 +454,7 @@ in Die Länge des angegebenen Parameters in Byte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
 ## <a name="cdynamicparameteraccessorsetparamstatus"></a><a name="setparamstatus"></a>CDynamicParameterAccessor:: setparamstatus
 
@@ -477,7 +477,7 @@ in Der DBStatus-Status des angegebenen Parameters. Informationen zu DBStatus-Wer
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
 ## <a name="cdynamicparameteraccessorsetparamstring"></a><a name="setparamstring"></a>CDynamicParameterAccessor:: setparamstring
 
@@ -506,16 +506,16 @@ in Der DBStatus-Status des angegebenen Parameters. Informationen zu DBStatus-Wer
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt bei Erfolg **true** oder **false** bei einem Fehler zurück.
+Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
-`SetParamString` schlägt fehl, wenn Sie versuchen, eine Zeichenfolge festzulegen, die größer als die für *pstring*angegebene maximale Größe ist.
+`SetParamString`schlägt fehl, wenn Sie versuchen, eine Zeichenfolge festzulegen, die größer als die für *pstring*angegebene maximale Größe ist.
 
-Verwenden Sie `SetParamString`, um Zeichen folgen Parameterdaten im Puffer festzulegen. Verwenden Sie [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) , um nicht-Zeichen folgen Parameterdaten im Puffer festzulegen.
+Verwenden `SetParamString` Sie, um Zeichen folgen Parameterdaten im Puffer festzulegen. Verwenden Sie [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) , um nicht-Zeichen folgen Parameterdaten im Puffer festzulegen.
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
 [CAccessor-Klasse](../../data/oledb/caccessor-class.md)<br/>
 [CDynamicAccessor-Klasse](../../data/oledb/cdynamicaccessor-class.md)<br/>
 [CManualAccessor-Klasse](../../data/oledb/cmanualaccessor-class.md)

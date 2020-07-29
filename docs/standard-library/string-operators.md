@@ -20,22 +20,22 @@ helpviewer_keywords:
 - std::operator&lt; (string)
 - std::operator&lt;&lt; (string)
 - std::operator&lt;= (string), std::operator== (string)
-ms.openlocfilehash: fef2eb784eca9c9eabbdcd727b051d5c2a4ccfd2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0e63054365f4b29cf474a46dbf7c730f54759792
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376648"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217388"
 ---
 # <a name="ltstringgt-operators"></a>&lt;string&gt;-Operatoren
 
 ||||
 |-|-|-|
-|[Operator!=](#op_neq)|[Operator&gt;](#op_gt)|[Operator&gt;&gt;](#op_gt_gt)|
-|[Operator&gt;=](#op_gt_eq)|[Operator&lt;](#op_lt)|[Operator&lt;&lt;](#op_lt_lt)|
-|[Operator&lt;=](#op_lt_eq)|[Operator+](#op_add)|[Betreiber== Einzelnachweise ==](#op_eq_eq)|
+|[Operator! =](#op_neq)|[KOM&gt;](#op_gt)|[KOM&gt;&gt;](#op_gt_gt)|
+|[KOM&gt;=](#op_gt_eq)|[KOM&lt;](#op_lt)|[KOM&lt;&lt;](#op_lt_lt)|
+|[KOM&lt;=](#op_lt_eq)|[Operator +](#op_add)|[Operator = =](#op_eq_eq)|
 
-## <a name="operator"></a><a name="op_add"></a>Operator+
+## <a name="operator"></a><a name="op_add"></a>Operator +
 
 Verkettet zwei Zeichenfolgenobjekte.
 
@@ -103,7 +103,7 @@ basic_string<CharType, Traits, Allocator>&& operator+(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -115,7 +115,7 @@ Die Zeichenfolge, die die Verkettung der Eingabezeichenfolgen ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Funktionen, `operator+` die jeweils überladen werden, um zwei Objekte der Klassenvorlage [basic_string Klasse zu](../standard-library/basic-string-class.md)verketten. Alle kehren `basic_string< CharType, Traits, Allocator>(Left).append(right)`effektiv zurück. Weitere Informationen finden Sie [unter Anfügen](../standard-library/basic-string-class.md#append).
+Die Funktionen jeder `operator+` Überladung, um zwei Objekte der Klassen Vorlage [Basic_string Klasse](../standard-library/basic-string-class.md)zu verketten. Alle zurückgeben `basic_string< CharType, Traits, Allocator>(Left).append(right)` . Weitere Informationen finden Sie unter [Anfügen](../standard-library/basic-string-class.md#append).
 
 ### <a name="example"></a>Beispiel
 
@@ -169,7 +169,7 @@ The string concatenating s1 & s3 is: antiheroine
 The string concatenating s1 & s3 is: antiheroine!
 ```
 
-## <a name="operator"></a><a name="op_neq"></a>Operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator ungleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -192,7 +192,7 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -200,7 +200,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch ungleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
+**`true`**, wenn das Zeichen folgen Objekt links vom Operator nicht lexikografisch gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -260,7 +260,7 @@ The strings s1 & s3 are equal.
 The strings s3 & s2 are not equal.
 ```
 
-## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator gleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -283,7 +283,7 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -291,7 +291,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch gleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
+**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -351,7 +351,7 @@ The strings s1 & s3 are equal.
 The strings s3 & s2 are not equal.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt"></a>Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als das Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -374,7 +374,7 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -382,7 +382,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch kleiner als das Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
+**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch kleiner als das Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -447,7 +447,7 @@ The string s1 is not less than the string s3.
 The string s3 is less than the string s2.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -470,7 +470,7 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -478,7 +478,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch kleiner als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
+**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch kleiner als oder gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -550,7 +550,7 @@ The string s1 is less than or equal to the string s3.
 The string s2 is greater than the string s3.
 ```
 
-## <a name="operatorltlt"></a><a name="op_lt_lt"></a>Operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a>KOM&lt;&lt;
 
 Eine Vorlagenfunktion, die eine Zeichenfolge in den Ausgabestream schreibt.
 
@@ -566,7 +566,7 @@ basic_ostream<CharType, Traits>& operator<<(
 *_Ostr*\
 Der Ausgabestream, in den geschrieben wird.
 
-*Str*\
+*SRT*\
 Die in den Ausgabestream einzugebende Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -575,9 +575,9 @@ Schreibt den Wert der angegebenen Zeichenfolge in den Ausgabestream *_Ostr*.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion überlastt **operator<<,** um eine Objektstr.-Class-Basic_string in den Stream *str* [basic_string](../standard-library/basic-string-class.md) * \_Ostr*einzufügen. Die Funktion `_Ostr.write( str.c_str, str.size )`gibt effektiv zurück.
+Die Vorlagen Funktion überlädt den **Operator<<** , um ein Objekt *Str* der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) in den Stream * \_ Ostr*einzufügen. Die Funktion gibt effektiv zurück `_Ostr.write( str.c_str, str.size )` .
 
-## <a name="operatorgt"></a><a name="op_gt"></a>Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator größer als das Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -600,7 +600,7 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -608,7 +608,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch größer als das Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
+**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch größer als das Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -680,7 +680,7 @@ The string s3 is greater than the string s1.
 The string s2 is greater than the string s3.
 ```
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator größer als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -703,7 +703,7 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder das verkettet werden soll.
 
 *Richting*\
@@ -711,7 +711,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch größer als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
+**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch größer als oder gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -783,7 +783,7 @@ The string s3 is greater than or equal to the string s1.
 The string s2 is greater than or equal to the string s3.
 ```
 
-## <a name="operatorgtgt"></a><a name="op_gt_gt"></a>Operator&gt;&gt;
+## <a name="operatorgtgt"></a><a name="op_gt_gt"></a>KOM&gt;&gt;
 
 Eine Vorlagenfunktion, die eine Zeichenfolge aus dem Eingabestream liest.
 
@@ -804,13 +804,13 @@ Die Zeichenfolge, die aus dem Eingabestream extrahiert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Liest den Wert der angegebenen Zeichenfolge aus *_Istr* und gibt sie nach *rechts*zurück.
+Liest den Wert der angegebenen Zeichenfolge aus *_Istr* und gibt ihn an der *rechten Seite*zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Der Operator überspringt die führenden Leerzeichen, sofern das `skipws`-Flag nicht festgelegt ist. Es liest alle folgenden Zeichen, bis das nächste Zeichen ein Leerzeichen ist oder das Ende der Datei erreicht wird.
 
-Die Vorlagenfunktion überlastt **operator>>,** um die von *rechts* gesteuerte Sequenz durch eine Sequenz von Elementen zu ersetzen, die aus dem Stream *_Istr*extrahiert wurden. Die Extraktion stoppt:
+Die Vorlagen Funktion überlädt den **Operator>>** , um die von *Rechts* gesteuerte Sequenz durch eine Sequenz von Elementen zu ersetzen, die aus dem Stream *_Istr*extrahiert werden. Die Extraktion stoppt:
 
 - Am Ende der Datei.
 
@@ -818,9 +818,9 @@ Die Vorlagenfunktion überlastt **operator>>,** um die von *rechts* gesteuerte S
 
 Nachdem die Funktion `_Istr` extrahiert hat. [max_size](../standard-library/basic-string-class.md#max_size) Elemente.
 
-- Nachdem die Funktion ein Element *ch* extrahiert hat, `getloc`für das [use_facet](../standard-library/basic-filebuf-class.md#open)< **ctype** \< **CharType**> >( ) . **ist**( **ctype** \< **CharType**>:: **space**, *ch*) ist true, in diesem Fall wird das Zeichen zurückgesetzt.
+- Nachdem die Funktion ein Element *ch* extrahiert hat, für das [Use_facet](../standard-library/basic-filebuf-class.md#open) <  **CType** \< **CharType**> > ( `getloc` ). **is**( **CType** \< **CharType**> :: **Space**, *ch*) ist true. in diesem Fall wird das Zeichen zurückgesetzt.
 
-Wenn die Funktion keine Elemente extrahiert,`ios_base::failbit`ruft sie [setstate](../standard-library/basic-ios-class.md#setstate)( auf. In jedem Fall nennt es **istr**. **Breite**(0) \* und gibt **diese**zurück.
+Wenn die Funktion keine Elemente extrahiert, ruft Sie [SetState](../standard-library/basic-ios-class.md#setstate)( `ios_base::failbit` ) auf. In jedem Fall wird **ISTR**aufgerufen. **Width**(0) und gibt zurück \* **`this`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -841,6 +841,6 @@ int main( )
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<>](../standard-library/string.md)
+[\<string>](../standard-library/string.md)

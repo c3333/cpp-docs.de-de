@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C2664
 ms.assetid: 3595d66e-cf87-4fda-a896-c0cd81f95db4
-ms.openlocfilehash: 93bdac489dea0356ce3da3298cd8ed6bcb6f623c
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 8bb9ecef2e08e1f65a817e1a6496a421e727eb13
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74756005"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221119"
 ---
 # <a name="compiler-error-c2664"></a>Compilerfehler C2664
 
 'function': Kann Argument n nicht von 'type1' zu 'type2' konvertieren
 
-Dieses Problem mit der Parameterkonvertierung kann auftreten, wenn Sie eine Instanz einer Klasse erstellen und versuchen, eine implizite Konvertierung für einen Konstruktor durchzuführen, der mit dem Schlüsselwort `explicit` gekennzeichnet ist. Weitere Informationen zu expliziten Konvertierungen finden Sie unter [benutzerdefinierte Typkonvertierungen](../../cpp/user-defined-type-conversions-cpp.md).
+Dieses Problem mit der Parameter Konvertierung kann auftreten, wenn eine Instanz einer Klasse erstellt wird und eine implizite Konvertierung für einen mit dem Schlüsselwort markierten Konstruktor versucht wird **`explicit`** . Weitere Informationen zu expliziten Konvertierungen finden Sie unter [benutzerdefinierte Typkonvertierungen](../../cpp/user-defined-type-conversions-cpp.md).
 
-Wird ein temporäres Objekt an eine Funktion übergeben, die als Parameter einen Verweis auf ein Objekt enthält, muss es sich bei diesem Verweis um einen `const`-Verweis handeln.
+Wenn ein temporäres Objekt an eine Funktion übergeben wird, die einen Verweis auf ein Objekt als Parameter annimmt, muss dieser Verweis ein **`const`** Verweis sein.
 
 Wenn die Funktion mit einem Parameter übergeben wird, der nicht den von der Funktion erwarteten Typ aufweist, wird mithilfe des entsprechenden Konstruktors ein temporäres Objekt erstellt. Dieses temporäre Objekt wird dann an die Funktion übergeben. In diesem Fall wird das temporäre Objekt zur Initialisierung des Verweises verwendet. In früheren Versionen der Sprache war es möglich, alle Verweise durch temporäre Objekte zu initialisieren.
 
@@ -31,7 +31,7 @@ So beheben Sie C2664
 
 C2664 kann auch generiert werden, wenn durch eine Klasse ein Member in einer seiner Basisklassen verborgen wird.
 
-Weitere Informationen finden Sie unter Gewusst [wie: Konvertieren von System:: String in wchar_t * oder char\*](../../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md).
+Weitere Informationen finden Sie unter Gewusst [wie: Konvertieren von System:: String in wchar_t * oder \* char](../../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -119,7 +119,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Der Compiler erzwingt die C++-Standardanforderungen für die Verwendung von `const`. Dieses Beispiel generiert C2664:
+Der Compiler erzwingt die C++-Standardanforderungen für die Anwendung von **`const`** . Dieses Beispiel generiert C2664:
 
 ```cpp
 // C2664d.cpp
@@ -232,7 +232,7 @@ library myproj1 {
 }
 ```
 
-C2664 wird auch bei Verwendung von `wchar_t` ausgelöst, wenn Sie Code von Visual C++ 6.0 auf höhere Versionen portieren. In Visual C++ bis Version 6.0 war `wchar_t` eine `typedef` für `unsigned short` und musste daher implizit in diesen Typ konvertiert werden können. Seit Visual C++ 6.0 ist `wchar_t`, wie im C++-Standard angegeben, ein eigenständiger integrierter Typ, der nicht mehr implizit in den Typ `unsigned short` konvertiert werden muss. Siehe [/Zc: wchar_t (wchar_t ist der Native Typ)](../../build/reference/zc-wchar-t-wchar-t-is-native-type.md).
+C2664 wird auch mithilfe von ausgelöst **`wchar_t`** , wenn Code von Visual C++ 6,0 auf spätere Versionen portieren. In Visual C++ 6,0 und früher **`wchar_t`** war ein **`typedef`** für **`unsigned short`** und war daher implizit in diesen Typ konvertierbar. Nach Visual C++ 6,0 **`wchar_t`** ist ein eigener integrierter Typ, wie im C++-Standard angegeben, und ist nicht mehr implizit in konvertierbar **`unsigned short`** . Siehe [/Zc: wchar_t (wchar_t ist der Native Typ)](../../build/reference/zc-wchar-t-wchar-t-is-native-type.md).
 
 ## <a name="example"></a>Beispiel
 

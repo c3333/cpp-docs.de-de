@@ -94,12 +94,12 @@ helpviewer_keywords:
 - std::basic_streambuf [C++], xsgetn
 - std::basic_streambuf [C++], xsputn
 ms.assetid: 136af6c3-13bf-4501-9288-b93da26efac7
-ms.openlocfilehash: 0cf7b61bde86a4643836346dafd36680fb8cf302
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 594cec7d4898960cb78284dcbb5ad677027cd947
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376742"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219208"
 ---
 # <a name="basic_streambuf-class"></a>basic_streambuf-Klasse
 
@@ -117,16 +117,16 @@ class basic_streambuf;
 *Elem*\
 Ein [char_type](#char_type).
 
-*Tr*\
+*Stadtrat*\
 Der [traits_type](#traits_type) der Zeichen.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine abstrakte Basisklasse zum Ableiten eines Streampuffers, der die Übertragung von Elementen an und von einer bestimmten Darstellung eines Streams steuert. Ein Objekt `basic_streambuf` der Klasse hilft bei der Steuerung eines Streams mit Elementen vom Typ *Tr*, auch bekannt als [char_type](#char_type), deren Zeichenzüge durch die Klasse [char_traits](../standard-library/char-traits-struct.md)bestimmt werden, auch als [traits_type](#traits_type)bezeichnet.
+Die Klassen Vorlage beschreibt eine abstrakte Basisklasse für die Ableitung eines Streampuffers, der die Übertragung von Elementen in eine und aus einer bestimmten Darstellung eines Streams steuert. Ein Objekt der Klasse unter `basic_streambuf` stützt die Steuerung eines Streams mit Elementen des Typs *TR*, auch bekannt als [char_type](#char_type), dessen Zeichen Merkmale von der Klasse [Char_traits](../standard-library/char-traits-struct.md)bestimmt werden, die auch als [Traits_type](#traits_type)bezeichnet wird.
 
-Jeder Streampuffer steuert konzeptuell zwei unabhängige Streams: einen für Extraktionen (Eingabe) und einen für Einfügungen (Ausgabe). Eine bestimmte Darstellung kann jedoch den Zugriff auf einen oder beide Streams unmöglich machen. In der Regel besteht eine bestimmte Beziehung zwischen den beiden Streams. Was Sie beispielsweise in den Ausgabestream eines [basic_stringbuf](../standard-library/basic-stringbuf-class.md)< `Elem`einfügen, `Tr`> Objekt, wird später aus dem Eingabestream extrahiert. Wenn Sie einen Stream [basic_filebuf](../standard-library/basic-filebuf-class.md)< `Elem`eines `Tr` basic_filebuf> Objekts positionieren, positionieren Sie den anderen Stream im Tandem.
+Jeder Streampuffer steuert konzeptuell zwei unabhängige Streams: einen für Extraktionen (Eingabe) und einen für Einfügungen (Ausgabe). Eine bestimmte Darstellung kann jedoch den Zugriff auf einen oder beide Streams unmöglich machen. In der Regel besteht eine bestimmte Beziehung zwischen den beiden Streams. Was Sie z. b. in den Ausgabestream einer [Basic_stringbuf](../standard-library/basic-stringbuf-class.md)einfügen <  `Elem` , `Tr` ist> Objekt, das Sie später aus dem Eingabestream extrahieren. Wenn Sie einen Stream einer Basic_filebuf positionieren [basic_filebuf](../standard-library/basic-filebuf-class.md) <  `Elem` , `Tr`>-Objekt, positionieren Sie den anderen Stream gleichzeitig.
 
-Die öffentliche Schnittstelle `basic_streambuf` zur Klassenvorlage stellt die Vorgänge bereit, die allen Streampuffern gemeinsam sind, jedoch spezialisiert. Die geschützte Schnittstelle stellt die Vorgänge bereit, die für die Verwendung einer bestimmten Darstellung eines Streams benötigt werden. Über die geschützten virtuellen Memberfunktionen können Sie das Verhalten eines abgeleiteten Streampuffers für eine bestimmte Darstellung eines Streams anpassen. Jeder abgeleitete Streampuffer in dieser Bibliothek beschreibt, wie er das Verhalten seiner geschützten virtuellen Memberfunktionen spezialisiert. Das Standardverhalten für die Basisklasse, das häufig darin besteht, nichts zu tun, wird in diesem Thema beschrieben.
+Die öffentliche Schnittstelle zur Klassen Vorlage `basic_streambuf` stellt die Vorgänge bereit, die für alle Streampuffer gemeinsam sind, jedoch spezialisiert. Die geschützte Schnittstelle stellt die Vorgänge bereit, die für die Verwendung einer bestimmten Darstellung eines Streams benötigt werden. Über die geschützten virtuellen Memberfunktionen können Sie das Verhalten eines abgeleiteten Streampuffers für eine bestimmte Darstellung eines Streams anpassen. Jeder abgeleitete Streampuffer in dieser Bibliothek beschreibt, wie er das Verhalten seiner geschützten virtuellen Memberfunktionen spezialisiert. Das Standardverhalten für die Basisklasse, das häufig darin besteht, nichts zu tun, wird in diesem Thema beschrieben.
 
 Die verbleibenden geschützten Memberfunktionen steuern das Kopieren in und aus Speicher, der zum Puffern von Übertragungen in und aus Streams bereitgestellt wird. Ein Eingabepuffer ist z. B. durch folgende Merkmale charakterisiert:
 
@@ -166,7 +166,7 @@ Ein Objekt der Klasse `basic_streambuf`< `Elem`, `Tr`> speichert die zuvor besch
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Verknüpft einen Typnamen mit dem `Elem`-Vorlagenparameter.|
 |[int_type](#int_type)|Verknüpft einen Typnamen im Geltungsbereich von `basic_streambuf` mit dem `Elem`-Vorlagenparameter.|
@@ -186,7 +186,7 @@ Ein Objekt der Klasse `basic_streambuf`< `Elem`, `Tr`> speichert die zuvor besch
 |[gptr](#gptr)|Eine geschützte Funktion, die einen Zeiger auf das nächste Element des Eingabepuffers zurückgibt.|
 |[imbue](#imbue)|Eine geschützte virtuelle Funktion, die von [pubimbue](#pubimbue) aufgerufen wird.|
 |[in_avail](#in_avail)|Gibt die Anzahl von Elementen zurück, die aus dem Puffer gelesen werden können.|
-|[Überlauf](#overflow)|Eine geschützte virtuelle Funktion, die aufgerufen werden kann, wenn ein neues Zeichen in einen vollen Puffer eingefügt wird.|
+|[Läufen](#overflow)|Eine geschützte virtuelle Funktion, die aufgerufen werden kann, wenn ein neues Zeichen in einen vollen Puffer eingefügt wird.|
 |[pbackfail](#pbackfail)|Eine geschützte virtuelle Memberfunktion, die versucht, ein Element zurück in den Eingabestream zu versetzen und es dann zum aktuellen Element zu ernennen (es wird mit dem Zeiger für das nächste Element darauf gezeigt).|
 |[pbase](#pbase)|Eine geschützte Funktion, die einen Zeiger auf den Anfang des Ausgabepuffers zurückgibt.|
 |[pbump](#pbump)|Eine geschützte Funktion, die dem nächsten Zeiger für den Ausgabepuffer `count` hinzufügt.|
@@ -212,7 +212,7 @@ Ein Objekt der Klasse `basic_streambuf`< `Elem`, `Tr`> speichert die zuvor besch
 |[stossc](#stossc)|Verschiebt den Zeiger hinter das aktuelle Element im Stream.|
 |[sungetc](#sungetc)|Ruft ein Zeichen aus dem Stream ab.|
 |[swap](#swap)|Tauscht die Werte in diesem Objekt mit den Werten im bereitgestellten `basic_streambuf`-Objektparameter.|
-|[Sync](#sync)|Eine geschützte virtuelle Funktion, die versucht, die gesteuerten Streams mit zugehörigen externen Streams zu synchronisieren.|
+|[PPEN](#sync)|Eine geschützte virtuelle Funktion, die versucht, die gesteuerten Streams mit zugehörigen externen Streams zu synchronisieren.|
 |[uflow](#uflow)|Eine geschützte virtuelle Funktion, die das aktuelle Element aus dem Eingabestream extrahiert.|
 |[Unterlauf](#underflow)|Eine geschützte virtuelle Funktion, die das aktuelle Element aus dem Eingabestream extrahiert.|
 |[xsgetn](#xsgetn)|Eine geschützte virtuelle Funktion, die Elemente aus dem Eingabestream extrahiert.|
@@ -222,15 +222,15 @@ Ein Objekt der Klasse `basic_streambuf`< `Elem`, `Tr`> speichert die zuvor besch
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Operator=](#op_eq)|Weist die Werte dieses Objekts aus einem anderen `basic_streambuf`-Objekt zu.|
+|[Operator =](#op_eq)|Weist die Werte dieses Objekts aus einem anderen `basic_streambuf`-Objekt zu.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<streambuf>
+**Header:**\<streambuf>
 
 **Namespace:** std
 
-## <a name="basic_streambufbasic_streambuf"></a><a name="basic_streambuf"></a>basic_streambuf::basic_streambuf
+## <a name="basic_streambufbasic_streambuf"></a><a name="basic_streambuf"></a>basic_streambuf:: basic_streambuf
 
 Konstruiert ein Objekt vom Typ `basic_streambuf`.
 
@@ -249,9 +249,9 @@ Ein lvalue-Verweis auf das `basic_streambuf`-Objekt, das dazu verwendet wird, We
 
 Der erste geschützte Konstruktor speichert einen NULL-Zeiger in allen Zeigern, die den Eingabe- und Ausgabepuffer steuern. Er speichert auch `locale::classic` im locale-Objekt. Weitere Informationen finden Sie unter [locale::classic](../standard-library/locale-class.md#classic).
 
-Der zweite geschützte Konstruktor kopiert die Zeiger und das Gebietsschema von *rechts*.
+Der zweite geschützte Konstruktor kopiert die Zeiger und das Gebiets Schema von *Rechts*.
 
-## <a name="basic_streambufchar_type"></a><a name="char_type"></a>basic_streambuf::char_type
+## <a name="basic_streambufchar_type"></a><a name="char_type"></a>basic_streambuf:: char_type
 
 Verknüpft einen Typnamen mit dem Vorlagenparameter **Elem**.
 
@@ -259,7 +259,7 @@ Verknüpft einen Typnamen mit dem Vorlagenparameter **Elem**.
 typedef Elem char_type;
 ```
 
-## <a name="basic_streambufeback"></a><a name="eback"></a>basic_streambuf::eback
+## <a name="basic_streambufeback"></a><a name="eback"></a>basic_streambuf:: eback
 
 Eine geschützte Funktion, die einen Zeiger auf den Anfang des Eingabepuffers zurückgibt.
 
@@ -271,7 +271,7 @@ char_type *eback() const;
 
 Ein Zeiger auf den Anfang des Eingabepuffers.
 
-## <a name="basic_streambufegptr"></a><a name="egptr"></a>basic_streambuf::egptr
+## <a name="basic_streambufegptr"></a><a name="egptr"></a>basic_streambuf:: Egptr
 
 Eine geschützte Funktion, die einen Zeiger direkt hinter das Ende des Eingabepuffers zurückgibt.
 
@@ -283,7 +283,7 @@ char_type *egptr() const;
 
 Ein Zeiger hinter das Ende des Eingabepuffers.
 
-## <a name="basic_streambufepptr"></a><a name="epptr"></a>basic_streambuf::epptr
+## <a name="basic_streambufepptr"></a><a name="epptr"></a>basic_streambuf:: epptr
 
 Eine geschützte Funktion, die einen Zeiger direkt hinter das Ende des Ausgabepuffers zurückgibt.
 
@@ -295,9 +295,9 @@ char_type *epptr() const;
 
 Ein Zeiger hinter das Ende des Ausgabepuffers.
 
-## <a name="basic_streambufgbump"></a><a name="gbump"></a>basic_streambuf::gbump
+## <a name="basic_streambufgbump"></a><a name="gbump"></a>basic_streambuf:: gbump
 
-Eine geschützte Funktion, die dem nächsten Zeiger für den Eingabepuffer *die Anzahl* hinzufügt.
+Eine geschützte Funktion, die dem nächsten Zeiger für den Eingabepuffer *count* hinzufügt.
 
 ```cpp
 void gbump(int count);
@@ -305,10 +305,10 @@ void gbump(int count);
 
 ### <a name="parameters"></a>Parameter
 
-*Count*\
+*Countdown*\
 Der Betrag, um den der Zeiger nach vorne verschoben werden soll.
 
-## <a name="basic_streambufgetloc"></a><a name="getloc"></a>basic_streambuf::getloc
+## <a name="basic_streambufgetloc"></a><a name="getloc"></a>basic_streambuf:: getloc
 
 Ruft das Gebietsschema des Objekts „basic_streambuf“ ab.
 
@@ -342,7 +342,7 @@ int main( )
 C
 ```
 
-## <a name="basic_streambufgptr"></a><a name="gptr"></a>basic_streambuf::gptr
+## <a name="basic_streambufgptr"></a><a name="gptr"></a>basic_streambuf:: GPTR
 
 Eine geschützte Funktion, die einen Zeiger auf das nächste Element des Eingabepuffers zurückgibt.
 
@@ -354,9 +354,9 @@ char_type *gptr() const;
 
 Ein Zeiger auf das nächste Element des Eingabepuffers.
 
-## <a name="basic_streambufimbue"></a><a name="imbue"></a>basic_streambuf::imbue
+## <a name="basic_streambufimbue"></a><a name="imbue"></a>basic_streambuf:: imbue
 
-Eine geschützte virtuelle Funktion, die von [pubimbue](#pubimbue)aufgerufen wird.
+Eine geschützte virtuelle Funktion, die von [Pubimbue](#pubimbue)aufgerufen wird.
 
 ```cpp
 virtual void imbue(const locale& _Loc);
@@ -371,7 +371,7 @@ Ein Verweis auf ein Gebietsschema.
 
 Standardmäßig wird nichts unternommen.
 
-## <a name="basic_streambufin_avail"></a><a name="in_avail"></a>basic_streambuf::in_avail
+## <a name="basic_streambufin_avail"></a><a name="in_avail"></a>basic_streambuf:: in_avail
 
 Gibt die Anzahl von Elementen zurück, die aus dem Puffer gelesen werden können.
 
@@ -385,7 +385,7 @@ Die Anzahl von Elementen, die aus dem Puffer gelesen werden können.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn eine [Leseposition](../standard-library/basic-streambuf-class.md) verfügbar ist, gibt die Memberfunktion [egptr](#egptr) - [gptr](#gptr)zurück. Andernfalls wird [showmanyc](#showmanyc) zurückgegeben.
+Wenn eine [Lese Position](../standard-library/basic-streambuf-class.md) verfügbar ist, gibt die Member-Funktion [Egptr](#egptr)  -  [GPTR](#gptr)zurück. Andernfalls wird [showmanyc](#showmanyc) zurückgegeben.
 
 ### <a name="example"></a>Beispiel
 
@@ -405,7 +405,7 @@ int main( )
 }
 ```
 
-## <a name="basic_streambufint_type"></a><a name="int_type"></a>basic_streambuf::int_type
+## <a name="basic_streambufint_type"></a><a name="int_type"></a>basic_streambuf:: int_type
 
 Ordnet einen Typnamen innerhalb des Bereichs von „basic_streambuf“ einem der Typen in einem Vorlagenparameter zu.
 
@@ -413,7 +413,7 @@ Ordnet einen Typnamen innerhalb des Bereichs von „basic_streambuf“ einem der
 typedef typename traits_type::int_type int_type;
 ```
 
-## <a name="basic_streambufoff_type"></a><a name="off_type"></a>basic_streambuf::off_type
+## <a name="basic_streambufoff_type"></a><a name="off_type"></a>basic_streambuf:: off_type
 
 Ordnet einen Typnamen innerhalb des Bereichs von „basic_streambuf“ einem der Typen in einem Vorlagenparameter zu.
 
@@ -421,7 +421,7 @@ Ordnet einen Typnamen innerhalb des Bereichs von „basic_streambuf“ einem der
 typedef typename traits_type::off_type off_type;
 ```
 
-## <a name="basic_streambufoperator"></a><a name="op_eq"></a>basic_streambuf::operator=
+## <a name="basic_streambufoperator"></a><a name="op_eq"></a>basic_streambuf:: Operator =
 
 Weist die Werte dieses Objekts aus einem anderen `basic_streambuf`-Objekt zu.
 
@@ -436,9 +436,9 @@ Ein lvalue-Verweis auf das `basic_streambuf`-Objekt, das dazu verwendet wird, di
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der geschützte Memberoperator kopiert von *rechts* die Zeiger, die den Eingabepuffer und den Ausgabepuffer steuern. Außerdem speichert er `right.`[getloc()](#getloc) im `locale object`. Er gibt `*this` zurück.
+Der geschützte Member-Operator kopiert von *Rechts* die Zeiger, die den Eingabepuffer und den Ausgabepuffer steuern. Außerdem speichert er `right.`[getloc()](#getloc) im `locale object`. Er gibt zurück **`*this`** .
 
-## <a name="basic_streambufoverflow"></a><a name="overflow"></a>basic_streambuf::Überlauf
+## <a name="basic_streambufoverflow"></a><a name="overflow"></a>basic_streambuf:: overflow
 
 Eine geschützte virtuelle Funktion, die aufgerufen werden kann, wenn ein neues Zeichen in einen vollen Puffer eingefügt wird.
 
@@ -457,7 +457,7 @@ Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird **traits_type:
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn * \_Meta* nicht gleich **traits_type::eof**vergleicht, versucht die geschützte funktion der virtuellen Member, das Element **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(*\_Meta*) in den Ausgabestream einzufügen. Hierfür gibt es verschiedene Möglichkeiten:
+Wenn * \_ Meta* nicht gleich **traits_type:: EOF**ist, versucht die geschützte Funktion des virtuellen Members, das Element **traits_type::**[To_char_type](../standard-library/char-traits-struct.md#to_char_type)(* \_ Meta*) in den Ausgabestream einzufügen. Hierfür gibt es verschiedene Möglichkeiten:
 
 - Wenn `write position` verfügbar ist, kann das Element in der Schreibposition gespeichert werden, und der nächste Zeiger für den Ausgabepuffer kann inkrementiert werden.
 
@@ -473,7 +473,7 @@ Die Funktion verarbeitet die Zeichen im Eingabebereich zwischen den Zeigern `pba
 
 Die Definition von „verarbeiten“ ist abhängig von den abgeleiteten Klassen. Die Klasse `filebuf` schreibt z.B. ihre Zeichen in eine Datei, während die Klasse `strstreambuf` sie in ihrem Puffer behält, und den Puffer erweitert (wenn der Puffer als dynamisch festgelegt ist), wenn „overflow“ aufgerufen wird. Diese Erweiterung erfolgt durch Freigeben des alten Puffers und Ersetzen durch einen neuen größeren Puffer. Die Zeiger werden nach Bedarf angepasst.
 
-## <a name="basic_streambufpbackfail"></a><a name="pbackfail"></a>basic_streambuf::pbackfail
+## <a name="basic_streambufpbackfail"></a><a name="pbackfail"></a>basic_streambuf::p backfail
 
 Eine geschützte virtuelle Memberfunktion, die versucht, ein Element zurück in den Eingabestream zu versetzen und es dann zum aktuellen Element zu ernennen (es wird mit dem Zeiger für das nächste Element darauf gezeigt).
 
@@ -492,7 +492,7 @@ Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird **traits_type:
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn * \_Meta* gleich **traits_type::eof**vergleicht, ist das element, das zurückgedrängt werden soll, effektiv das Element, das sich bereits im Stream vor dem aktuellen Element befindet. Andernfalls wird dieses Element durch **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(*\_Meta*) ersetzt. Ein Element kann auf verschiedene Arten durch die Funktion wiederhergestellt werden:
+Wenn * \_ metavergleiche* gleich **traits_type:: EOF**sind, handelt es sich bei dem zu pushenden Element tatsächlich um das Element, das sich bereits vor dem aktuellen Element im Stream befindet. Andernfalls wird dieses Element durch **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(*\_Meta*) ersetzt. Ein Element kann auf verschiedene Arten durch die Funktion wiederhergestellt werden:
 
 - Wenn eine Position zur Wiederherstellung verfügbar ist, kann das Element in der Position zur Wiederherstellung gespeichert werden, und der nächste Zeiger für den Eingabepuffer kann verringert werden.
 
@@ -500,7 +500,7 @@ Wenn * \_Meta* gleich **traits_type::eof**vergleicht, ist das element, das zurü
 
 - Bei einem Streampuffer mit allgemeinen Eingabe- und Ausgabestreams kann eine Position zur Wiederherstellung auch dadurch verfügbar gemacht werden, dass einige oder alle Elemente zwischen dem Anfangszeiger und den folgenden Zeigern für den Ausgabepuffer an ein externes Ziel geschrieben werden.
 
-## <a name="basic_streambufpbase"></a><a name="pbase"></a>basic_streambuf::pBase
+## <a name="basic_streambufpbase"></a><a name="pbase"></a>basic_streambuf::p Basis
 
 Eine geschützte Funktion, die einen Zeiger auf den Anfang des Ausgabepuffers zurückgibt.
 
@@ -512,9 +512,9 @@ char_type *pbase() const;
 
 Ein Zeiger auf den Anfang des Ausgabepuffers.
 
-## <a name="basic_streambufpbump"></a><a name="pbump"></a>basic_streambuf::pbump
+## <a name="basic_streambufpbump"></a><a name="pbump"></a>basic_streambuf::p Bump
 
-Eine geschützte Funktion, die dem nächsten Zeiger für den Ausgabepuffer *die Anzahl* hinzufügt.
+Eine geschützte Funktion, die dem nächsten Zeiger für den Ausgabepuffer *count* hinzufügt.
 
 ```cpp
 void pbump(int count);
@@ -522,10 +522,10 @@ void pbump(int count);
 
 ### <a name="parameters"></a>Parameter
 
-*Count*\
+*Countdown*\
 Die Anzahl der Zeichen, um die die Schreibposition nach vorne verschoben werden soll.
 
-## <a name="basic_streambufpos_type"></a><a name="pos_type"></a>basic_streambuf::pos_type
+## <a name="basic_streambufpos_type"></a><a name="pos_type"></a>basic_streambuf::p os_type
 
 Ordnet einen Typnamen innerhalb des Bereichs von „basic_streambuf“ einem der Typen in einem Vorlagenparameter zu.
 
@@ -533,7 +533,7 @@ Ordnet einen Typnamen innerhalb des Bereichs von „basic_streambuf“ einem der
 typedef typename traits_type::pos_type pos_type;
 ```
 
-## <a name="basic_streambufpptr"></a><a name="pptr"></a>basic_streambuf::pptr
+## <a name="basic_streambufpptr"></a><a name="pptr"></a>basic_streambuf::p PTR
 
 Eine geschützte Funktion, die einen Zeiger auf das nächste Element des Ausgabepuffers zurückgibt.
 
@@ -545,7 +545,7 @@ char_type *pptr() const;
 
 Ein Zeiger auf das nächste Element des Ausgabepuffers.
 
-## <a name="basic_streambufpubimbue"></a><a name="pubimbue"></a>basic_streambuf::pubimbue
+## <a name="basic_streambufpubimbue"></a><a name="pubimbue"></a>basic_streambuf::p ubimbue
 
 Legt das Gebietsschema des Objekts „basic_streambuf“ fest.
 
@@ -570,7 +570,7 @@ Die Memberfunktion speichert _ *Loc* im locale-Objekt und ruft [imbue](#imbue) a
 
 Ein Beispiel, in dem `pubimbue` verwendet wird, finden Sie unter [basic_ios::imbue](../standard-library/basic-ios-class.md#imbue).
 
-## <a name="basic_streambufpubseekoff"></a><a name="pubseekoff"></a>basic_streambuf::pubseekoff
+## <a name="basic_streambufpubseekoff"></a><a name="pubseekoff"></a>basic_streambuf::p ubkoff
 
 Ruft [seekoff](#seekoff) auf, eine geschützte virtuelle Funktion, die in einer abgeleiteten Klasse überschrieben wird.
 
@@ -582,8 +582,8 @@ pos_type pubseekoff(off_type _Off,
 
 ### <a name="parameters"></a>Parameter
 
-*_off*\
-Die Position, die gesucht werden soll, relativ zu *_Way*.
+*_Off*\
+Die Position, die relativ zu *_Way*gesucht werden soll.
 
 *_Way*\
 Der Startpunkt für Offsetvorgänge. Mögliche Werte sind unter [seekdir](../standard-library/ios-base-class.md#seekdir) aufgeführt.
@@ -593,15 +593,15 @@ Gibt den Modus für die Zeigerposition an. Standardmäßig können Lese- und Sch
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die neue Position oder eine ungültige Streamposition `_Way` `_Which`zurück ( [seekoff](#seekoff)(_ *Off*, , ) ).
+Gibt die neue Position oder eine ungültige Streamposition zurück ( [seekoff](#seekoff)(_ *Off*, `_Way` , `_Which` )).
 
 ### <a name="remarks"></a>Bemerkungen
 
 Verschiebt den Zeiger relativ zu *_Way*.
 
-## <a name="basic_streambufpubseekpos"></a><a name="pubseekpos"></a>basic_streambuf::pubseekpos
+## <a name="basic_streambufpubseekpos"></a><a name="pubseekpos"></a>basic_streambuf::p ubseekpos
 
-Ruft [seekpos](#seekpos)auf , eine geschützte virtuelle Funktion, die in einer abgeleiteten Klasse überschrieben wird, und setzt die aktuelle Zeigerposition zurück.
+Ruft [Seekpos](#seekpos)auf, eine geschützte virtuelle Funktion, die in einer abgeleiteten Klasse überschrieben wird, und setzt die aktuelle Zeigerposition zurück.
 
 ```cpp
 pos_type pubseekpos(pos_type _Sp, ios_base::openmode _Which = ios_base::in | ios_base::out);
@@ -623,7 +623,7 @@ Die neue Position oder eine ungültige Streamposition. Vergleichen Sie den Rück
 
 Die Memberfunktion gibt [seekpos](#seekpos)(_ *Sp*, `_Which`) zurück.
 
-## <a name="basic_streambufpubsetbuf"></a><a name="pubsetbuf"></a>basic_streambuf::pubsetbuf
+## <a name="basic_streambufpubsetbuf"></a><a name="pubsetbuf"></a>basic_streambuf::p ubsetbuf
 
 Ruft [setbuf](#setbuf) auf, eine geschützte virtuelle Funktion, die in einer abgeleiteten Klasse überschrieben wird.
 
@@ -638,16 +638,16 @@ basic_streambuf<Elem, Tr> *pubsetbuf(
 *_Buffer*\
 Ein Zeiger auf `char_type` für diese Instanziierung.
 
-*Count*\
+*Countdown*\
 Die Größe des Puffers.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt [setbuf](#setbuf)( `_Buffer`, `count`. .
+Gibt [setbuf](#setbuf)( `_Buffer` , `count` ) zurück.
 
-## <a name="basic_streambufpubsync"></a><a name="pubsync"></a>basic_streambuf::pubsync
+## <a name="basic_streambufpubsync"></a><a name="pubsync"></a>basic_streambuf::p ubsync
 
-Ruft [sync](#sync)auf , eine geschützte virtuelle Funktion, die in einer abgeleiteten Klasse überschrieben wird, und aktualisiert den externen Stream, der diesem Puffer zugeordnet ist.
+Ruft [Sync](#sync)auf, eine geschützte virtuelle Funktion, die in einer abgeleiteten Klasse überschrieben wird, und aktualisiert den externen Stream, der diesem Puffer zugeordnet ist.
 
 ```cpp
 int pubsync();
@@ -655,9 +655,9 @@ int pubsync();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt [die Synchronisierung](#sync) oder -1 zurück, wenn ein Fehler auftritt.
+Gibt [Sync](#sync) oder-1 zurück, wenn ein Fehler auftritt.
 
-## <a name="basic_streambufsbumpc"></a><a name="sbumpc"></a>basic_streambuf::sbumpc
+## <a name="basic_streambufsbumpc"></a><a name="sbumpc"></a>basic_streambuf:: Sbumpc
 
 Liest das aktuelle Element, gibt es zurück und bewegt den Streamzeiger.
 
@@ -698,7 +698,7 @@ int main( )
 51
 ```
 
-## <a name="basic_streambufseekoff"></a><a name="seekoff"></a>basic_streambuf::seekoff
+## <a name="basic_streambufseekoff"></a><a name="seekoff"></a>basic_streambuf:: seekoff
 
 Eine geschützte virtuelle Memberfunktion, die versucht, die aktuellen Positionen für die gesteuerten Streams zu ändern.
 
@@ -711,8 +711,8 @@ virtual pos_type seekoff(
 
 ### <a name="parameters"></a>Parameter
 
-*_off*\
-Die Position, die gesucht werden soll, relativ zu *_Way*.
+*_Off*\
+Die Position, die relativ zu *_Way*gesucht werden soll.
 
 *_Way*\
 Der Startpunkt für Offsetvorgänge. Mögliche Werte sind unter [seekdir](../standard-library/ios-base-class.md#seekdir) aufgeführt.
@@ -722,7 +722,7 @@ Gibt den Modus für die Zeigerposition an. Standardmäßig können Lese- und Sch
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die neue Position oder eine `seekoff` ungültige `_Way`Streamposition zurück ( (_ *Aus*, , `_Which`) ).
+Gibt die neue Position oder eine ungültige Streamposition zurück ( `seekoff` (_ *Off*, `_Way` , `_Which` )).
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -738,7 +738,7 @@ In der Regel ist der Eingabestream betroffen, wenn **which & ios_base::in** ungl
 
 Wenn die Funktion erfolgreich die Streamposition oder -positionen verändert, gibt sie die resultierende Streamposition oder eine der resultierenden Streampositionen zurück. Andernfalls gibt sie eine ungültige Streamposition zurück. Standardmäßig wird eine ungültige Streamposition zurückgegeben.
 
-## <a name="basic_streambufseekpos"></a><a name="seekpos"></a>basic_streambuf::seekpos
+## <a name="basic_streambufseekpos"></a><a name="seekpos"></a>basic_streambuf:: seekpos
 
 Eine geschützte virtuelle Memberfunktion, die versucht, die aktuellen Positionen für die gesteuerten Streams zu ändern.
 
@@ -766,7 +766,7 @@ In der Regel ist der Eingabestream betroffen, wenn **which & ios_base::in** ungl
 
 Wenn die Funktion erfolgreich die Streamposition oder -positionen verändert, gibt sie die resultierende Streamposition oder eine der resultierenden Streampositionen zurück. Andernfalls gibt sie eine ungültige Streamposition zurück (-1). Standardmäßig wird eine ungültige Streamposition zurückgegeben.
 
-## <a name="basic_streambufsetbuf"></a><a name="setbuf"></a>basic_streambuf::setbuf
+## <a name="basic_streambufsetbuf"></a><a name="setbuf"></a>basic_streambuf:: setbuf
 
 Eine geschützte virtuelle Memberfunktion, die für jeden abgeleiteten Streampuffer einen bestimmten Vorgang ausführt.
 
@@ -781,18 +781,18 @@ virtual basic_streambuf<Elem, Tr> *setbuf(
 *_Buffer*\
 Ein Zeiger auf einen Puffer.
 
-*Count*\
+*Countdown*\
 Größe des Puffers.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Standardmäßig wird **this** zurückgegeben.
+Das Standardverhalten ist die Rückgabe von **`this`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Siehe [basic_filebuf](../standard-library/basic-filebuf-class.md). `setbuf` stellt einen Speicherplatzbereich für die Nutzung durch das `streambuf`-Objekt zur Verfügung. Wie der Puffer verwendet wird, ist in den abgeleiteten Klassen festgelegt.
 
-## <a name="basic_streambufsetg"></a><a name="setg"></a>basic_streambuf::setg
+## <a name="basic_streambufsetg"></a><a name="setg"></a>basic_streambuf:: Sekunden
 
 Eine geschützte Funktion, die *Gbeg* im Startzeiger, `_Gnext` im nächsten Zeiger und `_Gend` im Endzeiger für den Eingabepuffer speichert.
 
@@ -813,9 +813,9 @@ Ein Zeiger auf eine Position in der Mitte des Puffers.
 *_Gend*\
 Ein Zeiger auf das Ende des Puffers.
 
-## <a name="basic_streambufsetp"></a><a name="setp"></a>basic_streambuf::setp
+## <a name="basic_streambufsetp"></a><a name="setp"></a>basic_streambuf:: SETP
 
-Eine geschützte Funktion, die *_Pbeg* im Anfangszeiger speichert und im Endzeiger für den Ausgabepuffer *_Pend.*
+Eine geschützte Funktion, die *_Pbeg* im anfangs Zeiger speichert und im endzeiger für den Ausgabepuffer *_Pend* .
 
 ```cpp
 void setp(char_type* _Pbeg, char_type* _Pend);
@@ -829,7 +829,7 @@ Ein Zeiger auf den Anfang des Puffers.
 *_Pend*\
 Ein Zeiger auf das Ende des Puffers.
 
-## <a name="basic_streambufsgetc"></a><a name="sgetc"></a>basic_streambuf::sgetc
+## <a name="basic_streambufsgetc"></a><a name="sgetc"></a>basic_streambuf:: Sgetc
 
 Gibt das aktuelle Element ohne Änderung der Position im Stream zurück.
 
@@ -865,9 +865,9 @@ int main( )
 }
 ```
 
-## <a name="basic_streambufsgetn"></a><a name="sgetn"></a>basic_streambuf::sgetn
+## <a name="basic_streambufsgetn"></a><a name="sgetn"></a>basic_streambuf:: Sgetn
 
-Extrahiert, um Zeichen aus dem Eingabepuffer zu *zählen,* und speichert sie im bereitgestellten Puffer *ptr*.
+Extrahiert bis zum *zählen* von Zeichen aus dem Eingabepuffer und speichert diese im bereitgestellten Puffer *ptr*.
 
 Diese Methode ist potenziell unsicher, da sie darauf basiert, dass der Aufrufer überprüft, ob die übergebenen Werte korrekt sind.
 
@@ -879,10 +879,10 @@ streamsize sgetn(
 
 ### <a name="parameters"></a>Parameter
 
-*Ptr*\
+*PTR*\
 Der Puffer, der die extrahierten Zeichen enthalten soll.
 
-*Count*\
+*Countdown*\
 Die Anzahl der zu lesenden Elemente.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -891,7 +891,7 @@ Die Anzahl der gelesenen Elemente. Weitere Informationen finden Sie unter [strea
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt [xsgetn](#xsgetn)( `ptr`, `count`.
+Die Member-Funktion gibt [Xsgetn](#xsgetn)( `ptr` , `count` ) zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -920,7 +920,7 @@ int main()
 }
 ```
 
-## <a name="basic_streambufshowmanyc"></a><a name="showmanyc"></a>basic_streambuf::showmanyc
+## <a name="basic_streambufshowmanyc"></a><a name="showmanyc"></a>basic_streambuf:: Showmanyc
 
 Eine geschützte virtuelle Memberfunktion, die die Anzahl von Zeichen zurückgibt, die aus dem Eingabestream extrahiert werden können, und sicherstellt, dass das Programm keiner unbegrenzten Wartezeit unterliegt.
 
@@ -932,7 +932,7 @@ virtual streamsize showmanyc();
 
 Standardmäßig wird null zurückgegeben.
 
-## <a name="basic_streambufsnextc"></a><a name="snextc"></a>basic_streambuf::snextc
+## <a name="basic_streambufsnextc"></a><a name="snextc"></a>basic_streambuf:: snextc
 
 Liest das aktuelle Element und gibt das folgende Element zurück.
 
@@ -972,7 +972,7 @@ aa
 aa97
 ```
 
-## <a name="basic_streambufsputbackc"></a><a name="sputbackc"></a>basic_streambuf::sputbackc
+## <a name="basic_streambufsputbackc"></a><a name="sputbackc"></a>basic_streambuf:: sputbackc
 
 Fügt char_type in den Stream ein.
 
@@ -991,7 +991,7 @@ Gibt das Zeichen oder einen Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn eine Putbackposition verfügbar ist und *_Ch* gleich dem an dieser Position gespeicherten Zeichen verglichen wird, dekrementiert `_Ch`die Memberfunktion den nächsten Zeiger für den Eingabepuffer und gibt traits_type **zurück::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( ). Andernfalls wird [pbackfail](#pbackfail) `_Ch`zurückgegeben ( ).
+Wenn eine putbackposition verfügbar ist und *_Ch* mit dem an dieser Position gespeicherten Zeichen übereinstimmt, verringert die Member-Funktion den nächsten Zeiger für den Eingabepuffer und gibt **traits_type::**[To_int_type](../standard-library/char-traits-struct.md#to_int_type)( `_Ch` ) zurück. Andernfalls wird [Pbackfail](#pbackfail)() zurückgegeben `_Ch` .
 
 ### <a name="example"></a>Beispiel
 
@@ -1020,7 +1020,7 @@ int main( )
 }
 ```
 
-## <a name="basic_streambufsputc"></a><a name="sputc"></a>basic_streambuf::sputc
+## <a name="basic_streambufsputc"></a><a name="sputc"></a>basic_streambuf:: sputc
 
 Setzt ein Zeichen in den Stream.
 
@@ -1039,7 +1039,7 @@ Gibt das Zeichen zurück, falls erfolgreich.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn `write position` a verfügbar ist, speichert die Memberfunktion *_Ch* in der Schreibposition, erhöht den nächsten Zeiger `_Ch`für den Ausgabepuffer und gibt **traits_type zurück::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( ). Andernfalls wird [ein Überlauf](#overflow)zurückgegeben ( `_Ch`).
+Wenn eine `write position` verfügbar ist, speichert die Member-Funktion *_Ch* in der Schreibposition, erhöht den nächsten Zeiger für den Ausgabepuffer und gibt **traits_type::**[To_int_type](../standard-library/char-traits-struct.md#to_int_type)() zurück `_Ch` . Andernfalls wird [Overflow](#overflow)() zurückgegeben `_Ch` .
 
 ### <a name="example"></a>Beispiel
 
@@ -1063,7 +1063,7 @@ a
 a
 ```
 
-## <a name="basic_streambufsputn"></a><a name="sputn"></a>basic_streambuf::sputn
+## <a name="basic_streambufsputn"></a><a name="sputn"></a>basic_streambuf:: sputn
 
 Setzt eine Zeichenfolge in den Stream.
 
@@ -1073,10 +1073,10 @@ streamsize sputn(const char_type* ptr, streamsize count);
 
 ### <a name="parameters"></a>Parameter
 
-*Ptr*\
+*PTR*\
 Die Zeichenfolge.
 
-*Count*\
+*Countdown*\
 Die Anzahl der Zeichen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1085,7 +1085,7 @@ Die Anzahl der tatsächlich in den Stream eingefügten Zeichen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt [xsputn](#xsputn)( `ptr`, `count`. . Weitere Informationen finden Sie im Bereich „Hinweise“ dieses Members.
+Die Member-Funktion gibt [Xsputn](#xsputn)( `ptr` , `count` ) zurück. Weitere Informationen finden Sie im Bereich „Hinweise“ dieses Members.
 
 ### <a name="example"></a>Beispiel
 
@@ -1109,7 +1109,7 @@ test
 4
 ```
 
-## <a name="basic_streambufstossc"></a><a name="stossc"></a>basic_streambuf::stossc
+## <a name="basic_streambufstossc"></a><a name="stossc"></a>basic_streambuf:: stossc
 
 Verschiebt den Zeiger hinter das aktuelle Element im Stream.
 
@@ -1140,7 +1140,7 @@ int main( )
 }
 ```
 
-## <a name="basic_streambufsungetc"></a><a name="sungetc"></a>basic_streambuf::sungetc
+## <a name="basic_streambufsungetc"></a><a name="sungetc"></a>basic_streambuf:: sungetc
 
 Ruft ein Zeichen aus dem Stream ab.
 
@@ -1154,7 +1154,7 @@ Gibt entweder das Zeichen oder einen Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn eine Putbackposition verfügbar ist, dekrementiert die Memberfunktion den `traits_type::`nächsten `*`Zeiger für den Eingabepuffer und gibt [to_int_type](../standard-library/char-traits-struct.md#to_int_type)zurück ( [gptr](#gptr)). Allerdings ist es nicht immer möglich, das letzte gelesene Zeichen zu bestimmen, sodass es möglicherweise im Status des aktuellen Puffers erfasst wird. Wenn dies zutrifft, gibt die Funktion [pbackfail](#pbackfail) zurück. Behalten Sie das letzte Zeichen im Blick, das Sie wiederherstellen möchten, und rufen Sie `sputbackc(ch)` auf, um diese Situation zu vermeiden. Dadurch wird kein Fehler verursacht, vorausgesetzt, Sie rufen die Funktion nicht zu Beginn eines Streams auf, oder versuchen, mehr als ein Zeichen wiederherzustellen.
+Wenn eine Punktposition verfügbar ist, dekretiert die Member-Funktion den nächsten Zeiger für den Eingabepuffer und gibt `traits_type::` [To_int_type](../standard-library/char-traits-struct.md#to_int_type)( `*` [GPTR](#gptr)) zurück. Allerdings ist es nicht immer möglich, das letzte gelesene Zeichen zu bestimmen, sodass es möglicherweise im Status des aktuellen Puffers erfasst wird. Wenn dies zutrifft, gibt die Funktion [pbackfail](#pbackfail) zurück. Behalten Sie das letzte Zeichen im Blick, das Sie wiederherstellen möchten, und rufen Sie `sputbackc(ch)` auf, um diese Situation zu vermeiden. Dadurch wird kein Fehler verursacht, vorausgesetzt, Sie rufen die Funktion nicht zu Beginn eines Streams auf, oder versuchen, mehr als ein Zeichen wiederherzustellen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1190,7 +1190,7 @@ int main( )
 }
 ```
 
-## <a name="basic_streambufswap"></a><a name="swap"></a>basic_streambuf::swap
+## <a name="basic_streambufswap"></a><a name="swap"></a>basic_streambuf:: Swap
 
 Tauscht die Werte in diesem Objekt gegen die Werte im bereitgestellten `basic_streambuf`-Objekt aus.
 
@@ -1206,9 +1206,9 @@ void swap(basic_streambuf& right);
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die geschützte Memberfunktion tauscht mit *rechts* `input buffer` alle `output buffer`Zeiger aus, die die und die steuern. Außerdem tauscht sie `right.`[getloc()](#getloc) mit dem `locale`-Objekt aus.
+Die geschützte Member-Funktion tauscht mit *right* alle Zeiger aus, die `input buffer` und Steuern `output buffer` . Außerdem tauscht sie `right.`[getloc()](#getloc) mit dem `locale`-Objekt aus.
 
-## <a name="basic_streambufsync"></a><a name="sync"></a>basic_streambuf::sync
+## <a name="basic_streambufsync"></a><a name="sync"></a>basic_streambuf:: Sync
 
 Eine geschützte virtuelle Funktion, die versucht, die gesteuerten Streams mit zugehörigen externen Streams zu synchronisieren.
 
@@ -1224,7 +1224,7 @@ Wenn die Funktion nicht erfolgreich abgeschlossen werden kann, wird -1 zurückge
 
 `sync` umfasst das Schreiben von Elementen zwischen dem Anfang und den nächsten Zeigern für den Ausgabepuffer. Sie umfasst jedoch nicht das Wiederherstellen von Elementen zwischen den nächsten und den letzten Zeigern für den Eingabepuffer.
 
-## <a name="basic_streambuftraits_type"></a><a name="traits_type"></a>basic_streambuf::traits_type
+## <a name="basic_streambuftraits_type"></a><a name="traits_type"></a>basic_streambuf:: traits_type
 
 Verknüpft einen Typnamen mit dem Vorlagenparameter **Tr**.
 
@@ -1232,7 +1232,7 @@ Verknüpft einen Typnamen mit dem Vorlagenparameter **Tr**.
 typedef Tr traits_type;
 ```
 
-## <a name="basic_streambufuflow"></a><a name="uflow"></a>basic_streambuf::uflow
+## <a name="basic_streambufuflow"></a><a name="uflow"></a>basic_streambuf:: uflow
 
 Eine geschützte virtuelle Funktion, die das aktuelle Element aus dem Eingabestream extrahiert.
 
@@ -1254,9 +1254,9 @@ Die geschützte virtuelle Memberfunktion versucht, das aktuelle Element **ch** a
 
 - Bei einem Streampuffer mit allgemeinen Eingabe- und Ausgabestreams kann eine Leseposition auch dadurch verfügbar gemacht werden, dass einige oder alle Elemente zwischen dem Anfangszeiger und den folgenden Zeigern für den Ausgabepuffer an ein externes Ziel geschrieben werden. Andernfalls kann neuer oder zusätzlicher Speicher für den Eingabepuffer zugewiesen werden. Die Funktion liest dann aus einer externen Quelle oder aus einem oder mehreren Elementen ein.
 
-Wenn die Funktion nicht erfolgreich sein kann, gibt sie **traits_type::**[eof](../standard-library/char-traits-struct.md#eof)zurück oder löst eine Ausnahme aus. Andernfalls gibt sie das aktuelle `ch`-Element in den Eingabestream zurück, das wie oben beschrieben konvertiert wurde, und verschiebt den nächsten Zeiger für den Eingabepuffer nach vorne. Standardmäßig wird [underflow](#underflow) aufgerufen, wenn diese Funktion **traits_type::eof** zurückgibt, um **traits_type::eof** zurückzugeben. Andernfalls gibt die Funktion das aktuelle **ch**-Element in den Eingabestream zurück, das wie vorhin beschrieben konvertiert wurde, und verschiebt den nächsten Zeiger für den Eingabepuffer nach vorne.
+Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird **traits_type::**[EOF](../standard-library/char-traits-struct.md#eof)zurückgegeben, oder es wird eine Ausnahme ausgelöst. Andernfalls gibt sie das aktuelle `ch`-Element in den Eingabestream zurück, das wie oben beschrieben konvertiert wurde, und verschiebt den nächsten Zeiger für den Eingabepuffer nach vorne. Standardmäßig wird [underflow](#underflow) aufgerufen, wenn diese Funktion **traits_type::eof** zurückgibt, um **traits_type::eof** zurückzugeben. Andernfalls gibt die Funktion das aktuelle **ch**-Element in den Eingabestream zurück, das wie vorhin beschrieben konvertiert wurde, und verschiebt den nächsten Zeiger für den Eingabepuffer nach vorne.
 
-## <a name="basic_streambufunderflow"></a><a name="underflow"></a>basic_streambuf::Unterfluss
+## <a name="basic_streambufunderflow"></a><a name="underflow"></a>basic_streambuf:: underflow
 
 Die geschützte virtuelle Funktion versucht, das aktuelle Element aus dem Eingabestream zu extrahieren.
 
@@ -1276,7 +1276,7 @@ Die geschützte virtuelle Memberfunktion versucht, das aktuelle Element **ch** a
 
 - Eine Leseposition kann verfügbar gemacht werden, indem die Funktion neuen oder zusätzlichen Speicher für den Eingabepuffer zuweist und anschließend aus einer externen Quelle oder einem oder mehreren Elementen einliest. Weitere Informationen hierzu finden Sie im Abschnitt „Hinweise“ unter [basic_streambuf-Klasse](../standard-library/basic-streambuf-class.md).
 
-Wenn die Funktion nicht `traits_type::`erfolgreich sein kann, gibt sie [eof](../standard-library/char-traits-struct.md#eof) `()` zurück oder löst eine Ausnahme aus. Andernfalls wird das aktuelle Element konvertiert, wie zuvor beschrieben, in den Eingabestream zurückgegeben. Standardmäßig wird `traits_type::eof()` zurückgegeben.
+Wenn die Funktion nicht erfolgreich ausgeführt werden kann, wird `traits_type::` [EOF](../standard-library/char-traits-struct.md#eof) zurückgegeben `()` oder eine Ausnahme ausgelöst. Andernfalls wird das aktuelle Element konvertiert, wie zuvor beschrieben, in den Eingabestream zurückgegeben. Standardmäßig wird `traits_type::eof()` zurückgegeben.
 
 Die virtuellen Funktionen `underflow` mit [sync](#sync) und [overflow](#overflow) legen die Eigenschaften der von `streambuf` abgeleiteten Klasse fest. Jede abgeleitete Klasse kann `underflow` anders implementieren, die Schnittstelle mit der aufrufenden Stream-Klasse bleibt allerdings gleich.
 
@@ -1286,7 +1286,7 @@ Die Funktion `underflow` stellt dem Abrufbereich Zeichen aus der Eingabequelle b
 
 In der `strstreambuf`-Klasse passt `underflow` den [egptr](#egptr)-Zeiger an, um auf den Speicher zuzugreifen, der dynamisch durch einen Aufruf an `overflow` zugewiesen wurde.
 
-## <a name="basic_streambufxsgetn"></a><a name="xsgetn"></a>basic_streambuf::xsgetn
+## <a name="basic_streambufxsgetn"></a><a name="xsgetn"></a>basic_streambuf:: Xsgetn
 
 Eine geschützte virtuelle Funktion, um Elemente aus dem Eingabestream zu extrahieren.
 
@@ -1300,10 +1300,10 @@ virtual streamsize xsgetn(
 
 ### <a name="parameters"></a>Parameter
 
-*Ptr*\
+*PTR*\
 Der Puffer, der die extrahierten Zeichen enthalten soll.
 
-*Count*\
+*Countdown*\
 Die Anzahl der zu extrahierenden Elemente.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1312,9 +1312,9 @@ Die Anzahl der extrahierten Elemente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die geschützte virtuelle Memberfunktion extrahiert *Elemente* aus dem Eingabestream, als ob sie wiederholt [sbumpc](#sbumpc)aufrufen, und speichert sie im Array ab *ptr*. Gibt die Anzahl der Elemente zurück, die tatsächlich extrahiert wurden.
+Die geschützte virtuelle Member-Funktion extrahiert bis zu *count* -Elemente aus dem Eingabestream, wie bei wiederholten Aufrufen von [Sbumpc](#sbumpc), und speichert Sie in dem Array, beginnend bei *ptr*. Gibt die Anzahl der Elemente zurück, die tatsächlich extrahiert wurden.
 
-## <a name="basic_streambufxsputn"></a><a name="xsputn"></a>basic_streambuf::xsputn
+## <a name="basic_streambufxsputn"></a><a name="xsputn"></a>basic_streambuf:: Xsputn
 
 Eine geschützte virtuelle Funktion, mit der Elemente in den Ausgabestream einfügt werden können.
 
@@ -1324,10 +1324,10 @@ virtual streamsize xsputn(const char_type* ptr, streamsize count);
 
 ### <a name="parameters"></a>Parameter
 
-*Ptr*\
+*PTR*\
 Zeiger auf die einzufügenden Elemente.
 
-*Count*\
+*Countdown*\
 Die Anzahl einzufügender Elemente.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1336,10 +1336,10 @@ Die Anzahl von Elementen, die tatsächlich in den Stream eingefügt werden.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die geschützte virtuelle Memberfunktion *count* fügt Elemente in den Ausgabestream ein, als ob durch wiederholte Aufrufe von [sputc](#sputc)vom Array beginnend bei *ptr*. Das Einfügen von Zeichen in den Ausgabestream wird beendet, `sputc( count)` sobald `traits::eof()`alle *Zählzeichen* geschrieben wurden oder wenn der Aufruf zurückgegeben würde. Sie gibt die Anzahl der Elemente zurück, die tatsächlich eingefügt werden.
+Die Funktion der geschützten virtuellen Member *Fügt Elemente in* den Ausgabestream ein, wie dies bei wiederholten Aufrufen von [sputc](#sputc)aus dem Array ab *ptr*. Das Einfügen von Zeichen in den Ausgabestream wird beendet, sobald alle *zählungs* Zeichen geschrieben wurden, oder wenn der Aufruf von zurückgegeben wird `sputc( count)` `traits::eof()` . Sie gibt die Anzahl der Elemente zurück, die tatsächlich eingefügt werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[iostream Programmierung](../standard-library/iostream-programming.md)\
-[iostreams-Konventionen](../standard-library/iostreams-conventions.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[iostream-Programmierung](../standard-library/iostream-programming.md)\
+[Iostreams-Konventionen](../standard-library/iostreams-conventions.md)

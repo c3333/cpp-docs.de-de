@@ -4,16 +4,16 @@ ms.date: 05/22/2018
 f1_keywords:
 - chrono/std::chrono::steady_clock
 ms.assetid: 970d12ec-fc80-4391-a2f7-b57b2aec668d
-ms.openlocfilehash: 19e9f5c4dcfc7306b989605894e9a0787e0920ff
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d21d5c2ed7ed667333007f3bd12d13f47b868380
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62412396"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217401"
 ---
-# <a name="steadyclock-struct"></a>steady_clock-Struktur
+# <a name="steady_clock-struct"></a>steady_clock-Struktur
 
-Stellt eine *stetige* Uhr.
+Stellt eine *Konstante* Uhr dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -21,42 +21,42 @@ Stellt eine *stetige* Uhr.
 struct steady_clock;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Auf Windows `steady_clock` dient als Wrapper für die `QueryPerformanceCounter` Funktion.
+Unter Windows umschließt `steady_clock` die- `QueryPerformanceCounter` Funktion.
 
 Eine Uhr ist *monoton*, wenn der von einem ersten Aufruf von `now` zurückgegebene Wert immer kleiner oder gleich dem Wert ist, der über einen nachfolgenden Aufruf von `now` zurückgegeben wird. Eine Uhr ist *gleichmäßig*, wenn sie *monoton* und die Zeit zwischen den Teilstrichen konstant ist.
 
-`high_resolution_clock` eine typedef für `steady_clock`.
+`high_resolution_clock`ist eine typedef für `steady_clock` .
 
-### <a name="public-typedefs"></a>Öffentliche typedefs
+### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`steady_clock::duration`|Ein Synonym für `nanoseconds`, definiert in \<Chrono >.|
-|`steady_clock::period`|Ein Synonym für `nano`, definiert in \<Ratio >.|
-|`steady_clock::rep`|Ein Synonym für **lange** **lange**, der Typ, der verwendet wird, zum Darstellen der Anzahl von Zeiteinheiten in der enthaltenden Instanziierung von `duration`.|
+|`steady_clock::duration`|Ein Synonym für `nanoseconds` , das in definiert ist \<chrono> .|
+|`steady_clock::period`|Ein Synonym für `nano` , das in definiert ist \<ratio> .|
+|`steady_clock::rep`|Ein Synonym für **`long long`** , der Typ, der zum Darstellen der Anzahl von Takt Ticks in der enthaltenen Instanziierung von verwendet wird `duration` .|
 |`steady_clock::time_point`|Ein Synonym für `chrono::time_point<steady_clock>`.|
 
 ## <a name="public-functions"></a>Öffentliche Funktionen
 
-|Funktion|Beschreibung|
+|Funktion|BESCHREIBUNG|
 |--------------|-----------------|
-|`now`|Gibt die aktuelle Uhrzeit als eine `time_point` Wert.|
+|`now`|Gibt die aktuelle Uhrzeit als- `time_point` Wert zurück.|
 
 ## <a name="public-constants"></a>Öffentliche Konstanten
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`steady_clock::is_steady`|Enthält **"true"**. Eine `steady_clock` ist *gleichmäßig*.|
+|`steady_clock::is_steady`|Enthält **`true`** . Eine `steady_clock` ist *gleichmäßig*.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<chrono>
+**Header:**\<chrono>
 
 **Namespace:** std::chrono
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)
 - [\<chrono>](../standard-library/chrono.md)

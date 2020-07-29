@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3386
 ms.assetid: 93fa8c33-0f10-402b-8eec-b0a217a1f8dc
-ms.openlocfilehash: ca78433fcb835ad60b553be28ea746f0f880b315
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 0cb6235f1b6bc868655cc6a6ba301be1308402cd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74743249"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221080"
 ---
 # <a name="compiler-error-c3386"></a>Compilerfehler C3386
 
-"Typ": __declspec (dllexport)/\__declspec (dllimport) kann nicht auf einen verwalteten oder winrttype angewendet werden.
+"Typ": __declspec (dllexport)/ \_ _declspec (dllimport) kann nicht auf einen verwalteten oder winrttype angewendet werden.
 
-Die `dllimport`-und [dllexport](../../cpp/dllexport-dllimport.md) -`__declspec` Modifizierer sind für verwaltete oder Windows-Runtime Typen ungültig.
+Die `dllimport` -und [dllexport](../../cpp/dllexport-dllimport.md) **`__declspec`** c ' * *-Modifizierer sind für einen verwalteten oder Windows-Runtime-Typ ungültig.
 
 Im folgenden Beispiel wird C3386 generiert und gezeigt, wie Sie diesen Fehler beheben:
 

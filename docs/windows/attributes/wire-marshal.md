@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - wire_marshal attribute
 ms.assetid: 244f9d72-776d-4ebd-b60a-cee600a126b5
-ms.openlocfilehash: 0bf6b2ab353b8ad8866de5b2c7c79959306ee954
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ff01d20117e2f04aca96b0fee7489d7195cc7488
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80215227"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213774"
 ---
 # <a name="wire_marshal"></a>wire_marshal
 
@@ -25,7 +25,7 @@ Gibt einen Datentyp an, der anstelle eines anwendungsspezifischen Datentyps für
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Wire_marshal** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Wire_marshal](/windows/win32/Midl/wire-marshal) -Attribut "Mittel".
+Das **Wire_marshal** C++-Attribut verfügt über die gleiche Funktionalität wie das [Wire_marshal](/windows/win32/Midl/wire-marshal) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -53,8 +53,8 @@ Der folgende Code zeigt die Verwendung von **Wire_marshal**:
 
 |||
 |-|-|
-|**Betrifft**|**typedef**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`typedef`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -63,4 +63,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

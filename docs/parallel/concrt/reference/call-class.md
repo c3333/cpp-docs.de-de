@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - call class
 ms.assetid: 1521970a-1e9c-4b0c-a681-d18e40976f49
-ms.openlocfilehash: 445e368ced9d9c8faf30351ecaeecc4e1b8a59f2
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: d3dc730e19aaadfed171816e92837ba2766883cb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142837"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213878"
 ---
 # <a name="call-class"></a>call-Klasse
 
@@ -39,24 +39,24 @@ Der Nutz Lasttyp der Nachrichten, die an diesen Block weitergegeben werden.
 *_FunctorType*<br/>
 Die Signatur von Funktionen, die dieser Block annehmen kann.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[erfordern](#ctor)|Ist überladen. Erstellt einen `call` -Meldungsblock.|
-|[~ aufrudedekonstruktor](#dtor)|Zerstört den `call`-Messaging-Block.|
+|[call](#ctor)|Ist überladen. Erstellt einen `call` -Meldungsblock.|
+|[~ aufrudedekonstruktor](#dtor)|Zerstört den `call` Messaging-Block.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
 |[process_input_messages](#process_input_messages)|Führt die Funktion "-Rückruf" für die Eingabe Nachrichten aus.|
-|[process_message](#process_message)|Verarbeitet eine Nachricht, die von diesem `call`-Nachrichtenblock akzeptiert wurde.|
-|[propagate_message](#propagate_message)|Übergibt eine Nachricht asynchron von einem `ISource`-Block an diesen `call`-Messaging-Block. Sie wird durch die `propagate`-Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.|
-|[send_message](#send_message)|Übergibt eine Nachricht synchron von einem `ISource`-Block an diesen `call`-Messaging-Block. Sie wird durch die `send`-Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.|
-|[supports_anonymous_source](#supports_anonymous_source)|Überschreibt die `supports_anonymous_source`-Methode, um anzugeben, dass dieser Block Nachrichten akzeptieren kann, die ihm von einer nicht verknüpften Quelle angeboten werden. (Überschreibt [ITarget:: supports_anonymous_source](itarget-class.md#supports_anonymous_source).)|
+|[process_message](#process_message)|Verarbeitet eine Nachricht, die von diesem `call` Messaging Block akzeptiert wurde.|
+|[propagate_message](#propagate_message)|Übergibt eine Nachricht asynchron von einem- `ISource` Block an diesen `call` Messaging Block. Sie wird von der- `propagate` Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.|
+|[send_message](#send_message)|Übergibt eine Nachricht synchron von einem- `ISource` Block an diesen `call` Messaging Block. Sie wird von der- `send` Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.|
+|[supports_anonymous_source](#supports_anonymous_source)|Überschreibt die- `supports_anonymous_source` Methode, um anzugeben, dass dieser Block Nachrichten akzeptieren kann, die ihm von einer nicht verknüpften Quelle angeboten werden. (Überschreibt [ITarget:: supports_anonymous_source](itarget-class.md#supports_anonymous_source).)|
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -76,7 +76,7 @@ Weitere Informationen finden Sie unter [asynchrone Nachrichten Blöcke](../../..
 
 **Namespace:** Parallelität
 
-## <a name="ctor"></a>erfordern
+## <a name="call"></a><a name="ctor"></a>erfordern
 
 Erstellt einen `call` -Meldungsblock.
 
@@ -125,19 +125,19 @@ Das `ScheduleGroup` -Objekt, in dem die Weiterleitungsaufgabe für den `call` -M
 
 Die Runtime verwendet das Standardplanungsprogramm, wenn Sie den `_PScheduler` -Parameter oder den `_PScheduleGroup` -Parameter nicht angeben.
 
-Der Typ `_Call_method` ist ein Funktor mit Signatur `void (T const &)` der von diesem `call` Messaging Block aufgerufen wird, um eine Nachricht zu verarbeiten.
+Der Typ `_Call_method` ist ein Funktor mit einer Signatur `void (T const &)` , die von diesem `call` Messaging Block aufgerufen wird, um eine Nachricht zu verarbeiten.
 
-Der Typ `filter_method` ist ein Funktor mit Signatur `bool (T const &)` der von diesem `call` Messaging Block aufgerufen wird, um zu bestimmen, ob er eine angebotene Nachricht akzeptieren soll.
+Der Typ `filter_method` ist ein Funktor mit einer Signatur `bool (T const &)` , die von diesem `call` Messaging Block aufgerufen wird, um zu bestimmen, ob er eine angebotene Nachricht akzeptieren soll.
 
-## <a name="dtor"></a>~-Aufrufe
+## <a name="call"></a><a name="dtor"></a>~-Aufrufe
 
-Zerstört den `call`-Messaging-Block.
+Zerstört den `call` Messaging-Block.
 
 ```cpp
 ~call();
 ```
 
-## <a name="process_input_messages"></a>process_input_messages
+## <a name="process_input_messages"></a><a name="process_input_messages"></a>process_input_messages
 
 Führt die Funktion "-Rückruf" für die Eingabe Nachrichten aus.
 
@@ -150,9 +150,9 @@ virtual void process_input_messages(_Inout_ message<T>* _PMessage);
 *_PMessage*<br/>
 Ein Zeiger auf die Meldung, die behandelt werden soll.
 
-## <a name="process_message"></a>process_message
+## <a name="process_message"></a><a name="process_message"></a>process_message
 
-Verarbeitet eine Nachricht, die von diesem `call`-Nachrichtenblock akzeptiert wurde.
+Verarbeitet eine Nachricht, die von diesem `call` Messaging Block akzeptiert wurde.
 
 ```cpp
 virtual void process_message(_Inout_ message<T>* _PMessage);
@@ -163,9 +163,9 @@ virtual void process_message(_Inout_ message<T>* _PMessage);
 *_PMessage*<br/>
 Ein Zeiger auf die Meldung, die behandelt werden soll.
 
-## <a name="propagate_message"></a>propagate_message
+## <a name="propagate_message"></a><a name="propagate_message"></a>propagate_message
 
-Übergibt eine Nachricht asynchron von einem `ISource`-Block an diesen `call`-Messaging-Block. Sie wird durch die `propagate`-Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.
+Übergibt eine Nachricht asynchron von einem- `ISource` Block an diesen `call` Messaging Block. Sie wird von der- `propagate` Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.
 
 ```cpp
 virtual message_status propagate_message(
@@ -185,9 +185,9 @@ Ein Zeiger auf den Quell Block, der die Nachricht anbietet.
 
 Eine [Message_status](concurrency-namespace-enums.md) , die angibt, wie sich das Ziel für die Nachricht entschieden hat.
 
-## <a name="send_message"></a>send_message
+## <a name="send_message"></a><a name="send_message"></a>send_message
 
-Übergibt eine Nachricht synchron von einem `ISource`-Block an diesen `call`-Messaging-Block. Sie wird durch die `send`-Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.
+Übergibt eine Nachricht synchron von einem- `ISource` Block an diesen `call` Messaging Block. Sie wird von der- `send` Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.
 
 ```cpp
 virtual message_status send_message(
@@ -207,9 +207,9 @@ Ein Zeiger auf den Quell Block, der die Nachricht anbietet.
 
 Eine [Message_status](concurrency-namespace-enums.md) , die angibt, wie sich das Ziel für die Nachricht entschieden hat.
 
-## <a name="supports_anonymous_source"></a>supports_anonymous_source
+## <a name="supports_anonymous_source"></a><a name="supports_anonymous_source"></a>supports_anonymous_source
 
-Überschreibt die `supports_anonymous_source`-Methode, um anzugeben, dass dieser Block Nachrichten akzeptieren kann, die ihm von einer nicht verknüpften Quelle angeboten werden.
+Überschreibt die- `supports_anonymous_source` Methode, um anzugeben, dass dieser Block Nachrichten akzeptieren kann, die ihm von einer nicht verknüpften Quelle angeboten werden.
 
 ```cpp
 virtual bool supports_anonymous_source();
@@ -217,9 +217,9 @@ virtual bool supports_anonymous_source();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , weil der-Block angebotene Nachrichten nicht verschiebt.
+**`true`**, da angebotene Nachrichten durch den-Block nicht verschoben werden.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace](concurrency-namespace.md)<br/>
-[transformer-Klasse](transformer-class.md)
+[Parallelitäts Namespace](concurrency-namespace.md)<br/>
+[Transformer-Klasse](transformer-class.md)

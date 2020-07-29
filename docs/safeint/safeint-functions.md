@@ -31,12 +31,12 @@ helpviewer_keywords:
 - SafeNotEquals function
 - SafeSubtract function
 ms.assetid: fdc208e5-5d8a-41a9-8271-567fd438958d
-ms.openlocfilehash: 9af34e7dcb13f54b824088fa81b6d5a7145c6ae5
-ms.sourcegitcommit: 8645408c7929558b8162f781776d0908d790a41c
+ms.openlocfilehash: c968601d95403dd63540a7a8ec2190a199fa1c5a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334923"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219338"
 ---
 # <a name="safeint-functions"></a>SafeInt-Funktionen
 
@@ -51,7 +51,7 @@ Jede dieser Funktionen hat zwei Vorlagentypen: `T` und `U`. Jeder dieser Typen k
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-Funktion                      | Beschreibung
+Funktion                      | BESCHREIBUNG
 ----------------------------- | --------------------------------------------------------------
 [SafeAdd](#safeadd)           | Addiert zwei Zahlen und schützt vor Überlauf.
 [SafeCast](#safecast)         | Wandelt einen Parametertyp in einen anderen Typ um.
@@ -63,7 +63,7 @@ Funktion                      | Beschreibung
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-`Section`                                                  | Beschreibung
+`Section`                                                  | BESCHREIBUNG
 -------------------------------------------------------- | ----------------------------------------------------
 [SafeInt](safeint-class.md)                   | Die `SafeInt`-Klasse.
 [SafeIntException](safeintexception-class.md) | Die Exception-Klasse, die für die SafeInt-Bibliothek spezifisch ist.
@@ -94,7 +94,7 @@ inline bool SafeAdd (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn kein Fehler auftritt; **false**, wenn ein Fehler auftritt.
+**`true`**, wenn kein Fehler auftritt. **`false`** Wenn ein Fehler auftritt.
 
 ## <a name="safecast"></a><a name="safecast"></a>SafeCast
 
@@ -118,7 +118,7 @@ inline bool SafeCast (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn kein Fehler auftritt; **false**, wenn ein Fehler auftritt.
+**`true`**, wenn kein Fehler auftritt. **`false`** Wenn ein Fehler auftritt.
 
 ## <a name="safedivide"></a><a name="safedivide"></a>SafeDivide
 
@@ -146,7 +146,7 @@ inline bool SafeDivide (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn kein Fehler auftritt; **false**, wenn ein Fehler auftritt.
+**`true`**, wenn kein Fehler auftritt. **`false`** Wenn ein Fehler auftritt.
 
 ## <a name="safeequals"></a><a name="safeequals"></a>SafeEquals
 
@@ -170,9 +170,9 @@ inline bool SafeEquals (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn *t* und *u* gleich sind, andernfalls **false**.
+**`true`**, wenn *t* und *u* gleich sind. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Methode verbessert `==`, da Sie mit `SafeEquals` zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -198,9 +198,9 @@ inline bool SafeGreaterThan (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn *t* größer als *u* ist, andernfalls **false**.
+**`true`** Wenn *t* größer als *u*ist; andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `SafeGreaterThan` erweitert den regulären Vergleichsoperator, da Sie damit zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -226,9 +226,9 @@ inline bool SafeGreaterThanEquals (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn *t* größer als oder gleich *u* ist, andernfalls **false**.
+**`true`** Wenn *t* größer oder gleich *u*ist andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `SafeGreaterThanEquals` verbessert den Standardvergleichsoperator, da Sie damit zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -254,9 +254,9 @@ in Die zweite Zahl. Muss vom Typ `U` sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn *t* kleiner als *u* ist, andernfalls **false**.
+**`true`** Wenn *t* kleiner als *u*ist; andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode verbessert den Standardvergleichsoperator, da Sie mit `SafeLessThan` zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -282,9 +282,9 @@ inline bool SafeLessThanEquals (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn *t* kleiner als oder gleich *u* ist, andernfalls **false**.
+**`true`** Wenn *t* kleiner oder gleich *u*ist andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `SafeLessThanEquals` erweitert den regulären Vergleichsoperator, da Sie damit zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -314,7 +314,7 @@ inline bool SafeModulus (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn kein Fehler auftritt; **false**, wenn ein Fehler auftritt.
+**`true`**, wenn kein Fehler auftritt. **`false`** Wenn ein Fehler auftritt.
 
 ## <a name="safemultiply"></a><a name="safemultiply"></a>SafeMultiply
 
@@ -342,7 +342,7 @@ inline bool SafeMultiply (
 
 ### <a name="return-value"></a>Rückgabewert
 
-`true`, wenn kein Fehler auftritt; `false`, wenn ein Fehler auftritt.
+**`true`**, wenn kein Fehler auftritt. **`false`** Wenn ein Fehler auftritt.
 
 ## <a name="safenotequals"></a><a name="safenotequals"></a>SafeNotEquals
 
@@ -366,9 +366,9 @@ inline bool SafeNotEquals (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn *t* und *u* nicht gleich sind. andernfalls **false**.
+**`true`**, wenn *t* und *u* nicht gleich sind. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Methode verbessert `!=`, da Sie mit `SafeNotEquals` zwei verschiedene Typen von Zahlen vergleichen können.
 
@@ -398,4 +398,4 @@ inline bool SafeSubtract (
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true**, wenn kein Fehler auftritt; **false**, wenn ein Fehler auftritt.
+**`true`**, wenn kein Fehler auftritt. **`false`** Wenn ein Fehler auftritt.

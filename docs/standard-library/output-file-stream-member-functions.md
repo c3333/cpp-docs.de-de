@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - output streams [C++], member functions
 ms.assetid: 38aaf710-8035-4a34-a0c4-123a5327f28a
-ms.openlocfilehash: 8c23008d0c46a532f11e89442328ed25cc203077
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: f20ed4e238d23211a6eeec4a3091daeb4d02a9b3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68453057"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217674"
 ---
 # <a name="output-file-stream-member-functions"></a>Ausgabedateistream-Memberfunktionen
 
@@ -17,9 +17,9 @@ Ausgabedateistream-Memberfunktionen verfügen über drei Arten: die, die Manipul
 
 ## <a name="the-open-function-for-output-streams"></a>Die open-Funktion für Ausgabestreams
 
-Um einen ausgabedateistream ([ofstream](../standard-library/basic-ofstream-class.md)) zu verwenden, müssen Sie diesen Stream einer bestimmten Datenträger Datei im Konstruktor `open` oder der-Funktion zuordnen. Wenn Sie die `open` -Funktion verwenden, können Sie das gleiche Stream-Objekt mit einer Reihe von Dateien wieder verwenden. In beiden Fällen sind die Argumente, die die Datei beschreiben identisch.
+Um einen ausgabedateistream ([ofstream](../standard-library/basic-ofstream-class.md)) zu verwenden, müssen Sie diesen Stream einer bestimmten Datenträger Datei im Konstruktor oder der- `open` Funktion zuordnen. Wenn Sie die- `open` Funktion verwenden, können Sie das gleiche Stream-Objekt mit einer Reihe von Dateien wieder verwenden. In beiden Fällen sind die Argumente, die die Datei beschreiben identisch.
 
-Wenn Sie die Datei öffnen, die einem Ausgabestream zugeordnet ist, `open_mode` geben Sie im Allgemeinen ein Flag an. Sie können diese Flags kombinieren, die in der `ios`-Klasse mit dem bitweisen OR-Operator ( &#124; ) als Enumeratoren definiert werden. Finden Sie unter [ios_base:: openmode](../standard-library/ios-base-class.md#openmode) eine Liste der Enumeratoren.
+Wenn Sie die Datei öffnen, die einem Ausgabestream zugeordnet ist, geben Sie im Allgemeinen ein `open_mode` Flag an. Sie können diese Flags kombinieren, die in der `ios`-Klasse mit dem bitweisen OR-Operator ( &#124; ) als Enumeratoren definiert werden. Finden Sie unter [ios_base:: openmode](../standard-library/ios-base-class.md#openmode) eine Liste der Enumeratoren.
 
 Drei allgemeine Situationen für die Ausgabestreams umfassen Modusoptionen:
 
@@ -65,7 +65,7 @@ cout <<'A'; // Format arguments 'width' and 'fill' apply
 
 ## <a name="the-write"></a>Der Schreibvorgang
 
-Die `write` -Funktion schreibt einen Speicherblock in einen ausgabedateistream. Das Längenargument bestimmt die Anzahl geschriebener Bytes. Dieses Beispiel erstellt einen Ausgabestream für die Datei und schreibt den binären Wert der `Date`-Struktur hinein:
+Die- `write` Funktion schreibt einen Speicherblock in einen ausgabedateistream. Das Längenargument bestimmt die Anzahl geschriebener Bytes. Dieses Beispiel erstellt einen Ausgabestream für die Datei und schreibt den binären Wert der `Date`-Struktur hinein:
 
 ```cpp
 // write_function.cpp
@@ -86,7 +86,7 @@ int main( )
 }
 ```
 
-Die `write` Funktion wird nicht angehalten, wenn Sie ein NULL-Zeichen erreicht, sodass die gesamte Klassenstruktur geschrieben wird. Die Funktion nimmt zwei Argumente an: einen **char** -Zeiger und die Anzahl der zu schreibenden Zeichen. Beachten Sie die erforderliche Umwandlung in **char** <strong>\*</strong> vor der Adresse des Struktur Objekts.
+Die `write` Funktion wird nicht angehalten, wenn Sie ein NULL-Zeichen erreicht, sodass die gesamte Klassenstruktur geschrieben wird. Die Funktion nimmt zwei Argumente an: einen **`char`** Zeiger und die Anzahl der zu schreibenden Zeichen. Beachten Sie die erforderliche Umwandlung in **`char`** <strong>\*</strong> vor die Adresse des Struktur Objekts.
 
 ## <a name="the-seekp-and-tellp-functions"></a>Die Funktionen seekp und tellp
 
@@ -94,36 +94,36 @@ Ein Ausgabestream für die Datei hält einen internen Zeiger, der auf die Positi
 
 ## <a name="the-close-function-for-output-streams"></a>Die close-Funktion für Ausgabestreams
 
-Die `close` Member-Funktion schließt die einem Ausgabedatei Datenstrom zugeordnete Datenträger Datei. Die Datei muss geschlossen werden, um alle Datenträgerausgaben abzuschließen. Bei Bedarf schließt der `ofstream` debugtor die Datei für Sie, aber Sie können die `close` -Funktion verwenden, wenn Sie eine andere Datei für das gleiche Streamobjekt öffnen müssen.
+Die `close` Member-Funktion schließt die einem Ausgabedatei Datenstrom zugeordnete Datenträger Datei. Die Datei muss geschlossen werden, um alle Datenträgerausgaben abzuschließen. Bei Bedarf schließt der `ofstream` debugtor die Datei für Sie, aber Sie können die- `close` Funktion verwenden, wenn Sie eine andere Datei für das gleiche Streamobjekt öffnen müssen.
 
-Der Ausgabestream-debugtor schließt automatisch die Datei eines Streams, wenn der `open` Konstruktor oder die Member-Funktion die Datei geöffnet hat. Wenn Sie dem Konstruktor einen Dateideskriptor für eine bereits geöffnete Datei übergeben oder die `attach` Member-Funktion verwenden, müssen Sie die Datei explizit schließen.
+Der Ausgabestream-debugtor schließt automatisch die Datei eines Streams, wenn der Konstruktor oder die `open` Member-Funktion die Datei geöffnet hat. Wenn Sie dem Konstruktor einen Dateideskriptor für eine bereits geöffnete Datei übergeben oder die Member- `attach` Funktion verwenden, müssen Sie die Datei explizit schließen.
 
-## <a name="vclrferrorprocessingfunctionsanchor10"></a> Fehlerverarbeitende Funktionen
+## <a name="error-processing-functions"></a><a name="vclrferrorprocessingfunctionsanchor10"></a> Fehlerverarbeitende Funktionen
 
 Verwenden Sie diese Memberfunktionen, um beim Schreiben in einen Stream auf Fehler zu testen:
 
 |Funktion|Rückgabewert|
 |--------------|------------------|
-|[bad](basic-ios-class.md#bad)|Gibt **TRUE** zurück, wenn ein nicht behebbarer Fehler vorhanden ist.|
-|[fail](basic-ios-class.md#fail)|Gibt **TRUE** zurück, wenn ein nicht behebbarer Fehler oder eine „erwartete“ Bedingung, wie z.B. ein Konvertierungsfehler vorhanden ist oder wenn die Datei nicht gefunden wird. Die `clear` Verarbeitung kann häufig nach einem-Befehl mit einem NULL-Argument fortgesetzt werden.|
-|[good](basic-ios-class.md#good)|Gibt **TRUE** zurück, wenn kein Fehler (nicht behebbar oder anderweitig) vorhanden und das End-of-File-Flag nicht festgelegt ist.|
-|[eof](basic-ios-class.md#eof)|Gibt **TRUE** auf das End-of-File-Bedingung zurück.|
-|[clear](basic-ios-class.md#clear)|Legt den internen Fehlerzustand fest. Wenn mit den Standardargumenten aufgerufen, löscht er alle Fehlerbits.|
+|[Ungültig](basic-ios-class.md#bad)|Gibt zurück, **`true`** Wenn ein nicht BEHEB barer Fehler vorliegt.|
+|[UN](basic-ios-class.md#fail)|Gibt zurück **`true`** , wenn ein nicht BEHEB barer Fehler oder eine "erwartete" Bedingung vorliegt (z. b. ein Konvertierungs Fehler), oder wenn die Datei nicht gefunden wurde. Die Verarbeitung kann häufig nach einem-Befehl `clear` mit einem NULL-Argument fortgesetzt werden.|
+|[Glück](basic-ios-class.md#good)|Gibt zurück, **`true`** Wenn keine Fehlerbedingung vorliegt (nicht wiederherstellbar oder anderweitig) und das dateiendeflag nicht festgelegt ist.|
+|[EOF](basic-ios-class.md#eof)|Gibt **`true`** die dateiendebedingung zurück.|
+|[Löschen](basic-ios-class.md#clear)|Legt den internen Fehlerzustand fest. Wenn mit den Standardargumenten aufgerufen, löscht er alle Fehlerbits.|
 |Rdstate (Basic-IOS-Class. MD # Rdstate|Gibt den aktuellen Fehlerstatus zurück.|
 
-Der **!** der Operator ist überladen, um die gleiche Funktion `fail` wie die Funktion auszuführen. Daher ist der Ausdruck:
+Der **!** der Operator ist überladen, um die gleiche Funktion wie die `fail` Funktion auszuführen. Daher ist der Ausdruck:
 
 ```cpp
 if(!cout)...
 ```
 
-identisch mit folgendem Ausdruck:
+entspricht:
 
 ```cpp
 if(cout.fail())...
 ```
 
-Der **void\*()** -Operator wird überladen, um das Gegenteil des **!** Operator zu sein; daher kommt der Ausdruck:
+Der **void\*()**-Operator wird überladen, um das Gegenteil des **!** Operator zu sein; daher kommt der Ausdruck:
 
 ```cpp
 if(cout)...
@@ -135,8 +135,8 @@ gleich:
 if(!cout.fail())...
 ```
 
-Der **void\*()** -Operator ist nicht äquivalent `good` zu, da er das Dateiende nicht testet.
+Der **void \* ()** -Operator ist nicht äquivalent zu, `good` da er das Dateiende nicht testet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausgabestreams](../standard-library/output-streams.md)

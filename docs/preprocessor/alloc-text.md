@@ -8,12 +8,12 @@ helpviewer_keywords:
 - alloc_text pragma
 - pragmas, alloc_text
 ms.assetid: 1fd7be18-e4f7-4f70-b079-6326f72b871a
-ms.openlocfilehash: 7ddb12b39e068dea42f7a47f7fd937424be43725
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: c638c2026a493453aeb5aff00ba6273efb5f184e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70216339"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219442"
 ---
 # <a name="alloc_text-pragma"></a>alloc_text-Pragma
 
@@ -21,13 +21,13 @@ Namen des Codeabschnitts, in dem sich die angegebenen Funktionsdefinitionen befi
 
 ## <a name="syntax"></a>Syntax
 
-> **#pragma alloc_text (** "*Textsection*" **,** *Funktion1* [ **,** *Funktion2* ...] **)**
+> **#pragma alloc_text (** "*Textsection*" **,** *Funktion1* [**,** *Funktion2* ...] **)**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **alloc_text** -Pragma verarbeitet C++ keine Element Funktionen oder überladenen Funktionen. Dies gilt nur für Funktionen, die mit C-Verknüpfung deklariert sind, d. –. Funktionen, die mit der **externen "c"** -Verknüpfungs Spezifikation deklariert werden. Wenn Sie versuchen, diese Pragma für eine Funktion mit C++-Bindung zu verwenden, wird ein Compilerfehler generiert.
+Das **alloc_text** -Pragma verarbeitet keine C++-Member-Funktionen oder überladenen Funktionen. Dies gilt nur für Funktionen, die mit C-Verknüpfung deklariert sind, d. –. Funktionen, die mit der **externen "c"** -Verknüpfungs Spezifikation deklariert werden. Wenn Sie versuchen, diese Pragma für eine Funktion mit C++-Bindung zu verwenden, wird ein Compilerfehler generiert.
 
-Da die Verwendung von `__based` mit der Verwendung von nicht unterstützt wird, muss das **alloc_text** -Pragma verwendet werden, um Abschnitts Speicherorte anzugeben. Der von *Text section* angegebene Name muss in doppelte Anführungszeichen eingeschlossen werden.
+Da die Verwendung von mit der Verwendung **`__based`** von nicht unterstützt wird, muss für die Angabe von Abschnitts Speicherorten das **alloc_text** -Pragma verwendet werden Der von *Text section* angegebene Name muss in doppelte Anführungszeichen eingeschlossen werden.
 
 Das **alloc_text** -Pragma muss nach den Deklarationen der angegebenen Funktionen und vor den Definitionen dieser Funktionen angezeigt werden.
 
@@ -39,6 +39,6 @@ Weitere Einschränkungen für **alloc_text** lauten wie folgt:
 
 - Es muss verwendet werden, nachdem die Funktion deklariert wurde, aber bevor die Funktion definiert wurde.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Pragma-Direktiven und das __Pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+[Pragma-Anweisungen und das __pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

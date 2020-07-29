@@ -1,21 +1,21 @@
 ---
-title: String (C++ com-Attribut)
+title: String (C++-com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.string
 helpviewer_keywords:
 - string attribute
 ms.assetid: ddde900a-2e99-4fcd-86e8-57e1bdba7c93
-ms.openlocfilehash: 96d5e609130b34a4a5f35109ce691c2de470e537
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 68708cce2e167c6f40b461d52861fe4ed82be867
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166159"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213813"
 ---
 # <a name="string-c"></a>string (C++)
 
-Gibt an, dass das eindimensionale **char**-, **wchar_t**-, `byte` (oder äquivalente) Array oder der Zeiger auf ein solches Array als Zeichenfolge behandelt werden muss.
+Gibt an, dass das eindimensionale **`char`** **`wchar_t`** Array,, `byte` (oder ein entsprechendes) oder der Zeiger auf ein solches Array als Zeichenfolge behandelt werden muss.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,7 +25,7 @@ Gibt an, dass das eindimensionale **char**-, **wchar_t**-, `byte` (oder äquival
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **String** C++ -Attribut verfügt über die gleiche Funktionalität wie das-Attribut der- [Zeichenfolge](/windows/win32/Midl/string) .
+Das **String** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut der- [Zeichenfolge](/windows/win32/Midl/string) .
 
 ## <a name="example"></a>Beispiel
 
@@ -50,8 +50,8 @@ __interface IFireTabCtrl
 
 |||
 |-|-|
-|**Betrifft**|Array oder Zeiger auf ein Array, Schnittstellenparameter, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Array oder Zeiger auf ein Array, Schnittstellenparameter, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -60,5 +60,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Arrayattribute](array-attributes.md)<br/>
-[export](export.md)
+[Array Attribute](array-attributes.md)<br/>
+[Exports](export.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2390
 ms.assetid: 06b749ee-d072-4db1-b229-715f2c0728b5
-ms.openlocfilehash: 515e2e151d27dd2eb84fc1dc71b9197b36b14cbb
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 48012c0fe31b2017cad29cc98992c9b1121efa7c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74745043"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221184"
 ---
 # <a name="compiler-error-c2390"></a>Compilerfehler C2390
 
@@ -21,7 +21,7 @@ Die Speicher Klasse ist für den Bezeichner des globalen Bereichs nicht gültig.
 
 Mögliche Lösungen:
 
-- Wenn der Bezeichner eine Funktion ist, deklarieren Sie ihn mit `extern` Storage.
+- Wenn der Bezeichner eine Funktion ist, deklarieren Sie ihn mit **`extern`** Storage.
 
 - Wenn der Bezeichner ein formaler Parameter oder eine lokale Variable ist, deklarieren Sie ihn mit dem automatischen Speicher.
 

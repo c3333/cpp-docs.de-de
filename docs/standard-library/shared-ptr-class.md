@@ -31,14 +31,14 @@ helpviewer_keywords:
 - std::shared_ptr [C++], unique
 - std::shared_ptr [C++], use_count
 ms.assetid: 1469fc51-c658-43f1-886c-f4530dd84860
-ms.openlocfilehash: 59346dfded63aec315304f76c9bed753a4db1224
-ms.sourcegitcommit: 725e86dabe2901175ecc63261c3bf05802dddff4
+ms.openlocfilehash: 5488b7d63565bfcca22be3de522615db5aa822e3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682438"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217466"
 ---
-# <a name="sharedptr-class"></a>shared_ptr-Klasse
+# <a name="shared_ptr-class"></a>shared_ptr-Klasse
 
 Umschließt einen intelligenten Zeiger mit Verweiszählung um ein dynamisch zugeordnetes Objekt.
 
@@ -49,7 +49,7 @@ template <class T>
 class shared_ptr;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die `shared_ptr` Klasse beschreibt ein Objekt, das die Verweis Zählung verwendet, um Ressourcen zu verwalten. Ein Objekt vom Typ `shared_ptr` enthält einen Zeiger auf die Ressource, die es besitzt, oder es enthält einen NULL-Zeiger. Es können mehrere `shared_ptr`-Objekte eine Ressource besitzen. Wird das letzte `shared_ptr`-Objekt beschädigt, das eine bestimmte Ressource besitzt, wird die Ressource freigegeben.
 
@@ -81,7 +81,7 @@ Ein `shared_ptr`-Objekt besitzt in diesen Fällen eine Ressource:
 
 - Es wurde von einem `shared_ptr`-Objekt erstellt, das diese Ressource besitzt.
 
-- Wenn Sie aus einem [weak_ptr](weak-ptr-class.md) -Objekt erstellt wurde, das auf diese Ressource verweist, oder
+- Wenn Sie von einem [weak_ptr](weak-ptr-class.md) Objekt erstellt wurde, das auf diese Ressource verweist, oder
 
 - Wenn der Besitz dieser Ressource zugewiesen wurde, entweder mit [shared_ptr:: Operator =](#op_eq) oder durch Aufrufen der Member-Funktion [shared_ptr:: Reset](#reset).
 
@@ -107,17 +107,17 @@ Von einigen Funktionen wird eine Argumentliste verwendet, mit der Eigenschaften 
 
 Keine Argumente -- das resultierende Objekt ist ein leeres `shared_ptr`-Objekt oder ein leeres `weak_ptr`-Objekt.
 
-`ptr` --ein Zeiger des Typs `Other*` auf die zu verwaltende Ressource. `T` muss ein vollständiger Typ sein. Wenn die Funktion fehlschlägt (da der Kontroll Block nicht zugeordnet werden kann), wird der `delete ptr`Ausdruck ausgewertet.
+`ptr` --ein Zeiger des Typs `Other*` auf die zu verwaltende Ressource. `T` muss ein vollständiger Typ sein. Wenn die Funktion fehlschlägt (da der Kontroll Block nicht zugeordnet werden kann), wird der Ausdruck ausgewertet `delete ptr` .
 
-`ptr, deleter` -- ein Zeiger des Typs `Other*` auf die zu verwaltende Ressource und ein Deleter für diese Ressource. Wenn die Funktion fehlschlägt (da der Kontroll Block nicht zugeordnet werden kann), `deleter(ptr)`wird aufgerufen, was klar definiert sein muss.
+`ptr, deleter` -- ein Zeiger des Typs `Other*` auf die zu verwaltende Ressource und ein Deleter für diese Ressource. Wenn die Funktion fehlschlägt (da der Kontroll Block nicht zugeordnet werden kann), wird aufgerufen `deleter(ptr)` , was klar definiert sein muss.
 
-`ptr, deleter, alloc` -- ein Zeiger des Typs `Other*` auf die zu verwaltende Ressource, ein Deleter für diese Ressource und eine Zuweisung zum Verwalten von Speicher, der zugeordnet und freigegeben werden muss. Wenn die Funktion fehlschlägt (da der Kontroll Block nicht zugeordnet werden kann), `deleter(ptr)`wird aufgerufen, was klar definiert sein muss.
+`ptr, deleter, alloc` -- ein Zeiger des Typs `Other*` auf die zu verwaltende Ressource, ein Deleter für diese Ressource und eine Zuweisung zum Verwalten von Speicher, der zugeordnet und freigegeben werden muss. Wenn die Funktion fehlschlägt (da der Kontroll Block nicht zugeordnet werden kann), wird aufgerufen `deleter(ptr)` , was klar definiert sein muss.
 
 `sp` -- ein `shared_ptr<Other>`-Objekt, das die zu verwaltende Ressource besitzt.
 
 `wp` -- ein `weak_ptr<Other>`-Objekt, das auf die zu verwaltende Ressource zeigt.
 
-`ap` -- ein `auto_ptr<Other>`-Objekt, das einen Zeiger auf die zu verwaltende Ressource enthält. Wenn die Funktion erfolgreich ausgeführt wird, `ap.release()`wird aufgerufen. andernfalls `ap` bleibt sie unverändert.
+`ap` -- ein `auto_ptr<Other>`-Objekt, das einen Zeiger auf die zu verwaltende Ressource enthält. Wenn die Funktion erfolgreich ausgeführt wird, wird aufgerufen `ap.release()` . andernfalls bleibt Sie `ap` unverändert.
 
 In allen Fällen muss der Zeigertyp `Other*` konvertiert werden können in `T*`.
 
@@ -143,12 +143,12 @@ Mehrere Threads können verschiedene `shared_ptr`-Objekte gleichzeitig lesen und
 |[unique](#unique)|Prüft, ob die Ressource eindeutig ist, die Eigentum ist.|
 |[use_count](#use_count)|Zählt Ressourcenbesitzer.|
 | **Operatoren** | |
-|[operator bool](#op_bool)|Prüft, ob eine Ressource vorhanden ist, die Eigentum ist.|
-|[operator*](#op_star)|Ruft den angegebenen Wert ab.|
-|[operator=](#op_eq)|Ersetzt die Ressource, die Eigentum ist.|
+|[Operator bool](#op_bool)|Prüft, ob eine Ressource vorhanden ist, die Eigentum ist.|
+|[KOM](#op_star)|Ruft den angegebenen Wert ab.|
+|[Operator =](#op_eq)|Ersetzt die Ressource, die Eigentum ist.|
 |[KOM&gt;](#op_arrow)|Ruft einen Zeiger auf den angegebenen Wert ab.|
 
-## <a name="element_type"></a>element_type
+## <a name="element_type"></a><a name="element_type"></a>element_type
 
 Der Typ eines Elements.
 
@@ -157,9 +157,9 @@ typedef T element_type;                  // before C++17
 using element_type = remove_extent_t<T>; // C++17
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der `element_type` Typ ist ein Synonym für den Vorlagen Parameter `T`.
+Der `element_type` Typ ist ein Synonym für den Vorlagen Parameter `T` .
 
 ### <a name="example"></a>Beispiel
 
@@ -184,7 +184,7 @@ int main()
 *sp0 == 5
 ```
 
-## <a name="get"></a>Erhalten
+## <a name="get"></a><a name="get"></a>Erhalten
 
 Ruft die Adresse der Ressource ab, die Eigentum ist.
 
@@ -192,7 +192,7 @@ Ruft die Adresse der Ressource ab, die Eigentum ist.
 element_type* get() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt die Adresse der im Besitz befindlichen Ressource zurück. Wenn das Objekt nicht Besitzer einer Ressource ist, wird 0 zurückgegeben.
 
@@ -222,7 +222,7 @@ sp0.get() == 0 == true
 *sp1.get() == 5
 ```
 
-## <a name="op_bool"></a>Operator bool
+## <a name="operator-bool"></a><a name="op_bool"></a>Operator bool
 
 Prüft, ob eine Ressource vorhanden ist, die Eigentum ist.
 
@@ -230,9 +230,9 @@ Prüft, ob eine Ressource vorhanden ist, die Eigentum ist.
 explicit operator bool() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der-Operator gibt den Wert **true** zurück `get() != nullptr`, wenn, andernfalls **false**.
+Der-Operator gibt einen Wert von zurück **`true`** `get() != nullptr` , andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -261,7 +261,7 @@ int main()
 (bool)sp1 == true
 ```
 
-## <a name="op_star"></a>KOM
+## <a name="operator"></a><a name="op_star"></a>KOM
 
 Ruft den angegebenen Wert ab.
 
@@ -269,7 +269,7 @@ Ruft den angegebenen Wert ab.
 T& operator*() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Dereferenzierungsoperator gibt `*get()` zurück. Daher darf der gespeicherte Zeiger nicht NULL sein.
 
@@ -295,7 +295,7 @@ int main()
 *sp0 == 5
 ```
 
-## <a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a>Operator =
 
 Ersetzt die Ressource, die Eigentum ist.
 
@@ -323,7 +323,7 @@ shared_ptr& operator=(unique_ptr<Other, Deleter>&& up);
 Der freigegebene Zeiger, von dem kopiert oder verschoben werden soll.
 
 *Unglücks*\
-Der zu Verschieb gende automatische Zeiger. Die `auto_ptr` Überladung ist in c++ 11 veraltet und wurde in c++ 17 entfernt.
+Der zu Verschieb gende automatische Zeiger. Die Überladung `auto_ptr` ist in c++ 11 veraltet und wurde in c++ 17 entfernt.
 
 *gegründet*\
 Der eindeutige Zeiger auf das-Objekt, dessen Besitz übernommen werden soll. *up* besitzt nach dem-Befehl kein-Objekt.
@@ -334,9 +334,9 @@ Der Typ des Objekts, auf das von *SP*, *AP*oder *up*verwiesen wird.
 *Deleter*\
 Der Typ des Löschvorgangs für das besitzende Objekt, das zum späteren Löschen des Objekts gespeichert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Alle Operatoren verringern die Verweisanzahl für die Ressource frei, die derzeit im Besitz von `*this` steht, und weisen den Besitz der Ressource, die von der Operatorsequenz benannt wird, `*this` zu. Wenn die Verweisanzahl auf 0 (null) fällt, wird die Ressource freigegeben. Wenn ein Operator fehlschlägt, bleibt `*this` er unverändert.
+Die Operatoren verringern alle den Verweis Zähler für die Ressource, die derzeit im Besitz von ist **`*this`** , und weisen den Besitz der Ressource, die von der operandensequenz benannt wird, zu zu **`*this`** . Wenn die Verweisanzahl auf 0 (null) fällt, wird die Ressource freigegeben. Wenn ein Operator fehlschlägt, bleibt er **`*this`** unverändert.
 
 ### <a name="example"></a>Beispiel
 
@@ -367,7 +367,7 @@ int main()
 *sp0 == 10
 ```
 
-## <a name="op_arrow"></a>Operator->
+## <a name="operator-"></a><a name="op_arrow"></a>Operator->
 
 Ruft einen Zeiger auf den angegebenen Wert ab.
 
@@ -375,7 +375,7 @@ Ruft einen Zeiger auf den angegebenen Wert ab.
 T* operator->() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Auswahloperator gibt `get()` zurück, sodass der Ausdruck `sp->member` sich wie `(sp.get())->member` verhält, wobei `sp` ein Objekt von Klasse `shared_ptr<T>` ist. Daher darf der gespeicherte Zeiger nicht NULL sein, und `T` muss eine Klasse, eine Struktur oder ein Union-Typ mit einem member-`member` sein.
 
@@ -404,7 +404,7 @@ sp0->first == 1
 sp0->second == 2
 ```
 
-## <a name="owner_before"></a>owner_before
+## <a name="owner_before"></a><a name="owner_before"></a>owner_before
 
 Gibt True zurück, wenn dieses `shared_ptr` vor dem bereitgestellten Zeiger sortiert wird (Operator "Before" oder "Less than").
 
@@ -419,13 +419,13 @@ bool owner_before(const weak_ptr<Other>& ptr) const noexcept;
 ### <a name="parameters"></a>Parameter
 
 *PTR*\
-Ein Lvalue-Verweis auf ein `shared_ptr` oder ein `weak_ptr`.
+Ein Lvalue-Verweis auf ein `shared_ptr` oder ein `weak_ptr` .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Template-Member-Funktion gibt `*this` true zurück, `ptr`wenn vor geordnet ist.
+Die Template-Member-Funktion gibt true zurück, wenn **`*this`** vor geordnet ist `ptr` .
 
-## <a name="reset"></a>Festlegen
+## <a name="reset"></a><a name="reset"></a>Festlegen
 
 Ersetzt die Ressource, die Eigentum ist.
 
@@ -467,9 +467,9 @@ Der Zuweisungstyp.
 *Zuordnungseinheits*\
 Der zu kopierende Zuweiser.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Alle Operatoren verringern die Verweisanzahl für die Ressource frei, die derzeit im Besitz von `*this` steht, und weisen den Besitz der Ressource, die von der Operatorsequenz benannt wird, `*this` zu. Wenn die Verweisanzahl auf 0 (null) fällt, wird die Ressource freigegeben. Wenn ein Operator fehlschlägt, bleibt `*this` er unverändert.
+Die Operatoren verringern alle den Verweis Zähler für die Ressource, die derzeit im Besitz von ist **`*this`** , und weisen den Besitz der Ressource, die von der operandensequenz benannt wird, zu zu **`*this`** . Wenn die Verweisanzahl auf 0 (null) fällt, wird die Ressource freigegeben. Wenn ein Operator fehlschlägt, bleibt er **`*this`** unverändert.
 
 ### <a name="example"></a>Beispiel
 
@@ -517,7 +517,7 @@ int main()
 *sp == 15
 ```
 
-## <a name="shared_ptr"></a>shared_ptr
+## <a name="shared_ptr"></a><a name="shared_ptr"></a>shared_ptr
 
 Erstellt ein Objekt vom Typ `shared_ptr`.
 
@@ -619,9 +619,9 @@ Der schwache Zeiger.
 *Unglücks*\
 Der zu kopierende automatische Zeiger
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Konstruktoren erstellen jeweils ein Objekt, dem die Ressource gehört, die von der Operatorensequenz benannt wird. Der-Konstruktor `shared_ptr(const weak_ptr<Other>& wp)` löst ein Exception-Objekt vom Typ `wp.expired()` [bad_weak_ptr](bad-weak-ptr-class.md) if aus.
+Die Konstruktoren erstellen jeweils ein Objekt, dem die Ressource gehört, die von der Operatorensequenz benannt wird. Der-Konstruktor löst `shared_ptr(const weak_ptr<Other>& wp)` ein Exception-Objekt vom Typ [bad_weak_ptr](bad-weak-ptr-class.md) if aus `wp.expired()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -675,7 +675,7 @@ int main()
 *sp5 == 15
 ```
 
-## <a name="dtorshared_ptr"></a>~ shared_ptr
+## <a name="shared_ptr"></a><a name="dtorshared_ptr"></a>~ shared_ptr
 
 Beschädigt ein Objekt vom Typ `shared_ptr`.
 
@@ -683,9 +683,9 @@ Beschädigt ein Objekt vom Typ `shared_ptr`.
 ~shared_ptr();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Destruktor verringert die Verweisanzahl für die Ressource, die derzeit im Besitz von `*this` ist. Wenn die Verweisanzahl auf 0 (null) fällt, wird die Ressource freigegeben.
+Der-Dekonstruktor Dekremente den Verweis Zähler für die Ressource, die derzeit im Besitz von ist **`*this`** . Wenn die Verweisanzahl auf 0 (null) fällt, wird die Ressource freigegeben.
 
 ### <a name="example"></a>Beispiel
 
@@ -722,7 +722,7 @@ use count == 2
 use count == 1
 ```
 
-## <a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
 Tauscht zwei `shared_ptr`-Objekte.
 
@@ -735,9 +735,9 @@ void swap(shared_ptr& sp) noexcept;
 *El*\
 Der gemeinsame Zeiger, mit dem getauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion verlässt die Ressource, die `*this` sich ursprünglich im Besitz von *SP*befand, und die Ressource, die ursprünglich im `*this`Besitz von *SP* war, danach im Besitz von. Die Funktion ändert die Verweisanzahlen für die beiden Ressourcen nicht und löst auch keine Ausnahmen aus.
+Die Member-Funktion verlässt die Ressource, die sich ursprünglich im Besitz **`*this`** von *SP*befand, und die Ressource, die ursprünglich im Besitz von *SP* war, danach im Besitz von **`*this`** . Die Funktion ändert die Verweisanzahlen für die beiden Ressourcen nicht und löst auch keine Ausnahmen aus.
 
 ### <a name="example"></a>Beispiel
 
@@ -783,7 +783,7 @@ int main()
 *wp1 == 5
 ```
 
-## <a name="unique"></a>gem
+## <a name="unique"></a><a name="unique"></a>gem
 
 Prüft, ob die Ressource eindeutig ist, die Eigentum ist. Diese Funktion wurde in c++ 17 als veraltet markiert und in c++ 20 entfernt.
 
@@ -791,9 +791,9 @@ Prüft, ob die Ressource eindeutig ist, die Eigentum ist. Diese Funktion wurde i
 bool unique() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion **gibt true** zurück, `shared_ptr` wenn kein anderes Objekt die Ressource besitzt, `*this`die sich im Besitz von befindet, andernfalls **false**.
+Die Member-Funktion gibt zurück **`true`** , wenn kein anderes `shared_ptr` Objekt die Ressource besitzt, die sich im Besitz von befindet **`*this`** , andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -822,7 +822,7 @@ sp1.unique() == true
 sp1.unique() == false
 ```
 
-## <a name="use_count"></a>use_count
+## <a name="use_count"></a><a name="use_count"></a>use_count
 
 Zählt Ressourcenbesitzer.
 
@@ -830,9 +830,9 @@ Zählt Ressourcenbesitzer.
 long use_count() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Anzahl von `shared_ptr`-Objekten zurück, die die Ressource besitzen, die im Besitz von `*this` ist.
+Die Member-Funktion gibt die Anzahl der- `shared_ptr` Objekte zurück, die Besitzer der Ressource sind, die im Besitz von ist **`*this`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -861,7 +861,7 @@ sp1.use_count() == 1
 sp1.use_count() == 2
 ```
 
-## <a name="weak_type"></a>weak_type
+## <a name="weak_type"></a><a name="weak_type"></a>weak_type
 
 Der Typ eines schwachen Zeigers auf ein Element.
 
@@ -869,13 +869,13 @@ Der Typ eines schwachen Zeigers auf ein Element.
 using weak_type = weak_ptr<T>; // C++17
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `weak_type` Definition wurde in c++ 17 hinzugefügt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](cpp-standard-library-header-files.md)\
+[Header Dateireferenz](cpp-standard-library-header-files.md)\
 [\<memory>](memory.md)\
 [unique_ptr](unique-ptr-class.md)\
 [weak_ptr-Klasse](weak-ptr-class.md)

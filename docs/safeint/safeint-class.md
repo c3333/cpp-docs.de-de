@@ -10,12 +10,12 @@ helpviewer_keywords:
 - SafeInt class
 - SafeInt class, constructor
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-ms.openlocfilehash: 0445901f935dbf16872dfeca40ca8d9808dd774e
-ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
+ms.openlocfilehash: 97d81401cfd01d6d39457a9d63c39bc25901128e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85737569"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219351"
 ---
 # <a name="safeint-class"></a>SafeInt-Klasse
 
@@ -162,7 +162,7 @@ class SafeInt;
 | &#124;=  |  `template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (U rhs) throw()` |
 | &#124;=  |  `template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (SafeInt<U, E> rhs) throw()` |
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die `SafeInt`-Klasse schützt vor Ganzzahlüberlauf in mathematischen Operationen. Betrachten Sie beispielsweise das Hinzufügen von zwei 8-Bit-Ganzzahlen: eine hat den Wert 200 und die zweite den Wert 100. Die richtige mathematische Operation wäre 200 + 100 = 300. Jedoch geht aufgrund des 8-Bit-Ganzzahllimits das obere Bit verloren, und der Compiler gibt 44 (300 - 2<sup>8</sup>) als Ergebnis zurück. Jeder Vorgang, der von dieser mathematischen Gleichung abhängig ist, wird unerwartetes Verhalten hervorrufen.
 
@@ -187,7 +187,7 @@ Wenn Sie einen logischen Vergleich mit einem safeint-Objekt durchführen, ist de
 
 - `((uint)~0) > -1`
 
-Die erste Anweisung wird zu **true** aufgelöst, aber die zweite Anweisung zu `false`. Die bitweise Negation von 0 ist 0xFFFFFFFF. In der zweiten Anweisung wird der Standardvergleichsoperator 0xFFFFFFFF mit 0xFFFFFFFF verglichen und die Gleichheit festgestellt. Der Vergleichs Operator für die- `SafeInt` Klasse erkennt, dass der zweite Parameter negativ ist, der erste Parameter jedoch nicht signiert ist. Obwohl die Bitdarstellung identisch ist, `SafeInt` erkennt der logische Operator, dass die Ganzzahl ohne Vorzeichen größer als-1 ist.
+Die erste-Anweisung wird in aufgelöst **`true`** , aber die zweite-Anweisung wird in aufgelöst **`false`** . Die bitweise Negation von 0 ist 0xFFFFFFFF. In der zweiten Anweisung wird der Standardvergleichsoperator 0xFFFFFFFF mit 0xFFFFFFFF verglichen und die Gleichheit festgestellt. Der Vergleichsoperator für die `SafeInt`-Klasse erkennt, dass der zweite Parameter negativ ist, während der erste Parameter kein Vorzeichen hat. Aus diesem Grund erkennt der logische `SafeInt`-Operator bei identischer Bitdarstellung, dass die Ganzzahl ohne Vorzeichen größer als -1 ist.
 
 Seien Sie vorsichtig bei der gemeinsamen Verwendung der `SafeInt`-Klasse mit dem ternären Operator `?:`. Betrachten Sie die folgende Codezeile.
 
@@ -201,7 +201,7 @@ Der Compiler wandelt sie wie folgt um:
 Int x = flag ? SafeInt<unsigned int>(y) : SafeInt<unsigned int>(-1);
 ```
 
-Wenn `flag``false` ist, löst der Compiler eine Ausnahme aus, anstatt `x` den Wert -1 zuzuweisen. In der folgenden Zeile sehen Sie den richtigen Code, um dieses Verhalten zu vermeiden.
+Wenn `flag` **`false`** den Wert hat, löst der Compiler eine Ausnahme aus, anstatt den Wert von-1 an zuzuweisen `x` . In der folgenden Zeile sehen Sie den richtigen Code, um dieses Verhalten zu vermeiden.
 
 ```cpp
 Int x = flag ? (int) SafeInt<unsigned int>(y) : -1;
@@ -223,7 +223,7 @@ Es gibt zwei Optionen zur Optimierung der Fehlerrichtlinie. Die erste Option ist
 
 `SafeInt`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Safeint. HPP
 > [!NOTE]
@@ -279,7 +279,7 @@ SafeInt (const U& i)
 
 `U`Der Typ der in der gespeicherten Daten `SafeInt` . Dies kann entweder ein boolescher Wert, ein Zeichen oder eine ganze Zahl sein. Wenn es sich um einen ganzzahligen Typ handelt, kann er signiert oder nicht signiert werden und zwischen 8 und 64 Bits liegen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Eingabeparameter für den Konstruktor *i* oder *u* muss ein boolescher, Zeichen- oder Ganzzahltyp sein. Wenn es sich um einen anderen Parametertyp handelt, ruft die- `SafeInt` Klasse [static_assert](../cpp/static-assert.md) auf, um einen ungültigen Eingabeparameter anzugeben.
 

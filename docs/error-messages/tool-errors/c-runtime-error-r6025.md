@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - R6025
 ms.assetid: afa06d98-9c36-445b-b3e7-b6409bc8e779
-ms.openlocfilehash: d5edb08278b7b6b9b3eb62e92fc04410f96a8f09
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 6e184ba24ad535697a727276a980fd082625e082
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80075125"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218051"
 ---
 # <a name="c-runtime-error-r6025"></a>C-Laufzeitfehler R6025
 
@@ -30,4 +30,4 @@ reiner virtueller Funktionsaufrufe
 
 Es wurde kein Objekt zum Verarbeiten des reinen virtuellen Funktions Aufrufes instanziiert.
 
-Dieser Fehler wird ausgelöst, wenn eine virtuelle Funktion in einer abstrakten Basisklasse durch einen Zeiger aufgerufen wird, der durch eine Umwandlung in den Typ der abgeleiteten Klasse erstellt wird, aber tatsächlich ein Zeiger auf die Basisklasse ist. Dies kann vorkommen, wenn die Umwandlung von einem **void**  <strong>-\*</strong> in einen Zeiger auf eine Klasse erfolgt, wenn der **void** -<strong>\*</strong> während der Erstellung der Basisklasse erstellt wurde.
+Dieser Fehler wird ausgelöst, wenn eine virtuelle Funktion in einer abstrakten Basisklasse durch einen Zeiger aufgerufen wird, der durch eine Umwandlung in den Typ der abgeleiteten Klasse erstellt wird, aber tatsächlich ein Zeiger auf die Basisklasse ist. Dies kann bei der Umwandlung von einem **`void`** <strong>\*</strong> in einen Zeiger auf eine Klasse vorkommen, wenn **`void`** <strong>\*</strong> während der Erstellung der Basisklasse erstellt wurde.

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - std::recursive_mutex [C++], lock
 - std::recursive_mutex [C++], try_lock
 - std::recursive_mutex [C++], unlock
-ms.openlocfilehash: 9ab7a96a7c07582450ab41b140dcc5494a63661f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8455548997c4ccf1b950e26e01df67306554b945
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81320206"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217609"
 ---
 # <a name="recursive_mutex-class"></a>recursive_mutex-Klasse
 
@@ -42,19 +42,19 @@ class recursive_mutex;
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[Sperren](#lock)|Blockiert den aufrufenden Thread, bis der Thread in den Besitz von mutex gelangt.|
+|[lock](#lock)|Blockiert den aufrufenden Thread, bis der Thread in den Besitz von mutex gelangt.|
 |[try_lock](#try_lock)|Versucht, ohne Blockierung in den Besitz von mutex zu gelangen.|
 |[Entsperren](#unlock)|Gibt den Besitz von mutex frei.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** \<mutex>
+**Header:**\<mutex>
 
 **Namespace:** std
 
-## <a name="lock"></a><a name="lock"></a>Sperren
+## <a name="lock"></a><a name="lock"></a>Sperre
 
 Blockiert den aufrufenden Thread, bis der Thread in den Besitz von `mutex` gelangt.
 
@@ -86,7 +86,7 @@ Gibt alle Ressourcen frei, die vom Objekt verwendet werden.
 
 Wenn das Objekt gesperrt ist, wenn der Destruktor ausgeführt wird, ist das Verhalten nicht definiert.
 
-## <a name="try_lock"></a><a name="try_lock"></a>Try_lock
+## <a name="try_lock"></a><a name="try_lock"></a>try_lock
 
 Versucht, ohne Blockierung in den Besitz von `mutex` zu gelangen.
 
@@ -96,11 +96,11 @@ bool try_lock() noexcept;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn die Methode erfolgreich `mutex` den Besitz des oder `mutex**; otherwise, **false`wenn der aufrufende Thread bereits Eigentümer der .
+**`true`**, wenn die Methode erfolgreich in den Besitz von gelangt, `mutex` oder, wenn der aufrufenden Thread bereits den besitzt `mutex**; otherwise, **false` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn der aufrufende Thread `mutex`bereits eigentümer ist, gibt die Funktion sofort **true**zurück, und die vorherige Sperre bleibt wirksam.
+Wenn der aufrufenden Thread bereits im Besitz von `mutex` ist, gibt die Funktion sofort zurück **`true`** , und die vorherige Sperre bleibt in Kraft.
 
 ## <a name="unlock"></a><a name="unlock"></a>Entsperren
 
@@ -116,7 +116,7 @@ Diese Methode gibt den Besitz der `mutex` erst zurück, wenn sie so oft aufgeruf
 
 Wenn der aufrufende Thread nicht im Besitz von `mutex` ist, so ist das Verhalten nicht definiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Header-Dateien-Referenz](../standard-library/cpp-standard-library-header-files.md)\
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
 [\<mutex>](../standard-library/mutex.md)
