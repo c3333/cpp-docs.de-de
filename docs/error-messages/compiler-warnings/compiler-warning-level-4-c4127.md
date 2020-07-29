@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4127
 ms.assetid: f59ded9e-5227-45bd-ac43-2aa861581363
-ms.openlocfilehash: 9d4397c11c4d2f0f9013c7df914cbc4be9fd4e9d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: afca92602aa6033c56869d3f84192ca0f029a23e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80198483"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218116"
 ---
 # <a name="compiler-warning-level-4-c4127"></a>Compilerwarnung (Stufe 4) C4127
 
@@ -19,9 +19,9 @@ ms.locfileid: "80198483"
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der steuernde Ausdruck einer **if** -Anweisung oder **while** -Schleife wird zu einer Konstanten ausgewertet. Aufgrund ihrer allgemeinen idiomatischen Verwendung, beginnend mit Visual Studio 2015 Update 3, wird die Warnung durch triviale Konstanten wie 1 oder **true** nicht auslöst, es sei denn, Sie sind das Ergebnis eines Vorgangs in einem Ausdruck.
+Der steuernde Ausdruck einer- **`if`** Anweisung oder- **`while`** Schleife wird zu einer Konstanten ausgewertet. Aufgrund ihrer allgemeinen idiomatischen Verwendung, beginnend mit Visual Studio 2015 Update 3, machen triviale Konstanten wie z. b. 1 oder **`true`** die Warnung nicht aus, es sei denn, Sie sind das Ergebnis eines Vorgangs in einem Ausdruck.
 
-Wenn der steuernde Ausdruck einer **while** -Schleife eine Konstante ist, weil die Schleife in der Mitte beendet wird, empfiehlt es sich, die **while** -Schleife durch eine **for** -Schleife zu ersetzen. Sie können die Initialisierung, den Beendigungs Test und das Schleifen Inkrement einer for-Schleife weglassen, was bewirkt, **dass** die Schleife wie `while(1)`unendlich ist, und Sie können die Schleife aus dem Text der **for** -Anweisung beenden.
+Wenn der steuernde Ausdruck einer- **`while`** Schleife eine Konstante ist, weil die Schleife in der Mitte beendet wird, sollten Sie die- **`while`** Schleife durch eine- **`for`** Schleife ersetzen. Sie können die Initialisierung, den Beendigungs Test und das Schleifen Inkrement einer Schleife weglassen **`for`** , was bewirkt, dass die Schleife unendlich ist, `while(1)` und Sie können die Schleife aus dem Hauptteil der **`for`** Anweisung beenden.
 
 ## <a name="example"></a>Beispiel
 

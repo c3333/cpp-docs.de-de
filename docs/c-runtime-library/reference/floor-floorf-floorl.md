@@ -35,12 +35,12 @@ helpviewer_keywords:
 - calculating floors of values
 - floorl function
 ms.assetid: e9955f70-d659-414f-8050-132e13c8ff36
-ms.openlocfilehash: 24c6811a755ea242d424c5dd06cdf48c6e9c1b20
-ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
+ms.openlocfilehash: dd1b88f51dfd414fc1668199350db1e2c34b9f33
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507000"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218680"
 ---
 # <a name="floor-floorf-floorl"></a>floor, floorf, floorl
 
@@ -83,7 +83,7 @@ Die **Floor** -Funktionen geben einen Gleit Komma Wert zurück, der die größte
 
 ## <a name="remarks"></a>Bemerkungen
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Floor** immer einen **Double**-Wert an und gibt ihn zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **Floor** immer und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 

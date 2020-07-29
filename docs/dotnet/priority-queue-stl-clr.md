@@ -51,18 +51,18 @@ helpviewer_keywords:
 - value_compare member [STL/CLR]
 - value_type member [STL/CLR]
 ms.assetid: 4d0000d3-68ff-4c4b-8157-7060540136f5
-ms.openlocfilehash: e21e7ba4dc3a4ed270548506ac1a9e37a2c1a23a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6c5a37cc76f6ac3a3f92cf54b440960d7476daa9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80208467"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211034"
 ---
 # <a name="priority_queue-stlclr"></a>priority_queue (STL/CLR)
 
-Die Vorlagen Klasse beschreibt ein Objekt, das eine geordnete Sequenz von Elementen variabler Länge steuert, die nur begrenzten Zugriff hat. Sie verwenden den Container Adapter `priority_queue`, um einen zugrunde liegenden Container als Prioritäts Warteschlange zu verwalten.
+Die Vorlagen Klasse beschreibt ein Objekt, das eine geordnete Sequenz von Elementen variabler Länge steuert, die nur begrenzten Zugriff hat. Sie verwenden den Container Adapter `priority_queue` zum Verwalten eines zugrunde liegenden Containers als Prioritäts Warteschlange.
 
-In der folgenden Beschreibung ist `GValue` identisch mit dem *Wert* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^`. Ebenso ist `GContainer` identisch mit dem *Container* , es sei denn, es handelt sich um einen Verweistyp. in diesem Fall ist es `Container^`.
+In der Beschreibung unten `GValue` ist mit dem *Wert* identisch, es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^` . Ebenso `GContainer` ist identisch mit dem *Container* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Container^` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -85,13 +85,13 @@ Der Typ des zugrunde liegenden Containers.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<cliext/Queue >
+**Header:**\<cliext/queue>
 
 **Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |[priority_queue::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
 |[priority_queue::container_type (STL/CLR)](#container_type)|Der Typ des zugrunde liegenden Containers.|
@@ -129,25 +129,25 @@ Der Typ des zugrunde liegenden Containers.
 |Schnittstelle|BESCHREIBUNG|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
-|IPriorityQueue\<Wert, Container >|Verwalten Sie einen generischen Container Adapter.|
+|IPriorityQueue\<Value, Container>|Verwalten Sie einen generischen Container Adapter.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das-Objekt ordnet Speicher für die Sequenz zu, die er durch einen zugrunde liegenden Container (vom Typ "`Container`" steuert, der `Value` Elemente speichert und Bedarfs gesteuert wächst. Die Sequenz wird als Heap angeordnet, wobei das Element mit der höchsten Priorität (das oberste Element) leicht zugänglich ist und entfernt werden kann. Das-Objekt schränkt den Zugriff auf das übertragen neuer Elemente ein und Pop nur das Element mit der höchsten Priorität durch und implementiert eine Prioritäts Warteschlange
+Das-Objekt ordnet Speicher für die Sequenz zu, die er durch einen zugrunde liegenden Container (vom Typ) steuert und freigibt, der `Container` `Value` Elemente speichert und Bedarfs gesteuert wächst. Die Sequenz wird als Heap angeordnet, wobei das Element mit der höchsten Priorität (das oberste Element) leicht zugänglich ist und entfernt werden kann. Das-Objekt schränkt den Zugriff auf das übertragen neuer Elemente ein und Pop nur das Element mit der höchsten Priorität durch und implementiert eine Prioritäts Warteschlange
 
-Das Objekt sortiert die Sequenz, die es steuert, indem es ein gespeichertes Delegatobjekt vom Typ [priority_queue:: Value_compare (STL/CLR)](../dotnet/priority-queue-value-compare-stl-clr.md)aufruft. Sie können das gespeicherte Delegatobjekt angeben, wenn Sie die Priority_queue erstellen; Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der Vergleichs `operator<(value_type, value_type)`. Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die-Member-Funktion [priority_queue:: value_comp (STL/CLR)](../dotnet/priority-queue-value-comp-stl-clr.md)`()`aufrufen.
+Das Objekt sortiert die Sequenz, die es steuert, indem es ein gespeichertes Delegatobjekt vom Typ [priority_queue:: Value_compare (STL/CLR)](../dotnet/priority-queue-value-compare-stl-clr.md)aufruft. Sie können das gespeicherte Delegatobjekt angeben, wenn Sie die Priority_queue erstellen; Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der-Vergleich `operator<(value_type, value_type)` . Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die Member-Funktion [priority_queue:: value_comp (STL/CLR)](../dotnet/priority-queue-value-comp-stl-clr.md)aufrufen `()` .
 
-Ein solches Delegatobjekt muss eine strikte schwache Reihenfolge für Werte des Typs [priority_queue:: value_type (STL/CLR)](../dotnet/priority-queue-value-type-stl-clr.md)erzwingen. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y`:
+Ein solches Delegatobjekt muss eine strikte schwache Reihenfolge für Werte des Typs [priority_queue:: value_type (STL/CLR)](../dotnet/priority-queue-value-type-stl-clr.md)erzwingen. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y` :
 
-`value_comp()(X, Y)` gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
+`value_comp()(X, Y)`gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
 
-Wenn `value_comp()(X, Y)` true ist, muss `value_comp()(Y, X)` den Wert false aufweisen.
+Wenn `value_comp()(X, Y)` true ist, `value_comp()(Y, X)` muss false sein.
 
-Wenn `value_comp()(X, Y)` den Wert true hat, wird `X` vor dem `Y`als geordnet bezeichnet.
+Wenn `value_comp()(X, Y)` den Wert true hat, `X` wird gesagt, dass zuvor geordnet ist `Y` .
 
-Wenn `!value_comp()(X, Y) && !value_comp()(Y, X)` true ist, werden `X` und `Y` als äquivalente Reihenfolge bezeichnet.
+Wenn `!value_comp()(X, Y) && !value_comp()(Y, X)` den Wert true hat `X` , `Y` werden und als entsprechende Reihenfolge bezeichnet.
 
-Für alle Element `X`, das `Y` in der gesteuerten Sequenz vorangeht, ist `key_comp()(Y, X)` false. (Für das standarddelegatobjekt verringern Schlüssel niemals den Wert.)
+Für jedes Element, `X` das `Y` in der kontrollierten Sequenz vorangeht, `key_comp()(Y, X)` ist false. (Für das standarddelegatobjekt verringern Schlüssel niemals den Wert.)
 
 Das Element mit der höchsten Priorität ist daher eines der-Elemente, das nicht vor einem anderen Element geordnet ist.
 
@@ -159,7 +159,7 @@ Elemente, die gleichwertig sortiert werden, können in einer anderen Reihenfolge
 
 Folglich enthalten Kandidaten für den zugrunde liegenden Container Doppel Schlange [(STL/CLR)](../dotnet/deque-stl-clr.md) und [Vector (STL/CLR)](../dotnet/vector-stl-clr.md).
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ## <a name="priority_queueassign-stlclr"></a><a name="assign"></a>priority_queue:: Assign (STL/CLR)
 
@@ -173,12 +173,12 @@ void assign(priority_queue<Value, Container>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Der einzufügende Container Adapter.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion weist `right.get_container()` dem zugrunde liegenden Container zu. Sie verwenden Sie, um den gesamten Inhalt der Warteschlange zu ändern.
+Die Member-Funktion weist `right.get_container()` den zugrunde liegenden Container zu. Sie verwenden Sie, um den gesamten Inhalt der Warteschlange zu ändern.
 
 ### <a name="example"></a>Beispiel
 
@@ -271,7 +271,7 @@ typedef Container value_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `Container`dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `Container` dar.
 
 ### <a name="example"></a>Beispiel
 
@@ -371,7 +371,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [priority_queue:: Size (STL/CLR)-](../dotnet/priority-queue-size-stl-clr.md)`() == 0`. Sie verwenden es, um zu testen, ob das Priority_queue leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [priority_queue:: Size (STL/CLR)](../dotnet/priority-queue-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob das Priority_queue leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -488,7 +488,7 @@ typedef GValue generic_value;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt. (`GValue` ist entweder `value_type` oder `value_type^`, wenn `value_type` ein Ref-Typ ist.)
+Der Typ beschreibt ein Objekt vom Typ `GValue` , das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt. ( `GValue` ist entweder `value_type` oder, `value_type^` Wenn `value_type` ein Ref-Typ ist.)
 
 ### <a name="example"></a>Beispiel
 
@@ -587,12 +587,12 @@ priority_queue <Value, Container>% operator=(priority_queue <Value, Container>% 
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Zu Kopier der Container Adapter.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
+Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann zurück **`*this`** . Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -713,7 +713,7 @@ Das Ende des einzufügenden Bereichs.
 *pred*<br/>
 Das Anordnungs Prädikat für die gesteuerte Sequenz.
 
-*right*<br/>
+*Richting*<br/>
 Einzufügendes Objekt bzw. einzufügender Bereich.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -728,13 +728,13 @@ Der Konstruktor:
 
 `priority_queue(priority_queue<Value, Container>% right);`
 
-erstellt einen umschpackten Container, bei dem es sich um eine Kopie `right.get_container()`handelt, wobei das Bestell Prädikat `right.value_comp()`ist. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom Warteschlangen Objekt *direkt*mit dem gleichen Reihen folgen Prädikat gesteuert wird.
+erstellt einen umschpackten Container, bei dem es sich um eine Kopie von `right.get_container()` mit dem Reihenfolge Prädikat handelt `right.value_comp()` . Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom Warteschlangen Objekt *direkt*mit dem gleichen Reihen folgen Prädikat gesteuert wird.
 
 Der Konstruktor:
 
 `priority_queue(priority_queue<Value, Container>^ right);`
 
-erstellt einen umschpackten Container, bei dem es sich um eine Kopie `right->get_container()`handelt, wobei das Bestell Prädikat `right->value_comp()`ist. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom Warteschlangen Objekt `*right`und desselben Reihen folgen Prädikats gesteuert wird.
+erstellt einen umschpackten Container, bei dem es sich um eine Kopie von `right->get_container()` mit dem Reihenfolge Prädikat handelt `right->value_comp()` . Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom Warteschlangen Objekt `*right` mit demselben Reihen folgen Prädikat gesteuert wird.
 
 Der Konstruktor:
 
@@ -752,19 +752,19 @@ Der Konstruktor:
 
 `template<typename InIt> priority_queue(InIt first, InIt last);`
 
-erstellt einen leeren umschließenen Container mit dem Standard Reihen folgen Prädikat und überträgt dann die Sequenz [`first``last`). Sie verwenden es, um eine anfängliche gesteuerte Sequenz von einem angegebenen eqeuence mit dem angegebenen Reihen folgen Prädikat anzugeben.
+erstellt einen leeren umschließenen Container mit dem Standard Reihen folgen Prädikat und drückt dann die Sequenz [ `first` , `last` ). Sie verwenden es, um eine anfängliche gesteuerte Sequenz von einem angegebenen eqeuence mit dem angegebenen Reihen folgen Prädikat anzugeben.
 
 Der Konstruktor:
 
 `template<typename InIt> priority_queue(InIt first, InIt last, value_compare^ pred);`
 
-erstellt einen leeren umschließenen Container mit dem *pred-Prädikat*für die Reihenfolge und überträgt dann die Sequenz [`first``last`). Sie verwenden es, um eine anfängliche gesteuerte Sequenz von einem angegebenen Seqeuence mit dem angegebenen Reihen folgen Prädikat anzugeben.
+erstellt einen leeren umschließenen Container mit dem *pred-Prädikat*für die Reihenfolge und verschiebt dann die Sequenz [ `first` , `last` ). Sie verwenden es, um eine anfängliche gesteuerte Sequenz von einem angegebenen Seqeuence mit dem angegebenen Reihen folgen Prädikat anzugeben.
 
 Der Konstruktor:
 
 `template<typename InIt> priority_queue(InIt first, InIt last, value_compare^ pred, container_type% cont);`
 
-erstellt einen leeren Container mit dem Bestellungs Prädikat *pred*und überträgt dann alle Elemente von " *EST* " plus die Sequenz [`first``last`). Sie verwenden es, um eine anfängliche gesteuerte Sequenz aus einem vorhandenen Container und einen angegebenen Seqeuence mit dem angegebenen Reihen folgen Prädikat anzugeben.
+erstellt einen leeren umschließenden Container mit dem *Prädikat*für die Bestell Prädikate und überträgt dann alle Elemente von " *EST* " plus die Sequenz "[ `first` , `last` )". Sie verwenden es, um eine anfängliche gesteuerte Sequenz aus einem vorhandenen Container und einen angegebenen Seqeuence mit dem angegebenen Reihen folgen Prädikat anzugeben.
 
 ### <a name="example"></a>Beispiel
 
@@ -966,7 +966,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [priority_queue:: Empty (STL/CLR)](../dotnet/priority-queue-empty-stl-clr.md)`()`.
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [priority_queue:: Empty (STL/CLR)](../dotnet/priority-queue-empty-stl-clr.md) `()` .
 
 ### <a name="example"></a>Beispiel
 

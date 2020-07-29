@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Microsoft::WRL::SimpleClassFactory class
 - Microsoft::WRL::SimpleClassFactory::CreateInstance method
 ms.assetid: 6edda1b2-4e44-4e14-9364-72f519249962
-ms.openlocfilehash: 924b9d2c30f11e6f0444d9c647807f1c86dcc411
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 66794789e51a2635fae646cca49e4fae8385dfe0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373550"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211150"
 ---
 # <a name="simpleclassfactory-class"></a>SimpleClassFactory-Klasse
 
@@ -29,14 +29,14 @@ class SimpleClassFactory : public ClassFactory<>;
 
 ### <a name="parameters"></a>Parameter
 
-*Basis*<br/>
+*Sock*<br/>
 Eine Basisklasse.
 
 ## <a name="remarks"></a>Bemerkungen
 
 Die Basisklasse muss einen Standardkonstruktor bereitstellen.
 
-Im folgenden Codebeispiel wird `SimpleClassFactory` veranschaulicht, wie Sie das [ActivatableClassWithFactoryEx-Makro](activatableclass-macros.md) verwenden.
+Im folgenden Codebeispiel wird die Verwendung `SimpleClassFactory` von mit dem [activatableclasswithfactoryex](activatableclass-macros.md) -Makro veranschaulicht.
 
 `ActivatableClassWithFactoryEx(MyClass, SimpleClassFactory, MyServerName);`
 
@@ -44,9 +44,9 @@ Im folgenden Codebeispiel wird `SimpleClassFactory` veranschaulicht, wie Sie das
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[SimpleClassFactory::CreateInstance-Methode](#createinstance)|Erstellt eine Instanz der angegebenen Schnittstelle.|
+|[SimpleClassFactory::CreateInstance-Methode](#createinstance)|Erstellt eine Instanz der angegebenen-Schnittstelle.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -72,15 +72,15 @@ Im folgenden Codebeispiel wird `SimpleClassFactory` veranschaulicht, wie Sie das
 
 `SimpleClassFactory`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** module.h
+**Header:** Module. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="simpleclassfactorycreateinstance-method"></a><a name="createinstance"></a>SimpleClassFactory::CreateInstance-Methode
+## <a name="simpleclassfactorycreateinstance-method"></a><a name="createinstance"></a>Simpleclassfactory:: kreateinstance-Methode
 
-Erstellt eine Instanz der angegebenen Schnittstelle.
+Erstellt eine Instanz der angegebenen-Schnittstelle.
 
 ```cpp
 STDMETHOD( CreateInstance )(
@@ -93,15 +93,15 @@ STDMETHOD( CreateInstance )(
 #### <a name="parameters"></a>Parameter
 
 *pUnkOuter*<br/>
-Muss `nullptr`sein ; Andernfalls wird der Rückgabewert CLASS_E_NOAGGREGATION.
+Muss sein **`nullptr`** ; andernfalls ist der Rückgabewert CLASS_E_NOAGGREGATION.
 
-SimpleClassFactory unterstützt keine Aggregation. Wenn die Aggregation unterstützt würde und das zu erstellende Objekt Teil eines Aggregats `IUnknown` wäre, wäre *pUnkOuter* ein Zeiger auf die steuernde Schnittstelle des Aggregats.
+Simpleclassfactory unterstützt keine Aggregation. Wenn Aggregationen unterstützt werden und das zu erstellende Objekt Teil eines Aggregats war, wäre *pUnkOuter* ein Zeiger auf die Steuerungs `IUnknown` Schnittstelle des Aggregats.
 
 *riid*<br/>
-Schnittstellen-ID des zu erstellenden Objekts.
+Die Schnittstellen-ID des zu erstellenden Objekts.
 
 *ppvObject*<br/>
-Wenn dieser Vorgang abgeschlossen ist, zeigen Sie auf eine Instanz des Objekts, die durch den *riid-Parameter* angegeben wird.
+Wenn dieser Vorgang abgeschlossen ist, Zeiger auf eine Instanz des Objekts, das durch den *riid* -Parameter angegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -109,4 +109,4 @@ S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn `__WRL_STRICT__` definiert, wird ein Assert-Fehler angezeigt, wenn die im Klassenvorlagenparameter angegebene Basisklasse nicht von [RuntimeClass](runtimeclass-class.md)abgeleitet oder nicht mit dem Enumerationswert ClassicCom oder WinRtClassicComMix [RuntimeClassType](runtimeclasstype-enumeration.md) konfiguriert ist.
+Wenn `__WRL_STRICT__` definiert ist, wird ein Fehler vom Typ Assert ausgegeben, wenn die im Klassen Vorlagen Parameter angegebene Basisklasse nicht von [runtimeclass](runtimeclass-class.md)abgeleitet ist oder nicht mit dem-Enumerationswert classiccom oder winrtclassiccommix [runtimeclasstype](runtimeclasstype-enumeration.md) konfiguriert wurde.

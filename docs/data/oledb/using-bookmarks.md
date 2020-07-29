@@ -7,16 +7,16 @@ helpviewer_keywords:
 - bookmarks, OLE DB
 - OLE DB providers, bookmark support
 ms.assetid: 7fa1d1a8-5063-4aa9-93ee-815bb9c98fae
-ms.openlocfilehash: 5a4a2d65ba7367b5568603b5f08a07c6d85cc4a5
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8caa33b3bafbaa9e537d9669aa7b60a9355475ef
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80209312"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218298"
 ---
 # <a name="using-bookmarks"></a>Verwenden von Textmarken
 
-Vor dem Öffnen des Rowsets müssen Sie dem Anbieter mitteilen, dass Sie Lesezeichen verwenden möchten. Legen Sie hierzu die `DBPROP_BOOKMARKS`-Eigenschaft in Ihrem Eigenschaften Satz auf **true** fest. Der Anbieter ruft Lesezeichen als Spalte NULL ab, sodass Sie das spezielle Makro BOOKMARK_ENTRY und die `CBookmark` Klasse verwenden müssen, wenn Sie einen statischen Accessor verwenden. `CBookmark` ist eine Vorlagen Klasse, in der das-Argument die Länge des Lesezeichen Puffers in Bytes ist. Die Länge des für ein Lesezeichen erforderlichen Puffers hängt vom Anbieter ab. Wenn Sie den ODBC-OLE DB Anbieter verwenden, wie im folgenden Beispiel gezeigt, muss der Puffer 4 Bytes groß sein.
+Vor dem Öffnen des Rowsets müssen Sie dem Anbieter mitteilen, dass Sie Lesezeichen verwenden möchten. Legen Sie hierzu die- `DBPROP_BOOKMARKS` Eigenschaft **`true`** in Ihrem Eigenschaften Satz auf fest. Der Anbieter ruft Lesezeichen als Spalte NULL ab, sodass Sie das spezielle Makro BOOKMARK_ENTRY und die-Klasse verwenden müssen, `CBookmark` Wenn Sie einen statischen Accessor verwenden. `CBookmark`ist eine Vorlagen Klasse, bei der das-Argument die Länge des Lesezeichen Puffers in Bytes ist. Die Länge des für ein Lesezeichen erforderlichen Puffers hängt vom Anbieter ab. Wenn Sie den ODBC-OLE DB Anbieter verwenden, wie im folgenden Beispiel gezeigt, muss der Puffer 4 Bytes groß sein.
 
 ```cpp
 class CProducts
@@ -41,7 +41,7 @@ CSession session;
 product.Open(session, "Products", &propset);
 ```
 
-Wenn Sie `CDynamicAccessor`verwenden, wird der Puffer dynamisch zur Laufzeit festgelegt. In diesem Fall können Sie eine spezialisierte Version von `CBookmark` verwenden, für die Sie keine Pufferlänge angeben. Verwenden Sie die Funktion `GetBookmark`, um das Lesezeichen aus dem aktuellen Datensatz abzurufen, wie im folgenden Codebeispiel gezeigt:
+Wenn Sie verwenden `CDynamicAccessor` , wird der Puffer dynamisch zur Laufzeit festgelegt. In diesem Fall können Sie eine spezialisierte Version von verwenden, `CBookmark` für die Sie keine Pufferlänge angeben. Verwenden Sie die-Funktion `GetBookmark` , um das Lesezeichen aus dem aktuellen Datensatz abzurufen, wie in diesem Codebeispiel gezeigt:
 
 ```cpp
 CTable<CDynamicAccessor> product;
@@ -59,4 +59,4 @@ Informationen zur Unterstützung von Lesezeichen in Anbietern finden Sie unter [
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von Zugriffsmethoden](../../data/oledb/using-accessors.md)
+[Verwenden von Accessoren](../../data/oledb/using-accessors.md)

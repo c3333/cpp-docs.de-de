@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4156
 ms.assetid: 9adf3acb-c0fe-42a8-a4db-5822b1493f77
-ms.openlocfilehash: b9add4af0fddf8d68bbba0293530f2bb0ce3800d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 279ab5d9de738fb4e2aa6dece4bb16353eca031b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80162087"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87206483"
 ---
 # <a name="compiler-warning-level-2-c4156"></a>Compilerwarnung (Stufe 2) C4156
 
 Löschen eines Array Ausdrucks ohne Verwendung der Arrayform von "Delete" Ersetzen eines Array Formulars
 
-Die nicht-Array-Form von **Delete** kann ein Array nicht löschen. Der Compiler hat **Delete** in das Array Formular übersetzt.
+Das nicht-Array-Formular von **`delete`** kann kein Array löschen. Der Compiler **`delete`** , der in das Array Formular übersetzt wurde.
 
 Diese Warnung tritt nur unter Microsoft-Erweiterungen (/Ze) auf.
 

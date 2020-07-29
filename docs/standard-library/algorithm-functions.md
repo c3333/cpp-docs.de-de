@@ -200,12 +200,12 @@ helpviewer_keywords:
 - std::count_if [C++]
 - std::partition_copy [C++]
 - std::swap [C++]
-ms.openlocfilehash: c8c550be87eacf81fab994239e07ed2358fad39b
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 5b83306d34c5e881e679ac4b6f0d7b9c249035cd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84617660"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87205573"
 ---
 # <a name="ltalgorithmgt-functions"></a>&lt;Algorithmusfunktionen&gt;
 
@@ -257,7 +257,7 @@ Das binäre Prädikat, das die Bedingung vorgibt, mithilfe der Werte der benachb
 
 Ein forward-Iterator zum ersten der angrenzenden Elemente, die entweder gleich sind (in der ersten Version) oder die die durch das binäre Prädikat angegebene Bedingung erfüllen (in der zweiten Version), vorausgesetzt, dass ein solches Paar von Elementen gefunden wird. Andernfalls wird ein Iterator zurückgegeben, der auf den *letzten* zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `adjacent_find`-Algorithmus ist ein Algorithmus, der keine Änderungen bezüglich der Abfolge bewirkt. Der zu durchsuchende Bereich muss gültig sein. Alle Zeiger müssen dereferenzierbar sein, und die letzte Position ist von der Ersten durch Zunahme erreichbar. Die Zeitkomplexität des Algorithmus ist linear zur Anzahl der im Bereich enthaltenen Elemente.
 
@@ -329,7 +329,7 @@ They have values of 10 & 20.
 
 ## <a name="all_of"></a><a name="all_of"></a>all_of
 
-Gibt **true** zurück, wenn eine Bedingung bei jedem Element im angegebenen Bereich vorhanden ist.
+Gibt zurück, **`true`** Wenn eine Bedingung bei jedem Element im angegebenen Bereich vorhanden ist.
 
 ```cpp
 template<class InputIterator, class UnaryPredicate>
@@ -358,15 +358,15 @@ Ein Eingabe-Iterator, der angibt, ab wo nach Bedingungen gesucht werden soll. De
 Ein Eingabe-Iterator, der angibt, an welcher Stelle ein Bereich von Elementen endet, in dem nach einer Bedingung gesucht werden soll.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll. Hierbei handelt es sich um ein benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die vom zu prüfenden Element erfüllt werden muss. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll. Hierbei handelt es sich um ein benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die vom zu prüfenden Element erfüllt werden muss. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt " **true** " zurück, wenn die Bedingung bei jedem Element im angegeben Bereich erkannt wird oder wenn der Bereich leer ist, andernfalls " **false** ".
+Gibt zurück **`true`** , wenn die Bedingung bei jedem Element im angegeben Bereich erkannt wird oder wenn der Bereich leer ist, und **`false`** andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt nur **dann "true** " zurück, wenn `N` das Prädikat für jedes im Bereich " `[0, last - first)` `pred(*(first + N))` **true**" ist.
+Die Vorlagen Funktion gibt **`true`** nur dann zurück, wenn `N` `[0, last - first)` das Prädikat für jedes im Bereich `pred(*(first + N))` ist **`true`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -405,7 +405,7 @@ All the elements are even numbers.
 
 ## <a name="any_of"></a><a name="any_of"></a>any_of
 
-Gibt **true** zurück, wenn eine Bedingung mindestens einmal im angegebenen Bereich von Elementen vorhanden ist.
+Gibt zurück, **`true`** Wenn eine Bedingung mindestens einmal im angegebenen Bereich von Elementen vorhanden ist.
 
 ```cpp
 template<class InputIterator, class UnaryPredicate>
@@ -434,15 +434,15 @@ Ein Eingabe-Iterator, der angibt, ab wo ein Bereich von Elementen auf eine Bedin
 Ein Eingabe-Iterator, der angibt, an welcher Stelle ein Bereich von Elementen endet, in dem nach einer Bedingung gesucht werden soll.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll. Diese wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt. Das Prädikat definiert die Bedingung, die das zu prüfende Element erfüllen muss. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll. Diese wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt. Das Prädikat definiert die Bedingung, die das zu prüfende Element erfüllen muss. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt **true** zurück, wenn die Bedingung mindestens einmal im festgelegten Bereich erkannt wird, **false** , wenn die Bedingung niemals erkannt wird.
+Gibt zurück **`true`** , wenn die Bedingung mindestens einmal im angegeben Bereich erkannt wird, **`false`** Wenn die Bedingung nie erkannt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt nur **dann true** zurück, wenn für einige `N` im Bereich
+Die Vorlagen Funktion gibt **`true`** nur dann zurück, wenn für einige `N` im Bereich
 
 `[0, last - first)`, das Prädikat `pred(*(first + N))` ist "true".
 
@@ -511,13 +511,13 @@ Ein Forward-Iterator, der die Position hinter dem letzten Element im zu durchsuc
 Der Wert, mit dem vom Wert des Elements eine Übereinstimmung erzielt werden muss oder der die Bedingung mit dem vom binären Prädikat angegebenen Elementwert erfüllen muss.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn ein Element im Bereich gefunden wird, der gleich dem angegebenen Wert ist oder diesem entspricht. andernfalls **false**.
+**`true`**, wenn ein Element im Bereich gefunden wird, der gleich dem angegebenen Wert ist oder diesem entspricht. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der sortierte Quellbereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position muss der innerhalb der Reihenfolge vom ersten von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -650,13 +650,13 @@ Die untere Grenze von Werten, auf die der *Wert* fixiert werden soll.
 Die obere Grenze von Werten, auf die der *Wert* fixiert werden soll.
 
 *pred*\
-Ein Prädikat, das zum Vergleichen des Werts mit dem *unteren* oder *oberen* *Wert* verwendet wird. Ein Vergleichs Prädikat nimmt zwei Argumente an und gibt **true** zurück, wenn der erste Wert kleiner als der zweite ist, andernfalls **false**.
+Ein Prädikat, das zum Vergleichen des Werts mit dem *unteren* oder *oberen* *Wert* verwendet wird. Ein Vergleichs Prädikat nimmt zwei Argumente an und gibt zurück **`true`** , wenn der erste Wert kleiner als der zweite ist, und andernfalls **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt einen Verweis auf den *unteren* if-Wert `value < lower` oder einen Verweis auf den *oberen* if-Wert zurück `upper < value` . Andernfalls wird ein Verweis auf den *Wert*zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Verhalten ist nicht definiert, wenn *Upper* kleiner als *niedriger*ist.
 
@@ -697,7 +697,7 @@ Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressi
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im Zielbereich adressiert, d. h., der Iterator adressiert `result` + (*Last*  -  *First*).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Quellbereich muss gültig sein, und es muss genügend Speicherplatz am Ziel zur Verfügung stehen, um alle kopierten Elemente aufzunehmen.
 
@@ -790,7 +790,7 @@ Ein bidirektionaler Iterator, der die Position hinter dem letzten Element im Zie
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im Zielbereich adressiert, d. h., der Iterator adressiert *-(* *Letzte*  -  *zuerst*).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Quellbereich muss gültig sein, und es muss genügend Speicherplatz am Ziel zur Verfügung stehen, um alle kopierten Elemente aufzunehmen.
 
@@ -862,7 +862,7 @@ v2 with shifted insert = ( 0 3 6 9 0 10 0 10 20 27 30 )
 
 ## <a name="copy_if"></a><a name="copy_if"></a>copy_if
 
-Kopiert in einem Bereich von Elementen die Elemente, die für die angegebene Bedingung **true** sind.
+Kopiert in einem Bereich von Elementen die Elemente **`true`** für die angegebene Bedingung.
 
 ```cpp
 template<class InputIterator, class OutputIterator, class UnaryPredicate>
@@ -896,13 +896,13 @@ Ein Eingabeiterator, der das Ende des Bereichs angibt.
 Ein Ausgabeiterator, der das Ziel der kopierten Elemente angibt.
 
 *pred*\
-Die Bedingung, auf die jedes Element im Bereich geprüft wird. Diese Bedingung wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt. Ein unäres Prädikat nimmt ein Argument an und gibt " **true** " oder " **false**" zurück.
+Die Bedingung, auf die jedes Element im Bereich geprüft wird. Diese Bedingung wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt. Ein unäres Prädikat nimmt ein Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator *dest* , der für jedes Element, das die Bedingung erfüllt Anders ausgedrückt: der Rückgabewert minus *dest* gleicht der Anzahl der kopierten Elemente.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagen Funktion wertet aus.
 
@@ -1002,7 +1002,7 @@ Eine Ausgabeiterator, der angibt, wohin die Elemente kopiert werden.
 
 Gibt einen Ausgabeiterator zurück, in den Elemente kopiert wurden. Dies entspricht dem zurückgegebenen Wert des *dest* -Parameters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion wertet `*(dest + N) = *(first + N))` einmal für jedes Element `N` im Bereich `[0, count)` aus – bei strikt ansteigende Werte von `N` beginnend mit dem niedrigsten. Dann wird `dest + N` zurückgegeben. Wenn " *dest* " und das *erste* Speicherbereich angeben, darf " *dest* " nicht im Bereich liegen `[first, last)` .
 
@@ -1073,7 +1073,7 @@ Der Wert der zu zählenden Elemente.
 
 Der Unterschiedstyp von `InputIterator` , der die Anzahl der Elemente im Bereich [*First*, *Last*] mit dem Wert *Wert*zählt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zur Bestimmung des Gleichheitszustands zwischen einem Element und dem angegebenen Wert verwendete `operator==` muss eine Äquivalenzrelation zwischen zwei Operanden vorgeben.
 
@@ -1148,13 +1148,13 @@ Ein Eingabeiterator, der die Position des ersten Elements im zu durchsuchenden B
 Ein Eingabeiterator, der die Position hinter dem letzten Element im zu durchsuchenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die erfüllt werden muss, wenn ein Element gezählt werden soll. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die erfüllt werden muss, wenn ein Element gezählt werden soll. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Anzahl von Elementen, die die vom Prädikat angegebenen Bedingungen erfüllen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion ist eine Generalisierung des Algorithmus [count](algorithm-functions.md#count) und ersetzt das Prädikat „entspricht einem bestimmten Wert“ durch ein beliebiges Prädikat.
 
@@ -1289,17 +1289,17 @@ Ein Eingabeiterator, der die Position des ersten Elements im zweiten zu testende
 Ein Eingabeiterator, der die Position hinter dem letzten Element im zweiten zu testenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Bereiche unter dem binären Prädikat beim Vergleichen von Elementen identisch oder ähnlich sind; andernfalls **FALSE**.
+**`true`** nur dann, wenn die Bereiche beim Vergleich des Elements nach Element identisch oder gleichwertig sind. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zu durchsuchende Bereich muss gültig sein. Alle Iteratoren müssen dereferenzierbar sein, und die letzte Position ist von der Ersten durch Zunahme erreichbar.
 
-Wenn die beiden Bereich die gleiche Länge aufweisen, ist die Zeitkomplexität des Algorithmus linear zur Anzahl der im Bereich enthaltenen Elemente. Andernfalls gibt die Funktion sofort **false**zurück.
+Wenn die beiden Bereich die gleiche Länge aufweisen, ist die Zeitkomplexität des Algorithmus linear zur Anzahl der im Bereich enthaltenen Elemente. Andernfalls gibt die Funktion sofort zurück **`false`** .
 
 Weder das `operator==` noch das benutzerdefinierte Prädikat ist erforderlich, um eine Äquivalenzbeziehung vorzugeben, die zwischen den dazugehörigen Operanden symmetrisch, reflexiv und transitiv ist.
 
@@ -1367,7 +1367,7 @@ Ein Forward-Iterator, der die Position hinter dem letzten Element im zu durchsuc
 Der Wert, nach dem im sortierten Bereich gesucht wird.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt bei **Erfüllung true** zurück und **false** , wenn es nicht erfüllt wird.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1375,7 +1375,7 @@ Ein paar von Forward-Iteratoren, die einen Unterbereich angeben, der in dem durc
 
 Wenn keine Elemente im Bereich dem *Wert*entsprechen, sind die Forward-Iteratoren im zurückgegebenen Paar gleich und geben den Punkt an, an dem der *Wert* eingefügt werden kann, ohne die Reihenfolge des Bereichs zu beeinträchtigen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Iterator des vom Algorithmus zurückgegebenen Paars ist [lower_bound](algorithm-functions.md#lower_bound), der zweite Iterator ist [upper_bound](algorithm-functions.md#upper_bound).
 
@@ -1535,7 +1535,7 @@ Ein Forward-Iterator, der die Position direkt hinter dem letzten Element im zu d
 *Wert*\
 Der Wert, der Elementen im Bereich [*First*, *Last*] zugewiesen werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Zielbereich muss gültig sein. Alle Zeiger müssen dereferenzierbar sein, und die letzte Position ist von der Ersten durch Zunahme erreichbar. Die Komplexität ist mit der Größe des Bereichs linear.
 
@@ -1617,7 +1617,7 @@ Der Wert, der Elementen im Bereich [*First*, *First + count*) zugewiesen werden 
 
 Ein Iterator für das Element, das dem letzten ausgefüllten Element folgt, wenn *count* > 0 (null) ist, andernfalls das erste Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Zielbereich muss gültig sein. Alle Zeiger müssen dereferenzierbar sein, und die letzte Position ist von der Ersten durch Zunahme erreichbar. Die Komplexität ist mit der Größe des Bereichs linear.
 
@@ -1706,7 +1706,7 @@ Der zu suchende Wert.
 
 Ein Eingabeiterator, der das erste Vorkommen des angegebenen Werts im zu durchsuchenden Bereich adressiert. Wenn kein Element mit einem äquivalenten Wert gefunden wird, wird *zuletzt*zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zur Bestimmung des Gleichheitszustands zwischen einem Element und dem angegebenen Wert verwendete `operator==` muss eine Äquivalenzrelation zwischen zwei Operanden vorgeben.
 
@@ -1768,13 +1768,13 @@ Ein Forward-Iterator, der die Position des ersten Elements im zu durchsuchenden 
 Ein Forward-Iterator, der die Position hinter dem letzten Element im zu durchsuchenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein forward-Iterator, der die Position des ersten Elements der letzten unter Sequenz in [First1, Last1) adressiert, die der angegebenen Sequenz [First2, Last2) entspricht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zur Bestimmung des Gleichheitszustands zwischen einem Element und dem angegebenen Wert verwendete `operator==` muss eine Äquivalenzrelation zwischen zwei Operanden vorgeben.
 
@@ -1932,13 +1932,13 @@ Ein Forward-Iterator, der die Position des ersten Elements im abzugleichenden Be
 Ein Forward-Iterator, der die Position hinter dem letzten Element im abzugleichenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Forward-Iterator, der die Position des ersten Elements der ersten Untersequenz adressiert, die der angegebenen Sequenz entspricht oder die wie von einem binären Prädikat angegeben äquivalent ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zur Bestimmung des Gleichheitszustands zwischen einem Element und dem angegebenen Wert verwendete `operator==` muss eine Äquivalenzrelation zwischen zwei Operanden vorgeben.
 
@@ -2070,13 +2070,13 @@ Ein Eingabeiterator, der die Position des ersten Elements im zu durchsuchenden B
 Ein Eingabeiterator, der die Position hinter dem letzten Element im zu durchsuchenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt oder [Lambdaausdruck](../cpp/lambda-expressions-in-cpp.md), das bzw. der die Bedingung definiert, die vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt bei **Erfüllung true** zurück, oder **false** , wenn es nicht erfüllt wird. Die Signatur der *pred* muss effektiv sein `bool pred(const T& arg);` , wobei `T` ein Typ ist, der `InputIterator` bei der Dereferenzierung implizit konvertiert werden kann. Das Schlüsselwort " **Konstanten** " wird nur angezeigt, um zu veranschaulichen, dass das Funktions Objekt oder Lambda das Argument nicht ändern sollte.
+Benutzerdefiniertes Prädikatfunktionsobjekt oder [Lambdaausdruck](../cpp/lambda-expressions-in-cpp.md), das bzw. der die Bedingung definiert, die vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt bei Erfüllung zurück, wenn es **`true`** **`false`** nicht erfüllt ist. Die Signatur der *pred* muss effektiv sein `bool pred(const T& arg);` , wobei `T` ein Typ ist, der `InputIterator` bei der Dereferenzierung implizit konvertiert werden kann. Das- **`const`** Schlüsselwort wird nur angezeigt, um zu veranschaulichen, dass das-Funktions Objekt oder Lambda das-Argument nicht ändern sollte.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein eingabeiterator, der auf das erste Element im Bereich verweist, das die vom Prädikat angegebene Bedingung erfüllt (das Prädikat ergibt **true**). Wenn kein Element gefunden wird, das das Prädikat erfüllt, wird der Wert von zurück *gegeben.*
+Ein eingabeiterator, der auf das erste Element im Bereich verweist, das die vom Prädikat angegebene Bedingung erfüllt (das Prädikat ergibt **`true`** ). Wenn kein Element gefunden wird, das das Prädikat erfüllt, wird der Wert von zurück *gegeben.*
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion ist eine Generalisierung des Algorithmus [find](algorithm-functions.md#find) und ersetzt das Prädikat „entspricht einem bestimmten Wert“ durch ein beliebiges Prädikat. Das logische Gegenstück (Suchen des ersten Elements, das das Prädikat nicht erfüllt) finden Sie unter [find_if_not](algorithm-functions.md#find_if_not).
 
@@ -2192,13 +2192,13 @@ Ein Eingabeiterator, der die Position des ersten Elements im zu durchsuchenden B
 Ein Eingabeiterator, der die Position hinter dem letzten Element im zu durchsuchenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt oder [Lambdaausdruck](../cpp/lambda-expressions-in-cpp.md), das bzw. der die Bedingung definiert, die nicht vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt bei **Erfüllung true** zurück, oder **false** , wenn es nicht erfüllt wird. Die Signatur der *pred* muss effektiv sein `bool pred(const T& arg);` , wobei `T` ein Typ ist, der `InputIterator` bei der Dereferenzierung implizit konvertiert werden kann. Das Schlüsselwort " **Konstanten** " wird nur angezeigt, um zu veranschaulichen, dass das Funktions Objekt oder Lambda das Argument nicht ändern sollte.
+Benutzerdefiniertes Prädikatfunktionsobjekt oder [Lambdaausdruck](../cpp/lambda-expressions-in-cpp.md), das bzw. der die Bedingung definiert, die nicht vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt bei Erfüllung zurück, wenn es **`true`** **`false`** nicht erfüllt ist. Die Signatur der *pred* muss effektiv sein `bool pred(const T& arg);` , wobei `T` ein Typ ist, der `InputIterator` bei der Dereferenzierung implizit konvertiert werden kann. Das- **`const`** Schlüsselwort wird nur angezeigt, um zu veranschaulichen, dass das-Funktions Objekt oder Lambda das-Argument nicht ändern sollte.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein eingabeiterator, der auf das erste Element im Bereich verweist, das die vom Prädikat angegebene Bedingung nicht erfüllt (das Prädikat ergibt **false**). Wenn alle Elemente das Prädikat erfüllen (das Prädikat ergibt für jedes Element **true** ), gibt den *letzten*zurück.
+Ein eingabeiterator, der auf das erste Element im Bereich verweist, das die vom Prädikat angegebene Bedingung nicht erfüllt (das Prädikat ergibt **`false`** ). Wenn alle Elemente das Prädikat erfüllen (das Prädikat ergibt **`true`** für jedes Element), wird der *Letzte*Wert zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion ist eine Generalisierung des Algorithmus [find](algorithm-functions.md#find) und ersetzt das Prädikat „entspricht einem bestimmten Wert“ durch ein beliebiges Prädikat. Das logische Gegenstück (Suchen des ersten Elements, das das Prädikat erfüllt) finden Sie unter [find_if](algorithm-functions.md#find_if).
 
@@ -2238,7 +2238,7 @@ Ein benutzerdefiniertes Funktionsobjekt, das auf jedes Element im Bereich angewe
 
 Eine Kopie des Funktionsobjekts, nachdem es auf alle Elemente im Bereich angewendet wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Algorithmus `for_each` ist hoch flexibel, sodass die benutzerdefinierte Änderung jedes einzelnen Elements eines Bereichs möglich sind. Vorlagenbasierte Funktionen, die möglicherweise in veränderter Form erneut verwendet werden, indem sie unterschiedliche Parameter erfüllen. Benutzerdefinierte Funktionen sammeln möglicherweise Informationen innerhalb eines internen Zustands, die der Algorithmus möglicherweise zurückgibt, nachdem er alle Elemente im Bereich verarbeitet hat.
 
@@ -2405,7 +2405,7 @@ Ein Forward-Iterator, der die Position des ersten Elements direkt hinter dem let
 *Genen*\
 Ein Funktionsobjekt, das ohne Argumente aufgerufen und verwendet wird, um die Werte zu generieren, die jedem der Elemente im Bereich zugeordnet werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Funktionsobjekt wird jedem Element im Bereich zugeordnet und muss nicht bei jedem Aufruf denselben Wert zurückgeben. Es kann z, B. aus einer Datei lesen oder auf einen lokalen Zustand verweisen und diesen ändern. Der Ergebnistyp des Generators muss in den Wertetyp des Vorwärtsiterators für den Bereich konvertierbar sein.
 
@@ -2489,7 +2489,7 @@ Ein Ganzzahltyp mit oder ohne Vorzeichen, der die Anzahl der dem Wert durch die 
 *Genen*\
 Ein Funktionsobjekt, das ohne Argumente aufgerufen und verwendet wird, um die Werte zu generieren, die jedem der Elemente im Bereich zugeordnet werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Funktionsobjekt wird jedem Element im Bereich zugeordnet und muss nicht bei jedem Aufruf denselben Wert zurückgeben. Es kann z, B. aus einer Datei lesen oder auf einen lokalen Zustand verweisen und diesen ändern. Der Ergebnistyp des Generators muss in den Wertetyp des Vorwärtsiterators für den Bereich konvertierbar sein.
 
@@ -2598,13 +2598,13 @@ Ein Eingabeiterator, der die Position des ersten Elements im zweiten der beiden 
 Ein Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element im zweiten der beiden aufeinanderfolgenden sortierten Quellbereiche adressiert, die darauf geprüft werden, ob alle Elemente des zweiten Bereichs auch im ersten Bereich enthalten sind.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt bei **Erfüllung true** zurück und **false** , wenn es nicht erfüllt wird.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der erste sortierte Bereich alle Elemente des zweiten Bereichs enthält; ansonsten **FALSE**.
+**`true`**, wenn der erste sortierte Bereich alle Elemente im zweiten sortierten Bereich enthält. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Anders ausgedrückt bedeutet dies, dass dieser Test feststellt, ob der zweite Quellbereich eine Teilmenge des ersten Quellbereichs ist.
 
@@ -2816,9 +2816,9 @@ Ein bidirektionaler Eingabeiterator, der die Position des ersten Elements im zwe
 Ein bidirektionaler Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element im zweiten der beiden nacheinander sortierten Bereiche adressiert, die kombiniert und zu einem einzelnen Bereich sortiert werden sollen.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls **false** .
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte zurückgeben, **`true`** Wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die sortierten aufeinanderfolgenden Quellbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein, und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -2939,7 +2939,7 @@ vector v3mod = ( 0 0 1 -1 2 -2 3 -3 4 -4 5 -5 )
 
 ## <a name="is_heap"></a><a name="is_heap"></a>is_heap
 
-Gibt **true** zurück, wenn die Elemente im angegebenen Bereich einen Heap bilden.
+Gibt zurück, **`true`** Wenn die Elemente im angegebenen Bereich einen Heap bilden.
 
 ```cpp
 template<class RandomAccessIterator>
@@ -2979,13 +2979,13 @@ Ein zufälliger direkter Iterator, der den Beginn eines Bereichs angibt, der auf
 Ein zufälliger direkter Iterator, der das Ende des Bereichs angibt.
 
 *pred*\
-Eine zu prüfende Bedingung, um Elemente zu sortieren. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt " **true** " oder " **false**" zurück.
+Eine zu prüfende Bedingung, um Elemente zu sortieren. Ein Vergleichs Prädikat nimmt zwei Argumente an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt **true** zurück, wenn die Elemente im angegebenen Bereich einen Heap bilden, andernfalls **false** .
+Gibt zurück **`true`** , wenn die Elemente im angegebenen Bereich einen Heap bilden, **`false`** Wenn dies nicht der Fall ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagen Funktion gibt [is_heap_until](algorithm-functions.md#is_heap_until)zurück `(first , last) == last` .
 
@@ -3041,7 +3041,7 @@ Ein binäres Prädikat, das die Bedingung der strengen schwachen Sortierung angi
 
 Gibt den *letzten* zurück, wenn der angegebene Bereich einen Heap bildet oder ein oder weniger Elemente enthält. Gibt andernfalls einen Iterator für das erste Elemente zurück, das die Heap-Bedingung nicht erfüllt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagenfunktion gibt den letzten Iterator `next` in `[first, last)` zurück, wobei `[first, next)` ein Heap ist, der vom Funktionsobjekt `std::less<>` sortiert wird. Wenn die Entfernung `last - first` kleiner als 2 ist, gibt die Funktion *Last*zurück.
 
@@ -3049,7 +3049,7 @@ Die zweite Vorlagen Funktion verhält sich wie die erste, mit der Ausnahme, dass
 
 ## <a name="is_partitioned"></a><a name="is_partitioned"></a>is_partitioned
 
-Gibt **true** zurück, wenn alle Elemente im angegebenen Bereich, die für eine Bedingung **true** testen, vor allen Elementen stehen, die **false**testen.
+Gibt zurück **`true`** , wenn alle Elemente im angegebenen Bereich, die **`true`** für eine Bedingung getestet werden, vor allen Elementen stehen, die Sie testen **`false`** .
 
 ```cpp
 template<class InputIterator, class UnaryPredicate>
@@ -3078,15 +3078,15 @@ Ein Eingabeiterator, der den Beginn des Bereichs angibt, ab wo nach Bedingungen 
 Ein Eingabeiterator, der das Ende eines Bereichs angibt.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll. Dies wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt, das bzw. der die Bedingung definiert, die vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll. Dies wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt, das bzw. der die Bedingung definiert, die vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt **true** zurück, wenn alle Elemente im angegebenen Bereich, die für eine Bedingung **true** testen, vor allen Elementen stehen, die **false**testen; andernfalls wird **false**zurückgegeben.
+Gibt zurück **`true`** , wenn alle Elemente im angegebenen Bereich, die **`true`** auf eine Bedingung testen, vor allen Elementen stehen, die testen **`false`** , und andernfalls zurückgibt **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt nur **dann true** zurück, wenn alle Elemente in `[first, last)` durch *pred*partitioniert sind, d. h., alle Elemente `X` in, `[first, last)` für die `pred (X)` true ist, treten vor allen Elementen, `Y` für die `pred (Y)` **false**ist, auf.
+Die Vorlagen Funktion gibt **`true`** nur dann zurück, wenn alle Elemente in `[first, last)` durch *pred*partitioniert sind, d. h., alle Elemente `X` in, `[first, last)` für die `pred (X)` true ist, treten vor allen Elementen auf `Y` , für die den `pred (Y)` **`false`** Wert hat.
 
 ## <a name="is_permutation"></a><a name="is_permutation"></a>is_permutation
 
@@ -3138,17 +3138,17 @@ Ein forward-Iterator, der für den Vergleich auf das erste Element eines zweiten
 Ein forward-Iterator, der für den Vergleich auf eine Stelle hinter dem letzten Element eines zweiten Bereichs verweist.
 
 *pred*\
-Ein Prädikat, das auf Äquivalenz prüft und einen **booleschen**Wert zurückgibt.
+Ein Prädikat, das auf Äquivalenz prüft und einen zurückgibt **`bool`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die Bereiche neu angeordnet werden können, sodass Sie gemäß dem Vergleichs Prädikat identisch sind. andernfalls **false**.
+**`true`** Wenn die Bereiche so neu angeordnet werden können, dass Sie gemäß dem Vergleichs Prädikat identisch sind, andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `is_permutation` verfügt im schlimmsten Fall über die quadratische Komplexität.
 
-Die erste Vorlagen Funktion geht davon aus, dass im Bereich, beginnend bei *First2* , so viele Elemente vorhanden sind, wie Sie im Bereich liegen, der durch angegeben wird `[first1, last1)` . Wenn es weitere Elemente im zweiten Bereich gibt, werden sie ignoriert; wenn es weniger sind, hat das ein undefiniertes Verhalten zur Folge. Die dritte Vorlagenfunktion (C++14 und höher) macht diese Annahme nicht. Beide geben nur **dann true** zurück, wenn für jedes Element x im Bereich, der von angegeben wird, `[first1, last1)` so viele Elemente Y in demselben Bereich vorhanden sind, für den X = = Y im Bereich liegt, beginnend bei *First2* oder `[first2, last2)` . Hier `operator==` muss einen paar weisen Vergleich zwischen seinen Operanden durchführen.
+Die erste Vorlagen Funktion geht davon aus, dass im Bereich, beginnend bei *First2* , so viele Elemente vorhanden sind, wie Sie im Bereich liegen, der durch angegeben wird `[first1, last1)` . Wenn es weitere Elemente im zweiten Bereich gibt, werden sie ignoriert; wenn es weniger sind, hat das ein undefiniertes Verhalten zur Folge. Die dritte Vorlagenfunktion (C++14 und höher) macht diese Annahme nicht. Beide geben **`true`** nur dann zurück, wenn für jedes Element x im Bereich, der von angegeben wird, `[first1, last1)` so viele Elemente y im selben Bereich sind, für den X = = Y vorhanden ist, wie im Bereich, beginnend bei *First2* oder `[first2, last2)` . Hier `operator==` muss einen paar weisen Vergleich zwischen seinen Operanden durchführen.
 
 Die zweiten und vierten Vorlagenfunktionen verhalten sich identisch, jedoch mit der Ausnahme, dass sie `operator==(X, Y)` durch `Pred(X, Y)` ersetzen. Für das ordnungsgemäße Verhalten muss das Prädikat symmetrisch, reflexiv und transitiv sein.
 
@@ -3210,7 +3210,7 @@ int main()
 
 ## <a name="is_sorted"></a><a name="is_sorted"></a>is_sorted
 
-Gibt **true** zurück, wenn die Elemente im angegebenen Bereich in sortierter Reihenfolge angeordnet sind.
+Gibt zurück, **`true`** Wenn die Elemente im angegebenen Bereich in sortierter Reihenfolge angeordnet sind.
 
 ```cpp
 template<class ForwardIterator>
@@ -3250,9 +3250,9 @@ Ein Forward-Iterator, der angibt, wo der zu prüfende Bereich beginnt.
 Ein Forward-Iterator, der das Ende eines Bereichs angibt.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll, um eine Reihenfolge zwischen zwei Elementen festzulegen. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt " **true** " oder " **false**" zurück. Dies führt den gleichen Task wie `operator<` aus.
+Eine Bedingung, auf die geprüft werden soll, um eine Reihenfolge zwischen zwei Elementen festzulegen. Ein Vergleichs Prädikat nimmt zwei Argumente an und gibt **`true`** oder zurück **`false`** . Dies führt den gleichen Task wie `operator<` aus.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagen Funktion gibt [is_sorted_until](#is_sorted_until)zurück `( first, last ) == last` . Die- `operator<` Funktion führt den Auftrags Vergleich aus.
 
@@ -3262,7 +3262,7 @@ Die zweite Vorlagenfunktion gibt `is_sorted_until( first, last , pred ) == last`
 
 Gibt ein `ForwardIterator` zurück, das auf das letzte Element festgelegt ist, das in der Sortierreihenfolge eines angegebenen Bereichs ist.
 
-Die zweite Version ermöglicht Ihnen die Bereitstellung eines Vergleichs Funktions Objekts, das **true** zurückgibt, wenn zwei angegebene Elemente in sortierter Reihenfolge vorliegen, andernfalls **false** .
+Die zweite Version ermöglicht Ihnen das Bereitstellen eines Vergleichs Funktions Objekts, das zurückgibt, **`true`** Wenn zwei angegebene Elemente in sortierter Reihenfolge sind, **`false`** andernfalls.
 
 ```cpp
 template<class ForwardIterator>
@@ -3302,13 +3302,13 @@ Ein Forward-Iterator, der angibt, wo der zu prüfende Bereich beginnt.
 Ein Forward-Iterator, der das Ende eines Bereichs angibt.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll, um eine Reihenfolge zwischen zwei Elementen festzulegen. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll, um eine Reihenfolge zwischen zwei Elementen festzulegen. Ein Vergleichs Prädikat nimmt zwei Argumente an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt ein `ForwardIterator` zurück, das auf das letzte Element in der Sortierreihenfolge festgelegt ist. Die sortierte Sequenz beginnt *zunächst*mit dem ersten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagenfunktion gibt den letzten Iterator `next` in `[first, last]` zurück, wobei `[first, next)` zu einer von `operator<` sortierten Sequenz wird. Wenn `distance()` kleiner als 2 ist, gibt die Funktion *Last*zurück.
 
@@ -3331,7 +3331,7 @@ Einer der Forward-Iteratoren, dessen Wert ausgetauscht werden soll.
 *Richting*\
 Der zweite der Forward-Iteratoren, dessen Wert ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `swap`sollte im Gegensatz zu **iter_swap**verwendet werden, die aus Gründen der Abwärtskompatibilität im C++-Standard enthalten war. Wenn `Fit1` und `Fit2` Forward-Iteratoren sind, `iter_swap( Fit1, Fit2 )` entspricht `swap( *Fit1, *Fit2 )` .
 
@@ -3526,13 +3526,13 @@ Ein Eingabeiterator, der die Position des ersten Elements im zweiten zu vergleic
 Ein Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element im zweiten zu vergleichenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt bei **Erfüllung true** zurück und **false** , wenn es nicht erfüllt wird.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der erste Bereich lexikographisch kleiner als der zweite Bereich ist; andernfalls **FALSE**.
+**`true`**, wenn der erste Bereich lexikografisch kleiner als der zweite Bereich ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein lexikographischer Vergleich zweier Sequenzen vergleicht diese elementweise bis:
 
@@ -3540,7 +3540,7 @@ Ein lexikographischer Vergleich zweier Sequenzen vergleicht diese elementweise b
 
 - keine Ungleichungen gefunden werden, aber eine Sequenz mehr Elemente als eine andere hat, und die kürzere Sequenz als kleiner als die längere Sequenz angesehen wird.
 
-- Es wurden keine Ungleichheiten gefunden, und die Sequenzen haben die gleiche Anzahl von Elementen, sodass die Sequenzen gleich sind und das Ergebnis des Vergleichs **false**ist.
+- Es wurden keine Ungleichheiten gefunden, und die Sequenzen haben die gleiche Anzahl von Elementen, sodass die Sequenzen gleich sind und das Ergebnis des Vergleichs ist **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -3668,13 +3668,13 @@ Ein Forward-Iterator, der die Position hinter dem letzten Element im zu durchsuc
 Der Wert, dessen erste Position oder mögliche erste Position in dem sortierten Bereich gesucht wird.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Forward-Iterator an der Position des ersten Elements in einem sortierten Bereich mit einem Wert, der größer als oder gleich einem angegebenen Wert ist, wobei die Äquivalenz von einem binären Prädikat angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der sortierte Quellbereich, auf den verwiesen wird, muss gültig sein. Alle Iteratoren müssen dereferenzierbar sein und die letzte Position muss der innerhalb der Reihenfolge vom ersten von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -3802,9 +3802,9 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements in dem Ber
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der in einen Heap konvertiert werden soll.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Heaps haben zwei Eigenschaften:
 
@@ -3899,9 +3899,9 @@ Die Initializerliste, die die zu vergleichenden Objekte enthält.
 
 Das größere der beiden Objekte, es sei denn, keins ist größer als das andere. In diesem Fall wird das erste der beiden Objekte zurückgegeben. Bei einem initializer_list-Element wird das größere der Objekte in der Liste zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der `max`-Algorithmus ist ungewöhnlich, denn er weist Objekte auf, die als Parameter übergeben werden. Die meisten C++-Algorithmen der Standardbibliothek werden auf einem Elementbereich ausgeführt, dessen Position von als Parameter übergebenen Iteratoren angegeben wird. Wenn Sie eine Funktion benötigen, die einen Elementbereich bearbeitet, verwenden Sie stattdessen [max_element](algorithm-functions.md#max_element). Visual Studio 2017 aktiviert **constexpr** für die über Ladungen, die eine initializer_list nehmen.
+Der `max`-Algorithmus ist ungewöhnlich, denn er weist Objekte auf, die als Parameter übergeben werden. Die meisten C++-Algorithmen der Standardbibliothek werden auf einem Elementbereich ausgeführt, dessen Position von als Parameter übergebenen Iteratoren angegeben wird. Wenn Sie eine Funktion benötigen, die einen Elementbereich bearbeitet, verwenden Sie stattdessen [max_element](algorithm-functions.md#max_element). Visual Studio 2017 aktiviert **`constexpr`** auf den über Ladungen, die eine initializer_list nehmen.
 
 ### <a name="example"></a>Beispiel
 
@@ -4113,13 +4113,13 @@ Ein Vorwärtsiterator, der die Position des ersten Elements im nach dem größte
 Ein Vorwärtsiterator, der die Position direkt hinter dem letzten Elements im nach dem größten Element zu durchsuchenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls **false** .
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte zurückgeben, **`true`** Wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Vorwärtsiterator, der die Position des ersten Vorkommen des größten Elements im zu durchsuchenden Bereich adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -4288,13 +4288,13 @@ Ein Eingabeiterator, der die Position hinter dem letzten Element im zweiten der 
 Ein Ausgabeiterator, der die Position des ersten Elements im ersten Zielbereich adressiert, in dem die beiden Quellbereiche kombiniert und zu einem einzelnen Bereich sortiert werden sollen.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls **false** .
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte zurückgeben **`true`** , wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im sortierten Zielbereich adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die sortierten Quellbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -4464,7 +4464,7 @@ Die `initializer_list` , die die zu vergleichenden Member enthält.
 
 Das kleinere der beiden Objekte, es sei denn, keins ist geringer als das andere. In diesem Fall wird das erste der beiden Objekte zurückgegeben. Im Fall eines `initializer_list` gibt es den geringsten Wert der-Objekte in der Liste zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `min`-Algorithmus ist ungewöhnlich, denn er weist Objekte auf, die als Parameter übergeben werden. Die meisten C++-Algorithmen der Standardbibliothek werden auf einem Elementbereich ausgeführt, dessen Position von als Parameter übergebenen Iteratoren angegeben wird. Wenn Sie eine Funktion benötigen, die einen Elementbereich nutzt, verwenden Sie [min_element](algorithm-functions.md#min_element). [constexpr](../cpp/constexpr-cpp.md) wurde für die `initializer_list` über Ladungen in Visual Studio 2017 aktiviert.
 
@@ -4677,13 +4677,13 @@ Ein Forward-Iterator, der die Position des ersten Elements im nach dem kleinsten
 Ein Forward-Iterator, der die Position des ersten Elements direkt hinter dem letzten Element im nach dem kleinsten Element zu durchsuchenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls **false** .
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte zurückgeben **`true`** , wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Forward-Iterator, der die Position des ersten Vorkommen des kleinsten Elements im zu durchsuchenden Bereich adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -4841,15 +4841,15 @@ Ein Forward-Iterator, der das Beginn eines Bereichs angibt.
 Ein Forward-Iterator, der das Ende eines Bereichs angibt.
 
 *pred*\
-Ein benutzerdefiniertes Prädikat Funktions Objekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte **true** zurückgeben, wenn die erste kleiner als die zweite ist, andernfalls **false** .
+Ein benutzerdefiniertes Prädikat Funktions Objekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das Vergleichs Prädikat übernimmt zwei Argumente und sollte zurückgeben **`true`** , wenn die erste kleiner als die zweite ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Rückgabe
+Gibt zurück
 
 `pair<ForwardIterator, ForwardIterator>( min_element(first, last), max_element(first, last))`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagenfunktion gibt Folgendes zurück:
 
@@ -4899,7 +4899,7 @@ Ein binäres Prädikat, das zum Vergleichen der beiden Objekte verwendet wird.
 *InList*\
 Die `initializer_list` , die die zu vergleichenden Member enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagen Funktion gibt zurück, `pair<const Type&, const Type&>( right, left )` Wenn *Rechts* kleiner als *Links*ist. Andernfalls wird `pair<const Type&, const Type&>( left, right )`zurückgegeben.
 
@@ -5003,13 +5003,13 @@ Ein Eingabeiterator, der die Position des ersten Elements im zweiten zu testende
 Ein Eingabeiterator, der die Position hinter dem letzten Element im zweiten zu testenden Bereich adressiert.
 
 *pred*\
-Das benutzerdefinierte Prädikatfunktionsobjekt vergleicht die aktuellen Elemente in jedem Bereich und bestimmt, ob sie gleich sind. Gibt **TRUE** zurück, wenn erfüllt und **FALSE**, wenn nicht erfüllt.
+Das benutzerdefinierte Prädikatfunktionsobjekt vergleicht die aktuellen Elemente in jedem Bereich und bestimmt, ob sie gleich sind. Sie gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Paar von Iteratoren zu den Positionen des Konflikts in zwei Bereichen, der erste Komponenteniterator an die Position im ersten Bereich und der zweite Komponenteniterator an die Position im zweiten Bereich. Wenn es im Vergleich zwischen den Elementen keinen Unterschied gibt oder das binäre Prädikat in der zweiten Version durch alle Elementpaare aus den beiden Bereichen erfüllt wird, verweist der erste Komponenteniterator auf die erste Position hinter dem letzten Element in den ersten Bereich und der zweite Komponenteniterator auf die Position eine Stelle nach dem letzten Element im zweiten Bereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Vorlagenfunktion geht davon aus, dass im Bereich beginnend mit beginnend mit first2 so viele Elemente vorhanden sind, wie es im Bereich [first1, last1) der Fall ist. Wenn es mehr im zweiten Bereich gibt, werden Sie ignoriert. Wenn weniger vorhanden ist, ergibt sich ein nicht definiertes Verhalten.
 
@@ -5147,7 +5147,7 @@ Eine Eingabeiterator, der angibt, bis zu welcher Position die Elemente kopiert w
 *dest*\
 Der Ausgabeiterator, der die zu verschiebenden Elemente enthalten soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion wertet `*(dest + N) = move(*(first + N))` einmal für jedes Element `N` im Bereich `[0, last - first)` aus – bei strikt ansteigende Werte von `N` beginnend mit dem niedrigsten. Dann wird `dest + N` zurückgegeben. Wenn `dest` und *zuerst* Speicherbereiche festlegen, darf " *dest* " nicht im Bereich liegen `[first, last)` .
 
@@ -5174,7 +5174,7 @@ Ein Iterator, der das Ende eines Bereichs angibt, aus dem Elemente verschoben we
 *DestEnd*\
 Ein bidirektionaler Iterator, der die Position hinter dem letzten Element im Zielbereich adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion wertet `*(destEnd - N - 1) = move(*(last - N - 1))` einmal für jedes Element `N` im Bereich `[0, last - first)` aus – bei strikt ansteigende Werte von `N` beginnend mit dem niedrigsten. Dann wird `destEnd - (last - first)` zurückgegeben. Wenn " *DestEnd* " und " *First* " Speicherbereiche angeben, darf " *DestEnd* " nicht im Bereich liegen `[first, last)` .
 
@@ -5206,13 +5206,13 @@ Ein bidirektionaler Iterator, der auf die Position des ersten Elements im zu per
 Ein bidirektionaler Iterator, der auf die Position des ersten Elements direkt hinter dem letzten Element im zu permutierenden Bereich zeigt.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die lexikographisch nächste Permutation beendet wird und die ursprüngliche Reihenfolge des Bereichs ersetzt hat; andernfalls **FALSE**. In diesem Fall wird die Reihenfolge in die lexikographisch kleinste Permutation umgewandelt.
+**`true`**, wenn die lexikografisch nächste permutations vorhanden ist und die ursprüngliche Reihenfolge des Bereichs ersetzt hat. andernfalls **`false`** wird die Reihenfolge in die lexikografisch kleinste Permutation umgewandelt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -5408,9 +5408,9 @@ Ein zufälliger Eingabeiterator, der die Position des Elements, das auf der Gren
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der partitioniert werden soll.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt bei **Erfüllung true** zurück und **false** , wenn es nicht erfüllt wird.
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -5488,7 +5488,7 @@ int main() {
 
 ## <a name="none_of"></a><a name="none_of"></a>none_of
 
-Gibt **true** zurück, wenn eine Bedingung nicht zwischen Elementen im angegebenen Bereich vorhanden ist.
+Gibt zurück, **`true`** Wenn eine Bedingung nie zwischen Elementen im angegebenen Bereich vorhanden ist.
 
 ```cpp
 template<class InputIterator, class UnaryPredicate>
@@ -5517,15 +5517,15 @@ Ein Eingabe-Iterator, der angibt, ab wo ein Bereich von Elementen auf eine Bedin
 Eine Eingabeiterator, das Ende eines Bereichs von Elementen angibt.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll. Diese Bedingung wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll. Diese Bedingung wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt **true** zurück, wenn die Bedingung nicht mindestens einmal im festgelegten Bereich erkannt wird, und **false** , wenn die Bedingung erkannt wird.
+Gibt zurück **`true`** , wenn die Bedingung nicht mindestens einmal im angegeben Bereich erkannt wird, und, **`false`** Wenn die Bedingung erkannt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt nur **dann true** zurück, wenn `N` das Prädikat für einige im Bereich `[0, last - first)` `pred(*(first + N))` immer **false**ist.
+Die Vorlagen Funktion gibt **`true`** nur dann zurück, wenn `N` `[0, last - first)` das Prädikat für einige im Bereich `pred(*(first + N))` immer ist **`false`** .
 
 ## <a name="partial_sort"></a><a name="partial_sort"></a>partial_sort
 
@@ -5576,9 +5576,9 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hin
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der teilweise sortiert werden soll.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -5714,13 +5714,13 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements im sortier
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element im sortierten Zielbereich adressiert.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein zufälliger Eingabeiterator, der Elemente im Zielbereich, die direkt hinter dem letzten aus dem Quellbereich eingefügten Element liegen, adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Quell- und Zielbereiche dürfen sich nicht überlappen und müssen gültig sein: Alle Zeiger müssen dereferenzierbar sein; die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -5833,13 +5833,13 @@ Ein bidirektionaler Iterator, der die Position des ersten Elements in dem Bereic
 Ein bidirektionaler Iterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der partitioniert werden soll.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die erfüllt werden muss, wenn ein Element eingeordnet werden soll. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die erfüllt werden muss, wenn ein Element eingeordnet werden soll. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein bidirektionaler Iterator, der die Position des ersten Elements in dem Bereich adressiert, das die Prädikatbedingung nicht erfüllt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -5890,7 +5890,7 @@ int main()
 
 ## <a name="partition_copy"></a><a name="partition_copy"></a>partition_copy
 
-Kopiert Elemente, für die eine Bedingung **true** ist, in ein Ziel, für das die Bedingung **false** ist. Die Elemente müssen von einem angegebenen Bereich stammen.
+Kopiert Elemente, für die eine Bedingung **`true`** in ein Ziel ist, und für die die Bedingung **`false`** zu einer anderen ist. Die Elemente müssen von einem angegebenen Bereich stammen.
 
 ```cpp
 template<class InputIterator, class OutputIterator1, class OutputIterator2, class UnaryPredicate>
@@ -5929,9 +5929,9 @@ Ein Ausgabeiterator, der verwendet wird, um Elemente zu kopieren, die für eine 
 Ein Ausgabeiterator, der verwendet wird, um Elemente zu kopieren, die für eine mit *pred*getestete Bedingung false zurückgeben
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll. Diese Bedingung wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt, das die zu prüfende Bedingung definiert. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll. Diese Bedingung wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt, das die zu prüfende Bedingung definiert. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagen Funktion kopiert jedes Element `X` in in, wenn den Wert `[first,last)` `*dest1++` `pred(X)` true hat, oder, wenn dies nicht der Fall ist `*dest2++` . Er gibt `pair<OutputIterator1, OutputIterator2>(dest1, dest2)` zurück.
 
@@ -5956,15 +5956,15 @@ Ein `ForwardIterator`, der den Beginn eines Bereichs angibt, der auf eine Beding
 Ein `ForwardIterator`, der das Ende eines Bereichs angibt.
 
 *pred*\
-Eine Bedingung, auf die geprüft werden soll. Dies wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt, das bzw. der die Bedingung definiert, die vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt " **true** " oder " **false**" zurück.
+Eine Bedingung, auf die geprüft werden soll. Dies wird von einem benutzerdefinierten Prädikatfunktionsobjekt bereitgestellt, das bzw. der die Bedingung definiert, die vom zu suchenden Element erfüllt wird. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt **`true`** oder zurück **`false`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt einen zurück `ForwardIterator` , der auf das erste Element verweist, das die für *pred*getestete Bedingung nicht erfüllt, oder gibt den *letzten* zurück, wenn kein Wert gefunden wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion findet den ersten Iterator `it` in `[first, last)` , für `pred(*it)` den **false**ist. Die Sequenz muss nach *pred*geordnet werden.
+Die Vorlagen Funktion findet den ersten Iterator `it` in `[first, last)` , für den `pred(*it)` ist **`false`** . Die Sequenz muss nach *pred*geordnet werden.
 
 ## <a name="pop_heap"></a><a name="pop_heap"></a>pop_heap
 
@@ -5992,9 +5992,9 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements im Heap ad
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element im Heap adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Algorithmus `pop_heap` ist die Umkehrung des Vorgangs, der vom push_heap-Algorithmus durchgeführt wird. In diesem Vorgang wird das vorletzte Element eines Bereichs einem Heap hinzugefügt, der aus den vorherigen Elementen des Bereichs besteht, wenn das hinzuzufügende Element größer als alle anderen Elemente des Heaps sind.
 
@@ -6101,13 +6101,13 @@ Ein bidirektionaler Iterator, der auf die Position des ersten Elements im zu per
 Ein bidirektionaler Iterator, der auf die Position des ersten Elements direkt hinter dem letzten Element im zu permutierenden Bereich zeigt.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die lexikografisch vorherige permutations vorhanden ist und die ursprüngliche Reihenfolge des Bereichs ersetzt hat. andernfalls " **false**". in diesem Fall wird die Reihenfolge in die lexikografisch größte Permutation umgewandelt.
+**`true`**, wenn die lexikografisch vorherige permutations vorhanden ist und die ursprüngliche Reihenfolge des Bereichs ersetzt hat. andernfalls **`false`** wird die Reihenfolge in die lexikografisch größte Permutation umgewandelt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -6276,9 +6276,9 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements im Heap ad
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der in einen Heap konvertiert werden soll.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zunächst muss das Element ans Ende eines vorhandenen Heaps bewegt werden; danach kann der Algorithmus verwendet werden, um das Element dem vorhanden Heap hinzuzufügen.
 
@@ -6404,7 +6404,7 @@ Der Wert, der aus dem Bereich entfernt werden soll.
 
 Ein Vorwärtsiterator für die neue Endposition des veränderten Bereichs, eine Position hinter dem letzten Element der verbleibenden Sequenz, die den angegebenen Wert nicht enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -6505,7 +6505,7 @@ Der Wert, der aus dem Bereich entfernt werden soll.
 
 Ein Forward-Iterator, der die neue Endposition des Zielbereichs adressiert, sprich eine Position hinter dem letzten Element der Kopie der verbleibenden Sequenz, die den angegebenen Wert nicht enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Quell- und Zielbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein, und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -6603,7 +6603,7 @@ Das unäre Prädikat, das erfüllt werden muss, ist der Wert eines zu ersetzende
 
 Ein Forward-Iterator, der die neue Endposition des Zielbereichs adressiert, sprich eine Position hinter dem letzten Element der verbleibenden Sequenz, die die Elemente nicht enthält, die das Prädikat erfüllen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Quellbereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -6705,7 +6705,7 @@ Das unäre Prädikat, das erfüllt werden muss, ist der Wert eines zu ersetzende
 
 Ein Vorwärtsiterator für die neue Endposition des veränderten Bereichs, eine Position hinter dem letzten Element der verbleibenden Sequenz, die den angegebenen Wert nicht enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -6807,7 +6807,7 @@ Der alte Wert der ersetzten Elemente.
 *NewVal*\
 Der neue Wert, der den Elementen mit dem alten Wert zugewiesen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -6903,7 +6903,7 @@ Der neue Wert, der den Elementen mit dem alten Wert zugewiesen wird.
 
 Ein Ausgabeiterator, der auf die Position hinter dem letzten Element im Zielbereich verweist, in den die geänderte Sequenz von Elementen kopiert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Quell- und Zielbereiche, auf die verwiesen wird, dürfen sich nicht überlappen und müssen gültig sein: Alle Zeiger müssen dereferenzierbar sein, und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7018,7 +7018,7 @@ Der neue Wert, der den Elementen zugewiesen wird, deren alter Wert das Prädikat
 
 Ein Ausgabeiterator, der auf die Position hinter dem letzten Element im Zielbereich verweist, in den die geänderte Sequenz von Elementen kopiert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Quell- und Zielbereiche, auf die verwiesen wird, dürfen sich nicht überlappen und müssen gültig sein: Alle Zeiger müssen dereferenzierbar sein, und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7132,7 +7132,7 @@ Das unäre Prädikat, das erfüllt werden muss, ist der Wert eines zu ersetzende
 *Wert*\
 Der neue Wert, der den Elementen zugewiesen wird, deren alter Wert das Prädikat erfüllt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7218,7 +7218,7 @@ Ein bidirektionaler Iterator, der auf die Position des ersten Elements im Bereic
 *letzten*\
 Ein bidirektionaler Iterator, der auf die Position hinter dem letzten Element im Bereich verweist, in dem die Elemente permutiert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Quellbereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7302,7 +7302,7 @@ Ein Ausgabeiterator, der auf die Position des ersten Elements in dem Zielbereich
 
 Ein Ausgabeiterator, der auf die Position hinter dem letzten Element im Zielbereich verweist, in den die geänderte Sequenz von Elementen kopiert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Quell- und Zielbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein, und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7380,7 +7380,7 @@ Ein Forward-Iterator, der die Grenzen innerhalb des Bereichs definiert, der die 
 *letzten*\
 Ein Forward-Iterator, der die Position hinter dem letzten Element im zu rotierenden Bereich adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Bereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7503,7 +7503,7 @@ Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressi
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im Zielbereich adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Bereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -7643,7 +7643,7 @@ Ein Forward-Iterator, der die Position des ersten Elements im abzugleichenden Be
 Ein Forward-Iterator, der die Position hinter dem letzten Element im abzugleichenden Bereich adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 *Searcher*\
 Der Searcher, der das zu suchende Muster und den zu verwendenden Suchalgorithmus kapselt. Weitere Informationen zu searchern finden Sie unter [default_searcher Klasse](default-searcher-class.md), [boyer_moore_horspool_searcher Klasse](boyer-moore-horspool-searcher-class.md)und [boyer_moore_searcher Klasse](boyer-moore-searcher-class.md).
@@ -7652,7 +7652,7 @@ Der Searcher, der das zu suchende Muster und den zu verwendenden Suchalgorithmus
 
 Ein Forward-Iterator, der die Position des ersten Elements der ersten Untersequenz adressiert, die der angegebenen Sequenz entspricht oder die wie von einem binären Prädikat angegeben äquivalent ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zur Bestimmung des Gleichheitszustands zwischen einem Element und dem angegebenen Wert verwendete `operator==` muss eine Äquivalenzrelation zwischen zwei Operanden vorgeben.
 
@@ -7815,13 +7815,13 @@ Die Größe der zu suchenden Untersequenz.
 Der Wert der Elemente in der durchsuchten Sequenz.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Forward-Iterator, der die Position des ersten Elements der ersten Untersequenz adressiert, die der angegebenen Sequenz entspricht oder die wie von einem binären Prädikat angegeben äquivalent ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zur Bestimmung des Gleichheitszustands zwischen einem Element und dem angegebenen Wert verwendete `operator==` muss eine Äquivalenzrelation zwischen zwei Operanden vorgeben.
 
@@ -7975,13 +7975,13 @@ Ein Eingabeiterator, der die Position hinter dem letzten Element im zweiten der 
 Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressiert, in den die beiden Quellbereiche kombiniert werden sollen. Dieser Zielbereich wird sortiert und repräsentiert den Unterschied der beiden Quellbereiche.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat akzeptiert zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls wird **false** zurückgegeben.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat übernimmt zwei Argumente und sollte zurückgeben, **`true`** Wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im sortierten Zielbereich adressiert, der den Unterschied der beiden Quellbereiche repräsentiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die sortierten Quellbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -8177,13 +8177,13 @@ Ein Eingabeiterator, der die Position hinter dem letzten Element im zweiten der 
 Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressiert, zu dem die beiden Quellbereiche kombiniert werden sollen. Dieser Zielbereich wird sortiert und repräsentiert die Schnittmenge der beiden Quellbereiche.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat akzeptiert zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls wird **false** zurückgegeben.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat übernimmt zwei Argumente und sollte zurückgeben, **`true`** Wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im sortierten Zielbereich adressiert, der die Schnittmenge der beiden Quellbereiche repräsentiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die sortierten Quellbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -8375,13 +8375,13 @@ Ein Eingabeiterator, der die Position hinter den letzten Element im zweiten der 
 Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressiert, zu dem die beiden Quellbereiche kombiniert werden sollen. Dieser Zielbereich wird sortiert und repräsentiert den symmetrischen Unterschied der beiden Quellbereiche.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat akzeptiert zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls wird **false** zurückgegeben.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat übernimmt zwei Argumente und sollte zurückgeben, **`true`** Wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im sortierten Zielbereich adressiert, der den symmetrischen Unterschied der beiden Quellbereiche repräsentiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die sortierten Quellbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -8577,13 +8577,13 @@ Ein Eingabeiterator, der die Position hinter dem letzten Element im zweiten der 
 Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressiert, zu dem die beiden Quellbereiche kombiniert werden sollen. Dieser Zielbereich wird sortiert und repräsentiert die Verbindung der beiden Quellbereiche.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat akzeptiert zwei Argumente und sollte **true** zurückgeben, wenn das erste Element kleiner als das zweite Element ist, andernfalls wird **false** zurückgegeben.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Das binäre Prädikat übernimmt zwei Argumente und sollte zurückgeben, **`true`** Wenn das erste Element kleiner als das zweite Element ist, **`false`** andernfalls.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Element im sortierten Zielbereich adressiert, der die Verbindung der beiden Quellbereiche repräsentiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die sortierten Quellbereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein.
 
@@ -8739,7 +8739,7 @@ Ein Iterator für das letzte Element im zu mischenden Bereich, exklusiv. Muss di
 *Genen*\
 Der Zufallszahlengenerator, den die `shuffle()`-Funktion für den Vorgang verwendet. Muss die Anforderungen eines `UniformRandomNumberGenerator` erfüllen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen und ein Codebeispiel, in dem verwendet `shuffle()` wird, finden Sie unter [\<random>](random.md) .
 
@@ -8785,9 +8785,9 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements in dem Ber
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der sortiert werden soll.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Dieses binäre Prädikat übernimmt zwei Argumente und gibt **true** zurück, wenn die beiden Argumente in der richtigen Reihenfolge vorliegen, andernfalls **false** . Diese Vergleichoperatorfunktion muss eine strikte schwache Sortierung auf Elementenpaare der Sequenz anwenden. Weitere Informationen finden Sie unter [Algorithmen](algorithms.md).
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Dieses binäre Prädikat übernimmt zwei Argumente und gibt zurück, **`true`** Wenn die beiden Argumente in der richtigen Reihenfolge vorliegen und **`false`** andernfalls. Diese Vergleichoperatorfunktion muss eine strikte schwache Sortierung auf Elementenpaare der Sequenz anwenden. Weitere Informationen finden Sie unter [Algorithmen](algorithms.md).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -8889,9 +8889,9 @@ Ein zufälliger Eingabeiterator, der die Position des ersten Elements im Zielhea
 Ein zufälliger Eingabeiterator, der die Position des ersten Elements direkt hinter dem letzten Element im Zielheap adressiert.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt bei **Erfüllung true** zurück und **false** , wenn es nicht erfüllt wird.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Heaps haben zwei Eigenschaften:
 
@@ -8994,13 +8994,13 @@ Ein bidirektionaler Iterator, der die Position des ersten Elements in dem Bereic
 Ein bidirektionaler Iterator, der die Position des ersten Elements direkt hinter dem letzten Element in dem Bereich adressiert, der partitioniert werden soll.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die erfüllt werden muss, wenn ein Element eingeordnet werden soll. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt bei **Erfüllung true** zurück, oder **false** , wenn es nicht erfüllt wird.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die Bedingung definiert, die erfüllt werden muss, wenn ein Element eingeordnet werden soll. Ein unäres Prädikat nimmt ein einzelnes Argument an und gibt bei Erfüllung zurück, wenn es **`true`** **`false`** nicht erfüllt ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein bidirektionaler Iterator, der die Position des ersten Elements in dem Bereich adressiert, das die Prädikatbedingung nicht erfüllt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -9095,9 +9095,9 @@ Ein bidirektionaler Iterator, der die Position des ersten Elements in dem Bereic
 Ein bidirektionaler Iterator, der die Position des ersten Elements in dem Bereich adressiert, der sortiert werden soll.
 
 *pred*\
-Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Ein benutzerdefiniertes Prädikatfunktionsobjekt, das das Vergleichskriterium definiert, das von aufeinanderfolgenden Elementen in der Reihenfolge erfüllt werden soll. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Bereich, auf den verwiesen wird, muss gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar.
 
@@ -9195,7 +9195,7 @@ Das erste Objekt, dessen Inhalte beim ersten Überschreiben ausgetauscht werden 
 *Richting*\
 Das zweite Objekt, dessen Inhalt beim ersten Überschreiben ausgetauscht werden soll. Das zweite Array von Objekten, dessen Inhalte beim zweiten Überschreiben ausgetauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Überladung wurde dafür entwickelt, einzelne Objekte zu verarbeiten. Die zweite Überladung tauscht die Inhalte von Objekten zwischen zwei Arrays aus.
 
@@ -9292,7 +9292,7 @@ Ein Forward-Iterator, der die erste Position des zweiten Bereichs anzeigt, desse
 
 Ein Forward-Iterator, der die erste Position direkt hinter der letzten Position des zweiten Bereichs anzeigt, dessen Elemente ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Bereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb der Sequenz ist von der ersten Position aus durch Zunahme erreichbar. Der zweite Bereich muss so groß wie der erste Bereich sein.
 
@@ -9421,7 +9421,7 @@ Ein benutzerdefiniertes unäres Objekt, das in der ersten Version des Algorithmu
 
 Ein Ausgabeiterator, der die Position direkt hinter dem letzten Element im Zielbereich adressiert, der die vom Funktionsobjekt umgewandelten Ausgabeelemente erhält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Bereiche, auf die verwiesen wird, müssen gültig sein. Alle Zeiger müssen dereferenzierbar sein und die letzte Position innerhalb jeder Sequenz muss von der ersten Position aus durch Zunahme erreichbar sein. Der Zielbereich muss groß genug sein, damit er den umgewandelten Quellbereich aufnehmen kann.
 
@@ -9557,13 +9557,13 @@ Ein Forward-Iterator, der die Position des ersten Elements im Bereich adressiert
 Ein Forward-Iterator, der die Position des ersten Elements direkt hinter dem letzten Element im Bereich adressiert, der zum Entfernen von doppelten Elementen durchsucht werden soll.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Forward-Iterator am neuen Ende der veränderten Sequenz, die keine aufeinanderfolgenden doppelten Elemente enthält, adressiert die Position direkt hinter dem letzten Element, das nicht entfernt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beide Formen des Algorithmus entfernen das zweite Duplikat eines aufeinanderfolgenden Paars gleicher Elemente.
 
@@ -9713,13 +9713,13 @@ Ein Vorwärtsiterator, der die Position hinter dem letzten Element im zu kopiere
 Ein Vorwärtsiterator, der die Position des ersten Elements im Zielbereich adressiert, der die Kopie erhält, aus der aufeinanderfolgende Duplikate entfernt wurden.
 
 *pred*\
-Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat akzeptiert zwei Argumente und gibt bei Erfüllung **true** und bei Nichterfüllung **false** zurück.
+Benutzerdefiniertes Prädikatfunktionsobjekt, das die zu erfüllende Bedingung definiert, wenn zwei Elemente als gleichwertig akzeptiert werden. Ein binäres Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der die Position hinter dem letzten Elements im Zielbereich adressiert, der die Kopie erhält, aus der aufeinanderfolgende Duplikate entfernt wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beide Formen des Algorithmus entfernen das zweite Duplikat eines aufeinanderfolgenden Paars gleicher Elemente.
 
@@ -9832,13 +9832,13 @@ Die Position eine Stelle hinter dem letzten Element im zu durchsuchenden Bereich
 Der Wert im sortierten Bereich, der vom Wert des vom zurückgegebenen Iterator adressierten Elements überschritten werden muss.
 
 *pred*\
-Ein benutzerdefiniertes Vergleichs-Prädikat Funktions Objekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt bei **Erfüllung true** zurück und **false** , wenn es nicht erfüllt wird.
+Ein benutzerdefiniertes Vergleichs-Prädikat Funktions Objekt, das den Sinn definiert, in dem ein Element kleiner als ein anderes ist. Ein Vergleichs Prädikat übernimmt zwei Argumente und gibt **`true`** bei Erfüllung und **`false`** bei Nichterfüllung zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Forward-Iterator zur Position des ersten Elements, das über einen Wert größer als den angegebenen Wert verfügt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der sortierte Quellbereich, auf den verwiesen wird, muss gültig sein. Alle Iteratoren müssen dereferenzierbar sein und die letzte Position muss der innerhalb der Reihenfolge vom ersten von der ersten Position aus durch Zunahme erreichbar sein.
 

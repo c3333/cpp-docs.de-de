@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C++ Standard Library, algorithms
 - <algorithm> header
 ms.assetid: 19f97711-7a67-4a65-8fd1-9a2bd3ca327d
-ms.openlocfilehash: d36ee5ea0d38455b52cb988dc30b13d47be16e53
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: a2a48eec2ed75fffd711a8704cb8c896f8ee7242
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623848"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87205534"
 ---
 # <a name="ltalgorithmgt"></a>&lt;algorithm&gt;
 
@@ -28,7 +28,7 @@ Definiert C++-Standardbibliothek-Containervorlagenfunktionen, die Algorithmen au
 > [!NOTE]
 > Die \<algorithm> Bibliothek verwendet auch die- `#include <initializer_list>` Anweisung.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die C++-Standardbibliotheksalgorithmen sind generisch, da sie für verschiedene Datenstrukturen ausgeführt werden können. Die Datenstrukturen, für die sie ausgeführt werden können, umfassen nicht nur die C++-Standardbibliothek-Containerklassen wie `vector` und `list`, sondern auch programmdefinierte Datenstrukturen und Arrays von Elementen, die den Anforderungen eines bestimmten Algorithmus entsprechen. C++-Standardbibliotheksalgorithmen erzielen dieses Maß an Allgemeingültigkeit, indem sie indirekt über Iteratoren auf die Elemente eines Containers zugreifen und diese durchlaufen.
 
@@ -49,13 +49,13 @@ Numerische Algorithmen der C++-Standard Bibliothek, die für die numerische Vera
 |||
 |-|-|
 |[adjacent_find](algorithm-functions.md#adjacent_find)|Sucht zwei benachbarte Elemente, die entweder gleich sind oder eine angegebene Bedingung erfüllen.|
-|[all_of](algorithm-functions.md#all_of)|Gibt **true** zurück, wenn eine Bedingung bei jedem Element im angegebenen Bereich vorhanden ist.|
-|[any_of](algorithm-functions.md#any_of)|Gibt **true** zurück, wenn eine Bedingung mindestens einmal im angegebenen Bereich von Elementen vorhanden ist.|
+|[all_of](algorithm-functions.md#all_of)|Gibt zurück, **`true`** Wenn eine Bedingung bei jedem Element im angegebenen Bereich vorhanden ist.|
+|[any_of](algorithm-functions.md#any_of)|Gibt zurück, **`true`** Wenn eine Bedingung mindestens einmal im angegebenen Bereich von Elementen vorhanden ist.|
 |[binary_search](algorithm-functions.md#binary_search)|Testet, ob ein Element in einem sortierten Bereich einem angegebenen Wert entspricht oder ihm auf eine von einem binären Prädikat angegebene Weise gleicht.|
 |[gekl](algorithm-functions.md#clamp)||
 |[copy](algorithm-functions.md#copy)|Weist die Werte von Elementen aus einem Quellbereich einem Zielbereich zu, durchläuft die Quellelementsequenz und weist ihnen vorwärts neue Positionen zu.|
 |[copy_backward](algorithm-functions.md#copy_backward)|Weist die Werte von Elementen aus einem Quellbereich einem Zielbereich zu, durchläuft die Quellelementsequenz und weist ihnen rückwärts neue Positionen zu.|
-|[copy_if](algorithm-functions.md#copy_if)|Alle Elemente in einem bestimmten Bereich kopieren, die für eine angegebene Bedingung " **true** " testen|
+|[copy_if](algorithm-functions.md#copy_if)|Alle Elemente in einem bestimmten Bereich kopieren, die **`true`** auf eine angegebene Bedingung prüfen|
 |[copy_n](algorithm-functions.md#copy_n)|Kopiert eine angegebene Anzahl von Elementen.|
 |[count](algorithm-functions.md#count)|Gibt die Anzahl von Elementen in einem Bereich zurück, dessen Werte mit einem angegebenen Wert übereinstimmen.|
 |[count_if](algorithm-functions.md#count_if)|Gibt die Anzahl von Elementen in einem Bereich zurück, dessen Werte mit einer angegebenen Bedingung übereinstimmen.|
@@ -74,19 +74,19 @@ Numerische Algorithmen der C++-Standard Bibliothek, die für die numerische Vera
 |[generate_n](algorithm-functions.md#generate_n)|Weist die Werte, die von einem Funktionsobjekt generiert werden, einer angegebenen Anzahl von Elementen eines Bereichs zu und kehrt zu der Position zurück, die direkt nach dem letzten zugewiesenen Wert liegt.|
 |[schließt](algorithm-functions.md#includes)|Testet, ob ein sortierter Bereich alle Elemente enthält, die in einem zweiten sortierten Bereich enthalten sind, wobei das Sortier- oder Äquivalenzkriterium für die Elemente durch ein binäres Prädikat angegeben werden kann.|
 |[inplace_merge](algorithm-functions.md#inplace_merge)|Kombiniert die Elemente von zwei aufeinander folgenden sortierten Bereichen in einen einzelnen sortierten Bereich, wobei das Sortierkriterium durch ein binäres Prädikat angegeben werden kann.|
-|[is_heap](algorithm-functions.md#is_heap)|Gibt **true** zurück, wenn die Elemente im angegebenen Bereich einen Heap bilden.|
-|[is_heap_until](algorithm-functions.md#is_heap_until)|Gibt **true** zurück, wenn der angegebene Bereich einen Heap bis zum letzten Element bildet.|
-|[is_partitioned](algorithm-functions.md#is_partitioned)|Gibt **true** zurück, wenn alle Elemente im angegebenen Bereich, die für eine Bedingung **true** testen, vor allen Elementen stehen, die **false**testen.|
+|[is_heap](algorithm-functions.md#is_heap)|Gibt zurück, **`true`** Wenn die Elemente im angegebenen Bereich einen Heap bilden.|
+|[is_heap_until](algorithm-functions.md#is_heap_until)|Gibt zurück, **`true`** Wenn der angegebene Bereich einen Heap bis zum letzten Element bildet.|
+|[is_partitioned](algorithm-functions.md#is_partitioned)|Gibt zurück **`true`** , wenn alle Elemente im angegebenen Bereich, die **`true`** für eine Bedingung getestet werden, vor allen Elementen stehen, die Sie testen **`false`** .|
 |[is_permutation](algorithm-functions.md#is_permutation)|Legt fest, ob die Elemente in einem angegebenen Bereich eine gültige Permutation bilden.|
-|[is_sorted](algorithm-functions.md#is_sorted)|Gibt **true** zurück, wenn die Elemente im angegebenen Bereich in sortierter Reihenfolge angeordnet sind.|
-|[is_sorted_until](algorithm-functions.md#is_sorted_until)|Gibt **true** zurück, wenn die Elemente im angegebenen Bereich in sortierter Reihenfolge angeordnet sind.|
+|[is_sorted](algorithm-functions.md#is_sorted)|Gibt zurück, **`true`** Wenn die Elemente im angegebenen Bereich in sortierter Reihenfolge angeordnet sind.|
+|[is_sorted_until](algorithm-functions.md#is_sorted_until)|Gibt zurück, **`true`** Wenn die Elemente im angegebenen Bereich in sortierter Reihenfolge angeordnet sind.|
 |[iter_swap](algorithm-functions.md#iter_swap)|Tauscht zwei Werte aus, auf die durch ein Paar angegebener Iteratoren verwiesen wird.|
 |[lexicographical_compare](algorithm-functions.md#lexicographical_compare)|Vergleicht zwei Sequenzen elementweise, um zu bestimmen, welche der beiden kleiner ist.|
 |[lower_bound](algorithm-functions.md#lower_bound)|Sucht die Position des ersten Elements in einem sortierten Bereich, der über einen Wert größer als oder gleich einem angegebenen Wert verfügt. Dabei wird das Sortierkriterium möglicherweise von einen binären Prädikat bestimmt.|
 |[make_heap](algorithm-functions.md#make_heap)|Konvertiert Elemente aus einem angegebenen Bereich in einen Heap, in dem das erste Element das größte ist und für den ein Sortierkriterium durch ein binäres Prädikat angegeben werden kann.|
 |[max](algorithm-functions.md#max)|Vergleicht zwei Objekte und gibt das größere der beiden zurück, wobei das Sortierkriterium möglicherweise von einem binären Prädikat angegeben wird.|
 |[max_element](algorithm-functions.md#max_element)|Sucht das erste Vorkommen des größten Elements in einem angegebenen Bereich, in dem das Sortierkriterium möglicherweise von einem binären Prädikat angegeben wird.|
-|[Merge](algorithm-functions.md#merge)|Kombiniert alle Elemente von zwei sortierten Quellbereichen in einen einzelnen sortierten Zielbereich, wobei das Sortierkriterium durch ein binäres Prädikat angegeben werden kann.|
+|[merge](algorithm-functions.md#merge)|Kombiniert alle Elemente von zwei sortierten Quellbereichen in einen einzelnen sortierten Zielbereich, wobei das Sortierkriterium durch ein binäres Prädikat angegeben werden kann.|
 |[min](algorithm-functions.md#min)|Vergleicht zwei Objekte und gibt das kleinere der beiden zurück, wobei das Sortierkriterium möglicherweise von einem binären Prädikat angegeben wird.|
 |[min_element](algorithm-functions.md#min_element)|Sucht das erste Vorkommen des kleinsten Elements in einem angegebenen Bereich, in dem das Sortierkriterium von einem binären Prädikat angegeben werden kann.|
 |[MinMax](algorithm-functions.md#minmax)|Vergleicht zwei Eingabeparameter und gibt diese als Paar, in der Reihenfolge "kleiner zu größer", zurück.|
@@ -95,12 +95,12 @@ Numerische Algorithmen der C++-Standard Bibliothek, die für die numerische Vera
 |[&lt;ALG &gt; verschieben](algorithm-functions.md#alg_move)|Verschiebt Elemente, die einem angegebenen Bereich zugeordnet sind.|
 |[move_backward](algorithm-functions.md#move_backward)|Verschiebt die Elemente eines Iterators in einen anderen. Die Verschiebung beginnt mit dem letzten Element in einem angegebenen Bereich und endet mit dem ersten Element in diesem Bereich.|
 |[next_permutation](algorithm-functions.md#next_permutation)|Ordnet die Elemente in einem Bereich neu, damit die ursprüngliche Reihenfolge von der lexikografisch nächsthöheren Permutation ersetzt wird, falls vorhanden, wobei die Bedeutung von „nächsthöher“ durch ein binäres Prädikat angegeben werden kann.|
-|[none_of](algorithm-functions.md#none_of)|Gibt **true** zurück, wenn eine Bedingung nicht zwischen Elementen im angegebenen Bereich vorhanden ist.|
+|[none_of](algorithm-functions.md#none_of)|Gibt zurück, **`true`** Wenn eine Bedingung nie zwischen Elementen im angegebenen Bereich vorhanden ist.|
 |[nth_element](algorithm-functions.md#nth_element)|Partitioniert einen Bereich von Elementen, wobei das *n*-te Element der Sequenz im Bereich ordnungsgemäß gefunden wird, sodass alle Elemente davor kleiner oder gleich sind und alle Elemente, die in der Sequenz folgen, größer oder gleich sind.|
 |[partial_sort](algorithm-functions.md#partial_sort)|Ordnet eine bestimmte Anzahl von kleineren Elementen in einem Bereich in einer aufsteigenden Reihenfolge oder gemäß eines Sortierkriteriums an, das von einem binären Prädikat angegeben wird.|
 |[partial_sort_copy](algorithm-functions.md#partial_sort_copy)|Kopiert Elemente aus einem Quellbereich in einen Zielbereich, in dem die Quellelemente entweder durch kleiner als oder durch ein anderes festgelegtes binäres Prädikat sortiert werden.|
 |[partition](algorithm-functions.md#partition)|Klassifiziert Elemente in einem Bereich in zwei zusammenhanglose Sätze, wenn diese Elemente ein unäres Prädikat erfüllen, das denen direkt vorausgeht, die es nicht erfüllen können.|
-|[partition_copy](algorithm-functions.md#partition_copy)|Kopiert Elemente, für die eine Bedingung **true** ist, in ein Ziel, für das die Bedingung **false** ist. Die Elemente müssen von einem angegebenen Bereich stammen.|
+|[partition_copy](algorithm-functions.md#partition_copy)|Kopiert Elemente, für die eine Bedingung **`true`** in ein Ziel ist, und für die die Bedingung **`false`** zu einer anderen ist. Die Elemente müssen von einem angegebenen Bereich stammen.|
 |[partition_point](algorithm-functions.md#partition_point)|Gibt das erste Element im angegebenen Bereich zurück, der die Bedingung nicht erfüllt. Die Elemente werden so sortiert, dass die, die die Bedingung erfüllen, vor denen angeordnet werden, die die Bedingung nicht erfüllen.|
 |[pop_heap](algorithm-functions.md#pop_heap)|Entfernt das größte Element von der Vorderseite eines Heaps und fügt es in die vorletzte Position des Bereichs ein und bildet dann einen neuen Heap aus den übrigen Elementen.|
 |[prev_permutation](algorithm-functions.md#prev_permutation)|Ordnet die Elemente in einem Bereich neu, damit die ursprüngliche Reihenfolge von der lexikografisch nächsthöheren Permutation ersetzt wird, falls vorhanden, wobei die Bedeutung von „nächsthöher“ durch ein binäres Prädikat angegeben werden kann.|
@@ -114,7 +114,7 @@ Numerische Algorithmen der C++-Standard Bibliothek, die für die numerische Vera
 |[replace_copy](algorithm-functions.md#replace_copy)|Überprüft jedes Element in einem Quellbereich und ersetzt es, sofern es einem angegebenen Wert entspricht, während das Ergebnis in einen neuen Zielbereich kopiert wird.|
 |[replace_copy_if](algorithm-functions.md#replace_copy_if)|Überprüft jedes Element in einem Quellbereich und ersetzt es, sofern es ein angegebenes Prädikat erfüllt, während das Ergebnis in einen neuen Zielbereich kopiert wird.|
 |[replace_if](algorithm-functions.md#replace_if)|Überprüft jedes Element in einem Bereich und ersetzt es, sofern es das angegebene Prädikat erfüllt.|
-|[umgekehr](algorithm-functions.md#reverse)|Kehrt die Reihenfolge der Elemente innerhalb eines Bereichs um.|
+|[reverse](algorithm-functions.md#reverse)|Kehrt die Reihenfolge der Elemente innerhalb eines Bereichs um.|
 |[reverse_copy](algorithm-functions.md#reverse_copy)|Kehrt die Reihenfolge der Elemente in einem Quellbereich beim Kopieren in einen Zielbereich um.|
 |[Controller](algorithm-functions.md#rotate)|Vertauscht die Elemente in zwei benachbarten Bereichen.|
 |[rotate_copy](algorithm-functions.md#rotate_copy)|Vertauscht die Elemente in zwei benachbarten Bereiche innerhalb eines Quellbereichs und kopiert das Ergebnis in einen Zielbereich.|
@@ -137,7 +137,7 @@ Numerische Algorithmen der C++-Standard Bibliothek, die für die numerische Vera
 |[unique_copy](algorithm-functions.md#unique_copy)|Kopiert Elemente aus einem Quellbereich in einen Zielbereich mit Ausnahmen von doppelten Elementen, die nebeneinander angeordnet sind.|
 |[upper_bound](algorithm-functions.md#upper_bound)|Sucht die Position des ersten Elements in einem sortierten Bereich, der über einen Wert größer als einen angegebenen Wert verfügt. Dabei wird das Sortierkriterium möglicherweise von einen binären Prädikat bestimmt.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Header Dateireferenz](cpp-standard-library-header-files.md)\
 [Thread Sicherheit in der C++-Standard Bibliothek](thread-safety-in-the-cpp-standard-library.md)\

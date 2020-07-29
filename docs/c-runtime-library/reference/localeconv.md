@@ -28,12 +28,12 @@ helpviewer_keywords:
 - localeconv function
 - locales, getting information on
 ms.assetid: 7ecdb1f2-88f5-4037-a0e7-c754ab003660
-ms.openlocfilehash: c154af87f135f5bf119de26ea8cd0be545ed5382
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: c4e1820ac412a0447c5059ecc92375275f7b2701
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916405"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218636"
 ---
 # <a name="localeconv"></a>localeconv
 
@@ -49,7 +49,7 @@ struct lconv *localeconv( void );
 
 **localeconv** gibt einen Zeiger auf ein ausgefülltes Objekt vom Typ [struct lkonv](../../c-runtime-library/standard-types.md)zurück. Die im-Objekt enthaltenen Werte werden aus den Gebiets Schema Einstellungen im lokalen Thread Speicher kopiert und können durch nachfolgende Aufrufe von **localeconv**überschrieben werden. Änderungen, die an den Werten in diesem-Objekt vorgenommen wurden, ändern nicht die Gebiets Schema Einstellungen. Aufrufe von [setlocale](setlocale-wsetlocale.md) mit *kategoriewerten* von **LC_ALL**, **LC_MONETARY**oder **LC_NUMERIC** überschreiben den Inhalt der-Struktur.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **localeconv** -Funktion ruft ausführliche Informationen zur numerischen Formatierung für das aktuelle Gebiets Schema ab. Diese Informationen werden in einer Struktur des Typs **lconv** gespeichert. Die **lconv**-Struktur, die in LOCALE.H definiert ist, enthält die folgenden Member:
 
@@ -57,12 +57,12 @@ Die **localeconv** -Funktion ruft ausführliche Informationen zur numerischen Fo
 |-|-|
 DECIMAL_POINT,<br/>_W_decimal_point|Zeiger auf Dezimaltrennzeichen für nicht monetäre Mengen.
 thousands_sep,<br/>_W_thousands_sep|Ein Zeiger auf ein Zeichen, das Gruppen von Ziffern nach links vom Dezimaltrennzeichen für nicht monetäre Mengen trennt.
-Gruppierung|**Ein Zeiger**auf eine ganze Zahl mit Vorzeichen, die die Größe jeder Gruppe von Ziffern in nicht monetären Mengen enthält.
+Gruppierung|Ein Zeiger auf eine ganze Zahl mit einer Größe **`char`** , die die Größe der einzelnen Ziffern in nicht monetären Mengen enthält.
 Int_curr_symbol,<br/>_W_int_curr_symbol|Zeiger auf das internationale Währungssymbol für das aktuelle Gebiets Schema. Die ersten drei Zeichen geben das alphabetische internationale Währungssymbol an, wie im Standard *ISO 4217 – Codes für die Darstellung der Währung und Fonds* definiert. Das vierte Zeichen (unmittelbar vorausgehendes Zeichen NULL) trennt das internationale Währungssymbol von der monetären Menge.
 CURRENCY_SYMBOL,<br/>_W_currency_symbol|Zeiger auf das lokale Währungssymbol für das aktuelle Gebiets Schema.
 mon_decimal_point,<br/>_W_mon_decimal_point|Zeiger auf Dezimaltrennzeichen für monetäre Mengen.
 mon_thousands_sep,<br/>_W_mon_thousands_sep|Ein Zeiger auf das Trennzeichen für Gruppen von Ziffern auf der linken Seite der Dezimalstelle in der monetären Menge.
-mon_grouping|**Ein Zeiger**auf eine ganze Zahl mit Vorzeichen, die die Größe jeder Gruppe von Ziffern in monetären Mengen enthält.
+mon_grouping|Ein Zeiger auf eine ganze Zahl mit einer Größe **`char`** , die die Größe der einzelnen Ziffern in der monetären Menge enthält.
 positive_sign,<br/>_W_positive_sign|Die Zeichenfolge, die das Zeichen für nicht negative monetären Mengen angibt.
 negative_sign,<br/>_W_negative_sign|Die Zeichenfolge, die das Zeichen für negative monetären Mengen angibt.
 int_frac_digits|Die Anzahl der Ziffern rechts vom Dezimaltrennzeichen in international formatierten monetären Mengen.
@@ -74,9 +74,9 @@ n_sep_by_space|Auf 1 festgelegt, wenn das Währungssymbol durch Leerzeichen von 
 p_sign_posn|Die Position des positiven Vorzeichens in nicht negativen, formatierten monetären Mengen.
 n_sign_posn|Die Position des positiven Vorzeichens in negativen, formatierten monetären Mengen.
 
-Mit Ausnahme der angegebenen werden Member der **LVS v** -Struktur, `char *` die `wchar_t *` -und-Versionen aufweisen, Zeiger auf Zeichen folgen. Alle, die **""** (oder **L ""** für **wchar_t** <strong>\*</strong>) gleich sind, haben entweder eine Länge von 0 (null) oder werden im aktuellen Gebiets Schema nicht unterstützt. Beachten Sie, dass **DECIMAL_POINT** und **_W_decimal_point** immer unterstützt werden und von einer Länge ungleich NULL sind.
+Mit Ausnahme der angegebenen werden Member der **LVS v** -Struktur, die `char *` -und-Versionen aufweisen, `wchar_t *` Zeiger auf Zeichen folgen. Alle, die **""** (oder **L ""** für) gleich sind, haben **`wchar_t`** <strong>\*</strong> entweder eine Länge von 0 (null) oder werden im aktuellen Gebiets Schema nicht unterstützt. Beachten Sie, dass **DECIMAL_POINT** und **_W_decimal_point** immer unterstützt werden und von einer Länge ungleich NULL sind.
 
-Die **char** -Member der-Struktur sind kleine nicht negative Zahlen, keine Zeichen. Jeder von diesen, der gleich **CHAR_MAX** ist, wird im aktuellen Gebietsschema nicht unterstützt.
+Die Elemente **`char`** der Struktur sind kleine nicht negative Zahlen, keine Zeichen. Jeder von diesen, der gleich **CHAR_MAX** ist, wird im aktuellen Gebietsschema nicht unterstützt.
 
 Die Werte von **Gruppierung** und **Mon_grouping** werden gemäß den folgenden Regeln interpretiert:
 
@@ -120,7 +120,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**localeconv**|\<locale.h>|
 
@@ -132,7 +132,7 @@ Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-feat
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [setlocale](../../preprocessor/setlocale.md)<br/>
 [Funktionen von "strecoll"](../../c-runtime-library/strcoll-functions.md)<br/>
 [strftime, wcsftime, _strftime_l, _wcsftime_l](strftime-wcsftime-strftime-l-wcsftime-l.md)<br/>

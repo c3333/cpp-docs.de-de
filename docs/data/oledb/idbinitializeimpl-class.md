@@ -38,12 +38,12 @@ helpviewer_keywords:
 - m_dwStatus
 - m_pCUtlPropInfo
 ms.assetid: e4182f81-0443-44f5-a0d3-e7e075d6f883
-ms.openlocfilehash: ff74ae93f01c7e8588a0eff1f48d3f6f0e6d5e81
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 511d67586a7adc2b26cc6acbdf39beff78f9c38a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210768"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218324"
 ---
 # <a name="idbinitializeimpl-class"></a>IDBInitializeImpl-Klasse
 
@@ -59,13 +59,13 @@ class ATL_NO_VTABLE IDBInitializeImpl : public IDBInitialize
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IDBInitializeImpl`abgeleitete Klasse.
+Die von abgeleitete Klasse `IDBInitializeImpl` .
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -77,7 +77,7 @@ Die von `IDBInitializeImpl`abgeleitete Klasse.
 
 |||
 |-|-|
-|[Initialize](#initialize)|Startet den Anbieter.|
+|[Initialisieren](#initialize)|Startet den Anbieter.|
 |[Uninitialize](#uninitialize)|Beendet den Anbieter.|
 
 ### <a name="data-members"></a>Datenelemente
@@ -145,7 +145,7 @@ DWORD m_dwStatus;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Flags geben den Status verschiedener Attribute für das Datenquellen Objekt an oder geben ihn an. Enthält mindestens einen **der folgenden** Enumerationswerte:
+Diese Flags geben den Status verschiedener Attribute für das Datenquellen Objekt an oder geben ihn an. Enthält einen oder mehrere der folgenden **`enum`** Werte:
 
 ```cpp
 enum DATASOURCE_FLAGS {
@@ -174,4 +174,4 @@ CUtlPropInfo< T >* m_pCUtlPropInfo;
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)
+[Architektur der OLE DB-Anbieter Vorlage](../../data/oledb/ole-db-provider-template-architecture.md)

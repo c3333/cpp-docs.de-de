@@ -35,12 +35,12 @@ helpviewer_keywords:
 - _finite function
 - _finitef function
 ms.assetid: 5a7d7ca7-befb-4e1f-831d-28713c6eb805
-ms.openlocfilehash: a2cde4d3a57884413f0c48aa299b171334c5f988
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 7e15a6619e584ff52c07048fcf591835b799587f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957182"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218701"
 ---
 # <a name="isfinite-_finite-_finitef"></a>isfinite, _finite, _finitef
 
@@ -69,29 +69,29 @@ int _finitef(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu testende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Das `isfinite` Makro und die `_finite` - `_finitef` und-Funktionen geben einen Wert ungleich 0 (null) zurück, wenn *x* entweder ein normaler oder ein subnormaler Endwert ist. Sie geben 0 zurück, wenn das Argument unendlich oder ein NaN-Wert ist. Die C++ Inline Vorlagen Funktion `isfinite` verhält sich wie, gibt jedoch **true** oder **false**zurück.
+Das `isfinite` Makro und die `_finite` -und `_finitef` -Funktionen geben einen Wert ungleich 0 (null) zurück, wenn *x* entweder ein normaler oder ein subnormaler Endwert ist. Sie geben 0 zurück, wenn das Argument unendlich oder ein NaN-Wert ist. Die C++-Inline Vorlagen Funktion `isfinite` verhält sich auf dieselbe Weise, gibt jedoch **`true`** oder zurück **`false`** .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`isfinite`ist ein Makro, wenn es als C kompiliert wird, und eine Inline-Vorlagen C++Funktion, wenn Sie als kompiliert werden. Die `_finite` Funktionen `_finitef` und sind Microsoft-spezifisch. Die Funktion `_finitef` ist nur verfügbar, wenn sie für x86, ARM- oder ARM64-Plattformen kompiliert wurde.
+`isfinite`ist ein Makro, wenn es als C kompiliert wird, und eine Inline-Vorlagen Funktion, wenn Sie als C++ kompiliert werden. Die `_finite` `_finitef` Funktionen und sind Microsoft-spezifisch. Die Funktion `_finitef` ist nur verfügbar, wenn sie für x86, ARM- oder ARM64-Plattformen kompiliert wurde.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------------|-------------------------------|
-|`_finite`|\<float.h> or \<math.h>|\<float.h>, \<math.h>, \<cfloat>, or \<cmath>|
-|`isfinite`, `_finitef`|\<math.h>|\<math.h> or \<cmath>|
+|`_finite`|\<float.h> oder \<math.h>|\<float.h>, \<math.h>, \<cfloat> oder \<cmath>|
+|`isfinite`, `_finitef`|\<math.h>|\<math.h> oder \<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [fpclassify](fpclassify.md)<br/>
 [_fpclass, _fpclassf](fpclass-fpclassf.md)<br/>
 [isinf](isinf.md)<br/>

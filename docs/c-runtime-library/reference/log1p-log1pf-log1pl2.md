@@ -37,12 +37,12 @@ helpviewer_keywords:
 - log1pf function
 - log1pl function
 ms.assetid: a40d965d-b4f6-42f4-ba27-2395546f7c12
-ms.openlocfilehash: 21bba72b204f975b806e43cdc6d36d8efa173b9b
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: d599567e38d216e78720a3d6b330310095acdd11
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911428"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218584"
 ---
 # <a name="log1p-log1pf-log1pl"></a>log1p, log1pf, log1pl
 
@@ -96,17 +96,17 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
 Der **errno** -Wert ist auf ERANGE festgelegt, wenn *x* =-1. Der **errno** -Wert ist auf **Edom** festgelegt, wenn *x* <-1.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **log1p** -Funktionen sind möglicherweise präziser als `log(x + 1)` die Verwendung von, wenn *x* nahe 0 (null) ist.
+Die **log1p** -Funktionen sind möglicherweise präziser als die Verwendung `log(x + 1)` von, wenn *x* nahe 0 (null) ist.
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **log1p** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **log1p** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **log1p** aufzurufen, die **`float`** -und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **log1p** immer und gibt einen zurück **`double`** .
 
 Wenn *x* eine natürliche Zahl ist, gibt diese Funktion den Logarithmus der Fakultät von (*x* -1) zurück.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|

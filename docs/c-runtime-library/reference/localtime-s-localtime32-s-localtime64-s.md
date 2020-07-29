@@ -38,12 +38,12 @@ helpviewer_keywords:
 - time, converting values
 - localtime_s function
 ms.assetid: 842d1dc7-d6f8-41d3-b340-108d4b90df54
-ms.openlocfilehash: 3d73aa32243776215b04303b37a4398bc8c35c04
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 26ebadf49632b9e312f3d0c0a0788720d3230312
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911586"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218610"
 ---
 # <a name="localtime_s-_localtime32_s-_localtime64_s"></a>localtime_s, _localtime32_s, _localtime64_s
 
@@ -82,13 +82,13 @@ Null, wenn erfolgreich. Der Rückgabewert ist ein Fehlercode, wenn ein Fehler au
 
 |*tmdest*|*sourcetime*|Rückgabewert|Wert in *tmdest*|Ruft ungültige Parametertyphandler auf|
 |-----------|------------|------------------|--------------------|---------------------------------------|
-|**Normal**|any|**Eingabe**|Nicht geändert|Ja|
-|Not **null** (zeigt auf gültigen Speicher)|**Normal**|**Eingabe**|Alle Felder auf-1 festgelegt|Ja|
-|Not **null** (zeigt auf gültigen Speicher)|kleiner als 0 (null) oder größer als **_MAX__TIME64_T**|**Eingabe**|Alle Felder auf-1 festgelegt|Nein |
+|**NULL**|any|**Eingabe**|Nicht geändert|Ja|
+|Not **null** (zeigt auf gültigen Speicher)|**NULL**|**Eingabe**|Alle Felder auf-1 festgelegt|Ja|
+|Not **null** (zeigt auf gültigen Speicher)|kleiner als 0 (null) oder größer als **_MAX__TIME64_T**|**Eingabe**|Alle Felder auf-1 festgelegt|Nein|
 
 Im Fall der ersten zwei Fehlerbedingungen, wird der ungültige Parameterhandler aufgerufen, so wie dies unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **localtime_s** -Funktion konvertiert eine Zeit, die als [time_t](../../c-runtime-library/standard-types.md) Wert gespeichert ist, und speichert das Ergebnis in einer Struktur vom Typ [TM](../../c-runtime-library/standard-types.md). Der **time_t** Wert *sourcetime* stellt die Sekunden dar, die seit Mitternacht (00:00:00), 1. Januar 1970 UTC, verstrichen sind. Dieser Wert wird normalerweise aus der [time](time-time32-time64.md) -Funktion abgerufen.
 
@@ -101,9 +101,9 @@ Die **localtime_s** -Funktion konvertiert eine Zeit, die als [time_t](../../c-ru
 
 **localtime_s** ist eine Inline Funktion, die **_localtime64_s**ergibt, und **time_t** entspricht **__time64_t**. Wenn Sie den Compiler zwingen müssen, **time_t** als den alten 32-Bit- **time_t**zu interpretieren, können Sie **_USE_32BIT_TIME_T**definieren. Dies führt dazu, dass **localtime_s** zu **_localtime32_s**ausgewertet wird. Dies ist nicht zu empfehlen, weil Ihre Anwendung nach dem 18. Januar 2038 fehlschlagen kann. Die Verwendung dieses Makros ist auf 64-Bit-Plattformen nicht zulässig.
 
-Die Felder des Struktur Typs [TM](../../c-runtime-library/standard-types.md) speichern die folgenden Werte, von denen jeder ein **int**ist.
+Die Felder des Struktur Typs [TM](../../c-runtime-library/standard-types.md) speichern die folgenden Werte, von denen jeder eine ist **`int`** .
 
-|Feld|Beschreibung|
+|Feld|BESCHREIBUNG|
 |-|-|
 |**tm_sec**|Sekunden nach Minute (0-59).|
 |**tm_min**|Minuten nach Stunde (0-59).|
@@ -121,9 +121,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
+|-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|---------------------|-|
-|**localtime_s**, **_localtime32_s** **_localtime64_s**|\<time.h>|\<CTime-> \<oder Time. h>|
+|**localtime_s**, **_localtime32_s** **_localtime64_s**|\<time.h>|\<ctime> oder \<time.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

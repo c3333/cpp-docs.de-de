@@ -38,12 +38,12 @@ helpviewer_keywords:
 - stdext::allocator_base [C++], destroy
 - stdext::allocator_base [C++], max_size
 ms.assetid: f920b45f-2a88-4bb0-8ead-b6126b426ed4
-ms.openlocfilehash: b55a7ec92787cb6b3103bf71b65d137d24ffff04
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 452a6bdc0382af4c9d01921c51dbaa0e00ccdcb2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84617584"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87205001"
 ---
 # <a name="allocator_base-class"></a>allocator_base-Klasse
 
@@ -58,20 +58,20 @@ class allocator_base
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
-|*Synchron*|Die Synchronisierungsrichtlinie für die Zuweisung: [sync_none-Klasse](sync-none-class.md), [sync_per_container-Klasse](sync-per-container-class.md), [sync_per_thread-Klasse](sync-per-thread-class.md) oder [sync_shared-Klasse](sync-shared-class.md).|
+|*Sync*|Die Synchronisierungsrichtlinie für die Zuweisung: [sync_none-Klasse](sync-none-class.md), [sync_per_container-Klasse](sync-per-container-class.md), [sync_per_thread-Klasse](sync-per-thread-class.md) oder [sync_shared-Klasse](sync-shared-class.md).|
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[allocator_base](#allocator_base)|Konstruiert ein Objekt vom Typ `allocator_base`.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|Beschreibung|
+|Typname|Beschreibung|
 |-|-|
 |[const_pointer](#const_pointer)|Ein Typ, der einen konstanten Zeiger auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
 |[const_reference](#const_reference)|Ein Typ, der einen konstanten Verweis auf den Typ des Objekts bereitstellt, das von der Zuweisung verwaltet wird.|
@@ -85,8 +85,8 @@ class allocator_base
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[_Charalloc](#charalloc)|Ordnet Speicher für ein Array vom Typ " **char**" zu.|
-|[_Chardealloc](#chardealloc)|Gibt Speicher für das Array frei, das Elemente vom Typ **char**enthält.|
+|[_Charalloc](#charalloc)|Ordnet Speicher für ein Array vom Typ zu **`char`** .|
+|[_Chardealloc](#chardealloc)|Gibt Speicher für das Array frei, das Elemente vom Typ enthält **`char`** .|
 |[address](#address)|Sucht die Adresse eines Objekts, dessen Wert angegeben wird.|
 |[allocate](#allocate)|Ordnet einen Speicherblock zu, der groß genug ist, um mindestens eine angegebene Anzahl von Elementen zu speichern.|
 |[Erstellen](#construct)|Erstellt eine bestimmte Art von Objekt an einer bestimmten Adresse, die mit einem angegebenen Wert initialisiert wird.|
@@ -102,7 +102,7 @@ class allocator_base
 
 ## <a name="allocator_base_charalloc"></a><a name="charalloc"></a>Allocator_base:: _Charalloc
 
-Ordnet Speicher für ein Array vom Typ " **char**" zu.
+Ordnet Speicher für ein Array vom Typ zu **`char`** .
 
 ```cpp
 char *_Charalloc(size_type count);
@@ -110,7 +110,7 @@ char *_Charalloc(size_type count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
@@ -118,13 +118,13 @@ char *_Charalloc(size_type count);
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird von Containers verwendet, wenn sie mit einem Compiler kompiliert wird, der Rebind nicht kompilieren kann. Es implementiert `_Charalloc` für die benutzerdefinierte allocator-Klasse, indem es das Ergebnis eines Aufrufs an die Funktion `allocate` des Synchronisationsfilters zurückgibt.
 
 ## <a name="allocator_base_chardealloc"></a><a name="chardealloc"></a>Allocator_base:: _Chardealloc
 
-Gibt Speicher für das Array frei, das Elemente vom Typ **char**enthält.
+Gibt Speicher für das Array frei, das Elemente vom Typ enthält **`char`** .
 
 ```cpp
 void _Chardealloc(void* ptr, size_type count);
@@ -132,14 +132,14 @@ void _Chardealloc(void* ptr, size_type count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion wird von Containers verwendet, wenn sie mit einem Compiler kompiliert wird, der Rebind nicht kompilieren kann. Für die benutzerdefinierte allocator-Klasse implementiert es `_Chardealloc`, indem es das Ergebnis eines Aufrufs an die Funktion `deallocate` des Synchronisationsfilters zurückgibt. Der Zeiger ptr muss schon vorher für ein Zuweisungsobjekt, das gleich `*this` ist,von einen Aufruf an `_Charalloc` zurückgegeben worden sein, damit er ein Arrayobjekt der gleichen Größe und des gleichen Typs zuweisen kann. `_Chardealloc` löst nie eine Ausnahme aus.
+Diese Memberfunktion wird von Containers verwendet, wenn sie mit einem Compiler kompiliert wird, der Rebind nicht kompilieren kann. Für die benutzerdefinierte allocator-Klasse implementiert es `_Chardealloc`, indem es das Ergebnis eines Aufrufs an die Funktion `deallocate` des Synchronisationsfilters zurückgibt. Der Zeiger ptr muss zuvor durch einen-Rückruf `_Charalloc` für ein Zuweisungs Objekt zurückgegeben worden sein, das entspricht **`*this`** , wobei ein Array Objekt derselben Größe und desselben Typs zugeordnet wird. `_Chardealloc` löst nie eine Ausnahme aus.
 
 ## <a name="allocator_baseaddress"></a><a name="address"></a>Allocator_base:: Address
 
@@ -160,7 +160,7 @@ Der konstante oder nicht konstante Wert des Objekts, nach dessen Adresse gesucht
 
 Ein konstanter oder nicht konstanter Zeiger auf ein Objekt mit konstantem bzw. nicht konstantem Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `&val` zurückgegeben wird.
 
@@ -177,7 +177,7 @@ pointer allocate(size_type _Nx);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*_Nx*|Die Anzahl der zuzuweisenden Elemente im Array|
 |*_Hint*|Dieser Parameter wird ignoriert.|
@@ -186,7 +186,7 @@ pointer allocate(size_type _Nx);
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion implementiert Speicherreservierung für die benutzerdefinierte allocator-Klasse, indem sie das Ergebnis eines Aufrufs an die Funktion `allocate` des Synchronisationsfilters des Typs „type“ `*` wenn `_Nx == 1` zurückgibt; andernfalls indem sie das Ergebnis eines Aufrufs an den Cast `operator new(_Nx * sizeof(Type))` des Typs „Type“ `*`.
 
@@ -203,11 +203,11 @@ allocator_base(const allocator_base<Other, Sync>& right);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Richting*|Das zu kopierende Zuweisungsobjekt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Konstruktor erstellt eine [allocator_base](allocator-base-class.md)-Instanz. Der zweite Konstruktor erstellt eine `allocator_base`-Instanz, so dass jede `allocator_base<Type, _Sync>`-Instanz `a`, `allocator_base<Type, Sync>(allocator_base<Other, Sync>(a)) == a`.
 
@@ -237,12 +237,12 @@ void construct(pointer ptr, const Type& val);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*ptr*|Ein Zeiger auf den Speicherort, in dem das Objekt erstellt werden soll.|
 |*ster*|Der Wert, mit dem das zu erstellende Objekt initialisiert werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `new((void*)ptr Type(val)` aufgerufen wird.
 
@@ -256,12 +256,12 @@ void deallocate(pointer ptr, size_type _Nx);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*_Nx*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `deallocate(ptr)` im Synchronisationsfilter `Sync` wenn `_Nx == 1` aufgerufen wird; andernfalls Aufruf an `operator delete(_Nx * ptr)`.
 
@@ -275,11 +275,11 @@ void destroy(pointer ptr);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*ptr*|Ein Zeiger, der die Adresse des zu zerstörenden Objekts angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `ptr->~Type()` aufgerufen wird.
 
@@ -303,7 +303,7 @@ size_type max_size() const;
 
 Die Anzahl von Elementen, die zugewiesen werden konnten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird für die benutzerdefinierte allocator-Klasse implementiert, indem `(size_t)-1 / sizeof(Type)` wenn `0 < (size_t)-1 / sizeof(Type)` zurückgegeben wird; andernfalls `1`.
 
@@ -339,6 +339,6 @@ Ein Typ, der von der Zuweisung verwaltet wird.
 typedef Type value_type;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<allocators>](allocators-header.md)

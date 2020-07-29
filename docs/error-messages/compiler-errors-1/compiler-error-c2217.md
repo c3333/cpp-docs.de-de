@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2217
 ms.assetid: 1ce1e3f5-4171-4376-804d-967f7e612935
-ms.openlocfilehash: 7417c651fde6bef781bb6eb2e081cd3ad8ecc3a0
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: b033d95b127a45451a776cdc336ea7d2649d3716
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74741299"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87209746"
 ---
 # <a name="compiler-error-c2217"></a>Compilerfehler C2217
 
@@ -21,9 +21,9 @@ Das erste Funktions Attribut erfordert das zweite Attribut.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Die als `near`deklarierte Interruptfunktion (`__interrupt`). Interrupt-Funktionen müssen `far`werden.
+1. Interrupt ( `__interrupt` )-Funktion, die als deklariert wird `near` . Interrupt-Funktionen müssen sein `far` .
 
-1. Mit `__stdcall`deklarierte Interruptfunktion oder `__fastcall`. Interrupt-Funktionen müssen C-Aufruf Konventionen verwenden.
+1. Die mit oder deklarierte Interruptfunktion **`__stdcall`** **`__fastcall`** . Interrupt-Funktionen müssen C-Aufruf Konventionen verwenden.
 
 ## <a name="example"></a>Beispiel
 

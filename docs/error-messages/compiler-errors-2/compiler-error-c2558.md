@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2558
 ms.assetid: 822b701e-dcae-423a-b21f-47f36aff9c90
-ms.openlocfilehash: 93b6e414f26c56702a1c7ac12863cbcd5063b570
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2504b42f49ccb040f676f0aead8f243d33c7dd1a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80177494"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87207744"
 ---
 # <a name="compiler-error-c2558"></a>Compilerfehler C2558
 
@@ -21,10 +21,10 @@ Durch einen Kopierkonstruktor wird ein Objekt von einem anderen Objekt desselben
 
 ### <a name="to-fix-this-error"></a>So beheben Sie diesen Fehler
 
-1. Das Problem kann auftreten bei dem Versuch, eine Klasse zu kopieren, deren Kopierkonstruktor als `private` deklariert ist. In den meisten Fällen sollte eine Klasse mit einem als `private` deklarierten Kopierkonstruktor nicht kopiert werden. Mithilfe allgemeiner Programmierpraktiken wurde ein Kopierkonstruktor als `private` deklariert, um die direkte Verwendung einer Klasse zu verhindern. Die Klasse ist möglicherweise nutzlos oder benötigt eine andere Klasse, um ordnungsgemäß zu funktionieren.
+1. Das Problem kann auftreten, wenn versucht wird, eine Klasse zu kopieren, deren Kopierkonstruktor ist **`private`** . In den meisten Fällen sollte eine Klasse, die über einen **`private`** Kopierkonstruktor verfügt, nicht kopiert werden. Ein gängiges Programmierverfahren deklariert einen **`private`** Kopierkonstruktor, um die direkte Verwendung einer Klasse zu verhindern. Die Klasse ist möglicherweise nutzlos oder benötigt eine andere Klasse, um ordnungsgemäß zu funktionieren.
 
-   Wenn es Ihnen sicher erscheint, eine Klasse mit einem `private`-Kopierkonstruktor zu verwenden, leiten Sie von der Klasse eine neue Klasse mit einem `private`-Konstruktor ab und stellen Sie in der neuen Klasse einen `public`-Kopierkonstruktor oder einen `protected`-Kopierkonstruktor bereit. Verwenden Sie die abgeleitete Klasse anstelle des Originals.
+   Wenn Sie feststellen, dass die Verwendung einer Klasse, die über einen **`private`** Kopierkonstruktor verfügt, sicher ist, leiten Sie eine neue Klasse von der Klasse ab, die über den **`private`** Konstruktor verfügt, und erstellen Sie einen- **`public`** oder- **`protected`** Kopierkonstruktor in der neuen Klasse. Verwenden Sie die abgeleitete Klasse anstelle des Originals.
 
-1. Das Problem kann auftreten bei dem Versuch, eine Klasse zu kopieren, deren Kopierkonstruktor als explicit deklariert ist. Das Deklarieren eines Kopierkonstruktors als `explicit` verhindert die Übergabe/Rückgabe von Objekten einer Klasse an/von Funktionen. Weitere Informationen zu expliziten Konstruktoren finden Sie unter [benutzerdefinierte Typkonvertierungen](../../cpp/user-defined-type-conversions-cpp.md).
+1. Das Problem kann auftreten bei dem Versuch, eine Klasse zu kopieren, deren Kopierkonstruktor explizit ist. Durch das Deklarieren eines Kopierkonstruktors als wird **`explicit`** verhindert, dass-Objekte einer Klasse an/von-Funktionen übergeben werden. Weitere Informationen zu expliziten Konstruktoren finden Sie unter [benutzerdefinierte Typkonvertierungen](../../cpp/user-defined-type-conversions-cpp.md).
 
-1. Das Problem kann auftreten bei dem Versuch, eine Klasseninstanz zu kopieren, die als `const` deklariert ist, und ein Kopierkonstruktor verwendet wird, der keinen `const` Verweisparameter akzeptiert. Deklarieren Sie den Kopierkonstruktor mit einem Verweis vom Typ `const` und nicht mit einem nicht konstanten Verweis.
+1. Das Problem kann auftreten, wenn versucht wird, eine Klasseninstanz zu kopieren, die **`const`** mithilfe eines Kopierkonstruktors deklariert wurde, der keinen **`const`** Verweis Parameter übernimmt. Deklarieren Sie den Kopierkonstruktor mit einem **`const`** Typverweis anstelle eines nicht konstanten Typverweises.

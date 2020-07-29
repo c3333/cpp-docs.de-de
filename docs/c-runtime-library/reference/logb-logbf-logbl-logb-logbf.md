@@ -47,12 +47,12 @@ helpviewer_keywords:
 - floating-point functions, mantissa and exponent
 - exponents and mantissas
 ms.assetid: 780c4daa-6fe6-4fbc-9412-4c1ba1a1766f
-ms.openlocfilehash: fe362099c63bbaa533532fd3a1a6567ac0173916
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: d923fe3a8c23c1c5e983d8766835af2c266b17d2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911403"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218571"
 ---
 # <a name="logb-logbf-logbl-_logb-_logbf"></a>logb, logbf, logbl, _logb, _logbf
 
@@ -93,11 +93,11 @@ Ein Gleitkommawert.
 
 **logb** gibt den unausgewogenen Exponent-Wert von *x* als eine Ganzzahl mit Vorzeichen zurück, die als Gleit Komma Wert dargestellt wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **logb** -Funktionen extrahieren den Exponentialwert des Gleit Komma Arguments *x*, als wäre *x* mit einem unendlichen Bereich dargestellt. Wenn das Argument *x* denormalisiert ist, wird es so behandelt, als wäre es normalisiert worden.
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **logb** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **logb** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **logb** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **logb** immer und gibt einen zurück **`double`** .
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
@@ -108,7 +108,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_logb**|\<float.h>|
 |**logb**, **logbf**, **logbl**, **_logbf**|\<math.h>|
@@ -121,5 +121,5 @@ Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-feat
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [frexp](frexp.md)<br/>

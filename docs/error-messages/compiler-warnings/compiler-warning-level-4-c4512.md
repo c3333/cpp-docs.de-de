@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4512
 ms.assetid: afb68995-684a-4be5-a73a-38d7a16dc030
-ms.openlocfilehash: c09832a4f27bff51cbb5bd847a3123e62c9ee8d5
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 068bdb2c7c87e8fe7cd3e482f53934de098a6166
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74991011"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218090"
 ---
 # <a name="compiler-warning-level-4-c4512"></a>Compilerwarnung (Stufe 4) C4512
 
@@ -23,13 +23,13 @@ Ein Zuweisungsoperator für die Basisklasse, auf die nicht von der abgeleiteten 
 
 Um diese Warnung zu vermeiden, geben Sie einen benutzerdefinierten Zuweisungsoperator für die Klasse an.
 
-Der Compiler generiert auch eine Zuweisungs-Operator-Funktion für eine Klasse, die keine definiert. Dieser Zuweisungsoperator fungiert als memberspezifische Kopie der Datenmember eines Objekts. Da `const`-Datenelemente nicht nach der Initialisierung geändert werden können, wenn die Klasse ein `const`-Element enthält, würde der standardmäßige Zuweisungsoperator nicht funktionieren. Ein weiterer Grund für die C4512-Warnung ist eine Deklaration eines nicht statischen Datenmembers des Verweistyps. Ziel ist es, einen nicht kopierbaren Typ zu erstellen, Sie müssen auch die Erstellung eines Standardkopiekonstruktors verhindern.
+Der Compiler generiert auch eine Zuweisungs-Operator-Funktion für eine Klasse, die keine definiert. Dieser Zuweisungsoperator fungiert als memberspezifische Kopie der Datenmember eines Objekts. Da **`const`** Datenelemente nach der Initialisierung nicht geändert werden können, **`const`** funktioniert der Standard Zuweisungs Operator nicht, wenn die Klasse ein Element enthält. Ein weiterer Grund für die C4512-Warnung ist eine Deklaration eines nicht statischen Datenmembers des Verweistyps. Ziel ist es, einen nicht kopierbaren Typ zu erstellen, Sie müssen auch die Erstellung eines Standardkopiekonstruktors verhindern.
 
 Sie können die Warnung C4512 für Ihren Code auf eine von drei Arten beheben:
 
 - Definieren Sie explizit einen Zuweisungsoperator für die Klasse.
 
-- Entfernen Sie den **Konstanten** -Operator oder den Reference-Operator aus dem Datenelement in der-Klasse.
+- Entfernen Sie **`const`** oder den Verweis Operator aus dem Datenelement in der-Klasse.
 
 - Verwenden Sie die #Pragma [Warning](../../preprocessor/warning.md) -Anweisung, um die Warnung zu unterdrücken.
 

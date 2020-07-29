@@ -40,12 +40,12 @@ helpviewer_keywords:
 - current working directory
 - directories [C++], current working
 ms.assetid: 184152f5-c7b0-495b-918d-f9a6adc178bd
-ms.openlocfilehash: 69e9d0b0eaa3a62d95ea602b68b5d1ad0df99e4a
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: c9ae07c5880cb86b0aafb0dc66a7c1ce3edcc9d8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82919220"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218662"
 ---
 # <a name="_getdcwd-_wgetdcwd"></a>_getdcwd, _wgetdcwd
 
@@ -79,7 +79,7 @@ Speicherort für den Pfad, oder **NULL**.
 Wenn **null** angegeben wird, weist diese Funktion einen Puffer mit einer Größe von mindestens *maxlen* mithilfe von **malloc**zu, und der Rückgabewert von **_getdcwd** ist ein Zeiger auf den zugeordneten Puffer. Der Puffer kann freigegeben werden, **indem aufgerufen und** der Zeiger übergeben wird.
 
 *maxlen*<br/>
-Eine positive ganze Zahl ungleich NULL, die die maximale Länge des Pfads angibt, in Zeichen: **char** für **_getdcwd** und **wchar_t** für **_wgetdcwd**.
+Eine positive ganze Zahl ungleich NULL, die die maximale Länge des Pfads angibt, in Zeichen: **`char`** für **_getdcwd** und **`wchar_t`** für **_wgetdcwd**.
 
 Wenn *maxlen* kleiner oder gleich 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen. Weitere Informationen finden Sie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md).
 
@@ -89,7 +89,7 @@ Ein Zeiger auf eine Zeichenfolge, die den vollständigen Pfad des aktuellen Arbe
 
 Wenn *buffer* als **null** angegeben ist und nicht genügend Arbeitsspeicher zum Zuordnen von *maxlen* -Zeichen vorhanden ist, tritt ein Fehler auf, und **errno** ist auf **ENOMEM**festgelegt. Wenn die Länge des Pfads einschließlich des abschließenden NULL-Zeichens *maxlen*überschreitet, tritt ein Fehler auf, und **errno** ist auf **ERANGE**festgelegt. Weitere Informationen zu diesen Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_getdcwd** -Funktion Ruft den vollständigen Pfad des aktuellen Arbeitsverzeichnisses auf dem angegebenen Laufwerk ab und speichert Sie im *Puffer*. Wenn das aktuelle Arbeitsverzeichnis auf das Stammverzeichnis festgelegt ist, endet die Zeichenfolge mit einem umgekehrten Schrägstrich (\\). Wenn das aktuelle Arbeitsverzeichnis nicht auf das Stammverzeichnis festgelegt ist, endet die Zeichenfolge mit dem Namen des Verzeichnisses und nicht mit einem umgekehrten Schrägstrich.
 
@@ -111,7 +111,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_getdcwd**|\<direct.h>|
 |**_wgetdcwd**|\<direct.h> oder \<wchar.h>|
@@ -124,7 +124,7 @@ Siehe das Beispiel in [_getdrive](getdrive.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
+[Verzeichnis Steuerung](../../c-runtime-library/directory-control.md)<br/>
 [_chdir, _wchdir](chdir-wchdir.md)<br/>
 [_getcwd, _wgetcwd](getcwd-wgetcwd.md)<br/>
 [_getdrive](getdrive.md)<br/>

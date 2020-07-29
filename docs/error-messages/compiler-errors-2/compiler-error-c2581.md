@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2581
 ms.assetid: 24a4e4c1-24d3-4e42-b760-7dcaf9740b16
-ms.openlocfilehash: 03fc7e9da8a9b3a2e2c445f5b06395c2616f0d98
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: a632d6a47afb29b8bb46761c3188391905eda842
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74755433"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87206873"
 ---
 # <a name="compiler-error-c2581"></a>Compilerfehler C2581
 
 ' type ': die statische ' Operator = '-Funktion ist unzulässig.
 
-Der Zuweisungs Operator (`=`) wurde fälschlicherweise als `static`deklariert. Zuweisungs Operatoren können nicht `static`werden. Weitere Informationen finden Sie unter [benutzerdefinierte Operatoren (C++/CLI)](../../dotnet/user-defined-operators-cpp-cli.md).
+Der Zuweisungs `=` Operator () wurde fälschlicherweise als deklariert **`static`** . Zuweisungs Operatoren dürfen nicht sein **`static`** . Weitere Informationen finden Sie unter [benutzerdefinierte Operatoren (C++/CLI)](../../dotnet/user-defined-operators-cpp-cli.md).
 
 ## <a name="example"></a>Beispiel
 

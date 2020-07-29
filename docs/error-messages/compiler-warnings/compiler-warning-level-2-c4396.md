@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4396
 ms.assetid: 7cd6b283-db17-4574-b299-03e0b913ad70
-ms.openlocfilehash: f37fcc7ece09bb9028a522ec6baf85d0e0e585c2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: fec6875fdb2e8a60e71fe08da1ed4e8fa82e4641
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80161814"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87206041"
 ---
 # <a name="compiler-warning-level-2-c4396"></a>Compilerwarnung (Stufe 2) C4396
 
@@ -21,11 +21,11 @@ Für die Spezialisierung einer Funktionsvorlage kann kein [Inline](../../cpp/inl
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-- Entfernen Sie den `inline`-, `__inline`- oder `__forceinline` -Spezifizierer aus der Deklaration der Friend-Funktion.
+- Entfernen Sie den-,-oder-Bezeichner **`inline`** **`__inline`** **`__forceinline`** aus der Deklaration der Friend-Funktion.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Codebeispiel enthält eine ungültige Friend-Funktionsdeklaration mit einem `inline` -Spezifizierer.
+Das folgende Codebeispiel zeigt eine ungültige Friend-Funktionsdeklaration mit einem- **`inline`** Spezifizierer.
 
 ```cpp
 // C4396.cpp

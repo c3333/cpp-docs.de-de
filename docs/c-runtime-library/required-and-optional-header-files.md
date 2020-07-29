@@ -7,12 +7,12 @@ helpviewer_keywords:
 - include files, required in run time
 - header files, required in run time
 ms.assetid: f64d0bf5-e2c3-4b42-97d0-443b3d901d9f
-ms.openlocfilehash: 06f7ced45f8def05219d8869708f555a78f73cd3
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 8d1547ae7dd3b6adb33271e93e85022f04859886
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57744520"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211605"
 ---
 # <a name="required-and-optional-header-files"></a>Erforderliche und optionale Headerdateien
 
@@ -24,8 +24,8 @@ Die Beschreibung jeder Laufzeitroutine enthält eine Liste der erforderlichen un
 |Vordefinierte Konstante|Viele Bibliotheksroutinen verweisen auf Konstanten, die in Headerdateien definiert sind. Beispielsweise verwendet die `_open`-Routine Konstanten wie z.B. `_O_CREAT`, die in der Headerdatei FCNTL.H definiert ist.|
 |Typdefinition|Einige Bibliotheksroutinen geben eine Struktur zurück oder übernehmen eine Struktur als Argument. Routinen zur Datenstromeingabe/-ausgabe verwenden z.B. eine Struktur vom Typ `FILE`, die in STDIO.H definiert ist.|
 
-Die Laufzeitbibliothek-Headerdateien bieten Funktionsdeklarationen im empfohlenen Format des ANSI/ISO-C-Standards. Der Compiler führt eine Typüberprüfung für alle Routinenverweise durch, die nach der zugeordneten Funktionsdeklaration erfolgt. Funktionsdeklarationen sind besonders wichtig für Routinen, die einen Wert eines bestimmten Typs außer `int` zurückgeben; dies ist die Standardeinstellung. Bei Routinen, die den jeweiligen Rückgabewert nicht in ihrer Deklaration angeben, setzt der Compiler die Rückgabe von `int` voraus, was zu unerwarteten Ergebnissen führen kann. Weitere Informationen finden Sie unter [Typüberprüfung](../c-runtime-library/type-checking-crt.md).
+Die Laufzeitbibliothek-Headerdateien bieten Funktionsdeklarationen im empfohlenen Format des ANSI/ISO-C-Standards. Der Compiler führt eine Typüberprüfung für alle Routinenverweise durch, die nach der zugeordneten Funktionsdeklaration erfolgt. Funktions Deklarationen sind besonders wichtig für Routinen, die einen Wert von einem anderen Typ als zurückgeben **`int`** . Dies ist die Standardeinstellung. Routinen, die nicht ihren entsprechenden Rückgabewert in ihrer Deklaration angeben, werden vom Compiler zum Zurückgeben eines-Werts angesehen **`int`** , was zu unerwarteten Ergebnissen führen kann. Weitere Informationen finden Sie unter [Typüberprüfung](../c-runtime-library/type-checking-crt.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)
+[Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

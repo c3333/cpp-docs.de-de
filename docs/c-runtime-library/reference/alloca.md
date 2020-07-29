@@ -26,12 +26,12 @@ helpviewer_keywords:
 - alloca function
 - _alloca function
 ms.assetid: 74488eb1-b71f-4515-88e1-cdd03b6f8225
-ms.openlocfilehash: 77ce6e0cdb5e1ad3f5317989c7804abc5aed4e69
-ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.openlocfilehash: 159f474927b4aaf364ad6972450edbe513a3c0b0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821433"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218740"
 ---
 # <a name="_alloca"></a>_alloca
 
@@ -45,26 +45,26 @@ void *_alloca(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *size*<br/>
 Bytes, die vom Stapel zugeordnet werden.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **_alloca** -Routine gibt einen **void** -Zeiger auf den zugeordneten Speicherplatz zurück, der für die Speicherung eines beliebigen Objekt Typs geeignet ist. Wenn die *Größe* 0 ist, weist **_alloca** ein Element der Länge 0 zu und gibt einen gültigen Zeiger auf dieses Element zurück.
+Die **_alloca** -Routine gibt einen **`void`** Zeiger auf den zugewiesenen Platz zurück, der für die Speicherung eines beliebigen Objekt Typs geeignet ist. Wenn die *Größe* 0 ist, weist **_alloca** ein Element der Länge 0 zu und gibt einen gültigen Zeiger auf dieses Element zurück.
 
 Eine Stapelüberlaufausnahme wird generiert, wenn der Speicherplatz nicht zugeordnet werden kann. Die Stapelüberlaufausnahme ist keine C++-Ausnahme, sondern eine strukturierte Ausnahme. Sie müssen anstelle der C++-Ausnahmebehandlung die [Strukturierte Ausnahmebehandlung](../../cpp/structured-exception-handling-c-cpp.md) (Structured Exception Handling, SEH) verwenden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **_alloca** weist die *Größe* von Bytes aus dem Programm Stapel zu. Der zugewiesene Speicherplatz wird automatisch freigegeben, wenn die aufrufende Funktion beendet wird (nicht, wenn die Zuordnung lediglich den Gültigkeitsbereich verlässt). Übergeben Sie daher nicht den von **_alloca** zurückgegebenen Zeiger Wert als Argument an [Free](free.md).
 
 Es gibt Einschränkungen beim expliziten Aufrufen von **_alloca** in einem Ausnahmehandler (eh). EH-Routinen, die auf x86-Klasse-Prozessoren ausgeführt werden, arbeiten in ihrem eigenen Speicherrahmen: Sie führen Ihre Tasks im Speicherplatz aus, der nicht auf der aktuellen Position des Stapelzeigers der einschließenden Funktion basiert. Die am häufigsten verwendeten Implementierungen umfassen die strukturierte Windows NT-Ausnahmebehandlung (SEH) und C++-Catch-Klauselausdrücke. Daher führt das explizite Aufrufen von **_alloca** in einem der folgenden Szenarien zu einem Programmfehler während der Rückgabe an die aufrufenden eh-Routine:
 
-- Ausnahme Filter Ausdruck für Windows NT SEH: `__except ( _alloca() )`
+- Ausnahme Filter Ausdruck für Windows NT-SEH:`__except ( _alloca() )`
 
-- Abschließender Ausnahmehandler für Windows NT SEH: `__finally { _alloca() }`
+- Abschließender Ausnahmehandler für Windows NT SEH:`__finally { _alloca() }`
 
 - C++-EH-Catch-Klauselausdruck
 
@@ -73,9 +73,9 @@ Es gibt Einschränkungen beim expliziten Aufrufen von **_alloca** in einem Ausna
 > [!IMPORTANT]
 > Wenn **_alloca** in Windows XP innerhalb eines try/catch-Blocks aufgerufen wird, müssen Sie [_resetstkoflw](resetstkoflw.md) im catch-Block aufrufen.
 
-Zusätzlich zu den oben genannten Einschränkungen können **_alloca** bei Verwendung der Option[/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md) nicht in **__except** Blöcken verwendet werden. Weitere Informationen finden Sie unter [/clr Restrictions](../../build/reference/clr-restrictions.md).
+Zusätzlich zu den oben genannten Einschränkungen können **_alloca** nicht in-Blöcken verwendet werden, wenn die/CLR-Option[(Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md) verwendet wird **`__except`** . Weitere Informationen finden Sie unter [/clr Restrictions](../../build/reference/clr-restrictions.md).
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
@@ -139,9 +139,9 @@ int main()
 Allocated 1000 bytes of stack at 0x0012FB50
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherbelegung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
 [calloc](calloc.md)<br/>
 [malloc](malloc.md)<br/>
 [realloc](realloc.md)<br/>

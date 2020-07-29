@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - allocators header
 ms.assetid: 4393a607-4df8-4278-bbb2-c8ec52e60b83
-ms.openlocfilehash: f981b86ed8f5d3b240d9f02380a603eb4f2605bc
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 69c086515230fd5a9aaa039ef02b7995842fa260
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623578"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87204884"
 ---
 # <a name="ltallocatorsgt"></a>&lt;allocators&gt;
 
@@ -26,7 +26,7 @@ Definiert mehrere Vorlagen, die dabei helfen, Speicherblöcke für knotenbasiert
 > [!NOTE]
 > \<allocators>ist veraltet, beginnend mit Visual Studio 2019, Version 16,3.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der- \<allocators> Header stellt sechs zuordnervorlagen bereit, mit denen Speicher Verwaltungsstrategien für Knoten basierte Container ausgewählt werden können. Für den Gebrauch mit diesen Vorlagen stellt es außerdem mehrere verschiedene Synchronisierungsfilter bereit, mit deren Hilfe Sie Strategien zur Speicherverwaltung an eine Vielzahl von Multithread-Schemas (oder auch an kein Schema) anpassen können. Sie können Ihre APP beschleunigen oder die Arbeitsspeicher Anforderungen verringern, indem Sie eine Speicher Verwaltungs Strategie mit ihren Speicher Verwendungs Mustern und Synchronisierungs Anforderungen vergleichen.
 
@@ -80,7 +80,7 @@ std::list<int, alloc<int> > _List1;
 
 „_Lst1“ weist Knoten mit `allocator_chunklist` und dem Synchronisierungsfilter [sync_per_thread](sync-per-thread-class.md) zu.
 
-Eine Blockzuweisung ist ein Cache oder ein Filter. Ein Cache ist eine Klassen Vorlage, die ein Argument vom Typ Std:: size_t annimmt. Er definiert eine Blockzuweisung, die Speicherblöcke einheitlicher Größe zuweist und freigibt. Er muss mithilfe des **New**-Operators Speicher abrufen, er muss jedoch keinen separaten Operator **New** für jeden Block erstellen. Möglicherweise stellt er Unterzuordnungen aus einem größeren Block her, oder er zwischenspeichert möglicherweise freigegebene Blöcke für eine darauffolgende Freigabe.
+Eine Blockzuweisung ist ein Cache oder ein Filter. Ein Cache ist eine Klassen Vorlage, die ein Argument vom Typ Std:: size_t annimmt. Er definiert eine Blockzuweisung, die Speicherblöcke einheitlicher Größe zuweist und freigibt. Er muss Speicher mithilfe des Operators abrufen **`new`** , er muss jedoch keinen separaten Operator Operator **`new`** für jeden Block erstellen. Möglicherweise stellt er Unterzuordnungen aus einem größeren Block her, oder er zwischenspeichert möglicherweise freigegebene Blöcke für eine darauffolgende Freigabe.
 
 Ein Compiler, der den Wert des Std:: size_t-Arguments, das beim instanziiert der Vorlage verwendet wurde, nicht erneut binden kann, ist nicht notwendigerweise der Wert des Arguments _Sz der an die Member-Funktionen von Cache zuweisen und deren Freigabe aufgehoben wird.
 
@@ -132,7 +132,7 @@ Die Cache Vorlage `cache_freelist` nimmt ein Max-Klassen Argument an, das die ma
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[Operator! = ( \<allocators> )](allocators-operators.md#op_neq)|Es wird auf Ungleichheit zwischen Zuweisungsobjekten einer bestimmten Klasse getestet.|
 |[Operator = = ( \<allocators> )](allocators-operators.md#op_eq_eq)|Es wird auf Gleichheit zwischen Zuweisungsobjekten einer bestimmten Klasse getestet.|
@@ -168,6 +168,6 @@ Die Cache Vorlage `cache_freelist` nimmt ein Max-Klassen Argument an, das die ma
 
 **Namespace:** stdext
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Headerdateienreferenz](cpp-standard-library-header-files.md)

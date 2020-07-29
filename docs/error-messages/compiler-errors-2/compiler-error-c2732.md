@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2732
 ms.assetid: 01b7ad2c-93cf-456f-a4c0-c5f2fdc7c07c
-ms.openlocfilehash: 61bac8c1b5c9e029cc5833f458669b490fed8c91
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 78be424040c7315271d0880c6678584f698b5be8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74755797"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218181"
 ---
 # <a name="compiler-error-c2732"></a>Compilerfehler C2732
 
@@ -21,7 +21,7 @@ Die Funktion wurde bereits mit einem anderen Bindungsspezifizierer deklariert.
 
 Dieser Fehler kann durch das Einbeziehen von Dateien mit unterschiedlichen Bindungsspezifizierern verursacht werden.
 
-Um diesen Fehler zu beheben, ändern Sie die `extern`-Anweisungen, sodass die Bindungen übereinstimmen. Brechen Sie im Besonderen `#include`-Direktive nicht in `extern "C"`-Blöcke um.
+Um diesen Fehler zu beheben, ändern Sie die- **`extern`** Anweisungen so, dass die Verknüpfungen übereinstimmen. Brechen Sie im Besonderen `#include`-Direktive nicht in `extern "C"`-Blöcke um.
 
 ## <a name="example"></a>Beispiel
 

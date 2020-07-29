@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C2440
 ms.assetid: 36e6676c-f04f-4715-8ba1-f096c4bf3b44
-ms.openlocfilehash: 8de433361901b5d247616c154afc48d637373d43
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
+ms.openlocfilehash: 75b2ba62182a33137b433c836b4acf7c9e1fc231
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65448033"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87207978"
 ---
 # <a name="compiler-error-c2440"></a>Compilerfehler C2440
 
 'Konvertierung': Konvertierung von 'Typ1' in 'Typ2' nicht möglich
 
-Der Compiler kann nicht aus umgewandelt `type1` zu `type2`.
+Der Compiler kann nicht von `type1` in umwandeln `type2` .
 
 ## <a name="example"></a>Beispiel
 
-C2440 kann verursacht werden, wenn Sie versuchen, eine nicht-const `char*` (oder `wchar_t*`) durch mithilfe eines Zeichenfolgenliterals in C++-Code, wenn die compilerübereinstimmungsoption [/Zc: strictstrings](../../build/reference/zc-strictstrings-disable-string-literal-type-conversion.md) festgelegt ist. In C ist der Typ eines Zeichenfolgenliterals Array von `char`, aber in C++ ist der Array von `const char`. Dieses Beispiel generiert C2440:
+C2440 kann verursacht werden, wenn Sie versuchen, eine nicht-Konstante **`char*`** (oder `wchar_t*` ) mithilfe eines Zeichenfolgenliterals in C++-Code zu initialisieren, wenn die compilerübereinstimmungs Option [/Zc: strictstrings](../../build/reference/zc-strictstrings-disable-string-literal-type-conversion.md) festgelegt ist. In C ist der Typ eines Zeichenfolgenliterals ein Array von **`char`** , aber in C++ ist es ein Array von `const char` . Dieses Beispiel generiert C2440:
 
 ```cpp
 // C2440s.cpp
@@ -78,7 +78,7 @@ Base * func(Derived * d) {
 
 ## <a name="example"></a>Beispiel
 
-Die C2440-Fehler in den Zeilen 15 und 16 des folgenden Beispielcodes sind durch die Meldung `Incompatible calling conventions for UDT return value` gekennzeichnet. Ein *UDT* ein benutzerdefinierten Typ, z. B. eine Klasse, Struktur oder Union ist. Derartige Inkompatibilitätsfehler treten auf, wenn die Aufrufkonvention eines UDTs, die im Rückgabetyp einer Vorwärtsdeklaration festgelegt wurde, Konflikte mit der aktuellen Aufrufkonvention des UDTs verursacht und zugleich ein Funktionszeiger betroffen ist.
+Die C2440-Fehler in den Zeilen 15 und 16 des folgenden Beispielcodes sind durch die Meldung `Incompatible calling conventions for UDT return value` gekennzeichnet. Ein *UDT* ist ein benutzerdefinierter Typ, z. b. eine Klasse, eine Struktur oder eine Union. Derartige Inkompatibilitätsfehler treten auf, wenn die Aufrufkonvention eines UDTs, die im Rückgabetyp einer Vorwärtsdeklaration festgelegt wurde, Konflikte mit der aktuellen Aufrufkonvention des UDTs verursacht und zugleich ein Funktionszeiger betroffen ist.
 
 Das Beispiel enthält zunächst Vorwärtsdeklarationen für eine Struktur und für eine Funktion, durch die die Struktur zurückgegeben wird. Der Compiler geht davon aus, dass die Struktur die C++-Aufrufkonvention verwendet. Darauf folgt die Strukturdefinition, die standardmäßig die C-Aufrufkonvention verwendet. Da der Compiler die Aufrufkonvention der Struktur nicht kennt, solange die Struktur nicht vollständig eingelesen ist, setzt er voraus, dass die Aufrufkonvention für die Struktur im Rückgabetyp von `get_c2` ebenfalls C++ entspricht.
 
@@ -143,7 +143,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-C2440 kann auch bei nicht ordnungsgemäßer Verwendung einer benutzerdefinierten Konvertierung auftreten. Z. B. wenn ein Konvertierungsoperator definiert wurde als `explicit`, der Compiler kann nicht in eine implizite Konvertierung verwenden. Weitere Informationen über benutzerdefinierte Konvertierungen finden Sie unter [User-Defined Conversions (C++ / CLI)](../../dotnet/user-defined-conversions-cpp-cli.md)). Dieses Beispiel generiert C2440:
+C2440 kann auch bei nicht ordnungsgemäßer Verwendung einer benutzerdefinierten Konvertierung auftreten. Wenn ein Konvertierungs Operator z. b. als definiert wurde **`explicit`** , kann der Compiler ihn nicht in einer impliziten Konvertierung verwenden. Weitere Informationen zu benutzerdefinierten Konvertierungen finden Sie unter [benutzerdefinierte Konvertierungen (C++/CLI)](../../dotnet/user-defined-conversions-cpp-cli.md)). Dieses Beispiel generiert C2440:
 
 ```cpp
 // C2440d.cpp
@@ -194,9 +194,9 @@ C2440 kann auch aufgrund von Änderungen in der Attributfunktion auftreten.  Im 
 
 ## <a name="example"></a>Beispiel
 
-Microsoft C++ Compiler nicht mehr erlaubt die [Const_cast-Operator](../../cpp/const-cast-operator.md) zur Abwärtsumwandlung beim Quellcode mit **"/ CLR"** Programmierung kompiliert wird.
+Der Microsoft C++-Compiler lässt den [const_cast Operator](../../cpp/const-cast-operator.md) nicht mehr zu, wenn der Quellcode, der die **/CLR** -Programmierung verwendet, kompiliert wird.
 
-Um den Fehler C2440 zu beheben, verwenden Sie den richtigen Umwandlungsoperator. Weitere Informationen finden Sie unter [Umwandlungsoperatoren](../../cpp/casting-operators.md).
+Um den Fehler C2440 zu beheben, verwenden Sie den richtigen Umwandlungsoperator. Weitere Informationen finden Sie unter Umwandlungs [Operatoren](../../cpp/casting-operators.md).
 
 Dieses Beispiel generiert C2440:
 
@@ -215,7 +215,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-C2440 kann aufgrund von kompatibilitätsänderungen an den Compiler in Visual Studio 2015 Update 3 auftreten. Zuvor der Compiler fälschlicherweise behandelt bestimmte unterschiedliche Ausdrücke als gleicher Typ beim Identifizieren einer passenden Vorlage für eine `static_cast` Vorgang. Nachdem der Compiler die Typen ordnungsgemäß unterscheidet, und code verlassen, die auf dem vorherigen `static_cast` Verhalten ist fehlerhaft. Um dieses Problem zu beheben, ändern Sie die Template-Argument, um den Typ des Vorlagenparameters übereinstimmt, oder verwenden Sie eine `reinterpret_cast` oder Umwandlung im C-Stil.
+C2440 kann aufgrund von Konformitäts Änderungen des Compilers in Visual Studio 2015 Update 3 auftreten. Zuvor hat der Compiler bestimmte unterschiedliche Ausdrücke beim Identifizieren einer Vorlagen Übereinstimmung für einen Vorgang fälschlicherweise als denselben Typ behandelt **`static_cast`** . Der Compiler unterscheidet die Typen nun ordnungsgemäß, und Code, der auf das vorherige Verhalten beruhte, ist fehlerhaft **`static_cast`** . Um dieses Problem zu beheben, ändern Sie das Vorlagen Argument so, dass es dem Vorlagen Parametertyp entspricht, oder verwenden Sie eine Typumwandlung im **`reinterpret_cast`** C-Format.
 
 Dieses Beispiel generiert C2440:
 
@@ -244,9 +244,9 @@ This error can appear in ATL code that uses the SINK_ENTRY_INFO macro defined in
 
 ### <a name="copy-list-initialization"></a>copy-list-Initialisierung
 
-Visual Studio 2017 und höher lösen ordnungsgemäß Compilerfehler im Zusammenhang mit der Erstellung von Objekten mithilfe von Initialisiererlisten aus, die nicht in Visual Studio 2015 abgefangen wurden und können zum Absturz führen oder einem nicht definierten Laufzeitverhalten führen konnte. In C ++ 17 Copy-List-Initialisierung der Compiler ist erforderlich, um einen expliziten Konstruktor für die überladungsauflösung berücksichtigen, aber muss ein Fehler ausgelöst, wenn diese Überladung tatsächlich ausgewählt wird.
+Visual Studio 2017 und höhere Versionen verursachen Compilerfehler im Zusammenhang mit der Objekt Erstellung mithilfe von Initialisiererlisten, die nicht in Visual Studio 2015 abgefangen wurden, und können zu Abstürzen oder nicht definiertem Laufzeitverhalten führen. In c++ 17 Copy-List-Initialization muss der Compiler einen expliziten Konstruktor für die Überladungs Auflösung in Erwägung ziehen, aber es muss ein Fehler ausgegeben werden, wenn die Überladung tatsächlich ausgewählt wird.
 
-Im folgende Beispiel kompiliert in Visual Studio 2015, aber nicht in Visual Studio 2017.
+Das folgende Beispiel wird in Visual Studio 2015 kompiliert, jedoch nicht in Visual Studio 2017.
 
 ```cpp
 // C2440j.cpp
@@ -283,7 +283,7 @@ int main()
 
 ### <a name="cv-qualifiers-in-class-construction"></a>CV-Qualifizierer in der Klassenkonstruktion
 
-In Visual Studio 2015 ignoriert der Compiler beim Generieren eines Klassenobjekts über einen Konstruktoraufruf manchmal fälschlicherweise die CV-Qualifizierer. Dies kann potenziell zu einem Absturz oder zu unerwartetem Laufzeitverhalten führen. Im folgende Beispiel kompiliert in Visual Studio 2015, aber löst einen Compilerfehler in Visual Studio 2017 und höher:
+In Visual Studio 2015 ignoriert der Compiler beim Generieren eines Klassenobjekts über einen Konstruktoraufruf manchmal fälschlicherweise die CV-Qualifizierer. Dies kann potenziell zu einem Absturz oder zu unerwartetem Laufzeitverhalten führen. Im folgenden Beispiel wird in Visual Studio 2015 kompiliert, es wird jedoch ein Compilerfehler in Visual Studio 2017 und höher ausgelöst:
 
 ```cpp
 struct S

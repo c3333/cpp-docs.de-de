@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2180
 ms.assetid: ea71b39e-b977-48a7-b7bd-af68ef5e263b
-ms.openlocfilehash: 5e9444356e536a8369dbcf62cac3c7538d9da5dd
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 3794a1ce0fcbe60c06cb3efca45a3081e85c17ce
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301898"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87210019"
 ---
 # <a name="compiler-error-c2180"></a>Compilerfehler C2180
 
 steuernder Ausdruck ist vom Typ "type".
 
-Der steuernde Ausdruck in eine `if`-, `while`- oder `for`-Anweisung, oder die `do`-Anweisung ist ein konvertierter Ausdruck für `void`. Um dieses Problem zu beheben, ändern Sie den steuernden Ausdruck so, dass er einen `bool`-Typ oder einen Typ erstellt, der in `bool` konvertiert werden kann.
+Der steuernde Ausdruck in einer-,-,- **`if`** **`while`** oder- **`for`** **`do`** Anweisung ist ein Ausdruck **`void`** , der in umgewandelt wird. Um dieses Problem zu beheben, ändern Sie den steuernden Ausdruck in einen, der einen **`bool`** oder einen Typ erzeugt, der in konvertiert werden kann **`bool`** .
 
 Im folgenden Beispiel wird C2180 generiert:
 

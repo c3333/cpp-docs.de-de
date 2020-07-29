@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - allocator<void> class
 ms.assetid: abfb40f5-c600-46a6-b130-f42c6535b2bd
-ms.openlocfilehash: af29c70dca56b1e68eef3614357269c587a77ec9
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: b6ca3f8b994756a21d85860fd8aff429ee38e58b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623678"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87204929"
 ---
 # <a name="allocatorltvoidgt-class"></a>Allocator&lt;void&gt;-Klasse
 
-Eine Spezialisierung der Klassen Vorlagen Zuweisung zum Typ " **void**", die die Typen definiert, die in diesem Kontext sinnvoll sind.
+Eine Spezialisierung der Klassen Vorlagen Zuweisung zum Typ **`void`** , die die Typen definiert, die in diesem Kontext sinnvoll sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,9 +39,9 @@ class allocator<void> {
 };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klasse spezialisiert explizit die Klassen Vorlagen [Zuweisung](allocator-class.md) für den Typ " **void**". Die Konstruktoren und der Zuweisungs Operator Verhalten sich genauso wie für die Klassen Vorlage, Sie definieren jedoch nur die folgenden Typen:
+Die Klasse spezialisiert explizit die Klassen Vorlagen [Zuweisung](allocator-class.md) für den Typ **`void`** . Die Konstruktoren und der Zuweisungs Operator Verhalten sich genauso wie für die Klassen Vorlage, Sie definieren jedoch nur die folgenden Typen:
 
 - [const_pointer](allocator-class.md#const_pointer).
 

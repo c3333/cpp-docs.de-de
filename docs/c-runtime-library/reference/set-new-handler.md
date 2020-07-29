@@ -30,16 +30,16 @@ helpviewer_keywords:
 - error handling
 - transferring control to error handler
 ms.assetid: 1d1781b6-5cf8-486a-b430-f365e0bb023f
-ms.openlocfilehash: 06da25fb38d18691f78973f4e63a8b7b48d98ce1
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: cd6e4df47b28e84bb0ac5ee857cfa1a3e7cf805a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913959"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218545"
 ---
 # <a name="_set_new_handler"></a>_set_new_handler
 
-Übergibt die Steuerung an den Fehlerbehandlungsmechanismus, wenn der **new**-Operator keine Speicherbelegung vornehmen kann.
+Überträgt die Steuerung an den Fehler Behandlungs Mechanismus, wenn der **`new`** Operator keinen Arbeitsspeicher zuordnen kann.
 
 ## <a name="syntax"></a>Syntax
 
@@ -56,9 +56,9 @@ Zeiger zu der von der Anwendung bereitgestellten Speicherbehandlungsfunktion. Is
 
 Gibt einen Zeiger auf die vorherige Ausnahme Behandlungs Funktion zurück, die von **_set_new_handler**registriert wurde, sodass die vorherige Funktion später wieder hergestellt werden kann. Wenn keine vorherige Funktion festgelegt wurde, kann der Rückgabewert verwendet werden, um das Standardverhalten wiederherzustellen. Dieser Wert kann **null**sein.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die C++ **_set_new_handler** -Funktion gibt eine Ausnahme Behandlungs Funktion an, die die Steuerung erhält, wenn der **neue** Operator keinen Arbeitsspeicher zuordnen kann. Schlägt **New** fehl, ruft das Laufzeitsystem automatisch die Ausnahme Behandlungs Funktion auf, die als Argument an **_set_new_handler**übermittelt wurde. **_PNH**, die in New. h definiert ist, ist ein Zeiger auf eine Funktion, die den Typ " **int** " zurückgibt und ein Argument vom Typ " **size_t**" annimmt. Verwenden Sie **size_t** , um den Speicherplatz anzugeben, der zugewiesen werden soll.
+Die Funktion C++ **_set_new_handler** gibt eine Ausnahme Behandlungs Funktion an, die die Steuerung erhält, wenn der **`new`** Operator keinen Arbeitsspeicher zuordnen kann. Wenn **`new`** fehlschlägt, ruft das Laufzeitsystem automatisch die Ausnahme Behandlungs Funktion auf, die als Argument an **_set_new_handler**übermittelt wurde. **_PNH**, die in New. h definiert ist, ist ein Zeiger auf eine Funktion, die den Typ zurückgibt **`int`** und ein Argument vom Typ " **size_t**" annimmt. Verwenden Sie **size_t** , um den Speicherplatz anzugeben, der zugewiesen werden soll.
 
 Es ist kein Standardhandler vorhanden.
 
@@ -95,7 +95,7 @@ Sie können die Funktions Adresse speichern, die zuletzt an die **_set_new_handl
    // . . .
 ```
 
-Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für [malloc](malloc.md) fest. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie Sie von **_set_new_handler**festgelegt wird. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten außer Kraft setzen, sodass, wenn **malloc** keinen Arbeitsspeicher zuordnen kann, die neue Handlerroutine von **malloc** auf die gleiche Weise aufgerufen wird wie der **neue** Operator, wenn dieser aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
+Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für [malloc](malloc.md) fest. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie Sie von **_set_new_handler**festgelegt wird. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten überschreiben, sodass **malloc** die neue Handlerroutine auf dieselbe Weise aufruft, wenn **malloc** keinen Arbeitsspeicher zuordnen kann, **`new`** Wenn es aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
 
 ```cpp
 _set_new_mode(1);
@@ -111,7 +111,7 @@ Es gibt einen einzigen **_set_new_handler** Handler für alle dynamisch verknüp
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_set_new_handler**|\<new.h>|
 
