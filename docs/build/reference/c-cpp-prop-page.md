@@ -4,12 +4,12 @@ description: Referenzhandbuch zu den Eigenschaften Seiteneigenschaften von Visua
 ms.date: 07/08/2020
 ms.topic: article
 ms.assetid: 16375038-4917-4bd0-9a2a-26343c1708b7
-ms.openlocfilehash: 3366f6677bf976b6211dd27a8abb114765fb2abc
-ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
+ms.openlocfilehash: d1ade2959351d6e60b1d80554bbfa34074dda725
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86180889"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229739"
 ---
 # <a name="cc-property-pages"></a>C/C++-Eigenschaften Seiten
 
@@ -120,8 +120,8 @@ Wählen Sie die Ebene der [Inline Funktions](../../cpp/inline-functions-cpp.md) 
 
 - **Standard**
 - **Deaktiviert** : deaktiviert die Inline Erweiterung, die standardmäßig aktiviert ist.
-- **Nur __inline** : erweitert nur Funktionen, die als **`inline`** , oder markiert sind `__forceinline` `__inline` . Oder in einer C++ Member-Funktion, die innerhalb einer Klassen Deklaration definiert ist.
-- **Alle geeigneten** -erweitert Funktionen **`inline`** , die als oder gekennzeichnet sind `__inline` , und jede andere Funktion, die der Compiler auswählt. (Die Erweiterung erfolgt nach dem Ermessen des Compilers, häufig als *Automatisches inlining*bezeichnet.)
+- **Nur __inline** : erweitert nur Funktionen, die als **`inline`** , oder markiert sind **`__forceinline`** **`__inline`** . Oder in einer C++ Member-Funktion, die innerhalb einer Klassen Deklaration definiert ist.
+- **Alle geeigneten** -erweitert Funktionen **`inline`** , die als oder gekennzeichnet sind **`__inline`** , und jede andere Funktion, die der Compiler auswählt. (Die Erweiterung erfolgt nach dem Ermessen des Compilers, häufig als *Automatisches inlining*bezeichnet.)
 
 ### <a name="enable-intrinsic-functions"></a>Intrinsische Funktionen aktivieren
 
@@ -255,7 +255,7 @@ Guard-Sicherheitsüberprüfung hilft bei der Erkennung von versuchen, eine Verte
 #### <a name="choices"></a>Auswahl
 
 - **Ja** , Sicherheitsüberprüfung mit Schutzgruppen aktivieren [`/guard:cf`](guard-enable-control-flow-guard.md) .
-- **Nein**
+- **No**
 
 ### <a name="enable-function-level-linking"></a>Funktionslevel-Linking aktivieren
 
@@ -317,7 +317,7 @@ Aktiviert oder unterdrückt den Konformitäts Modus. Legt fest [`/permissive-`](
 
 ### <a name="treat-wchar_t-as-built-in-type"></a>Wchar_t als integrierten Typ behandeln
 
-Wenn angegeben, wird der Typ zu einem systemeigenen Typ, der auf **`wchar_t`** `__wchar_t` die gleiche Weise wie **`short`** zugeordnet wird `__int16` . [`/Zc:wchar_t`](zc-wchar-t-wchar-t-is-native-type.md)ist standardmäßig aktiviert.
+Wenn angegeben, wird der Typ zu einem systemeigenen Typ, der auf **`wchar_t`** **`__wchar_t`** die gleiche Weise wie **`short`** zugeordnet wird **`__int16`** . [`/Zc:wchar_t`](zc-wchar-t-wchar-t-is-native-type.md)ist standardmäßig aktiviert.
 
 ### <a name="force-conformance-in-for-loop-scope"></a>Konformität in for-Schleifen Bereich erzwingen
 
@@ -434,10 +434,10 @@ Wählen Sie die Standard Aufruf Konvention für Ihre Anwendung aus (kann von ein
 
 #### <a name="choices"></a>Auswahl
 
-- **__cdecl** : gibt die `__cdecl` Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind `__stdcall` `__fastcall` .
-- **__fastcall** : gibt die `__fastcall` Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind `__cdecl` `__stdcall` . Alle `__fastcall`-Funktionen müssen Prototypen haben.
-- **__stdcall** : gibt die `__stdcall` Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind `__cdecl` `__fastcall` . Alle `__stdcall`-Funktionen müssen Prototypen haben.
-- **__vectorcall** : gibt die `__vectorcall` Aufruf Konvention für alle Funktionen mit Ausnahme der C++-Element Funktionen und-Funktionen an, die als `__cdecl` , oder markiert sind `__fastcall` `__stdcall` . Alle `__vectorcall`-Funktionen müssen Prototypen haben.
+- **`__cdecl`**: Gibt die **`__cdecl`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__stdcall`** **`__fastcall`** .
+- **`__fastcall`**: Gibt die **`__fastcall`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__cdecl`** **`__stdcall`** . Alle **`__fastcall`** Funktionen müssen über Prototypen verfügen.
+- **`__stdcall`**: Gibt die **`__stdcall`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__cdecl`** **`__fastcall`** . Alle **`__stdcall`** Funktionen müssen über Prototypen verfügen.
+- **`__vectorcall`**: Gibt die **`__vectorcall`** Aufruf Konvention für alle Funktionen mit Ausnahme der C++-Element Funktionen und-Funktionen an, die als **`__cdecl`** , oder markiert sind **`__fastcall`** **`__stdcall`** . Alle **`__vectorcall`** Funktionen müssen über Prototypen verfügen.
 
 ### <a name="compile-as"></a>Kompilieren als
 

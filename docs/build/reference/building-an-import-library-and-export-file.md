@@ -25,46 +25,46 @@ helpviewer_keywords:
 - .lib files
 - EXP files
 ms.assetid: 2fe4f30a-1dd6-4b05-84b5-0752e1dee354
-ms.openlocfilehash: 37c3169b66e1120dbfdb3a69379430e9bc8a1586
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5cb5224b3edaf84dbcb7c0429044a647fb5ac19a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62294786"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229752"
 ---
 # <a name="building-an-import-library-and-export-file"></a>Erstellen einer Importbibliothek und einer Exportdatei
 
-Zum Erstellen einer Importbibliothek und -Datei exportieren, verwenden Sie die folgende Syntax:
+Verwenden Sie die folgende Syntax, um eine Import Bibliothek und eine Exportdatei zu erstellen:
 
-> **LIB/DEF**[**:**<em>Definitionsdatei (deffile)</em>] [*Optionen*] [*Objektdateien*] [*Bibliotheken*]
+> **LIB/DEF**[**:**<em>deffile</em>] [*Optionen*] [*objfiles*] [*Bibliotheken*]
 
-Wenn/DEF angegeben wird, erstellt LIB die Ausgabedateien von Exportspezifikationen, die in der LIB-Befehl übergeben werden. Es gibt drei Methoden zum Angeben von Exports, aufgelistet in empfohlener Reihenfolge von Nutzen:
+Wenn/DEF angegeben wird, erstellt LIB die Ausgabedateien aus den Export Spezifikationen, die im LIB-Befehl übermittelt werden. Es gibt drei Methoden zum Angeben von Exporten, die in der empfohlenen Reihenfolge der Verwendung aufgeführt sind:
 
-1. Ein **__declspec(dllexport)** Definition eines der *Objektdateien* oder *Bibliotheken*
+1. Eine **`__declspec(dllexport)`** Definition in einer der *objfiles* -oder- *Bibliotheken*
 
-1. Eine Spezifikation von/Export:*Namen* in der LIB-Befehlszeile
+1. Eine Spezifikation von/Export:*Name* in der LIB-Befehlszeile
 
-1. Eine Definition in einem **EXPORTE** -Anweisung in einem *Definitionsdatei (deffile)*
+1. Eine Definition in einer **Exports** -Anweisung in einem " *unffile* ".
 
-Dies sind die gleichen Methoden, die Sie zum Festlegen von Exporten, beim Verknüpfen von einem ausführenden Programm verwenden. Ein Programm kann mehr als eine Methode verwenden. Sie können Teile der LIB-Befehl angeben (z. B. mehrere *Objektdateien* oder/Export-Spezifikationen) können Sie in einer Befehlsdatei in der LIB-Befehl, wie Sie in einem Linkbefehl.
+Dabei handelt es sich um dieselben Methoden, die Sie zum Angeben von Exporten verwenden, wenn Sie ein Exportprogramm verknüpfen. Ein Programm kann mehr als eine Methode verwenden. Sie können Teile des LIB-Befehls (z. b. mehrere *objfiles* -oder/Export-Spezifikationen) in einer Befehlsdatei im LIB-Befehl angeben, wie Sie dies in einem Link Befehl tun können.
 
-Die folgenden Optionen gelten für das Erstellen einer Importbibliothek und -Datei exportieren:
+Die folgenden Optionen gelten für das Aufbauen einer Import Bibliothek und einer Exportdatei:
 
-> **/OUT:** *import*
+> **/Out:** *importieren*
 
-Überschreibt den Standardnamen der Ausgabe für die *importieren* Bibliothek erstellt wird. Wenn/Out nicht angegeben ist, wird der Standardname ist der Basisname der ersten Objektdatei oder -Bibliothek in der LIB-Befehl und die Erweiterung. Lib. Die Exportdatei erhält den gleichen Basisnamen wie die Importbibliothek und die Erweiterung. "exp".
+Überschreibt den Standardausgabe Dateinamen für die *Import* Bibliothek, die erstellt wird. Wenn/out nicht angegeben wird, ist der Standardname der Basis Name der ersten Objektdatei oder-Bibliothek im Befehl lib und der Erweiterung. lib. Die Exportdatei erhält denselben Basis Namen wie die Import Bibliothek und die Erweiterung. Exp.
 
-> **/EXPORT:** *entryname*\[**=** *internalname*]\[,**\@**<em>ordinal</em>\[, **NONAME**]]\[, **DATA**]
+> **/Export:** *entryname* \[ **=** *internalname*] \[ , **\@** <em>Ordnungszahl</em> \[ , **Noname**]] \[ , **Daten**]
 
-Exportiert eine Funktion von Ihrem Programm aus, um andere Programme, um die Funktion zu ermöglichen. Sie können auch Daten exportieren (mithilfe der **Daten** Schlüsselwort). Exporte werden in der Regel in eine DLL-Datei definiert.
+Exportiert eine Funktion aus dem Programm, um anderen Programmen das Abrufen der Funktion zu ermöglichen. Sie können auch Daten (mit dem Schlüsselwort " **Data** ") exportieren. Exporte werden in der Regel in einer DLL definiert.
 
-Die *Eintragsname* ist der Name der Funktion oder des Elements, wie die vom aufrufenden Programm verwendet werden. Optional können Sie angeben der *Internalname* wie die Funktion bezeichnet, im Programm definiert; in der Standardeinstellung *Internalname* ist identisch mit *Eintragsname*. Die *ordinal* gibt Sie einen Index in die Tabelle "Exportieren" im Bereich von 1 bis 65.535 sein, wenn Sie keinen angeben *ordinal*, LIB weist ein. Die **NONAME** Schlüsselwort exportiert die Funktion nur als Ordnungszahl, ohne eine *Eintragsname*. Die **Daten** -Schlüsselwort wird verwendet, um Objekte, die nur Daten zu exportieren.
+*Entryname* ist der Name der Funktion oder des Datenelements, wie er vom aufrufenden Programm verwendet werden soll. Optional können Sie den *internalname* als Funktion angeben, die im definierenden Programm bekannt ist. Standardmäßig entspricht *internalname* dem *entryname*. Die *Ordinalzahl* gibt einen Index für die Export Tabelle im Bereich von 1 bis 65.535 an. Wenn Sie keine *Ordinalzahl*angeben, weist lib eine Zuweisung zu. Das **Noname** -Schlüsselwort exportiert die Funktion nur als Ordinalzahl ohne *entryname*. Das **Data** -Schlüsselwort wird zum Exportieren von Datenobjekten verwendet.
 
-> **/ INCLUDE:** *Symbol*
+> **/Include:** *Symbol*
 
-Fügt das angegebene *Symbol* der Symboltabelle. Diese Option ist nützlich für das Erzwingen der Verwendung eines Bibliotheksobjekts, die andernfalls nicht einbezogen werden sollen.
+Fügt der Symboltabelle das angegebene *Symbol* hinzu. Diese Option ist nützlich, um die Verwendung eines Bibliotheks Objekts zu erzwingen, das andernfalls nicht eingeschlossen wäre.
 
-Beachten Sie, dass wenn Sie die Importbibliothek in einem vorherigen Schritt erstellen, bevor Sie die DLL-Datei erstellen, den gleichen Satz von Objektdateien müssen beim Erstellen der DLL-Datei übergeben werden wie bei der Erstellung der Importbibliothek.
+Beachten Sie Folgendes: Wenn Sie die Import Bibliothek in einem vorläufigen Schritt erstellen, müssen Sie vor dem Erstellen der DLL-Datei beim Erstellen der dll denselben Satz von Objektdateien übergeben, wie Sie beim Erstellen der Import Bibliothek übergeben haben.
 
 ## <a name="see-also"></a>Siehe auch
 
