@@ -8,12 +8,12 @@ helpviewer_keywords:
 - names [C++], class
 - scope [C++], class names
 ms.assetid: 47e26482-0111-466f-b857-598c15d05105
-ms.openlocfilehash: 1f8b79c637662d79051b72e6aabefc99c450bdc5
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 024a61419129f669485944a427379dd41c385404
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160878"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231064"
 ---
 # <a name="summary-of-scope-rules"></a>Zusammenfassung der Bereichsregeln
 
@@ -29,7 +29,7 @@ Ein Name eines Objekts, einer Funktion oder eines Enumerators ist global, wenn e
 
 - Bereichsauflösung (`::`)
 
-- Elementauswahl für Objekte und Verweise ( **.** )
+- Elementauswahl für Objekte und Verweise (**.**)
 
 - Elementauswahl für Zeiger ( **->** )
 
@@ -37,7 +37,7 @@ Ein Name eines Objekts, einer Funktion oder eines Enumerators ist global, wenn e
 
 Namen, die mit dem binären Bereichsauflösungsoperator (`::`) verwendet werden, werden als „qualifizierte Namen“ bezeichnet. Der Name, der nach dem binären Bereichsauflösungsoperator angegeben wird, muss einem Member der Klasse entsprechen, der auf der linken Seite des Operators angegeben oder ein Member der Basisklasse(n) ist.
 
-Namen, die nach dem Member-Selection-Operator () angegeben werden **.** oder **->** ) müssen Member des Klassen Typs des Objekts sein, das auf der linken Seite des Operators oder der Basisklasse (es) angegeben wird. Die auf der rechten Seite des Member-Selection-Operators ( **->** ) angegebenen Namen können auch Objekte eines anderen Klassen Typs sein, vorausgesetzt, dass die linke Seite von **->** ein Klassenobjekt ist und dass die Klasse einen überladenen Member-Selection-Operator ( **->** ) definiert, der zu einem Zeiger auf einen anderen Klassentyp ausgewertet wird. (Diese Bereitstellung wird ausführlicher unter Zugriff auf [Klassenmember](../cpp/member-access.md)erläutert.)
+Namen, die nach dem Member-Selection-Operator () angegeben werden **.** oder **->** ) müssen Member des Klassen Typs des Objekts sein, das auf der linken Seite des Operators oder der zugehörigen Basisklassen angegeben wird. Namen, die auf der rechten Seite des Member-Selection-Operators ( **->** ) angegeben sind, können auch Objekte eines anderen Klassen Typs sein, vorausgesetzt, dass die linke Seite von **->** ein Klassenobjekt ist und dass die Klasse einen überladenen Member-Selection-Operator () definiert, der **->** zu einem Zeiger auf einen anderen Klassentyp ausgewertet wird. (Diese Bereitstellung wird ausführlicher unter Zugriff auf [Klassenmember](../cpp/member-access.md)erläutert.)
 
 Der Compiler sucht nach Namen in der folgenden Reihenfolge und hört auf, wenn der Name gefunden wird:
 
@@ -57,11 +57,11 @@ Sie können jedoch wie folgt Änderungen an dieser Suchreihenfolge vornehmen:
 
 1. Namen, denen `::` vorangestellt wird, zwingen die Suche, im globalen Gültigkeitsbereich zu starten.
 
-1. Namen, denen die Schlüsselwörter **Class**, **struct**und **Union** vorangestellt sind, erzwingen, dass der Compiler nur nach **Klassen**-, **Struktur**-oder **Union** -Namen sucht.
+1. Namen, denen die **`class`** Schlüsselwörter, und vorangestellt sind, **`struct`** **`union`** erzwingen, dass der Compiler nur nach-,- **`class`** oder-Namen sucht **`struct`** **`union`** .
 
-1. Namen auf der linken Seite des Bereichs Auflösungs Operators (`::`) können nur **Klassen**-, **Struktur**-, **Namespace**-oder **Union** -Namen sein.
+1. Namen auf der linken Seite des Bereichs Auflösungs Operators ( `::` ) können nur-,-,- **`class`** oder-Namen sein **`struct`** **`namespace`** **`union`** .
 
-Wenn der Name auf einen nicht statischen Member verweist, aber in einer statischen Memberfunktion verwendet wird, wird eine Fehlermeldung generiert. Wenn der Name auf einen nicht statischen Member in einer einschließenden Klasse verweist, wird auch eine Fehlermeldung generiert, da eingeschlossene Klassen keine umschließende Klasse **dieses** Zeigers aufweisen.
+Wenn der Name auf einen nicht statischen Member verweist, aber in einer statischen Memberfunktion verwendet wird, wird eine Fehlermeldung generiert. Wenn der Name auf einen nicht statischen Member in einer einschließenden Klasse verweist, wird auch eine Fehlermeldung generiert, da eingeschlossene Klassen keine Zeiger der einschließenden Klasse aufweisen **`this`** .
 
 ## <a name="function-parameter-names"></a>Funktionsparameternamen
 
@@ -71,6 +71,6 @@ Funktionsparameternamen in Funktionsdeklarationen (Prototypen) befinden sich im 
 
 Standardparameter befinden sich im Gültigkeitsbereich des Parameters, für das sie die Standardeinstellung sind, wie in den beiden vorherigen Absätzen beschrieben. Sie können jedoch nicht auf lokale Variablen oder nicht statische Klassenmember zugreifen. Standardparameter werden zum Zeitpunkt des Funktionsaufrufs, aber im ursprünglichen Gültigkeitsbereich der Funktionsdeklaration ausgewertet. Deshalb werden die Standardparameter für Memberfunktionen immer im Klassengültigkeitsbereich ausgewertet.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Vererbung](../cpp/inheritance-cpp.md)

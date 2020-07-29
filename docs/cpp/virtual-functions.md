@@ -6,12 +6,12 @@ helpviewer_keywords:
 - derived classes [C++], virtual functions
 - virtual functions
 ms.assetid: b3e1ed88-2a90-4af8-960a-16f47deb3452
-ms.openlocfilehash: 7c482107b5ad1546c64e0b70ef1714cff8a668ab
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: 4296d66af8f8bb9aed4946d6dc57871f447108d2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926088"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231038"
 ---
 # <a name="virtual-functions"></a>Virtuelle Funktionen
 
@@ -140,9 +140,9 @@ Invoked by Derived
 
 Beachten Sie, dass unabhängig davon, ob die `NameOf`-Funktion durch einen Zeiger auf `Base` oder einen Zeiger auf `Derived` aufgerufen wird, die Funktion für `Derived` aufgerufen wird. Dies ruft die Funktion für `Derived` auf, da `NameOf` eine virtuelle Funktion ist und sowohl `pBase` als auch `pDerived` auf ein Objekt vom Typ `Derived` zeigen.
 
-Da virtuelle Funktionen nur für Objekte von Klassentypen aufgerufen werden, können Sie keine globalen oder statischen Funktionen als **virtuell**deklarieren.
+Da virtuelle Funktionen nur für Objekte von Klassentypen aufgerufen werden, können Sie keine globalen oder statischen Funktionen als deklarieren **`virtual`** .
 
-Das **Virtual** -Schlüsselwort kann beim Deklarieren von über schreibenden Funktionen in einer abgeleiteten Klasse verwendet werden, ist jedoch nicht erforderlich. über schreibungen virtueller Funktionen sind immer virtuell.
+Das **`virtual`** Schlüsselwort kann beim Deklarieren von über schreibenden Funktionen in einer abgeleiteten Klasse verwendet werden, ist jedoch unnötig. außer Kraft setzungen virtueller Funktionen sind immer virtuell.
 
 Virtuelle Funktionen in einer Basisklasse müssen definiert werden, es sei denn, Sie werden mit dem *reinen-Spezifizierer*deklariert. (Weitere Informationen zu reinen virtuellen Funktionen finden Sie unter [abstrakte Klassen](../cpp/abstract-classes-cpp.md).)
 

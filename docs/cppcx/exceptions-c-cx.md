@@ -2,20 +2,20 @@
 title: Ausnahmen (C++/CX)
 ms.date: 07/02/2019
 ms.assetid: 6cbdc1f1-e4d7-4707-a670-86365146432f
-ms.openlocfilehash: ade406dc5db6022978f83715555c425caef4375b
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 7b4475cfa92aa952dd5a2996508d9343255b7ed2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740173"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231012"
 ---
 # <a name="exceptions-ccx"></a>Ausnahmen (C++/CX)
 
-Die Fehlerbehandlung C++in/CX basiert auf Ausnahmen. Auf der grundlegendsten Ebene melden Windows-Runtime Komponenten Fehler als HRESULT-Werte. In C++/CX werden diese Werte in stark typisierte Ausnahmen konvertiert, die einen HRESULT-Wert und eine Zeichen folgen Beschreibung enthalten, auf die Sie Programm gesteuert zugreifen können.  Ausnahmen werden als `ref class` implementiert, die von `Platform::Exception`abgeleitet ist.  Der Namespace `Platform` definiert verschiedene Ausnahmeklassen für die häufigsten HRESULT-Werte. Alle anderen Werte werden über die Klasse `Platform::COMException` gemeldet. Alle Ausnahmeklassen haben ein Feld [Exception::HResult](platform-exception-class.md#hresult) , das Sie verwenden können, um den ursprünglichen HRESULT-Wert abzurufen. Sie können auch die aufrufstackinformationen für Benutzercode im Debugger überprüfen, um die ursprüngliche Quelle der Ausnahme zu ermitteln, auch wenn Sie aus Code stammt, der in einer anderen Sprache als C++geschrieben wurde.
+Fehlerbehandlung in C++/CX basiert auf Ausnahmen. Auf der grundlegendsten Ebene melden Windows-Runtime Komponenten Fehler als HRESULT-Werte. In C++/CX werden diese Werte in stark typisierte Ausnahmen konvertiert, die einen HRESULT-Wert und eine Zeichen folgen Beschreibung enthalten, auf die Sie Programm gesteuert zugreifen können.  Ausnahmen werden als implementiert **`ref class`** , das von abgeleitet wird `Platform::Exception` .  Der Namespace `Platform` definiert verschiedene Ausnahmeklassen für die häufigsten HRESULT-Werte. Alle anderen Werte werden über die Klasse `Platform::COMException` gemeldet. Alle Ausnahmeklassen haben ein Feld [Exception::HResult](platform-exception-class.md#hresult) , das Sie verwenden können, um den ursprünglichen HRESULT-Wert abzurufen. Sie können auch die aufrufstackinformationen für Benutzercode im Debugger überprüfen, um die ursprüngliche Quelle der Ausnahme zu ermitteln, auch wenn Sie aus Code stammt, der in einer anderen Sprache als C++ geschrieben wurde.
 
 ## <a name="exceptions"></a>Ausnahmen
 
-In Ihrem C++ Programm können Sie eine Ausnahme auslösen und abfangen, die von einem Windows-Runtime-Vorgang stammt, eine Ausnahme, die `std::exception`von abgeleitet ist, oder einen benutzerdefinierten Typ. Sie müssen eine Windows-Runtime Ausnahme nur auslösen, wenn Sie die Schnittstelle der Anwendungs Binärschnittstelle (ABI) überschreitet, z. b. wenn der Code, der die Ausnahme abfängt, in JavaScript geschrieben wird. Wenn eine nicht Windows-Runtime C++ Ausnahme die ABI-Grenze erreicht, wird die Ausnahme in eine `Platform::FailureException` -Ausnahme übersetzt, die ein E_FAIL HRESULT darstellt. Weitere Informationen zur ABI finden Sie unter [Creating Windows Runtime Components in C++](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp).
+In Ihrem C++-Programm können Sie eine Ausnahme auslösen und abfangen, die von einem Windows-Runtime-Vorgang stammt, eine Ausnahme, die von abgeleitet ist `std::exception` , oder einen benutzerdefinierten Typ. Sie müssen eine Windows-Runtime Ausnahme nur auslösen, wenn Sie die Schnittstelle der Anwendungs Binärschnittstelle (ABI) überschreitet, z. b. wenn der Code, der die Ausnahme abfängt, in JavaScript geschrieben wird. Wenn eine nicht-Windows-Runtime C++-Ausnahme die ABI-Grenze erreicht, wird die Ausnahme in eine- `Platform::FailureException` Ausnahme übersetzt, die ein E_FAIL HRESULT darstellt. Weitere Informationen zur ABI finden Sie unter [Creating Windows Runtime Components in C++](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp).
 
 Sie können eine [Platform:: Exception](platform-exception-class.md) deklarieren, indem Sie einen von zwei Konstruktoren verwenden, die entweder einen HRESULT-Parameter oder einen HRESULT-Parameter und einen [Platform:: String](platform-string-class.md)^-Parameter verwenden, der über die ABI an eine beliebige Windows-Runtime App übergeben werden kann, die ihn verarbeitet. Alternativ dazu können Sie eine Ausnahme deklarieren, indem Sie eine von zwei [Exception::CreateException](platform-exception-class.md#createexception) -Methodenüberladungen verwenden, die entweder einen HRESULT-Parameter oder einen HRESULT-Parameter und einen `Platform::String^` -Parameter akzeptieren.
 
@@ -30,20 +30,20 @@ In der folgenden Tabelle sind die Standardausnahmen aufgelistet.
 |Name|Zugrunde liegendes HRESULT|Beschreibung|
 |----------|------------------------|-----------------|
 |COMException|*Benutzerdefiniertes HRESULT*|Wird ausgelöst, wenn ein COM-Methodenaufruf ein unbekanntes HRESULT zurückgibt.|
-|AccessDeniedException|E\_ACCESSDENIED|Wird ausgelöst, wenn der Zugriff auf eine Ressource oder eine Funktion verweigert wird.|
-|ChangedStateException|E\_STATUS\_GEÄNDERT|Wird ausgelöst, wenn Methoden eines Auflistungsiterators oder einer Auflistungsansicht aufgerufen werden, nachdem die übergeordnete Auflistung geändert wurde, wodurch die Ergebnisse der Methode ungültig wurden.|
-|ClassNotRegisteredException|REGDB\_E\_CLASSNOTREG|Wird ausgelöst, wenn eine COM-Klasse nicht registriert wurde.|
-|DisconnectedException|RPC\_-\_E GETRENNT|Wird ausgelöst, wenn ein Objekt von den Clients getrennt wurde.|
-|FailureException|E\_FEHLSCHLAGEN|Wird ausgelöst, wenn ein Vorgang fehlschlägt.|
-|InvalidArgumentException|E\_INVALIDARG|Wird ausgelöst, wenn eines der Argumente für eine Methode ungültig ist.|
-|InvalidCastException|E\_NOINTERFACE|Wird ausgelöst, wenn ein Typ nicht in einen anderen Typ umgewandelt werden kann.|
-|NotImplementedException|E\_NOTIMPL|Wird ausgelöst, wenn eine Schnittstellenmethode nicht bei der Klasse implementiert wurde.|
-|NullReferenceException|E\_-ZEIGER|Wird ausgelöst, wenn der Versuch gemacht wird, einen Verweis auf ein NULL-Objekt zu dereferenzieren.|
-|ObjectDisposedException|RO\_E\_GESCHLOSSEN|Wird ausgelöst, wenn ein Vorgang für ein verworfenes Objekt ausgeführt wird.|
-|OperationCanceledException|E\_ABBRECHEN|Wird nach dem Abbrechen eines Vorgangs ausgelöst.|
-|OutOfBoundsException|E\_-BEGRENZUNGEN|Wird ausgelöst, wenn ein Vorgang versucht, auf Daten außerhalb des gültigen Bereichs zuzugreifen.|
-|OutOfMemoryException|E\_OUTO-MEMORY|Wird ausgelöst, wenn nicht genügend Arbeitsspeicher vorhanden ist, um den Vorgang abzuschließen.|
-|WrongThreadException|FALSCHER RPC-\_THREAD\_\_|Wird ausgelöst, wenn ein Thread über einen Schnittstellenzeiger aufruft, der für ein Proxyobjekt ist, das nicht zum Apartment des Threads gehört.|
+|AccessDeniedException|E \_ AccessDenied|Wird ausgelöst, wenn der Zugriff auf eine Ressource oder eine Funktion verweigert wird.|
+|ChangedStateException|E \_ \_ Status geändert|Wird ausgelöst, wenn Methoden eines Auflistungsiterators oder einer Auflistungsansicht aufgerufen werden, nachdem die übergeordnete Auflistung geändert wurde, wodurch die Ergebnisse der Methode ungültig wurden.|
+|ClassNotRegisteredException|RegDB \_ E \_ classnotreg|Wird ausgelöst, wenn eine COM-Klasse nicht registriert wurde.|
+|DisconnectedException|RPC- \_ E \_ getrennt|Wird ausgelöst, wenn ein Objekt von den Clients getrennt wurde.|
+|FailureException|E \_ fehlschlagen|Wird ausgelöst, wenn ein Vorgang fehlschlägt.|
+|InvalidArgumentException|E \_ invalidArg|Wird ausgelöst, wenn eines der Argumente für eine Methode ungültig ist.|
+|InvalidCastException|E \_ nointerface|Wird ausgelöst, wenn ein Typ nicht in einen anderen Typ umgewandelt werden kann.|
+|NotImplementedException|E \_ notimpl|Wird ausgelöst, wenn eine Schnittstellenmethode nicht bei der Klasse implementiert wurde.|
+|NullReferenceException|E- \_ Zeiger|Wird ausgelöst, wenn der Versuch gemacht wird, einen Verweis auf ein NULL-Objekt zu dereferenzieren.|
+|ObjectDisposedException|RO \_ E \_ geschlossen|Wird ausgelöst, wenn ein Vorgang für ein verworfenes Objekt ausgeführt wird.|
+|OperationCanceledException|E \_ Abbrechen|Wird nach dem Abbrechen eines Vorgangs ausgelöst.|
+|OutOfBoundsException|E- \_ Begrenzungen|Wird ausgelöst, wenn ein Vorgang versucht, auf Daten außerhalb des gültigen Bereichs zuzugreifen.|
+|OutOfMemoryException|E \_ outo-Memory|Wird ausgelöst, wenn nicht genügend Arbeitsspeicher vorhanden ist, um den Vorgang abzuschließen.|
+|WrongThreadException|\_falscher RPC \_ - \_ Thread|Wird ausgelöst, wenn ein Thread über einen Schnittstellenzeiger aufruft, der für ein Proxyobjekt ist, das nicht zum Apartment des Threads gehört.|
 
 ## <a name="hresult-and-message-properties"></a>HResult- und Meldungseigenschaften
 
@@ -63,7 +63,7 @@ Verwenden Sie zum Abfangen von Ausnahmen, die während eines asynchronen Vorgang
 
 ## <a name="unhandlederrordetected-event"></a>UnhandledErrorDetected-Ereignis
 
-In Windows 8.1 Sie das statische Ereignis [Windows:: applicationmodel:: Core:: coreapplication:: unhandlederrorerkannte](/uwp/api/windows.applicationmodel.core.icoreapplicationunhandlederror.unhandlederrordetected) abonnieren, das den Zugriff auf nicht behandelte Fehler ermöglicht, die den Prozess beenden. Unabhängig davon, wodurch der Fehler verursacht wurde, erreicht er diesen Handler als [Windows::ApplicationModel::Core::UnhandledError](/uwp/api/windows.applicationmodel.core.unhandlederror) -Objekt, das mit den Ereignisargumenten übergeben wird. Wenn Sie `Propagate` für das Objekt aufrufen, wird eine `Platform::*Exception` des Typs, der dem Fehlercode entspricht, erstellt und ausgelöst. In catch-Blöcken können Sie bei Bedarf den Benutzerzustand speichern und dann zulassen, dass der Prozess beendet wird, indem Sie `throw`aufrufen. Sie können auch etwas unternehmen, um das Programm in einen bekannten Zustand zurückzuführen. Das grundlegende Muster wird im folgenden Beispiel veranschaulicht:
+In Windows 8.1 Sie das statische Ereignis [Windows:: applicationmodel:: Core:: coreapplication:: unhandlederrorerkannte](/uwp/api/windows.applicationmodel.core.icoreapplicationunhandlederror.unhandlederrordetected) abonnieren, das den Zugriff auf nicht behandelte Fehler ermöglicht, die den Prozess beenden. Unabhängig davon, wodurch der Fehler verursacht wurde, erreicht er diesen Handler als [Windows::ApplicationModel::Core::UnhandledError](/uwp/api/windows.applicationmodel.core.unhandlederror) -Objekt, das mit den Ereignisargumenten übergeben wird. Wenn Sie `Propagate` für das Objekt aufrufen, wird eine `Platform::*Exception` des Typs, der dem Fehlercode entspricht, erstellt und ausgelöst. In den catch-Blöcken können Sie bei Bedarf den Benutzer Zustand speichern und dann zulassen, dass der Prozess beendet wird, indem Sie aufrufen. Sie können auch **`throw`** etwas tun, um das Programm wieder in einen bekannten Zustand zu bringen. Das grundlegende Muster wird im folgenden Beispiel veranschaulicht:
 
 In "App. XAML. h":
 
@@ -97,11 +97,11 @@ void App::OnUnhandledException(Platform::Object^ sender, Windows::ApplicationMod
 }
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-C++/CX verwendet nicht die `finally` -Klausel.
+C++/CX verwendet die- **`finally`** Klausel nicht.
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++-/CX-Programmiersprachenreferenz](visual-c-language-reference-c-cx.md)<br/>
-[Referenz zu Namespaces](namespaces-reference-c-cx.md)
+[C++/CX-Sprachreferenz](visual-c-language-reference-c-cx.md)<br/>
+[Namespaces-Referenz](namespaces-reference-c-cx.md)

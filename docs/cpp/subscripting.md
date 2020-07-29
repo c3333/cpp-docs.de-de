@@ -9,20 +9,20 @@ helpviewer_keywords:
 - operator overloading [C++], examples
 - subscript operator
 ms.assetid: eb151281-6733-401d-9787-39ab6754c62c
-ms.openlocfilehash: 8974f6619af462050fc8a02798fe44007ea928e4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2573f30b2dfee20d12afea2a1072bbdcef46228b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160891"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231077"
 ---
 # <a name="subscripting"></a>Indizierung
 
-Der Index Operator ( **[]** ) wird, wie der Funktions Aufrufoperator, als binärer Operator betrachtet. Der Indexoperator muss eine nicht statische Memberfunktion sein, die ein einzelnes Argument akzeptiert. Dieses Argument kann einen beliebigen Typ aufweisen und legt den gewünschten Arrayindex fest.
+Der Index Operator (**[]**) wird, wie der Funktions Aufrufoperator, als binärer Operator betrachtet. Der Indexoperator muss eine nicht statische Memberfunktion sein, die ein einzelnes Argument akzeptiert. Dieses Argument kann einen beliebigen Typ aufweisen und legt den gewünschten Arrayindex fest.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie ein Vektor vom Typ **int** erstellt wird, der die Überprüfung von Begrenzungen implementiert:
+Im folgenden Beispiel wird veranschaulicht, wie ein Vektor vom Typ erstellt wird, der die über **`int`** Prüfung von Begrenzungen implementiert:
 
 ```cpp
 // subscripting.cpp
@@ -91,10 +91,10 @@ Element: [10] = 10
 
 ## <a name="comments"></a>Kommentare
 
-Wenn `i` im vorangehenden Programm 10 erreicht, erkennt **Operator []** , dass ein Index außerhalb des gültigen Bereichs verwendet wird, und gibt eine Fehlermeldung aus.
+Wenn `i` im vorangehenden Programm 10 erreicht, erkennt der **Operator []** , dass ein Index außerhalb des gültigen Bereichs verwendet wird, und gibt eine Fehlermeldung aus.
 
 Beachten Sie, dass der Funktions **Operator []** einen Verweistyp zurückgibt. Dadurch wird sie zu einem L-Wert, und Sie können auf beiden Seiten von Zuweisungsoperatoren indizierte Ausdrücke verwenden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Operatorüberladung](../cpp/operator-overloading.md)
+[Operator Überladung](../cpp/operator-overloading.md)
