@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - ptr attribute
 ms.assetid: 95eaea57-a5be-45f6-a612-ba2c9bc4645a
-ms.openlocfilehash: e56d4e56135c0f32a1796ac98565a990c7225705
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9e45cd529562fe238f96f98cf7f91e15df34270a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166418"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224382"
 ---
 # <a name="ptr"></a>ptr
 
@@ -25,7 +25,7 @@ Legt einen Zeiger als vollständigen Zeiger fest.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **ptr** C++ -Attribut verfügt über die gleiche Funktionalität wie das-Attribut des [ptr](/windows/win32/Midl/ptr) -Attributs.
+Das Attribut " **ptr** C++" hat die gleiche Funktionalität wie das Attribut " [ptr](/windows/win32/Midl/ptr) -Attribut".
 
 ## <a name="example"></a>Beispiel
 
@@ -37,16 +37,16 @@ Ein Beispiel für die Verwendung von **ptr**finden Sie im Beispiel für [Default
 
 |||
 |-|-|
-|**Betrifft**|Schnittstellenparameter, Schnittstellen Methode, **typedef**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenparameter, Schnittstellen Methode,**`typedef`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
+[Schnittstellen Attribute](interface-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

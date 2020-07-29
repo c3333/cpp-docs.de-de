@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - last_is attribute
 ms.assetid: 9e045ac0-fa38-4249-af55-67bde5d0a58c
-ms.openlocfilehash: 62377415dc0809033fcdcb8bd4e7997f667c1691
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 7aa8acb52d19bc7f70513e44770817ae7fc403b5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214811"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224408"
 ---
 # <a name="last_is"></a>last_is
 
@@ -30,7 +30,7 @@ Mindestens ein C-sprach Ausdruck. Leere Argument Slots sind zulässig.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Last_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Last_is](/windows/win32/Midl/last-is) -Attribut "Mittel".
+Das **Last_is** C++-Attribut verfügt über die gleiche Funktionalität wie das [Last_is](/windows/win32/Midl/last-is) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -42,17 +42,17 @@ Ein Beispiel für die Angabe eines Abschnitts eines Arrays finden Sie unter [Fir
 
 |||
 |-|-|
-|**Betrifft**|Feld in **Struktur** oder **Union**, Schnittstellenparameter, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Feld in **`struct`** oder **`union`** , Schnittstellenparameter, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
 [first_is](first-is.md)<br/>
 [max_is](max-is.md)<br/>

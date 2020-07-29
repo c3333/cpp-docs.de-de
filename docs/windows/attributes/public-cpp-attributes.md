@@ -1,17 +1,17 @@
 ---
-title: Public (C++ Attribute) (C++ com-Attribut)
+title: Public (C++-Attribute) (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.public
 helpviewer_keywords:
 - public attribute
 ms.assetid: c42e1fd5-6cb1-48fe-8a03-95f2a2e0137c
-ms.openlocfilehash: 6912117ad05d6b608c45425ebec27cd49c0e5dc4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d5307b96c58492aa06f115ca7a814aa221062e01
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214713"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224369"
 ---
 # <a name="public-c-attributes"></a>public (C++-Attribute)
 
@@ -25,11 +25,11 @@ Stellt sicher, dass eine typedef in die Typbibliothek wechselt, auch wenn in der
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Public** C++ -Attribut verfügt über die gleiche Funktionalität wie das [öffentliche](/windows/win32/Midl/public) -Attribut "Mittel l".
+Das **`public`** C++-Attribut verfügt über die gleiche Funktionalität wie das [öffentliche](/windows/win32/Midl/public) Mittel l-Attribut.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie das **Public** -Attribut verwendet wird:
+Der folgende Code zeigt, wie das- **`public`** Attribut verwendet wird:
 
 ```cpp
 // cpp_attr_ref_public.cpp
@@ -51,8 +51,8 @@ __interface IFireTabCtrl : IDispatch
 
 |||
 |-|-|
-|**Betrifft**|**typedef**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`typedef`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -61,4 +61,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

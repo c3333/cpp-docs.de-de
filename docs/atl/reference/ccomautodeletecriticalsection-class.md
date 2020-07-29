@@ -1,5 +1,5 @@
 ---
-title: CComAutoDeleteCriticalSection-Klasse
+title: Ccomautodeletecriticalsection-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CComAutoDeleteCriticalSection
@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - CComAutoDeleteCriticalSection class
 ms.assetid: 2396dbea-1c60-4841-b50e-c4e18af311a3
-ms.openlocfilehash: d479adce489e0329be3a93b55a70aa3e58a0e038
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f44dbff7d353cb09142ac742b526d3541e9b2265
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62246656"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224330"
 ---
-# <a name="ccomautodeletecriticalsection-class"></a>CComAutoDeleteCriticalSection-Klasse
+# <a name="ccomautodeletecriticalsection-class"></a>Ccomautodeletecriticalsection-Klasse
 
-Diese Klasse stellt Methoden zum Abrufen und Freigeben des Besitzes eines kritischen Abschnitts-Objekts.
+Diese Klasse stellt Methoden zum Abrufen und Freigeben des Besitzes eines kritischen Abschnitts Objekts bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,26 +24,26 @@ Diese Klasse stellt Methoden zum Abrufen und Freigeben des Besitzes eines kritis
 class CComAutoDeleteCriticalSection : public CComSafeDeleteCriticalSection
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CComAutoDeleteCriticalSection` leitet sich von der Klasse [CComSafeDeleteCriticalSection](../../atl/reference/ccomsafedeletecriticalsection-class.md). Allerdings `CComAutoDeleteCriticalSection` überschreibt die [Begriff](ccomsafedeletecriticalsection-class.md#term) Methode, um **private** Zugriff, die erzwingt, internen Speicher Cleanup dass erfolgen nur, wenn Instanzen dieser Klasse verlassen den Gültigkeitsbereich oder explizit gelöscht werden, aus Arbeitsspeicher.
+`CComAutoDeleteCriticalSection`wird von der [ccomsafedeletecriticalsection](../../atl/reference/ccomsafedeletecriticalsection-class.md)-Klasse abgeleitet. `CComAutoDeleteCriticalSection`Überschreibt jedoch den [Begriff](ccomsafedeletecriticalsection-class.md#term) Methode für den **`private`** Zugriff auf, wodurch die interne Speicher Bereinigung nur dann erfolgt, wenn Instanzen dieser Klasse den Gültigkeitsbereich verlassen oder explizit aus dem Arbeitsspeicher gelöscht werden.
 
-Diese Klasse führt keine zusätzlichen Methoden über seine Basisklasse. Finden Sie unter [CComSafeDeleteCriticalSection](../../atl/reference/ccomsafedeletecriticalsection-class.md) und [CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md) für Weitere Informationen zu den kritischen Abschnitt-Hilfsklassen.
+Mit dieser Klasse werden keine zusätzlichen Methoden über die Basisklasse eingeführt. Weitere Informationen zu kritischen Abschnitts Hilfsklassen finden Sie unter [ccomsafedeletecriticalsection](../../atl/reference/ccomsafedeletecriticalsection-class.md) und [ccomcriticalsection](../../atl/reference/ccomcriticalsection-class.md) .
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)
+[Ccomcriticalsection](../../atl/reference/ccomcriticalsection-class.md)
 
-[CComSafeDeleteCriticalSection](../../atl/reference/ccomsafedeletecriticalsection-class.md)
+[Ccomsafedeletecriticalsection](../../atl/reference/ccomsafedeletecriticalsection-class.md)
 
 `CComAutoDeleteCriticalSection`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlcore.h
+**Header:** atlcore. h
 
 ## <a name="see-also"></a>Siehe auch
 
-[CComSafeDeleteCriticalSection-Klasse](../../atl/reference/ccomsafedeletecriticalsection-class.md)<br/>
-[CComCriticalSection-Klasse](../../atl/reference/ccomcriticalsection-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Ccomsafedeletecriticalsection-Klasse](../../atl/reference/ccomsafedeletecriticalsection-class.md)<br/>
+[Ccomcriticalsection-Klasse](../../atl/reference/ccomcriticalsection-class.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)

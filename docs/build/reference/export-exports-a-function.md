@@ -9,47 +9,47 @@ helpviewer_keywords:
 - EXPORT linker option
 - -EXPORT linker option
 ms.assetid: 0920fb44-a472-4091-a8e6-73051f494ca0
-ms.openlocfilehash: 7c4f4621bbccd4285bcf4eca07d2544d53d14f6c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a55b2a4ce72de644fe426894ab389f62bd29b204
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62271358"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232689"
 ---
 # <a name="export-exports-a-function"></a>/EXPORT (Funktion exportieren)
 
-Exportiert eine Funktion nach Name oder Ordinalzahl oder Daten von Ihrem Programm an.
+Exportiert eine Funktion anhand des Namens oder der Ordnungszahl bzw. der Daten aus dem Programm.
 
 ## <a name="syntax"></a>Syntax
 
-> **/EXPORT:**<em>entryname</em>[**,\@**<em>ordinal</em>[**,NONAME**]][**,DATA**]
+> **/Export:**<em>entryname</em>[**, \@ **<em>Ordnungszahl</em>[**, NONAME**]] [**, Data**]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/EXPORT** Option gibt an, eine Funktion oder ein Datenelement aus Ihrem Programm zu exportieren, sodass andere Programme rufen Sie die Funktion oder verwenden Sie die Daten können. Exporte werden in der Regel in eine DLL-Datei definiert.
+Die Option **/Export** gibt eine Funktion oder ein Datenelement an, das aus dem Programm exportiert werden soll, damit andere Programme die Funktion oder die Daten verwenden können. Exporte werden in der Regel in einer DLL definiert.
 
-Die *Eintragsname* ist der Name der Funktion oder des Elements, wie die vom aufrufenden Programm verwendet werden. *Ordinal* gibt Sie einen Index in der Exporttabelle im Bereich von 1 bis 65.535 sein, wenn Sie keinen angeben *ordinal*, LINK weist ein. Die **NONAME** Schlüsselwort exportiert die Funktion nur als Ordnungszahl, ohne eine *Eintragsname*.
+*Entryname* ist der Name der Funktion oder des Datenelements, wie er vom aufrufenden Programm verwendet werden soll. *Ordnungszahl* gibt einen Index in der Tabelle "Exports" im Bereich von 1 bis 65.535 an. Wenn Sie keine *Ordinalzahl*angeben, wird eine Verknüpfung zugewiesen. Das **Noname** -Schlüsselwort exportiert die Funktion nur als Ordinalzahl ohne *entryname*.
 
-Die **Daten** -Schlüsselwort Gibt an, dass das exportierte Element ein Datenelement ist. Das Datenelement in das Clientprogramm muss deklariert werden, mithilfe von **"extern" von "__declspec(dllimport)" "**.
+Das **Data** -Schlüsselwort gibt an, dass das exportierte Element ein Datenelement ist. Das Datenelement im Client Programm muss mit **Extern __declspec (dllimport)** deklariert werden.
 
-Es gibt vier Möglichkeiten für das Exportieren einer Definition, aufgelistet in empfohlener Reihenfolge von Nutzen:
+Es gibt vier Methoden zum Exportieren einer Definition, die in der empfohlenen Reihenfolge der Verwendung aufgeführt ist:
 
-1. [__declspec(dllexport)](../../cpp/dllexport-dllimport.md) im Quellcode
+1. [__declspec (dllexport)](../../cpp/dllexport-dllimport.md) im Quellcode
 
-1. Ein [EXPORTE](exports.md) -Anweisung in DEF-Datei
+1. Eine [Exports](exports.md) -Anweisung in einer DEF-Datei
 
-1. Eine/Export-Spezifikation in einem Linkbefehl
+1. Eine /EXPORT-Spezifikation in einem LINK-Befehl
 
-1. Ein [Kommentar](../../preprocessor/comment-c-cpp.md) -Anweisung im Quellcode, der das Formular `#pragma comment(linker, "/export: definition ")`.
+1. Eine [comment](../../preprocessor/comment-c-cpp.md) -Anweisung im Quellcode der Form `#pragma comment(linker, "/export: definition ")` .
 
-Alle diese Methoden können im selben Programm verwendet werden. Wenn der LINK ein Programm erstellt, das Exporte enthält, wird auch eine Importbibliothek, es sei denn, eine .exp-Datei in den Build verwendet wird.
+Alle diese Methoden können im selben Programm verwendet werden. Wenn Link ein Programm erstellt, das Exporte enthält, wird auch eine Import Bibliothek erstellt, es sei denn, im Build wird eine EXP-Datei verwendet.
 
-LINK-verwendet die ergänzten Formen von Bezeichnern. Der Compiler ergänzt einen Bezeichner, wenn es sich um die OBJ-Datei erstellt. Wenn *Eintragsname* wird angegeben, um dem Linker in seiner nicht ergänzten form (im Quellcode angezeigt), LINK versucht, mit dem Namen übereinstimmen. Wenn sie eine eindeutige Übereinstimmung finden kann, wird links eine Fehlermeldung ausgegeben. Verwenden der [DUMPBIN](dumpbin-reference.md) Tool zum Abrufen der [ergänzten Namen](decorated-names.md) Form eines Bezeichners, wenn Sie es dem Linker angeben möchten.
+Link verwendet ergänzte Formen von bezeichlern. Der Compiler schmückt einen Bezeichner, wenn er die OBJ-Datei erstellt. Wenn *entryname* für den Linker in seiner nicht ergänzten Form angegeben wird (wie er im Quellcode angezeigt wird), versucht Link, den Namen zu erfüllen. Wenn eine eindeutige Entsprechung nicht gefunden werden kann, gibt Link eine Fehlermeldung aus. Verwenden Sie das [DUMPBIN](dumpbin-reference.md) -Tool, um die ergänzte [namens](decorated-names.md) Form eines Bezeichners zu erhalten, wenn Sie ihn für den Linker angeben müssen.
 
 > [!NOTE]
-> Geben Sie die ergänzte Form des C-Bezeichner, die deklariert werden keine `__cdecl` oder `__stdcall`.
+> Geben Sie nicht die ergänzte Form von C-bezeichlen an, die als deklariert wurden **`__cdecl`** **`__stdcall`** .
 
-Wenn Sie müssen einen nicht ergänzten Funktionsnamen exportieren und anderen Exporte abhängig von der Buildkonfiguration (z. B. in 32-Bit oder 64-Bit-Builds) haben, können Sie verschiedene DEF-Dateien für jede Konfiguration. (Bedingte präprozessoranweisungen sind in der DEF-Dateien nicht zulässig.) Als Alternative können Sie eine `#pragma comment` Anweisung vor der Deklaration einer Funktion wie der hier gezeigten `PlainFuncName` ist von der nicht ergänzte Namen, und `_PlainFuncName@4` ist der ergänzte Name der Funktion:
+Wenn Sie einen nicht ergänzten Funktionsnamen exportieren müssen und abhängig von der Buildkonfiguration unterschiedliche Exporte aufweisen (z. b. in 32-Bit-oder 64-Bit-Builds), können Sie verschiedene DEF-Dateien für jede Konfiguration verwenden. (Bedingte Präprozessordirektiven sind in DEF-Dateien nicht zulässig.) Als Alternative können Sie eine- `#pragma comment` Direktive vor einer Funktionsdeklaration verwenden, wie hier gezeigt, wobei `PlainFuncName` der nicht ergänzte Name und `_PlainFuncName@4` der ergänzte Name der Funktion ist:
 
 ```cpp
 #pragma comment(linker, "/export:PlainFuncName=_PlainFuncName@4")
@@ -58,11 +58,11 @@ BOOL CALLBACK PlainFuncName( Things * lpParams)
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Konfigurationseigenschaften** > **Linker** > **Befehlszeile** Eigenschaftenseite.
+1. Wählen Sie die **Eigenschaften**Seite für die  >  **Linker**  >  **Linkerbefehlszeile** der Configuration Properties
 
-1. Geben Sie die Option in der **zusätzliche Optionen** Feld.
+1. Geben Sie die Option im Feld **zusätzliche Optionen** ein.
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 

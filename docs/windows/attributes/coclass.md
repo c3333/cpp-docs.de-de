@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - coclass attribute
 ms.assetid: 42da6a10-3af9-4b43-9a1d-689d00b61eb3
-ms.openlocfilehash: 76540e90fef2e840b91bb07f570a7b8c0987eb10
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0a47f4f503541f9dee67dd8c6cf10297de724a19
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168330"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232793"
 ---
 # <a name="coclass"></a>coclass
 
@@ -25,11 +25,11 @@ Erstellt ein COM-Objekt, das eine COM-Schnittstelle implementieren kann.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Co-Klasse** C++ -Attribut platziert ein Co-Klassen Konstrukt in der generierten IDL-Datei.
+Das C++-Attribut **Co-Klasse** platziert ein Co-Klassen Konstrukt in der generierten IDL-Datei.
 
 Wenn Sie eine Co-Klasse definieren, können Sie auch die Attribute [UUID](uuid-cpp-attributes.md), [Version](version-cpp.md), [Threading](threading-cpp.md), [Vi_progid](vi-progid.md)und [ProgID](progid.md) angeben. Wenn eine davon nicht angegeben wird, wird Sie generiert.
 
-Wenn zwei Header Dateien Klassen mit dem **Co-Klasse** -Attribut enthalten und keine GUID angeben, verwendet der Compiler dieselbe GUID für beide Klassen und führt zu einem mittleren Fehler.  Daher sollten Sie das `uuid`-Attribut verwenden, wenn Sie **Co-Klasse**verwenden.
+Wenn zwei Header Dateien Klassen mit dem **Co-Klasse** -Attribut enthalten und keine GUID angeben, verwendet der Compiler dieselbe GUID für beide Klassen und führt zu einem mittleren Fehler.  Daher sollten Sie das-Attribut verwenden, `uuid` Wenn Sie **Co-Klasse**verwenden.
 
 **ATL-Projekte**
 
@@ -39,29 +39,29 @@ Wenn dieses Attribut einer Klassen-oder Struktur Definition in einem ATL-Projekt
 
 - Fügt Code oder Daten ein, um eine COM-Klassenfactory für das-Objekt zu unterstützen.
 
-- Fügt Code oder Daten ein, um `IUnknown` zu implementieren und das-Objekt zu einem com-erstellbar-Objekt zu machen.
+- Fügt Code oder Daten ein, um `IUnknown` das Objekt zu implementieren und zu einem com-erstellbar-Objekt zu machen.
 
 Insbesondere werden dem Zielobjekt die folgenden Basisklassen hinzugefügt:
 
 - [CComCoClass-Klasse](../../atl/reference/ccomcoclass-class.md) stellt die Standardklassenfactory und das Aggregations Modell für das-Objekt bereit.
 
-- Die [CComObjectRootEx-Klasse](../../atl/reference/ccomobjectrootex-class.md) verfügt über eine Vorlage, die auf der Threading Modell Klasse basiert, die vom [Threading](threading-cpp.md) -Attribut angegeben wird. Wenn das `threading`-Attribut nicht angegeben wird, ist das Standard Threading Modell "Apartment".
+- Die [CComObjectRootEx-Klasse](../../atl/reference/ccomobjectrootex-class.md) verfügt über eine Vorlage, die auf der Threading Modell Klasse basiert, die vom [Threading](threading-cpp.md) -Attribut angegeben wird. Wenn das- `threading` Attribut nicht angegeben wird, ist das Standard Threading Modell "Apartment".
 
 - [IProvideClassInfo2Impl](../../atl/reference/iprovideclassinfo2impl-class.md) wird hinzugefügt, wenn das nicht [erstellbar](noncreatable.md) -Attribut für das Zielobjekt nicht angegeben ist.
 
 Schließlich wird jede duale Schnittstelle, die nicht mit eingebetteter IDL definiert ist, durch die entsprechende [IDispatchImpl](../../atl/reference/idispatchimpl-class.md) -Klasse ersetzt. Wenn die duale Schnittstelle in eingebetteter IDL definiert ist, wird die bestimmte Schnittstelle in der Basisliste nicht geändert.
 
-Das **Co-Klasse** -Attribut macht auch die folgenden Funktionen über injizierten Code verfügbar, oder im Fall von `GetObjectCLSID`als statische Methode in der Basisklasse `CComCoClass`:
+Das **Co-Klasse** -Attribut macht auch die folgenden Funktionen über injizierten Code verfügbar, oder im Fall von `GetObjectCLSID` als statische Methode in der Basisklasse `CComCoClass` :
 
-- die Klassenfactorys der Zielklasse werden `UpdateRegistry` registriert.
+- `UpdateRegistry`registriert die Klassenfactorys der Zielklasse.
 
-- `GetObjectCLSID`, die sich auf die Registrierung bezieht, kann auch zum Abrufen der CLSID der Zielklasse verwendet werden.
+- `GetObjectCLSID`, der sich auf die Registrierung bezieht, kann auch zum Abrufen der CLSID der Zielklasse verwendet werden.
 
-- Standardmäßig wird `GetObjectFriendlyName` eine Zeichenfolge mit dem Format "\<*Ziel Klassenname*> `Object`" zurückgegeben. Wenn diese Funktion bereits vorhanden ist, wird Sie nicht hinzugefügt. Fügen Sie diese Funktion der Zielklasse hinzu, um einen freundlicheren Namen als den automatisch generierten Namen zurückzugeben.
+- `GetObjectFriendlyName`gibt standardmäßig eine Zeichenfolge im Format " \<*target class name*> `Object` " zurück. Wenn diese Funktion bereits vorhanden ist, wird Sie nicht hinzugefügt. Fügen Sie diese Funktion der Zielklasse hinzu, um einen freundlicheren Namen als den automatisch generierten Namen zurückzugeben.
 
-- `GetProgID`, die sich auf die Registrierung bezieht, gibt die mit dem [ProgID](progid.md) -Attribut angegebene Zeichenfolge zurück.
+- `GetProgID`, der sich auf die Registrierung bezieht, gibt die mit dem [ProgID](progid.md) -Attribut angegebene Zeichenfolge zurück.
 
-- `GetVersionIndependentProgID` verfügt über die gleiche Funktionalität wie `GetProgID`, gibt jedoch die mit [Vi_progid](vi-progid.md)angegebene Zeichenfolge zurück.
+- `GetVersionIndependentProgID`verfügt über die gleiche Funktionalität wie `GetProgID` , gibt jedoch die mit [Vi_progid](vi-progid.md)angegebene Zeichenfolge zurück.
 
 Die folgenden Änderungen, die mit der com-Zuordnung verknüpft sind, werden an der Zielklasse vorgenommen:
 
@@ -69,7 +69,7 @@ Die folgenden Änderungen, die mit der com-Zuordnung verknüpft sind, werden an 
 
 - Ein [OBJECT_ENTRY_AUTO](../../atl/reference/object-map-macros.md#object_entry_auto) -Makro wird in die com-Zuordnung eingefügt.
 
-Der Name der Co-Klasse, die in der IDL-Datei für die Klasse generiert wird, hat denselben Namen wie die Klasse.  Verwenden Sie z. b., und verweisen Sie auf das folgende Beispiel, um auf die Klassen-ID für eine Co-Klassen-`CMyClass`zuzugreifen, in einem Client durch die von der Mittel l generierte Header Datei `CLSID_CMyClass`.
+Der Name der Co-Klasse, die in der IDL-Datei für die Klasse generiert wird, hat denselben Namen wie die Klasse.  Verwenden Sie z. b., und verweisen Sie auf das folgende Beispiel, um auf die Klassen-ID für eine Co `CMyClass` -Klasse in einem Client über die von der mittleren Liste generierte Header Datei zuzugreifen `CLSID_CMyClass` .
 
 ## <a name="example"></a>Beispiel
 
@@ -131,17 +131,17 @@ public:
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [COM-Attribute](com-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [appobject](appobject.md)

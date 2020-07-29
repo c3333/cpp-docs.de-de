@@ -11,12 +11,12 @@ helpviewer_keywords:
 - event sources
 - event handling, creating event source
 ms.assetid: 0983e36a-6127-4fbb-8a22-8dfec6564c16
-ms.openlocfilehash: e187e57f21e9c94068c0b3396b93deed617fef2a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a7231b01cd341bbc04bcccd3c2198d1a76dd5e39
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167068"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232767"
 ---
 # <a name="event_source"></a>event_source
 
@@ -44,16 +44,16 @@ Eine Enumeration von einem der folgenden Werte:
     ```
 
 *optimize*<br/>
-Wenn der *Typ* `native`ist, können Sie `optimize=size`angeben, um anzugeben, dass für alle Ereignisse in einer Klasse oder `optimize=speed` (Standardwert) 4 Bytes Speicher (minimal) vorhanden sind, um anzugeben, dass es 4 * (# der Ereignisse) Speicher Bytes gibt.
+Wenn der *Typ* auf fest `native` gelegt ist, können Sie angeben `optimize=size` , um anzugeben, dass für alle Ereignisse in einer Klasse 4 Bytes Speicher (minimal) vorhanden sind, oder `optimize=speed` (der Standardwert), um anzugeben, dass 4 * (# der Ereignisse) Speicher Bytes vorhanden sind.
 
 *decorate*<br/>
-Wenn *Type* `native`ist, können Sie `decorate=false`angeben, um anzugeben, dass der erweiterte Name in der zusammengeführten Datei (. MRG) nicht den einschließenden Klassennamen enthalten soll. Mit[/Fx](../../build/reference/fx-merge-injected-code.md) können Sie MRG-Dateien generieren. `decorate=false`ist die Standardeinstellung und führt zu voll qualifizierten Typnamen in der zusammengeführten Datei.
+Wenn *type* der Typ `native` auf festgelegt ist, können Sie angeben `decorate=false` , um anzugeben, dass der erweiterte Name in der zusammengeführten Datei (. MRG) nicht den einschließenden Klassennamen enthalten soll. Mit[/Fx](../../build/reference/fx-merge-injected-code.md) können Sie MRG-Dateien generieren. `decorate=false`(die Standardeinstellung) führt zu voll qualifizierten Typnamen in der zusammengeführten Datei.
 
 ## <a name="remarks"></a>Bemerkungen
 
 Das C++-Attribut **event_source** gibt an, dass die Klasse oder Struktur, auf die es angewendet wird, eine Ereignisquelle sein wird.
 
-**event_source** wird in Verbindung mit dem Attribut [event_receiver](event-receiver.md) und dem Schlüsselwort [__event](../../cpp/event.md) verwendet. Verwenden Sie `event_receiver`, um Ereignis Empfänger zu erstellen. Verwenden Sie **__event** für Methoden innerhalb der Ereignis Quelle, um diese Methoden als Ereignisse anzugeben.
+**event_source** wird in Verbindung mit dem Attribut [event_receiver](event-receiver.md) und dem Schlüsselwort [__event](../../cpp/event.md) verwendet. Verwenden `event_receiver` Sie, um Ereignis Empfänger zu erstellen. Verwenden **`__event`** Sie für Methoden in der Ereignis Quelle, um diese Methoden als Ereignisse anzugeben.
 
 > [!NOTE]
 > Eine von einer Vorlage gebildete Klasse oder Struktur kann keine Ereignisse enthalten.
@@ -64,14 +64,14 @@ Das C++-Attribut **event_source** gibt an, dass die Klasse oder Struktur, auf di
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|**Co-Klasse** , wenn `type`=`com`|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
+|**Erforderliche Attribute**|**Co-Klasse** , wenn`type`=`com`|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [event_receiver](event-receiver.md)<br/>

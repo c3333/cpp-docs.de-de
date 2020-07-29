@@ -1,6 +1,6 @@
 ---
 title: /EH (Ausnahmebehandlungsmodell)
-description: Referenzhandbuch zu den Microsoft C++ /EH -Compileroptionen (Ausnahmebehandlungsmodell) in Visual Studio.
+description: Referenzhandbuch zu den Compileroptionen für Microsoft C++/EH (Ausnahme Behandlungsmodell) in Visual Studio.
 ms.date: 04/14/2020
 f1_keywords:
 - VC.Project.VCCLWCECompilerTool.ExceptionHandling
@@ -13,24 +13,24 @@ helpviewer_keywords:
 - -EH compiler option [C++]
 - /EH compiler option [C++]
 no-loc:
-- SEH
-- try
-- catch
-- throw
-- extern
-- finally
-- noexcept
+- ':::no-loc(SEH):::'
+- ':::no-loc(try):::'
+- ':::no-loc(catch):::'
+- ':::no-loc(throw):::'
+- ':::no-loc(extern):::'
+- ':::no-loc(finally):::'
+- ':::no-loc(noexcept):::'
 ms.assetid: 754b916f-d206-4472-b55a-b6f1b0f2cb4d
-ms.openlocfilehash: 68d6af657e7c20c0f5e84674dd91803beb35fba0
-ms.sourcegitcommit: 0e4feb35b47c507947262d00349d4a893863a6d3
+ms.openlocfilehash: f158e951d595d5934ff513254871710db5920bf1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81396289"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232715"
 ---
 # <a name="eh-exception-handling-model"></a>/EH (Ausnahmebehandlungsmodell)
 
-Gibt die vom Compiler generierte Unterstützung für die Ausnahmebehandlungsmodellanmundungen an. Argumente geben an, ob Syntax sowohl auf strukturierte als auch auf Standard-C++-Ausnahmen angewendet `catch(...)` werden soll, ob throw **noexcept** ** extern "C"-Code** für Ausnahmen angenommen wird und ob bestimmte Prüfungen optimiert werden sollen.
+Gibt die vom Compiler generierte Ausnahme Behandlungsmodell Unterstützung an. Mit Argumenten wird angegeben, ob eine `:::no-loc(catch):::(...)` Syntax auf strukturierte und standardmäßige C++-Ausnahmen angewendet werden soll, ob ** :::no-loc(extern)::: "C"** -Code :::no-loc(throw)::: Ausnahmen angenommen werden und ob bestimmte Überprüfungen entfernt werden sollen **`:::no-loc(noexcept):::`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,48 +42,48 @@ Gibt die vom Compiler generierte Unterstützung für die Ausnahmebehandlungsmode
 ## <a name="arguments"></a>Argumente
 
 **`a`**\
-Ermöglicht das Entladungsprogramm des Standard-C++-Stacks. Fängt sowohl strukturierte (asynchrone) als auch standardmäßige C++-Ausnahmen (synchron) ab, wenn Sie Syntax verwenden. `catch(...)` **`/EHa`** überschreibt **`/EHs`** beide **`/EHc`** argumente.
+Aktiviert die standardmäßige C++-Stapel Entwicklung. Fängt bei Verwendung von Syntax sowohl strukturierte (asynchrone) als auch C++ (synchrone) Standard Ausnahmen ab `:::no-loc(catch):::(...)` . **`/EHa`** Überschreibt beide **`/EHs`** -und- **`/EHc`** Argumente.
 
 **`s`**\
-Ermöglicht das Entladungsprogramm des Standard-C++-Stacks. Fängt nur Standard-C++-Ausnahmen `catch(...)` ab, wenn Sie Syntax verwenden. Sofern **`/EHc`** nicht auch angegeben, geht der Compiler davon throw aus, dass als ** extern "C"** deklarierte Funktionen eine C++-Ausnahme sein können.
+Aktiviert die standardmäßige C++-Stapel Entwicklung. Fängt nur bei Verwendung von Syntax Standard-C++-Ausnahmen ab `:::no-loc(catch):::(...)` . Sofern nicht **`/EHc`** auch angegeben wird, geht der Compiler davon aus, dass als ** :::no-loc(extern)::: "C"** deklarierte Funktionen :::no-loc(throw)::: eine C++-Ausnahme darstellen dürfen.
 
 **`c`**\
-Bei Verwendung **`/EHs`** mit geht der Compiler davon aus, dass als ** extern "C"** deklarierte Funktionen niemals throw eine C++-Ausnahme darstellen. Es hat keine Wirkung **`/EHa`** bei Verwendung **`/EHca`** mit **`/EHa`**(d. h. entspricht ) . **`/EHc`** wird ignoriert, wenn **`/EHs`** angegeben oder **`/EHa`** nicht angegeben.
+Bei Verwendung mit **`/EHs`** geht der Compiler davon aus, dass Funktionen, die als ** :::no-loc(extern)::: "C"** deklariert sind, niemals :::no-loc(throw)::: eine C++-Ausnahme sind. Sie hat keine Auswirkung, wenn Sie mit verwendet wird **`/EHa`** (das heißt, **`/EHca`** ist äquivalent zu **`/EHa`** ). **`/EHc`** wird ignoriert, wenn **`/EHs`** oder **`/EHa`** nicht angegeben ist.
 
 **`r`**\
-Weist den Compiler an, immer Laufzeitbeendigungsprüfungen für alle **noexcept** Funktionen zu generieren. Standardmäßig kann die Laufzeitprüfung für **noexcept** das Nicht-Auslösen von Funktionen entfernt optimiert werden, wenn der Compiler bestimmt, dass die Funktion nur nicht auslösende Funktionen aufruft. Diese Option bietet eine strikte C++-Konformität auf Kosten von zusätzlichem Code. **`/EHr`** wird ignoriert, wenn **`/EHs`** angegeben oder **`/EHa`** nicht angegeben.
+Weist den Compiler an, immer Lauf Zeit Beendigungs Prüfungen für alle Funktionen zu generieren **`:::no-loc(noexcept):::`** . Standardmäßig können Lauf Zeit Prüfungen für **`:::no-loc(noexcept):::`** optimiert werden, wenn der Compiler feststellt, dass die Funktion nur Funktionen aufruft, die keine :::no-loc(throw)::: Funktionen sind. Diese Option bietet strikte C++-Konformität mit den Kosten für zusätzlichen Code. **`/EHr`** wird ignoriert, wenn **`/EHs`** oder **`/EHa`** nicht angegeben ist.
 
 **`-`**\
-Löscht das vorherige Optionsargument. Wird z. B. **`/EHsc-`** als **`/EHs /EHc-`** interpretiert **`/EHs`** und entspricht .
+Löscht das vorherige options Argument. Beispielsweise **`/EHsc-`** wird als interpretiert **`/EHs /EHc-`** , und entspricht **`/EHs`** .
 
-**`/EH`** Argumente können separat oder in beliebiger Reihenfolge angegeben oder kombiniert werden. Wenn mehr als eine Instanz desselben Arguments angegeben wird, überschreibt die letzte Instanz alle früheren.  Beispielsweise **`/EHr- /EHc /EHs`** ist die gleiche **`/EHscr-`** wie **`/EHscr- /EHr`** , und **`/EHscr`** hat den gleichen Effekt wie .
+**`/EH`** Argumente können in beliebiger Reihenfolge separat oder kombiniert angegeben werden. Wenn mehr als eine Instanz desselben Arguments angegeben wird, überschreibt der letzte alle früheren Instanzen.  Beispielsweise **`/EHr- /EHc /EHs`** ist identisch mit **`/EHscr-`** und **`/EHscr- /EHr`** hat denselben Effekt wie **`/EHscr`** .
 
 ## <a name="remarks"></a>Bemerkungen
 
-### <a name="default-exception-handling-behavior"></a>Standard-Ausnahmebehandlungsverhalten
+### <a name="default-exception-handling-behavior"></a>Standardverhalten bei der Ausnahmebehandlung
 
-Der Compiler generiert immer Code, der asynchrone strukturierte Ausnahmebehandlung (SEHunterstützt). Standardmäßig (d. h., **`/EHs`** wenn **`/EHa`** keine **`/EHsc`**, oder SEH Option angegeben ist) unterstützt `catch(...)` der Compiler Handler in der systemeigenen C++-Klausel. Es generiert jedoch auch Code, der C++-Ausnahmen nur teilweise unterstützt. Der standardmäßige Sperrcode für das Entladen von Ausnahmen [try](../../cpp/try-throw-and-catch-statements-cpp.md) zerstört keine automatischen C++-Objekte außerhalb von Blöcken, die aufgrund einer Ausnahme nicht in den Gültigkeitsbereich fallen. Ressourcenlecks und undefiniertes Verhalten können auftreten, wenn eine C++-Ausnahme ausgelöst wird.
+Der Compiler generiert immer Code, der die asynchrone strukturierte Ausnahmebehandlung () unterstützt :::no-loc(SEH)::: . Wenn keine **`/EHsc`** ,- **`/EHs`** oder- **`/EHa`** Option angegeben ist, unterstützt der Compiler standardmäßig :::no-loc(SEH)::: Handler in der nativen C++- `:::no-loc(catch):::(...)` Klausel. Es generiert jedoch auch Code, der nur teilweise C++-Ausnahmen unterstützt. Der standardmäßige Entwicklungscode für Ausnahmen zerstört keine automatischen C++-Objekte außerhalb von [:::no-loc(try):::](../../cpp/:::no-loc(try):::-:::no-loc(throw):::-and-:::no-loc(catch):::-statements-cpp.md) Blöcken, die aufgrund einer Ausnahme außerhalb des Gültigkeits Bereichs liegen. Ressourcen Lecks und undefiniertes Verhalten können ergeben, wenn eine C++-Ausnahme :::no-loc(throw)::: n ist.
 
-### <a name="standard-c-exception-handling"></a>Standard-C++-Ausnahmebehandlung
+### <a name="standard-c-exception-handling"></a>Standard mäßige C++-Ausnahmebehandlung
 
-Vollständige Compilerunterstützung für das Standard-C++-Ausnahmebehandlungsmodell, **`/EHsc`** das **`/EHs`** Stackobjekte **`/EHa`** sicher auflöst (empfohlen), oder .
+Vollständige Compilerunterstützung für das Standard mäßige C++-Ausnahme Behandlungsmodell, das Stapel Objekte sicher entlädt, erfordert **`/EHsc`** (empfohlen), **`/EHs`** oder **`/EHa`** .
 
-Wenn Sie **`/EHs`** **`/EHsc`** oder verwenden, verwenden `catch(...)` Ihre catch Klauseln keine asynchronen strukturierten Ausnahmen. Alle Zugriffsverletzungen und <xref:System.Exception?displayProperty=fullName> verwalteten Ausnahmen werden nicht abgefangen. Und Objekte im Gültigkeitsbereich, wenn eine asynchrone Ausnahme auftritt, werden nicht zerstört, auch wenn der Code die asynchrone Ausnahme behandelt. Dieses Verhalten ist ein Argument dafür, strukturierte Ausnahmen nicht zu behandeln. Betrachten Sie diese Ausnahmen stattdessen als schwerwiegend.
+Wenn Sie **`/EHs`** oder verwenden **`/EHsc`** , dann sind Ihre- `:::no-loc(catch):::(...)` Klauseln keine :::no-loc(catch)::: asynchronen strukturierten Ausnahmen. Alle Zugriffs Verletzungen und verwalteten <xref:System.Exception?displayProperty=fullName> Ausnahmen werden nicht abgefangen. Außerdem werden Objekte im Bereich, wenn eine asynchrone Ausnahme auftritt, nicht zerstört, auch wenn der Code die asynchrone Ausnahme behandelt. Dieses Verhalten ist ein Argument, mit dem strukturierte Ausnahmen nicht behandelt werden. Beachten Sie stattdessen, dass diese Ausnahmen schwerwiegend sind.
 
-Wenn Sie **`/EHs`** **`/EHsc`** oder verwenden, geht der Compiler davon **throw** aus, dass Ausnahmen nur bei einer Anweisung oder bei einem Funktionsaufruf auftreten können. Diese Annahme ermöglicht es dem Compiler, Code für die Nachverfolgung der Lebensdauer vieler nicht verwindbarer Objekte zu eliminieren, wodurch die Codegröße erheblich reduziert werden kann. Wenn Sie **`/EHa`** verwenden, ist das ausführbare Image möglicherweise größer **try** und langsamer, da der Compiler Blöcke nicht so aggressiv optimiert. Außerdem werden Ausnahmefilter angezeigt, die lokale Objekte automatisch bereinigen, auch wenn throw der Compiler keinen Code sieht, der eine C++-Ausnahme darstellen kann.
+Wenn Sie **`/EHs`** oder verwenden **`/EHsc`** , geht der Compiler davon aus, dass Ausnahmen nur bei einer- **`:::no-loc(throw):::`** Anweisung oder bei einem Funktions aufzurufen auftreten können. Diese Annahme ermöglicht es dem Compiler, Code zum Nachverfolgen der Lebensdauer von vielen nicht windable-Objekten auszuschließen, wodurch die Codegröße erheblich reduziert werden kann. Wenn Sie verwenden **`/EHa`** , kann das ausführbare Image größer und langsamer sein, da der Compiler **`:::no-loc(try):::`** Blöcke nicht als aggressiv optimiert. Außerdem gibt es Ausnahme Filter, die lokale Objekte automatisch bereinigen, auch wenn der Compiler keinen Code sieht, der :::no-loc(throw)::: eine C++-Ausnahme haben kann.
 
 ### <a name="structured-and-standard-c-exception-handling"></a>Strukturierte und standardmäßige C++-Ausnahmebehandlung
 
-Die **`/EHa`** Compileroption ermöglicht das abwickeln des sicheren Stapels sowohl für asynchrone Ausnahmen als auch für C++-Ausnahmen. Es unterstützt die Handhabung sowohl von Standard-C++- als `catch(...)` auch von strukturierten Ausnahmen mithilfe der systemeigenen C++-Klausel. Zum SEH Implementieren ohne **`/EHa`** Angabe von können Sie die **Syntax __try**, **__except**und **__finally** verwenden. Weitere Informationen finden Sie unter [Strukturierte Ausnahmebehandlung](../../cpp/structured-exception-handling-c-cpp.md).
+Die **`/EHa`** -Compileroption ermöglicht eine sichere Stapel Auflösung für asynchrone Ausnahmen und C++-Ausnahmen. Sie unterstützt die Behandlung von standardmäßigen C++-und strukturierten Ausnahmen mithilfe der nativen C++- `:::no-loc(catch):::(...)` Klausel. Wenn :::no-loc(SEH)::: Sie ohne Angabe von implementieren möchten **`/EHa`** , können Sie die **__ :::no-loc(try)::: **-, **`__except`** -und- **`__:::no-loc(finally):::`** Syntax verwenden. Weitere Informationen finden Sie unter [strukturierte Ausnahmebehandlung](../../cpp/structured-exception-handling-c-cpp.md).
 
 > [!IMPORTANT]
-> Das **`/EHa`** Angeben und Versuchen, alle `catch(...)` Ausnahmen mithilfe von Ausnahmen zu behandeln, kann gefährlich sein. Da asynchrone Ausnahmen größtenteils nicht behebbar sind, gelten sie als schwerwiegende Ausnahmen. Wenn Sie sie abfangen und den Prozess anschließend fortsetzen, können Beschädigungen und Fehler auftreten, die schwer zu finden und zu beheben sind.
+> Das angeben **`/EHa`** und angeben :::no-loc(try)::: , um alle Ausnahmen mithilfe von zu verarbeiten, `:::no-loc(catch):::(...)` kann gefährlich sein. Da asynchrone Ausnahmen größtenteils nicht behebbar sind, gelten sie als schwerwiegende Ausnahmen. Wenn Sie sie abfangen und den Prozess anschließend fortsetzen, können Beschädigungen und Fehler auftreten, die schwer zu finden und zu beheben sind.
 >
-> Obwohl Windows und Visual C++ unterstützen, SEHwird dringend empfohlen, die Iso-Standard-C++-Ausnahmebehandlung (**`/EHsc`** oder **`/EHs`**) zu verwenden. Es macht Ihren Code tragbarer und flexibler. Es kann immer noch Zeiten SEH geben, die Sie in Legacy-Code oder für bestimmte Arten von Programmen verwenden müssen. Es ist in Code erforderlich, der kompiliert wird, um z. B. die Common Language Runtime ([/clr](clr-common-language-runtime-compilation.md)) zu unterstützen. Weitere Informationen finden Sie unter [Strukturierte Ausnahmebehandlung](../../cpp/structured-exception-handling-c-cpp.md).
+> Obwohl Windows und Visual C++ unterstützt :::no-loc(SEH)::: werden, wird dringend empfohlen, die ISO-Standard-C++-Ausnahmebehandlung ( **`/EHsc`** oder) zu verwenden **`/EHs`** . Dadurch wird Ihr Code portabler und flexibler. Manchmal müssen Sie :::no-loc(SEH)::: in Legacy Code oder für bestimmte Arten von Programmen verwenden. Dies ist beispielsweise erforderlich, wenn Code zur Unterstützung der Common Language Runtime ([/CLR](clr-common-language-runtime-compilation.md)) kompiliert ist. Weitere Informationen finden Sie unter [strukturierte Ausnahmebehandlung](../../cpp/structured-exception-handling-c-cpp.md).
 >
-> Es wird empfohlen, Objektdateien, **`/EHa`** die mithilfe von **`/EHs`** Dateien **`/EHsc`** kompiliert werden, die mit oder in demselben ausführbaren Modul kompiliert wurden, niemals zu verknüpfen. Wenn Sie eine asynchrone Ausnahme **`/EHa`** mithilfe einer beliebigen **`/EHa`** Stelle in Ihrem Modul behandeln müssen, verwenden Sie diese, um den gesamten Code im Modul zu kompilieren. Sie können strukturierte Ausnahmebehandlungssyntax im selben Modul wie Code **`/EHs`** verwenden, der mithilfe von kompiliert wird. Sie können SEH die Syntax jedoch nicht mit **try** **throw** C++ , und **catch** in derselben Funktion mischen.
+> Es wird empfohlen, dass Sie die mit kompilierten Objektdateien niemals mit den Dateien verknüpfen, **`/EHa`** **`/EHs`** die mit oder **`/EHsc`** im selben ausführbaren Modul kompiliert wurden. Wenn Sie eine asynchrone Ausnahme behandeln müssen, indem Sie eine beliebige Stelle **`/EHa`** in Ihrem Modul verwenden, kompilieren Sie mithilfe von **`/EHa`** den gesamten Code im Modul. Sie können die Syntax für die strukturierte Ausnahmebehandlung im selben Modul wie Code verwenden, der mit kompiliert wurde **`/EHs`** . Die Syntax kann jedoch nicht :::no-loc(SEH)::: mit C++ **`:::no-loc(try):::`** , **`:::no-loc(throw):::`** und **`:::no-loc(catch):::`** in derselben Funktion gemischt werden.
 
-Verwenden **`/EHa`** Sie diese catch Verwendung, wenn Sie eine Ausnahme **throw** verwenden möchten, die von etwas anderem als einer ausgelöst wird. Im nachfolgenden Beispiel wird eine strukturierte Ausnahme generiert und abgefangen:
+Verwenden **`/EHa`** Sie, wenn Sie :::no-loc(catch)::: eine Ausnahme verwenden möchten, die von einem anderen als einem ausgelöst wird **`:::no-loc(throw):::`** . In diesem Beispiel wird :::no-loc(catch)::: eine strukturierte Ausnahme generiert und erstellt:
 
 ```cpp
 // compiler_options_EHA.cpp
@@ -94,55 +94,55 @@ using namespace std;
 
 void fail()
 {
-    // generates SE and attempts to catch it using catch(...)
-    try
+    // generates SE and attempts to :::no-loc(catch)::: it using :::no-loc(catch):::(...)
+    :::no-loc(try):::
     {
         int i = 0, j = 1;
-        j /= i;   // This will throw a SE (divide by zero).
+        j /= i;   // This will :::no-loc(throw)::: a SE (divide by zero).
         printf("%d", j);
     }
-    catch(...)
+    :::no-loc(catch):::(...)
     {
-        // catch block will only be executed under /EHa
-        cout << "Caught an exception in catch(...)." << endl;
+        // :::no-loc(catch)::: block will only be executed under /EHa
+        cout << "Caught an exception in :::no-loc(catch):::(...)." << endl;
     }
 }
 
 int main()
 {
-    __try
+    __:::no-loc(try):::
     {
         fail();
     }
 
-    // __except will only catch an exception here
+    // __except will only :::no-loc(catch)::: an exception here
     __except(EXCEPTION_EXECUTE_HANDLER)
     {
-        // if the exception was not caught by the catch(...) inside fail()
+        // if the exception was not caught by the :::no-loc(catch):::(...) inside fail()
         cout << "An exception was caught in __except." << endl;
     }
 }
 ```
 
-### <a name="exception-handling-under-clr"></a>Ausnahmebehandlung unter /clr
+### <a name="exception-handling-under-clr"></a>Ausnahmebehandlung unter/CLR
 
-Die **`/clr`** Option **`/EHa`** impliziert (d. h., **`/clr /EHa`** ist redundant). Der Compiler generiert **`/EHs`** einen **`/EHsc`** Fehler, **`/clr`** wenn oder wird er nach verwendet. Optimierungen wirken sich nicht auf dieses Verhalten aus. Wenn eine Ausnahme abgefangen wird, ruft der Compiler die Klassendestruktoren für alle Objekte auf, die sich im gleichen Bereich wie die Ausnahme befinden. Wenn keine Ausnahme abgefangen wird, werden diese Destruktoren nicht ausgeführt.
+Die **`/clr`** Option impliziert **`/EHa`** (d. h **`/clr /EHa`** . ist redundant). Der Compiler generiert einen Fehler, wenn **`/EHs`** oder **`/EHsc`** nach verwendet wird **`/clr`** . Optimierungen wirken sich nicht auf dieses Verhalten aus. Wenn eine Ausnahme abgefangen wird, ruft der Compiler die klassendefiktoren für alle Objekte auf, die sich im gleichen Bereich wie die Ausnahme befinden. Wenn eine Ausnahme nicht abgefangen wird, werden diese debugtoren nicht ausgeführt.
 
-Informationen zu Ausnahmebehandlungseinschränkungen **`/clr`** finden Sie unter [_set_se_translator](../../c-runtime-library/reference/set-se-translator.md).
+Informationen zu Ausnahme Behandlungs Einschränkungen unter **`/clr`** finden Sie unter [_set_se_translator](../../c-runtime-library/reference/set-se-translator.md).
 
-### <a name="runtime-exception-checks"></a>Laufzeit-Ausnahmeprüfungen
+### <a name="runtime-exception-checks"></a>Lauf Zeit Ausnahme Überprüfungen
 
-Die **`/EHr`** Option erzwingt Die Laufzeitbeendigungsprüfungen **noexcept** in allen Funktionen, die über ein Attribut verfügen. Standardmäßig können Laufzeitprüfungen entfernt optimiert werden, wenn das Compiler-Back-End feststellt, dass eine Funktion nur *nicht auslösende* Funktionen aufruft. Nicht auslösende Funktionen sind alle Funktionen, die ein Attribut haben, das angibt, dass keine Ausnahmen ausgelöst werden können. Sie enthalten **noexcept** Funktionen, `__declspec(nothrow)`die mit **`/EHc`** , `throw()`, und, wenn angegeben, ** extern "C"-Funktionen** gekennzeichnet sind. Zu den nicht auslösenden Funktionen gehört auch jede Funktion, für die der Compiler durch Prüfung ermittelt hat, dass sie nicht auslösend ist. Sie können das Standardverhalten **`/EHr-`** explizit festlegen, indem Sie verwenden.
+Die- **`/EHr`** Option erzwingt Lauf Zeit Abbruch Prüfungen in allen Funktionen, die über ein- **`:::no-loc(noexcept):::`** Attribut verfügen. Standardmäßig können Laufzeitüberprüfungen entfernt werden, wenn das Compiler-Back-End feststellt, dass eine Funktion nur *nicht- :::no-loc(throw)::: * Funktionen aufruft. :::no-loc(throw):::Nichtingfunktionen sind Funktionen, die über ein Attribut verfügen, das angibt, dass keine Ausnahmen n sein können :::no-loc(throw)::: . Sie umfassen Funktionen, die mit,, und gekennzeichnet sind, **`:::no-loc(noexcept):::`** `:::no-loc(throw):::()` `__declspec(no:::no-loc(throw):::)` Wenn **`/EHc`** angegeben wird, ** :::no-loc(extern)::: "C"** -Funktionen. Zu :::no-loc(throw)::: den Funktionen, die der Compiler bestimmt hat, sind auch alle, die der Compiler bei der Überprüfung nicht erschließt :::no-loc(throw)::: . Sie können das Standardverhalten mithilfe von explizit festlegen **`/EHr-`** .
 
-Ein nicht auslösendes Attribut ist keine Garantie dafür, dass Ausnahmen nicht von einer Funktion ausgelöst werden können. Im Gegensatz zum **noexcept** Verhalten einer Funktion betrachtet der MSVC-Compiler `throw()` `__declspec(nothrow)`eine Ausnahme, die von einer Funktion ausgelöst wird, die mit , oder ** extern "C"** deklariert wird, als nicht definiertes Verhalten. Funktionen, die diese drei Deklarationsattribute verwenden, erzwingen keine Laufzeitbeendigungsprüfungen für Ausnahmen. Sie können **`/EHr`** die Option verwenden, um dieses nicht definierte Verhalten zu identifizieren, indem Sie den **noexcept** Compiler zwingen, Laufzeitprüfungen für nicht behandelte Ausnahmen zu generieren, die einer Funktion entfliehen.
+Ein :::no-loc(throw)::: nichtingattribut ist keine Garantie dafür, dass Ausnahmen nicht :::no-loc(throw)::: von einer Funktion n sein können. Im Gegensatz zum Verhalten einer **`:::no-loc(noexcept):::`** Funktion betrachtet der MSVC-Compiler eine Ausnahme :::no-loc(throw)::: n durch eine Funktion, die mit `:::no-loc(throw):::()` , `__declspec(no:::no-loc(throw):::)` oder ** :::no-loc(extern)::: "C"** als nicht definiertes Verhalten deklariert wurde. Funktionen, die diese drei Deklarations Attribute verwenden, erzwingen keine Lauf Zeit Beendigungs Prüfungen für Ausnahmen. Sie können die- **`/EHr`** Option verwenden, um dieses nicht definierte Verhalten zu identifizieren, indem Sie erzwingen, dass der Compiler Lauf Zeit Prüfungen für nicht behandelte Ausnahmen generiert, die eine Funktion mit Escapezeichen versehen **`:::no-loc(noexcept):::`** .
 
-## <a name="set-the-option-in-visual-studio-or-programmatically"></a>Festlegen der Option in Visual Studio oder programmgesteuert
+## <a name="set-the-option-in-visual-studio-or-programmatically"></a>Festlegen der Option in Visual Studio oder Programm gesteuert
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie **Konfigurationseigenschaften** > **C/C++** > **Codegenerierung**aus.
+1. Wählen Sie **Konfigurations Eigenschaften**  >  **C/C++-**  >  **Code Generierung**aus.
 
 1. Ändern Sie die Eigenschaft **C++-Ausnahmen aktivieren** .
 
@@ -152,10 +152,10 @@ Ein nicht auslösendes Attribut ist keine Garantie dafür, dass Ausnahmen nicht 
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.ExceptionHandling%2A>.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md)\
-[MSVC Compiler-Befehlszeilensyntax](compiler-command-line-syntax.md)\
-[Fehler- und Ausnahmebehandlung](../../cpp/errors-and-exception-handling-modern-cpp.md)\
-[Ausnahmespezifikationenthrow( )](../../cpp/exception-specifications-throw-cpp.md)\
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)\
+[Fehler-und Ausnahmebehandlung](../../cpp/errors-and-exception-handling-modern-cpp.md)\
+[Ausnahme Spezifikationen ( :::no-loc(throw)::: )](../../cpp/exception-specifications-:::no-loc(throw):::-cpp.md)\
 [Structured Exception Handling (C/C++)](../../cpp/structured-exception-handling-c-cpp.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - helpstringcontext attribute [C++]
 ms.assetid: d4cd135e-d91c-4aa3-9353-8aeb096f52cf
-ms.openlocfilehash: 339d65070efe8bf2dafae2cf76e92c75a1bebc18
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e6d4a6b4ab2381fc9ebe0f237978c92fe0f656c5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168148"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224447"
 ---
 # <a name="helpstringcontext"></a>helpstringcontext
 
@@ -30,7 +30,7 @@ Ein 32-Bit-Hilfe Kontext Bezeichner in der **Hilfe** Datei.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **helpstringcontext** C++ -Attribut verfügt über die gleiche Funktionalität wie das [helpstringcontext](/windows/win32/Midl/helpstringcontext) -ODL-Attribut.
+Das **helpstringcontext** C++-Attribut verfügt über die gleiche Funktionalität wie das [helpstringcontext](/windows/win32/Midl/helpstringcontext) -ODL-Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -54,17 +54,17 @@ __interface IMyI
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Schnittstelle**, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **Schnittstelle**, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
+[Schnittstellen Attribute](interface-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
-[module](module-cpp.md)
+[Methoden Attribute](method-attributes.md)<br/>
+[Mond](module-cpp.md)

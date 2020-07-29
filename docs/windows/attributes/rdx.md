@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - rdx attribute
 ms.assetid: ff8e4312-c1ad-4934-bdaa-86f54409651e
-ms.openlocfilehash: f0140b759b1d78eb1284213a0dc47d9600b2a83b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b5f0981f249653b1068e2fbec3d02d3209d5f935
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214629"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232754"
 ---
 # <a name="rdx"></a>rdx
 
@@ -32,11 +32,11 @@ Der Name des zu erstellenden oder zu öffnenden Schlüssels.
 Optionale Gibt das Wertfeld an, das festgelegt werden soll. Wenn ein Wertfeld mit diesem Namen nicht bereits im Schlüssel vorhanden ist, wird es hinzugefügt.
 
 *regyp*<br/>
-Der Typ des Registrierungsschlüssels, der hinzugefügt wird. Kann eines der folgenden sein: `text`, `dword`, `binary`oder `CString`.
+Der Typ des Registrierungsschlüssels, der hinzugefügt wird. Kann eines der folgenden sein: `text` , `dword` , `binary` oder `CString` .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **RDX** C++ -Attribut erstellt oder ändert einen vorhandenen Registrierungsschlüssel für eine COM-Komponente. Das-Attribut fügt dem-Objekt, das den Zielmember implementiert, ein BEGIN_RDX_MAP-Makro hinzu. `RegistryDataExchange`kann eine Funktion, die als Ergebnis des BEGIN_RDX_MAP-Makros eingefügt wurde, zum Übertragen von Daten zwischen der Registrierung und den Datenmembern verwendet werden.
+Das **RDX** C++-Attribut erstellt oder ändert einen vorhandenen Registrierungsschlüssel für eine COM-Komponente. Das-Attribut fügt dem-Objekt, das den Zielmember implementiert, ein BEGIN_RDX_MAP-Makro hinzu. `RegistryDataExchange`, eine Funktion, die als Ergebnis des BEGIN_RDX_MAP-Makros eingefügt wurde, kann zum Übertragen von Daten zwischen der Registrierung und den Datenmembern verwendet werden.
 
 Dieses Attribut kann in Verbindung mit den Attributen [Co-Klasse](coclass.md), [ProgID](progid.md)oder [Vi_progid](vi-progid.md) oder anderen Attributen verwendet werden, die eines dieser Attribute impliziert.
 
@@ -46,8 +46,8 @@ Dieses Attribut kann in Verbindung mit den Attributen [Co-Klasse](coclass.md), [
 
 |||
 |-|-|
-|**Betrifft**|**Class** -oder **struct** -Member|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`** oder- **`struct`** Member|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -76,7 +76,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [COM-Attribute](com-attributes.md)<br/>
 [registration_script](registration-script.md)

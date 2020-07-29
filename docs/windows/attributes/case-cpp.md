@@ -1,21 +1,21 @@
 ---
-title: Case (C++ com-Attribut)
+title: Case (C++-com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.case
 helpviewer_keywords:
 - case attribute
 ms.assetid: 6fb883c3-0526-4932-a901-b4564dcaeb7d
-ms.openlocfilehash: da72fff3bb600b5db2fba0ecdfe9c6a768836f3c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 23330b7b220873725dc566df947f3f3596160029
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167335"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232806"
 ---
 # <a name="case-c"></a>case (C++)
 
-Wird mit dem [Switch_type](switch-type.md) -Attribut in einer **Union**verwendet.
+Wird mit dem [Switch_type](switch-type.md) -Attribut in einer verwendet **`union`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -28,19 +28,19 @@ Wird mit dem [Switch_type](switch-type.md) -Attribut in einer **Union**verwendet
 *value*<br/>
 Ein möglicher Eingabe Wert, für den Sie die Verarbeitung bereitstellen möchten. Der **Werttyp** kann einer der folgenden Typen sein:
 
-- `int`
+- **`int`**
 
-- `char`
+- **`char`**
 
 - `boolean`
 
-- `enum`
+- **`enum`**
 
 oder einen Bezeichner eines solchen Typs.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Case** C++ -Attribut verfügt über die gleiche Funktionalität wie das Mittel l-Attribut für den **Fall** . Dieses Attribut wird nur mit dem [Switch_type](switch-type.md) -Attribut verwendet.
+Das **Case** C++-Attribut verfügt über die gleiche Funktionalität wie das Mittel l-Attribut für den **Fall** . Dieses Attribut wird nur mit dem [Switch_type](switch-type.md) -Attribut verwendet.
 
 ## <a name="example"></a>Beispiel
 
@@ -69,15 +69,15 @@ struct SizedValue2 {
 
 |||
 |-|-|
-|**Betrifft**|Member einer **Klasse** oder **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Member von **`class`** oder**`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)

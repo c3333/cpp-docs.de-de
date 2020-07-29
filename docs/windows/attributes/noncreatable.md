@@ -1,17 +1,17 @@
 ---
-title: nicht in die TabelleC++ (com-Attribut)
+title: nicht in die Tabelle (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.noncreatable
 helpviewer_keywords:
 - noncreatable attribute
 ms.assetid: 4d17937b-0bff-41af-ba57-53e18b7ab5a9
-ms.openlocfilehash: e855497cb6f619ecdaa6aedf16a04f045a60faa7
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: c5d51d7c5628a875f036b4e48b03b317490b37ff
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514561"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224395"
 ---
 # <a name="noncreatable"></a>noncreatable
 
@@ -23,11 +23,11 @@ Definiert ein Objekt, das nicht allein instanziiert werden kann.
 [noncreatable]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **nicht** C++ Erstell Bare Attribut verfügt über die gleiche Funktionalität wie das [nicht](/windows/win32/Midl/noncreatable) Erstell Bare Mittel l-Attribut und wird automatisch an die generierte übergeben. IDL-Datei durch den Compiler.
+Das **nicht** Erstell Bare C++-Attribut verfügt über die gleiche Funktionalität wie das [nicht](/windows/win32/Midl/noncreatable) Erstell Bare-Attribut "Mittel l" und wird automatisch an den generierten übergeben. IDL-Datei durch den Compiler.
 
-Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert sich das Verhalten des Attributs. Zusätzlich zum obigen Verhalten fügt das Attribut auch das [OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO](../../atl/reference/object-map-macros.md#object_entry_non_createable_ex_auto) -Makro ein. Dieses Makro zeigt ATL an, dass das Objekt nicht extern erstellt werden kann.
+Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert sich das Verhalten des Attributs. Zusätzlich zum obigen Verhalten fügt das Attribut auch das [OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO](../../atl/reference/object-map-macros.md#object_entry_non_createable_ex_auto) Makro ein. Dieses Makro zeigt ATL an, dass das Objekt nicht extern erstellt werden kann.
 
 ## <a name="example"></a>Beispiel
 
@@ -49,16 +49,16 @@ class CMyClass : public A
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|**coclass**|
-|**Ungültige Attribute**|None|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 

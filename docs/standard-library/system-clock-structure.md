@@ -9,12 +9,12 @@ f1_keywords:
 - chrono/std::chrono::system_clock::is_monotonic Constant
 - chrono/std::chrono::system_clock::is_steady Constant
 ms.assetid: a97bd46e-267a-4836-9f7d-af1f664e99ae
-ms.openlocfilehash: ca516551bb1b41d96b99aaf7b842666c9341ee7d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 4e530887e7c8cf26e8969a839702286913da9b67
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376517"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224577"
 ---
 # <a name="system_clock-structure"></a>system_clock-Struktur
 
@@ -38,7 +38,7 @@ Eine Uhr ist *gleichmäßig*, wenn sie *monoton* und die Zeit zwischen den Teils
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`system_clock::duration`|Ein Synonym für `duration<rep, period>`.|
 |`system_clock::period`|Ein Synonym für den Typ, der zum Darstellen der Teilstrichperiode in der enthaltenden Instanziierung von `duration` verwendet wird.|
@@ -47,28 +47,28 @@ Eine Uhr ist *gleichmäßig*, wenn sie *monoton* und die Zeit zwischen den Teils
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[from_time_t](#from_time_t)|Statisch. Gibt einen `time_point` zurück, der einer bestimmten Zeit am besten entspricht.|
-|[jetzt](#now)|Statisch. Gibt die aktuelle Uhrzeit zurück.|
+|[gerade](#now)|Statisch. Gibt die aktuelle Uhrzeit zurück.|
 |[to_time_t](#to_time_t)|Statisch. Gibt ein `time_t`-Objekt zurück, das einer bestimmten `time_point` am besten entspricht.|
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[system_clock::is_monotonic-Konstante](#is_monotonic_constant)|Gibt an, ob der Uhrtyp monoton ist.|
 |[system_clock::is_steady-Konstante](#is_steady_constant)|Gibt an, ob der Uhrtyp gleichmäßig ist.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** \<chrono>
+**Header:**\<chrono>
 
 **Namespace:** std::chrono
 
-## <a name="system_clockfrom_time_t"></a><a name="from_time_t"></a>system_clock::from_time_t
+## <a name="system_clockfrom_time_t"></a><a name="from_time_t"></a>system_clock:: from_time_t
 
-Statische Methode, die eine [time_point](../standard-library/time-point-class.md) zurückgibt, die die Zeit, die durch *Tm*dargestellt wird, am genauesten annähert.
+Statische Methode, die eine [time_point](../standard-library/time-point-class.md) zurückgibt, die der von *TM*dargestellten Zeit am ehesten entspricht.
 
 ```cpp
 static time_point from_time_t(time_t Tm) noexcept;
@@ -76,10 +76,10 @@ static time_point from_time_t(time_t Tm) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Tm*\
+*Ausnutzt*\
 Ein [time_t](../c-runtime-library/standard-types.md)-Objekt.
 
-## <a name="system_clockis_monotonic-constant"></a><a name="is_monotonic_constant"></a>system_clock::is_monotonic Konstante
+## <a name="system_clockis_monotonic-constant"></a><a name="is_monotonic_constant"></a>system_clock:: is_monotonic-Konstante
 
 Ein statischer Wert, der angibt, ob der Uhrtyp monoton ist.
 
@@ -89,13 +89,13 @@ static const bool is_monotonic = false;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt in `system_clock::is_monotonic` dieser Implementierung immer **false**zurück.
+In dieser Implementierung `system_clock::is_monotonic` gibt immer zurück **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Eine Uhr ist *monoton*, wenn der von einem ersten Aufruf von `now()` zurückgegebene Wert immer kleiner oder gleich dem Wert ist, der über einen nachfolgenden Aufruf von `now()` zurückgegeben wird.
 
-## <a name="system_clockis_steady-constant"></a><a name="is_steady_constant"></a>system_clock::is_steady Konstante
+## <a name="system_clockis_steady-constant"></a><a name="is_steady_constant"></a>system_clock:: is_steady-Konstante
 
 Ein statischer Wert, der angibt, ob der Uhrtyp *gleichmäßig* ist.
 
@@ -105,13 +105,13 @@ static const bool is_steady = false;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt in `system_clock::is_steady` dieser Implementierung immer **false**zurück.
+In dieser Implementierung `system_clock::is_steady` gibt immer zurück **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Eine Uhr ist *gleichmäßig*, wenn sie [monoton](#is_monotonic_constant) und die Zeit zwischen den Teilstrichen konstant ist.
 
-## <a name="system_clocknow"></a><a name="now"></a>system_clock::jetzt
+## <a name="system_clocknow"></a><a name="now"></a>system_clock:: Now
 
 Statische Methode, die die aktuellen Uhrzeit zurückgibt.
 
@@ -123,9 +123,9 @@ static time_point now() noexcept;
 
 Ein [time_point](../standard-library/time-point-class.md)-Objekt, das die aktuelle Uhrzeit darstellt.
 
-## <a name="system_clockto_time_t"></a><a name="to_time_t"></a>system_clock::to_time_t
+## <a name="system_clockto_time_t"></a><a name="to_time_t"></a>system_clock:: to_time_t
 
-Statische Methode, die eine [time_t](../c-runtime-library/standard-types.md) zurückgibt, die die Zeit, die durch *Zeit*dargestellt wird, am genauesten annähert.
+Statische Methode, die eine [time_t](../c-runtime-library/standard-types.md) zurückgibt, die am ehesten der Zeit entspricht, die durch die *Zeit*dargestellt wird.
 
 ```cpp
 static time_t to_time_t(const time_point& Time) noexcept;
@@ -138,6 +138,6 @@ Ein [time_point](../standard-library/time-point-class.md)-Objekt.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Header-Dateien-Referenz](../standard-library/cpp-standard-library-header-files.md)\
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
 [\<chrono>](../standard-library/chrono.md)\
 [steady_clock-Struktur](../standard-library/steady-clock-struct.md)

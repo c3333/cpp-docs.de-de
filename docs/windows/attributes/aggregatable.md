@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - aggregatable attribute
 ms.assetid: 9253a46a-cd76-41f2-b3b6-86f709bb069c
-ms.openlocfilehash: d929543f699dcd20471ff9a9b45f54119f82a40a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 883094c85418c15455a020cfe73538a6576eddd0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168524"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224486"
 ---
 # <a name="aggregatable"></a>aggregatable
 
@@ -28,17 +28,17 @@ Gibt an, dass die Klasse Aggregationen unterstützt.
 *value*<br/>
 Optionale Ein Parameter, der angibt, wann das COM-Objekt aggregiert werden kann:
 
-- `never` das COM-Objekt kann nicht aggregiert werden.
+- `never`Das COM-Objekt kann nicht aggregiert werden.
 
-- `allowed` das COM-Objekt direkt erstellt oder aggregiert werden kann. Dies ist die Standardoption.
+- `allowed`Das COM-Objekt kann direkt erstellt oder aggregiert werden. Dies ist die Standardoption.
 
-- `always` das COM-Objekt nicht direkt erstellt werden kann und nur aggregiert werden kann. Wenn Sie `CoCreateInstance` für dieses Objekt aufgerufen haben, müssen Sie die `IUnknown`-Schnittstelle des Aggregations Objekts angeben (der Steuerungs `IUnknown`).
+- `always`Das COM-Objekt kann nicht direkt erstellt werden und kann nur aggregiert werden. Wenn Sie `CoCreateInstance` für dieses Objekt aufzurufen, müssen Sie die-Schnittstelle des Aggregations Objekts `IUnknown` (das steuernde `IUnknown` ) angeben.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das Attribut " **aggregierbare** C++ " hat die gleiche Funktionalität wie das Attribut " [aggregierbare](/windows/win32/Midl/aggregatable) ". Dies bedeutet, dass der Compiler das Attribut " **aggregierbare** " über an die generierte IDL-Datei übergibt.
+Das Attribut " **aggregierbare** C++" verfügt über die gleiche Funktionalität wie das Attribut " [aggregierbare](/windows/win32/Midl/aggregatable) ". Dies bedeutet, dass der Compiler das Attribut " **aggregierbare** " über an die generierte IDL-Datei übergibt.
 
-Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn `progid` z. b. angewendet wird, werden `vi_progid` und `coclass` ebenfalls angewendet.
+Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn z. b `progid` . angewendet wird `vi_progid` , `coclass` werden auch und angewendet.
 
 ### <a name="atl-projects"></a>ATL-Projekte
 
@@ -72,16 +72,16 @@ class CMyClass {};
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
+|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass` , `progid` oder `vi_progid` .|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
-[Aggregation](/windows/win32/com/aggregation)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Stellung](/windows/win32/com/aggregation)

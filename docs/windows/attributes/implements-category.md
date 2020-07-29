@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - implements_category attribute
 ms.assetid: fb162df3-1ebe-43dc-a084-668d7ef8c03f
-ms.openlocfilehash: dd55c7474a0a8a273ddfab212b3ebcaa6e3b4a65
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 067a3a183820b09112217647e20d12b592540613
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166861"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224421"
 ---
 # <a name="implements_category"></a>implements_category
 
@@ -30,13 +30,13 @@ Die ID der implementierten Kategorie.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Implements_category** C++ -Attribut gibt die von der Zielklasse implementierten Komponenten Kategorien an. Dies erfolgt durch Erstellen einer Kategoriezuordnung und Hinzufügen von separaten Einträgen, die durch das **Implements_category** -Attribut angegeben werden. Weitere Informationen finden Sie unter [Komponenten Kategorien und Funktionsweise](/windows/win32/com/component-categories-and-how-they-work).
+Das **Implements_category** C++-Attribut gibt die von der Zielklasse implementierten Komponenten Kategorien an. Dies erfolgt durch Erstellen einer Kategoriezuordnung und Hinzufügen von separaten Einträgen, die durch das **Implements_category** -Attribut angegeben werden. Weitere Informationen finden Sie unter [Komponenten Kategorien und Funktionsweise](/windows/win32/com/component-categories-and-how-they-work).
 
-Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn `progid` z. b. angewendet wird, werden `vi_progid` und `coclass` ebenfalls angewendet.
+Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn z. b `progid` . angewendet wird `vi_progid` , `coclass` werden auch und angewendet.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code gibt an, dass das folgende Objekt die `Control` Kategorie implementiert.
+Der folgende Code gibt an, dass das folgende-Objekt die- `Control` Kategorie implementiert.
 
 ```cpp
 // cpp_attr_ref_implements_category.cpp
@@ -57,14 +57,14 @@ class CMyClass {};
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Ja|
-|**Erforderliche Attribute**|Eines der folgenden: `coclass`, `progid`oder `vi_progid`|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Ja|
+|**Erforderliche Attribute**|Eines der folgenden: `coclass` , `progid` oder`vi_progid`|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [COM-Attribute](com-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>

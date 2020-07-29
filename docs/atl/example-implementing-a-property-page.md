@@ -4,14 +4,14 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - property pages, implementing
 ms.assetid: c30b67fe-ce08-4249-ae29-f3060fa8d61e
-ms.openlocfilehash: 0b2448e66e3b86e3295cd4b318a268a113f6058b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 688cd337d0754fc49ede0f39fd774c9990f7c79f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81319579"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224356"
 ---
-# <a name="example-implementing-a-property-page"></a>Beispiel: Implementieren einer Eigenschaftenseite
+# <a name="example-implementing-a-property-page"></a>Beispiel: Implementieren einer Eigenschaften Seite
 
 ::: moniker range="vs-2019"
 
@@ -53,7 +53,7 @@ Zunächst erstellen Sie ein neues ATL-Projekt für einen DLL-Server namens `ATLP
 |----------|-----------|
 |Titel|TextDocument|
 |Dokumentzeichenfolge|VCUE TextDocument Properties|
-|Hilfedatei|*\<leere>*|
+|Hilfedatei|*\<blank>*|
 
 Die Werte, die Sie auf dieser Seite des Assistenten festlegen, werden an den Container der Eigenschaftenseite zurückgegeben, wenn dieser `IPropertyPage::GetPageInfo` aufruft. Was danach mit den Zeichenfolgen geschieht, hängt vom Container ab, aber in der Regel werden sie verwendet, um Ihre Seite für den Benutzer zu identifizieren. Der Titel wird üblicherweise auf einer Registerkarte über Ihrer Seite angezeigt, die Dokumentzeichenfolge in einer Statusleiste oder QuickInfo (allerdings verwendet der Frame für Standardeigenschaften diese Zeichenfolge gar nicht).
 
@@ -90,7 +90,7 @@ Fügen Sie jetzt einige `#import`-Anweisungen zu „DocProperties.h“ hinzu, so
 
 [!code-cpp[NVC_ATL_Windowing#74](../atl/codesnippet/cpp/example-implementing-a-property-page_2.h)]
 
-Sie müssen auch auf die Basisklasse `IPropertyPageImpl` verweisen. Fügen Sie die folgende **typedef** zur `CDocProperties`-Klasse hinzu:
+Sie müssen auch auf die- `IPropertyPageImpl` Basisklasse verweisen. Fügen Sie der- **`typedef`** Klasse Folgendes hinzu `CDocProperties` :
 
 [!code-cpp[NVC_ATL_Windowing#75](../atl/codesnippet/cpp/example-implementing-a-property-page_3.h)]
 
@@ -171,7 +171,7 @@ Wenn Sie dieses Makro ausführen, wird die Eigenschaftenseite mit dem Dateinamen
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Eigenschaftenseiten](../atl/atl-com-property-pages.md)<br/>
 [ATLPages-Beispiel](../overview/visual-cpp-samples.md)

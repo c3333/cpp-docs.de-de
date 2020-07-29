@@ -7,16 +7,16 @@ helpviewer_keywords:
 - -Qimprecise_fwaits compiler option (C++)
 - /Qimprecise_fwaits compiler option (C++)
 ms.assetid: b1501f21-7e08-4fea-95e8-176ec03a635b
-ms.openlocfilehash: 40683382686ea64a80563f3f29b7d3523f4144a8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 424feda66f6925cb305256249101ea4013e3090f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62319589"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232676"
 ---
-# <a name="qimprecisefwaits-remove-fwaits-inside-try-blocks"></a>/Qimprecise_fwaits (Entfernen von fwaits in Try-Blöcken)
+# <a name="qimprecise_fwaits-remove-fwaits-inside-try-blocks"></a>/Qimprecise_fwaits (Entfernen von fwaits in Try-Blöcken)
 
-Entfernt die `fwait` -Befehle in `try` blockiert, wenn Sie nutzen die [/fp: mit Ausnahme von](fp-specify-floating-point-behavior.md) -Compileroption.
+Entfernt die `fwait` internen Befehle, die blockiert werden, **`try`** Wenn Sie die Compileroption [/fp: außer](fp-specify-floating-point-behavior.md) verwenden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,13 +24,13 @@ Entfernt die `fwait` -Befehle in `try` blockiert, wenn Sie nutzen die [/fp: mit 
 /Qimprecise_fwaits
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option hat keine Auswirkung, wenn **/fp: mit Ausnahme von** nicht ebenfalls angegeben. Bei Angabe der **/fp: mit Ausnahme von** -Option der Compiler Fügt eine `fwait` Befehl, um jede Zeile des Codes in eine `try` Block. Auf diese Weise kann der Compiler die bestimmte Zeile des Codes identifizieren, die eine Ausnahme erzeugt. **/ Qimprecise_fwaits** entfernt interne `fwait` Anweisungen, lassen nur die wartet, um die `try` Block. Dies verbessert die Leistung, aber der Compiler wird nur in der Lage, die sagen `try` Block löst eine Ausnahme, die nicht in der Zeile.
+Diese Option hat keine Auswirkung, wenn **/fp: mit Ausnahme** von nicht ebenfalls angegeben wird. Wenn Sie die Option **/fp:, außer** angeben, fügt der Compiler einen `fwait` Befehl für jede Codezeile in einem- **`try`** Block ein. Auf diese Weise kann der Compiler die bestimmte Codezeile ermitteln, die eine Ausnahme erzeugt. **/Qimprecise_fwaits** entfernt interne `fwait` Anweisungen, sodass nur die Warte Vorgänge um den Block verschoben werden **`try`** . Dadurch wird die Leistung verbessert, aber der Compiler kann nur sagen, welcher **`try`** Block eine Ausnahme auslöst, nicht welche Zeile.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
 1. Klicken Sie auf den Ordner **C/C++** .
 
@@ -46,4 +46,4 @@ Diese Option hat keine Auswirkung, wenn **/fp: mit Ausnahme von** nicht ebenfall
 
 [/Q-Optionen (Vorgänge auf niedriger Ebene)](q-options-low-level-operations.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

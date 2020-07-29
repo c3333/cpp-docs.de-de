@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - vector header
 ms.assetid: c1431ad8-c0b6-4dbb-89c4-5f651e432d7f
-ms.openlocfilehash: 19068de41cfdcb17ae624858c137bf624851479f
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 4e9f3e4a35cd772897e326fafedf359062e6128b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72684068"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224525"
 ---
 # <a name="ltvectorgt"></a>&lt;vector&gt;
 
@@ -20,9 +20,9 @@ Definiert den Containerklassen Vorlagen Vektor und mehrere unterstützende Vorla
 Der `vector` ist ein Container, der Elemente eines bestimmten Typs in einer linearen Sequenz organisiert. Er ermöglicht schnellen zufälligen Zugriff auf alle Elemente sowie dynamische Hinzufügungen und Entfernungen zu und aus der Sequenz. Der `vector` ist der bevorzugte Container für eine Sequenz, wenn die Leistung mit wahlfreiem Zugriff ein wichtiger Faktor ist.
 
 > [!NOTE]
-> Die \<vector > Bibliothek verwendet auch die `#include <initializer_list>`-Anweisung.
+> Die \<vector> Bibliothek verwendet auch die- `#include <initializer_list>` Anweisung.
 
-Weitere Informationen zur `vector`-Klasse finden Sie unter [vector-Klasse](../standard-library/vector-class.md). Weitere Informationen zu der Spezialisierung `vector<bool>` finden Sie unter [vector\<bool>-Klasse](../standard-library/vector-bool-class.md).
+Weitere Informationen zur `vector`-Klasse finden Sie unter [vector-Klasse](../standard-library/vector-class.md). Weitere Informationen zur Spezialisierung `vector<bool>` finden Sie unter [Vector- \<bool> Klasse](../standard-library/vector-bool-class.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -77,16 +77,16 @@ void swap (
 
 ### <a name="parameters"></a>Parameter
 
-@No__t_1 *eingeben*
+*Sorte*\
 Der Vorlagenparameter für den Typ der Daten, die im Vektor gespeichert sind.
 
-*Zuordner\*
+*Allocator*\
 Der Vorlagenparameter für das gespeicherte Zuweisungsobjekt, das für die Speicherbelegung und -freigabe verantwortlich ist.
 
-*Linker* \
+*linken*\
 Der erste (linke) Vektor in einem Vergleichsvorgang.
 
-*Rechte* \
+*Richting*\
 Der zweite (rechte) Vektor in einem Vergleichsvorgang.
 
 ## <a name="members"></a>Member
@@ -95,34 +95,34 @@ Der zweite (rechte) Vektor in einem Vergleichsvorgang.
 
 |||
 |-|-|
-|[operator! =](../standard-library/vector-operators.md#op_neq)|Testet, ob das Vektorobjekt links vom Operator ungleich dem Vektorobjekt rechts vom Operator ist.|
-|[operator<](../standard-library/vector-operators.md#op_lt)|Testet, ob das Vektorobjekt links vom Operator kleiner als das Vektorobjekt auf der rechten Seite ist.|
-|[operator\<=](../standard-library/vector-operators.md#op_gt_eq)|Testet, ob das Vektorobjekt links vom Operator kleiner als oder gleich dem Vektorobjekt rechts vom Operator ist.|
-|[operator==](../standard-library/vector-operators.md#op_eq_eq)|Testet, ob das Vektorobjekt links vom Operator gleich dem Vektorobjekt rechts vom Operator ist.|
-|[operator>](../standard-library/vector-operators.md#op_gt)|Testet, ob das Vektorobjekt links vom Operator größer als das Vektorobjekt auf der rechten Seite ist.|
-|[operator>=](../standard-library/vector-operators.md#op_gt_eq)|Testet, ob das Vektorobjekt links vom Operator größer als oder gleich dem Vektorobjekt rechts vom Operator ist.|
+|[KOM! =](../standard-library/vector-operators.md#op_neq)|Testet, ob das Vektorobjekt links vom Operator ungleich dem Vektorobjekt rechts vom Operator ist.|
+|[Operator<](../standard-library/vector-operators.md#op_lt)|Testet, ob das Vektorobjekt links vom Operator kleiner als das Vektorobjekt auf der rechten Seite ist.|
+|[KOM\<=](../standard-library/vector-operators.md#op_gt_eq)|Testet, ob das Vektorobjekt links vom Operator kleiner als oder gleich dem Vektorobjekt rechts vom Operator ist.|
+|[Operator = =](../standard-library/vector-operators.md#op_eq_eq)|Testet, ob das Vektorobjekt links vom Operator gleich dem Vektorobjekt rechts vom Operator ist.|
+|[Operator>](../standard-library/vector-operators.md#op_gt)|Testet, ob das Vektorobjekt links vom Operator größer als das Vektorobjekt auf der rechten Seite ist.|
+|[Operator>=](../standard-library/vector-operators.md#op_gt_eq)|Testet, ob das Vektorobjekt links vom Operator größer als oder gleich dem Vektorobjekt rechts vom Operator ist.|
 
 ### <a name="classes"></a>Klassen
 
 |||
 |-|-|
-|[vector-Klasse](../standard-library/vector-class.md)|Eine Klassenvorlage von Sequenzcontainern, die Elemente eines bestimmten Typs in einer linearen Anordnung anordnen und schnellen zufälligen Zugriff auf ein Element ermöglichen.|
+|[Vector-Klasse](../standard-library/vector-class.md)|Eine Klassenvorlage von Sequenzcontainern, die Elemente eines bestimmten Typs in einer linearen Anordnung anordnen und schnellen zufälligen Zugriff auf ein Element ermöglichen.|
 
 ### <a name="specializations"></a>Spezialisierungen
 
 |||
 |-|-|
 |hash|Gibt einen Hashwert des Vektors zurück.|
-|[vector\<bool>-Klasse](../standard-library/vector-bool-class.md)|Eine vollständige Spezialisierung des Klassen Vorlagen Vektors für Elemente des Typs `bool` mit einer Zuweisung für den zugrunde liegenden Typ, der von der Spezialisierung verwendet wird.|
+|[Vector- \<bool> Klasse](../standard-library/vector-bool-class.md)|Eine vollständige Spezialisierung des Klassen Vorlagen Vektors für Elemente des Typs **`bool`** mit einer Zuweisung für den zugrunde liegenden Typ, der von der Spezialisierung verwendet wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<vector>
+**Header:**\<vector>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

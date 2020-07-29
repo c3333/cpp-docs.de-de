@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::operator&lt; (vector)
 - std::operator&lt;= (vector)
 - std::operator== (vector)
-ms.openlocfilehash: f6717add93c489f536bd0c0b0f82b74bbd915985
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 6e3b78a7b7176be917da5a3e44e9bf54efc0b08c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427572"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224538"
 ---
 # <a name="ltvectorgt-operators"></a>&lt;vector&gt;-Operatoren
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das Objekt links vom Operator ungleich dem Objekt rechts vom Operator ist.
 
@@ -35,17 +35,17 @@ bool operator!=(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `vector`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Paare nicht gleich sind; **FALSE**, wenn die Paare gleich sind.
+**`true`**, wenn die Vektoren nicht gleich sind. , **`false`** Wenn die Vektoren gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zwei Vektoren sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -76,7 +76,7 @@ int main( )
 Vectors not equal.
 ```
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das Objekt links vom Operator kleiner als das Objekt auf der rechten Seite ist.
 
@@ -86,15 +86,15 @@ bool operator<(const vector<Type, Allocator>& left, const vector<Type, Allocator
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `vector`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Vektor links vom Operator kleiner als der Vektor rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Vektor Links vom Operator kleiner als der Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -127,7 +127,7 @@ int main( )
 Vector v1 is less than vector v2.
 ```
 
-## <a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das Objekt links vom Operator kleiner oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -137,15 +137,15 @@ bool operator<=(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `vector`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Vektor links vom Operator kleiner als oder gleich dem Vektor rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Vektor Links vom Operator kleiner als oder gleich dem Vektor rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -178,7 +178,7 @@ int main( )
 Vector v1 is less than or equal to vector v2.
 ```
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Objekt links vom Operator gleich dem Objekt rechts vom Operator ist.
 
@@ -188,17 +188,17 @@ bool operator==(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `vector`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Vektor links vom Operator gleich dem Vektor rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Vektor Links vom Operator gleich dem Vektor rechts vom Operator ist. andernfalls **`false`** .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zwei Vektoren sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -229,7 +229,7 @@ int main( )
 Vectors equal.
 ```
 
-## <a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das Objekt links vom Operator größer als das Objekt auf der rechten Seite ist.
 
@@ -239,15 +239,15 @@ bool operator>(const vector<Type, Allocator>& left, const vector<Type, Allocator
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `vector`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Vektor links vom Operator größer als der Vektor rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Vektor Links vom Operator größer ist als der Vektor auf der rechten Seite des Operators. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -281,7 +281,7 @@ int main( )
 Vector v1 is greater than vector v2.
 ```
 
-## <a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das Objekt links vom Operator größer oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -291,15 +291,15 @@ bool operator>=(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Ein Objekt des Typs `vector`.
 
-*Rechte*\
+*Richting*\
 Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn der Vektor links vom Operator größer als oder gleich dem Vektor rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn der Vektor Links vom Operator größer als oder gleich dem Vektor rechts vom Vektor ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
