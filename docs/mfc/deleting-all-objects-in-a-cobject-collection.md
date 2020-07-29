@@ -10,12 +10,12 @@ helpviewer_keywords:
 - objects in CObject collections
 - collection classes [MFC], shared objects
 ms.assetid: 81d2c1d5-a0a5-46e1-8ab9-82b45cf7afd2
-ms.openlocfilehash: 2921fe4e4f10c96a096d30d8f842eecdfd644ca6
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 5aac324b6af50db019c2a4b55b26a612cc081894
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84615912"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225071"
 ---
 # <a name="deleting-all-objects-in-a-cobject-collection"></a>Löschen aller Objekte in einer CObject-Sammlung
 
@@ -38,7 +38,7 @@ In diesem Artikel wird erläutert, wie die Objekte in gelöscht werden:
 
 1. Verwenden `GetHeadPosition` `GetNext` Sie und, um die Liste zu durchlaufen.
 
-1. Verwenden Sie den **Delete** -Operator, um alle Objekte zu löschen, wie Sie in der Iterationen gefunden werden.
+1. Verwenden Sie den- **`delete`** Operator, um alle-Objekte zu löschen, wie Sie in der Iterations gefunden werden.
 
 1. Ruft die- `RemoveAll` Funktion auf, um alle Elemente aus der Liste zu entfernen, nachdem die-Objekte, die diesen Elementen zugeordnet sind, gelöscht wurden.
 
@@ -54,7 +54,7 @@ Beachten Sie den Unterschied zwischen dem Löschen eines Element Objekts und dem
 
 1. Verwenden `GetSize` Sie und ganzzahlige Indexwerte, um das Array zu durchlaufen.
 
-1. Verwenden Sie den **Delete** -Operator, um jedes Element zu löschen, das in der Iterations-gefunden wurde.
+1. Verwenden Sie den- **`delete`** Operator, um jedes Element zu löschen, das in der Iterations-gefunden wurde.
 
 1. Ruft die- `RemoveAll` Funktion auf, um alle Elemente aus dem Array zu entfernen, nachdem Sie gelöscht wurden.
 
@@ -68,7 +68,7 @@ Wie im obigen Listen Beispiel können Sie auch `RemoveAll` zum Entfernen aller E
 
 1. Verwenden `GetStartPosition` `GetNextAssoc` Sie und, um das Array zu durchlaufen.
 
-1. Verwenden Sie den **Delete** -Operator, um den Schlüssel und/oder den Wert für jedes Kartenelement zu löschen, das in der Iterations-gefunden wurde.
+1. Verwenden **`delete`** Sie den-Operator, um den Schlüssel und/oder den Wert für jedes Kartenelement zu löschen, das in der Iterations-gefunden wurde.
 
 1. Ruft die- `RemoveAll` Funktion auf, um alle Elemente aus der Zuordnung zu entfernen, nachdem Sie gelöscht wurden.
 

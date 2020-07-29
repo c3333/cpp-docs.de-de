@@ -18,12 +18,12 @@ helpviewer_keywords:
 - frame allocation [MFC]
 - frame variables [MFC]
 ms.assetid: 945a211a-6f4f-4679-bb6a-b0f2a0d4a6c1
-ms.openlocfilehash: 1ecf1c08164d1a760fce62457a6019e767ed2605
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: cb66a0c0aea16f7e6831b6a1aff1a125df355210
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84626298"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225045"
 ---
 # <a name="memory-management-frame-allocation"></a>Speicherverwaltung: Rahmenzuordnung
 
@@ -33,7 +33,7 @@ Es gibt zwei Hauptmerkmale von Frame Zuordnungen. Wenn Sie zunächst eine lokale
 
 [!code-cpp[NVC_MFC_Utilities#10](codesnippet/cpp/memory-management-frame-allocation_1.cpp)]
 
-Bei lokalen Funktions Variablen tritt dieser Bereichs Übergang auf, wenn die Funktion beendet wird, aber der Bereich einer Frame Variablen kann kleiner sein als eine Funktion, wenn die geschweiften Klammern verwendet werden. Das automatische Löschen von Frame Variablen ist äußerst wichtig. Bei einfachen primitiven Typen (z. b. **int** oder **Byte**), Arrays oder Datenstrukturen gibt der automatische Löschvorgang einfach den von der Variablen verwendeten Arbeitsspeicher frei. Da die Variable den Gültigkeitsbereich verlassen hat, kann auf Sie trotzdem nicht zugegriffen werden. Im Fall von C++-Objekten ist der Prozess der automatischen Löschung jedoch etwas komplizierter.
+Bei lokalen Funktions Variablen tritt dieser Bereichs Übergang auf, wenn die Funktion beendet wird, aber der Bereich einer Frame Variablen kann kleiner sein als eine Funktion, wenn die geschweiften Klammern verwendet werden. Das automatische Löschen von Frame Variablen ist äußerst wichtig. Bei einfachen primitiven Typen (z. b. **`int`** oder **Byte**), Arrays oder Datenstrukturen gibt der automatische Löschvorgang einfach den von der Variablen verwendeten Arbeitsspeicher frei. Da die Variable den Gültigkeitsbereich verlassen hat, kann auf Sie trotzdem nicht zugegriffen werden. Im Fall von C++-Objekten ist der Prozess der automatischen Löschung jedoch etwas komplizierter.
 
 Wenn ein Objekt als Frame Variable definiert ist, wird der zugehörige Konstruktor automatisch an dem Punkt aufgerufen, an dem die Definition auftritt. Wenn das Objekt den Gültigkeitsbereich verlässt, wird der Dekonstruktor automatisch aufgerufen, bevor der Speicher für das Objekt freigegeben wird. Diese automatische Erstellung und Zerstörung kann sehr nützlich sein, aber Sie müssen die automatischen Aufrufe beachten, insbesondere für den Dekonstruktor.
 

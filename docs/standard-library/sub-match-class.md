@@ -20,12 +20,12 @@ helpviewer_keywords:
 - std::sub_match [C++], iterator
 - std::sub_match [C++], value_type
 ms.assetid: 804e2b9e-d16a-4c4c-ac60-024e0b2dd0e8
-ms.openlocfilehash: 460f79fe0f23643fafcebb64aecf2988bdb0debe
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 57aa4ec366588f71f41a747a2dc5127f87ea2e2e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376584"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222198"
 ---
 # <a name="sub_match-class"></a>sub_match-Klasse
 
@@ -41,12 +41,12 @@ class sub_match
 
 ## <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Itertatortyp für Teilübereinstimmungen.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt ein Objekt, das eine Zeichenfolge bezeichnet, die einer Erfassungsgruppe in einem Aufruf zu [regex_match](../standard-library/regex-functions.md#regex_match) oder [regex_search](../standard-library/regex-functions.md#regex_search)übereinstimmt. Objekte des Typs [match_results Class](../standard-library/match-results-class.md) enthalten ein Array dieser Objekte, eines für jede Erfassungsgruppe im regulären Ausdruck, der in der Suche verwendet wurde.
+In der Klassen Vorlage wird ein Objekt beschrieben, das eine Sequenz von Zeichen festlegt, die einer Erfassungs Gruppe in einem [regex_match](../standard-library/regex-functions.md#regex_match) -oder [regex_search](../standard-library/regex-functions.md#regex_search)-aufrufszeichen entsprach. Objekte des Typs [match_results Class](../standard-library/match-results-class.md) enthalten ein Array dieser Objekte, eines für jede Erfassungsgruppe im regulären Ausdruck, der in der Suche verwendet wurde.
 
 Gab es keine Übereinstimmung mit der Erfassungsgruppe, ist das `matched` -Datenmember des Objekts gleich „false“, und die beiden Iteratoren `first` und `second` (geerbt von der Basisklasse `std::pair`) gleich sind. Gab es eine Übereinstimmung mit der Erfassungsgruppe, ist `matched` gleich „true“, der Iterator `first` zeigt auf das erste Zeichen in der Zielsequenz, die mit der Erfassungsgruppe übereinstimmte, und der Iterator `second` zeigt auf die erste Position hinter dem letzten Zeichen in der Zielsequenz, die mit der Erfassungsgruppe übereinstimmte. Für eine Übereinstimmung der Länge 0 (null) gilt Folgendes: Der Member `matched` enthält „true“, die beiden Iteratoren sind gleich, und beide zeigen auf die Position der Übereinstimmung.
 
@@ -58,26 +58,26 @@ Eine Übereinstimmung der Länge 0 (null) kann auftreten, wenn eine Erfassungsgr
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[difference_type](#difference_type)|Der Typ einer Iteratordifferenz.|
 |[Iterator](#iterator)|Der Typ eines Iterators.|
-|[Value_type](#value_type)|Der Typ eines Elements.|
+|[value_type](#value_type)|Der Typ eines Elements.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Vergleichen](#compare)|Vergleichen einer Teilübereinstimmung mit einer Sequenz.|
+|[vergleichbar](#compare)|Vergleichen einer Teilübereinstimmung mit einer Sequenz.|
 |[length](#length)|Gibt die Länge einer Teilübereinstimmung zurück.|
-|[Abgestimmt](#matched)|Gibt an, ob eine Übereinstimmung erfolgreich war.|
-|[Str](#str)|Konvertiert eine Teilübereinstimmung in eine Zeichenfolge.|
+|[Kommunen](#matched)|Gibt an, ob eine Übereinstimmung erfolgreich war.|
+|[str](#str)|Konvertiert eine Teilübereinstimmung in eine Zeichenfolge.|
 
 ### <a name="operators"></a>Operatoren
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Betreiber basic_string value_type><](#op_basic_string_lt_value_type_gt)|Wandelt eine Teilübereinstimmung in eine Zeichenfolge um.|
+|[der Operator basic_string<value_type>](#op_basic_string_lt_value_type_gt)|Wandelt eine Teilübereinstimmung in eine Zeichenfolge um.|
 
 ## <a name="example"></a>Beispiel
 
@@ -131,13 +131,13 @@ compare(string) == 1
 compare(sub) == 0
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<regex >
+**Header:**\<regex>
 
 **Namespace:** std
 
-## <a name="sub_matchcompare"></a><a name="compare"></a>sub_match::vergleichen
+## <a name="sub_matchcompare"></a><a name="compare"></a>sub_match:: Compare
 
 Vergleichen einer Teilübereinstimmung mit einer Sequenz.
 
@@ -152,10 +152,10 @@ int compare(const value_type *ptr) const;
 *Richting*\
 Die Teilübereinstimmung, mit der verglichen werden soll.
 
-*Str*\
+*SRT*\
 Die Zeichenfolge, mit der verglichen wird.
 
-*Ptr*\
+*PTR*\
 Die mit NULL endende Sequenz, mit der verglichen werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -170,7 +170,7 @@ NULL, wenn die beiden Vergleichswerte elementweise identisch sind und die gleich
 
 Andernfalls ein positiver Wert
 
-## <a name="sub_matchdifference_type"></a><a name="difference_type"></a>sub_match::difference_type
+## <a name="sub_matchdifference_type"></a><a name="difference_type"></a>sub_match::d ifference_type
 
 Der Typ einer Iteratordifferenz.
 
@@ -182,7 +182,7 @@ typedef typename iterator_traits<BidIt>::difference_type difference_type;
 
 Die Typedef ist ein Synonym für `iterator_traits<BidIt>::difference_type`.
 
-## <a name="sub_matchiterator"></a><a name="iterator"></a>sub_match::iterator
+## <a name="sub_matchiterator"></a><a name="iterator"></a>sub_match:: Iterator
 
 Der Typ eines Iterators.
 
@@ -194,7 +194,7 @@ typedef BidIt iterator;
 
 Die Typedef stellt ein Synonym für das Vorlagentypargument `Bidit` dar.
 
-## <a name="sub_matchlength"></a><a name="length"></a>sub_match::Länge
+## <a name="sub_matchlength"></a><a name="length"></a>sub_match:: length
 
 Gibt die Länge einer Teilübereinstimmung zurück.
 
@@ -206,7 +206,7 @@ difference_type length() const;
 
 Die Memberfunktion gibt die Länge der übereinstimmenden Sequenz oder null zurück, wenn es keine passende Sequenz gab.
 
-## <a name="sub_matchmatched"></a><a name="matched"></a>sub_match::matched
+## <a name="sub_matchmatched"></a><a name="matched"></a>sub_match:: abgeglichen
 
 Gibt an, ob eine Übereinstimmung erfolgreich war.
 
@@ -216,9 +216,9 @@ bool matched;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Mitglied gilt **nur,** wenn `*this` die Erfassungsgruppe, der zugeordnet ist, Teil der Übereinstimmung mit regulären Ausdrücken war.
+Der Member **`true`** ist nur enthalten, wenn die zugeordnete **`*this`** Erfassungs Gruppe Teil der regulären Ausdrucks Übereinstimmung war.
 
-## <a name="sub_matchoperator-basic_stringltvalue_typegt"></a><a name="op_basic_string_lt_value_type_gt"></a>sub_match::Operator&lt;basic_string value_type&gt;
+## <a name="sub_matchoperator-basic_stringltvalue_typegt"></a><a name="op_basic_string_lt_value_type_gt"></a>sub_match:: Operator Basic_string &lt; value_type&gt;
 
 Wandelt eine Teilübereinstimmung in eine Zeichenfolge um.
 
@@ -230,7 +230,7 @@ operator basic_string<value_type>() const;
 
 Der Memberoperator gibt `str()`zurück.
 
-## <a name="sub_matchstr"></a><a name="str"></a>sub_match::str
+## <a name="sub_matchstr"></a><a name="str"></a>sub_match:: Str
 
 Konvertiert eine Teilübereinstimmung in eine Zeichenfolge.
 
@@ -242,7 +242,7 @@ basic_string<value_type> str() const;
 
 Die Memberfunktion gibt `basic_string<value_type>(first, second)` zurück.
 
-## <a name="sub_matchvalue_type"></a><a name="value_type"></a>sub_match::value_type
+## <a name="sub_matchvalue_type"></a><a name="value_type"></a>sub_match:: value_type
 
 Der Typ eines Elements.
 

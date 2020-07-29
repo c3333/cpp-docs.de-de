@@ -10,12 +10,12 @@ helpviewer_keywords:
 - std::integral_constant [C++]
 - std::bool_constant [C++]
 ms.assetid: 11c002c6-4d31-4042-9341-f2543f43e108
-ms.openlocfilehash: 9577ce51d4b0773f7b309fe3dc6dcb5820693dcb
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 30e00fdc166b4a6f2db64a3552a3bb87335c7e32
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689537"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233144"
 ---
 # <a name="integral_constant-class-bool_constant-class"></a>integral_constant Class, bool_constant-Klasse
 
@@ -36,17 +36,17 @@ struct integral_constant {
 
 ### <a name="parameters"></a>Parameter
 
-*T* \
+*Bund*\
 Der Typ der Konstante.
 
-*v* \
+*Ramelow*\
 Der Wert der Konstante.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `integral_constant`-Klassen Vorlage, wenn Sie mit einem ganzzahligen Typ *t* und einem Wert *v* dieses Typs spezialisiert ist, stellt ein Objekt dar, das eine Konstante dieses ganzzahligen Typs mit dem angegebenen Wert enthält. Beim Member `type` handelt es sich um ein Alias des erstellten Vorlagenspezialisierungstypen, und der Member `value` hält den Wert *v*, der beim Erstellen der Spezialisierung verwendet wurde.
+Die `integral_constant` Klassen Vorlage, wenn Sie mit einem ganzzahligen Typ *T* und einem Wert *v* dieses Typs spezialisiert ist, stellt ein Objekt dar, das eine Konstante dieses ganzzahligen Typs mit dem angegebenen Wert enthält. Beim Member `type` handelt es sich um ein Alias des erstellten Vorlagenspezialisierungstypen, und der Member `value` hält den Wert *v*, der beim Erstellen der Spezialisierung verwendet wurde.
 
-Die `bool_constant`-Klassen Vorlage ist eine explizite partielle Spezialisierung von `integral_constant`, die **bool** als *t* -Argument verwendet.
+Die `bool_constant` Klassen Vorlage ist eine explizite partielle Spezialisierung von `integral_constant` , die **`bool`** als *T* -Argument verwendet.
 
 ## <a name="example"></a>Beispiel
 
@@ -72,14 +72,14 @@ integral_constant<int, 5> == 5
 integral_constant<bool, false> == false
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
 [<type_traits>](../standard-library/type-traits.md)\
-[false_type](../standard-library/type-traits-typedefs.md#false_type) \
+[false_type](../standard-library/type-traits-typedefs.md#false_type)\
 [true_type](../standard-library/type-traits-typedefs.md#true_type)

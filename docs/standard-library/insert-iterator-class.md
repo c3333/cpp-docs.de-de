@@ -10,12 +10,12 @@ helpviewer_keywords:
 - std::insert_iterator [C++], container_type
 - std::insert_iterator [C++], reference
 ms.assetid: d5d86405-872e-4e3b-9e68-c69a2b7e8221
-ms.openlocfilehash: 2865db023425fa301ad5440a0dc8ed491213f33f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 530168f5e259934f7d614b305e6ac1092ba68f4d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368055"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233157"
 ---
 # <a name="insert_iterator-class"></a>insert_iterator-Klasse
 
@@ -30,12 +30,12 @@ class insert_iterator;
 
 ### <a name="parameters"></a>Parameter
 
-*Container*\
+*Kum*\
 Der Typ des Containers, in den Elementen von einem `insert_iterator` eingefügt werden sollen.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der Container `Container` des Typs muss die Anforderungen für einen Container mit variabler Größe erfüllen `Container::iterator` `Container::value_type` und über eine `Container::iterator`Zwei-Argument-Insert-Memberfunktion verfügen, bei der die Parameter vom Typ sind und der einen Typ zurückgibt. Die C++-Standardbibliothekssequenz und sortierte assoziative Container erfüllen diese Anforderungen und können mit `insert_iterator`-Objekten angepasst werden. Für assoziative Container wird das Positionsargument als Hinweis behandelt, der die Leistung je nach Qualität potenziell verbessern oder verschlechtern kann. Ein `insert_iterator` muss immer mit seinem Container initialisiert werden.
+Der Container vom Typ `Container` muss die Anforderungen für einen Container variabler Größe erfüllen und über eine Funktion mit zwei Argumenten als INSERT-Member verfügen, bei der die Parameter vom Typ `Container::iterator` und sind `Container::value_type` und einen Typ zurückgeben `Container::iterator` . Die C++-Standardbibliothekssequenz und sortierte assoziative Container erfüllen diese Anforderungen und können mit `insert_iterator`-Objekten angepasst werden. Für assoziative Container wird das Positionsargument als Hinweis behandelt, der die Leistung je nach Qualität potenziell verbessern oder verschlechtern kann. Ein `insert_iterator` muss immer mit seinem Container initialisiert werden.
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -45,26 +45,26 @@ Der Container `Container` des Typs muss die Anforderungen für einen Container m
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[container_type](#container_type)|Ein Typ, der den Container darstellt, in dem eine allgemeine Einfügung vorgenommen werden soll.|
-|[Verweis](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
+|[Referenz](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
 
 ### <a name="operators"></a>Operatoren
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Operator*](#op_star)|Der Dereferenzierungsoperator, der verwendet wird, um den Ausgabeiteratorausdruck *`i` = `x` für eine allgemeine Einfügung zu implementieren.|
-|[Operator++](#op_add_add)|Inkrementiert `insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.|
-|[Operator=](#op_eq)|Der Zuweisungsoperator, der verwendet wird, um den Ausgabeiteratorausdruck *`i` = `x` für eine allgemeine Einfügung zu implementieren.|
+|[KOM](#op_star)|Der Dereferenzierungsoperator, der verwendet wird, um den Ausgabeiteratorausdruck *`i` = `x` für eine allgemeine Einfügung zu implementieren.|
+|[Operator + +](#op_add_add)|Inkrementiert `insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.|
+|[Operator =](#op_eq)|Der Zuweisungsoperator, der verwendet wird, um den Ausgabeiteratorausdruck *`i` = `x` für eine allgemeine Einfügung zu implementieren.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile**: \<Iterator>
+**Header**:\<iterator>
 
 **Namespace:** std
 
-## <a name="insert_iteratorcontainer_type"></a><a name="container_type"></a>insert_iterator::container_type
+## <a name="insert_iteratorcontainer_type"></a><a name="container_type"></a>Insert_iterator:: container_type
 
 Ein Typ, der den Container darstellt, in dem eine allgemeine Einfügung vorgenommen werden soll.
 
@@ -106,7 +106,7 @@ The list L2 is: ( 40 20 10 ).
 */
 ```
 
-## <a name="insert_iteratorinsert_iterator"></a><a name="insert_iterator"></a>insert_iterator::insert_iterator
+## <a name="insert_iteratorinsert_iterator"></a><a name="insert_iterator"></a>Insert_iterator:: Insert_iterator
 
 Erstellt einen `insert_iterator`, der ein Element an einer bestimmten Position in einen Container einfügt.
 
@@ -172,7 +172,7 @@ After the insertions, the list L is:
 */
 ```
 
-## <a name="insert_iteratoroperator"></a><a name="op_star"></a>insert_iterator::Operator*
+## <a name="insert_iteratoroperator"></a><a name="op_star"></a>Insert_iterator:: Operator *
 
 Dereferenziert den Iterator zum Einfügen, und gibt das Element zurück, das es adressiert.
 
@@ -186,7 +186,7 @@ Die Memberfunktion gibt den Wert des adressierten Elements zurück
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wird verwendet, um den Ausgabeiteratorausdruck =  ** \*Iter-Wert**zu implementieren.**value** Wenn `Iter` es sich um einen Iterator handelt, der ein Element in einer Sequenz adressiert, ersetzt ** \*der Iter-Wert** = **value** dieses Element durch einen Wert und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
+Wird verwendet, um den-ausgabeiteratorausdruck ** \* ITER**zu implementieren  =  **value**. Wenn `Iter` ein Iterator ist, der ein Element in einer Sequenz adressiert, ersetzt der ** \* ITER**  =  -**Wert** dieses Element durch value und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
 
 ### <a name="example"></a>Beispiel
 
@@ -232,7 +232,7 @@ After the insertions, the list L is:
 */
 ```
 
-## <a name="insert_iteratoroperator"></a><a name="op_add_add"></a>insert_iterator::operator++
+## <a name="insert_iteratoroperator"></a><a name="op_add_add"></a>Insert_iterator:: Operator + +
 
 Inkrementiert `insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.
 
@@ -296,7 +296,7 @@ After the insertions, the vector vec becomes:
 */
 ```
 
-## <a name="insert_iteratoroperator"></a><a name="op_eq"></a>insert_iterator::operator=
+## <a name="insert_iteratoroperator"></a><a name="op_eq"></a>Insert_iterator:: Operator =
 
 Fügt einen Wert in einen Container ein, und gibt den Iterator, der aktualisiert wurde, um auf das neue Element zu verweisen.
 
@@ -310,7 +310,7 @@ insert_iterator<Container>& operator=(
 
 ### <a name="parameters"></a>Parameter
 
-*Val*\
+*ster*\
 Der Wert, der dem Container zugewiesen werden soll
 
 ### <a name="return-value"></a>Rückgabewert
@@ -325,7 +325,7 @@ Der erster Memberoperator wertet Folgendes aus:
 
 `++Iter;`
 
-danach gibt er `*this` zurück.
+dann wird zurückgegeben **`*this`** .
 
 Der zweite Memberoperator wertet Folgendes aus:
 
@@ -333,7 +333,7 @@ Der zweite Memberoperator wertet Folgendes aus:
 
 `++Iter;`
 
-danach gibt er `*this` zurück.
+dann wird zurückgegeben **`*this`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -379,7 +379,7 @@ After the insertions, the list L is:
 */
 ```
 
-## <a name="insert_iteratorreference"></a><a name="reference"></a>insert_iterator::Referenz
+## <a name="insert_iteratorreference"></a><a name="reference"></a>Insert_iterator:: Reference
 
 Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.
 
@@ -430,5 +430,5 @@ The first element in the list L is: 10.
 ## <a name="see-also"></a>Siehe auch
 
 [\<iterator>](../standard-library/iterator.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

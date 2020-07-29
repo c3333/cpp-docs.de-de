@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - property keyword [C++]
 ms.assetid: cc79d2b2-f013-4d81-8252-eece97a18704
-ms.openlocfilehash: b961a93628752b11cd1d147268a4947acf29f67a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: fbec97a5bd30bb9bb76459ef2f7b0956ae6a264f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171975"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225136"
 ---
 # <a name="property--ccli-and-ccx"></a>property (C++/CLI und C++/CX)
 
@@ -31,7 +31,7 @@ Sie müssen ein Datenmember explizit so deklarieren, dass es den Eigenschaftswer
 *indexed property* (indizierte Eigenschaft)<br/>
 Ein Property-Block, mit dem Sie einen Eigenschaftswert abrufen und festlegen können, der durch einen oder mehrere Indizes angegeben wird.
 
-Sie können eine indizierte Eigenschaft erstellen, die entweder einen benutzerdefinierten Eigenschaftsnamen oder einen standardmäßigen (*default*) Eigenschaftsnamen aufweist. Der Name der Standardindexeigenschaft ist der Name der Klasse, in der die Eigenschaft definiert ist. Um eine Standardeigenschaft zu deklarieren, geben Sie das **default**-Schlüsselwort anstelle eines Eigenschaftsnamens an.
+Sie können eine indizierte Eigenschaft erstellen, die entweder einen benutzerdefinierten Eigenschaftsnamen oder einen standardmäßigen (*default*) Eigenschaftsnamen aufweist. Der Name der Standardindexeigenschaft ist der Name der Klasse, in der die Eigenschaft definiert ist. Um eine Standard Eigenschaft zu deklarieren, geben Sie das- **`default`** Schlüsselwort anstelle eines Eigenschafts namens an.
 
 Sie müssen ein Datenmember explizit so deklarieren, dass es den Eigenschaftswert enthält. Bei einer indizierten Eigenschaft ist das Datenmember in der Regel ein Array oder eine Sammlung.
 
@@ -65,9 +65,9 @@ Der Datentyp des Eigenschaftwerts und somit die Eigenschaft selbst.
 Der Name der Eigenschaft.
 
 *access-modifier*<br/>
-Ein Zugangsqualifizierer. Gültige Qualifizierer sind **static** und **virtual**.
+Ein Zugangsqualifizierer. Gültige Qualifizierer sind **`static`** und **`virtual`** .
 
-Die get- und set-Zugriffsmethoden müssen nicht den gleichen **virtual**-Qualifizierer aufweisen, aber sie müssen beim **static**-Qualifizierer übereinstimmen.
+Die Get-oder Set-Accessoren müssen für den Qualifizierer nicht einverstanden sein **`virtual`** , müssen jedoch dem **`static`** Qualifizierer zustimmen.
 
 *inheritance-modifier*<br/>
 Ein Vererbungqualifizierer. Gültige Qualifizierer sind **abstract** und **sealed**.
@@ -110,8 +110,8 @@ modifier property type default[index];
 
 ### <a name="parameters"></a>Parameter
 
-*modifier*<br/>
-Ein Modifizierer, der entweder für eine Eigenschaftendeklaration oder eine Get-/Set-Zugriffsmethode verwendet werden kann. Mögliche Werte sind **static** und **virtual**.
+*Modifizierer*<br/>
+Ein Modifizierer, der entweder für eine Eigenschaftendeklaration oder eine Get-/Set-Zugriffsmethode verwendet werden kann. Mögliche Werte sind **`static`** und **`virtual`** .
 
 *type*<br/>
 Der Typ des Werts, der durch die Eigenschaft dargestellt wird.
@@ -130,27 +130,27 @@ Das zweite Syntaxbeispiel zeigt einen Eigenschaftenblock (*property block*), der
 
 Das dritte Syntaxbeispiel zeigt eine benutzerdefinierte Indexeigenschaft (*index property*). Eine Indexeigenschaft nimmt zusätzlich zu dem festzulegenden oder abzurufenden Wert Parameter. Sie müssen einen Namen für die Eigenschaft angeben. Im Gegensatz zu einer einfachen Eigenschaft müssen die `set`- und/oder `get`-Methoden einer Indexeigenschaft explizit definiert werden, und Sie müssen einen Namen für die Eigenschaft angeben.
 
-Das vierte Syntaxbeispiel zeigt eine Standardeigenschaft (*default*), die arrayähnlichen Zugriff auf eine Instanz des Typs bereitstellt. Das Schlüsselwort **default** dient nur zum Angeben einer Standardeigenschaft. Der Name der Standardeigenschaft ist der Name des Typs, in dem die Eigenschaft definiert ist.
+Das vierte Syntaxbeispiel zeigt eine Standardeigenschaft (*default*), die arrayähnlichen Zugriff auf eine Instanz des Typs bereitstellt. Das Schlüsselwort, **`default`** , dient nur zum Angeben einer Standard Eigenschaft. Der Name der Standardeigenschaft ist der Name des Typs, in dem die Eigenschaft definiert ist.
 
-Das **property**-Schlüsselwort kann in einer Klasse, einer Schnittstelle oder einem Werttyp angezeigt werden. Eine Eigenschaft kann über eine get-Funktion (schreibgeschützt), eine set-Funktion (lesegeschützt) oder beide (Lese-/Schreibzugriff) verfügen.
+Das **`property`** Schlüsselwort kann in einer Klasse, einer Schnittstelle oder einem Werttyp angezeigt werden. Eine Eigenschaft kann über eine get-Funktion (schreibgeschützt), eine set-Funktion (lesegeschützt) oder beide (Lese-/Schreibzugriff) verfügen.
 
 Ein Eigenschaftenname kann nicht mit dem Namen der verwalteten Klasse übereinstimmen, in der er enthalten ist. Der Rückgabetyp der Getter-Funktion muss dem Typ des letzten Parameters einer entsprechenden Setter-Funktion entsprechen.
 
 Für Clientcode sieht eine Eigenschaft wie ein gewöhnliches Datenmember aus, und es kann anhand der gleichen Syntax wie bei einem Datenmember in sie geschrieben oder aus ihr gelesen werden.
 
-Die get- und set-Methoden müssen nicht den gleichen **virtual**-Modifizierer aufweisen.
+Die Get-und Set-Methoden müssen für den- **`virtual`** Modifizierer nicht übereinstimmen.
 
 Der Zugriff auf die Get- und Set-Methode kann sich unterscheiden.
 
 Die Definition einer Eigenschaftenmethode kann außerhalb des Klassentexts angezeigt werden, genau wie eine normale Methode.
 
-Die get- und set-Methoden für eine Eigenschaft müssen den gleichen **static**-Modifizierer aufweisen.
+Der Get-und die Set-Methode für eine Eigenschaft müssen dem- **`static`** Modifizierer zustimmen.
 
 Eine Eigenschaft ist skalar, wenn ihre Get- und Set-Methoden der folgenden Beschreibung entsprechen:
 
 - Die Get-Methode besitzt keine Parameter und hat den Rückgabetyp `T`.
 
-- Die set-Methode weist einen Parameter des Typs `T` und den Rückgabetyp **void** auf.
+- Die Set-Methode hat einen Parameter vom Typ `T` und den Rückgabetyp **`void`** .
 
 Es darf nur eine skalare Eigenschaft in einem Bereich mit dem gleichen Bezeichner deklariert werden. Skalare Eigenschaften können nicht überladen werden.
 
@@ -158,7 +158,7 @@ Wenn ein Eigenschaftendatenmember deklariert wird, fügt der Compiler ein Datenm
 
 Für die Zugriffsmethoden sind unterschiedliche Zugriffsmöglichkeiten in einem Property-Block zulässig.  D. h., dass die Set-Methode öffentlich und die Get-Methode privat sein kann.  Es ist jedoch ein Fehler, wenn die Zugriffsmethode weniger restriktiven Zugriff hat als in der Deklaration der Eigenschaft selbst vermerkt ist.
 
-**property** ist ein kontextbezogenes Schlüsselwort.  Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
+**`property`** ist ein kontextsensitiv Schlüsselwort.  Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
 
 ### <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -210,6 +210,6 @@ test
 21
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

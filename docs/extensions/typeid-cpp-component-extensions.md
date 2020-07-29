@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - typeid keyword [C++]
 ms.assetid: e9706cae-e7c4-4d6d-b474-646d73df3e70
-ms.openlocfilehash: 8b22481fecb4b7de5106921fec1c3a43fab81a48
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 56319fb773b8398f85f5fd82c812f0efdb7dde15
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80181745"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225110"
 ---
 # <a name="typeid--ccli-and-ccx"></a>typeid (C++/CLI und C++/CX)
 
@@ -68,15 +68,15 @@ Der Name eines Typs (abstrakter Deklarator), für den das `System::Type`-Objekt 
 
 ### <a name="remarks"></a>Bemerkungen
 
-`typeid` wird verwendet, um <xref:System.Type> für einen Typ zur Kompilierzeit abzurufen.
+**`typeid`** wird verwendet, um den <xref:System.Type> für einen Typ zur Kompilierzeit zu erhalten.
 
-`typeid` entspricht dem Abruf von System::Type mithilfe von <xref:System.Type.GetType%2A> oder <xref:System.Object.GetType%2A> für einen Typ zur Laufzeit. Jedoch akzeptiert typeid nur einen Typnamen als Parameter.  Wenn Sie eine Instanz eines Typs verwenden möchten, um den System::Type-Namen abzurufen, verwenden Sie GetType.
+**`typeid`** ähnelt dem erhalten der `System::Type` für einen Typ zur Laufzeit mit <xref:System.Type.GetType%2A> oder <xref:System.Object.GetType%2A> . Akzeptiert jedoch **`typeid`** nur einen Typnamen als Parameter.  Wenn Sie eine Instanz eines Typs verwenden möchten, um den Namen zu erhalten `System::Type` , verwenden Sie `GetType` .
 
-`typeid` muss in der Lage sein, einen Typnamen (type) zur Kompilierungszeit auszuwerten, während GetType den Typ auswertet, der zur Laufzeit zurückgeben wird.
+**`typeid`** muss in der Lage sein, einen Typnamen (Typ) zur Kompilierzeit auszuwerten, wohingegen GetType den Typ auswertet, der zur Laufzeit zurückgegeben werden soll.
 
-`typeid` kann einen nativen Typenamen oder Common Language Runtime-Alias für den nativen Typnamen annehmen. Unter [.NET Framework-Entsprechungen der nativen Typen in C++ (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md) finden Sie weitere Informationen hierzu.
+**`typeid`** kann einen systemeigenen Typnamen oder Common Language Runtime Alias für den nativen Typnamen verwenden. Weitere Informationen finden [Sie unter .NET Framework Entsprechungen zu C++ Native Types (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md) .
 
-`typeid` funktioniert auch mit systemeigenen Typen, obwohl noch ein System::Type zurückgegeben wird.  Um eine type_info-Struktur abzurufen, verwenden Sie den [typeid-Operator](../cpp/typeid-operator.md).
+**`typeid`** kann auch mit systemeigenen Typen verwendet werden, obwohl trotzdem ein zurückgegeben wird `System::Type` .  Um eine Type_info Struktur zu erhalten, verwenden Sie den- [ `typeid` Operator](../cpp/typeid-operator.md).
 
 ### <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -116,7 +116,7 @@ G
 System.Single*
 ```
 
-Das folgende Beispiel zeigt, dass eine Variable des Typs System::Type verwendet werden kann, um die Attribute für einen Typ abzurufen.  Außerdem wird veranschaulicht, dass Sie für einige Typen eine Typdefinition erstellen müssen, um `typeid` zu verwenden.
+Das folgende Beispiel zeigt, dass eine Variable des Typs System::Type verwendet werden kann, um die Attribute für einen Typ abzurufen.  Außerdem wird gezeigt, dass Sie für einige Typen eine typedef erstellen müssen, um zu verwenden **`typeid`** .
 
 ```cpp
 // keyword__typeid_2.cpp
@@ -188,6 +188,6 @@ int::typeid != pointer_to_int::typeid, as expected
 int::typeid == handle_to_int::typeid, as expected
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

@@ -5,16 +5,16 @@ ms.topic: reference
 helpviewer_keywords:
 - ^ handle to object [C++]
 ms.assetid: 70c411e6-be57-4468-a944-6ea7be89f392
-ms.openlocfilehash: 3d08b2294da1599282feeb1739331c31d64a9e59
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f09fd5f112e3538fa2d7fb04c755031d413de9b8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81358328"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225149"
 ---
 # <a name="handle-to-object-operator---ccli-and-ccx"></a>Handle für Objektoperator (^) (C++/CLI und C++/CX)
 
-Der *Handledeklarator* (`^`, ausgesprochen "hat"), ändert den [Typbezeichner](../cpp/overview-of-declarators.md) so, dass das deklarierte Objekt automatisch gelöscht werden soll, wenn das System feststellt, dass auf das Objekt nicht mehr zugegriffen werden kann.
+Der *handle-Deklarator (mit* dem Namen `^` "hat") ändert den [Typspezifizierer](../cpp/overview-of-declarators.md) , damit das deklarierte Objekt automatisch gelöscht wird, wenn das System feststellt, dass der Zugriff auf das Objekt nicht mehr möglich ist.
 
 ## <a name="accessing-the-declared-object"></a>Zugreifen auf das deklarierte Objekt
 
@@ -28,7 +28,7 @@ Der Vorteil des Handledeklarators ist, dass Sie in COM den Verweiszählerwert f�
 
 Weitere Informationen über die Instanziierung eines Objekts finden Sie unter [ref new](ref-new-gcnew-cpp-component-extensions.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -38,7 +38,7 @@ Das System verwendet den CLR-*Garbage Collector*-Mechanismus, um zu bestimmen, w
 
 Weil aber systemeigene C++-Zeiger (`*`) und Verweise (`&`) keine verwalteten Verweise sind, kann der Garbage Collector die Adressen, auf die sie zeigen, nicht automatisch aktualisieren. Zur Umgehung dieses Problems verwenden Sie den Handledeklarator, um für eine Variable festzulegen, dass sie vom Garbage Collector verwaltet und automatisch aktualisiert werden soll.
 
-Weitere Informationen finden Sie unter [Gewusst wie: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Weitere Informationen finden Sie unter Gewusst [wie: Deklarieren von Handles in](../dotnet/how-to-declare-handles-in-native-types.md)systemeigenen Typen.
 
 ### <a name="examples"></a>Beispiele
 
@@ -104,7 +104,7 @@ Not a boxed int
 100
 ```
 
-Dieses Beispiel zeigt, dass das allgemeine C++-Idiom zur Anwendung eines `void*`-Zeigers für den Verweis auf ein beliebiges Objekt durch `Object^` ersetzt wird, das ein Handle zu einer beliebigen Verweisklasse enthalten kann. Es zeigt auch, dass sämtliche Typen, auch Arrays und Delegaten, in ein Objekthandle konvertiert werden können.
+Dieses Beispiel zeigt, dass die allgemeine C++-Ausdrucksweise der Verwendung eines **`void*`** Zeigers, der auf ein beliebiges Objekt verweist, durch ersetzt wird `Object^` , das ein Handle für eine beliebige Verweis Klasse enthalten kann. Es zeigt auch, dass sämtliche Typen, auch Arrays und Delegaten, in ein Objekthandle konvertiert werden können.
 
 ```cpp
 // mcppv2_handle_3.cpp
@@ -195,7 +195,7 @@ Array value: 7
 Cannot access array element 11, size is 10
 ```
 
-Dieses Beispiel zeigt, dass`&`ein systemeigener Verweis ( ) nicht an einen **int-Member** eines verwalteten Typs gebunden werden kann, da die **int** möglicherweise im Garbage Collection-Heap gespeichert wird und systemeigene Verweise die Objektbewegung im verwalteten Heap nicht nachverfolgen. Zur Behebung dieses Problems können Sie eine lokale Variable verwenden, oder ändern Sie `&` in `%`, um einen Nachverfolgungsverweis zu erhalten.
+Dieses Beispiel zeigt, dass ein System eigener Verweis ( `&` ) nicht an einen **`int`** Member eines verwalteten Typs gebunden werden kann, da der **`int`** im Heap der Garbage Collection gespeichert werden kann, und systemeigene Verweise verfolgen die Objektbewegung im verwalteten Heap nicht. Zur Behebung dieses Problems können Sie eine lokale Variable verwenden, oder ändern Sie `&` in `%`, um einen Nachverfolgungsverweis zu erhalten.
 
 ```cpp
 // mcppv2_handle_5.cpp
@@ -217,11 +217,11 @@ int main() {
 }
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
 ## <a name="see-also"></a>Siehe auch
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
-[Tracking-Referenzoperator](tracking-reference-operator-cpp-component-extensions.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)<br/>
+[Nach Verfolgungs Verweis Operator](tracking-reference-operator-cpp-component-extensions.md)

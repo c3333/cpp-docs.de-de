@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - safe_cast keyword [C++]
 ms.assetid: 4fa688bf-a8ec-49bc-a4c5-f48134efa4f7
-ms.openlocfilehash: 42e141caed720aa29cf918a2bdf69d9a2c4203dc
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 2eb09680ef6e7d1ee90b62eee8c8971fb4963212
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "79544639"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225123"
 ---
 # <a name="safe_cast-ccli-and-ccx"></a>safe_cast (C++/CLI und C++/CX)
 
@@ -42,17 +42,17 @@ Mit **safe_cast** können Sie den Typ eines angegebenen Ausdrucks ändern. In Si
 
 ### <a name="parameters"></a>Parameter
 
-*type-id*<br/>
+*Typ-ID*<br/>
 Der Typ, zu dem *expression* konvertiert werden soll. Ein Handle zu einem Verweis- oder Werttyp, ein Werttyp oder ein Nachverfolgungsverweis auf einen Verweis- oder Werttyp.
 
 *expression*<br/>
 Ein Ausdruck, der als ein Handle zu einem Verweis oder Werttyp ausgewertet wird, ein Werttyp oder ein Nachverfolgungsverweis auf einen Verweis- oder Werttyp.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**safe_cast** löst `InvalidCastException` aus, wenn der *Ausdruck* nicht in den durch *Type-ID*angegebenen Typ konvertiert werden kann. Um `InvalidCastException`zu erfassen, geben Sie die Compileroption [/eh (Ausnahme Behandlungsmodell)](../build/reference/eh-exception-handling-model.md) an, und verwenden **Sie eine try/catch-** Anweisung.
+**safe_cast** `InvalidCastException` wird ausgelöst, wenn der *Ausdruck* nicht in den durch *Type-ID*angegebenen Typ konvertiert werden kann. Um dies zu erfassen `InvalidCastException` , geben Sie die Compileroption [/eh (Ausnahme Behandlungsmodell)](../build/reference/eh-exception-handling-model.md) an, und verwenden **Sie eine try/catch-** Anweisung.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -102,39 +102,39 @@ Mit **safe_cast** können Sie den Typ eines Ausdrucks ändern und überprüfbare
 
 ### <a name="parameters"></a>Parameter
 
-*type-id*<br/>
+*Typ-ID*<br/>
 Ein Handle zu einem Verweis- oder Werttyp, ein Werttyp oder ein Nachverfolgungsverweis auf einen Verweis- oder Werttyp.
 
 *expression*<br/>
 Ein Ausdruck, der als ein Handle zu einem Verweis oder Werttyp ausgewertet wird, ein Werttyp oder ein Nachverfolgungsverweis auf einen Verweis- oder Werttyp.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Ausdruck `safe_cast<`*type-id*`>(`*expression*`)` konvertiert den Operanden *expression* in ein Objekt vom Typ *type-id*.
+Der Expression `safe_cast<` *Type-ID-* `>(` *Ausdruck* `)` konvertiert den Operanden *Ausdruck* in ein Objekt vom Typ "Type *-ID*".
 
-Der Compiler akzeptiert [static_cast](../cpp/static-cast-operator.md) an den meisten Stellen, an denen auch **safe_cast** akzeptiert wird.  Allerdings erzeugt **safe_cast** garantiert eine überprüfbare MSIL, wohingegen **static_cast** eine nicht überprüfbare MSIL generieren könnte.  Weitere Informationen zu überprüfbarem Code finden Sie unter [Reiner und überprüfbarer Code (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md) und [Peverify.exe (PEVerify-Tool)](/dotnet/framework/tools/peverify-exe-peverify-tool).
+Der Compiler akzeptiert [static_cast](../cpp/static-cast-operator.md) an den meisten Stellen, an denen auch **safe_cast** akzeptiert wird.  **Safe_cast** ist jedoch garantiert, dass überprüfbare MSIL erzeugt werden, wobei als eine nicht über **`static_cast`** prüfbare MSIL erzeugt.  Weitere Informationen zu überprüfbarem Code finden Sie unter [Reiner und überprüfbarer Code (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md) und [Peverify.exe (PEVerify-Tool)](/dotnet/framework/tools/peverify-exe-peverify-tool).
 
-Ähnlich wie **static_cast** ruft auch **safe_cast** benutzerdefinierte Konvertierungen auf.
+Ebenso **`static_cast`** wie **safe_cast** benutzerdefinierte Konvertierungen aufruft.
 
 Weitere Informationen zu Umwandlungen finden Sie unter [Umwandlungsoperatoren](../cpp/casting-operators.md).
 
-**safe_cast** wendet kein **const_cast** an (kann **const** nicht umwandeln).
+**safe_cast** wendet keine (Umwandlung **`const_cast`** entfernt) an **`const`** .
 
 **safe_cast** befindet sich im cli-Namespace.  Weitere Informationen finden Sie unter [Namespaces „Platform“, „default“ und „cli“](platform-default-and-cli-namespaces-cpp-component-extensions.md).
 
 Weitere Informationen über **safe_cast** finden Sie hier:
 
-- [Umwandlungen im C-Stil mit /clr (C++/CLI)](c-style-casts-with-clr-cpp-cli.md)
+- [C-stilartige Umwandlungen mit /clr (C++/CLI)](c-style-casts-with-clr-cpp-cli.md)
 
 - [Vorgehensweise: Verwenden von safe_cast in C++/CLI](../dotnet/how-to-use-safe-cast-in-cpp-cli.md)
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
 ### <a name="examples"></a>Beispiele
 
-Ein Beispiel, in dem der Compiler **static_cast** nicht akzeptiert, **safe_cast** jedoch akzeptiert, sind Umwandlungen zwischen nicht verknüpften Schnittstellentypen.  Mit **safe_cast** gibt der Compiler keinen Konvertierungsfehler aus und führt zur Laufzeit eine Überprüfung aus, um zu ermitteln, ob die Umwandlung möglich ist.
+Ein Beispiel für den Fall, dass der Compiler keinen akzeptiert, **`static_cast`** aber einen **safe_cast** akzeptiert, ist für Umwandlungen zwischen nicht verknüpften Schnittstellentypen vorgesehen.  Mit **safe_cast** gibt der Compiler keinen Konvertierungsfehler aus und führt zur Laufzeit eine Überprüfung aus, um zu ermitteln, ob die Umwandlung möglich ist.
 
 ```cpp
 // safe_cast.cpp
@@ -166,4 +166,4 @@ Caught expected exception
 
 ## <a name="see-also"></a>Siehe auch
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

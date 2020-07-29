@@ -5,40 +5,40 @@ ms.topic: reference
 helpviewer_keywords:
 - custom attributes, parameter types
 ms.assetid: d9f127a3-7f08-456f-acc6-256805632712
-ms.openlocfilehash: b8cb222af2d5b25a90f35d8d32688567bb3fb1d8
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: c7b219ddad939aab7d6093787dc2fe4131ccced5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172645"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225162"
 ---
 # <a name="attribute-parameter-types--ccli-and-ccx"></a>Attributparametertypen (C++/CLI und C++/CX)
 
 An Attribute übergebene Werte müssen dem Compiler zum Zeitpunkt der Kompilierung bekannt sein.  Attributparameter können einen der folgenden Typen aufweisen:
 
-- **bool**
+- **`bool`**
 
-- **char**, **unsigned char**
+- **`char`**, **`unsigned char`**
 
-- **short**, **unsigned short**
+- **`short`**, **`unsigned short`**
 
-- **int**, **unsigned int**
+- **`int`**, **`unsigned int`**
 
-- **long**, **unsigned long**
+- **`long`**, **`unsigned long`**
 
-- **__int64**, **unsigned __int64**
+- **`__int64`**, **nicht signierte __int64**
 
-- **float**, **double**
+- **`float`**, **`double`**
 
-- **wchar_t**
+- **`wchar_t`**
 
-- `char*` oder `wchar_t*` oder `System::String*`
+- **`char*`** oder `wchar_t*` oder`System::String*`
 
 - `System::Type ^`
 
 - `System::Object ^`
 
-- **enum**
+- **`enum`**
 
 ## <a name="example"></a>Beispiel
 
@@ -67,7 +67,7 @@ ref struct MyStruct {
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>BESCHREIBUNG
+### <a name="description"></a>Beschreibung
 
 Wenn Sie Attribute angeben, müssen alle unbenannten (positionellen) Argumente vor benannten Argumenten stehen.
 
@@ -101,7 +101,7 @@ ref class ClassD {};   // Positional and named
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>BESCHREIBUNG
+### <a name="description"></a>Beschreibung
 
 Attributparameter können eindimensionale Arrays der vorherigen Typen sein.
 
@@ -122,6 +122,6 @@ public ref struct ABC : public Attribute {
 ref struct AStruct{};
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Benutzerdefinierte Attribute](user-defined-attributes-cpp-component-extensions.md)

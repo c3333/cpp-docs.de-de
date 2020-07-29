@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4807
 ms.assetid: 089c9f87-fd81-402e-9826-66a8ef1ef1fe
-ms.openlocfilehash: 2424d076be0914a68c3227566cb851b7ab64cc0f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 17a33f7c55fa2825eae1c7d8b9d8ab78e4ed5274
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80175037"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225331"
 ---
 # <a name="compiler-warning-level-1-c4807"></a>Compilerwarnung (Stufe 1) C4807
 
 "Operation": Unsichere Kombination von Typ "Typ" und signiertem Bitfeld des Typs "Typ"
 
-Diese Warnung wird erzeugt, wenn ein vorzeichenbehaftetes Bitfeld der Länge 1 mit einer `bool` -Variablen verglichen wird. Da ein vorzeichenbehaftetes Bitfeld der Länge 1 nur die Werte -1 oder 0 enthalten kann, ist der Vergleich mit einem `bool`-Wert nicht unproblematisch. Keine Warnungen werden dagegen erzeugt, wenn `bool` -Werte mit vorzeichenlosen Bitfeldern der Länge 1 verglichen werden, da diese mit `bool` identisch sind und nur 0 oder 1 enthalten können.
+Diese Warnung wird generiert, wenn ein Bitfeld mit einem Bit mit Vorzeichen mit einer Variablen verglichen wird **`bool`** . Da ein ein-Bit-Bitfeld mit Vorzeichen nur die Werte-1 oder 0 enthalten kann, ist es gefährlich, es mit zu vergleichen **`bool`** . Es werden keine Warnungen für das Mischen **`bool`** und ein Bitfeld ohne Vorzeichen generiert, da Sie mit identisch sind **`bool`** und nur 0 oder 1 enthalten können.
 
 ## <a name="example"></a>Beispiel
 

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4750
 ms.assetid: b0b2c938-7d2a-4c36-8270-7daee15ffee3
-ms.openlocfilehash: 9a22bdda407b02b8723b7198d62289d39f62792d
-ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
+ms.openlocfilehash: a02b69981d3cf1d35a6700261fc5142cfa8ec8e6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86180967"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225357"
 ---
 # <a name="compiler-warning-level-1-c4750"></a>Compilerwarnung (Stufe 1) C4750
 
@@ -34,7 +34,7 @@ Die "*Identifier*"-Funktion erzwingt eine Inline Erweiterung der [`_alloca`](../
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird `MyFunction` in einer Schleife aufgerufen und `MyFunction` ruft die `_alloca` -Funktion auf. Der `__forceinline` -Modifizierer bewirkt die Inlineerweiterung der `_alloca` -Funktion.
+Im folgenden Codebeispiel wird `MyFunction` in einer Schleife aufgerufen und `MyFunction` ruft die `_alloca` -Funktion auf. Der- **`__forceinline`** Modifizierer bewirkt die Inline Erweiterung der- `_alloca` Funktion.
 
 ```cpp
 // c4750.cpp
@@ -58,6 +58,6 @@ int main(void)
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_alloca](../../c-runtime-library/reference/alloca.md)

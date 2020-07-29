@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2031
 ms.assetid: 18ed4b6e-3e75-443c-bbd8-2f6030dc89ee
-ms.openlocfilehash: 096ccb7ff443d24e0d53e73a5950faa1e85aeae6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 326886f8de8b59cce9df46eb7b0325b7cc9eb9f2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80194563"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225201"
 ---
 # <a name="linker-tools-error-lnk2031"></a>Linkertoolfehler LNK2031
 
@@ -19,7 +19,7 @@ ms.locfileid: "80194563"
 
 ## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie versuchen, eine native Funktion in ein reines Image zu importieren, denken Sie daran, dass sich die impliziten Aufruf Konventionen zwischen nativen und reinen Kompilierungen unterscheiden. Weitere Informationen zu reinen Bildern finden Sie unter [reiner und überprüfbarerC++Code (/CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).
+Wenn Sie versuchen, eine native Funktion in ein reines Image zu importieren, denken Sie daran, dass sich die impliziten Aufruf Konventionen zwischen nativen und reinen Kompilierungen unterscheiden. Weitere Informationen zu reinen Bildern finden Sie unter [reiner und überprüfbarer Code (C++/CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).
 
 Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
@@ -52,7 +52,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird gezeigt, wie die native Funktion aus einem reinen Image verwendet wird. Beachten Sie den expliziten **__cdecl** Aufruf Konvention-Spezifizierer.
+Im folgenden Beispiel wird gezeigt, wie die native Funktion aus einem reinen Image verwendet wird. Beachten Sie den expliziten **`__cdecl`** Aufruf Konvention-Spezifizierer.
 
 ```cpp
 // LNK2031_c.cpp

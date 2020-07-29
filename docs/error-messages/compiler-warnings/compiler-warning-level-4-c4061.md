@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4061
 ms.assetid: a99cf88e-7941-4519-8b1b-f6889d914b2f
-ms.openlocfilehash: 073e3e9cb1cb5bb6b0f66157c986072227960212
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 18c5a51e24af36c5a330e10a66ce3dcc38295fb1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62401422"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225279"
 ---
 # <a name="compiler-warning-level-4-c4061"></a>Compilerwarnung (Stufe 4) C4061
 
-> Enumerator '*Bezeichner*"im Schalter der Enumeration'*Enumeration*" wird nicht von einer Case-Bezeichnung explizit behandelt
+> Enumerator '*Identifier*' in Switch of Enumeration '*Enumeration*' wird nicht explizit von einer Case-Bezeichnung behandelt.
 
-Den angegebenen Enumerator *Bezeichner* weist keinen verknüpften Handler in einer `switch` -Anweisung mit einem `default` Fall. Die fehlende Case-Anweisung handelt es sich möglicherweise um ein Flüchtigkeitsfehler, oder er möglicherweise kein Problem. Es hängt von, ob der Enumerator von Standardfall oder nicht verarbeitet wird. Für eine verwandte Warnung für nicht verwendete Enumeratoren in `switch` Anweisungen, die keine `default` Groß-/Kleinschreibung, finden Sie unter [C4062](compiler-warning-level-4-c4062.md).
+Der angegebene enumeratorbezeichner weist keinen zugeordneten Handler in einer-Anweisung auf *identifier* **`switch`** , die einen-Wert aufweist **`default`** . Der fehlende Fall ist möglicherweise ein Problem, oder es handelt sich nicht um ein Problem. Dies hängt möglicherweise davon ab, ob der Enumerator vom Standardfall behandelt wird oder nicht. Eine verwandte Warnung zu nicht verwendeten Enumeratoren in- **`switch`** Anweisungen, die keine groß- **`default`** /Kleinschreibung aufweisen, finden Sie unter [C4062](compiler-warning-level-4-c4062.md).
 
-Diese Warnung ist standardmäßig deaktiviert. Weitere Informationen dazu, wie Sie Warnungen zu aktivieren, die standardmäßig deaktiviert sind, finden Sie unter [Compiler Warnungen, die standardmäßig deaktivierte](../../preprocessor/compiler-warnings-that-are-off-by-default.md).
+Diese Warnung ist standardmäßig deaktiviert. Weitere Informationen zum Aktivieren von Warnungen, die standardmäßig deaktiviert sind, finden Sie unter [standardmäßig](../../preprocessor/compiler-warnings-that-are-off-by-default.md)deaktivierte Compilerwarnungen.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel generiert C4061; Fügen Sie einen Fall für den fehlenden Enumerator Fehler beheben:
+Im folgenden Beispiel wird C4061 generiert. Fügen Sie einen Fall für den fehlenden Enumerator hinzu, um den Fehler zu beheben:
 
 ```cpp
 // C4061.cpp
@@ -49,4 +49,4 @@ int main()
 
 ## <a name="see-also"></a>Siehe auch
 
-[Compilerwarnung (Ebene 4) C4062](compiler-warning-level-4-c4062.md)
+[Compilerwarnung (Stufe 4) C4062](compiler-warning-level-4-c4062.md)

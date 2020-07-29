@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4057
 ms.assetid: e75d0645-84c9-4bef-a812-942ed9879aa3
-ms.openlocfilehash: 45d2db56a7b0fc871de60743954012faf0f5c366
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d0bae91af3c2bfed97e252a74232e2a1bd778347
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80185385"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225292"
 ---
 # <a name="compiler-warning-level-4-c4057"></a>Compilerwarnung (Stufe 4) C4057
 
@@ -23,4 +23,4 @@ Zwei Zeigerausdrücke verweisen auf unterschiedliche Basistypen. Die Ausdrücke 
 
 1. Typen mit und ohne Vorzeichen werden gemischt verwendet.
 
-1. **short** - und **long** -Typen werden gemischt verwendet.
+1. Mischung aus **`short`** -und- **`long`** Typen.

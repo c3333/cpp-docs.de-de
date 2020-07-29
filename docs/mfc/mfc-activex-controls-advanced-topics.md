@@ -12,12 +12,12 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], parameterized property
 - ThrowError method [MFC]
 ms.assetid: e9e34abb-8e2d-461e-bb9c-a1aec5dcecbd
-ms.openlocfilehash: 87cc0000f74935990cb5956e0fb3afd44e01532b
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 5ae29ed40d9cc5b78945fb9846a36d6b5a0b27d7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84624196"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225032"
 ---
 # <a name="mfc-activex-controls-advanced-topics"></a>MFC-ActiveX-Steuerelemente: Weiterführende Themen
 
@@ -69,7 +69,7 @@ Im folgenden Verfahren wird eine parametrisierte Eigenschaft namens Array hinzug
 
 1. Geben Sie im Feld **Eigenschafts Name den Namen** ein `Array` .
 
-1. Wählen Sie im Feld **Eigenschaftentyp** die Option **Short**aus.
+1. Wählen Sie im Feld **Eigenschaftentyp** aus **`short`** .
 
 1. Klicken Sie unter **Implementierungstyp auf** **Get/Set Methods**.
 
@@ -97,7 +97,7 @@ Außerdem fügt der Assistent zum Hinzufügen von Eigenschaften der Steuerelemen
 
 Schließlich werden die Implementierungen der `GetArray` - `SetArray` Funktion und der-Funktion am Ende der hinzugefügt. Cpp-Datei. In den meisten Fällen ändern Sie die Get-Funktion, um den Wert der-Eigenschaft zurückzugeben. Die Set-Funktion enthält normalerweise Code, der ausgeführt werden soll, entweder vor oder nach der Änderung der-Eigenschaft.
 
-Damit diese Eigenschaft nützlich ist, können Sie eine zweidimensionale Array Element Variable in der Steuerelement Klasse, vom Typ **Short**, deklarieren, um Werte für die parametrisierte Eigenschaft zu speichern. Anschließend können Sie die Get-Funktion so ändern, dass Sie den Wert zurückgibt, der in der entsprechenden Zeile und Spalte gespeichert wird, wie in den Parametern angegeben, und die Set-Funktion ändern, um den Wert zu aktualisieren, auf den die Zeilen-und Spalten
+Damit diese Eigenschaft nützlich ist, können Sie eine zweidimensionale Array Element Variable in der Steuerelement Klasse des Typs deklarieren, **`short`** um Werte für die parametrisierte Eigenschaft zu speichern. Anschließend können Sie die Get-Funktion so ändern, dass Sie den Wert zurückgibt, der in der entsprechenden Zeile und Spalte gespeichert wird, wie in den Parametern angegeben, und die Set-Funktion ändern, um den Wert zu aktualisieren, auf den die Zeilen-und Spalten
 
 ## <a name="handling-errors-in-your-activex-control"></a><a name="_core_handling_errors_in_your_activex_control"></a>Behandeln von Fehlern in Ihrem ActiveX-Steuerelement
 
@@ -174,7 +174,7 @@ Sie können Dialogfeld Steuerelemente erstellen, die keine Benutzeroberfläche a
 
 - Wählen Sie mithilfe des Assistenten zum Hinzufügen von Element Variablen die Option **Steuerungs Variable** aus, und wählen Sie die ID des Steuer Elements Geben Sie einen Element Variablennamen ein, und wählen Sie die Wrapper Klasse des Steuer Elements als **Steuer Elementtyp**aus.
 
-     - oder -
+     Oder
 
 - Deklarieren Sie eine lokale Variable und eine Unterklasse als Dialogfeld Element. Fügen Sie Code ein, der dem folgenden ähnelt ( `CMyCtrl` ist die Wrapper Klasse, IDC_MYCTRL1 die ID des Steuer Elements ist):
 

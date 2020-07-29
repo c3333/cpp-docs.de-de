@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C4373
 ms.assetid: 670c0ba3-b7d6-4aed-b207-1cb84da3bcde
-ms.openlocfilehash: 5891d4679b74695f187fb50bb24fe941882fdcc7
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: b3ab8a0c5d826aa44eee3fea53908091ef0c6803
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518347"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225318"
 ---
 # <a name="compiler-warning-level-3-c4373"></a>Compilerwarnung (Stufe 3) C4373
 
-> '*function*': virtual function overrides '*base_function*', previous versions of the compiler did not override when parameters only differed by const/volatile qualifiers
+> "*Funktion*": die virtuelle Funktion überschreibt "*Base_function*", frühere Versionen des Compilers wurden nicht überschrieben, wenn sich die Parameter nur durch Konstanten/volatile-Qualifizierer unterscheiden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Anwendung enthält eine Methode in einer abgeleiteten Klasse, die eine virtuelle Methode in einer Basisklasse überschreibt, und die Parameter in der überschreibenden Methode unterscheiden sich nur durch einen [const](../../cpp/const-cpp.md) - oder [volatile](../../cpp/volatile-cpp.md) -Qualifizierer von den Parametern der virtuellen Methode. Dies bedeutet, dass der Compiler einen Funktionsverweis an die Methode in der Basisklasse oder abgeleiteten Klasse binden muss.
 
-Versions of the compiler prior to Visual Studio 2008 bind the function to the method in the base class, then issue a warning message. Subsequent versions of the compiler ignore the `const` or `volatile` qualifier, bind the function to the method in the derived class, then issue warning **C4373**. Das zuletzt genannte Verhalten entspricht dem C++-Standard.
+Compilerversionen vor Visual Studio 2008 binden die Funktion an die Methode in der Basisklasse und geben dann eine Warnmeldung aus. Nachfolgende Compilerversionen ignorieren den- **`const`** oder- **`volatile`** Qualifizierer, binden die Funktion an die Methode in der abgeleiteten Klasse und geben dann Warning **C4373**aus. Das zuletzt genannte Verhalten entspricht dem C++-Standard.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird die Warnung C4373 generiert: To resolve this issue, you can either make the override use the same CV-qualifiers as the base member function, or if you did not intend to create an override, you can give the function in the derived class a different name.
+Im folgenden Codebeispiel wird die Warnung C4373 generiert: Um dieses Problem zu beheben, können Sie festlegen, dass die Überschreibung dieselben CV-Qualifizierer wie die Basismember-Funktion verwenden soll. Wenn Sie keine außer Kraft Setzung erstellen möchten, können Sie der Funktion in der abgeleiteten Klasse einen anderen Namen geben.
 
 ```cpp
 // c4373.cpp

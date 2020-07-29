@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - RW2002
 ms.assetid: b1d1a49b-b50b-4b0b-9f09-c7762e2dbe8f
-ms.openlocfilehash: 9c5c2824778a679627bd3008276849890f43ac7e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 31962e3e7e4af63ec07ad569f7f72782b194032c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80190689"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225175"
 ---
 # <a name="resource-compiler-error-rw2002"></a>Ressourcencompiler: Fehler RW2002
 
@@ -21,9 +21,9 @@ Parsingfehler
 
 1. **Accelerator-Typ erforderlich (ASCII oder VIRTKEY)**
 
-   Das `type` -Feld der **ACCELERATORS** -Anweisung muss entweder den ASCII- oder den VIRTKEY-Wert enthalten.
+   Das *Type* -Feld in der **Accelerators** -Anweisung muss entweder den ASCII-oder den VIRTKEY-Wert enthalten.
 
-1. **BEGIN in Zugriffstasten Tabelle erwartet**
+1. **BEGIN in Zugriffstastentabelle erwartet**
 
    Das **BEGIN** -Schlüsselwort muss direkt auf das **ACCELERATORS** -Schlüsselwort folgen.
 
@@ -31,7 +31,7 @@ Parsingfehler
 
    Das **Begin** -Schlüsselwort muss direkt auf das **Dialog** Schlüsselwort folgen.
 
-1. **BEGIN in Menü erwartet**
+1. **BEGIN in Menü erwartet.**
 
    Das **BEGIN** -Schlüsselwort muss direkt auf das **MENU** -Schlüsselwort folgen.
 
@@ -49,7 +49,7 @@ Parsingfehler
 
 1. **Steuerzeichen außerhalb des gültigen Bereichs [^ A-^ Z]**
 
-   Ein Steuerzeichen in der **ACCELERATORS** -Anweisung ist ungültig. Das auf das Caretzeichen ( **^** ) folgende Zeichen muss zwischen A und Z (einschl.) liegen.
+   Ein Steuerzeichen in der **ACCELERATORS** -Anweisung ist ungültig. Das Zeichen, das auf das Caretzeichen ( **^** ) folgt, muss zwischen A und Z (einschließlich) liegen.
 
 1. **Leere Menüs sind nicht zulässig.**
 
@@ -59,17 +59,17 @@ Parsingfehler
 
    Das **End** -Schlüsselwort muss am Ende einer **Dialog** Feld Anweisung auftreten. Stellen Sie sicher, dass keine offenen Anführungszeichen von der vorangehenden Anweisung übrig sind.
 
-1. **Ende im Menü erwartet**
+1. **END in Menü erwartet.**
 
    Das **END** -Schlüsselwort muss am Ende einer **MENU** -Anweisung stehen. Stellen Sie sicher, dass keine öffnenden Anführungszeichen oder nicht übereinstimmende Paare von **BEGIN** - und **END** -Anweisungen vorhanden sind.
 
 1. **Komma in Zugriffstasten Tabelle erwartet**
 
-   Der Ressourcencompiler erfordert ein Komma zwischen dem Feld `event` und dem Feld *idvalue* in der **ACCELERATORS** -Anweisung.
+   Der Ressourcen Compiler erfordert ein Komma zwischen den Feldern *Ereignis* und *idValue* in der **Accelerators** -Anweisung.
 
 1. **Name der Steuerelement Klasse erwartet**
 
-   Das `class`-Feld einer **Steuer** Element Anweisung in der **Dialog** -Anweisung muss einen der folgenden Typen aufweisen: Button, ComboBox, Edit, ListBox, ScrollBar, static oder User-Defined. Stellen Sie sicher, dass die Klasse richtig geschrieben ist.
+   Das *Klassen* Feld einer **Steuer** Element Anweisung in der **Dialog** -Anweisung muss einen der folgenden Typen aufweisen: Button, ComboBox, Edit, ListBox, ScrollBar, static oder User-Defined. Stellen Sie sicher, dass die Klasse richtig geschrieben ist.
 
 1. **Der Name der Schriftart wurde erwartet.**
 
@@ -105,19 +105,19 @@ Parsingfehler
 
 1. **Erwarteter String-oder Constant Accelerator-Befehl**
 
-   Der Ressourcencompiler konnte nicht bestimmen, welche Art von Schlüssel für die Zugriffstaste eingerichtet wurde. Das `event` -Feld in der **ACCELERATORS** -Anweisung ist möglicherweise ungültig.
+   Der Ressourcencompiler konnte nicht bestimmen, welche Art von Schlüssel für die Zugriffstaste eingerichtet wurde. Das *Ereignis* Feld in der **Accelerators** -Anweisung ist möglicherweise ungültig.
 
 1. **Anzahl für ID wird erwartet.**
 
-   Es wird eine Zahl für das `id`-Feld einer Steuerelement Anweisung in der **Dialog** -Anweisung erwartet. Stellen Sie sicher, dass Sie über eine Zahl oder `#define`-Anweisung für die Steuerelement-ID verfügen
+   Es wird eine Zahl für das *ID* -Feld einer Steuerelement Anweisung in der **Dialog** -Anweisung erwartet. Stellen Sie sicher, dass Sie eine Zahl oder eine `#define` Anweisung für die Steuerelement-ID haben.
 
 1. **Zeichenfolge in Anführungszeichen in Dialog Klasse erwartet**
 
-   Das `class` -Feld der CLASS-Option in der **DIALOG** -Anweisung muss eine ganze Zahl oder eine Zeichenfolge, die in doppelte Anführungszeichen eingeschlossen ist, enthalten.
+   Das *Klassen* Feld der Class-Option in der **Dialog** -Anweisung muss eine ganze Zahl oder eine Zeichenfolge sein, die in doppelten Anführungszeichen eingeschlossen ist.
 
 1. **Zeichenfolge in Anführungszeichen in Dialogfeld Titel erwartet**
 
-   Das `captiontext` -Feld der CAPTION-Option in der **DIALOG** -Anweisung muss eine ASCII-Zeichenfolge in doppelten Anführungszeichen sein.
+   Das *CaptionText* -Feld der Caption-Option in der **Dialog** -Anweisung muss eine ASCII-Zeichenfolge sein, die in doppelten Anführungszeichen eingeschlossen ist.
 
 1. **Datei nicht gefunden: Dateiname**
 
@@ -125,15 +125,15 @@ Parsingfehler
 
 1. **Schriftart Namen müssen Ordnungszahlen sein.**
 
-   Das *pointsize* -Feld in der Font-Anweisung muss eine ganze Zahl und keine Zeichenfolge sein.
+   Das *pointsize* -Feld in der FONT -Anweisung muss eine Ganzzahl und keine Zeichenfolge sein.
 
 1. **Ungültige Zugriffstaste**
 
-   Ein `event` -Feld in der **ACCELERATORS** -Anweisung wurde nicht erkannt oder ist mehr als zwei Zeichen lang.
+   Ein *Ereignis* Feld in der **Accelerators** -Anweisung wurde nicht erkannt oder ist mehr als zwei Zeichen lang.
 
 1. **Ungültiger Accelerator-Typ (ASCII oder VIRTKEY)**
 
-   Das `type` -Feld der **ACCELERATORS** -Anweisung muss entweder den ASCII- oder den VIRTKEY-Wert enthalten.
+   Das *Type* -Feld in der **Accelerators** -Anweisung muss entweder den ASCII-oder den VIRTKEY-Wert enthalten.
 
 1. **Ungültiges Steuerzeichen**
 

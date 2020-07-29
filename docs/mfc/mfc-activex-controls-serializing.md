@@ -15,12 +15,12 @@ helpviewer_keywords:
 - versioning ActiveX controls
 - wVerMajor global constant
 ms.assetid: 9d57c290-dd8c-4853-b552-6f17f15ebedd
-ms.openlocfilehash: c06299f2fc7409476e4f5e5744ea11c962e3b173
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: f5e3b4bdf203f90b3550a2521ba51ba451cf3a46
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84621199"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225019"
 ---
 # <a name="mfc-activex-controls-serializing"></a>MFC-ActiveX-Steuerelemente: Serialisierung
 
@@ -58,13 +58,13 @@ In der folgenden Tabelle sind die möglichen Eigenschaften Austausch Funktionen 
 |**PX_Bool ()**|Serialisiert eine boolesche Eigenschaft des Typs.|
 |**PX_Color ()**|Serialisiert eine typfarb Eigenschaft.|
 |**PX_Currency ()**|Serialisiert eine Eigenschaft vom Typ **CY** (Currency).|
-|**PX_Double ()**|Serialisiert eine Eigenschaft vom Typ " **Double** ".|
+|**PX_Double ()**|Serialisiert eine **`double`** Typeigenschaft.|
 |**PX_Font ()**|Serialisiert eine Eigenschaft des Schriftart Typs.|
-|**PX_Float ()**|Serialisiert eine Eigenschaft vom Typ " **float** ".|
+|**PX_Float ()**|Serialisiert eine **`float`** Typeigenschaft.|
 |**PX_IUnknown ()**|Serialisiert eine Eigenschaft vom Typ `LPUNKNOWN` .|
-|**PX_Long ()**|Serialisiert eine **Long** -Eigenschaft des Typs.|
+|**PX_Long ()**|Serialisiert eine **`long`** Typeigenschaft.|
 |**PX_Picture ()**|Serialisiert eine Eigenschaft des Typs Bild.|
-|**PX_Short ()**|Serialisiert eine Eigenschaft vom Typ **Short** .|
+|**PX_Short ()**|Serialisiert eine **`short`** Typeigenschaft.|
 |**Pxstring ()**|Serialisiert eine `CString` Typeigenschaft.|
 |**PX_ULong ()**|Serialisiert eine **ulong** -Typ-Eigenschaft.|
 |**PX_UShort ()**|Serialisiert eine **UShort** -Eigenschaft des Typs.|

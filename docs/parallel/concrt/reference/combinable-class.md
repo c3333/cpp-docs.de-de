@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - combinable class
 ms.assetid: fe0bfbf6-6250-47da-b8d0-f75369f0b5be
-ms.openlocfilehash: a1954cd3a69233deed053da5b5fdef0dbc183b80
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: d445b8ac1d2a8487e9e1ec4f21f63cf5ef071e91
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77141430"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224967"
 ---
 # <a name="combinable-class"></a>combinable-Klasse
 
@@ -35,29 +35,29 @@ class combinable;
 *T*<br/>
 Der Datentyp des abschließenden zusammengeführten Ergebnisses. Der Typ muss einen Kopierkonstruktor und einen Standardkonstruktor aufweisen.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[combinable](#ctor)|Ist überladen. Erstellt ein neues `combinable`-Objekt.|
+|[kombinierbar](#ctor)|Ist überladen. Erstellt ein neues `combinable`-Objekt.|
 |[~ kombinierbar-Dekonstruktor](#dtor)|Zerstört ein `combinable` -Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[Löschen](#clear)|Löscht alle zwischen Berechnungsergebnisse aus einer vorherigen Verwendung.|
-|[combine](#combine)|Berechnet einen endgültigen Wert aus dem Satz der Thread lokalen unter Berechnungen durch Aufrufen des bereitgestellten funktors "kombinieren".|
+|[Combine](#combine)|Berechnet einen endgültigen Wert aus dem Satz der Thread lokalen unter Berechnungen durch Aufrufen des bereitgestellten funktors "kombinieren".|
 |[combine_each](#combine_each)|Berechnet einen Endwert aus dem Satz von Thread lokalen unter Berechnungen, indem der angegebene kombinierungs Funktions tüktor einmal pro Thread lokaler unter Berechnung aufgerufen wird. Das Endergebnis wird vom Funktions Objekt akkumuliert.|
-|[local](#local)|Ist überladen. Gibt einen Verweis auf die Thread private-unter Berechnung zurück.|
+|[nah](#local)|Ist überladen. Gibt einen Verweis auf die Thread private-unter Berechnung zurück.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[operator=](#operator_eq)|Weist einem `combinable` Objekt aus einem anderen `combinable`-Objekt zu.|
+|[Operator =](#operator_eq)|Weist ein- `combinable` Objekt aus einem anderen- `combinable` Objekt zu.|
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -73,7 +73,7 @@ Weitere Informationen finden Sie unter [parallele Container und Objekte](../../.
 
 **Namespace:** Parallelität
 
-## <a name="clear"></a>Klartext
+## <a name="clear"></a><a name="clear"></a>Klartext
 
 Löscht alle zwischen Berechnungsergebnisse aus einer vorherigen Verwendung.
 
@@ -81,7 +81,7 @@ Löscht alle zwischen Berechnungsergebnisse aus einer vorherigen Verwendung.
 void clear();
 ```
 
-## <a name="ctor"></a>combinable
+## <a name="combinable"></a><a name="ctor"></a>combinable
 
 Erstellt ein neues `combinable`-Objekt.
 
@@ -100,20 +100,20 @@ combinable(const combinable& _Copy);
 Der Typ des Initialisierungs-Funktionselement-Objekts.
 
 *_FnInitialize*<br/>
-Eine Funktion, die aufgerufen wird, um jeden neuen Thread privaten Wert des Typs `T`zu initialisieren. Er muss einen Funktions Aufrufoperator mit der Signatur `T ()`unterstützen.
+Eine Funktion, die aufgerufen wird, um jeden neuen Thread privaten Wert des Typs zu initialisieren `T` . Er muss einen Funktions Aufrufoperator mit der Signatur unterstützen `T ()` .
 
 *_Copy*<br/>
-Ein vorhandenes `combinable` Objekt, das in dieses kopiert werden soll.
+Ein vorhandenes- `combinable` Objekt, das in dieses kopiert werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor initialisiert neue Elemente mit dem Standardkonstruktor für den Typ `T`.
+Der erste Konstruktor initialisiert neue Elemente mit dem Standardkonstruktor für den Typ `T` .
 
-Der zweite Konstruktor initialisiert neue Elemente mithilfe des Initialisierungs-funktors, der als `_FnInitialize`-Parameter angegeben wird.
+Der zweite Konstruktor initialisiert neue Elemente mithilfe des Initialisierungs-funktors, der als-Parameter angegeben wird `_FnInitialize` .
 
 Der dritte Konstruktor ist der Kopierkonstruktor.
 
-## <a name="dtor"></a>~ kombinierbar
+## <a name="combinable"></a><a name="dtor"></a>~ kombinierbar
 
 Zerstört ein `combinable` -Objekt.
 
@@ -121,7 +121,7 @@ Zerstört ein `combinable` -Objekt.
 ~combinable();
 ```
 
-## <a name="combine"></a>Combine
+## <a name="combine"></a><a name="combine"></a>Combine
 
 Berechnet einen endgültigen Wert aus dem Satz der Thread lokalen unter Berechnungen durch Aufrufen des bereitgestellten funktors "kombinieren".
 
@@ -136,13 +136,13 @@ T combine(_Function _FnCombine) const;
 Der Typ des Funktions Objekts, das aufgerufen wird, um zwei Thread lokale unter Berechnungen zu kombinieren.
 
 *_FnCombine*<br/>
-Das Funktor, das verwendet wird, um die unter Berechnungen zu kombinieren. Die Signatur ist `T (T, T)` oder `T (const T&, const T&)`, und Sie muss assoziativ und kommutativ sein.
+Das Funktor, das verwendet wird, um die unter Berechnungen zu kombinieren. Die Signatur ist `T (T, T)` oder `T (const T&, const T&)` , und Sie muss assoziativ und kommutativ sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das Endergebnis, bei dem alle Thread privaten Teil Berechnungen kombiniert werden.
 
-## <a name="combine_each"></a>combine_each
+## <a name="combine_each"></a><a name="combine_each"></a>combine_each
 
 Berechnet einen Endwert aus dem Satz von Thread lokalen unter Berechnungen, indem der angegebene kombinierungs Funktions tüktor einmal pro Thread lokaler unter Berechnung aufgerufen wird. Das Endergebnis wird vom Funktions Objekt akkumuliert.
 
@@ -157,9 +157,9 @@ void combine_each(_Function _FnCombine) const;
 Der Typ des Funktions Objekts, das aufgerufen wird, um eine einzelne Thread lokale unter Berechnung zu kombinieren.
 
 *_FnCombine*<br/>
-Das Funktor, das verwendet wird, um eine unter Berechnung zu kombinieren. Die Signatur ist `void (T)` oder `void (const T&)`und muss assoziativ und kommutativ sein.
+Das Funktor, das verwendet wird, um eine unter Berechnung zu kombinieren. Die Signatur ist `void (T)` oder `void (const T&)` , und Sie muss assoziativ und kommutativ sein.
 
-## <a name="local"></a>nah
+## <a name="local"></a><a name="local"></a>nah
 
 Gibt einen Verweis auf die Thread private-unter Berechnung zurück.
 
@@ -172,15 +172,15 @@ T& local(bool& _Exists);
 ### <a name="parameters"></a>Parameter
 
 *_Exists*<br/>
-Ein Verweis auf einen booleschen Wert. Der boolesche Wert, auf den dieses Argument verweist, wird auf " **true** " festgelegt, wenn die unter Berechnung bereits in diesem Thread vorhanden war, und auf " **false** " festgelegt, wenn dies die erste unter Berechnung für diesen Thread war.
+Ein Verweis auf einen booleschen Wert. Der boolesche Wert, auf den durch dieses Argument verwiesen wird, wird auf festgelegt **`true`** , wenn die unter Berechnung bereits in diesem Thread vorhanden war, und auf festgelegt, **`false`** Wenn dies die erste unter Berechnung für diesen Thread war.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Verweis auf die Thread private-unter Berechnung.
 
-## <a name="operator_eq"></a>Operator =
+## <a name="operator"></a><a name="operator_eq"></a>Operator =
 
-Weist einem `combinable` Objekt aus einem anderen `combinable`-Objekt zu.
+Weist ein- `combinable` Objekt aus einem anderen- `combinable` Objekt zu.
 
 ```cpp
 combinable& operator= (const combinable& _Copy);
@@ -189,12 +189,12 @@ combinable& operator= (const combinable& _Copy);
 ### <a name="parameters"></a>Parameter
 
 *_Copy*<br/>
-Ein vorhandenes `combinable` Objekt, das in dieses kopiert werden soll.
+Ein vorhandenes- `combinable` Objekt, das in dieses kopiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Verweis auf das `combinable`-Objekt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace](concurrency-namespace.md)
+[Parallelitäts Namespace](concurrency-namespace.md)
