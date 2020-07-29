@@ -39,12 +39,12 @@ helpviewer_keywords:
 - exponent, floating-point numbers
 - floating-point functions, mantissa and exponent
 ms.assetid: aa7f5310-3879-4f63-ae74-86a39fbdedfa
-ms.openlocfilehash: 95eb1eb3ca18e0e7d3450951c930a07f954bc299
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: bbd1742cdace30d5bc3bd5e9d592bb24a86f917f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916541"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216920"
 ---
 # <a name="ldexp-ldexpf-ldexpl"></a>ldexp, ldexpf, ldexpl
 
@@ -80,7 +80,7 @@ long double ldexpl(
 *x*<br/>
 Gleitkommawert.
 
-*Exp*<br/>
+*exp*<br/>
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -89,15 +89,15 @@ Die **ldexp** -Funktionen geben bei Erfolg den Wert von *x* \* 2<sup>*Exp*</sup>
 
 Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **LDE XP** aufzurufen, die **float** -oder **Long** **Double** -Typen annehmen. In einem C-Programm nimmt **ldebug** immer einen **Double** -und einen **int** -Wert und gibt einen **Double**-Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **LDE XP** aufzurufen, die- **`float`** oder- **`long double`** Typen verwenden. In einem C-Programm übernimmt **ldebug** immer **`double`** und **`int`** und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|C-Header|C++-Header|
+|-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
 |**LDE XP**, **ldexpf**, **ldexpl**|\<math.h>|\<cmath>|
 
@@ -129,6 +129,6 @@ int main( void )
 
 ## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [frexp](frexp.md)<br/>
 [modf, modff, modfl](modf-modff-modfl.md)<br/>

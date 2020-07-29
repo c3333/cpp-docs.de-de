@@ -10,12 +10,12 @@ helpviewer_keywords:
 - std::front_insert_iterator [C++], container_type
 - std::front_insert_iterator [C++], reference
 ms.assetid: a9a9c075-136a-4419-928b-c4871afa033c
-ms.openlocfilehash: 455db433aff1c1aa241beeb6e2435807959b7dd4
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8f60b2e5e21b559edb630be2aee377341d4480f6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317146"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87203272"
 ---
 # <a name="front_insert_iterator-class"></a>front_insert_iterator-Klasse
 
@@ -30,7 +30,7 @@ class front_insert_iterator;
 
 ### <a name="parameters"></a>Parameter
 
-*Container*\
+*Kum*\
 Der Typ des Containers, an dessen Anfang Elemente von einem `front_insert_iterator` eingefügt werden sollen.
 
 ## <a name="remarks"></a>Bemerkungen
@@ -45,26 +45,26 @@ Der Container muss den Anforderungen einer Sequenz zum Einfügen am Anfang entsp
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[container_type](#container_type)|Ein Typ, der den Container darstellt, in dem eine Einfügung am Anfang vorgenommen werden soll.|
-|[Verweis](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
+|[Referenz](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
 
 ### <a name="operators"></a>Operatoren
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Operator*](#op_star)|Dereferencing-Operator wird verwendet, um den \* `i`  =  `x` Ausgabe-Iterator-Ausdruck für eine Fronteinfügung zu implementieren.|
-|[Operator++](#op_add_add)|Inkrementiert `front_insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.|
-|[Operator=](#op_eq)|Zuweisungsoperator, der verwendet wird, \* `i`  =  `x` um den Ausgabeiteratorausdruck für eine Fronteinfügung zu implementieren.|
+|[KOM](#op_star)|Der Dereferenzierungsoperator, der verwendet wird, um den Ausgabeiterator-Ausdruck \* `i`  =  `x` für eine Front-|
+|[Operator + +](#op_add_add)|Inkrementiert `front_insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.|
+|[Operator =](#op_eq)|Der Zuweisungs Operator, der verwendet wird, um den Ausgabeiterator-Ausdruck \* `i`  =  `x` für eine Front-|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile**: \<Iterator>
+**Header**:\<iterator>
 
 **Namespace:** std
 
-## <a name="front_insert_iteratorcontainer_type"></a><a name="container_type"></a>front_insert_iterator::container_type
+## <a name="front_insert_iteratorcontainer_type"></a><a name="container_type"></a>Front_insert_iterator:: container_type
 
 Ein Typ, der den Container darstellt, in dem eine Einfügung am Anfang vorgenommen werden soll.
 
@@ -106,7 +106,7 @@ The list L2 is: ( 40 10 20 ).
 */
 ```
 
-## <a name="front_insert_iteratorfront_insert_iterator"></a><a name="front_insert_iterator"></a>front_insert_iterator::front_insert_iterator
+## <a name="front_insert_iteratorfront_insert_iterator"></a><a name="front_insert_iterator"></a>Front_insert_iterator:: Front_insert_iterator
 
 Damit wird ein Iterator erstellt, mit dem Elemente an den Anfang eines bestimmten Containerobjekts eingefügt werden können.
 
@@ -169,7 +169,7 @@ After the front insertions, the list L is:
 */
 ```
 
-## <a name="front_insert_iteratoroperator"></a><a name="op_star"></a>front_insert_iterator::Operator\*
+## <a name="front_insert_iteratoroperator"></a><a name="op_star"></a>Front_insert_iterator::-Operator\*
 
 Dereferenziert den Iterator zum Einfügen und gibt das Element zurück, das es adressiert
 
@@ -183,7 +183,7 @@ Die Memberfunktion gibt den Wert des adressierten Elements zurück
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wird verwendet, um den Ausgabeiteratorausdruck =  ** \*Iter-Wert**zu implementieren.**value** Wenn `Iter` es sich um einen Iterator handelt, der ein Element in einer Sequenz adressiert, ersetzt ** \*der Iter-Wert** = **value** dieses Element durch einen Wert und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
+Wird verwendet, um den-ausgabeiteratorausdruck ** \* ITER**zu implementieren  =  **value**. Wenn `Iter` ein Iterator ist, der ein Element in einer Sequenz adressiert, ersetzt der ** \* ITER**  =  -**Wert** dieses Element durch value und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
 
 ### <a name="example"></a>Beispiel
 
@@ -230,7 +230,7 @@ After the front insertions, the list L is:
 */
 ```
 
-## <a name="front_insert_iteratoroperator"></a><a name="op_add_add"></a>front_insert_iterator::operator++
+## <a name="front_insert_iteratoroperator"></a><a name="op_add_add"></a>Front_insert_iterator:: Operator + +
 
 Inkrementiert `back_insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.
 
@@ -281,7 +281,7 @@ The list L1 is: ( 30 20 10 ).
 */
 ```
 
-## <a name="front_insert_iteratoroperator"></a><a name="op_eq"></a>front_insert_iterator::operator=
+## <a name="front_insert_iteratoroperator"></a><a name="op_eq"></a>Front_insert_iterator:: Operator =
 
 Fügt einen Wert (per Push) am Anfang des Containers an
 
@@ -293,7 +293,7 @@ front_insert_iterator<Container>& operator=(typename Container::value_type&& val
 
 ### <a name="parameters"></a>Parameter
 
-*Val*\
+*ster*\
 Der Wert, der dem Container zugewiesen werden soll
 
 ### <a name="return-value"></a>Rückgabewert
@@ -302,13 +302,13 @@ Ein Verweis auf das letzte, am Anfang des Containers eingefügte Element
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der erster Memberoperator wertet `container.push_front( val)` aus und gibt `*this` zurück.
+Der erste Member-Operator wertet aus `container.push_front( val)` und gibt dann zurück **`*this`** .
 
 Der zweite Memberoperator wertet Folgendes aus:
 
 `container->push_front((typename Container::value_type&&) val)`,
 
-danach gibt er `*this` zurück.
+dann wird zurückgegeben **`*this`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -343,7 +343,7 @@ The list L1 is: ( 30 20 10 ).
 */
 ```
 
-## <a name="front_insert_iteratorreference"></a><a name="reference"></a>front_insert_iterator::Referenz
+## <a name="front_insert_iteratorreference"></a><a name="reference"></a>Front_insert_iterator:: Reference
 
 Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.
 
@@ -387,8 +387,8 @@ The first element in the list L is: 30.
 */
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<iterator>](../standard-library/iterator.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

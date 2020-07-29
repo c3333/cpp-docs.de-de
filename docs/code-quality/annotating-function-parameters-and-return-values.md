@@ -124,12 +124,12 @@ f1_keywords:
 - _Scanf_s_format_string_
 - _Printf_format_string_
 ms.assetid: 82826a3d-0c81-421c-8ffe-4072555dca3a
-ms.openlocfilehash: d2aa57abc6c0bcc50bcae743a50f86e5de65ab64
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 4d0325fbab2f27da2556e2c252e35711d9b42789
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404036"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231259"
 ---
 # <a name="annotating-function-parameters-and-return-values"></a>Kommentieren von Funktionsparametern und Rückgabe Werten
 
@@ -167,7 +167,7 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
 
      Ein Zeiger auf ein Array, das von der Funktion gelesen wird. Das Array weist Größen `s` Elemente auf, die alle gültig sein müssen.
 
-     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen `char` die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, `wchar_t` wäre.
+     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen **`char`** die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, **`wchar_t`** wäre.
 
 - `_In_reads_z_(s)`
 
@@ -190,7 +190,7 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
 
      In diesem Beispiel stellt der Aufrufer einen Puffer von `size` Elementen für bereit `p1` . `MyStringCopy`macht einige dieser Elemente gültig. Noch wichtiger ist, `_Null_terminated_` dass die Anmerkung in `PWSTR` bedeutet, dass `p1` im Post-State NULL-terminiert ist. Auf diese Weise ist die Anzahl der gültigen Elemente immer noch klar definiert, aber eine bestimmte Element Anzahl ist nicht erforderlich.
 
-     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen `char` die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, `wchar_t` wäre.
+     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen **`char`** die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, **`wchar_t`** wäre.
 
 - `_Out_writes_z_(s)`
 
@@ -202,7 +202,7 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
 
      Ein Zeiger auf ein Array, das in der Funktion gelesen und geschrieben wird. Sie ist von den Größen `s` Elementen und im Zustand vor und nach dem Zustand gültig.
 
-     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen `char` die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, `wchar_t` wäre.
+     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen **`char`** die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, **`wchar_t`** wäre.
 
 - `_Inout_updates_z_(s)`
 
@@ -231,7 +231,7 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
 
      Ein Zeiger auf ein Array, das von der Funktion gelesen und geschrieben wird. Es `s` sind Größen Elemente, die alle im Voraus State gültig sein müssen, und `c` Elemente müssen im Post-State gültig sein.
 
-     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen `char` die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, `wchar_t` wäre.
+     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen **`char`** die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, **`wchar_t`** wäre.
 
 - `_Inout_updates_all_(s)`
 
@@ -243,7 +243,7 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
 
      Das heißt, dass jedes Element, das im Puffer bis zu im Zustand "Pre" vorhanden `s` ist, im Zustand vor und nach dem Zustand gültig ist.
 
-     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen `char` die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, `wchar_t` wäre.
+     Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen **`char`** die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, **`wchar_t`** wäre.
 
 - `_In_reads_to_ptr_(p)`
 

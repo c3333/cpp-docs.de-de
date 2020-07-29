@@ -29,12 +29,12 @@ helpviewer_keywords:
 - stack, recovering
 - _resetstkoflw function
 ms.assetid: 319529cd-4306-4d22-810b-2063f3ad9e14
-ms.openlocfilehash: b19b66279427aa4623cff037e67067096eb6bd42
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 6f4d5d930ebdc487c3c2bcc2f93494a25528c438
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82917783"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216777"
 ---
 # <a name="_resetstkoflw"></a>_resetstkoflw
 
@@ -53,7 +53,7 @@ int _resetstkoflw( void );
 
 Bei erfolgreicher Funktion ist der Wert ungleich 0 (null), sonst Null.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_resetstkoflw** -Funktion stellt eine Stapelüberlauf Bedingung wieder her, sodass ein Programm fortgesetzt werden kann, anstatt einen schwerwiegenden Ausnahme Fehler zu verursachen. Wenn die **_resetstkoflw** -Funktion nicht aufgerufen wird, gibt es nach der vorherigen Ausnahme keine Schutz Seiten. Beim nächsten Stapelüberlauf treten keine Ausnahmen auf, und der Prozess wird ohne Ausgabe einer Warnung beendet.
 
@@ -79,7 +79,7 @@ Wenn die maximale Stapelgröße überschritten wird, führt das System die folge
 
 Beachten Sie, dass der Stapel ab diesem Punkt keine Schutzseite mehr hat. Wenn das Programm das nächste Mal den Stapel bis zu dem Ende vergrößert, an dem eine Schutzseite vorhanden sein sollte, schreibt das Programm über den Stapel hinaus und verursacht eine Zugriffsverletzung.
 
-Wenden Sie **_resetstkoflw** an, um die Schutz Seite wiederherzustellen, wenn die Wiederherstellung nach einer Stapelüberlauf Ausnahme erfolgt. Diese Funktion kann innerhalb des Haupt Texts eines **__except** Blocks oder außerhalb eines **__except** Blocks aufgerufen werden. Es gibt jedoch einige Einschränkungen hinsichtlich der Verwendung. **_resetstkoflw** sollten nie aufgerufen werden von:
+Wenden Sie **_resetstkoflw** an, um die Schutz Seite wiederherzustellen, wenn die Wiederherstellung nach einer Stapelüberlauf Ausnahme erfolgt. Diese Funktion kann innerhalb des Haupt Texts eines- **`__except`** Blocks oder außerhalb eines-Blocks aufgerufen werden **`__except`** . Es gibt jedoch einige Einschränkungen hinsichtlich der Verwendung. **_resetstkoflw** sollten nie aufgerufen werden von:
 
 - einem Filterausdruck
 
@@ -87,17 +87,17 @@ Wenden Sie **_resetstkoflw** an, um die Schutz Seite wiederherzustellen, wenn di
 
 - einer Funktion, die von einer Filterfunktion aufgerufen wurde.
 
-- Ein **catch**-Block.
+- Ein- **`catch`** Block.
 
-- Ein **__finally** -Block.
+- Ein- **`__finally`** Block.
 
 An diesen Punkten ist der Stapel noch nicht ausreichend entladen.
 
-Stapelüberlauf-Ausnahmen werden als strukturierte Ausnahmen und nicht als C++-Ausnahmen generiert, sodass **_resetstkoflw** in einem normalen **catch** -Block nicht hilfreich ist, da eine Stapelüberlauf Ausnahme nicht abgefangen wird. Wenn allerdings [_set_se_translator](set-se-translator.md) verwendet wird, um einen strukturierten Ausnahmeübersetzer zu implementieren, der C++-Ausnahmen auslöst (siehe zweites Beispiel), führt eine Stapelüberlauf-Ausnahme zu einer C++-Ausnahme, die von einem C++-Catch-Block behandelt werden kann.
+Stapelüberlauf-Ausnahmen werden als strukturierte Ausnahmen und nicht als C++-Ausnahmen generiert, sodass **_resetstkoflw** in einem normalen Block nicht nützlich ist, **`catch`** da eine Stapelüberlauf Ausnahme nicht abgefangen wird. Wenn allerdings [_set_se_translator](set-se-translator.md) verwendet wird, um einen strukturierten Ausnahmeübersetzer zu implementieren, der C++-Ausnahmen auslöst (siehe zweites Beispiel), führt eine Stapelüberlauf-Ausnahme zu einer C++-Ausnahme, die von einem C++-Catch-Block behandelt werden kann.
 
 Das Aufrufen von **_resetstkoflw** in einem C++-Catch-Block, der von einer Ausnahme erreicht wird, die von einer strukturierten Ausnahmeübersetzerfunktion ausgelöst wird, ist nicht sicher. In diesem Fall wird der Stapelspeicher nicht freigegeben und die Stapelzeiger wird nicht bis außerhalb des Catch-Blocks zurückgesetzt, auch wenn Destruktoren für alle zerstörbaren Objekte vor dem Catch-Block aufgerufen wurden. Diese Funktion sollte erst aufgerufen werden, wenn der Stapelspeicher freigegeben und der Stapelzeiger zurückgesetzt wurde. Daher sollte sie erst nach dem Beenden des Catch-Blocks aufgerufen werden. Im Catch-Block sollte so wenig Stapelspeicherplatz verwendet werden wie möglich, da ein Stapelüberlauf, der in einem Catch-Block auftritt, der selbst versucht, sich nach einem vorherigen Stapelüberlauf wiederherzustellen, nicht wiederhergestellt werden kann und dazu führen kann, dass das Programm nicht mehr reagiert, da der Überlauf in dem Catch-Block eine Ausnahme auslöst, die vom selben Catch-Block behandelt wird.
 
-Es gibt Situationen, in denen **_resetstkoflw** trotz Verwendung am richtigen Speicherort fehlschlagen kann, beispielsweise in einem **__except**-Block. Wenn selbst nach der Stapelentladung nicht genug Stapelspeicher vorhanden ist, um **_resetstkoflw** ausführen, ohne auf die letzte Seite des Stapels zu schreiben, dann schlägt **_resetstkoflw** fehl, kann die letzte Seite des Stapels nicht als Schutzseite wiederherstellen und gibt 0 zurück, um einen Fehler anzuzeigen. Daher sollte zu einer sicheren Verwendung dieser Funktion das Überprüfen des Rückgabewerts gehören, anstatt davon auszugehen, dass der Stapel sicher verwendet werden kann.
+Es gibt Situationen, in denen **_resetstkoflw** fehlschlagen kann, selbst wenn Sie an einem korrekten Speicherort verwendet werden, z **`__except`** . b Wenn selbst nach der Stapelentladung nicht genug Stapelspeicher vorhanden ist, um **_resetstkoflw** ausführen, ohne auf die letzte Seite des Stapels zu schreiben, dann schlägt **_resetstkoflw** fehl, kann die letzte Seite des Stapels nicht als Schutzseite wiederherstellen und gibt 0 zurück, um einen Fehler anzuzeigen. Daher sollte zu einer sicheren Verwendung dieser Funktion das Überprüfen des Rückgabewerts gehören, anstatt davon auszugehen, dass der Stapel sicher verwendet werden kann.
 
 Die strukturierte Ausnahmebehandlung fängt keine **STATUS_STACK_OVERFLOW** Ausnahme ab, wenn die Anwendung mit **/CLR** kompiliert wird (siehe [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md)).
 
@@ -105,7 +105,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_resetstkoflw**|\<malloc.h>|
 
@@ -217,7 +217,7 @@ loop #10
 resetting stack overflow
 ```
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
 Das folgende Beispiel zeigt die empfohlene Verwendung von **_resetstkoflw** in einem Programm, in dem strukturierte Ausnahmen in C++-Ausnahmen konvertiert werden.
 

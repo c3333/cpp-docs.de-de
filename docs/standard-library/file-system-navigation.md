@@ -1,22 +1,22 @@
 ---
 title: Dateisystemnavigation
-description: So verwenden Sie die C++-Standardbibliotheksdateisystem-APIs, um im Dateisystem zu navigieren.
+description: Verwenden der C++-Standard Bibliothek-Dateisystem-APIs, um im Dateisystem zu navigieren.
 ms.date: 04/13/2020
 ms.assetid: f7cc5f5e-a541-4e00-87c7-a3769ef6096d
-ms.openlocfilehash: 412d865582a14da7b8c31d9f07a43106b0c49491
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 26abe2fad6cacf8959507f15e967278e85254024
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368426"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87203285"
 ---
 # <a name="file-system-navigation"></a>Dateisystemnavigation
 
-Der Header \<filesystem> implementiert die technische Dateisystemspezifikation für C++ ISO/IEC TS 18822:2015 (endgültige Fassung: [ISO/IEC JTC 1/SC 22/WG 21 N4100](https://wg21.link/n4100)) und enthält Typen und Funktionen, mit denen Sie plattformunabhängigen Code für die Navigation im Dateisystem schreiben können. Da es plattformübergreifend ist, enthält es APIs, die für Windows-Systeme nicht relevant sind. Gibt z. B. `is_fifo(const path&)` unter Windows immer **false** zurück.
+Der \<filesystem> Header implementiert die technische Spezifikation des C++-Dateisystems ISO/IEC TS 18822:2015 (Abschließender Entwurf: [ISO/IEC JTC 1/SC 22/WG 21 N4100](https://wg21.link/n4100)) und verfügt über Typen und Funktionen, mit denen Sie plattformunabhängigen Code für die Navigation im Datei System schreiben können. Da er plattformübergreifend ist, enthält er APIs, die für Windows-Systeme nicht relevant sind. Beispielsweise `is_fifo(const path&)` gibt immer **`false`** unter Windows zurück.
 
 ## <a name="overview"></a>Übersicht
 
-Verwenden Sie die \<filesystem>-APIs für die folgenden Aufgaben:
+Verwenden Sie die \<filesystem> APIs für die folgenden Aufgaben:
 
 - Durchlaufen von Dateien und Verzeichnissen unter einem angegebenen Pfad
 
@@ -24,17 +24,17 @@ Verwenden Sie die \<filesystem>-APIs für die folgenden Aufgaben:
 
 - Erstellen, Zerlegen und Vergleichen von Pfaden
 
-- Erstellen, Kopieren und Löschen von Verzeichnissen
+- Erstellen, kopieren und Löschen von Verzeichnissen
 
 - Kopieren und Löschen von Dateien
 
 Weitere Informationen zu Datei-E/A mit der Standardbibliothek finden Sie unter [iostream-Programmierung](../standard-library/iostream-programming.md).
 
-## <a name="paths"></a>Paths
+## <a name="paths"></a>Pfade
 
 ### <a name="constructing-and-composing-paths"></a>Erstellen und Zerlegen von Pfaden
 
-In Windows (ab XP) werden Pfade systemintern in Unicode gespeichert. Die [Pfadklasse](../standard-library/path-class.md) führt automatisch alle erforderlichen Zeichenfolgenkonvertierungen durch. Es akzeptiert Argumente sowohl von Arrays mit `std::string` `std::wstring` großen als auch von schmalen Zeichen sowie von Typen, die als UTF8 oder UTF16 formatiert sind. Mit der `path` -Klasse werden Pfadtrennzeichen automatisch normalisiert. Sie können einen einzelnen Schrägstrich als Verzeichnistrennzeichen in Konstruktorargumenten verwenden. Mit diesem Trennzeichen können Sie dieselben Zeichenfolgen verwenden, um Pfade in Windows- und UNIX-Umgebungen zu speichern:
+In Windows (ab XP) werden Pfade systemintern in Unicode gespeichert. Die [path](../standard-library/path-class.md) -Klasse führt automatisch alle erforderlichen Zeichen folgen Konvertierungen durch. Sie akzeptiert Argumente sowohl für breit-als auch für schmale Zeichen Arrays und sowohl `std::string` `std::wstring` als auch als UTF8 oder UTF16 formatierte Typen. Mit der `path` -Klasse werden Pfadtrennzeichen automatisch normalisiert. Sie können einen einzelnen Schrägstrich als Verzeichnistrennzeichen in Konstruktorargumenten verwenden. Mit diesem Trennzeichen können Sie die gleichen Zeichen folgen zum Speichern von Pfaden in Windows-und UNIX-Umgebungen verwenden:
 
 ```cpp
 path pathToDisplay(L"/FileSystemTest/SubDir3");     // OK!
@@ -42,7 +42,7 @@ path pathToDisplay2(L"\\FileSystemTest\\SubDir3");  // Still OK as always
 path pathToDisplay3(LR"(\FileSystemTest\SubDir3)"); // Raw string literals are OK, too.
 ```
 
-Zum Verketten zweier Pfade können Sie überladene `/` - und `/=` -Operatoren verwenden, die analog zu den `+` - und `+=` -Operatoren in `std::string` und `std::wstring`sind. Das `path` Objekt liefert die Trennzeichen bequem, wenn Sie dies nicht tun.
+Zum Verketten zweier Pfade können Sie überladene `/` - und `/=` -Operatoren verwenden, die analog zu den `+` - und `+=` -Operatoren in `std::string` und `std::wstring`sind. `path`Wenn Sie dies nicht tun, stellt das-Objekt die Trennzeichen bereit.
 
 ```cpp
 path myRoot("C:/FileSystemTest");  // no trailing separator, no problem!
@@ -51,7 +51,7 @@ myRoot /= path("SubDirRoot");      // C:/FileSystemTest/SubDirRoot
 
 ### <a name="examining-paths"></a>Überprüfen von Pfaden
 
-Die Pfadklasse verfügt über mehrere Methoden, die Informationen zu verschiedenen Teilen des Pfads selbst zurückgeben. Diese Informationen unterscheiden sich von den Informationen über die Dateisystementität, auf die sie möglicherweise verweist. Sie können den Stamm, relativen Pfad, Dateinamen, die Dateierweiterung usw. abrufen. Sie können Pfadobjekte durchlaufen, um alle Ordner in der Hierarchie zu überprüfen. Das folgende Beispiel zeigt, wie ein Pfadobjekt iteriert wird. Und, wie sie Informationen über seine Teile abrufen.
+Die Path-Klasse verfügt über mehrere Methoden, die Informationen über verschiedene Teile des Pfads selbst zurückgeben. Diese Informationen unterscheiden sich von den Informationen über die Dateisystem Entität, auf die Sie möglicherweise verweist. Sie können den Stamm, relativen Pfad, Dateinamen, die Dateierweiterung usw. abrufen. Sie können Pfadobjekte durchlaufen, um alle Ordner in der Hierarchie zu überprüfen. Im folgenden Beispiel wird gezeigt, wie ein Pfad Objekt durchlaufen wird. Und zum Abrufen von Informationen über die Teile.
 
 ```cpp
 // filesystem_path_example.cpp
@@ -120,7 +120,7 @@ extension() = .txt
 
 ### <a name="comparing-paths"></a>Vergleichen von Pfaden
 
-Die `path` -Klasse überlädt die gleichen Vergleichsoperatoren wie `std::string` und `std::wstring`. Wenn Sie zwei Pfade vergleichen, führen Sie einen Zeichenfolgenvergleich durch, nachdem die Trennzeichen normalisiert wurden. Wenn ein nachgestellter Schrägstrich (oder umgekehrter Schrägstrich) fehlt, wird er nicht hinzugefügt, und das wirkt sich auf den Vergleich aus. Im folgenden Beispiel wird der Vergleich von Pfadwerten veranschaulicht:
+Die `path` -Klasse überlädt die gleichen Vergleichsoperatoren wie `std::string` und `std::wstring`. Wenn Sie zwei Pfade vergleichen, erstellen Sie einen Zeichen folgen Vergleich, nachdem die Trennzeichen normalisiert wurden. Wenn ein nach stehender Schrägstrich (oder umgekehrter Schrägstrich) fehlt, wird er nicht hinzugefügt und wirkt sich auf den Vergleich aus. Im folgenden Beispiel wird der Vergleich von Pfadwerten veranschaulicht:
 
 ```cpp
 wstring ComparePaths()
@@ -155,7 +155,7 @@ Um diesen Code auszuführen, fügen Sie ihn in das vollständige Beispiel oben v
 
 ### <a name="converting-between-path-and-string-types"></a>Konvertieren zwischen Pfad- und Zeichenfolgentypen
 
-Ein `path` -Objekt ist implizit in `std::wstring` oder `std::string`konvertibel. Das bedeutet, dass Sie einen Pfad an Funktionen wie [wofstream::open](../standard-library/basic-ofstream-class.md#open)übergeben können, wie in diesem Beispiel gezeigt:
+Ein `path` -Objekt ist implizit in `std::wstring` oder `std::string`konvertibel. Dies bedeutet, dass Sie einen Pfad an Funktionen wie [wofstream:: Open](../standard-library/basic-ofstream-class.md#open)übergeben können, wie im folgenden Beispiel gezeigt:
 
 ```cpp
 // filesystem_path_conversion.cpp
@@ -208,6 +208,6 @@ Press Enter to exit
 
 ## <a name="iterating-directories-and-files"></a>Durchlaufen von Verzeichnissen und Dateien
 
-Der \<filesystem>-Header stellt den [directory_iterator](../standard-library/directory-iterator-class.md)-Typ zum Durchlaufen der einzelnen Verzeichnisse und die [recursive_directory_iterator](../standard-library/recursive-directory-iterator-class.md)-Klasse zum rekursiven Durchlaufen eines Verzeichnisses und seiner Unterverzeichnisse bereit. Wenn Sie einen Iterator erstellt haben, indem Sie ihm ein `path` -Objekt übergeben haben, verweist der Iterator auf den ersten „directory_entry“ im Pfad. Erstellen Sie den End-Iterator, indem Sie den Standardkonstruktor aufrufen.
+Der \<filesystem> -Header stellt den [directory_iterator](../standard-library/directory-iterator-class.md) Typ bereit, um einzelne Verzeichnisse zu durchlaufen, und die [recursive_directory_iterator](../standard-library/recursive-directory-iterator-class.md) -Klasse, um rekursiv über ein Verzeichnis und seine Unterverzeichnisse zu iterieren. Wenn Sie einen Iterator erstellt haben, indem Sie ihm ein `path` -Objekt übergeben haben, verweist der Iterator auf den ersten „directory_entry“ im Pfad. Erstellen Sie den End-Iterator, indem Sie den Standardkonstruktor aufrufen.
 
-Wenn Sie ein Verzeichnis durchlaufen, gibt es verschiedene Arten von Elementen, die Sie möglicherweise entdecken. Zu diesen Elementen gehören Verzeichnisse, Dateien, symbolische Links, Socketdateien und andere. `directory_iterator` gibt die Elemente als [directory_entry](../standard-library/directory-entry-class.md)-Objekte zurück.
+Beim Durchlaufen eines Verzeichnisses können verschiedene Arten von Elementen entdeckt werden. Zu diesen Elementen gehören Verzeichnisse, Dateien, symbolische Verknüpfungen, Socketdateien und andere. `directory_iterator` gibt die Elemente als [directory_entry](../standard-library/directory-entry-class.md)-Objekte zurück.

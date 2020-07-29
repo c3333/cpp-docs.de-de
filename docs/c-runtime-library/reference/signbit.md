@@ -6,16 +6,16 @@ f1_keywords:
 - math/signbit
 helpviewer_keywords:
 - signbit function
-ms.openlocfilehash: ce2f632f11296bf71036011a57f242365951d7f2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7f8399c16d2abc70a50740b0629bc5d9b3a1f067
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62356328"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216738"
 ---
 # <a name="signbit"></a>signbit
 
-Bestimmt, ob ein Gleitkommawert negativ ist.
+Bestimmt, ob ein Gleit Komma Wert negativ ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,28 +39,28 @@ inline bool signbit(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu testende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**Signbit** gibt einen Wert ungleich 0 zurück (**"true"** in C++) Wenn das Argument *x* negativ oder minus unendlich ist. Es gibt 0 zurück (**"false"** in C++) Wenn das Argument negativ, positiv unendlich oder ein NaN-Wert ist.
+**SignBit** gibt einen Wert ungleich 0 (NULL **`true`** ) zurück (in C++), wenn das Argument *x* negativ oder minus unendlich ist. **`false`** Wenn das Argument nicht negativ, positiv unendlich oder NaN ist, wird 0 (in C++) zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**Signbit** ist ein Makro, wenn als C, und eine überladene Inlinefunktion beim Kompilieren als C++ kompiliert.
+**SignBit** ist ein Makro, wenn es als C kompiliert wird, und eine überladene Inline Funktion, wenn Sie als C++ kompiliert werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------------|-------------------------------|
-|**signbit**|\<math.h>|\<math.h> or \<cmath>|
+|**signbit**|\<math.h>|\<math.h> oder \<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [isfinite, _finite, _finitef](finite-finitef.md)<br/>
 [isinf](isinf.md)<br/>
 [isnan, _isnan, _isnanf](isnan-isnan-isnanf.md)<br/>

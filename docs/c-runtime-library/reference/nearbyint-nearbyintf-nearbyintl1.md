@@ -37,12 +37,12 @@ helpviewer_keywords:
 - nearbyintf function
 - nearbyintl function
 ms.assetid: dd39cb68-96b0-434b-820f-6ff2ea65584f
-ms.openlocfilehash: d9e7adb321d85c728c5185c1663fd7f945fc4a82
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 898544f5b191eb68e0ed6f17d7c3c7df849e8d11
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914578"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216855"
 ---
 # <a name="nearbyint-nearbyintf-nearbyintl"></a>nearbyint, nearbyintf, nearbyintl
 
@@ -78,17 +78,17 @@ Wenn erfolgreich, wird *x*(auf die nächste ganze Zahl gerundet) zurückgegeben,
 
 Fehler werden nicht über [_matherr](matherr.md)gemeldet; Diese Funktion meldet insbesondere keine **FE_INEXACT** Ausnahmen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der primäre Unterschied zwischen dieser Funktion und [rint](rint-rintf-rintl.md) besteht darin, dass diese Funktion nicht die inexakte Gleit Komma Ausnahme auslöst.
 
 Da die maximalen Gleitkommawerte genaue ganze Zahlen sind, überläuft diese Funktion nie von selbst. Stattdessen ist es möglich, dass der Rückgabewert je nach Version der verwendeten Funktion von der Ausgabe überlaufen wird.
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **nearbyint** aufzurufen können, die **float** -oder **Long** **Double** -Parameter verwenden und zurückgeben. In einem C-Programm übernimmt **nearbyint** immer zwei Double-Werte und gibt einen Double-Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **nearbyint** aufzurufen können, die-oder-Parameter verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **nearbyint** immer zwei Double-Werte und gibt einen Double-Wert zurück.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|

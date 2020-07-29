@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C++]
 ms.assetid: c4998e42-883c-4419-bbf4-36cdc979dd27
-ms.openlocfilehash: 90682ba699f6316cb6b38a3b78c44e853cd5473f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8a0674defb0f5e81e0d1417bab5a282cf82b82b3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172385"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87195693"
 ---
 # <a name="event--ccli-and-ccx"></a>event (C++/CLI und C++/CX)
 
@@ -40,8 +40,8 @@ modifiereventdelegate^ event_name
 
 ### <a name="parameters"></a>Parameter
 
-*modifier*<br/>
-Ein Modifizierer, der entweder für die Ereignisdeklaration oder eine Ereigniszugriffsmethode verwendet werden kann.  Mögliche Werte sind **static** und **virtual**.
+*Modifizierer*<br/>
+Ein Modifizierer, der entweder für die Ereignisdeklaration oder eine Ereigniszugriffsmethode verwendet werden kann.  Mögliche Werte sind **`static`** und **`virtual`** .
 
 *delegate*<br/>
 Der [Delegat](delegate-cpp-component-extensions.md), mit dessen Signatur der Ereignishandler übereinstimmen muss.
@@ -50,7 +50,7 @@ Der [Delegat](delegate-cpp-component-extensions.md), mit dessen Signatur der Ere
 Der Name des Ereignisses.
 
 *return_value*<br/>
-Der Rückgabewert der Ereigniszugriffsmethode.  Um überprüfbar zu sein, muss der Rückgabetyp **void** sein.
+Der Rückgabewert der Ereigniszugriffsmethode.  Der Rückgabetyp muss sein, um überprüft werden zu können **`void`** .
 
 *parameters*<br/>
 (Optional) Parameter für die `raise`-Methode, die mit der Signatur des Parameters *delegate* übereinstimmen.
@@ -104,8 +104,8 @@ modifiereventdelegate^ event_name
 
 ### <a name="parameters"></a>Parameter
 
-*modifier*<br/>
-Ein Modifizierer, der entweder für die Ereignisdeklaration oder eine Ereigniszugriffsmethode verwendet werden kann.  Mögliche Werte sind **static** und **virtual**.
+*Modifizierer*<br/>
+Ein Modifizierer, der entweder für die Ereignisdeklaration oder eine Ereigniszugriffsmethode verwendet werden kann.  Mögliche Werte sind **`static`** und **`virtual`** .
 
 *delegate*<br/>
 Der [Delegat](delegate-cpp-component-extensions.md), mit dessen Signatur der Ereignishandler übereinstimmen muss.
@@ -114,7 +114,7 @@ Der [Delegat](delegate-cpp-component-extensions.md), mit dessen Signatur der Ere
 Der Name des Ereignisses.
 
 *return_value*<br/>
-Der Rückgabewert der Ereigniszugriffsmethode.  Um überprüfbar zu sein, muss der Rückgabetyp **void** sein.
+Der Rückgabewert der Ereigniszugriffsmethode.  Der Rückgabetyp muss sein, um überprüft werden zu können **`void`** .
 
 *parameters*<br/>
 (Optional) Parameter für die `raise`-Methode, die mit der Signatur des Parameters *delegate* übereinstimmen.
@@ -230,7 +230,7 @@ OnClick: 7, 3.14159
 OnDblClick: Hello
 ```
 
-Im folgenden Codebeispiel wird die Logik zum Generieren der `raise`-Methode eines trivialen Ereignisses veranschaulicht: Wenn das Ereignis einen oder mehrere Abonnenten aufweist, wird beim impliziten oder expliziten Aufrufen der `raise`-Methode der Delegat aufgerufen. Wenn der Rückgabetyp des Delegaten nicht **void** lautet und keine Ereignisabonnenten vorhanden sind, gibt die `raise`-Methode den Standardwert für den Delegattyp zurück. Wenn keine Ereignisabonnenten vorhanden sind, wird beim Aufrufen der `raise`-Methode einfach zurückgegeben und keine Ausnahme ausgelöst. Wenn der Rückgabetyp des Delegaten nicht **void** lautet, wird der Delegattyp zurückgegeben.
+Im folgenden Codebeispiel wird die Logik zum Generieren der `raise`-Methode eines trivialen Ereignisses veranschaulicht: Wenn das Ereignis einen oder mehrere Abonnenten aufweist, wird beim impliziten oder expliziten Aufrufen der `raise`-Methode der Delegat aufgerufen. Wenn der Rückgabetyp des Delegaten nicht ist **`void`** und wenn keine Ereignis Abonnenten vorhanden sind, `raise` gibt die Methode den Standardwert für den Delegattyp zurück. Wenn keine Ereignisabonnenten vorhanden sind, wird beim Aufrufen der `raise`-Methode einfach zurückgegeben und keine Ausnahme ausgelöst. Wenn der delegatrückgabetyp nicht ist **`void`** , wird der Delegattyp zurückgegeben.
 
 ```cpp
 // trivial_events.cpp
@@ -272,4 +272,4 @@ int main() {
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

@@ -43,16 +43,16 @@ helpviewer_keywords:
 - _mkgmtime32 function
 - time, converting
 ms.assetid: b4ca2b67-e198-4f43-b3e2-e8ad6bd01867
-ms.openlocfilehash: 4b20073a2022c7da59a5e224a04051901b7b8a4f
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: cc8ccfc628a0f0c5dd649dbb5cf3bd0b552b5d11
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914656"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216881"
 ---
 # <a name="_mkgmtime-_mkgmtime32-_mkgmtime64"></a>_mkgmtime, _mkgmtime32, _mkgmtime64
 
-Konvertiert eine durch eine **struct** - **TM** dargestellte UTC-Zeit in eine UTC-Zeit, die durch einen **time_t** -Typ dargestellt wird.
+Konvertiert eine durch eine TM dargestellte UTC-Zeit **`struct`** **tm** in eine UTC-Zeit, die durch einen **time_t** Typ dargestellt wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -71,13 +71,13 @@ __time64_t _mkgmtime64(
 ### <a name="parameters"></a>Parameter
 
 *Timeptr*\
-Ein Zeiger auf die UTC-Zeit als zu konvertierende **Struktur** - **TM** .
+Ein Zeiger auf die UTC-Zeit als **`struct`** zu konvertierende **TM** -Zeit.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Eine Menge vom Typ **__time32_t** oder **__time64_t** , die die Anzahl der Sekunden darstellt, die seit dem 1. Januar 1970 (UTC) seit Mitternacht verstrichen sind. Wenn das Datum außerhalb des gültigen Bereichs liegt (siehe Abschnitt "Hinweise") oder die Eingabe nicht als gültige Zeit interpretiert werden kann, ist der Rückgabewert-1.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Funktionen **_mkgmtime32** und **_mkgmtime64** konvertieren eine UTC-Zeit in eine **__time32_t** oder **__time64_t** Typ, die die Uhrzeit in UTC darstellt. Verwenden Sie stattdessen **mktime**, **_mktime32**und **_mktime64** , um eine lokale Uhrzeit in die UTC-Zeit zu konvertieren.
 

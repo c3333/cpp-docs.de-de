@@ -1,40 +1,40 @@
 ---
 title: Compilerwarnung (Stufe 1) C4530
-description: Referenzhandbuch zur Microsoft C++-Compilerwarnung C4530.
+description: Referenzhandbuch zu Microsoft C++ Compiler Warning C4530.
 ms.date: 04/02/2020
 f1_keywords:
 - C4530
 helpviewer_keywords:
 - C4530
 ms.assetid: a04dcdb2-84db-459d-9e5e-4e743887465f
-ms.openlocfilehash: 9de88a4b0b6c7176ff82b68c92d09d9fe75a70b2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fe0a2b4c8eb881327f3e59d66e7e6941f0a2cad8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81369780"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230661"
 ---
 # <a name="compiler-warning-level-1-c4530"></a>Compilerwarnung (Stufe 1) C4530
 
-> C++-Ausnahmehandler verwendet, aber Abwickeln semantisch sind nicht aktiviert. Angeben von /EHsc
+> Der C++-Ausnahmehandler wurde verwendet, aber die Entlade Semantik ist nicht aktiviert. /EHsc angeben
 
-Der Code verwendet die C++-Ausnahmebehandlung, [aber /EHsc](../../build/reference/eh-exception-handling-model.md) war nicht in den Compileroptionen enthalten.
+Der Code verwendet die C++-Ausnahmebehandlung, aber [/EHsc](../../build/reference/eh-exception-handling-model.md) war nicht in den Compileroptionen enthalten.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der Compiler **`/EHsc`** benötigt die Option zum Erstellen von C++-Code, der dem C++-Standard für die Ausnahmebehandlung folgt. Die Standard-C++-Absemantik vom *Abwickeln* gibt an, dass Objekte und Stapelrahmen, die zwischen dem Ort, an dem eine Ausnahme ausgelöst wird, und dem Ort, an dem sie gefangen wird, zerstört und ihre Ressourcen wiederhergestellt werden müssen. Dieser Prozess wird als *Entladen des Stapels*bezeichnet.
+Der Compiler benötigt die **`/EHsc`** Option zum Erstellen von C++-Code, der auf den C++-Standard für die Ausnahmebehandlung folgt. Die Entladungs *Semantik* Standard C++ gibt an, dass Objekte und Stapel Rahmen, die zwischen dem Auslösen einer Ausnahme und dem erfassten Vorgang erstellt werden, zerstört und ihre Ressourcen wieder hergestellt werden müssen. Dieser Prozess wird als *entwickeln des Stapels*bezeichnet.
 
-Die **`/EHsc`** Option weist den Compiler an, Code zu generieren, der die Destruktoren für automatische Speicherobjekte aufruft, wenn eine Ausnahme den enthaltenden Stapelrahmen durchläuft. *Automatische Speicherobjekte* sind Objekte, die auf dem Stapel zugewiesen sind, z. B. lokale Variablen. Es wird als automatischer Speicher bezeichnet, da es automatisch zugewiesen wird, wenn Funktionen aufgerufen werden, und automatisch freigegeben wird, wenn sie zurückgegeben werden. Ein *Stapelrahmen* sind die Daten, die auf dem Stapel platziert werden, wenn eine Funktion aufgerufen wird, zusammen mit ihrer automatischen Speicherung.
+Die- **`/EHsc`** Option weist den Compiler an, Code zu generieren, der die debugtoren für automatische Speicher Objekte aufruft, wenn eine Ausnahme den enthaltenden Stapel Rahmen durchläuft. *Automatische Speicher* Objekte sind Objekte, die auf dem Stapel zugeordnet sind, z. b. lokale Variablen. Er wird als automatischer Speicher bezeichnet, da er automatisch zugewiesen wird, wenn Funktionen aufgerufen werden, und bei Rückgabe automatisch freigegeben wird. Ein *Stapel Rahmen* ist die Daten, die auf dem Stapel abgelegt werden, wenn eine Funktion zusammen mit dem automatischen Speicher aufgerufen wird.
 
-Wenn eine Ausnahme ausgelöst wird, kann sie mehrere Stapelrahmen durchlaufen, bevor sie abgefangen wird. Diese Stapelrahmen müssen aufgewickelt werden, da die Ausnahme sie in umgekehrter Aufrufreihenfolge durchläuft. Die automatischen Speicherobjekte in jedem Stapelrahmen müssen zerstört werden, um ihre Ressourcen sauber wiederherzustellen. Es ist derselbe Zerstörungs- und Wiederherstellungsprozess, der automatisch stattfindet, wenn eine Funktion normal zurückkehrt.
+Wenn eine Ausnahme ausgelöst wird, kann Sie mehrere Stapel Rahmen durchlaufen, bevor Sie abgefangen wird. Diese Stapel Rahmen müssen entwickelt werden, wenn die Ausnahme Sie in umgekehrter Aufruf Reihenfolge durchläuft. Die automatischen Speicher Objekte in jedem Stapel Rahmen müssen zerstört werden, um Ihre Ressourcen ordnungsgemäß wiederherzustellen. Dabei handelt es sich um denselben Zerstörungs-und Wiederherstellungsprozess, der automatisch erfolgt, wenn eine Funktion normal zurückgibt.
 
-Wenn **`/EHsc`** die Option nicht aktiviert ist, werden automatische Speicherobjekte in den Stapelrahmen zwischen der Auswerfenfunktion und der Funktion, bei der die Ausnahme abgefangen wird, nicht zerstört. Nur die automatischen Speicherobjekte, die in einem **Try-** oder **Catch-Block** erstellt wurden, werden zerstört, was zu erheblichen Ressourcenlecks und anderem unerwarteten Verhalten führen kann.
+Wenn die **`/EHsc`** Option nicht aktiviert ist, werden automatische Speicher Objekte in den Stapel Rahmen zwischen der auslösenden Funktion und der Funktion, in der die Ausnahme abgefangen wird, nicht zerstört. Nur die in einem-oder-Block erstellten automatischen Speicher Objekte **`try`** **`catch`** werden zerstört, was zu erheblichen Ressourcenverlusten und anderem unerwartetem Verhalten führen kann.
 
-Wenn in Ihrer ausführbaren Datei möglicherweise keine Ausnahmen ausgelöst werden können, ignorieren Sie diese Warnung möglicherweise ignorieren. Für einige Codes sind möglicherweise andere Optionen für die Ausnahmebehandlung erforderlich. Weitere Informationen finden Sie unter [/EH](../../build/reference/eh-exception-handling-model.md).
+Wenn in der ausführbaren Datei keine Ausnahmen ausgelöst werden können, wird diese Warnung möglicherweise ignoriert. In einigen Codes sind möglicherweise andere Optionen für die Ausnahmebehandlung erforderlich. Weitere Informationen finden Sie unter [/eh](../../build/reference/eh-exception-handling-model.md).
 
 ## <a name="example"></a>Beispiel
 
-Die folgende Stichprobe generiert C4530:
+Im folgenden Beispiel wird C4530 generiert:
 
 ```cpp
 // C4530.cpp
@@ -44,4 +44,4 @@ int main() {
 }
 ```
 
-Kompilieren **`/EHsc`** Sie das Beispiel mit, um die Warnung zu beheben.
+Kompilieren Sie das Beispiel mit **`/EHsc`** , um die Warnung zu beheben.

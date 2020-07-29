@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - registration_script attribute
 ms.assetid: 786f8072-9187-4163-a979-7a604dd4c888
-ms.openlocfilehash: 780f3d41676d01458f47542d6f0862a278edff6a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 53b5cb0cb36d9d6627f16f99cbb0d142af8cee6d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214577"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217219"
 ---
 # <a name="registration_script"></a>registration_script
 
@@ -25,12 +25,12 @@ Führt das angegebene benutzerdefinierte Registrierungs Skript aus.
 
 ### <a name="parameters"></a>Parameter
 
-*Web*<br/>
-Der vollständige Pfad zu einer benutzerdefinierten Registrierungs Skriptdatei (. rgs). Der Wert **None**(z. b. `script = "none"`) gibt an, dass die Co-Klasse keine Registrierungsanforderungen hat.
+*script*<br/>
+Der vollständige Pfad zu einer benutzerdefinierten Registrierungs Skriptdatei (. rgs). Der Wert **None**(z. b.) gibt an, `script = "none"` dass die Co-Klasse keine Registrierungsanforderungen hat.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Registration_script** C++ -Attribut führt das durch das *Skript*angegebene benutzerdefinierte Registrierungs Skript aus. Wenn dieses Attribut nicht angegeben wird, wird eine RGS-Standarddatei (die Informationen zum Registrieren der Komponente enthält) verwendet. Weitere Informationen zu RGS-Dateien finden Sie in [der ATL-Registrierungs Komponente (Registrierungs Komponente, Registrierungs Komponente)](../../atl/atl-registry-component-registrar.md).
+Das **Registration_script** C++-Attribut führt das durch das *Skript*angegebene benutzerdefinierte Registrierungs Skript aus. Wenn dieses Attribut nicht angegeben wird, wird eine RGS-Standarddatei (die Informationen zum Registrieren der Komponente enthält) verwendet. Weitere Informationen zu RGS-Dateien finden Sie in [der ATL-Registrierungs Komponente (Registrierungs Komponente, Registrierungs Komponente)](../../atl/atl-registry-component-registrar.md).
 
 Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden.
 
@@ -63,9 +63,9 @@ class CMyClass:public IFace {};
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
+|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass` , `progid` oder `vi_progid` .|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
@@ -74,4 +74,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 
 [COM-Attribute](com-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[rdx](rdx.md)
+[RDX](rdx.md)

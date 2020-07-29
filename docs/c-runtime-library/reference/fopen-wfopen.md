@@ -38,12 +38,12 @@ helpviewer_keywords:
 - files [C++], opening
 - fopen function
 ms.assetid: e868993f-738c-4920-b5e4-d8f2f41f933d
-ms.openlocfilehash: d468226028928e3edfe67cc7f9b9eec06e06bd56
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 2bf1a1001f661b1ba972e7a5e699276591dda08a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914891"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216959"
 ---
 # <a name="fopen-_wfopen"></a>fopen, _wfopen
 
@@ -64,7 +64,7 @@ FILE *_wfopen(
 
 ### <a name="parameters"></a>Parameter
 
-*Einfügen*<br/>
+*filename*<br/>
 Dateiname
 
 *mode*<br/>
@@ -76,7 +76,7 @@ Jede dieser Funktionen gibt einen Zeiger auf die geöffnete Datei zurück. Ein N
 
 Weitere Informationen finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Funktion " **f Open** " öffnet die Datei, die durch *filename*angegeben wird. Standardmäßig wird eine schmale *namens* Zeichenfolge mit der ANSI-Codepage (CP_ACP) interpretiert. In Windows-Desktopanwendungen kann dies in die OEM-Codepage (CP_OEMCP) geändert werden, indem Sie die [SetFileApisToOEM](/windows/win32/api/fileapi/nf-fileapi-setfileapistooem) -Funktion verwenden. Mithilfe der [arefileapisansi](/windows/win32/api/fileapi/nf-fileapi-arefileapisansi) -Funktion können Sie ermitteln, ob *filename* mit der ANSI-Codepage oder der standardmäßigen OEM-Codepage des Systems interpretiert wird. **_wfopen** ist eine breit Zeichen Version von " **f Open**". die Argumente für **_wfopen** sind Zeichen folgen mit breit Zeichen. Andernfalls Verhalten sich **_wfopen** und " **f Open** " identisch. Die Verwendung von **_wfopen** wirkt sich nicht auf den codierten Zeichensatz aus, der im Dateistream verwendet wird.
 
@@ -90,11 +90,11 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 " **f Open** " unterstützt Unicode-Dateistreams. Um eine Unicode-Datei zu öffnen, übergeben Sie ein **CCS** -Flag, das die gewünschte Codierung angibt, wie folgt an **fopen**.
 
-> **Datei \*FP = f Open ("newFile. txt", "RT +, CCS =**_Encoding_**");**
+> **Datei \* FP = f Open ("newfile.txt", "RT +, CCS =**_Encoding_**");**
 
 Zulässige *Codierungs* Werte sind **Unicode**, **UTF-8**und **UTF-16LE**.
 
-Wenn eine Datei im Unicode-Modus geöffnet wird, übersetzen Eingabefunktionen die aus der Datei gelesenen Daten in UTF-16-Daten, die als Typ **wchar_t**gespeichert werden. Funktionen, die in eine im Unicode-Modus geöffnete Datei schreiben, erwarten Puffer, die UTF-16-Daten enthalten, die als Typ **wchar_t**gespeichert sind. Wenn eine Datei als UTF-8 kodiert ist, dann werden UTF-16-Daten beim Schreiben in UTF-8 übersetzt, und die UTF-8-kodierten Inhalte der Datei werden beim Lesen in UTF-16 übersetzt. Der Versuch, eine ungerade Anzahl von Bytes im Unicode-Modus zu lesen oder zu schreiben, führt zu einem [Parametervalidierungsfehler](../../c-runtime-library/parameter-validation.md) . Wenn Sie Daten lesen oder schreiben möchten, die in Ihrem Programm als UTF-8 gespeichert sind, verwenden Sie den Text- oder Binärdateienmodus anstelle eines Unicode-Modus. Sie sind für jede erforderliche Kodierungsübersetzung verantwortlich.
+Wenn eine Datei im Unicode-Modus geöffnet wird, übersetzen Eingabefunktionen die aus der Datei gelesenen Daten in UTF-16-Daten, die als Typ gespeichert werden **`wchar_t`** . Funktionen, die in eine im Unicode-Modus geöffnete Datei schreiben, erwarten Puffer, die UTF-16-Daten enthalten, die als Typ gespeichert werden **`wchar_t`** . Wenn eine Datei als UTF-8 kodiert ist, dann werden UTF-16-Daten beim Schreiben in UTF-8 übersetzt, und die UTF-8-kodierten Inhalte der Datei werden beim Lesen in UTF-16 übersetzt. Der Versuch, eine ungerade Anzahl von Bytes im Unicode-Modus zu lesen oder zu schreiben, führt zu einem [Parametervalidierungsfehler](../../c-runtime-library/parameter-validation.md) . Wenn Sie Daten lesen oder schreiben möchten, die in Ihrem Programm als UTF-8 gespeichert sind, verwenden Sie den Text- oder Binärdateienmodus anstelle eines Unicode-Modus. Sie sind für jede erforderliche Kodierungsübersetzung verantwortlich.
 
 Wenn die Datei bereits vorhanden ist und zum Lesen oder Anhängen geöffnet ist, bestimmt die Bytereihenfolge-Marke (BOM), sofern in der Datei vorhanden, die Codierung. Die BOM-Codierung hat Vorrang vor der durch das **CCS** -Flag angegebenen Codierung. Die **CCS** -Codierung wird nur verwendet, wenn keine BOM vorhanden ist oder es sich um eine neue Datei handelt.
 
@@ -158,9 +158,9 @@ Die folgenden Optionen können an den- *Modus* angehängt werden, um zusätzlich
 |*mode* modusmodifizierer|Verhalten|
 |-|-|
 | **scher** | Aktivieren Sie das commitflag für den zugeordneten *Dateinamen* , damit der Inhalt des Datei Puffers direkt auf den Datenträger geschrieben wird, wenn entweder **fflush** oder **_flushall** aufgerufen wird. |
-| **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardeinstellung. Dabei wird auch das globale Commitflag überschrieben, wenn Sie das Programm mit COMMODE.OBJ verknüpfen. Der Standardwert des globalen Commitflags lautet "no-commit", es sei denn, Sie verknüpfen das Programm explizit mit COMMODE.OBJ (siehe [Link Options](../../c-runtime-library/link-options.md)). |
-| **Nr** | Gibt an, dass die Datei nicht von untergeordneten Prozessen geerbt wird. |
-| **Hymnen** | Gibt an, dass das Zwischenspeichern für den sequenziellen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
+| **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardoption. Dabei wird auch das globale Commitflag überschrieben, wenn Sie das Programm mit COMMODE.OBJ verknüpfen. Der Standardwert des globalen Commitflags lautet "no-commit", es sei denn, Sie verknüpfen das Programm explizit mit COMMODE.OBJ (siehe [Link Options](../../c-runtime-library/link-options.md)). |
+| **N** | Gibt an, dass die Datei nicht von untergeordneten Prozessen geerbt wird. |
+| **S** | Gibt an, dass das Zwischenspeichern für den sequenziellen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
 | **R** | Gibt an, dass das Zwischenspeichern für den zufälligen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
 | **T** | Gibt an, dass eine Datei temporär ist. Wenn möglich, wird sie nicht auf den Datenträger geschrieben. |
 | **D** | Gibt an, dass eine Datei temporär ist. Sie wird gelöscht, wenn der letzte Dateizeiger geschlossen wird. |
@@ -168,29 +168,29 @@ Die folgenden Optionen können an den- *Modus* angehängt werden, um zusätzlich
 
 Gültige Zeichen für die *moduszeichenfolge, die in* **fopen** verwendet wird, und **_fdopen** entsprechen *Oflag* -Argumenten, die wie folgt in [_open](open-wopen.md) und [_sopen](sopen-wsopen.md)verwendet werden.
 
-|Zeichen in der *Mode* -Zeichenfolge|Entsprechender *Oflag* -Wert \_für Open\_/sopen|
+|Zeichen in der *Mode* -Zeichenfolge|Entsprechender *Oflag* -Wert für \_ Open/ \_ sopen|
 |-------------------------------|----------------------------------------------------|
-|**ein**|**\_O\_wronly** &#124; ** \_o\_Append** (in der Regel ** \_o\_wronly** &#124; ** \_o\_** - ** \_Anweisung\_&#124; o Append**)|
-|**a +**|**\_O\_rdwr** &#124; ** \_o\_Append** (i. d. ** \_r. o\_rdwr** &#124; ** \_o\_Append** &#124; ** \_o\_| anfüat** )|
-|**r**|**\_O\_rdonly**|
-|**r +**|**\_O\_rdwr**|
-|**w**|**\_O\_wronly** (in der Regel ** \_\_o wronly** &#124; ** \_o\_** - ** \_&#124;\_o trunc**)|
-|**w +**|**\_O\_rdwr** (in der Regel ** \_o\_rdwr** &#124; ** \_o\_** &#124; ** \_o\_trunc**)|
-|**b**|**\_O\_-Binärdatei**|
-|**Bund**|**\_O\_-Text**|
+|**ein**|** \_ O \_ wronly** &#124; ** \_ o \_ Append** (in der Regel ** \_ o \_ wronly** &#124; ** \_ o \_ ** - ** \_ Anweisung &#124; o \_ Append**)|
+|**a +**|** \_ O \_ rdwr** &#124; ** \_ o \_ Append** (i. d. ** \_ r. o \_ rdwr** &#124; ** \_ o \_ Append** &#124; ** \_ o | \_ anfüat** )|
+|**r**|**\_O \_ rdonly**|
+|**r +**|**\_O \_ rdwr**|
+|**w**|** \_ O \_ wronly** (in der Regel ** \_ o \_ wronly** &#124; ** \_ o \_ ** -&#124; ** \_ o \_ trunc**)|
+|**w +**|** \_ O \_ rdwr** (in der Regel ** \_ o \_ rdwr** &#124; ** \_ o \_ ** &#124; ** \_ o \_ trunc**)|
+|**b**|**\_O- \_ Binärdatei**|
+|**Bund**|**\_O- \_ Text**|
 |**scher**|Keine|
 |**n**|Keine|
-|**Hymnen**|**\_\_sequenziell**|
-|**R**|**\_O\_Random**|
-|**T**|**\_O\_kurzlebig**|
-|**D**|**\_O\_temporär**|
-|**CCS = Unicode**|**\_O\_wtext**|
-|**CCS = UTF-8**|**\_O\_UTF8**|
-|**CCS = UTF-16LE**|**\_O\_UTF16**|
+|**S**|**\_\_sequenziell**|
+|**R**|**\_O \_ Random**|
+|**T**|**\_O \_ kurzlebig**|
+|**D**|**\_O \_ temporär**|
+|**CCS = Unicode**|**\_O \_ wtext**|
+|**CCS = UTF-8**|**\_O \_ UTF8**|
+|**CCS = UTF-16LE**|**\_O \_ UTF16**|
 
 Wenn Sie den **RB** -Modus verwenden, müssen Sie Ihren Code nicht portieren. Wenn Sie davon ausgehen, den Großteil einer großen Datei zu lesen, oder die Netzwerkleistung nicht relevant ist, können Sie auch überlegen, ob Sie die Speicher Abbild-Win32-Dateien als Option verwenden möchten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
@@ -201,7 +201,7 @@ Wenn Sie den **RB** -Modus verwenden, müssen Sie Ihren Code nicht portieren. We
 
 Die *Optionen "* **c**", " **n**", " **t** **", "** **R**", " **t**" und " **D** " sind Microsoft-Erweiterungen für " **f Open** " und " **_fdopen** .
 
-## <a name="example-1"></a>Beispiel 1
+## <a name="example-1"></a>Beispiel 1
 
 Das folgende Programm öffnet zwei Dateien.  Er verwendet **fclose** , um die erste Datei zu schließen, und **_fcloseall** , um alle verbleibenden Dateien zu schließen.
 

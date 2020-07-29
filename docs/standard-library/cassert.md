@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - cassert header
 ms.assetid: 6ead15a3-ac45-4075-be8e-350bca995c26
-ms.openlocfilehash: 58ebd91fb4fa32cf31d2c49429d0445b92fe0c82
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: b28f4554610d37b881494748f75499f46cd9e8d9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68449907"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230232"
 ---
 # <a name="ltcassertgt"></a>&lt;cassert&gt;
 
-Schließt den C-Standard Bibliotheks \<Header Assert. h > ein und fügt die verknüpften `std` Namen zum-Namespace hinzu. Durch einschließen dieses Headers wird sichergestellt, dass die mit externer Verknüpfung im C-Standard Bibliotheks Header deklarierten `std` Namen im-Namespace deklariert werden.
+Schließt den C-Standard Bibliotheks Header ein \<assert.h> und fügt die verknüpften Namen zum- `std` Namespace hinzu. Durch einschließen dieses Headers wird sichergestellt, dass die mit externer Verknüpfung im C-Standard Bibliotheks Header deklarierten Namen im- `std` Namespace deklariert werden.
 
 > [!NOTE]
-> \<Assert. h > das `static_assert` Makro nicht definiert.
+> \<assert.h>definiert das **`static_assert`** Makro nicht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,13 +32,13 @@ Schließt den C-Standard Bibliotheks \<Header Assert. h > ein und fügt die verk
 #define assert(E)
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`assert(E)`ist nur konstant, wenn NDEBUG definiert ist, `assert` wo zuletzt definiert oder neu definiert wurde oder *E* in bool konvertiert in " **true**" ausgewertet wird.
+`assert(E)`ist nur konstant, wenn NDEBUG definiert ist, wo `assert` zuletzt definiert oder neu definiert wurde oder *E* in bool konvertiert wird **`true`** .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[assert Macro, _assert, _wassert](../c-runtime-library/reference/assert-macro-assert-wassert.md)\
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Übersicht über die C++-Standardbibliothek](../standard-library/cpp-standard-library-overview.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Assert-Makro, _ASSERT _wassert](../c-runtime-library/reference/assert-macro-assert-wassert.md)\
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Übersicht über die C++-Standard Bibliothek](../standard-library/cpp-standard-library-overview.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

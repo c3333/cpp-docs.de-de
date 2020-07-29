@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - helpstringdll attribute [C++]
 ms.assetid: 121271fa-f061-492b-b87f-bbfcf4b02e7b
-ms.openlocfilehash: 4ec0d959b2fc10fc34bfc7050a1970359dae5bbc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 46323a7ff4164111b48aed24b12bef5d400afacc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168121"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217245"
 ---
 # <a name="helpstringdll"></a>helpstringdll
 
@@ -30,7 +30,7 @@ Die DLL-Datei, die für die Suche nach Dokument Zeichenfolgen verwendet wird
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Helpstringdll** C++ -Attribut verfügt über die gleiche Funktionalität wie das-Attribut von [Helpstringdll](/windows/win32/Midl/helpstringdll) .
+Das **Helpstringdll** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut von [Helpstringdll](/windows/win32/Midl/helpstringdll) .
 
 ## <a name="example"></a>Beispiel
 
@@ -53,8 +53,8 @@ __interface IMyI
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Schnittstelle**, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **Schnittstelle**, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -63,6 +63,6 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
+[Schnittstellen Attribute](interface-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)
+[Methoden Attribute](method-attributes.md)

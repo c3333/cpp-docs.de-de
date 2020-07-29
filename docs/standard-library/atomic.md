@@ -1,6 +1,6 @@
 ---
 title: '&lt;atomic&gt;'
-description: Beschreibt die Typen und Funktionen, die im Atomic-Header der Standard C++ Bibliothek verfügbar sind.
+description: Beschreibt die Typen und Funktionen, die im Atomic-Header der C++-Standard Bibliothek verfügbar sind.
 ms.date: 12/06/2019
 f1_keywords:
 - <atomic>
@@ -49,12 +49,12 @@ f1_keywords:
 - atomic/std::atomic_int64_t
 - atomic/std::atomic_uint_least64_t
 ms.assetid: e79a6b9f-52ff-48da-9554-654c4e1999f6
-ms.openlocfilehash: d11e8bf2067c1c8525725ae74e713ac834d89ec4
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 3c5f732dbda701eb7744b1b25a9a8e7426f7a3e2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74991169"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87203898"
 ---
 # <a name="ltatomicgt"></a>&lt;atomic&gt;
 
@@ -66,7 +66,7 @@ Definiert Klassen und Klassen Vorlagen, die zum Erstellen von Typen verwendet we
 #include <atomic>
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > In Code, der mit [/clr: pure](../build/reference/clr-common-language-runtime-compilation.md)kompiliert wird, wird dieser Header blockiert. Sowohl **/clr: pure** als auch **/clr: Safe** sind in Visual Studio 2017 und höheren Versionen veraltet.
@@ -77,13 +77,13 @@ Ein atomischer Vorgang hat zwei Schlüsseleigenschaften, die dabei helfen, mehre
 
 - Basierend auf dem Argument [memory_order](../standard-library/atomic-enums.md#memory_order_enum), richtet ein atomischer Vorgang Anforderungen für die Sortierung für die Sichtbarkeit der Effekte anderer atomischer Vorgänge im gleichen Thread ein. Daher unterbindet dieser Vorgang Compileroptimierungen, die die Anforderungen für die Sortierung verletzen.
 
-Auf manchen Plattformen ist es möglicherweise nicht möglich, atomische Vorgänge für bestimme Typen effizient zu implementieren, ohne `mutex`-Sperren zu verwenden. Ein atomischer Typ ist *sperrfrei*, wenn für keine der atomischen Vorgänge auf diesem Typ Sperren verwendet werden.
+Auf manchen Plattformen ist es möglicherweise nicht möglich, atomische Vorgänge für bestimme Typen effizient zu implementieren, ohne `mutex`-Sperren zu verwenden. Ein Atomischer Typ ist *sperrfrei* , wenn für keine atomarischen Vorgänge in diesem Typ Sperren verwendet werden.
 
-**C++ 11**: in Signal Handlern können Sie atomarische Vorgänge für ein Objekt ausführen `obj` wenn `obj.is_lock_free()` oder `atomic_is_lock_free(x)` true sind.
+**C++ 11**: in Signal Handlern können atomarische Vorgänge für ein Objekt durchgeführt `obj` werden, `obj.is_lock_free()` Wenn oder `atomic_is_lock_free(x)` true sind.
 
-Die Klasse [atomic_flag](../standard-library/atomic-flag-structure.md) stellt einen minimalen atomaren Typ bereit, der ein **Boolesches** Flag enthält. Die Vorgänge sind immer sperrfrei.
+Die-Klasse [atomic_flag](../standard-library/atomic-flag-structure.md) stellt einen minimalen atomaren Typ bereit, der ein- **`bool`** Flag enthält. Die Vorgänge sind immer sperrfrei.
 
-Die Klassen Vorlage `atomic<T>` speichert ein Objekt seines Argument Typs `T` und ermöglicht atomarischen Zugriff auf den gespeicherten Wert. Sie können das Objekt durch Verwendung jedes Typs instanziieren, der mithilfe von [memcpy](../c-runtime-library/reference/memcpy-wmemcpy.md) kopiert und mithilfe von [memcmp](../c-runtime-library/reference/memcmp-wmemcmp.md) auf Gleichheit getestet werden kann. Sie können es insbesondere mit benutzerdefinierten Typen, die diese Anforderungen erfüllen, und oftmals auch mit Gleitkommatypen verwenden.
+Die Klassen Vorlage `atomic<T>` speichert ein Objekt seines Argument Typs `T` und ermöglicht atomarischen Zugriff auf diesen gespeicherten Wert. Sie können das Objekt durch Verwendung jedes Typs instanziieren, der mithilfe von [memcpy](../c-runtime-library/reference/memcpy-wmemcpy.md) kopiert und mithilfe von [memcmp](../c-runtime-library/reference/memcmp-wmemcmp.md) auf Gleichheit getestet werden kann. Sie können es insbesondere mit benutzerdefinierten Typen, die diese Anforderungen erfüllen, und oftmals auch mit Gleitkommatypen verwenden.
 
 Die Vorlage verfügt über eine Reihe von Spezialisierungen für integrale Typen und eine Teilspezialisierung für Zeiger. Diese Spezialisierungsmöglichkeiten stellen zusätzliche Vorgänge bereit, die über die primäre Vorlage nicht verfügbar sind.
 
@@ -101,22 +101,22 @@ Für jeden ganzzahligen Typ gibt es einen entsprechenden benannten atomaren Typ,
 
 |`atomic_integral`-Typ|Integrale Typen|`atomic_is_lock_free`-Makro|
 |----------------------------|-------------------|---------------------------------|
-|`atomic_char`|**char**|ATOMIC_CHAR_LOCK_FREE|
-|`atomic_schar`|**signed char**|ATOMIC_CHAR_LOCK_FREE|
-|`atomic_uchar`|**unsigned char**|ATOMIC_CHAR_LOCK_FREE|
-|`atomic_char16_t`|`char16_t`|ATOMIC_CHAR16_T_LOCK_FREE|
-|`atomic_char32_t`|`char32_t`|ATOMIC_CHAR32_T_LOCK_FREE|
-|`atomic_wchar_t`|**wchar_t**|ATOMIC_WCHAR_T_LOCK_FREE|
-|`atomic_short`|**short**|ATOMIC_SHORT_LOCK_FREE|
-|`atomic_ushort`|**unsigned short**|ATOMIC_SHORT_LOCK_FREE|
-|`atomic_int`|**int**|ATOMIC_INT_LOCK_FREE|
-|`atomic_uint`|**unsigned int**|ATOMIC_INT_LOCK_FREE|
-|`atomic_long`|**long**|ATOMIC_LONG_LOCK_FREE|
-|`atomic_ulong`|**unsigned long**|ATOMIC_LONG_LOCK_FREE|
-|`atomic_llong`|**langes long**|ATOMIC_LLONG_LOCK_FREE|
-|`atomic_ullong`|**Ganzzahl ohne Vorzeichen long long**|ATOMIC_LLONG_LOCK_FREE|
+|`atomic_char`|**`char`**|ATOMIC_CHAR_LOCK_FREE|
+|`atomic_schar`|**`signed char`**|ATOMIC_CHAR_LOCK_FREE|
+|`atomic_uchar`|**`unsigned char`**|ATOMIC_CHAR_LOCK_FREE|
+|`atomic_char16_t`|**`char16_t`**|ATOMIC_CHAR16_T_LOCK_FREE|
+|`atomic_char32_t`|**`char32_t`**|ATOMIC_CHAR32_T_LOCK_FREE|
+|`atomic_wchar_t`|**`wchar_t`**|ATOMIC_WCHAR_T_LOCK_FREE|
+|`atomic_short`|**`short`**|ATOMIC_SHORT_LOCK_FREE|
+|`atomic_ushort`|**`unsigned short`**|ATOMIC_SHORT_LOCK_FREE|
+|`atomic_int`|**`int`**|ATOMIC_INT_LOCK_FREE|
+|`atomic_uint`|**`unsigned int`**|ATOMIC_INT_LOCK_FREE|
+|`atomic_long`|**`long`**|ATOMIC_LONG_LOCK_FREE|
+|`atomic_ulong`|**`unsigned long`**|ATOMIC_LONG_LOCK_FREE|
+|`atomic_llong`|**`long long`**|ATOMIC_LLONG_LOCK_FREE|
+|`atomic_ullong`|**`unsigned long long`**|ATOMIC_LLONG_LOCK_FREE|
 
-Typedef-Namen bestehen für Spezialisierungen der atomischen Vorlage für einige der Typen, die im Header \<inttypes.h> definiert sind.
+TypeDef-Namen sind für Spezialisierungs Informationen der atomaren Vorlage für einige der Typen vorhanden, die im-Header definiert sind \<inttypes.h> .
 
 |Atomischer Typ|Typedef-Name|
 |-----------------|------------------|
@@ -153,25 +153,25 @@ Typedef-Namen bestehen für Spezialisierungen der atomischen Vorlage für einige
 
 ## <a name="structs"></a>Strukturen
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[atomic-Struktur](../standard-library/atomic-structure.md)|Beschreibt ein Objekt, das auf einem gespeicherten Wert atomische Vorgänge ausführt.|
-|[atomic_flag-Struktur](../standard-library/atomic-flag-structure.md)|Beschreibt ein Objekt, das ein **bool** -Flag atomisch festlegt und löscht.|
+|[atomic_flag-Struktur](../standard-library/atomic-flag-structure.md)|Beschreibt ein Objekt, das ein Flag atomisch festlegt und löscht **`bool`** .|
 
 ## <a name="enums"></a>Enumerationen
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[memory_order-Enumeration](../standard-library/atomic-enums.md#memory_order_enum)|Stellt symbolische Namen für Synchronisierungsvorgänge auf Speicheradressen bereit. Diese Vorgänge wirken sich auf das Sichtbarwerden der Zuweisung eines Thread in einem anderen aus.|
 
-## <a name="functions"></a>Funktionen
+## <a name="functions"></a>Functions
 
-In der folgenden Liste verfügen die Funktionen, die nicht auf `_explicit` enden, über die Semantik des entsprechenden `_explicit`, mit dem Unterschied, dass Sie über die impliziten [memory_order](../standard-library/atomic-enums.md#memory_order_enum) Argumente `memory_order_seq_cst`verfügen.
+In der folgenden Liste verfügen die Funktionen, die nicht auf enden `_explicit` , über die Semantik des entsprechenden `_explicit` , mit dem Unterschied, dass Sie über die impliziten [memory_order](../standard-library/atomic-enums.md#memory_order_enum) Argumente von verfügen `memory_order_seq_cst` .
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[atomic_compare_exchange_strong](../standard-library/atomic-functions.md#atomic_compare_exchange_strong)|Führt einen *atomischen Vergleichs- und Austauschvorgang* aus.|
-|[atomic_compare_exchange_strong_explicit](../standard-library/atomic-functions.md#atomic_compare_exchange_strong_explicit)|Führt einen *atomischen Vergleichs- und Austauschvorgang* aus.|
+|[atomic_compare_exchange_strong](../standard-library/atomic-functions.md#atomic_compare_exchange_strong)|Führt einen *atomischen Vergleichs-und Austausch* Vorgang aus.|
+|[atomic_compare_exchange_strong_explicit](../standard-library/atomic-functions.md#atomic_compare_exchange_strong_explicit)|Führt einen *atomischen Vergleichs-und Austausch* Vorgang aus.|
 |[atomic_compare_exchange_weak](../standard-library/atomic-functions.md#atomic_compare_exchange_weak)|Führt einen *schwachen atomischen Vergleichs- und Austauschvorgang* aus.|
 |[atomic_compare_exchange_weak_explicit](../standard-library/atomic-functions.md#atomic_compare_exchange_weak_explicit)|Führt einen *schwachen atomischen Vergleichs- und Austauschvorgang* aus.|
 |[atomic_exchange](../standard-library/atomic-functions.md#atomic_exchange)|Ersetzt einen gespeicherten Wert.|
@@ -186,10 +186,10 @@ In der folgenden Liste verfügen die Funktionen, die nicht auf `_explicit` enden
 |[atomic_fetch_sub_explicit](../standard-library/atomic-functions.md#atomic_fetch_sub_explicit)|Subtrahiert einen angegebenen Wert von einem vorhandenen gespeicherten Wert.|
 |[atomic_fetch_xor](../standard-library/atomic-functions.md#atomic_fetch_xor)|Führt ein bitweises `exclusive or` auf einem angegebenen Wert und einem vorhandenen gespeicherten Wert aus.|
 |[atomic_fetch_xor_explicit](../standard-library/atomic-functions.md#atomic_fetch_xor_explicit)|Führt ein bitweises `exclusive or` auf einem angegebenen Wert und einem vorhandenen gespeicherten Wert aus.|
-|[atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear)|Legt das-Flag in einem `atomic_flag`-Objekt auf **false**fest.|
-|[atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit)|Legt das-Flag in einem `atomic_flag`-Objekt auf **false**fest.|
-|[atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set)|Legt das-Flag in einem `atomic_flag`-Objekt auf **true**fest.|
-|[atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit)|Legt das-Flag in einem `atomic_flag`-Objekt auf **true**fest.|
+|[atomic_flag_clear](../standard-library/atomic-functions.md#atomic_flag_clear)|Legt das-Flag in einem- `atomic_flag` Objekt auf fest **`false`** .|
+|[atomic_flag_clear_explicit](../standard-library/atomic-functions.md#atomic_flag_clear_explicit)|Legt das-Flag in einem- `atomic_flag` Objekt auf fest **`false`** .|
+|[atomic_flag_test_and_set](../standard-library/atomic-functions.md#atomic_flag_test_and_set)|Legt das-Flag in einem- `atomic_flag` Objekt auf fest **`true`** .|
+|[atomic_flag_test_and_set_explicit](../standard-library/atomic-functions.md#atomic_flag_test_and_set_explicit)|Legt das-Flag in einem- `atomic_flag` Objekt auf fest **`true`** .|
 |[atomic_init](../standard-library/atomic-functions.md#atomic_init)|Legt den gespeicherten Wert in einem `atomic`-Objekt fest.|
 |[atomic_is_lock_free](../standard-library/atomic-functions.md#atomic_is_lock_free)|Gibt an, ob die atomischen Vorgänge auf einem bestimmten Objekt sperrfrei sind.|
 |[atomic_load](../standard-library/atomic-functions.md#atomic_load)|Ruft atomisch einen Wert ab.|
@@ -200,7 +200,7 @@ In der folgenden Liste verfügen die Funktionen, die nicht auf `_explicit` enden
 |[atomic_thread_fence](../standard-library/atomic-functions.md#atomic_thread_fence)|Fungiert als *Umgrenzung*, die Anforderungen an die Speichersortierung in Bezug auf andere Umgrenzungen einrichtet.|
 |[kill_dependency](../standard-library/atomic-functions.md#kill_dependency)|Unterbricht eine mögliche Abhängigkeitskette.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

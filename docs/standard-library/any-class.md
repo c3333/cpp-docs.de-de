@@ -1,5 +1,5 @@
 ---
-title: Jede Klasse
+title: beliebige Klasse
 ms.date: 04/04/2019
 f1_keywords:
 - any/std::any
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - any/std::any::reset
 - any/std::any::swap
 - any/std::any::type
-ms.openlocfilehash: 050276da665ab6ed3eb53d9e65bfea06b88bcbea
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 66e74a7fa7f35aae9ac9e1f3ba7520e8d3f9b3f2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68268752"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87203961"
 ---
-# <a name="any-class"></a>Jede Klasse
+# <a name="any-class"></a>beliebige Klasse
 
-Speichert, die eine Instanz eines beliebigen Typs, das erfüllt die Anforderungen der Konstruktor oder es wurde kein Wert, der angibt bezeichnet den Zustand der Klasse ein Objekt.
+Speichert eine Instanz eines beliebigen Typs, der den konstruktoranforderungen entspricht, oder es ist kein Wert vorhanden, der als Zustand der Klasse beliebiges Objekt bezeichnet wird.
 
-Die gespeicherte Instanz wird den enthaltenen Wert aufgerufen werden. Zwei Zustände sind identisch, wenn entweder beide keinen Wert haben oder jeweils einen Wert und die enthaltenen Werte identisch sind.
+Die gespeicherte Instanz wird als enthaltener Wert bezeichnet. Zwei Zustände sind identisch, wenn beide entweder keinen Wert haben oder beide einen Wert aufweisen und die enthaltenen Werte identisch sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,27 +40,27 @@ class any
 
 |||
 |-|-|
-|[any](#any)|Konstruiert ein Objekt vom Typ `any`.|
+|[irgendeiner](#any)|Konstruiert ein Objekt vom Typ `any`.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |||
 |-|-|
-|[emplace](#emplace)|Legt einen beliebiger Wert fest.|
-|[has_value](#has_value)|Gibt **"true"** , wenn einen Wert vorhanden.|
-|[reset](#reset)|Setzt ein alle.|
-|[swap](#swap)|Tauscht zwei Objekte.|
-|[Typ](#type)|Gibt den Typ any zurück.|
+|[emplace](#emplace)|Legt einen beliebigen Wert fest.|
+|[has_value](#has_value)|Gibt zurück, **`true`** Wenn ein beliebiger einen Wert aufweist.|
+|[reset](#reset)|Setzt eine beliebige zurück.|
+|[swap](#swap)|Tauscht zwei beliebige-Objekte aus.|
+|[type](#type)|Gibt den beliebigen Typ zurück.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[operator=](#op_eq)|Alle mit einer Kopie eines anderen alle ersetzt werden.|
+|[Operator =](#op_eq)|Ersetzt alle durch eine Kopie einer anderen.|
 
-## <a name="any"></a> Alle
+## <a name="any"></a><a name="any"></a>irgendeiner
 
-Konstruiert ein Objekt vom Typ `any`. Enthält auch einen Destruktor.
+Konstruiert ein Objekt vom Typ `any`. Schließt außerdem einen Dekonstruktor ein.
 
 ```cpp
 constexpr any() noexcept;
@@ -76,9 +76,9 @@ template <class T, class U, class... Args>
 ~any();
 ```
 
-## <a name="emplace"></a> emplace-
+## <a name="emplace"></a><a name="emplace"></a>emplace
 
-Legt einen beliebiger Wert fest.
+Legt einen beliebigen Wert fest.
 
 ```cpp
 template <class T, class... Args>
@@ -87,17 +87,17 @@ template <class T, class U, class... Args>
     decay_t<T>& emplace(initializer_list<U>, Args&&...);
 ```
 
-## <a name="has_value"></a> has_value
+## <a name="has_value"></a><a name="has_value"></a>has_value
 
-Gibt **"true"** , wenn einen Wert vorhanden.
+Gibt zurück, **`true`** Wenn ein beliebiger einen Wert aufweist.
 
 ```cpp
 bool has_value() const noexcept;
 ```
 
-## <a name="op_eq"></a> Operator =
+## <a name="operator"></a><a name="op_eq"></a>Operator =
 
-Alle mit einer Kopie eines anderen alle ersetzt werden.
+Ersetzt alle durch eine Kopie einer anderen.
 
 ```cpp
 any& operator=(const any& right);
@@ -109,27 +109,27 @@ template <class T>
 ### <a name="parameters"></a>Parameter
 
 *Richting*\
-Alle in einem kopiert wird.
+Die, die in alle kopiert werden.
 
-## <a name="reset"></a> Zurücksetzen
+## <a name="reset"></a><a name="reset"></a>Festlegen
 
-Setzt ein alle.
+Setzt eine beliebige zurück.
 
 ```cpp
 void reset() noexcept;
 ```
 
-## <a name="swap"></a> Swap
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
-Tauscht zwei Objekte.
+Tauscht zwei beliebige-Objekte aus.
 
 ```cpp
 void swap(any& rhs) noexcept;
 ```
 
-## <a name="type"></a> Typ
+## <a name="type"></a><a name="type"></a>-Typ
 
-Gibt den Typ any zurück.
+Gibt den beliebigen Typ zurück.
 
 ```cpp
 const type_info& type() const noexcept;

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - max_is attribute
 ms.assetid: 7c851f5c-6649-4d77-a792-247c37d8f560
-ms.openlocfilehash: b4931962febb1e68701aa3fe271e08f3aa8d9238
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2e30595a549eefc6a5eecc27be98ded5221dcc16
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166756"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87201309"
 ---
 # <a name="max_is"></a>max_is
 
@@ -30,7 +30,7 @@ Mindestens ein C-sprach Ausdruck. Leere Argument Slots sind zulässig.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Max_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Max_is](/windows/win32/Midl/max-is) -Attribut "Mittel".
+Das **Max_is** C++-Attribut verfügt über die gleiche Funktionalität wie das [Max_is](/windows/win32/Midl/max-is) -Attribut "Mittel".
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -38,8 +38,8 @@ Das **Max_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das 
 
 |||
 |-|-|
-|**Betrifft**|Feld in **Struktur** oder **Union**, Schnittstellenparameter, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Feld in **`struct`** oder **`union`** , Schnittstellenparameter, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|**size_is**|
 
@@ -52,7 +52,7 @@ Ein Beispiel für die Angabe eines Abschnitts eines Arrays finden Sie unter [Fir
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
 [first_is](first-is.md)<br/>
 [last_is](last-is.md)<br/>

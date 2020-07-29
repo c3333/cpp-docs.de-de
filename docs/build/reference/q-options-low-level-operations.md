@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Q compiler option [C++]
 - -Q compiler option [C++]
 - /Q compiler option [C++]
-ms.openlocfilehash: 722a63a43e5e08fe80b26f908c7ae92df2fdb29c
-ms.sourcegitcommit: 0f4ee9056d65043fa5a715f0ad1031c0ed30e2b6
+ms.openlocfilehash: f5342071cef76bcc736f128c344279898a61c462
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77034518"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231493"
 ---
 # <a name="q-options-low-level-operations"></a>/Q-Optionen (Operationen auf niedriger Ebene)
 
@@ -20,9 +20,9 @@ Mit den **/Q** -Compileroptionen können Sie die folgenden Compilervorgänge auf
 
 - [/Qfast_transcendentals (Erzwingen von schnellen transzendenten)](qfast-transcendentals-force-fast-transcendentals.md): generiert schnelle transzendente.
 
-- [/QIfist (unterdrücken von _ftol)](qifist-suppress-ftol.md): unterdrückt `_ftol`, wenn eine Konvertierung von einem Gleit kommatyp in einen ganzzahligen Typ erforderlich ist (nur x86).
+- [/QIfist (unterdrücken _ftol)](qifist-suppress-ftol.md): `_ftol` unterdrückt, wenn eine Konvertierung von einem Gleit kommatyp in einen ganzzahligen Typ erforderlich ist (nur x86).
 
-- [/Qimprecise_fwaits (Remove-Vorgänge in try-Blöcken)](qimprecise-fwaits-remove-fwaits-inside-try-blocks.md): entfernt `fwait` Befehle innerhalb von `try`-Blöcken.
+- [/Qimprecise_fwaits (Remove-Vorgänge innerhalb von try-Blöcken)](qimprecise-fwaits-remove-fwaits-inside-try-blocks.md): entfernt `fwait` Befehle in- **`try`** Blöcken.
 
 - [/QIntel-JCC-Erratum](qintel-jcc-erratum.md): verringert die Leistungseinbußen, die durch den Intel Jump Conditional Code (JCC)-Erratum-mikrocodeupdate verursacht werden.
 
@@ -43,4 +43,4 @@ Mit den **/Q** -Compileroptionen können Sie die folgenden Compilervorgänge auf
 ## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

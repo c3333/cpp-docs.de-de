@@ -34,12 +34,12 @@ helpviewer_keywords:
 - rint function
 - rintl function
 ms.assetid: 312ae3e6-278c-459a-9393-11b8f87d9184
-ms.openlocfilehash: 5e2b3d7a571a3005b1c52eacaa85e1ede6d30b77
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 009f56de506b50f81502a2aad7632244b069d09a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82917719"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216764"
 ---
 # <a name="rint-rintf-rintl"></a>rint, rintf, rintl
 
@@ -72,13 +72,13 @@ Die **rint** -Funktionen geben einen Gleit Komma Wert zurück, der die nächste 
 |± ∞, QNAN, IND|Keine|Keine|
 |Abbrüche|EXCEPTION_FLT_UNDERFLOW|Keine|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **rint** aufzurufen, die **float** -und **Long** **Double** -Werte akzeptieren und zurückgeben. In einem C-Programm nimmt **rint** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **rint** aufzurufen, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **rint** immer und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
@@ -124,7 +124,7 @@ rintl(-2.500000) is -3
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>
 [floor, floorf, floorl](floor-floorf-floorl.md)<br/>
 [fmod, fmodf](fmod-fmodf.md)<br/>

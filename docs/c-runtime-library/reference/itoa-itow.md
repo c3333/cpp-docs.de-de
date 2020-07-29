@@ -113,12 +113,12 @@ helpviewer_keywords:
 - converting numbers, to strings
 - _itoa function
 ms.assetid: 46592a00-77bb-4e73-98c0-bf629d96cea6
-ms.openlocfilehash: 424ee4fb732811bffc6a83c0de57cd35fe747c42
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 28e6e2300c96e6236ffc4fd927d8153a1f8bcd13
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914669"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216933"
 ---
 # <a name="itoa-_itoa-ltoa-_ltoa-ultoa-_ultoa-_i64toa-_ui64toa-_itow-_ltow-_ultow-_i64tow-_ui64tow"></a>itoa, _itoa, ltoa, _ltoa, ultoa, _ultoa, _i64toa, _ui64toa, _itow, _ltow, _ultow, _i64tow, _ui64tow
 
@@ -195,9 +195,9 @@ Länge des Puffers in Einheiten des Zeichen Typs. Dieser Parameter wird aus dem 
 
 Jede dieser Funktionen gibt einen Zeiger auf den *Puffer*zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Funktionen **_itoa**, **_ltoa**, **_ultoa**, **_i64toa**und **_ui64toa** konvertieren die Ziffern des angegebenen *Wert* Arguments in eine auf NULL endenden Zeichenfolge und speichern das Ergebnis (bis zu 33 Zeichen für **_itoa**, **_ltoa**und **_ultoa**und 65 für **_i64toa** und **_ui64toa**) im *Puffer*. Wenn *Basis* dem Wert 10 entspricht und der *Wert* negativ ist, ist das erste Zeichen der gespeicherten Zeichenfolge das**-** Minuszeichen (). Die Funktionen **_itow**, **_ltow**, **_ultow**, **_i64tow**und **_ui64tow** sind breit Zeichen Versionen von **_itoa**, **_ltoa**, **_ultoa**, **_i64toa**bzw. **_ui64toa**.
+Die Funktionen **_itoa**, **_ltoa**, **_ultoa**, **_i64toa**und **_ui64toa** konvertieren die Ziffern des angegebenen *Wert* Arguments in eine auf NULL endenden Zeichenfolge und speichern das Ergebnis (bis zu 33 Zeichen für **_itoa**, **_ltoa**und **_ultoa**und 65 für **_i64toa** und **_ui64toa**) im *Puffer*. Wenn *Basis* dem Wert 10 entspricht und der *Wert* negativ ist, ist das erste Zeichen der gespeicherten Zeichenfolge das Minuszeichen ( **-** ). Die Funktionen **_itow**, **_ltow**, **_ultow**, **_i64tow**und **_ui64tow** sind breit Zeichen Versionen von **_itoa**, **_ltoa**, **_ultoa**, **_i64toa**bzw. **_ui64toa**.
 
 > [!IMPORTANT]
 > Diese Funktionen können über das Ende eines Puffers hinaus schreiben, der zu klein ist. Um Pufferüberläufe zu verhindern, stellen Sie sicher, dass der *Puffer* groß genug ist, um die konvertierten Ziffern sowie das nachfolgende NULL-Zeichen und ein Zeichen zu speichern. Der Missbrauch dieser Funktionen kann schwerwiegende Sicherheitsprobleme im Code verursachen.
@@ -240,7 +240,7 @@ Wenn Sie eines dieser Makros in einer Zeichen folgen Konvertierungs Funktion ver
 |**_i64toa** **_i64tow**|16<br/>10<br/>8<br/>2|**_MAX_I64TOSTR_BASE16_COUNT**<br/>**_MAX_I64TOSTR_BASE10_COUNT**<br/>**_MAX_I64TOSTR_BASE8_COUNT**<br/>**_MAX_I64TOSTR_BASE2_COUNT**|
 |**_ui64toa** **_ui64tow**|16<br/>10<br/>8<br/>2|**_MAX_U64TOSTR_BASE16_COUNT**<br/>**_MAX_U64TOSTR_BASE10_COUNT**<br/>**_MAX_U64TOSTR_BASE8_COUNT**<br/>**_MAX_U64TOSTR_BASE2_COUNT**|
 
-In diesem Beispiel wird ein Konvertierungs Zähler Makro verwendet, um einen Puffer zu definieren, der groß genug ist, um einen **langen langen** Wert in Basis 2 zu enthalten:
+In diesem Beispiel wird ein Konvertierungs Zähler Makro verwendet, um einen Puffer zu definieren, der groß genug ist, um **`unsigned long long`** in Basis 2 zu enthalten
 
 ```cpp
 #include <wchar.h>
@@ -264,7 +264,7 @@ int main()
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**i|**, **l| a**, **ulto a**|\<stdlib.h>|
 |**_itoa**, **_ltoa**, **_ultoa**, **_i64toa**, **_ui64toa**|\<stdlib.h>|

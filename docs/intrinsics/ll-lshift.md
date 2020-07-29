@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ll_lshift intrinsic
 - __ll_lshift intrinsic
 ms.assetid: fe98f733-426d-44b3-8f24-5d0d6d44bd94
-ms.openlocfilehash: 158ecbf39320d70b51f1f498a0b689ba58fec363
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 988284b81c9f04ee5d7f09f8a2f173a689f9fb55
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70221821"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230518"
 ---
 # <a name="__ll_lshift"></a>__ll_lshift
 
@@ -40,21 +40,21 @@ in Die Anzahl der zu Verschiebungs enden Bits.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die Maske wurde von Bits `nBit` nach links verschoben.
+Die Maske wurde von Bits nach links verschoben `nBit` .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`__ll_lshift`|x86, x64|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie das Programm für die 64-Bit-Architektur kompilieren und `nBit` größer als 63 ist, ist `nBit` die Anzahl der zu Verschiebe Bits modulo 64. Wenn Sie das Programm für die 32-Bit-Architektur kompilieren und `nBit` größer als 31 ist, ist `nBit` die Anzahl der zu Verschiebe Bits modulo 32.
+Wenn Sie das Programm für die 64-Bit-Architektur kompilieren und `nBit` größer als 63 ist, ist die Anzahl der zu Verschiebe Bits `nBit` modulo 64. Wenn Sie das Programm für die 32-Bit-Architektur kompilieren und `nBit` größer als 31 ist, ist die Anzahl der zu Verschiebe Bits `nBit` modulo 32.
 
-Der `ll` im Namen gibt an, dass es sich um einen `long long` Vorgang`__int64`auf () handelt.
+Der `ll` im Namen gibt an, dass es sich um einen Vorgang auf **`long long`** ( **`__int64`** ) handelt.
 
 ## <a name="example"></a>Beispiel
 
@@ -77,14 +77,14 @@ int main()
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 10000
 ```
 
 > [!NOTE]
-> Es ist keine unsignierte Version des Left Shift-Vorgangs vorhanden. Der Grund hierfür `__ll_lshift` ist, dass bereits einen nicht signierten Eingabeparameter verwendet. Anders als bei der rechten Schicht gibt es keine Vorzeichen Abhängigkeit für die linke Schicht, da das unwichtigste Bit im Ergebnis immer auf 0 (null) festgelegt ist, unabhängig vom Vorzeichen des verschobenen Werts.
+> Es ist keine unsignierte Version des Left Shift-Vorgangs vorhanden. Der Grund hierfür ist, dass `__ll_lshift` bereits einen nicht signierten Eingabeparameter verwendet. Anders als bei der rechten Schicht gibt es keine Vorzeichen Abhängigkeit für die linke Schicht, da das unwichtigste Bit im Ergebnis immer auf 0 (null) festgelegt ist, unabhängig vom Vorzeichen des verschobenen Werts.
 
 **Ende Microsoft-spezifisch**
 
@@ -92,4 +92,4 @@ int main()
 
 [__ll_rshift](../intrinsics/ll-rshift.md)\
 [__ull_rshift](../intrinsics/ull-rshift.md)\
-[Systeminterne Compilerfunktionen](../intrinsics/compiler-intrinsics.md)
+[Intrinsische Compilerfunktionen](../intrinsics/compiler-intrinsics.md)

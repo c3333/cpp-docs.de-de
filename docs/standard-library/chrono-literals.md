@@ -2,16 +2,16 @@
 title: chrono-Literale
 ms.date: 11/04/2016
 ms.assetid: 1a9e23b1-256f-4570-8226-5fa7364fb032
-ms.openlocfilehash: 28ba8138d41cf1bd72911959f07b0d3c9e5fdc0e
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: d8416580df09a8a466678702cb20ba4ddf37eb28
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68244899"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230155"
 ---
 # <a name="chrono-literals"></a>chrono-Literale
 
-(C++14) Der \<chrono>-Header definiert zwölf [benutzerdefinierte Literale](../cpp/user-defined-literals-cpp.md), um die Nutzung von Literalen für Stunden, Minuten, Sekunden, Millisekunden, Mikrosekunden und Nanosekunden zu ermöglichen. Jedes benutzerdefinierte Literal verfügt über eine integrale und eine Gleitkommaüberladung. Die Literale werden im Inlinenamespace „literals::chrono_literals“ definiert, der automatisch im Bereich enthalten ist, wenn „std::chrono“ Teil des Bereichs ist.
+(C++ 14) Der- \<chrono> Header definiert 12 [benutzerdefinierte Literale](../cpp/user-defined-literals-cpp.md) , um die Verwendung von literalen zu vereinfachen, die Stunden, Minuten, Sekunden, Millisekunden, Mikrosekunden und Nanosekunden darstellen. Jedes benutzerdefinierte Literal verfügt über eine integrale und eine Gleitkommaüberladung. Die Literale werden im Inlinenamespace „literals::chrono_literals“ definiert, der automatisch im Bereich enthalten ist, wenn „std::chrono“ Teil des Bereichs ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -60,7 +60,7 @@ inline namespace literals {
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die Literale, verwenden eine **long long** Rückgabe des Arguments, einen Wert oder einen entsprechenden Typ. Die Literale, die ein Gleitkommaargument verwenden, geben eine [Dauer](../standard-library/duration-class.md) zurück.
+Die Literale, die ein-Argument annehmen, **`long long`** geben einen Wert oder den entsprechenden Typ zurück. Die Literale, die ein Gleitkommaargument verwenden, geben eine [Dauer](../standard-library/duration-class.md) zurück.
 
 ## <a name="example"></a>Beispiel
 

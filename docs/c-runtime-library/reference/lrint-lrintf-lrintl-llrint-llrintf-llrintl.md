@@ -52,12 +52,12 @@ helpviewer_keywords:
 - llrintf function
 - llrintl function
 ms.assetid: 28ccd5b3-5e6f-434f-997d-a21d51b8ce7f
-ms.openlocfilehash: effb146cac201a21651f21e3e5c040fbb68819a6
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: c692b97598e2342628c3171fc22aeead9c864d60
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911374"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216907"
 ---
 # <a name="lrint-lrintf-lrintl-llrint-llrintf-llrintl"></a>lrint, lrintf, lrintl, llrint, llrintf, llrintl
 
@@ -120,9 +120,9 @@ Wenn erfolgreich, wird der abgerundete ganzzahlige Wert von *x*zurückgegeben.
 |-----------|------------|
 |*x* liegt außerhalb des Bereichs des Rückgabe Typs.<br /><br /> *x* = ± \<br /><br /> *x* = Nan|Löst **FE_INVALID** aus und gibt NULL (0) zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **lrint** und **llrint** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen. In einem C-Programm nehmen **lrint** und **llrint** immer einen **Double**-Vorgang auf.
+Da C++ das überladen zulässt, können Sie über Ladungen von **lrint** und **llrint** aufzurufen, die **`float`** -und- **`long double`** Typen verwenden. In einem C-Programm nehmen **lrint** und **llrint** immer eine auf **`double`** .
 
 Wenn *x* die Gleit Komma Entsprechung eines ganzzahligen Werts nicht darstellt, erhöhen diese Funktionen **FE_INEXACT**.
 
@@ -130,7 +130,7 @@ Wenn *x* die Gleit Komma Entsprechung eines ganzzahligen Werts nicht darstellt, 
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|

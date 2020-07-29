@@ -46,12 +46,12 @@ helpviewer_keywords:
 - scalbnf function
 - scalblnf function
 ms.assetid: df2f1543-8e39-4af4-a5cf-29307e64807d
-ms.openlocfilehash: 3d450459b4f428e5d5f1f02eaa71a126e4f710df
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 351f56629435754f74565d9674874d5a73915773
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82918187"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231376"
 ---
 # <a name="scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl"></a>scalbn, scalbnf, scalbnl, scalbln, scalblnf, scalblnl
 
@@ -107,7 +107,7 @@ long double scalblnl(
 *x*<br/>
 Gleitkommawert.
 
-*Exp*<br/>
+*exp*<br/>
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -116,15 +116,15 @@ Die **scalbn** -Funktionen geben den Wert von *x* \* **FLT_RADIX**<sup>Exp</sup>
 
 Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**FLT_RADIX** ist in \<float. h> als systemeigene Gleit Komma Basis definiert. auf binären Systemen hat es den Wert 2, und **scalbn** entspricht [LDE XP](ldexp.md).
+**FLT_RADIX** ist in als System eigenes Gleit Komma Basis definiert \<float.h> ; in binären Systemen hat es den Wert 2, und **scalbn** entspricht [LDE XP](ldexp.md).
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **scalbln** aufzurufen, die **float** -oder **Long** **Double** -Typen verwenden und zurückgeben. In einem C-Programm nimmt **scalbn** immer einen **Double** -und einen **int** -Wert an und gibt einen **Double**-Wert zurück. **scalbln** nimmt immer einen **Double** -Wert und einen **Long** -Wert und gibt einen **Double**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **scalbln** aufzurufen, die-oder-Typen verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **scalbn** immer und und **`double`** **`int`** gibt einen zurück **`double`** , und **scalbln** übernimmt immer **`double`** und **`long`** und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
@@ -158,7 +158,7 @@ int main( void )
 
 ## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [frexp](frexp.md)<br/>
 [ldexp](ldexp.md)<br/>
 [modf, modff, modfl](modf-modff-modfl.md)<br/>

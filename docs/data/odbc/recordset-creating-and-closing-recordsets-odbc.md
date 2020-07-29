@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ODBC recordsets, closing
 - ODBC recordsets, opening
 ms.assetid: 8d2aac23-4396-4ce2-8c60-5ecf1b360d3d
-ms.openlocfilehash: 41b1c11e2c820b6e5777e1af426c5e1253ed5468
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1ff6f3050ff8ca0be746b91216300632323dcd85
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367078"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216517"
 ---
 # <a name="recordset-creating-and-closing-recordsets-odbc"></a>Recordset: Erstellen und Schließen von Recordsets (ODBC)
 
@@ -74,10 +74,10 @@ if(!rsStudent.Open(CRecordset::snapshot, NULL, CRecordset::readOnly))
 // Use the snapshot to operate on its records...
 ```
 
-Nachdem Sie `Open` aufgerufen haben, verwenden Sie die Memberfunktionen und Datenmember des Objekts, um mit den Datensätzen zu arbeiten. In einigen Fällen möchten Sie das Recordset möglicherweise erneut abfragen oder aktualisieren, damit die Änderungen einbezogen werden, die in der Datenquelle vorgenommen wurden. Weitere Informationen finden Sie unter [Recordset: Requerying a Recordset (ODBC)](../../data/odbc/recordset-requerying-a-recordset-odbc.md).
+Nachdem Sie `Open` aufgerufen haben, verwenden Sie die Memberfunktionen und Datenmember des Objekts, um mit den Datensätzen zu arbeiten. In einigen Fällen möchten Sie das Recordset möglicherweise erneut abfragen oder aktualisieren, damit die Änderungen einbezogen werden, die in der Datenquelle vorgenommen wurden. Weitere Informationen finden Sie unter [Recordset: anweisen eines Recordsets (ODBC)](../../data/odbc/recordset-requerying-a-recordset-odbc.md).
 
 > [!TIP]
-> Die Verbindungszeichenfolge, die Sie während der Entwicklung verwenden, ist möglicherweise nicht mit der identisch, die die eigentlichen Benutzer benötigen. Ideen zur Verallgemeinerung Ihrer Anwendung in diesem Zusammenhang finden Sie unter [Datenquelle: Verwalten von Verbindungen (ODBC)](../../data/odbc/data-source-managing-connections-odbc.md).
+> Die Verbindungszeichenfolge, die Sie während der Entwicklung verwenden, ist möglicherweise nicht mit der identisch, die die eigentlichen Benutzer benötigen. Ideen zum generalisieren Ihrer Anwendung in dieser Hinsicht finden Sie unter [Datenquelle: Verwalten von Verbindungen (ODBC)](../../data/odbc/data-source-managing-connections-odbc.md).
 
 ## <a name="setting-recordset-options"></a><a name="_core_setting_recordset_options"></a> Festlegen von Recordset-Optionen
 
@@ -106,12 +106,12 @@ Wenn Sie nicht weiter mit dem Recordset arbeiten möchten, müssen Sie es lösch
 
 1. Zerstören Sie das Recordset-Objekt.
 
-   Wenn Sie das Objekt auf dem Stapelrahmen einer Funktion deklariert haben, wird das Objekt automatisch zerstört, wenn es aus dem Gültigkeitsbereich herausfällt. Verwenden Sie andernfalls den **delete**-Operator.
+   Wenn Sie das Objekt auf dem Stapelrahmen einer Funktion deklariert haben, wird das Objekt automatisch zerstört, wenn es aus dem Gültigkeitsbereich herausfällt. Andernfalls verwenden Sie den- **`delete`** Operator.
 
 `Close` bewirkt, dass das `HSTMT`-Handle des Recordsets freigegeben wird. „Close“ zerstört nicht das C++ Objekt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
 [Recordset: Scrollen (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)<br/>
-[Recordset: Hinzufügen, Aktualisieren und Löschen von Datensätzen (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)
+[Recordset: Hinzufügen, aktualisieren und Löschen von Datensätzen (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)

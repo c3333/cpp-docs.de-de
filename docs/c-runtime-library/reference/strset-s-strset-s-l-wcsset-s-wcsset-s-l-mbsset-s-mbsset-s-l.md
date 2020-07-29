@@ -66,12 +66,12 @@ helpviewer_keywords:
 - _tcsset_s function
 - mbsset_s function
 ms.assetid: dceb2909-6b41-4792-acb7-888e45bb8b35
-ms.openlocfilehash: 0338d84cbea864eca561c37f1d107a08f1c1e01e
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 520e272955884b6701f12576e2f5d5c86fe25684
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911146"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216712"
 ---
 # <a name="_strset_s-_strset_s_l-_wcsset_s-_wcsset_s_l-_mbsset_s-_mbsset_s_l"></a>_strset_s, _strset_s_l, _wcsset_s, _wcsset_s_l, _mbsset_s, _mbsset_s_l
 
@@ -120,7 +120,7 @@ errno_t _mbsset_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*SRT*<br/>
+*str*<br/>
 Festzulegende mit NULL endende Zeichenfolge.
 
 *numberOfElements*<br/>
@@ -138,9 +138,9 @@ Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
 Diese Funktionen überprüfen ihre Argumente. Wenn *Str* ein NULL-Zeiger ist, oder wenn das " *zahlofelements* "-Argument kleiner oder gleich 0 ist oder der übergebenen Block nicht auf NULL endet, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " zurück und legen " **errno** " auf " **EINVAL**" fest.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_strset_s** -Funktion legt alle Zeichen von *Str* auf *c* (konvertiert in **char**) mit Ausnahme des abschließenden NULL-Zeichens fest. **_wcsset_s** und **_mbsset_s** sind breit Zeichen-und multibytezeichenversionen von **_strset_s**. Die Datentypen der Argumente und Rückgabewerte unterscheiden sich entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **_strset_s** -Funktion legt alle Zeichen von *Str* auf *c* (konvertiert in **`char`** ) außer dem abschließenden NULL Zeichen fest. **_wcsset_s** und **_mbsset_s** sind breit Zeichen-und multibytezeichenversionen von **_strset_s**. Die Datentypen der Argumente und Rückgabewerte unterscheiden sich entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
@@ -157,7 +157,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_strset_s**|\<string.h>|
 |**_strset_s_l**|\<tchar.h>|
@@ -192,7 +192,7 @@ After:  *******************************
 ## <a name="see-also"></a>Weitere Informationen
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbset, _mbsnbset_l](mbsnbset-mbsnbset-l.md)<br/>
 [memset, wmemset](memset-wmemset.md)<br/>

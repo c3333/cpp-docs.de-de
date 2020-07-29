@@ -12,12 +12,12 @@ helpviewer_keywords:
 - open constructed types [C++]
 - constructed types, closed [C++]
 ms.assetid: 21f10637-0fce-4916-b925-6c86a126d3aa
-ms.openlocfilehash: a1a66b6464bf952a530dbf1ea188bfd681d684d0
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 875fc3334d326315890396ee02e55b5880e8692e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172073"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87195563"
 ---
 # <a name="overview-of-generics-in-ccli"></a>Übersicht über Generics in C++/CLI
 
@@ -47,7 +47,7 @@ Eine generische Deklaration enthält einen oder mehrere unbekannte Typen, die *T
 
 ### <a name="type-arguments"></a>Typargumente
 
-Das *Typargument* ist der anstelle des Typparameters tatsächlich verwendete Typ, wenn das Generic für einen bestimmten Typ oder bestimmte Typen spezifiziert wird. Beispiel: **int** ist das Typargument in `List<int>`. Werttypen und Typen von Handles sind die einzigen Typen, die in einem generischen Typargument zulässig sind.
+Das *Typargument* ist der anstelle des Typparameters tatsächlich verwendete Typ, wenn das Generic für einen bestimmten Typ oder bestimmte Typen spezifiziert wird. Beispielsweise **`int`** ist das Typargument `List<int>` in. Werttypen und Typen von Handles sind die einzigen Typen, die in einem generischen Typargument zulässig sind.
 
 ### <a name="constructed-type"></a>Konstruierter Typ
 
@@ -65,7 +65,7 @@ generic <typename T>
 ref class Queue : public List<T> {};
 ```
 
-### <a name="constraint"></a>Einschränkung
+### <a name="constraint"></a>Constraint
 
 Eine Einschränkung ist eine Einschränkung für Typen, die als Typparameter verwendet werden können. Beispielsweise könnte eine bestimmte generische Klasse nur Klassen akzeptieren, die von einer angegebenen Klasse erben oder eine angegebene Schnittstelle implementieren. Weitere Informationen finden Sie unter [Einschränkungen für generische Typparameter (C++/CLI)](constraints-on-generic-type-parameters-cpp-cli.md).
 
@@ -130,6 +130,6 @@ Eine Standardinstanz des Typparameters kann mithilfe des `()`-Operators erstellt
 
 wobei `T` ein Typparameter in einer generischen Klasse oder Methodendefinition ist; die Variable wird mit ihrem Standardwert initialisiert. Wenn `T` eine Verweisklasse ist, wird es ein NULL-Zeiger sein; wenn `T` eine Wertklasse ist, wird das Objekt mit 0 (null) initialisiert. Dies wird als *Standardinitialisierer* bezeichnet.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

@@ -5,12 +5,12 @@ f1_keywords:
 - allocators/std::operator!=
 - allocators/std::operator==
 ms.assetid: b55d67cb-3c69-46bf-ad40-e845fb096c4e
-ms.openlocfilehash: a21708ca090b0db561391308f347d90b77c62645
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 7d22e550c7054c2197163f2edf829ec17a85a145
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623571"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87204559"
 ---
 # <a name="ltallocatorsgt-operators"></a>&lt;Allocators&gt;-Operatoren
 
@@ -33,16 +33,16 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*linken*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
 |*Richting*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuweisungsobjekte nicht gleich sind; **FALSE**, wenn die Zuweisungsobjekte gleich sind.
+**`true`**, wenn die zuordnerobjekte nicht gleich sind. , **`false`** Wenn zuordnerobjekte gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vorlagenoperator gibt `!(left == right)` zurück.
 
@@ -59,19 +59,19 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*linken*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
 |*Richting*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuweisungsobjekte gleich sind; **FALSE**, wenn die Zuweisungsobjekte nicht gleich sind.
+**`true`**, wenn die zuordnerobjekte gleich sind. , **`false`** Wenn zuordnerobjekte nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Vorlagenoperator gibt `left.equals(right)` zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<allocators>](allocators-header.md)

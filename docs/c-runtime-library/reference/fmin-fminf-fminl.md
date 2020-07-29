@@ -33,12 +33,12 @@ helpviewer_keywords:
 - fminf function
 - fminl function
 ms.assetid: 1916dfb5-99c1-4b0d-aefb-513525c3f2ac
-ms.openlocfilehash: df01f2205291920b8c0519db622c93048278beb1
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d6cd16c298c3f4bedb8064d66efd2d4bbe20c22b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957095"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216985"
 ---
 # <a name="fmin-fminf-fminl"></a>fmin, fminf, fminl
 
@@ -75,10 +75,10 @@ long double fminl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der erste zu vergleichende Wert.
 
-*y*<br/>
+*Teenie*<br/>
 Der zweite zu vergleichende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -87,25 +87,25 @@ Bei erfolgreicher Ausführung wird der kleinere von *x* oder *y*zurückgegeben.
 
 |Eingabe|Ergebnis|
 |-----------|------------|
-|*x* ist NaN|*y*|
-|*y* ist NaN|*w*|
+|*x* ist NaN|*Teenie*|
+|*y* ist NaN|*x*|
 |*x* und *y* sind Nan|NaN|
 
-Die Funktion bewirkt nicht, dass [_matherr](matherr.md) aufgerufen wird, keine Gleit Komma Ausnahmen verursacht oder der Wert von **errno**geändert wird.
+Die Funktion bewirkt nicht, dass [_matherr](matherr.md) aufgerufen wird, keine Gleit Komma Ausnahmen verursachen oder den Wert von **errno**ändern.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **FMIN** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt die **Formatierung immer einen** **Double**-Wert an und gibt diesen zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **FMIN** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm nimmt die **Formatierung immer eine** an und gibt Sie zurück **`double`** .
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**fmin**, **fminf**, **fminl**|C: \<math.h><br />C++: \<math.h> oder \<cmath>|
+|" **f**" **, "f**" **, "f"**|Scher\<math.h><br />C++: \<math.h> oder\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [fmax, fmaxf, fmaxl](fmax-fmaxf-fmaxl.md)<br/>

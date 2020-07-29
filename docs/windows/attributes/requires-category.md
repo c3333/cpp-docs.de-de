@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - requires_category attribute
 ms.assetid: a645fdc6-1ef5-414d-8c56-5fe2686d4687
-ms.openlocfilehash: 19a454a8bfc959d7d97959d765dbf68d0f766ca1
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 044f868a6be8391a4b0dfafd58ff0f3178575047
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214551"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231558"
 ---
 # <a name="requires_category"></a>requires_category
 
@@ -31,7 +31,7 @@ Die ID der erforderlichen Kategorie.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **requires_category** C++ -Attribut gibt die für die Zielklasse erforderlichen Komponenten Kategorien an. Weitere Informationen finden Sie unter [REQUIRED_CATEGORY](../../atl/reference/category-macros.md#required_category).
+Das **requires_category** C++-Attribut gibt die für die Zielklasse erforderlichen Komponenten Kategorien an. Weitere Informationen finden Sie unter [REQUIRED_CATEGORY](../../atl/reference/category-macros.md#required_category).
 
 Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden.
 
@@ -59,9 +59,9 @@ class CMyClass {};
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
+|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass` , `progid` oder `vi_progid` .|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).

@@ -4,42 +4,42 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - reference types, C++ stack semantics for
 ms.assetid: 319a1304-f4a4-4079-8b84-01cec847d531
-ms.openlocfilehash: 4d9aaa493eab39199ac75b6b9fe888c3e103f115
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: 886d0d16d8b81364078db5604ab10d8dcc3fa561
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65448069"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87197838"
 ---
 # <a name="c-stack-semantics-for-reference-types"></a>C++-Stack-Semantik für Referenztypen
 
-Vor Visual Studio 2005 eine Instanz eines Referenztyps kann nur erstellt werden mithilfe der `new` -Operator, der Erstellung des Objekts auf dem Garbage gesammelten Heap. Allerdings können Sie jetzt erstellen eine Instanz eines Referenztyps mit derselben Syntax, die Sie verwenden eine Instanz eines systemeigenen Typs auf dem Stapel zu erstellen. Also, Sie müssen nicht mit [Ref neue Gcnew](../extensions/ref-new-gcnew-cpp-component-extensions.md) ein Objekt eines Verweistyps erstellt. Und wenn das Objekt den Gültigkeitsbereich verlässt, ruft der Compiler des Destruktors des Objekts.
+Vor Visual Studio 2005 konnte eine Instanz eines Verweis Typs nur mit dem-Operator erstellt werden **`new`** , der das Objekt auf dem Heap der Garbage Collection erstellt hat. Allerdings können Sie jetzt eine Instanz eines Verweis Typs mit derselben Syntax erstellen, die Sie zum Erstellen einer Instanz eines systemeigenen Typs auf dem Stapel verwenden. Daher müssen Sie [ref New, gcnew,](../extensions/ref-new-gcnew-cpp-component-extensions.md) nicht verwenden, um ein Objekt eines Verweis Typs zu erstellen. Wenn das Objekt den Gültigkeitsbereich verlässt, ruft der Compiler den Dekonstruktor des Objekts auf.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie eine Instanz eines Referenztyps mit Stapelsemantik erstellen, erstellt der Compiler intern die Instanz auf dem Heap mit Garbage collection (mit `gcnew`).
+Wenn Sie eine Instanz eines Verweis Typs mithilfe der Stapel Semantik erstellen, erstellt der Compiler intern die Instanz auf dem Heap der Garbage Collection (mithilfe von **`gcnew`** ).
 
-Wenn die Signatur "oder" Return "-Typ, der eine Funktion eine Instanz eines Verweistyps als Wert enthält, wird die Funktion in den Metadaten erfordern besondere Behandlung (mit Modreq) gekennzeichnet. Diese besondere Behandlung ist derzeit nur von Visual C++-Clients; bereitgestellt. andere Sprachen werden derzeit nicht unterstützt, Funktionen oder Daten, die Verweistypen, die mit Stapelsemantik erstellt verwenden.
+Wenn die Signatur oder der Rückgabetyp einer Funktion eine Instanz eines by-Value-Verweis Typs enthält, wird die Funktion in den Metadaten als spezielle Behandlung (mit "mudreq") markiert. Diese besondere Behandlung wird zurzeit nur von Visual C++ Clients bereitgestellt. andere Sprachen unterstützen derzeit nicht die Verwendung von Funktionen oder Daten, die Verweis Typen verwenden, die mit der Stapel Semantik erstellt wurden.
 
-Ein Grund für die Verwendung `gcnew` (dynamische speicherbelegung) anstelle von Stack Semantik wäre, wenn der Typ keinen Destruktor aufweist. Darüber hinaus wäre mit Verweistypen mit Stapelsemantik Funktionssignaturen im erstellten nicht möglich, wenn Sie Ihre Funktionen, die von anderen Sprachen als Visual C++ verwendet werden soll.
+Ein Grund für **`gcnew`** die Verwendung von (dynamische Zuordnung) anstelle von Stapel Semantik wäre, wenn der Typ keinen Destruktor aufweist. Außerdem wäre die Verwendung von Verweis Typen, die mit der Stapel Semantik in Funktions Signaturen erstellt wurden, nicht möglich, wenn Sie möchten, dass ihre Funktionen von anderen Sprachen als Visual C++ genutzt werden.
 
-Nicht generiert der Compiler einen Kopierkonstruktor für einen Verweistyp handelt. Wenn Sie eine Funktion definieren, die ein Verweistyp als Wert in der Signatur verwendet wird, müssen Sie daher einen Kopierkonstruktor für den Verweistyp definieren. Ein Kopierkonstruktor für einen Verweistyp hat eine Signatur mit dem folgenden Format: `R(R%){}`.
+Der Compiler generiert keinen Kopierkonstruktor für einen Referenztyp. Daher müssen Sie, wenn Sie eine Funktion definieren, die einen per-Wert-Verweistyp in der Signatur verwendet, einen Kopierkonstruktor für den Verweistyp definieren. Ein Kopierkonstruktor für einen Verweistyp weist eine Signatur der folgenden Form auf: `R(R%){}` .
 
-Der Compiler generiert einen standardzuweisungsoperator für einen Verweistyp nicht. Ein Zuweisungsoperator, können Sie ein Objekt, das mithilfe von Stapelsemantik erstellen und initialisieren Sie es mit einem vorhandenen Objekt, das mithilfe von Stapelsemantik erstellt. Ein Zuweisungsoperator für einen Verweistyp hat eine Signatur mit dem folgenden Format: `void operator=( R% ){}`.
+Der Compiler generiert keinen Standard Zuweisungs Operator für einen Referenztyp. Mit einem Zuweisungs Operator können Sie ein Objekt mithilfe der Stapel Semantik erstellen und es mit einem vorhandenen Objekt initialisieren, das mithilfe der Stapel Semantik erstellt wurde. Ein Zuweisungs Operator für einen Verweistyp verfügt über eine Signatur der folgenden Form: `void operator=( R% ){}` .
 
-Wenn der Destruktor des Typs kritische Ressourcen frei, und Sie Stapelsemantik für Referenztypen verwenden, müssen Sie nicht den Destruktor explizit aufruft (oder rufen Sie `delete`). Weitere Informationen zu Destruktoren in Verweistypen, finden Sie unter [Destruktoren und Finalizer unter How to: Definieren und Verarbeiten von Klassen und Strukturen (C++ / CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers).
+Wenn der Destruktor ihres Typs wichtige Ressourcen freigibt und Sie die Stapel Semantik für Verweis Typen verwenden, müssen Sie den Destruktor nicht explizit (oder den-Befehl) aufzurufen **`delete`** . Weitere Informationen zu Debuggern in Verweis Typen finden Sie unter Vorgehens [Weise: definieren und Verarbeiten von Klassen und Strukturen (C++/CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers).
 
-Ein vom Compiler generierten Zuweisungsoperator führen Sie die üblichen standard C++-Regeln mit den folgenden Ergänzungen:
+Ein vom Compiler generierter Zuweisungs Operator befolgt die üblichen Standardregeln für C++ mit den folgenden Ergänzungen:
 
-- Nicht statische Daten, Elemente, deren Typ ein Handle für ein Verweistyp ist, flache kopierten (z. B. einen nicht statischen Datenmember, dessen Typ ein Zeiger ist, behandelt).
+- Alle nicht statischen Datenmember, deren Typ ein Handle für einen Referenztyp ist, werden flach kopiert (wie z. b. ein nicht statischer Datenmember, dessen Typ ein Zeiger ist).
 
-- Alle nicht statischen Datenmember, dessen Typ ist, dass ein Werttyp flache werden, kopiert.
+- Ein nicht statischer Datenmember, dessen Typ ein Werttyp ist, wird flach kopiert.
 
-- Alle nicht statischen Datenmember, dessen Typ eine Instanz eines Verweistyps ist, wird einen Aufruf an den Verweistyp Kopierkonstruktor aufgerufen.
+- Alle nicht statischen Datenmember, deren Typ eine Instanz eines Verweis Typs ist, rufen einen Aufruf des Kopierkonstruktors des Verweis Typs auf.
 
-Der Compiler bietet auch eine `%` unäroperator, um eine Instanz eines Referenztyps mit Stapelsemantik in den Handletyp der zugrunde liegende erstellt zu konvertieren.
+Der Compiler stellt außerdem einen `%` unären Operator bereit, um eine Instanz eines Verweis Typs, der mithilfe der Stapel Semantik erstellt wurde, in den zugrunde liegenden Handle-Typ zu konvertieren.
 
-Die folgenden Verweistypen sind nicht verfügbar, für die Verwendung mit Stapelsemantik:
+Die folgenden Referenztypen sind für die Verwendung mit der Stapel Semantik nicht verfügbar:
 
 - [delegate (Komponentenerweiterungen für C++)](../extensions/delegate-cpp-component-extensions.md)
 
@@ -49,9 +49,9 @@ Die folgenden Verweistypen sind nicht verfügbar, für die Verwendung mit Stapel
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
-Das folgende Codebeispiel zeigt, wie zum Deklarieren von Instanzen von Verweistypen mit Stapelsemantik, wie der Zuweisungsoperator und Copy-Konstruktor funktionieren und wie einen Nachverfolgungsverweis mit Verweistyp mithilfe von Stapelsemantik erstellt initialisiert.
+Im folgenden Codebeispiel wird veranschaulicht, wie Instanzen von Verweis Typen mit Stapel Semantik deklariert werden, wie der Zuweisungs Operator und der Kopierkonstruktor funktionieren und wie ein nach Verfolgungs Verweis mit einem Referenztyp initialisiert wird, der mithilfe der Stapel Semantik erstellt wurde.
 
 ### <a name="code"></a>Code
 

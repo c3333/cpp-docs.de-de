@@ -29,24 +29,24 @@ helpviewer_keywords:
 - extensions
 - compl method
 ms.assetid: e811a74a-45ba-4c00-b206-2f2321b8689a
-ms.openlocfilehash: dab8ac23be8b66ca84c57514c6c04e94dddebaae
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 77f2ed64a0c816d84e67f66b664141581a9fad51
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62321188"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231506"
 ---
 # <a name="microsoft-extensions-to-c-and-c"></a>Microsoft-Erweiterungen für C und C++
 
 Visual C++ erweitert die ANSI C- und ANSI C++ Standards wie folgt.
 
-## <a name="keywords"></a>Schlüsselwörter
+## <a name="keywords"></a>Keywords
 
-Es werden mehrere Schlüsselwörter hinzugefügt. In der Liste im [Schlüsselwörter](../../cpp/keywords-cpp.md), die Schlüsselwörter, die zwei führenden unterstrichen sind, Visual C++-Erweiterungen.
+Es werden mehrere Schlüsselwörter hinzugefügt. In der Liste in [Schlüsselwörtern](../../cpp/keywords-cpp.md)sind die Schlüsselwörter mit zwei führenden unterstrichen Visual C++ Erweiterungen.
 
-## <a name="out-of-class-definition-of-static-const-integral-or-enum-members"></a>Aus der Klassendefinition von static const Integral (oder Enumeration)-Member
+## <a name="out-of-class-definition-of-static-const-integral-or-enum-members"></a>Out-of-Class-Definition von statischen Konstanten Konstanten (oder Enumerationsmembern)
 
-Dem Standard (**/Za**), achten Sie eine Definition außerhalb von Klassen für die Datenelemente, wie hier gezeigt:
+Unter dem Standard (**/Za**) müssen Sie für Datenmember eine Out-of-Class-Definition erstellen, wie hier gezeigt:
 
 ```cpp
 class CMyClass  {
@@ -57,19 +57,19 @@ class CMyClass  {
 const int CMyClass::max;   // out of class definition
 ```
 
-Klicken Sie unter **/Ze**, die außerhalb der Klasse ist für statische, const integral-Datenmember und const Enum-Datenmember optional. Nur ganze Zahlen und Enumerationen, die als "static" und "const" definiert sind, können innerhalb einer Klasse initialisiert werden; der Initialisierungsausdruck muss ein const-Ausdruck sein.
+Unter **/Ze**ist die Out-of-Class-Definition für statische, Konstante und Konstante enumerationsdatenmember optional. Nur ganze Zahlen und Enumerationen, die als "static" und "const" definiert sind, können innerhalb einer Klasse initialisiert werden; der Initialisierungsausdruck muss ein const-Ausdruck sein.
 
-Um Fehler zu vermeiden, wenn eine Definition außerhalb von Klassen ist, sofern in einem Header und die Headerdatei in mehreren Quelldateien enthalten ist, verwenden Sie [Selectany](../../cpp/selectany.md). Zum Beispiel:
+Um Fehler zu vermeiden, wenn eine Out-of-Class-Definition in einer Header Datei bereitgestellt wird und die Header Datei in mehreren Quelldateien enthalten ist, verwenden Sie [Selectany](../../cpp/selectany.md). Beispiel:
 
 ```cpp
 __declspec(selectany) const int CMyClass::max = 5;
 ```
 
-## <a name="casts"></a>Typumwandlungen
+## <a name="casts"></a>Umwandlungen
 
 Sowohl der C++-Compiler als auch der C-Compiler unterstützen diese Typumwandlungen, die nicht ANSI-konform sind:
 
-- Nicht ANSI-konforme Typumwandlungen zum Erzeugen von l-Werten. Zum Beispiel:
+- Nicht ANSI-konforme Typumwandlungen zum Erzeugen von l-Werten. Beispiel:
 
    ```C
    char *p;
@@ -85,7 +85,7 @@ Sowohl der C++-Compiler als auch der C-Compiler unterstützen diese Typumwandlun
    p = ( char * )(( int * )p + 1 );
    ```
 
-- Nicht ANSI-konforme Typumwandlung eines Funktionszeigers in einen Datenzeiger. Zum Beispiel:
+- Nicht ANSI-konforme Typumwandlung eines Funktionszeigers in einen Datenzeiger. Beispiel:
 
    ```C
    int ( * pfunc ) ();
@@ -117,7 +117,7 @@ Der C-Compiler unterstützt einzeilige Kommentare, die mit zwei Schrägstrichen 
 // This is a single-line comment.
 ```
 
-## <a name="scope"></a>Bereich
+## <a name="scope"></a>`Scope`
 
 Der C-Compiler unterstützt bezogen auf den Gültigkeitsbereich die folgenden Funktionen:
 
@@ -178,7 +178,7 @@ Der C-Compiler unterstützt die folgenden Datendeklarations- und Datendefinition
    char arr[5] = {'a', 'b', "cde"};
    ```
 
-- Bitfelder, die Basistypen aufweisen **ganze Zahl ohne Vorzeichen** oder **signiert Int**.
+- Bitfelder, die andere Basis Typen als **`unsigned int`** oder aufweisen **`signed int`** .
 
 - Deklaratoren, die keinen Typ haben:
 
@@ -230,13 +230,13 @@ Der C-Compiler unterstützt die folgenden Datendeklarations- und Datendefinition
    }
    ```
 
-## <a name="intrinsic-floating-point-functions"></a>Systeminterne Gleitkommafunktionen
+## <a name="intrinsic-floating-point-functions"></a>Intrinsische Gleit Komma Funktionen
 
-Sowohl die X86 C++-Compiler und C-Compiler unterstützen die Inlinegenerierung der der `atan`, `atan2`, `cos`, `exp`, `log`, `log10`, `sin`, `sqrt`, und `tan` Funktionen bei der **/Oi** angegeben ist. Beim C-Compiler geht die ANSI-Konformität verloren, wenn diese systeminternen Funktionen verwendet werden, da die `errno`-Variable von ihnen nicht festgelegt wird.
+Sowohl der x86 C++-Compiler als auch der C-Compiler unterstützen die Inline Generierung der `atan` `atan2` Funktionen,, `cos` , `exp` , `log` , `log10` , `sin` , `sqrt` und, `tan` Wenn **/Oi** angegeben wird. Beim C-Compiler geht die ANSI-Konformität verloren, wenn diese systeminternen Funktionen verwendet werden, da die `errno`-Variable von ihnen nicht festgelegt wird.
 
-## <a name="passing-a-non-const-pointer-parameter-to-a-function-that-expects-a-reference-to-a-const-pointer-parameter"></a>Übergabe von einem nicht Konstanten Zeigerparameters an eine Funktion, die erwartet einen Verweis auf einen Konstanten Zeigerparameter
+## <a name="passing-a-non-const-pointer-parameter-to-a-function-that-expects-a-reference-to-a-const-pointer-parameter"></a>Übergeben eines nicht Konstanten Zeiger Parameters an eine Funktion, die einen Verweis auf einen Konstanten Zeiger Parameter erwartet
 
-Dies ist eine Erweiterung von C++. Dieser Code erfolgt die Kompilierung mit **/Ze**:
+Dies ist eine Erweiterung von C++. Dieser Code wird mit **/Ze**kompiliert:
 
 ```cpp
 typedef   int   T;
@@ -258,17 +258,17 @@ void func ()
 }
 ```
 
-## <a name="iso646h-not-enabled"></a>ISO646. H nicht aktiviert
+## <a name="iso646h-not-enabled"></a>Iso646. H nicht aktiviert
 
-Klicken Sie unter **/Ze**, müssen Sie iso646.h einschließen, wenn Sie die Textformen der folgenden Operatoren verwenden möchten:
+Unter **/Ze**müssen Sie iso646. h einschließen, wenn Sie Textformen der folgenden Operatoren verwenden möchten:
 
-- & & (und)
+- && (und)
 
-- & = (And_eq)
+- &= (and_eq)
 
-- & (Bitand)
+- & (BITAND)
 
-- &#124;(Bitor)
+- &#124; (bitor)
 
 - ~ (compl)
 
@@ -276,7 +276,7 @@ Klicken Sie unter **/Ze**, müssen Sie iso646.h einschließen, wenn Sie die Text
 
 - != (not_eq)
 
-- &#124;&#124;(oder)
+- &#124;&#124; (oder)
 
 - &#124;= (or_eq)
 
@@ -284,9 +284,9 @@ Klicken Sie unter **/Ze**, müssen Sie iso646.h einschließen, wenn Sie die Text
 
 - ^= (xor_eq)
 
-## <a name="address-of-string-literal-has-type-const-char--not-const-char--"></a>Die Adresse eines Zeichenfolgenliterals hat Typ const Char [], nicht const Char (*)]
+## <a name="address-of-string-literal-has-type-const-char--not-const-char--"></a>Die Adresse des Zeichenfolgenliterals weist den Typ "Konstante Char []" und nicht "Konstante char (*)" auf.
 
-Im folgende Beispiel wird Ausgabe `char const (*)[4]` unter **/Za**, aber `char const [4]` unter **/Ze**.
+Das folgende Beispiel wird `char const (*)[4]` unter **/Za**ausgegeben, aber `char const [4]` unter **/Ze**.
 
 ```cpp
 #include <stdio.h>
@@ -298,8 +298,8 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-- [/Za, /Ze (Spracherweiterungen deaktivieren)](za-ze-disable-language-extensions.md)
+- [/Za,/Ze (Spracherweiterungen deaktivieren)](za-ze-disable-language-extensions.md)
 - [MSVC-Compileroptionen](compiler-options.md)
-- [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+- [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

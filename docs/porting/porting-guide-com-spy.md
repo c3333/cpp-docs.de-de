@@ -2,12 +2,12 @@
 title: 'Leitfaden zum Portieren: COM Spy'
 ms.date: 11/04/2016
 ms.assetid: 24aa0d52-4014-4acb-8052-f4e2e4bbc3bb
-ms.openlocfilehash: f4fece07b9ea4541d8bf21dd81fd659b44f39718
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c21049a2faa8bb34ecd1ba75a5beda1db119f0fc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368459"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230284"
 ---
 # <a name="porting-guide-com-spy"></a>Leitfaden zum Portieren: COM Spy
 
@@ -17,7 +17,7 @@ Dieses Thema ist das zweite aus einer Reihe von Artikeln, in denen der Upgradevo
 
 COMSpy ist ein Programm, das die Aktivität von Serviced Components auf einem Computer überwacht und protokolliert. Serviced Components sind COM+-Komponenten, die auf einem System ausgeführt werden und von Computern im selben Netzwerk verwendet werden können. Sie werden durch die Funktion „Komponentendienste“ in der Windows-Systemsteuerung verwaltet.
 
-### <a name="step-1-converting-the-project-file"></a>Schritt 1: Konvertieren der Projektdatei
+### <a name="step-1-converting-the-project-file"></a>Schritt 1: Die Projektdatei wird umgerechnet.
 
 Die Projektdatei lässt sich problemlos konvertieren und erstellt einen Migrationsbericht. Einige Einträge in dem Bericht geben Hinweise auf Probleme, die eventuell beseitigt werden müssen. Im Folgenden eines der gemeldeten Probleme. Beachten Sie, dass Fehlermeldungen in diesem Thema zur besseren Lesbarkeit manchmal gekürzt werden; z. B. werden die vollständigen Pfade teilweise entfernt.
 
@@ -25,7 +25,7 @@ Die Projektdatei lässt sich problemlos konvertieren und erstellt einen Migratio
 ComSpyAudit\ComSpyAudit.vcproj: MSB8012: $(TargetPath) ('C:\Users\UserName\Desktop\spy\spy\ComSpyAudit\.\XP32_DEBUG\ComSpyAudit.dll') does not match the Librarian's OutputFile property value '.\XP32_DEBUG\ComSpyAudit.dll' ('C:\Users\UserName\Desktop\spy\spy\XP32_DEBUG\ComSpyAudit.dll') in project configuration 'Unicode Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).
 ```
 
-Eines der häufigen Probleme beim Aktualisieren von Projekten besteht darin, dass die **Linker OutputFile-Einstellung** im Dialogfeld Projekteigenschaften möglicherweise überprüft werden muss. Bei Projekten vor Visual Studio 2010 ist OutputFile eine Einstellung, die dem Assistenten für die automatische Konvertierung Probleme bereitet, wenn sie nicht auf einen Standardwert festgelegt ist. In diesem Fall wurden die Pfade für die Ausgabedateien auf den nicht standardmäßigen Ordner XP32_DEBUG festgelegt. Weitere Informationen zu diesem Fehler finden Sie in diesem [Blogbeitrag](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/) zum Visual Studio 2010-Projektupgrade, einem Upgrade, bei dem der wichtige Wechsel von vcbuild zu msbuild erfolgte. Gemäß den Informationen in diesem Blogbeitrag lautet der Standardwert für die **OutputFile**-Einstellung beim Erstellen eines neuen Projekts `$(OutDir)$(TargetName)$(TargetExt)`, doch wird dieser Wert nicht bei der Konvertierung festgelegt, da die Überprüfung der Richtigkeit für konvertierte Projekte nicht möglich ist. Wir prüfen nun trotzdem, ob dies für OutputFile möglich ist.  Es funktioniert und wir können den Vorgang fortsetzen. Wenn es keinen bestimmten Grund für die Verwendung eines nicht dem Standard entsprechenden Ausgabeordners gibt, wird die Verwendung des standardmäßigen Speicherorts empfohlen. In diesem Fall haben wir als Ausgabespeicherort während der Portierung und des Upgrades den nicht standardmäßigen Speicherort belassen. `$(OutDir)` wird in der **Debuggen**-Konfiguration in den XP32_DEBUG-Ordner und in der **Release**-Konfiguration in den ReleaseU-Ordner aufgelöst.
+Eines der häufigsten Probleme beim Upgrade von Projekten besteht darin, dass die Einstellung " **Linker OutputFile** " im Dialogfeld "Projekteigenschaften" möglicherweise überprüft werden muss. Bei Projekten vor Visual Studio 2010 ist OutputFile eine Einstellung, die dem Assistenten für die automatische Konvertierung Probleme bereitet, wenn sie nicht auf einen Standardwert festgelegt ist. In diesem Fall wurden die Pfade für die Ausgabedateien auf den nicht standardmäßigen Ordner XP32_DEBUG festgelegt. Weitere Informationen zu diesem Fehler finden Sie in diesem [Blogbeitrag](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/) zum Visual Studio 2010-Projektupgrade, einem Upgrade, bei dem der wichtige Wechsel von vcbuild zu msbuild erfolgte. Gemäß den Informationen in diesem Blogbeitrag lautet der Standardwert für die **OutputFile**-Einstellung beim Erstellen eines neuen Projekts `$(OutDir)$(TargetName)$(TargetExt)`, doch wird dieser Wert nicht bei der Konvertierung festgelegt, da die Überprüfung der Richtigkeit für konvertierte Projekte nicht möglich ist. Wir prüfen nun trotzdem, ob dies für OutputFile möglich ist.  Es funktioniert und wir können den Vorgang fortsetzen. Wenn es keinen bestimmten Grund für die Verwendung eines nicht dem Standard entsprechenden Ausgabeordners gibt, wird die Verwendung des standardmäßigen Speicherorts empfohlen. In diesem Fall haben wir als Ausgabespeicherort während der Portierung und des Upgrades den nicht standardmäßigen Speicherort belassen. `$(OutDir)` wird in der **Debuggen**-Konfiguration in den XP32_DEBUG-Ordner und in der **Release**-Konfiguration in den ReleaseU-Ordner aufgelöst.
 
 ### <a name="step-2-getting-it-to-build"></a>Schritt 2: Erstellen des Projekts
 
@@ -66,7 +66,7 @@ Der nächste Fehler befasst sich mit der Registrierung.
 error MSB3073: The command "regsvr32 /s /c "C:\Users\username\Desktop\spy\spy\ComSpyCtl\.\XP32_DEBUG\ComSpyCtl.lib"error MSB3073: echo regsvr32 exec. time > ".\XP32_DEBUG\regsvr32.trg"error MSB3073:error MSB3073: :VCEnd" exited with code 3.
 ```
 
-Dieser Postbuild-Registrierungsbefehl wird nicht mehr benötigt. Stattdessen entfernen wir einfach den benutzerdefinierten Buildbefehl und geben in den **Linker-Einstellungen** an, um die Ausgabe zu registrieren.
+Dieser Postbuild-Registrierungsbefehl wird nicht mehr benötigt. Stattdessen wird einfach der benutzerdefinierte Build-Befehl entfernt und in den **Linker** -Einstellungen angegeben, um die Ausgabe zu registrieren.
 
 ### <a name="dealing-with-warnings"></a>Umgang mit Warnungen
 
@@ -115,7 +115,7 @@ for (i=0;i<lCount;i++)
     CoTaskMemFree(pKeys[i]);
 ```
 
-Das Problem besteht darin, dass `i` als `UINT` und `lCount` als **long** deklariert ist, wodurch es zum Konflikt zwischen „signed“ und „unsigned“ kommt. Es wäre unpraktisch, den Typ von `lCount` in `UINT` zu ändern, da dieser seinen Wert aus `IMtsEventInfo::get_Count` erhält, der den Typ **long** verwendet und sich nicht im Benutzercode befindet. Daher wird eine Umwandlung zu dem Code hinzugefügt. Eine Besetzung im C-Stil würde für eine numerische Besetzung wie diese tun, aber **static_cast** ist der empfohlene Stil.
+Das Problem ist, dass `i` als deklariert `UINT` und `lCount` als deklariert wird **`long`** , sodass der nicht übereinstimmende/nicht signierte Konflikt vorliegt. Es wäre unpraktisch, den Typ von `lCount` in zu ändern `UINT` , da der Wert von abgerufen wird, der `IMtsEventInfo::get_Count` den-Typ verwendet **`long`** und nicht im Benutzercode ist. Daher wird eine Umwandlung zu dem Code hinzugefügt. Eine Umwandlung im C-Stil würde für eine numerische Umwandlung wie diese durchführen, **`static_cast`** ist aber der empfohlene Stil.
 
 ```cpp
 for (i=0;i<static_cast<UINT>(lCount);i++)
@@ -143,7 +143,7 @@ virtual ~CWindowImplRoot()
 
 Normalerweise wird `hWnd` in der `WindowProc`-Funktion auf null (0) festgelegt. Dieser Vorgang wurde jedoch nicht ausgeführt, da statt der `WindowProc`-Standardfunktion ein benutzerdefinierter Handler für die Windows-Meldung (WM_SYSCOMMAND) aufgerufen wurde, der das Fenster schließt. Der benutzerdefinierte Handler hat `hWnd` nicht auf null (0) festgelegt. Ein Blick auf ähnlichen Code in der `CWnd`-Klasse von MFC zeigt, dass beim Entfernen eines Fensters `OnNcDestroy` aufgerufen wird. Gemäß den Empfehlungen in der Dokumentation zu MFC sollte beim Überschreiben von `CWnd::OnNcDestroy``NcDestroy` der Basisklasse aufgerufen werden, um sicherzustellen, dass die richtigen Bereinigungen durchgeführt werden. Dazu gehört auch das Trennen des Fensterhandles vom Fenster, oder anders ausgedrückt das Festlegen von `hWnd` auf null (0). Diese Bestätigung kann auch in der ursprünglichen Version des Beispiels ausgelöst worden sein, da der gleiche Assertionscode auch in der alten Version von atlwin.h vorhanden war.
 
-Um die Funktionalität der App zu testen, haben wir eine **serviced Component** mit der ATL-Projektvorlage erstellt und com+-Unterstützung im ATL-Projektassistenten hinzugefügt. Wenn Sie noch nicht mit gewarteten Komponenten gearbeitet haben, ist es nicht schwierig, eine zu erstellen und eine registrierte und im Netzwerk verfügbare Komponente für andere Apps zu verwenden. Mit der COM Spy-App kann die Aktivität von Serviced Components zu Diagnosezwecken überwacht werden.
+Um die Funktionalität der APP zu testen, haben wir mithilfe der ATL-Projektvorlage eine **Serviced Component** erstellt und im ATL-Projekt-Assistenten com+-Unterstützung hinzugefügt. Wenn Sie noch nicht mit Serviced Components gearbeitet haben, ist es nicht schwierig, eine solche zu erstellen und eine registrierte und für andere apps im System oder Netzwerk verfügbar zu machen. Mit der COM Spy-App kann die Aktivität von Serviced Components zu Diagnosezwecken überwacht werden.
 
 Dann wurde eine Klasse hinzugefügt, „ATL Object“ (ATL-Objekt) ausgewählt und als Objektname `Dog` angegeben. In dog.h und dog.cpp wurde dann die Implementierung hinzugefügt.
 
@@ -156,7 +156,7 @@ STDMETHODIMP CDog::Wag(LONG* lDuration)
 }
 ```
 
-Als Nächstes haben wir es erstellt und registriert (Sie müssen Visual Studio als Administrator ausführen) und es mithilfe der **Anwendung "Serviced Component"** in der Windows-Systemsteuerung aktiviert. Es wurde ein C#-Windows Forms-Projekt erstellt, eine Schaltfläche aus der Toolbox in das Formular gezogen und durch Doppelklick ein Click-Ereignishandler erstellt. Zum Instanziieren der `Dog`-Komponente wurde folgender Code hinzugefügt.
+Als nächstes haben wir Sie erstellt und registriert (Sie müssen Visual Studio als Administrator ausführen) und mithilfe der **Serviced Component** -Anwendung in der Windows-Systemsteuerung aktiviert haben. Es wurde ein C#-Windows Forms-Projekt erstellt, eine Schaltfläche aus der Toolbox in das Formular gezogen und durch Doppelklick ein Click-Ereignishandler erstellt. Zum Instanziieren der `Dog`-Komponente wurde folgender Code hinzugefügt.
 
 ```cpp
 private void button1_Click(object sender, EventArgs e)
@@ -168,7 +168,7 @@ private void button1_Click(object sender, EventArgs e)
 
 Dieser Code wurde ohne Probleme ausgeführt. Nach dem Ausführen und der Konfigurierung von COM Spy zur Überwachung der `Dog`-Komponente werden zahlreiche Daten zur Aktivität angezeigt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Portieren und Aktualisieren: Beispiele und Fallstudien](../porting/porting-and-upgrading-examples-and-case-studies.md)<br/>
 [Nächstes Beispiel: Spy++](../porting/porting-guide-spy-increment.md)<br/>

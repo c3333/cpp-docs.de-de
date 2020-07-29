@@ -19,16 +19,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::InterfaceTraits::IidCount constant
 - Microsoft::WRL::Details::InterfaceTraits::Verify method
 ms.assetid: ede0c284-19a7-4892-9738-ff3da4923d0a
-ms.openlocfilehash: 17f743a38af3ddc600a55e38905d19868d076a22
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c08c6e8bbcc16120dd44da69a2933fc3ec42f387
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371369"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216569"
 ---
 # <a name="interfacetraits-structure"></a>InterfaceTraits-Struktur
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,52 +50,52 @@ struct __declspec(novtable) InterfaceTraits<Nil>;
 *I0*<br/>
 Der Name einer Schnittstelle.
 
-*CloakedType*<br/>
-Für `RuntimeClass` `Implements` und `ChainInterfaces`eine Schnittstelle, die nicht in der Liste der unterstützten Schnittstellen-IDs enthalten ist.
+*Cloakedtype*<br/>
+Für `RuntimeClass` `Implements` und `ChainInterfaces` eine Schnittstelle, die nicht in der Liste der unterstützten Schnittstellen-IDs enthalten ist.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Implementiert gemeinsame Merkmale einer Schnittstelle.
+Implementiert allgemeine Merkmale einer Schnittstelle.
 
 Die zweite Vorlage ist eine Spezialisierung für getarnte Schnittstellen. Die dritte Vorlage ist eine Spezialisierung für Nil-Parameter.
 
 ## <a name="members"></a>Member
 
-### <a name="public-typedefs"></a><a name="public-typedefs"></a>Öffentliche Typdefs
+### <a name="public-typedefs"></a><a name="public-typedefs"></a>Öffentliche Typedefs
 
 Name   | BESCHREIBUNG
 ------ | ------------------------------------------
-`Base` | Ein Synonym für den Vorlagenparameter *I0.*
+`Base` | Ein Synonym für den *I0* -Vorlagen Parameter.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                   | BESCHREIBUNG
+name                                                   | BESCHREIBUNG
 ------------------------------------------------------ | ----------------------------------------------------------------------------------------
-[InterfaceTraits::CanCastTo](#cancastto)               | Gibt an, ob der angegebene Zeiger auf `Base`einen Zeiger auf umgegossen werden kann.
-[InterfaceTraits::CastToBase](#casttobase)             | Gibt den angegebenen Zeiger auf einen `Base`Zeiger auf .
-[InterfaceTraits::CastToUnknown](#casttounknown)       | Gibt den angegebenen Zeiger auf einen `IUnknown`Zeiger auf .
-[InterfaceTraits::FillArrayWithIid](#fillarraywithiid) | Weist dem Arrayelement `Base` die Schnittstellen-ID des Arrayelements zu, das durch das Indexargument angegeben wird.
-[InterfaceTraits::Überprüfen](#verify)                     | Überprüft, dass `Base` die korrekt abgeleitete Datei korrekt abgeleitet ist.
+[Interfacecharakteristika:: CanCastTo](#cancastto)               | Gibt an, ob der angegebene Zeiger in einen Zeiger auf umgewandelt werden kann `Base` .
+[Interfacecharakteristika:: castto Base](#casttobase)             | Wandelt den angegebenen Zeiger auf einen Zeiger auf `Base` .
+[Interfacemerkmalen:: castto Unknown](#casttounknown)       | Wandelt den angegebenen Zeiger auf einen Zeiger auf `IUnknown` .
+[Interfacecharakteristika:: fillarraywithiid](#fillarraywithiid) | Weist dem `Base` Array Element, das vom Index-Argument angegeben wird, die Schnittstellen-ID von zu.
+[Interfacecharakteristika:: Verify](#verify)                     | Überprüft, ob `Base` ordnungsgemäß abgeleitet ist.
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
 Name                                   | BESCHREIBUNG
 -------------------------------------- | ---------------------------------------------------------------------------------------
-[InterfaceTraits::IidCount](#iidcount) | Enthält die Anzahl der Schnittstellen-IDs, die dem aktuellen `InterfaceTraits` Objekt zugeordnet sind.
+[Interfacecharakteristika:: iidcount](#iidcount) | Enthält die Anzahl der dem aktuellen-Objekt zugeordneten Schnittstellen-IDs `InterfaceTraits` .
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `InterfaceTraits`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="interfacetraitscancastto"></a><a name="cancastto"></a>InterfaceTraits::CanCastTo
+## <a name="interfacetraitscancastto"></a><a name="cancastto"></a>Interfacecharakteristika:: CanCastTo
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 template<typename T>
@@ -108,28 +108,28 @@ static __forceinline bool CanCastTo(
 
 ### <a name="parameters"></a>Parameter
 
-*Ptr*<br/>
+*ptr*<br/>
 Der Name eines Zeigers auf einen Typ.
 
 *riid*<br/>
-Die Schnittstellen-ID von `Base`.
+Die Schnittstellen-ID von `Base` .
 
-*Ppv*<br/>
-Wenn dieser Vorgang erfolgreich ist, zeigt *ppv* auf die von `Base`angegebene Schnittstelle . Andernfalls wird *ppv* `nullptr`auf gesetzt.
+*PPV*<br/>
+Wenn dieser Vorgang erfolgreich ist, verweist *PPV* auf die durch angegebene Schnittstelle `Base` . Andernfalls wird *PPV* auf festgelegt **`nullptr`** .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn dieser Vorgang erfolgreich ist und *ptr* auf einen Zeiger auf `Base`geworfen wird; andernfalls **false**.
+**`true`**, wenn dieser Vorgang erfolgreich ist und *ptr* in einen Zeiger auf umgewandelt wird `Base` ; andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt an, ob der angegebene Zeiger auf `Base`einen Zeiger auf umgegossen werden kann.
+Gibt an, ob der angegebene Zeiger in einen Zeiger auf umgewandelt werden kann `Base` .
 
-Weitere Informationen `Base`zu finden Sie im Abschnitt [Public Typedefs.](#public-typedefs)
+Weitere Informationen zu `Base` finden Sie im Abschnitt " [öffentliche Typedefs](#public-typedefs) ".
 
-## <a name="interfacetraitscasttobase"></a><a name="casttobase"></a>InterfaceTraits::CastToBase
+## <a name="interfacetraitscasttobase"></a><a name="casttobase"></a>Interfacecharakteristika:: castto Base
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 template<typename T>
@@ -143,7 +143,7 @@ static __forceinline Base* CastToBase(
 *T*<br/>
 Der Typ des Parameters *ptr*.
 
-*Ptr*<br/>
+*ptr*<br/>
 Zeiger auf einen Typ *T*.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -152,13 +152,13 @@ Ein Zeiger auf `Base`.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt den angegebenen Zeiger auf einen `Base`Zeiger auf .
+Wandelt den angegebenen Zeiger auf einen Zeiger auf `Base` .
 
-Weitere Informationen `Base`zu finden Sie im Abschnitt [Public Typedefs.](#public-typedefs)
+Weitere Informationen zu `Base` finden Sie im Abschnitt " [öffentliche Typedefs](#public-typedefs) ".
 
-## <a name="interfacetraitscasttounknown"></a><a name="casttounknown"></a>InterfaceTraits::CastToUnknown
+## <a name="interfacetraitscasttounknown"></a><a name="casttounknown"></a>Interfacemerkmalen:: castto Unknown
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 template<typename T>
@@ -172,22 +172,22 @@ static __forceinline IUnknown* CastToUnknown(
 *T*<br/>
 Der Typ des Parameters *ptr*.
 
-*Ptr*<br/>
-Zeiger auf den Typ *T*.
+*ptr*<br/>
+Zeiger auf Typ *T*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf das IUnknown, von dem `Base` abgeleitet wird.
+Zeiger auf den IUnknown, von dem `Base` abgeleitet wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt den angegebenen Zeiger auf einen `IUnknown`Zeiger auf .
+Wandelt den angegebenen Zeiger auf einen Zeiger auf `IUnknown` .
 
-Weitere Informationen `Base`zu finden Sie im Abschnitt [Public Typedefs.](#public-typedefs)
+Weitere Informationen zu `Base` finden Sie im Abschnitt " [öffentliche Typedefs](#public-typedefs) ".
 
-## <a name="interfacetraitsfillarraywithiid"></a><a name="fillarraywithiid"></a>InterfaceTraits::FillArrayWithIid
+## <a name="interfacetraitsfillarraywithiid"></a><a name="fillarraywithiid"></a>Interfacecharakteristika:: fillarraywithiid
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 __forceinline static void FillArrayWithIid(
@@ -199,22 +199,22 @@ __forceinline static void FillArrayWithIid(
 ### <a name="parameters"></a>Parameter
 
 *Index*<br/>
-Zeiger auf ein Feld, das einen nullbasierten Indexwert enthält.
+Ein Zeiger auf ein Feld, das einen NULL basierten Indexwert enthält.
 
-*iids*<br/>
+*IIDs*<br/>
 Ein Array von Schnittstellen-IDs.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weist dem Arrayelement `Base` die Schnittstellen-ID des Arrayelements zu, das durch das Indexargument angegeben wird.
+Weist dem `Base` Array Element, das vom Index-Argument angegeben wird, die Schnittstellen-ID von zu.
 
-Im Gegensatz zum Namen dieser API wird nur ein Arrayelement geändert. nicht das gesamte Array.
+Im Gegensatz zum Namen dieser API wird nur ein Array Element geändert. nicht das gesamte Array.
 
-Weitere Informationen `Base`zu finden Sie im Abschnitt [Public Typedefs.](#public-typedefs)
+Weitere Informationen zu `Base` finden Sie im Abschnitt " [öffentliche Typedefs](#public-typedefs) ".
 
-## <a name="interfacetraitsiidcount"></a><a name="iidcount"></a>InterfaceTraits::IidCount
+## <a name="interfacetraitsiidcount"></a><a name="iidcount"></a>Interfacecharakteristika:: iidcount
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 static const unsigned long IidCount = 1;
@@ -222,11 +222,11 @@ static const unsigned long IidCount = 1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Enthält die Anzahl der Schnittstellen-IDs, die dem aktuellen `InterfaceTraits` Objekt zugeordnet sind.
+Enthält die Anzahl der dem aktuellen-Objekt zugeordneten Schnittstellen-IDs `InterfaceTraits` .
 
-## <a name="interfacetraitsverify"></a><a name="verify"></a>InterfaceTraits::Überprüfen
+## <a name="interfacetraitsverify"></a><a name="verify"></a>Interfacecharakteristika:: Verify
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 __forceinline static void Verify();
@@ -234,6 +234,6 @@ __forceinline static void Verify();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überprüft, dass `Base` die korrekt abgeleitete Datei korrekt abgeleitet ist.
+Überprüft, ob `Base` ordnungsgemäß abgeleitet ist.
 
-Weitere Informationen `Base`zu finden Sie im Abschnitt [Public Typedefs.](#public-typedefs)
+Weitere Informationen zu `Base` finden Sie im Abschnitt " [öffentliche Typedefs](#public-typedefs) ".

@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - char_traits<char16_t> class
 ms.assetid: 5daf3b62-dd6e-451f-b189-0350a04ff966
-ms.openlocfilehash: d83f5278c2c4f8344334bfce40946612e9ca3e56
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 53a77ff993d3a99cae1ec8e48a06dd7800ce74c7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68448967"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230219"
 ---
-# <a name="chartraitsltchar16tgt-struct"></a>char_traits&lt;char16_t&gt;-Struktur
+# <a name="char_traitsltchar16_tgt-struct"></a>char_traits&lt;char16_t&gt;-Struktur
 
-Eine Struktur, die eine Spezialisierung der Vorlagenstruktur **char_traits\<CharType>** für ein Element des Typs `char16_t` ist.
+Eine Struktur, die eine Spezialisierung der Vorlagen Struktur ist, die auf ein Element des Typs **Char_traits \<CharType> ** **`char16_t`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,18 +25,18 @@ template <>
 struct char_traits<char16_t>;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dank der Spezialisierung kann die Struktur Bibliotheksfunktionen nutzen, die Objekte des Typs `char16_t` bearbeiten.
+Durch die Spezialisierung kann die Struktur Bibliotheksfunktionen nutzen, die Objekte des Typs bearbeiten **`char16_t`** .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<string>
+**Header:**\<string>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<string>](../standard-library/string.md)\
-[char_traits-Struktur](../standard-library/char-traits-struct.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Char_traits-Struktur](../standard-library/char-traits-struct.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

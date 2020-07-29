@@ -37,12 +37,12 @@ helpviewer_keywords:
 - fmaf function
 - fmal function
 ms.assetid: 584a6037-da1e-4e86-9f0c-97aae86de0c0
-ms.openlocfilehash: be3578aa9c66f329e191749b4506091bff69b1eb
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: d82565ed53f311ef1b2cf5942d207bf96090bd13
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914952"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216998"
 ---
 # <a name="fma-fmaf-fmal"></a>fma, fmaf, fmal
 
@@ -95,7 +95,7 @@ Der hinzuzufügende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt `(x * y) + z` zurück. Der Rückgabewert wird dann mit dem aktuellen Rundungsformat gerundet.
+Gibt `(x * y) + z`zurück. Der Rückgabewert wird dann mit dem aktuellen Rundungsformat gerundet.
 
 Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
@@ -110,15 +110,15 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **FMA** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **FMA** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **FMA** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **FMA** immer und gibt einen zurück **`double`** .
 
 Diese Funktion berechnet den Wert mit unendlicher Genauigkeit und rundet das endgültige Ergebnis dann.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|

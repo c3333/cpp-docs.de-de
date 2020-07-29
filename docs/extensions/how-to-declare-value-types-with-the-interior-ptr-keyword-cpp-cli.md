@@ -6,12 +6,12 @@ helpviewer_keywords:
 - _ptr keyword
 - value types, declaring
 ms.assetid: 49eea66e-eeba-49bd-95b0-ba297be436e3
-ms.openlocfilehash: 22c0fe4424e4df81ebb0355dfac2168af725b971
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 46f8c39affe5a3c0ad8648162f0fde5371eb30ca
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172281"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87195576"
 ---
 # <a name="how-to-declare-value-types-with-the-interior_ptr-keyword-ccli"></a>Gewusst wie: Deklarieren von Werttypen mit dem interior_ptr-Schlüsselwort (C++/CLI)
 
@@ -69,9 +69,9 @@ int main() {
 
 ### <a name="description"></a>BESCHREIBUNG
 
-In einem Werttyp wird **dieser** Zeiger als interior_ptr ergibt.
+Bei einem Werttyp wird der **`this`** Zeiger zu einem interior_ptr ausgewertet.
 
-Im Text einer nicht statischen Memberfunktion eines Werttyps `V` ist **dies** ein Ausdruck vom Typ `interior_ptr<V>`, dessen Wert die Adresse des Objekts ist, für das die Funktion aufgerufen wird.
+Im Text einer nicht statischen Member-Funktion eines Werttyps `V` **`this`** ist ein Ausdruck vom Typ, `interior_ptr<V>` dessen Wert die Adresse des Objekts ist, für das die Funktion aufgerufen wird.
 
 ### <a name="code"></a>Code
 

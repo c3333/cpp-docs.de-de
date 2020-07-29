@@ -58,12 +58,12 @@ helpviewer_keywords:
 - _mbsnccnt function
 - _wcsncnt function
 ms.assetid: 2a022e9e-a307-4acb-a66b-e56e5357f848
-ms.openlocfilehash: 020b844d884182ae7553fec9e9db746987189910
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 77746af98e5d62b80d5a0d2d93eb1f717c74b33e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914208"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231337"
 ---
 # <a name="_strncnt-_wcsncnt-_mbsnbcnt-_mbsnbcnt_l-_mbsnccnt-_mbsnccnt_l"></a>_strncnt, _wcsncnt, _mbsnbcnt, _mbsnbcnt_l, _mbsnccnt, _mbsnccnt_l
 
@@ -105,7 +105,7 @@ size_t _mbsnccnt_l(
 
 ### <a name="parameters"></a>Parameter
 
-*SRT*<br/>
+*str*<br/>
 Zu untersuchende Zeichenfolge.
 
 *count*<br/>
@@ -116,11 +116,11 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_mbsnbcnt** und **_mbsnbcnt_l** geben die Anzahl der Bytes zurück, die in der ersten *Anzahl* von Multibytezeichen-Zeichen von *Str*gefunden wurden. **_mbsnccnt** und **_mbsnccnt_l** geben die Anzahl der Zeichen zurück, die in der ersten *Anzahl* der Bytes von *Str*gefunden wurden. Wenn ein NULL-Zeichen gefunden wird, bevor die Untersuchung von *Str* abgeschlossen ist, geben Sie die Anzahl von Bytes oder Zeichen zurück, die vor dem NULL-Zeichen gefunden wurden. Wenn *Str* weniger als *Anzahl* Zeichen oder Bytes umfasst, wird die Anzahl der Zeichen oder Bytes in der Zeichenfolge zurückgegeben. Wenn *count* kleiner als 0 (null) ist, wird 0 zurückgegeben. In früheren Versionen hatten diese Funktionen einen Rückgabewert vom Typ " **int** " anstelle von " **size_t**".
+**_mbsnbcnt** und **_mbsnbcnt_l** geben die Anzahl der Bytes zurück, die in der ersten *Anzahl* von Multibytezeichen-Zeichen von *Str*gefunden wurden. **_mbsnccnt** und **_mbsnccnt_l** geben die Anzahl der Zeichen zurück, die in der ersten *Anzahl* der Bytes von *Str*gefunden wurden. Wenn ein NULL-Zeichen gefunden wird, bevor die Untersuchung von *Str* abgeschlossen ist, geben Sie die Anzahl von Bytes oder Zeichen zurück, die vor dem NULL-Zeichen gefunden wurden. Wenn *Str* weniger als *Anzahl* Zeichen oder Bytes umfasst, wird die Anzahl der Zeichen oder Bytes in der Zeichenfolge zurückgegeben. Wenn *count* kleiner als 0 (null) ist, wird 0 zurückgegeben. In früheren Versionen hatten diese Funktionen einen Rückgabewert vom Typ **`int`** statt **size_t**.
 
 **_strncnt** gibt die Anzahl von Zeichen in den ersten *Anzahl* Bytes der Einzel Byte Zeichenfolge *Str*zurück. **_wcsncnt** gibt die Anzahl der Zeichen in der ersten *Anzahl* von breit Zeichen der breit Zeichen-Zeichenfolge *Str*zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **_mbsnbcnt** und **_mbsnbcnt_l** zählen die Anzahl der Bytes, die in der ersten *Anzahl* von Multibytezeichen-Zeichen von *Str*gefunden wurden. **_mbsnbcnt** und **_mbsnbcnt_l** ersetzen Sie **mtob** und sollten anstelle von **mtob**verwendet werden.
 
@@ -134,7 +134,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
-|Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
+|-Routine zurückgegebener Wert|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |-------------|--------------------------------------|--------------------|-----------------------|
 |**_tcsnbcnt**|**_strncnt**|**_mbsnbcnt**|**_wcsncnt**|
 |**_tcsnccnt**|**_strncnt**|**_mbsnbcnt**|–|
@@ -144,7 +144,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbcnt**|\<mbstring.h>|
 |**_mbsnbcnt_l**|\<mbstring.h>|
@@ -185,6 +185,6 @@ The first 10 characters are single-byte.
 ## <a name="see-also"></a>Siehe auch
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], properties
 - properties [MFC], custom
 ms.assetid: 85af5167-74c7-427b-b8f3-e0d7b73942e5
-ms.openlocfilehash: 5014a32386a0a140f0fdc00b23a0ac24a54afcee
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 805fffcc6cafe92df91af6b01bb53240a0d70f51
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84626144"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230492"
 ---
 # <a name="mfc-activex-controls-adding-custom-properties"></a>MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Eigenschaften
 
@@ -62,7 +62,7 @@ Diese Prozedur kann auch verwendet werden, um weitere benutzerdefinierte Eigensc
 
 1. Klicken Sie unter **Implementierungstyp**auf **Get/Set-Methoden**.
 
-1. Wählen Sie im Feld **Eigenschaftentyp** die Option **Short**aus.
+1. Wählen Sie im Feld **Eigenschaftentyp** aus **`short`** .
 
 1. Geben Sie eindeutige Namen für die Get-und Set-Funktionen ein, oder übernehmen Sie die Standardnamen.
 
@@ -92,7 +92,7 @@ Schließlich werden die Implementierungen der- `GetCircleOffset` `SetCircleOffse
 
 Beachten Sie, dass der Assistent zum Hinzufügen von Eigenschaften dem Text der Set-Funktion automatisch einen-Befehl, [SetModifiedFlag](reference/colecontrol-class.md#setmodifiedflag), hinzufügt. Durch Aufrufen dieser Funktion wird das-Steuerelement als geändert markiert. Wenn ein Steuerelement geändert wurde, wird der neue Zustand gespeichert, wenn der Container gespeichert wird. Diese Funktion sollte immer dann aufgerufen werden, wenn eine Eigenschaft, die als Teil des permanenten Zustands des Steuer Elements gespeichert ist, den Wert ändert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
 [MFC-ActiveX-Steuerelemente: Eigenschaften](mfc-activex-controls-properties.md)<br/>

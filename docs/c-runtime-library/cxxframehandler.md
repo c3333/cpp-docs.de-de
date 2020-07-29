@@ -20,12 +20,12 @@ f1_keywords:
 helpviewer_keywords:
 - __CxxFrameHandler
 ms.assetid: b79ac97f-425a-42ae-9b91-8beaef935333
-ms.openlocfilehash: db856850688e378cde9eaa1fb510cb325ce0644b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b6350568bdba41da90609dfd5e2e60269e7d729f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170981"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217037"
 ---
 # <a name="__cxxframehandler"></a>__CxxFrameHandler
 
@@ -45,7 +45,7 @@ EXCEPTION_DISPOSITION __CxxFrameHandler(
 #### <a name="parameters"></a>Parameter
 
 *pExcept*<br/>
-Ausnahmeaufzeichnung, die an die möglichen `catch`-Anweisungen übergeben wird.
+Der Ausnahme Daten Satz, der an die möglichen-Anweisungen übermittelt wird **`catch`** .
 
 *pRN*<br/>
 Dynamische Informationen über den Stapelrahmen, der zur Verarbeitung der Ausnahme verwendet wird. Weitere Informationen finden Sie unter ehdata.h.
@@ -53,7 +53,7 @@ Dynamische Informationen über den Stapelrahmen, der zur Verarbeitung der Ausnah
 *pContext*<br/>
 Kontext. (Wird bei Intel-Prozessoren nicht verwendet.)
 
-*pDC*<br/>
+*PDC*<br/>
 Zusätzliche Informationen über den Funktionsstart und den Stapelrahmen.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -64,6 +64,6 @@ Einer der *Filterausdruckswerte*, die von der [try-except-Anweisung](../cpp/try-
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |__CxxFrameHandler|excpt.h, ehdata.h|

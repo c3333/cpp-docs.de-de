@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Standards conformance compiler options
 - permissive compiler options [C++]
 ms.assetid: db1cc175-6e93-4a2e-9396-c3725d2d8f71
-ms.openlocfilehash: 3b5ddc4b4e9b70b2191a17d2201a441603182149
-ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
+ms.openlocfilehash: 69a6b413ec6d9d6897e5f11a11aac8c75db2cf5f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507026"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217206"
 ---
 # <a name="permissive--standards-conformance"></a>/permissive- (Übereinstimmung mit Standards)
 
@@ -40,7 +40,7 @@ Die **`/permissive-`** Option ist mit fast allen Header Dateien der neuesten Win
 
 In Versionen des Compilers ab Visual Studio 2017, Version 15,3, legt die- **`/permissive-`** Option die- [**`/Zc:ternary`**](zc-ternary.md) Option fest. Der Compiler implementiert auch weitere Anforderungen für die zweistufige Namenssuche. Wenn die **`/permissive-`** Option festgelegt ist, analysiert der Compiler Funktions-und Klassen Vorlagen Definitionen und identifiziert abhängige und nicht abhängige Namen, die in den Vorlagen verwendet werden. In dieser Version wird nur die namens Abhängigkeits Analyse durchgeführt.
 
-Umgebungs spezifische Erweiterungen und Sprachbereiche, die der Standard für die Implementierung verlässt, sind von nicht betroffen **`/permissive-`** . Beispielsweise werden die Microsoft-spezifischen `__declspec` Schlüsselwörter, die Aufruf Konvention und die strukturierte Ausnahmebehandlung sowie compilerspezifische pragma-Direktiven und-Attribute nicht vom Compiler im- **`/permissive-`** Modus gekennzeichnet.
+Umgebungs spezifische Erweiterungen und Sprachbereiche, die der Standard für die Implementierung verlässt, sind von nicht betroffen **`/permissive-`** . Beispielsweise werden die Microsoft-spezifischen **`__declspec`** Schlüsselwörter, die Aufruf Konvention und die strukturierte Ausnahmebehandlung sowie compilerspezifische pragma-Direktiven und-Attribute nicht vom Compiler im- **`/permissive-`** Modus gekennzeichnet.
 
 Die **`/permissive-`** -Option verwendet die Übereinstimmungs Unterstützung in der aktuellen Compilerversion, um zu bestimmen, welche Sprachkonstrukte nicht kompatibel sind. Die Option bestimmt nicht, ob Ihr Code einer bestimmten Version des C++-Standards entspricht. Um alle implementierten Compilerunterstützung für den neuesten Entwurfs Standard zu aktivieren, verwenden Sie die- [**`/std:c++latest`**](std-specify-language-standard-version.md) Option. Verwenden Sie die-Option, um die Compilerunterstützung auf den derzeit implementierten c++ 17-Standard einzuschränken [**`/std:c++17`**](std-specify-language-standard-version.md) . Um die Compilerunterstützung auf eine genauere Übereinstimmung mit dem c++ 14-Standard einzuschränken, verwenden Sie die- [**`/std:c++14`**](std-specify-language-standard-version.md) Option. Dies ist die Standardeinstellung.
 
@@ -463,7 +463,7 @@ Verwenden Sie in Versionen vor Visual Studio 2017 Version 15,5 folgendes Verfahr
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)\
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

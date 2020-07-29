@@ -9,12 +9,12 @@ helpviewer_keywords:
 - lang namespace
 - cli namespace
 ms.assetid: 9d38bd1e-dc78-47d1-a84b-9b4683e52c9c
-ms.openlocfilehash: aedb8b7954eaa4bb1cf1060725103cd725c3f180
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: df699b12404d9de1a9acaae6e9dc8c00fd2f15df
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80181823"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87195355"
 ---
 # <a name="platform-default-and-cli-namespaces--ccli-and-ccx"></a>Namespaces „Platform“, „default“ und „cli“ (C++/CLI und C++/CX)
 
@@ -42,7 +42,7 @@ using namespace cli;
 
 ### <a name="remarks"></a>Bemerkungen
 
-C++/CLI unterstützt den Namespace **cli**. Beim Kompilieren mit `/clr` ist die **using**-Anweisung im Syntaxabschnitt impliziert.
+C++/CLI unterstützt den Namespace **cli**. Beim Kompilieren mit `/clr` ist die- **`using`** Anweisung im Syntax Abschnitt impliziert.
 
 Im Namespace **cli** befinden sich die folgenden Sprachfeatures:
 
@@ -80,4 +80,4 @@ int main() {
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

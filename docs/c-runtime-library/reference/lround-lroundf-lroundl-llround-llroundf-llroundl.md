@@ -46,12 +46,12 @@ helpviewer_keywords:
 - llroundf function
 - lroundl function
 ms.assetid: cfb88a35-54c6-469f-85af-f7d695dcfdd8
-ms.openlocfilehash: 10d5e1284f756107cee03b970d026d9e2896adf2
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 0be17ceb579bfc7da7b9f47ac1b6942383eebb91
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911364"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216894"
 ---
 # <a name="lround-lroundf-lroundl-llround-llroundf-llroundl"></a>lround, lroundf, lroundl, llround, llroundf, llroundl
 
@@ -99,21 +99,21 @@ Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **lround** -Funktion und die **LlRound** -Funktion geben die nächste **Long** -oder **Long** **Long-Ganzzahl** an *x*zurück Halbe Werte werden kaufmännisch gerundet, unabhängig von der Einstellung des Gleitkomma-Rundungsmodus. Es gibt keine Fehlerrückgabe.
+Die **lround** -Funktion und die **LlRound** -Funktion geben die nächstgelegene **`long`** oder **`long long`** ganze Zahl an *x*zurück Halbe Werte werden kaufmännisch gerundet, unabhängig von der Einstellung des Gleitkomma-Rundungsmodus. Es gibt keine Fehlerrückgabe.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
 |± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **lround** oder **LlRound** aufzurufen, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm verwenden **lround** und **LlRound** immer einen **Double**-Wert.
+Da C++ das überladen zulässt, können Sie über Ladungen von **lround** oder **LlRound** aufzurufen, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm verwenden **lround** und **LlRound** immer einen **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**lround**, **lroundf**, **lroundl**, **LlRound**, **llroundf**, **llroundl**|\<math.h>|
 
@@ -157,7 +157,7 @@ lroundl(-3.500000) is -4
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>
 [floor, floorf, floorl](floor-floorf-floorl.md)<br/>
 [fmod, fmodf](fmod-fmodf.md)<br/>

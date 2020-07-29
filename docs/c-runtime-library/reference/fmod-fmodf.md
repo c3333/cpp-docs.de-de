@@ -34,12 +34,12 @@ helpviewer_keywords:
 - fmod function
 - floating-point numbers, calculating remainders
 ms.assetid: 6962d369-d11f-40b1-a6d7-6f67239f8a23
-ms.openlocfilehash: a6fcb7feeae72ff15d7b1ed0d55c5abbb408135a
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 4fa3df46358932b8a62a6b8529baed4a5c9e5c49
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82914958"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216972"
 ---
 # <a name="fmod-fmodf-fmodl"></a>fmod, fmodf, fmodl
 
@@ -77,17 +77,17 @@ Gleitkommawerte.
 
 ## <a name="return-value"></a>Rückgabewert
 
-" **f** " gibt den Gleit Komma Rest von *x* / *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt " **f** " einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf](printf-printf-l-wprintf-wprintf-l.md).
+" **f** " gibt den Gleit Komma Rest von *x*  /  *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt " **f** " einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Funktion "** f" berechnet den Gleit Komma Rest *f* von *x* / *y* , sodass *x* = *i* \* *y* + *f* *, wobei es sich um* eine ganze Zahl handelt, *f* dasselbe Vorzeichen wie " *x*" hat und der absolute Wert von " *f* " kleiner ist als der absolute Wert von " *y*".
+Die **Funktion "** f" berechnet den Gleit Komma Rest *f* von *x*  /  *y* , sodass *x*  =  *i* \* *y*  +  *f*, wobei *i* es sich um eine ganze Zahl handelt, *f* dasselbe Vorzeichen wie " *x*" hat und der absolute Wert von " *f* " kleiner ist als der absolute Wert von " *y*".
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt " **f** " immer zwei **doppelte** Argumente und gibt einen **Double**-Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die- **`float`** und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt " **f** " immer zwei **`double`** Argumente und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
@@ -119,7 +119,7 @@ The remainder of -10.00 / 3.00 is -1.000000
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>
 [fabs, fabsf, fabsl](fabs-fabsf-fabsl.md)<br/>
 [floor, floorf, floorl](floor-floorf-floorl.md)<br/>

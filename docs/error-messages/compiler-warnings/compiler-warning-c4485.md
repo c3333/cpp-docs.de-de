@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4485
 ms.assetid: a6f2b437-ca93-4dcd-b9cb-df415e10df86
-ms.openlocfilehash: c92f805eb2960336ed34f5da93b6c13f46bf15ac
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d730441772f021bbece9af8313229543e432b2d7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80165144"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87197292"
 ---
 # <a name="compiler-warning-c4485"></a>Compilerwarnung C4485
 
 ' override_function ': entspricht der Verweis Klassenmethode ' Base_class_function ' der Basis, Sie ist jedoch nicht als ' New ' oder ' override ' gekennzeichnet. "New" (und "Virtual") wird angenommen.
 
-Ein-Accessor überschreibt, mit oder ohne das `virtual`-Schlüsselwort, eine Basisklassen-Accessorfunktion, aber der `override`-oder `new`-Spezifizierer war nicht Teil der über schreibenden Funktions Signatur. Fügen Sie den `new` oder `override` Spezifizierer hinzu, um diese Warnung zu beheben.
+Ein Accessor überschreibt, mit oder ohne das- **`virtual`** Schlüsselwort, eine Basisklassen-Accessorfunktion, aber der- `override` oder- **`new`** Spezifizierer war nicht Teil der über schreibenden Funktions Signatur. Fügen Sie **`new`** den `override` Spezifizierer oder hinzu, um diese Warnung zu beheben.
 
 Weitere Informationen finden Sie unter [override](../../extensions/override-cpp-component-extensions.md) und [New (neuer Slot in Vtable)](../../extensions/new-new-slot-in-vtable-cpp-component-extensions.md) .
 

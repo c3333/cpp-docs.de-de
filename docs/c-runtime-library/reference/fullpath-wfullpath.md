@@ -36,12 +36,12 @@ helpviewer_keywords:
 - _fullpath function
 - fullpath function
 ms.assetid: 4161ec17-0d22-45dd-b07d-0222553afae9
-ms.openlocfilehash: f7ef9e8416e73a403abfb30f637afeb4a68e8592
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 8583ea17930721f8d8b80aa5066dbc07372ce243
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909941"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231389"
 ---
 # <a name="_fullpath-_wfullpath"></a>_fullpath, _wfullpath
 
@@ -70,14 +70,14 @@ Zeiger auf einen Puffer, der den absoluten oder vollständigen Pfadnamen enthäl
 *RelPath*<br/>
 Relativer Pfadname.
 
-*maxLength*<br/>
-Maximale Länge des absoluten Pfadnamen Puffers (*abspath*). Diese Länge ist in Bytes für **_fullpath** , aber in breit Zeichen (**wchar_t**) für **_wfullpath**.
+*MaxLength*<br/>
+Maximale Länge des absoluten Pfadnamen Puffers (*abspath*). Diese Länge ist für **_fullpath** in Bytes, für _wfullpath jedoch in breit Zeichen ( **`wchar_t`** ). **_wfullpath**
 
 ## <a name="return-value"></a>Rückgabewert
 
 Jede dieser Funktionen gibt einen Zeiger auf einen Puffer zurück, der den absoluten Pfadnamen (*abspath*) enthält. Wenn ein Fehler vorliegt (z. b. wenn der in *RelPath* übergebenen Wert einen Laufwerk Buchstaben enthält, der nicht gültig ist oder nicht gefunden werden kann, oder wenn die Länge des erstellten absoluten Pfadnamens (*abspath*) größer als *MaxLength*ist), gibt die Funktion **null**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_fullpath** -Funktion erweitert den relativen Pfadnamen in *RelPath* auf den voll qualifizierten oder absoluten Pfad und speichert diesen Namen in *abspath*. Wenn *abspath* **null**ist, wird **malloc** verwendet, um einen Puffer mit ausreichender Länge für den Pfadnamen zuzuweisen. Der Aufrufer muss diesen Puffer freigeben. Dieser relative Pfadname gibt vom aktuellen Speicherort einen Pfad zu einem anderen Speicherort an (z.B. das aktuelle Arbeitsverzeichnis: "."). Ein absoluter Pfadname ist die Erweiterung eines relativen Pfadnamens, der den gesamten Pfad ausdrückt, der dafür erforderlich ist, um die gewünschte Position aus dem Stammverzeichnis des Dateisystems zu erreichen. Im Gegensatz zu **_makepath**können **_fullpath** verwendet werden, um den absoluten Pfadnamen für relative Pfade (*RelPath*) zu erhalten, die "./" oder "." enthalten. /"in ihren Namen.
 
@@ -107,7 +107,7 @@ Diese Funktion Ruft den Handler für ungültige Parameter auf, wie in [Parameter
 
 Wenn der *abspath* -Puffer **null**ist, ruft **_fullpath** [malloc](malloc.md) auf, um einen Puffer zuzuordnen, und ignoriert das *MaxLength* -Argument. Es liegt in der Verantwortung des Aufrufers, die Zuordnung für diesen Puffer richtig wieder aufzuheben (mithilfe von [free](free.md)). Wenn das *RelPath* -Argument ein Laufwerk angibt, wird das aktuelle Verzeichnis dieses Laufwerks mit dem Pfad kombiniert.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|

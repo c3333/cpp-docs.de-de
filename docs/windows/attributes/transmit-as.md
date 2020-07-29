@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - transmit_as attribute
 ms.assetid: 53d0b8ab-5b06-423e-83eb-3d01a10424b2
-ms.openlocfilehash: cf89be12672ac77a67617b6b222f27d739db9261
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a34d57cc60dcc65e8b111c595fdd819dea407b78
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214486"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87201127"
 ---
 # <a name="transmit_as"></a>transmit_as
 
@@ -30,7 +30,7 @@ Gibt den Datentyp an, der zwischen Client und Server übertragen wird.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Transmit_as** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Transmit_as](/windows/win32/Midl/transmit-as) -Attribut "Mittel".
+Das **Transmit_as** C++-Attribut verfügt über die gleiche Funktionalität wie das [Transmit_as](/windows/win32/Midl/transmit-as) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -70,8 +70,8 @@ struct _TREE_NODE_TYPE * right;
 
 |||
 |-|-|
-|**Betrifft**|**typedef**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`typedef`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -80,5 +80,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
-[export](export.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Exports](export.md)

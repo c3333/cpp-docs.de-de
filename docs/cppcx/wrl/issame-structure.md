@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::IsSame structure
 - Microsoft::WRL::Details::IsSame::value constant
 ms.assetid: 1eddbc3f-3cc5-434f-8495-e4477e1f868e
-ms.openlocfilehash: fcaf33309521b44163022e0ffa9b1e03e53e2551
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8c209d5a8d2a35f2643e90e5595d86f41519f30b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371344"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216556"
 ---
 # <a name="issame-structure"></a>IsSame-Struktur
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -48,21 +48,21 @@ Testet, ob ein angegebener Typ mit einem anderen angegebenen Typ identisch ist.
 
 Name                    | BESCHREIBUNG
 ----------------------- | --------------------------------------------------
-[IsSame::Wert](#value) | Gibt an, ob ein Typ mit einem anderen identisch ist.
+[IsSame:: Value](#value) | Gibt an, ob ein Typ mit einem anderen identisch ist.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `IsSame`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** internal.h
+**Header:** intern. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="issamevalue"></a><a name="value"></a>IsSame::Wert
+## <a name="issamevalue"></a><a name="value"></a>IsSame:: Value
 
-Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 template <typename T1, typename T2>
@@ -82,4 +82,4 @@ struct IsSame<T1, T1>
 
 Gibt an, ob ein Typ mit einem anderen identisch ist.
 
-`value`ist **true,** wenn die Vorlagenparameter identisch sind, und **false,** wenn die Vorlagenparameter unterschiedlich sind.
+`value`Gibt an **`true`** , ob die Vorlagen Parameter identisch sind und **`false`** ob die Vorlagen Parameter unterschiedlich sind.

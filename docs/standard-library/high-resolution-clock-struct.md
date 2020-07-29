@@ -1,5 +1,5 @@
 ---
-title: "\"high_resolution_clock\" Struct | Microsoft-Dokumentation"
+title: high_resolution_clock Struktur | Microsoft-Dokumentation
 ms.custom: ''
 ms.date: 05/22/2018
 ms.technology: cpp-standard-libraries
@@ -12,16 +12,16 @@ author: corob-msft
 ms.author: corob
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 0b00b20e7cea4fa24b37ad33d5536eb9844e6953
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 850d5e3a5434aa44e23a7f74aeb9c306ab6c0a8e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269122"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87203207"
 ---
-# <a name="steadyclock-struct"></a>steady_clock-Struktur
+# <a name="steady_clock-struct"></a>steady_clock-Struktur
 
-Stellt eine *High_resolution* Uhr.
+Stellt eine *high_resolution* Uhr dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,23 +31,23 @@ class high_resolution_clock
 
 ## <a name="members"></a>Member
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`duration`|Ein Synonym für `nanoseconds`, definiert in \<Chrono >.|
-|`period`|Ein Synonym für `nano`, definiert in \<Ratio >.|
-|`rep`|Ein Synonym für **lange** **lange**, der Typ, der verwendet wird, zum Darstellen der Anzahl von Zeiteinheiten in der enthaltenden Instanziierung von `duration`.|
+|`duration`|Ein Synonym für `nanoseconds` , das in definiert ist \<chrono> .|
+|`period`|Ein Synonym für `nano` , das in definiert ist \<ratio> .|
+|`rep`|Ein Synonym für **`long long`** , der Typ, der zum Darstellen der Anzahl von Takt Ticks in der enthaltenen Instanziierung von verwendet wird `duration` .|
 |`time_point`|Ein Synonym für `chrono::time_point<high_resolution_clock>`.|
 
-## <a name="functions"></a>Funktionen
+## <a name="functions"></a>Functions
 
 |||
 |-|-|
-|`now`|Gibt die aktuelle Uhrzeit als eine `time_point` Wert.|
+|`now`|Gibt die aktuelle Uhrzeit als- `time_point` Wert zurück.|
 
 ## <a name="constants"></a>Konstanten
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`is_steady`|Enthält **"true"** . Eine `high_resolution_clock` ist *gleichmäßig*.|
+|`is_steady`|Enthält **`true`** . Eine `high_resolution_clock` ist *gleichmäßig*.|

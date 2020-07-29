@@ -9,25 +9,25 @@ helpviewer_keywords:
 - window objects [MFC], deallocating memory for
 - storage for window objects [MFC], allocating
 ms.assetid: 7c962539-8461-4846-b5ca-fe3b15c313dc
-ms.openlocfilehash: 02546559183d0e14973bc2e5ccb26a4570a39b1e
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 33d471b41c8f1fd670e25626049ecd9b06b034e1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623266"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87195199"
 ---
 # <a name="allocating-and-deallocating-window-memory"></a>Reservieren und Freigeben von Fensterspeicher
 
-Verwenden Sie nicht den C++ **Delete** -Operator, um ein Rahmen Fenster oder eine Ansicht zu zerstören. Stattdessen wird die `CWnd` Member-Funktion aufgerufen `DestroyWindow` . Rahmen Fenster sollten daher auf dem Heap mit dem **New**-Operator zugeordnet werden. Seien Sie vorsichtig, wenn Sie Rahmen Fenster im Stapel Rahmen oder Global zuordnen. Andere Fenster sollten möglichst im Stapel Rahmen zugeordnet werden.
+Verwenden Sie nicht den C++- **`delete`** Operator, um ein Rahmen Fenster oder eine Ansicht zu zerstören. Stattdessen wird die `CWnd` Member-Funktion aufgerufen `DestroyWindow` . Rahmen Fenster sollten daher auf dem Heap mit Operator zugeordnet werden **`new`** . Seien Sie vorsichtig, wenn Sie Rahmen Fenster im Stapel Rahmen oder Global zuordnen. Andere Fenster sollten möglichst im Stapel Rahmen zugeordnet werden.
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Erstellen von Fenstern](creating-windows.md)
 
-- [Fenster Zerstörungs Sequenz](window-destruction-sequence.md)
+- [Fensterzerstörungssequenz](window-destruction-sequence.md)
 
 - [Trennen eines CWnd von seinem HWND](detaching-a-cwnd-from-its-hwnd.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Zerstören von Fensterobjekten](destroying-window-objects.md)
+[Zerstören von Fenster Objekten](destroying-window-objects.md)

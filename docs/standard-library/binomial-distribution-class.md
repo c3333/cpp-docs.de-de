@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::binomial_distribution [C++], param_type
 - std::binomial_distribution [C++], param_type
 ms.assetid: b7c8a26a-da8c-45a5-a3a8-208f7a3609ce
-ms.openlocfilehash: dc9bb1c3edf9187b1e5dc1e924298b9dbb02e2ba
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: d0bba986889dfbd17fddcd0c6985c082f6f74c29
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376709"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230245"
 ---
 # <a name="binomial_distribution-class"></a>binomial_distribution-Klasse
 
@@ -71,22 +71,22 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*IntType*\
-Der ganzzahlige Ergebnistyp wird standardmäßig **int**. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+*Inttype*\
+Der Integer-Ergebnistyp, der Standardwert ist **`int`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 *URNG*\
-Die einheitliche Zufallszahlengenerator-Engine. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Die einheitliche Zufallszahlengenerator-Engine. Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps erzeugt, oder Typ **int,** wenn keine bereitgestellt wird, verteilt gemäß der diskreten Wahrscheinlichkeitsfunktion Binomialverteilung. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`int`** . Wenn kein entsprechend der diskreten Wahrscheinlichkeitsfunktion der binomialen Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
 |[binomial_distribution](#binomial_distribution)|`binomial_distribution::t`|`binomial_distribution::param`|
 |`binomial_distribution::operator()`|`binomial_distribution::p`|[param_type](#param_type)|
 
-Die `t()` Eigenschaftsmember `p()` und geben die aktuell gespeicherten Verteilungsparameterwerte *t* bzw. *p* zurück.
+Die Eigenschaftenmember `t()` und `p()` geben die aktuell gespeicherten Verteilungsparameter Werte *t* bzw. *p* zurück.
 
 Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
 
@@ -96,7 +96,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 Ausführliche Informationen über die diskrete Wahrscheinlichkeitsfunktion zur binomialen Verteilung finden Sie im Wolfram MathWorld-Artikel [Binomial Distribution (Binomiale Verteilung)](https://go.microsoft.com/fwlink/p/?linkid=398469).
 
@@ -225,13 +225,13 @@ Histogram for 100 samples:
     21 :
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="binomial_distributionbinomial_distribution"></a><a name="binomial_distribution"></a>binomial_distribution::binomial_distribution
+## <a name="binomial_distributionbinomial_distribution"></a><a name="binomial_distribution"></a>binomial_distribution:: binomial_distribution
 
 Erstellt die Verteilung.
 
@@ -242,24 +242,24 @@ explicit binomial_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*T*\
+*Bund*\
 Der `t`-Verteilungsparameter.
 
-*P*\
+*cker*\
 Der `p`-Verteilungsparameter.
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete `param_type`-Struktur.
 
 ### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0 ≤ t` und `0.0 ≤ p ≤ 1.0`
 
-Der erste Konstruktor erstellt ein Objekt, dessen gespeicherter *p-Wert* den Wert *p* und dessen gespeicherter *t-Wert* den Wert *t*enthält.
+Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter *p* -Wert den Wert *p* enthält und dessen gespeicherter *t* -Wert den Wert *t*enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="binomial_distributionparam_type"></a><a name="param_type"></a>binomial_distribution::param_type
+## <a name="binomial_distributionparam_type"></a><a name="param_type"></a>binomial_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -277,10 +277,10 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*T*\
+*Bund*\
 Der `t`-Verteilungsparameter.
 
-*P*\
+*cker*\
 Der `p`-Verteilungsparameter.
 
 *Richting*\
@@ -292,6 +292,6 @@ Das mit diesem `param_type`-Objekt zu vergleichende Objekt.
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)

@@ -21,12 +21,12 @@ helpviewer_keywords:
 - std::student_t_distribution [C++], max
 - std::student_t_distribution [C++], param_type
 ms.assetid: 87b48127-9311-4d07-95df-833ed46bf0b1
-ms.openlocfilehash: adebaa76f9560cfc5443e2260a42a8c4af0085e6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c23298b931e751a8020883bfb3cf687e35ba3276
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376598"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87202011"
 ---
 # <a name="student_t_distribution-class"></a>student_t_distribution-Klasse
 
@@ -65,11 +65,11 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType*\
-Der Gleitkomma-Ergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps erzeugt, oder typ **double,** wenn keine bereitgestellt wird, verteilt gemäß der *t*-Verteilung des Schülers. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`double`** . Wenn kein Wert angegeben wird, wird dieser entsprechend der Student- *t*-Verteilung verteilt. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -78,7 +78,7 @@ Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefiniert
 
 Die Eigenschaftsfunktion `n()` gibt den Wert für den gespeicherten Verteilungsparameter `n` zurück.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 Ausführliche Informationen über die Student-*t*-Verteilung finden Sie im Wolfram MathWorld-Artikel [Students t-Distribution](https://mathworld.wolfram.com/Studentst-Distribution.html).
 
@@ -157,13 +157,13 @@ Distribution for 10 samples:
     10: 92.7084335614
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="student_t_distributionstudent_t_distribution"></a><a name="student_t_distribution"></a>student_t_distribution::student_t_distribution
+## <a name="student_t_distributionstudent_t_distribution"></a><a name="student_t_distribution"></a>student_t_distribution:: student_t_distribution
 
 Erstellt die Verteilung.
 
@@ -174,21 +174,21 @@ explicit student_t_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*N*\
+*Nr*\
 Der `n`-Verteilungsparameter.
 
-*Parm*\
+*parm*\
 Das für die Erstellung der Verteilung verwendete Parameterpaket.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`0.0 < n`
+**Vorbedingung:**`0.0 < n`
 
 Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `n`-Wert den Wert *n* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="student_t_distributionparam_type"></a><a name="param_type"></a>student_t_distribution::param_type
+## <a name="student_t_distributionparam_type"></a><a name="param_type"></a>student_t_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -205,7 +205,7 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*N*\
+*Nr*\
 Der `n`-Verteilungsparameter.
 
 *Richting*\
@@ -213,10 +213,10 @@ Das mit diesem `param_type`-Objekt zu vergleichende Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`0.0 < n`
+**Vorbedingung:**`0.0 < n`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)

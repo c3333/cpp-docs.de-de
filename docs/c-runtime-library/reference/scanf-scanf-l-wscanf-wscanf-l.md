@@ -43,19 +43,19 @@ helpviewer_keywords:
 - wscanf_l function
 - _wscanf_l function
 ms.assetid: 73eac607-117f-4be4-9ff0-4afd9cf3c848
-ms.openlocfilehash: df63baa8ffa878a4a65c84e07f0e68aa383e79cf
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 62f97c901bc7e6dc34a2db6ad80193cc4aaa986a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80079212"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231350"
 ---
 # <a name="scanf-_scanf_l-wscanf-_wscanf_l"></a>scanf, _scanf_l, wscanf, _wscanf_l
 
 Liest formatierte Daten aus dem Standardeingabestream. Sicherere Versionen dieser Funktion sind verfügbare; siehe [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md).
 
 > [!NOTE]
-> In Visual Studio 2015 wurden die `printf`-und `scanf`-Funktions Familie als **Inline** deklariert und in die Header `<stdio.h>` und `<conio.h>` verschoben. Wenn Sie älteren Code migrieren, kann *LNK2019* in Verbindung mit diesen Funktionen angezeigt werden. Weitere Informationen finden Sie unter [visueller C++ Änderungs Verlauf 2003-2015](../../porting/visual-cpp-change-history-2003-2015.md#stdio_and_conio).
+> In Visual Studio 2015 `printf` wurden die-und die- `scanf` Funktions Familie als deklariert **`inline`** und in `<stdio.h>` die `<conio.h>` Header und verschoben. Wenn Sie älteren Code migrieren, kann *LNK2019* in Verbindung mit diesen Funktionen angezeigt werden. Weitere Informationen finden Sie unter [Visual C++ Änderungs Verlauf 2003-2015](../../porting/visual-cpp-change-history-2003-2015.md#stdio_and_conio).
 
 ## <a name="syntax"></a>Syntax
 
@@ -97,14 +97,14 @@ Gibt die Anzahl von Feldern zurück, die erfolgreich konvertiert und zugewiesen 
 
 Wenn *Format* ein **null** -Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **EOF** zurück und legen **errno** auf **EINVAL**fest.
 
-Weitere Informationen über diese und andere Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
 ## <a name="remarks"></a>Bemerkungen
 
 Die **scanf** -Funktion liest Daten aus dem Standardeingabestream **stdin** und schreibt die Daten in den Speicherort, der durch das- *Argument*angegeben wird. Jedes *Argument* muss ein Zeiger auf eine Variable eines Typs sein, der einem Typspezifizierer im- *Format*entspricht. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 > [!IMPORTANT]
-> Geben Sie beim Lesen einer Zeichenfolge mit **scanf**immer eine Breite für das **% s** -Format an (z. b. **"% 32s"** anstelle von **"% s"** ); Andernfalls kann eine nicht ordnungsgemäß formatierte Eingabe leicht einen Pufferüberlauf verursachen. Ziehen Sie alternativ die Verwendung von [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) oder [fgets](fgets-fgetws.md) in Betracht.
+> Geben Sie beim Lesen einer Zeichenfolge mit **scanf**immer eine Breite für das **% s** -Format an (z. b. **"% 32s"** anstelle von **"% s"**); Andernfalls kann eine nicht ordnungsgemäß formatierte Eingabe leicht einen Pufferüberlauf verursachen. Ziehen Sie alternativ die Verwendung von [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) oder [fgets](fgets-fgetws.md) in Betracht.
 
 **wscanf** ist eine breit Zeichen Version von **scanf**. Das *Format* -Argument für **wscanf** ist eine Zeichenfolge mit breit Zeichen. **wscanf** und **scanf** Verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **scanf** unterstützt derzeit keine Eingaben aus einem Unicode-Stream.
 
@@ -119,14 +119,14 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 Weitere Informationen finden Sie unter [Formatangabefelder: scanf- und wscanf-Funktionen](../../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**scanf**, **_scanf_l**|\<stdio.h>|
 |**wscanf**, **_wscanf_l**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -168,10 +168,10 @@ The contents are: 36 92.300003 y n Wide characters
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [fscanf, _fscanf_l, fwscanf, _fwscanf_l](fscanf-fscanf-l-fwscanf-fwscanf-l.md)<br/>
 [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [sscanf, _sscanf_l, swscanf, _swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>

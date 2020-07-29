@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - complex<double> function
 ms.assetid: 0d0b9d2a-9b9b-410b-82a0-86b6df127e47
-ms.openlocfilehash: 8955669f4bc6fd7b3b373751e0e5134205dd1657
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: b9bf4780dd78800653804762301b36ff6bb30a92
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689795"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230077"
 ---
 # <a name="complexltdoublegt"></a>complex&lt;double&gt;
 
-Beschreibt ein Objekt, das ein geordnetes Paar von Objekten speichert, die beide den Typ **Double**haben, wobei das erste Objekt den reellen Teil einer komplexen Zahl und das zweite Objekt dem imaginären Teil darstellt.
+Beschreibt ein Objekt, das ein geordnetes Paar von Objekten speichert, die beide den Typ **`double`** haben, wobei das erste Objekt dem reellen Teil einer komplexen Zahl und das zweite Objekt den imaginären Teil darstellt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,24 +36,24 @@ constexpr explicit complex(const complex<long double>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*RealVal* -\
-Der Wert vom Typ **double** für den Realteil der zu erstellenden komplexen Zahl.
+*RealVal*\
+Der Wert des Typs **`double`** für den reellen Teil der komplexen Zahl, die erstellt wird.
 
-*Imagval* -\
-Der Wert vom Typ **double** für den Imaginärteil der zu erstellenden komplexen Zahl.
+*ImagVal*\
+Der Wert des Typs **`double`** für den imaginären Teil der komplexen Zahl, die erstellt wird.
 
-*complexnum* -\
-Die komplexe Zahl vom Typ **float** oder vom Typ **long Double** , deren reelle und imaginäre Teile verwendet werden, um eine komplexe Zahl vom Typ **Double** zu initialisieren, die erstellt wird.
+*complexnum*\
+Die komplexe Zahl vom Typ **`float`** oder des Typs **`long double`** , deren reelle und imaginäre Teile zum Initialisieren einer komplexen Anzahl von konstruiertem Typ verwendet werden **`double`** .
 
 ## <a name="return-value"></a>Rückgabewert
 
-Eine komplexe Zahl vom Typ **double**.
+Eine komplexe Zahl vom Typ **`double`** .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die explizite Spezialisierung der Klassen Vorlage, die Komplex für eine komplexe Klasse des Typs **Double** ist, unterscheidet sich von der Klassen Vorlage nur in den Konstruktoren, die Sie definiert. Die Konvertierung von **float** in **Double** darf implizit erfolgen, aber die Konvertierung von **long Double** in **Double** muss **explizit**erfolgen. Die Verwendung einer **expliziten** Konvertierung schließt die Initiierung mit Typkonvertierung über die Zuweisungssyntax aus.
+Die explizite Spezialisierung der Klassen Vorlage, die für eine komplexe Klasse des Typs Komplex ist, unter **`double`** scheidet sich von der Klassen Vorlage nur in den Konstruktoren, die Sie definiert. Die Konvertierung von **`float`** in **`double`** darf implizit erfolgen, aber die Konvertierung von **`long double`** in **`double`** ist erforderlich **`explicit`** . Die Verwendung von **`explicit`** schließt die Initiierung mit Typkonvertierung mithilfe der Zuweisungs Syntax aus.
 
-Weitere Informationen zu den Klassen Vorlagen `complex` finden Sie unter [Complex-Klasse](../standard-library/complex-class.md). Eine Liste der Elemente der Klassen Vorlage `complex` finden Sie unter.
+Weitere Informationen zur Klassen Vorlage finden Sie unter `complex` [Complex-Klasse](../standard-library/complex-class.md). Eine Liste der Elemente der Klassen Vorlage finden Sie `complex` unter.
 
 ## <a name="example"></a>Beispiel
 
@@ -110,13 +110,13 @@ arg ( c3 ) = 0.896055 radians, which is 51.3402 degrees.
 */
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**: \<complex>
+**Header**:\<complex>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[complex-Klasse](../standard-library/complex-class.md)\
-[Thread Safety in the C++ Standard Library (Threadsicherheit in der C++-Standardbibliothek)](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[komplexe Klasse](../standard-library/complex-class.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

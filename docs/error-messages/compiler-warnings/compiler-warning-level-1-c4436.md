@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4436
 ms.assetid: 2b54a1fc-c9c6-4cc9-90be-faa44fc715d5
-ms.openlocfilehash: 7772d835e398ade24b452f2b816afeae09659bf7
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6a15220cb02a48fb11936b69e5830412f1221108
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80162386"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230674"
 ---
 # <a name="compiler-warning-level-1-c4436"></a>Compilerwarnung (Stufe 1) C4436
 
 die dynamic_cast von der virtuellen Basis "Class1" zu "Klasse2" im Konstruktor oder Dekonstruktor schlägt möglicherweise mit der teilweise konstruierten Objekt Kompilierung mit "/vd2" fehl oder definiert "Klasse2" mit #Pragma vtordisp (2).
 
-Der Compiler hat einen `dynamic_cast` Vorgang mit den folgenden Merkmalen gefunden.
+Der Compiler hat einen- **`dynamic_cast`** Vorgang mit den folgenden Merkmalen gefunden.
 
 - Die Umwandlung erfolgt von einem Basisklassen Zeiger auf einen abgeleiteten Klassen Zeiger.
 
@@ -27,11 +27,11 @@ Der Compiler hat einen `dynamic_cast` Vorgang mit den folgenden Merkmalen gefund
 
 - Die Umwandlung befindet sich in einem Konstruktor oder Dekonstruktor der abgeleiteten Klasse oder in einer Klasse, die weiter von der abgeleiteten Klasse erbt.
 
-Die Warnung gibt an, dass die `dynamic_cast` möglicherweise nicht ordnungsgemäß ausgeführt wird, wenn Sie auf einem teilweise konstruierten Objekt ausgeführt wird.  Dies ist der Fall, wenn der abgeleitete Konstruktor/Dekonstruktor für ein untergeordnetes Objekt eines weiteren abgeleiteten Objekts ausgeführt wird.  Wenn die abgeleitete Klasse, die in der Warnung benannt ist, nie weiter abgeleitet wird, kann die Warnung ignoriert werden.
+Die Warnung gibt **`dynamic_cast`** an, dass möglicherweise nicht ordnungsgemäß ausgeführt wird, wenn es auf einem teilweise konstruierten Objekt ausgeführt wird.  Dies ist der Fall, wenn der abgeleitete Konstruktor/Dekonstruktor für ein untergeordnetes Objekt eines weiteren abgeleiteten Objekts ausgeführt wird.  Wenn die abgeleitete Klasse, die in der Warnung benannt ist, nie weiter abgeleitet wird, kann die Warnung ignoriert werden.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C4436 generiert und das Code Generierungs Problem veranschaulicht, das sich aus dem Feld Missing `vtordisp` ergibt.
+Im folgenden Beispiel wird C4436 generiert und das Code Generierungs Problem veranschaulicht, das im fehlenden `vtordisp` Feld auftritt.
 
 ```cpp
 // C4436.cpp
@@ -77,4 +77,4 @@ int main()
 
 [dynamic_cast-Operator](../../cpp/dynamic-cast-operator.md)<br/>
 [vtordisp](../../preprocessor/vtordisp.md)<br/>
-[Compilerwarnung (Ebene 4) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)
+[Compilerwarnung (Stufe 4) C4437](../../error-messages/compiler-warnings/compiler-warning-level-4-c4437.md)

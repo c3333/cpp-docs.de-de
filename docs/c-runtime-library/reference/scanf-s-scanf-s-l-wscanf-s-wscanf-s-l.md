@@ -45,12 +45,12 @@ helpviewer_keywords:
 - wscanf_s_l function
 - buffers [C++], avoiding overruns
 ms.assetid: 42cafcf7-52d6-404a-80e4-b056a7faf2e5
-ms.openlocfilehash: e869f9e0d4fa87c87878ffea987e4b6d85a75616
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 8811bd0b6e4009cd6aba570e65d0687fab465614
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948873"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231363"
 ---
 # <a name="scanf_s-_scanf_s_l-wscanf_s-_wscanf_s_l"></a>scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l
 
@@ -96,7 +96,7 @@ Gibt die Anzahl der Felder zurück, die erfolgreich konvertiert und zugewiesen w
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (errno, _doserrno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **scanf_s** -Funktion liest Daten aus dem Standardeingabestream ( **stdin**) und schreibt Sie in das- *Argument*. Jedes *Argument* muss ein Zeiger auf einen Variablentyp sein, der dem Typspezifizierer im- *Format*entspricht. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
@@ -114,7 +114,7 @@ scanf_s("%9s", s, (unsigned)_countof(s)); // buffer size is 10, width specificat
 Die Puffergröße schließt das Terminal NULL ein. Sie können ein Feld für die breiten Angabe verwenden, um sicherzustellen, dass das eingelesene Token in den Puffer passt. Wenn ein Token zu groß für die Anpassung ist, wird nichts in den Puffer geschrieben, es sei denn, es gibt eine Width-Angabe.
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**. Verwenden Sie eine statische Umwandlung, um einen **size_t** -Wert für 64-Bit-Buildkonfigurationen in **Ganzzahl ohne Vorzeichen** zu konvertieren.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**. Verwenden Sie eine statische Umwandlung, um einen **size_t** Wert **`unsigned`** für 64-Bit-Buildkonfigurationen in zu konvertieren.
 
 Der Puffergrößen Parameter beschreibt die maximale Anzahl von Zeichen, nicht Bytes. In diesem Beispiel stimmt die Breite des Puffer Typs nicht mit der Breite des Format Bezeichnern ab.
 
@@ -154,10 +154,10 @@ Weitere Informationen finden Sie unter [Format Specification Fields: scanf and w
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**scanf_s**, **_scanf_s_l**|\<stdio.h>|
-|**wscanf_s**, **_wscanf_s_l**|\<stdio.h> oder \<wchar.h>|
+|**scanf_s** **_scanf_s_l**|\<stdio.h>|
+|**wscanf_s** **_wscanf_s_l**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Der Standardstream verarbeitet **stdin**, **stdout**und **stderr** und muss umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Der Standardstream verarbeitet **stdin**, **stdout**und **stderr** und muss umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -206,12 +206,12 @@ The number of fields input is 6
 The contents are: 36 92.300003 y n Wide characters
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [fscanf, _fscanf_l, fwscanf, _fwscanf_l](fscanf-fscanf-l-fwscanf-fwscanf-l.md)<br/>
 [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [sscanf, _sscanf_l, swscanf, _swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>

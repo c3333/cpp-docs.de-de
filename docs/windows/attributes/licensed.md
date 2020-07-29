@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - licensed attribute
 ms.assetid: 09cf3b4a-d3f2-43e3-9180-d420333b23bf
-ms.openlocfilehash: 49585a697c7880da27357ebcafce9c5cefd89fd2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 53b1a356f3a7e224cb85c15b8aa725a5f0469157
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214759"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87201712"
 ---
 # <a name="licensed"></a>licensed
 
-Gibt an, dass das COM-Objekt, auf das es angewendet wird, lizenziert ist und mit `IClassFactory2`instanziiert werden muss.
+Gibt an, dass das COM-Objekt, auf das es angewendet wird, lizenziert ist und mithilfe von instanziiert werden muss `IClassFactory2` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,7 +25,7 @@ Gibt an, dass das COM-Objekt, auf das es angewendet wird, lizenziert ist und mit
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **lizenzierte** C++ Attribut verfügt über die gleiche Funktionalität wie das [lizenzierte](/windows/win32/Midl/licensed) Mittel l-Attribut.
+Das **lizenzierte** C++-Attribut verfügt über die gleiche Funktionalität wie das [lizenzierte](/windows/win32/Midl/licensed) Mittel l-Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -54,8 +54,8 @@ public:
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|`coclass`|
 |**Ungültige Attribute**|Keine|
 

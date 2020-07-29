@@ -5,12 +5,12 @@ helpviewer_keywords:
 - allocators
 - C++ Standard Library, allocators
 ms.assetid: ac95023b-9e7d-49f5-861a-bf7a9a340746
-ms.openlocfilehash: abef6f4e641b7936157ee063443a5b2a220fdd52
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 5aee23f72c5b0fb955b4dcc76a3f8c51eca7be70
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623518"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87204234"
 ---
 # <a name="allocators"></a>Allocators
 
@@ -28,7 +28,7 @@ Die C++-Standardbibliothek stellt eine Standardimplementierung für einen Alloca
 
 ## <a name="writing-your-own-allocator-c11"></a>Schreiben von eigenen Allocators (C ++ 11)
 
-Der standardallocator verwendet **New** und DELETE, um Speicher zuzuweisen und die Zuordnung zu **Entfernen** . Wenn Sie eine andere Methode für die Speicherzuordnung verwenden möchten, z. B. die Verwendung von gemeinsam genutztem Speicher, müssen Sie einen eigenen Allocator erstellen. Wenn Sie C ++ 11 als Ziel verwenden und Sie einen neuen benutzerdefinierten Allocator schreiben müssen, erstellen Sie möglichst einen minimalen Allocator. Auch wenn Sie bereits einen herkömmlichen Allocator implementiert haben, ziehen Sie in Betracht, ihn in einen *minimalen Allocator* zu ändern, um die effizientere Methode `construct()` nutzen zu können, die Ihnen automatisch bereitgestellt wird.
+Der standardallocator verwendet **`new`** und **`delete`** , um Speicher zuzuweisen und dessen Zuordnung zu verringern. Wenn Sie eine andere Methode für die Speicherzuordnung verwenden möchten, z. B. die Verwendung von gemeinsam genutztem Speicher, müssen Sie einen eigenen Allocator erstellen. Wenn Sie C ++ 11 als Ziel verwenden und Sie einen neuen benutzerdefinierten Allocator schreiben müssen, erstellen Sie möglichst einen minimalen Allocator. Auch wenn Sie bereits einen herkömmlichen Allocator implementiert haben, ziehen Sie in Betracht, ihn in einen *minimalen Allocator* zu ändern, um die effizientere Methode `construct()` nutzen zu können, die Ihnen automatisch bereitgestellt wird.
 
 Ein minimaler Allocator benötigt viel weniger Textbausteine und ermöglicht Ihnen, sich auf die `allocate`- und `deallocate`-Memberfunktionen zu konzentrieren, die die gesamte Arbeit erledigen. Implementieren Sie beim Erstellen eines minimalen Allocators keine Member außer den im folgenden Beispiel dargestellten:
 
@@ -121,6 +121,6 @@ Außerdem muss jeder Allocator, der mit C++-Standardbibliohekcontainern verwende
 
 Weitere Informationen zu diesen Typdefinitionen und Methoden finden Sie unter [allocator-Klasse](allocator-class.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Standard Bibliotheks Referenz](cpp-standard-library-reference.md)

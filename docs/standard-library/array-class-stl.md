@@ -96,12 +96,12 @@ helpviewer_keywords:
 - std::array [C++], size
 - std::array [C++], swap
 ms.assetid: fdfd43a5-b2b5-4b9e-991f-93bf10fb4293
-ms.openlocfilehash: a6cda0f0c66624158f7c2abfeabb5f54678d21b0
-ms.sourcegitcommit: 7b12cc4a4d3fcb261d67420fc3dd18652730008f
+ms.openlocfilehash: 9cde21624e3a8d4cce6db9cdc054bad427340f31
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82643646"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87203906"
 ---
 # <a name="array-class-c-standard-library"></a>array-Klasse (C++-Standardvorlagenbibliothek)
 
@@ -123,7 +123,7 @@ class array;
 
 ## <a name="members"></a>Member
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |-|-|
 |[const_iterator](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
 |[const_pointer](#const_pointer)|Der Typ eines konstanten Zeigers auf ein Element.|
@@ -131,7 +131,7 @@ class array;
 |[const_reverse_iterator](#const_reverse_iterator)|Der Typ eines konstanten umgekehrten Iterators für die gesteuerte Sequenz.|
 |[difference_type](#difference_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[Iterator](#iterator)|Der Typ eines Iterators für die gesteuerte Sequenz.|
-|[Zeiger](#pointer)|Der Typ eines Zeigers auf ein Element.|
+|[Zeichner](#pointer)|Der Typ eines Zeigers auf ein Element.|
 |[Referenz](#reference)|Der Typ eines Verweises auf ein Element.|
 |[reverse_iterator](#reverse_iterator)|Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.|
 |[size_type](#size_type)|Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.|
@@ -140,15 +140,15 @@ class array;
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[array](#array)|Erstellt ein Arrayobjekt.|
-|[assign](#assign)|Veralteten. Verwenden `fill`Sie.) Ersetzt alle Elemente.|
+|[assign](#assign)|Veralteten. Verwenden Sie `fill` .) Ersetzt alle Elemente.|
 |[at](#at)|Greift auf ein Element an einer angegebenen Position zu.|
-|[back (Zurück)](#back)|Greift auf das letzte Element zu.|
+|[Zurück](#back)|Greift auf das letzte Element zu.|
 |[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cbegin](#cbegin)|Gibt einen für wahlfreien Zugriff eingerichteten konstanten Iterator auf das erste Element im Vektor zurück.|
 |[cend](#cend)|Gibt einen für wahlfreien Zugriff eingerichteten konstanten Iterator zurück, der unmittelbar hinter das Ende des Vektors zeigt.|
 |[crbegin](#crbegin)|Gibt einen konstanten Iterator zum ersten Element in einem umgekehrten Array zurück.|
 |[crend](#crend)|Gibt einen konstanten Iterator auf das Ende eines umgekehrten Arrays zurück.|
-|[Daten](#data)|Ruft die Adresse des ersten Elements ab.|
+|[data](#data)|Ruft die Adresse des ersten Elements ab.|
 |[empty](#empty)|Testet, ob Elemente vorhanden sind.|
 |[end](#end)|Legt das Ende der kontrollierten Sequenz fest.|
 |[erfüllen](#fill)|Ersetzt alle Elemente durch einen angegebenen Wert.|
@@ -176,7 +176,7 @@ erstellt das Objekt `ai`, das vier ganzzahlige Werte enthält, initialisiert die
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<array>
+**Header:**\<array>
 
 **Namespace:** std
 
@@ -199,7 +199,7 @@ Einzufügendes Objekt bzw. einzufügender Bereich.
 
 Der Standardkonstruktor `array()` bewirkt, dass die kontrollierte Sequenz nicht initialisiert (oder standardmäßig initialisiert) wird. Sie können ihn verwenden, um eine nicht initialisierte kontrollierte Sequenz festzulegen.
 
-`array(const array& right)` Der Kopierkonstruktor Initialisiert die gesteuerte Sequenz mit der Sequenz [*right*`.begin()`, *right*`.end()`). Sie können ihn verwenden, um eine initialisierte kontrollierte Sequenz festzulegen, die eine Kopie einer Sequenz ist, die vom Array-Objekt *right* kontrolliert wird.
+Der Kopierkonstruktor `array(const array& right)` Initialisiert die gesteuerte Sequenz mit der Sequenz [*right* `.begin()` , *right* `.end()` ). Sie können ihn verwenden, um eine initialisierte kontrollierte Sequenz festzulegen, die eine Kopie einer Sequenz ist, die vom Array-Objekt *right* kontrolliert wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -381,7 +381,7 @@ int main()
 
 ## <a name="arraycbegin"></a><a name="cbegin"></a>Array:: cbegin
 
-Gibt einen **Konstanten** Iterator zurück, der das erste Element im Bereich adressiert.
+Gibt einen **`const`** Iterator zurück, der das erste Element im Bereich adressiert.
 
 ```cpp
 const_iterator cbegin() const noexcept;
@@ -389,13 +389,13 @@ const_iterator cbegin() const noexcept;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **konstanter** Random-Access-Iterator, der auf das erste Element des Bereichs zeigt oder die Position direkt hinter dem Ende eines leeren Bereichs (für einen leeren Bereich `cbegin() == cend()`).
+Ein **`const`** Random-Access-Iterator, der auf das erste Element des Bereichs zeigt oder die Position direkt hinter dem Ende eines leeren Bereichs (für einen leeren Bereich `cbegin() == cend()` ).
 
 ### <a name="remarks"></a>Bemerkungen
 
 Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
-Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` In diesem Beispiel sollte ein änderbarer (nicht **konstanter) Container**sein, der und `begin()` `cbegin()`unterstützt.
+Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollte `Container` ein änderbarer (nicht) Container sein, **`const`** der und unterstützt `begin()` `cbegin()` .
 
 ```cpp
 auto i1 = Container.begin();
@@ -407,7 +407,7 @@ auto i2 = Container.cbegin();
 
 ## <a name="arraycend"></a><a name="cend"></a>Array:: cend
 
-Gibt einen **Konstanten** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
+Gibt einen **`const`** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
 
 ```cpp
 const_iterator cend() const noexcept;
@@ -421,7 +421,7 @@ Ein Random-Access-Iterator, der auf eine Position unmittelbar nach dem Ende des 
 
 `cend` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
-Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. `Container` In diesem Beispiel sollte ein änderbarer (nicht **konstanter) Container**sein, der und `end()` `cend()`unterstützt.
+Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollte `Container` ein änderbarer (nicht) Container sein, **`const`** der und unterstützt `end()` `cend()` .
 
 ```cpp
 auto i1 = Container.end();
@@ -1138,7 +1138,7 @@ Der zu kopierende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Member-Operator weist jedes Element von *right* dem entsprechenden Element der gesteuerten Sequenz zu und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
+Der Member-Operator weist jedes Element von *right* dem entsprechenden Element der gesteuerten Sequenz zu und gibt dann zurück **`*this`** . Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1502,7 +1502,7 @@ Container für den Tausch von Inhalten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion tauscht die kontrollierten Sequenzen `*this` zwischen und *Rechts*aus. Sie führt verschiedene Elementzuweisungen und Konstruktoraufrufe proportional zu `N` durch.
+Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen **`*this`** und *Rechts*aus. Sie führt verschiedene Elementzuweisungen und Konstruktoraufrufe proportional zu `N` durch.
 
 Es ist auch eine [Swap](array-functions.md#swap) -Funktion ohne Member zum Austauschen von zwei **Array** Instanzen verfügbar.
 
@@ -1602,4 +1602,4 @@ int main()
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[\<Array>](../standard-library/array.md)
+[\<array>](../standard-library/array.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4042
 ms.assetid: e4bd861b-1194-426b-bf79-68c5b021eb0a
-ms.openlocfilehash: 0ffc4c4aeb7d37ffa45f503a34fd369d36c00ce4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: cd8d8addb8441bd32d242c4f4858104048f7a62e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80164208"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87197071"
 ---
 # <a name="compiler-warning-level-1-c4042"></a>Compilerwarnung (Stufe 1) C4042
 
@@ -19,13 +19,13 @@ ms.locfileid: "80164208"
 
 Die angegebene Speicher Klasse kann in diesem Kontext nicht mit diesem Bezeichner verwendet werden. Der Compiler verwendet stattdessen die Standard Speicher Klasse:
 
-- `extern`, wenn der *Bezeichner* eine Funktion ist.
+- **`extern`**, wenn der *Bezeichner* eine Funktion ist.
 
-- **Auto**, wenn der *Bezeichner* ein formaler Parameter oder eine lokale Variable ist.
+- **`auto`**, wenn der *Bezeichner* ein formaler Parameter oder eine lokale Variable ist.
 
 - Keine Speicher Klasse, wenn der *Bezeichner* eine globale Variable ist.
 
-Diese Warnung kann dadurch verursacht werden, dass eine andere Speicher Klasse als " **Register** " in einer Parameter Deklaration angegeben wird.
+Diese Warnung kann dadurch verursacht werden, dass eine andere Speicher Klasse als **`register`** in einer Parameter Deklaration angegeben wird.
 
 Im folgenden Beispiel wird C4042 generiert.
 

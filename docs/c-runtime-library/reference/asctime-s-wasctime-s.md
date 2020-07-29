@@ -36,12 +36,12 @@ helpviewer_keywords:
 - _wasctime_s function
 - asctime_s function
 ms.assetid: 17ad9b2b-a459-465d-976a-42822897688a
-ms.openlocfilehash: 282f4666734a4a8fd9c6825ee18265bd03fff65b
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 529663a8c36a1b934a4dd99852aee19fb1a1e6e6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909409"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217011"
 ---
 # <a name="asctime_s-_wasctime_s"></a>asctime_s, _wasctime_s
 
@@ -81,7 +81,7 @@ Ein Zeiger auf einen Puffer, um das Ergebnis der Zeichenfolge zu speichern. Dies
 Die Größe des Puffers, der zum Speichern des Ergebnisses verwendet wird.
 
 *tmsource*<br/>
-Zeit-/Datumsstruktur. Diese Funktion nimmt einen Zeiger auf ein gültiges **struct** - **TM** -Objekt an.
+Zeit-/Datumsstruktur. Diese Funktion nimmt einen Zeiger auf ein gültiges **`struct`** **TM** -Objekt an.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -91,20 +91,20 @@ Null, wenn erfolgreich. Wenn es einen Fehler gibt, wird der ungültige Parameter
 
 |*ert*|*numberOfElements*|*tmsource*|Rückgabewert|Wert im *Puffer*|
 |--------------|------------------------|----------|------------|-----------------------|
-|**Normal**|Any|Any|**Eingabe**|Nicht geändert|
+|**NULL**|Any|Any|**Eingabe**|Nicht geändert|
 |Not **null** (zeigt auf gültigen Speicher)|0|Any|**Eingabe**|Nicht geändert|
 |Nicht **null**|0<Größe<26|Any|**Eingabe**|leere Zeichenfolge|
-|Nicht **null**|>= 26|**Normal**|**Eingabe**|leere Zeichenfolge|
+|Nicht **null**|>= 26|**NULL**|**Eingabe**|leere Zeichenfolge|
 |Nicht **null**|>= 26|Ungültige Zeitstruktur oder Zeitkomponentenwerte außerhalb des Bereichs|**Eingabe**|leere Zeichenfolge|
 
 > [!NOTE]
 > Fehlerbedingungen für **wasctime_s** ähneln **asctime_s** , mit der Ausnahme, dass die Größenbeschränkung in Wörtern gemessen wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **Asctime** -Funktion konvertiert eine als-Struktur gespeicherte Zeit in eine Zeichenfolge. Der *tmsource* -Wert wird normalerweise durch einen Aufruf von **gmtime** oder **localtime**abgerufen. Beide Funktionen können verwendet werden, um eine **TM** -Struktur zu füllen, wie Sie in Time definiert ist. Micha.
 
-|timeptr.member|Value|
+|timeptr.member|Wert|
 |--------------------|-----------|
 |**tm_hour**|Stunden seit Mitternacht (0-23)|
 |**tm_isdst**|Positiv bei Sommerzeit; 0 bei Winterzeit; negativ bei unbekannter Zeit. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit (DST, Daylight Saving Time) zu implementieren.|
@@ -118,7 +118,7 @@ Die **Asctime** -Funktion konvertiert eine als-Struktur gespeicherte Zeit in ein
 
 Die konvertierte Zeichenfolge wird auch gemäß den lokalen Zeitzoneneinstellungen angepasst. Informationen zur Konfiguration der Zeitzonen finden Sie unter den [time, _time32, _time64](time-time32-time64.md), [_ftime, _ftime32, _ftime64](ftime-ftime32-ftime64.md) und [localtime_s, _localtime32_s, _localtime64_2](localtime-s-localtime32-s-localtime64-s.md)-Funktionen. Informationen zur Definition der Zeitzonenumgebung und globalen Variablen finden Sie unter der [_tzset](tzset.md)-Funktion.
 
-Das von **asctime_s** erzeugte Zeichen folgen Ergebnis enthält genau 26 Zeichen und hat das `Wed Jan 02 02:03:55 1980\n\0`Formular. Eine 24-Stunden-Uhr wird verwendet. Alle Felder haben eine feste Breite. Die Zeilenwechsel- und Nullzeichen nehmen die letzten beiden Stellen der Zeichenfolge ein. Der Wert, der als zweiter Parameter übergeben wird, sollte mindestens so hoch sein. Wenn der Wert kleiner ist, wird der Fehlercode " **Eingabe**" zurückgegeben.
+Das von **asctime_s** erzeugte Zeichen folgen Ergebnis enthält genau 26 Zeichen und hat das Formular `Wed Jan 02 02:03:55 1980\n\0` . Eine 24-Stunden-Uhr wird verwendet. Alle Felder haben eine feste Breite. Die Zeilenwechsel- und Nullzeichen nehmen die letzten beiden Stellen der Zeichenfolge ein. Der Wert, der als zweiter Parameter übergeben wird, sollte mindestens so hoch sein. Wenn der Wert kleiner ist, wird der Fehlercode " **Eingabe**" zurückgegeben.
 
 **_wasctime_s** ist eine breit Zeichen Version von **asctime_s**. **_wasctime_s** und **asctime_s** Verhalten sich andernfalls identisch.
 
@@ -136,7 +136,7 @@ Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen v
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**asctime_s**|\<time.h>|
 |**_wasctime_s**|\<time.h> oder \<wchar.h>|

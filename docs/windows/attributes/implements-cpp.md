@@ -1,21 +1,21 @@
 ---
-title: implementiert (C++-COM-Attribut)
+title: implementiert (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.implements
 helpviewer_keywords:
 - implements attribute
 ms.assetid: 9cf0858b-cb7d-4d3c-81a6-97d87ed00d25
-ms.openlocfilehash: 9425f998f0e8fbe5f16e6eb136e00ba3fb7bd5d9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e9e2d8f0bea26579fa40cf0e5d8d053b913ef318
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409380"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217232"
 ---
 # <a name="implements-c"></a>implements (C++)
 
-Gibt die Dispatch-Schnittstellen, die erzwungen werden, um die IDL-Co-Klasse angehören.
+Gibt Dispatch-Schnittstellen an, die als Member der IDL-Co-Klasse erzwungen werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,33 +27,33 @@ Gibt die Dispatch-Schnittstellen, die erzwungen werden, um die IDL-Co-Klasse ang
 ### <a name="parameters"></a>Parameter
 
 *interfaces*<br/>
-Eine durch Trennzeichen getrennte Liste von Schnittstellen, die ein Mitglied der IDL-Co-Klasse. Ist eine kurzmethode zur Angabe einer einzelnen Schnittstelle **implementiert (** *Interface_name* **)**.
+Eine durch Kommas getrennte Liste der Schnittstellen, die ein Member der IDL-Co-Klasse sein werden. Eine Kurzmethode zum Angeben einer einzelnen Schnittstelle ist **implementiert (** *INTERFACE_NAME* **)**.
 
-*dispinterfaces*<br/>
-Eine durch Trennzeichen getrennte Liste von die Disp-Schnittstelle, die ein Mitglied der IDL-Co-Klasse. Ist eine kurzmethode zur Angabe einer einzelnen Dispinterface **implementiert (Disp-Schnittstellen =** *Dispinterface_name* **)**.
+*DISP*<br/>
+Eine durch Kommas getrennte Liste der dispinterface, die ein Member der IDL-Co-Klasse sein wird. Eine Kurzmethode zum Angeben einer einzelnen dispinterface ist **implementiert (Dispinterfaces =** *dispinterface_name* **)**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-In der Standardeinstellung nur COM-Schnittstellen, sind die Basisklassen von der `coclass` in der IDL-Co-Klasse hinzugefügt werden. **implementiert** können Sie andere Schnittstellen sollen von IDL erzwingen `coclass` Member.
+Standardmäßig werden nur COM-Schnittstellen, die Basisklassen von sind, `coclass` in der IDL-Co-Klasse hinzugefügt. **implementiert** das Erzwingen von IDL-Membern durch andere Schnittstellen `coclass` .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**class**, **struct**|
-|**Wiederholbar**|Ja|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Ja|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel besteht aus drei Teilen: einer IDL-Datei und die zugehörigen .h-Datei und einer C++-Datei.
+Das folgende Beispiel besteht aus drei Teilen: einer IDL-Datei und der zugehörigen h-Datei sowie einer C++-Datei.
 
-Angenommen Sie die IDL-Datei, die an den Compiler verfügbar.
+Angenommen, die folgende IDL-Datei wird dem Compiler zur Verfügung gestellt.
 
 ```
 // attr_implements.idl
@@ -101,7 +101,7 @@ library odod
 
 ## <a name="example"></a>Beispiel
 
-Und die folgenden .h-Datei, die muss auch für den Compiler verfügbar sein.
+Und der folgenden h-Datei, die auch für den Compiler verfügbar sein muss.
 
 ```cpp
 // attr_implements.h
@@ -381,7 +381,7 @@ CBar;
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Programm ohne implementiert `IBar1`, `IBar2`, und `ISna` werden nicht in der `coclass` in der generierten IDL-Datei.
+Im folgenden Programm, ohne implementiert, werden, und in der `IBar1` `IBar2` `ISna` generierten IDL nicht in enthalten sein `coclass` .
 
 ```cpp
 // attr_implements.cpp
@@ -484,7 +484,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)

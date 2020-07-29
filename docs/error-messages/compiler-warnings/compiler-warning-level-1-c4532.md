@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4532
 ms.assetid: 4e2a286a-d233-4106-9f65-29be1a94ca02
-ms.openlocfilehash: 97ef7093aa56b41b869979e09d77fc448c6cf43d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b8c7503c7d1c1b711006415a327c360731222042
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80186438"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87196343"
 ---
 # <a name="compiler-warning-level-1-c4532"></a>Compilerwarnung (Stufe 1) C4532
 
@@ -27,9 +27,9 @@ Der Compiler hat eines der folgenden Schlüsselwörter gefunden:
 
 Auslösen eines [__finally](../../cpp/try-finally-statement.md) [oder letzten](../../dotnet/finally.md) Blocks während der nicht ordnungsgemäßen Beendigung.
 
-Wenn eine Ausnahme auftritt und der Stapel während der Ausführung der Beendigungs Handler entladen wird (die `__finally` oder schließlich blockiert) und der Code aus einem `__finally` Block springt, bevor der `__finally`-Block beendet wird, ist das Verhalten nicht definiert. Das Steuerelement wird möglicherweise nicht zum Entwicklungscode zurückgegeben, sodass die Ausnahme möglicherweise nicht ordnungsgemäß behandelt wird.
+Wenn eine Ausnahme auftritt und der Stapel während der Ausführung der Beendigungs Handler entladen wird (die **`__finally`** -oder schließlich-Blöcke) und der Code aus einem Block springt, **`__finally`** bevor der- **`__finally`** Block beendet wird, ist das Verhalten nicht definiert. Das Steuerelement wird möglicherweise nicht zum Entwicklungscode zurückgegeben, sodass die Ausnahme möglicherweise nicht ordnungsgemäß behandelt wird.
 
-Wenn Sie von einem **__finally** -Block ausspringen müssen, überprüfen Sie zunächst, ob eine ungewöhnliche Beendigung auftritt.
+Wenn Sie aus einem-Block herausspringen müssen **`__finally`** , überprüfen Sie zunächst, ob eine ungewöhnliche Beendigung auftritt.
 
 Im folgenden Beispiel wird C4532 generiert. kommentieren Sie einfach die Jump-Anweisungen aus, um die Warnungen aufzulösen.
 

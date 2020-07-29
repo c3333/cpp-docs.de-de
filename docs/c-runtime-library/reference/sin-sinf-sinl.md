@@ -37,12 +37,12 @@ helpviewer_keywords:
 - trigonometric functions
 - sinf function
 ms.assetid: 737de73e-3590-45f9-8257-dc1c0c489dfc
-ms.openlocfilehash: 8e50a40df126b400163c2dde8c950da03d286aef
-ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
+ms.openlocfilehash: 7e6e4d9fee0df20ab81f15483cd5f7f4de16d751
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507013"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216725"
 ---
 # <a name="sin-sinf-sinl"></a>sin, sinf, sinl
 
@@ -79,7 +79,7 @@ Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys
 
 ## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Sin** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **Sin** immer Double und gibt **Double**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Sin** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **Sin** immer und gibt es zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 

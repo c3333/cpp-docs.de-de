@@ -7,12 +7,12 @@ helpviewer_keywords:
 - typetrait header
 - type_traits
 ms.assetid: 2260b51f-8160-4c66-a82f-00b534cb60d4
-ms.openlocfilehash: a0d7f57d13b4387dd5ba39048adf65d9ec7ca3f5
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 94178d2efd1942a7475fa7987526b021b1c6fb68
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72684423"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87201959"
 ---
 # <a name="lttype_traitsgt"></a>&lt;type_traits&gt;
 
@@ -24,11 +24,11 @@ Definiert Vorlagen für Kompilierzeit Konstanten, die Informationen über die Ei
 #include <type_traits>
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen und Vorlagen in \<type_traits > werden verwendet, um den Typrückschluss, die Klassifizierung und die Transformation zur Kompilierzeit zu unterstützen. Sie werden auch zum Erkennen von typbezogenen Fehlern und zur Optimierung des generischen Codes verwendet. Unäre Typmerkmale beschreiben eine Eigenschaft eines Typs, binäre Typmerkmale beschreiben eine Beziehung zwischen Typen, und Transformations Merkmale ändern eine Eigenschaft eines Typs.
+Die Klassen und Vorlagen in \<type_traits> dienen zur Unterstützung des Typrückschlusses, der Klassifizierung und der Transformation zum Zeitpunkt der Kompilierung. Sie werden auch zum Erkennen von typbezogenen Fehlern und zur Optimierung des generischen Codes verwendet. Unäre Typmerkmale beschreiben eine Eigenschaft eines Typs, binäre Typmerkmale beschreiben eine Beziehung zwischen Typen, und Transformations Merkmale ändern eine Eigenschaft eines Typs.
 
-Die Hilfsklasse `integral_constant` und deren Vorlagen Spezialisierungs `true_type` und `false_type` bilden die Basisklassen für typprädikate. Ein *Typprädikat* ist eine Vorlage, die ein oder mehrere Typargumente entgegennimmt. Wenn ein typprädikat *true*ist, wird es öffentlich, direkt oder indirekt von [true_type](../standard-library/type-traits-typedefs.md#true_type)abgeleitet. Wenn ein typprädikat *false enthält*, wird es direkt oder indirekt von [false_type](../standard-library/type-traits-typedefs.md#false_type)öffentlich abgeleitet.
+Die Hilfsklasse `integral_constant` und deren Vorlagen Spezialisierungs `true_type` -und- `false_type` bilden die Basisklassen für typprädikate. Ein *Typprädikat* ist eine Vorlage, die ein oder mehrere Typargumente entgegennimmt. Wenn ein typprädikat *true*ist, wird es öffentlich, direkt oder indirekt, von [true_type](../standard-library/type-traits-typedefs.md#true_type)abgeleitet. Wenn ein typprädikat " *false" enthält*, wird es direkt oder indirekt von [false_type](../standard-library/type-traits-typedefs.md#false_type)öffentlich abgeleitet.
 
 Ein *Typmodifizierer* oder *Transformationsmerkmal* ist eine Vorlage, die ein oder mehrere Vorlagenargumente entgegennimmt und über einen Member `type` verfügt, der ein Synonym für den geänderten Typ ist.
 
@@ -41,7 +41,7 @@ template <class T>
 using add_const_t = typename add_const<T>::type;
 ```
 
-Dies sind die bereitgestellten Aliase für die `type` Mitglieder:
+Dies sind die bereitgestellten Aliase für die Member `type` :
 
 ||||
 |-|-|-|
@@ -68,7 +68,7 @@ Primäre Typkategorien
 
 |||
 |-|-|
-|[is_void](../standard-library/is-void-class.md)|Testet, ob der Typ " **void**" ist.|
+|[is_void](../standard-library/is-void-class.md)|Testet, ob der Typ ist **`void`** .|
 |[is_null_pointer](../standard-library/is-null-pointer-class.md)|Testet, ob der Typ `std::nullptr_t` ist.|
 |[is_integral](../standard-library/is-integral-class.md)|Testet, ob der Typ eine Ganzzahl ist.|
 |[is_floating_point](../standard-library/is-floating-point-class.md)|Testet, ob der Typ ein Gleitkomma ist.|
@@ -89,7 +89,7 @@ Zusammengesetzte Typkategorien
 |-|-|
 |[is_reference](../standard-library/is-reference-class.md)|Testet, ob der Typ ein Verweis ist.|
 |[is_arithmetic](../standard-library/is-arithmetic-class.md)|Testet, ob der Typ arithmetisch ist.|
-|[is_fundamental](../standard-library/is-fundamental-class.md)|Testet, ob der Typ **ungültig** oder arithmetisch ist.|
+|[is_fundamental](../standard-library/is-fundamental-class.md)|Testet, ob der Typ **`void`** oder arithmetisch ist.|
 |[is_object](../standard-library/is-object-class.md)|Testet, ob der Typ ein Objekttyp ist.|
 |[is_scalar](../standard-library/is-scalar-class.md)|Testet, ob der Typ skalar ist.|
 |[is_compound](../standard-library/is-compound-class.md)|Testet, ob der Typ nicht skalar ist.|
@@ -99,13 +99,13 @@ Typeigenschaften
 
 |||
 |-|-|
-|[is_const](../standard-library/is-const-class.md)|Testet, ob der Typ **konstant**ist.|
-|[is_volatile](../standard-library/is-volatile-class.md)|Testet, ob der Typ **flüchtig**ist.|
+|[is_const](../standard-library/is-const-class.md)|Testet, ob der Typ ist **`const`** .|
+|[is_volatile](../standard-library/is-volatile-class.md)|Testet, ob der Typ ist **`volatile`** .|
 |[is_trivial](../standard-library/is-trivial-class.md)|Testet, ob der Typ trivial ist.|
 |[is_trivially_copyable](../standard-library/is-trivially-copyable-class.md)|Testet, ob der Typ trivial kopierbar ist.|
 |[is_standard_layout](../standard-library/is-standard-layout-class.md)|Testet, ob der Typ ein Standardlayouttyp ist.|
 |[is_pod](../standard-library/is-pod-class.md)|Testet, ob der Typ ein POD-Typ ist.|
-|[is_literal_type](../standard-library/is-literal-type-class.md)|Testet, ob der Typ eine `constexpr`-Variable sein oder in einer `constexpr`-Funktion verwendet werden kann.|
+|[is_literal_type](../standard-library/is-literal-type-class.md)|Testet, ob der Typ eine **`constexpr`** Variable sein oder in einer Funktion verwendet werden kann **`constexpr`** .|
 |[is_empty](../standard-library/is-empty-class.md)|Testet, ob es sich bei dem Typ um eine leere Klasse handelt.|
 |[is_polymorphic](../standard-library/is-polymorphic-class.md)|Testet, ob der Typ eine polymorphe Klasse ist.|
 |[is_abstract](../standard-library/is-abstract-class.md)|Testet, ob es dich bei dem Typ um eine abstrakte Klasse handelt.|
@@ -116,7 +116,7 @@ Typeigenschaften
 |[is_constructible](../standard-library/is-constructible-class.md)|Testet, ob der Typ konstruiert werden kann, wenn die angegebenen Argumenttypen verwendet werden.|
 |[is_default_constructible](../standard-library/type-traits-functions.md#is_default_constructible)|Testet, ob der Typ über einen Standardkonstruktor verfügt.|
 |[is_copy_constructible](../standard-library/type-traits-functions.md#is_copy_constructible)|Testet, ob der Typ über einen Kopierkonstruktor verfügt.|
-|[is_move_constructible](../standard-library/type-traits-functions.md#is_move_constructible)|Testet, ob der Typ über einen Verschiebekonstruktor verfügt.|
+|[is_move_constructible](../standard-library/type-traits-functions.md#is_move_constructible)|Testet, ob der Typ einen Bewegungskonstruktor aufweist.|
 |[is_assignable](../standard-library/type-traits-functions.md#is_assignable)|Testet, ob dem ersten Typ ein Wert des zweiten Typs zugewiesen werden kann.|
 |[is_copy_assignable](../standard-library/type-traits-functions.md#is_copy_assignable)|Testet, ob einem Typ ein konstanter Verweiswert des Typs zugewiesen werden kann.|
 |[is_move_assignable](../standard-library/type-traits-functions.md#is_move_assignable)|Testet, ob einem Typ ein rvalue-Verweis des Typs zugewiesen werden kann.|
@@ -153,8 +153,8 @@ Typeigenschaftsabfragen
 |||
 |-|-|
 |[alignment_of](../standard-library/alignment-of-class.md)|Ruft die Ausrichtung eines Typs ab.|
-|[rank](../standard-library/rank-class.md)|Ruft die Anzahl von Arraydimensionen ab.|
-|[extent](../standard-library/extent-class.md)|Ruft die Anzahl der Elemente in der angegebenen Arraydimension ab.|
+|[gehören](../standard-library/rank-class.md)|Ruft die Anzahl von Arraydimensionen ab.|
+|[Ausdehnung](../standard-library/extent-class.md)|Ruft die Anzahl der Elemente in der angegebenen Arraydimension ab.|
 
 Typbeziehungen
 
@@ -168,9 +168,9 @@ Typbeziehungen
 
 |||
 |-|-|
-|[add_const](../standard-library/add-const-class.md)|Erzeugt einen **Konstanten** Typ aus dem Typ.|
-|[add_volatile](../standard-library/add-volatile-class.md)|Erzeugt einen **flüchtigen** Typ aus dem Typ.|
-|[add_cv](../standard-library/add-cv-class.md)|Erzeugt einen **Konstanten flüchtigen** Typ aus dem Typ.|
+|[add_const](../standard-library/add-const-class.md)|Erzeugt einen **`const`** Typ aus dem Typ.|
+|[add_volatile](../standard-library/add-volatile-class.md)|Erzeugt einen **`volatile`** Typ aus dem Typ.|
+|[add_cv](../standard-library/add-cv-class.md)|Erzeugt einen **`const volatile`** Typ aus dem Typ.|
 |[remove_const](../standard-library/remove-const-class.md)|Wandelt den Typ in einen nicht konstanten Typ um.|
 |[remove_volatile](../standard-library/remove-volatile-class.md)|Wandelt den Typ in einen nicht flüchtigen Typ um.|
 |[remove_cv](../standard-library/remove-cv-class.md)|Wandelt den Typ in einen nicht konstanten nicht flüchtigen Typ um.|
@@ -211,7 +211,7 @@ Weitere Transformationen
 |[aligned_storage](../standard-library/aligned-storage-class.md)|Weist nicht initialisierten Arbeitsspeicher für eine ausgerichteten Typ zu.|
 |[aligned_union](../standard-library/aligned-union-class.md)|Weist den nicht initialisierten Arbeitsspeicher für eine ausgerichtete Union mit einem nicht trivialen Konstruktor oder Destruktor zu.|
 |[common_type](../standard-library/common-type-class.md)|Wandelt alle Typen des Parameterpakets in einen gemeinsamen Typ um.|
-|[conditional](../standard-library/conditional-class.md)|Wenn die Bedingung TRUE ist, wird der erste angegebene Typ erzeugt, andernfalls der zweite angegebene Typ.|
+|[Conditional](../standard-library/conditional-class.md)|Wenn die Bedingung TRUE ist, wird der erste angegebene Typ erzeugt, andernfalls der zweite angegebene Typ.|
 |[decay](../standard-library/decay-class.md)|Erzeugt den Typ bei der Übergabe durch einen Wert. Erstellt einen non-reference-, non-const- oder non-volatile-Typ oder erstellt einen Zeiger auf den Typ.|
 |[enable_if](../standard-library/enable-if-class.md)|Wenn die Bedingung TRUE ist, wird der angegebene Typ erzeugt, andernfalls kein Typ.|
 |[invoke_result](invoke-result-class.md)|Bestimmt den Rückgabetyp des aufrufbaren Typs, der die angegebenen Argumenttypen akzeptiert. <br/>Hinzugefügt in c++ 17. |
@@ -226,6 +226,6 @@ Logische Operator Merkmale
 |[Disjunktion](../standard-library/disjunction-class.md)||
 |[Verleugnung](../standard-library/negation-class.md)||
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<functional>](../standard-library/functional.md)

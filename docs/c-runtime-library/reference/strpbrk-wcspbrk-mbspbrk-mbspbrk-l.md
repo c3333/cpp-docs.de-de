@@ -50,12 +50,12 @@ helpviewer_keywords:
 - _mbspbrk function
 - mbspbrk_l function
 ms.assetid: 80b504f7-a167-4dde-97ad-4ae3000dc810
-ms.openlocfilehash: 507f6b99416cd59c3a0383e3e41a7ae26c44b019
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: fbde746cba02605be7fa42e941a30bfa02d0561a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911180"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231311"
 ---
 # <a name="strpbrk-wcspbrk-_mbspbrk-_mbspbrk_l"></a>strpbrk, wcspbrk, _mbspbrk, _mbspbrk_l
 
@@ -122,7 +122,7 @@ const unsigned char *_mbspbrk_l(
 
 ### <a name="parameters"></a>Parameter
 
-*SRT*<br/>
+*str*<br/>
 Auf NULL endende gesuchte Zeichenfolge.
 
 *Strauch Satz*<br/>
@@ -135,17 +135,17 @@ Zu verwendendes Gebietsschema.
 
 Gibt einen Zeiger auf das erste Vorkommen eines beliebigen Zeichens von ' *darcharset* ' in *Str*oder einen NULL-Zeiger zurück, wenn die beiden Zeichen folgen Argumente keine gemeinsamen Zeichen aufweisen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `strpbrk` -Funktion gibt einen Zeiger auf das erste Vorkommen eines Zeichens in *Str* zurück, das zu dem Zeichensatz in " *strincharset*" gehört. Die Suche umfasst nicht das abschließende Nullzeichen.
+Die- `strpbrk` Funktion gibt einen Zeiger auf das erste Vorkommen eines Zeichens in *Str* zurück, das zu dem Zeichensatz in " *strincharset*" gehört. Die Suche umfasst nicht das abschließende Nullzeichen.
 
 `wcspbrk` und `_mbspbrk` sind Breitzeichen- und Multibytezeichenversionen von `strpbrk`. Die Argumente und der Rückgabewert von `wcspbrk` sind Breitzeichen-Zeichenfolgen; die von `_mbspbrk` sind Mehrbyte-Zeichenfolgen.
 
-`_mbspbrk` überprüft die eigenen Parameter. Wenn *Str* oder *strincharset* NULL ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, `_mbspbrk` gibt NULL zurück und `errno` legt auf EINVAL fest. `strpbrk` und `wcspbrk` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
+`_mbspbrk` überprüft die eigenen Parameter. Wenn *Str* oder *strincharset* NULL ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, `_mbspbrk` gibt NULL zurück und legt `errno` auf EINVAL fest. `strpbrk` und `wcspbrk` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 `_mbspbrk` ähnelt `_mbscspn`, außer dass `_mbspbrk` einen Zeiger anstelle eines Werts vom Typ [size_t](../../c-runtime-library/standard-types.md) zurückgibt.
 
-In C akzeptieren diese Funktionen einen **Konstanten** Zeiger für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf "Konstante" annimmt **, gibt einen Zeiger auf "** **konstant**" zurück. die Version, die einen Zeiger auf nicht-konstante annimmt **, gibt einen** Zeiger auf einen nicht**Konstanten**Wert zurück. Das Makro _CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **Konstanten** als auch die nicht**Konstanten** Versionen dieser Funktionen verfügbar sind. Wenn Sie das nicht**Konstante Verhalten für** beide C++-über Ladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
+In C akzeptieren diese Funktionen einen **`const`** Zeiger auf das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf annimmt, **`const`** gibt einen Zeiger auf zurück **`const`** . die Version, die einen Zeiger auf nicht-zurücknimmt, **`const`** gibt einen Zeiger auf nicht-zurück **`const`** . Das Makro _CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **`const`** -Version als auch die nicht-- **`const`** Version dieser Funktionen verfügbar sind. Wenn Sie das nicht-- **`const`** Verhalten für beide C++-über Ladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
 
 Der Ausgabewert wird von der Einstellung der LC_CTYPE Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. die Version mit dem **_l** -Suffix ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
@@ -160,7 +160,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |`strpbrk`|\<string.h>|
 |`wcspbrk`|\<string.h> oder \<wchar.h>|
@@ -205,7 +205,7 @@ int main( void )
 ## <a name="see-also"></a>Weitere Informationen
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcspn, wcscspn, _mbscspn, _mbscspn_l](strcspn-wcscspn-mbscspn-mbscspn-l.md)<br/>
 [strchr, wcschr, _mbschr, _mbschr_l](strchr-wcschr-mbschr-mbschr-l.md)<br/>
