@@ -37,12 +37,12 @@ helpviewer_keywords:
 - sinhf function
 - sinhl function
 - hyperbolic functions
-ms.openlocfilehash: 107636d1e732ab7b3ed3003691d3678acc012b7d
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: ea7051fc086a254dabcf7fcd59f6a70e8fa0c0cd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909909"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229414"
 ---
 # <a name="sinh-sinhf-sinhl"></a>sinh, sinhf, sinhl
 
@@ -77,15 +77,15 @@ Die **sinh** -Funktionen geben den hyperbolischen Sinus von *x*zurück. Wenn das
 
 Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **sinh** aufrufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **sinh** immer Double und gibt **Double**zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **sinh** aufrufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **sinh** immer an und gibt es zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
+|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-|-|-|
 |**sinh**, **Sinhf**, **sinhl**|\<math.h>|\<cmath> oder \<math.h>|
 
@@ -120,9 +120,9 @@ sinh( 1.570796 ) = 2.301299
 cosh( 1.570796 ) = 2.509178
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>
 [asinh, asinhf, asinhl](asinh-asinhf-asinhl.md)<br/>
 [atanh, atanhf, atanhl](atanh-atanhf-atanhl.md)<br/>

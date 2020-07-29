@@ -47,12 +47,12 @@ helpviewer_keywords:
 - tcschr function
 - mbschr_l function
 ms.assetid: 2639905d-e983-43b7-b885-abef32cfac43
-ms.openlocfilehash: 69d82ae1a89e58b8cefcd2c1e24f49e24379ba11
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: a7cea0b2c640b7cb87d7097cea7bdf94a73abfb8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82920398"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229310"
 ---
 # <a name="strchr-wcschr-_mbschr-_mbschr_l"></a>strchr, wcschr, _mbschr, _mbschr_l
 
@@ -119,7 +119,7 @@ const unsigned char *_mbschr_l(
 
 ### <a name="parameters"></a>Parameter
 
-*SRT*<br/>
+*str*<br/>
 Mit NULL endende Quellzeichenfolge.
 
 *scher*<br/>
@@ -132,15 +132,15 @@ Zu verwendendes Gebietsschema.
 
 Jede dieser Funktionen gibt einen Zeiger auf das erste Vorkommen von *c* in *Str*oder NULL zurück, wenn *c* nicht gefunden wurde.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `strchr` -Funktion sucht das erste Vorkommen von *c* in *Str*oder gibt NULL zurück, wenn *c* nicht gefunden wurde. Das abschließende Nullzeichen ist in der Suche nicht enthalten.
+Die- `strchr` Funktion sucht das erste Vorkommen von *c* in *Str*oder gibt NULL zurück, wenn *c* nicht gefunden wurde. Das abschließende Nullzeichen ist in der Suche nicht enthalten.
 
-`wcschr`, `_mbschr` und `_mbschr_l` sind Breitzeichen- und Multibytezeichenversionen von `strchr`. Die Argumente und der Rückgabewert von `wcschr` sind Breitzeichen-Zeichenfolgen; die von `_mbschr` sind Mehrbyte-Zeichenfolgen. `_mbschr` erkennt Multibyte-Zeichenfolgen. Wenn die Zeichenfolge ein NULL-Zeiger ist, ruft `_mbschr`, wie in [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben, den Handler für ungültige Parameter auf. Wenn die weitere Ausführung zugelassen wird, `_mbschr` gibt NULL zurück und `errno` legt auf EINVAL fest. `strchr` und `wcschr` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
+`wcschr`, `_mbschr` und `_mbschr_l` sind Breitzeichen- und Multibytezeichenversionen von `strchr`. Die Argumente und der Rückgabewert von `wcschr` sind Breitzeichen-Zeichenfolgen; die von `_mbschr` sind Mehrbyte-Zeichenfolgen. `_mbschr` erkennt Multibyte-Zeichenfolgen. Wenn die Zeichenfolge ein NULL-Zeiger ist, ruft `_mbschr`, wie in [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben, den Handler für ungültige Parameter auf. Wenn die weitere Ausführung zugelassen wird, `_mbschr` gibt NULL zurück und legt `errno` auf EINVAL fest. `strchr` und `wcschr` überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 Der Ausgabewert wird von der Einstellung der LC_CTYPE Kategorieeinstellung des Gebiets Schemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-In C akzeptieren diese Funktionen einen **Konstanten** Zeiger für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf "Konstante" annimmt **, gibt einen Zeiger auf "** **konstant**" zurück. die Version, die einen Zeiger auf nicht-konstante annimmt **, gibt einen** Zeiger auf einen nicht**Konstanten**Wert zurück. Das Makro _CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **Konstanten** als auch die nicht**Konstanten** Versionen dieser Funktionen verfügbar sind. Wenn Sie das nicht**Konstante Verhalten für** beide C++-über Ladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
+In C akzeptieren diese Funktionen einen **`const`** Zeiger auf das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf annimmt, **`const`** gibt einen Zeiger auf zurück **`const`** . die Version, die einen Zeiger auf nicht-zurücknimmt, **`const`** gibt einen Zeiger auf nicht-zurück **`const`** . Das Makro _CRT_CONST_CORRECT_OVERLOADS wird definiert, wenn sowohl die **`const`** -Version als auch die nicht-- **`const`** Version dieser Funktionen verfügbar sind. Wenn Sie das nicht-- **`const`** Verhalten für beide C++-über Ladungen benötigen, definieren Sie das Symbol _CONST_RETURN.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -153,7 +153,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |`strchr`|\<string.h>|
 |`wcschr`|\<string.h> oder \<wchar.h>|
@@ -218,10 +218,10 @@ Result:   first r found at position 12
 Result:   last r found at position 30
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcspn, wcscspn, _mbscspn, _mbscspn_l](strcspn-wcscspn-mbscspn-mbscspn-l.md)<br/>
 [strncat, _strncat_l, wcsncat, _wcsncat_l, _mbsncat, _mbsncat_l](strncat-strncat-l-wcsncat-wcsncat-l-mbsncat-mbsncat-l.md)<br/>

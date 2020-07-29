@@ -52,12 +52,12 @@ helpviewer_keywords:
 - _sntscanf_s function
 - snwscanf_s_l function
 ms.assetid: 72356653-7362-461a-af73-597b9c0a8094
-ms.openlocfilehash: 33507990c1b7e2c6fd1b30e2bdb9277ab611ef2a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 6c814d0085fed90f1b3c36684f54368d811c294f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947946"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229401"
 ---
 # <a name="_snscanf_s-_snscanf_s_l-_snwscanf_s-_snwscanf_s_l"></a>_snscanf_s, _snscanf_s_l, _snwscanf_s, _snwscanf_s_l
 
@@ -92,7 +92,7 @@ int __cdecl _snwscanf_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*der*<br/>
+*input*<br/>
 Zu untersuchende Eingabezeichenfolge
 
 *length*<br/>
@@ -115,14 +115,14 @@ Wenn *Input* oder *Format* ein **null** -Zeiger ist, wird der Handler für ungü
 
 Weitere Informationen über diese und andere Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Funktion ähnelt **sscanf_s** , mit dem Unterschied, dass Sie die Möglichkeit bietet, eine festgelegte Anzahl von Zeichen anzugeben, die aus der Eingabe Zeichenfolge untersucht werden Weitere Informationen finden Sie unter [sscanf_s, _sscanf_s_l, swscanf_s, _swscanf_s_l](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md).
+Diese Funktion ähnelt **sscanf_s** mit der Ausnahme, dass Sie die Möglichkeit bietet, eine festgelegte Anzahl von Zeichen anzugeben, die aus der Eingabe Zeichenfolge untersucht werden sollen. Weitere Informationen finden Sie unter [sscanf_s, _sscanf_s_l, swscanf_s, _swscanf_s_l](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md).
 
 Der Puffergrößen Parameter ist für die tyfeldzeichen **c**, **c**, **s**, **s**und **[** erforderlich. Weitere Informationen finden Sie unter [scanf-Typenfeldzeichen](../../c-runtime-library/scanf-type-field-characters.md).
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**.
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
@@ -137,10 +137,10 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_snscanf_s**, **_snscanf_s_l**|\<stdio.h>|
-|**_snwscanf_s**, **_snwscanf_s_l**|\<stdio.h> oder \<wchar.h>|
+|**_snscanf_s** **_snscanf_s_l**|\<stdio.h>|
+|**_snwscanf_s** **_snwscanf_s_l**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -179,4 +179,4 @@ _snwscanf_s converted 2 fields: 15 and 12.000000
 
 ## <a name="see-also"></a>Siehe auch
 
-[scanf-Breitenangabe](../../c-runtime-library/scanf-width-specification.md)<br/>
+[scanf-breiten Angabe](../../c-runtime-library/scanf-width-specification.md)<br/>

@@ -8,16 +8,16 @@ helpviewer_keywords:
 - exceptions [C++], bad_cast
 - bad_cast keyword [C++]
 ms.assetid: 31eae1e7-d8d5-40a0-9fef-64a6a4fc9021
-ms.openlocfilehash: 11b42c9e6210c2432563bba43c55517abd4265fe
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 2efe5be5e44751831a56b29cfc629df2d21843f7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74245959"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229180"
 ---
 # <a name="bad_cast-exception"></a>bad_cast-Ausnahme
 
-Die **bad_cast** Ausnahme wird vom **dynamic_cast** -Operator als Ergebnis einer fehlgeschlagenen Umwandlung in einen Verweistyp ausgelöst.
+Die **bad_cast** Ausnahme wird vom- **`dynamic_cast`** Operator als Ergebnis einer fehlgeschlagenen Umwandlung in einen Verweistyp ausgelöst.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,7 +26,7 @@ catch (bad_cast)
    statement
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Schnittstelle für **bad_cast** ist:
 
@@ -34,7 +34,7 @@ Die Schnittstelle für **bad_cast** ist:
 class bad_cast : public exception
 ```
 
-Der folgende Code enthält ein Beispiel für eine fehlgeschlagene **dynamic_cast** , die die **bad_cast** Ausnahme auslöst.
+Der folgende Code enthält ein Beispiel für einen Fehler **`dynamic_cast`** , der die **bad_cast** Ausnahme auslöst.
 
 ```cpp
 // expre_bad_cast_Exception.cpp
@@ -72,7 +72,7 @@ Circle circle_instance;
 Circle& ref_circle = circle_instance;
 ```
 
-Umkehren Sie dann den Sinn der Umwandlung im **try** -Block wie folgt:
+Umkehren Sie dann den Sinn der Umwandlung im- **`try`** Block wie folgt:
 
 ```cpp
 Shape& ref_shape = dynamic_cast<Shape&>(ref_circle);
@@ -82,11 +82,11 @@ Shape& ref_shape = dynamic_cast<Shape&>(ref_circle);
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[bad_cast](#bad_cast)|Der Konstruktor für Objekte des Typs `bad_cast`.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |Funktion|Beschreibung|
 |-|-|
@@ -94,11 +94,11 @@ Shape& ref_shape = dynamic_cast<Shape&>(ref_circle);
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
-|[operator=](#op_eq)|Ein Zuweisungs Operator, der ein `bad_cast` Objekt einem anderen zuweist.|
+|[Operator =](#op_eq)|Ein Zuweisungs Operator, der ein `bad_cast` Objekt zu einem anderen zuweist.|
 
-## <a name="bad_cast"></a>bad_cast
+## <a name="bad_cast"></a><a name="bad_cast"></a>bad_cast
 
 Der Konstruktor für Objekte des Typs `bad_cast`.
 
@@ -107,15 +107,15 @@ bad_cast(const char * _Message = "bad cast");
 bad_cast(const bad_cast &);
 ```
 
-## <a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a>Operator =
 
-Ein Zuweisungs Operator, der ein `bad_cast` Objekt einem anderen zuweist.
+Ein Zuweisungs Operator, der ein `bad_cast` Objekt zu einem anderen zuweist.
 
 ```cpp
 bad_cast& operator=(const bad_cast&) noexcept;
 ```
 
-## <a name="what"></a>worüber
+## <a name="what"></a><a name="what"></a>worüber
 
 ```cpp
 const char* what() const noexcept override;
@@ -123,6 +123,6 @@ const char* what() const noexcept override;
 
 ## <a name="see-also"></a>Siehe auch
 
-[dynamic_cast Operator](../cpp/dynamic-cast-operator.md)\
-[Stichwörter](../cpp/keywords-cpp.md)\
-[Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)
+[dynamic_cast-Operator](../cpp/dynamic-cast-operator.md)\
+[Keywords](../cpp/keywords-cpp.md)\
+[Modern C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)

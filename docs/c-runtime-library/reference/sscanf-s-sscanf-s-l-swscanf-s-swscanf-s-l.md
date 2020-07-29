@@ -44,12 +44,12 @@ helpviewer_keywords:
 - strings [C++], reading
 - _sscanf_s_l function
 ms.assetid: 956e65c8-00a5-43e8-a2f2-0f547ac9e56c
-ms.openlocfilehash: 14707b64a9c5c49837391be59d83ee39b79d5065
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e92fc2544b6b137c64c388bed9013a6fdd5d3252
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957975"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229349"
 ---
 # <a name="sscanf_s-_sscanf_s_l-swscanf_s-_swscanf_s_l"></a>sscanf_s, _sscanf_s_l, swscanf_s, _swscanf_s_l
 
@@ -84,7 +84,7 @@ int _swscanf_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Gespeicherte Daten
 
 *format*<br/>
@@ -104,7 +104,7 @@ Wenn *buffer* oder *Format* ein **null** -Zeiger ist, wird der Handler für ung�
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (errno, _doserrno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **sscanf_s** -Funktion liest Daten aus dem *Puffer* in den Speicherort, der von jedem *Argument*angegeben wird. Die Argumente nach der Format Zeichenfolge geben Zeiger auf Variablen an, die einen Typ haben, der einem Typspezifizierer im- *Format*entspricht. Anders als die weniger sichere Version von [sscanf](sscanf-sscanf-l-swscanf-swscanf-l.md)ist ein Puffergrößen Parameter erforderlich, wenn Sie die tyfeldzeichen **c**, **c**, **s**, **s**oder Zeichen folgen-Steuerungs Sätze verwenden, die in **[]** eingeschlossen sind. Nach jedem Pufferparameter, der dies erfordert, muss die Puffergröße in Zeichen als zusätzlicher Parameter angegeben werden. Beim Einlesen einer Zeichenfolge wird beispielsweise die Puffergröße für diese Zeichenfolge wie folgt übergeben:
 
@@ -132,9 +132,9 @@ sscanf_s(input, "%4c", &c, (unsigned)_countof(c)); // not null terminated
 Weitere Informationen finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) und [scanf-Typenfeldzeichen](../../c-runtime-library/scanf-type-field-characters.md).
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**. Wenn Sie für 64-Bit-Ziele kompilieren, verwenden Sie eine statische Umwandlung, um **_countof** -oder **sizeof** -Ergebnisse in die richtige Größe zu konvertieren.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**. Wenn Sie für 64-Bit-Ziele kompilieren, verwenden Sie eine statische Umwandlung, um **_countof** oder **`sizeof`** Ergebnisse in die richtige Größe zu konvertieren.
 
-Das *Format* -Argument steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie das *Format* -Argument für die **scanf_s** -Funktion. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
+Das *Format* -Argument steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie das *Format* -Argument für die **scanf_s** Funktion. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 **swscanf_s** ist eine breit Zeichen Version von **sscanf_s**. die Argumente für **swscanf_s** sind Zeichen folgen mit breit Zeichen. **sscanf_s** verarbeitet keine Multibytezeichen-hexadezimal Zeichen. **swscanf_s** verarbeitet keine Unicode-Hexadezimal-oder-Kompatibilitäts Zonen Zeichen in voller Breite. Andernfalls Verhalten sich **swscanf_s** und **sscanf_s** identisch.
 
@@ -151,10 +151,10 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**sscanf_s**, **_sscanf_s_l**|\<stdio.h>|
-|**swscanf_s**, **_swscanf_s_l**|\<stdio.h> oder \<wchar.h>|
+|**sscanf_s** **_sscanf_s_l**|\<stdio.h>|
+|**swscanf_s** **_swscanf_s_l**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -201,5 +201,5 @@ Real:     = 15.000000
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [fscanf, _fscanf_l, fwscanf, _fwscanf_l](fscanf-fscanf-l-fwscanf-fwscanf-l.md)<br/>
 [scanf, _scanf_l, wscanf, _wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [snprintf, _snprintf, _snprintf_l, _snwprintf, _snwprintf_l](snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md)<br/>

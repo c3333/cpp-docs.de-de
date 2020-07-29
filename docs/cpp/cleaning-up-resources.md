@@ -9,12 +9,12 @@ helpviewer_keywords:
 - exception handling [C++], cleanup code
 - try-catch keyword [C++], termination handlers
 ms.assetid: 65753efe-6a27-4750-b90c-50635775c1b6
-ms.openlocfilehash: ba7841f4fa8f0b6654e78e529e82f86237707787
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b172695044057f58771af0f4cfcb5ca869b36678
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180862"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229050"
 ---
 # <a name="cleaning-up-resources"></a>Bereinigen von Ressourcen
 
@@ -26,7 +26,7 @@ Vorsichtshalber sollten Sie daher überprüfen, welche Ressourcen tatsächlich g
 
 1. Weisen Sie im **__try** -Anweisungsblock Ressourcen zu. Beim Zuordnen der Ressourcen werden positive Werte für die Handles festgelegt.
 
-1. Geben Sie im **__finally** -Anweisungsblock jede Ressource frei, deren zugehörige handle-oder Flag-Variable ungleich NULL oder nicht NULL ist.
+1. Geben Sie im **`__finally`** Anweisungsblock jede Ressource frei, deren zugehörige handle-oder Flag-Variable ungleich 0 (null) oder nicht NULL ist.
 
 ## <a name="example"></a>Beispiel
 
@@ -70,7 +70,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Schreiben eines Beendigungs Handlers](../cpp/writing-a-termination-handler.md)<br/>
-[Strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md)
+[Schreiben eines Beendigungshandlers](../cpp/writing-a-termination-handler.md)<br/>
+[Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

@@ -37,12 +37,12 @@ helpviewer_keywords:
 - _wgetdcwd_nolock function
 - directories [C++], current working
 ms.assetid: d9bdf712-43f8-4173-8f9a-844e82beaa97
-ms.openlocfilehash: cef2c39d3cfcb7690a644d9d2db68f25259b8162
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c07c52e0dcfe84c5f00a9a0b67d872a860941c6f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955187"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229440"
 ---
 # <a name="_getdcwd_nolock-_wgetdcwd_nolock"></a>_getdcwd_nolock, _wgetdcwd_nolock
 
@@ -71,19 +71,19 @@ wchar_t *_wgetdcwd_nolock(
 *Antrie*<br/>
 Laufwerk.
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für den Pfad.
 
 *maxlen*<br/>
-Maximale Länge des Pfads in Zeichen: **char** für **_getdcwd** und **wchar_t** für **_wgetdcwd**.
+Maximale Länge des Pfads in Zeichen: **`char`** für **_getdcwd** und **`wchar_t`** für **_wgetdcwd**.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Siehe [_getdcwd, _wgetdcwd](getdcwd-wgetdcwd.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**_getdcwd_nolock** und **_wgetdcwd_nolock** sind mit **_getdcwd** bzw. **_wgetdcwd**identisch, mit dem Unterschied, dass Sie nicht vor Störungen durch andere Threads geschützt sind. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsicheren Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
+**_getdcwd_nolock** und **_wgetdcwd_nolock** sind identisch mit **_getdcwd** und **_wgetdcwd**, mit dem Unterschied, dass Sie nicht vor Störungen durch andere Threads geschützt sind. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsichere Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -98,11 +98,11 @@ Siehe [_getdcwd, _wgetdcwd](getdcwd-wgetdcwd.md).
 |**_getdcwd_nolock**|\<direct.h>|
 |**_wgetdcwd_nolock**|\<direct.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verzeichnissteuerung](../../c-runtime-library/directory-control.md)<br/>
+[Verzeichnis Steuerung](../../c-runtime-library/directory-control.md)<br/>
 [_chdir, _wchdir](chdir-wchdir.md)<br/>
 [_getcwd, _wgetcwd](getcwd-wgetcwd.md)<br/>
 [_getdrive](getdrive.md)<br/>

@@ -1,6 +1,7 @@
 ---
 title: Zuweisungsoperatoren
-ms.date: 03/27/2019
+description: Die Syntax und Verwendung der C++-Standard sprach Zuweisungs Operatoren.
+ms.date: 07/24/2020
 f1_keywords:
 - =
 - '*='
@@ -31,59 +32,59 @@ helpviewer_keywords:
 - /= operator
 - <<= operator
 ms.assetid: b028cf35-2ff1-4f14-9027-fd53ebec8aa0
-ms.openlocfilehash: 758c82f02d2b113f6c750f7f0ede662c97b646b0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 91346d06c6fab4f3cd83c5318c88e738daf8d249
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62184379"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229219"
 ---
 # <a name="assignment-operators"></a>Zuweisungsoperatoren
 
 ## <a name="syntax"></a>Syntax
 
-*expression* *assignment-operator* *expression*
+*Ausdrucks* *Zuweisung-Operator* *Ausdruck*
 
-*Zuweisungsoperator* : eines der<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>=&nbsp;&nbsp;&nbsp;*=&nbsp;&nbsp;&nbsp;/=&nbsp;&nbsp;&nbsp;%=&nbsp;&nbsp;&nbsp;+=&nbsp;&nbsp;&nbsp;-=&nbsp;&nbsp;&nbsp;\<\<=&nbsp;&nbsp;&nbsp;>>=&nbsp;&nbsp;&nbsp;&=&nbsp;&nbsp;&nbsp;^=&nbsp;&nbsp;&nbsp;\|=</strong>
+*assignment-operator*: eines der folgenden Zeichen:<br/>
+&emsp;**`=`**&emsp;**`*=`**&emsp;**`/=`**&emsp;**`%=`**&emsp;**`+=`**&emsp;**`-=`**&emsp;**`<<=`**&emsp;**`>>=`**&emsp;**`&=`**&emsp;**`^=`**&emsp;**`|=`**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Zuweisungsoperatoren speichern einen Wert in dem Objekt, das durch den linken Operanden festgelegt ist. Es gibt zwei Arten von Zuweisungsvorgängen:
+Zuweisungs Operatoren speichern einen Wert in dem Objekt, das durch den linken Operanden angegeben wird. Es gibt zwei Arten von Zuweisungs Vorgängen:
 
-1. *einfache Zuweisung*, in dem der Wert des zweiten Operanden in dem Objekt durch den ersten Operanden angegeben gespeichert werden.
+- *einfache Zuweisung*, bei der der Wert des zweiten Operanden in dem Objekt gespeichert wird, das durch den ersten Operanden angegeben wird.
 
-1. *verbundzuweisung*, in der ein Arithmetik-, UMSCHALT oder bitweiser Vorgang vor dem Speichern der Ergebnisse ausgeführt wird.
+- *Verbund Zuweisung*, in der eine arithmetische, verschiebe-oder bitweise Operation ausgeführt wird, bevor das Ergebnis gespeichert wird.
 
-Alle Zuweisungsoperatoren in der folgenden Tabelle (außer der =-Operator) sind Verbundzuweisungsoperatoren.
+Alle Zuweisungs Operatoren in der folgenden Tabelle, ausgenommen der- **`=`** Operator, sind Verbund Zuweisungs Operatoren.
 
-### <a name="assignment-operators-table"></a>Operatoren-Zuweisungstabelle
+### <a name="assignment-operators-table"></a>Tabelle Zuweisungs Operatoren
 
-|Operator|Bedeutung|
-|--------------|-------------|
-|**=**|Speichern Sie den Wert des zweiten Operanden in dem Objekt, das durch den ersten Operanden angegeben wird (einfache Zuweisung).|
-|**\*=**|Multiplizieren Sie den Wert des ersten Operanden mit dem Wert des zweiten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**/=**|Dividieren Sie den Wert des ersten Operanden durch den Wert des zweiten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**%=**|Errechnen Sie den Modul des ersten Operanden, der vom Wert des zweiten Operanden angegeben wird. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**+=**|Addieren Sie den Wert des zweiten Operanden zu dem Wert des ersten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**-=**|Subtrahieren Sie den Wert des zweiten Operanden von dem Wert des ersten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**<\<=**|Verschieben Sie den Wert des ersten Operanden links der Anzahl von Bits, die durch den Wert des zweiten Operanden angegeben werden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**>>=**|Verschieben Sie den Wert des ersten Operanden rechts der Anzahl von Bits, die durch den Wert des zweiten Operanden angegeben werden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**&=**|Rufen Sie den bitweisen AND-Operator des ersten und zweiten Operanden auf. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**^=**|Rufen Sie den bitweisen exklusiven OR-Operator des ersten und zweiten Operanden auf. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
-|**\|=**|Rufen Sie den bitweisen inklusiven OR-Operator des ersten und zweiten Operanden auf. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird.|
+| Operator | Bedeutung |
+|--|--|
+| **`=`** | Speichern Sie den Wert des zweiten Operanden in dem Objekt, das durch den ersten Operanden angegeben wird (einfache Zuweisung). |
+| **`*=`** | Multiplizieren Sie den Wert des ersten Operanden mit dem Wert des zweiten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`/=`** | Dividieren Sie den Wert des ersten Operanden durch den Wert des zweiten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`%=`** | Errechnen Sie den Modul des ersten Operanden, der vom Wert des zweiten Operanden angegeben wird. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`+=`** | Addieren Sie den Wert des zweiten Operanden zu dem Wert des ersten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`-=`** | Subtrahieren Sie den Wert des zweiten Operanden von dem Wert des ersten Operanden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`<<=`** | Verschieben Sie den Wert des ersten Operanden links der Anzahl von Bits, die durch den Wert des zweiten Operanden angegeben werden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`>>=`** | Verschieben Sie den Wert des ersten Operanden rechts der Anzahl von Bits, die durch den Wert des zweiten Operanden angegeben werden. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`&=`** | Rufen Sie den bitweisen AND-Operator des ersten und zweiten Operanden auf. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`^=`** | Rufen Sie den bitweisen exklusiven OR-Operator des ersten und zweiten Operanden auf. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
+| **`|=`** | Rufen Sie den bitweisen inklusiven OR-Operator des ersten und zweiten Operanden auf. Speichern Sie das Ergebnis in dem Objekt, das durch den ersten Operanden angegeben wird. |
 
-### <a name="operator-keywords"></a>Operatorschlüsselwörter
+### <a name="operator-keywords"></a>Operator Schlüsselwörter
 
-Drei der Verbundzuweisungsoperatoren weisen Textentsprechungen auf. Dies sind:
+Drei der Verbund Zuweisungs Operatoren verfügen über Schlüsselwort Entsprechungen. Sie lauten wie folgt:
 
-|Operator|Entsprechung|
-|--------------|----------------|
-|**&=**|`and_eq`|
-|**\|=**|`or_eq`|
-|**^=**|`xor_eq`|
+| Operator | Entsprechung |
+|--|--|
+| **`&=`** | **`and_eq`** |
+| **`|=`** | **`or_eq`** |
+| **`^=`** | **`xor_eq`** |
 
-Es gibt zwei Möglichkeiten, um auf diese Operatorschlüsselwörter in Ihren Programmen zuzugreifen: Einschließen der Headerdatei `iso646.h`, oder Kompilieren Sie mit der [/Za](../build/reference/za-ze-disable-language-extensions.md) -Compileroption (spracherweiterungen deaktivieren).
+C++ gibt diese Operator Schlüsselwörter als Alternative rechtschreibweisen für die Verbund Zuweisungs Operatoren an. In C werden die alternativen rechtschreibweisen als Makros in der \<iso646.h> Kopfzeile bereitgestellt. In C++ sind die alternativen Schreibweisen Schlüsselwörter. die Verwendung von \<iso646.h> oder der C++-Entsprechung \<ciso646> ist als veraltet markiert. In Microsoft C++ ist die- [`/permissive-`](../build/reference/permissive-standards-conformance.md) oder- [`/Za`](../build/reference/za-ze-disable-language-extensions.md) Compileroption erforderlich, um die alternative Schreibweise zu aktivieren.
 
 ## <a name="example"></a>Beispiel
 
@@ -111,13 +112,13 @@ int main() {
 
 ## <a name="simple-assignment"></a>Einfache Zuweisung
 
-Der einfache Zuweisungsoperator (**=**) wird der Wert des zweiten Operanden in dem Objekt durch den ersten Operanden angegeben gespeichert werden. Wenn beide Objekte arithmetische Typen sind, wird der rechte Operand in den Typ des linken Operanden konvertiert, bevor der Wert gespeichert wird.
+Der einfache Zuweisungs Operator ( **`=`** ) bewirkt, dass der Wert des zweiten Operanden in dem Objekt gespeichert wird, das durch den ersten Operanden angegeben wird. Wenn beide Objekte arithmetische Typen sind, wird der rechte Operand in den Typ der linken konvertiert, bevor der Wert gespeichert wird.
 
-Objekte des **const** und **flüchtige** l-Werte der Typen, die nur Typen zugewiesen werden **flüchtige** oder keines von beiden **const** noch **flüchtige**.
+Objekte der **`const`** **`volatile`** Typen und können l-Werten von Typen zugewiesen werden, die nur sind **`volatile`** oder nicht oder sind **`const`** **`volatile`** .
 
-Zuweisung zu Objekten des Klassentyps (Struct, Union- und Klassentypen) wird ausgeführt, indem eine Funktion namens `operator=`. Das Standardverhalten dieser Operatorfunktion besteht darin, eine bitweise Kopie auszuführen. Allerdings kann dieses Verhalten mithilfe von überladenen Operatoren geändert werden. Finden Sie unter [operatorüberladung](../cpp/operator-overloading.md) für Weitere Informationen. Darüber hinaus haben Klassentypen *kopieren Zuweisung* und *bewegungszuweisung* Operatoren. Weitere Informationen finden Sie unter [Kopierkonstruktoren und Kopierzuweisungsoperatoren](copy-constructors-and-copy-assignment-operators-cpp.md) und [Bewegungskonstruktoren und bewegungszuweisungsoperatoren](move-constructors-and-move-assignment-operators-cpp.md).
+Die Zuweisung zu Objekten des Klassen Typs **`struct`** ( **`union`** -,-und- **`class`** Typen) erfolgt durch eine Funktion mit dem Namen `operator=` . Das Standardverhalten dieser Operatorfunktion besteht darin, eine bitweise Kopie auszuführen. Allerdings kann dieses Verhalten mithilfe von überladenen Operatoren geändert werden. Weitere Informationen finden Sie unter [Operatorüberladung](../cpp/operator-overloading.md). Klassentypen können auch *kopierzuweisungs* -und Verschiebungs *Zuweisungs* Operatoren aufweisen. Weitere Informationen finden Sie unter [Kopierkonstruktoren und Kopier Zuweisungs Operatoren](copy-constructors-and-copy-assignment-operators-cpp.md) und [bewegungskonstruktoren und Bewegungs Zuweisungs Operatoren](move-constructors-and-move-assignment-operators-cpp.md).
 
-Ein Objekt einer eindeutig abgeleiteten Klasse von einer angegebenen Basisklasse kann einem Objekt der Basisklasse zugewiesen werden. Umgekehrt gilt dies nicht, da eine implizite Konvertierung von einer abgeleiteten Klasse in eine Basisklasse vorliegt, jedoch nicht von der Basisklasse in die abgeleitete Klasse. Zum Beispiel:
+Ein Objekt einer eindeutig abgeleiteten Klasse von einer angegebenen Basisklasse kann einem Objekt der Basisklasse zugewiesen werden. Das Gegenteil ist nicht der Fall, da es eine implizite Konvertierung von einer abgeleiteten Klasse in eine Basisklasse gibt, jedoch nicht von der Basisklasse zu einer abgeleiteten Klasse. Beispiel:
 
 ```cpp
 // expre_SimpleAssignment.cpp
@@ -172,7 +173,7 @@ B = A;
 
 eine der folgenden Auswirkungen haben:
 
-- Rufen Sie die Funktion `operator=` für `UserType2`aus `operator=` erfolgt mit einer `UserType1` Argument.
+- Ruft die-Funktion `operator=` für auf `UserType2` , sofern `operator=` mit einem-Argument bereitgestellt wird `UserType1` .
 
 - Aufruf der expliziten Konvertierungsfunktion `UserType1::operator UserType2`, wenn eine solche Funktion vorhanden ist.
 
@@ -180,24 +181,24 @@ eine der folgenden Auswirkungen haben:
 
 ## <a name="compound-assignment"></a>Verbundzuweisung
 
-Die Verbundzuweisungsoperatoren, dargestellt der [Operatoren-Zuweisungstabelle](#assignment-operators-table), werden in der Form angegeben *e1* *Op*= *e2*, wobei *e1* ist ein änderbarer l-Wert nicht vom **const** Typ und *e2* ist eine der folgenden:
+Die Verbund Zuweisungs Operatoren werden in der [Tabelle der Zuweisungs Operatoren](#assignment-operators-table)angezeigt. Diese Operatoren haben das Format *E1* *op* =  *E2*, wobei *E1* ein nicht **`const`** änderbarer l-Wert und *E2* ist:
 
-- Ein arithmetischer Typ
+- arithmetischer Typ
 
-- Ein Zeiger ist, wenn *Op* ist **+** oder **-**
+- Ein-Zeiger, *op* wenn op **`+`** oder ist.**`-`**
 
-Die *e1* *Op*= *e2* Formular verhält sich wie *e1* **=** *e1* *Op* *e2*, aber *e1* wird nur einmal ausgewertet.
+Das *E1* *op* =  *E2* -Formular verhält sich wie *E1* **`=`** *E1* *op* *E2*, *E1* wird jedoch nur einmal ausgewertet.
 
-Eine Verbundzuweisung für einen enumerierten Typ generiert eine Fehlermeldung. Wenn der linke Operand ein Zeigertyp ist, muss der rechte Operand ein Zeigertyp oder ein konstanter Ausdruck sein, der 0 ergibt. Wenn der linke Operand ein ganzzahliger Typ ist, darf der rechte Operand kein Zeigertyp sein.
+Eine Verbundzuweisung für einen enumerierten Typ generiert eine Fehlermeldung. Wenn der linke Operand ein Zeigertyp ist, muss der rechte Operand ein Zeigertyp sein, oder es muss sich um einen konstanten Ausdruck handeln, der als 0 ausgewertet wird. Wenn der linke Operand ein ganzzahliger Typ ist, darf der rechte Operand kein Zeigertyp sein.
 
 ## <a name="result-of-assignment-operators"></a>Ergebnis von Zuweisungsoperatoren
 
 Die Zuweisungsoperatoren geben den Wert des Objekts zurück, das vom linken Operanden nach der Zuweisung angegeben wird. Das Typergebnis ist der Typ des linken Operanden. Das Ergebnis eines Zuweisungsausdrucks ist immer ein l-value. Diese Operatoren weisen eine Assoziativität von rechts nach links auf. Der linke Operand muss ein veränderbarer L-Wert sein.
 
-In ANSI C ist das Ergebnis eines Zuweisungsausdrucks kein l-value. Daher ist der gültige C++-Ausdruck `(a += b) += c` in C ungültig.
+In ANSI C ist das Ergebnis eines Zuweisungs Ausdrucks kein l-Wert. Dies bedeutet, dass der rechtliche C++-Ausdruck `(a += b) += c` in C nicht zulässig ist.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Ausdrücke mit binären Operatoren](../cpp/expressions-with-binary-operators.md)<br/>
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
-[C-Zuweisungsoperatoren](../c-language/c-assignment-operators.md)
+[C++ integrierte Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[C-Zuweisungs Operator](../c-language/c-assignment-operators.md)

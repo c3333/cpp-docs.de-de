@@ -45,12 +45,12 @@ helpviewer_keywords:
 - tcscpy_s function
 - wcscpy_s function
 ms.assetid: 611326f3-7929-4a5d-a465-a4683af3b053
-ms.openlocfilehash: d8cfbc97f6c2a6d865a1436a276641a4d8f93713
-ms.sourcegitcommit: 426e327c9f7c3a3b02300e3f924f9786d62958e9
+ms.openlocfilehash: b2957490dbf045b9a3258a72b6bda0aaf1a38c0f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84206192"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229297"
 ---
 # <a name="strcpy_s-wcscpy_s-_mbscpy_s-_mbscpy_s_l"></a>strcpy_s, wcscpy_s, _mbscpy_s, _mbscpy_s_l
 
@@ -116,7 +116,7 @@ errno_t _mbscpy_s_l(
 Speicherort des Zielzeichenfolgenpuffers.
 
 *dest_size*<br/>
-Größe des Ziel Zeichen folgen Puffers in **char** -Einheiten für schmale und Multi-Byte-Funktionen und **wchar_t** Einheiten für Wide Functions. Dieser Wert muss größer als 0 (null) und nicht größer als **RSIZE_MAX**sein. Stellen Sie sicher, dass diese Größe das Ende `NULL` nach der Zeichenfolge berücksichtigt.
+Größe des Ziel Zeichen folgen Puffers in **`char`** Einheiten für schmale und Multi-Byte-Funktionen und **`wchar_t`** Einheiten für Wide Functions. Dieser Wert muss größer als 0 (null) und nicht größer als **RSIZE_MAX**sein. Stellen Sie sicher, dass diese Größe das Ende `NULL` nach der Zeichenfolge berücksichtigt.
 
 *src*<br/>
 Auf NULL endender Quellzeichenfolgepuffer.
@@ -136,7 +136,7 @@ Null (0), wenn erfolgreich; andernfalls ein Fehler.
 |any|any|**NULL**|**Eingabe**|*dest*[0] auf 0 festgelegt|
 |any|0 oder zu klein|any|**ERANGE**|*dest*[0] auf 0 festgelegt|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **strcpy_s** -Funktion kopiert den Inhalt in die Adresse von *src*, einschließlich des abschließenden NULL-Zeichens, an den Speicherort, der von *dest*angegeben wird. Die Zielzeichenfolge muss groß genug sein, um die Quellzeichenfolge und ihr beendendes NULL-Zeichen zu enthalten. Das Verhalten **strcpy_s** ist nicht definiert, wenn sich die Quell-und Ziel Zeichenfolgen überlappen.
 
@@ -231,7 +231,7 @@ int main(void)
 String = Hello world from wcscpy_s and wcscat_s!
 ```
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md) <br/>
 ["ercat", "wcscat", "_mbscat" _mbscat_l](strcat-wcscat-mbscat.md) <br/>

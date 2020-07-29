@@ -8,16 +8,16 @@ helpviewer_keywords:
 - bad_typeid exception
 - exceptions [C++], bad_typeid
 ms.assetid: 5963ed58-4ede-4597-957d-f7bbd06299c2
-ms.openlocfilehash: bb56de77ba001b5a511ef3a2695d18109b1ed3ca
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 3e01f97c67803408c9ce5bf056e3e9ed4746d259
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74245921"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229167"
 ---
 # <a name="bad_typeid-exception"></a>bad_typeid-Ausnahme
 
-Die **bad_typeid** Ausnahme wird vom [typeid-Operator](../cpp/typeid-operator.md) ausgelöst, wenn der Operand für **typeid** ein NULL-Zeiger ist.
+Die **bad_typeid** Ausnahme wird vom [typeid-Operator](../cpp/typeid-operator.md) ausgelöst, wenn der Operand für **`typeid`** ein NULL-Zeiger ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,7 +26,7 @@ catch (bad_typeid)
    statement
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Schnittstelle für **bad_typeid** ist:
 
@@ -44,7 +44,7 @@ public:
 };
 ```
 
-Das folgende Beispiel zeigt den **typeid** -Operator, der eine **bad_typeid** Ausnahme auslöst.
+Das folgende Beispiel zeigt, wie der- **`typeid`** Operator eine **bad_typeid** Ausnahme auslöst.
 
 ```cpp
 // expre_bad_typeid.cpp
@@ -72,7 +72,7 @@ catch (bad_typeid){
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 Object is NULL
@@ -80,5 +80,5 @@ Object is NULL
 
 ## <a name="see-also"></a>Siehe auch
 
-[Laufzeit-Typinformationen](../cpp/run-time-type-information.md)\
+[Lauf Zeittyp Informationen](../cpp/run-time-type-information.md)\
 [Schlüsselwörter](../cpp/keywords-cpp.md)

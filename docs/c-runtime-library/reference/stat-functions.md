@@ -118,12 +118,12 @@ helpviewer_keywords:
 - _tstat64 function
 - files [C++], getting status information
 ms.assetid: 99a75ae6-ff26-47ad-af70-5ea7e17226a5
-ms.openlocfilehash: 607a7aff3acf923e0dd62e0dc332283f66b436b1
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: bb9603b6a76e92561db6c28792e4644949e190d8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82918322"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229336"
 ---
 # <a name="_stat-_stat32-_stat64-_stati64-_stat32i64-_stat64i32-_wstat-_wstat32-_wstat64-_wstati64-_wstat32i64-_wstat64i32"></a>_stat, _stat32, _stat64, _stati64, _stat32i64, _stat64i32, _wstat, _wstat32, _wstat64, _wstati64, _wstat32i64, _wstat64i32
 
@@ -198,7 +198,7 @@ Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_do
 
 Der Datumsstempel einer Datei kann dargestellt werden, wenn Sie später als Mitternacht, 1. Januar 1970 und vor 23:59:59 am 31. Dezember 3000 UTC ist, es sei denn, Sie verwenden **_stat32** oder **_wstat32**oder haben **_USE_32BIT_TIME_T**definiert. in diesem Fall kann das Datum nur bis 23:59:59 zum 18. Januar 2038,, UTC dargestellt werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_stat** Funktion Ruft Informationen über die Datei oder das Verzeichnis ab, die von *path* angegeben werden, und speichert Sie in der Struktur, auf die von *buffer*verwiesen wird. **_stat** automatisch Multibytezeichen-Zeichen folgen Argumente behandelt, wobei Multibytezeichen-Zeichensequenzen gemäß der derzeit verwendeten Multibytezeichen-Codepage erkannt werden.
 
@@ -206,7 +206,7 @@ Die **_stat** Funktion Ruft Informationen über die Datei oder das Verzeichnis a
 
 Varianten dieser Funktionen unterstützen 32-Bit- oder 64-Bit-Zeittypen und 32-Bit- oder 64-Bit-Dateilängen. Das erste numerische Suffix (**32** oder **64**) gibt die Größe des verwendeten Zeittyps an. Das zweite Suffix ist entweder **i32** oder **I64**, das angibt, ob die Dateigröße als 32-Bit-oder 64-Bit-Ganzzahl dargestellt wird.
 
-**_stat** entspricht **_stat64i32**, und die **Struktur** **_stat** eine 64-Bit-Zeit enthält. Dies trifft zu, wenn **_USE_32BIT_TIME_T** nicht definiert ist. in diesem Fall ist das alte Verhalten wirksam. **_stat** verwendet einen 32-Bit-Zeitpunkt, und die **Struktur** **_stat** eine 32-Bit-Zeit enthält. Das gleiche gilt für **_stati64**.
+**_stat** entspricht **_stat64i32**, und **`struct`** **_stat** enthält eine 64-Bit-Zeit. Dies trifft zu, wenn **_USE_32BIT_TIME_T** nicht definiert ist. in diesem Fall ist das alte Verhalten wirksam. **_stat** verwendet einen 32-Bit-Zeitpunkt, und **`struct`** **_stat** enthält eine 32-Bit-Zeit. Das gleiche gilt für **_stati64**.
 
 > [!NOTE]
 > **_wstat** funktioniert nicht mit symbolischen Verknüpfungen von Windows Vista. In diesen Fällen wird **_wstat** immer eine Dateigröße von 0 melden. **_stat** funktioniert mit symbolischen Verknüpfungen ordnungsgemäß.
@@ -219,14 +219,14 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 |Functions|_USE_32BIT_TIME_T definiert?|Uhrzeittyp|Dateilängentyp|
 |---------------|------------------------------------|---------------|----------------------|
-|**_stat** **_wstat**|Nicht definiert|64-Bit|32-Bit|
-|**_stat** **_wstat**|Definiert|32-Bit|32-Bit|
-|**_stat32** **_wstat32**|Nicht von der Makrodefinition betroffen|32-Bit|32-Bit|
-|**_stat64** **_wstat64**|Nicht von der Makrodefinition betroffen|64-Bit|64-Bit|
-|**_stati64** **_wstati64**|Nicht definiert|64-Bit|64-Bit|
+|**_stat** **_wstat**|Nicht definiert|64 Bit|32 Bit|
+|**_stat** **_wstat**|Definiert|32 Bit|32 Bit|
+|**_stat32** **_wstat32**|Nicht von der Makrodefinition betroffen|32 Bit|32 Bit|
+|**_stat64** **_wstat64**|Nicht von der Makrodefinition betroffen|64 Bit|64 Bit|
+|**_stati64** **_wstati64**|Nicht definiert|64 Bit|64 Bit|
 |**_stati64** **_wstati64**|Definiert|32-Bit|64-Bit|
 |**_stat32i64** **_wstat32i64**|Nicht von der Makrodefinition betroffen|32-Bit|64-Bit|
-|**_stat64i32** **_wstat64i32**|Nicht von der Makrodefinition betroffen|64-Bit|32-Bit|
+|**_stat64i32** **_wstat64i32**|Nicht von der Makrodefinition betroffen|64 Bit|32 Bit|
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -258,10 +258,10 @@ Wenn *path* auf ein Gerät verweist, sind die **st_size**, verschiedene Zeitfeld
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|Optionale Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
-|**_stat**, **_stat32**, **_stat64**, **_stati64**, **_stat32i64** **_stat64i32**|\<sys/types.h> gefolgt von \<sys/stat.h>|\<errno.h>|
-|**_wstat**, **_wstat32**, **_wstat64**, **_wstati64**, **_wstat32i64** **_wstat64i32**|\<sys/types.h> gefolgt von \<sys/stat.h> oder \<wchar.h>|\<errno.h>|
+|**_stat**, **_stat32**, **_stat64**, **_stati64**, **_stat32i64** **_stat64i32**|\<sys/types.h>gefolgt von\<sys/stat.h>|\<errno.h>|
+|**_wstat**, **_wstat32**, **_wstat64**, **_wstati64**, **_wstat32i64** **_wstat64i32**|\<sys/types.h>gefolgt von \<sys/stat.h> oder\<wchar.h>|\<errno.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -328,7 +328,7 @@ Drive         : C:
 Time modified : Thu Feb 07 14:39:36 2002
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_access, _waccess](access-waccess.md)<br/>

@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - based addressing
 ms.assetid: a68ff750-c7fa-4c0c-8d5f-2df76e4686c5
-ms.openlocfilehash: 149439c82780f12669e5a3180f975c573ed30422
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 539ccef65477bafe2c46ce328bdaf65f52aff1b9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80181407"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229154"
 ---
 # <a name="__based-grammar"></a>__based-Grammatik
 
@@ -17,7 +17,7 @@ ms.locfileid: "80181407"
 
 Die basierende Adressierung ist nützlich, wenn eine genaue Kontrolle über das Segment erforderlich ist, in dem Objekte zugeordnet sind (statische und dynamische basierende Daten).
 
-Die einzige Form der in 32-Bit-und 64-Bit-Kompilierungen akzeptablen basierten Adressierung ist "basierend auf einem Zeiger", die einen Typ definiert, der eine 32-Bit-oder 64-Bit-Verschiebung zu einer 32-Bit-oder einer 64-Bit-Basis oder auf " **void**" enthält.
+Die einzige Form der in 32-Bit-und 64-Bit-Kompilierungen akzeptablen basierten Adressierung ist "basierend auf einem Zeiger", die einen Typ definiert, der eine 32-Bit-oder 64-Bit-Verschiebung zu einer 32-Bit-oder einer 64-Bit-Basis oder basierend auf enthält **`void`** .
 
 ## <a name="grammar"></a>Grammatik
 
@@ -33,6 +33,6 @@ Die einzige Form der in 32-Bit-und 64-Bit-Kompilierungen akzeptablen basierten A
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[based-Zeiger](../cpp/based-pointers-cpp.md)
+[Basierte Zeiger](../cpp/based-pointers-cpp.md)

@@ -24,12 +24,12 @@ f1_keywords:
 - vfwscanf_s
 - _vftscanf_s
 ms.assetid: 9b0133f0-9a18-4581-b24b-3b72683ad432
-ms.openlocfilehash: 2c6f3504c9c12ad5429a1b9649eda351c473671a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 834def5f1465f3ce0d903b0af31b67d0e7eb2543
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957376"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229284"
 ---
 # <a name="vfscanf_s-vfwscanf_s"></a>vfscanf_s, vfwscanf_s
 
@@ -52,13 +52,13 @@ int vfwscanf_s(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Streich*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 *format*<br/>
 Formatsteuerzeichenfolge.
 
-*arglist*<br/>
+*Arglist*<br/>
 Variablenargumentenliste.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -67,14 +67,14 @@ Jede dieser Funktionen gibt die Anzahl der Felder zurück, die erfolgreich konve
 
 Diese Funktionen überprüfen ihre Parameter. Wenn der *Stream* ein ungültiger Dateizeiger ist oder *Format* ein NULL-Zeiger ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **EOF** zurück und legen **errno** auf **EINVAL**fest.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **vfscanf_s** -Funktion liest Daten aus der aktuellen *Streamposition* in die Speicherorte, die von der *Arglist* -Argumentliste angegeben werden (falls vorhanden). Jedes Argument in der Liste muss ein Zeiger auf eine Variable eines Typs sein, der einem Typspezifizierer im- *Format*entspricht. *Format* steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie das *Format* -Argument für **scanf_s**; eine Beschreibung des *Formats*finden Sie unter [formatangabefelder: scanf-und wscanf-Funktionen](../../c-runtime-library/format-specification-fields-scanf-and-wscanf-functions.md) . **vfwscanf_s** ist eine breit Zeichen Version von **vfscanf_s**. das Format Argument für **vfwscanf_s** ist eine Zeichenfolge mit breit Zeichen. Diese Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **vfscanf_s** unterstützt derzeit keine Eingaben aus einem Unicode-Stream.
 
-Der Hauptunterschied zwischen den sichereren Funktionen (mit dem Suffix " **_s** ") und den anderen Versionen besteht darin, dass für die sichereren Funktionen die Größe in Zeichen jedes **c**-, **c**-, **s**-, **s**-und **[** Type-Felds erforderlich ist. wird als Argument an die Variable geleitet, die unmittelbar auf die Variable folgt Weitere Informationen finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) und [scanf-Breitenangabe](../../c-runtime-library/scanf-width-specification.md).
+Der Hauptunterschied zwischen den sichereren Funktionen (mit dem **_s** Suffix) und den anderen Versionen besteht darin, dass die sichereren Funktionen die Größe in Zeichen jedes **c**-, **c**-, **s**-, **s**-und **[** Type-Felds als Argument direkt nach der Variablen weitergeben müssen. Weitere Informationen finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md) und [scanf-Breitenangabe](../../c-runtime-library/scanf-width-specification.md).
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -82,14 +82,14 @@ Der Hauptunterschied zwischen den sichereren Funktionen (mit dem Suffix " **_s**
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_vftscanf_s**|**vfscanf_s**|**vfscanf_s**|**vfwscanf_s**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**vfscanf_s**|\<stdio.h>|
 |**vfwscanf_s**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

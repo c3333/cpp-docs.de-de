@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - continue keyword [C++]
 ms.assetid: 3c94ee57-f732-4c1d-8537-d0ce5382bfd4
-ms.openlocfilehash: b3790ecfde0af958b3244cfdaa61524ba78d6267
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 55a81338f1a0f9036a6d42c4bac7c99489c18d64
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180276"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228998"
 ---
 # <a name="continue-statement-c"></a>continue-Anweisung (C++)
 
@@ -27,11 +27,11 @@ continue;
 
 Alle verbleibenden Anweisungen in der aktuellen Iteration werden nicht ausgeführt. Die nächste Iteration der Schleife wird wie folgt bestimmt:
 
-- In einer **DO** -oder **while** -Schleife wird mit der nächsten Iterations Anweisung der Steuerungs Ausdruck der **do** -oder **while** -Anweisung erneut ausgewertet.
+- In einer- **`do`** oder- **`while`** Schleife wird die nächste Iterations Anweisung gestartet, indem der steuernde Ausdruck der-oder-Anweisung erneut ausgewertet wird **`do`** **`while`** .
 
-- In einer **for** -Schleife (mit der Syntax `for`(`init-expr`; `cond-expr`; `loop-expr`)) wird die `loop-expr`-Klausel ausgeführt. Anschließend wird die `cond-expr`-Klausel neu ausgewertet und, je nach Ergebnis, wird die Schleife entweder beendet oder es tritt eine andere Iteration auf.
+- In einer- **`for`** Schleife (unter Verwendung der-Syntax `for( <init-expr> ; <cond-expr> ; <loop-expr> )` ) wird die- `<loop-expr>` Klausel ausgeführt. Anschließend wird die `<cond-expr>`-Klausel neu ausgewertet und, je nach Ergebnis, wird die Schleife entweder beendet oder es tritt eine andere Iteration auf.
 
-Im folgenden Beispiel wird gezeigt, wie die **Continue** -Anweisung verwendet werden kann, um Code Abschnitte zu umgehen und die nächste Iterations Schleife zu beginnen.
+Das folgende Beispiel zeigt, wie die **`continue`** -Anweisung verwendet werden kann, um Code Abschnitte zu umgehen und die nächste Iterations Schleife zu beginnen.
 
 ## <a name="example"></a>Beispiel
 
@@ -60,7 +60,7 @@ before the continue
 after the do loop
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Sprunganweisungen](../cpp/jump-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

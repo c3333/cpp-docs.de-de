@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - const keyword [C++]
 ms.assetid: b21c0271-1ad0-40a0-b21c-5e812bba0318
-ms.openlocfilehash: cc1f117cc5f26edf9cd85461281b925c97fa5225
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: db79e228f1fabc4b2da0a7778126a1b576a67768
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180303"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229037"
 ---
 # <a name="const-c"></a>const (C++)
 
-Beim Ändern einer Daten Deklaration gibt das Schlüsselwort " **Konstanten** " an, dass das Objekt oder die Variable nicht geändert werden kann.
+Beim Ändern einer Daten Deklaration **`const`** gibt das Schlüsselwort an, dass das Objekt oder die Variable nicht geändert werden kann.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,7 +26,7 @@ member-function const ;
 
 ## <a name="const-values"></a>Konstante Werte
 
-Das **Schlüsselwort "Konstanten"** gibt an, dass der Wert einer Variablen konstant ist, und weist den Compiler an, den Programmierer daran zu hindern, ihn zu ändern.
+Das **`const`** Schlüsselwort gibt an, dass der Wert einer Variablen konstant ist, und weist den Compiler an, den Programmierer daran zu hindern, ihn zu ändern.
 
 ```cpp
 // constant_values1.cpp
@@ -37,7 +37,7 @@ int main() {
 }
 ```
 
-In C++können Sie **das Schlüsselwort "Konstanten"** anstelle der [#define](../preprocessor/hash-define-directive-c-cpp.md) Präprozessordirektive verwenden, um konstante Werte zu definieren. Werte, die **mit Konstanten** definiert sind, unterliegen der Typüberprüfung und können anstelle konstanter Ausdrücke verwendet werden. In C++können Sie die Größe eines Arrays mit einer **Konstanten** Variablen wie folgt angeben:
+In C++ können Sie das- **`const`** Schlüsselwort anstelle der [#define](../preprocessor/hash-define-directive-c-cpp.md) Präprozessordirektive verwenden, um konstante Werte zu definieren. Werte **`const`** , die mit definiert werden, unterliegen der Typüberprüfung und können anstelle konstanter Ausdrücke verwendet werden. In C++ können Sie die Größe eines Arrays mit einer **`const`** Variablen wie folgt angeben:
 
 ```cpp
 // constant_values2.cpp
@@ -48,7 +48,7 @@ char store_char[maxarray];  // allowed in C++; not allowed in C
 
 In C erhalten konstante Werte standardmäßig den Wert einer externen Bindung. Daher können sie nur in den Quelldateien stehen. In C++ erhalten konstante Werte standardmäßig den Wert einer internen Bindung, daher können sie in den Headerdateien angezeigt werden.
 
-Das Schlüsselwort " **Konstanten** " kann auch in Zeiger Deklarationen verwendet werden.
+Das- **`const`** Schlüsselwort kann auch in Zeiger Deklarationen verwendet werden.
 
 ```cpp
 // constant_values3.cpp
@@ -60,7 +60,7 @@ int main() {
 }
 ```
 
-Ein Zeiger auf eine Variable, die als " **konstant** " deklariert ist, kann nur einem Zeiger zugewiesen werden, der auch als " **konstant**" deklariert wird.
+Ein Zeiger auf eine Variable, die als deklariert wurde, **`const`** kann nur einem Zeiger zugewiesen werden, der auch als deklariert ist **`const`** .
 
 ```cpp
 // constant_values4.cpp
@@ -79,20 +79,20 @@ int main() {
 
 Sie können Zeiger auf konstante Daten als Funktionsparameter verwenden, um zu verhindern, dass die Funktion einen Parameter ändert, der über einen Zeiger übergeben wird.
 
-Bei **Objekten, die als Konstanten**deklariert werden, können Sie nur konstante Element Funktionen aufzurufen. Dadurch wird sichergestellt, dass das konstante Objekt nie geändert wird.
+Bei Objekten, die als deklariert werden **`const`** , können Sie nur konstante Element Funktionen aufzurufen. Dadurch wird sichergestellt, dass das konstante Objekt nie geändert wird.
 
 ```cpp
 birthday.getMonth();    // Okay
 birthday.setMonth( 4 ); // Error
 ```
 
-Sie können für ein nicht konstantes Objekt konstante oder nicht konstante Memberfunktionen aufrufen. Sie können eine Element Funktion auch mithilfe des Schlüssel Worts " **Konstanten** " überladen. Dadurch kann eine andere Version der Funktion für konstante und nicht konstante Objekte aufgerufen werden.
+Sie können für ein nicht konstantes Objekt konstante oder nicht konstante Memberfunktionen aufrufen. Sie können eine Element Funktion auch mithilfe des **`const`** Schlüssel Worts überladen. Dadurch kann eine andere Version der Funktion für konstante und nicht konstante Objekte aufgerufen werden.
 
-Sie können keine Konstruktoren oder Dekonstruktoren mit dem **Konstanten** Schlüsselwort deklarieren.
+Sie können keine Konstruktoren oder Dekonstruktoren mit dem- **`const`** Schlüsselwort deklarieren.
 
 ## <a name="const-member-functions"></a>Konstante Memberfunktionen
 
-Das Deklarieren einer Member-Funktion mit dem Schlüsselwort " **Konstanten** " gibt an, dass es sich bei der Funktion um eine schreibgeschützte Funktion handelt, die das Objekt, für das Sie aufgerufen wird, nicht ändert. Eine Konstante Member-Funktion kann keine nicht statischen Datenmember ändern oder keine Element Funktionen aufzurufen, die nicht konstant sind. Um eine Konstante Member-Funktion zu deklarieren, platzieren Sie **das Schlüsselwort "Konstanten"** nach der schließenden Klammer der Argumentliste. Das Schlüsselwort " **Konstanten** " ist sowohl in der Deklaration als auch in der Definition erforderlich.
+Das Deklarieren einer Member-Funktion mit dem- **`const`** Schlüsselwort gibt an, dass es sich bei der Funktion um eine schreibgeschützte Funktion handelt, die das Objekt, für das Sie aufgerufen wird, nicht ändert. Eine Konstante Member-Funktion kann keine nicht statischen Datenmember ändern oder keine Element Funktionen aufzurufen, die nicht konstant sind. Um eine Konstante Member-Funktion zu deklarieren, platzieren Sie das- **`const`** Schlüsselwort nach der schließenden Klammer der Argumentliste. Das **`const`** Schlüsselwort ist sowohl in der Deklaration als auch in der Definition erforderlich.
 
 ```cpp
 // constant_member_function.cpp
@@ -124,9 +124,9 @@ int main()
 }
 ```
 
-## <a name="c-and-c-const-differences"></a>Unterschiede C++ zwischen C und Konstanten
+## <a name="c-and-c-const-differences"></a>C-und C++-Konstanten Unterschiede
 
-Wenn Sie eine Variable in einer C-Quell Code Datei als **Konstanten** deklarieren, gehen Sie wie folgt vor:
+Wenn Sie eine Variable als **`const`** in einer C-Quell Code Datei deklarieren, gehen Sie wie folgt vor:
 
 ```cpp
 const int i = 2;
@@ -138,13 +138,13 @@ Sie können diese Variable dann in einem anderen Modul wie folgt verwenden:
 extern const int i;
 ```
 
-Um jedoch das gleiche Verhalten in C++zu erzielen, müssen Sie die **Konstante Variable wie** folgt deklarieren:
+Um jedoch das gleiche Verhalten in C++ zu erzielen, müssen Sie die **`const`** Variable wie folgt deklarieren:
 
 ```cpp
 extern const int i = 2;
 ```
 
-Wenn Sie eine **externe** Variable in einer C++ Quell Code Datei für die Verwendung in einer C-Quell Code Datei deklarieren möchten, verwenden Sie Folgendes:
+Wenn Sie eine **`extern`** Variable in einer C++-Quell Code Datei für die Verwendung in einer C-Quell Code Datei deklarieren möchten, verwenden Sie Folgendes:
 
 ```cpp
 extern "C" const int x=10;
@@ -154,18 +154,18 @@ um die Namenszerlegung durch den C++-Compiler zu verhindern.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Beim Befolgen der Parameterliste einer Element Funktion gibt das Schlüsselwort " **Konstanten** " an, dass die Funktion das Objekt, für das Sie aufgerufen wird, nicht ändert.
+Beim Befolgen der Parameterliste einer Element Funktion gibt das- **`const`** Schlüsselwort an, dass die Funktion das Objekt, für das Sie aufgerufen wird, nicht ändert.
 
-Weitere Informationen zu " **konstant**" finden Sie in den folgenden Themen:
+Weitere Informationen zu finden Sie in **`const`** den folgenden Themen:
 
-- [const- und volatile-Zeiger](../cpp/const-and-volatile-pointers.md)
+- [Konstante und flüchtige Zeiger](../cpp/const-and-volatile-pointers.md)
 
-- [Typqualifizierer (C-Sprachreferenz)](../c-language/type-qualifiers.md)
+- [Typqualifizierer (C-Programmiersprachenreferenz)](../c-language/type-qualifiers.md)
 
 - [volatile](../cpp/volatile-cpp.md)
 
 - [#define](../preprocessor/hash-define-directive-c-cpp.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)

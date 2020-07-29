@@ -1,6 +1,9 @@
 ---
-title: 'Bitweiser exklusiver OR-Operator: ^'
-ms.date: 11/04/2016
+title: 'Bitweiser Operator für exklusives ODER: ^'
+description: Die exklusive Syntax der C++-Standardsprache oder-Operator Syntax und die Verwendung.
+ms.date: 07/23/2020
+f1_keywords:
+- xor_cpp
 helpviewer_keywords:
 - operators [C++], bitwise
 - exclusive OR operator
@@ -10,30 +13,29 @@ helpviewer_keywords:
 - OR operator [C++], bitwise exclusive
 - operators [C++], logical
 ms.assetid: f9185d85-65d5-4f64-a6d6-679758d52217
-ms.openlocfilehash: 9a44dc60a985729aae79ed0e2e48c44adace647b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0f64b9f90b70756d29fcabb361cc07abe58e0a54
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80190715"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229102"
 ---
-# <a name="bitwise-exclusive-or-operator-"></a>Bitweiser exklusiver OR-Operator: ^
+# <a name="bitwise-exclusive-or-operator-"></a>Bitweiser Operator für exklusives ODER: ^
 
 ## <a name="syntax"></a>Syntax
 
-```
-expression ^ expression
-```
+> *Ausdruck* **`^`** *Ausdruck*
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der bitweise exklusive OR-Operator ( **^** ) vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn ein Bit 0 und das andere 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 festgelegt.
+Der bitweise exklusive OR-Operator ( **`^`** ) vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn das Bit im ersten Operanden 0 und das andere Bit 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 (null) festgelegt.
 
-Beide Operanden im bitweisen exklusiven OR-Operator müssen vom Ganzzahltyp sein. Die üblichen arithmetischen Konvertierungen, die in [Standard Konvertierungen](standard-conversions.md) abgedeckt werden, werden auf die Operanden angewendet.
+Beide Operanden für den Operator müssen ganzzahlige Typen aufweisen. Die üblichen arithmetischen Konvertierungen, die in [Standard Konvertierungen](standard-conversions.md) abgedeckt werden, werden auf die Operanden angewendet.
 
-## <a name="operator-keyword-for-"></a>Operator-Schlüsselwort für "^"
+## <a name="operator-keyword-for-"></a>Operator Schlüsselwort für ^
 
-Der **Xor** -Operator ist die Text Entsprechung von **^** . Es gibt zwei Möglichkeiten, auf den **Xor** -Operator in den Programmen zuzugreifen: Schließen Sie die Header Datei `iso646.h`ein, oder kompilieren Sie mit der Compileroption [/Za](../build/reference/za-ze-disable-language-extensions.md) (Spracherweiterungen deaktivieren).
+C++ gibt **`xor`** als Alternative Schreibweise für an **`^`** . In C wird die alternative Schreibweise als Makro in der \<iso646.h> Kopfzeile bereitgestellt. In C++ ist die alternative Schreibweise ein Schlüsselwort. die Verwendung von \<iso646.h> oder der C++-Entsprechung \<ciso646> ist als veraltet markiert. In Microsoft C++ ist die- [`/permissive-`](../build/reference/permissive-standards-conformance.md) oder- [`/Za`](../build/reference/za-ze-disable-language-extensions.md) Compileroption erforderlich, um die alternative Schreibweise zu aktivieren.
+
 
 ## <a name="example"></a>Beispiel
 
@@ -51,6 +53,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)
+[C++ integrierte Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

@@ -7,30 +7,30 @@ helpviewer_keywords:
 - class members [C++], types of
 - class members
 ms.assetid: 8802cfa9-705d-4f37-acde-245d6838010c
-ms.openlocfilehash: cb978434707a9a7808b3388fc541ce4e0d996b0f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 02c5593d9fb5e72ee6b398c9637397ab26c9f3f2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366676"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229063"
 ---
 # <a name="class-member-overview"></a>Übersicht über Klassenmember
 
-Eine Klasse oder Struktur besteht aus Membern. Die von einer Klasse ausgeführte Arbeit erfolgt über die Memberfunktionen. Den Zustand, den sie verwaltet, wird in Datenmembern gespeichert. Die Initialisierung von Elementen erfolgt durch Konstruktoren, und Bereinigungsarbeiten wie das Freigeben von Speicher und das Freigeben von Ressourcen werden von Destruktoren durchgeführt. In C++11 und höher können Datenmember (und sollten in der Regel) beim Deklarieren initialisiert werden.
+Eine Klasse oder Struktur besteht aus Membern. Die von einer Klasse ausgeführte Arbeit erfolgt über die Memberfunktionen. Den Zustand, den sie verwaltet, wird in Datenmembern gespeichert. Die Initialisierung von Membern erfolgt durch Konstruktoren, und Bereinigungs Vorgänge wie das Freigeben von Arbeitsspeicher und das Freigeben von Ressourcen werden von destrukturtoren durchgeführt. In C++11 und höher können Datenmember (und sollten in der Regel) beim Deklarieren initialisiert werden.
 
 ## <a name="kinds-of-class-members"></a>Typen von Klassenmembern
 
 Eine vollständige Liste der Memberkategorien finden Sie im Folgenden:
 
-- [Spezielle Mitgliedsfunktionen](special-member-functions.md).
+- [Besondere Member-Funktionen](special-member-functions.md).
 
-- [Überblick über die Mitgliedsfunktionen](overview-of-member-functions.md).
+- [Übersicht über Element Funktionen](overview-of-member-functions.md).
 
-- [Datenmember,](static-members-cpp.md) einschließlich integrierter Typen und anderer benutzerdefinierter Typen.
+- [Datenmember](static-members-cpp.md) , einschließlich integrierter Typen und anderer benutzerdefinierter Typen.
 
 - Operatoren
 
-- [Verschachtelte Klassendeklarationen](nested-class-declarations.md) und.)
+- [Klassen Deklarationen](nested-class-declarations.md) und.)
 
 - [Unions](unions.md)
 
@@ -40,7 +40,7 @@ Eine vollständige Liste der Memberkategorien finden Sie im Folgenden:
 
 - [Freunde](../cpp/friend-cpp.md).
 
-- [Aliase und typedefs](../cpp/aliases-and-typedefs-cpp.md).
+- [Aliase und Typedefs](../cpp/aliases-and-typedefs-cpp.md).
 
     > [!NOTE]
     >  Friends sind in der vorangehenden Liste inbegriffen, da sie in der Klassendeklaration enthalten sind. Es sind jedoch keine echten Klassenmember, da sie nicht im Gültigkeitsbereich der Klasse liegen.
@@ -92,11 +92,11 @@ int TestRun::_instances{ 0 };
 
 ## <a name="member-accessibility"></a>Memberzugriff
 
-Die Member einer Klasse werden in der Memberliste deklariert. Die Memberliste einer Klasse kann in eine beliebige Anzahl **privater,** **geschützter** und **öffentlicher** Abschnitte unterteilt werden, die Schlüsselwörter verwenden, die als Zugriffsbezeichner bezeichnet werden.  Ein Doppelpunkt **:** muss dem Zugriffsbezeichner folgen.  Diese Abschnitte müssen nicht fortlaufend sein, d. h. sämtliche dieser Schlüsselwörter können möglicherweise mehrmals in der Memberliste vorkommen.  Das Schlüsselwort legt den Zugriff aller Member bis zum nächsten Zugriffsspezifizierer oder zur schließenden Klammer fest. Weitere Informationen finden Sie unter [Member Access Control (C++)](../cpp/member-access-control-cpp.md).
+Die Member einer Klasse werden in der Memberliste deklariert. Die Member-Liste einer Klasse kann in eine beliebige Anzahl von **`private`** -und-Abschnitten unterteilt werden, die **`protected`** **`public`** als Zugriffsspezifizierer bezeichnete Schlüsselwörter verwenden.  Ein Doppelpunkt **:** muss auf den Zugriffsspezifizierer folgen.  Diese Abschnitte müssen nicht fortlaufend sein, d. h. sämtliche dieser Schlüsselwörter können möglicherweise mehrmals in der Memberliste vorkommen.  Das Schlüsselwort legt den Zugriff aller Member bis zum nächsten Zugriffsspezifizierer oder zur schließenden Klammer fest. Weitere Informationen finden Sie unter [Member Access Control (C++)](../cpp/member-access-control-cpp.md).
 
 ## <a name="static-members"></a>Statische Member
 
-Ein Datenmember kann als statisch deklariert werden, was bedeutet, dass alle Objekte der Klasse auf die gleiche Kopie zugreifen. Eine Memberfunktion kann als statisch deklariert werden, in diesem Fall kann sie nur auf statische Datenmember der Klasse zugreifen (und hat keinen *Zeiger).* Weitere Informationen finden Sie unter [Statische Datenmember](../cpp/static-members-cpp.md).
+Ein Datenmember kann als statisch deklariert werden, was bedeutet, dass alle Objekte der Klasse auf die gleiche Kopie zugreifen. Eine Member-Funktion kann als statisch deklariert werden. in diesem Fall kann Sie nur auf statische Datenmember der-Klasse zugreifen (ohne *diesen* Zeiger). Weitere Informationen finden Sie unter [statische Datenmember](../cpp/static-members-cpp.md).
 
 ## <a name="special-member-functions"></a>Spezielle Memberfunktionen
 
@@ -106,15 +106,15 @@ Spezielle Memberfunktionen stellen Funktionen dar, die vom Compiler automatisch 
 
 1. Kopierkonstruktor
 
-1. **(C++11)** Move-Konstruktor
+1. **(C++ 11)** Bewegungskonstruktor
 
 1. Kopierzuweisungsoperator
 
-1. **(C++11)** Zuweisungsoperator verschieben
+1. **(C++ 11)** Bewegungs Zuweisungs Operator
 
 1. Destruktor
 
-Weitere Informationen finden Sie unter [Spezielle Mitgliedsfunktionen](../cpp/special-member-functions.md).
+Weitere Informationen finden Sie unter [besondere Member-Funktionen](../cpp/special-member-functions.md).
 
 ## <a name="memberwise-initialization"></a>Memberspezifische Initialisierung
 
@@ -142,7 +142,7 @@ int main()
 
 Wenn einem Member ein Wert in einem Konstruktor zugewiesen ist, überschreibt dieser Wert den Wert, mit dem der Member zum Zeitpunkt der Deklaration initialisiert wurde.
 
-Es ist nur eine gemeinsame Kopie der statischen Datenmember für alle Objekte eines gegebenen Klassentyps vorhanden. Statische Datenmember müssen definiert werden und können im Dateigültigkeitsbereich initialisiert werden. (Weitere Informationen zu statischen Datenmembern finden Sie unter [Statische Datenmember](../cpp/static-members-cpp.md).) Das folgende Beispiel zeigt, wie diese Initialisierungen durchgeführt werden:
+Es ist nur eine gemeinsame Kopie der statischen Datenmember für alle Objekte eines gegebenen Klassentyps vorhanden. Statische Datenmember müssen definiert werden und können im Dateigültigkeitsbereich initialisiert werden. (Weitere Informationen zu statischen Datenmembern finden Sie unter [statische Datenmember](../cpp/static-members-cpp.md).) Im folgenden Beispiel wird gezeigt, wie diese Initialisierungen durchgeführt werden:
 
 ```cpp
 // class_members2.cpp
