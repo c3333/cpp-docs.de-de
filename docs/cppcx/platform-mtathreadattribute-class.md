@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::MTAThreadAttribute Class
 ms.assetid: bfc546a7-4333-4407-85b4-4721565e1f44
-ms.openlocfilehash: 4564def412834ae0586292e8aa533d3b2bd0d679
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 700eeae226be48c1f6659d621f2f5c0ed397bb7f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152669"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213046"
 ---
 # <a name="platformmtathreadattribute-class"></a>Platform::MTAThreadAttribute-Klasse
 
@@ -30,17 +30,17 @@ public ref class MTAThreadAttribute sealed : Attribute
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[MTAThreadAttribute-Konstruktor 1](#ctor) Konstruktor|Initialisiert eine neue Instanz der Klasse.|
+|[Mtathleattributkonstruktor 1](#ctor) -Konstruktor|Initialisiert eine neue Instanz der Klasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Das MTAThreadAttribute-Attribut erbt von [Platform:: Object Class](../cppcx/platform-object-class.md). „MTAThreadAttribute“ wird zudem überladen oder weist die folgenden Member auf:
+Das mtathlesattribute-Attribut erbt von der [Platform:: Object-Klasse](../cppcx/platform-object-class.md). „MTAThreadAttribute“ wird zudem überladen oder weist die folgenden Member auf:
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[MTAThreadAttribute::Equals](#equals)|Bestimmt, ob das angegebene Objekt mit dem aktuellen Objekt identisch ist.|
+|[MTAThreadAttribute::Equals](#equals)|Bestimmt, ob das angegebene Objekt gleich dem aktuellen Objekt ist.|
 |[MTAThreadAttribute::GetHashCode](#gethashcode)|Gibt den Hashcode für diese Instanz zurück.|
 |[MTAThreadAttribute::ToString](#tostring)|Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt.|
 
@@ -48,13 +48,13 @@ Das MTAThreadAttribute-Attribut erbt von [Platform:: Object Class](../cppcx/plat
 
 `Platform`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-**Metadaten:** platform.winmd
+**Metadaten:** Platform. winmd
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
-## <a name="ctor"></a> MTAThreadAttribute-Konstruktor
+## <a name="mtathreadattribute-constructor"></a><a name="ctor"></a>Mtathleattribute-Konstruktor
 
 Initialisiert eine neue Instanz der MTAThreadAttribute-Klasse.
 
@@ -64,9 +64,9 @@ Initialisiert eine neue Instanz der MTAThreadAttribute-Klasse.
 public:MTAThreadAttribute();
 ```
 
-## <a name="equals"></a> MTAThreadAttribute::Equals
+## <a name="mtathreadattributeequals"></a><a name="equals"></a>Mtathlesattribute:: ist Gleichheits
 
-Bestimmt, ob das angegebene Objekt mit dem aktuellen Objekt identisch ist.
+Bestimmt, ob das angegebene Objekt gleich dem aktuellen Objekt ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -81,9 +81,9 @@ Das zu vergleichende Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** , wenn die Objekte gleich; andernfalls sind, **"false"**.
+**`true`**, wenn die Objekte gleich sind. andernfalls **`false`** .
 
-## <a name="gethashcode"></a> MTAThreadAttribute::GetHashCode
+## <a name="mtathreadattributegethashcode"></a><a name="gethashcode"></a>Mtathlesattribute:: GetHashCode
 
 Gibt den Hashcode für diese Instanz zurück.
 
@@ -97,7 +97,7 @@ public:int GetHashCode();
 
 Der Hashcode für diese Instanz.
 
-## <a name="tostring"></a> MTAThreadAttribute::ToString
+## <a name="mtathreadattributetostring"></a><a name="tostring"></a>Mtathlesattribute::-Zeichenfolge
 
 Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt.
 
@@ -111,6 +111,6 @@ public:String^ ToString();
 
 Eine Zeichenfolge, die das aktuelle Objekt darstellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Plattform-Namespace](platform-namespace-c-cx.md)
+[Platform-Namespace](platform-namespace-c-cx.md)

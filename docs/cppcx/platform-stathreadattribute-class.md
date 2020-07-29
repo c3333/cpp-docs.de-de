@@ -11,12 +11,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::STAThreadAttribute Class
 ms.assetid: f97960fc-e673-4d9e-910a-54c8415411c4
-ms.openlocfilehash: 05fb2879839c504f49f56e25ffe28329aa969c69
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6a8220d8cddca29e621b21fc56966efdb42cb32e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62183369"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213020"
 ---
 # <a name="platformstathreadattribute-class"></a>Platform::STAThreadAttribute-Klasse
 
@@ -32,17 +32,17 @@ public ref class STAThreadAttribute sealed : Attribute
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[STAThreadAttribute-Konstruktor 1](#ctor)|Initialisiert eine neue Instanz der Klasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Das STAThreadAttribute-Attribut erbt von [Platform:: Object Class](../cppcx/platform-object-class.md). „STAThreadAttribute“ wird zudem überladen oder weist die folgenden Member auf:
+Das STAThreadAttribute-Attribut erbt von der [Platform:: Object-Klasse](../cppcx/platform-object-class.md). „STAThreadAttribute“ wird zudem überladen oder weist die folgenden Member auf:
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[STAThreadAttribute::Equals](#equals)|Bestimmt, ob das angegebene Objekt mit dem aktuellen Objekt identisch ist.|
+|[STAThreadAttribute::Equals](#equals)|Bestimmt, ob das angegebene Objekt gleich dem aktuellen Objekt ist.|
 |[STAThreadAttribute::GetHashCode](#gethashcode)|Gibt den Hashcode für diese Instanz zurück.|
 |[STAThreadAttribute::ToString](#tostring)|Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt.|
 
@@ -50,13 +50,13 @@ Das STAThreadAttribute-Attribut erbt von [Platform:: Object Class](../cppcx/plat
 
 `Platform`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** collection.h
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
-## <a name="ctor"></a> STAThreadAttribute constructor
+## <a name="stathreadattribute-constructor"></a><a name="ctor"></a> STAThreadAttribute constructor
 
 Initialisiert eine neue Instanz der STAThreadAttribute-Klasse.
 
@@ -66,9 +66,9 @@ Initialisiert eine neue Instanz der STAThreadAttribute-Klasse.
 public:STAThreadAttribute();
 ```
 
-## <a name="equals"></a> STAThreadAttribute::Equals
+## <a name="stathreadattributeequals"></a><a name="equals"></a>STAThreadAttribute:: ist Gleichheits
 
-Bestimmt, ob das angegebene Objekt mit dem aktuellen Objekt identisch ist.
+Bestimmt, ob das angegebene Objekt gleich dem aktuellen Objekt ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -83,9 +83,9 @@ Das zu vergleichende Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** , wenn die Objekte gleich; andernfalls sind, **"false"**.
+**`true`**, wenn die Objekte gleich sind. andernfalls **`false`** .
 
-## <a name="gethashcode"></a> STAThreadAttribute::GetHashCode
+## <a name="stathreadattributegethashcode"></a><a name="gethashcode"></a>STAThreadAttribute:: GetHashCode
 
 Gibt den Hashcode für diese Instanz zurück.
 
@@ -99,7 +99,7 @@ public:int GetHashCode();
 
 Der Hashcode für diese Instanz.
 
-## <a name="tostring"></a> STAThreadAttribute::ToString
+## <a name="stathreadattributetostring"></a><a name="tostring"></a>STAThreadAttribute::-Zeichenfolge
 
 Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt.
 
@@ -113,6 +113,6 @@ public:String^ ToString();
 
 Eine Zeichenfolge, die das aktuelle Objekt darstellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Plattform-Namespace](platform-namespace-c-cx.md)
+[Platform-Namespace](platform-namespace-c-cx.md)

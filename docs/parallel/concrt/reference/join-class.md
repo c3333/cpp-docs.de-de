@@ -16,12 +16,12 @@ f1_keywords:
 helpviewer_keywords:
 - join class
 ms.assetid: d2217119-70a1-40b6-809f-c1c13a571c3f
-ms.openlocfilehash: f75cf8483e7d6d65d118cc8f0ea756302d1b1d7c
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: c65eed8abafe424fa27c5b9a72d3c73b7127b68e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77139849"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219585"
 ---
 # <a name="join-class"></a>join-Klasse
 
@@ -42,16 +42,16 @@ class join : public propagator_block<single_link_registry<ITarget<std::vector<T>
 Der Nutz Lasttyp der Nachrichten, die dem-Block hinzugefügt und weitergegeben werden.
 
 *_Jtype*<br/>
-Die Art der `join` blockieren, ist entweder `greedy` oder `non_greedy`
+Die Art von `join` Block this ist, entweder `greedy` oder.`non_greedy`
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[join](#ctor)|Ist überladen. Erstellt einen `join` -Meldungsblock.|
-|[~ Join-Dekonstruktor](#dtor)|Zerstört den `join`-Block.|
+|[~ Join-Dekonstruktor](#dtor)|Zerstört den- `join` Block.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
@@ -59,11 +59,11 @@ Die Art der `join` blockieren, ist entweder `greedy` oder `non_greedy`
 |----------|-----------------|
 |[accept_message](#accept_message)|Akzeptiert eine Meldung, die von diesem `join` Messaging Block angeboten wurde, und überträgt den Besitz an den Aufrufer.|
 |[consume_message](#consume_message)|Verarbeitet eine Meldung, die zuvor vom `join` Messaging Block angeboten und vom Ziel reserviert wurde, und überträgt den Besitz an den Aufrufer.|
-|[link_target_notification](#link_target_notification)|Ein Rückruf, der benachrichtigt, dass ein neues Ziel mit diesem `join`-Nachrichtenblock verknüpft wurde.|
-|[propagate_message](#propagate_message)|Übergibt eine Nachricht asynchron von einem `ISource`-Block an diesen `join`-Messaging-Block. Sie wird durch die `propagate`-Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.|
+|[link_target_notification](#link_target_notification)|Ein Rückruf, der benachrichtigt, dass ein neues Ziel mit diesem `join` Messaging Block verknüpft wurde.|
+|[propagate_message](#propagate_message)|Übergibt eine Nachricht asynchron von einem- `ISource` Block an diesen `join` Messaging Block. Sie wird von der- `propagate` Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.|
 |[propagate_to_any_targets](#propagate_to_any_targets)|Erstellt eine Ausgabe Nachricht, die eine Eingabe Nachricht aus jeder Quelle enthält, wenn alle eine Nachricht weitergegeben haben. Sendet diese Ausgabe Nachricht an jedes ihrer Ziele.|
 |[release_message](#release_message)|Gibt eine vorherige Nachrichten Reservierung frei. (Überschreibt [source_block:: release_message](source-block-class.md#release_message).)|
-|[reserve_message](#reserve_message)|Reserviert eine Meldung, die zuvor von diesem `join`-Nachrichtenblock angeboten wurde. (Überschreibt [source_block:: reserve_message](source-block-class.md#reserve_message).)|
+|[reserve_message](#reserve_message)|Reserviert eine Meldung, die zuvor von diesem `join` Messaging Block angeboten wurde. (Überschreibt [source_block:: reserve_message](source-block-class.md#reserve_message).)|
 |[resume_propagation](#resume_propagation)|Setzt die Verteilung fort, nachdem eine Reservierung freigegeben wurde. (Überschreibt [source_block:: resume_propagation](source-block-class.md#resume_propagation).)|
 
 ## <a name="remarks"></a>Bemerkungen
@@ -88,7 +88,7 @@ Weitere Informationen finden Sie unter [asynchrone Nachrichten Blöcke](../../..
 
 **Namespace:** Parallelität
 
-## <a name="accept_message"></a>accept_message
+## <a name="accept_message"></a><a name="accept_message"></a>accept_message
 
 Akzeptiert eine Meldung, die von diesem `join` Messaging Block angeboten wurde, und überträgt den Besitz an den Aufrufer.
 
@@ -99,13 +99,13 @@ virtual message<_OutputType>* accept_message(runtime_object_identity _MsgId);
 ### <a name="parameters"></a>Parameter
 
 *_MsgId*<br/>
-Die `runtime_object_identity` des angebotenen `message` Objekts.
+Der `runtime_object_identity` des angebotenen `message` Objekts.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das `message` Objekt, für das der Aufrufer nun den Besitz hat.
 
-## <a name="consume_message"></a>consume_message
+## <a name="consume_message"></a><a name="consume_message"></a>consume_message
 
 Verarbeitet eine Meldung, die zuvor vom `join` Messaging Block angeboten und vom Ziel reserviert wurde, und überträgt den Besitz an den Aufrufer.
 
@@ -116,7 +116,7 @@ virtual message<_OutputType>* consume_message(runtime_object_identity _MsgId);
 ### <a name="parameters"></a>Parameter
 
 *_MsgId*<br/>
-Die `runtime_object_identity` des verbrauchten `message` Objekts.
+Der `runtime_object_identity` des `message` Objekts, das verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -124,9 +124,9 @@ Ein Zeiger auf das `message` Objekt, für das der Aufrufer nun den Besitz hat.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ähnlich wie bei `accept`, dem aber immer ein Aufruf`reserve`vorangestellt ist.
+Ähnlich wie `accept` , ist jedoch immer ein-Rückruf vorangestellt `reserve` .
 
-## <a name="ctor"></a>Join
+## <a name="join"></a><a name="ctor"></a>Join
 
 Erstellt einen `join` -Meldungsblock.
 
@@ -175,27 +175,27 @@ Das `ScheduleGroup` -Objekt, in dem die Weiterleitungsaufgabe für den `join` -M
 
 Die Runtime verwendet das Standardplanungsprogramm, wenn Sie den `_PScheduler` -Parameter oder den `_PScheduleGroup` -Parameter nicht angeben.
 
-Der Typ `filter_method` ist ein Funktor mit Signatur `bool (T const &)` der von diesem `join` Messaging Block aufgerufen wird, um zu bestimmen, ob er eine angebotene Nachricht akzeptieren soll.
+Der Typ `filter_method` ist ein Funktor mit einer Signatur `bool (T const &)` , die von diesem `join` Messaging Block aufgerufen wird, um zu bestimmen, ob er eine angebotene Nachricht akzeptieren soll.
 
-## <a name="dtor"></a>~ Join
+## <a name="join"></a><a name="dtor"></a>~ Join
 
-Zerstört den `join`-Block.
+Zerstört den- `join` Block.
 
 ```cpp
 ~join();
 ```
 
-## <a name="link_target_notification"></a>link_target_notification
+## <a name="link_target_notification"></a><a name="link_target_notification"></a>link_target_notification
 
-Ein Rückruf, der benachrichtigt, dass ein neues Ziel mit diesem `join`-Nachrichtenblock verknüpft wurde.
+Ein Rückruf, der benachrichtigt, dass ein neues Ziel mit diesem `join` Messaging Block verknüpft wurde.
 
 ```cpp
 virtual void link_target_notification(_Inout_ ITarget<std::vector<T>> *);
 ```
 
-## <a name="propagate_message"></a>propagate_message
+## <a name="propagate_message"></a><a name="propagate_message"></a>propagate_message
 
-Übergibt eine Nachricht asynchron von einem `ISource`-Block an diesen `join`-Messaging-Block. Sie wird durch die `propagate`-Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.
+Übergibt eine Nachricht asynchron von einem- `ISource` Block an diesen `join` Messaging Block. Sie wird von der- `propagate` Methode aufgerufen, wenn Sie von einem Quell Block aufgerufen wird.
 
 ```cpp
 message_status propagate_message(
@@ -215,7 +215,7 @@ Ein Zeiger auf den Quell Block, der die Nachricht anbietet.
 
 Eine [Message_status](concurrency-namespace-enums.md) , die angibt, wie sich das Ziel für die Nachricht entschieden hat.
 
-## <a name="propagate_to_any_targets"></a>propagate_to_any_targets
+## <a name="propagate_to_any_targets"></a><a name="propagate_to_any_targets"></a>propagate_to_any_targets
 
 Erstellt eine Ausgabe Nachricht, die eine Eingabe Nachricht aus jeder Quelle enthält, wenn alle eine Nachricht weitergegeben haben. Sendet diese Ausgabe Nachricht an jedes ihrer Ziele.
 
@@ -223,7 +223,7 @@ Erstellt eine Ausgabe Nachricht, die eine Eingabe Nachricht aus jeder Quelle ent
 void propagate_to_any_targets(_Inout_opt_ message<_OutputType> *);
 ```
 
-## <a name="release_message"></a>release_message
+## <a name="release_message"></a><a name="release_message"></a>release_message
 
 Gibt eine vorherige Nachrichten Reservierung frei.
 
@@ -234,11 +234,11 @@ virtual void release_message(runtime_object_identity _MsgId);
 ### <a name="parameters"></a>Parameter
 
 *_MsgId*<br/>
-Die `runtime_object_identity` des `message` Objekts, das freigegeben wird.
+Der `runtime_object_identity` des `message` Objekts, das freigegeben wird.
 
-## <a name="reserve_message"></a>reserve_message
+## <a name="reserve_message"></a><a name="reserve_message"></a>reserve_message
 
-Reserviert eine Meldung, die zuvor von diesem `join`-Nachrichtenblock angeboten wurde.
+Reserviert eine Meldung, die zuvor von diesem `join` Messaging Block angeboten wurde.
 
 ```cpp
 virtual bool reserve_message(runtime_object_identity _MsgId);
@@ -247,17 +247,17 @@ virtual bool reserve_message(runtime_object_identity _MsgId);
 ### <a name="parameters"></a>Parameter
 
 *_MsgId*<br/>
-Die `runtime_object_identity` des angebotenen `message` Objekts.
+Der `runtime_object_identity` des angebotenen `message` Objekts.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die Nachricht erfolgreich reserviert wurde, andernfalls **false** .
+**`true`**, wenn die Nachricht erfolgreich reserviert wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn `reserve` aufgerufen wird, muss entweder `consume` oder `release` aufgerufen **werden, um**den Besitz der Nachricht zu übernehmen oder freizugeben.
+Nachdem `reserve` aufgerufen wurde, muss, wenn zurückgegeben wird **`true`** , entweder `consume` oder `release` aufgerufen werden, um den Besitz der Nachricht zu übernehmen oder freizugeben.
 
-## <a name="resume_propagation"></a>resume_propagation
+## <a name="resume_propagation"></a><a name="resume_propagation"></a>resume_propagation
 
 Setzt die Verteilung fort, nachdem eine Reservierung freigegeben wurde.
 
@@ -267,6 +267,6 @@ virtual void resume_propagation();
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace](concurrency-namespace.md)<br/>
-[choice-Klasse](choice-class.md)<br/>
+[Parallelitäts Namespace](concurrency-namespace.md)<br/>
+[Choice-Klasse](choice-class.md)<br/>
 [multitype_join-Klasse](multitype-join-class.md)

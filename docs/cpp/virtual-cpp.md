@@ -10,16 +10,16 @@ helpviewer_keywords:
 - virtual functions [C++], declaring
 - virtual keyword [C++]
 ms.assetid: c2eb987d-6cf3-43b6-aa0c-29a6f561b1ae
-ms.openlocfilehash: a8948594bade940834e041adc73d56cc7847acc0
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 3477f77b811d8bec09b63664a05a4e251214aefa
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187504"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213124"
 ---
 # <a name="virtual-c"></a>virtual (C++)
 
-Das **Virtual** -Schlüsselwort deklariert eine virtuelle Funktion oder eine virtuelle Basisklasse.
+Das **`virtual`** Schlüsselwort deklariert eine virtuelle Funktion oder eine virtuelle Basisklasse.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,7 +37,7 @@ Gibt den Rückgabetyp der virtuellen Memberfunktion an.
 Deklariert eine Memberfunktion.
 
 *Zugriffsspezifizierer*<br/>
-Definiert die Zugriffsebene für die Basisklasse, **öffentlich**, **geschützt** oder **Privat**. Kann vor oder nach dem Schlüsselwort " **Virtual** " angezeigt werden.
+Definiert die Zugriffsebene für die Basisklasse, **`public`** **`protected`** oder **`private`** . Kann vor oder nach dem- **`virtual`** Schlüsselwort angezeigt werden.
 
 *Basisklassen Name*<br/>
 Identifiziert einen zuvor deklarierten Klassentyp.

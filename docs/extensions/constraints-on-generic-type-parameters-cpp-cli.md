@@ -8,12 +8,12 @@ helpviewer_keywords:
 - where keyword [C++]
 - constraints, C++
 ms.assetid: eb828cc9-684f-48a3-a898-b327700c0a63
-ms.openlocfilehash: be5af8f6b2edaa8f93fef7ae06b2175b54b25396
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d001cab897323d86d284958f322d155120a726a5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172477"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219753"
 ---
 # <a name="constraints-on-generic-type-parameters-ccli"></a>Einschränkungen für generische Typparameter (C++/CLI)
 
@@ -29,7 +29,7 @@ where type-parameter: constraint list
 
 ### <a name="parameters"></a>Parameter
 
-*type-parameter*<br/>
+*Type-Parameter*<br/>
 Einer der einzuschränkenden Typparameter.
 
 *constraint list*<br/>
@@ -37,13 +37,13 @@ Einer der einzuschränkenden Typparameter.
 
 Die Liste kann auch eine Klasse enthalten. Damit ein Typargument eine Einschränkung in einer Basisklasse erfüllen kann, muss es sich in derselben Klasse befinden wie die Einschränkung oder von der Einschränkung abgeleitet werden.
 
-Sie können auch mit **gcnew()** angeben, dass das Typargument einen öffentlichen parameterlosen Konstruktor besitzen muss. Mit **ref class** können Sie angeben, dass das Typargument ein Verweistyp sein muss, einschließlich aller Klassen-, Schnittstellen-, Delegat- oder Arraytypen. Mit **value class** können Sie angeben, dass das Typargument ein Werttyp sein muss. Jeder Werttyp außer „Nullable\<T>“ kann angegeben werden.
+Sie können auch mit **gcnew()** angeben, dass das Typargument einen öffentlichen parameterlosen Konstruktor besitzen muss. Mit **ref class** können Sie angeben, dass das Typargument ein Verweistyp sein muss, einschließlich aller Klassen-, Schnittstellen-, Delegat- oder Arraytypen. Mit **value class** können Sie angeben, dass das Typargument ein Werttyp sein muss. Ein beliebiger Werttyp außer NULL-Werte \<T> kann angegeben werden.
 
 Sie können auch einen generischen Parameter als Einschränkung angeben. Das für den einzuschränkenden Typ bereitgestellte Typargument muss vom Typ der Einschränkung sein oder von diesem Typ abgeleitet werden. Dies wird als reine Typeinschränkung bezeichnet.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Einschränkungsklausel besteht aus **where**, gefolgt von einem Typparameter, einem Doppelpunkt ( **:** ) und der Einschränkung (Constraint), die die Art der Beschränkung im Typparameter angibt. **where** ist ein kontextbezogenes Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md). Trennen Sie mehrere **where**-Klauseln durch Leerzeichen.
+Die Einschränkungsklausel besteht aus **where**, gefolgt von einem Typparameter, einem Doppelpunkt (**:**) und der Einschränkung (Constraint), die die Art der Beschränkung im Typparameter angibt. **where** ist ein kontextbezogenes Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md). Trennen Sie mehrere **where**-Klauseln durch Leerzeichen.
 
 Einschränkungen werden auf Typparameter angewendet, um die Typen zu begrenzen, die als Argumente für einen generischen Typ oder eine generische Methode verwendet werden können.
 
@@ -64,7 +64,7 @@ Diese Einschränkung erfordert, dass ein für `T` verwendetes Typargument `IComp
 
 Statische Methoden in der Klasse des Typarguments können nicht über den Typparameter aufgerufen werden; der Aufruf kann nur über den tatsächlichen benannten Typ erfolgen.
 
-Eine Einschränkung kann kein Werttyp sein, dies umfasst auch integrierte Typen wie **int** oder **double**. Da Werttypen keine abgeleiteten Klassen aufweisen können, kann nur eine Klasse die Einschränkung überhaupt erfüllen. In diesem Fall kann der generische Code umgeschrieben werden, und der Typparameter wird durch den angegebenen Werttyp ersetzt.
+Eine Einschränkung kann kein Werttyp sein, einschließlich integrierter Typen wie **`int`** oder **`double`** . Da Werttypen keine abgeleiteten Klassen aufweisen können, kann nur eine Klasse die Einschränkung überhaupt erfüllen. In diesem Fall kann der generische Code umgeschrieben werden, und der Typparameter wird durch den angegebenen Werttyp ersetzt.
 
 Einschränkungen sind in einigen Fällen erforderlich, da der Compiler die Verwendung von Methoden oder anderen Features eines unbekannten Typs nur zulässt, wenn die Einschränkungen implizieren, dass der unbekannte Typ die Methoden oder Schnittstellen unterstützt.
 
@@ -100,7 +100,7 @@ Als Zusammenfassung: Verwenden Sie Einschränkungen in Ihrem Code entsprechend d
 
 - Einschränkungen können auch Klassentypen sein, wie z.B. abstrakte Basisklasse. Einschränkungen können jedoch keine Werttypen oder versiegelte Klassen sein.
 
-- Einschränkungen können nicht selbst Typparameter sein, können aber Typparameter in einem offenen konstruierten Typ enthalten. Beispiel:
+- Einschränkungen können nicht selbst Typparameter sein, können aber Typparameter in einem offenen konstruierten Typ enthalten. Zum Beispiel:
 
     ```cpp
     // generics_constraints_4.cpp
@@ -198,6 +198,6 @@ where A : C
 ref struct SampleClass {};
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

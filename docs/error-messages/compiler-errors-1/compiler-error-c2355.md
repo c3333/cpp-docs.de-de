@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2355
 ms.assetid: 0a947881-d61f-4f98-8409-32140f39500b
-ms.openlocfilehash: e44501f7df05a8b277cd52107ff35c4c4d30578f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 4e78d20fb59beead08aaddcf85138f845cfc0390
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74759944"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212760"
 ---
 # <a name="compiler-error-c2355"></a>Compilerfehler C2355
 
 'this': Nur innerhalb nicht statischer Memberfunktionen verfügbar oder nicht statischer Datenmemberinitialisierer verfügbar.
 
-Der `this`-Zeiger ist nur für nicht statische Memberfunktionen oder in nicht statischen Datenmemberinitialisierern gültig. Dieser Fehler kann auftreten, wenn der Klassenbereich einer Memberfunktionsdefinition außerhalb der Klasse nicht entsprechend qualifiziert wird. Der Fehler kann auch auftreten, wenn der `this`-Zeiger in einer Funktion verwendet wird, die nicht in der Klasse deklariert wird.
+Der **`this`** Zeiger ist nur in nicht statischen Element Funktionen oder in nicht statischen Datenmember-Initialisierern gültig. Dieser Fehler kann auftreten, wenn der Klassenbereich einer Memberfunktionsdefinition außerhalb der Klasse nicht entsprechend qualifiziert wird. Der Fehler kann auch auftreten, wenn der- **`this`** Zeiger in einer Funktion verwendet wird, die nicht in der-Klasse deklariert ist.
 
 Stellen Sie zum Beheben dieses Problems sicher, dass die Memberfunktionsdefinition mit einer Memberfunktionsdeklaration in der Klasse übereinstimmt und dass sie nicht statisch deklariert wird. Stellen Sie für die Datenmemberinitialisierer sicher, dass das Datenmember nicht statisch deklariert wird.
 

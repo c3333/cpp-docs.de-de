@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C2864
 ms.assetid: d0ca2ad9-90a6-4aef-8511-98a3b414c102
-ms.openlocfilehash: 122e0455f84d8940eda04f3968e883dd1f0cd444
-ms.sourcegitcommit: c51b2c665849479fa995bc3323a22ebe79d9d7ce
+ms.openlocfilehash: cfa928c84fbf6c841e3caaf51dda526a7ae184fa
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998669"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212656"
 ---
 # <a name="compiler-error-c2864"></a>Compilerfehler C2864
 
 > '*Member-Name*': ein statischer Datenmember mit einem Initialisierer in der Klasse muss einen nicht flüchtigen Konstanten integralen Typ aufweisen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Um einen `static`-Datenmember zu initialisieren, der als `volatile`, nicht-`const` oder nicht als ganzzahliger Typ definiert ist, verwenden Sie eine Member-Definition-Anweisung. Sie können nicht in einer Deklaration initialisiert werden.
+Um einen Datenmember zu initialisieren, **`static`** der als, nicht oder als ganzzahliger Typ definiert ist **`volatile`** **`const`** , verwenden Sie eine Member-Definition-Anweisung. Sie können nicht in einer Deklaration initialisiert werden.
 
 ## <a name="example"></a>Beispiel
 

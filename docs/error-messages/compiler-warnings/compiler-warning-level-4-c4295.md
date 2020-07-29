@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4295
 ms.assetid: 20dbff85-9f62-4ca3-8fe9-079d4512006d
-ms.openlocfilehash: 5e8b546e4eb4b60197db504382b3230e779b1dec
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: d960e5a5e2d7ad2d2b650095c42e9afea7bfe7fb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70924850"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219871"
 ---
 # <a name="compiler-warning-level-4-c4295"></a>Compilerwarnung (Stufe 4) C4295
 
@@ -21,7 +21,7 @@ Ein Array wurde initialisiert, aber das letzte Zeichen im Array ist kein NULL-We
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C4295 generiert. Um dieses Problem zu beheben, können Sie die Array Größe vergrößern, um eine abschließende NULL aus der initialisiererzeichenfolge zu speichern, oder Sie können eine arrayinitialisiererliste verwenden, um die Absicht klar `char`zu machen, dass es sich um ein Array von handelt, nicht um eine auf NULL endende Zeichenfolge.
+Im folgenden Beispiel wird C4295 generiert. Um dieses Problem zu beheben, können Sie die Array Größe vergrößern, um eine abschließende NULL aus der initialisiererzeichenfolge zu speichern, oder Sie können eine arrayinitialisiererliste verwenden, um die Absicht klar zu machen, dass es sich um ein Array von handelt **`char`** , nicht um eine auf NULL endende Zeichenfolge.
 
 ```C
 // C4295.c

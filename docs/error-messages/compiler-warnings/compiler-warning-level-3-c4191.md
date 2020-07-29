@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4191
 ms.assetid: 576d3bc6-95b7-448a-af31-5d798452df09
-ms.openlocfilehash: 817e74d278aa3d91c65ffeb8ab9ac5844041446e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9914818520fafb707b6821ba827e867b8aea9928
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80198964"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220027"
 ---
 # <a name="compiler-warning-level-3-c4191"></a>Compilerwarnung (Stufe 3) C4191
 
@@ -25,11 +25,11 @@ Verschiedene Operationen, die Funktionszeiger verwenden, werden als unsicher ang
 
 - Argument- oder Rückgabetypen mit verschiedenen Größen, Typkategorien oder Klassifikationen.
 
-- Verschiedene Länge von Argumentlisten (in `__cdecl`nur bei der Typumwandlung von längerer zu kürzer Liste, auch wenn die kürzere 'varargs' aufweist).
+- Unterschiedliche Argumentlisten Längen (on **`__cdecl`** , nur bei der Umwandlung von einer längeren Liste in eine kürzere Liste, auch wenn der kürzerer Wert varargs ist).
 
-- Zeiger auf Daten (mit Ausnahme von **void** <strong>\*</strong>), die für einen Zeiger auf eine Funktion als Alias dienen.
+- Zeiger auf Daten (mit Ausnahme von **`void`** <strong>\*</strong> ), die für einen Zeiger auf eine Funktion als Alias dienen.
 
-- Alle anderen Typunterschiede, die einen Fehler oder eine Warnung bei einem `reinterpret_cast`hervorrufen würden.
+- Jeder andere typunterschied, der einen Fehler oder eine Warnung für einen ergeben würde **`reinterpret_cast`** .
 
 Das Aufrufen dieser Funktion über den Ergebniszeiger kann zum Absturz des Programms führen.
 

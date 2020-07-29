@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4714
 ms.assetid: 22c7fd0c-899d-4e9b-95f3-725b2c49fb46
-ms.openlocfilehash: 8ea4212eaddf14546827728b31299063021a959f
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 286a9e6e12643d3dadd070e7c4cf4b2dd350c02c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74989646"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219858"
 ---
 # <a name="compiler-warning-level-4-c4714"></a>Compilerwarnung (Stufe 4) C4714
 
-die Funktion "Function" ist als __forceinline nicht Inline gekennzeichnet.
+> die Funktion "Function" ist als __forceinline nicht Inline gekennzeichnet.
 
 Die angegebene Funktion wurde für die Inline Erweiterung ausgewählt, aber der Compiler hat das Inlining nicht durchgeführt.
 
-Obwohl `__forceinline` eine stärkere Anzeige für den Compiler als `__inline`ist, wird das Inlining nach wie vor im Ermessen des Compilers ausgeführt. es wird jedoch keine Heuristik verwendet, um die Vorteile des Inlining dieser Funktion zu ermitteln.
+Obwohl **`__forceinline`** für den Compiler ein stärkerer Hinweis ist als **`__inline`** , wird Inlining nach wie vor mit dem Ermessen des Compilers ausgeführt. es werden jedoch keine Heuristik verwendet, um die Vorteile des Inlining dieser Funktion zu bestimmen.
 
 In einigen Fällen wird der Compiler eine bestimmte Funktion aus mechanischen Gründen nicht Inline Inline. Der Compiler wird z. b. nicht Inline:
 
-- Eine Funktion, wenn dies dazu führen würde, dass SEH C++ und eh gemischt werden.
+- Eine Funktion, wenn Sie sowohl SEH als auch C++ EH mischen würde.
 
 - Einige Funktionen mit kopierten Kopier Objekten wurden als Wert weitergegeben, wenn-GX/EHs/EHa aktiviert ist.
 
@@ -33,7 +33,7 @@ In einigen Fällen wird der Compiler eine bestimmte Funktion aus mechanischen Gr
 
 - Funktionen mit einer Variablen Argumentliste.
 
-- Eine Funktion mit einer **try** -C++ Anweisung (Ausnahmebehandlung).
+- Eine Funktion mit einer- **`try`** Anweisung (C++ Exception Handling).
 
 Im folgenden Beispiel wird C4714 generiert:
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2059
 ms.assetid: 2be4eb39-3f37-4b32-8e8d-75835e07c78a
-ms.openlocfilehash: f91eb428fcb49c81187788730128545916955790
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 52b389806f5bacac78750bc745cd77699eb59735
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77127659"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212877"
 ---
 # <a name="compiler-error-c2059"></a>Compilerfehler C2059
 
@@ -19,7 +19,7 @@ Syntax Fehler: ' Token '
 
 Das Token verursachte einen Syntax Fehler.
 
-Im folgenden Beispiel wird eine Fehlermeldung für die Zeile generiert, die `j`deklariert.
+Im folgenden Beispiel wird eine Fehlermeldung für die Zeile generiert, die deklariert `j` .
 
 ```cpp
 // C2059e.cpp
@@ -31,7 +31,7 @@ Im folgenden Beispiel wird eine Fehlermeldung für die Zeile generiert, die `j`d
 
 Um die Ursache des Fehlers zu ermitteln, untersuchen Sie nicht nur die Zeile, die in der Fehlermeldung aufgeführt ist, sondern auch die oben aufgeführten Zeilen. Wenn die Untersuchung der Zeilen keinen Hinweis auf das Problem liefert, versuchen Sie, die Zeile, die in der Fehlermeldung aufgeführt ist, und möglicherweise mehrere Zeilen darüber auszukommentieren.
 
-Wenn die Fehlermeldung auf einem Symbol auftritt, das direkt auf eine `typedef` Variable folgt, stellen Sie sicher, dass die Variable im Quellcode definiert ist.
+Wenn die Fehlermeldung auf einem Symbol auftritt, das direkt auf eine **`typedef`** Variable folgt, stellen Sie sicher, dass die Variable im Quellcode definiert ist.
 
 C2059 wird ausgelöst, wenn ein präprozessorsymbolname als Bezeichner wieder verwendet wird. Im folgenden Beispiel sieht der Compiler `DIGITS.ONE` als die Zahl 1, die als Enumerationselementname ungültig ist:
 
@@ -44,7 +44,7 @@ enum class DIGITS {
 };
 ```
 
-Sie erhalten möglicherweise C2059, wenn ein Symbol als "Nothing" ausgewertet wird, wie es bei der Kompilierung des **/D**-**=** _Symbols_ vorkommen kann.
+Möglicherweise erhalten Sie C2059, wenn ein Symbol zu "Nothing" ausgewertet wird, wenn das **/D**-_Symbol_ **=** zum Kompilieren verwendet wird.
 
 ```cpp
 // C2059a.cpp
@@ -111,7 +111,7 @@ namespace A  {
 }
 ```
 
-C2059 kann auftreten, wenn ein Operator, der einen Namen (`::`, `->`und `.`) qualifizieren kann, das Schlüsselwort `template`folgen muss, wie im folgenden Beispiel gezeigt:
+C2059 kann auftreten, wenn einem Operator, der einen Namen ( `::` , `->` und) qualifizieren kann `.` , das-Schlüsselwort folgen muss **`template`** , wie im folgenden Beispiel gezeigt:
 
 ```cpp
 template <typename T> struct Allocator {
@@ -125,7 +125,7 @@ template <typename X, typename AY> struct Container {
 };
 ```
 
-Standardmäßig geht C++ davon aus, dass `AY::Rebind` keine Vorlage ist. Daher wird die folgende `<` als kleiner-als-Zeichen interpretiert.  Sie müssen dem Compiler explizit mitteilen, dass `Rebind` eine Vorlage ist, sodass er die Spitze Klammer ordnungsgemäß analysieren kann. Um diesen Fehler zu beheben, verwenden Sie das `template`-Schlüsselwort für den Namen des abhängigen Typs, wie hier gezeigt:
+Standardmäßig geht C++ davon aus, dass `AY::Rebind` keine Vorlage `<` ist. Daher wird Folgendes als Vorzeichen interpretiert.  Sie müssen dem Compiler explizit mitteilen, dass `Rebind` es sich um eine Vorlage handelt, sodass die Spitze Klammer ordnungsgemäß analysiert werden kann. Um diesen Fehler zu beheben, verwenden Sie das **`template`** Schlüsselwort für den Namen des abhängigen Typs, wie hier gezeigt:
 
 ```cpp
 template <typename T> struct Allocator {

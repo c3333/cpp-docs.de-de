@@ -4,12 +4,12 @@ ms.date: 10/21/2019
 helpviewer_keywords:
 - breaking changes [C++]
 ms.assetid: b38385a9-a483-4de9-99a6-797488bc5110
-ms.openlocfilehash: 51de46487d85f4b8d7d357a0d1842f3d3192fff7
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: b68d9c857db35791486dfc0c1ee02a096a8f5a0a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404794"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219468"
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Änderungsverlauf von Visual C++ von 2003 bis 2015
 
@@ -66,7 +66,7 @@ Darüber hinaus können fortlaufende Verbesserungen der Übereinstimmung des Com
 
   - `double pow(double, int)`, `float pow(float, float)`, `float pow(float, int)`, `long double pow(long double, long double)`, `long double pow(long double, int)`
 
-  - Die `float`- und `long double`-Versionen der folgenden Gleitkommafunktionen: `acos`, `acosh`, `asin`, `asinh`, `atan`, `atanh`, `atan2`, `cbrt`, `ceil`, `copysign`, `cos`, `cosh`, `erf`, `erfc`, `exp`, `exp2`, `expm1`, `fabs`, `fdim`, `floor`, `fma`, `fmax`, `fmin`, `fmod`, `frexp`, `hypot`, `ilogb`, `ldexp`, `lgamma`, `llrint`, `llround`, `log`, `log10`, `log1p`, `log2`, `lrint`, `lround`, `modf`, `nearbyint`, `nextafter`, `nexttoward`, `remainder`, `remquo`, `rint`, `round`, `scalbln`, `scalbn`, `sin`, `sinh`, `sqrt`, `tan`, `tanh`, `tgamma` und `trunc`
+  - **`float`** und- **`long double`** Versionen der Gleit Komma Funktionen,,,, `acos` `acosh` `asin` `asinh` `atan` , `atanh` , `atan2` , `cbrt` ,, `ceil` `copysign` , `cos` , `cosh` , `erf` ,,,,,,, `erfc` `exp` `exp2` `expm1` `fabs` `fdim` `floor` , `fma` , `fmax` ,,,,, `fmin` `fmod` `frexp` `hypot` `ilogb` ,,,,,,,,, `ldexp` , `lgamma` `llrint` `llround` `log` `log10` `log1p` `log2` `lrint` `lround` `modf` `nearbyint` `nextafter` `nexttoward` `remainder` `remquo` `rint` `round` `scalbln` `scalbn` `sin` `sinh` `sqrt` `tan` `tanh` `tgamma` ,,,,,,,,,,,,,,,, und`trunc`
 
   Wenn Sie über Code verfügen, der `abs` mit einem Gleit kommatyp verwendet, der nur den- \<math.h> Header enthält, sind die Gleit Komma Versionen nicht mehr verfügbar. Der Aufruf wird nun in `abs(int)` aufgelöst, selbst wenn ein Gleitkommaargument vorhanden ist, wodurch der folgende Fehler ausgelöst wird:
 
@@ -275,7 +275,7 @@ Darüber hinaus können fortlaufende Verbesserungen der Übereinstimmung des Com
 
 #### \<time.h>
 
-- **Suhr**
+- **clock**
 
    In früheren Versionen wurde die [clock](../c-runtime-library/reference/clock.md)-Funktion mit der Windows-API [GetSystemTimeAsFileTime](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsystemtimeasfiletime) implementiert. Durch diese Implementierung war die die clock-Funktion von der Systemzeit abhängig, und war daher nicht monoton. Die clock-Funktion wurde hinsichtlich [QueryPerformanceCounter](/windows/win32/api/profileapi/nf-profileapi-queryperformancecounter) neu implementiert und ist jetzt monoton.
 
@@ -451,7 +451,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **änderbare-Schlüsselwort**
 
-   Der **mutable**-Speicherklassenspezifizierer ist nicht mehr an Positionen zulässig, an denen beim Kompilieren zuvor ein Fehler aufgetreten ist. Der Compiler generiert nun den Fehler C2071 (Ungültige Speicherklasse). Gemäß dem Standard kann der **mutable**-Spezifizierer nur auf Namen von Klassendatenmembern angewendet werden und kann nicht auf als konstant oder statisch deklarierte Namen sowie nicht auf Verweismember angewendet werden.
+   Der **`mutable`** Speicherklassenspezifizierer ist an Orten, an denen er zuvor ohne Fehler kompiliert wurde, nicht mehr zulässig. Der Compiler generiert nun den Fehler C2071 (Ungültige Speicherklasse). Gemäß dem Standard **`mutable`** kann der Spezifizierer nur auf Namen von klassendatenmembern angewendet werden und kann nicht auf Namen angewendet werden, die als "konstant" oder "statisch" deklariert sind, und kann nicht auf Verweismember angewendet werden.
 
    Beachten Sie z. B. folgenden Code:
 
@@ -468,11 +468,11 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     error C2071: 'S::r': illegal storage class
     ```
 
-   Entfernen Sie das redundante Schlüsselwort **mutable**, um den Fehler zu beheben.
+   Entfernen Sie das redundante Schlüsselwort, um den Fehler zu beheben **`mutable`** .
 
 - **char_16_t und char32_t**
 
-   Sie können nicht mehr `char16_t` oder `char32_t` als Aliase in einer **typedef**verwenden, da diese Typen nun als integriert behandelt werden. Benutzer und Bibliotheksautoren haben in der Vergangenheit häufig `char16_t` bzw. `char32_t` als Aliasse von `uint16_t` bzw. `uint32_t` verwendet.
+   Sie können nicht mehr **`char16_t`** oder **`char32_t`** als Aliase in einem verwenden **`typedef`** , da diese Typen nun als integriert behandelt werden. Es war üblich, dass Benutzer und Bibliotheks Autoren und **`char16_t`** **`char32_t`** als Aliase von `uint16_t` `uint32_t` bzw. definieren.
 
     ```cpp
     #include <cstdint>
@@ -489,7 +489,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   Entfernen Sie zum Aktualisieren des Codes die **typedef** -Deklarationen, und benennen Sie alle anderen Bezeichner um, die mit diesen Namen in Konflikt stehen.
+   Um den Code zu aktualisieren, entfernen Sie die **`typedef`** Deklarationen und benennen alle anderen Bezeichner um, die mit diesen Namen in Konflikt stehen.
 
 - **Nichttyp-Vorlagenparameter**
 
@@ -522,7 +522,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Stellen Sie zum Beheben dieses Fehlers im Code sicher, dass der Typ des verwendeten Vorlagenarguments mit dem deklarierten Typ des Vorlagenparameters übereinstimmt.
 
-- **__declspec(align)**
+- **`__declspec(align)`**
 
    Der Compiler lässt `__declspec(align)` in Funktionen nicht mehr zu. Dieses Konstrukt wurde bisher ignoriert, nun wird jedoch ein Compilerfehler generiert.
 
@@ -551,7 +551,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   Das Problem besteht darin, dass der Kopierkonstruktor privat ist. Somit kann das Objekt nicht während des normalen Betriebs der Ausnahmebehandlung kopiert werden. Das gleiche gilt, wenn der Kopierkonstruktor als **explizit** deklariert ist.
+   Das Problem besteht darin, dass der Kopierkonstruktor privat ist. Somit kann das Objekt nicht während des normalen Betriebs der Ausnahmebehandlung kopiert werden. Dasselbe gilt, wenn der Kopierkonstruktor deklariert wird **`explicit`** .
 
     ```cpp
     struct S
@@ -566,7 +566,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   Stellen Sie zum Aktualisieren des Codes sicher, dass der Kopierkonstruktor für Ihr Ausnahmeobjekt **öffentlich** und nicht als **explizit** deklariert ist.
+   Stellen Sie zum Aktualisieren des Codes sicher, dass der Kopierkonstruktor für Ihr Ausnahme Objekt ist **`public`** und nicht markiert ist **`explicit`** .
 
    Beim Abfangen einer Ausnahme nach Wert muss das Ausnahmeobjekt ebenfalls kopiert werden können. Der folgende Code wird zwar in Visual Studio 2013 kompiliert, aber nicht in Visual Studio 2015:
 
@@ -592,7 +592,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   Sie können dieses Problem beheben, indem Sie den Parametertyp für **catch** auf einen Verweis festlegen.
+   Sie können dieses Problem beheben, indem Sie den Parametertyp für **`catch`** auf einen Verweis ändern.
 
     ```cpp
     catch (D& d)
@@ -641,9 +641,9 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Platzierungsoperatoren „new“ und „delete“**
 
-   An den **Delete** -Operator wurde eine Änderung vorgenommen, um die Konformität mit dem c++ 14-Standard zu erzielen. Detaillierte Informationen zur Standardänderung finden Sie unter [Aufhebung der Zuordnung mit C++-Größeninformationen](https://isocpp.org/files/papers/n3778.html). Durch die Änderungen wird eine Form des globalen **Delete** -Operators hinzugefügt, der einen size-Parameter annimmt. Wenn Sie zuvor einen Operator **Delete** mit der gleichen Signatur verwendet haben (um einem **Platzierungs Operator new** zu entsprechen), erhalten Sie einen Compilerfehler (nämlich c2956, der an dem Punkt auftritt, an dem die Platzierung New verwendet wird, da dies die Position im Code ist, an der der Compiler versucht, einen entsprechenden passenden **Delete** -Operator zu identifizieren). Breaking Change
+   Der Operator hat eine Änderung vorgenommen, um eine **`delete`** Übereinstimmung mit dem c++ 14-Standard zu erzielen. Detaillierte Informationen zur Standardänderung finden Sie unter [Aufhebung der Zuordnung mit C++-Größeninformationen](https://isocpp.org/files/papers/n3778.html). Die Änderungen fügen eine Form des globalen **`delete`** Operators hinzu, der einen size-Parameter annimmt. Wenn Sie zuvor einen Operator **`delete`** mit derselben Signatur verwendet haben (um einem **Platzierungs Operator new** zu entsprechen), erhalten Sie einen Compilerfehler (nämlich c2956, der an dem Punkt auftritt, an dem die Platzierung New verwendet wird, da dies die Position im Code ist, an der der Compiler versucht, einen entsprechenden übereinstimmenden Operator zu identifizieren **`delete`** ). Breaking Change
 
-   Bei der Funktion `void operator delete(void *, size_t)` hat es sich um einen **delete**-Platzierungsoperator gehandelt, der der Funktion `void * operator new(size_t, size_t)` des Platzierungsoperators **new** in C++11 entspricht. Durch die Aufhebung der Zuordnung mit C++14-Größeninformationen ist diese delete-Funktion nun eine *gewöhnliche Funktion zum Aufheben der Zuordnung* (globaler **delete**-Operator). Der Standard erfordert es, dass das Programm bei Verwendung eines Platzierungsoperators „new“, der eine entsprechenden delete-Funktion sucht und eine gewöhnliche Funktion zum Aufheben der Zuordnung ermittelt, nicht ordnungsgemäß formatiert ist.
+   Bei der Funktion `void operator delete(void *, size_t)` hat es sich um einen **delete**-Platzierungsoperator gehandelt, der der Funktion `void * operator new(size_t, size_t)` des Platzierungsoperators **new** in C++11 entspricht. Bei der Aufhebung der Zuordnung von c++ 14 entspricht diese Delete-Funktion nun der *üblichen Zuordnungs Funktion* (globaler **`delete`** Operator). Der Standard erfordert es, dass das Programm bei Verwendung eines Platzierungsoperators „new“, der eine entsprechenden delete-Funktion sucht und eine gewöhnliche Funktion zum Aufheben der Zuordnung ermittelt, nicht ordnungsgemäß formatiert ist.
 
    Nehmen Sie beispielsweise an, dass Ihr Code sowohl eine **Platzierung New** als auch eine **Platzierungs Löschung**definiert:
 
@@ -652,15 +652,15 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     void operator delete(void*, std::size_t) noexcept;
     ```
 
-   Das Problem tritt aufgrund der Entsprechung in den Funktions Signaturen zwischen einem von Ihnen definierten **Platzierungs Lösch** Operator und dem neuen globalen **Delete** -Operator auf. Überlegen Sie, ob Sie einen anderen Typ als `size_t` für alle **new**- und **delete**-Platzierungsoperatoren verwenden können. Der Typ von `size_t` **typedef** ist vom Compiler abhängig. In MSVC handelt es sich um **typedef** für **unsigned int**. Eine gute Lösung hierfür stellt die Verwendung eines enumerierten Typs wie die des folgenden dar:
+   Das Problem tritt aufgrund der Entsprechung in den Funktions Signaturen zwischen einem von Ihnen definierten **Platzierungs Lösch** Operator und dem neuen globalen Größen **`delete`** Operator auf. Stellen Sie sich vor, ob Sie einen anderen Typ als `size_t` für die **Platzierung neuer** -und- **`delete`** Operatoren verwenden können. Der Typ des `size_t` **`typedef`** ist vom Compiler abhängig; er ist ein **`typedef`** für **`unsigned int`** in MSVC. Eine gute Lösung hierfür stellt die Verwendung eines enumerierten Typs wie die des folgenden dar:
 
     ```cpp
     enum class my_type : size_t {};
     ```
 
-   Ändern Sie dann die Definition der **Platzierung New** und **Delete** , um diesen Typ als zweites Argument anstelle von zu verwenden `size_t` . Sie müssen auch die Aufrufe von "Platzierung New" aktualisieren, um den neuen Typ zu übergeben (z. b. mit, `static_cast<my_type>` um den ganzzahligen Wert zu konvertieren) und die Definition von " **New** " und " **Delete** " aktualisieren, um Sie wieder in den ganzzahligen Typ umzuwandeln. Hierfür müssen **Sie keine** Aufzählung verwenden. ein Klassentyp mit einem `size_t` Member würde ebenfalls funktionieren.
+   Ändern Sie dann die Definition der **Platzierung New** , und **`delete`** verwenden Sie diesen Typ als zweites Argument anstelle von `size_t` . Sie müssen auch die Aufrufe von Platzierung New aktualisieren, um den neuen Typ zu übergeben (z. b. mithilfe von `static_cast<my_type>` , um den ganzzahligen Wert zu konvertieren) und die Definition von und aktualisieren, **`new`** **`delete`** um Sie wieder in den ganzzahligen Typ umzuwandeln. Hierfür müssen Sie keinen verwenden **`enum`** . ein Klassentyp mit einem `size_t` Member würde ebenfalls funktionieren.
 
-   Eine alternative Lösung besteht darin, dass Sie möglicherweise die **Platzierung der neuen Platzierung** vollständig ausschließen können. Wenn Ihr Code die **Platzierung New** verwendet, um einen Speicherpool zu implementieren, wobei das Platzierungs Argument die Größe des zugeordneten oder gelöschten Objekts ist, kann die Funktion zum Aufheben der Zuordnung von Größenordnungen zum Ersetzen Ihres eigenen benutzerdefinierten Speicherpool Codes geeignet sein, und Sie können die Platzierungsfunktionen entfernen und einfach einen eigenen **Delete** -Operator mit zwei Argumenten anstelle der Platzierungsfunktionen verwenden.
+   Eine alternative Lösung besteht darin, dass Sie möglicherweise die **Platzierung der neuen Platzierung** vollständig ausschließen können. Wenn Ihr Code die **Platzierung New** verwendet, um einen Speicherpool zu implementieren, bei dem das Platzierungs Argument die Größe des zugeordneten oder gelöschten Objekts ist, kann das Feature zum Aufheben der Speicher Belegung geeignet sein, um den eigenen benutzerdefinierten Speicherpool Code zu ersetzen, und Sie können die Platzierungsfunktionen entfernen und einfach einen eigenen Operator mit zwei Argumenten **`delete`** anstelle der Platzierungsfunktionen verwenden.
 
    Wenn Sie Ihren Code nicht sofort aktualisieren möchten, können Sie mit der Compileroption `/Zc:sizedDealloc-` das alte Verhalten wiederherstellen. Wenn Sie diese Option verwenden, sind die Delete-Funktionen mit zwei Argumenten nicht vorhanden und führen nicht zu einem Konflikt mit dem **Platzierungs Lösch** Operator.
 
@@ -949,7 +949,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     S1<S2> s;
     ```
 
-   Um den Fehler zu beheben, entfernen Sie `typename` aus dem Initialisierer:
+   Entfernen Sie **`typename`** aus dem Initialisierer, um den Fehler zu beheben:
 
     ```cpp
     S1() : T::type() // OK
@@ -974,7 +974,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Eine Konstante, die in static_assert innerhalb einer Klassenvorlage verwendet wird, verursacht stets einen Fehler**
 
-   Der folgende Code bewirkt, dass `static_assert` stets einen Fehler verursacht:
+   Der folgende Code bewirkt **`static_assert`** , dass immer fehlschlägt:
 
     ```cpp
     template <size_t some_value>
@@ -987,7 +987,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     //other partial specializations here
     ```
 
-   Umschließen Sie zur Umgehung dieses Problems den Wert in einer **Struktur**:
+   Um dieses Problem zu umgehen, umschließen Sie den Wert in einem **`struct`** :
 
     ```cpp
     template <size_t some_value>
@@ -1072,7 +1072,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
     ```
 
-   Zur Behebung des Fehlers können Sie den Aufruf von `bind: N::bind(...)` vollständig qualifizieren. Wenn diese Änderung jedoch ein Manifest durch einen nicht deklarierten Bezeichner (C2065) ist, kann es sinnvoll sein, dies mit einer **using** -Deklaration zu beheben.
+   Zur Behebung des Fehlers können Sie den Aufruf von `bind: N::bind(...)` vollständig qualifizieren. Wenn diese Änderung jedoch über einen nicht deklarierten Bezeichner (C2065) erfolgt, kann es sinnvoll sein, dies mit einer **`using`** Deklaration zu beheben.
 
    Dieses Muster tritt häufig mit „ComPtr“ und anderen Typen im Namespace `Microsoft::WRL` auf.
 
@@ -1215,17 +1215,17 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Zur Korrektur des Codes können Sie den „catch“-Block in `catch (const D &)` ändern, doch die bessere Lösung ist meist das Verwenden der MFC-Makros TRY/CATCH.
 
-- **alignof ist jetzt ein Schlüsselwort**
+- **`alignof`ist jetzt ein Schlüsselwort**
 
-   Der folgende Code führt jetzt zu Fehler C2332: „class“: fehlender Tagname. Um den Code zu korrigieren, müssen Sie die Klasse umbenennen oder, wenn die Klasse die gleiche Arbeit wie " **alignof**" ausführt, einfach die Klasse durch das Schlüsselwort "New" ersetzen.
+   Der folgende Code führt jetzt zu Fehler C2332: „class“: fehlender Tagname. Um den Code zu korrigieren, müssen Sie die-Klasse umbenennen oder, wenn die Klasse dieselbe Arbeit wie ausführt **`alignof`** , einfach die-Klasse durch das New-Schlüsselwort ersetzen.
 
     ```cpp
     class alignof{}
     ```
 
-- **constexpr ist jetzt ein Schlüsselwort**
+- **`constexpr`ist jetzt ein Schlüsselwort**
 
-   Mit dem folgenden Code wird nun Fehler C2059 generiert: Syntaxfehler: ')'. Um den Code zu korrigieren, müssen Sie Funktions- oder Variablennamen umbenennen, die mit „constexpr“ aufgerufen werden.
+   Mit dem folgenden Code wird nun Fehler C2059 generiert: Syntaxfehler: ')'. Um den Code zu korrigieren, müssen Sie alle Funktions-oder Variablennamen umbenennen, die aufgerufen werden **`constexpr`** .
 
     ```cpp
     int constexpr() {return 1;}
@@ -1233,7 +1233,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Verschiebbare Typen dürfen nicht const sein**
 
-   Wenn eine Funktion einen Typ zurückgibt, der verschoben werden soll, darf der Rückgabetyp nicht **const** sein.
+   Wenn eine Funktion einen Typ zurückgibt, der verschoben werden soll, sollte der Rückgabetyp nicht sein **`const`** .
 
 - **Gelöschte Kopierkonstruktoren**
 
@@ -1507,7 +1507,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
     ```
 
-   Entfernen Sie zur Behebung des Fehlers die Klammern um die `0`, oder verwenden Sie stattdessen **nullptr**, wie im folgenden Beispiel gezeigt:
+   Um den Fehler zu beheben, entfernen Sie die geschweiften Klammern aus, `0` oder verwenden Sie **`nullptr`** stattdessen, wie im folgenden Beispiel gezeigt:
 
     ```cpp
     struct S {
@@ -1582,7 +1582,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
     ```
 
-   Entfernen Sie die Klammern um `j`, um den Fehler zu beheben. Wenn die Klammern aus Gründen der Übersichtlichkeit benötigt werden, verwenden Sie ein **typedef**-Element.
+   Entfernen Sie die Klammern um `j`, um den Fehler zu beheben. Wenn die Klammern aus Gründen der Übersichtlichkeit benötigt werden, verwenden Sie eine **`typedef`** .
 
 - **Vom Compiler generierte Konstruktoren und __declspec(novtable)**
 
@@ -1627,7 +1627,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     static_assert(std::is_convertible<D, B2>::value, "fail");
     ```
 
-   Ändern Sie zum Beheben des Fehlers `static_assert` so, dass Zeiger mit `D` und `B2` verglichen werden:
+   Um den Fehler zu beheben, ändern **`static_assert`** Sie den, sodass Zeiger auf `D` und verglichen werden `B2` :
 
     ```cpp
     static_assert(std::is_convertible<D*, B2*>::value, "fail");
@@ -1635,7 +1635,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Deklarationen von __declspec(novtable) müssen einheitlich sein**
 
-   Deklarationen von `__declspec` müssen über alle Bibliotheken hinweg einheitlich sein. Der folgende Code erzeugt nun einen Verstoß gegen eine Regel mit einer Definition:
+   **`__declspec`** Deklarationen müssen in allen Bibliotheken einheitlich sein. Der folgende Code erzeugt nun einen Verstoß gegen eine Regel mit einer Definition:
 
     ```cpp
     //a.cpp
@@ -1739,7 +1739,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   \- oder -
+   \- oder –
 
     ```cpp
     class base;  // as above
@@ -1755,7 +1755,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Überladener Operator „new“ und „delete“**
 
-   In früheren Versionen des Compilers konnte ein **new**-Platzierungsoperator, der kein Member war, und ein **delete**-Platzierungsoperator, der kein Member war, statisch deklariert werden und in anderen Namespaces als dem globalen deklariert werden.  Durch dieses alte Verhalten entstand das Risiko, dass das Programm die Operatoren **new** oder **delete** nicht in der vom Programmierer beabsichtigten Implementierung aufruft, was zu einem schlechten Laufzeitverhalten ohne Rückmeldung führte. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C2323 als Ergebnis aus.
+   In früheren Versionen des Compilers konnte ein **new**-Platzierungsoperator, der kein Member war, und ein **delete**-Platzierungsoperator, der kein Member war, statisch deklariert werden und in anderen Namespaces als dem globalen deklariert werden.  Dieses alte Verhalten hat das Risiko verursacht, dass das Programm nicht die **`new`** Implementierung des Operators oder des **`delete`** Operators aufruft, die der Programmierer beabsichtigt hat, was zu einem stillen ungültigen Laufzeitverhalten führt. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C2323 als Ergebnis aus.
 
     ```Output
     error C2323: 'operator new': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace.
@@ -1773,7 +1773,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     void * __cdecl operator new(size_t cb, const std::nothrow_t&)  // removed 'static inline'
     ```
 
-   Auch wenn der Compiler keine bestimmte Diagnose erhält, wird der Inline Operator **New** als falsch formatiert betrachtet.
+   Außerdem wird der Inline Operator als falsch formatiert betrachtet, obwohl der Compiler keine bestimmte Diagnose hat **`new`** .
 
 - **Aufrufen von ' Operator *Type*() ' (benutzerdefinierte Konvertierung) für nicht Klassentypen**
 
@@ -1807,7 +1807,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Redundanter Typname in ausführlichen Typspezifizierern**
 
-   Frühere Versionen des Compilers ließen **typename** in ausführlichen Typbezeichnern zu. Auf diese Weise erstellter Code ist jedoch semantisch inkorrekt. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C3406 als Ergebnis aus.
+   Frühere Versionen des Compilers **`typename`** waren in einem ausführlichen Typspezifizierer zulässig, aber auf diese Weise geschriebene Code ist semantisch falsch. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C3406 als Ergebnis aus.
 
     ```Output
     error C3406: 'typename' cannot be used in an elaborated type specifier
@@ -1915,7 +1915,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Wiederherstellung von Warnungen der switch-Anweisung**
 
-   In früheren Versionen des Compilers wurden einige Warnungen, die sich auf **switch**-Anweisungen bezogen, entfernt. Diese Warnungen wurden jetzt wiederhergestellt. Der Compiler gibt jetzt die wiederhergestellten Warnungen aus, und Warnungen, die sich auf bestimmte Fälle (einschließlich des Standardfalls) bezogen, werden jetzt in der Zeile ausgegeben, die den Verstoß enthält, statt in der letzten Zeile der switch-Anweisung. Die Ausgabe dieser Warnungen in anderen Zeilen als bisher kann zur Folge haben, dass Warnungen, die früher mithilfe von `#pragma warning(disable:####)` unterdrückt wurden, möglicherweise nicht mehr wie beabsichtigt unterdrückt werden. Möglicherweise ist erforderlich, dass Sie die `#pragma warning(disable:####)`-Anweisung in eine Zeile oberhalb des ersten Verstoßes verschieben, um diese Warnungen wie beabsichtigt zu unterdrücken. Im Folgenden werden die wiederhergestellten Warnungen aufgeführt:
+   Eine frühere Version des Compilers hat einige Warnungen im Zusammenhang mit- **`switch`** Anweisungen entfernt; diese Warnungen wurden jetzt wieder hergestellt. Der Compiler gibt jetzt die wiederhergestellten Warnungen aus, und Warnungen, die sich auf bestimmte Fälle (einschließlich des Standardfalls) bezogen, werden jetzt in der Zeile ausgegeben, die den Verstoß enthält, statt in der letzten Zeile der switch-Anweisung. Die Ausgabe dieser Warnungen in anderen Zeilen als bisher kann zur Folge haben, dass Warnungen, die früher mithilfe von `#pragma warning(disable:####)` unterdrückt wurden, möglicherweise nicht mehr wie beabsichtigt unterdrückt werden. Möglicherweise ist erforderlich, dass Sie die `#pragma warning(disable:####)`-Anweisung in eine Zeile oberhalb des ersten Verstoßes verschieben, um diese Warnungen wie beabsichtigt zu unterdrücken. Im Folgenden werden die wiederhergestellten Warnungen aufgeführt:
 
     ```Output
     warning C4060: switch statement contains no 'case' or 'default' labels
@@ -2205,9 +2205,9 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Zusätzliche Warnungen und Fehler können als Ergebnis der Teilunterstützung für den Ausdruck SFINAE ausgegeben werden**
 
-   In früheren Versionen des Compilers werden bestimmte Arten von Ausdrücken in **decltype**-Spezifizierern nicht analysiert, weil der Ausdruck SFINAE nicht unterstützt wird. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler analysiert diese Ausdrücke jetzt und hat aufgrund kontinuierlicher Konformitätsverbesserungen eine Teilunterstützung für den Ausdruck SFINAE. Daher gibt der Compiler jetzt Warnungen und Fehler aus, die er in Ausdrücken findet, die von früheren Versionen des Compilers nicht analysiert werden.
+   Frühere Versionen des Compilers haben bestimmte Arten von Ausdrücken innerhalb von Bezeichners nicht analysiert **`decltype`** , weil der Ausdruck sfinae nicht unterstützt wird. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler analysiert diese Ausdrücke jetzt und hat aufgrund kontinuierlicher Konformitätsverbesserungen eine Teilunterstützung für den Ausdruck SFINAE. Daher gibt der Compiler jetzt Warnungen und Fehler aus, die er in Ausdrücken findet, die von früheren Versionen des Compilers nicht analysiert werden.
 
-   Wenn aufgrund dieses neuen Verhaltens ein **decltype**-Ausdruck analysiert wird, der einen Typ enthält, der noch nicht deklariert ist, gibt der Compiler den Compilerfehler C2039 aus.
+   Wenn dieses neue Verhalten einen- **`decltype`** Ausdruck analysiert, der einen Typ enthält, der noch nicht deklariert wurde, gibt der Compiler den Compilerfehler C2039 als Ergebnis aus.
 
     ```Output
     error C2039: 'type': is not a member of '`global namespace''
@@ -2241,7 +2241,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   Wenn aufgrund dieses neuen Verhaltens ein **decltype**-Ausdruck analysiert wird, in dem das erforderliche **typename**-Schlüsselwort für die Angabe fehlt, dass ein abhängiger Name ein Typ ist, gibt der Compiler die Compilerwarnung C4346 zusammen mit dem Compilerfehler C2923 aus.
+   Wenn dieses neue Verhalten einen- **`decltype`** Ausdruck analysiert, dem eine erforderliche Verwendung des- **`typename`** Schlüssel Worts fehlt, um anzugeben, dass ein abhängiger Name ein-Typ ist, gibt der Compiler die Compilerwarnung C4346 in Verbindung mit dem Compilerfehler C2923 aus.
 
     ```Output
     warning C4346: 'S2<T>::Type': dependent name is not a type
@@ -2292,9 +2292,9 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
     ```
 
-- `volatile` **– Membervariablen mit diesem Schlüsselwort verhindern implizit definierte Konstruktoren und Zuweisungsoperatoren**
+- **`volatile`****Member-Variablen verhindern implizit definierte Konstruktoren und Zuweisungs Operatoren**
 
-   In früheren Versionen des Compilers ist es für eine Klasse zulässig, die Membervariablen des Typs **volatile** enthält, dass Kopier-/Verschiebe-Standardkonstruktoren und Kopier-/Verschiebe-Standardzuweisungsoperatoren automatisch generiert werden. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler betrachtet nun eine Klasse, die über **flüchtige** Element Variablen verfügt, um nicht triviale Konstruktions-und Zuweisungs Operatoren zu haben, wodurch verhindert wird, dass Standard Implementierungen dieser Operatoren automatisch generiert werden. Ist eine solche Klasse ein Member einer Union (oder einer anonymen Union innerhalb einer Klasse), werden Kopier-/Bewegungskonstruktoren und Kopier-/Bewegungszuweisungsoperatoren der Union (oder die Klasse, die die anonyme Union enthält) implizit als gelöscht definiert. Wird versucht, die Union (oder die Klasse, die die anonyme Union enthält) zu erstellen oder zu kopieren, ohne sie explizit zu definieren, tritt ein Fehler auf, und der Compiler gibt daher den Compilerfehler C2280 aus.
+   Frühere Versionen des Compilers ermöglichten, dass eine Klasse mit Element **`volatile`** Variablen standardmäßige Kopier-/bewegungskonstruktoren und standardmäßige Kopier-/verschiebezuweisungsoperatoren automatisch generiert werden. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler betrachtet nun eine Klasse mit Element **`volatile`** Variablen, die nicht triviale Konstruktions-und Zuweisungs Operatoren aufweisen, wodurch verhindert wird, dass Standard Implementierungen dieser Operatoren automatisch generiert werden. Ist eine solche Klasse ein Member einer Union (oder einer anonymen Union innerhalb einer Klasse), werden Kopier-/Bewegungskonstruktoren und Kopier-/Bewegungszuweisungsoperatoren der Union (oder die Klasse, die die anonyme Union enthält) implizit als gelöscht definiert. Wird versucht, die Union (oder die Klasse, die die anonyme Union enthält) zu erstellen oder zu kopieren, ohne sie explizit zu definieren, tritt ein Fehler auf, und der Compiler gibt daher den Compilerfehler C2280 aus.
 
     ```Output
     error C2280: 'B::B(const B &)': attempting to reference a deleted function
@@ -2380,7 +2380,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Vorwärtsdeklarationen einer Enumeration sind in WinRT-Code nicht zulässig** (betrifft nur `/ZW`)
 
-   In Code, der für Windows-Runtime (WinRT) kompiliert wird, darf es keine Vorwärtsdeklarationen von **enum**-Typen geben. Dies gilt gleichermaßen für die Kompilierung von verwaltetem C++-Code für .NET Framework mit dem Compilerschalter `/clr`. Dieses Verhalten stellt sicher, dass die Größe einer Enumeration immer bekannt ist und richtig in das WinRT-Typsystem übertragen werden kann. Der Compiler lehnt in dieser Weise geschriebenen Code ab und gibt den Compilerfehler C2599 zusammen mit dem Compilerfehler C3197 aus.
+   Code, der für die Windows-Runtime (WinRT) kompiliert **`enum`** wurde, lässt nicht zu, dass Typen als deklariert werden, ähnlich wie bei der Kompilierung von verwaltetem C++-Code für .NET Framework mit dem `/clr` Compilerschalter. Dieses Verhalten stellt sicher, dass die Größe einer Enumeration immer bekannt ist und richtig in das WinRT-Typsystem übertragen werden kann. Der Compiler lehnt in dieser Weise geschriebenen Code ab und gibt den Compilerfehler C2599 zusammen mit dem Compilerfehler C3197 aus.
 
     ```Output
     error C2599: 'CustomEnum': the forward declaration of a WinRT enum is not allowed
@@ -2467,7 +2467,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **std::is_convertable erkennt jetzt Selbstzuweisung** (Standardbibliothek)
 
-   Frühere Versionen des Typmerkmals `std::is_convertable` erkannten die Selbstzuweisung eines Klassentyps nicht ordnungsgemäß, wenn der Kopierkonstruktor gelöscht wurde oder privat war. Jetzt ist `std::is_convertable<>::value` bei Anwendung auf einen Klassentyp mit einem gelöschten oder privaten Kopierkonstruktor richtig auf **FALSE** festgelegt.
+   Frühere Versionen des Typmerkmals `std::is_convertable` erkannten die Selbstzuweisung eines Klassentyps nicht ordnungsgemäß, wenn der Kopierkonstruktor gelöscht wurde oder privat war. Nun `std::is_convertable<>::value` ist ordnungsgemäß auf festgelegt, **`false`** Wenn Sie auf einen Klassentyp mit einem gelöschten oder privaten Kopierkonstruktor angewendet wird.
 
    Dieser Änderung ist keine Compilerdiagnose zugeordnet.
 
@@ -2491,7 +2491,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     static_assert(std::is_convertible<X1&, X1>::value, "BOOM");static_assert(std::is_convertible<X2&, X2>::value, "BOOM");
     ```
 
-   In früheren Versionen des Compilers wurden die statischen Assertionen unten in diesem Beispiel übergeben, da `std::is_convertable<>::value` fälschlicherweise auf **TRUE** festgelegt war. Jetzt ist `std::is_convertable<>::value` richtig auf **FALSE** festgelegt, wodurch ein Fehler in den statischen Assertionen verursacht wird.
+   In früheren Versionen des Compilers wurden die statischen Assertionen unten in diesem Beispiel übergeben, da `std::is_convertable<>::value` fälschlicherweise auf festgelegt wurde **`true`** . Nun `std::is_convertable<>::value` ist richtig auf festgelegt **`false`** , sodass die statischen Assertionen fehlschlagen.
 
 - **Standardmäßig verwendete und gelöschte triviale Kopier- und Verschiebekonstruktoren beachten Zugriffsspezifizierer**
 
@@ -2723,7 +2723,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   In früheren Versionen wurde kein Fehler ausgegeben, weil der-Befehl ein **virtueller** -Befehl war. Dennoch stürzt das Programm zur Laufzeit ab. Jetzt wird ein Linkerfehler ausgegeben, da die Klasse endgültig ist. In diesem Beispiel kann das Objekt, das die Definition von `S2::f` enthält, verknüpft werden, um den Fehler zu beheben.
+   In früheren Versionen wurde ein Fehler nicht ausgegeben, weil der-Befehl ein-Rückruf war **`virtual`** . das Programm würde jedoch zur Laufzeit abstürzen. Jetzt wird ein Linkerfehler ausgegeben, da die Klasse endgültig ist. In diesem Beispiel kann das Objekt, das die Definition von `S2::f` enthält, verknüpft werden, um den Fehler zu beheben.
 
 - Wenn Sie Friend-Funktionen in Namespaces verwenden, müssen Sie die Friend-Funktion erneut deklarieren, bevor Sie auf sie verweisen. Andernfalls wird ein Fehler ausgegeben, da der Compiler jetzt dem C++-Standard der internationalen Organisation für Normung entspricht. Beispielsweise wird das folgende Beispiel nicht mehr kompiliert:
 
@@ -2740,7 +2740,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   Um diesen Code zu korrigieren, deklarieren Sie die **Friend** -Funktion:
+   Um diesen Code zu korrigieren, deklarieren Sie die **`friend`** Funktion:
 
     ```cpp
     namespace NS {
@@ -2797,14 +2797,14 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-- Bevor der Compiler mit ISO C++11 kompatibel gemacht wurde, wurde der folgende Code kompiliert und führte dazu, dass `x` in den Typ **int** aufgelöst wurde:
+- Bevor der Compiler mit ISO c++ 11 kompatibel gemacht wurde, wurde der folgende Code kompiliert und führte dazu, dass `x` in den Typ aufgelöst wurde **`int`** :
 
     ```cpp
     auto x = {0};
     int y = x;
     ```
 
-   Dieser Code wird nun `x` in einen Typ von aufgelöst `std::initializer_list<int>` und verursacht einen Fehler in der nächsten Zeile, die versucht, dem `x` Typ **int**zuzuweisen. (Standardmäßig ist keine Konvertierung vorhanden.) Um diesen Code zu korrigieren, verwenden Sie **int** , um **Auto**zu ersetzen:
+   Dieser Code wird nun `x` in einen Typ von aufgelöst `std::initializer_list<int>` und verursacht einen Fehler in der nächsten Zeile, die versucht, dem `x` Typ zuzuweisen **`int`** . (Standardmäßig ist keine Konvertierung vorhanden.) Um diesen Code zu korrigieren, verwenden Sie, um Folgendes zu **`int`** ersetzen **`auto`** :
 
     ```cpp
     int x = {0};
@@ -2854,7 +2854,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    In Visual Studio 2012 wurde `E1` im Ausdruck `E1::b` im globalen Gültigkeitsbereich in `::E1` aufgelöst. In Visual Studio 2013 wird `E1` im Ausdruck `E1::b` in die Definition `typedef E2` in `main()` aufgelöst und weist den Typ `::E2` auf.
 
-- Das Objektlayout wurde geändert. Auf x64-Computern kann sich das Objektlayout einer Klasse gegenüber vorherigen Versionen möglicherweise ändern. Wenn Sie über eine **virtuelle** Funktion verfügt, aber keine Basisklasse hat, die über eine **virtuelle** Funktion verfügt, fügt das Objektmodell des Compilers nach dem Layout des Datenelements einen Zeiger in eine **virtuelle** Funktions Tabelle ein. Dies bedeutet, dass das Layout möglicherweise nicht in allen Fällen optimal ist. In vorherigen Releases wurde mithilfe einer Optimierung für x64 versucht, das Layout zu verbessern. Da dies jedoch in komplexen Codesituationen nicht richtig funktionierte, wurde diese Optimierung in Visual Studio 2013 entfernt. Betrachten Sie z. B. diesen Code:
+- Das Objektlayout wurde geändert. Auf x64-Computern kann sich das Objektlayout einer Klasse gegenüber vorherigen Versionen möglicherweise ändern. Wenn eine Funktion vorhanden ist **`virtual`** , aber keine Basisklasse mit einer Funktion vorhanden ist **`virtual`** , fügt das Objektmodell des Compilers nach dem Layout des Datenelements einen Zeiger in eine **`virtual`** Funktions Tabelle ein. Dies bedeutet, dass das Layout möglicherweise nicht in allen Fällen optimal ist. In vorherigen Releases wurde mithilfe einer Optimierung für x64 versucht, das Layout zu verbessern. Da dies jedoch in komplexen Codesituationen nicht richtig funktionierte, wurde diese Optimierung in Visual Studio 2013 entfernt. Betrachten Sie z. B. diesen Code:
 
     ```cpp
     __declspec(align(16)) struct S1 {
@@ -2867,7 +2867,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
     ```
 
-- In Visual Studio 2013 ist das Ergebnis von `sizeof(S2)` für x64 gleich 48, doch in früheren Releases ergibt dies 32. Damit die Auswertung im C++-Compiler von Visual Studio 2013 für x64 den Wert „32“ zurückgibt, müssen Sie eine Dummy-Basisklasse mit einer **virtuellen** Funktion hinzufügen:
+- In Visual Studio 2013 ist das Ergebnis von `sizeof(S2)` für x64 gleich 48, doch in früheren Releases ergibt dies 32. Fügen Sie eine Dummy-Basisklasse mit einer Funktion hinzu, um dies im Visual Studio 2013 C++-Compiler für x64 auf 32 zu bewerten **`virtual`** :
 
     ```cpp
     __declspec(align(16)) struct S1 {
@@ -2952,7 +2952,7 @@ Der C++-Compiler in Visual Studio 2013 erkennt Konflikte im _ITERATOR_DEBUG_LEVE
 
    Als Nebeneffekt dieser Änderung funktioniert der Identitäts Fall nicht mehr (common_type \<T> nicht immer zu Typ t). Dieses Verhalten entspricht der vorgeschlagenen Lösung, beeinträchtigt jedoch den Code, der auf dem vorherigen Verhalten beruhte.
 
-   Wenn ein Identitätstypmerkmal erforderlich ist, verwenden Sie nicht `std::identity` , das kein Standard ist und in \<type_traits> definiert ist, da es nicht bei \<void>funktioniert. Implementieren Sie stattdessen Ihr eigenes Identitätstypmerkmal, um Ihre Anforderungen zu erfüllen. Ein Beispiel:
+   Wenn ein Identitätstypmerkmal erforderlich ist, verwenden Sie nicht `std::identity` , das kein Standard ist und in \<type_traits> definiert ist, da es nicht bei \<void>funktioniert. Implementieren Sie stattdessen Ihr eigenes Identitätstypmerkmal, um Ihre Anforderungen zu erfüllen. Beispiel:
 
     ```cpp
     template < typename T> struct Identity {
@@ -3000,7 +3000,7 @@ Der C++-Compiler in Visual Studio 2013 erkennt Konflikte im _ITERATOR_DEBUG_LEVE
 
 - Die Compileroption `/Yl` wurde geändert. Standardmäßig verwendet der Compiler diese Option, die unter bestimmten Umständen zu Fehlern des Typs LNK2011 führen kann. Weitere Informationen finden Sie unter [/Yl (PCH-Verweis für Debugbibliothek einfügen)](../build/reference/yl-inject-pch-reference-for-debug-library.md).
 
-- In Code, der mit `/clr` kompiliert wird, definiert das Klassenschlüsselwort **enum** eine C++11-Enumeration und keine CLR-Enumeration (Common Language Runtime). Um eine CLR-Enumeration zu definieren, müssen Sie beim Zugriff darauf explizit sein.
+- In Code, der mithilfe von kompiliert `/clr` wird, **`enum`** definiert das Class-Schlüsselwort eine c++ 11-Enumeration, nicht eine Common Language Runtime (CLR)-Enumeration. Um eine CLR-Enumeration zu definieren, müssen Sie beim Zugriff darauf explizit sein.
 
 - Verwenden Sie das Schlüsselwort „template“, um einen abhängigen Namen (Kompatibilität mit dem Standard der Sprache C++) explizit zu unterscheiden. Im folgenden Beispiel ist das hervorgehobene Schlüsselwort „template“ erforderlich, um die Mehrdeutigkeit zu beseitigen. Weitere Informationen finden Sie unter [Namensauflösung für abhängige Typen](../cpp/name-resolution-for-dependent-types.md).
 
@@ -3232,9 +3232,9 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 ### <a name="compiler"></a>Compiler
 
-- Das Schlüsselwort " **Auto** " hat eine neue Standardbedeutung. Da die alte Bedeutung nur selten verwendet wird, sind die meisten Anwendungen von dieser Änderung nicht betroffen.
+- Das **`auto`** Schlüsselwort hat eine neue Standardbedeutung. Da die alte Bedeutung nur selten verwendet wird, sind die meisten Anwendungen von dieser Änderung nicht betroffen.
 
-- Das neue **static_assert** -Schlüsselwort wird eingeführt, wodurch ein namens Konflikt verursacht wird, wenn bereits ein Bezeichner mit diesem Namen im Code vorhanden ist.
+- Das New- **`static_assert`** Schlüsselwort wird eingeführt, wodurch ein namens Konflikt verursacht wird, wenn bereits ein Bezeichner mit diesem Namen im Code vorhanden ist.
 
 - Die Unterstützung der neuen Lambda-Notation schließt die Unterstützung für das Codieren einer GUID ohne Anführungszeichen in einem IDL uuid-Attribut aus.
 
@@ -3284,7 +3284,7 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 - Der Konstruktor `CComPtr::CComPtr(int)` wurde entfernt. Dieser Konstruktor erlaubte das Erstellen des `CComPtr`-Objekts aus dem NULL-Makro, war aber unnötig und ermöglichte unsinnige Konstruktionen auf Basis ganzer Zahlen ungleich null.
 
-   Ein `CComPtr` kann immer noch aus NULL erstellt werden, was als 0 definiert ist. Dies misslingt jedoch, wenn das Erstellen basierend auf einer anderen ganzen Zahl als dem Literal 0 erfolgt. Verwenden Sie stattdessen " **nullptr** ".
+   Ein `CComPtr` kann immer noch aus NULL erstellt werden, was als 0 definiert ist. Dies misslingt jedoch, wenn das Erstellen basierend auf einer anderen ganzen Zahl als dem Literal 0 erfolgt. Verwenden Sie **`nullptr`** stattdessen.
 
 - Die folgenden `ctype`-Memberfunktionen wurden entfernt: `ctype::_Do_narrow_s`, `ctype::_Do_widen_s`, `ctype::_narrow_s`, `ctype::_widen_s`. Wenn eine Anwendung eine dieser Memberfunktionen verwendet, müssen Sie sie durch die entsprechende nicht sichere Version ersetzen: `ctype::do_narrow`, `ctype::do_widen`, `ctype::narrow`, `ctype::widen`.
 
@@ -3490,9 +3490,9 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 - Ein statischer Datenmember darf nicht über eine abgeleitete Klasse initialisiert werden ([Compilerfehler C2477](../error-messages/compiler-errors-1/compiler-error-c2477.md)).
 
-- Die Initialisierung einer **typedef** ist gemäß dem Standard nicht zulässig und erzeugt nun einen Compilerfehler ([Compilerfehler C2513](../error-messages/compiler-errors-2/compiler-error-c2513.md)).
+- Die Initialisierung eines **`typedef`** ist vom Standard nicht zulässig und generiert nun einen Compilerfehler ([Compilerfehler C2513](../error-messages/compiler-errors-2/compiler-error-c2513.md)).
 
-- **bool** ist nun ein geeigneter Typ ([Compilerfehler C2632](../error-messages/compiler-errors-2/compiler-error-c2632.md)).
+- **`bool`** ist nun ein richtiger Typ ([Compilerfehler C2632](../error-messages/compiler-errors-2/compiler-error-c2632.md)).
 
 - Eine UDC kann jetzt mit überladenen Operatoren Mehrdeutigkeit erzeugen ([C2666](../error-messages/compiler-errors-2/compiler-error-c2666.md)).
 

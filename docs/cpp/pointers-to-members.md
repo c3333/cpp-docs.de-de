@@ -8,12 +8,12 @@ helpviewer_keywords:
 - members [C++], pointers to
 - pointers, declarations
 ms.assetid: f42ddb79-9721-4e39-95b1-c56b55591f68
-ms.openlocfilehash: 75bd29310d64b0309ac48be053aa43cc0084aa2d
-ms.sourcegitcommit: 1a8fac06478da8bee1f6d70e25afbad94144af1a
+ms.openlocfilehash: fe92f848c5d5240f1afc657f5fb176513c8f9d88
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84226096"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213293"
 ---
 # <a name="pointers-to-members"></a>Zeiger auf Member
 
@@ -25,7 +25,7 @@ Deklarationen von Zeigern auf Member sind Sonderfälle von Zeigerdeklarationen. 
 
    - Ein optionaler Speicherklassenbezeichner.
 
-   - Optionale **Konstanten** und **flüchtige** Bearbeiter.
+   - Optionale **`const`** -und- **`volatile`** spezifier.
 
    - Der Typspezifizierer: der Name eines Typs Dabei handelt es sich um den Typ des Members, auf den verwiesen werden soll, nicht um die Klasse.
 
@@ -39,7 +39,7 @@ Deklarationen von Zeigern auf Member sind Sonderfälle von Zeigerdeklarationen. 
 
    - Der __`*`__ Operator.
 
-   - Optionale **Konstanten** und **flüchtige** Bearbeiter.
+   - Optionale **`const`** -und- **`volatile`** spezifier.
 
    - Der Bezeichner, der den Zeiger auf ein Member benennt.
 
@@ -79,7 +79,7 @@ int main()
 }
 ```
 
-Im vorherigen Beispiel `pwCaption` ist ein Zeiger auf einen beliebigen Member der-Klasse `Window` , die vom Typ ist `char*` . Der Typ von `pwCaption` lautet `char * Window::*`. Im nächsten Codefragment werden Zeiger auf die Memberfunktionen `SetCaption` und `GetCaption` deklariert.
+Im vorherigen Beispiel `pwCaption` ist ein Zeiger auf einen beliebigen Member der-Klasse `Window` , die vom Typ ist **`char*`** . Der Typ von `pwCaption` lautet `char * Window::*`. Im nächsten Codefragment werden Zeiger auf die Memberfunktionen `SetCaption` und `GetCaption` deklariert.
 
 ```cpp
 const char * (Window::* pfnwGC)() = &Window::GetCaption;

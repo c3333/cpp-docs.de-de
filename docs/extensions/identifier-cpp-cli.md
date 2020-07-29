@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - __identifier keyword [C++]
 ms.assetid: 348428af-afa7-4ff3-b571-acf874301cf2
-ms.openlocfilehash: 0da32aae9a8c2c7f21ee9576e1e1147822314a36
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5f95e9fc55acd33705b855c7c4f0ef268d4776a0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172177"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219689"
 ---
 # <a name="__identifier-ccli"></a>__identifier (C++/CLI)
 
@@ -41,7 +41,7 @@ Compileroption: `/ZW`
 
 **Beispiel**
 
-Im folgenden Beispiel wird eine Klasse namens **template** in C# erstellt und als DLL verteilt. In dem C++/CLI-Programm, das die **template**-Klasse verwendet, verbirgt das **__identifier**-Schlüsselwort die Tatsache, dass **template** ein standardmäßiges C++-Schlüsselwort ist.
+Im folgenden Beispiel wird eine Klasse mit dem Namen `template` in c# erstellt und als DLL verteilt. Im C++/CLI-Programm, das die- `template` Klasse verwendet, **`__identifier`** verbirgt das Schlüsselwort die Tatsache, dass `template` es sich um ein C++-Schlüsselwort handelt.
 
 ```csharp
 // identifier_template.cs
@@ -73,7 +73,7 @@ Compileroption: `/clr`
 
 ### <a name="examples"></a>Beispiele
 
-Im folgenden Beispiel wird eine Klasse namens **template** in C# erstellt und als DLL verteilt. In dem C++/CLI-Programm, das die **template**-Klasse verwendet, verbirgt das **__identifier**-Schlüsselwort die Tatsache, dass **template** ein standardmäßiges C++-Schlüsselwort ist.
+Im folgenden Beispiel wird eine Klasse mit dem Namen `template` in c# erstellt und als DLL verteilt. Im C++/CLI-Programm, das die- `template` Klasse verwendet, **`__identifier`** verbirgt das Schlüsselwort die Tatsache, dass `template` es sich um ein C++-Schlüsselwort handelt.
 
 ```csharp
 // identifier_template.cs
@@ -96,5 +96,5 @@ int main() {
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)<br/>
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

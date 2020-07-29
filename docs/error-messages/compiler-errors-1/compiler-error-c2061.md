@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C2061
 ms.assetid: b0e61c0c-a205-4820-b9aa-301d6c6fe6eb
-ms.openlocfilehash: dc64852523b6b56bc506260576e3c79164628340
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 1e1b13960c84d4e03c6316c451c690f8b5a6236e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735930"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212864"
 ---
 # <a name="compiler-error-c2061"></a>Compilerfehler C2061
 
 Syntax Fehler: Bezeichner "Bezeichner"
 
-Der Compiler hat einen Bezeichner gefunden, der nicht erwartet wurde. Stellen Sie sicher, dass `identifier` deklariert ist, bevor Sie ihn verwenden.
+Der Compiler hat einen Bezeichner gefunden, der nicht erwartet wurde. Stellen Sie sicher, dass `identifier` deklariert ist, bevor Sie Sie verwenden.
 
-Ein Initialisierer kann in Klammern eingeschlossen werden. Um dieses Problem zu vermeiden, schließen Sie den Deklarator in Klammern ein, oder machen Sie ihn als `typedef`.
+Ein Initialisierer kann in Klammern eingeschlossen werden. Um dieses Problem zu vermeiden, schließen Sie den Deklarator in Klammern ein, oder erstellen Sie ihn als **`typedef`** .
 
 Dieser Fehler kann auch verursacht werden, wenn der Compiler einen Ausdruck als Klassen Vorlagen Argument erkennt. Verwenden Sie [Typname](../../cpp/typename.md) , um dem Compiler mitzuteilen, dass es sich um einen-Typ handelt.
 

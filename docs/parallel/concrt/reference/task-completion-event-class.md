@@ -10,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - task_completion_event class
 ms.assetid: fb19ed98-f245-48dc-9ba5-487ba879b28a
-ms.openlocfilehash: b3e3093cb76df507f8c707e497c9aec75a065057
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: b63e8c6986508806cedc8c094a4e8844491dd2fa
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142595"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219508"
 ---
 # <a name="task_completion_event-class"></a>task_completion_event-Klasse
 
@@ -36,7 +36,7 @@ class task_completion_event<void>;
 *_ResultType*<br/>
 Der Ergebnistyp dieser `task_completion_event`-Klasse.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -46,7 +46,7 @@ Der Ergebnistyp dieser `task_completion_event`-Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[set](#set)|Ist überladen. Legt das Aufgabenabschlussereignis fest.|
 |[set_exception](#set_exception)|Ist überladen. Gibt eine Ausnahme an alle Aufgaben weiter, die dem Ereignis zugeordnet sind.|
@@ -69,7 +69,7 @@ Wenn das Aufgabenabschlussereignis kein Signal erhält, werden alle Aufgaben, di
 
 **Namespace:** Parallelität
 
-## <a name="set"></a>Set
+## <a name="set"></a><a name="set"></a>Set
 
 Legt das Aufgabenabschlussereignis fest.
 
@@ -86,13 +86,13 @@ Das Ergebnis, das für dieses Ereignis festgelegt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Methode gibt " **true** " zurück, wenn das Ereignis erfolgreich festgelegt wurde. Gibt **false** zurück, wenn das Ereignis bereits festgelegt ist.
+Die Methode gibt zurück, **`true`** Wenn das Ereignis erfolgreich festgelegt wurde. Gibt zurück, **`false`** Wenn das Ereignis bereits festgelegt ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bei mehrfachen oder gleichzeitigen Aufrufen von `set` ist nur der erste Aufruf erfolgreich, und sein Ergebnis (falls vorhanden) wird im Aufgabenabschlussereignis gespeichert. Die verbleibenden Sätze werden ignoriert, und die Methode gibt "false" zurück. Wenn Sie ein Aufgabenabschlussereignis festlegen, werden alle Aufgaben, die aus diesem Ereignis erstellt wurden, abgeschlossen, und ihre Fortsetzungen, falls vorhanden, werden geplant. Aufgaben Vervollständigungs Objekte, die eine andere `_ResultType` als **void** aufweisen, übergeben den Wert an Ihre Fortsetzungen.
+Bei mehrfachen oder gleichzeitigen Aufrufen von `set` ist nur der erste Aufruf erfolgreich, und sein Ergebnis (falls vorhanden) wird im Aufgabenabschlussereignis gespeichert. Die verbleibenden Sätze werden ignoriert, und die Methode gibt "false" zurück. Wenn Sie ein Aufgabenabschlussereignis festlegen, werden alle Aufgaben, die aus diesem Ereignis erstellt wurden, abgeschlossen, und ihre Fortsetzungen, falls vorhanden, werden geplant. Aufgaben Vervollständigungs Objekte mit einem `_ResultType` anderen als **`void`** übergeben den Wert an Ihre Fortsetzungen.
 
-## <a name="set_exception"></a>set_exception
+## <a name="set_exception"></a><a name="set_exception"></a>set_exception
 
 Gibt eine Ausnahme an alle Aufgaben weiter, die dem Ereignis zugeordnet sind.
 
@@ -116,7 +116,7 @@ Der festzulegende Ausnahme Zeiger.
 
 ### <a name="return-value"></a>Rückgabewert
 
-## <a name="ctor"></a>task_completion_event
+## <a name="task_completion_event"></a><a name="ctor"></a>task_completion_event
 
 Erstellt ein `task_completion_event`-Objekt.
 
@@ -126,4 +126,4 @@ task_completion_event();
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace](concurrency-namespace.md)
+[Parallelitäts Namespace](concurrency-namespace.md)

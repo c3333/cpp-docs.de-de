@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2574
 ms.assetid: 3e1c5c18-ee8b-4dbb-bfc0-d3b8991af71b
-ms.openlocfilehash: e0959d875065f7548706b07b032798a68bb4639b
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 28e674b9788a8fa9135460e547f743cb2b0075ee
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74755472"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212708"
 ---
 # <a name="compiler-error-c2574"></a>Compilerfehler C2574
 
 "Dekonstruktor": kann nicht als statisch deklariert werden.
 
-Weder Dekonstruktoren noch Konstruktoren können als `static`deklariert werden.
+Weder Dekonstruktoren noch Konstruktoren können deklariert werden **`static`** .
 
 Im folgenden Beispiel wird C2574 generiert:
 

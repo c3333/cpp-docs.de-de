@@ -33,12 +33,12 @@ helpviewer_keywords:
 - cargf function
 - cargl function
 ms.assetid: 610d6a93-b929-46ab-a966-b77db0b804be
-ms.openlocfilehash: e66b0b3545b3f28a8f7b4ca14c29ffe1e0fc260c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 883710ad4538fb9081ad0c8cfaa169380ddbaf55
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939300"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213618"
 ---
 # <a name="carg-cargf-cargl"></a>carg, cargf, cargl
 
@@ -73,19 +73,19 @@ Eine komplexe Zahl.
 
 Das Argument (auch als Phase bezeichnet) von *z*. Das Ergebnis ist das Intervall [-, +.].
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **CARG** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und **float** -oder **Long** **Double** -Werte zurückgeben. In einem C-Programm nimmt **CARG** immer einen **_Dcomplex** -Wert und gibt einen **Double** -Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **CARG** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und-oder-Werte zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **CARG** immer einen **_Dcomplex** Wert und gibt einen **`double`** Wert zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**carg**,               **cargf**, **cargl**|\<complex.h>|\<ccomplex>|
+|**CARG**, **cargf**, **cargl**|\<complex.h>|\<ccomplex>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [norm, normf, norml](norm-normf-norml1.md)<br/>

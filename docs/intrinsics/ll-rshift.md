@@ -8,12 +8,12 @@ helpviewer_keywords:
 - __ll_rshift intrinsic
 - ll_rshift intrinsic
 ms.assetid: ef13b732-d122-44a0-add9-f5544a2c4ab2
-ms.openlocfilehash: ad17991d84acb7e531baf9435610ebd566197a22
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 6ae750f1a8825096ee30adb01768d5603ab23a01
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70217498"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219663"
 ---
 # <a name="__ll_rshift"></a>__ll_rshift
 
@@ -40,19 +40,19 @@ in Die Anzahl der zu Verschiebe enden Bits, modulo 64 auf x64 und modulo 32 auf 
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die Maske, die `nBit` von Bits verschoben wurde.
+Die Maske, die von Bits verschoben wurde `nBit` .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`__ll_rshift`|x86, x64|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn der zweite Parameter in x64 (32 auf x86) größer als 64 ist, wird diese Zahl in modulo 64 (32 auf x86) festgelegt, um die Anzahl der zu Verschiebe Bits zu bestimmen. Das `ll` Präfix gibt an, dass es sich `long long`um einen Vorgang auf `__int64`, einen anderen Namen für, den ganzzahligen Typ 64-Bit
+Wenn der zweite Parameter in x64 (32 auf x86) größer als 64 ist, wird diese Zahl in modulo 64 (32 auf x86) festgelegt, um die Anzahl der zu Verschiebe Bits zu bestimmen. Das `ll` Präfix gibt an, dass es sich um einen Vorgang auf **`long long`** , einen anderen Namen für, den ganzzahligen **`__int64`** Typ 64-Bit
 
 ## <a name="example"></a>Beispiel
 
@@ -78,7 +78,7 @@ int main()
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 ffffffffffffff00

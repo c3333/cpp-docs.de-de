@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - context-sensitive keywords
 ms.assetid: e33da089-f434-44e9-8cce-4668d05a8939
-ms.openlocfilehash: 53fcaf13eb56ae14841861bffd1a29376304b8d6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 82bf4c3f0deed788b7b1e50f1d8d82e63dc27f6f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80182174"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219741"
 ---
 # <a name="context-sensitive-keywords--ccli-and-ccx"></a>Kontextbezogene Schlüsselwörter (C++/CLI und C++/CX)
 
@@ -32,7 +32,7 @@ Die folgende Liste enthält die kontextbezogenen Schlüsselwörter:
 
 - [finally](../dotnet/finally.md)
 
-- [for each in](../dotnet/for-each-in.md)
+- [for each, in](../dotnet/for-each-in.md)
 
 - [initonly](../dotnet/initonly-cpp-cli.md)
 
@@ -72,7 +72,7 @@ Compileroption: `/clr`
 
 ### <a name="examples"></a>Beispiele
 
-Im folgenden Codebeispiel wird dargestellt, wie das kontextbezogene Schlüsselwort **property** im entsprechenden Kontext verwendet werden kann, um eine Eigenschaft und eine Variable zu definieren.
+Im folgenden Codebeispiel wird gezeigt, dass im entsprechenden Kontext das **`property`** kontextabhängige Schlüsselwort verwendet werden kann, um eine Eigenschaft und eine Variable zu definieren.
 
 ```cpp
 // context_sensitive_keywords.cpp
@@ -101,4 +101,4 @@ int main() {
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

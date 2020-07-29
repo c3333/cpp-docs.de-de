@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4800
 ms.assetid: 4f409799-a250-45ed-bb5f-657691b0d9f7
-ms.openlocfilehash: 828b38aeb184741af284f2d7722017b24f6255a3
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a516be2e6e1966c3249ed21cc6d480ddea8b5ec1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80198587"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220014"
 ---
 # <a name="compiler-warning-level-4-c4800"></a>Compilerwarnung (Stufe 4) C4800
 
@@ -23,7 +23,7 @@ Visual Studio 2019 und höher:
 C4800 ist eine Warnung der Stufe 3 in Visual Studio 2015 und früher:
 > '*Type*': Wert für bool ' true ' oder ' false ' erzwingen (Leistungs Warnung)
 
-Diese Warnung wird generiert, wenn ein Wert implizit in den Typ `bool`konvertiert wird. Diese Meldung wird in der Regel durch Zuweisen von `int` Variablen zu `bool` Variablen verursacht, wobei die `int` Variable nur die Werte **true** und **false**enthält und als Typ `bool`neu deklariert werden kann. Wenn Sie den Ausdruck nicht so umschreiben können, dass der Typ `bool`verwendet wird, können Sie dem Ausdruck "`!=0`" hinzufügen, wodurch der Ausdruckstyp `bool`wird. Wenn Sie den Ausdruck in den Typ umwandeln `bool` wird die Warnung nicht deaktiviert, was beabsichtigt ist.
+Diese Warnung wird generiert, wenn ein Wert implizit in den Typ konvertiert wird **`bool`** . Normalerweise wird diese Meldung durch Zuweisen von **`int`** Variablen zu **`bool`** Variablen verursacht, wobei die **`int`** Variable nur Werte **`true`** und enthält **`false`** und als Typ neu deklariert werden kann **`bool`** . Wenn Sie den Ausdruck nicht in den verwendeten Typ umschreiben können **`bool`** , können Sie " `!=0` " dem Ausdruck hinzufügen, der den Ausdruckstyp liefert **`bool`** . Wenn Sie den Ausdruck in den Typ umwandeln **`bool`** , wird die Warnung nicht deaktiviert, was beabsichtigt ist.
 
 ::: moniker range=">= vs-2017"
 Diese Warnung wird nicht in Visual Studio 2017 ausgegeben.

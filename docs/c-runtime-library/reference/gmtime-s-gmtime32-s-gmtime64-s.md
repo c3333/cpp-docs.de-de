@@ -41,12 +41,12 @@ helpviewer_keywords:
 - _gmtime_s function
 - _gmtime32_s function
 ms.assetid: 261c7df0-2b0c-44ba-ba61-cb83efaec60f
-ms.openlocfilehash: 152b0569d452fc48af7583b23c6a2449cb24d0d6
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 8cebd2eab1c0a5b650f33ccca1e87a0a8cad1e08
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916219"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213553"
 ---
 # <a name="gmtime_s-_gmtime32_s-_gmtime64_s"></a>gmtime_s, _gmtime32_s, _gmtime64_s
 
@@ -85,22 +85,22 @@ Null, wenn erfolgreich. Der Rückgabewert ist ein Fehlercode, wenn ein Fehler au
 
 |*tmdest*|*sourcetime*|Rückgabewert|Wert in *tmdest*|
 |-----------|------------|------------|--------------------|
-|**Normal**|any|**Eingabe**|Nicht geändert.|
-|Not **null** (zeigt auf gültigen Speicher)|**Normal**|**Eingabe**|Alle Felder auf -1 festgelegt.|
+|**NULL**|any|**Eingabe**|Nicht geändert.|
+|Not **null** (zeigt auf gültigen Speicher)|**NULL**|**Eingabe**|Alle Felder auf -1 festgelegt.|
 |Nicht **null**|< 0|**Eingabe**|Alle Felder auf -1 festgelegt.|
 
 Im Fall der ersten zwei Fehlerbedingungen, wird der ungültige Parameterhandler aufgerufen, so wie dies unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_gmtime32_s** -Funktion unterteilt den *sourcetime* -Wert und speichert ihn in einer Struktur des Typs **TM**, der in Time. h definiert ist. Die Adresse der-Struktur wird in *tmdest*übermittelt. Der Wert von *sourcetime* wird normalerweise durch einen Aufruf der [time](time-time32-time64.md) -Funktion abgerufen.
 
 > [!NOTE]
 > Die Zielumgebung soll versuchen, zu bestimmen, ob die Sommerzeit wirksam ist. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit zu implementieren.
 
-Jedes der Struktur Felder hat den Typ " **int**", wie in der folgenden Tabelle dargestellt.
+Jedes der Struktur Felder ist vom Typ **`int`** , wie in der folgenden Tabelle dargestellt.
 
-|Feld|Beschreibung|
+|Feld|BESCHREIBUNG|
 |-|-|
 |**tm_sec**|Sekunden nach Minute (0-59).|
 |**tm_min**|Minuten nach Stunde (0-59).|
@@ -120,9 +120,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
+|-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|---------------------|-|
-|**gmtime_s**, **_gmtime32_s** **_gmtime64_s**|\<time.h>|\<CTime-> \<oder Time. h>|
+|**gmtime_s**, **_gmtime32_s** **_gmtime64_s**|\<time.h>|\<ctime> oder \<time.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

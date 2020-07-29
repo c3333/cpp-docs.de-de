@@ -5,12 +5,12 @@ helpviewer_keywords:
 - OLE DB providers, properties
 - properties [C++], OLE DB provider
 ms.assetid: 26a8b493-7ec4-4686-96d0-9ad5d2bca5ac
-ms.openlocfilehash: 905a9bb32544dbd7453d46362e100047516d22a8
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f5d5ac364096ea1a4505b2ead81f25367a9c9458
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80209572"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212955"
 ---
 # <a name="setting-properties-in-your-provider"></a>Festlegen von Eigenschaften im Anbieter
 
@@ -20,7 +20,7 @@ Suchen Sie in dem vom Assistenten generierten Anbieter Code die Eigenschaften Zu
 
 Fügen Sie in der Eigenschaften Zuordnung ein [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md) Makro hinzu. PROPERTY_INFO_ENTRY_EX benötigt vier Parameter:
 
-- Die eigen schafts-ID, die ihrer Eigenschaft entspricht. Entfernen Sie die ersten sieben Zeichen ("DBPROP_") von der Vorderseite des Eigenschaften namens. Wenn Sie z. b. `DBPROP_MAXROWS`hinzufügen möchten, übergeben Sie `MAXROWS` als erstes Element. Wenn dies eine benutzerdefinierte Eigenschaft ist, übergeben Sie den vollständigen GUID-Namen (z. b. `DBMYPROP_MYPROPERTY`).
+- Die eigen schafts-ID, die ihrer Eigenschaft entspricht. Entfernen Sie die ersten sieben Zeichen ("DBPROP_") von der Vorderseite des Eigenschaften namens. Wenn Sie z. b. hinzufügen möchten `DBPROP_MAXROWS` , übergeben Sie `MAXROWS` als erstes Element. Wenn dies eine benutzerdefinierte Eigenschaft ist, übergeben Sie den vollständigen GUID-Namen (z `DBMYPROP_MYPROPERTY` . b.).
 
 - Der Varianttyp der Eigenschaft (in [OLE DB Eigenschaften](/previous-versions/windows/desktop/ms722734(v=vs.85)) in der **OLE DB Programmierer-Referenz**). Geben Sie den VT_ Typ (z. b. VT_BOOL oder VT_I2) ein, der dem Datentyp entspricht.
 
@@ -30,7 +30,7 @@ Fügen Sie in der Eigenschaften Zuordnung ein [PROPERTY_INFO_ENTRY_EX](../../dat
     DBPROPFLAGS_ROWSET | DBPROPFLAGS_READ | DBPROPFLAGS_WRITE
     ```
 
-- Der Basiswert der Eigenschaft. Dies kann z. b. `VARIANT_FALSE` für einen booleschen Typ oder NULL für einen ganzzahligen Typ sein. Die-Eigenschaft hat diesen Wert, es sei denn, Sie wird geändert.
+- Der Basiswert der Eigenschaft. Dies kann für `VARIANT_FALSE` einen booleschen Typ oder NULL für einen ganzzahligen Typ sein, z. b.. Die-Eigenschaft hat diesen Wert, es sei denn, Sie wird geändert.
 
     > [!NOTE]
     > Einige Eigenschaften sind mit anderen Eigenschaften verknüpft oder verkettet, z. b. Lesezeichen oder Aktualisierungen. Wenn ein Consumer eine Eigenschaft auf true festlegt, kann auch eine andere Eigenschaft festgelegt werden. Die OLE DB Anbieter Vorlagen unterstützen dies über die Methode " [cutlpropertychanged](../../data/oledb/cutlprops-onpropertychanged.md)".
@@ -39,14 +39,14 @@ Fügen Sie in der Eigenschaften Zuordnung ein [PROPERTY_INFO_ENTRY_EX](../../dat
 
 Die Microsoft OLE DB-Anbieter ignorieren die folgenden OLE DB Eigenschaften:
 
-- `DBPROP_MAXROWS` funktioniert nur für schreibgeschützte Anbieter (d. h., wenn `DBPROP_IRowsetChange` und `DBPROP_IRowsetUpdate` **false**sind). Andernfalls wird diese Eigenschaft nicht unterstützt.
+- `DBPROP_MAXROWS`funktioniert nur für schreibgeschützte Anbieter (d. h. Where `DBPROP_IRowsetChange` und `DBPROP_IRowsetUpdate` sind **`false`** ); andernfalls wird diese Eigenschaft nicht unterstützt.
 
-- `DBPROP_MAXPENDINGROWS` wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
+- `DBPROP_MAXPENDINGROWS`wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
 
-- `DBPROP_MAXOPENROWS` wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
+- `DBPROP_MAXOPENROWS`wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
 
-- `DBPROP_CANHOLDROWS` wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
+- `DBPROP_CANHOLDROWS`wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)
+[Arbeiten mit OLE DB Anbieter Vorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

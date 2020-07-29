@@ -8,18 +8,18 @@ helpviewer_keywords:
 - rdmsr instruction
 - __readmsr intrinsic
 ms.assetid: 7ab1f8e8-72cb-4ce4-817d-3e728a3c9716
-ms.openlocfilehash: 4398b9d42369e3a914dbec1ed2d14cafecf58483
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 029119bc47d0172c7e9cc5fbf8cd20c4ee23e0f0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70222338"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219650"
 ---
 # <a name="__readmsr"></a>__readmsr
 
 **Microsoft-spezifisch**
 
-Generiert die `rdmsr` -Anweisung, die das modellspezifische Register liest, das `register` von angegeben wird, und gibt den Wert zurück.
+Generiert die- `rdmsr` Anweisung, die das modellspezifische Register liest, das von angegeben wird, **`register`** und gibt den Wert zurück.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,15 +38,15 @@ in Das modellspezifische Register, das gelesen werden soll.
 
 Der Wert im angegebenen Register.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`__readmsr`|x86, x64|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist nur im Kernel Modus verfügbar, und die Routine ist nur als systeminterne Funktion verfügbar.
 

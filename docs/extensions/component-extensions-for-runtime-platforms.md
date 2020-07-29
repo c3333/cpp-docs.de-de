@@ -9,12 +9,12 @@ helpviewer_keywords:
 - keywords [C++]
 - Managed Extensions for C++, replacement syntax
 ms.assetid: 1e400ee6-3ac9-4910-a608-9d3d5993e423
-ms.openlocfilehash: 6b3add1c0de8aa1f8ec66e8d220443c4a0efd704
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: aa6e5d1ea7d1bc2d7ebfaf07c7c9f808b37e9804
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172464"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219767"
 ---
 # <a name="component-extensions-for-net-and-uwp"></a>Komponentenerweiterungen für .NET und UWP
 
@@ -42,19 +42,19 @@ In der folgenden Tabelle sind Schlüsselwörter in der C++-Spracherweiterung auf
 |**ref class**<br /><br /> **ref struct**|Nein|Deklariert eine Klasse.|[Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md)|
 |**value class**<br /><br /> **value struct**|Nein|Deklariert eine Wertklasse.|[Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md)|
 |**Schnittstellenklasse**<br /><br /> **interface struct**|Nein|Deklariert eine Schnittstelle.|[Schnittstellenklasse](interface-class-cpp-component-extensions.md)|
-|**Enumerationsklasse**<br /><br /> **enum struct**|Nein|Deklariert eine Enumeration.|[Enumerationsklasse](enum-class-cpp-component-extensions.md)|
-|**property**|Ja|Deklariert eine Eigenschaft.|[property](property-cpp-component-extensions.md)|
+|**enum class**<br /><br /> **enum struct**|Nein|Deklariert eine Enumeration.|[enum class](enum-class-cpp-component-extensions.md)|
+|**`property`**|Ja|Deklariert eine Eigenschaft.|[property](property-cpp-component-extensions.md)|
 |**delegate**|Ja|Deklariert einen Delegaten.|[Delegat (C++/CLI und C++/CX)](delegate-cpp-component-extensions.md)|
 |**event**|Ja|Deklariert ein Ereignis.|[event](event-cpp-component-extensions.md)|
 
 ## <a name="override-specifiers"></a>Überschreibungsspezifizierer
 
-Sie können die folgenden Schlüsselwörter verwenden, um das Überschreibungsverhalten für Ableitung zu qualifizieren. Obwohl das Schlüsselwort **new** keine Erweiterung von C++ ist, wird es hier aufgeführt, da es in einem zusätzlichen Kontext verwendet werden kann. Einige Bezeichner sind auch für die systemeigene Programmierung gültig. Weitere Informationen finden Sie unter Vorgehens [Weise: Deklarieren von ÜberschreibungsspezifiziererC++in nativen Kompilierungen (/CLI)](../dotnet/how-to-declare-override-specifiers-in-native-compilations-cpp-cli.md).
+Sie können die folgenden Schlüsselwörter verwenden, um das Überschreibungsverhalten für Ableitung zu qualifizieren. Obwohl das **`new`** Schlüsselwort keine Erweiterung von C++ ist, wird es hier aufgeführt, da es in einem zusätzlichen Kontext verwendet werden kann. Einige Bezeichner sind auch für die systemeigene Programmierung gültig. Weitere Informationen finden Sie unter Vorgehens [Weise: Deklarieren von Überschreibungsspezifizierer in nativen Kompilierungen (C++/CLI)](../dotnet/how-to-declare-override-specifiers-in-native-compilations-cpp-cli.md).
 
 |Schlüsselwort|Kontextbezogen|Zweck|Verweis|
 |-------------|-----------------------|-------------|---------------|
 |**abstract**|Ja|Gibt an, dass Funktionen oder Klassen abstrakt sind.|[abstract](abstract-cpp-component-extensions.md)|
-|**Neu**|Nein|Gibt an, dass eine Funktion keine Überschreibung einer Basisklassenversion ist.|[new (neuer Slot in vtable)](new-new-slot-in-vtable-cpp-component-extensions.md)|
+|**`new`**|Nein|Gibt an, dass eine Funktion keine Überschreibung einer Basisklassenversion ist.|[new (neuer Slot in vtable)](new-new-slot-in-vtable-cpp-component-extensions.md)|
 |**override**|Ja|Gibt an, dass eine Methode eine Überschreibung einer Basisklassenversion sein muss.|[override](override-cpp-component-extensions.md)|
 |**sealed**|Ja|Verhindert, dass Klassen als Basisklassen verwendet werden.|[sealed](sealed-cpp-component-extensions.md)|
 
@@ -64,7 +64,7 @@ Die folgenden Schlüsselwörter wurden hinzugefügt, um generische Typen zu unte
 
 |Schlüsselwort|Kontextbezogen|Zweck|
 |-------------|-----------------------|-------------|
-|**generic**|Nein|Definiert einen generischen Typ.|
+|**allgemeinen**|Nein|Definiert einen generischen Typ.|
 |**where**|Ja|Gibt die Einschränkungen an, die für einen generischen Typparameter angewendet werden.|
 
 ## <a name="miscellaneous-keywords"></a>Sonstige Schlüsselwörter
@@ -74,12 +74,12 @@ Die folgenden Schlüsselwörter wurden den C++-Erweiterungen hinzugefügt.
 |Schlüsselwort|Kontextbezogen|Zweck|Verweis|
 |-------------|-----------------------|-------------|---------------|
 |**finally**|Ja|Gibt das Standardausnahmebehandlungsverhalten an.|[Behandlung von Ausnahmen](exception-handling-cpp-component-extensions.md)|
-|**for each in**|Nein|Listet die Elemente einer Auflistung auf.|[for each in](../dotnet/for-each-in.md)|
-|**gcnew**|Nein|Ordnet Typen auf dem Heap der Garbage Collection zu. Verwenden Sie dies anstelle von **new** und **delete**.|[ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md)|
-|**ref new**|Ja|Weist einen Windows-Runtime-Typ zu. Verwenden Sie dies anstelle von **new** und **delete**.|[ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md)|
+|**for each, in**|Nein|Listet die Elemente einer Auflistung auf.|[for each, in](../dotnet/for-each-in.md)|
+|**gcnew**|Nein|Ordnet Typen auf dem Heap der Garbage Collection zu. Verwenden Sie anstelle von **`new`** und **`delete`** .|[ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md)|
+|**ref new**|Ja|Weist einen Windows-Runtime-Typ zu. Verwenden Sie anstelle von **`new`** und **`delete`** .|[ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md)|
 |**initonly**|Ja|Gibt an, dass ein Member nur in der Deklaration oder in einem statischen Konstruktor initialisiert werden kann.|[initonly (C++/CLI)](../dotnet/initonly-cpp-cli.md)|
-|**literal**|Ja|Erstellt eine literale Variable.|[literal](literal-cpp-component-extensions.md)|
-|**nullptr**|Nein|Gibt an, dass ein Handle oder ein Zeiger nicht auf ein Objekt zeigt.|[nullptr](nullptr-cpp-component-extensions.md)|
+|**wahrsten**|Ja|Erstellt eine literale Variable.|[literal](literal-cpp-component-extensions.md)|
+|**`nullptr`**|Nein|Gibt an, dass ein Handle oder ein Zeiger nicht auf ein Objekt zeigt.|[nullptr](nullptr-cpp-component-extensions.md)|
 
 ## <a name="template-constructs"></a>Vorlagenkonstrukte
 
@@ -91,7 +91,7 @@ Die folgenden Sprachkonstrukte werden nicht als Schlüsselwörter, sondern als V
 |**interior_ptr**|(Nur CLR:) Zeigt auf Daten in einem Referenztyp.|[interior_ptr (C++/CLI)](interior-ptr-cpp-cli.md)|
 |**pin_ptr**|(Nur CLR:) Zeigt auf CLR-Referenztypen, um das Garbage Collection-System vorübergehend zu unterdrücken.|[pin_ptr (C++/CLI)](pin-ptr-cpp-cli.md)|
 |**safe_cast**|Bestimmt die optimale Umwandlungsmethode für einen Laufzeittyp und führt diese aus.|[safe_cast](safe-cast-cpp-component-extensions.md)|
-|**typeid**|(Nur CLR:) Ruft ein <xref:System.Type?displayProperty=fullName>-Objekt ab, das den angegebenen Typ oder das angegebene Objekt beschreibt.|[typeid](typeid-cpp-component-extensions.md)|
+|**`typeid`**|(Nur CLR:) Ruft ein <xref:System.Type?displayProperty=fullName>-Objekt ab, das den angegebenen Typ oder das angegebene Objekt beschreibt.|[TypeId](typeid-cpp-component-extensions.md)|
 
 ## <a name="declarators"></a>Deklaratoren
 
@@ -99,8 +99,8 @@ Die folgenden Typdeklaratoren weisen die Laufzeit an, die Lebensdauer und das L�
 
 |Operator|Zweck|Verweis|
 |--------------|-------------|---------------|
-|`^`|Deklariert ein Handle zu einem Objekt, d.h. einen Zeiger auf ein Windows-Runtime- oder CLR-Objekt, der automatisch gelöscht wird, wenn er nicht mehr verwendet werden kann.|[Handle für Objekt (^)](handle-to-object-operator-hat-cpp-component-extensions.md)|
-|`%`|Deklariert einen Nachverfolgungsverweis, d.h. einen Verweis auf ein Windows-Runtime- oder CLR-Objekt, der automatisch gelöscht wird, wenn er nicht mehr verwendet werden kann.|[Nachverfolgungsverweisoperator](tracking-reference-operator-cpp-component-extensions.md)|
+|`^`|Deklariert ein Handle zu einem Objekt, d.h. einen Zeiger auf ein Windows-Runtime- oder CLR-Objekt, der automatisch gelöscht wird, wenn er nicht mehr verwendet werden kann.|[Handle für Objekt Operator (^)](handle-to-object-operator-hat-cpp-component-extensions.md)|
+|`%`|Deklariert einen Nachverfolgungsverweis, d.h. einen Verweis auf ein Windows-Runtime- oder CLR-Objekt, der automatisch gelöscht wird, wenn er nicht mehr verwendet werden kann.|[Nach Verfolgungs Verweis Operator](tracking-reference-operator-cpp-component-extensions.md)|
 
 ## <a name="additional-constructs-and-related-topics"></a>Zusätzliche Konstrukte und verwandte Themen
 
@@ -110,19 +110,19 @@ In diesem Abschnitt werden weitere Programmierungskonstrukte sowie Themen aufgef
 |-----------|-----------------|
 |[__identifier (C++/CLI)](identifier-cpp-cli.md)|(Windows-Runtime und CLR) Ermöglicht die Verwendung von Schlüsselwörtern als Bezeichner.|
 |[Variable Argumentlisten (...) (C++/CLI)](variable-argument-lists-dot-dot-dot-cpp-cli.md)|(Windows-Runtime und CLR) Ermöglicht es einer Funktion, eine variable Anzahl von Argumenten zu akzeptieren.|
-|[.NET Framework-Entsprechungen der nativen Typen in C++ (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md)|Listet die CLR-Typen auf, die anstelle von ganzzahligen C++-Typen verwendet werden.|
-|[AppDomain](../cpp/appdomain.md) - **__declspec** Modifizierer|**__declspec**-Modifizierer, für den es erforderlich ist, dass für jede Anwendungsdomäne statische und globale Variablen vorhanden sind.|
-|[Umwandlungen im C-Stil mit /clr (C++/CLI)](c-style-casts-with-clr-cpp-cli.md)|Beschreibt, wie Umwandlungen im C-Stil interpretiert werden.|
+|[.NET Framework Entsprechungen zu C++ Native-Typen (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md)|Listet die CLR-Typen auf, die anstelle von ganzzahligen C++-Typen verwendet werden.|
+|[AppDomain](../cpp/appdomain.md) **`__declspec`** Modifizierer|**`__declspec`** Ein Modifizierer, der vorschreibt, dass statische und globale Variablen pro AppDomain vorhanden sind.|
+|[C-stilartige Umwandlungen mit /clr (C++/CLI)](c-style-casts-with-clr-cpp-cli.md)|Beschreibt, wie Umwandlungen im C-Stil interpretiert werden.|
 |[__clrcall](../cpp/clrcall.md)-Aufrufkonvention|Gibt die CLR-kompatible Aufrufkonvention an.|
 |`__cplusplus_cli`|[Vordefinierte Makros](../preprocessor/predefined-macros.md)|
 |[Benutzerdefinierte Attribute](user-defined-attributes-cpp-component-extensions.md)|Beschreibt, wie eigene CLR-Attribute definiert werden.|
 |[Behandlung von Ausnahmen](exception-handling-cpp-component-extensions.md)|Stellt eine Übersicht über die Ausnahmebehandlung bereit.|
-|[Explizite Überschreibungen](explicit-overrides-cpp-component-extensions.md)|Zeigt, wie Memberfunktionen beliebige Member überschreiben können.|
+|[Explizite über schreibungen](explicit-overrides-cpp-component-extensions.md)|Zeigt, wie Memberfunktionen beliebige Member überschreiben können.|
 |[Friend-Assemblys (C++)](../dotnet/friend-assemblies-cpp.md)|Erläutert, wie eine Clientassembly auf alle Typen in einer Assemblykomponente zugreifen kann.|
 |[Boxing](boxing-cpp-component-extensions.md)|Veranschaulicht die Bedingungen, unter denen Werttypen geschachtelt werden.|
 |[Compilerunterstützung für Typmerkmale](compiler-support-for-type-traits-cpp-component-extensions.md)|Erläutert, wie Eigenschaften von Typen zur Kompilierzeit erkannt werden.|
-|[Verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md) Pragmata|Veranschaulicht, wie verwaltete und nicht verwaltete Funktionen in demselben Modul zusammen verwendet werden können.|
-|[Prozess](../cpp/process.md) **__declspec** Modifizierer|**__declspec**-Modifizierer, für den es erforderlich ist, dass für jeden Prozess statische und globale Variablen vorhanden sind.|
+|[verwaltete, nicht verwaltete](../preprocessor/managed-unmanaged.md) Pragmas|Veranschaulicht, wie verwaltete und nicht verwaltete Funktionen in demselben Modul zusammen verwendet werden können.|
+|[Prozess](../cpp/process.md) **`__declspec`** Modifizierer|**`__declspec`** Ein Modifizierer, der vorschreibt, dass statische und globale Variablen pro Prozess vorhanden sind.|
 |[Reflexion (C++/CLI)](../dotnet/reflection-cpp-cli.md)|Zeigt die CLR-Version von Informationen zum Laufzeittyp.|
 |[String](string-cpp-component-extensions.md)|Erläutert die Compilerkonvertierung von Zeichenfolgenliteralen zu <xref:System.String>.|
 |[Typweiterleitung (C++/CLI)](type-forwarding-cpp-cli.md)|Ermöglicht das Verschieben eines Typs aus einer bereits bereitgestellten Assembly in eine andere Assembly, sodass Clientcode nicht neu kompiliert werden muss.|
@@ -133,4 +133,4 @@ In diesem Abschnitt werden weitere Programmierungskonstrukte sowie Themen aufgef
 ## <a name="see-also"></a>Weitere Informationen
 
 [.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)<br/>
-[Interoperabilität von nativem Code und .NET](../dotnet/native-and-dotnet-interoperability.md)
+[Native und .NET-Interoperabilität](../dotnet/native-and-dotnet-interoperability.md)

@@ -7,40 +7,40 @@ helpviewer_keywords:
 - __declspec keyword [C++], restrict
 - restrict __declspec keyword
 ms.assetid: f39cf632-68d8-4362-a497-2d4c15693689
-ms.openlocfilehash: 40c1c05ca72f639829f2d3658497b0e9f3199640
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a0108cff3d6b98fd929b7888d2ad718e7b6b3a64
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403372"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213254"
 ---
 # <a name="restrict"></a>restrict
 
 **Microsoft-spezifisch**
 
-Bei Anwendung auf eine Deklaration oder Definition, die einen Zeigertyp zurückgibt **einschränken** informiert den Compiler, dass die Funktion gibt ein Objekt zurück, der nicht *Alias*, d. h. auf die verwiesen wird durch einen anderen Zeiger. Dies kann der Compiler weitere Optimierungen auszuführen.
+**`restrict`** Weist den Compiler an, dass die Funktion ein Objekt zurückgibt, das keinen *Alias*hat, d. h. von anderen Zeigern referenziert, wenn Sie auf eine Funktionsdeklaration oder-Definition angewendet wird, die einen Zeigertyp zurückgibt. Dies ermöglicht es dem Compiler, zusätzliche Optimierungen auszuführen.
 
 ## <a name="syntax"></a>Syntax
 
-> **__declspec(restrict)** *pointer_return_type* *function*();
+> **`__declspec(restrict)`***pointer_return_type* - *Funktion*();
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Compiler gibt **__declspec(restrict)**. Z. B. die CRT `malloc` Funktion verfügt über eine **__declspec(restrict)** Dekoration, und damit der Compiler geht davon aus, dass initialisierte Zeiger auf Speicheradressen von `malloc` sind ebenfalls nicht mit einem Alias versehen, indem zuvor vorhandenen Zeiger.
+Der Compiler gibt weiter **`__declspec(restrict)`** . Die CRT-Funktion hat z. b. `malloc` eine **`__declspec(restrict)`** Dekoration. Daher geht der Compiler davon aus, dass Zeiger, die auf Speicherpositionen von initialisiert `malloc` werden, auch nicht durch zuvor vorhandene Zeiger als Alias behandelt werden.
 
-Der Compiler überprüft nicht, dass der zurückgegebene Zeiger nicht tatsächlich mit einem Alias versehen ist. Es ist Aufgabe des Entwicklers, um sicherzustellen, dass das Programm ist, keinen alias einen Zeiger mit markiert die **einschränken __declspec** Modifizierer.
+Der Compiler überprüft nicht, ob der zurückgegebene Zeiger tatsächlich ein Alias ist. Es liegt in der Verantwortung des Entwicklers, sicherzustellen, dass das Programm keinen Zeiger Alias verwendet, der mit der **Einschränkung __declspec** Modifizierer gekennzeichnet ist.
 
-Ähnliche Semantik für Variablen finden Sie unter ["__restrict"](../cpp/extension-restrict.md).
+Eine ähnliche Semantik für Variablen finden Sie unter [__restrict](../cpp/extension-restrict.md).
 
-Eine andere Anmerkung, die für das Aliasing innerhalb einer Funktion angewendet wird, finden Sie unter [__declspec(noalias)](../cpp/noalias.md).
+Eine andere Anmerkung, die für Aliasing innerhalb einer Funktion gilt, finden Sie unter [__declspec (noalias)](../cpp/noalias.md).
 
-Informationen zu den **einschränken** Schlüsselwort, das Teil des C++ AMP ist, finden Sie unter [einschränken (C++-AMP)](../cpp/restrict-cpp-amp.md).
+Weitere Informationen über das **`restrict`** Schlüsselwort, das Teil C++ amp ist, finden Sie unter [einschränken (C++ amp)](../cpp/restrict-cpp-amp.md).
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung von **__declspec(restrict)**.
+Im folgenden Beispiel wird die Verwendung von veranschaulicht **`__declspec(restrict)`** .
 
-Wenn **__declspec(restrict)** gilt für eine Funktion, die einen Zeiger zurückgibt, das dem Compiler weist, dass der Arbeitsspeicher, die auf den Rückgabewert zeigt nicht mit einem Alias versehen ist. In diesem Beispiel die Zeiger `mempool` und `memptr` sind global, damit der Compiler kann nicht sicher sein, dass der Arbeitsspeicher, die sie verweisen auf nicht mit einem Alias versehen ist. Sie werden jedoch in verwendet `ma` und dessen Aufrufer `init` auf eine Weise, die Arbeitsspeicher zurückgibt, die andernfalls von der Anwendung, also nicht verwiesen wird **__decslpec(restrict)** wird verwendet, um den Optimierer. Dies ist ähnlich wie die CRT-Header Zuordnungsfunktionen wie z. B. ergänzen `malloc` mit **__declspec(restrict)** um anzugeben, dass sie immer Speicher zurück, der mit einem Alias versehen von vorhandenen Zeigern werden nicht möglich.
+Wenn **`__declspec(restrict)`** auf eine Funktion angewendet wird, die einen Zeiger zurückgibt, weist dies den Compiler darauf hin, dass der Speicher, auf den der Rückgabewert zeigt, kein Alias ist. In diesem Beispiel sind die Zeiger `mempool` und `memptr` Global, sodass der Compiler nicht sicherstellen kann, dass der Speicher, auf den Sie verweisen, kein Alias ist. Allerdings werden Sie `ma` in und dem Aufrufer `init` auf eine Weise verwendet, die Speicher zurückgibt, auf den nicht anderweitig vom Programm verwiesen wird, sodass **__decslpec (einschränken)** verwendet wird, um den Optimierer zu unterstützen. Dies ähnelt der Art und Weise, wie die CRT-Header Zuordnungs Funktionen wie z. b. `malloc` verwenden **`__declspec(restrict)`** , um anzugeben, dass Sie immer Arbeitsspeicher zurückgeben, für den keine Aliasing durch vorhandene Zeiger
 
 ```C
 // declspec_restrict.c
@@ -115,4 +115,4 @@ int main()
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [__declspec](../cpp/declspec.md)<br/>
-[__declspec(noalias)](../cpp/noalias.md)
+[__declspec (noalias)](../cpp/noalias.md)

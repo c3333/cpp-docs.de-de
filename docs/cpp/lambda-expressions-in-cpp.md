@@ -6,12 +6,12 @@ helpviewer_keywords:
 - lambda expressions [C++], overview
 - lambda expressions [C++], vs. function objects
 ms.assetid: 713c7638-92be-4ade-ab22-fa33417073bf
-ms.openlocfilehash: e206ea8d67bb333065bf43f7f9c2dc373a5a5258
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 6fcc26c3ed86c86264773a70ac16501c102e1861
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857488"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213332"
 ---
 # <a name="lambda-expressions-in-c"></a>Lambda-Ausdrücke in C++
 
@@ -21,7 +21,7 @@ In c++ 11 und höher ist ein Lambda Ausdruck –, der häufig als *Lambda*bezeic
 
 - [Lambda-Ausdrücke im Vergleich zu Funktions Objekten](lambda-expression-syntax.md)
 - [Arbeiten mit Lambda-Ausdrücken](examples-of-lambda-expressions.md)
-- [constexpr-Lambda-Ausdrücke](lambda-expressions-constexpr.md)
+- [constexpr-Lambdaausdrücke](lambda-expressions-constexpr.md)
 
 ## <a name="parts-of-a-lambda-expression"></a>Bestandteile eines Lambda-Ausdrucks
 
@@ -45,7 +45,7 @@ In dieser Abbildung werden die Bestandteile eines Lambda-Ausdrucks dargestellt:
 
 ![Strukturelle Elemente eines Lambda-Ausdrucks](../cpp/media/lambdaexpsyntax.png "Strukturelle Elemente eines Lambda-Ausdrucks")
 
-1. *Capture-Klausel* (auch bekannt als *Lambda-Introducer* in der C++ Spezifikation)
+1. *Capture-Klausel* (auch bekannt als *Lambda-Introducer* in der C++-Spezifikation)
 
 1. *Parameterliste* Optionale. (Auch als *Lambda Deklarator*bezeichnet)
 
@@ -63,7 +63,7 @@ Ein Lambda-Ausdruck kann neue Variablen in seinen Text einfügen (in **c++ 14**)
 
 Eine leere Erfassungsklausel (`[ ]`) gibt an, dass der Lambda-Text auf keine Variablen im einschließenden Bereich zugreift.
 
-Sie können den Standard Erfassungs Modus (*Capture-default* in der Standard Syntax) verwenden, um anzugeben, wie externe Variablen aufgezeichnet werden sollen, auf die im Lambda verwiesen wird: `[&]` bedeutet, dass alle Variablen, auf die Sie verweisen, als Verweis aufgezeichnet werden, und `[=]` bedeutet, dass Sie nach Wert aufgezeichnet werden. Sie können einen Standarderfassungsmodus verwenden, und dann den entgegengesetzten Modus explizit für bestimmte Variablen angeben. Wenn beispielsweise der Lambda-Text auf die externe Variable `total` nach Wert zugreift und auf die externe Variable `factor` nach Wert, dann sind die folgenden Erfassungsklauseln gleichwertig:
+Sie können den Standard Erfassungs Modus (*Capture-default* in der Standard Syntax) verwenden, um anzugeben, wie externe Variablen aufgezeichnet werden sollen, auf die im Lambda verwiesen wird: `[&]` bedeutet, dass alle Variablen, auf die Sie verweisen, als Verweis aufgezeichnet werden, und bedeutet, dass `[=]` Sie nach Wert aufgezeichnet werden. Sie können einen Standarderfassungsmodus verwenden, und dann den entgegengesetzten Modus explizit für bestimmte Variablen angeben. Wenn beispielsweise der Lambda-Text auf die externe Variable `total` nach Wert zugreift und auf die externe Variable `factor` nach Wert, dann sind die folgenden Erfassungsklauseln gleichwertig:
 
 ```cpp
 [&total, factor]
@@ -76,7 +76,7 @@ Sie können den Standard Erfassungs Modus (*Capture-default* in der Standard Syn
 
 Nur Variablen, die im Lambda-Ausdruck erwähnt werden, werden aufgezeichnet, wenn eine Capture-Default-Einstellung verwendet wird.
 
-Wenn eine Capture-Klausel eine Capture-default-`&`enthält, kann kein `identifier` in einer `capture` dieser Erfassungs Klausel das Formular `& identifier`haben. Wenn die Capture-Klausel eine Capture-default-`=`enthält, kann auch keine `capture` dieser Erfassungs Klausel die Form `= identifier`haben. Ein Bezeichner **kann nicht** mehr als einmal in einer Capture-Klausel vorkommen. Der folgende Codeausschnitt veranschaulicht einige Beispiele.
+Wenn eine Capture-Klausel einen Capture-Default-Wert enthält `&` , `identifier` kann No in einer `capture` dieser Erfassungs Klausel das Formular haben `& identifier` . Wenn die Capture-Klausel einen Capture-Default-Wert enthält `=` , kann auch keine `capture` dieser Aufzeichnungs Klauseln das Formular haben `= identifier` . Ein Bezeichner oder **`this`** darf nicht mehr als einmal in einer Capture-Klausel vorkommen. Der folgende Codeausschnitt veranschaulicht einige Beispiele.
 
 ```cpp
 struct S { void f(int i); };
@@ -100,15 +100,15 @@ void f(Args... args) {
 }
 ```
 
-Um Lambda-Ausdrücke im Text einer Klassenmethode zu verwenden, übergeben Sie den **this** -Zeiger an die Capture-Klausel, um den Zugriff auf die Methoden und Datenmember der einschließenden Klasse bereitzustellen.
+Wenn Sie Lambda-Ausdrücke im Text einer Klassenmethode verwenden möchten, übergeben Sie den **`this`** Zeiger auf die Erfassungs Klausel, um den Zugriff auf die Methoden und Datenmember der einschließenden Klasse bereitzustellen.
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): der **this** -Zeiger kann nach Wert aufgezeichnet werden, indem `*this` in der Erfassungs Klausel angegeben wird. Die Erfassung nach Wert bedeutet, dass der gesamte *Abschluss*, bei dem es sich um das anonyme Funktions Objekt handelt, das den Lambda-Ausdruck einschließt, an jede Aufruf Site kopiert wird, in der der Lambda-Ausdruck aufgerufen wird. Die Erfassung nach Wert ist nützlich, wenn der Lambda-Ausdruck in parallelen oder asynchronen Vorgängen ausgeführt wird, insbesondere bei bestimmten Hardwarearchitekturen, z. b. NUMA.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): der **`this`** Zeiger kann nach Wert aufgezeichnet werden, indem **`*this`** in der Erfassungs Klausel angegeben wird. Die Erfassung nach Wert bedeutet, dass der gesamte *Abschluss*, bei dem es sich um das anonyme Funktions Objekt handelt, das den Lambda-Ausdruck einschließt, an jede Aufruf Site kopiert wird, in der der Lambda-Ausdruck aufgerufen wird. Die Erfassung nach Wert ist nützlich, wenn der Lambda-Ausdruck in parallelen oder asynchronen Vorgängen ausgeführt wird, insbesondere bei bestimmten Hardwarearchitekturen, z. b. NUMA.
 
 Ein Beispiel für die Verwendung von Lambda-Ausdrücken mit Klassen Methoden finden Sie unter "Beispiel: Verwenden eines Lambda-Ausdrucks in einer Methode" unter [Beispiele für Lambda-Ausdrücke](../cpp/examples-of-lambda-expressions.md).
 
 Wenn Sie die Erfassungsklausel verwenden, sollten Sie diese wichtigen Punkte beachten, insbesondere wenn Sie Lambdas mit Multithreading verwenden:
 
-- Verweiserfassungen können im Gegensatz zu Werterfassungen dazu verwendet werden, um Variablen outside zu ändern. (**änderbar** ermöglicht, dass Kopien geändert werden, aber keine Originale.)
+- Verweiserfassungen können im Gegensatz zu Werterfassungen dazu verwendet werden, um Variablen outside zu ändern. ( **`mutable`** ermöglicht, dass Kopien geändert werden, aber keine Originale.)
 
 - Verweiserfassungen können im Gegensatz zu Werterfassungen Änderungen von Variablen outside wiederspiegeln.
 
@@ -138,7 +138,7 @@ auto y = [] (int first, int second)
 };
 ```
 
-Wenn in  **C++ 14**der Parametertyp generisch ist, können Sie das Schlüsselwort "Auto" als Typspezifizierer verwenden. Das weist den Compiler an, den Funktionsaufrufoperator als Vorlage zu erstellen. Jede Instanz des auto-Schlüsselworts in einer Parameterliste entspricht einem Typparameter.
+In **c++ 14**können Sie das- **`auto`** Schlüsselwort als Typspezifizierer verwenden, wenn der Parametertyp generisch ist. Das weist den Compiler an, den Funktionsaufrufoperator als Vorlage zu erstellen. Jede Instanz von **`auto`** in einer Parameterliste entspricht einem eindeutigen Typparameter.
 
 ```cpp
 auto y = [] (auto first, auto second)
@@ -149,15 +149,15 @@ auto y = [] (auto first, auto second)
 
 Ein Lambdaausdruck kann einen anderen Lambdaausdruck als Argument übernehmen. Weitere Informationen finden Sie unter "Lambda-Ausdrücke höherer Ordnung" im Thema [Beispiele für Lambda-Ausdrücke](../cpp/examples-of-lambda-expressions.md).
 
-Da eine Parameterliste optional ist, können Sie die leeren Klammern weglassen, wenn Sie keine Argumente an den Lambda-Ausdruck übergeben und der Lambda-Deklarator keine *Exception-Specification*, *Trailing-Return-Type*oder **änderbare**enthält.
+Da eine Parameterliste optional ist, können Sie die leeren Klammern weglassen, wenn Sie keine Argumente an den Lambda-Ausdruck übergeben und der Lambda-Deklarator keine *Exception-Specification*, *Trailing-Return-Type*oder enthält **`mutable`** .
 
 ### <a name="mutable-specification"></a>Änderbare Spezifikation
 
-In der Regel ist der Funktions Aufrufoperator eines Lambda-Werts konstant, aber mit der Verwendung des **änderbare** -Schlüssel Worts wird dies abgebrochen. Er erzeugt keine änderbaren Datenmember. Die änderbare Spezifikation aktiviert den Text eines Lambdaausdrucks, um Variablen zu ändern, die als Wert erfasst werden. Einige der Beispiele weiter unten in diesem Artikel zeigen, wie Sie **änderbar**verwenden können.
+In der Regel ist der Funktions Aufrufoperator eines Lambda-Werts konstant, aber mit der Verwendung des- **`mutable`** Schlüssel Worts wird dies abgebrochen. Er erzeugt keine änderbaren Datenmember. Die änderbare Spezifikation aktiviert den Text eines Lambdaausdrucks, um Variablen zu ändern, die als Wert erfasst werden. Einige der Beispiele weiter unten in diesem Artikel veranschaulichen die Verwendung von **`mutable`** .
 
 ### <a name="exception-specification"></a>Ausnahmespezifikation
 
-Sie können die `noexcept`-Ausnahmespezifikation verwenden, um anzugeben, dass der Lambdaausdruck keine Ausnahmen auslöst. Wie bei normalen Funktionen generiert der Microsoft C++ -Compiler eine Warnung [C4297](../error-messages/compiler-warnings/compiler-warning-level-1-c4297.md) wenn ein Lambda-Ausdruck die `noexcept` Exception-Spezifikation deklariert und der Lambda-Text eine Ausnahme auslöst, wie hier gezeigt:
+Sie können die **`noexcept`** Ausnahme Spezifikation verwenden, um anzugeben, dass der Lambda-Ausdruck keine Ausnahmen auslöst. Wie bei normalen Funktionen generiert der Microsoft C++-Compiler eine Warnung [C4297](../error-messages/compiler-warnings/compiler-warning-level-1-c4297.md) wenn ein Lambda-Ausdruck die **`noexcept`** Ausnahme Spezifikation deklariert und der Lambda-Text eine Ausnahme auslöst, wie hier gezeigt:
 
 ```cpp
 // throw_lambda_expression.cpp
@@ -172,9 +172,9 @@ Weitere Informationen finden Sie unter [Ausnahme Spezifikationen (Throw)](../cpp
 
 ### <a name="return-type"></a>Rückgabetyp
 
-Der Rückgabetyp von Lambda-Ausdrücken wird automatisch hergeleitet. Sie müssen das Schlüsselwort " [Auto](../cpp/auto-cpp.md) " nur verwenden, wenn Sie einen *nachfolgenden Rückgabetyp*angeben. Der *nachfolgende-Rückgabetyp* ähnelt dem Rückgabetyp Teil einer normalen Methode oder Funktion. Der Rückgabetyp folgt jedoch auf die Parameterliste, und das Schlüsselwort „trailing-return-type `->`“ muss vor dem Rückgabetyp angegeben werden.
+Der Rückgabetyp von Lambda-Ausdrücken wird automatisch hergeleitet. Sie müssen das-Schlüsselwort nicht verwenden, [`auto`](../cpp/auto-cpp.md) es sei denn, Sie geben einen *nachfolgenden Rückgabetyp*an. Der *nachfolgende-Rückgabetyp* ähnelt dem Rückgabetyp Teil einer normalen Methode oder Funktion. Der Rückgabetyp muss jedoch der Parameterliste folgen, und Sie müssen das Schlüsselwort "Trailing-Return-Type" **`->`** vor dem Rückgabetyp einschließen.
 
-Sie können den Rückgabetyp eines Lambda-Ausdrucks weglassen, wenn der Lambda-Text nur eine einzelne Return-Anweisung enthält oder der Lambda-Ausdruck keinen Wert zurückgibt. Wenn der Lambda-Text aus einer einzelnen Rückgabeanweisung besteht, leitet der Compiler den Rückgabetyp vom Typ des Rückgabeausdrucks ab. Andernfalls leitet der Compiler den Rückgabetyp so ab, dass er **leer**ist. Betrachten Sie die folgenden Beispiele von Codeausschnitten, die dieses Prinzip veranschaulichen.
+Sie können den Rückgabetyp eines Lambda-Ausdrucks weglassen, wenn der Lambda-Text nur eine einzelne Return-Anweisung enthält oder der Lambda-Ausdruck keinen Wert zurückgibt. Wenn der Lambda-Text aus einer einzelnen Rückgabeanweisung besteht, leitet der Compiler den Rückgabetyp vom Typ des Rückgabeausdrucks ab. Andernfalls leitet der Compiler den Rückgabetyp als ab **`void`** . Betrachten Sie die folgenden Beispiele von Codeausschnitten, die dieses Prinzip veranschaulichen.
 
 ```cpp
 auto x1 = [](int i){ return i; }; // OK: return type is int
@@ -190,11 +190,11 @@ Der Lambda-Text (*Verbund Anweisung* in der Standard Syntax) eines Lambda-Ausdru
 
 - Aus dem einschließenden Bereich erfasste Variablen, wie zuvor beschrieben.
 
-- Parameters
+- Parameter
 
 - Lokal deklarierte Variablen
 
-- Klassendatenmember, wenn Sie in einer Klasse deklariert werden und **diese** aufgezeichnet wird
+- Klassendatenmember, wenn Sie in einer Klasse deklariert und **`this`** aufgezeichnet werden
 
 - Jede beliebige Variable mit statischer Speicherdauer (z. B. globale Variablen)
 
@@ -220,7 +220,7 @@ int main()
 0
 ```
 
-Da die Variable `n` als Wert erfasst wird, bleibt der Wert `0` nach dem Aufruf des Lambda-Ausdrucks erhalten. Die **änderbare** Spezifikation ermöglicht die Änderung `n` innerhalb des Lambda-Ausdrucks.
+Da die Variable `n` als Wert erfasst wird, bleibt der Wert `0` nach dem Aufruf des Lambda-Ausdrucks erhalten. Die **`mutable`** Spezifikation ermöglicht das `n` ändern innerhalb des Lambda-Ausdrucks.
 
 Obwohl ein Lambdaausdruck nur Variablen mit automatischer Speicherdauer aufzeichnen kann, können Sie Variablen verwenden, die eine statische Speicherdauer im Text eines Lambdaausdrucks aufweisen. Im folgenden Beispiel wird die Funktion `generate` und ein Lambdaausdruck verwendet, um jedem Element in einem `vector`-Objekt einen Wert zuzuweisen. Der Lambda-Ausdruck ändert die statische Variable, um den Wert des nächsten Elements zu generieren.
 
@@ -240,7 +240,7 @@ void fillVector(vector<int>& v)
 
 Weitere Informationen finden Sie unter [generieren](../standard-library/algorithm-functions.md#generate)von.
 
-Im folgenden Codebeispiel wird die-Funktion aus dem vorherigen Beispiel verwendet, und es wird ein Beispiel eines Lambda-Ausdrucks C++ hinzugefügt, der den `generate_n`der Standard Bibliothek verwendet. Dieser Lambdaausdruck weist ein Element eines `vector`-Objekts der Summe der vorangehenden zwei Elemente zu. Das **änderbare** -Schlüsselwort wird verwendet, sodass der Text des Lambda-Ausdrucks seine Kopien der externen Variablen `x` und `y`ändern kann, die vom Lambda-Ausdruck als Wert erfasst werden. Da der Lambdaausdruck die originalen Variablen `x` und `y` als Wert erfasst, bleiben die Werte `1`, nachdem das Lambda ausgeführt wird.
+Im folgenden Codebeispiel wird die-Funktion aus dem vorherigen Beispiel verwendet, und es wird ein Beispiel eines Lambda-Ausdrucks hinzugefügt, der den C++-Standard Bibliotheks Algorithmus verwendet `generate_n` . Dieser Lambdaausdruck weist ein Element eines `vector`-Objekts der Summe der vorangehenden zwei Elemente zu. Das **`mutable`** -Schlüsselwort wird verwendet, sodass der Text des Lambda-Ausdrucks seine Kopien der externen Variablen und ändern kann `x` `y` , die vom Lambda-Ausdruck als Wert erfasst werden. Da der Lambdaausdruck die originalen Variablen `x` und `y` als Wert erfasst, bleiben die Werte `1`, nachdem das Lambda ausgeführt wird.
 
 ```cpp
 // compile with: /W4 /EHsc
@@ -322,9 +322,9 @@ vector v after 2nd call to fillVector(): 10 11 12 13 14 15 16 17 18
 
 Weitere Informationen finden Sie unter [generate_n](../standard-library/algorithm-functions.md#generate_n).
 
-## <a name="constexpr-lambda-expressions"></a>constexpr-Lambdaausdrücke
+## <a name="constexpr-lambda-expressions"></a>`constexpr`Lambda-Ausdrücke
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): ein Lambda-Ausdruck kann als `constexpr` deklariert oder in einem konstanten Ausdruck verwendet werden, wenn die Initialisierung jedes Datenmembers, den es erfasst oder einführt, innerhalb eines konstanten Ausdrucks zulässig ist.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) ): ein Lambda-Ausdruck kann als **`constexpr`** oder in einem konstanten Ausdruck verwendet werden, wenn die Initialisierung jedes Datenmembers, den es erfasst oder einführt, innerhalb eines konstanten Ausdrucks zulässig ist.
 
 ```cpp
     int y = 32;
@@ -340,7 +340,7 @@ Weitere Informationen finden Sie unter [generate_n](../standard-library/algorith
     }
 ```
 
-Ein Lambda wird implizit `constexpr`, wenn das Ergebnis die Anforderungen einer `constexpr`-Funktion erfüllt:
+Ein Lambda-Ausdruck ist implizit, **`constexpr`** wenn sein Ergebnis den Anforderungen einer **`constexpr`** Funktion entspricht:
 
 ```cpp
     auto answer = [](int n)
@@ -351,7 +351,7 @@ Ein Lambda wird implizit `constexpr`, wenn das Ergebnis die Anforderungen einer 
     constexpr int response = answer(10);
 ```
 
-Wenn ein Lambda implizit oder explizit `constexpr`ist, erzeugt die Konvertierung in einen Funktionszeiger eine `constexpr` Funktion:
+Wenn ein Lambda implizit oder explizit ist **`constexpr`** , erzeugt die Konvertierung in einen Funktionszeiger eine **`constexpr`** Funktion:
 
 ```cpp
     auto Increment = [](int n)
@@ -364,9 +364,9 @@ Wenn ein Lambda implizit oder explizit `constexpr`ist, erzeugt die Konvertierung
 
 ## <a name="microsoft-specific"></a>Microsoft-spezifisch
 
-Lambdas werden in den folgenden Common Language Runtime (CLR) verwalteten Entitäten nicht unterstützt: Verweis **Klasse**, Verweis **Struktur**, **Wert Klasse**oder **Wert Struktur**.
+Lambdas werden in den folgenden Common Language Runtime (CLR) verwalteten Entitäten nicht unterstützt: **`ref class`** , **`ref struct`** , **`value class`** oder **`value struct`** .
 
-Wenn Sie einen Microsoft-spezifischen Modifizierer, z. b. [__declspec](../cpp/declspec.md), verwenden, können Sie ihn direkt nach dem `parameter-declaration-clause`in einen Lambda Ausdruck einfügen – beispielsweise:
+Wenn Sie einen Microsoft-spezifischen Modifizierer, z. b. [`__declspec`](../cpp/declspec.md) , verwenden, können Sie ihn direkt nach dem – in einen Lambda Ausdruck einfügen `parameter-declaration-clause` :
 
 ```cpp
 auto Sqr = [](int t) __declspec(code_seg("PagedMem")) -> int { return t*t; };
@@ -379,6 +379,6 @@ Zusätzlich zu den Standard mäßigen Lambda-Funktionen von c++ 11 unterstützt 
 ## <a name="see-also"></a>Siehe auch
 
 [C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)<br/>
-[Funktionsobjekte in der C++-Standardbibliothek](../standard-library/function-objects-in-the-stl.md)<br/>
-[Funktionsaufruf](../cpp/function-call-cpp.md)<br/>
-[for_each](../standard-library/algorithm-functions.md#for_each)
+[Funktions Objekte in der C++-Standard Bibliothek](../standard-library/function-objects-in-the-stl.md)<br/>
+[Funktionsaufrufe](../cpp/function-call-cpp.md)<br/>
+[`for_each`](../standard-library/algorithm-functions.md#for_each)

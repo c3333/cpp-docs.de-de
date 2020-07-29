@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4062
 ms.assetid: 36d1c6ae-c917-4b08-bf30-2eb49ee94169
-ms.openlocfilehash: 79658afc31565b708cdbd8a88f49b887cdd10cf3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: efe021c9994e20f2630e31537bcc6099783b4308
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62401409"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220001"
 ---
 # <a name="compiler-warning-level-4-c4062"></a>Compilerwarnung (Stufe 4) C4062
 
-> Enumerator '*Bezeichner*"im Schalter der Enumeration'*Enumeration*" wird nicht verarbeitet
+> Enumerator '*Identifier*' in Switch of Enumeration '*Enumeration*' wird nicht verarbeitet
 
-Der Enumerator *Bezeichner* verfügt über kein zugeordnetes `case` Ereignishandler in einem `switch` -Anweisung, und es gibt keine `default` Bezeichnung, die abgefangen werden kann. Die fehlende Case-Anweisung ist möglicherweise ein Flüchtigkeitsfehler, und es ist ein potenzieller Fehler in Ihrem Code. Für eine verwandte Warnung für nicht verwendete Enumeratoren in `switch` -Anweisungen, die über eine `default` Groß-/Kleinschreibung, finden Sie unter [C4061](compiler-warning-level-4-c4061.md).
+Der enumeratorbezeichner weist keinen zugeordneten *identifier* `case` Handler in einer **`switch`** -Anweisung auf, und es gibt keine Bezeichnung, **`default`** die ihn abfangen kann. Der fehlende Fall ist möglicherweise eine Überwachung und ein potenzieller Fehler in Ihrem Code. Eine verwandte Warnung zu nicht verwendeten Enumeratoren in- **`switch`** Anweisungen, die einen **`default`** Fall aufweisen, finden Sie unter [C4061](compiler-warning-level-4-c4061.md).
 
-Diese Warnung ist standardmäßig deaktiviert. Weitere Informationen dazu, wie Sie Warnungen zu aktivieren, die standardmäßig deaktiviert sind, finden Sie unter [Compiler Warnungen, die standardmäßig deaktivierte](../../preprocessor/compiler-warnings-that-are-off-by-default.md).
+Diese Warnung ist standardmäßig deaktiviert. Weitere Informationen zum Aktivieren von Warnungen, die standardmäßig deaktiviert sind, finden Sie unter [standardmäßig](../../preprocessor/compiler-warnings-that-are-off-by-default.md)deaktivierte Compilerwarnungen.
 
 ## <a name="example"></a>Beispiel
 
@@ -43,6 +43,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Compilerwarnung (Ebene 4) C4061](compiler-warning-level-4-c4061.md)
+[Compilerwarnung (Stufe 4) C4061](compiler-warning-level-4-c4061.md)

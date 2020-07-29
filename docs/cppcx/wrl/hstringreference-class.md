@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::HStringReference::operator!= operator
 - Microsoft::WRL::Wrappers::HStringReference::operator< operator
 ms.assetid: 9bf823b1-17eb-4ac4-8c5d-27d27c7a4150
-ms.openlocfilehash: fd064f97081fad1a9df9de0865bb7c46ad5b4484
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 871696f4a970b1ef9d1f5d36d2e17184b93c9e8b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371420"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212981"
 ---
 # <a name="hstringreference-class"></a>HStringReference-Klasse
 
@@ -41,46 +41,46 @@ class HStringReference;
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Lebensdauer des Sicherungspuffers im neuen HSTRING wird nicht von der Windows-Runtime verwaltet. Der Aufrufer ordnet eine Quellzeichenfolge auf dem Stapelrahmen zu, um eine Heapzuweisung zu vermeiden und das Risiko eines Speicherverlusts auszuschließen. Außerdem muss der Aufrufer sicherstellen, dass die Quellzeichenfolge während der Lebensdauer des angefügten HSTRING unverändert bleibt. Weitere Informationen finden Sie unter [WindowsCreateStringReference-Funktion](/windows/win32/api/winstring/nf-winstring-windowscreatestringreference).
+Die Lebensdauer des Sicherungs Puffers in der neuen hstring wird nicht vom Windows-Runtime verwaltet. Der Aufrufer ordnet eine Quellzeichenfolge auf dem Stapelrahmen zu, um eine Heapzuweisung zu vermeiden und das Risiko eines Speicherverlusts auszuschließen. Außerdem muss der Aufrufer sicherstellen, dass die Quellzeichenfolge während der Lebensdauer des angefügten HSTRING unverändert bleibt. Weitere Informationen finden Sie unter [windowscreatestrauch ingreferenzierungsfunktion](/windows/win32/api/winstring/nf-winstring-windowscreatestringreference).
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                                    | BESCHREIBUNG
+name                                                    | BESCHREIBUNG
 ------------------------------------------------------- | -----------------------------------------------------------
-[HStringReference::HStringReference](#hstringreference) | Initialisiert eine neue Instanz der Klasse `HStringReference`.
+[Hstrauingreferenzierung:: hstrauingreferenzierung](#hstringreference) | Initialisiert eine neue Instanz der `HStringReference`-Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Member                              | BESCHREIBUNG
+Member                              | Beschreibung
 ----------------------------------- | ------------------------------------------------------------------
-[HStringReference::CopyTo](#copyto) | Kopiert das `HStringReference` aktuelle Objekt in ein HSTRING-Objekt.
-[HStringReference::Get](#get)       | Ruft den Wert des zugrunde liegenden HSTRING-Handles ab.
-[HStringReference::GetRawBuffer](#getrawbuffer) | Ruft einen Zeiger auf die zugrunde liegenden Zeichenfolgendaten ab.
+[HStringReference::CopyTo](#copyto) | Kopiert das aktuelle- `HStringReference` Objekt in ein hstring-Objekt.
+[Hstrauingreferenzierung:: Get](#get)       | Ruft den Wert des zugrunde liegenden HSTRING-Handles ab.
+[Hstrauingreferenzierung:: getrawbuffer](#getrawbuffer) | Ruft einen Zeiger auf die zugrunde liegenden Zeichen folgen Daten ab.
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 Name                                                  | BESCHREIBUNG
 ----------------------------------------------------- | ----------------------------------------------------------------------------------------------
-[HStringReference::operator=](#operator-assign)       | Verschiebt den `HStringReference` Wert eines `HStringReference` anderen Objekts auf das aktuelle Objekt.
-[HStringReference::operator==](#operator-equality)    | Gibt an, ob die zwei Parameter gleich sind.
-[HStringReference::operator!=](#operator-inequality)  | Gibt an, ob die zwei Parameter ungleich sind.
-[HStringReference::operator&lt;](#operator-less-than) | Gibt an, ob der erste Parameter kleiner als der zweite Parameter ist.
+[Hstrauingreferenzierung:: Operator =](#operator-assign)       | Verschiebt den Wert eines anderen- `HStringReference` Objekts in das aktuelle- `HStringReference` Objekt.
+[Hstrauingreferenzierung:: Operator = =](#operator-equality)    | Gibt an, ob die zwei Parameter gleich sind.
+[Hstrauingreferenzierung:: Operator! =](#operator-inequality)  | Gibt an, ob die zwei Parameter ungleich sind.
+[Hstrauingreferenzierungs::-Operator&lt;](#operator-less-than) | Gibt an, ob der erste Parameter kleiner als der zweite Parameter ist.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `HStringReference`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** corewrappers.h
+**Header:** corewrappers. h
 
-**Namespace:** Microsoft::WRL::Wrappers
+**Namespace:** Microsoft:: WRL:: Wrapper
 
-## <a name="hstringreferencecopyto"></a><a name="copyto"></a>HStringReference::CopyTo
+## <a name="hstringreferencecopyto"></a><a name="copyto"></a>Hstrauingreferenzierung:: CopyTo
 
-Kopiert das `HStringReference` aktuelle Objekt in ein HSTRING-Objekt.
+Kopiert das aktuelle- `HStringReference` Objekt in ein hstring-Objekt.
 
 ```cpp
 HRESULT CopyTo(
@@ -90,14 +90,14 @@ HRESULT CopyTo(
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
+*str*<br/>
 Das HSTRING, das die Kopie erhält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft die [WindowsDuplicateString-Funktion](/windows/win32/api/winstring/nf-winstring-windowsduplicatestring) auf.
+Diese Methode ruft die [windowsduplicatestring](/windows/win32/api/winstring/nf-winstring-windowsduplicatestring) -Funktion auf.
 
-## <a name="hstringreferenceget"></a><a name="get"></a>HStringReference::Get
+## <a name="hstringreferenceget"></a><a name="get"></a>Hstrauingreferenzierung:: Get
 
 Ruft den Wert des zugrunde liegenden HSTRING-Handles ab.
 
@@ -107,11 +107,11 @@ HSTRING Get() const throw()
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Wert des zugrunde liegenden HSTRING-Handles.
+Der Wert des zugrunde liegenden hstring-Handles.
 
-## <a name="hstringreferencegetrawbuffer"></a><a name="getrawbuffer"></a>HStringReference::GetRawBuffer
+## <a name="hstringreferencegetrawbuffer"></a><a name="getrawbuffer"></a>Hstrauingreferenzierung:: getrawbuffer
 
-Ruft einen Zeiger auf die zugrunde liegenden Zeichenfolgendaten ab.
+Ruft einen Zeiger auf die zugrunde liegenden Zeichen folgen Daten ab.
 
 ```cpp
 const wchar_t* GetRawBuffer(unsigned int* length) const;
@@ -119,15 +119,15 @@ const wchar_t* GetRawBuffer(unsigned int* length) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Länge* Zeiger auf eine **int-Variable,** die die Länge der Daten empfängt.
+*Länge* Ein Zeiger auf eine **`int`** Variable, die die Länge der Daten empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **const-Zeiger** auf die zugrunde liegenden Zeichenfolgendaten.
+Ein **`const`** Zeiger auf die zugrunde liegenden Zeichen folgen Daten.
 
-## <a name="hstringreferencehstringreference"></a><a name="hstringreference"></a>HStringReference::HStringReference
+## <a name="hstringreferencehstringreference"></a><a name="hstringreference"></a>Hstrauingreferenzierung:: hstrauingreferenzierung
 
-Initialisiert eine neue Instanz der Klasse `HStringReference`.
+Initialisiert eine neue Instanz der `HStringReference`-Klasse.
 
 ```cpp
 template<unsigned int sizeDest>
@@ -142,29 +142,29 @@ HStringReference(HStringReference&& other) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*sizeDest*<br/>
-Ein Vorlagenparameter, der die Größe `HStringReference` des Zielpuffers angibt.
+*sizedest*<br/>
+Ein Vorlagen Parameter, der die Größe des Ziel `HStringReference` Puffers angibt.
 
-*Str*<br/>
-Ein Verweis auf eine Zeichenfolge mit großen Zeichen.
+*str*<br/>
+Ein Verweis auf eine Zeichenfolge mit breit Zeichen.
 
-*Len*<br/>
-Die maximale Länge *str* des str-Parameterpuffers, der in diesem Vorgang verwendet werden soll. Wenn der *parameter len* nicht angegeben ist, wird der gesamte *str-Parameter* verwendet. Wenn *len* größer als *sizeDest*ist, wird *len* auf *sizeDest*-1 gesetzt.
+*Nest*<br/>
+Die maximale Länge des *Str* -Parameter Puffers, der in diesem Vorgang verwendet werden soll. Wenn der *len* -Parameter nicht angegeben wird, wird der gesamte *Str* -Parameter verwendet. Wenn *len* größer als *sizedest*ist, wird *len* auf *sizedest*-1 festgelegt.
 
-*Andere*<br/>
-Ein `HStringReference` weiteres Objekt.
+*außer*<br/>
+Ein anderes- `HStringReference` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor initialisiert `HStringReference` ein neues Objekt, das die gleiche Größe wie der Parameter *str*hat.
+Der erste Konstruktor initialisiert ein neues- `HStringReference` Objekt, das die gleiche Größe hat wie der Parameter *Str*.
 
-Der zweite Konstruktor initialisiert `HStringReference` ein neues Objekt, das die Größe durch Parameter *len*spezifeid .
+Der zweite Konstruktor initialisiert ein neues- `HStringReference` Objekt, das die Größe des Parameters " *len*" angibt.
 
-Der dritte Konstruktor initialisiert `HStringReference` ein neues Objekt auf den Wert des *anderen* Parameters und zerstört dann den *anderen* Parameter.
+Der dritte Konstruktor initialisiert ein neues `HStringReference` -Objekt mit dem Wert des *anderen* Parameters und zerstört dann den *anderen* Parameter.
 
-## <a name="hstringreferenceoperator"></a><a name="operator-assign"></a>HStringReference::operator=
+## <a name="hstringreferenceoperator"></a><a name="operator-assign"></a>Hstrauingreferenzierung:: Operator =
 
-Verschiebt den `HStringReference` Wert eines `HStringReference` anderen Objekts auf das aktuelle Objekt.
+Verschiebt den Wert eines anderen- `HStringReference` Objekts in das aktuelle- `HStringReference` Objekt.
 
 ```cpp
 HStringReference& operator=(HStringReference&& other) throw()
@@ -172,14 +172,14 @@ HStringReference& operator=(HStringReference&& other) throw()
 
 ### <a name="parameters"></a>Parameter
 
-*Andere*<br/>
+*außer*<br/>
 Ein vorhandenes `HStringReference`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Wert des vorhandenen *anderen* Objekts `HStringReference` wird in das aktuelle Objekt kopiert, und dann wird das *andere* Objekt zerstört.
+Der Wert des vorhandenen *anderen* Objekts wird in das aktuelle Objekt kopiert `HStringReference` , und dann wird das *andere* Objekt zerstört.
 
-## <a name="hstringreferenceoperator"></a><a name="operator-equality"></a>HStringReference::operator==
+## <a name="hstringreferenceoperator"></a><a name="operator-equality"></a>Hstrauingreferenzierung:: Operator = =
 
 Gibt an, ob die zwei Parameter gleich sind.
 
@@ -199,17 +199,17 @@ inline bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Der erste zu vergleichende Parameter. *lhs* kann `HStringReference` ein Objekt oder ein HSTRING-Handle sein.
+*LHS*<br/>
+Der erste zu vergleichende Parameter. *LHS* können ein `HStringReference` Objekt oder ein hstring-Handle sein.
 
 *rhs*<br/>
-Der zweite zu vergleichende Parameter.  *können* ein `HStringReference` Objekt oder ein HSTRING-Handle sein.
+Der zweite Parameter, der verglichen werden soll.  bei *RHS* kann es sich um ein `HStringReference` Objekt oder ein hstring-handle handeln.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn die *Parameter lhs* und *rhs* gleich sind; andernfalls **false**.
+**`true`**, wenn die Parameter *LHS* und *RHS* gleich sind. andernfalls **`false`** .
 
-## <a name="hstringreferenceoperator"></a><a name="operator-inequality"></a>HStringReference::operator!=
+## <a name="hstringreferenceoperator"></a><a name="operator-inequality"></a>Hstrauingreferenzierung:: Operator! =
 
 Gibt an, ob die zwei Parameter ungleich sind.
 
@@ -229,17 +229,17 @@ inline bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Der erste zu vergleichende Parameter. *lhs* kann `HStringReference` ein Objekt oder ein HSTRING-Handle sein.
+*LHS*<br/>
+Der erste zu vergleichende Parameter. *LHS* können ein `HStringReference` Objekt oder ein hstring-Handle sein.
 
 *rhs*<br/>
-Der zweite zu vergleichende Parameter.  *können* ein `HStringReference` Objekt oder ein HSTRING-Handle sein.
+Der zweite Parameter, der verglichen werden soll.  bei *RHS* kann es sich um ein `HStringReference` Objekt oder ein hstring-handle handeln.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn die *Parameter lhs* und *rhs* nicht gleich sind; andernfalls **false**.
+**`true`**, wenn die Parameter *LHS* und *RHS* nicht gleich sind. andernfalls **`false`** .
 
-## <a name="hstringreferenceoperatorlt"></a><a name="operator-less-than"></a>HStringReference::operator&lt;
+## <a name="hstringreferenceoperatorlt"></a><a name="operator-less-than"></a>Hstrauingreferenzierungs::-Operator&lt;
 
 Gibt an, ob der erste Parameter kleiner als der zweite Parameter ist.
 
@@ -251,12 +251,12 @@ inline bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Lhs*<br/>
-Der erste zu vergleichende Parameter. *lhs* kann ein Verweis `HStringReference`auf eine sein.
+*LHS*<br/>
+Der erste zu vergleichende Parameter. *LHS* können ein Verweis auf einen sein `HStringReference` .
 
 *rhs*<br/>
-Der zweite zu vergleichende Parameter.  *rhs* kann ein Verweis `HStringReference`auf eine sein.
+Der zweite Parameter, der verglichen werden soll.  bei *RHS* kann es sich um einen Verweis auf einen handeln `HStringReference` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn der *lhs-Parameter* kleiner als der *rhs-Parameter* ist; andernfalls **false**.
+**`true`** Wenn der *LHS* -Parameter kleiner als der *RHS* -Parameter ist, andernfalls **`false`** .

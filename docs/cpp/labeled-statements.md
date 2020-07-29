@@ -5,12 +5,12 @@ helpviewer_keywords:
 - labeled statement
 - statements, labeled
 ms.assetid: 456a26d5-0fcc-4d1a-b71f-fa9ff3d73b91
-ms.openlocfilehash: d971a0e9864aeada1db5f004ef70577512e78c76
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a10d071e46c79f49abf7e3eba498fae0487ccdc7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179691"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213358"
 ---
 # <a name="labeled-statements"></a>Anweisungen mit Bezeichnung
 
@@ -54,9 +54,9 @@ int main() {
 }
 ```
 
-**Die GoTo-Anweisung**
+**Die goto-Anweisung**
 
-Das Aussehen einer *bezeichnerbezeichnung* im Quell Programm deklariert eine Bezeichnung. Nur eine [goto](../cpp/goto-statement-cpp.md) -Anweisung kann die Steuerung an eine *bezeichnerbezeichnung* übertragen. Das folgende Code Fragment veranschaulicht die Verwendung der **goto** -Anweisung und eine *bezeichnerbezeichnung* :
+Das Aussehen einer *bezeichnerbezeichnung* im Quell Programm deklariert eine Bezeichnung. Nur eine [goto](../cpp/goto-statement-cpp.md) -Anweisung kann die Steuerung an eine *bezeichnerbezeichnung* übertragen. Das folgende Code Fragment veranschaulicht die Verwendung der **`goto`** -Anweisung und eine *bezeichnerbezeichnung* :
 
 Eine Bezeichnung kann nicht allein stehen, sondern muss immer an eine Anweisung angefügt werden. Wenn eine Bezeichnung allein benötigt wird, platzieren Sie nach ihr eine NULL-Anweisung.
 
@@ -79,9 +79,9 @@ int main() {
 //Output: At Test2 label.
 ```
 
-**Die Case-Anweisung**
+**Die case-Anweisung**
 
-Bezeichnungen, die nach dem **Case** -Schlüsselwort angezeigt werden, können nicht auch außerhalb einer **Switch** -Anweisung vorkommen. (Diese Einschränkung gilt auch für das **default** -Schlüsselwort.) Das folgende Code Fragment zeigt die korrekte Verwendung von **Case** -Bezeichnungen:
+Bezeichnungen, die nach dem-Schlüsselwort angezeigt werden, **`case`** können nicht auch außerhalb einer- **`switch`** Anweisung vorkommen (Diese Einschränkung gilt auch für das- **`default`** Schlüsselwort.) Das folgende Code Fragment zeigt die korrekte Verwendung von **`case`** Bezeichnungen:
 
 ```cpp
 // Sample Microsoft Windows message processing loop.
@@ -111,7 +111,7 @@ switch( msg )
 
 ## <a name="labels-in-the-case-statement"></a>Bezeichnungen in der case-Anweisung
 
-Bezeichnungen, die nach dem **Case** -Schlüsselwort angezeigt werden, können nicht auch außerhalb einer **Switch** -Anweisung vorkommen. (Diese Einschränkung gilt auch für das **default** -Schlüsselwort.) Das folgende Code Fragment zeigt die korrekte Verwendung von **Case** -Bezeichnungen:
+Bezeichnungen, die nach dem-Schlüsselwort angezeigt werden, **`case`** können nicht auch außerhalb einer- **`switch`** Anweisung vorkommen (Diese Einschränkung gilt auch für das- **`default`** Schlüsselwort.) Das folgende Code Fragment zeigt die korrekte Verwendung von **`case`** Bezeichnungen:
 
 ```cpp
 // Sample Microsoft Windows message processing loop.
@@ -156,7 +156,7 @@ switch( msg )
 
 ## <a name="labels-in-the-goto-statement"></a>Bezeichnungen in der goto-Anweisung
 
-Das Aussehen einer *bezeichnerbezeichnung* im Quell Programm deklariert eine Bezeichnung. Nur eine [goto](../cpp/goto-statement-cpp.md) -Anweisung kann die Steuerung an eine *bezeichnerbezeichnung* übertragen. Das folgende Code Fragment veranschaulicht die Verwendung der **goto** -Anweisung und eine *bezeichnerbezeichnung* :
+Das Aussehen einer *bezeichnerbezeichnung* im Quell Programm deklariert eine Bezeichnung. Nur eine [goto](../cpp/goto-statement-cpp.md) -Anweisung kann die Steuerung an eine *bezeichnerbezeichnung* übertragen. Das folgende Code Fragment veranschaulicht die Verwendung der **`goto`** -Anweisung und eine *bezeichnerbezeichnung* :
 
 Eine Bezeichnung kann nicht allein stehen, sondern muss immer an eine Anweisung angefügt werden. Wenn eine Bezeichnung allein benötigt wird, platzieren Sie nach ihr eine NULL-Anweisung.
 
@@ -181,4 +181,4 @@ int main() {
 ## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über C++-Anweisungen](../cpp/overview-of-cpp-statements.md)<br/>
-[switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)
+[Switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)

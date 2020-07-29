@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CFileException [MFC], m_lOsError
 - CFileException [MFC], m_strFileName
 ms.assetid: f6491bb9-bfbc-42fd-a952-b33f9b62323f
-ms.openlocfilehash: 85ff8d77bda30bcf0b107f733098d07c4fd80283
-ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
+ms.openlocfilehash: 6d3102cfd41d68458332025cbf3410e3f169523b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85813521"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212448"
 ---
 # <a name="cfileexception-class"></a>CFileException-Klasse
 
@@ -45,7 +45,7 @@ class CFileException : public CException
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFileException:: CFileException](#cfileexception)|Erstellt ein `CFileException`-Objekt.|
 
@@ -61,13 +61,13 @@ class CFileException : public CException
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|name|BESCHREIBUNG|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFileException:: m_cause](#m_cause)|Enthält portablen Code, der der Ausnahme Ursache entspricht.|
 |[CFileException:: m_lOsError](#m_loserror)|Enthält die zugehörige Betriebssystem-Fehlernummer.|
 |[CFileException:: m_strFileName](#m_strfilename)|Enthält den Namen der Datei für diese Ausnahme.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die `CFileException` -Klasse enthält öffentliche Datenmember, die den portablen Ursachen Code und die betriebssystemspezifische Fehlernummer enthalten. Die-Klasse stellt auch statische Member-Funktionen zum Auslösen von Datei Ausnahmen und zum Zurückgeben von Ursachen Codes für Betriebssystem Fehler und C-Laufzeitfehler bereit.
 
@@ -81,7 +81,7 @@ Die `CFileException` -Klasse enthält öffentliche Datenmember, die den portable
 
 `CFileException`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** AFX. h
 
@@ -107,7 +107,7 @@ Ein Betriebssystem spezifischer Grund für die Ausnahme, falls verfügbar. Der *
 *lpszarchivename*<br/>
 Verweist auf eine Zeichenfolge, die den Namen des Objekts enthält, `CFile` das die Ausnahme verursacht hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie diesen Konstruktor nicht direkt, sondern nennen Sie stattdessen die globale Funktion [afxthrowfileexception](exception-processing.md#afxthrowfileexception).
 
@@ -131,7 +131,7 @@ Ein ganzzahliger Fehlercode, wie er in der Lauf Zeit Datei "errno" definiert ist
 
 Enumerationswert, der einem angegebenen Lauf Zeit Bibliotheks-Fehlerwert entspricht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Liste der möglichen Enumerationswerte finden Sie unter [CFileException:: m_cause](#m_cause) .
 
@@ -165,7 +165,7 @@ in Die maximale Anzahl von Zeichen, die im angegebenen Puffer enthalten sein kö
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der angegebene Puffer zu klein ist, wird die Fehlermeldung abgeschnitten.
 
@@ -183,9 +183,9 @@ Enthält Werte, die von einem `CFileException`-Enumerationstyp definiert wurden.
 int m_cause;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Datenmember ist eine öffentliche Variable vom Typ **int**. Die Enumeratoren und ihre Bedeutungen lauten wie folgt:
+Dieser Datenmember ist eine öffentliche Variable vom Typ **`int`** . Die Enumeratoren und ihre Bedeutungen lauten wie folgt:
 
 | Fehler | Wert und Bedeutung |
 |--|--|
@@ -223,7 +223,7 @@ Enthält den Fehlercode des Betriebssystems für diese Ausnahme.
 LONG m_lOsError;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Liste der Fehlercodes finden Sie in der technischen Anleitung Ihres Betriebssystems. Dieser Datenmember ist eine öffentliche Variable vom Typ Long.
 
@@ -299,5 +299,5 @@ Ein Zeiger auf die Zeichenfolge, die den Namen der Datei enthält, die die Ausna
 ## <a name="see-also"></a>Weitere Informationen
 
 [CException-Klasse](../../mfc/reference/cexception-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[Ausnahmeverarbeitung](../../mfc/reference/exception-processing.md)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
+[Ausnahme Verarbeitung](../../mfc/reference/exception-processing.md)

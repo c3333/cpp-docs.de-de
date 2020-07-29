@@ -7,21 +7,21 @@ helpviewer_keywords:
 - class types [C++], unions as
 - union keyword [C++]
 ms.assetid: 25c4e219-fcbb-4b7b-9b64-83f3252a92ca
-ms.openlocfilehash: 74e215204ef334bb67e8f044622d35f4e76fe401
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5010512b2c5f19a236d2f44bd3acf00097a3e168
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187959"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213137"
 ---
 # <a name="unions"></a>Unions
 
 > [!NOTE]
 > In c++ 17 und höher ist die **Std:: Variant** -Klasse eine typsichere Alternative für Unions.
 
-Eine **Union** ist ein benutzerdefinierter Typ, in dem alle Member denselben Speicherort verwenden. Das heißt, eine Union kann niemals mehr als ein Objekt aus seiner Liste der Member enthalten. Es heißt zudem, unabhängig davon, über wie viele Member eine Union verfügt, sie immer nur so viel Arbeitsspeicher verwendet, um das größte Member zu speichern.
+Ein **`union`** ist ein benutzerdefinierter Typ, in dem alle Member denselben Speicherort verwenden. Das heißt, eine Union kann niemals mehr als ein Objekt aus seiner Liste der Member enthalten. Es heißt zudem, unabhängig davon, über wie viele Member eine Union verfügt, sie immer nur so viel Arbeitsspeicher verwendet, um das größte Member zu speichern.
 
-Unions können für das Einsparen von Arbeitsspeicher hilfreich sein, wenn Sie über viele Objekte bzw. begrenzten Arbeitsspeicher verfügen. Für ihre Verwendung ist jedoch besondere Vorsicht geboten, da Sie dafür verantwortlich sind, dass Sie immer auf das letzte Member zugreifen, in das geschrieben wurde. Wenn Membertypen über einen nicht trivialen Konstruktor verfügen, müssen Sie zusätzlichen Code schreiben, um dieses Member explizit zu erstellen und zu zerstören. Ziehen Sie vor dem Verwenden einer Union in Erwägung, ob das zu lösende Problem nicht durch die Verwendung einer Basisklasse und abgeleiteten Klasse ausgedrückt werden könnte.
+Unions können für das Einsparen von Arbeitsspeicher hilfreich sein, wenn Sie über viele Objekte bzw. begrenzten Arbeitsspeicher verfügen. Für ihre Verwendung ist jedoch besondere Vorsicht geboten, da Sie dafür verantwortlich sind, dass Sie immer auf das letzte Member zugreifen, in das geschrieben wurde. Wenn Membertypen über einen nicht trivialen Konstruktor verfügen, müssen Sie zusätzlichen Code schreiben, um dieses Member explizit zu erstellen und zu zerstören. Ziehen Sie vor dem Verwenden einer Union in Erwägung, ob das zu lösende Problem nicht durch die Verwendung einer Basisklasse und abgeleiteten Klasse ausgedrückt werden könnte. 
 
 ## <a name="syntax"></a>Syntax
 
@@ -41,7 +41,7 @@ Elemente, die die Union enthalten kann. Siehe Hinweise.
 
 ## <a name="declaring-a-union"></a>Deklarieren einer Union
 
-Beginnen Sie mit der Deklaration einer Union mit dem **Union** -Schlüsselwort, und schließen Sie die Elementliste in geschweiften Klammern ein:
+Beginnen Sie mit der Deklaration einer Union mit dem **`union`** Schlüsselwort, und schließen Sie die Elementliste in geschweiften Klammern ein:
 
 ```cpp
 // declaring_a_union.cpp
@@ -633,7 +633,7 @@ int main()
 
 Die `NumericType`-Union ist im Arbeitsspeicher angeordnet (konzeptionell), wie in der folgenden Abbildung dargestellt.
 
-![Speicherung von Daten in einer Union für einen numerischen Typ](../cpp/media/vc38ul1.png "Speicherung von Daten in einer numerictype-Union") <br/>
+![Speicherung von Daten in einer Union numerischer Typen](../cpp/media/vc38ul1.png "Speicherung von Daten in einer numerictype-Union") <br/>
 Speicherung von Daten in einer Union numerischer Typen
 
 ## <a name="anonymous-unions"></a><a name="anonymous_unions"></a>Anonyme Unions
@@ -648,9 +648,9 @@ Die in einer anonymen Union deklarierten Namen werden, wie Nichtmembervariablen,
 
 Zusätzlich zu den Einschränkungen für benannte Unions unterliegen anonyme Unions den folgenden zusätzlichen Einschränkungen:
 
-- Sie müssen auch als **statisch** deklariert werden, wenn Sie im Datei-oder Namespace-Gültigkeitsbereich deklariert werden.
+- Sie müssen auch als deklariert werden, **`static`** Wenn Sie im Datei-oder Namespace-Gültigkeitsbereich deklariert werden.
 
-- Sie können nur **öffentliche** Member haben. **private** und **geschützte** Member in anonymen Unions generieren Fehler.
+- Sie können nur Member enthalten **`public`** , **`private`** und Member **`protected`** in anonymen Unions generieren Fehler.
 
 - Sie können keine Memberfunktionen aufweisen.
 

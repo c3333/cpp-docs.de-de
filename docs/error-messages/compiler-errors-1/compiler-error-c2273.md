@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C2273
 ms.assetid: 3c682c66-97bf-4a23-a22c-d9a26a92bf95
-ms.openlocfilehash: 9cd46f7a8a0762fcae2bdec15b9b4be6384adb25
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f5780c299eb4da03ece3611ee55062ee7ebcdaae
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758683"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212786"
 ---
 # <a name="compiler-error-c2273"></a>Compilerfehler C2273
 
 "Typ": unzulässig als Rechte Seite des Operators "->".
 
-Ein Typ wird als rechter Operand eines `->` Operators angezeigt.
+Ein Typ wird als rechter Operand eines Operators angezeigt `->` .
 
-Dieser Fehler kann verursacht werden, wenn versucht wird, auf eine benutzerdefinierte Typkonvertierung zuzugreifen. Verwenden Sie das Schlüsselwort `operator` zwischen-> und `type`.
+Dieser Fehler kann verursacht werden, wenn versucht wird, auf eine benutzerdefinierte Typkonvertierung zuzugreifen. Verwenden Sie das **`operator`** -Schlüsselwort zwischen-> und `type` .
 
 Im folgenden Beispiel wird C2273 generiert:
 

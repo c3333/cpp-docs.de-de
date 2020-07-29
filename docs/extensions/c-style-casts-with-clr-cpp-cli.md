@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - C-style casts and /clr
 ms.assetid: d2a4401a-156a-4da9-8d12-923743e26913
-ms.openlocfilehash: 2b7e492c62047e3b38224637f842d8a7fcbae84f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: daaf92e36550c5479903dec4869b1cb116c0a65a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172593"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219793"
 ---
 # <a name="c-style-casts-with-clr-ccli"></a>C-stilartige Umwandlungen mit /clr (C++/CLI)
 
@@ -34,7 +34,7 @@ Wenn keine der oben aufgeführten Umwandlungen gültig ist und der Typ des Ausdr
 
 Eine C-stilartige Umwandlung wird nicht empfohlen. Verwenden Sie beim Kompilieren mit [/clr (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md)[safe_cast](safe-cast-cpp-component-extensions.md).
 
-Das folgende Beispiel zeigt eine C-stilartige Umwandlung, die zu **const_cast** zuordnet.
+Das folgende Beispiel zeigt eine Umwandlung im C-Stil, die einem zugeordnet ist **`const_cast`** .
 
 ```cpp
 // cstyle_casts_1.cpp
@@ -60,7 +60,7 @@ int main() {
 }
 ```
 
-Das folgende Beispiel zeigt eine C-stilartige Umwandlung, die zu **safe_cast** plus **const_cast** zuordnet.
+Das folgende Beispiel zeigt eine Umwandlung im C-Stil, die einem **safe_cast** Plus zugeordnet wird **`const_cast`** .
 
 ```cpp
 // cstyle_casts_3.cpp
@@ -81,7 +81,7 @@ int main() {
 }
 ```
 
-Das folgende Beispiel zeigt eine C-stilartige Umwandlung, die zu **static_cast** zuordnet.
+Das folgende Beispiel zeigt eine Umwandlung im C-Stil, die einem zugeordnet ist **`static_cast`** .
 
 ```cpp
 // cstyle_casts_4.cpp
@@ -102,7 +102,7 @@ int main() {
 }
 ```
 
-Das folgende Beispiel zeigt eine C-stilartige Umwandlung, die zu **static_cast** plus **const_cast** zuordnet.
+Das folgende Beispiel zeigt eine Umwandlung im C-Stil, die einem Pluszeichen zugeordnet ist **`static_cast`** **`const_cast`** .
 
 ```cpp
 // cstyle_casts_5.cpp
@@ -162,4 +162,4 @@ Compileroption: `/clr`
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

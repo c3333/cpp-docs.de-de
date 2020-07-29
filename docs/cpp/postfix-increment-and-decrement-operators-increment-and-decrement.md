@@ -14,12 +14,12 @@ helpviewer_keywords:
 - operators [C++], postfix
 - decrement operators [C++]
 ms.assetid: 0204d5c8-51b0-4108-b8a1-074c5754d89c
-ms.openlocfilehash: 44b1031376abd6c50c3b9706089042995994e495
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8c3eeb47ec81f4073452c17f40eb2fec4911989f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80177676"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213280"
 ---
 # <a name="postfix-increment-and-decrement-operators--and---"></a>Inkrementierungs- und Dekrementierungsoperatoren in Postfixnotation: ++ und --
 
@@ -38,17 +38,17 @@ C++ bietet Präfix- und Postfixinkrement- und Dekrementoperatoren. Dieser Abschn
 i++;
 ```
 
-Wenn Sie den Postfix-Inkrementoperator ( **++** ) anwenden, wird der Wert des Operanden um eine Einheit des entsprechenden Typs vergrößert. Ebenso hat die Auswirkung der Anwendung des Postfix-Dekrementoperators ( **--** ) den Wert, dass der Wert des Operanden um eine Einheit des entsprechenden Typs verringert wird.
+Der Effekt der Anwendung des Postfix Inkrement-Operators ( **++** ) besteht darin, dass der Wert des Operanden um eine Einheit des entsprechenden Typs erhöht wird. Ebenso besteht die Auswirkung der Anwendung des Postfix-Dekrementoperators ( **--** ) darin, dass der Wert des Operanden um eine Einheit des entsprechenden Typs verringert wird.
 
 Beachten Sie, dass ein postfix-Inkrement-oder dekrementausdruck zu dem Wert des Ausdrucks *vor* der Anwendung des jeweiligen Operators ausgewertet wird. Der Inkrement-oder Dekrement-Vorgang tritt auf, *nachdem* der Operand ausgewertet wurde. Dieses Problem tritt nur auf, wenn der Postfix-Inkrement- oder Postfix-Dekrementvorgang im Kontext eines umfassenderen Ausdrucks stattfindet.
 
 Wenn ein Postfix-Operator auf ein Funktionsargument angewendet wird, ist für den Wert des Arguments nicht gewährleistet, dass er vor der Übergabe an die Funktion inkrementiert oder dekrementiert wird.  Weitere Informationen finden Sie in Abschnitt 1.9.17 im C++-Standard.
 
-Wenn Sie den Postfix-Inkrementoperator auf einen Zeiger auf ein Array von Objekten vom Typ **Long** anwenden, werden der internen Darstellung des Zeigers tatsächlich vier hinzugefügt. Dieses Verhalten bewirkt, dass der Zeiger, der zuvor auf das *n*-te Element des Arrays verwiesen hat, auf das (*n*+ 1) th-Element verweist.
+Durch Anwenden des Postfix-Inkrementoperators auf einen Zeiger auf ein Array von Objekten vom Typ werden der **`long`** internen Darstellung des Zeigers tatsächlich vier hinzugefügt. Dieses Verhalten bewirkt, dass der Zeiger, der zuvor auf das *n*-te Element des Arrays verwiesen hat, auf das (*n*+ 1) th-Element verweist.
 
-Die Operanden für postfix Inkrement-und postfix-Dekrementoperatoren müssen änderbar (nicht **konstant**) l-Werte des arithmetischen Typs oder Zeiger Typs sein. Der Ergebnistyp entspricht dem des *Postfix-Expression*, aber es handelt sich nicht mehr um einen l-Wert.
+Die Operanden für postfix Inkrement-und postfix-Dekrementoperatoren müssen änderbar (not **`const`** ) l-Werte des arithmetischen Typs oder Zeiger Typs sein. Der Ergebnistyp entspricht dem des *Postfix-Expression*, aber es handelt sich nicht mehr um einen l-Wert.
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): der Operand eines Postfix Inkrement-oder Dekrementoperators ist möglicherweise nicht vom Typ **bool**.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): der Operand eines Postfix Inkrement-oder Dekrementoperators ist möglicherweise nicht vom Typ **`bool`** .
 
 Der folgende Code veranschaulicht den Postfixinkrement-Operator:
 
@@ -75,6 +75,6 @@ for( myCompass = North; myCompass != West; myCompass++ ) // Error
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Postfixausdrücke](../cpp/postfix-expressions.md)<br/>
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
-[C - Inkrementierungs- und Dekrementierungsoperatoren in Postfixnotation](../c-language/c-postfix-increment-and-decrement-operators.md)
+[Postfix Ausdrücke](../cpp/postfix-expressions.md)<br/>
+[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[C postfix Inkrement-und Dekrementoperatoren](../c-language/c-postfix-increment-and-decrement-operators.md)

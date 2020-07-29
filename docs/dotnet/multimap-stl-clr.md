@@ -97,26 +97,26 @@ helpviewer_keywords:
 - operator> member [STL/CLR]
 - operator>= member [STL/CLR]
 ms.assetid: 3dfe329d-a078-462a-b050-7999ce6110ad
-ms.openlocfilehash: 5175aba55a61cb54bbb5b941bb9b78f06a1b4b25
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6a2491b5c9e3c95a805d69265caf3267fd1e9c8c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80208513"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212929"
 ---
 # <a name="multimap-stlclr"></a>multimap (STL/CLR)
 
-Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die bidirektionalen Zugriff hat. Sie verwenden den Container `multimap`, um eine Sequenz von Elementen als (fast) ausgeglichene geordnete Struktur von Knoten zu verwalten, von denen jeweils ein Element gespeichert wird. Ein Element besteht aus einem Schlüssel, für die Reihenfolge der Sequenz und einem zugeordneten Wert, der für die Fahrt verläuft.
+Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die bidirektionalen Zugriff hat. Sie verwenden den Container `multimap` zum Verwalten einer Sequenz von Elementen als (fast) ausgeglichene geordnete Struktur von Knoten, die jeweils ein Element speichern. Ein Element besteht aus einem Schlüssel, für die Reihenfolge der Sequenz und einem zugeordneten Wert, der für die Fahrt verläuft.
 
-In der folgenden Beschreibung ist `GValue` identisch mit folgendem:
+In der Beschreibung unten `GValue` ist identisch mit folgendem:
 
 `Microsoft::VisualC::StlClr::GenericPair<GKey, GMapped>`
 
 Dabei gilt:
 
-`GKey` ist identisch mit *Key* , es sei denn, der letztere ist ein Verweistyp. in diesem Fall ist es `Key^`
+`GKey`ist identisch mit *Key* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es`Key^`
 
-`GMapped` ist identisch mit dem zugeordneten, es *sei denn,* der letztere ist ein Ref-Typ. in diesem Fall ist es `Mapped^`
+`GMapped`ist identisch mit dem zugeordneten, es *sei denn,* der letztere ist ein Ref-Typ. in diesem Fall ist es`Mapped^`
 
 ## <a name="syntax"></a>Syntax
 
@@ -140,18 +140,18 @@ template<typename Key,
 *Schlüssel*<br/>
 Der Typ der Schlüsselkomponente eines Elements in der kontrollierten Sequenz.
 
-*Grafi*<br/>
+*Mapped*<br/>
 Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequenz.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<cliext/Map >
+**Header:**\<cliext/map>
 
 **Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |[multimap::const_iterator (STL/CLR)](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
 |[multimap::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
@@ -197,12 +197,12 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 |Operator|BESCHREIBUNG|
 |--------------|-----------------|
 |[multimap::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
-|[operator!= (multimap) (STL/CLR)](#op_neq)|Bestimmt, ob ein `multimap` Objekt nicht gleich einem anderen `multimap` Objekt ist.|
-|[operator< (multimap) (STL/CLR)](#op_lt)|Bestimmt, ob ein `multimap` Objekt kleiner als ein anderes `multimap`-Objekt ist.|
-|[operator<= (multimap) (STL/CLR)](#op_lteq)|Bestimmt, ob ein `multimap`-Objekt kleiner als oder gleich einem anderen `multimap`-Objekt ist.|
-|[operator== (multimap) (STL/CLR)](#op_eq)|Bestimmt, ob ein `multimap` Objekt gleich einem anderen `multimap`-Objekt ist.|
-|[operator> (multimap) (STL/CLR)](#op_gt)|Bestimmt, ob ein `multimap` Objekt größer als ein anderes `multimap`-Objekt ist.|
-|[operator>= (multimap) (STL/CLR)](#op_gteq)|Bestimmt, ob ein `multimap` Objekt größer als oder gleich einem anderen `multimap` Objekt ist.|
+|[operator!= (multimap) (STL/CLR)](#op_neq)|Bestimmt, ob ein-Objekt ungleich einem `multimap` anderen `multimap` Objekt ist.|
+|[Operator< (Multimap) (STL/CLR)](#op_lt)|Bestimmt, ob ein- `multimap` Objekt kleiner als ein anderes- `multimap` Objekt ist.|
+|[Operator<= (Multimap) (STL/CLR)](#op_lteq)|Bestimmt, ob ein- `multimap` Objekt kleiner als oder gleich einem anderen- `multimap` Objekt ist.|
+|[Operator = = (Multimap) (STL/CLR)](#op_eq)|Bestimmt, ob ein- `multimap` Objekt gleich einem anderen- `multimap` Objekt ist.|
+|[Operator> (Multimap) (STL/CLR)](#op_gt)|Bestimmt, ob ein- `multimap` Objekt größer als ein anderes- `multimap` Objekt ist.|
+|[Operator>= (Multimap) (STL/CLR)](#op_gteq)|Bestimmt, ob ein- `multimap` Objekt größer als oder gleich einem anderen- `multimap` Objekt ist.|
 
 ## <a name="interfaces"></a>Schnittstellen
 
@@ -213,37 +213,37 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 |<xref:System.Collections.ICollection>|Die Gruppe von Elementen wird beibehalten.|
 |<xref:System.Collections.Generic.IEnumerable%601>|Sequenz durch typisierte-Elemente.|
 |<xref:System.Collections.Generic.ICollection%601>|Verwaltet eine Gruppe von typisierten Elementen.|
-|ITree\<Schlüssel, Wert >|Verwalten Sie einen generischen Container.|
+|ITree\<Key, Value>|Verwalten Sie einen generischen Container.|
 
 ## <a name="remarks"></a>Bemerkungen
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er als einzelne Knoten steuert, und gibt diesen frei. Sie fügt Elemente in eine (fast) ausgeglichene Struktur ein, die durch Ändern der Verknüpfungen zwischen den Knoten geändert wird, ohne den Inhalt eines Knotens auf einen anderen zu kopieren. Dies bedeutet, dass Sie Elemente ohne Beeinträchtigung der restlichen Elemente frei einfügen und entfernen können.
 
-Das Objekt sortiert die Sequenz, die es steuert, indem es ein gespeichertes Delegatobjekt vom Typ [multimap:: key_compare (STL/CLR)](../dotnet/multimap-key-compare-stl-clr.md)aufruft. Beim Erstellen der Multimap können Sie das gespeicherte Delegatobjekt angeben. Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der Vergleichs `operator<(key_type, key_type)`. Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die Element Funktion [multimap:: key_comp (STL/CLR)](../dotnet/multimap-key-comp-stl-clr.md)`()`aufrufen.
+Das Objekt sortiert die Sequenz, die es steuert, indem es ein gespeichertes Delegatobjekt vom Typ [multimap:: key_compare (STL/CLR)](../dotnet/multimap-key-compare-stl-clr.md)aufruft. Beim Erstellen der Multimap können Sie das gespeicherte Delegatobjekt angeben. Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der-Vergleich `operator<(key_type, key_type)` . Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die Member-Funktion [multimap:: key_comp (STL/CLR)](../dotnet/multimap-key-comp-stl-clr.md)aufrufen `()` .
 
-Ein solches Delegatobjekt muss eine strikte schwache Reihenfolge für Schlüssel des Typs [multimap:: key_type (STL/CLR)](../dotnet/multimap-key-type-stl-clr.md)erzwingen. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y`:
+Ein solches Delegatobjekt muss eine strikte schwache Reihenfolge für Schlüssel des Typs [multimap:: key_type (STL/CLR)](../dotnet/multimap-key-type-stl-clr.md)erzwingen. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y` :
 
-`key_comp()(X, Y)` gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
+`key_comp()(X, Y)`gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
 
-Wenn `key_comp()(X, Y)` true ist, muss `key_comp()(Y, X)` den Wert false aufweisen.
+Wenn `key_comp()(X, Y)` true ist, `key_comp()(Y, X)` muss false sein.
 
-Wenn `key_comp()(X, Y)` den Wert true hat, wird `X` vor dem `Y`als geordnet bezeichnet.
+Wenn `key_comp()(X, Y)` den Wert true hat, `X` wird gesagt, dass zuvor geordnet ist `Y` .
 
-Wenn `!key_comp()(X, Y) && !key_comp()(Y, X)` true ist, werden `X` und `Y` als äquivalente Reihenfolge bezeichnet.
+Wenn `!key_comp()(X, Y) && !key_comp()(Y, X)` den Wert true hat `X` , `Y` werden und als entsprechende Reihenfolge bezeichnet.
 
-Für alle Element `X`, das `Y` in der gesteuerten Sequenz vorangeht, ist `key_comp()(Y, X)` false. (Für das standarddelegatobjekt verringern Schlüssel niemals den Wert.) Anders als bei Template Class [map (STL/CLR)](../dotnet/map-stl-clr.md)ist es für ein Objekt der Vorlagen Klasse `multimap` nicht erforderlich, dass Schlüssel für alle Elemente eindeutig sind. (Zwei oder mehr Schlüssel können eine entsprechende Reihenfolge aufweisen.)
+Für jedes Element, `X` das `Y` in der kontrollierten Sequenz vorangeht, `key_comp()(Y, X)` ist false. (Für das standarddelegatobjekt verringern Schlüssel niemals den Wert.) Anders als bei Template Class [map (STL/CLR)](../dotnet/map-stl-clr.md)ist es für ein Objekt der Vorlagen Klasse `multimap` nicht erforderlich, dass Schlüssel für alle Elemente eindeutig sind. (Zwei oder mehr Schlüssel können eine entsprechende Reihenfolge aufweisen.)
 
 Jedes Element enthält einen separaten Schlüssel und einen zugeordneten Wert. Die Sequenz wird so dargestellt, dass die Suche, das Einfügen und das Entfernen eines beliebigen Elements mit einer Reihe von Vorgängen, die proportional zum Logarithmus der Anzahl von Elementen in der Sequenz sind (logarithmische Zeit), ermöglicht wird. Darüber hinaus führt das Einfügen eines Elements nicht dazu, dass Iteratoren ungültig werden, und durch das Entfernen eines Elements werden nur solche Iteratoren ungültig, die auf das entfernte Element gezeigt haben.
 
-Eine multimap unterstützt Bidirektionale Iteratoren, was bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [multimap:: End (STL/CLR)-](../dotnet/multimap-end-stl-clr.md)`()`zurückgegeben wurde. Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen multimap-Iterator erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich `end()`verglichen. Sie können jedoch nicht den von `end()`zurückgegebenen Iterator dereferenzieren.
+Eine multimap unterstützt Bidirektionale Iteratoren, was bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen multimap-Iterator Inkrement erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich verglichen `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
 
 Beachten Sie, dass Sie nicht direkt auf ein multimap-Element verweisen können, das die numerische Position erhält, die einen Random-Access-Iterator erfordert.
 
-Ein multimap-Iterator speichert ein Handle für den zugeordneten multimap-Knoten, der wiederum ein Handle für den zugehörigen Container speichert. Iteratoren können nur mit den zugehörigen Container Objekten verwendet werden. Ein multimap-Iterator bleibt gültig, solange der zugehörige mehrfach Zuordnungs Knoten mehreren Karten zugeordnet ist. Außerdem ist ein gültiger Iterator dereferencable--Sie können ihn verwenden, um auf den von ihm festgelegt-Elementwert zuzugreifen oder ihn zu ändern, solange er nicht gleich `end()`ist.
+Ein multimap-Iterator speichert ein Handle für den zugeordneten multimap-Knoten, der wiederum ein Handle für den zugehörigen Container speichert. Iteratoren können nur mit den zugehörigen Container Objekten verwendet werden. Ein multimap-Iterator bleibt gültig, solange der zugehörige mehrfach Zuordnungs Knoten mehreren Karten zugeordnet ist. Außerdem ist ein gültiger Iterator dereferencable--Sie können ihn verwenden, um auf den Elementwert zuzugreifen, den er festlegt, sofern er nicht gleich ist `end()` .
 
 Durch das Löschen oder Entfernen eines Elements wird der Dekonstruktor für den gespeicherten Wert aufgerufen. Wenn Sie den Container zerstören, werden alle Elemente gelöscht. Daher stellt ein Container, dessen Elementtyp eine Verweis Klasse ist, sicher, dass keine Elemente den Container überdauern. Beachten Sie jedoch, dass ein Container von Handles seine Elemente *nicht* zerstört.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ## <a name="multimapbegin-stlclr"></a><a name="begin"></a>multimap:: begin (STL/CLR)
 
@@ -308,7 +308,7 @@ void clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Mit der Member-Funktion wird [multimap:: Erase (STL/CLR)](../dotnet/multimap-erase-stl-clr.md)`(` [multimap:: begin (STL/CLR)](../dotnet/multimap-begin-stl-clr.md)`(),` [multimap:: End (STL/CLR)-](../dotnet/multimap-end-stl-clr.md)`())`aufgerufen. Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
+Die Member-Funktion ruft effektiv [multimap:: Erase (STL/CLR)](../dotnet/multimap-erase-stl-clr.md) `(` [multimap:: begin (STL/CLR)](../dotnet/multimap-begin-stl-clr.md) `(),` [multimap:: End (STL/CLR](../dotnet/multimap-end-stl-clr.md)) auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -366,7 +366,7 @@ typedef T2 const_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2`, das als konstanter bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2` , das als konstanter bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -453,7 +453,7 @@ typedef T4 const_reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4`, das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4` , das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -603,7 +603,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [multimap:: Size (STL/CLR)](../dotnet/multimap-size-stl-clr.md)`() == 0`. Sie verwenden es, um zu testen, ob die mehrfach Zuordnung leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [multimap:: Size (STL/CLR)](../dotnet/multimap-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob die mehrfach Zuordnung leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -713,7 +713,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die-Methode gibt ein paar von Iteratoren `-` [multimap:: lower_bound (STL/CLR)](../dotnet/multimap-lower-bound-stl-clr.md)`(_Keyval),` [multimap:: upper_bound (STL/CLR)](../dotnet/multimap-upper-bound-stl-clr.md) -`(_Keyval)`zurück. Sie verwenden Sie, um den Bereich der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
+Die-Methode gibt ein paar von Iteratoren `-` [multimap:: lower_bound (STL/CLR)](../dotnet/multimap-lower-bound-stl-clr.md) `(_Keyval),` [multimap:: upper_bound (STL/CLR)](../dotnet/multimap-upper-bound-stl-clr.md)zurück `(_Keyval)` . Sie verwenden Sie, um den Bereich der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
 
 ### <a name="example"></a>Beispiel
 
@@ -785,9 +785,9 @@ Zu Lösch Endes Element.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird, und gibt einen Iterator zurück, der das erste Element festlegt, das hinter dem entfernten Element liegt, oder [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)`()`, wenn kein solches Element vorhanden ist. Sie verwenden es, um ein einzelnes Element zu entfernen.
+Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird, und gibt einen Iterator zurück, der das erste Element festlegt, das hinter dem entfernten Element liegt, oder [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md) , `()` Wenn kein solches Element vorhanden ist. Sie verwenden es, um ein einzelnes Element zu entfernen.
 
-Die zweite Member-Funktion entfernt die Elemente der kontrollierten Sequenz im Bereich [`first``last`) und gibt einen Iterator zurück, der das erste Element festlegt, das über alle entfernten Elemente hinausgeht, oder `end()`, wenn kein solches Element vorhanden ist. Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
+Die zweite Member-Funktion entfernt die Elemente der kontrollierten Sequenz im Bereich [ `first` , `last` ) und gibt einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder, `end()` Wenn kein solches Element vorhanden ist. Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
 
 Die dritte Member-Funktion entfernt alle Elemente der kontrollierten *Sequenz, deren Schlüssel die entsprechende*Reihenfolge hat, und gibt die Anzahl der entfernten Elemente zurück. Sie verwenden Sie, um alle Elemente zu entfernen und zu zählen, die einem angegebenen Schlüssel entsprechen.
 
@@ -867,7 +867,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn mindestens ein Element in der kontrollierten Sequenz eine äquivalente Reihenfolge mit *Key*aufweist, gibt die Member-Funktion einen Iterator zurück, der eines dieser Elemente festlegt. Andernfalls wird [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)`()`zurückgegeben. Sie verwenden Sie, um ein Element zu suchen, das sich derzeit in der kontrollierten Sequenz befindet, die einem angegebenen Schlüssel entspricht.
+Wenn mindestens ein Element in der kontrollierten Sequenz eine äquivalente Reihenfolge mit *Key*aufweist, gibt die Member-Funktion einen Iterator zurück, der eines dieser Elemente festlegt. Andernfalls wird [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)zurückgegeben `()` . Sie verwenden Sie, um ein Element zu suchen, das sich derzeit in der kontrollierten Sequenz befindet, die einem angegebenen Schlüssel entspricht.
 
 ### <a name="example"></a>Beispiel
 
@@ -1098,7 +1098,7 @@ typedef GValue generic_value;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
+Der Typ beschreibt ein Objekt vom Typ `GValue` , das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
 
 ### <a name="example"></a>Beispiel
 
@@ -1162,10 +1162,10 @@ Anfang des einzufügenden Bereichs.
 *last*<br/>
 Das Ende des einzufügenden Bereichs.
 
-*right*<br/>
+*Richting*<br/>
 Enumeration, die eingefügt werden soll.
 
-*val*<br/>
+*ster*<br/>
 Der einzufügende Schlüsselwert.
 
 *where*<br/>
@@ -1179,7 +1179,7 @@ Die erste Member-Funktion fügt ein Element mit dem Wert *Val*ein und gibt einen
 
 Die zweite Member-Funktion fügt ein Element mit *dem* Wert *Val*ein, wobei als Hinweis verwendet wird (um die Leistung zu verbessern), und gibt einen Iterator zurück, der das neu eingefügte Element festlegt. Sie verwenden es, um ein einzelnes Element einzufügen, das möglicherweise an ein Element angrenzt, das Sie kennen.
 
-Die dritte Member-Funktion fügt die Sequenz [`first``last`) ein. Sie verwenden Sie, um NULL oder mehr Elemente einzufügen, die aus einer anderen Sequenz kopiert wurden.
+Die dritte Member-Funktion fügt die Sequenz [ `first` , `last` ) ein. Sie verwenden Sie, um NULL oder mehr Elemente einzufügen, die aus einer anderen Sequenz kopiert wurden.
 
 Die vierte Member-Funktion fügt die von der *rechten Seite*festgelegte Sequenz ein. Sie verwenden Sie zum Einfügen einer Sequenz, die von einem Enumerator beschrieben wird.
 
@@ -1270,7 +1270,7 @@ typedef T1 iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T1`, das als bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T1` , das als bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -1481,7 +1481,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion bestimmt das erste Element `X` in der gesteuerten *Sequenz, das*eine entsprechende Reihenfolge aufweist. Wenn kein solches Element vorhanden ist, wird [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)`()`; zurückgegeben. Andernfalls wird ein Iterator zurückgegeben, der `X`festlegt. Sie verwenden Sie, um den Anfang einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
+Die Member-Funktion bestimmt das erste Element `X` in der kontrollierten Sequenz, das eine entsprechende *key*Reihenfolge aufweist. Wenn kein solches Element vorhanden ist, wird [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)zurückgegeben `()` ; andernfalls wird ein Iterator zurückgegeben, der festlegt `X` . Sie verwenden Sie, um den Anfang einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1543,7 +1543,7 @@ Zugeordneter Wert, der gesucht werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt ein `value_type` Objekt zurück, dessen Schlüssel *Schlüssel* ist und dessen zugeordneter Wert *zugeordnet*ist. Sie verwenden es, um ein Objekt zu verfassen, das für die Verwendung mit mehreren anderen Element Funktionen geeignet ist.
+Die Member-Funktion gibt ein `value_type` -Objekt zurück, dessen Schlüssel *Schlüssel* ist und dessen zugeordneter Wert *zugeordnet*ist. Sie verwenden es, um ein Objekt zu verfassen, das für die Verwendung mit mehreren anderen Element Funktionen geeignet ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -1649,7 +1649,7 @@ Das Ende des einzufügenden Bereichs.
 *pred*<br/>
 Das Anordnungs Prädikat für die gesteuerte Sequenz.
 
-*right*<br/>
+*Richting*<br/>
 Einzufügendes Objekt bzw. einzufügender Bereich.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1658,7 +1658,7 @@ Der Konstruktor:
 
 `multimap();`
 
-Initialisiert die gesteuerte Sequenz ohne Elemente, wobei das standardmäßige Reihen folgen Prädikat `key_compare()`ist. Sie verwenden es, um eine leere anfängliche gesteuerte Sequenz mit dem Standard Reihen folgen Prädikat anzugeben.
+Initialisiert die gesteuerte Sequenz ohne Elemente mit dem Standard Reihen folgen Prädikat `key_compare()` . Sie verwenden es, um eine leere anfängliche gesteuerte Sequenz mit dem Standard Reihen folgen Prädikat anzugeben.
 
 Der Konstruktor:
 
@@ -1670,25 +1670,25 @@ Der Konstruktor:
 
 `multimap(multimap<Key, Mapped>% right);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`right.begin()``right.end()`) mit dem Standard Reihen folgen Prädikat. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom multimap-Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `right.begin()` , `right.end()` ) mit dem Standard Reihen folgen Prädikat. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom multimap-Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat.
 
 Der Konstruktor:
 
 `multimap(multimap<Key, Mapped>^ right);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`right->begin()``right->end()`) mit dem Standard Reihen folgen Prädikat. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom multimap-Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `right->begin()` , `right->end()` ) mit dem Standard Reihen folgen Prädikat. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom multimap-Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat.
 
 Der Konstruktor:
 
 `template<typename InIter> multimap(InIter first, InIter last);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`first``last`) mit dem Standard Reihen folgen Prädikat. Sie verwenden es, um die gesteuerte Sequenz mit dem Standard Reihen folgen Prädikat zu einer Kopie einer anderen Sequenz zu machen.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `first` , `last` ) mit dem Standard Reihen folgen Prädikat. Sie verwenden es, um die gesteuerte Sequenz mit dem Standard Reihen folgen Prädikat zu einer Kopie einer anderen Sequenz zu machen.
 
 Der Konstruktor:
 
 `template<typename InIter> multimap(InIter first, InIter last, key_compare^ pred);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`first``last`) mit dem *Prädikat pred*für die Reihenfolge. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz mit dem angegebenen Reihen folgen Prädikat zu machen.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `first` , `last` ) mit dem *Prädikat pred*für die Reihenfolge. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz mit dem angegebenen Reihen folgen Prädikat zu machen.
 
 Der Konstruktor:
 
@@ -1802,12 +1802,12 @@ multimap<Key, Mapped>% operator=(multimap<Key, Mapped>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Der zu kopierende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
+Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann zurück **`*this`** . Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2006,7 +2006,7 @@ typedef T3 reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3`, das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3` , das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -2048,7 +2048,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur sicher sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [multimap:: Empty (STL/CLR)](../dotnet/multimap-empty-stl-clr.md)`()`.
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [multimap:: Empty (STL/CLR)](../dotnet/multimap-empty-stl-clr.md) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2148,12 +2148,12 @@ void swap(multimap<Key, Mapped>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Container für den Tausch von Inhalten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen `this` und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
+Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen **`this`** und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2271,7 +2271,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion bestimmt das letzte Element `X` in der gesteuerten *Sequenz, das*eine entsprechende Reihenfolge aufweist. Wenn ein solches Element nicht vorhanden ist oder wenn `X` das letzte Element in der kontrollierten Sequenz ist, wird [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)`()`; zurückgegeben. Andernfalls wird ein Iterator zurückgegeben, der das erste Element über `X`hinaus festlegt. Sie verwenden es, um das Ende einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entspricht.
+Die Member-Funktion bestimmt das letzte Element `X` in der kontrollierten Sequenz, das eine entsprechende *key*Reihenfolge aufweist. Wenn kein solches Element vorhanden ist oder wenn `X` das letzte Element in der kontrollierten Sequenz ist, gibt es [multimap:: End (STL/CLR)](../dotnet/multimap-end-stl-clr.md)zurück `()` . andernfalls gibt es einen Iterator zurück, der das erste Element über den Wert festlegt `X` . Sie verwenden es, um das Ende einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entspricht.
 
 ### <a name="example"></a>Beispiel
 
@@ -2467,15 +2467,15 @@ template<typename Key,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(left == right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden mehrfach Zuordnungen Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(left == right)` . Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden mehrfach Zuordnungen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2523,7 +2523,7 @@ int main()
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-multimap-stlclr"></a><a name="op_lt"></a>Operator&lt; (Multimap) (STL/CLR)
+## <a name="operatorlt-multimap-stlclr"></a><a name="op_lt"></a>Operator &lt; (Multimap) (STL/CLR)
 
 Liste kleiner als-Vergleich.
 
@@ -2538,15 +2538,15 @@ template<typename Key,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position `i` für die `!(right[i] < left[i])` auch true ist, dass `left[i] < right[i]`. Andernfalls wird zurückgegeben, `left->size() < right->size()` Sie es verwenden, um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
+Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls wird zurückgegeben, `left->size() < right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2594,7 +2594,7 @@ int main()
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-multimap-stlclr"></a><a name="op_lteq"></a>Operator&lt;= (Multimap) (STL/CLR)
+## <a name="operatorlt-multimap-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (Multimap) (STL/CLR)
 
 Liste kleiner oder gleich-Vergleich.
 
@@ -2609,15 +2609,15 @@ template<typename Key,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(right < left)`zurück. Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(right < left)` . Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2680,15 +2680,15 @@ template<typename Key,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i``left[i] ==` `right[i]`. Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
+Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i` `left[i] ==` `right[i]` . Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2736,7 +2736,7 @@ int main()
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-multimap-stlclr"></a><a name="op_gt"></a>Operator&gt; (Multimap) (STL/CLR)
+## <a name="operatorgt-multimap-stlclr"></a><a name="op_gt"></a>Operator &gt; (Multimap) (STL/CLR)
 
 Die Liste ist größer als der Vergleich.
 
@@ -2751,15 +2751,15 @@ template<typename Key,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `right` `<` `left`zurück. Sie verwenden es, um zu überprüfen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `right` `<` `left` . Sie verwenden es, um zu überprüfen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2807,7 +2807,7 @@ int main()
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-multimap-stlclr"></a><a name="op_gteq"></a>Operator&gt;= (Multimap) (STL/CLR)
+## <a name="operatorgt-multimap-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (Multimap) (STL/CLR)
 
 Liste größer oder gleich-Vergleich.
 
@@ -2822,15 +2822,15 @@ template<typename Key,
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(left` `<` `right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(left` `<` `right)` . Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden mehrfach Zuordnungen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 

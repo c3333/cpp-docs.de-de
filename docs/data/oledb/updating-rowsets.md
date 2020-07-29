@@ -7,12 +7,12 @@ helpviewer_keywords:
 - updating rowsets
 - rowsets
 ms.assetid: 39588758-5c72-4254-a10d-cc2b1f473357
-ms.openlocfilehash: e0ee5cf97170cd9293abcb9039771f8fe23962aa
-ms.sourcegitcommit: 00e26915924869cd7eb3c971a7d0604388abd316
-ms.translationtype: HT
+ms.openlocfilehash: 22e362170d645574b40070c6db39c2576d3ae9c8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65525302"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212942"
 ---
 # <a name="updating-rowsets"></a>Aktualisieren von Rowsets
 
@@ -31,7 +31,7 @@ Consumer können Rowsetdaten mithilfe folgender Methoden aktualisieren: Festlege
 > [!NOTE]
 > Der ATL-OLE DB-Consumer-Assistent ist in Visual Studio 2019 und höher nicht verfügbar. Sie können diese Funktionalität weiterhin manuell hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines Consumers ohne Assistent](creating-a-consumer-without-using-a-wizard.md).
 
-Wenn Sie einen Consumer mit dem **ATL-OLE DB-Consumer-Assistenten** erstellen, können Sie die Aktualisierungsoperationen unterstützen, indem Sie eines oder mehrere der drei Kontrollkästchen **Ändern**, **Einfügen** und **Löschen** aktivieren. Wenn Sie diese Optionen aktivieren, ändert der Assistent den Code dahingehend, dass die von Ihnen gewünschten Änderungsarten unterstützt werden. Wenn Sie den Assistenten nicht verwenden, müssen Sie jedoch die folgenden Rowset-Eigenschaften auf `VARIANT_TRUE` festlegen, damit Aktualisierungen unterstützt werden:
+Wenn Sie einen Consumer mit dem **ATL-OLE DB Consumer-Assistenten**erstellen, können Sie die Aktualisierungs Vorgänge unterstützen, indem Sie eines oder mehrere der drei Kontrollkästchen **ändern**, **Einfügen**und **Löschen**auswählen. Wenn Sie diese Optionen aktivieren, ändert der Assistent den Code dahingehend, dass die von Ihnen gewünschten Änderungsarten unterstützt werden. Wenn Sie den Assistenten nicht verwenden, müssen Sie jedoch die folgenden Rowset-Eigenschaften auf `VARIANT_TRUE` festlegen, damit Aktualisierungen unterstützt werden:
 
 - `DBPROPVAL_UP_CHANGE` ermöglicht die Änderung von Datenwerten in einer Zeile.
 
@@ -80,9 +80,9 @@ HRESULT hr = product.SetData();
 HRESULT Insert(int nAccessor = 0, bool bGetRow = false)
 ```
 
-- **false** (der Standardwert) gibt an, dass die aktuelle Zeile zur nächsten Zeile inkrementiert wird. (In diesem Fall wird auf die eingefügte Zeile verwiesen.)
+- **`false`**(der Standardwert) gibt an, dass die aktuelle Zeile zur nächsten Zeile Inkrement erhöht wird (in diesem Fall verweist Sie auf die eingefügte Zeile).
 
-- **true** gibt an, dass die Position der aktuellen Zeile unverändert bleibt.
+- **`true`** Gibt an, dass die aktuelle Zeile dort bleibt, wo Sie ist.
 
 Der folgende Code legt die Werte von Datenmembern fest, die an die Spalten der Tabelle `Products` gebunden sind. Anschließend wird `Insert` aufgerufen, um eine neue Zeile mit diesen Werten nach der hundertsten Zeile des Rowsets einzufügen. Es wird empfohlen, alle Spaltenwerte festzulegen, um zu verhindern, dass sich in der neuen Zeile nicht definierte Daten befinden:
 
@@ -206,8 +206,8 @@ Wenn beispielsweise der erste `Update`-Aufruf im oben stehenden Code fehlen wür
 
 Schließlich ist einer der Hauptgründe für die Verwendung verzögerter Aktualisierungen die Möglichkeit, sie rückgängig machen zu können. Wenn Sie [CRowset::Undo](../../data/oledb/crowset-undo.md) aufrufen, wird der lokale Änderungscache auf den Status des Datenspeichers vor dem Ausführen der Änderungen zurückgesetzt. Dabei müssen Sie beachten, dass `Undo` den Status des lokalen Cache nicht um einen einzelnen Schritt (also auf den Zustand vor der letzten Änderung) zurücksetzt, sondern den lokalen Cache für die ganze Zeile bereinigt. Darüber hinaus wirkt sich `Undo` nur auf die aktuelle Zeile aus.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Arbeiten mit OLE DB-Consumervorlagen](../../data/oledb/working-with-ole-db-consumer-templates.md)<br/>
+[Arbeiten mit OLE DB Consumervorlagen](../../data/oledb/working-with-ole-db-consumer-templates.md)<br/>
 [CRowset-Klasse](../../data/oledb/crowset-class.md)<br/>
 [IRowsetChange](/previous-versions/windows/desktop/ms715790(v=vs.85))<br/>

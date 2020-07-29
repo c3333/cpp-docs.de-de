@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::HandleTraits::HANDLETraits::Close method
 - Microsoft::WRL::Wrappers::HandleTraits::HANDLETraits::GetInvalidValue method
 ms.assetid: 22963e88-d857-4624-9182-7c986daff722
-ms.openlocfilehash: 604098cd3289722767117910d6e44e272dcb8b77
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c04e53789fd737b12ca10ef2c279a05fb43f5925
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371444"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212994"
 ---
 # <a name="handletraits-structure"></a>HANDLETraits-Struktur
 
@@ -34,26 +34,26 @@ struct HANDLETraits;
 
 Name   | BESCHREIBUNG
 ------ | ---------------------
-`Type` | Ein Synonym für HANDLE.
+`Type` | Ein Synonym für handle.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                              | BESCHREIBUNG
+name                                              | BESCHREIBUNG
 ------------------------------------------------- | -----------------------------
-[HANDLETraits::Schließen](#close)                     | Schließt das angegebene Handle.
-[HANDLETraits::GetInvalidValue](#getinvalidvalue) | Stellt ein ungültiges Handle dar.
+[Lenker:: Close](#close)                     | Schließt das angegebene Handle.
+[Lenker Merkmale:: getinvalidvalue](#getinvalidvalue) | Stellt ein ungültiges Handle dar.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `HANDLETraits`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** corewrappers.h
+**Header:** corewrappers. h
 
-**Namespace:** Microsoft::WRL::Wrappers::HandleTraits
+**Namespace:** Microsoft:: WRL:: Wrappers:: Lenker Merkmale
 
-## <a name="handletraitsclose"></a><a name="close"></a>HANDLETraits::Schließen
+## <a name="handletraitsclose"></a><a name="close"></a>Lenker:: Close
 
 Schließt das angegebene Handle.
 
@@ -65,14 +65,14 @@ inline static bool Close(
 
 ### <a name="parameters"></a>Parameter
 
-*H*<br/>
-Das zu schließende Handle.
+*h*<br/>
+Das Handle, das geschlossen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn Handle *h* erfolgreich geschlossen wurde; andernfalls **false**.
+**`true`**, wenn das Handle *h* erfolgreich geschlossen wurde. andernfalls **`false`** .
 
-## <a name="handletraitsgetinvalidvalue"></a><a name="getinvalidvalue"></a>HANDLETraits::GetInvalidValue
+## <a name="handletraitsgetinvalidvalue"></a><a name="getinvalidvalue"></a>Lenker Merkmale:: getinvalidvalue
 
 Stellt ein ungültiges Handle dar.
 
@@ -82,4 +82,4 @@ inline static HANDLE GetInvalidValue();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer INVALID_HANDLE_VALUE zurück. (INVALID_HANDLE_VALUE wird durch Windows definiert.)
+Gibt immer INVALID_HANDLE_VALUE zurück. (INVALID_HANDLE_VALUE wird von Windows definiert.)

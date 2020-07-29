@@ -61,16 +61,16 @@ helpviewer_keywords:
 - __is_simple_value_class keyword [C++]
 - __has_trivial_constructor keyword [C++]
 ms.assetid: cd440630-0394-48c0-a16b-1580b6ef5844
-ms.openlocfilehash: 1bfb4308dc76e3393eceddf8dedd6d11e73adc17
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 16c79e05c6ba6f50a3e6c0d6dd5f48963be40fa8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172529"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219780"
 ---
 # <a name="compiler-support-for-type-traits-ccli-and-ccx"></a>Compilerunterstützung für Typmerkmale (C++/CLI und C++/CX)
 
-Der Microsoft C++-Compiler unterstützt  *Typmerkmale* für C++/CLI- und C++/CX-Erweiterungen, die verschiedene Merkmale eines Typs zur Kompilierzeit angeben.
+Der Microsoft C++-Compiler unterstützt * Typmerkmale* für C++/CLI- und C++/CX-Erweiterungen, die verschiedene Merkmale eines Typs zur Kompilierzeit angeben.
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
@@ -78,13 +78,13 @@ Der Microsoft C++-Compiler unterstützt  *Typmerkmale* für C++/CLI- und C++/CX-
 
 Typeigenschaften sind besonders nützlich für Programmierer, die Bibliotheken schreiben.
 
-Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werden. Alle Typmerkmale geben **false** zurück, wenn die durch den Namen des Typmerkmals angegebene Bedingung nicht erfüllt ist.
+Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werden. Alle Typmerkmale geben zurück, **`false`** Wenn die durch den Namen des typmerkmals angegebene Bedingung nicht erfüllt wird.
 
 (In der folgenden Liste sind die Codebeispiele nur in C++/CLI geschrieben. Das entsprechende Typmerkmal wird auch in C++/CX unterstützt, sofern nichts anderes angegeben ist. Der Begriff „Plattformtyp“ bezieht sich entweder auf Windows-Runtime oder Common Language Runtime-Typen.)
 
-- `__has_assign(` *Typ* `)`
+- `__has_assign(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Plattformtyp oder der native Typ einen Kopierzuweisungsoperator aufweist.
+   Gibt zurück, **`true`** Wenn die Plattform oder der systemeigene Typ einen Kopier Zuweisungs Operator aufweist.
 
     ```cpp
     ref struct R {
@@ -96,9 +96,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_copy(` *Typ* `)`
+- `__has_copy(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Plattformtyp oder der native Typ einen Kopierkonstruktor aufweist.
+   Gibt zurück, **`true`** Wenn die Plattform oder der systemeigene Typ einen Kopierkonstruktor aufweist.
 
     ```cpp
     ref struct R {
@@ -110,9 +110,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_finalizer(` *Typ* `)`
+- `__has_finalizer(`*Typ*`)`
 
-   (Wird in C++/CX. nicht unterstützt.) Gibt **true** zurück, wenn der CLR-Typ über einen Finalizer verfügt. Weitere Informationen finden [Sie unter debugtoren und Finalizer in Gewusst wie: definieren und verarbeitenC++von Klassen und Strukturen (/CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers) .
+   (Nicht unterstützt in C++/CX.) Gibt zurück, **`true`** Wenn der CLR-Typ über einen Finalizer verfügt. Weitere Informationen finden [Sie unter debugtoren und Finalizer in Gewusst wie: definieren und Verarbeiten von Klassen und Strukturen (C++/CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers) .
 
     ```cpp
     using namespace System;
@@ -127,9 +127,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_nothrow_assign(` *Typ* `)`
+- `__has_nothrow_assign(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein Kopierzuweisungsoperator eine leere Ausnahmespezifikation aufweist.
+   Gibt zurück, **`true`** Wenn ein Kopier Zuweisungs Operator eine leere Ausnahme Spezifikation aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -143,9 +143,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_nothrow_constructor(` *Typ* `)`
+- `__has_nothrow_constructor(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Standardkonstruktor eine leere Ausnahmespezifikation aufweist.
+   Gibt zurück, **`true`** Wenn der Standardkonstruktor eine leere Ausnahme Spezifikation aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -159,9 +159,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_nothrow_copy(` *Typ* `)`
+- `__has_nothrow_copy(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Kopierkonstruktor eine leere Ausnahmespezifikation aufweist.
+   Gibt zurück, **`true`** Wenn der Kopierkonstruktor eine leere Ausnahme Spezifikation aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -175,9 +175,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_trivial_assign(` *Typ* `)`
+- `__has_trivial_assign(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ einen trivialen, vom Compiler generierten Zuweisungsoperator aufweist.
+   Gibt zurück **`true`** , wenn der Typ einen trivialen, vom Compiler generierten Zuweisungs Operator aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -189,9 +189,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_trivial_constructor(` *Typ* `)`
+- `__has_trivial_constructor(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ einen trivialen, vom Compiler generierten Konstruktor aufweist.
+   Gibt zurück **`true`** , wenn der Typ einen trivialen, vom Compiler generierten Konstruktor aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -203,9 +203,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_trivial_copy(` *Typ* `)`
+- `__has_trivial_copy(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ einen trivialen, vom Compiler generierten Kopierkonstruktor aufweist.
+   Gibt zurück **`true`** , wenn der Typ einen trivialen, vom Compiler generierten Kopierkonstruktor aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -217,9 +217,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_trivial_destructor(` *Typ* `)`
+- `__has_trivial_destructor(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ einen trivialen, vom Compiler generierten Destruktor aufweist.
+   Gibt zurück **`true`** , wenn der Typ einen trivialen, vom Compiler generierten Dekonstruktor aufweist.
 
     ``` cpp
     // has_trivial_destructor.cpp
@@ -232,9 +232,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_user_destructor(` *Typ* `)`
+- `__has_user_destructor(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Plattformtyp oder der native Typ einen benutzerdeklarierten Destruktor aufweist.
+   Gibt zurück, **`true`** Wenn die Plattform oder der systemeigene Typ einen vom Benutzer deklarierten Dekonstruktor aufweist.
 
     ```cpp
     // has_user_destructor.cpp
@@ -249,9 +249,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__has_virtual_destructor(` *Typ* `)`
+- `__has_virtual_destructor(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ einen virtuellen Destruktor aufweist.
+   Gibt zurück, **`true`** Wenn der Typ einen virtuellen Dekonstruktor aufweist.
 
    `__has_virtual_destructor` funktioniert auch für Plattformtypen, und jeder benutzerdefinierte Destruktor in einem Plattformtyp ist ein virtueller Destruktor.
 
@@ -268,9 +268,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_abstract(` *Typ* `)`
+- `__is_abstract(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ ein abstrakter Typ ist. Weitere Informationen zu nativen abstrakten Typen finden Sie unter [Abstrakte Klassen](../cpp/abstract-classes-cpp.md).
+   Gibt zurück, **`true`** Wenn der Typ ein abstrakter Typ ist. Weitere Informationen zu nativen abstrakten Typen finden Sie unter [Abstrakte Klassen](../cpp/abstract-classes-cpp.md).
 
    `__is_abstract` funktioniert auch für die Plattformtypen. Eine Schnittstelle mit mindestens einem Member ist ein abstrakter Typ, genauso wie ein Verweistyp mit mindestens einem abstrakten Member. Weitere Informationen zu abstrakten Plattformtypen finden Sie unter [abstract](abstract-cpp-component-extensions.md).
 
@@ -289,9 +289,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
 
 - `__is_base_of(` `base` `,` `derived` `)`
 
-   Gibt **true** zurück, wenn der erste Typ eine Basisklasse des zweiten Typs ist oder wenn beide Typen identisch sind.
+   Gibt zurück **`true`** , wenn der erste Typ eine Basisklasse des zweiten Typs ist, von, wenn beide Typen identisch sind.
 
-   `__is_base_of` funktioniert auch für Plattformtypen. Beispielsweise wird **true** zurückgegeben, wenn der erste Typ eine [Schnittstellenklasse](interface-class-cpp-component-extensions.md) ist und der zweite Typ die Schnittstelle implementiert.
+   `__is_base_of` funktioniert auch für Plattformtypen. Beispielsweise wird zurückgegeben, **`true`** Wenn der erste Typ eine [Schnittstellen Klasse](interface-class-cpp-component-extensions.md) ist und der zweite Typ die-Schnittstelle implementiert.
 
     ```cpp
     // is_base_of.cpp
@@ -308,9 +308,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_class(` *Typ* `)`
+- `__is_class(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ eine native Klasse oder Struktur ist.
+   Gibt zurück, **`true`** Wenn der Typ eine systemeigene Klasse oder Struktur ist.
 
     ```cpp
     #include <stdio.h>
@@ -322,9 +322,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_convertible_to(` `from` `,``to` `)`
+- `__is_convertible_to(` `from` `,`  `to` `)`
 
-   Gibt **true** zurück, wenn der erste Typ in den zweiten Typ konvertiert werden kann.
+   Gibt zurück **`true`** , wenn der erste Typ in den zweiten Typ konvertiert werden kann.
 
     ```cpp
     #include <stdio.h>
@@ -340,9 +340,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_delegate(` *Typ* `)`
+- `__is_delegate(`*Typ*`)`
 
-   Gibt **true** zurück, wenn `type` ein Delegat ist. Weitere Informationen finden Sie unter [delegate (C++/CLI und C++/CX)](delegate-cpp-component-extensions.md).
+   Gibt zurück, **`true`** Wenn ein Delegat `type` ist. Weitere Informationen finden Sie unter [delegate (C++/CLI und C++/CX)](delegate-cpp-component-extensions.md).
 
     ```cpp
     delegate void MyDel();
@@ -351,9 +351,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_empty(` *Typ* `)`
+- `__is_empty(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ keine Instanzdatenmember aufweist.
+   Gibt zurück, **`true`** Wenn der Typ keine instanzdatenmember aufweist.
 
     ```cpp
     #include <stdio.h>
@@ -367,9 +367,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_enum(` *Typ* `)`
+- `__is_enum(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ eine native Enumeration ist.
+   Gibt zurück, **`true`** Wenn der Typ eine native Enum ist.
 
     ```cpp
     // is_enum.cpp
@@ -389,9 +389,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_interface_class(` *Typ* `)`
+- `__is_interface_class(`*Typ*`)`
 
-   Gibt **true** zurück, wenn eine Plattformschnittstelle übergeben wurde. Weitere Informationen finden Sie unter [Schnittstellenklasse](interface-class-cpp-component-extensions.md).
+   Gibt zurück, **`true`** Wenn eine Platt Form Schnittstelle überschritten wurde. Weitere Informationen finden Sie unter [Schnittstellenklasse](interface-class-cpp-component-extensions.md).
 
     ```cpp
     // is_interface_class.cpp
@@ -403,9 +403,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_pod(` *Typ* `)`
+- `__is_pod(`*Typ*`)`
 
-   Gibt **true** zurück, wenn der Typ eine Klasse oder Union ohne Konstruktor, ohne private oder geschützte nicht-statische Member, ohne Basisklassen und ohne virtuelle Funktionen ist. Weitere Informationen zu PODs finden Sie im C++-Standard in den Abschnitten 8.5.1/1, 9/4 und 3.9/10.
+   Gibt zurück **`true`** , wenn der Typ eine Klasse oder Union ohne Konstruktor oder private oder geschützte nicht statische Member, keine Basisklassen und keine virtuellen Funktionen ist. Weitere Informationen zu PODs finden Sie im C++-Standard in den Abschnitten 8.5.1/1, 9/4 und 3.9/10.
 
    `__is_pod` gibt „false“ für grundlegende Typen zurück.
 
@@ -419,9 +419,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_polymorphic(` *Typ* `)`
+- `__is_polymorphic(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein nativer Typ über virtuelle Funktionen verfügt.
+   Gibt zurück, **`true`** Wenn ein System eigener Typ über virtuelle Funktionen verfügt.
 
     ```cpp
     #include <stdio.h>
@@ -435,9 +435,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_ref_array(` *Typ* `)`
+- `__is_ref_array(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein Plattformarray übergeben wurde. Weitere Informationen finden Sie unter [Arrays](arrays-cpp-component-extensions.md).
+   Gibt zurück, **`true`** Wenn ein Platt Form Array überschritten wurde. Weitere Informationen finden Sie unter [Arrays](arrays-cpp-component-extensions.md).
 
     ```cpp
     using namespace System;
@@ -447,9 +447,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_ref_class(` *Typ* `)`
+- `__is_ref_class(`*Typ*`)`
 
-   Gibt **true** zurück, wenn eine Verweisklasse übergeben wurde. Weitere Informationen zu benutzerdefinierten Verweistypen finden Sie unter [Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md).
+   Gibt zurück, **`true`** Wenn eine Verweis Klasse übermittelt wurde. Weitere Informationen zu benutzerdefinierten Verweistypen finden Sie unter [Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md).
 
     ```cpp
     using namespace System;
@@ -460,9 +460,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_sealed(` *Typ* `)`
+- `__is_sealed(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein als „sealed“ (versiegelt) gekennzeichneter Plattformtyp oder nativer Typ übergeben wurde. Weitere Informationen finden Sie unter [sealed](sealed-cpp-component-extensions.md).
+   Gibt zurück, **`true`** Wenn eine Plattform oder ein System eigener Typ, der als versiegelt gekennzeichnet Weitere Informationen finden Sie unter [sealed](sealed-cpp-component-extensions.md).
 
     ```cpp
     ref class R sealed{};
@@ -471,9 +471,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_simple_value_class(` *Typ* `)`
+- `__is_simple_value_class(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein Werttyp übergeben wurde, der keine Verweise auf den Garbage Collection-Heap enthält. Weitere Informationen zu benutzerdefinierten Werttypen finden Sie unter [Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md).
+   Gibt zurück **`true`** , wenn ein Werttyp übergeben wurde, der keine Verweise auf den Heap mit Garbage Collection enthält. Weitere Informationen zu benutzerdefinierten Werttypen finden Sie unter [Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md).
 
     ```cpp
     using namespace System;
@@ -489,9 +489,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_union(` *Typ* `)`
+- `__is_union(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein Typ eine Union ist.
+   Gibt zurück, **`true`** Wenn ein Typ eine Union ist.
 
     ```cpp
     #include <stdio.h>
@@ -506,9 +506,9 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_value_class(` *Typ* `)`
+- `__is_value_class(`*Typ*`)`
 
-   Gibt **true** zurück, wenn ein Werttyp übergeben wurde. Weitere Informationen zu benutzerdefinierten Werttypen finden Sie unter [Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md).
+   Gibt zurück, **`true`** Wenn ein Werttyp übermittelt wurde. Weitere Informationen zu benutzerdefinierten Werttypen finden Sie unter [Klassen und Strukturen](classes-and-structs-cpp-component-extensions.md).
 
     ```cpp
     value struct V {};
@@ -522,7 +522,7 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Typmerkmal `__has_finalizer(`*Typ*`)` wird nicht unterstützt, weil diese Plattform keine Finalizer unterstützt.
+Die `__has_finalizer(` *type* `)` typtypisierungs Eigenschaft wird nicht unterstützt, da diese Plattform keine Finalizer unterstützt.
 
 ### <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -570,4 +570,4 @@ R is a ref class
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

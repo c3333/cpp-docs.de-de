@@ -29,12 +29,12 @@ helpviewer_keywords:
 - _BLOCK_SUBTYPE macro
 - BLOCK_TYPE macro
 ms.assetid: 0f4b9da7-bebb-4956-9541-b2581640ec6b
-ms.openlocfilehash: cd50de1d1ade1d83b97bc465ff7e4c73b52fba2d
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1fccb66632e832b491832cfac12fb1940bdf0f87
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942340"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213592"
 ---
 # <a name="_crtreportblocktype"></a>_CrtReportBlockType
 
@@ -55,9 +55,9 @@ Zeiger für einen gültigen Debugheapblock.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn ein gültiger debugheapzeiger übermittelt wird, gibt die **_CrtReportBlockType** -Funktion den Blocktyp und den Untertyp in Form eines **int**-Typs zurück. Wenn ein ungültiger Zeiger übergeben wird, gibt die Funktion -1 zurück.
+Wenn ein gültiger debugheapzeiger übermittelt wird, gibt die **_CrtReportBlockType** -Funktion den Blocktyp und den Untertyp in Form eines zurück **`int`** . Wenn ein ungültiger Zeiger übergeben wird, gibt die Funktion -1 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Um den von **_CrtReportBlockType**zurückgegebenen Typ und Untertyp zu extrahieren, verwenden Sie die Makros **_BLOCK_TYPE** und **_BLOCK_SUBTYPE** (beide in "Crtdbg. h" definiert) für den Rückgabewert.
 
@@ -69,11 +69,11 @@ Weitere Informationen zu den Zuordnungsblocktypen und ihrer Verwendung finden Si
 |-------------|---------------------|
 |**_CrtReportBlockType**|\<crtdbg.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
-Nur Debugversionen von [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
+Nur Debugversionen der [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -134,7 +134,7 @@ Data: <          > CD CD CD CD CD CD CD CD CD CD
 Object dump complete.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_CrtDoForAllClientObjects](crtdoforallclientobjects.md)<br/>
 [_CrtSetDumpClient](crtsetdumpclient.md)<br/>

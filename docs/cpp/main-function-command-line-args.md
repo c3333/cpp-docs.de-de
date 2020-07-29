@@ -1,95 +1,95 @@
 ---
-title: main Funktion und Befehlszeilenargumente (C++)
-description: Die main-Funktion ist der Einstiegspunkt für C++ ein Programm.
+title: :::no-loc(main):::Funktions-und Befehlszeilenargumente (C++)
+description: 'Die- :::no-loc(main)::: Funktion ist der Einstiegspunkt für ein C++-Programm.'
 ms.date: 01/15/2019
 ms.assetid: c6568ee6-40ab-4ae8-aa44-c99e232f64ac
 no-loc:
-- main
-- wmain
-- inline
-- static
-- _tmain
-- void
-- exit
-- argc
-- argv
-- envp
-- CreateProcess
-- GetModuleFileName
-- char
-- wchar_t
-- extern
-ms.openlocfilehash: 33753e30304a9bb63c135979d3f20098e6b6401a
-ms.sourcegitcommit: e93f3e6a110fe38bc642055bdf4785e620d4220f
+- ':::no-loc(main):::'
+- ':::no-loc(wmain):::'
+- ':::no-loc(inline):::'
+- ':::no-loc(static):::'
+- ':::no-loc(_tmain):::'
+- ':::no-loc(void):::'
+- ':::no-loc(exit):::'
+- ':::no-loc(argc):::'
+- ':::no-loc(argv):::'
+- ':::no-loc(envp):::'
+- ':::no-loc(CreateProcess):::'
+- ':::no-loc(GetModuleFileName):::'
+- ':::no-loc(char):::'
+- ':::no-loc(wchar_t):::'
+- ':::no-loc(extern):::'
+ms.openlocfilehash: 9fe7c7a0808584a70bffa541903866b3de364e5f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76123902"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213319"
 ---
-# <a name="opno-locmain-function-and-command-line-arguments"></a>main Funktion und Befehlszeilenargumente
+# <a name="no-locmain-function-and-command-line-arguments"></a>:::no-loc(main):::Funktions-und Befehlszeilenargumente
 
-Alle C++ Programme müssen über eine `main`-Funktion verfügen. Wenn Sie versuchen, ein C++ *exe* -Projekt ohne eine main Funktion zu kompilieren, gibt der Compiler einen Fehler aus. (Dynamic-Link-Bibliotheken und static-Bibliotheken verfügen über keine `main`-Funktion.) Die `main` Funktion ist der Ort, an dem der Quellcode mit der Ausführung beginnt, aber bevor ein Programm in die `main` Funktion eintritt, werden alle static Klassenmember ohne explizite Initialisierer auf NULL festgelegt. In Microsoft C++werden auch globale static Objekte vor dem Eintrag in `main`initialisiert. Einige Einschränkungen gelten für die `main` Funktion, die nicht für andere C++ Funktionen gelten. Die `main`-Funktion:
+Alle C++-Programme müssen über eine- `:::no-loc(main):::` Funktion verfügen. Wenn Sie versuchen, ein C++ *. exe* -Projekt ohne eine :::no-loc(main)::: Funktion zu kompilieren, gibt der Compiler einen Fehler aus. (Dynamic-Link-Bibliotheken und- :::no-loc(static)::: Bibliotheken haben keine `:::no-loc(main):::` Funktion.) `:::no-loc(main):::`In der Funktion wird der Quellcode mit der Ausführung begonnen, aber bevor ein Programm `:::no-loc(main):::` in die Funktion eintritt, :::no-loc(static)::: werden alle Klassenmember ohne explizite Initialisierer auf NULL festgelegt. In Microsoft C++ werden globale :::no-loc(static)::: Objekte auch vor dem Eintrag in initialisiert `:::no-loc(main):::` . Einige Einschränkungen gelten für die `:::no-loc(main):::` Funktion, die nicht für andere C++-Funktionen gelten. Die- `:::no-loc(main):::` Funktion:
 
 - Kann nicht überladen werden (siehe [Funktions Überladung](function-overloading.md)).
-- Kann nicht als **inline** deklariert werden.
-- Kann nicht als **static** deklariert werden.
+- Kann nicht als deklariert werden **`:::no-loc(inline):::`** .
+- Kann nicht als deklariert werden **`:::no-loc(static):::`** .
 - Ihre Adresse kann nicht übernommen werden.
 - Kann nicht aufgerufen werden.
 
-Die main-Funktion verfügt nicht über eine-Deklaration, da Sie in die-Sprache integriert ist. Wenn dies der Fall ist, würde die Deklarations Syntax für `main` wie folgt aussehen:
+Die :::no-loc(main)::: -Funktion verfügt nicht über eine-Deklaration, da Sie in die-Sprache integriert ist. Wenn dies der Fall ist, sieht die Deklarations Syntax für wie folgt aus `:::no-loc(main):::` :
 
 ```cpp
-int main();
-int main(int argc, char *argv[], char *envp[]);
+int :::no-loc(main):::();
+int :::no-loc(main):::(int :::no-loc(argc):::, :::no-loc(char)::: *:::no-loc(argv):::[], :::no-loc(char)::: *:::no-loc(envp):::[]);
 ```
 
 **Microsoft-spezifisch**
 
-Wenn die Quelldateien Unicode-breit Zeichen verwenden, können Sie `wmain`verwenden, bei dem es sich um die breit Zeichen Version von `main`handelt. Die Deklarationssyntax für `wmain` lautet wie folgt:
+Wenn in ihren Quelldateien Unicode-weite :::no-loc(char)::: acters verwendet werden, können Sie verwenden `:::no-loc(wmain):::` , wobei es sich um die Wide :::no-loc(char)::: Acter-Version von handelt `:::no-loc(main):::` . Die Deklarationssyntax für `:::no-loc(wmain):::` lautet wie folgt:
 
 ```cpp
-int wmain( );
-int wmain(int argc, wchar_t *argv[], wchar_t *envp[]);
+int :::no-loc(wmain):::( );
+int :::no-loc(wmain):::(int :::no-loc(argc):::, :::no-loc(wchar_t)::: *:::no-loc(argv):::[], :::no-loc(wchar_t)::: *:::no-loc(envp):::[]);
 ```
 
-Sie können auch `_tmain`verwenden, das in Tchar. h definiert ist. `_tmain` wird in `main` aufgelöst, sofern nicht _UNICODE definiert ist. In diesem Fall wird `_tmain` in `wmain` aufgelöst.
+Sie können auch verwenden `:::no-loc(_tmain):::` , das in t :::no-loc(char)::: . h definiert ist. `:::no-loc(_tmain):::`wird in aufgelöst, `:::no-loc(main):::` es sei denn, _UNICODE definiert ist. In diesem Fall wird `:::no-loc(_tmain):::` in `:::no-loc(wmain):::` aufgelöst.
 
-Wenn kein Rückgabewert angegeben wird, gibt der Compiler einen Rückgabewert von 0 (null) an. Alternativ können die Funktionen `main` und `wmain` als Rückgabe **void** deklariert werden (kein Rückgabewert). Wenn Sie `main` oder `wmain` als Rückgabe **void** deklarieren, können Sie einen exit Code nicht mithilfe einer [Return](../cpp/return-statement-in-program-termination-cpp.md) -Anweisung an den übergeordneten Prozess oder das übergeordnete Betriebssystem zurückgeben. Um einen exit Code zurückzugeben, wenn `main` oder `wmain` als **void** deklariert ist, müssen Sie die [exit](../cpp/exit-function.md) -Funktion verwenden.
+Wenn kein Rückgabewert angegeben wird, gibt der Compiler einen Rückgabewert von 0 (null) an. Alternativ können die `:::no-loc(main):::` -Funktion und die- `:::no-loc(wmain):::` Funktion als Rückgabe **`:::no-loc(void):::`** (kein Rückgabewert) deklariert werden. Wenn Sie `:::no-loc(main):::` oder `:::no-loc(wmain):::` als zurück **`:::no-loc(void):::`** geben, können Sie keinen :::no-loc(exit)::: Code an den übergeordneten Prozess oder das Betriebssystem zurückgeben, indem Sie eine [Return](../cpp/return-statement-in-program-termination-cpp.md) -Anweisung verwenden. Um einen :::no-loc(exit)::: Code zurückzugeben `:::no-loc(main):::` , wenn oder `:::no-loc(wmain):::` als deklariert wird **`:::no-loc(void):::`** , müssen Sie die- [:::no-loc(exit):::](../cpp/:::no-loc(exit):::-function.md) Funktion verwenden.
 
 **Ende Microsoft-spezifisch**
 
 ## <a name="command-line-arguments"></a>Befehlszeilenargumente
 
-Die Argumente für `main` oder `wmain` ermöglichen eine bequeme Befehlszeilen-Analyse von Argumenten und optional Zugriff auf Umgebungsvariablen. Die Typen für `argc` und `argv` werden von der Programmiersprache definiert. Die Namen `argc`, `argv`und `envp` sind traditionell, Sie können Sie jedoch beliebig benennen.
+Die Argumente für `:::no-loc(main):::` oder `:::no-loc(wmain):::` ermöglichen eine bequeme Befehlszeilen-Analyse von Argumenten und optional Zugriff auf Umgebungsvariablen. Die Typen für `:::no-loc(argc):::` und `:::no-loc(argv):::` werden von der Programmiersprache definiert. Die Namen `:::no-loc(argc):::` , `:::no-loc(argv):::` und `:::no-loc(envp):::` sind traditionell, Sie können Sie jedoch beliebig benennen.
 
 ```cpp
-int main( int argc, char* argv[], char* envp[]);
-int wmain( int argc, wchar_t* argv[], wchar_t* envp[]);
+int :::no-loc(main):::( int :::no-loc(argc):::, :::no-loc(char):::* :::no-loc(argv):::[], :::no-loc(char):::* :::no-loc(envp):::[]);
+int :::no-loc(wmain):::( int :::no-loc(argc):::, :::no-loc(wchar_t):::* :::no-loc(argv):::[], :::no-loc(wchar_t):::* :::no-loc(envp):::[]);
 ```
 
 Die Argumentdefinitionen sind wie folgt:
 
-*argc*<br/>
-Eine ganze Zahl, die die Anzahl von Argumenten enthält, die in *argv* befolgt werden. Der *argc* -Parameter ist immer größer als oder gleich 1.
+*:::no-loc(argc):::*<br/>
+Eine ganze Zahl, die die Anzahl von Argumenten enthält, die in folgen *:::no-loc(argv):::* . Der- *:::no-loc(argc):::* Parameter ist immer größer als oder gleich 1.
 
-*argv*<br/>
-Ein Array von Zeigern auf Zeichenfolgen, die auf NULL enden und von den Benutzern des Programms eingegebene Befehlszeilenargumente darstellen. Gemäß der Konvention ist `argv[0]` der Befehl, mit dem das Programm aufgerufen wird, `argv[1]` ist das erste Befehlszeilenargument usw., bis `argv[argc]`, das immer NULL ist. Informationen zum Unterdrücken der Befehlszeilen Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung](../cpp/customizing-cpp-command-line-processing.md) .
+*:::no-loc(argv):::*<br/>
+Ein Array von Zeigern auf Zeichenfolgen, die auf NULL enden und von den Benutzern des Programms eingegebene Befehlszeilenargumente darstellen. `:::no-loc(argv):::[0]`Gemäß der Konvention ist der Befehl, mit dem das Programm aufgerufen wird, `:::no-loc(argv):::[1]` das erste Befehlszeilenargument usw., bis `:::no-loc(argv):::[:::no-loc(argc):::]` , das immer NULL ist. Informationen zum Unterdrücken der Befehlszeilen Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung](../cpp/customizing-cpp-command-line-processing.md) .
 
-Das erste Befehlszeilenargument ist immer `argv[1]`, und das letzte ist `argv[argc - 1]`.
+Das erste Befehlszeilenargument ist immer `:::no-loc(argv):::[1]`, und das letzte ist `:::no-loc(argv):::[:::no-loc(argc)::: - 1]`.
 
 > [!NOTE]
-> Gemäß der Konvention ist `argv[0]` der Befehl, mit dem das Programm aufgerufen wird. Es ist jedoch möglich, einen Prozess mit [CreateProcess](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) zu erzeugen, und wenn Sie sowohl das erste als auch das zweite Argument (*lpApplicationName* und *lpCommandLine*) verwenden, ist `argv[0]` möglicherweise nicht der Name der ausführbaren Datei. Verwenden Sie [GetModuleFileName](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) , um den Namen der ausführbaren Datei und den voll qualifizierten Pfad abzurufen.
+> `:::no-loc(argv):::[0]`Gemäß der Konvention ist der Befehl, mit dem das Programm aufgerufen wird. Es ist jedoch möglich, einen Prozess mit zu erzeugen [:::no-loc(CreateProcess):::](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) , und wenn Sie sowohl das erste als auch das zweite Argument (*lpApplicationName* und *lpCommandLine*) verwenden, ist möglich `:::no-loc(argv):::[0]` erweise nicht der Name der ausführbaren Datei. verwenden Sie, [:::no-loc(GetModuleFileName):::](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) um den Namen der ausführbaren Datei und den voll qualifizierten Pfad abzurufen.
 
 **Microsoft-spezifisch**
 
-*envp*<br/>
-Das *envp* -Array, das eine gemeinsame Erweiterung in vielen UNIX-Systemen ist, wird C++in Microsoft verwendet. Es ist ein Zeichenfolgenarray, das die Variablen darstellt, die in der Benutzerumgebung festgelegt werden. Das Array wird mit einem NULL-Eintrag beendet. Sie kann als Array von Zeigern auf **char** (`char *envp[]`) oder als Zeiger auf Zeiger auf **char** (`char **envp`) deklariert werden. Wenn das Programm anstelle von `main``wmain` verwendet, verwenden Sie den **wchar_t** -Datentyp anstelle von **char** . Der Umgebungsblock, der an `main` und `wmain` übermittelt wird, ist eine "fixierte" Kopie der aktuellen Umgebung. Wenn Sie anschließend die Umgebung mithilfe eines Aufrufes `putenv` oder `_wputenv`ändern, ändert sich die aktuelle Umgebung (wie von `getenv` oder `_wgetenv` und `_environ` oder `_wenviron` Variable zurückgegeben), aber der Block, auf den von envp verwiesen wird, ändert sich nicht. Informationen zum Unterdrücken der Umgebungs Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung](../cpp/customizing-cpp-command-line-processing.md) . Dieses Argument ist in C ANSI-kompatibel, aber nicht in C++.
+*:::no-loc(envp):::*<br/>
+Das *:::no-loc(envp):::* Array, das eine gemeinsame Erweiterung in vielen UNIX-Systemen ist, wird in Microsoft C++ verwendet. Es ist ein Zeichenfolgenarray, das die Variablen darstellt, die in der Benutzerumgebung festgelegt werden. Das Array wird mit einem NULL-Eintrag beendet. Sie kann als ein Array von Zeigern auf **`:::no-loc(char):::`** ( `:::no-loc(char)::: *:::no-loc(envp):::[]` ) oder als Zeiger auf Zeiger auf **`:::no-loc(char):::`** ( `:::no-loc(char)::: **:::no-loc(envp):::` ) deklariert werden. Wenn `:::no-loc(wmain):::` das Programm anstelle von verwendet `:::no-loc(main):::` , verwenden Sie den- **`:::no-loc(wchar_t):::`** Datentyp anstelle von **`:::no-loc(char):::`** . Der an und über gegebene Umgebungsblock `:::no-loc(main):::` `:::no-loc(wmain):::` ist eine "fixierte" Kopie der aktuellen Umgebung. Wenn Sie anschließend die Umgebung über einen `putenv` -oder-Rückruf ändern `_wputenv` , ändert sich die aktuelle Umgebung (wie von `getenv` oder `_wgetenv` und der-oder-Variable zurückgegeben `_environ` `_wenviron` ), aber der Block, auf den verweist, :::no-loc(envp)::: ändert sich nicht. Informationen zum Unterdrücken der Umgebungs Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung](../cpp/customizing-cpp-command-line-processing.md) . Dieses Argument ist in C ANSI-kompatibel, aber nicht in C++.
 
 **Ende Microsoft-spezifisch**
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird gezeigt, wie das *argc* -, *argv* -und *envp* -Argument zum `main`verwendet wird:
+Im folgenden Beispiel wird gezeigt, wie die *:::no-loc(argc):::* *:::no-loc(argv):::* Argumente, und für Folgendes verwendet werden *:::no-loc(envp):::* `:::no-loc(main):::` :
 
 ```cpp
 // argument_definitions.cpp
@@ -98,24 +98,24 @@ Im folgenden Beispiel wird gezeigt, wie das *argc* -, *argv* -und *envp* -Argume
 #include <string.h>
 
 using namespace std;
-int main( int argc, char *argv[], char *envp[] ) {
+int :::no-loc(main):::( int :::no-loc(argc):::, :::no-loc(char)::: *:::no-loc(argv):::[], :::no-loc(char)::: *:::no-loc(envp):::[] ) {
     int iNumberLines = 0;    // Default is no line numbers.
 
     // If /n is passed to the .exe, display numbered listing
     // of environment variables.
 
-    if ( (argc == 2) && _stricmp( argv[1], "/n" ) == 0 )
+    if ( (:::no-loc(argc)::: == 2) && _stricmp( :::no-loc(argv):::[1], "/n" ) == 0 )
          iNumberLines = 1;
 
     // Walk through list of strings until a NULL is encountered.
-    for( int i = 0; envp[i] != NULL; ++i ) {
+    for( int i = 0; :::no-loc(envp):::[i] != NULL; ++i ) {
         if( iNumberLines )
-            cout << i << ": " << envp[i] << "\n";
+            cout << i << ": " << :::no-loc(envp):::[i] << "\n";
     }
 }
 ```
 
-## <a name="parsing-c-command-line-arguments"></a>Parsing C++ -Befehlszeilenargumente
+## <a name="parsing-c-command-line-arguments"></a>Parsing C++-Befehlszeilenargumente
 
 **Microsoft-spezifisch**
 
@@ -123,17 +123,17 @@ Beim Interpretieren von Argumenten, die in der Befehlszeile des Betriebssystems 
 
 - Argumente werden durch einen Leerraum (Leerzeichen oder Tabstopp) abgegrenzt.
 
-- Die Einfügemarke (^) wird nicht als Escape- oder Trennzeichen erkannt. Das Zeichen wird vom Befehlszeilenparser im Betriebssystem vollständig verarbeitet, bevor es an das `argv`-Array im Programm übergeben wird.
+- Der :::no-loc(char)::: Caretzeichen (^) wird nicht als Escapezeichen :::no-loc(char)::: oder Trennzeichen erkannt. Der :::no-loc(char)::: Acter wird vom Befehlszeilen Parser im Betriebssystem vollständig verarbeitet, bevor er an das- `:::no-loc(argv):::` Array im Programm übergeben wird.
 
 - Eine Zeichenfolge, die in doppelten Anführungszeichen ("*String*") eingeschlossen ist, wird als einzelnes Argument interpretiert, unabhängig von Leerraum, der in enthalten ist. Eine Zeichenfolge in Anführungszeichen kann in ein Argument eingebettet sein.
 
-- Wenn dem Anführungszeichen ein umgekehrter Schrägstrich (\\") vorangestellt wird, wird diese Zeichenfolge als literales Anführungszeichen (") interpretiert.
+- Ein doppeltes Anführungszeichen, dem ein umgekehrter Schrägstrich ( \\ ") vorangestellt ist, wird als literales doppeltes Anführungszeichen :::no-loc(char)::: (") interpretiert.
 
 - Ein umgekehrter Schrägstrich wird als solcher interpretiert, sofern er nicht unmittelbar vor einem Anführungszeichen steht.
 
-- Wenn ein doppeltes Anführungszeichen auf eine gerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ein umgekehrter Schrägstrich im `argv`-Array platziert. Das doppelte Anführungszeichen wird als Zeichenfolgentrennzeichen interpretiert.
+- Wenn ein doppeltes Anführungszeichen auf eine gerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ein umgekehrter Schrägstrich im `:::no-loc(argv):::`-Array platziert. Das doppelte Anführungszeichen wird als Zeichenfolgentrennzeichen interpretiert.
 
-- Wenn auf eine ungerade Anzahl umgekehrter Schrägstriche ein doppeltes Anführungszeichen folgt, wird für jedes Paar von umgekehrten Schrägstrichen ein umgekehrter Schrägstrich in das `argv`-Array eingefügt, und das doppelte Anführungszeichen wird vom verbleibenden umgekehrten Schrägstrich mit einem Escapezeichen versehen, sodass ein echtes doppeltes Anführungszeichen (") in `argv` eingefügt wird.
+- Wenn ein doppeltes Anführungszeichen auf eine ungerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ein umgekehrter Schrägstrich in das Array eingefügt, `:::no-loc(argv):::` und das doppelte Anführungszeichen wird durch den umgekehrten Schrägstrich "Escapezeichen" :::no-loc(main)::: , wodurch ein literales doppeltes Anführungszeichen (") eingefügt wird `:::no-loc(argv):::` .
 
 ### <a name="example"></a>Beispiel
 
@@ -145,17 +145,17 @@ Das folgende Programm zeigt, wie Befehlszeilenargumente übergeben werden:
 #include <iostream>
 
 using namespace std;
-int main( int argc,      // Number of strings in array argv
-          char *argv[],   // Array of command-line argument strings
-          char *envp[] )  // Array of environment variable strings
+int :::no-loc(main):::( int :::no-loc(argc):::,      // Number of strings in array :::no-loc(argv):::
+          :::no-loc(char)::: *:::no-loc(argv):::[],   // Array of command-line argument strings
+          :::no-loc(char)::: *:::no-loc(envp):::[] )  // Array of environment variable strings
 {
     int count;
 
     // Display each command-line argument.
     cout << "\nCommand-line arguments:\n";
-    for( count = 0; count < argc; count++ )
-         cout << "  argv[" << count << "]   "
-                << argv[count] << "\n";
+    for( count = 0; count < :::no-loc(argc):::; count++ )
+         cout << "  :::no-loc(argv):::[" << count << "]   "
+                << :::no-loc(argv):::[count] << "\n";
 }
 ```
 
@@ -163,7 +163,7 @@ Die folgende Tabelle zeigt beispielhafte Eingaben und zu erwartende Ausgaben, wo
 
 ### <a name="results-of-parsing-command-lines"></a>Ergebnisse der Befehlszeilen Verarbeitung
 
-|Befehlszeileneingabe|argv[1]|argv[2]|argv[3]|
+|Befehlszeileneingabe|:::no-loc(argv):::[1]|:::no-loc(argv):::[2]|:::no-loc(argv):::€|
 |-------------------------|---------------|---------------|---------------|
 |`"abc" d e`|`abc`|`d`|`e`|
 |`a\\b d"e f"g h`|`a\\b`|`de fg`|`h`|
@@ -178,7 +178,7 @@ Die folgende Tabelle zeigt beispielhafte Eingaben und zu erwartende Ausgaben, wo
 
 Sie können Platzhalter – das Fragezeichen (?) und das Sternchen (*) – verwenden, um Dateinamen- und Pfadargumente in der Befehlszeile anzugeben.
 
-Befehlszeilenargumente werden von einer Routine mit dem Namen `_setargv` behandelt (oder in der breit Zeichen Umgebung `_wsetargv`), die standardmäßig keine Platzhalter in separate Zeichen folgen im `argv` Zeichen folgen Array erweitert. Weitere Informationen zum Aktivieren der Platzhalter Erweiterung finden Sie unter Erweitern von Platzhalter [Argumenten](../c-language/expanding-wildcard-arguments.md).
+Befehlszeilenargumente werden von einer Routine namens `_set:::no-loc(argv):::` (oder `_wset:::no-loc(argv):::` in der Wide :::no-loc(char)::: Acter-Umgebung) behandelt, die standardmäßig keine Platzhalter in separate Zeichen folgen im `:::no-loc(argv):::` Zeichen folgen Array erweitert. Weitere Informationen zum Aktivieren der Platzhalter Erweiterung finden Sie unter Erweitern von Platzhalter [Argumenten](../c-language/expanding-wildcard-arguments.md).
 
 **Ende Microsoft-spezifisch**
 
@@ -186,11 +186,11 @@ Befehlszeilenargumente werden von einer Routine mit dem Namen `_setargv` behande
 
 **Microsoft-spezifisch**
 
-Wenn das Programm keine Befehlszeilenargumente akzeptiert, können Sie ein wenig Platz sparen, indem Sie die Verwendung der Bibliotheksroutine unterdrücken, die die Befehlszeilenverarbeitung ausführt. Diese Routine wird `_setargv` aufgerufen und unter Platzhalter [Erweiterung](../cpp/wildcard-expansion.md)beschrieben. Um die Verwendung zu unterdrücken, definieren Sie eine Routine, die in der Datei mit der `main`-Funktion keine Aktion ausführt, und benennen Sie Sie `_setargv`. Der `_setargv`-wird dann durch die Definition von `_setargv`erfüllt, und die Bibliotheksversion wird nicht geladen.
+Wenn das Programm keine Befehlszeilenargumente akzeptiert, können Sie ein wenig Platz sparen, indem Sie die Verwendung der Bibliotheksroutine unterdrücken, die die Befehlszeilenverarbeitung ausführt. Diese Routine wird aufgerufen `_set:::no-loc(argv):::` und unter Platzhalter [Erweiterung](../cpp/wildcard-expansion.md)beschrieben. Um die Verwendung zu unterdrücken, definieren Sie eine Routine, die in der Datei, die die Funktion enthält, nichts bewirkt `:::no-loc(main):::` , und benennen Sie Sie `_set:::no-loc(argv):::` . Der-Befehl `_set:::no-loc(argv):::` wird dann durch die Definition von erfüllt `_set:::no-loc(argv):::` , und die Bibliotheksversion wird nicht geladen.
 
-Wenn Sie auf die Umgebungs Tabelle nicht über das `envp`-Argument zugreifen, können Sie auch eine eigene leere Routine bereitstellen, die anstelle von `_setenvp`, der Umgebungs Verarbeitungsroutine, verwendet werden soll. Ebenso wie bei der `_setargv`-Funktion müssen `_setenvp` als **extern "C"** deklariert werden.
+Wenn Sie mit dem-Argument nie auf die Umgebungs Tabelle zugreifen `:::no-loc(envp):::` , können Sie eine eigene leere Routine bereitstellen, die anstelle der `_set:::no-loc(envp):::` Umgebungs Verarbeitungsroutine verwendet wird. Ebenso wie bei der- `_set:::no-loc(argv):::` Funktion `_set:::no-loc(envp):::` muss als ** :::no-loc(extern)::: "C"** deklariert werden.
 
-Das Programm kann in der C-Lauf Zeit Bibliothek Aufrufe an die `spawn` oder `exec` Familie von Routinen tätigen. Wenn dies der Fall ist, sollten Sie die Umgebungs Verarbeitungsroutine nicht unterdrücken, da diese Routine verwendet wird, um eine Umgebung vom übergeordneten Prozess an den untergeordneten Prozess zu übergeben.
+Das Programm kann die-oder- `spawn` `exec` Familie von Routinen in der C-Lauf Zeit Bibliothek aufrufen. Wenn dies der Fall ist, sollten Sie die Umgebungs Verarbeitungsroutine nicht unterdrücken, da diese Routine verwendet wird, um eine Umgebung vom übergeordneten Prozess an den untergeordneten Prozess zu übergeben.
 
 **Ende Microsoft-spezifisch**
 

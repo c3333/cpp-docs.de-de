@@ -22,12 +22,12 @@ helpviewer_keywords:
 - structure members, offset
 - offsetof macro
 ms.assetid: f3b4eb16-a882-4d38-afc9-eebd976a7352
-ms.openlocfilehash: 278fca89046fcfc98e8c3ff726918cb4319e4ab0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ee6d5e56bb9f41a842e53984f754c7c07d58a125
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951247"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213501"
 ---
 # <a name="offsetof-macro"></a>offsetof-Makro
 
@@ -47,16 +47,16 @@ size_t offsetof(
 *structName*<br/>
 Der Name der übergeordneten Datenstruktur.
 
-*memberName*<br/>
+*Membername*<br/>
 Der Name des Elements in der übergeordneten Datenstruktur, für das der Offset bestimmt werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
 **offsetof** gibt den Offset des angegebenen Elements vom Anfang seiner übergeordneten Datenstruktur in Bytes zurück. Ist für Bitfelder nicht definiert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **offsetof** -Makro gibt den Offset in Bytes des *Mitgliedsnamens* von dem Anfang der Struktur zurück, der von *structname* als Wert des Typs **size_t**angegeben wird. Sie können Typen mit dem **struct** -Schlüsselwort angeben.
+Das **offsetof** -Makro gibt den Offset in Bytes des *Mitgliedsnamens* von dem Anfang der durch *structname* angegebenen Struktur als Wert des Typs **size_t**zurück. Sie können Typen mit dem- **`struct`** Schlüsselwort angeben.
 
 > [!NOTE]
 > **offsetof** ist keine Funktion und kann nicht mit einem C-Prototyp beschrieben werden.
@@ -67,12 +67,12 @@ Das **offsetof** -Makro gibt den Offset in Bytes des *Mitgliedsnamens* von dem A
 |-------------|---------------------|
 |**offsetof**|\<stddef.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
 Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Speicherreservierung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>

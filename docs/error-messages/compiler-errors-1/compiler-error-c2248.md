@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2248
 ms.assetid: 7a3ba0e8-d3b9-4bb9-95db-81ef17e31d23
-ms.openlocfilehash: 843676638037aab9544f1fbd8c5c6d56d351e485
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d35ded4b06423be53911f3efd0b55d75cb979773
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80206549"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212812"
 ---
 # <a name="compiler-error-c2248"></a>Compilerfehler C2248
 
 "*Member*": auf das in der*Klasse "Class"* deklarierte Element "*access_level*" kann nicht zugegriffen werden.
 
-Member einer abgeleiteten Klasse können nicht auf `private` Member einer Basisklasse zugreifen. Sie können nicht auf `private` oder `protected` Member von Klassen Instanzen zugreifen.
+Member einer abgeleiteten Klasse können nicht **`private`** auf Member einer Basisklasse zugreifen. Sie können nicht **`private`** auf-oder-Member **`protected`** von Klassen Instanzen zugreifen.
 
 ## <a name="example"></a>Beispiel
 
@@ -51,7 +51,7 @@ int main() {
 }
 ```
 
-Ein weiteres Konformitäts Problem, das C2248 verfügbar macht, ist die Verwendung von Vorlagen-Freunden und Spezialisierung. Um dieses Problem zu beheben, deklarieren Sie Friend-Vorlagen Funktionen, indem Sie entweder eine leere Vorlagen Parameterliste < > oder bestimmte Vorlagen Parameter verwenden.
+Ein weiteres Konformitäts Problem, das C2248 verfügbar macht, ist die Verwendung von Vorlagen-Freunden und Spezialisierung. Um dieses Problem zu beheben, deklarieren Sie Friend-Vorlagen Funktionen, indem Sie entweder eine leere Vorlagen Parameterliste <> oder bestimmte Vorlagen Parameter verwenden.
 
 ```cpp
 // C2248_template.cpp

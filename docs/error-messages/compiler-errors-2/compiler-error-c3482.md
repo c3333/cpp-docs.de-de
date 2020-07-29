@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C3482
 ms.assetid: bf99558e-bef4-421c-bb16-dcd9c54c1011
-ms.openlocfilehash: 1d775551d0f4955dc4eda9b0d418ea31e065714f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 0463f6de51e324bd02c8b766fd39909ee2803ecd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74743132"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212578"
 ---
 # <a name="compiler-error-c3482"></a>Compilerfehler C3482
 
 "this" kann nur als Lambdaerfassung innerhalb einer nicht statischen Memberfunktion verwendet werden.
 
-Sie können `this` nicht an die Erfassungsliste eines Lambdaausdrucks übergeben, der in einer statischen Methode oder globalen Funktion deklariert ist.
+Sie können nicht **`this`** an die Erfassungs Liste eines Lambda-Ausdrucks übergeben, der in einer statischen Methode oder globalen Funktion deklariert ist.
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
 - Konvertieren Sie die einschließende Funktion in eine nicht statische Methode oder
 
-- Entfernen Sie den `this` -Zeiger aus der Erfassungsliste des Lambdaausdrucks.
+- Entfernen Sie den- **`this`** Zeiger aus der Erfassungs Liste des Lambda-Ausdrucks.
 
 ## <a name="example"></a>Beispiel
 
@@ -43,6 +43,6 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)

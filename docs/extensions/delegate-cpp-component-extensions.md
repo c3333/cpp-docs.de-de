@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - delegate keyword [C++]
 ms.assetid: 03caf23d-7873-4a23-9b34-becf42aaf429
-ms.openlocfilehash: 388ccb28c9311b4727199e6b7324771c24c2906d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 77cd17eb8c164a08af9ec783f8aba422785609b6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172437"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219728"
 ---
 # <a name="delegate--ccli-and-ccx"></a>delegate (C++/CLI und C++/CX)
 
@@ -47,10 +47,10 @@ delegate-type-identifier
 
 ### <a name="parameters"></a>Parameter
 
-*access*<br/>
-(Optional) Der Zugriff auf den Delegaten – kann **public** (Standardwert) oder **private** lauten. Der Funktionsprototyp kann auch mit den Schlüsselwörtern **const** oder **volatile** qualifiziert werden.
+*zu*<br/>
+optionale Der Zugriff auf den Delegaten, der **`public`** (Standardeinstellung) oder sein kann **`private`** . Der Funktionsprototyp kann auch mit den **`const`** Schlüsselwörtern oder qualifiziert werden **`volatile`** .
 
-*return-type*<br/>
+*Rückgabetyp*<br/>
 Der Rückgabetyp des Funktionsprototyps.
 
 *delegate-type-identifier*<br/>
@@ -81,13 +81,13 @@ function_declaration
 
 ### <a name="parameters"></a>Parameter
 
-*access*<br/>
+*zu*<br/>
 (Optional) Der Zugriff auf den Delegaten außerhalb der Assembly kann „public“ oder „private“ lauten.  Der Standardwert ist „private“.  Innerhalb einer Klasse kann ein Delegat einen beliebigen Zugriff aufweisen.
 
 *function_declaration*<br/>
 Die Signatur der Funktion, die an den Delegaten gebunden werden kann. Der Rückgabetyp eines Delegaten kann jeder verwaltete Typ sein. Aus Gründen der Interoperabilität empfiehlt es sich, dass der Rückgabetyp eines Delegaten ein CLS-Typ ist.
 
-Um einen nicht gebundenen Delegaten zu definieren, sollte der erste Parameter in *function_declaration* der Typ des **this**-Zeigers für das Objekt sein.
+Um einen ungebundenen Delegaten zu definieren, sollte der erste Parameter in *Function_declaration* der Typ des **`this`** Zeigers für das Objekt sein.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -202,4 +202,4 @@ in static func3 11
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)
