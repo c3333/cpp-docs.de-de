@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 f1_keywords:
 - typedef_cpp
 ms.assetid: af1c24d2-4bfd-408a-acfc-482e264232f5
-ms.openlocfilehash: 7a45c4570341aca056b9d4c30ea496317a1ac96f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6054b7119614d9325bd099dd39b8aa1365d97ed7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80181563"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227672"
 ---
 # <a name="aliases-and-typedefs-c"></a>Aliase und Typedefs (C++)
 
@@ -24,14 +24,14 @@ using identifier = type;
 ## <a name="remarks"></a>Bemerkungen
 
 *identifier*<br/>
-Die Bezeichnung des Alias.
+Der Name des Alias.
 
 *type*<br/>
 Der Typbezeichner, für den Sie einen Alias erstellen.
 
 Ein Alias führt keinen neuen Typ ein und kann die Bedeutung eines vorhandenen Typnamens nicht ändern.
 
-Die einfachste Form eines Alias entspricht dem **typedef** -Mechanismus von c++ 03:
+Die einfachste Form eines Alias entspricht dem **`typedef`** Mechanismus aus c++ 03:
 
 ```cpp
 // C++11
@@ -70,7 +70,7 @@ void actual_function(int arg) { /* some code */ }
 func fptr = &actual_function;
 ```
 
-Eine Einschränkung des **typedef** -Mechanismus besteht darin, dass er nicht mit Vorlagen funktioniert. Die Typaliassyntax in C++11 ermöglicht jedoch die Erstellung von Aliasvorlagen:
+Eine Einschränkung des **`typedef`** Mechanismus besteht darin, dass er nicht mit Vorlagen funktioniert. Die Typaliassyntax in C++11 ermöglicht jedoch die Erstellung von Aliasvorlagen:
 
 ```cpp
 template<typename T> using ptr = T*;
@@ -81,7 +81,7 @@ ptr<int> ptr_int;
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt die Verwendung einer Aliasvorlage mit einer benutzerdefinierten Zuweisung, in diesem Fall einem ganzzahligen Vektortyp. Sie können einen beliebigen Typ für **int** ersetzen, um einen praktischen Alias zum Ausblenden der komplexen Parameterlisten im Haupt Funktionscode zu erstellen. Indem Sie die benutzerdefinierte Zuordnung im gesamten Code verwenden, können Sie die Lesbarkeit verbessern und das Risiko von Fehlern verringern, die sich aufgrund von Schreibfehlern einschleichen können.
+Das folgende Beispiel zeigt die Verwendung einer Aliasvorlage mit einer benutzerdefinierten Zuweisung, in diesem Fall einem ganzzahligen Vektortyp. Sie können einen beliebigen Typ für ersetzen **`int`** , um einen bequemen Alias zum Ausblenden der komplexen Parameterlisten im Haupt Funktionscode zu erstellen. Indem Sie die benutzerdefinierte Zuordnung im gesamten Code verwenden, können Sie die Lesbarkeit verbessern und das Risiko von Fehlern verringern, die sich aufgrund von Schreibfehlern einschleichen können.
 
 ```cpp
 #include <stdlib.h>
@@ -141,13 +141,13 @@ int main ()
 
 ## <a name="typedefs"></a>TypeDefs
 
-Eine **typedef** -Deklaration führt einen Namen ein, der innerhalb des Gültigkeits Bereichs zu einem Synonym für den Typ wird, der durch den *Type-Declaration-* Teil der Deklaration angegeben wird.
+Eine- **`typedef`** Deklaration führt einen Namen ein, der innerhalb des Gültigkeits Bereichs zu einem Synonym für den Typ wird, der durch den *Type-Declaration-* Teil der Deklaration angegeben wird.
 
 Sie können typedef-Deklarationen verwenden, um kürzere oder aussagekräftigere Namen für Typen zu erstellen, die bereits von der Programmiersprache definiert sind, oder für Typen, die deklariert wurden. Mithilfe von typedef-Namen können Sie die Implementierungsdetails kapseln, die sich möglicherweise ändern.
 
-Im Gegensatz zu den **Klassen**-, **Struktur**-, **Union**-und Enumerationsdeklarationen führen **typedef** - **Deklarationen keine** neuen Typen ein – Sie führen neue Namen für vorhandene Typen ein.
+Im Gegensatz zu den **`class`** **`struct`** **`union`** Deklarationen,, und **`enum`** **`typedef`** führen Deklarationen keine neuen Typen ein – Sie führen neue Namen für vorhandene Typen ein.
 
-Mit **typedef** deklarierte Namen belegen denselben Namespace wie andere Bezeichner (außer Anweisungs Bezeichnungen). Deshalb können sie nicht den gleichen Bezeichner wie ein zuvor deklarierter Name verwenden. Nur in einer Klassentypdeklaration ist dies möglich. Betrachten Sie das folgenden Beispiel:
+Mit deklarierte Namen **`typedef`** belegen denselben Namespace wie andere Bezeichner (außer Anweisungs Bezeichnungen). Deshalb können sie nicht den gleichen Bezeichner wie ein zuvor deklarierter Name verwenden. Nur in einer Klassentypdeklaration ist dies möglich. Betrachten Sie das folgenden Beispiel:
 
 ```cpp
 // typedef_names1.cpp
@@ -156,7 +156,7 @@ typedef unsigned long UL;   // Declare a typedef name, UL.
 int UL;                     // C2377: redefined.
 ```
 
-Die Regeln zum Ausblenden von Namen, die andere Bezeichner betreffen, Steuern auch die Sichtbarkeit von Namen, die mithilfe von **typedef**deklariert wurden. Deshalb ist das folgenden Beispiel in C++ zulässig:
+Die Regeln zum Ausblenden von Namen, die andere Bezeichner betreffen, Steuern auch die Sichtbarkeit von Namen, die mit deklariert wurden **`typedef`** . Deshalb ist das folgenden Beispiel in C++ zulässig:
 
 ```cpp
 // typedef_names2.cpp
@@ -212,7 +212,7 @@ Sie können einen beliebigen Typ mit typedef deklarieren, einschließlich Zeiger
 
 ### <a name="examples"></a>Beispiele
 
-Eine Verwendung von **typedef** -Deklarationen besteht darin, Deklarationen einheitlicher und kompakter zu gestalten. Beispiel:
+Eine Verwendung von **`typedef`** Deklarationen besteht darin, Deklarationen einheitlicher und kompakter zu gestalten. Beispiel:
 
 ```cpp
 typedef char CHAR;          // Character type.
@@ -222,7 +222,7 @@ typedef unsigned long ulong;
 ulong ul;     // Equivalent to "unsigned long ul;"
 ```
 
-Wenn Sie **typedef** verwenden möchten, um grundlegende und abgeleitete Typen in der gleichen Deklaration anzugeben, können Sie Deklaratoren durch Kommas trennen. Beispiel:
+**`typedef`** Wenn Sie verwenden möchten, um grundlegende und abgeleitete Typen in der gleichen Deklaration anzugeben, können Sie Deklaratoren durch Kommas trennen. Beispiel:
 
 ```cpp
 typedef char CHAR, *PSTR;
@@ -234,7 +234,7 @@ Im folgenden Beispiel wird der Typ `DRAWF` für eine Funktion bereitgestellt, di
 typedef void DRAWF( int, int );
 ```
 
-Nach der obigen **typedef** -Anweisung wird die Deklaration
+Nach der obigen **`typedef`** Anweisung ist die Deklaration
 
 ```cpp
 DRAWF box;
@@ -246,7 +246,7 @@ dieser Deklaration:
 void box( int, int );
 ```
 
-**typedef** wird häufig mit **struct** kombiniert, um benutzerdefinierte Typen zu deklarieren und zu benennen:
+**`typedef`** wird häufig mit kombiniert **`struct`** , um benutzerdefinierte Typen zu deklarieren und zu benennen:
 
 ```cpp
 // typedef_specifier2.cpp
@@ -273,7 +273,7 @@ int main()
 
 ### <a name="re-declaration-of-typedefs"></a>Neudeklaration von Typdefinitionen
 
-Die **typedef** -Deklaration kann verwendet werden, um denselben Namen erneut zu deklarieren, um auf denselben Typ zu verweisen. Beispiel:
+Die- **`typedef`** Deklaration kann verwendet werden, um denselben Namen erneut zu deklarieren, um auf denselben Typ zu verweisen. Beispiel:
 
 ```cpp
 // FILE1.H
@@ -287,9 +287,9 @@ typedef char CHAR;
 #include "file2.h"   // OK
 ```
 
-Das Programm *Prog. Cpp* enthält zwei Header Dateien, von denen beide **typedef** -Deklarationen für den Namen `CHAR`enthalten. Solange die beiden Deklarationen auf denselben Typ verweisen, ist eine solche Neudeklaration zulässig.
+Das Programm *Prog. Cpp* enthält zwei Header Dateien, die beide **`typedef`** Deklarationen für den Namen enthalten `CHAR` . Solange die beiden Deklarationen auf denselben Typ verweisen, ist eine solche Neudeklaration zulässig.
 
-Ein Name, der zuvor als anderer Typ deklariert wurde, kann nicht von einer **typedef** neu definiert werden. Wenn *File2. H* enthält
+Ein **`typedef`** kann einen Namen, der zuvor als anderer Typ deklariert wurde, nicht neu definieren. Wenn *File2. H* enthält
 
 ```cpp
 // FILE2.H
@@ -309,9 +309,9 @@ typedef union REGS      // OK: name REGS redeclared
 } REGS;
 ```
 
-### <a name="typedefs-in-c-vs-c"></a>Typedefs in C++ vs. C
+### <a name="typedefs-in-c-vs-c"></a>Typedefs in C++ im Vergleich zu C
 
-Die Verwendung des **typedef** -Spezifizierers mit Klassentypen wird größtenteils aufgrund der ANSI C-Übung zum Deklarieren unbenannter Strukturen in **typedef** -Deklarationen unterstützt. Zum Beispiel verwenden viele C-Programmierer Folgendes:
+Die Verwendung des **`typedef`** Spezifizierers mit Klassentypen wird größtenteils aufgrund der ANSI C-Übung zum Deklarieren unbenannter Strukturen in **`typedef`** Deklarationen unterstützt. Zum Beispiel verwenden viele C-Programmierer Folgendes:
 
 ```cpp
 // typedef_with_class_types1.cpp
@@ -335,7 +335,7 @@ Anstelle von:
 struct point_t ptOrigin;
 ```
 
-In C++unterscheidet sich der Unterschied zwischen **typedef** -Namen und Real-Typen (deklariert mit den Schlüsselwörtern **Class**, **struct**, **Union**und **Enumeration** ). Obwohl die C-Übung, eine namenlose Struktur in einer **typedef** -Anweisung zu deklarieren, weiterhin funktioniert, bietet Sie keine anzuzeigende Notations Vorteile wie in C.
+In C++ ist der Unterschied zwischen **`typedef`** Namen und Real-Typen (deklariert mit den **`class`** **`struct`** **`union`** Schlüsselwörtern,, und) unter **`enum`** schiedlich. Obwohl die C-Übung, eine namenlose Struktur in einer-Anweisung zu deklarieren **`typedef`** , immer noch funktioniert, bietet Sie keine anzuzeigende Notations Vorteile wie in C.
 
 ```cpp
 // typedef_with_class_types2.cpp
@@ -347,9 +347,9 @@ typedef struct {
 } POINT;
 ```
 
-Im vorangehenden Beispiel wird eine Klasse mit dem Namen `POINT` mithilfe der unbenannten **typedef** -Syntax deklariert. `POINT` wird als Klassenname behandelt. Es gelten jedoch folgende Einschränkungen für Namen, die auf diese Weise eingeführt werden:
+Im vorangehenden Beispiel wird eine Klasse `POINT` mit dem Namen mit der unbenannten Klassen **`typedef`** Syntax deklariert. `POINT` wird als Klassenname behandelt. Es gelten jedoch folgende Einschränkungen für Namen, die auf diese Weise eingeführt werden:
 
-- Der Name (das Synonym) kann nicht nach einem **Klassen**-, **Struktur**-oder **Union** -Präfix angezeigt werden.
+- Der Name (das Synonym) kann nicht nach einem- **`class`** ,- **`struct`** oder- **`union`** Präfix angezeigt werden.
 
 - Der Name darf nicht als Konstruktor- oder Destruktorname innerhalb einer Klassendeklaration verwendet werden.
 

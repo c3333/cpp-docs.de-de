@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Copy method [C++]
 - BSTR object [C++], copy
 ms.assetid: 00ba7311-e82e-4a79-8106-5329fa2f869a
-ms.openlocfilehash: 1fe8cfb5b644b3c7c34cf3325a91ebdf23a04946
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b6029e98e83b171d9ab9f8f3f0282fa3f46ca167
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80190325"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227594"
 ---
 # <a name="_bstr_tcopy"></a>_bstr_t::copy
 
@@ -29,7 +29,7 @@ BSTR copy( bool fCopy = true ) const;
 #### <a name="parameters"></a>Parameter
 
 *Kopie*<br/>
-TRUE gibt an, dass **Copy** eine Kopie der enthaltenen `BSTR`zurückgibt, andernfalls gibt **Copy** den tatsächlichen BSTR zurück.
+**`true`** Gibt an, dass **Copy** eine Kopie der enthaltenen zurückgibt `BSTR` , andernfalls wird der tatsächliche BSTR **copy** -Wert zurückgegeben.
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -45,6 +45,6 @@ STDMETHODIMP CAlertMsg::get_ConnectionStr(BSTR *pVal){ //  m_bsConStr is _bstr_t
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_bstr_t-Klasse](../cpp/bstr-t-class.md)

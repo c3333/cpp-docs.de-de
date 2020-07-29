@@ -1,20 +1,20 @@
 ---
 title: Ausrichtung
-description: Gibt an, wie die Daten Ausrichtung C++in modern angegeben wird.
+description: Gibt an, wie die Daten Ausrichtung in modernem C++ angegeben wird.
 ms.date: 12/11/2019
 ms.assetid: a986d510-ccb8-41f8-b905-433df9183485
-ms.openlocfilehash: 45b22742394a0b1c159e8b8102a26802a2441929
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 7f6bef061fee41389bad644d9ac5244f5644da76
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076115"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227646"
 ---
 # <a name="alignment"></a>Ausrichtung
 
-Eines der Features von C++ auf niedriger Ebene ist die Möglichkeit zum Angeben der präzisen Ausrichtung von Objekten im Speiche, um eine bestimmte Hardwarearchitektur optimal zu nutzen. Standardmäßig richtet der Compiler Klassen-und Strukturmember auf ihren Größen Wert aus: `bool` und `char` an 1-Byte-Begrenzungen, `short` an 2-Byte-Begrenzungen, `int`, `long`und `float` an 4-Byte-Grenzen und `long long`, `double`und `long double` an 8-Byte-Begrenzungen.
+Eines der Features von C++ auf niedriger Ebene ist die Möglichkeit zum Angeben der präzisen Ausrichtung von Objekten im Speiche, um eine bestimmte Hardwarearchitektur optimal zu nutzen. Standardmäßig richtet der Compiler Klassen-und Strukturmember auf ihren Größen Wert aus: **`bool`** und **`char`** an 1-Byte-Begrenzungen, **`short`** an 2-Byte-Begrenzungen,, **`int`** **`long`** und **`float`** an 4-Byte-Begrenzungen und **`long long`** , **`double`** und **`long double`** auf 8-Byte-Begrenzungen.
 
-In den meisten Szenarien müssen Sie sich nicht mit der Ausrichtung beschäftigen, da die Standardausrichtung bereits optimal ist. In einigen Fällen können Sie jedoch bedeutende Leistungsverbesserungen oder Speicher Einsparungen erzielen, indem Sie eine benutzerdefinierte Ausrichtung für Ihre Datenstrukturen angeben. Vor Visual Studio 2015 konnten Sie die Microsoft-spezifischen Schlüsselwörter `__alignof` und `declspec(alignas)` verwenden, um eine Ausrichtung anzugeben, die größer als die Standardeinstellung ist. Ab Visual Studio 2015 sollten Sie die Standard Schlüsselwörter " **alignof** " und " **alignas** " für "c++ 11" verwenden, um die maximale Portabilität Die neuen Schlüsselwörter Verhalten sich auf die gleiche Weise wie die Microsoft-spezifischen Erweiterungen. Die Dokumentation für diese Erweiterungen gilt auch für die neuen Schlüsselwörter. Weitere Informationen finden Sie unter [__alignof-Operator](../cpp/alignof-operator.md) und [Ausrichtung](../cpp/align-cpp.md). Der C++ Standard gibt kein Verpackungs Verhalten für die Ausrichtung an Grenzen an, die kleiner als der Compilerstandard für die Zielplattform sind, sodass Sie in diesem Fall weiterhin das Microsoft #Pragma [Pack](../preprocessor/pack.md) verwenden müssen.
+In den meisten Szenarien müssen Sie sich nicht mit der Ausrichtung beschäftigen, da die Standardausrichtung bereits optimal ist. In einigen Fällen können Sie jedoch bedeutende Leistungsverbesserungen oder Speicher Einsparungen erzielen, indem Sie eine benutzerdefinierte Ausrichtung für Ihre Datenstrukturen angeben. Vor Visual Studio 2015 konnten Sie die Microsoft-spezifischen Schlüsselwörter verwenden **`__alignof`** und **`__declspec(align)`** eine Ausrichtung angeben, die größer als die Standardeinstellung ist. Ab Visual Studio 2015 sollten Sie die c++ 11-Standard Schlüsselwörter **`alignof`** und **`alignas`** für die maximale Code Portabilität verwenden. Die neuen Schlüsselwörter Verhalten sich auf die gleiche Weise wie die Microsoft-spezifischen Erweiterungen. Die Dokumentation für diese Erweiterungen gilt auch für die neuen Schlüsselwörter. Weitere Informationen finden Sie unter [ `alignof` Operator](../cpp/alignof-operator.md) und [align](../cpp/align-cpp.md). Der C++-Standard gibt kein Verpackungs Verhalten für die Ausrichtung an Grenzen an, die kleiner als der Compilerstandard für die Zielplattform sind, sodass Sie in diesem Fall weiterhin Microsoft verwenden müssen [`#pragma pack`](../preprocessor/pack.md) .
 
 Verwenden Sie die [aligned_storage-Klasse](../standard-library/aligned-storage-class.md) für die Speicher Belegung von Datenstrukturen mit benutzerdefinierten Ausrichtungen. Die [aligned_union-Klasse](../standard-library/aligned-union-class.md) dient zum Angeben der Ausrichtung für Unions mit nicht trivialen Konstruktoren oder Dekonstruktoren.
 
@@ -28,9 +28,9 @@ CPUs führen Anweisungen aus, die für im Arbeitsspeicher gespeicherte Daten ver
 
 Compiler versuchen, Daten Zuordnungen auf eine Weise zu erstellen, die eine Fehlausrichtung der Daten verhindert.
 
-Der Compiler weist für einfache Datentypen Adressen zu, die ein Vielfaches der Größe in Bytes des Datentyps entsprechen. Der Compiler weist z. b. Adressen Variablen vom Typ `long`, die ein Vielfaches von 4 sind, und legt die unteren 2 Bits der Adresse auf 0 (null) fest.
+Der Compiler weist für einfache Datentypen Adressen zu, die ein Vielfaches der Größe in Bytes des Datentyps entsprechen. Der Compiler weist z. b. Adressen Variablen vom Typ zu, die ein **`long`** Vielfaches von 4 sind, wobei die untersten Bits der Adresse auf 0 (null) festgelegt werden.
 
-Der Compiler füllt auch Strukturen auf eine Weise auf, die jedes Element der Struktur auf natürliche Weise anpasst. Beachten Sie die Struktur `struct x_` im folgenden Codebeispiel:
+Der Compiler füllt auch Strukturen auf eine Weise auf, die jedes Element der Struktur auf natürliche Weise anpasst. Sehen Sie sich die Struktur `struct x_` im folgenden Codebeispiel an:
 
 ```cpp
 struct x_
@@ -63,13 +63,13 @@ Beide Deklarationen geben `sizeof(struct x_)` als 12 Bytes zurück.
 
 Die zweite Deklaration enthält zwei Auffüllelemente:
 
-1. `char _pad0[3]`, um den `int b` Member an einer 4-Byte-Grenze auszurichten.
+1. `char _pad0[3]`, wenn der `int b` Member an einer 4-Byte-Grenze ausgerichtet werden soll.
 
-1. `char _pad1[1]`, um die Array Elemente der Struktur an einer vier-Byte-Grenze `struct _x bar[3];` auszurichten.
+1. `char _pad1[1]`, wenn die Array Elemente der-Struktur `struct _x bar[3];` an einer vier-Byte-Grenze ausgerichtet werden sollen.
 
-Durch die Auffüll Zeichen werden die Elemente der `bar[3]` so ausgerichtet, dass natürlicher Zugriff möglich ist.
+Der Abstand richtet die Elemente von `bar[3]` auf eine Weise aus, die natürlichen Zugriff zulässt.
 
-Das folgende Codebeispiel zeigt das Layout des `bar[3]` Arrays:
+Das folgende Codebeispiel zeigt das `bar[3]` Array Layout:
 
 ```Output
 adr offset   element
@@ -96,13 +96,13 @@ adr offset   element
 0x0023   char _pad1[1];
 ```
 
-## <a name="alignof-and-alignas"></a>alignof und alignas
+## <a name="alignof-and-alignas"></a>`alignof` und `alignas`
 
-Der **alignas** -Typspezifizierer ist eine C++ Portier Bare, standardmäßige Methode zum Angeben der benutzerdefinierten Ausrichtung von Variablen und benutzerdefinierten Typen. Der Operator " **alignof** " ist ebenso eine standardmäßige, Portable Methode zum Abrufen der Ausrichtung eines bestimmten Typs oder einer Variablen.
+Der **`alignas`** Typspezifizierer ist eine Portable, C++-Standardmethode zum Angeben der benutzerdefinierten Ausrichtung von Variablen und benutzerdefinierten Typen. Der **`alignof`** Operator ist ebenso eine standardmäßige, Portable Methode zum Abrufen der Ausrichtung eines bestimmten Typs oder einer Variablen.
 
 ## <a name="example"></a>Beispiel
 
-Sie können **alignas** in einer Klasse, Struktur oder Union oder einzelnen Membern verwenden. Wenn mehrere **alignas** -Spezifizierer gefunden werden, wählt der Compiler den strengsten Wert aus (der mit dem größten Wert).
+Sie können **`alignas`** für eine Klasse, Struktur oder Union oder für einzelne Member verwenden. Wenn mehrere **`alignas`** spezifier gefunden wird, wählt der Compiler den strengsten Wert aus (der mit dem größten Wert).
 
 ```cpp
 // alignas_alignof.cpp
@@ -123,6 +123,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Ausrichtung der Datenstruktur](https://en.wikipedia.org/wiki/Data_structure_alignment)
