@@ -20,12 +20,12 @@ f1_keywords:
 helpviewer_keywords:
 - Concurrency namespace
 ms.assetid: f1d33ca2-679b-4442-b140-22a9d9df61d1
-ms.openlocfilehash: 66c2e6e323ed9f12f30e9392ec7afe431fc2138b
-ms.sourcegitcommit: e15b46ea7888dbdd7e0bb47da76aeed680c3c1f3
+ms.openlocfilehash: f710ead679484c41b006566a711a03ba153201ec
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86446739"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230375"
 ---
 # <a name="concurrency-namespace"></a>concurrency-Namespace
 
@@ -83,7 +83,7 @@ namespace concurrency;
 |[Invalid_link_target-Klasse](invalid-link-target-class.md)|Diese Klasse beschreibt eine Ausnahme, die ausgelöst wird, wenn die `link_target`-Methode eines Meldungsblocks aufgerufen wird und der Meldungsblock keine Verknüpfung mit dem Ziel erstellen kann. Dies kann das Ergebnis vom Überschreiten der Anzahl zulässiger Links für den Meldungsblock sein oder das Ergebnis von Versuchen, ein bestimmtes Ziel zweimal mit der gleichen Quelle zu verknüpfen.|
 |[Invalid_multiple_scheduling-Klasse](invalid-multiple-scheduling-class.md)|Diese Klasse beschreibt eine Ausnahme, die ausgelöst wird, wenn ein `task_handle`-Objekt mehrmals mittels der `run`-Methode eines `task_group`-Objekts oder `structured_task_group`-Objekts ohne einen zwischenzeitlichen Aufruf der `wait`-Methode oder `run_and_wait`-Methode geplant wird.|
 |[Invalid_operation-Klasse](invalid-operation-class.md)|Diese Klasse beschreibt eine Ausnahme, die bei Ausführen einer ungültigen Operation ausgelöst wird, die nicht genauer von einem anderen von der Concurrency Runtime ausgelösten Ausnahmetyp beschrieben wird.|
-|[Invalid_oversubscribe_operation-Klasse](invalid-oversubscribe-operation-class.md)|Diese Klasse beschreibt eine Ausnahme, die ausgelöst wird, wenn die `Context::Oversubscribe`-Methode mit dem auf `_BeginOversubscription` festgelegten `false`-Parameter ohne einen vorherigen Aufruf der `Context::Oversubscribe`-Methode mit dem auf `_BeginOversubscription` festgelegten `true`-Parameter aufgerufen wird.|
+|[Invalid_oversubscribe_operation-Klasse](invalid-oversubscribe-operation-class.md)|Diese Klasse beschreibt eine Ausnahme, die ausgelöst `Context::Oversubscribe` wird, wenn die-Methode aufgerufen wird, wobei der- `_BeginOversubscription` Parameter auf festgelegt ist, **`false`** ohne dass ein vorheriger Aufruf der-Methode auf `Context::Oversubscribe` `_BeginOversubscription` festgelegt ist **`true`** .|
 |[Invalid_scheduler_policy_key-Klasse](invalid-scheduler-policy-key-class.md)|Diese Klasse beschreibt eine Ausnahme, die ausgelöst wird, wenn ein ungültiger oder unbekannter Schlüssel an einen `SchedulerPolicy`-Objektkonstruktor übergeben wird, oder wenn der `SetPolicyValue`-Methode eines `SchedulerPolicy`-Objekts ein Schlüssel übergeben wird, der auf andere Weise geändert werden muss, z. B. die `SetConcurrencyLimits`-Methode.|
 |[invalid_scheduler_policy_thread_specification-Klasse](invalid-scheduler-policy-thread-specification-class.md)|Diese Klasse beschreibt eine Ausnahme, die bei dem Versuch ausgelöst wird, die Parallelitätsgrenzen eines `SchedulerPolicy`-Objekts so festzulegen, dass der Wert des `MinConcurrency`-Schlüssels kleiner ist, als der Wert des `MaxConcurrency`-Schlüssels.|
 |[Invalid_scheduler_policy_value-Klasse](invalid-scheduler-policy-value-class.md)|Diese Klasse beschreibt eine Ausnahme, die ausgelöst wird, wenn der Richtlinienschlüssel eines `SchedulerPolicy`-Objekts auf einen ungültigen Wert für diesen Schlüssel festgelegt wird.|
@@ -179,7 +179,7 @@ namespace concurrency;
 |[ASend-Funktion](concurrency-namespace-functions.md#asend)|Ist überladen. Ein asynchroner Sendevorgang, der eine Aufgabe zum Weitergeben der Daten an den Zielblock plant.|
 |[cancel_current_task-Funktion](concurrency-namespace-functions.md#cancel_current_task)|Bricht die gerade ausgeführte Aufgabe ab. Diese Funktion kann aus dem Text einer Aufgabe aufgerufen werden, um die Ausführung der Aufgabe abzubrechen und ihn dabei in den `canceled` Zustand übergehen zu lassen.<br /><br /> Der Aufruf dieser Funktion, wenn Sie sich nicht innerhalb des Texts von einem `task` befinden, ist kein unterstütztes Szenario. Dies führt zu undefiniertem Verhalten, wie z. b. einem Absturz oder einer nicht Reaktionsfähigkeit in Ihrer Anwendung.|
 |[create_async-Funktion](concurrency-namespace-functions.md#create_async)|Erstellt ein asynchrones Konstrukt der Windows Runtime auf einem vom Benutzer angegebenes Lambda oder Funktionsobjekt. Der Rückgabetyp von `create_async` ist entweder `IAsyncAction^`, `IAsyncActionWithProgress<TProgress>^`, `IAsyncOperation<TResult>^` oder `IAsyncOperationWithProgress<TResult, TProgress>^` auf Grundlage der Signatur des Lambda-Ausdrucks, der an die Methode übergeben wurde.|
-|[create_task-Funktion](concurrency-namespace-functions.md#create_task)|Ist überladen. Erstellt ein ppl- [Aufgaben](task-class.md) Objekt. Das Element `create_task` kann überall dort verwendet werden, wo Sie einen Aufgabenkonstruktor verwendet hätten. Es wird hauptsächlich der Einfachheit halber bereitgestellt, da es beim Erstellen eines Tasks die Verwendung des `auto`-Schlüsselwort ermöglicht.|
+|[create_task-Funktion](concurrency-namespace-functions.md#create_task)|Ist überladen. Erstellt ein ppl- [Aufgaben](task-class.md) Objekt. Das Element `create_task` kann überall dort verwendet werden, wo Sie einen Aufgabenkonstruktor verwendet hätten. Es wird hauptsächlich aus Gründen der praktische bereitgestellt, da es die Verwendung des- **`auto`** Schlüssel Worts beim Erstellen von Aufgaben ermöglicht.|
 |[CreateResourceManager-Funktion](concurrency-namespace-functions.md#createresourcemanager)|Gibt eine Schnittstelle zurück, die die Singletoninstanz des Ressourcen-Managers der Concurrency Runtime darstellt. Der Ressourcen-Manager ist für das Zuweisen von Ressourcen für Planer, die miteinander kooperieren möchten, zuständig.|
 |[DisableTracing-Funktion](concurrency-namespace-functions.md#disabletracing)|Deaktiviert die Ablaufverfolgung in der Concurrency Runtime. Diese Funktion ist veraltet, da die Registrierung der ETW-Ablaufverfolgung standardmäßig aufgehoben wird.|
 |[EnableTracing-Funktion](concurrency-namespace-functions.md#enabletracing)|Aktiviert die Ablaufverfolgung in der Concurrency Runtime. Diese Funktion ist veraltet, da die Registrierung der ETW-Ablaufverfolgung jetzt standardmäßig erfolgt.|
@@ -191,7 +191,7 @@ namespace concurrency;
 |[Getprocessornoentcount-Funktion](concurrency-namespace-functions.md#getprocessornodecount)|Gibt die Anzahl von NUMA-Knoten oder Prozessorpaketen des zugrunde liegenden Systems zurück.|
 |[GetSchedulerId-Funktion](concurrency-namespace-functions.md#getschedulerid)|Gibt einen eindeutigen Bezeichner zurück, der einem Planer zugewiesen werden kann, der die `IScheduler`-Schnittstelle implementiert.|
 |[interruption_point-Funktion](concurrency-namespace-functions.md#interruption_point)|Erstellt einen Unterbrechungspunkt für den Abbruch. Wenn ein Abbruch im Kontext, in dem diese Funktion aufgerufen wird, ausgeführt wird, löst diese eine interne Ausnahme aus, mit der die Ausführung der aktuell ausgeführten parallelen Verarbeitung abgebrochen wird. Wenn kein Abbruch ausgeführt wird, bleibt die Funktion untätig.|
-|[Is_current_task_group_canceling-Funktion](concurrency-namespace-functions.md#is_current_task_group_canceling)|Gibt zurück, ob die Aufgabengruppe, die gerade inline auf dem aktuellen Kontext ausgeführt wird, in diesem Moment (oder in Kürze) einen Abbruch durchführt. Beachten Sie, dass `false` zurückgegeben wird, wenn auf dem aktuellen Kontext zurzeit inline keine Aufgabengruppe ausgeführt wird.|
+|[Is_current_task_group_canceling-Funktion](concurrency-namespace-functions.md#is_current_task_group_canceling)|Gibt zurück, ob die Aufgabengruppe, die gerade inline auf dem aktuellen Kontext ausgeführt wird, in diesem Moment (oder in Kürze) einen Abbruch durchführt. Beachten Sie, dass zurückgegeben wird, wenn derzeit keine Aufgaben Gruppe im aktuellen Kontext Inline ausgeführt wird **`false`** .|
 |[make_choice-Funktion](concurrency-namespace-functions.md#make_choice)|Ist überladen. Erstellt einen `choice`-Meldungsblock aus einem optionalen `Scheduler` oder einer `ScheduleGroup` und mindestens zwei Eingabequellen.|
 |[Make_greedy_join-Funktion](concurrency-namespace-functions.md#make_greedy_join)|Ist überladen. Erstellt einen `greedy multitype_join`-Meldungsblock aus einem optionalen `Scheduler` oder einer `ScheduleGroup` und mindestens zwei Eingabequellen.|
 |[make_join-Funktion](concurrency-namespace-functions.md#make_join)|Ist überladen. Erstellt einen `non_greedy multitype_join`-Meldungsblock aus einem optionalen `Scheduler` oder einer `ScheduleGroup` und mindestens zwei Eingabequellen.|
@@ -258,6 +258,6 @@ namespace concurrency;
 
 **Header:** "Agents. h", "ConcRT. h", "concrtrm. h", "concurrent_priority_queue. h", "Concurrent_queue. h", "concurrent_unordered_map. h", "concurrent_unordered_set. h", "Concurrent_vector. h", "internal_concurrent_hash. h", "internal_split_ordered_list. h", "ppl. h", "pplcancellation_token
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Verweis](reference-concurrency-runtime.md)

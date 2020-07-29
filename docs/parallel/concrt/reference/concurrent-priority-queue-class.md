@@ -15,12 +15,12 @@ f1_keywords:
 helpviewer_keywords:
 - concurrent_priority_queue class
 ms.assetid: 3e740381-0f4e-41fc-8b66-ad0bb55f17a3
-ms.openlocfilehash: 1d8651d1391ded2970a00a7429c36f341a438659
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 024bd2a100b8a0b871d98a5e6001858b55977565
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143219"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230362"
 ---
 # <a name="concurrent_priority_queue-class"></a>concurrent_priority_queue-Klasse
 
@@ -47,11 +47,11 @@ Der Typ des Funktions Objekts, das zwei Element Werte als Sortierschlüssel verg
 *_Ax*<br/>
 Der Typ, der das gespeicherte Zuweisungs Objekt darstellt, das Details zur Zuordnung und Freigabe von Arbeitsspeicher für die Warteschlange für die gleichzeitige Priorität kapselt. Dieses Argument ist optional, und der Standardwert ist `allocator<T>`.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`allocator_type`|Ein Typ, der die zuordnerklasse für die Warteschlange für die gleichzeitige Priorität darstellt.|
 |`const_reference`|Ein Typ, der einen konstanten Verweis auf ein Element des Typs darstellt, der in einer Warteschlange für gleichzeitige Priorität gespeichert ist.|
@@ -61,13 +61,13 @@ Der Typ, der das gespeicherte Zuweisungs Objekt darstellt, das Details zur Zuord
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[concurrent_priority_queue](#ctor)|Ist überladen. Erstellt eine Warteschlange für gleichzeitige Priorität.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[Löschen](#clear)|Löscht alle Elemente mit der gleichzeitigen Priorität. Diese Methode ist nicht nebenläufigkeitssicher.|
 |[empty](#empty)|Testet, ob die Warteschlange für die gleichzeitige Priorität zum Zeitpunkt des Aufrufs dieser Methode leer ist. Diese Methode ist nebenläufigkeitssicher.|
@@ -79,13 +79,13 @@ Der Typ, der das gespeicherte Zuweisungs Objekt darstellt, das Details zur Zuord
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[operator=](#operator_eq)|Ist überladen. Weist den Inhalt eines anderen `concurrent_priority_queue`-Objekts diesem Objekt zu. Diese Methode ist nicht nebenläufigkeitssicher.|
+|[Operator =](#operator_eq)|Ist überladen. Weist den Inhalt eines anderen `concurrent_priority_queue`-Objekts diesem Objekt zu. Diese Methode ist nicht nebenläufigkeitssicher.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ausführliche Informationen zur `concurrent_priority_queue`-Klasse finden Sie unter [parallele Container und Objekte](../../../parallel/concrt/parallel-containers-and-objects.md).
+Ausführliche Informationen zur `concurrent_priority_queue` -Klasse finden Sie unter [parallele Container und Objekte](../../../parallel/concrt/parallel-containers-and-objects.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -97,7 +97,7 @@ Ausführliche Informationen zur `concurrent_priority_queue`-Klasse finden Sie un
 
 **Namespace:** Parallelität
 
-## <a name="clear"></a>Klartext
+## <a name="clear"></a><a name="clear"></a>Klartext
 
 Löscht alle Elemente mit der gleichzeitigen Priorität. Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -107,9 +107,9 @@ void clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-`clear` ist nicht Parallelitäts sicher. Sie müssen sicherstellen, dass keine anderen Threads Methoden in der Warteschlange für gleichzeitige Priorität aufrufen, wenn Sie diese Methode aufrufen. `clear` gibt keinen Arbeitsspeicher frei.
+`clear`ist nicht Parallelitäts sicher. Sie müssen sicherstellen, dass keine anderen Threads Methoden in der Warteschlange für gleichzeitige Priorität aufrufen, wenn Sie diese Methode aufrufen. `clear`gibt keinen Arbeitsspeicher frei.
 
-## <a name="ctor"></a>concurrent_priority_queue
+## <a name="concurrent_priority_queue"></a><a name="ctor"></a>concurrent_priority_queue
 
 Erstellt eine Warteschlange für gleichzeitige Priorität.
 
@@ -167,15 +167,15 @@ Alle Konstruktoren speichern ein zuordnerobjekt `_Al` und initialisieren die Pri
 
 Der erste Konstruktor gibt eine leere Warteschlange für die anfängliche Priorität an und gibt optional eine Zuweisung an.
 
-Der zweite Konstruktor gibt eine Prioritäts Warteschlange mit einer anfänglichen Kapazitäts `_Init_capacity` an und gibt optional eine Zuweisung an.
+Der zweite Konstruktor gibt eine Prioritäts Warteschlange mit einer Anfangskapazität an `_Init_capacity` und gibt optional eine Zuweisung an.
 
-Der dritte Konstruktor gibt Werte an, die vom iteratorbereich (`_Begin``_End`) bereitgestellt werden, und gibt optional eine Zuweisung an.
+Der dritte Konstruktor gibt Werte an, die vom iteratorbereich [,) bereitgestellt werden `_Begin` , `_End` und gibt optional eine Zuweisung an.
 
-Der vierte und fünfte Konstruktor geben eine Kopie der Prioritäts Warteschlange `_Src`an.
+Der vierte und fünfte Konstruktor geben eine Kopie der Prioritäts Warteschlange an `_Src` .
 
-Der sechste und der siebte Konstruktor geben eine Verschiebung der Prioritäts Warteschlange `_Src`an.
+Der sechste und der siebte Konstruktor geben eine Verschiebung der Prioritäts Warteschlange an `_Src` .
 
-## <a name="empty"></a>leer
+## <a name="empty"></a><a name="empty"></a>leer
 
 Testet, ob die Warteschlange für die gleichzeitige Priorität zum Zeitpunkt des Aufrufs dieser Methode leer ist. Diese Methode ist nebenläufigkeitssicher.
 
@@ -185,9 +185,9 @@ bool empty() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die Prioritäts Warteschlange zum Zeitpunkt des Aufrufs der Funktion leer war, andernfalls **false** .
+**`true`**, wenn die Prioritäts Warteschlange zum Zeitpunkt des Aufrufs der Funktion leer war, **`false`** andernfalls.
 
-## <a name="get_allocator"></a>get_allocator
+## <a name="get_allocator"></a><a name="get_allocator"></a>get_allocator
 
 Gibt eine Kopie der Zuweisung zurück, die zum Erstellen der Warteschlange für die gleichzeitige Priorität verwendet wurde. Diese Methode ist nebenläufigkeitssicher.
 
@@ -197,9 +197,9 @@ allocator_type get_allocator() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Kopie der Zuweisung, die zum Erstellen des `concurrent_priority_queue` Objekts verwendet wird.
+Eine Kopie der Zuweisung, die zum Erstellen des- `concurrent_priority_queue` Objekts verwendet wird.
 
-## <a name="operator_eq"></a>Operator =
+## <a name="operator"></a><a name="operator_eq"></a>Operator =
 
 Weist den Inhalt eines anderen `concurrent_priority_queue`-Objekts diesem Objekt zu. Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -218,7 +218,7 @@ Das `concurrent_priority_queue`-Quellobjekt.
 
 Ein Verweis auf das `concurrent_priority_queue`-Objekt.
 
-## <a name="push"></a>Push
+## <a name="push"></a><a name="push"></a>Push
 
 Fügt der Warteschlange für gleichzeitige Priorität ein Element hinzu. Diese Methode ist nebenläufigkeitssicher.
 
@@ -233,7 +233,7 @@ void push(value_type&& _Elem);
 *_Elem*<br/>
 Das Element, das der Warteschlange für gleichzeitige Priorität hinzugefügt werden soll.
 
-## <a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a>Größe
 
 Gibt die Anzahl der Elemente in der Warteschlange für die gleichzeitige Priorität zurück. Diese Methode ist nebenläufigkeitssicher.
 
@@ -243,13 +243,13 @@ size_type size() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Elemente in diesem `concurrent_priority_queue` Objekt.
+Die Anzahl der Elemente in diesem- `concurrent_priority_queue` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die zurückgegebene Größe schließt garantiert alle Elemente ein, die durch Aufrufe der Funktion `push`hinzugefügt werden. Die Ergebnisse von ausstehenden gleichzeitigen Vorgängen werden jedoch möglicherweise nicht angezeigt.
+Die zurückgegebene Größe schließt garantiert alle Elemente ein, die durch Aufrufe der-Funktion hinzugefügt werden `push` . Die Ergebnisse von ausstehenden gleichzeitigen Vorgängen werden jedoch möglicherweise nicht angezeigt.
 
-## <a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
 Vertauscht den Inhalt von zwei Warteschlangen mit gleichzeitiger Priorität. Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -262,7 +262,7 @@ void swap(concurrent_priority_queue& _Queue);
 *_Queue*<br/>
 Das `concurrent_priority_queue`-Objekt, mit dem der Inhalt getauscht werden soll.
 
-## <a name="try_pop"></a>try_pop
+## <a name="try_pop"></a><a name="try_pop"></a>try_pop
 
 Entfernt das Element mit der höchsten Priorität aus der Warteschlange, wenn die Warteschlange nicht leer ist, und gibt es zurück. Diese Methode ist nebenläufigkeitssicher.
 
@@ -277,9 +277,9 @@ Ein Verweis auf eine Variable, die mit dem Element mit der höchsten Priorität 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn ein Wert per Pop ausgeblendet wurde, andernfalls **false** .
+**`true`**, wenn ein Wert per Pop ausgeblendet wurde, **`false`** andernfalls.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace](concurrency-namespace.md)<br/>
+[Parallelitäts Namespace](concurrency-namespace.md)<br/>
 [Parallele Container und Objekte](../../../parallel/concrt/parallel-containers-and-objects.md)

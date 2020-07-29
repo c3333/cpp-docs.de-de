@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - char_traits<char32_t> class
 ms.assetid: c0315466-45d0-4a99-b83e-3b1dbfbfbbc3
-ms.openlocfilehash: 9a5cf2eb7734a20d04ec5c47ae71e80180a7b29d
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 0daf61f641b0b68bf806bba081b3c312777c6fe7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68459049"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230206"
 ---
-# <a name="chartraitsltchar32tgt-struct"></a>char_traits&lt;char32_t&gt;-Struktur
+# <a name="char_traitsltchar32_tgt-struct"></a>char_traits&lt;char32_t&gt;-Struktur
 
-Eine Struktur, die eine Spezialisierung der Vorlagenstruktur **char_traits\<CharType>** für ein Element des Typs `char32_t` ist.
+Eine Struktur, die eine Spezialisierung der Vorlagen Struktur ist, die auf ein Element des Typs **Char_traits \<CharType> ** **`char32_t`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,17 +25,17 @@ template <>
 struct char_traits<char32_t>;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dank der Spezialisierung kann die Struktur Bibliotheksfunktionen nutzen, die Objekte dieses Typs `char32_t` bearbeiten.
+Durch die Spezialisierung kann die Struktur Bibliotheksfunktionen nutzen, die Objekte dieses Typs bearbeiten **`char32_t`** .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<string>
+**Header:**\<string>
 
 **Namespace:** std
 
 ## <a name="see-also"></a>Siehe auch
 
 [\<string>](../standard-library/string.md)\
-[char_traits-Struktur](../standard-library/char-traits-struct.md)
+[Char_traits-Struktur](../standard-library/char-traits-struct.md)
