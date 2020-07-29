@@ -4,60 +4,60 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - friend assemblies, Visual C++
 ms.assetid: 8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd
-ms.openlocfilehash: 05b9d8bcf5d7364e1dcd31940bc0db64a5e605f1
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: a42caaf07f6ec0c71f63d6a0df8a79fff6f737e6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65447303"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221444"
 ---
 # <a name="friend-assemblies-c"></a>Friend-Assemblys (C++)
 
-Für Laufzeiten anwendbar die *Friend-Assemblys* Sprachfunktion stellt die Typen, die im Namespace-Gültigkeitsbereich oder im globalen Bereich in einer Assemblykomponente zugegriffen werden kann, um eine oder mehrere Clientassemblys oder NETMODULE-Dateien sind.
+Für anwendbare Laufzeiten stellt die Sprachfunktion *Friend* -Assemblys Typen im Namespace Bereich oder globalen Gültigkeitsbereich einer Assemblykomponente dar, auf die mindestens eine Clientassembly oder netmodule zugreifen kann.
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
-**Hinweise**
+**Anmerkungen**
 
-(Diese Sprachfunktion wird in alle Laufzeiten nicht unterstützt.)
+(Diese Sprachfunktion wird nicht in allen Laufzeiten unterstützt.)
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-**Hinweise**
+**Anmerkungen**
 
-(Diese Sprachfunktion wird in der Windows-Runtime nicht unterstützt.)
+(Dieses Sprachfeature wird in der Windows-Runtime nicht unterstützt.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: **/ZW**
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-**Hinweise**
+**Anmerkungen**
 
-#### <a name="to-make-types-at-namespace-scope-or-global-scope-in-an-assembly-component-accessible-to-a-client-assembly-or-netmodule"></a>Typen im Namespace-Gültigkeitsbereich oder im globalen Gültigkeitsbereich in einer Assemblykomponente für eine Clientassembly oder eine NETMODULE-Datei zugänglich zu machen
+#### <a name="to-make-types-at-namespace-scope-or-global-scope-in-an-assembly-component-accessible-to-a-client-assembly-or-netmodule"></a>So machen Sie Typen im Namespace Gültigkeitsbereich oder globalen Gültigkeitsbereich einer Assemblykomponente verfügbar, die für eine Clientassembly oder NETMODULE verfügbar ist
 
-1. Geben Sie in der Komponente, die einem Assemblyattribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>, und übergeben Sie den Namen des Client-Assembly oder NETMODULE-Datei, die Typen im Namespace-Gültigkeitsbereich oder im globalen Gültigkeitsbereich in der Komponente zugegriffen wird.  Sie können mehrere Clientassemblys oder NETMODULE-Dateien angeben, indem zusätzliche Attribute angeben.
+1. Geben Sie in der Komponente ein Assemblyattribut an <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> , und übergeben Sie den Namen der Clientassembly oder NETMODULE, die auf Typen im Namespace Bereich oder globalen Gültigkeitsbereich der Komponente zugreift.  Sie können mehrere Clientassemblys oder netmodules angeben, indem Sie zusätzliche Attribute angeben.
 
-1. In der Clientassembly oder eine NETMODULE-Datei, wenn Sie die Komponentenassembly mit verweisen `#using`, übergeben die `as_friend` Attribut.  Bei Angabe der `as_friend` Attribut für eine Assembly, der nicht `InternalsVisibleToAttribute`, eine Laufzeitausnahme wird ausgelöst, wenn Sie versuchen, Zugriff auf einen Typ im Namespace-Gültigkeitsbereich oder im globalen Gültigkeitsbereich in der Komponente.
+1. Wenn Sie in der Clientassembly oder NETMODULE mithilfe von auf die Komponentenassembly verweisen, `#using` übergeben Sie das- **`as_friend`** Attribut.  Wenn Sie das- **`as_friend`** Attribut für eine Assembly angeben, die nicht angibt `InternalsVisibleToAttribute` , wird eine Lauf Zeit Ausnahme ausgelöst, wenn Sie versuchen, auf einen Typ im Namespace-Gültigkeitsbereich oder globalen Gültigkeitsbereich der Komponente zuzugreifen.
 
-Ein Buildfehler führt, wenn die Assembly mit der <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> Attribut verfügt nicht über einen starken Namen, aber die Clientassembly, die verwendet die `as_friend` Attribut führt.
+Ein Buildfehler wird ausgegeben, wenn die Assembly, die das-Attribut enthält, <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> keinen starken Namen hat, sondern die Clientassembly, die das- **`as_friend`** Attribut verwendet.
 
-Obwohl Typen im Gültigkeitsbereich des Namespace und den globalen Bereich auf eine Client-Assembly oder eine NETMODULE-Datei bekannt sind können, ist Memberzugriff weiterhin wirksam.  Sie können keine z. B. einen privaten Member zugreifen.
+Obwohl Typen im Namespace Bereich und globalen Gültigkeitsbereich einer Clientassembly oder einem NetModule-Element bekannt sein können, ist der Zugriff auf Member weiterhin wirksam.  Beispielsweise können Sie nicht auf einen privaten Member zugreifen.
 
-Zugriff auf alle Typen in einer Assembly muss explizit erteilt werden.  Beispielsweise ist Assembly C keinen Zugriff auf alle Typen in Assembly A haben Assembly C verweist auf Assembly B und Assembly B hat Zugriff auf alle Typen in Assembly a
+Der Zugriff auf alle Typen in einer Assembly muss explizit erteilt werden.  Die Assembly c hat z. b. keinen Zugriff auf alle Typen in Assembly a, wenn Assembly c auf Assembly b verweist und Assembly b Zugriff auf alle Typen in Assembly a hat.
 
-Informationen dazu, wie sich – d. h. wie Sie einen starken Namen zu geben – eine Assembly, die erstellt wird, mithilfe des Microsoft C++ -Compiler, finden Sie unter [Assemblys mit starken Namen (Assemblysignierung) (C++/CLI)](../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md).
+Weitere Informationen zum Signieren von – d. h. zum Zuweisen eines starken Namens für – eine Assembly, die mit dem Microsoft C++-Compiler erstellt wird, finden Sie unter Assemblys mit [starkem Namen (Assemblysignierung) (C++/CLI)](../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md).
 
-Als Alternative zum Verwenden des Features der Friend-Assemblys können <xref:System.Security.Permissions.StrongNameIdentityPermission> Zugriff auf einzelne Typen eingeschränkt.
+Als Alternative zur Verwendung der Friend-Assemblys können Sie verwenden, <xref:System.Security.Permissions.StrongNameIdentityPermission> um den Zugriff auf einzelne Typen einzuschränken.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: **/clr**
 
 ### <a name="examples"></a>Beispiele
 
-Im folgenden Codebeispiel wird eine Komponente, die eine Clientassembly angibt, die Zugriff auf die Typen in der Komponente definiert.
+Im folgenden Codebeispiel wird eine Komponente definiert, die eine Clientassembly angibt, die Zugriff auf die Typen in der Komponente hat.
 
 ```cpp
 // friend_assemblies.cpp
@@ -75,7 +75,7 @@ public:
 };
 ```
 
-Im nächste Codebeispiel greift auf einen privaten Typ in der Komponente.
+Das nächste Codebeispiel greift auf einen privaten Typ in der-Komponente zu.
 
 ```cpp
 // friend_assemblies_2.cpp
@@ -92,9 +92,9 @@ int main() {
 Class1::Test_Public
 ```
 
-Im nächste Codebeispiel wird eine Komponente definiert, aber keine Clientassembly, die Zugriff auf die Typen in der Komponente haben.
+Im nächsten Codebeispiel wird eine Komponente definiert, aber es wird keine Clientassembly angegeben, die Zugriff auf die Typen in der Komponente hat.
 
-Beachten Sie, dass die Komponente verknüpft wurde **/ opt: Noref**. Dadurch wird sichergestellt, dass private Typen in den Metadaten der Komponente, ausgegeben werden, die nicht erforderlich wenn ist die `InternalsVisibleTo` Attribut vorhanden ist. Weitere Informationen finden Sie unter [/OPT (Optimierungen)](../build/reference/opt-optimizations.md).
+Beachten Sie, dass die Komponente mithilfe von **/OPT: NOREF**verknüpft ist. Dadurch wird sichergestellt, dass private Typen in den Metadaten der Komponente ausgegeben werden. Dies ist nicht erforderlich, wenn das `InternalsVisibleTo` Attribut vorhanden ist. Weitere Informationen finden Sie unter [/OPT (Optimierungen)](../build/reference/opt-optimizations.md).
 
 ```cpp
 // friend_assemblies_3.cpp
@@ -109,7 +109,7 @@ public:
 };
 ```
 
-Das folgende Codebeispiel definiert einen Client, der versucht, einen privaten Typ in einer Komponente zugreifen, die nicht auf die privaten Typen Zugriff. Aufgrund des Verhaltens der Laufzeit Wenn Sie die Ausnahme abfangen möchten müssen Sie versuchen, einen privaten Typ in eine Hilfsfunktion.
+Im folgenden Codebeispiel wird ein Client definiert, der versucht, auf einen privaten Typ in einer Komponente zuzugreifen, die keinen Zugriff auf seine privaten Typen bietet. Aufgrund des Verhaltens der Laufzeit müssen Sie, wenn Sie die Ausnahme abfangen möchten, versuchen, auf einen privaten Typ in einer Hilfsfunktion zuzugreifen.
 
 ```cpp
 // friend_assemblies_4.cpp
@@ -136,7 +136,7 @@ int main() {
 caught an exception
 ```
 
-Im nächste Codebeispiel zeigt, wie eine Komponente von starken Namen zu erstellen, die eine Clientassembly angibt, die Zugriff auf die Typen der Komponente verfügt.
+Im nächsten Codebeispiel wird gezeigt, wie eine Komponente mit starkem Namen erstellt wird, die eine Clientassembly angibt, die Zugriff auf die Typen in der Komponente hat.
 
 ```cpp
 // friend_assemblies_5.cpp
@@ -155,19 +155,19 @@ public:
 };
 ```
 
-Beachten Sie, dass die Komponente seinen öffentlichen Schlüssel angeben muss. Es wird empfohlen, Sie führen die folgenden Befehle nacheinander an einer Eingabeaufforderung zum Erstellen eines Schlüsselpaars und Abrufen des öffentlichen Schlüssels:
+Beachten Sie, dass die Komponente ihren öffentlichen Schlüssel angeben muss. Wir empfehlen, dass Sie die folgenden Befehle nacheinander an der Eingabeaufforderung ausführen, um ein Schlüsselpaar zu erstellen und den öffentlichen Schlüssel zu erhalten:
 
-**sn -d friend_assemblies.snk**
+**SN-d friend_assemblies. snk**
 
-**sn -k friend_assemblies.snk**
+**sn-k friend_assemblies. snk**
 
-**sn -i friend_assemblies.snk friend_assemblies.snk**
+**sn-i friend_assemblies. snk friend_assemblies. snk**
 
-**sn -pc friend_assemblies.snk key.publickey**
+**SN-PC friend_assemblies. snk-Schlüssel. PublicKey**
 
 **sn -tp key.publickey**
 
-Im nächste Codebeispiel greift auf einen privaten Typ in der Komponente starkem Namen.
+Im nächsten Codebeispiel wird auf einen privaten Typ in der Komponente mit starkem Namen zugegriffen.
 
 ```cpp
 // friend_assemblies_6.cpp
@@ -184,6 +184,6 @@ int main() {
 Class1::Test_Public
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md)

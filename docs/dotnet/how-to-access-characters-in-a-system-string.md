@@ -7,24 +7,24 @@ helpviewer_keywords:
 - examples [C++], strings
 - strings [C++], accessing characters
 ms.assetid: cfc89756-aef3-4988-907e-fb236dcb7087
-ms.openlocfilehash: 3c44c5e7651bb1c5b4c28654b896cbe64bd5bec7
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: a91f82d0377b9065c2927e61e9f2a558a49985f0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545342"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221366"
 ---
 # <a name="how-to-access-characters-in-a-systemstring"></a>Gewusst wie: Zugriff auf Zeichen in einem System::String
 
-Sie können auf Zeichen eines <xref:System.String> Objekts zugreifen, um Hochleistungs Aufrufe von nicht verwalteten Funktionen zu erhalten, die `wchar_t*` Zeichen folgen verwenden. Die-Methode ergibt einen inneren Zeiger auf das erste Zeichen des <xref:System.String> Objekts. Dieser Zeiger kann direkt manipuliert oder fixiert und an eine Funktion übermittelt werden, die eine normale `wchar_t` Zeichenfolge erwartet.
+Sie können auf die Zeichen eines- <xref:System.String> Objekts zugreifen, um Hochleistungs Aufrufe von nicht verwalteten Funktionen auszuführen, die Zeichen folgen akzeptieren `wchar_t*` . Die-Methode gibt einen inneren Zeiger auf das erste Zeichen des- <xref:System.String> Objekts aus. Dieser Zeiger kann direkt manipuliert oder fixiert werden und an eine Funktion, die eine gewöhnliche Zeichenfolge erwartet, an Sie übermittelt werden **`wchar_t`** .
 
 ## <a name="example"></a>Beispiel
 
-`PtrToStringChars` gibt eine <xref:System.Char>zurück, bei der es sich um einen inneren Zeiger handelt (wird auch als `byref`bezeichnet). Dies unterliegt der Garbage Collection. Sie müssen diesen Zeiger nicht anheften, es sei denn, Sie übergeben ihn an eine native Funktion.
+`PtrToStringChars`Gibt einen zurück <xref:System.Char> , bei dem es sich um einen inneren Zeiger handelt (wird auch als bezeichnet `byref` ). Dies unterliegt der Garbage Collection. Sie müssen diesen Zeiger nicht anheften, es sei denn, Sie übergeben ihn an eine native Funktion.
 
-Betrachten Sie folgenden Code.  Das anhechern ist nicht erforderlich, da `ppchar` ein innerer Zeiger ist, und wenn die Garbage Collector die Zeichenfolge verschiebt, auf die Sie verweist, wird auch `ppchar`aktualisiert. Ohne einen [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md)funktioniert der Code und führt nicht zu Leistungseinbußen, die durch anhenung verursacht werden.
+Betrachten Sie folgenden Code.  Das `ppchar` anhechern ist nicht erforderlich, da ein innerer Zeiger ist, und wenn das Garbage Collector die Zeichenfolge verschiebt, auf die es verweist, wird es ebenfalls aktualisiert `ppchar` . Ohne [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md)ist der Code funktionsfähig und führt nicht zu Leistungseinbußen, die durch anhenung verursacht werden.
 
-Wenn Sie `ppchar` an eine native Funktion übergeben, muss Sie ein angeheftender Zeiger sein. der Garbage Collector kann keine Zeiger auf den nicht verwalteten Stapel Rahmen aktualisieren.
+Wenn Sie `ppchar` an eine native Funktion übergeben, muss Sie ein angehefteter Zeiger sein, und der Garbage Collector kann keine Zeiger auf den nicht verwalteten Stapel Rahmen aktualisieren.
 
 ```cpp
 // PtrToStringChars.cpp
@@ -77,7 +77,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Ein innerer Zeiger verfügt über alle Eigenschaften eines systemeigenen C++ Zeigers. Beispielsweise können Sie damit eine verknüpfte Datenstruktur durchlaufen und Einfügungen und Löschungen nur mit einem Zeiger ausführen:
+Ein innerer Zeiger verfügt über alle Eigenschaften eines nativen C++-Zeigers. Beispielsweise können Sie damit eine verknüpfte Datenstruktur durchlaufen und Einfügungen und Löschungen nur mit einem Zeiger ausführen:
 
 ```cpp
 // PtrToStringChars_3.cpp
@@ -99,6 +99,6 @@ void deleteNode( ListNode ^ list, Int32 e ) {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+[Verwenden von C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)

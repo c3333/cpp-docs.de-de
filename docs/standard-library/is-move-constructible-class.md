@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - is_move_constructible
 ms.assetid: becdf076-7419-488d-a335-78adf2478b9b
-ms.openlocfilehash: 9585a932a34a24769201aaa379525a9b4c181e41
-ms.sourcegitcommit: 33a898bf976c65f998b4e88a84765a0cef4193a8
+ms.openlocfilehash: 5495ac39a98f5c194f19d28ba85a1d59f47dfbb4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920093"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222380"
 ---
 # <a name="is_move_constructible-class"></a>is_move_constructible-Klasse
 
@@ -26,19 +26,19 @@ struct is_move_constructible;
 
 ### <a name="parameters"></a>Parameter
 
-*T* \
+*Bund*\
 Der Typ, der ausgewertet werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein typprädikat, das zu **true** ausgewertet wird, wenn der Typ *T* mit einem Verschiebungs Vorgang erstellt werden kann. Dieses Prädikat entspricht `is_constructible<T, T&&>`. Ein Typ *T* , der keinen bewegungskonstruktor hat, aber einen Kopierkonstruktor hat, der ein `const T&` Argument akzeptiert, erfüllt `std::is_move_constructible`.
+Ein typprädikat, das zu ausgewertet **`true`** wird, wenn der Typ *T* mit einem Verschiebungs Vorgang erstellt werden kann. Dieses Prädikat entspricht `is_constructible<T, T&&>`. Ein Typ *T* , der keinen bewegungskonstruktor besitzt, aber über einen Kopierkonstruktor verfügt, der ein- `const T&` Argument akzeptiert, entspricht `std::is_move_constructible` .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

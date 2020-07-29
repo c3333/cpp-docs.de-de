@@ -1,17 +1,17 @@
 ---
-title: appobject (C++ com-Attribut)
+title: appobject (com-Attribut C++)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.appobject
 helpviewer_keywords:
 - appobject attribute
 ms.assetid: 8ce30b73-e945-403e-a755-6bc78078a695
-ms.openlocfilehash: ebbb3ce71dc9b947ef49a42ee41a5ce2d5abbb34
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ae3547a32e6d5984a9ef95e495ba119c3a2ed385
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168511"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222159"
 ---
 # <a name="appobject"></a>appobject
 
@@ -25,7 +25,7 @@ Identifiziert die Co-Klasse als Anwendungs Objekt, das einer Full. exe-Anwendung
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **appobject** C++ -Attribut verfügt über die gleiche Funktionalität wie das " [appobject](/windows/win32/Midl/appobject) "-Attribut "mittlerer l".
+Das **appobject** C++-Attribut verfügt über die gleiche Funktionalität wie das " [appobject](/windows/win32/Midl/appobject) "-Attribut "mittlerer l".
 
 ## <a name="example"></a>Beispiel
 
@@ -52,8 +52,8 @@ class A : public ICustom {
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|`coclass`|
 |**Ungültige Attribute**|Keine|
 
@@ -63,4 +63,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

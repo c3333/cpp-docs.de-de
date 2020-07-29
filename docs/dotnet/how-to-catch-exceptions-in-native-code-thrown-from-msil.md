@@ -6,16 +6,16 @@ helpviewer_keywords:
 - catching exceptions, thrown from MSIL
 - MSIL, catching exceptions in native code
 ms.assetid: c15afd2b-8505-43bf-8a4a-f1d41532a124
-ms.openlocfilehash: 23adb573a62e93933c487f611c05aed4c08494ef
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 6f2de640a2427bb1ea65d099742967454ca625f6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545084"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221353"
 ---
 # <a name="how-to-catch-exceptions-in-native-code-thrown-from-msil"></a>Gewusst wie: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code
 
-In nativem Code können Sie eine System C++ eigene Ausnahme von MSIL abfangen.  Sie können CLR-Ausnahmen mit `__try` und `__except`abfangen.
+In System eigenem Code können Sie die native C++-Ausnahme von MSIL erfassen.  Sie können CLR-Ausnahmen mit `__try` und abfangen **`__except`** .
 
 Weitere Informationen finden Sie unter [strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md) und [moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md).
 
@@ -77,6 +77,6 @@ error
 caught an exception
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Behandlung von Ausnahmen](../extensions/exception-handling-cpp-component-extensions.md)
+[Ausnahmebehandlung](../extensions/exception-handling-cpp-component-extensions.md)

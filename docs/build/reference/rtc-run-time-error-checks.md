@@ -25,16 +25,16 @@ helpviewer_keywords:
 - RTCc compiler option
 - -RTCc compiler option [C++]
 ms.assetid: 9702c558-412c-4004-acd5-80761f589368
-ms.openlocfilehash: a830ff5b8ba4b7fcd95eb462f899f2eadce6de11
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 49f0e4bace5f3dd199b58854e838204bd2cd5f3b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62318549"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222016"
 ---
 # <a name="rtc-run-time-error-checks"></a>/RTC (Laufzeitfehlerüberprüfungen)
 
-Zum Aktivieren und deaktivieren die Run-Time-Funktion für laufzeitfehlerüberprüfungen in Verbindung mit der [Runtime_checks](../../preprocessor/runtime-checks.md) Pragma.
+Wird verwendet, um die Lauf Zeit Fehlerüberprüfungen in Verbindung mit dem [runtime_checks](../../preprocessor/runtime-checks.md) -Pragma zu aktivieren und zu deaktivieren.
 
 ## <a name="syntax"></a>Syntax
 
@@ -48,12 +48,12 @@ Zum Aktivieren und deaktivieren die Run-Time-Funktion für laufzeitfehlerüberpr
 ## <a name="arguments"></a>Argumente
 
 **1**<br/>
-Der entsprechende **/RTC**`su`.
+Entsprechung von **/RTC** `su` .
 
-**c**<br/>
-Zeigt an, dass ein Wert zugewiesen wird einem kleineren Datentyp, und führt zu einem Datenverlust. Wenn ein Wert vom Typ beispielsweise `short 0x101` eine Variable des Typs zugewiesen wird `char`.
+**scher**<br/>
+Meldet, wenn ein Wert einem kleineren Datentyp zugewiesen wird, und führt zu einem Datenverlust. Wenn z. b. ein Wert des Typs `short 0x101` einer Variablen vom Typ zugewiesen ist **`char`** .
 
-Diese Option gibt Situationen, in denen Sie beabsichtigen abschneiden, z. B. Wenn Sie möchten, dass die ersten acht Bits, eine `int` als eine `char`. Da **/RTC** `c` verursacht einen Laufzeitfehler, wenn als Ergebnis der Zuweisung keine Informationen verloren gehen, können Sie die Informationen, die Sie einen Laufzeitfehler aufgrund vermeiden müssen maskieren **/RTC** `c`. Zum Beispiel:
+Diese Option meldet Situationen, in denen Sie abschneiden möchten, z. b. wenn die ersten acht Bits eines **`int`** als zurückgegeben werden sollen **`char`** . Da **/RTC** `c` einen Laufzeitfehler auslöst, wenn Informationen aufgrund der Zuweisung verloren gehen, können Sie die Informationen, die Sie benötigen, maskieren, um einen Laufzeitfehler aufgrund von **/RTC**zu vermeiden `c` . Beispiel:
 
 ```
 #include <crtdbg.h>
@@ -70,19 +70,19 @@ int main() {
 }
 ```
 
-**s**<br/>
-Ermöglicht das stack-Frame-Laufzeitfehler überprüfen, wie folgt:
+**Hymnen**<br/>
+Aktiviert die Lauf Zeit Fehlerüberprüfung für Stapel Rahmen wie folgt:
 
-- Initialisierung von lokalen Variablen einen Wert ungleich NULL. Dadurch können Fehler zu identifizieren, die bei der Ausführung im Debugmodus nicht angezeigt werden. Es ist wahrscheinlicher, dass Stapelvariablen weiterhin 0 (null) in einem Debugbuild im Vergleich zu einem Releasebuild, aufgrund von compileroptimierungen von Stapelvariablen in einem Releasebuild werden. Nachdem ein Programm einen Bereich von seinen Stapel verwendet, wird es vom Compiler nicht auf 0 zurückgesetzt. Aus diesem Grund können nachfolgende, nicht initialisierte Stapelvariablen, die auftreten, verwenden Sie denselben Stapelbereich Werte, die überzählig sind, aus der vorherigen Verwendung dieser Stapelspeicher zu benötigen zurückgeben.
+- Initialisierung lokaler Variablen auf einen Wert ungleich 0 (null). Dadurch können Fehler identifiziert werden, die bei der Ausführung im Debugmodus nicht angezeigt werden. Aufgrund von Compileroptimierungen von Stapel Variablen in einem Releasebuild ist die Wahrscheinlichkeit größer, dass Stapel Variablen in einem Debugbuild weiterhin 0 (null) sein werden. Wenn ein Programm einen Bereich seines Stapels verwendet hat, wird es vom Compiler nie auf 0 zurückgesetzt. Folglich können nachfolgende, nicht initialisierte Stapel Variablen, die den gleichen Stapelbereich verwenden, Werte zurückgeben, die von der vorherigen Verwendung dieses Stapel Speichers übrig bleiben.
 
-- Erkennung von Überläufen und Unterläufe von lokalen Variablen, z. B. Arrays. **/ RTC** `s` Überläufe wird nicht erkannt werden, beim Zugriff auf Speicher, der vom Compiler Füllzeichen innerhalb einer Struktur ergibt. Füllzeichen können mithilfe von [ausrichten](../../cpp/align-cpp.md), [/Zp (Strukturmemberausrichtung)](zp-struct-member-alignment.md), oder [Pack](../../preprocessor/pack.md), oder wenn Sie so, dass der Compiler Füllzeichen hinzufügen muss Strukturelemente geordnet.
+- Erkennung von Überläufen und unter Läufen lokaler Variablen (z. b. Arrays). **/RTC** `s` erkennt über Läufe nicht, wenn auf den Speicher zugegriffen wird, der sich aus dem compilerpadding innerhalb einer Struktur ergibt. Auffüll Zeichen können mithilfe von [align](../../cpp/align-cpp.md), [/ZP (Strukturmember Alignment)](zp-struct-member-alignment.md)oder [Pack](../../preprocessor/pack.md)oder, wenn Sie Strukturelemente auf eine Weise sortieren, um den Compiler aufzufordern, Padding hinzuzufügen.
 
-- Stack-Zeiger-Überprüfung wird der Stack Zeiger eine Beschädigung erkennt. Stack Beschädigung kann durch einen Aufruf Konvention Konflikt verursacht werden. Beispielsweise verwenden einen Funktionszeiger, Sie Aufrufen einer Funktion in einer DLL, die als exportiert wird [__stdcall](../../cpp/stdcall.md) , aber Sie deklarieren den Zeiger an die Funktion als [__cdecl](../../cpp/cdecl.md).
+- Stapelzeiger Überprüfung, mit der Stapelzeiger Beschädigungen erkannt werden. Die Beschädigung des Stapel Zeigers kann durch eine nicht Übereinstimmung der Aufruf Konvention verursacht werden. Beispielsweise rufen Sie mithilfe eines Funktions Zeigers eine Funktion in einer DLL auf, die als [__stdcall](../../cpp/stdcall.md) exportiert wird, aber Sie deklarieren den Zeiger auf die Funktion als [__cdecl](../../cpp/cdecl.md).
 
 **n**<br/>
-Meldet, wenn eine Variable wurde ohne Initialisierung verwendet wird. Z. B. eine Anweisung, die generiert `C4701` möglicherweise einen Fehler zur Laufzeit generiert **/RTC**`u`. Jede Anweisung, [Compilerwarnung (Stufe 1 und Stufe 4) C4700](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4700.md) generiert einen Laufzeitfehler unter **/RTC**`u`.
+Meldet, wenn eine Variable verwendet wird, ohne initialisiert worden zu sein. Eine Anweisung, die generiert, `C4701` kann z. b. auch einen Laufzeitfehler unter **/RTC**generieren `u` . Jede Anweisung, die [Compilerwarnung (Ebene 1 und Ebene 4) C4700](../../error-messages/compiler-warnings/compiler-warning-level-1-and-level-4-c4700.md) generiert, generiert unter **/RTC**einen Laufzeitfehler `u` .
 
-Beachten Sie jedoch, das folgende Codefragment:
+Beachten Sie jedoch das folgende Code Fragment:
 
 ```cpp
 int a, *b, c;
@@ -91,34 +91,34 @@ b = &a;
 c = a;  // No run-time error with /RTCu
 ```
 
-Wenn eine Variable initialisiert wurden kann, es nicht gemeldet werden zur Laufzeit **/RTC**`u`. Z. B. nach dem eine Variable mit einem Alias versehen, über einen Zeiger ist, der Compiler nicht die Variable und Melden von nicht initialisierten verwendet. Aktiviert ist, können Sie eine Variable initialisieren, durch das Übernehmen der Adresse. Die & Operator funktioniert wie einen Zuweisungsoperator in dieser Situation.
+Wenn eine Variable initialisiert werden kann, wird Sie zur Laufzeit nicht von **/RTC**gemeldet `u` . Wenn z. b. eine Variable durch einen-Zeiger als Alias verwendet wird, verfolgt der Compiler die Variable nicht und meldet nicht initialisierte Verwendungen. In der Tat können Sie eine Variable initialisieren, indem Sie Ihre Adresse übernehmen. Der &-Operator funktioniert in dieser Situation wie ein Zuweisungs Operator.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Laufzeitfehler-Überprüfungen sind eine Möglichkeit, um Probleme in Ihrem ausgeführten Code zu ermitteln. Weitere Informationen finden Sie unter [Vorgehensweise: Use Native Run-Time Checks (Verwenden von nativen Laufzeitüberprüfungen)](/visualstudio/debugger/how-to-use-native-run-time-checks).
+Lauf zeitfehlerüberprüfungen sind eine Möglichkeit, Probleme in Ihrem ausgelaufenden Code zu finden. Weitere Informationen finden Sie unter Gewusst [wie: Verwenden von nativen Laufzeitüberprüfungen](/visualstudio/debugger/how-to-use-native-run-time-checks).
 
-Wenn Sie das Programm in der Befehlszeile, die mit einer der Kompilieren der **/RTC** Compileroptionen, treten bei allen [optimieren](../../preprocessor/optimize.md) Anweisungen in Ihrem Code im Hintergrund fehl. Dies ist da fehlerprüfung zur Laufzeit in einem Releasebuild (optimiert) ungültig sind.
+Wenn Sie das Programm mithilfe einer der **/RTC** -Compileroptionen in der Befehlszeile kompilieren, treten bei allen Pragma- [Optimierungs](../../preprocessor/optimize.md) Anweisungen im Code automatisch Fehler auf. Dies liegt daran, dass Lauf Zeit Fehlerüberprüfungen in einem Releasebuild (optimiert) nicht gültig sind.
 
-Verwenden Sie **/RTC** für Entwicklungsbuilds; **/RTC** sollte nicht für eine Verkaufsversion verwendet werden. **/ RTC** kann nicht verwendet werden, mit compileroptimierungen ([/o-Optionen (Code optimieren)](o-options-optimize-code.md)). Ein Programm-Images erstellt, mit **/RTC** ist etwas größer und etwas langsamer als ein Bild mit erstellten **/Od** (bis zu 5 % langsamer als ein **/Od** erstellen).
+Verwenden Sie **/RTC** für Entwicklungsbuilds. **/RTC** sollte nicht für einen Einzelhandels Build verwendet werden. **/RTC** kann nicht mit Compileroptimierungen verwendet werden ([/O-Optionen (Code optimieren)](o-options-optimize-code.md)). Ein mit **/RTC** erstelltes Programm Image ist etwas größer und etwas langsamer als ein Image, das mit **/od** erstellt wird (bis zu 5 Prozent langsamer als ein **/od** -Build).
 
-Die Präprozessordirektive __MSVC_RUNTIME_CHECKS wird definiert werden, wenn Sie eine beliebige **/RTC** Option oder [/GZ](gz-enable-stack-frame-run-time-error-checking.md).
+Die __MSVC_RUNTIME_CHECKS-Präprozessordirektive wird definiert, wenn Sie eine **/RTC** -Option oder [/gz](gz-enable-stack-frame-run-time-error-checking.md)verwenden.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
 1. Klicken Sie auf den Ordner **C/C++** .
 
-1. Klicken Sie auf die **Codegenerierung** Eigenschaftenseite.
+1. Klicken Sie auf die Eigenschaften Seite **Code Generierung** .
 
-1. Ändern Sie eine oder beide der folgenden Eigenschaften: **Vollständige Laufzeitüberprüfungen** oder **Geben Sie kleiner Kontrollkästchen**.
+1. Ändern Sie eine oder beide der folgenden Eigenschaften: **grundlegende Laufzeitüberprüfungen** oder eine **kleinere Typüberprüfung**.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
 - Siehe die Eigenschaften <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.BasicRuntimeChecks%2A> und <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.SmallerTypeCheck%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
-[Vorgehensweise: Verwenden von nativen Laufzeitüberprüfungen](/visualstudio/debugger/how-to-use-native-run-time-checks)
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)<br/>
+[How to: Verwenden von nativen Laufzeitüberprüfungen](/visualstudio/debugger/how-to-use-native-run-time-checks)

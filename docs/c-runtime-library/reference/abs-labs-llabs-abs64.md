@@ -39,12 +39,12 @@ helpviewer_keywords:
 - _abs64 function
 - calculating absolute values
 ms.assetid: 60f789d1-4a1e-49f5-9e4e-0bdb277ea26a
-ms.openlocfilehash: a21bdbcb54d7fecf00b3c782c562d60ccc866dcc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 96363f8d2139a5c75ee25a2c43b4c7ef55094f13
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171410"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221990"
 ---
 # <a name="abs-labs-llabs-_abs64"></a>abs, labs, llabs, _abs64
 
@@ -78,18 +78,18 @@ Die Funktionen **ABS**, **Labs**, **llabs** und **_abs64** geben den absoluten W
 
 ## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ABS** aufzurufen, die **Long**-, **Long** **Long**-, **float**-, **Double**-und **Long** **Double** -Werte verwenden und zurückgeben. Diese Überladungen sind im Header \<cmath> definiert. In einem C-Programm nimmt **ABS** immer einen **int**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ABS** aufzurufen, die-, **`long`** **`long long`** -,-, **`float`** **`double`** -und- **`long double`** Werte verwenden und zurückgeben. Diese über Ladungen werden im- \<cmath> Header definiert. In einem C-Programm nimmt **ABS** immer an und gibt einen zurück **`int`** .
 
 **Microsoft-spezifisch**: da der Bereich von negativen ganzen Zahlen, der mithilfe eines ganzzahligen Typs dargestellt werden kann, größer als der Bereich von positiven ganzen Zahlen ist, die mithilfe dieses Typs dargestellt werden können, kann ein Argument für diese Funktionen bereitgestellt werden, die nicht konvertiert werden können. Wenn der absolute Wert des Arguments nicht durch den Rückgabetyp dargestellt werden kann, geben die **ABS** -Funktionen den Argument Wert unverändert zurück. Insbesondere gibt `abs(INT_MIN)``INT_MIN` zurück, `labs(LONG_MIN)` gibt `LONG_MIN` zurück, `llabs(LLONG_MIN)` gibt `LLONG_MIN` zurück und `_abs64(_I64_MIN)` gibt `_I64_MIN` zurück. Dies bedeutet, dass die **ABS** -Funktionen nicht verwendet werden können, um einen positiven Wert sicherzustellen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
+|-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|-----------------------|---------------------------|
-|**ABS**, **Labs**, **llabs**|\<math.h> oder\<stdlib.h>|\<cmath>, \<cstdlib>, \<stdlib.h> oder \<math.h|
-|**_abs64**|\<stdlib.h>|\<cstdlib.h> oder\<stdlib.h>|
+|**ABS**, **Labs**, **llabs**|\<math.h> oder \<stdlib.h>|\<cmath>, \<cstdlib>, \<stdlib.h> oder \<math.h>|
+|**_abs64**|\<stdlib.h>|\<cstdlib> oder \<stdlib.h>|
 
-Um die überladenen Versionen **abs** von ABS C++in zu verwenden, müssen Sie den \<cmath-> Header einschließen.
+Wenn Sie die überladenen Versionen von **ABS** in C++ verwenden möchten, müssen Sie den- \<cmath> Header einschließen.
 
 ## <a name="example"></a>Beispiel
 
@@ -151,7 +151,7 @@ _abs64(_I64_MIN) returns 0x8000000000000000
 ## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [_cabs](cabs.md)<br/>
 [fabs, fabsf, fabsl](fabs-fabsf-fabsl.md)<br/>
 [imaxabs](imaxabs.md)

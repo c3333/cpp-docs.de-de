@@ -32,12 +32,12 @@ helpviewer_keywords:
 - _Cbuild function
 - _FCbuild function
 - _LCbuild function
-ms.openlocfilehash: b0ae50f40f0ca0a926e1eef586c6610a04b6ea7a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d521fdb0d79e1e4ff6e6c1b01ce40941ed5c8c0a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70943215"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221964"
 ---
 # <a name="_cbuild-_fcbuild-_lcbuild"></a>_Cbuild, _FCbuild, _LCbuild
 
@@ -63,7 +63,7 @@ Der Imaginärteil der zu erstellenden komplexen Zahl.
 
 Eine **_Dcomplex**-, **_Fcomplex**-oder **_Lcomplex** -Struktur, die die komplexe Zahl (*Real*, *imaginär* \* i) für Werte des angegebenen Gleit Komma Typs darstellt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Funktionen **_Cbuild**, **_FCbuild**und **_LCbuild** vereinfachen die Erstellung komplexer Typen. Verwenden Sie die Funktionen "up" [, "fialf", "fiall](creal-crealf-creall.md) " und " [Cimag", "cimagf" und "cimagl](cimag-cimagf-cimagl.md) ", um die tatsächlichen und imaginären Teile der dargestellten komplexen Zahlen abzurufen
 
@@ -71,11 +71,11 @@ Die Funktionen **_Cbuild**, **_FCbuild**und **_LCbuild** vereinfachen die Erstel
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**_Cbuild**, **_FCbuild**, **_LCbuild**|\<complex.h>|\<ccomplex>|
+|**_Cbuild**, **_FCbuild** **_LCbuild**|\<complex.h>|\<ccomplex>|
 
-Diese Funktionen sind Microsoft-spezifisch. Die Typen **_Dcomplex**, **_Fcomplex**und **_Lcomplex** sind Microsoft-spezifische Entsprechungen für die nicht implementierten C99 Native C99-Typen **Double _Complex**, **float _Complex**und **long Double _Complex**. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Diese Funktionen sind Microsoft-spezifisch. Die Typen **_Dcomplex**, **_Fcomplex**und **_Lcomplex** sind Microsoft-spezifische Entsprechungen für die nicht implementierten C99-systemeigenen Typen, **`double _Complex`** **`float _Complex`** **`long double _Complex`** bzw.. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [_Cmulcc, _FCmulcc, _LCmulcc](cmulcc-fcmulcc-lcmulcc.md)<br/>

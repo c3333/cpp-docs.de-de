@@ -9,24 +9,24 @@ helpviewer_keywords:
 - gcroot keyword [C++]
 - types [C++], declaring handles in
 ms.assetid: b8c0eead-17e5-4003-b21f-b673f997d79f
-ms.openlocfilehash: 11dbc196a89a224afe02312fbe4dff99d8467f4c
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 1aca21402122a0c8641a7e57ace2a3477ff96f01
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545036"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221340"
 ---
 # <a name="how-to-declare-handles-in-native-types"></a>Gewusst wie: Deklarieren von Handles in systemeigenen Typen
 
-Sie können einen Handles-Typ nicht in einem systemeigenen Typ deklarieren. Vcclr. h stellt die typsichere Wrapper Vorlage `gcroot` bereit, um auf ein CLR-Objekt aus C++ dem Heap zu verweisen. Mit dieser Vorlage können Sie ein virtuelles Handle in einen systemeigenen Typ einbetten und dieses Handle so behandeln, als wäre es der zugrunde liegende Typ. In den meisten Fällen können Sie das `gcroot`-Objekt als eingebetteten Typ ohne Umwandlung verwenden. Allerdings müssen Sie bei [for each in mithilfe von](../dotnet/for-each-in.md)`static_cast` den zugrunde liegenden verwalteten Verweis abrufen.
+Sie können einen Handles-Typ nicht in einem systemeigenen Typ deklarieren. Vcclr. h stellt die typsichere Wrapper Vorlage bereit `gcroot` , die auf ein CLR-Objekt aus dem C++-Heap verweist. Mit dieser Vorlage können Sie ein virtuelles Handle in einen systemeigenen Typ einbetten und dieses Handle so behandeln, als wäre es der zugrunde liegende Typ. In den meisten Fällen können Sie das- `gcroot` Objekt als eingebetteten Typ ohne Umwandlung verwenden. Allerdings müssen Sie mit [for each in](../dotnet/for-each-in.md) **`static_cast`** den zugrunde liegenden verwalteten Verweis abrufen.
 
-Die `gcroot` Vorlage wird mithilfe der Funktionen der Value-Klasse System:: Runtime:: InteropServices:: GCHandle implementiert, die "Handles" im Heap der Garbage Collection bereitstellt. Beachten Sie, dass die Handles selbst nicht in die Garbage Collection aufgenommen werden und freigegeben werden, wenn Sie nicht mehr vom Dekonstruktor in der `gcroot`-Klasse verwendet werden (dieser Dekonstruktor kann nicht manuell aufgerufen werden). Wenn Sie ein `gcroot` Objekt im systemeigenen Heap instanziieren, müssen Sie DELETE für diese Ressource aufzurufen.
+Die `gcroot` Vorlage wird mithilfe der Funktionen der Value-Klasse System:: Runtime:: InteropServices:: GCHandle implementiert, die "Handles" im Heap der Garbage Collection bereitstellt. Beachten Sie, dass die Handles selbst keine Garbage Collection durchführen und freigegeben werden, wenn Sie nicht mehr vom Dekonstruktor in der Klasse verwendet werden `gcroot` (dieser Dekonstruktor kann nicht manuell aufgerufen werden). Wenn Sie ein-Objekt auf dem systemeigenen Heap instanziieren `gcroot` , müssen Sie DELETE für diese Ressource aufzurufen.
 
-Die Laufzeit behält eine Zuordnung zwischen dem Handle und dem CLR-Objekt bei, auf das verwiesen wird. Wenn das CLR-Objekt mit dem Heap der Garbage Collection verschoben wird, gibt das Handle die neue Adresse des Objekts zurück. Eine Variable muss nicht fixiert werden, bevor Sie einer `gcroot` Vorlage zugewiesen wird.
+Die Laufzeit behält eine Zuordnung zwischen dem Handle und dem CLR-Objekt bei, auf das verwiesen wird. Wenn das CLR-Objekt mit dem Heap der Garbage Collection verschoben wird, gibt das Handle die neue Adresse des Objekts zurück. Eine Variable muss nicht fixiert werden, bevor Sie einer Vorlage zugewiesen wird `gcroot` .
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird gezeigt, wie ein `gcroot`-Objekt auf dem systemeigenen Stapel erstellt wird.
+In diesem Beispiel wird gezeigt, wie ein- `gcroot` Objekt auf dem systemeigenen Stapel erstellt wird.
 
 ```cpp
 // mcpp_gcroot.cpp
@@ -53,7 +53,7 @@ hello
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird gezeigt, wie ein `gcroot`-Objekt im systemeigenen Heap erstellt wird.
+In diesem Beispiel wird gezeigt, wie ein- `gcroot` Objekt auf dem systemeigenen Heap erstellt wird.
 
 ```cpp
 // mcpp_gcroot_2.cpp
@@ -83,7 +83,7 @@ hello
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird gezeigt, wie `gcroot` verwendet wird, um Verweise auf Werttypen (nicht Verweis Typen) in einem systemeigenen Typ mithilfe `gcroot` auf dem geschachtelt-Typ zu speichern.
+In diesem Beispiel wird gezeigt, wie `gcroot` mithilfe von für `gcroot` den geschachtelt-Typ Verweise auf Werttypen (nicht Verweis Typen) in einem systemeigenen Typ gespeichert werden.
 
 ```cpp
 // mcpp_gcroot_3.cpp
@@ -113,6 +113,6 @@ int main() {
 String in V: Hello
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+[Verwenden von C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)

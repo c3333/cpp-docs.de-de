@@ -57,12 +57,12 @@ helpviewer_keywords:
 - _fstati64 function
 - fstat32i64 function
 ms.assetid: 088f5e7a-9636-4cf7-ab8e-e28d2aa4280a
-ms.openlocfilehash: 81c272187c681010e7b8560d43f2fad87e1e0fdc
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 75ab00e8ee464e9042ba266b8d72e5ded48785ee
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82910124"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221899"
 ---
 # <a name="_fstat-_fstat32-_fstat64-_fstati64-_fstat32i64-_fstat64i32"></a>_fstat, _fstat32, _fstat64, _fstati64, _fstat32i64, _fstat64i32
 
@@ -109,7 +109,7 @@ Zeiger auf die Struktur zum Speichern der Ergebnisse
 
 Gibt 0 zurück, wenn die Dateistatusinformationen abgerufen werden Der Rückgabewert-1 gibt einen Fehler an. Wenn der Dateideskriptor ungültig ist oder *buffer* der Puffer **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EBADF**festgelegt, bei einem ungültigen Dateideskriptor oder auf **EINVAL**, wenn der *Puffer* **null**ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_fstat** Funktion Ruft Informationen über die geöffnete Datei ab, die mit *FD* verknüpft ist, und speichert Sie in der Struktur, auf die von *buffer*verwiesen wird. Die **_stat** -Struktur, die in sys\status .h definiert ist, enthält die folgenden Felder.
 
@@ -132,7 +132,7 @@ Da Stat.h den Typ [_dev_t](../../c-runtime-library/standard-types.md) verwendet,
 
 Varianten dieser Funktionen unterstützen 32-Bit- oder 64-Bit-Zeittypen und 32-Bit- oder 64-Bit-Dateilängen. Das erste numerische Suffix (**32** oder **64**) gibt die Größe des verwendeten Zeittyps an. Das zweite Suffix ist entweder **i32** oder **I64**, das angibt, ob die Dateigröße als 32-Bit-oder 64-Bit-Ganzzahl dargestellt wird.
 
-**_fstat** entspricht **_fstat64i32**, und die **Struktur** **_stat** eine 64-Bit-Zeit enthält. Dies trifft zu, wenn **_USE_32BIT_TIME_T** nicht definiert ist. in diesem Fall ist das alte Verhalten wirksam. **_fstat** verwendet einen 32-Bit-Zeitpunkt, und die **Struktur** **_stat** eine 32-Bit-Zeit enthält. Das gleiche gilt für **_fstati64**.
+**_fstat** entspricht **_fstat64i32**, und **`struct`** **_stat** enthält eine 64-Bit-Zeit. Dies trifft zu, wenn **_USE_32BIT_TIME_T** nicht definiert ist. in diesem Fall ist das alte Verhalten wirksam. **_fstat** verwendet einen 32-Bit-Zeitpunkt, und **`struct`** **_stat** enthält eine 32-Bit-Zeit. Das gleiche gilt für **_fstati64**.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -140,25 +140,25 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 |Functions|_USE_32BIT_TIME_T definiert?|Uhrzeittyp|Dateilängentyp|
 |---------------|------------------------------------|---------------|----------------------|
-|**_fstat**|Nicht definiert|64-Bit|32-Bit|
-|**_fstat**|Definiert|32-Bit|32-Bit|
-|**_fstat32**|Nicht von der Makrodefinition betroffen|32-Bit|32-Bit|
-|**_fstat64**|Nicht von der Makrodefinition betroffen|64-Bit|64-Bit|
-|**_fstati64**|Nicht definiert|64-Bit|64-Bit|
+|**_fstat**|Nicht definiert|64 Bit|32 Bit|
+|**_fstat**|Definiert|32 Bit|32 Bit|
+|**_fstat32**|Nicht von der Makrodefinition betroffen|32 Bit|32 Bit|
+|**_fstat64**|Nicht von der Makrodefinition betroffen|64 Bit|64 Bit|
+|**_fstati64**|Nicht definiert|64 Bit|64 Bit|
 |**_fstati64**|Definiert|32-Bit|64-Bit|
 |**_fstat32i64**|Nicht von der Makrodefinition betroffen|32-Bit|64-Bit|
-|**_fstat64i32**|Nicht von der Makrodefinition betroffen|64-Bit|32-Bit|
+|**_fstat64i32**|Nicht von der Makrodefinition betroffen|64 Bit|32 Bit|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**_fstat**|\<sys/stat.h> and \<sys/types.h>|
-|**_fstat32**|\<sys/stat.h> and \<sys/types.h>|
-|**_fstat64**|\<sys/stat.h> and \<sys/types.h>|
-|**_fstati64**|\<sys/stat.h> and \<sys/types.h>|
-|**_fstat32i64**|\<sys/stat.h> and \<sys/types.h>|
-|**_fstat64i32**|\<sys/stat.h> and \<sys/types.h>|
+|**_fstat**|\<sys/stat.h> und \<sys/types.h>|
+|**_fstat32**|\<sys/stat.h> und \<sys/types.h>|
+|**_fstat64**|\<sys/stat.h> und \<sys/types.h>|
+|**_fstati64**|\<sys/stat.h> und \<sys/types.h>|
+|**_fstat32i64**|\<sys/stat.h> und \<sys/types.h>|
+|**_fstat64i32**|\<sys/stat.h> und \<sys/types.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

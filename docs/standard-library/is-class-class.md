@@ -7,14 +7,14 @@ helpviewer_keywords:
 - is_class class
 - is_class
 ms.assetid: 96fc34a3-a81b-4ec6-b7fb-baafde1a0f4e
-ms.openlocfilehash: 7dc71622a37164e996b067276ddf8a5d1dd88b62
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 4122ad2b4adbd0ed290f26428560c569b3754d7d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456640"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222445"
 ---
-# <a name="isclass-class"></a>is_class-Klasse
+# <a name="is_class-class"></a>is_class-Klasse
 
 Testet, ob der Typ eine Klasse ist.
 
@@ -30,9 +30,9 @@ struct is_class;
 *Genossenschaft*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typprädikats ist "true", wenn der Typ " *Ty* " ein Typ ist, der als **Klasse** oder `cv-qualified` **Struktur**definiert ist, oder eine Instanz des typprädikats, andernfalls "false".
+Eine Instanz des typprädikats ist "true", wenn die *typanty* ein Typ ist, der als **`class`** oder oder in einem-Formular definiert ist **`struct`** `cv-qualified` , andernfalls "false".
 
 ## <a name="example"></a>Beispiel
 
@@ -63,13 +63,13 @@ is_class<trivial> == true
 is_class<int> == false
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)\
 [is_compound-Klasse](../standard-library/is-compound-class.md)\

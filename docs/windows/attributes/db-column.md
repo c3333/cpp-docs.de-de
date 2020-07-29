@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_column attribute
 ms.assetid: 58da4afc-f69c-4ae6-af9a-3f9515f56081
-ms.openlocfilehash: 4ce57443480e35e7a4c7b9e872e41777662ddc20
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b78fb081895b7a3e8f0e266810cd19d1b2792240
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167289"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222146"
 ---
 # <a name="db_column"></a>db_column
 
@@ -26,7 +26,7 @@ Bindet eine angegebene Spalte an eine Variable im Rowset.
 ### <a name="parameters"></a>Parameter
 
 *ordinal*<br/>
-Die ordinalspaltennummer (`DBCOLUMNINFO` Ordnungszahl) oder der Spaltenname (ANSI-oder Unicode-Zeichenfolge), die einem Feld im Rowset entspricht, an das die Daten gebunden werden sollen. Wenn Sie Zahlen verwenden, können Sie aufeinander folgende ordinale überspringen (z. b.: 1, 2, 3, 5). Der Name kann Leerzeichen enthalten, wenn der von Ihnen verwendete OLE DB Anbieter ihn unterstützt. Sie können z. b. eines der folgenden Formate verwenden:
+Die ordinalspaltennummer ( `DBCOLUMNINFO` Ordnungszahl) oder der Spaltenname (ANSI-oder Unicode-Zeichenfolge), die einem Feld im Rowset entspricht, an das Daten gebunden werden sollen. Wenn Sie Zahlen verwenden, können Sie aufeinander folgende ordinale überspringen (z. b.: 1, 2, 3, 5). Der Name kann Leerzeichen enthalten, wenn der von Ihnen verwendete OLE DB Anbieter ihn unterstützt. Sie können z. b. eines der folgenden Formate verwenden:
 
 ```cpp
 [db_column("2")] TCHAR szCity[30];
@@ -37,10 +37,10 @@ Die ordinalspaltennummer (`DBCOLUMNINFO` Ordnungszahl) oder der Spaltenname (ANS
 Optionale Ein OLE DB [Typindikator](/previous-versions/windows/desktop/ms711251(v=vs.85)) für den Spalten Eintrag.
 
 *precision*<br/>
-Optionale Die Genauigkeit, die für den Spalten Eintrag verwendet werden soll. Weitere Informationen finden Sie in der Beschreibung des `bPrecision`-Elements der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) .
+Optionale Die Genauigkeit, die für den Spalten Eintrag verwendet werden soll. Weitere Informationen finden Sie in der Beschreibung des- `bPrecision` Elements der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) .
 
 *scale*<br/>
-Optionale Die für den Spalten Eintrag zu verwendende Skala. Weitere Informationen finden Sie in der Beschreibung `bScale` Elements der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) .
+Optionale Die für den Spalten Eintrag zu verwendende Skala. Weitere Informationen finden Sie in der Beschreibung des- `bScale` Elements der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) .
 
 *status*<br/>
 Optionale Eine Element Variable, die zum Speichern des Status dieser Spalte verwendet wird. Der Status gibt an, ob der Spaltenwert ein Datenwert oder ein anderer Wert ist, z. b. NULL. Mögliche Werte finden Sie unter [Status](/previous-versions/windows/desktop/ms722617(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
@@ -50,17 +50,17 @@ Optionale Eine Element Variable, die zum Speichern der Größe der Spalte in Byt
 
 ## <a name="remarks"></a>Bemerkungen
 
-**Db_column** bindet die angegebene Tabellenspalte an eine Variable im Rowset. Dabei werden Elementdaten begrenzt, die an OLE DB `IAccessor`basierten Bindung teilnehmen können. Mit diesem Attribut wird die Spalten Zuordnung festgelegt, die normalerweise mithilfe der OLE DB Consumer-Makros [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md), [END_COLUMN_MAP](../../data/oledb/end-column-map.md)und [COLUMN_ENTRY](../../data/oledb/column-entry.md)definiert wird. Diese bearbeiten die OLE DB [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) , um die angegebene Spalte zu binden. Jeder Member, den Sie mit dem **Db_column** -Attribut markieren, belegt einen Eintrag in der Spalten Zuordnung in Form eines Spalten Eintrags. Daher wird dieses Attribut aufgerufen, wenn Sie die Spalten Zuordnung, d. h. in der Befehls-oder Tabellen Klasse, einfügen würden.
+**Db_column** bindet die angegebene Tabellenspalte an eine Variable im Rowset. Dabei werden Elementdaten begrenzt, die an OLE DB basierten Bindung teilnehmen können `IAccessor` . Mit diesem Attribut wird die Spalten Zuordnung festgelegt, die normalerweise mithilfe der OLE DB Consumer-Makros [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md), [END_COLUMN_MAP](../../data/oledb/end-column-map.md)und [COLUMN_ENTRY](../../data/oledb/column-entry.md)definiert wird. Diese bearbeiten die OLE DB [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) , um die angegebene Spalte zu binden. Jeder Member, den Sie mit dem **Db_column** -Attribut markieren, belegt einen Eintrag in der Spalten Zuordnung in Form eines Spalten Eintrags. Daher wird dieses Attribut aufgerufen, wenn Sie die Spalten Zuordnung, d. h. in der Befehls-oder Tabellen Klasse, einfügen würden.
 
 Verwenden Sie **Db_column** in Verbindung mit den Attributen [Db_table](db-table.md) oder [db_command](db-command.md) .
 
-Wenn der Consumer-Attribut Anbieter dieses Attribut auf eine Klasse anwendet, benennt der Compiler die Klasse in \_*yourclassname*-Accessor um, wobei *yourclassname* der Name ist, den Sie der Klasse gegeben haben, und der Compiler erstellt außerdem eine Klasse namens *yourclassname*, die von \_*yourclassname*-Accessor abgeleitet wird.  In dieser Klassenansicht werden beide Klassen angezeigt.
+Wenn der Consumer-Attribut Anbieter dieses Attribut auf eine Klasse anwendet, benennt der Compiler die Klasse in den \_ *yourclassname*-Accessor um, wobei *yourclassname* der Name ist, den Sie der Klasse gegeben haben, und der Compiler erstellt außerdem eine Klasse namens *yourclassname*, die vom \_ *yourclassname*-Accessor abgeleitet wird.  In dieser Klassenansicht werden beide Klassen angezeigt.
 
 Ein Beispiel für dieses Attribut, das in einer Anwendung verwendet wird, finden [Sie unter MultiRead](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer).
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine Spalte in einer Tabelle an einen **Long** -Datenmember gebunden, und es werden die Felder Status und Länge angegeben.
+In diesem Beispiel wird eine Spalte in einer Tabelle an einen Datenmember gebunden, und es werden die **`long`** Felder Status und Länge angegeben.
 
 ```cpp
 // db_column_1.cpp
@@ -80,7 +80,7 @@ class CProducts {
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel werden vier Spalten in dieser Reihenfolge an eine **lange**Zeichenfolge, eine Zeichenfolge, einen Zeitstempel und eine `DB_NUMERIC` Ganzzahl gebunden.
+In diesem Beispiel werden vier Spalten **`long`** `DB_NUMERIC` in dieser Reihenfolge an eine, eine Zeichenfolge, einen Zeitstempel und eine ganze Zahl gebunden.
 
 ```cpp
 // db_column_2.cpp
@@ -104,8 +104,8 @@ class CProducts {
 
 |||
 |-|-|
-|**Betrifft**|**Klasse**, **Struktur**, Member, Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`class`**, **`struct`** , Member, Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -113,5 +113,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Consumerattribute](ole-db-consumer-attributes.md)<br/>
+[OLE DB Consumer-Attribute](ole-db-consumer-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)

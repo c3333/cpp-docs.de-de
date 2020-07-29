@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2361
 ms.assetid: efbdaeb9-891c-4f7d-97da-89088a8413f3
-ms.openlocfilehash: 747b85b57bee9e53f13a978254798a1dc268ef85
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: b95c6459c0ff093d22f3e754f2c7fd6564d2b296
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74759892"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221197"
 ---
 # <a name="compiler-error-c2361"></a>Compilerfehler C2361
 
 die Initialisierung von "Identifier" wird von der Bezeichnung "Default" übersprungen.
 
-Die Initialisierung `identifier` kann in einer `switch` Anweisung übersprungen werden. Sie können nur dann eine Deklaration mit einem Initialisierer überspringen, wenn die Deklaration in einen-Block eingeschlossen ist. (Sofern Sie nicht in einem-Block deklariert wird, befindet sich die Variable bis zum Ende der `switch` Anweisung im Gültigkeitsbereich.)
+Die Initialisierung von `identifier` kann in einer-Anweisung übersprungen werden **`switch`** . Sie können nur dann eine Deklaration mit einem Initialisierer überspringen, wenn die Deklaration in einen-Block eingeschlossen ist. (Sofern Sie nicht in einem-Block deklariert wird, befindet sich die-Variable bis zum Ende der-Anweisung im Gültigkeitsbereich **`switch`** .)
 
 Im folgenden Beispiel wird C2361 generiert:
 

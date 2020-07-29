@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - C2338
 ms.assetid: 49bba575-1de4-4963-86c6-ce3226a2ba51
-ms.openlocfilehash: 2a76ecaf78b117b0c1acabd9fcd50c9ae0f73b98
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c92a95b97cb4c57d3ad5cfbf8fe1d9980d5362cd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62188295"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221210"
 ---
 # <a name="compiler-error-c2338"></a>Compilerfehler C2338
 
 > *Fehlermeldung*
 
-Dieser Fehler kann verursacht werden, indem eine `static_assert` Fehler während der Kompilierung. Die Nachricht wird vom die `static_assert` Parameter.
+Dieser Fehler kann durch einen **`static_assert`** Fehler bei der Kompilierung verursacht werden. Die Meldung wird von den **`static_assert`** Parametern bereitgestellt.
 
-Diese Fehlermeldung kann auch von externen Anbietern für den Compiler generiert werden. In den meisten Fällen werden diese Fehler von einem Attributanbieter DLL, z. B. ATLPROV gemeldet. Einige allgemeinen Formen der dieser Nachricht gehören:
+Diese Fehlermeldung kann auch von externen Anbietern an den Compiler generiert werden. In den meisten Fällen werden diese Fehler von einer Attribut Anbieter-DLL (z. b. atlprov) gemeldet. Zu den allgemeinen Formen dieser Nachricht gehören:
 
-- "*Attribut*" Atl-Attributanbieter: Fehler ATL*Anzahl* *Nachricht*
+- '*Attribut*' ATL-Attribut Anbieter: Fehler *Meldung* ATL-*Nummer*
 
-- Falsche Verwendung des Attributs "*Attribut*"
+- Falsche Verwendung des Attributs "*Attribute*".
 
-- "*Nutzung*": falsches Format für das Attribut "Nutzung"
+- "*Usage*": falsches Format für das Attribut "Usage"
 
-Diese Fehler sind häufig nicht behebbar, und ein schwerwiegender Compilerfehler gefolgt werden können.
+Diese Fehler sind oft nicht wiederherstellbar, und es folgt ein schwerwiegender Compilerfehler.
 
-Um diese Probleme zu beheben, korrigieren Sie die Verwendung von Attributen. In einigen Fällen müssen z. B. Zuordnen von Parametern deklariert werden, bevor sie verwendet werden können. Wenn eine ATL-Fehlernummer angegeben wird, überprüfen Sie die Dokumentation für Weitere Informationen zu diesem Fehler.
+Korrigieren Sie die Attribut Verwendung, um diese Probleme zu beheben. In einigen Fällen müssen Attribut Parameter beispielsweise deklariert werden, bevor Sie verwendet werden können. Wenn eine ATL-Fehlernummer angegeben wird, finden Sie in der Dokumentation zu diesem Fehler Weitere Informationen.

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - stdext::max_none [C++], released
 - stdext::max_none [C++], saved
 ms.assetid: 12ab5376-412e-479c-86dc-2c3d6a3559b6
-ms.openlocfilehash: c49ceec72be62d8ff3125f04d97bbb6952501677
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a8eee77afebdc78ef7c5b3b9ecacb8762b354567
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370979"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222289"
 ---
 # <a name="max_none-class"></a>max_none-Klasse
 
@@ -45,18 +45,18 @@ class max_none
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[allocated](#allocated)|Erhöht die Anzahl der zugeordneten Speicherblöcke.|
-|[Freigegeben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
-|[Voll](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
-|[Freigegeben](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
+|[aufgehoben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
+|[full](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
+|[gebracht](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
 |[saved](#saved)|Erhöht die Anzahl der Speicherblöcke auf der Freiliste.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="max_noneallocated"></a><a name="allocated"></a>max_none::zugeordnet
+## <a name="max_noneallocated"></a><a name="allocated"></a>Max_none:: zugeordnet
 
 Erhöht die Anzahl der zugeordneten Speicherblöcke.
 
@@ -68,13 +68,13 @@ void allocated(std::size_t _Nx = 1);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion bleibt untätig. Es wird nach jedem `cache_freelist::allocate` erfolgreichen Aufruf des Operators **new**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Vom Operator **new**zugewiesenen Block.
+Die Memberfunktion bleibt untätig. Sie wird nach jedem erfolgreichen Aufruf durch `cache_freelist::allocate` den-Operator aufgerufen **`new`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Block, der vom Operator zugeordnet wird **`new`** .
 
-## <a name="max_nonedeallocated"></a><a name="deallocated"></a>max_none::deallocated
+## <a name="max_nonedeallocated"></a><a name="deallocated"></a>Max_none::d ezugeordnet
 
 Verringert die Anzahl der zugeordneten Speicherblöcke.
 
@@ -86,13 +86,13 @@ void deallocated(std::size_t _Nx = 1);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion bleibt untätig. Diese Memberfunktion wird nach `cache_freelist::deallocate` jedem Aufruf von operator **delete**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Chunk Deallocated by operator **delete**.
+Die Memberfunktion bleibt untätig. Diese Member-Funktion wird nach jedem Aufruf durch `cache_freelist::deallocate` den-Operator aufgerufen **`delete`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Block, dessen Zuordnung vom Operator aufgehoben wird **`delete`** .
 
-## <a name="max_nonefull"></a><a name="full"></a>max_none::voll
+## <a name="max_nonefull"></a><a name="full"></a>Max_none:: Full
 
 Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.
 
@@ -102,13 +102,13 @@ bool full();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Memberfunktion gibt immer **true**zurück.
+Diese Member-Funktion gibt immer zurück **`true`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der **true**Aufruf `deallocate` true zurückgibt, wird der Speicherblock in der freien Liste angezeigt. Wenn false **zurückgegeben**wird, `deallocate` ruft der Operator **delete** den Zuteilungsvorgang zurück.
+Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der Aufruf zurückgegeben **`true`** wird, wird `deallocate` der Speicherblock in die freie Liste eingefügt; wenn er zurückgegeben **`false`** wird, `deallocate` Ruft den Operator auf, **`delete`** um die Zuteilung des Blocks aufzulösen.
 
-## <a name="max_nonereleased"></a><a name="released"></a>max_none::veröffentlicht
+## <a name="max_nonereleased"></a><a name="released"></a>Max_none:: veröffentlicht
 
 Verringert die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -120,7 +120,7 @@ void released();
 
 Die Memberfunktion bleibt untätig. Die `released`-Memberfunktion der aktuellen max-Klasse wird von `cache_freelist::allocate` aufgerufen, wann immer ein Speicherblock aus der Freiliste entfernt wird.
 
-## <a name="max_nonesaved"></a><a name="saved"></a>max_none::gerettet
+## <a name="max_nonesaved"></a><a name="saved"></a>Max_none:: gespeichert
 
 Erhöht die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -132,6 +132,6 @@ void saved();
 
 Die Memberfunktion bleibt untätig. Sie wird durch `cache_freelist::deallocate` aufgerufen, wann immer ein Speicherblock der Freiliste hinzugefügt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

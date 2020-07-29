@@ -7,14 +7,14 @@ helpviewer_keywords:
 - is_floating_point class
 - is_floating_point
 ms.assetid: 070679c1-115b-4ee4-8ab7-f52e5d9e157f
-ms.openlocfilehash: c46b74cc9c1d3c6f3a93925d6df46f46d0151e2d
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 8da613bca165f68ef2e15e2be6291485a89222de
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68452594"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222393"
 ---
-# <a name="isfloatingpoint-class"></a>is_floating_point-Klasse
+# <a name="is_floating_point-class"></a>is_floating_point-Klasse
 
 Testet, ob es sich beim Typ um ein Gleitkomma handelt.
 
@@ -30,11 +30,11 @@ struct is_floating_point;
 *Genossenschaft*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typprädikats ist "true",  wenn die typität ein Gleit kommatyp oder ein `cv-qualified` Formular eines Gleit Komma Typs ist; andernfalls "false".
+Eine Instanz des typprädikats ist "true", wenn die *typität* ein Gleit kommatyp oder ein `cv-qualified` Formular eines Gleit Komma Typs ist; andernfalls "false".
 
-Ein Gleit kommatyp ist " **float**", " **Double**" oder " **long Double**".
+Ein Gleit kommatyp ist einer von **`float`** , **`double`** oder **`long double`** .
 
 ## <a name="example"></a>Beispiel
 
@@ -68,13 +68,13 @@ is_floating_point<int> == false
 is_floating_point<float> == true
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)\
 [is_integral-Klasse](../standard-library/is-integral-class.md)

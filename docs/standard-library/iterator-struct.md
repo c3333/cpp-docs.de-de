@@ -7,16 +7,16 @@ helpviewer_keywords:
 - iterator class
 - iterator struct
 ms.assetid: c74c8000-8b18-4829-9b71-6103c4229b74
-ms.openlocfilehash: 64c9be76cb92d818e40714dd141ded3a8cc17c8a
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: b45cdb5c3d4608296cca34ad6a0be6e25b588d28
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455621"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222302"
 ---
 # <a name="iterator-struct"></a>iterator-Struktur
 
-Eine leere Basis Struktur, mit der sichergestellt wird, dass eine benutzerdefinierte iteratorklasse `iterator_trait`ordnungsgemäß mit s funktioniert.
+Eine leere Basis Struktur, mit der sichergestellt wird, dass eine benutzerdefinierte iteratorklasse ordnungsgemäß mit `iterator_trait` s funktioniert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,7 +31,7 @@ struct iterator {
    };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenstruktur wird als Basistyp für alle Iteratoren verwendet. Definiert den Membertypen
 
@@ -47,20 +47,20 @@ Die Vorlagenstruktur wird als Basistyp für alle Iteratoren verwendet. Definiert
 
 - `reference` (ein Synonym für den Vorlagenparameter `Reference`).
 
-Beachten Sie `value_type` , dass kein konstanter Typ sein sollte, `pointer` auch wenn Punkte an `Type` einem Objekt von "Konstanten **" und "** Reference" ein Objekt von  `Type`"Konstanten" bezeichnen.
+Beachten Sie, dass `value_type` kein konstanter Typ sein sollte, auch wenn `pointer` Punkte an einem Objekt von **`const`** `Type` und Verweis ein Objekt von bezeichnen **`const`** `Type` .
 
 ## <a name="example"></a>Beispiel
 
 Unter [iterator_traits](../standard-library/iterator-traits-struct.md) finden Sie ein Beispiel für das Deklarieren und Verwenden von Typen in der Iterator-Basisklasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iterator>
+**Header:**\<iterator>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<iterator>](../standard-library/iterator.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

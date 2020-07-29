@@ -40,12 +40,12 @@ helpviewer_keywords:
 - wgetcwd function
 - directories [C++], current working
 ms.assetid: 888dc8c6-5595-4071-be55-816b38e3e739
-ms.openlocfilehash: 950f4f73912d7bab38363e41c61025d27380bef6
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: b6fb32a593a969f93a934f251f38cd50960440b0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82915749"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221886"
 ---
 # <a name="_getcwd-_wgetcwd"></a>_getcwd, _wgetcwd
 
@@ -70,7 +70,7 @@ wchar_t *_wgetcwd(
 Speicherort für den Pfad.
 
 *maxlen*\
-Maximale Länge des Pfads in Zeichen: **char** für **_getcwd** und **wchar_t** für **_wgetcwd**.
+Maximale Länge des Pfads in Zeichen: **`char`** für **_getcwd** und **`wchar_t`** für **_wgetcwd**.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -78,11 +78,11 @@ Gibt einen Zeiger auf den *Puffer*zurück. Ein **null** -Rückgabewert gibt eine
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_getcwd** -Funktion Ruft den vollständigen Pfad des aktuellen Arbeitsverzeichnisses für das Standard Laufwerk ab und speichert Sie im *Puffer*. Das ganzzahlige Argument *maxlen* gibt die maximale Länge für den Pfad an. Ein Fehler tritt auf, wenn die Länge des Pfads (einschließlich des abschließenden NULL-Zeichens) *maxlen*überschreitet. Das *buffer* -Argument kann **null**sein. ein Puffer mit einer minimalen Größe von *maxlen* (nur bei Bedarf) wird automatisch mit **malloc**zugeordnet, um den Pfad zu speichern. Dieser Puffer kann später freigegeben werden, indem Sie " **Free** " aufrufen und ihm den **_getcwd** Rückgabewert (einen Zeiger auf den zugeordneten Puffer) übergeben.
 
-**_getcwd** gibt eine Zeichenfolge zurück, die den Pfad des aktuellen Arbeitsverzeichnisses darstellt. Wenn das aktuelle Arbeitsverzeichnis das Stammverzeichnis ist, endet die Zeichenfolge mit einem umgekehrten`\`Schrägstrich (). Wenn das aktuelle Arbeitsverzeichnis nicht das Stammverzeichnis ist, endet die Zeichenfolge mit dem Verzeichnisnamen und nicht mit einem umgekehrten Schrägstrich.
+**_getcwd** gibt eine Zeichenfolge zurück, die den Pfad des aktuellen Arbeitsverzeichnisses darstellt. Wenn das aktuelle Arbeitsverzeichnis das Stammverzeichnis ist, endet die Zeichenfolge mit einem umgekehrten Schrägstrich ( `\` ). Wenn das aktuelle Arbeitsverzeichnis nicht das Stammverzeichnis ist, endet die Zeichenfolge mit dem Verzeichnisnamen und nicht mit einem umgekehrten Schrägstrich.
 
 **_wgetcwd** ist eine breit Zeichen Version von **_getcwd**. Das *Puffer* Argument und der Rückgabewert von **_wgetcwd** sind Zeichen folgen mit breit Zeichen. **_wgetcwd** und **_getcwd** Verhalten sich andernfalls identisch.
 
@@ -98,7 +98,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_getcwd**|\<direct.h>|
 |**_wgetcwd**|\<direct.h> oder \<wchar.h>|

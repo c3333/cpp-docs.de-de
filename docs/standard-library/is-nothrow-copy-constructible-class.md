@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - is_nothrow_copy_constructible
 ms.assetid: f13a0bea-63b1-492a-9a45-d445df35c282
-ms.openlocfilehash: 229083f4569647bd65d1ce7e640f753a9418371d
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: ff88eacc8b692436bc5c7dfa3a01340527862809
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455959"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222354"
 ---
-# <a name="isnothrowcopyconstructible-class"></a>is_nothrow_copy_constructible-Klasse
+# <a name="is_nothrow_copy_constructible-class"></a>is_nothrow_copy_constructible-Klasse
 
-Testet, ob der Typ einen **nothrow**-Kopierkonstruktor aufweist.
+Testet, ob der Typ einen **`nothrow`** Kopierkonstruktor aufweist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,16 +29,16 @@ struct is_nothrow_copy_constructible;
 *Genossenschaft*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typprädikats ist "true",  wenn die typentität einen nothrow-Kopierkonstruktor aufweist; andernfalls "false".
+Eine Instanz des typprädikats ist "true", wenn die *typentität* einen nothrow-Kopierkonstruktor aufweist; andernfalls "false".
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

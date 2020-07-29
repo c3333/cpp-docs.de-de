@@ -16,12 +16,12 @@ helpviewer_keywords:
 - stdext::max_unbounded [C++], released
 - stdext::max_unbounded [C++], saved
 ms.assetid: e34627a9-c231-4031-a483-cbb0514fff46
-ms.openlocfilehash: fbc4351297ab8a3cc90a2a77fa31c3b134f10eab
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8ec0f1c6c84399ef4b3d048a99d1c191541b7c6d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370992"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222276"
 ---
 # <a name="max_unbounded-class"></a>max_unbounded-Klasse
 
@@ -38,18 +38,18 @@ class max_unbounded
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[allocated](#allocated)|Erhöht die Anzahl der zugeordneten Speicherblöcke.|
-|[Freigegeben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
-|[Voll](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
-|[Freigegeben](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
+|[aufgehoben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
+|[full](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
+|[gebracht](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
 |[saved](#saved)|Erhöht die Anzahl der Speicherblöcke auf der Freiliste.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="max_unboundedallocated"></a><a name="allocated"></a>max_unbounded::zugeteilt
+## <a name="max_unboundedallocated"></a><a name="allocated"></a>Max_unbounded:: zugeordnet
 
 Erhöht die Anzahl der zugeordneten Speicherblöcke.
 
@@ -61,13 +61,13 @@ void allocated(std::size_t _Nx = 1);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion bleibt untätig. Es wird nach jedem `cache_freelist::allocate` erfolgreichen Aufruf des Operators **new**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Vom Operator **new**zugewiesenen Block.
+Die Memberfunktion bleibt untätig. Sie wird nach jedem erfolgreichen Aufruf durch `cache_freelist::allocate` den-Operator aufgerufen **`new`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Block, der vom Operator zugeordnet wird **`new`** .
 
-## <a name="max_unboundeddeallocated"></a><a name="deallocated"></a>max_unbounded::deallocated
+## <a name="max_unboundeddeallocated"></a><a name="deallocated"></a>Max_unbounded::d ezugeordnet
 
 Verringert die Anzahl der zugeordneten Speicherblöcke.
 
@@ -79,13 +79,13 @@ void deallocated(std::size_t _Nx = 1);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion bleibt untätig. Diese Memberfunktion wird nach `cache_freelist::deallocate` jedem Aufruf von operator **delete**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Chunk Deallocated by operator **delete**.
+Die Memberfunktion bleibt untätig. Diese Member-Funktion wird nach jedem Aufruf durch `cache_freelist::deallocate` den-Operator aufgerufen **`delete`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Block, dessen Zuordnung vom Operator aufgehoben wird **`delete`** .
 
-## <a name="max_unboundedfull"></a><a name="full"></a>max_unbounded::voll
+## <a name="max_unboundedfull"></a><a name="full"></a>Max_unbounded:: Full
 
 Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.
 
@@ -95,13 +95,13 @@ bool full();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Memberfunktion gibt immer **false**zurück.
+Die Member-Funktion gibt immer zurück **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der **true**Aufruf `deallocate` true zurückgibt, wird der Speicherblock in der freien Liste angezeigt. Wenn false zurückgegeben `deallocate` wird, ruft operator **delete,** um den Block zu zuweisen.
+Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der Aufruf zurückgegeben **`true`** wird, wird `deallocate` der Speicherblock in die freie Liste eingefügt; Wenn false zurückgegeben wird, `deallocate` Ruft Operator **`delete`** auf, um die Zuteilung des Blocks aufzulösen.
 
-## <a name="max_unboundedreleased"></a><a name="released"></a>max_unbounded::veröffentlicht
+## <a name="max_unboundedreleased"></a><a name="released"></a>Max_unbounded:: veröffentlicht
 
 Verringert die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -113,7 +113,7 @@ void released();
 
 Die Memberfunktion bleibt untätig. Die `released`-Memberfunktion der aktuellen max-Klasse wird von `cache_freelist::allocate` aufgerufen, wann immer ein Speicherblock aus der Freiliste entfernt wird.
 
-## <a name="max_unboundedsaved"></a><a name="saved"></a>max_unbounded::gerettet
+## <a name="max_unboundedsaved"></a><a name="saved"></a>Max_unbounded:: gespeichert
 
 Erhöht die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -125,6 +125,6 @@ void saved();
 
 Die Memberfunktion bleibt untätig. Sie wird durch `cache_freelist::deallocate` aufgerufen, wann immer ein Speicherblock der Freiliste hinzugefügt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

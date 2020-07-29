@@ -16,12 +16,12 @@ helpviewer_keywords:
 - stdext::max_variable_size [C++], released
 - stdext::max_variable_size [C++], saved
 ms.assetid: 9f2e9df0-4148-4b37-bc30-f8eca0ef86ae
-ms.openlocfilehash: 79e37d8c464a009e4a5196aeacc8d4a718e355b9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f98b5698ff14349abf9300799f00c6d9121bcf65
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370968"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222263"
 ---
 # <a name="max_variable_size-class"></a>max_variable_size-Klasse
 
@@ -44,18 +44,18 @@ class max_variable_size
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[allocated](#allocated)|Erhöht die Anzahl der zugeordneten Speicherblöcke.|
-|[Freigegeben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
-|[Voll](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
-|[Freigegeben](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
+|[aufgehoben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
+|[full](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
+|[gebracht](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
 |[saved](#saved)|Erhöht die Anzahl der Speicherblöcke auf der Freiliste.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="max_variable_sizeallocated"></a><a name="allocated"></a>max_variable_size::zugeteilt
+## <a name="max_variable_sizeallocated"></a><a name="allocated"></a>Max_variable_size:: zugeordnet
 
 Erhöht die Anzahl der zugeordneten Speicherblöcke.
 
@@ -67,13 +67,13 @@ void allocated(std::size_t _Nx = 1);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion fügt *dem* `_Nallocs`gespeicherten Wert _Nx hinzu. Diese Memberfunktion wird nach jedem `cache_freelist::allocate` erfolgreichen Aufruf des Operators **new**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Vom Operator **new**zugewiesenen Block.
+Diese Member-Funktion fügt *_Nx* dem gespeicherten Wert hinzu `_Nallocs` . Diese Member-Funktion wird nach jedem erfolgreichen Aufruf durch `cache_freelist::allocate` den-Operator aufgerufen **`new`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Block, der vom Operator zugeordnet wird **`new`** .
 
-## <a name="max_variable_sizedeallocated"></a><a name="deallocated"></a>max_variable_size::deallocated
+## <a name="max_variable_sizedeallocated"></a><a name="deallocated"></a>Max_variable_size::d ezugeordnet
 
 Verringert die Anzahl der zugeordneten Speicherblöcke.
 
@@ -85,13 +85,13 @@ void deallocated(std::size_t _Nx = 1);
 
 |Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion subtrahiert *_Nx* vom gespeicherten Wert `_Nallocs`. Diese Memberfunktion wird nach `cache_freelist::deallocate` jedem Aufruf von operator **delete**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Chunk Deallocated by operator **delete**.
+Die Member-Funktion subtrahiert *_Nx* vom gespeicherten Wert `_Nallocs` . Diese Member-Funktion wird nach jedem Aufruf durch `cache_freelist::deallocate` den-Operator aufgerufen **`delete`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Block, dessen Zuordnung vom Operator aufgehoben wird **`delete`** .
 
-## <a name="max_variable_sizefull"></a><a name="full"></a>max_variable_size::voll
+## <a name="max_variable_sizefull"></a><a name="full"></a>Max_variable_size:: Full
 
 Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.
 
@@ -101,13 +101,13 @@ bool full();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn `_Nallocs / 16 + 16 <= _Nblocks`.
+**`true`** Wenn `_Nallocs / 16 + 16 <= _Nblocks` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der **true**Aufruf `deallocate` true zurückgibt, wird der Speicherblock in der freien Liste angezeigt. Wenn false zurückgegeben `deallocate` wird, ruft operator **delete,** um den Block zu zuweisen.
+Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der Aufruf zurückgegeben **`true`** wird, wird `deallocate` der Speicherblock in die freie Liste eingefügt; Wenn false zurückgegeben wird, `deallocate` Ruft Operator **`delete`** auf, um die Zuteilung des Blocks aufzulösen.
 
-## <a name="max_variable_sizemax_variable_size"></a><a name="max_variable_size"></a>max_variable_size::max_variable_size
+## <a name="max_variable_sizemax_variable_size"></a><a name="max_variable_size"></a>Max_variable_size:: Max_variable_size
 
 Konstruiert ein Objekt vom Typ `max_variable_size`.
 
@@ -119,7 +119,7 @@ max_variable_size();
 
 Dieser Konstruktor initialisiert die gespeicherten Werte `_Nblocks` und `_Nallocs` auf null.
 
-## <a name="max_variable_sizereleased"></a><a name="released"></a>max_variable_size::veröffentlicht
+## <a name="max_variable_sizereleased"></a><a name="released"></a>Max_variable_size:: veröffentlicht
 
 Verringert die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -131,7 +131,7 @@ void released();
 
 Diese Memberfunktion verringert den gespeicherten `_Nblocks`-Wert. Die `released`-Memberfunktion der aktuellen max-Klasse wird von `cache_freelist::allocate` aufgerufen, wann immer ein Speicherblock aus der Freiliste entfernt wird.
 
-## <a name="max_variable_sizesaved"></a><a name="saved"></a>max_variable_size::gerettet
+## <a name="max_variable_sizesaved"></a><a name="saved"></a>Max_variable_size:: gespeichert
 
 Erhöht die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -143,6 +143,6 @@ void saved();
 
 Diese Memberfunktion inkrementiert den gespeicherten `_Nblocks`-Wert. Diese Memberfunktion wird durch `cache_freelist::deallocate` aufgerufen, wann immer ein Speicherblock der Freiliste hinzugefügt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

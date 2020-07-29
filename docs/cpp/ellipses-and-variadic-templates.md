@@ -1,25 +1,25 @@
 ---
-title: Ellipsis und Variadic Templates
+title: Auslassungs Zeichen-und Variadic-Vorlagen
 ms.date: 11/04/2016
 ms.assetid: f20967d9-c967-4fd2-b902-2bb1d5ed87e3
-ms.openlocfilehash: 8326a6b9e75db6adc37a68aa5d5741b004d27d30
-ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
+ms.openlocfilehash: e916dac40355f4397ef4846c0edf568c60b7d3dd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82031523"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221626"
 ---
-# <a name="ellipsis-and-variadic-templates"></a>Ellipsis und Variadic Templates
+# <a name="ellipsis-and-variadic-templates"></a>Auslassungs Zeichen-und Variadic-Vorlagen
 
 In diesem Artikel wird gezeigt, wie die Auslassungspunkte (`...`) mit variadic Vorlagen von C++ verwendet werden. Das Auslassungszeichen hatte viele Verwendungszwecke in C und C++. Hierzu gehören Variablenargumentlisten für Funktionen. Die `printf()`-Funktion der C-Laufzeitbibliothek ist eines der bekanntesten Beispiele.
 
-Eine *variadic-Vorlage* ist eine Klassen- oder Funktionsvorlage, die eine beliebige Anzahl von Argumenten unterstützt. Dieser Mechanismus ist für C++-Bibliotheksentwickler besonders nützlich, da Sie ihn auf Klassen- und Funktionsvorlagen anwenden können, und dadurch eine große Bandbreite typsicherer und nicht trivialer Funktionalität und Flexibilität bereitstellen können.
+Eine *Variadic-Vorlage* ist eine Klassen-oder Funktions Vorlage, die eine beliebige Anzahl von Argumenten unterstützt. Dieser Mechanismus ist für C++-Bibliotheksentwickler besonders nützlich, da Sie ihn auf Klassen- und Funktionsvorlagen anwenden können, und dadurch eine große Bandbreite typsicherer und nicht trivialer Funktionalität und Flexibilität bereitstellen können.
 
 ## <a name="syntax"></a>Syntax
 
-Ein Auslassungszeichen wird auf zwei Arten von variadic-Vorlagen verwendet. Links neben dem Parameternamen bedeutet er ein *Parameterpaket*, und rechts neben dem Parameternamen werden die Parameterpakete in separate Namen erweitert.
+Ein Auslassungszeichen wird auf zwei Arten von variadic-Vorlagen verwendet. Auf der linken Seite des Parameter namens gibt er ein *Parameter Paket*an, und rechts neben dem Parameternamen werden die Parameter Pakete in separate Namen erweitert.
 
-Hier ist ein grundlegendes Beispiel *für die variadic* Vorlagenklassendefinitionssyntax:
+Im folgenden finden Sie ein einfaches Beispiel für die Syntax Syntax der *Variadic-Vorlagen Klasse* :
 
 ```cpp
 template<typename... Arguments> class classname;
@@ -37,9 +37,9 @@ Oder so:
 template<typename ... Arguments> class classname;
 ```
 
-Beachten Sie, dass in diesem Artikel die Konvention verwendet wird, die im ersten Beispiel gezeigt wird (die Auslassungszeichen werden an `typename` angefügt).
+Beachten Sie, dass in diesem Artikel die Konvention verwendet wird, die im ersten Beispiel (das Ellipsen ist an angefügt) verwendet wird **`typename`** .
 
-In den obigen *Beispielen* ist Arguments ein Parameterpaket. Die `classname`-Klasse kann eine variable Anzahl von Argumenten akzeptieren, wie in den folgenden Beispielen gezeigt.
+In den vorangehenden Beispielen ist das *Argument* ein Parameter Paket. Die `classname`-Klasse kann eine variable Anzahl von Argumenten akzeptieren, wie in den folgenden Beispielen gezeigt.
 
 ```cpp
 template<typename... Arguments> class vtclass;
@@ -56,13 +56,13 @@ Mit einer variadic-Vorlagenklassendefinition können Sie auch mindestens einen P
 template <typename First, typename... Rest> class classname;
 ```
 
-Hier ist ein grundlegendes Beispiel *für die Variadic-Vorlagenfunktionssyntax:*
+Im folgenden finden Sie ein einfaches Beispiel für die Syntax der *Variadic-Vorlagen Funktion* :
 
 ```cpp
 template <typename... Arguments> returntype functionname(Arguments... args);
 ```
 
-Das *Parameterpaket "Argumente"* wird dann für die Verwendung erweitert, wie im nächsten Abschnitt **"Grundlegendes zu variadic templates**" gezeigt.
+Das *Argument* Parameter Pack wird dann zur Verwendung erweitert, wie im nächsten Abschnitt "Grundlegendes zu **Variadic-Vorlagen**" gezeigt.
 
 Andere Formen der variadic-Vorlagenfunktionssyntax sind möglich, darunter diese Beispiele:
 
@@ -72,7 +72,7 @@ template <typename... Arguments> returntype functionname(Arguments&&... args);
 template <typename... Arguments> returntype functionname(Arguments*... args);
 ```
 
-Bezeichner wie **const** sind ebenfalls zulässig:
+Spezifiken wie **`const`** sind ebenfalls zulässig:
 
 ```cpp
 template <typename... Arguments> returntype functionname(const Arguments&... args);
@@ -100,11 +100,11 @@ void tfunc(const Arguments&... args)
 
 ## <a name="more-about-ellipsis-placement"></a>Weitere Informationen zur Platzierung von Auslassungszeichen
 
-In diesem Artikel wurde bereits die Platzierung des Auslassungszeichens, mit der Parameterpakete und Erweiterungen definiert werden, wie folgt beschrieben: "Auf der linken Seite des Parameternamens zeigt es ein Parameterpaket an, und auf der rechten Seite des Parameternamens erweitert es die Parameterpakete in separaten Namen". Dies ist technisch gesehen richtig, kann jedoch bei der Übersetzung in Code verwirrend sein. Berücksichtigen Sie dabei Folgendes:
+In diesem Artikel wurde bereits die Platzierung des Auslassungszeichens, mit der Parameterpakete und Erweiterungen definiert werden, wie folgt beschrieben: "Auf der linken Seite des Parameternamens zeigt es ein Parameterpaket an, und auf der rechten Seite des Parameternamens erweitert es die Parameterpakete in separaten Namen". Dies ist technisch gesehen richtig, kann jedoch bei der Übersetzung in Code verwirrend sein. Zu berücksichtigen:
 
-- In einer Template-Parameter-Liste (`template <parameter-list>`) `typename...` wird ein Vorlagenparameterpaket eingeführt.
+- In einer Template-Parameter-List ( `template <parameter-list>` ) `typename...` führt ein Vorlagen Parameter Paket ein.
 
-- In einer Parameter-Deklarationsklausel (`func(parameter-list)`) führt eine "Top-Level"-Auslassung ein Funktionsparameterpaket ein, und die Auslassungspositionierung ist wichtig:
+- In einer Parameter-Declaration-Klausel ( `func(parameter-list)` ) führt die Ellipse auf oberster Ebene ein Funktionsparameter Paket ein, und die Auslassungs Zeichen Positionierung ist wichtig:
 
     ```cpp
     // v1 is NOT a function parameter pack:
@@ -161,4 +161,4 @@ first, 2, third, 3.14159
 ```
 
 > [!NOTE]
-> Die meisten Implementierungen, die variadische Vorlagenfunktionen enthalten, verwenden Rekursion in irgendeiner Form, unterscheiden sich jedoch geringfügig von der herkömmlichen Rekursion.  Die traditionelle Rekursion umfasst eine Funktion, die sich selbst mit derselben Signatur aufruft. (Es kann überladen oder vorlagen, aber jedes Mal wird dieselbe Signatur ausgewählt.) Die variadische Rekursion umfasst das Aufrufen einer variadischen Funktionsvorlage, indem unterschiedliche (fast immer abnehmende) Anzahl von Argumenten verwendet wird, und dadurch jedes Mal eine andere Signatur ausgemerzt wird. Eine "Basisfall" ist dennoch erforderlich, aber die Art der Rekursion ist anders.
+> Die meisten Implementierungen, die Variadic-Vorlagen Funktionen enthalten, verwenden die Rekursion einiger Formen, Sie unterscheiden sich jedoch geringfügig von der herkömmlichen Rekursion.  Bei der herkömmlichen Rekursion wird eine Funktion mit derselben Signatur aufgerufen. (Es kann überladen oder Vorlagen basiert sein, aber die gleiche Signatur wird jedes Mal ausgewählt.) Bei der Variadic-Rekursion wird eine Variadic-Funktions Vorlage mit abweichender (fast immer absteigender) Anzahl von Argumenten aufgerufen, sodass jedes Mal eine andere Signatur gestempelt wird. Eine "Basisfall" ist dennoch erforderlich, aber die Art der Rekursion ist anders.

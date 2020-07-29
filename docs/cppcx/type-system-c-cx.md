@@ -2,12 +2,12 @@
 title: Typsystem (C++/CX)
 ms.date: 02/03/2017
 ms.assetid: b67bee8a-b526-4872-969e-ef22724e88fe
-ms.openlocfilehash: f4a6ea32681ad033b5db9451682c764f0a6d8959
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: b9d26f0fc79b2dc5000be6e6a06f51efd3f0b53f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404625"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221548"
 ---
 # <a name="type-system-ccx"></a>Typsystem (C++/CX)
 
@@ -39,7 +39,7 @@ Ob ein Typ oder eine Methode in den Metadaten sichtbar ist, hängt davon ab, wel
 |-|-|
 |**In Metadaten veröffentlicht**|**Nicht in Metadaten veröffentlicht**|
 |öffentlich|private|
-|protected|internal|
+|protected|Interner Pool (internal)|
 |public protected|private protected|
 
 Mit dem **Objektkatalog** können Sie den Inhalt von WinMD-Dateien anzeigen. Die Windows-Runtime Komponenten, die in Windows enthalten sind, befinden sich in der Datei Windows. winmd. Die default. winmd-Datei enthält die grundlegenden Typen, die in C++/CX verwendet werden, und Platform. winmd enthält zusätzliche Typen aus dem Platform-Namespace. Standardmäßig sind diese drei winmd-Dateien in jedem C++-Projekt für universelle Windows-Plattform-Apps enthalten.
@@ -63,7 +63,7 @@ Weitere Informationen finden Sie unter [Namespaces und Typsichtbarkeit](../cppcx
 
 Die Windows-Runtime definiert die folgenden grundlegenden Typen: UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Char16, Boolean und String. C++/CX unterstützt die grundlegenden numerischen Typen im Standard Namespace wie UInt16, UInt32, UInt64, Int16, Int32, Int64, float32, float64 und char16. Boolean und String werden auch im Plattformnamespace definiert.
 
-C++/CX definiert auch Uint8 `unsigned char` . Dies entspricht, das im Windows-Runtime nicht unterstützt wird und in öffentlichen APIs nicht verwendet werden kann.
+C++/CX definiert auch Uint8 **`unsigned char`** . Dies entspricht, das im Windows-Runtime nicht unterstützt wird und in öffentlichen APIs nicht verwendet werden kann.
 
 Ein elementarer Typ kann auf NULL festlegbar gemacht werden, indem er in einer [Platform::IBox Interface](../cppcx/platform-ibox-interface.md) -Schnittstelle umgebrochen wird. Weitere Informationen finden Sie unter [Wertklassen und Strukturen](../cppcx/value-classes-and-structs-c-cx.md)definiert sind.
 
@@ -71,7 +71,7 @@ Weitere Informationen über grundlegende Typen finden Sie unter [Grundlegende Ty
 
 ### <a name="strings"></a>Zeichenfolgen
 
-Eine Windows-Runtime Zeichenfolge ist eine unveränderliche Sequenz von 16-Bit-Unicode-Zeichen. Eine Windows-Runtime Zeichenfolge wird als projiziert `Platform::String^` . Diese Klasse stellt Methoden zum Erstellen und Bearbeiten von Zeichenfolgen zur Verfügung und ermöglicht, Zeichenfolgen in und aus `wchar_t`zu konvertieren.
+Eine Windows-Runtime Zeichenfolge ist eine unveränderliche Sequenz von 16-Bit-Unicode-Zeichen. Eine Windows-Runtime Zeichenfolge wird als projiziert `Platform::String^` . Diese Klasse stellt Methoden für die Erstellung, Bearbeitung und Konvertierung von Zeichen folgen in und aus bereit **`wchar_t`** .
 
 Weitere Informationen finden Sie unter [Zeichenfolgen](../cppcx/strings-c-cx.md)definiert sind.
 
@@ -151,7 +151,7 @@ In C++/CX können Sie benutzerdefinierte Ausnahmetypen, [std::exception](../stan
 
 Weitere Informationen finden Sie unter [Ausnahmen](../cppcx/exceptions-c-cx.md)definiert sind.
 
-### <a name="events"></a>Events
+### <a name="events"></a>Ereignisse
 
 Ein Ereignis ist ein öffentlicher Member in einer Verweisklasse oder einer Referenzstruktur mit einem Delegattyp als Typ. Ein Ereignis kann nur durch die besitzende Klasse aufgerufen, d. h. ausgelöst werden. Clientcode kann jedoch eigene Funktionen bereitstellen, die als Ereignishandler bezeichnet werden. Diese Ereignishandler werden aufgerufen, wenn die besitzende Klasse das Ereignis auslöst.
 
@@ -169,7 +169,7 @@ Eine geschachtelte Variable ist ein Werttyp, der in einem Referenztyp in Situati
 
 Weitere Informationen finden Sie unter [Boxing](../cppcx/boxing-c-cx.md)definiert sind.
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>Attribute
 
 Ein Attribut ist ein Metadatenwert, der auf beliebige Windows-Runtime Typen oder Typmember angewendet und zur Laufzeit überprüft werden kann. Der-Windows-Runtime definiert einen Satz allgemeiner Attribute im- `Windows::Foundation::Metadata` Namespace. Benutzerdefinierte Attribute in öffentlichen Schnittstellen werden von Windows-Runtime in dieser Version nicht unterstützt.
 

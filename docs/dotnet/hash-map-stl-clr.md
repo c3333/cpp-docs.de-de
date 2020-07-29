@@ -99,26 +99,26 @@ helpviewer_keywords:
 - value_compare member [STL/CLR]
 - value_type member [STL/CLR]
 ms.assetid: c3cfc69b-04c6-42ae-a30e-0eda953fe883
-ms.openlocfilehash: d87444fe5a62bac30d62cd7e44dfba7934083ef4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 330b4c92e4cad2532c7f3002af450bda964fcc46
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80208740"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221418"
 ---
 # <a name="hash_map-stlclr"></a>hash_map (STL/CLR)
 
-Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die bidirektionalen Zugriff hat. Sie verwenden den Container `hash_map`, um eine Sequenz von Elementen als Hash Tabelle zu verwalten, wobei jeder Tabelleneintrag eine bidirektionale verknüpfte Liste von Knoten speichert, und jeder Knoten, der ein Element speichert. Ein Element besteht aus einem Schlüssel, für die Reihenfolge der Sequenz und einem zugeordneten Wert, der für die Fahrt verläuft.
+Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die bidirektionalen Zugriff hat. Sie verwenden den Container `hash_map` zum Verwalten einer Sequenz von Elementen als Hash Tabelle, wobei jeder Tabelleneintrag eine bidirektionale verknüpfte Liste von Knoten speichert, und jeder Knoten, der ein Element speichert. Ein Element besteht aus einem Schlüssel, für die Reihenfolge der Sequenz und einem zugeordneten Wert, der für die Fahrt verläuft.
 
-In der folgenden Beschreibung ist `GValue` identisch mit folgendem:
+In der Beschreibung unten `GValue` ist identisch mit folgendem:
 
 `Microsoft::VisualC::StlClr::GenericPair<GKey, GMapped>`
 
 Dabei gilt:
 
-`GKey` ist identisch mit `Key`, sofern es sich nicht um einen Ref-Typ handelt. in diesem Fall ist es `Key^`
+`GKey`ist identisch `Key` mit, es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es`Key^`
 
-`GMapped` ist identisch mit `Mapped`, sofern es sich nicht um einen Ref-Typ handelt. in diesem Fall ist es `Mapped^`
+`GMapped`ist identisch `Mapped` mit, es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es`Mapped^`
 
 ## <a name="syntax"></a>Syntax
 
@@ -143,18 +143,18 @@ template<typename Key,
 *Schlüssel*<br/>
 Der Typ der Schlüsselkomponente eines Elements in der kontrollierten Sequenz.
 
-*Grafi*<br/>
+*Mapped*<br/>
 Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequenz.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<cliext/hash_map >
+**Header:**\<cliext/hash_map>
 
 **Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |[hash_map::const_iterator (STL/CLR)](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
 |[hash_map::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
@@ -218,43 +218,43 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 |<xref:System.Collections.Generic.IEnumerable%601>|Sequenz durch typisierte-Elemente.|
 |<xref:System.Collections.Generic.ICollection%601>|Verwaltet eine Gruppe von typisierten Elementen.|
 |<xref:System.Collections.Generic.IDictionary%602>|Behält die Gruppe von {Key, Value}-Paaren bei.|
-|IHash < Key, Wert >|Verwalten Sie einen generischen Container.|
+|IHash<Key, Wert>|Verwalten Sie einen generischen Container.|
 
 ## <a name="remarks"></a>Bemerkungen
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er als einzelne Knoten in einer bidirektionalen verknüpften Liste steuert und freigibt. Um den Zugriff zu beschleunigen, behält das Objekt auch ein Array mit variabler Länge in der Liste (der Hash Tabelle) bei und verwaltet die gesamte Liste effektiv als Sequenz von Unterlisten oder Bucket. Elemente werden in einen Bucket eingefügt, der durch Ändern der Verknüpfungen zwischen den Knoten geändert wird, niemals durch Kopieren des Inhalts eines Knotens in einen anderen. Dies bedeutet, dass Sie Elemente ohne Beeinträchtigung der restlichen Elemente frei einfügen und entfernen können.
 
-Das Objekt sortiert die einzelnen Bucket-Steuerelemente, indem ein gespeichertes Delegatobjekt vom Typ [hash_set:: key_compare (STL/CLR)](../dotnet/hash-set-key-compare-stl-clr.md)aufgerufen wird. Sie können das gespeicherte Delegatobjekt angeben, wenn Sie die hash_set erstellen; Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der Vergleichs `operator<=(key_type, key_type)`.
+Das Objekt sortiert die einzelnen Bucket-Steuerelemente, indem ein gespeichertes Delegatobjekt vom Typ [hash_set:: key_compare (STL/CLR)](../dotnet/hash-set-key-compare-stl-clr.md)aufgerufen wird. Sie können das gespeicherte Delegatobjekt angeben, wenn Sie die hash_set erstellen; Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der-Vergleich `operator<=(key_type, key_type)` .
 
-Sie greifen auf das gespeicherte Delegatobjekt zu, indem Sie die-Member-Funktion [hash_set:: key_comp (STL/CLR)](../dotnet/hash-set-key-comp-stl-clr.md)`()`aufrufen. Ein solches Delegatobjekt muss eine äquivalente Reihenfolge zwischen Schlüsseln vom Typ [hash_set:: key_type (STL/CLR)](../dotnet/hash-set-key-type-stl-clr.md)definieren. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y`:
+Sie greifen auf das gespeicherte Delegatobjekt zu, indem Sie die Member-Funktion [hash_set:: key_comp (STL/CLR)](../dotnet/hash-set-key-comp-stl-clr.md)aufrufen `()` . Ein solches Delegatobjekt muss eine äquivalente Reihenfolge zwischen Schlüsseln vom Typ [hash_set:: key_type (STL/CLR)](../dotnet/hash-set-key-type-stl-clr.md)definieren. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y` :
 
-`key_comp()(X, Y)` gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
+`key_comp()(X, Y)`gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
 
-Wenn `key_comp()(X, Y) && key_comp()(Y, X)` true ist, werden `X` und `Y` als äquivalente Reihenfolge bezeichnet.
+Wenn `key_comp()(X, Y) && key_comp()(Y, X)` den Wert true hat `X` , `Y` werden und als entsprechende Reihenfolge bezeichnet.
 
-Jede Bestell Regel, die sich wie `operator<=(key_type, key_type)`, `operator>=(key_type, key_type)` oder `operator==(key_type, key_type)` verhält, definiert die eqivalente Reihenfolge.
+Eine beliebige Bestell Regel, die `operator<=(key_type, key_type)` sich wie verhält `operator>=(key_type, key_type)` oder die `operator==(key_type, key_type)` eqivalente Reihenfolge definiert.
 
 Beachten Sie, dass der Container nur sicherstellt, dass Elemente, deren Schlüssel eine äquivalente Reihenfolge (und der Hash desselben ganzzahligen Werts) haben, in einem Bucket nebeneinander angeordnet sind. Im Gegensatz zur Vorlagen Klasse [Hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)stellt ein Objekt der Vorlagen Klasse `hash_map` sicher, dass die Schlüssel für alle Elemente eindeutig sind. (Zwei Schlüssel haben keine äquivalente Reihenfolge.)
 
-Das-Objekt bestimmt, welcher Bucket einen angegebenen Bestell Schlüssel enthalten soll, indem er ein gespeichertes Delegatobjekt vom Typ [hash_set:: Hasher (STL/CLR)](../dotnet/hash-set-hasher-stl-clr.md)aufruft. Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die Element Funktion [hash_set:: hash_delegate (STL/CLR)](../dotnet/hash-set-hash-delegate-stl-clr.md)`()` aufrufen, um einen ganzzahligen Wert zu erhalten, der vom Schlüsselwert abhängt. Sie können das gespeicherte Delegatobjekt angeben, wenn Sie die hash_set erstellen; Wenn Sie kein Delegatobjekt angeben, wird standardmäßig die-Funktion `System::Object::hash_value(key_type)`. Dies bedeutet, dass für alle Schlüssel `X` und `Y`:
+Das-Objekt bestimmt, welcher Bucket einen angegebenen Bestell Schlüssel enthalten soll, indem er ein gespeichertes Delegatobjekt vom Typ [hash_set:: Hasher (STL/CLR)](../dotnet/hash-set-hasher-stl-clr.md)aufruft. Um einen ganzzahligen Wert zu erhalten, der vom Schlüsselwert abhängt, greifen Sie auf dieses gespeicherte Objekt zu, indem Sie die Member-Funktion [hash_set:: hash_delegate (STL/CLR)](../dotnet/hash-set-hash-delegate-stl-clr.md) aufrufen `()` . Sie können das gespeicherte Delegatobjekt angeben, wenn Sie die hash_set erstellen; Wenn Sie kein Delegatobjekt angeben, wird standardmäßig die-Funktion angegeben `System::Object::hash_value(key_type)` . Dies bedeutet, dass für alle Schlüssel `X` und `Y` :
 
-`hash_delegate()(X)` gibt bei jedem-Rückruf dasselbe ganzzahlige Ergebnis zurück.
+`hash_delegate()(X)`gibt bei jedem-Rückruf dasselbe ganzzahlige Ergebnis zurück.
 
-Wenn `X` und `Y` entsprechende Reihenfolge aufweisen, sollte `hash_delegate()(X)` dasselbe ganz Zahl Ergebnis wie `hash_delegate()(Y)`zurückgeben.
+Wenn `X` und eine `Y` entsprechende Reihenfolge aufweisen, `hash_delegate()(X)` sollte das gleiche ganzzahlige Ergebnis wie zurückgeben `hash_delegate()(Y)` .
 
 Jedes Element enthält einen separaten Schlüssel und einen zugeordneten Wert. Die Sequenz wird so dargestellt, dass die Suche, das Einfügen und das Entfernen eines beliebigen Elements mit einer Reihe von Vorgängen ermöglicht, die unabhängig von der Anzahl der Elemente in der Sequenz (Konstante Zeit) sind, zumindest in den meisten Fällen. Darüber hinaus führt das Einfügen eines Elements nicht dazu, dass Iteratoren ungültig werden, und durch das Entfernen eines Elements werden nur solche Iteratoren ungültig, die auf das entfernte Element gezeigt haben.
 
 Wenn Hashwerte nicht gleichmäßig verteilt werden, kann eine Hash Tabelle jedoch degeneriert werden. In der äußersten-für eine Hash Funktion, die immer denselben Wert zurückgibt, sind Lookup-, Einfügungs-und Entfernungs Vorgänge proportional zur Anzahl der Elemente in der Sequenz (lineare Zeit). Der Container ist bestrebt, eine sinnvolle Hash Funktion, eine Mean Bucket-Größe und eine Hash Tabellengröße (Gesamtanzahl von Buchern) auszuwählen, aber Sie können eine beliebige oder alle dieser Optionen überschreiben. Siehe z. b. die Funktionen [hash_set:: max_load_factor (STL/CLR)](../dotnet/hash-set-max-load-factor-stl-clr.md) und [hash_set:: rehash (STL/CLR)](../dotnet/hash-set-rehash-stl-clr.md).
 
-Ein hash_map unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [hash_map:: End (STL/CLR)-](../dotnet/hash-map-end-stl-clr.md)`()`zurückgegeben wurde. Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen hash_map Iterator Inkrement erhöhen, um den Haupt Knoten zu erreichen, und er vergleicht dann gleich `end()`. Sie können jedoch nicht den von `end()`zurückgegebenen Iterator dereferenzieren.
+Ein hash_map unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen hash_map Iterator Inkrement erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich verglichen `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
 
 Beachten Sie, dass Sie nicht direkt auf ein hash_map Element verweisen können, das die numerische Position erhält, die einen Random-Access-Iterator erfordert.
 
-Ein hash_map Iterator speichert ein Handle für den zugehörigen hash_map Knoten, der wiederum ein Handle für den zugehörigen Container speichert. Iteratoren können nur mit den zugehörigen Container Objekten verwendet werden. Ein hash_map Iterator bleibt gültig, solange der zugeordnete hash_map Knoten mit einigen hash_map verknüpft ist. Außerdem ist ein gültiger Iterator dereferencable--Sie können ihn verwenden, um auf den von ihm festgelegt-Elementwert zuzugreifen oder ihn zu ändern, solange er nicht gleich `end()`ist.
+Ein hash_map Iterator speichert ein Handle für den zugehörigen hash_map Knoten, der wiederum ein Handle für den zugehörigen Container speichert. Iteratoren können nur mit den zugehörigen Container Objekten verwendet werden. Ein hash_map Iterator bleibt gültig, solange der zugeordnete hash_map Knoten mit einigen hash_map verknüpft ist. Außerdem ist ein gültiger Iterator dereferencable--Sie können ihn verwenden, um auf den Elementwert zuzugreifen, den er festlegt, sofern er nicht gleich ist `end()` .
 
 Durch das Löschen oder Entfernen eines Elements wird der Dekonstruktor für den gespeicherten Wert aufgerufen. Wenn Sie den Container zerstören, werden alle Elemente gelöscht. Daher stellt ein Container, dessen Elementtyp eine Verweis Klasse ist, sicher, dass keine Elemente den Container überdauern. Beachten Sie jedoch, dass ein Container von Handles seine Elemente *nicht* zerstört.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ## <a name="hash_mapbegin-stlclr"></a><a name="begin"></a>hash_map:: begin (STL/CLR)
 
@@ -393,7 +393,7 @@ void clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion ruft effektiv [hash_map:: Erase (STL/CLR)-](../dotnet/hash-map-erase-stl-clr.md)`(` [hash_map:: begin (STL/CLR)](../dotnet/hash-map-begin-stl-clr.md)`(),` [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)`())`auf. Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
+Die Member-Funktion ruft effektiv [hash_map:: Erase (STL/CLR)](../dotnet/hash-map-erase-stl-clr.md) `(` [hash_map:: begin (STL/CLR)](../dotnet/hash-map-begin-stl-clr.md) `(),` [hash_map:: End (STL/CLR](../dotnet/hash-map-end-stl-clr.md)) auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -451,7 +451,7 @@ typedef T2 const_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2`, das als konstanter bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2` , das als konstanter bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -538,7 +538,7 @@ typedef T4 const_reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4`, das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4` , das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -688,7 +688,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [hash_map:: Size (STL/CLR)-](../dotnet/hash-map-size-stl-clr.md)`() == 0`. Sie verwenden es, um zu testen, ob das hash_map leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [hash_map:: Size (STL/CLR)](../dotnet/hash-map-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob das hash_map leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -798,7 +798,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt ein paar von Iteratoren `cliext::pair<iterator, iterator>(lower_bound(key), upper_bound(key))`zurück. Sie verwenden Sie, um den Bereich der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
+Die Member-Funktion gibt ein paar von Iteratoren zurück `cliext::pair<iterator, iterator>(lower_bound(key), upper_bound(key))` . Sie verwenden Sie, um den Bereich der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
 
 ### <a name="example"></a>Beispiel
 
@@ -870,9 +870,9 @@ Zu Lösch Endes Element.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird, und gibt einen Iterator zurück, der das erste Element festlegt, das hinter dem entfernten Element liegt, oder [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md) -`()`, wenn kein solches Element vorhanden ist. Sie verwenden es, um ein einzelnes Element zu entfernen.
+Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird, und gibt einen Iterator zurück, der das erste Element festlegt, das hinter dem entfernten Element liegt, oder [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md) , `()` Wenn kein solches Element vorhanden ist. Sie verwenden es, um ein einzelnes Element zu entfernen.
 
-Die zweite Member-Funktion entfernt die Elemente der kontrollierten Sequenz im Bereich [`first``last`) und gibt einen Iterator zurück, der das erste Element festlegt, das über alle entfernten Elemente hinausgeht, oder `end()`, wenn kein solches Element vorhanden ist. Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
+Die zweite Member-Funktion entfernt die Elemente der kontrollierten Sequenz im Bereich [ `first` , `last` ) und gibt einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder, `end()` Wenn kein solches Element vorhanden ist. Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
 
 Die dritte Member-Funktion entfernt alle Elemente der kontrollierten *Sequenz, deren Schlüssel die entsprechende*Reihenfolge hat, und gibt die Anzahl der entfernten Elemente zurück. Sie verwenden Sie, um alle Elemente zu entfernen und zu zählen, die einem angegebenen Schlüssel entsprechen.
 
@@ -952,7 +952,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn mindestens ein Element in der kontrollierten Sequenz eine äquivalente Reihenfolge mit *Key*aufweist, gibt die Member-Funktion einen Iterator zurück, der eines dieser Elemente festlegt. Andernfalls wird [hash_map:: End-`()`(STL/CLR)](../dotnet/hash-map-end-stl-clr.md) zurückgegeben. Sie verwenden Sie, um ein Element zu suchen, das sich derzeit in der kontrollierten Sequenz befindet, die einem angegebenen Schlüssel entspricht.
+Wenn mindestens ein Element in der kontrollierten Sequenz eine äquivalente Reihenfolge mit *Key*aufweist, gibt die Member-Funktion einen Iterator zurück, der eines dieser Elemente festlegt. Andernfalls wird [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)zurückgegeben `()` . Sie verwenden Sie, um ein Element zu suchen, das sich derzeit in der kontrollierten Sequenz befindet, die einem angegebenen Schlüssel entspricht.
 
 ### <a name="example"></a>Beispiel
 
@@ -1183,7 +1183,7 @@ typedef GValue generic_value;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
+Der Typ beschreibt ein Objekt vom Typ `GValue` , das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
 
 ### <a name="example"></a>Beispiel
 
@@ -1304,7 +1304,7 @@ Das Ende des einzufügenden Bereichs.
 *pred*<br/>
 Das Anordnungs Prädikat für die gesteuerte Sequenz.
 
-*right*<br/>
+*Richting*<br/>
 Einzufügendes Objekt bzw. einzufügender Bereich.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1313,7 +1313,7 @@ Der Konstruktor:
 
 `hash_map();`
 
-Initialisiert die gesteuerte Sequenz ohne Elemente, mit dem Standard-Reihen folgen Prädikat `key_compare()`und mit der Standard Hash Funktion. Sie verwenden es, um eine leere anfängliche gesteuerte Sequenz mit dem standardmäßigen Reihen folgen Prädikat und der Hash Funktion anzugeben.
+Initialisiert die gesteuerte Sequenz ohne Elemente, mit dem Standard Reihen folgen Prädikat `key_compare()` und mit der Standard Hash Funktion. Sie verwenden es, um eine leere anfängliche gesteuerte Sequenz mit dem standardmäßigen Reihen folgen Prädikat und der Hash Funktion anzugeben.
 
 Der Konstruktor:
 
@@ -1331,31 +1331,31 @@ Der Konstruktor:
 
 `hash_map(hash_map<Key, Mapped>% right);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`right.begin()``right.end()`), mit dem Standard Reihen folgen Prädikat und mit der Standard Hash Funktion. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom hash_map Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat und der Hash Funktion.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `right.begin()` , `right.end()` ), mit dem Standard Reihen folgen Prädikat und mit der Standard Hash Funktion. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom hash_map Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat und der Hash Funktion.
 
 Der Konstruktor:
 
 `hash_map(hash_map<Key, Mapped>^ right);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`right->begin()``right->end()`), mit dem Standard Reihen folgen Prädikat und mit der Standard Hash Funktion. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom hash_map Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat und der Hash Funktion.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `right->begin()` , `right->end()` ), mit dem Standard Reihen folgen Prädikat und mit der Standard Hash Funktion. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, bei der es sich um eine Kopie der Sequenz handelt, die vom hash_map Objekt *Rechts*gesteuert wird, mit dem Standard Reihen folgen Prädikat und der Hash Funktion.
 
 Der Konstruktor:
 
 `template<typename InIter> hash_map(InIter first, InIter last);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`first``last`), mit dem Standard Reihen folgen Prädikat und mit der Standard Hash Funktion. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz zu machen, wobei das standardmäßige Reihen folgen Prädikat und die Hash Funktion verwendet werden.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `first` , `last` ), mit dem Standard Reihen folgen Prädikat und mit der Standard Hash Funktion. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz zu machen, wobei das standardmäßige Reihen folgen Prädikat und die Hash Funktion verwendet werden.
 
 Der Konstruktor:
 
 `template<typename InIter> hash_map(InIter first, InIter last, key_compare^ pred);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`first`, `last`), mit dem *Prädikat pred*für die Reihenfolge und mit der Standard Hash Funktion. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz zu machen, wobei das angegebene Reihen folgen Prädikat und die Standard Hash Funktion verwendet werden.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `first` , `last` ), mit dem *Prädikat pred*für die Reihenfolge und mit der Standard Hash Funktion. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz zu machen, wobei das angegebene Reihen folgen Prädikat und die Standard Hash Funktion verwendet werden.
 
 Der Konstruktor:
 
 `template<typename InIter> hash_map(InIter first, InIter last, key_compare^ pred, hasher^ hashfn);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`first`, `last`), mit der *Prädikat-Prädikats-* Reihenfolge und mit der Hash Funktion *hashfn*. Sie verwenden Sie, um die gesteuerte Sequenz mit dem angegebenen Reihen folgen Prädikat und der angegebenen Hash Funktion als Kopie einer anderen Sequenz festzulegen.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `first` , `last` ), mit dem *Prädikat pred*für die Reihenfolge und mit der Hash Funktion *hashfn*. Sie verwenden Sie, um die gesteuerte Sequenz mit dem angegebenen Reihen folgen Prädikat und der angegebenen Hash Funktion als Kopie einer anderen Sequenz festzulegen.
 
 Der Konstruktor:
 
@@ -1567,10 +1567,10 @@ Anfang des einzufügenden Bereichs.
 *last*<br/>
 Das Ende des einzufügenden Bereichs.
 
-*right*<br/>
+*Richting*<br/>
 Enumeration, die eingefügt werden soll.
 
-*val*<br/>
+*ster*<br/>
 Der einzufügende Schlüsselwert.
 
 *where*<br/>
@@ -1580,11 +1580,11 @@ WHERE in Container zum Einfügen (nur Hinweis).
 
 Jede der Member-Funktionen fügt eine Sequenz ein, die von den verbleibenden Operanden angegeben wird.
 
-Die erste Member-Funktion versucht, ein Element mit einem Wert `val`einzufügen, und gibt ein Werte Paar `X`zurück. Wenn `X.second` true ist, wird `X.first` das neu eingefügte Element festlegen. Andernfalls `X.first` ein Element mit entsprechender Reihenfolge festgelegt, die bereits vorhanden ist, und es wird kein neues Element eingefügt. Sie verwenden es, um ein einzelnes Element einzufügen.
+Die erste Member-Funktion versucht, ein Element mit dem Wert einzufügen `val` , und gibt ein paar von Werten zurück `X` . Wenn `X.second` true ist, wird `X.first` das neu eingefügte Element festgelegt `X.first` . andernfalls wird ein Element mit entsprechender Reihenfolge festgelegt, das bereits vorhanden ist, und es wird kein neues Element eingefügt. Sie verwenden es, um ein einzelnes Element einzufügen.
 
 Die zweite Member-Funktion fügt ein Element mit *dem* Wert *Val*ein, wobei als Hinweis verwendet wird (um die Leistung zu verbessern), und gibt einen Iterator zurück, der das neu eingefügte Element festlegt. Sie verwenden es, um ein einzelnes Element einzufügen, das möglicherweise an ein Element angrenzt, das Sie kennen.
 
-Die dritte Member-Funktion fügt die Sequenz [`first``last`) ein. Sie verwenden Sie, um NULL oder mehr Elemente einzufügen, die aus einer anderen Sequenz kopiert wurden.
+Die dritte Member-Funktion fügt die Sequenz [ `first` , `last` ) ein. Sie verwenden Sie, um NULL oder mehr Elemente einzufügen, die aus einer anderen Sequenz kopiert wurden.
 
 Die vierte Member-Funktion fügt die von der *rechten Seite*festgelegte Sequenz ein. Sie verwenden Sie zum Einfügen einer Sequenz, die von einem Enumerator beschrieben wird.
 
@@ -1677,7 +1677,7 @@ typedef T1 iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T1`, das als bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T1` , das als bidirektionaler Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -1883,7 +1883,7 @@ float load_factor();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt `(float)`[hash_map:: Size (STL/CLR)](../dotnet/hash-map-size-stl-clr.md)`() /` [hash_map:: bucket_count (STL/CLR)-](../dotnet/hash-map-bucket-count-stl-clr.md)`()`zurück. Sie verwenden Sie, um die durchschnittliche Bucket-Größe zu bestimmen.
+Die Member-Funktion gibt `(float)` [hash_map:: Size (STL/CLR)](../dotnet/hash-map-size-stl-clr.md) `() /` [hash_map:: bucket_count (STL/CLR)](../dotnet/hash-map-bucket-count-stl-clr.md)zurück `()` . Sie verwenden Sie, um die durchschnittliche Bucket-Größe zu bestimmen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1962,7 +1962,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion bestimmt das erste Element, das in der gesteuerten Sequenz `X` wird, das einen Hashwert zum gleichen Bucket wie *Key* hat und die entsprechende Reihenfolge an *Key*hat. Wenn kein solches Element vorhanden ist, wird [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)`()`; zurückgegeben. Andernfalls wird ein Iterator zurückgegeben, der `X`festlegt. Sie verwenden Sie, um den Anfang einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
+Die Member-Funktion bestimmt das erste Element `X` in der kontrollierten Sequenz, das einen Hashwert zum gleichen Bucket wie *Key* hat und eine *key*entsprechende Reihenfolge hat. Wenn kein solches Element vorhanden ist, wird [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)zurückgegeben `()` ; andernfalls wird ein Iterator zurückgegeben, der festlegt `X` . Sie verwenden Sie, um den Anfang einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2024,7 +2024,7 @@ Zugeordneter Wert, der gesucht werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt ein `value_type` Objekt zurück, dessen Schlüssel *Schlüssel* ist und dessen zugeordneter Wert *zugeordnet*ist. Sie verwenden es, um ein Objekt zu verfassen, das für die Verwendung mit mehreren anderen Element Funktionen geeignet ist.
+Die Member-Funktion gibt ein `value_type` -Objekt zurück, dessen Schlüssel *Schlüssel* ist und dessen zugeordneter Wert *zugeordnet*ist. Sie verwenden es, um ein Objekt zu verfassen, das für die Verwendung mit mehreren anderen Element Funktionen geeignet ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -2065,7 +2065,7 @@ typedef Mapped mapped_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `Mapped`dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `Mapped` dar.
 
 ### <a name="example"></a>Beispiel
 
@@ -2192,12 +2192,12 @@ hash_map<Key, Mapped>% operator=(hash_map<Key, Mapped>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Der zu kopierende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
+Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann zurück **`*this`** . Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2252,7 +2252,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktionen sind bestrebt, ein Element mit entsprechender Reihenfolge zum *Schlüssel*zu finden. Wenn ein solcher gefunden wird, wird der zugeordnete zugeordnete Wert zurückgegeben. Andernfalls wird `value_type(key, mapped_type())` eingefügt und der zugeordnete (standardmäßige) zugeordnete Wert zurückgegeben. Sie verwenden Sie, um einen zugeordneten Wert nach dem zugeordneten Schlüssel zu suchen oder um sicherzustellen, dass ein Eintrag für den Schlüssel vorhanden ist, wenn kein Wert gefunden wird.
+Die Member-Funktionen sind bestrebt, ein Element mit entsprechender Reihenfolge zum *Schlüssel*zu finden. Wenn ein solcher gefunden wird, wird der zugeordnete zugeordnete Wert zurückgegeben. Andernfalls wird der zugeordnete `value_type(key, mapped_type())` (standardmäßige) zugeordnete Wert eingefügt und zurückgegeben. Sie verwenden Sie, um einen zugeordneten Wert nach dem zugeordneten Schlüssel zu suchen oder um sicherzustellen, dass ein Eintrag für den Schlüssel vorhanden ist, wenn kein Wert gefunden wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -2410,7 +2410,7 @@ void rehash();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion erstellt die Hash Tabelle neu und stellt sicher, dass [hash_map:: load_factor (STL/CLR)](../dotnet/hash-map-load-factor-stl-clr.md)`() <=` [hash_map:: max_load_factor (STL/CLR)](../dotnet/hash-map-max-load-factor-stl-clr.md)ist. Andernfalls erhöht sich die Größe der Hash Tabelle nach dem Einfügen nur nach Bedarf. (Die Größe wird nie automatisch verringert.) Sie verwenden Sie zum Anpassen der Größe der Hash Tabelle.
+Die Member-Funktion erstellt die Hash Tabelle neu und stellt sicher, dass [hash_map:: load_factor (STL/CLR)](../dotnet/hash-map-load-factor-stl-clr.md) `() <=` [hash_map:: max_load_factor (STL/CLR)](../dotnet/hash-map-max-load-factor-stl-clr.md)ist. Andernfalls erhöht sich die Größe der Hash Tabelle nach dem Einfügen nur nach Bedarf. (Die Größe wird nie automatisch verringert.) Sie verwenden Sie zum Anpassen der Größe der Hash Tabelle.
 
 ### <a name="example"></a>Beispiel
 
@@ -2537,7 +2537,7 @@ typedef T3 reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3`, das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3` , das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -2579,7 +2579,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [hash_map:: Empty (STL/CLR)](../dotnet/hash-map-empty-stl-clr.md)`()`.
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [hash_map:: Empty (STL/CLR)](../dotnet/hash-map-empty-stl-clr.md) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2679,12 +2679,12 @@ void swap(hash_map<Key, Mapped>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Container für den Tausch von Inhalten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen `this` und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
+Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen **`this`** und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2802,7 +2802,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion bestimmt das letzte Element, das in der kontrollierten Sequenz `X` wird, das einen Hashwert zum gleichen Bucket wie *Key* hat und die entsprechende Reihenfolge an *Key*hat. Wenn kein solches Element vorhanden ist oder `X` das letzte Element in der kontrollierten Sequenz ist, wird [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)`()`zurückgegeben. Andernfalls wird ein Iterator zurückgegeben, der das erste Element über `X`hinaus festlegt. Sie verwenden es, um das Ende einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entspricht.
+Die Member-Funktion bestimmt das letzte Element `X` in der kontrollierten Sequenz, das einen Hashwert zum gleichen Bucket wie *Key* hat und eine *key*entsprechende Reihenfolge hat. Wenn kein solches Element vorhanden ist oder wenn `X` das letzte Element in der kontrollierten Sequenz ist, gibt es [hash_map:: End (STL/CLR)](../dotnet/hash-map-end-stl-clr.md)zurück `()` . andernfalls gibt es einen Iterator zurück, der das erste Element über den Wert festlegt `X` . Sie verwenden es, um das Ende einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entspricht.
 
 ### <a name="example"></a>Beispiel
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fields [C++], bit
 - bit fields
 ms.assetid: 6f4b62e3-cc1d-4e5d-bf34-05904104f71a
-ms.openlocfilehash: b952ca0aab5c4417f22fd958514894c53a39f800
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 7c2dbb6e2932265984c8cb4e1e34504921e5d666
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170604"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221782"
 ---
 # <a name="c-bit-fields"></a>C++-Bitfelder
 
@@ -43,10 +43,10 @@ struct Date {
 
 Das konzeptionelle Speicherlayout eines Objekts vom Typ `Date` wird in der folgenden Abbildung dargestellt.
 
-![Arbeitsspeicher Layout eines Datums Objekts](../cpp/media/vc38uq1.png "Speicherlayout eines Datumsobjekts") <br/>
+![Speicherlayout eines Datumsobjekts](../cpp/media/vc38uq1.png "Speicherlayout eines Datumsobjekts") <br/>
 Speicherlayout von Datumsobjekten
 
-Beachten Sie, dass `nYear` 8 Bits lang ist und die Wort Begrenzung des deklarierten Typs ( **Ganzzahl ohne Vorzeichen** **Short**) überlaufen würde. Daher wird er am Anfang eines neuen **Ganzzahl ohne Vorzeichen** **Short**-Codes gestartet. Es ist nicht notwendig, dass alle Bitfelder in ein Objekt des zugrunde liegenden Typs passen. Neue Speichereinheiten werden entsprechend der Anzahl von Bits, die in der Deklaration angefordert werden, zugeordnet.
+Beachten Sie, dass `nYear` 8 Bits lang ist und die Wort Grenze des deklarierten Typs überlaufen würde **`unsigned short`** . Daher wird er am Anfang eines neuen gestartet **`unsigned short`** . Es ist nicht notwendig, dass alle Bitfelder in ein Objekt des zugrunde liegenden Typs passen. Neue Speichereinheiten werden entsprechend der Anzahl von Bits, die in der Deklaration angefordert werden, zugeordnet.
 
 **Microsoft-spezifisch**
 
@@ -70,12 +70,12 @@ struct Date {
 
 Anschließend wird das Speicher Layout wie in der folgenden Abbildung gezeigt:
 
-![Layout des Datums Objekts mit Bitfeld der Länge 0 (NULL&#45;)](../cpp/media/vc38uq2.png "Layout des Datums Objekts mit Bitfeld der Länge 0 (NULL&#45;)") <br/>
+![Layout des Datums Objekts mit 0 (null)&#45;Längen Bitfeld](../cpp/media/vc38uq2.png "Layout des Datums Objekts mit 0 (null)&#45;Längen Bitfeld") <br/>
 Layout des Datumsobjekts mit Bitfeld der Länge 0 (null)
 
 Der zugrunde liegende Typ eines Bitfelds muss ein ganzzahliger Typ sein, wie in den [integrierten Typen](../cpp/fundamental-types-cpp.md)beschrieben.
 
-Wenn der Initialisierer für einen Verweis vom Typ `const T&` ein Lvalue ist, der auf ein Bitfeld vom Typ `T`verweist, wird der Verweis nicht direkt an das Bitfeld gebunden. Stattdessen wird der Verweis an eine temporär initialisierte gebunden, die den Wert des Bitfelds enthalten soll.
+Wenn es sich bei dem Initialisierer für einen Verweis vom Typ um `const T&` einen lvalue handelt, der auf ein Bitfeld vom Typ verweist `T` , wird der Verweis nicht direkt an das Bitfeld gebunden. Stattdessen wird der Verweis an eine temporär initialisierte gebunden, die den Wert des Bitfelds enthalten soll.
 
 ## <a name="restrictions-on-bit-fields"></a>Einschränkungen bei Bitfeldern
 
@@ -83,7 +83,7 @@ Die folgende Liste zeigt Einzelheiten zu fehlerhaften Operationen in Bitfeldern:
 
 - Verwenden der Adresse eines Bitfelds.
 
-- Initialisieren eines nicht**Konstanten** Verweises mit einem Bitfeld.
+- Initialisieren eines nicht- **`const`** Verweises mit einem Bitfeld.
 
 ## <a name="see-also"></a>Weitere Informationen
 

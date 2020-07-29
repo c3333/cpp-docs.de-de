@@ -5,16 +5,16 @@ helpviewer_keywords:
 - objects [C++], destroying
 - destructors, C++
 ms.assetid: afa859b0-f3bc-4c4d-b250-c68b335b6004
-ms.openlocfilehash: 1e1190f49c7ccf5c312172f265d32a4b855bd878
-ms.sourcegitcommit: 2da5c42928739ca8cd683a9002598f28d8ec5f8e
+ms.openlocfilehash: 5da7659d2d45bca9efba21be2cd0bf581d539780
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060140"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221665"
 ---
 # <a name="destructors-c"></a>Destruktoren (C++)
 
-Ein destrukturtor ist eine Member-Funktion, die automatisch aufgerufen wird, wenn das Objekt den Gültigkeitsbereich verlässt oder durch einen Aufruf von **Delete explizit gelöscht**wird. Ein Dekonstruktor hat den gleichen Namen wie die Klasse, dem eine Tilde (`~`) vorangestellt ist. Beispielsweise wird der Destruktor für die `String`-Klasse folgendermaßen deklariert: `~String()`.
+Ein destrukturtor ist eine Member-Funktion, die automatisch aufgerufen wird, wenn das Objekt den Gültigkeitsbereich verlässt oder durch einen Aufruf von explizit gelöscht wird **`delete`** . Ein Dekonstruktor hat den gleichen Namen wie die Klasse, dem eine Tilde () vorangestellt ist `~` . Beispielsweise wird der Destruktor für die `String`-Klasse folgendermaßen deklariert: `~String()`.
 
 Wenn Sie keinen Dekonstruktor definieren, stellt der Compiler einen Standardwert bereit. für viele Klassen reicht dies aus. Sie müssen nur einen benutzerdefinierten Dekonstruktor definieren, wenn die Klasse Handles für Systemressourcen speichert, die freigegeben werden müssen, oder Zeiger, die den Speicher besitzen, auf den Sie verweisen.
 
@@ -57,7 +57,7 @@ int main() {
 }
 ```
 
-Im vorherigen Beispiel verwendet der Dekonstruktor `String::~String` den **Delete** -Operator, um den Speicherplatz freizugeben, der für die Text Speicherung dynamisch zugeordnet wird.
+Im vorherigen Beispiel `String::~String` verwendet der Dekonstruktor den- **`delete`** Operator, um den Speicherplatz freizugeben, der für die Text Speicherung dynamisch zugeordnet wird.
 
 ## <a name="declaring-destructors"></a>Deklarieren von dektoren
 
@@ -67,11 +67,11 @@ Mehrere Regeln bestimmen die Deklaration von Destruktoren. Destruktoren:
 
 - Akzeptieren keine Argumente.
 
-- Geben Sie keinen Wert (oder **void**) zurück.
+- Geben Sie keinen Wert (oder **`void`** ) zurück.
 
-- Kann nicht als " **konstant**", " **volatile**" oder " **static**" deklariert werden. Sie können jedoch für die Zerstörung von Objekten aufgerufen werden, die als " **konstant**", " **flüchtig**" oder " **statisch**" deklariert sind.
+- Kann nicht als **`const`** , **`volatile`** oder deklariert werden **`static`** . Sie können jedoch für die Zerstörung von Objekten aufgerufen werden, die als **`const`** , **`volatile`** oder deklariert werden **`static`** .
 
-- Kann als **virtuell**deklariert werden. Mithilfe von virtuellen Destruktoren können Sie Objekte zerstören, ohne ihren Typ zu kennen. Der richtige Destruktor für das Objekt wird mithilfe des Mechanismus der virtuellen Funktion aufgerufen. Destruktoren können auch als rein virtuelle Funktionen für abstrakte Klassen deklariert werden.
+- Kann als deklariert werden **`virtual`** . Mithilfe von virtuellen Destruktoren können Sie Objekte zerstören, ohne ihren Typ zu kennen. Der richtige Destruktor für das Objekt wird mithilfe des Mechanismus der virtuellen Funktion aufgerufen. Destruktoren können auch als rein virtuelle Funktionen für abstrakte Klassen deklariert werden.
 
 ## <a name="using-destructors"></a>Verwenden von Destruktoren
 
@@ -79,7 +79,7 @@ Destruktoren werden aufgerufen, wenn eines der folgenden Ereignisse eintritt:
 
 - Ein lokales (automatisches) Objekt mit Blockbereich verlässt den Gültigkeitsbereich.
 
-- Ein-Objekt, das mit dem **New** -Operator zugeordnet wird, wird mithilfe von **Delete**explizit aufgehoben
+- Ein mit dem-Operator zugewiesener Objekt **`new`** wird mithilfe von explizit aufgehoben **`delete`** .
 
 - Die Lebensdauer eines temporären Objekts endet.
 
@@ -147,7 +147,7 @@ B1 dtor
 
 Destruktoren für virtuelle Basisklassen werden in umgekehrter Reihenfolge ihrer Darstellung in einem gerichteten azyklischen Diagramm aufgerufen (Durchlauf vom tiefsten Punkt nach oben, von links nach rechts, Postorder-Durchlauf). Die folgende Abbildung stellt ein Vererbungsdiagramm dar.
 
-![Vererbungs Diagramm, das virtuelle Basisklassen anzeigt](../cpp/media/vc392j1.gif "Vererbungs Diagramm, das virtuelle Basisklassen anzeigt") <br/>
+![Vererbungsdiagramm mit mit virtuellen Basisklassen](../cpp/media/vc392j1.gif "Vererbungsdiagramm mit mit virtuellen Basisklassen") <br/>
 Vererbungsdiagramm mit mit virtuellen Basisklassen
 
 Im Folgenden werden die Klassenköpfe für die in der Abbildung dargestellten Klassen aufgeführt.
@@ -174,21 +174,21 @@ Um die Reihenfolge zum Löschen der virtuellen Basisklassen eines Objekts vom Ty
 
 1. Durchlaufen Sie das Diagramm nach oben und entlang des nächsten Pfads nach rechts.
 
-1. Wechseln Sie zu Schritt 2.
+1. Fahren Sie mit Schritt 2 fort.
 
 1. Wenn der letzte nach oben zeigende Pfeil angezeigt wird, notieren Sie den Namen des aktuellen Knotens.
 
-1. Gehen Sie zu Schritt 3.
+1. Fahren Sie mit Schritt 3 fort.
 
 1. Setzen Sie diesen Vorgang fort, bis der untere Knoten wieder der aktuelle Knoten ist.
 
 Daher lautet für die Klasse `E` die Reihenfolge der Löschung wie folgt:
 
-1. Die nicht virtuelle Basisklasse `E`.
+1. Die nicht virtuelle Basisklasse `E` .
 
-1. Die nicht virtuelle Basisklasse `D`.
+1. Die nicht virtuelle Basisklasse `D` .
 
-1. Die nicht virtuelle Basisklasse `C`.
+1. Die nicht virtuelle Basisklasse `C` .
 
 1. Die virtuelle Basisklasse `B`.
 
@@ -213,7 +213,7 @@ Im vorherigen Beispiel wird der Destruktor für `Base2` vor dem Destruktor für 
 
 ## <a name="explicit-destructor-calls"></a>Explizite Destruktoraufrufe
 
-Einen Destruktor explizit aufzurufen, ist selten notwendig. Allerdings kann es hilfreich sein, eine Bereinigung von Objekten auszuführen, die an den absoluten Adressen platziert werden. Diese Objekte werden normalerweise mithilfe eines benutzerdefinierten **New** -Operators zugeordnet, der ein Platzierungs Argument annimmt. Der **Delete** -Operator kann diesen Arbeitsspeicher nicht freigeben, da er nicht im freien Speicher zugeordnet ist (Weitere Informationen finden Sie [unter den New-und DELETE-Operatoren](../cpp/new-and-delete-operators.md)). Ein Aufruf des Destruktors kann jedoch eine geeignete Bereinigung ausführen. Mit einer der folgenden Anweisungen können Sie den Destruktor für ein Objekt `s` der Klasse `String` explizit aufrufen:
+Einen Destruktor explizit aufzurufen, ist selten notwendig. Allerdings kann es hilfreich sein, eine Bereinigung von Objekten auszuführen, die an den absoluten Adressen platziert werden. Diese Objekte werden normalerweise mithilfe eines benutzerdefinierten **`new`** Operators zugeordnet, der ein Platzierungs Argument annimmt. Der **`delete`** Operator kann diesen Arbeitsspeicher nicht freigeben, da er nicht im freien Speicher zugeordnet ist (Weitere Informationen finden Sie [unter den New-und DELETE-Operatoren](../cpp/new-and-delete-operators.md)). Ein Aufruf des Destruktors kann jedoch eine geeignete Bereinigung ausführen. Mit einer der folgenden Anweisungen können Sie den Destruktor für ein Objekt `s` der Klasse `String` explizit aufrufen:
 
 ```cpp
 s.String::~String();     // non-virtual call
@@ -231,7 +231,7 @@ Eine Klasse benötigt einen Dekonstruktor, wenn Sie eine Ressource abruft, und u
 
 Wenn diese speziellen Funktionen nicht vom Benutzer definiert werden, werden Sie implizit vom Compiler definiert. Die implizit generierten Konstruktoren und Zuweisungs Operatoren führen eine flache, mitgliedsweise Kopie aus. Dies ist nahezu sicherlich falsch, wenn ein Objekt eine Ressource verwaltet.
 
-Im nächsten Beispiel erstellt der implizit generierte Kopierkonstruktor die Zeiger `str1.text` und `str2.text` verweist auf denselben Speicher, und wenn wir aus `copy_strings()`zurückkehren, wird dieser Speicher zweimal gelöscht. Dies ist ein nicht definiertes Verhalten:
+Im nächsten Beispiel erstellt der implizit generierte Kopierkonstruktor die Zeiger `str1.text` und `str2.text` verweist auf denselben Speicher, und wenn wir aus zurückkehren, wird `copy_strings()` dieser Speicher zweimal gelöscht. Dies ist ein nicht definiertes Verhalten:
 
 ```cpp
 void copy_strings()
@@ -244,7 +244,7 @@ void copy_strings()
 
 Wenn Sie einen Dekonstruktor, Kopierkonstruktor oder Kopier Zuweisungs Operator explizit definieren, wird eine implizite Definition des verschiebungskonstruktors und des Verschiebungs Zuweisungs Operators verhindert. In diesem Fall ist das Bereitstellen von Verschiebungs Vorgängen in der Regel eine verpasste Optimierungs Chance, wenn der Kopiervorgang teuer ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Kopierkonstruktoren und Kopierzuweisungsoperatoren](../cpp/copy-constructors-and-copy-assignment-operators-cpp.md)</br>
-[Bewegungskonstruktoren und Bewegungszuweisungsoperatoren](../cpp/move-constructors-and-move-assignment-operators-cpp.md)
+[Kopierkonstruktoren und Kopier Zuweisungs Operatoren](../cpp/copy-constructors-and-copy-assignment-operators-cpp.md)</br>
+[Bewegungskonstruktoren und Bewegungs Zuweisungs Operatoren](../cpp/move-constructors-and-move-assignment-operators-cpp.md)

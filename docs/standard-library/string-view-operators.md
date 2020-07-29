@@ -1,5 +1,5 @@
 ---
-title: '&lt;string_view&gt;-Operatoren'
+title: '&lt;string_view- &gt; Operatoren'
 ms.date: 04/19/2019
 f1_keywords:
 - xstring/basic_string_view::operator!=
@@ -17,22 +17,22 @@ helpviewer_keywords:
 - std::basic_string_view::operator&lt;
 - std::basic_string_view::operator&lt;&lt;
 - std::basic_string_view::operator&lt;=, std::basic_string_view::operator==
-ms.openlocfilehash: 1bf4fa82e10d236828059a37c639e3a3b64bc5f9
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 39727177ff0fe88e2fcc105a6cee49711b36de6e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076407"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222236"
 ---
-# <a name="ltstring_viewgt-operators"></a>&lt;string_view&gt;-Operatoren
+# <a name="ltstring_viewgt-operators"></a>&lt;string_view- &gt; Operatoren
 
-Verwenden Sie diese Operatoren zum Vergleichen von zwei string_view Objekten oder einer string_view und eines anderen Zeichen folgen Objekts (z. b. " [Std:: String](basic-string-class.md)" oder " **char\*** "), für das eine implizite Konvertierung bereitgestellt wird.
+Verwenden Sie diese Operatoren zum Vergleichen von zwei string_view Objekten oder einer string_view und eines anderen Zeichen folgen Objekts (z. b. " [Std:: String](basic-string-class.md)" oder " **Char \* **"), für das eine implizite Konvertierung bereitgestellt wird.
 
 ||||
 |-|-|-|
-|[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|
-|[operator&lt;](#op_lt)|[operator&lt;&lt;](#op_lt_lt)|[operator&lt;=](#op_lt_eq)|
-|[operator==](#op_eq_eq)|[Operator "" SV](#op_sv)|
+|[Operator! =](#op_neq)|[KOM&gt;](#op_gt)|[KOM&gt;=](#op_gt_eq)|
+|[KOM&lt;](#op_lt)|[KOM&lt;&lt;](#op_lt_lt)|[KOM&lt;=](#op_lt_eq)|
+|[Operator = =](#op_eq_eq)|[Operator "" SV](#op_sv)|
 
 ## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
@@ -57,15 +57,15 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*linken*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
-*Rechte*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*Richting*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Objekt links vom Operator nicht lexikografisch gleich dem Objekt auf der rechten Seite ist; andernfalls **false**.
+**`true`**, wenn das Objekt links vom Operator nicht lexikografisch gleich dem Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -96,15 +96,15 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*linken*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
-*Rechte*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*Richting*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Objekt links vom Operator lexikografisch gleich dem Objekt auf der rechten Seite ist; andernfalls **false**.
+**`true`**, wenn das Objekt links vom Operator lexikografisch gleich dem Objekt auf der rechten Seite ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -112,7 +112,7 @@ Es muss eine implizite Konvertierung von *convertible_string_type* zum string_vi
 
 Der Vergleich basiert auf einem Paar weisen lexikografischen Vergleich der Zeichen folgen. Wenn Sie die gleiche Anzahl von Elementen aufweisen und die Elemente alle gleich sind, sind die beiden Objekte gleich.
 
-## <a name="operatorlt"></a><a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das Objekt links vom Operator kleiner als das Objekt auf der rechten Seite ist sidestring_view
 
@@ -135,15 +135,15 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*linken*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
-*Rechte*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*Richting*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Objekt links vom Operator lexikografisch kleiner ist als das Objekt auf der rechten Seite. andernfalls **false**.
+**`true`**, wenn das Objekt links vom Operator lexikografisch kleiner ist als das Objekt auf der rechten Seite. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -173,7 +173,7 @@ int main()
 }
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das Objekt links vom Operator kleiner oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -196,21 +196,21 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*linken*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
-*Rechte*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*Richting*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Objekt links vom Operator lexikografisch kleiner als oder gleich dem Objekt rechts vom Operator ist. andernfalls **false**.
+**`true`**, wenn das Objekt links vom Operator lexikografisch kleiner als oder gleich dem Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Siehe [Operator&lt;](#op_lt).
+Siehe [Operator &lt; ](#op_lt).
 
-## <a name="operatorltlt"></a><a name="op_lt_lt"></a>Operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a>KOM&lt;&lt;
 
 Schreibt eine string_view in einen Ausgabestream.
 
@@ -222,10 +222,10 @@ inline basic_ostream<CharType, Traits>& operator<<(
 
 ### <a name="parameters"></a>Parameter
 
-*Ostr* -\
+*Ostr*\
 ein Ausgabestream, in den geschrieben wird.
 
-*Str*\
+*SRT*\
 Der string_view, der in einen Ausgabestream eingegeben werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -236,7 +236,7 @@ ein Ausgabestream, in den geschrieben wird.
 
 Verwenden Sie diesen Operator, um den Inhalt einer string_view in einen Ausgabestream einzufügen, z. b. mit [Std:: cout](iostream.md#cout).
 
-## <a name="operatorgt"></a><a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das Objekt links vom Operator größer als das Objekt auf der rechten Seite ist.
 
@@ -259,21 +259,21 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*linken*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
-*Rechte*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*Richting*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Objekt links vom Operator lexikografisch größer als das string_view Objekt rechts vom Operator ist. andernfalls **false**.
+**`true`**, wenn das Objekt links vom Operator lexikografisch größer als das string_view Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Siehe [Operator&lt;](#op_lt).
+Siehe [Operator &lt; ](#op_lt).
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das Objekt links vom Operator größer oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -296,23 +296,23 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*linken*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
-*Rechte*\
-Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_view` verglichen werden.
+*Richting*\
+Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_view` , das verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das-Objekt links vom Operator lexikografisch größer als oder gleich dem-Objekt rechts vom Operator ist. andernfalls **false**.
+**`true`**, wenn das-Objekt links vom Operator lexikografisch größer als oder gleich dem-Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Siehe [Operator&lt;](#op_lt).
+Siehe [Operator &lt; ](#op_lt).
 
 ## <a name="operator-sv-string_view-literal"></a><a name="op_sv"></a>Operator "" SV (string_view Literale)
 
-Erstellt eine string_view aus einem Zeichenfolgenliteral. Erfordert Namespace `std::literals::string_view_literals`.
+Erstellt eine string_view aus einem Zeichenfolgenliteral. Erfordert Namespace `std::literals::string_view_literals` .
 
 ### <a name="example"></a>Beispiel
 
@@ -329,4 +329,4 @@ using namespace literals::string_view_literals;
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[\<string_view >](../standard-library/string-view.md)
+[\<string_view>](../standard-library/string-view.md)

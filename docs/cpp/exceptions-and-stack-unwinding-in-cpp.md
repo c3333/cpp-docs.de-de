@@ -2,26 +2,26 @@
 title: Ausnahmen und Stapelentladung in C++
 ms.date: 11/19/2019
 ms.assetid: a1a57eae-5fc5-4c49-824f-3ce2eb8129ed
-ms.openlocfilehash: 11657206e86dbc81eb62c1e11b49fd87777f11d8
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: e0dadc90f85caeea359fca4ed0b45868ea77177e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74246567"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221561"
 ---
 # <a name="exceptions-and-stack-unwinding-in-c"></a>Ausnahmen und Stapelentladung in C++
 
 Im C++-Ausnahmemechanismus geht die Steuerung von der throw-Anweisung zur ersten catch-Anweisung, die den ausgelösten Typ behandeln kann. Wenn die Catch-Anweisung erreicht wird, werden alle automatischen Variablen im Bereich zwischen den Throw-und Catch-Anweisungen in einem Prozess zerstört, der als *Stapel Auflösung*bezeichnet wird. Bei der Stapelentladung wird die Ausführung wie folgt fortgesetzt:
 
-1. Das Steuerelement erreicht die **try** -Anweisung bei normaler sequenzieller Ausführung. Der geschützte Abschnitt im **try** -Block wird ausgeführt.
+1. Das Steuerelement erreicht die **`try`** Anweisung durch normale sequenzielle Ausführung. Der geschützte Abschnitt im- **`try`** Block wird ausgeführt.
 
-1. Wenn während der Ausführung des geschützten Abschnitts keine Ausnahme ausgelöst wird, werden die **catch** -Klauseln, die dem **try** -Block folgen, nicht ausgeführt. Die Ausführung wird bei der Anweisung nach der letzten **catch** -Klausel fortgesetzt, die dem zugeordneten **try** -Block folgt.
+1. Wenn während der Ausführung des geschützten Abschnitts keine Ausnahme ausgelöst wird, werden die Klauseln, die **`catch`** dem-Block folgen, **`try`** nicht ausgeführt. Die Ausführung wird bei der Anweisung nach der letzten Klausel fortgesetzt, die auf **`catch`** den zugeordneten- **`try`** Block folgt.
 
-1. Wenn während der Ausführung des geschützten Abschnitts oder in einer Routine, die der geschützte Abschnitt direkt oder indirekt aufruft, eine Ausnahme ausgelöst wird, wird ein Exception-Objekt aus dem-Objekt erstellt, das vom **throw** -Operanden erstellt wird. (Dies impliziert, dass möglicherweise ein Kopierkonstruktor beteiligt ist.) An diesem Punkt sucht der Compiler nach einer **catch** -Klausel in einem höheren Ausführungs Kontext, der eine Ausnahme des Typs behandeln kann, der ausgelöst wird, oder für einen **catch** -Handler, der einen beliebigen Ausnahmetyp behandeln kann. Die **catch** -Handler werden in der Reihenfolge ihrer Darstellung nach dem **try** -Block untersucht. Wenn kein entsprechender Handler gefunden wird, wird der nächste dynamisch einschließende **try** -Block untersucht. Dieser Prozess wird fortgesetzt, bis der äußerste einschließende **try** -Block überprüft wird.
+1. Wenn während der Ausführung des geschützten Abschnitts oder in einer Routine, die der geschützte Abschnitt direkt oder indirekt aufruft, eine Ausnahme ausgelöst wird, wird ein Exception-Objekt aus dem-Objekt erstellt, das vom **`throw`** -Operanden erstellt wird. (Dies impliziert, dass möglicherweise ein Kopierkonstruktor beteiligt ist.) An diesem Punkt sucht der Compiler nach einer **`catch`** Klausel in einem höheren Ausführungs Kontext, der eine Ausnahme des Typs behandeln kann, der ausgelöst wird, oder für einen **`catch`** Handler, der einen beliebigen Ausnahmetyp behandeln kann. Die **`catch`** Handler werden in der Reihenfolge ihrer Darstellung nach dem- **`try`** Block untersucht. Wenn kein entsprechender Handler gefunden wird, wird der nächste dynamisch einschließende- **`try`** Block untersucht. Dieser Prozess wird fortgesetzt, bis der äußerste einschließende **`try`** Block untersucht wird.
 
 1. Wenn ein entsprechender Handler weiterhin nicht gefunden wird oder wenn während des Entladungsprozesses eine Ausnahme auftritt, bevor der Handler die Steuerung übernimmt, wird die vordefinierte Laufzeitfunktion `terminate` aufgerufen. Wenn eine Ausnahme auftritt, nachdem die Ausnahme ausgelöst wurde, aber bevor die Abwicklung beginnt, wird `terminate` aufgerufen.
 
-1. Wenn ein passender **catch** -Handler gefunden wird und ihn als Wert abfängt, wird der formale Parameter durch Kopieren des Ausnahme Objekts initialisiert. Wenn er als Verweis abfängt, wird der Parameter so initialisiert, dass er auf das Ausnahmeobjekt verweist. Nachdem der formale Parameter initialisiert wurde, beginnt der Prozess der Stapelentladung. Dies umfasst die Zerstörung aller automatischen Objekte, die vollständig erstellt – aber noch nicht zerstört wurden – zwischen dem Anfang des **try** -Blocks, der dem **catch** -Handler zugeordnet ist, und der Throw-Site der Ausnahme. Beschädigung tritt in umgekehrter Reihenfolge der Konstruktion auf. Der **catch** -Handler wird ausgeführt, und das Programm setzt die Ausführung nach dem letzten Handler Fort – d. h. bei der ersten Anweisung oder dem Konstrukt, bei der es sich nicht um einen **catch** -Handler handelt. Das Steuerelement kann nur einen **catch** -Handler durch eine ausgelöste Ausnahme, nie durch eine **goto** -Anweisung oder eine **Case** -Bezeichnung in einer **Switch** -Anweisung eingeben.
+1. Wenn ein übereinstimmender **`catch`** Handler gefunden wird und ihn als Wert abfängt, wird der formale Parameter initialisiert, indem das Ausnahme Objekt kopiert wird. Wenn er als Verweis abfängt, wird der Parameter so initialisiert, dass er auf das Ausnahmeobjekt verweist. Nachdem der formale Parameter initialisiert wurde, beginnt der Prozess der Stapelentladung. Dies umfasst die Zerstörung aller automatischen Objekte, die vollständig erstellt – aber noch nicht zerstört wurden – zwischen dem Anfang des **`try`** Blocks, der dem Handler zugeordnet ist, **`catch`** und der Throw-Site der Ausnahme. Beschädigung tritt in umgekehrter Reihenfolge der Konstruktion auf. Der **`catch`** Handler wird ausgeführt, und das Programm setzt die Ausführung nach dem letzten Handler Fort – d. h. bei der ersten Anweisung oder dem Konstrukt, bei der es sich nicht um einen **`catch`** Handler handelt. Das Steuerelement kann nur einen **`catch`** Handler über eine ausgelöste Ausnahme, nie über eine- **`goto`** Anweisung oder eine- **`case`** Bezeichnung in einer- **`switch`** Anweisung eingeben.
 
 ## <a name="stack-unwinding-example"></a>Beispiel für Stapel entwickeln
 

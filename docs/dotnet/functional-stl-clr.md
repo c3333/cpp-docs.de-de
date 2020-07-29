@@ -63,12 +63,12 @@ helpviewer_keywords:
 - unary_delegate_noreturn function [STL/CLR]
 - unary_negate function [STL/CLR]
 ms.assetid: 88738b8c-5d37-4375-970e-a4442bf5efde
-ms.openlocfilehash: 2d06a92fea9a702633216e3244879687b66f97d6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9349de8c42bbed72384ea2b61b39bdea82172f9d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80208727"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87221431"
 ---
 # <a name="functional-stlclr"></a>functional (STL/CLR)
 
@@ -82,18 +82,18 @@ Fügen Sie den STL/CLR-Header `<cliext/functional>` ein, um eine Reihe von Vorla
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<cliext/funktionaler >
+**Header:**\<cliext/functional>
 
 **Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
-|Delegieren|BESCHREIBUNG|
+|Delegat|BESCHREIBUNG|
 |--------------|-----------------|
 |[binary_delegate (STL/CLR)](#binary_delegate)|Delegat mit zwei Argumenten.|
-|[binary_delegate_noreturn (STL/CLR)](#binary_delegate_noreturn)|Der Delegat mit zwei Argumenten gibt " **void**" zurück.|
+|[binary_delegate_noreturn (STL/CLR)](#binary_delegate_noreturn)|Der zurückgegebene zwei-Argument-Delegat **`void`** .|
 |[unary_delegate (STL/CLR)](#unary_delegate)|Delegat mit einem Argument.|
-|[unary_delegate_noreturn (STL/CLR)](#unary_delegate_noreturn)|Ein Delegat mit einem Argument, der **void**zurückgibt.|
+|[unary_delegate_noreturn (STL/CLR)](#unary_delegate_noreturn)|Ein Delegat mit einem Argument wird zurückgegeben **`void`** .|
 
 |Klasse|BESCHREIBUNG|
 |-----------|-----------------|
@@ -124,7 +124,7 @@ Fügen Sie den STL/CLR-Header `<cliext/functional>` ein, um eine Reihe von Vorla
 |[not1 (STL/CLR)](#not1)|Generiert eine unary_negate für ein Funktor.|
 |[not2 (STL/CLR)](#not2)|Generiert eine binary_negate für ein Funktor.|
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ## <a name="binary_delegate-stlclr"></a><a name="binary_delegate"></a>binary_delegate (STL/CLR)
 
@@ -204,7 +204,7 @@ compare(L'b', L'a') = False
 
 ## <a name="binary_delegate_noreturn-stlclr"></a><a name="binary_delegate_noreturn"></a>binary_delegate_noreturn (STL/CLR)
 
-Die Genereic-Klasse beschreibt einen Delegaten mit zwei Argumenten, der " **void**" zurückgibt. Sie verwenden Sie, um einen Delegaten in Bezug auf das Argument anzugeben.
+Die Genereic-Klasse beschreibt einen Delegaten mit zwei Argumenten, der zurückgibt **`void`** . Sie verwenden Sie, um einen Delegaten in Bezug auf das Argument anzugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -224,7 +224,7 @@ Der Typ des zweiten Arguments.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Genereic-Delegat beschreibt eine Funktion mit zwei Argumenten, die " **void**" zurückgibt.
+Der Genereic-Delegat beschreibt eine Funktion mit zwei Argumenten, die zurückgibt **`void`** .
 
 Beachten Sie Folgendes für:
 
@@ -302,12 +302,12 @@ public:
 
 #### <a name="parameters"></a>Parameter
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des gespeicherten funktors.
 
 ## <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
@@ -315,7 +315,7 @@ Der Typ des gespeicherten funktors.
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 |stored_function_type|Der Typ des funktors.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |binary_negate|Erstellt das Funktor.|
 
@@ -326,9 +326,9 @@ Der Typ des gespeicherten funktors.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt einen Funktions tüktor mit zwei Argumenten, der einen anderen zwei-Argument-Funktor speichert. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das logische Not des gespeicherten funktors, der mit den beiden Argumenten aufgerufen wird, zurückgegeben wird.
+Die Vorlagen Klasse beschreibt einen Funktions tüktor mit zwei Argumenten, der einen anderen zwei-Argument-Funktor speichert. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das logische Not des gespeicherten funktors, der mit den beiden Argumenten aufgerufen wird, zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -388,7 +388,7 @@ int main()
 
 ## <a name="bind1st-stlclr"></a><a name="bind1st"></a>bind1st (STL/CLR)
 
-Generiert eine `binder1st` für ein Argument und einen Funktor.
+Generiert ein `binder1st` für ein Argument und einen Funktor.
 
 ### <a name="syntax"></a>Syntax
 
@@ -404,7 +404,7 @@ template<typename Fun,
 *Gebeut*<br/>
 Der Typ des Arguments.
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des funktors.
 
 #### <a name="function-parameters"></a>Funktionsparameter
@@ -412,12 +412,12 @@ Der Typ des funktors.
 *Funktionselement*<br/>
 Der zu wrappende Funktor.
 
-*left*<br/>
+*linken*<br/>
 Das erste zu Umbruch Ende Argument.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [binder1st (STL/CLR)](../dotnet/binder1st-stl-clr.md)`<Fun>(functor, left)`zurück. Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktor und das erste Argument in einem Funktor mit einem Argument zu wrappen, der ihn mit einem zweiten Argument aufruft.
+Die Vorlagen Funktion gibt [binder1st (STL/CLR)](../dotnet/binder1st-stl-clr.md)zurück `<Fun>(functor, left)` . Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktor und das erste Argument in einem Funktor mit einem Argument zu wrappen, der ihn mit einem zweiten Argument aufruft.
 
 ### <a name="example"></a>Beispiel
 
@@ -469,7 +469,7 @@ int main()
 
 ## <a name="bind2nd-stlclr"></a><a name="bind2nd"></a>bind2nd (STL/CLR)
 
-Generiert eine `binder2nd` für ein Argument und einen Funktor.
+Generiert ein `binder2nd` für ein Argument und einen Funktor.
 
 ### <a name="syntax"></a>Syntax
 
@@ -485,7 +485,7 @@ template<typename Fun,
 *Gebeut*<br/>
 Der Typ des Arguments.
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des funktors.
 
 #### <a name="function-parameters"></a>Funktionsparameter
@@ -493,12 +493,12 @@ Der Typ des funktors.
 *Funktionselement*<br/>
 Der zu wrappende Funktor.
 
-*right*<br/>
+*Richting*<br/>
 Das zweite zu Umbruch Ende Argument.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [binder2nd (STL/CLR)](../dotnet/binder2nd-stl-clr.md)`<Fun>(functor, right)`zurück. Sie verwenden Sie als bequeme Methode zum Einschließen eines funktors mit zwei Argumenten und des zweiten Arguments in einem Funktor mit einem Argument, der ihn mit einem ersten Argument aufruft.
+Die Vorlagen Funktion gibt [binder2nd (STL/CLR)](../dotnet/binder2nd-stl-clr.md)zurück `<Fun>(functor, right)` . Sie verwenden Sie als bequeme Methode zum Einschließen eines funktors mit zwei Argumenten und des zweiten Arguments in einem Funktor mit einem Argument, der ihn mit einem ersten Argument aufruft.
 
 ### <a name="example"></a>Beispiel
 
@@ -577,12 +577,12 @@ public:
 
 #### <a name="parameters"></a>Parameter
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des gespeicherten funktors.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
@@ -590,7 +590,7 @@ Der Typ des gespeicherten funktors.
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 |stored_function_type|Der Typ des funktors.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |binder1st|Erstellt das Funktor.|
 
@@ -601,9 +601,9 @@ Der Typ des gespeicherten funktors.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument, das einen zwei-Argument-Funktor und ein erstes Argument speichert. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das Ergebnis des Aufrufs des gespeicherten funktors mit dem gespeicherten ersten Argument und dem angegebenen zweiten Argument zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument, das einen zwei-Argument-Funktor und ein erstes Argument speichert. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das Ergebnis des Aufrufs des gespeicherten funktors mit dem gespeicherten ersten Argument und dem angegebenen zweiten Argument zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -682,12 +682,12 @@ public:
 
 #### <a name="parameters"></a>Parameter
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des gespeicherten funktors.
 
 ## <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
@@ -695,7 +695,7 @@ Der Typ des gespeicherten funktors.
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 |stored_function_type|Der Typ des funktors.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |binder2nd|Erstellt das Funktor.|
 
@@ -706,9 +706,9 @@ Der Typ des gespeicherten funktors.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument, das einen zwei-Argument-Funktor und ein zweites Argument speichert. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das Ergebnis des Aufrufs des gespeicherten funktors mit dem angegebenen ersten Argument und dem gespeicherten zweiten Argument zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument, das einen zwei-Argument-Funktor und ein zweites Argument speichert. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das Ergebnis des Aufrufs des gespeicherten funktors mit dem angegebenen ersten Argument und dem gespeicherten zweiten Argument zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -792,14 +792,14 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |divides|Erstellt das Funktor.|
 
@@ -810,9 +810,9 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument dividiert durch das zweite zurückgegeben wird.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument dividiert durch das zweite zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -893,14 +893,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |equal_to|Erstellt das Funktor.|
 
@@ -911,9 +911,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument gleich dem zweiten Argument ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument gleich dem zweiten Argument ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -994,14 +994,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |greater|Erstellt das Funktor.|
 
@@ -1012,9 +1012,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument größer als das zweite Argument ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument größer als das zweite Argument ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1095,14 +1095,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |greater_equal|Erstellt das Funktor.|
 
@@ -1113,9 +1113,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument größer oder gleich dem zweiten Argument ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument größer oder gleich dem zweiten Argument ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1196,14 +1196,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |less|Erstellt das Funktor.|
 
@@ -1214,9 +1214,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument kleiner als das zweite Argument ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument kleiner als das zweite Argument ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1297,14 +1297,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |less_equal|Erstellt das Funktor.|
 
@@ -1315,9 +1315,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument kleiner oder gleich dem zweiten Argument ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument kleiner oder gleich dem zweiten Argument ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1398,14 +1398,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |logical_and|Erstellt das Funktor.|
 
@@ -1416,9 +1416,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn sowohl das erste Argument als auch der zweite Test als true festgelegt ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn sowohl das erste Argument als auch der zweite Test als true festgelegt ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1497,13 +1497,13 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |argument_type|Der Typ des funktorarguments.|
 |delegate_type|Der Typ des generischen Delegaten.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |logical_not|Erstellt das Funktor.|
 
@@ -1514,9 +1514,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das Argument als false testet.
+Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument. Sie definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das Argument als false testet.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1589,14 +1589,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |logical_or|Erstellt das Funktor.|
 
@@ -1607,9 +1607,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn entweder das erste Argument oder der zweite als true testet.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn entweder das erste Argument oder der zweite als true testet.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1690,14 +1690,14 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |minus|Erstellt das Funktor.|
 
@@ -1708,9 +1708,9 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument abzüglich der zweiten zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument abzüglich der zweiten zurückgibt.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1791,14 +1791,14 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |modulus|Erstellt das Funktor.|
 
@@ -1809,9 +1809,9 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument Modulo der zweite zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument Modulo der zweite zurückgibt.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1892,14 +1892,14 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |multiplies|Erstellt das Funktor.|
 
@@ -1910,9 +1910,9 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument der Sekunde zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument für das zweite zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1991,13 +1991,13 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |argument_type|Der Typ des funktorarguments.|
 |delegate_type|Der Typ des generischen Delegaten.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |negate|Erstellt das Funktor.|
 
@@ -2008,9 +2008,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, sein Argument negiert zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, sein Argument negiert zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2083,14 +2083,14 @@ Der Typ der Argumente.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |not_equal_to|Erstellt das Funktor.|
 
@@ -2101,9 +2101,9 @@ Der Typ der Argumente.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument nicht gleich dem zweiten Argument ist.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator `operator()` , sodass, wenn das Objekt als Funktion aufgerufen wird, nur dann true zurückgibt, wenn das erste Argument nicht gleich dem zweiten Argument ist.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2152,7 +2152,7 @@ int main()
 
 ## <a name="not1-stlclr"></a><a name="not1"></a>not1 (STL/CLR)
 
-Generiert eine `unary_negate` für ein Funktor.
+Generiert einen `unary_negate` für ein Funktor.
 
 ### <a name="syntax"></a>Syntax
 
@@ -2163,7 +2163,7 @@ template<typename Fun>
 
 #### <a name="template-parameters"></a>Vorlagenparameter
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des funktors.
 
 #### <a name="function-parameters"></a>Funktionsparameter
@@ -2173,7 +2173,7 @@ Der zu wrappende Funktor.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [Unary_negate (STL/CLR)-](../dotnet/unary-negate-stl-clr.md)`<Fun>(functor)`zurück. Sie verwenden Sie als bequeme Methode zum Einbinden eines funktors mit einem Argument in einem Funktions tüktor, der seine logische Not-Methode bereitstellt.
+Die Vorlagen Funktion gibt [Unary_negate (STL/CLR)](../dotnet/unary-negate-stl-clr.md)zurück `<Fun>(functor)` . Sie verwenden Sie als bequeme Methode zum Einbinden eines funktors mit einem Argument in einem Funktions tüktor, der seine logische Not-Methode bereitstellt.
 
 ### <a name="example"></a>Beispiel
 
@@ -2224,7 +2224,7 @@ int main()
 
 ## <a name="not2-stlclr"></a><a name="not2"></a>not2 (STL/CLR)
 
-Generiert eine `binary_negate` für ein Funktor.
+Generiert einen `binary_negate` für ein Funktor.
 
 ### <a name="syntax"></a>Syntax
 
@@ -2235,7 +2235,7 @@ template<typename Fun>
 
 #### <a name="template-parameters"></a>Vorlagenparameter
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des funktors.
 
 #### <a name="function-parameters"></a>Funktionsparameter
@@ -2245,7 +2245,7 @@ Der zu wrappende Funktor.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [binary_negate (STL/CLR)-](../dotnet/binary-negate-stl-clr.md)`<Fun>(functor)`zurück. Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktions tüktor in einem Funktor zu wrappen, der seine logische Not-Methode bereitstellt.
+Die Vorlagen Funktion gibt [binary_negate (STL/CLR)](../dotnet/binary-negate-stl-clr.md)zurück `<Fun>(functor)` . Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktions tüktor in einem Funktor zu wrappen, der seine logische Not-Methode bereitstellt.
 
 ### <a name="example"></a>Beispiel
 
@@ -2337,16 +2337,16 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |delegate_type|Der Typ des generischen Delegaten.|
 |first_argument_type|Der Typ des ersten Arguments des functors.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 |second_argument_type|Der Typ des zweiten funktors Arguments.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
-|Addition|Erstellt das Funktor.|
+|plus|Erstellt das Funktor.|
 
 |Operator|BESCHREIBUNG|
 |--------------|-----------------|
@@ -2355,9 +2355,9 @@ Der Typ der Argumente und des Rückgabewerts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument zuzüglich der zweiten zurückgibt.
+Die Vorlagen Klasse beschreibt ein Funktor mit zwei Argumenten. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das erste Argument und das zweite zurückgegeben werden.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2472,7 +2472,7 @@ hash(L'b') = 22
 
 ## <a name="unary_delegate_noreturn-stlclr"></a><a name="unary_delegate_noreturn"></a>unary_delegate_noreturn (STL/CLR)
 
-Die Genereic-Klasse beschreibt einen Delegaten mit einem Argument, der " **void**" zurückgibt. Sie verwenden Sie, um einen Delegaten in Bezug auf den Argumenttyp anzugeben.
+Die Genereic-Klasse beschreibt einen Delegaten mit einem Argument, der zurückgibt **`void`** . Sie verwenden Sie, um einen Delegaten in Bezug auf den Argumenttyp anzugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -2488,7 +2488,7 @@ Der Typ des Arguments.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Genereic-Delegat beschreibt eine Funktion mit einem Argument, die " **void**" zurückgibt.
+Der Genereic-Delegat beschreibt eine Funktion mit einem Argument, die zurückgibt **`void`** .
 
 Beachten Sie Folgendes für:
 
@@ -2561,18 +2561,18 @@ public:
 
 #### <a name="parameters"></a>Parameter
 
-*Gen*<br/>
+*Fun*<br/>
 Der Typ des gespeicherten funktors.
 
 ### <a name="member-functions"></a>Elementfunktionen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |argument_type|Der Typ des funktorarguments.|
 |delegate_type|Der Typ des generischen Delegaten.|
 |result_type|Der Typ des Funktions Ergebnisses.|
 
-|Member|BESCHREIBUNG|
+|Member|Beschreibung|
 |------------|-----------------|
 |unary_negate|Erstellt das Funktor.|
 
@@ -2583,9 +2583,9 @@ Der Typ des gespeicherten funktors.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument, in dem ein anderes Funktor mit einem Argument gespeichert wird. Sie definiert den Member-Operator `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das logische Not des gespeicherten funktors, der mit dem-Argument aufgerufen wird, zurückgegeben wird.
+Die Vorlagen Klasse beschreibt ein Funktor mit einem Argument, in dem ein anderes Funktor mit einem Argument gespeichert wird. Er definiert den Member-Operator, `operator()` sodass, wenn das Objekt als Funktion aufgerufen wird, das logische Not des gespeicherten funktors, der mit dem-Argument aufgerufen wird, zurückgegeben wird.
 
-Sie können das Objekt auch als Funktions Argument übergeben, dessen Typ `delegate_type^` ist und entsprechend konvertiert wird.
+Sie können das-Objekt auch als Funktions Argument übergeben, dessen Typ ist `delegate_type^` und entsprechend konvertiert werden.
 
 ### <a name="example"></a>Beispiel
 

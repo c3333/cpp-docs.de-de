@@ -1,5 +1,5 @@
 ---
-title: 'Gewusst wie: Definieren von Steuerelement Zugriff undC++-Werten ()'
+title: 'Gewusst wie: Definieren von Steuerelement Zugriff und-Werten (C++)'
 ms.date: 02/15/2019
 helpviewer_keywords:
 - access keys [C++], adding
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - Data property
 - combo boxes [C++], testing values
 ms.assetid: 60a85435-aa30-4c5c-98b6-42fb045b9eb2
-ms.openlocfilehash: e782788832063e210356864e074c15e9ba3555f4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 91b6365334b977957ff6bd6c25278d4088961a2c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160319"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222068"
 ---
-# <a name="how-to-define-control-access-and-values-c"></a>Gewusst wie: Definieren von Steuerelement Zugriff undC++-Werten ()
+# <a name="how-to-define-control-access-and-values-c"></a>Gewusst wie: Definieren von Steuerelement Zugriff und-Werten (C++)
 
 ## <a name="tab-order"></a>Aktivierreihenfolge
 
@@ -40,17 +40,17 @@ Sogar Steuerelemente, für die die **Tabstopp** -Eigenschaft nicht auf **true** 
 > [!NOTE]
 > Wenn das Dialogfeld überlappende Steuerelemente enthält, kann das Ändern der Aktivier Reihenfolge die Anzeige der Steuerelemente ändern. Steuerelemente, die später in der Aktivier Reihenfolge angezeigt werden, werden immer über überlappende Steuerelemente angezeigt, die sich in der Aktivier Reihenfolge befinden
 
-- Um die aktuelle Aktivier Reihenfolge für alle Steuerelemente anzuzeigen, wechseln Sie zum Menü **Format** > Aktivier **Reihenfolge**, oder drücken Sie **STRG** + **D**.
+- Um die aktuelle Aktivier Reihenfolge für alle Steuerelemente anzuzeigen, wechseln Sie zur Menü **Format**-  >  **Reihenfolge**, oder drücken Sie **STRG**  +  **D**.
 
    Eine Zahl in der oberen linken Ecke jedes Steuer Elements zeigt den Platz in der aktuellen Aktivier Reihenfolge an.
 
-- Um die Aktivier Reihenfolge für alle Steuerelemente zu ändern, wechseln Sie zum Menü **Format** > Aktivier **Reihenfolge** , und legen Sie die Aktivier Reihenfolge fest, indem Sie jedes Steuerelement in der Reihenfolge auswählen **Tab**
+- Um die Aktivier Reihenfolge für alle Steuerelemente zu ändern, wechseln Sie zur Menü **Format**-Reihenfolge,  >  **Tab Order** und legen Sie die Aktivier Reihenfolge fest, indem Sie die einzelnen Steuerelemente in der Reihenfolge auswählen **Tab** ,
 
-- Zum Ändern der Aktivier Reihenfolge für zwei oder mehr Steuerelemente wechseln Sie zum Menü **Format** > Aktivier **Reihenfolge**. Halten Sie die **STRG** -Taste gedrückt, und wählen Sie das Steuerelement aus, in dem die Änderung in der Reihenfolge beginnt, und geben Sie dann die **STRG** -Taste ein, und wählen Sie die Steuerelemente in der Reihenfolge aus, in der die **Tab**
+- Um die Aktivier Reihenfolge für zwei oder mehr Steuerelemente zu ändern, wechseln Sie zur Menü **Format**-  >  **Reihenfolge**. Halten Sie die **STRG** -Taste gedrückt, und wählen Sie das Steuerelement aus, in dem die Änderung in der Reihenfolge beginnt, und geben Sie dann die **STRG** -Taste ein, und wählen Sie die Steuerelemente in der Reihenfolge aus, in der die **Tab**
 
-   Wenn Sie z. b. die Reihenfolge der Steuerelemente `7` durch `9`ändern möchten, halten Sie die **STRG**-Taste gedrückt, und wählen Sie dann zuerst Steuerelement `6`.
+   Wenn Sie z. b. die Reihenfolge der Steuerelemente durch ändern möchten, halten Sie die STRG-Taste `7` `9` gedrückt, und wählen Sie dann zuerst Steuerung **Ctrl** `6` .
 
-- Doppelklicken Sie auf das-Steuerelement, um ein bestimmtes Steuerelement auf Number `1`oder zuerst in der Aktivier Reihenfolge festzulegen.
+- Doppelklicken Sie auf das-Steuerelement, um ein bestimmtes Steuerelement auf Number `1` oder First in der Aktivier Reihenfolge festzulegen.
 
 > [!TIP]
 > Nachdem Sie den **Tab-Reihenfolge** Modus eingegeben haben, drücken Sie die **ESC** -Taste oder die **Eingabe** Taste, um den **Tab-Reihen** Folge Modus zu beenden
@@ -63,7 +63,7 @@ Normalerweise verschieben Tastatur Benutzer den Eingabefokus in einem Dialogfeld
 
 1. Wählen Sie das Steuerelement im Dialogfeld aus.
 
-1. Geben Sie im [Fenster Eigenschaften](/visualstudio/ide/reference/properties-window)in der **Beschriftung** -Eigenschaft einen neuen Namen für das Steuerelement ein, und geben Sie vor dem Buchstaben, den Sie als Zugriffstaste für dieses Steuerelement festlegen möchten, ein kaufmännisches und-Element (`&`) ein. Beispiel: `&Radio1`.
+1. Geben Sie im [Fenster Eigenschaften](/visualstudio/ide/reference/properties-window)in der **Beschriftung** -Eigenschaft einen neuen Namen für das-Steuerelement ein, und geben `&` Sie vor dem Buchstaben, den Sie als Zugriffstaste für dieses Steuerelement festlegen möchten, ein kaufmännisches und-Element () ein. Beispiel: `&Radio1`.
 
 1. Drücken Sie die **EINGABETASTE**.
 
@@ -73,12 +73,12 @@ Normalerweise verschieben Tastatur Benutzer den Eingabefokus in einem Dialogfeld
 
 1. Erstellen Sie eine Beschriftung für das Steuerelement, indem Sie ein **statisches Text** Steuerelement in der [Toolbox](/visualstudio/ide/reference/toolbox)verwenden.
 
-1. Geben Sie in der Beschriftung statischer Text vor dem Buchstaben, den Sie als Zugriffsschlüssel haben möchten, ein kaufmännisches und-Zeichen (`&`) ein.
+1. Geben Sie in der Beschriftung statischer Text `&` vor dem Buchstaben, den Sie als Zugriffsschlüssel haben möchten, ein kaufmännisches und-Zeichen () ein.
 
 1. Stellen Sie sicher, dass das statische Text Steuerelement unmittelbar vor dem Steuerelement in der Aktivier Reihenfolge steht.
 
 > [!NOTE]
-> Alle Zugriffsschlüssel in einem Dialogfeld sollten eindeutig sein. Um nach doppelten Zugriffs Schlüsseln zu suchen, wechseln Sie zum Menü **Format** > **Überprüfen Sie mnetmonics**.
+> Alle Zugriffsschlüssel in einem Dialogfeld sollten eindeutig sein. Um nach doppelten Zugriffs Schlüsseln zu suchen, wechseln Sie zu Menü **Format**  >  **überprüfen mnetmonics**.
 
 ## <a name="combo-box-values"></a>Kombinations Feld Werte
 
@@ -133,7 +133,7 @@ Sie können mehr als eine Gruppe von Options Feldern in einem Dialogfeld auswäh
    Wenn Sie die Eigenschaft " **Group** " in " **true** " ändern, wird dem Eintrag der Schaltfläche im Dialogfeld Objekt des Ressourcen Skripts das WS_GROUP Format hinzugefügt, und es wird verhindert, dass der Benutzer mehrere Options Felder gleichzeitig in der Schaltflächen Gruppe auswählen kann (wenn der Benutzer eine Options Schaltfläche auswählt, werden die anderen in der Gruppe gelöscht).
 
    > [!NOTE]
-   > Die Eigenschaft **Gruppe** sollte nur für das erste Optionsfeld einer Gruppe auf **Wahr**festgelegt werden. Wenn Sie über weitere Steuerelemente verfügen, die nicht Teil der Schaltflächen Gruppe sind, legen Sie die Eigenschaft **Gruppe** des ersten Steuer Elements *, das sich außerhalb der Gruppe befindet* , ebenfalls auf **true** fest. Sie können das erste Steuerelement außerhalb der Gruppe schnell ermitteln, indem Sie **STRG**+**D** verwenden, um die Aktivier Reihenfolge anzuzeigen.
+   > Die Eigenschaft **Gruppe** sollte nur für das erste Optionsfeld einer Gruppe auf **Wahr**festgelegt werden. Wenn Sie über weitere Steuerelemente verfügen, die nicht Teil der Schaltflächen Gruppe sind, legen Sie die Eigenschaft **Gruppe** des ersten Steuer Elements *, das sich außerhalb der Gruppe befindet* , ebenfalls auf **true** fest. Sie können das erste Steuerelement außerhalb der Gruppe schnell ermitteln, indem Sie **STRG** + **D** verwenden, um die Aktivier Reihenfolge anzuzeigen.
 
 ### <a name="to-add-a-member-variable-for-the-radio-button-group"></a>So fügen Sie eine Membervariable für die Optionsfeldgruppe hinzu
 
@@ -143,9 +143,9 @@ Sie können mehr als eine Gruppe von Options Feldern in einem Dialogfeld auswäh
 
    - Geben Sie im Feld **Variablenname** einen Namen für die neue Membervariable ein.
 
-   - Wählen Sie im Listenfeld **Variablentyp** **int** aus, oder geben Sie *int*ein.
+   - Wählen Sie im Listenfeld **Variablentyp** die Option **`int`** *int*aus.
 
-   Jetzt können Sie Ihren Code ändern, um festzulegen, welches Optionsfeld aus aktiviert angezeigt werden soll. Beispielsweise wählt `m_radioBox1 = 0;` das erste Optionsfeld in der Gruppe aus.
+   Jetzt können Sie Ihren Code ändern, um festzulegen, welches Optionsfeld aus aktiviert angezeigt werden soll. Beispielsweise `m_radioBox1 = 0;` wählt das erste Optionsfeld in der Gruppe aus.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
