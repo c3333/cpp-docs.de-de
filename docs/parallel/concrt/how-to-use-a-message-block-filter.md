@@ -5,12 +5,12 @@ helpviewer_keywords:
 - message-block filters, using [Concurrency Runtime]
 - using message-block filters [Concurrency Runtime]
 ms.assetid: db6b99fb-288d-4477-96dc-b9751772ebb2
-ms.openlocfilehash: 074d3989ce48b0b6d69206e3f83c374a2ec65c93
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: a5814536e88add5b15f577588d571a06eda6151c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142814"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226710"
 ---
 # <a name="how-to-use-a-message-block-filter"></a>Gewusst wie: Verwenden eines Nachrichtenblockfilters
 
@@ -38,7 +38,7 @@ Da das `transformer`-Objekt nur Primzahlen empfängt, kann das `transformer`-Obj
 
 [!code-cpp[concrt-primes-filter#2](../../parallel/concrt/codesnippet/cpp/how-to-use-a-message-block-filter_2.cpp)]
 
-Das `transformer`-Objekt verarbeitet jetzt nur die Werte, die Primzahlen sind. Im vorherigen Beispiel verarbeitet das `transformer`-Objekt alle Nachrichten. Daher muss im vorherigen Beispiel die gleiche Anzahl von Nachrichten empfangen werden, wie gesendet wurden. In diesem Beispiel wird das Ergebnis der [parallelcurrency:: Send](reference/concurrency-namespace-functions.md#send) -Funktion verwendet, um zu bestimmen, wie viele Nachrichten vom `transformer` Objekt empfangen werden. Die `send`-Funktion gibt **true** zurück, wenn der Nachrichten Puffer die Nachricht annimmt, und **false** , wenn der Nachrichten Puffer die Nachricht ablehnt. Daher stimmt die Häufigkeit, mit der der Nachrichtenpuffer die Nachricht annimmt, mit der Anzahl der Primzahlen überein.
+Das `transformer`-Objekt verarbeitet jetzt nur die Werte, die Primzahlen sind. Im vorherigen Beispiel verarbeitet das `transformer`-Objekt alle Nachrichten. Daher muss im vorherigen Beispiel die gleiche Anzahl von Nachrichten empfangen werden, wie gesendet wurden. In diesem Beispiel wird das Ergebnis der [parallelcurrency:: Send](reference/concurrency-namespace-functions.md#send) -Funktion verwendet, um zu bestimmen, wie viele Nachrichten vom-Objekt empfangen werden `transformer` . Die `send` Funktion gibt zurück, **`true`** Wenn der Nachrichten Puffer die Nachricht annimmt und der Nachrichten **`false`** Puffer die Nachricht ablehnt. Daher stimmt die Häufigkeit, mit der der Nachrichtenpuffer die Nachricht annimmt, mit der Anzahl der Primzahlen überein.
 
 ## <a name="example"></a>Beispiel
 
@@ -48,11 +48,11 @@ Der folgende Code veranschaulicht das vollständige Beispiel. In dem Beispiel we
 
 ## <a name="compiling-the-code"></a>Kompilieren des Codes
 
-Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `primes-filter.cpp` ein, und führen Sie dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster aus.
+Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt ein. Alternativ dazu können Sie ihn auch in eine Datei mit dem Namen einfügen `primes-filter.cpp` und dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster ausführen.
 
-> **cl. exe/EHsc PRIMES-Filter. cpp**
+> **cl.exe/EHsc PRIMES-Filter. cpp**
 
-## <a name="robust-programming"></a>Robuste Programmierung
+## <a name="robust-programming"></a>Stabile Programmierung
 
 Eine Filterfunktion kann eine Lambda-Funktion, ein Funktionsobjekt oder ein Funktionszeiger sein. Jede Filterfunktion nimmt eines der folgenden Formate an:
 
@@ -63,9 +63,9 @@ bool (T const &)
 
 Um das unnötige Kopieren von Daten zu vermeiden, verwenden Sie das zweite Format bei einem aggregierten Typ, der anhand des Werts übertragen wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Asynchrone Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
-[Exemplarische Vorgehensweise: Erstellen eines Datenfluss-Agent](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md)<br/>
-[Exemplarische Vorgehensweise: Erstellen eines Bildverarbeitungsnetzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
-[transformer-Klasse](../../parallel/concrt/reference/transformer-class.md)
+[Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen eines Datenfluss-Agents](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
+[Transformer-Klasse](../../parallel/concrt/reference/transformer-class.md)

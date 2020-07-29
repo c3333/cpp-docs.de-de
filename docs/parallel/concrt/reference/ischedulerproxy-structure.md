@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - ISchedulerProxy structure
 ms.assetid: af416973-7a1c-4c30-aa3b-4161c2aaea54
-ms.openlocfilehash: f4a9e79c2da56406610ad6da08fb438e2f92923d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dcb6d175fa84e33f6a5af974eb76f1e1246bdc35
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81368164"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226697"
 ---
 # <a name="ischedulerproxy-structure"></a>ISchedulerProxy-Struktur
 
@@ -34,32 +34,32 @@ struct ISchedulerProxy;
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[ISchedulerProxy::BindContext](#bindcontext)|Ordnet einen Ausführungskontext einem Threadproxy zu, sofern er nicht bereits einem Threadproxy zugeordnet ist.|
-|[ISchedulerProxy::CreateOversubscriber](#createoversubscriber)|Erstellt einen neuen virtuellen Prozessorstamm auf dem Hardwarethread, der einer vorhandenen Ausführungsressource zugeordnet ist.|
-|[ISchedulerProxy::RequestInitialVirtualProcessors](#requestinitialvirtualprocessors)|Fordert eine anfängliche Zuweisung virtueller Prozessorstämme an. Jeder virtuelle Prozessorstamm stellt die Möglichkeit dar, einen Thread auszuführen, der Arbeit für den Planer ausführen kann.|
-|[ISchedulerProxy::Shutdown](#shutdown)|Benachrichtigt den Ressourcen-Manager, dass der Planer heruntergefahren wird. Dies führt dazu, dass der Ressourcen-Manager sofort alle dem Planer gewährten Ressourcen zurückgibt.|
-|[ISchedulerProxy::SubscribeCurrentThread](#subscribecurrentthread)|Registriert den aktuellen Thread beim Ressourcen-Manager und wird diesem Planer zugeordnet.|
-|[ISchedulerProxy::UnbindContext](#unbindcontext)|Trennt einen Threadproxy vom Ausführungskontext, der durch den `pContext` Parameter angegeben wird, und gibt ihn an den freien Pool der Threadproxyfactory zurück. Diese Methode kann nur für einen Ausführungskontext aufgerufen werden, der über die [ISchedulerProxy::BindContext-Methode](#bindcontext) gebunden wurde und noch nicht über den `pContext` Parameter eines [IThreadProxy::SwitchTo-Methodenaufrufs](ithreadproxy-structure.md#switchto) gestartet wurde.|
+|[ISchedulerProxy:: BindContext](#bindcontext)|Ordnet einen Ausführungs Kontext einem Thread Proxy zu, wenn dieser nicht bereits mit einem verknüpft ist.|
+|[ISchedulerProxy:: kreateoversubscriber](#createoversubscriber)|Erstellt einen neuen virtuellen Prozessor Stamm auf dem Hardware Thread, der einer vorhandenen Ausführungs Ressource zugeordnet ist.|
+|[ISchedulerProxy:: requestinitialvirtualprozessoren](#requestinitialvirtualprocessors)|Fordert eine anfängliche Zuordnung von virtuellen Prozessor Stämmen an. Jeder virtuelle Prozessor Stamm stellt die Möglichkeit dar, einen Thread auszuführen, der Aufgaben für den Scheduler ausführen kann.|
+|[ISchedulerProxy:: Shutdown](#shutdown)|Benachrichtigt den Ressourcen-Manager, dass der Scheduler heruntergefahren wird. Dies bewirkt, dass der Ressourcen-Manager sofort alle dem Scheduler gewährten Ressourcen zurückgibt.|
+|[ISchedulerProxy:: Abonnement-CurrentThread](#subscribecurrentthread)|Registriert den aktuellen Thread beim Ressourcen-Manager, wobei dieser diesem Scheduler zugeordnet wird.|
+|[ISchedulerProxy:: UnbindContext](#unbindcontext)|Trennt einen Thread Proxy vom Ausführungs Kontext, der durch den `pContext` -Parameter angegeben wird, und gibt ihn an den freien Pool der Thread proxyfactory zurück. Diese Methode kann nur für einen Ausführungs Kontext aufgerufen werden, der über die [ISchedulerProxy:: BindContext](#bindcontext) -Methode gebunden wurde und noch nicht über den- `pContext` Parameter eines [IThreadProxy:: SwitchTo](ithreadproxy-structure.md#switchto) -Methoden Aufrufs gestartet wurde.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der Ressourcen-Manager `ISchedulerProxy` übergibt jedem Planer, der sich mit der [IResourceManager::RegisterScheduler-Methode](iresourcemanager-structure.md#registerscheduler) registriert, eine Schnittstelle.
+Der Ressourcen-Manager übergibt eine `ISchedulerProxy` Schnittstelle an jeden Scheduler, der sich mit der [IResourceManager:: RegisterScheduler](iresourcemanager-structure.md#registerscheduler) -Methode bei der Anwendung registriert.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `ISchedulerProxy`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** concrtrm.h
+**Header:** concrtrm. h
 
 **Namespace:** Parallelität
 
-## <a name="ischedulerproxybindcontext-method"></a><a name="bindcontext"></a>ISchedulerProxy::BindContext-Methode
+## <a name="ischedulerproxybindcontext-method"></a><a name="bindcontext"></a>ISchedulerProxy:: BindContext-Methode
 
-Ordnet einen Ausführungskontext einem Threadproxy zu, sofern er nicht bereits einem Threadproxy zugeordnet ist.
+Ordnet einen Ausführungs Kontext einem Thread Proxy zu, wenn dieser nicht bereits mit einem verknüpft ist.
 
 ```cpp
 virtual void BindContext(_Inout_ IExecutionContext* pContext) = 0;
@@ -68,17 +68,17 @@ virtual void BindContext(_Inout_ IExecutionContext* pContext) = 0;
 ### <a name="parameters"></a>Parameter
 
 *pContext*<br/>
-Eine Schnittstelle zum Ausführungskontext, die einem Threadproxy zugeordnet werden soll.
+Eine Schnittstelle zum Ausführungs Kontext, die einem Thread Proxy zugeordnet werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Normalerweise bindet die [IThreadProxy::SwitchTo-Methode](ithreadproxy-structure.md#switchto) einen Threadproxy bei Bedarf an einen Ausführungskontext. Es gibt jedoch Umstände, in denen es notwendig ist, `SwitchTo` einen Kontext im Voraus zu binden, um sicherzustellen, dass die Methode in einen bereits gebundenen Kontext wechselt. Dies ist bei einem UMS-Planungskontext der Fall, da er keine Methoden aufrufen kann, die Speicher zuweisen, und das Binden eines Threadproxys kann eine Speicherzuweisung beinhalten, wenn ein Threadproxy im freien Pool der Threadproxyfactory nicht ohne weiteres verfügbar ist.
+Normalerweise bindet die [IThreadProxy:: SwitchTo](ithreadproxy-structure.md#switchto) -Methode einen Thread Proxy bei Bedarf an einen Ausführungs Kontext. Es gibt jedoch Situationen, in denen es erforderlich ist, einen Kontext im Voraus zu binden, um sicherzustellen, dass die `SwitchTo` Methode zu einem bereits gebundenen Kontext wechselt. Dies ist bei einem ums-Planungs Kontext der Fall, da er keine Methoden aufruft, die Arbeitsspeicher belegen. das Binden eines Thread Proxys kann eine Speicher Belegung beinhalten, wenn ein Thread Proxy nicht im freien Pool der Thread Proxy-Factory nicht verfügbar ist.
 
-`invalid_argument`wird ausgelöst, `pContext` wenn der `NULL`Parameter den Wert hat.
+`invalid_argument`wird ausgelöst, wenn der-Parameter `pContext` den Wert hat `NULL` .
 
-## <a name="ischedulerproxycreateoversubscriber-method"></a><a name="createoversubscriber"></a>ISchedulerProxy::CreateOversubscriber-Methode
+## <a name="ischedulerproxycreateoversubscriber-method"></a><a name="createoversubscriber"></a>ISchedulerProxy:: kreateoversubscriber-Methode
 
-Erstellt einen neuen virtuellen Prozessorstamm auf dem Hardwarethread, der einer vorhandenen Ausführungsressource zugeordnet ist.
+Erstellt einen neuen virtuellen Prozessor Stamm auf dem Hardware Thread, der einer vorhandenen Ausführungs Ressource zugeordnet ist.
 
 ```cpp
 virtual IVirtualProcessorRoot* CreateOversubscriber(_Inout_ IExecutionResource* pExecutionResource) = 0;
@@ -86,8 +86,8 @@ virtual IVirtualProcessorRoot* CreateOversubscriber(_Inout_ IExecutionResource* 
 
 ### <a name="parameters"></a>Parameter
 
-*pExecutionResource*<br/>
-Eine `IExecutionResource` Schnittstelle, die den Hardwarethread darstellt, den Sie überzeichnen möchten.
+*pexecutionresource*<br/>
+Eine `IExecutionResource` Schnittstelle, die den Hardware Thread darstellt, den Sie überschreiben möchten.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -95,13 +95,13 @@ Eine `IVirtualProcessorRoot`-Schnittstelle.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, wenn der Planer einen bestimmten Hardwarethread für einen begrenzten Zeitraum überzeichnen möchte. Sobald Sie mit dem Stamm des virtuellen Prozessors fertig sind, sollten Sie `IVirtualProcessorRoot` ihn an den Ressourcen-Manager zurückgeben, indem Sie die [Remove-Methode](iexecutionresource-structure.md#remove) auf der Schnittstelle aufrufen.
+Verwenden Sie diese Methode, wenn Ihr Scheduler einen bestimmten Hardware Thread für einen begrenzten Zeitraum über abonnieren möchte. Wenn Sie den Stamm des virtuellen Prozessors erreicht haben, sollten Sie ihn an den Ressourcen-Manager zurückgeben, indem Sie die [Remove](iexecutionresource-structure.md#remove) -Methode für die `IVirtualProcessorRoot` Schnittstelle aufrufen.
 
-Sie können sogar einen vorhandenen virtuellen Prozessorstamm überzeichnen, da die `IVirtualProcessorRoot` Schnittstelle von der `IExecutionResource` Schnittstelle erbt.
+Sie können sogar einen vorhandenen virtuellen Prozessor Stamm überschreiben, da die- `IVirtualProcessorRoot` Schnittstelle von der- `IExecutionResource` Schnittstelle erbt.
 
-## <a name="ischedulerproxyrequestinitialvirtualprocessors-method"></a><a name="requestinitialvirtualprocessors"></a>ISchedulerProxy::RequestInitialVirtualProcessors-Methode
+## <a name="ischedulerproxyrequestinitialvirtualprocessors-method"></a><a name="requestinitialvirtualprocessors"></a>ISchedulerProxy:: requestinitialvirtualprocessor-Methode
 
-Fordert eine anfängliche Zuweisung virtueller Prozessorstämme an. Jeder virtuelle Prozessorstamm stellt die Möglichkeit dar, einen Thread auszuführen, der Arbeit für den Planer ausführen kann.
+Fordert eine anfängliche Zuordnung von virtuellen Prozessor Stämmen an. Jeder virtuelle Prozessor Stamm stellt die Möglichkeit dar, einen Thread auszuführen, der Aufgaben für den Scheduler ausführen kann.
 
 ```cpp
 virtual IExecutionResource* RequestInitialVirtualProcessors(bool doSubscribeCurrentThread) = 0;
@@ -109,28 +109,28 @@ virtual IExecutionResource* RequestInitialVirtualProcessors(bool doSubscribeCurr
 
 ### <a name="parameters"></a>Parameter
 
-*doSubscribeCurrentThread*<br/>
-Gibt an, ob der aktuelle Thread abonniert und während der Ressourcenzuordnung berücksichtigt werden soll.
+*doabonbecurrentthread*<br/>
+Gibt an, ob der aktuelle Thread und das Konto während der Ressourcen Zuordnung abonniert werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die `IExecutionResource` Schnittstelle für den aktuellen `doSubscribeCurrentThread` Thread, wenn der Parameter den Wert **true**hat. Wenn der Wert **false**ist, gibt die Methode NULL zurück.
+Die- `IExecutionResource` Schnittstelle für den aktuellen Thread, wenn der-Parameter `doSubscribeCurrentThread` den Wert hat **`true`** . Wenn der Wert ist **`false`** , gibt die Methode NULL zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bevor ein Planer eine Arbeit ausführt, sollte er diese Methode verwenden, um virtuelle Prozessorwurzeln vom Ressourcen-Manager anzufordern. Der Ressourcen-Manager greift mithilfe von [IScheduler::GetPolicy](ischeduler-structure.md#getpolicy) auf die Richtlinie des `MinConcurrency` `MaxConcurrency` Planers zu und verwendet die Werte für die Richtlinienschlüssel , und `TargetOversubscriptionFactor` bestimmt, wie viele Hardwarethreads dem Planer ursprünglich zugewiesen werden sollen und wie viele virtuelle Prozessorwurzeln für jeden Hardwarethread erstellt werden sollen. Weitere Informationen dazu, wie Planerrichtlinien verwendet werden, um die anfängliche Zuordnung eines Planers zu bestimmen, finden Sie unter [PolicyElementKey](concurrency-namespace-enums.md).
+Bevor ein Scheduler eine beliebige Arbeit ausführt, sollte er diese Methode verwenden, um virtuelle Prozessor Stämme von der Ressourcen-Manager anzufordern. Der Ressourcen-Manager greift mithilfe von [IScheduler:: GetPolicy](ischeduler-structure.md#getpolicy) auf die Richtlinie des Schedulers zu und verwendet die Werte für die Richtlinien Schlüssel und, `MinConcurrency` `MaxConcurrency` `TargetOversubscriptionFactor` um zu bestimmen, wie viele Hardwarethreads zunächst dem Scheduler zugewiesen werden und wie viele virtuelle Prozessor Stämme für jeden Hardware Thread erstellt werden. Weitere Informationen zur Verwendung von Scheduler-Richtlinien, um die anfängliche Zuordnung eines Planers zu bestimmen, finden Sie unter [PolicyElementKey](concurrency-namespace-enums.md).
 
-Der Ressourcen-Manager gewährt einem Planer Ressourcen, indem er die Methode [IScheduler::AddVirtualProcessors](ischeduler-structure.md#addvirtualprocessors) mit einer Liste virtueller Prozessorwurzeln aufruft. Die Methode wird als Rückruf in den Planer aufgerufen, bevor diese Methode zurückgegeben wird.
+Der Ressourcen-Manager gewährt einem Scheduler Ressourcen durch Aufrufen der-Methode [IScheduler:: addvirtualprozessoren](ischeduler-structure.md#addvirtualprocessors) mit einer Liste virtueller Prozessor Stämme. Die-Methode wird als Rückruf in den Scheduler aufgerufen, bevor diese Methode zurückgegeben wird.
 
-Wenn der Planer ein Abonnement für den `doSubscribeCurrentThread` aktuellen Thread angefordert hat, indem er den Parameter auf **true**festlegt, gibt die Methode eine `IExecutionResource` Schnittstelle zurück. Das Abonnement muss zu einem späteren Zeitpunkt mit der [IExecutionResource::Remove-Methode](iexecutionresource-structure.md#remove) beendet werden.
+Wenn der Scheduler ein Abonnement für den aktuellen Thread durch Festlegen des-Parameters `doSubscribeCurrentThread` auf angefordert **`true`** hat, gibt die Methode eine- `IExecutionResource` Schnittstelle zurück. Das Abonnement muss zu einem späteren Zeitpunkt mit der [IExecutionResource:: Remove](iexecutionresource-structure.md#remove) -Methode beendet werden.
 
-Beim Bestimmen der ausgewählten Hardwarethreads versucht der Ressourcen-Manager, die Affinität des Prozessorknotens zu optimieren. Wenn ein Abonnement für den aktuellen Thread angefordert wird, ist dies ein Hinweis darauf, dass der aktuelle Thread beabsichtigt, an der diesem Planer zugewiesenen Arbeit teilzunehmen. In einem solchen Fall befinden sich die zugewiesenen virtuellen Prozessorwurzeln auf dem Prozessorknoten, auf dem der aktuelle Thread ausgeführt wird, wenn möglich.
+Wenn Sie bestimmen, welche Hardwarethreads ausgewählt werden, versucht der Ressourcen-Manager, die Prozessor Knoten Affinität zu optimieren. Wenn das Abonnement für den aktuellen Thread angefordert wird, ist dies ein Hinweis darauf, dass der aktuelle Thread an der Arbeit teilnehmen möchte, die diesem Scheduler zugewiesen ist. In einem solchen Fall befinden sich die zugewiesenen virtuellen Prozessor Stämme auf dem Prozessor Knoten, auf dem der aktuelle Thread ausgeführt wird (sofern möglich).
 
-Der Akt des Abonnierens eines Threads erhöht die Abonnementebene des zugrunde liegenden Hardwarethreads um eins. Die Abonnementstufe wird um eins reduziert, wenn das Abonnement gekündigt wird. Weitere Informationen zu Abonnementebenen finden Sie unter [IExecutionResource::CurrentSubscriptionLevel](iexecutionresource-structure.md#currentsubscriptionlevel).
+Durch das Abonnieren eines Threads wird die Abonnement Ebene des zugrunde liegenden Hardware Threads um 1 erhöht. Die Abonnement Ebene wird um eins reduziert, wenn das Abonnement beendet wird. Weitere Informationen zu Abonnement Ebenen finden Sie unter [IExecutionResource:: currentabonneptionlevel](iexecutionresource-structure.md#currentsubscriptionlevel).
 
-## <a name="ischedulerproxyshutdown-method"></a><a name="shutdown"></a>ISchedulerProxy::Shutdown-Methode
+## <a name="ischedulerproxyshutdown-method"></a><a name="shutdown"></a>ISchedulerProxy:: Shutdown-Methode
 
-Benachrichtigt den Ressourcen-Manager, dass der Planer heruntergefahren wird. Dies führt dazu, dass der Ressourcen-Manager sofort alle dem Planer gewährten Ressourcen zurückgibt.
+Benachrichtigt den Ressourcen-Manager, dass der Scheduler heruntergefahren wird. Dies bewirkt, dass der Ressourcen-Manager sofort alle dem Scheduler gewährten Ressourcen zurückgibt.
 
 ```cpp
 virtual void Shutdown() = 0;
@@ -138,15 +138,15 @@ virtual void Shutdown() = 0;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Alle `IExecutionContext` Schnittstellen, die der Planer als Ergebnis des Abonnierens eines `ISchedulerProxy::RequestInitialVirtualProcessors` `ISchedulerProxy::SubscribeCurrentThread` externen Threads mit den `IExecutionResource::Remove` Methoden erhalten hat oder der an den Ressourcen-Manager zurückgegeben werden muss, bevor sich ein Planer selbst herunterfährt.
+Alle `IExecutionContext` Schnittstellen, die der Planer als Ergebnis eines Abonnements eines externen Threads mithilfe der-Methoden empfangen hat `ISchedulerProxy::RequestInitialVirtualProcessors` `ISchedulerProxy::SubscribeCurrentThread` , oder müssen an den Ressourcen-Manager mithilfe von zurückgegeben werden, `IExecutionResource::Remove` bevor ein Scheduler wieder heruntergefahren wird.
 
-Wenn Ihr Planer über deaktivierte virtuelle Prozessorwurzeln verfügt, müssen Sie diese mit [IVirtualProcessorRoot::Activate](ivirtualprocessorroot-structure.md#activate)aktivieren und `Dispatch` die Threadproxys, die auf ihnen `Shutdown` ausgeführt werden, die Methode der Ausführungskontexte verlassen, die sie aussenden, bevor Sie sie auf einem Planerproxy aufrufen.
+Wenn Ihr Scheduler über deaktivierte virtuelle Prozessor Stämme verfügt, müssen Sie diese mithilfe von [IVirtualProcessorRoot:: Aktivierung](ivirtualprocessorroot-structure.md#activate)aktivieren. wenn die Thread Proxys darauf ausgeführt werden, verlassen Sie die- `Dispatch` Methode der Ausführungs Kontexte, die Sie weiterleiten, bevor Sie `Shutdown` auf einem Scheduler-Proxy aufrufen.
 
-Es ist nicht erforderlich, dass der Planer alle virtuellen Prozessorwurzeln, die der `Remove` Ressourcen-Manager ihm über Aufrufe der Methode gewährt hat, einzeln zurückgibt, da alle Stammverzeichnisse virtueller Prozessoren beim Herunterfahren an den Ressourcen-Manager zurückgegeben werden.
+Es ist nicht erforderlich, dass der Scheduler einzeln alle virtuellen Prozessor Stämme zurückgibt, die dem Ressourcen-Manager durch Aufrufe der-Methode erteilt wurden, `Remove` da alle virtuellen Prozessoren Stämme beim Herunterfahren an die Ressourcen-Manager zurückgegeben werden.
 
-## <a name="ischedulerproxysubscribecurrentthread-method"></a><a name="subscribecurrentthread"></a>ISchedulerProxy::SubscribeCurrentThread-Methode
+## <a name="ischedulerproxysubscribecurrentthread-method"></a><a name="subscribecurrentthread"></a>ISchedulerProxy:: abonkurcurrentthread-Methode
 
-Registriert den aktuellen Thread beim Ressourcen-Manager und wird diesem Planer zugeordnet.
+Registriert den aktuellen Thread beim Ressourcen-Manager, wobei dieser diesem Scheduler zugeordnet wird.
 
 ```cpp
 virtual IExecutionResource* SubscribeCurrentThread() = 0;
@@ -154,19 +154,19 @@ virtual IExecutionResource* SubscribeCurrentThread() = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die `IExecutionResource` Schnittstelle, die den aktuellen Thread in der Laufzeit darstellt.
+Die Schnittstellen, die `IExecutionResource` den aktuellen Thread in der Laufzeit darstellt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, wenn der Ressourcen-Manager den aktuellen Thread berücksichtigen soll, während Ressourcen dem Planer und anderen Planern zugewiesen werden. Dies ist besonders nützlich, wenn der Thread plant, an der Arbeit teilzunehmen, die an Ihrem Planer in der Warteschlange liegt, zusammen mit den virtuellen Prozessorwurzeln, die der Planer vom Ressourcen-Manager erhält. Der Ressourcen-Manager verwendet Informationen, um unnötige Überzeichnungen von Hardwarethreads auf dem System zu verhindern.
+Verwenden Sie diese Methode, wenn das Ressourcen-Manager den aktuellen Thread berücksichtigen soll, während dem Scheduler und anderen Zeit Planungs Modulen Ressourcen zugeordnet werden. Dies ist besonders nützlich, wenn der Thread plant, an der Arbeit, die dem Scheduler in die Warteschlange eingereiht ist, zusammen mit den virtuellen Prozessor Stämme, die der Planer vom Ressourcen-Manager empfängt, an der Arbeit teilnimmt. Der Ressourcen-Manager verwendet Informationen, um unnötige über Abonnements von Hardwarethreads auf dem System zu verhindern.
 
-Die über diese Methode empfangene Ausführungsressource sollte mithilfe der [IExecutionResource::Remove-Methode](iexecutionresource-structure.md#remove) an den Ressourcen-Manager zurückgegeben werden. Der Thread, `Remove` der die Methode aufruft, `SubscribeCurrentThread` muss derselbe Thread sein, der zuvor die Methode aufgerufen hat.
+Die über diese Methode empfangene Ausführungs Ressource sollte mithilfe der [IExecutionResource:: Remove](iexecutionresource-structure.md#remove) -Methode an den Ressourcen-Manager zurückgegeben werden. Der Thread, der die-Methode aufruft, `Remove` muss derselbe Thread sein, der zuvor die-Methode aufgerufen hat `SubscribeCurrentThread` .
 
-Der Akt des Abonnierens eines Threads erhöht die Abonnementebene des zugrunde liegenden Hardwarethreads um eins. Die Abonnementstufe wird um eins reduziert, wenn das Abonnement gekündigt wird. Weitere Informationen zu Abonnementebenen finden Sie unter [IExecutionResource::CurrentSubscriptionLevel](iexecutionresource-structure.md#currentsubscriptionlevel).
+Durch das Abonnieren eines Threads wird die Abonnement Ebene des zugrunde liegenden Hardware Threads um 1 erhöht. Die Abonnement Ebene wird um eins reduziert, wenn das Abonnement beendet wird. Weitere Informationen zu Abonnement Ebenen finden Sie unter [IExecutionResource:: currentabonneptionlevel](iexecutionresource-structure.md#currentsubscriptionlevel).
 
-## <a name="ischedulerproxyunbindcontext-method"></a><a name="unbindcontext"></a>ISchedulerProxy::UnbindContext-Methode
+## <a name="ischedulerproxyunbindcontext-method"></a><a name="unbindcontext"></a>ISchedulerProxy:: UnbindContext-Methode
 
-Trennt einen Threadproxy vom Ausführungskontext, der durch den `pContext` Parameter angegeben wird, und gibt ihn an den freien Pool der Threadproxyfactory zurück. Diese Methode kann nur für einen Ausführungskontext aufgerufen werden, der über die [ISchedulerProxy::BindContext-Methode](#bindcontext) gebunden wurde und noch nicht über den `pContext` Parameter eines [IThreadProxy::SwitchTo-Methodenaufrufs](ithreadproxy-structure.md#switchto) gestartet wurde.
+Trennt einen Thread Proxy vom Ausführungs Kontext, der durch den `pContext` -Parameter angegeben wird, und gibt ihn an den freien Pool der Thread proxyfactory zurück. Diese Methode kann nur für einen Ausführungs Kontext aufgerufen werden, der über die [ISchedulerProxy:: BindContext](#bindcontext) -Methode gebunden wurde und noch nicht über den- `pContext` Parameter eines [IThreadProxy:: SwitchTo](ithreadproxy-structure.md#switchto) -Methoden Aufrufs gestartet wurde.
 
 ```cpp
 virtual void UnbindContext(_Inout_ IExecutionContext* pContext) = 0;
@@ -175,11 +175,11 @@ virtual void UnbindContext(_Inout_ IExecutionContext* pContext) = 0;
 ### <a name="parameters"></a>Parameter
 
 *pContext*<br/>
-Der Ausführungskontext, der von seinem Threadproxy aufgelöst werden soll.
+Der Ausführungs Kontext, dessen Zuordnung zum zugehörigen Thread Proxy aufgehoben werden soll.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace](concurrency-namespace.md)<br/>
+[Parallelitäts Namespace](concurrency-namespace.md)<br/>
 [IScheduler-Struktur](ischeduler-structure.md)<br/>
 [IThreadProxy-Struktur](ithreadproxy-structure.md)<br/>
 [IVirtualProcessorRoot-Struktur](ivirtualprocessorroot-structure.md)<br/>

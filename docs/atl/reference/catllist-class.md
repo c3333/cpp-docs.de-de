@@ -37,12 +37,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlList class
 ms.assetid: 09e98053-64b2-4efa-99ab-d0542caaf981
-ms.openlocfilehash: 2c16713af11a915772085165ed294cba4ae337f2
-ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
+ms.openlocfilehash: 15830a30e8236a13f3911d1b84d3727d3246fc0b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82168045"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226671"
 ---
 # <a name="catllist-class"></a>Klasse "Klasse"
 
@@ -67,20 +67,20 @@ Der Code, der zum Kopieren oder Verschieben von Elementen verwendet wird. Weiter
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["": Inargtype](#inargtype)||
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["":](#catllist)|Der Konstruktor.|
 |[": ~-Llist"](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |["": AddHead](#addhead)|Rufen Sie diese Methode auf, um ein Element am Anfang der Liste hinzuzufügen.|
 |[Kategorie:: addheadlist](#addheadlist)|Rufen Sie diese Methode auf, um eine vorhandene Liste zum Anfang der Liste hinzuzufügen.|
@@ -113,13 +113,13 @@ Der Code, der zum Kopieren oder Verschieben von Elementen verwendet wird. Weiter
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die `CAtlList` -Klasse unterstützt geordnete Listen von nicht eindeutigen Objekten, auf die sequenziell oder nach Wert zugegriffen werden kann. `CAtlList`Listen Verhalten sich wie doppelt verknüpfte Listen. Jede Liste verfügt über einen Head-und einen Tail, und neue Elemente (oder Listen in einigen Fällen) können entweder am Ende der Liste oder vor oder nach bestimmten Elementen eingefügt werden.
+Die- `CAtlList` Klasse unterstützt geordnete Listen von nicht eindeutigen Objekten, auf die sequenziell oder nach Wert zugegriffen werden kann. `CAtlList`Listen Verhalten sich wie doppelt verknüpfte Listen. Jede Liste verfügt über einen Head-und einen Tail, und neue Elemente (oder Listen in einigen Fällen) können entweder am Ende der Liste oder vor oder nach bestimmten Elementen eingefügt werden.
 
 Die meisten `CAtlList` Methoden verwenden einen Positionswert. Dieser Wert wird von den-Methoden verwendet, um auf den tatsächlichen Speicherort zu verweisen, in dem die Elemente gespeichert werden, und sollte nicht direkt berechnet oder vorhergesagt werden. Wenn für den Zugriff auf das *n*-te Element in der Liste erforderlich ist, gibt [die Methode "](#findindex) " "" "" "". Die Methoden ["](#getnext) ", "", "" [CAtlList::GetPrev](#getprev) , "", "", "", "", um die Objekte in der Liste zu durchlaufen.
 
 Weitere Informationen zu den in ATL verfügbaren Sammlungs Klassen finden Sie unter [ATL](../../atl/atl-collection-classes.md)-Auflistungs Klassen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atlcoll. h
 
@@ -248,7 +248,7 @@ Die Blockgröße.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Konstruktor für das `CAtlList` -Objekt. Die Blockgröße ist ein Maß für die Menge an Arbeitsspeicher, die zugewiesen wird, wenn ein neues Element erforderlich ist. Größere Blockgrößen reduzieren Aufrufe von Speicher Belegungs Routinen, verwenden jedoch weitere Ressourcen.
+Der Konstruktor für das- `CAtlList` Objekt. Die Blockgröße ist ein Maß für die Menge an Arbeitsspeicher, die zugewiesen wird, wenn ein neues Element erforderlich ist. Größere Blockgrößen reduzieren Aufrufe von Speicher Belegungs Routinen, verwenden jedoch weitere Ressourcen.
 
 ### <a name="example"></a>Beispiel
 
@@ -266,7 +266,7 @@ Der Destruktor.
 
 Gibt alle zugeordneten Ressourcen frei, einschließlich eines aufzurufenden Aufrufes [:: RemoveAll](#removeall) , um alle Elemente aus der Liste zu entfernen.
 
-In Debugbuilds tritt ein Assertionsfehler auf, wenn die Liste nach dem-Aufrufvorgang `RemoveAll`noch einige Elemente enthält.
+In Debugbuilds tritt ein Assertionsfehler auf, wenn die Liste nach dem-Aufrufvorgang noch einige Elemente enthält `RemoveAll` .
 
 ## <a name="catllistfind"></a><a name="find"></a>: Suchen
 
@@ -343,9 +343,9 @@ Ein Verweis auf das-Element oder eine Kopie von.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Liste **konstant**ist, `GetAt` wird eine Kopie des-Elements zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
+Wenn die Liste ist **`const`** , wird `GetAt` eine Kopie des-Elements zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
 
-Wenn die Liste nicht **konstant**ist, `GetAt` wird ein Verweis auf das Element zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
+Wenn die Liste nicht ist **`const`** , wird `GetAt` ein Verweis auf das-Element zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
 
 In Debugbuilds tritt ein Assertionsfehler auf, wenn *POS* gleich NULL ist.
 
@@ -384,9 +384,9 @@ Gibt einen Verweis auf oder eine Kopie von auf das Element am Anfang der Liste z
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Liste **konstant**ist, `GetHead` wird eine Kopie des Elements an der Spitze der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
+Wenn die Liste ist **`const`** , wird `GetHead` eine Kopie des Elements an der Spitze der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
 
-Wenn die Liste nicht **konstant**ist, `GetHead` wird von ein Verweis auf das Element am Anfang der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
+Wenn die Liste nicht ist **`const`** , wird `GetHead` ein Verweis auf das Element am Anfang der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
 
 In Debugbuilds tritt ein Fehler auf, wenn der Anfang der Liste auf NULL zeigt.
 
@@ -426,13 +426,13 @@ const E& GetNext(POSITION& pos) const throw();
 ### <a name="parameters"></a>Parameter
 
 *POS*<br/>
-Ein Positionswert, der von einem vorherigen-Befehl `GetNext`, [der](#getheadposition)- `CAtlList` Methode, der-Methode, der-Methode oder der-Methode zurückgegeben wurde.
+Ein Positionswert, der von einem vorherigen-Befehl, der-Methode, der-Methode, der-Methode oder der-Methode zurückgegeben wurde `GetNext` [CAtlList::GetHeadPosition](#getheadposition) `CAtlList` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Liste **konstant**ist, `GetNext` wird eine Kopie des nächsten Elements der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
+Wenn die Liste ist **`const`** , wird `GetNext` eine Kopie des nächsten Elements der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
 
-Wenn die Liste nicht **konstant**ist, `GetNext` wird ein Verweis auf das nächste Element der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
+Wenn die Liste nicht ist **`const`** , wird `GetNext` ein Verweis auf das nächste Element der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -454,13 +454,13 @@ const E& GetPrev(POSITION& pos) const throw();
 ### <a name="parameters"></a>Parameter
 
 *POS*<br/>
-Ein Positionswert, der von einem vorherigen-Befehl `GetPrev`von [, "](#gettailposition)", "", "", " `CAtlList` ", "", "".
+Ein Positionswert, der von einem vorherigen-Befehl von, "", "", "", "", "", "" `GetPrev` [CAtlList::GetTailPosition](#gettailposition) `CAtlList` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Liste **konstant**ist, `GetPrev` wird eine Kopie eines Elements der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
+Wenn die Liste ist **`const`** , wird `GetPrev` eine Kopie eines Elements der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
 
-Wenn die Liste nicht **konstant**ist, `GetPrev` wird von ein Verweis auf ein Element der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
+Wenn die Liste nicht ist **`const`** , wird `GetPrev` von ein Verweis auf ein Element der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -485,9 +485,9 @@ Gibt einen Verweis auf oder eine Kopie von auf das-Element am Ende der Liste zur
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Liste **konstant**ist, `GetTail` wird eine Kopie des Elements an der Spitze der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
+Wenn die Liste ist **`const`** , wird `GetTail` eine Kopie des Elements an der Spitze der Liste zurückgegeben. Dadurch kann die-Methode nur auf der rechten Seite einer Zuweisungsanweisung verwendet werden, und die Liste wird vor Änderungen geschützt.
 
-Wenn die Liste nicht **konstant**ist, `GetTail` wird von ein Verweis auf das Element am Anfang der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
+Wenn die Liste nicht ist **`const`** , wird `GetTail` ein Verweis auf das Element am Anfang der Liste zurückgegeben. Dadurch kann die-Methode auf beiden Seiten einer Zuweisungsanweisung verwendet werden, sodass die Listeneinträge geändert werden können.
 
 In Debugbuilds tritt ein Fehler auf, wenn das Ende der Liste auf NULL zeigt.
 
@@ -668,7 +668,7 @@ Der Positionswert des zu entfernenden Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Element, auf das von *POS* verwiesen wird, wird entfernt, und der Speicher wird freigegeben Es ist akzeptabel, zu `RemoveAt` verwenden, um den Anfang oder das Ende der Liste zu entfernen.
+Das Element, auf das von *POS* verwiesen wird, wird entfernt, und der Speicher wird freigegeben Es ist akzeptabel, `RemoveAt` zu verwenden, um den Anfang oder das Ende der Liste zu entfernen.
 
 In Debugbuilds tritt ein Assertionsfehler auf, wenn die Liste ungültig ist, oder wenn das Entfernen des Elements bewirkt, dass die Liste auf den Speicher zugreift, der nicht Teil der Listenstruktur ist.
 
@@ -796,7 +796,7 @@ Tauscht die Elemente an den beiden angegebenen Positionen aus. In Debugbuilds tr
 
 [!code-cpp[NVC_ATL_Utilities#31](../../atl/codesnippet/cpp/catllist-class_19.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[CList-Klasse](../../mfc/reference/clist-class.md)<br/>
+[CLIST-Klasse](../../mfc/reference/clist-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

@@ -6,27 +6,27 @@ helpviewer_keywords:
 - CImageList class [MFC], using
 - image lists [MFC]
 ms.assetid: e0aed188-a1e6-400e-9f51-033d61c5541f
-ms.openlocfilehash: 0d9566739a15e5d216eb052a7265313850515648
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 710831ea8ef6b52292ba3e8eb84a69575c6c7508
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366571"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226827"
 ---
 # <a name="using-an-image-list"></a>Verwenden einer Bildliste
 
 Die typische Verwendung einer Bildliste folgt dem folgenden Muster:
 
-- Erstellen Sie ein [CImageList-Objekt,](../mfc/reference/cimagelist-class.md) und rufen Sie eine der Überladungen `CImageList` der [Create-Funktion](../mfc/reference/cimagelist-class.md#create) auf, um eine Bildliste zu erstellen und an das Objekt anzufügen.
+- Erstellen Sie ein [CImageList](../mfc/reference/cimagelist-class.md) -Objekt, und rufen Sie eine der über Ladungen der [Create](../mfc/reference/cimagelist-class.md#create) -Funktion auf, um eine Bildliste zu erstellen und Sie an das-Objekt anzufügen `CImageList` .
 
-- Wenn Sie beim Erstellen der Bildliste keine Bilder hinzugefügt haben, fügen Sie der Bildliste Bilder hinzu, indem Sie die Funktion Member [hinzufügen](../mfc/reference/cimagelist-class.md#add) oder [Lesen](../mfc/reference/cimagelist-class.md#read) aufrufen.
+- Wenn Sie beim Erstellen der Bildliste keine Images hinzugefügt haben, fügen Sie der Bildliste Bilder hinzu, indem Sie die [Add](../mfc/reference/cimagelist-class.md#add) -oder [Read](../mfc/reference/cimagelist-class.md#read) Member-Funktion aufrufen.
 
-- Ordnen Sie die Bildliste einem Steuerelement zu, indem Sie die entsprechende Memberfunktion dieses Steuerelements [Draw](../mfc/reference/cimagelist-class.md#draw) aufrufen, oder zeichnen Sie Bilder aus der Bildliste selbst mithilfe der Draw-Memberfunktion der Bildliste.
+- Ordnen Sie die Bildliste einem Steuerelement zu, indem Sie die entsprechende Member-Funktion des Steuer Elements aufrufen, oder zeichnen Sie Bilder aus der Bildliste selbst mithilfe der [Draw](../mfc/reference/cimagelist-class.md#draw) -Member-Funktion der Bildliste.
 
-- Möglicherweise kann der Benutzer ein Bild ziehen, indem er die integrierte Unterstützung der Bildliste zum Ziehen verwendet.
+- Ermöglicht es dem Benutzer möglicherweise, ein Bild mithilfe der integrierten Unterstützung der Bildliste für das ziehen zu ziehen.
 
 > [!NOTE]
-> Wenn die Bildliste mit dem **neuen** Operator `CImageList` erstellt wurde, müssen Sie das Objekt zerstören, wenn Sie damit fertig sind.
+> Wenn die Bildliste mit dem-Operator erstellt wurde **`new`** , müssen Sie das-Objekt zerstören, `CImageList` Wenn Sie damit abgeschlossen sind.
 
 ## <a name="see-also"></a>Siehe auch
 

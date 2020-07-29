@@ -1,5 +1,5 @@
 ---
-title: CStringRefElementTraits-Klasse
+title: Cstrauingrefelementtrait-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CStringRefElementTraits
@@ -10,16 +10,16 @@ f1_keywords:
 helpviewer_keywords:
 - CStringRefElementTraits class
 ms.assetid: cc15062d-5627-46cc-ac2b-1744afdc2dbd
-ms.openlocfilehash: b4dd76b9592b255a1553be3ca7a249f58fb2672e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6fa8772033a5a82940cf30b2a73d6ea356269d67
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330586"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226554"
 ---
-# <a name="cstringrefelementtraits-class"></a>CStringRefElementTraits-Klasse
+# <a name="cstringrefelementtraits-class"></a>Cstrauingrefelementtrait-Klasse
 
-Diese Klasse stellt statische Funktionen bereit, die sich auf Zeichenfolgen beziehen, die in Auflistungsklassenobjekten gespeichert sind. Die Zeichenfolgenobjekte werden als Referenzen behandelt.
+Diese Klasse stellt statische Funktionen für Zeichen folgen bereit, die in Auflistungs Klassen Objekten gespeichert sind. Die Zeichen folgen Objekte werden als Verweise behandelt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,31 +37,31 @@ Der Typ der Daten, die in der Auflistung gespeichert werden sollen.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CStringRefElementTraits::CompareElements](#compareelements)|Rufen Sie diese statische Funktion auf, um zwei Zeichenfolgenelemente für die Gleichheit zu vergleichen.|
-|[CStringRefElementTraits::CompareElementsOrdered](#compareelementsordered)|Rufen Sie diese statische Funktion auf, um zwei Zeichenfolgenelemente zu vergleichen.|
-|[CStringRefElementTraits::Hash](#hash)|Rufen Sie diese statische Funktion auf, um einen Hashwert für das angegebene Zeichenfolgenelement zu berechnen.|
+|[Cstrauingrefelementtrait:: compareelements](#compareelements)|Ruft diese statische Funktion auf, um zwei Zeichen folgen Elemente auf Gleichheit zu vergleichen.|
+|[Cstrauingrefelementtrait:: compareelementsordered](#compareelementsordered)|Nennen Sie diese statische Funktion, um zwei Zeichen folgen Elemente zu vergleichen.|
+|[Cstrauingrefelementtrait:: Hash](#hash)|Ruft diese statische Funktion auf, um einen Hashwert für das angegebene Zeichen folgen Element zu berechnen.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse bietet statische Funktionen zum Vergleichen von Zeichenfolgen und zum Erstellen eines Hashwerts. Diese Funktionen sind nützlich, wenn Sie eine Auflistungsklasse zum Speichern von zeichenfolgenbasierten Daten verwenden. Im Gegensatz zu [CStringElementTraits](../../atl/reference/cstringelementtraits-class.md) und [CStringElementTraitsI](../../atl/reference/cstringelementtraitsi-class.md) `CStringRefElementTraits` bewirkt, dass `CString` die Argumente als **const-Referenzen** `CString&` übergeben werden.
+Diese Klasse stellt statische Funktionen zum Vergleichen von Zeichen folgen und zum Erstellen eines Hashwerts bereit. Diese Funktionen sind nützlich, wenn Sie eine Auflistungs Klasse zum Speichern von Zeichen folgen basierten Daten verwenden. Anders als [cstringelementtrait](../../atl/reference/cstringelementtraits-class.md) und [cstringelementtraitsi](../../atl/reference/cstringelementtraitsi-class.md) `CStringRefElementTraits` bewirkt, `CString` dass die Argumente als Verweise übergeben werden **`const`** `CString&` .
 
-Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
+Weitere Informationen finden Sie unter [ATL](../../atl/atl-collection-classes.md)-Auflistungs Klassen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CElementTraitsBase](../../atl/reference/celementtraitsbase-class.md)
+[Celementtraitsbase](../../atl/reference/celementtraitsbase-class.md)
 
 `CStringRefElementTraits`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlcoll.h
+**Header:** atlcoll. h
 
-## <a name="cstringrefelementtraitscompareelements"></a><a name="compareelements"></a>CStringRefElementTraits::CompareElements
+## <a name="cstringrefelementtraitscompareelements"></a><a name="compareelements"></a>Cstrauingrefelementtrait:: compareelements
 
-Rufen Sie diese statische Funktion auf, um zwei Zeichenfolgenelemente für die Gleichheit zu vergleichen.
+Ruft diese statische Funktion auf, um zwei Zeichen folgen Elemente auf Gleichheit zu vergleichen.
 
 ```
 static bool CompareElements(INARGTYPE element1, INARGTYPE element2) throw();
@@ -70,18 +70,18 @@ static bool CompareElements(INARGTYPE element1, INARGTYPE element2) throw();
 ### <a name="parameters"></a>Parameter
 
 *Element1*<br/>
-Das erste Zeichenfolgenelement.
+Das erste Zeichen folgen Element.
 
 *Element2*<br/>
-Das zweite Zeichenfolgenelement.
+Das zweite Zeichen folgen Element.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt true zurück, wenn die Elemente gleich sind, andernfalls false.
 
-## <a name="cstringrefelementtraitscompareelementsordered"></a><a name="compareelementsordered"></a>CStringRefElementTraits::CompareElementsOrdered
+## <a name="cstringrefelementtraitscompareelementsordered"></a><a name="compareelementsordered"></a>Cstrauingrefelementtrait:: compareelementsordered
 
-Rufen Sie diese statische Funktion auf, um zwei Zeichenfolgenelemente zu vergleichen.
+Nennen Sie diese statische Funktion, um zwei Zeichen folgen Elemente zu vergleichen.
 
 ```
 static int CompareElementsOrdered(INARGTYPE str1, INARGTYPE str2) throw();
@@ -90,18 +90,18 @@ static int CompareElementsOrdered(INARGTYPE str1, INARGTYPE str2) throw();
 ### <a name="parameters"></a>Parameter
 
 *str1*<br/>
-Das erste Zeichenfolgenelement.
+Das erste Zeichen folgen Element.
 
 *str2*<br/>
-Das zweite Zeichenfolgenelement.
+Das zweite Zeichen folgen Element.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Null, wenn die Zeichenfolgen identisch sind, < 0, wenn *str1* kleiner als *str2*ist, oder > 0, wenn *str1* größer als *str2*ist. Die [CStringT::Compare-Methode](../../atl-mfc-shared/reference/cstringt-class.md#compare) wird verwendet, um die Vergleiche durchzuführen.
+0 (null), wenn die Zeichen folgen identisch sind, < 0, wenn *str1* kleiner als *str2*ist, oder > 0, wenn *str1* größer als *str2*ist. Die [CStringT:: Compare](../../atl-mfc-shared/reference/cstringt-class.md#compare) -Methode wird verwendet, um die Vergleiche auszuführen.
 
-## <a name="cstringrefelementtraitshash"></a><a name="hash"></a>CStringRefElementTraits::Hash
+## <a name="cstringrefelementtraitshash"></a><a name="hash"></a>Cstrauingrefelementtrait:: Hash
 
-Rufen Sie diese statische Funktion auf, um einen Hashwert für das angegebene Zeichenfolgenelement zu berechnen.
+Ruft diese statische Funktion auf, um einen Hashwert für das angegebene Zeichen folgen Element zu berechnen.
 
 ```
 static ULONG Hash(INARGTYPE str) throw();
@@ -109,8 +109,8 @@ static ULONG Hash(INARGTYPE str) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*Str*<br/>
-Das Zeichenfolgenelement.
+*str*<br/>
+Das Zeichen folgen Element.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -118,5 +118,5 @@ Gibt einen Hashwert zurück, der mit dem Inhalt der Zeichenfolge berechnet wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[CElementTraitsBase-Klasse](../../atl/reference/celementtraitsbase-class.md)<br/>
+[Celementtraitsbase-Klasse](../../atl/reference/celementtraitsbase-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)
