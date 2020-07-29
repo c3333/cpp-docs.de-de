@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - call_in_appdomain function
 ms.assetid: 9a1a5026-b76b-4cae-a3d4-29badeb9db9c
-ms.openlocfilehash: da0f2bc1a503226e41198871e6dc48ace7a86854
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 567b6d8fe9412e58f21de9a1031ec54c4bc01cdc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545372"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230895"
 ---
 # <a name="call_in_appdomain-function"></a>call_in_appdomain-Funktion
 
@@ -45,21 +45,21 @@ RetType call_in_appdomain(
 Die AppDomain, in der die Funktion aufgerufen werden soll.
 
 *voidFunc*<br/>
-Zeiger auf eine `void` Funktion, die N Parameter annimmt (0 < = N < = 15).
+Zeiger auf eine **`void`** Funktion, die N Parameter annimmt (0 <= n <= 15).
 
 *nonvoidFunc*<br/>
-Zeiger auf eine nicht`void` Funktion, die N Parameter annimmt (0 < = N < = 15).
+Zeiger auf eine nicht- **`void`** Funktion, die N Parameter annimmt (0 <= n <= 15).
 
 *arg1... argN*<br/>
-Null bis 15 Parameter, die an `voidFunc` oder `nonvoidFunc` in der anderen Anwendungsdomäne übermittelt werden sollen.
+Null bis 15 Parameter, `voidFunc` die an oder `nonvoidFunc` in der anderen Anwendungsdomäne übermittelt werden sollen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis der Ausführung `voidFunc` oder `nonvoidFunc` in der angegebenen Anwendungsdomäne.
+Das Ergebnis der Ausführung von `voidFunc` oder `nonvoidFunc` in der angegebenen Anwendungsdomäne.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Argumente der an `call_in_appdomain` über gebenden Funktion dürfen keine CLR-Typen sein.
+Die Argumente der an bestandenen Funktion `call_in_appdomain` dürfen keine CLR-Typen sein.
 
 ## <a name="example"></a>Beispiel
 
@@ -107,7 +107,7 @@ int main()
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```
 default appdomain: msl_call_in_appdomain.exe
@@ -116,8 +116,8 @@ default appdomain id = 1
 appDomain1 id = 2
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header Datei** \<msclr\appdomain.h >
+**Headerdatei** \<msclr\appdomain.h>
 
 **Namespace** -msclr

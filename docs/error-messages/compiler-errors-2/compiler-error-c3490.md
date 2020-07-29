@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3490
 ms.assetid: 7638559a-fd06-4527-a9c1-0c8ae68b3123
-ms.openlocfilehash: 940eae39222548ec74bda8ccb38e669748ffa74f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: ea7341b9c587a764c7366fa7b7c89e4fc67bc7d8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74738400"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230856"
 ---
 # <a name="compiler-error-c3490"></a>Compilerfehler C3490
 
 "var" kann nicht geändert werden, da über ein Konstantenobjekt darauf zugegriffen wird
 
-Ein Lambda-Ausdruck, der in einer `const` -Methode deklariert ist, kann nicht änderbare Memberdaten nicht ändern.
+Ein Lambda-Ausdruck, der in einer Methode deklariert ist, **`const`** kann keine änderbaren Elementdaten ändern.
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-- Entfernen Sie den `const` -Modifizierer aus der Methodendeklaration.
+- Entfernen Sie den- **`const`** Modifizierer aus der Methoden Deklaration.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3490 generiert, da die Membervariable `_i` in einer `const` -Methode geändert wird:
+Im folgenden Beispiel wird C3490 generiert, da die Element Variable `_i` in einer Methode geändert wird **`const`** :
 
 ```cpp
 // C3490a.cpp
@@ -44,7 +44,7 @@ class C
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird C3490 durch Entfernen des `const` -Modifizierers aus der Methodendeklaration aufgelöst:
+Im folgenden Beispiel wird C3490 durch Entfernen des- **`const`** Modifizierers aus der Methoden Deklaration aufgelöst:
 
 ```cpp
 // C3490b.cpp

@@ -2,12 +2,12 @@
 title: Schnittstellen (C++/CX)
 ms.date: 01/22/2017
 ms.assetid: 11034314-d54a-426d-923b-5ab7a6b9f8ce
-ms.openlocfilehash: 716bf86eddf621244415033dae1b9c93ad1baba5
-ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
+ms.openlocfilehash: df010468d5e90fe61ac2cf57c754ac5ed01b1c0f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82032355"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230986"
 ---
 # <a name="interfaces-ccx"></a>Schnittstellen (C++/CX)
 
@@ -25,7 +25,7 @@ Eine Schnittstelle verfügt über die folgenden Merkmale:
 
 - Felder und statische Member sind nicht zulässig.
 
-- Typen, die als Eigenschaften, Methodenparameter oder Rückgabewerte verwendet werden, können nur Windows-Runtime-Typen sein. Dies schließt die grundlegenden Typen und Enumeratklassentypen ein.
+- Typen, die als Eigenschaften, Methoden Parameter oder Rückgabewerte verwendet werden, können nur Windows-Runtime Typen sein. Dies schließt die grundlegenden Typen und Enumerationstypen ein.
 
 ## <a name="declaration-and-usage"></a>Deklaration und Verwendung
 
@@ -63,21 +63,21 @@ Wenn eine Verweisklasse mehrere Schnittstellen implementiert und diese Schnittst
 
 ## <a name="generic-interfaces"></a>Generische Schnittstellen
 
-In C++/CX `generic` wird das Schlüsselwort verwendet, um einen parametrisierten Windows-Runtime-Typ darzustellen. Ein parametrisierter Typ wird in Metadaten ausgegeben und kann durch jeden Code genutzt werden, der in einer Programmiersprache geschrieben ist, die Typparameter unterstützt. Die Windows-Runtime definiert einige generische Schnittstellen, z. B. [Windows::Foundation::Collections::IVector\<T>](/uwp/api/windows.foundation.collections.ivector-1)– unterstützt jedoch nicht die Erstellung öffentlicher benutzerdefinierter generischer Schnittstellen in C++/CX. Sie können jedoch private generische Schnittstellen erstellen.
+In C++/CX wird das **`generic`** Schlüsselwort verwendet, um einen Windows-Runtime parametrisierten Typs darzustellen. Ein parametrisierter Typ wird in Metadaten ausgegeben und kann durch jeden Code genutzt werden, der in einer Programmiersprache geschrieben ist, die Typparameter unterstützt. Die Windows-Runtime definiert einige generische Schnittstellen – z. b. [Windows:: Foundation:: Collections:: \<T> IVector](/uwp/api/windows.foundation.collections.ivector-1)– unterstützt jedoch nicht die Erstellung von öffentlichen benutzerdefinierten generischen Schnittstellen in C++/CX. Sie können jedoch private generische Schnittstellen erstellen.
 
-So können Windows-Runtime-Typen zum Erstellen einer generischen Schnittstelle verwendet werden:
+So können Windows-Runtime Typen verwendet werden, um eine generische Schnittstelle zu erstellen:
 
-- Eine generische benutzerdefinierte `interface class` in einer Komponente kann nicht in ihre Windows-Metadatendatei ausgegeben werden. Sie kann daher keine öffentliche Zugreifbarkeit besitzen und nicht von Clientcode in anderen WINMD-Dateien implementiert werden. Sie kann durch nicht öffentliche Verweisklassen in der gleichen Komponente implementiert werden. Eine öffentliche Verweisklasse kann einen generischen Schnittstellentyp als privaten Member besitzen.
+- Eine generische benutzerdefinierte **`interface class`** in einer Komponente kann nicht in Ihre Windows-Metadatendatei ausgegeben werden. Sie kann daher keine öffentliche Barrierefreiheit aufweisen, und der Client Code in anderen winmd-Dateien kann Sie nicht implementieren. Sie kann durch nicht öffentliche Verweisklassen in der gleichen Komponente implementiert werden. Eine öffentliche Verweisklasse kann einen generischen Schnittstellentyp als privaten Member besitzen.
 
-   Der folgenden Codeausschnitt zeigt, wie eine generische `interface class` deklariert und dann in einer privaten Verweisklasse implementiert wird, und wie die Verweisklasse als privater Member in einer öffentlichen Verweisklasse verwendet wird.
+   Der folgende Code Ausschnitt veranschaulicht, wie ein generisches deklariert **`interface class`** und dann in einer privaten Verweis Klasse implementiert wird und wie die Verweis Klasse als privater Member in einer öffentlichen Verweis Klasse verwendet wird.
 
    [!code-cpp[cx_interfaces#07](../cppcx/codesnippet/CPP/interfacestest/class1.h#07)]
 
 - Eine generische Schnittstelle muss den Standardregeln für Schnittstellen folgen, die Zugreifbarkeit, Member, *erforderliche* Beziehungen, Basisklassen usw. festlegen
 
-- Eine generische Schnittstelle kann eine oder mehrere generischen Typparameter verwenden, denen `typename` oder `class`vorangestellt werden. Nichttypenparameter werden nicht unterstützt.
+- Eine generische Schnittstelle kann einen oder mehrere generische Typparameter verwenden, denen oder vorangestellt ist **`typename`** **`class`** . Nichttypenparameter werden nicht unterstützt.
 
-- Ein Typparameter kann ein beliebiger Windows-Runtime-Typ sein. Das bedeutet, dass der Typparameter ein Verweistyp, ein Werttyp, eine Schnittstellenklasse, ein Delegat, ein fundamentaler Typ oder eine öffentliche Enumeratorklasse sein kann.
+- Ein Typparameter kann ein beliebiger Windows-Runtime Typ sein. Das bedeutet, dass der Typparameter ein Verweistyp, ein Werttyp, eine Schnittstellenklasse, ein Delegat, ein fundamentaler Typ oder eine öffentliche Enumeratorklasse sein kann.
 
 - Eine *geschlossene generische Schnittstelle* ist eine Schnittstelle, die von einer generischen Schnittstelle erbt und konkrete Typargumente für alle Typparameter spezifiziert. Sie kann überall verwendet werden, wo eine nicht generische private Schnittstelle verwendet werden kann.
 
@@ -89,14 +89,14 @@ So können Windows-Runtime-Typen zum Erstellen einer generischen Schnittstelle v
 
 - Eine geschlossene generische Schnittstelle verfügt über einen implizit generierten UUID. Benutzer können den UUID nicht angeben.
 
-- In der Schnittstelle wird angenommen, dass jeder Verweis auf die aktuelle Schnittstelle – in einem Methodenparameter, einem Rückgabewert oder einer Eigenschaft – auf die aktuelle Instanziierung verweist. *IMyIntf* bedeutet z. B. *IMyIntf\<T>*.
+- In der Schnittstelle wird angenommen, dass jeder Verweis auf die aktuelle Schnittstelle – in einem Methodenparameter, einem Rückgabewert oder einer Eigenschaft – auf die aktuelle Instanziierung verweist. *Imyintf* bedeutet beispielsweise *imyintf \<T> *.
 
 - Wenn der Typ eines Methodenparameters ein Typparameter ist, verwendet die Deklaration dieses Parameters oder dieser Variablen den Namen des Typparameters ohne Zeiger, systemeigenen Verweis oder Handledeklaratoren. Das heißt, schreiben Sie nie "T^".
 
-- Auf Vorlagen basierende Verweisklassen müssen privat sein. Sie können generische Schnittstellen implementieren und den Vorlagenparameter *T* an das generische Argument *T*übergeben. Jede Instanziierung einer vorlagenierten ref-Klasse ist selbst eine ref-Klasse.
+- Auf Vorlagen basierende Verweisklassen müssen privat sein. Sie können generische Schnittstellen implementieren und den Vorlagen Parameter *t* an das generische Argument *t*übergeben. Jede Instanziierung einer auf Vorlagen basierenden Verweis Klasse ist selbst eine Verweis Klasse.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Typensystem](../cppcx/type-system-c-cx.md)<br/>
-[C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
+[C++/CX-Sprachreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
 [Namespaces-Referenz](../cppcx/namespaces-reference-c-cx.md)
