@@ -14,16 +14,16 @@ f1_keywords:
 helpviewer_keywords:
 - msclr::lock class
 ms.assetid: 5123edd9-6aed-497d-9a0b-f4b6d6c0d666
-ms.openlocfilehash: ea09dd3d4a2eaf4cf7708d09509cfecfa4a6c6d5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b06c293200bc85945e95996db3109c1f5fba8d8a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373076"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225617"
 ---
 # <a name="lock-class"></a>lock-Klasse
 
-Diese Klasse automatisiert die Verwendung einer Sperre zum Synchronisieren des Zugriffs auf ein Objekt aus mehreren Threads.  Wenn es gebaut wird, erhält es das Schloss und wenn es zerstört wird, löst es die Sperre.
+Diese Klasse automatisiert das Ausführen einer Sperre für die Synchronisierung des Zugriffs auf ein Objekt aus mehreren Threads.  Beim Konstruieren wird die Sperre angefordert, und wenn Sie gelöscht wird, wird die Sperre freigegeben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,45 +33,45 @@ ref class lock;
 
 ## <a name="remarks"></a>Bemerkungen
 
-`lock`ist nur für CLR-Objekte verfügbar und kann nur im CLR-Code verwendet werden.
+`lock`ist nur für CLR-Objekte verfügbar und kann nur in CLR-Code verwendet werden.
 
-Intern verwendet <xref:System.Threading.Monitor> die Sperrklasse den Zugriff. Weitere Informationen finden Sie im Artikel, auf den verwiesen wird.
+Intern wird von der Lock-Klasse verwendet <xref:System.Threading.Monitor> , um den Zugriff zu synchronisieren. Weitere Informationen finden Sie im referenzierten Artikel.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |---------|-----------|
-|[Sperre::lock](#lock)|Erstellt ein `lock` Objekt, das optional darauf wartet, die Sperre für immer oder gar nicht für immer zu erhalten.|
-|[lock::~lock](#tilde-lock)|Zerstört ein `lock` Objekt.|
+|[Lock:: Lock](#lock)|Erstellt ein- `lock` Objekt, das optional darauf wartet, die Sperre für einen bestimmten Zeitraum dauerhaft zu erhalten, oder überhaupt nicht.|
+|[lock::~lock](#tilde-lock)|Zerstört ein- `lock` Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |---------|-----------|
-|[lock::acquire](#acquire)|Erwirbt eine Sperre für ein Objekt, die optional darauf wartet, die Sperre für immer, für einen bestimmten Zeitraum oder gar nicht zu erhalten.|
-|[lock::is_locked](#is-locked)|Gibt an, ob eine Sperre gehalten wird.|
+|[lock::acquire](#acquire)|Ruft eine Sperre für ein Objekt ab, wobei optional darauf gewartet wird, dass die Sperre für einen bestimmten Zeitraum (oder gar nicht) erhalten bleiben soll.|
+|[lock::is_locked](#is-locked)|Gibt an, ob eine Sperre aufrechterhalten wird.|
 |[lock::release](#release)|Gibt eine Sperre frei.|
-|[lock::try_acquire](#try-acquire)|Erwirbt eine Sperre für ein Objekt, wartet auf `bool` eine bestimmte Zeit und gibt eine zurück, um den Erfolg der Erfassung zu melden, anstatt eine Ausnahme auszulösen.|
+|[lock::try_acquire](#try-acquire)|Ruft eine Sperre für ein Objekt ab, die auf einen angegebenen Zeitraum wartet und einen zurückgibt, **`bool`** um den Erfolg des Erwerbs zu melden, anstatt eine Ausnahme auszulösen.|
 
-### <a name="public-operators"></a>Öffentliche Betreiber
+### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |---------|-----------|
-|[Sperre::operator&nbsp;bool](#operator-bool)|Operator für `lock` die Verwendung in einem bedingten Ausdruck.|
-|[lock::operator==](#operator-equality)|Gleichheitsoperator.|
-|[Sperre::operator!=](#operator-inequality)|Inequality-Operator.|
+|[Lock:: Operator &nbsp; bool](#operator-bool)|Operator für die Verwendung von `lock` in einem bedingten Ausdruck.|
+|[lock::operator==](#operator-equality)|Gleichheits Operator.|
+|[Lock:: Operator! =](#operator-inequality)|Ungleichheits Operator.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Headerdatei** \<msclr-lock.h>
+**Headerdatei** \<msclr\lock.h>
 
-**Namespace** msclr
+**Namespace** -msclr
 
-## <a name="locklock"></a><a name="lock"></a>Sperre::lock
+## <a name="locklock"></a><a name="lock"></a>Lock:: Lock
 
-Erstellt ein `lock` Objekt, das optional darauf wartet, die Sperre für immer oder gar nicht für immer zu erhalten.
+Erstellt ein- `lock` Objekt, das optional darauf wartet, die Sperre für einen bestimmten Zeitraum dauerhaft zu erhalten, oder überhaupt nicht.
 
 ```cpp
 template<class T> lock(
@@ -97,25 +97,25 @@ template<class T> lock(
 Das zu sperrende Objekt.
 
 *_timeout*<br/>
-Timeoutwert in Millisekunden <xref:System.TimeSpan>oder als .
+Timeout Wert in Millisekunden oder als <xref:System.TimeSpan> .
 
 ### <a name="exceptions"></a>Ausnahmen
 
-Wird <xref:System.ApplicationException> ausgelöst, wenn die Sperrerfassung nicht vor dem Timeout auftritt.
+Wird ausgelöst, <xref:System.ApplicationException> Wenn die Sperre nicht vor dem Timeout erfolgt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die ersten drei Formen des Konstruktors `_object` versuchen, innerhalb des angegebenen <xref:System.Threading.Timeout.Infinite> Timeoutzeitraums (oder wenn keine spezifiziert ist) eine Sperre zu erhalten.
+Die ersten drei Formen des Konstruktors versuchen, `_object` innerhalb des angegebenen Timeout Zeitraums eine Sperre zu erhalten (oder <xref:System.Threading.Timeout.Infinite> Wenn kein Wert angegeben ist).
 
-Die vierte Form des Konstruktors erhält `_object`keine Sperre für . `lock_later`ist Mitglied der [lock_when.](../dotnet/lock-when-enum.md) Verwenden Sie [lock::acquire](../dotnet/lock-acquire.md) oder [lock::try_acquire,](../dotnet/lock-try-acquire.md) um die Sperre in diesem Fall zu erhalten.
+Die vierte Form des Konstruktors erhält keine Sperre für `_object` . `lock_later`ist ein Member der [Lock_when](../dotnet/lock-when-enum.md)Enumeration. Verwenden Sie [Lock::](../dotnet/lock-acquire.md) Abruf oder [Lock:: try_acquire](../dotnet/lock-try-acquire.md) , um die Sperre in diesem Fall zu erhalten.
 
-Die Sperre wird automatisch aufgehoben, wenn der Destruktor aufgerufen wird.
+Die Sperre wird automatisch freigegeben, wenn der Dekonstruktor aufgerufen wird.
 
-`_object`kann nicht <xref:System.Threading.ReaderWriterLock>sein .  Ist dies der Fall, wird ein Compilerfehler angezeigt.
+`_object`darf nicht sein <xref:System.Threading.ReaderWriterLock> .  Wenn dies der Fall ist, führt dies zu einem Compilerfehler.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet. Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist. Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind. Die Hauptanwendung wartet dann auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet. Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist. Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um regelmäßig zu überprüfen, ob noch Arbeitsthreads vorhanden sind. Die Hauptanwendung wartet dann auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_lock.cpp
@@ -203,9 +203,9 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="locklock"></a><a name="tilde-lock"></a>Sperre::-Lock
+## <a name="locklock"></a><a name="tilde-lock"></a>Lock:: ~ Lock
 
-Zerstört ein `lock` Objekt.
+Zerstört ein- `lock` Objekt.
 
 ```cpp
 ~lock();
@@ -213,11 +213,11 @@ Zerstört ein `lock` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Destruktor ruft [lock::release](../dotnet/lock-release.md)auf.
+Der Dekonstruktor ruft [Lock:: Release](../dotnet/lock-release.md)auf.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet.  Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist.  Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind. Die Hauptanwendung wartet dann auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet.  Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist.  Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um regelmäßig zu überprüfen, ob noch Arbeitsthreads vorhanden sind. Die Hauptanwendung wartet dann auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_dtor.cpp
@@ -305,9 +305,9 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockacquire"></a><a name="acquire"></a>Sperre::erwerben
+## <a name="lockacquire"></a><a name="acquire"></a>Lock:: Abruf
 
-Erwirbt eine Sperre für ein Objekt, die optional darauf wartet, die Sperre für immer, für einen bestimmten Zeitraum oder gar nicht zu erhalten.
+Ruft eine Sperre für ein Objekt ab, wobei optional darauf gewartet wird, dass die Sperre für einen bestimmten Zeitraum (oder gar nicht) erhalten bleiben soll.
 
 ```cpp
 void acquire();
@@ -322,21 +322,21 @@ void acquire(
 ### <a name="parameters"></a>Parameter
 
 *_timeout*<br/>
-Timeoutwert in Millisekunden <xref:System.TimeSpan>oder als .
+Timeout Wert in Millisekunden oder als <xref:System.TimeSpan> .
 
 ### <a name="exceptions"></a>Ausnahmen
 
-Wird <xref:System.ApplicationException> ausgelöst, wenn die Sperrerfassung nicht vor dem Timeout auftritt.
+Wird ausgelöst, <xref:System.ApplicationException> Wenn die Sperre nicht vor dem Timeout erfolgt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn kein Timeoutwert angegeben wird, lautet <xref:System.Threading.Timeout.Infinite>das Standardtimeout .
+Wenn kein Timeout Wert angegeben wird, ist das Standard Timeout <xref:System.Threading.Timeout.Infinite> .
 
-Wenn bereits eine Sperre erworben wurde, führt diese Funktion nichts aus.
+Wenn bereits eine Sperre eingerichtet wurde, führt diese Funktion keine Aktion aus.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet.  Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist. Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind. Die Hauptanwendung wartet dann auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet.  Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist. Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um regelmäßig zu überprüfen, ob noch Arbeitsthreads vorhanden sind. Die Hauptanwendung wartet dann auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_acquire.cpp
@@ -424,9 +424,9 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockis_locked"></a><a name="is-locked"></a>Sperre::is_locked
+## <a name="lockis_locked"></a><a name="is-locked"></a>Lock:: is_locked
 
-Gibt an, ob eine Sperre gehalten wird.
+Gibt an, ob eine Sperre aufrechterhalten wird.
 
 ```cpp
 bool is_locked();
@@ -434,11 +434,11 @@ bool is_locked();
 
 ### <a name="return-value"></a>Rückgabewert
 
-`true`wenn eine Sperre `false` gehalten wird, andernfalls.
+**`true`**, wenn eine Sperre aufrechterhalten wird; **`false`** andernfalls.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet.  Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist.  Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind, und wartet auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet.  Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist.  Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um in regelmäßigen Abständen zu überprüfen, ob noch Arbeitsthreads vorhanden sind, und wartet auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_is_locked.cpp
@@ -527,9 +527,9 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockoperator-bool"></a><a name="operator-bool"></a>Sperre::operator bool
+## <a name="lockoperator-bool"></a><a name="operator-bool"></a>Lock:: Operator bool
 
-Operator für `lock` die Verwendung in einem bedingten Ausdruck.
+Operator für die Verwendung von `lock` in einem bedingten Ausdruck.
 
 ```cpp
 operator bool();
@@ -537,15 +537,15 @@ operator bool();
 
 ### <a name="return-value"></a>Rückgabewert
 
-`true`wenn eine Sperre `false` gehalten wird, andernfalls.
+**`true`**, wenn eine Sperre aufrechterhalten wird; **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator konvertiert `_detail_class::_safe_bool` tatsächlich in `bool` die sicherer als weil es nicht in einen integralen Typ konvertiert werden kann.
+Dieser Operator konvertiert tatsächlich in `_detail_class::_safe_bool` , was sicherer als ist, **`bool`** weil er nicht in einen ganzzahligen Typ konvertiert werden kann.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet.  Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist. Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind. Die Hauptanwendung wartet auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet.  Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist. Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um regelmäßig zu überprüfen, ob noch Arbeitsthreads vorhanden sind. Die Hauptanwendung wartet auf den Abschluss, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_op_bool.cpp
@@ -634,7 +634,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockrelease"></a><a name="release"></a>Sperre::Release
+## <a name="lockrelease"></a><a name="release"></a>Lock:: Release
 
 Gibt eine Sperre frei.
 
@@ -644,13 +644,13 @@ void release();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn keine Sperre gehalten `release` wird, tut nichts.
+Wenn keine Sperre aufrechterhalten wird, führt keine Aktion aus `release` .
 
-Sie müssen diese Funktion nicht explizit aufrufen. Wenn `lock` ein Objekt den Gültigkeitsbereich verlässt, ruft `release`sein Destruktor auf.
+Diese Funktion muss nicht explizit aufgerufen werden. Wenn ein- `lock` Objekt den Gültigkeitsbereich verlässt, ruft der Dekonstruktor auf `release` .
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet. Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist. Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind. Die Hauptanwendung wartet dann auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet. Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist. Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um regelmäßig zu überprüfen, ob noch Arbeitsthreads vorhanden sind. Die Hauptanwendung wartet dann auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_release.cpp
@@ -738,9 +738,9 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="locktry_acquire"></a><a name="try-acquire"></a>Sperre::try_acquire
+## <a name="locktry_acquire"></a><a name="try-acquire"></a>Lock:: try_acquire
 
-Erwirbt eine Sperre für ein Objekt, wartet auf `bool` eine bestimmte Zeit und gibt eine zurück, um den Erfolg der Erfassung zu melden, anstatt eine Ausnahme auszulösen.
+Ruft eine Sperre für ein Objekt ab, die auf einen angegebenen Zeitraum wartet und einen zurückgibt, **`bool`** um den Erfolg des Erwerbs zu melden, anstatt eine Ausnahme auszulösen.
 
 ```cpp
 bool try_acquire(
@@ -754,19 +754,19 @@ bool try_acquire(
 ### <a name="parameters"></a>Parameter
 
 *_timeout*<br/>
-Timeoutwert in Millisekunden <xref:System.TimeSpan>oder als .
+Timeout Wert in Millisekunden oder als <xref:System.TimeSpan> .
 
 ### <a name="return-value"></a>Rückgabewert
 
-`true`wenn die Sperre `false` erworben wurde, andernfalls.
+**`true`**, wenn die Sperre abgerufen wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn bereits eine Sperre erworben wurde, führt diese Funktion nichts aus.
+Wenn bereits eine Sperre eingerichtet wurde, führt diese Funktion keine Aktion aus.
 
 ### <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine einzelne Instanz einer Klasse über mehrere Threads hinweg verwendet. Die Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent ist. Der Hauptanwendungsthread verwendet eine Sperre für dieselbe Instanz der Klasse, um regelmäßig zu überprüfen, ob Workerthreads noch vorhanden sind. Die Hauptanwendung wartet dann auf den Vorgang, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet. Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist. Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um regelmäßig zu überprüfen, ob noch Arbeitsthreads vorhanden sind. Die Hauptanwendung wartet dann auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
 ```cpp
 // msl_lock_try_acquire.cpp
@@ -854,9 +854,9 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockoperator"></a><a name="operator-equality"></a>Sperre::operator==
+## <a name="lockoperator"></a><a name="operator-equality"></a>Lock:: Operator = =
 
-Gleichheitsoperator.
+Gleichheits Operator.
 
 ```cpp
 template<class T> bool operator==(
@@ -866,12 +866,12 @@ template<class T> bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
+*Bund*<br/>
 Das auf Gleichheit zu prüfende Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `true` `t` zurück, wenn es sich `false` andernfalls um das Objekt der Sperre handelt.
+Gibt **`true`** zurück `t` , wenn mit dem-Objekt der Sperre identisch ist, **`false`** andernfalls.
 
 ### <a name="example"></a>Beispiel
 
@@ -897,9 +897,9 @@ int main () {
 Equal!
 ```
 
-## <a name="lockoperator"></a><a name="operator-inequality"></a>Sperre::operator!=
+## <a name="lockoperator"></a><a name="operator-inequality"></a>Lock:: Operator! =
 
-Inequality-Operator.
+Ungleichheits Operator.
 
 ```cpp
 template<class T> bool operator!=(
@@ -909,12 +909,12 @@ template<class T> bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*T*<br/>
-Das Zu vergleichende Objekt für Ungleichheit.
+*Bund*<br/>
+Das Objekt, das auf Ungleichheit verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `true` `t` zurück, wenn er sich `false` vom Objekt der Sperre unterscheidet.
+Gibt **`true`** zurück `t` , wenn vom-Objekt der Sperre abweicht, **`false`** andernfalls.
 
 ### <a name="example"></a>Beispiel
 

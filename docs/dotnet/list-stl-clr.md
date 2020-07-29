@@ -108,18 +108,18 @@ helpviewer_keywords:
 - operator>(list) member [STL/CLR]
 - operator>=(list) member [STL/CLR]
 ms.assetid: a70c45c8-a257-4f6b-8434-b27ff6685bac
-ms.openlocfilehash: 7a07f0cc66492c5e0c10c82a7a6971313e13d77b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1c05aff71b16c3edf1348466df325caacb027554
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80208558"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225630"
 ---
 # <a name="list-stlclr"></a>list (STL/CLR)
 
-Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die bidirektionalen Zugriff hat. Sie verwenden den Container `list`, um eine Sequenz von Elementen als bidirektionale verknüpfte Liste von Knoten zu verwalten, von denen jeweils ein Element gespeichert wird.
+Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen variabler Länge steuert, die bidirektionalen Zugriff hat. Sie verwenden den Container `list` zum Verwalten einer Sequenz von Elementen als bidirektionale verknüpfte Liste von Knoten, die jeweils ein Element speichern.
 
-In der folgenden Beschreibung ist `GValue` identisch mit dem *Wert* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^`.
+In der Beschreibung unten `GValue` ist mit dem *Wert* identisch, es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -143,13 +143,13 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<cliext/List >
+**Header:**\<cliext/list>
 
 **Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typdefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |---------------------|-----------------|
 |[list::const_iterator (STL/CLR)](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
 |[list::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
@@ -165,7 +165,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 |[list::size_type (STL/CLR)](#size_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[list::value_type (STL/CLR)](#value_type)|Der Typ eines Elements.|
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |---------------------|-----------------|
 |[list::assign (STL/CLR)](#assign)|Ersetzt alle Elemente.|
 |[list::back (STL/CLR)](#back)|Greift auf das letzte Element zu.|
@@ -195,20 +195,20 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 |[list::to_array (STL/CLR)](#to_array)|Kopiert die gesteuerte Sequenz in ein neues Array.|
 |[list::unique (STL/CLR)](#unique)|Entfernt benachbarte Elemente, die einen angegebenen Test bestehen.|
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |--------------|-----------------|
 |[list::back_item (STL/CLR)](#back_item)|Greift auf das letzte Element zu.|
 |[list::front_item (STL/CLR)](#front_item)|Greift auf das erste Element zu.|
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
 |[list::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
-|[operator!= (list) (STL/CLR)](#op_neq)|Bestimmt, ob ein `list` Objekt nicht gleich einem anderen `list` Objekt ist.|
-|[operator< (list) (STL/CLR)](#op_lt)|Bestimmt, ob ein `list` Objekt kleiner als ein anderes `list`-Objekt ist.|
-|[operator<= (list) (STL/CLR)](#op_lteq)|Bestimmt, ob ein `list`-Objekt kleiner als oder gleich einem anderen `list`-Objekt ist.|
-|[operator== (list) (STL/CLR)](#op_eq)|Bestimmt, ob ein `list` Objekt gleich einem anderen `list`-Objekt ist.|
-|[operator> (list) (STL/CLR)](#op_gt)|Bestimmt, ob ein `list` Objekt größer als ein anderes `list`-Objekt ist.|
-|[operator>= (list) (STL/CLR)](#op_gteq)|Bestimmt, ob ein `list` Objekt größer als oder gleich einem anderen `list` Objekt ist.|
+|[operator!= (list) (STL/CLR)](#op_neq)|Bestimmt, ob ein-Objekt ungleich einem `list` anderen `list` Objekt ist.|
+|[Operator< (Liste) (STL/CLR)](#op_lt)|Bestimmt, ob ein- `list` Objekt kleiner als ein anderes- `list` Objekt ist.|
+|[Operator<= (List) (STL/CLR)](#op_lteq)|Bestimmt, ob ein- `list` Objekt kleiner als oder gleich einem anderen- `list` Objekt ist.|
+|[Operator = = (List) (STL/CLR)](#op_eq)|Bestimmt, ob ein- `list` Objekt gleich einem anderen- `list` Objekt ist.|
+|[Operator> (Liste) (STL/CLR)](#op_gt)|Bestimmt, ob ein- `list` Objekt größer als ein anderes- `list` Objekt ist.|
+|[Operator>= (List) (STL/CLR)](#op_gteq)|Bestimmt, ob ein- `list` Objekt größer als oder gleich einem anderen- `list` Objekt ist.|
 
 ## <a name="interfaces"></a>Schnittstellen
 
@@ -219,21 +219,21 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 |<xref:System.Collections.ICollection>|Die Gruppe von Elementen wird beibehalten.|
 |<xref:System.Collections.Generic.IEnumerable%601>|Sequenz durch typisierte-Elemente.|
 |<xref:System.Collections.Generic.ICollection%601>|Verwaltet eine Gruppe von typisierten Elementen.|
-|IList\<Wert >|Verwalten Sie einen generischen Container.|
+|IList\<Value>|Verwalten Sie einen generischen Container.|
 
 ## <a name="remarks"></a>Bemerkungen
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er als einzelne Knoten in einer bidirektionalen Linkliste steuert und freigibt. Sie ordnet Elemente neu an, indem die Verknüpfungen zwischen den Knoten geändert werden, nie durch Kopieren des Inhalts eines Knotens in einen anderen. Dies bedeutet, dass Sie Elemente ohne Beeinträchtigung der restlichen Elemente frei einfügen und entfernen können. Daher ist eine Liste ein guter Kandidat für den zugrunde liegenden Container für die Vorlagen Klassen [Warteschlange (STL/CLR)](../dotnet/queue-stl-clr.md) oder den Vorlagen Klassen [Stapel (STL/CLR)](../dotnet/stack-stl-clr.md).
 
-Ein `list`-Objekt unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [List:: End (STL/CLR)-](../dotnet/list-end-stl-clr.md)`()`zurückgegeben wurde. Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen Listeniterator erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich `end()`verglichen. Sie können jedoch nicht den von `end()`zurückgegebenen Iterator dereferenzieren.
+Ein- `list` Objekt unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen Listeniterator erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich verglichen `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
 
 Beachten Sie, dass Sie nicht direkt mit der numerischen Position auf ein Listenelement verweisen können, das einen Iterator mit zufälligem Zugriff erfordert. Eine Liste kann daher *nicht* als zugrunde liegender Container für die Vorlagen Klasse [Priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)verwendet werden.
 
-Ein Listeniterator speichert ein Handle für den zugeordneten Listen Knoten, der wiederum ein Handle für den zugehörigen Container speichert. Iteratoren können nur mit den zugehörigen Container Objekten verwendet werden. Ein Listeniterator bleibt gültig, solange der zugehörige Listen Knoten mit einer Liste verknüpft ist. Außerdem ist ein gültiger Iterator dereferencable--Sie können ihn verwenden, um auf den von ihm festgelegt-Elementwert zuzugreifen oder ihn zu ändern, solange er nicht gleich `end()`ist.
+Ein Listeniterator speichert ein Handle für den zugeordneten Listen Knoten, der wiederum ein Handle für den zugehörigen Container speichert. Iteratoren können nur mit den zugehörigen Container Objekten verwendet werden. Ein Listeniterator bleibt gültig, solange der zugehörige Listen Knoten mit einer Liste verknüpft ist. Außerdem ist ein gültiger Iterator dereferencable--Sie können ihn verwenden, um auf den Elementwert zuzugreifen, den er festlegt, sofern er nicht gleich ist `end()` .
 
 Durch das Löschen oder Entfernen eines Elements wird der Dekonstruktor für den gespeicherten Wert aufgerufen. Wenn Sie den Container zerstören, werden alle Elemente gelöscht. Daher stellt ein Container, dessen Elementtyp eine Verweis Klasse ist, sicher, dass keine Elemente den Container überdauern. Beachten Sie jedoch, dass ein Container von Handles seine Elemente *nicht* zerstört.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ## <a name="listassign-stlclr"></a><a name="assign"></a>List:: Assign (STL/CLR)
 
@@ -259,17 +259,17 @@ Anfang des einzufügenden Bereichs.
 *last*<br/>
 Das Ende des einzufügenden Bereichs.
 
-*right*<br/>
+*Richting*<br/>
 Enumeration, die eingefügt werden soll.
 
-*val*<br/>
+*ster*<br/>
 Der Wert des einzufügenden Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die erste Member-Funktion ersetzt die gesteuerte Sequenz durch eine Wiederholung der *count* -Elemente des Werts *Val*. Sie verwenden Sie, um den Container mit Elementen auszufüllen, die alle denselben Wert aufweisen.
 
-Wenn `InIt` ein ganzzahliger Typ ist, verhält sich die zweite Member-Funktion wie `assign((size_type)first, (value_type)last)`. Andernfalls wird die gesteuerte Sequenz durch die Sequenz [`first``last`) ersetzt. Damit wird die gesteuerte Sequenz zum Kopieren einer weiteren Sequenz verwendet.
+Wenn `InIt` ein ganzzahliger Typ ist, verhält sich die zweite Member-Funktion wie `assign((size_type)first, (value_type)last)` . Andernfalls wird die gesteuerte Sequenz durch die Sequenz [ `first` ,) ersetzt `last` . Damit wird die gesteuerte Sequenz zum Kopieren einer weiteren Sequenz verwendet.
 
 Die dritte Element Funktion ersetzt die kontrollierte Sequenz durch die vom enumeratorrecht angegebene Sequenz *right*. Sie verwenden Sie, um die gesteuerte Sequenz zu einer Kopie einer Sequenz zu machen, die von einem Enumerator beschrieben wird.
 
@@ -486,7 +486,7 @@ void clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion ruft effektiv [List:: Erase (STL/CLR)-](../dotnet/list-erase-stl-clr.md)`(` [List:: begin (STL/CLR)](../dotnet/list-begin-stl-clr.md)`(),` [List:: End (STL/CLR)-](../dotnet/list-end-stl-clr.md)`())`auf. Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
+Die Member-Funktion ruft effektiv [List:: Erase (STL/CLR)](../dotnet/list-erase-stl-clr.md) `(` [List:: begin (STL/CLR)](../dotnet/list-begin-stl-clr.md) `(),` [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md)auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -543,7 +543,7 @@ typedef T2 const_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2`, das als konstanter Random-Access-Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2` , das als konstanter Random-Access-Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -628,7 +628,7 @@ typedef T4 const_reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4`, das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4` , das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -724,7 +724,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht der`() == 0`[List:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) . Sie verwenden es, um zu testen, ob die Liste leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [List:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob die Liste leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -847,7 +847,7 @@ Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf d
 
 Die zweite Memberfunktion entfernt die Elemente der gesteuerten Sequenz im Bereich [`first`, `last`). Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
 
-Beide Member-Funktionen geben einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md)`()`, wenn kein solches Element vorhanden ist.
+Beide Member-Funktionen geben einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md) , `()` Wenn kein solches Element vorhanden ist.
 
 Beim Löschen von Elementen ist die Anzahl der Element Kopien in der Anzahl der Elemente zwischen dem Ende der Löschung und dem engeren Ende der Sequenz linear. (Wenn ein oder mehrere Elemente an beiden Enden der Sequenz gelöscht werden, treten keine Element Kopien auf.)
 
@@ -1193,7 +1193,7 @@ typedef GValue generic_value;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
+Der Typ beschreibt ein Objekt vom Typ `GValue` , das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
 
 ### <a name="example"></a>Beispiel
 
@@ -1263,10 +1263,10 @@ Anfang des einzufügenden Bereichs.
 *last*<br/>
 Das Ende des einzufügenden Bereichs.
 
-*right*<br/>
+*Richting*<br/>
 Enumeration, die eingefügt werden soll.
 
-*val*<br/>
+*ster*<br/>
 Der Wert des einzufügenden Elements.
 
 *where*<br/>
@@ -1280,11 +1280,11 @@ Die erste Member-Funktion fügt ein Element mit dem Wert *Val* ein und gibt eine
 
 Die zweite Member-Funktion fügt eine Wiederholung der *count* -Elemente des Werts *Val*ein. Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente einzufügen, die alle Kopien desselben Werts sind.
 
-Wenn `InIt` ein Ganzzahltyp ist, verhält sich die dritte Memberfunktion genau wie `insert(where, (size_type)first, (value_type)last)`. Andernfalls wird die Sequenz [`first``last`) eingefügt. Sie verwenden Sie, um NULL oder mehrere zusammenhängende Elemente einzufügen, die aus einer anderen Sequenz kopiert werden.
+Wenn `InIt` ein Ganzzahltyp ist, verhält sich die dritte Memberfunktion genau wie `insert(where, (size_type)first, (value_type)last)`. Andernfalls wird die Sequenz [ `first` ,) eingefügt `last` . Sie verwenden Sie, um NULL oder mehrere zusammenhängende Elemente einzufügen, die aus einer anderen Sequenz kopiert werden.
 
 Die vierte Member-Funktion fügt die von der *rechten Seite*festgelegte Sequenz ein. Sie verwenden Sie zum Einfügen einer Sequenz, die von einem Enumerator beschrieben wird.
 
-Beim Einfügen eines einzelnen Elements ist die Anzahl der Element Kopien in der Anzahl der Elemente zwischen der Einfügemarke und dem engeren Ende der Sequenz linear. (Beim Einfügen eines oder mehrerer Elemente an beiden Enden der Sequenz werden keine Element Kopien durchzuführen.) Wenn `InIt` ein eingabeiterator ist, führt die dritte Member-Funktion für jedes Element in der Sequenz eine einzelne Einfügung aus. Andernfalls ist beim Einfügen von `N` Elementen die Anzahl der Element Kopien in `N` und die Anzahl der Elemente zwischen der Einfügemarke und dem engeren Ende der Sequenz linear.
+Beim Einfügen eines einzelnen Elements ist die Anzahl der Element Kopien in der Anzahl der Elemente zwischen der Einfügemarke und dem engeren Ende der Sequenz linear. (Beim Einfügen eines oder mehrerer Elemente an beiden Enden der Sequenz werden keine Element Kopien durchzuführen.) Wenn `InIt` ein eingabeiterator ist, führt die dritte Member-Funktion für jedes Element in der Sequenz eine einzelne Einfügung aus. Andernfalls ist beim Einfügen `N` von Elementen die Anzahl der Element Kopien linear in `N` zuzüglich der Anzahl der Elemente zwischen der Einfügemarke und dem engeren Ende der Sequenz.
 
 ### <a name="example"></a>Beispiel
 
@@ -1367,7 +1367,7 @@ typedef T1 iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt vom Typ "nicht angegebener Typ" `T1`, das als Iterator für den zufälligen Zugriff für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T1` , das als Iterator mit zufälligem Zugriff für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -1432,10 +1432,10 @@ Anfang des einzufügenden Bereichs.
 *last*<br/>
 Das Ende des einzufügenden Bereichs.
 
-*right*<br/>
+*Richting*<br/>
 Einzufügendes Objekt bzw. einzufügender Bereich.
 
-*val*<br/>
+*ster*<br/>
 Der Wert des einzufügenden Elements.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1450,19 +1450,19 @@ Der Konstruktor:
 
 `list(list<Value>% right);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`right.begin()``right.end()`). Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Listen Objekt *Rechts*gesteuert wird.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `right.begin()` , `right.end()` ). Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Listen Objekt *Rechts*gesteuert wird.
 
 Der Konstruktor:
 
 `list(list<Value>^ right);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`right->begin()``right->end()`). Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Listen Objekt gesteuert wird, dessen Handle *richtig*ist.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `right->begin()` , `right->end()` ). Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Listen Objekt gesteuert wird, dessen Handle *richtig*ist.
 
 Der Konstruktor:
 
 `explicit list(size_type count);`
 
-Initialisiert die gesteuerte Sequenz mit *count* -Elementen mit einem Wert `value_type()`. Sie verwenden Sie, um den Container mit Elementen auszufüllen, die alle den Standardwert aufweisen.
+Initialisiert die gesteuerte Sequenz mit *count* -Elementen, die jeweils den Wert haben `value_type()` . Sie verwenden Sie, um den Container mit Elementen auszufüllen, die alle den Standardwert aufweisen.
 
 Der Konstruktor:
 
@@ -1476,7 +1476,7 @@ Der Konstruktor:
 
 `list(InIt first, InIt last);`
 
-Initialisiert die gesteuerte Sequenz mit der Sequenz [`first``last`). Sie verwenden ihn, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz zu machen.
+Initialisiert die gesteuerte Sequenz mit der Sequenz [ `first` , `last` ). Sie verwenden ihn, um die gesteuerte Sequenz zu einer Kopie einer anderen Sequenz zu machen.
 
 Der Konstruktor:
 
@@ -1566,16 +1566,16 @@ template<typename Pred2>
 *pred*<br/>
 Vergleich für Element Paare.
 
-*right*<br/>
+*Richting*<br/>
 Container für die Zusammenführung
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion entfernt alle Elemente aus der von *right* kontrollierten Sequenz und fügt Sie in die gesteuerte Sequenz ein. Beide Sequenzen müssen zuvor nach `operator<` geordnet werden--Elemente dürfen den Wert nicht verringern, während Sie durch eine der beiden Sequenzen fortgeführt werden. Die resultierende Sequenz wird auch nach `operator<`geordnet. Mit dieser Member-Funktion können Sie zwei Sequenzen zusammenführen, die den Wert in eine Sequenz vergrößern, die ebenfalls den Wert erhöht.
+Die erste Member-Funktion entfernt alle Elemente aus der von *right* kontrollierten Sequenz und fügt Sie in die gesteuerte Sequenz ein. Beide Sequenzen müssen zuvor nach geordnet werden,- `operator<` -Elemente dürfen den Wert nicht verringern, während Sie durch eine der beiden Sequenzen fortgeführt werden. Die resultierende Sequenz wird auch nach geordnet `operator<` . Mit dieser Member-Funktion können Sie zwei Sequenzen zusammenführen, die den Wert in eine Sequenz vergrößern, die ebenfalls den Wert erhöht.
 
-Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass die Sequenzen nach `pred`geordnet sind  -- `pred(X, Y)` für jedes `X` Element, das auf das Element `Y` in der Sequenz folgt, den Wert false aufweisen müssen. Sie verwenden Sie, um zwei Sequenzen zu zusammenführen, die nach einer Prädikat Funktion oder einem von Ihnen angegebenen Delegaten geordnet sind.
+Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass die Sequenzen nach dem-Element `pred`  --  `pred(X, Y)` `X` `Y` in der Sequenz nach "false" lauten müssen. Sie verwenden Sie, um zwei Sequenzen zu zusammenführen, die nach einer Prädikat Funktion oder einem von Ihnen angegebenen Delegaten geordnet sind.
 
-Beide Funktionen führen einen stabilen Merge aus. es werden keine Element Paare in einer der ursprünglich kontrollierten Sequenzen in der resultierenden gesteuerten Sequenz umgekehrt. Außerdem gilt: Wenn ein paar von Elementen `X` und `Y` in der resultierenden kontrollierten Sequenz eine äquivalente Reihenfolge aufweist--`!(X < Y) && !(X < Y)`, wird ein Element aus der ursprünglichen kontrollierten Sequenz vor einem Element aus der Sequenz angezeigt, die von *Rechts*gesteuert wird.
+Beide Funktionen führen einen stabilen Merge aus. es werden keine Element Paare in einer der ursprünglich kontrollierten Sequenzen in der resultierenden gesteuerten Sequenz umgekehrt. Wenn ein paar von Elementen `X` und `Y` in der resultierenden gesteuerten Sequenz eine entsprechende Reihenfolge aufweist, wird `!(X < Y) && !(X < Y)` ein Element aus der ursprünglichen kontrollierten Sequenz vor einem Element aus der Sequenz angezeigt, die von *Rechts*gesteuert wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -1658,12 +1658,12 @@ list<Value>% operator=(list<Value>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Der zu kopierende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
+Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann zurück **`*this`** . Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1805,7 +1805,7 @@ void push_back(value_type val);
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion fügt ein Element mit einem Wert `val` am Ende der kontrollierten Sequenz ein. Sie verwenden es, um ein weiteres Element an die Liste anzufügen.
+Die Member-Funktion fügt ein Element mit `val` dem Wert am Ende der kontrollierten Sequenz ein. Sie verwenden es, um ein weiteres Element an die Liste anzufügen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1995,12 +1995,12 @@ void remove(value_type val);
 
 #### <a name="parameters"></a>Parameter
 
-*val*<br/>
+*ster*<br/>
 Der Wert des zu entfernenden Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion entfernt ein Element in der gesteuerten Sequenz, für das `((System::Object^)val)->Equals((System::Object^)x)` true ist (sofern vorhanden). Sie verwenden Sie zum Löschen eines beliebigen Elements mit dem angegebenen Wert.
+Die Member-Funktion entfernt ein Element in der kontrollierten Sequenz, für das `((System::Object^)val)->Equals((System::Object^)x)` true ist (sofern vorhanden). Sie verwenden Sie zum Löschen eines beliebigen Elements mit dem angegebenen Wert.
 
 ### <a name="example"></a>Beispiel
 
@@ -2060,7 +2060,7 @@ Testet, welche Elemente entfernt werden sollen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion entfernt alle Elemente aus der kontrollierten Sequenz (erases) `X` für die `pred(X)` true ist. Sie verwenden Sie, um alle Elemente zu entfernen, die eine Bedingung erfüllen, die Sie als Funktion oder Delegat angeben.
+Die Member-Funktion entfernt alle Elemente aus der kontrollierten Sequenz (erases) `X` , für die " `pred(X)` true" ist. Sie verwenden Sie, um alle Elemente zu entfernen, die eine Bedingung erfüllen, die Sie als Funktion oder Delegat angeben.
 
 ### <a name="example"></a>Beispiel
 
@@ -2178,12 +2178,12 @@ void resize(size_type new_size, value_type val);
 *new_size*<br/>
 Die neue Größe der kontrollierten Sequenz.
 
-*val*<br/>
+*ster*<br/>
 Der Wert des Auffüllung-Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beide Element Funktionen stellen sicher, dass [List:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md)`()` nach wie vor *new_size*zurückgibt. Wenn die gesteuerte Sequenz länger dauern muss, fügt die erste Member-Funktion Elemente mit einem Wert `value_type()`an, während die zweite Element Funktion Elemente mit dem Wert *Val*anfügt. Damit die gesteuerte Sequenz kürzer wird, löschen beide Element Funktionen die letzte Element [Liste:: Size (STL/CLR)-](../dotnet/list-size-stl-clr.md)`() -` `new_size` Zeiten. Sie verwenden diese Option, um sicherzustellen, dass die Größe der kontrollierten Sequenz *new_size*ist, indem Sie die aktuelle gesteuerte Sequenz kürzen oder Auffüllen.
+Mit den Element Funktionen wird sichergestellt, dass [List:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) nach wie vor `()` *new_size*zurückgibt. Wenn die gesteuerte Sequenz länger dauern muss, fügt die erste Member-Funktion Elemente mit einem Wert an `value_type()` , während die zweite Element Funktion Elemente mit dem Wert *Val*anfügt. Damit die gesteuerte Sequenz kürzer wird, löschen beide Element Funktionen die letzten Elemente der [Liste:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) `() -` `new_size` . Sie verwenden diese Option, um sicherzustellen, dass die Größe der kontrollierten Sequenz *new_size*ist, indem Sie die aktuelle gesteuerte Sequenz kürzen oder Auffüllen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2281,7 +2281,7 @@ typedef T3 reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3`, das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
+Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3` , das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
 ### <a name="example"></a>Beispiel
 
@@ -2330,7 +2330,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur sicher sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [List:: Empty (STL/CLR)](../dotnet/list-empty-stl-clr.md)`()`.
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [List:: Empty (STL/CLR)](../dotnet/list-empty-stl-clr.md) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2438,9 +2438,9 @@ Vergleich für Element Paare.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion ordnet die Elemente in der gesteuerten Sequenz neu an, sodass Sie nach `operator<` sortiert werden.-Elemente verringern den Wert nicht, wenn Sie durch die Sequenz Fortschreiten. Mit dieser Member-Funktion Sortieren Sie die Sequenz in aufsteigender Reihenfolge.
+Die erste Member-Funktion ordnet die Elemente in der gesteuerten Sequenz so an, dass Sie nach `operator<` ---Elementen nicht in den Wert sinken, wenn Sie durch die Sequenz fortgeführt werden. Mit dieser Member-Funktion Sortieren Sie die Sequenz in aufsteigender Reihenfolge.
 
-Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass die Sequenz nach `pred` -- geordnet ist `pred(X, Y)` für jedes `X` Element, das auf das Element `Y` in der resultierenden Sequenz folgt, den Wert false hat. Sie verwenden Sie, um die Sequenz in einer Reihenfolge zu sortieren, die Sie durch eine Prädikat Funktion oder einen Delegaten angeben.
+Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass die Sequenz nach dem-Element `pred`  --  `pred(X, Y)` false ist, wenn es sich um ein beliebiges Element handelt, `X` das `Y` in der resultierenden Sequenz auf Sie verwenden Sie, um die Sequenz in einer Reihenfolge zu sortieren, die Sie durch eine Prädikat Funktion oder einen Delegaten angeben.
 
 Beide Funktionen führen eine stabile Sortierung durch. in der resultierenden gesteuerten Sequenz wird kein Element Paar in der ursprünglichen gesteuerten Sequenz umgekehrt.
 
@@ -2506,7 +2506,7 @@ Anfang des Bereichs, der zusammengeführt werden soll.
 *last*<br/>
 Das Ende des Bereichs, der zusammengeführt werden soll.
 
-*right*<br/>
+*Richting*<br/>
 Der Container, von dem aus ein Splice-
 
 *where*<br/>
@@ -2514,11 +2514,11 @@ WHERE in Container to splice before.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion fügt die Sequenz, die von gesteuert wird, vor dem Element in der kontrollierten Sequenz ein, auf das von *Where* *verwiesen wird.* Außerdem werden alle Elemente von *Rechts*entfernt. (`%right` darf `this`nicht gleich sein.) Sie verwenden Sie, um alle Listen in eine andere Liste aufzurufenden.
+Die erste Member-Funktion fügt die Sequenz, die von gesteuert wird, vor dem Element in der kontrollierten Sequenz ein, auf das von *Where* *verwiesen wird.* Außerdem werden alle Elemente von *Rechts*entfernt. ( `%right` darf nicht gleich sein **`this`** .) Sie verwenden Sie, um alle Listen in eine andere Liste aufzurufenden.
 
-Die zweite Member-Funktion entfernt das Element, auf das *zuerst* in der von *right* kontrollierten Sequenz verwiesen wird, und fügt es vor dem Element in der kontrollierten Sequenz ein, auf das von *Where*verwiesen wird. (Wenn `where` `==` `first` `||` `where` `== ++first`, erfolgt keine Änderung.) Sie verwenden Sie, um ein einzelnes Element einer Liste in eine andere Liste aufzurufenden.
+Die zweite Member-Funktion entfernt das Element, auf das *zuerst* in der von *right* kontrollierten Sequenz verwiesen wird, und fügt es vor dem Element in der kontrollierten Sequenz ein, auf das von *Where*verwiesen wird. (Wenn `where` `==` `first` `||` `where` `== ++first`, es findet keine Änderung statt.) Sie verwenden Sie, um ein einzelnes Element einer Liste in eine andere Liste aufzurufenden.
 
-Die dritte Member-Funktion fügt den von [`first`, `last`) festgelegten Teil der Sequenz aus der Sequenz ein, die von *direkt* vor dem Element in der kontrollierten Sequenz gesteuert wird, auf das von *Where*verwiesen wird. Außerdem wird der ursprüngliche Unterbereich aus der von *Rechts*kontrollierten Sequenz entfernt. (Wenn `right` `==` `this`, darf der Bereich [`first`, `last`) nicht das Element enthalten, auf das von *Where*verwiesen wird.) Sie verwenden Sie, um eine unter Sequenz von NULL oder mehr Elementen aus einer Liste in eine andere aufzurufenden.
+Die dritte Member-Funktion fügt den von [,) festgelegten durch [ `first` , `last` ) aus der *right* Sequenz ein, die von der Sequenz gesteuert wird, die *where*von der-Position gesteuert wird. Außerdem wird der ursprüngliche Unterbereich aus der von *Rechts*kontrollierten Sequenz entfernt. (Wenn `right == this` , darf der Bereich [ `first` , `last` ) nicht das Element enthalten, auf das von *Where*verwiesen wird.) Sie verwenden Sie, um eine unter Sequenz von NULL oder mehr Elementen aus einer Liste in eine andere aufzurufenden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2589,12 +2589,12 @@ void swap(list<Value>% right);
 
 #### <a name="parameters"></a>Parameter
 
-*right*<br/>
+*Richting*<br/>
 Container für den Tausch von Inhalten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen `*this` und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
+Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen **`*this`** und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2709,9 +2709,9 @@ Vergleich für Element Paare.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion entfernt alle Elemente, die mit dem vorangehenden Element übereinstimmen, aus der kontrollierten Sequenz (erases), wenn das Element `X` vor dem Element `Y` und `X == Y`, die Member-Funktion entfernt `Y`. Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz benachbarter Elemente zu entfernen, die gleich sind. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz sortiert ist, z. b. durch Aufrufen von [List:: Sort (STL/CLR)-](../dotnet/list-sort-stl-clr.md)`()`, gibt die Member-Funktion nur Elemente mit eindeutigen Werten aus. (Sie beenden – englisch: to terminate – die Abfrage, daher der Name.)
+Die erste Member-Funktion entfernt jedes Element aus der kontrollierten Sequenz (erases), das mit dem vorangehenden Element übereinstimmt, `X` `Y` und `X == Y` die Element Funktion entfernt `Y` . Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz benachbarter Elemente zu entfernen, die gleich sind. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz sortiert ist, z. b. durch Aufrufen von [List:: Sort (STL/CLR)](../dotnet/list-sort-stl-clr.md) `()` , gibt die Member-Funktion nur Elemente mit eindeutigen Werten aus. (Sie beenden – englisch: to terminate – die Abfrage, daher der Name.)
 
-Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass Sie jedes Element `Y` nach einem Element `X` entfernt, für das `pred(X, Y)`. Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz angrenzender Elemente zu entfernen, die eine Prädikat Funktion oder einen von Ihnen angegebenen Delegaten erfüllen. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz geordnet ist, z. b. durch Aufrufen von `sort(pred)`, gibt die Member-Funktion nur Elemente aus, die keine äquivalente Reihenfolge mit anderen Elementen aufweisen.
+Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass Sie jedes Element `Y` nach einem Element entfernt, `X` für das `pred(X, Y)` . Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz angrenzender Elemente zu entfernen, die eine Prädikat Funktion oder einen von Ihnen angegebenen Delegaten erfüllen. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz geordnet ist, z. b. durch Aufrufen von, gibt die Member-Funktion nur Elemente aus, für die keine `sort(pred)` äquivalente Reihenfolge mit anderen Elementen vorliegt.
 
 ### <a name="example"></a>Beispiel
 
@@ -2815,15 +2815,15 @@ template<typename Value>
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(left == right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden Listenelement Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(left == right)` . Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden Listenelement Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2870,7 +2870,7 @@ a b d
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-list-stlclr"></a><a name="op_lt"></a>Operator&lt; (Liste) (STL/CLR)
+## <a name="operatorlt-list-stlclr"></a><a name="op_lt"></a>Operator &lt; (List) (STL/CLR)
 
 Liste kleiner als-Vergleich.
 
@@ -2884,15 +2884,15 @@ template<typename Value>
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position `i` für die `!(right[i] < left[i])` auch true ist, dass `left[i] < right[i]`. Andernfalls wird zurückgegeben, `left->size() < right->size()` Sie es verwenden, um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Listenelement Weise verglichen werden.
+Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls wird zurückgegeben, `left->size() < right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Listenelement Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2939,7 +2939,7 @@ a b d
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-list-stlclr"></a><a name="op_lteq"></a>Operator&lt;= (List) (STL/CLR)
+## <a name="operatorlt-list-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (List) (STL/CLR)
 
 Liste kleiner oder gleich-Vergleich.
 
@@ -2953,15 +2953,15 @@ template<typename Value>
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(right < left)`zurück. Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden Listenelement Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(right < left)` . Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden Listenelement Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -3022,15 +3022,15 @@ template<typename Value>
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i``left[i] ==` `right[i]`. Sie verwenden es, um zu überprüfen, ob *Links* mit *right* dem Element by-Element verglichen werden.
+Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i` `left[i] ==` `right[i]` . Sie verwenden es, um zu überprüfen, ob *Links* mit *right* dem Element by-Element verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -3077,7 +3077,7 @@ a b d
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-list-stlclr"></a><a name="op_gt"></a>Operator&gt; (Liste) (STL/CLR)
+## <a name="operatorgt-list-stlclr"></a><a name="op_gt"></a>Operator &gt; (List) (STL/CLR)
 
 Die Liste ist größer als der Vergleich.
 
@@ -3091,15 +3091,15 @@ template<typename Value>
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `right` `<` `left`zurück. Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden Listenelement Weise verglichen werden.
+Die Operator Funktion gibt zurück `right` `<` `left` . Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden Listenelement Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -3146,7 +3146,7 @@ a b d
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-list-stlclr"></a><a name="op_gteq"></a>Operator&gt;= (List) (STL/CLR)
+## <a name="operatorgt-list-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (List) (STL/CLR)
 
 Liste größer oder gleich-Vergleich.
 
@@ -3160,15 +3160,15 @@ template<typename Value>
 
 #### <a name="parameters"></a>Parameter
 
-*left*<br/>
+*linken*<br/>
 Linker zu vergleichender Container.
 
-*right*<br/>
+*Richting*<br/>
 Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt `!(left` `<` `right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden Listenelement Weise verglichen werden.
+Die Operator Funktion gibt zurück `!(left` `<` `right)` . Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden Listenelement Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 

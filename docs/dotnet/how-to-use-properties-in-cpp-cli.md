@@ -1,24 +1,24 @@
 ---
-title: 'Vorgehensweise: Verwenden von Eigenschaften in C++ / CLI'
+title: 'Gewusst wie: Verwenden von Eigenschaften in C++/CLI'
 ms.date: 07/21/2017
 helpviewer_keywords:
 - simple properties
 - properties [C++], simple
 ms.assetid: f5d82547-e214-4f05-9e1b-ddb6d0dc5e4c
-ms.openlocfilehash: 47cfd4c633942874b7b349da5635b34ea42090ee
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: 2b5543e9a9ff70e827778adf2aee89cbc96f0c1d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65447325"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225669"
 ---
-# <a name="how-to-use-properties-in-ccli"></a>Vorgehensweise: Verwenden von Eigenschaften in C++ / CLI
+# <a name="how-to-use-properties-in-ccli"></a>Gewusst wie: Verwenden von Eigenschaften in C++/CLI
 
-In diesem Artikel veranschaulicht, wie Eigenschaften in C++ / CLI.
+In diesem Artikel wird die Verwendung von Eigenschaften in C++/CLI. beschrieben.
 
-## <a name="basic-properties"></a>Basiseigenschaften
+## <a name="basic-properties"></a>Grundlegende Eigenschaften
 
-Für grundlegende Eigenschaften – diejenigen, die lediglich zuweisen und einen privaten Datenmember abzurufen, müssen Sie nicht explizit definieren GET-Anforderung und die Accessor-Funktionen festgelegt werden, da der Compiler automatisch bei nur den Datentyp der Eigenschaft zur Verfügung stehen. Dieser Code veranschaulicht eine grundlegende Eigenschaft:
+Für grundlegende Eigenschaften – diejenigen, die lediglich einen privaten Datenmember zuweisen und abrufen – müssen Sie die Get-und Set-Accessor-Funktionen nicht explizit definieren, da der Compiler Sie automatisch bereitstellt, wenn nur der Datentyp der Eigenschaft angegeben wird. Dieser Code veranschaulicht eine grundlegende Eigenschaft:
 
 ```cpp
 // SimpleProperties.cpp
@@ -43,7 +43,7 @@ c->Size = 111
 
 ## <a name="static-properties"></a>Statische Eigenschaften
 
-Dieses Codebeispiel veranschaulicht das Deklarieren und verwenden eine statische Eigenschaft.  Eine statische Eigenschaft kann nur statische Member der Klasse zugreifen.
+Dieses Codebeispiel zeigt, wie Sie eine statische Eigenschaft deklarieren und verwenden.  Eine statische Eigenschaft kann nur auf statische Member ihrer Klasse zugreifen.
 
 ```cpp
 // mcppv2_property_3.cpp
@@ -84,13 +84,13 @@ int main() {
 
 ## <a name="indexed-properties"></a>Indizierte Eigenschaften
 
-Eine indizierte Eigenschaft macht in der Regel eine Datenstruktur, die mit einem Indexoperator zugegriffen wird.
+Eine indizierte Eigenschaft macht in der Regel eine Datenstruktur verfügbar, auf die über einen Index Operator zugegriffen wird.
 
-Bei Verwendung eine indizierte Standardeigenschaft, können Sie die Datenstruktur nur durch einen Verweis auf den Namen der Klasse zugreifen, aber wenn Sie eine benutzerdefinierte indizierte Eigenschaft verwenden, müssen Sie zum Angeben der Eigenschaftenname, der die Datenstruktur zuzugreifen.
+Wenn Sie eine indizierte Standard Eigenschaft verwenden, können Sie auf die Datenstruktur zugreifen, indem Sie auf den Klassennamen verweisen. Wenn Sie jedoch eine benutzerdefinierte indizierte Eigenschaft verwenden, müssen Sie den Namen der Eigenschaft angeben, um auf die Datenstruktur zuzugreifen.
 
-Informationen dazu, wie Sie einen Indexer zu verwenden, die geschrieben wird, im C#, finden Sie unter [Vorgehensweise: Nutzen einer C# Indexers (C++ / CLI)](../dotnet/how-to-consume-a-csharp-indexer-cpp-cli.md).
+Informationen dazu, wie Sie einen in c# geschriebenen Indexer nutzen, finden Sie unter Gewusst [wie: Verwenden eines c#-Indexers (C++/CLI)](../dotnet/how-to-consume-a-csharp-indexer-cpp-cli.md).
 
-In diesem Codebeispiel wird veranschaulicht die Verwendung von standardmäßigen und benutzerdefinierten indizierte Eigenschaften:
+Dieses Codebeispiel zeigt, wie standardmäßige und benutzerdefinierte indizierte Eigenschaften verwendet werden:
 
 ```cpp
 // mcppv2_property_2.cpp
@@ -153,7 +153,7 @@ int main() {
 [ 0 2 4 6 8 ]
 ```
 
-Das nächste Beispiel zeigt, wie Sie mithilfe der Standardindexer aufrufen, die `this` Zeiger.
+Im nächsten Beispiel wird gezeigt, wie der Standardindexer mit dem-Zeiger aufgerufen wird **`this`** .
 
 ```cpp
 // call_default_indexer_through_this_pointer.cpp
@@ -177,7 +177,7 @@ private:
 };
 ```
 
-Dieses Beispiel zeigt, wie Sie mit <xref:System.Reflection.DefaultMemberAttribute> der Standardindexer angeben:
+In diesem Beispiel wird gezeigt, wie verwendet wird <xref:System.Reflection.DefaultMemberAttribute> , um den Standardindexer anzugeben:
 
 ```cpp
 // specify_default_indexer.cpp
@@ -193,7 +193,7 @@ public ref struct Squares {
 };
 ```
 
-Im nächste Beispiel verwendet die Metadaten, die im vorherigen Beispiel erstellt wird.
+Im nächsten Beispiel werden die Metadaten verwendet, die im vorherigen Beispiel erstellt wurden.
 
 ```cpp
 // consume_default_indexer.cpp
@@ -211,7 +211,7 @@ int main() {
 
 ## <a name="virtual-properties"></a>Virtuelle Eigenschaften
 
-Dieses Codebeispiel zeigt das Deklarieren und Verwenden virtueller Eigenschaften:
+Dieses Codebeispiel zeigt, wie Sie virtuelle Eigenschaften deklarieren und verwenden:
 
 ```cpp
 // mcppv2_property_4.cpp
@@ -257,11 +257,11 @@ int main() {
 43
 ```
 
-## <a name="abstract-and-sealed-properties"></a>Abstrakte und versiegelte-Eigenschaften
+## <a name="abstract-and-sealed-properties"></a>Abstrakte und versiegelte Eigenschaften
 
-Obwohl die [abstrakte](../extensions/abstract-cpp-component-extensions.md) und [versiegelten](../extensions/sealed-cpp-component-extensions.md) Schlüsselwörter werden als gültig ist, in der ECMA-angegeben C++/CLI-Spezifikation für die Microsoft C++ -Compiler kann nicht angegeben werden sie auf triviale Eigenschaften noch auf die Eigenschaftendeklaration einer nicht trivialen Eigenschaft.
+Obwohl die Schlüsselwörter [abstract](../extensions/abstract-cpp-component-extensions.md) und [sealed](../extensions/sealed-cpp-component-extensions.md) in der ECMA C++/CLI Specification als gültig angegeben sind, können Sie Sie für den Microsoft C++-Compiler nicht in trivialen Eigenschaften oder in der Eigenschafts Deklaration einer nicht trivialen Eigenschaft angeben.
 
-Um eine versiegelte oder abstrakte Eigenschaft deklarieren, müssen Sie eine nicht triviale Eigenschaft definieren und geben Sie dann die `abstract` oder `sealed` Schlüsselwort für die Get- und set Accessorfunktionen.
+Wenn Sie eine versiegelte oder abstrakte Eigenschaft deklarieren möchten, müssen Sie eine nicht triviale Eigenschaft definieren und dann das- **`abstract`** oder **`sealed`** -Schlüsselwort für die Get-und set-Accessorfunktionen angeben.
 
 ```cpp
 // properties_abstract_sealed.cpp
@@ -326,7 +326,7 @@ int main() {
 
 ## <a name="multidimensional-properties"></a>Mehrdimensionale Eigenschaften
 
-Sie können Eigenschaften für mehrdimensionale verwenden, um Accessormethoden zu definieren, die eine standardisierte Reihe von Parametern annehmen.
+Sie können mehrdimensionale Eigenschaften verwenden, um eigenschaftenaccessormethoden zu definieren, die eine nicht standardmäßige Anzahl von Parametern annehmen.
 
 ```cpp
 // mcppv2_property_5.cpp
@@ -368,9 +368,9 @@ int main() {
 1.1
 ```
 
-## <a name="overloading-property-accessors"></a>Überladen von eigenschaftenzugriffsmethoden
+## <a name="overloading-property-accessors"></a>Überladen von Eigenschaftenaccessoren
 
-Das folgende Beispiel zeigt, wie indizierte Eigenschaften überladen wird.
+Im folgenden Beispiel wird gezeigt, wie indizierte Eigenschaften überladen werden.
 
 ```cpp
 // mcppv2_property_6.cpp
@@ -409,4 +409,4 @@ int main() {
 
 ## <a name="see-also"></a>Siehe auch
 
-[Eigenschaft](../extensions/property-cpp-component-extensions.md)
+[property](../extensions/property-cpp-component-extensions.md)

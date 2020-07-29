@@ -1,23 +1,23 @@
 ---
-title: 'Vorgehensweise: Verwenden von Safe_cast in C++/CLI'
+title: 'Vorgehensweise: Verwenden von safe_cast in C++/CLI'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - safe_cast keyword [C++], upcasting
 ms.assetid: 0fbc87d8-ecdf-4cd5-81f4-0d8cc18e2aff
-ms.openlocfilehash: 66faadba9530bc7f3c12513277582e405e1b1b34
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 56ac19871bcdc5162b959f6d60103387551ac2a8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389085"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225656"
 ---
-# <a name="how-to-use-safecast-in-ccli"></a>Vorgehensweise: Verwenden von Safe_cast in C++/CLI
+# <a name="how-to-use-safe_cast-in-ccli"></a>Vorgehensweise: Verwenden von safe_cast in C++/CLI
 
-In diesem Artikel wird gezeigt, wie mit "safe_cast" in C++/CLI-Anwendungen. Informationen zu "safe_cast" in C++/CX, finden Sie unter ["safe_cast"](../extensions/safe-cast-cpp-component-extensions.md).
+In diesem Artikel wird gezeigt, wie Sie safe_cast in C++/CLI-Anwendungen verwenden. Informationen zu safe_cast in C++/CX finden Sie unter [safe_cast](../extensions/safe-cast-cpp-component-extensions.md).
 
 ## <a name="upcasting"></a>Umwandeln
 
-Eine Typumwandlung nach oben ist die Umwandlung eines abgeleiteten Typs auf eine ihrer Basisklassen. Diese Umwandlung ist sicher und eine explizite Umwandlungsnotation ist nicht erforderlich. Das folgende Beispiel zeigt, wie Sie eine Typumwandlung nach oben, mit ausführen `safe_cast` und ohne.
+Ein umgewandelt ist eine Umwandlung von einem abgeleiteten Typ in eine seiner Basisklassen. Diese Umwandlung ist sicher und erfordert keine explizite Umwandlungs Notation. Im folgenden Beispiel wird gezeigt, wie ein Upcast mit und ohne diesen Vorgang durchgeführt wird `safe_cast` .
 
 ```cpp
 // safe_upcast.cpp
@@ -66,9 +66,9 @@ in C::Test
 in B::Test2
 ```
 
-## <a name="downcasting"></a>Typumwandlung
+## <a name="downcasting"></a>Dass
 
-Eine Umwandlung ist eine Umwandlung von einer Basisklasse in eine Klasse, die von der Basisklasse abgeleitet ist.  Eine Umwandlung ist sicher sind, nur, wenn das Objekt, das zur Laufzeit adressiert ist tatsächlich ein abgeleitetes Klassenobjekt richtet.  Im Gegensatz zu `static_cast`, `safe_cast` eine dynamische Prüfung ausführt, und löst eine <xref:System.InvalidCastException> , wenn die Konvertierung schlägt fehl.
+Ein Typumwandlung ist eine Umwandlung von einer Basisklasse in eine Klasse, die von der Basisklasse abgeleitet ist.  Ein Typumwandlung ist nur dann sicher, wenn das Objekt, das zur Laufzeit adressiert wird, tatsächlich ein abgeleitetes Klassenobjekt adressiert.  Anders **`static_cast`** als `safe_cast` führt eine dynamische Überprüfung durch und löst aus, <xref:System.InvalidCastException> Wenn die Konvertierung fehlschlägt.
 
 ```cpp
 // safe_downcast.cpp
@@ -119,9 +119,9 @@ in C::Test()
 in B::Test2()
 ```
 
-## <a name="safecast-with-user-defined-conversions"></a>"safe_cast" mit benutzerdefinierten Konvertierungen
+## <a name="safe_cast-with-user-defined-conversions"></a>safe_cast mit benutzerdefinierten Konvertierungen
 
-Das nächste Beispiel zeigt, wie Sie verwenden können `safe_cast` zum Aufrufen von benutzerdefinierten Konvertierungen.
+Im nächsten Beispiel wird gezeigt, wie Sie verwenden können `safe_cast` , um benutzerdefinierte Konvertierungen aufzurufen.
 
 ```cpp
 // safe_cast_udc.cpp
@@ -174,13 +174,13 @@ in operator R^(V& v
 in operator V^(R^ r)
 ```
 
-## <a name="safecast-and-boxing-operations"></a>Safe_cast und Boxing-Vorgänge
+## <a name="safe_cast-and-boxing-operations"></a>safe_cast-und boxingvorgänge
 
 ### <a name="boxing"></a>Boxing
 
-Boxing ist als eine Compiler injizierten, eine benutzerdefinierte Konvertierung definiert.  Aus diesem Grund können Sie `safe_cast` auf das Feld eines Werts auf dem CLR-Heap.
+Boxing ist als eine vom Compiler eingefügte, benutzerdefinierte Konvertierung definiert.  Daher können Sie verwenden `safe_cast` , um einen Wert für den CLR-Heap zu verwenden.
 
-Das folgende Beispiel zeigt die Boxing mit einfachen und benutzerdefinierte Werttypen.  Ein `safe_cast` Felder eine Werttypvariable, die auf den systemeigenen Stapel ist, damit sie eine Variable für die Garbage collection-Heap zugewiesen werden kann.
+Das folgende Beispiel zeigt das Boxing mit einfachen und benutzerdefinierten Werttypen.  Ein `safe_cast` Kästchen eine Werttyp Variable, die sich auf dem systemeigenen Stapel befindet, sodass Sie einer Variablen im Heap der Garbage Collection zugewiesen werden kann.
 
 ```cpp
 // safe_cast_boxing.cpp
@@ -206,7 +206,7 @@ int main() {
 }
 ```
 
-Das nächste Beispiel zeigt, dass Boxing höhere Priorität über eine benutzerdefinierte Konvertierung in einen `safe_cast` Vorgang.
+Im nächsten Beispiel wird gezeigt, dass Boxing über eine benutzerdefinierte Konvertierung in einem- `safe_cast` Vorgang Priorität hat.
 
 ```cpp
 // safe_cast_boxing_2.cpp
@@ -241,9 +241,9 @@ int main() {
 
 ### <a name="unboxing"></a>Unboxing
 
-Unboxing wird als eine Compiler injizierten, eine benutzerdefinierte Konvertierung definiert.  Aus diesem Grund können Sie `safe_cast` ein Werts für die CLR-Heap Unboxing zu konvertieren.
+Unboxing ist als eine vom Compiler eingefügte, benutzerdefinierte Konvertierung definiert.  Daher können Sie verwenden, `safe_cast` um einen Wert für den CLR-Heap zu entheften.
 
-Im Gegensatz zu Boxing, unboxing muss jedoch eine benutzerdefinierte Konvertierung beim Unboxing handelt es explizit sein – d. h. durch durchgeführt werden muss eine `static_cast`C- Format umgewandelt, oder `safe_cast`; unboxing kann nicht ausgeführt werden implizit.
+Unboxing ist eine benutzerdefinierte Konvertierung, aber im Gegensatz zu Boxing muss das Unboxing explizit erfolgen – d. h., es muss von einer- **`static_cast`** , C-oder C-Umwandlung ausgeführt werden, oder das `safe_cast` Unboxing kann nicht implizit ausgeführt werden.
 
 ```cpp
 // safe_cast_unboxing.cpp
@@ -254,7 +254,7 @@ int main() {
 }
 ```
 
-Das folgende Beispiel zeigt, unboxing mit Werttypen und primitive Typen.
+Das folgende Beispiel zeigt das Unboxing mit Werttypen und primitiven Typen.
 
 ```cpp
 // safe_cast_unboxing_2.cpp
@@ -300,9 +300,9 @@ int main() {
 }
 ```
 
-## <a name="safecast-and-generic-types"></a>Safe_cast und generischen Typen
+## <a name="safe_cast-and-generic-types"></a>safe_cast und generische Typen
 
-Das nächste Beispiel zeigt, wie Sie verwenden können `safe_cast` eine Typumwandlung mit einem generischen Typ durchführen.
+Im nächsten Beispiel wird gezeigt, wie Sie verwenden können `safe_cast` , um einen Typumwandlung mit einem generischen Typ auszuführen.
 
 ```cpp
 // safe_cast_generic_types.cpp
