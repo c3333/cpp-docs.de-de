@@ -6,14 +6,14 @@ f1_keywords:
 - -std
 - VC.Project.VCCLCompilerTool.CppLanguageStandard
 ms.assetid: 0acb74ba-1aa8-4c05-b96c-682988dc19bd
-ms.openlocfilehash: ddb0fc9ad4880ed317a28d7aec5eba1669eabbc5
-ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
+ms.openlocfilehash: eef44858064b89d4a836c80a48552599bceec242
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507065"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223823"
 ---
-# <a name="std-specify-language-standard-version"></a>/std (Standardversion für die Sprache festlegen)
+# <a name="std-specify-language-standard-version"></a>`/std`(Standard Version der Sprache angeben)
 
 Aktivieren Sie unterstützte Features der Programmiersprache C++ aus der angegebenen Version des C++-Sprachstandards.
 
@@ -29,9 +29,9 @@ Die **`/std`** Option ist in Visual Studio 2017 und höher verfügbar. Sie wird 
 
 Die Standard **`/std:c++14`** Option aktiviert den Satz von c++ 14-Funktionen, die vom MSVC-Compiler implementiert werden. Mit dieser Option wird die Unterstützung von Compiler-und Standardbibliotheken für Funktionen deaktiviert, die in neueren Versionen des Sprachstandards geändert oder neu sind. Einige c++ 17-Features, die bereits in vorherigen Versionen des MSVC-Compilers implementiert wurden, werden nicht deaktiviert. Um wichtige Änderungen für Benutzer zu vermeiden, die bereits Abhängigkeiten von den in oder vor Visual Studio 2015 Update 2 verfügbaren Features übernommen haben, bleiben diese Features aktiviert, wenn die **`/std:c++14`** Option angegeben wird:
 
-- [Regeln für „auto“ mit „braced-init-lists“](https://wg21.link/n3922)
+- [Regeln für `auto` mit geschweizten Klammern-init-Lists](https://wg21.link/n3922)
 
-- [typename in Vorlagen-Vorlagenparameter](https://wg21.link/n4051)
+- [`typename`in Vorlagen Vorlagen-Parametern](https://wg21.link/n4051)
 
 - [Entfernen von Trigraphen](https://wg21.link/n4086)
 
@@ -63,7 +63,7 @@ Die **`/std:c++14`** **`/std:c++latest`** Optionen und sind ab Visual Studio 201
 
 1. Wählen Sie unter **C++-Sprachstandard** in der Dropdownliste den zu unterstützenden Sprachstandard und dann **OK** oder **Übernehmen** aus, um Ihre Änderungen zu speichern.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

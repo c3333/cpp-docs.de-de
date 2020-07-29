@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - _com_ptr_t method [C++]
 ms.assetid: 0c00620a-28d2-4f60-ae4a-1696be36137e
-ms.openlocfilehash: 96589d8be56b81e78ea7c474aea24803cc56ab21
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e8d3d09bf385cb9fdaa02d460952fadbf83bc193
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180484"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233794"
 ---
 # <a name="_com_ptr_t_com_ptr_t"></a>_com_ptr_t::_com_ptr_t
 
@@ -139,16 +139,16 @@ explicit _com_ptr_t(
 Ein unformatierter Schnittstellenzeiger.
 
 *abadressf*<br/>
-TRUE gibt an, dass `AddRef` aufgerufen wird, um den Verweis Zähler des gekapselten Schnittstellen Zeigers zu erhöhen.
+Wenn **`true`** , `AddRef` wird aufgerufen, um den Verweis Zähler für den gekapselten Schnittstellen Zeiger zu erhöhen.
 
-*cp*<br/>
+*erfolgen*<br/>
 Ein **_com_ptr_t** -Objekt.
 
-*p*<br/>
+*cker*<br/>
 Ein unformatierter Schnittstellen Zeiger, dessen Typ sich vom Typ des intelligenten Zeigers dieses **_com_ptr_t** Objekts unterscheidet.
 
 *varSrc*<br/>
-Ein `_variant_t` -Objekt.
+Ein `_variant_t`-Objekt.
 
 *CLSID*<br/>
 Der `CLSID` einer Co-Klasse.
@@ -157,13 +157,13 @@ Der `CLSID` einer Co-Klasse.
 Kontext für die Ausführung von ausführbarem Code.
 
 *lpcStr*<br/>
-Eine Multibytezeichenfolge, die entweder eine `CLSID` (beginnend mit " **{** ") oder eine `ProgID`enthält.
+Eine Multibytezeichenfolge, die entweder eine `CLSID` (beginnend mit "**{**") oder enthält `ProgID` .
 
 *pouter*<br/>
 Das äußere unbekannte für die [Aggregation](/windows/win32/com/aggregation).
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_com_ptr_t-Klasse](../cpp/com-ptr-t-class.md)

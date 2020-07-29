@@ -8,23 +8,23 @@ helpviewer_keywords:
 - SBCS and MBCS data types
 - data types [C], MBCS and SBCS
 ms.assetid: 4c3ef9da-e397-48d4-800e-49dba36db171
-ms.openlocfilehash: 2d73155e36909efb1a7261f9fe45c2431525437a
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 72215b7a3fff638daf02f136e3a107ce8a8a00d5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57742907"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233911"
 ---
 # <a name="sbcs-and-mbcs-data-types"></a>SBCS- und MBCS-Datentypen
 
-Jede Microsoft MBCS-Laufzeitbibliotheksroutine, die nur ein Multibytezeichen oder ein Byte eines Multibytezeichens verarbeitet, erwartet ein `unsigned int`-Argument (wobei 0x00 <= Zeichenwert <= 0xFFFF und 0x00 <= Bytewert <= 0xFF ). Eine MBCS-Routine, die Multibyte-Bytes oder -zeichen in einem Zeichenfolgenkontext verarbeitet, erwartet eine Multibyte-Zeichenfolge, um als `unsigned char`-Zeiger dargestellt zu werden.
+Jede Microsoft MBCS-Lauf Zeit Bibliotheks Routine, die nur ein Multibytezeichen oder ein Byte eines multibytezeichens verarbeitet, erwartet ein **`unsigned int`** Argument (wobei 0x00 <= Zeichen Wert <= 0xFFFF und 0x00 <= Bytewert <= 0xFF). Eine MBCS-Routine, die Multibytezeichen-Bytes oder-Zeichen in einem Zeichen folgen Kontext verarbeitet, erwartet, dass eine Multibytezeichenfolge als Zeiger dargestellt wird **`unsigned char`** .
 
 > [!CAUTION]
-> Jedes Byte von einem Multibytezeichen kann in einem 8-Bit-**char** dargestellt werden. Allerdings ist ein SBCS- oder MBCS-Einzelbytezeichen vom Typ **char** mit einem Wert größer als 0x7F negativ. Wenn ein solches Zeichen direkt in einen **int**- oder **long**-Datentyp konvertiert wird, wird das Ergebnis vom Compiler signaturerweitert und kann daher zu unerwarteten Ergebnissen führen.
+> Jedes Byte eines multibytezeichens kann in einem 8-Bit-Zeichen dargestellt werden **`char`** . Allerdings ist ein SBCS-oder MBCS-Einzel Byte Zeichen vom Typ **`char`** mit einem Wert größer als 0x7F negativ. Wenn ein solches Zeichen direkt in ein **`int`** oder ein konvertiert wird **`long`** , wird das Ergebnis vom Compiler mit Vorzeichen erweitert und kann daher unerwartete Ergebnisse liefern.
 
-Aus diesem Grund empfiehlt sich, ein Byte eines Multibytezeichens als 8-Bit-`unsigned char` darzustellen. Zum Vermeiden eines negativen Ergebnisses können Sie alternativ ein Einzelbytezeichen vom Typ **char** in `unsigned char` konvertieren, bevor Sie es in den Datentyp **int** oder **long** konvertieren.
+Daher ist es am besten, ein Byte eines multibytezeichens als 8-Bit darzustellen **`unsigned char`** . Um ein negatives Ergebnis zu vermeiden, konvertieren Sie einfach ein Einzel Byte Zeichen vom Typ in ein-Zeichen, **`char`** **`unsigned char`** bevor Sie es in eine **`int`** oder eine konvertieren **`long`** .
 
-Da für einige SBCS-Funktionen zur Zeichenfolgenbehandlung **char**<strong>\*</strong>-Parameter (mit Vorzeichen) erforderlich sind, wird bei der Definition von **_MBCS** eine Compilerwarnung ausgegeben, die auf einen Typenkonflikt hinweist. Es gibt drei Möglichkeiten, diese Warnung zu vermeiden, die in der Reihenfolge ihrer Effizienz aufgeführt werden:
+Da einige Funktionen zur Verarbeitung von SBCS-Zeichen folgen Parameter (signiert) akzeptieren **`char`** <strong>\*</strong> , wird eine Compilerwarnung des Typs nicht übereinstimmen, wenn **_MBCS** definiert wird. Es gibt drei Möglichkeiten, diese Warnung zu vermeiden, die in der Reihenfolge ihrer Effizienz aufgeführt werden:
 
 1. Verwenden Sie die typsicheren Inlinefunktionen in TCHAR.H. Dies ist das Standardverhalten.
 

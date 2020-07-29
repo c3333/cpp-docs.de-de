@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3737
 ms.assetid: ca2aeb23-2491-4ccb-8838-884abf7065c8
-ms.openlocfilehash: 25dbb8897db45cbddaaf7f0530bcb2a8653b03cf
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 6b61904fac09145ba749138a730603fcfdbb862d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74752794"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223381"
 ---
 # <a name="compiler-error-c3737"></a>Compilerfehler C3737
 
 "Delegat": ein Delegat hat möglicherweise keine explizite Aufruf Konvention.
 
-Sie können die [Aufruf Konvention](../../cpp/calling-conventions.md) für eine `delegate`nicht angeben.
+Sie können die [Aufruf Konvention](../../cpp/calling-conventions.md) für nicht angeben **`delegate`** .
 
 ## <a name="example"></a>Beispiel
 

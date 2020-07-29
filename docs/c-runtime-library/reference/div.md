@@ -28,12 +28,12 @@ helpviewer_keywords:
 - dividing integers
 - remainder computing
 ms.assetid: 8ae80d97-54fd-499e-b14c-e30993b58119
-ms.openlocfilehash: 5b40fa0c4cc9cdf0c0de0f6af21da04b0c70369f
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 24432ec1514f6cd2d569fd5752a8ed7118059d6a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70937694"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234223"
 ---
 # <a name="div-ldiv-lldiv"></a>div, ldiv, lldiv
 
@@ -77,13 +77,13 @@ Der Nenner.
 
 ## <a name="return-value"></a>Rückgabewert
 
-mithilfe von Argumenten des Typs **int** aufgerufene **div** gibt eine Struktur vom Typ **div_t**zurück, die den Quotienten und den Rest enthält. Der Rückgabewert mit Argumenten vom Typ **Long** ist **ldiv_t**, und der Rückgabewert mit Argumenten vom Typ **Long** **Long** ist **lldiv_t**. **div_t**, **ldiv_t**und **lldiv_t** sind in \<STDLIB. h > definiert.
+**div** , das mithilfe von Argumenten des Typs aufgerufen **`int`** wurde, gibt eine Struktur vom Typ **div_t**zurück, die den Quotienten und den Rest enthält. Der Rückgabewert mit Argumenten vom Typ **`long`** ist **ldiv_t**, und der Rückgabewert mit Argumenten des Typs **`long long`** ist **lldiv_t**. **div_t**, **ldiv_t**und **lldiv_t** sind in definiert \<stdlib.h> .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **div** -Funktion dividiert den *Zahl* durch *denom* und berechnet dadurch den Quotienten und den Rest. Die [div_t](../../c-runtime-library/standard-types.md) -Struktur enthält den Quotienten, **quot**und den Rest, **REM**. Das Zeichen des Quotienten entspricht dem Zeichen des mathematischen Quotienten. Der absolute Wert ist die größte ganze Zahl, die kleiner ist als der absolute Wert des mathematischen Quotienten. Wenn der Nenner 0 ist, wird das Programm mit einer Fehlermeldung beendet.
+Die **div** -Funktion dividiert den *Zahl* durch *denom* und berechnet dadurch den Quotienten und den Rest. Die [div_t](../../c-runtime-library/standard-types.md) Struktur enthält den Quotienten, **quot**und den Rest, **REM**. Das Vorzeichen des Quotienten entspricht dem des mathematischen Quotienten. Der absolute Wert ist die größte ganze Zahl, die kleiner ist als der absolute Wert des mathematischen Quotienten. Wenn der Nenner 0 ist, wird das Programm mit einer Fehlermeldung beendet.
 
-Die über Ladungen von **div** , die Argumente vom Typ " **Long** " oder " **Long** **Long** " C++ akzeptieren, sind nur für Code verfügbar. Die Rückgabe Typen [ldiv_t](../../c-runtime-library/standard-types.md) und [lldiv_t](../../c-runtime-library/standard-types.md) enthalten die Member **quot** und **REM**, die die gleiche Bedeutung wie die Member von **div_t**haben.
+Die über Ladungen von **div** , die Argumente des Typs **`long`** oder verwenden, **`long long`** sind nur für C++-Code verfügbar. Die Rückgabe Typen [ldiv_t](../../c-runtime-library/standard-types.md) und [lldiv_t](../../c-runtime-library/standard-types.md) die Member **quot** und **REM**enthalten, die die gleiche Bedeutung wie die Member von **div_t**haben.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -91,7 +91,7 @@ Die über Ladungen von **div** , die Argumente vom Typ " **Long** " oder " **Lon
 |-------------|---------------------|
 |**div**, **ldiv**, **lldiv**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -133,6 +133,6 @@ The quotient is 67, and the remainder is 5
 
 ## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldiv, lldiv](ldiv-lldiv.md)<br/>
 [imaxdiv](imaxdiv.md)<br/>

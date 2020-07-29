@@ -18,16 +18,16 @@ helpviewer_keywords:
 - derived classes [C++], declaring
 - inheritance, keywords
 ms.assetid: bb810f56-7720-4fea-b8b6-9499edd141df
-ms.openlocfilehash: f0aae655540b4d3f9130d9840d77e0abcf270cc2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bc9afdcb7971c478c1cad9185cece57ea6326a48
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374099"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233729"
 ---
 # <a name="inheritance-keywords"></a>Vererbungsschlüsselwörter
 
-**Microsoft Specific**
+**Microsoft-spezifisch**
 
 ```
 class [__single_inheritance] class-name;
@@ -47,15 +47,15 @@ class S;
 int S::*p;
 ```
 
-Im obigen `p` Code wird ein Zeiger auf den ganzzahligen Member der Klasse S deklariert. Jedoch, `class S` noch nicht in diesem Code definiert wurde; es wurde nur deklariert. Wenn der Compiler einen solchen Zeiger erkennt, muss er eine allgemeine Darstellung des Zeigers erzeugen. Die Größe der Darstellung ist vom angegebenen Vererbungsmodell abhängig. Es gibt vier Möglichkeiten, ein Vererbungsmodell für den Compiler anzugeben:
+Im obigen Code `p` wird als Zeiger auf einen ganzzahligen Member der Klasse S deklariert. Wurde jedoch `class S` noch nicht in diesem Code definiert. es wurde nur deklariert. Wenn der Compiler einen solchen Zeiger erkennt, muss er eine allgemeine Darstellung des Zeigers erzeugen. Die Größe der Darstellung ist vom angegebenen Vererbungsmodell abhängig. Es gibt vier Möglichkeiten, ein Vererbungsmodell für den Compiler anzugeben:
 
-- In der IDE unter **Zeiger-zu-Mitglied-Vertretung**
+- In der IDE unter **Zeiger-zu-Member-Darstellung**
 
-- An der Befehlszeile mit dem [Schalter /vmg](../build/reference/vmb-vmg-representation-method.md)
+- In der Befehlszeile mithilfe des [/VMG](../build/reference/vmb-vmg-representation-method.md) -Schalters
 
-- Verwenden des [pointers_to_members](../preprocessor/pointers-to-members.md) Pragma
+- Verwenden des [pointers_to_members](../preprocessor/pointers-to-members.md) -Pragmas
 
-- Verwenden der Vererbungsschlüsselwörter **__single_inheritance**, **__multiple_inheritance**und **__virtual_inheritance**. Dieses Verfahren steuert das Vererbungsmodell auf Basis einer einzelnen Klasse.
+- Mithilfe der Vererbungs Schlüsselwörter **`__single_inheritance`** , **`__multiple_inheritance`** und **`__virtual_inheritance`** . Dieses Verfahren steuert das Vererbungsmodell auf Basis einer einzelnen Klasse.
 
     > [!NOTE]
     >  Wenn Sie stets einen Zeiger auf einen Member einer Klasse deklarieren, nachdem Sie die Klasse definiert haben, ist es nicht erforderlich, eine dieser Optionen zu verwenden.
@@ -74,10 +74,10 @@ Unabhängig von Befehlszeilenoptionen oder Pragmas verwenden Zeiger auf Member v
 > [!NOTE]
 > Dieselbe Vorwärtsdeklaration einer pointer-to-member-Klassendarstellung sollte in jeder Übersetzungseinheit auftreten, die Zeiger auf Member dieser Klasse deklariert. Die Deklaration sollte vor der pointer-to-member-Deklaration erfolgen.
 
-Aus Kompatibilitätmit früheren Versionen sind **_single_inheritance**, **_multiple_inheritance**und **_virtual_inheritance** Synonyme für **__single_inheritance**, **__multiple_inheritance**und **__virtual_inheritance,** es sei denn, die Compileroption [ \(/Za Disable language extensions)](../build/reference/za-ze-disable-language-extensions.md) wird angegeben.
+Aus Kompatibilitätsgründen mit früheren Versionen sind **_single_inheritance**, **_multiple_inheritance**und **_virtual_inheritance** Synonyme für **`__single_inheritance`** , und, **`__multiple_inheritance`** **`__virtual_inheritance`** es sei denn, die Compileroption [/Za \( Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
-**END Microsoft Spezifisch**
+**Ende Microsoft-spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 
-[Keywords](../cpp/keywords-cpp.md)
+[Schlüsselwörter](../cpp/keywords-cpp.md)

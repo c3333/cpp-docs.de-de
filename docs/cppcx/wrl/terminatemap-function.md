@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - TerminateMap function
 ms.assetid: 1c314a61-da5d-49bb-ac44-c34ee3c23b66
-ms.openlocfilehash: 560f563e43fc8b818b04cd0bda6b01fbc916cb84
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2aa4d6733d2a4e458ff8abff192778d52a4522b2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80213550"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233495"
 ---
 # <a name="terminatemap-function"></a>TerminateMap-Funktion
 
@@ -29,18 +29,18 @@ inline bool TerminateMap(
 
 ### <a name="parameters"></a>Parameter
 
-*module*<br/>
+*Mond*<br/>
 Ein [Modul](module-class.md).
 
-*serverName*<br/>
+*Servername*<br/>
 Der Name einer Teilmenge der Klassenfactorys in dem Modul, das durch das Parameter *Modul*angegeben wird.
 
 *forcebeendigung*<br/>
-**true** , um die Klassenfactorys unabhängig davon zu beenden, welche aktiv sind. **false** , um die Klassenfactorys nicht zu beenden, wenn eine Factory aktiv ist.
+**`true`** um die Klassenfactorys unabhängig davon zu beenden, welche aktiv sind; **`false`** das Beenden der Klassenfactorys, wenn eine Factory aktiv ist.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**true** , wenn alle Klassenfactorys beendet wurden. andernfalls **false**.
+**`true`**, wenn alle Klassenfactorys beendet wurden. andernfalls **`false`** .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -52,6 +52,6 @@ Fährt die Klassenfactorys im angegebenen Modul herunter.
 
 **Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)
+[Microsoft:: WRL::D etails-Namespace](microsoft-wrl-details-namespace.md)

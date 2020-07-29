@@ -2,12 +2,12 @@
 title: Bereichsbasiert für Anweisung (C++)
 ms.date: 11/04/2016
 ms.assetid: 5750ba1d-ba48-4236-a923-e32de8345c2d
-ms.openlocfilehash: 504f177cf68b978642f15ba4799cab8cb517f447
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1197080e2e96e0e5c51bc06e93026567a33c7842
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188349"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223615"
 ---
 # <a name="range-based-for-statement-c"></a>Bereichsbasiert für Anweisung (C++)
 
@@ -15,18 +15,16 @@ Führt `statement` für jedes Element in `expression` wiederholt und nacheinande
 
 ## <a name="syntax"></a>Syntax
 
-```
-for ( for-range-declaration : expression )
-   statement
-```
+> **`for (`***for-Range-Declaration* **`:`** *Ausdruck***`)`**\
+&emsp;*Anweisung*
 
 ## <a name="remarks"></a>Bemerkungen
 
-Mithilfe der Bereichs basierten **for** -Anweisung können Sie Schleifen erstellen, die durch einen "Bereich" ausgeführt werden müssen, der als alles definiert ist, das Sie durchlaufen können – z. b. `std::vector`C++ oder eine beliebige andere Standard Bibliotheks Sequenz, deren Bereich durch eine `begin()` und `end()`definiert ist. Der im `for-range-declaration` Teil deklarierte Name ist für die **for** -Anweisung lokal und kann in `expression` oder `statement`nicht erneut deklariert werden. Beachten Sie, dass das Schlüsselwort " [Auto](../cpp/auto-cpp.md) " im `for-range-declaration` Teil der Anweisung bevorzugt wird.
+Verwenden Sie die Bereichs basierte- **`for`** Anweisung zum Erstellen von Schleifen, die durch einen *Bereich*ausgeführt werden müssen, der als alles definiert ist, das Sie durchlaufen können – z. b. `std::vector` , oder eine beliebige andere C++-Standard Bibliotheks Sequenz, deren Bereich durch und definiert ist `begin()` `end()` . Der im-Teil deklarierte Name `for-range-declaration` ist für die **`for`** -Anweisung lokal und kann in oder nicht erneut deklariert `expression` werden `statement` . Beachten Sie, dass das- [`auto`](../cpp/auto-cpp.md) Schlüsselwort im-Teil der-Anweisung bevorzugt wird `for-range-declaration` .
 
-**Neu in Visual Studio 2017:**  Bereichs basierte for-Schleifen erfordern nicht mehr, dass Begin () und End () Objekte desselben Typs zurückgeben. Dadurch kann end() ein Sentinelobjekt zurückgeben, das von Bereichen verwendet wird, die im Ranges-V3-Vorschlag definiert sind. Weitere Informationen finden Sie unter [Generalizing the Range-Based For Loop (Bereichsbasierte for-Schleife generalisieren)](https://wg21.link/p0184r0) und [range-v3 library on GitHub (Range-v3-Bibliothek auf GitHub)](https://github.com/ericniebler/range-v3).
+**Neu in Visual Studio 2017:**  Bereichs basierte **`for`** Schleifen erfordern nicht mehr, dass `begin()` und `end()` Objekte desselben Typs zurückgeben. Dadurch kann `end()` ein sentinelobjekt zurückgegeben werden, z. b. verwendet von Bereichen, wie im Bereich "Bereiche-V3" definiert. Weitere Informationen finden Sie unter [generalisieren der Bereichs basierten `For` Schleife](https://wg21.link/p0184r0) und der [Range-V3-Bibliothek auf GitHub](https://github.com/ericniebler/range-v3).
 
-Dieser Code zeigt, wie Sie Bereichs basierte **for** -Schleifen verwenden, um ein Array und einen Vektor zu durchlaufen:
+In diesem Code wird gezeigt, wie Bereichs basierte **`for`** Schleifen verwendet werden, um ein Array und einen Vektor zu durchlaufen:
 
 ```cpp
 // range-based-for.cpp
@@ -96,9 +94,9 @@ end of integer array test
 end of vector test
 ```
 
-Eine Bereichs basierte **for** -Schleife wird beendet, wenn eine dieser [Vorgänge](../cpp/goto-statement-cpp.md) in `statement` ausgeführt wird: eine unter [Brechung](../cpp/break-statement-cpp.md), eine [Rückgabe](../cpp/return-statement-cpp.md)oder eine gehe zu einer Anweisung, die außerhalb der Bereichs basierten **for** -Schleife liegt. Eine [Continue](../cpp/continue-statement-cpp.md) -Anweisung in einer Bereichs basierten **for** -Schleife beendet nur die aktuelle Iterations Anweisung.
+Eine Bereichs basierte **`for`** Schleife wird beendet, wenn eine dieser in `statement` ausgeführt wird: ein [`break`](../cpp/break-statement-cpp.md) , [`return`](../cpp/return-statement-cpp.md) oder [`goto`](../cpp/goto-statement-cpp.md) eine Anweisung mit einer Bezeichnung außerhalb der Bereichs basierten **`for`** Schleife. Eine- [`continue`](../cpp/continue-statement-cpp.md) Anweisung in einer Bereichs basierten **`for`** Schleife beendet nur die aktuelle Iterations-.
 
-Beachten Sie diese Fakten zu Bereichs basiert **für**:
+Beachten Sie diese Fakten zu Bereichs basiert **`for`** :
 
 - Erkennt Arrays automatisch.
 
@@ -106,11 +104,11 @@ Beachten Sie diese Fakten zu Bereichs basiert **für**:
 
 - Verwendet die argumentabhängigen Suche `begin()` und `end()` für alles andere.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[auto](../cpp/auto-cpp.md)<br/>
+[`auto`](../cpp/auto-cpp.md)<br/>
 [Iterationsanweisungen](../cpp/iteration-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[while-Anweisung (C++)](../cpp/while-statement-cpp.md)<br/>
-[do-while-Anweisung (C++)](../cpp/do-while-statement-cpp.md)<br/>
-[for-Anweisung (C++)](../cpp/for-statement-cpp.md)
+[`while`-Anweisung (C++)](../cpp/while-statement-cpp.md)<br/>
+[`do-while`-Anweisung (C++)](../cpp/do-while-statement-cpp.md)<br/>
+[`for`-Anweisung (C++)](../cpp/for-statement-cpp.md)

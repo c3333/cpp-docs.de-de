@@ -67,12 +67,12 @@ helpviewer_keywords:
 - fstrset function
 - _tcsset_l function
 ms.assetid: c42ded42-2ed9-4f06-a0a9-247ba305473a
-ms.openlocfilehash: 304f0cf5929dcce68402dd2f7dc2ce3b28e36db9
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 99cf969714115effcfd7f8f82b2247556d5dd110
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911113"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234002"
 ---
 # <a name="_strset-_strset_l-_wcsset-_wcsset_l-_mbsset-_mbsset_l"></a>_strset, _strset_l, _wcsset, _wcsset_l, _mbsset, _mbsset_l
 
@@ -115,7 +115,7 @@ unsigned char *_mbsset_l(
 
 ### <a name="parameters"></a>Parameter
 
-*SRT*<br/>
+*str*<br/>
 Festzulegende mit NULL endende Zeichenfolge.
 
 *scher*<br/>
@@ -128,9 +128,9 @@ Zu verwendendes Gebietsschema.
 
 Gibt einen Zeiger zur geänderten Zeichenfolge zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_strset** -Funktion legt alle Zeichen (außer dem abschließenden NULL-Zeichen) von *Str* auf *c*fest, konvertiert in **char**. **_wcsset** und **_mbsset_l** sind breit Zeichen-und multibytezeichenversionen von **_strset**, und die Datentypen der Argumente und Rückgabewerte variieren entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **_strset** -Funktion legt alle Zeichen (außer dem abschließenden NULL-Zeichen) von *Str* auf *c*fest, konvertiert in **`char`** . **_wcsset** und **_mbsset_l** sind breit Zeichen-und multibytezeichenversionen von **_strset**, und die Datentypen der Argumente und Rückgabewerte variieren entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
 
 **_mbsset** überprüft seine Parameter. Wenn *Str* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, **_mbsset** gibt _mbsset **null** zurück und legt **errno** auf **EINVAL**fest. **_strset** und **_wcsset** überprüfen Ihre Parameter nicht.
 
@@ -150,7 +150,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_strset**|\<string.h>|
 |**_strset_l**|\<tchar.h>|
@@ -184,10 +184,10 @@ Before: Fill the string with something.
 After:  *******************************
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbset, _mbsnbset_l](mbsnbset-mbsnbset-l.md)<br/>
 [memset, wmemset](memset-wmemset.md)<br/>

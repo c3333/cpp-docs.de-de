@@ -32,12 +32,12 @@ helpviewer_keywords:
 - mbrtoc16 function
 - mbrtoc32 function
 ms.assetid: 099ade4d-56f7-4e61-8b45-493f1d7a64bd
-ms.openlocfilehash: 0e3d5ceffa5adc9e9f6ba96cccb46a3fbcfca69a
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 113c103cfedfe1982c8524623b259c3d58d4f4e2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82919566"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234067"
 ---
 # <a name="mbrtoc16-mbrtoc32"></a>mbrtoc16, mbrtoc32
 
@@ -64,7 +64,7 @@ size_t mbrtoc32(
 ### <a name="parameters"></a>Parameter
 
 *entwickelt*\
-Ein Zeiger auf die **char16_t** oder **char32_t** -Entsprechung des zu konvertierenden UTF-8-multibytezeichens. Wenn der Wert NULL ist, speichert die Funktion keinen Wert.
+Ein Zeiger auf die- **`char16_t`** oder- **`char32_t`** Entsprechung des zu konvertierenden UTF-8-multibytezeichens. Wenn der Wert NULL ist, speichert die Funktion keinen Wert.
 
 *Ausgangs*\
 Zeiger auf die zu konvertierende UTF-8-Multibytezeichenfolge.
@@ -79,7 +79,7 @@ Zeiger auf ein **mbstate_t** Konvertierungs Zustands Objekt, mit dem die UTF-8-M
 
 Bei Erfolg wird der Wert der ersten dieser Bedingungen mit dem aktuellen *Zustands* Wert zurückgegeben:
 
-|Value|Bedingung|
+|Wert|Bedingung|
 |-----------|---------------|
 |0|Die nächsten *max_bytes* oder weniger Zeichen, die aus der *Quelle* konvertiert werden, entsprechen dem NULL-breit Zeichen. Hierbei handelt es sich um den Wert, der *bei nicht-* NULL-<br /><br /> *State* enthält den anfänglichen Verschiebungs Zustand.|
 |Zwischen 1 und *max_bytes*, einschließlich|Der zurückgegebene Wert ist die Anzahl der Bytes der *Quelle* , die ein gültiges Multibytezeichen vervollständigen. Das konvertierte breit Zeichen wird gespeichert, wenn *Destination* nicht NULL ist.|
@@ -87,11 +87,11 @@ Bei Erfolg wird der Wert der ersten dieser Bedingungen mit dem aktuellen *Zustan
 |-2|Die nächsten *max_bytes* Bytes stellen ein unvollständiges, aber potenziell gültiges UTF-8-Multibytezeichen dar. Es ist kein Wert im *Ziel*gespeichert. Dieses Ergebnis kann auftreten, wenn *max_bytes* 0 (null) ist.|
 |-1|Es ist ein Codierungsfehler aufgetreten. Die nächsten *max_bytes* oder weniger Bytes tragen nicht zu einem kompletten und gültigen UTF-8-Multibytezeichen bei. Es ist kein Wert im *Ziel*gespeichert.<br /><br /> " **EILSEQ** " wird in " **errno** " gespeichert, und der *Status* Wert des Konvertierungs Zustands ist nicht angegeben.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **mbrtoc16** -Funktion liest bis zu *max_bytes* Bytes aus der *Quelle* , um das erste komplette, gültige UTF-8-Multibytezeichen zu finden, und speichert dann das entsprechende UTF-16-Zeichen im *Ziel*. Wenn für das Zeichen mehr als ein UTF-16-Ausgabe Zeichen erforderlich ist (z. b. ein Ersatz Zeichenpaar), wird der *Zustands* Wert so festgelegt, dass beim nächsten **mbrtoc16**-Aufrufe das nächste UTF-16-Zeichen im *Ziel* gespeichert wird. Die **mbrtoc32** -Funktion ist identisch, die Ausgabe wird jedoch als UTF-32-Zeichen gespeichert.
 
-Wenn *die Quelle* NULL ist, geben diese Funktionen das Äquivalent eines Aufrufes mit Argumenten **von NULL** für *Destination* `""` , (eine leere, mit NULL beendete Zeichenfolge) für die *Quelle*und 1 für *max_bytes*zurück. Die bestandenen Werte von *Destination* und *max_bytes* werden ignoriert.
+Wenn die *Quelle* NULL ist, geben diese Funktionen das Äquivalent eines Aufrufes mit Argumenten von **null** für *Destination*, `""` (eine leere, mit NULL beendete Zeichenfolge) für die *Quelle*und 1 für *max_bytes*zurück. Die bestandenen Werte von *Destination* und *max_bytes* werden ignoriert.
 
 Wenn die *Quelle* nicht NULL ist, beginnt die Funktion am Anfang der Zeichenfolge und untersucht bis zu *max_bytes* Byte, um die Anzahl der Bytes zu bestimmen, die erforderlich sind, um das nächste UTF-8-Multibytezeichen abzuschließen, einschließlich der Verschiebe Sequenzen. Wenn die untersuchten Bytes ein gültiges und ganzes UTF-8-Multibytezeichen enthalten, konvertiert die Funktion das Zeichen in das entsprechende 16-Bit-oder 32-Bit-breit Zeichen. Wenn *Destination* nicht NULL ist, speichert die Funktion das erste (und möglicherweise einzige) Ergebnis Zeichen im Ziel. Wenn zusätzliche Ausgabe Zeichen erforderlich sind, wird ein Wert im *Zustand*festgelegt, sodass nachfolgende Aufrufe der Funktion die zusätzlichen Zeichen ausgeben und den Wert-3 zurückgeben. Wenn keine weiteren Ausgabe Zeichen erforderlich sind, wird *State* auf den anfänglichen Verschiebungs Zustand festgelegt.
 
@@ -99,7 +99,7 @@ Um nicht-UTF-8-Multibytezeichen in UTF-16-Le-Zeichen zu konvertieren, verwenden 
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
@@ -107,7 +107,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../compatibility.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Datenkonvertierung](../data-conversion.md)\
 [Konfigurations](../locale.md)\

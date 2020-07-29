@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4503
 ms.assetid: 7c5a98ae-5b6d-41d8-b881-12d3ffd5e392
-ms.openlocfilehash: 9077c448f3b5f1d70d18047b91dcf300e606c91f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1d3af2b5629906679db46f6f669084c11a41f7ca
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80186544"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233248"
 ---
 # <a name="compiler-warning-level-1-c4503"></a>Compilerwarnung (Stufe 1) C4503
 
@@ -23,7 +23,7 @@ Diese Compilerwarnung ist veraltet und wird nicht in Visual Studio 2017 und spä
 
 Der ergänzte Name war länger als die compilerbeschränkung (4096) und wurde abgeschnitten. Um diese Warnung und das Abschneiden zu vermeiden, verringern Sie die Anzahl der Argumente oder die namens Längen der verwendeten Bezeichner. Ergänzte Namen, die länger sind als das Compilerlimit, werden auf einen Hash angewendet, und es besteht keine Gefahr eines Namens Konflikts.
 
-Wenn Sie eine ältere Version von Visual Studio verwenden, kann diese Warnung ausgegeben werden, wenn Ihr Code Vorlagen enthält, die sich wiederholt auf Vorlagen spezialisiert haben. Beispielsweise eine Zuordnung von Maps (aus der C++ Standard Bibliothek). In diesem Fall können Sie Typedefs einen Typ (z. b. eine **Struktur**) erstellen, der die Zuordnung enthält.
+Wenn Sie eine ältere Version von Visual Studio verwenden, kann diese Warnung ausgegeben werden, wenn Ihr Code Vorlagen enthält, die sich wiederholt auf Vorlagen spezialisiert haben. Beispielsweise eine Zuordnung von Maps (aus der C++-Standard Bibliothek). In diesem Fall können Sie Typedefs einen Typ (z. b. einen **`struct`** ) erstellen, der die Zuordnung enthält.
 
 Möglicherweise entscheiden Sie sich jedoch, den Code nicht neu zu strukturieren.  Es ist möglich, eine Anwendung zu senden, die C4503 generiert. Wenn Sie jedoch Verknüpfungs Zeitfehler für ein abgeschnittenes Symbol erhalten, kann es schwieriger sein, den Typ des Symbols im Fehler zu bestimmen. Das Debuggen kann auch schwieriger sein. der Debugger hat möglicherweise die Zuordnung des Symbol namens zu dem Typnamen möglicherweise schwierig. Der abgeschnittene Name ist jedoch nicht von der Richtigkeit des Programms betroffen.
 

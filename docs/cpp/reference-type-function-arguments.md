@@ -8,12 +8,12 @@ helpviewer_keywords:
 - function arguments [C++], reference-type
 - passing parameters [C++], reference-type arguments
 ms.assetid: 0a70e831-9e76-46c0-821d-aeba13d73cc0
-ms.openlocfilehash: 2a0bd21023bd1c6bc14b1f587c85960cf1e8b820
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5a409efbe2908954d394656cb989ad6b80a9ce22
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62244180"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233638"
 ---
 # <a name="reference-type-function-arguments"></a>Verweistyp-Funktionsargumente
 
@@ -67,9 +67,9 @@ int main()
 }
 ```
 
-Der vorhergehende Code zeigt, dass Member einer Struktur, die als Verweis übergeben wird, zugegriffen werden mit dem Memberauswahloperator (**.**) anstelle der Zeiger Objektmember-auswahloperators (**->**).
+Der vorangehende Code zeigt, dass auf Member einer Struktur, die als Verweis übertragen wird, mithilfe des Member-Selection-Operators (**.**) anstatt mit dem Member-Selection-Operator () zugegriffen wird **->** .
 
-Obwohl als Verweistypen Argumente übergeben wurden, die Syntax von nichtzeigertypen überwachen, behalten sie ein wichtiges Merkmal der Zeigertypen: sie sind änderbar, es sei denn, die als deklariert **const**. Da die Absicht des vorangehenden Codes nicht in der Änderung des `date` -Objekts liegt, ist ein geeigneterer Funktionsprototyp:
+Obwohl Argumente, die als Verweis Typen übertragen werden, die Syntax von nicht Zeiger Typen beachten, behalten Sie ein wichtiges Merkmal von Zeiger Typen bei: Sie sind änderbar, es sei denn, Sie sind als deklariert **`const`** . Da die Absicht des vorangehenden Codes nicht in der Änderung des `date` -Objekts liegt, ist ein geeigneterer Funktionsprototyp:
 
 ```cpp
 long DateOfYear( const Date& date );
@@ -77,8 +77,8 @@ long DateOfYear( const Date& date );
 
 Der Prototyp garantiert, dass die Funktion `DateOfYear` das Argument nicht ändert.
 
-Alle Funktionen Prototyp einen Verweistyp übernehmen kann stattdessen ein Objekt des gleichen Typs an seiner Stelle annehmen, da es eine standardkonvertierung von ist *Typename* zu *Typename* <strong>&</strong>.
+Jede Funktion, die einen Referenztyp annimmt, kann ein Objekt desselben Typs annehmen, da es eine Standard Konvertierung von *tykame* in *tykame*gibt <strong>&</strong> .
 
 ## <a name="see-also"></a>Siehe auch
 
-[Verweise](../cpp/references-cpp.md)<br/>
+[Referenzen](../cpp/references-cpp.md)<br/>

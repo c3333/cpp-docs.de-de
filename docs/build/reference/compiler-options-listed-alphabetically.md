@@ -4,12 +4,12 @@ description: Verweis Auflistung in alphabetischer Reihenfolge der Microsoft C/C+
 ms.date: 07/08/2020
 helpviewer_keywords:
 - compiler options, C++
-ms.openlocfilehash: 41a2f6617e879a00101205f3505e70831f9efd50
-ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
+ms.openlocfilehash: 46c6f7009c840c83db2f945de2e504f08172fca2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86180928"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223888"
 ---
 # <a name="compiler-options-listed-alphabetically"></a>Compileroptionen (alphabetisch sortiert)
 
@@ -59,7 +59,7 @@ Diese Tabelle enthält eine alphabetische Liste der Compileroptionen. Eine Liste
 | [`/FU`](fu-name-forced-hash-using-file.md) | Erzwingt die Verwendung eines Datei namens, als ob er an die-Direktive übermittelt worden wäre [`#using`](../../preprocessor/hash-using-directive-cpp.md) . |
 | [`/Fx`](fx-merge-injected-code.md) | Führt eingefügten Code mit der Quelldatei zusammen. |
 | [`/GA`](ga-optimize-for-windows-application.md) | Codeoptimierung für Windows-Anwendung. |
-| [`/Gd`](gd-gr-gv-gz-calling-convention.md) | Verwendet die `__cdecl` -Aufrufkonvention (nur x86). |
+| [`/Gd`](gd-gr-gv-gz-calling-convention.md) | Verwendet die- **`__cdecl`** Aufruf Konvention (nur x86). |
 | [`/Ge`](ge-enable-stack-probes.md) | Veraltet. Aktiviert Stapelüberprüfungen. |
 | [`/GF`](gf-eliminate-duplicate-strings.md) | Aktiviert Stringpooling. |
 | [`/GH`](gh-enable-pexit-hook-function.md) | Ruft die Hookfunktion `_pexit`auf. |
@@ -67,24 +67,24 @@ Diese Tabelle enthält eine alphabetische Liste der Compileroptionen. Eine Liste
 | [`/GL`](gl-whole-program-optimization.md) | Aktiviert die Optimierung des gesamten Programms. |
 | [`/Gm`](gm-enable-minimal-rebuild.md) | Veraltet. Aktiviert minimale Neuerstellung. |
 | [`/GR`](gr-enable-run-time-type-information.md) | Aktiviert Laufzeit-Typeninformation (RTTI). |
-| [`/Gr`](gd-gr-gv-gz-calling-convention.md) | Verwendet die `__fastcall` -Aufrufkonvention (nur x86). |
+| [`/Gr`](gd-gr-gv-gz-calling-convention.md) | Verwendet die- **`__fastcall`** Aufruf Konvention (nur x86). |
 | [`/GS`](gs-buffer-security-check.md) | Führt eine Puffer-Sicherheitsüberprüfung durch. |
 | [`/Gs`](gs-control-stack-checking-calls.md) | Steuert Stapelüberprüfungen |
 | [`/GT`](gt-support-fiber-safe-thread-local-storage.md) | Unterstützt die Fiber-Sicherheit für Daten, die mit statischem lokalen Thread-Speicher zugewiesen werden. |
 | [`/guard:cf`](guard-enable-control-flow-guard.md) | Fügt Sicherheitsüberprüfungen zum Ablaufsteuerungsschutz hinzu. |
 | [`/guard:ehcont`](guard-enable-eh-continuation-metadata.md) | Aktiviert die eh-Fortsetzungs Metadaten. |
-| [`/Gv`](gd-gr-gv-gz-calling-convention.md) | Verwendet die `__vectorcall` -Aufrufkonvention. (nur x86 und x64) |
+| [`/Gv`](gd-gr-gv-gz-calling-convention.md) | Verwendet die- **`__vectorcall`** Aufruf Konvention. (nur x86 und x64) |
 | [`/Gw`](gw-optimize-global-data.md) | Ermöglicht programmübergreifende globale Datenoptimierung. |
 | [`/GX`](gx-enable-exception-handling.md) | Veraltet. Aktiviert synchrone Ausnahmebehandlung. Verwenden Sie [`/EH`](eh-exception-handling-model.md) stattdessen. |
 | [`/Gy`](gy-enable-function-level-linking.md) | Aktiviert Funktionslevel-Linking. |
 | [`/GZ`](gz-enable-stack-frame-run-time-error-checking.md) | Veraltet. Identisch mit [`/RTC1`](rtc-run-time-error-checks.md) . |
-| [`/Gz`](gd-gr-gv-gz-calling-convention.md) | Verwendet die `__stdcall` -Aufrufkonvention (nur x86). |
+| [`/Gz`](gd-gr-gv-gz-calling-convention.md) | Verwendet die- **`__stdcall`** Aufruf Konvention (nur x86). |
 | [`/H`](h-restrict-length-of-external-names.md) | Veraltet. Beschränkt die Länge externer (öffentlicher) Namen. |
 | [`/HELP`](help-compiler-command-line-help.md) | Listet die Compileroptionen auf. |
 | [`/homeparams`](homeparams-copy-register-parameters-to-stack.md) | Erzwingt, dass in Registern übergebene Parameter beim Funktionseinstieg in ihre Speicherorte auf dem Stapel geschrieben werden. Diese Compileroption gilt nur für die x64-Compiler (systemeigene und Cross-Kompilierung). |
 | [`/hotpatch`](hotpatch-create-hotpatchable-image.md) | Erstellt ein Abbild, das heiß patchfähig ist. |
 | [`/I`](i-additional-include-directories.md) | Sucht in einem Verzeichnis nach Includedateien. |
-| [`/J`](j-default-char-type-is-unsigned.md) | Ändert den `char` -Standardtyp. |
+| [`/J`](j-default-char-type-is-unsigned.md) | Ändert den **`char`** Standardtyp. |
 | [`/JMC`](jmc.md) | Unterstützt natives C++-nur eigenen Code Debugging. |
 | [`/kernel`](kernel-create-kernel-mode-binary.md) | Der Compiler und der Linker erstellen eine Binärdatei, die im Kernel von Windows ausgeführt werden kann. |
 | [`/LD`](md-mt-ld-use-run-time-library.md) | Erstellt eine Dynamic Link Library (DLL). |
@@ -112,7 +112,7 @@ Diese Tabelle enthält eine alphabetische Liste der Compileroptionen. Eine Liste
 | [`/permissive-`](permissive-standards-conformance.md) | Legen Sie den Standard Konformitäts Modus fest. |
 | [`/Qfast_transcendentals`](qfast-transcendentals-force-fast-transcendentals.md) | Generiert schnelle Transzendente. |
 | [`/QIfist`](qifist-suppress-ftol.md) | Veraltet. Unterdrückt `_ftol` , wenn eine Konvertierung von einem Gleitkommatyp zu einem ganzzahligen Typ erforderlich ist (nur x86). |
-| [`/Qimprecise_fwaits`](qimprecise-fwaits-remove-fwaits-inside-try-blocks.md) | Entfernt `fwait` -Befehle in `try` -Blöcken. |
+| [`/Qimprecise_fwaits`](qimprecise-fwaits-remove-fwaits-inside-try-blocks.md) | Entfernt- `fwait` Befehle in- **`try`** Blöcken. |
 | [`/QIntel-jcc-erratum`](qintel-jcc-erratum.md) | Verringert die Auswirkungen der Intel JCC Erratum-mikrocodeaktualisierung auf die Leistung. |
 | [/QPAR (Auto-parallelizer)](qpar-auto-parallelizer.md) | Ermöglicht automatische Parallelisierung von Schleifen, die mit der [#pragma loop()](../../preprocessor/loop.md) -Direktive gekennzeichnet sind. |
 | [`/Qsafe_fp_loads`](qsafe-fp-loads.md) | Verwendet ganzzahlige Verschiebungsanweisungen für Gleitkommawerte und deaktiviert bestimmte Gleitkomma-Ladeoptimierungen. |
@@ -174,7 +174,7 @@ Diese Tabelle enthält eine alphabetische Liste der Compileroptionen. Eine Liste
 | [`/Zs`](zs-syntax-check-only.md) | Prüft nur die Syntax. |
 | [`/ZW`](zw-windows-runtime-compilation.md) | Erzeugt eine Ausgabedatei, die auf dem Windows-Runtime ausgeführt wird. |
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md)\
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)

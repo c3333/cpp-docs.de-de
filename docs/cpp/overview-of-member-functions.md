@@ -7,18 +7,18 @@ helpviewer_keywords:
 - inline functions [C++], treating member functions as
 - member functions [C++], definition in class declaration
 ms.assetid: 9f77a438-500e-40bb-a6c6-544678f3f4c8
-ms.openlocfilehash: 6dec4ee53cd840c47d76ac0579daca710b0eeb68
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 81fc3ae7a732171c6bddff9f584976dd747372b4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81358411"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233664"
 ---
 # <a name="overview-of-member-functions"></a>Übersicht über Memberfunktionen
 
-Memberfunktionen sind entweder statisch oder nicht statisch. Das Verhalten statischer Memberfunktionen unterscheidet sich von anderen Memberfunktionen, da statische Memberfunktionen **dieses** Argument nicht implizit haben. Nicht statische Memberfunktionen verfügen über einen **diesen** Zeiger. Memberfunktionen können, ob statisch oder nicht statisch, entweder inner- oder außerhalb der Klassendeklaration definiert werden.
+Memberfunktionen sind entweder statisch oder nicht statisch. Das Verhalten statischer Element Funktionen unterscheidet sich von anderen Element Funktionen, da statische Member-Funktionen kein implizites **`this`** Argument aufweisen. Nicht statische Member-Funktionen verfügen über einen- **`this`** Zeiger. Memberfunktionen können, ob statisch oder nicht statisch, entweder inner- oder außerhalb der Klassendeklaration definiert werden.
 
-Wenn eine Memberfunktion innerhalb einer Klassendeklaration definiert ist, wird sie als Inlinefunktion behandelt, und es ist nicht erforderlich, den Funktionsnamen mit dem Klassennamen zu qualifizieren. Obwohl Funktionen, die innerhalb von Klassendeklarationen definiert sind, bereits als Inlinefunktionen behandelt werden, können Sie das **Schlüsselwort inline** für Dokumentcode verwenden.
+Wenn eine Memberfunktion innerhalb einer Klassendeklaration definiert ist, wird sie als Inlinefunktion behandelt, und es ist nicht erforderlich, den Funktionsnamen mit dem Klassennamen zu qualifizieren. Obwohl innerhalb von Klassen Deklarationen definierte Funktionen bereits als Inline Funktionen behandelt werden, können Sie das- **`inline`** Schlüsselwort verwenden, um Code zu dokumentieren.
 
 Ein Beispiel des Deklarierens einer Funktion innerhalb einer Klassendeklaration folgt:
 
@@ -43,7 +43,7 @@ int main()
 }
 ```
 
-Wenn sich die Definition einer Memberfunktion außerhalb der Klassendeklaration befindet, wird sie nur dann als Inlinefunktion behandelt, wenn sie explizit als **Inline**deklariert wird. Darüber hinaus muss der Funktionsname in der Definition mit dem Klassennamen mithilfe des Bereichsauflösungsoperators (`::`) qualifiziert sein.
+Wenn die Definition einer Element Funktion außerhalb der Klassen Deklaration liegt, wird Sie nur dann als Inline Funktion behandelt, wenn Sie explizit als deklariert wird **`inline`** . Darüber hinaus muss der Funktionsname in der Definition mit dem Klassennamen mithilfe des Bereichsauflösungsoperators (`::`) qualifiziert sein.
 
 Das folgende Beispiel ist mit der vorherigen Deklaration der Klasse `Account` identisch, mit der Ausnahme, dass die Funktion `Deposit` außerhalb der Klassendeklaration definiert ist:
 

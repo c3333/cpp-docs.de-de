@@ -37,12 +37,12 @@ helpviewer_keywords:
 - fabs function
 - fabsl function
 ms.assetid: 23bca210-f408-4f5e-b46b-0ccaaec31e36
-ms.openlocfilehash: 7a65e3ef5b0d15e82ada07eef495600a50531f34
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 52ec65e744cd0ee04068ddc6cfd537ea1ae2b9f0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82920245"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234119"
 ---
 # <a name="fabs-fabsf-fabsl"></a>fabs, fabsf, fabsl
 
@@ -81,13 +81,13 @@ Die **Fabs** -Funktionen geben den absoluten Wert des Arguments *x*zurück. Es g
 |-----------|-------------------|-----------------------|
 |± QNAN,IND|Keine|_DOMAIN|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Fabs** aufzurufen können, wenn Sie \<den cmath-> Header einschließen. In einem C-Programm nimmt **Fabs** immer einen **Double**-Wert an und gibt ihn zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Fabs** aufzurufen können, wenn Sie den- \<cmath> Header einschließen. In einem C-Programm übernimmt **Fabs** immer und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|-----------------------|---------------------------|
@@ -99,8 +99,8 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Ein Beispiel hierfür finden Sie unter [abs](abs-labs-llabs-abs64.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [abs, labs, llabs, _abs64](abs-labs-llabs-abs64.md)<br/>
 [_cabs](cabs.md)<br/>

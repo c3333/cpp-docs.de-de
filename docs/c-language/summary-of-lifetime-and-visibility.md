@@ -5,12 +5,12 @@ helpviewer_keywords:
 - lifetime, and visibility
 - visibility, identifiers
 ms.assetid: ea05a253-7658-482c-9a6b-abd71169c42d
-ms.openlocfilehash: f364c3c0b558c00e3d411ab5b697ed01ec395cbd
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 760973bba1798068b5a19ebeb7a285d241d4ef72
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75299077"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220807"
 ---
 # <a name="summary-of-lifetime-and-visibility"></a>Zusammenfassung von Lebensdauer und Sichtbarkeit
 
@@ -18,15 +18,15 @@ Die folgende Tabelle ist eine Zusammenfassung der Lebensdauer- und Sichtbarkeits
 
 ### <a name="summary-of-lifetime-and-visibility"></a>Zusammenfassung von Lebensdauer und Sichtbarkeit
 
-|Attribute:<br /><br /> Ebene|Element|Speicherklasse<br /><br /> Bezeichner|Ergebnis: <br /><br /> Lebensdauer|Sichtbarkeit|
+|Attribute:<br /><br /> Ebene|Element|Speicherklasse<br /><br /> Bezeichner|Ergebnis:<br /><br /> Lebensdauer|Sichtbarkeit|
 |---------------------------|----------|----------------------------------|--------------------------|----------------|
-|Dateibereich|Variablendefinition|**static**|Global|Rest der Quelldatei der Ausführung|
-||Variablendeklaration|**extern**|Global|Rest der Quelldatei der Ausführung|
-||Funktionsprototyp oder Definition|**static**|Global|Einzelne Quelldatei|
-||Funktionsprototyp|**extern**|Global|Rest der Quelldatei|
-|Blockbereich|Variablendeklaration|**extern**|Global|Block|
-||Variablendefinition|**static**|Global|Block|
-||Variablendefinition|**auto** oder **register**|Lokal|Block|
+|Dateibereich|Variablendefinition|**`static`**|Global|Rest der Quelldatei der Ausführung|
+||Variablendeklaration|**`extern`**|Global|Rest der Quelldatei der Ausführung|
+||Funktionsprototyp oder Definition|**`static`**|Global|Einzelne Quelldatei|
+||Funktionsprototyp|**`extern`**|Global|Rest der Quelldatei|
+|Blockbereich|Variablendeklaration|**`extern`**|Global|Block|
+||Variablendefinition|**`static`**|Global|Block|
+||Variablendefinition|**`auto`** oder **`register`**|Lokal|Block|
 
 ## <a name="example"></a>Beispiel
 

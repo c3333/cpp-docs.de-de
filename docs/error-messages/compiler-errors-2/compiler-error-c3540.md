@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3540
 ms.assetid: 3c0c959c-e3b7-40eb-b922-ccac44bd9d85
-ms.openlocfilehash: 94f35f9f3bf64e09087f28a11a4fb9802d9d3c0f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: a041961e8a91832be67d8def8f2a6a3ef70906d9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761516"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223394"
 ---
 # <a name="compiler-error-c3540"></a>Compilerfehler C3540
 
 "Type": "sizeof" kann nicht auf einen Typ angewendet werden, der "Auto" enthält.
 
-Der [sizeof](../../cpp/sizeof-operator.md) -Operator kann nicht auf den angezeigtem Typ angewendet werden, weil er den `auto` Spezifizierer enthält.
+Der [sizeof](../../cpp/sizeof-operator.md) -Operator kann nicht auf den angezeigtem Typ angewendet werden, weil er den **`auto`** Spezifizierer enthält.
 
 ## <a name="example"></a>Beispiel
 
@@ -37,5 +37,5 @@ int main() {
 ## <a name="see-also"></a>Siehe auch
 
 [Auto-Schlüsselwort](../../cpp/auto-keyword.md)<br/>
-[/Zc:auto (Variablentyp ableiten)](../../build/reference/zc-auto-deduce-variable-type.md)<br/>
+[/Zc: Auto (Variablentyp ableiten)](../../build/reference/zc-auto-deduce-variable-type.md)<br/>
 [sizeof-Operator](../../cpp/sizeof-operator.md)

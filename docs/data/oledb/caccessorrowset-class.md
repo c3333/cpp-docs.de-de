@@ -27,12 +27,12 @@ helpviewer_keywords:
 - FreeRecordMemory method
 - GetColumnInfo method
 ms.assetid: bd4f58ed-cebf-4d43-8985-1e5fcbf06953
-ms.openlocfilehash: efb5618c03b1f70a809bb2bafe9611474799e00b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 42b7d385877d68db22ccaf6665e8043dbfe2ee44
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80212250"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233482"
 ---
 # <a name="caccessorrowset-class"></a>CAccessorRowset-Klasse
 
@@ -58,13 +58,13 @@ Eine Rowsetklasse.
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
 |||
 |-|-|
-|[Bind](#bind)|Erstellt Bindungen (verwendet, wenn `bBind` in [CCommand:: Open](../../data/oledb/ccommand-open.md)als **false** angegeben ist).|
+|[Zwick](#bind)|Erstellt Bindungen (wird verwendet, wenn `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben ist).|
 |[CAccessorRowset](#caccessorrowset)|Konstruktor.|
 |[Close](#close)|Schließt das Rowset und alle Accessoren.|
 |[FreeRecordMemory](#freerecordmemory)|Gibt alle Spalten im aktuellen Datensatz frei, die freigegeben werden müssen.|
@@ -72,11 +72,11 @@ Eine Rowsetklasse.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Class `TAccessor` verwaltet den-Accessor. Die Klasse *TRowset* verwaltet das Rowset.
+Die-Klasse `TAccessor` verwaltet den-Accessor. Die Klasse *TRowset* verwaltet das Rowset.
 
 ## <a name="caccessorrowsetbind"></a><a name="bind"></a>CAccessorRowset:: Bind
 
-Erstellt die Bindungen, wenn Sie in [CCommand:: Open](../../data/oledb/ccommand-open.md)`bBind` als **false** angegeben haben.
+Erstellt die Bindungen, wenn Sie `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben haben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -151,7 +151,7 @@ Der Benutzer muss die zurückgegebenen Spalten Informationen und den Zeichen fol
 
 Weitere Informationen finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in der *OLE DB-Programmier Referenz*.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

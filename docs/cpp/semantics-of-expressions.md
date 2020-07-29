@@ -7,16 +7,16 @@ helpviewer_keywords:
 - expression evaluation
 - expression evaluation, about expression evaluation
 ms.assetid: 4a792154-533b-48b9-8709-31bfc170f0a7
-ms.openlocfilehash: 5213fc7972f3a2590ceac5038a7b5e07495df594
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 43bcd98e0dbf14dada2643c0b731d3f6bae863e6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80178848"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223602"
 ---
 # <a name="semantics-of-expressions"></a>Semantik von Ausdrücken
 
-Ausdrücke werden entsprechend der Rangfolge und Gruppierung ihrer Operatoren ausgewertet. ([Operator Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md) in [lexikalischen Konventionen](../cpp/lexical-conventions.md)zeigt die Beziehungen an C++ , die die Operatoren für Ausdrücke erzwingen.)
+Ausdrücke werden entsprechend der Rangfolge und Gruppierung ihrer Operatoren ausgewertet. ([Operator Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md) in [lexikalischen Konventionen](../cpp/lexical-conventions.md)zeigt die Beziehungen an, die die C++-Operatoren für Ausdrücke erzwingen.)
 
 ## <a name="order-of-evaluation"></a>Reihenfolge der Auswertung
 
@@ -43,7 +43,7 @@ int main()
 54
 ```
 
-![Auswertungs Reihenfolge in einem Ausdruck](../cpp/media/vc38zv1.gif "Auswertungsreihenfolge in einem Ausdruck") <br/>
+![Auswertungsreihenfolge in einem Ausdruck](../cpp/media/vc38zv1.gif "Auswertungsreihenfolge in einem Ausdruck") <br/>
 Ausdruck-Auswertungs Reihenfolge
 
 Die Reihenfolge der Auswertung des in der obigen Abbildung dargestellten Ausdrucks wird durch die Reihenfolge und die Assoziativität der Operatoren bestimmt:
@@ -52,11 +52,11 @@ Die Reihenfolge der Auswertung des in der obigen Abbildung dargestellten Ausdruc
 
 1. Addition (+) besitzt die zweithöchste Priorität, sodass `a` dem Produkt von `b` und `c` hinzugefügt wird.
 
-1. Left Shift (< <) hat die niedrigste Rangfolge im Ausdruck, es gibt jedoch zwei vorkommen. Da der Left Shift-Operator von links nach rechts gruppiert, wird zuerst der linke und dann der rechte Teilausdruck ausgewertet.
+1. Left Shift (<<) hat die niedrigste Rangfolge im Ausdruck, es gibt jedoch zwei vorkommen. Da der Left Shift-Operator von links nach rechts gruppiert, wird zuerst der linke und dann der rechte Teilausdruck ausgewertet.
 
 Wenn Teilausdrücke mit Klammern gruppiert werden, werden die Rangfolge sowie die Reihenfolge der Auswertung des Ausdrucks geändert, wie in der folgenden Abbildung gezeigt.
 
-![Auswertungs Reihenfolge des Ausdrucks mit Klammern](../cpp/media/vc38zv2.gif "Auswertungsreihenfolge eines Ausdrucks mit Klammern") <br/>
+![Auswertungsreihenfolge eines Ausdrucks mit Klammern](../cpp/media/vc38zv2.gif "Auswertungsreihenfolge eines Ausdrucks mit Klammern") <br/>
 Ausdruck-Auswertungs Reihenfolge mit Klammern
 
 Ausdrücke, wie in der Abbildung oben, werden ausschließlich für ihre Nebeneffekte ausgewertet – in diesem Fall, um Informationen zum Standardausgabegerät zu übertragen.
@@ -69,10 +69,10 @@ Die Programmiersprache C++ gibt beim Angeben von Operanden bestimmte Kompatibili
 
 |Typ erwartet|Typen zulässig|
 |-------------------|-------------------|
-|*type*|`const`- *Typ*<br /> `volatile`- *Typ*<br /> *Typ*&<br /> `const` *Typ*&<br /> `volatile` *Typ*&<br /> `volatile const`- *Typ*<br /> `volatile const` *Typ*&|
-|\* *eingeben*|\* *eingeben*<br /> `const` *Typ* \*<br /> `volatile` *Typ* \*<br /> `volatile const` *Typ* \*|
-|`const`- *Typ*|*type*<br /> `const`- *Typ*<br />`const` *Typ*&|
-|`volatile`- *Typ*|*type*<br /> `volatile`- *Typ*<br /> `volatile` *Typ*&|
+|*type*|**`const`***Typ*<br /> **`volatile`***Typ*<br /> *Typ*&<br /> **`const`***Typ*&<br /> **`volatile`***Typ*&<br /> `volatile const`*Typ*<br /> `volatile const`*Typ*&|
+|*Typ*\*|*Typ*\*<br /> **`const`***Typ*\*<br /> **`volatile`***Typ*\*<br /> `volatile const`*Typ*\*|
+|**`const`***Typ*|*type*<br /> **`const`***Typ*<br />**`const`***Typ*&|
+|**`volatile`***Typ*|*type*<br /> **`volatile`***Typ*<br /> **`volatile`***Typ*&|
 
 Da die vorangehenden Regeln immer in Kombination verwendet werden können, kann ein const-Zeiger auf ein flüchtiges Objekt angegeben werden, wo ein Zeiger erwartet wird.
 
@@ -88,13 +88,13 @@ func( i, ++i );
 
 Die Programmiersprache C++ gewährleistet nicht die Reihenfolge, in der Argumente zu einem Funktionsaufruf ausgewertet werden. Daher könnte `func` im vorhergehenden Beispiel die Werte 7 und 8 oder 8 und 8 für die Parameter empfangen, je nachdem, ob die Parameter von links nach rechts oder von rechts nach links ausgewertet werden.
 
-## <a name="c-sequence-points-microsoft-specific"></a>C++Sequenz Punkte (Microsoft-spezifisch)
+## <a name="c-sequence-points-microsoft-specific"></a>C++-Sequenz Punkte (Microsoft-spezifisch)
 
 Zwischen aufeinanderfolgenden "Sequenzpunkten" kann der Wert eines Objekts nur einmal durch einen Ausdruck geändert werden.
 
 Die C++-Sprachendefinition gibt derzeit keine Sequenzpunkte an. Microsoft C++ verwendet dieselben Sequenzpunkte wie ANSI C für jeden beliebigen Ausdruck, der C-Operatoren einbezieht und nicht überladene Operatoren beinhaltet. Wenn Operatoren überladen werden, wird die Semantik von Operatorseqenzierung in Funktionsaufrufsequenzierung geändert. Microsoft C++ verwendet folgende Sequenzpunkte:
 
-- Linker Operand des logischen AND-Operators (& &). Der linke Operand des logischen AND-Operators wird vollständig ausgewertet, und alle Nebeneffekte werden vor dem Fortsetzen abgeschlossen. Es gibt keine Garantie, dass der rechte Operand des logischen AND-Operators ausgewertet wird.
+- Linker Operand des logischen AND-Operators (&&). Der linke Operand des logischen AND-Operators wird vollständig ausgewertet, und alle Nebeneffekte werden vor dem Fortsetzen abgeschlossen. Es gibt keine Garantie, dass der rechte Operand des logischen AND-Operators ausgewertet wird.
 
 - Linker Operand des logischen OR-Operators (&#124;&#124;). Der linke Operand des logischen OR-Operators wird vollständig ausgewertet, und alle Nebeneffekte werden vor dem Fortsetzen abgeschlossen. Es gibt keine Garantie, dass der rechte Operand des logischen OR-Operators ausgewertet wird.
 

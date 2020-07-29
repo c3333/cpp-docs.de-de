@@ -35,12 +35,12 @@ helpviewer_keywords:
 - _beginthreadex function
 - beginthread function
 ms.assetid: 0df64740-a978-4358-a88f-fb0702720091
-ms.openlocfilehash: acf885c923db3fdf91119b29a78d64824384166b
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 29458f2d752f1fe59778b752480e268f8243f15e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913511"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234275"
 ---
 # <a name="_beginthread-_beginthreadex"></a>_beginthread, _beginthreadex
 
@@ -107,15 +107,15 @@ Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [err
 
 Weitere Informationen zu **uintptr_t**finden Sie unter [Standard Typen](../../c-runtime-library/standard-types.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_beginthread** -Funktion erstellt einen Thread, der die Ausführung einer Routine bei *start_address*beginnt. Die Routine bei *start_address* muss den **__cdecl** (für nativen Code) oder **__clrcall** (für verwalteten Code) verwenden und sollte keinen Rückgabewert haben. Wenn der Thread aus dieser Routine zurückgegeben wird, wird er automatisch beendet. Weitere Informationen zu Threads finden Sie unter [Multithreadingunterstützung für älteren Code (Visual C++)](../../parallel/multithreading-support-for-older-code-visual-cpp.md).
+Die **_beginthread** -Funktion erstellt einen Thread, der die Ausführung einer Routine bei *start_address*beginnt. Die Routine bei *start_address* muss die **`__cdecl`** -Aufruf Konvention (für systemeigenen Code) oder **__clrcall** (für verwalteten Code) verwenden und sollte keinen Rückgabewert haben. Wenn der Thread aus dieser Routine zurückgegeben wird, wird er automatisch beendet. Weitere Informationen zu Threads finden Sie unter [Multithreadingunterstützung für älteren Code (Visual C++)](../../parallel/multithreading-support-for-older-code-visual-cpp.md).
 
 **_beginthreadex** ähnelt [der Win32-](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createthread) API-API-API enger als **_beginthread** . **_beginthreadex** unterscheidet sich wie folgt von **_beginthread** :
 
 - **_beginthreadex** hat drei zusätzliche Parameter: *initflag*, *Security*und **threadaddr**. Der neue Thread kann in einem angehaltenen Zustand mit angegebener Sicherheit erstellt werden, und der Zugriff darauf ist mithilfe von " *thrdaddr*" möglich. Dies ist der Thread Bezeichner.
 
-- Die an **_beginthreadex** übergebenen- *start_address* Routine muss die **__stdcall** -Aufruf Konvention (für systemeigenen Code) oder **__clrcall** (für verwalteten Code) verwenden und einen Thread Beendigungs Code zurückgeben.
+- Die an **_beginthreadex** übergebenen- *start_address* Routine muss die- **`__stdcall`** Aufruf Konvention (für systemeigenen Code) oder **__clrcall** (für verwalteten Code) verwenden und einen Thread Beendigungs Code zurückgeben.
 
 - **_beginthreadex** gibt bei einem Fehler 0 (null) anstelle von-1L zurück.
 
@@ -144,7 +144,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_beginthread**|\<process.h>|
 |**_beginthreadex**|\<process.h>|
@@ -327,10 +327,10 @@ In second thread...
 Counter should be 1000000; it is-> 1000000
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 - [Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)
 - [_endthread, _endthreadex](endthread-endthreadex.md)
-- [Abbruch](abort.md)
+- [abort](abort.md)
 - [exit, _Exit, _exit](exit-exit-exit.md)
 - [GetExitCodeThread](/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodethread)

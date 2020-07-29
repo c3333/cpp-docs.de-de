@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - /clr compiler option [C++], restrictions
 ms.assetid: 385f6462-2c68-46d6-810e-469553ead447
-ms.openlocfilehash: d0318ce2e23f92600d5a78d6472646ec91492152
-ms.sourcegitcommit: a10c9390413978d36b8096b684d5ed4cf1553bc8
+ms.openlocfilehash: 641e83cb85b6282e8c4c82dfed8c4b44fc4a7e8f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65837377"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223901"
 ---
 # <a name="clr-restrictions"></a>Einschränkungen für "/clr"
 
@@ -17,7 +17,7 @@ Beachten Sie die folgenden Einschränkungen für die Verwendung von **/clr**:
 
 - In einem strukturierten Ausnahmehandler bestehen Einschränkungen in der Verwendung von `_alloca` bei der Kompilierung mit **/clr**. Weitere Informationen finden Sie unter [_alloca](../../c-runtime-library/reference/alloca.md).
 
-- Die Verwendung der Fehlerprüfung zur Laufzeit ist mit **/clr** ungültig. Weitere Informationen finden Sie unter [Vorgehensweise: Use Native Run-Time Checks (Verwenden von nativen Laufzeitüberprüfungen)](/visualstudio/debugger/how-to-use-native-run-time-checks).
+- Die Verwendung der Fehlerprüfung zur Laufzeit ist mit **/clr** ungültig. Weitere Informationen finden Sie unter [Gewusst wie: Verwenden von systemeigenen Laufzeitprüfungen](/visualstudio/debugger/how-to-use-native-run-time-checks).
 
 - Wenn **/clr** zum Kompilieren eines Programms verwendet wird, das nur C++-Standardsyntax verwendet, gelten die folgenden Richtlinien für die Verwendung von Inlineassembly:
 
@@ -37,25 +37,25 @@ Beachten Sie die folgenden Einschränkungen für die Verwendung von **/clr**:
 
 - Die folgenden Compileroptionen werden mit **/clr** nicht unterstützt:
 
-  - **/EHsc** und **/EHs** ( **/clr** impliziert **/EHa** (siehe [/EH (Ausnahmebehandlungsmodell)](eh-exception-handling-model.md))
+  - **/EHsc** und **/EHs** (**/clr** impliziert **/EHa** (siehe [/EH (Ausnahmebehandlungsmodell)](eh-exception-handling-model.md))
 
   - **/fp:strict** und **/fp:except** (siehe [/fp (Festlegen des Gleitkommaverhaltens)](fp-specify-floating-point-behavior.md))
 
   - [/Zd](z7-zi-zi-debug-information-format.md)
 
-  - [/Gm](gm-enable-minimal-rebuild.md)
+  - [/GM](gm-enable-minimal-rebuild.md)
 
   - [/MT](md-mt-ld-use-run-time-library.md)
 
   - [/RTC](rtc-run-time-error-checks.md)
 
-  - [/ZI](z7-zi-zi-debug-information-format.md)
+  - [/Zi](z7-zi-zi-debug-information-format.md)
 
 - Die Kombination der Präprozessordefinition `_STATIC_CPPLIB` (`/D_STATIC_CPPLIB`) und der Compileroption **/clr** wird nicht unterstützt. Dies rührt daher, dass die Definition zum Linken Ihrer Anwendung mit der statischen C++-Multithread-Standardbibliothek führen würde, was nicht unterstützt wird. Weitere Informationen finden Sie im Thema [/MD, /MT, /LD (Laufzeitbibliothek verwenden)](md-mt-ld-use-run-time-library.md).
 
 - Bei der Verwendung von **/Zi** mit **/clr**, gibt es Auswirkungen auf die Leistung. Weitere Informationen finden Sie unter [/Zi](z7-zi-zi-debug-information-format.md).
 
-- Das Übergeben eines Breitzeichens an eine .NET Framework-Ausgaberoutine, ohne zugleich [/Zc:wchar_t](zc-wchar-t-wchar-t-is-native-type.md) anzugeben oder eine Umwandlung des Zeichens in `__wchar_t` vorzunehmen, führt zur Darstellung der Ausgabe als `unsigned short int`. Beispiel:
+- Wenn Sie ein breit Zeichen an eine .NET Framework Ausgabe Routine übergeben, ohne auch [/Zc: wchar_t](zc-wchar-t-wchar-t-is-native-type.md) anzugeben, oder ohne das Zeichen in umwandeln zu müssen, **`__wchar_t`** wird die Ausgabe als angezeigt `unsigned short int` . Beispiel:
 
     ```cpp
     Console::WriteLine(L' ')              // Will output 32.

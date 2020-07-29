@@ -1,5 +1,5 @@
 ---
-title: CWaitCursor-Klasse
+title: Cwaitcursor-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CWaitCursor
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - CWaitCursor [MFC], CWaitCursor
 - CWaitCursor [MFC], Restore
 ms.assetid: 5dfae2ff-d7b6-4383-b0ad-91e0868c67b3
-ms.openlocfilehash: aaa60e26d0a9bf99076f29124097b0629ce6f5d0
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: dfeedad18b3ebcefedff446699f074c86037a4a3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81754329"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222874"
 ---
-# <a name="cwaitcursor-class"></a>CWaitCursor-Klasse
+# <a name="cwaitcursor-class"></a>Cwaitcursor-Klasse
 
 Ermöglicht mit einer Befehlszeile die Anzeige eines Wartecursors (normalerweise in Form einer Sanduhr), während ein längeren Vorgang ausgeführt wird.
 
@@ -31,35 +31,35 @@ class CWaitCursor
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CWaitCursor::CWaitCursor](#cwaitcursor)|Erstellt ein `CWaitCursor` Objekt und zeigt den Wartecursor an.|
+|[Cwaitcursor:: cwaitcursor](#cwaitcursor)|Erstellt ein `CWaitCursor` -Objekt und zeigt den warte Cursor an.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CWaitCursor::Wiederherstellen](#restore)|Stellt den Wartecursor wieder her, nachdem er geändert wurde.|
+|[Cwaitcursor:: Restore](#restore)|Stellt den warte Cursor wieder her, nachdem er geändert wurde.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CWaitCursor`hat keine Basisklasse.
+`CWaitCursor`weist keine Basisklasse auf.
 
-Gute Windows-Programmiermethoden erfordern, dass Sie einen Wartecursor anzeigen, wenn Sie einen Vorgang ausführen, der eine spürbare Zeit in Anspruch nimmt.
+Gute Windows-Programmierverfahren erfordern, dass Sie immer dann einen Warte Cursor anzeigen, wenn Sie einen Vorgang ausführen, der eine spürbare Zeit in Anspruch nimmt.
 
-Um einen Wartecursor anzuzeigen, `CWaitCursor` definieren Sie einfach eine Variable vor dem Code, der den langwierigen Vorgang ausführt. Der Konstruktor des Objekts bewirkt automatisch, dass der Wartecursor angezeigt wird.
+Um einen Warte Cursor anzuzeigen, definieren Sie einfach eine `CWaitCursor` Variable vor dem Code, der den langwierigen Vorgang ausführt. Der Konstruktor des Objekts bewirkt, dass der Warte Cursor automatisch angezeigt wird.
 
-Wenn das Objekt den Gültigkeitsbereich verlässt (am `CWaitCursor` Ende des Blocks, in dem das Objekt deklariert wird), setzt sein Destruktor den Cursor auf den vorherigen Cursor. Mit anderen Worten, das Objekt führt die erforderliche Bereinigung automatisch durch.
-
-> [!NOTE]
-> Aufgrund der Funktionsweise ihrer Konstruktoren und `CWaitCursor` Destruktoren werden Objekte immer als lokale Variablen deklariert – sie werden nie als globale Variablen deklariert, noch werden sie mit **neuen**zugewiesen.
-
-Wenn Sie einen Vorgang ausführen, der dazu führen kann, dass der Cursor geändert wird, z. B. ein Meldungs- oder Dialogfeld, rufen Sie die Memberfunktion [Wiederherstellen](#restore) auf, um den Wartecursor wiederherzustellen. Es ist in `Restore` Ordnung, auch dann aufzurufen, wenn derzeit ein Wartecursor angezeigt wird.
-
-Eine andere Möglichkeit, einen Wartecursor anzuzeigen, ist die Kombination von [CCmdTarget::BeginWaitCursor](../../mfc/reference/ccmdtarget-class.md#beginwaitcursor), [CCmdTarget::EndWaitCursor](../../mfc/reference/ccmdtarget-class.md#endwaitcursor)und möglicherweise [CCmdTarget::RestoreWaitCursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor). Es `CWaitCursor` ist jedoch einfacher zu verwenden, da Sie den Cursor nicht auf den vorherigen Cursor setzen müssen, wenn Sie mit dem langwierigen Vorgang fertig sind.
+Wenn das Objekt den Gültigkeitsbereich verlässt (am Ende des Blocks, in dem das `CWaitCursor` Objekt deklariert ist), legt der Dekonstruktor den Cursor auf den vorherigen Cursor fest. Mit anderen Worten, das-Objekt führt das erforderliche Cleanup automatisch aus.
 
 > [!NOTE]
-> MFC legt den Cursor mithilfe der virtuellen Funktion [CWinApp::DoWaitCursor fest](../../mfc/reference/cwinapp-class.md#dowaitcursor) und stellt ihn wieder her. Sie können diese Funktion überschreiben, um benutzerdefiniertes Verhalten bereitzustellen.
+> Aufgrund der Funktionsweise von Konstruktoren und Debuggern `CWaitCursor` werden Objekte immer als lokale Variablen deklariert – Sie werden nie als globale Variablen deklariert, oder Sie sind nicht mit zugeordnet **`new`** .
+
+Wenn Sie einen Vorgang ausführen, der möglicherweise dazu führt, dass der Cursor geändert wird, z. b. ein Meldungs Feld oder ein Dialogfeld angezeigt wird, rufen Sie die Funktion zum [Wiederherstellen](#restore) des warte Zeigers auf. Es ist auch möglich, `Restore` auch dann aufzurufen, wenn gerade ein warte Cursor angezeigt wird.
+
+Eine andere Möglichkeit zum Anzeigen eines warte Cursors besteht darin, die Kombination aus [CCmdTarget:: beginwaitcursor](../../mfc/reference/ccmdtarget-class.md#beginwaitcursor), [CCmdTarget:: endwaitcursor](../../mfc/reference/ccmdtarget-class.md#endwaitcursor)und vielleicht [CCmdTarget:: restorewaitcursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor)zu verwenden. Ist jedoch `CWaitCursor` einfacher zu verwenden, da Sie den Cursor nicht auf den vorherigen Cursor festlegen müssen, wenn Sie mit dem langwierigen Vorgang fertig sind.
+
+> [!NOTE]
+> Der Cursor wird von MFC mithilfe der virtuellen Funktion [CWinApp::D owaitcursor](../../mfc/reference/cwinapp-class.md#dowaitcursor) festgelegt und wieder hergestellt. Sie können diese Funktion überschreiben, um benutzerdefiniertes Verhalten bereitzustellen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -73,9 +73,9 @@ Eine andere Möglichkeit, einen Wartecursor anzuzeigen, ist die Kombination von 
 
 [!code-cpp[NVC_MFCWindowing#62](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_1.cpp)]
 
-## <a name="cwaitcursorcwaitcursor"></a><a name="cwaitcursor"></a>CWaitCursor::CWaitCursor
+## <a name="cwaitcursorcwaitcursor"></a><a name="cwaitcursor"></a>Cwaitcursor:: cwaitcursor
 
-Um einen Wartecursor anzuzeigen, `CWaitCursor` deklarieren Sie einfach ein Objekt vor dem Code, der den langwierigen Vorgang ausführt.
+Um einen Warte Cursor anzuzeigen, deklarieren Sie einfach ein- `CWaitCursor` Objekt vor dem Code, der den langwierigen Vorgang ausführt.
 
 ```
 CWaitCursor();
@@ -83,22 +83,22 @@ CWaitCursor();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Konstruktor bewirkt automatisch, dass der Wartecursor angezeigt wird.
+Der Konstruktor bewirkt, dass der Warte Cursor automatisch angezeigt wird.
 
-Wenn das Objekt den Gültigkeitsbereich verlässt (am `CWaitCursor` Ende des Blocks, in dem das Objekt deklariert wird), setzt sein Destruktor den Cursor auf den vorherigen Cursor. Mit anderen Worten, das Objekt führt die erforderliche Bereinigung automatisch durch.
+Wenn das Objekt den Gültigkeitsbereich verlässt (am Ende des Blocks, in dem das `CWaitCursor` Objekt deklariert ist), legt der Dekonstruktor den Cursor auf den vorherigen Cursor fest. Mit anderen Worten, das-Objekt führt das erforderliche Cleanup automatisch aus.
 
-Sie können die Tatsache nutzen, dass der Destruktor am Ende des Blocks aufgerufen wird (was möglicherweise vor dem Ende der Funktion liegt), um den Wartecursor nur in einem Teil Ihrer Funktion aktiv zu machen. Diese Technik wird im zweiten Beispiel unten gezeigt.
+Sie können die Tatsache nutzen, dass der Dekonstruktor am Ende des Blocks aufgerufen wird (der sich möglicherweise vor dem Ende der Funktion befindet), damit der Warte Cursor nur in einem Teil der Funktion aktiv ist. Dieses Verfahren wird im zweiten Beispiel unten gezeigt.
 
 > [!NOTE]
-> Aufgrund der Funktionsweise ihrer Konstruktoren und `CWaitCursor` Destruktoren werden Objekte immer als lokale Variablen deklariert – sie werden nie als globale Variablen deklariert, noch werden sie mit **neuen**zugewiesen.
+> Aufgrund der Funktionsweise von Konstruktoren und Debuggern `CWaitCursor` werden Objekte immer als lokale Variablen deklariert – Sie werden nie als globale Variablen deklariert, und Sie sind nicht mit zugeordnet **`new`** .
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCWindowing#63](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_2.cpp)]
 
-## <a name="cwaitcursorrestore"></a><a name="restore"></a>CWaitCursor::Wiederherstellen
+## <a name="cwaitcursorrestore"></a><a name="restore"></a>Cwaitcursor:: Restore
 
-Um den Wartecursor wiederherzustellen, rufen Sie diese Funktion auf, nachdem Sie einen Vorgang ausgeführt haben, z. B. das Anzeigen eines Meldungs- oder Dialogfelds, wodurch der Wartecursor in einen anderen Cursor geändert werden kann.
+Um den warte Cursor wiederherzustellen, müssen Sie diese Funktion nach dem Ausführen eines Vorgangs (z. b. Anzeigen eines Meldungs Felds oder Dialog Felds) abrufen, das möglicherweise den warte Cursor auf einen anderen Cursor ändert.
 
 ```cpp
 void Restore();
@@ -106,19 +106,19 @@ void Restore();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Es ist in `Restore` Ordnung, auch dann aufzurufen, wenn der Wartecursor gerade angezeigt wird.
+Es ist in Ordnung, `Restore` auch dann aufzurufen, wenn der Warte Cursor aktuell angezeigt wird.
 
-Wenn Sie den Wartecursor wiederherstellen müssen, während Sie sich `CWaitCursor` in einer anderen Funktion als der Funktion befinden, in der das Objekt deklariert ist, können Sie [CCmdTarget::RestoreWaitCursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor)aufrufen.
+Wenn Sie den warte Cursor in einer anderen Funktion als der, in der das `CWaitCursor` Objekt deklariert ist, wiederherstellen müssen, können Sie [CCmdTarget:: restorewaitcursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor)verwenden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCWindowing#64](../../mfc/reference/codesnippet/cpp/cwaitcursor-class_3.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[CCmdTarget::BeginWaitCursor](../../mfc/reference/ccmdtarget-class.md#beginwaitcursor)<br/>
-[CCmdTarget::EndWaitCursor](../../mfc/reference/ccmdtarget-class.md#endwaitcursor)<br/>
-[CCmdTarget::RestoreWaitCursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor)<br/>
-[CWinApp::DoWaitCursor](../../mfc/reference/cwinapp-class.md#dowaitcursor)<br/>
-[Wie kann ich: Ändern des Mauscursors in einer Microsoft Foundation-Klassenanwendung](https://go.microsoft.com/fwlink/p/?linkid=128044)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
+[CCmdTarget:: beginwaitcursor](../../mfc/reference/ccmdtarget-class.md#beginwaitcursor)<br/>
+[CCmdTarget:: endwaitcursor](../../mfc/reference/ccmdtarget-class.md#endwaitcursor)<br/>
+[CCmdTarget:: restorewaitcursor](../../mfc/reference/ccmdtarget-class.md#restorewaitcursor)<br/>
+[CWinApp::D owaitcursor](../../mfc/reference/cwinapp-class.md#dowaitcursor)<br/>
+[Gewusst wie: Ändern des Mauszeigers in einer Microsoft Foundation Class-Anwendung](https://go.microsoft.com/fwlink/p/?linkid=128044)

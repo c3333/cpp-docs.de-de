@@ -39,12 +39,12 @@ helpviewer_keywords:
 - _timespec32_get function
 - _timespec64_get function
 ms.assetid: ed757258-b4f2-4c1d-a91b-22ea6ffce4ab
-ms.openlocfilehash: ca514c60945f25c3d335e0b02110e50ed14f9269
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 7e3c56805b3af9bb5e739bd74d03bce015c65895
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911820"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233924"
 ---
 # <a name="timespec_get-_timespec32_get-_timespec64_get"></a>timespec_get, _timespec32_get, _timespec64_get
 
@@ -79,13 +79,13 @@ Ein implementierungsspezifischer Wert ungleich null, der die Zeitbasis angibt.
 
 Der Wert von *Base* , wenn erfolgreich, andernfalls wird NULL zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **timespec_get** Funktionen legen die aktuelle Zeit in der Struktur fest, auf die das *time_spec* -Argument zeigt. Alle Versionen dieser Struktur haben zwei Member, **tv_sec** und **tv_nsec**. Der **tv_sec** Wert ist auf die ganze Anzahl von Sekunden festgelegt und **tv_nsec** auf die ganzzahlige Anzahl von Nanosekunden, die auf die Auflösung der Systemuhr gerundet ist, seit dem Beginn der Epoche, der durch *Base*angegeben wird.
 
 **Microsoft-spezifisch**
 
-Diese Funktionen unterstützen nur **TIME_UTC** als *Basiswert* . Dadurch wird der *time_spec* Wert auf die Anzahl der Sekunden und Nanosekunden seit dem Beginn der Epoche, Mitternacht, 1. Januar 1970, koordinierte Weltzeit (UTC) festgelegt. In einer **Struktur** **_timespec32**ist **tv_sec** ein **__time32_t** Wert. In einer **Struktur** **_timespec64**ist **tv_sec** ein **__time64_t** Wert. In einer **Struktur** **timespec**ist **tv_sec** ein **time_t** Typ, bei dem es sich um 32 Bits oder 64 Bits handelt, abhängig davon, ob das Präprozessormakro _USE_32BIT_TIME_T definiert ist. Die **timespec_get** -Funktion ist eine Inline Funktion, die **_timespec32_get** aufruft, wenn _USE_32BIT_TIME_T definiert ist. Andernfalls wird **_timespec64_get**aufgerufen.
+Diese Funktionen unterstützen nur **TIME_UTC** als *Basiswert* . Dadurch wird der *time_spec* Wert auf die Anzahl der Sekunden und Nanosekunden seit dem Beginn der Epoche, Mitternacht, 1. Januar 1970, koordinierte Weltzeit (UTC) festgelegt. In einer **`struct`** **_timespec32**ist **tv_sec** ein **__time32_t** Wert. In einer **`struct`** **_timespec64**ist **tv_sec** ein **__time64_t** Wert. In einem **`struct`** **timespec**ist **tv_sec** ein **time_t** Typ, der 32 Bits oder 64 Bits in der Länge ist, je nachdem, ob das Präprozessormakro _USE_32BIT_TIME_T definiert ist. Die **timespec_get** -Funktion ist eine Inline Funktion, die **_timespec32_get** aufruft, wenn _USE_32BIT_TIME_T definiert ist. Andernfalls wird **_timespec64_get**aufgerufen.
 
 **Microsoft-spezifisch beenden**
 
@@ -93,13 +93,13 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**timespec_get**, **_timespec32_get** **_timespec64_get**|C: \<time.h>, C++: \<ctime> oder \<time.h>|
+|**timespec_get**, **_timespec32_get** **_timespec64_get**|C: \<time.h> , C++: \<ctime> oder\<time.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>

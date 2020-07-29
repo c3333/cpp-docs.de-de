@@ -6,16 +6,16 @@ f1_keywords:
 - math/isinf
 helpviewer_keywords:
 - isinf function
-ms.openlocfilehash: be99970a0c7b152ba213eabd59b53a7503cd3c54
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7366f340477bf1bb50ebe1e53bcec1f3e16e0863
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62331609"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234093"
 ---
 # <a name="isinf"></a>isinf
 
-Bestimmt, ob ein Gleitkommawert unendlich ist.
+Bestimmt, ob ein Gleit Komma Wert unendlich ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,28 +32,28 @@ inline bool isinf(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu testende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**Isinf** gibt einen Wert ungleich Null (**"true"** in C++-Code) Wenn das Argument *x* ist eine positive oder negative Unendlichkeit. **Isinf** gibt 0 zurück (**"false"** in C++-Code), wenn das Argument endlich ist, oder ein NAN. Normales und subnormal Gleitkommazahlen-Punktwerte begrenzten gelten.
+**isinf** gibt einen Wert ungleich 0 (null) zurück ( **`true`** in C++-Code), wenn das Argument *x* ein positives oder negatives Unendlichkeits Wert ist. **isinf** gibt 0 ( **`false`** in C++-Code) zurück, wenn das Argument Finite oder NaN ist. Sowohl normale als auch subnormale Gleit Komma Werte werden als Endpunkte betrachtet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**Isinf** ist ein Makro, wenn als C, und eine Vorlage Inlinefunktion beim Kompilieren als C++ kompiliert.
+**isinf** ist ein Makro, wenn es als C kompiliert wird, und eine Inline-Vorlagen Funktion, wenn Sie als C++ kompiliert werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------------|-------------------------------|
-|**isinf**|\<math.h>|\<math.h> or \<cmath>|
+|**isinf**|\<math.h>|\<math.h> oder \<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [fpclassify](fpclassify.md)<br/>
 [_fpclass, _fpclassf](fpclass-fpclassf.md)<br/>
 [isfinite, _finite, _finitef](finite-finitef.md)<br/>

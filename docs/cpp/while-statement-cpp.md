@@ -7,12 +7,12 @@ helpviewer_keywords:
 - while keyword [C++]
 - while keyword [C++], syntax
 ms.assetid: 358dbe76-5e5e-4af5-b575-c2293c636899
-ms.openlocfilehash: 0dfbbb2865c9cf0a23b04ce213a0e739e29c27da
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 168b1fc20d165c44c3230a8d1094c99b689ddbb9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80187322"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233547"
 ---
 # <a name="while-statement-c"></a>while-Anweisung (C++)
 
@@ -27,11 +27,11 @@ while ( expression )
 
 ## <a name="remarks"></a>Bemerkungen
 
-Der Test des *Ausdrucks* findet vor jeder Ausführung der Schleife statt. Daher wird eine **while** -Schleife NULL oder mehrmals ausgeführt. der *Ausdruck* muss einen ganzzahligen Typ, einen Zeigertyp oder einen Klassentyp mit eindeutiger Konvertierung in einen ganzzahligen oder Zeigertyp aufweisen.
+Der Test des *Ausdrucks* findet vor jeder Ausführung der Schleife statt. Daher wird eine- **`while`** Schleife NULL oder mehrmals ausgeführt. der *Ausdruck* muss einen ganzzahligen Typ, einen Zeigertyp oder einen Klassentyp mit eindeutiger Konvertierung in einen ganzzahligen oder Zeigertyp aufweisen.
 
-Eine **while** -Schleife kann auch beendet werden, wenn eine unter [Brechung](../cpp/break-statement-cpp.md), ein [goto](../cpp/goto-statement-cpp.md)oder eine [Rückgabe](../cpp/return-statement-cpp.md) innerhalb des Anweisungs Texts ausgeführt wird. Verwenden Sie [Continue](../cpp/continue-statement-cpp.md) , um die aktuelle Iterationen zu beenden, ohne die **while** -Schleife zu beenden. **Continue** übergibt die Steuerung an die nächste Iterations Schleife der **while** -Schleife.
+Eine- **`while`** Schleife kann auch beendet werden, wenn eine [break](../cpp/break-statement-cpp.md)-, [goto](../cpp/goto-statement-cpp.md)-oder [Return](../cpp/return-statement-cpp.md) -Anweisung innerhalb des Anweisungs Texts ausgeführt wird. Verwenden Sie [Continue](../cpp/continue-statement-cpp.md) , um die aktuelle Iterations Schleife zu beenden, ohne die Schleife zu beenden **`while`** . **`continue`** übergibt die Steuerung an die nächste Iterations **`while`** Schleife.
 
-Der folgende Code verwendet eine **while** -Schleife, um nachfolgende Unterstriche aus einer Zeichenfolge zu kürzen:
+Der folgende Code verwendet eine- **`while`** Schleife, um nachfolgende Unterstriche aus einer Zeichenfolge zu kürzen:
 
 ```cpp
 // while_statement.cpp
@@ -62,7 +62,7 @@ int main()
 
 Die Beendigungsbedingung wird am Anfang der Schleife ausgewertet. Solange keine nachgestellten Unterstriche vorhanden sind, wird die Schleife nicht ausgeführt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Iterationsanweisungen](../cpp/iteration-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>

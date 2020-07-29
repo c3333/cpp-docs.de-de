@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Conformance compiler options
 - Zc compiler options [C++]
 ms.assetid: 3031f02d-3b14-4ad0-869e-22b0110c3aed
-ms.openlocfilehash: 7f98667d3a771994d1b4e54b429f42cb566c102c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b1173ad609a1b2c95d6cf118f4e2d5defeec5b9c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62316027"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234340"
 ---
 # <a name="zcforscope-force-conformance-in-for-loop-scope"></a>/Zc:forScope (Übereinstimmung in for-Schleifenbereich erzwingen)
 
@@ -24,13 +24,13 @@ Verwendet zum Implementieren von Standard-C++-Verhalten für [for](../../cpp/for
 
 ## <a name="syntax"></a>Syntax
 
-> **/Zc:forScope**[**-**]
+> **/Zc: forScope**[ **-** ]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Standardverhalten bedeutet, den Initialisierer einer **for** -Schleife nach der **for** -Schleife den Gültigkeitsbereich verlassen zu lassen. Unter **/Zc:forScope-** und [/Ze](za-ze-disable-language-extensions.md)bleibt der Initialisierer der **for** -Schleife im Gültigkeitsbereich, bis der lokale Gültigkeitsbereich endet.
+Standard Verhalten besteht darin, dass der **`for`** Initialisierer einer Schleife den Gültigkeitsbereich nach der **`for`** Schleife verlässt. Unter **/Zc: forScope-** und [/Ze](za-ze-disable-language-extensions.md) **`for`** verbleibt der Initialisierer der Schleife im Gültigkeitsbereich, bis der lokale Gültigkeitsbereich endet.
 
-Die **/Zc: forScope** Option ist standardmäßig aktiviert. **/ Zc: forScope** hat keine Auswirkungen, wenn die [/ PERMISSIVE--](permissive-standards-conformance.md) angegeben wird.
+Die **/Zc: forScope** -Option ist standardmäßig aktiviert. **/Zc: forScope** ist nicht betroffen, wenn die [/permissive-](permissive-standards-conformance.md) -Option angegeben wird.
 
 Die Option **/Zc:forScope-** ist veraltet und wird in einer der nächsten Versionen entfernt. Eine Verwendung von **/Zc:forScope-** generiert die Veraltungswarnung D9035.
 
@@ -55,15 +55,15 @@ Wenn Sie **/Zc:forScope-** verwenden, wird die Warnmeldung C4288 (standardmäßi
 
 Sie können das Laufzeitverhalten von **/Zc:forScope** ändern, indem Sie das [conform](../../preprocessor/conform.md) -Pragma verwenden.
 
-Wenn Sie **/Zc:forScope-** in einem Projekt verwenden, für das es eine vorhandene PCH-Datei gibt, wird eine Warnung generiert, wird **/Zc:forScope-** ignoriert, und wird die Kompilierung mit der vorhandenen PCH-Dateien fortgesetzt. Wenn Sie eine neue PCH-Datei erstellen möchten, verwenden Sie ["/ Yc" (Erstellen vorkompilierter Headerdatei)](yc-create-precompiled-header-file.md).
+Wenn Sie **/Zc:forScope-** in einem Projekt verwenden, für das es eine vorhandene PCH-Datei gibt, wird eine Warnung generiert, wird **/Zc:forScope-** ignoriert, und wird die Kompilierung mit der vorhandenen PCH-Dateien fortgesetzt. Wenn Sie möchten, dass eine neue PCH-Datei generiert wird, verwenden Sie [/Yc (Vorkompilierte Header Datei erstellen)](yc-create-precompiled-header-file.md).
 
 Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter [Nonstandard Behavior](../../cpp/nonstandard-behavior.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Konfigurationseigenschaften** > **C/C++-** > **Sprache** Eigenschaftenseite.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Sprache** aus.
 
 1. Ändern Sie die Eigenschaft **Übereinstimmung in einem For-Schleifenbereich erzwingen** .
 
@@ -74,4 +74,4 @@ Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter
 ## <a name="see-also"></a>Siehe auch
 
 [/Zc (Übereinstimmung)](zc-conformance.md)<br/>
-[/Za, /Ze (Spracherweiterungen deaktivieren)](za-ze-disable-language-extensions.md)<br/>
+[/Za,/Ze (Spracherweiterungen deaktivieren)](za-ze-disable-language-extensions.md)<br/>

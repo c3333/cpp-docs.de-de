@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - __interface keyword [C++]
 ms.assetid: ca5d400b-d6d8-4ba2-89af-73f67e5ec056
-ms.openlocfilehash: 9b265dcbaca9f8fa836795cca990804371813647
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9ca13ed91601fa3a64071304c14d483e84c314a3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80178210"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233716"
 ---
 # <a name="__interface"></a>__interface
 
 **Microsoft-spezifisch**
 
-Eine Microsoft C++ -Schnittstelle kann wie folgt definiert werden:
+Eine Microsoft C++-Schnittstelle kann wie folgt definiert werden:
 
 - Kann von null oder mehreren Basisschnittstellen erben.
 
@@ -39,7 +39,7 @@ modifier __interface interface-name {interface-definition};
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine C++ [Klasse](../cpp/class-cpp.md) oder [Struktur](../cpp/struct-cpp.md) kann mit diesen Regeln implementiert werden, **__interface** Sie jedoch erzwingt.
+Eine C++- [Klasse](../cpp/class-cpp.md) oder- [Struktur](../cpp/struct-cpp.md) kann mit diesen Regeln implementiert werden, setzt Sie aber durch **`__interface`** .
 
 Im Folgenden ist eine Beispiel-Schnittstellendefinition angegeben:
 
@@ -58,7 +58,7 @@ Sie müssen nicht explizit angeben, dass die `CommitX`- und `get_X`-Funktionen r
 virtual HRESULT CommitX() = 0;
 ```
 
-**__interface** impliziert den [novtable](../cpp/novtable.md) - **__declspec** Modifizierer.
+**`__interface`** impliziert den [novtable](../cpp/novtable.md) - **`__declspec`** Modifizierer.
 
 ## <a name="example"></a>Beispiel
 
@@ -144,7 +144,7 @@ bstr_data = Testing
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[Schnittstellenattribut](../windows/attributes/interface-attributes.md)
+[Schnittstellen Attribute](../windows/attributes/interface-attributes.md)

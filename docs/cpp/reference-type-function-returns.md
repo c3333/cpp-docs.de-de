@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data types [C++], function return types
 - functions [C++], return types
 ms.assetid: 5b73be1d-2dc7-41df-ab0a-adcba36f2ad1
-ms.openlocfilehash: 5e84643713dcbcb278fe7ce07c5d55f3593ec2ef
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b2997348a3234302655187af25c9c4644c95e48e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188297"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233625"
 ---
 # <a name="reference-type-function-returns"></a>Verweistyp-Funktionsrückgaben
 
@@ -86,7 +86,7 @@ Beachten Sie auch, dass in Main das Punktobjekt im Gültigkeitsbereich bleibt un
 
 Deklarationen von Verweistypen müssen Initialisierer enthalten, ausgenommen in den folgenden Fällen:
 
-- Explizite **externe** Deklaration
+- Explizite **`extern`** Deklaration
 
 - Deklaration eines Klassenmembers
 
@@ -108,8 +108,8 @@ Foo& GetFoo()
 } // f is destroyed here
 ```
 
-Der Compiler gibt in diesem Fall eine Warnung aus: `warning C4172: returning address of local variable or temporary`. In einfachen Programmen ist es möglich, dass gelegentlich keine Zugriffsverletzung auftritt, wenn der Verweis vom Aufrufer erfolgt, bevor die Speicheradresse überschrieben wird. Dies ist einfach auf Glück zurückzuführen. Warnung beachten.
+Der Compiler gibt in diesem Fall eine Warnung aus: `warning C4172: returning address of local variable or temporary` . In einfachen Programmen ist es möglich, dass gelegentlich keine Zugriffsverletzung auftritt, wenn der Verweis vom Aufrufer erfolgt, bevor die Speicheradresse überschrieben wird. Dies ist einfach auf Glück zurückzuführen. Warnung beachten.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Referenzen](../cpp/references-cpp.md)

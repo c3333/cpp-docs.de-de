@@ -15,16 +15,16 @@ helpviewer_keywords:
 - is_nothrow_invocable
 - is_nothrow_invocable_r class
 - is_nothrow_invocable_r
-ms.openlocfilehash: 53394a10464e2688953cd1b5703530e2719b7593
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 47801eff0ea0c41c7b69dfb7a1aa5190a43f1b75
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076458"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233105"
 ---
 # <a name="is_invocable-is_invocable_r-is_nothrow_invocable-is_nothrow_invocable_r-classes"></a>is_invocable-, is_invocable_r-, is_nothrow_invocable-, is_nothrow_invocable_r-Klassen
 
-Diese Vorlagen bestimmen, ob ein Typ mit den angegebenen Argument Typen aufgerufen werden kann. `is_invocable_r` und `is_nothrow_invocable_r` bestimmen auch, ob das Ergebnis des aufzurufenden aufzurufenden in einen bestimmten Typ konvertiert werden kann. `is_nothrow_invocable` und `is_nothrow_invocable_r` bestimmen auch, ob der Aufruf bekanntermaßen Ausnahmen nicht auslöst. Hinzugefügt in c++ 17.
+Diese Vorlagen bestimmen, ob ein Typ mit den angegebenen Argument Typen aufgerufen werden kann. `is_invocable_r`und `is_nothrow_invocable_r` auch bestimmen, ob das Ergebnis des aufzurufenden aufzurufenden in einen bestimmten Typ konvertiert werden kann. `is_nothrow_invocable`und legen `is_nothrow_invocable_r` außerdem fest, ob der Aufruf keine Ausnahmen auslöst. Hinzugefügt in c++ 17.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,26 +61,26 @@ inline constexpr bool is_nothrow_invocable_r_v =
 
 ### <a name="parameters"></a>Parameter
 
-*Aufruf Bare*\
+*Callable*\
 Der abzufragende, aufgerufene Typ.
 
 *Args*\
 Die abzufragende Argument Typen.
 
-*Konvertierbar*\
+*Ver*\
 Der Typ, in den das Ergebnis von *Callable* konvertiert werden kann.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das `is_invocable` Type-Prädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann.*
+Das `is_invocable` typprädikat ist true, wenn der Aufruf Bare *Callable* Aufruf Bare Typ mithilfe der Argumente Argumente in *Args* einem nicht ausgewerteten Kontext aufgerufen werden kann.
 
-Das `is_invocable_r` Type-Prädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann,* um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann.
+Das `is_invocable_r` typprädikat ist true, wenn der Aufruf Bare *Callable* Aufruf Bare Typ mithilfe der Argumente Argumente in *Args* einem nicht ausgewerteten Kontext aufgerufen werden kann, um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann.
 
-Das `is_nothrow_invocable` Type-Prädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann,* und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
+Das `is_nothrow_invocable` typprädikat ist true, wenn der Aufruf Bare Aufruf *Bare* Typ mithilfe der Argumente Argumente in *Args* einem nicht ausgewerteten Kontext aufgerufen werden kann, und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
 
-Das `is_nothrow_invocable_r` Type-Prädikat ist "true", wenn der Aufruf Bare Aufruf *Bare* Typ mithilfe der *Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen werden kann, um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann, und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
+Das `is_nothrow_invocable_r` typprädikat ist true, wenn der Aufruf Bare Aufruf *Bare* Typ mithilfe der Argumente Argumente in *Args* einem nicht ausgewerteten Kontext aufgerufen werden kann, um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann, und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
 
-Alle *Typen, die konvertiert, aufgerufen*werden *können*, und die Typen in den Parametern des *Parameter Pakets müssen* ein vollständiger Typ, ein Array mit unbekannter Grenze oder eine möglicherweise CV qualifizierte **void**sein. Andernfalls ist das Verhalten des Prädikats nicht definiert.
+Alle *Typen, die konvertiert, aufgerufen*werden *können*, und die Typen in den Parametern des *Parameter Pakets müssen* ein vollständiger Typ, ein Array mit unbekannter Grenze oder eine möglicherweise CV qualifizierte sein **`void`** . Andernfalls ist das Verhalten des Prädikats nicht definiert.
 
 ## <a name="example"></a>Beispiel
 
@@ -116,11 +116,11 @@ int main()
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits >
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [<type_traits>](../standard-library/type-traits.md)\
 [invoke](functional-functions.md#invoke)

@@ -7,14 +7,14 @@ helpviewer_keywords:
 - is_fundamental class
 - is_fundamental
 ms.assetid: b84eee84-2fb2-4611-beaf-b384074d8b6a
-ms.openlocfilehash: 5643aa6a2d4bbfaafc86cba4251df162b59b4692
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 99d712d11fd47f694477029bc5c2b23fe732eb04
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456261"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233118"
 ---
-# <a name="isfundamental-class"></a>is_fundamental-Klasse
+# <a name="is_fundamental-class"></a>is_fundamental-Klasse
 
 Prüft, ob der Typ ungültig oder arithmetisch ist.
 
@@ -30,9 +30,9 @@ struct is_fundamental;
 *Genossenschaft*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typprädikats ist "true",  wenn die typität ein grundlegender Typ ist, d. h. **void**, ein ganzzahliger Typ, `cv-qualified` ein Gleit kommatyp oder ein-Formular, andernfalls enthält er false.
+Eine Instanz des typprädikats ist "true", wenn die *typität* ein grundlegender Typ ist, d. h.,, ein ganzzahliger **`void`** Typ, ein Gleit kommatyp oder ein- `cv-qualified` Formular, andernfalls "false".
 
 ## <a name="example"></a>Beispiel
 
@@ -69,9 +69,9 @@ is_fundamental<const float> == true
 is_fundamental<void> == true
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 

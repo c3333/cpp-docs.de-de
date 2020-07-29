@@ -35,12 +35,12 @@ helpviewer_keywords:
 - calculating exponentials
 - exp function
 ms.assetid: 7070016d-1143-407e-9e9a-6b059bb88867
-ms.openlocfilehash: b6d4906212073ab8cb04a0ab77d1234d444a4c95
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 9872a83ba3ec5346b7aed5fb51ee837d3ed827aa
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909661"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234171"
 ---
 # <a name="exp-expf-expl"></a>exp, expf, expl
 
@@ -84,13 +84,13 @@ Die **Exp** -Funktionen geben den Exponentialwert des Gleit Komma Parameters *x*
 
 Die **Exp** -Funktion verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Exp** aufzurufen können, die ein **float** -oder **long Double** -Argument akzeptieren. In einem C-Programm nimmt **Exp** immer einen **Double**-Wert an und gibt ihn zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Exp** aufzurufen können, die ein- **`float`** oder-Argument annehmen **`long double`** . In einem C-Programm übernimmt **Exp** immer und gibt einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|---------------------|---|
@@ -119,8 +119,8 @@ int main( void )
 exp( 2.302585 ) = 10.000000
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [log, logf, log10, log10f](log-logf-log10-log10f.md)<br/>
 [_CIexp](../../c-runtime-library/ciexp.md)<br/>

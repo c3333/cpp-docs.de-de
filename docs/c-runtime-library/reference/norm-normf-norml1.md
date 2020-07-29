@@ -33,12 +33,12 @@ helpviewer_keywords:
 - normf function
 - norml function
 ms.assetid: 9786ecfe-0019-4553-b378-0af6c691e15c
-ms.openlocfilehash: 8deaa07d984a3840c73e594535ffffc9078d4716
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 38e7283ca5acd5571589d3ef0b19c626806e4bca
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951320"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234054"
 ---
 # <a name="norm-normf-norml"></a>norm, normf, norml
 
@@ -66,17 +66,17 @@ Eine komplexe Zahl.
 
 Die Quadrat Größe von *z*.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen der **Norm** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und **float** -oder **long Double** -Werte zurückgeben. In einem C-Programm übernimmt **Norm** immer einen **_Dcomplex** -Wert und gibt einen **Double** -Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen der **Norm** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** Werte annehmen und-oder-Werte zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **Norm** immer einen **_Dcomplex** Wert und gibt einen **`double`** Wert zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**norm**, **normf**, **norml**|\<complex.h>|\<complex.h>|
+|**Norm**, **normf**, **NORML**|\<complex.h>|\<complex.h>|
 
-Die Typen **_Fcomplex**, **_Dcomplex**und **_Lcomplex** sind Microsoft-spezifische Entsprechungen der nicht implementierten nativen C99-Typen **float _Complex**, **Double _Complex**und **long Double _Complex**.  Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Typen **_Fcomplex**, **_Dcomplex**und **_Lcomplex** sind Microsoft-spezifische Entsprechungen der nicht implementierten systemeigenen C99-Typen **float _Complex**, **Double _Complex**und **long Double _Complex**bzw.  Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

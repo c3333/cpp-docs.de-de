@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -await enable coroutine support [C++]
 - await enable coroutine support [C++]
 ms.assetid: 302c8e69-09b6-4c58-bcdd-0a6a8713a8df
-ms.openlocfilehash: 53a6cf4b3d14ee97a324fa01f83c0d0fee61180b
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 526216ba2ae259b53bcf77691ebd09a6152b83f0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373696"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223927"
 ---
 # <a name="await-enable-coroutine-support"></a>/await (Coroutineunterstützung aktivieren)
 
@@ -24,9 +24,9 @@ Verwenden Sie die **/await** -Compileroption, um Compilerunterstützung für cor
 
 > /await
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/await** -Compileroption aktiviert die Compilerunterstützung für C++-Coroutinen und die Schlüsselwörter **co_await**, **co_yield**und **co_return**. Diese Option ist standardmäßig deaktiviert. Weitere Informationen zur Unterstützung von Coroutinen in Visual Studio finden Sie im [Visual Studio-Teamblog](https://devblogs.microsoft.com/cppblog/category/coroutine/). Weitere Informationen zum Coroutinen-Standardvorschlag finden Sie unter [N4628 Working Draft, Technical Specification for C++ Extensions for Coroutinen](https://wg21.link/n4628).
+Die **/await** -Compileroption aktiviert die Compilerunterstützung für C++-Coroutinen und die Schlüsselwörter, **`co_await`** **`co_yield`** und **`co_return`** . Diese Option ist standardmäßig deaktiviert. Weitere Informationen zur Unterstützung von Coroutinen in Visual Studio finden Sie im [Visual Studio-Teamblog](https://devblogs.microsoft.com/cppblog/category/coroutine/). Weitere Informationen zum Coroutinen-Standardvorschlag finden Sie unter [N4628 Working Draft, Technical Specification for C++ Extensions for Coroutinen](https://wg21.link/n4628).
 
 Die **/await** -Option ist ab Visual Studio 2015 verfügbar.
 
@@ -42,7 +42,7 @@ Die **/await** -Option ist ab Visual Studio 2015 verfügbar.
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

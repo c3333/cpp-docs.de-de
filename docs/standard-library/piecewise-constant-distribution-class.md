@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::piecewise_constant_distribution [C++], param_type
 - std::piecewise_constant_distribution [C++], param_type
 ms.assetid: 2c9a21fa-623e-4d63-b827-3f1556b6dedb
-ms.openlocfilehash: cd7dc8467d07f53b0c741f98743a471df6f6c944
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6764e37b994ed76d27f88e3bdc8ec137d5e2f600
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372103"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232988"
 ---
 # <a name="piecewise_constant_distribution-class"></a>piecewise_constant_distribution-Klasse
 
@@ -81,7 +81,7 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType*\
-Der Gleitkommaergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -106,7 +106,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="example"></a>Beispiel
 
@@ -212,13 +212,13 @@ Distribution for 100 samples:
     14-15 ::::::::
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="piecewise_constant_distributionpiecewise_constant_distribution"></a><a name="piecewise_constant_distribution"></a>piecewise_constant_distribution::piecewise_constant_distribution
+## <a name="piecewise_constant_distributionpiecewise_constant_distribution"></a><a name="piecewise_constant_distribution"></a>piecewise_constant_distribution::p iecewise_constant_distribution
 
 Erstellt die Verteilung.
 
@@ -248,19 +248,19 @@ explicit piecewise_constant_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*firstI*\
+*firsti*\
 Ein Eingabeiterator für das erste Element im Verteilungsbereich.
 
-*lastI*\
+*lasti*\
 Ein Eingabeiterator für das letzte Element im Verteilungsbereich.
 
 *firstW*\
 Ein Eingabeiterator für das erste Element im Gewichtsbereich.
 
-*Intervallen*\
+*Abstände*\
 Ein [initializer_list](../cpp/initializers.md) mit den Verteilungsintervallen.
 
-*Count*\
+*Countdown*\
 Die Anzahl von Elementen im Verteilungsbereich.
 
 *xmin*\
@@ -270,9 +270,9 @@ Der niedrigste Wert im Verteilungsbereich.
 Der höchste Wert im Verteilungsbereich. Muss größer als *xmin* sein.
 
 *weightfunc*\
-Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der Parameter als auch der Rückgabewert müssen in **Double konvertierbar**sein.
+Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der-Parameter als auch der Rückgabewert müssen in konvertierbar sein **`double`** .
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -298,7 +298,7 @@ intervals,
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungsobjekt mit Intervallen *intervals* aus den Initialisierungslistenintervallen und Gewichtungen, die aus der Funktion *weightfunc*generiert werden.
+erstellt ein Verteilungs Objekt mit Intervallen aus den initialisiererlistenintervallen und Gewichtungen, die aus der Funktion " *weightfunc*" generiert werden. *intervals*
 
 Der als
 
@@ -308,7 +308,7 @@ piecewise_constant_distribution(size_t count, result_type xmin, result_type xmax
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungsobjekt mit gleichmäßig verteilten *Zählintervallen* über `xmin,xmax`[ ], wobei jede Intervallgewichtung entsprechend der Funktion *weightfunc*zugewiesen wird, und *weightfunc* muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, die beide in `double`. **Voraussetzung:**`xmin < xmax`
+erstellt ein Verteilungs Objekt mit gleichmäßig über [] verteilten *Zähl* Intervallen und `xmin,xmax` weist jedem Intervall Gewichtungs Gewichtungen entsprechend der *weightfunc*-Funktion zu. *weightfunc* muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, der beide in konvertierbar sind **`double`** . **Vorbedingung:**`xmin < xmax`
 
 Der als
 
@@ -316,9 +316,9 @@ Der als
 explicit piecewise_constant_distribution(const param_type& parm);
 ```
 
-erstellt ein Verteilungsobjekt unter Verwendung von *parm* als gespeicherte Parameterstruktur.
+erstellt ein Verteilungs *Objekt mit einem* Parameter als gespeicherte Parameter Struktur.
 
-## <a name="piecewise_constant_distributionparam_type"></a><a name="param_type"></a>piecewise_constant_distribution::param_type
+## <a name="piecewise_constant_distributionparam_type"></a><a name="param_type"></a>piecewise_constant_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -344,11 +344,11 @@ Siehe Konstruktorparameter für [piecewise_constant_distribution](#piecewise_con
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`xmin < xmax`
+**Vorbedingung:**`xmin < xmax`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<zufällige>](../standard-library/random.md)\
+[\<random>](../standard-library/random.md)\
 [piecewise_linear_distribution](../standard-library/piecewise-linear-distribution-class.md)

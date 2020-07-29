@@ -1,38 +1,38 @@
 ---
-title: switchAnweisung (C++)
-description: Verweis auf die C++-Standard switch Anweisung in Microsoft Visual Studio C++.
+title: :::no-loc(switch):::Anweisung (C++)
+description: 'Verweis auf die C++-Standard :::no-loc(switch)::: Anweisung in Microsoft Visual Studio C++.'
 ms.date: 04/25/2020
 f1_keywords:
-- default_cpp
-- switch_cpp
-- case_cpp
+- :::no-loc(default):::_cpp
+- :::no-loc(switch):::_cpp
+- :::no-loc(case):::_cpp
 helpviewer_keywords:
-- switch keyword [C++]
-- case keyword [C++], in switch statements
-- default keyword [C++]
+- ':::no-loc(switch)::: keyword [C++]'
+- ':::no-loc(case)::: keyword [C++], in :::no-loc(switch)::: statements'
+- ':::no-loc(default)::: keyword [C++]'
 no-loc:
-- switch
-- case
-- default
-- break
-- while
-- opt
+- ':::no-loc(switch):::'
+- ':::no-loc(case):::'
+- ':::no-loc(default):::'
+- ':::no-loc(break):::'
+- ':::no-loc(while):::'
+- ':::no-loc(opt):::'
 ms.assetid: 6c3f3ed3-5593-463c-8f4b-b33742b455c6
-ms.openlocfilehash: d43a7a64b5a74f00833093ae8999d73edd7f5753
-ms.sourcegitcommit: c4cf8976939dd0e13e25b82930221323ba6f15d4
+ms.openlocfilehash: d71989b6d8af0213c4cd6d4fbd8d5a84b318701a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83389700"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223589"
 ---
-# <a name="switch-statement-c"></a>`switch`Anweisung (C++)
+# <a name="no-locswitch-statement-c"></a>`:::no-loc(switch):::`Anweisung (C++)
 
 Ermöglicht die Auswahl von mehreren Codeabschnitten, abhängig vom Wert eines ganzzahligen Ausdrucks.
 
 ## <a name="syntax"></a>Syntax
 
 > *`selection-statement`*:\
-> &nbsp;&nbsp;&nbsp;&nbsp;__`switch`__&nbsp;__`(`__&nbsp;*`init-statement`*<sub>opt</sub> <sup>C++ 17</sup>&nbsp;*`condition`*&nbsp;__`)`__&nbsp;*`statement`*
+> &nbsp;&nbsp;&nbsp;&nbsp;**`:::no-loc(switch):::`**&nbsp;**`(`**&nbsp;*`init-statement`*<sub>:::no-loc(opt):::</sub> <sup>C++ 17</sup>&nbsp;*`condition`*&nbsp;**`)`**&nbsp;*`statement`*
 
 > *`init-statement`*:\
 > &nbsp;&nbsp;&nbsp;&nbsp; *`expression-statement`*\
@@ -40,144 +40,144 @@ Ermöglicht die Auswahl von mehreren Codeabschnitten, abhängig vom Wert eines g
 
 > *`condition`*:\
 > &nbsp;&nbsp;&nbsp;&nbsp; *`expression`*\
-> &nbsp;&nbsp;&nbsp;&nbsp; *`attribute-specifier-seq`*<sub>opt</sub>&nbsp;*`decl-specifier-seq`*&nbsp;*`declarator`*&nbsp;*`brace-or-equal-initializer`*
+> &nbsp;&nbsp;&nbsp;&nbsp; *`attribute-specifier-seq`*<sub>:::no-loc(opt):::</sub>&nbsp;*`decl-specifier-seq`*&nbsp;*`declarator`*&nbsp;*`brace-or-equal-initializer`*
 
 > *`labeled-statement`*:\
-> &nbsp;&nbsp;&nbsp;&nbsp; __`case`__&nbsp;*`constant-expression`*&nbsp;__`:`__&nbsp;*`statement`*\
-> &nbsp;&nbsp;&nbsp;&nbsp; __`default`__&nbsp;__`:`__&nbsp;*`statement`*
+> &nbsp;&nbsp;&nbsp;&nbsp; **`:::no-loc(case):::`**&nbsp;*`constant-expression`*&nbsp;**`:`**&nbsp;*`statement`*\
+> &nbsp;&nbsp;&nbsp;&nbsp; **`:::no-loc(default):::`**&nbsp;**`:`**&nbsp;*`statement`*
 
 ## <a name="remarks"></a>Hinweise
 
-Eine __`switch`__ -Anweisung bewirkt, dass die Steuerung abhängig vom Wert *`condition`* auf eine *`labeled-statement`* im Anweisungstext übertragen wird.
+Eine **`:::no-loc(switch):::`** -Anweisung bewirkt, dass die Steuerung abhängig vom Wert *`condition`* auf eine *`labeled-statement`* im Anweisungstext übertragen wird.
 
 Muss einen ganzzahligen *`condition`* Typ aufweisen oder ein Klassentyp sein, der eine eindeutige Konvertierung in einen ganzzahligen Typ aufweist. Ganzzahlige herauf Stufung findet statt, wie in [Standard Konvertierungen](standard-conversions.md)beschrieben.
 
-Der __`switch`__ Anweisungs Text besteht aus einer Reihe von __`case`__ Bezeichnungen und einer optionalen __`default`__ Bezeichnung. Eine *`labeled-statement`* ist eine dieser Bezeichnungen und die folgenden Anweisungen. Die Anweisungen mit der Bezeichnung sind nicht syntaktische Anforderungen, aber die __`switch`__ Anweisung ist ohne sie bedeutungslos. Es können nicht zwei *`constant-expression`* Werte in- __`case`__ Anweisungen zu demselben Wert ausgewertet werden. Die __`default`__ Bezeichnung wird möglicherweise nur einmal angezeigt. Die- __`default`__ Anweisung wird häufig am Ende platziert, aber Sie kann an beliebiger __`switch`__ Stelle im Anweisungs Text angezeigt werden. Eine __`case`__ - oder __`default`__ -Bezeichnung kann nur innerhalb einer __`switch`__ -Anweisung erscheinen.
+Der **`:::no-loc(switch):::`** Anweisungs Text besteht aus einer Reihe von **`:::no-loc(case):::`** Bezeichnungen und einer :::no-loc(opt)::: ional- **`:::no-loc(default):::`** Bezeichnung. Eine *`labeled-statement`* ist eine dieser Bezeichnungen und die folgenden Anweisungen. Die Anweisungen mit der Bezeichnung sind nicht syntaktische Anforderungen, aber die **`:::no-loc(switch):::`** Anweisung ist ohne sie bedeutungslos. Es können nicht zwei *`constant-expression`* Werte in- **`:::no-loc(case):::`** Anweisungen zu demselben Wert ausgewertet werden. Die **`:::no-loc(default):::`** Bezeichnung wird möglicherweise nur einmal angezeigt. Die- **`:::no-loc(default):::`** Anweisung wird häufig am Ende platziert, aber Sie kann an beliebiger **`:::no-loc(switch):::`** Stelle im Anweisungs Text angezeigt werden. Eine **`:::no-loc(case):::`** - oder **`:::no-loc(default):::`** -Bezeichnung kann nur innerhalb einer **`:::no-loc(switch):::`** -Anweisung erscheinen.
 
-Die *`constant-expression`* in jeder __`case`__ Bezeichnung wird in einen konstanten Wert konvertiert, der dem gleichen Typ wie entspricht *`condition`* . Anschließend wird es mit *`condition`* auf Gleichheit verglichen. Das Steuerelement wird an die erste Anweisung nach dem Wert weitergeleitet, der mit __`case`__ *`constant-expression`* dem Wert von übereinstimmt *`condition`* . Der resultierende Verhalten wird in der folgenden Tabelle gezeigt.
+Die *`constant-expression`* in jeder **`:::no-loc(case):::`** Bezeichnung wird in einen konstanten Wert konvertiert, der dem gleichen Typ wie entspricht *`condition`* . Anschließend wird es mit *`condition`* auf Gleichheit verglichen. Das Steuerelement wird an die erste Anweisung nach dem Wert weitergeleitet, der mit **`:::no-loc(case):::`** *`constant-expression`* dem Wert von übereinstimmt *`condition`* . Der resultierende Verhalten wird in der folgenden Tabelle gezeigt.
 
-### <a name="switch-statement-behavior"></a>`switch`Anweisungs Verhalten
+### <a name="no-locswitch-statement-behavior"></a>`:::no-loc(switch):::`Anweisungs Verhalten
 
 | Bedingung | Aktion |
 |--|--|
 | Der konvertierte Wert stimmt mit dem des hochgestuften steuernden Ausdrucks überein. | Die Steuerung wird an die Anweisung übertragen, die auf die Bezeichnug folgt. |
-| Keine der Konstanten entspricht den Konstanten in den __`case`__ Bezeichnungen __`default`__ . eine Bezeichnung ist vorhanden. | Das Steuerelement wird an die Bezeichnung übertragen __`default`__ . |
-| Keine der Konstanten entspricht den Konstanten in den __`case`__ Bezeichnungen __`default`__ . es ist keine Bezeichnung vorhanden. | Das Steuerelement wird an die Anweisung nach der-Anweisung übertragen __`switch`__ . |
+| Keine der Konstanten entspricht den Konstanten in den **`:::no-loc(case):::`** Bezeichnungen **`:::no-loc(default):::`** . eine Bezeichnung ist vorhanden. | Das Steuerelement wird an die Bezeichnung übertragen **`:::no-loc(default):::`** . |
+| Keine der Konstanten entspricht den Konstanten in den **`:::no-loc(case):::`** Bezeichnungen **`:::no-loc(default):::`** . es ist keine Bezeichnung vorhanden. | Das Steuerelement wird an die Anweisung nach der-Anweisung übertragen **`:::no-loc(switch):::`** . |
 
-Wenn ein übereinstimmender Ausdruck gefunden wird, kann die Ausführung bis zu einem späteren Zeitpunkt fortgesetzt werden __`case`__ __`default`__ . Die [`break`](../cpp/break-statement-cpp.md) -Anweisung wird verwendet, um die Ausführung anzuhalten und die Steuerung an die Anweisung nach der-Anweisung zu übertragen __`switch`__ . Ohne eine- __`break`__ Anweisung wird jede Anweisung der übereinstimmenden __`case`__ Bezeichnung bis zum Ende der __`switch`__ ausgeführt, einschließlich der-Anweisung __`default`__ . Beispiel:
+Wenn ein übereinstimmender Ausdruck gefunden wird, kann die Ausführung bis zu einem späteren Zeitpunkt fortgesetzt werden **`:::no-loc(case):::`** **`:::no-loc(default):::`** . Die [`:::no-loc(break):::`](../cpp/:::no-loc(break):::-statement-cpp.md) -Anweisung wird verwendet, um die Ausführung anzuhalten und die Steuerung an die Anweisung nach der-Anweisung zu übertragen **`:::no-loc(switch):::`** . Ohne eine- **`:::no-loc(break):::`** Anweisung wird jede Anweisung der übereinstimmenden **`:::no-loc(case):::`** Bezeichnung bis zum Ende der **`:::no-loc(switch):::`** ausgeführt, einschließlich der-Anweisung **`:::no-loc(default):::`** . Beispiel:
 
 ```cpp
-// switch_statement1.cpp
+// :::no-loc(switch):::_statement1.cpp
 #include <stdio.h>
 
 int main() {
    const char *buffer = "Any character stream";
-   int uppercase_A, lowercase_a, other;
+   int upper:::no-loc(case):::_A, lower:::no-loc(case):::_a, other;
    char c;
-   uppercase_A = lowercase_a = other = 0;
+   upper:::no-loc(case):::_A = lower:::no-loc(case):::_a = other = 0;
 
-   while ( c = *buffer++ )   // Walks buffer until NULL
+   :::no-loc(while)::: ( c = *buffer++ )   // Walks buffer until NULL
    {
-      switch ( c )
+      :::no-loc(switch)::: ( c )
       {
-         case 'A':
-            uppercase_A++;
-            break;
-         case 'a':
-            lowercase_a++;
-            break;
-         default:
+         :::no-loc(case)::: 'A':
+            upper:::no-loc(case):::_A++;
+            :::no-loc(break):::;
+         :::no-loc(case)::: 'a':
+            lower:::no-loc(case):::_a++;
+            :::no-loc(break):::;
+         :::no-loc(default)::::
             other++;
       }
    }
-   printf_s( "\nUppercase A: %d\nLowercase a: %d\nTotal: %d\n",
-      uppercase_A, lowercase_a, (uppercase_A + lowercase_a + other) );
+   printf_s( "\nUpper:::no-loc(case)::: A: %d\nLower:::no-loc(case)::: a: %d\nTotal: %d\n",
+      upper:::no-loc(case):::_A, lower:::no-loc(case):::_a, (upper:::no-loc(case):::_A + lower:::no-loc(case):::_a + other) );
 }
 ```
 
-Im obigen Beispiel wird `uppercase_A` inkrementiert, wenn `c` ein groß geschriebenes `'A'` ist. Die __`break`__ -Anweisung nach `uppercase_A++` beendet die Ausführung des __`switch`__ Anweisungs Texts, und die Steuerung wird an die-Schleife weitergeleitet __`while`__ . Ohne die __`break`__ -Anweisung würde die Ausführung auf die nächste bezeichnete Anweisung zurückgreifen, sodass `lowercase_a` und `other` ebenfalls inkrementiert werden. Ein ähnlicher Zweck wird von der- __`break`__ Anweisung für bereitgestellt `case 'a'` . Wenn `c` ein Kleinbuchstabe ist `'a'` , `lowercase_a` wird inkrementiert, und die- __`break`__ Anweisung beendet den __`switch`__ Anweisungs Text. Wenn kein `c` `'a'` oder ist `'A'` , wird die- __`default`__ Anweisung ausgeführt.
+Im obigen Beispiel `upper:::no-loc(case):::_A` wird inkrementiert, wenn `c` ein oberer Wert ist :::no-loc(case)::: `'A'` . Die **`:::no-loc(break):::`** -Anweisung nach `upper:::no-loc(case):::_A++` beendet die Ausführung des **`:::no-loc(switch):::`** Anweisungs Texts, und die Steuerung wird an die-Schleife weitergeleitet **`:::no-loc(while):::`** . Ohne die **`:::no-loc(break):::`** -Anweisung würde die Ausführung auf die nächste bezeichnete Anweisung zurückgreifen, sodass `lower:::no-loc(case):::_a` und `other` ebenfalls inkrementiert werden. Ein ähnlicher Zweck wird von der- **`:::no-loc(break):::`** Anweisung für bereitgestellt `:::no-loc(case)::: 'a'` . Wenn `c` ein niedrigerer Wert ist :::no-loc(case)::: `'a'` , `lower:::no-loc(case):::_a` wird inkrementiert, und die- **`:::no-loc(break):::`** Anweisung beendet den **`:::no-loc(switch):::`** Anweisungs Text. Wenn kein `c` `'a'` oder ist `'A'` , wird die- **`:::no-loc(default):::`** Anweisung ausgeführt.
 
-**Visual Studio 2017 und höher:** (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)) das- `[[fallthrough]]` Attribut wird im c++ 17-Standard angegeben. Sie können Sie in einer- __`switch`__ Anweisung verwenden. Es ist ein Hinweis für den Compiler, oder jeder, der den Code liest, ist beabsichtigt. Der Microsoft C++-Compiler warnt zurzeit nicht bei einem FallThrough-Verhalten, sodass dieses Attribut keine Auswirkung auf das Compilerverhalten hat. Im Beispiel wird das-Attribut auf eine leere-Anweisung innerhalb der nicht abgeschlossenen Anweisung mit der Bezeichnung angewendet. Das heißt, dass das Semikolon erforderlich ist.
+**Visual Studio 2017 und höher:** (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)) das- `[[fallthrough]]` Attribut wird im c++ 17-Standard angegeben. Sie können Sie in einer- **`:::no-loc(switch):::`** Anweisung verwenden. Es ist ein Hinweis für den Compiler, oder jeder, der den Code liest, ist beabsichtigt. Der Microsoft C++-Compiler warnt zurzeit nicht bei einem FallThrough-Verhalten, sodass dieses Attribut keine Auswirkung auf das Compilerverhalten hat. Im Beispiel wird das-Attribut auf eine leere-Anweisung innerhalb der nicht abgeschlossenen Anweisung mit der Bezeichnung angewendet. Das heißt, dass das Semikolon erforderlich ist.
 
 ```cpp
 int main()
 {
     int n = 5;
-    switch (n)
+    :::no-loc(switch)::: (n)
     {
 
-    case 1:
+    :::no-loc(case)::: 1:
         a();
-        break;
-    case 2:
+        :::no-loc(break):::;
+    :::no-loc(case)::: 2:
         b();
         d();
         [[fallthrough]]; // I meant to do this!
-    case 3:
+    :::no-loc(case)::: 3:
         c();
-        break;
-    default:
+        :::no-loc(break):::;
+    :::no-loc(default)::::
         d();
-        break;
+        :::no-loc(break):::;
     }
 
     return 0;
 }
 ```
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)). Eine- __`switch`__ Anweisung kann eine- *`init-statement`* Klausel enthalten, die mit einem Semikolon endet. Es wird eine Variable eingeführt und initialisiert, deren Bereich auf den Block der Anweisung beschränkt ist __`switch`__ :
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)). Eine- **`:::no-loc(switch):::`** Anweisung kann eine- *`init-statement`* Klausel enthalten, die mit einem Semikolon endet. Es wird eine Variable eingeführt und initialisiert, deren Bereich auf den Block der Anweisung beschränkt ist **`:::no-loc(switch):::`** :
 
 ```cpp
-    switch (Gadget gadget(args); auto s = gadget.get_status())
+    :::no-loc(switch)::: (Gadget gadget(args); auto s = gadget.get_status())
     {
-    case status::good:
+    :::no-loc(case)::: status::good:
         gadget.zip();
-        break;
-    case status::bad:
+        :::no-loc(break):::;
+    :::no-loc(case)::: status::bad:
         throw BadGadget();
     };
 ```
 
-Ein innerer Block einer- __`switch`__ Anweisung kann Definitionen mit Initialisierern enthalten, solange Sie *erreichbar*sind, d. h. nicht durch alle möglichen Ausführungs Pfade umgangen werden. Namen, die mit diesen Deklarationen eingeführt werden, weisen einen lokalen Gültigkeitsbereich auf. Beispiel:
+Ein innerer Block einer- **`:::no-loc(switch):::`** Anweisung kann Definitionen mit Initialisierern enthalten, solange Sie *erreichbar*sind, d. h. nicht durch alle möglichen Ausführungs Pfade umgangen werden. Namen, die mit diesen Deklarationen eingeführt werden, weisen einen lokalen Gültigkeitsbereich auf. Beispiel:
 
 ```cpp
-// switch_statement2.cpp
+// :::no-loc(switch):::_statement2.cpp
 // C2360 expected
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-    switch( tolower( *argv[1] ) )
+    :::no-loc(switch):::( tolower( *argv[1] ) )
     {
         // Error. Unreachable declaration.
         char szChEntered[] = "Character entered was: ";
 
-    case 'a' :
+    :::no-loc(case)::: 'a' :
         {
         // Declaration of szChEntered OK. Local scope.
         char szChEntered[] = "Character entered was: ";
         cout << szChEntered << "a\n";
         }
-        break;
+        :::no-loc(break):::;
 
-    case 'b' :
+    :::no-loc(case)::: 'b' :
         // Value of szChEntered undefined.
         cout << szChEntered << "b\n";
-        break;
+        :::no-loc(break):::;
 
-    default:
+    :::no-loc(default)::::
         // Value of szChEntered undefined.
         cout << szChEntered << "neither a nor b\n";
-        break;
+        :::no-loc(break):::;
     }
 }
 ```
 
-Eine- __`switch`__ Anweisung kann eingefügt werden. Beim Einfügen werden die- __`case`__ oder- __`default`__ Bezeichnungen mit der nächstgelegenen Anweisung verknüpft, __`switch`__ die Sie einschließt.
+Eine- **`:::no-loc(switch):::`** Anweisung kann eingefügt werden. Beim Einfügen werden die- **`:::no-loc(case):::`** oder- **`:::no-loc(default):::`** Bezeichnungen mit der nächstgelegenen Anweisung verknüpft, **`:::no-loc(switch):::`** die Sie einschließt.
 
 ### <a name="microsoft-specific-behavior"></a>Microsoft-spezifisches Verhalten
 
-Microsoft C++ beschränkt die Anzahl der __`case`__ Werte in einer- __`switch`__ Anweisung nicht. Die Anzahl wird nur durch den verfügbaren Speicher beschränkt.
+Microsoft C++ beschränkt die Anzahl der **`:::no-loc(case):::`** Werte in einer- **`:::no-loc(switch):::`** Anweisung nicht. Die Anzahl wird nur durch den verfügbaren Speicher beschränkt.
 
 ## <a name="see-also"></a>Siehe auch
 

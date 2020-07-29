@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - pair class
 ms.assetid: 539d3d67-80a2-4170-b347-783495d42109
-ms.openlocfilehash: f372ae036ff4843532efa18c3d518820b5f06111
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 504bd4fad47d85b0f92603b2cf77a6fca1e9876b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68244415"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233014"
 ---
 # <a name="pair-structure"></a>pair-Struktur
 
@@ -70,17 +70,17 @@ Ein Paar, dessen Werte verwendet werden, um die Elemente eines anderen Paars zu 
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der erste Konstruktor (Standardkonstruktor) initialisiert das erste Element des Paars auf den Standardwert des Typs `T1` und zweite Element auf den Standardwert des Typs `T2`.
+Der erste (standardmäßige) Konstruktor initialisiert das erste Element des Paars auf den Standardwert des Typs `T1` und das zweite Element auf den Standardwert des Typs `T2` .
 
-Der zweite Konstruktor initialisiert das erste Element des Paars auf *Val1* und das zweite auf *Val2.*
+Der zweite Konstruktor initialisiert das erste Element des Paars auf *Wert1* und das zweite auf *Wert2.*
 
-Der dritte Konstruktor (Vorlagenkonstruktor) initialisiert das erste Element des Paars auf `Right`. **first** und das zweite auf `Right`. **second**.
+Der dritte Konstruktor (Vorlagenkonstruktor) initialisiert das erste Element des Paars auf `Right`. **first** und das zweite auf `Right`. **Zweitens**.
 
-Der vierte Konstruktor initialisiert das erste Element des Paars auf *Val1* und das zweite auf *Val2* mit [Rvalue-Verweisdeklarator: & &](../cpp/rvalue-reference-declarator-amp-amp.md).
+Der vierte Konstruktor initialisiert das erste Element des Paars mit *Wert1* und das zweite *Element mithilfe von* [rvalue reference declarator:  &&](../cpp/rvalue-reference-declarator-amp-amp.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenstruktur speichert ein Paar von Objekten des Typs `T1` und `T2`bzw. Der Typ `first_type` ist identisch mit dem Vorlagenparameter `T1` und welche `second_type` ist identisch mit dem Vorlagenparameter `T2`. `T1` und `T2` müssen jeweils nur einen Standardkonstruktor, einen Einzelargumentkonstruktor und einen Destruktor bereitstellen. Alle Member des Typs `pair` sind öffentlich, da der Typ als `struct` statt als **Klasse** deklariert ist. Die beiden häufigsten Einsatzfälle für ein Paar sind, es als Rückgabetyp für eine Funktion zu verwenden, die zwei Werte zurückgibt, oder es als Element für die assoziativen Containerklassen [map-Klasse](../standard-library/map-class.md) und [multimap-Klasse](../standard-library/multimap-class.md) zu verwenden, die beide einen Schlüssel und einen Werttyp haben, die jedem Element zugeordnet sind. Die zweite Verwendung erfüllt die Anforderungen für einen paarweise assoziativen Container und hat einen Werttyp der Form `pair`< **const**`key_type`, `mapped_type`>.
+Die Vorlagen Struktur speichert ein paar von Objekten vom Typ `T1` `T2` bzw.. Der `first_type` -Typ ist identisch mit dem Vorlagen Parameter, `T1` und der-Typ `second_type` entspricht dem Vorlagen Parameter `T2` . `T1`und `T2` jeder benötigt nur einen Standardkonstruktor, einen Konstruktor mit einem einzelnen Argument und einen Dekonstruktor. Alle Member des Typs `pair` sind öffentlich, da der Typ als **`struct`** und nicht als deklariert wird **`class`** . Die beiden häufigsten Einsatzfälle für ein Paar sind, es als Rückgabetyp für eine Funktion zu verwenden, die zwei Werte zurückgibt, oder es als Element für die assoziativen Containerklassen [map-Klasse](../standard-library/map-class.md) und [multimap-Klasse](../standard-library/multimap-class.md) zu verwenden, die beide einen Schlüssel und einen Werttyp haben, die jedem Element zugeordnet sind. Letztere erfüllt die Anforderungen für einen paarweise assoziativen Container und hat einen Werttyp der Form `pair` <  **`const`** `key_type` , `mapped_type`>.
 
 ## <a name="example"></a>Beispiel
 

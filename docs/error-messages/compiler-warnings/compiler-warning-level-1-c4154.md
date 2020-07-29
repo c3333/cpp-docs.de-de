@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4154
 ms.assetid: 4511afeb-e893-4cc6-83b6-4c7a0477f76b
-ms.openlocfilehash: 07b4c6e0821c925e70ce1bce1d910f184d658982
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f09a15fd4c115a764f9bf738a00e1b977786397a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80163611"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223303"
 ---
 # <a name="compiler-warning-level-1-c4154"></a>Compilerwarnung (Stufe 1) C4154
 
 Löschen eines Array Ausdrucks Konvertierung in Zeiger angegeben
 
-Sie können `delete` nicht in einem Array verwenden, sodass der Compiler das Array in einen Zeiger konvertiert.
+Sie können nicht **`delete`** für ein Array verwenden, sodass der Compiler das Array in einen Zeiger konvertiert.
 
 ## <a name="example"></a>Beispiel
 

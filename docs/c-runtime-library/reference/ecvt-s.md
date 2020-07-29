@@ -30,16 +30,16 @@ helpviewer_keywords:
 - numbers, converting
 - converting double numbers
 ms.assetid: d52fb0a6-cb91-423f-80b3-952a8955d914
-ms.openlocfilehash: 9ac623c6cb80c774184dcb005e6d1d631c498040
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: e76ebd065d323a9ae501ce6a7a5790389c7d5dad
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82915139"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234210"
 ---
 # <a name="_ecvt_s"></a>_ecvt_s
 
-Konvertiert eine **doppelte** Zahl in eine Zeichenfolge. Dies ist eine sicherere Version von [_ecvt](ecvt.md), wie unter [Security Features in the CRT (Sicherheitsfunktionen in der CRT)](../../c-runtime-library/security-features-in-the-crt.md) beschrieben wird.
+Konvertiert eine **`double`** Zahl in eine Zeichenfolge. Dies ist eine sicherere Version von [_ecvt](ecvt.md), wie unter [Security Features in the CRT (Sicherheitsfunktionen in der CRT)](../../c-runtime-library/security-features-in-the-crt.md) beschrieben wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -92,16 +92,16 @@ Bei einem in der folgenden Tabelle enthaltenen ungültigen Parameter wird von di
 
 |*_Buffer*|*_SizeInBytes*|_Value|_Count|_Dec|_Sign|Rückgabewert|Wert im *Puffer*|
 |---------------|--------------------|-------------|-------------|-----------|------------|------------------|-----------------------|
-|**Normal**|any|any|any|any|any|**Eingabe**|Nicht geändert.|
+|**NULL**|any|any|any|any|any|**Eingabe**|Nicht geändert.|
 |Not **null** (zeigt auf gültigen Speicher)|<=0|any|any|any|any|**Eingabe**|Nicht geändert.|
-|any|any|any|any|**Normal**|any|**Eingabe**|Nicht geändert.|
-|any|any|any|any|any|**Normal**|**Eingabe**|Nicht geändert.|
+|any|any|any|any|**NULL**|any|**Eingabe**|Nicht geändert.|
+|any|any|any|any|any|**NULL**|**Eingabe**|Nicht geändert.|
 
 ## <a name="security-issues"></a>Sicherheitsprobleme
 
 **_ecvt_s** generiert möglicherweise eine Zugriffsverletzung, wenn der *Puffer* nicht auf einen gültigen Speicher verweist und nicht **null**ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_ecvt_s** -Funktion konvertiert eine Gleit Komma Zahl in eine Zeichenfolge. Der *_Value* -Parameter ist die zu konvertierende Gleit Komma Zahl. Diese Funktion speichert bis zum *zählen* von Ziffern *_Value* als Zeichenfolge und fügt ein NULL-Zeichen (' \ 0 ') an. Wenn die Anzahl der Ziffern in *_Value* *_Count*überschreitet, wird die nieder wertige Ziffer gerundet. Wenn weniger als *Zähl* Ziffern vorhanden sind, wird die Zeichenfolge mit Nullen aufgefüllt.
 
@@ -117,7 +117,7 @@ Die Debugversion dieser Funktion füllt den Puffer zuerst mit "0xFE" auf. Um die
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|Optionaler Header|
 |--------------|---------------------|---------------------|
@@ -157,10 +157,10 @@ int main( )
 Converted value: 12000
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [atof, _atof_l, _wtof, _wtof_l](atof-atof-l-wtof-wtof-l.md)<br/>
 [_ecvt](ecvt.md)<br/>
 [_fcvt_s](fcvt-s.md)<br/>

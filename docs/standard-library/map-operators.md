@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::operator&lt; (map)
 - std::operator&lt;= (map)
 - std::operator== (map)
-ms.openlocfilehash: 1b16028ea4be5303df5c6337260de5098e9c6ed6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2c632966c9ac1264747568facd459a33d1e13338
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371029"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233079"
 ---
 # <a name="ltmapgt-operators"></a>&lt;map&gt;-Operatoren
 
-## <a name="operator"></a><a name="op_neq"></a>Operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das Zuordnungsobjekt links vom Operator ungleich dem Zuordnungsobjekt rechts vom Operator ist.
 
@@ -37,7 +37,7 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `map`.
 
 *Richting*\
@@ -45,7 +45,7 @@ Ein Objekt des Typs `map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuordnungen ungleich sind; **FALSE**, wenn diese gleich sind.
+**`true`**, wenn die Zuordnungen nicht gleich sind. , **`false`** Wenn Maps gleich sind.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -90,7 +90,7 @@ The maps m1 and m2 are not equal.
 The maps m1 and m3 are equal.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt"></a>Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das Zuordnungsobjekt links vom Operator kleiner als das Zuordnungsobjekt auf der rechten Seite ist.
 
@@ -102,7 +102,7 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `map`.
 
 *Richting*\
@@ -110,7 +110,7 @@ Ein Objekt des Typs `map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuordnung links vom Operator strikt kleiner als die Zuordnung rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Zuordnung Links vom Operator strikt kleiner als die Zuordnung rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -155,7 +155,7 @@ The map m1 is less than the map m2.
 The map m1 is not less than the map m3.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das map-Objekt links vom Operator kleiner als das map-Objekt oder gleich diesem Objekt auf der rechten Seite ist.
 
@@ -167,7 +167,7 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `map`.
 
 *Richting*\
@@ -175,7 +175,7 @@ Ein Objekt des Typs `map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuordnung links vom Operator kleiner als die Zuordnung rechts vom Operator oder gleich ist; andernfalls **FALSE**.
+**`true`**, wenn die Zuordnung Links vom Operator kleiner als oder gleich der Zuordnung auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -223,7 +223,7 @@ The map m1 is greater than the map m3.
 The map m1 is less than or equal to the map m4.
 ```
 
-## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das map-Objekt links vom Operator gleich dem map-Objekt rechts vom Operator ist.
 
@@ -235,7 +235,7 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `map`.
 
 *Richting*\
@@ -243,7 +243,7 @@ Ein Objekt des Typs `map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuordnung links vom Operator gleich der Zuordnung rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Zuordnung Links vom Operator gleich der Zuordnung auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -288,7 +288,7 @@ The maps m1 and m2 are not equal.
 The maps m1 and m3 are equal.
 ```
 
-## <a name="operatorgt"></a><a name="op_gt"></a>Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das map-Objekt links vom Operator größer als das map-Objekt auf der rechten Seite ist.
 
@@ -300,7 +300,7 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `map`.
 
 *Richting*\
@@ -308,7 +308,7 @@ Ein Objekt des Typs `map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die map links vom Operator größer als die map rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Map Links vom Operator größer als die Zuordnung rechts vom Operator ist; andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -352,7 +352,7 @@ The map m1 is greater than the map m3.
 */
 ```
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das map-Objekt links vom Operator größer als das map-Objekt auf der rechten Seite ist oder diesem entspricht.
 
@@ -364,7 +364,7 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `map`.
 
 *Richting*\
@@ -372,7 +372,7 @@ Ein Objekt des Typs `map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die map links vom Operator größer als die map rechts von der Liste ist oder dieser entspricht; andernfalls **FALSE**.
+**`true`**, wenn die Zuordnung Links vom Operator größer oder gleich der Zuordnung auf der rechten Seite der Liste ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -420,7 +420,7 @@ Map m1 is greater than or equal to map m3.
 Map m1 is greater than or equal to map m4.
 ```
 
-## <a name="operator-multimap"></a><a name="op_neq_multimap"></a>Operator!= (Multimap)
+## <a name="operator-multimap"></a><a name="op_neq_multimap"></a>Operator! = (Multimap)
 
 Überprüft, ob das multimap-Objekt links vom Operator ungleich dem multimap-Objekt rechts vom Operator ist.
 
@@ -432,7 +432,7 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `multimap`.
 
 *Richting*\
@@ -440,7 +440,7 @@ Ein Objekt des Typs `multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Mehrfachzuordnungen nicht gleich sind; **FALSE**, wenn die Mehrwachzuordnungen gleich sind.
+**`true`**, wenn die mehrfach Zuordnungen nicht gleich sind. , **`false`** wenn mehrfach Zuordnungen gleich sind.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -485,7 +485,7 @@ The multimaps m1 and m2 are not equal.
 The multimaps m1 and m3 are equal.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_multimap"></a>Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt_multimap"></a>KOM&lt;
 
 Überprüft, ob das multimap-Objekt links vom Operator ungleich dem multimap-Objekt rechts vom Operator ist.
 
@@ -497,7 +497,7 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `multimap`.
 
 *Richting*\
@@ -505,7 +505,7 @@ Ein Objekt des Typs `multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Mehrfachzuordnung links vom Operator strikt kleiner als die Mehrfachzuordnung rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die mehrfach Zuordnung Links vom Operator strikt kleiner als die mehrfach Zuordnung rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -550,7 +550,7 @@ The multimap m1 is less than the multimap m2.
 The multimap m1 is not less than the multimap m3.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq_multimap"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq_multimap"></a>KOM&lt;=
 
 Überprüft, ob das multimap-Objekt links vom Operator kleiner als das multimap-Objekt rechts vom Operator ist oder diesem entspricht.
 
@@ -562,7 +562,7 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `multimap`.
 
 *Richting*\
@@ -570,7 +570,7 @@ Ein Objekt des Typs `multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Mehrfachzuordnung links vom Operator kleiner als die Mehrfachzuordnung rechts vom Operator oder gleich ist; andernfalls **FALSE**.
+**`true`**, wenn die mehrfach Zuordnung Links vom Operator kleiner als oder gleich der Multimap auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -618,7 +618,7 @@ m1 is greater than m3
 m1 is less than or equal to m4
 ```
 
-## <a name="operator"></a><a name="op_eq_eq_multimap"></a>Betreiber== Einzelnachweise ==
+## <a name="operator"></a><a name="op_eq_eq_multimap"></a>Operator = =
 
 Überprüft, ob das multimap-Objekt links vom Operator dem multimap-Objekt rechts vom Operator entspricht.
 
@@ -630,7 +630,7 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `multimap`.
 
 *Richting*\
@@ -638,7 +638,7 @@ Ein Objekt des Typs `multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Mehrfachzuordnung links vom Operator der Mehrfachzuordnung rechts vom Operator entspricht; andernfalls **FALSE**.
+**`true`**, wenn die mehrfach Zuordnung Links vom Operator gleich der Multimap auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -683,7 +683,7 @@ m1 and m2 are not equal
 m1 and m3 are equal
 ```
 
-## <a name="operatorgt"></a><a name="op_gt_multimap"></a>Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt_multimap"></a>KOM&gt;
 
 Überprüft, ob das multimap-Objekt links vom Operator größer als das multimap-Objekt rechts vom Operator ist.
 
@@ -695,7 +695,7 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `multimap`.
 
 *Richting*\
@@ -703,7 +703,7 @@ Ein Objekt des Typs `multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Mehrfachzuordnung links vom Operator größer als die Mehrfachzuordnung rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die mehrfach Zuordnung Links vom Operator größer als die mehrfach Zuordnung rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -748,7 +748,7 @@ Multimap m1 is not greater than multimap m2.
 The multimap m1 is greater than the multimap m3.
 ```
 
-## <a name="operatorgt"></a><a name="op_gt_eq_multimap"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq_multimap"></a>KOM&gt;=
 
 Überprüft, ob das multimap-Objekt links vom Operator größer als das multimap-Objekt rechts vom Operator ist oder diesem entspricht.
 
@@ -760,7 +760,7 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Objekt des Typs `multimap`.
 
 *Richting*\
@@ -768,7 +768,7 @@ Ein Objekt des Typs `multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Mehrfachzuordnung links vom Operator größer als die Mehrfachzuordnung rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die mehrfach Zuordnung Links vom Operator größer oder gleich der Multimap auf der rechten Seite der Liste ist. andernfalls **`false`** .
 
 ### <a name="example"></a>Beispiel
 

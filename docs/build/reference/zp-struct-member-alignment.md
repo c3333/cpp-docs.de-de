@@ -11,57 +11,57 @@ helpviewer_keywords:
 - /Zp compiler option [C++]
 - -Zp compiler option [C++]
 ms.assetid: 5242f656-ed9b-48a3-bc73-cfcf3ed2520f
-ms.openlocfilehash: d76cd93c7af4228bff8f73fa3bcbf40fa149b0be
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c78e670303bde68299725e18c6f588f5e410a971
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62315910"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234301"
 ---
 # <a name="zp-struct-member-alignment"></a>/Zp (Ausrichten des Strukturmembers)
 
-Steuert, wie die Member einer Struktur im Speicher abgelegt werden, und gibt die gleichen Packen von Metriken für alle Strukturen in einem Modul.
+Steuert, wie die Elemente einer Struktur in den Arbeitsspeicher gepackt werden, und gibt die gleiche Verpackung für alle Strukturen in einem Modul an.
 
 ## <a name="syntax"></a>Syntax
 
-> **/Zp**[**1**|**2**|**4**|**8**|**16**]
+> **`/Zp`**[**`1`**|**`2`**|**`4`**|**`8`**|**`16`**]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/Zp**_n_ Option teilt dem Compiler, wo die einzelnen Strukturmember gespeichert. Der Compiler speichert Member an einer Grenze, die die kleinere von entweder die Größe der der Elementtyp ist nach der ersten oder *n*-Byte-Grenze.
+Die- **`/ZpN`** Option weist den Compiler an, wo jedes Strukturmember gespeichert werden soll. Der Compiler speichert Member nach dem ersten an einer Grenze, die kleiner ist als die Größe des Elementtyps oder eine *N*-Byte-Grenze.
 
-Die verfügbaren Packen-Werte werden in der folgenden Tabelle beschrieben:
+Die verfügbaren Verpackungs Werte werden in der folgenden Tabelle beschrieben:
 
-|/ Zp-argument|Effekt|
+|/ZP-Argument|Auswirkung|
 |-|-|
-|1|Komprimiert Strukturen auf 1-Byte-Begrenzungen. Identisch mit **/Zp**.|
-|2|Komprimiert Strukturen auf 2-Byte-Begrenzungen.|
-|4|Komprimiert Strukturen auf 4-Byte-Begrenzungen.|
-|8|Komprimiert Strukturen auf 8-Byte-Begrenzungen (Standard für X86, ARM und ARM64).|
-|16| Komprimiert Strukturen auf 16-Byte-Begrenzungen (Standard für X64).|
+|1|Packt Strukturen auf 1-Byte-Begrenzungen. Identisch mit **`/Zp`** .|
+|2|Packt Strukturen an 2-Byte-Begrenzungen.|
+|4|Packt Strukturen auf 4-Byte-Begrenzungen.|
+|8|Packt Strukturen an 8-Byte-Begrenzungen (Standardwert für x86, Arm und ARM64).|
+|16| Packt Strukturen auf 16-Byte-Grenzen (Standard für x64).|
 
-Verwenden Sie diese Option nicht, es sei denn, Sie bestimmte ausrichtungsanforderungen haben.
+Verwenden Sie diese Option nur, wenn Sie über bestimmte Ausrichtungs Anforderungen verfügen.
 
 > [!WARNING]
-> Im Windows SDK C++-Header festgelegt und vorausgesetzt **"/ zp8"** intern packen. Arbeitsspeicher, die eine Beschädigung kann auftreten, wenn die **/Zp** Einstellung geändert wird, in das Windows SDK-Header. Die Header sind nicht betroffen von einem **/Zp** Option, die Sie in der Befehlszeile festlegen.
+> C++-Header in der Windows SDK festgelegt und sollten **`/Zp8`** intern verpackt werden. Arbeitsspeicher Beschädigung kann auftreten, wenn die **`/Zp`** Einstellung innerhalb der Windows SDK-Header geändert wird. Die Header sind nicht von einer Option betroffen, die **`/Zp`** Sie in der Befehlszeile festlegen.
 
-Sie können auch [Pack](../../preprocessor/pack.md) Ausrichten von Strukturen. Weitere Informationen zur Ausrichtung finden Sie unter:
+Sie können auch verwenden [`pack`](../../preprocessor/pack.md) , um die Struktur Verpackung zu steuern. Weitere Informationen zur Ausrichtung finden Sie unter:
 
-- [align](../../cpp/align-cpp.md)
+- [`align`](../../cpp/align-cpp.md)
 
-- [__alignof-Operator](../../cpp/alignof-operator.md)
+- [`alignof`KOM](../../cpp/alignof-operator.md)
 
-- [__unaligned](../../cpp/unaligned.md)
+- [`__unaligned`](../../cpp/unaligned.md)
 
-- [/ALIGN (Abschnittsausrichtung)](align-section-alignment.md)
+- [`/ALIGN`(Abschnitts Ausrichtung)](align-section-alignment.md)
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Konfigurationseigenschaften** > **C/C++-** > **Codegenerierung** Eigenschaftenseite.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Code Generierung** aus.
 
-1. Ändern der **Ausrichtung der Strukturmember an** Eigenschaft.
+1. Ändern Sie die **Ausrichtungs Eigenschaft Strukturmember** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -69,5 +69,5 @@ Sie können auch [Pack](../../preprocessor/pack.md) Ausrichten von Strukturen. W
 
 ## <a name="see-also"></a>Siehe auch
 
-[MSVC-Compiler-Optionen](compiler-options.md) \
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[MSVC-Compileroptionen](compiler-options.md) \
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

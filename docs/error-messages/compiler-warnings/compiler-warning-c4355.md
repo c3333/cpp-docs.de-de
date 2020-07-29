@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4355
 ms.assetid: b819ecab-8a07-42d7-8fa4-1180d51626c0
-ms.openlocfilehash: ddc0d1968ae373ff1e81c98a513e6f84fdb885e1
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2725db0e37f8e60f37ec1b534306f516fe10be33
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80165326"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223342"
 ---
 # <a name="compiler-warning-c4355"></a>Compilerwarnung C4355
 
 "this": Wird in der Basisliste für den Memberinitialisierer verwendet
 
-Der **this** -Zeiger ist nur in nicht statischen Element Funktionen gültig. Sie kann nicht in der Initialisiererliste für eine Basisklasse verwendet werden.
+Der **`this`** Zeiger ist nur in nicht statischen Element Funktionen gültig. Sie kann nicht in der Initialisiererliste für eine Basisklasse verwendet werden.
 
-Die Basisklassenkonstruktoren und Klassenmember-Konstruktoren werden vor **diesem** Konstruktor aufgerufen. Tatsächlich haben Sie einen Zeiger auf ein nicht konstruiertes Objekt an einen anderen Konstruktor übergeben. Wenn diese anderen Konstruktoren auf Member zugreifen oder Element Funktionen aufrufen, ist das Ergebnis nicht definiert. Sie sollten **diesen** Zeiger erst verwenden, wenn alle Konstruktionen abgeschlossen sind.
+Die Basisklassenkonstruktoren und Klassenmember-Konstruktoren werden vor dem **`this`** Konstruktor aufgerufen. Tatsächlich haben Sie einen Zeiger auf ein nicht konstruiertes Objekt an einen anderen Konstruktor übergeben. Wenn diese anderen Konstruktoren auf Member zugreifen oder Element Funktionen aufrufen, ist das Ergebnis nicht definiert. Sie sollten den-Zeiger erst verwenden, wenn **`this`** alle Konstruktionen abgeschlossen sind.
 
 Diese Warnung ist standardmäßig deaktiviert. Weitere Informationen finden Sie unter [Standardmäßig deaktivierte Compilerwarnungen](../../preprocessor/compiler-warnings-that-are-off-by-default.md) .
 

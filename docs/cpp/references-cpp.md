@@ -9,24 +9,24 @@ helpviewer_keywords:
 - references, declaring
 - referencing objects, declarator syntax
 ms.assetid: 68156f7f-97a0-4b66-b26d-b25ade5e3bd8
-ms.openlocfilehash: 2353f0861f0f249416d0bb84a7a951b1cb6d64bc
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 8a771b8bfc067966c3c054700538ebf180a5eb23
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857332"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233612"
 ---
 # <a name="references-c"></a>Verweise (C++)
 
-Ein Verweis, z. B. ein Zeiger ist, speichert die Adresse eines Objekts, das sich an anderer Stelle im Speicher befindet. Im Gegensatz zu einem Zeiger kann sich ein Verweis nach der Initialisierung nicht auf ein anderes Objekt beziehen oder auf null gesetzt werden. Es gibt zwei Arten von verweisen: Lvalue-Verweise, die auf eine benannte Variable verweisen, und Rvalue-Verweise, die auf ein [temporäres Objekt](../cpp/temporary-objects.md)verweisen. Der &-Operator gibt einen Lvalue-Verweis an, und der & &-Operator gibt entweder einen rvalue-Verweis oder einen universellen Verweis (entweder Rvalue oder lvalue) in Abhängigkeit vom Kontext an.
+Ein Verweis, z. B. ein Zeiger ist, speichert die Adresse eines Objekts, das sich an anderer Stelle im Speicher befindet. Im Gegensatz zu einem Zeiger kann sich ein Verweis nach der Initialisierung nicht auf ein anderes Objekt beziehen oder auf null gesetzt werden. Es gibt zwei Arten von verweisen: Lvalue-Verweise, die auf eine benannte Variable verweisen, und Rvalue-Verweise, die auf ein [temporäres Objekt](../cpp/temporary-objects.md)verweisen. Der &-Operator gibt einen Lvalue-Verweis an, und der && Operator gibt entweder einen rvalue-Verweis oder einen universellen Verweis (Rvalue oder lvalue) an, abhängig vom Kontext.
 
 Verweise können mit der folgenden Syntax deklariert werden:
 
-> \[*Speicherklassenspezifizierer*] \[*CV-Qualifizierer*] *Typspezifizierer* \[*MS-Modifier*] *Deklarator* \[ **=** *Ausdruck*] **;**
+> \[*Speicherklassenspezifizierer*] \[ *CV-Qualifizierer*] *Typspezifizierer* \[ *MS-Modifizierer*] *deklaratorausdruck* \[ **=** *expression*]**;**
 
 Jeder gültige Deklarator, der einen Verweis angibt, kann verwendet werden. Sofern der Verweis kein Verweis auf den Funktions- oder Arraytyp ist, gilt die folgende vereinfachte Syntax:
 
-> \[*Speicherklassenspezifizierer*] \[*CV-Qualifizierer*] *Typspezifizierer* \[ **&** oder **&&** ] \[*CV-Qualifizierer*] *Bezeichner* \[ **=** *Ausdruck*] **;**
+> \[*Speicherklassenspezifizierer*] \[ *CV-Qualifizierer*] *Typspezifizierer* \[ **&** oder **&&** ] \[ *CV-Qualifizierer*] *identifier* \[ **=** *bezeichnerausdruck*]**;**
 
 Verweise werden unter Verwendung dieser Reihenfolge deklariert:
 
@@ -34,7 +34,7 @@ Verweise werden unter Verwendung dieser Reihenfolge deklariert:
 
    - Ein optionaler Speicherklassenbezeichner.
 
-   - Optionale **Konstanten** und/oder **volatile** -Qualifizierer.
+   - Optionale **`const`** -und/oder- **`volatile`** Qualifizierer.
 
    - Der Typspezifizierer: der Name eines Typs
 
@@ -44,7 +44,7 @@ Verweise werden unter Verwendung dieser Reihenfolge deklariert:
 
    - Der **&** Operator oder **&&** Operator.
 
-   - Optionale **Konstante** und/oder **flüchtige** Qualifizierer.
+   - Optional **`const`** und/oder **`volatile`** Qualifizierer.
 
    - Der Bezeichner.
 
@@ -102,5 +102,5 @@ int main() {
 ## <a name="see-also"></a>Siehe auch
 
 [Verweistyp-Funktionsargumente](../cpp/reference-type-function-arguments.md)<br/>
-[Verweistyp-Funktionsrückgaben](../cpp/reference-type-function-returns.md)<br/>
+[Verweistyp-Funktions Rückgabe](../cpp/reference-type-function-returns.md)<br/>
 [Verweise auf Zeiger](../cpp/references-to-pointers.md)

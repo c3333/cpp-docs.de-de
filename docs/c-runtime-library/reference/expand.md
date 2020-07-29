@@ -35,12 +35,12 @@ helpviewer_keywords:
 - _expand function
 - expand function
 ms.assetid: 4ac55410-39c8-45c7-bccd-3f1042ae2ed3
-ms.openlocfilehash: 8878bb046a122b545f969dd067c37eeb97126387
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 5abd90f6106cbca54a9c869841ff70383edb5edc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82920257"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234145"
 ---
 # <a name="_expand"></a>_expand
 
@@ -71,9 +71,9 @@ Neue Größe in Bytes.
 
 Wenn nicht genügend Arbeitsspeicher verfügbar ist, um den Block auf die angegebene Größe auszudehnen, ohne ihn zu verschieben, gibt die Funktion **null**zurück. **_expand** gibt niemals einen Block zurück, der auf eine Größe kleiner als angefordert erweitert ist. Wenn ein Fehler auftritt, gibt **errno** die Art des Fehlers an. Weitere Informationen zu **errno**finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-Der Rückgabewert zeigt auf einen Speicherplatz, der für die Speicherung eines beliebigen Objekttyps geeignet ist. Verwenden Sie **_msize**, um die neue Größe des Elements zu überprüfen. Um einen Zeiger auf einen anderen Typ als **void**abzurufen, verwenden Sie eine Typumwandlung für den Rückgabewert.
+Der Rückgabewert zeigt auf einen Speicherplatz, der für die Speicherung eines beliebigen Objekttyps geeignet ist. Verwenden Sie **_msize**, um die neue Größe des Elements zu überprüfen. Um einen Zeiger auf einen anderen Typ als zu erhalten **`void`** , verwenden Sie eine Typumwandlung für den Rückgabewert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_expand** -Funktion ändert die Größe eines zuvor zugeordneten Speicherblocks, indem versucht wird, den Block zu erweitern oder zu verkleinern, ohne seine Position im Heap zu verschieben. Der *memblock* -Parameter verweist auf den Anfang des Blocks. Der *size* -Parameter gibt die neue Größe des Blocks in Bytes an. Der Inhalt des Blocks bleibt bis zum Minimum von neuer und alter Größe unverändert. *memblock* darf kein Block sein, der freigegeben wurde.
 
@@ -86,7 +86,7 @@ Diese Funktion überprüft ihre Parameter. Wenn *memblock* ein NULL-Zeiger ist, 
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
@@ -128,7 +128,7 @@ Allocated 512 bytes at 002C12BC
 Expanded block to 1024 bytes at 002C12BC
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
 [calloc](calloc.md)<br/>

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4076
 ms.assetid: 04581066-313a-4a11-bb60-721e6d038d75
-ms.openlocfilehash: 77efeae27a67ea844759fd9980801d3daf788e89
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1958aec4d6642188af1467ab4cab1ecf55c29165
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80200256"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223316"
 ---
 # <a name="compiler-warning-level-1-c4076"></a>Compilerwarnung (Stufe 1) C4076
 
@@ -19,11 +19,11 @@ ms.locfileid: "80200256"
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein Typmodifizierer, ob er **signiert** oder **nicht signiert**ist, kann nicht mit einem nicht ganzzahligen Typ verwendet werden. der *Typmodifizierer* wird ignoriert.
+Ein Typmodifizierer, ob er **`signed`** oder ist **`unsigned`** , kann nicht mit einem nicht ganzzahligen Typ verwendet werden. der *Typmodifizierer* wird ignoriert.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C4076 generiert. Entfernen Sie den Typmodifizierer **ohne** Vorzeichen, um ihn zu beheben:
+Im folgenden Beispiel wird C4076 generiert. Entfernen Sie den Typmodifizierer, um ihn zu beheben **`unsigned`** :
 
 ```cpp
 // C4076.cpp

@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - goto keyword [C++]
 ms.assetid: 724c5deb-2de1-42d8-8ef1-23589d9bf5ed
-ms.openlocfilehash: aac308905a01a52a4ce5ee0fa3be03f2f33ac1cd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e56ebfadea0d643ac68e2ace722a39587bd01312
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62153696"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223706"
 ---
 # <a name="goto-statement-c"></a>goto-Anweisung (C++)
 
-Die **Goto** -Anweisung überträgt die Steuerung bedingungslos an die Anweisung anhand des angegebenen Bezeichners.
+Die **`goto`** Anweisung überträgt die Steuerung bedingungslos an die Anweisung, die mit dem angegebenen Bezeichner bezeichnet wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,13 +23,13 @@ Die **Goto** -Anweisung überträgt die Steuerung bedingungslos an die Anweisung
 goto identifier;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die bezeichnete Anweisung, die durch `identifier` angegeben wird, muss sich in der aktuellen Funktion befinden. Alle `identifier`-Namen sind Member eines internen Namespace und beeinträchtigen daher andere Bezeichner nicht.
 
-Eine anweisungsbezeichnung ist nur sinnvoll ein **"GoTo"** -Anweisung; andernfalls werden anweisungsbezeichnungen ignoriert. Bezeichnungen können nicht erneut deklariert werden.
+Eine Anweisungsbezeichnung ist nur für eine- **`goto`** Anweisung sinnvoll; andernfalls werden Anweisungs Bezeichnungen ignoriert. Bezeichnungen können nicht erneut deklariert werden.
 
-Ein **Goto** Anweisung ist nicht zulässig, um das Steuerelement an einen Speicherort übertragen, die über die Initialisierung von allen Variablen überspringt, die im Bereich an diesem Speicherort befindet. Im folgende Beispiel löst C2362 aus:
+Eine- **`goto`** Anweisung darf die Steuerung nicht an einen Speicherort übertragen, der die Initialisierung einer Variablen überspringt, die sich im Gültigkeitsbereich dieses Speicher Orts befindet. Im folgenden Beispiel wird C2362 ausgelöst:
 
 ```cpp
 int goto_fn(bool b)
@@ -48,13 +48,13 @@ exit:
 }
 ```
 
-Programmierung empfiehlt es sich beim der **Break**, **weiterhin**, und **zurückgeben** -Anweisungen anstelle von der **Goto** Anweisung immer möglich ist. Allerdings da die **Break** Anweisung, die nur eine Ebene einer Schleife beendet wird, müssen Sie möglicherweise mit einer **"GoTo"** Anweisung, um eine tief geschachtelte Schleife zu beenden.
+Es ist ein guter Programmierstil, die **`break`** **`continue`** -,-und-Anweisungen anstelle der-Anweisung zu verwenden, **`return`** **`goto`** Wenn dies möglich ist. Da die- **`break`** Anweisung jedoch nur von einer Ebene einer Schleife beendet wird, müssen Sie möglicherweise eine- **`goto`** Anweisung verwenden, um eine tief geschachtelte Schleife zu beenden.
 
-Weitere Informationen über Bezeichnungen und der **Goto** -Anweisung finden Sie unter [Anweisungen mit Bezeichnung](../cpp/labeled-statements.md).
+Weitere Informationen zu Bezeichnungen und zur- **`goto`** Anweisung finden Sie unter [bezeichnete Anweisungen](../cpp/labeled-statements.md).
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel eine **Goto** -Anweisung überträgt die Steuerung an den Punkt mit der Bezeichnung `stop` beim `i` gleich 3.
+In diesem Beispiel überträgt eine- **`goto`** Anweisung die Steuerung an den Punkt mit der Bezeichnung, `stop` Wenn `i` 3 entspricht.
 
 ```cpp
 // goto_statement.cpp

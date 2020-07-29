@@ -30,12 +30,12 @@ helpviewer_keywords:
 - pipes
 - pipe function
 ms.assetid: 8d3e9800-4041-44b5-9e93-2df0b0354a75
-ms.openlocfilehash: d3805de6a591169f94926c09a4542ec01f221d1d
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 692a891549e0c84d6297b108918d9d7c58495ef7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916838"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234041"
 ---
 # <a name="_pipe"></a>_pipe
 
@@ -57,7 +57,7 @@ int _pipe(
 ### <a name="parameters"></a>Parameter
 
 *PFDs*<br/>
-Zeiger auf ein Array von zwei **int** -Dateien, die Lese-und Schreib Dateideskriptoren enthalten.
+Zeiger auf ein Array von zwei **`int`** , das Lese-und Schreib Dateideskriptoren enthalten soll.
 
 *Psize*<br/>
 Menge des zugesicherten Arbeitsspeichers.
@@ -77,11 +77,11 @@ Gibt bei Erfolg 0 zurück. Gibt-1 zurück, um einen Fehler anzugeben. Bei einem 
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_pipe** -Funktion erstellt eine *Pipe*, bei der es sich um einen künstlichen e/a-Kanal handelt, den ein Programm verwendet, um Informationen an andere Programme zu übergeben. Eine Pipe ähnelt einer Datei, da sie über einen Dateizeiger, einen Dateideskriptor oder über beides verfügt. Es kann aus ihr gelesen oder in sie geschrieben werden, indem die Ein- und Ausgabefunktionen der Standardbibliothek verwendet werden. Eine Pipe repräsentiert jedoch weder eine bestimmte Datei noch ein bestimmtes Gerät. Stattdessen repräsentiert die Pipe einen temporären Speicher im Arbeitsspeicher, der vom Arbeitsspeicher des Programms unabhängig ist und vollständig über das Betriebssystem gesteuert wird.
 
-**_pipe** ähnelt **_open** , öffnet jedoch die Pipe zum Lesen und schreiben und gibt zwei Dateideskriptoren anstelle eines zurück. Das Programm kann beide Seiten der Pipe verwenden oder diejenige Seite schließen, die sie nicht benötigt. Beispielsweise erstellt der Befehlsprozessor in Windows eine Pipe, wenn ein Befehl wie **Program1** | **Program2**ausgeführt wird.
+**_pipe** ähnelt **_open** , öffnet jedoch die Pipe zum Lesen und schreiben und gibt zwei Dateideskriptoren anstelle eines zurück. Das Programm kann beide Seiten der Pipe verwenden oder diejenige Seite schließen, die sie nicht benötigt. Beispielsweise erstellt der Befehlsprozessor in Windows eine Pipe, wenn ein Befehl wie **Program1**  |  **Program2**ausgeführt wird.
 
 Der Standardausgabe Deskriptor von **Program1** wird an den Schreib Deskriptor der Pipe angefügt. Der Standardeingabe Deskriptor von **Program2** wird an den lesedeskriptor der Pipe angefügt. Hierdurch entfällt die Notwendigkeit, temporäre Dateien zu erstellen, um Informationen an andere Programme zu übergeben.
 
@@ -91,7 +91,7 @@ Das *Psize* -Argument gibt die Größe des Arbeitsspeichers in Bytes an, die fü
 
 In Multithreadprogrammen wird keine Sperre ausgeführt. Die zurückgegebenen Dateideskriptoren werden neu geöffnet und sollten von keinem Thread referenziert werden, bis der **_pipe** -Vorgang beendet ist.
 
-Um die **_pipe** -Funktion für die Kommunikation zwischen einem übergeordneten Prozess und einem untergeordneten Prozess zu verwenden, muss für jeden Prozess nur ein Deskriptor in der Pipe geöffnet sein. Die Deskriptoren müssen entgegengesetzt sein: Wenn das übergeordnete Element über einen geöffneten Lesedeskriptor verfügt, muss das untergeordnete Element über einen geöffneten Schreibdeskriptor verfügen. Die einfachste Möglichkeit hierfür ist das bitweise OR (**|**) des **_O_NOINHERIT** -Flags mit *TextMode*. Verwenden Sie dann **_dup** oder **_dup2** , um eine vererbbare Kopie des pipedeskriptors zu erstellen, die Sie an das untergeordnete Element übergeben möchten. Schließen Sie den ursprünglichen Deskriptor, und starten Sie dann den untergeordneten Prozess. Schließen Sie nach dem Startaufruf den doppelten Deskriptor im übergeordneten Prozess. Weitere Informationen finden Sie im zweiten Beispiel weiter unten in diesem Artikel.
+Um die **_pipe** -Funktion für die Kommunikation zwischen einem übergeordneten Prozess und einem untergeordneten Prozess zu verwenden, muss für jeden Prozess nur ein Deskriptor in der Pipe geöffnet sein. Die Deskriptoren müssen entgegengesetzt sein: Wenn das übergeordnete Element über einen geöffneten Lesedeskriptor verfügt, muss das untergeordnete Element über einen geöffneten Schreibdeskriptor verfügen. Die einfachste Möglichkeit hierfür ist das bitweise OR ( **|** ) des **_O_NOINHERIT** -Flags mit *TextMode*. Verwenden Sie dann **_dup** oder **_dup2** , um eine vererbbare Kopie des pipedeskriptors zu erstellen, die Sie an das untergeordnete Element übergeben möchten. Schließen Sie den ursprünglichen Deskriptor, und starten Sie dann den untergeordneten Prozess. Schließen Sie nach dem Startaufruf den doppelten Deskriptor im übergeordneten Prozess. Weitere Informationen finden Sie im zweiten Beispiel weiter unten in diesem Artikel.
 
 Im Windows-Betriebssystem wird eine Pipe zerstört, wenn alle zugehörigen Deskriptoren geschlossen sind. (Wenn alle Lese Deskriptoren auf der Pipe geschlossen wurden, verursacht das Schreiben in die Pipe einen Fehler.) Alle Lese-und Schreibvorgänge auf der Pipe warten, bis genügend Daten oder ausreichend Pufferspeicher zum Abschluss der e/a-Anforderung vorhanden sind.
 
@@ -99,9 +99,9 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|Optionaler Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
-|**_pipe**|\<io.h>|\<fcntl.h>,1 \<errno.h>2|
+|**_pipe**|\<io.h>|\<fcntl.h>, 1 \<errno.h> 2|
 
 1 für **_O_BINARY** -und **_O_TEXT** Definitionen.
 
@@ -347,7 +347,7 @@ This is speaker beep number 9...
 This is speaker beep number 10...
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>

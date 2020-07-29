@@ -10,12 +10,12 @@ helpviewer_keywords:
 - functions [MFC], handler
 - messages [MFC], Windows
 ms.assetid: 19412a8b-2c38-4502-81da-13c823c7e36c
-ms.openlocfilehash: 190acd619224bdf22a5c8d35f541fa48b6664fe1
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: d967341cdb0197f1157ab9d253072f3d0d7aa46f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84625758"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223147"
 ---
 # <a name="handlers-for-standard-windows-messages"></a>Handler für Windows-Standardmeldungen
 
@@ -23,7 +23,7 @@ Standard Handler für standardmäßige Windows-Meldungen (**WM_**) sind in der-K
 
 `afx_msg void OnPaint();`
 
-Das **afx_msg** -Schlüsselwort schlägt die Auswirkung des C++ **Virtual** -Schlüssel Worts vor, indem die Handler von anderen Element Funktionen unterschieden werden `CWnd` . Beachten Sie jedoch, dass diese Funktionen nicht virtuell sind. Sie werden stattdessen über Nachrichten Zuordnungen implementiert. Meldungs Zuordnungen sind ausschließlich von standardpräprozessormakros abhängig, nicht von Erweiterungen der Programmiersprache C++. Das **afx_msg** -Schlüsselwort wird nach der Vorverarbeitung in Leerraum aufgelöst.
+Das **afx_msg** -Schlüsselwort schlägt die Auswirkung des C++- **`virtual`** Schlüssel Worts vor, indem die Handler von anderen Element Funktionen unterschieden werden `CWnd` . Beachten Sie jedoch, dass diese Funktionen nicht virtuell sind. Sie werden stattdessen über Nachrichten Zuordnungen implementiert. Meldungs Zuordnungen sind ausschließlich von standardpräprozessormakros abhängig, nicht von Erweiterungen der Programmiersprache C++. Das **afx_msg** -Schlüsselwort wird nach der Vorverarbeitung in Leerraum aufgelöst.
 
 Um einen in einer Basisklasse definierten Handler zu überschreiben, definieren Sie einfach eine Funktion mit dem gleichen Prototyp in der abgeleiteten Klasse, und erstellen Sie einen Meldungs Zuordnungs Eintrag für den Handler. Der Handler "überschreibt" alle Handler desselben Namens in den Basisklassen der Klasse.
 
@@ -36,8 +36,8 @@ Wie bestimmen Sie die ordnungsgemäße Methode zum Überschreiben einer bestimmt
 
 [!code-cpp[NVC_MFCMessageHandling#3](codesnippet/cpp/handlers-for-standard-windows-messages_1.cpp)]
 
-Gemäß der Konvention beginnen die Namen dieser Handler mit dem Präfix "on". Einige dieser Handler akzeptieren keine Argumente, während andere verschiedene Argumente annehmen. Einige haben auch einen anderen Rückgabetyp als **void**. Die Standard Handler für alle **WM_** Meldungen werden in der *MFC-Referenz* als Element Funktionen der Klasse dokumentiert, `CWnd` deren Namen mit "on" beginnen. Der Member-Funktions Deklarationen in `CWnd` wird **afx_msg**vorangestellt.
+Gemäß der Konvention beginnen die Namen dieser Handler mit dem Präfix "on". Einige dieser Handler akzeptieren keine Argumente, während andere verschiedene Argumente annehmen. Einige weisen auch einen anderen Rückgabetyp als auf **`void`** . Die Standard Handler für alle **WM_** Meldungen werden in der *MFC-Referenz* als Element Funktionen der Klasse dokumentiert, `CWnd` deren Namen mit "on" beginnen. Der Member-Funktions Deklarationen in `CWnd` wird **afx_msg**vorangestellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Deklarieren von Meldungshandlerfunktionen](declaring-message-handler-functions.md)
+[Deklarieren von nachrichtenhandlerfunktionen](declaring-message-handler-functions.md)

@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3495
 ms.assetid: 1fd40cb8-8373-403d-b8a8-f08424a50807
-ms.openlocfilehash: 6fe4286142c90f341925d7e76ca8de6d3b7daa9f
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: a67d4d859e3a9dd2241f14a476492df0fd3e6b8d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80075007"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223420"
 ---
 # <a name="compiler-error-c3495"></a>Compilerfehler C3495
 
 'var': Eine Lambdaerfassung muss eine automatische Speicherdauer aufweisen.
 
-Variablen, die keine automatische Speicherdauer aufweisen, etwa eine als `static` oder `extern`markierte Variable, können nicht erfasst werden.
+Sie können keine Variable erfassen, die keine automatische Speicherdauer hat, z. b. eine Variable, die als oder gekennzeichnet ist **`static`** **`extern`** .
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-- Übergeben Sie keine `static` - oder `extern` -Variable an die Erfassungsliste des Lambdaausdrucks.
+- Übergeben Sie keine- **`static`** oder- **`extern`** Variable an die Erfassungs Liste des Lambda Ausdrucks.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3495 generiert, da die `static` -Variable `n` in der Erfassungsliste eines Lambda-Ausdrucks auftritt:
+Im folgenden Beispiel wird C3495 generiert, da die **`static`** Variable `n` in der Erfassungs Liste eines Lambda-Ausdrucks angezeigt wird:
 
 ```cpp
 // C3495.cpp
@@ -37,6 +37,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)

@@ -2,27 +2,59 @@
 title: Zusammenfassung der Schlüsselwörter
 ms.date: 11/04/2016
 ms.assetid: 341d8297-03eb-4351-9ed0-138ec59b375c
-ms.openlocfilehash: 9dc32aa735b6eb6e3525e2fff64b06ced474b6af
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e297615c5acc6d39c81e6d2c01edc2d699d33f63
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62157694"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220820"
 ---
 # <a name="summary-of-keywords"></a>Zusammenfassung der Schlüsselwörter
 
 *keyword* : one of
 
-|||||
-|-|-|-|-|
-|**auto**|**double**|**int**|**struct**|
-|**break**|**else**|**long**|**switch**|
-|**case**|**enum**|**register**|**typedef**|
-|**char**|**extern**|**return**|**union**|
-|**const**|**float**|**short**|**unsigned**|
-|**continue**|**for**|**signed**|**void**|
-|**default**|**goto**|**sizeof**|**volatile**|
-|**do**|**if**|**static**|**while**|
+:::row:::
+    :::column:::
+        **`auto`**<br/>
+        **`double`**<br/>
+        **`int`**<br/>
+        **`struct`**<br/>
+        **`break`**<br/>
+        **`else`**<br/>
+        **`long`**<br/>
+        **`switch`**<br/>
+    :::column-end:::
+    :::column:::
+        **`case`**<br/>
+        **`enum`**<br/>
+        **`register`**<br/>
+        **`typedef`**<br/>
+        **`char`**<br/>
+        **`extern`**<br/>
+        **`return`**<br/>
+        **`union`**<br/>
+    :::column-end:::
+    :::column:::
+        **`const`**<br/>
+        **`float`**<br/>
+        **`short`**<br/>
+        **`unsigned`**<br/>
+        **`continue`**<br/>
+        **`for`**<br/>
+        **`signed`**<br/>
+        **`void`**<br/>
+    :::column-end:::
+    :::column:::
+        **`default`**<br/>
+        **`goto`**<br/>
+        **`sizeof`**<br/>
+        **`volatile`**<br/>
+        **`do`**<br/>
+        **`if`**<br/>
+        **`static`**<br/>
+        **`while`**<br/>
+    :::column-end:::
+:::row-end:::
 
 ## <a name="see-also"></a>Siehe auch
 

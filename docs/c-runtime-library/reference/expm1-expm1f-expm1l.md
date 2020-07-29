@@ -30,12 +30,12 @@ helpviewer_keywords:
 - expm1l function
 - expm1 function
 ms.assetid: 2a4dd2d9-370c-42b0-9067-0625efa272e0
-ms.openlocfilehash: 77bd44975e97cc646f7d2fd100d86b6661b8c2e9
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 63e984f2228ac6896cd9d2ea959b491565bfb8d8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941546"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234132"
 ---
 # <a name="expm1-expm1f-expm1l"></a>expm1, expm1f, expm1l
 
@@ -63,16 +63,16 @@ long double expm1l(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Das Exponential des Gleitkommawerts.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **expm1** -Funktionen geben einen Gleit Komma Wert zurück, der e<sup>x</sup> -1 darstellt, wenn erfolgreich. Bei einem Überlauf gibt expm1 **HUGE_VAL**zurück, **expm1f** gibt **HUGE_VALF**zurück, **expm1l** gibt **HUGE_VALL**zurück, und **errno** ist auf **ERANGE**festgelegt. Weitere Informationen zu diesen Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Die **expm1** -Funktionen geben einen Gleit Komma Wert zurück, der e<sup>x</sup> -1 darstellt, wenn erfolgreich. Bei einem Überlauf **expm1** gibt expm1 **HUGE_VAL**zurück, **expm1f** gibt **HUGE_VALF**zurück, **expm1l** gibt **HUGE_VALL**zurück, und **errno** wird auf **ERANGE**festgelegt. Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **expm1** aufzurufen, die **float** -und **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **expm1** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **expm1** aufzurufen, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **expm1** immer und gibt einen zurück **`double`** .
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -80,10 +80,10 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **expm1** aufzuru
 |-------------|---------------------|
 |**expm1**, **expm1f**, **expm1l**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [exp2, exp2f, exp2l](exp2-exp2f-exp2l.md)<br/>
 [pow, powf, powl](pow-powf-powl.md)<br/>

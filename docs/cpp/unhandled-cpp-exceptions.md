@@ -8,16 +8,16 @@ helpviewer_keywords:
 - C++ exception handling, unhandled exceptions
 - unhandled exceptions [C++]
 ms.assetid: 13f09c53-9254-4407-9db9-14e730e047cc
-ms.openlocfilehash: f42a4e2af46ab7690d6f4bc9641c09f3757eb6b6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 48b417c48a3cbb903f3fabaf31b1423e79a1a414
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160553"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233586"
 ---
 # <a name="unhandled-c-exceptions"></a>Nicht behandelte C++-Ausnahmen
 
-Wenn für die aktuelle Ausnahme kein übereinstimmender Handler (oder ein Auslassungs Zeichen- **catch** -Handler) gefunden werden kann, wird die vordefinierte `terminate` Lauf Zeitfunktion aufgerufen. (Sie können auch `terminate` in einem ihrer Handler explizit aufzurufen.) Die Standardaktion `terminate` ist das aufzurufen `abort`. Wenn `terminate` eine andere Funktion in Ihrem Programm aufrufen soll, bevor Sie die Anwendung beenden, rufen Sie die `set_terminate`-Funktion mit dem Funktionsnamen auf, der als sein einzelnes Argument aufgerufen werden soll. Sie können `set_terminate` an jedem Punkt im Programm aufrufen. Die `terminate` Routine ruft immer die letzte Funktion auf, die als Argument für `set_terminate`angegeben wird.
+Wenn für die aktuelle Ausnahme kein übereinstimmender Handler (oder ein **`catch`** Auslassungs Zeichen Handler) gefunden werden kann, wird die vordefinierte `terminate` Lauf Zeitfunktion aufgerufen. (Sie können auch explizit `terminate` in einem ihrer Handler aufzurufen.) Die Standardaktion von `terminate` ist das aufzurufen `abort` . Wenn `terminate` eine andere Funktion in Ihrem Programm aufrufen soll, bevor Sie die Anwendung beenden, rufen Sie die `set_terminate`-Funktion mit dem Funktionsnamen auf, der als sein einzelnes Argument aufgerufen werden soll. Sie können `set_terminate` an jedem Punkt im Programm aufrufen. Die- `terminate` Routine ruft immer die letzte Funktion auf, die als Argument für angegeben wurde `set_terminate` .
 
 ## <a name="example"></a>Beispiel
 
@@ -54,6 +54,6 @@ term_func was called by terminate.
 
 Die `term_func`-Funktion muss das Programm oder den aktuellen Thread beenden, idealerweise mit dem Aufruf von `exit`. Wenn stattdessen eine Rückkehr zum Aufruf erfolgt, wird `abort` aufgerufen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)
+[Modern C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4190
 ms.assetid: a4d0ad93-a19a-4063-addd-36d605831567
-ms.openlocfilehash: 6d110aa70a470382e274546e95599804fa3bc7d6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8187926f2477a4d3f1ca3019cc8c3c71710c1dff
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80199874"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233300"
 ---
 # <a name="compiler-warning-level-1-c4190"></a>Compilerwarnung (Stufe 1) C4190
 
 für "Bezeichner1" wurde eine C-Verknüpfung angegeben, es wird jedoch der UDT "Bezeichner2" zurückgegeben, der nicht mit C kompatibel ist
 
-Eine Funktion oder ein Zeiger auf die Funktion verfügt über einen UDT (benutzerdefinierter Typ, bei dem es sich um eine Klasse, Struktur, Enumeration oder Union handelt) als Rückgabetyp und `extern` "C"-Verknüpfung. Dies ist zulässig, wenn Folgendes gilt:
+Eine Funktion oder ein Zeiger auf die Funktion verfügt über einen UDT (benutzerdefinierter Typ, d. h. eine Klasse, Struktur, Enumeration oder Union) als Rückgabetyp und `extern "C"` Verknüpfung. Dies ist zulässig, wenn Folgendes gilt:
 
-- Alle Aufrufe dieser Funktion erfolgen von C++.
+- Alle Aufrufe dieser Funktion treten von C++ auf.
 
 - Die Definition der Funktion befindet sich in C++.
 

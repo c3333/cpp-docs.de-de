@@ -25,16 +25,16 @@ helpviewer_keywords:
 - IsAutoAccessor method
 - ReleaseAccessors method
 ms.assetid: 389b65be-11ca-4ae0-9290-60c621c4982b
-ms.openlocfilehash: 8aef8a04d7adff903e21491a91014d55aab769da
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e29883b2a42010daee19f915c49c31686b232cf6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80212291"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233456"
 ---
 # <a name="caccessorbase-class"></a>CAccessorBase-Klasse
 
-Alle Accessoren in den OLE DB Vorlagen werden von dieser Klasse abgeleitet. `CAccessorBase` ermöglicht einem Rowset die Verwaltung mehrerer Accessoren. Außerdem werden Bindungen für Parameter und Ausgabespalten bereitstellt.
+Alle Accessoren in den OLE DB Vorlagen werden von dieser Klasse abgeleitet. `CAccessorBase`ermöglicht einem Rowset die Verwaltung mehrerer Accessoren. Außerdem werden Bindungen für Parameter und Ausgabespalten bereitstellt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,7 +42,7 @@ Alle Accessoren in den OLE DB Vorlagen werden von dieser Klasse abgeleitet. `CAc
 // Replace with syntax
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -122,7 +122,7 @@ in Die Null-Offset Zahl für den Accessor.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt " **true** " zurück, wenn der Accessor eine automatische Zugriffsmethode ist. Andernfalls wird **false**zurückgegeben.
+Gibt zurück, **`true`** Wenn der Accessor ein Autoaccessor ist. Andernfalls wird zurückgegeben **`false`** .
 
 ## <a name="caccessorbasereleaseaccessors"></a><a name="release"></a>CAccessorBase:: releaseaccessors
 
@@ -137,7 +137,7 @@ HRESULT ReleaseAccessors(IUnknown* pUnk);
 #### <a name="parameters"></a>Parameter
 
 *Kro*<br/>
-in Ein Zeiger auf eine `IUnknown`-Schnittstelle für das COM-Objekt, für das die Accessoren erstellt wurden.
+in Ein Zeiger auf eine- `IUnknown` Schnittstelle für das COM-Objekt, für das die Accessoren erstellt wurden.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -147,8 +147,8 @@ Ein HRESULT-Standard.
 
 Wird von [CAccessorRowset:: Close](../../data/oledb/caccessorrowset-close.md)aufgerufen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
 [CAccessorBase-Klasse](../../data/oledb/caccessorbase-class.md)

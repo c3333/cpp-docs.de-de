@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4155
 ms.assetid: ba233353-09e3-4195-8127-13a27ddd8d70
-ms.openlocfilehash: 3e455ad67c9a36cfa4b52711ce60ce46ef6afac2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 74369ce9eae123143caf15434506acf6e6e2e50e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80176207"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223290"
 ---
 # <a name="compiler-warning-level-1-c4155"></a>Compilerwarnung (Stufe 1) C4155
 
 Löschen eines Arrayausdrucks ohne Verwendung der Arrayform von "delete"
 
-Die Arrayform von **delete** sollte zum Löschen eines Arrays verwendet werden. Diese Warnung tritt nur unter der ANSI-Kompatibilität (/Za) auf.
+Die Arrayform von **`delete`** sollte zum Löschen eines Arrays verwendet werden. Diese Warnung tritt nur unter der ANSI-Kompatibilität (/Za) auf.
 
 ## <a name="example"></a>Beispiel
 

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - functions [MFC], throwing exceptions
 - exceptions [MFC], throwing
 ms.assetid: 492976e8-8804-4234-8e8f-30dffd0501be
-ms.openlocfilehash: ebdfea18e6e8445dd734bf43fb6a4ecf422975e9
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: cdcdd63e84d4b375c44c2b89bf2d4f3285b0323c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84622744"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223186"
 ---
 # <a name="exceptions-throwing-exceptions-from-your-own-functions"></a>Ausnahmen: Ausnahmen in eigenen Funktionen auslösen
 
 Es ist möglich, das MFC-Ausnahme Behandlungs Paradigma ausschließlich zu verwenden, um Ausnahmen abzufangen, die von Funktionen in MFC oder anderen Bibliotheken ausgelöst werden. Zusätzlich zum Abfangen von Ausnahmen, die vom Bibliotheks Code ausgelöst werden, können Sie Ausnahmen aus dem eigenen Code auslösen, wenn Sie Funktionen schreiben, die auf Ausnahmebedingungen stoßen können.
 
-Wenn eine Ausnahme ausgelöst wird, wird die Ausführung der aktuellen Funktion beendet und springt direkt in den **catch** -Block des innersten Ausnahme Rahmens. Der Ausnahme Mechanismus umgeht den normalen Beendigungs Pfad von einer Funktion. Daher müssen Sie sicherstellen, dass Sie die Speicherblöcke löschen, die bei einem normalen beenden gelöscht werden.
+Wenn eine Ausnahme ausgelöst wird, wird die Ausführung der aktuellen Funktion beendet und springt direkt in den **`catch`** Block des innersten Ausnahme Rahmens. Der Ausnahme Mechanismus umgeht den normalen Beendigungs Pfad von einer Funktion. Daher müssen Sie sicherstellen, dass Sie die Speicherblöcke löschen, die bei einem normalen beenden gelöscht werden.
 
 #### <a name="to-throw-an-exception"></a>So lösen Sie eine Ausnahme aus
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - helper functions, calling conventions
 - helper functions, return types
 ms.assetid: 0ffa4558-6005-4803-be95-7a8ec8837660
-ms.openlocfilehash: 90767141337512b053bb06a40823c4a22a8a4823
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8813bab0cb55aa57792d0031433d96eefb095da4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80169746"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223914"
 ---
 # <a name="calling-conventions-parameters-and-return-type"></a>Aufrufkonventionen, Parameter und Rückgabetyp
 
@@ -27,7 +27,7 @@ FARPROC WINAPI __delayLoadHelper2(
 ### <a name="parameters"></a>Parameter
 
 *pidd*<br/>
-Ein `const` Zeiger auf eine `ImgDelayDescr`, die die Offsets der verschiedenen Import bezogenen Daten, einen Zeitstempel für Bindungs Informationen und einen Satz von Attributen enthält, die weitere Informationen über den deskriptorinhalt bereitstellen. Zurzeit gibt es nur ein Attribut, `dlattrRva`, das angibt, dass es sich bei den Adressen im Deskriptor um relative virtuelle Adressen handelt. Weitere Informationen finden Sie in den Deklarationen in " *Delta. h*".
+Ein **`const`** Zeiger auf einen `ImgDelayDescr` , der die Offsets der verschiedenen Import bezogenen Daten, einen Zeitstempel für Bindungs Informationen und einen Satz von Attributen enthält, die weitere Informationen über den deskriptorinhalt bereitstellen. Zurzeit gibt es nur ein Attribut, `dlattrRva` , das angibt, dass die Adressen im Deskriptor relative virtuelle Adressen sind. Weitere Informationen finden Sie in den Deklarationen in " *Delta. h*".
 
 Informationen zur Definition der `PCImgDelayDescr` Struktur finden Sie unter [Struktur-und Konstantendefinitionen](structure-and-constant-definitions.md).
 
@@ -50,7 +50,7 @@ Sie sind dafür verantwortlich, diese Ausnahmen zu behandeln.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Aufrufkonvention für die Hilfsfunktion ist `__stdcall`. Der Typ des Rückgabewerts ist nicht relevant, daher wird FARPROC verwendet. Diese Funktion hat eine C-Bindung.
+Die Aufruf Konvention für die Hilfsfunktion ist **`__stdcall`** . Der Typ des Rückgabewerts ist nicht relevant, daher wird FARPROC verwendet. Diese Funktion hat eine C-Bindung.
 
 Der Rückgabewert für die Hilfsfunktion für das verzögerte Laden muss im übergegebenen Funktionszeigerspeicherort gespeichert werden, es sei denn, Sie möchten, dass Ihre Hilfsfunktion als Benachrichtigungshook verwendet wird. In diesem Fall ist Ihr Code dafür verantwortlich, den entsprechenden Funktionszeiger zum Zurückgeben zu finden. Der vom Linker generierte Thunkcode übernimmt dann diesen Rückgabewert als reales Ziel für den Importvorgang und springt direkt dorthin.
 
@@ -135,6 +135,6 @@ const PfnDliHook __pfnDliNotifyHook2 = delayHook;
 */
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Die Hilfsfunktion](understanding-the-helper-function.md)
+[Grundlegendes zur Hilfsfunktion](understanding-the-helper-function.md)

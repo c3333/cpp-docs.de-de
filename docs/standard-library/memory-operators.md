@@ -10,16 +10,16 @@ f1_keywords:
 - memory/std::operator<<
 - memory/std::operator==
 ms.assetid: 257e3ba9-c4c2-4ae8-9b11-b156ba9c28de
-ms.openlocfilehash: 661f1bb4c0f5734d88dd23f73c69b362f59a76c2
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 15762e4853cfd018c7cff997a3ed9ba7d86b3c2e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425490"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233053"
 ---
 # <a name="ltmemorygt-operators"></a>&lt;memory&gt;-Operatoren
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Prüft auf Ungleichheit zwischen Objekten.
 
@@ -42,10 +42,10 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Eines der Objekte, die auf Ungleichheit geprüft werden sollen.
 
-*Rechte*\
+*Richting*\
 Eines der Objekte, die auf Ungleichheit geprüft werden sollen.
 
 *Ty1*\
@@ -56,9 +56,9 @@ Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Objekte nicht gleich sind; **FALSE**, wenn die Objekte gleich sind.
+**`true`**, wenn die Objekte nicht gleich sind. , **`false`** Wenn-Objekte gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Vorlagenoperator gibt "false" zurück. (Alle standardmäßigen allocator-Objekte sind gleich.)
 
@@ -120,7 +120,7 @@ sp0 != sp0 == false
 sp0 != sp1 == true
 ```
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Prüft auf Gleichheit zwischen Objekten.
 
@@ -143,10 +143,10 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Eines der Objekte, die auf Gleichheit geprüft werden sollen.
 
-*Rechte*\
+*Richting*\
 Eines der Objekte, die auf Gleichheit geprüft werden sollen.
 
 *Ty1*\
@@ -157,9 +157,9 @@ Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die Objekte gleich sind, **false** , wenn die Objekte nicht gleich sind.
+**`true`**, wenn die Objekte gleich sind,, **`false`** Wenn Objekte nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Vorlagenoperator gibt "true" zurück. (Alle standardmäßigen allocator-Objekte sind gleich.)
 
@@ -232,7 +232,7 @@ sp0 == sp0 == true
 sp0 == sp1 == false
 ```
 
-## <a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob ein Objekt größer gleich einem zweiten Objekt ist.
 
@@ -250,10 +250,10 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Eines der zu vergleichenden Objekte.
 
-*Rechte*\
+*Richting*\
 Eines der zu vergleichenden Objekte.
 
 *Ty1*\
@@ -262,11 +262,11 @@ Der vom linken gemeinsamen Zeiger gesteuerte Typ.
 *Ty2*\
 Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Operatoren geben `left.get() >= right.get()`zurück.
+Die Vorlagenoperatoren geben `left.get() >= right.get()` zurück.
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob ein Objekt kleiner als ein zweites Objekt ist.
 
@@ -284,10 +284,10 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Eines der zu vergleichenden Objekte.
 
-*Rechte*\
+*Richting*\
 Eines der zu vergleichenden Objekte.
 
 *Ty1*\
@@ -296,7 +296,7 @@ Der vom linken Zeiger gesteuerte Typ.
 *Ty2*\
 Der vom rechten Zeiger gesteuerte Typ.
 
-## <a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob ein Objekt kleiner gleich einem zweiten Objekt ist.
 
@@ -314,10 +314,10 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Eines der zu vergleichenden Objekte.
 
-*Rechte*\
+*Richting*\
 Eines der zu vergleichenden Objekte.
 
 *Ty1*\
@@ -326,11 +326,11 @@ Der vom linken gemeinsamen Zeiger gesteuerte Typ.
 *Ty2*\
 Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Operatoren geben zurück `left.get() <= right.get()`
+Die Vorlagenoperatoren geben `left.get() <= right.get()` zurück
 
-## <a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob ein Objekt größer als ein zweites Objekt ist.
 
@@ -348,10 +348,10 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*linken*\
 Eines der zu vergleichenden Objekte.
 
-*Rechte*\
+*Richting*\
 Eines der zu vergleichenden Objekte.
 
 *Ty1*\
@@ -360,7 +360,7 @@ Der vom linken gemeinsamen Zeiger gesteuerte Typ.
 *Ty2*\
 Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
-## <a name="op_lt_lt"></a>Operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a>KOM&lt;&lt;
 
 Schreibt den freigegebenen Zeiger auf den Stream.
 
@@ -372,24 +372,24 @@ std::basic_ostream<Elem, Tr>& operator<<(std::basic_ostream<Elem, Tr>& out,
 
 ### <a name="parameters"></a>Parameter
 
-*Elem* -\
+*Elem*\
 Der Typ des Streamelements.
 
-*TR* -\
+*Stadtrat*\
 Der Typ des Streamelements.
 
-*Ty* -\
+*Genossenschaft*\
 Der vom freigegebenen Zeiger gesteuerte Typ.
 
-*out*\
+*vorgenommen*\
 Der Ausgabestream.
 
-*SP* -\
+*El*\
 Der freigegebene Zeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `out << sp.get()` zurück.
+Diese Vorlagenfunktion gibt `out << sp.get()` zurück.
 
 ### <a name="example"></a>Beispiel
 

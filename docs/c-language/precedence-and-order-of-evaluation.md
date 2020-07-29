@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data binding [C++], operator precedence
 - operators [C++], precedence
 ms.assetid: 201f7864-0c51-4c55-9d6f-39c5d013bcb0
-ms.openlocfilehash: 327a5a5344f17f1d84e0cebc1371d56426c95deb
-ms.sourcegitcommit: 0e3da5cea44437c132b5c2ea522bd229ea000a10
+ms.openlocfilehash: c1a5feb4552dd43b26263ebd3080e18adef6cb32
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67861074"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211735"
 ---
 # <a name="precedence-and-order-of-evaluation"></a>Vorrang und Auswertungsreihenfolge
 
@@ -25,7 +25,7 @@ In der folgenden Tabelle werden die Rangfolge und Assoziativität (die Reihenfol
 | Symbol <sup>1</sup> | Typ der Operation | Assoziativität |
 |-------------|-----------------------|-------------------|
 | `[` `]` `(` `)` `.` `->`<br/>`++` `--` (Postfix) | expression | Von links nach rechts |
-| **sizeof** `&` `*` `+` `-` `~` `!`<br/>`++` `--` (Präfix) | Unär | Von rechts nach links |
+| **`sizeof`** `&` `*` `+` `-` `~` `!`<br/>`++` `--` (Präfix) | Unär | Von rechts nach links |
 | *Typumwandlungen* | Unär | Von rechts nach links |
 | `*` `/` `%` | Multiplikativ | Von links nach rechts |
 | `+` `-` | Additiv | Von links nach rechts |

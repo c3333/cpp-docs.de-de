@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3538
 ms.assetid: ef3698a5-7356-4c62-b9af-5d3a4baed958
-ms.openlocfilehash: d1bd287c6b7e0b07938db55c282c69cd00fd25df
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 290faa1a227920cd46f32a4adf0dd6a6f3687c6d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761542"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233365"
 ---
 # <a name="compiler-error-c3538"></a>Compilerfehler C3538
 
@@ -21,11 +21,11 @@ Nicht alle deklarierten Variablen in einer Deklarationsliste werden in den gleic
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-1. Stellen Sie sicher, dass alle `auto`-Deklarationen in der Liste in denselben Typ hergeleitet werden.
+1. Stellen Sie sicher, dass alle **`auto`** Deklarationen in der Liste in denselben Typ abgeleitet werden.
 
 ## <a name="example"></a>Beispiel
 
-Die folgenden Anweisungen erzeugen C3538. Jede Anweisung deklariert mehrere Variablen, aber jede Verwendung des `auto`-Schlüsselworts wird nicht in den gleichen Typ abgeleitet.
+Die folgenden Anweisungen erzeugen C3538. Jede-Anweisung deklariert mehrere Variablen, aber jede Verwendung des- **`auto`** Schlüssel Worts wird nicht in denselben Typ abgeleitet.
 
 ```cpp
 // C3538.cpp

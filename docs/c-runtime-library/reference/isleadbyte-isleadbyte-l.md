@@ -34,12 +34,12 @@ helpviewer_keywords:
 - istleadbyte function
 - isleadbyte function
 ms.assetid: 3b2bcf09-d82b-4803-9e80-59d04942802a
-ms.openlocfilehash: 078efc2fa5499e23ce7f2fb6f8fc0ffc5123de1e
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 1d2202bd1ca59ee42287c398da429df132e24fcb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909541"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234080"
 ---
 # <a name="isleadbyte-_isleadbyte_l"></a>isleadbyte, _isleadbyte_l
 
@@ -64,11 +64,11 @@ Zu testende ganze Zahl.
 
 **isleadbyte** gibt einen Wert ungleich 0 (null) zurück, wenn das Argument die Test Bedingung erfüllt, oder 0, wenn dies nicht der Fall ist. Im Gebiets Schema "C" und in Einzel Byte-Zeichensatz (SBCS)-Gebiets Schemas gibt **isleadbyte** immer 0 (null) zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **isleadbyte** -Makro gibt einen Wert ungleich 0 (null) zurück, wenn das Argument das erste Byte eines multibytezeichens ist. **isleadbyte** erzeugt ein sinnvolles Ergebnis für ein beliebiges ganzzahliges Argument von-1 (**EOF**) bis **UCHAR_MAX** (0xFF), einschließlich.
 
-Der erwartete Argumenttyp von **isleadbyte** ist **int**. Wenn ein signiertes Zeichen erfolgreich ist, kann der Compiler es durch die Signierungs Erweiterung in eine ganze Zahl konvertieren, was zu unvorhersehbaren Ergebnissen führt.
+Der erwartete Argumenttyp von **isleadbyte** ist **`int`** . Wenn ein signiertes Zeichen übergeben wird, kann der Compiler ihn durch Vorzeichen Erweiterung in eine ganze Zahl konvertieren, was zu unvorhersehbaren Ergebnissen führt.
 
 Die Version dieser Funktion mit dem **_l** -Suffix ist beinahe identisch, verwendet jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten.
 
@@ -82,15 +82,15 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**isleadbyte**|\<ctype.h>|
 |**_isleadbyte_l**|\<ctype.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Byteklassifizierung](../../c-runtime-library/byte-classification.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Byte Klassifizierung](../../c-runtime-library/byte-classification.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

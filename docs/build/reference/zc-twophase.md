@@ -9,16 +9,16 @@ helpviewer_keywords:
 - twoPhase
 - disable two-phase name lookup
 - /Zc:twoPhase
-ms.openlocfilehash: 3464759793a2dd243024a9f3f52263f76514033a
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 712503d08221d29a61323946008f2f36a467cb31
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438638"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234327"
 ---
 # <a name="zctwophase--disable-two-phase-name-lookup"></a>/Zc:twoPhase- (Zweiphasennamenssuche deaktivieren)
 
-Die **/Zc: twophase-** Option unter **/permissive-** weist den Compiler an, das ursprüngliche, nicht konforme Microsoft C++ -Compilerverhalten zum Analysieren und Instanziieren von Klassen Vorlagen und Funktions Vorlagen zu verwenden.
+Die **/Zc: twophase-** Option unter **/permissive-** weist den Compiler an, das ursprüngliche, nicht konforme Microsoft C++-Compilerverhalten zum Analysieren und Instanziieren von Klassen Vorlagen und Funktions Vorlagen zu verwenden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,7 +42,7 @@ Standardmäßig oder in Visual Studio 2017, Version 15,3 und höher, wenn Sie so
    template <typename T> class Derived : public Base<T> { ... }
    ```
 
-   Die Vorlagen Deklaration, die `template <typename T>`, die Klasse Head `class Derived`und die `public Base<T>` der Basisklassen Liste werden analysiert, aber der Vorlagen Text wird als Tokenstream aufgezeichnet.
+   Die Vorlagen Deklaration, `template <typename T>` , der Klassen Kopf `class Derived` und die Basisklassen Liste `public Base<T>` werden analysiert, aber der Vorlagen Text wird als Tokenstream aufgezeichnet.
 
 - Beim Analysieren einer Funktions Vorlage analysiert der Compiler nur die Funktions Signatur. Der Funktions Text wird nicht analysiert. Stattdessen wird er als Tokenstream aufgezeichnet.
 
@@ -92,7 +92,7 @@ zctwophase.cpp
 Microsoft one-phase
 ```
 
-Bei der Kompilierung im Übereinstimmungs Modus unter **/permissive-** druckt dieses Programm "`Standard two-phase`", da die zweite Überladung von `func` nicht sichtbar ist, wenn der Compiler die Vorlage erreicht. Wenn Sie **/Zc: twophase-** hinzufügen, druckt das Programm "`Microsoft one-phase`". Die Ausgabe entspricht dem Wert, wenn Sie **/permissive-** nicht angeben.
+Bei der Kompilierung im Übereinstimmungs Modus unter **/permissive-** druckt dieses Programm " `Standard two-phase` ", da die zweite Überladung von `func` nicht sichtbar ist, wenn der Compiler die Vorlage erreicht. Wenn Sie **/Zc: twophase-** hinzufügen, druckt das Programm " `Microsoft one-phase` ". Die Ausgabe entspricht dem Wert, wenn Sie **/permissive-** nicht angeben.
 
 *Abhängige Namen* sind Namen, die von einem Vorlagen Parameter abhängen. Diese Namen weisen das Suchverhalten auf, das unter **/Zc: twophase-** nicht anders ist. Im Übereinstimmungs Modus sind abhängige Namen nicht an der Stelle der Vorlagen Definition gebunden. Stattdessen sucht der Compiler diese, wenn die Vorlage instanziiert wird. Bei Funktionsaufrufen mit einem abhängigen Funktionsnamen wird der Name an Funktionen gebunden, die in der Vorlagen Definition an der Aufruf site sichtbar sind. Zusätzliche über Ladungen aus der Argument abhängigen Suche werden hinzugefügt, sowohl am Punkt der Vorlagen Definition als auch am Punkt der Vorlagen Instanziierung.
 
@@ -136,7 +136,7 @@ func(int)
 NS::func(NS::S)
 ```
 
-Bei der Kompilierung mit **/permissive-** , aber ohne **/Zc: twophase-** , druckt dieser Code Folgendes:
+Bei der Kompilierung mit **/permissive-**, aber ohne **/Zc: twophase-**, druckt dieser Code Folgendes:
 
 ```Output
 func(long)
@@ -150,21 +150,21 @@ func(int)
 NS::func(NS::S)
 ```
 
-Im Übereinstimmungs Modus unter **/permissive-** wird der-Aufruf`tfunc(1729)` in die `void func(long)` Überladung aufgelöst. Es wird nicht in die `void func(int)` Überladung aufgelöst, wie unter **/Zc: twophase-** . Dies liegt daran, dass die nicht qualifizierte `func(int)` nach der Definition der Vorlage deklariert wird und nicht durch eine Argument abhängige Suche gefunden wird. `void func(S)` jedoch an einer Argument abhängigen Suche beteiligt ist, wird Sie dem Überladungs Satz für den Aufrufen `tfunc(s)`hinzugefügt, auch wenn Sie nach der Vorlagen Funktion deklariert wird.
+Im Übereinstimmungs Modus unter **/permissive-** wird der-Befehl in `tfunc(1729)` die-Überladung aufgelöst `void func(long)` . Es wird nicht in die-Überladung aufgelöst `void func(int)` , wie unter **/Zc: twophase-**. Das liegt daran, dass die `func(int)` nicht qualifizierte nach der Definition der Vorlage deklariert wird und nicht durch eine Argument abhängige Suche gefunden wird. Aber ist an `void func(S)` einer Argument abhängigen Suche beteiligt, sodass Sie der Überladung für den-Befehl hinzugefügt wird `tfunc(s)` , auch wenn Sie nach der Vorlagen Funktion deklariert wird.
 
 ### <a name="update-your-code-for-two-phase-conformance"></a>Aktualisieren des Codes für die zweistufige Konformität
 
-Ältere Versionen des Compilers benötigen nicht die Schlüsselwörter `template` und `typename` überall C++ , wo der Standard Sie benötigt. Diese Schlüsselwörter werden an manchen Stellen benötigt, um zu unterscheiden, wie Compiler einen abhängigen Namen während der ersten Phase der Suche analysieren sollten. Beispiel:
+Ältere Versionen des Compilers benötigen nicht die Schlüsselwörter **`template`** und überall, was **`typename`** der C++-Standard erfordert. Diese Schlüsselwörter werden an manchen Stellen benötigt, um zu unterscheiden, wie Compiler einen abhängigen Namen während der ersten Phase der Suche analysieren sollten. Beispiel:
 
 `T::Foo<a || b>(c);`
 
-Ein konformer Compiler analysiert `Foo` als Variable im Bereich der `T`. Dies bedeutet, dass dieser Code ein logischer or-Ausdruck mit `T::foo < a` als Linker Operand ist und `b > (c)` als rechter Operand. Wenn Sie `Foo` als Funktions Vorlage verwenden möchten, müssen Sie angeben, dass es sich um eine Vorlage handelt, indem Sie das `template`-Schlüsselwort hinzufügen:
+Ein konformer Compiler analysiert `Foo` als Variable im Bereich von `T` . Dies bedeutet, dass dieser Code ein logischer or-Ausdruck mit `T::foo < a` als Linker Operand und `b > (c)` als rechter Operand ist. Wenn Sie `Foo` als Funktions Vorlage verwenden möchten, müssen Sie angeben, dass es sich um eine Vorlage handelt, indem Sie das- **`template`** Schlüsselwort hinzufügen:
 
 `T::template Foo<a || b>(c);`
 
-In Versionen von Visual Studio 2017 Version 15,3 und höher, wenn **/permissive-** und **/Zc: twophase-** angegeben sind, lässt der Compiler diesen Code ohne das `template`-Schlüsselwort zu. Er interpretiert den Code als einen aufrufsvorgang für eine Funktions Vorlage mit einem Argument `a || b`, da nur Vorlagen auf begrenzte Weise analysiert werden. Der obige Code wird in der ersten Phase überhaupt nicht analysiert. In der zweiten Phase ist ausreichend Kontext vorhanden, um zu erkennen, dass `T::Foo` eine Vorlage anstelle einer Variablen ist, sodass der Compiler die Verwendung des Schlüssel Worts nicht erzwingt.
+In Versionen von Visual Studio 2017 Version 15,3 und höher, wenn **/permissive-** und **/Zc: twophase-** angegeben sind, lässt der Compiler diesen Code ohne das- **`template`** Schlüsselwort zu. Er interpretiert den Code als einen aufzurufenden Funktions Vorlagen mit einem Argument von `a || b` , da nur Vorlagen auf begrenzte Weise analysiert werden. Der obige Code wird in der ersten Phase überhaupt nicht analysiert. In der zweiten Phase ist ausreichend Kontext vorhanden, um zu erkennen, dass es `T::Foo` sich um eine Vorlage und nicht um eine Variable handelt, sodass der Compiler die Verwendung des Schlüssel Worts nicht erzwingt.
 
-Dieses Verhalten kann auch angezeigt werden, indem das Schlüsselwort `typename` vor Namen in Funktions Vorlagen Texten, Initialisierern, Standardargumenten und noaußer-Argumenten entfernt wird. Beispiel:
+Dieses Verhalten kann auch auftreten, wenn das-Schlüsselwort **`typename`** vor Namen in Funktions Vorlagen Texten, Initialisierern, Standardargumenten und noaußer-Argumenten entfernt wird. Beispiel:
 
 ```cpp
 template<typename T>
@@ -174,7 +174,7 @@ typename T::TYPE func(typename T::TYPE*)
 }
 ```
 
-Wenn Sie das Schlüsselwort `typename` im Funktions Rumpf nicht verwenden, wird dieser Code unter **/permissive-/Zc: twophase-** , aber nicht allein unter **/permissive-** kompiliert. Das `typename`-Schlüsselwort ist erforderlich, um anzugeben, dass die `TYPE` abhängig ist. Da der Text nicht unter " **/Zc: twophase**" analysiert wird, ist das Schlüsselwort für den Compiler nicht erforderlich. Im **/permissive-** -Übereinstimmungs Modus generiert Code ohne das `typename`-Schlüsselwort Fehler. Wenn Sie Ihren Code in Visual Studio 2017, Version 15,3 und höher, in Konformität migrieren möchten, fügen Sie das `typename`-Schlüsselwort ein, wo es fehlt.
+Wenn Sie das-Schlüsselwort nicht **`typename`** im Funktions Rumpf verwenden, wird dieser Code unter **/permissive-/Zc: twophase-**, aber nicht allein unter **/permissive-** kompiliert. Das- **`typename`** Schlüsselwort ist erforderlich, um anzugeben, dass `TYPE` abhängig ist. Da der Text nicht unter " **/Zc: twophase**" analysiert wird, ist das Schlüsselwort für den Compiler nicht erforderlich. Im **/permissive-** -Übereinstimmungs Modus generiert Code ohne das- **`typename`** Schlüsselwort Fehler. Wenn Sie Ihren Code in Visual Studio 2017, Version 15,3 und höher, in Konformität migrieren möchten, fügen **`typename`** Sie das-Schlüsselwort ein, in dem es fehlt.
 
 Beachten Sie auch dieses Codebeispiel:
 
@@ -186,18 +186,18 @@ typename T::template X<T>::TYPE func(typename T::TYPE)
 }
 ```
 
-Unter **/permissive-/Zc: twophase** und in älteren Compilern benötigt der Compiler nur das `template`-Schlüsselwort in Zeile 2. Im Übereinstimmungs Modus benötigt der Compiler jetzt auch das `template`-Schlüsselwort in Zeile 4, um anzugeben, dass `T::X<T>` eine Vorlage ist. Suchen Sie nach Code, dem dieses Schlüsselwort fehlt, und stellen Sie es bereit, damit der Code dem Standard entspricht.
+Unter **/permissive-/Zc: twophase** und in älteren Compilern benötigt der Compiler nur das **`template`** Schlüsselwort in Zeile 2. Im Übereinstimmungs Modus erfordert der Compiler jetzt auch das **`template`** Schlüsselwort in Zeile 4, um anzugeben, dass `T::X<T>` es sich um eine Vorlage handelt. Suchen Sie nach Code, dem dieses Schlüsselwort fehlt, und stellen Sie es bereit, damit der Code dem Standard entspricht.
 
-Weitere Informationen zu Konformitäts Problemen finden [Nonstandard Behavior](../../cpp/nonstandard-behavior.md) [ C++ Sie unter Verbesserungen der Konformität in Visual Studio](../../overview/cpp-conformance-improvements.md) und nicht dem Standard entsprechende Verhalten.
+Weitere Informationen zu Konformitäts Problemen finden Sie unter [Verbesserungen der C++-Konformität in Visual Studio](../../overview/cpp-conformance-improvements.md) und [nicht dem Standard entsprechende Verhalten](../../cpp/nonstandard-behavior.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Klicken Sie auf der Eigenschaftenseite auf **Konfigurationseigenschaften** > **C/C++**  > **Befehlszeile**.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Befehlszeile** aus.
 
 1. Ändern Sie die Eigenschaft **zusätzliche Optionen** so, dass Sie **/Zc: twophase** einschließt, und wählen Sie dann **OK**aus.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [/Zc (Übereinstimmung)](zc-conformance.md)

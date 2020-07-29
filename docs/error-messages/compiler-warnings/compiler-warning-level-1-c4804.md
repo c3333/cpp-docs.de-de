@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4804
 ms.assetid: 069e8f44-3ef6-43bb-8524-4116fc6eea83
-ms.openlocfilehash: 3f1b349599c77bc001911431fe0d83496ca3dfce
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: aa2cdf0103a1ccc607f2e4a55e1d8f85bb8cc45d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80199406"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87233222"
 ---
 # <a name="compiler-warning-level-1-c4804"></a>Compilerwarnung (Stufe 1) C4804
 
 "Operation": unsichere Verwendung des Typs "bool" in Vorgang
 
-Diese Warnung gilt für den Fall, dass Sie eine `bool` Variable oder einen Wert auf unerwartete Weise verwendet haben. Beispielsweise wird C4804 generiert, wenn Sie Operatoren verwenden, z. b. den negativen unären Operator ( **-** ) oder den Komplement Operator (`~`). Der Compiler wertet den Ausdruck aus.
+Diese Warnung gilt für den Fall, dass Sie eine **`bool`** Variable oder einen Wert auf unerwartete Weise verwendet haben. Beispielsweise wird C4804 generiert, wenn Sie Operatoren wie den negativen unären Operator ( **-** ) oder den Komplement Operator ( `~` ) verwenden. Der Compiler wertet den Ausdruck aus.
 
 ## <a name="example"></a>Beispiel
 

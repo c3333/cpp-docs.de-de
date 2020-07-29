@@ -51,12 +51,12 @@ helpviewer_keywords:
 - _tcscanf_s function
 - tcscanf_s_l function
 ms.assetid: 9ccab74d-916f-42a6-93d8-920525efdf4b
-ms.openlocfilehash: be9d2b0af461b25f5c4db37bb084afcf822480ea
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a869ae4ab1b5f81c4198f620662604b79f19c2ab
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70938528"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87234236"
 ---
 # <a name="_cscanf_s-_cscanf_s_l-_cwscanf_s-_cwscanf_s_l"></a>_cscanf_s, _cscanf_s_l, _cwscanf_s, _cwscanf_s_l
 
@@ -105,14 +105,14 @@ Die Anzahl der Felder, die erfolgreich konvertiert und zugewiesen wurden. Der R�
 
 Diese Funktionen überprüfen ihre Parameter. Wenn *Format* ein NULL-Zeiger ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EOF** " und " **errno** " auf " **EINVAL**" zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_cscanf_s** -Funktion liest Daten direkt aus der Konsole in die Speicherorte, die durch das- *Argument*angegeben werden. Die Funktion [_getche](getch-getwch.md) wird verwendet, um Zeichen zu lesen. Jeder optionale Parameter muss ein Zeiger auf eine Variable mit einem Typ sein, der einem Typspezifizierer im- *Format*entspricht. Das Format steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie der *Format* -Parameter für die [scanf_s](scanf-scanf-l-wscanf-wscanf-l.md) -Funktion. Obwohl **_cscanf_s** normalerweise das Eingabezeichen wiederholt, erfolgt dies nicht, wenn der letzte-Befehl an **_ungetch**erfolgt ist.
+Die **_cscanf_s** -Funktion liest Daten direkt aus der Konsole in die Speicherorte, die durch das- *Argument*angegeben werden. Die Funktion [_getche](getch-getwch.md) wird verwendet, um Zeichen zu lesen. Jeder optionale Parameter muss ein Zeiger auf eine Variable mit einem Typ sein, der einem Typspezifizierer im- *Format*entspricht. Das Format steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie der *Format* -Parameter für die [scanf_s](scanf-scanf-l-wscanf-wscanf-l.md) Funktion. Obwohl **_cscanf_s** normalerweise das Eingabezeichen wiederholt, erfolgt dies nicht, wenn der letzte aufrufungs Vorgang **_ungetch**war.
 
-Wie andere sichere Versionen von Funktionen in der **scanf** -Familie erfordern **_cscanf_s** und **_cswscanf_s** Größen Argumente für die tyfeldzeichen **c**, **c**, **s**, **s**und **[** . Weitere Informationen finden Sie unter [scanf Width Specification (scanf-Breitenangabe)](../../c-runtime-library/scanf-width-specification.md).
+Wie andere sichere Versionen von Funktionen in der **scanf** -Familie erfordern **_cscanf_s** und **_cswscanf_s** Größen Argumente für die tyfeldzeichen **c**, **c**, **s**, **s**und **[**. Weitere Informationen finden Sie unter [scanf Width Specification (scanf-Breitenangabe)](../../c-runtime-library/scanf-width-specification.md).
 
 > [!NOTE]
-> Der Size-Parameter ist vom Typ **Ganzzahl ohne Vorzeichen**, nicht **size_t**.
+> Der Size-Parameter ist vom Typ **`unsigned`** und nicht vom **size_t**.
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
@@ -127,10 +127,10 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_cscanf_s**, **_cscanf_s_l**|\<conio.h>|
-|**_cwscanf_s**, **_cwscanf_s_l**|\<conio.h> oder \<wchar.h>|
+|**_cscanf_s** **_cscanf_s_l**|\<conio.h>|
+|**_cwscanf_s** **_cwscanf_s_l**|\<conio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -173,7 +173,7 @@ You entered 1 2 3
 
 ## <a name="see-also"></a>Siehe auch
 
-[Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsolen-und Port-e/a](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cprintf, _cprintf_l, _cwprintf, _cwprintf_l](cprintf-cprintf-l-cwprintf-cwprintf-l.md)<br/>
 [fscanf_s, _fscanf_s_l, fwscanf_s, _fwscanf_s_l](fscanf-s-fscanf-s-l-fwscanf-s-fwscanf-s-l.md)<br/>
 [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)<br/>

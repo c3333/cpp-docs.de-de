@@ -1,5 +1,5 @@
 ---
-title: CMemoryException-Klasse
+title: Cmemoryexception-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMemoryException
@@ -8,14 +8,14 @@ f1_keywords:
 helpviewer_keywords:
 - CMemoryException [MFC], CMemoryException
 ms.assetid: 9af0ed57-d12a-45ca-82b5-c910a60f7edf
-ms.openlocfilehash: 375b4227a25ae4c18cfd263eff4c3ec13f1304e1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 71b17e777db9d6351192da7cffd075b3a64553bd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370008"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222926"
 ---
-# <a name="cmemoryexception-class"></a>CMemoryException-Klasse
+# <a name="cmemoryexception-class"></a>Cmemoryexception-Klasse
 
 Stellt eine Ausnahmebedingung dar, die durch ungenügenden Arbeitsspeicher ausgelöst wird.
 
@@ -29,19 +29,19 @@ class CMemoryException : public CSimpleException
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CMemoryException::CMemoryException](#cmemoryexception)|Erstellt ein `CMemoryException`-Objekt.|
+|[Cmemoryexception:: cmemoryexception](#cmemoryexception)|Erstellt ein `CMemoryException`-Objekt.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine weitere Qualifizierung ist nicht erforderlich oder möglich. Speicherausnahmen werden automatisch von **neuen**ausgelöst. Wenn Sie ihre eigenen Speicherfunktionen schreiben, z. B. mithilfe `malloc`von , sind Sie für das Auslösen von Speicherausnahmen verantwortlich.
+Es ist keine weitere Qualifizierung erforderlich oder möglich. Speicher Ausnahmen werden automatisch von ausgelöst **`new`** . Wenn Sie z. b. eigene Speicherfunktionen mit schreiben, `malloc` sind Sie für das Auslösen von Speicher Ausnahmen verantwortlich.
 
-Weitere Informationen `CMemoryException`zu finden Sie im Artikel [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).
+Weitere Informationen zu finden Sie im `CMemoryException` Artikel [Ausnahmebehandlung (MFC)](../../mfc/exception-handling-in-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CException](../../mfc/reference/cexception-class.md)
 
@@ -49,11 +49,11 @@ Weitere Informationen `CMemoryException`zu finden Sie im Artikel [Exception Hand
 
 `CMemoryException`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopf:** afx.h
+**Header:** AFX. h
 
-## <a name="cmemoryexceptioncmemoryexception"></a><a name="cmemoryexception"></a>CMemoryException::CMemoryException
+## <a name="cmemoryexceptioncmemoryexception"></a><a name="cmemoryexception"></a>Cmemoryexception:: cmemoryexception
 
 Erstellt ein `CMemoryException`-Objekt.
 
@@ -63,9 +63,9 @@ CMemoryException();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diesen Konstruktor nicht direkt, sondern rufen Sie die globale Funktion [AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception)auf. Diese globale Funktion kann in einer Nicht-Speicher-Situation erfolgreich sein, da sie das Ausnahmeobjekt in zuvor zugewiesenem Speicher erstellt. Weitere Informationen zur Ausnahmeverarbeitung finden Sie in den [Artikelausnahmen](../exception-handling-in-mfc.md).
+Verwenden Sie diesen Konstruktor nicht direkt, sondern stattdessen die globale Funktion [AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception). Diese globale Funktion kann in einer nicht genügend Arbeitsspeicher Situation auftreten, da Sie das Ausnahme Objekt in zuvor zugewiesener Arbeitsspeicher erstellt. Weitere Informationen zur Ausnahme Verarbeitung finden Sie im Artikel [Ausnahmen](../exception-handling-in-mfc.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [CException-Klasse](cexception-class.md)<br/>
-[Hierarchiediagramm](../hierarchy-chart.md)
+[Hierarchie Diagramm](../hierarchy-chart.md)
