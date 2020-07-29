@@ -12,12 +12,12 @@ helpviewer_keywords:
 - std::strstream [C++], rdbuf
 - std::strstream [C++], str
 ms.assetid: 63f3be31-9e36-42b1-9715-a474a5997e2a
-ms.openlocfilehash: 047b7e9d7fdece75137980b013d43abf1d5e3ec3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 796bf1b3ac41a4b5a6ab5bc16239d50616f554df
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376620"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224616"
 ---
 # <a name="strstream-class"></a>strstream-Klasse
 
@@ -38,26 +38,26 @@ Das Objekt speichert ein Objekt der Klasse `strstreambuf`.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
-|[strstream](#strstream)|Konstruiert ein Objekt vom Typ `strstream`.|
+|[Strstream](#strstream)|Konstruiert ein Objekt vom Typ `strstream`.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Einfrieren](#freeze)|Bewirkt, dass ein Streampuffer durch Streampuffervorgänge nicht verfügbar ist.|
+|[ge](#freeze)|Bewirkt, dass ein Streampuffer durch Streampuffervorgänge nicht verfügbar ist.|
 |[pcount](#pcount)|Gibt die Anzahl der Elemente zurück, die in die kontrollierte Sequenz geschrieben wurde.|
 |[rdbuf](#rdbuf)|Gibt einen Zeiger auf das dem Stream zugeordnete `strstreambuf`-Objekt zurück.|
-|[Str](#str)|Ruft [freeze](../standard-library/strstreambuf-class.md#freeze) auf und gibt anschließend einen Zeiger auf den Anfang der kontrollierten Sequenz zurück.|
+|[str](#str)|Ruft [freeze](../standard-library/strstreambuf-class.md#freeze) auf und gibt anschließend einen Zeiger auf den Anfang der kontrollierten Sequenz zurück.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<strstream>
+**Header:**\<strstream>
 
 **Namespace:** std
 
-## <a name="strstreamfreeze"></a><a name="freeze"></a>strstream::einfrieren
+## <a name="strstreamfreeze"></a><a name="freeze"></a>Strauch:: Einfrieren
 
 Bewirkt, dass ein Streampuffer durch Streampuffervorgänge nicht verfügbar ist.
 
@@ -68,17 +68,17 @@ void freeze(bool _Freezeit = true);
 ### <a name="parameters"></a>Parameter
 
 *_Freezeit*\
-Ein **Bool,** der angibt, ob der Stream eingefroren werden soll.
+Ein Wert **`bool`** , der angibt, ob der Stream eingefroren werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion ruft [rdbuf](#rdbuf) -> [freeze](../standard-library/strstreambuf-class.md#freeze)auf (_ *Freezeit*).
+Die Member-Funktion ruft [rdbuf](#rdbuf)  ->  [Freeze](../standard-library/strstreambuf-class.md#freeze)(_ *Freizeit*) auf.
 
 ### <a name="example"></a>Beispiel
 
-Siehe [strstreambuf::freeze](../standard-library/strstreambuf-class.md#freeze) für ein `freeze`Beispiel, das verwendet.
+Unter " [straustreambuf:: Freeze](../standard-library/strstreambuf-class.md#freeze) " finden Sie ein Beispiel, das verwendet `freeze` .
 
-## <a name="strstreampcount"></a><a name="pcount"></a>strstream::pCount
+## <a name="strstreampcount"></a><a name="pcount"></a>chanstream::p Anzahl
 
 Gibt die Anzahl der Elemente zurück, die in die kontrollierte Sequenz geschrieben wurde.
 
@@ -92,13 +92,13 @@ Die Anzahl der Elemente, die in die kontrollierte Sequenz geschrieben wurden.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt [rdbuf](#rdbuf) -> [pcount](../standard-library/strstreambuf-class.md#pcount)zurück.
+Die Member-Funktion gibt [rdbuf](#rdbuf)  ->  [pcount](../standard-library/strstreambuf-class.md#pcount)zurück.
 
 ### <a name="example"></a>Beispiel
 
 Unter [strstreambuf::pcount](../standard-library/strstreambuf-class.md#pcount) finden Sie ein Beispiel, das pcount verwendet.
 
-## <a name="strstreamrdbuf"></a><a name="rdbuf"></a>strstream::rdbuf
+## <a name="strstreamrdbuf"></a><a name="rdbuf"></a>"Strauch:: Rdbuf"
 
 Gibt einen Zeiger auf das dem Stream zugeordneten strstreambuf-Objekt zurück.
 
@@ -112,13 +112,13 @@ Ein Zeiger auf das dem Stream zugeordnete strstreambuf-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Adresse des `pointer` gespeicherten Streampuffers vom Typ an [strstreambuf](../standard-library/strstreambuf-class.md)zurück.
+Die Member-Funktion gibt die Adresse des gespeicherten Streampuffers des Typs `pointer` in " [straustreambuf](../standard-library/strstreambuf-class.md)" zurück.
 
 ### <a name="example"></a>Beispiel
 
 Ein Beispiel, das `rdbuf` verwendet, finden Sie unter [strstreambuf::pcount](../standard-library/strstreambuf-class.md#pcount).
 
-## <a name="strstreamstr"></a><a name="str"></a>strstream::str
+## <a name="strstreamstr"></a><a name="str"></a>"strinstrestream:: str"
 
 Ruft [freeze](../standard-library/strstreambuf-class.md#freeze) auf und gibt anschließend einen Zeiger auf den Anfang der kontrollierten Sequenz zurück.
 
@@ -132,13 +132,13 @@ Zeiger auf den Anfang der kontrollierten Sequenz.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt [rdbuf](#rdbuf) -> [str](../standard-library/strstreambuf-class.md#str)zurück.
+Die Member-Funktion gibt [rdbuf](#rdbuf)  ->  [Str](../standard-library/strstreambuf-class.md#str)zurück.
 
 ### <a name="example"></a>Beispiel
 
-Siehe [strstreambuf::str](../standard-library/strstreambuf-class.md#str) für ein `str`Beispiel, das verwendet.
+Unter " [straustreambuf:: Str](../standard-library/strstreambuf-class.md#str) " finden Sie ein Beispiel, das verwendet `str` .
 
-## <a name="strstreamstrstream"></a><a name="strstream"></a>strstream::strstream
+## <a name="strstreamstrstream"></a><a name="strstream"></a>"strinstrestream:: strinstream"
 
 Konstruiert ein Objekt vom Typ `strstream`.
 
@@ -152,26 +152,26 @@ strstream(char* ptr,
 
 ### <a name="parameters"></a>Parameter
 
-*Count*\
+*Countdown*\
 Die Größe des Puffers.
 
-*_mode*\
+*_Mode*\
 Der Eingabe- und Ausgabemodus des Puffers. Weitere Informationen finden Sie unter [ios_base::openmode](../standard-library/ios-base-class.md#openmode).
 
-*Ptr*\
+*PTR*\
 Der Puffer.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beide Konstruktoren initialisieren die Basisklasse, indem sie `sb` [streambuf](../standard-library/streambuf-typedefs.md#streambuf)( **sb**) aufrufen, wobei sich das gespeicherte Objekt der Klasse [strstreambuf](../standard-library/strstreambuf-class.md)befindet. Der erste Konstruktor initialisiert auch `sb` durch Aufrufen von [strstreambuf](../standard-library/strstreambuf-class.md#strstreambuf). Der zweite Konstruktor initialisiert die Basisklasse auf einer von zwei Arten:
+Beide Konstruktoren initialisieren die Basisklasse durch Aufrufen von [streambuf](../standard-library/streambuf-typedefs.md#streambuf)( **SB**), wobei `sb` das gespeicherte Objekt der Klasse "" von " [strauf](../standard-library/strstreambuf-class.md)" ist. Der erste Konstruktor `sb` wird auch durch Aufrufen von " [straustreambuf](../standard-library/strstreambuf-class.md#strstreambuf)" initialisiert. Der zweite Konstruktor initialisiert die Basisklasse auf einer von zwei Arten:
 
-- Wenn `_Mode`  &  **ios_base::app**== 0, muss *ptr* das erste `count` Element eines Arrays `strstreambuf` `ptr`von `count` `ptr`Elementen und den Konstruktoraufrufe ( , , ) angeben.
+- Wenn `_Mode`  &  **ios_base:: App**= = 0, dann muss *ptr* das erste Element eines Arrays von Elementen festlegen `count` , und der Konstruktor ruft `strstreambuf` ( `ptr` , `count` ,) auf `ptr` .
 
-- Andernfalls muss *ptr* das erste Element eines Arrays von Zählelementen angeben, das eine C-Zeichenfolge enthält, `ptr`  +  `strlen`deren erstes Element von *ptr*festgelegt wird, und die Konstruktoraufrufe `strstreambuf`( `ptr`, `count`, ( `ptr`) ) .
+- Andernfalls muss *ptr* das erste Element eines Arrays von count-Elementen festlegen, das eine C-Zeichenfolge enthält, deren erstes Element von *ptr*festgelegt wird, und der Konstruktor ruft `strstreambuf` ( `ptr` , `count` , `ptr`  +  `strlen` ( `ptr` )) auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Iostream](../standard-library/istream-typedefs.md#iostream)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[iostream Programmierung](../standard-library/iostream-programming.md)\
-[iostreams-Konventionen](../standard-library/iostreams-conventions.md)
+[iostream](../standard-library/istream-typedefs.md#iostream)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[iostream-Programmierung](../standard-library/iostream-programming.md)\
+[Iostreams-Konventionen](../standard-library/iostreams-conventions.md)

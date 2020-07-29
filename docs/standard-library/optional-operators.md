@@ -1,5 +1,5 @@
 ---
-title: '&lt;optionale&gt; Operatoren'
+title: '&lt;optionale &gt; Operatoren'
 ms.date: 11/04/2016
 f1_keywords:
 - optional/std::operator!=
@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::operatoroperator&gt=; (optional)
 - std::operatoroperator&lt; (optional)
 - std::operatoroperator&lt;= (optional)
-ms.openlocfilehash: 9bdef0669f90da7865f7652ff4528e51e584e1a2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c7eca76f71f12e7f7fe0e60c0a4cfe456d54c374
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373637"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224681"
 ---
-# <a name="ltoptionalgt-operators"></a>&lt;optionale&gt; Operatoren
+# <a name="ltoptionalgt-operators"></a>&lt;optionale &gt; Operatoren
 
-## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das `optional`-Objekt links vom Operator gleich dem `optional`-Objekt rechts vom Operator ist.
 
@@ -39,13 +39,13 @@ template <class T, class U> constexpr bool operator==(const U&, const optional<T
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+*linken*\
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 *Richting*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
-## <a name="operator"></a><a name="op_neq"></a>Operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das `optional`-Objekt links vom Operator ungleich dem `optional`-Objekt rechts vom Operator ist.
 
@@ -59,17 +59,17 @@ template <class T, class U> constexpr bool operator!=(const U&, const optional<T
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+*linken*\
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 *Richting*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion gibt `!(left == right)` zurück.
 
-## <a name="operatorlt"></a><a name="op_lt"></a>Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
 
 Testet, ob das `optional`-Objekt links vom Operator kleiner als das `optional`-Objekt auf der rechten Seite ist.
 
@@ -83,17 +83,17 @@ template <class T, class U> constexpr bool operator<(const U&, const optional<T>
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+*linken*\
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 *Richting*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Liste links vom Operator kleiner als, aber ungleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Liste links vom Operator kleiner als, aber nicht gleich der Liste rechts vom Operator ist. andernfalls **`false`** .
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
 
 Testet, ob das `optional`-Objekt links vom Operator kleiner oder gleich dem `optional`-Objekt auf der rechten Seite ist.
 
@@ -107,21 +107,21 @@ template <class T, class U> constexpr bool operator<=(const U&, const optional<T
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+*linken*\
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 *Richting*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion gibt `!(right < left)` zurück.
 
-## <a name="operatorgt"></a><a name="op_gt"></a>Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
 
 Testet, ob das `optional`-Objekt links vom Operator größer als das `optional`-Objekt auf der rechten Seite ist.
 
@@ -135,21 +135,21 @@ template <class T, class U> constexpr bool operator>(const U&, const optional<T>
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+*linken*\
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 *Richting*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion gibt `right < left` zurück.
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
 
 Testet, ob das `optional`-Objekt links vom Operator größer oder gleich dem `optional`-Objekt auf der rechten Seite ist.
 
@@ -163,15 +163,15 @@ template <class T, class U> constexpr bool operator>=(const U&, const optional<T
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+*linken*\
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 *Richting*\
-Ein Objekt `optional`vom `nullopt_t`Typ `T`, oder .
+Ein Objekt vom Typ `optional` , `nullopt_t` oder `T` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das `optional`-Objekt links vom Operator größer gleich dem `optional`-Objekt rechts vom Operator ist; andernfalls **FALSE**.
+**`true`**, wenn das `optional` Links vom Operator größer als oder gleich dem `optional` auf der rechten Seite des Operators ist; andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 

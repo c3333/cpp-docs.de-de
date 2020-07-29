@@ -12,16 +12,16 @@ f1_keywords:
 helpviewer_keywords:
 - CComObject class
 ms.assetid: e2b6433b-6349-4749-b4bc-acbd7a22c8b0
-ms.openlocfilehash: de6ffb45fe5c6f73ab656d5c6185b70d9f5edd38
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 81246ad8bd6281d0b7578932cd431609a1ec4ac5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327645"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224252"
 ---
 # <a name="ccomobject-class"></a>CComObject-Klasse
 
-Diese Klasse `IUnknown` implementiert für ein nicht aggregiertes Objekt.
+Diese Klasse implementiert `IUnknown` für ein nicht aggregiertes-Objekt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,32 +32,32 @@ class CComObject : public Base
 
 #### <a name="parameters"></a>Parameter
 
-*Basis*<br/>
-Ihre Klasse, abgeleitet von [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md) oder [CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md), sowie von allen anderen Schnittstellen, die Sie für das Objekt unterstützen möchten.
+*Sock*<br/>
+Die von [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md) oder [CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)abgeleitete Klasse sowie von anderen Schnittstellen, die Sie für das Objekt unterstützen möchten.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComObject::CComObject](#ccomobject)|Der Konstruktor.|
-|[CComObject::-CComObject](#dtor)|Der Destruktor.|
+|[CComObject:: CComObject](#ccomobject)|Der Konstruktor.|
+|[CComObject:: ~ CComObject](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CComObject::AddRef](#addref)|Inkrementiert die Referenzanzahl für das Objekt.|
-|[CComObject::CreateInstance](#createinstance)|(Statisch) Erstellt ein `CComObject` neues Objekt.|
-|[CComObject::QueryInterface](#queryinterface)|Ruft einen Zeiger auf die angeforderte Schnittstelle ab.|
-|[CComObject::Release](#release)|Dekrementiert die Referenzanzahl auf das Objekt.|
+|[CComObject:: adressf](#addref)|Inkremente den Verweis Zähler für das Objekt.|
+|[CComObject:: kreateinstance](#createinstance)|Kum Erstellt ein neues- `CComObject` Objekt.|
+|[CComObject:: QueryInterface](#queryinterface)|Ruft einen Zeiger auf die angeforderte Schnittstelle ab.|
+|[CComObject:: Release](#release)|Dekremente den Verweis Zähler für das Objekt.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CComObject`implementiert [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) für ein nicht aggregiertes Objekt. Ruft jedoch `QueryInterface`an `AddRef`, `Release` auf und `CComObjectRootEx`wird an delegiert.
+`CComObject`implementiert [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) für ein nicht aggregiertes Objekt. Aufrufe von `QueryInterface` , `AddRef` und `Release` werden jedoch an delegiert `CComObjectRootEx` .
 
-Weitere Informationen zur `CComObject`Verwendung finden Sie im Artikel [Grundlagen von ATL COM-Objekten](../../atl/fundamentals-of-atl-com-objects.md).
+Weitere Informationen zum verwenden `CComObject` von finden Sie im Artikel [Grundlagen von ATL-COM-Objekten](../../atl/fundamentals-of-atl-com-objects.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -65,13 +65,13 @@ Weitere Informationen zur `CComObject`Verwendung finden Sie im Artikel [Grundlag
 
 `CComObject`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlcom.h
+**Header:** Atlcom. h
 
-## <a name="ccomobjectaddref"></a><a name="addref"></a>CComObject::AddRef
+## <a name="ccomobjectaddref"></a><a name="addref"></a>CComObject:: adressf
 
-Inkrementiert die Referenzanzahl für das Objekt.
+Inkremente den Verweis Zähler für das Objekt.
 
 ```
 STDMETHOD_(ULONG, AddRef)();
@@ -79,11 +79,11 @@ STDMETHOD_(ULONG, AddRef)();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Funktion gibt die neue inkrementierte Referenzanzahl für das Objekt zurück. Dieser Wert kann für Diagnosen oder Tests nützlich sein.
+Diese Funktion gibt den neuen inkrementierten Verweis Zähler für das-Objekt zurück. Dieser Wert kann für Diagnose-oder Testzwecke nützlich sein.
 
-## <a name="ccomobjectccomobject"></a><a name="ccomobject"></a>CComObject::CComObject
+## <a name="ccomobjectccomobject"></a><a name="ccomobject"></a>CComObject:: CComObject
 
-Der Konstruktor erhöht die Modulsperranzahl.
+Der Konstruktor erhöht die Modul Sperr Anzahl.
 
 ```
 CComObject(void* = NULL);
@@ -92,15 +92,15 @@ CComObject(void* = NULL);
 ### <a name="parameters"></a>Parameter
 
 <em>void\*</em><br/>
-[in] Dieser unbenannte Parameter wird nicht verwendet. Sie ist für die `CComXXXObjectXXX` Symmetrie mit anderen Konstruktoren vorhanden.
+in Dieser unbenannte Parameter wird nicht verwendet. Es ist für die Symmetrie mit anderen `CComXXXObjectXXX` Konstruktoren vorhanden.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Zerstörer deziert ihn.
+Der Dekonstruktor Dekremente ihn.
 
-Wenn `CComObject`ein -derived-Objekt erfolgreich mit dem **neuen** Operator erstellt wurde, ist die anfängliche Referenzanzahl 0. Um die Verweisanzahl auf den richtigen Wert (1) festzulegen, rufen Sie die [AddRef-Funktion](#addref) auf.
+Wenn ein von `CComObject` abgeleitetes Objekt mithilfe des-Operators erfolgreich erstellt wird **`new`** , ist der anfängliche Verweis Zähler 0. Um den Verweis Zähler auf den richtigen Wert (1) festzulegen, führen Sie einen Rückruf für die [adressf](#addref) -Funktion aus.
 
-## <a name="ccomobjectccomobject"></a><a name="dtor"></a>CComObject::-CComObject
+## <a name="ccomobjectccomobject"></a><a name="dtor"></a>CComObject:: ~ CComObject
 
 Der Destruktor.
 
@@ -110,11 +110,11 @@ CComObject();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt alle zugeordneten Ressourcen frei, ruft [FinalRelease](ccomobjectrootex-class.md#finalrelease)auf und dekrementiert die Modulsperranzahl.
+Gibt alle zugeordneten Ressourcen frei, ruft [FinalRelease](ccomobjectrootex-class.md#finalrelease)auf und Dekremente die Anzahl der Modul sperren.
 
-## <a name="ccomobjectcreateinstance"></a><a name="createinstance"></a>CComObject::CreateInstance
+## <a name="ccomobjectcreateinstance"></a><a name="createinstance"></a>CComObject:: kreateinstance
 
-Mit dieser statischen Funktion können Sie ein neues **CComObject-<-Objekt** `Base` **>** ohne den Overhead von [CoCreateInstance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance)erstellen.
+Diese statische Funktion ermöglicht das Erstellen eines neuen **CComObject-<** `Base` **>** Objekts ohne den Aufwand von [cokreateinstance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance).
 
 ```
 static HRESULT WINAPI CreateInstance(CComObject<Base>** pp);
@@ -122,18 +122,18 @@ static HRESULT WINAPI CreateInstance(CComObject<Base>** pp);
 
 ### <a name="parameters"></a>Parameter
 
-*Pp*<br/>
-[out] Ein Zeiger auf einen **CComObject-<** `Base` **>** Zeiger. Wenn `CreateInstance` kein *Erfolg* besteht, wird pp auf NULL gesetzt.
+*Trupp*<br/>
+vorgenommen Ein Zeiger auf einen **CComObject-<** `Base` **>** Zeiger. Wenn nicht `CreateInstance` erfolgreich ist, wird *PP* auf NULL festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das zurückgegebene Objekt hat eine Referenzanzahl von Null, also rufen Sie sofort an, `AddRef` und verwenden `Release` Sie dann, um den Verweis auf dem Objektzeiger freizugeben, wenn Sie fertig sind.
+Das zurückgegebene Objekt hat einen Verweis Zähler von NULL. führen Sie daher sofort einen Rückruf aus `AddRef` , und verwenden `Release` Sie dann, um den Verweis auf den Objekt Zeiger freizugeben, wenn Sie fertig sind.
 
-Wenn Sie keinen direkten Zugriff auf das Objekt benötigen, aber dennoch `CoCreateInstance`ein neues Objekt ohne den Overhead von erstellen möchten, verwenden Sie stattdessen [CComCoClass::CreateInstance.](../../atl/reference/ccomcoclass-class.md#createinstance)
+Wenn Sie keinen direkten Zugriff auf das Objekt benötigen, aber trotzdem ein neues Objekt ohne den mehr Aufwand von erstellen möchten `CoCreateInstance` , verwenden Sie stattdessen [CComCoClass:: kreateinstance](../../atl/reference/ccomcoclass-class.md#createinstance) .
 
 ### <a name="example"></a>Beispiel
 
@@ -141,7 +141,7 @@ Wenn Sie keinen direkten Zugriff auf das Objekt benötigen, aber dennoch `CoCrea
 
 [!code-cpp[NVC_ATL_COM#39](../../atl/codesnippet/cpp/ccomobject-class_2.cpp)]
 
-## <a name="ccomobjectqueryinterface"></a><a name="queryinterface"></a>CComObject::QueryInterface
+## <a name="ccomobjectqueryinterface"></a><a name="queryinterface"></a>CComObject:: QueryInterface
 
 Ruft einen Zeiger auf die angeforderte Schnittstelle ab.
 
@@ -153,22 +153,22 @@ HRESULT STDMETHODCALLTYPE QueryInterface(Q** pp);
 
 ### <a name="parameters"></a>Parameter
 
-*Iid*<br/>
-[in] Der Bezeichner der angeforderten Schnittstelle.
+*IID*<br/>
+in Der Bezeichner der angeforderten Schnittstelle.
 
 *ppvObject*<br/>
-[out] Ein Zeiger auf den Schnittstellenzeiger, der von *iid*identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *ppvObject* auf NULL gesetzt.
+vorgenommen Ein Zeiger auf den Schnittstellen Zeiger, der durch *IID*identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *ppvobject* auf NULL festgelegt.
 
-*Pp*<br/>
-[out] Ein Zeiger auf den Schnittstellenzeiger, `Q`der nach Typ identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *pp* auf NULL gesetzt.
+*Trupp*<br/>
+vorgenommen Ein Zeiger auf den Schnittstellen Zeiger, der durch den-Typ identifiziert wird `Q` . Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *PP* auf NULL festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
-## <a name="ccomobjectrelease"></a><a name="release"></a>CComObject::Release
+## <a name="ccomobjectrelease"></a><a name="release"></a>CComObject:: Release
 
-Dekrementiert die Referenzanzahl auf das Objekt.
+Dekremente den Verweis Zähler für das Objekt.
 
 ```
 STDMETHOD_(ULONG, Release)();
@@ -176,7 +176,7 @@ STDMETHOD_(ULONG, Release)();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Funktion gibt die neue dekrementierte Verweisanzahl für das Objekt zurück. In Debugbuilds kann der Rückgabewert für Diagnosen oder Tests nützlich sein. Gibt in Nicht-Debug-Builds `Release` immer 0 zurück.
+Diese Funktion gibt den neuen dekrementierten Verweis Zähler für das-Objekt zurück. In Debugbuilds kann der Rückgabewert für Diagnose-oder Testzwecke nützlich sein. In nicht Debugbuilds `Release` gibt immer 0 zurück.
 
 ## <a name="see-also"></a>Siehe auch
 

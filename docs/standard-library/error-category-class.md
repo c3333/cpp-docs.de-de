@@ -16,12 +16,12 @@ helpviewer_keywords:
 - std::error_category::message
 - std::error_category::name
 ms.assetid: e0a71e14-852d-4905-acd6-5f8ed426706d
-ms.openlocfilehash: 136320ba3be36ec20fc08e0d83b1ce3274ed08ff
-ms.sourcegitcommit: 8fd49f8ac20457710ceb5403ca46fc73cb3f95f8
+ms.openlocfilehash: ced6046b93a8d5140118e1e9de848df13a8c29c4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85737560"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224876"
 ---
 # <a name="error_category-class"></a>error_category-Klasse
 
@@ -37,7 +37,7 @@ virtual ~error_category();
 error_category(const error_category&) = delete
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `error_category` wird von zwei vordefinierten Objekten implementiert: [generic_category](../standard-library/system-error-functions.md#generic_category) und [system_category](../standard-library/system-error-functions.md#system_category).
 
@@ -84,9 +84,9 @@ Der Fehlercodewert, der in [error_condition](../standard-library/error-condition
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `error_condition(_Errval, *this)` zurück.
+Gibt `error_condition(_Errval, *this)`zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ### <a name="equivalent"></a>Äquivalent in <a name="equivalent"></a>
 
@@ -113,9 +113,9 @@ Das zu vergleichende [error_code](../standard-library/error-code-class.md)-Objek
 
 #### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn Kategorie und Wert gleich sind. andernfalls **false**.
+**`true`**, wenn Kategorie und Wert gleich sind. andernfalls **`false`** .
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Die erste Memberfunktion gibt `*this == _Cond.category() && _Cond.value() == _Errval` zurück.
 
@@ -144,7 +144,7 @@ Der zu beschreibende Fehlercodewert.
 
 Gibt einen beschreibenden Namen des Fehlercodes *Val* für die Kategorie zurück. Wenn der Fehlercode nicht erkannt wird, wird zurückgegeben `"unknown error"` .
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 ### <a name="name"></a><a name="name"></a>-Name
 
@@ -179,9 +179,9 @@ Das Objekt, das auf Gleichheit getestet werden soll.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Objekte gleich sind; **FALSE**, wenn die Objekte nicht gleich sind.
+**`true`**, wenn die Objekte gleich sind. , **`false`** Wenn die Objekte nicht gleich sind.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Dieser Memberoperator gibt `this == &right` zurück.
 
@@ -200,9 +200,9 @@ Das Objekt, das auf Ungleichheit geprüft werden soll.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das `error_category` Objekt nicht gleich dem-Objekt ist, das `error_category` *Rechts*übermittelt wird; andernfalls **false**.
+**`true`**, wenn das `error_category` Objekt nicht gleich dem-Objekt ist, das `error_category` *Rechts*übermittelt wird; andernfalls **`false`** .
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Der Memberoperator gibt `(!*this == right)`zurück.
 
@@ -221,9 +221,9 @@ Das zu vergleichende `error_category`-Objekt.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Objekt, das an `error_category` übergeben wird, kleiner ist als das an `error_category` übergebene Objekt; andernfalls **FALSE**.
+**`true`**, wenn das- `error_category` Objekt kleiner als das `error_category` für den Vergleich übergebenen Objekt ist. Andernfalls **`false`** .
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Der Memberoperator gibt `this < &right`zurück.
 
@@ -241,6 +241,6 @@ Ein Typ, der den gespeicherten Fehlercodewert darstellt.
 typedef int value_type;
 ```
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
-Diese Typdefinition ist ein Synonym für **int**.
+Diese Typdefinition ist ein Synonym für **`int`** .

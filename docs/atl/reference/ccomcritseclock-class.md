@@ -1,5 +1,5 @@
 ---
-title: CComCritSecLock-Klasse
+title: Ccomcritcclock-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CComCritSecLock
@@ -10,16 +10,16 @@ f1_keywords:
 helpviewer_keywords:
 - CComCritSecLock class
 ms.assetid: 223152a1-86c3-4ef9-89a7-f455fe791b0e
-ms.openlocfilehash: 4b2ef093c1142b592ad2a6605a08bd8c34a643ea
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: fd2904f67d84db42d6b35aa4e505b063d6ea9a9f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81748074"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224291"
 ---
-# <a name="ccomcritseclock-class"></a>CComCritSecLock-Klasse
+# <a name="ccomcritseclock-class"></a>Ccomcritcclock-Klasse
 
-Diese Klasse stellt Methoden zum Sperren und Entsperren eines kritischen Abschnittsobjekts bereit.
+Diese Klasse stellt Methoden zum Sperren und Entsperren eines kritischen Abschnitts Objekts bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,34 +29,34 @@ template<class TLock> class CComCritSecLock
 
 #### <a name="parameters"></a>Parameter
 
-*TLock*<br/>
-Das zu sperrende und zu entsperrte Objekt.
+*Tlock*<br/>
+Das Objekt, das gesperrt und entsperrt werden soll.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComCritSecLock::CComCritSecLock](#ctor)|Der Konstruktor.|
-|[CComCritSecLock::'CComCritSecLock](#dtor)|Der Destruktor.|
+|[Ccomcritcclock:: ccomcritcclock](#ctor)|Der Konstruktor.|
+|[Ccomcritcclock:: ~ ccomcritcclock](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CComCritSecLock::Lock](#lock)|Rufen Sie diese Methode auf, um das Objekt des kritischen Abschnitts zu sperren.|
-|[CComCritSecLock::Entsperren](#unlock)|Rufen Sie diese Methode auf, um das Objekt des kritischen Abschnitts zu entsperren.|
+|[Ccomcritcclock:: Lock](#lock)|Mit dieser Methode wird das Objekt des kritischen Abschnitts gesperrt.|
+|[Ccomcritcclock:: Unlock](#unlock)|Mit dieser Methode wird das Objekt des kritischen Abschnitts entsperrt.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Klasse, um Objekte sicherer zu sperren und zu entsperren als mit der [CComCriticalSection-Klasse](../../atl/reference/ccomcriticalsection-class.md) oder [cComAutoCriticalSection-Klasse](../../atl/reference/ccomautocriticalsection-class.md).
+Verwenden Sie diese Klasse zum Sperren und Entsperren von Objekten auf sicherere Weise als bei der [ccomcriticalsection-Klasse](../../atl/reference/ccomcriticalsection-class.md) oder der [ccomautocriticalsection-Klasse](../../atl/reference/ccomautocriticalsection-class.md).
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="ccomcritseclockccomcritseclock"></a><a name="ctor"></a>CComCritSecLock::CComCritSecLock
+## <a name="ccomcritseclockccomcritseclock"></a><a name="ctor"></a>Ccomcritcclock:: ccomcritcclock
 
 Der Konstruktor.
 
@@ -66,17 +66,17 @@ CComCritSecLock(TLock& cs, bool bInitialLock = true);
 
 ### <a name="parameters"></a>Parameter
 
-*Cs*<br/>
-Das kritische Abschnittsobjekt.
+*CS*<br/>
+Das kritische Abschnitts Objekt.
 
-*bInitialLock*<br/>
-Der anfängliche Sperrzustand: **true** bedeutet gesperrt.
+*binitizuweisung*<br/>
+Der anfängliche Sperr Zustand: **`true`** bedeutet gesperrt.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Initialisiert das Objekt des kritischen Abschnitts.
 
-## <a name="ccomcritseclockccomcritseclock"></a><a name="dtor"></a>CComCritSecLock::'CComCritSecLock
+## <a name="ccomcritseclockccomcritseclock"></a><a name="dtor"></a>Ccomcritcclock:: ~ ccomcritcclock
 
 Der Destruktor.
 
@@ -88,9 +88,9 @@ Der Destruktor.
 
 Entsperrt das Objekt des kritischen Abschnitts.
 
-## <a name="ccomcritseclocklock"></a><a name="lock"></a>CComCritSecLock::Lock
+## <a name="ccomcritseclocklock"></a><a name="lock"></a>Ccomcritcclock:: Lock
 
-Rufen Sie diese Methode auf, um das Objekt des kritischen Abschnitts zu sperren.
+Mit dieser Methode wird das Objekt des kritischen Abschnitts gesperrt.
 
 ```
 HRESULT Lock() throw();
@@ -102,11 +102,11 @@ Gibt S_OK zurück, wenn das Objekt erfolgreich gesperrt wurde, oder einen Fehler
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Objekt bereits gesperrt ist, tritt ein ASSERT-Fehler in Debugbuilds auf.
+Wenn das Objekt bereits gesperrt ist, tritt ein Assert-Fehler in Debugbuilds auf.
 
-## <a name="ccomcritseclockunlock"></a><a name="unlock"></a>CComCritSecLock::Entsperren
+## <a name="ccomcritseclockunlock"></a><a name="unlock"></a>Ccomcritcclock:: Unlock
 
-Rufen Sie diese Methode auf, um das Objekt des kritischen Abschnitts zu entsperren.
+Mit dieser Methode wird das Objekt des kritischen Abschnitts entsperrt.
 
 ```cpp
 void Unlock() throw();
@@ -114,9 +114,9 @@ void Unlock() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Objekt bereits entsperrt ist, tritt ein ASSERT-Fehler in Debugbuilds auf.
+Wenn das Objekt bereits entsperrt ist, tritt ein Assert-Fehler in Debugbuilds auf.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[CComCriticalSection-Klasse](../../atl/reference/ccomcriticalsection-class.md)<br/>
-[CComAutoCriticalSection-Klasse](../../atl/reference/ccomautocriticalsection-class.md)
+[Ccomcriticalsection-Klasse](../../atl/reference/ccomcriticalsection-class.md)<br/>
+[Ccomautocriticalsection-Klasse](../../atl/reference/ccomautocriticalsection-class.md)

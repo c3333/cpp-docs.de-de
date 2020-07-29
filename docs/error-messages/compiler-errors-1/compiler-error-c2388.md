@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2388
 ms.assetid: 764ad2d7-cb04-425f-ba30-70989488c4a4
-ms.openlocfilehash: 21658a659468a6e2a0d911af70eefdaed320446c
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 50148f4fb5c3af33d8de8b005f75f491b0540271
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74745056"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225500"
 ---
 # <a name="compiler-error-c2388"></a>Compilerfehler C2388
 
-' Symbol ': ein Symbol kann nicht mit __declspec (AppDomain) und \__declspec (Prozess) deklariert werden.
+' Symbol ': ein Symbol kann nicht mit __declspec (AppDomain) und \_ _declspec (Prozess) deklariert werden.
 
-Die Modifizierer `appdomain` und `process` `__declspec` können nicht für dasselbe Symbol verwendet werden. Der Speicher für eine Variable ist pro Prozess- oder Anwendungsdomäne vorhanden.
+Die `appdomain` `process` **`__declspec`** modifiziererer und können nicht für dasselbe Symbol verwendet werden. Der Speicher für eine Variable ist pro Prozess- oder Anwendungsdomäne vorhanden.
 
 Weitere Informationen finden Sie unter [appdomain](../../cpp/appdomain.md) und [process](../../cpp/process.md).
 

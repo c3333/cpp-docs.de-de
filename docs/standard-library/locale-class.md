@@ -21,12 +21,12 @@ helpviewer_keywords:
 - std::locale [C++], facet
 - std::locale [C++], id
 ms.assetid: 7dd6d271-472d-4750-8fb5-ea8f55fbef62
-ms.openlocfilehash: d3aaedf616bf50e18e21b465727f10190fd127b2
-ms.sourcegitcommit: ac5e5edd3e4f31d5dc7df48316cb7649b3f4a41f
+ms.openlocfilehash: 771a2973e0254194d99ddfd46ca7df7d6cc8e5a4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86872386"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224824"
 ---
 # <a name="locale-class"></a>locale-Klasse
 
@@ -161,7 +161,7 @@ Numerische Formatierungsregeln für nachfolgende Einfügungen in `cout` bleiben 
 
 |||
 |-|-|
-|[ern](#classic)|Die statische Memberfunktion gibt ein Gebietsschemaobjekt zurück, das das klassische C-Gebietsschema darstellt.|
+|[Klassisch](#classic)|Die statische Memberfunktion gibt ein Gebietsschemaobjekt zurück, das das klassische C-Gebietsschema darstellt.|
 |[global](#global)|Setzt das Standardgebietsschema für das Programm zurück.|
 
 ### <a name="operators"></a>Operatoren
@@ -180,7 +180,7 @@ Numerische Formatierungsregeln für nachfolgende Einfügungen in `cout` bleiben 
 |[Facet](#facet_class)|Eine Klasse, die als Basisklasse für alle Gebietsschemafacets dient.|
 |[`id`](#id_class)|Die Memberklasse stellt eine einzigartige Facetidentifikation bereit, die als Index zum Suchen von Facets in einem Gebietsschema verwendet wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<locale>
 
@@ -204,7 +204,7 @@ static const int none = 0;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für einen **int** -Typ, der eine Gruppe von unterschiedlichen Elementen des Typs "lokale Bitmaske" der Klasse "locale" darstellen kann oder zur Darstellung der entsprechenden C-Gebiets Schema Kategorien verwendet werden kann. Die Elemente sind:
+Der Typ ist ein Synonym für einen **`int`** Typ, der eine Gruppe von unterschiedlichen Elementen des Typs "lokale Bitmaske" der Klasse "locale" darstellen kann oder zur Darstellung der entsprechenden C-Gebiets Schema Kategorien verwendet werden kann. Die Elemente sind:
 
 - `collate`, entspricht der C-Kategorie LC_COLLATE
 
@@ -574,7 +574,7 @@ Eines der Gebietsschemas, die auf Ungleichheit geprüft werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein boolescher Wert, der **true** ist, wenn die Gebiets Schemas keine Kopien desselben Gebiets Schemas sind. Es ist **false** , wenn die Gebiets Schemas Kopien desselben Gebiets Schemas sind.
+Ein boolescher Wert, der ist, wenn die Gebiets Schemas **`true`** keine Kopien desselben Gebiets Schemas sind. Dies ist der Fall, wenn die Gebiets Schemas Kopien desselben Gebiets Schemas **`false`** sind.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -641,7 +641,7 @@ Die zweite zu vergleichende Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-- `true`, wenn *left* lexikografisch kleiner als *Rechts*ist, andernfalls `false` .
+- **`true`**, wenn *left* lexikografisch kleiner als *Rechts*ist, andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -701,7 +701,7 @@ Eines der Gebietsschemas, die auf Gleichheit geprüft werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein boolescher Wert, der **true** ist, wenn die Gebiets Schemas Kopien desselben Gebiets Schemas sind. Es ist **false** , wenn die Gebiets Schemas keine Kopien desselben Gebiets Schemas sind.
+Ein boolescher Wert, der ist, wenn die Gebiets Schemas Kopien desselben Gebiets Schemas **`true`** sind. Dies ist der Fall, wenn die Gebiets Schemas **`false`** keine Kopien desselben Gebiets Schemas sind.
 
 ### <a name="remarks"></a>Bemerkungen
 

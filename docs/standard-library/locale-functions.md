@@ -34,12 +34,12 @@ helpviewer_keywords:
 - std::tolower [C++]
 - std::toupper [C++]
 - std::use_facet [C++]
-ms.openlocfilehash: 6ebb1b1c80d5c2da19610a15e628fcbab5220719
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a1e81fe28976e914f90a441ff97027f411b05738
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81351730"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224811"
 ---
 # <a name="ltlocalegt-functions"></a>&lt;locale&gt;-Funktionen
 
@@ -49,7 +49,7 @@ ms.locfileid: "81351730"
 |[iscntrl](#iscntrl)|[isdigit](#isdigit)|[isgraph](#isgraph)|
 |[islower](#islower)|[isprint](#isprint)|[ispunct](#ispunct)|
 |[isspace](#isspace)|[isupper](#isupper)|[isxdigit](#isxdigit)|
-|[Tolower](#tolower)|[Toupper](#toupper)|[use_facet](#use_facet)|
+|[ToLower](#tolower)|[ToUpper](#toupper)|[use_facet](#use_facet)|
 
 ## <a name="has_facet"></a><a name="has_facet"></a>has_facet
 
@@ -62,12 +62,12 @@ bool has_facet(const locale& Loc);
 
 ### <a name="parameters"></a>Parameter
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das auf das Vorhandensein eines Facets getestet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das Gebietsschema das getestete Facet hat; **FALSE**, wenn dies nicht der Fall ist.
+**`true`**, wenn für das Gebiets Schema die Facette getestet wurde. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -108,12 +108,12 @@ bool isalnum(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende alphanumerische Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende alphanumerische Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element alphanumerisch ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element alphanumerisch ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -175,16 +175,16 @@ bool isalpha(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende alphabetische Element enthält, welches getestet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element alphabetisch ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element alphabetisch ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **alpha**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Alpha**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -240,16 +240,16 @@ bool iscntrl(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein Steuerzeichen ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein Steuerzeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **cntrl**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **STRG**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -291,7 +291,7 @@ int main( )
 }
 ```
 
-## <a name="isdigit"></a><a name="isdigit"></a>Isdigit
+## <a name="isdigit"></a><a name="isdigit"></a>IsDigit
 
 Testet, ob ein Element in einem Gebietsschema ein numerisches Zeichen ist.
 
@@ -305,16 +305,16 @@ bool isdigit(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein numerisches Zeichen ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein numerisches Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **digit**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Digit**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -370,16 +370,16 @@ bool isgraph(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein alphanumerisches Zeichen oder ein Interpunktionszeichen ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein alphanumerisches Zeichen oder ein Interpunktions Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **graph**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Graph**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -421,7 +421,7 @@ int main( )
 }
 ```
 
-## <a name="islower"></a><a name="islower"></a>Islower
+## <a name="islower"></a><a name="islower"></a>IsLower
 
 Testet, ob ein Element in einem Gebietsschema kleingeschrieben ist.
 
@@ -435,16 +435,16 @@ bool islower(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein Kleinbuchstabe ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein Kleinbuchstabe ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **lower**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Lower**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -500,16 +500,16 @@ bool isprint(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element druckbar ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein druckbares Element ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **print**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Print**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -550,7 +550,7 @@ int main( )
 }
 ```
 
-## <a name="ispunct"></a><a name="ispunct"></a>ispunct
+## <a name="ispunct"></a><a name="ispunct"></a>Ispunct
 
 Testet, ob ein Element in einem Gebietsschema ein Interpunktionszeichen ist.
 
@@ -564,16 +564,16 @@ bool ispunct(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein Interpunktionszeichen ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein Interpunktions Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)`<`[ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **punct**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) `<` [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **punct**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -629,16 +629,16 @@ bool isspace(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein Leerzeichen ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein Leerzeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **space**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Space**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -680,7 +680,7 @@ int main( )
 }
 ```
 
-## <a name="isupper"></a><a name="isupper"></a>Char.isupper
+## <a name="isupper"></a><a name="isupper"></a>IsUpper
 
 Testet, ob ein Element in einem Gebietsschema groß geschrieben ist.
 
@@ -694,16 +694,16 @@ bool isupper(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein Großbuchstabe ist; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein Großbuchstabe ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **upper**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **Upper**, `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -745,7 +745,7 @@ int main( )
 }
 ```
 
-## <a name="isxdigit"></a><a name="isxdigit"></a>Isxdigit
+## <a name="isxdigit"></a><a name="isxdigit"></a>isxdigit
 
 Testet, ob ein Element in einem Gebietsschema ein Zeichen ist, mit dem eine Hexadezimalzahl dargestellt wird.
 
@@ -759,16 +759,16 @@ bool isxdigit(CharType Ch, const locale& Loc)
 *Ch*\
 Das zu testende Element.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn das getestete Element ein Zeichen ist, mit dem eine Hexadezimalzahl dargestellt wird; **FALSE**, wenn es das nicht ist.
+**`true`**, wenn das getestete Element ein Zeichen ist, mit dem eine hexadezimale Zahl dargestellt wird. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [is](../standard-library/ctype-class.md#is)( **ctype**\< **CharType**>:: **xdigit**, `Ch`).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ist](../standard-library/ctype-class.md#is)( **CType** \< **CharType**> :: **xdigit**, `Ch` ).
 
 Hexadezimale Ziffern verwenden Basis 16 unter Verwendung der Zahlen 0 bis 9 sowie der Buchstaben A bis F (ohne Berücksichtigung der Groß-/Kleinschreibung) zur Darstellung von Zahlen, um die Dezimalzahlen 0 bis 15 darzustellen.
 
@@ -812,7 +812,7 @@ int main( )
 }
 ```
 
-## <a name="tolower"></a><a name="tolower"></a>Tolower
+## <a name="tolower"></a><a name="tolower"></a>ToLower
 
 Konvertiert ein Zeichen in einen Kleinbuchstaben.
 
@@ -826,7 +826,7 @@ CharType tolower(CharType Ch, const locale& Loc)
 *Ch*\
 Das Zeichen, das in einen Kleinbuchstaben umgewandelt werden soll.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu konvertierende Zeichen enthält.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -835,7 +835,7 @@ Das Zeichen, das in einen Kleinbuchstaben umgewandelt wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [tolower](../standard-library/ctype-class.md#tolower) `Ch`( ).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ToLower](../standard-library/ctype-class.md#tolower)( `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -861,7 +861,7 @@ int main( )
 }
 ```
 
-## <a name="toupper"></a><a name="toupper"></a>Toupper
+## <a name="toupper"></a><a name="toupper"></a>ToUpper
 
 Konvertiert ein Zeichen in einen Großbuchstaben.
 
@@ -875,7 +875,7 @@ CharType toupper(CharType Ch, const locale& Loc)
 *Ch*\
 Das Zeichen, das in einen Großbuchstaben umgewandelt werden soll.
 
-*Loc*\
+*A.a.o.*\
 Das Gebietsschema, das das zu konvertierende Zeichen enthält.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -884,7 +884,7 @@ Das Zeichen, das in einen Großbuchstaben konvertiert wurde.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt [use_facet](../standard-library/locale-functions.md#use_facet)< [ctype](../standard-library/ctype-class.md) \< **CharType**> >( `Loc`zurück. [toupper](../standard-library/ctype-class.md#toupper) `Ch`( ).
+Die Vorlagen Funktion gibt [Use_facet](../standard-library/locale-functions.md#use_facet) <  [CType](../standard-library/ctype-class.md) \< **CharType**> > ( `Loc` ) zurück. [ToUpper(](../standard-library/ctype-class.md#toupper) `Ch` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -921,7 +921,7 @@ const Facet& use_facet(const locale& Loc);
 
 ### <a name="parameters"></a>Parameter
 
-*Loc*\
+*A.a.o.*\
 Das const-Gebietsschema, das den Typ des Facets enthält, auf den verwiesen wird.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -973,4 +973,4 @@ The character '!' in locale loc2 is not alphabetic.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<Gebietsschema>](../standard-library/locale.md)
+[\<locale>](../standard-library/locale.md)

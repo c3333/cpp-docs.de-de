@@ -12,12 +12,12 @@ helpviewer_keywords:
 - stdext::sync_per_thread [C++], deallocate
 - stdext::sync_per_thread [C++], equals
 ms.assetid: 47bf75f8-5b02-4760-b1d3-3099d08fe14c
-ms.openlocfilehash: 2976cdc6671750f0da439e9eb42053518e4af8d9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e7f5fb403ef020135e3dd3b85a1ad67cd435b6e8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376542"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224590"
 ---
 # <a name="sync_per_thread-class"></a>sync_per_thread-Klasse
 
@@ -32,7 +32,7 @@ class sync_per_thread
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Cache*|Der Cachetyp, der diesem Synchronisierungsfilter zugeordnet werden soll. Dieser kann [cache_chunklist](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
@@ -44,17 +44,17 @@ Zuweisungen, die `sync_per_thread` verwenden, können identisch sein, auch wenn 
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
-|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[allocate](#allocate)|Belegt einen Speicherblock.|
+|[DEALLOCATE](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="sync_per_threadallocate"></a><a name="allocate"></a>sync_per_thread::zuweisen
+## <a name="sync_per_threadallocate"></a><a name="allocate"></a>Sync_per_thread:: zuordnen
 
 Belegt einen Speicherblock.
 
@@ -64,7 +64,7 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
@@ -72,7 +72,7 @@ void *allocate(std::size_t count);
 
 Die Memberfunktion gibt das Ergebnis eines Aufrufs von `cache::allocate(count)` auf dem Cache-Objekt zurück, das zu dem aktuellen Thread gehört. Wenn kein Cache-Objekt für den aktuellen Thread zugewiesen wurde, wird zuerst eines zugewiesen.
 
-## <a name="sync_per_threaddeallocate"></a><a name="deallocate"></a>sync_per_thread::deallocate
+## <a name="sync_per_threaddeallocate"></a><a name="deallocate"></a>Sync_per_thread::d ezuordnen
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -82,16 +82,16 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
-|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
+|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion ruft `deallocate` auf dem Cache-Objekt auf, das zu dem aktuellen Thread gehört. Wenn kein Cache-Objekt für den aktuellen Thread zugewiesen wurde, wird zuerst eines zugewiesen.
 
-## <a name="sync_per_threadequals"></a><a name="equals"></a>sync_per_thread::gleich
+## <a name="sync_per_threadequals"></a><a name="equals"></a>Sync_per_thread:: ist Gleichheits
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -101,17 +101,17 @@ bool equals(const sync<Cache>& Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Cache*|Das Cache-Objekt des Synchronisierungsfilters.|
 |*Andere*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-**false,** wenn für dieses Objekt oder für *Andere* im aktuellen Thread kein Cacheobjekt zugewiesen wurde. Andernfalls wird das Ergebnis der Anwendung von `operator==` auf die beiden Cache-Objekte zurückgegeben.
+**`false`**, wenn für dieses Objekt kein Cache Objekt zugeordnet wurde, oder für ein *anderes* im aktuellen Thread. Andernfalls wird das Ergebnis der Anwendung von `operator==` auf die beiden Cache-Objekte zurückgegeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

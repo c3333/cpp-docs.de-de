@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::lognormal_distribution [C++], param_type
 - std::lognormal_distribution [C++], param_type
 ms.assetid: f2d6a431-6c3a-4370-b12e-4adb4ddf6cc4
-ms.openlocfilehash: ae13505da411b9a9cc445560907d053afa4bf81d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: bf6cb4a620243f35886835e996eb34bc7b0e6960
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81351704"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224785"
 ---
 # <a name="lognormal_distribution-class"></a>lognormal_distribution-Klasse
 
@@ -69,11 +69,11 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType*\
-Der Gleitkomma-Ergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps erzeugt, oder typ **doppelt,** wenn keine bereitgestellt wird, verteilt gemäß der Protokollnormalverteilung. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`double`** . Wenn kein entsprechend der Protokoll normal Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -90,7 +90,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 Ausführliche Informationen über die Lognormalverteilung finden Sie im Wolfram MathWorld-Artikel [LogNormal Distribution](https://go.microsoft.com/fwlink/p/?linkid=400917).
 
@@ -178,13 +178,13 @@ Distribution for 10 samples:
     10: 5.4406507912
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="lognormal_distributionlognormal_distribution"></a><a name="lognormal_distribution"></a>lognormal_distribution::lognormal_distribution
+## <a name="lognormal_distributionlognormal_distribution"></a><a name="lognormal_distribution"></a>lognormal_distribution:: lognormal_distribution
 
 Erstellt die Verteilung.
 
@@ -195,24 +195,24 @@ explicit lognormal_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*M*\
+*800*\
 Der `m`-Verteilungsparameter.
 
-*s*\
+*Hymnen*\
 Der `s`-Verteilungsparameter.
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete `param_type`-Struktur.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`0.0 < s`
+**Vorbedingung:**`0.0 < s`
 
 Mit dem ersten Konstruktor wird ein Objekt erstellt, in dessen gespeichertem `m`-Wert der Wert *m* enthalten ist und dessen gespeicherter `s`-Wert den Wert *s* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="lognormal_distributionparam_type"></a><a name="param_type"></a>lognormal_distribution::param_type
+## <a name="lognormal_distributionparam_type"></a><a name="param_type"></a>lognormal_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 
@@ -230,10 +230,10 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*M*\
+*800*\
 Der `m`-Verteilungsparameter.
 
-*s*\
+*Hymnen*\
 Der `s`-Verteilungsparameter.
 
 *Richting*\
@@ -241,10 +241,10 @@ Die `param_type`-Struktur, mit der verglichen wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`0.0 < s`
+**Vorbedingung:**`0.0 < s`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)

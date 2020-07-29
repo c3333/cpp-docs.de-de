@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2705
 ms.assetid: 29249ea3-4ea7-4105-944b-bdb83e8d6852
-ms.openlocfilehash: 1cd46db8e4cb237bebd9568409ecadf0ff84cdf8
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 65d9ed2458f43e6c9a697be02ffc9b831259624c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758306"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225435"
 ---
 # <a name="compiler-error-c2705"></a>Compilerfehler C2705
 
 ' Bezeichnung ': Unzulässiger Sprung in den Bereich für den Ausnahmehandlerblock.
 
-Die Ausführung springt zu einer Bezeichnung in einer `try`/`catch`, `__try`/`__except``__try`/`__finally` Block. Weitere Informationen finden Sie unter [Ausnahmebehandlung (Task Parallel Library)](../../cpp/exception-handling-in-visual-cpp.md).
+Die Ausführung springt zu einer Bezeichnung innerhalb eines- **`try`** / **`catch`** ,- `__try` / **`__except`** ,- `__try` / **`__finally`** Blocks. Weitere Informationen finden Sie unter [Ausnahmebehandlung (Task Parallel Library)](../../cpp/exception-handling-in-visual-cpp.md).
 
 Im folgenden Beispiel wird C2705 generiert:
 

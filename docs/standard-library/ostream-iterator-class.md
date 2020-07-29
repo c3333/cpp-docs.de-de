@@ -12,16 +12,16 @@ helpviewer_keywords:
 - std::ostream_iterator [C++], ostream_type
 - std::ostream_iterator [C++], traits_type
 ms.assetid: 24d842d3-9f45-4bf6-a697-62f5968f5a03
-ms.openlocfilehash: a0c794fe2ff7897bcb6d6412613689100a977589
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 97367c19d0b1bdb4b9c16d5d12621210c8562485
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373586"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224668"
 ---
 # <a name="ostream_iterator-class"></a>ostream_iterator-Klasse
 
-Die Klassenvorlage ostream_iterator beschreibt ein Ausgabeiteratorobjekt, das aufeinanderfolgende `operator <<`Elemente mit der Extraktion in den Ausgabestream schreibt.
+Die Klassen Vorlage ostream_iterator beschreibt ein ausgabeiteratorobjekt, das aufeinander folgende Elemente mit der Extraktion in den Ausgabestream schreibt `operator <<` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,14 +32,14 @@ class ostream_iterator
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*\
+*Sorte*\
 Der Typ des in den Ausgabestream einzufügenden Objekts.
 
-*Chartype*\
-Der Typ, der den Zeichentyp für `ostream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist **char**.
+*CharType*\
+Der Typ, der den Zeichentyp für `ostream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist **`char`** .
 
-*Merkmale*\
-Der Typ, der den Zeichentyp für `ostream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist `char_traits`\< *CharType>.*
+*Aufweisen*\
+Der Typ, der den Zeichentyp für `ostream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist `char_traits` \< *CharType> . *
 
 Die ostream_iterator-Klasse muss den Anforderungen für einen Ausgabeiterator entsprechen. Algorithmen können mit `ostream_iterator` direkt in Ausgabestreams geschrieben werden.
 
@@ -51,7 +51,7 @@ Die ostream_iterator-Klasse muss den Anforderungen für einen Ausgabeiterator en
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der für den Zeichentyp von `ostream_iterator` bereitgestellt wird.|
 |[ostream_type](#ostream_type)|Ein Typ, der für den Streamtyp von `ostream_iterator` bereitgestellt wird.|
@@ -61,17 +61,17 @@ Die ostream_iterator-Klasse muss den Anforderungen für einen Ausgabeiterator en
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Operator*](#op_star)|Dereferencing-Operator, der zum Implementieren des \* `i`  =  `x`Ausgabeiteratorausdrucks verwendet wird.|
-|[Operator++](#op_add_add)|Ein nicht funktionaler Inkrementoperator, der einen `ostream_iterator` zum gleichen Objekt zurückgibt, das er adressiert hat, bevor der Vorgang aufgerufen wurde.|
-|[Operator=](#op_eq)|Zuweisungsoperator, der zum Implementieren des \* `i`  =  `x` Ausgabeiteratorausdrucks zum Schreiben in einen Ausgabestream verwendet wird.|
+|[KOM](#op_star)|Dereferenzierungsoperator, der zum Implementieren des ausgabeiteratorausdrucks verwendet wird \* `i`  =  `x` .|
+|[Operator + +](#op_add_add)|Ein nicht funktionaler Inkrementoperator, der einen `ostream_iterator` zum gleichen Objekt zurückgibt, das er adressiert hat, bevor der Vorgang aufgerufen wurde.|
+|[Operator =](#op_eq)|Zuweisungs Operator, der zum Implementieren des ausgabeiteratorausdrucks \* `i`  =  `x` zum Schreiben in einen Ausgabestream verwendet wird|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iterator>
+**Header:**\<iterator>
 
 **Namespace:** std
 
-## <a name="ostream_iteratorchar_type"></a><a name="char_type"></a>ostream_iterator::char_type
+## <a name="ostream_iteratorchar_type"></a><a name="char_type"></a>ostream_iterator:: char_type
 
 Ein Typ, der für den Zeichentyp des Iterators bereitgestellt wird.
 
@@ -120,9 +120,9 @@ by intOut are:
 */
 ```
 
-## <a name="ostream_iteratoroperator"></a><a name="op_star"></a>ostream_iterator::Operator*
+## <a name="ostream_iteratoroperator"></a><a name="op_star"></a>ostream_iterator:: Operator *
 
-Dereferencing-Operator, der zum Implementieren des \* Ausgabeiteratorausdrucks *ii* = *x*verwendet wird.
+Der Dereferenzierungsoperator, der zum Implementieren des ausgabeiteratorausdrucks \* *II*  =  *x*verwendet wird.
 
 ```cpp
 ostream_iterator<Type, CharType, Traits>& operator*();
@@ -134,7 +134,7 @@ Ein Verweis auf `ostream_iterator`.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `ostream_iterator` Anforderungen an einen Ausgabe-Iterator, den \* der erfüllen muss, erfordern nur den Ausdruck *ii* = *t* gültig und sagen nichts über den **Operator** oder den `operator=` für sich selbst aus. Der Memberoperator in ** \*** dieser Implementierung gibt diese zurück.
+Die Anforderungen für einen Ausgabeiterator, den der `ostream_iterator` erfüllen muss, benötigen nur den gültigen Ausdruck \* *II*  =  *t* und sagen nichts über den **`operator`** oder den `operator=` eigenen. Der Member-Operator in dieser Implementierung gibt ** \* dieses**zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -169,7 +169,7 @@ Elements written to output stream:
 */
 ```
 
-## <a name="ostream_iteratoroperator"></a><a name="op_add_add"></a>ostream_iterator::operator++
+## <a name="ostream_iteratoroperator"></a><a name="op_add_add"></a>ostream_iterator:: Operator + +
 
 Ein nicht funktionaler Inkrementoperator, der einen `ostream_iterator` zum gleichen Objekt zurückgibt, das er adressiert hat, bevor der Vorgang aufgerufen wurde.
 
@@ -184,7 +184,7 @@ Ein Verweis auf `ostream_iterator`.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberoperatoren ** \*** geben diese zurück.
+Diese Member-Operatoren geben ** \* diesen**Wert zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -219,9 +219,9 @@ Elements written to output stream:
 */
 ```
 
-## <a name="ostream_iteratoroperator"></a><a name="op_eq"></a>ostream_iterator::operator=
+## <a name="ostream_iteratoroperator"></a><a name="op_eq"></a>ostream_iterator:: Operator =
 
-Zuweisungsoperator, der zum \* `i`  =  `x` Implementieren des output_iterator-Ausdrucks zum Schreiben in einen Ausgabestream verwendet wird.
+Der Zuweisungs Operator, der zum Implementieren des Output_iterator Ausdrucks \* `i`  =  `x` zum Schreiben in einen Ausgabestream verwendet wird.
 
 ```cpp
 ostream_iterator<Type, CharType, Traits>& operator=(const Type& val);
@@ -229,16 +229,16 @@ ostream_iterator<Type, CharType, Traits>& operator=(const Type& val);
 
 ### <a name="parameters"></a>Parameter
 
-*Val*\
+*ster*\
 Der Wert des Objekts des `Type`-Typs, der in den Ausgabestream einzufügen ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Operator fügt *val* in den Ausgabestream ein, der dem Objekt zugeordnet ist, gefolgt von dem im `ostream_iterator` [ostream_iterator-Konstruktor](#ostream_iterator) angegebenen Trennzeichen (falls vorhanden) und gibt dann einen Verweis auf die zurück.
+Der-Operator fügt *Val* in den dem-Objekt zugeordneten Ausgabestream ein, gefolgt von dem im [Ostream_iterator-Konstruktor](#ostream_iterator) angegebenen Trennzeichen (sofern vorhanden) und gibt dann einen Verweis auf den zurück `ostream_iterator` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Anforderungen an einen Output-Iterator, `ostream_iterator` den \* `ii`  =  `t` der erfüllen muss, erfordern nur die Gültigkeit des Ausdrucks und sagen nichts über den Operator oder den Operator= aus. Dieser Memberoperator gibt `*this` zurück.
+Die Anforderungen für einen Ausgabeiterator, den der `ostream_iterator` erfüllen muss, müssen nur \* `ii`  =  `t` gültig sein und sagen nichts über den Operator oder den Operator = selbst. Dieser Member-Operator gibt zurück **`*this`** .
 
 ### <a name="example"></a>Beispiel
 
@@ -273,7 +273,7 @@ Elements written to output stream:
 */
 ```
 
-## <a name="ostream_iteratorostream_iterator"></a><a name="ostream_iterator"></a>ostream_iterator::ostream_iterator
+## <a name="ostream_iteratorostream_iterator"></a><a name="ostream_iterator"></a>ostream_iterator:: ostream_iterator
 
 Erstellt einen `ostream_iterator`, der initialisiert und zum Schreiben in den Ausgabestream begrenzt wird.
 
@@ -298,7 +298,7 @@ Das Trennzeichen, das in den Ausgabestream zwischen Werten eingefügt wird.
 
 Der erste Konstruktor initialisiert den Ausgabestreamzeiger mit `&_Ostr`. Der Zeiger für Zeichenfolgentrennzeichen kennzeichnet eine leere Zeichenfolge.
 
-Der zweite Konstruktor initialisiert den Ausgabestreamzeiger mit `&_Ostr` und den Trennzeichenfolgenzeiger mit *_Delimiter*.
+Der zweite Konstruktor initialisiert den ausgabestreamzeiger mit `&_Ostr` und den Trennzeichen-Zeichen folgen Zeiger mit *_Delimiter*.
 
 ### <a name="example"></a>Beispiel
 
@@ -347,7 +347,7 @@ Elements output with delimiter: 1 : 2 : 3 : 4 : 5 : 6 :
 */
 ```
 
-## <a name="ostream_iteratorostream_type"></a><a name="ostream_type"></a>ostream_iterator::ostream_type
+## <a name="ostream_iteratorostream_type"></a><a name="ostream_type"></a>ostream_iterator:: ostream_type
 
 Ein Typ, der für den Streamtyp des Iteraotrs bereitgestellt wird.
 
@@ -357,13 +357,13 @@ typedef basic_ostream<CharType, Traits> ostream_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist [basic_ostream](../standard-library/basic-ostream-class.md)< `CharType`ein `Traits` Synonym für basic_ostream ,>, einer Streamklasse der Iostreamhierarchie, die Objekte definiert, die zum Schreiben verwendet werden können.
+Der Typ ist ein Synonym für [basic_ostream](../standard-library/basic-ostream-class.md) <  `CharType` , `Traits`>, eine Streamklasse der iostream-Hierarchie, die Objekte definiert, die zum Schreiben verwendet werden können.
 
 ### <a name="example"></a>Beispiel
 
 Unter [ostream_iterator](#ostream_iterator) finden Sie ein Beispiel für das Deklarieren und Verwenden von `ostream_type`.
 
-## <a name="ostream_iteratortraits_type"></a><a name="traits_type"></a>ostream_iterator::traits_type
+## <a name="ostream_iteratortraits_type"></a><a name="traits_type"></a>ostream_iterator:: traits_type
 
 Ein Typ, der für den Zeichenmerkmaltyp des Iterators bereitgestellt wird.
 
@@ -416,5 +416,5 @@ by intOut are:
 ## <a name="see-also"></a>Siehe auch
 
 [\<iterator>](../standard-library/iterator.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

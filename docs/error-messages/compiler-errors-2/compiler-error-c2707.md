@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2707
 ms.assetid: 3deaf45c-74da-4c9d-acc6-b82412720b74
-ms.openlocfilehash: e29812563ef1d4d7f6612ea2516f2f6327e90e1b
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: eaac568387138450577ead23f1470c37ad300335
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74760438"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225422"
 ---
 # <a name="compiler-error-c2707"></a>Compilerfehler C2707
 
@@ -19,11 +19,11 @@ ms.locfileid: "74760438"
 
 Strukturierte systeminterne Ausnahme Behandlungs Funktionen sind in bestimmten Kontexten ungültig:
 
-- `_exception_code()` außerhalb eines Ausnahme Filters oder `__except` Blocks
+- `_exception_code()`außerhalb eines Ausnahme Filters oder- **`__except`** Blocks
 
-- `_exception_info()` außerhalb eines Ausnahme Filters
+- `_exception_info()`außerhalb eines Ausnahme Filters
 
-- `_abnormal_termination()` außerhalb eines `__finally` Blocks
+- `_abnormal_termination()`außerhalb eines **`__finally`** Blocks
 
 Um den Fehler zu beheben, stellen Sie sicher, dass die systeminternen Funktionen für die Ausnahmebehandlung im entsprechenden Kontext abgelegt werden.
 

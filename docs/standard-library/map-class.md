@@ -88,12 +88,12 @@ helpviewer_keywords:
 - std::map [C++], upper_bound
 - std::map [C++], value_comp
 ms.assetid: 7876f4c9-ebb4-4878-af1e-09364c43af0a
-ms.openlocfilehash: d25d8837c549b425416632ee07e23bb57fbd17ae
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 6166c5f1d90ab795cce39eaa1ce22f025f700d81
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425538"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224772"
 ---
 # <a name="map-class"></a>map-Klasse
 
@@ -113,21 +113,21 @@ class map;
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*Wichtigen*\
 Der in der Zuordnung zu speichernde Schlüsseldatentyp.
 
-*Typ*\
+*Sorte*\
 Der in der Zuordnung zu speichernde Elementdatentyp.
 
-*Merkmale*\
+*Aufweisen*\
 Der Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortierschlüssel vergleichen kann, um deren relative Reihenfolge in der Zuordnung zu bestimmen. Dieses Argument ist optional, und das binäre Prädikat `less<Key>` ist der Standardwert.
 
-In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des std::less<>-Prädikats aktivieren, das keine Typparameter aufweist. Weitere Informationen finden Sie unter [Heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers)
+In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des std::less<>-Prädikats aktivieren, das keine Typparameter aufweist. Weitere Informationen finden Sie unter [Heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers).
 
-*Zuordner\*
+*Allocator*\
 Der Typ, der das gespeicherte Zuordnungsobjekt darstellt, das Details zum Belegen und Freigeben des Arbeitsspeichers der Zuordnung kapselt. Dieses Argument ist optional, und der Standardwert ist `allocator<pair<const Key, Type> >`.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die map-Klasse der C++-Standardbibliothek ist:
 
@@ -152,9 +152,9 @@ Es wird empfohlen, die Zuordnung der ausgewählten assoziativen Container zu ers
 Die Zuordnung sortiert die von ihr gesteuerten Elemente, indem ein gespeichertes Funktionsobjekt vom Typ [key_compare](#key_compare) aufgerufen wird. Bei diesem gespeicherten Objekt handelt es sich um eine Vergleichsfunktion, auf die zugegriffen wird, indem die [key_compare](#key_comp)-Methode aufgerufen wird. Im Allgemeinen werden beliebige zwei angegebene Elemente verglichen, um zu bestimmen, ob eins kleiner als das andere ist, oder ob sie sich entsprechen. Obwohl alle Elemente verglichen werden, wird eine sortierte Sequenz antivalenter Elementen erstellt.
 
 > [!NOTE]
-> Die Vergleichsfunktion ist ein binäres Prädikat, das eine strenge schwache Sortierung im üblichen mathematischen Sinn erzeugt. Bei einem binären f (x, y)-Prädikat handelt es sich um ein Funktions Objekt, das die zwei Argument Objekte x und y aufweist sowie einen Rückgabewert von **true** oder **false**. Eine für einen Satz vorgegebene Reihenfolge ist eine strikte schwache Reihenfolge, wenn das binäre Prädikat unreflexiv, antisymmetrisch und transitiv ist und wenn die Äquivalenz transitiv ist, wobei die beiden Objekte x und y als Äquivalent definiert werden, wenn sowohl f (x, y) als auch f (y, x) **false**sind. Wenn der stärkere Gleichheitszustand zwischen Schlüsseln die Äquivalenz ersetzt, erfolgt die Sortierung total (d. h., alle Elemente werden zueinander sortiert), und die verglichenen Schlüssel sind von den einander nicht mehr zu unterscheiden.
+> Die Vergleichsfunktion ist ein binäres Prädikat, das eine strenge schwache Sortierung im üblichen mathematischen Sinn erzeugt. Bei einem binären f (x, y)-Prädikat handelt es sich um ein Funktions Objekt, das die zwei Argument Objekte x und y aufweist sowie einen Rückgabewert von **`true`** oder **`false`** . Eine für einen Satz vorgegebene Reihenfolge ist eine strikte schwache Reihenfolge, wenn das binäre Prädikat unreflexiv, antisymmetrisch und transitiv ist und wenn die Äquivalenz transitiv ist, wobei die beiden Objekte x und y als Äquivalent definiert werden, wenn sowohl f (x, y) als auch f (y, x) sind **`false`** . Wenn der stärkere Gleichheitszustand zwischen Schlüsseln die Äquivalenz ersetzt, erfolgt die Sortierung total (d. h., alle Elemente werden zueinander sortiert), und die verglichenen Schlüssel sind von den einander nicht mehr zu unterscheiden.
 >
-> In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des `std::less<>` oder `std::greater<>` Prädikats, das keine Typparameter aufweist, aktivieren. Weitere Informationen finden Sie unter [Heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers)
+> In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des `std::less<>` oder `std::greater<>` Prädikats, das keine Typparameter aufweist, aktivieren. Weitere Informationen finden Sie unter [Heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers).
 
 ## <a name="members"></a>Member
 
@@ -162,43 +162,43 @@ Die Zuordnung sortiert die von ihr gesteuerten Elemente, indem ein gespeichertes
 
 |||
 |-|-|
-|[map](#map)|Erstellt eine Liste einer bestimmten Größe bzw. mit Elementen eines bestimmten Werts oder mit einem bestimmten `allocator`-Element oder als vollständige bzw. teilweise Kopie einer anderen Zuordnung.|
+|[bilden](#map)|Erstellt eine Liste einer bestimmten Größe bzw. mit Elementen eines bestimmten Werts oder mit einem bestimmten `allocator`-Element oder als vollständige bzw. teilweise Kopie einer anderen Zuordnung.|
 
 ### <a name="typedefs"></a>TypeDefs
 
 |||
 |-|-|
 |[allocator_type](#allocator_type)|Eine Typdefinition für die `allocator`-Klasse für das Zuordnungsobjekt.|
-|[const_iterator](#const_iterator)|Eine typedef für einen bidirektionalen Iterator, mit dem ein **Konstanten** Element in der Zuordnung gelesen werden kann.|
-|[const_pointer](#const_pointer)|Eine typedef für einen Zeiger auf ein **Konstanten** Element in einer Zuordnung.|
-|[const_reference](#const_reference)|Eine typedef für einen Verweis auf ein **Konstanten** Element, das in einer Zuordnung zum Lesen und Ausführen von **Konstanten** Vorgängen gespeichert ist.|
-|[const_reverse_iterator](#const_reverse_iterator)|Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes **const**-Element in einer Zuordnung gelesen werden kann.|
+|[const_iterator](#const_iterator)|Eine typedef für einen bidirektionalen Iterator, der ein- **`const`** Element in der Zuordnung lesen kann.|
+|[const_pointer](#const_pointer)|Eine typedef für einen Zeiger auf ein- **`const`** Element in einer Zuordnung.|
+|[const_reference](#const_reference)|Eine typedef für einen Verweis auf ein **`const`** -Element, das in einer Zuordnung zum Lesen und Ausführen von **`const`** Vorgängen gespeichert ist.|
+|[const_reverse_iterator](#const_reverse_iterator)|Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes **`const`** Element in der Zuordnung gelesen werden kann.|
 |[difference_type](#difference_type)|Ein Ganzzahltyp mit Vorzeichen für die Anzahl von Elementen einer Zuordnung in einem Bereich zwischen Elementen, auf die von Iteratoren gezeigt wird.|
-|[iterator](#iterator)|Eine Typedef für einen bidirektionalen Iterator, der ein beliebiges Element in einer Zuordnung lesen oder ändern kann.|
+|[Iterator](#iterator)|Eine Typedef für einen bidirektionalen Iterator, der ein beliebiges Element in einer Zuordnung lesen oder ändern kann.|
 |[key_compare](#key_compare)|Eine Typedef für ein Funktionsobjekt, das zwei Sortierschlüssel vergleichen kann, um die relative Position von zwei Elementen in der Zuordnung zu bestimmen.|
 |[key_type](#key_type)|Eine Typedef für den in jedem Element der Zuordnung gespeicherten Sortierschlüssel.|
 |[mapped_type](#mapped_type)|Eine Typedef für die in jedem Element einer Zuordnung gespeicherten Daten.|
-|[pointer](#pointer)|Eine typedef für einen Zeiger auf ein **Konstanten** Element in einer Zuordnung.|
-|[reference](#reference)|Eine Typedef für einen Verweis auf ein in einer Zuordnung gespeichertes Element.|
+|[Zeichner](#pointer)|Eine typedef für einen Zeiger auf ein- **`const`** Element in einer Zuordnung.|
+|[Referenz](#reference)|Eine Typedef für einen Verweis auf ein in einer Zuordnung gespeichertes Element.|
 |[reverse_iterator](#reverse_iterator)|Eine Typdefinition für einen bidirektionalen Iterator, der ein beliebiges Element in einer reservierten Zuordnung lesen oder ändern kann.|
 |[size_type](#size_type)|Eine Ganzzahltypedef ohne Vorzeichen für die Anzahl von Elementen in einer Zuordnung.|
 |[value_type](#value_type)|Eine Typedef für den Typ des Objekts, der als Element in einer Zuordnung gespeichert wird.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[at](#at)|Sucht ein Element mit einem angegebenen Schlüsselwert.|
-|[begin](#begin)|Gibt einen Iterator zurück, der auf das erste Element in der Zuordnung zeigt.|
+|[beginnen](#begin)|Gibt einen Iterator zurück, der auf das erste Element in der Zuordnung zeigt.|
 |[cbegin](#cbegin)|Gibt einen konstanten Iterator zurück, der auf das erste Element in der Zuordnung zeigt.|
 |[cend](#cend)|Gibt einen konstanten "past-the-end"-Iterator zurück.|
-|[clear](#clear)|Löscht alle Elemente einer Zuordnung auf.|
+|[Löschen](#clear)|Löscht alle Elemente einer Zuordnung auf.|
 |[count](#count)|Gibt die Anzahl von Elementen in einer Zuordnung zurück, deren Schlüssel dem in einem Parameter angegebenen Schlüssel entspricht.|
 |[crbegin](#crbegin)|Gibt einen konstanten Iterator zurück, der auf das erste Element in einer umgekehrten Zuordnung zeigt.|
 |[crend](#crend)|Gibt einen konstanten Iterator zurück, der auf den Speicherort zeigt, der hinter dem letzten Element einer umgekehrten Zuordnung liegt.|
 |[emplace](#emplace)|Fügt ein Element ein, das vor Ort in die Zuordnung erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element ein, das vor Ort mit einem Platzierungshinweis in die Zuordnung erstellt wird.|
-|[leer](#empty)|Gibt **true** zurück, wenn eine Zuordnung leer ist.|
+|[empty](#empty)|Gibt zurück, **`true`** Wenn eine Zuordnung leer ist.|
 |[end](#end)|Gibt den "past-the-end"-Iterator zurück.|
 |[equal_range](#equal_range)|Gibt ein Paar von Iteratoren zurück. Der erste Iterator im Paar zeigt auf das erste Element in `map` mit einem Schlüssel, der größer ist, als ein bestimmter Schlüssel. Der zweite Iterator im Paar zeigt auf das erste Element in `map` mit einem Schlüssel, die größer oder gleich dem Schlüssel ist.|
 |[erase](#erase)|Entfernt ein Element oder eine Reihe von Elementen in einer Zuordnung aus den angegebenen Positionen.|
@@ -219,10 +219,10 @@ Die Zuordnung sortiert die von ihr gesteuerten Elemente, indem ein gespeichertes
 
 |||
 |-|-|
-|[operator[]](#op_at)|Fügt ein Element in eine Zuordnung mit einem angegebenen Schlüsselwert ein.|
-|[operator=](#op_eq)|Ersetzt die Elemente einer Zuordnung durch einer Kopie einer anderen Zuordnung.|
+|[operator&#91;&#93;](#op_at)|Fügt ein Element in eine Zuordnung mit einem angegebenen Schlüsselwert ein.|
+|[Operator =](#op_eq)|Ersetzt die Elemente einer Zuordnung durch einer Kopie einer anderen Zuordnung.|
 
-## <a name="allocator_type"></a>allocator_type
+## <a name="allocator_type"></a><a name="allocator_type"></a>allocator_type
 
 Ein Typ, der die Zuweisungsklasse für das map-Objekt darstellt.
 
@@ -234,7 +234,7 @@ typedef Allocator allocator_type;
 
 In dem Beispiel für [get_allocator](#get_allocator) finden Sie ein Beispiel, das `allocator_type` verwendet.
 
-## <a name="at"></a>an
+## <a name="at"></a><a name="at"></a>an
 
 Sucht ein Element mit einem angegebenen Schlüsselwert.
 
@@ -253,7 +253,7 @@ Der Schlüsselwert, das gesucht werden soll.
 
 Ein Verweis auf den Datenwert des gefundenen Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wird der als Argument angegebene Schlüsselwert nicht gefunden, löst die Funktion ein Objekt der [out_of_rage](../standard-library/out-of-range-class.md)-Klasse aus.
 
@@ -283,7 +283,7 @@ int main()
     }
 ```
 
-## <a name="begin"></a>beginnen
+## <a name="begin"></a><a name="begin"></a>beginnen
 
 Gibt einen Iterator zurück, der das erste Element im map-Element adressiert.
 
@@ -338,9 +338,9 @@ The first element of m1 is 0
 The first element of m1 is now 1
 ```
 
-## <a name="cbegin"></a>cbegin
+## <a name="cbegin"></a><a name="cbegin"></a>cbegin
 
-Gibt einen **Konstanten** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
+Gibt einen **`const`** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
 
 ```cpp
 const_iterator cbegin() const;
@@ -348,13 +348,13 @@ const_iterator cbegin() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **konstanter** bidirektionaler Iterator, der das erste Element im Bereich oder die Position direkt hinter dem Ende eines leeren Bereichs adressiert (für einen leeren Bereich, `cbegin() == cend()`).
+Ein **`const`** bidirektionaler Iterator, der das erste Element im Bereich oder die Position direkt hinter dem Ende eines leeren Bereichs adressiert (für einen leeren Bereich `cbegin() == cend()` ).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
-Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [automatischen](../cpp/auto-cpp.md) Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollten `Container` ein änderbarer (nicht **konstanter) Container**sein, der `begin()` und `cbegin()`unterstützt.
+Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollte `Container` ein änderbarer (nicht) Container sein, **`const`** der und unterstützt `begin()` `cbegin()` .
 
 ```cpp
 auto i1 = Container.begin();
@@ -364,9 +364,9 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator
 ```
 
-## <a name="cend"></a>cend
+## <a name="cend"></a><a name="cend"></a>cend
 
-Gibt einen **Konstanten** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
+Gibt einen **`const`** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
 
 ```cpp
 const_iterator cend() const;
@@ -374,13 +374,13 @@ const_iterator cend() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **konstanter** bidirektionaler-Access-Iterator, der direkt hinter das Ende des Bereichs zeigt.
+Ein **`const`** bidirektionaler-Access-Iterator, der direkt hinter das Ende des Bereichs zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `cend` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
-Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [automatischen](../cpp/auto-cpp.md) Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollten `Container` ein änderbarer (nicht **konstanter) Container**sein, der `end()` und `cend()`unterstützt.
+Sie können diese Memberfunktion anstelle der `end()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollte `Container` ein änderbarer (nicht) Container sein, **`const`** der und unterstützt `end()` `cend()` .
 
 ```cpp
 auto i1 = Container.end();
@@ -392,7 +392,7 @@ auto i2 = Container.cend();
 
 Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
 
-## <a name="clear"></a>Klartext
+## <a name="clear"></a><a name="clear"></a>Klartext
 
 Löscht alle Elemente einer Zuordnung auf.
 
@@ -436,47 +436,47 @@ The size of the map is initially 2.
 The size of the map after clearing is 0.
 ```
 
-## <a name="const_iterator"></a>const_iterator
+## <a name="const_iterator"></a><a name="const_iterator"></a>const_iterator
 
-Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein **const**-Element in der Zuordnung gelesen werden kann.
+Ein Typ, der einen bidirektionalen Iterator bereitstellt, **`const`** mit dem ein Element in der Zuordnung gelesen werden kann.
 
 ```cpp
 typedef implementation-defined const_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein `const_iterator`-Typ kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
-Der von Map definierte `const_iterator` verweist auf Elemente, die Objekte [value_type](#value_type)sind, vom Typ `pair`\< **constkey**, **Type**>, dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
+Der, der `const_iterator` von Map definiert wird, zeigt auf Elemente, bei denen es sich um Objekte [value_type](#value_type)handelt, die vom Typ sind `pair` \< **constKey**, **Type**> , dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
 
-Verwenden Sie zum Aufheben der Dereferenzierung eines `const_iterator` `cIter` das auf ein Element in einer Zuordnung verweist, den `->`-Operator.
+Um einen zu dereferenzieren `const_iterator` `cIter` , der auf ein Element in einer Zuordnung zeigt, verwenden Sie den- `->` Operator.
 
-Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `cIter` -> **First**, das (\* `cIter`) entspricht. **first** entspricht, um auf den Wert des zugeordneten Datums für das Element zuzugreifen.
+Verwenden Sie `cIter` -> **first**, das (\* `cIter`). **zuerst**.
 
-Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `cIter` -> **Sekunde**, das (\* `cIter`) entspricht. **second** entspricht, um auf den Wert des zugeordneten Datums für das Element zuzugreifen.
+Verwenden Sie `cIter` -> **second**, das (\* `cIter`). **Zweitens**.
 
 ### <a name="example"></a>Beispiel
 
 In dem Beispiel für [begin](#begin) finden Sie ein Beispiel, das `const_iterator` verwendet.
 
-## <a name="const_pointer"></a>const_pointer
+## <a name="const_pointer"></a><a name="const_pointer"></a>const_pointer
 
-Ein Typ, der einen Zeiger auf ein **const**-Element in einer Zuordnung bereitstellt.
+Ein Typ, der einen Zeiger auf ein- **`const`** Element in einer Zuordnung bereitstellt.
 
 ```cpp
 typedef typename allocator_type::const_pointer const_pointer;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein `const_pointer`-Typ kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
 In den meisten Fällen sollte ein [Iterator](#iterator) für den Zugriff auf Elemente in einem map-Objekt verwendet werden.
 
-## <a name="const_reference"></a>const_reference
+## <a name="const_reference"></a><a name="const_reference"></a>const_reference
 
-Ein Typ, der einen Verweis auf ein **const**-Element bereitstellt, das in einer Zuordnung zum Lesen und Ausführen von **const**-Vorgängen gespeichert ist.
+Ein Typ, der einen Verweis auf ein-Element bereitstellt, das **`const`** in einer Zuordnung zum Lesen und Ausführen von **`const`** Vorgängen gespeichert ist.
 
 ```cpp
 typedef typename allocator_type::const_reference const_reference;
@@ -524,31 +524,31 @@ The key of first element in the map is 1.
 The data value of first element in the map is 10.
 ```
 
-## <a name="const_reverse_iterator"></a>const_reverse_iterator
+## <a name="const_reverse_iterator"></a><a name="const_reverse_iterator"></a>const_reverse_iterator
 
-Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes **const**-Element in einer Zuordnung gelesen werden kann.
+Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes **`const`** Element in der Zuordnung gelesen werden kann.
 
 ```cpp
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein `const_reverse_iterator`-Typ kann nicht den Wert eines Elements ändern und wird verwendet, um die Zuordnung in umgekehrter Reihenfolge zu durchlaufen.
 
-Der von Map definierte `const_reverse_iterator` verweist auf Elemente, die Objekte [value_type](#value_type)sind, die vom Typ `pair<const Key, Type>`sind, dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
+Der, der `const_reverse_iterator` von Map definiert wird, zeigt auf Elemente, bei denen es sich um Objekte [value_type](#value_type)handelt, die vom Typ sind `pair<const Key, Type>` , dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
 
-Um einen `const_reverse_iterator crIter` zu dereferenzieren, der auf ein Element in einer Zuordnung zeigt, verwenden Sie den `->`-Operator.
+Verwenden Sie den `->` Operator, um ein `const_reverse_iterator crIter`, der auf ein Element in einer Zuordnung zeigt, zu dereferenzieren.
 
-Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `crIter` -> **First**, das (\* `crIter`) entspricht. **zuerst**.
+Verwenden Sie `crIter` -> **first**, das (\* `crIter`).**first** entspricht, um auf den Wert des Schlüssels für das Element zuzugreifen.
 
-Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `crIter` -> **Sekunde**, das (\* `crIter`) entspricht. **zuerst**.
+Verwenden Sie `crIter` -> **second**, das (\* `crIter`).**first** entspricht, um auf den Wert des zugeordneten Datums für das Element zuzugreifen.
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [rend](#rend) wird verdeutlicht, wie ein `const_reverse_iterator` deklariert und verwendet wird.
 
-## <a name="count"></a>Countdown
+## <a name="count"></a><a name="count"></a>Countdown
 
 Gibt die Anzahl von Elementen in einer Zuordnung zurück, dessen Schlüssel dem von einem Parameter angegebenen Schlüssel entspricht.
 
@@ -558,18 +558,18 @@ size_type count(const Key& key) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*wichtigen*\
 Der Schlüsselwert der aus der Zuordnung zu entfernenden Elemente.
 
 ### <a name="return-value"></a>Rückgabewert
 
 1, wenn die Zuordnung ein Element enthält, dessen Sortierungsschlüssel dem Parameterschlüssel entspricht; 0, wenn die Zuordnung kein Element mit einem übereinstimmenden Schlüssel enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion ermöglicht die Rückgabe der Anzahl von Elementen *x* im Bereich
 
-\[ lower_bound (*Schlüssel*), upper_bound (*Schlüssel*))
+\[lower_bound (*Schlüssel*), upper_bound (*Schlüssel*))
 
 0 oder 1 für eine Zuordnung, was einem eindeutigen assoziativen Container entspricht.
 
@@ -616,7 +616,7 @@ The number of elements in m1 with a sort key of 2 is: 1.
 The number of elements in m1 with a sort key of 3 is: 0.
 ```
 
-## <a name="crbegin"></a>crbegin
+## <a name="crbegin"></a><a name="crbegin"></a>crbegin
 
 Gibt einen const-Iterator zurück, der das erste Element in einer umgekehrten Zuordnung adressiert.
 
@@ -628,9 +628,9 @@ const_reverse_iterator crbegin() const;
 
 Ein umgekehrter bidirektionaler const-Iterator, der auf das erste Element in einer umgekehrten [map](../standard-library/map-class.md) oder auf das letzte Element der vormals nicht umgekehrten `map` verweist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`crbegin` wird bei einer umgekehrten `map` auf dieselbe Weise wie [begin](#begin) bei einer `map` verwendet.
+`crbegin` wird mit einer umgekehrten `map` auf die gleiche Weise verwendet, wie [begin](#begin) mit einer `map` verwendet wird.
 
 Bei dem Rückgabewert von `crbegin` kann das `map`-Objekt nicht geändert werden
 
@@ -666,7 +666,7 @@ int main( )
 The first element of the reversed map m1 is 3.
 ```
 
-## <a name="crend"></a>crend
+## <a name="crend"></a><a name="crend"></a>crend
 
 Gibt einen const-Iterator zurück, der den Speicherort adressiert, der auf das letzte Element einer umgekehrten Zuordnung folgt.
 
@@ -678,7 +678,7 @@ const_reverse_iterator crend() const;
 
 Ein bidirektionaler const_reverse-Iterator, der den Standort anspricht, der dem letzten Element in einer umgekehrten [map](../standard-library/map-class.md) nachfolgt (der Speicherort, der dem ersten Element in der nicht umgekehrten `map` vorangegangen war).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `crend` wird bei einer umgekehrten Zuordnung auf die gleiche Weise verwendet, wie [end](#end) bei einer `map` verwendet wird.
 
@@ -719,7 +719,7 @@ int main( )
 The last element of the reversed map m1 is 1.
 ```
 
-## <a name="difference_type"></a>difference_type
+## <a name="difference_type"></a><a name="difference_type"></a>difference_type
 
 Ein Ganzzahltyp mit Vorzeichen, der dazu verwendet werden kann, die Anzahl von Elementen einer Zuordnung in einem Bereich zwischen Elementen darzustellen, auf die von Iteratoren gezeigt wird.
 
@@ -727,7 +727,7 @@ Ein Ganzzahltyp mit Vorzeichen, der dazu verwendet werden kann, die Anzahl von E
 typedef allocator_type::difference_type difference_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `difference_type` ist der Typ, der beim Subtrahieren oder Inkrementieren über Iteratoren des Containers zurückgegeben wird. `difference_type` wird normalerweise verwendet, um die Anzahl von Elementen im Bereich *(first, last)* zwischen den Iteratoren `first` und `last` darzustellen. Dazu gehört das Element, auf das durch `first` gezeigt wird und der Bereich von Elementen bis zu (aber nicht einschließlich) dem Element, auf das durch `last` gezeigt wird.
 
@@ -775,7 +775,7 @@ int main( )
 The number of elements in the map m1 is: 4.
 ```
 
-## <a name="emplace"></a>emplace
+## <a name="emplace"></a><a name="emplace"></a>emplace
 
 Es wird ein Element eingefügt, das vor Ort in eine Zuordnung konstruiert wird (keine Kopieren- oder Verschiebevorgänge werden ausgeführt).
 
@@ -793,17 +793,17 @@ Die Argumente, die zum Erstellen eines in die Zuordnung einzufügenden Elements 
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [paar](../standard-library/pair-structure.md) , dessen **boolesche** Komponente true ist, wenn eine Einfügung erfolgt ist, und false, wenn die Zuordnung bereits ein Element eines äquivalenten Werts in der Reihenfolge enthielt. Die iteratorkomponente des Rückgabewert Paars zeigt auf das neu eingefügte Element, wenn die **boolesche** Komponente true ist, oder auf das vorhandene Element, wenn die **boolesche** Komponente false ist.
+Ein [paar](../standard-library/pair-structure.md) , dessen- **`bool`** Komponente true ist, wenn eine Einfügung erfolgt ist, und false, wenn die Zuordnung bereits ein Element eines äquivalenten Werts in der Reihenfolge enthielt. Die iteratorkomponente des Rückgabewert Paars zeigt auf das neu eingefügte Element, wenn die **`bool`** Komponente "true" ist, oder auf das vorhandene Element, wenn die **`bool`** Komponente "false" ist.
 
-Um auf die iteratorkomponente eines `pair` `pr`zuzugreifen, verwenden Sie `pr.first`; Verwenden Sie `*pr.first`, um ihn zu dereferenzieren. Um auf die **boolesche** Komponente zuzugreifen, verwenden Sie `pr.second`. Eine Beispiel finden Sie unter Beispielcode weiter unten in diesem Artikel.
+Um auf die Iteratorkomponente eines `pair` `pr` zuzugreifen, verwenden Sie `pr.first`; um es zu dereferenzieren, verwenden Sie `*pr.first`. Um auf die- **`bool`** Komponente zuzugreifen, verwenden Sie `pr.second` . Eine Beispiel finden Sie unter Beispielcode weiter unten in diesem Artikel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Durch diese Funktion werden keine Iteratoren oder Verweise ungültig.
 
 Wird während des Einbaus eine Ausnahme ausgelöst, wird der Zustand des Containers nicht geändert.
 
-Der [value_type](#value_type) eines Elements wird paarweise angegeben, damit der Wert eines Elements ein geordnetes Paar ist, bei dem die erste Komponente und der Schlüsselwert sowie die zweite Komponente und der Datenwert des Elements jeweils identisch sind.
+Der [value_type](#value_type) eines Elements wird paarweise angegeben, sodass der Wert eines Elements ein geordnetes Paar ist, bei dem die erste Komponente gleich dem Schlüsselwert und die zweite Komponente gleich dem Datenwert des Elements ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -861,7 +861,7 @@ int main()
 }
 ```
 
-## <a name="emplace_hint"></a>emplace_hint
+## <a name="emplace_hint"></a><a name="emplace_hint"></a>emplace_hint
 
 Fügt ein Element mit einem Platzierungshinweis ein, das vor Ort erstellt wird (Es werden keine Kopier- oder Verschiebevorgänge ausgeführt).
 
@@ -877,7 +877,7 @@ iterator emplace_hint(
 *args*\
 Die zum Erstellen eines in die Zuordnung einzufügenden Elements weitergeleiteten Argumente, es sei denn, die Zuordnung enthält dieses Element bereits, oder üblicher, es sei denn ein Element, dessen Schlüssel gleichwertig sortiert wird, ist bereits enthalten.
 
-*Where*\
+*Was*\
 Die Position, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wird. (Wenn dieser Punkt unmittelbar vor *dem*Speicherort von liegt, kann die Einfügung in amortisierter konstanter Zeit anstelle der logarithmischen Zeit erfolgen.)
 
 ### <a name="return-value"></a>Rückgabewert
@@ -886,13 +886,13 @@ Ein Iterator zum neu eingefügten Element.
 
 Wenn die Einfügung fehlerhaft war, da das Element bereits vorhanden ist, wird ein Iterator an das vorhandene Element mit dem Schlüssel zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Durch diese Funktion werden keine Iteratoren oder Verweise ungültig.
 
 Wird während des Einbaus eine Ausnahme ausgelöst, wird der Zustand des Containers nicht geändert.
 
-Der [value_type](#value_type) eines Elements wird paarweise angegeben, damit der Wert eines Elements ein geordnetes Paar ist, bei dem die erste Komponente und der Schlüsselwert sowie die zweite Komponente und der Datenwert des Elements jeweils identisch sind.
+Der [value_type](#value_type) eines Elements wird paarweise angegeben, sodass der Wert eines Elements ein geordnetes Paar ist, bei dem die erste Komponente gleich dem Schlüsselwert und die zweite Komponente gleich dem Datenwert des Elements ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -938,7 +938,7 @@ int main()
 }
 ```
 
-## <a name="empty"></a>leer
+## <a name="empty"></a><a name="empty"></a>leer
 
 Prüft, ob eine Zuordnung leer ist.
 
@@ -948,7 +948,7 @@ bool empty() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**TRUE**, wenn die Zuordnung leer ist; **FALSE**, wenn sie nicht leer ist.
+**`true`**, wenn die Zuordnung leer ist. , **`false`** Wenn die Zuordnung nicht leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -983,7 +983,7 @@ The map m1 is not empty.
 The map m2 is empty.
 ```
 
-## <a name="end"></a>Schließlich
+## <a name="end"></a><a name="end"></a>Schließlich
 
 Gibt den "past-the-end"-Iterator zurück.
 
@@ -997,15 +997,15 @@ iterator end();
 
 Der "past-the-end"-Iterator. Wenn die Zuordnung leer ist, dann gilt `map::end() == map::begin()`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`end` wird verwendet, um zu testen, ob ein Iterator das Ende seiner Karte überschritten hat.
+`end`wird verwendet, um zu testen, ob ein Iterator das Ende seiner Karte überschritten hat.
 
 Der von `end` zurückgegebene Wert darf nicht dereferenziert werden.
 
 Ein Codebeispiel finden Sie unter [map::find](#find).
 
-## <a name="equal_range"></a>equal_range
+## <a name="equal_range"></a><a name="equal_range"></a>equal_range
 
 Gibt ein Iteratorenpaar zurück,das sowohl das [lower_bound](#lower_bound) als auch das [upper_bound](#upper_bound) des Schlüssels repräsentiert.
 
@@ -1017,12 +1017,12 @@ pair <iterator, iterator> equal_range (const Key& key);
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*wichtigen*\
 Der Argumentschlüsselwert, der mit dem Sortierschlüssel eines Elements aus der zu durchsuchenden Zuordnung verglichen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Sie können auf den ersten Iterator eines von einer Memberfunktion zurückgegebenen Paars `pr` zugreifen, indem Sie `pr`. **first** verwenden, und Sie können einen lower_bound-Iterator dereferenzieren, indem Sie \*( `pr`. **first**) verwenden. Sie können auf den zweiten Iterator eines von einer Memberfunktion zurückgegebenen Paars `pr` zugreifen, indem Sie `pr`. **second** verwenden, und Sie können einen upper_bound-Iterator dereferenzieren, indem Sie \*( `pr`. **second**) verwenden.
+Sie können auf den ersten Iterator eines von einer Memberfunktion zurückgegebenen Paars `pr` zugreifen, indem Sie `pr`. **first**verwenden Sie zum Aufheben der Dereferenzierung des unteren gebundenen Iterators \* ( `pr` . **zuerst**). Sie können auf den zweiten Iterator eines von einer Memberfunktion zurückgegebenen Paars `pr` zugreifen, indem Sie `pr`. **Zweitens**: um den oberen gebundenen Iterator zu dereferenzieren, verwenden Sie \* ( `pr` . **Sekunde**).
 
 ### <a name="example"></a>Beispiel
 
@@ -1084,7 +1084,7 @@ matching the 2nd element of the pair returned by equal_range( 2 ).
 The map m1 doesn't have an element with a key less than 40.
 ```
 
-## <a name="erase"></a>Löschen
+## <a name="erase"></a><a name="erase"></a>Löschen
 
 Es wird ein Element oder ein Bereich von Elementen in einer Zuordnung von angegebenen Speicherorten entfernt oder es werden die einem angegebenen Schlüssel entsprechenden Elemente entfernt.
 
@@ -1102,16 +1102,16 @@ size_type erase(
 
 ### <a name="parameters"></a>Parameter
 
-*Where*\
+*Was*\
 Die Position des zu entfernenden Elements.
 
-*Erste*\
+*Erstes*\
 Die Position des ersten zu entfernenden Elements.
 
-*Letzter*\
+*Letzten*\
 Die Position direkt hinter dem letzten zu entfernenden Element.
 
-*Schlüssel*\
+*Wichtigen*\
 Der Schlüsselwert der zu entfernenden Elemente.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1200,7 +1200,7 @@ int main()
 }
 ```
 
-## <a name="find"></a>sich
+## <a name="find"></a><a name="find"></a>sich
 
 Gibt einen Iterator zurück, der auf den Speicherort eines Elements in einer Zuordnung verweist, der einen Schlüssel gleich einem angegebenen Schlüssel aufweist.
 
@@ -1212,18 +1212,18 @@ const_iterator find(const Key& key) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*wichtigen*\
 Der Schlüsselwert, der mit dem Sortierschlüssel eines Elements aus der zu durchsuchenden Zuordnung übereinstimmt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Iterator, der auf den Speicherort eines Elements mit einem angegebenen Schlüssel verweist, oder der Speicherort, der dem letzten Element in der Zuordnung (`map::end()`) nachfolgt, wenn keine Übereinstimmung für den Schlüssel gefunden wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen Iterator zurück, der auf ein Element in der Zuordnung verweist, dessen Sortierschlüssel dem Argumentschlüssel unter einem binären Prädikat entspricht, das eine Reihenfolge basierend auf der Beziehung „Less than comparability“ auslöst.
 
-Wenn der Rückgabewert von `find` einem `const_iterator` zugewiesen wird, kann das map-Objekt nicht geändert werden. Wenn der Rückgabewert von `find` einem `iterator`zugewiesen wird, kann das Map-Objekt geändert werden.
+Wenn der Rückgabewert von `find` einem `const_iterator` zugewiesen wird, kann das map-Objekt nicht geändert werden. Wenn der Rückgabewert von `find` einem zugewiesen wird `iterator` , kann das Map-Objekt geändert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1287,7 +1287,7 @@ int main()
 }
 ```
 
-## <a name="get_allocator"></a>get_allocator
+## <a name="get_allocator"></a><a name="get_allocator"></a>get_allocator
 
 Gibt eine Kopie des allocator-Objekts zurück, das zum Erstellen der Zuordnung verwendet wird.
 
@@ -1299,9 +1299,9 @@ allocator_type get_allocator() const;
 
 Die Zuweisung, die von der Zuordnung verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zuweisungen für die map-Klasse geben an, wie die Klasse einen Speicher verwaltet. Für die meisten Programmieranforderungen genügen die standardmäßigen Zuweisungen mit Containerklassen der C++-Standardbibliothek. Schreiben und Verwenden Ihrer eigener Zuweisungsklasse ist ein C++ -Thema für Fortgeschrittene.
+Zuweisungen für die map-Klasse geben an, wie die Klasse einen Speicher verwaltet. Für die meisten Programmieranforderungen reichen die Standard-Zuweisungen aus C++-Standardbibliothek-Containerklassen aus. Schreiben und Verwenden Ihrer eigener Zuweisungsklasse ist ein C++ -Thema für Fortgeschrittene.
 
 ### <a name="example"></a>Beispiel
 
@@ -1357,7 +1357,7 @@ int main( )
 }
 ```
 
-## <a name="insert"></a>setze
+## <a name="insert"></a><a name="insert"></a>setze
 
 Fügt ein Element oder einen Elementbereich in eine Zuordnung ein.
 
@@ -1397,42 +1397,42 @@ IList);
 
 ### <a name="parameters"></a>Parameter
 
-*Val* -\
+*Ster*\
 Der Wert eines in die Zuordnung einzufügenden Elements, es sei denn, es ist bereits ein Element enthalten, dessen Schlüssel gleichwertig sortiert wird.
 
-*Where*\
+*Was*\
 Die Position, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wird. (Wenn dieser Punkt unmittelbar vor *dem*Speicherort von liegt, kann die Einfügung in amortisierter konstanter Zeit anstelle der logarithmischen Zeit erfolgen.)
 
-*Valty* -\
+*Valty*\
 Ein Vorlagen Parameter, der den Argumenttyp angibt, der von der Zuordnung verwendet werden kann, um ein Element [value_type](#value_type)zu erstellen, und das *Val* perfekt als Argument weiterleitet.
 
-*Erste*\
+*Erstes*\
 Die Position des ersten zu kopierenden Elements.
 
-*Letzter*\
+*Letzten*\
 Die Position direkt über den letzten zu kopierenden Elements.
 
-*InputIterator* -\
+*InputIterator*\
 Das Vorlagenfunktionsargument, das den Anforderungen eines [Eingabeiterators](../standard-library/input-iterator-tag-struct.md) erfüllt, der auf Elemente eines Typs zeigt, der zum Erstellen von [value_type](#value_type)-Objekten verwendet werden kann.
 
-*IList* -\
-Das [initializer_list](../standard-library/initializer-list.md)-Element, aus dem die Elemente kopiert werden sollen.
+*IList*\
+Der [initializer_list](../standard-library/initializer-list.md) , aus dem die Elemente kopiert werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Einzelelement-Element Funktionen (1) und (2) geben ein [paar](../standard-library/pair-structure.md) zurück, dessen **boolesche** Komponente true ist, wenn eine Einfügung erfolgt ist, und false, wenn die Zuordnung bereits ein Element enthielt, dessen Schlüssel einen entsprechenden Wert in der Reihenfolge enthielt. Die iteratorkomponente des Rückgabewert Paars zeigt auf das neu eingefügte Element, wenn die **boolesche** Komponente true ist, oder auf das vorhandene Element, wenn die **boolesche** Komponente false ist.
+Die Einzelelement-Element Funktionen (1) und (2) geben ein [paar](../standard-library/pair-structure.md) zurück, dessen **`bool`** Komponente true ist, wenn eine Einfügung erfolgt ist, und false, wenn die Zuordnung bereits ein Element enthielt, dessen Schlüssel einen entsprechenden Wert in der Reihenfolge aufweist. Die iteratorkomponente des Rückgabewert Paars zeigt auf das neu eingefügte Element, wenn die **`bool`** Komponente "true" ist, oder auf das vorhandene Element, wenn die **`bool`** Komponente "false" ist.
 
 Die Einzelelement-Memberfunktionen mit Hinweis (3) und (4) geben einen Iterator zurück, der auf die Position zeigt, an der das neue Element in die Zuordnung eingefügt wurde, oder, falls ein Element mit einem entsprechenden Schlüssel bereits vorhanden ist, auf das vorhandene Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Durch diese Funktion werden keine Iteratoren, Zeiger oder Verweise ungültig.
 
 Wird beim Einfügen von nur einem Element eine Ausnahme ausgelöst, wird der Zustand des Containers nicht geändert. Wird beim Einfügen mehrerer Elementen eine Ausnahme ausgelöst, wird der Container in einem nicht angegebenen doch gültigen Zustand belassen.
 
-Um auf die iteratorkomponente einer `pair` `pr` zuzugreifen, die von den Elementen mit einem Element zurückgegeben wird, verwenden Sie `pr.first`; um den Iterator innerhalb des zurückgegebenen Paars zu dereferenzieren, verwenden Sie `*pr.first`, und geben Sie ein Element an. Um auf die **boolesche** Komponente zuzugreifen, verwenden Sie `pr.second`. Eine Beispiel finden Sie unter Beispielcode weiter unten in diesem Artikel.
+Um auf die Iteratorkomponente eines `pair` `pr`-Elements zuzugreifen, das von den Einzelelement-Memberfunktionen zurückgegeben wird, verwenden Sie `pr.first`. Um den Iterator im zurückgegebenen Paar zu dereferenzieren, verwenden Sie `*pr.first`. Damit erhalten Sie ein Element. Um auf die- **`bool`** Komponente zuzugreifen, verwenden Sie `pr.second` . Eine Beispiel finden Sie unter Beispielcode weiter unten in diesem Artikel.
 
-Das [value_type](#value_type)-Element eines Containers ist eine Typedef, die dem Container angehört; für die map ist `map<K, V>::value_type``pair<const K, V>`. Der Wert eines Elements ist ein sortiertes Paar, in dem die erste Komponente gleich dem Schlüsselwert und die zweite Komponente gleich dem Datenwert des Elements ist.
+Das [value_type](#value_type)-Element eines Containers ist eine Typedef, die dem Container angehört. Bei einer Zuordnung ist `map<K, V>::value_type``pair<const K, V>`. Der Wert eines Elements ist ein sortiertes Paar, in dem die erste Komponente gleich dem Schlüsselwert und die zweite Komponente gleich dem Datenwert des Elements ist.
 
 Die Bereichsmemberfunktion (5) fügt die Sequenz von Elementwerten in eine Zuordnung ein, die jedem Element entspricht, das von einem Iterator im Bereich `[First, Last)` adressiert wird. Daher wird `Last` nicht eingefügt. Die Containermemberfunktion `end()` bezieht sich auf die Position direkt hinter dem letzten Element im Container. Z. B versucht die Anweisung `m.insert(v.begin(), v.end());` alle Elemente von `v` in `m` einzufügen. Nur Elemente, die eindeutige Werte im Bereich aufweisen werden eingefügt. Duplikate werden ignoriert. Um zu betrachten welche Elemente abgelehnt werden, verwenden Sie die Einzelelementversionen von `insert`.
 
@@ -1538,7 +1538,7 @@ int main()
 }
 ```
 
-## <a name="iterator"></a>Iterator
+## <a name="iterator"></a><a name="iterator"></a>Iterator
 
 Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes Element in einer Zuordnung gelesen oder geändert werden kann.
 
@@ -1546,19 +1546,19 @@ Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes Element 
 typedef implementation-defined iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der durch Map definierte Iterator zeigt auf Elemente, bei denen es sich um Objekte [value_type](#value_type)handelt, die vom Typ `pair<const Key, Type>`sind, dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
+Der durch Map definierte Iterator zeigt auf Elemente, bei denen es sich um Objekte [value_type](#value_type)handelt, die vom Typ sind `pair<const Key, Type>` , dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
 
-Verwenden Sie den `->`-Operator, um einen *iteratorIter* zu dereferenzieren, der auf ein Element in einer Zuordnung zeigt.
+Verwenden Sie den-Operator, um einen *iteratorIter* zu dereferenzieren, der auf ein Element in einer Zuordnung zeigt `->` .
 
-Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `Iter->first`, das `(*Iter).first`entspricht. Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `Iter->second`, das `(*Iter).second`entspricht.
+Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `Iter->first` , das entspricht `(*Iter).first` . Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `Iter->second` , das entspricht `(*Iter).second` .
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für das Deklarieren und Verwenden von `iterator`finden Sie unter Beispiel für [Begin](#begin) .
+Im Beispiel für [Begin](#begin) finden Sie ein Beispiel für das Deklarieren und Verwenden von `iterator` .
 
-## <a name="key_comp"></a>key_comp
+## <a name="key_comp"></a><a name="key_comp"></a>key_comp
 
 Ruft eine Kopie des Vergleichsobjekts ab, das zum Sortieren der Schlüssel in einer Zuordnung verwendet wird.
 
@@ -1570,13 +1570,13 @@ key_compare key_comp() const;
 
 Gibt das Funktionsobjekt zurück, das eine Zuordnung zum Sortieren ihrer Elemente verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das gespeicherte Objekt definiert die Memberfunktion
 
 `bool operator(const Key& left, const Key& right);`
 
-die **TRUE** zurückgibt, wenn `left` vorangestellt ist und nicht gleich `right` in der Sortierreihenfolge ist.
+, der zurückgibt, **`true`** Wenn `left` vorausgeht und `right` in der Sortierreihenfolge nicht gleich ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -1629,25 +1629,25 @@ kc1( 2,3 ) returns value of true, where kc1 is the function object of m1.
 kc2( 2,3 ) returns value of false, where kc2 is the function object of m2.
 ```
 
-## <a name="key_compare"></a>key_compare
+## <a name="key_compare"></a><a name="key_compare"></a>key_compare
 
-Eine Typ, der ein Funktionsobjekt bereitstellt, das zwei Sortierschlüssel vergleichen kann, um die relative Position von zwei Elementen in der Zuordnung zu bestimmen.
+Eine Typ, der ein Funktionsobjekt bereitstellt, das zwei Sortierschlüssel vergleichen kann, um die relative Position von zwei Elementen in der hash_map zu bestimmen.
 
 ```cpp
 typedef Traits key_compare;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`key_compare` ist ein Synonym für die Vorlagen Parameter *Merkmale*.
+`key_compare`ist ein Synonym für die Vorlagen Parameter *Merkmale*.
 
 Weitere Informationen zu *Merkmalen* finden Sie im Thema [Map-Klasse](../standard-library/map-class.md) .
 
 ### <a name="example"></a>Beispiel
 
-Im Beispiel für [key_comp](#key_comp) wird verdeutlicht, wie ein `key_compare` deklariert und verwendet wird.
+Im Beispiel für [key_comp](#key_comp) wird verdeutlicht, wie `key_compare` deklariert und verwendet wird.
 
-## <a name="key_type"></a>key_type
+## <a name="key_type"></a><a name="key_type"></a>key_type
 
 Eine Typ, der den in jedem Element der Zuordnung gespeicherten Sortierschlüssel beschreibt.
 
@@ -1655,9 +1655,9 @@ Eine Typ, der den in jedem Element der Zuordnung gespeicherten Sortierschlüssel
 typedef Key key_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`key_type` ist ein Synonym für den Vorlagen Parameter *Schlüssel*.
+`key_type`ist ein Synonym für den Vorlagen Parameter *Schlüssel*.
 
 Weitere Informationen zu *Key*finden Sie im Abschnitt "Hinweise" des Themas [map Class](../standard-library/map-class.md) .
 
@@ -1665,7 +1665,7 @@ Weitere Informationen zu *Key*finden Sie im Abschnitt "Hinweise" des Themas [map
 
 Im Beispiel für [value_type](#value_type) wird verdeutlicht, wie ein `key_type` deklariert und verwendet wird.
 
-## <a name="lower_bound"></a>lower_bound
+## <a name="lower_bound"></a><a name="lower_bound"></a>lower_bound
 
 Gibt einen Iterator zum ersten Element in einer Zuordnung mit einem Schlüsselwert zurück, der gleich oder größer ist, als ein angegebener Schlüssel.
 
@@ -1677,14 +1677,14 @@ const_iterator lower_bound(const Key& key) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*wichtigen*\
 Der Argumentschlüsselwert, der mit dem Sortierschlüssel eines Elements aus der zu durchsuchenden Zuordnung verglichen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `iterator` oder `const_iterator`, der den Speicherort eines Elements in einer Zuordnung adressiert, der einen Schlüssel hat, der gleich oder größer als der Argument Schlüssel ist, oder der den Speicherort adressiert, der dem letzten Element in der Zuordnung nachfolgt, wenn keine Übereinstimmung für den Schlüssel gefunden wird.
+Ein `iterator` oder ein `const_iterator` , der den Speicherort eines Elements in einer Zuordnung mit einem Schlüssel adressiert, der gleich oder größer als der Argument Schlüssel ist, oder der den Speicherort adressiert, der dem letzten Element in der Zuordnung nachfolgt, wenn keine Übereinstimmung für den Schlüssel gefunden wird.
 
-Wenn der Rückgabewert von `lower_bound` einem `const_iterator` zugewiesen wird, kann das map-Objekt nicht geändert werden. Wenn der Rückgabewert von `lower_bound` einem `iterator`zugewiesen wird, kann das Map-Objekt geändert werden.
+Wenn der Rückgabewert von `lower_bound` einem `const_iterator` zugewiesen wird, kann das map-Objekt nicht geändert werden. Wenn der Rückgabewert von `lower_bound` einem zugewiesen wird `iterator` , kann das Map-Objekt geändert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1736,7 +1736,7 @@ The map m1 doesn't have an element with a key of 4.
 The element of m1 with a key matching that of the last element is: 30.
 ```
 
-## <a name="map"></a>bilden
+## <a name="map"></a><a name="map"></a>bilden
 
 Erstellt eine Zuordnung, die leer oder die Kopie einer vollständigen anderen Zuordnung oder eines Teils davon ist.
 
@@ -1789,25 +1789,25 @@ map(
 
 ### <a name="parameters"></a>Parameter
 
-*Al* -\
+*Irdische*\
 Die für dieses Zuordnungsobjekt zu verwendende Speicherzuweisungsklasse, dessen Standard `Allocator` ist.
 
-*Comp*\
+*Zuschreiben*\
 Die Vergleichsfunktion vom Typ `const Traits`, die verwendet wird, um die Elemente in der Zuordnung zu sortieren, deren Standard `hash_compare` ist.
 
-*Rechte*\
+*Richting*\
 Die Zuordnung, deren Kopie der erstellte Satz sein soll.
 
-*Erste*\
+*Erstes*\
 Die Position des ersten Elements in dem zu kopierenden Elementbereich.
 
-*Letzter*\
+*Letzten*\
 Die Position des ersten Elements nach dem zu kopierenden Elementbereich.
 
-*IList* -\
+*IList*\
 Das initializer_list-Element, von dem die Elemente kopiert werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In allen Konstruktoren wird ein Zuweisungsobjekttyp gespeichert, mit dem der Arbeitsspeicher für die Zuordnung verwaltet wird, und das später zurückgegeben werden kann, indem [get_allocator](#get_allocator) aufgerufen wird. Der Zuweisungsparameter wird häufig aus den Klassendeklarationen und den Vorverarbeitungsmakros weggelassen, die zum Ersetzen alternativer Zuweisungen verwendet werden.
 
@@ -1815,7 +1815,7 @@ Alle Konstruktoren initialisieren die Zuordnung.
 
 In allen Konstruktoren wird ein Funktionsobjekt vom Typ „Traits“ gespeichert, das verwendet wird, um unter den Schlüsseln der Zuordnung eine Sortierung vorzunehmen, und das später zurückgegeben werden kann, indem [key_comp](#key_comp) aufgerufen wird.
 
-Die ersten drei Konstruktoren geben eine leere ursprüngliche Zuordnung an, wobei die zweite den Typ der Vergleichsfunktion (*Comp*) angibt, die zum Festlegen der Reihenfolge der Elemente verwendet werden soll, und der dritte explizit den zu verwendenden zuordnertyp (*Al*) angibt. Das **Schlüsselwort unterdrückt bestimmte** Arten automatischer Typkonvertierung.
+Die ersten drei Konstruktoren geben eine leere ursprüngliche Zuordnung an, wobei die zweite den Typ der Vergleichsfunktion (*Comp*) angibt, die zum Festlegen der Reihenfolge der Elemente verwendet werden soll, und der dritte explizit den zu verwendenden zuordnertyp (*Al*) angibt. Mit dem Schlüsselwort werden **`explicit`** bestimmte Arten automatischer Typkonvertierung unterdrückt.
 
 Der vierte Konstruktor gibt eine Kopie der Zuordnungs *rechten*an.
 
@@ -1941,7 +1941,7 @@ int main()
 }
 ```
 
-## <a name="mapped_type"></a>mapped_type
+## <a name="mapped_type"></a><a name="mapped_type"></a>mapped_type
 
 Ein Typ, der die in einer Zuordnung gespeicherten Daten darstellt.
 
@@ -1949,7 +1949,7 @@ Ein Typ, der die in einer Zuordnung gespeicherten Daten darstellt.
 typedef Type mapped_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ `mapped_type` ist ein Synonym für den *typvorlagen* Parameter der Klasse.
 
@@ -1959,7 +1959,7 @@ Weitere Informationen zum *Typ* finden Sie im Thema [map Class](../standard-libr
 
 Im Beispiel für [value_type](#value_type) wird verdeutlicht, wie ein `mapped_type` deklariert und verwendet wird.
 
-## <a name="max_size"></a>max_size
+## <a name="max_size"></a><a name="max_size"></a>max_size
 
 Gibt die Maximallänge der Zuordnung zurück.
 
@@ -1992,7 +1992,7 @@ int main( )
 }
 ```
 
-## <a name="op_at"></a>[]-Operator
+## <a name="operator"></a><a name="op_at"></a>[]-Operator
 
 Fügt ein Element in eine Zuordnung mit einem angegebenen Schlüsselwert ein.
 
@@ -2004,18 +2004,18 @@ Type& operator[](Key&& key);
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*wichtigen*\
 Der Schlüsselwert des einzufügenden Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Verweis auf den Datenwert des eingefügten Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der Argumentschlüsselwert nicht gefunden wird, wird er zusammen mit dem Standardwert des Datentyps eingefügt.
 
-`operator[]` können zum Einfügen von Elementen in eine Zuordnung `m` mithilfe von `m[key] = DataValue;` verwendet werden, wobei `DataValue` der Wert des `mapped_type` des Elements mit dem Schlüsselwert *Key*ist.
+`operator[]`kann zum Einfügen von Elementen in eine Zuordnung verwendet werden, wobei `m` `m[key] = DataValue;` `DataValue` der Wert des `mapped_type` des Elements mit einem Schlüsselwert *Key*ist.
 
 Wenn `operator[]` zum Einfügen von Elementen verwendet wird, gibt der zurückgegebene Verweis nicht an, ob eine Einfügung ein bereits vorhandenes Element ändert oder ein neues erstellt. Die Memberfunktionen [find](#find) und [insert](#insert) können verwendet werden, um zu bestimmen, ob ein Element mit einem bestimmten Schlüssel vor einer Einfügung bereits vorhanden ist.
 
@@ -2090,7 +2090,7 @@ c2[move(str)] == 0
 c2["abc"] == 1
 ```
 
-## <a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a>Operator =
 
 Ersetzt die Elemente einer Zuordnung durch einer Kopie einer anderen Zuordnung.
 
@@ -2101,12 +2101,12 @@ map& operator=(map&& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte*\
+*Richting*\
 Die [Zuordnung](../standard-library/map-class.md), die in die `map` kopiert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem alle vorhandenen Elemente in einem `map`gelöscht wurden, `operator=` entweder kopiert oder verschiebt den Inhalt von *right* in die Karte.
+Nachdem alle vorhandenen Elemente in einem gelöscht `map` wurden, `operator=` kopiert oder verschiebt den Inhalt von *right* in die Karte.
 
 ### <a name="example"></a>Beispiel
 
@@ -2145,7 +2145,7 @@ int main( )
    }
 ```
 
-## <a name="pointer"></a>Zeichner
+## <a name="pointer"></a><a name="pointer"></a>-Zeiger
 
 Ein Typ, der einen Zeiger auf ein Element in einer Zuordnung bereitstellt.
 
@@ -2153,13 +2153,13 @@ Ein Typ, der einen Zeiger auf ein Element in einer Zuordnung bereitstellt.
 typedef typename allocator_type::pointer pointer;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Type-`pointer` kann verwendet werden, um den Wert eines Elements zu ändern.
+Ein-Typ `pointer` kann zum Ändern des Werts eines Elements verwendet werden.
 
 In den meisten Fällen sollte ein [Iterator](#iterator) für den Zugriff auf Elemente in einem map-Objekt verwendet werden.
 
-## <a name="rbegin"></a>rbegin
+## <a name="rbegin"></a><a name="rbegin"></a>rbegin
 
 Gibt einen Iterator zurück, der das erste Element in einer umgekehrten Zuordnung adressiert.
 
@@ -2173,7 +2173,7 @@ reverse_iterator rbegin();
 
 Ein umgekehrter bidirektionaler Iterator, der auf das erste Element in einer umgekehrten map oder auf das letzte Element der vormals nicht umgekehrten map verweist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `rbegin` wird bei einer umgekehrten Zuordnung auf die gleiche Weise verwendet, wie [begin](#begin) bei einer Zuordnung verwendet wird.
 
@@ -2239,7 +2239,7 @@ The reversed map is: 3 2 1 .
 After the erasure, the first element in the reversed map is 2.
 ```
 
-## <a name="reference"></a>Angabe
+## <a name="reference"></a><a name="reference"></a>Angabe
 
 Ein Typ, der einen Verweis auf ein in einer Zuordnung gespeichertes Element bereitstellt.
 
@@ -2296,7 +2296,7 @@ The data value of first element in the map is 10.
 The modified data value of first element is 15.
 ```
 
-## <a name="rend"></a>rend
+## <a name="rend"></a><a name="rend"></a>rend
 
 Gibt einen Iterator zurück, der den Speicherort adressiert, der auf das letzte Element einer umgekehrten Zuordnung folgt.
 
@@ -2310,7 +2310,7 @@ reverse_iterator rend();
 
 Ein umgekehrter bidirektionaler Iterator, der den Standort anspricht, der dem letzten Element in einer umgekehrten Zuordnung nachfolgt (der Speicherort, der dem ersten Element in der nicht umgekehrten Zuordnung vorangegangen war).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `rend` wird bei einer umgekehrten Zuordnung auf die gleiche Weise verwendet, wie [end](#end) bei einer Zuordnung verwendet wird.
 
@@ -2380,7 +2380,7 @@ The reversed map is: 3 2 1 .
 After the erasure, the last element in the reversed map is 2.
 ```
 
-## <a name="reverse_iterator"></a>reverse_iterator
+## <a name="reverse_iterator"></a><a name="reverse_iterator"></a>reverse_iterator
 
 Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein Element in einer umgekehrten Zuordnung gelesen oder geändert werden kann.
 
@@ -2388,21 +2388,21 @@ Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein Element in
 typedef std::reverse_iterator<iterator> reverse_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein `reverse_iterator`-Typ kann nicht den Wert eines Elements ändern und wird verwendet, um die Zuordnung in umgekehrter Reihenfolge zu durchlaufen.
 
-Der von Map definierte `reverse_iterator` verweist auf Elemente, die Objekte [value_type](#value_type)sind, die vom Typ `pair<const Key, Type>`sind, dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
+Der, der `reverse_iterator` von Map definiert wird, zeigt auf Elemente, bei denen es sich um Objekte [value_type](#value_type)handelt, die vom Typ sind `pair<const Key, Type>` , dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
 
-Um einen `reverse_iterator` *Riter* zu dereferenzieren, der auf ein Element in einer Zuordnung zeigt, verwenden Sie den `->`-Operator.
+Um einen `reverse_iterator` *Riter* zu dereferenzieren, der auf ein Element in einer Zuordnung zeigt, verwenden Sie den- `->` Operator.
 
-Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `rIter` -> **First**, das (\* `rIter`) entspricht. **first** entspricht, um auf den Wert des zugeordneten Datums für das Element zuzugreifen. Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `rIter` -> **Sekunde**, das (\* `rIter`) entspricht. **first** entspricht, um auf den Wert des zugeordneten Datums für das Element zuzugreifen.
+Verwenden Sie `rIter` -> **first**, das (\* `rIter`). **zuerst**. Verwenden Sie `rIter` -> **second**, das (\* `rIter`). **zuerst**.
 
 ### <a name="example"></a>Beispiel
 
-Im Beispiel für [rbegin](#rbegin) wird verdeutlicht, wie `reverse_iterator` deklariert und verwendet wird.
+Im Beispiel für [rbegin](#rbegin) wird verdeutlicht, wie ein `reverse_iterator` deklariert und verwendet wird.
 
-## <a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a>Größe
 
 Gibt die Anzahl von Elementen in der Zuordnung zurück.
 
@@ -2446,7 +2446,7 @@ The map length is 1.
 The map length is now 2.
 ```
 
-## <a name="size_type"></a>size_type
+## <a name="size_type"></a><a name="size_type"></a>size_type
 
 Ein Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in einer Zuordnung darstellen kann.
 
@@ -2456,9 +2456,9 @@ typedef typename allocator_type::size_type size_type;
 
 ### <a name="example"></a>Beispiel
 
-Im Beispiel für [size](#size) wird verdeutlicht, wie `size_type` deklariert und verwendet wird.
+Im Beispiel für [size](#size) wird verdeutlicht, wie ein `size_type` deklariert und verwendet wird.
 
-## <a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
 Tauscht die Elemente zweier Zuordnungen aus.
 
@@ -2469,10 +2469,10 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte*\
+*Richting*\
 Das map-Argument, das die Elemente bereitstellt, mit denen die Zielzuordnung getauscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion macht keine Verweise, Zeiger oder Iteratoren ungültig, die Elemente in den zwei Zuordnungen bezeichnen, deren Elemente ausgetauscht werden sollen.
 
@@ -2528,7 +2528,7 @@ After swapping with m2, map m1 is: 100 200.
 After swapping with m3, map m1 is: 300.
 ```
 
-## <a name="upper_bound"></a>upper_bound
+## <a name="upper_bound"></a><a name="upper_bound"></a>upper_bound
 
 Gibt einen Iterator zum ersten Element in einer Zuordnung mit einem Schlüsselwert zurück, der größer ist als ein angegebener Schlüssel.
 
@@ -2540,14 +2540,14 @@ const_iterator upper_bound(const Key& key) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*wichtigen*\
 Der Argumentschlüsselwert, der mit dem Sortierschlüsselwert eines Elements aus der zu durchsuchenden Zuordnung verglichen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `iterator` oder `const_iterator`, der den Speicherort eines Elements in einer Zuordnung adressiert, der einen Schlüssel hat, der größer als der Argument Schlüssel ist, oder der den Speicherort adressiert, der dem letzten Element in der Zuordnung nachfolgt, wenn keine Entsprechung für den Schlüssel gefunden wird.
+Ein `iterator` oder ein `const_iterator` , der den Speicherort eines Elements in einer Zuordnung mit einem Schlüssel adressiert, der größer ist als der Argument Schlüssel, oder der den Speicherort adressiert, der dem letzten Element in der Zuordnung nachfolgt, wenn keine Entsprechung für den Schlüssel gefunden wird.
 
-Wenn der Rückgabewert einem `const_iterator` zugewiesen wird, kann das map-Objekt nicht geändert werden. Wenn der Rückgabewert einem `iterator`zugewiesen wird, kann das Map-Objekt geändert werden.
+Wenn der Rückgabewert einem `const_iterator` zugewiesen wird, kann das map-Objekt nicht geändert werden. Wenn der Rückgabewert einem zugewiesen wird `iterator` , kann das Map-Objekt geändert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2600,7 +2600,7 @@ The 1st element of m1 with a key greater than
 that of the initial element of m1 is: 20.
 ```
 
-## <a name="value_comp"></a>value_comp
+## <a name="value_comp"></a><a name="value_comp"></a>value_comp
 
 Die Memberfunktion gibt ein Funktionsobjekt zurück, das die Reihenfolge der Elemente in einer Zuordnung bestimmt, indem ihre Schlüsselwerte verglichen werden.
 
@@ -2612,13 +2612,13 @@ value_compare value_comp() const;
 
 Gibt das Vergleichsfunktionsobjekt zurück, das ein map-Element zum Sortieren seiner Elemente verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn für eine Karte *m*die zwei Elemente *E1*(*K1*, *D1*) und *E2*(*K2*, *D2*) Objekte vom Typ `value_type`sind, wobei *K1* und *K1* Ihre Schlüssel vom Typ sind `key_type` und *D1* und *D2* Ihre Daten vom Typ `mapped_type`sind, entspricht `m.value_comp(e1, e2)` `m.key_comp(k1, k2)`. Ein gespeichertes Objekt definiert die Memberfunktion
+Wenn die beiden Elemente *E1*(*K1*, *D1*) und *E2*(*K2*, *D2*) für eine Karte *m*ein Objekt vom Typ sind `value_type` , wobei *K1* und *K1* Ihre Schlüssel vom Typ sind `key_type` und *D1* und *D2* Ihre Daten vom Typ sind `mapped_type` , `m.value_comp(e1, e2)` entspricht `m.key_comp(k1, k2)` . Ein gespeicherte Objekt definiert die Memberfunktion
 
 `bool operator( value_type& left, value_type& right);`
 
-die **TRUE** zurückgibt, wenn der Schlüsselwert von `left` vorangestellt ist und nicht dem Schlüsselwert von `right` in der Sortierreihenfolge entspricht.
+, der zurückgibt, **`true`** Wenn der Schlüsselwert von `left` vor und nicht gleich dem Schlüsselwert von `right` in der Sortierreihenfolge ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -2668,7 +2668,7 @@ The element ( 1,10 ) precedes the element ( 2,5 ).
 The element ( 2,5 ) does not precede the element ( 1,10 ).
 ```
 
-## <a name="value_type"></a>value_type
+## <a name="value_type"></a><a name="value_type"></a>value_type
 
 Der Typ des Objekts, der als Element in einer Zuordnung gespeichert wird.
 
@@ -2730,6 +2730,6 @@ int main( )
 
 ## <a name="see-also"></a>Siehe auch
 
-[Containers (Container)](../cpp/containers-modern-cpp.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)
+[Schütt](../cpp/containers-modern-cpp.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

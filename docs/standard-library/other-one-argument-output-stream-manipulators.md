@@ -4,16 +4,16 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - output streams, one-argument manipulators
 ms.assetid: e381dee8-6b16-4cef-805a-4a6a1d2b696b
-ms.openlocfilehash: c9e9e7531733ac40022b477980297c80ac488221
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 8fe30a0df70d84f7a8a9eafcdf22439cbe321043
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68453447"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224642"
 ---
 # <a name="other-one-argument-output-stream-manipulators"></a>Andere Ausgabestreammanipulatoren mit einem Argument
 
-Im folgenden Beispiel wird eine- `money`Klasse verwendet, bei der es sich um einen **langen** Typ handelt. Der `setpic`-Manipulator fügt eine „Bild“-Formatierungszeichenfolge zur Klasse hinzu, die vom überladenen Operator zum Einfügen des Datenstroms der Klasse `money` verwendet werden kann. Die Bildzeichenfolge wird als statische Variable in der `money`-Klasse und nicht als Datenmember einer Streamklasse gespeichert, sodass Sie keine neue Ausgabestreamklasse ableiten müssen.
+Im folgenden Beispiel wird eine-Klasse verwendet `money` , die ein- **`long`** Typ ist. Der `setpic`-Manipulator fügt eine „Bild“-Formatierungszeichenfolge zur Klasse hinzu, die vom überladenen Operator zum Einfügen des Datenstroms der Klasse `money` verwendet werden kann. Die Bildzeichenfolge wird als statische Variable in der `money`-Klasse und nicht als Datenmember einer Streamklasse gespeichert, sodass Sie keine neue Ausgabestreamklasse ableiten müssen.
 
 ## <a name="example"></a>Beispiel
 

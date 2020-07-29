@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2632
 ms.assetid: b15a6b1b-42d2-4e1b-8660-e6bfde61052d
-ms.openlocfilehash: f69d43bf50f5f13957e49d1e9ffa798a3db5a7b3
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 8ea3a106e8819bf067203f220ca51e17b87bfe46
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74754692"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87225461"
 ---
 # <a name="compiler-error-c2632"></a>Compilerfehler C2632
 
@@ -26,7 +26,7 @@ Im folgenden Beispiel wird C2632 generiert:
 int float i;   // C2632
 ```
 
-Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio .NET 2003 durchgeführt wurde. `bool` ist nun ein geeigneter Typ. In früheren Versionen war `bool` eine typedef, und Sie konnten Bezeichner mit diesem Namen erstellen.
+Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio .NET 2003 durchgeführt wurde. **`bool`** ist nun ein geeigneter Typ. In früheren Versionen **`bool`** war eine typedef, und Sie konnten Bezeichner mit diesem Namen erstellen.
 
 Im folgenden Beispiel wird C2632 generiert:
 
@@ -36,4 +36,4 @@ Im folgenden Beispiel wird C2632 generiert:
 void f(int bool);   // C2632
 ```
 
-Benennen Sie den Bezeichner um, damit der Code in den Visual Studio .NET 2003-und Visual Studio .NET-Versionen von C++Visual Studio gültig ist.
+Um diesen Fehler zu beheben, sodass der Code sowohl in der Visual Studio .NET 2003-als auch in der Visual Studio .NET-Version von Visual C++ gültig ist, benennen Sie den Bezeichner um.
