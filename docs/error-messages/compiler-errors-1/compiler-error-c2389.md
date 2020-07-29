@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2389
 ms.assetid: 6122dc81-4ee3-49a5-a67d-d867808c9bac
-ms.openlocfilehash: 587a1fcdb5f8d4fbb922b8896cab27a351e0584a
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 50fa514222b7f51ea28ffdb87bf09a870b80dff7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74745082"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216244"
 ---
 # <a name="compiler-error-c2389"></a>Compilerfehler C2389
 
 'Operator': Ungültiger nullptr-Operand.
 
-`nullptr` kann ein Operand sein.
+**`nullptr`** darf kein Operand sein.
 
 Im folgenden Beispiel wird C2389 generiert:
 

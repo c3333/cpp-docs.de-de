@@ -1,17 +1,17 @@
 ---
-title: Willkommen zurück bei C++-modern C++
+title: Willkommen zurück bei C++ (Modern C++)
 description: Beschreibt die neuen Programmier Ausdrücke in modernen C++ und deren Begründung.
 ms.date: 05/17/2020
 ms.topic: conceptual
 ms.assetid: 1cb1b849-ed9c-4721-a972-fd8f3dab42e2
-ms.openlocfilehash: 76ac17e71368cdeee669b98505778838ef0dfee7
-ms.sourcegitcommit: d4da3693f83a24f840e320e35c24a4a07cae68e2
+ms.openlocfilehash: f2b9159e74ba7ce37c7eab1513826da939a3be49
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550796"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232195"
 ---
-# <a name="welcome-back-to-c---modern-c"></a>Willkommen zurück bei C++-modern C++
+# <a name="welcome-back-to-c---modern-c"></a>Willkommen zurück bei C++ (Modern C++)
 
 Seit seiner Erstellung ist C++ zu einer der am häufigsten verwendeten Programmiersprachen in der Welt geworden. Gut geschriebene C++-Programme sind schnell und effizient. Die Sprache ist flexibler als andere Sprachen: Sie kann auf der höchsten Abstraktions Ebene und auf der Ebene des Silicon verwendet werden. C++ bietet hochgradig optimierte Standardbibliotheken. Sie ermöglicht den Zugriff auf Low-Level-Hardware Features, um die Geschwindigkeit zu maximieren und Arbeitsspeicher Anforderungen zu minimieren Mit C++ können Sie eine große Bandbreite von apps erstellen. Spiele, Gerätetreiber und leistungsstarke wissenschaftliche Software. Eingebettete Programme. Windows-Client-apps. Auch Bibliotheken und Compiler für andere Programmiersprachen werden in C++ geschrieben.
 
@@ -115,7 +115,7 @@ auto i = m.begin(); // modern C++
 
 ## <a name="range-based-for-loops"></a>Bereichs basierte `for` Schleifen
 
-Die Iterationen im C-Stil für Arrays und Container sind anfällig für das Indizieren von Fehlern und auch mühsam. Um diese Fehler zu vermeiden und den Code lesbarer zu machen, verwenden Sie Bereichs basierte `for` Schleifen mit Standard Bibliotheks Containern und unformatierten Arrays. Weitere Informationen finden Sie unter [Bereichs basierte `for` Anweisung](../cpp/range-based-for-statement-cpp.md).
+Die Iterationen im C-Stil für Arrays und Container sind anfällig für das Indizieren von Fehlern und auch mühsam. Um diese Fehler zu vermeiden und den Code lesbarer zu machen, verwenden Sie Bereichs basierte **`for`** Schleifen mit Standard Bibliotheks Containern und unformatierten Arrays. Weitere Informationen finden Sie unter [Bereichs basierte `for` Anweisung](../cpp/range-based-for-statement-cpp.md).
 
 ```cpp
 #include <iostream>
@@ -200,7 +200,7 @@ Bei der Programmierung im C-Stil kann eine Funktion mithilfe eines *Funktions Ze
     auto result = find_if(begin(v), end(v), [=](int i) { return i > x && i < y; });
 ```
 
-Der Lambda `[=](int i) { return i > x && i < y; }` -Ausdruck kann als "Funktion gelesen werden, die ein einzelnes Argument vom Typ annimmt `int` und einen booleschen Wert zurückgibt, der angibt, ob das Argument größer als `x` und kleiner als ist `y` ." Beachten Sie, dass die Variablen `x` und `y` aus dem umgebenden Kontext im Lambda-Ausdruck verwendet werden können. Der `[=]` gibt an, dass diese Variablen nach Wert *aufgezeichnet* werden, d. h., der Lambda Ausdruck hat seine eigenen Kopien dieser Werte.
+Der Lambda `[=](int i) { return i > x && i < y; }` -Ausdruck kann als "Funktion gelesen werden, die ein einzelnes Argument vom Typ annimmt **`int`** und einen booleschen Wert zurückgibt, der angibt, ob das Argument größer als `x` und kleiner als ist `y` ." Beachten Sie, dass die Variablen `x` und `y` aus dem umgebenden Kontext im Lambda-Ausdruck verwendet werden können. Der `[=]` gibt an, dass diese Variablen nach Wert *aufgezeichnet* werden, d. h., der Lambda Ausdruck hat seine eigenen Kopien dieser Werte.
 
 ## <a name="exceptions"></a>Ausnahmen
 
@@ -214,9 +214,9 @@ Verwenden Sie die Struktur der C++-Standard Bibliothek [`std::atomic`](../standa
 
 Unions werden häufig bei der Programmierung im C-Stil verwendet, um Speicherplatz zu sparen, indem die Mitglieder verschiedener Typen die gleiche Speicheradresse belegen können. Allerdings sind Unions nicht typsicher und anfällig für Programmierfehler. C++ 17 stellt die [`std::variant`](../standard-library/variant-class.md) -Klasse als stabilere und sicherere Alternative zu Unions dar. Die- [`std::visit`](../standard-library/variant-functions.md#visit) Funktion kann verwendet werden, um auf typsichere Weise auf die Member eines `variant` Typs zuzugreifen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[C++-Sprachreferenz](../cpp/cpp-language-reference.md)\
+[C++ Language Reference (C++-Programmiersprachenreferenz)](../cpp/cpp-language-reference.md)\
 [Lambda-Ausdrücke](../cpp/lambda-expressions-in-cpp.md)\
-[C++-Standard Bibliothek](../standard-library/cpp-standard-library-reference.md)\
+[C++-Standardbibliothek](../standard-library/cpp-standard-library-reference.md)\
 [Microsoft C++-Sprachkonformität: Tabelle](../overview/visual-cpp-language-conformance.md)

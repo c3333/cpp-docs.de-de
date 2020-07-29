@@ -5,18 +5,18 @@ helpviewer_keywords:
 - __FUnloadDelayLoadedDLL2
 - delayed loading of DLLs, unloading
 ms.assetid: 6463bc71-020e-4aff-a4ca-90360411c54e
-ms.openlocfilehash: 284a9cb9268c8c794379c6a5468b0f2b9092b7d0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1895bf12cb195ef7b4555d400badf112d377547b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62317457"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211917"
 ---
 # <a name="unloading-a-delay-loaded-dll"></a>Entladen einer verzögert geladenen DLL
 
-Die Hilfsfunktion für standardmäßig bereitgestellten verzögertes Laden überprüft, um festzustellen, ob die Deskriptoren für verzögertes Laden in das Feld Name einen Zeiger und eine Kopie der ursprünglichen Importadresstabelle (IAT) zu erhalten. Wenn dies der Fall ist, speichert es einen Zeiger in einer Liste auf den Import verzögert-Deskriptor. Dadurch wird die Hilfsfunktion zum Suchen von der DLL nach Namen an die DLL explizit entladen zu unterstützen.
+Das standardmäßig bereitgestellte Hilfsprogramm für verzögertes Laden prüft, ob die Deskriptoren für verzögertes Laden über einen Zeiger und eine Kopie der ursprünglichen Import Adress Tabelle (IAT) im Feld pUnloadIAT verfügen. Wenn dies der Fall ist, wird ein Zeiger in einer Liste in den Deskriptor für die Import Verzögerung gespeichert. Dies ermöglicht der Hilfsfunktion, die DLL anhand des Namens zu finden, um das explizite Entladen der dll zu unterstützen.
 
-Hier sind die zugehörigen Strukturen und Funktionen für Explizites Entladen einer verzögert geladenen DLL:
+Im folgenden sind die zugeordneten Strukturen und Funktionen zum expliziten Entladen einer verzögert geladenen DLL aufgeführt:
 
 ```cpp
 //
@@ -43,11 +43,11 @@ ExternC
 PUnloadInfo __puiHead;
 ```
 
-Die-Implementierung für-Struktur wird implementiert, die Verwendung einer C++-Klasse, die verwendet **LocalAlloc** und **LocalFree** Implementierungen wie der Operator **neue** and -Operator  **Löschen Sie** bzw. Diese Optionen werden in einer standardmäßigen verknüpfte Liste, die mithilfe von __puiHead als der Anfang der Liste beibehalten.
+Die UnloadInfo-Struktur wird mit einer C++-Klasse implementiert, die **localzuc** -und **LocalFree** -Implementierungen als Operator **`new`** und Operator verwendet **`delete`** . Diese Optionen werden in einer Standard verknüpften Liste gespeichert, wobei __puiHead als Anfang der Liste verwendet wird.
 
-Aufruf __FUnloadDelayLoadedDLL versucht, den Namen finden Sie in der Liste der geladenen DLLs (eine genaue Übereinstimmung erforderlich ist) bereitstellen. Wenn gefunden, die Kopie der IAT im Name kopiert wird oberhalb der ausgeführten IAT Thunk Zeiger wiederherstellen, wird die Bibliothek mit freigegeben **FreeLibrary**, den entsprechenden **-Implementierung für** Datensatz aus aufgehoben wird die Liste und gelöscht, und "true" zurückgegeben.
+Wenn Sie __FUnloadDelayLoadedDLL aufrufen, wird versucht, den von Ihnen bereitgestellten Namen in der Liste der geladenen DLLs zu finden (eine genaue Entsprechung ist erforderlich). Wenn Sie gefunden wird, wird die Kopie von IAT in pUnloadIAT über den oberen Rand des ausgefallenen IAT kopiert, um die Thunk-Zeiger wiederherzustellen, die Bibliothek wird mit **FreeLibrary**freigegeben, die Verknüpfung des entsprechenden **UnloadInfo** -Datensatzes in der Liste wird aufgehoben, und true wird zurückgegeben.
 
-Das Argument von __FUnloadDelayLoadedDLL2 ist Groß-/Kleinschreibung beachtet. Beispielsweise würden Sie Folgendes angeben:
+Beim Argument für die Funktion __FUnloadDelayLoadedDLL2 wird die Groß-/Kleinschreibung beachtet. Beispielsweise würden Sie Folgendes angeben:
 
 ```cpp
 __FUnloadDelayLoadedDLL2("user32.DLL");
@@ -59,6 +59,6 @@ und nicht:
 __FUnloadDelayLoadedDLL2("User32.DLL");.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Die Hilfsfunktion](understanding-the-helper-function.md)
+[Grundlegendes zur Hilfsfunktion](understanding-the-helper-function.md)

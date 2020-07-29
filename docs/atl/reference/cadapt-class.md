@@ -12,12 +12,12 @@ helpviewer_keywords:
 - '& operator, address-of operator'
 - CAdapt class
 ms.assetid: 0bb695a5-72fe-43d1-8f39-7e4da6e34765
-ms.openlocfilehash: 1bae98663b8dc2b09efeff9139e8d028abcd862e
-ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
+ms.openlocfilehash: 2ea8fc8a26642abf593c7f4df3928ff90e66e2b3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82168827"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229999"
 ---
 # <a name="cadapt-class"></a>CAdapt-Klasse
 
@@ -39,7 +39,7 @@ Der angepasste Typ.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAdapt:: CAdapt](#cadapt)|Der Konstruktor.|
 
@@ -47,7 +47,7 @@ Der angepasste Typ.
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAdapt:: Operator Konstanten T-&](#operator_const_t_amp)|Gibt einen **Konstanten** Verweis auf `m_T`zurück.|
+|[CAdapt:: Operator Konstanten T-&](#operator_const_t_amp)|Gibt einen **`const`** Verweis auf zurück `m_T` .|
 |[CAdapt:: Operator T-&](#operator_t_amp)|Gibt einen Verweis auf `m_T`zurück.|
 |[CAdapt:: Operator-<](#operator_lt)|Vergleicht ein Objekt des angepassten Typs mit `m_T`.|
 |[CAdapt:: Operator =](#operator_eq)|Weist `m_T` ein Objekt des angepassten Typs zu.|
@@ -61,15 +61,15 @@ Der angepasste Typ.
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CAdapt` ist eine einfache Vorlage. Sie dient dazu, Klassen zu umschließen, die den Adressoperator (`operator &`) so umdefinieren, dass eine andere als die Adresse des Objekts zurückgegeben wird. Zu diesen Klassen gehören die ATL-Klassen `CComBSTR`, `CComPtr` und `CComQIPtr` sowie die Compilerklasse für die COM-Unterstützung `_com_ptr_t`. Diese Klassen definieren alle den Address-of-Operator, um die Adresse von einem Ihrer Datenmember (ein BSTR im Fall von `CComBSTR`) und einen Schnittstellen Zeiger im Fall der anderen Klassen zurückzugeben.
+`CAdapt` ist eine einfache Vorlage. Sie dient dazu, Klassen zu umschließen, die den Adressoperator (`operator &`) so umdefinieren, dass eine andere als die Adresse des Objekts zurückgegeben wird. Zu diesen Klassen gehören die ATL-Klassen `CComBSTR`, `CComPtr` und `CComQIPtr` sowie die Compilerklasse für die COM-Unterstützung `_com_ptr_t`. Diese Klassen definieren alle den Address-of-Operator, um die Adresse von einem Ihrer Datenmember (ein BSTR im Fall von `CComBSTR` ) und einen Schnittstellen Zeiger im Fall der anderen Klassen zurückzugeben.
 
-`CAdapt`die primäre Rolle besteht darin, den Address-of-Operator auszublenden, der durch Klasse *T*definiert ist, aber dennoch die Merkmale der angepassten Klasse beizubehalten. `CAdapt`erfüllt diese Rolle, indem ein öffentliches Element, [m_T](#m_t), vom Typ *t*und durch Definieren von Konvertierungs Operatoren, Vergleichs Operatoren und einem Kopierkonstruktor festgelegt `CAdapt` werden, damit Spezialisierungs Elemente so behandelt werden, als wären Sie Objekte vom Typ *t*.
+`CAdapt`die primäre Rolle besteht darin, den Address-of-Operator auszublenden, der durch Klasse *T*definiert ist, aber dennoch die Merkmale der angepassten Klasse beizubehalten. `CAdapt`erfüllt diese Rolle, indem ein öffentliches Element, [m_T](#m_t), vom Typ *t*und durch Definieren von Konvertierungs Operatoren, Vergleichs Operatoren und einem Kopierkonstruktor festgelegt werden, damit Spezialisierungs Elemente `CAdapt` so behandelt werden, als wären Sie Objekte vom Typ *t*.
 
 Die Adapterklasse `CAdapt` ist nützlich, da einige Containerklassen erwarten, dass sie Adressen der in ihnen enthaltenen Objekte unter Verwendung des Adressoperators abrufen können. Die Neudefinition des Adressoperators kann diese Anforderung vereiteln. Das führt in der Regel zu Kompilierungsfehlern und verhindert, dass der nicht angepasste Typ im Zusammenhang mit Klassen verwendet werden kann, die lediglich erwarten, dass er funktioniert. `CAdapt` stellt eine Methode zur Umgehung solcher Probleme bereit.
 
 Normalerweise verwenden Sie `CAdapt`, wenn `CComBSTR`-, `CComPtr`-, `CComQIPtr`- oder `_com_ptr_t`-Objekte in einer Containerklasse gespeichert werden sollen. Das war bei C++-Standardbibliothekscontainern vor der Unterstützung des C++11-Standards der Regelfall. C++11- Standardbibliothekscontainer funktionieren allerdings automatisch mit Objekttypen, die überladene `operator&()`-Operatoren aufweisen. Die Standard Bibliothek erreicht dies durch die interne Verwendung von [Std:: AddressOf](../../standard-library/memory-functions.md#addressof) , um die tatsächlichen Adressen von Objekten zu erhalten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atlcomcli. h
 
@@ -103,11 +103,11 @@ T m_T;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Zugriff auf diesen **öffentlichen** Datenmember ist direkt oder indirekt mit [Operator Konstanten t&](#operator_const_t_amp) und [Operator T&](#operator_t_amp)möglich.
+Der **`public`** Zugriff auf diesen Datenmember ist direkt oder indirekt mit [Operator Konstanten t&](#operator_const_t_amp) und [Operator T&](#operator_t_amp)möglich.
 
 ## <a name="cadaptoperator-const-tamp"></a><a name="operator_const_t_amp"></a>CAdapt:: Operator Konstanten T&amp;
 
-Gibt einen **Konstanten** Verweis auf den [m_T](#m_t) Member zurück, sodass das Adapter Objekt so behandelt werden kann, als wäre es ein Objekt vom Typ *T*.
+Gibt einen **`const`** Verweis auf den [m_T](#m_t) Member zurück, sodass das Adapter Objekt so behandelt werden kann, als wäre es ein Objekt vom Typ *T*.
 
 ```cpp
 operator const T&() const;
@@ -115,7 +115,7 @@ operator const T&() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **konstanter** Verweis auf `m_T`.
+Ein **`const`** Verweis auf `m_T` .
 
 ## <a name="cadaptoperator-tamp"></a><a name="operator_t_amp"></a>CAdapt:: Operator T&amp;
 
@@ -185,6 +185,6 @@ Ein Verweis auf das Objekt, das verglichen werden soll.
 
 Das Ergebnis des Vergleichs zwischen *m_T* und *rsrc*.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassenübersicht](../../atl/atl-class-overview.md)

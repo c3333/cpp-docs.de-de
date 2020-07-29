@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C3150
 ms.assetid: c1ff28f5-52fe-4fd4-81d0-2e0ad8548631
-ms.openlocfilehash: 23461f692914507e85dc23ae1b5e7a586ce85839
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 321fa0eaea6845a275fc9c508dd436844f0949e5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62375417"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232000"
 ---
 # <a name="compiler-error-c3150"></a>Compilerfehler C3150
 
-'Element': 'Attribut' kann nur auf die Klasse, Schnittstelle, Array oder Zeiger angewendet werden
+"Element": "Attribute" kann nur auf eine Klasse, eine Schnittstelle, ein Array oder einen Zeiger angewendet werden.
 
-`__gc` kann nur auf eine Klasse, Schnittstelle oder Arrays verwendet werden.
+**`__gc`** kann nur für eine Klasse, eine Schnittstelle oder ein Array verwendet werden.
 
-C3150 ist nur über die veraltete Compileroption erreichbar **oldSyntax**.
+C3150 ist nur mit der veralteten Compileroption **/clr: oldSyntax**erreichbar.

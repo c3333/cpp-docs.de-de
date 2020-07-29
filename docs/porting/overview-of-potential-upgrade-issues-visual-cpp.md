@@ -2,12 +2,12 @@
 title: Überblick über potenzielle Aktualisierungsprobleme (Visual C++)
 ms.date: 05/03/2019
 ms.assetid: 2c99a8cb-098f-4a9d-bf2c-b80fd06ace43
-ms.openlocfilehash: e42762d4b47931f21536146cd0146b2749c52cf9
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: fcfa8e8ea334cf7c2486513ae162b04014e7f24b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404820"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231636"
 ---
 # <a name="overview-of-potential-upgrade-issues-visual-c"></a>Überblick über potenzielle Aktualisierungsprobleme (Visual C++)
 
@@ -88,7 +88,7 @@ dumpbin.exe /LINKERMEMBER somelibrary.lib
 
 ### <a name="zcwchar_t-wchar_t-is-native-type"></a>/Zc:wchar_t (wchar_t ist der systemeigene Typ)
 
-(In Microsoft Visual C++ 6,0 und früher wurde **wchar_t** nicht als integrierter Typ implementiert, sondern in "WCHAR. h" als typedef für "Ganzzahl ohne Vorzeichen Short" deklariert.) Der C++-Standard erfordert, dass **wchar_t** ein integrierter Typ ist. Die Verwendung der „typedef“-Version kann Portabilitätsprobleme verursachen. Wenn Sie ein Upgrade von früheren Visual Studio-Versionen durchführen und der Compilerfehler C2664 auftritt, da der Code versucht, **wchar_t** implizit in **unsigned short** zu konvertieren, empfiehlt es sich, den Fehler durch eine Codeänderung zu beheben anstatt durch die Einstellung `/Zc:wchar_t-`. Weitere Informationen finden Sie unter[/Zc:wchar_t (wchar_t ist der systemeigene Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md).
+(In Microsoft Visual C++ 6,0 und früher **`wchar_t`** wurde nicht als integrierter Typ implementiert, sondern in "WCHAR. h" als typedef für "Ganzzahl ohne Vorzeichen Short" deklariert.) Der C++-Standard erfordert, dass **`wchar_t`** ein integrierter Typ ist. Die Verwendung der „typedef“-Version kann Portabilitätsprobleme verursachen. Wenn Sie ein Upgrade von früheren Versionen von Visual Studio ausführen und Compilerfehler auftreten C2664 da der Code versucht, eine implizit **`wchar_t`** in zu konvertieren **`unsigned short`** , empfiehlt es sich, den Code zu ändern, um den Fehler zu beheben, anstatt festzulegen `/Zc:wchar_t-` . Weitere Informationen finden Sie unter[/Zc:wchar_t (wchar_t ist der systemeigene Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md).
 
 ### <a name="upgrading-with-the-linker-options-nodefaultlib-entry-and-noentry"></a>Aktualisieren mit den Optionen /NODEFAULTLIB, /ENTRY und /NOENTRY des Linkers
 

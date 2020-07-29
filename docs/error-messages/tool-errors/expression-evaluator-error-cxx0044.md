@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CXX0044
 - CAN0044
 ms.assetid: d59868b5-c1ec-46ac-91d6-5d575a4d6b49
-ms.openlocfilehash: e14e2b7892e51bd66f4efb3801ebe6b90123676e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: d08e11c6ef091eccbb1448105682d4f9d9a73cdf
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80185060"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216036"
 ---
 # <a name="expression-evaluator-error-cxx0044"></a>Ausdrucksauswertungsfehler CXX0044
 
 die Verwendung des _based (void)-Zeigers erfordert Folgendes: >-Operator
 
-Ein Zeiger, der auf `void` basiert, kann nicht direkt verwendet werden. Sie müssen einen Complete-Zeiger mit dem **: >** -Operator bilden.
+Ein Zeiger, der auf basiert, **`void`** kann nicht direkt verwendet werden. Sie müssen einen Complete-Zeiger mit dem **: >** -Operator bilden.
 
 Dieser Fehler ist mit CAN0044 identisch.

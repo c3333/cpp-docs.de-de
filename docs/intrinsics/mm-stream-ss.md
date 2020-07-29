@@ -7,12 +7,12 @@ helpviewer_keywords:
 - movntss instruction
 - _mm_stream_ss intrinsic
 ms.assetid: c53dffe9-0dfe-4063-85d3-e8987b870fce
-ms.openlocfilehash: 005f4f697d64f6ea68b35dc32daf1217be463a2a
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: ef1a2045a20070b667d416175826e5377fe30ef6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70217353"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215984"
 ---
 # <a name="_mm_stream_ss"></a>_mm_stream_ss
 
@@ -34,26 +34,26 @@ void _mm_stream_ss(
 *Entwickelt*\
 vorgenommen Ein Zeiger auf den Speicherort, an den die Quelldaten geschrieben werden.
 
-*Source*\
-in Eine 128-Bit-Zahl, die `float` den Wert enthält, der in den untersten 32 Bits geschrieben werden soll.
+*Ausgangs*\
+in Eine 128-Bit-Zahl, die den Wert enthält, der **`float`** in den untersten 32 Bits geschrieben werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Keine
+Keine.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`_mm_stream_ss`|SSE4a|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die systeminterne Generierung `movntss` generiert die-Anweisung. Um die Hardwareunterstützung für diese Anweisung zu ermitteln, `__cpuid` müssen Sie `InfoType=0x80000001` die systeminterne Funktion mit `CPUInfo[2] (ECX)`und das-Bit 6 von abrufen. Dieses Bit ist 1, wenn die Anweisung unterstützt wird, und andernfalls 0.
+Die systeminterne Generierung generiert die- `movntss` Anweisung. Um die Hardwareunterstützung für diese Anweisung zu ermitteln, müssen Sie die systeminterne Funktion `__cpuid` mit `InfoType=0x80000001` und das-Bit 6 von abrufen `CPUInfo[2] (ECX)` . Dieses Bit ist 1, wenn die Anweisung unterstützt wird, und andernfalls 0.
 
-Wenn Sie Code ausführen, der die `_mm_stream_ss` systeminterne Funktion auf Hardware verwendet, `movntss` die die-Anweisung nicht unterstützt, sind die Ergebnisse unvorhersehbar.
+Wenn Sie Code ausführen, der die systeminterne Funktion auf Hardware verwendet, die `_mm_stream_ss` die-Anweisung nicht unterstützt `movntss` , sind die Ergebnisse unvorhersehbar.
 
 ## <a name="example"></a>Beispiel
 
@@ -91,10 +91,10 @@ f[2] = -3, f[3] = 3
 
 Teile Copyright 2007 von Advanced Micro Devices, Inc. Alle Rechte vorbehalten. Mit Berechtigung von Advanced Micro Devices, Inc.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_mm_stream_sd](../intrinsics/mm-stream-sd.md)\
 [_mm_stream_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_stream_ps)\
 [_mm_store_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_store_ss)\
 [_mm_sfence](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sfence)\
-[Systeminterne Compilerfunktionen](../intrinsics/compiler-intrinsics.md)
+[Intrinsische Compilerfunktionen](../intrinsics/compiler-intrinsics.md)

@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C2696
 ms.assetid: 6c6eb7df-1230-4346-9a73-abf14c20785d
-ms.openlocfilehash: 340a5d0596160b6c9c7bcfc78aed812f8c5f3fa3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f6af217dbcd871ac4edd1852042144802388545b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62367602"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216088"
 ---
 # <a name="compiler-error-c2696"></a>Compilerfehler C2696
 
-Ein temporäres Objekt von einem verwalteten Typ 'Typ' kann nicht erstellt werden.
+Ein temporäres Objekt vom verwalteten Typ "Type" kann nicht erstellt werden.
 
-Verweise auf `const` in einem nicht verwalteten Programm dazu führen, dass den Compiler rufen Sie den Konstruktor und ein temporäres Objekt erstellt, auf dem Stapel. Eine verwaltete Klasse kann jedoch nie auf dem Stapel erstellt werden.
+Verweise auf **`const`** in einem nicht verwalteten Programm bewirken, dass der Compiler den Konstruktor aufruft und ein temporäres Objekt auf dem Stapel erstellt. Eine verwaltete Klasse kann jedoch nie auf dem Stapel erstellt werden.
 
-C2696 ist nur über die veraltete Compileroption erreichbar **oldSyntax**.
+C2696 ist nur mit der veralteten Compileroption **/clr: oldSyntax**erreichbar.

@@ -5,16 +5,16 @@ f1_keywords:
 - /kernel
 - /kernel-
 ms.assetid: 6d7fdff0-c3d1-4b78-9367-4da588ce8b05
-ms.openlocfilehash: d065364cf6d3ae824098634c070f3651324aa52a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bcef52144e4da932e9e1b6acbcd5f2170c4c7f86
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62291339"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211943"
 ---
 # <a name="kernel-create-kernel-mode-binary"></a>/kernel (Binary für den Kernelmodus erstellen)
 
-Erstellt eine Binärdatei, die in der Windows-Kernel ausgeführt werden kann.
+Erstellt eine Binärdatei, die im Windows-Kernel ausgeführt werden kann.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,31 +24,31 @@ Erstellt eine Binärdatei, die in der Windows-Kernel ausgeführt werden kann.
 
 ## <a name="arguments"></a>Argumente
 
-**/kernel**<br/>
-Der Code in das aktuelle Projekt wird kompiliert und verknüpft werden anhand eines Satzes von Regeln der C++-Sprache, die auf Code beziehen, die im Kernelmodus ausgeführt werden.
+**/Kernel**<br/>
+Der Code im aktuellen Projekt wird mithilfe einer Reihe von C++-Sprachregeln kompiliert und verknüpft, die für Code spezifisch sind, der im Kernel Modus ausgeführt wird.
 
-**/kernel-**<br/>
-Der Code in das aktuelle Projekt wird kompiliert und verknüpft werden, ohne die Regeln der C++-Sprache, die auf Code beziehen, die im Kernelmodus ausgeführt werden.
+**/Kernel**<br/>
+Der Code im aktuellen Projekt wird kompiliert und verknüpft, ohne dass die C++-Sprachregeln verwendet werden, die für Code spezifisch sind, der im Kernel Modus ausgeführt wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Es gibt keine `#pragma`-Entsprechung, zum Steuern dieser Option.
 
-Angeben der **/Kernel** -Option weist den Compiler und Linker vermitteln konnte, welche Sprachfeatures zulässige im Kernelmodus ausgeführt werden und um sicherzustellen, dass Sie haben genügend Ausdruckskraft Runtime Instabilität zu vermeiden, die eindeutig ist Kernelmodus C++. Dies wird erreicht, indem untersagt die Verwendung von C++-Sprachfunktionen, die sich unterbrechen den Betrieb im Kernelmodus ausgeführt und Warnungen für C++-Sprachfeatures, die potenziell führen zu einer Unterbrechung, aber nicht deaktiviert werden.
+Das Angeben der **/Kernel** -Option weist den Compiler und den Linker an, zu bestimmen, welche sprach Features im Kernel Modus zulässig sind, und um sicherzustellen, dass Sie über ausreichende Ausdruckskraft verfügen, um eine Instabilität der Laufzeit zu vermeiden, die nur für den Kernel Modus C++ Dies wird erreicht, indem die Verwendung von C++-sprach Features, die im Kernel Modus gestört sind, und die Bereitstellung von Warnungen für C++-sprach Features, die potenziell störend sind, jedoch nicht deaktiviert werden können, untersagt werden
 
-Die **/Kernel** Option gilt für Compiler und Linker Phasen eines Builds, und auf Projektebene festgelegt ist. Übergeben Sie die **/Kernel** Switch für den Compiler an, dass die resultierende Binärdatei, nach dem verknüpfen, in der Windows-Kernel geladen werden soll. Der Compiler wird das Spektrum der C++-Sprachfunktionen, um eine Teilmenge zu beschränken, die mit dem Kernel kompatibel ist.
+Die **/Kernel** -Option gilt sowohl für die Compiler-als auch die Linker-Phase eines Builds und wird auf Projektebene festgelegt. Übergeben Sie den Schalter **/Kernel** , um dem Compiler mitzuteilen, dass die resultierende Binärdatei nach dem Verknüpfen in den Windows-Kernel geladen werden soll. Der Compiler wird das Spektrum der C++-Sprachfunktionen auf eine Teilmenge beschränken, die mit dem Kernel kompatibel ist.
 
-Die folgende Tabelle enthält die Änderungen im Compilerverhalten beim **/Kernel** angegeben ist.
+In der folgenden Tabelle sind die Änderungen im Compilerverhalten aufgeführt, wenn **/Kernel** angegeben wird.
 
-|Verhaltenstyp|**/kernel** Behavior|
+|Verhaltenstyp|**/Kernel** Verhalten|
 |-------------------|---------------------------|
-|C++-Ausnahmebehandlung|Deaktiviert. Alle Instanzen der `throw` und `try` Schlüsselwörter ausgeben, einen Compilerfehler (mit Ausnahme der Ausnahmespezifikation `throw()`). Keine **/EH** Optionen sind kompatibel mit **/Kernel**, mit Ausnahme von **/EH-**.|
-|LAUFZEITTYPINFORMATIONEN|Deaktiviert. Alle Instanzen der `dynamic_cast` und `typeid` Schlüsselwörter einen Compilerfehler, ausgeben, es sei denn, `dynamic_cast` statisch verwendet wird.|
-|`new` und `delete`|Sie müssen explizit definieren die `new()` oder `delete()` Operator; weder die Laufzeit als auch der Compiler stellt eine Default-Definition bereit.|
+|C++-Ausnahmebehandlung|Deaktiviert. Alle Instanzen der **`throw`** **`try`** Schlüsselwörter und geben einen Compilerfehler aus (außer der Ausnahme Spezifikation `throw()` ). Keine **/eh** -Optionen sind mit **/Kernel**kompatibel, außer **/eh-**.|
+|RTTI|Deaktiviert. Alle Instanzen der **`dynamic_cast`** **`typeid`** Schlüsselwörter und geben einen Compilerfehler aus, sofern nicht **`dynamic_cast`** statisch verwendet wird.|
+|`new` und `delete`|Sie müssen den or- `new()` Operator explizit definieren `delete()` ; weder der Compiler noch die Runtime stellt eine Standard Definition bereit.|
 
-Benutzerdefinierte Aufrufkonventionen, die [/GS](gs-buffer-security-check.md) Buildoption und alle Optimierungen sind zulässig, bei der Verwendung der **/Kernel** Option. Inlining ist größtenteils nicht betroffen, von **/Kernel**, mit der gleichen Semantik, die vom Compiler berücksichtigt. Sollten Sie sicherstellen, dass die `__forceinline` inlining Qualifizierer wird berücksichtigt, stellen Sie sicher, dass die Warnung [C4714](../../error-messages/compiler-warnings/compiler-warning-level-4-c4714.md) aktiviert ist, damit Sie wissen, wenn eine bestimmte `__forceinline` Funktion ist nicht inline ersetzt.
+Benutzerdefinierte Aufruf Konventionen, die [/GS](gs-buffer-security-check.md) -Buildoption und alle Optimierungen sind zulässig, wenn Sie die **/Kernel** -Option verwenden. Inlining ist größtenteils nicht von **/Kernel**betroffen, mit derselben Semantik, die vom Compiler berücksichtigt wird. Wenn Sie sicherstellen möchten, dass der **`__forceinline`** Inlining-Qualifizierer berücksichtigt wird, müssen Sie sicherstellen, dass die Warnung [C4714](../../error-messages/compiler-warnings/compiler-warning-level-4-c4714.md) aktiviert ist, damit Sie wissen, wenn eine bestimmte **`__forceinline`** Funktion nicht Inline ist.
 
-Wenn der Compiler übergeben wird die **/Kernel** Switch sind ein Präprozessormakro mit dem Namen vordefiniert `_KERNEL_MODE` und hat den Wert **1**. Sie können dies verwenden, zur bedingten Kompilierung von Code je nachdem, ob die ausführungsumgebung im Benutzermodus oder Kernelmodus ist. Der folgende Code gibt beispielsweise, dass die Klasse in einem Segment nicht verwendete nicht ausgelagerte Arbeitsspeicher sein soll, wenn sie für Kernelmodus kompiliert wird.
+Wenn der Compiler den **/Kernel** -Schalter übermittelt, definiert er ein Präprozessormakro mit `_KERNEL_MODE` dem Namen und hat den Wert **1**. Sie können dies verwenden, um Code bedingt zu kompilieren, je nachdem, ob sich die Ausführungsumgebung im Benutzermodus oder Kernel Modus befindet. Der folgende Code gibt z. b. an, dass sich die-Klasse in einem nicht ausführbaren Speichersegment befinden soll, wenn Sie für die kernelmodusausführung kompiliert wird.
 
 ```cpp
 #ifdef _KERNEL_MODE
@@ -63,40 +63,40 @@ class NONPAGESECTION MyNonPagedClass
 };
 ```
 
-Einige der folgenden Kombinationen von Zielarchitektur und **/arch** Option einen Fehler erzeugen, wenn sie verwendet werden **/Kernel**:
+Einige der folgenden Kombinationen der Zielarchitektur und der **/arch** -Option führen zu einem Fehler, wenn Sie mit **/Kernel**verwendet werden:
 
-- **/ arch: {SSE&#124;SSE2&#124;AVX}** werden auf X86 nicht unterstützt. Nur **/arch:IA32** unterstützt, auf denen **/Kernel** auf X86.
+- **/arch: {SSE&#124;SSE2&#124;AVX}** werden auf x86 nicht unterstützt. Nur **/arch: ia32** wird mit **/Kernel** auf x86 unterstützt.
 
-- **/ arch: AVX** wird nicht unterstützt **/Kernel** auf X64.
+- **/arch: AVX** wird bei **/Kernel** auf x64 nicht unterstützt.
 
-Erstellen von Builds mit **/Kernel** übergibt außerdem **/Kernel** an den Linker. Sie ist Auswirkungen linkerverhalten:
+Das Gebäude mit **/Kernel** übergibt auch **/Kernel** an den Linker. Dies wirkt sich auf das linkerverhalten aus:
 
-- Inkrementelles Verknüpfen ist deaktiviert. Wenn Sie hinzufügen **/ incremental** an die Befehlszeile, gibt der Linker diese schwerwiegenden Fehler:
+- Inkrementelles Verknüpfen ist deaktiviert. Wenn Sie **/Incremental** der Befehlszeile hinzufügen, gibt der Linker diesen schwerwiegenden Fehler aus:
 
-   **LINK: Schwerwiegender Fehler LNK1295: "/ INCREMENTAL" nicht kompatibel mit "/ KERNEL" Spezifikation; Link ohne "/ INCREMENTAL"**
+   **Link: Schwerwiegender Fehler LNK1295: "/incremental" ist nicht kompatibel mit der Spezifikation "/Kernel". Verknüpfung ohne "/incremental"**
 
-- Der Linker überprüft jede Objektdatei (oder alle enthalten Archiv-Member von statischen Bibliotheken), um festzustellen, ob es mit kompiliert wurden konnte die **/Kernel** Option wurde jedoch nicht. Wenn alle Instanzen dieses Kriterium erfüllt, wird der Linker immer noch erfolgreich verknüpft, jedoch möglicherweise eine Warnung aus, geben Sie wie in der folgenden Tabelle gezeigt.
+- Der Linker überprüft die einzelnen Objektdateien (oder alle enthaltenen Archivierungs Elemente aus statischen Bibliotheken), um festzustellen, ob die Kompilierung mit der **/Kernel** -Option möglich wäre, was jedoch nicht der Fall war. Wenn Instanzen dieses Kriterium erfüllen, wird der Linker weiterhin erfolgreich verknüpft, kann jedoch eine Warnung ausgeben, wie in der folgenden Tabelle dargestellt.
 
-   ||**/kernel** obj|**/Kernel-** Obj, MASM-Obj oder Cvtresed|Kombinieren von **/Kernel** und **/kernel-** OBJ-Dateien|
+   ||**/Kernel** obj|**/Kernel-** obj, MASM obj oder cvtresed|Mischung aus **/Kernel** und **/Kernel-** obj|
    |-|----------------------|-----------------------------------------------|-------------------------------------------------|
-   |**link /kernel**|Ja|Ja|Ja, mit der Warnung LNK4257|
-   |**link**|Ja|Ja|Ja|
+   |**Link/Kernel**|Ja|Ja|Ja mit Warnung LNK4257|
+   |**Verknüpfen**|Ja|Ja|Ja|
 
-   **LNK4257 Verknüpfungsobjekt mit/Kernel nicht kompiliert; Image kann möglicherweise nicht ausgeführt.**
+   **LNK4257-Verknüpfungs Objekt nicht mit/Kernel kompiliert; Image kann möglicherweise nicht ausgeführt werden**
 
-Die **/Kernel** Option und die **/Driver** Option unabhängig voneinander ausgeführt und keine wirkt sich auf die andere.
+Die **/Kernel** -Option und die **/Driver** -Option werden unabhängig voneinander ausgeführt und keines der beiden Auswirkungen auf die andere.
 
-### <a name="to-set-the-kernel-compiler-option-in-visual-studio"></a>So legen Sie die Compileroption "/ Kernel" in Visual Studio fest
+### <a name="to-set-the-kernel-compiler-option-in-visual-studio"></a>So legen Sie die/Kernel-Compileroption in Visual Studio fest
 
-1. Öffnen der **Eigenschaftenseiten** im Dialogfeld für das Projekt. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** für das Projekt. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **C/C++-** Ordner.
+1. Wählen Sie den Ordner **C/C++** aus.
 
-1. Wählen Sie die **Befehlszeile** Eigenschaftenseite.
+1. Wählen Sie die Eigenschaften Seite **Befehlszeile** aus.
 
-1. In der **zusätzliche Optionen** fügen `/kernel` oder `/kernel-`.
+1. Fügen Sie im Feld **zusätzliche Optionen** `/kernel` oder hinzu `/kernel-` .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

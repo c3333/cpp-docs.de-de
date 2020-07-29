@@ -1,6 +1,7 @@
 ---
 title: /Zc:trigraphs (Trigraphen-Ersetzung)
-ms.date: 03/06/2018
+description: Eine Microsoft C++-Compileroption, die die Konformität für die Unterstützung von drei Diagrammen steuert.
+ms.date: 07/25/2020
 f1_keywords:
 - /Zc:trigraphs
 helpviewer_keywords:
@@ -9,38 +10,38 @@ helpviewer_keywords:
 - Conformance compiler options
 - Zc compiler options (C++)
 ms.assetid: e3d6058f-400d-4966-a3aa-800cfdf69cbf
-ms.openlocfilehash: 0e4c98e09551d39e3ff7978767b21f1d2c5bb318
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: e24f3d2f0064c3acc04b4c3774f47f6e442d5ddd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438652"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211852"
 ---
-# <a name="zctrigraphs-trigraphs-substitution"></a>/Zc:trigraphs (Trigraphen-Ersetzung)
+# <a name="zctrigraphs-trigraphs-substitution"></a>`/Zc:trigraphs`(Trigraphen-Ersetzung)
 
-Wenn **/Zc: tagraphen** angegeben wird, ersetzt der Compiler eine Zeichenfolge mit einem Zeichen, indem ein entsprechendes Interpunktions Zeichen verwendet wird.
+Wenn **`/Zc:trigraphs`** angegeben wird, ersetzt der Compiler mithilfe eines entsprechenden Interpunktions Zeichens eine Escapezeichenfolge.
 
 ## <a name="syntax"></a>Syntax
 
-> **/Zc:** nur wenige Diagramme [ **-** ]
+> **`/Zc:trigraphs`**[**`-`**]
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein " *Digraph* " besteht aus zwei aufeinander folgenden Fragezeichen ("??"), gefolgt von einem eindeutigen dritten Zeichen. Der C-Sprachstandard unterstützt für Quelldateien, die einen Zeichensatz verwenden, der keine praktischen grafischen Darstellungen für einige Interpunktions Zeichen enthält. Wenn z. b. die drei-und Ausgabeoptionen aktiviert sind, ersetzt der Compiler "?? = "mit dem Zeichen" # ". Bis c++ 14 werden die drei-und-drei-und-drei unterstützt. Der c++ 17-Standard entfernt die drei- C++ und ausgabegramme. Im C++ Code ermöglicht die **/Zc: trigraphs** -Compileroption die Ersetzung von trigraphsequenzen durch das entsprechende Interpunktions Zeichen. **/Zc: trigraphs:** deaktiviert die trigraphersetzung.
+Ein " *tagraph* " besteht aus zwei aufeinander folgenden Fragezeichen ( **`??`** ), gefolgt von einem eindeutigen dritten Zeichen. Der C-Sprachstandard unterstützt für Quelldateien, die einen Zeichensatz verwenden, der keine praktischen grafischen Darstellungen für einige Interpunktions Zeichen enthält. Wenn z. b. die drei-und Ausgabeoptionen aktiviert sind, ersetzt der Compiler das- **`??=`** Zeichen mit dem- **`#`** Zeichen. Bis c++ 14 werden die drei-und-drei-und-drei unterstützt. Der Standard C++ 17 entfernt die drei-und ausgabegramme aus der Sprache C++. In C++-Code ermöglicht die- **`/Zc:trigraphs`** Compileroption die Ersetzung von trigraphsequenzen durch das entsprechende Interpunktions Zeichen. **`/Zc:trigraphs-`** deaktiviert die trigraphersetzung.
 
-Die Option **/Zc:** -Option ist standardmäßig deaktiviert, und die Option ist nicht betroffen, wenn die [/permissive-](permissive-standards-conformance.md) -Option angegeben wird.
+Die **`/Zc:trigraphs`** Option ist standardmäßig deaktiviert, und die Option ist nicht betroffen, wenn die [`/permissive-`](permissive-standards-conformance.md) Option angegeben wird.
 
-Eine Liste von C/-C++ drei Diagrammen und ein Beispiel, das die Verwendung von drei Diagrammen veranschaulicht, finden Sie unter " [testgraphs](../../c-language/trigraphs.md)".
+Eine Liste der C/C++-testgraphen und ein Beispiel, das die Verwendung von drei Diagrammen veranschaulicht, finden Sie unter " [drei](../../c-language/trigraphs.md)Diagramme".
 
 ## <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Klicken Sie auf der Eigenschaftenseite auf **Konfigurationseigenschaften** > **C/C++**  > **Befehlszeile**.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Befehlszeile** aus.
 
-1. Ändern Sie die Eigenschaft **zusätzliche Optionen** so, dass Sie **/Zc:** -unter **-oder/Zc:-drei Diagramme** einschließt, und wählen Sie dann **OK**aus.
+1. Ändern Sie die Eigenschaft **zusätzliche Optionen** so, dass oder einschließt, **`/Zc:trigraphs`** **`/Zc:trigraphs-`** und wählen Sie dann **OK**aus.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[/Zc (Übereinstimmung)](zc-conformance.md)<br/>
-[Trigraphen](../../c-language/trigraphs.md)<br/>
+[`/Zc`Konformitäts](zc-conformance.md)<br/>
+[Trigraphen](../../c-language/trigraphs.md)

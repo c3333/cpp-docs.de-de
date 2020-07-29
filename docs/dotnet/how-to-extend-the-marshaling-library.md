@@ -5,18 +5,18 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - Marshaling Library, extending
 ms.assetid: 4c4a56d7-1d44-4118-b85f-f9686515e6e9
-ms.openlocfilehash: ab3b17638e07a54189803c83163db67c5ebf82a5
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 2a3dccd33b7ad2caee64e31e0f79180dda4649be
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545270"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216387"
 ---
 # <a name="how-to-extend-the-marshaling-library"></a>Gewusst wie: Erweitern der Marshallingbibliothek
 
 In diesem Thema wird erläutert, wie Sie die Marshallingbibliothek erweitern, um mehr Konvertierungen zwischen Datentypen bereitzustellen. Benutzer können die Marshallingbibliothek für alle Datenkonvertierungen erweitern, die derzeit nicht von der Bibliothek unterstützt werden.
 
-Die Marshallingbibliothek kann auf eine von zwei Arten erweitert werden: mit oder ohne [Marshal_context-Klasse](../dotnet/marshal-context-class.md). Überprüfen Sie die Übersicht über das Marshalling [im C++ ](../dotnet/overview-of-marshaling-in-cpp.md) Thema, um zu bestimmen, ob eine neue Konvertierung einen Kontext erfordert.
+Die Marshallingbibliothek kann auf eine von zwei Arten erweitert werden: mit oder ohne [Marshal_context-Klasse](../dotnet/marshal-context-class.md). Überprüfen Sie das Thema Übersicht über das Marshalling [in C++](../dotnet/overview-of-marshaling-in-cpp.md) , um zu bestimmen, ob eine neue Konvertierung einen Kontext erfordert.
 
 In beiden Fällen erstellen Sie zuerst eine Datei für neue Marshallingkonvertierungen. Dies geschieht, um die Integrität der standardmäßigen Marshallingbibliotheksdateien beizubehalten. Wenn Sie ein Projekt auf einen anderen Computer oder einen anderen Programmierer portieren möchten, müssen Sie die neue Marshallingdatei mit dem Rest des Projekts kopieren. Auf diese Weise erhält der Benutzer, der das Projekt empfängt, die neuen Konvertierungen und muss keine Bibliotheksdateien ändern.
 
@@ -30,13 +30,13 @@ In beiden Fällen erstellen Sie zuerst eine Datei für neue Marshallingkonvertie
 
    - marshal_windows. h für Windows-Datentypen.
 
-   - marshal_cppstd. h für C++ die Datentypen der Standard Bibliothek.
+   - marshal_cppstd. h für die Datentypen der C++-Standard Bibliothek.
 
    - marshal_atl. h für ATL-Datentypen.
 
 1. Verwenden Sie den Code am Ende dieser Schritte, um die Konvertierungs Funktion zu schreiben. In diesem Code ist für den Typ, in den konvertiert werden soll, von der Typ, aus dem konvertiert werden soll, und `from` ist der zu konvertierende Parameter.
 
-1. Ersetzen Sie den Kommentar zur Konvertierungs Logik durch Code, um den `from`-Parameter in ein Objekt vom Typ zu konvertieren und das konvertierte Objekt zurückzugeben.
+1. Ersetzen Sie den Kommentar zur Konvertierungs Logik durch Code, um den `from` Parameter in ein Objekt von zu konvertieren und das konvertierte Objekt zurückzugeben.
 
 ```
 namespace msclr {
@@ -59,19 +59,19 @@ namespace msclr {
 
    - marshal_windows. h für Windows-Datentypen.
 
-   - marshal_cppstd. h für C++ die Datentypen der Standard Bibliothek.
+   - marshal_cppstd. h für die Datentypen der C++-Standard Bibliothek.
 
    - marshal_atl. h für ATL-Datentypen.
 
-1. Verwenden Sie den Code am Ende dieser Schritte, um die Konvertierungs Funktion zu schreiben. In diesem Code ist für den Typ, in den konvertiert werden soll, von der Typ, aus dem konvertiert werden soll, `toObject` ein Zeiger ist, in dem das Ergebnis gespeichert werden soll, und `fromObject` der zu konvertierende Parameter ist.
+1. Verwenden Sie den Code am Ende dieser Schritte, um die Konvertierungs Funktion zu schreiben. In diesem Code ist für den Typ, in den konvertiert werden soll, von der Typ, aus dem konvertiert werden soll, `toObject` ein Zeiger, in dem das Ergebnis gespeichert werden soll, und `fromObject` der zu konvertierende Parameter.
 
-1. Ersetzen Sie den Kommentar zur Initialisierung durch Code, um die `toPtr` mit dem entsprechenden leeren Wert zu initialisieren. Wenn es sich beispielsweise um einen-Zeiger handelt, legen Sie ihn auf `NULL`fest.
+1. Ersetzen Sie den Kommentar zur Initialisierung durch Code, um den `toPtr` auf den entsprechenden leeren Wert zu initialisieren. Wenn es sich beispielsweise um einen-Zeiger handelt, legen Sie ihn auf fest `NULL` .
 
-1. Ersetzen Sie den Kommentar zur Konvertierungs Logik durch Code, um den `from`-Parameter in ein Objekt vom Typ *zu* konvertieren. Dieses konvertierte Objekt wird in `toPtr`gespeichert.
+1. Ersetzen Sie den Kommentar zur Konvertierungs Logik durch Code, um den- `from` Parameter in ein Objekt von *zu* konvertieren. Dieses konvertierte Objekt wird in gespeichert `toPtr` .
 
-1. Ersetzen Sie den Kommentar zum Festlegen `toObject` mit Code, um `toObject` auf das konvertierte Objekt festzulegen.
+1. Ersetzen Sie den Kommentar zur Einstellung `toObject` mit Code, der `toObject` auf das konvertierte Objekt festgelegt wird.
 
-1. Ersetzen Sie den Kommentar zum Bereinigen von systemeigenen Ressourcen mit Code, um den von `toPtr`zugeordneten Arbeitsspeicher freizugeben. Wenn `toPtr` zugeordneten Arbeitsspeicher mithilfe `new`, verwenden Sie `delete`, um den Arbeitsspeicher freizugeben.
+1. Ersetzen Sie den Kommentar zum Bereinigen von systemeigenen Ressourcen mit Code, um den von zugeordneten Arbeitsspeicher freizugeben `toPtr` . Wenn `toPtr` Speicher mithilfe von belegt **`new`** wird, verwenden **`delete`** Sie, um den Arbeitsspeicher freizugeben.
 
 ```
 namespace msclr {
@@ -156,7 +156,7 @@ int main() {
 }
 ```
 
-Im vorherigen Beispiel gibt die `marshal_as`-Funktion ein Handle für die konvertierten Daten zurück. Dies wurde durchgeführt, um zu verhindern, dass eine zusätzliche Kopie der Daten erstellt wird. Wenn die Variable direkt zurückgegeben wird, sind unnötige Leistungskosten verbunden.
+Im vorherigen Beispiel `marshal_as` gibt die Funktion ein Handle für die konvertierten Daten zurück. Dies wurde durchgeführt, um zu verhindern, dass eine zusätzliche Kopie der Daten erstellt wird. Wenn die Variable direkt zurückgegeben wird, sind unnötige Leistungskosten verbunden.
 
 ```Output
 Managed name: Jeff Smith
@@ -266,6 +266,6 @@ Native address: 123 Main Street
 Native zip code: 98111
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über das Marshalling in C++](../dotnet/overview-of-marshaling-in-cpp.md)

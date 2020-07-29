@@ -9,16 +9,16 @@ f1_keywords:
 - iosfwd/std::wios
 - iosfwd/std::wstreampos
 ms.assetid: 0b962632-3439-44de-bf26-20c67a7f0ff3
-ms.openlocfilehash: 0f63f65fb4c10fbe2ad538852222e6468b9061d0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6167856c579acfca2bde600b2dd4d457199cafcc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81375400"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212279"
 ---
 # <a name="ltiosgt-typedefs"></a>&lt;ios&gt;-Typedefs
 
-## <a name="ios"></a><a name="ios"></a>Ios
+## <a name="ios"></a><a name="ios"></a>erhältlich
 
 Unterstützt die ios-Klasse aus der alten iostream-Bibliothek.
 
@@ -28,9 +28,9 @@ typedef basic_ios<char, char_traits<char>> ios;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_ios](../standard-library/basic-ios-class.md), spezialisiert auf Elemente vom Typ **char** mit Standardzeichenmerkmalen.
+Der Typ ist ein Synonym für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md), das auf Elemente des Typs **`char`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="streamoff"></a><a name="streamoff"></a>Streamoff
+## <a name="streamoff"></a><a name="streamoff"></a>streamoff
 
 Unterstützt interne Vorgänge.
 
@@ -44,7 +44,7 @@ Unterstützt interne Vorgänge.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das einen Byte-Offset speichern kann, der an verschiedenen Streampositionierungsvorgängen beteiligt ist. Seine Repräsentation hat mindestens 32 Wertbits. Er ist nicht unbedingt groß genug, um eine willkürliche Byte-Position innerhalb eines Streams repräsentieren zu können. Der `streamoff(-1)` Wert gibt im Allgemeinen einen fehlerhaften Offset an.
+Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das einen Byte-Offset speichern kann, der an verschiedenen Streampositionierungsvorgängen beteiligt ist. Seine Repräsentation hat mindestens 32 Wertbits. Er ist nicht unbedingt groß genug, um eine willkürliche Byte-Position innerhalb eines Streams repräsentieren zu können. Der Wert `streamoff(-1)` weist im Allgemeinen auf einen fehlerhaften Offset hin.
 
 ## <a name="streampos"></a><a name="streampos"></a>streampos
 
@@ -56,7 +56,7 @@ typedef fpos<mbstate_t> streampos;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für [fpos](../standard-library/fpos-class.md) <  `mbstate_t`>.
+Der Typ ist ein Synonym für die> [von "](../standard-library/fpos-class.md) <  `mbstate_t` ".
 
 ### <a name="example"></a>Beispiel
 
@@ -81,7 +81,7 @@ int main( )
 7
 ```
 
-## <a name="streamsize"></a><a name="streamsize"></a>Streamgröße
+## <a name="streamsize"></a><a name="streamsize"></a>streamsize
 
 Bezeichnet die Größe des Streams.
 
@@ -127,7 +127,7 @@ typedef basic_ios<wchar_t, char_traits<wchar_t>> wios;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassenvorlage [basic_ios](../standard-library/basic-ios-class.md), spezialisiert auf Elemente vom Typ **wchar_t** mit Standardzeichenmerkmalen.
+Der Typ ist ein Synonym für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md), das auf Elemente des Typs **`wchar_t`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
 ## <a name="wstreampos"></a><a name="wstreampos"></a>wstreampos
 
@@ -139,7 +139,7 @@ typedef fpos<mbstate_t> wstreampos;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für [fpos](../standard-library/fpos-class.md) <  `mbstate_t`>.
+Der Typ ist ein Synonym für die> [von "](../standard-library/fpos-class.md) <  `mbstate_t` ".
 
 ### <a name="example"></a>Beispiel
 

@@ -22,12 +22,12 @@ helpviewer_keywords:
 - handler functions [MFC], declaring
 - message ranges [MFC], mapping
 ms.assetid: a271478b-5e1c-46f5-9f29-e5be44b27d08
-ms.openlocfilehash: 0ff9178679792929bbd6eb92bb6148cfa008dcad
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 44194a6e5bafea2b17c9a1d58c41bf9dc541729d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84621692"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231909"
 ---
 # <a name="handlers-for-message-map-ranges"></a>Handler für Meldungszuordnungsbereiche
 
@@ -143,8 +143,8 @@ Wenn Sie die Handlerfunktion schreiben, geben Sie den zusätzlichen **uint** -Pa
 
 Der `OnButtonClicked` Handler für eine einzelne **BN_CLICKED** Nachricht nimmt keine Parameter an. Der gleiche Handler für einen Bereich von Schaltflächen erfordert eine **uint**. Der zusätzliche Parameter ermöglicht das Identifizieren eines bestimmten Steuer Elements, das für das Erstellen der **BN_CLICKED** Nachricht verantwortlich ist.
 
-Der im Beispiel gezeigte Code ist typisch: der Wert, der an einen `int` innerhalb des Nachrichten Bereichs übergeben wird, und die Behauptung, dass dies der Fall ist. Dann können Sie abhängig von der Schaltfläche, auf die geklickt wurde, verschiedene Aktionen durchführen.
+Der im Beispiel gezeigte Code ist typisch: der Wert, der an einen **`int`** innerhalb des Nachrichten Bereichs übergeben wird, und die Behauptung, dass dies der Fall ist. Dann können Sie abhängig von der Schaltfläche, auf die geklickt wurde, verschiedene Aktionen durchführen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Deklarieren von Meldungshandlerfunktionen](declaring-message-handler-functions.md)
+[Deklarieren von nachrichtenhandlerfunktionen](declaring-message-handler-functions.md)

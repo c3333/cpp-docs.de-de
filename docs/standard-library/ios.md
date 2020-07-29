@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - ios header
 ms.assetid: d3d4c161-2f37-4f04-93cc-0a2a89984a9c
-ms.openlocfilehash: a322e517a4adb51879fc2a60f6c08f6561276de9
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 59ff0d1a9538bd43cc2164306e6a37a3b307067d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689506"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212266"
 ---
 # <a name="ltiosgt"></a>&lt;ios&gt;
 
 Definiert verschiedene Typen und Funktionen, die grundlegend für den Umgang mit iostreams sind. Dieser Header wird in der Regel von einem anderen iostream-Header eingeschlossen. Sie müssen ihn nur selten direkt einschließen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**: \<ios >
+**Header**:\<ios>
 
 **Namespace:** std
 
 > [!NOTE]
-> Die \<ios > Bibliothek verwendet die `#include <iosfwd>`-Anweisung.
+> Die- \<ios> Bibliothek verwendet die- `#include <iosfwd>` Anweisung.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine große Gruppe von Funktionen sind Manipulatoren. Ein in \<ios> deklarierter Manipulator ändert die Werte, die im Argumentobjekt der Klasse [ios_base](../standard-library/ios-base-class.md) gespeichert sind. Andere Manipulatoren führen Aktionen für Streams aus, die von Objekten eines Typs gesteuert werden, der von dieser Klasse abgeleitet wird, z. b. eine Spezialisierung einer der Klassen Vorlagen [basic_istream](../standard-library/basic-istream-class.md) oder [basic_ostream](../standard-library/basic-ostream-class.md). [Noskipws](../standard-library/ios-functions.md#noskipws)(**Str**) löscht z. b. das formatflag `ios_base::skipws` im Objekt `str`, das von einem dieser Typen sein kann.
+Eine große Gruppe von Funktionen sind Manipulatoren. Ein in deklarierter Manipulator \<ios> ändert die Werte, die im Argument Objekt der Klasse [ios_base](../standard-library/ios-base-class.md)gespeichert sind. Andere Manipulatoren führen Aktionen für Streams aus, die von Objekten eines Typs gesteuert werden, der von dieser Klasse abgeleitet wird, z. b. eine Spezialisierung einer der Klassen Vorlagen [basic_istream](../standard-library/basic-istream-class.md) oder [basic_ostream](../standard-library/basic-ostream-class.md). Beispielsweise löscht [noskipws](../standard-library/ios-functions.md#noskipws)(**Str**) das formatflag `ios_base::skipws` im-Objekt `str` , das einen dieser Typen aufweisen kann.
 
 Aufgrund von speziellen Einfüge- und Extraktionsvorgängen für die aus `ios_base` abgeleiteten Klassen können Sie einen Manipulator auch aufrufen, indem Sie ihn in einen Ausgabestream einfügen oder ihn aus einem Eingabestream extrahieren. Beispiel:
 
@@ -41,11 +41,11 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 ## <a name="members"></a>Member
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
 |||
 |-|-|
-|[ios](../standard-library/ios-typedefs.md#ios)|Unterstützt die ios-Klasse aus der alten iostream-Bibliothek.|
+|[erhältlich](../standard-library/ios-typedefs.md#ios)|Unterstützt die ios-Klasse aus der alten iostream-Bibliothek.|
 |[streamoff](../standard-library/ios-typedefs.md#streamoff)|Unterstützt interne Vorgänge.|
 |[streampos](../standard-library/ios-typedefs.md#streampos)|Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.|
 |[streamsize](../standard-library/ios-typedefs.md#streamsize)|Gibt die Größe des Streams an.|
@@ -56,14 +56,14 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 |||
 |-|-|
-|[boolalpha](../standard-library/ios-functions.md#boolalpha)|Gibt an, dass Variablen des Typs [bool](../cpp/bool-cpp.md) im Stream als **TRUE** oder **FALSE** angezeigt werden.|
-|[dec](../standard-library/ios-functions.md#dec)|Gibt an, dass ganzzahlige Variablen in Basis-10-Schreibweise angezeigt werden.|
+|[boolalpha](../standard-library/ios-functions.md#boolalpha)|Gibt an, dass Variablen des Typs [bool](../cpp/bool-cpp.md) als **`true`** oder **`false`** im Stream angezeigt werden.|
+|[31.12.2012](../standard-library/ios-functions.md#dec)|Gibt an, dass ganzzahlige Variablen in Basis-10-Schreibweise angezeigt werden.|
 |[defaultfloat](../standard-library/ios-functions.md#ios_defaultfloat)|Konfiguriert die Flags eines `ios_base`-Objekts, sodass ein Standard-Anzeigeformat für Floatwerte verwendet wird.|
 |[fixed](../standard-library/ios-functions.md#fixed)|Gibt an, dass eine Gleitkommazahl in fester Dezimalschreibweise angezeigt wird.|
 |[hex](../standard-library/ios-functions.md#hex)|Gibt an, dass ganzzahlige Variablen in Basis-16-Schreibweise angezeigt werden.|
 |[hexfloat](../standard-library/ios-functions.md#hexfloat)|
 |[internal](../standard-library/ios-functions.md#internal)|Bewirkt, dass ein Nummernzeichen linksbündig und die Zahl rechtsbündig ausgerichtet wird.|
-|[left](../standard-library/ios-functions.md#left)|Bewirkt, dass Text, der nicht so breit ist wie die Ausgabebreite, im Stream linksbündig angezeigt wird.|
+|[linken](../standard-library/ios-functions.md#left)|Bewirkt, dass Text, der nicht so breit ist wie die Ausgabebreite, im Stream linksbündig angezeigt wird.|
 |[noboolalpha](../standard-library/ios-functions.md#noboolalpha)|Gibt an, dass Variablen des Typs [bool](../cpp/bool-cpp.md) im Stream als 1 oder 0 angezeigt werden.|
 |[noshowbase](../standard-library/ios-functions.md#noshowbase)|Deaktiviert die Angabe der Schreibweisenbasis, mit der eine Zahl angezeigt wird.|
 |[noshowpoint](../standard-library/ios-functions.md#noshowpoint)|Zeigt nur den ganzzahligen Teil von Gleitkommazahlen an, dessen Bruchteil null ist.|
@@ -71,17 +71,17 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 |[noskipws](../standard-library/ios-functions.md#noskipws)|Bewirkt, dass Leerzeichen vom Eingabestream gelesen werden.|
 |[nounitbuf](../standard-library/ios-functions.md#nounitbuf)|Bewirkt, dass die Ausgabe gepuffert und verarbeitet wird, wenn der Puffer voll ist.|
 |[nouppercase](../standard-library/ios-functions.md#nouppercase)|Gibt an, dass hexadezimale Ziffern und der Exponent in wissenschaftlicher Schreibweise in Kleinbuchstaben angezeigt werden.|
-|[oct](../standard-library/ios-functions.md#oct)|Gibt an, dass ganzzahlige Variablen in Basis-8-Schreibweise angezeigt werden.|
-|[right](../standard-library/ios-functions.md#right)|Bewirkt, dass Text, der nicht so breit ist wie die Ausgabebreite, im Stream rechtsbündig angezeigt wird.|
-|[scientific](../standard-library/ios-functions.md#scientific)|Bewirkt, dass Gleitkommazahlen in wissenschaftlicher Schreibweise angezeigt werden.|
+|[31.10](../standard-library/ios-functions.md#oct)|Gibt an, dass ganzzahlige Variablen in Basis-8-Schreibweise angezeigt werden.|
+|[Richting](../standard-library/ios-functions.md#right)|Bewirkt, dass Text, der nicht so breit ist wie die Ausgabebreite, im Stream rechtsbündig angezeigt wird.|
+|[wissenschaftlich](../standard-library/ios-functions.md#scientific)|Bewirkt, dass Gleitkommazahlen in wissenschaftlicher Schreibweise angezeigt werden.|
 |[showbase](../standard-library/ios-functions.md#showbase)|Gibt die Schreibweisenbasis an, mit der eine Zahl angezeigt wird.|
 |[showpoint](../standard-library/ios-functions.md#showpoint)|Zeigt den ganzzahligen Teil einer Gleitkommazahl und Ziffern rechts vom Dezimaltrennzeichen an, selbst wenn der Bruchteil null ist.|
-|[showpos](../standard-library/ios-functions.md#showpos)|Bewirkt, dass positive Zahlen explizit signiert werden.|
+|[Showpos](../standard-library/ios-functions.md#showpos)|Bewirkt, dass positive Zahlen explizit signiert werden.|
 |[skipws](../standard-library/ios-functions.md#skipws)|Bewirkt, dass Leerzeichen nicht vom Eingabestream gelesen werden.|
-|[unitbuf](../standard-library/ios-functions.md#unitbuf)|Bewirkt, dass die Ausgabe verarbeitet wird, wenn der Puffer nicht leer ist.|
+|[Unitbuf](../standard-library/ios-functions.md#unitbuf)|Bewirkt, dass die Ausgabe verarbeitet wird, wenn der Puffer nicht leer ist.|
 |[uppercase](../standard-library/ios-functions.md#uppercase)|Gibt an, dass hexadezimale Ziffern und der Exponent in wissenschaftlicher Schreibweise in Großbuchstaben angezeigt werden.|
 
-### <a name="error-reporting"></a>Fehlerberichterstattung
+### <a name="error-reporting"></a>Fehlerberichterstellung
 
 |||
 |-|-|
@@ -95,13 +95,13 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 |||
 |-|-|
-|[basic_ios](../standard-library/basic-ios-class.md)|Die Klassen Vorlage beschreibt die Speicher-und Element Funktionen, die sowohl für die Eingabedaten Ströme (der Klassen Vorlage [basic_istream](../standard-library/basic-istream-class.md)) als auch für die Ausgabestreams (der Klassen Vorlage [basic_ostream](../standard-library/basic-ostream-class.md)), die von den Vorlagen Parametern abhängen, gemeinsam|
+|[basic_ios](../standard-library/basic-ios-class.md)|Die Klassen Vorlage beschreibt die Speicher-und Element Funktionen, die sowohl für die Eingabedaten Ströme (von Klassen Vorlagen [basic_istream](../standard-library/basic-istream-class.md)) als auch für die Ausgabestreams (der Klassen Vorlage [basic_ostream](../standard-library/basic-ostream-class.md)), die von den Vorlagen Parametern abhängen, gemeinsam|
 |[fpos](../standard-library/fpos-class.md)|Die Klassen Vorlage beschreibt ein Objekt, das alle Informationen speichern kann, die zum Wiederherstellen eines beliebigen Datei Positions Indikators innerhalb eines Streams benötigt werden.|
 |[ios_base](../standard-library/ios-base-class.md)|Die Klasse beschreibt die Speicher- und Memberfunktionen, die Eingabe- und Ausgabestreams gemeinsam sind, die nicht von den Vorlagenparametern abhängen.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [iostream-Programmierung](../standard-library/iostream-programming.md)\
-[iostreams-Konventionen](../standard-library/iostreams-conventions.md)
+[Iostreams-Konventionen](../standard-library/iostreams-conventions.md)

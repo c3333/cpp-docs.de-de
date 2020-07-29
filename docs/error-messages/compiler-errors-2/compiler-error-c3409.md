@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3409
 ms.assetid: e372d9fa-230c-4b28-b6d3-6ad81ccf9dbb
-ms.openlocfilehash: 8ab2e0d152e4c123fa23512bc0111cebd070b3ee
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0bf8b918f254c05bfe57034e25611c8dc17a783a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80200862"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231961"
 ---
 # <a name="compiler-error-c3409"></a>Compilerfehler C3409
 
@@ -21,7 +21,7 @@ ms.locfileid: "80200862"
 
 Die eckigen Klammern wurden vom Compiler als [Attribut](../../windows/attributes-alphabetical-reference.md) Block interpretiert, aber es wurden keine Attribute gefunden.
 
-Der Compiler generiert diesen Fehler möglicherweise, wenn Sie eckige Klammern als Teil der Definition eines Lambda-Ausdrucks verwenden. Dieser Fehler tritt auf, wenn der Compiler nicht bestimmen kann, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind. Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](../../cpp/lambda-expressions-in-cpp.md).
+Der Compiler generiert diesen Fehler möglicherweise, wenn Sie eckige Klammern als Teil der Definition eines Lambda-Ausdrucks verwenden. Dieser Fehler tritt auf, wenn der Compiler nicht bestimmen kann, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind. Weitere Informationen zu Lambda-Ausdrücken finden Sie unter [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md).
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
@@ -56,7 +56,7 @@ class b : public x {};
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3409 generiert, da ein Lambda-Ausdruck die `mutable` Spezifikation verwendet, aber keine Parameterliste bereitstellt. Der Compiler kann nicht feststellen, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind.
+Im folgenden Beispiel wird C3409 generiert, da ein Lambda-Ausdruck die **`mutable`** Spezifikation verwendet, aber keine Parameterliste bereitstellt. Der Compiler kann nicht feststellen, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind.
 
 ```cpp
 // C3409b.cpp
@@ -71,4 +71,4 @@ int main()
 
 [attribute](../../windows/attributes-alphabetical-reference.md)<br/>
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)<br/>
-[Lambdaausdruckssyntax](../../cpp/lambda-expression-syntax.md)
+[Syntax von Lambda Ausdrücken](../../cpp/lambda-expression-syntax.md)

@@ -88,12 +88,12 @@ helpviewer_keywords:
 - m_iRowset
 - m_rgRowHandles
 ms.assetid: 6a9189af-7556-45b1-adcb-9d62bb36704c
-ms.openlocfilehash: db12af1aecc094e6c04ab37b5a70a0acd97e39e9
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f440bb891c30033962208c3e89648bd05ba3f81b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210417"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232143"
 ---
 # <a name="irowsetimpl-class"></a>IRowsetImpl-Klasse
 
@@ -115,29 +115,29 @@ class ATL_NO_VTABLE IRowsetImpl : public RowsetInterface
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IRowsetImpl`abgeleitete Klasse.
+Die von abgeleitete Klasse `IRowsetImpl` .
 
 *RowsetInterface*<br/>
-Eine von `IRowsetImpl`abgeleitete Klasse.
+Eine von abgeleitete Klasse `IRowsetImpl` .
 
 *RowClass*<br/>
-Speichereinheit für die `HROW`.
+Speichereinheit für das `HROW` .
 
 *Mapclass*<br/>
 Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
 |||
 |-|-|
 |[AddRefRows](#addrefrows)|Fügt einem vorhandenen Zeilenhandle einen Verweiszähler hinzu.|
-|[CreateRow](#createrow)|Wird von [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) aufgerufen, um eine neue `HROW`zuzuordnen. Wird nicht direkt vom Benutzer aufgerufen.|
+|[CreateRow](#createrow)|Wird von [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) aufgerufen, um einen neuen zuzuordnen `HROW` . Wird nicht direkt vom Benutzer aufgerufen.|
 |[GetData](#getdata)|Ruft Daten von der Zeilenkopie des Rowsets ab.|
 |[GetDBStatus](#getdbstatus)|Gibt den Status für das angegebene Feld zurück.|
 |[GetNextRows](#getnextrows)|Ruft Zeilen sequenziell ab und speichert die vorherige Position.|
@@ -180,7 +180,7 @@ Weitere Informationen finden Sie unter [IRowset:: adressfrows](/previous-version
 
 ## <a name="irowsetimplcreaterow"></a><a name="createrow"></a>Irowctimpl:: kreaterow
 
-Eine Hilfsmethode, die von [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) aufgerufen wird, um eine neue `HROW`zuzuordnen.
+Eine Hilfsmethode, die von [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) aufgerufen wird, um einen neuen zuzuordnen `HROW` .
 
 ### <a name="syntax"></a>Syntax
 
@@ -199,7 +199,7 @@ Cursor Position der Zeile, die erstellt wird.
 Ein Verweis, der an den Benutzer zurückgegeben wird, der die Anzahl der erstellten Zeilen angibt.
 
 *rwächst*<br/>
-Ein Array von `HROW`s, das mit den neu erstellten Zeilen Handles an den Aufrufer zurückgegeben wird.
+Ein Array von `HROW` s, das mit den neu erstellten Zeilen Handles an den Aufrufer zurückgegeben wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -221,7 +221,7 @@ STDMETHOD(GetData )(HROW hRow,
 
 Weitere Informationen finden Sie unter [IRowset:: GetData](/previous-versions/windows/desktop/ms716988(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-Einige Parameter entsprechen *OLE DB Programmier Verweis* Parametern unterschiedlicher Namen, die in `IRowset::GetData`beschrieben werden:
+Einige Parameter entsprechen *OLE DB Programmier Verweis* Parametern mit unterschiedlichen Namen, die in beschrieben werden `IRowset::GetData` :
 
 |Parameter für OLE DB Vorlage|*Verweis Parameter für OLE DB Programmierer*|
 |--------------------------------|------------------------------------------------|
@@ -342,7 +342,7 @@ Weitere Informationen finden Sie unter [IRowset:: RestartPosition](/previous-ver
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Rowsetposition ist nicht definiert, bis `GetNextRow` aufgerufen wird. Sie können sich rückwärts in einem ronass bewegen, indem Sie `RestartPosition` aufrufen und dann den Abruf oder den Bildlauf rückwärts ausführen.
+Die Rowsetposition ist nicht definiert, bis `GetNextRow` aufgerufen wird. Sie können sich rückwärts in einem ronass bewegen, indem Sie aufrufen `RestartPosition` und dann rückwärts abrufen oder scrollen.
 
 ## <a name="irowsetimplsetdbstatus"></a><a name="setdbstatus"></a>IRowsetImpl:: SetDBStatus
 
@@ -358,7 +358,7 @@ virtual HRESULT SetDBStatus(DBSTATUS* statusFlags,
 
 #### <a name="parameters"></a>Parameter
 
-*Status Flags*<br/>
+*statusFlags*<br/>
 Die [dbstatusflags](/previous-versions/windows/desktop/ms722617(v=vs.85)) , die für die Spalte festgelegt werden sollen.
 
 *CurrentRow*<br/>
@@ -387,7 +387,7 @@ unsigned m_bCanFetchBack:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verknüpft mit der `DBPROP_CANFETCHBACKWARDS`-Eigenschaft in der `DBPROPSET_ROWSET` Gruppe. Der Anbieter muss `DBPROP_CANFETCHBACKWARDS` für `m_bCanFetchBackwards` unter **stützen.**
+Verknüpft mit der- `DBPROP_CANFETCHBACKWARDS` Eigenschaft in der- `DBPROPSET_ROWSET` Gruppe. Der Anbieter muss unter `DBPROP_CANFETCHBACKWARDS` stützen `m_bCanFetchBackwards` , um zu sein **`true`** .
 
 ## <a name="irowsetimplm_bcanscrollback"></a><a name="bcanscrollback"></a>IRow-timpl:: m_bCanScrollBack
 
@@ -401,7 +401,7 @@ unsigned  m_bCanScrollBack:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verknüpft mit der `DBPROP_CANSCROLLBACKWARDS`-Eigenschaft in der `DBPROPSET_ROWSET` Gruppe. Der Anbieter muss `DBPROP_CANSCROLLBACKWARDS` für `m_bCanFetchBackwards` unter **stützen.**
+Verknüpft mit der- `DBPROP_CANSCROLLBACKWARDS` Eigenschaft in der- `DBPROPSET_ROWSET` Gruppe. Der Anbieter muss unter `DBPROP_CANSCROLLBACKWARDS` stützen `m_bCanFetchBackwards` , um zu sein **`true`** .
 
 ## <a name="irowsetimplm_breset"></a><a name="breset"></a>IRow-timpl:: m_bReset
 
@@ -415,7 +415,7 @@ unsigned m_bReset:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn der Consumer [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) mit einem negativen `lOffset` oder *Crows* aufruft und `m_bReset` true ist, wechselt `GetNextRows` zum Ende des Rowsets. Wenn `m_bReset` false ist, empfängt der Consumer in Übereinstimmung mit der OLE DB Spezifikation einen Fehlercode. Das `m_bReset`-Flag wird auf **true** festgelegt, wenn das Rowset erstmalig erstellt wird, und wenn der Consumer [IRowsetImpl:: RestartPosition](../../data/oledb/irowsetimpl-restartposition.md)aufruft. Wenn Sie `GetNextRows`aufzurufen, wird er auf " **false** " festgelegt.
+Wenn der Consumer [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) mit einem negativen `lOffset` oder *Crows* aufruft und den Wert `m_bReset` true hat, `GetNextRows` wechselt zum Ende des Rowsets. Wenn `m_bReset` false ist, empfängt der Consumer in Übereinstimmung mit der OLE DB Spezifikation einen Fehlercode. Das `m_bReset` Flag wird auf festgelegt, **`true`** Wenn das Rowset erstmalig erstellt wird, und wenn der Consumer [IRowsetImpl:: RestartPosition](../../data/oledb/irowsetimpl-restartposition.md)aufruft. Wird auf festgelegt, **`false`** Wenn aufgerufen wird `GetNextRows` .
 
 ## <a name="irowsetimplm_irowset"></a><a name="irowset"></a>IRow-timpl:: m_iRowset
 
@@ -429,7 +429,7 @@ DBROWOFFSET m_iRowset;
 
 ## <a name="irowsetimplm_rgrowhandles"></a><a name="rgrowhandles"></a>IRow-timpl:: m_rgRowHandles
 
-Eine Zuordnung von Zeilen Handles, die derzeit im Anbieter als Reaktion auf `GetNextRows`enthalten sind.
+Eine Zuordnung von Zeilen Handles, die derzeit vom Anbieter als Antwort auf enthalten sind `GetNextRows` .
 
 ### <a name="syntax"></a>Syntax
 
@@ -439,10 +439,10 @@ MapClass m_rgRowHandles;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Zeilen Handles werden durch Aufrufen von `ReleaseRows`entfernt. Weitere Informationen zur Definition von *mapclass*finden Sie unter [irowctimpl Overview](../../data/oledb/irowsetimpl-class.md) .
+Zeilen Handles werden durch Aufrufen von entfernt `ReleaseRows` . Weitere Informationen zur Definition von *mapclass*finden Sie unter [irowctimpl Overview](../../data/oledb/irowsetimpl-class.md) .
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>
-[CSimpleRow-Klasse](../../data/oledb/csimplerow-class.md)
+[Architektur der OLE DB-Anbieter Vorlage](../../data/oledb/ole-db-provider-template-architecture.md)<br/>
+[Csimplerow-Klasse](../../data/oledb/csimplerow-class.md)

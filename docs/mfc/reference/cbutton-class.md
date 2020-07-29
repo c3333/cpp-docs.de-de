@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CButton [MFC], SetState
 - CButton [MFC], SetTextMargin
 ms.assetid: cdc76d5b-31da-43c5-bc43-fde4cb39de5b
-ms.openlocfilehash: ae6fcbbcbb1a526dbba857fc9bfa2da5eb897c73
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 108bbbbb7fcb491ecc9ed278c5f7d5002ad02ef3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404305"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231857"
 ---
 # <a name="cbutton-class"></a>CButton-Klasse
 
@@ -170,7 +170,7 @@ Mögliche Nachrichten Zuordnungs Einträge lauten wie folgt:
 
 Wenn Sie ein- `CButton` Objekt aus einer Dialogfeld Ressource erstellen, `CButton` wird das Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
 
-Wenn Sie ein- `CButton` Objekt in einem-Fenster erstellen, müssen Sie es möglicherweise zerstören. Wenn Sie das `CButton` Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie **Delete** für das-Objekt erstellen, um es zu zerstören, wenn der Benutzer das Windows-Schaltflächen-Steuerelement schließt. Wenn Sie das `CButton` Objekt im Stapel erstellen oder es in das übergeordnete Dialog Objekt eingebettet ist, wird es automatisch zerstört.
+Wenn Sie ein- `CButton` Objekt in einem-Fenster erstellen, müssen Sie es möglicherweise zerstören. Wenn Sie das- `CButton` Objekt auf dem Heap mithilfe der- **`new`** Funktion erstellen, müssen Sie für das-Objekt aufzurufen, **`delete`** um es zu zerstören, wenn der Benutzer das Windows-Schaltflächen-Steuerelement schließt. Wenn Sie das `CButton` Objekt im Stapel erstellen oder es in das übergeordnete Dialog Objekt eingebettet ist, wird es automatisch zerstört.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -578,7 +578,7 @@ UINT GetState() const;
 
 Ein Bitfeld, das die Kombination von Werten enthält, die den aktuellen Zustand eines Schaltflächen-Steuer Elements angeben. In der folgenden Tabelle sind die möglichen Werte aufgeführt.
 
-|Schaltflächen Zustand|Value|BESCHREIBUNG|
+|Schaltflächen Zustand|value|BESCHREIBUNG|
 |------------------|-----------|-----------------|
 |BST_UNCHECKED|0x0000|Der Anfangszustand.|
 |BST_CHECKED|0x0001|Das Schaltflächen-Steuerelement ist aktiviert.|
@@ -1117,12 +1117,12 @@ Diese Member-Funktion emuliert die Funktionalität der BCM_SETTEXTMARGIN Nachric
 ## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [CComboBox-Klasse](../../mfc/reference/ccombobox-class.md)<br/>
-[CEdit Class](../../mfc/reference/cedit-class.md)<br/>
+[CEdit-Klasse](../../mfc/reference/cedit-class.md)<br/>
 [CListBox-Klasse](../../mfc/reference/clistbox-class.md)<br/>
-[CScrollBar-Klasse](../../mfc/reference/cscrollbar-class.md)<br/>
+[Cscrollbar-Klasse](../../mfc/reference/cscrollbar-class.md)<br/>
 [Cstatic-Klasse](../../mfc/reference/cstatic-class.md)<br/>
 [CBitmapButton-Klasse](../../mfc/reference/cbitmapbutton-class.md)<br/>
 [CDialog-Klasse](../../mfc/reference/cdialog-class.md)

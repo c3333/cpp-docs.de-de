@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - match_results class
 ms.assetid: b504fdca-e5dd-429d-9960-6e27c9167fa6
-ms.openlocfilehash: 31154a38f8bbcb879fd871f1eb1bf5a4b15af79b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8ce9ed987baf63f2cc9f095e2955a8165e977193
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371022"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212214"
 ---
 # <a name="match_results-class"></a>match_results-Klasse
 
@@ -26,15 +26,15 @@ class match_results
 
 ## <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Itertatortyp für Teilübereinstimmungen.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Der Typ einer Zuweisung für die Speicherverwaltung.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt ein Objekt, das eine nicht veränderbare Sequenz von Elementen des Typs `sub_match<BidIt>` steuert, die durch eine Suche nach regulären Ausdrücken generiert werden. Jedes Element verweist auf die Untersequenz, die mit der Erfassungsgruppe übereinstimmt, die diesem Element entspricht.
+Die Klassen Vorlage beschreibt ein Objekt, das eine nicht änderbare Sequenz von Elementen vom Typ steuert, die `sub_match<BidIt>` durch eine Suche mit regulären Ausdrücken generiert wird. Jedes Element verweist auf die Untersequenz, die mit der Erfassungsgruppe übereinstimmt, die diesem Element entspricht.
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -44,7 +44,7 @@ Die Klassenvorlage beschreibt ein Objekt, das eine nicht veränderbare Sequenz v
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Der Typ einer Zuweisung für die Speicherverwaltung.|
 |[char_type](#char_type)|Der Typ eines Elements.|
@@ -52,26 +52,26 @@ Die Klassenvorlage beschreibt ein Objekt, das eine nicht veränderbare Sequenz v
 |[const_reference](#const_reference)|Der Typ eines Konstantenverweises auf ein Element.|
 |[difference_type](#difference_type)|Der Typ einer Iteratordifferenz.|
 |[Iterator](#iterator)|Der Itertatortyp für Teilübereinstimmungen.|
-|[Verweis](#reference)|Der Typ eines Elementverweises.|
-|[Size_type](#size_type)|Der Typ einer Teilübereinstimmungszählers.|
+|[Referenz](#reference)|Der Typ eines Elementverweises.|
+|[size_type](#size_type)|Der Typ einer Teilübereinstimmungszählers.|
 |[string_type](#string_type)|Der Typ einer Zeichenfolge.|
-|[Value_type](#value_type)|Der Typ einer Teilübereinstimmung.|
+|[value_type](#value_type)|Der Typ einer Teilübereinstimmung.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Beginnen](#begin)|Kennzeichnet den Anfang einer Teilübereinstimmungssequenz.|
+|[beginnen](#begin)|Kennzeichnet den Anfang einer Teilübereinstimmungssequenz.|
 |[empty](#empty)|Testet, ob keine Teilübereinstimmungen vorliegen.|
-|[Ende](#end)|Designates end of submatch sequence.|
+|[end](#end)|Designates end of submatch sequence.|
 |[format](#format)|Formatiert Teilübereinstimmungen.|
 |[get_allocator](#get_allocator)|Gibt die gespeicherte Zuweisung zurück.|
 |[length](#length)|Gibt die Länge einer Teilübereinstimmung zurück.|
-|[Max_size](#max_size)|Ruft die größte Anzahl von Teilübereinstimmungen ab.|
-|[Position](#position)|Ruft das Startoffset einer Untergruppe ab.|
-|[prefix](#prefix)|Ruft die Sequenz vor der ersten Teilübereinstimmung ab.|
-|[Größe](#size)|Zählt, wie viele Teilübereinstimmungen es gibt.|
-|[Str](#str)|Gibt eine Teilübereinstimmung zurück.|
+|[max_size](#max_size)|Ruft die größte Anzahl von Teilübereinstimmungen ab.|
+|[gebracht](#position)|Ruft das Startoffset einer Untergruppe ab.|
+|[Präfix](#prefix)|Ruft die Sequenz vor der ersten Teilübereinstimmung ab.|
+|[size](#size)|Zählt, wie viele Teilübereinstimmungen es gibt.|
+|[str](#str)|Gibt eine Teilübereinstimmung zurück.|
 |[Suffix](#suffix)|Ruft die Sequenz nach der letzten Teilübereinstimmung ab.|
 |[swap](#swap)|Tauscht zwei match_results-Objekte.|
 
@@ -79,12 +79,12 @@ Die Klassenvorlage beschreibt ein Objekt, das eine nicht veränderbare Sequenz v
 
 |Operator|BESCHREIBUNG|
 |-|-|
-|[Operator=](#op_eq)|Kopieren Sie ein match_results-Objekt.|
-|[Operator\[\]](#op_at)|Zugriff auf ein Unterobjekt.|
+|[Operator =](#op_eq)|Kopieren Sie ein match_results-Objekt.|
+|[KOM\[\]](#op_at)|Zugriff auf ein Unterobjekt.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<regex >
+**Header:**\<regex>
 
 **Namespace:** std
 
@@ -188,7 +188,7 @@ next submatch: matched == false
 empty == false
 ```
 
-## <a name="match_resultsallocator_type"></a><a name="allocator_type"></a>match_results::allocator_type
+## <a name="match_resultsallocator_type"></a><a name="allocator_type"></a>match_results:: allocator_type
 
 Der Typ einer Zuweisung für die Speicherverwaltung.
 
@@ -198,9 +198,9 @@ typedef Alloc allocator_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der typedef ist ein Synonym für das Vorlagenargument *Alloc*.
+Die TypeDef ist ein Synonym für das Vorlagen Argument " *Zuweisung*".
 
-## <a name="match_resultsbegin"></a><a name="begin"></a>match_results::begin
+## <a name="match_resultsbegin"></a><a name="begin"></a>match_results:: begin
 
 Kennzeichnet den Anfang einer Teilübereinstimmungssequenz.
 
@@ -212,7 +212,7 @@ const_iterator begin() const;
 
 Die Memberfunktion gibt einen Iterator mit wahlfreiem Zugriff zurück, der auf das erste Element der Sequenz zeigt (bzw. gerade über das Ende einer leeren Sequenz hinaus).
 
-## <a name="match_resultschar_type"></a><a name="char_type"></a>match_results::char_type
+## <a name="match_resultschar_type"></a><a name="char_type"></a>match_results:: char_type
 
 Der Typ eines Elements.
 
@@ -224,7 +224,7 @@ typedef typename iterator_traits<BidIt>::value_type char_type;
 
 Die Typdefinition (typedef) ist ein Synonym für den Typ `iterator_traits<BidIt>::value_type`, der der Elementtyp der Zeichenfolge ist, die durchsucht wurde.
 
-## <a name="match_resultsconst_iterator"></a><a name="const_iterator"></a>match_results::const_iterator
+## <a name="match_resultsconst_iterator"></a><a name="const_iterator"></a>match_results:: const_iterator
 
 Der Itertatortyp „const“ für Teilübereinstimmungen.
 
@@ -236,7 +236,7 @@ typedef T0 const_iterator;
 
 Die Typdefinition beschreibt ein Objekt, das als Iterator für den konstanten zufälligen Zugriff für die kontrollierte Sequenz dienen kann.
 
-## <a name="match_resultsconst_reference"></a><a name="const_reference"></a>match_results::const_reference
+## <a name="match_resultsconst_reference"></a><a name="const_reference"></a>match_results:: const_reference
 
 Der Typ eines Konstantenverweises auf ein Element.
 
@@ -248,7 +248,7 @@ typedef const typename Alloc::const_reference const_reference;
 
 Die Typdef beschreibt ein Objekt, das als Konstantenverweis für ein Element der gesteuerten Sequenz fungieren kann.
 
-## <a name="match_resultsdifference_type"></a><a name="difference_type"></a>match_results::difference_type
+## <a name="match_resultsdifference_type"></a><a name="difference_type"></a>match_results::d ifference_type
 
 Der Typ einer Iteratordifferenz.
 
@@ -260,7 +260,7 @@ typedef typename iterator_traits<BidIt>::difference_type difference_type;
 
 Typedef ist ein Synonym für den Typ `iterator_traits<BidIt>::difference_type`. Er beschreibt ein Objekt, das die Differenz zwischen zwei beliebigen Iteratoren darstellen kann, die auf Elemente der kontrollierten Sequenz verweisen.
 
-## <a name="match_resultsempty"></a><a name="empty"></a>match_results::leer
+## <a name="match_resultsempty"></a><a name="empty"></a>match_results:: Empty
 
 Testet, ob keine Teilübereinstimmungen vorliegen.
 
@@ -272,7 +272,7 @@ bool empty() const;
 
 Die Memberfunktion gibt nur dann „true“, wenn die Suche mit regulärem Ausdruck fehlgeschlagen ist.
 
-## <a name="match_resultsend"></a><a name="end"></a>match_results::Ende
+## <a name="match_resultsend"></a><a name="end"></a>match_results:: End
 
 Designates end of submatch sequence.
 
@@ -284,7 +284,7 @@ const_iterator end() const;
 
 Die Memberfunktion gibt einen Iterator zurück, der direkt hinter das Ende der Sequenz verweist.
 
-## <a name="match_resultsformat"></a><a name="format"></a>match_results::format
+## <a name="match_resultsformat"></a><a name="format"></a>match_results:: Format
 
 Formatiert Teilübereinstimmungen.
 
@@ -301,22 +301,22 @@ string_type format(const string_type& fmt, match_flag_type flags = format_defaul
 *OutIt*\
 Der Ausgabeiteratortyp.
 
-*out*\
+*vorgenommen*\
 Der Ausgabestream, in den geschrieben werden soll.
 
-*Fmt*\
+*fmt*\
 Die Formatzeichenfolge.
 
-*Flaggen*\
+*fahren*\
 Die Formatflags.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Jede Memberfunktion generiert formatierten Text unter der Steuerung des Formats *fmt*. Die erste Memberfunktion schreibt den formatierten Text in die sequenziums, die durch ihr Argument *definiert* ist, und gibt *aus.* Die zweite Memberfunktion gibt ein Zeichenfolgenobjekt zurück, das eine Kopie des formatierten Textes enthält.
+Jede Member-Funktion generiert formatierten Text unter der Steuerung des Formats *fmt*. Die erste Member-Funktion schreibt den formatierten Text in die Sequenz, die durch das Argument *out* definiert *ist, und gibt zurück*. Die zweite Member-Funktion gibt ein Zeichen folgen Objekt zurück, das eine Kopie des formatierten Texts enthält.
 
 Um formatierten Text zu generieren, wird Literaltext in der Formatzeichenfolge einfach in die Zielsequenz kopiert. Jede Escapesequenz in der Formatzeichenfolge wird vom Text ersetzt, den sie darstellt. Die Details des Kopierens und Ersetzens werden durch die Formatflags gesteuert, die an die Funktion übergeben werden.
 
-## <a name="match_resultsget_allocator"></a><a name="get_allocator"></a>match_results::get_allocator
+## <a name="match_resultsget_allocator"></a><a name="get_allocator"></a>match_results:: Get_allocator
 
 Gibt die gespeicherte Zuweisung zurück.
 
@@ -326,9 +326,9 @@ allocator_type get_allocator() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt eine Kopie des Zuweisungsobjekts zurück, das von `*this` zum Zuweisen der `sub_match`-Objekte verwendet wird.
+Die Member-Funktion gibt eine Kopie des allocator-Objekts zurück, das von verwendet wird **`*this`** , um die zugehörigen `sub_match` Objekte zuzuordnen.
 
-## <a name="match_resultsiterator"></a><a name="iterator"></a>match_results::iterator
+## <a name="match_resultsiterator"></a><a name="iterator"></a>match_results:: Iterator
 
 Der Itertatortyp für Teilübereinstimmungen.
 
@@ -340,7 +340,7 @@ typedef const_iterator iterator;
 
 Der Typ beschreibt ein Objekt, das als Iterator für zufälligen Zugriff für die gesteuerte Sequenz fungieren kann.
 
-## <a name="match_resultslength"></a><a name="length"></a>match_results::Länge
+## <a name="match_resultslength"></a><a name="length"></a>match_results:: length
 
 Gibt die Länge einer Teilübereinstimmung zurück.
 
@@ -350,14 +350,14 @@ difference_type length(size_type sub = 0) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Sub*\
+*nationale*\
 Der Index der Teilübereinstimmung.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt `(*this)[sub].length()` zurück.
 
-## <a name="match_resultsmatch_results"></a><a name="match_results"></a>match_results::match_results
+## <a name="match_resultsmatch_results"></a><a name="match_results"></a>match_results:: match_results
 
 Erstellt das Objekt.
 
@@ -369,7 +369,7 @@ match_results(const match_results& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Alloc*\
+*Zuordnungseinheits*\
 Das zu speichernde Zuweisungsobjekt.
 
 *Richting*\
@@ -377,9 +377,9 @@ Das zu kopierende match_results-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor erstellt ein `match_results`-Objekt, das keine Teilübereinstimmungen enthält. Der zweite Konstruktor `match_results` erstellt ein Objekt, das eine Kopie von *rechts*ist.
+Der erste Konstruktor erstellt ein `match_results`-Objekt, das keine Teilübereinstimmungen enthält. Mit dem zweiten Konstruktor wird ein- `match_results` Objekt erstellt, das eine Kopie von *right*ist.
 
-## <a name="match_resultsmax_size"></a><a name="max_size"></a>match_results::max_size
+## <a name="match_resultsmax_size"></a><a name="max_size"></a>match_results:: max_size
 
 Ruft die größte Anzahl von Teilübereinstimmungen ab.
 
@@ -391,7 +391,7 @@ size_type max_size() const;
 
 Die Memberfunktion gibt die Länge der längsten Sequenz zurück, die das Objekt steuern kann.
 
-## <a name="match_resultsoperator"></a><a name="op_eq"></a>match_results::operator=
+## <a name="match_resultsoperator"></a><a name="op_eq"></a>match_results:: Operator =
 
 Kopieren Sie ein match_results-Objekt.
 
@@ -406,9 +406,9 @@ Das zu kopierende match_results-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Memberoperator ersetzt die `*this` durch *rechts*gesteuerte Sequenz durch eine Kopie der Sequenz.
+Der Member-Operator ersetzt die durch gesteuerte Sequenz durch **`*this`** eine Kopie der von *right*kontrollierten Sequenz.
 
-## <a name="match_resultsoperator"></a><a name="op_at"></a>match_results::operator[]
+## <a name="match_resultsoperator"></a><a name="op_at"></a>match_results:: Operator []
 
 Zugriff auf ein Unterobjekt.
 
@@ -418,14 +418,14 @@ const_reference operator[](size_type n) const;
 
 ### <a name="parameters"></a>Parameter
 
-*N*\
+*Nr*\
 Der Index der Teilübereinstimmung.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt einen Verweis auf Element *n* der gesteuerten Sequenz oder einen Verweis auf ein leeres `sub_match` Objekt zurück, wenn `size() <= n` oder wenn die Erfassungsgruppe *n* nicht Teil der Übereinstimmung war.
+Die Member-Funktion gibt einen Verweis auf das Element *n* der kontrollierten Sequenz oder einen Verweis auf ein leeres `sub_match` Objekt zurück, wenn oder, `size() <= n` Wenn die Erfassungs Gruppe *n* nicht Teil der Entsprechung war.
 
-## <a name="match_resultsposition"></a><a name="position"></a>match_results::psition
+## <a name="match_resultsposition"></a><a name="position"></a>match_results::p osition
 
 Ruft das Startoffset einer Untergruppe ab.
 
@@ -435,14 +435,14 @@ difference_type position(size_type sub = 0) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Sub*\
+*nationale*\
 Der Index der Teilübereinstimmung.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt `std::distance(prefix().first, (*this)[sub].first)`zurück, d. h. den Abstand vom ersten Zeichen in der Zielsequenz zum ersten Zeichen in der Teilübereinstimmung, auf die das `n` -Element der kontrollierten Sequenz verweist.
 
-## <a name="match_resultsprefix"></a><a name="prefix"></a>match_results::prefix
+## <a name="match_resultsprefix"></a><a name="prefix"></a>match_results::p refix
 
 Ruft die Sequenz vor der ersten Teilübereinstimmung ab.
 
@@ -454,7 +454,7 @@ const_reference prefix() const;
 
 Die Memberfunktion gibt einen Verweis auf ein Objekt des Typs `sub_match<BidIt>` zurück, das auf die Zeichenfolge zeigt, die am Anfang der Zielsequenz beginnt und am `(*this)[0].first`endet, d. h., das Objekt zeigt auf den Text, der der übereinstimmenden Untersequenz voransteht.
 
-## <a name="match_resultsreference"></a><a name="reference"></a>match_results::Referenz
+## <a name="match_resultsreference"></a><a name="reference"></a>match_results:: Reference
 
 Der Typ eines Elementverweises.
 
@@ -466,7 +466,7 @@ typedef const_reference reference;
 
 Der Typ ist ein Synonym für den Typ `const_reference`.
 
-## <a name="match_resultssize"></a><a name="size"></a>match_results::größe
+## <a name="match_resultssize"></a><a name="size"></a>match_results:: size
 
 Zählt, wie viele Teilübereinstimmungen es gibt.
 
@@ -478,7 +478,7 @@ size_type size() const;
 
 Die Memberfunktion gibt entweder einen Wert zurück, der um eins größer ist als die Anzahl von Erfassungsgruppen im regulären Ausdruck, der für die Suche verwendet wurde, oder 0 (null), wenn keine Suche ausgeführt wurde.
 
-## <a name="match_resultssize_type"></a><a name="size_type"></a>match_results::size_type
+## <a name="match_resultssize_type"></a><a name="size_type"></a>match_results:: size_type
 
 Der Typ einer Teilübereinstimmungszählers.
 
@@ -490,7 +490,7 @@ typedef typename Alloc::size_type size_type;
 
 Der Typ ist ein Synonym für den Typ `Alloc::size_type`.
 
-## <a name="match_resultsstr"></a><a name="str"></a>match_results::str
+## <a name="match_resultsstr"></a><a name="str"></a>match_results:: Str
 
 Gibt eine Teilübereinstimmung zurück.
 
@@ -500,14 +500,14 @@ string_type str(size_type sub = 0) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Sub*\
+*nationale*\
 Der Index der Teilübereinstimmung.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt `string_type((*this)[sub])` zurück.
 
-## <a name="match_resultsstring_type"></a><a name="string_type"></a>match_results::string_type
+## <a name="match_resultsstring_type"></a><a name="string_type"></a>match_results:: string_type
 
 Der Typ einer Zeichenfolge.
 
@@ -519,7 +519,7 @@ typedef basic_string<char_type> string_type;
 
 Der Typ ist ein Synonym für den Typ `basic_string<char_type>`.
 
-## <a name="match_resultssuffix"></a><a name="suffix"></a>match_results::suffix
+## <a name="match_resultssuffix"></a><a name="suffix"></a>match_results:: Suffix
 
 Ruft die Sequenz nach der letzten Teilübereinstimmung ab.
 
@@ -531,7 +531,7 @@ const_reference suffix() const;
 
 Die Memberfunktion gibt einen Verweis auf ein Objekt des Typs `sub_match<BidIt>` zurück, das auf die Zeichenfolge zeigt, die bei beginnt `(*this)[size() - 1].second` und am Ende der Zielsequenz endet, d. h., das Objekt zeigt auf den Text, der auf die übereinstimmende Untersequenz folgt.
 
-## <a name="match_resultsswap"></a><a name="swap"></a>match_results::swap
+## <a name="match_resultsswap"></a><a name="swap"></a>match_results:: Swap
 
 Tauscht zwei match_results-Objekte.
 
@@ -546,9 +546,9 @@ Das match_results-Objekt, mit dem getauscht werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion tauscht `*this` den Inhalt und *das Recht* in konstanter Zeit aus und löst keine Ausnahmen aus.
+Die Member-Funktion vertauscht den Inhalt von **`*this`** und *Recht* in konstanter Zeit und löst keine Ausnahmen aus.
 
-## <a name="match_resultsvalue_type"></a><a name="value_type"></a>match_results::value_type
+## <a name="match_resultsvalue_type"></a><a name="value_type"></a>match_results:: value_type
 
 Der Typ einer Teilübereinstimmung.
 
@@ -560,6 +560,6 @@ typedef sub_match<BidIt> value_type;
 
 Die Typedef ist ein Synonym für den Typ `sub_match<BidIt>`.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<regex>](../standard-library/regex.md)

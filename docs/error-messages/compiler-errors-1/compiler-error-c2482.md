@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2482
 ms.assetid: 98c87da2-625c-4cc2-9bf7-78d15921e779
-ms.openlocfilehash: 5afa81369b2cf329baae02bc1309587015946409
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a68c3f06daf977bda4700a293803859d4aa96771
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80205152"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216205"
 ---
 # <a name="compiler-error-c2482"></a>Compilerfehler C2482
 
@@ -19,11 +19,11 @@ ms.locfileid: "80205152"
 
 ## <a name="remarks"></a>Bemerkungen
 
-In verwaltetem oder WinRT-Code können Variablen, die mit dem [__declspec (Thread)](../../cpp/thread.md) -speicherklassenmodifiziererattribut oder dem [thread_local](../../cpp/storage-classes-cpp.md#thread_local) Speicherklassenspezifizierer deklariert wurden, nicht mit einem Ausdruck initialisiert werden, der zur Laufzeit ausgewertet werden muss. Ein statischer Ausdruck ist erforderlich, um `__declspec(thread)` oder `thread_local` Daten in diesen Laufzeitumgebungen zu initialisieren.
+In verwaltetem oder WinRT-Code können Variablen, die mit dem [__declspec (Thread)](../../cpp/thread.md) -speicherklassenmodifiziererattribut oder dem [thread_local](../../cpp/storage-classes-cpp.md#thread_local) Speicherklassenspezifizierer deklariert wurden, nicht mit einem Ausdruck initialisiert werden, der zur Laufzeit ausgewertet werden muss. Zum Initialisieren von- `__declspec(thread)` oder- **`thread_local`** Daten in diesen Laufzeitumgebungen ist ein statischer Ausdruck erforderlich.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C2482 im verwalteten ( **/CLR**) und in WinRT-Code ( **/ZW**) generiert:
+Im folgenden Beispiel wird C2482 im verwalteten (**/CLR**) und in WinRT-Code (**/ZW**) generiert:
 
 ```cpp
 // C2482.cpp
@@ -36,4 +36,4 @@ int j = j;   // OK in C++; C error
 Thread int tls_i2 = sizeof( tls_i2 );   // Okay in C and C++
 ```
 
-Um dieses Problem zu beheben, initialisieren Sie den lokalen Thread Speicher mithilfe eines Konstanten-, **constexpr**-oder static-Ausdrucks. Führen Sie eine beliebige Thread spezifische Initialisierung separat aus.
+Um dieses Problem zu beheben, initialisieren Sie den lokalen Thread Speicher mithilfe eines Konstanten-,- **`constexpr`** oder statischen Ausdrucks. Führen Sie eine beliebige Thread spezifische Initialisierung separat aus.

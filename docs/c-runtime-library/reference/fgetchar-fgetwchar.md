@@ -38,12 +38,12 @@ helpviewer_keywords:
 - standard input, reading from
 - fgetchar function
 ms.assetid: 8bce874c-701a-41a3-b1b2-feff266fb5b9
-ms.openlocfilehash: 79b932268f379309d7765d8fa03797a5b8360ccf
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 99febac7de2c2fa4e6587654e854b32b702d299e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912762"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232533"
 ---
 # <a name="_fgetchar-_fgetwchar"></a>_fgetchar, _fgetwchar
 
@@ -58,13 +58,13 @@ wint_t _fgetwchar( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-fgetchar gibt das als **int** gelesene Zeichen zurück `EOF` oder gibt zurück, um einen Fehler oder ein Dateiende anzugeben. ** \_** fgetwchar gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder `WEOF` gibt zurück, um einen Fehler oder ein Dateiende anzugeben. ** \_** Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden.
+** \_ fgetchar** gibt das als gelesene Zeichen als zurück **`int`** oder gibt zurück `EOF` , um einen Fehler oder ein Dateiende anzugeben. ** \_ fgetwchar** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt zurück, `WEOF` um einen Fehler oder ein Dateiende anzugeben. Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktionen lesen ein einzelnes Zeichen aus **stdin**. Die Funktion erhöht dann den zugeordneten Dateizeiger (sofern definiert), um auf das nächste Zeichen zu zeigen. Wenn der Stream am Dateiende ist, wird der Dateiende-Indikator für den Stream festgelegt.
 
-**_fgetchar** entspricht `fgetc( stdin )`. Sie entspricht auch **GetChar**, wird jedoch nur als Funktion und nicht als Funktion und Makro implementiert. **_fgetwchar** ist die breit Zeichen Version von **_fgetchar**.
+**_fgetchar** entspricht `fgetc( stdin )` . Sie entspricht auch **GetChar**, wird jedoch nur als Funktion und nicht als Funktion und Makro implementiert. **_fgetwchar** ist die breit Zeichen Version von **_fgetchar**.
 
 Diese Funktionen sind nicht dem ANSI-Standard kompatibel.
 
@@ -76,7 +76,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_fgettchar**|**_fgetchar**|**_fgetchar**|**_fgetwchar**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|

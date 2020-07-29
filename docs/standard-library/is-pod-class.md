@@ -7,14 +7,14 @@ helpviewer_keywords:
 - is_pod class
 - is_pod
 ms.assetid: d73ebdee-746b-4082-9fa4-2db71432eb0e
-ms.openlocfilehash: 1249e9a3689d4b91334e545ba294c28984898035
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 1398da92890072d8aa8a6f07c61920fe3bee1776
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455767"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212240"
 ---
-# <a name="ispod-class"></a>is_pod-Klasse
+# <a name="is_pod-class"></a>is_pod-Klasse
 
 Testet, ob der Typ POD ist.
 
@@ -27,12 +27,12 @@ struct is_pod;
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*Bund*\
 Der abzufragende Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`is_pod<T>::value`ist **true** , wenn der Typ *T* Plain Old Data (Pod) ist. Andernfalls ist Sie **false**.
+`is_pod<T>::value`Gibt an, **`true`** ob der Typ *T* Plain Old Data (Pod) ist. Andernfalls ist der Wert **`false`** .
 
 Arithmetische Typen, Enumerationstypen, Zeigertypen und Zeiger auf Membertypen sind POD.
 
@@ -94,12 +94,12 @@ is_pod<int> == true
 is_pod<throws> == false
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2084
 ms.assetid: 990b107f-3721-4851-ae8b-4b69a8c149ed
-ms.openlocfilehash: 881ae051b2779fe674b31b64a7cbe7be7cf63705
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f217e0b94e27c0f85879e80b3ae887cb4f76f486
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74757890"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216361"
 ---
 # <a name="compiler-error-c2084"></a>Compilerfehler C2084
 
@@ -23,7 +23,7 @@ Vor Visual Studio 2002,
 
 - Der Compiler würde mehrere Vorlagen spezizierungen akzeptieren, die in denselben tatsächlichen Typ aufgelöst wurden, obwohl die zusätzlichen Definitionen nie verfügbar wären. Der Compiler erkennt jetzt diese mehrere Definitionen.
 
-- `__int32` und `int` wurden als separate Typen behandelt. Der Compiler behandelt nun `__int32` als Synonym für `int`. Dies bedeutet, dass der Compiler mehrere Definitionen erkennt, wenn eine Funktion sowohl für `__int32` als auch für `int` überladen wird und einen Fehler liefert.
+- **`__int32`** und **`int`** wurden als separate Typen behandelt. Der Compiler behandelt nun **`__int32`** als Synonym für **`int`** . Dies bedeutet, dass der Compiler mehrere Definitionen erkennt, wenn eine Funktion sowohl in als auch in überlastet ist **`__int32`** **`int`** und einen Fehler liefert.
 
 ## <a name="example"></a>Beispiel
 

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3020
 ms.assetid: f625c7a3-afaa-4bd8-9c1b-51891b832f36
-ms.openlocfilehash: b066e813203f10b902e49a62af97a9a041874752
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 89b28ae396322859596b99ba56a28375e9c9d6d5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74742118"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232026"
 ---
 # <a name="compiler-error-c3020"></a>Compilerfehler C3020
 
 "var": die Index Variable der for-Schleife von OpenMP kann im Schleifen Text nicht geändert werden.
 
-Eine OpenMP-`for` Schleife kann den Index (Schleifen Indikator) nicht im Text der `for` Schleife ändern.
+In einer OpenMP- **`for`** Schleife kann der Index (Schleifen Indikator) im Text der Schleife nicht geändert werden **`for`** .
 
 Im folgenden Beispiel wird C3020 generiert:
 

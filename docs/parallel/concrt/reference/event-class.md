@@ -11,12 +11,12 @@ f1_keywords:
 helpviewer_keywords:
 - event class
 ms.assetid: fba35a53-6568-4bfa-9aaf-07c0928cf73d
-ms.openlocfilehash: 3d645cc09c61402059e9a86679c10ee703ee8031
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 3f2ec71083f7a7905bad5cda014baba914e31e79
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79443742"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215802"
 ---
 # <a name="event-class"></a>event-Klasse
 
@@ -28,7 +28,7 @@ Ein Ereignis für manuelles Zurücksetzen, das explizit die Concurrency Runtime 
 class event;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -38,7 +38,7 @@ class event;
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[reset](#reset)|Setzt das Ereignis auf einen nicht signalisierten Zustand zurück.|
 |[set](#set)|Signalisiert das Ereignis.|
@@ -65,7 +65,7 @@ Weitere Informationen finden Sie unter [Synchronisierungs Datenstrukturen](../..
 
 **Namespace:** Parallelität
 
-## <a name="ctor"></a>Veranstalter
+## <a name="event"></a><a name="ctor"></a> -Ereignis
 
 Erstellt ein neues Ereignis.
 
@@ -75,7 +75,7 @@ _CRTIMP event();
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="dtor"></a>~-Ereignis
+## <a name="event"></a><a name="dtor"></a>~-Ereignis
 
 Zerstört ein Ereignis.
 
@@ -87,7 +87,7 @@ Zerstört ein Ereignis.
 
 Es wird erwartet, dass keine Threads auf das Ereignis warten, wenn der Destruktor ausgeführt wird. Wenn das Ereignis zerstört wird, während Threads auf das Ereignis warten, kann dies zu einem nicht definiertem Verhalten führen.
 
-## <a name="reset"></a>Festlegen
+## <a name="reset"></a><a name="reset"></a>Festlegen
 
 Setzt das Ereignis auf einen nicht signalisierten Zustand zurück.
 
@@ -95,7 +95,7 @@ Setzt das Ereignis auf einen nicht signalisierten Zustand zurück.
 void reset();
 ```
 
-## <a name="set"></a>Set
+## <a name="set"></a><a name="set"></a>Set
 
 Signalisiert das Ereignis.
 
@@ -107,7 +107,7 @@ void set();
 
 Das Signalisieren des Ereignisses kann möglicherweise dazu führen, dass eine beliebige Anzahl von Kontexten, die auf das Ereignis warten, ausführbar werden.
 
-## <a name="timeout_infinite"></a>timeout_infinite
+## <a name="timeout_infinite"></a><a name="timeout_infinite"></a>timeout_infinite
 
 Ein Wert, der angibt, dass ein Wartevorgang nie durch einen Timeout beendet werden sollte.
 
@@ -115,7 +115,7 @@ Ein Wert, der angibt, dass ein Wartevorgang nie durch einen Timeout beendet werd
 static const unsigned int timeout_infinite = COOPERATIVE_TIMEOUT_INFINITE;
 ```
 
-## <a name="wait"></a>Warte
+## <a name="wait"></a><a name="wait"></a>Warte
 
 Wartet, bis das Ereignis signalisiert wird.
 
@@ -126,16 +126,16 @@ size_t wait(unsigned int _Timeout = COOPERATIVE_TIMEOUT_INFINITE);
 ### <a name="parameters"></a>Parameter
 
 *_Timeout*<br/>
-Gibt die Anzahl von Millisekunden vor dem Timeout an. Der Wert `COOPERATIVE_TIMEOUT_INFINITE` der angibt, dass kein Timeout vorliegt.
+Gibt die Anzahl von Millisekunden vor dem Timeout an. Der Wert `COOPERATIVE_TIMEOUT_INFINITE` gibt an, dass kein Timeout vorliegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Wenn der Wartezustand erfüllt wurde, wird der Wert `0` zurückgegeben. Andernfalls gibt der Wert `COOPERATIVE_WAIT_TIMEOUT` an, dass der Wartezustand durch einen Timeout beendet wurde, ohne dass das Ereignis signalisiert wurde.
 
 > [!IMPORTANT]
-> Rufen Sie in einer universelle Windows-Plattform-app (UWP) `wait` nicht im Asta-Thread auf, da dieser-Befehl den aktuellen Thread blockieren kann und dazu führen kann, dass die APP nicht mehr reagiert.
+> Rufen Sie in einer universelle Windows-Plattform-app (UWP) nicht `wait` im Asta-Thread auf, da dieser-Befehl den aktuellen Thread blockieren kann und dazu führen kann, dass die APP nicht mehr reagiert.
 
-## <a name="wait_for_multiple"></a>wait_for_multiple
+## <a name="wait_for_multiple"></a><a name="wait_for_multiple"></a>wait_for_multiple
 
 Wartet, bis mehrere Ereignisse signalisiert werden.
 
@@ -156,10 +156,10 @@ Ein Array von Ereignissen, auf die gewartet werden soll. Die Anzahl der Ereignis
 Die Anzahl von Ereignissen innerhalb des im `_PPEvents`-Parameter angegebenen Arrays.
 
 *_FWaitAll*<br/>
-Wenn der Wert auf **true**festgelegt ist, gibt der-Parameter an, dass alle Ereignisse innerhalb des Arrays, die im `_PPEvents`-Parameter bereitgestellt werden, signalisiert werden müssen, um die Wartezeit zu erfüllen. Wenn der Wert auf **false**festgelegt ist, wird angegeben, dass jedes Ereignis innerhalb des Arrays, das im `_PPEvents`-Parameter bereitgestellt wird, der signalisiert wird, den warte Vorgang erfüllt
+Wenn der Wert auf festgelegt **`true`** ist, gibt der-Parameter an, dass alle Ereignisse innerhalb des Arrays, das im-Parameter bereitgestellt wird, `_PPEvents` signalisiert werden müssen, um die Wartezeit zu erfüllen. Wenn der Wert auf festgelegt **`false`** ist, wird festgelegt, dass jedes Ereignis innerhalb des Arrays, das im-Parameter bereitgestellt wird, in dem `_PPEvents` der-Parameter signalisiert wird
 
 *_Timeout*<br/>
-Gibt die Anzahl von Millisekunden vor dem Timeout an. Der Wert `COOPERATIVE_TIMEOUT_INFINITE` der angibt, dass kein Timeout vorliegt.
+Gibt die Anzahl von Millisekunden vor dem Timeout an. Der Wert `COOPERATIVE_TIMEOUT_INFINITE` gibt an, dass kein Timeout vorliegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -167,11 +167,11 @@ Wenn die Anforderungen des Wartevorgangs erfüllt wurden, ist dies der Index inn
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn der Parameter `_FWaitAll` auf den Wert `true` festgelegt wurde, um anzugeben, dass alle Ereignisse signalisiert werden müssen, um den Wartevorgang zu beenden, hat der von der Funktion zurückgegebene Index keine andere besondere Bedeutung außer der Tatsache, dass er nicht den Wert `COOPERATIVE_WAIT_TIMEOUT` darstellt.
+Wenn der-Parameter `_FWaitAll` auf den-Wert festgelegt wird, **`true`** um anzugeben, dass alle Ereignisse signalisiert werden müssen, um den warte Vorgang zu erfüllen, hat der von der Funktion zurückgegebene Index keine besondere Bedeutung, außer der Tatsache, dass es sich nicht um den Wert handelt `COOPERATIVE_WAIT_TIMEOUT` .
 
 > [!IMPORTANT]
-> Rufen Sie in einer universelle Windows-Plattform-app (UWP) `wait_for_multiple` nicht im Asta-Thread auf, da dieser-Befehl den aktuellen Thread blockieren kann und dazu führen kann, dass die APP nicht mehr reagiert.
+> Rufen Sie in einer universelle Windows-Plattform-app (UWP) nicht `wait_for_multiple` im Asta-Thread auf, da dieser-Befehl den aktuellen Thread blockieren kann und dazu führen kann, dass die APP nicht mehr reagiert.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Concurrency-Namespace](concurrency-namespace.md)
+[Parallelitäts Namespace](concurrency-namespace.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - restricted attribute
 ms.assetid: 504a96be-b904-4269-8be1-920feba201b4
-ms.openlocfilehash: a47c56673e19f891b24ff433b9c614804f0bd51c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0545c07936c59a59dd4712f4b0a2fd98a6701f2e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166366"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230025"
 ---
 # <a name="restricted"></a>restricted
 
@@ -27,12 +27,12 @@ Gibt an, dass ein Member eines Moduls, einer Schnittstelle oder einer dispinterf
 
 ### <a name="parameters"></a>Parameter
 
-*Web*<br/>
+*interfaces*<br/>
 Eine oder mehrere Schnittstellen, die möglicherweise nicht willkürlich für ein COM-Objekt aufgerufen werden. Dieser Parameter ist nur gültig, wenn er auf eine Klasse angewendet wird.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **restricted** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Eingeschränkte](/windows/win32/Midl/restricted) Mittel l-Attribut.
+Das **restricted** C++-Attribut verfügt über die gleiche Funktionalität wie das [Eingeschränkte](/windows/win32/Midl/restricted) Mittel l-Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -67,9 +67,9 @@ class c : public a, public b
 
 |||
 |-|-|
-|**Betrifft**|Schnittstellen Methode, **Schnittstelle**, **Klasse**, **Struktur**|
-|**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|**Co-Klasse** (bei Anwendung auf **Klasse** oder **Struktur**)|
+|**Zielgruppe**|Schnittstellen Methode, **Schnittstelle**, **`class`** ,**`struct`**|
+|**REPEATABLE**|Nein|
+|**Erforderliche Attribute**|**Co-Klasse** (bei Anwendung auf **`class`** oder **`struct`** )|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
@@ -77,5 +77,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)
+[Schnittstellen Attribute](interface-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)

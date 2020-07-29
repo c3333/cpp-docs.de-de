@@ -2,12 +2,12 @@
 title: Verwenden von accelerator-Objekten und accelerator_view-Objekten
 ms.date: 11/04/2016
 ms.assetid: 18f0dc66-8236-4420-9f46-1a14f2c3fba1
-ms.openlocfilehash: e3fed4dc2a431b751d4ad50484e32b738e786d10
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 7807f0c1c572b2e7c3224cf0366233e2a28dbe07
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404176"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215893"
 ---
 # <a name="using-accelerator-and-accelerator_view-objects"></a>Verwenden von accelerator-Objekten und accelerator_view-Objekten
 
@@ -94,7 +94,7 @@ void pick_with_most_memory()
 
 ## <a name="shared-memory"></a>Shared Memory
 
-Freigegebener Arbeitsspeicher ist der Arbeitsspeicher, auf den sowohl die CPU als auch die Zugriffstaste zugreifen kann. Durch die Verwendung von freigegebenem Arbeitsspeicher entfällt bzw. reduziert sich der Mehraufwand zum Kopieren von Daten zwischen CPU und der Zugriffstaste erheblich. Obwohl der Arbeitsspeicher freigegeben wird, kann darauf nicht von CPU und der Zugriffstaste gleichzeitig zugegriffen werden. In diesem Fall kommt es zu einem nicht definierten Verhalten. Die Eigenschaften [supports_cpu_shared_memory](reference/accelerator-class.md#supports_cpu_shared_memory) für die Zugriffstaste gibt **true** zurück, wenn die Zugriffstaste freigegebenen Arbeitsspeicher unterstützt, und die [default_cpu_access_type](reference/accelerator-class.md#default_cpu_access_type) -Eigenschaft ruft die Standard [access_type](reference/concurrency-namespace-enums-amp.md#access_type) für den Arbeitsspeicher ab, der auf dem – zugeordnet ist, `accelerator` z. b. **Array**-s, die dem `accelerator` `array_view` `accelerator`
+Freigegebener Arbeitsspeicher ist der Arbeitsspeicher, auf den sowohl die CPU als auch die Zugriffstaste zugreifen kann. Durch die Verwendung von freigegebenem Arbeitsspeicher entfällt bzw. reduziert sich der Mehraufwand zum Kopieren von Daten zwischen CPU und der Zugriffstaste erheblich. Obwohl der Arbeitsspeicher freigegeben wird, kann darauf nicht von CPU und der Zugriffstaste gleichzeitig zugegriffen werden. In diesem Fall kommt es zu einem nicht definierten Verhalten. Die Eigenschaften [supports_cpu_shared_memory](reference/accelerator-class.md#supports_cpu_shared_memory) der Zugriffstaste gibt zurück **`true`** , wenn die Zugriffstaste freigegebenen Arbeitsspeicher unterstützt, und die [default_cpu_access_type](reference/accelerator-class.md#default_cpu_access_type) -Eigenschaft ruft die Standard [access_type](reference/concurrency-namespace-enums-amp.md#access_type) für den Arbeitsspeicher ab, der auf dem – zugeordnet ist, `accelerator` z. b **array** `accelerator` `array_view` `accelerator` . Array-s, die dem zugeordnet sind
 
 Die C++ AMP-Laufzeit wählt automatisch den besten standardmäßigen `access_type` für jedes `accelerator`-Objekt aus. Die Leistungsmerkmale (Bandbreite und Wartezeit) von freigegebenem Arbeitsspeicher können beim Lesen und/oder Schreiben über die CPU jedoch schlechter sein als die des dedizierten (nicht freigegebenen) Zugriffstastenspeichers. Wenn freigegebener Arbeitsspeicher beim Lesen und Schreiben über die CPU die gleiche Leistung zeigt wie dedizierter Arbeitsspeicher verwendet die Laufzeit standardmäßig `access_type_read_write`; andernfalls wählt die Laufzeit einen konservativeren standardmäßigen `access_type` aus und ermöglicht es der Anwendung, ihn zu überschreiben, wenn die Speicherzugriffmuster seiner Berechnungskernel von einem anderen `access_type` profitieren.
 
@@ -131,7 +131,7 @@ Ein `accelerator_view`-Objekt spiegelt immer das `default_cpu_access_type`-Objek
 
 ## <a name="changing-the-default-accelerator"></a>Ändern der Standardzugriffstaste
 
-Sie können die Standardzugriffstaste ändern, indem Sie die `accelerator::set_default`-Methode aufrufen. Sie können die Standardzugriffstaste nur einmal pro App-Ausführung ändern. Die Änderung muss erfolgen, bevor Code auf dem GPU-Computer ausgeführt wird. Alle nachfolgenden Funktionsaufrufe zum Ändern der Zugriffstaste geben **false**zurück. Wenn Sie eine andere Tastenkombination in einem Aufruf von `parallel_for_each` verwenden möchten, lesen Sie den Abschnitt "Verwenden mehrerer Zugriffstasten" in diesem Artikel. Im folgenden Codebeispiel wird die Standardzugriffstaste auf eine Taste festgelegt, die nicht emuliert, nicht mit einer Anzeige verbunden ist und doppelte Genauigkeit unterstützt.
+Sie können die Standardzugriffstaste ändern, indem Sie die `accelerator::set_default`-Methode aufrufen. Sie können die Standardzugriffstaste nur einmal pro App-Ausführung ändern. Die Änderung muss erfolgen, bevor Code auf dem GPU-Computer ausgeführt wird. Alle nachfolgenden Funktionsaufrufe zum Ändern der Zugriffstaste geben zurück **`false`** . Wenn Sie eine andere Tastenkombination in einem Aufruf von `parallel_for_each` verwenden möchten, lesen Sie den Abschnitt "Verwenden mehrerer Zugriffstasten" in diesem Artikel. Im folgenden Codebeispiel wird die Standardzugriffstaste auf eine Taste festgelegt, die nicht emuliert, nicht mit einer Anzeige verbunden ist und doppelte Genauigkeit unterstützt.
 
 ```cpp
 bool pick_accelerator()

@@ -27,12 +27,12 @@ helpviewer_keywords:
 - malloc function
 - memory allocation
 ms.assetid: 144fcee2-be34-4a03-bb7e-ed6d4b99eea0
-ms.openlocfilehash: 4e699920f37139be40542ba91b3740cd9edef148
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 30d92975d1a3971d29b1758dc23d3a84372288c9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82917514"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232507"
 ---
 # <a name="malloc"></a>malloc
 
@@ -53,9 +53,9 @@ Zuzuordnende Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**malloc** gibt einen void-Zeiger auf den zugeordneten Speicherplatz oder **null** zurück, wenn nicht genügend Arbeitsspeicher verfügbar ist. Um einen Zeiger auf einen anderen Typ als " **void**" zurückzugeben, verwenden Sie eine Typumwandlung für den Rückgabewert. Es ist sichergestellt, dass der Speicherplatz, auf den der Rückgabewert zeigt, passend für einen Speicher von einem beliebigen Objekttyp ist, dessen Ausrichtungsanforderungen kleiner oder gleich der grundlegenden Ausrichtung sind. (In Visual C++ ist die grundlegende Ausrichtung die Ausrichtung, die für einen **Double**-oder 8-Byte-Wert erforderlich ist. In Code, der auf 64-Bit-Plattformen ausgerichtet ist, sind es 16 Bytes.) Verwenden Sie [_aligned_malloc](aligned-malloc.md) , um Speicher für Objekte zuzuweisen, die eine größere Ausrichtungs Anforderung haben – z. b. die SSE-Typen [__m128](../../cpp/m128.md) und **__m256**, und `__declspec(align( n ))` Typen, die mithilfe von deklariert werden, wobei **n** größer als 8 ist. Wenn die *Größe* 0 ist, ordnet **malloc** ein Element der Länge 0 (null) im Heap zu und gibt einen gültigen Zeiger auf dieses Element zurück. Überprüfen Sie immer die Rückgabe von **malloc**, auch wenn die Menge an Angeforderter Arbeitsspeicher gering ist.
+**malloc** gibt einen void-Zeiger auf den zugeordneten Speicherplatz oder **null** zurück, wenn nicht genügend Arbeitsspeicher verfügbar ist. Um einen Zeiger auf einen anderen Typ als zurückzugeben **`void`** , verwenden Sie eine Typumwandlung für den Rückgabewert. Es ist sichergestellt, dass der Speicherplatz, auf den der Rückgabewert zeigt, passend für einen Speicher von einem beliebigen Objekttyp ist, dessen Ausrichtungsanforderungen kleiner oder gleich der grundlegenden Ausrichtung sind. (In Visual C++ ist die grundlegende Ausrichtung die Ausrichtung, die für **`double`** oder 8 Bytes erforderlich ist. In Code, der auf 64-Bit-Plattformen ausgerichtet ist, sind es 16 Bytes.) Verwenden Sie [_aligned_malloc](aligned-malloc.md) , um Speicher für Objekte zuzuweisen, die eine größere Ausrichtungs Anforderung haben – z. b. die SSE-Typen [__m128](../../cpp/m128.md) und **`__m256`** und Typen, die mithilfe von deklariert werden, `__declspec(align( n ))` wobei **n** größer als 8 ist. Wenn die *Größe* 0 ist, ordnet **malloc** ein Element der Länge 0 (null) im Heap zu und gibt einen gültigen Zeiger auf dieses Element zurück. Überprüfen Sie immer die Rückgabe von **malloc**, auch wenn die Menge an Angeforderter Arbeitsspeicher gering ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **malloc** -Funktion weist einen Speicherblock mit mindestens *Größe* von Bytes zu. Der Block kann aufgrund des Platzes, der für die Ausrichtung und die Wartungsinformationen benötigt wird, größer als die *Größe* von Bytes sein.
 
@@ -76,17 +76,17 @@ Der Startcode verwendet **malloc** , um Speicher für die Variablen " **_environ
 |[fputs](fputs-fputws.md)|[_getdcwd](getcwd-wgetcwd.md)|[scanf](scanf-scanf-l-wscanf-wscanf-l.md)||
 |[fread](fread.md)|[kommt](../../c-runtime-library/gets-getws.md)|[_searchenv](searchenv-wsearchenv.md)||
 
-Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für **malloc** fest. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie Sie von [_set_new_handler](set-new-handler.md)festgelegt wird. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten außer Kraft setzen, sodass, wenn **malloc** keinen Arbeitsspeicher zuordnen kann, die neue Handlerroutine von **malloc** auf die gleiche Weise aufgerufen wird wie der **neue** Operator, wenn dieser aus demselben Grund fehlschlägt. Um den Standardwert zu über `_set_new_mode(1)` schreiben, sollten Sie früh im Programm aufzurufen oder mit NEWMODE verknüpfen. Obj (siehe [Link Optionen](../../c-runtime-library/link-options.md)).
+Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für **malloc** fest. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie Sie von [_set_new_handler](set-new-handler.md)festgelegt wird. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten überschreiben, sodass **malloc** die neue Handlerroutine auf dieselbe Weise aufruft, wenn **malloc** keinen Arbeitsspeicher zuordnen kann, **`new`** Wenn es aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, sollten `_set_new_mode(1)` Sie früh im Programm aufzurufen oder mit NEWMODE verknüpfen. Obj (siehe [Link Optionen](../../c-runtime-library/link-options.md)).
 
 Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **malloc** zu [_malloc_dbg](malloc-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [Details zum CRT-Debugheap](/visualstudio/debugger/crt-debug-heap-details).
 
-**malloc** ist als `__declspec(noalias)` und `__declspec(restrict)`gekennzeichnet. Dies bedeutet, dass die Funktion die globalen Variablen nicht ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
+**malloc** ist `__declspec(noalias)` als und gekennzeichnet `__declspec(restrict)` . Dies bedeutet, dass die Funktion globale Variablen garantiert nicht ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**malloc**|\<stdlib.h> und \<malloc.h>|
 

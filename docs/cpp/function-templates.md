@@ -6,12 +6,12 @@ helpviewer_keywords:
 - templates, function
 - function templates, about function templates
 ms.assetid: 59b56a4b-0689-4161-9c07-25021562e2a7
-ms.openlocfilehash: f2caf70dd90e76c7bc4f20ea4bf34845b343efc2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 44fb8691c296892377686310fbd9b4d9adcd0f80
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179743"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232286"
 ---
 # <a name="function-templates"></a>Funktionsvorlagen
 
@@ -28,7 +28,7 @@ int main() {
 }
 ```
 
-Dieser Code definiert eine Gruppe von Funktionen, die die Werte der Argumente auslagern. Aus dieser Vorlage können Sie Funktionen generieren, die die Typen " **int** " und " **Long** " sowie benutzerdefinierte Typen austauschen. `MySwap` tauscht sogar Klassen aus, wenn der Kopierkonstruktor und der Zuweisungsoperator der Klasse ordnungsgemäß definiert sind.
+Dieser Code definiert eine Gruppe von Funktionen, die die Werte der Argumente auslagern. Aus dieser Vorlage können Sie Funktionen generieren, die **`int`** -und **`long`** -Typen sowie benutzerdefinierte Typen austauschen. `MySwap` tauscht sogar Klassen aus, wenn der Kopierkonstruktor und der Zuweisungsoperator der Klasse ordnungsgemäß definiert sind.
 
 Außerdem hindert Sie die Funktions Vorlage daran, Objekte unterschiedlicher Typen auszutauschen, da der Compiler die Typen der Parameter *a* und *b* zur Kompilierzeit kennt.
 
@@ -55,11 +55,11 @@ int main(int j) {
 }
 ```
 
-Wenn das Vorlagenargument explizit angegeben wird, werden normale implizite Konvertierungen durchgeführt, um das Funktionsargument in den Typ der entsprechenden Funktionsvorlagenparametern zu konvertieren. Im obigen Beispiel konvertiert der Compiler `j` in den Typ " **char**".
+Wenn das Vorlagenargument explizit angegeben wird, werden normale implizite Konvertierungen durchgeführt, um das Funktionsargument in den Typ der entsprechenden Funktionsvorlagenparametern zu konvertieren. Im obigen Beispiel wird der Compiler in den `j` Typ konvertiert **`char`** .
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [Vorlagen](../cpp/templates-cpp.md)<br/>
-[Funktionsvorlageninstanziierung](../cpp/function-template-instantiation.md)<br/>
-[Explizite Instantiierung](../cpp/explicit-instantiation.md)<br/>
-[Explizite Spezialisierung von Funktionsvorlagen](../cpp/explicit-specialization-of-function-templates.md)
+[Funktions Vorlagen Instanziierung](../cpp/function-template-instantiation.md)<br/>
+[Explizite Instanziierung](../cpp/explicit-instantiation.md)<br/>
+[Explizite Spezialisierung von Funktions Vorlagen](../cpp/explicit-specialization-of-function-templates.md)

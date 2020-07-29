@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2646
 ms.assetid: 92ff1f02-5eaf-40a5-8b7a-a682f149e967
-ms.openlocfilehash: a5c4dbc967c304fc6b13eb00e2c7093380ec8be9
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: a05c98564c4e45dc380690c1b8c9bace5fc14cf4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758215"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216153"
 ---
 # <a name="compiler-error-c2646"></a>Compilerfehler C2646
 
 Eine anonyme Struktur oder Union im globalen Gültigkeitsbereich oder im Namespacebereich muss als statisch deklariert werden.
 
-Eine anonyme Struktur oder Union verfügt über einen globalen Gültigkeitsbereich oder Namespacebereich, ist jedoch nicht als `static` deklariert.
+Eine anonyme Struktur oder Union weist einen globalen Bereich oder einen Namespace Bereich auf, wird jedoch nicht deklariert **`static`** .
 
 Im folgenden Beispiel wird C2646 generiert und gezeigt, wie Sie diesen Fehler beheben:
 

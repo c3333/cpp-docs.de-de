@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - helpcontext attribute
 ms.assetid: 6fbb022d-a4b7-4989-a02f-7f18a9b0ad96
-ms.openlocfilehash: 292db21e8092284a92b09ef3f889bb0475d0d886
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 77c085f96e778b19886c4e6e3c8f07b43fbe8f2c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167003"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211982"
 ---
 # <a name="helpcontext"></a>helpcontext
 
@@ -30,7 +30,7 @@ Die Kontext-ID des Hilfe Themas. Weitere Informationen zu Kontext-IDs finden [Si
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **HelpContext** C++ -Attribut verfügt über die gleiche Funktionalität wie das " [HelpContext](/windows/win32/Midl/helpcontext) "-Attribut "Mittel l".
+Das **HelpContext** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut [HelpContext](/windows/win32/Midl/helpcontext) .
 
 ## <a name="example"></a>Beispiel
 
@@ -42,8 +42,8 @@ Ein Beispiel für die Verwendung von **HelpContext**finden Sie im Beispiel für 
 
 |||
 |-|-|
-|**Betrifft**|**Schnittstelle**, **typedef**, **Klasse**, Methode, Eigenschaft|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**Schnittstelle**, **`typedef`** , **`class`** , Methode, Eigenschaft|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -52,9 +52,9 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
+[Schnittstellen Attribute](interface-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
 [helpfile](helpfile.md)<br/>
 [helpstring](helpstring.md)

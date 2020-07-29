@@ -33,12 +33,12 @@ helpviewer_keywords:
 - ilogbf function
 - ilogbl function
 ms.assetid: 9ef19d57-1caa-41d5-8233-2faad3562fcb
-ms.openlocfilehash: fdafba039537358c9b6a1de21dc176ceea38b4fa
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 6feea7a242a066f669429944226f4ca6022505b6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954766"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232520"
 ---
 # <a name="ilogb-ilogbf-ilogbl"></a>ilogb, ilogbf, ilogbl
 
@@ -70,27 +70,27 @@ int ilogbl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der angegebene Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, wird der Basis-2-Exponent von *x* **als Wert mit** Vorzeichen zurückgegeben.
+Wenn erfolgreich, wird der Basis-2-Exponent von *x* als-Wert zurückgegeben **`signed int`** .
 
-Andernfalls gibt er die folgenden, in \<math.h> definierten Werte zurück:
+Andernfalls wird einer der folgenden Werte zurückgegeben, der in definiert ist \<math.h> :
 
 |Eingabe|Ergebnis|
 |-----------|------------|
-|±0|FP_ILOGB0|
+|± 0|FP_ILOGB0|
 |± inf, ± Nan, unbegrenzt|FP_ILOGBNAN|
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ilogb** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **ilogb** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ilogb** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm nimmt **ilogb** immer eine an und gibt Sie zurück **`double`** .
 
-Das Aufrufen dieser Funktion ähnelt dem Aufrufen der entsprechenden **logb** -Funktion und dem anschließenden Umwandeln des Rückgabewerts in **int**.
+Das Aufrufen dieser Funktion ähnelt dem Aufrufen der entsprechenden **logb** -Funktion und dem anschließenden Umwandeln des Rückgabewerts in **`int`** .
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -98,9 +98,9 @@ Das Aufrufen dieser Funktion ähnelt dem Aufrufen der entsprechenden **logb** -F
 |-------------|--------------|------------------|
 |**ilogb**, **ilogbf**, **ilogbl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [frexp](frexp.md)<br/>

@@ -6,26 +6,26 @@ f1_keywords:
 - new/std::nothrow
 - new/std::set_new_handler
 ms.assetid: e250f06a-b025-4509-ae7a-5356d56aad7d
-ms.openlocfilehash: c912e5be07ea0ebdd3148d30c80c39a5f8cfa1a5
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 6b51a5bcbb9c90370cef1391d4020862d2e2cefd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425412"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212175"
 ---
 # <a name="ltnewgt-functions"></a>&lt;new&gt;-Funktionen
 
-## <a name="get_new_handler"></a>get_new_handler
+## <a name="get_new_handler"></a><a name="get_new_handler"></a>get_new_handler
 
 ```cpp
 new_handler get_new_handler() noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt die aktuelle `new_handler`zurück.
+Gibt den aktuellen zurück `new_handler` .
 
-## <a name="launder"></a>launter
+## <a name="launder"></a><a name="launder"></a>launter
 
 ```cpp
 template <class T>
@@ -34,14 +34,14 @@ template <class T>
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*PTR*\
 Die Adresse eines Bytes im Arbeitsspeicher, das ein Objekt enthält, dessen Typ mit *T*vergleichbar ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert vom Typ *T\** , der auf X zeigt.
+Ein Wert vom Typ *T \* * , der auf X zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wird auch als eine Zeiger Optimierungs Barriere bezeichnet.
 
@@ -59,23 +59,23 @@ const int b = p->n; // undefined behavior
 const int c = std::launder(p)->n; // OK
 ```
 
-## <a name="nothrow"></a>nothrow
+## <a name="nothrow"></a><a name="nothrow"></a>nothrow
 
-Stellt ein Objekt bereit, das als Argument für die **nothrow** -Versionen von **New** und **Delete**verwendet werden soll.
+Stellt ein Objekt bereit, das als Argument für die **`nothrow`** Versionen von und verwendet werden soll **`new`** **`delete`** .
 
 ```cpp
 extern const std::nothrow_t nothrow;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Objekt wird als Funktionsargument verwendet, um auf den Parametertyp [std::nothrow_t](../standard-library/nothrow-t-structure.md) abzustimmen.
 
 ### <a name="example"></a>Beispiel
 
-Beispiele zur Verwendung von [ als Funktionsparameter finden Sie unter ](../standard-library/new-operators.md#op_new)operator new[ und ](../standard-library/new-operators.md#op_new_arr)operator new&#91;&#93;`std::nothrow_t`.
+Beispiele zur Verwendung von `std::nothrow_t` als Funktionsparameter finden Sie unter [operator new](../standard-library/new-operators.md#op_new) und [operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr).
 
-## <a name="set_new_handler"></a>set_new_handler
+## <a name="set_new_handler"></a><a name="set_new_handler"></a>set_new_handler
 
 Installiert eine Benutzerfunktion, die aufgerufen werden soll, wenn der **New-Operator** beim Versuch, Arbeitsspeicher zuzuweisen, fehlschlägt.
 
@@ -85,14 +85,14 @@ new_handler set_new_handler(new_handler Pnew) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*Pnew* -\
-Der `new_handler`, der installiert werden soll.
+*Pnew*\
+Das `new_handler` zu installierende.
 
 ### <a name="return-value"></a>Rückgabewert
 
 0 (null) beim ersten Aufruf und der vorherige `new_handler` bei nachfolgenden Aufrufen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion speichert *Pnew* in einem statischen [neuen handlerzeiger](../standard-library/new-typedefs.md#new_handler) , den Sie verwaltet, und gibt dann den zuvor im Zeiger gespeicherten Wert zurück. Der neue Handler wird von [Operator new](../standard-library/new-operators.md#op_new)(**size_t**) verwendet.
 

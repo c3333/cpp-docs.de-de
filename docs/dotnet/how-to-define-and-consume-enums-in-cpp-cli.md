@@ -1,23 +1,23 @@
 ---
-title: 'Gewusst wie: Definieren und Verarbeiten von Enumerationen in C++/CLI'
+title: 'Vorgehensweise: Definieren und Verarbeiten von Enumerationen in C++/CLI'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - enum class, specifying underlying types
 ms.assetid: df8f2b91-b9d2-4fab-9be4-b1d58b8bc570
-ms.openlocfilehash: cf3bb23069b2692c0ca4ce270a5b8060195becf7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f09bb6e9fac30b72c3c4e0682c3d90f2ea9f8760
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370177"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216413"
 ---
-# <a name="how-to-define-and-consume-enums-in-ccli"></a>Gewusst wie: Definieren und Verarbeiten von Enumerationen in C++/CLI
+# <a name="how-to-define-and-consume-enums-in-ccli"></a>Vorgehensweise: Definieren und Verarbeiten von Enumerationen in C++/CLI
 
-In diesem Thema werden Enumerungen in C++/CLI behandelt.
+In diesem Thema werden Aufstände in C++/CLI. erläutert.
 
-## <a name="specifying-the-underlying-type-of-an-enum"></a>Angeben des zugrunde liegenden Typs einer Enumere
+## <a name="specifying-the-underlying-type-of-an-enum"></a>Angeben des zugrunde liegenden Typs einer Aufzählung
 
-Standardmäßig ist `int`der zugrunde liegende Typ einer Enumeration .  Sie können jedoch den Typ angeben, der `int`signiert `short` `long`e.V. oder nicht signiert werden soll, und , , , `__int32`, oder `__int64`.  Sie können auch `char` verwenden.
+Standardmäßig ist der zugrunde liegende Typ einer Enumeration **`int`** .  Sie können jedoch den Typ, der signiert werden soll, oder nicht signierte Formulare von **`int`** , **`short`** , **`long`** , **`__int32`** oder angeben **`__int64`** .  Sie können auch verwenden **`char`** .
 
 ```cpp
 // mcppv2_enum_3.cpp
@@ -47,9 +47,9 @@ sun
 2
 ```
 
-## <a name="how-to-convert-between-managed-and-standard-enumerations"></a>Konvertieren zwischen verwalteten und Standard-Enumerationen
+## <a name="how-to-convert-between-managed-and-standard-enumerations"></a>Konvertieren zwischen verwalteten und Standardenumerationen
 
-Es gibt keine Standardkonvertierung zwischen einer Enumerat und einem integralen Typ. eine Besetzung erforderlich ist.
+Es gibt keine Standard Konvertierung zwischen einer Enumeration und einem ganzzahligen Typ. eine Umwandlung ist erforderlich.
 
 ```cpp
 // mcppv2_enum_4.cpp
@@ -75,24 +75,24 @@ int main() {
 a and day2 are the same
 ```
 
-## <a name="operators-and-enums"></a>Operatoren und Enumerungen
+## <a name="operators-and-enums"></a>Operatoren und Aufstände
 
-Die folgenden Operatoren sind für Enumerungen in C++/CLI gültig:
+Die folgenden Operatoren sind für aufkommenden in C++/CLI gültig:
 
 |Operator|
 |--------------|
-|== != \<  >  \<= >=|
+|== != \< >\<= >=|
 |+ -|
-|&#124; &|
+|&#124; ^ & ~|
 |++ --|
 |sizeof|
 
-Operatoren &#124; - & - ++ -- werden nur für Enumerationen mit integralen zugrunde liegenden Typen definiert, ohne bool.  Beide Operanden müssen vom Enumerationstyp sein.
+Operatoren &#124; ^ & ~ + +--werden nur für Enumerationen mit ganzzahligen zugrunde liegenden Typen definiert, ohne bool.  Beide Operanden müssen den Enumerationstyp aufweisen.
 
-Der Compiler überprüft keine statische oder dynamische Überprüfung des Ergebnisses eines Enumeratvorgangs. Ein Vorgang kann dazu führen, dass sich ein Wert nicht im Bereich der gültigen Enumeratoren der Enumerate befindet.
+Der Compiler führt keine statische oder dynamische Überprüfung des Ergebnisses eines Aufzählungs Vorgangs durch. ein Vorgang kann zu einem Wert führen, der sich nicht im Bereich der gültigen Enumeratoren der Enumeration befindet.
 
 > [!NOTE]
-> C++11 führt Enumerierungsklassentypen in nicht verwaltetem Code ein, die sich erheblich von verwalteten Enumerumklassen in C++/CLI unterscheiden. Insbesondere unterstützt der C++11-Enumerationsklassentyp nicht dieselben Operatoren wie der verwaltete Enumerationsklassentyp in C++/CLI, und C++/CLI-Quellcode muss einen Eingabehilfenbezeichner in verwalteten Enumerationsklassendeklarationen bereitstellen, um sie von nicht verwalteten (C++11)-Enumerationsklassendeklarationen zu unterscheiden. Weitere Informationen zu Enumerumklassen in C++/CLI, C++/CX und C++11 finden Sie unter [enum class](../extensions/enum-class-cpp-component-extensions.md).
+> C++ 11 führt Enumerationstypen Typen in nicht verwaltetem Code ein, die sich deutlich von verwalteten Enumerationsklassen in C++ unterscheiden/CLI. Der C++ 11-Enumerationstypen unterstützt insbesondere nicht die gleichen Operatoren wie der verwaltete enumerationstypclass in C++/CLI, und C++/CLI-Quellcode muss einen Zugriffsspezifizierer in verwalteten enumerationsklassendeklarationen bereitstellen, um Sie von nicht verwalteten (C++ 11) enumerationklassendeklarationen zu unterscheiden. Weitere Informationen zu Enumerationsklassen in C++/CLI, C++/CX und C++ 11 finden Sie unter [Enumerationsklasse](../extensions/enum-class-cpp-component-extensions.md).
 
 ```cpp
 // mcppv2_enum_5.cpp
@@ -135,6 +135,6 @@ int main() {
 True
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [enum class](../extensions/enum-class-cpp-component-extensions.md)

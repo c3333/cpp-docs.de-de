@@ -29,12 +29,12 @@ helpviewer_keywords:
 - streams, writing integers to
 - _putw function
 ms.assetid: 83d63644-249d-4a39-87e5-3b7aa313968d
-ms.openlocfilehash: c54490a5625bfa2f9ffc95d616c2d73a7acf98e5
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 12f54c54b59e43d9a2861489171dd6c9c9436a8a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82916084"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232429"
 ---
 # <a name="_putw"></a>_putw
 
@@ -55,7 +55,7 @@ int _putw(
 Binäre Ganzzahl wird ausgegeben.
 
 *Streich*<br/>
-Zeiger auf die **FILE**-Struktur.
+Zeiger zur **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -63,15 +63,15 @@ Gibt den geschriebenen Wert zurück. Der Rückgabewert von **EOF** weist möglic
 
 Weitere Informationen über diese und andere Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_putw** -Funktion schreibt einen binären Wert vom Typ **int** an die aktuelle Position des *Streams.* **_putw** wirkt sich weder auf die Ausrichtung von Elementen im Stream noch auf eine besondere Ausrichtung aus. **_putw** ist hauptsächlich auf die Kompatibilität mit früheren Bibliotheken zurück. Möglicherweise treten bei der **_putw** Portabilitäts Probleme auf, da die Größe eines **int** -und die Reihenfolge der Bytes innerhalb eines **int** -Systems systemübergreifend abweichen.
+Die **_putw** -Funktion schreibt einen binären Wert vom Typ **`int`** an die aktuelle Position des *Streams.* **_putw** wirkt sich weder auf die Ausrichtung von Elementen im Stream noch auf eine besondere Ausrichtung aus. **_putw** ist hauptsächlich auf die Kompatibilität mit früheren Bibliotheken zurück. Möglicherweise treten bei der **_putw** Portabilitäts Probleme auf, da sich die Größe eines **`int`** und die Reihenfolge von Bytes in einem **`int`** systemübergreifend unterscheiden.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_putw**|\<stdio.h>|
 

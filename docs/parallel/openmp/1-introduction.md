@@ -2,136 +2,136 @@
 title: 1. Einführung
 ms.date: 01/16/2019
 ms.assetid: c42e72bc-0e31-4b1c-b670-cd82673c0c5a
-ms.openlocfilehash: 8c735408bdf9f9a13693bd0ad25df185bb1db42a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 60a5090814b722cc0d9f6e51ab9038e697a4ed2a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62236449"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231649"
 ---
 # <a name="1-introduction"></a>1. Einführung
 
-Dieses Dokument beschreibt eine Auflistung von Compiler-Direktiven, Bibliotheksfunktionen und Umgebungsvariablen, die Sie verwenden können, um shared Memory-Parallelität in C und C++-Programmen anzugeben. Die in diesem Dokument beschriebene Funktionen werden zusammen als bezeichnet die *OpenMP C/C++-Anwendung die API (Anwendungsprogrammierschnittstelle)*. Das Ziel dieser Spezifikation kann ein Modell bereitstellen, für die parallele Programmierung, die ein Programm über das shared Memory-Architekturen von unterschiedlichen Herstellern portabel sein. Die Compiler von vielen Anbietern unterstützt der OpenMP-C-/C++-API. Weitere Informationen zu OpenMP, einschließlich der *OpenMP Fortran Anwendungsprogrammierschnittstelle*, finden Sie unter der folgenden Website:
+Dieses Dokument gibt eine Auflistung von Compilerdirektiven, Bibliotheksfunktionen und Umgebungsvariablen an, die Sie verwenden können, um Parallelität für freigegebenen Arbeitsspeicher in C-und C++-Programmen anzugeben. Die in diesem Dokument beschriebene Funktionalität wird zusammen als " *OpenMP C/C++ Application Program Interface (API)*" bezeichnet. Das Ziel dieser Spezifikation besteht darin, ein Modell für die parallele Programmierung bereitzustellen, mit dem ein Programm über freigegebene Arbeitsspeicher Architekturen von unterschiedlichen Anbietern portierbar sein kann. Compiler von vielen Anbietern unterstützen die OpenMP-C/C++-API. Weitere Informationen zu OpenMP, einschließlich der *OpenMP Fortran-Anwendungsprogramm Schnittstelle*, finden Sie auf der folgenden Website:
 
 [https://www.openmp.org](https://www.openmp.org)
 
-Die Direktiven Bibliotheksfunktionen und Umgebungsvariablen, die in diesem Dokument können Sie erstellen und Verwalten von parallelen Programmen und Portabilität. Die Anweisungen erweitern die C- und C++ sequenzielle Programmiermodell, das mit einzelnen Programm, das mehrere Datenkonstrukte (SPMD) Arbeitsteilungskonstrukte und Synchronisierungskonstrukten. Sie unterstützen außerdem die gemeinsame Nutzung und Privatisierung von Daten. Compiler, die der OpenMP-C- und C++-API unterstützen gehören eine Befehlszeilenoption für den Compiler an, der aktiviert und ermöglicht die Darstellung alle OpenMP Compilerdirektiven.
+Die in diesem Dokument definierten Anweisungen, Bibliotheksfunktionen und Umgebungsvariablen ermöglichen es Ihnen, parallele Programme zu erstellen und zu verwalten, während Sie Portabilität zulassen. Durch die-Direktiven wird das C-und C++-Programmiermodell mit einem einzelnen Programm mit mehreren Daten (SPMD), Arbeits Freigabe-Konstrukten und Synchronisierungskonstrukten erweitert. Außerdem unterstützen Sie die Freigabe und die Privatisierung von Daten. Compiler, die die OpenMP C-und C++-API unterstützen, enthalten eine Befehlszeilenoption für den Compiler, die aktiviert und die Interpretation aller OpenMP-Compilerdirektiven zulässt.
 
 ## <a name="11-scope"></a>1.1 Bereich
 
-In dieser Spezifikation werden nur Benutzer gesteuerte Parallelisierung ermöglicht, in dem Sie explizit die Aktionen definieren den Compiler behandelt und Laufzeitsystem ergreifen, um die Anwendung parallel ausgeführt. OpenMP-C- und C++-Implementierungen nicht erforderlich, um zu prüfen, ob Abhängigkeiten, Konflikte, Deadlocks, Racebedingungen oder andere Probleme, die in der falschen programmausführung. Sie sind dafür verantwortlich, sicherzustellen, dass die Anwendung mithilfe der OpenMP-C- und C++-API-Konstrukte ordnungsgemäß ausgeführt wird. Automatische Parallelisierung vom Compiler generierte und an den Compiler Anweisungen, um solche Parallelisierung zu unterstützen, sind nicht in diesem Dokument behandelt.
+Diese Spezifikation behandelt nur die benutzergesteuerte Parallelisierung, bei der Sie explizit definieren, welche Aktionen der Compiler und das Laufzeitsystem ausführen, um das Programm parallel auszuführen. OpenMP C-und C++-Implementierungen sind nicht erforderlich, um auf Abhängigkeiten, Konflikte, Deadlocks, Racebedingungen oder andere Probleme zu überprüfen, die zu einer falschen Programmausführung führen. Sie müssen sicherstellen, dass die Anwendung, die die API-Konstrukte von OpenMP C und C++ verwendet, ordnungsgemäß ausgeführt wird. Vom Compiler generierte automatische Parallelisierung und Anweisungen an den Compiler, um diese Parallelisierung zu unterstützen, wird in diesem Dokument nicht behandelt.
 
-## <a name="12-definition-of-terms"></a>1.2. Begriffsdefinition
+## <a name="12-definition-of-terms"></a>1,2 Definition von Begriffen
 
-Die folgenden Begriffe werden in diesem Dokument verwendet:
+In diesem Dokument werden die folgenden Begriffe verwendet:
 
 - barrier
 
-  Ein Synchronisierungspunkt,, den alle Threads in einem Team erreichen muss.  Jeder Thread wartet, bis alle Threads im Team, das an dieser Stelle eingehen. Es sind explizite Barrieren identifizierte Direktiven und implizite Hindernisse, die durch die Implementierung erstellt.
+  Ein Synchronisierungs Punkt, der von allen Threads in einem Team erreicht werden muss.  Jeder Thread wartet, bis alle Threads im Team an diesem Punkt eintreffen. Es gibt explizite Barrieren, die durch Anweisungen und implizite Barrieren identifiziert werden, die von der-Implementierung erstellt werden.
 
 - Konstrukt
 
-  Ein Konstrukt ist eine Anweisung an. Es besteht aus einer Anweisung, gefolgt von einem strukturierten Block. Bestimmte Direktiven sind nicht Teil eines Konstrukts. (Finden Sie unter *-Direktive von Openmp* in [Anhang C](c-openmp-c-and-cpp-grammar.md)).
+  Ein Konstrukt ist eine-Anweisung. Sie besteht aus einer-Direktive, gefolgt von einem strukturierten-Block. Einige-Anweisungen sind nicht Teil eines-Konstrukts. (Siehe " *OpenMP-Directive* " in [Anhang C](c-openmp-c-and-cpp-grammar.md)).
 
 - Anweisung
 
-  Eine C- oder C++ `#pragma` gefolgt von der `omp` Bezeichner, andere Text und eine neue Zeile. Die Richtlinie gibt Verhalten des Programms an.
+  Ein C-oder C++ `#pragma` -Wert, gefolgt von dem `omp` Bezeichner, dem anderen Text und einer neuen Zeile. Die-Direktive gibt das Programmverhalten an.
 
-- Dynamische Block
+- dynamischer Block
 
-  Alle Anweisungen in der *lexikalische Block*, und jede Anweisung innerhalb einer Funktion, die als Ergebnis der Ausführung von Anweisungen innerhalb der lexikalischen Block ausgeführt wird. Einem dynamischen Grad wird auch als bezeichnet ein *Region*.
+  Alle Anweisungen im *lexikalischen*Block sowie jede Anweisung innerhalb einer Funktion, die als Ergebnis der Ausführung von Anweisungen innerhalb des lexikalischen Wertebereichs ausgeführt wird. Ein dynamischer Block wird auch als *Region*bezeichnet.
 
-- lexikalische Block
+- lexikalischer Block
 
-  Anweisungen lexikalisch frei, die innerhalb einer *vor einem strukturierten Block*.
+  -Anweisungen, die lexikalisch in einem *strukturierten Block*gespeichert sind.
 
-- Master-thread
+- Master Thread
 
-  Der Thread, der ein Team erstellt bei einer *parallelen Bereichs* eingegeben wird.
+  Der Thread, der ein Team erstellt, wenn ein *paralleler Bereich* eingegeben wird.
 
-- parallelen Bereichs
+- paralleler Bereich
 
-  Anweisungen, die an einer parallelen OpenMP-Konstrukt gebunden und können von vielen Threads ausgeführt werden.
+  Anweisungen, die an ein paralleles OpenMP-Konstrukt gebunden werden und von vielen Threads ausgeführt werden können.
 
 - private
 
-  Eine private Variable benennt einen Block von Speicher, der für den Thread, der den Verweis eindeutig ist. Es gibt mehrere Möglichkeiten, um anzugeben, dass eine Variable privat ist: eine Definition innerhalb eines parallelen Bereichs ist, eine `threadprivate` -Direktive einer `private`, `firstprivate`, `lastprivate`, oder `reduction` -Klausel, oder Verwenden der Variablen als eine `for`Schleife Steuerelementvariable in einem `for` -Schleife unmittelbar nach einem `for` oder `parallel for` Richtlinie.
+  Eine private Variable benennt einen Speicherblock, der für den Thread eindeutig ist, der den Verweis durchführen soll. Es gibt mehrere Möglichkeiten, anzugeben, dass eine Variable privat ist: eine Definition innerhalb eines parallelen Bereichs, eine-Direktive, eine-,-,- `threadprivate` `private` oder- `firstprivate` `lastprivate` `reduction` Klausel oder die Verwendung der Variablen als **`for`** Schleifen Steuerungs Variable in einer **`for`** Schleife direkt nach einer- `for` oder- `parallel for` Direktive.
 
 - region
 
-  Eine dynamische Umfang.
+  Ein dynamischer Block.
 
-- serielle region
+- serielle Region
 
-  Nur ausgeführte Anweisungen der *master-Thread* außerhalb der dynamischen Wertebereich einer *parallelen Bereichs*.
+  Anweisungen, die nur vom *Master Thread* außerhalb des dynamischen Umfangs eines beliebigen *parallelen Bereichs*ausgeführt werden.
 
-- Serialisieren
+- serialize
 
-  Um eine parallele Konstrukt mit auszuführen:
+  So führen Sie ein paralleles Konstrukt mit aus:
 
-  - ein Team von Threads, die mit nur einem einzelnen Thread (der die master-Thread für das parallele Konstrukt ist)
+  - ein Team von Threads, das nur aus einem einzigen Thread besteht (der Haupt Thread für das parallele Konstrukt),
 
-  - Reihenfolge der Ausführung für die Anweisungen in einem strukturierten Block (dem order, als ob der Block nicht als Teil eines parallelen Konstrukts waren), und
+  - serielle Reihenfolge der Ausführung für die Anweisungen innerhalb des strukturierten Blocks (dieselbe Reihenfolge, als wäre der Block nicht Teil eines parallelen Konstrukts), und
 
-  - keine Auswirkung auf den Rückgabewert von `omp_in_parallel()` (abgesehen von den Auswirkungen einer parallele Konstrukten geschachtelt).
+  - keine Auswirkung auf den Wert, der von zurückgegeben wird `omp_in_parallel()` (abgesehen von den Auswirkungen der schachtelten parallelen Konstrukte).
 
 - Freigegeben
 
-  Eine freigegebene Variable benennt einen einzelnen Block des Speichers. Alle Threads in einem Team, die auf diese Variable zugreifen zugreifen, auch diese einzelnen Block Storage.
+  Eine freigegebene Variable benennt einen einzelnen Speicherblock. Alle Threads in einem Team, die auf diese Variable zugreifen, greifen auch auf diesen einzelnen Speicherblock zu.
 
-- vor einem strukturierten block
+- strukturierter Block
 
-  Ein strukturierter Block ist eine Anweisung aus (einzelne oder zusammengesetzte), die einen einzelnen Eintrag, und eine einzelne beenden. Gibt es ist ein Sprung in oder aus einer Anweisung, die Anweisung einen strukturierten Block. (Diese Regel umfasst einen Aufruf von `longjmp`(3C) oder die Verwendung der `throw`, obwohl ein Aufruf von `exit` ist zulässig.) Wenn die Ausführung immer an das öffnende beginnt `{` und immer endet mit dem schließenden `}`, eine verbundanweisung wird einem strukturierten Block. Eine Ausdrucksanweisung, auswahlanweisung, iterationsanweisung oder `try` Block ist einem strukturierten Block auf, wenn die entsprechende verbundanweisung erworben haben, schließen Sie ihn in `{` und `}` ein strukturierter Block wäre. Eine Jump-Anweisung, die Anweisung mit Bezeichnung oder die deklarationsanweisung keinem strukturierten Block.
+  Ein strukturierter Block ist eine-Anweisung (Single oder Verbund), die über einen einzelnen Eintrag und einen einzelnen Exit verfügt. Wenn ein Sprung in eine oder aus einer-Anweisung erfolgt, ist diese Anweisung ein strukturierter Block. (Diese Regel enthält einen `longjmp` -Befehl. (3C) oder die Verwendung von `throw` , obwohl ein-Rückruf `exit` zulässig ist.) Wenn die Ausführung immer beim Öffnen beginnt `{` und immer am schließenden endet `}` , ist eine Verbund Anweisung ein strukturierter Block. Eine Ausdrucks Anweisung, eine Auswahl Anweisung, eine Iterations Anweisung oder **`try`** ein Block ist ein strukturierter Block, wenn die entsprechende Verbund Anweisung, die durch das einschließen in `{` und abgerufen wird, `}` ein strukturierter Block wäre. Eine Jump-Anweisung, eine Anweisung mit der Bezeichnung oder eine Deklarations Anweisung ist kein strukturierter Block.
 
 - Team
 
-  Ein oder mehrere Threads, die bei der Ausführung eines Konstrukts darstellen.
+  Ein oder mehrere Threads, die bei der Ausführung eines-Konstrukts zusammenarbeiten.
 
-- thread
+- Thread
 
-  Eine Ausführung-Entität mit einem seriellen Kontrollfluss, ein Satz von privaten Variablen und Zugriff auf freigegebene Variablen.
+  Eine Ausführungs Entität mit einem seriellen Ablauf Steuerungs Fluss, einem Satz privater Variablen und dem Zugriff auf freigegebene Variablen.
 
-- -Variable
+- Variable
 
-  Ein Bezeichner, der optional von Namespace-Namen qualifizierten Namen, die ein Objekt.
+  Ein Bezeichner, der optional von Namespace Namen qualifiziert wird und ein Objekt benennt.
 
-## <a name="13-execution-model"></a>1.3 Ausführungsmodell
+## <a name="13-execution-model"></a>1,3-Ausführungs Modell
 
-OpenMP verwendet das Fork / Join-Modell der parallelen Ausführung. Obwohl dieses Fork / Join-Modell zur Lösung verschiedener Probleme hilfreich sein kann, ist es für große Array-basierte Anwendungen zugeschnitten. OpenMP-Programme zu unterstützen, die ordnungsgemäß als paralleler Programme ausgeführt werden (viele Threads und einen vollständigen OpenMP-Unterstützungsbibliothek) dient. Es ist auch für Programme, die ordnungsgemäß als sequenzielle Programme (Anweisungen ignoriert, und eine einfache OpenMP-Stubs-Bibliothek) auszuführen. Allerdings es ist möglich und zulässig, um ein Programm zu entwickeln, die nicht ordnungsgemäß verhält, wenn sequenziell ausgeführt. Darüber hinaus können verschiedene Grade der Parallelität aufgrund von Änderungen an der Zuordnung von numerischen Operationen verschiedene numerische Ergebnisse führen. Z. B. möglicherweise eine Verringerung der seriellen außerdem ein anderes Muster von Zuordnungen hinzufügen, als eine parallele Reduzierung. Diese anderen Zuordnungen können es sich um die Ergebnisse der gleitkommaaddition ändern.
+OpenMP verwendet das Fork-Join-Modell der parallelen Ausführung. Obwohl dieses Fork-Join-Modell nützlich sein kann, um verschiedene Probleme zu lösen, ist es auf große Array basierte Anwendungen zugeschnitten. OpenMP soll Programme unterstützen, die sowohl als parallele Programme (viele Ausführungs Threads als auch als vollständige OpenMP-Unterstützungs Bibliothek) ordnungsgemäß ausgeführt werden. Es handelt sich auch um Programme, die ordnungsgemäß als sequenzielle Programme ausgeführt werden (Direktiven werden ignoriert und eine einfache OpenMP-stubbibliothek). Es ist jedoch möglich und zulässig, ein Programm zu entwickeln, das sich bei der sequenziellen Ausführung nicht ordnungsgemäß verhält. Außerdem können unterschiedliche Grad an Parallelität aufgrund von Änderungen bei der Zuordnung numerischer Vorgänge zu unterschiedlichen numerischen Ergebnissen führen. Beispielsweise kann die Verringerung der seriellen Addition ein anderes Muster für Additions Zuordnungen aufweisen als eine parallele Reduzierung. Diese unterschiedlichen Zuordnungen können die Ergebnisse der Gleit Komma Addition ändern.
 
-Ein Programm geschrieben, mit der OpenMP-C-/C++-API startet die Ausführung als einzelner Thread der Ausführung mit der Bezeichnung der *master-Thread*. Die master-Thread wird bis das erste parallele-Konstrukt in einer seriellen Region ausgeführt. In der OpenMP-C-/C++-API die `parallel` Richtlinie stellt eine parallele Konstrukt dar. Bei ein paralleles Konstrukts auftreten der master-Thread erstellt, ein Team von Threads, und der Master wird master des Teams. Jeder Thread im Team, das die Anweisungen in der dynamischen Wertebereich eines parallelen Bereichs ist, mit Ausnahme der Arbeitsteilungskonstrukte ausgeführt. Alle Threads in das Team müssen Arbeitsteilungskonstrukte in der gleichen Reihenfolge auftreten und eine oder mehrere Threads führt die Anweisungen in einem zugehörigen strukturierten Block aus. Die Grenze, die am Ende eines Konstrukts ohne Freigabe von Arbeit impliziert eine `nowait` -Klausel von allen Threads im Team, das ausgeführt wird.
+Ein mit der OpenMP-C/C++-API geschriebenes Programm beginnt mit der Ausführung als einzelner Ausführungs Thread, der als *Haupt Thread*bezeichnet wird. Der Master Thread wird in einem seriellen Bereich ausgeführt, bis das erste parallele Konstrukt gefunden wird. In der OpenMP-C/C++-API `parallel` stellt die-Direktive ein paralleles Konstrukt dar. Wenn ein paralleles Konstrukt gefunden wird, erstellt der Master Thread ein Thread Team, und der Master wird der Master des Teams. Jeder Thread im Team führt die Anweisungen im dynamischen Bereich eines parallelen Bereichs aus, mit Ausnahme der Arbeits Freigabe-Konstrukte. Alle Threads im Team müssen Arbeits Freigabe Konstrukte in derselben Reihenfolge erkennen, und mindestens ein Thread führt die Anweisungen im zugeordneten strukturierten Block aus. Die Grenze, die am Ende eines Arbeits Freigabe Aufbaus ohne eine- `nowait` Klausel impliziert ist, wird von allen Threads im Team ausgeführt.
 
-Wenn ein Thread auf ein freigegebenes Objekt ändert, wird nicht nur ihrer eigenen ausführungsumgebung, sondern auch die anderen Threads in der Anwendung beeinträchtigt. Die Änderung ist garantiert abgeschlossen ist, aus der Perspektive eines anderen Threads, die am nächsten Sequenz (wie in der Basissprache definiert) werden nur dann, wenn das Objekt als flüchtig deklariert ist. Andernfalls ist die Änderung abgeschlossen sein, nach dem ersten thread ändern, die garantiert. Die anderen Threads dann (oder parallel) finden Sie unter einem `flush` -Direktive, die das Objekt (entweder implizit oder explizit) angibt. Wenn die `flush` Direktiven, die durch andere OpenMP-Anweisungen impliziert werden nicht die richtige Reihenfolge der Nebeneffekte garantieren, ist der Programmierer dafür verantwortlich, geben Sie zusätzliche, explizite `flush` Anweisungen.
+Wenn ein Thread ein frei gegebenes Objekt ändert, wirkt sich dies nicht nur auf seine eigene Ausführungsumgebung aus, sondern auch auf die anderen Threads im Programm. Die Änderung wird garantiert von der Sicht eines anderen Threads bis zum nächsten Sequenz Punkt (wie in der Basis Sprache definiert) vervollständigt, wenn das Objekt als flüchtig deklariert wird. Andernfalls wird die Änderung nach dem ersten Ändern des Threads garantiert fertiggestellt. Die anderen Threads (oder gleichzeitig) sehen eine `flush` Direktive, die das Objekt angibt (entweder implizit oder explizit). Wenn die `flush` Direktiven, die von anderen OpenMP-Direktiven impliziert werden, nicht die richtige Reihenfolge von Nebeneffekten gewährleisten, ist es für den Programmierer zuständig, zusätzliche explizite `flush` Direktiven bereitzustellen.
 
-Nach Abschluss das parallele Konstrukt wird die Threads im Team synchronisieren, um eine implizite Barriere, und nur die master-Thread wird die Ausführung fortgesetzt. Eine beliebige Anzahl von parallelen Konstrukten kann in einem einzelnen Programm angegeben werden. Daher kann ein Programm erstellen Sie eine Verzweigung und verknüpfen oft während der Ausführung.
+Nach Abschluss des parallelen Konstrukts werden die Threads im Team an einer impliziten Barriere synchronisiert, und nur der Master Thread setzt die Ausführung fort. Eine beliebige Anzahl paralleler Konstrukte kann in einem einzelnen Programm angegeben werden. Folglich kann ein Programm während der Ausführung mehrmals verzweigen und beitreten.
 
-OpenMP C-/C++-API ermöglicht es Programmierern, verwenden Sie die Anweisungen in Funktionen, die aus den parallelen Konstrukten aufgerufen. Anweisungen, die nicht im lexikalischen Block eines parallelen Konstrukts angezeigt, aber möglicherweise liegen in der dynamischen Block heißen *verwaiste* Anweisungen. Mit verwaisten-Anweisungen können wichtige Teile ihres Programms Programmierer mit nur minimale Änderungen an der sequenziellen Programm parallel ausgeführt werden. Mit dieser Funktionalität können Sie code auf den oberen Ebenen der Aufrufstruktur der Anwendung den parallele Konstrukten und verwenden Direktiven, um die Ausführung in der aufgerufenen Funktionen zu steuern.
+Die OpenMP C/C++-API ermöglicht Programmierern die Verwendung von-Direktiven in Funktionen, die aus parallelen Konstrukten aufgerufen werden. Direktiven, die nicht im lexikalischen Bereich eines parallelen Konstrukts angezeigt werden, aber möglicherweise im dynamischen Block liegen, werden als *verwaiste* Direktiven bezeichnet. Mit verwaisten Direktiven können Programmierer wichtige Teile des Programms parallel ausführen, wobei nur minimale Änderungen am sequenziellen Programm vorgenommen werden. Mit dieser Funktion können Sie parallele Konstrukte auf den obersten Ebenen der Programmaufruf Struktur codieren und Direktiven verwenden, um die Ausführung in einer der aufgerufenen Funktionen zu steuern.
 
-Nicht synchronisierte Aufrufe von C- und C++ ausgegeben, dass Funktionen, die in der gleichen Datei Schreiben in Ausgabe führen können, in dem Daten geschrieben, wenn unterschiedliche Threads nicht deterministischen Reihenfolge angezeigt wird. Auf ähnliche Weise können nicht synchronisierte Aufrufe von Funktionen zu geben, die von der gleichen Datei gelesen, Daten in nicht deterministischen Reihenfolge lesen. Nicht synchronisierte Verwenden von e/a, so, dass jeder Thread eine andere Datei, greift auf die gleichen Ergebnisse wie die serielle Ausführung der e/a-Funktionen erstellt.
+Nicht synchronisierte Aufrufe von C-und C++-Ausgabefunktionen, die in die gleiche Datei schreiben, können zu einer Ausgabe führen, in der von verschiedenen Threads geschriebene Daten in nicht deterministischer Reihenfolge angezeigt werden. Ebenso können nicht synchronisierte Aufrufe von Eingabefunktionen, die aus derselben Datei lesen, Daten in nicht deterministischer Reihenfolge lesen. Nicht synchronisierte Verwendung von e/a-Vorgängen, sodass jeder Thread auf eine andere Datei zugreift, erzeugt dieselben Ergebnisse wie die serielle Ausführung der e/a-Funktionen.
 
 ## <a name="14-compliance"></a>1.4 Kompatibilität
 
-Eine Implementierung der OpenMP-C-/C++-API ist *OpenMP-kompatible* Wenn es erkennt und behält die Semantik der alle Elemente dieser Spezifikation ist, wie in Kapitel 1, 2, 3, 4, angeordnet und Anhang C. Anhänge A, B, D, E und F für Informationen nur zu Evaluierungszwecken nutzen und sind nicht Teil der Spezifikation. Implementierungen, die nur eine Teilmenge der API enthalten sind, nicht OpenMP-kompatibel.
+Eine Implementierung der OpenMP-C/C++-API ist *OpenMP-kompatibel* , wenn Sie die Semantik aller Elemente dieser Spezifikation erkennt und beibehält, wie in den Kapiteln 1, 2, 3, 4 und Anhang C dargelegt. Appendices A, B, D, E und F dienen nur zu Informationszwecken und sind nicht Teil der Spezifikation. Implementierungen, die nur eine Teilmenge der API einschließen, sind nicht mit OpenMP kompatibel.
 
-Das OpenMP-C- und C++-API ist eine Erweiterung für die Basissprache, die durch eine Implementierung unterstützt wird. Wenn die Basissprache unterstützt ein Sprachkonstrukt oder eine Erweiterung, die angezeigt wird in diesem Dokument, die Implementierung von OpenMP muss sich nicht unterstützt.
+Die OpenMP C-und C++-API ist eine Erweiterung der Basis Sprache, die von einer-Implementierung unterstützt wird. Wenn die Basis Sprache kein Sprachkonstrukt oder eine Erweiterung unterstützt, die in diesem Dokument angezeigt wird, ist die OpenMP-Implementierung nicht erforderlich, um Sie zu unterstützen.
 
-Alle standardmäßigen C- und C++-Bibliotheksfunktionen und integrierte Funktionen (d. h. Funktionen, die von denen der Compiler verfügt über spezifische Kenntnisse) muss threadsicher sein. Nicht synchronisierte Verwenden von threadsichere Funktionen, wenn unterschiedliche Threads innerhalb eines parallelen Bereichs führen nicht nicht definiertem Verhalten. Allerdings kann das Verhalten sein keiner seriellen Region identisch. (Eine zufällige Zahl Generierungsfunktion ist ein Beispiel.)
+Alle standardmäßigen C-und C++-Bibliotheksfunktionen und integrierten Funktionen (d. h. Funktionen, von denen der Compiler über bestimmte Kenntnisse verfügt) müssen Thread sicher sein. Die nicht synchronisierte Verwendung Thread sicherer Funktionen durch verschiedene Threads in einem parallelen Bereich führt nicht zu undefiniertem Verhalten. Das Verhalten ist jedoch möglicherweise nicht identisch mit dem in einem seriellen Bereich. (Eine Funktion der Zufallszahlengenerierung ist ein Beispiel.)
 
-OpenMP C-/C++-API gibt an, dass bestimmte Verhalten *Implementierung definiert.* Keine entsprechende Implementierung von OpenMP ist erforderlich, um zu definieren und Dokumentieren Sie das Verhalten in diesen Fällen. Eine Liste der die Implementierung definiertes Verhalten, finden Sie unter [Anhang E](e-implementation-defined-behaviors-in-openmp-c-cpp.md).
+Die OpenMP C/C++-API gibt an, dass ein bestimmtes Verhalten von der *Implementierung definiert ist.* Eine konforme OpenMP-Implementierung ist erforderlich, um das Verhalten in diesen Fällen zu definieren und zu dokumentieren. Eine Liste der durch die Implementierung definierten Verhalten finden Sie in [Anhang E](e-implementation-defined-behaviors-in-openmp-c-cpp.md).
 
-## <a name="15-normative-references"></a>1.5 Normative Verweise
+## <a name="15-normative-references"></a>1,5 normative Verweise
 
-- ISO/IEC 9899: 1999, *Technologie - Programmiersprachen - K*. Diese OpenMP-API-Spezifikation bezeichnet ISO/IEC 9899: 1999 als C99.
+- ISO/IEC 9899:1999, *Informationstechnologie-Programmiersprachen-C*. Diese OpenMP-API-Spezifikation bezieht sich auf ISO/IEC 9899:1999 als C99.
 
-- ISO/IEC-9899:1990 *Technologie - Programmiersprachen - K*. Diese OpenMP-API-Spezifikation bezeichnet ISO/IEC 9899:1990 als C90.
+- ISO/IEC 9899:1990, *Informationstechnologie-Programmiersprachen-C*. Diese OpenMP-API-Spezifikation bezieht sich auf ISO/IEC 9899:1990 als C90.
 
-- ISO/IEC-14882:1998 *Informationen Technologie - Programmiersprachen – C++*. Diese OpenMP-API-Spezifikation, die als C++, ISO/IEC 14882:1998 bezeichnet werden.
+- ISO/IEC 14882:1998, *Informationstechnologie-Programmiersprachen-C++*. Diese OpenMP-API-Spezifikation bezieht sich auf ISO/IEC 14882:1998 als C++.
 
-Bei dieser OpenMP-API-Spezifikation in C verweist, wird der Verweis auf die Basissprache, die von der Implementierung unterstützt festgelegt.
+Wenn diese OpenMP-API-Spezifikation auf C verweist, wird auf die Basis Sprache verwiesen, die von der-Implementierung unterstützt wird.
 
 ## <a name="16-organization"></a>1.6 Organization
 
-- [Funktionen der Laufzeitbibliothek](3-run-time-library-functions.md)
+- [Funktionen der Runtimebibliothek](3-run-time-library-functions.md)
 - [Umgebungsvariablen](4-environment-variables.md)
-- [Durch die Implementierung definierte Verhalten in OpenMP C/C++](e-implementation-defined-behaviors-in-openmp-c-cpp.md)
-- [Neue Features in OpenMP C/C++-Version 2.0](f-new-features-and-clarifications-in-version-2-0.md)
+- [Durch die Implementierung definiertes Verhalten in OpenMP (C/C++)](e-implementation-defined-behaviors-in-openmp-c-cpp.md)
+- [Neue Features in OpenMP C/C++ Version 2,0](f-new-features-and-clarifications-in-version-2-0.md)

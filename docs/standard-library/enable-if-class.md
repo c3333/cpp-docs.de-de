@@ -7,16 +7,16 @@ helpviewer_keywords:
 - enable_if class
 - enable_if
 ms.assetid: c6b8d41c-a18f-4e30-a39e-b3aa0e8fd926
-ms.openlocfilehash: 6e6b8a286dca8c451e6920e7f25f07829d3b453f
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 1017fc315a4440350a0190cf4b40e644cda16876
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68454218"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230038"
 ---
-# <a name="enableif-class"></a>enable_if-Klasse
+# <a name="enable_if-class"></a>enable_if-Klasse
 
-Wandelt einen Typ für die SFINAE-Überladungsauflösung bedingt in eine Instanz um. `enable_if<Condition,Type>::type` Die –-Typdefinition ist vorhanden und ist ein Synonym für `Type` `Condition` –, wenn der Wert **true**ist.
+Wandelt einen Typ für die SFINAE-Überladungsauflösung bedingt in eine Instanz um. Die-Typdefinition `enable_if<Condition,Type>::type` ist bereits vorhanden – und ist ein Synonym für `Type` –, wenn gleich `Condition` ist **`true`** .
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,12 +30,12 @@ struct enable_if;
 *B*\
 Der Wert, der das Vorhandensein des Ergebnistyps bestimmt.
 
-*BUND*\
+*Bund*\
 Der Typ, der instanziiert werden soll, wenn *B* gleich true ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn *B* den Wert " `enable_if<B, T>` true" hat, verfügt über eine benannte Typdefinition namens "Type", die ein Synonym für " *T*" ist.
+Wenn *B* `enable_if<B, T>` den Wert "true" hat, verfügt über eine benannte Typdefinition namens "Type", die ein Synonym für " *T*" ist.
 
 Wenn *B* false ist, `enable_if<B, T>` verfügt nicht über eine nicht benannte typedef mit dem Namen "Type".
 
@@ -50,7 +50,7 @@ In C++ ist eine fehlgeschlagene Substitution von Vorlagenparametern kein eigentl
 
 Im Folgenden finden Sie vier Beispielszenarien:
 
-- Szenario 1: Umpacken des Rückgabe Typs einer Funktion:
+- Szenario 1: Umschließen des Rückgabetyps einer Funktion:
 
 ```cpp
     template <your_stuff>
@@ -64,7 +64,7 @@ yourfunction(args) {// ...
 }
 ```
 
-- Szenario 2: Hinzufügen eines Funktions Parameters mit einem Standardargument:
+- Szenario 2: Hinzufügen eines Funktionsparameters mit einem Standardargument:
 
 ```cpp
     template <your_stuff>
@@ -73,14 +73,14 @@ your_return_type_if_present
 }
 ```
 
-- Szenario 3: Hinzufügen eines Vorlagen Parameters mit einem Standardargument:
+- Szenario 3: Hinzufügen eines Vorlagenparameters mit einem Standardargument:
 
 ```cpp
     template <your_stuff, typename Dummy = enable_if_t<your_condition>>
 rest_of_function_declaration_goes_here
 ```
 
-- Szenario 4: Wenn Ihre Funktion über ein Argument ohne Vorlage verfügt, können Sie Ihren Typ einschließen:
+- Szenario 4: Wenn Ihre Funktion über ein Argument ohne Vorlage verfügt, können Sie ihren Typ umschließen:
 
 ```cpp
     template <typename T>
@@ -92,7 +92,7 @@ s) {// ...
 
 Szenario 1 funktioniert nicht mit Konstruktoren und Konvertierungsoperatoren, da diese keine Rückgabetypen haben.
 
-In Szenario 2 bleibt der Parameter unbenannt. Sie können ihn `::type Dummy = BAR` nennen, aber der Namens-`Dummy` ist irrelevant, und eine Benennung löst wahrscheinlich eine Warnung über einen nicht referenzierten Parameter aus. Sie müssen einen `FOO` Funktionsparameter typ und ein `BAR`-Standardargument auswählen.  Sie könnten Beispiels  Weise int `0`und lauten, aber dann könnten Benutzer Ihres Codes versehentlich an die Funktion übergeben werden, eine zusätzliche Ganzzahl, die ignoriert würde. Stattdessen wird empfohlen, dass Sie und `void **` entweder `0` und oder **nullptr** verwenden, da fast nichts in `void **`konvertierbar ist:
+In Szenario 2 bleibt der Parameter unbenannt. Sie können ihn `::type Dummy = BAR` nennen, aber der Namens-`Dummy` ist irrelevant, und eine Benennung löst wahrscheinlich eine Warnung über einen nicht referenzierten Parameter aus. Sie müssen einen `FOO` Funktionsparameter typ und ein `BAR`-Standardargument auswählen.  Sie könnten **`int`** und `0` , aber dann könnten Benutzer Ihres Codes versehentlich an die Funktion übergeben werden, eine zusätzliche Ganzzahl, die ignoriert würde. Stattdessen wird empfohlen, dass Sie `void **` und entweder und verwenden, `0` **`nullptr`** da fast nichts in konvertierbar ist `void **` :
 
 ```cpp
 template <your_stuff>
@@ -107,7 +107,7 @@ Szenario 3 verwendet den Namen `Dummy`, aber dieser ist optional. Nur „`typena
 
 Szenario 4 funktioniert mit Konstruktoren, die keine Rückgabetypen haben, und löst dadurch die Umschließungseinschränkung von Szenario 1 auf.  Szenario 4 ist allerdings auf Funktionsargumente ohne Vorlage beschränkt, die nicht immer zur Verfügung stehen.  (Die Verwendung von Szenario 4 mit einem Funktionsargument mit Vorlage verhindert, dass die Ableitung eines Vorlagenarguments in diesem Szenario funktioniert.)
 
-`enable_if` ist leistungsstark, aber bei falscher Verwendung auch gefährlich.  Da es sein Zweck ist, Kandidaten vor einer Überladungsauflösung verschwinden zu lassen, wenn es fehlerhaft verwendet wird, können seine Wirkungen sehr verwirrend sein.  Hier einige Empfehlungen:
+`enable_if` ist leistungsstark, aber bei falscher Verwendung auch gefährlich.  Da es sein Zweck ist, Kandidaten vor einer Überladungsauflösung verschwinden zu lassen, wenn es fehlerhaft verwendet wird, können seine Wirkungen sehr verwirrend sein.  Hier sind einige Empfehlungen dafür:
 
 - Verwenden Sie `enable_if` nicht, um zur Kompilierungszeit zwischen Implementierungen auszuwählen. Schreiben Sie niemals ein `enable_if` für `CONDITION` und ein anderes für `!CONDITION`.  Verwenden Sie stattdessen ein *tag dispatch*-Muster – z.B. einen Algorithmus, der Implementierungen abhängig von den Stärken der Iteratoren auswählt, die sie erhalten.
 
@@ -127,16 +127,16 @@ void func(const pair<string, string>&);
 func(make_pair("foo", "bar"));
 ```
 
-In diesem Beispiel gibt `make_pair("foo", "bar")` `pair<const char *, const char *>` zurück. Überladungsauslösung, die bestimmen muss, welche `func()` Sie möchten. `pair<A, B>` hat einen impliziten Konvertierungskonstruktor aus `pair<X, Y>`.  Dies ist nicht neu, sondern war schon in C++98 vorhanden. In C++98/03 ist allerdings die Signatur des impliziten Konvertierungskonstruktors immer vorhanden, selbst wenn es `pair<int, int>(const pair<const char *, const char *>&)` ist.  Bei der Überladungs Auflösung ist es nicht wichtig, dass ein Versuch, diesen Konstruktor zu instanziieren, entsetzlich ist, da `const char *` nicht implizit in **int**konvertiert werden kann. es wird nur nach Signaturen gesucht, bevor Funktionsdefinitionen instanziiert werden.  Deshalb ist der Beispielcode mehrdeutig, da Signaturen zur Konvertierung von `pair<const char *, const char *>` in `pair<int, int>` und in `pair<string, string>` vorhanden sind.
+In diesem Beispiel gibt `make_pair("foo", "bar")``pair<const char *, const char *>` zurück. Überladungsauslösung, die bestimmen muss, welche `func()` Sie möchten. `pair<A, B>` hat einen impliziten Konvertierungskonstruktor aus `pair<X, Y>`.  Dies ist nicht neu, sondern war schon in C++98 vorhanden. In C++98/03 ist allerdings die Signatur des impliziten Konvertierungskonstruktors immer vorhanden, selbst wenn es `pair<int, int>(const pair<const char *, const char *>&)` ist.  Bei der Überladungs Auflösung ist es nicht wichtig, dass ein Versuch, diesen Konstruktor zu instanziieren, entsetzlich ist, da `const char *` nicht implizit in konvertierbar ist **`int`** . er prüft nur Signaturen, bevor Funktionsdefinitionen instanziiert werden.  Deshalb ist der Beispielcode mehrdeutig, da Signaturen zur Konvertierung von `pair<const char *, const char *>` in `pair<int, int>` und in `pair<string, string>` vorhanden sind.
 
-In C++11 wurde diese Mehrdeutigkeit durch Verwendung von `enable_if` aufgelöst, um sicherzustellen, dass `pair<A, B>(const pair<X, Y>&)` **nur dann** vorhanden ist, wenn `const X&` implizit in `A` konvertierbar ist und `const Y&` implizit in `B` konvertierbar ist.  Dadurch kann die Überladungsauflösung festlegen, dass `pair<const char *, const char *>` nicht in `pair<int, int>` konvertierbar ist und dass die Überladung, die `pair<string, string>` aufnimmt, realisierbar ist.
+In C++11 wurde diese Mehrdeutigkeit durch Verwendung von `enable_if` aufgelöst, um sicherzustellen, dass `pair<A, B>(const pair<X, Y>&)`**nur dann** vorhanden ist, wenn `const X&` implizit in `A` konvertierbar ist und `const Y&` implizit in `B` konvertierbar ist.  Dadurch kann die Überladungsauflösung festlegen, dass `pair<const char *, const char *>` nicht in `pair<int, int>` konvertierbar ist und dass die Überladung, die `pair<string, string>` aufnimmt, realisierbar ist.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

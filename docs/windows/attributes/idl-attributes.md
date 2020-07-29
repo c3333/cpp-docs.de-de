@@ -1,5 +1,5 @@
 ---
-title: IDL-Attribute (C++-COM)
+title: IDL-Attribute (C++ com)
 ms.date: 10/02/2018
 helpviewer_keywords:
 - attributes [C++/CLI], reference topics
@@ -8,110 +8,110 @@ helpviewer_keywords:
 - IDL files [C++], attributes
 - .idl files [C++]
 ms.assetid: 04c596f4-c97b-4952-8053-316678b1d0b6
-ms.openlocfilehash: 29761d814505d2c2dd435d3416fe2367e1c16073
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
+ms.openlocfilehash: 8cceae2f1c4880b72f1ffc30070d6aa6bf8e3a51
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65448406"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211969"
 ---
 # <a name="idl-attributes"></a>IDL-Attribute
 
-In der Vergangenheit mussten eine IDL-Datei verwalten Sie zu:
+Normalerweise bedeutete die Verwaltung einer IDL-Datei Folgendes:
 
-- Mit der Struktur und Syntax von einer IDL-Datei ändern kann vertraut sein.
+- Machen Sie sich mit der Struktur und Syntax einer IDL-Datei vertraut, um Sie ändern zu können.
 
-- Basieren Sie auf einen Assistenten, der Sie einige Aspekte der IDL-Datei ändern kann.
+- Verlassen Sie sich auf einen Assistenten, mit dem Sie einige Aspekte der IDL-Datei ändern können.
 
-Jetzt können Sie von innerhalb einer Quellcodedatei, die mithilfe von Visual C++-IDL-Attribute die IDL-Datei ändern. In vielen Fällen müssen die Visual C++-IDL-Attribute den gleichen Namen wie das MIDL-Attribute. Wenn der Name des ein Visual C++-IDL-Attribut und einem MIDL-Attribut identisch sind, bedeutet dies, dass dies ist das Visual C++-Attribut in der Quellcodedatei in einer IDL-Datei führt, die die entwicklungsboard MIDL-Attribut enthält. Allerdings kann ein Visual C++-IDL-Attribut nicht alle Funktionen der MIDL-Attribut bereitstellen.
+Nun können Sie die IDL-Datei in einer Quell Code Datei mithilfe Visual C++ IDL-Attribute ändern. In vielen Fällen haben Visual C++ IDL-Attribute denselben Namen wie die Mittel l-Attribute. Wenn der Name eines Visual C++ IDL-Attributs und eines Mittelwert Attributs identisch sind, bedeutet dies, dass das Visual C++ Attribut in der Quell Code Datei mit einer IDL-Datei versehen wird, die sein Namespace-Attribut für die mittlere Sprache enthält. Allerdings bietet ein Visual C++ IDL-Attribut möglicherweise nicht die gesamte Funktionalität eines Mittel l-Attributs.
 
-Bei Verwendung nicht mit [COM-Attributen](com-attributes.md), IDL-Attribute können Sie die Schnittstellen definieren. Wenn der Quellcode kompiliert wird, werden die Attribute zum Definieren der generierten IDL-Datei verwendet. Bei Verwendung mit COM-Attributen in einem ATL-Projekt einige IDL Attribute, z. B. `coclass`, dass Code in das Projekt eingefügt werden.
+Wenn Sie nicht mit [com-Attributen](com-attributes.md)verwendet werden, können Sie mithilfe von IDL-Attributen Schnittstellen definieren. Beim Kompilieren des Quellcodes werden die Attribute zum Definieren der generierten IDL-Datei verwendet. Bei Verwendung mit COM-Attributen in einem ATL-Projekt bewirken einige IDL-Attribute, wie z `coclass` . b., dass Code in das Projekt eingefügt wird.
 
-Beachten Sie, dass [Idl_quote](idl-quote.md) können Sie MIDL-Konstrukte, die in der aktuellen Version des Visuals nicht unterstützt werden C++. Diese und andere Attribute wie z. B. [Importlib](importlib.md) und [Includelib](includelib-cpp.md) finden Sie Informationen zu vorhandenen IDL-Dateien in Ihrer aktuellen Visual Studio verwenden C++ Projekt.
+Beachten Sie, dass [Idl_quote](idl-quote.md) die Verwendung von mittlerer l-Konstrukten ermöglicht, die in der aktuellen Version von Visual C++ nicht unterstützt werden. Diese und andere Attribute, wie z. b. [importlib](importlib.md) und [Includelib](includelib-cpp.md) , unterstützen Sie dabei, vorhandene IDL-Dateien in Ihrem aktuellen Visual Studio C++-Projekt zu verwenden.
 
-|Attribut|Beschreibung|
+|attribute|BESCHREIBUNG|
 |---------------|-----------------|
-|[Aggregierbar](aggregatable.md)|Gibt an, dass ein Steuerelement durch ein anderes Steuerelement aggregiert werden kann.|
-|[appobject](appobject.md)|Identifiziert die Co-Klasse als ein Anwendungsobjekt, das eine vollständige Anwendung für die EXE-Datei zugeordnet ist, und gibt an, dass die Funktionen und Eigenschaften der Co-Klasse in diese Typbibliothek global verfügbar sind.|
-|[async_uuid](async-uuid.md)|Gibt an, die UUID, die den MIDL-Compiler definiert synchrone und asynchrone Versionen einer COM-Schnittstelle weiterleitet.|
+|[aggregatable](aggregatable.md)|Gibt an, dass ein Steuerelement von einem anderen Steuerelement aggregiert werden kann.|
+|[appobject](appobject.md)|Identifiziert die Co-Klasse als Anwendungs Objekt, das einer vollständigen exe-Anwendung zugeordnet ist, und gibt an, dass die Funktionen und Eigenschaften der Co-Klasse in dieser Typbibliothek global verfügbar sind.|
+|[async_uuid](async-uuid.md)|Gibt die UUID an, die den mittlerer l-Compiler anweist, sowohl synchrone als auch asynchrone Versionen einer COM-Schnittstelle zu definieren.|
 |[bindable](bindable.md)|Gibt an, dass die Eigenschaft die Datenbindung unterstützt.|
-|[call_as](call-as.md)|Aktiviert eine Funktion nicht remotefähige an eine remote-Funktion zugeordnet werden soll.|
-|[case](case-cpp.md)|Verwendung der [Switch_type](switch-type.md) Attribut in einer Union.|
-|[coclass](coclass.md)|Stellen Klassendefinition in einer IDL-Datei als Co-Klasse.|
-|[Steuerelement](control.md)|Gibt an, dass der benutzerdefinierte Typ eines Steuerelements.|
-|[cpp_quote](cpp-quote.md)|Gibt die angegebene Zeichenfolge verwendet werden, ohne die Anführungszeichen in der generierten Headerdatei an.|
-|[defaultbind](defaultbind.md)|Gibt an, die einfache, bindbare Eigenschaft, die das Objekt am besten darstellt.|
-|[defaultcollelem](defaultcollelem.md)|Für die Optimierung für Visual Basic-Code verwendet.|
-|[defaultvalue](defaultvalue.md)|Ermöglicht die Angabe eines Standardwerts für einen typisierten optionalen Parameter.|
+|[call_as](call-as.md)|Ermöglicht, dass eine nicht Remote fähige Funktion einer Remote Funktion zugeordnet wird.|
+|[case](case-cpp.md)|Wird mit dem [Switch_type](switch-type.md) -Attribut in einer Union verwendet.|
+|[coclass](coclass.md)|Platziert die Klassendefinition als Co-Klasse in eine IDL-Datei.|
+|[control](control.md)|Gibt an, dass der benutzerdefinierte Typ ein Steuerelement ist.|
+|[cpp_quote](cpp-quote.md)|Gibt die angegebene Zeichenfolge ohne Anführungszeichen in der generierten Header Datei aus.|
+|[defaultbind](defaultbind.md)|Gibt die einzelne, bindbare Eigenschaft an, die das Objekt am besten darstellt.|
+|[defaultcollelem](defaultcollelem.md)|Wird zur Optimierung des Visual Basic Codes verwendet.|
+|[DefaultValue](defaultvalue.md)|Ermöglicht die Angabe eines Standardwerts für einen eingegebenen optionalen Parameter.|
 |[default](default-cpp.md)|Gibt an, dass die benutzerdefinierte Schnittstelle oder Disp-Schnittstelle innerhalb einer Co-Klasse die Standard-Programmierschnittstelle darstellt.|
-|[defaultvtable](defaultvtable.md)|Definiert eine Schnittstelle als die Vtable-Standardschnittstelle für ein Steuerelement an.|
+|[defaultvtable](defaultvtable.md)|Definiert eine Schnittstelle als standardmäßige Vtable-Schnittstelle für ein Steuerelement.|
 |[dispinterface](dispinterface.md)|Fügt eine Schnittstelle in die IDL-Datei als Verteilschnittstelle ein.|
-|[displaybind](displaybind.md)|Gibt eine Eigenschaft, die dem Benutzer als bindungsfähig angezeigt werden soll.|
-|[dual](dual.md)|Fügt eine Schnittstelle in der IDL-Datei als eine duale Schnittstelle an.|
-|[entry](entry.md)|Gibt eine exportierte Funktion oder Konstante in einem Modul durch identifizieren den Einstiegspunkt in der DLL an.|
-|[first_is](first-is.md)|Gibt den Index des ersten Arrayelements übertragen werden.|
-|[helpcontext](helpcontext.md)|Gibt eine Kontext-ID, mit dem die Benutzerinformationen zu diesem Element in der Hilfedatei.|
-|[helpfile](helpfile.md)|Legt den Namen der Hilfedatei für die Typbibliothek.|
-|[helpstringcontext](helpstringcontext.md)|Gibt die ID des Hilfethemas in eine .hlp oder CHM-Datei an.|
-|[helpstringdll](helpstringdll.md)|Gibt den Namen der DLL zu verwenden, um die Suche nach Dokument (Lokalisierung) ausführen.|
+|[displaybind](displaybind.md)|Gibt eine Eigenschaft an, die dem Benutzer als Bindable angezeigt werden soll.|
+|[dual](dual.md)|Fügt eine Schnittstelle in die IDL-Datei als duale Schnittstelle ein.|
+|[ein](entry.md)|Gibt eine exportierte Funktion oder Konstante in einem Modul an, indem der Einstiegspunkt in der DLL identifiziert wird.|
+|[first_is](first-is.md)|Gibt den Index des ersten Array Elements an, das übertragen werden soll.|
+|[helpcontext](helpcontext.md)|Gibt eine Kontext-ID an, mit der der Benutzerinformationen zu diesem Element in der Hilfedatei anzeigen kann.|
+|[helpfile](helpfile.md)|Legt den Namen der Hilfedatei für eine Typbibliothek fest.|
+|[helpstringcontext](helpstringcontext.md)|Gibt die ID eines Hilfe Themas in einer. hlp-oder CHM-Datei an.|
+|[helpstringdll](helpstringdll.md)|Gibt den Namen der dll an, die verwendet werden soll, um die Suche nach Dokument Zeichenfolgen (Lokalisierung) auszuführen.|
 |[helpstring](helpstring.md)|Gibt eine Zeichenfolge an, die zum Beschreiben des Elements verwendet wird, auf das sie angewendet wird.|
-|[hidden](hidden.md)|Gibt an, dass das Element vorhanden ist, aber nicht in einem benutzerorientierten Browser angezeigt werden soll.|
+|[verbirgt](hidden.md)|Gibt an, dass das Element vorhanden ist, aber nicht in einem benutzerorientierten Browser angezeigt werden soll.|
 |[idl_module](idl-module.md)|Gibt einen Einstiegspunkt in einer DLL an.|
-|[idl_quote](idl-quote.md)|Können Sie Attribute verwenden, oder IDL-Konstrukte, die in der aktuellen Version von Visual C++ nicht unterstützt werden.|
-|[ID](id.md)|Gibt eine DISPID für eine Memberfunktion (eine Eigenschaft oder eine Methode, in eine Schnittstelle oder Disp-Schnittstelle).|
-|[iid_is](iid-is.md)|Gibt die IID für die COM-Schnittstelle, die einen Schnittstellenzeiger einen verweist.|
-|[immediatebind](immediatebind.md)|Gibt an, dass die Datenbank über alle Änderungen an einer Eigenschaft eines datengebundenen Objekts sofort benachrichtigt wird.|
+|[idl_quote](idl-quote.md)|Ermöglicht das Verwenden von Attributen oder IDL-Konstrukten, die in der aktuellen Version von Visual C++ nicht unterstützt werden.|
+|[id](id.md)|Gibt eine DISPID für eine Element Funktion an (entweder eine Eigenschaft oder eine Methode in einer Schnittstelle oder einer dispinterface).|
+|[iid_is](iid-is.md)|Gibt die IID der COM-Schnittstelle an, auf die durch einen Schnittstellen Zeiger gezeigt wird.|
+|[immediatebind](immediatebind.md)|Gibt an, dass die Datenbank sofort über alle Änderungen an einer Eigenschaft eines Daten gebundenen Objekts benachrichtigt wird.|
 |[importlib](importlib.md)|Stellt Typen, die bereits in einer anderen Typbibliothek kompiliert wurden, der erstellten Typbibliothek zur Verfügung.|
-|[import](import.md)|Gibt eine andere IDL, Header oder ODL-Datei enthält Definitionen, die Sie von Ihrem wichtigsten IDL-Datei verweisen möchten.|
-|[include](include-cpp.md)|Gibt einen oder mehrere Headerdateien, die in der generierten IDL-Datei eingeschlossen werden.|
-|[includelib](includelib-cpp.md)|Bewirkt, dass eine IDL- oder h-Datei, die in der generierten IDL-Datei eingeschlossen werden.|
-|[in](in-cpp.md)|Gibt an, dass ein Parameter, die von der aufrufenden Prozedur an die aufgerufene Prozedur übergeben werden.|
-|[last_is](last-is.md)|Gibt den Index des letzten Elements Array übertragen werden.|
-|[lcid](lcid.md)|Sie können einen Gebietsschemabezeichner an eine Funktion übergeben.|
-|[length_is](length-is.md)|Gibt die Anzahl von Elementen übertragen werden.|
-|[licensed](licensed.md)|Gibt an, dass die Co-Klasse, die auf die es angewendet wird lizenziert, und muss mit instanziiert werden `IClassFactory2`.|
-|[local](local-cpp.md)|Ermöglicht Ihnen die Verwendung den MIDL-Compiler als ein Header-Generator, wenn in der Schnittstelle-Header verwendet. Bei Verwendung in einer einzelnen Funktion kennzeichnet eine lokale Prozedur, die für die keine Stubs generiert werden.|
-|[max_is](max-is.md)|Legt fest, den maximalen Wert für ein gültiges Array-Index.|
-|[module](module-cpp.md)|Definiert den Bibliotheksblock in der IDL-Datei.|
-|[ms_union](ms-union.md)|Steuert die Netzwerk-datenausrichtung Darstellung nonencapsulated Unions.|
-|[no_injected_text](no-injected-text.md)|Verhindert, dass den Compiler Einfügen von Code durch Verwendung des Attributs.|
-|[nonbrowsable](nonbrowsable.md)|Gibt an, dass ein Schnittstellenmember nicht in einem Eigenschaftenbrowser angezeigt werden soll.|
-|[noncreatable](noncreatable.md)|Definiert ein Objekt, das allein nicht instanziiert werden kann.|
-|[nonextensible](nonextensible.md)|Gibt an, dass die `IDispatch` -Implementierung enthält nur die Eigenschaften und Methoden aufgeführt, die in der schnittstellenbeschreibung und können nicht zur Laufzeit zusätzliche Member erweitert werden.|
-|[object](object-cpp.md)|Identifiziert eine benutzerdefinierte Schnittstelle an. gleichbedeutend mit benutzerdefinierten Attribut.|
-|[odl](odl.md)|Gibt eine Schnittstelle als Schnittstelle Objekt Description Language (ODL).|
-|[oleautomation](oleautomation.md)|Gibt an, dass eine Schnittstelle mit der Automatisierung kompatibel ist.|
-|[optional](optional-cpp.md)|Gibt einen optionalen Parameter für eine Memberfunktion an.|
+|[import](import.md)|Gibt eine andere IDL-, ODL-oder Header Datei an, die Definitionen enthält, auf die Sie aus der IDL-Hauptdatei verweisen möchten.|
+|[darunter](include-cpp.md)|Gibt eine oder mehrere Header Dateien an, die in die generierte IDL-Datei eingeschlossen werden sollen.|
+|[Includelib](includelib-cpp.md)|Bewirkt, dass eine IDL-oder h-Datei in der generierten IDL-Datei enthalten ist.|
+|[in](in-cpp.md)|Gibt an, dass ein Parameter von der aufrufenden Prozedur an die aufgerufene Prozedur übergeben werden soll.|
+|[last_is](last-is.md)|Gibt den Index des letzten Array Elements an, das übertragen werden soll.|
+|[lcid](lcid.md)|Ermöglicht es Ihnen, einen Gebiets Schema Bezeichner an eine Funktion zu übergeben.|
+|[length_is](length-is.md)|Gibt die Anzahl der zu übertragenden Array Elemente an.|
+|[licensed](licensed.md)|Gibt an, dass die Co-Klasse, auf die Sie angewendet wird, lizenziert ist und mithilfe von instanziiert werden muss `IClassFactory2` .|
+|[nah](local-cpp.md)|Ermöglicht es Ihnen, den Mittel l-Compiler als Header Generator zu verwenden, wenn er im Schnittstellen Header verwendet wird. Gibt bei Verwendung in einer einzelnen Funktion eine lokale Prozedur an, für die keine stubals generiert werden.|
+|[max_is](max-is.md)|Legt den maximalen Wert für einen gültigen Array Index fest.|
+|[Mond](module-cpp.md)|Definiert den Bibliotheksblock in der IDL-Datei.|
+|[ms_union](ms-union.md)|Steuert die Ausrichtung der Netzwerkdaten Darstellung von nicht gekapselten Unions.|
+|[no_injected_text](no-injected-text.md)|Verhindert, dass der Compiler Code als Ergebnis der Verwendung eines Attributs einfügt.|
+|[nonbrowsable](nonbrowsable.md)|Gibt an, dass ein Schnittstellenmember nicht in einem Eigenschaften Browser angezeigt werden soll.|
+|[noncreatable](noncreatable.md)|Definiert ein Objekt, das nicht allein instanziiert werden kann.|
+|[nonextensible](nonextensible.md)|Gibt an, dass die `IDispatch` Implementierung nur die Eigenschaften und Methoden enthält, die in der Schnittstellen Beschreibung aufgeführt sind, und kann zur Laufzeit nicht mit zusätzlichen Membern erweitert werden.|
+|[object](object-cpp.md)|Identifiziert eine benutzerdefinierte Schnittstelle. Synonym mit benutzerdefiniertem Attribut.|
+|[odl](odl.md)|Identifiziert eine Schnittstelle als Object Description Language (ODL)-Schnittstelle.|
+|[oleautomation](oleautomation.md)|Gibt an, dass eine Schnittstelle mit Automation kompatibel ist.|
+|[optionale](optional-cpp.md)|Gibt einen optionalen Parameter für eine Member-Funktion an.|
 |[out](out-cpp.md)|Gibt die Zeigerparameter an, die von der aufgerufenen Prozedur an die aufrufende Prozedur zurückgegeben werden (vom Server an den Client).|
-|[pointer_default](pointer-default.md)|Gibt das Standardattribut für die Zeiger für alle Zeiger, mit Ausnahme der obersten Ebene Zeigern, die angezeigt werden in der Parameterliste.|
-|[pragma](pragma.md)|Gibt die angegebene Zeichenfolge verwendet werden, ohne die Anführungszeichen in der generierten IDL-Datei aus.|
-|[progid](progid.md)|Gibt an, die ProgID für ein COM-Objekt.|
-|[propget](propget.md)|Gibt eine Eigenschaft Accessorfunktion (Get).|
-|[propputref](propputref.md)|Gibt eine eigenschaftseinstellungsfunktion an, die einen Verweis anstelle eines Werts verwendet.|
+|[pointer_default](pointer-default.md)|Gibt das Standard Zeiger Attribut für alle Zeiger außer auf der obersten Ebene an, die in Parameterlisten angezeigt werden.|
+|[pragma](pragma.md)|Gibt die angegebene Zeichenfolge ohne Anführungszeichen in der generierten IDL-Datei aus.|
+|[ProgID](progid.md)|Gibt die ProgID für ein COM-Objekt an.|
+|[propget](propget.md)|Gibt eine Eigenschaften Accessor (Get)-Funktion an.|
+|[propputref](propputref.md)|Gibt eine Eigenschafts Einstellungs Funktion an, die einen Verweis anstelle eines Werts verwendet.|
 |[propput](propput.md)|Gibt eine Eigenschaftseinstellungsfunktion an.|
-|[ptr](ptr.md)|Kennzeichnet einen Zeiger als vollständige Zeiger.|
-|[public](public-cpp-attributes.md)|Wird sichergestellt, dass eine Typdefinition in der Typbibliothek wird, auch wenn es nicht in der IDL-Datei verweist.|
-|[range](range-cpp.md)|Gibt einen Bereich der zulässigen Werte für die Argumente oder Felder, deren Werte zur Laufzeit festgelegt werden.|
-|[readonly](readonly-cpp.md)|Verhindert die Zuweisung zu einer Variablen.|
-|[ref](ref-cpp.md)|Identifiziert einen Verweiszeiger an.|
+|[ptr](ptr.md)|Legt einen Zeiger als vollständigen Zeiger fest.|
+|[öffentlich](public-cpp-attributes.md)|Stellt sicher, dass eine typedef in die Typbibliothek wechselt, auch wenn in der IDL-Datei nicht auf Sie verwiesen wird.|
+|[range](range-cpp.md)|Gibt einen Bereich zulässiger Werte für Argumente oder Felder an, deren Werte zur Laufzeit festgelegt werden.|
+|[readonly](readonly-cpp.md)|Untersagt die Zuweisung zu einer Variablen.|
+|[ref](ref-cpp.md)|Bezeichnet einen Verweis Zeiger.|
 |[requestedit](requestedit.md)|Gibt an, dass die Eigenschaft die `OnRequestEdit`-Benachrichtigung unterstützt.|
-|[restricted](restricted.md)|Gibt an, dass es sich bei einer Bibliothek oder einem Mitglied ein Modul, Schnittstelle oder Disp-Schnittstelle nicht beliebig aufgerufen werden kann.|
-|[retval](retval.md)|Legt fest, den Parameter, der den Rückgabewert des Members empfängt.|
-|[size_is](size-is.md)|Gibt an, die Größe des Arbeitsspeichers für Größe Zeiger zugewiesen, die Größe der Zeiger auf Zeiger, die Größe und Einzel- oder mehrdimensionale Arrays.|
-|[source](source-cpp.md)|Gibt an, dass ein Member der Klasse, Eigenschaft oder Methode eine Ereignisquelle ist.|
-|[string](string-cpp.md)|Gibt an, dass das eindimensionale **Char**, **"wchar_t"**, `byte`, oder das entsprechende Array oder der Zeiger auf ein solches Array muss als Zeichenfolge behandelt werden.|
-|[switch_is](switch-is.md)|Gibt den Ausdruck oder einen Bezeichner fungiert als die union kombiniert werden sollen, die die union-Member auswählt.|
-|[switch_type](switch-type.md)|Gibt den Typ der Variablen als die union Discriminant verwendet.|
-|[transmit_as](transmit-as.md)|Weist den Compiler dargestellt ein, die Client- und serveranwendungen bearbeiten zu können, müssen, mit einem übertragenen Typ zuordnen.|
-|[uidefault](uidefault.md)|Gibt an, dass der Typinformationsmember das Standardelement für die Anzeige in der Benutzeroberfläche.|
-|[unique](unique-cpp.md)|Gibt einen eindeutigen Zeiger.|
-|[usesgetlasterror](usesgetlasterror.md)|Wird dem Aufrufer mitgeteilt, dass der Aufrufer bei wird ein Fehler beim Aufrufen dieser Funktion dann aufrufen kann `GetLastError` auf den Fehlercode abzurufen.|
+|[begrenz](restricted.md)|Gibt an, dass eine Bibliothek oder ein Member eines Moduls, einer Schnittstelle oder einer dispinterface nicht willkürlich aufgerufen werden kann.|
+|[retval](retval.md)|Gibt den Parameter an, der den Rückgabewert des Members empfängt.|
+|[size_is](size-is.md)|Gibt die Größe des zugeordneten Arbeitsspeichers für Größen Zeiger, Größen Zeiger auf Größen Zeiger und einzelne oder mehrdimensionale Arrays an.|
+|[source](source-cpp.md)|Gibt an, dass ein Member einer Klasse, Eigenschaft oder Methode eine Quelle von Ereignissen ist.|
+|[string](string-cpp.md)|Gibt an, dass das eindimensionale **`char`** , **`wchar_t`** , `byte` oder äquivalente Array oder der Zeiger auf ein solches Array als Zeichenfolge behandelt werden muss.|
+|[switch_is](switch-is.md)|Gibt den Ausdruck oder den Bezeichner an, der als uniondiskriminant fungiert, der das Unionmember auswählt.|
+|[switch_type](switch-type.md)|Identifiziert den Typ der Variablen, die als uniondiskriminant verwendet wird.|
+|[transmit_as](transmit-as.md)|Weist den Compiler an, einen dargestellten Typ, der Client-und Server Anwendungen bearbeitet, mit einem übertragenen Typ zuzuordnen.|
+|[uidefault](uidefault.md)|Gibt an, dass der Typinformationsmember der Standard Member für die Anzeige in der Benutzeroberfläche ist.|
+|[unique](unique-cpp.md)|Gibt einen eindeutigen Zeiger an.|
+|[usesgetlasterror](usesgetlasterror.md)|Teilt dem Aufrufer mit, dass der Aufrufer beim Aufrufen dieser Funktion aufrufen kann, `GetLastError` um den Fehlercode abzurufen.|
 |[uuid](uuid-cpp-attributes.md)|Gibt die eindeutige ID für eine Klasse oder Schnittstelle an.|
-|[v1_enum](v1-enum.md)|Wird angewiesen, der angegebene enumerierten Typ als eine 32-Bit-Entität und nicht als der Standardwert 16-Bit-übertragen werden.|
-|[vararg](vararg.md)|Gibt an, dass die Funktion eine Variable Anzahl von Argumenten akzeptieren.|
-|[vi_progid](vi-progid.md)|Gibt eine Art versionsunabhängige Programm-ID an.|
-|[wire_marshal](wire-marshal.md)|Gibt einen Datentyp, der für die Übertragung anstelle eines Typs anwendungsspezifische Daten verwendet wird.|
+|[v1_enum](v1-enum.md)|Weist an, dass der angegebene enumerierte Typ als 32-Bit-Entität und nicht als 16-Bit-Standardwert übertragen wird.|
+|[vararg](vararg.md)|Gibt an, dass die Funktion eine Variable Anzahl von Argumenten akzeptiert.|
+|[vi_progid](vi-progid.md)|Gibt eine Versions unabhängige Form der ProgID an.|
+|[wire_marshal](wire-marshal.md)|Gibt einen Datentyp an, der anstelle eines anwendungsspezifischen Datentyps für die Übertragung verwendet wird.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Attribute nach Gruppen](attributes-by-group.md)
+[Attribute nach Gruppe](attributes-by-group.md)

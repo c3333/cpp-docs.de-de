@@ -27,12 +27,12 @@ f1_keywords:
 - _Lock_level_order_
 - _Lock_kind_event_
 ms.assetid: 07769c25-9b97-4ab7-b175-d1c450308d7a
-ms.openlocfilehash: c9079ac35c4219495b62cd1f4aa2f8ecbbdcf8c9
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 371422275b965fd2ce12995b55221a011a4edae6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404023"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232364"
 ---
 # <a name="annotating-locking-behavior"></a>Hinzufügen einer Anmerkung zum Sperrverhalten
 
@@ -116,7 +116,7 @@ Smart Locks wrappen in der Regel Native Sperren und verwalten ihre Lebensdauer. 
 |`_Moves_lock_(target, source)`|Beschreibt `move constructor` den Vorgang, der den Sperr Zustand von dem- `source` Objekt an den überträgt `target` . Der `target` wird als neu konstruiertes Objekt betrachtet, sodass jeder Zustand, den er hatte, verloren geht und durch den Zustand ersetzt wird `source` . Der `source` wird auch auf einen sauberen Zustand zurückgesetzt, ohne dass eine Sperrenanzahl oder ein Alias Ziel vorhanden ist, aber Aliase, die darauf zeigen, bleiben unverändert.|
 |`_Replaces_lock_(target, source)`|Beschreibt die `move assignment operator` Semantik, bei der die Ziel Sperre freigegeben wird, bevor der Status aus der Quelle übertragen wird. Dies kann als eine Kombination von `_Moves_lock_(target, source)` vorangestellt werden `_Releases_lock_(target)` .|
 |`_Swaps_locks_(left, right)`|Beschreibt das Standard `swap` Verhalten, bei dem davon ausgegangen wird, dass `left` -Objekte und `right` ihren Zustand austauschen. Der ausgetauschte Status umfasst ggf. Sperr Anzahl und Aliasing-Ziel. Aliase, die auf die `left` Objekte und zeigen, `right` bleiben unverändert.|
-|`_Detaches_lock_(detached, lock)`|Beschreibt ein Szenario, in dem ein Lock Wrapper Type die Trennung der enthaltenen Ressource zulässt. Dies ähnelt der Funktionsweise `std::unique_ptr` von mit dem internen Zeiger: Sie ermöglicht es Programmierern, den Zeiger zu extrahieren und den intelligenten Zeiger Container in einem sauberen Zustand zu belassen. Eine ähnliche Logik wird von unterstützt `std::unique_lock` und kann in benutzerdefinierten sperrwrappern implementiert werden. Die getrennte Sperre behält ihren Zustand (sofern vorhanden) bei, während der Wrapper zurückgesetzt wird, sodass er keine Sperr Anzahl und kein Alias Ziel enthält, während seine eigenen Aliase beibehalten werden. Es gibt keinen Vorgang für Sperr Zählungen (freigeben und erwerben). Diese Anmerkung verhält sich genau so `_Moves_lock_` , als ob das getrennte Argument `return` nicht sein sollte `this` .|
+|`_Detaches_lock_(detached, lock)`|Beschreibt ein Szenario, in dem ein Lock Wrapper Type die Trennung der enthaltenen Ressource zulässt. Dies ähnelt der Funktionsweise `std::unique_ptr` von mit dem internen Zeiger: Sie ermöglicht es Programmierern, den Zeiger zu extrahieren und den intelligenten Zeiger Container in einem sauberen Zustand zu belassen. Eine ähnliche Logik wird von unterstützt `std::unique_lock` und kann in benutzerdefinierten sperrwrappern implementiert werden. Die getrennte Sperre behält ihren Zustand (sofern vorhanden) bei, während der Wrapper zurückgesetzt wird, sodass er keine Sperr Anzahl und kein Alias Ziel enthält, während seine eigenen Aliase beibehalten werden. Es gibt keinen Vorgang für Sperr Zählungen (freigeben und erwerben). Diese Anmerkung verhält sich genau so `_Moves_lock_` , als ob das getrennte Argument **`return`** nicht sein sollte **`this`** .|
 
 ## <a name="see-also"></a>Weitere Informationen
 

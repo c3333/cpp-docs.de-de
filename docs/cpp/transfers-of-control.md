@@ -5,18 +5,18 @@ helpviewer_keywords:
 - control flow, branching
 - control flow, transferring control
 ms.assetid: aa51e7f2-060f-4106-b0fe-331f04357423
-ms.openlocfilehash: c9a46ccb1cf519080c5105855e41ecd3ebc23f77
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ef437d0a691ceff72485be1ff9584052f540031a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188050"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232182"
 ---
 # <a name="transfers-of-control"></a>Übertragung der Steuerung
 
-Sie können die **goto** -Anweisung oder eine **Case** -Bezeichnung in einer **Switch** -Anweisung verwenden, um ein Programm anzugeben, das sich hinter einem Initialisierer verzweigt. Solcher Code ist nicht zulässig, es sei denn, die Deklaration, die den Initialisierer enthält, befindet sich in einem Block, der von dem Block eingeschlossen wird, in dem die Sprunganweisung auftritt.
+Sie können die- **`goto`** Anweisung oder eine **`case`** Bezeichnung in einer- **`switch`** Anweisung verwenden, um ein Programm anzugeben, das sich hinter einem Initialisierer verzweigt. Solcher Code ist nicht zulässig, es sei denn, die Deklaration, die den Initialisierer enthält, befindet sich in einem Block, der von dem Block eingeschlossen wird, in dem die Sprunganweisung auftritt.
 
-Das folgende Beispiel zeigt eine Schleife, welche die Objekte `total`, `ch` und `i` deklariert und initialisiert. Es gibt auch eine fehlerhafte **goto** -Anweisung, die die Steuerung hinter einem Initialisierer überträgt.
+Das folgende Beispiel zeigt eine Schleife, welche die Objekte `total`, `ch` und `i` deklariert und initialisiert. Es gibt auch eine fehlerhafte **`goto`** Anweisung, die die Steuerung über einen Initialisierer überträgt.
 
 ```cpp
 // transfers_of_control.cpp
@@ -48,6 +48,6 @@ int main()
 }
 ```
 
-Im vorherigen Beispiel versucht die **goto** -Anweisung, die Steuerung hinter der Initialisierung von `i`zu übertragen. Wenn jedoch `i` zwar deklariert, aber nicht initialisiert ist, wäre die Übertragung gültig.
+Im vorherigen Beispiel versucht die- **`goto`** Anweisung, die Steuerung hinter der Initialisierung von zu übertragen `i` . Wenn jedoch `i` zwar deklariert, aber nicht initialisiert ist, wäre die Übertragung gültig.
 
-Die-Objekte `total` und `ch`, die im-Block deklariert werden, der als *Anweisung* der **while** -Anweisung fungiert, zerstört, wenn dieser Block mithilfe der **break** -Anweisung beendet wird.
+Die `total` -Objekte und `ch` , die im-Block deklariert werden, der als *Anweisung* der-Anweisung fungiert **`while`** , werden zerstört, wenn dieser Block mithilfe der-Anweisung beendet wird **`break`** .

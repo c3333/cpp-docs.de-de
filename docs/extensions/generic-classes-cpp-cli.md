@@ -9,12 +9,12 @@ helpviewer_keywords:
 - generic classes
 - generics [C++], declaring generic classes
 ms.assetid: 0beb99e1-1ec4-4fee-9836-ce9657d67a3a
-ms.openlocfilehash: 78f4bf3abb98aab5e626e8ada538a22bdbca2912
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 894bbffcc73693e5d0976831d65df54b09c853d2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172359"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216023"
 ---
 # <a name="generic-classes-ccli"></a>Generische Klassen (C++/CLI)
 
@@ -41,9 +41,9 @@ In der oben stehenden Syntax werden die folgenden Begriffe verwendet:
 (Optional) Zusätzliche deklarative Informationen. Weitere Informationen zu Attributen und Attributklassen finden Sie unter „Attribute“.
 
 *class-key*<br/>
-Entweder **class** oder **typename**.
+Entweder **`class`** oder.**`typename`**
 
-*type-parameter-identifier(s)* : durch Trennzeichen getrennte Liste der Bezeichner, die die Namen der Typparameter angeben.
+*type-parameter-identifier(s)*: durch Trennzeichen getrennte Liste der Bezeichner, die die Namen der Typparameter angeben.
 
 *constraint-clauses*<br/>
 Eine (nicht durch Trennzeichen getrennte) Liste von **where**-Klauseln, die die Einschränkungen für die Typparameter angeben. Nimmt folgende Form an:
@@ -51,15 +51,15 @@ Eine (nicht durch Trennzeichen getrennte) Liste von **where**-Klauseln, die die 
 > **Where** *Type-Parameter-Identifier* **:** Einschränkungs *Liste*  **...**
 
 *constraint-list*<br/>
-*Class-or-Interface*[`,` *...* ]
+*Class-or-Interface*[ `,` *...*]
 
 *accessibility-modifiers*<br/>
-Zugriffsmodifizierer für die generische Klasse. Für die Windows-Runtime ist **private** der einzige zulässige Modifizierer. Für die Common Language Runtime sind **private** und **public** die zulässigen Modifizierer.
+Zugriffsmodifizierer für die generische Klasse. Für den Windows-Runtime ist der einzige zulässige Modifizierer **`private`** . Für den Common Language Runtime sind die zulässigen modifiziererer **`private`** und **`public`** .
 
 *identifier*<br/>
 Der Name der generischen Klasse – ein beliebiger gültiger C++-Bezeichner.
 
-*modifiers*<br/>
+*Modifizierer*<br/>
 (Optional) Zulässige Modifizierer sind **sealed** und **abstract**.
 
 *base-list*<br/>
@@ -68,10 +68,10 @@ Eine Liste, die eine Basisklasse und alle implementierten Schnittstellen enthäl
 *class-body*<br/>
 Der Text der Klasse, einschließlich Feldern, Memberfunktionen usw.
 
-*declarators*<br/>
-Deklarationen aller Variablen dieses Typs. Beispielsweise: `^`*identifier*[`,` ...]
+*Deklaratoren*<br/>
+Deklarationen aller Variablen dieses Typs. Beispiel: `^` *Bezeichner*[ `,` ...]
 
-Sie können generische Klassen wie diese deklarieren (beachten Sie, dass das Schlüsselwort **class** anstelle von **typename** verwendet werden kann). In diesem Beispiel sind `ItemType`, `KeyType` und `ValueType` unbekannte Typen, die an dem Punkt angegeben werden, an dem der Typ `HashTable<int, int>` ein konstruierter Typ des generischen Typs `HashTable<KeyType, ValueType>` ist. Aus einem einzelnen generischen Typ kann eine Reihe verschiedener konstruierter Typen konstruiert werden. Aus generischen Klassen konstruierte Typen werden wie jeder andere Verweisklassentyp behandelt.
+Sie können generische Klassen wie diese deklarieren (Beachten Sie, dass das-Schlüsselwort **`class`** anstelle von verwendet werden kann **`typename`** ). In diesem Beispiel sind `ItemType`, `KeyType` und `ValueType` unbekannte Typen, die an dem Punkt angegeben werden, an dem der Typ `HashTable<int, int>` ein konstruierter Typ des generischen Typs `HashTable<KeyType, ValueType>` ist. Aus einem einzelnen generischen Typ kann eine Reihe verschiedener konstruierter Typen konstruiert werden. Aus generischen Klassen konstruierte Typen werden wie jeder andere Verweisklassentyp behandelt.
 
 ```cpp
 // generic_classes_1.cpp
@@ -95,9 +95,9 @@ int main() {
 }
 ```
 
-Sowohl Werttypen (entweder integrierte Typen wie **int** oder **double** oder benutzerdefinierte Werttypen) als auch Verweistypen können als generisches Typargument verwendet werden. Die Syntax innerhalb der generischen Definition ist davon unbenommen die gleiche. Syntaktisch gesehen wird der unbekannte Typ so behandelt, als wäre es ein Verweistyp. Die Runtime kann jedoch ermitteln, ob der tatsächlich verwendete Typ ein Werttyp ist, und den entsprechenden generierten Code für den Direktzugriff auf Member ersetzen. Für Werttypen, die als generische Typargumente verwendet werden, wird kein Boxing durchgeführt. Daher gelten für diese auch nicht die Leistungseinbußen, die mit Boxing einhergehen. Die im Text des generischen Typarguments verwendete Syntax sollte `T^` und `->` anstelle von `.` lauten. Die Verwendung von [ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md) für den Typparameter wird von der Runtime entsprechend als einfache Erstellung eines Werttyps interpretiert, wenn das Typargument ein Werttyp ist.
+Beide Werttypen (z. b. **`int`** oder **`double`** , benutzerdefinierte Werttypen) und Verweis Typen können als generisches Typargument verwendet werden. Die Syntax innerhalb der generischen Definition ist davon unbenommen die gleiche. Syntaktisch gesehen wird der unbekannte Typ so behandelt, als wäre es ein Verweistyp. Die Runtime kann jedoch ermitteln, ob der tatsächlich verwendete Typ ein Werttyp ist, und den entsprechenden generierten Code für den Direktzugriff auf Member ersetzen. Für Werttypen, die als generische Typargumente verwendet werden, wird kein Boxing durchgeführt. Daher gelten für diese auch nicht die Leistungseinbußen, die mit Boxing einhergehen. Die im Text des generischen Typarguments verwendete Syntax sollte `T^` und `->` anstelle von `.` lauten. Die Verwendung von [ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md) für den Typparameter wird von der Runtime entsprechend als einfache Erstellung eines Werttyps interpretiert, wenn das Typargument ein Werttyp ist.
 
-Sie können auch eine generische Klasse mit [Einschränkungen für generische Typparameter (C++/CLI)](constraints-on-generic-type-parameters-cpp-cli.md) für die Typen deklarieren, die als Typparameter verwendet werden können. Im folgenden Beispiel muss jeder für `ItemType` verwendete Typ die `IItem`-Schnittstelle implementieren. Der Versuch, **int** zu verwenden – der `IItem` nicht implementiert –, löst einen Kompilierzeitfehler aus, weil das Typargument die Einschränkung nicht erfüllt.
+Sie können auch eine generische Klasse mit [Einschränkungen für generische Typparameter (C++/CLI)](constraints-on-generic-type-parameters-cpp-cli.md) für die Typen deklarieren, die als Typparameter verwendet werden können. Im folgenden Beispiel muss jeder für `ItemType` verwendete Typ die `IItem`-Schnittstelle implementieren. Der Versuch, zu verwenden, z. b., **`int`** der nicht implementiert `IItem` , würde zu einem Kompilierzeitfehler führen, da das Typargument die Einschränkung nicht erfüllt.
 
 ```cpp
 // generic_classes_2.cpp
@@ -159,7 +159,7 @@ Instanzvariablen einer generischen Klasse können Typen und Variableninitialisie
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel werden drei verschiedene Instanzen der generischen Klasse „MyClass\<ItemType>“ erstellt. Dabei werden die geeigneten Typargumente verwendet (**int**, **double** und **string**).
+Im folgenden Beispiel werden drei verschiedene Instanzen der generischen-Klasse MyClass \<ItemType> mithilfe der entsprechenden Typargumente erstellt ( **`int`** , **`double`** und **String**).
 
 ```cpp
 // generics_instance_fields1.cpp
@@ -341,7 +341,7 @@ Amount: $123.00**
 
 ## <a name="generic-methods-in-generic-classes"></a>Generische Methoden in generischen Klassen
 
-Sie können generische Methoden sowohl in generischen als auch in nicht generischen Klassen deklarieren. Beispiel:
+Sie können generische Methoden sowohl in generischen als auch in nicht generischen Klassen deklarieren. Zum Beispiel:
 
 ## <a name="example"></a>Beispiel
 
@@ -665,7 +665,7 @@ Die Regeln für das Deklarieren und Verwenden von generischen Strukturen sind di
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel deklariert die generische Struktur `MyGenStruct` mit einem Feld, `myField`, und weist diesem Feld Werte verschiedener Typen zu (**int**, **double**, `String^`).
+Im folgenden Beispiel wird eine generische Struktur, `MyGenStruct` , mit einem Feld, `myField` , deklariert und diesem Feld Werte verschiedener Typen ( **`int`** , **`double`** ,) zugewiesen `String^` .
 
 ```cpp
 // generics_generic_struct1.cpp
@@ -710,6 +710,6 @@ The field is assigned the double value: 0.123
 The field is assigned the string: Hello Generics!
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

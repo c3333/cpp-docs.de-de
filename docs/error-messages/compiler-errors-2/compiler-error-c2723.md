@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2723
 ms.assetid: 86925601-2297-4cfd-94e2-2caf27c474c4
-ms.openlocfilehash: f9b169f856dba7a76e5f67e1980c4ca47ba912de
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f723fcc0a3d9626f01f2059a3d9363801221bca0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74737451"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87216049"
 ---
 # <a name="compiler-error-c2723"></a>Compilerfehler C2723
 
 „Funktion“: Spezifizierer „Spezifizierer“ ist in Funktionsdefinition unzulässig.
 
-Der Spezifizierer darf nicht mit einer Funktionsdefinition außerhalb einer Klassendeklaration vorkommen. Der `virtual`-Spezifizierer kann nur in einer Deklaration einer Memberfunktion innerhalb einer Klassendeklaration angegeben werden.
+Der Spezifizierer darf nicht mit einer Funktionsdefinition außerhalb einer Klassendeklaration vorkommen. Der **`virtual`** Spezifizierer kann nur für eine Element Funktionsdeklaration innerhalb einer Klassen Deklaration angegeben werden.
 
 Im folgenden Beispiel wird C2723 generiert und gezeigt, wie Sie diesen Fehler beheben:
 

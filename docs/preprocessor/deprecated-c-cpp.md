@@ -7,19 +7,19 @@ helpviewer_keywords:
 - deprecated pragma
 - pragmas, deprecated
 ms.assetid: 9c046f12-7875-499a-8d5d-12f8642fed2d
-ms.openlocfilehash: 6caf5283aea848186c8bd6f9dd2009bb8d8ee8b5
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 52d9deb4ad68dacc99fab9d12bc9eb21bc0d360e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167627"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231610"
 ---
 # <a name="deprecated-pragma"></a>deprecated-Pragma
 
-Mit dem **veraltet** -Pragma können Sie angeben, dass eine Funktion, ein Typ oder ein anderer Bezeichner in einem zukünftigen Release möglicherweise nicht mehr unterstützt wird oder nicht mehr verwendet werden soll.
+Das- **`deprecated`** pragma ermöglicht Ihnen anzugeben, dass eine Funktion, ein Typ oder ein anderer Bezeichner in einem zukünftigen Release möglicherweise nicht mehr unterstützt wird oder nicht mehr verwendet werden soll.
 
 > [!NOTE]
-> Weitere Informationen zum c++ 14 `[[deprecated]]`-Attribut sowie Anleitungen dazu, wann dieses Attribut anstelle des Microsoft `__declspec(deprecated)`-Modifizierers oder des **veralteten** Pragmas verwendet werden sollte, finden Sie unter [Attribute in C++ ](../cpp/attributes.md).
+> Weitere Informationen zum C++ 14 `[[deprecated]]` -Attribut und Anleitungen dazu, wann dieses Attribut anstelle des Microsoft- `__declspec(deprecated)` Modifizierers oder des- **`deprecated`** Pragmas verwendet werden sollte, finden Sie unter [Attribute in C++](../cpp/attributes.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,13 +27,13 @@ Mit dem **veraltet** -Pragma können Sie angeben, dass eine Funktion, ein Typ od
 
 ## <a name="remarks"></a>Bemerkungen
 
-Wenn der Compiler auf einen Bezeichner stößt, der durch ein **veralteter** Pragma festgelegt ist, wird die Compilerwarnung [C4995](../error-messages/compiler-warnings/compiler-warning-level-3-c4995.md)ausgegeben.
+Wenn der Compiler auf einen Bezeichner stößt, der von einem **`deprecated`** pragma angegeben wird, gibt er Compilerwarnung [C4995](../error-messages/compiler-warnings/compiler-warning-level-3-c4995.md)aus.
 
 Sie können Makronamen als veraltet deklarieren. Platzieren Sie den Makronamen in Anführungszeichen; andernfalls tritt eine Makroerweiterung auf.
 
-Da das **veraltet** -Pragma für alle übereinstimmenden Bezeichner funktioniert und keine Signaturen berücksichtigt, ist es nicht die beste Option, um bestimmte Versionen von überladenen Funktionen als veraltet zu kennzeichnen. Alle übereinstimmenden Funktionsnamen, die in den Bereich eingefügt werden, lösen die Warnung aus.
+Da das **`deprecated`** pragma für alle übereinstimmenden Bezeichner funktioniert und keine Signaturen berücksichtigt, ist es nicht die beste Option, um bestimmte Versionen von überladenen Funktionen als veraltet zu kennzeichnen. Alle übereinstimmenden Funktionsnamen, die in den Bereich eingefügt werden, lösen die Warnung aus.
 
-Es wird empfohlen, anstelle des **veralteten** Pragmas das `[[deprecated]]`-Attribut "c++ 14" zu verwenden. Der Microsoft-spezifische [__declspec (veraltet)](../cpp/deprecated-cpp.md) deklarationsmodifizierer ist in vielen Fällen auch eine bessere Wahl als das **Veraltete** Pragma. Mit dem `[[deprecated]]`-Attribut und `__declspec(deprecated)` Modifizierer können Sie den veralteten Status für bestimmte Formen überladener Funktionen angeben. Die Diagnose Warnung wird nur bei verweisen auf die spezifische überladene Funktion angezeigt, auf die das Attribut oder der Modifizierer angewendet wird.
+Es wird empfohlen, anstelle des-Pragmas das c++ 14- `[[deprecated]]` Attribut zu verwenden **`deprecated`** . Der Microsoft-spezifische [__declspec (veraltet)](../cpp/deprecated-cpp.md) deklarationsmodifizierer ist in vielen Fällen auch eine bessere Wahl als das **`deprecated`** pragma. `[[deprecated]]`Mit dem-Attribut und dem- `__declspec(deprecated)` Modifizierer können Sie den veralteten Status für bestimmte Formen überladener Funktionen angeben. Die Diagnose Warnung wird nur bei verweisen auf die spezifische überladene Funktion angezeigt, auf die das Attribut oder der Modifizierer angewendet wird.
 
 ## <a name="example"></a>Beispiel
 
@@ -74,4 +74,4 @@ int main() {
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Pragma-Direktiven und das __Pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+[Pragma-Anweisungen und das __pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

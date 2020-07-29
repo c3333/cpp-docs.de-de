@@ -10,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlWinModule class
 ms.assetid: 7ec844af-0f68-4a34-b0c8-9de50a025df0
-ms.openlocfilehash: 5cdf13ebbb982ad8184a52dcf1a3e30d71e4e5b0
-ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
+ms.openlocfilehash: 04dc7e5b8c0c5dd21567f23395b4bafd4ae839dc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82167707"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229986"
 ---
 # <a name="catlwinmodule-class"></a>Klasse von "-Klasse"
 
@@ -41,7 +41,7 @@ class CAtlWinModule : public _ATL_WIN_MODULE
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |["": Addkreatewnddata](#addcreatewnddata)|Fügt ein Datenobjekt hinzu.|
 |["": Extractkreatewnddata](#extractcreatewnddata)|Gibt einen Zeiger auf das Datenobjekt des Fenster Moduls zurück.|
@@ -56,13 +56,13 @@ Diese Klasse bietet Unterstützung für alle ATL-Klassen, für die windowingfunk
 
 `CAtlWinModule`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atlbase. h
 
 ## <a name="catlwinmoduleaddcreatewnddata"></a><a name="addcreatewnddata"></a>"": Addkreatewnddata
 
-Diese Methode initialisiert eine `_AtlCreateWndData` -Struktur und fügt diese hinzu.
+Diese Methode initialisiert eine-Struktur und fügt diese hinzu `_AtlCreateWndData` .
 
 ```cpp
 void AddCreateWndData(_AtlCreateWndData* pData, void* pObject);
@@ -71,14 +71,14 @@ void AddCreateWndData(_AtlCreateWndData* pData, void* pObject);
 ### <a name="parameters"></a>Parameter
 
 *pData*<br/>
-Ein Zeiger auf `_AtlCreateWndData` die-Struktur, die initialisiert und dem aktuellen Modul hinzugefügt werden soll.
+Ein Zeiger auf die `_AtlCreateWndData` -Struktur, die initialisiert und dem aktuellen Modul hinzugefügt werden soll.
 
 *pObject*<br/>
-Zeiger auf den **this** -Zeiger eines Objekts.
+Zeiger auf den Zeiger eines Objekts **`this`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft [atlwinmoduleaddkreatewnddata](winmodule-global-functions.md#atlwinmoduleaddcreatewnddata) auf, das eine [_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md) Struktur initialisiert. Diese-Struktur speichert den **this** -Zeiger, der zum Abrufen der Klasseninstanz in Fenster Prozeduren verwendet wird.
+Diese Methode ruft [atlwinmoduleaddkreatewnddata](winmodule-global-functions.md#atlwinmoduleaddcreatewnddata) auf, das eine [_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md) Struktur initialisiert. Diese Struktur speichert den **`this`** Zeiger, der zum Abrufen der Klasseninstanz in Fenster Prozeduren verwendet wird.
 
 ## <a name="catlwinmodulecatlwinmodule"></a><a name="catlwinmodule"></a>"" Für ""
 
@@ -106,7 +106,7 @@ Gibt alle zugeordneten Ressourcen frei.
 
 ## <a name="catlwinmoduleextractcreatewnddata"></a><a name="extractcreatewnddata"></a>"": Extractkreatewnddata
 
-Diese Methode gibt einen Zeiger auf eine `_AtlCreateWndData` -Struktur zurück.
+Diese Methode gibt einen Zeiger auf eine- `_AtlCreateWndData` Struktur zurück.
 
 ```cpp
 void* ExtractCreateWndData();
@@ -114,9 +114,9 @@ void* ExtractCreateWndData();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die `_AtlCreateWndData` -Struktur zurück, die zuvor mit "" "" "" "" "" "" "" " [" mit "](#addcreatewnddata)" "" "" ".
+Gibt einen Zeiger auf die- `_AtlCreateWndData` Struktur zurück, [CAtlWinModule::AddCreateWndData](#addcreatewnddata)die zuvor mit "" "" "" "" "" "" "" "" mit "" "" "" ".
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)<br/>

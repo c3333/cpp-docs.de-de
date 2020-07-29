@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C++ Accelerated Massive Parallelism, debugging
 - debugging, C++ AMP
 ms.assetid: 40e92ecc-f6ba-411c-960c-b3047b854fb5
-ms.openlocfilehash: 6eb93d617ac9909a67719b144a44ed461701225e
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 031fb3837dbefe500eb33f9509f3270204d19b89
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404716"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215880"
 ---
 # <a name="walkthrough-debugging-a-c-amp-application"></a>Exemplarische Vorgehensweise: Debuggen einer C++ AMP-Anwendung
 
@@ -215,7 +215,7 @@ Nächste Schritte:
 
 ## <a name="debugging-the-cpu-code"></a>Debuggen des CPU-Codes
 
-In diesem Verfahren verwenden Sie den lokalen Windows-Debugger, um sicherzustellen, dass der CPU-Code in dieser Anwendung korrekt ist. Das Segment des CPU-Codes in dieser Anwendung, das besonders interessant ist, ist die `for` Schleife in der `reduction_sum_gpu_kernel` Funktion. Er steuert die Struktur basierte parallele Reduzierung, die auf der GPU ausgeführt wird.
+In diesem Verfahren verwenden Sie den lokalen Windows-Debugger, um sicherzustellen, dass der CPU-Code in dieser Anwendung korrekt ist. Das Segment des CPU-Codes in dieser Anwendung, das besonders interessant ist, ist die **`for`** Schleife in der `reduction_sum_gpu_kernel` Funktion. Er steuert die Struktur basierte parallele Reduzierung, die auf der GPU ausgeführt wird.
 
 ### <a name="to-debug-the-cpu-code"></a>Zum Debuggen des CPU-Codes
 

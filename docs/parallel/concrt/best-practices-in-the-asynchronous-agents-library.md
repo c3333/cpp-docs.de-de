@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Asynchronous Agents Library, practices to avoid
 - practices to avoid, Asynchronous Agents Library
 ms.assetid: 85f52354-41eb-4b0d-98c5-f7344ee8a8cf
-ms.openlocfilehash: 1cd6b54a014d35d17c732ed52f8529b05274585b
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 99780de11d85831a6901f370d2491f15ef88c0b1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142096"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231740"
 ---
 # <a name="best-practices-in-the-asynchronous-agents-library"></a>Empfohlene Vorgehensweisen in der Asynchronous Agents Library
 
@@ -20,33 +20,33 @@ In diesem Dokument wird die effektive Verwendung der Asynchronous Agents Library
 
 Weitere Informationen zur Agents Library finden Sie unter [Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md).
 
-## <a name="top"></a> Abschnitte
+## <a name="sections"></a><a name="top"></a>Strecken
 
 Dieses Dokument enthält folgende Abschnitte:
 
-- [Verwenden von Agents zum Isolieren des Zustands](#isolation)
+- [Isolieren von Status mit Agents](#isolation)
 
-- [Einschränken der Anzahl von Nachrichten in einer Daten Pipeline mithilfe eines Drosselungs Mechanismus](#throttling)
+- [Begrenzen der Anzahl von Nachrichten in einer Datenpipeline mit einem Einschränkungsmechanismus](#throttling)
 
-- [Keine fein abgestimmte Arbeit in einer Daten Pipeline ausführen](#fine-grained)
+- [Keine detaillierte Arbeit in einer Datenpipeline](#fine-grained)
 
-- [Große Nachrichten-Nutzlasten nicht nach Wert übergeben](#large-payloads)
+- [Keine Übergabe von großer Nutzlasten für Nachrichten anhand des Werts](#large-payloads)
 
-- [Verwenden von shared_ptr in einem Datennetzwerk, wenn der Besitz nicht definiert ist](#ownership)
+- [Verwenden von shared_ptr in einem Datennetzwekr bei unklarem Besitzer](#ownership)
 
-## <a name="isolation"></a>Verwenden von Agents zum Isolieren des Zustands
+## <a name="use-agents-to-isolate-state"></a><a name="isolation"></a>Verwenden von Agents zum Isolieren des Zustands
 
 Die Agents Library stellt Alternativen zum Freigabezustand bereit, indem sie das Verbinden isolierter Komponenten durch einen asynchronen Nachrichtenübergabemechanismum ermöglicht. Asynchrone Agents sind am effektivsten, wenn der interne Zustand von anderen Komponenten isoliert werden kann. Aufgrund der Isolierung des Status wirken mehrere Komponenten i. d. R. nicht auf freigegebene Daten. Die Isolierung des Status ermöglicht eine Skalierung der Anwendung, da Konflikte im freigegebenen Speicher reduziert werden. Ferner wird dadurch die Wahrscheinlichkeit von Deadlocks und Racebedingungen verringert, da der Zugriff auf die freigegebenen Daten nicht zwischen den Komponenten synchronisiert werden muss.
 
-Status in einem Agent werden i. d. R. isoliert, indem Datenmember im Abschnitt `private` oder im Abschnitt `protected` der Agent-Klasse platziert und Statusänderungen mit Nachrichtenpuffern kommuniziert werden. Das folgende Beispiel zeigt die `basic_agent`-Klasse, die von " [parallelcurrency:: Agent](../../parallel/concrt/reference/agent-class.md)" abgeleitet wird. Die `basic_agent`-Klasse verwendet zwei Meldungspuffer zur Kommunikation mit externen Komponenten. Ein Nachrichtenpuffer enthält eingehende Meldungen, der andere Nachrichtenpuffer enthält ausgehende Nachrichten.
+In der Regel isolieren Sie den Zustand in einem Agent, indem Sie die Datenmember in den **`private`** **`protected`** Abschnitten oder der Agent-Klasse und mithilfe von Nachrichten Puffern die Zustandsänderungen übermitteln. Das folgende Beispiel zeigt die- `basic_agent` Klasse, die von " [parallelcurrency:: Agent](../../parallel/concrt/reference/agent-class.md)" abgeleitet wird. Die `basic_agent`-Klasse verwendet zwei Meldungspuffer zur Kommunikation mit externen Komponenten. Ein Nachrichtenpuffer enthält eingehende Meldungen, der andere Nachrichtenpuffer enthält ausgehende Nachrichten.
 
 [!code-cpp[concrt-simple-agent#1](../../parallel/concrt/codesnippet/cpp/best-practices-in-the-asynchronous-agents-library_1.cpp)]
 
 Umfassende Beispiele zum Definieren und Verwenden von Agents finden Sie unter Exemplarische Vorgehensweise [: Erstellen einer agentbasierten Anwendung](../../parallel/concrt/walkthrough-creating-an-agent-based-application.md) und Exemplarische Vorgehensweise [: Erstellen eines Daten](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md)Fluss-Agents.
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="throttling"></a>Einschränken der Anzahl von Nachrichten in einer Daten Pipeline mithilfe eines Drosselungs Mechanismus
+## <a name="use-a-throttling-mechanism-to-limit-the-number-of-messages-in-a-data-pipeline"></a><a name="throttling"></a>Einschränken der Anzahl von Nachrichten in einer Daten Pipeline mithilfe eines Drosselungs Mechanismus
 
 Viele Nachrichten Puffer Typen, z. b. " [parallelcurrency:: Unbounded_buffer](reference/unbounded-buffer-class.md)", können eine unbegrenzte Anzahl von Nachrichten enthalten. Wenn Nachrichten vom Nachrichtenproducer schneller an eine Datenpipeline gesendet werden, als diese vom Consumer verarbeitet werden können, kann der Speicherstatus der Anwendung auf Speichermangel hinweisen. Mit einem Einschränkungsmechanismus wie einem Semaphor können Sie die Anzahl der Nachrichten begrenzen, die zu einem gegebenen Zeitpunkt gleichzeitg in einer Datenpipepline aktiv sind.
 
@@ -60,17 +60,17 @@ Der Producer in diesem Beispiel sendet verhältnismäßig wenig Nachrichten an d
 
 Weitere Informationen zum Erstellen der Semaphor-Klasse, die in diesem Beispiel verwendet wird, finden Sie unter Gewusst [wie: Implementieren einer kooperativen Semaphor mithilfe der Context-Klasse](../../parallel/concrt/how-to-use-the-context-class-to-implement-a-cooperative-semaphore.md).
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="fine-grained"></a>Keine fein abgestimmte Arbeit in einer Daten Pipeline ausführen
+## <a name="do-not-perform-fine-grained-work-in-a-data-pipeline"></a><a name="fine-grained"></a>Keine fein abgestimmte Arbeit in einer Daten Pipeline ausführen
 
 Die Agents Library ist besonders hilfreich, wenn die Arbeit, die von einer Datenpipeline ausgeführt wird, eher simpel ist. Beispielsweise könnte eine Anwendungskomponente Daten aus einer Datei oder einer Netzwerkverbindung lesen und ab und zu Daten an eine andere Komponente senden. Das Protokoll, das die Agents-Bibliothek zur Weitergabe von Nachrichten verwendet, bewirkt, dass der Mechanismus für die Nachrichten Übergabe mehr Aufwand als die von der [Parallel Patterns Library](../../parallel/concrt/parallel-patterns-library-ppl.md) (PPL) bereitgestellten Aufgaben paralleler Konstrukte hat. Deshalb müssen Sie sicherstellen, dass die Arbeit, die von einer Datenpipeline ausgeführt wird, lang genug dauert, um diesen Mehraufwand auszugleichen.
 
 Obwohl eine Datenpipeline am effektivsten ist, wenn die Aufgaben simpel sind, können in jeder Phase der Datenpipeline PPL-Konstrukte wie Aufgabengruppen und parallele Algorithmen verwendet werden, um differenziertere Aufgaben auszuführen. Ein Beispiel für ein undifferenziertes Datennetzwerk, das in jeder Verarbeitungsphase differenzierte Parallelität verwendet, finden Sie unter Exemplarische Vorgehensweise [: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md).
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="large-payloads"></a>Große Nachrichten-Nutzlasten nicht nach Wert übergeben
+## <a name="do-not-pass-large-message-payloads-by-value"></a><a name="large-payloads"></a>Große Nachrichten-Nutzlasten nicht nach Wert übergeben
 
 In einigen Fällen wird von der Laufzeit eine Kopie einer Nachricht erstellt und von einem Nachrichtenpuffer an einen anderen Nachrichtenpuffer übergeben. Die Klasse " [parallelcurrency:: overwrite_buffer](../../parallel/concrt/reference/overwrite-buffer-class.md) " bietet z. b. eine Kopie jeder Nachricht, die Sie an jedes ihrer Ziele empfängt. Die Laufzeit erstellt außerdem eine Kopie der Nachrichten Daten, wenn Sie Nachrichten Übergabe Funktionen wie z. b. Parallelität [:: Send](reference/concurrency-namespace-functions.md#send) und [parallelcurrency:: Receive](reference/concurrency-namespace-functions.md#receive) zum Schreiben von Nachrichten und zum Lesen von Nachrichten aus einem Nachrichten Puffer verwenden. Auch wenn dieser Mechanismus dazu beiträgt, das Risiko zu verringern, dass freigegebene Daten gleichzeitig geschrieben werden, kann die Arbeitsspeicherleistung darunter leiden, dass die Nachrichten relativ hoch ist.
 
@@ -89,9 +89,9 @@ took 47ms.
 
 Die Version mit Zeiger weist eine bessere Leistungauf, da von der Laufzeit während der Übergabe vom Producer an den Consumer nicht eine vollständige Kopie jedes `message_data`-Objekts erstellt werden muss.
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="ownership"></a>Verwenden von shared_ptr in einem Datennetzwerk, wenn der Besitz nicht definiert ist
+## <a name="use-shared_ptr-in-a-data-network-when-ownership-is-undefined"></a><a name="ownership"></a>Verwenden von shared_ptr in einem Datennetzwerk, wenn der Besitz nicht definiert ist
 
 Beim Senden von Nachrichten anhand des Zeigers über eine Pipeline oder ein Netzwerk zur Übergabe von Nachrichten wird der Arbeitsspeicher für jede Nachricht i. d. R. am Anfang des Netzwerks zugewiesen und am Ende des Netzwerks freigegeben. Obwohl dieser Mechanismus normalerweise gut funktioniert, kann er jedoch in einigen Fällen kaum oder nicht verwendet werden. Betrachten Sie beispielsweise den Fall eines Datennetzwerkes mit mehreren Endknoten. In diesem Fall gibt es keine klare Position, um den Arbeitsspeicher für die Nachrichten freizugeben.
 
@@ -116,10 +116,10 @@ Destroying resource 64...
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Bewährte Methoden im Zusammenhang mit der Concurrency Runtime](../../parallel/concrt/concurrency-runtime-best-practices.md)<br/>
-[Asynchrone Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
+[Bewährte Methoden für Concurrency Runtime](../../parallel/concrt/concurrency-runtime-best-practices.md)<br/>
+[Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
 [Exemplarische Vorgehensweise: Erstellen einer agentbasierten Anwendung](../../parallel/concrt/walkthrough-creating-an-agent-based-application.md)<br/>
-[Exemplarische Vorgehensweise: Erstellen eines Datenfluss-Agent](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md)<br/>
-[Exemplarische Vorgehensweise: Erstellen eines Bildverarbeitungsnetzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen eines Datenfluss-Agents](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
 [Bewährte Methoden in der Parallel Patterns Library](../../parallel/concrt/best-practices-in-the-parallel-patterns-library.md)<br/>
-[Allgemein bewährte Methoden in der Concurrency Runtime](../../parallel/concrt/general-best-practices-in-the-concurrency-runtime.md)
+[Allgemeine bewährte Methoden für die Concurrency Runtime](../../parallel/concrt/general-best-practices-in-the-concurrency-runtime.md)

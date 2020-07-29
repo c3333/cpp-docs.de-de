@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - string header
 ms.assetid: a2fb9d00-d7ae-4170-bfea-2dc337aa37cf
-ms.openlocfilehash: 0b8ca5744418860cc6b4868dda9174ae2eb68a98
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 68b1865fd9c45c3782917edba273083dac086548
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72685890"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212123"
 ---
 # <a name="ltstringgt"></a>&lt;string&gt;
 
@@ -26,36 +26,36 @@ Weitere Informationen zu `basic_string` finden Sie unter [basic_string-Klasse](.
 #include <string>
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Programmiersprache C++ und die C++-Standardbibliothek unterstützen zwei Arten von Zeichenfolgen:
 
 - Auf NULL endende Zeichenarrays werden häufig als C-Zeichenfolgen bezeichnet.
 
-- Klassen Vorlagen Objekte vom Typ `basic_string`, die alle **char**-like-Vorlagen Argumente verarbeiten.
+- Klassen Vorlagen Objekte des Typs, `basic_string` die alle **`char`** -ähnlichen Vorlagen Argumente verarbeiten.
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
 |Typname|Beschreibung|
 |-|-|
-|[string](../standard-library/string-typedefs.md#string)|Ein Typ, der eine Spezialisierung der Klassen Vorlage beschreibt `basic_string` mit Elementen des Typs **char** als `string`.|
-|[wstring](../standard-library/string-typedefs.md#wstring)|Ein Typ, der eine Spezialisierung der Klassen Vorlage beschreibt `basic_string` mit Elementen des Typs **wchar_t** als `wstring`.|
-|[u16string](../standard-library/string-typedefs.md#u16string)|Ein Typ, der eine Spezialisierung der Klassen Vorlage `basic_string` basierend auf Elementen des Typs `char16_t` beschreibt.|
-|[u32string](../standard-library/string-typedefs.md#u32string)|Ein Typ, der eine Spezialisierung der Klassen Vorlage `basic_string` basierend auf Elementen des Typs `char32_t` beschreibt.|
+|[string](../standard-library/string-typedefs.md#string)|Ein Typ, der eine Spezialisierung der Klassen Vorlage `basic_string` mit Elementen des Typs **`char`** als beschreibt `string` .|
+|[wstring](../standard-library/string-typedefs.md#wstring)|Ein Typ, der eine Spezialisierung der Klassen Vorlage `basic_string` mit Elementen des Typs **`wchar_t`** als beschreibt `wstring` .|
+|[u16string](../standard-library/string-typedefs.md#u16string)|Ein Typ, der eine Spezialisierung der Klassen Vorlage auf `basic_string` der Grundlage von Elementen des Typs beschreibt **`char16_t`** .|
+|[u32string](../standard-library/string-typedefs.md#u32string)|Ein Typ, der eine Spezialisierung der Klassen Vorlage auf `basic_string` der Grundlage von Elementen des Typs beschreibt **`char32_t`** .|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
-|[operator+](../standard-library/string-operators.md#op_add)|Verkettet zwei Zeichenfolgenobjekte.|
-|[Operator!=](../standard-library/string-operators.md#op_neq)|Testet, ob das Zeichenfolgenobjekt links vom Operator ungleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
-|[operator==](../standard-library/string-operators.md#op_eq_eq)|Testet, ob das Zeichenfolgenobjekt links vom Operator gleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
-|[operator<](../standard-library/string-operators.md#op_lt)|Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als das Zeichenfolgenobjekt rechts vom Operator ist.|
-|[operator<=](../standard-library/string-operators.md#op_lt_eq)|Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
-|[operator<\<](../standard-library/string-operators.md#op_lt_lt)|Eine Vorlagenfunktion, die eine Zeichenfolge in den Ausgabestream einfügt.|
-|[operator>](../standard-library/string-operators.md#op_gt)|Testet, ob das Zeichenfolgenobjekt links vom Operator größer als das Zeichenfolgenobjekt rechts vom Operator ist.|
-|[operator>=](../standard-library/string-operators.md#op_gt_eq)|Testet, ob das Zeichenfolgenobjekt links vom Operator größer als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
-|[operator>>](../standard-library/string-operators.md#op_gt_gt)|Eine Vorlagenfunktion, die eine Zeichenfolge aus dem Eingabestream extrahiert.|
+|[Operator +](../standard-library/string-operators.md#op_add)|Verkettet zwei Zeichenfolgenobjekte.|
+|[Operator! =](../standard-library/string-operators.md#op_neq)|Testet, ob das Zeichenfolgenobjekt links vom Operator ungleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
+|[Operator = =](../standard-library/string-operators.md#op_eq_eq)|Testet, ob das Zeichenfolgenobjekt links vom Operator gleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
+|[Operator<](../standard-library/string-operators.md#op_lt)|Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als das Zeichenfolgenobjekt rechts vom Operator ist.|
+|[Operator<=](../standard-library/string-operators.md#op_lt_eq)|Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
+|[Operator<\<](../standard-library/string-operators.md#op_lt_lt)|Eine Vorlagenfunktion, die eine Zeichenfolge in den Ausgabestream einfügt.|
+|[Operator>](../standard-library/string-operators.md#op_gt)|Testet, ob das Zeichenfolgenobjekt links vom Operator größer als das Zeichenfolgenobjekt rechts vom Operator ist.|
+|[Operator>=](../standard-library/string-operators.md#op_gt_eq)|Testet, ob das Zeichenfolgenobjekt links vom Operator größer als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
+|[Operator>>](../standard-library/string-operators.md#op_gt_gt)|Eine Vorlagenfunktion, die eine Zeichenfolge aus dem Eingabestream extrahiert.|
 
 ### <a name="specialized-template-functions"></a>Spezialisierte Vorlagenfunktionen
 
@@ -63,45 +63,45 @@ Die Programmiersprache C++ und die C++-Standardbibliothek unterstützen zwei Art
 |-|-|
 |hash|Erzeugt einen Hashwert einer Zeichenfolge.|
 |[swap](../standard-library/string-functions.md#swap)|Tauscht die Arrays von Zeichen für zwei Zeichenfolgen aus.|
-|[stod](../standard-library/string-functions.md#stod)|Konvertiert eine Zeichen Sequenz in einen **Double**-Typ.|
-|[stof](../standard-library/string-functions.md#stof)|Konvertiert eine Zeichenfolge in einen **float**-Wert.|
-|[stoi](../standard-library/string-functions.md#stoi)|Konvertiert eine Zeichenfolge in eine Ganzzahl.|
-|[stold](../standard-library/string-functions.md#stold)|Konvertiert eine Zeichen Sequenz in einen **long Double**-Typ.|
-|[stoll](../standard-library/string-functions.md#stoll)|Konvertiert eine Zeichenfolge in eine **lange Länge**.|
-|[stoul](../standard-library/string-functions.md#stoul)|Konvertiert eine Zeichenfolge in eine **lange Zahl ohne**Vorzeichen.|
-|[stoull](../standard-library/string-functions.md#stoull)|Konvertiert eine Zeichen Sequenz in eine **unsignierte lange Länge**.|
+|[Stod](../standard-library/string-functions.md#stod)|Konvertiert eine Zeichenfolge in eine **`double`** .|
+|[Stof](../standard-library/string-functions.md#stof)|Konvertiert eine Zeichenfolge in eine **`float`** .|
+|[Stoi](../standard-library/string-functions.md#stoi)|Konvertiert eine Zeichenfolge in eine Ganzzahl.|
+|[stold](../standard-library/string-functions.md#stold)|Konvertiert eine Zeichenfolge in eine **`long double`** .|
+|[stoll](../standard-library/string-functions.md#stoll)|Konvertiert eine Zeichenfolge in eine **`long long`** .|
+|[Stoul](../standard-library/string-functions.md#stoul)|Konvertiert eine Zeichenfolge in eine **`unsigned long`** .|
+|[stoull](../standard-library/string-functions.md#stoull)|Konvertiert eine Zeichenfolge in eine **`unsigned long long`** .|
 |[to_string](../standard-library/string-functions.md#to_string)|Konvertiert einen Wert in einen `string`-Wert.|
 |[to_wstring](../standard-library/string-functions.md#to_wstring)|Konvertiert einen Wert in eine breite `string`.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
-|Funktion|Beschreibung|
+|Funktion|BESCHREIBUNG|
 |-|-|
 |[getline-Vorlage](../standard-library/string-functions.md#getline)|Extrahiert Zeichenfolgen aus dem Eingabestream zeilenweise.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|Beschreibung|
+|Klasse|BESCHREIBUNG|
 |-|-|
-|[basic_string-Klasse](../standard-library/basic-string-class.md)|Eine Klassen Vorlage, die Objekte beschreibt, die eine Sequenz beliebiger Zeichen ähnlicher Objekte speichern können.|
-|[char_traits-Struktur](../standard-library/char-traits-struct.md)|Eine Klassen Vorlage, die Attribute beschreibt, die einem Zeichen vom Typ "CharType" zugeordnet sind.|
+|[Basic_string-Klasse](../standard-library/basic-string-class.md)|Eine Klassen Vorlage, die Objekte beschreibt, die eine Sequenz beliebiger Zeichen ähnlicher Objekte speichern können.|
+|[Char_traits-Struktur](../standard-library/char-traits-struct.md)|Eine Klassen Vorlage, die Attribute beschreibt, die einem Zeichen vom Typ "CharType" zugeordnet sind.|
 
 ### <a name="specializations"></a>Spezialisierungen
 
 |||
 |-|-|
-|[char_traits\<char>-Structur](../standard-library/char-traits-char-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagenstruktur `char_traits`\<CharType> für ein Element des Typs `char` ist.|
-|[char_traits<wchar_t>-Struktur](../standard-library/char-traits-wchar-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagenstruktur `char_traits`\<CharType> für ein Element des Typs `wchar_t` ist.|
-|[char_traits<char16_t>-Struktur](../standard-library/char-traits-char16-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagenstruktur `char_traits`\<CharType> für ein Element des Typs `char16_t` ist.|
-|[char_traits<char32_t>-Struktur](../standard-library/char-traits-char32-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagenstruktur `char_traits`\<CharType> für ein Element des Typs `char32_t` ist.|
+|[Char_traits- \<char> Struktur](../standard-library/char-traits-char-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagen Struktur `char_traits` \<CharType> zu einem Element vom Typ ist **`char`** .|
+|[Char_traits<wchar_t> Struktur](../standard-library/char-traits-wchar-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagen Struktur `char_traits` \<CharType> zu einem Element vom Typ ist **`wchar_t`** .|
+|[Char_traits<char16_t> Struktur](../standard-library/char-traits-char16-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagen Struktur `char_traits` \<CharType> zu einem Element vom Typ ist **`char16_t`** .|
+|[Char_traits<char32_t> Struktur](../standard-library/char-traits-char32-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagen Struktur `char_traits` \<CharType> zu einem Element vom Typ ist **`char32_t`** .|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-- **Header:** \<string>
+- **Header:**\<string>
 
 - **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Thread Safety in the C++ Standard Library (Threadsicherheit in der C++-Standardbibliothek)](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

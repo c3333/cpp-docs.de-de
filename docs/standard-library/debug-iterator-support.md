@@ -1,5 +1,5 @@
 ---
-title: Unterstützung für Iteratordebugging
+title: Debug Iterator Support
 ms.date: 09/13/2018
 helpviewer_keywords:
 - Safe Libraries
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - incompatible iterators
 - debug iterator support
 ms.assetid: f3f5bd15-4be8-4d64-a4d0-8bc0761c68b6
-ms.openlocfilehash: f43367fd58d8ab2a62fb2312efcd9fc9ec0cfc42
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: a5773add9a26d647df6678ffa4f2681b73cff44f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77416206"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231584"
 ---
-# <a name="debug-iterator-support"></a>Unterstützung für Iteratordebugging
+# <a name="debug-iterator-support"></a>Debug Iterator Support
 
 Mit der Laufzeitbibliothek von Visual C++ wird eine nicht ordnungsgemäße Verwendung eines Iterators erkannt, zur Laufzeit eine Assertanweisung ausgeführt und ein entsprechendes Dialogfeld angezeigt. Wenn Sie die Unterstützung für das Iteratordebugging aktivieren möchten, kompilieren Sie Ihr Programm mit Debugversionen der C++-Standardbibliothek und der C-Laufzeitbibliothek. Weitere Informationen finden Sie unter [CRT Library Features (CRT-Bibliotheksfunktionen)](../c-runtime-library/crt-library-features.md). Informationen zur Verwendung von überprüften Iteratoren finden Sie unter [Checked Iterators (Überprüfte Iteratoren)](../standard-library/checked-iterators.md).
 
@@ -126,11 +126,11 @@ int main()
 }
 ```
 
-In diesem Beispiel wird anstelle eines functor-Objekts der Lambdaausdruck `[] (int& elem) { elem *= 2; }` verwendet. Dies hat zwar keinen Einfluss auf den Assertionsfehler (ein ähnliches functor-Objekt würde denselben Fehler verursachen). Dennoch eignen sich Lambdaausdrücke besonders gut für komplexe Funktionsobjektaufgaben. Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](../cpp/lambda-expressions-in-cpp.md).
+In diesem Beispiel wird anstelle eines functor-Objekts der Lambdaausdruck `[] (int& elem) { elem *= 2; }` verwendet. Dies hat zwar keinen Einfluss auf den Assertionsfehler (ein ähnliches functor-Objekt würde denselben Fehler verursachen). Dennoch eignen sich Lambdaausdrücke besonders gut für komplexe Funktionsobjektaufgaben. Weitere Informationen zu Lambda-Ausdrücken finden Sie unter [Lambda-Ausdrücke](../cpp/lambda-expressions-in-cpp.md).
 
 ## <a name="iterators-going-out-of-scope"></a>Iteratoren, die den Gültigkeitsbereich verlassen
 
-Die Debug-iteratorüberprüfungen bewirken auch, dass eine Iteratorvariable, die in einer **for** -Schleife deklariert ist, außerhalb des gültigen Bereichs liegt, wenn der **for** -Schleifen Bereich endet.
+Die Debug-iteratorüberprüfungen bewirken auch, dass eine Iteratorvariable, die in einer Schleife deklariert ist, **`for`** außerhalb des gültigen Bereichs liegt, wenn der **`for`** Schleifen Bereich endet.
 
 ```cpp
 // iterator_debugging_4.cpp
@@ -173,6 +173,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Überblick über die C++-Standardbibliothek](../standard-library/cpp-standard-library-overview.md)
+[Übersicht über die C++-Standard Bibliothek](../standard-library/cpp-standard-library-overview.md)

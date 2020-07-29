@@ -7,12 +7,12 @@ helpviewer_keywords:
 - single document interface (SDI), adding views
 - views [MFC], SDI applications
 ms.assetid: 86d0c134-01d5-429c-b672-36cfb956dc01
-ms.openlocfilehash: 83bb7e54567319a7af4bd3d8a6bf02256fef68fb
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 95de3a582c3d45db858e2b4bce0268e1dab63931
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623352"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215971"
 ---
 # <a name="adding-multiple-views-to-a-single-document"></a>Hinzufügen mehrerer Ansichten zu einem Dokument
 
@@ -65,7 +65,7 @@ Das Erstellen der neuen Ansichts Klasse wird mithilfe des Befehls **neue Klasse*
 
 Nachdem Sie dem Projekt die Klasse hinzugefügt haben, müssen Sie die Barrierefreiheit einiger Ansichts Klassenmember ändern.
 
-Ändern Sie *NEWVIEW. H* , indem der Zugriffsspezifizierer für den Konstruktor und den debugtor von **Protected** in **Public** geändert wird. Dadurch kann die Klasse dynamisch erstellt und zerstört und die Darstellung der Ansicht geändert werden, bevor Sie sichtbar ist.
+Ändern Sie *NEWVIEW. H* , indem der Zugriffsspezifizierer von **`protected`** in **`public`** für den Konstruktor und den debugtor geändert wird. Dadurch kann die Klasse dynamisch erstellt und zerstört und die Darstellung der Ansicht geändert werden, bevor Sie sichtbar ist.
 
 Speichern Sie die Änderungen, und fahren Sie mit dem nächsten Schritt fort.
 
@@ -97,6 +97,6 @@ Der letzte Schritt umfasst das Hinzufügen von Code, der die-Methode aufruft, `S
 
 Weitere Informationen zum Hinzufügen neuer Menü Elemente und Befehls Handlerfunktionen finden Sie unter [Handler für Befehle und Steuerelement Benachrichtigungen](handlers-for-commands-and-control-notifications.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dokument-/Ansichtarchitektur](document-view-architecture.md)

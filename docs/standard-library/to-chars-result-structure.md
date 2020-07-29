@@ -1,25 +1,44 @@
 ---
-title: To_chars_result-Struktur
-ms.date: 11/04/2016
+title: to_chars_result-Struktur
+ms.date: 07/22/2020
 f1_keywords:
-- utility/std::to_chars_result
+- charconv/std::to_chars_result
 helpviewer_keywords:
 - to_chars_result class
 - to_chars_result structure
-ms.openlocfilehash: f41860221c46de9cfddad11b9f63b0ef42c26a8e
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: a840b8d030f0ed0d2a4afcc57e1bef1161c76ff3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68268462"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212060"
 ---
-# <a name="tocharsresult-structure"></a>To_chars_result-Struktur
+# <a name="to_chars_result-struct"></a>to_chars_result-Struktur
 
 ## <a name="syntax"></a>Syntax
 
 ```cpp
 struct to_chars_result {
     char* ptr;
-    error_code ec;
+    errc ec;
 };
 ```
+
+## <a name="members"></a>Member
+
+|Member|Beschreibung|
+|--|--|
+|`ptr`| Wenn `ec` gleich ist `errc{}` , war die Konvertierung erfolgreich und `ptr` ist der 1-nach-Ende-Zeiger der geschriebenen Zeichen. Andernfalls `ptr` weist den Wert des `to_chars()` -Parameters auf `last` , und der Inhalt des Bereichs \[ First, Last) ist nicht angegeben.|
+|`ec` | Der Konvertierungs Fehlercode. Bestimmte Fehlercodes finden Sie unter [`errc`](system-error-enums.md#errc) .|
+
+## <a name="requirements"></a>Requirements (Anforderungen)
+
+**Header:**\<charconv>
+
+**Namespace:** std
+
+**Compileroption:** /Std: c++ 17 (oder höher) ist erforderlich.
+
+## <a name="see-also"></a>Weitere Informationen
+
+[to_chars](charconv-functions.md#to_chars)

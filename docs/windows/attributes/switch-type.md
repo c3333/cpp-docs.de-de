@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - switch_type attribute
 ms.assetid: e24544dc-b3bc-48ae-b249-f967db49271e
-ms.openlocfilehash: b4264681a55f45c8a4a2696e8cebbbd0eb12a4ed
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 13ea76e1153e1a42fd41fe0c087a7c7f15416760
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214525"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211930"
 ---
 # <a name="switch_type"></a>switch_type
 
@@ -32,9 +32,9 @@ Der Switchtyp kann ein Integer-, Zeichen-, boolescher oder Enumerationstyp sein.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Switch_type** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Switch_type](/windows/win32/Midl/switch-type) -Attribut "Mittel".
+Das **Switch_type** C++-Attribut verfügt über die gleiche Funktionalität wie das [Switch_type](/windows/win32/Midl/switch-type) -Attribut "Mittel".
 
-C++Attribute unterstützen keine [gekapselten Unions](/windows/win32/Midl/encapsulated-unions). [Nicht gekapselte Unions](/windows/win32/Midl/nonencapsulated-unions) werden nur in der folgenden Form unterstützt:
+C++-Attribute unterstützen keine [gekapselten Unions](/windows/win32/Midl/encapsulated-unions). [Nicht gekapselte Unions](/windows/win32/Midl/nonencapsulated-unions) werden nur in der folgenden Form unterstützt:
 
 ```cpp
 // cpp_attr_ref_switch_type.cpp
@@ -63,8 +63,8 @@ Ein Beispiel für die Verwendung von **Switch_type**finden Sie im [Fall](case-cp
 
 |||
 |-|-|
-|**Betrifft**|**typedef**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`typedef`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -73,5 +73,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
-[export](export.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
+[Exports](export.md)

@@ -28,12 +28,12 @@ helpviewer_keywords:
 - wmemcmp function
 - memcmp function
 ms.assetid: 0c21c3e3-8ee4-40e5-add1-eb26d225fd8d
-ms.openlocfilehash: 2fa902c0fa5a4a78f6fd3e46edeb3799aaf92569
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b18479e50d5b35c8de3dfd11eb34d0d21d45f223
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951925"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232455"
 ---
 # <a name="memcmp-wmemcmp"></a>memcmp, wmemcmp
 
@@ -75,9 +75,9 @@ Der Rückgabewert gibt die Beziehung zwischen den Puffern an.
 |0|*buffer1* identisch mit *buffer2*|
 |> 0|*buffer1* größer als *buffer2*|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Vergleicht die ersten *count* -Zeichen von *buffer1* und *buffer2* und gibt einen Wert zurück, der Ihre Beziehung angibt. Das Zeichen eines Rückgabewerts ungleich Null ist das Zeichen des Unterschieds zwischen dem ersten unterschiedlichen Wertpaar in den Puffern. Die Werte werden als **unsigniertes** **char** für **memcmp**und als **wchar_t** für **wmemcmp**interpretiert.
+Vergleicht die ersten *count* -Zeichen von *buffer1* und *buffer2* und gibt einen Wert zurück, der Ihre Beziehung angibt. Das Zeichen eines Rückgabewerts ungleich Null ist das Zeichen des Unterschieds zwischen dem ersten unterschiedlichen Wertpaar in den Puffern. Die Werte werden als **`unsigned char`** für **memcmp**und als **`wchar_t`** für **wmemcmp**interpretiert.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -86,7 +86,7 @@ Vergleicht die ersten *count* -Zeichen von *buffer1* und *buffer2* und gibt eine
 |**memcmp**|\<memory.h> oder \<string.h>|
 |**wmemcmp**|\<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -140,9 +140,9 @@ Compare '1,2' to '1,2':
 int_arr1 is equal to int_arr2.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Pufferbearbeitung](../../c-runtime-library/buffer-manipulation.md)<br/>
+[Puffer Bearbeitung](../../c-runtime-library/buffer-manipulation.md)<br/>
 [_memccpy](memccpy.md)<br/>
 [memchr, wmemchr](memchr-wmemchr.md)<br/>
 [memcpy, wmemcpy](memcpy-wmemcpy.md)<br/>

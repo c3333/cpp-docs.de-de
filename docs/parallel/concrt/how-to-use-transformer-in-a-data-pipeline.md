@@ -1,19 +1,19 @@
 ---
-title: 'Vorgehensweise: Verwenden von transformer in einer Datenpipeline'
+title: 'Gewusst wie: Verwenden von transformer in einer Datenpipeline'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - transformer class, example
 - data pipelines, using transformer [Concurrency Runtime]
 - using transformer in data pipelines [Concurrency Runtime]
 ms.assetid: ca49cb3f-4dab-4b09-a9c9-d3a109ae4c29
-ms.openlocfilehash: c8cf1801d0262e3a2995d520604374ea22352fa0
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 4eb490ecf51abea324f20395279bff2d74b7af77
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77141887"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215854"
 ---
-# <a name="how-to-use-transformer-in-a-data-pipeline"></a>Vorgehensweise: Verwenden von transformer in einer Datenpipeline
+# <a name="how-to-use-transformer-in-a-data-pipeline"></a>Gewusst wie: Verwenden von transformer in einer Datenpipeline
 
 Dieses Thema enthält ein einfaches Beispiel, in dem gezeigt wird, wie die Klasse " [parallelcurrency:: Transformer](../../parallel/concrt/reference/transformer-class.md) " in einer Daten Pipeline verwendet wird. Ein vollständigeres Beispiel, in dem eine Daten Pipeline zum Ausführen der Bildverarbeitung verwendet wird, finden Sie unter Exemplarische Vorgehensweise [: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md).
 
@@ -37,25 +37,25 @@ Bei diesem Beispiel wird schließlich das Ergebnis der Pipeline auf der Konsole 
 
 [!code-cpp[concrt-data-pipeline#1](../../parallel/concrt/codesnippet/cpp/how-to-use-transformer-in-a-data-pipeline_1.cpp)]
 
-Hierdurch wird folgende Ausgabe generiert:
+Dieses Beispiel erzeugt die folgende Ausgabe:
 
 ```Output
 The result is -42.
 ```
 
-Es kommt bei einer Datenpipeline häufig vor, dass bei einer Phase ein Wert ausgegeben wird, dessen Typ sich vom Eingabewert unterscheidet. Bei diesem Beispiel wird in der zweiten Phase ein Wert des `int`-Typs als Eingabe verwendet und die Quadratwurzel dieses Werts (ein `double`) als Ausgabe erzeugt.
+Es kommt bei einer Datenpipeline häufig vor, dass bei einer Phase ein Wert ausgegeben wird, dessen Typ sich vom Eingabewert unterscheidet. In diesem Beispiel nimmt die zweite Phase einen Wert vom Typ **`int`** als Eingabe auf und erzeugt die Quadratwurzel dieses Werts (a **`double`** ) als Ausgabe.
 
 > [!NOTE]
 > Die Datenpipeline in diesem Beispiel dient zur Veranschaulichung. Da der Arbeitsmehraufwand jedes Transformationsvorgangs gering ist, kann der Mehraufwand zum Ausführen der Meldungsübergabe die Vorteile einer Datenpipeline zunichte machen.
 
 ## <a name="compiling-the-code"></a>Kompilieren des Codes
 
-Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `data-pipeline.cpp` ein, und führen Sie dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster aus.
+Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt ein. Alternativ dazu können Sie ihn auch in eine Datei mit dem Namen einfügen `data-pipeline.cpp` und dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster ausführen.
 
-> **cl. exe/EHsc Data-Pipeline. cpp**
+> **cl.exe/EHsc Data-Pipeline. cpp**
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Asynchrone Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
-[Asynchrone Nachrichtenblöcke](../../parallel/concrt/asynchronous-message-blocks.md)<br/>
-[Exemplarische Vorgehensweise: Erstellen eines Bildverarbeitungsnetzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)
+[Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
+[Asynchrone Nachrichten Blöcke](../../parallel/concrt/asynchronous-message-blocks.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)

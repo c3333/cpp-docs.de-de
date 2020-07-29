@@ -9,12 +9,12 @@ helpviewer_keywords:
 - _AtlCreateWndData structure
 - AtlCreateWndData structure
 ms.assetid: 76ed5382-bfbf-4b8b-8a29-912688dfd2ae
-ms.openlocfilehash: 6453156a59b73bcb06c7c86920e1dc524874cef8
-ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
+ms.openlocfilehash: a38ddb7e3575e883c11b14a9b01004bb54fcd4a4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82168539"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230012"
 ---
 # <a name="_atlcreatewnddata-structure"></a>_AtlCreateWndData Struktur
 
@@ -33,18 +33,18 @@ Diese Struktur enthält klasseninstanzdaten in windowingcode in ATL.
 ## <a name="members"></a>Member
 
 `m_pThis`<br/>
-Der **this** -Zeiger, der verwendet wird, um in Fenster Prozeduren auf die-Klasseninstanz zuzugreifen.
+Der **`this`** Zeiger, der verwendet wird, um in Fenster Prozeduren auf die Klasseninstanz zuzugreifen.
 
 `m_dwThreadID`<br/>
 Die Thread-ID der aktuellen Klasseninstanz.
 
 `m_pNext`<br/>
-Zeiger auf das nächste `_AtlCreateWndData` -Objekt.
+Zeiger auf das nächste- `_AtlCreateWndData` Objekt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atlbase. h
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen und Strukturen](../../atl/reference/atl-classes.md)

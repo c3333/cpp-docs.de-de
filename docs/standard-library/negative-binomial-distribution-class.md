@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::negative_binomial_distribution [C++], param_type
 - std::negative_binomial_distribution [C++], param_type
 ms.assetid: 7f5f0967-7fdd-4578-99d4-88f292b4fe9c
-ms.openlocfilehash: 940ea790e724ffacdefe2cefb256a3314ba244e3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5168bd054d045f624a970b177113203179e1fb8a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367967"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212201"
 ---
 # <a name="negative_binomial_distribution-class"></a>negative_binomial_distribution-Klasse
 
@@ -71,19 +71,19 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*IntType*\
-Der ganzzahlige Ergebnistyp wird standardmäßig **int**. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+*Inttype*\
+Der Integer-Ergebnistyp, der Standardwert ist **`int`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps erzeugt, oder Typ **int,** wenn keine bereitgestellt wird, verteilt gemäß der diskreten Wahrscheinlichkeitsfunktion Negative Binomialverteilung. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`int`** . Wenn kein entsprechend der diskreten Wahrscheinlichkeitsfunktion der negativen binomialen Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
 |[negative_binomial_distribution](#negative_binomial_distribution)|`negative_binomial_distribution::k`|`negative_binomial_distribution::param`|
 |`negative_binomial_distribution::operator()`|`negative_binomial_distribution::p`|[param_type](#param_type)|
 
-Die `k()` Eigenschaftsmember `p()` und geben die aktuell gespeicherten Verteilungsparameterwerte *k* bzw. *p* zurück.
+Die Eigenschaftenmember `k()` und `p()` geben die aktuell gespeicherten Verteilungsparameter Werte *k* bzw. *p* zurück.
 
 Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
 
@@ -93,9 +93,9 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
-Ausführliche Informationen zur disdiskreten Wahrscheinlichkeitsfunktion der negativen Binomialverteilung finden Sie im Wolfram MathWorld Artikel [Negative Binomial Distribution](https://go.microsoft.com/fwlink/p/?linkid=400516).
+Ausführliche Informationen über die diskrete Wahrscheinlichkeitsfunktion zur negativen binomialen Verteilung finden Sie im Wolfram MathWorld-Artikel [Negative Binomial Distribution](https://go.microsoft.com/fwlink/p/?linkid=400516).
 
 ## <a name="example"></a>Beispiel
 
@@ -215,13 +215,13 @@ Histogram for 100 samples:
     69 ::::
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="negative_binomial_distributionnegative_binomial_distribution"></a><a name="negative_binomial_distribution"></a>negative_binomial_distribution::negative_binomial_distribution
+## <a name="negative_binomial_distributionnegative_binomial_distribution"></a><a name="negative_binomial_distribution"></a>negative_binomial_distribution:: negative_binomial_distribution
 
 Erstellt die Verteilung.
 
@@ -232,13 +232,13 @@ explicit negative_binomial_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*K*\
+*km*\
 Der `k`-Verteilungsparameter.
 
-*P*\
+*cker*\
 Der `p`-Verteilungsparameter.
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -249,20 +249,20 @@ Mit dem ersten Konstruktor wird ein Objekt erstellt, dessen gespeicherter `p`-We
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="negative_binomial_distributionparam_type"></a><a name="param_type"></a>negative_binomial_distribution::param_type
+## <a name="negative_binomial_distributionparam_type"></a><a name="param_type"></a>negative_binomial_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 
-struct param_type '`<`typedef negative_binomial_distribution result_type> distribution_type; param_type(result_type k = 1, double p = 0.5); result_type k() const; double p() const;
+Struktur param_type {typedef negative_binomial_distribution `<` result_type> distribution_type; param_type (result_type k = 1, Double p = 0,5); result_type k () Konstanten; Double p () Konstanten;
 
    bool operator==(const param_type& right) const; bool operator!=(const param_type& right) const; };
 
 ### <a name="parameters"></a>Parameter
 
-*K*\
+*km*\
 Der `k`-Verteilungsparameter.
 
-*P*\
+*cker*\
 Der `p`-Verteilungsparameter.
 
 *Richting*\
@@ -274,6 +274,6 @@ Die `param_type`-Struktur, mit der verglichen wird.
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)

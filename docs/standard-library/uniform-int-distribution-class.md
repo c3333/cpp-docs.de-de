@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::uniform_int_distribution [C++], param_type
 - std::uniform_int_distribution [C++], param_type
 ms.assetid: a1867dcd-3bd9-4787-afe3-4b62692c1d04
-ms.openlocfilehash: 44121b6791d06768e51f425fc322ef78045fc0e7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2e5d63268413912931c61037f6665d2ceea8f372
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367288"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87212047"
 ---
 # <a name="uniform_int_distribution-class"></a>uniform_int_distribution-Klasse
 
@@ -71,12 +71,12 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*IntType*\
-Der ganzzahlige Ergebnistyp wird standardmäßig **int**. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
+*Inttype*\
+Der Integer-Ergebnistyp, der Standardwert ist **`int`** . Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Klassenvorlage beschreibt eine inklusive Verteilung, die Werte eines benutzerdefinierten Integraltyps mit einer Verteilung erzeugt, sodass jeder Wert gleich wahrscheinlich ist. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassen Vorlage beschreibt eine inklusivverteilung, die Werte eines benutzerdefinierten ganzzahligen Typs mit einer Verteilung erzeugt, damit jeder Wert gleichermaßen wahrscheinlich ist. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -93,7 +93,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
+Weitere Informationen zu Verteilungs Klassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
 ## <a name="example"></a>Beispiel
 
@@ -173,13 +173,13 @@ Distribution for 200 samples:
    12 :::::::::::::::::
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="uniform_int_distributionuniform_int_distribution"></a><a name="uniform_int_distribution"></a>uniform_int_distribution::uniform_int_distribution
+## <a name="uniform_int_distributionuniform_int_distribution"></a><a name="uniform_int_distribution"></a>uniform_int_distribution:: uniform_int_distribution
 
 Erstellt die Verteilung.
 
@@ -191,24 +191,24 @@ explicit uniform_int_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*Eine*\
+*ein*\
 Die Untergrenze (einschließend) für Zufallswerte.
 
-*B*\
+*b*\
 Die Obergrenze (ausschließend) für Zufallswerte.
 
-*Parm*\
+*parm*\
 Die für die Erstellung der Verteilung verwendete `param_type`-Struktur.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`a ≤ b`
+**Vorbedingung:**`a ≤ b`
 
-Der erste Konstruktor erstellt ein Objekt, dessen *gespeicherter* Wert den Wert *a* und dessen gespeicherter *b-Wert* den Wert *b*enthält.
+Der erste Konstruktor konstruiert ein Objekt, dessen *gespeicherter-Wert den* Wert *a* enthält und dessen gespeicherter *b* -Wert den Wert *b*enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="uniform_int_distributionparam_type"></a><a name="param_type"></a>uniform_int_distribution::param_type
+## <a name="uniform_int_distributionparam_type"></a><a name="param_type"></a>uniform_int_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 
@@ -227,10 +227,10 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*Eine*\
+*ein*\
 Die Untergrenze (einschließend) für Zufallswerte.
 
-*B*\
+*b*\
 Die Obergrenze (ausschließend) für Zufallswerte.
 
 *Richting*\
@@ -238,10 +238,10 @@ Das mit diesem `param_type`-Objekt zu vergleichende Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Voraussetzung:**`a ≤ b`
+**Vorbedingung:**`a ≤ b`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<zufällige>](../standard-library/random.md)
+[\<random>](../standard-library/random.md)

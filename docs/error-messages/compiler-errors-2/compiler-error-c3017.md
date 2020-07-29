@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3017
 ms.assetid: 12ab2c2a-d0d2-4900-9cbf-39be0af590dd
-ms.openlocfilehash: af3f24a1a814fa79fa63b7e5bee204083006c9a2
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 34347abffd91246ada080d19fee88ee09c8fce99
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74749739"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232065"
 ---
 # <a name="compiler-error-c3017"></a>Compilerfehler C3017
 
 Der Beendigungstest in der For-Anweisung von OpenMP weist eine ungültige Form auf.
 
-Eine `for` -Schleife in einer OpenMP-Anweisung muss vollständig und explizit angegeben werden.
+Eine **`for`** -Schleife in einer OpenMP-Anweisung muss vollständig und explizit angegeben werden.
 
 Im folgenden Beispiel wird C3017 generiert.
 

@@ -27,12 +27,12 @@ helpviewer_keywords:
 - memchr function
 - wmemchr function
 ms.assetid: 5a348581-28f1-4256-8434-687245f7fc9f
-ms.openlocfilehash: c951716d623d900f975e9d6f8a1c762a155b1a7a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b4640004526eda4ff26e9601e15298bcb8ba3c79
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951944"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232468"
 ---
 # <a name="memchr-wmemchr"></a>memchr, wmemchr
 
@@ -75,10 +75,10 @@ const wchar_t *wmemchr(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Ein Zeiger auf einen Puffer.
 
-*c*<br/>
+*scher*<br/>
 Zu suchendes Zeichen.
 
 *count*<br/>
@@ -88,11 +88,11 @@ Anzahl der zu prüfenden Zeichen.
 
 Wenn erfolgreich, wird ein Zeiger auf die erste Position von *c* im *Puffer*zurückgegeben. Andernfalls wird NULL zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`memchr`und `wmemchr` suchen nach dem ersten Vorkommen von *c* in den ersten *zählungs* Zeichen des *Puffers*. Sie wird beendet, wenn Sie *c* findet oder wenn Sie die ersten *Anzahl* von Zeichen geprüft hat.
+`memchr`und `wmemchr` Suchen nach dem ersten Vorkommen von *c* in den ersten *zählungs* Zeichen des *Puffers*. Sie wird beendet, wenn Sie *c* findet oder wenn Sie die ersten *Anzahl* von Zeichen geprüft hat.
 
-In C akzeptieren diese Funktionen einen **Konstanten** Zeiger für das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf "Konstante" annimmt **, gibt einen Zeiger auf "** **konstant**" zurück. die Version, die einen Zeiger auf nicht-konstante annimmt **, gibt einen** Zeiger auf einen nicht**Konstanten**Wert zurück. \_ Die Konstanten \_CRT\_-konstantenüberladungen werden definiert, wenn sowohl die Konstanten als auch die nicht konstanten Versionen dieser Funktionen verfügbar sind.\_ Wenn Sie für beide C++ über Ladungen C++in das nicht konstante Verhalten benötigen, \_\_definieren Sie das Symbol Konstanten Rückgabe.
+In C akzeptieren diese Funktionen einen **`const`** Zeiger auf das erste Argument. In C++ sind zwei Überladungen verfügbar. Die Überladung, die einen Zeiger auf annimmt, **`const`** gibt einen Zeiger auf zurück **`const`** . die Version, die einen Zeiger auf nicht-zurücknimmt, **`const`** gibt einen Zeiger auf nicht-zurück **`const`** . Die \_ Konstanten CRT \_ \_ \_ -konstantenüberladungen werden definiert, wenn sowohl die **`const`** -Version als auch die nicht-- **`const`** Version dieser Funktionen verfügbar sind. Wenn Sie das nicht-- **`const`** Verhalten für beide C++-über Ladungen in C++ benötigen, definieren Sie das Symbol \_ Konstanten \_ Rückgabe.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -138,7 +138,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 String to be searched:
@@ -152,7 +152,7 @@ Result:      r found at position 12
 
 ## <a name="see-also"></a>Siehe auch
 
-[Pufferbearbeitung](../../c-runtime-library/buffer-manipulation.md)<br/>
+[Puffer Bearbeitung](../../c-runtime-library/buffer-manipulation.md)<br/>
 [_memccpy](memccpy.md)<br/>
 [memcmp, wmemcmp](memcmp-wmemcmp.md)<br/>
 [memcpy, wmemcpy](memcpy-wmemcpy.md)<br/>
