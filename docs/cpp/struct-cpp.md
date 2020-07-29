@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - struct constructors
 ms.assetid: 3c6ba273-e248-4ff1-8c69-d2abcf1263c6
-ms.openlocfilehash: e9ffd30dd0017e912fd7c196e2d3f0e987fb0810
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5f247a99d3f04a15ebd54718a46dae8512a580d6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330582"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231116"
 ---
 # <a name="struct-c"></a>struct (C++)
 
-Die **Struktur** -Schlüsselwort definiert einen Strukturtyp und/oder eine Variable eines Strukturtyps.
+Das **`struct`** Schlüsselwort definiert einen Strukturtyp und/oder eine Variable eines Struktur Typs.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,44 +29,44 @@ Die **Struktur** -Schlüsselwort definiert einen Strukturtyp und/oder eine Varia
 
 #### <a name="parameters"></a>Parameter
 
-*template-spec*<br/>
-Optionale Vorlagenspezifikationen. Weitere Informationen finden Sie unter [Vorlagenspezifikationen](templates-cpp.md).
+*Vorlagen Spezifikation*<br/>
+Optionale Vorlagenspezifikationen. Weitere Informationen finden Sie unter [Vorlagen Spezifikationen](templates-cpp.md).
 
 *struct*<br/>
-Die **Struktur** Schlüsselwort.
+Das **`struct`** Schlüsselwort.
 
-*ms-decl-spec*<br/>
-Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie in der [__declspec](../cpp/declspec.md) Schlüsselwort.
+*MS-decl-spec*<br/>
+Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie unter [__declspec](../cpp/declspec.md) -Schlüsselwort.
 
-*tag*<br/>
+*Tag*<br/>
 Der Typname, der für die Struktur angegeben wurde. Das Tag wird ein reserviertes Wort innerhalb des Gültigkeitsbereichs der Struktur. Das Tag ist optional. Wenn es nicht angegeben wird, wird eine anonyme Struktur definiert. Weitere Informationen finden Sie unter [Anonyme Klassentypen](../cpp/anonymous-class-types.md).
 
 *base-list*<br/>
-Optionale Liste von Klassen oder Strukturen, von denen diese Struktur ihre Member ableitet. Finden Sie unter [Basisklassen](../cpp/base-classes.md) für Weitere Informationen. Jede Klasse oder Struktur Basisnamen kann einen Zugriffsspezifizierer vorangestellt werden ([öffentliche](../cpp/public-cpp.md), [private](../cpp/private-cpp.md), [geschützt](../cpp/protected-cpp.md)) und die [virtuellen](../cpp/virtual-cpp.md) Schlüsselwort. Finden Sie in der memberzugriffstabelle in [Steuern des Zugriffs auf Klassenmember](member-access-control-cpp.md) für Weitere Informationen.
+Optionale Liste von Klassen oder Strukturen, von denen diese Struktur ihre Member ableitet. Weitere Informationen finden Sie unter [Basisklassen](../cpp/base-classes.md) . Jedem Basisklassen-oder Struktur Namen kann ein Zugriffsspezifizierer ([Public](../cpp/public-cpp.md), [private](../cpp/private-cpp.md), [Protected](../cpp/protected-cpp.md)) und das [Virtual](../cpp/virtual-cpp.md) -Schlüsselwort vorangestellt werden. Weitere Informationen finden Sie in der Tabelle "Member-Access" unter [Steuern des Zugriffs auf Klassenmember](member-access-control-cpp.md) .
 
-*member-list*<br/>
-Liste der Strukturmember. Finden Sie unter [Member-Klassenübersicht](../cpp/class-member-overview.md) für Weitere Informationen. Der einzige Unterschied besteht darin, die **Struktur** dient anstelle von **Klasse**.
+*Mitgliederliste*<br/>
+Liste der Strukturmember. Weitere Informationen finden Sie unter [Übersicht über Klassenmember](../cpp/class-member-overview.md) . Der einzige Unterschied besteht darin, dass **`struct`** anstelle von verwendet wird **`class`** .
 
 *Deklaratoren*<br/>
-Deklaratorliste, die die Namen der Struktur angibt. Deklaratorlisten deklarieren eine oder mehrere Instanzen des Strukturtyps. Deklaratoren können Initialisierungslisten enthalten, wenn alle Datenmember der Struktur sind **öffentliche**. Initialisierungslisten werden häufig in Strukturen, da der Datenmember sind **öffentliche** standardmäßig.  Finden Sie unter [Übersicht von Deklaratoren](../cpp/overview-of-declarators.md) für Weitere Informationen.
+Deklaratorliste, die die Namen der Struktur angibt. Deklaratorlisten deklarieren eine oder mehrere Instanzen des Strukturtyps. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der Struktur sind **`public`** . Initialisiererlisten werden in-Strukturen häufig angezeigt, da Datenmember **`public`** Standardmäßig sind.  Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](../cpp/overview-of-declarators.md) .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein Strukturtyp ist ein benutzerdefinierter zusammengesetzter Typ. Er setzt sich aus Feldern oder Membern zusammen, die unterschiedliche Typen aufweisen können.
 
-In C++ ist eine Struktur ist identisch mit einer Klasse mit dem Unterschied, dass die Member werden **öffentliche** standardmäßig.
+In C++ ist eine-Struktur dieselbe wie eine-Klasse, außer dass deren Member **`public`** Standardmäßig sind.
 
-Informationen über verwaltete Klassen und strukte in C++ / CLI finden Sie unter [Klassen und Strukturen](../extensions/classes-and-structs-cpp-component-extensions.md).
+Informationen zu verwalteten Klassen und Strukturen in C++/CLI finden Sie unter [Klassen und Strukturen](../extensions/classes-and-structs-cpp-component-extensions.md).
 
 ## <a name="using-a-structure"></a>Verwenden einer Struktur
 
-In C müssen Sie explizit verwenden die **Struktur** Schlüsselwort, um eine Struktur zu deklarieren. In C++, Sie ist nicht erforderlich, verwenden die **Struktur** Schlüsselwort, nachdem der Typ definiert wurde.
+In C müssen Sie explizit das- **`struct`** Schlüsselwort verwenden, um eine-Struktur zu deklarieren. In C++ müssen Sie das-Schlüsselwort nicht verwenden, **`struct`** nachdem der Typ definiert wurde.
 
 Sie können Variablen deklarieren, wenn der Strukturtyp so definiert wurde, dass mindestens ein durch Trennzeichen getrennter Variablenname zwischen schließender Klammer und Semikolon steht.
 
 Strukturvariablen können initialisiert werden. Die Initialisierung für jede Variable muss in Klammern eingeschlossen sein.
 
-Weitere Informationen finden Sie unter [Klasse](../cpp/class-cpp.md), [Union](../cpp/unions.md), und [Enum](../cpp/enumerations-cpp.md).
+Weitere Informationen finden Sie unter [Klasse](../cpp/class-cpp.md), [Union](../cpp/unions.md)und Enumeration [.](../cpp/enumerations-cpp.md)
 
 ## <a name="example"></a>Beispiel
 

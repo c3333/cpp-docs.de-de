@@ -8,12 +8,12 @@ helpviewer_keywords:
 - expressions [C++], primary
 - expressions [C++], qualified names
 ms.assetid: 8ef9a814-6058-4b93-9b6e-e8eb8350b1ca
-ms.openlocfilehash: 03f0d0d04ad8ef2b052b9303d15437c53369a003
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: c827f811813091abc62d07f12ac387bc2a0a0cc5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80177624"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231142"
 ---
 # <a name="primary-expressions"></a>Primärausdrücke
 
@@ -28,9 +28,9 @@ name
 
 Ein *Literalausdruck* ist ein konstanter primärer Ausdruck. Sein Typ hängt von der Form seiner Spezifikation ab. Ausführliche Informationen zum Angeben von literalen finden Sie unter [Literale](../cpp/numeric-boolean-and-pointer-literals-cpp.md) .
 
-Das **this** -Schlüsselwort ist ein Zeiger auf ein Klassenobjekt. Es ist innerhalb von nicht statische Memberfunktionen verfügbar und zeigt auf die Instanz der Klasse, für die die Funktion aufgerufen wurde. Das **this** -Schlüsselwort kann nicht außerhalb des Texts einer Klassenmember-Funktion verwendet werden.
+Das **`this`** Schlüsselwort ist ein Zeiger auf ein Klassenobjekt. Es ist innerhalb von nicht statische Memberfunktionen verfügbar und zeigt auf die Instanz der Klasse, für die die Funktion aufgerufen wurde. Das **`this`** Schlüsselwort kann nicht außerhalb des Texts einer Klassenmember-Funktion verwendet werden.
 
-Der Typ des **this** -Zeigers ist `type` **\*Konstanten** (wobei `type` der Klassenname ist) innerhalb von Funktionen, die den **this** -Zeiger nicht explizit verändern. Im folgenden Beispiel werden Member-Funktions Deklarationen und die folgenden Typen **angezeigt:**
+Der Typ des **`this`** Zeigers ist " `type` ** \* Konstanten** " (wobei `type` der Klassenname ist) innerhalb von Funktionen, die nicht explizit den **`this`** Zeiger ändern. Im folgenden Beispiel werden Member-Funktions Deklarationen und die Typen von veranschaulicht **`this`** :
 
 ```cpp
 // expre_Primary_Expressions.cpp
@@ -44,7 +44,7 @@ public:
 };
 ```
 
-Weitere Informationen zum Ändern des Typs des **this** -Zeigers finden Sie in [diesem Zeiger](this-pointer.md) .
+Weitere Informationen zum Ändern des Zeiger Typs finden Sie in [diesem Zeiger](this-pointer.md) **`this`** .
 
 Der Bereichsauflösungsoperator (`::`) gefolgt von einem Namen stellt einen primären Ausdruck dar.  Solche Namen müssen Namen von globaler Reichweite sein, nicht Membernamen.  Der Typ dieses Ausdrucks wird durch die Deklaration des Namens bestimmt. Es ist ein l-Wert (das heißt, er kann auf der linken Seite eines Zuweisungsoperatorausdrucks angezeigt werden), wenn der deklarierende Name ein l-Wert ist. Der Bereichsauflösungsoperator lässt zu, dass auf einen globalen Namen verwiesen wird, selbst wenn dieser Name im aktuellen Bereich ausgeblendet ist. Ein Beispiel für die Verwendung des Bereichs Auflösungs Operators finden Sie unter [Scope](../cpp/scope-visual-cpp.md) .
 
@@ -74,6 +74,6 @@ A::B   // a qualified name
 A<int> // a template id
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Ausdruckstypen](../cpp/types-of-expressions.md)
+[Ausdrucks Typen](../cpp/types-of-expressions.md)
