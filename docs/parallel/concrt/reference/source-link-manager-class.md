@@ -17,12 +17,12 @@ f1_keywords:
 helpviewer_keywords:
 - source_link_manager class
 ms.assetid: 287487cf-e0fe-4c35-aa3c-24f081d1ddae
-ms.openlocfilehash: 35c7cc72520cdb0675abf9c15574a49e33741d0b
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 98f99bb5aec85a640eaf83a07fae3a1b667f7d91
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142699"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228426"
 ---
 # <a name="source_link_manager-class"></a>source_link_manager-Klasse
 
@@ -40,41 +40,41 @@ class source_link_manager;
 *_LinkRegistry*<br/>
 Die Registrierung der Netzwerkverbindung.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|`const_pointer`|Ein Typ, der einen Zeiger auf ein `const` Element in einem `source_link_manager`-Objekt bereitstellt.|
-|`const_reference`|Ein Typ, der einen Verweis auf ein `const` Element bereitstellt, das in einem `source_link_manager`-Objekt zum Lesen und Ausführen von Konstanten Vorgängen gespeichert ist.|
-|`iterator`|Ein Typ, der einen Iterator bereitstellt, mit dem jedes Element im `source_link_manager` Objekt gelesen oder geändert werden kann.|
-|`type`|Der Typ der Verknüpfungs Registrierung, der vom `source_link_manager` Objekt verwaltet wird.|
+|`const_pointer`|Ein Typ, der einen Zeiger auf ein- **`const`** Element in einem-Objekt bereitstellt `source_link_manager` .|
+|`const_reference`|Ein Typ, der einen Verweis auf ein-Element bereitstellt, das **`const`** in einem- `source_link_manager` Objekt zum Lesen und Ausführen von Konstanten Vorgängen gespeichert ist.|
+|`iterator`|Ein Typ, der einen Iterator bereitstellt, mit dem jedes Element im-Objekt gelesen oder geändert werden kann `source_link_manager` .|
+|`type`|Der Typ der Link Registrierung, der vom- `source_link_manager` Objekt verwaltet wird.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[source_link_manager](#ctor)|Erstellt ein `source_link_manager`-Objekt.|
 |[~ source_link_manager-Dekonstruktor](#dtor)|Zerstört das `source_link_manager`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[add](#add)|Fügt dem `source_link_manager` Objekt einen quelllink hinzu.|
-|[begin](#begin)|Gibt einen Iterator zum ersten Element im `source_link_manager`-Objekt zurück.|
-|[contains](#contains)|Durchsucht den `network_link_registry` innerhalb dieses `source_link_manager` Objekts nach einem angegebenen Block.|
-|[count](#count)|Zählt die Anzahl der verknüpften Blöcke im `source_link_manager`-Objekt.|
-|[Referenz](#reference)|Ruft einen Verweis auf das `source_link_manager` Objekt ab.|
-|[register_target_block](#register_target_block)|Registriert den Zielblock, der dieses `source_link_manager`-Objekt enthält.|
-|[release](#release)|Gibt den Verweis auf das `source_link_manager` Objekt frei.|
-|[remove](#remove)|Entfernt einen Link aus dem `source_link_manager`-Objekt.|
-|[set_bound](#set_bound)|Legt die maximale Anzahl von Quell Verknüpfungen fest, die diesem `source_link_manager` Objekt hinzugefügt werden können.|
+|[add](#add)|Fügt dem-Objekt einen quelllink hinzu `source_link_manager` .|
+|[beginnen](#begin)|Gibt einen Iterator zum ersten Element im- `source_link_manager` Objekt zurück.|
+|[contains](#contains)|Durchsucht den `network_link_registry` innerhalb dieses- `source_link_manager` Objekts nach einem angegebenen-Block.|
+|[count](#count)|Zählt die Anzahl der verknüpften Blöcke im- `source_link_manager` Objekt.|
+|[Referenz](#reference)|Ruft einen Verweis auf das- `source_link_manager` Objekt ab.|
+|[register_target_block](#register_target_block)|Registriert den Zielblock, der dieses- `source_link_manager` Objekt enthält.|
+|[Abgabe](#release)|Gibt den Verweis auf das- `source_link_manager` Objekt frei.|
+|[remove](#remove)|Entfernt einen Link aus dem- `source_link_manager` Objekt.|
+|[set_bound](#set_bound)|Legt die maximale Anzahl von Quell Verknüpfungen fest, die diesem-Objekt hinzugefügt werden können `source_link_manager` .|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Derzeit sind die Quell Blöcke Verweis gezählt. Dabei handelt es sich um einen Wrapper für ein `network_link_registry` Objekt, das gleichzeitigen Zugriff auf die Verknüpfungen ermöglicht und die Möglichkeit bietet, auf die Links durch Rückrufe zu verweisen. Nachrichten Blöcke (`target_block`s oder `propagator_block`s) sollten diese Klasse für Ihre Quell Verknüpfungen verwenden.
+Derzeit sind die Quell Blöcke Verweis gezählt. Dabei handelt es sich um einen Wrapper für ein `network_link_registry` -Objekt, das gleichzeitigen Zugriff auf die Verknüpfungen ermöglicht und die Möglichkeit bietet, auf die Links durch Rückrufe zu verweisen. Nachrichten Blöcke `target_block` `propagator_block` sollten diese Klasse für Ihre Quell Verknüpfungen verwenden.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -86,9 +86,9 @@ Derzeit sind die Quell Blöcke Verweis gezählt. Dabei handelt es sich um einen 
 
 **Namespace:** Parallelität
 
-## <a name="add"></a>eren
+## <a name="add"></a><a name="add"></a>eren
 
-Fügt dem `source_link_manager` Objekt einen quelllink hinzu.
+Fügt dem-Objekt einen quelllink hinzu `source_link_manager` .
 
 ```cpp
 void add(_EType _Link);
@@ -99,9 +99,9 @@ void add(_EType _Link);
 *_Link*<br/>
 Ein Zeiger auf einen Block, der hinzugefügt werden soll.
 
-## <a name="begin"></a>beginnen
+## <a name="begin"></a><a name="begin"></a>beginnen
 
-Gibt einen Iterator zum ersten Element im `source_link_manager`-Objekt zurück.
+Gibt einen Iterator zum ersten Element im- `source_link_manager` Objekt zurück.
 
 ```cpp
 iterator begin();
@@ -109,15 +109,15 @@ iterator begin();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Iterator, der das erste Element im `source_link_manager` Objekt adressiert.
+Ein Iterator, der das erste Element im-Objekt adressiert `source_link_manager` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Endzustand des Iterators wird durch einen `NULL` Link angegeben.
+Der Endzustand des Iterators wird durch einen Link angegeben `NULL` .
 
-## <a name="contains"></a>Inhalt
+## <a name="contains"></a><a name="contains"></a>Inhalt
 
-Durchsucht den `network_link_registry` innerhalb dieses `source_link_manager` Objekts nach einem angegebenen Block.
+Durchsucht den `network_link_registry` innerhalb dieses- `source_link_manager` Objekts nach einem angegebenen-Block.
 
 ```cpp
 bool contains(_EType _Link);
@@ -126,15 +126,15 @@ bool contains(_EType _Link);
 ### <a name="parameters"></a>Parameter
 
 *_Link*<br/>
-Ein Zeiger auf einen Block, der im `source_link_manager` Objekt gesucht werden soll.
+Ein Zeiger auf einen Block, der im-Objekt gesucht werden soll `source_link_manager` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der angegebene Block gefunden wurde, andernfalls **false** .
+**`true`**, wenn der angegebene Block gefunden wurde, **`false`** andernfalls.
 
-## <a name="count"></a>Countdown
+## <a name="count"></a><a name="count"></a>Countdown
 
-Zählt die Anzahl der verknüpften Blöcke im `source_link_manager`-Objekt.
+Zählt die Anzahl der verknüpften Blöcke im- `source_link_manager` Objekt.
 
 ```cpp
 size_t count();
@@ -142,19 +142,19 @@ size_t count();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der verknüpften Blöcke im `source_link_manager`-Objekt.
+Die Anzahl der verknüpften Blöcke im- `source_link_manager` Objekt.
 
-## <a name="reference"></a>Angabe
+## <a name="reference"></a><a name="reference"></a>Angabe
 
-Ruft einen Verweis auf das `source_link_manager` Objekt ab.
+Ruft einen Verweis auf das- `source_link_manager` Objekt ab.
 
 ```cpp
 void reference();
 ```
 
-## <a name="register_target_block"></a>register_target_block
+## <a name="register_target_block"></a><a name="register_target_block"></a>register_target_block
 
-Registriert den Zielblock, der dieses `source_link_manager`-Objekt enthält.
+Registriert den Zielblock, der dieses- `source_link_manager` Objekt enthält.
 
 ```cpp
 void register_target_block(_Inout_ ITarget<typename _Block::source_type>* _PTarget);
@@ -163,19 +163,19 @@ void register_target_block(_Inout_ ITarget<typename _Block::source_type>* _PTarg
 ### <a name="parameters"></a>Parameter
 
 *_PTarget*<br/>
-Der Zielblock, der dieses `source_link_manager` Objekt enthält.
+Der Zielblock, der dieses- `source_link_manager` Objekt enthält.
 
-## <a name="release"></a>Abgabe
+## <a name="release"></a><a name="release"></a>Abgabe
 
-Gibt den Verweis auf das `source_link_manager` Objekt frei.
+Gibt den Verweis auf das- `source_link_manager` Objekt frei.
 
 ```cpp
 void release();
 ```
 
-## <a name="remove"></a>aufgeh
+## <a name="remove"></a><a name="remove"></a>aufgeh
 
-Entfernt einen Link aus dem `source_link_manager`-Objekt.
+Entfernt einen Link aus dem- `source_link_manager` Objekt.
 
 ```cpp
 bool remove(_EType _Link);
@@ -188,11 +188,11 @@ Ein Zeiger auf einen Block, der entfernt werden soll, sofern gefunden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn der Link gefunden und entfernt wurde, andernfalls **false** .
+**`true`**, wenn der Link gefunden und entfernt wurde, **`false`** andernfalls.
 
-## <a name="set_bound"></a>set_bound
+## <a name="set_bound"></a><a name="set_bound"></a>set_bound
 
-Legt die maximale Anzahl von Quell Verknüpfungen fest, die diesem `source_link_manager` Objekt hinzugefügt werden können.
+Legt die maximale Anzahl von Quell Verknüpfungen fest, die diesem-Objekt hinzugefügt werden können `source_link_manager` .
 
 ```cpp
 void set_bound(size_t _MaxLinks);
@@ -203,7 +203,7 @@ void set_bound(size_t _MaxLinks);
 *_MaxLinks*<br/>
 Die maximale Anzahl von Links.
 
-## <a name="ctor"></a>source_link_manager
+## <a name="source_link_manager"></a><a name="ctor"></a>source_link_manager
 
 Erstellt ein `source_link_manager`-Objekt.
 
@@ -211,7 +211,7 @@ Erstellt ein `source_link_manager`-Objekt.
 source_link_manager();
 ```
 
-## <a name="dtor"></a>~ source_link_manager
+## <a name="source_link_manager"></a><a name="dtor"></a>~ source_link_manager
 
 Zerstört das `source_link_manager`-Objekt.
 
@@ -219,8 +219,8 @@ Zerstört das `source_link_manager`-Objekt.
 ~source_link_manager();
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace](concurrency-namespace.md)<br/>
-[single_link_registry-Klasse](single-link-registry-class.md)<br/>
-[multi_link_registry-Klasse](multi-link-registry-class.md)
+[Parallelitäts Namespace](concurrency-namespace.md)<br/>
+[Single_link_registry-Klasse](single-link-registry-class.md)<br/>
+[Multi_link_registry-Klasse](multi-link-registry-class.md)

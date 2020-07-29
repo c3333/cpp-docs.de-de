@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - const_mem_fun_ref_t class
 ms.assetid: 316ddbaa-9f46-4931-8eba-ea4ca66360ef
-ms.openlocfilehash: 8ce29eb0d2122dbd95fea34fa59f3fa11b9b388e
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 09d8569253dbeb1a873f4fc7b64b55658511d18e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689759"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228361"
 ---
 # <a name="const_mem_fun_ref_t-class"></a>const_mem_fun_ref_t-Klasse
 
-Eine Adapterklasse, die einer **const**-Memberfunktion, die keine Argumente akzeptiert, ermöglicht, als unäres Funktionsobjekt aufgerufen zu werden, wenn sie mit einem Verweisargument initialisiert wird. In c++ 11 veraltet, entfernt in c++ 17.
+Eine Adapter Klasse, die es ermöglicht, **`const`** dass eine Member-Funktion, die keine Argumente annimmt, als unäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Verweis Argument initialisiert wird. In c++ 11 veraltet, entfernt in c++ 17.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,19 +31,19 @@ template <class Result, class Type>
 
 ### <a name="parameters"></a>Parameter
 
-*Pm* -\
+*14:*\
 Ein Zeiger auf die Memberfunktion der Klasse `Type`, die in ein Funktionsobjekt konvertiert werden soll.
 
-*Linker* \
+*linken*\
 Das-Objekt, für das die *pm* -Mitglieds Funktion aufgerufen wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Eine anpassungsfähige unäre Funktion.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage speichert eine Kopie von *pm*, bei der es sich um einen Zeiger auf eine Member-Funktion der Klasse `Type` in einem privaten Member-Objekt handeln muss. Er definiert seine Member-Funktion `operator()` als Rückgabe von (**left**. \* `Pm`) () **Konstanten**.
+In der-Klassen Vorlage wird eine Kopie von *pm*gespeichert, die ein Zeiger auf eine Member-Funktion der-Klasse `Type` in einem privaten Member-Objekt sein muss. Er definiert seine Member-Funktion `operator()` als Rückgabe (**Links** \* `Pm` ). () **`const`**.
 
 ## <a name="example"></a>Beispiel
 

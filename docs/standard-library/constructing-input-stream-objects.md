@@ -4,26 +4,26 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - input stream objects
 ms.assetid: ab94866e-6ffe-4f15-b4db-0bd23e636075
-ms.openlocfilehash: c000a9e927169ef710554372217ba15089ee11b8
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: f281741979680fc03d3f96d2dbfbac6e1feefdea
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68457293"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228309"
 ---
 # <a name="constructing-input-stream-objects"></a>Konstruieren von Eingabestreamobjekten
 
 Wenn Sie lediglich das `cin`-Objekt verwenden, müssen Sie keinen Eingabestream erstellen. Die Erstellung eines Eingabestreams ist jedoch erforderlich, wenn Sie Folgendes verwenden:
 
-- [Konstruktoren für Dateieingabestream](#vclrfinputfilestreamconstructorsanchor8)
+- [Eingabedatei-streamkonstruktoren](#vclrfinputfilestreamconstructorsanchor8)
 
-- [Konstruktoren für Zeichenfolge-Eingabestream](#vclrfinputstringstreamconstructorsanchor9)
+- [Eingabe Zeichenfolge-streamkonstruktoren](#vclrfinputstringstreamconstructorsanchor9)
 
-## <a name="vclrfinputfilestreamconstructorsanchor8"></a>Konstruktoren für Dateieingabestream
+## <a name="input-file-stream-constructors"></a><a name="vclrfinputfilestreamconstructorsanchor8"></a>Konstruktoren für Dateieingabestream
 
 Es gibt zwei Möglichkeiten, einen Dateieingabestream zu erstellen:
 
-- Verwenden Sie den **void** -Argumentkonstruktor, und `open` nennen Sie dann die Member-Funktion:
+- Verwenden Sie den **`void`** Argumentkonstruktor, und nennen Sie dann die `open` Member-Funktion:
 
    ```cpp
    ifstream myFile; // On the stack
@@ -39,7 +39,7 @@ Es gibt zwei Möglichkeiten, einen Dateieingabestream zu erstellen:
    ifstream myFile("filename");
    ```
 
-## <a name="vclrfinputstringstreamconstructorsanchor9"></a>Konstruktoren für Zeichenfolge-Eingabestream
+## <a name="input-string-stream-constructors"></a><a name="vclrfinputstringstreamconstructorsanchor9"></a>Konstruktoren für Zeichenfolge-Eingabestream
 
 Konstruktoren für Zeichenfolge-Eingabestream erfordern die Adresse von vorab zugeordnetem, vorinitialisierten Speicher:
 

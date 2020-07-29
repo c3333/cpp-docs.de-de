@@ -7,12 +7,12 @@ helpviewer_keywords:
 - conditional class
 - conditional
 ms.assetid: ece9f539-fb28-4e26-a79f-3264bc984493
-ms.openlocfilehash: b8f0f69cc1e4f6966bc9ccb63fe529436295badd
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 03ec6248ba3361622ad061ac3854a60995148f4a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68457326"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228374"
 ---
 # <a name="conditional-class"></a>conditional-Klasse
 
@@ -39,13 +39,13 @@ Das Typergebnis, wenn B „true“ ist.
 *T2*\
 Das Typergebnis, wenn B „false“ ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `conditional<B, T1, T2>::type` typedef-Vorlage wird als *T1* ausgewertet, wenn *b* als **true**ausgewertet wird, und wird zu *T2* ausgewertet, wenn *b* als **false**ausgewertet wird.
+Die Typdefinition für Vorlagen Elemente ergibt `conditional<B, T1, T2>::type` *T1* , wenn *b* ergibt **`true`** , und wird zu *T2* ausgewertet, wenn *b* als ausgewertet wird **`false`** .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 

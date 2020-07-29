@@ -16,12 +16,12 @@ helpviewer_keywords:
 - stdext::max_fixed_size [C++], released
 - stdext::max_fixed_size [C++], saved
 ms.assetid: 8c8f4588-37e9-4579-8168-ba3553800914
-ms.openlocfilehash: 7f75dd71caa3cfcfec19264b1da62c6d47a3e01d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 23aa10a3398c3f20de73eb2ac6fa1372efdc32e5
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371006"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228205"
 ---
 # <a name="max_fixed_size-class"></a>max_fixed_size-Klasse
 
@@ -36,13 +36,13 @@ class max_fixed_size
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Max*|Die max-Klasse, die die maximale Anzahl von Elementen zum Speichern in der `freelist` bestimmt.|
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[max_fixed_size](#max_fixed_size)|Konstruiert ein Objekt vom Typ `max_fixed_size`.|
 
@@ -51,18 +51,18 @@ class max_fixed_size
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[allocated](#allocated)|Erhöht die Anzahl der zugeordneten Speicherblöcke.|
-|[Freigegeben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
-|[Voll](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
-|[Freigegeben](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
+|[aufgehoben](#deallocated)|Verringert die Anzahl der zugeordneten Speicherblöcke.|
+|[full](#full)|Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.|
+|[gebracht](#released)|Verringert die Anzahl der Speicherblöcke auf der Freiliste.|
 |[saved](#saved)|Erhöht die Anzahl der Speicherblöcke auf der Freiliste.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="max_fixed_sizeallocated"></a><a name="allocated"></a>max_fixed_size::zugeteilt
+## <a name="max_fixed_sizeallocated"></a><a name="allocated"></a>Max_fixed_size:: zugeordnet
 
 Erhöht die Anzahl der zugeordneten Speicherblöcke.
 
@@ -72,15 +72,15 @@ void allocated(std::size_t _Nx = 1);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion bleibt untätig. Diese Memberfunktion wird nach jedem `cache_freelist::allocate` erfolgreichen Aufruf des Operators **new**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Vom Operator **new**zugewiesenen Block.
+Die Memberfunktion bleibt untätig. Diese Member-Funktion wird nach jedem erfolgreichen Aufruf durch `cache_freelist::allocate` den-Operator aufgerufen **`new`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Block, der vom Operator zugeordnet wird **`new`** .
 
-## <a name="max_fixed_sizedeallocated"></a><a name="deallocated"></a>max_fixed_size::deallocated
+## <a name="max_fixed_sizedeallocated"></a><a name="deallocated"></a>Max_fixed_size::d ezugeordnet
 
 Verringert die Anzahl der zugeordneten Speicherblöcke.
 
@@ -90,15 +90,15 @@ void deallocated(std::size_t _Nx = 1);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
-|*_nx*|Der Inkrementwert|
+|*_Nx*|Der Inkrementwert|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion bleibt untätig. Diese Memberfunktion wird nach `cache_freelist::deallocate` jedem Aufruf von operator **delete**aufgerufen. Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Chunk Deallocated by operator **delete**.
+Die Memberfunktion bleibt untätig. Diese Member-Funktion wird nach jedem Aufruf durch `cache_freelist::deallocate` den-Operator aufgerufen **`delete`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Block, dessen Zuordnung vom Operator aufgehoben wird **`delete`** .
 
-## <a name="max_fixed_sizefull"></a><a name="full"></a>max_fixed_size::voll
+## <a name="max_fixed_sizefull"></a><a name="full"></a>Max_fixed_size:: Full
 
 Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.
 
@@ -108,13 +108,13 @@ bool full();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn `Max <= _Nblocks`; andernfalls **false**.
+**`true`**`Max <= _Nblocks`, wenn, andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der **true**Aufruf `deallocate` true zurückgibt, wird der Speicherblock in der freien Liste angezeigt. Wenn false zurückgegeben `deallocate` wird, ruft operator **delete,** um den Block zu zuweisen.
+Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der Aufruf zurückgegeben **`true`** wird, wird `deallocate` der Speicherblock in die freie Liste eingefügt; Wenn false zurückgegeben wird, `deallocate` Ruft Operator **`delete`** auf, um die Zuteilung des Blocks aufzulösen.
 
-## <a name="max_fixed_sizemax_fixed_size"></a><a name="max_fixed_size"></a>max_fixed_size::max_fixed_size
+## <a name="max_fixed_sizemax_fixed_size"></a><a name="max_fixed_size"></a>Max_fixed_size:: Max_fixed_size
 
 Konstruiert ein Objekt vom Typ `max_fixed_size`.
 
@@ -126,7 +126,7 @@ max_fixed_size();
 
 Dieser Konstruktor initialisiert den gespeicherten Wert `_Nblocks` auf null.
 
-## <a name="max_fixed_sizereleased"></a><a name="released"></a>max_fixed_size::veröffentlicht
+## <a name="max_fixed_sizereleased"></a><a name="released"></a>Max_fixed_size:: veröffentlicht
 
 Verringert die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -136,9 +136,9 @@ void released();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verringert den gespeicherten Wert `_Nblocks`. Die `released` Memberfunktion der aktuellen [max-Klasse](../standard-library/allocators-header.md) wird aufgerufen, `cache_freelist::allocate` wenn sie einen Speicherblock aus der freien Liste entfernt.
+Verringert den gespeicherten Wert `_Nblocks`. Die `released` Member-Funktion der aktuellen [max-Klasse](../standard-library/allocators-header.md) wird von aufgerufen, `cache_freelist::allocate` Wenn ein Speicherblock aus der freien Liste entfernt wird.
 
-## <a name="max_fixed_sizesaved"></a><a name="saved"></a>max_fixed_size::gerettet
+## <a name="max_fixed_sizesaved"></a><a name="saved"></a>Max_fixed_size:: gespeichert
 
 Erhöht die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -152,4 +152,4 @@ Diese Memberfunktion inkrementiert den gespeicherten `_Nblocks`-Wert. Diese Memb
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

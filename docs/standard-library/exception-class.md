@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - exception class
 ms.assetid: 4f181f67-5888-4b50-89a6-745091ffb2fe
-ms.openlocfilehash: 5bef8190889ae00298760ea395fb524f557c2be2
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: fd3fb3c48e9501b7aaf90bca14ea98530b245ec0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79446831"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228270"
 ---
 # <a name="exception-class"></a>exception-Klasse
 
@@ -34,13 +34,13 @@ class exception {
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Basisklasse bildet den Stamm der Standard Ausnahmeklassen, die in [\<stdexcept>](../standard-library/stdexcept.md) definiert sind. Der Wert der C-Zeichenfolge, der durch `what` zurückgegeben wird, wird vom Standardkonstruktor nicht angegeben, kann aber von den Konstruktoren für bestimmte abgeleitete Klassen als durch die Implementierung definierte C-Zeichenfolge angegeben werden. Keine der Memberfunktionen löst irgendeine Ausnahme aus.
+Dabei handelt es sich um den Stamm der Standard Ausnahme Klassen, die in definiert sind [\<stdexcept>](../standard-library/stdexcept.md) . Der Wert der C-Zeichenfolge, der durch `what` zurückgegeben wird, wird vom Standardkonstruktor nicht angegeben, kann aber von den Konstruktoren für bestimmte abgeleitete Klassen als durch die Implementierung definierte C-Zeichenfolge angegeben werden. Keine der Memberfunktionen löst irgendeine Ausnahme aus.
 
-Mit dem **int** -Parameter können Sie angeben, dass kein Arbeitsspeicher zugewiesen werden soll. Der Wert des **int** -Werts wird ignoriert.
+Mit dem- **`int`** Parameter können Sie angeben, dass kein Arbeitsspeicher zugewiesen werden soll. Der Wert von **`int`** wird ignoriert.
 
 > [!NOTE]
 > Die Konstruktoren `exception(const char* const &message)` und `exception(const char* const &message, int)` sind Microsoft-Erweiterungen der C++-Standardbibliothek.
 
 ## <a name="example"></a>Beispiel
 
-Beispiele für die Verwendung von Standard Ausnahmeklassen, die von der `exception`-Klasse erben, finden Sie in allen unter [\<stdexcept >](../standard-library/stdexcept.md) definierten Klassen.
+Beispiele für die Verwendung der Standard Ausnahme Klassen, die von der- `exception` Klasse erben, finden Sie unter einer der Klassen, die in definiert sind [\<stdexcept>](../standard-library/stdexcept.md) .

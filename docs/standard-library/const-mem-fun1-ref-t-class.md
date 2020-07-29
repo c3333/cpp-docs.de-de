@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - const_mem_fun1_ref_t class
 ms.assetid: 8220d373-fa1c-44be-a21d-96d49b3ea6bb
-ms.openlocfilehash: 76fae1ce29cb4c47870e45e8f946f6ff1fea1885
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: f9f426b7280872846695e204f2c9843d2622fe19
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688178"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228335"
 ---
 # <a name="const_mem_fun1_ref_t-class"></a>const_mem_fun1_ref_t-Klasse
 
-Eine Adapterklasse, die einer **const**-Memberfunktion, die ein einzelnes Argument akzeptiert, ermöglicht, als binäres Funktionsobjekt aufgerufen zu werden, wenn sie mit einem Verweisargument initialisiert wird. In c++ 11 veraltet, entfernt in c++ 17.
+Eine Adapter Klasse, die es ermöglicht, **`const`** dass eine Member-Funktion, die ein einzelnes Argument annimmt, als binäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Verweis Argument initialisiert wird. In c++ 11 veraltet, entfernt in c++ 17.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,22 +31,22 @@ template <class Result, class Type, class Arg>
 
 ### <a name="parameters"></a>Parameter
 
-*Pm* -\
+*14:*\
 Ein Zeiger auf die Memberfunktion der Klasse `Type`, die in ein Funktionsobjekt konvertiert werden soll.
 
-*Linker* \
-Das **Konstante Objekt, für das die** *pm* -Mitglieds Funktion aufgerufen wird.
+*linken*\
+Das- **`const`** Objekt, für das die *pm* -Mitglieds Funktion aufgerufen wird.
 
-*Rechte* \
+*Richting*\
 Das Argument, das *pm*zugewiesen wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Eine anpassungsfähige binäre Funktion.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage speichert eine Kopie von *pm*, bei der es sich um einen Zeiger auf eine Member-Funktion der Klasse `Type` in einem privaten Member-Objekt handeln muss. Er definiert seine Member-Funktion `operator()` als Rückgabe von (`left`. \* *pm*) (`right`) **Konstanten**.
+In der-Klassen Vorlage wird eine Kopie von *pm*gespeichert, die ein Zeiger auf eine Member-Funktion der-Klasse `Type` in einem privaten Member-Objekt sein muss. Er definiert seine Member-Funktion `operator()` als Rückgabe ( `left` . \* *pm*) ( `right` ) **`const`** .
 
 ## <a name="example"></a>Beispiel
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - const_mem_fun_t class
 ms.assetid: f169d381-019b-4a0e-a9a3-54da6d948270
-ms.openlocfilehash: 5263612a26b2bcb606ad712a2a8e0a521ce9437a
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 6b34fb6b20b2aaf2f18fbe8d937e50bdbaa3bdff
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688207"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228348"
 ---
 # <a name="const_mem_fun_t-class"></a>const_mem_fun_t-Klasse
 
@@ -30,19 +30,19 @@ class const_mem_fun_t : public unary_function <Type *, Result>
 
 ### <a name="parameters"></a>Parameter
 
-*Pm* -\
+*14:*\
 Ein Zeiger auf die Memberfunktion der Klasse `Type`, die in ein Funktionsobjekt konvertiert werden soll.
 
-*Pleft* -\
+*Pleft*\
 Das-Objekt, für das die *pm* -Mitglieds Funktion aufgerufen wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Eine anpassungsfähige unäre Funktion.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage speichert eine Kopie von *pm*, bei der es sich um einen Zeiger auf eine Member-Funktion der Klasse `Type` in einem privaten Member-Objekt handeln muss. Er definiert seine Member-Funktion `operator()` als Rückgabe von (`Pleft` -> \* `Pm`) () **Konstanten**.
+In der-Klassen Vorlage wird eine Kopie von *pm*gespeichert, die ein Zeiger auf eine Member-Funktion der-Klasse `Type` in einem privaten Member-Objekt sein muss. Er definiert seine Member-Funktion `operator()` als Rückgabe ( `Pleft` -> \* `Pm` ) () **`const`** .
 
 ## <a name="example"></a>Beispiel
 
