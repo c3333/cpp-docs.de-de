@@ -8,38 +8,38 @@ helpviewer_keywords:
 - classes [MFC], map
 - map classes [MFC]
 ms.assetid: 3f0b1c05-2243-4d4d-98d4-429fc3310c9f
-ms.openlocfilehash: 6136557bd436fb9964498384f277d48e8525a027
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5ed191525e11ca2a4d3f5b1c39e9b50b65066d7c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62253967"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228543"
 ---
 # <a name="ready-to-use-map-classes"></a>Gebrauchsfertige Zuordnungsklassen
 
-Die folgenden Klassen sind sofort zu verwendende Zuordnungsklassen.
+Die folgenden Klassen sind gebrauchsfertige Zuordnungs Klassen.
 
 [CMapPtrToPtr](../mfc/reference/cmapptrtoptr-class.md)<br/>
-Verwendet **"void"** Zeigern als Schlüssel für die Suche nach anderen **"void"** Zeiger.
+Verwendet **`void`** Zeiger als Schlüssel zum Suchen nach anderen **`void`** Zeigern.
 
 [CMapPtrToWord](../mfc/reference/cmapptrtoword-class.md)<br/>
-Verwendet **"void"** Zeigern als Schlüssel zum Suchen von Daten vom Typ **WORD**.
+Verwendet **`void`** Zeiger als Schlüssel für die Suche nach Daten des Typs **Word**.
 
 [CMapStringToOb](../mfc/reference/cmapstringtoob-class.md)<br/>
-Verwendet `CString` von Objekten als Schlüssel für das Auffinden `CObject` Zeiger.
+Verwendet- `CString` Objekte als Schlüssel für die Suche nach `CObject` Zeigern.
 
 [CMapStringToPtr](../mfc/reference/cmapstringtoptr-class.md)<br/>
-Verwendet `CString` von Objekten als Schlüssel für das Auffinden **"void"** Zeiger.
+Verwendet- `CString` Objekte als Schlüssel für die Suche nach **`void`** Zeigern.
 
 [CMapStringToString](../mfc/reference/cmapstringtostring-class.md)<br/>
-Verwendet `CString` von Objekten als Schlüssel für die Suche nach anderen `CString` Objekte.
+Verwendet- `CString` Objekte als Schlüssel für die Suche nach anderen `CString` Objekten.
 
 [CMapWordToOb](../mfc/reference/cmapwordtoob-class.md)<br/>
-Wird verwendet, Daten vom Typ **WORD** finden `CObject` Zeiger.
+Verwendet Daten des Typs **Word** , um `CObject` Zeiger zu suchen.
 
 [CMapWordToPtr](../mfc/reference/cmapwordtoptr-class.md)<br/>
-Wird verwendet, Daten vom Typ **WORD** finden **"void"** Zeiger.
+Verwendet Daten des Typs **Word** , um **`void`** Zeiger zu suchen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassenübersicht](../mfc/class-library-overview.md)

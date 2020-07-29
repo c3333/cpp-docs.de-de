@@ -2,22 +2,22 @@
 title: Concurrency-Namespace-Operatoren (AMP)
 ms.date: 11/04/2016
 ms.assetid: 77f1ae17-1eb2-480d-8fe5-66d4c24bb91e
-ms.openlocfilehash: c4086029b71d71091a12b9b6023cc6098faf2f85
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 03079f8899f3b13c8509e1affd10a82191b1817c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376293"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228478"
 ---
 # <a name="concurrency-namespace-operators-amp"></a>Concurrency-Namespace-Operatoren (AMP)
 
 ||||
 |-|-|-|
-|[Operator!=](#operator_neq)|[Betreiber%](#operator_mod)|[Operator*](#operator_star)|
-|[Operator+](#operator_add)|[Betreiber-](#operator-)|[Bediener/](#operator_div)|
-|[Betreiber== Einzelnachweise ==](#operator_eq_eq)|
+|[Operator! =](#operator_neq)|[KOM](#operator_mod)|[KOM](#operator_star)|
+|[Operator +](#operator_add)|[KOM](#operator-)|[KOM](#operator_div)|
+|[Operator = =](#operator_eq_eq)|
 
-## <a name="operator"></a><a name="operator_eq_eq"></a>Betreiber== Einzelnachweise ==
+## <a name="operator"></a><a name="operator_eq_eq"></a>Operator = =
 
 Bestimmt, ob die angegebenen Argumente gleich sind.
 
@@ -44,9 +44,9 @@ Eines der zu vergleichenden Tupel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn die Tupeln gleich sind; andernfalls **false**.
+**`true`**, wenn die Tupel gleich sind. andernfalls **`false`** .
 
-## <a name="operator"></a><a name="operator_neq"></a>Operator!=
+## <a name="operator"></a><a name="operator_neq"></a>Operator! =
 
 Bestimmt, ob die angegebenen Argumente ungleich sind.
 
@@ -73,9 +73,9 @@ Eines der zu vergleichenden Tupel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true,** wenn die Tupeln nicht gleich sind; andernfalls **false**.
+**`true`**, wenn die Tupel nicht gleich sind. andernfalls **`false`** .
 
-## <a name="operator"></a><a name="operator_add"></a>Operator+
+## <a name="operator"></a><a name="operator_add"></a>Operator +
 
 Berechnet die komponentenbezogene Summe der angegebenen Argumente.
 
@@ -120,7 +120,7 @@ Eines der hinzuzufügenden Argumente.
 
 Die komponentenbezogene Summe der angegebenen Argumente.
 
-## <a name="operator-"></a><a name="operator-"></a>Betreiber-
+## <a name="operator-"></a><a name="operator-"></a>KOM
 
 Berechnet die Differenz zwischen den angegebenen Argumenten pro Komponente.
 
@@ -165,7 +165,7 @@ Das zu subtrahierende Argument.
 
 Die Differenz zwischen den angegebenen Argumenten pro Komponente.
 
-## <a name="operator"></a><a name="operator_star"></a>Operator*
+## <a name="operator"></a><a name="operator_star"></a>KOM
 
 Berechnet das komponentenbezogene Produkt der angegebenen Argumente.
 
@@ -202,7 +202,7 @@ Eines der zu multiplizierenden Tupel.
 
 Das komponentenbezogene Produkt der angegebenen Argumente.
 
-## <a name="operator"></a><a name="operator_div"></a>Bediener/
+## <a name="operator"></a><a name="operator_div"></a>KOM
 
 Berechnet den komponentenbezogenen Quotienten der angegebenen Argumente.
 
@@ -239,7 +239,7 @@ Das Tupel für die Division.
 
 Der komponentenbezogene Quotient der angegebenen Argumente.
 
-## <a name="operator"></a><a name="operator_mod"></a>Betreiber%
+## <a name="operator"></a><a name="operator_mod"></a>KOM
 
 Berechnet den Modul des angegebenen ersten Arguments dividiert durch das zweite angegebene Argument.
 
@@ -278,4 +278,4 @@ Das Ergebnis des ersten angegebenen Arguments ergibt das zweite angegebene Argum
 
 ## <a name="see-also"></a>Siehe auch
 
-[Concurrency Namespace](concurrency-namespace-cpp-amp.md)
+[Parallelitäts Namespace](concurrency-namespace-cpp-amp.md)

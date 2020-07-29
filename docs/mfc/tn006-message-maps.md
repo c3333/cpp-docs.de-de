@@ -19,18 +19,18 @@ helpviewer_keywords:
 - ON_COMMAND_EX macro [MFC]
 - message maps [MFC], Windows messaging
 ms.assetid: af4b6794-4b40-4f1e-ad41-603c3b7409bb
-ms.openlocfilehash: 489db046910cc4b44e381b3f9056cfe8f8b7ccfa
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 6b387b851f5a76cd0d11957a87e57307d624759e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69511115"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228530"
 ---
 # <a name="tn006-message-maps"></a>TN006: Meldungszuordnungen
 
 In diesem Hinweis wird die MFC-Nachrichten Zuordnungs Funktion beschrieben.
 
-## <a name="the-problem"></a>Das Problem
+## <a name="the-problem"></a>Problemstellung
 
 Microsoft Windows implementiert virtuelle Funktionen in Fenster Klassen, die seine Messaging Funktion verwenden. Aufgrund der großen Anzahl von Nachrichten würde das Bereitstellen einer separaten virtuellen Funktion für jede Windows-Nachricht eine sehr große Vtable-Tabelle erstellen.
 
@@ -38,17 +38,17 @@ Da sich die Anzahl der System definierten Windows-Meldungen im Laufe der Zeit ä
 
 ## <a name="overview"></a>Übersicht
 
-MFC stellt eine Alternative zu der Switch-Anweisung dar, die in herkömmlichen Windows-basierten Programmen verwendet wurde, um an ein Fenster gesendete Nachrichten zu verarbeiten. Eine Zuordnung von Nachrichten zu Methoden kann so definiert werden, dass die entsprechende Methode automatisch aufgerufen wird, wenn eine Nachricht von einem Fenster empfangen wird. Diese Nachrichten Zuordnungs Funktion ist so konzipiert, dass Sie virtuellen Funktionen ähnelt, bietet jedoch zusätzliche C++ Vorteile, die mit virtuellen Funktionen nicht möglich sind.
+MFC stellt eine Alternative zu der Switch-Anweisung dar, die in herkömmlichen Windows-basierten Programmen verwendet wurde, um an ein Fenster gesendete Nachrichten zu verarbeiten. Eine Zuordnung von Nachrichten zu Methoden kann so definiert werden, dass die entsprechende Methode automatisch aufgerufen wird, wenn eine Nachricht von einem Fenster empfangen wird. Diese Nachrichten Zuordnungs Funktion ist so konzipiert, dass Sie virtuellen Funktionen ähnelt, bietet jedoch zusätzliche Vorteile, die mit C++ Virtual Functions nicht möglich sind.
 
 ## <a name="defining-a-message-map"></a>Definieren einer Meldungs Zuordnung
 
-Das [DECLARE_MESSAGE_MAP](reference/message-map-macros-mfc.md#declare_message_map) -Makro deklariert drei Elemente für eine Klasse.
+Das [DECLARE_MESSAGE_MAP](reference/message-map-macros-mfc.md#declare_message_map) -Makro deklariert drei Member für eine Klasse.
 
-- Ein privates Array von AFX_MSGMAP_ENTRY-Einträgen namens *_messageEntries*.
+- Ein privates Array von AFX_MSGMAP_ENTRY Einträgen, die *_messageEntries*genannt werden.
 
-- Eine geschützte AFX_MSGMAP-Struktur namens " *messagemap* ", die auf das *_messageEntries* -Array verweist.
+- Eine geschützte AFX_MSGMAP Struktur namens " *messagemap* ", die auf das *_messageEntries* Array zeigt.
 
-- Eine geschützte virtuelle Funktion mit `GetMessageMap` dem Namen, die die Adresse von *messagemap*zurückgibt.
+- Eine geschützte virtuelle Funktion `GetMessageMap` mit dem Namen, die die Adresse von *messagemap*zurückgibt.
 
 Dieses Makro sollte in der Deklaration einer beliebigen Klasse mithilfe von Meldungs Zuordnungen abgelegt werden. Gemäß der Konvention befindet er sich am Ende der Klassen Deklaration. Beispiel:
 
@@ -68,16 +68,16 @@ protected:
 
 Dies ist das Format, das von AppWizard und ClassWizard bei der Erstellung neuer Klassen generiert wird. Die Klammern//{{und//}} sind für den Klassen-Assistenten erforderlich.
 
-Die Tabelle der Meldungs Zuordnung wird mithilfe einer Reihe von Makros definiert, die zu Meldungs Zuordnungs Einträgen erweitert werden. Eine Tabelle beginnt mit einem [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) -Makro-Befehl, der die von dieser Meldungs Zuordnung behandelte Klasse und die übergeordnete Klasse definiert, an die unbehandelte Nachrichten übermittelt werden. Die Tabelle endet mit dem [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map) -Makro-Befehl.
+Die Tabelle der Meldungs Zuordnung wird mithilfe einer Reihe von Makros definiert, die zu Meldungs Zuordnungs Einträgen erweitert werden. Eine Tabelle beginnt mit einem [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) Makro-Befehl, der die von dieser Meldungs Zuordnung behandelte Klasse definiert, und die übergeordnete Klasse, an die nicht behandelte Nachrichten übermittelt werden. Die Tabelle endet mit dem [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map) -Makro-Befehl.
 
 Zwischen diesen beiden Makro aufrufen handelt es sich um einen Eintrag für jede Nachricht, die von dieser Meldungs Zuordnung behandelt werden soll. Jede standardmäßige Windows-Nachricht verfügt über ein Makro der Form ON_WM_*MESSAGE_NAME* , die einen Eintrag für diese Nachricht generiert.
 
-Eine Standard Funktions Signatur wurde definiert, um die Parameter der einzelnen Windows-Meldungen zu entpacken und Typsicherheit bereitzustellen. Diese Signaturen befinden sich möglicherweise in der Datei "AFXWIN. h" in der Deklaration von [CWnd](../mfc/reference/cwnd-class.md). Jeder ist mit dem Schlüsselwort **afx_msg** gekennzeichnet, um eine einfache Identifikation zu ermöglichen.
+Eine Standard Funktions Signatur wurde definiert, um die Parameter der einzelnen Windows-Meldungen zu entpacken und Typsicherheit bereitzustellen. Diese Signaturen befinden sich möglicherweise in der Datei "AFXWIN. h" in der Deklaration von [CWnd](../mfc/reference/cwnd-class.md). Jede ist mit dem Schlüsselwort **afx_msg** für die einfache Identifikation gekennzeichnet.
 
 > [!NOTE]
 > Der ClassWizard erfordert, dass Sie das **afx_msg** -Schlüsselwort in den Deklarationen der Message Map-Handler verwenden.
 
-Diese Funktions Signaturen wurden mithilfe einer einfachen Konvention abgeleitet. Der Name der Funktion beginnt immer mit `"On`". Danach folgt der Name der Windows-Meldung mit der Entfernung von "WM_" und dem ersten Buchstaben jedes Worts. Die Reihenfolge der Parameter ist *wParam* , gefolgt `LOWORD`von (*LPARAM*) `HIWORD`und dann (*LPARAM*). Nicht verwendete Parameter werden nicht übermittelt. Alle Handles, die von MFC-Klassen umschließt werden, werden in Zeiger auf die entsprechenden MFC-Objekte konvertiert. Im folgenden Beispiel wird gezeigt, wie die WM_PAINT-Nachricht behandelt und `CMyWnd::OnPaint` die-Funktion aufgerufen wird:
+Diese Funktions Signaturen wurden mithilfe einer einfachen Konvention abgeleitet. Der Name der Funktion beginnt immer mit `"On` ". Danach folgt der Name der Windows-Meldung mit dem "WM_" entfernt und der erste Buchstabe jedes Worts in Großbuchstaben. Die Reihenfolge der Parameter ist *wParam* , gefolgt von `LOWORD` (*LPARAM*) und dann `HIWORD` (*LPARAM*). Nicht verwendete Parameter werden nicht übermittelt. Alle Handles, die von MFC-Klassen umschließt werden, werden in Zeiger auf die entsprechenden MFC-Objekte konvertiert. Im folgenden Beispiel wird gezeigt, wie die WM_PAINT Nachricht behandelt und bewirkt `CMyWnd::OnPaint` wird, dass die Funktion aufgerufen wird:
 
 ```cpp
 BEGIN_MESSAGE_MAP(CMyWnd, CMyParentWndClass)
@@ -107,7 +107,7 @@ BEGIN_MESSAGE_MAP(CMyWnd, CMyParentWndClass)
 END_MESSAGE_MAP()
 ```
 
-In diesem Beispiel erstellen wir einen Handler für eine benutzerdefinierte Nachricht, die über eine aus der Standard-WM_USER-Basis abgeleitete Windows-Meldungs-ID für benutzerdefinierte Meldungen verfügt. Im folgenden Beispiel wird gezeigt, wie dieser Handler aufgerufen wird:
+In diesem Beispiel erstellen wir einen Handler für eine benutzerdefinierte Nachricht, die über eine aus der Standard WM_USER Basis für benutzerdefinierte Nachrichten abgeleitete Windows-Meldungs-ID verfügt. Im folgenden Beispiel wird gezeigt, wie dieser Handler aufgerufen wird:
 
 ```cpp
 CWnd* pWnd = ...;
@@ -117,7 +117,7 @@ pWnd->SendMessage(WM_MYMESSAGE);
 Der Bereich von benutzerdefinierten Nachrichten, die diesen Ansatz verwenden, muss im Bereich von WM_USER bis 0x7FFF liegen.
 
 > [!NOTE]
-> Der Klassen-Assistent unterstützt nicht die Eingabe von ON_MESSAGE-Handlerroutinen von der ClassWizard-Benutzeroberfläche. Sie müssen Sie manuell über den visuellen C++ Editor eingeben. Der Klassen Assistent analysiert diese Einträge und ermöglicht Ihnen, Sie wie alle anderen Meldungs Zuordnungs Einträge zu durchsuchen.
+> Der Klassen-Assistent unterstützt nicht die Eingabe von ON_MESSAGE Handlerroutinen von der ClassWizard-Benutzeroberfläche. Sie müssen Sie manuell aus dem Visual C++-Editor eingeben. Der Klassen Assistent analysiert diese Einträge und ermöglicht Ihnen, Sie wie alle anderen Meldungs Zuordnungs Einträge zu durchsuchen.
 
 ## <a name="registered-windows-messages"></a>Registrierte Windows-Meldungen
 
@@ -150,27 +150,27 @@ Die registrierte Variablen der Windows-Meldungs-ID (in diesem Beispiel WM_FIND) 
 Der Bereich von benutzerdefinierten Nachrichten, die diesen Ansatz verwenden, liegt im Bereich von 0xc000 bis 0xFFFF.
 
 > [!NOTE]
-> Der Klassen-Assistent unterstützt nicht die Eingabe von ON_REGISTERED_MESSAGE-Handlerroutinen von der ClassWizard-Benutzeroberfläche. Sie müssen Sie manuell aus dem Text-Editor eingeben. Der Klassen Assistent analysiert diese Einträge und ermöglicht Ihnen, Sie wie alle anderen Meldungs Zuordnungs Einträge zu durchsuchen.
+> Der Klassen-Assistent unterstützt nicht die Eingabe von ON_REGISTERED_MESSAGE Handlerroutinen von der ClassWizard-Benutzeroberfläche. Sie müssen Sie manuell aus dem Text-Editor eingeben. Der Klassen Assistent analysiert diese Einträge und ermöglicht Ihnen, Sie wie alle anderen Meldungs Zuordnungs Einträge zu durchsuchen.
 
 ## <a name="command-messages"></a>Befehlsmeldungen
 
-Befehls Meldungen aus Menüs und Acceleratoren werden in Meldungs Zuordnungen mit dem ON_COMMAND-Makro behandelt. Dieses Makro akzeptiert eine Befehls-ID und eine-Methode. Nur die spezifische WM_COMMAND-Nachricht, die einen *wParam* -Wert aufweist, der der angegebenen Befehls-ID entspricht, wird von der im Message Map-Eintrag angegebenen Methode behandelt. Befehls Handler-Member-Funktionen akzeptieren keine Parameter und geben " **void**" zurück. Das-Makro hat die folgende Form:
+Befehls Meldungen aus Menüs und Acceleratoren werden in Meldungs Zuordnungen mit dem ON_COMMAND-Makro behandelt. Dieses Makro akzeptiert eine Befehls-ID und eine-Methode. Nur die spezifische WM_COMMAND Nachricht, die einen *wParam* -Wert aufweist, der der angegebenen Befehls-ID entspricht, wird von der im Message Map-Eintrag angegebenen Methode behandelt. Befehlshandlermember-Funktionen akzeptieren keine Parameter und geben zurück **`void`** . Das-Makro hat die folgende Form:
 
 ```cpp
 ON_COMMAND(id, memberFxn)
 ```
 
-Befehls Aktualisierungs Meldungen werden durch denselben Mechanismus weitergeleitet, verwenden jedoch stattdessen das ON_UPDATE_COMMAND_UI-Makro. Member-funktionsaktualisierungs-Member-Funktionen akzeptieren einen einzelnen Parameter, einen Zeiger auf ein [CCmdUI](../mfc/reference/ccmdui-class.md) -Objekt und geben " **void**" zurück. Das Makro hat das Formular.
+Befehls Aktualisierungs Meldungen werden durch denselben Mechanismus weitergeleitet, verwenden jedoch stattdessen das ON_UPDATE_COMMAND_UI-Makro. Member des Befehls Aktualisierungs Handlers akzeptieren einen einzelnen Parameter, einen Zeiger auf ein [CCmdUI](../mfc/reference/ccmdui-class.md) -Objekt und geben zurück **`void`** . Das Makro hat das Formular.
 
 ```cpp
 ON_UPDATE_COMMAND_UI(id, memberFxn)
 ```
 
-Erweiterte Benutzer können das ON_COMMAND_EX-Makro verwenden, bei dem es sich um eine erweiterte Form von befehlsnachrichten Handlern handelt. Das-Makro stellt eine supermenge der ON_COMMAND-Funktionalität bereit. Erweiterte befehlshandlermember-Funktionen akzeptieren einen einzelnen Parameter, einen **uint** , der die Befehls-ID enthält, und geben einen booleschen Wert zurück. Der Rückgabewert sollte **true** sein, um anzugeben, dass der Befehl behandelt wurde. Andernfalls wird das Routing mit anderen Befehls Ziel Objekten fortgesetzt.
+Erweiterte Benutzer können das ON_COMMAND_EX-Makro verwenden, bei dem es sich um eine erweiterte Form von befehlsnachrichten Handlern handelt. Das-Makro stellt eine supermenge der ON_COMMAND Funktionen bereit. Erweiterte befehlshandlermember-Funktionen akzeptieren einen einzelnen Parameter, einen **uint** , der die Befehls-ID enthält, und geben einen **booleschen**Wert zurück. Der Rückgabewert sollte **true** sein, um anzugeben, dass der Befehl behandelt wurde. Andernfalls wird das Routing mit anderen Befehls Ziel Objekten fortgesetzt.
 
 Beispiele für diese Formen:
 
-- In Resource. h (in der Regel von C++Visual generiert)
+- In Resource. h (in der Regel durch Visual C++ generiert)
 
     ```cpp
     #define    ID_MYCMD      100
@@ -213,16 +213,16 @@ Beispiele für diese Formen:
     }
     ```
 
-Fortgeschrittene Benutzer können mit einem einzigen Befehls Handler eine Reihe von Befehlen behandeln: [ON_COMMAND_RANGE](reference/message-map-macros-mfc.md#on_command_range) oder ON_COMMAND_RANGE_EX. Weitere Informationen zu diesen Makros finden Sie in der Produktdokumentation.
+Erweiterte Benutzer können eine Reihe von Befehlen mithilfe eines einzelnen Befehls Handlers verarbeiten: [ON_COMMAND_RANGE](reference/message-map-macros-mfc.md#on_command_range) oder ON_COMMAND_RANGE_EX. Weitere Informationen zu diesen Makros finden Sie in der Produktdokumentation.
 
 > [!NOTE]
-> Der Klassen-Assistent unterstützt das Erstellen von ON_COMMAND-und ON_UPDATE_COMMAND_UI-Handlern, aber das Erstellen von ON_COMMAND_EX-oder ON_COMMAND_RANGE-Handlern wird nicht Der Klassen-Assistent analysiert jedoch alle vier befehlshandlervarianten und lässt Sie durchsuchen.
+> Der Klassen-Assistent unterstützt das Erstellen von ON_COMMAND-und ON_UPDATE_COMMAND_UI Handlern, aber das Erstellen von ON_COMMAND_EX oder ON_COMMAND_RANGE Handlern wird nicht unterstützt. Der Klassen-Assistent analysiert jedoch alle vier befehlshandlervarianten und lässt Sie durchsuchen.
 
 ## <a name="control-notification-messages"></a>Steuern von Benachrichtigungs Meldungen
 
 Nachrichten, die von untergeordneten Steuerelementen an ein Fenster gesendet werden, haben in Ihrem Meldungs Zuordnungs Eintrag zusätzliche Informationen: die ID des Steuer Elements. Der in einem Meldungs Zuordnungs Eintrag angegebene Nachrichten Handler wird nur aufgerufen, wenn die folgenden Bedingungen zutreffen:
 
-- Der Steuerelement Benachrichtigungs Code (hohes Wort von *LPARAM*), z. b. BN_CLICKED, entspricht dem im Meldungs Zuordnungs Eintrag angegebenen Benachrichtigungs Code.
+- Der Steuerelement Benachrichtigungs Code (hohes Wort von *LPARAM*), wie z. b. BN_CLICKED, entspricht dem im Meldungs Zuordnungs Eintrag angegebenen Benachrichtigungs Code.
 
 - Die Steuerelement-ID (*wParam*) entspricht der im Message-Map-Eintrag angegebenen Steuerelement-ID.
 
@@ -232,14 +232,14 @@ Benutzerdefinierte Steuerelement-Benachrichtigungs Meldungen können mithilfe de
 ON_CONTROL(wNotificationCode, id, memberFxn)
 ```
 
-Für Erweiterte Verwendung [ON_CONTROL_RANGE](reference/message-map-macros-mfc.md#on_control_range) kann verwendet werden, um eine bestimmte Steuerelement Benachrichtigung von einem Bereich von Steuerelementen mit demselben Handler zu verarbeiten.
+Für erweiterte Verwendungs [ON_CONTROL_RANGE](reference/message-map-macros-mfc.md#on_control_range) kann verwendet werden, um eine bestimmte Steuerelement Benachrichtigung von einem Bereich von Steuerelementen mit demselben Handler zu verarbeiten.
 
 > [!NOTE]
-> Der Klassen-Assistent unterstützt nicht das Erstellen eines ON_CONTROL-oder ON_CONTROL_RANGE-Handlers in der Benutzeroberfläche. Sie müssen Sie manuell mit dem Text-Editor eingeben. Der Klassen-Assistent analysiert diese Einträge und ermöglicht Ihnen, Sie wie alle anderen Zuordnungs Einträge in der Nachricht zu durchsuchen.
+> Der Klassen-Assistent unterstützt nicht das Erstellen eines ON_CONTROL oder ON_CONTROL_RANGE Handlers in der Benutzeroberfläche. Sie müssen Sie manuell mit dem Text-Editor eingeben. Der Klassen-Assistent analysiert diese Einträge und ermöglicht Ihnen, Sie wie alle anderen Zuordnungs Einträge in der Nachricht zu durchsuchen.
 
 Die allgemeinen Windows-Steuerelemente verwenden die leistungsfähigere [WM_NOTIFY](/windows/win32/controls/wm-notify) für komplexe Steuerelement Benachrichtigungen. Diese MFC-Version bietet direkte Unterstützung für diese neue Nachricht mithilfe der ON_NOTIFY-und ON_NOTIFY_RANGE-Makros. Weitere Informationen zu diesen Makros finden Sie in der Produktdokumentation.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Technische Hinweise – nach Nummern geordnet](../mfc/technical-notes-by-number.md)<br/>
-[Technische Hinweise – nach Kategorien geordnet](../mfc/technical-notes-by-category.md)
+[Technische Hinweise nach Zahl](../mfc/technical-notes-by-number.md)<br/>
+[Technische Hinweise nach Kategorie](../mfc/technical-notes-by-category.md)

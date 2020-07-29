@@ -6,12 +6,12 @@ helpviewer_keywords:
 - rebar controls [MFC], CReBarCtrl class [MFC]
 - GetReBarCtrl class [MFC]
 ms.assetid: 7f9c1d7e-5d5f-4956-843c-69ed3df688d0
-ms.openlocfilehash: 05decc095e43426044c4487b9aca05268642f915
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: d58efa3c0dfb888f0802a84b11ec597dd1267de6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84620458"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228634"
 ---
 # <a name="crebar-vs-crebarctrl"></a>CReBar im Vergleich zu CReBarCtrl
 
@@ -24,7 +24,7 @@ Visual C++ bietet zwei Möglichkeiten, das allgemeine Steuerelement der Grund Le
 - Erstellen Sie die Grund Leiste mithilfe `CReBar` von, und rufen Sie dann mit " [Anbar:: GetReBarCtrl](reference/crebar-class.md#getrebarctrl) " Zugriff auf die Element `CReBarCtrl` Funktionen auf.
 
     > [!NOTE]
-    >  `CReBar::GetReBarCtrl`ist eine Inline-Member-Funktion, die den Zeiger des Grund leisten-Objekts in **diesen** Zeiger umwandelt. Dies bedeutet, dass der Funktionsaufruf zur Laufzeit keinen Overhead hat.
+    >  `CReBar::GetReBarCtrl`ist eine Inline Member-Funktion, die den **`this`** Zeiger des Grund leisten-Objekts umwandelt. Dies bedeutet, dass der Funktionsaufruf zur Laufzeit keinen Overhead hat.
 
 - Erstellen Sie die Info Leiste mit dem Konstruktor von " [krebarctrl](reference/crebarctrl-class.md)".
 

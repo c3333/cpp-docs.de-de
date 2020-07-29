@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - export attribute
 ms.assetid: 70b3e848-fad6-4e09-8c72-be60ca72a4df
-ms.openlocfilehash: 6264db037069f5fc6b858bdd466ce6c68b814a84
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ae7c426466bfaf4a325ba1cafe30c8ca74f8ef95
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167043"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228075"
 ---
 # <a name="export"></a>Export
 
@@ -25,17 +25,17 @@ Bewirkt, dass eine Datenstruktur in der IDL-Datei platziert wird.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Export** C++ -Attribut bewirkt, dass eine Datenstruktur in der IDL-Datei platziert und dann in der Typbibliothek in einem Binär kompatiblen Format verfügbar ist, das Sie für die Verwendung in einer beliebigen Sprache verfügbar macht.
+Das **`[export]`** C++-Attribut bewirkt, dass eine Datenstruktur in der IDL-Datei platziert wird und in der Typbibliothek in einem Binär kompatiblen Format verfügbar ist, das Sie für die Verwendung in einer beliebigen Sprache verfügbar macht.
 
-Das **Export** Attribut kann nicht auf eine Klasse angewendet werden, auch wenn die Klasse nur öffentliche Member hat (entspricht einer **Struktur**).
+Das-Attribut kann nicht **`[export]`** auf eine Klasse angewendet werden, auch wenn die-Klasse nur öffentliche Member (die Entsprechung eines **`struct`** ) aufweist.
 
-Wenn Sie eine **unbenannte** Enumeration oder **Struktur**exportieren, erhält Sie einen Namen, der mit **__unnamed**<em>x</em>beginnt, wobei *x* eine sequenzielle Zahl ist.
+Wenn Sie ein unbenanntes **`enum`** oder exportieren **`struct`** , erhält es einen Namen, der mit **__unnamed**<em>x</em>beginnt, wobei *x* eine sequenzielle Zahl ist.
 
-Die für den Export gültigen Typedefs sind Basis Typen, Strukturen, Unions, Enumerationstypen oder Typbezeichner.  Weitere Informationen finden Sie unter [typedef](/windows/win32/Midl/typedef) .
+Die für den Export gültigen Typedefs sind Basis Typen, Strukturen, Unions, Enumerationstypen oder Typbezeichner.  Weitere Informationen finden Sie unter [`typedef`](/windows/win32/Midl/typedef) .
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie das **Export** -Attribut verwendet wird:
+Der folgende Code zeigt, wie das- **`[export]`** Attribut verwendet wird:
 
 ```cpp
 // cpp_attr_ref_export.cpp
@@ -54,14 +54,14 @@ struct MyStruct {
 
 |||
 |-|-|
-|**Betrifft**|**Union**, **typedef**, **enum**Aufzählung, **Struktur**oder **Schnittstelle**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**`union`**, **`typedef`** , **`enum`** , **`struct`** oder**`interface`**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Compilerattribute](compiler-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

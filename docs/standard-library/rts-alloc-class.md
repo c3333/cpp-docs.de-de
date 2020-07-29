@@ -12,16 +12,16 @@ helpviewer_keywords:
 - stdext::rts_alloc [C++], deallocate
 - stdext::rts_alloc [C++], equals
 ms.assetid: ab41bffa-83d1-4a1c-87b9-5707d516931f
-ms.openlocfilehash: 6ed84d906944a09fa355e281640e9480f3173554
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f422b171c14695a1207a30419a10d50cdfb5adf0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373428"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228127"
 ---
 # <a name="rts_alloc-class"></a>rts_alloc-Klasse
 
-Die rts_alloc-Klassenvorlage beschreibt einen [Filter,](../standard-library/allocators-header.md) der ein Array von Cacheinstanzen enthält, und bestimmt, welche Instanz zur Laufzeit anstelle von Kompilierungszeiten für die Zuweisung und Deallation verwendet werden soll.
+Die Rts_alloc-Klassen Vorlage beschreibt einen [Filter](../standard-library/allocators-header.md) , der ein Array von Cache Instanzen enthält und bestimmt, welche Instanz für die Zuordnung und Aufhebung der Zuordnung zur Laufzeit anstatt zur Kompilierzeit verwendet werden soll.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,29 +32,29 @@ class rts_alloc
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*Cache*|Der Typ der Cache-Instanzen, die im Array enthalten sind. Dieser kann eine [cache_chunklist-Klasse](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klassenvorlage enthält mehrere Blockzuweisungsinstanzen und bestimmt, welche Instanz zur Laufzeit anstelle von Kompilierungszeiten für die Zuweisung oder Deallokation verwendet werden soll. Sie wird mit Compilern verwendet, die keine Neubindungen kompilieren können.
+Diese Klassen Vorlage enthält mehrere Block Belegungs Instanzen und bestimmt, welche Instanz zur Laufzeit anstelle der Kompilierzeit für die Zuordnung oder Aufhebung der Zuordnung verwendet werden soll. Sie wird mit Compilern verwendet, die keine Neubindungen kompilieren können.
 
 ### <a name="member-functions"></a>Memberfunktionen
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
-|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[allocate](#allocate)|Belegt einen Speicherblock.|
+|[DEALLOCATE](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="rts_allocallocate"></a><a name="allocate"></a>rts_alloc::zuweisen
+## <a name="rts_allocallocate"></a><a name="allocate"></a>Rts_alloc:: zuordnen
 
 Belegt einen Speicherblock.
 
@@ -64,7 +64,7 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
@@ -74,9 +74,9 @@ Zeiger auf das zugewiesene Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion `caches[_IDX].allocate(count)`gibt zurück, wobei der Index `_IDX` durch die *angeforderte*Blockgröße bestimmt `operator new(count)`wird, oder, wenn die *Anzahl* zu groß ist, gibt sie zurück. `cache`, das das Cache-Objekt darstellt.
+Die Member-Funktion gibt zurück `caches[_IDX].allocate(count)` , wobei der Index `_IDX` durch die angeforderte Block *count*Größe bestimmt wird, oder wenn *count* zu groß ist, wird zurückgegeben `operator new(count)` . `cache`, das das Cache-Objekt darstellt.
 
-## <a name="rts_allocdeallocate"></a><a name="deallocate"></a>rts_alloc::deallocate
+## <a name="rts_allocdeallocate"></a><a name="deallocate"></a>Rts_alloc::d ezuordnen
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -86,16 +86,16 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
-|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
+|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion `caches[_IDX].deallocate(ptr, count)`ruft auf `_IDX` , wobei der Index durch die *angeforderte*Blockgröße `operator delete(ptr)`bestimmt wird, oder, wenn die *Anzahl* zu groß ist, gibt sie zurück.
+Die Member-Funktion ruft `caches[_IDX].deallocate(ptr, count)` auf, wobei der Index `_IDX` durch die angeforderte Block *count*Größe bestimmt wird, oder wenn *count* zu groß ist, wird zurückgegeben `operator delete(ptr)` .
 
-## <a name="rts_allocequals"></a><a name="equals"></a>rts_alloc::gleich
+## <a name="rts_allocequals"></a><a name="equals"></a>Rts_alloc:: ist Gleichheits
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -105,16 +105,16 @@ bool equals(const sync<_Cache>& _Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*_Cache*|Das Cache-Objekt, das dem Filter zugeordnet ist.|
 |*_Other*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
 ### <a name="remarks"></a>Bemerkungen
 
-**wahr,** wenn `caches[0].equals(other.caches[0])`das Ergebnis von ; andernfalls **false**. `caches` stellt das Array von Cache-Objekten dar.
+**`true`**, wenn das Ergebnis von `caches[0].equals(other.caches[0])` ist, andernfalls **`false`** . `caches` stellt das Array von Cache-Objekten dar.
 
 ## <a name="see-also"></a>Siehe auch
 
 [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl)\
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

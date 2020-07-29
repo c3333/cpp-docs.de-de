@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serialization [MFC], collection classes
 - collection classes [MFC], deriving from nontemplate
 ms.assetid: 7230b2db-4283-4083-b098-eb231bf5b89e
-ms.openlocfilehash: 6ee4603f03ef8a95c218b0fe040e9606aab99ebb
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 7e6b0a4181607feaf6e92f5d92d95cb055761aa4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84620010"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228621"
 ---
 # <a name="how-to-make-a-type-safe-collection"></a>Gewusst wie: Erstellen einer typsicheren Auflistung
 
@@ -63,7 +63,7 @@ Die überladenen einfügeoperatoren für den `CArchive` Rückruf `CObject::Seria
 
 ## <a name="using-nontemplate-collection-classes"></a><a name="_core_using_nontemplate_collection_classes"></a>Verwenden von nicht Vorlagen Auflistungs Klassen
 
-MFC unterstützt auch die Auflistungs Klassen, die mit MFC Version 1,0 eingeführt wurden. Diese Klassen basieren nicht auf Vorlagen. Sie können verwendet werden, um Daten der unterstützten Typen `CObject*` , `UINT` , `DWORD` und zu enthalten `CString` . Sie können diese vordefinierten Auflistungen (z. b.) verwenden, um Auflistungen `CObList` aller von abgeleiteten Objekte aufzunehmen `CObject` . MFC bietet auch andere vordefinierte Auflistungen, die primitive Typen wie `UINT` und void-Zeiger ( `void` *) enthalten. Im Allgemeinen ist es jedoch oft hilfreich, eigene typsichere Auflistungen zu definieren, die Objekte einer spezifischeren Klasse und ihrer Ableitungen enthalten. Beachten Sie, dass die Verwendung der Auflistungs Klassen, die nicht auf Vorlagen basieren, mehr Arbeit als die Verwendung der Vorlagen basierten Klassen ist.
+MFC unterstützt auch die Auflistungs Klassen, die mit MFC Version 1,0 eingeführt wurden. Diese Klassen basieren nicht auf Vorlagen. Sie können verwendet werden, um Daten der unterstützten Typen `CObject*` , `UINT` , `DWORD` und zu enthalten `CString` . Sie können diese vordefinierten Auflistungen (z. b.) verwenden, um Auflistungen `CObList` aller von abgeleiteten Objekte aufzunehmen `CObject` . MFC bietet auch andere vordefinierte Auflistungen, die primitive Typen wie `UINT` und void-Zeiger ( **`void*`** ) enthalten. Im Allgemeinen ist es jedoch oft hilfreich, eigene typsichere Auflistungen zu definieren, die Objekte einer spezifischeren Klasse und ihrer Ableitungen enthalten. Beachten Sie, dass die Verwendung der Auflistungs Klassen, die nicht auf Vorlagen basieren, mehr Arbeit als die Verwendung der Vorlagen basierten Klassen ist.
 
 Es gibt zwei Möglichkeiten, typsichere Auflistungen mit den nicht Vorlagen Auflistungen zu erstellen:
 

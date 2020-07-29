@@ -4,20 +4,20 @@ ms.date: 11/04/2016
 f1_keywords:
 - ostream/std::operator&lt;&lt;
 ms.assetid: 9282a62e-a3d1-4371-a284-fbc9515bb9a2
-ms.openlocfilehash: d8b6f4e0f0b5bca41f8d895415fff4003231ad1d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3851003500d37a11a88736cf611b69a2d6b1813c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373606"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228153"
 ---
 # <a name="ltostreamgt-operators"></a>&lt;ostream&gt;-Operatoren
 
 ||
 |-|
-|[Operator&lt;&lt;](#op_lt_lt)|
+|[KOM&lt;&lt;](#op_lt_lt)|
 
-## <a name="operatorltlt"></a><a name="op_lt_lt"></a>Operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a>KOM&lt;&lt;
 
 Schreibt verschiedene Typen in den Stream.
 
@@ -87,15 +87,15 @@ Ein Zeichen.
 Der Elementtyp.
 
 *_Ostr*\
-Ein `basic_ostream` -Objekt.
+Ein `basic_ostream`-Objekt.
 
-*Str*\
+*SRT*\
 Eine Zeichenfolge.
 
 *_Tr*\
 Zeichenmerkmale.
 
-*Val*\
+*ster*\
 Der Typ
 
 ### <a name="return-value"></a>Rückgabewert
@@ -104,7 +104,7 @@ Der Datenstrom.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `basic_ostream`-Klasse definiert außerdem mehrere Einfügeoperatoren. Weitere Informationen finden Sie [unter&lt;basic_ostream::operator](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt).
+Die `basic_ostream`-Klasse definiert außerdem mehrere Einfügeoperatoren. Weitere Informationen finden Sie unter [basic_ostream:: Operator &lt; &lt; ](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt).
 
 Die Vorlagenfunktion
 
@@ -115,7 +115,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```
 
-bestimmt die Länge `traits_type::`N`str`= [Länge](../standard-library/char-traits-struct.md#length)( ) der Sequenz, die bei *str*beginnt, und fügt die Sequenz ein. Wenn N < `_Ostr.`[width](../standard-library/ios-base-class.md#width), fügt die Funktion auch eine Wiederholung von `_Ostr.width`-N-Füllzeichen ein. Die Wiederholung geht der Sequenz`_Ostr`voran, wenn ( . [flags](../standard-library/ios-base-class.md#flags) &  Flags`adjustfield` != [links](../standard-library/ios-functions.md#left). Andernfalls folgt die Wiederholung der Sequenz. Die Funktion gibt *_Ostr*zurück.
+bestimmt die Länge N = `traits_type::` [length](../standard-library/char-traits-struct.md#length)( `str` ) der Sequenz, beginnend bei *Str*, und fügt die Sequenz ein. Wenn N < `_Ostr.`[width](../standard-library/ios-base-class.md#width), fügt die Funktion auch eine Wiederholung von `_Ostr.width`-N-Füllzeichen ein. Die Wiederholung geht der Sequenz voraus, wenn ( `_Ostr` . [flags](../standard-library/ios-base-class.md#flags)  &  Flags `adjustfield` ! = [left](../standard-library/ios-functions.md#left). Andernfalls folgt die Wiederholung der Sequenz. Die Funktion gibt *_Ostr*zurück.
 
 Die Vorlagenfunktion
 
@@ -126,7 +126,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     Elem _Ch);
 ```
 
-fügt das Element `_Ch` ein. Wenn 1 < `_Ostr.width`, dann fügt die Funktion auch eine Wiederholung von `_Ostr.width`-1 Füllzeichen hinzu. Die Wiederholung geht der Sequenz voraus, wenn ( `_Ostr.flags & adjustfield != left`. Andernfalls folgt die Wiederholung der Sequenz. Es gibt *_Ostr*zurück.
+fügt das Element `_Ch` ein. Wenn 1 < `_Ostr.width`, dann fügt die Funktion auch eine Wiederholung von `_Ostr.width`-1 Füllzeichen hinzu. Die Wiederholung geht der Sequenz voraus, wenn ( `_Ostr.flags & adjustfield != left`. Andernfalls folgt die Wiederholung der Sequenz. *_Ostr*wird zurückgegeben.
 
 Die Vorlagenfunktion
 
@@ -146,7 +146,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     const Elem *str);
 ```
 
-außer, dass jedes Element *_Ch* der Sequenz, die an `_Ostr.` *str* beginnt, durch Aufrufen von [put](../standard-library/basic-ostream-class.md#put)(`_Ostr.`[widen](../standard-library/basic-ios-class.md#widen)(`_Ch`)) in ein Objekt des Typs `Elem` konvertiert wird.
+mit dem Unterschied, dass jedes Element *_Ch* der Sequenz, beginnend bei *Str* , in ein Objekt vom Typ konvertiert wird, `Elem` indem `_Ostr.` [Put](../standard-library/basic-ostream-class.md#put)(- `_Ostr.` [Erweiterung](../standard-library/basic-ios-class.md#widen)( `_Ch` )) aufgerufen wird.
 
 Die Vorlagenfunktion
 
@@ -166,7 +166,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     Elem _Ch);
 ```
 
-außer, dass *_Ch* durch Aufrufen `Elem` `_Ostr.put`( `_Ostr.widen`( `_Ch`)) in ein Objekt des Typs konvertiert wird.
+mit der Ausnahme, dass *_Ch* in ein Objekt vom Typ konvertiert wird, `Elem` indem aufgerufen wird `_Ostr.put( _Ostr.widen( _Ch ))` .
 
 Die Vorlagenfunktion
 
@@ -206,7 +206,7 @@ basic_ostream<Elem, _Tr>& operator<<(
     Elem _Ch);
 ```
 
-(Es muss *_Ch* nicht erweitern, bevor es eingefügt wird.)
+(Die *_Ch* muss vor dem Einfügen nicht erweitert werden.)
 
 Die Vorlagenfunktion
 
@@ -217,7 +217,7 @@ basic_ostream<char, _Tr>& operator<<(
     const signed char *str);
 ```
 
-gibt `_Ostr` << `const char *` `str`zurück( ) .
+`_Ostr << (const char *)str` wird zurückgegeben.
 
 Die Vorlagenfunktion
 
@@ -228,7 +228,7 @@ basic_ostream<char, _Tr>& operator<<(
     signed char _Ch);
 ```
 
-gibt `_Ostr` << `char` `_Ch`zurück( ) .
+`_Ostr << (char)_Ch` wird zurückgegeben.
 
 Die Vorlagenfunktion:
 
@@ -239,7 +239,7 @@ basic_ostream<char, _Tr>& operator<<(
     const unsigned char *str);
 ```
 
-gibt `_Ostr` << `const char *` `str`zurück( ) .
+`_Ostr << (const char *)str` wird zurückgegeben.
 
 Die Vorlagenfunktion:
 
@@ -250,7 +250,7 @@ basic_ostream<char, _Tr>& operator<<(
     unsigned char _Ch);
 ```
 
-gibt `_Ostr` << `char` `_Ch`zurück( ) .
+`_Ostr << (char)_Ch` wird zurückgegeben.
 
 Die Vorlagenfunktion:
 
@@ -261,7 +261,7 @@ basic_ostream<_Elem, _Tr>& operator<<(
     T val);
 ```
 
-gibt `_Ostr` `<<` `val` zurück (und konvertiert einen [RValue-Verweis](../cpp/rvalue-reference-declarator-amp-amp.md) zu `_Ostr` zu einem lvalue im Prozess).
+gibt `_Ostr << val` zurück (und konvertiert einen [RValue-Verweis](../cpp/rvalue-reference-declarator-amp-amp.md) zu `_Ostr` zu einem lvalue im Prozess).
 
 ### <a name="example"></a>Beispiel
 

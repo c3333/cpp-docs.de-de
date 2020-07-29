@@ -8,38 +8,38 @@ helpviewer_keywords:
 - collection classes [MFC], arrays
 - classes [MFC], array
 ms.assetid: fdeabf95-2fe7-43a8-8f88-d954133caf52
-ms.openlocfilehash: 309567f897bf5ca941852b433cdee0e8e0d44b3c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cd297752728f54de2b2ff50877954440cbe70ff9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392634"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228569"
 ---
 # <a name="ready-to-use-array-classes"></a>Klassen für gebrauchsfertige Arrays
 
-Die folgenden Klassen sind Klassen kann jetzt zu verwendende Arrays.
+Die folgenden Klassen sind gebrauchsfertige Array Klassen.
 
 [CByteArray](../mfc/reference/cbytearray-class.md)<br/>
-Speichert die Elemente des Typs **BYTE** in einem Array.
+Speichert Elemente vom Typ **Byte** in einem Array.
 
 [CDWordArray](../mfc/reference/cdwordarray-class.md)<br/>
-Speichert die Elemente des Typs **DWORD** in einem Array.
+Speichert Elemente vom Typ **DWORD** in einem Array.
 
 [CObArray](../mfc/reference/cobarray-class.md)<br/>
-Speichert Verweise auf Objekte der Klasse `CObject` oder auf Objekte von abgeleiteten Klassen `CObject` in einem Array.
+Speichert Zeiger auf Objekte der-Klasse `CObject` oder auf Objekte von Klassen, die von `CObject` in einem Array abgeleitet werden.
 
 [CPtrArray](../mfc/reference/cptrarray-class.md)<br/>
-Speichert Zeiger zu **"void"** (generische Zeiger) in einem Array.
+Speichert Zeiger auf **`void`** (generische Zeiger) in einem Array.
 
 [CUIntArray](../mfc/reference/cuintarray-class.md)<br/>
-Speichert die Elemente des Typs **UINT** in einem Array.
+Speichert Elemente vom Typ **uint** in einem Array.
 
 [CWordArray](../mfc/reference/cwordarray-class.md)<br/>
-Speichert die Elemente des Typs **WORD** in einem Array.
+Speichert Elemente des Typs **Word** in einem Array.
 
 [CStringArray](../mfc/reference/cstringarray-class.md)<br/>
-Speichert `CString` Objekte in einem Array.
+Speichert- `CString` Objekte in einem Array.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassenübersicht](../mfc/class-library-overview.md)

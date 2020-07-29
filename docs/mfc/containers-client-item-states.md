@@ -7,12 +7,12 @@ helpviewer_keywords:
 - lifetime, lifetime states and OLE container client items
 - client items and OLE containers
 ms.assetid: e7021caa-bd07-4adb-976e-f5f3d025bc53
-ms.openlocfilehash: 927211ccec35d8ec26e2f76b971c59b80248ab96
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 660b544a0f061ae2e4435777cdd934367f2e7652
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84625993"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228647"
 ---
 # <a name="containers-client-item-states"></a>Container: Client-Element-Zustände
 
@@ -30,7 +30,7 @@ Ein Client Element durchläuft mehrere Zustände, wenn es erstellt, aktiviert, g
 
 - *COleClientItem:: activeuistate*
 
-Im leeren Zustand ist ein Client Element noch nicht vollständig ein Element. Es wurde Arbeitsspeicher zugeordnet, aber noch nicht mit den Daten des OLE-Elements initialisiert. Dies ist der Zustand, in dem sich ein Client Element befindet, wenn es durch einen **New-New** -Befehl erstellt, aber noch nicht im zweiten Schritt der typischen zweistufigen Erstellung durchlaufen wurde.
+Im leeren Zustand ist ein Client Element noch nicht vollständig ein Element. Es wurde Arbeitsspeicher zugeordnet, aber noch nicht mit den Daten des OLE-Elements initialisiert. Dies ist der Zustand, in dem sich ein Client Element befindet, wenn es durch einen-Rückruf erstellt wurde, **`new`** aber noch nicht im zweiten Schritt der typischen zweistufigen Erstellung durchlaufen wurde.
 
 Im zweiten Schritt, der durch einen Rückruf von `COleClientItem::CreateFromFile` oder eine andere `CreateFrom` *xxxx* -Funktion ausgeführt wird, wird das Element vollständig erstellt. Die OLE-Daten (aus einer Datei oder einer anderen Quelle, z. b. der Zwischenablage), wurden dem von `COleClientItem` abgeleiteten Objekt zugeordnet. Nun befindet sich das Element im geladenen Zustand.
 

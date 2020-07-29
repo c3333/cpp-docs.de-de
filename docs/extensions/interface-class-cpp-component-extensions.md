@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interface class keyword
 - interface struct keyword
 ms.assetid: 3ccea701-f50b-4da7-ad6b-f0ee1203e2b9
-ms.openlocfilehash: cb4566a0094db6d9e0cc97d81718a18a6df5cf18
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e7847f71502354189e874d505414b4a45b74ab45
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172164"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228699"
 ---
 # <a name="interface-class--ccli-and-ccx"></a>interface-Klasse (C++/CLI und C++/CX)
 
@@ -32,13 +32,13 @@ name :  inherit_accessbase_interface{};interface_accessinterface structname :  i
 ### <a name="parameters"></a>Parameter
 
 *interface_access*<br/>
-Die Möglichkeit des Zugriffs auf eine Schnittstelle außerhalb der Assembly.  Mögliche Werte sind **public** und **private**.  **private** ist die Standardeinstellung. Geschachtelte Schnittstellen können keinen *interface_access*-Bezeichner haben.
+Die Möglichkeit des Zugriffs auf eine Schnittstelle außerhalb der Assembly.  Mögliche Werte sind **`public`** und **`private`** .  **`private`** der Standardwert ist. Geschachtelte Schnittstellen können keinen *interface_access*-Bezeichner haben.
 
 *name*<br/>
 Der Name der Schnittstelle.
 
 *inherit_access*<br/>
-Die Möglichkeit des Zugriffs auf *base_interface*.  Die einzige zulässige Möglichkeit des Zugriffs auf eine Basisschnittstelle ist **public** (Standardeinstellung).
+Die Möglichkeit des Zugriffs auf *base_interface*.  Die einzige zulässige Barrierefreiheit für eine Basisschnittstelle ist **`public`** (Standard).
 
 *base_interface*<br/>
 (Optional) Eine Basisschnittstelle für die Schnittstelle *name*.
@@ -63,7 +63,7 @@ Informationen zu anderen CLR-Typen finden Sie unter [Klassen und Strukturen](cla
 
 Sie können mit `__is_interface_class(type)` zum Zeitpunkt der Kompilierung ermitteln, ob ein Typ eine Schnittstelle ist. Weitere Informationen finden Sie unter [Compilerunterstützung für Typmerkmale](compiler-support-for-type-traits-cpp-component-extensions.md).
 
-In der Entwicklungsumgebung können Sie F1-Hilfe für diese Schlüsselwörter abrufen, indem Sie das Schlüsselwort hervorheben (z.B. `interface class`) und F1 drücken.
+In der Entwicklungsumgebung können Sie F1-Hilfe zu diesen Schlüsselwörtern aufrufen, indem Sie das-Schlüsselwort (z. b **`interface class`** .) markieren und F1 drücken.
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
@@ -218,6 +218,6 @@ ref struct R : I, J {
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)
