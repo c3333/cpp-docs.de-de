@@ -80,19 +80,19 @@ f1_keywords:
 helpviewer_keywords:
 - CComControlBase class
 ms.assetid: 3d1bf022-acf2-4092-8283-ff8cee6332f3
-ms.openlocfilehash: 15cfa205337248181f02e6a1218d49e75bda58e6
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 6baaad9e3eae077b0ec460ba4e881508245bb894
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81748114"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224317"
 ---
 # <a name="ccomcontrolbase-class"></a>CComControlBase-Klasse
 
 Diese Klasse stellt Methoden zum Erstellen und Verwalten von ATL-Steuerelementen bereit.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -104,111 +104,111 @@ class ATL_NO_VTABLE CComControlBase
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComControlBase::AppearanceType](#appearancetype)|Überschreiben, `m_nAppearance` wenn Ihre Bestandseigenschaft nicht vom Typ **short**ist.|
+|[CComControlBase:: kommancetype](#appearancetype)|Überschreiben Sie, wenn Ihre `m_nAppearance` Aktien Eigenschaft nicht vom Typ ist **`short`** .|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComControlBase::CComControlBase](#ccomcontrolbase)|Der Konstruktor.|
-|[CComControlBase::-CComControlBase](#dtor)|Der Destruktor.|
+|[CComControlBase:: CComControlBase](#ccomcontrolbase)|Der Konstruktor.|
+|[CComControlBase:: ~ CComControlBase](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CComControlBase::ControlQueryInterface](#controlqueryinterface)|Ruft einen Zeiger auf die angeforderte Schnittstelle ab.|
-|[CComControlBase::DoesVerbActivate](#doesverbactivate)|Überprüft, ob der *iVerb-Parameter,* `IOleObjectImpl::DoVerb` der von der Benutzeroberfläche des Steuerelements verwendet wird (*iVerb* entspricht OLEIVERB_UIACTIVATE), die Aktion definiert, die ausgeführt wird, wenn der Benutzer auf das Steuerelement doppelklickt (*iVerb* entspricht OLEIVERB_PRIMARY), das Steuerelement anzeigt (*iVerb* entspricht OLEIVERB_SHOW) oder das Steuerelement aktiviert (*iVerb* entspricht OLEIVERB_INPLACEACTIVATE).|
-|[CComControlBase::DoesVerbUIActivate](#doesverbuiactivate)|Überprüft, ob der von `IOleObjectImpl::DoVerb` der Steuerelement-Benutzeroberfläche verwendete *iVerb-Parameter* dazu führt, dass die Benutzeroberfläche des Steuerelements TRUE aktiviert und zurückgegeben wird.|
-|[CComControlBase::DoVerbProperties](#doverbproperties)|Zeigt die Eigenschaftenseiten des Steuerelements an.|
-|[CComControlBase::FireViewChange](#fireviewchange)|Rufen Sie diese Methode auf, um den Container anzuweisen, das Steuerelement neu zu zeichnen, oder benachrichtigen Sie die registrierten Ratsenken, dass sich die Ansicht des Steuerelements geändert hat.|
-|[CComControlBase::GetAmbientAppearance](#getambientappearance)|Ruft DISPID_AMBIENT_APPEARANCE, die aktuelle Darstellungseinstellung für das Steuerelement ab: 0 für flach und 1 für 3D.|
-|[CComControlBase::GetAmbientAutoClip](#getambientautoclip)|Ruft DISPID_AMBIENT_AUTOCLIP, ein Flag, das angibt, ob der Container das automatische Zuschneiden des Steuerelementanzeigebereichs unterstützt.|
-|[CComControlBase::GetAmbientBackColor](#getambientbackcolor)|Ruft DISPID_AMBIENT_BACKCOLOR, die Umgebungshintergrundfarbe für alle Steuerelemente, die vom Container definiert werden.|
-|[CComControlBase::GetAmbientCharSet](#getambientcharset)|Ruft DISPID_AMBIENT_CHARSET ab, den Umgebungszeichensatz für alle Steuerelemente, der vom Container definiert wird.|
-|[CComControlBase::GetAmbientCodePage](#getambientcodepage)|Ruft DISPID_AMBIENT_CODEPAGE ab, den Umgebungszeichensatz für alle Steuerelemente, der vom Container definiert wird.|
-|[CComControlBase::GetAmbientDisplayAsDefault](#getambientdisplayasdefault)|Ruft DISPID_AMBIENT_DISPLAYASDEFAULT, ein Flag, das TRUE ist, wenn der Container das Steuerelement an dieser Site als Standardschaltfläche markiert hat, und daher sollte sich ein Schaltflächensteuerelement mit einem dickeren Rahmen zeichnen.|
-|[CComControlBase::GetAmbientDisplayName](#getambientdisplayname)|Ruft DISPID_AMBIENT_DISPLAYNAME, den Namen, den der Container dem Steuerelement übermittelt hat.|
-|[CComControlBase::GetAmbientFont](#getambientfont)|Ruft einen Zeiger auf die Umgebungsschnittstelle `IFont` des Containers ab.|
-|[CComControlBase::GetAmbientFontDisp](#getambientfontdisp)|Ruft einen Zeiger auf die Umgebungsdispatchschnittstelle `IFontDisp` des Containers ab.|
-|[CComControlBase::GetAmbientForeColor](#getambientforecolor)|Ruft DISPID_AMBIENT_FORECOLOR, die Umgebungsvordergrundfarbe für alle Steuerelemente, die vom Container definiert werden.|
-|[CComControlBase::GetAmbientLocaleID](#getambientlocaleid)|Ruft DISPID_AMBIENT_LOCALEID, den Bezeichner der vom Container verwendeten Sprache.|
-|[CComControlBase::GetAmbientMessageReflect](#getambientmessagereflect)|Ruft DISPID_AMBIENT_MESSAGEREFLECT, ein Flag ab, das angibt, ob der Container Fensternachrichten (z. B. WM_DRAWITEM) als Ereignisse empfangen möchte.|
-|[CComControlBase::GetAmbientPalette](#getambientpalette)|Ruft DISPID_AMBIENT_PALETTE ab, die für den Zugriff auf die HPALETTE des Containers verwendet wird.|
-|[CComControlBase::GetAmbientProperty](#getambientproperty)|Ruft die von *id*angegebene Containereigenschaft ab.|
-|[CComControlBase::GetAmbientrightToleft](#getambientrighttoleft)|Ruft DISPID_AMBIENT_RIGHTTOLEFT ab, in der der Inhalt vom Container angezeigt wird.|
-|[CComControlBase::GetAmbientScaleUnits](#getambientscaleunits)|Ruft DISPID_AMBIENT_SCALEUNITS, die Umgebungseinheiten des Containers (z. B. Zoll oder Zentimeter) für die Beschriftung von Anzeigen ab.|
-|[CComControlBase::GetAmbientShowGrabHandles](#getambientshowgrabhandles)|Ruft DISPID_AMBIENT_SHOWGRABHANDLES, ein Flag, das angibt, ob der Container dem Steuerelement erlaubt, Greifgriffe für sich selbst anzuzeigen, wenn es aktiv ist.|
-|[CComControlBase::GetAmbientShowHatching](#getambientshowhatching)|Ruft DISPID_AMBIENT_SHOWHATCHING, ein Flag, das angibt, ob der Container es dem Steuerelement ermöglicht, sich selbst mit einem Schraffurmuster anzuzeigen, wenn die Benutzeroberfläche aktiv ist.|
-|[CComControlBase::GetAmbientUnterstütztMnemonics](#getambientsupportsmnemonics)|Ruft DISPID_AMBIENT_SUPPORTSMNEMONICS, ein Flag, das angibt, ob der Container Tastatur-Mnemonics unterstützt.|
-|[CComControlBase::GetAmbientTextAlign](#getambienttextalign)|Ruft DISPID_AMBIENT_TEXTALIGN, die vom Container bevorzugte Textausrichtung ab: 0 für die allgemeine Ausrichtung (Zahlen rechts, Text links), 1 für die linke Ausrichtung, 2 für die Mittlere Ausrichtung und 3 für die rechte Ausrichtung.|
-|[CComControlBase::GetAmbientTopToBottom](#getambienttoptobottom)|Ruft DISPID_AMBIENT_TOPTOBOTTOM ab, in der der Inhalt vom Container angezeigt wird.|
-|[CComControlBase::GetAmbientUIDead](#getambientuidead)|Ruft DISPID_AMBIENT_UIDEAD ein Flag ab, das angibt, ob das Steuerelement auf Benutzeroberflächenaktionen reagieren soll.|
-|[CComControlBase::GetAmbientUserMode](#getambientusermode)|Ruft DISPID_AMBIENT_USERMODE, ein Flag, das angibt, ob sich der Container im Run-Mode (TRUE) oder design-mode (FALSE) befindet.|
-|[CComControlBase::GetDirty](#getdirty)|Gibt den Wert `m_bRequiresSave`des Datenmembers zurück.|
-|[CComControlBase::GetZoomInfo](#getzoominfo)|Ruft die x- und y-Werte des Zählers und Nenners des Zoomfaktors für ein Steuerelement ab, das für die ortsspezifische Bearbeitung aktiviert ist.|
-|[CComControlBase::InplaceActivate](#inplaceactivate)|Bewirkt, dass das Steuerelement vom inaktiven Zustand in den Zustand wechselt, den das Verb in *iVerb* angibt.|
-|[CComControlBase::InternalGetSite](#internalgetsite)|Rufen Sie diese Methode auf, um die Steuerungssite nach einem Zeiger auf die identifizierte Schnittstelle abzufragen.|
-|[CComControlBase::OnDraw](#ondraw)|Überschreiben Sie diese Methode, um das Steuerelement zu zeichnen.|
-|[CComControlBase::OnDrawAdvanced](#ondrawadvanced)|Der `OnDrawAdvanced` Standard vorbereitet einen normalisierten Gerätekontext für das Zeichnen `OnDraw` und ruft dann die Methode der Steuerelementklasse auf.|
-|[CComControlBase::OnKillFocus](#onkillfocus)|Überprüft, ob das Steuerelement aktiv ist und über eine gültige Kontrollsite verfügt, und informiert den Container dann darüber, dass das Steuerelement den Fokus verloren hat.|
-|[CComControlBase::OnMouseActivate](#onmouseactivate)|Überprüft, ob sich die Benutzeroberfläche im Benutzermodus befindet, und aktiviert dann das Steuerelement.|
-|[CComControlBase::OnPaint](#onpaint)|Bereitet den Container für das Malen vor, ruft den Clientbereich `OnDraw` des Steuerelements ab und ruft dann die Methode der Steuerungsklasse auf.|
-|[CComControlBase::OnSetFocus](#onsetfocus)|Überprüft, ob das Steuerelement aktiv ist und über eine gültige Kontrollsite verfügt, und informiert dann den Container, dass das Steuerelement in den Fokus gerückt ist.|
-|[CComControlBase::PreTranslateAccelerator](#pretranslateaccelerator)|Überschreiben Sie diese Methode, um eigene Tastaturbeschleunigerhandler bereitzustellen.|
-|[CComControlBase::SendOnClose](#sendonclose)|Benachrichtigt alle beim Beratungsinhaber registrierten Beratungssenken, dass die Kontrolle geschlossen wurde.|
-|[CComControlBase::SendOnDataChange](#sendondatachange)|Benachrichtigt alle beim Beratungsinhaber registrierten Beratungssenken, dass sich die Kontrolldaten geändert haben.|
-|[CComControlBase::SendOnRename](#sendonrename)|Benachrichtigt alle beim Beraterhalter registrierten Beratungssenken, dass das Steuerelement einen neuen Moniker hat.|
-|[CComControlBase::SendOnSave](#sendonsave)|Benachrichtigt alle beim Beratungsinhaber registrierten Beratungssenken, dass die Steuerung gespeichert wurde.|
-|[CComControlBase::SendOnViewChange](#sendonviewchange)|Benachrichtigt alle registrierten Beratungssenken, dass sich die Ansicht des Steuerelements geändert hat.|
-|[CComControlBase::SetControlFocus](#setcontrolfocus)|Legt den Tastaturfokus auf oder aus dem Steuerelement fest oder entfernt ihn.|
-|[CComControlBase::SetDirty](#setdirty)|Legt den `m_bRequiresSave` Datenmember auf den Wert in *bDirty*fest.|
+|[CComControlBase:: controlqueryinterface](#controlqueryinterface)|Ruft einen Zeiger auf die angeforderte Schnittstelle ab.|
+|[CComControlBase::D oesverbaktivierungs](#doesverbactivate)|Überprüft, ob der von verwendete *iVerb* `IOleObjectImpl::DoVerb` -Parameter entweder die Benutzeroberfläche des Steuer Elements aktiviert (*iVerb* ist OLEIVERB_UIACTIVATE), definiert die Aktion, die ausgeführt wird, wenn der Benutzer auf das Steuerelement doppelklickt (*iVerb* ist OLEIVERB_PRIMARY), zeigt das Steuerelement an (*iVerb* ist OLEIVERB_SHOW) oder aktiviert das Steuerelement (*iVerb* ist mit OLEIVERB_INPLACEACTIVATE).|
+|[CComControlBase::D oesverbuiaktivierungs](#doesverbuiactivate)|Überprüft, ob der von verwendete *iVerb* -Parameter bewirkt, dass `IOleObjectImpl::DoVerb` die Benutzeroberfläche des Steuer Elements aktiviert wird, und gibt true zurück.|
+|[CComControlBase::D overbproperties](#doverbproperties)|Zeigt die Eigenschaften Seiten des Steuer Elements an.|
+|[CComControlBase:: FireViewChange](#fireviewchange)|Aufrufen Sie diese Methode, um dem Container mitzuteilen, dass das Steuerelement neu gezeichnet werden soll, oder die registrierten Ansichts senken, die die Ansicht des Steuer Elements geändert hat.|
+|[CComControlBase:: getambientappearance](#getambientappearance)|Ruft DISPID_AMBIENT_APPEARANCE ab, die aktuelle Darstellungs Einstellung für das-Steuerelement: 0 für Flat und 1 für 3D.|
+|[CComControlBase:: getambientautoclip](#getambientautoclip)|Ruft DISPID_AMBIENT_AUTOCLIP ab, ein Flag, das angibt, ob der Container das automatische Abschneiden des Anzeige Bereichs des Steuer Elements unterstützt.|
+|[CComControlBase:: getambientbackcolor](#getambientbackcolor)|Ruft DISPID_AMBIENT_BACKCOLOR ab, die Umgebungs Hintergrundfarbe für alle Steuerelemente, die durch den Container definiert werden.|
+|[CComControlBase:: getambientcharset](#getambientcharset)|Ruft DISPID_AMBIENT_CHARSET ab, den AMBIENT-Zeichensatz für alle Steuerelemente, die durch den Container definiert werden.|
+|[CComControlBase:: getambientcodepage](#getambientcodepage)|Ruft DISPID_AMBIENT_CODEPAGE ab, den AMBIENT-Zeichensatz für alle Steuerelemente, die durch den Container definiert werden.|
+|[CComControlBase:: GetAmbientDisplayAsDefault](#getambientdisplayasdefault)|Ruft DISPID_AMBIENT_DISPLAYASDEFAULT ab, ein Flag, das true ist, wenn der Container das Steuerelement an dieser Site als Standard Schaltfläche markiert hat und sich ein Schaltflächen-Steuerelement mit einem dickeren Rahmen zeichnen soll.|
+|[CComControlBase:: getambientdisplayname](#getambientdisplayname)|Ruft DISPID_AMBIENT_DISPLAYNAME ab, den Namen, den der Container für das Steuerelement bereitgestellt hat.|
+|[CComControlBase:: getambientfont](#getambientfont)|Ruft einen Zeiger auf die Ambient-Schnittstelle des Containers ab `IFont` .|
+|[CComControlBase:: GetAmbientFontDisp](#getambientfontdisp)|Ruft einen Zeiger auf die Ambient Dispatch-Schnittstelle des Containers ab `IFontDisp` .|
+|[CComControlBase:: getambientforecolor](#getambientforecolor)|Ruft DISPID_AMBIENT_FORECOLOR ab, die Umgebungs Vordergrundfarbe für alle Steuerelemente, die durch den Container definiert werden.|
+|[CComControlBase:: getambientlocaleid](#getambientlocaleid)|Ruft DISPID_AMBIENT_LOCALEID ab, den Bezeichner der vom Container verwendeten Sprache.|
+|[CComControlBase:: getambientmessagereflect](#getambientmessagereflect)|Ruft DISPID_AMBIENT_MESSAGEREFLECT ab, ein Flag, das angibt, ob der Containerfenster Nachrichten (z. b. WM_DRAWITEM) als Ereignisse empfangen möchte.|
+|[CComControlBase:: getambientpalette](#getambientpalette)|Ruft DISPID_AMBIENT_PALETTE ab, die für den Zugriff auf die hpalette des Containers verwendet werden.|
+|[CComControlBase:: getAmbientProperty](#getambientproperty)|Ruft die durch die *ID*angegebene Container Eigenschaft ab.|
+|[CComControlBase:: getambientrighttoleft](#getambientrighttoleft)|Ruft DISPID_AMBIENT_RIGHTTOLEFT ab, die Richtung, in der Inhalt durch den Container angezeigt wird.|
+|[CComControlBase:: getambientscaleunits](#getambientscaleunits)|Ruft DISPID_AMBIENT_SCALEUNITS, die Umgebungs Einheiten des Containers (z. b. Zoll oder Zentimeter) für Beschriftungs Anzeige ab.|
+|[CComControlBase:: getambientshowgrabhandles](#getambientshowgrabhandles)|Ruft DISPID_AMBIENT_SHOWGRABHANDLES ab, ein Flag, das angibt, ob der Container dem Steuerelement ermöglicht, Zieh Punkte für sich selbst anzuzeigen, wenn es aktiv ist.|
+|[CComControlBase:: getambientshowhatching](#getambientshowhatching)|Ruft DISPID_AMBIENT_SHOWHATCHING ab, ein Flag, das angibt, ob der Container dem Steuerelement ermöglicht, sich selbst mit einem Schraffurmuster anzuzeigen, wenn die Benutzeroberfläche aktiv ist.|
+|[CComControlBase:: getambientsupportsmnetmonics](#getambientsupportsmnemonics)|Ruft DISPID_AMBIENT_SUPPORTSMNEMONICS ab, ein Flag, das angibt, ob der Container mnetmonics-Tastatur unterstützt.|
+|[CComControlBase:: getambienttextalign](#getambienttextalign)|Ruft DISPID_AMBIENT_TEXTALIGN, die für den Container bevorzugte Textausrichtung ab: 0 für allgemeine Ausrichtung (Zahlen rechts, Text Links), 1 für linke Ausrichtung, 2 für die Mittelpunkt Ausrichtung und 3 für Rechte Ausrichtung.|
+|[CComControlBase:: getambienttopto Bottom](#getambienttoptobottom)|Ruft DISPID_AMBIENT_TOPTOBOTTOM ab, die Richtung, in der Inhalt durch den Container angezeigt wird.|
+|[CComControlBase:: getambientuidead](#getambientuidead)|Ruft DISPID_AMBIENT_UIDEAD ab, ein Flag, das angibt, ob der Container das Steuerelement auf Aktionen der Benutzeroberfläche reagieren soll.|
+|[CComControlBase:: getambientusermode](#getambientusermode)|Ruft DISPID_AMBIENT_USERMODE ab, ein Flag, das angibt, ob sich der Container im Lauf Modus (true) oder im Entwurfs Modus (false) befindet.|
+|[CComControlBase:: getdirty](#getdirty)|Gibt den Wert des Datenmembers zurück `m_bRequiresSave` .|
+|[CComControlBase:: getzoominfo](#getzoominfo)|Ruft die x-und y-Werte des zähators und des Nenners des Zoom Faktors für ein Steuerelement ab, das für die direkte Bearbeitung aktiviert ist.|
+|[CComControlBase:: inplaceaktivierungs](#inplaceactivate)|Bewirkt, dass das Steuerelement vom inaktiven Zustand in den Zustand übergeht, den das Verb in *iVerb* anzeigt.|
+|[CComControlBase:: internalgetsite](#internalgetsite)|Mit dieser Methode können Sie die Steuerungs Website nach einem Zeiger auf die identifizierte Schnittstelle Abfragen.|
+|[CComControlBase:: OnDraw](#ondraw)|Überschreiben Sie diese Methode zum Zeichnen des Steuer Elements.|
+|[CComControlBase:: OnDrawAdvanced](#ondrawadvanced)|Der Standard `OnDrawAdvanced` bereitet einen normalisierten Gerätekontext für das Zeichnen vor und ruft dann die-Methode der Steuerelement Klasse auf `OnDraw` .|
+|[CComControlBase:: onkillfocus](#onkillfocus)|Überprüft, ob das Steuerelement direkt aktiv ist und über eine gültige Steuerungs Site verfügt, und informiert den Container darüber, dass das Steuerelement den Fokus verloren hat.|
+|[CComControlBase:: onmousaktivierung](#onmouseactivate)|Überprüft, ob sich die Benutzeroberfläche im Benutzermodus befindet, und aktiviert dann das Steuerelement.|
+|[CComControlBase:: OnPaint](#onpaint)|Bereitet den Container für das Zeichnen vor, Ruft den Client Bereich des Steuer Elements ab und ruft dann die-Methode der Steuerelement Klasse auf `OnDraw` .|
+|[CComControlBase:: OnSetFocus](#onsetfocus)|Überprüft, ob das Steuerelement direkt aktiv ist und über eine gültige Steuerungs Site verfügt, und informiert den Container dann, dass das Steuerelement den Fokus erhalten hat.|
+|[CComControlBase::P retranslateaccelerator](#pretranslateaccelerator)|Überschreiben Sie diese Methode, um Ihre eigenen Tastaturtasten Kombinationen bereitzustellen.|
+|[CComControlBase:: sendonclose](#sendonclose)|Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass das Steuerelement geschlossen wurde.|
+|[CComControlBase:: sendondatachange](#sendondatachange)|Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass sich die Steuerungsdaten geändert haben.|
+|[CComControlBase:: sendonrename](#sendonrename)|Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass das Steuerelement über einen neuen Moniker verfügt.|
+|[CComControlBase:: sendonsave](#sendonsave)|Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass das Steuerelement gespeichert wurde.|
+|[CComControlBase:: sendonviewchange](#sendonviewchange)|Benachrichtigt alle registrierten Beratungs senken, dass die Ansicht des Steuer Elements geändert wurde.|
+|[CComControlBase:: setcontrolfocus](#setcontrolfocus)|Legt den Tastaturfokus auf das bzw. aus dem-Steuerelement fest oder entfernt diesen.|
+|[CComControlBase:: SetDirty](#setdirty)|Legt den Datenmember `m_bRequiresSave` auf den Wert in *bdirty*fest.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComControlBase::m_bAutoSize](#m_bautosize)|Das Flag, das angibt, dass das Steuerelement keine andere Größe haben kann.|
-|[CComControlBase::m_bDrawFromNatural](#m_bdrawfromnatural)|Flag, das `IDataObjectImpl::GetData` `CComControlBase::GetZoomInfo` angibt, dass `m_sizeNatural` und sollte `m_sizeExtent`die Steuerelementgröße von anstelle von festlegen.|
-|[CComControlBase::m_bDrawGetDataInHimetric](#m_bdrawgetdatainhimetric)|Flag, das `IDataObjectImpl::GetData` angibt, dass HIMETRIC-Einheiten und nicht Pixel beim Zeichnen verwendet werden sollen.|
-|[CComControlBase::m_bInPlaceActive](#m_binplaceactive)|Flag, das angibt, dass das Steuerelement aktiv ist.|
-|[CComControlBase::m_bInPlaceSiteEx](#m_binplacesiteex)|Flag, das den `IOleInPlaceSiteEx` Container angibt, unterstützt die Benutzeroberfläche und OCX96-Steuerungsfunktionen, z. B. fensterlose und flimmerfreie Steuerelemente.|
-|[CComControlBase::m_bNegotiatedWnd](#m_bnegotiatedwnd)|Flag, das angibt, ob das Steuerelement mit dem Container über die Unterstützung von OCX96-Steuerelementen (z. B. flimmerfreie und fensterlose Steuerelemente) verhandelt hat und ob das Steuerelement fensterlos oder fensterlos ist.|
-|[CComControlBase::m_bRecomposeOnResize](#m_brecomposeonresize)|Flag, das angibt, dass das Steuerelement seine Präsentation neu komponieren möchte, wenn der Container die Anzeigegröße des Steuerelements ändert.|
-|[CComControlBase::m_bRequiresSave](#m_brequiressave)|Flag, das angibt, dass das Steuerelement seit dem letzten Speichern geändert wurde.|
-|[CComControlBase::m_bResizeNatural](#m_bresizenatural)|Flag, das angibt, dass das Steuerelement die Größe seiner natürlichen Ausdehnung (seine nicht skalierte physische Größe) ändern möchte, wenn der Container die Anzeigegröße des Steuerelements ändert.|
-|[CComControlBase::m_bUIActive](#m_buiactive)|Das Flag, das die Benutzeroberfläche des Steuerelements angibt, z. B. Menüs und Symbolleisten, ist aktiv.|
-|[CComControlBase::m_bUsingWindowRgn](#m_busingwindowrgn)|Flag, das angibt, dass das Steuerelement den vom Container bereitgestellten Fensterbereich verwendet.|
-|[CComControlBase::m_bWasOnceWindowless](#m_bwasoncewindowless)|Flag, das angibt, dass das Steuerelement fensterlos war, aber jetzt möglicherweise fensterlos ist.|
-|[CComControlBase::m_bWindowOnly](#m_bwindowonly)|Flag, das das Steuerelement angibt, sollte gefenstert werden, auch wenn der Container fensterlose Steuerelemente unterstützt.|
-|[CComControlBase::m_bWndLess](#m_bwndless)|Flag, das angibt, dass das Steuerelement fensterlos ist.|
-|[CComControlBase::m_hWndCD](#m_hwndcd)|Enthält einen Verweis auf das Fensterhandle, das dem Steuerelement zugeordnet ist.|
-|[CComControlBase::m_nFreezeEvents](#m_nfreezeevents)|Eine Anzahl der Fälle, in denen der Container Ereignisse eingefroren hat (verweigert, Ereignisse zu akzeptieren), ohne dass ein zwischengeschaltetes Tauwetter von Ereignissen (Annahme von Ereignissen) erforderlich ist.|
-|[CComControlBase::m_rcPos](#m_rcpos)|Die Position in Pixeln des Steuerelements, ausgedrückt in den Koordinaten des Containers.|
-|[CComControlBase::m_sizeExtent](#m_sizeextent)|Die Ausdehnung der Steuerung in HIMETRIC-Einheiten (jede Einheit beträgt 0,01 Millimeter) für ein bestimmtes Display.|
-|[CComControlBase::m_sizeNatural](#m_sizenatural)|Die physische Größe des Steuerelements in HIMETRIC-Einheiten (jede Einheit beträgt 0,01 Millimeter).|
-|[CComControlBase::m_spAdviseSink](#m_spadvisesink)|Ein direkter Zeiger auf die beratende Verbindung auf dem Container [(IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink)des Containers ).|
-|[CComControlBase::m_spAmbientDispatch](#m_spambientdispatch)|Ein `CComDispatchDriver` Objekt, mit dem Sie die Eigenschaften `IDispatch` des Containers über einen Zeiger abrufen und festlegen können.|
-|[CComControlBase::m_spClientSite](#m_spclientsite)|Ein Zeiger auf die Clientsite des Steuerelements innerhalb des Containers.|
-|[CComControlBase::m_spDataAdviseHolder](#m_spdataadviseholder)|Stellt eine Standardmethode bereit, um beratungsgebende Verbindungen zwischen Datenobjekten und Beratungssenken zu halten.|
-|[CComControlBase::m_spInPlaceSite](#m_spinplacesite)|Ein Zeiger auf den [IOleInPlaceSite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite), [IOleInPlaceSiteEx](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)oder [IOleInPlaceSiteWindowless-Schnittstellenzeiger](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) des Containers.|
-|[CComControlBase::m_spOleAdviseHolder](#m_spoleadviseholder)|Stellt eine Standardimplementierung für eine Möglichkeit zum Halten von Beratungsverbindungen bereit.|
+|[CComControlBase:: m_bAutoSize](#m_bautosize)|Flag, das angibt, dass das Steuerelement keine andere Größe aufweisen kann.|
+|[CComControlBase:: m_bDrawFromNatural](#m_bdrawfromnatural)|Flag, das angibt, dass `IDataObjectImpl::GetData` und `CComControlBase::GetZoomInfo` die Steuerelement Größe von und `m_sizeNatural` nicht von festlegen soll `m_sizeExtent` .|
+|[CComControlBase:: m_bDrawGetDataInHimetric](#m_bdrawgetdatainhimetric)|Flag, das angibt, dass `IDataObjectImpl::GetData` beim Zeichnen himetrische Einheiten und nicht Pixel verwenden soll.|
+|[CComControlBase:: m_bInPlaceActive](#m_binplaceactive)|Flag, das angibt, dass das Steuerelement direkt aktiv ist.|
+|[CComControlBase:: m_bInPlaceSiteEx](#m_binplacesiteex)|Flag, das angibt, dass der Container die `IOleInPlaceSiteEx` Schnittstellen-und OCX96-Steuerelement Funktionen unterstützt, z. b. fensterlose und flimmerfreie Steuerelemente.|
+|[CComControlBase:: m_bNegotiatedWnd](#m_bnegotiatedwnd)|Flag, das angibt, ob das Steuerelement mit dem Container für die Unterstützung von OCX96-Steuerelement Funktionen (z. b. flimmerfreie und fensterlose Steuerelemente) verhandelt hat und ob es sich um ein Fenster oder ein fensterloses Steuerelement handelt.|
+|[CComControlBase:: m_bRecomposeOnResize](#m_brecomposeonresize)|Flag, das angibt, dass das Steuerelement seine Präsentation neu verfassen möchte, wenn der Container die Anzeige Größe des Steuer Elements ändert.|
+|[CComControlBase:: m_bRequiresSave](#m_brequiressave)|Flag, das angibt, dass das Steuerelement seit dem letzten Speichern geändert wurde.|
+|[CComControlBase:: m_bResizeNatural](#m_bresizenatural)|Flag, das angibt, dass das Steuerelement die Größe des natürlichen Wertebereichs (dessen Größe nicht skaliert) ändern möchte, wenn der Container die Anzeige Größe des Steuer Elements ändert.|
+|[CComControlBase:: m_bUIActive](#m_buiactive)|Flag, das angibt, dass die Benutzeroberfläche des Steuer Elements, z. b. Menüs und Symbolleisten, aktiv ist.|
+|[CComControlBase:: m_bUsingWindowRgn](#m_busingwindowrgn)|Flag, das angibt, dass das Steuerelement den vom Container bereitgestellten Fensterbereich verwendet.|
+|[CComControlBase:: m_bWasOnceWindowless](#m_bwasoncewindowless)|Flag, das anzeigt, dass es sich um ein fensterloses Steuerelement handelt, aber möglicherweise nicht fensterloser ist.|
+|[CComControlBase:: m_bWindowOnly](#m_bwindowonly)|Flag, das angibt, dass das Steuerelement in einem Fenster angezeigt werden soll, auch wenn der Containerfenster lose Steuerelemente unterstützt.|
+|[CComControlBase:: m_bWndLess](#m_bwndless)|Flag, das anzeigt, dass das Steuerelement fensterloser ist.|
+|[CComControlBase:: m_hWndCD](#m_hwndcd)|Enthält einen Verweis auf das Fenster Handle, das dem Steuerelement zugeordnet ist.|
+|[CComControlBase:: m_nFreezeEvents](#m_nfreezeevents)|Gibt an, wie oft der Container fixierte Ereignisse (abgelehnte Ereignisse) ohne zwischengeschaltete Ereignisse (akzeptieren von Ereignissen) aufweist.|
+|[CComControlBase:: m_rcPos](#m_rcpos)|Die Position des-Steuer Elements in Pixel, ausgedrückt in den Koordinaten des Containers.|
+|[CComControlBase:: m_sizeExtent](#m_sizeextent)|Der Umfang des Steuer Elements in HIMETRIC-Einheiten (jede Einheit beträgt 0,01 Millimeter) für eine bestimmte Anzeige.|
+|[CComControlBase:: m_sizeNatural](#m_sizenatural)|Die physische Größe des Steuer Elements in HIMETRIC-Einheiten (jede Einheit ist 0,01 Millimeter).|
+|[CComControlBase:: m_spAdviseSink](#m_spadvisesink)|Ein direkter Zeiger auf die Beratungs Verbindung im Container ( [IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink)des Containers).|
+|[CComControlBase:: m_spAmbientDispatch](#m_spambientdispatch)|Ein `CComDispatchDriver` -Objekt, mit dem Sie die Eigenschaften des Containers über einen Zeiger abrufen und festlegen können `IDispatch` .|
+|[CComControlBase:: m_spClientSite](#m_spclientsite)|Ein Zeiger auf die Client Site des-Steuer Elements innerhalb des Containers.|
+|[CComControlBase:: m_spDataAdviseHolder](#m_spdataadviseholder)|Bietet eine Standard Möglichkeit zum Speichern von Beratungs Verbindungen zwischen Datenobjekten und Raten senken.|
+|[CComControlBase:: m_spInPlaceSite](#m_spinplacesite)|Ein Zeiger auf den [ioleingeplacesite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)-, [iolumplacesiteex](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)-oder [iolumplacesitewindowless](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) -Schnittstellen Zeiger des Containers.|
+|[CComControlBase:: m_spOleAdviseHolder](#m_spoleadviseholder)|Stellt eine Standard Implementierung einer Möglichkeit zum halten von Beratungs Verbindungen bereit.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse stellt Methoden zum Erstellen und Verwalten von ATL-Steuerelementen bereit. [Die CComControl-Klasse](../../atl/reference/ccomcontrol-class.md) `CComControlBase`leitet sich von ab. Wenn Sie ein Standardsteuerelement oder DHTML-Steuerelement mit dem ATL-Steuerelement-Assistenten `CComControlBase`erstellen, leitet der Assistent Ihre Klasse automatisch von ab.
+Diese Klasse stellt Methoden zum Erstellen und Verwalten von ATL-Steuerelementen bereit. Die [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md) wird von abgeleitet `CComControlBase` . Wenn Sie mithilfe des ATL-Steuerelement-Assistenten ein Standard Steuerelement oder ein DHTML-Steuerelement erstellen, leitet der Assistent automatisch die Klasse von ab `CComControlBase` .
 
-Weitere Informationen zum Erstellen eines Steuerelements finden Sie im [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md). Weitere Informationen zum ATL-Projekt-Assistenten finden Sie im Artikel [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md).
+Weitere Informationen zum Erstellen eines Steuer Elements finden Sie im [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md). Weitere Informationen zum ATL-Projekt-Assistenten finden Sie im Artikel [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md).
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlctl.h
+**Header:** atlctl. h
 
-## <a name="ccomcontrolbaseappearancetype"></a><a name="appearancetype"></a>CComControlBase::AppearanceType
+## <a name="ccomcontrolbaseappearancetype"></a><a name="appearancetype"></a>CComControlBase:: kommancetype
 
-Überschreiben, `m_nAppearance` wenn Ihre Bestandseigenschaft nicht vom Typ **short**ist.
+Überschreiben Sie, wenn Ihre `m_nAppearance` Aktien Eigenschaft nicht vom Typ ist **`short`** .
 
 ```
 typedef short AppearanceType;
@@ -216,9 +216,9 @@ typedef short AppearanceType;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der ATL-Steuerungs-Assistent fügt `m_nAppearance` die Bestandseigenschaft vom Typ short hinzu. Überschreiben, `AppearanceType` wenn Sie einen anderen Datentyp verwenden.
+Der ATL-Steuerelement-Assistent fügt eine `m_nAppearance` Aktien Eigenschaft vom Typ Short hinzu. Überschreiben `AppearanceType` Sie, wenn Sie einen anderen Datentyp verwenden.
 
-## <a name="ccomcontrolbaseccomcontrolbase"></a><a name="ccomcontrolbase"></a>CComControlBase::CComControlBase
+## <a name="ccomcontrolbaseccomcontrolbase"></a><a name="ccomcontrolbase"></a>CComControlBase:: CComControlBase
 
 Der Konstruktor.
 
@@ -228,14 +228,14 @@ CComControlBase(HWND& h);
 
 ### <a name="parameters"></a>Parameter
 
-*H*<br/>
+*h*<br/>
 Das Handle für das Fenster, das dem Steuerelement zugeordnet ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Initialisiert die Steuerelementgröße auf 5080X5080 HIMETRIC-Einheiten (2 "X2") und initialisiert die `CComControlBase` Datenmemberwerte auf NULL oder FALSE.
+Initialisiert die Größe des Steuer Elements auf 5080x5080 HIMETRIC-Einheiten (2 "x2") und initialisiert die `CComControlBase` Datenmember-Werte in NULL oder false.
 
-## <a name="ccomcontrolbaseccomcontrolbase"></a><a name="dtor"></a>CComControlBase::-CComControlBase
+## <a name="ccomcontrolbaseccomcontrolbase"></a><a name="dtor"></a>CComControlBase:: ~ CComControlBase
 
 Der Destruktor.
 
@@ -245,9 +245,9 @@ Der Destruktor.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Steuerelement in `~CComControlBase` einem Fenster angezeigt wird, zerstört es, indem [es DestroyWindow aufruft.](/windows/win32/api/winuser/nf-winuser-destroywindow)
+Wenn das Steuerelement ein Fenster ist, wird `~CComControlBase` es durch Aufrufen von [DestroyWindow](/windows/win32/api/winuser/nf-winuser-destroywindow)zerstört.
 
-## <a name="ccomcontrolbasecontrolqueryinterface"></a><a name="controlqueryinterface"></a>CComControlBase::ControlQueryInterface
+## <a name="ccomcontrolbasecontrolqueryinterface"></a><a name="controlqueryinterface"></a>CComControlBase:: controlqueryinterface
 
 Ruft einen Zeiger auf die angeforderte Schnittstelle ab.
 
@@ -258,23 +258,23 @@ virtual HRESULT ControlQueryInterface(const IID& iid,
 
 ### <a name="parameters"></a>Parameter
 
-*Iid*<br/>
-Die GUID der angeforderten Schnittstelle.
+*IID*<br/>
+Der GUID der angeforderten Schnittstelle.
 
-*Ppv*<br/>
-Ein Zeiger auf den Schnittstellenzeiger, der von *iid*oder NULL identifiziert wird, wenn die Schnittstelle nicht gefunden wird.
+*PPV*<br/>
+Ein Zeiger auf den Schnittstellen Zeiger, der durch *IID*identifiziert wird, oder NULL, wenn die Schnittstelle nicht gefunden wurde.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Behandelt nur Schnittstellen in der COM-Map-Tabelle.
+Behandelt nur Schnittstellen in der com-Zuordnungs Tabelle.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_COM#15](../../atl/codesnippet/cpp/ccomcontrolbase-class_1.cpp)]
 
-## <a name="ccomcontrolbasedoesverbactivate"></a><a name="doesverbactivate"></a>CComControlBase::DoesVerbActivate
+## <a name="ccomcontrolbasedoesverbactivate"></a><a name="doesverbactivate"></a>CComControlBase::D oesverbaktivierungs
 
-Überprüft, ob der *iVerb-Parameter,* `IOleObjectImpl::DoVerb` der von der Benutzeroberfläche des Steuerelements verwendet wird (*iVerb* entspricht OLEIVERB_UIACTIVATE), die Aktion definiert, die ausgeführt wird, wenn der Benutzer auf das Steuerelement doppelklickt (*iVerb* entspricht OLEIVERB_PRIMARY), das Steuerelement anzeigt (*iVerb* entspricht OLEIVERB_SHOW) oder das Steuerelement aktiviert (*iVerb* entspricht OLEIVERB_INPLACEACTIVATE).
+Überprüft, ob der von verwendete *iVerb* `IOleObjectImpl::DoVerb` -Parameter entweder die Benutzeroberfläche des Steuer Elements aktiviert (*iVerb* ist OLEIVERB_UIACTIVATE), definiert die Aktion, die ausgeführt wird, wenn der Benutzer auf das Steuerelement doppelklickt (*iVerb* ist OLEIVERB_PRIMARY), zeigt das Steuerelement an (*iVerb* ist OLEIVERB_SHOW) oder aktiviert das Steuerelement (*iVerb* ist mit OLEIVERB_INPLACEACTIVATE).
 
 ```
 BOOL DoesVerbActivate(LONG iVerb);
@@ -283,19 +283,19 @@ BOOL DoesVerbActivate(LONG iVerb);
 ### <a name="parameters"></a>Parameter
 
 *iVerb*<br/>
-Wert, der die Aktion `DoVerb`angibt, die von ausgeführt werden soll.
+Der Wert, der die Aktion angibt, die von ausgeführt werden soll `DoVerb` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn *iVerb* OLEIVERB_UIACTIVATE, OLEIVERB_PRIMARY, OLEIVERB_SHOW oder OLEIVERB_INPLACEACTIVATE entspricht. Andernfalls wird FALSE zurückgegeben.
+Gibt true zurück, wenn *iVerb* OLEIVERB_UIACTIVATE, OLEIVERB_PRIMARY, OLEIVERB_SHOW oder OLEIVERB_INPLACEACTIVATE ist. Andernfalls wird false zurückgegeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie können diese Methode überschreiben, um Ein eigenes Aktivierungsverb zu definieren.
+Sie können diese Methode überschreiben, um ein eigenes Aktivierungs Verb zu definieren.
 
-## <a name="ccomcontrolbasedoesverbuiactivate"></a><a name="doesverbuiactivate"></a>CComControlBase::DoesVerbUIActivate
+## <a name="ccomcontrolbasedoesverbuiactivate"></a><a name="doesverbuiactivate"></a>CComControlBase::D oesverbuiaktivierungs
 
-Überprüft, ob der von `IOleObjectImpl::DoVerb` der Steuerelement-Benutzeroberfläche verwendete *iVerb-Parameter* dazu führt, dass die Benutzeroberfläche des Steuerelements TRUE aktiviert und zurückgegeben wird.
+Überprüft, ob der von verwendete *iVerb* -Parameter bewirkt, dass `IOleObjectImpl::DoVerb` die Benutzeroberfläche des Steuer Elements aktiviert wird, und gibt true zurück.
 
 ```
 BOOL DoesVerbUIActivate(LONG iVerb);
@@ -304,15 +304,15 @@ BOOL DoesVerbUIActivate(LONG iVerb);
 ### <a name="parameters"></a>Parameter
 
 *iVerb*<br/>
-Wert, der die Aktion `DoVerb`angibt, die von ausgeführt werden soll.
+Der Wert, der die Aktion angibt, die von ausgeführt werden soll `DoVerb` .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn *iVerb* OLEIVERB_UIACTIVATE, OLEIVERB_PRIMARY, OLEIVERB_SHOW oder OLEIVERB_INPLACEACTIVATE entspricht. Andernfalls gibt die Methode FALSE zurück.
+Gibt true zurück, wenn *iVerb* OLEIVERB_UIACTIVATE, OLEIVERB_PRIMARY, OLEIVERB_SHOW oder OLEIVERB_INPLACEACTIVATE ist. Andernfalls gibt die Methode false zurück.
 
-## <a name="ccomcontrolbasedoverbproperties"></a><a name="doverbproperties"></a>CComControlBase::DoVerbProperties
+## <a name="ccomcontrolbasedoverbproperties"></a><a name="doverbproperties"></a>CComControlBase::D overbproperties
 
-Zeigt die Eigenschaftenseiten des Steuerelements an.
+Zeigt die Eigenschaften Seiten des Steuer Elements an.
 
 ```
 HRESULT DoVerbProperties(LPCRECT /* prcPosRect */, HWND hwndParent);
@@ -320,7 +320,7 @@ HRESULT DoVerbProperties(LPCRECT /* prcPosRect */, HWND hwndParent);
 
 ### <a name="parameters"></a>Parameter
 
-*prcPosRec*<br/>
+*prcposrec*<br/>
 Reserviert.
 
 *hwndParent*<br/>
@@ -328,7 +328,7 @@ Handle des Fensters, das das Steuerelement enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="example"></a>Beispiel
 
@@ -336,9 +336,9 @@ Einer der Standard-HRESULT-Werte.
 
 [!code-cpp[NVC_ATL_COM#20](../../atl/codesnippet/cpp/ccomcontrolbase-class_3.h)]
 
-## <a name="ccomcontrolbasefireviewchange"></a><a name="fireviewchange"></a>CComControlBase::FireViewChange
+## <a name="ccomcontrolbasefireviewchange"></a><a name="fireviewchange"></a>CComControlBase:: FireViewChange
 
-Rufen Sie diese Methode auf, um den Container anzuweisen, das Steuerelement neu zu zeichnen, oder benachrichtigen Sie die registrierten Ratsenken, dass sich die Ansicht des Steuerelements geändert hat.
+Aufrufen Sie diese Methode, um dem Container mitzuteilen, dass das Steuerelement neu gezeichnet werden soll, oder die registrierten Ansichts senken, die die Ansicht des Steuer Elements geändert hat.
 
 ```
 HRESULT FireViewChange();
@@ -346,19 +346,19 @@ HRESULT FireViewChange();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn das Steuerelement aktiv ist (der Steuerelementklassendatenmember [CComControlBase::m_bInPlaceActive](#m_binplaceactive) ist TRUE), benachrichtigt der Container, dass Sie das gesamte Steuerelement neu zeichnen möchten. Wenn das Steuerelement inaktiv ist, benachrichtigt die registrierten Ratssenken des Steuerelements (über das Steuerelementklassendatenmember [CComControlBase::m_spAdviseSink](#m_spadvisesink)), dass sich die Ansicht des Steuerelements geändert hat.
+Wenn das Steuerelement aktiv ist (der Steuerelement-Klassendatenmember [CComControlBase:: m_bInPlaceActive](#m_binplaceactive) ist true), benachrichtigt den Container, dass Sie das gesamte Steuerelement neu zeichnen möchten. Wenn das-Steuerelement inaktiv ist, benachrichtigt die registrierten Ansichts senken des-Steuer Elements (über das Steuerelement-Klassendatenmember [CComControlBase:: m_spAdviseSink](#m_spadvisesink)), das die Ansicht des Steuer Elements geändert hat.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_COM#21](../../atl/codesnippet/cpp/ccomcontrolbase-class_4.cpp)]
 
-## <a name="ccomcontrolbasegetambientappearance"></a><a name="getambientappearance"></a>CComControlBase::GetAmbientAppearance
+## <a name="ccomcontrolbasegetambientappearance"></a><a name="getambientappearance"></a>CComControlBase:: getambientappearance
 
-Ruft DISPID_AMBIENT_APPEARANCE, die aktuelle Darstellungseinstellung für das Steuerelement ab: 0 für flach und 1 für 3D.
+Ruft DISPID_AMBIENT_APPEARANCE ab, die aktuelle Darstellungs Einstellung für das-Steuerelement: 0 für Flat und 1 für 3D.
 
 ```
 HRESULT GetAmbientAppearance(short& nAppearance);
@@ -366,20 +366,20 @@ HRESULT GetAmbientAppearance(short& nAppearance);
 
 ### <a name="parameters"></a>Parameter
 
-*nErscheinung*<br/>
-Die Unterkunft DISPID_AMBIENT_APPEARANCE.
+*nappearance*<br/>
+Die-Eigenschaft DISPID_AMBIENT_APPEARANCE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_COM#22](../../atl/codesnippet/cpp/ccomcontrolbase-class_5.h)]
 
-## <a name="ccomcontrolbasegetambientautoclip"></a><a name="getambientautoclip"></a>CComControlBase::GetAmbientAutoClip
+## <a name="ccomcontrolbasegetambientautoclip"></a><a name="getambientautoclip"></a>CComControlBase:: getambientautoclip
 
-Ruft DISPID_AMBIENT_AUTOCLIP, ein Flag, das angibt, ob der Container das automatische Zuschneiden des Steuerelementanzeigebereichs unterstützt.
+Ruft DISPID_AMBIENT_AUTOCLIP ab, ein Flag, das angibt, ob der Container das automatische Abschneiden des Anzeige Bereichs des Steuer Elements unterstützt.
 
 ```
 HRESULT GetAmbientAutoClip(BOOL& bAutoClip);
@@ -387,16 +387,16 @@ HRESULT GetAmbientAutoClip(BOOL& bAutoClip);
 
 ### <a name="parameters"></a>Parameter
 
-*bAutoClip*<br/>
-Die Unterkunft DISPID_AMBIENT_AUTOCLIP.
+*baucliclip*<br/>
+Die-Eigenschaft DISPID_AMBIENT_AUTOCLIP.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientbackcolor"></a><a name="getambientbackcolor"></a>CComControlBase::GetAmbientBackColor
+## <a name="ccomcontrolbasegetambientbackcolor"></a><a name="getambientbackcolor"></a>CComControlBase:: getambientbackcolor
 
-Ruft DISPID_AMBIENT_BACKCOLOR, die Umgebungshintergrundfarbe für alle Steuerelemente, die vom Container definiert werden.
+Ruft DISPID_AMBIENT_BACKCOLOR ab, die Umgebungs Hintergrundfarbe für alle Steuerelemente, die durch den Container definiert werden.
 
 ```
 HRESULT GetAmbientBackColor(OLE_COLOR& BackColor);
@@ -404,16 +404,16 @@ HRESULT GetAmbientBackColor(OLE_COLOR& BackColor);
 
 ### <a name="parameters"></a>Parameter
 
-*Backcolor*<br/>
-Die Unterkunft DISPID_AMBIENT_BACKCOLOR.
+*BackColor*<br/>
+Die-Eigenschaft DISPID_AMBIENT_BACKCOLOR.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientcharset"></a><a name="getambientcharset"></a>CComControlBase::GetAmbientCharSet
+## <a name="ccomcontrolbasegetambientcharset"></a><a name="getambientcharset"></a>CComControlBase:: getambientcharset
 
-Ruft DISPID_AMBIENT_CHARSET ab, den Umgebungszeichensatz für alle Steuerelemente, der vom Container definiert wird.
+Ruft DISPID_AMBIENT_CHARSET ab, den AMBIENT-Zeichensatz für alle Steuerelemente, die durch den Container definiert werden.
 
 ```
 HRESULT GetAmbientCharSet(BSTR& bstrCharSet);
@@ -421,16 +421,16 @@ HRESULT GetAmbientCharSet(BSTR& bstrCharSet);
 
 ### <a name="parameters"></a>Parameter
 
-*bstrCharSet*<br/>
-Die Unterkunft DISPID_AMBIENT_CHARSET.
+*bstrincharset*<br/>
+Die-Eigenschaft DISPID_AMBIENT_CHARSET.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="ccomcontrolbasegetambientcodepage"></a><a name="getambientcodepage"></a>CComControlBase::GetAmbientCodePage
+## <a name="ccomcontrolbasegetambientcodepage"></a><a name="getambientcodepage"></a>CComControlBase:: getambientcodepage
 
-Ruft DISPID_AMBIENT_CODEPAGE, die Umgebungscodepage für alle Steuerelemente, die vom Container definiert werden.
+Ruft DISPID_AMBIENT_CODEPAGE ab, die AMBIENT-Codepage für alle Steuerelemente, die durch den Container definiert werden.
 
 ```
 HRESULT GetAmbientCodePage(ULONG& ulCodePage);
@@ -438,16 +438,16 @@ HRESULT GetAmbientCodePage(ULONG& ulCodePage);
 
 ### <a name="parameters"></a>Parameter
 
-*ulCodePage*<br/>
-Die Unterkunft DISPID_AMBIENT_CODEPAGE.
+*ulcodepage*<br/>
+Die-Eigenschaft DISPID_AMBIENT_CODEPAGE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="ccomcontrolbasegetambientdisplayasdefault"></a><a name="getambientdisplayasdefault"></a>CComControlBase::GetAmbientDisplayAsDefault
+## <a name="ccomcontrolbasegetambientdisplayasdefault"></a><a name="getambientdisplayasdefault"></a>CComControlBase:: GetAmbientDisplayAsDefault
 
-Ruft DISPID_AMBIENT_DISPLAYASDEFAULT, ein Flag, das TRUE ist, wenn der Container das Steuerelement an dieser Site als Standardschaltfläche markiert hat, und daher sollte sich ein Schaltflächensteuerelement mit einem dickeren Rahmen zeichnen.
+Ruft DISPID_AMBIENT_DISPLAYASDEFAULT ab, ein Flag, das true ist, wenn der Container das Steuerelement an dieser Site als Standard Schaltfläche markiert hat und sich ein Schaltflächen-Steuerelement mit einem dickeren Rahmen zeichnen soll.
 
 ```
 HRESULT GetAmbientDisplayAsDefault(BOOL& bDisplayAsDefault);
@@ -455,16 +455,16 @@ HRESULT GetAmbientDisplayAsDefault(BOOL& bDisplayAsDefault);
 
 ### <a name="parameters"></a>Parameter
 
-*bDisplayAsDefault*<br/>
-Die Unterkunft DISPID_AMBIENT_DISPLAYASDEFAULT.
+*bdisplayasdefault*<br/>
+Die-Eigenschaft DISPID_AMBIENT_DISPLAYASDEFAULT.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientdisplayname"></a><a name="getambientdisplayname"></a>CComControlBase::GetAmbientDisplayName
+## <a name="ccomcontrolbasegetambientdisplayname"></a><a name="getambientdisplayname"></a>CComControlBase:: getambientdisplayname
 
-Ruft DISPID_AMBIENT_DISPLAYNAME, den Namen, den der Container dem Steuerelement übermittelt hat.
+Ruft DISPID_AMBIENT_DISPLAYNAME ab, den Namen, den der Container für das Steuerelement bereitgestellt hat.
 
 ```
 HRESULT GetAmbientDisplayName(BSTR& bstrDisplayName);
@@ -472,16 +472,16 @@ HRESULT GetAmbientDisplayName(BSTR& bstrDisplayName);
 
 ### <a name="parameters"></a>Parameter
 
-*bstrDisplayName*<br/>
-Die Unterkunft DISPID_AMBIENT_DISPLAYNAME.
+*bstrindisplayname*<br/>
+Die-Eigenschaft DISPID_AMBIENT_DISPLAYNAME.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientfont"></a><a name="getambientfont"></a>CComControlBase::GetAmbientFont
+## <a name="ccomcontrolbasegetambientfont"></a><a name="getambientfont"></a>CComControlBase:: getambientfont
 
-Ruft einen Zeiger auf die Umgebungsschnittstelle `IFont` des Containers ab.
+Ruft einen Zeiger auf die Ambient-Schnittstelle des Containers ab `IFont` .
 
 ```
 HRESULT GetAmbientFont(IFont** ppFont);
@@ -489,20 +489,20 @@ HRESULT GetAmbientFont(IFont** ppFont);
 
 ### <a name="parameters"></a>Parameter
 
-*ppFont*<br/>
-Ein Zeiger auf die [Umgebungs-IFont-Schnittstelle](/windows/win32/api/ocidl/nn-ocidl-ifont) des Containers.
+*ppfont*<br/>
+Ein Zeiger auf die Ambient [IFont](/windows/win32/api/ocidl/nn-ocidl-ifont) -Schnittstelle des Containers.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Wenn die Eigenschaft NULL ist, ist der Zeiger NULL. Wenn der Zeiger nicht NULL ist, muss der Aufrufer den Zeiger freigeben.
 
-## <a name="ccomcontrolbasegetambientfontdisp"></a><a name="getambientfontdisp"></a>CComControlBase::GetAmbientFontDisp
+## <a name="ccomcontrolbasegetambientfontdisp"></a><a name="getambientfontdisp"></a>CComControlBase:: GetAmbientFontDisp
 
-Ruft einen Zeiger auf die Umgebungsdispatchschnittstelle `IFontDisp` des Containers ab.
+Ruft einen Zeiger auf die Ambient Dispatch-Schnittstelle des Containers ab `IFontDisp` .
 
 ```
 HRESULT GetAmbientFontDisp(IFontDisp** ppFont);
@@ -510,20 +510,20 @@ HRESULT GetAmbientFontDisp(IFontDisp** ppFont);
 
 ### <a name="parameters"></a>Parameter
 
-*ppFont*<br/>
-Ein Zeiger auf die [Umgebungs-IFontDisp-Dispatchschnittstelle](/windows/win32/api/ocidl/nn-ocidl-ifontdisp) des Containers.
+*ppfont*<br/>
+Ein Zeiger auf die Ambient [IFontDisp](/windows/win32/api/ocidl/nn-ocidl-ifontdisp) Dispatch-Schnittstelle des Containers.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Wenn die Eigenschaft NULL ist, ist der Zeiger NULL. Wenn der Zeiger nicht NULL ist, muss der Aufrufer den Zeiger freigeben.
 
-## <a name="ccomcontrolbasegetambientforecolor"></a><a name="getambientforecolor"></a>CComControlBase::GetAmbientForeColor
+## <a name="ccomcontrolbasegetambientforecolor"></a><a name="getambientforecolor"></a>CComControlBase:: getambientforecolor
 
-Ruft DISPID_AMBIENT_FORECOLOR, die Umgebungsvordergrundfarbe für alle Steuerelemente, die vom Container definiert werden.
+Ruft DISPID_AMBIENT_FORECOLOR ab, die Umgebungs Vordergrundfarbe für alle Steuerelemente, die durch den Container definiert werden.
 
 ```
 HRESULT GetAmbientForeColor(OLE_COLOR& ForeColor);
@@ -531,16 +531,16 @@ HRESULT GetAmbientForeColor(OLE_COLOR& ForeColor);
 
 ### <a name="parameters"></a>Parameter
 
-*Forecolor*<br/>
-Die Unterkunft DISPID_AMBIENT_FORECOLOR.
+*ForeColor*<br/>
+Die-Eigenschaft DISPID_AMBIENT_FORECOLOR.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientlocaleid"></a><a name="getambientlocaleid"></a>CComControlBase::GetAmbientLocaleID
+## <a name="ccomcontrolbasegetambientlocaleid"></a><a name="getambientlocaleid"></a>CComControlBase:: getambientlocaleid
 
-Ruft DISPID_AMBIENT_LOCALEID, den Bezeichner der vom Container verwendeten Sprache.
+Ruft DISPID_AMBIENT_LOCALEID ab, den Bezeichner der vom Container verwendeten Sprache.
 
 ```
 HRESULT GetAmbientLocaleID(LCID& lcid);
@@ -548,20 +548,20 @@ HRESULT GetAmbientLocaleID(LCID& lcid);
 
 ### <a name="parameters"></a>Parameter
 
-*Lcid*<br/>
-Die Unterkunft DISPID_AMBIENT_LOCALEID.
+*lcid*<br/>
+Die-Eigenschaft DISPID_AMBIENT_LOCALEID.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Steuerelement kann diesen Bezeichner verwenden, um seine Benutzeroberfläche an verschiedene Sprachen anzupassen.
+Das-Steuerelement kann diesen Bezeichner verwenden, um die Benutzeroberfläche an verschiedene Sprachen anzupassen.
 
-## <a name="ccomcontrolbasegetambientmessagereflect"></a><a name="getambientmessagereflect"></a>CComControlBase::GetAmbientMessageReflect
+## <a name="ccomcontrolbasegetambientmessagereflect"></a><a name="getambientmessagereflect"></a>CComControlBase:: getambientmessagereflect
 
-Ruft DISPID_AMBIENT_MESSAGEREFLECT, ein Flag, das angibt, ob der `WM_DRAWITEM`Container Fensternachrichten (z. B. ) als Ereignisse empfangen möchte.
+Ruft DISPID_AMBIENT_MESSAGEREFLECT ab, ein Flag, das angibt, ob der Containerfenster Nachrichten (z `WM_DRAWITEM` . b.) als Ereignisse empfangen möchte.
 
 ```
 HRESULT GetAmbientMessageReflect(BOOL& bMessageReflect);
@@ -569,16 +569,16 @@ HRESULT GetAmbientMessageReflect(BOOL& bMessageReflect);
 
 ### <a name="parameters"></a>Parameter
 
-*bMessageReflect*<br/>
-Die Unterkunft DISPID_AMBIENT_MESSAGEREFLECT.
+*bmessagereflect*<br/>
+Die-Eigenschaft DISPID_AMBIENT_MESSAGEREFLECT.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientpalette"></a><a name="getambientpalette"></a>CComControlBase::GetAmbientPalette
+## <a name="ccomcontrolbasegetambientpalette"></a><a name="getambientpalette"></a>CComControlBase:: getambientpalette
 
-Ruft DISPID_AMBIENT_PALETTE ab, die für den Zugriff auf die HPALETTE des Containers verwendet wird.
+Ruft DISPID_AMBIENT_PALETTE ab, die für den Zugriff auf die hpalette des Containers verwendet werden.
 
 ```
 HRESULT GetAmbientPalette(HPALETTE& hPalette);
@@ -587,15 +587,15 @@ HRESULT GetAmbientPalette(HPALETTE& hPalette);
 ### <a name="parameters"></a>Parameter
 
 *hPalette*<br/>
-Die Unterkunft DISPID_AMBIENT_PALETTE.
+Die-Eigenschaft DISPID_AMBIENT_PALETTE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientproperty"></a><a name="getambientproperty"></a>CComControlBase::GetAmbientProperty
+## <a name="ccomcontrolbasegetambientproperty"></a><a name="getambientproperty"></a>CComControlBase:: getAmbientProperty
 
-Ruft die container-Eigenschaft ab, die von *dispid*angegeben wurde.
+Ruft die von *DISPID*angegebene Container Eigenschaft ab.
 
 ```
 HRESULT GetAmbientProperty(DISPID dispid, VARIANT& var);
@@ -603,23 +603,23 @@ HRESULT GetAmbientProperty(DISPID dispid, VARIANT& var);
 
 ### <a name="parameters"></a>Parameter
 
-*Dispid*<br/>
-Bezeichner der container-Eigenschaft, die abgerufen werden soll.
+*DISPID*<br/>
+Der Bezeichner der Container Eigenschaft, die abgerufen werden soll.
 
 *var*<br/>
-Variable, um die Eigenschaft zu empfangen.
+Variable zum Empfangen der Eigenschaft.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-ATL hat eine Reihe von Hilfsfunktionen bereitgestellt, um bestimmte Eigenschaften abzurufen, z. B. [CComControlBase::GetAmbientBackColor](#getambientbackcolor). Wenn keine geeignete Methode verfügbar `GetAmbientProperty`ist, verwenden Sie .
+ATL hat eine Reihe von Hilfsfunktionen bereitgestellt, um bestimmte Eigenschaften abzurufen, z. b. [CComControlBase:: getambientbackcolor](#getambientbackcolor). Wenn keine geeignete Methode verfügbar ist, verwenden Sie `GetAmbientProperty` .
 
-## <a name="ccomcontrolbasegetambientrighttoleft"></a><a name="getambientrighttoleft"></a>CComControlBase::GetAmbientrightToleft
+## <a name="ccomcontrolbasegetambientrighttoleft"></a><a name="getambientrighttoleft"></a>CComControlBase:: getambientrighttoleft
 
-Ruft DISPID_AMBIENT_RIGHTTOLEFT ab, in der der Inhalt vom Container angezeigt wird.
+Ruft DISPID_AMBIENT_RIGHTTOLEFT ab, die Richtung, in der Inhalt durch den Container angezeigt wird.
 
 ```
 HRESULT GetAmbientRightToLeft(BOOL& bRightToLeft);
@@ -627,16 +627,16 @@ HRESULT GetAmbientRightToLeft(BOOL& bRightToLeft);
 
 ### <a name="parameters"></a>Parameter
 
-*bRightToLeft*<br/>
-Die Unterkunft DISPID_AMBIENT_RIGHTTOLEFT. Legen Sie TRUE fest, wenn Der Inhalt von rechts nach links angezeigt wird, FALSE, wenn er von links nach rechts angezeigt wird.
+*brighttoleft*<br/>
+Die-Eigenschaft DISPID_AMBIENT_RIGHTTOLEFT. Auf true festgelegt, wenn der Inhalt von rechts nach links angezeigt wird, false, wenn er von links nach rechts angezeigt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="ccomcontrolbasegetambientscaleunits"></a><a name="getambientscaleunits"></a>CComControlBase::GetAmbientScaleUnits
+## <a name="ccomcontrolbasegetambientscaleunits"></a><a name="getambientscaleunits"></a>CComControlBase:: getambientscaleunits
 
-Ruft DISPID_AMBIENT_SCALEUNITS, die Umgebungseinheiten des Containers (z. B. Zoll oder Zentimeter) für die Beschriftung von Anzeigen ab.
+Ruft DISPID_AMBIENT_SCALEUNITS, die Umgebungs Einheiten des Containers (z. b. Zoll oder Zentimeter) für Beschriftungs Anzeige ab.
 
 ```
 HRESULT GetAmbientScaleUnits(BSTR& bstrScaleUnits);
@@ -644,16 +644,16 @@ HRESULT GetAmbientScaleUnits(BSTR& bstrScaleUnits);
 
 ### <a name="parameters"></a>Parameter
 
-*bstrScaleUnits*<br/>
-Die Unterkunft DISPID_AMBIENT_SCALEUNITS.
+*bstrinscaleunits*<br/>
+Die-Eigenschaft DISPID_AMBIENT_SCALEUNITS.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientshowgrabhandles"></a><a name="getambientshowgrabhandles"></a>CComControlBase::GetAmbientShowGrabHandles
+## <a name="ccomcontrolbasegetambientshowgrabhandles"></a><a name="getambientshowgrabhandles"></a>CComControlBase:: getambientshowgrabhandles
 
-Ruft DISPID_AMBIENT_SHOWGRABHANDLES, ein Flag, das angibt, ob der Container dem Steuerelement erlaubt, Greifgriffe für sich selbst anzuzeigen, wenn es aktiv ist.
+Ruft DISPID_AMBIENT_SHOWGRABHANDLES ab, ein Flag, das angibt, ob der Container dem Steuerelement ermöglicht, Zieh Punkte für sich selbst anzuzeigen, wenn es aktiv ist.
 
 ```
 HRESULT GetAmbientShowGrabHandles(BOOL& bShowGrabHandles);
@@ -661,16 +661,16 @@ HRESULT GetAmbientShowGrabHandles(BOOL& bShowGrabHandles);
 
 ### <a name="parameters"></a>Parameter
 
-*bShowGrabHandles*<br/>
-Die Unterkunft DISPID_AMBIENT_SHOWGRABHANDLES.
+*bshowgrabhandles*<br/>
+Die-Eigenschaft DISPID_AMBIENT_SHOWGRABHANDLES.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientshowhatching"></a><a name="getambientshowhatching"></a>CComControlBase::GetAmbientShowHatching
+## <a name="ccomcontrolbasegetambientshowhatching"></a><a name="getambientshowhatching"></a>CComControlBase:: getambientshowhatching
 
-Ruft DISPID_AMBIENT_SHOWHATCHING, ein Flag, das angibt, ob der Container es dem Steuerelement ermöglicht, sich selbst mit einem Schraffurmuster anzuzeigen, wenn die Benutzeroberfläche des Steuerelements aktiv ist.
+Ruft DISPID_AMBIENT_SHOWHATCHING ab, ein Flag, das angibt, ob der Container es dem Steuerelement ermöglicht, sich selbst mit einem Schraffurmuster anzuzeigen, wenn die Benutzeroberfläche des Steuer Elements aktiv ist.
 
 ```
 HRESULT GetAmbientShowHatching(BOOL& bShowHatching);
@@ -678,16 +678,16 @@ HRESULT GetAmbientShowHatching(BOOL& bShowHatching);
 
 ### <a name="parameters"></a>Parameter
 
-*bShowHatching*<br/>
-Die Unterkunft DISPID_AMBIENT_SHOWHATCHING.
+*bshowhatching*<br/>
+Die-Eigenschaft DISPID_AMBIENT_SHOWHATCHING.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambientsupportsmnemonics"></a><a name="getambientsupportsmnemonics"></a>CComControlBase::GetAmbientUnterstütztMnemonics
+## <a name="ccomcontrolbasegetambientsupportsmnemonics"></a><a name="getambientsupportsmnemonics"></a>CComControlBase:: getambientsupportsmnetmonics
 
-Ruft DISPID_AMBIENT_SUPPORTSMNEMONICS, ein Flag, das angibt, ob der Container Tastatur-Mnemonics unterstützt.
+Ruft DISPID_AMBIENT_SUPPORTSMNEMONICS ab, ein Flag, das angibt, ob der Container mnetmonics-Tastatur unterstützt.
 
 ```
 HRESULT GetAmbientSupportsMnemonics(BOOL& bSupportsMnemonics);
@@ -695,16 +695,16 @@ HRESULT GetAmbientSupportsMnemonics(BOOL& bSupportsMnemonics);
 
 ### <a name="parameters"></a>Parameter
 
-*bSupportsMnemonics*<br/>
-Die Unterkunft DISPID_AMBIENT_SUPPORTSMNEMONICS.
+*bsupportsmnetmonics*<br/>
+Die-Eigenschaft DISPID_AMBIENT_SUPPORTSMNEMONICS.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambienttextalign"></a><a name="getambienttextalign"></a>CComControlBase::GetAmbientTextAlign
+## <a name="ccomcontrolbasegetambienttextalign"></a><a name="getambienttextalign"></a>CComControlBase:: getambienttextalign
 
-Ruft DISPID_AMBIENT_TEXTALIGN, die vom Container bevorzugte Textausrichtung ab: 0 für die allgemeine Ausrichtung (Zahlen rechts, Text links), 1 für die linke Ausrichtung, 2 für die Mittlere Ausrichtung und 3 für die rechte Ausrichtung.
+Ruft DISPID_AMBIENT_TEXTALIGN, die für den Container bevorzugte Textausrichtung ab: 0 für allgemeine Ausrichtung (Zahlen rechts, Text Links), 1 für linke Ausrichtung, 2 für die Mittelpunkt Ausrichtung und 3 für Rechte Ausrichtung.
 
 ```
 HRESULT GetAmbientTextAlign(short& nTextAlign);
@@ -712,16 +712,16 @@ HRESULT GetAmbientTextAlign(short& nTextAlign);
 
 ### <a name="parameters"></a>Parameter
 
-*nTextAlign*<br/>
-Die Unterkunft DISPID_AMBIENT_TEXTALIGN.
+*ntextalign*<br/>
+Die-Eigenschaft DISPID_AMBIENT_TEXTALIGN.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetambienttoptobottom"></a><a name="getambienttoptobottom"></a>CComControlBase::GetAmbientTopToBottom
+## <a name="ccomcontrolbasegetambienttoptobottom"></a><a name="getambienttoptobottom"></a>CComControlBase:: getambienttopto Bottom
 
-Ruft DISPID_AMBIENT_TOPTOBOTTOM ab, in der der Inhalt vom Container angezeigt wird.
+Ruft DISPID_AMBIENT_TOPTOBOTTOM ab, die Richtung, in der Inhalt durch den Container angezeigt wird.
 
 ```
 HRESULT GetAmbientTopToBottom(BOOL& bTopToBottom);
@@ -729,16 +729,16 @@ HRESULT GetAmbientTopToBottom(BOOL& bTopToBottom);
 
 ### <a name="parameters"></a>Parameter
 
-*bTopToBottom*<br/>
-Die Unterkunft DISPID_AMBIENT_TOPTOBOTTOM. Legen Sie TRUE fest, wenn Text von oben nach unten angezeigt wird, FALSE, wenn er von unten nach oben angezeigt wird.
+*btopumbottom*<br/>
+Die-Eigenschaft DISPID_AMBIENT_TOPTOBOTTOM. Auf true festgelegt, wenn der Text von oben nach unten angezeigt wird, false, wenn er von unten nach oben angezeigt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="ccomcontrolbasegetambientuidead"></a><a name="getambientuidead"></a>CComControlBase::GetAmbientUIDead
+## <a name="ccomcontrolbasegetambientuidead"></a><a name="getambientuidead"></a>CComControlBase:: getambientuidead
 
-Ruft DISPID_AMBIENT_UIDEAD ein Flag ab, das angibt, ob das Steuerelement auf Benutzeroberflächenaktionen reagieren soll.
+Ruft DISPID_AMBIENT_UIDEAD ab, ein Flag, das angibt, ob der Container das Steuerelement auf Aktionen der Benutzeroberfläche reagieren soll.
 
 ```
 HRESULT GetAmbientUIDead(BOOL& bUIDead);
@@ -746,20 +746,20 @@ HRESULT GetAmbientUIDead(BOOL& bUIDead);
 
 ### <a name="parameters"></a>Parameter
 
-*bUIDead*<br/>
-Die Unterkunft DISPID_AMBIENT_UIDEAD.
+*"buidead"*<br/>
+Die-Eigenschaft DISPID_AMBIENT_UIDEAD.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn TRUE, sollte das Steuerelement nicht reagieren. Dieses Flag gilt unabhängig vom DISPID_AMBIENT_USERMODE-Flag. Siehe [CComControlBase::GetAmbientUserMode](#getambientusermode).
+Wenn true, sollte das Steuerelement nicht Antworten. Dieses Flag gilt unabhängig vom DISPID_AMBIENT_USERMODE-Flag. Weitere Informationen finden Sie unter [CComControlBase:: getambientusermode](#getambientusermode).
 
-## <a name="ccomcontrolbasegetambientusermode"></a><a name="getambientusermode"></a>CComControlBase::GetAmbientUserMode
+## <a name="ccomcontrolbasegetambientusermode"></a><a name="getambientusermode"></a>CComControlBase:: getambientusermode
 
-Ruft DISPID_AMBIENT_USERMODE, ein Flag, das angibt, ob sich der Container im Run-Mode (TRUE) oder design-mode (FALSE) befindet.
+Ruft DISPID_AMBIENT_USERMODE ab, ein Flag, das angibt, ob sich der Container im Lauf Modus (true) oder im Entwurfs Modus (false) befindet.
 
 ```
 HRESULT GetAmbientUserMode(BOOL& bUserMode);
@@ -767,16 +767,16 @@ HRESULT GetAmbientUserMode(BOOL& bUserMode);
 
 ### <a name="parameters"></a>Parameter
 
-*bUserMode*<br/>
-Die Unterkunft DISPID_AMBIENT_USERMODE.
+*busermode*<br/>
+Die-Eigenschaft DISPID_AMBIENT_USERMODE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-## <a name="ccomcontrolbasegetdirty"></a><a name="getdirty"></a>CComControlBase::GetDirty
+## <a name="ccomcontrolbasegetdirty"></a><a name="getdirty"></a>CComControlBase:: getdirty
 
-Gibt den Wert `m_bRequiresSave`des Datenmembers zurück.
+Gibt den Wert des Datenmembers zurück `m_bRequiresSave` .
 
 ```
 BOOL GetDirty();
@@ -784,15 +784,15 @@ BOOL GetDirty();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt den Wert des Datenmembers [m_bRequiresSave](#m_brequiressave)zurück.
+Gibt den Wert des Datenmember [m_bRequiresSave](#m_brequiressave)zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert wird mit [CComControlBase::SetDirty](#setdirty)festgelegt.
+Dieser Wert wird mit [CComControlBase:: SetDirty](#setdirty)festgelegt.
 
-## <a name="ccomcontrolbasegetzoominfo"></a><a name="getzoominfo"></a>CComControlBase::GetZoomInfo
+## <a name="ccomcontrolbasegetzoominfo"></a><a name="getzoominfo"></a>CComControlBase:: getzoominfo
 
-Ruft die x- und y-Werte des Zählers und Nenners des Zoomfaktors für ein Steuerelement ab, das für die ortsspezifische Bearbeitung aktiviert ist.
+Ruft die x-und y-Werte des zähators und des Nenners des Zoom Faktors für ein Steuerelement ab, das für die direkte Bearbeitung aktiviert ist.
 
 ```cpp
 void GetZoomInfo(ATL_DRAWINFO& di);
@@ -800,16 +800,16 @@ void GetZoomInfo(ATL_DRAWINFO& di);
 
 ### <a name="parameters"></a>Parameter
 
-*Di*<br/>
-Die Struktur, die den Zähler und den Nenner des Zoomfaktors hält. Weitere Informationen finden Sie [unter ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md).
+*di*<br/>
+Die Struktur, in der der Zähler und der Nenner des Zoom Faktors enthalten sein werden. Weitere Informationen finden Sie unter [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Zoomfaktor ist der Anteil der natürlichen Größe des Steuerelements an seiner aktuellen Ausdehnung.
+Der Zoomfaktor ist der Anteil der natürlichen Größe des Steuer Elements bis zum aktuellen Wert.
 
-## <a name="ccomcontrolbaseinplaceactivate"></a><a name="inplaceactivate"></a>CComControlBase::InplaceActivate
+## <a name="ccomcontrolbaseinplaceactivate"></a><a name="inplaceactivate"></a>CComControlBase:: inplaceaktivierungs
 
-Bewirkt, dass das Steuerelement vom inaktiven Zustand in den Zustand wechselt, den das Verb in *iVerb* angibt.
+Bewirkt, dass das Steuerelement vom inaktiven Zustand in den Zustand übergeht, den das Verb in *iVerb* anzeigt.
 
 ```
 HRESULT InPlaceActivate(LONG iVerb, const RECT* prcPosRect = NULL);
@@ -818,24 +818,24 @@ HRESULT InPlaceActivate(LONG iVerb, const RECT* prcPosRect = NULL);
 ### <a name="parameters"></a>Parameter
 
 *iVerb*<br/>
-Wert, der die Aktion angibt, die von [IOleObjectImpl::DoVerb](../../atl/reference/ioleobjectimpl-class.md#doverb)ausgeführt werden soll.
+Der Wert, der die Aktion angibt, die von [ioleobjectimpl ausgeführt werden soll::D overb](../../atl/reference/ioleobjectimpl-class.md#doverb).
 
-*prcPosRect*<br/>
-Zeiger auf die Position des In-Place-Steuerelements.
+*prcposrect*<br/>
+Ein Zeiger auf die Position des direkten Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der Standard-HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Vor der Aktivierung überprüft diese Methode, ob das Steuerelement über eine Clientsite verfügt, überprüft, wie viel des Steuerelements sichtbar ist, und ruft den Speicherort des Steuerelements im übergeordneten Fenster ab. Nachdem das Steuerelement aktiviert wurde, aktiviert diese Methode die Benutzeroberfläche des Steuerelements und weist den Container an, das Steuerelement sichtbar zu machen.
+Vor der Aktivierung überprüft diese Methode, ob das Steuerelement über einen Client Standort verfügt, überprüft, welcher Teil des Steuer Elements sichtbar ist, und ruft die Position des Steuer Elements im übergeordneten Fenster ab. Nachdem das Steuerelement aktiviert wurde, aktiviert diese Methode die Benutzeroberfläche des Steuer Elements und weist den Container an, das Steuerelement sichtbar zu machen.
 
-Diese Methode ruft `IOleInPlaceSite`auch `IOleInPlaceSiteEx`einen `IOleInPlaceSiteWindowless` , oder Schnittstellenzeiger für das Steuerelement ab und speichert ihn im Datenmember [CComControlBase::m_spInPlaceSite](#m_spinplacesite)der Steuerklasse. Die Steuerelementklassendatenmember [CComControlBase::m_bInPlaceSiteEx](#m_binplacesiteex), [CComControlBase::m_bWndLess](#m_bwndless), [CComControlBase::m_bWasOnceWindowless](#m_bwasoncewindowless)und [CComControlBase::m_bNegotiatedWnd](#m_bnegotiatedwnd) sind entsprechend auf true festgelegt.
+Diese Methode ruft auch einen `IOleInPlaceSite` -,- `IOleInPlaceSiteEx` oder `IOleInPlaceSiteWindowless` -Schnittstellen Zeiger für das-Steuerelement ab und speichert ihn im Datenmember der Steuerelement Klasse [CComControlBase:: m_spInPlaceSite](#m_spinplacesite). Die Steuerelement-Klassendatenmember [CComControlBase:: m_bInPlaceSiteEx](#m_binplacesiteex), [CComControlBase:: m_bWndLess](#m_bwndless), [CComControlBase:: m_bWasOnceWindowless](#m_bwasoncewindowless)und [CComControlBase:: m_bNegotiatedWnd](#m_bnegotiatedwnd) sind entsprechend auf true festgelegt.
 
-## <a name="ccomcontrolbaseinternalgetsite"></a><a name="internalgetsite"></a>CComControlBase::InternalGetSite
+## <a name="ccomcontrolbaseinternalgetsite"></a><a name="internalgetsite"></a>CComControlBase:: internalgetsite
 
-Rufen Sie diese Methode auf, um die Steuerungssite nach einem Zeiger auf die identifizierte Schnittstelle abzufragen.
+Mit dieser Methode können Sie die Steuerungs Website nach einem Zeiger auf die identifizierte Schnittstelle Abfragen.
 
 ```
 HRESULT InternalGetSite(REFIID riid, void** ppUnkSite);
@@ -844,22 +844,22 @@ HRESULT InternalGetSite(REFIID riid, void** ppUnkSite);
 ### <a name="parameters"></a>Parameter
 
 *riid*<br/>
-Die IID des Schnittstellenzeigers, der in *ppUnkSite*zurückgegeben werden soll.
+Die IID des Schnittstellen Zeigers, der in *ppunksite*zurückgegeben werden soll.
 
-*ppUnkSite*<br/>
-Adresse der Zeigervariablen, die den in *riid*angeforderten Schnittstellenzeiger empfängt.
+*ppunksite*<br/>
+Adresse der Zeiger Variablen, die den in *riid*angeforderten Schnittstellen Zeiger empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Site die in *riid*angeforderte Schnittstelle unterstützt, wird der Zeiger über *ppUnkSite*zurückgegeben. Andernfalls wird *ppUnkSite* auf NULL gesetzt.
+Wenn die Site die in *riid*angeforderte Schnittstelle unterstützt, wird der Zeiger mithilfe von *ppunksite*zurückgegeben. Andernfalls wird *ppunksite* auf NULL festgelegt.
 
-## <a name="ccomcontrolbasem_bautosize"></a><a name="m_bautosize"></a>CComControlBase::m_bAutoSize
+## <a name="ccomcontrolbasem_bautosize"></a><a name="m_bautosize"></a>CComControlBase:: m_bAutoSize
 
-Das Flag, das angibt, dass das Steuerelement keine andere Größe haben kann.
+Flag, das angibt, dass das Steuerelement keine andere Größe aufweisen kann.
 
 ```
 unsigned m_bAutoSize:1;
@@ -867,16 +867,16 @@ unsigned m_bAutoSize:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieses Flag wird `IOleObjectImpl::SetExtent` von überprüft und bewirkt, dass die Funktion E_FAIL zurückgibt, wenn TRUE.
+Dieses Flag wird von überprüft `IOleObjectImpl::SetExtent` und bewirkt, dass die Funktion E_FAIL zurückgibt, wenn der Wert true ist.
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Wenn Sie die Option **Auto Größe** auf der Registerkarte [Bestandseigenschaften](../../atl/reference/stock-properties-atl-control-wizard.md) des ATL-Steuerelement-Assistenten hinzufügen, erstellt der Assistent automatisch dieses Datenelement in Ihrer Steuerelementklasse, erstellt Put-and-Ab-Methoden für die Eigenschaft und unterstützt [IPropertyNotifySink,](/windows/win32/api/ocidl/nn-ocidl-ipropertynotifysink) um den Container automatisch zu benachrichtigen, wenn sich die Eigenschaft ändert.
+Wenn Sie im ATL-Steuerelement-Assistenten auf der Registerkarte " [Lagereigenschaften](../../atl/reference/stock-properties-atl-control-wizard.md) " die Option " **automatisch Größe** " hinzufügen, erstellt der Assistent dieses Datenmember automatisch in der Steuerelement Klasse, erstellt Put-und Get-Methoden für die Eigenschaft und unterstützt [IPropertyNotifySink](/windows/win32/api/ocidl/nn-ocidl-ipropertynotifysink) , um den Container automatisch zu benachrichtigen, wenn die Eigenschaft geändert
 
-## <a name="ccomcontrolbasem_bdrawfromnatural"></a><a name="m_bdrawfromnatural"></a>CComControlBase::m_bDrawFromNatural
+## <a name="ccomcontrolbasem_bdrawfromnatural"></a><a name="m_bdrawfromnatural"></a>CComControlBase:: m_bDrawFromNatural
 
-Flag, das `IDataObjectImpl::GetData` `CComControlBase::GetZoomInfo` angibt, dass `m_sizeNatural` und sollte `m_sizeExtent`die Steuerelementgröße von anstelle von festlegen.
+Flag, das angibt, dass `IDataObjectImpl::GetData` und `CComControlBase::GetZoomInfo` die Steuerelement Größe von und `m_sizeNatural` nicht von festlegen soll `m_sizeExtent` .
 
 ```
 unsigned m_bDrawFromNatural:1;
@@ -885,11 +885,11 @@ unsigned m_bDrawFromNatural:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_bdrawgetdatainhimetric"></a><a name="m_bdrawgetdatainhimetric"></a>CComControlBase::m_bDrawGetDataInHimetric
+## <a name="ccomcontrolbasem_bdrawgetdatainhimetric"></a><a name="m_bdrawgetdatainhimetric"></a>CComControlBase:: m_bDrawGetDataInHimetric
 
-Flag, das `IDataObjectImpl::GetData` angibt, dass HIMETRIC-Einheiten und nicht Pixel beim Zeichnen verwendet werden sollen.
+Flag, das angibt, dass `IDataObjectImpl::GetData` beim Zeichnen himetrische Einheiten und nicht Pixel verwenden soll.
 
 ```
 unsigned m_bDrawGetDataInHimetric:1;
@@ -897,14 +897,14 @@ unsigned m_bDrawGetDataInHimetric:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Jede logische HIMETRIC-Einheit beträgt 0,01 Millimeter.
+Jede logische himetrische Einheit ist 0,01 Millimeter.
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_binplaceactive"></a><a name="m_binplaceactive"></a>CComControlBase::m_bInPlaceActive
+## <a name="ccomcontrolbasem_binplaceactive"></a><a name="m_binplaceactive"></a>CComControlBase:: m_bInPlaceActive
 
-Flag, das angibt, dass das Steuerelement aktiv ist.
+Flag, das angibt, dass das Steuerelement direkt aktiv ist.
 
 ```
 unsigned m_bInPlaceActive:1;
@@ -912,14 +912,14 @@ unsigned m_bInPlaceActive:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dies bedeutet, dass das Steuerelement sichtbar ist und sein Fenster, falls vorhanden, sichtbar ist, aber seine Menüs und Symbolleisten sind möglicherweise nicht aktiv. Das `m_bUIActive` Flag gibt an, dass die Benutzeroberfläche des Steuerelements, z. B. Menüs, ebenfalls aktiv ist.
+Dies bedeutet, dass das Steuerelement sichtbar ist und sein Fenster, sofern vorhanden, sichtbar ist, die Menüs und Symbolleisten jedoch möglicherweise nicht aktiv sind. Das `m_bUIActive` Flag gibt an, dass die Benutzeroberfläche des Steuer Elements, z. b. Menüs, ebenfalls aktiv ist.
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_binplacesiteex"></a><a name="m_binplacesiteex"></a>CComControlBase::m_bInPlaceSiteEx
+## <a name="ccomcontrolbasem_binplacesiteex"></a><a name="m_binplacesiteex"></a>CComControlBase:: m_bInPlaceSiteEx
 
-Flag, das den `IOleInPlaceSiteEx` Container angibt, unterstützt die Benutzeroberfläche und OCX96-Steuerungsfunktionen, z. B. fensterlose und flimmerfreie Steuerelemente.
+Flag, das angibt, dass der Container die `IOleInPlaceSiteEx` Schnittstellen-und OCX96-Steuerelement Funktionen unterstützt, z. b. fensterlose und flimmerfreie Steuerelemente.
 
 ```
 unsigned m_bInPlaceSiteEx:1;
@@ -928,15 +928,15 @@ unsigned m_bInPlaceSiteEx:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Der `m_spInPlaceSite` Datenmember verweist abhängig vom Wert der `m_bWndLess` und-Flags `m_bInPlaceSiteEx` auf eine [IOleInPlaceSite,](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite) [IOleInPlaceSiteEx](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)oder [IOleInPlaceSiteWindowless-Schnittstelle.](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) (Das Datenmember `m_bNegotiatedWnd` muss TRUE `m_spInPlaceSite` sein, damit der Zeiger gültig ist.)
+Der-Datenmember `m_spInPlaceSite` zeigt abhängig vom Wert der-und-Flags auf eine [iolinplacesite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)-, [iolinplacesiteex](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)-oder [iolinplacesitewindowless](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) -Schnittstelle `m_bWndLess` `m_bInPlaceSiteEx` . (Der Datenmember `m_bNegotiatedWnd` muss "true" sein `m_spInPlaceSite` , damit der Zeiger gültig ist.)
 
-Wenn `m_bWndLess` FALSE `m_bInPlaceSiteEx` und TRUE `m_spInPlaceSite` ist, ist ein `IOleInPlaceSiteEx` Schnittstellenzeiger. Eine Tabelle mit der Beziehung zwischen diesen drei Datenmembern [finden Sie in m_spInPlaceSite.](#m_spinplacesite)
+Wenn `m_bWndLess` false ist und `m_bInPlaceSiteEx` true ist, `m_spInPlaceSite` ist ein `IOleInPlaceSiteEx` Schnittstellen Zeiger. Unter [m_spInPlaceSite](#m_spinplacesite) finden Sie eine Tabelle, die die Beziehung zwischen diesen drei Datenmembern anzeigt.
 
-## <a name="ccomcontrolbasem_bnegotiatedwnd"></a><a name="m_bnegotiatedwnd"></a>CComControlBase::m_bNegotiatedWnd
+## <a name="ccomcontrolbasem_bnegotiatedwnd"></a><a name="m_bnegotiatedwnd"></a>CComControlBase:: m_bNegotiatedWnd
 
-Flag, das angibt, ob das Steuerelement mit dem Container über die Unterstützung von OCX96-Steuerelementen (z. B. flimmerfreie und fensterlose Steuerelemente) verhandelt hat und ob das Steuerelement fensterlos oder fensterlos ist.
+Flag, das angibt, ob das Steuerelement mit dem Container für die Unterstützung von OCX96-Steuerelement Funktionen (z. b. flimmerfreie und fensterlose Steuerelemente) verhandelt hat und ob es sich um ein Fenster oder ein fensterloses Steuerelement handelt.
 
 ```
 unsigned m_bNegotiatedWnd:1;
@@ -945,13 +945,13 @@ unsigned m_bNegotiatedWnd:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Das `m_bNegotiatedWnd` Flag muss TRUE `m_spInPlaceSite` sein, damit der Zeiger gültig ist.
+Das `m_bNegotiatedWnd` Flag muss "true" sein `m_spInPlaceSite` , damit der Zeiger gültig ist.
 
-## <a name="ccomcontrolbasem_brecomposeonresize"></a><a name="m_brecomposeonresize"></a>CComControlBase::m_bRecomposeOnResize
+## <a name="ccomcontrolbasem_brecomposeonresize"></a><a name="m_brecomposeonresize"></a>CComControlBase:: m_bRecomposeOnResize
 
-Flag, das angibt, dass das Steuerelement seine Präsentation neu komponieren möchte, wenn der Container die Anzeigegröße des Steuerelements ändert.
+Flag, das angibt, dass das Steuerelement seine Präsentation neu verfassen möchte, wenn der Container die Anzeige Größe des Steuer Elements ändert.
 
 ```
 unsigned m_bRecomposeOnResize:1;
@@ -960,11 +960,11 @@ unsigned m_bRecomposeOnResize:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Dieses Flag wird von [IOleObjectImpl::SetExtent](../../atl/reference/ioleobjectimpl-class.md#setextent) aktiviert `SetExtent` und benachrichtigt, falls TRUE, den Container mit Ansichtsänderungen. Wenn dieses Flag gesetzt ist, sollte auch das OLEMISC_RECOMPOSEONRESIZE Bit in der [OLEMISC-Enumeration](/windows/win32/api/oleidl/ne-oleidl-olemisc) festgelegt werden.
+Dieses Flag wird von [ioleobjectimpl:: SetExtent](../../atl/reference/ioleobjectimpl-class.md#setextent) geprüft, und wenn true, `SetExtent` benachrichtigt den Container über Ansichts Änderungen. Wenn dieses Flag festgelegt ist, sollte auch das OLEMISC_RECOMPOSEONRESIZE Bit in der [OLEMISC](/windows/win32/api/oleidl/ne-oleidl-olemisc) -Enumeration festgelegt werden.
 
-## <a name="ccomcontrolbasem_brequiressave"></a><a name="m_brequiressave"></a>CComControlBase::m_bRequiresSave
+## <a name="ccomcontrolbasem_brequiressave"></a><a name="m_brequiressave"></a>CComControlBase:: m_bRequiresSave
 
 Flag, das angibt, dass das Steuerelement seit dem letzten Speichern geändert wurde.
 
@@ -974,14 +974,14 @@ unsigned m_bRequiresSave:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Wert `m_bRequiresSave` von kann mit [CComControlBase::SetDirty](#setdirty) eingestellt und mit [CComControlBase::GetDirty](#getdirty)abgerufen werden.
+Der Wert von `m_bRequiresSave` kann mit [CComControlBase:: SetDirty](#setdirty) festgelegt und mit [CComControlBase:: getdirty](#getdirty)abgerufen werden.
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_bresizenatural"></a><a name="m_bresizenatural"></a>CComControlBase::m_bResizeNatural
+## <a name="ccomcontrolbasem_bresizenatural"></a><a name="m_bresizenatural"></a>CComControlBase:: m_bResizeNatural
 
-Flag, das angibt, dass das Steuerelement die Größe seiner natürlichen Ausdehnung (seine nicht skalierte physische Größe) ändern möchte, wenn der Container die Anzeigegröße des Steuerelements ändert.
+Flag, das angibt, dass das Steuerelement die Größe des natürlichen Wertebereichs (dessen Größe nicht skaliert) ändern möchte, wenn der Container die Anzeige Größe des Steuer Elements ändert.
 
 ```
 unsigned m_bResizeNatural:1;
@@ -989,16 +989,16 @@ unsigned m_bResizeNatural:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieses Flag wird `IOleObjectImpl::SetExtent` von überprüft, und wenn `SetExtent` TRUE, `m_sizeNatural`wird die übergebene Größe der zugewiesen.
+Dieses Flag wird von geprüft `IOleObjectImpl::SetExtent` , und wenn true, wird die an übergebene Größe `SetExtent` zugewiesen `m_sizeNatural` .
 
-Die übergebene `SetExtent` Größe wird `m_sizeExtent`immer dem zugewiesen, unabhängig vom Wert von `m_bResizeNatural`.
+Die an eingeführte Größe `SetExtent` wird `m_sizeExtent` unabhängig vom Wert von immer zugewiesen `m_bResizeNatural` .
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_buiactive"></a><a name="m_buiactive"></a>CComControlBase::m_bUIActive
+## <a name="ccomcontrolbasem_buiactive"></a><a name="m_buiactive"></a>CComControlBase:: m_bUIActive
 
-Das Flag, das die Benutzeroberfläche des Steuerelements angibt, z. B. Menüs und Symbolleisten, ist aktiv.
+Flag, das angibt, dass die Benutzeroberfläche des Steuer Elements, z. b. Menüs und Symbolleisten, aktiv ist.
 
 ```
 unsigned m_bUIActive:1;
@@ -1006,12 +1006,12 @@ unsigned m_bUIActive:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das `m_bInPlaceActive` Flag gibt an, dass das Steuerelement aktiv ist, nicht jedoch, dass seine Benutzeroberfläche aktiv ist.
+Das `m_bInPlaceActive` Flag gibt an, dass das Steuerelement aktiv ist, aber nicht, dass die Benutzeroberfläche aktiv ist.
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_busingwindowrgn"></a><a name="m_busingwindowrgn"></a>CComControlBase::m_bUsingWindowRgn
+## <a name="ccomcontrolbasem_busingwindowrgn"></a><a name="m_busingwindowrgn"></a>CComControlBase:: m_bUsingWindowRgn
 
 Flag, das angibt, dass das Steuerelement den vom Container bereitgestellten Fensterbereich verwendet.
 
@@ -1022,11 +1022,11 @@ unsigned m_bUsingWindowRgn:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_bwasoncewindowless"></a><a name="m_bwasoncewindowless"></a>CComControlBase::m_bWasOnceWindowless
+## <a name="ccomcontrolbasem_bwasoncewindowless"></a><a name="m_bwasoncewindowless"></a>CComControlBase:: m_bWasOnceWindowless
 
-Flag, das angibt, dass das Steuerelement fensterlos war, aber jetzt möglicherweise fensterlos ist.
+Flag, das anzeigt, dass es sich um ein fensterloses Steuerelement handelt, aber möglicherweise nicht fensterloser ist.
 
 ```
 unsigned m_bWasOnceWindowless:1;
@@ -1035,11 +1035,11 @@ unsigned m_bWasOnceWindowless:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_bwindowonly"></a><a name="m_bwindowonly"></a>CComControlBase::m_bWindowOnly
+## <a name="ccomcontrolbasem_bwindowonly"></a><a name="m_bwindowonly"></a>CComControlBase:: m_bWindowOnly
 
-Flag, das das Steuerelement angibt, sollte gefenstert werden, auch wenn der Container fensterlose Steuerelemente unterstützt.
+Flag, das angibt, dass das Steuerelement in einem Fenster angezeigt werden soll, auch wenn der Containerfenster lose Steuerelemente unterstützt.
 
 ```
 unsigned m_bWindowOnly:1;
@@ -1048,11 +1048,11 @@ unsigned m_bWindowOnly:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_bwndless"></a><a name="m_bwndless"></a>CComControlBase::m_bWndLess
+## <a name="ccomcontrolbasem_bwndless"></a><a name="m_bwndless"></a>CComControlBase:: m_bWndLess
 
-Flag, das angibt, dass das Steuerelement fensterlos ist.
+Flag, das anzeigt, dass das Steuerelement fensterloser ist.
 
 ```
 unsigned m_bWndLess:1;
@@ -1061,15 +1061,15 @@ unsigned m_bWndLess:1;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Der Datenmember `m_spInPlaceSite` verweist auf eine [IOleInPlaceSite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)- [IOleInPlaceSiteEx](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)oder [IOleInPlaceSiteWindowless-Schnittstelle,](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) abhängig vom Wert der `m_bWndLess` und [CComControlBase::m_bInPlaceSiteEx-Flags.](#m_binplacesiteex) (Das Datenelement [CComControlBase::m_bNegotiatedWnd](#m_bnegotiatedwnd) muss TRUE sein, damit der [CComControlBase::m_spInPlaceSite](#m_spinplacesite) Zeiger gültig ist.)
+Der-Datenmember `m_spInPlaceSite` zeigt abhängig vom Wert der-und CComControlBase:: m_bInPlaceSiteEx-Flags auf eine [iolinplacesite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)-, [iolinplacesiteex](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)-oder [iolinplacesitewindowless](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) -Schnittstelle `m_bWndLess` . [CComControlBase::m_bInPlaceSiteEx](#m_binplacesiteex) (Das Datenmember [CComControlBase:: m_bNegotiatedWnd](#m_bnegotiatedwnd) muss "true" sein, damit der [CComControlBase:: m_spInPlaceSite](#m_spinplacesite) -Zeiger gültig ist.)
 
-Wenn `m_bWndLess` true `m_spInPlaceSite` ist, `IOleInPlaceSiteWindowless` ist ein Schnittstellenzeiger. Eine Tabelle mit der vollständigen Beziehung zwischen diesen Datenmembern finden Sie unter [CComControlBase::m_spInPlaceSite.](#m_spinplacesite)
+Wenn den Wert `m_bWndLess` true hat, `m_spInPlaceSite` ist ein `IOleInPlaceSiteWindowless` Schnittstellen Zeiger. Eine Tabelle, die die gesamte Beziehung zwischen diesen Datenmembern anzeigt, finden Sie unter [CComControlBase:: m_spInPlaceSite](#m_spinplacesite) .
 
-## <a name="ccomcontrolbasem_hwndcd"></a><a name="m_hwndcd"></a>CComControlBase::m_hWndCD
+## <a name="ccomcontrolbasem_hwndcd"></a><a name="m_hwndcd"></a>CComControlBase:: m_hWndCD
 
-Enthält einen Verweis auf das Fensterhandle, das dem Steuerelement zugeordnet ist.
+Enthält einen Verweis auf das Fenster Handle, das dem Steuerelement zugeordnet ist.
 
 ```
 HWND& m_hWndCD;
@@ -1078,11 +1078,11 @@ HWND& m_hWndCD;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_nfreezeevents"></a><a name="m_nfreezeevents"></a>CComControlBase::m_nFreezeEvents
+## <a name="ccomcontrolbasem_nfreezeevents"></a><a name="m_nfreezeevents"></a>CComControlBase:: m_nFreezeEvents
 
-Eine Anzahl der Fälle, in denen der Container Ereignisse eingefroren hat (verweigert, Ereignisse zu akzeptieren), ohne dass ein zwischengeschaltetes Tauwetter von Ereignissen (Annahme von Ereignissen) erforderlich ist.
+Gibt an, wie oft der Container fixierte Ereignisse (abgelehnte Ereignisse) ohne zwischengeschaltete Ereignisse (akzeptieren von Ereignissen) aufweist.
 
 ```
 short m_nFreezeEvents;
@@ -1091,11 +1091,11 @@ short m_nFreezeEvents;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_rcpos"></a><a name="m_rcpos"></a>CComControlBase::m_rcPos
+## <a name="ccomcontrolbasem_rcpos"></a><a name="m_rcpos"></a>CComControlBase:: m_rcPos
 
-Die Position in Pixeln des Steuerelements, ausgedrückt in den Koordinaten des Containers.
+Die Position des-Steuer Elements in Pixel, ausgedrückt in den Koordinaten des Containers.
 
 ```
 RECT m_rcPos;
@@ -1104,11 +1104,11 @@ RECT m_rcPos;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_sizeextent"></a><a name="m_sizeextent"></a>CComControlBase::m_sizeExtent
+## <a name="ccomcontrolbasem_sizeextent"></a><a name="m_sizeextent"></a>CComControlBase:: m_sizeExtent
 
-Die Ausdehnung der Steuerung in HIMETRIC-Einheiten (jede Einheit beträgt 0,01 Millimeter) für ein bestimmtes Display.
+Der Umfang des Steuer Elements in HIMETRIC-Einheiten (jede Einheit beträgt 0,01 Millimeter) für eine bestimmte Anzeige.
 
 ```
 SIZE m_sizeExtent;
@@ -1117,15 +1117,15 @@ SIZE m_sizeExtent;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Diese Größe wird durch das Display skaliert. Die physische Größe des Steuerelements `m_sizeNatural` wird im Datenmember angegeben und festgelegt.
+Diese Größe wird von der Anzeige skaliert. Die physische Größe des Steuer Elements wird im `m_sizeNatural` Datenmember angegeben und ist korrigiert.
 
-Sie können die Größe mit der globalen Funktion [AtlHiMetricToPixel](pixel-himetric-conversion-global-functions.md#atlhimetrictopixel)in Pixel konvertieren.
+Sie können die Größe mit der globalen Funktion [atlhimetrictopixel](pixel-himetric-conversion-global-functions.md#atlhimetrictopixel)in Pixel konvertieren.
 
-## <a name="ccomcontrolbasem_sizenatural"></a><a name="m_sizenatural"></a>CComControlBase::m_sizeNatural
+## <a name="ccomcontrolbasem_sizenatural"></a><a name="m_sizenatural"></a>CComControlBase:: m_sizeNatural
 
-Die physische Größe des Steuerelements in HIMETRIC-Einheiten (jede Einheit beträgt 0,01 Millimeter).
+Die physische Größe des Steuer Elements in HIMETRIC-Einheiten (jede Einheit ist 0,01 Millimeter).
 
 ```
 SIZE m_sizeNatural;
@@ -1134,15 +1134,15 @@ SIZE m_sizeNatural;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Diese Größe ist festgelegt, `m_sizeExtent` während die Größe in durch die Anzeige skaliert wird.
+Diese Größe ist korrigiert, während die Größe in `m_sizeExtent` von der Anzeige skaliert wird.
 
-Sie können die Größe mit der globalen Funktion [AtlHiMetricToPixel](pixel-himetric-conversion-global-functions.md#atlhimetrictopixel)in Pixel konvertieren.
+Sie können die Größe mit der globalen Funktion [atlhimetrictopixel](pixel-himetric-conversion-global-functions.md#atlhimetrictopixel)in Pixel konvertieren.
 
-## <a name="ccomcontrolbasem_spadvisesink"></a><a name="m_spadvisesink"></a>CComControlBase::m_spAdviseSink
+## <a name="ccomcontrolbasem_spadvisesink"></a><a name="m_spadvisesink"></a>CComControlBase:: m_spAdviseSink
 
-Ein direkter Zeiger auf die beratende Verbindung auf dem Container [(IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink)des Containers ).
+Ein direkter Zeiger auf die Beratungs Verbindung im Container ( [IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink)des Containers).
 
 ```
 CComPtr<IAdviseSink>
@@ -1152,11 +1152,11 @@ CComPtr<IAdviseSink>
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_spambientdispatch"></a><a name="m_spambientdispatch"></a>CComControlBase::m_spAmbientDispatch
+## <a name="ccomcontrolbasem_spambientdispatch"></a><a name="m_spambientdispatch"></a>CComControlBase:: m_spAmbientDispatch
 
-Ein `CComDispatchDriver` Objekt, mit dem Sie die Eigenschaften `IDispatch` eines Objekts über einen Zeiger abrufen und festlegen können.
+Ein `CComDispatchDriver` -Objekt, mit dem Sie die Eigenschaften eines Objekts über einen Zeiger abrufen und festlegen können `IDispatch` .
 
 ```
 CComDispatchDriver m_spAmbientDispatch;
@@ -1165,11 +1165,11 @@ CComDispatchDriver m_spAmbientDispatch;
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_spclientsite"></a><a name="m_spclientsite"></a>CComControlBase::m_spClientSite
+## <a name="ccomcontrolbasem_spclientsite"></a><a name="m_spclientsite"></a>CComControlBase:: m_spClientSite
 
-Ein Zeiger auf die Clientsite des Steuerelements innerhalb des Containers.
+Ein Zeiger auf die Client Site des-Steuer Elements innerhalb des Containers.
 
 ```
 CComPtr<IOleClientSite>
@@ -1179,11 +1179,11 @@ CComPtr<IOleClientSite>
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-## <a name="ccomcontrolbasem_spdataadviseholder"></a><a name="m_spdataadviseholder"></a>CComControlBase::m_spDataAdviseHolder
+## <a name="ccomcontrolbasem_spdataadviseholder"></a><a name="m_spdataadviseholder"></a>CComControlBase:: m_spDataAdviseHolder
 
-Stellt eine Standardmethode bereit, um beratungsgebende Verbindungen zwischen Datenobjekten und Beratungssenken zu halten.
+Bietet eine Standard Möglichkeit zum Speichern von Beratungs Verbindungen zwischen Datenobjekten und Raten senken.
 
 ```
 CComPtr<IDataAdviseHolder>
@@ -1193,15 +1193,15 @@ CComPtr<IDataAdviseHolder>
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Ein Datenobjekt ist ein Steuerelement, das Daten übertragen kann und [das IDataObject](/windows/win32/api/objidl/nn-objidl-idataobject)implementiert, dessen Methoden das Format und das Übertragungsmedium der Daten angeben.
+Ein Datenobjekt ist ein Steuerelement, das Daten übertragen kann und [IDataObject](/windows/win32/api/objidl/nn-objidl-idataobject)implementiert, dessen Methoden das Format und das Übertragungsmedium der Daten angeben.
 
-Die `m_spDataAdviseHolder` Schnittstelle implementiert die Methoden [IDataObject::DAdvise](/windows/win32/api/objidl/nf-objidl-idataobject-dadvise) und [IDataObject::DUnadvise,](/windows/win32/api/objidl/nf-objidl-idataobject-dunadvise) um beratungsfreundliche Verbindungen zum Container einzurichten und zu löschen. Der Container des Steuerelements muss eine Beratungssenke implementieren, indem er die [IAdviseSink-Schnittstelle](/windows/win32/api/objidl/nn-objidl-iadvisesink) unterstützt.
+Die-Schnittstelle `m_spDataAdviseHolder` implementiert die [IDataObject::D](/windows/win32/api/objidl/nf-objidl-idataobject-dadvise) Advisory-und [IDataObject::D unadvisory](/windows/win32/api/objidl/nf-objidl-idataobject-dunadvise) -Methoden zum Einrichten und Löschen von Beratungs Verbindungen mit dem Container. Der Container des Steuer Elements muss mithilfe der [IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink) -Schnittstelle eine Hinweis-Senke implementieren.
 
-## <a name="ccomcontrolbasem_spinplacesite"></a><a name="m_spinplacesite"></a>CComControlBase::m_spInPlaceSite
+## <a name="ccomcontrolbasem_spinplacesite"></a><a name="m_spinplacesite"></a>CComControlBase:: m_spInPlaceSite
 
-Ein Zeiger auf den [IOleInPlaceSite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite), [IOleInPlaceSiteEx](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)oder [IOleInPlaceSiteWindowless-Schnittstellenzeiger](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) des Containers.
+Ein Zeiger auf den [ioleingeplacesite](/windows/win32/api/oleidl/nn-oleidl-ioleinplacesite)-, [iolumplacesiteex](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesiteex)-oder [iolumplacesitewindowless](/windows/win32/api/ocidl/nn-ocidl-ioleinplacesitewindowless) -Schnittstellen Zeiger des Containers.
 
 ```
 CComPtr<IOleInPlaceSiteWindowless>
@@ -1211,21 +1211,21 @@ CComPtr<IOleInPlaceSiteWindowless>
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Der `m_spInPlaceSite` Zeiger ist nur gültig, wenn das [m_bNegotiatedWnd-Flag](#m_bnegotiatedwnd) TRUE ist.
+Der `m_spInPlaceSite` Zeiger ist nur gültig, wenn das [m_bNegotiatedWnd](#m_bnegotiatedwnd) -Flag "true" ist.
 
-Die folgende Tabelle `m_spInPlaceSite` zeigt, wie der Zeigertyp von den [m_bWndLess](#m_bwndless) und [m_bInPlaceSiteEx](#m_binplacesiteex) Datenmemberflags abhängt:
+In der folgenden Tabelle wird gezeigt, wie der `m_spInPlaceSite` Zeigertyp von den [m_bWndLess](#m_bwndless) -und [m_bInPlaceSiteEx](#m_binplacesiteex) Datenmember-Flags abhängig ist:
 
-|m_spInPlaceSite-Typ|m_bWndLess-Wert|m_bInPlaceSiteEx Wert|
+|m_spInPlaceSite-Typ|m_bWndLess Wert|m_bInPlaceSiteEx Wert|
 |---------------------------|-----------------------|-----------------------------|
-|`IOleInPlaceSiteWindowless`|TRUE|TRUE oder FALSE|
+|`IOleInPlaceSiteWindowless`|TRUE|TRUE oder false|
 |`IOleInPlaceSiteEx`|FALSE|TRUE|
 |`IOleInPlaceSite`|FALSE|FALSE|
 
-## <a name="ccomcontrolbasem_spoleadviseholder"></a><a name="m_spoleadviseholder"></a>CComControlBase::m_spOleAdviseHolder
+## <a name="ccomcontrolbasem_spoleadviseholder"></a><a name="m_spoleadviseholder"></a>CComControlBase:: m_spOleAdviseHolder
 
-Stellt eine Standardimplementierung für eine Möglichkeit zum Halten von Beratungsverbindungen bereit.
+Stellt eine Standard Implementierung einer Möglichkeit zum halten von Beratungs Verbindungen bereit.
 
 ```
 CComPtr<IOleAdviseHolder>
@@ -1235,13 +1235,13 @@ CComPtr<IOleAdviseHolder>
 ### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Um diesen Datenmember innerhalb der Steuerelementklasse zu verwenden, müssen Sie ihn als Datenmember in der Steuerelementklasse deklarieren. Ihre Steuerelementklasse erbt diesen Datenmember nicht von der Basisklasse, da er innerhalb einer Union in der Basisklasse deklariert wird.
+> Um dieses Datenmember in der Steuerelement Klasse zu verwenden, müssen Sie es als Datenmember in der Steuerelement Klasse deklarieren. Die Steuerelement Klasse erbt diesen Datenmember nicht von der Basisklasse, da Sie in einer Union in der Basisklasse deklariert wird.
 
-Die `m_spOleAdviseHolder` Schnittstelle implementiert die [Methoden IOleObject::Advise](/windows/win32/api/oleidl/nf-oleidl-ioleobject-advise) und [IOleObject::Unadvise](/windows/win32/api/oleidl/nf-oleidl-ioleobject-unadvise) zum Einrichten und Löschen von Beratungsverbindungen zum Container. Der Container des Steuerelements muss eine Beratungssenke implementieren, indem er die [IAdviseSink-Schnittstelle](/windows/win32/api/objidl/nn-objidl-iadvisesink) unterstützt.
+Die-Schnittstelle `m_spOleAdviseHolder` implementiert die [IOleObject::](/windows/win32/api/oleidl/nf-oleidl-ioleobject-advise) Advisory-Methode und die [IOleObject:: unadvisory](/windows/win32/api/oleidl/nf-oleidl-ioleobject-unadvise) -Methode zum Einrichten und Löschen von Beratungs Verbindungen mit dem Container. Der Container des Steuer Elements muss mithilfe der [IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink) -Schnittstelle eine Hinweis-Senke implementieren.
 
-## <a name="ccomcontrolbaseondraw"></a><a name="ondraw"></a>CComControlBase::OnDraw
+## <a name="ccomcontrolbaseondraw"></a><a name="ondraw"></a>CComControlBase:: OnDraw
 
-Überschreiben Sie diese Methode, um das Steuerelement zu zeichnen.
+Überschreiben Sie diese Methode zum Zeichnen des Steuer Elements.
 
 ```
 virtual HRESULT OnDraw(ATL_DRAWINFO& di);
@@ -1249,26 +1249,26 @@ virtual HRESULT OnDraw(ATL_DRAWINFO& di);
 
 ### <a name="parameters"></a>Parameter
 
-*Di*<br/>
-Ein Verweis auf die [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md) Struktur, die Zeichnungsinformationen enthält, z. B. den Zeichnungsaspekt, die Steuerelementgrenzen und ob die Zeichnung optimiert ist oder nicht.
+*di*<br/>
+Ein Verweis auf die [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md) Struktur, die Zeichnungs Informationen enthält, wie z. b. den Zeichnungs Aspekt, die Steuerelement Begrenzungen und ob die Zeichnung optimiert ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der `OnDraw` Standardwert löscht oder stellt den Gerätekontext wieder her oder führt nichts aus, abhängig von den in [CComControlBase::OnDrawAdvanced](#ondrawadvanced)festgelegten Flags.
+Der Standardwert `OnDraw` löscht oder stellt den Gerätekontext wieder her, oder es wird keine Aktion ausgeführt, abhängig von den in [CComControlBase:: OnDrawAdvanced](#ondrawadvanced)festgelegten Flags.
 
-Eine `OnDraw` Methode wird automatisch zu ihrer Steuerelementklasse hinzugefügt, wenn Sie das Steuerelement mit dem ATL-Steuerelement-Assistenten erstellen. Der Standardwert `OnDraw` des Assistenten zeichnet ein Rechteck mit der Bezeichnung "ATL 8.0".
+`OnDraw`Wenn Sie das Steuerelement mit dem ATL-Steuerelement-Assistenten erstellen, wird der Steuerelement Klasse automatisch eine-Methode hinzugefügt. Der Standard des Assistenten `OnDraw` zeichnet ein Rechteck mit der Bezeichnung "ATL 8,0".
 
 ### <a name="example"></a>Beispiel
 
-Siehe Beispiel für [CComControlBase::GetAmbientAppearance](#getambientappearance).
+Weitere Informationen finden Sie im Beispiel für [CComControlBase:: getambientappearance](#getambientappearance).
 
-## <a name="ccomcontrolbaseondrawadvanced"></a><a name="ondrawadvanced"></a>CComControlBase::OnDrawAdvanced
+## <a name="ccomcontrolbaseondrawadvanced"></a><a name="ondrawadvanced"></a>CComControlBase:: OnDrawAdvanced
 
-Der `OnDrawAdvanced` Standard vorbereitet einen normalisierten Gerätekontext für das Zeichnen `OnDraw` und ruft dann die Methode der Steuerelementklasse auf.
+Der Standard `OnDrawAdvanced` bereitet einen normalisierten Gerätekontext für das Zeichnen vor und ruft dann die-Methode der Steuerelement Klasse auf `OnDraw` .
 
 ```
 virtual HRESULT OnDrawAdvanced(ATL_DRAWINFO& di);
@@ -1276,22 +1276,22 @@ virtual HRESULT OnDrawAdvanced(ATL_DRAWINFO& di);
 
 ### <a name="parameters"></a>Parameter
 
-*Di*<br/>
-Ein Verweis auf die [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md) Struktur, die Zeichnungsinformationen enthält, z. B. den Zeichnungsaspekt, die Steuerelementgrenzen und ob die Zeichnung optimiert ist oder nicht.
+*di*<br/>
+Ein Verweis auf die [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md) Struktur, die Zeichnungs Informationen enthält, wie z. b. den Zeichnungs Aspekt, die Steuerelement Begrenzungen und ob die Zeichnung optimiert ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode, wenn Sie den Vom Container übergebenen Gerätekontext akzeptieren möchten, ohne ihn zu normalisieren.
+Überschreiben Sie diese Methode, wenn Sie den vom Container übergebenen Gerätekontext akzeptieren möchten, ohne ihn zu normalisieren.
 
-Weitere Informationen finden Sie unter [CComControlBase::OnDraw.](#ondraw)
+Weitere Informationen finden Sie unter [CComControlBase:: OnDraw](#ondraw) .
 
-## <a name="ccomcontrolbaseonkillfocus"></a><a name="onkillfocus"></a>CComControlBase::OnKillFocus
+## <a name="ccomcontrolbaseonkillfocus"></a><a name="onkillfocus"></a>CComControlBase:: onkillfocus
 
-Überprüft, ob das Steuerelement aktiv ist und über eine gültige Kontrollsite verfügt, und informiert den Container dann darüber, dass das Steuerelement den Fokus verloren hat.
+Überprüft, ob das Steuerelement direkt aktiv ist und über eine gültige Steuerungs Site verfügt, und informiert den Container darüber, dass das Steuerelement den Fokus verloren hat.
 
 ```
 LRESULT OnKillFocus(UINT /* nMsg */,
@@ -1311,14 +1311,14 @@ Reserviert.
 *lParam*<br/>
 Reserviert.
 
-*bBehandelt*<br/>
-Flag, das angibt, ob die Fensternachricht erfolgreich verarbeitet wurde. Der Standardwert lautet FALSE.
+*bHandled*<br/>
+Flag, das angibt, ob die Fenster Meldung erfolgreich verarbeitet wurde. Der Standardwert lautet FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt immer 1 zurück.
 
-## <a name="ccomcontrolbaseonmouseactivate"></a><a name="onmouseactivate"></a>CComControlBase::OnMouseActivate
+## <a name="ccomcontrolbaseonmouseactivate"></a><a name="onmouseactivate"></a>CComControlBase:: onmousaktivierung
 
 Überprüft, ob sich die Benutzeroberfläche im Benutzermodus befindet, und aktiviert dann das Steuerelement.
 
@@ -1340,16 +1340,16 @@ Reserviert.
 *lParam*<br/>
 Reserviert.
 
-*bBehandelt*<br/>
-Flag, das angibt, ob die Fensternachricht erfolgreich verarbeitet wurde. Der Standardwert lautet FALSE.
+*bHandled*<br/>
+Flag, das angibt, ob die Fenster Meldung erfolgreich verarbeitet wurde. Der Standardwert lautet FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt immer 1 zurück.
 
-## <a name="ccomcontrolbaseonpaint"></a><a name="onpaint"></a>CComControlBase::OnPaint
+## <a name="ccomcontrolbaseonpaint"></a><a name="onpaint"></a>CComControlBase:: OnPaint
 
-Bereitet den Container für das Malen vor, ruft den Clientbereich `OnDrawAdvanced` des Steuerelements ab und ruft dann die Methode der Steuerungsklasse auf.
+Bereitet den Container für das Zeichnen vor, Ruft den Client Bereich des Steuer Elements ab und ruft dann die-Methode der Steuerelement Klasse auf `OnDrawAdvanced` .
 
 ```
 LRESULT OnPaint(UINT /* nMsg */,
@@ -1364,7 +1364,7 @@ LRESULT OnPaint(UINT /* nMsg */,
 Reserviert.
 
 *wParam*<br/>
-Ein vorhandener HDC.
+Ein vorhandener hdc.
 
 *lParam*<br/>
 Reserviert.
@@ -1378,11 +1378,11 @@ Es wird immer NULL zurückgegeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn *wParam* nicht `OnPaint` NULL ist, geht davon aus, dass es einen gültigen HDC enthält und es anstelle von [CComControlBase::m_hWndCD](#m_hwndcd)verwendet.
+Wenn *wParam* nicht NULL ist, wird `OnPaint` davon ausgegangen, dass es einen gültigen HDC enthält und anstelle von [CComControlBase:: m_hWndCD](#m_hwndcd)verwendet.
 
-## <a name="ccomcontrolbaseonsetfocus"></a><a name="onsetfocus"></a>CComControlBase::OnSetFocus
+## <a name="ccomcontrolbaseonsetfocus"></a><a name="onsetfocus"></a>CComControlBase:: OnSetFocus
 
-Überprüft, ob das Steuerelement aktiv ist und über eine gültige Kontrollsite verfügt, und informiert dann den Container, dass das Steuerelement in den Fokus gerückt ist.
+Überprüft, ob das Steuerelement direkt aktiv ist und über eine gültige Steuerungs Site verfügt, und informiert den Container dann, dass das Steuerelement den Fokus erhalten hat.
 
 ```
 LRESULT OnSetFocus(UINT /* nMsg */,
@@ -1402,8 +1402,8 @@ Reserviert.
 *lParam*<br/>
 Reserviert.
 
-*bBehandelt*<br/>
-Flag, das angibt, ob die Fensternachricht erfolgreich verarbeitet wurde. Der Standardwert lautet FALSE.
+*bHandled*<br/>
+Flag, das angibt, ob die Fenster Meldung erfolgreich verarbeitet wurde. Der Standardwert lautet FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1411,11 +1411,11 @@ Gibt immer 1 zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sendet eine Benachrichtigung an den Container, dass das Steuerelement den Fokus erhalten hat.
+Sendet eine Benachrichtigung an den Container, dem das Steuerelement den Fokus erhält.
 
-## <a name="ccomcontrolbasepretranslateaccelerator"></a><a name="pretranslateaccelerator"></a>CComControlBase::PreTranslateAccelerator
+## <a name="ccomcontrolbasepretranslateaccelerator"></a><a name="pretranslateaccelerator"></a>CComControlBase::P retranslateaccelerator
 
-Überschreiben Sie diese Methode, um eigene Tastaturbeschleunigerhandler bereitzustellen.
+Überschreiben Sie diese Methode, um Ihre eigenen Tastaturtasten Kombinationen bereitzustellen.
 
 ```
 BOOL PreTranslateAccelerator(LPMSG /* pMsg */,
@@ -1424,19 +1424,19 @@ BOOL PreTranslateAccelerator(LPMSG /* pMsg */,
 
 ### <a name="parameters"></a>Parameter
 
-*pMsg*<br/>
+*pmsg*<br/>
 Reserviert.
 
-*hRet*<br/>
+*hret*<br/>
 Reserviert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Standardmäßig gibt FALSE zurück.
+Standardmäßig wird false zurückgegeben.
 
-## <a name="ccomcontrolbasesendonclose"></a><a name="sendonclose"></a>CComControlBase::SendOnClose
+## <a name="ccomcontrolbasesendonclose"></a><a name="sendonclose"></a>CComControlBase:: sendonclose
 
-Benachrichtigt alle beim Beratungsinhaber registrierten Beratungssenken, dass die Kontrolle geschlossen wurde.
+Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass das Steuerelement geschlossen wurde.
 
 ```
 HRESULT SendOnClose();
@@ -1444,15 +1444,15 @@ HRESULT SendOnClose();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sendet eine Benachrichtigung, dass das Steuerelement seine Beratungssenken geschlossen hat.
+Sendet eine Benachrichtigung, dass das Steuerelement seine Beratungs senken geschlossen hat.
 
-## <a name="ccomcontrolbasesendondatachange"></a><a name="sendondatachange"></a>CComControlBase::SendOnDataChange
+## <a name="ccomcontrolbasesendondatachange"></a><a name="sendondatachange"></a>CComControlBase:: sendondatachange
 
-Benachrichtigt alle beim Beratungsinhaber registrierten Beratungssenken, dass sich die Kontrolldaten geändert haben.
+Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass sich die Steuerungsdaten geändert haben.
 
 ```
 HRESULT SendOnDataChange(DWORD advf = 0);
@@ -1460,16 +1460,16 @@ HRESULT SendOnDataChange(DWORD advf = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*advf*<br/>
-Advise-Flags, die angeben, wie der Aufruf von [IAdviseSink::OnDataChange](/windows/win32/api/objidl/nf-objidl-iadvisesink-ondatachange) ausgeführt wird. Die Werte [ADVF](/windows/win32/api/objidl/ne-objidl-advf) stammen aus der ADVF-Enumeration.
+*ADVF*<br/>
+Rät Flags, die angeben, wie der [IAdviseSink:: OnDataChange](/windows/win32/api/objidl/nf-objidl-iadvisesink-ondatachange) -Rückruf erfolgt. Werte stammen aus der [ADVF](/windows/win32/api/objidl/ne-objidl-advf) -Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="ccomcontrolbasesendonrename"></a><a name="sendonrename"></a>CComControlBase::SendOnRename
+## <a name="ccomcontrolbasesendonrename"></a><a name="sendonrename"></a>CComControlBase:: sendonrename
 
-Benachrichtigt alle beim Beraterhalter registrierten Beratungssenken, dass das Steuerelement einen neuen Moniker hat.
+Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass das Steuerelement über einen neuen Moniker verfügt.
 
 ```
 HRESULT SendOnRename(IMoniker* pmk);
@@ -1477,20 +1477,20 @@ HRESULT SendOnRename(IMoniker* pmk);
 
 ### <a name="parameters"></a>Parameter
 
-*Pmk*<br/>
-Zeiger auf den neuen Moniker des Steuerelements.
+*PMK*<br/>
+Zeiger auf den neuen Moniker des Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sendet eine Benachrichtigung, dass sich der Moniker für das Steuerelement geändert hat.
+Sendet eine Benachrichtigung, dass der Moniker für das Steuerelement geändert wurde.
 
-## <a name="ccomcontrolbasesendonsave"></a><a name="sendonsave"></a>CComControlBase::SendOnSave
+## <a name="ccomcontrolbasesendonsave"></a><a name="sendonsave"></a>CComControlBase:: sendonsave
 
-Benachrichtigt alle beim Beratungsinhaber registrierten Beratungssenken, dass die Steuerung gespeichert wurde.
+Benachrichtigt alle mit dem Anmelde Inhaber registrierten Beratungs senken, dass das Steuerelement gespeichert wurde.
 
 ```
 HRESULT SendOnSave();
@@ -1498,15 +1498,15 @@ HRESULT SendOnSave();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sendet eine Benachrichtigung, dass das Steuerelement gerade seine Daten gespeichert hat.
+Sendet eine Benachrichtigung, dass das Steuerelement soeben seine Daten gespeichert hat.
 
-## <a name="ccomcontrolbasesendonviewchange"></a><a name="sendonviewchange"></a>CComControlBase::SendOnViewChange
+## <a name="ccomcontrolbasesendonviewchange"></a><a name="sendonviewchange"></a>CComControlBase:: sendonviewchange
 
-Benachrichtigt alle registrierten Beratungssenken, dass sich die Ansicht des Steuerelements geändert hat.
+Benachrichtigt alle registrierten Beratungs senken, dass die Ansicht des Steuer Elements geändert wurde.
 
 ```
 HRESULT SendOnViewChange(DWORD dwAspect, LONG lindex = -1);
@@ -1514,23 +1514,23 @@ HRESULT SendOnViewChange(DWORD dwAspect, LONG lindex = -1);
 
 ### <a name="parameters"></a>Parameter
 
-*Dwaspect*<br/>
-Der Aspekt oder die Ansicht des Steuerelements.
+*dwAspect*<br/>
+Der Aspekt oder die Ansicht des-Steuer Elements.
 
 *Lindex*<br/>
-Der Teil der Ansicht, die sich geändert hat. Nur -1 ist gültig.
+Der Teil der Ansicht, die sich geändert hat. Nur-1 ist gültig.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-`SendOnViewChange`[iAdviseSink::OnViewChange](/windows/win32/api/objidl/nf-objidl-iadvisesink-onviewchange)aufruft. Der einzige aktuell unterstützte Wert von *lindex* ist -1, was darauf hinweist, dass die gesamte Ansicht von Interesse ist.
+`SendOnViewChange`Ruft [IAdviseSink:: OnViewChange](/windows/win32/api/objidl/nf-objidl-iadvisesink-onviewchange)auf. Der einzige derzeit unterstützte *Lindex* -Wert ist-1, was darauf hinweist, dass die gesamte Ansicht von Interesse ist.
 
-## <a name="ccomcontrolbasesetcontrolfocus"></a><a name="setcontrolfocus"></a>CComControlBase::SetControlFocus
+## <a name="ccomcontrolbasesetcontrolfocus"></a><a name="setcontrolfocus"></a>CComControlBase:: setcontrolfocus
 
-Legt den Tastaturfokus auf oder aus dem Steuerelement fest oder entfernt ihn.
+Legt den Tastaturfokus auf das bzw. aus dem-Steuerelement fest oder entfernt diesen.
 
 ```
 BOOL SetControlFocus(BOOL bGrab);
@@ -1538,20 +1538,20 @@ BOOL SetControlFocus(BOOL bGrab);
 
 ### <a name="parameters"></a>Parameter
 
-*bGrab*<br/>
-Wenn TRUE, legt der Tastaturfokus auf das aufrufende Steuerelement fest. Wenn FALSE, entfernt den Tastaturfokus aus dem aufrufenden Steuerelement, sofern es den Fokus hat.
+*bgriff*<br/>
+Wenn true, wird der Tastaturfokus auf das aufrufenden Steuerelement festgelegt. Wenn der Wert false ist, wird der Tastaturfokus aus dem aufrufenden Steuerelement entfernt, sofern er den Fokus besitzt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn das Steuerelement erfolgreich den Fokus empfängt. andernfalls FALSE.
+Gibt true zurück, wenn das Steuerelement erfolgreich den Fokus erhält. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Für ein Fenstersteuerelement wird die Windows-API-Funktion [SetFocus](/windows/win32/api/winuser/nf-winuser-setfocus) aufgerufen. Für ein fensterloses Steuerelement wird [IOleInPlaceSiteWindowless::SetFocus](/windows/win32/api/ocidl/nf-ocidl-ioleinplacesitewindowless-setfocus) aufgerufen. Durch diesen Aufruf erhält ein fensterloses Steuerelement den Tastaturfokus und kann auf Fensternachrichten reagieren.
+Bei einem Fenster Steuerelement wird die Windows-API-Funktion " [SetFocus](/windows/win32/api/winuser/nf-winuser-setfocus) " aufgerufen. Bei einem fensterlosen Steuerelement wird [ioleingeplacesitewindowless:: SetFocus](/windows/win32/api/ocidl/nf-ocidl-ioleinplacesitewindowless-setfocus) aufgerufen. Durch diesen Aufrufs erhält ein fensterloses Steuerelement den Tastaturfokus und kann auf Fenster Meldungen reagieren.
 
-## <a name="ccomcontrolbasesetdirty"></a><a name="setdirty"></a>CComControlBase::SetDirty
+## <a name="ccomcontrolbasesetdirty"></a><a name="setdirty"></a>CComControlBase:: SetDirty
 
-Legt den `m_bRequiresSave` Datenmember auf den Wert in *bDirty*fest.
+Legt den Datenmember `m_bRequiresSave` auf den Wert in *bdirty*fest.
 
 ```cpp
 void SetDirty(BOOL bDirty);
@@ -1559,14 +1559,14 @@ void SetDirty(BOOL bDirty);
 
 ### <a name="parameters"></a>Parameter
 
-*bDirty*<br/>
-Wert des Datenelements [CComControlBase::m_bRequiresSave](#m_brequiressave).
+*bdirty*<br/>
+Der Wert des Datenmembers [CComControlBase:: m_bRequiresSave](#m_brequiressave).
 
 ### <a name="remarks"></a>Bemerkungen
 
-`SetDirty(TRUE)`sollte aufgerufen werden, um zu kennzeichnen, dass sich das Steuerelement seit dem letzten Speichern geändert hat. Der Wert `m_bRequiresSave` von wird mit [CComControlBase abgerufen::GetDirty](#getdirty).
+`SetDirty(TRUE)`sollte aufgerufen werden, um zu markieren, dass das Steuerelement seit dem letzten Speichern geändert wurde. Der Wert von `m_bRequiresSave` wird mit [CComControlBase:: getdirty](#getdirty)abgerufen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)

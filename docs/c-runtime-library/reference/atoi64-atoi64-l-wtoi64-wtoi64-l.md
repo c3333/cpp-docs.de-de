@@ -54,12 +54,12 @@ helpviewer_keywords:
 - _wtoi64 function
 - _atoi64 function
 ms.assetid: 2c3e30fd-545d-4222-8364-0c5905df9526
-ms.openlocfilehash: 555cd27e87324141f21bdd7ef12f9ff8ea1a4e09
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 44b1abf816020258240d653cfbf8cd806fcb7dd1
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913568"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232559"
 ---
 # <a name="_atoi64-_atoi64_l-_wtoi64-_wtoi64_l"></a>_atoi64, _atoi64_l, _wtoi64, _wtoi64_l
 
@@ -86,7 +86,7 @@ __int64 _wtoi64_l(
 
 ### <a name="parameters"></a>Parameter
 
-*SRT*<br/>
+*str*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -94,13 +94,13 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt den **__int64** Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert für **_atoi64** ist 0, wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
+Jede Funktion gibt den Wert zurück, der **`__int64`** erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert für **_atoi64** ist 0, wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
 
 Im Fall eines Überlaufs mit großen positiven ganzzahligen Werten gibt **_atoi64** **I64_MAX** zurück und **I64_MIN** im Falle eines Überlaufs mit großen negativen ganzzahligen Werten.
 
 In allen Fällen außerhalb des gültigen Bereichs wird **errno** auf **ERANGE**festgelegt. Wenn der übergebenen Parameter **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben 0 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktionen konvertieren eine Zeichenfolge in eine 64-Bit-Ganzzahl.
 
@@ -125,7 +125,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_tstoi64**|**_atoi64**|**_atoi64**|**_wtoi64**|
 |**_ttoi64**|**_atoi64**|**_atoi64**|**_wtoi64**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Routinen|Erforderlicher Header|
 |--------------|---------------------|
@@ -181,11 +181,11 @@ Function: _atoi64( "3336402735171707160320" ) = -1
 Overflow condition occurred.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
 [_ecvt](ecvt.md)<br/>
 [_fcvt](fcvt.md)<br/>
 [_gcvt](gcvt.md)<br/>

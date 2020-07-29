@@ -45,12 +45,12 @@ helpviewer_keywords:
 - trigonometric functions
 - atan2f function
 ms.assetid: 7a87a18e-c94d-4727-9cb1-1bb5c2725ae4
-ms.openlocfilehash: 41007e08884da6ccac09c7dc98cef12381e4b45a
-ms.sourcegitcommit: fe146adb3a02872538637196bb3c45aeeeaaf5c2
+ms.openlocfilehash: ad6bed621a0f1b5dd686909e4bf579e915662079
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506779"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232611"
 ---
 # <a name="atan-atanf-atanl-atan2-atan2f-atan2l"></a>atan, atanf, atanl, atan2, atan2f, atan2l
 
@@ -97,7 +97,7 @@ Die **Atan** -Funktion berechnet den Arkus Tangens (die umgekehrte Tangens Funkt
 
 **Atan** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Atan** und **atan2** mit **float** -oder **Long** **Double** -Argumenten aufzurufen. In einem C-Programm akzeptieren **Atan** und **atan2** immer **doppelte** Argumente und geben einen **Double**-Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Atan** und **atan2** , die-oder-Argumente annehmen, aufgerufen werden **`float`** **`long double`** . In einem C-Programm nehmen **Atan** und **atan2** immer **`double`** Argumente an und geben einen zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -138,7 +138,7 @@ Arctangent of 5.000000: 1.373401
 Arctangent of 0.500000 / 5.000000: 0.099669
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acos, acosf, acosl](acos-acosf-acosl.md)<br/>

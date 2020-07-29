@@ -33,12 +33,12 @@ helpviewer_keywords:
 - cimagf function
 - cimagl function
 ms.assetid: 0d8836f5-d61d-44cd-8731-6f75cb776def
-ms.openlocfilehash: 38eef416afb078614ef26ab5d7c8810f46dd9a85
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: af7d15ee1b5dfd863025565bf8827199f7492841
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939168"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232546"
 ---
 # <a name="cimag-cimagf-cimagl"></a>cimag, cimagf, cimagl
 
@@ -66,17 +66,17 @@ Eine komplexe Zahl.
 
 Der imaginäre Teil von *z*.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Cimag** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und **float** -oder **Long** **Double** -Werte zurückgeben. In einem C-Programm nimmt **Cimag** immer einen **_Dcomplex** -Wert und gibt einen **Double** -Wert zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Cimag** aufzurufen, die **_Fcomplex** -oder **_Lcomplex** -Werte annehmen und-oder-Werte zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **Cimag** immer einen **_Dcomplex** Wert und gibt einen **`double`** Wert zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**cimag**,               **cimagf**, **cimagl**|\<complex.h>|\<ccomplex>|
+|**Cimag**, **cimagf**, **cimagl**|\<complex.h>|\<ccomplex>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

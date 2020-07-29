@@ -1,5 +1,5 @@
 ---
-title: CComCriticalSection-Klasse
+title: Ccomcriticalsection-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CComCriticalSection
@@ -13,16 +13,16 @@ f1_keywords:
 helpviewer_keywords:
 - CComCriticalSection class
 ms.assetid: 44e1edd2-90be-4bfe-9739-58e8b419e7d1
-ms.openlocfilehash: f3991d217fbc201bd428ed2522a5c4c25e074928
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 8cf590052dee9d0303ccfb102296fc66038aec57
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81327969"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224304"
 ---
-# <a name="ccomcriticalsection-class"></a>CComCriticalSection-Klasse
+# <a name="ccomcriticalsection-class"></a>Ccomcriticalsection-Klasse
 
-Diese Klasse stellt Methoden zum Abrufen und Freigeben des Besitzes eines kritischen Abschnittsobjekts bereit.
+Diese Klasse stellt Methoden zum Abrufen und Freigeben des Besitzes eines kritischen Abschnitts Objekts bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,38 +34,38 @@ class CComCriticalSection
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComCriticalSection::CComCriticalSection](#ccomcriticalsection)|Der Konstruktor.|
+|[Ccomcriticalsection:: ccomcriticalsection](#ccomcriticalsection)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CComCriticalSection::Init](#init)|Erstellt und initialisiert ein kritisches Schnittobjekt.|
-|[CComCriticalSection::Lock](#lock)|Ruft den Besitz des kritischen Abschnittsobjekts ab.|
-|[CComCriticalSection::Term](#term)|Gibt Systemressourcen frei, die vom kritischen Abschnittsobjekt verwendet werden.|
-|[CComCriticalSection::Entsperren](#unlock)|Gibt den Besitz des kritischen Abschnittsobjekts frei.|
+|[Ccomcriticalsection:: init](#init)|Erstellt und initialisiert ein kritisches Abschnitts Objekt.|
+|[Ccomcriticalsection:: Lock](#lock)|Ruft den Besitz des kritischen Abschnitts Objekts ab.|
+|[Ccomcriticalsection:: Term](#term)|Gibt Systemressourcen frei, die vom Objekt des kritischen Abschnitts verwendet werden.|
+|[Ccomcriticalsection:: Unlock](#unlock)|Gibt den Besitz des kritischen Abschnitts Objekts frei.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CComCriticalSection::m_sec](#m_sec)|Ein CRITICAL_SECTION Objekt.|
+|[Ccomcriticalsection:: m_sec](#m_sec)|Ein CRITICAL_SECTION-Objekt.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CComCriticalSection`ist der Klasse [CComAutoCriticalSection](../../atl/reference/ccomautocriticalsection-class.md)ähnlich, mit der Ausnahme, dass Sie den kritischen Abschnitt explizit initialisieren und freigeben müssen.
+`CComCriticalSection`ähnelt der Klasse [ccomautocriticalsection](../../atl/reference/ccomautocriticalsection-class.md), mit dem Unterschied, dass Sie den kritischen Abschnitt explizit initialisieren und freigeben müssen.
 
-In der `CComCriticalSection` Regel verwenden Sie über den **typedef-Namen** [CriticalSection](ccommultithreadmodel-class.md#criticalsection). Dieser Name `CComCriticalSection` verweist auf die Verwendung von [CComMultiThreadModel.](../../atl/reference/ccommultithreadmodel-class.md)
+In der Regel verwenden Sie `CComCriticalSection` den **`typedef`** Namen [CriticalSection](ccommultithreadmodel-class.md#criticalsection). Dieser Name verweist auf den Fall `CComCriticalSection` , dass [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md) verwendet wird.
 
-Eine sicherere Möglichkeit, diese Klasse als Aufruf `Lock` und `Unlock` direkt zu verwenden, finden Sie unter [CComCritSecLock-Klasse.](../../atl/reference/ccomcritseclock-class.md)
+Unter [ccomcritcclock Class](../../atl/reference/ccomcritseclock-class.md) finden Sie eine sicherere Möglichkeit, diese Klasse zu verwenden, als `Lock` `Unlock` direkt aufrufen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlcore.h
+**Header:** atlcore. h
 
-## <a name="ccomcriticalsectionccomcriticalsection"></a><a name="ccomcriticalsection"></a>CComCriticalSection::CComCriticalSection
+## <a name="ccomcriticalsectionccomcriticalsection"></a><a name="ccomcriticalsection"></a>Ccomcriticalsection:: ccomcriticalsection
 
 Der Konstruktor.
 
@@ -77,9 +77,9 @@ CComCriticalSection() throw();
 
 Legt den [m_sec](#m_sec) Datenmember auf NULL fest.
 
-## <a name="ccomcriticalsectioninit"></a><a name="init"></a>CComCriticalSection::Init
+## <a name="ccomcriticalsectioninit"></a><a name="init"></a>Ccomcriticalsection:: init
 
-Ruft die Win32-Funktion [InitializeCriticalSection](/windows/win32/api/synchapi/nf-synchapi-initializecriticalsection)auf, die das im [m_sec-Datenmember](#m_sec) enthaltene kritische Abschnittsobjekt initialisiert.
+Ruft die Win32-Funktion [InitializeCriticalSection](/windows/win32/api/synchapi/nf-synchapi-initializecriticalsection)auf, die das im [m_sec](#m_sec) -Datenmember enthaltene kritische Abschnitts Objekt initialisiert.
 
 ```
 HRESULT Init() throw();
@@ -87,11 +87,11 @@ HRESULT Init() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg, E_OUTOFMEMORY oder E_FAIL bei Einem Fehler zurück.
+Gibt S_OK bei Erfolg, E_OUTOFMEMORY oder E_FAIL bei einem Fehler zurück.
 
-## <a name="ccomcriticalsectionlock"></a><a name="lock"></a>CComCriticalSection::Lock
+## <a name="ccomcriticalsectionlock"></a><a name="lock"></a>Ccomcriticalsection:: Lock
 
-Ruft die Win32-Funktion [EnterCriticalSection](/windows/win32/api/synchapi/nf-synchapi-entercriticalsection)auf, die wartet, bis der Thread den Besitz des kritischen Abschnittsobjekts übernehmen kann, das im [m_sec-Datenmember](#m_sec) enthalten ist.
+Ruft die Win32-Funktion " [EnterCriticalSection](/windows/win32/api/synchapi/nf-synchapi-entercriticalsection)" auf, die wartet, bis der Thread den Besitz des kritischen Abschnitts Objekts übernimmt, das im [m_sec](#m_sec) Datenmember enthalten ist.
 
 ```
 HRESULT Lock() throw();
@@ -99,23 +99,23 @@ HRESULT Lock() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg, E_OUTOFMEMORY oder E_FAIL bei Einem Fehler zurück.
+Gibt S_OK bei Erfolg, E_OUTOFMEMORY oder E_FAIL bei einem Fehler zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das kritische Abschnittsobjekt muss zuerst mit einem Aufruf der [Init-Methode](#init) initialisiert werden. Wenn die Ausführung des geschützten Codes abgeschlossen ist, muss der Thread [Unlock](#unlock) aufrufen, um den Besitz des kritischen Abschnitts freizugeben.
+Das Critical Section-Objekt muss zuerst mit einem Rückruf der [Init](#init) -Methode initialisiert werden. Wenn die Ausführung des geschützten Codes abgeschlossen ist, muss der Thread [Unlock](#unlock) aufgerufen werden, um den Besitz des kritischen Abschnitts freizugeben.
 
-## <a name="ccomcriticalsectionm_sec"></a><a name="m_sec"></a>CComCriticalSection::m_sec
+## <a name="ccomcriticalsectionm_sec"></a><a name="m_sec"></a>Ccomcriticalsection:: m_sec
 
-Enthält ein kritisches Abschnittsobjekt, das von allen `CComCriticalSection` Methoden verwendet wird.
+Enthält ein kritisches Abschnitts Objekt, das von allen- `CComCriticalSection` Methoden verwendet wird.
 
 ```
 CRITICAL_SECTION m_sec;
 ```
 
-## <a name="ccomcriticalsectionterm"></a><a name="term"></a>CComCriticalSection::Term
+## <a name="ccomcriticalsectionterm"></a><a name="term"></a>Ccomcriticalsection:: Term
 
-Ruft die Win32-Funktion [DeleteCriticalSection](/windows/win32/api/synchapi/nf-synchapi-deletecriticalsection)auf, die alle Ressourcen freigibt, die vom kritischen Abschnittsobjekt im [m_sec](#m_sec) Datenmember verwendet werden.
+Ruft die Win32-Funktion [DeleteCriticalSection](/windows/win32/api/synchapi/nf-synchapi-deletecriticalsection)auf, die alle Ressourcen freigibt, die vom kritischen Abschnitts Objekt verwendet werden, das im [m_sec](#m_sec) Datenmember enthalten ist.
 
 ```
 HRESULT Term() throw();
@@ -127,11 +127,11 @@ Gibt S_OK zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Nach `Term` dem Aufruf kann der kritische Abschnitt nicht mehr für die Synchronisierung verwendet werden.
+Nachdem `Term` aufgerufen wurde, kann der kritische Abschnitt nicht mehr für die Synchronisierung verwendet werden.
 
-## <a name="ccomcriticalsectionunlock"></a><a name="unlock"></a>CComCriticalSection::Entsperren
+## <a name="ccomcriticalsectionunlock"></a><a name="unlock"></a>Ccomcriticalsection:: Unlock
 
-Ruft die Win32-Funktion [LeaveCriticalSection](/windows/win32/api/synchapi/nf-synchapi-leavecriticalsection)auf, die den Besitz des kritischen Abschnittsobjekts freigibt, das im [m_sec](#m_sec) Datenmember enthalten ist.
+Ruft die Win32-Funktion " [LeaveCriticalSection](/windows/win32/api/synchapi/nf-synchapi-leavecriticalsection)" auf, die den Besitz des kritischen Abschnitts Objekts freigibt, das im [m_sec](#m_sec) Datenmember enthalten ist.
 
 ```
 HRESULT Unlock() throw();
@@ -143,10 +143,10 @@ Gibt S_OK zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um zuerst den Besitz zu erhalten, muss der Thread die [Lock-Methode](#lock) aufrufen. Jeder Aufruf `Lock` erfordert einen `Unlock` entsprechenden Aufruf, um den Besitz des kritischen Abschnitts freizugeben.
+Um zuerst den Besitz zu erhalten, muss der Thread die [Lock](#lock) -Methode aufzurufen. Jeder-Befehl `Lock` erfordert einen entsprechenden-Befehl, `Unlock` um den Besitz des kritischen Abschnitts freizugeben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[CComFakeCriticalSection-Klasse](../../atl/reference/ccomfakecriticalsection-class.md)<br/>
+[Ccomfakecriticalsection-Klasse](../../atl/reference/ccomfakecriticalsection-class.md)<br/>
 [Klassenübersicht](../../atl/atl-class-overview.md)<br/>
-[CComCritSecLock-Klasse](../../atl/reference/ccomcritseclock-class.md)
+[Ccomcritcclock-Klasse](../../atl/reference/ccomcritseclock-class.md)
