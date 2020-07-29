@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3532
 ms.assetid: 51067853-eda8-4f59-86e8-8924e16d3a95
-ms.openlocfilehash: 2ef5eb3c2bedd9defbd0b80e6d8c5c8912fcf16d
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: e2329111e916df9eac99d156bcf58a58e148cb08
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761932"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228816"
 ---
 # <a name="compiler-error-c3532"></a>Compilerfehler C3532
 
 "Typ": falsche Verwendung von "Auto"
 
-Der angegebenen Typ kann nicht mit dem `auto`-Schlüsselwort deklariert werden. Beispielsweise können Sie das `auto`-Schlüsselwort nicht verwenden, um ein Array oder einen Methoden Rückgabetyp zu deklarieren.
+Der angegebenen Typ kann nicht mit dem- **`auto`** Schlüsselwort deklariert werden. Beispielsweise können Sie das- **`auto`** Schlüsselwort nicht verwenden, um ein Array oder einen Methoden Rückgabetyp zu deklarieren.
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
@@ -27,7 +27,7 @@ Der angegebenen Typ kann nicht mit dem `auto`-Schlüsselwort deklariert werden. 
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel ergibt C3532, da das `auto`-Schlüsselwort keinen Methoden Rückgabetyp deklarieren kann.
+Das folgende Beispiel ergibt C3532, da das- **`auto`** Schlüsselwort keinen Methoden Rückgabetyp deklarieren kann.
 
 ```cpp
 // C3532a.cpp
@@ -37,7 +37,7 @@ auto f(){}   // C3532
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel ergibt C3532, da das `auto`-Schlüsselwort kein Array deklarieren kann.
+Das folgende Beispiel ergibt C3532, da das- **`auto`** Schlüsselwort kein Array deklarieren kann.
 
 ```cpp
 // C3532b.cpp

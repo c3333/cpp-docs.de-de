@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3499
 ms.assetid: 6717de5c-ae0f-4024-bdf2-b5598009e7b6
-ms.openlocfilehash: e50aaeac4a9f02cf3e67c25a08afdc2df0f1c62f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 21d7424e727dab54ff507a8ec9a38db44df1806f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74738010"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228842"
 ---
 # <a name="compiler-error-c3499"></a>Compilerfehler C3499
 
 Ein Lambda, für das ein Void-Rückgabetyp angegeben wurde, kann keinen Wert zurückgeben.
 
-Der Compiler generiert diesen Fehler, wenn ein Lambdaausdruck, der `void` als Rückgabetyp angibt, einen Wert zurückgibt, oder wenn ein Lambdaausdruck mehr als eine Anweisung enthält und einen Wert zurückgibt, ohne dessen Rückgabetyp anzugeben.
+Der Compiler generiert diesen Fehler, wenn ein Lambda-Ausdruck, **`void`** der als Rückgabetyp angibt, einen Wert zurückgibt, oder wenn ein Lambda-Ausdruck mehr als eine Anweisung enthält und einen Wert zurückgibt, aber nicht seinen Rückgabetyp angibt.
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 

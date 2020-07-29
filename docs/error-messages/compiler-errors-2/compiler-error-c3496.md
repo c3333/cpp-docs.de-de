@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3496
 ms.assetid: e19885f2-677f-4c1e-bc69-e35852262dc3
-ms.openlocfilehash: b9542f1904c6797a77c88c88a37aff9348364268
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 993d391f28a59afc8926748f2e6f34ab441657dc
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74738179"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228855"
 ---
 # <a name="compiler-error-c3496"></a>Compilerfehler C3496
 
 "this" wird immer nach Wert erfasst: "&" wird ignoriert.
 
-Der `this` -Zeiger kann nicht als Verweis erfasst werden.
+Der Zeiger kann nicht als **`this`** Verweis erfasst werden.
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-- Erfassen Sie den `this` -Zeiger nach Wert.
+- Erfassen Sie den **`this`** Zeiger nach Wert.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3496 generiert, weil ein Verweis auf den `this` -Zeiger in der Erfassungsliste eines Lambdaausdrucks auftritt:
+Im folgenden Beispiel wird C3496 generiert, weil ein Verweis auf den- **`this`** Zeiger in der Erfassungs Liste eines Lambda-Ausdrucks angezeigt wird:
 
 ```cpp
 // C3496.cpp

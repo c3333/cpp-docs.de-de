@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C3535
 ms.assetid: 24449c98-f681-484d-a00b-32533dca3a88
-ms.openlocfilehash: 6b487c0f94a00ec64e0c2178265c5a8c27544a51
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 60ffd5d8decd5c9065ca55cfed34383278359f3e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761555"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228790"
 ---
 # <a name="compiler-error-c3535"></a>Compilerfehler C3535
 
 der Typ für "Typ1" kann nicht von "Typ2" abgeleitet werden.
 
-Der Typ der Variablen, die vom `auto`-Schlüsselwort deklariert wurde, kann nicht vom Typ des Initialisierungs Ausdrucks abgeleitet werden. Dieser Fehler tritt beispielsweise auf, wenn der Initialisierungs Ausdruck zu `void`ausgewertet wird. Dies ist kein Typ.
+Der Typ der Variablen, die vom- **`auto`** Schlüsselwort deklariert wurde, kann nicht vom Typ des Initialisierungs Ausdrucks abgeleitet werden. Dieser Fehler tritt z. b. auf, wenn der Initialisierungs Ausdruck zu ausgewertet **`void`** wird, der kein-Typ ist.
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-1. Stellen Sie sicher, dass der Typ des Initialisierungs Ausdrucks nicht `void`ist.
+1. Stellen Sie sicher, dass der Typ des Initialisierungs Ausdrucks nicht ist **`void`** .
 
 1. Stellen Sie sicher, dass die Deklaration kein Zeiger auf einen grundlegenden Typ ist. Weitere Informationen finden Sie unter [grundlegende Typen](../../cpp/fundamental-types-cpp.md).
 
@@ -29,7 +29,7 @@ Der Typ der Variablen, die vom `auto`-Schlüsselwort deklariert wurde, kann nich
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel ergibt C3535, da der Initialisierungs Ausdruck zu `void`ausgewertet wird.
+Im folgenden Beispiel wird C3535 erzeugt, da der Initialisierungs Ausdruck als ausgewertet wird **`void`** .
 
 ```cpp
 // C3535a.cpp
@@ -44,7 +44,7 @@ int main()
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel ergibt C3535, da die-Anweisung Variable `x` als Zeiger auf einen abgeleiteten Typ deklariert, aber der Typ des initialisiererausdrucks ist Double. Folglich kann der Compiler den Typ der Variablen nicht ableiten.
+Im folgenden Beispiel wird C3535 erzeugt, da die-Anweisung Variable `x` als Zeiger auf einen abgeleiteten Typ deklariert, aber der Typ des initialisiererausdrucks ist Double. Folglich kann der Compiler den Typ der Variablen nicht ableiten.
 
 ```cpp
 // C3535b.cpp
@@ -58,7 +58,7 @@ int main()
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3535 erzeugt, da die Variable `p` einen Zeiger auf einen dedudierten Typ deklariert, aber der Initialisierungs Ausdruck kein Zeigertyp ist.
+Im folgenden Beispiel wird C3535 erzeugt, da die Variable `p` einen Zeiger auf einen abgeleiteten Typ deklariert, der Initialisierungs Ausdruck jedoch kein Zeigertyp ist.
 
 ```cpp
 // C3535c.cpp

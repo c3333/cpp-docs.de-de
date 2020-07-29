@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generic delegates
 - delegates, generic [C++]
 ms.assetid: 09d430b2-1aef-4fbc-87f9-9d7b8185d798
-ms.openlocfilehash: 4c579d0c0ab39a2ddcadfd116bdfed8ba9da2863
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 527f2837f0c29299727a22df8d4f3d807be0e25b
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80182031"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228712"
 ---
 # <a name="generic-delegates-ccli"></a>Generische Delegaten (C++/CLI)
 
@@ -39,9 +39,9 @@ Durch Trennzeichen getrennte Liste von Bezeichnern für die Typparameter.
 Nimmt die in [Einschränkungen für generische Typparameter (C++/CLI)](constraints-on-generic-type-parameters-cpp-cli.md) angegebene Form an.
 
 *accessibility-modifiers*<br/>
-(Optional) Zugriffsmodifizierer (z.B. **public**, **private**).
+Optionale Zugriffsmodifizierer (z. b. **`public`** **`private`** ).
 
-*result-type*<br/>
+*Ergebnistyp*<br/>
 Der Rückgabetyp des Delegaten.
 
 *identifier*<br/>
@@ -162,6 +162,6 @@ Invoking the integer delegate: i = 123, j = 123
 Invoking the double delegate: m = 0.123, n = 0.123
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

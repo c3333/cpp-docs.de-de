@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4471
 ms.assetid: ccfd8bd5-bc1b-4be7-a6ea-0e3a7add6607
-ms.openlocfilehash: 5d7ed7dc84c0ef61c7789deeb128b99977fa6028
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: b107b25714dd3333c3adcb8c83bf56775bf91823
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076942"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228751"
 ---
 # <a name="compiler-warning-level-4-c4471"></a>Compilerwarnung (Stufe 4) C4471
 
 '*Enumeration*': für eine vorwärts Deklaration einer Enumeration ohne Bereichs Einschränkung ist ein zugrunde liegender Typ erforderlich (int wird angenommen).
 
-Eine vorwärts Deklaration einer Enumeration ohne Bereichs Einschränkung wurde ohne einen Spezifizierer für den zugrunde liegenden Typ gefunden. Standardmäßig geht Visual C++ davon aus, dass `int` der zugrunde liegende Typ für eine Enumeration ist. Dies kann zu Problemen führen, wenn ein anderer Typ in der Enumerationsdefinition verwendet wird, z. b. Wenn ein anderer expliziter Typ angegeben ist oder wenn ein anderer Typ implizit durch einen Initialisierer festgelegt wird. Möglicherweise haben Sie auch Portabilitäts Probleme. andere Compiler nehmen nicht an `int` der zugrunde liegende Typ einer Enumeration ist.
+Eine vorwärts Deklaration einer Enumeration ohne Bereichs Einschränkung wurde ohne einen Spezifizierer für den zugrunde liegenden Typ gefunden. Standardmäßig geht Visual C++ davon aus, **`int`** dass der zugrunde liegende Typ für eine Enumeration ist. Dies kann zu Problemen führen, wenn ein anderer Typ in der Enumerationsdefinition verwendet wird, z. b. Wenn ein anderer expliziter Typ angegeben ist oder wenn ein anderer Typ implizit durch einen Initialisierer festgelegt wird. Möglicherweise haben Sie auch Portabilitäts Probleme. andere Compiler gehen nicht davon aus, dass **`int`** es sich um den zugrunde liegenden Typ einer Enumeration handelt.
 
 Diese Warnung ist standardmäßig deaktiviert. Sie können/Wall oder/w*N*4471 verwenden, um es in der Befehlszeile zu aktivieren, oder Sie verwenden #Pragma [Warnung](../../preprocessor/warning.md) in der Quelldatei.
 
