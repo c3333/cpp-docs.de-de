@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - D9041
 ms.assetid: ada8815f-4246-4e25-b57d-a7f16fa107cc
-ms.openlocfilehash: 7c685a1ca3195ad4ab52bab8b5d32b1a51534b24
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e685e9bd0ffb58065f20f466131f8894baaf359f
+ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80196574"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389726"
 ---
 # <a name="command-line-warning-d9041"></a>Befehlszeilenwarnung D9041
 
-Ungültiger Wert "Value" für "/Option"; "Wert" wird angenommen; "/Analyze" den Befehlszeilenoptionen beim Angeben dieser Warnung hinzufügen
+> Ungültiger Wert "*Option-Wert*" für "/*options Name*"; Annahme von '*angenommenen-Value*'; "/Analyze" den Befehlszeilenoptionen beim Angeben dieser Warnung hinzufügen
 
-Der **/WD**-, **/We**-, **/wo**-oder **/WL** -Befehlszeilenoption wurde eine Code Analyse-Warnungs Nummer hinzugefügt, ohne auch die **/analyze** -Befehlszeilenoption anzugeben. Fügen Sie zum Beheben dieses Fehlers entweder die Befehlszeilenoption " **/analyze** " hinzu, oder entfernen Sie die ungültige Warnungs Nummer aus der entsprechenden **/w** -Befehlszeilenoption.
+Der-,-,-oder-Befehlszeilenoption wurde eine Code Analyse-Warnungs Nummer hinzugefügt **`/wd`** , **`/we`** **`/wo`** **`/wl`** ohne auch die **`/analyze`** Befehlszeilenoption anzugeben. Um diesen Fehler zu beheben, fügen Sie entweder die **`/analyze`** Befehlszeilenoption hinzu, oder entfernen Sie die ungültige Warnungs Nummer aus der entsprechenden **`/w`** Befehlszeilenoption.
 
 ## <a name="example"></a>Beispiel
 
 Im folgenden Befehlszeilen Beispiel wird die Warnung D9041 generiert:
 
-```
+```cmd
 cl /EHsc /LD /wd6001 filename.cpp
 ```
 
-Fügen Sie die **/analyze** -Befehlszeilenoption hinzu, um die Warnung zu beheben. Wenn **/analyze** für Ihre Version des Compilers nicht unterstützt wird, entfernen Sie die ungültige Warnungs Nummer aus der **/WD** -Option.
+Fügen Sie die Befehlszeilenoption hinzu, um die Warnung zu beheben **`/analyze`** . Wenn **`/analyze`** für Ihre Version des Compilers nicht unterstützt wird, entfernen Sie die ungültige Warnungs Nummer aus der- **`/wd`** Option.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Befehlszeilenfehler D8000 bis D9999](../../error-messages/tool-errors/command-line-errors-d8000-through-d9999.md)<br/>
+[Befehlszeilenfehler D8000 bis D9000](../../error-messages/tool-errors/command-line-errors-d8000-through-d9999.md)<br/>
 [MSVC-Compileroptionen](../../build/reference/compiler-options.md)

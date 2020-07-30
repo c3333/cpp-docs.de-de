@@ -1,21 +1,21 @@
 ---
 title: Verwenden von Regelsätzen zum Festlegen von C++-Regeln für die Ausführung
-ms.date: 07/13/2020
+ms.date: 07/27/2020
 ms.topic: conceptual
 f1_keywords:
 - vs.codeanalysis.rulesets.native
-ms.openlocfilehash: 8b6d3fe8c8e441d4b233f2f4008d8aae9225726f
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: b132400485c041b96e81736bcda04922b2cda88c
+ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373852"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389817"
 ---
 # <a name="use-rule-sets-to-specify-the-c-rules-to-run"></a>Verwenden von Regelsätzen zum Festlegen von C++-Regeln für die Ausführung
 
-In Visual Studio können Sie einen benutzerdefinierten *Regelsatz* erstellen und ändern, um bestimmte Projektanforderungen zu erfüllen, die mit der Code Analyse verknüpft sind. Die Standardregel Sätze werden in gespeichert `%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Rule Sets` .
+In Visual Studio können Sie einen benutzerdefinierten *Regelsatz* erstellen und ändern, um bestimmte Projektanforderungen zu erfüllen, die mit der Code Analyse verknüpft sind. Die Standardregel Sätze werden in gespeichert *`%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Rule Sets`* .
 
-**Visual Studio 2017 Version 15,7 und höher:** Sie können benutzerdefinierte Regelsätze mit einem beliebigen Text-Editor erstellen und diese in Befehlszeilenbuilds anwenden, unabhängig davon, welches Buildsystem Sie verwenden. Weitere Informationen finden Sie unter [/analyze: RuleSet](/cpp/build/reference/analyze-code-analysis).
+**Visual Studio 2017 Version 15,7 und höher:** Sie können benutzerdefinierte Regelsätze mit einem beliebigen Text-Editor erstellen und diese in Befehlszeilenbuilds anwenden, unabhängig davon, welches Buildsystem Sie verwenden. Weitere Informationen finden Sie unter [`/analyze:ruleset`](/cpp/build/reference/analyze-code-analysis).
 
 Ein C/C++-Projekt muss in der Visual Studio-IDE geöffnet sein, um einen benutzerdefinierten C++-Regelsatz in Visual Studio zu erstellen. Anschließend öffnen Sie einen Standardregel Satz im Regelsatz-Editor und fügen dann bestimmte Regeln hinzu bzw. entfernen Sie. Optional können Sie auch die Aktion ändern, die auftritt, wenn die Code Analyse bestimmt, dass eine Regel verletzt wurde.
 
@@ -23,19 +23,40 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
 ## <a name="to-create-a-custom-rule-from-a-single-existing-rule-set"></a>So erstellen Sie eine benutzerdefinierte Regel aus einem einzelnen vorhandenen Regelsatz
 
-1. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften**aus.
+::: moniker range="<=vs-2017"
 
-1. Wählen Sie auf der Registerkarte **Eigenschaften** die Option **Code Analyse**aus.
+1. Öffnen Sie in Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften**aus.
+
+1. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften** > Seite allgemeine **Code Analyse** für die Konfiguration aus > **General** .
 
 1. Führen Sie in der Dropdown Liste **Regelsatz** einen der folgenden Schritte aus:
 
    - Wählen Sie den Regelsatz aus, den Sie anpassen möchten.
 
-     \- oder -
+     \- oder –
 
    - **\<Browse...>** Geben Sie einen vorhandenen Regelsatz an, der nicht in der Liste enthalten ist.
 
 1. Wählen Sie **Öffnen** aus, um die Regeln im Regelsatz-Editor anzuzeigen.
+
+::: moniker-end
+::: moniker range=">=vs-2019"
+
+1. Öffnen Sie in Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften**aus.
+
+1. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften Seite Konfigurations Eigenschaften** > **Code Analyse** > **Microsoft** aus.
+
+1. Führen Sie in der Dropdown Liste **aktive Regeln** einen der folgenden Schritte aus:
+
+   - Wählen Sie den Regelsatz aus, den Sie anpassen möchten.
+
+     \- oder –
+
+   - **\<Browse...>** Geben Sie einen vorhandenen Regelsatz an, der nicht in der Liste enthalten ist.
+
+1. Wählen Sie **Öffnen** aus, um die Regeln im Regelsatz-Editor anzuzeigen.
+
+::: moniker-end
 
 ## <a name="to-modify-a-rule-set-in-the-rule-set-editor"></a>So ändern Sie einen Regelsatz im Regelsatz-Editor
 
@@ -77,41 +98,23 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
 ## <a name="to-create-a-rule-set-in-a-text-editor"></a>So erstellen Sie einen Regelsatz in einem Text-Editor
 
-Sie können einen benutzerdefinierten Regelsatz in einem Text-Editor erstellen, ihn an einem beliebigen Speicherort mit einer `.ruleset` -Erweiterung speichern und mit der [/analyze: RuleSet](/cpp/build/reference/analyze-code-analysis) -Compileroption anwenden.
+Sie können einen benutzerdefinierten Regelsatz in einem Text-Editor erstellen, ihn an einem beliebigen Speicherort mit einer *`.ruleset`* -Erweiterung speichern und mit der- [`/analyze:ruleset`](/cpp/build/reference/analyze-code-analysis) Compileroption anwenden.
 
 Das folgende Beispiel zeigt eine grundlegende Regel Satz Datei, die Sie als Ausgangspunkt verwenden können:
 
-::: moniker range="<=vs-2017"
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="New Rule Set" Description=" " ToolsVersion="15.0">
+<RuleSet Name="New Rule Set" Description="New rules to apply." ToolsVersion="10.0">
   <Rules AnalyzerId="Microsoft.Analyzers.NativeCodeAnalysis" RuleNamespace="Microsoft.Rules.Native">
     <Rule Id="C6001" Action="Warning" />
     <Rule Id="C26494" Action="Warning" />
   </Rules>
 </RuleSet>
 ```
-
-::: moniker-end
-
-::: moniker range=">=vs-2019"
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="New Rule Set" Description=" " ToolsVersion="16.0">
-  <Rules AnalyzerId="Microsoft.Analyzers.NativeCodeAnalysis" RuleNamespace="Microsoft.Rules.Native">
-    <Rule Id="C6001" Action="Warning" />
-    <Rule Id="C26494" Action="Warning" />
-  </Rules>
-</RuleSet>
-```
-
-::: moniker-end
 
 ## <a name="ruleset-schema"></a>RuleSet-Schema
 
-Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das RuleSet-Schema wird in gespeichert `%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Schemas\RuleSet.xsd` . Sie können Sie verwenden, um eigene RuleSets Programm gesteuert zu erstellen oder um zu überprüfen, ob Ihre benutzerdefinierten RuleSets das richtige Format einhalten. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen eines XML-Dokuments auf Grundlage eines XSD-Schemas](https://docs.microsoft.com/visualstudio/xml-tools/how-to-create-an-xml-document-based-on-an-xsd-schema?view=vs-2019).
+Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das RuleSet-Schema wird in gespeichert *`%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Schemas\RuleSet.xsd`* . Sie können Sie verwenden, um eigene RuleSets Programm gesteuert zu erstellen oder um zu überprüfen, ob Ihre benutzerdefinierten RuleSets das richtige Format einhalten. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen eines XML-Dokuments auf Grundlage eines XSD-Schemas](https://docs.microsoft.com/visualstudio/xml-tools/how-to-create-an-xml-document-based-on-an-xsd-schema?view=vs-2019).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -5,16 +5,16 @@ ms.topic: reference
 helpviewer_keywords:
 - code analysis, C++ core check
 ms.assetid: f1429463-136e-41ed-8a75-a8dbf0b4fd89
-ms.openlocfilehash: 7519706c0a8e23c56f8951647fb16c24d3f1e189
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e85ce8baed9a1ef39e0ab759ab86a5b570a42fa6
+ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216686"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389947"
 ---
 # <a name="c-core-guidelines-checker-reference"></a>C++ Core Guidelines Checker-Referenz
 
-In diesem Abschnitt werden C++ Core Guidelines Überprüfungs Warnungen aufgeführt. Weitere Informationen zur Code Analyse finden Sie unter [/analyze (Code Analyse)](/cpp/build/reference/analyze-code-analysis) und [Schnellstart: Code Analyse für C/C++](../code-quality/quick-start-code-analysis-for-c-cpp.md).
+In diesem Abschnitt werden C++ Core Guidelines Überprüfungs Warnungen aufgeführt. Weitere Informationen zur Code Analyse finden Sie unter [ `/analyze` (Code Analyse)](/cpp/build/reference/analyze-code-analysis) und [Schnellstart: Code Analyse für C/C++](../code-quality/quick-start-code-analysis-for-c-cpp.md).
 
 > [!NOTE]
 > Einige Warnungen gehören zu mehr als einer Gruppe, und nicht alle Warnungen enthalten ein vollständiges Referenz Thema.
@@ -280,6 +280,6 @@ Die folgenden Warnungen sind in einem frühzeitigen experimentellen Regelsatz de
 - 26425 ASSIGNING_TO_STATIC
 - 26499 NO_LIFETIME_TRACKING
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Verwenden der C++ Core Guidelines-Checker](using-the-cpp-core-guidelines-checkers.md)

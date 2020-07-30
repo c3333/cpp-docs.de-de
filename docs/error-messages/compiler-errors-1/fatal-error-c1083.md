@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C1083
 ms.assetid: 97e52df3-e79c-4f85-8f1e-bbd1057d55e7
-ms.openlocfilehash: 87f3440dc71246c3a925ed3d64f8ccf1b2c28cd1
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: f51e93475f104f165895c9d7e2733d741af30502
+ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404280"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389778"
 ---
 # <a name="fatal-error-c1083"></a>Schwerwiegender Fehler C1083
 
@@ -29,7 +29,7 @@ Die von Ihnen gewünschte Datei wird möglicherweise nicht gefunden. Die meisten
 
 `#include <algorithm>`
 
-Bestimmte Header der C-Laufzeitbibliothek befinden sich in einem Unterverzeichnis des Standardincludeverzeichnisses. Wenn Sie z. b. "sys/types. h" einschließen möchten, müssen Sie den Namen des sys-Unterverzeichnisses in die- `#include` Direktive einschließen:
+Bestimmte Header der C-Laufzeitbibliothek befinden sich in einem Unterverzeichnis des Standardincludeverzeichnisses. Wenn Sie z. b. einschließen möchten *`sys/types.h`* , müssen Sie den *`sys`* Namen des Unterverzeichnisses in die- `#include` Direktive einschließen:
 
 `#include <sys/types.h>`
 
@@ -45,9 +45,9 @@ Wenn der Name in spitzen Klammern eingeschlossen ist,
 
 `#include <stdio.h>`
 
-der Compiler folgt einem Suchpfad, der durch die Buildumgebung, die **/I** -Compileroption, die **/X** -Compileroption und die **include** -Umgebungsvariable definiert wird. Weitere Informationen, einschließlich spezifischer Details zur Such Reihenfolge, die zum Suchen einer Datei verwendet wird, finden Sie unter [#include-Direktive (C/C++)](../../preprocessor/hash-include-directive-c-cpp.md) und [#Import Direktive](../../preprocessor/hash-import-directive-cpp.md).
+der Compiler folgt einem Suchpfad, der durch die Buildumgebung, die **`/I`** -Compileroption, die **`/X`** -Compileroption und die **include** -Umgebungsvariable definiert wird. Weitere Informationen, einschließlich spezifischer Details zur Such Reihenfolge, die zum Suchen einer Datei verwendet wird, finden Sie unter [#include-Direktive (C/C++)](../../preprocessor/hash-include-directive-c-cpp.md) und [#Import Direktive](../../preprocessor/hash-import-directive-cpp.md).
 
-Wenn sich die Includedateien in einem anderen Verzeichnis relativ zum Quellverzeichnis befinden und Sie einen relativen Pfad in den Include-Direktiven verwenden, müssen Sie anstelle von spitzen Klammern doppelte Anführungszeichen verwenden. Wenn sich die Header Datei "MyHeader. h" beispielsweise in einem Unterverzeichnis der Projekt Quellen mit dem Namen "Headers" befindet, kann in diesem Beispiel die Datei nicht gefunden werden, und es wird C1083 verursacht:
+Wenn sich die Includedateien in einem anderen Verzeichnis relativ zum Quellverzeichnis befinden und Sie einen relativen Pfad in den Include-Direktiven verwenden, müssen Sie anstelle von spitzen Klammern doppelte Anführungszeichen verwenden. Wenn sich Ihre Header Datei z. b. *`myheader.h`* in einem Unterverzeichnis der Projekt Quellen mit dem Namen Headers befindet, kann in diesem Beispiel die Datei nicht gefunden werden, und es wird C1083 verursacht:
 
 `#include <headers\myheader.h>`
 
@@ -55,23 +55,23 @@ Dieses Beispiel funktioniert jedoch:
 
 `#include "headers\myheader.h"`
 
-Relative Pfade können auch mit Verzeichnissen im Include-Suchpfad verwendet werden. Wenn Sie der **include** -Umgebungsvariablen oder dem Pfad der **Includeverzeichnisse** in Visual Studio ein Verzeichnis hinzufügen, fügen Sie auch keinen Teil des Pfads zu den Include-Direktiven hinzu. Wenn sich ihre Kopfzeile z. b. unter \path\example\headers\myheader.h befindet, und Sie "\path\example\headers\" in Visual Studio zum Ordner " **include-Verzeichnisse** " hinzufügen, `#include` verweist ihre Direktive auf die Datei als
+Relative Pfade können auch mit Verzeichnissen im Include-Suchpfad verwendet werden. Wenn Sie der **include** -Umgebungsvariablen oder dem Pfad der **Includeverzeichnisse** in Visual Studio ein Verzeichnis hinzufügen, fügen Sie auch keinen Teil des Pfads zu den Include-Direktiven hinzu. Wenn sich der Header beispielsweise unter befindet *`\path\example\headers\myheader.h`* und Sie den *`\path\example\headers\`* Pfad zum Einschließen von **Verzeichnissen** in Visual Studio hinzufügen, verweist Ihre `#include` Direktive auf die Datei als
 
 `#include <headers\myheader.h>`
 
-die Datei wurde nicht gefunden. Verwenden Sie den korrekten Pfad relativ zu dem Verzeichnis, das im Include-Suchpfad angegeben ist. In diesem Beispiel können Sie den Include-Suchpfad in \path\example ändern \, oder das Header \ Path-Segment aus der- `#include` Direktive entfernen.
+die Datei wurde nicht gefunden. Verwenden Sie den korrekten Pfad relativ zu dem Verzeichnis, das im Include-Suchpfad angegeben ist. In diesem Beispiel können Sie den Include-Suchpfad in ändern *`\path\example\`* oder das *`headers\`* Pfad Segment aus der- `#include` Direktive entfernen.
 
 ## <a name="third-party-library-issues-and-vcpkg"></a>Drittanbieter-Bibliotheks Probleme und vcpkg
 
-Wenn dieser Fehler angezeigt wird, wenn Sie versuchen, eine Drittanbieter Bibliothek als Teil Ihres Builds zu konfigurieren, sollten Sie die Verwendung von [vcpkg](../../vcpkg.md), einem C++ Package Manager, zum Installieren und Erstellen der Bibliothek in Erwägung gezogen. vcpkg unterstützt eine große und wachsende [Liste von Bibliotheken von Drittanbietern](https://github.com/Microsoft/vcpkg/tree/master/ports)und legt alle Konfigurations Eigenschaften und Abhängigkeiten, die für erfolgreiche Builds erforderlich sind, als Teil des Projekts fest.
+Wenn diese Fehlermeldung angezeigt wird, wenn Sie versuchen, eine Bibliothek eines Drittanbieters als Teil Ihres Builds zu konfigurieren, sollten Sie [`vcpkg`](../../vcpkg.md) die Verwendung von, einem C++-Paket-Manager, zum Installieren und Erstellen der Bibliothek in Erwägung gezogen. vcpkg unterstützt eine große und wachsende [Liste von Bibliotheken von Drittanbietern](https://github.com/Microsoft/vcpkg/tree/master/ports)und legt alle Konfigurations Eigenschaften und Abhängigkeiten, die für erfolgreiche Builds erforderlich sind, als Teil des Projekts fest.
 
 ## <a name="the-file-is-in-your-project-but-not-the-include-search-path"></a>Die Datei befindet sich in Ihrem Projekt, aber nicht im Include-Suchpfad.
 
-Auch wenn Header Dateien in **Projektmappen-Explorer** als Teil eines Projekts aufgeführt sind, werden die Dateien nur vom Compiler gefunden, wenn Sie von einer- `#include` oder `#import` -Direktive in einer Quelldatei referenziert werden und sich in einem include-Suchpfad befinden. Für unterschiedliche Buildtypen können unterschiedliche Suchpfade verwendet werden. Die **/X** -Compileroption kann verwendet werden, um Verzeichnisse aus dem Include-Suchpfad auszuschließen. Dadurch können für verschiedene Builds unterschiedliche Includedateien verwendet werden, die denselben Namen besitzen, sich aber in unterschiedlichen Verzeichnissen befinden. Dies ist eine Alternative zur bedingten Kompilierung mithilfe von Präprozessorbefehlen. Weitere Informationen zur **/X** -Compileroption finden Sie unter [/X (Standard mäßige Includepfade ignorieren)](../../build/reference/x-ignore-standard-include-paths.md).
+Auch wenn Header Dateien in **Projektmappen-Explorer** als Teil eines Projekts aufgeführt sind, werden die Dateien nur vom Compiler gefunden, wenn Sie von einer- `#include` oder `#import` -Direktive in einer Quelldatei referenziert werden und sich in einem include-Suchpfad befinden. Für unterschiedliche Buildtypen können unterschiedliche Suchpfade verwendet werden. Die- **`/X`** Compileroption kann verwendet werden, um Verzeichnisse aus dem Include-Suchpfad auszuschließen. Dadurch können für verschiedene Builds unterschiedliche Includedateien verwendet werden, die denselben Namen besitzen, sich aber in unterschiedlichen Verzeichnissen befinden. Dies ist eine Alternative zur bedingten Kompilierung mithilfe von Präprozessorbefehlen. Weitere Informationen zur- **`/X`** Compileroption finden Sie unter [ `/X` (Standard mäßige Includepfade ignorieren)](../../build/reference/x-ignore-standard-include-paths.md).
 
-Korrigieren Sie zur Behebung dieses Problems den Pfad, den der Compiler für die Suche nach der eingeschlossenen oder importierten Datei verwendet. Ein neues Projekt verwendet standardmäßige include-Suchpfade. Möglicherweise müssen Sie den Include-Suchpfad ändern, um ein Verzeichnis für das Projekt hinzuzufügen. Wenn Sie in der Befehlszeile kompilieren, fügen Sie den Pfad zur **include** -Umgebungsvariablen oder der **/I** -Compileroption hinzu, um den Pfad zur Datei anzugeben.
+Korrigieren Sie zur Behebung dieses Problems den Pfad, den der Compiler für die Suche nach der eingeschlossenen oder importierten Datei verwendet. Ein neues Projekt verwendet standardmäßige include-Suchpfade. Möglicherweise müssen Sie den Include-Suchpfad ändern, um ein Verzeichnis für das Projekt hinzuzufügen. Wenn Sie in der Befehlszeile kompilieren, fügen Sie den Pfad der **include** -Umgebungsvariablen oder der- **`/I`** Compileroption hinzu, um den Pfad zur Datei anzugeben.
 
-Öffnen Sie das Dialogfeld **Eigenschaften Seiten** des Projekts, um den Verzeichnispfad einschließen in Visual Studio festzulegen. Wählen Sie im linken Bereich unter **Konfigurations Eigenschaften** die Option **VC + +-Verzeichnisse** aus, und bearbeiten Sie dann die Eigenschaft **Verzeichnisse einschließen** . Weitere Informationen zu den Verzeichnissen pro Benutzer und pro Projekt, die der Compiler in Visual Studio durchsucht, finden Sie unter [VC + +-Verzeichnisse (Eigenschaften Seite](../../build/reference/vcpp-directories-property-page.md)). Weitere Informationen zur **/I** -Compileroption finden Sie unter [/I (weitere Includeverzeichnisse)](../../build/reference/i-additional-include-directories.md).
+Öffnen Sie das Dialogfeld **Eigenschaften Seiten** des Projekts, um den Verzeichnispfad einschließen in Visual Studio festzulegen. Wählen Sie im linken Bereich unter **Konfigurations Eigenschaften** die Option **VC + +-Verzeichnisse** aus, und bearbeiten Sie dann die Eigenschaft **Verzeichnisse einschließen** . Weitere Informationen zu den Verzeichnissen pro Benutzer und pro Projekt, die der Compiler in Visual Studio durchsucht, finden Sie unter [VC + +-Verzeichnisse (Eigenschaften Seite](../../build/reference/vcpp-directories-property-page.md)). Weitere Informationen zur- **`/I`** Compileroption finden Sie unter [ `/I` (Zusätzliche Includeverzeichnisse)](../../build/reference/i-additional-include-directories.md).
 
 ## <a name="the-command-line-include-or-lib-environment-is-not-set"></a>Die Befehlszeilen-oder lib-Umgebung ist nicht festgelegt.
 
@@ -87,15 +87,15 @@ Ein Fehler C1083 kann auch darauf hinweisen, dass die falsche Version einer Date
 
 ## <a name="the-precompiled-headers-are-not-yet-precompiled"></a>Die vorkompilierten Header sind noch nicht vorkompiliert
 
-Wenn ein Projekt zur Verwendung vorkompilierter Header konfiguriert ist, müssen die entsprechenden PCH-Dateien erstellt werden, damit Dateien, die den Headerinhalt verwenden, kompiliert werden können. Beispielsweise wird die Datei " *PCH. cpp* " (*stdafx. cpp* in Visual Studio 2017 und früher) automatisch im Projektverzeichnis für neue Projekte erstellt. Kompilieren Sie diese Datei zuerst, um die vorkompilierten Headerdateien zu erstellen. Im typischen buildprozessentwurf erfolgt dies automatisch. Weitere Informationen finden Sie unter [Erstellen vorkompilierter Header Dateien](../../build/creating-precompiled-header-files.md).
+Wenn ein Projekt für die Verwendung von vorkompilierten Headern konfiguriert ist, müssen die relevanten *`.pch`* Dateien erstellt werden, damit Dateien, die den Header Inhalt verwenden, kompiliert werden können. Beispielsweise wird die *`pch.cpp`* Datei ( *`stdafx.cpp`* in Visual Studio 2017 und früher) automatisch im Projektverzeichnis für neue Projekte erstellt. Kompilieren Sie diese Datei zuerst, um die vorkompilierten Headerdateien zu erstellen. Im typischen buildprozessentwurf erfolgt dies automatisch. Weitere Informationen finden Sie unter [Erstellen vorkompilierter Header Dateien](../../build/creating-precompiled-header-files.md).
 
 ## <a name="additional-causes"></a>Weitere Ursachen
 
 - Sie haben ein SDK oder eine Bibliothek von Drittanbietern installiert, aber nach der Installation des SDKs oder der Bibliothek haben Sie noch kein neues Entwickler-Eingabe Aufforderungs Fenster geöffnet. Wenn das SDK **oder die Bibliothek** dem Includepfad Dateien hinzufügt, müssen Sie möglicherweise ein neues Entwickler-Eingabe Aufforderungs Fenster öffnen, um diese Umgebungsvariablen Änderungen zu übernehmen.
 
-- Die Datei verwendet verwalteten Code, aber die Compileroption **/CLR** ist nicht angegeben. Weitere Informationen finden Sie unter [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md).
+- Die Datei verwendet verwalteten Code, aber die-Compileroption **`/clr`** ist nicht angegeben. Weitere Informationen finden Sie unter [ `/clr` (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md).
 
-- Die Datei wird mit einer anderen **/analyze** -compileroptionseinstellung kompiliert, als für die Vorkompilierung der Header verwendet wird. Wenn die Header für ein Projekt vorkompiliert werden, sollten alle dieselben **/analyze** -Einstellungen verwenden. Weitere Informationen finden Sie unter [/analyze (Codeanalyse)](../../build/reference/analyze-code-analysis.md).
+- Die Datei wird mit einer anderen **`/analyze`** compileroptionseinstellung kompiliert, als für die Vorkompilierung der Header verwendet wird. Wenn die Header für ein Projekt vorkompiliert werden, sollten alle dieselben Einstellungen verwenden **`/analyze`** . Weitere Informationen finden Sie unter [ `/analyze` (Code Analyse)](../../build/reference/analyze-code-analysis.md).
 
 - Die Datei oder das Verzeichnis wurde vom Windows-Subsystem für Linux erstellt, die Unterscheidung nach Groß-/Kleinschreibung ist aktiviert, und der angegebene Fall eines Pfads oder einer Datei stimmt nicht mit der Groß-/Kleinschreibung des Pfads oder der Datei auf dem Datenträger.
 
@@ -118,6 +118,6 @@ Im folgenden Beispiel wird ein C1083-Fehler generiert, wenn die Header Datei `"t
 
 Weitere Informationen zum Erstellen von C/C++-Projekten in der IDE oder über die Befehlszeile sowie Informationen zum Festlegen von Umgebungsvariablen finden Sie unter [Projekte und Buildsysteme](../../build/projects-and-build-systems-cpp.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 - [MSBuild-Eigenschaften](/visualstudio/msbuild/msbuild-properties)
