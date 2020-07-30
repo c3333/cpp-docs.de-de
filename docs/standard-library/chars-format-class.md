@@ -29,7 +29,7 @@ enum class chars_format {
 
 ### <a name="members"></a>Member
 
-|Element|Beschreibung|
+|Element|BESCHREIBUNG|
 |-|-|
 | `scientific` | Veranlasst `from_chars()` , einen Exponenten zu erwarten und zu analysieren. Dies entspricht dem Format Bezeichner `'e'` `printf()` , der für die wissenschaftliche Notation formatiert, z. b.`"1.729e+01"` |
 | `fixed` | Bewirkt `from_chars()` , dass kein Exponent erwartet oder analysiert wird. Dies entspricht dem Format Bezeichner `'f'` `printf()` , der für Gleit Komma Formate formatiert, z `"17.29"` . b..|
