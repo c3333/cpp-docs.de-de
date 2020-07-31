@@ -1,5 +1,5 @@
 ---
-title: IDataObjectImpl-Klasse
+title: Idataobjectimpl-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - IDataObjectImpl
@@ -20,19 +20,19 @@ helpviewer_keywords:
 - IDataObjectImpl class
 - IDataObject, ATL implementation
 ms.assetid: b680f0f7-7795-40a1-a0f6-f48768201c89
-ms.openlocfilehash: 618f8248a03297120ae2504bcb30ba8f080b184d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 379dd3304d96afcd2b0e98ec4a98f1bac64d4ad9
+ms.sourcegitcommit: 13f42c339fb7af935e3a93ac80e350d5e784c9f1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81329844"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470770"
 ---
-# <a name="idataobjectimpl-class"></a>IDataObjectImpl-Klasse
+# <a name="idataobjectimpl-class"></a>Idataobjectimpl-Klasse
 
-Diese Klasse stellt Methoden zum Unterstützen der einheitlichen Datenübertragung und zum Verwalten von Verbindungen bereit.
+Diese Klasse stellt Methoden zum unterstützen von Uniform Data Transfer und zum Verwalten von Verbindungen bereit.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -44,34 +44,34 @@ class IDataObjectImpl
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ihre Klasse, `IDataObjectImpl`abgeleitet von .
+Die von abgeleitete Klasse `IDataObjectImpl` .
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[IDataObjectImpl::DAdvise](#dadvise)|Stellt eine Verbindung zwischen dem Datenobjekt und einer Beratungssenke her. Auf diese Weise kann die Beratungssenke Benachrichtigungen über Änderungen am Objekt erhalten.|
-|[IDataObjectImpl::DUnadvise](#dunadvise)|Beendet eine zuvor über `DAdvise`hergestellte Verbindung .|
-|[IDataObjectImpl::EnumDAdvise](#enumdadvise)|Erstellt einen Enumerator, um die aktuellen Advise-Verbindungen zu durchlaufen.|
-|[IDataObjectImpl::EnumFormatEtc](#enumformatetc)|Erstellt einen Enumerator, um die `FORMATETC`-Strukturen zu durchlaufen, die vom Datenobjekt unterstützt werden. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[IDataObjectImpl::FireDataChange](#firedatachange)|Sendet eine Änderungsbenachrichtigung an jede Beratungssenke zurück.|
-|[IDataObjectImpl::GetCanonicalFormatEtc](#getcanonicalformatetc)|Ruft eine logisch `FORMATETC` äquivalente Struktur zu einer komplexeren Struktur ab. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[IDataObjectImpl::GetData](#getdata)|Überträgt Daten vom Datenobjekt zum Client. Die Daten werden `FORMATETC` in einer Struktur `STGMEDIUM` beschrieben und durch eine Struktur übertragen.|
-|[IDataObjectImpl::GetDataHere](#getdatahere)|Ähnlich `GetData`wie , außer der `STGMEDIUM` Client muss die Struktur zuweisen. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[IDataObjectImpl::QueryGetData](#querygetdata)|Bestimmt, ob das Datenobjekt eine bestimmte `FORMATETC`-Struktur für die Übertragung von Daten unterstützt. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[IDataObjectImpl::SetData](#setdata)|Überträgt Daten vom Client zum Datenobjekt. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[Idataobjectimpl::D-Empfehlung](#dadvise)|Stellt eine Verbindung zwischen dem Datenobjekt und einer Benachrichtigungs Senke her. Dies ermöglicht es der Anmelde Senke, Benachrichtigungen über Änderungen im Objekt zu empfangen.|
+|[Idataobjectimpl::D nicht empfohlen](#dunadvise)|Beendet eine Verbindung, die zuvor durch hergestellt wurde `DAdvise` .|
+|[Idataobjectimpl:: enumdrat](#enumdadvise)|Erstellt einen Enumerator, um die aktuellen Advise-Verbindungen zu durchlaufen.|
+|[Idataobjectimpl:: EnumFormatEtc](#enumformatetc)|Erstellt einen Enumerator, um die `FORMATETC`-Strukturen zu durchlaufen, die vom Datenobjekt unterstützt werden. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[Idataobjectimpl:: firedatachange](#firedatachange)|Sendet eine Änderungs Benachrichtigung an jede Benachrichtigungs Senke zurück.|
+|[Idataobjectimpl:: GetCanonicalFormatEtc](#getcanonicalformatetc)|Ruft eine logisch äquivalente- `FORMATETC` Struktur zu einer komplexeren-Struktur ab. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[Idataobjectimpl:: GetData](#getdata)|Überträgt Daten vom Datenobjekt zum Client. Die Daten werden in einer `FORMATETC` Struktur beschrieben und durch eine-Struktur übertragen `STGMEDIUM` .|
+|[Idataobjectimpl:: GetDataHere](#getdatahere)|Ähnelt `GetData` , mit der Ausnahme, dass der Client die-Struktur zuordnen muss `STGMEDIUM` . Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[Idataobjectimpl:: QueryGetData](#querygetdata)|Bestimmt, ob das Datenobjekt eine bestimmte `FORMATETC`-Struktur für die Übertragung von Daten unterstützt. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[Idataobjectimpl:: SetData](#setdata)|Überträgt Daten vom Client zum Datenobjekt. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die [IDataObject-Schnittstelle](/windows/win32/api/objidl/nn-objidl-idataobject) stellt Methoden zur Unterstützung der einheitlichen Datenübertragung bereit. `IDataObject`verwendet die Standardformatstrukturen [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) und [STGMEDIUM](/windows/win32/api/objidl/ns-objidl-ustgmedium~r1) zum Abrufen und Speichern von Daten.
+Die [IDataObject](/windows/win32/api/objidl/nn-objidl-idataobject) -Schnittstelle stellt Methoden zur Unterstützung von Uniform Data Transfer bereit. `IDataObject`verwendet die Standardformat Strukturen [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) und [STGMEDIUM](/windows/win32/api/objidl/ns-objidl-ustgmedium-r1) , um Daten abzurufen und zu speichern.
 
-`IDataObject`verwaltet auch Verbindungen, um Senken zur Behandlung von Datenänderungsbenachrichtigungen zu beraten. Damit der Client Datenänderungsbenachrichtigungen vom Datenobjekt erhält, muss der Client die [IAdviseSink-Schnittstelle](/windows/win32/api/objidl/nn-objidl-iadvisesink) für ein Objekt implementieren, das als Beratungssenke bezeichnet wird. Wenn der Client `IDataObject::DAdvise`dann aufruft, wird eine Verbindung zwischen dem Datenobjekt und der Beratungssenke hergestellt.
+`IDataObject`verwaltet auch Verbindungen, um senken zum Verarbeiten von Daten Änderungs Benachrichtigungen zu empfehlen. Damit der Client Daten Änderungs Benachrichtigungen vom Datenobjekt empfangen kann, muss der Client die [IAdviseSink](/windows/win32/api/objidl/nn-objidl-iadvisesink) -Schnittstelle für ein Objekt implementieren, das als "Empfehlung-Senke" bezeichnet wird. Wenn der Client dann aufruft `IDataObject::DAdvise` , wird eine Verbindung zwischen dem Datenobjekt und der beratungssenke hergestellt.
 
-Die `IDataObjectImpl` Klasse stellt `IDataObject` eine Standardimplementierung von und implementiert, `IUnknown` indem Informationen an das Dump-Gerät in Debugbuilds gesendet werden.
+`IDataObjectImpl`Die-Klasse stellt eine Standard Implementierung von bereit `IDataObject` und implementiert `IUnknown` durch das Senden von Informationen an das dumpgerät in Debugbuilds.
 
-**Verwandte Artikel** [ATL Tutorial](../../atl/active-template-library-atl-tutorial.md), Erstellen eines [ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
+**Zugehörige Artikel** [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md), [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -81,11 +81,11 @@ Die `IDataObjectImpl` Klasse stellt `IDataObject` eine Standardimplementierung v
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** atlctl.h
+**Header:** atlctl. h
 
-## <a name="idataobjectimpldadvise"></a><a name="dadvise"></a>IDataObjectImpl::DAdvise
+## <a name="idataobjectimpldadvise"></a><a name="dadvise"></a>Idataobjectimpl::D-Empfehlung
 
-Stellt eine Verbindung zwischen dem Datenobjekt und einer Beratungssenke her.
+Stellt eine Verbindung zwischen dem Datenobjekt und einer Benachrichtigungs Senke her.
 
 ```
 HRESULT DAdvise(
@@ -95,27 +95,27 @@ HRESULT DAdvise(
     DWORD* pdwConnection);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Auf diese Weise kann die Beratungssenke Benachrichtigungen über Änderungen am Objekt erhalten.
+Dies ermöglicht es der Anmelde Senke, Benachrichtigungen über Änderungen im Objekt zu empfangen.
 
-Um die Verbindung zu beenden, rufen Sie [DUnadvise](#dunadvise)auf.
+Um die Verbindung zu beenden, wenden Sie [dunrat](#dunadvise)an.
 
-Siehe [IDataObject::DAdvise](/windows/win32/api/objidl/nf-objidl-idataobject-dadvise) im Windows SDK.
+Weitere Informationen finden Sie unter [IDataObject::D-Empfehlung](/windows/win32/api/objidl/nf-objidl-idataobject-dadvise) im Windows SDK.
 
-## <a name="idataobjectimpldunadvise"></a><a name="dunadvise"></a>IDataObjectImpl::DUnadvise
+## <a name="idataobjectimpldunadvise"></a><a name="dunadvise"></a>Idataobjectimpl::D nicht empfohlen
 
-Beendet eine zuvor über [DAdvise](#dadvise)hergestellte Verbindung .
+Beendet eine zuvor durch [dempfehlung](#dadvise)festgelegte Verbindung.
 
 ```
 HRESULT DUnadvise(DWORD dwConnection);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::DUnadvise](/windows/win32/api/objidl/nf-objidl-idataobject-dunadvise) im Windows SDK.
+Weitere Informationen finden Sie unter [IDataObject::D unempfehlung](/windows/win32/api/objidl/nf-objidl-idataobject-dunadvise) im Windows SDK.
 
-## <a name="idataobjectimplenumdadvise"></a><a name="enumdadvise"></a>IDataObjectImpl::EnumDAdvise
+## <a name="idataobjectimplenumdadvise"></a><a name="enumdadvise"></a>Idataobjectimpl:: enumdrat
 
 Erstellt einen Enumerator, um die aktuellen Advise-Verbindungen zu durchlaufen.
 
@@ -127,11 +127,11 @@ HRESULT DAdvise(
     DWORD* pdwConnection);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::EnumDAdvise](/windows/win32/api/objidl/nf-objidl-idataobject-enumdadvise) im Windows SDK.
+Weitere Informationen finden Sie unter [IDataObject:: enumdrat](/windows/win32/api/objidl/nf-objidl-idataobject-enumdadvise) im Windows SDK.
 
-## <a name="idataobjectimplenumformatetc"></a><a name="enumformatetc"></a>IDataObjectImpl::EnumFormatEtc
+## <a name="idataobjectimplenumformatetc"></a><a name="enumformatetc"></a>Idataobjectimpl:: EnumFormatEtc
 
 Erstellt einen Enumerator, um die `FORMATETC`-Strukturen zu durchlaufen, die vom Datenobjekt unterstützt werden.
 
@@ -141,17 +141,17 @@ HRESULT EnumFormatEtc(
     IEnumFORMATETC** ppenumFormatEtc);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::EnumFormatEtc](/windows/win32/api/objidl/nf-objidl-idataobject-enumformatetc) im Windows SDK.
+Weitere Informationen finden Sie im Windows SDK unter [IDataObject:: EnumFormatEtc](/windows/win32/api/objidl/nf-objidl-idataobject-enumformatetc) .
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt E_NOTIMPL zurück.
 
-## <a name="idataobjectimplfiredatachange"></a><a name="firedatachange"></a>IDataObjectImpl::FireDataChange
+## <a name="idataobjectimplfiredatachange"></a><a name="firedatachange"></a>Idataobjectimpl:: firedatachange
 
-Sendet eine Änderungsbenachrichtigung an jede Beratungssenke zurück, die derzeit verwaltet wird.
+Sendet eine Änderungs Benachrichtigung zurück an jede Benachrichtigungs Senke, die gerade verwaltet wird.
 
 ```
 HRESULT FireDataChange();
@@ -159,11 +159,11 @@ HRESULT FireDataChange();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
-## <a name="idataobjectimplgetcanonicalformatetc"></a><a name="getcanonicalformatetc"></a>IDataObjectImpl::GetCanonicalFormatEtc
+## <a name="idataobjectimplgetcanonicalformatetc"></a><a name="getcanonicalformatetc"></a>Idataobjectimpl:: GetCanonicalFormatEtc
 
-Ruft eine logisch `FORMATETC` äquivalente Struktur zu einer komplexeren Struktur ab.
+Ruft eine logisch äquivalente- `FORMATETC` Struktur zu einer komplexeren-Struktur ab.
 
 ```
 HRESULT GetCanonicalFormatEtc(FORMATETC* pformatetcIn, FORMATETC* pformatetcOut);
@@ -173,11 +173,11 @@ HRESULT GetCanonicalFormatEtc(FORMATETC* pformatetcIn, FORMATETC* pformatetcOut)
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::GetCanonicalFormatEtc](/windows/win32/api/objidl/nf-objidl-idataobject-getcanonicalformatetc) im Windows SDK.
+Weitere Informationen finden Sie im Windows SDK unter [IDataObject:: getcanonicalformatusw](/windows/win32/api/objidl/nf-objidl-idataobject-getcanonicalformatetc) .
 
-## <a name="idataobjectimplgetdata"></a><a name="getdata"></a>IDataObjectImpl::GetData
+## <a name="idataobjectimplgetdata"></a><a name="getdata"></a>Idataobjectimpl:: GetData
 
 Überträgt Daten vom Datenobjekt zum Client.
 
@@ -187,15 +187,15 @@ HRESULT GetData(
     STGMEDIUM* pmedium);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Parameter *pformatetcIn* muss einen Speichermediumtyp von TYMED_MFPICT angeben.
+Der *pformatetcin* -Parameter muss einen Speicher mitteltyp TYMED_MFPICT angeben.
 
-Siehe [IDataObject::GetData](/windows/win32/api/objidl/nf-objidl-idataobject-getdata) im Windows SDK.
+Weitere Informationen finden Sie im Windows SDK unter [IDataObject:: GetData](/windows/win32/api/objidl/nf-objidl-idataobject-getdata) .
 
-## <a name="idataobjectimplgetdatahere"></a><a name="getdatahere"></a>IDataObjectImpl::GetDataHere
+## <a name="idataobjectimplgetdatahere"></a><a name="getdatahere"></a>Idataobjectimpl:: GetDataHere
 
-Ähnlich `GetData`wie , außer der `STGMEDIUM` Client muss die Struktur zuweisen.
+Ähnelt `GetData` , mit der Ausnahme, dass der Client die-Struktur zuordnen muss `STGMEDIUM` .
 
 ```
 HRESULT GetDataHere(
@@ -207,11 +207,11 @@ HRESULT GetDataHere(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::GetDataHere](/windows/win32/api/objidl/nf-objidl-idataobject-getdatahere) im Windows SDK.
+Weitere Informationen finden Sie im Windows SDK unter [IDataObject:: GetDataHere](/windows/win32/api/objidl/nf-objidl-idataobject-getdatahere) .
 
-## <a name="idataobjectimplquerygetdata"></a><a name="querygetdata"></a>IDataObjectImpl::QueryGetData
+## <a name="idataobjectimplquerygetdata"></a><a name="querygetdata"></a>Idataobjectimpl:: QueryGetData
 
 Bestimmt, ob das Datenobjekt eine bestimmte `FORMATETC`-Struktur für die Übertragung von Daten unterstützt.
 
@@ -223,11 +223,11 @@ HRESULT QueryGetData(FORMATETC* pformatetc);
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::QueryGetData](/windows/win32/api/objidl/nf-objidl-idataobject-querygetdata) im Windows SDK.
+Weitere Informationen finden Sie im Windows SDK unter [IDataObject:: QueryGetData](/windows/win32/api/objidl/nf-objidl-idataobject-querygetdata) .
 
-## <a name="idataobjectimplsetdata"></a><a name="setdata"></a>IDataObjectImpl::SetData
+## <a name="idataobjectimplsetdata"></a><a name="setdata"></a>Idataobjectimpl:: SetData
 
 Überträgt Daten vom Client zum Datenobjekt.
 
@@ -242,9 +242,9 @@ HRESULT SetData(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Siehe [IDataObject::SetData](/windows/win32/api/objidl/nf-objidl-idataobject-setdata) im Windows SDK.
+Weitere Informationen finden Sie im Windows SDK unter [IDataObject:: SetData](/windows/win32/api/objidl/nf-objidl-idataobject-setdata) .
 
 ## <a name="see-also"></a>Siehe auch
 

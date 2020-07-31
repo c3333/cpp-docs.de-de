@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - VC++ Directories Property Page
 ms.assetid: 428eeef6-f127-4271-b3ea-0ae6f2c3d624
-ms.openlocfilehash: 7fc81cd5210167ee9df77605677349d6907f3e5d
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 06e9508ae09f9c7581648b45098f497fda785013
+ms.sourcegitcommit: 13f42c339fb7af935e3a93ac80e350d5e784c9f1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373904"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470796"
 ---
 # <a name="vc-directories-property-page-windows"></a>Eigenschaftenseite „VC++-Verzeichnisse“ (Windows)
 
@@ -74,7 +74,7 @@ Sie können eigene Makros auf zwei Arten definieren:
 
 - Definieren Sie Benutzermakros in einer PROPS-Datei. Weitere Informationen finden Sie unter [Property page macros (Makros für Eigenschaftenseiten)](../working-with-project-properties.md).
 
-Weitere Informationen finden Sie in den Blogbeiträgen zu den Themen [VC++ Directories (VC++-Verzeichnisse)](https://docs.microsoft.com/archive/blogs/vsproject/vc-directories), [Inherited Properties and Property Sheets (Geerbte Eigenschaften und Eigenschaftenblätter)](https://docs.microsoft.com/archive/blogs/vsproject/inherited-properties-and-property-sheets) sowie im [Visual Studio 2010 C++ Project Upgrade Guide (Visual Studio 2010-Handbuch für Upgrades von C++-Projekten)](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/).
+Weitere Informationen finden Sie in den Blogbeiträgen zu den Themen [VC++ Directories (VC++-Verzeichnisse)](https://docs.microsoft.com/archive/blogs/vsproject/vc-directories), [Inherited Properties and Property Sheets (Geerbte Eigenschaften und Eigenschaftenblätter)](https://docs.microsoft.com/cpp/build/project-property-inheritance) sowie im [Visual Studio 2010 C++ Project Upgrade Guide (Visual Studio 2010-Handbuch für Upgrades von C++-Projekten)](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/).
 
 ## <a name="directory-types"></a>Verzeichnistypen
 
