@@ -4,12 +4,12 @@ description: Hier wird die Verwendung von Visual Studio zum Konfigurieren der CM
 ms.date: 04/02/2020
 helpviewer_keywords:
 - CMake debugging
-ms.openlocfilehash: f860d1ae78d401a9e5079e79684a053220deaa6c
-ms.sourcegitcommit: 3f91111c0350c0237fddb82766c290307f20e659
+ms.openlocfilehash: cc80827458ba7cb61339ec3a36f227747780a47c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83630521"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224083"
 ---
 # <a name="configure-cmake-debugging-sessions"></a>Konfigurieren von CMake-Debugsitzungen
 
@@ -124,7 +124,7 @@ In Visual 2019, Version 16.6 haben wir eine neue Debugkonfiguration von `type:
 Verwenden Sie die folgenden Optionen, um den (in der CMakeSettings.json-Datei definierten) Buildcomputer vom Remotedebugcomputer zu trennen.
 
 - `remoteMachineName`: Remotedebugcomputer Dieser ist nur erforderlich, wenn er von dem des Buildcomputers abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
-- `disableDeploy`: Wird standardmäßig auf `false` festgelegt. Hiermit wird angegeben, ob die Build- bzw. Debugtrennung deaktiviert ist. Im Falle von `false` ermöglicht diese Option das Durchführen von Build- und Debugvorgängen auf zwei separaten Computern.
+- `disableDeploy`: Der Standardwert lautet **`false`** . Hiermit wird angegeben, ob die Build- bzw. Debugtrennung deaktiviert ist. Im Falle von **`false`** ermöglicht diese Option das Durchführen von Build- und Debugvorgängen auf zwei separaten Computern.
 - `deployDirectory`: Dies ist der vollständige UNIX-Pfad zum Verzeichnis auf `remoteMachineName`, in das die ausführbare Datei kopiert wird.
 - `deploy`: Dies ist ein Array erweiterter Bereitstellungseinstellungen. Sie müssen diese Einstellungen nur konfigurieren, wenn Sie genauere Kontrolle über den Bereitstellungsprozess wünschen. Standardmäßig werden nur die Dateien, die für den zu debuggenden Prozess erforderlich sind, auf dem Remotedebugcomputer bereitgestellt.
   - `sourceMachine`: Dies ist der Computer, von dem die Datei oder das Verzeichnis kopiert wird. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller im Verbindungs-Manager gespeicherten Remoteverbindungen anzuzeigen. Wenn Sie nativ auf WSL aufbauen, wird diese Option ignoriert.
@@ -211,7 +211,7 @@ Die folgenden Optionen können beim Debuggen auf einem Remotesystem oder WSL mit
 
 - `visualizerFile`: Diese [.natvis](/visualstudio/debugger/create-custom-views-of-native-objects)-Datei wird beim Debuggen dieses Prozesses verwendet. Diese Option ist nicht mit der automatischen Strukturierung und Einrückung von `gdb` kompatibel. Legen Sie auch `showDisplayString` fest, wenn Sie diese Eigenschaft festlegen.
 
-- `showDisplayString`: Dies ist ein boolescher Wert, der die Anzeigezeichenfolge aktiviert, wenn eine `visualizerFile`-Datei angegeben wird. Wenn diese Option auf `true` festgelegt wird, kann die Leistung beim Debuggen verlangsamt werden.
+- `showDisplayString`: Dies ist ein boolescher Wert, der die Anzeigezeichenfolge aktiviert, wenn eine `visualizerFile`-Datei angegeben wird. Wenn diese Option auf **`true`** festgelegt wird, kann die Leistung beim Debuggen verlangsamt werden.
 
 - `setupCommands`: Dies sind ein oder mehrere auszuführende `gdb`-Befehle, um den zugrunde liegenden Debugger einzurichten.
 

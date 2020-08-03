@@ -10,12 +10,12 @@ helpviewer_keywords:
 - square brackets [ ], arrays
 - subscript expressions
 ms.assetid: e28536e5-3b77-46b5-97fd-9b938c771816
-ms.openlocfilehash: 7ac57a65d575ba6a9134f3c4474103735411847d
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: c310d610b4e4cfc5ae5620d38337a5b8fd5243ef
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75299103"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226352"
 ---
 # <a name="one-dimensional-arrays"></a>Eindimensionale Arrays
 
@@ -49,11 +49,11 @@ b[a]
 
 Gemäß den Konvertierungsregeln für den Additionsoperator (angegeben in [Additive Operators](../c-language/c-additive-operators.md) [Additive Operatoren]), wird der Ganzzahlwert in einen Adressoffset konvertiert, indem er durch die Länge des Typs multipliziert wird, der vom Zeiger adressiert wird.
 
-Nehmen Sie z. B. an, der Bezeichner `line` verweist auf ein Array von `int`-Werten. Der Indexausdruck `line[ i ]` wird mit folgendem Verfahren ausgewertet:
+Nehmen Sie z. B. an, der Bezeichner `line` verweist auf ein Array von **`int`** -Werten. Der Indexausdruck `line[ i ]` wird mit folgendem Verfahren ausgewertet:
 
-1. Der Ganzzahlwert `i` wird mit der Zahl der Bytes, die als die Länge eines `int`-Elements definiert ist, multipliziert. Der konvertierte Wert von `i` stellt `i` `int`-Positionen dar.
+1. Der Integerwert `i` wird mit der Zahl der Bytes, die als die Länge eines **`int`** -Elements definiert ist, multipliziert. Der konvertierte Wert von `i` stellt `i` **`int`** -Positionen dar.
 
-1. Dieser konvertierte Wert wird dem ursprünglichen Zeigerwert (`line`) hinzugefügt, um eine Adresse zu erhalten, die um `i` `int`-Positionen von `line` versetzt ist.
+1. Dieser konvertierte Wert wird dem ursprünglichen Zeigerwert (`line`) hinzugefügt, um eine Adresse zu erhalten, die um `i` **`int`** -Positionen von `line` versetzt ist.
 
 1. Der Dereferenzierungsoperator wird auf die neue Adresse angewendet. Das Ergebnis ist der Wert des Arrayelements an dieser Position (intuitiv `line [ i ]`).
 

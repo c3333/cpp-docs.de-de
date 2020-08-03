@@ -1,138 +1,138 @@
 ---
 title: 'Referenz: Windows Performance Analyzer-Ansichten'
-description: Referenz für C++-Build-Insights-Ansichten, die in Windows Performance Analyzer verfügbar sind.
+description: Referenz zu den C++ Build Insights-Ansichten in Windows Performance Analyzer.
 ms.date: 11/03/2019
 helpviewer_keywords:
 - C++ Build Insights
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: b54b1b76d83b77ec7b8d8d3309d81ed9eb2db2d0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 8bbcc43ef19adfd85a3679a2136d471333a74a10
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323233"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224096"
 ---
 # <a name="reference-windows-performance-analyzer-views"></a>Referenz: Windows Performance Analyzer-Ansichten
 
 ::: moniker range="<=vs-2017"
 
-Die C++-Build-Insights-Tools sind in Visual Studio 2019 verfügbar. Um die Dokumentation für diese Version **Version** anzuzeigen, legen Sie das Visual Studio Version-Selektor-Steuerelement für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Die C++ Build Insights-Tools sind in Visual Studio 2019 verfügbar. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range="vs-2019"
 
-Dieser Artikel enthält Details zu den einzelnen C++-Build-Insights-Ansichten, die in Windows Performance Analyzer (WPA) verfügbar sind. Verwenden Sie diese Seite, um zu finden:
+Dieser Artikel enthält Details zu den einzelnen C++ Build Insights-Ansichten, die in Windows Performance Analyzer (WPA) verfügbar sind. Auf dieser Seite finden Sie:
 
-- Beschreibungen der Datenspalte; Und
-- verfügbaren Voreinstellungen für jede Ansicht, einschließlich ihrer beabsichtigten Verwendung und des bevorzugten Anzeigemodus.
+- Datenspaltenbeschreibungen
+- verfügbare Voreinstellungen für die Ansichten sowie den beabsichtigten Einsatzzweck und den bevorzugten Anzeigemodus
 
-Wenn Sie WPA noch nicht kennen, empfehlen wir Ihnen, sich zunächst mit den [Grundlagen von WPA for C++ Build Insights](/cpp/build-insights/tutorials/wpa-basics)vertraut zu machen.
+Wenn Sie WPA noch nicht lange einsetzen, sollten Sie sich zunächst mit den [WPA-Grundlagen für C++ Build Insights](/cpp/build-insights/tutorials/wpa-basics) vertraut machen.
 
-## <a name="build-explorer"></a>Build Explorer
+## <a name="build-explorer"></a>Build-Explorer
 
-Die Build-Explorer-Ansicht wird verwendet, um:
+Die Ansicht „Build-Explorer“ wird für Folgendes verwendet:
 
-- Parallelitätsprobleme zu diagnostizieren,
-- bestimmen, ob Ihre Buildzeit durch Analysieren, Codegenerierung oder Verknüpfung dominiert wird, und
-- Engpässe und ungewöhnlich lange Bauaktivitäten zu identifizieren.
+- zur Diagnose von Parallelitätsproblemen
+- zur Feststellung, ob die Verarbeitung, Codegenerierung oder der Linker zur Buildzeit dominiert
+- zur Ermittlung von Engpässen oder ungewöhnlich langen Buildaktivitäten
 
-### <a name="build-explorer-view-data-columns"></a>Erstellen von Explorer-Ansichtsdatenspalten
+### <a name="build-explorer-view-data-columns"></a>Datenspalten der Ansicht „Build-Explorer“
 
-| Spaltenname | BESCHREIBUNG |
+| Spaltenname | Beschreibung |
 |-|-|
-| BuildTimelineDescription | Eine Textbeschreibung der Zeitachse, auf der die aktuelle Aktivität oder Eigenschaft auftritt. |
-| BuildTimelineId          | Ein nullbasierter Bezeichner für die Zeitachse, auf der die aktuelle Aktivität oder Eigenschaft auftritt. |
-| Komponente                | Die Komponente, die beim Aussenden des aktuellen Ereignisses kompiliert oder verknüpft wurde. Der Wert dieser Spalte ist * \<\> Invocation X Info,* wenn diesem Ereignis keine Komponente zugeordnet ist. X ist ein eindeutiger numerischer Bezeichner für den Aufruf, der zum Zeitpunkt der Ausekommnisausführung des Ereignisses ausgeführt wird. Dieser Bezeichner ist derselbe wie der bezeichner in der InvocationId-Spalte für dieses Ereignis. |
-| Anzahl                    | Die Anzahl der Aktivitäten oder Eigenschaften, die durch diese Datenzeile dargestellt werden. Dieser Wert ist immer 1 und nur in Aggregationsszenarien nützlich, wenn mehrere Zeilen gruppiert werden. |
-| ExclusiveCPUTime         | Die CPU-Zeit in Millisekunden, die von dieser Aktivität verwendet wird. Die zeit, die für untergeordnete Aktivitäten aufgewendet wird, ist in diesem Betrag nicht enthalten. |
-| ExclusiveDuration        | Die Millisekundendauer der Aktivität. Die Dauer der untergeordneten Aktivitäten ist in diesem Betrag nicht enthalten. |
-| InklusiveCPUTime         | Die CPU-Zeit in Millisekunden, die von dieser Aktivität und allen untergeordneten Aktivitäten verwendet wird. |
-| InklusiveDauer        | Die Millisekundendauer dieser Aktivität, einschließlich aller untergeordneten Aktivitäten. |
-| InvocationDescription    | Eine Textbeschreibung des Aufrufs, in dem dieses Ereignis aufgetreten ist. Die Beschreibung enthält, ob es *sich um cl.exe* oder *link.exe*handelte, und einen eindeutigen numerischen Aufrufbezeichner. Gegebenenfalls enthält sie den vollständigen Pfad zu der Komponente, die während des Aufrufs kompiliert oder verknüpft wurde. Bei Aufrufen, die keine Komponente erstellen, oder bei Aufrufen, die mehrere Komponenten erstellen, ist der Pfad leer. Der Aufrufbezeichner ist derselbe wie in der Spalte InvocationId. |
-| InvocationId             | Ein eindeutiger numerischer Bezeichner für den Aufruf dieses Ereignisses ist aufgetreten. |
-| Name                     | Der Name der Aktivität oder Eigenschaft, die durch dieses Ereignis dargestellt wird. |
-| Time                     | Ein Zeitstempel, der angibt, wann das Ereignis aufgetreten ist. |
-| Tool                     | Das Tool, das ausgeführt wurde, als dieses Ereignis aufgetreten ist. Der Wert dieser Spalte ist entweder CL oder Link. |
-| type                     | Der Typ des aktuellen Ereignisses. Dieser Wert ist entweder Aktivität oder Eigenschaft. |
-| Wert                    | Wenn das aktuelle Ereignis eine Eigenschaft ist, enthält diese Spalte ihren Wert. Diese Spalte bleibt leer, wenn es sich bei dem aktuellen Ereignis um eine Aktivität handelt. |
+| BuildTimelineDescription | Eine Textbeschreibung der Zeitachse, in der die aktuelle Aktivität oder Eigenschaft auftritt |
+| BuildTimelineId          | Eine nullbasierter Bezeichner für die Zeitachse, in der die aktuelle Aktivität oder Eigenschaft auftritt |
+| Komponente                | Die Komponente, die kompiliert oder verknüpft wird, wenn das aktuelle Ereignis ausgelöst wurde – der Wert dieser Spalte entspricht *\<Invocation X Info\>* , wenn diesem Ereignis keine Komponente zugeordnet ist. X ist ein eindeutiger numerischer Bezeichner für den Aufruf, der zum Zeitpunkt der Ereignisauslösung ausgeführt wird. Dieser Bezeichner ist mit dem Wert in der InvocationId-Spalte für dieses Ereignis identisch. |
+| Anzahl                    | Die Anzahl der Aktivitäten oder Eigenschaften, die durch diese Datenzeile dargestellt werden – der Wert ist immer 1 und nur in Aggregationsszenarios nützlich, in denen mehrere Zeilen gruppiert werden. |
+| ExclusiveCPUTime         | Die CPU-Zeit in Millisekunden, die für diese Aktivität aufgewendet wird, dabei wird die Zeit für untergeordnete Aktivitäten nicht berücksichtigt. |
+| ExclusiveDuration        | Die Dauer dieser Aktivität in Millisekunden, dabei wird die Dauer untergeordneter Aktivitäten nicht berücksichtigt. |
+| InclusiveCPUTime         | Die CPU-Zeit in Millisekunden, die für diese Aktivität und alle untergeordneten Aktivitäten aufgewendet wird. |
+| InclusiveDuration        | Die Dauer dieser Aktivität und aller untergeordneten Aktivitäten in Millisekunden. |
+| InvocationDescription    | Eine Textbeschreibung des Aufrufs, bei dem dieses Ereignis aufgetreten ist – aus dieser geht hervor, ob *cl.exe* oder *link.exe* beteiligt war, und ein eindeutiger numerischer Aufrufbezeichner ist enthalten. Falls zutreffend, enthält dieser den vollständigen Pfad zu der Komponente, die beim Aufruf kompiliert oder verknüpft wurde. Bei Aufrufen, die keine oder mehrere Komponenten kompilieren, ist der Pfad leer. Dieser Aufrufbezeichner ist mit dem Wert in der InvocationId-Spalte identisch. |
+| InvocationId             | Ein eindeutiger numerischer Bezeichner für den Aufruf, in dem dieses Ereignis aufgetreten ist |
+| name                     | Der Name der Aktivität oder Eigenschaft, die durch dieses Ereignis dargestellt wird |
+| zeit                     | Ein Zeitstempel, der angibt, wann das Ereignis aufgetreten ist |
+| Tool                     | Das Tool, das beim Auftreten dieses Ereignisses ausgeführt wurde – der Wert dieser Spalte ist CL oder LINK. |
+| Typ                     | Der Typ des aktuellen Ereignisses – dieser Wert ist entweder Activity oder Property. |
+| Wert                    | Wenn das aktuelle Ereignis eine Eigenschaft ist, enthält diese Spalte deren Wert. Wenn das aktuelle Ereignis eine Aktivität ist, bleibt diese Spalte leer. |
 
-### <a name="build-explorer-view-presets"></a>Build Explorer-Ansichtsvoreinstellungen
+### <a name="build-explorer-view-presets"></a>Voreinstellungen für die Ansicht „Build-Explorer“
 
-| Voreingestellter Name           | Bevorzugter Ansichtsmodus | Verwendung |
+| Name der Voreinstellung           | Bevorzugter Anzeigemodus | Verwendung |
 |-----------------------|---------------------|------------|
-| Aktivitätsstatistik   | Grafik / Tabelle       | Verwenden Sie diese Voreinstellung, um aggregierte Statistiken für alle Build Explorer-Aktivitäten anzuzeigen. Im Tabellenmodus können Sie auf einen Blick feststellen, ob Ihr Build von Deranalyse, Codegenerierung oder dem Linker dominiert wird. Die aggregierten Dauern für jede Aktivität werden in absteigender Reihenfolge sortiert. Führen Sie drillin, indem Sie den obersten Knoten erweitern, um leicht zu finden, welche Aufrufe für diese Top-Aktivitäten die meiste Zeit in Anspruch nehmen. Wenn Sie möchten, können Sie die WPA-Einstellungen anpassen, um Durchschnittswerte oder andere Arten von Aggregationen anzuzeigen. Sehen Sie im Diagrammmodus, wann jede Aktivität während des Builds aktiv ist. |
-| Aufrufe           | Graph               | Scrollen Sie nach unten durch eine Liste von Aufrufen in der Diagrammansicht sortiert nach Startzeit. Sie können es zusammen mit der CPU-Ansicht (Sampled) verwenden, um Aufrufe zu finden, die an Zonen mit geringer CPU-Auslastung ausgerichtet sind. Erkennen Sie Parallelitätsprobleme. |
-| Aufrufeigenschaften | Tabelle               | Finden Sie schnell wichtige Informationen zu einem bestimmten Compiler- oder Linkeraufruf. Bestimmen Sie die Version, das Arbeitsverzeichnis oder die vollständige Befehlszeile, die zum Aufrufen verwendet wird. |
-| Zeitpläne             | Graph               | Sehen Sie sich ein Balkendiagramm an, wie Ihr Build parallelisiert wurde. Identifizieren Sie Parallelitätsprobleme und Engpässe auf einen Blick. Konfigurieren Sie WPA so, dass den Balken je nach Ihren Anforderungen unterschiedliche Bedeutungen zugewiesen werden. Wählen Sie Aufrufbeschreibungen als letzte gruppierte Spalte aus, um ein farbcodiertes Balkendiagramm aller Aufrufe anzuzeigen. Es hilft Ihnen, zeitaufwändige Täter schnell zu identifizieren. Zoomen Sie dann hinein, und wählen Sie den Aktivitätsnamen als letzte gruppierte Spalte aus, um die längsten Teile anzuzeigen. |
+| Aktivitätsstatistik   | Diagramm/Tabelle       | Verwenden Sie diese Voreinstellung, um aggregierte Statistiken für alle Build-Explorer-Aktivitäten anzuzeigen. Im Tabellenmodus sehen Sie auf einen Blick, ob die Verarbeitung, die Codegenerierung oder der Linker bei Ihrem Build dominiert. Die aggregierte Dauer für jede Aktivität wird in absteigender Reihenfolge sortiert. Sehen Sie sich diese genauer an, indem Sie den obersten Knoten aufklappen, um herauszufinden, welche Aufrufe für die obersten Aktivitäten die meiste Zeit beanspruchen. Sie können die WPA-Einstellungen so anpassen, dass Durchschnittswerte oder andere Aggregationen angezeigt werden. Im Diagrammmodus können Sie nachprüfen, wann welche Aktivität während des Builds ausgeführt wurde. |
+| Aufrufe           | Graph               | Scrollen Sie durch eine Liste der Aufrufe in der Diagrammansicht, die nach Startzeit sortiert ist. Sie können sie in Verbindung mit der CPU-Ansicht (stichprobenartig) verwenden, um Aufrufe zu suchen, die mit niedrigen CPU-Auslastungszonen übereinstimmen. Zudem können Parallelitätsprobleme ermittelt werden. |
+| Aufrufeigenschaften | Tabelle               | Hier finden Sie schnell wichtige Informationen zu einem bestimmten Compiler- oder Linkeraufruf. Bestimmen Sie die Version, das Arbeitsverzeichnis oder die vollständige Befehlszeile, die für den Aufruf verwendet wurde. |
+| Zeitpläne             | Graph               | Hier wird ein Balkendiagramm für die Parallelisierung Ihres Builds angezeigt. So können Sie Parallelitätsprobleme und Engpässe auf einen Blick erkennen. Sie können WPA so konfigurieren, dass den Balken nach Bedarf unterschiedliche Bedeutungen zugewiesen werden. Legen Sie die Aufrufbeschreibungen als letzte gruppierte Spalte fest, um ein farbcodiertes Balkendiagramm für alle Aufrufe anzuzeigen. So können Sie zeitaufwändige Aktivitäten schnell ermitteln. Vergrößern Sie das Diagramm anschließend, und legen Sie den Aktivitätsnamen als letzte gruppierte Spalte fest, um die längsten Aktivitäten anzuzeigen. |
 
 ## <a name="files"></a>Dateien
 
-Die Dateiansicht wird verwendet, um:
+Die Ansicht „Dateien“ wird für Folgendes verwendet:
 
-- bestimmen, welche Header am häufigsten enthalten sind, und
-- helfen Sie bei der Entscheidung, was in einen vorkompilierten Header (PCH) aufgenommen werden soll.
+- zur Ermittlung, welche Header am häufigsten eingeschlossen werden
+- zur Entscheidung, welche Komponenten in einen vorkompilierten Header eingeschlossen werden sollen
 
-### <a name="files-view-data-columns"></a>Dateien anzeigen Datenspalten
+### <a name="files-view-data-columns"></a>Datenspalten der Ansicht „Dateien“
 
-| Spaltenname              | BESCHREIBUNG |
+| Spaltenname              | Beschreibung |
 |--------------------------|-------------|
-| ActivityName             | Die Aktivität, die ausgeführt wurde, als dieses Dateiereignis ausgesendet wurde. Derzeit ist dieser Wert immer *Parsing*. |
+| ActivityName             | Die Aktivität, die während der Auslösung dieses Dateiereignisses ausgeführt wurde Derzeit lautet dieser Wert standardmäßig *Parsing*. |
 | BuildTimelineDescription | * |
 | BuildTimelineId          | * |
 | Komponente                | * |
 | Anzahl                    | * |
-| Tiefe                    | Die Null-basierte Position in der Include-Struktur, in der diese Datei gefunden wird. Die Zählung beginnt am Stamm des Include-Baums. Der Wert 0 entspricht in der Regel einer .c/.cpp-Datei. |
+| Tiefe                    | Die nullbasierte Position in der include-Struktur, in der diese Datei gefunden wird – die Zählung beginnt beim Stamm der include-Struktur. Ein Wert von 0 entspricht in der Regel einer C- oder CPP-Datei. |
 | ExclusiveDuration        | * |
-| InklusiveBy               | Der vollständige Pfad der Datei, die die aktuelle Datei enthält. |
-| IncludedPath             | Der vollständige Pfad der aktuellen Datei. |
-| InklusiveDauer        | * |
+| IncludedBy               | Der vollständige Pfad der Datei, die das aktuelle Element enthielt |
+| IncludedPath             | Der vollständige Pfad der aktuellen Datei |
+| InclusiveDuration        | * |
 | InvocationId             | * |
-| StartTime                | Ein Zeitstempel, der den Zeitpunkt darstellt, zu dem das aktuelle Dateiereignis ausgesendet wurde. |
+| StartTime                | Ein Zeitstempel, der die Uhrzeit darstellt, zu der das aktuelle Dateiereignis ausgelöst wurde |
 | Tool                     | * |
 
-\*Der Wert dieser Spalte ist derselbe wie in der [Build-Explorer-Ansicht.](#build-explorer-view-data-columns)
+\* Der Wert dieser Spalte entspricht dem Wert der Ansicht [Build-Explorer](#build-explorer-view-data-columns).
 
-### <a name="files-view-presets"></a>Dateiansicht summieren Voreinstellungen
+### <a name="files-view-presets"></a>Voreinstellungen der Ansicht „Dateien“
 
-| Voreingestellter Name | Bevorzugter Ansichtsmodus | Verwendung |
+| Name der Voreinstellung | Bevorzugter Anzeigemodus | Verwendung |
 |-------------|---------------------|------------|
-| Statistik  | Tabelle               | Sehen Sie, welche Dateien die höchste aggregierte Analysezeit hatten, indem Sie sich die Liste in absteigender Reihenfolge ansehen. Verwenden Sie diese Informationen, um Ihre Header neu zu strukturieren oder zu entscheiden, was in Ihre PCH aufgenommen werden soll. |
+| Statistik  | Tabelle               | Wenn Sie die Liste in absteigender Reihenfolge sortieren, sehen Sie, bei welchen Dateien die aggregierte Verarbeitungsdauer am höchsten war. Anhand dieser Informationen können Sie die Header neu strukturieren oder entscheiden, welche Komponenten der vorkompilierte Header enthalten soll. |
 
-## <a name="functions"></a>Functions
+## <a name="functions"></a>Funktionen
 
-Die Functions-Ansicht wird verwendet, um Funktionen mit einer zu langen Codegenerierungszeit zu identifizieren.
+Die Ansicht „Funktionen“ wird verwendet, um Funktionen mit übermäßig langer Codegenerierungsdauer zu ermitteln.
 
-### <a name="functions-view-data-columns"></a>Funktionen anzeigen Datenspalten
+### <a name="functions-view-data-columns"></a>Datenspalten der Ansicht „Funktionen“
 
-| Spaltenname              | BESCHREIBUNG |
+| Spaltenname              | Beschreibung |
 |--------------------------|-------------|
-| ActivityName             | Die Aktivität, die ausgeführt wurde, als dieses Funktionsereignis emittiert wurde. Derzeit ist dieser Wert immer *CodeGeneration*. |
+| ActivityName             | Die Aktivität, die während der Auslösung dieses Funktionsereignisses ausgeführt wurde Derzeit lautet dieser Wert standardmäßig *CodeGeneration*. |
 | BuildTimelineDescription | * |
 | BuildTimelineId          | * |
 | Komponente                | * |
 | Anzahl                    | * |
-| Duration                 | Die Dauer der Codegenerierungsaktivität für diese Funktion. |
-| FunctionName             | Der Name der Funktion, die eine Codegenerierung durchläuft. |
+| Dauer                 | Die Dauer der Codegenerierungsaktivität für diese Funktion |
+| FunctionName             | Der Name der Funktion, für die Code generiert wird |
 | InvocationId             | * |
-| StartTime                | Ein Zeitstempel, der angibt, wann das aktuelle Funktionsereignis emittiert wurde. |
+| StartTime                | Ein Zeitstempel, der angibt, wann das aktuelle Funktionsereignis ausgelöst wurde |
 | Tool                     | * |
 
-\*Der Wert dieser Spalte ist derselbe wie in der [Build-Explorer-Ansicht.](#build-explorer-view-data-columns)
+\* Der Wert dieser Spalte entspricht dem Wert der Ansicht [Build-Explorer](#build-explorer-view-data-columns).
 
-### <a name="functions-view-presets"></a>Funktionen Ansicht summat
+### <a name="functions-view-presets"></a>Voreinstellungen der Ansicht „Funktionen“
 
-| Voreingestellter Name | Bevorzugter Ansichtsmodus | Verwendung |
+| Name der Voreinstellung | Bevorzugter Anzeigemodus | Verwendung |
 |-------------|---------------------|------------|
-| Statistik  | Tabelle               | Sehen Sie, welche Funktionen die höchste aggregierte Codegenerierungszeit hatten, indem Sie sich die Liste in absteigender Reihenfolge ansehen. Sie können darauf hinweisen, wo Ihr Code das **__forceinline** Schlüsselwort überverwendet, oder dass einige Funktionen zu groß sind. |
-| Zeitpläne   | Graph               | Sehen Sie sich dieses Balkendiagramm an, um den Speicherort und die Dauer von Funktionen zu erfahren, deren Generierung am meisten Inanspruchnimmt. Prüfen Sie, ob sie in der Build-Explorer-Ansicht mit Engpässen ausgerichtet sind. Wenn dies der Zeitpunkt ist, ergreifen Sie geeignete Maßnahmen, um die Codegenerierungszeit zu verkürzen und Ihre Buildzeiten zu nutzen. |
+| Statistik  | Tabelle               | Wenn Sie die Liste in absteigender Reihenfolge sortieren, sehen Sie, bei welchen Funktionen die aggregierte Codegenerierungsdauer am höchsten war. Diese können Hinweise darauf liefern, wo Ihr Code das Schlüsselwort **`__forceinline`** übermäßig verwendet oder einige Funktionen zu groß sind. |
+| Zeitpläne   | Graph               | Aus diesem Balkendiagramm gehen die Position und die Dauer der Funktionen hervor, bei denen die Generierung am längsten dauert. Überprüfen Sie, ob diese mit Engpässen in der Ansicht „Build-Explorer“ übereinstimmen. Wenn das der Fall ist, sollten Sie entsprechende Maßnahmen ergreifen, um die Codegenerierungsdauer zu verkürzen und Builds zu beschleunigen. |
 
 ## <a name="see-also"></a>Siehe auch
 
 [Erste Schritte mit C++ Build Insights](/cpp/build-insights/get-started-with-cpp-build-insights)\
 [Referenz: vcperf-Befehle](vcperf-commands.md)\
-[Tutorial: Grundlagen des Windows-Leistungsanalyseprogramms](/cpp/build-insights/tutorials/wpa-basics)\
+[Tutorial: Windows Performance Analyzer-Grundlagen](/cpp/build-insights/tutorials/wpa-basics)\
 [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer)
 
 ::: moniker-end

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - __finally keyword [C]
 - structured exception handling, try-finally
 ms.assetid: 514400c1-c322-4bf3-9e48-3047240b8a82
-ms.openlocfilehash: 61a6a9edd9faaf8afb06bb7bfdc619cddde3e6fc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b800daa7689cef769ce3a3b070c957f18e8794c9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81349614"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213709"
 ---
 # <a name="try-finally-statement-c"></a>try-finally-Anweisung (C)
 
@@ -22,9 +22,9 @@ Die `try-finally`-Anweisung ist eine Microsoft-Erweiterung zur Programmiersprach
 
 *try-finally-Anweisung*: **__try**  *compound-Anweisung*
 
-**__finally**  *compound-Anweisung*
+**`__finally`**  *Verbundanweisung*
 
-Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der `__finally`-Klausel ist der Beendigungshandler. Der Handler gibt eine Reihe von Aktionen an, die beim Verlassen des abgesicherten Abschnitts ausgeführt werden, ungeachtet dessen, ob der abgesicherte Abschnitt durch eine Ausnahme (ungewöhnlicher Abbruch) oder durch ein standardmäßiges Fortfahren (gewöhnlicher Abbruch) verlassen wird.
+Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der **`__finally`** -Klausel ist der Beendigungshandler. Der Handler gibt eine Reihe von Aktionen an, die beim Verlassen des abgesicherten Abschnitts ausgeführt werden, ungeachtet dessen, ob der abgesicherte Abschnitt durch eine Ausnahme (ungewöhnlicher Abbruch) oder durch ein standardmäßiges Fortfahren (gewöhnlicher Abbruch) verlassen wird.
 
 Die Steuerung erreicht eine `__try`-Anweisung durch einfache sequenzielle Ausführung (Fortfahren). Wenn die Steuerung zur `__try`-Anweisung wechselt, wird der zugehörige Handler aktiv. Die Ausführung erfolgt folgendermaßen:
 
@@ -32,11 +32,11 @@ Die Steuerung erreicht eine `__try`-Anweisung durch einfache sequenzielle Ausfü
 
 1. Der Beendigungshandler wird aufgerufen.
 
-1. Wenn der Beendigungshandler abgeschlossen ist, wird die Ausführung nach der `__finally`-Anweisung fortgesetzt. Unabhängig davon, wie der abgesicherte Abschnitt endet (z. B. über eine `goto`-Anweisung aus dem abgesicherten Text oder über eine `return`-Anweisung), wird der Beendigungshandler ausgeführt, bevor die Ablaufsteuerung aus dem abgesicherten Abschnitt heraus bewegt wird.
+1. Nach Abschluss des Beendigungshandlers wird die Ausführung nach der **`__finally`** -Anweisung fortgesetzt. Unabhängig davon, wie der geschützte Abschnitt endet (z. B. Verlassen des geschützten Teils über eine **`goto`** -Anweisung oder über eine **`return`** -Anweisung), wird der Beendigungshandler ausgeführt, bevor die Ablaufsteuerung den geschützten Abschnitt verlässt.
 
-Das `__leave`-Schlüsselwort ist innerhalb eines `try-finally`-Anweisungsblocks gültig. Die Wirkung von `__leave` besteht darin, zum Ende des `try-finally`-Blocks zu springen. Der Beendigungshandler wird sofort ausgeführt. Obwohl das gleiche Ergebnis mit einer `goto`-Anweisung erreicht werden kann, verursacht eine `goto`-Anweisung eine Stapelentladung. Die `__leave`-Anweisung ist effizienter, da sie keine Stapelentladung verursacht.
+**`__leave** keyword is valid within a `try-finally` statement block. The effect of **`__leave** wird verwendet, um zum Ende des `try-finally`-Blocks zu springen. Der Beendigungshandler wird sofort ausgeführt. Zwar kann dasselbe Ergebnis mit einer **`goto`** -Anweisung erzielt werden, eine **`goto`** -Anweisung verursacht jedoch eine Stapelentladung. Die **__leave**-Anweisung ist effizienter, da sie keine Stapelentladung verursacht.
 
-Eine `try-finally`-Anweisung mithilfe einer `return`-Anweisung oder der `longjmp`-Laufzeitfunktion zu beenden, wird als nicht ordnungsgemäße Beendigung angesehen. Es ist nicht zulässig, in eine `__try`-Anweisung zu springen, wohingegen das Herausspringen aus einer solchen zulässig ist. Alle `__finally`-Anweisungen, die zwischen dem Anfangspunkt und dem Ziel aktiv sind, müssen ausgeführt werden. Dies ist eine so genannte "lokale Entladung".
+Das Beenden einer `try-finally`-Anweisung mithilfe einer **`return`** -Anweisung oder der `longjmp`-Laufzeitfunktion wird als nicht ordnungsgemäße Beendigung angesehen. Es ist nicht zulässig, in eine `__try`-Anweisung zu springen, wohingegen das Herausspringen aus einer solchen zulässig ist. Alle **`__finally`** -Anweisungen, die zwischen dem Anfangspunkt und dem Ziel aktiv sind, müssen ausgeführt werden. Dies ist eine so genannte "lokale Entladung".
 
 Der Beendigungshandler wird nicht aufgerufen, wenn ein Prozess während der Ausführung einer `try-finally`-Anweisung abgebrochen wird.
 

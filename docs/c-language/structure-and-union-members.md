@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operators [C], member selection
 - structure member selection
 ms.assetid: bb1fe304-af49-4f98-808d-afdc99b3e319
-ms.openlocfilehash: b22f5a29a4dc088ea4f3db863d635badee048d2c
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: 70c89344e6afcdf52981f779c441c5ec47791a77
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825690"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211644"
 ---
 # <a name="structure-and-union-members"></a>Struktur- und Unionmember
 
@@ -27,7 +27,7 @@ Ein Memberauswahlausdruck bezieht sich auf Member von Strukturen und Unions. Ein
 
 Diese Liste beschreibt die zwei Arten von Memberauswahlausdrücken:
 
-1. Im ersten Formular steht *postfix-expression* für einen Wert des Typs **struct** oder **union**; mit *identifier* wird ein Member der angegebenen Struktur oder Union benannt. Der Wert des Vorgangs entspricht *identifier* und ist ein L-Wert, sofern *postfix-expression* ein L-Wert ist. Weitere Informationen finden Sie unter [L-Wert-und R-Wert-Ausdrücke](../c-language/l-value-and-r-value-expressions.md).
+1. Im ersten Formular steht der *postfix-Ausdruck* für einen Wert des Typs **`struct`** oder **`union`** . Mit *Bezeichner* wird ein Member der angegebenen Struktur oder Union benannt. Der Wert des Vorgangs entspricht *identifier* und ist ein L-Wert, sofern *postfix-expression* ein L-Wert ist. Weitere Informationen finden Sie unter [L-Wert-und R-Wert-Ausdrücke](../c-language/l-value-and-r-value-expressions.md).
 
 1. Im zweiten Formular steht *postfix-expression* für einen Zeiger auf eine Struktur oder Union; mit *identifier* wird ein Member der angegebenen Struktur oder Union benannt. Der Wert entspricht *identifier* und ist ein L-Wert.
 

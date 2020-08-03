@@ -3,12 +3,12 @@ title: Neuerungen bei C++ in Visual Studio
 ms.date: 05/19/2020
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: 6813a119453bfd365763269169f1291fa165bdcd
-ms.sourcegitcommit: e15b46ea7888dbdd7e0bb47da76aeed680c3c1f3
+ms.openlocfilehash: e8202d03517086192ae893caff0602ec86fcb426
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86446869"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226788"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
@@ -249,7 +249,7 @@ Der C++-Compiler und die Standardbibliothek wurden in diesem Release mit verbess
 
 ##### <a name="visual-studio-2017-version-155"></a>Visual Studio 2017 Version 15.5
 
-Der Compiler unterstützt ungefähr 75 % der Features, die neu in C++17 sind (z.B. strukturierte Bindungen, `constexpr`-Lambdaausdrücke, `if constexpr`, Inlinevariablen, „fold“-Ausdrücke und das Hinzufügen von `noexcept` zum Typsystem). Diese Features sind unter der Option **`/std:c++17`** verfügbar. Weitere Informationen finden Sie unter [Verbesserungen bei der Übereinstimmung mit C++-Standards in Visual Studio 2017](cpp-conformance-improvements.md).
+Der Compiler unterstützt ungefähr 75 % der Features, die neu in C++17 sind (z. B. strukturierte Bindungen, **`constexpr`** -Lambdaausdrücke, `if constexpr`, Inlinevariablen, fold-Ausdrücke und das Hinzufügen von **`noexcept`** zum Typsystem). Diese Features sind unter der Option **`/std:c++17`** verfügbar. Weitere Informationen finden Sie unter [Verbesserungen bei der Übereinstimmung mit C++-Standards in Visual Studio 2017](cpp-conformance-improvements.md).
 
 ##### <a name="visual-studio-2017-version-157"></a>Visual Studio 2017-Version 15.7
 
@@ -296,7 +296,7 @@ Die Visual C++-Laufzeitleistung wird weiterhin durch eine besser generierte Code
 
 Der Microsoft C++-Compiler bietet Unterstützung für AVX-512 von Intel. Er verfügt über Anweisungen zur Vektorlänge, die neue Funktionen in AVX-512 für 128 und 256 Bit breite Register bereitstellen.
 
-Die Option [/Zc:noexceptTypes-](../build/reference/zc-noexcepttypes.md) kann verwendet werden, um zur C++14-Version von `noexcept` zurückzukehren, während der C++17-Modus im Allgemeinen verwendet wird. Diese Option ermöglicht es Ihnen, Ihren Quellcode zu aktualisieren, um ihn an C++17 anzupassen, ohne dass Sie Ihren gesamten `throw()`-Code zur gleichen Zeit neu schreiben müssen. Weitere Informationen dazu finden Sie unter [Entfernen der dynamischen Ausnahmespezifikation und noexcept](cpp-conformance-improvements.md#noexcept_removal).
+Die Option [/Zc:noexceptTypes-](../build/reference/zc-noexcepttypes.md) kann verwendet werden, um zur C++14-Version von **`noexcept`** zurückzukehren, während allgemein der C++17-Modus verwendet wird. Diese Option ermöglicht es Ihnen, Ihren Quellcode zu aktualisieren, um ihn an C++17 anzupassen, ohne dass Sie Ihren gesamten `throw()`-Code zur gleichen Zeit neu schreiben müssen. Weitere Informationen dazu finden Sie unter [Entfernen der dynamischen Ausnahmespezifikation und noexcept](cpp-conformance-improvements.md#noexcept_removal).
 
 ##### <a name="visual-studio-2017-version-157"></a>Visual Studio 2017-Version 15.7
 
@@ -314,7 +314,7 @@ Die Option [/Zc:noexceptTypes-](../build/reference/zc-noexcepttypes.md) kann ver
 - Der Bewegungszuweisungsoperator `std::promise`, der zuvor zum dauerhaften Blockieren von Code führen konnte, wurde korrigiert.
 - Compilerfehler bei der impliziten Konvertierung von `atomic<T*>` in `T*` wurden behoben.
 - `pointer_traits<Ptr>` erkennt jetzt ordnungsgemäß `Ptr::rebind<U>`.
-- Ein fehlender `const`-Qualifizierer im `move_iterator`-Subtraktionsoperator wurde behoben.
+- Ein fehlender **`const`** -Qualifizierer im `move_iterator`-Subtraktionsoperator wurde ergänzt.
 - Die lautlose, ungültige Codegenerierung für zustandsbehaftete benutzerdefinierte Allokatoren, die `propagate_on_container_copy_assignment` und `propagate_on_container_move_assignment` anfordern, wurde korrigiert.
 - `atomic<T>` toleriert nun den überladenen `operator&()`.
 - Compilerdiagnosen für falsche `bind()`-Aufrufe wurden leicht verbessert.
@@ -335,8 +335,8 @@ Es sind weitere Verbesserungen an der Standardbibliothek in Visual Studio 2017 
 - Die von „Clang **-Wmicrosoft-exception-spec**“ gemeldete Warnung „exception specification in declaration does not match previous declaration“ (die Ausnahmespezifikation in der Deklaration entspricht nicht der vorherigen Deklaration) wurde ebenfalls korrigiert.
 - Von Clang und C1XX gemeldete mem-initializer-list-Reihenfolgewarnungen wurden ebenfalls korrigiert.
 - Die unsortierten Container tauschten ihre Hashfunktionen oder Prädikate nicht, wenn die Container selbst getauscht wurden. Dies erfolgt jetzt.
-- Viele swap-Vorgänge von Containern sind jetzt als `noexcept` markiert, da die Standardbibliothek niemals eine Ausnahme auslöst, wenn sie die nicht definierte Verhaltensbedingung „non-`propagate_on_container_swap` non-equal-allocator“ erkennt.
-- Viele `vector<bool>`-Vorgänge sind jetzt als `noexcept` gekennzeichnet.
+- Viele Tauschvorgänge für Container sind jetzt als **`noexcept`** markiert (da die Standardbibliothek nie eine Ausnahme auslösen soll, wenn sie die nicht definierte Verhaltensbedingung „non-`propagate_on_container_swap` non-equal-allocator“ erkennt).
+- Viele `vector<bool>`-Vorgänge sind jetzt mit **`noexcept`** gekennzeichnet.
 - Die Standardbibliothek erzwingt jetzt den Abgleich von `value_type` (im C++17-Modus) mit einem Escapehatch für die Abwahl.
 - Einige Bedingungen wurden korrigiert, bei denen „self-range-insert“ in `basic_string` den Inhalt der Zeichenfolge durcheinandergebracht hat. (Hinweis: „self-range-insert“ in Vektoren ist im Standard immer noch nicht zulässig.)
 - `basic_string::shrink_to_fit()` wird nicht länger vom `propagate_on_container_swap` der Zuweisung beeinträchtigt.
@@ -360,7 +360,7 @@ Es sind weitere Verbesserungen an der Standardbibliothek in Visual Studio 2017 
 
 - Wir haben \<any\>, \<string_view\>, `apply()` und `make_from_tuple()` hinzugefügt.
 - \<optional\>, \<variant\>, `shared_ptr::weak_type` und \<cstdalign\> wurden hinzugefügt.
-- C++14 `constexpr` wurde in `min(initializer_list)`, `max(initializer_list)` und `minmax(initializer_list)` und `min_element()`, `max_element()` und `minmax_element()` hinzugefügt.
+- **`constexpr`** wurde in C++14 für `min(initializer_list)`, `max(initializer_list)` und `minmax(initializer_list)` sowie `min_element()`, `max_element()` und `minmax_element()` aktiviert.
 
 Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabelle](../visual-cpp-language-conformance.md).
 
@@ -368,11 +368,11 @@ Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabell
 
 - Es wurden verschiedene weitere C++17-Features implementiert. Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabelle](cpp-conformance-improvements.md#improvements_153).
 - P0602R0 wurde implementiert: „variant and optional should propagate copy/move triviality“.
-- Die Standardbibliothek toleriert jetzt offiziell das Deaktivieren dynamischer RTTI über die Option [/GR-](../build/reference/gr-enable-run-time-type-information.md). `dynamic_pointer_cast()` und `rethrow_if_nested()` erfordern grundsätzlich `dynamic_cast`. Die Standardbibliothek kennzeichnet sie unter **`/GR-`** jetzt also als `=delete`.
+- Die Standardbibliothek toleriert jetzt offiziell das Deaktivieren dynamischer RTTI über die Option [/GR-](../build/reference/gr-enable-run-time-type-information.md). `dynamic_pointer_cast()` und `rethrow_if_nested()` erfordern grundsätzlich **`dynamic_cast`** . Daher kennzeichnet die Standardbibliothek sie jetzt unter **`/GR-`** als `=delete`.
 - Auch wenn dynamische RTTI über **`/GR-`** deaktiviert wurde, ist „statische RTTI“ (in Form von `typeid(SomeType)`) weiterhin verfügbar und unterstützt verschiedene Komponenten der Standardbibliothek. Die Standardbibliothek unterstützt über **`/D_HAS_STATIC_RTTI=0`** jetzt auch die Deaktivierung der statischen RTTI. Durch diese Flag werden `std::any`, die Memberfunktionen `target()` und `target_type()` von `std::function` sowie die Friend-Memberfunktionen `get_deleter()` von `std::shared_ptr` und `std::weak_ptr` deaktiviert.
-- Die Standardbibliothek verwendet jetzt „C++14 `constexpr`“ bedingungslos anstelle von bedingt definierten Makros.
+- Die Standardbibliothek verwendet jetzt die C++14-Version von **`constexpr`** ohne Bedingung anstelle von bedingt definierten Makros.
 - Die Standardbibliothek verwendet jetzt intern Aliasvorlagen.
-- Die Standardbibliothek verwendet jetzt intern `nullptr` anstelle von `nullptr_t{}`. (Die interne Nutzung von NULL wurde gelöscht. Die interne Nutzung von „0-as-null“ wird nach und nach bereinigt.)
+- Die Standardbibliothek verwendet jetzt intern **`nullptr`** anstelle von `nullptr_t{}`. (Die interne Nutzung von NULL wurde gelöscht. Die interne Nutzung von „0-as-null“ wird nach und nach bereinigt.)
 - Die Standardbibliothek verwendet jetzt intern `std::move()` anstelle der stilistisch fehlerhaften Verwendung von `std::forward()`.
 - `static_assert(false, "message")` wurde in `#error message` geändert. Dies verbessert die Compilerdiagnose, da `#error` die Kompilierung sofort beendet.
 - Die Standardbibliothek markiert Funktionen nicht mehr als `__declspec(dllimport)`. Für moderne Linkertechnologien ist dies nicht mehr erforderlich.
@@ -439,7 +439,7 @@ Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabell
 
 ##### <a name="visual-studio-2017-version-153"></a>Visual Studio 2017 Version 15.3
 
-- Für Interaktionen mit `noexcept`, die ein Einbetten der `std::atomic`-Implementierung in Funktionen verhindert haben, die die strukturierte Ausnahmebehandlung verwenden, wurde eine Problemumgehung eingeführt.
+- Für Interaktionen mit **`noexcept`** , die ein Inlining der `std::atomic`-Implementierung in Funktionen verhindert haben, die die strukturierte Ausnahmebehandlung verwenden, wurde eine Problemumgehung eingeführt.
 - Die interne `_Deallocate()`-Funktion der Standardbibliothek wurde in kleinere Codeabschnitte optimiert, sodass sie jetzt inline an mehr Stellen eingebettet werden kann.
 - `std::try_lock()` wurde geändert und verwendet jetzt Paketerweiterung anstelle von Rekursion.
 - Der Algorithmus von `std::lock()` zum Verhindern von Deadlocks wurde verbessert und verwendet jetzt `lock()`-Vorgänge, anstatt alle `try_lock()` auf allen Sperren zu durchlaufen.
@@ -456,7 +456,7 @@ Weitere Informationen finden Sie unter [Microsoft C++-Sprachkonformität: Tabell
 - Mutierende Vorgänge von `basic_string` konstruieren jetzt erneut zugewiesene Puffer im bevorzugten Zustand, anstatt lokal die Größe zu ändern. Durch eine Einfügung am Anfang einer Zeichenfolge wird der Inhalt nach der Einfügung jetzt z. B. exakt einmal verschoben. Er wird entweder nach unten oder in den neu zugeordneten Puffer verschoben. Folglich wird er bei der Neuzuordnung nicht mehr zweimal verschoben (zunächst in den neu zugeordneten Puffer und dann nach unten).
 - Vorgänge, die die C-Standardbibliothek in \<string\> aufrufen, speichern jetzt die Adresse von `errno`, um wiederholte Interaktionen mit TLS zu entfernen.
 - Die Implementierung von `is_pointer` wurde vereinfacht.
-- Die Änderung des funktionsbasierten Ausdrucks „SFINAE“ in `struct`- und `void_t`-basiert wurde abgeschlossen.
+- Die Umstellung von SFINAE für Ausdrücke von einer Funktionsbasis auf eine **`struct`** - und `void_t`-Basis wurde abgeschlossen.
 - Algorithmen der Standardbibliothek vermeiden jetzt postinkrementelle Iteratoren.
 - Warnungen zu Abschneidungen beim Verwenden von 32-Bit-Zuweisungen in 64-Bit-Systemen wurden korrigiert.
 - Die Zuweisung von `std::vector`-Verschiebungen erfolgt jetzt für Vorgänge, die weder der Zuweisung noch POCMA entsprechen, effizienter, indem nach Möglichkeit der Puffer wiederverwendet wird.
@@ -657,7 +657,7 @@ Visual Studio liefert nun die C++-Kernprüfungen zum Erzwingen der [C++-Kernrich
 
 ##### <a name="visual-studio-2017-version-155"></a>Visual Studio 2017 Version 15.5
 
-- Neue C++ Core Guidelines überprüfen intelligente Zeiger auf Richtigkeit, prüfen die richtige Verwendung globaler Initialisierer und kennzeichnen die Verwendungen von Konstrukten wie `goto` sowie fehlerhafte Typumwandlungen.
+- Neue C++ Core Guidelines-Überprüfungen umfassen die Richtigkeit von intelligenten Zeigern, die richtige Verwendung von globalen Initialisierern und die Kennzeichnung der Verwendung von Konstrukten wie **`goto`** und fehlerhaften Umwandlungen.
 
 - Einige Warnnummern, die in Version 15.3 vorhanden waren, sind in Version 15.5 nicht mehr verfügbar. Diese Warnungen wurden durch genauere Überprüfungen ersetzt.
 

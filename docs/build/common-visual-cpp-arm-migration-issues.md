@@ -2,12 +2,12 @@
 title: Häufig auftretende ARM-Migrationsprobleme bei Visual C++
 ms.date: 05/06/2019
 ms.assetid: 0f4c434e-0679-4331-ba0a-cc15dd435a46
-ms.openlocfilehash: 2c29b4ffa5344b309622314970ce52c47a0ebd05
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 889eed2b02362f33446cd9441ef84f406817b01a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328796"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224070"
 ---
 # <a name="common-visual-c-arm-migration-issues"></a>Häufig auftretende ARM-Migrationsprobleme bei Visual C++
 
@@ -23,10 +23,10 @@ Viele Probleme, auf die Sie bei der Codemigration von der x86- oder x64-Architek
 
 *Nicht spezifiziertes Verhalten* ist ein Verhalten, bei dem der C++-Standard absichtlich nicht deterministisch bleibt. Obwohl das Verhalten als nicht deterministisch angesehen wird, werden bestimmte Aufrufe von nicht spezifiziertem Verhalten von der Compilerimplementierung bestimmt. Es ist jedoch nicht erforderlich, dass ein Compilerhersteller das Ergebnis im Voraus festlegt oder ein konsistentes Verhalten zwischen vergleichbaren Aufrufen garantiert. Außerdem besteht keine Dokumentationspflicht. Ein Beispiel für nicht spezifiziertes Verhalten ist die Reihenfolge, in der Unterausdrücke, die Argumente zu einem Funktionsaufruf enthalten, ausgewertet werden.
 
-Andere Migrationsprobleme können auf Hardwareunterschiede zwischen ARM- und x86- bzw. x64-Architekturen zurückzuführen sein, die auf unterschiedliche Weise mit dem C++-Standard interagieren. Das Modell des starken Speichers der x86- und x64-Architektur beispielsweise gibt `volatile`-qualifizierten Variablen einige zusätzliche Eigenschaften, die in der Vergangenheit verwendet wurden, um bestimmte Arten der Kommunikation zwischen Threads zu erleichtern. Das schwache Speichermodell der ARM-Architektur unterstützt diese Verwendung nicht, und auch der C++-Standard erfordert dies nicht.
+Andere Migrationsprobleme können auf Hardwareunterschiede zwischen ARM- und x86- bzw. x64-Architekturen zurückzuführen sein, die auf unterschiedliche Weise mit dem C++-Standard interagieren. Durch das Modell des starken Arbeitsspeichers der x86- und x64-Architektur erhalten beispielsweise **`volatile`** -qualifizierte Variablen einige zusätzliche Eigenschaften, die in der Vergangenheit verwendet wurden, um bestimmte Arten der Kommunikation zwischen Threads zu erleichtern. Das schwache Speichermodell der ARM-Architektur unterstützt diese Verwendung nicht, und auch der C++-Standard erfordert dies nicht.
 
 > [!IMPORTANT]
-> Obwohl `volatile` einige Eigenschaften erhält, die zur Implementierung eingeschränkter Formen der Kommunikation zwischen Threads unter x86 und x64 verwendet werden können, reichen diese zusätzlichen Eigenschaften nicht aus, um die Kommunikation zwischen Threads allgemein zu implementieren. Der C++-Standard empfiehlt, dass eine solche Kommunikation stattdessen mithilfe geeigneter Synchronisierungsprimitiven implementiert wird.
+> Auch wenn **`volatile`** einige Eigenschaften erhält, die zur Implementierung bestimmter Formen der Kommunikation zwischen Threads in x86- und x64-Architekturen verwendet werden können, reichen diese zusätzlichen Eigenschaften nicht aus, um die Kommunikation zwischen Threads allgemein zu implementieren. Der C++-Standard empfiehlt, dass eine solche Kommunikation stattdessen mithilfe geeigneter Synchronisierungsprimitiven implementiert wird.
 
 Da verschiedene Plattformen diese Art von Verhalten unterschiedlich ausdrücken können, ist die Portierung von Software zwischen Plattformen unter Umständen schwierig und fehleranfällig, wenn sie vom Verhalten einer bestimmten Plattform abhängt. Obwohl viele dieser Verhaltensweisen beobachtet werden können und stabil erscheinen mögen, ist es zumindest nicht portierbar, sich auf sie zu verlassen, und in den Fällen von nicht definiertem oder nicht spezifiziertem Verhalten ist dies auch ein Fehler. Selbst das Verhalten, das in diesem Dokument beschrieben wird, sollte nicht als verlässlich angesehen werden und könnte sich in zukünftigen Compilern oder CPU-Implementierungen ändern.
 
@@ -46,7 +46,7 @@ Diese Plattformen unterscheiden sich auch darin, wie sie die Konvertierung von N
 
 Auf die Konvertierung von Gleitkommawerten kann man sich nur verlassen, wenn bekannt ist, dass der Wert innerhalb des Bereichs des ganzzahligen Typs liegt, in den er konvertiert wird.
 
-### <a name="shift-operator---behavior"></a>Verhalten des Schiebeoperators (\<\< > >)
+### <a name="shift-operator---behavior"></a>Verhalten des Schiebeoperators (\<\< >>)
 
 Bei der ARM-Architektur kann ein Wert um bis zu 255 Bit nach links oder rechts verschoben werden, bevor sich das Muster wiederholt. Bei x86- und x64-Architekturen wird das Muster bei jedem Vielfachen von 32 wiederholt, es sei denn, die Quelle des Musters ist eine 64-Bit-Variable; in diesem Fall wiederholt sich das Muster bei jedem Vielfachen von 64 für x64 und bei jedem Vielfachen von 256 für x86, wenn eine Softwareimplementierung eingesetzt wird. Zum Beispiel ist für eine 32-Bit-Variable, die einen um 32 Positionen nach links verschobenen Wert von 1 hat, bei ARM das Ergebnis 0, bei x86 ist das Ergebnis 1 und bei x64 ist das Ergebnis ebenfalls 1. Wenn die Quelle des Werts jedoch eine 64-Bit-Variable ist, dann ist das Ergebnis auf allen drei Plattformen 4294967296, und der Wert wird erst dann „umgebrochen“, wenn er um 64 Positionen bei x64 bzw. 256 Positionen bei ARM und x86 verschoben wird.
 
@@ -92,9 +92,9 @@ Und wenn es eine Abhängigkeit zwischen `operator->(memory_handle)` und `operato
 
 ### <a name="volatile-keyword-default-behavior"></a>Standardverhalten des volatile-Schlüsselworts
 
-Der MSVC-Compiler unterstützt zwei verschiedene Interpretationen des `volatile`-Speicherqualifizierers, die Sie mithilfe von Compilerschaltern festlegen können. Der Schalter [/volatile:ms](reference/volatile-volatile-keyword-interpretation.md) wählt die erweiterte volatile Semantik von Microsoft aus, die eine feste Reihenfolge sicherstellt, wie dies traditionell für x86 und x64 aufgrund des starken Speichermodells bei diesen Architekturen der Fall war. Der Schalter [/volatile:iso](reference/volatile-volatile-keyword-interpretation.md) wählt die strikte volatile Semantik des C++-Standards aus, die keine feste Reihenfolge garantiert.
+Der MSVC-Compiler unterstützt zwei verschiedene Interpretationen des **`volatile`** -Speicherqualifizierers, die Sie mithilfe von Compilerparametern festlegen können. Der Schalter [/volatile:ms](reference/volatile-volatile-keyword-interpretation.md) wählt die erweiterte volatile Semantik von Microsoft aus, die eine feste Reihenfolge sicherstellt, wie dies traditionell für x86 und x64 aufgrund des starken Speichermodells bei diesen Architekturen der Fall war. Der Schalter [/volatile:iso](reference/volatile-volatile-keyword-interpretation.md) wählt die strikte volatile Semantik des C++-Standards aus, die keine feste Reihenfolge garantiert.
 
-Bei der ARM-Architektur lautet der Standard **/volatile:iso**, weil ARM-Prozessoren ein wenig geordnetes Speichermodell haben und weil ARM-Software nicht auf die erweiterte Semantik von **/volatile:ms** angewiesen ist und in der Regel keine Schnittstelle zu Software haben muss, die diese benötigt. Dennoch ist es manchmal praktisch oder sogar erforderlich, ein ARM-Programm zu kompilieren, um die erweiterte Semantik zu verwenden. Beispielsweise ist es möglicherweise zu teuer, ein Programm für die Verwendung der ISO-C++-Semantik zu portieren, oder die Treibersoftware muss der herkömmlichen Semantik entsprechen, damit sie ordnungsgemäß funktioniert. In diesen Fällen können Sie den Schalter **/volatile: ms** verwenden. Zum erneuten Erstellen der traditionellen volatilen Semantik bei ARM-Zielen muss der Compiler jedoch Speichergrenzen in alle Lese- oder Schreibvorgänge einer `volatile`-Variablen einfügen, um eine feste Reihenfolge zu erzwingen, was sich negativ auf die Leistung auswirken kann.
+Bei der ARM-Architektur lautet der Standard **/volatile:iso**, weil ARM-Prozessoren ein wenig geordnetes Speichermodell haben und weil ARM-Software nicht auf die erweiterte Semantik von **/volatile:ms** angewiesen ist und in der Regel keine Schnittstelle zu Software haben muss, die diese benötigt. Dennoch ist es manchmal praktisch oder sogar erforderlich, ein ARM-Programm zu kompilieren, um die erweiterte Semantik zu verwenden. Beispielsweise ist es möglicherweise zu teuer, ein Programm für die Verwendung der ISO-C++-Semantik zu portieren, oder die Treibersoftware muss der herkömmlichen Semantik entsprechen, damit sie ordnungsgemäß funktioniert. In diesen Fällen können Sie den Parameter **/volatile: ms** verwenden. Zum erneuten Erstellen der traditionellen volatilen Semantik bei ARM-Zielen muss der Compiler jedoch Arbeitsspeicherabgrenzungen um alle Lese- oder Schreibvorgänge einer **`volatile`** -Variablen einfügen, um eine feste Reihenfolge zu erzwingen, was sich negativ auf die Leistung auswirken kann.
 
 Bei den x86- und x64-Architekturen lautet der Standard **/volatile:ms**, da ein Großteil der Software, die bereits für diese Architekturen mit MSVC erstellt wurde, auf diesen Architekturen beruht. Beim Kompilieren von x86- und x64-Programmen können Sie den Schalter **/volatile:iso** festlegen, um eine unnötige Abhängigkeit von der traditionellen volatilen Semantik zu vermeiden und die Portabilität zu fördern.
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - typedef declarations
 - types [C], declarations
 ms.assetid: e92a3b82-9269-4bc6-834a-6f431ccac83e
-ms.openlocfilehash: b4bf7bc82cdf792e5a23f6d5533cc4d800fe4252
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3d477e33def7168d01f9c5f8a64579fed0b497eb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62346105"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87190064"
 ---
 # <a name="typedef-declarations"></a>Typedef-Deklarationen
 
@@ -30,18 +30,18 @@ Eine typedef-Deklaration wird auf die gleiche Weise wie eine Variable oder eine 
 &nbsp;&nbsp;&nbsp;&nbsp;*type-qualifier declaration-specifiers*<sub>opt</sub>
 
 *storage-class-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**typedef**
+&nbsp;&nbsp;&nbsp;&nbsp; **`typedef`**
 
 *type-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**void**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**char**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**short**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**int**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**long**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**float**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**double**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**signed**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**unsigned**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`void`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`char`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`short`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`int`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`long`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`float`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`double`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`signed`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`unsigned`**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-or-union-specifier*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*enum-specifier*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*typedef-name*
@@ -49,7 +49,7 @@ Eine typedef-Deklaration wird auf die gleiche Weise wie eine Variable oder eine 
 *typedef-name*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*identifier*
 
-Beachten Sie, dass in einer typedef-Deklaration keine Typen erstellt werden. Es werden Synonyme für vorhandene Typen oder Namen für Typen erstellt, die auf andere Weise angegeben werden können. Wenn ein typedef-Name als Typspezifizierer verwendet wird, kann er nur mit bestimmten Typspezifizierern kombiniert werden. Zulässige Modifizierer sind **const** und `volatile`.
+Beachten Sie, dass in einer typedef-Deklaration keine Typen erstellt werden. Es werden Synonyme für vorhandene Typen oder Namen für Typen erstellt, die auf andere Weise angegeben werden können. Wenn ein typedef-Name als Typspezifizierer verwendet wird, kann er nur mit bestimmten Typspezifizierern kombiniert werden. Zulässige Modifizierer sind **`const`** und **`volatile`** .
 
 Typedef-Namen verwenden denselben Namespace wie gewöhnliche Bezeichner (weitere Informationen finden Sie unter [Namespaces](../c-language/name-spaces.md)). Aus diesem Grund kann ein Programm einen typedef-Namen und einen Bezeichner für den lokalen Gültigkeitsbereich mit dem gleichen Namen aufweisen. Zum Beispiel:
 

@@ -4,11 +4,12 @@ description: Zusammenfassende Beschreibungen der Beispiele, die im archivierten 
 ms.date: 03/23/2020
 ms.technology: cpp-language
 ms.assetid: 76798022-5886-48e7-a7f2-f99352b15cbf
-ms.openlocfilehash: 0862f6b512f7278f878ade53b320ad5298bccf68
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cb8d2aa8322cb3e9bfc30dc9ad041e7c70662049
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "80215097"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226762"
 ---
 # <a name="visual-studio-c-samples"></a>Visual Studio: C++ -Beispiele
 
@@ -245,7 +246,7 @@ Visual Studio enthielt in früheren Versionen C++-Beispielcode. Der Beispielcode
 | [ListHdr](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | Veranschaulicht die Verwendung der gängigen Steuerelement-MFC-Klassen `CListCtrl` und `CHeaderCtrl`. |
 | [MDI](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | MDI-Anwendung, die keine Dokumente oder Ansichten verwendet. |
 | [MDIDocVw](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | Aktualisierte Version des MDI-Beispiels, das die Dokument-/Ansichtarchitektur verwendet. |
-| [MMXSwarm](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | Demonstriert, wie `CImage`, der `__m64`-Datentyp und geräteunabhängige Bitmaps (DIBs) verwendet werden. |
+| [MMXSwarm](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | Demonstriert, wie `CImage`, der **`__m64`** -Datentyp und geräteunabhängige Bitmaps (DIBs) verwendet werden |
 | [Modeless](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) (Nicht modal) | Veranschaulicht die Verwendung eines `CDialog`-Objekts in MFC als Dialogfeld ohne Modus. |
 | [Multipad](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | Ein einfacher Text-Editor, mit dem der Benutzer mehrere Textdateien zur selben Zeit bearbeiten kann. |
 | [Npp](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general) | Veranschaulicht, wie eine Schnittstellenanwendung (SDI) ähnlich wie der Editor implementiert wird. Das Beispiel ermöglicht Ihnen das Bearbeiten von Textnachrichten und das Senden an andere Benutzer oder andere Systeme über die Messaging-API von Windows oder MAPI. |

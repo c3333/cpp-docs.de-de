@@ -3,12 +3,12 @@ title: Aufrufkonvention bei x64-Systemen
 description: Dieser Artikel enthält Details zu den Standardaufrufkonventionen bei x64-Systemen.
 ms.date: 07/06/2020
 ms.assetid: 41ca3554-b2e3-4868-9a84-f1b46e6e21d9
-ms.openlocfilehash: 9bfecd0fb154658a299d3dac7d9e45398ebe450b
-ms.sourcegitcommit: 85d96eeb1ce41d9e1dea947f65ded672e146238b
+ms.openlocfilehash: b615d2e4473fed1d090b7411211c08b0b824bc8f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86058632"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87200854"
 ---
 # <a name="x64-calling-convention"></a>Aufrufkonvention bei x64-Systemen
 
@@ -44,7 +44,7 @@ Integerargumente an den vier ersten Positionen von links werden entsprechend von
 
 Alle Gleitkommaargumente und Gleitkommaargumente mit doppelter Genauigkeit in den ersten vier Parametern werden abhängig von der Position in XMM0 bis XMM3 übergeben. Gleitkommawerte werden nur in den Integerregistern RCX, RDX, R8 und R9 platziert, wenn VarArgs-Argumente vorhanden sind. Weitere Informationen finden Sie unter [Varargs](#varargs). Ebenso werden die Register XMM0 bis XMM3 ignoriert, wenn das entsprechende Argument ein Integer oder ein Zeigertyp ist.
 
-[`__m128`](../cpp/m128.md)-Typen, -Arrays und -Zeichenfolgen werden nie als unmittelbarer Wert übergeben. Stattdessen wird ein Zeiger an den vom Aufrufer zugeordneten Arbeitsspeicher übergeben. Strukturen und Unions mit einer Größe von 8, 16, 32 oder 64 Bits sowie `__m64`-Typen werden wie Integer der gleichen Größe übergeben. Strukturen oder Unions anderer Größen werden als Zeiger auf den vom Aufrufer zugeordneten Arbeitsspeicher übergeben. Für diese als Zeiger übergebenen Aggregattypen, einschließlich `__m128`, muss der vom Aufrufer zugewiesene temporäre Speicher auf 16 Byte ausgerichtet sein.
+[`__m128`](../cpp/m128.md)-Typen, -Arrays und -Zeichenfolgen werden nie als unmittelbarer Wert übergeben. Stattdessen wird ein Zeiger an den vom Aufrufer zugeordneten Arbeitsspeicher übergeben. Strukturen und Unions mit einer Größe von 8, 16, 32 oder 64 Bits sowie **`__m64`** -Typen werden wie Integer der gleichen Größe übergeben. Strukturen oder Unions anderer Größen werden als Zeiger auf den vom Aufrufer zugeordneten Arbeitsspeicher übergeben. Für diese als Zeiger übergebenen Aggregattypen, einschließlich **`__m128`** , muss der vom Aufrufer zugewiesene temporäre Speicher auf 16 Byte ausgerichtet sein.
 
 Intrinsische Funktionen, die keinen Stapelbereich zuordnen und keine anderen Funktionen aufrufen, verwenden manchmal andere flüchtige Register, um zusätzliche Registerargumente zu übergeben. Diese Optimierung wird durch die enge Bindung zwischen dem Compiler und der Implementierung der intrinsischen Funktion ermöglicht.
 
@@ -56,9 +56,9 @@ Die folgende Tabelle gibt Aufschluss darüber, wie Parameter übergeben werden, 
 |-|-|-|-|-|-|
 | Gleitkomma | Stapel | XMM3 | XMM2 | XMM1 | XMM0 |
 | Ganze Zahl | Stapel | R9 | R8 | RDX | RCX |
-| Aggregate (8, 16, 32 oder 64 Bits) und `__m64` | Stapel | R9 | R8 | RDX | RCX |
+| Aggregate (8, 16, 32 oder 64 Bits) und **`__m64`** | Stapel | R9 | R8 | RDX | RCX |
 | Andere Aggregate, als Zeiger | Stapel | R9 | R8 | RDX | RCX |
-| `__m128`, als Zeiger | Stapel | R9 | R8 | RDX | RCX |
+| **`__m128`** , als Zeiger | Stapel | R9 | R8 | RDX | RCX |
 
 ### <a name="example-of-argument-passing-1---all-integers"></a>Beispiel 1 für Argumentübergabe: Alle Integerwerte
 
@@ -106,7 +106,7 @@ func2() {   // RCX = 2, RDX = XMM1 = 1.0, and R8 = 7
 
 ## <a name="return-values"></a>Rückgabewerte
 
-Ein skalarer Rückgabewert, der in 64 Bits passt, einschließlich des `__m64`-Typs, wird durch RAX zurückgegeben. Nicht skalare Typen, darunter Gleitkommazahlen, Doubles und Vektortypen, wie z. B. [`__m128`](../cpp/m128.md), [`__m128i`](../cpp/m128i.md) und [`__m128d`](../cpp/m128d.md) werden in XMM0 zurückgegeben. Der Status von nicht verwendeten Bits in dem in RAX oder XMM0 zurückgegebenen Wert ist nicht definiert.
+Ein skalarer Rückgabewert, der in 64 Bits passt, einschließlich des **`__m64`** -Typs, wird durch RAX zurückgegeben. Nicht skalare Typen, darunter Gleitkommazahlen, Doubles und Vektortypen, wie z. B. [`__m128`](../cpp/m128.md), [`__m128i`](../cpp/m128i.md) und [`__m128d`](../cpp/m128d.md) werden in XMM0 zurückgegeben. Der Status von nicht verwendeten Bits in dem in RAX oder XMM0 zurückgegebenen Wert ist nicht definiert.
 
 Benutzerdefinierte Typen können als Wert von globalen Funktionen und statische Memberfunktionen zurückgegeben werden. Die Länge muss 1, 2, 4, 8, 16, 32 oder 64 Bits entsprechen, um einen benutzerdefinierten Typ als Wert in RAX zurückzugeben. Er darf außerdem keinen benutzerdefinierten Konstruktor, Destruktor oder Kopierzuweisungsoperator aufweisen. Er darf keine privaten oder geschützten nicht statischen Datenmember sowie keine nicht statischen Datenmember des Verweistyps aufweisen. Er darf keine Basisklassen oder virtuellen Funktionen aufweisen. Außerdem darf er nur Datenmember enthalten, die diese Anforderungen ebenfalls erfüllen. (Diese Definition entspricht im Grunde der eines C++03 POD-Typs. Da die Definition im Standard C++11 geändert wurde, sollte `std::is_pod` nicht für diesen Test verwendet werden.) Andernfalls muss der Aufrufer Speicher für den Rückgabewert zuweisen und einen Zeiger darauf als erstes Argument übergeben. Die verbleibenden Argumente werden dann um ein Argument nach rechts verschoben. Derselbe Zeiger muss vom Aufgerufenen in RAX zurückgegeben werden.
 
@@ -212,7 +212,7 @@ Machen Sie keine Annahmen über den Status des flüchtigen Teils des MXCSR-Regis
 
 ## <a name="setjmplongjmp"></a>setjmp/longjmp
 
-Wenn Sie „setjmpex.h“ oder „setjmp.h“ einschließen, führen alle Aufrufe von [`setjmp`](../c-runtime-library/reference/setjmp.md) oder [`longjmp`](../c-runtime-library/reference/longjmp.md) zu einer Entladung, die Destruktoren und `__finally` aufruft.  Dieses Verhalten unterscheidet sich von x86, da das Einschließen von „setjmp.h“ hier dazu führt, dass `__finally`-Klauseln und Destruktoren nicht aufgerufen werden.
+Wenn Sie „setjmpex.h“ oder „setjmp.h“ einschließen, führen alle Aufrufe von [`setjmp`](../c-runtime-library/reference/setjmp.md) oder [`longjmp`](../c-runtime-library/reference/longjmp.md) zu einer Entladung, die Destruktoren und **`__finally`** aufruft.  Dieses Verhalten unterscheidet sich von der Plattform x86, da das Einschließen von „setjmp.h“ hier dazu führt, dass **`__finally`** -Klauseln und Destruktoren nicht aufgerufen werden.
 
 Durch einen `setjmp`-Aufruf werden der aktuelle Stapelzeiger, nicht flüchtige Register und MXCSR-Register beibehalten.  Durch einen `longjmp`-Aufruf kehren Sie zur neuesten `setjmp`-Aufrufseite zurück, und der Stapelzeiger, nicht flüchtige Register und MXCSR-Register werden wieder in den Zustand zurückgesetzt, der vom neuesten `setjmp`-Aufruf beibehalten wurde.
 

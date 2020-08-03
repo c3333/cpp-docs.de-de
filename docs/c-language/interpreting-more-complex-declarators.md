@@ -5,16 +5,16 @@ helpviewer_keywords:
 - complex declarators
 - interpreting complex declarators
 ms.assetid: dd5b7019-c86d-4645-a5cc-21f834de6f4a
-ms.openlocfilehash: 13c81728f02963863b641348b58380da099b0013
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 385392ea8836998e71584d02bd0ee4478fb774a0
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62232864"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87199905"
 ---
 # <a name="interpreting-more-complex-declarators"></a>Interpretieren von komplexeren Deklaratoren
 
-Sie können einen beliebigen Deklarator in Klammern einschließen, um eine bestimmte Interpretation eines "komplexen Deklarators" anzugeben. Ein komplexer Deklarator ist ein Bezeichner, der durch mehr als einen Array-, Zeiger- oder Funktionsmodifizierer qualifiziert wird. Sie können verschiedene Kombinationen von Array-, Zeiger- und Funktionsmodifizierern auf einen einzelnen Bezeichner anwenden. Im Allgemeinen kann `typedef` verwendet werden, um Deklarationen zu vereinfachen. Weitere Informationen finden Sie unter [Typedef-Deklarationen](../c-language/typedef-declarations.md).
+Sie können einen beliebigen Deklarator in Klammern einschließen, um eine bestimmte Interpretation eines "komplexen Deklarators" anzugeben. Ein komplexer Deklarator ist ein Bezeichner, der durch mehr als einen Array-, Zeiger- oder Funktionsmodifizierer qualifiziert wird. Sie können verschiedene Kombinationen von Array-, Zeiger- und Funktionsmodifizierern auf einen einzelnen Bezeichner anwenden. Im Allgemeinen kann **`typedef`** verwendet werden, um Deklarationen zu vereinfachen. Weitere Informationen finden Sie unter [Typedef-Deklarationen](../c-language/typedef-declarations.md).
 
 Bei der Interpretation komplexer Deklaratoren haben runde und eckige Klammern (das heißt, Modifizierer auf der rechten Seite des Bezeichners) Vorrang vor Sternchen (das heißt, Modifizierer auf der linken Seite des Bezeichners). Eckige Klammern und runde Klammern haben den gleichen Rang und sind von von links nach rechts angeordnet. Nachdem der Deklarator vollständig interpretiert worden ist, wird der Typspezifizierer während des letzten Schritts übernommen. Indem Sie Klammern verwenden, können Sie die Standardreihenfolge der Zuordnung überschreiben und eine bestimmte Interpretation erzwingen. Verwenden Sie jedoch niemals Klammern um einen Bezeichnernamen selbst. Dies könnte fälschlicherweise als Parameterliste interpretiert werden.
 
@@ -48,7 +48,7 @@ In diesem Beispiel werden die Schritte in der entsprechenden Reihenfolge nummeri
 
 1. Zeiger auf
 
-1. `char`-Werte sind.
+1. **`char`** -Werte sind.
 
 ## <a name="examples"></a>Beispiele
 
@@ -58,25 +58,25 @@ Die folgenden Beispiele veranschaulichen weitere komplexe Deklarationen und zeig
 int *var[5]; /* Array of pointers to int values */
 ```
 
-Der Arraymodifizierer hat eine höhere Priorität als der Zeigermodifizierer, daher wird `var` als Array deklariert. Der Zeigermodifizierer gilt für den Typ der Arrayelemente. Also sind die Arrayelemente Zeiger auf `int`-Werte.
+Der Arraymodifizierer hat eine höhere Priorität als der Zeigermodifizierer, daher wird `var` als Array deklariert. Der Zeigermodifizierer gilt für den Typ der Arrayelemente. Also sind die Arrayelemente Zeiger auf **`int`** -Werte.
 
 ```
 int (*var)[5]; /* Pointer to array of int values */
 ```
 
-In dieser Deklaration für `var` geben Klammern dem Zeigermodifizierer höhere Priorität als dem Arraymodifizierer, und `var` wird als Zeiger auf ein Array von fünf `int`-Werten deklariert.
+In dieser Deklaration für `var` geben Klammern dem Zeigermodifizierer höhere Priorität als dem Arraymodifizierer, und `var` wird als Zeiger auf ein Array von fünf **`int`** -Werten deklariert.
 
 ```
 long *var( long, long ); /* Function returning pointer to long */
 ```
 
-Funktionsmodifizierer haben auch höhere Priorität als Zeigermodifizierer, sodass diese Deklaration für `var``var` als Funktion deklariert, die einen Zeiger auf einen **long**-Wert zurückgibt. Die Funktion wird deklariert, um zwei **long**-Werte als Argumente abzurufen.
+Funktionsmodifizierer verfügen ebenfalls über eine höhere Priorität als Zeigermodifizierer, weshalb `var` bei dieser Deklaration für `var` als Funktion deklariert wird, die einen Zeiger auf einen **`long`** -Wert zurückgibt. Die Funktion wird deklariert, um zwei **`long`** -Werte als Argumente abzurufen.
 
 ```
 long (*var)( long, long ); /* Pointer to function returning long */
 ```
 
-Dieses Beispiel ähnelt dem vorherigen. Klammern geben dem Zeigermodifizierer höhere Priorität als dem Funktionsmodifizierer, und `var` wird als Zeiger auf eine Funktion deklariert, die einen **long**-Wert zurückgibt. Auch die Funktion akzeptiert zwei **long**-Argumente.
+Dieses Beispiel ähnelt dem vorherigen. Klammern geben dem Zeigermodifizierer höhere Priorität als dem Funktionsmodifizierer, und `var` wird als Zeiger auf eine Funktion deklariert, die einen **`long`** -Wert zurückgibt. Außerdem akzeptiert die Funktion zwei **`long`** -Argumente.
 
 ```
 struct both       /* Array of pointers to functions */
@@ -101,13 +101,13 @@ unsigned int *(* const *name[5][10] ) ( void );
 
 Das `name`-Array besteht aus 50 Elementen, die in einem mehrdimensionalen Array angeordnet sind. Die Elemente sind Zeiger auf einen Zeiger, der eine Konstante ist. Dieser konstante Zeiger zeigt auf eine Funktion, die über keine Parameter verfügt und einen Zeiger auf einen Typ ohne Vorzeichen zurückgibt.
 
-Das folgende Beispiel ist eine Funktion, die einen Zeiger auf ein Array mit drei **double**-Werten zurückgibt.
+Im folgenden Beispiel wird eine Funktion veranschaulicht, die einen Zeiger auf ein Array mit drei **`double`** -Werten zurückgibt.
 
 ```
 double ( *var( double (*)[3] ) )[3];
 ```
 
-In dieser Deklaration gibt eine Funktion einen Zeiger auf ein Array zurück, da Funktionen, die Arrays zurückgeben, ungültig sind. Hier wird `var` als eine Funktion deklariert, die einen Zeiger auf ein Array von drei **double**-Werten zurückgibt. Die Funktion `var` ruft ein Argument ab. Das Argument, zum Beispiel der Rückgabewert, ist ein Zeiger auf ein Array von drei **double**-Werten. Der Argumenttyp wird von einem komplexen *abstract-declarator* angegeben. Das Sternchen im Argumenttyp muss in Klammern gesetzt werden. Ohne sie würde der Argumenttyp ein Array von drei Zeigern auf **double**-Werte sein. Ausführliche Informationen und Beispiele zu abstrakten Deklaratoren finden Sie unter [C-Deklaratoren (abstrakt)](../c-language/c-abstract-declarators.md).
+In dieser Deklaration gibt eine Funktion einen Zeiger auf ein Array zurück, da Funktionen, die Arrays zurückgeben, ungültig sind. Hier wird `var` als Funktion deklariert, die einen Zeiger auf ein Array mit drei **`double`** -Werten zurückgibt. Die Funktion `var` ruft ein Argument ab. Das Argument, zum Beispiel der Rückgabewert, ist ein Zeiger auf ein Array von drei **`double`** -Werten. Der Argumenttyp wird von einem komplexen *abstract-declarator* angegeben. Das Sternchen im Argumenttyp muss in Klammern gesetzt werden. Ohne sie würde der Argumenttyp ein Array von drei Zeigern auf **`double`** -Werte sein. Ausführliche Informationen und Beispiele zu abstrakten Deklaratoren finden Sie unter [C-Deklaratoren (abstrakt)](../c-language/c-abstract-declarators.md).
 
 ```
 union sign         /* Array of arrays of pointers */
@@ -124,7 +124,7 @@ union sign *(*var[5])[5]; /* Array of pointers to arrays
                              of pointers to unions        */
 ```
 
-Dieses Beispiel zeigt, wie das Platzieren von Klammern die Bedeutung der Deklaration ändert. In diesem Beispiel ist `var` ein fünf Elemente umfassendes Array von Zeigern auf fünf Elemente umfassende Arrays von Zeigern auf Unions. Beispiele dafür, wie `typedef` verwendet wird, um komplexe Deklarationen zu vermeiden, finden Sie unter [Typedef-Deklarationen](../c-language/typedef-declarations.md).
+Dieses Beispiel zeigt, wie das Platzieren von Klammern die Bedeutung der Deklaration ändert. In diesem Beispiel ist `var` ein fünf Elemente umfassendes Array von Zeigern auf fünf Elemente umfassende Arrays von Zeigern auf Unions. Beispiele zur Verwendung von **`typedef`** , um komplexe Deklarationen zu vermeiden, finden Sie unter [Typedef-Deklarationen](../c-language/typedef-declarations.md).
 
 ## <a name="see-also"></a>Siehe auch
 

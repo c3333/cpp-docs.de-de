@@ -8,16 +8,16 @@ helpviewer_keywords:
 - statements, labeled
 - goto keyword [C]
 ms.assetid: 3d0473dc-4b18-4fcc-9616-31a38499d7d7
-ms.openlocfilehash: b5e0d602332c87510b1fe5f59db3e497b88f0acb
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: d84aa6701ef030dc494f6a40a7223d6f9bcd5073
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75299116"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87199983"
 ---
 # <a name="goto-and-labeled-statements-c"></a>goto und bezeichnete Anweisungen (C)
 
-Die Anweisung `goto` übertragt die Steuerung an eine Bezeichnung. Die angegebene Bezeichnung muss sich in derselben Funktion befinden und kann nur vor einer Anweisung in derselben Funktion stehen.
+Die Anweisung **`goto`** überträgt die Steuerung an eine Bezeichnung. Die angegebene Bezeichnung muss sich in derselben Funktion befinden und kann nur vor einer Anweisung in derselben Funktion stehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,18 +26,18 @@ Die Anweisung `goto` übertragt die Steuerung an eine Bezeichnung. Die angegeben
 &nbsp;&nbsp;&nbsp;&nbsp;*jump-statement*
 
 *jump-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**goto**  *Bezeichner*  **;**
+&nbsp;&nbsp;&nbsp;&nbsp; **`goto`**  *Bezeichner*  **;**
 
 *labeled-statement*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*Bezeichner*  **:**  *Anweisung*
 
-Eine Anweisungsmarke ist nur für eine `goto`-Anweisung sinnvoll. In jedem anderen Kontext wird eine bezeichnete Anweisung ohne Berücksichtigung der Bezeichnung ausgeführt.
+Eine Anweisungsbezeichnung ist nur für eine **`goto`** -Anweisung von Bedeutung. In jedem anderen Kontext werden Anweisungen mit Bezeichnung ohne Berücksichtigung dieser Bezeichnung ausgeführt.
 
-Ein *jump-statement* muss sich in der gleichen Funktion befinden und kann nur vor einer Anweisung in der gleichen Funktion stehen. Der Satz der *Bezeichnernamen*, die auf `goto` folgen, verfügt über einen eigenen Namespace, sodass die Namen nicht mit anderen Bezeichnern in Konflikt treten. Bezeichnungen können nicht erneut deklariert werden. Weitere Informationen finden Sie unter [Namespaces](../c-language/name-spaces.md).
+Ein *jump-statement* muss sich in der gleichen Funktion befinden und kann nur vor einer Anweisung in der gleichen Funktion stehen. Die *Bezeichnernamen*, die auf **`goto`** folgen, verfügen über einen eigenen Namespace, sodass keine Konflikte zwischen diesen Namen und anderen Bezeichnern auftreten. Bezeichnungen können nicht erneut deklariert werden. Weitere Informationen finden Sie unter [Namespaces](../c-language/name-spaces.md).
 
-Zur Programmierung empfiehlt es sich, die **break**-, **continue**- und `return`-Anweisung der `goto`-Anweisung vorzuziehen, wann immer dies möglich ist. Da die **break**-Anweisung nur eine Ebene der Schleife beendet, ist möglicherweise eine `goto`-Anweisung erforderlich, um die Schleife aus einer tief verschachtelten Schleife heraus zu beenden.
+Es ist guter Programmierstil, die Anweisungen **`break`** , **`continue`** und **`return`** nach Möglichkeit der Anweisung **`goto`** vorzuziehen. Da die Anweisung **`break`** nur eine Ebene der Schleife beendet, ist möglicherweise eine **`goto`** -Anweisung erforderlich, um eine tief geschachtelte Schleife zu beenden.
 
-In diesem Beispiel wird die `goto`-Anweisung veranschaulicht.
+Im folgenden Beispiel wird die Verwendung der **`goto`** -Anweisung veranschaulicht:
 
 ```c
 // goto.c
@@ -65,7 +65,7 @@ int main()
 }
 ```
 
-In diesem Beispiel übergibt eine `goto`-Anweisung die Steuerung an den Punkt mit der Bezeichnung `stop`, wenn `i` gleich 5 ist.
+In diesem Beispiel überträgt eine **`goto`** -Anweisung die Steuerung an den Punkt mit der Bezeichnung `stop`, wenn `i` gleich 5 ist.
 
 ## <a name="see-also"></a>Siehe auch
 

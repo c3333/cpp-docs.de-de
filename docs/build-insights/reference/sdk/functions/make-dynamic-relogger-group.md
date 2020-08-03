@@ -1,6 +1,6 @@
 ---
 title: MakeDynamicReloggerGroup
-description: Die C++ Build Insights SDK MakeDynamicReloggerGroup Funktionsreferenz.
+description: Referenz zur Funktion „MakeDynamicReloggerGroup“ des C++ Build Insights SDK
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: f49e37f8e1a8b9ca9a800d20b2891a54453095ef
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: c0d1348be8878e686aeba4a58c407264264c5bc4
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323950"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224187"
 ---
 # <a name="makedynamicreloggergroup"></a>MakeDynamicReloggerGroup
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MakeDynamicReloggerGroup` Funktion wird verwendet, um eine dynamische Reloggergruppe zu erstellen. Mitglieder einer Reloggergruppe empfangen Ereignisse nacheinander von links nach rechts, bis alle Ereignisse in einer Ablaufverfolgung verarbeitet wurden.
+Die Funktion `MakeDynamicReloggerGroup` wird zum Erstellen von dynamischen Reloggergruppen verwendet. Die Member einer Reloggergruppe empfangen ein Ereignis nach dem anderen (von links nach rechts), bis alle Ereignisse einer Ablaufverfolgung verarbeitet worden sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,16 +40,16 @@ auto MakeDynamicReloggerGroup(std::vector<std::unique_ptr<IRelogger>> reloggers)
 ### <a name="parameters"></a>Parameter
 
 *reloggers*\
-Ein Vektor von [IRelogger-Zeigern,](../other-types/irelogger-class.md) die in der dynamischen Reloggergruppe enthalten sind. Diese Zeiger können roh, `std::unique_ptr`oder `std::shared_ptr`sein. [IAnalyzer-Zeiger](../other-types/ianalyzer-class.md) werden aufgrund `IRelogger` einer Vererbungsbeziehung auch als Zeiger betrachtet.
+Ein Vektor von [IRelogger](../other-types/irelogger-class.md)-Zeigern, die in der dynamischen Reloggergruppe enthalten sind. Diese Zeiger können unformatiert, `std::unique_ptr` oder `std::shared_ptr` sein. [IAnalyzer](../other-types/ianalyzer-class.md)-Zeiger werden aufgrund einer Vererbungsbeziehung auch als `IRelogger`-Zeiger bezeichnet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine dynamische Reloggergruppe. Verwenden Sie das **Schlüsselwort auto,** um den Rückgabewert zu erfassen.
+Eine dynamische Reloggergruppe. Verwenden Sie das Schlüsselwort **`auto`** , um den Rückgabewert zu erfassen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Im Gegensatz zu statischen Reloggergruppen müssen die Mitglieder einer dynamischen Reloggergruppe zur Kompilierungszeit nicht bekannt sein. Sie können Reloggergruppenmitglieder zur Laufzeit basierend auf Programmeingaben oder basierend auf anderen Werten auswählen, die zur Kompilierungszeit unbekannt sind. Im Gegensatz zu statischen Reloggergruppen weisen [IRelogger-Zeiger](../other-types/irelogger-class.md) innerhalb einer dynamischen Reloggergruppe ein polymorphes Verhalten auf, und virtuelle Funktionsaufrufe werden korrekt ausgelöst. Diese Flexibilität geht zu Kosten einer möglicherweise langsameren Ereignisverarbeitungszeit. Wenn alle Reloggergruppenmitglieder zur Kompilierungszeit bekannt sind und Sie kein polymorphes Verhalten benötigen, sollten Sie eine statische Reloggergruppe verwenden. Um eine statische Reloggergruppe zu verwenden, rufen Sie stattdessen [MakeStaticReloggerGroup](make-static-relogger-group.md) auf.
+Im Gegensatz zu statischen Reloggergruppen müssen die Member einer dynamischen Reloggergruppe nicht zur Kompilierzeit bekannt sein. Sie können Member der Reloggergruppe zur Laufzeit basierend auf der Programmeingabe oder basierend auf anderen Werten auswählen, die zur Kompilierzeit unbekannt sind. Im Gegensatz zu statischen Reloggergruppen weisen [`IRelogger`](../other-types/irelogger-class.md)-Zeiger innerhalb einer dynamischen Reloggergruppe polymorphes Verhalten auf, und virtuelle Funktionsaufrufe werden richtig weitergeleitet. Diese Flexibilität hat allerdings zur Folge, dass die Ereignisverarbeitung länger dauern kann. Wenn alle Member der Reloggergruppe zur Kompilierzeit bekannt sind und kein polymorphes Verhalten erforderlich ist, sollten Sie in Erwägung ziehen, eine statische Reloggergruppe zu verwenden. Wenn Sie eine statische Reloggergruppe verwenden möchten, rufen Sie stattdessen [`MakeStaticReloggerGroup`](make-static-relogger-group.md) auf.
 
-Eine dynamische Reloggergruppe kann innerhalb einer statischen Reloggergruppe gekapselt werden. Sie übergeben die Adresse an [MakeStaticReloggerGroup](make-static-relogger-group.md). Verwenden Sie diese Technik zum Übergeben dynamischer Reloggergruppen an Funktionen wie [Relog](relog.md), die nur statische Reloggergruppen akzeptieren.
+Eine dynamische Reloggergruppe kann in einer statischen Reloggergruppe gekapselt werden. Übergeben Sie ihre Adresse an [`MakeStaticReloggerGroup`](make-static-relogger-group.md). Gehen Sie so vor, um dynamische Reloggergruppen an Funktionen wie [`Relog`](relog.md) zu übergeben, die nur statische Reloggergruppen akzeptieren.
 
 ::: moniker-end

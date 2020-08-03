@@ -9,26 +9,26 @@ helpviewer_keywords:
 - named constants, enumeration declarations
 - declaring enumerations
 ms.assetid: bd18f673-4dda-4bc1-92fd-d1ce10074910
-ms.openlocfilehash: bc238dd0088558233d84f8bbd15d06743e133449
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d917c93ab8ef2e896f3ef09c9d9191dae49116c3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62326013"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213722"
 ---
 # <a name="c-enumeration-declarations"></a>C-Enumerationsdeklarationen
 
 Eine Enumeration besteht aus einem Satz von benannten ganzzahligen Konstanten. Die Deklaration eines Enumerationstyps gibt den Namen des (optionalen) Enumerationstags an und definiert den Satz benannter ganzzahliger Bezeichner (bezeichnet als "Enumerationssatz", "Enumeratorkonstanten", "Enumeratoren" oder "Member"). Eine Variable mit Enumerationstyp speichert einen der Werte des Enumerationssatzes, der durch diesen Typ definiert ist.
 
-Variablen des Typs `enum` können in Indizierungsausdrücken und als Operanden aller arithmetischen und relationalen Operatoren verwendet werden. Enumerationen bieten eine Alternative zur Präprozessordirektive `#define` und bieten den Vorteil, dass die Werte für Sie generiert werden und normalen Bereichsregeln folgen.
+Variablen des Typs **`enum`** können in Indizierungsausdrücken und als Operanden aller arithmetischen und relationalen Operatoren verwendet werden. Enumerationen bieten eine Alternative zur Präprozessordirektive `#define` und bieten den Vorteil, dass die Werte für Sie generiert werden und normalen Bereichsregeln folgen.
 
-In ANSI C weisen die Ausdrücke, die den Wert einer Enumeratorkonstante definieren, immer den `int`-Typ auf. Folglich ist der einer Enumerationsvariable zugeordnete Speicher der für einen einzelnen `int`-Wert benötigte Speicher. Eine Enumerationskonstante oder ein Wert des enumerierten Typs kann überall dort verwendet werden, wo die Programmiersprache C einen ganzzahligen Ausdruck gestattet.
+In ANSI C weisen die Ausdrücke, die den Wert einer Enumeratorkonstante definieren, immer den **`int`** -Typ auf. Folglich ist der einer Enumerationsvariable zugeordnete Speicher der für einen einzelnen **`int`** -Wert benötigte Speicher. Eine Enumerationskonstante oder ein Wert des enumerierten Typs kann überall dort verwendet werden, wo die Programmiersprache C einen ganzzahligen Ausdruck gestattet.
 
 ## <a name="syntax"></a>Syntax
 
 *enum-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**enum** *Bezeichner*<sub>opt</sub> **{** *enumerator-list* **}**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**enum** *identifier*
+&nbsp;&nbsp;&nbsp;&nbsp; **`enum`** *Bezeichner*<sub>opt</sub> **{** *Enumeratorliste* **}**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`enum`** *Bezeichner*
 
 Der optionale Wert *identifier* benennt den von *enumerator-list* definierten Enumerationstyp. Dieser Bezeichner wird oft als „Tag“ der Enumeration bezeichnet, die von der Liste angegeben wird. Ein Typspezifizierer der Art
 
@@ -41,7 +41,7 @@ enum identifier
 
 deklariert *identifier* als Tag der Enumeration, die vom *enumerator-list*-Nichtterminal spezifiziert wird. Der „Enumeratorinhalt“ wird von *enumerator-list* definiert. Nachfolgend wird *enumerator-list* ausführlich beschrieben.
 
-Falls die Deklaration eines Tags sichtbar ist, geben nachfolgende Deklarationen, die das Tag verwenden, *enumerator-list* jedoch weglassen, den zuvor deklarierten enumerierten Typ an. Das Tag muss auf einen definierten Enumerationstyp verweisen, der sich im aktuellen Bereich befindet. Da der Enumerationstyp an einer anderen Stelle definiert ist, wird *enumerator-list* in dieser Deklaration nicht angezeigt. Deklarationen von Typen, die aus Enumerationen abgeleitet sind, und `typedef`-Deklarationen für Enumerationstypen können das Enumerationstag vor der Definition des Enumerationstyps verwenden.
+Falls die Deklaration eines Tags sichtbar ist, geben nachfolgende Deklarationen, die das Tag verwenden, *enumerator-list* jedoch weglassen, den zuvor deklarierten enumerierten Typ an. Das Tag muss auf einen definierten Enumerationstyp verweisen, der sich im aktuellen Bereich befindet. Da der Enumerationstyp an einer anderen Stelle definiert ist, wird *enumerator-list* in dieser Deklaration nicht angezeigt. Deklarationen von Typen, die aus Enumerationen abgeleitet sind, und **`typedef`** -Deklarationen für Enumerationstypen können das Enumerationstag vor der Definition des Enumerationstyps verwenden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -58,7 +58,7 @@ Falls die Deklaration eines Tags sichtbar ist, geben nachfolgende Deklarationen,
 
 Jeder *enumeration-constant*-Wert in *enumeration-list* benennt einen Wert des Enumerationssatzes. Standardmäßig wird der erste *enumeration-constant*-Wert mit dem Wert 0 verknüpft. Der folgende *enumeration-constant*-Listeneintrag wird mit dem Wert von ( *constant-expression* + 1) verknüpft, außer er wird explizit einem anderen Wert zugeordnet. Der Name von *enumeration-constant* entspricht dessen Wert.
 
-Sie können mit *enumeration-constant = constant-expression* die Standardabfolge der Werte überschreiben. Wird also *enumeration-constant = constant-expression* in *enumerator-list* angezeigt, wird *enumeration-constant* dem Wert zugeordnet, der von *constant-expression* bereitgestellt wird. *constant-expression* muss den `int`-Typ aufweisen und kann negativ sein.
+Sie können mit *enumeration-constant = constant-expression* die Standardabfolge der Werte überschreiben. Wird also *enumeration-constant = constant-expression* in *enumerator-list* angezeigt, wird *enumeration-constant* dem Wert zugeordnet, der von *constant-expression* bereitgestellt wird. Der *konstante Ausdruck* muss den **`int`** -Typ aufweisen und kann negativ sein.
 
 Die folgenden Regeln gelten für Member eines Enumerationssatzes:
 

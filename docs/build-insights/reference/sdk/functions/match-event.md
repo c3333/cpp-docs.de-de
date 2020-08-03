@@ -1,6 +1,6 @@
 ---
 title: MatchEvent
-description: Die C++ Build Insights SDK MatchEvent-Funktionsreferenz.
+description: Referenz zur Funktion „MatchEvent“ des C++ Build Insights SDK
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 0c60653641c676716bcdd60865433773da79325f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 8ec2c6bfcacf28998058dc66b5f363fbf1ea5d70
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323857"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224109"
 ---
 # <a name="matchevent"></a>MatchEvent
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MatchEvent` Funktion wird verwendet, um ein Ereignis mit einer Liste von Ereignistypen abzugleichen. Wenn das Ereignis mit einem Typ in der Liste übereinstimmt, wird es zur weiteren Verarbeitung an einen Handler weitergeleitet.
+Die Funktion `MatchEvent` wird verwendet, um ein Ereignis mit einer Liste von Ereignistypen abzugleichen. Wenn das Ereignis mit einem Typ in der Liste übereinstimmt, wird es zur weiteren Verarbeitung an einen Handler weitergeleitet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -44,33 +44,33 @@ bool MatchEvent(
 ### <a name="parameters"></a>Parameter
 
 *TEvent*\
-Der erste Ereignistyp, dem Sie entsprechen möchten.
+Der erste Ereignistyp, den Sie zuordnen möchten.
 
 *TEvents*\
-Die verbleibenden Ereignistypen, die Sie abgleichen möchten.
+Die übrigen Ereignistypen, die Sie zuordnen möchten.
 
 *TCallable*\
-Ein Typ, `operator()`der unterstützt. Weitere Informationen darüber, welche Argumente an diesen Operator übergeben werden, finden Sie in der beschreibung des *aufrufbaren* Parameters.
+Ein Typ, der den Operator `operator()` unterstützt. Weitere Informationen zu den Argumenten, die an diesen Operator übergeben werden, finden Sie in der Beschreibung des Parameters *callable*.
 
 *TExtraArgs*\
-Die Typen der zusätzlichen Argumente, `MatchEvent`die an übergeben wurden.
+Die Typen der zusätzlichen Argumente, die an `MatchEvent` übergeben wurden.
 
 *Ereignis*\
-Das Ereignis, das mit den von *TEvent* und *TEvents*beschriebenen Ereignistypen übereinstimmt.
+Das Ereignis, das mit den Ereignistypen abgeglichen werden soll, die von *TEvent* und *TEvents* beschrieben werden.
 
-*Aufrufbaren*\
-`MatchEvent`ruft *aufrufbar auf,* nachdem das Ereignis erfolgreich mit einem der von *TEvent* und *TEvents*beschriebenen Ereignistypen ababgestimmt wurde. Das erste Argument, das an callable übergeben *wird,* ist ein r-Wert des übereinstimmenden Ereignistyps. Das *extraArgs-Parameterpaket* wird in den verbleibenden Parametern von *callable*perfekt weitergeleitet.  
+*callable*\
+`MatchEvent` ruft den Parameter *callable* auf, nachdem das Ereignis erfolgreich einem der in *TEvent* und *TEvents* beschriebenen Ereignistypen zugeordnet werden konnte. Das erste Argument, das an den Parameter *callable* übergeben wird, ist ein R-Wert des zugeordneten Eventtyps. Das Parameterpaket *extraArgs* wird perfekt an die übrigen *callable*-Parameter weitergeleitet.  
 
 *extraArgs*\
-Die Argumente, die zusammen mit dem übereinstimmenden Ereignistyp perfekt weitergeleitet werden, um *aufrufbar* zu sein.
+Die Argumente, die zusammen mit dem zugeordneten Ereignistyp perfekt an den Parameter *callable* weitergeleitet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **bool-Wert,** der **wahr** ist, wenn der Abgleich erfolgreich war, oder **andernfalls false.**
+Ein **`bool`** -Wert, der **`true`** zurückgibt, wenn der Zuordnungsvorgang erfolgreich ist. Andernfalls wird **`false`** zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Ereignistypen, die für die Parameter *TEvent* und *TEvents* verwendet werden sollen, werden aus einer Liste von *Erfassungsklassen*ausgewählt. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie in der [Ereignistabelle](../event-table.md).
+Die Eventtypen, die für die Parameter *TEvent* und *TEvents* verwendet werden sollen, werden aus eine Liste mit *Erfassungsklassen* ausgewählt. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie unter [Ereignistabelle](../event-table.md).
 
 ## <a name="example"></a>Beispiel
 

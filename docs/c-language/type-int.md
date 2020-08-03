@@ -7,18 +7,18 @@ helpviewer_keywords:
 - portability [C++], type int
 - signed integers
 ms.assetid: 0067ce9a-281e-491a-ae63-632952981e13
-ms.openlocfilehash: ebce276c8c4efa822601fe36652057b37e922570
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2bfd9e108b36f073635c6d9e55e2299764dcb309
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81334435"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87198865"
 ---
 # <a name="type-int"></a>Typ "int"
 
-Die Größe eines `int`-Elements mit oder ohne Vorzeichen ist die Standardgröße einer ganzen Zahl auf einem bestimmten Computer. Bei den 16-Bit-Betriebssystemen ist der `int`-Typ z. B. normalerweise 16 Bit oder 2 Bytes. Bei den 32-Bit-Betriebssystemen ist der `int`-Typ normalerweise 32 Bit oder 4 Bytes. Daher ist der `int`-Typ mit dem `short int`-Typ oder dem **long int**-Typ äquivalent, und der `unsigned int`-Typ ist entweder mit dem **unsigned short**-Typ oder dem `unsigned long`-Typ äquivalent, abhängig von der Zielumgebung. Die Typen `int` stehen alle für signierte Werte, es sei denn, sie sind anderweitig bezeichnet.
+Die Größe eines **`signed int`** - oder **`unsigned int`** -Elements entspricht der Standardgröße eines Integers auf einem bestimmten Computer. Bei 16-Bit-Betriebssystemen entspricht der Typ **`int`** beispielsweise in der Regel 16 Bits oder 2 Bytes. Bei 32-Bit-Betriebssystemen entspricht der Typ **`int`** in der Regel 32 Bits oder 4 Bytes. Daher entspricht der Typ **`int`** entweder dem Typ **`short int`** oder **`long int`** , und der Typ **`unsigned int`** ist mit dem Typ **`unsigned short`** oder **`unsigned long`** identisch, abhängig von der Zielumgebung. Alle **`int`** -Typen stellen signierte Werte dar, es sei denn, eine andere Bezeichnung liegt vor.
 
-Die Typspezifizierer `int` und `unsigned int` (oder einfach `unsigned`) definieren bestimmte Funktionen der Programmiersprache C (z. B. den `enum`-Typ). In diesen Fällen bestimmen die Definitionen von `int` und "unsigned int" für eine bestimmte Implementierung den tatsächlichen Speicher.
+Die Typspezifizierer **`int`** und **`unsigned int`** (oder einfach **`unsigned`** ) definieren bestimmte Features der C-Sprache (z. B. den Typ **`enum`** ). In diesen Fällen bestimmen die Definitionen von **`int`** und **`unsigned int`** den tatsächlichen Speicher für eine bestimmte Implementierung.
 
 **Microsoft-spezifisch**
 
@@ -27,7 +27,7 @@ Ganzzahlen mit Vorzeichen werden in der Zweierkomplementdarstellung ausgedrückt
 **Ende Microsoft-spezifisch**
 
 > [!NOTE]
-> Die int-Typspezifizierer sowie die unsignierten int-Typspezifizierer werden in C-Programmen viel verwendet, denn sie ermöglichen es dem jeweiligen Computer, Ganzzahlenwerte auf die für den betreffenden Computer effizienteste Art zu bearbeiten. Da die Größen von int-Typen und int-Typen ohne Vorzeichen variieren, sind Programme, die abhängig von einer bestimmten int-Größe sind, möglicherweise nicht auf andere Computern übertragbar. Um Programme übertragbarer zu gestalten, können Sie Ausdrücke mit dem sizeof-Operator (in [Der Operator sizeof](../c-language/sizeof-operator-c.md) erläutert) anstelle von hartcodierten Datengrößen verwenden.
+> Die Typspezifizierer **`int`** und **`unsigned int`** werden häufig in C-Programmen verwendet, weil sie einem bestimmten Computer das Verarbeiten von Integerwerten auf die für den jeweiligen Computer effizienteste Weise ermöglichen. Da die Größen der **`int`** - und **`unsigned int`** -Typen jedoch variieren, sind Programme, die von einer spezifischen **`int`** -Größe abhängig sind, möglicherweise nicht auf andere Computer übertragbar. Sie können Ausdrücke mit dem Operator **`sizeof`** verwenden (wie im Artikel zum [`sizeof`-Operator](../c-language/sizeof-operator-c.md) beschrieben), anstatt hartcodierte Datengrößen zu verwenden, um Programme portierbarer zu gestalten.
 
 ## <a name="see-also"></a>Siehe auch
 

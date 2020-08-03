@@ -6,12 +6,12 @@ helpviewer_keywords:
 - union keyword [C], declarations
 - variant records
 ms.assetid: 978c6165-e0ae-4196-afa7-6d94e24f62f7
-ms.openlocfilehash: dbc85a467161457641dd86acf5f3720bf4e14247
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3414a478ec741351f1e1540a214cca38c029749f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62291040"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213696"
 ---
 # <a name="union-declarations"></a>Union-Deklarationen
 
@@ -24,8 +24,8 @@ Eine „Unionsdeklaration“ gibt einen Satz Variablenwerte und optional ein Tag
 &nbsp;&nbsp;&nbsp;&nbsp;*Struktur-oder-Union* *Bezeichner*
 
 *struct-or-union*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**struct**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**union**
+&nbsp;&nbsp;&nbsp;&nbsp; **`struct`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`union`**
 
 *struct-declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-declaration*<br/>
@@ -44,14 +44,14 @@ Der Unioninhalt wird definiert als
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-declarator*<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*Strukturdeklaratorliste*  **,**  *Strukturdeklarator*
 
-Eine Variable des Typs **Union** speichert einen der Werte, die von diesem Typ definiert sind. Die gleichen Regeln steuern Struktur- und Uniondeklarationen. Unions können auch Bitfelder aufweisen.
+Eine Variable vom Typ **`union`** speichert einen der von diesem Typ definierten Werte. Die gleichen Regeln steuern Struktur- und Uniondeklarationen. Unions können auch Bitfelder aufweisen.
 
-Member von Unions können nicht nicht über einen unvollständigen Typ, `void`-Typ oder Funktionstyp verfügen. Daher können Member keine Instanz der Union sein, können aber Zeiger auf den Uniontyp sein, der deklariert wird.
+Member von Unions können nicht über einen unvollständigen Typ, den Typ **`void`** oder einen Funktionstyp verfügen. Daher können Member keine Instanz der Union sein, können aber Zeiger auf den Uniontyp sein, der deklariert wird.
 
 Eine Uniontypdeklaration ist nur eine Vorlage. Arbeitsspeicher wird nicht reserviert, bis die Variable deklariert ist.
 
 > [!NOTE]
-> Wenn eine Union von zwei Typen deklariert wird und ein Wert gespeichert ist, aber mit dem anderen Typ auf die Union zugegriffen wird, sind die Ergebnisse unzuverlässig. Beispielsweise wird eine Union von **float** und `int` deklariert. Ein **float**-Wert wird gespeichert, aber später greift das Programm auf den Wert als `int` zu. In einer solchen Situation ist der Wert der internen Speicherung von **float**-Werten abhängig. Der Ganzzahlwert wäre nicht zuverlässig.
+> Wenn eine Union von zwei Typen deklariert wird und ein Wert gespeichert ist, aber mit dem anderen Typ auf die Union zugegriffen wird, sind die Ergebnisse unzuverlässig. Beispielsweise wird eine Union von **`float`** und **`int`** deklariert. Ein **`float`** -Wert wird gespeichert, aber später greift das Programm auf den Wert als **`int`** zu. In einer solchen Situation ist der Wert von der internen Speicherung von **`float`** -Werten abhängig. Der Ganzzahlwert wäre nicht zuverlässig.
 
 ## <a name="examples"></a>Beispiele
 
@@ -79,7 +79,7 @@ union               /* Defines a two-dimensional */
 } screen[25][80];
 ```
 
-Das `screen`-Array enthält 2.000 Elemente. Jedes Element des Arrays ist eine einzelne Union mit zwei Membern: `window1` und `screenval`. Der Member `window1` ist eine Struktur mit zwei Bitfeldmembern, `icon` und `color`. Der `screenval`-Member ist ein `int`. Zu jedem Zeitpunkt enthält jedes union-Element entweder `int`, dargestellt durch `screenval`, oder die Struktur, dargestellt durch `window1`.
+Das `screen`-Array enthält 2.000 Elemente. Jedes Element des Arrays ist eine einzelne Union mit zwei Membern: `window1` und `screenval`. Der Member `window1` ist eine Struktur mit zwei Bitfeldmembern, `icon` und `color`. Der Member `screenval` ist ein Wert vom Typ **`int`** . Zu jedem Zeitpunkt enthält jedes Unionelement entweder den durch `screenval` dargestellten **`int`** -Wert oder die durch `window1` dargestellte Struktur.
 
 **Microsoft-spezifisch**
 

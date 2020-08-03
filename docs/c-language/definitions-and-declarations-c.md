@@ -4,18 +4,18 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - export functions
 ms.assetid: d150395a-89d4-4298-9ac4-08f84fe1261c
-ms.openlocfilehash: 8723c3f09a5e9a8eecf0e552c9f5a7fd9b7f6c68
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0e39832f942eb1473be913112fde1d37ddf05674
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62234357"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226365"
 ---
 # <a name="definitions-and-declarations-c"></a>Definitionen und Deklarationen (C)
 
 **Microsoft-spezifisch**
 
-Die DLL-Schnittstelle bezieht sich auf alle Elemente (Funktionen und Daten), von denen bekannt ist, dass sie von irgend einem Programm im System exportiert werden; das heißt, alle Elemente, die als **dllimport** oder `dllexport` deklariert werden. Alle Deklarationen, die in der DLL-Schnittstelle eingeschlossen sind, müssen das **dllimport**- oder das `dllexport`-Attribut angeben. Allerdings kann die Definition nur das `dllexport`-Attribut angeben. Beispielsweise verursacht die folgende Funktionsdefinition einen Compilerfehler:
+Die DLL-Schnittstelle bezieht sich auf alle Elemente (Funktionen und Daten), von denen bekannt ist, dass sie von einem Programm im System exportiert werden, also alle als **`dllimport`** oder `dllexport` deklarierten Elemente. Bei allen Deklarationen, auf die sich die DLL-Schnittstelle bezieht, muss entweder das **`dllimport`** - oder das `dllexport`-Attribut angegeben sein. Allerdings kann die Definition nur das `dllexport`-Attribut angeben. Beispielsweise verursacht die folgende Funktionsdefinition einen Compilerfehler:
 
 ```
 #define DllImport   __declspec( dllimport )
@@ -46,7 +46,7 @@ Dies ist jedoch die richtige Syntax:
 DllExport int i = 10;      /* Okay: this is an export definition. */
 ```
 
-Die Verwendung von `dllexport` setzt eine Definition voraus, während **dllimport** eine Deklaration impliziert. Sie müssen das `extern`-Schlüsselwort mit `dllexport` verwenden, um eine Deklaration zu erzwingen; andernfalls wird eine Definition impliziert.
+Die Verwendung von `dllexport` setzt eine Definition voraus, die von **`dllimport`** eine Deklaration. Sie müssen das **`extern`** -Schlüsselwort mit `dllexport` verwenden, um eine Deklaration zu erzwingen; andernfalls wird eine Definition vorausgesetzt.
 
 ```
 #define DllImport   __declspec( dllimport )

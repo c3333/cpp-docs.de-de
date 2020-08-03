@@ -6,12 +6,12 @@ helpviewer_keywords:
 - visibility
 - file scope [C++]
 ms.assetid: a019eb7c-66ed-46a7-bc9f-89a963930a56
-ms.openlocfilehash: 01b2bc8d75c3c65639a3ff0c57b1a368760eba53
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 354b354a72b5a96a190ce2322eb160b7d6bff1c2
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62158344"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87199398"
 ---
 # <a name="scope-and-visibility"></a>Bereich und Sichtbarkeit
 
@@ -27,7 +27,7 @@ Blockbereich: Der Deklarator oder Typspezifizierer für einen Bezeichner mit Blo
 
 Funktionsprototypbereich: Der Deklarator oder Typspezifizierer für einen Bezeichner mit Funktionsprototypbereich wird in der Liste der Parameterdeklarationen in einem Funktionsprototyp (nicht Teil der Funktionsdeklaration) angezeigt. Sein Bereich endet am Ende des Funktionsdeklarators.
 
-Die entsprechenden Deklarationen zum Sichtbarmachen von Variablen in anderen Quelldateien werden unter [Speicherklassen](../c-language/c-storage-classes.md) beschrieben. Allerdings sind die Variablen und Funktionen, die auf der externen Ebene mit dem **static**-Speicherklassenspezifizierer deklariert werden, nur innerhalb der Quelldatei sichtbar, in der sie definiert sind. Alle anderen Funktionen sind global sichtbar.
+Die entsprechenden Deklarationen zum Sichtbarmachen von Variablen in anderen Quelldateien werden unter [Speicherklassen](../c-language/c-storage-classes.md) beschrieben. Allerdings sind die Variablen und Funktionen, die auf der externen Ebene mit dem **`static`** -Speicherklassenspezifizierer deklariert werden, nur innerhalb der Quelldatei sichtbar, in der sie definiert sind. Alle anderen Funktionen sind global sichtbar.
 
 ## <a name="see-also"></a>Siehe auch
 

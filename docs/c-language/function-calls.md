@@ -7,12 +7,12 @@ helpviewer_keywords:
 - function calls, about function calls
 - function calls
 ms.assetid: 2cfa897d-3874-4820-933c-e624f75d1712
-ms.openlocfilehash: cce1a888f3e1224822ab4e97c67bf59da4c46fc9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 495dc3cf77df79336af364eb80ea7edf17b54400
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81334576"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227867"
 ---
 # <a name="function-calls"></a>Funktionsaufrufe
 
@@ -20,7 +20,7 @@ Ein *Funktionsaufruf* ist ein Ausdruck, der Steuerung und Argumente (falls vorha
 
 *expression* (*expression-list*<sub>opt</sub>)
 
-wobei *expression* ein Funktionsname oder zu einer Funktionsadresse ausgewertet ist und *expression-list* eine Liste von Ausdrücken (durch Trennzeichen getrennt) ist. Die Werte dieser letzten Ausdrücke sind die Argumente, die an die Funktion übergeben werden. Wenn die Funktion keinen Wert zurückgibt, deklarieren Sie ihn zu einer Funktion, die `void` zurückgibt.
+wobei *expression* ein Funktionsname oder zu einer Funktionsadresse ausgewertet ist und *expression-list* eine Liste von Ausdrücken (durch Trennzeichen getrennt) ist. Die Werte dieser letzten Ausdrücke sind die Argumente, die an die Funktion übergeben werden. Wenn die Funktion keinen Wert zurückgibt, deklarieren Sie sie als Funktion, die **`void`** zurückgibt.
 
 Wenn eine Deklaration vor dem Funktionsaufruf vorhanden ist, jedoch keine Informationen zu dem Parameter angegeben werden, durchlaufen alle nicht deklarierten Argumente einfach die üblichen arithmetischen Konvertierungen.
 
@@ -31,7 +31,7 @@ Die einzige Anforderung in einem beliebigen Funktionsaufruf ist, dass der Ausdru
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel veranschaulicht die Funktionsaufrufe, die von einer `switch`-Anweisung aufgerufen werden:
+Dieses Beispiel veranschaulicht Funktionsaufrufe über eine **`switch`** -Anweisung:
 
 ```
 int main()
@@ -81,9 +81,9 @@ work( count, lift );
 
 eine ganzzahlige Variable, `count`, und die Adresse der Funktion `lift` an die `work`-Funktion. Beachten Sie, dass die Funktionsadresse einfach durch den Funktionsbezeichner übergeben wird, da ein Funktionsbezeichner zu einem Zeigerausdruck ausgewertet wird. Um einen Funktionsbezeichner auf diese Weise zu verwenden, muss die Funktion deklariert oder definiert werden, bevor der Bezeichner verwendet wird; andernfalls wird der Bezeichner nicht erkannt. In diesem Fall ist ein Prototyp `work` am Anfang der `main`-Funktion gegeben.
 
-Der Parameter `function` in `work` wird deklariert, um einen Zeiger auf eine Funktion zu ergeben, die ein `int`-Argument akzeptiert und einen **long**-Wert zurückgibt. Die Klammern um den Parameternamen sind erforderlich, denn ohne sie würde die Deklaration eine Funktion angeben, die einen Zeiger auf einen **long**-Wert zurückgibt.
+Der Parameter `function` in `work` wird als Zeiger auf eine Funktion deklariert, die ein **`int`** -Argument akzeptiert und einen **`long`** -Wert zurückgibt. Die Klammern um den Parameternamen sind erforderlich. Denn ohne sie würde die Deklaration eine Funktion angeben, die einen Zeiger auf einen **`long`** -Wert zurückgibt.
 
-Die Funktion `work` ruft die ausgewählte Funktion aus der **for**-Schleife heraus auf, indem sie den folgenden Funktionsaufruf verwendet:
+Die Funktion `work` ruft die ausgewählte Funktion aus der **`for`** -Schleife heraus über den folgenden Funktionsaufruf auf:
 
 ```
 ( *function )( i );

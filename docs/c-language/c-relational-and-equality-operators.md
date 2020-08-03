@@ -8,16 +8,16 @@ helpviewer_keywords:
 - equality operator, syntax
 - operators [C], relational
 ms.assetid: c89a3815-a65e-4e0d-8333-0e8dc7fdb30b
-ms.openlocfilehash: 25e9bb65492e0c4b100ecd7a800491d238b1dd38
-ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.openlocfilehash: 9ae5a31b5f4b81876d2fe518635a9766d2b5323c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400528"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227945"
 ---
 # <a name="c-relational-and-equality-operators"></a>C-Operatoren (relational) und C-Gleichheitsoperatoren
 
-Die binären Gleichheits- und relationalen Operatoren vergleichen ihren ersten Operanden mit ihrem zweiten Operanden, um die Gültigkeit der angegebenen Beziehung zu testen. Das Ergebnis eines relationalen Ausdrucks beträgt 1, wenn die getestete Beziehung "true" ist, und er beträgt 0, wenn sie "false" ist. Das Ergebnis hat den Typ `int`.
+Die binären Gleichheits- und relationalen Operatoren vergleichen ihren ersten Operanden mit ihrem zweiten Operanden, um die Gültigkeit der angegebenen Beziehung zu testen. Das Ergebnis eines relationalen Ausdrucks beträgt 1, wenn die getestete Beziehung "true" ist, und er beträgt 0, wenn sie "false" ist. Das Ergebnis ist vom Typ **`int`** .
 
 **Syntax**
 
@@ -48,13 +48,13 @@ Die ersten vier Operatoren in der obigen Auflistung haben Priorität gegenüber 
 
 Die Operanden können einen Ganzzahl-, Gleitkomma- oder Zeigertyp haben. Die Typen der Operanden können sich unterscheiden. Relationale Operatoren führen die üblichen arithmetischen Konvertierungen für Operanden des Ganzzahl- und Gleitkommatyps aus. Außerdem können Sie die folgenden Kombinationen von Operandentypen mit den Gleichheits- und relationalen Operatoren verwenden:
 
-- Beide Operanden des jeweiligen Gleichheits- oder relationalen Operators können Zeiger auf den gleichen Typ sein. Für den Gleichheitsoperator (`==`) und den Ungleichheitsoperator (`!=`) gibt das Ergebnis des Vergleichs an, ob die zwei Zeiger denselben Speicherbereich adressieren. Für die anderen relationalen Operatoren ( **\<** , **>** , **\<** = und **>** =) gibt das Ergebnis des Vergleichs die relative Position der zwei Speicheradressen der Objekte an, auf die gezeigt wird. Mit relationalen Operatoren werden nur Offsets verglichen.
+- Beide Operanden des jeweiligen Gleichheits- oder relationalen Operators können Zeiger auf den gleichen Typ sein. Für den Gleichheitsoperator (`==`) und den Ungleichheitsoperator (`!=`) gibt das Ergebnis des Vergleichs an, ob die zwei Zeiger denselben Speicherbereich adressieren. Für die anderen relationalen Operatoren ( **\<**, **>** , **\<**=, and **>** =) gibt das Ergebnis des Vergleichs die relative Position der zwei Speicheradressen der Objekte an, auf die gezeigt wird. Mit relationalen Operatoren werden nur Offsets verglichen.
 
    Der Zeigervergleich wird nur für Teile des gleichen Objekts definiert. Wenn die Zeiger auf Member eines Arrays verweisen, ist der Vergleich identisch mit dem Vergleich der entsprechenden tiefgestellten Zeichen. Die Adresse des ersten Arrayelements ist "kleiner als" die Adresse des letzten Elements. Im Fall von Strukturen sind Zeiger auf später deklarierte Strukturmember Größer-als-Zeiger auf Member, die früher in der Struktur deklariert werden. Zeiger auf die Member derselben Union sind gleich.
 
 - Ein Zeigerwert kann mit dem konstanten Wert 0 auf Gleichheit (`==`) oder Ungleichheit (`!=`) geprüft werden. Ein Zeiger mit einem Wert von 0 wird als NULL-Zeiger bezeichnet, d. h. er zeigt nicht auf einen gültigen Speicherbereich.
 
-- Die Gleichheitsoperatoren befolgen die gleichen Regeln wie relationale Operatoren, aber sie lassen zusätzliche Möglichkeiten zu: Ein Zeiger kann mit einem konstanten Integralausdruck mit dem Wert 0 oder mit einem Zeiger auf `void` verglichen werden. Wenn beide Zeiger NULL-Zeiger sind, sind sie gleichwertig. Mit Gleichheitsoperatoren werden Segmente und Offsets verglichen.
+- Die Gleichheitsoperatoren befolgen dieselben Regeln wie relationale Operatoren, aber sie lassen zusätzliche Möglichkeiten zu: Ein Zeiger kann mit einem konstanten integralen Ausdruck mit dem Wert 0 (null) oder mit einem Zeiger auf **`void`** verglichen werden. Wenn beide Zeiger NULL-Zeiger sind, sind sie gleichwertig. Mit Gleichheitsoperatoren werden Segmente und Offsets verglichen.
 
 ## <a name="examples"></a>Beispiele
 
@@ -88,9 +88,9 @@ enum color { red, white, green } col;
    .
 ```
 
-Diese Anweisungen deklarieren die Enumerationsvariable `col` mit dem `color`-Tag. Die Variable kann jederzeit einen Ganzzahlwert von 0, 1 oder 2 enthalten, der eines der Elemente des Enumerationssatzes `color` darstellt: die Farbe Rot, Weiß oder Grün. Wenn `col` den Wert 0 bei Ausführung der **if**-Anweisung enthält, werden alle von **if** abhängigen Anweisungen ausgeführt.
+Diese Anweisungen deklarieren die Enumerationsvariable `col` mit dem `color`-Tag. Die Variable kann jederzeit einen Ganzzahlwert von 0, 1 oder 2 enthalten, der eines der Elemente des Enumerationssatzes `color` darstellt: die Farbe Rot, Weiß oder Grün. Wenn `col` den Wert 0 (null) bei Ausführung der **`if`** -Anweisung enthält, werden alle von **`if`** abhängigen Anweisungen ausgeführt.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Relationale Operatoren: \<, >, \<= und >=](../cpp/relational-operators-equal-and-equal.md)<br/>
+[Relationale Operatoren: \<, >, \<=, and >=](../cpp/relational-operators-equal-and-equal.md)<br/>
 [Gleichheitsoperatoren: == und !=](../cpp/equality-operators-equal-equal-and-exclpt-equal.md)

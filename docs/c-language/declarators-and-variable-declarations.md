@@ -6,12 +6,12 @@ helpviewer_keywords:
 - declarators, definition
 - declaring variables, declaration statements
 ms.assetid: 5fd67a6a-3a6a-4ec9-b257-3f7390a48d40
-ms.openlocfilehash: 928de4b1724577a9fdb282f5109b4b5d0b31c4e6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b20cde6982e99dedaff59518b71c041233a01dd8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62234524"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226450"
 ---
 # <a name="declarators-and-variable-declarations"></a>Deklaratoren und Variablendeklarationen
 
@@ -36,7 +36,7 @@ Im Deklarator
 __declspec(thread) char *var;
 ```
 
-ist `char` der Typspezifizierer, `__declspec(thread)` und `*` sind die Modifizierer und `var` ist der Name des Bezeichners.
+**`char`** ist der Typspezifizierer, `__declspec(thread)` und `*` sind die Modifizierer und `var` ist der Name des Bezeichners.
 
 **Ende Microsoft-spezifisch**
 

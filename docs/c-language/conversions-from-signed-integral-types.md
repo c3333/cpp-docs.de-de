@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data type conversion [C++], signed and unsigned integers
 - type conversion [C++], signed and unsigned integers
 ms.assetid: 5eea32f8-8b14-413d-acac-c063b3d118d7
-ms.openlocfilehash: 79608b5ca4335ee3c30bdab27e7efade5b7e2f54
-ms.sourcegitcommit: c51b2c665849479fa995bc3323a22ebe79d9d7ce
+ms.openlocfilehash: d41d2fd205a87f9f2be2179ffd8e38256a96e4f7
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998726"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87226476"
 ---
 # <a name="conversions-from-signed-integral-types"></a>Konvertierungen von ganzzahligen Typen mit Vorzeichen
 
@@ -33,11 +33,11 @@ Beim Konvertieren einer ganzen Zahl mit Vorzeichen in einen Gleitkommatyp ist da
 
 Informationen über die Größen der Integer- und Gleitkommatypen finden Sie unter [Speicherverwendung der grundlegenden Typen](../c-language/storage-of-basic-types.md).
 
-In der folgenden Tabelle sind die Konvertierungen von ganzzahligen Typen mit Vorzeichen zusammengefasst. Es wird davon ausgegangen, dass der Typ **char** standardmäßig ein Vorzeichen aufweist. Wenn Sie eine Kompilierzeitoption verwenden, um den Standardwert für den **char**-Typ in einen Typ ohne Vorzeichen zu ändern, gelten anstelle der Konvertierungen in dieser Tabelle die Konvertierungen aus der Tabelle [Conversions from Unsigned Integral Types](../c-language/conversions-from-unsigned-integral-types.md) (Konvertierungen von integralen Typen ohne Vorzeichen) für den Typ **unsigned char**.
+In der folgenden Tabelle sind die Konvertierungen von ganzzahligen Typen mit Vorzeichen zusammengefasst. Es wird davon ausgegangen, dass der Typ **`char`** standardmäßig ein Vorzeichen aufweist. Wenn Sie eine Kompilierzeitoption verwenden, um den Standardwert für den **`char`** -Typ in einen Typ ohne Vorzeichen zu ändern, gelten anstelle der Konvertierungen in dieser Tabelle die Konvertierungen aus der Tabelle [Konvertierungen von integralen Typen ohne Vorzeichen](../c-language/conversions-from-unsigned-integral-types.md) für den Typ **`unsigned char`** .
 
 **Microsoft-spezifisch**
 
-Im Microsoft-Compiler sind **int** und **long** eindeutige aber äquivalente Typen. Die Konvertierung eines **int**-Werts wird auf dieselbe Weise wie die Konvertierung eines **long**-Werts ausgeführt.
+Im Microsoft-Compiler sind **`int`** und **`long`** eindeutige aber äquivalente Typen. Die Konvertierung eines **`int`** -Werts wird auf dieselbe Weise wie die Konvertierung eines **`long`** -Werts ausgeführt.
 
 **Ende Microsoft-spezifisch**
 
@@ -45,48 +45,48 @@ Im Microsoft-Compiler sind **int** und **long** eindeutige aber äquivalente Typ
 
 |Von|Beschreibung|Methode|
 |----------|--------|------------|
-|**char**<sup>1</sup>|**short**|Signaturerweiterung|
-|**char**|**long**|Signaturerweiterung|
-|**char**|**langes long**|Signaturerweiterung|
-|**char**|**unsigned char**|Muster beibehalten; oberes Bit verliert Funktion als Vorzeichenbit|
-|**char**|**unsigned short**|Signaturerweiterung auf **short**; Konvertieren von **short** in **unsigned short**|
-|**char**|**unsigned long**|Signaturerweiterung auf **long**; Konvertieren von **long** in **unsigned long**|
-|**char**|**unsigned long long**|Signaturerweiterung auf **long long**; Konvertieren von **long long** in **unsigned long long**|
-|**char**|**float**|Signaturerweiterung auf **long**; Konvertieren von **long** in **float**|
-|**char**|**double**|Signaturerweiterung auf **long**; Konvertieren von **long** in **double**|
-|**char**|**long double**|Signaturerweiterung auf **long**; Konvertieren von **long** in **double**|
-|**short**|**char**|Niederwertiges Byte beibehalten|
-|**short**|**long**|Signaturerweiterung|
-|**short**|**langes long**|Signaturerweiterung|
-|**short**|**unsigned char**|Niederwertiges Byte beibehalten|
-|**short**|**unsigned short**|Bitmuster beibehalten; höherwertiges Bit verliert Funktion als Vorzeichenbit|
-|**short**|**unsigned long**|Signaturerweiterung auf **long**; Konvertieren von **long** in **unsigned long**|
-|**short**|**unsigned long long**|Signaturerweiterung auf **long long**; Konvertieren von **long long** in **unsigned long long**|
-|**short**|**float**|Signaturerweiterung auf **long**; Konvertieren von **long** in **float**|
-|**short**|**double**|Signaturerweiterung auf **long**; Konvertieren von **long** in **double**|
-|**short**|**long double**|Signaturerweiterung auf **long**; Konvertieren von **long** in **double**|
-|**long**|**char**|Niederwertiges Byte beibehalten|
-|**long**|**short**|Niederwertiges Wort beibehalten|
-|**long**|**langes long**|Signaturerweiterung|
-|**long**|**unsigned char**|Niederwertiges Byte beibehalten|
-|**long**|**unsigned short**|Niederwertiges Wort beibehalten|
-|**long**|**unsigned long**|Bitmuster beibehalten; höherwertiges Bit verliert Funktion als Vorzeichenbit|
-|**long**|**unsigned long long**|Signaturerweiterung auf **long long**; Konvertieren von **long long** in **unsigned long long**|
-|**long**|**float**|Darstellen als **float**. Wenn **long** nicht genau dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
-|**long**|**double**|Darstellen als **double**. Wenn **long** nicht genau als **double** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
-|**long**|**long double**|Darstellen als **double**. Wenn **long** nicht genau als **double** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
-|**langes long**|**char**|Niederwertiges Byte beibehalten|
-|**langes long**|**short**|Niederwertiges Wort beibehalten|
-|**langes long**|**long**|Niederwertigen dword-Wert beibehalten|
-|**langes long**|**unsigned char**|Niederwertiges Byte beibehalten|
-|**langes long**|**unsigned short**|Niederwertiges Wort beibehalten|
-|**langes long**|**unsigned long**|Niederwertigen dword-Wert beibehalten|
-|**langes long**|**unsigned long long**|Bitmuster beibehalten; höherwertiges Bit verliert Funktion als Vorzeichenbit|
-|**langes long**|**float**|Darstellen als **float**. Wenn **long long** nicht genau dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
-|**langes long**|**double**|Darstellen als **double**. Wenn **long long** nicht genau als **double** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
-|**langes long**|**long double**|Darstellen als **double**. Wenn **long long** nicht genau als **double** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
+|**`char`** <sup>1</sup>|**`short`**|Signaturerweiterung|
+|**`char`**|**`long`**|Signaturerweiterung|
+|**`char`**|**`long long`**|Signaturerweiterung|
+|**`char`**|**`unsigned char`**|Muster beibehalten; oberes Bit verliert Funktion als Vorzeichenbit|
+|**`char`**|**`unsigned short`**|Vorzeichenerweiterung zu **`short`** ; Konvertieren von **`short`** zu **`unsigned short`**|
+|**`char`**|**`unsigned long`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`unsigned long`**|
+|**`char`**|**`unsigned long long`**|Vorzeichenerweiterung zu **`long long`** ; Konvertieren von **`long long`** zu **`unsigned long long`**|
+|**`char`**|**`float`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`float`**|
+|**`char`**|**`double`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`double`**|
+|**`char`**|**`long double`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`double`**|
+|**`short`**|**`char`**|Niederwertiges Byte beibehalten|
+|**`short`**|**`long`**|Signaturerweiterung|
+|**`short`**|**`long long`**|Signaturerweiterung|
+|**`short`**|**`unsigned char`**|Niederwertiges Byte beibehalten|
+|**`short`**|**`unsigned short`**|Bitmuster beibehalten; höherwertiges Bit verliert Funktion als Vorzeichenbit|
+|**`short`**|**`unsigned long`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`unsigned long`**|
+|**`short`**|**`unsigned long long`**|Vorzeichenerweiterung zu **`long long`** ; Konvertieren von **`long long`** zu **`unsigned long long`**|
+|**`short`**|**`float`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`float`**|
+|**`short`**|**`double`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`double`**|
+|**`short`**|**`long double`**|Vorzeichenerweiterung zu **`long`** ; Konvertieren von **`long`** zu **`double`**|
+|**`long`**|**`char`**|Niederwertiges Byte beibehalten|
+|**`long`**|**`short`**|Niederwertiges Wort beibehalten|
+|**`long`**|**`long long`**|Signaturerweiterung|
+|**`long`**|**`unsigned char`**|Niederwertiges Byte beibehalten|
+|**`long`**|**`unsigned short`**|Niederwertiges Wort beibehalten|
+|**`long`**|**`unsigned long`**|Bitmuster beibehalten; höherwertiges Bit verliert Funktion als Vorzeichenbit|
+|**`long`**|**`unsigned long long`**|Vorzeichenerweiterung zu **`long long`** ; Konvertieren von **`long long`** zu **`unsigned long long`**|
+|**`long`**|**`float`**|Darstellen als **`float`** . Wenn **`long`** nicht genau dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
+|**`long`**|**`double`**|Darstellen als **`double`** . Wenn **`long`** nicht genau als **`double`** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
+|**`long`**|**`long double`**|Darstellen als **`double`** . Wenn **`long`** nicht genau als **`double`** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
+|**`long long`**|**`char`**|Niederwertiges Byte beibehalten|
+|**`long long`**|**`short`**|Niederwertiges Wort beibehalten|
+|**`long long`**|**`long`**|Niederwertigen dword-Wert beibehalten|
+|**`long long`**|**`unsigned char`**|Niederwertiges Byte beibehalten|
+|**`long long`**|**`unsigned short`**|Niederwertiges Wort beibehalten|
+|**`long long`**|**`unsigned long`**|Niederwertigen dword-Wert beibehalten|
+|**`long long`**|**`unsigned long long`**|Bitmuster beibehalten; höherwertiges Bit verliert Funktion als Vorzeichenbit|
+|**`long long`**|**`float`**|Darstellen als **`float`** . Wenn **`long long`** nicht genau dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
+|**`long long`**|**`double`**|Darstellen als **`double`** . Wenn **`long long`** nicht genau als **`double`** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
+|**`long long`**|**`long double`**|Darstellen als **`double`** . Wenn **`long long`** nicht genau als **`double`** dargestellt werden kann, wirkt sich dies auf die Genauigkeit aus.|
 
-<sup>1</sup> Bei allen **cha**r-Einträgen wird davon ausgegangen, dass der **char**-Typ standardmäßig ein Vorzeichen aufweist.
+<sup>1</sup> Bei allen **`char`** -Einträgen wird davon ausgegangen, dass der **`char`** -Typ standardmäßig ein Vorzeichen hat.
 
 ## <a name="see-also"></a>Siehe auch
 

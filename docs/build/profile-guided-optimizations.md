@@ -5,12 +5,12 @@ helpviewer_keywords:
 - profile-guided optimizations
 - optimization, profile-guided [C++]
 ms.assetid: 2225c307-d3ae-42c1-8345-a5a959d132dc
-ms.openlocfilehash: 062f8fb8138446e4a00ba6501d6eeb8571625749
-ms.sourcegitcommit: 2d7550d0f375aafa428ef0fb2e3962e4232be28e
+ms.openlocfilehash: efa4c35810f6272b89ff11cd1c890a7f535cfc1c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84777317"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87232728"
 ---
 # <a name="profile-guided-optimizations"></a>Profilgesteuerte Optimierungen
 
@@ -68,7 +68,7 @@ Die profilgesteuerten Optimierungen umfassen diese Überprüfungen und Verbesser
 
 - **Funktionslayout**: Auf Grundlage des Aufrufdiagramms und des profilierten Verhaltens von aufrufender/aufgerufener Funktion werden Funktionen, die tendenziell denselben Ausführungspfad verwenden, im selben Abschnitt platziert.
 
-- **Optimierung der bedingten Verzweigung**: Mit den Wertetests lässt sich durch profilgesteuerte Optimierungen herausfinden, ob ein bestimmter Wert in einer switch-Anweisung öfter als andere Werte verwendet wird.  Dieser Wert kann dann aus der switch-Anweisung herausgezogen werden.  Dasselbe Verfahren kann bei `if`...`else`-Anweisungen verwendet werden, bei denen der Optimierer die `if`...`else`-Anweisungen so anordnen kann, dass abhängig davon, welcher Block häufiger den Wert „true“ ist, entweder der `if`- oder der `else`-Block zuerst platziert wird.
+- **Optimierung der bedingten Verzweigung**: Mit den Wertetests lässt sich durch profilgesteuerte Optimierungen herausfinden, ob ein bestimmter Wert in einer switch-Anweisung öfter als andere Werte verwendet wird.  Dieser Wert kann dann aus der switch-Anweisung herausgezogen werden.  Dasselbe Verfahren kann bei **`if`** ... **`else`** -Anweisungen verwendet werden, bei denen der Optimierer die **`if`** ... **`else`** -Anweisungen so anordnen kann, dass abhängig davon, welcher Block häufiger den Wert „TRUE“ aufweist, entweder der **`if`** - oder der **`else`** -Block zuerst platziert wird.
 
 - **Abtrennung von totem Code**: Während der Profilierung wird nicht aufgerufener Code in einen speziellen Bereich verschoben, der an das Ende der Gruppe von Abschnitten angehängt wird. Damit wird dieser Abschnitt effektiv von den oft verwendeten Seiten getrennt.
 

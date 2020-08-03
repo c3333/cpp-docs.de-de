@@ -21,12 +21,12 @@ helpviewer_keywords:
 - unsigned types [C++], storage
 - data types [C], storage
 ms.assetid: bd1f33c1-c6b9-4558-8a72-afb21aef3318
-ms.openlocfilehash: 64c642df4dd85e4aa09f90a143b8aa67c28b7dc2
-ms.sourcegitcommit: c51b2c665849479fa995bc3323a22ebe79d9d7ce
+ms.openlocfilehash: 973866a912b694510d587df765ac8dd54176638e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998761"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87211670"
 ---
 # <a name="storage-of-basic-types"></a>Speicherung von einfachen Typen
 
@@ -36,16 +36,16 @@ In der folgenden Tabelle wird der Speicher zusammengefasst, welcher jedem Basist
 
 |Typ|Speicher|
 |----------|-------------|
-|**char**, **unsigned char**, **signed char**|1 Byte|
-|**short**, **unsigned short**|2 Bytes|
-|**int**, **unsigned int**|4 Bytes|
-|**long**, **unsigned long**|4 Bytes|
-|**long long**, **unsigned long long**|8 Bytes|
-|**float**|4 Bytes|
-|**double**|8 Bytes|
-|**long double**|8 Bytes|
+|**`char`** , **`unsigned char`** , **`signed char`**|1 Byte|
+|**`short`** , **`unsigned short`**|2 Bytes|
+|**`int`** , **`unsigned int`**|4 Bytes|
+|**`long`** , **`unsigned long`**|4 Bytes|
+|**`long long`** , **`unsigned long long`**|8 Bytes|
+|**`float`**|4 Bytes|
+|**`double`**|8 Bytes|
+|**`long double`**|8 Bytes|
 
-Die C-Datentypen fallen in allgemeine Kategorien. Die *integraler Typen* sind unter anderem **int**, **char**, **short**, **long** und **long long**. Diese Typen können mit **signed** (mit Vorzeichen) oder **unsigned** (ohne Vorzeichen) qualifiziert werden, und **unsigned** selbst kann als Kurzform für **unsigned int** verwendet werden. Enumerationstypen (**enum**) werden ebenfalls als integraler Typen für die meisten Zwecke behandelt. Die *Gleitkommatypen* enthalten **float**, **double** und **long double**. Die *arithmetischen Typen* umfassen alle Gleitkomma- und Ganzzahltypen.
+Die C-Datentypen fallen in allgemeine Kategorien. Zu den *integralen Typen* gehören **`int`** , **`char`** , **`short`** , **`long`** und **`long long`** . Diese Typen können mit **`signed`** oder **`unsigned`** qualifiziert werden, und **`unsigned`** alleine kann als Kurzform für **`unsigned int`** verwendet werden. Enumerationstypen ( **`enum`** ) werden für die meisten Zwecke ebenfalls als integrale Typen behandelt. Zu den *Gleitkommatypen* gehören **`float`** , **`double`** und **`long double`** . Die *arithmetischen Typen* umfassen alle Gleitkomma- und Ganzzahltypen.
 
 ## <a name="see-also"></a>Siehe auch
 

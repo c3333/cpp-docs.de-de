@@ -1,6 +1,6 @@
 ---
-title: MatcheventInMemberFunktion
-description: Der C++ Build Insights SDK MatchEventInMemberFunction-Funktionsverweis.
+title: MatchEventInMemberFunction
+description: Referenz zur Funktion „MatchEventInMemberFunction“ des C++ Build Insights SDK
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 522630da16e3f4a1294316d88140f4bc25dca2c8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: d3fdc015b0744cb5d0f98a1c9025343b93489ed9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323900"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224148"
 ---
-# <a name="matcheventinmemberfunction"></a>MatcheventInMemberFunktion
+# <a name="matcheventinmemberfunction"></a>MatchEventInMemberFunction
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MatchEventInMemberFunction` Funktion wird verwendet, um ein Ereignis mit dem Typ abzugleichen, der durch den ersten Parameter einer Memberfunktion beschrieben wird. Das übereinstimmende Ereignis wird zur weiteren Verarbeitung an die Memberfunktion weitergeleitet.
+Die Funktion `MatchEventInMemberFunction` wird verwendet, um ein Ereignis mit dem Typ abzugleichen, der vom ersten Parameter einer Memberfunktion beschrieben wird. Das zugeordnete Ereignis wird zur weiteren Verarbeitung an die Memberfunktion weitergeleitet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -52,33 +52,33 @@ Der Typ, der die Memberfunktion enthält.
 Der Rückgabetyp der Memberfunktion.
 
 *TEvent*\
-Der Typ des übereinstimmenden Ereignisses.
+Der Typ des abzugleichenden Ereignisses.
 
 *TExtraParams*\
-Die Typen der zusätzlichen Parameter, die von der Memberfunktion akzeptiert werden, zusammen mit dem übereinstimmenden Ereignistyp.
+Die Typen der zusätzlichen Parameter, die von der Memberfunktion akzeptiert werden, und der Ereignistyp, der abgeglichen werden soll.
 
 *TExtraArgs*\
-Die Typen der zusätzlichen Argumente, `MatchEventInMemberFunction`die an übergeben wurden.
+Die Typen der zusätzlichen Argumente, die an `MatchEventInMemberFunction` übergeben wurden.
 
 *Ereignis*\
-Das Ereignis, das mit dem von *TEvent*beschriebenen Ereignistyp übereinstimmt.
+Das Ereignis, das mit den Ereignistypen abgeglichen werden soll, die von *TEvent* beschrieben werden.
 
 *objectPtr*\
 Ein Zeiger auf ein Objekt, für das *memberFunc* aufgerufen wird.
 
-*MitgliedFunc*\
-Die Memberfunktion, die den übereinstimmenden Ereignistyp beschreibt.
+*memberFunc*\
+Die Memberfunktion, die den abzugleichenden Ereignistyp beschreibt.
 
 *extraArgs*\
 Die Argumente, die zusammen mit dem Ereignistypparameter perfekt an *memberFunc* weitergeleitet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **bool-Wert,** der **wahr** ist, wenn der Abgleich erfolgreich war, oder andernfalls **false.**
+Ein **`bool`** -Wert, der **`true`** ausgibt, wenn der Zuordnungsvorgang erfolgreich war. Andernfalls wird **`false`** zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Der für den *TEvent-Parameter* zu verwendende Ereignistyp kann aus einer Liste von *Erfassungsklassen*ausgewählt werden. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie in der [Ereignistabelle](../event-table.md).
+Der Ereignistyp, der für den *TEvent-* Parameter verwendet werden soll, kann aus einer Liste mit *Erfassungsklassen* ausgewählt werden. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie unter [Ereignistabelle](../event-table.md).
 
 ## <a name="example"></a>Beispiel
 
