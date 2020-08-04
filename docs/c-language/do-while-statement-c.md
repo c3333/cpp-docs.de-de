@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - do-while keyword [C]
 ms.assetid: f2ac20a6-10c7-4a08-b5e3-c3b3639dbeaf
-ms.openlocfilehash: 3658fe7635ad77db6d6e08ff9d7c30e29d665721
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 4a10b9df9f7276eb8e241d76726bca26f2c0cb75
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438592"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218870"
 ---
 # <a name="do-while-statement-c"></a>do-while-Anweisung (C)
 
@@ -19,7 +19,7 @@ Mit der *do-while*-Anweisung wird eine Anweisung oder ein Anweisungsblock wieder
 
 ## <a name="syntax"></a>Syntax
 
-*iteration-Anweisung*: &nbsp;&nbsp;&nbsp;&nbsp;**do**  *Anweisung*  **while (**  *Ausdruck*  **) ;**
+*Iterationsanweisung*: &nbsp;&nbsp;&nbsp;&nbsp; **`do`**  *Anweisung*  **while (**  *Ausdruck*  **) ;**
 
 Der *Ausdruck* in einer *do-while*-Anweisung wird ausgewertet, nachdem der Text der Schleife ausgeführt wird. Daher wird der Text der Schleife immer mindestens einmal ausgeführt.
 
@@ -29,7 +29,7 @@ Der *Ausdruck* muss einen arithmetischen Typ oder einen Zeigertyp aufweisen. Die
 
 1. Danach wird *expression*, der Ausdruck, ausgewertet. Wenn der *Ausdruck* „false“ ist, wird die *do-while*-Anweisung beendet und die Steuerung an die nächste Anweisung im Programm weitergegeben. Wenn *expression* „true“ (ungleich 0 [null]) ist, wird der Prozess wiederholt, beginnend mit Schritt 1.
 
-Die *do-while*-Anweisung kann auch beendet werden, wenn eine **break**-, **goto**- oder **return**-Anweisung innerhalb des Anweisungstexts ausgeführt wird.
+Die *do-while*-Anweisung kann auch beendet werden, wenn im Anweisungstext eine **`break`** -, **`goto`** - oder **`return`** -Anweisung ausgeführt wird.
 
 In diesem Beispiel wird die *do-while*-Anweisung veranschaulicht:
 

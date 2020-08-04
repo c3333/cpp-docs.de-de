@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - 'msbuild (c++), howto: use build events in projects'
 ms.assetid: 2a58dc9d-3d50-4e49-97c1-86c5a05ce218
-ms.openlocfilehash: 3fe205223b6cf381bbf3e2872b1a84f9d81a3cb7
-ms.sourcegitcommit: 2da5c42928739ca8cd683a9002598f28d8ec5f8e
+ms.openlocfilehash: 7c35abbcabe62da2e60fbc2393c575e7c3872cf3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060069"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224005"
 ---
 # <a name="how-to-use-build-events-in-msbuild-projects"></a>Vorgehensweise: Verwenden von Buildereignissen in MSBuild-Projekten
 
@@ -17,7 +17,7 @@ Ein Buildereignis ist ein Befehl, der MSBuild in einer bestimmten Phase im Build
 
 Jedes der drei Buildereignisse wird in einer Elementdefinitionsgruppe durch ein Command-Element (`<Command>`) dargestellt, das ausgeführt wird, und ein Message-Element (`<Message>`), das angezeigt wird, wenn **MSBuild** das Buildereignis ausführt. Jedes Element ist optional, und Sie können dasselbe Element mehrmals ausführen, wobei das letzte Vorkommen Vorrang hat.
 
-Ein optionales *use-in-build*-Element (`<`*build-event*`UseInBuild>`) kann in einer Eigenschaftengruppe angegeben werden, um anzugeben, dass das Buildereignis ausgeführt wird. Der Wert des Inhalts eines *use-in-build*-Elements lautet entweder **true** oder **false**. Ein Buildereignis wird standardmäßig ausgeführt, es sei denn, das zugehörige *use-in-build*-Element ist auf `false` festgelegt.
+Ein optionales *use-in-build*-Element (`<`*build-event*`UseInBuild>`) kann in einer Eigenschaftengruppe angegeben werden, um anzugeben, dass das Buildereignis ausgeführt wird. Der Wert des Inhalts eines *use-in-build*-Elements lautet entweder **`true`** oder **`false`** . Ein Buildereignis wird standardmäßig ausgeführt, es sei denn, das zugehörige *use-in-build*-Element ist auf **`false`** festgelegt.
 
 In der folgenden Tabelle ist jedes XML-Element des Buildereignisses aufgelistet:
 

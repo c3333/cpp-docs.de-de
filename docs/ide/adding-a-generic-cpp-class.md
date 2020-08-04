@@ -10,12 +10,12 @@ helpviewer_keywords:
 - generic classes
 - generic C++ class wizard [C++]
 ms.assetid: e95a5a14-dbed-4edc-8551-344fe48613cb
-ms.openlocfilehash: 08ebe572da605e0f6d4d712bd7e48159598ba844
-ms.sourcegitcommit: b032daf81cb5fdb1f5a988277ee30201441c4945
+ms.openlocfilehash: e81ea442578e69bdd28301eba8f70561f6aa76c6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51694139"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87230544"
 ---
 # <a name="add-a-generic-c-class"></a>Hinzufügen einer generischen C++-Klasse
 
@@ -45,11 +45,11 @@ Fügt einem Projekt eine generische C++-Klasse hinzu. Die Klasse erbt nicht von 
 
 - **H-Datei**
 
-  Legt den Namen der Headerdatei für die neue Klasse fest. Standardmäßig basiert dieser Name auf dem Namen, den Sie unter **Klassenname** angeben. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten (**...**), um die Headerdatei am gewünschten Speicherort zu speichern oder um die Klassendeklaration an eine vorhandene Datei anzufügen. Wenn Sie eine vorhandene Datei angeben, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendeklaration an die Dateiinhalte angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Deklaration anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
+  Legt den Namen der Headerdatei für die neue Klasse fest. Standardmäßig basiert dieser Name auf dem Namen, den Sie unter **Klassenname** angeben. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten ( **...** ), um die Headerdatei am gewünschten Speicherort zu speichern oder um die Klassendeklaration an eine vorhandene Datei anzufügen. Wenn Sie eine vorhandene Datei angeben, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendeklaration an die Dateiinhalte angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Deklaration anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
 
 - **CPP-Datei**
 
-  Legt den Namen der Implementierungsdatei für die neue Klasse fest. Standardmäßig basiert dieser Name auf dem Namen, den Sie unter **Klassenname** angeben. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten (**...**), um die Implementierungsdatei am gewünschten Speicherort zu speichern oder um die Klassendefinition an eine vorhandene Datei anzufügen. Wenn Sie eine vorhandene Datei angeben, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendefinition an die Dateiinhalte angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Definition anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
+  Legt den Namen der Implementierungsdatei für die neue Klasse fest. Standardmäßig basiert dieser Name auf dem Namen, den Sie unter **Klassenname** angeben. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten ( **...** ), um die Implementierungsdatei am gewünschten Speicherort zu speichern oder um die Klassendefinition an eine vorhandene Datei anzufügen. Wenn Sie eine vorhandene Datei angeben, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendefinition an die Dateiinhalte angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Definition anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
 
 - **Basisklasse**
 
@@ -57,11 +57,11 @@ Fügt einem Projekt eine generische C++-Klasse hinzu. Die Klasse erbt nicht von 
 
 - **Zugriff**
 
-  Legt den Zugriff auf die Member der Basisklasse für die neue Klasse fest. Bei Zugriffsmodifizierern handelt es sich um Schlüsselwörter, die den Zugriff festlegen, den andere Klassen auf die Klassenmemberfunktionen haben. Weitere Informationen zum Angeben des Zugriffs finden Sie unter [Memberzugriffssteuerung](../cpp/member-access-control-cpp.md). Der Klassenzugriff ist standardmäßig auf `public` festgelegt.
+  Legt den Zugriff auf die Member der Basisklasse für die neue Klasse fest. Bei Zugriffsmodifizierern handelt es sich um Schlüsselwörter, die den Zugriff festlegen, den andere Klassen auf die Klassenmemberfunktionen haben. Weitere Informationen zum Angeben des Zugriffs finden Sie unter [Memberzugriffssteuerung](../cpp/member-access-control-cpp.md). Die Klassenzugriffsebene ist standardmäßig auf **`public`** festgelegt.
 
-  - `public`
-  - `protected`
-  - `private`
+  - **`public`**
+  - **`protected`**
+  - **`private`**
   - **Standard** (kein Zugriffsmodifizierer wird generiert)
 
 - **Virtueller Destruktor**

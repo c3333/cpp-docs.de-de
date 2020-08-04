@@ -10,20 +10,20 @@ helpviewer_keywords:
 - __stdcall keyword [C++]
 - DLL functions [C++], calling
 ms.assetid: 282f7fbf-a0f2-4b9f-b277-1982710be56c
-ms.openlocfilehash: 23b5692e28b9ea5b70c492e2564b8bf5385b1815
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
+ms.openlocfilehash: 8d792dac45d69a0857bda551d1f3c03fc3d03d1c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65221198"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229882"
 ---
 # <a name="calling-dll-functions-from-visual-basic-applications"></a>Aufrufen von DLL-Funktionen aus Visual Basic-Anwendungen heraus
 
 Damit Visual Basic-Anwendungen (oder Anwendungen in anderen Sprachen wie Pascal oder Fortran) Funktionen in einer C-/C++-DLL aufrufen können, müssen die Funktionen mit der richtigen Aufrufkonvention exportiert werden, ohne dass der Compiler Namensergänzungen vornimmt.
 
-Mithilfe von `__stdcall` wird zwar die richtige Aufrufkonvention für die Funktion erstellt (die aufgerufene Funktion bereinigt den Stapel, und die Parameter werden von rechts nach links übergeben), der Funktionsname wird jedoch unterschiedlich ergänzt. Wenn **__declspec(dllexport)** daher für eine exportierte Funktion in einer DLL verwendet wird, wird der dekorierte Name exportiert.
+**`__stdcall`** erstellt zwar die richtige Aufrufkonvention für die Funktion (die aufgerufene Funktion bereinigt den Stapel, und die Parameter werden von rechts nach links übergeben), der Funktionsname wird jedoch unterschiedlich ergänzt. Wenn **`__declspec(dllexport)`** daher für eine exportierte Funktion in einer DLL verwendet wird, wird der ergänzte Name exportiert.
 
-Durch die `__stdcall`-Namensergänzung beginnt der Symbolname mit einem Unterstrich ( **\_** ) und endet mit einem **\@** -Zeichen, gefolgt von der Anzahl der Bytes in der Argumentliste (dem erforderlichen Stapelplatz). Ist daher eine Funktion wie folgt deklariert:
+Die **`__stdcall`** -Namensergänzung stellt dem Symbolnamen einen Unterstrich ( **\_** ) voran und hängt ein **\@** -Zeichen, gefolgt von der Anzahl der Bytes in der Argumentliste (dem erforderlichen Stapelplatz) an das Symbol an. Ist daher eine Funktion wie folgt deklariert:
 
 ```C
 int __stdcall func (int a, double b)
@@ -31,15 +31,15 @@ int __stdcall func (int a, double b)
 
 In diesem Fall wird dies in der Ausgabe als `_func@12` dekoriert.
 
-Durch die C-Aufrufkonvention (`__cdecl`) wird der Name mit `_func` ergänzt.
+Durch die C-Aufrufkonvention ( **`__cdecl`** ) wird der Name um `_func` ergänzt.
 
-Verwenden Sie [/MAP](reference/map-generate-mapfile.md), um den dekorierten Namen zu ermitteln. Die Verwendung von **__declspec(dllexport)** bewirkt Folgendes:
+Verwenden Sie [/MAP](reference/map-generate-mapfile.md), um den dekorierten Namen zu ermitteln. Durch Verwendung von **`__declspec(dllexport)`** wird Folgendes ausgeführt:
 
-- Wenn die Funktion nach der C-Aufrufkonvention (`__cdecl`) exportiert wird, wird beim Export der führende Unterstrich ( **\_** ) entfernt.
+- Wenn die Funktion gemäß der C-Aufrufkonvention ( **`__cdecl`** ) exportiert wird, wird beim Export des Namens der führende Unterstrich ( **\_** ) entfernt.
 
-- Wenn für die exportierte Funktion nicht die C-Aufrufkonvention (z. B. `__stdcall`) verwendet wird, wird der ergänzte Name exportiert.
+- Wenn die exportierte Funktion nicht die C-Aufrufkonvention (z. B. **`__stdcall`** ) verwendet, wird der ergänzte Name exportiert.
 
-Da es keine Möglichkeit gibt, die Stapelbereinigung an einer bestimmten Stelle zu überschreiben, muss `__stdcall` verwendet werden. Um eine Namensergänzung mit `__stdcall` rückgängig zu machen, müssen Sie sie im EXPORTS-Abschnitt der DEF-Datei mittels Aliasen angeben. Dies wird anhand der folgenden Funktionsdeklaration veranschaulicht:
+Da es keine Möglichkeit gibt, die Stapelbereinigung an einer bestimmten Stelle zu überschreiben, muss **`__stdcall`** verwendet werden. Um eine Namensergänzung mit **`__stdcall`** rückgängig zu machen, müssen Sie die Namen im EXPORTS-Abschnitt der DEF-Datei mittels Aliasen angeben. Dies wird anhand der folgenden Funktionsdeklaration veranschaulicht:
 
 ```C
 int  __stdcall MyFunc (int a, double b);

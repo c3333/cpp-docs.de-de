@@ -8,12 +8,12 @@ helpviewer_keywords:
 - structure members
 - embedded structures
 ms.assetid: 5be3be77-a236-4153-b574-7aa77675df7f
-ms.openlocfilehash: a17bb996f13fdbe11bb569c8af5669a9d0c5363f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3b9aa30cfeecbd60fda61e6a484043c82c9a3b28
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62157795"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217050"
 ---
 # <a name="structure-declarations"></a>Strukturdeklarationen
 
@@ -26,8 +26,8 @@ Eine "Strukturdeklaration" benennt einen Typ und gibt eine Sequenz von Variablen
 &nbsp;&nbsp;&nbsp;&nbsp;*Struktur-oder-Union* *Bezeichner*
 
 *struct-or-union*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**struct**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**union**
+&nbsp;&nbsp;&nbsp;&nbsp; **`struct`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`union`**
 
 *struct-declaration-list*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*struct-declaration*<br/>
@@ -53,7 +53,7 @@ Ein zuvor definierter *Identifier* (Tag) kann verwendet werden, um auf einen Str
 
 Mit *struct-declaration-list* werden die Typen und Namen der Strukturmember angegeben. Ein *struct-declaration-list*-Argument enthält mindestens eine Variable oder Bitfelddeklaration.
 
-Jede Variable, die in der *struct-declaration-list* deklariert wurde, wird als Member des Strukturtyps definiert. Variablendeklarationen in *struct-declaration-list* verfügen über das gleiche Format wie andere Variablendeklarationen, die in diesem Abschnitt erläutert werden, mit der Ausnahme, dass die Deklarationen keine Speicherklassenspezifizierer oder -initialisierer enthalten dürfen. Die Strukturmember können mit Ausnahme des Typs `void` alle Variablentypen, einen unvollständigen Typ oder einen Funktionstyp aufweisen.
+Jede Variable, die in der *struct-declaration-list* deklariert wurde, wird als Member des Strukturtyps definiert. Variablendeklarationen in *struct-declaration-list* verfügen über das gleiche Format wie andere Variablendeklarationen, die in diesem Abschnitt erläutert werden, mit der Ausnahme, dass die Deklarationen keine Speicherklassenspezifizierer oder -initialisierer enthalten dürfen. Die Strukturmember können alle Variablentypen mit Ausnahme von **`void`** , einen unvollständigen Typ oder einen Funktionstyp aufweisen.
 
 Ein Member kann nicht mit dem Typ oder der Struktur deklariert werden, in dem/der er enthalten ist. Allerdings kann ein Member als Zeiger auf den Strukturtyp deklariert werden, in dem er angezeigt wird, solange der Strukturtyp über einen Tag verfügt. Dadurch können Sie verknüpfte Listen von Strukturen erstellen.
 
@@ -94,7 +94,7 @@ struct employee   /* Defines a structure variable named temp */
 } temp;
 ```
 
-Die `employee`-Struktur hat drei Member: `name`, `id` und `class`. Der `name`-Member ist ein Array mit 20 Elementen, und `id` und `class` sind einfache Member vom Typ `int` und **long**. Der Bezeichner `employee` ist der Strukturbezeichner.
+Die `employee`-Struktur hat drei Member: `name`, `id` und `class`. Der `name`-Member ist ein Array mit 20 Elementen, und `id` und `class` sind einfache Member vom Typ **`int`** bzw. **`long`** . Der Bezeichner `employee` ist der Strukturbezeichner.
 
 ```C
 struct employee student, faculty, staff;
@@ -109,7 +109,7 @@ struct           /* Defines an anonymous struct and a */
 } complex;
 ```
 
-Die `complex`-Struktur verfügt über zwei Member vom Typ **float**, `x` und `y`. Der Strukturtyp hat kein Tag und ist somit unbenannt oder anonym.
+Die `complex`-Struktur verfügt über zwei Member vom Typ **`float`** : `x` und `y`. Der Strukturtyp hat kein Tag und ist somit unbenannt oder anonym.
 
 ```C
 struct sample   /* Defines a structure named x */
@@ -120,7 +120,7 @@ struct sample   /* Defines a structure named x */
 } x;
 ```
 
-Die ersten beiden Member der Struktur sind eine `char`-Variable und ein Zeiger auf einen **float**-Wert. Der dritte Member, `next`, wird als Zeiger auf den definierten Strukturtyp deklariert (`sample`).
+Die ersten beiden Member der Struktur sind eine **`char`** -Variable und ein Zeiger auf einen **`float`** -Wert. Der dritte Member, `next`, wird als Zeiger auf den definierten Strukturtyp deklariert (`sample`).
 
 Anonyme Strukturen können nützlich sein, wenn der angegebene Tag nicht benötigt wird. Dies ist der Fall, wenn eine Deklaration alle Strukturinstanzen definiert. Zum Beispiel:
 
@@ -149,9 +149,9 @@ struct somestruct
 
 Der Compiler lässt ein Array ohne Größenangabe oder ein Array der Größe 0 (null) als letzten Member einer Struktur zu. Dies kann hilfreich sein, wenn sich die Größe eines konstanten Arrays in verschiedenen Situationen unterscheidet. Die Deklaration einer solchen Struktur sieht wie folgt aus:
 
-**Struktur** *Bezeichner* **{** *mehrere-Deklarationen* *Typ* <em>Arrayname</em> **\[]; };**
+**`struct`** *Bezeichner* **{** *mehrere-Deklarationen* *Type* <em>Arrayname</em> **\[]; };**
 
-Arrays ohne Größenangabe können nur als letzter Member einer Struktur angegeben werden. Die Strukturen, die Arraydeklarationen ohne Größenangabe enthalten, können in andere Strukturen geschachtelt werden, solange keine weiteren Member in anderen einschließenden Strukturen deklariert werden. Arrays von solchen Strukturen sind nicht zulässig. Der `sizeof`-Operator nimmt bei Anwendung auf eine Variable dieses Typs oder auf den Typ selbst 0 für die Größe des Arrays an.
+Arrays ohne Größenangabe können nur als letzter Member einer Struktur angegeben werden. Die Strukturen, die Arraydeklarationen ohne Größenangabe enthalten, können in andere Strukturen geschachtelt werden, solange keine weiteren Member in anderen einschließenden Strukturen deklariert werden. Arrays von solchen Strukturen sind nicht zulässig. Der **`sizeof`** -Operator nimmt bei Anwendung auf eine Variable dieses Typs oder auf den Typ selbst 0 für die Größe des Arrays an.
 
 Strukturdeklarationen können auch ohne Deklaration angegeben werden, wenn diese Member einer anderen Struktur oder Union sind. Die Feldnamen werden in die einschließende Struktur hochgestuft. Eine namenlose Struktur sieht beispielsweise wie folgt aus:
 

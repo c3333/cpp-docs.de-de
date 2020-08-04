@@ -9,12 +9,12 @@ helpviewer_keywords:
 - storage class specifiers, C storage classes
 - storage duration
 ms.assetid: 893fb929-f7a9-43dc-a0b3-29cb1ef845c1
-ms.openlocfilehash: 77aefe41fecf003218343710ef090eebf99446a8
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 4f793e8485628faf0a80445ce0414835e3b71d1f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857111"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217167"
 ---
 # <a name="c-storage-classes"></a>C-Speicherklassen
 
@@ -27,18 +27,18 @@ C stellt die folgenden Speicherklassenspezifizierer bereit:
 ## <a name="syntax"></a>Syntax
 
 *storage-class-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**auto**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**register**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**static**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**extern**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**typedef**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__declspec (** *erweiterte-Deklarationsmodifizierersequenz* **)**  /\* Microsoft-spezifisch \*/
+&nbsp;&nbsp;&nbsp;&nbsp; **`auto`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`register`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`static`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`extern`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`typedef`**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **`__declspec (`** *erweiterte-Deklarationsmodifizierersequenz* **`)`**  /\* Microsoft-spezifisch \*/
 
-Mit Ausnahme von `__declspec` können Sie in einer Deklaration nur einen *storage-class-specifier* im *declaration-specifier* verwenden. Wenn keine Speicherklassenspezifikation vorhanden ist, erstellen die Deklarationen in einem Block automatische Objekte.
+Mit Ausnahme von **`__declspec`** können Sie in einer Deklaration nur einen *storage-class-specifier* im *declaration-specifier* verwenden. Wenn keine Speicherklassenspezifikation vorhanden ist, erstellen die Deklarationen in einem Block automatische Objekte.
 
-Elemente, die mit dem **auto**- oder **register**-Spezifizierer deklariert werden, verfügen über eine lokale Lebensdauer. Elemente, die mit dem **static**- oder `extern`-Spezifizierer deklariert werden, verfügen über eine globale Lebensdauer.
+Elemente, die mit dem **`auto`** - oder **`register`** -Spezifizierer deklariert werden, verfügen über eine lokale Lebensdauer. Elemente, die mit dem **`static`** - oder **`extern`** -Spezifizierer deklariert werden, verfügen über eine globale Lebensdauer.
 
-Da sich `typedef` und `__declspec` semantisch von den anderen vier *storage-class-specifier*-Terminalen unterscheiden, werden diese gesondert behandelt. Spezifische Informationen zu `typedef` finden Sie unter [Typedef-Deklarationen](../c-language/typedef-declarations.md). Spezifische Informationen zu `__declspec` finden Sie unter [Erweiterte Speicherklassenattribute](../c-language/c-extended-storage-class-attributes.md).
+Da sich **`typedef`** und **`__declspec`** semantisch von den anderen vier *storage-class-specifier*-Terminals unterscheiden, werden diese gesondert behandelt. Spezifische Informationen zu **`typedef`** finden Sie unter [`typedef`-Deklarationen](../c-language/typedef-declarations.md). Spezifische Informationen zu **`__declspec`** finden Sie unter [Erweiterte Speicherklassenattribute](../c-language/c-extended-storage-class-attributes.md).
 
 Die Platzierung der Variablen- und Funktionsdeklarationen innerhalb der Quelldateien wirkt sich auch auf die Speicherklasse und die Sichtbarkeit aus. Deklarationen außerhalb von sämtlichen Funktionsdefinitionen treten auf "externer Ebene" auf. Deklarationen innerhalb von Funktionsdefinitionen treten auf "interner Ebene" auf.
 

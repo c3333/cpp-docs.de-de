@@ -669,6 +669,8 @@
                   href: ../build/reference/showincludes-list-include-files.md
                 - name: /source-charset (Quellzeichensatz festlegen)
                   href: ../build/reference/source-charset-set-source-character-set.md
+                - name: /sourceDependencies (Abhängigkeiten auf Quellebene melden)
+                  href: ../build/reference/sourcedependencies.md
                 - name: /std (Standardversion für die Sprache festlegen)
                   href: ../build/reference/std-specify-language-standard-version.md
                 - name: '/Tc, /Tp, /TC, /TP (Quelldateityp angeben)'

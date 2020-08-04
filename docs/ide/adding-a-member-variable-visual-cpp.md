@@ -12,12 +12,12 @@ helpviewer_keywords:
 - dialog box controls, variable types
 - variables, dialog box control member variables
 ms.assetid: 437783bd-8eb4-4508-8b73-7380116e9d71
-ms.openlocfilehash: 0f10b4867b443f0db69743d7ff23bb059290b0a5
-ms.sourcegitcommit: c1f646c8b72f330fa8cf5ddb0f8f261ba10d16f0
+ms.openlocfilehash: a8f693345fcb265cf8e97af342c6e0cd539c9001
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58328960"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87215997"
 ---
 # <a name="add-a-member-variable"></a>Hinzufügen einer Membervariable
 
@@ -66,7 +66,7 @@ Dieser Assistent fügt der Headerdatei eine Membervariablendeklaration hinzu. Ab
 
 - **Zugriff**
 
-  Legt den Zugriff auf die Membervariable fest. Bei Zugriffsmodifizierern handelt es sich um Schlüsselwörter, die den Zugriff festlegen, den andere Klassen auf die Membervariable haben. Weitere Informationen zum Festlegen des Zugriffs finden Sie unter [Member-Access Control (Steuerung des Memberzugriffs)](../cpp/member-access-control-cpp.md). Standardmäßig wird die Zugriffsebene von Membervariablen auf `public` festgelegt.
+  Legt den Zugriff auf die Membervariable fest. Bei Zugriffsmodifizierern handelt es sich um Schlüsselwörter, die den Zugriff festlegen, den andere Klassen auf die Membervariable haben. Weitere Informationen zum Festlegen des Zugriffs finden Sie unter [Member-Access Control (Steuerung des Memberzugriffs)](../cpp/member-access-control-cpp.md). Standardmäßig ist die Zugriffsebene von Membervariablen auf **`public`** festgelegt.
 
   - [public](../cpp/public-cpp.md)
   - [protected](../cpp/protected-cpp.md)
@@ -82,11 +82,11 @@ Dieser Assistent fügt der Headerdatei eine Membervariablendeklaration hinzu. Ab
 
     |||
     |-|-|
-    |`char`|`short`|
-    |`double`|`unsigned char`|
-    |`float`|`unsigned int`|
-    |`int`|`unsigned long`|
-    |`long`||
+    |**`char`**|**`short`**|
+    |**`double`**|**`unsigned char`**|
+    |**`float`**|**`unsigned int`**|
+    |**`int`**|**`unsigned long`**|
+    |**`long`**||
 
   - Wenn Sie eine Membervariable für ein Steuerelement für Dialogfelder hinzufügen, wird dieses Feld mit dem Typ des Objekts aufgefüllt, das für ein Steuerelement oder einen Wert zurückgegeben wird. Wenn Sie **Steuerelement** auswählen, gibt der **Variablentyp** die Basisklasse des Steuerelements an, das Sie im Feld **Steuerelement-ID** ausgewählt haben. Wenn das Steuerelement für ein Dialogfeld einen Wert enthalten kann und Sie **Wert** ausgewählt haben, gibt der **Variablentyp** den geeigneten Typ für den Wert an, den das Steuerelement enthalten kann. Weitere Informationen finden Sie unter [Dialog Box Controls and Variable Types (Steuerelemente für Dialogfelder und Variablentypen)](#dialog-box-controls-and-variable-types).
 
@@ -123,11 +123,11 @@ Dieser Assistent fügt der Headerdatei eine Membervariablendeklaration hinzu. Ab
 
 - **Mindestwert**
 
-  Nur verfügbar, wenn der Variablentyp `BOOL`, `int`, `UINT`, `long`, `DWORD`, `float`, `double`, `BYTE`, `short`, [, COLECurrency](../mfc/reference/colecurrency-class.md) oder [CTime](../atl-mfc-shared/reference/ctime-class.md) ist. Gibt den niedrigsten Wert an, der für eine Skalierung oder einen Datenbereich akzeptiert wird.
+  Nur verfügbar, wenn der Variablentyp `BOOL`, **`int`** , `UINT`, **`long`** , `DWORD`, **`float`** , **`double`** , `BYTE`, **`short`** , [COLECurrency](../mfc/reference/colecurrency-class.md) oder [CTime](../atl-mfc-shared/reference/ctime-class.md) lautet. Gibt den niedrigsten Wert an, der für eine Skalierung oder einen Datenbereich akzeptiert wird.
 
 - **Höchstwert**
 
-  Nur verfügbar, wenn der Variablentyp `BOOL`, `int`, `UINT`, `long`, `DWORD`, `float`, `double`, `BYTE`, `short`, `COLECurrency`, oder `CTime` ist. Gibt den höchsten Wert an, der für eine Skalierung oder einen Datenbereich akzeptiert wird.
+  Nur verfügbar, wenn der Variablentyp `BOOL`, **`int`** , `UINT`, **`long`** , `DWORD`, **`float`** , **`double`** , `BYTE`, **`short`** , `COLECurrency` oder `CTime` lautet. Gibt den höchsten Wert an, der für eine Skalierung oder einen Datenbereich akzeptiert wird.
 
 - **H-Datei**
 
@@ -162,8 +162,8 @@ In der folgenden Tabelle werden alle Steuerelementtypen der Dialogfelder beschri
 |Statuskontrolle|msctls_progress32|[CProgressCtrl](../mfc/reference/cprogressctrl-class.md)|Keiner, nur Steuerelement|Nicht zutreffend|
 |Rich Edit 2-Steuerelement|RichEdit20A|[CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)|`CString`|Maximale Zeichenanzahl|
 |Rich Edit-Steuerelement|RICHEDIT|`CRichEditCtrl`|`CString`|Maximale Zeichenanzahl|
-|Scrollleiste (vertikal oder horizontal)|SCROLLLEISTE|[CScrollBar](../mfc/reference/cscrollbar-class.md)|`int`|Minimalwert/Maximalwert|
-|Schieberegler-Steuerelement|msctls_trackbar32|[CSliderCtrl](../mfc/reference/csliderctrl-class.md)|`int`|Minimalwert/Maximalwert|
+|Scrollleiste (vertikal oder horizontal)|SCROLLLEISTE|[CScrollBar](../mfc/reference/cscrollbar-class.md)|**`int`**|Minimalwert/Maximalwert|
+|Schieberegler-Steuerelement|msctls_trackbar32|[CSliderCtrl](../mfc/reference/csliderctrl-class.md)|**`int`**|Minimalwert/Maximalwert|
 |Drehfeld-Steuerelement|msctls_updown32|[CSpinButtonCtrl](../mfc/reference/cspinbuttonctrl-class.md)|Keiner, nur Steuerelement|Nicht zutreffend|
 |Registersteuerelement|SysTabControl32|[CTabCtrl](../mfc/reference/ctabctrl-class.md)|Keiner, nur Steuerelement|Nicht zutreffend|
 |Baumsteuerelement|SysTreeView32|[CTreeCtrl](../mfc/reference/ctreectrl-class.md)|Keiner, nur Steuerelement|Nicht zutreffend|

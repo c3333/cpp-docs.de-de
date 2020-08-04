@@ -11,12 +11,12 @@ helpviewer_keywords:
 - executable files [C++], linking to DLLs
 - loading DLLs [C++]
 ms.assetid: 7592e276-dd6e-4a74-90c8-e1ee35598ea3
-ms.openlocfilehash: 2f907fedcaaf9897749ee0eb6a7ea5a33e1af679
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 0cd9cfa32e6f87479dfcd9926b1735671ff6690f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422835"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223940"
 ---
 # <a name="link-an-executable-to-a-dll"></a>Eine ausführbare Datei mit einer DLL verknüpfen
 
@@ -94,7 +94,7 @@ Wenn eine DLL durch explizite Verknüpfung verwendet werden soll, müssen Anwend
 
 - [LoadLibraryEx](/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw) (oder eine ähnliche Funktion) aufrufen, um die DLL zu laden und ein Modulhandle zu erhalten.
 
-- [GetProcAddress](getprocaddress.md) aufrufen, um einen Funktionszeiger auf jede exportierte Funktion zu erhalten, die durch die Anwendung aufgerufen wird. Da Anwendungen die DLL-Funktionen über einen Zeiger aufrufen, muss der Compiler keine externen Verweise generieren. Folglich ist es auch nicht erforderlich, eine Importbibliothek zu verknüpfen. Sie müssen jedoch über eine `typedef`- oder `using`-Anweisung verfügen, die die Aufrufsignatur der exportierten Funktionen definiert, die Sie aufrufen.
+- [GetProcAddress](getprocaddress.md) aufrufen, um einen Funktionszeiger auf jede exportierte Funktion zu erhalten, die durch die Anwendung aufgerufen wird. Da Anwendungen die DLL-Funktionen über einen Zeiger aufrufen, muss der Compiler keine externen Verweise generieren. Folglich ist es auch nicht erforderlich, eine Importbibliothek zu verknüpfen. Sie müssen jedoch über eine **`typedef`** - oder **`using`** -Anweisung verfügen, die die Aufrufsignatur der von Ihnen aufgerufenen exportierten Funktionen definiert.
 
 - [FreeLibrary](freelibrary-and-afxfreelibrary.md) aufrufen, wenn die DLL nicht mehr benötigt wird.
 

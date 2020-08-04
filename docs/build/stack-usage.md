@@ -2,12 +2,12 @@
 title: Verwendung von Stapeln bei x64-Systemen
 ms.date: 12/17/2018
 ms.assetid: 383f0072-0438-489f-8829-cca89582408c
-ms.openlocfilehash: b598c33fbdd56630ca3e5ef0da551f38a73baa26
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b1b1e0a8c30d5e24e81372912d5c488efce14841
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81335535"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218935"
 ---
 # <a name="x64-stack-usage"></a>Verwendung von Stapeln bei x64-Systemen
 
@@ -47,7 +47,7 @@ Eine Blattfunktion erfordert keinen Eintrag in eine Funktionstabelle. Blattfunkt
 
 ## <a name="malloc-alignment"></a>malloc-Ausrichtung
 
-[malloc](../c-runtime-library/reference/malloc.md) gibt immer Speicher zurück, der korrekt ausgerichtet ist, um ein beliebiges Objekt zu speichern, das eine grundlegende Ausrichtung hat und in den zugeordneten Speicher passen kann. Eine *grundlegende Ausrichtung* ist eine Ausrichtung, die kleiner oder gleich der größten Ausrichtung ist, die von der Implementierung ohne Ausrichtungsspezifikation unterstützt wird. (In Visual C++ ist dies die Ausrichtung, die für einen `double` oder 8 Bytes erforderlich ist. In einem Code, der auf 64-Bit-Plattformen ausgerichtet ist, sind dies 16 Bytes.) Beispielsweise kann eine Vier-Byte-Speicherbelegung an einer Grenze ausgerichtet werden, die Objekte unterstützt, die maximal vier Byte groß sind.
+[malloc](../c-runtime-library/reference/malloc.md) gibt immer Speicher zurück, der korrekt ausgerichtet ist, um ein beliebiges Objekt zu speichern, das eine grundlegende Ausrichtung hat und in den zugeordneten Speicher passen kann. Eine *grundlegende Ausrichtung* ist eine Ausrichtung, die kleiner oder gleich der größten Ausrichtung ist, die von der Implementierung ohne Ausrichtungsspezifikation unterstützt wird. (In Visual C++ ist dies die Ausrichtung, die für einen **`double`** - oder 8-Byte-Typ erforderlich ist. In einem Code, der auf 64-Bit-Plattformen ausgerichtet ist, sind dies 16 Bytes.) Beispielsweise kann eine Vier-Byte-Speicherbelegung an einer Grenze ausgerichtet werden, die Objekte unterstützt, die maximal vier Byte groß sind.
 
 Visual C++ unterstützt Typen mit einer *erweiterten Ausrichtung*, die auch als Typen mit *erhöhter Ausrichtung* bezeichnet werden. Die SEE-Typen [__m128](../cpp/m128.md) und `__m256` sowie die Typen, die von `__declspec(align( n ))` deklariert werden, wobei `n` größer ist als 8, verfügen beispielsweise über eine erweiterte Ausrichtung. Eine Speicherausrichtung an einer Grenze, die für ein Objekt geeignet ist, das eine erweiterte Ausrichtung erfordert, wird von `malloc` nicht gewährleistet. Verwenden Sie zur Speicherbelegung für erweitert ausgerichtete Typen [_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) und verwandte Funktionen.
 

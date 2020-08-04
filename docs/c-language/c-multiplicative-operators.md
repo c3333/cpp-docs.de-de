@@ -11,12 +11,12 @@ helpviewer_keywords:
 - slash (/) operator
 - multiplication operator [C++], multiplicative operators
 ms.assetid: 495471c9-319b-4eb4-bd97-039a025fd3a9
-ms.openlocfilehash: f9f5f62e2326826e3087a8668cd9107da4b85388
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 32ff74be0fd1afb1d8a21d74abb194eaa5e273df
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81334994"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227984"
 ---
 # <a name="c-multiplicative-operators"></a>C-Multiplikationsoperatoren
 
@@ -62,7 +62,7 @@ Diese Anweisung verwendet den Multiplikationsoperator:
 y = x * i;
 ```
 
-In diesem Fall wird `x` mit `i` multipliziert, um den Wert 20.0 zu erhalten. Das Ergebnis ist vom Typ **double**.
+In diesem Fall wird `x` mit `i` multipliziert, um den Wert 20.0 zu erhalten. Das Ergebnis weist den Typ **`double`** auf.
 
 ```
 n = i / j;

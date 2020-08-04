@@ -6,12 +6,12 @@ helpviewer_keywords:
 - operators [C++], conditional
 - expressions [C++], conditional
 ms.assetid: c4f1a5ca-0844-44a7-a384-eca584d4e3dd
-ms.openlocfilehash: a64317c75e48111148053cc7efb62fb5a6d79f7f
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 03f9673da109151bd2146daf7539841f1cac07c6
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81749197"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87217128"
 ---
 # <a name="conditional-expression-operator"></a>Bedingter Ausdrucksoperator
 
@@ -37,13 +37,13 @@ Der Typ des Ergebnisses einer bedingten Operation hängt wie folgt vom Typ des O
 
 - Wenn sowohl *expression* als auch *conditional-expression* denselben Struktur-, Union- oder Zeigertyp aufweisen, ist der Typ des Ergebnisses derselbe Struktur-, Union- oder Zeigertyp.
 
-- Wenn beide Operanden den Typ `void` haben, hat das Ergebnis den Typ `void`.
+- Wenn beide Operanden den Typ **`void`** aufweisen, erhält das Ergebnis den Typ **`void`** .
 
-- Wenn einer der Operanden ein Zeiger auf ein Objekt eines beliebigen Typs und der andere Operand ein Zeiger auf `void` ist, wird der Zeiger auf das Objekt in einen Zeiger auf einen `void` konvertiert, und das Ergebnis ist ein Zeiger auf `void`.
+- Wenn einer der Operanden ein Zeiger auf ein Objekt eines beliebigen Typs und der andere Operand ein Zeiger auf **`void`** ist, wird der Zeiger auf das Objekt in einen Zeiger auf **`void`** konvertiert, und das Ergebnis ist ein Zeiger auf **`void`** .
 
 - Wenn *expression* oder *conditional-expression* ein Zeiger und der andere Operand ein konstanter Ausdruck mit dem Wert 0 ist, ist der Typ des Ergebnisses der Zeigertyp.
 
-Im Typvergleich für Zeiger sind alle Typqualifizierer (**const** oder `volatile`) in dem Typ, auf den der Zeiger weist, nicht signifikant. Der Ergebnistyp erbt jedoch die Qualifizierer von beiden Komponenten des bedingten Operators.
+Im Typvergleich für Zeiger sind alle Typqualifizierer ( **`const`** oder **`volatile`** ) in dem Typ, auf den der Zeiger weist, nicht signifikant. Der Ergebnistyp erbt jedoch die Qualifizierer von beiden Komponenten des bedingten Operators.
 
 ## <a name="examples"></a>Beispiele
 

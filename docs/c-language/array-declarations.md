@@ -6,12 +6,12 @@ helpviewer_keywords:
 - declaring arrays
 - arrays [C++], declaring
 ms.assetid: 5f958b97-cef0-4058-bbc6-37c460aaed9b
-ms.openlocfilehash: 4bc75e86601da77758490544cc5b02c485dcee46
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 917d79a7c4f4d030efaaa769ca8f205cf37f55fe
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62313544"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218922"
 ---
 # <a name="array-declarations"></a>Arraydeklarationen
 
@@ -38,7 +38,7 @@ Eine "Arraydeklaration" benennt das Array und gibt den Typ der Elemente an. Hier
 
 Da *constant-expression* optional ist, hat die Syntax zwei Formen:
 
-- Die erste Form definiert eine Arrayvariable. Das *constant-expression*-Argument innerhalb der Klammern gibt die Anzahl von Elementen im Array an. *constant-expression*, falls vorhanden, muss einen ganzzahligen Typ und einen Wert aufweisen, der größer als null ist. Jedes Element weist den Typ auf, der von *type-specifier* angegeben ist, der ein beliebiger Typ außer `void` sein kann. Ein Arrayelement darf kein Funktionstyp sein.
+- Die erste Form definiert eine Arrayvariable. Das *constant-expression*-Argument innerhalb der Klammern gibt die Anzahl von Elementen im Array an. *constant-expression*, falls vorhanden, muss einen ganzzahligen Typ und einen Wert aufweisen, der größer als null ist. Jedes Element weist den Typ auf, der von *Typspezifizierer* angegeben ist. Dies kann ein beliebiger Typ außer **`void`** sein. Ein Arrayelement darf kein Funktionstyp sein.
 
 - Die zweite Form deklariert eine Variable, die an einer anderen Stelle definiert wurde. Sie lässt das *constant-expression*-Argument in Klammern weg, aber nicht die Klammern. Sie können diese Form nur dann verwenden, wenn Sie das Array zuvor initialisiert und als Parameter oder als Verweis auf ein Array deklariert haben, das explizit an anderer Stelle im Programm definiert ist.
 
@@ -72,7 +72,7 @@ Diese Beispiele veranschaulichen Arraydeklarationen:
 float matrix[10][15];
 ```
 
-Das zweidimensionale Array namens `matrix` verfügt über 150 Elemente, von denen jedes den Typ **float** aufweist.
+Das zweidimensionale Array namens `matrix` enthält 150 Elemente, von denen jedes den Typ **`float`** aufweist.
 
 ```C
 struct {
@@ -86,11 +86,11 @@ Dies ist eine Deklaration eines Arrays von Strukturen. Dieses Array weist 100 El
 extern char *name[];
 ```
 
-Diese Anweisung deklariert den Typ und den Namen eines Arrays von Zeigern auf `char`. Die tatsächliche Definition von `name` ist an anderer Stelle zu finden.
+Diese Anweisung deklariert den Typ und den Namen eines Arrays von Zeigern auf **`char`** . Die tatsächliche Definition von `name` ist an anderer Stelle zu finden.
 
 **Microsoft-spezifisch**
 
-Der Typ einer ganzen Zahl, die zum Speichern der maximalen Größe eines Arrays erforderlich ist, d.h. die Größe von **size_t**. **size_t** ist in der Headerdatei STDDEF.H definiert und repräsentiert eine `unsigned int` (ganze Zahl ohne Vorzeichen) aus dem Bereich 0x00000000 bis 0x7CFFFFFF.
+Der Typ einer ganzen Zahl, die zum Speichern der maximalen Größe eines Arrays erforderlich ist, d.h. die Größe von **size_t**. **size_t** ist in der Headerdatei STDDEF.H definiert und ein **`unsigned int`** mit dem Bereich 0x00000000 bis 0x7CFFFFFF.
 
 **Ende Microsoft-spezifisch**
 

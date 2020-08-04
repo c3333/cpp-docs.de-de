@@ -12,16 +12,16 @@ helpviewer_keywords:
 - stock properties, about stock properties
 - stock properties
 ms.assetid: 37bd4db7-efd3-4faa-87ad-64902ed16a36
-ms.openlocfilehash: 79b05fde362a44453aac45aa8dc269c9689ea8fc
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
-ms.translationtype: MT
+ms.openlocfilehash: 125d7272b5b9fb0f656ba0621667885026e152fb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81751190"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228673"
 ---
 # <a name="add-a-property"></a>Hinzufügen einer Eigenschaft
 
-Sie können den [Eigenschaften-Assistenten](#names-add-property-wizard) hinzufügen verwenden, um einer Schnittstelle in Ihrem Projekt eine Methode hinzuzufügen.
+Sie können den [Assistenten zum Hinzufügen von Eigenschaften](#names-add-property-wizard) verwenden, um einer Schnittstelle in Ihrem Projekt eine Eigenschaft hinzuzufügen.
 
 **So fügen Sie Ihrem Objekt eine Eigenschaft hinzu:**
 
@@ -32,9 +32,9 @@ Sie können den [Eigenschaften-Assistenten](#names-add-property-wizard) hinzufü
 
 1. Wählen Sie im Kontextmenü **Hinzufügen** und dann **Eigenschaft hinzufügen** aus.
 
-1. Geben Sie im [Assistenten zum Hinzufügen](#names-add-property-wizard)der Eigenschaft die Informationen zum Erstellen der Eigenschaft an.
+1. Geben Sie im [Assistenten zum Hinzufügen von Eigenschaften](#names-add-property-wizard) die Informationen zum Erstellen der Eigenschaft an.
 
-1. Geben Sie alle IDL-Einstellungen (Interface Definition Language) für die Eigenschaft auf der [Seite IDL-Attribute](#idl-attributes-add-property-wizard) des Assistenten an.
+1. Geben Sie alle Einstellungen der Interface Definition Language dieser Eigenschaft auf der Seite [IDL-Attribute](#idl-attributes-add-property-wizard) des Assistenten an.
 
 1. Klicken Sie auf **Fertig stellen**, um die Eigenschaft hinzuzufügen.
 
@@ -46,23 +46,23 @@ Die Methoden `Get` und `Put` der Eigenschaft werden in der Klassenansicht als zw
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-- [Namen, Eigenschaften-Assistent hinzufügen](#names-add-property-wizard)
-- [IDL-Attribute, Eigenschaften-Assistent hinzufügen](#idl-attributes-add-property-wizard)
-- [Bestandseigenschaften](#stock-properties)
+- [Namen, Assistent zum Hinzufügen von Eigenschaften](#names-add-property-wizard)
+- [IDL-Attribute, Assistent zum Hinzufügen von Eigenschaften](#idl-attributes-add-property-wizard)
+- [Basiseigenschaften](#stock-properties)
 
 ## <a name="names-add-property-wizard"></a>Namen, Assistent zum Hinzufügen von Eigenschaften
 
 Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hinzuzufügen.
 
-- **Eigenschaftstyp**
+- **Eigenschaftentyp**
 
   Legt den Typ der Eigenschaft fest, die Sie hinzufügen. Geben Sie bei MFC-Disp-Schnittstellen einen eigenen Typ an, oder wählen Sie einen aus der vordefinierten Liste aus. Wenn Sie eine vordefinierte Implementierung einer Eigenschaft bereitstellen, wird **Eigenschaftentyp** auf den vordefinierten Typ festgelegt und kann nicht geändert werden.
 
 - **Eigenschaftenname**
 
-  Legt den Namen der Eigenschaft fest. Für MFC-Disp-Schnittstellen, die ActiveX-Steuerelementen zugeordnet sind, können Sie einen eigenen Namen angeben oder einen vordefinierten Eigenschaftennamen aus der Liste auswählen. Wenn Sie einen eigenen Eigenschaftennamen bereitstellen, ist der Implementierungstyp **Stock** (Vordefiniert) nicht verfügbar. Eine Beschreibung der Eigenschaften in der Liste finden Sie unter [Bestandseigenschaften.](#stock-properties)
+  Legt den Namen der Eigenschaft fest. Für MFC-Disp-Schnittstellen, die ActiveX-Steuerelementen zugeordnet sind, können Sie einen eigenen Namen angeben oder einen vordefinierten Eigenschaftennamen aus der Liste auswählen. Wenn Sie einen eigenen Eigenschaftennamen bereitstellen, ist der Implementierungstyp **Stock** (Vordefiniert) nicht verfügbar. Eine Beschreibung der Eigenschaften in der Liste finden Sie unter [Basiseigenschaften](#stock-properties).
 
-  |Schnittstellentyp|BESCHREIBUNG|
+  |Schnittstellentyp|Beschreibung|
   |--------------------|-----------------|
   |Duale ATL-Schnittstelle, benutzerdefinierte Schnittstelle, lokale benutzerdefinierte Schnittstelle|Geben Sie einen Eigenschaftennamen an.|
   |MFC-Disp-Schnittstelle, Disp-Schnittstelle des MFC-ActiveX-Steuerelements|Geben Sie einen Eigenschaftennamen an, oder wählen Sie eine Basiseigenschaft aus der Liste aus. Wenn Sie eine Eigenschaft aus der Liste auswählen, wird der entsprechende Wert im Feld **Eigenschaftentyp** angezeigt. Sie können diesen Typ abhängig von Ihrer Auswahl unter **Implementierungstyp** ändern.|
@@ -77,7 +77,7 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
 - **Benachrichtigungsfunktion**
 
-  Nur MFC-Schnittstellen Nur verfügbar, wenn Sie **Membervariable** unter **Implementierungstyp** festlegen. Legt den Namen der Benachrichtigungsfunktion fest, die aufgerufen wird, wenn die Eigenschaft geändert wird. Standardmäßig ist der Name der Benachrichtigungsfunktion auf `On` *PropertyName*`Changed`festgelegt. Sie können diesen Namen bearbeiten.
+  Nur MFC-Schnittstellen Nur verfügbar, wenn Sie **Membervariable** unter **Implementierungstyp** festlegen. Legt den Namen der Benachrichtigungsfunktion fest, die aufgerufen wird, wenn die Eigenschaft geändert wird. Der Name der Benachrichtigungsfunktion ist standardmäßig auf `On`*PropertyName*`Changed` festgelegt. Sie können diesen Namen bearbeiten.
 
 - **Get-Funktion**
 
@@ -91,10 +91,10 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
   Nur MFC-Schnittstellen Gibt an, wie die hinzugefügten Eigenschaften implementiert werden sollen.
 
-  |Implementierungstyp|BESCHREIBUNG|
+  |Implementierungstyp|Beschreibung|
   |-------------------------|-----------------|
   |**Stock**|Gibt eine vordefinierte Implementierung für die unter **Eigenschaftenname** ausgewählte Eigenschaft an. Der Standardwert. Weitere Informationen finden Sie unter [Basiseigenschaften](#stock-properties).<br /><br /> Wenn Sie **Stock** (Vordefiniert) angeben, werden **Eigenschaftentyp**, **Parametertyp** und **Parametername** abgeblendet.|
-  |**Membervariable**|Gibt an, dass die Eigenschaft als Membervariable hinzugefügt wird. Sie können benutzerdefinierte Eigenschaften und die meisten Basiseigenschaften als Membervariablen hinzufügen. Sie können die **Membervariable** `Caption`für `hWnd`die `Text` , und die Eigenschaften nicht angeben.<br /><br /> Gibt Standardnamen unter **Variablenname** und **Benachrichtigungsfunktion** an. Sie können diesen Namen bearbeiten.|
+  |**Membervariable**|Gibt an, dass die Eigenschaft als Membervariable hinzugefügt wird. Sie können benutzerdefinierte Eigenschaften und die meisten Basiseigenschaften als Membervariablen hinzufügen. Sie können die **Membervariable** für die Eigenschaften `Caption`, `hWnd` und `Text` nicht angeben.<br /><br /> Gibt Standardnamen unter **Variablenname** und **Benachrichtigungsfunktion** an. Sie können diesen Namen bearbeiten.|
   |**Get/Set-Methoden**|Gibt an, dass die Eigenschaft standardmäßig als `Get`*PropertyName*- und `Set`*PropertyName*-Funktion hinzugefügt wird. Diese Namen werden unter **Get-Funktion** und **Set-Funktion** angezeigt.<br /><br /> Sie können den standardmäßig festgelegten **Eigenschaftentyp** ändern, wodurch ein Wert an die Get-Funktion übergeben wird. Sie können Parameter für die Funktionen `Get` und `Set` angeben.|
 
 - **Get-Funktion**
@@ -105,16 +105,16 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
   Nur ATL-Schnittstellen Legt die Eigenschaft als schreibbar fest. Die `Put`-Methode wird also für das Festlegen bzw. „Einfügen“ dieser Eigenschaft des Objekts erstellt. Wählen Sie **Get** oder **Put** oder beide aus. Wenn Sie diese Option auswählen, können Sie die Methode auf zwei Arten implementieren:
 
-  |Option|BESCHREIBUNG|
+  |Option|Beschreibung|
   |------------|-----------------|
   |**PropPut**|Die [PropPut](../windows/propput.md)-Funktion gibt eine Kopie des Objekts zurück. Dies ist die Standardeinstellung und die gängigste Methode, um die Eigenschaft schreibbar zu machen.|
   |**PropPutRef**|Die [PropPutRef](../windows/propputref.md)-Funktion gibt einen Verweis auf das Objekt statt einer Kopie des Objekts zurück. Diese Option sollten Sie für Objekte (z.B. große Strukturen oder Arrays) verwenden, deren Initialisierung aufwändig sein kann.|
 
 - **Parameterattribute**
 
-  Nur ATL-Schnittstellen Legt fest, ob der `in`durch `out` **Parametername** angegebene Parameter , , beide oder keiner ist.
+  Nur ATL-Schnittstellen Legt fest, ob der Parameter, der durch **Parametername** festgelegt wurde, `in`, `out`, beides oder keines davon ist.
 
-  |Option|BESCHREIBUNG|
+  |Option|Beschreibung|
   |------------|-----------------|
   |`in`|Gibt an, dass der Parameter von der aufrufenden Prozedur an die aufgerufene Prozedur übergeben wird.|
   |`out`|Gibt an, dass der Zeigerparameter an von der aufgerufenen Prozedur an die aufrufende Prozedur zurückgegeben wird (vom Server an den Client).|
@@ -131,7 +131,7 @@ Verwenden Sie diesen Assistenten, um eine Eigenschaft zu einer Schnittstelle hin
 
   Zeigt die Liste der Attribute an, die zur Eigenschaft hinzugefügt werden sollen. Jedes Element in der Liste besteht aus dem Parameternamen, dem Parametertyp und den Attributen. Verwenden Sie **Hinzufügen** und **Entfernen**, um die Liste zu aktualisieren.
 
-- **Hinzufügen**
+- **Add**
 
   Fügt den Parameter hinzu, den Sie in **Parametername** und **Parametertyp** eingeben, zur **Parameterliste** hinzu. Wählen Sie **Hinzufügen** aus, um der Liste einen Parameter hinzuzufügen.
 
@@ -157,13 +157,13 @@ Verwenden Sie diese Seite des Assistenten zum Hinzufügen von Eigenschaften, um 
 
 - `helpstring`
 
-  Gibt eine Zeichenfolge an, die zum Beschreiben des Elements verwendet wird, auf das sie angewendet wird. Standardmäßig ist sie auf `property`&nbsp;*Eigenschaften&nbsp;name* festgelegt. Informationen finden Sie in der *MIDL-Referenz* unter [helpstring](/windows/win32/Midl/helpstring).
+  Gibt eine Zeichenfolge an, die zum Beschreiben des Elements verwendet wird, auf das sie angewendet wird. Standardmäßig ist sie auf **`property`** &nbsp;*Name&nbsp;der Eigenschaft* festgelegt. Informationen finden Sie in der *MIDL-Referenz* unter [helpstring](/windows/win32/Midl/helpstring).
 
 ### <a name="other-options"></a>Weitere Optionen
 
 Nicht alle Optionen sind für alle Eigenschaftentypen verfügbar.
 
-|Option|BESCHREIBUNG|
+|Option|Beschreibung|
 |------------|-----------------|
 |`bindable`|Gibt an, dass die Eigenschaft die Datenbindung unterstützt. Informationen finden Sie in der *MIDL-Referenz* unter [bindable](/windows/win32/Midl/bindable). Diese Option ist standardmäßig für die vordefinierte Implementierung der Eigenschaft festgelegt und kann nicht geändert werden.|
 |`defaultbind`|Gibt an, dass diese einzelne bindbare Eigenschaft das Objekt am besten darstellt. Informationen finden Sie in der *MIDL-Referenz* unter [defaultbind](/windows/win32/Midl/defaultbind).|
@@ -181,7 +181,7 @@ Nicht alle Optionen sind für alle Eigenschaftentypen verfügbar.
 
 Wenn Sie einer MFC-Disp-Schnittstelle mithilfe des [Assistenten zum Hinzufügen von Eigenschaften](#idl-attributes-add-property-wizard) eine Eigenschaft hinzufügen, können Sie auf der [Namen](../ide/names-add-property-wizard.md)-Seite des Assistenten eine Basiseigenschaft aus der Liste **Eigenschaftennamen** auswählen. Dort stehen die folgenden Eigenschaften zur Auswahl:
 
-|Eigenschaftenname|BESCHREIBUNG|
+|Eigenschaftenname|Beschreibung|
 |-------------------|-----------------|
 |`Appearance`|Ruft einen Wert ab, der die Darstellung des Steuerelements bestimmt, oder legt diesen fest. Die Eigenschaft `Appearance` des Steuerelements kann dreidimensionale Anzeigeeffekte anzeigen oder ausblenden. Dies ist eine Lese-/Schreibumgebungseigenschaft.|
 |`BackColor`|Gibt die Ambient-Eigenschaft `BackColor` des Steuerelements zurück oder legt diese auf eine Palettenfarbe (RGB) oder eine vordefinierte Systemfarbe fest. Der Wert entspricht standardmäßig der Vordergrundfarbe des Containers des Steuerelements. Dies ist eine Lese-/Schreibumgebungseigenschaft.|

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - __except keyword [C], in try-except
 - try-catch keyword [C], try-except keyword [C]
 ms.assetid: f76db9d1-fc78-417f-b71f-18e545fc01c3
-ms.openlocfilehash: 2ca5299a5ab20b8985a520f25bb654ead0c25e2b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 77b6bea8c7793522f5e1fa47e09a9b4a7e5c0f10
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81349743"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218779"
 ---
 # <a name="try-except-statement-c"></a>try-except-Anweisung (C)
 
@@ -31,21 +31,21 @@ Ausnahmen können entweder hardware- oder softwarebasiert sein. Auch wenn Anwend
 
 **__except (**  *Ausdruck*  **)**  *Verbundanweisung*
 
-Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der `__except`-Klausel ist der Ausnahmehandler. Der Handler gibt eine Reihe von Aktionen an, die abgerufen werden, wenn eine Ausnahme während der Ausführung des geschützten Abschnitts ausgelöst wird. Die Ausführung erfolgt folgendermaßen:
+Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der **`__except`** -Klausel ist der Ausnahmehandler. Der Handler gibt eine Reihe von Aktionen an, die abgerufen werden, wenn eine Ausnahme während der Ausführung des geschützten Abschnitts ausgelöst wird. Die Ausführung erfolgt folgendermaßen:
 
 1. Der geschützte Bereich wird ausgeführt.
 
-1. Wenn keine Ausnahme während der Ausführung des geschützten Bereichs auftritt, wird die Ausführung mit der Anweisung nach der `__except`-Klausel fortgesetzt.
+1. Wenn während der Ausführung des geschützten Bereichs keine Ausnahme auftritt, wird die Ausführung mit der Anweisung nach der **`__except`** -Klausel fortgesetzt.
 
-1. Wenn während der Ausführung des geschützten Abschnitts oder in einer Routine, die der geschützte Abschnitt aufruft, eine Ausnahme auftritt, wird der `__except`-Ausdruck ausgewertet, und der Rückgabewert bestimmt, wie die Ausnahme verarbeitet wird. Es gibt drei Werte:
+1. Wenn während der Ausführung des geschützten Abschnitts oder in einer Routine, die der geschützte Abschnitt aufruft, eine Ausnahme auftritt, wird der **`__except`** -Ausdruck ausgewertet, und der Rückgabewert bestimmt, wie die Ausnahme verarbeitet wird. Es gibt drei Werte:
 
    `EXCEPTION_CONTINUE_SEARCH` Ausnahme wurde nicht erkannt. Fahren Sie fort, im Stapel nach einem Handler zu suchen, zuerst nach enthaltenen **try-except**-Anweisungen, dann nach Handlern mit der nächst höheren Priorität.
 
    `EXCEPTION_CONTINUE_EXECUTION` Ausnahme wird erkannt, wird jedoch geschlossen. Fortsetzen der Ausführung an der Stelle, an der die Ausnahme aufgetreten ist.
 
-   `EXCEPTION_EXECUTE_HANDLER` Ausnahme wurde erkannt. Übertragen Sie die Steuerung an den Ausnahmehandler, indem Sie die `__except`-Verbundanweisung ausführen und anschließend die Ausführung an dem Punkt fortsetzen, an dem die Ausnahme aufgetreten ist.
+   `EXCEPTION_EXECUTE_HANDLER` Ausnahme wurde erkannt. Übertragen Sie die Steuerung an den Ausnahmehandler, indem Sie die **`__except`** -Verbundanweisung ausführen und anschließend die Ausführung an dem Punkt fortsetzen, an dem die Ausnahme aufgetreten ist.
 
-Da der `__except`-Ausdruck als C-Ausdruck ausgewertet wird, wird er auf einen Einzelwert beschränkt, den Operator des bedingten Ausdrucks oder den Komma-Operator. Wenn eine erweiterte Verarbeitung erforderlich ist, kann der Ausdruck eine Routine aufrufen, die einen der drei Werte zurückgibt, die oben aufgelistet sind.
+Da der **`__except`** -Ausdruck als C-Ausdruck ausgewertet wird, ist er auf einen Einzelwert beschränkt: den bedingten Ausdrucksoperator oder den Kommaoperator. Wenn eine erweiterte Verarbeitung erforderlich ist, kann der Ausdruck eine Routine aufrufen, die einen der drei Werte zurückgibt, die oben aufgelistet sind.
 
 > [!NOTE]
 > Die strukturierte Ausnahmebehandlung arbeitet mit C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Der C++-Ausnahmebehandlungsmechanismus ist außerdem viel flexibler, da er Ausnahmen eines beliebigen Typs behandeln kann.
@@ -53,9 +53,9 @@ Da der `__except`-Ausdruck als C-Ausdruck ausgewertet wird, wird er auf einen Ei
 > [!NOTE]
 > Für C++-Programme sollte die C++-Ausnahmebehandlung anstelle der strukturierten Ausnahmebehandlung verwendet werden. Weitere Informationen finden Sie unter [Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md) in *C++-Sprachreferenz*.
 
-Jede Routine in einer Anwendung kann einen eigenen Ausnahmehandler aufweisen. Der `__except`-Ausdruck wird im Bereich des `__try`-Rumpfes ausgeführt. Dies bedeutet, dass alle lokalen Variablen verfügbar sind, die dort deklariert wurden.
+Jede Routine in einer Anwendung kann einen eigenen Ausnahmehandler aufweisen. Der **`__except`** -Ausdruck wird im Bereich des `__try`-Blocks ausgeführt. Dies bedeutet, dass alle lokalen Variablen verfügbar sind, die dort deklariert wurden.
 
-Das `__leave`-Schlüsselwort ist innerhalb eines **try-except**-Anweisungsblocks gültig. Der Effekt von `__leave` besteht darin, zum Ende des **try-except**-Blocks zu springen. Die Ausführung wird nach dem Ende des Ausnahmehandlers fortgesetzt. Obwohl das gleiche Ergebnis mit einer `goto`-Anweisung erreicht werden kann, verursacht eine `goto`-Anweisung eine Stapelentladung. Die `__leave`-Anweisung ist effizienter, da sie keine Stapelentladung verursacht.
+**`__leave** keyword is valid within a **try-except** statement block. The effect of **`__leave** dient dazu, zum Ende des **try-except**-Blocks zu springen. Die Ausführung wird nach dem Ende des Ausnahmehandlers fortgesetzt. Zwar kann dasselbe Ergebnis mit einer **`goto`** -Anweisung erzielt werden, eine **`goto`** -Anweisung verursacht jedoch eine Stapelentladung. Die **`__leave**-Anweisung ist effizienter, da sie keine Stapelentladung verursacht.
 
 Eine **try-except**-Anweisung unter Verwendung der `longjmp`-Laufzeitfunktion zu beenden, wird als nicht ordnungsgemäße Beendigung angesehen. Es ist nicht zulässig, in eine `__try`-Anweisung zu springen, wohingegen das Herausspringen aus einer solchen zulässig ist. Der Ausnahmehandler wird nicht aufgerufen, wenn ein Vorgang in der Mitte der Ausführung einer **try-except**-Anweisung beendet wird.
 

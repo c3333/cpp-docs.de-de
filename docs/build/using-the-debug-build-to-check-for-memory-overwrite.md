@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - memory, overwrites
 ms.assetid: 1345eb4d-24ba-4595-b1cc-2da66986311e
-ms.openlocfilehash: 42e3a7f1f1c34ba5a263adfca7496c24e162ab5d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 152f72749d2ebdacd46dd3e4db671bc5705d4b6a
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62314285"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213748"
 ---
 # <a name="using-the-debug-build-to-check-for-memory-overwrite"></a>Verwenden des Debugbuilds zur Suche nach Speicherüberschreibungen
 
@@ -21,7 +21,7 @@ afxMemDF |= checkAlwaysMemDF;
 
 Mit der Debug-Speicherbelegungsfunktion werden Wächterbytes um alle Speicherbelegungen gelegt. Diese Wächterbytes helfen jedoch nur, wenn Sie sie auf Veränderungen überprüfen (die auf eine Speicherüberschreibung hindeuten). Andernfalls wird dadurch nur ein Puffer bereitgestellt, der es Ihnen tatsächlich ermöglicht, mit einer Speicherüberschreibung davonzukommen.
 
-Wenn Sie `checkAlwaysMemDF` aktivieren, zwingen Sie MFC jedes Mal, wenn ein Aufruf von **new** oder **delete** erfolgt, zu einem Aufruf der `AfxCheckMemory`-Funktion. Wenn eine Speicherüberschreibung erkannt wurde, wird eine TRACE-Meldung generiert, die in etwa wie folgt aussieht:
+Durch Aktivieren von `checkAlwaysMemDF` zwingen Sie MFC dazu, bei jedem Aufruf von **`new`** oder **`delete`** die `AfxCheckMemory`-Funktion aufzurufen. Wenn eine Speicherüberschreibung erkannt wurde, wird eine TRACE-Meldung generiert, die in etwa wie folgt aussieht:
 
 ```
 Damage Occurred! Block=0x5533

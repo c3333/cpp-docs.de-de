@@ -8,12 +8,12 @@ helpviewer_keywords:
 - union keyword [C]
 - aggregates [C++], initializing
 ms.assetid: a8f8ed75-39db-4592-93b9-d3920d915810
-ms.openlocfilehash: f6816a6f63de262b927a3c5aeed8774ba29c2eaa
-ms.sourcegitcommit: 16c0392fc8d96e814c3a40b0c5346d7389aeb525
+ms.openlocfilehash: b4b0dd82263781966760b6e21ef24ded56b06a01
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "62326078"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229622"
 ---
 # <a name="initializing-aggregate-types"></a>Initialisierung von Aggregattypen
 
@@ -51,7 +51,7 @@ Wenn Sie die Größe festlegen und die falsche Anzahl von Initialisierern angebe
 
 **Microsoft-spezifisch**
 
-Die maximale Größe für ein Array wird durch **size_t** definiert. **size_t** ist in der Headerdatei STDDEF.H definiert und ein `unsigned int` mit dem Bereich 0x00000000 bis 0x7CFFFFFF.
+Die maximale Größe für ein Array wird durch **size_t** definiert. **size_t** ist in der Headerdatei STDDEF.H definiert und ein **`unsigned int`** mit dem Bereich 0x00000000 bis 0x7CFFFFFF.
 
 **Ende Microsoft-spezifisch**
 
@@ -119,7 +119,7 @@ triplet nlist[2][3] =  /* THIS CAUSES AN ERROR */
 
 In dieser Konstruktion beginnt die erste linke geschweifte Klammer in Zeile 1 die Initialisierung von `nlist[0]`, einem Array mit drei Strukturen. Die Werte 1, 2 und 3 werden den drei Membern der ersten Struktur zugewiesen. Wenn die folgende rechte geschweifte Klammer gefunden wird (nach dem Wert 3), ist die Initialisierung von `nlist[0]` abgeschlossen und die beiden verbleibenden Strukturen im Dreistrukturarray werden automatisch auf 0 initialisiert. Entsprechend initialisiert `{ 4,5,6 }` die erste Struktur in der zweiten Zeile von `nlist`. Die verbleibenden beiden Strukturen von `nlist[1]` werden auf 0 festgelegt. Wenn der Compiler auf die folgende Initialisiererliste (`{ 7,8,9 }`) trifft, wird versucht, `nlist[2]` zu initialisieren. Da `nlist` nur über zwei Zeilen verfügt, verursacht dieser Versuch einen Fehler.
 
-In diesem Beispiel werden die folgenden drei `int`-Member von `x` auf 1, 2 bzw. 3 initialisiert.
+Im nächsten Beispiel werden die drei **`int`** -Member von `x` mit 1, 2 bzw. 3 initialisiert.
 
 ```C
 struct list

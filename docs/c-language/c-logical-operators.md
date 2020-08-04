@@ -11,12 +11,12 @@ helpviewer_keywords:
 - '&& operator'
 - logical OR operator
 ms.assetid: c0a4e766-ad56-4300-bf76-b28dc0e19b43
-ms.openlocfilehash: 5df0c0f16bdf298c47a6a0699ec10c7392ab84ca
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8f59ad927dd8ee62dbfc80fd238677bf1b646f9c
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62326585"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227997"
 ---
 # <a name="c-logical-operators"></a>Logische C-Operatoren
 
@@ -34,7 +34,7 @@ Die logischen Operatoren führen logical-AND-Vorgänge ( **&&** ) und logical-OR
 
 ## <a name="remarks"></a>Hinweise
 
-Logische Operatoren führen nicht die üblichen arithmetischen Konvertierungen aus. Stattdessen werten sie jeden Operanden hinsichtlich seiner Übereinstimmung mit 0 (null) aus. Das Ergebnis einer logischen Operation ist entweder 0 (null) oder 1. Der Ergebnis ist vom Typ **int**.
+Logische Operatoren führen nicht die üblichen arithmetischen Konvertierungen aus. Stattdessen werten sie jeden Operanden hinsichtlich seiner Übereinstimmung mit 0 (null) aus. Das Ergebnis einer logischen Operation ist entweder 0 (null) oder 1. Der Typ des Ergebnisses lautet **`int`** .
 
 Die logischen C-Operatoren sind im Folgenden beschrieben:
 

@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - break keyword [C]
 ms.assetid: 015627c7-0924-49b2-a4d1-c77edf5eae6a
-ms.openlocfilehash: b38ff6c535c142bd15ea09a4d7c80010c3fff31f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c46173ceebd7291336c18d36203d1e4dc59ce46d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62313362"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87222003"
 ---
 # <a name="break-statement-c"></a>break-Anweisung (C)
 
-Die `break`-Anweisung beendet die Ausführung der nächsten einschließenden `do`, `for`, `switch` oder `while`-Anweisung, in der sie angezeigt wird. Das Steuerelement wird an die Anweisung übergeben, die auf die beendete Anweisung folgt.
+Die **`break`** -Anweisung beendet die Ausführung der nächsten einschließenden **`do`** -, **`for`** -, **`switch`** - oder **`while`** -Anweisung, in der sie enthalten ist. Das Steuerelement wird an die Anweisung übergeben, die auf die beendete Anweisung folgt.
 
 ## <a name="syntax"></a>Syntax
 
 *jump-statement*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**break ;**
 
-Die Anweisung `break` wird häufig verwendet, um die Verarbeitung eines besonderen Falls in einer `switch`-Anweisung zu beenden. Eine fehlende iterative oder `switch`-Anweisung generiert einen Fehler.
+Die **`break`** -Anweisung wird häufig verwendet, um die Verarbeitung eines besonderen Falls in einer **`switch`** -Anweisung zu beenden. Eine fehlende iterative oder **`switch`** -Anweisung generiert einen Fehler.
 
-Innerhalb von geschachtelten Anweisungen beendet die `break`-Anweisung lediglich die Anweisung `do`, `for`, `switch` oder `while`, von der sie direkt eingeschlossen ist. Sie können eine `return`-Anweisung oder eine `goto`-Anweisung verwenden, um das Steuerelement aus der geschachtelten Struktur an einen anderen Ort zu übertragen.
+In geschachtelten Anweisungen beendet die **`break`** -Anweisung lediglich die **`do`** -, **`for`** -, **`switch`** - oder **`while`** -Anweisung, von der sie direkt umschlossen ist. Sie können eine **`return`** - oder **`goto`** -Anweisung verwenden, um die Steuerung aus der geschachtelten Struktur an eine andere Stelle zu übertragen.
 
-In diesem Beispiel wird die `break`-Anweisung veranschaulicht.
+Dieses Beispiel veranschaulicht die **`break`** -Anweisung:
 
 ```
 #include <stdio.h>

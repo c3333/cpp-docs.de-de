@@ -2,12 +2,12 @@
 title: Übersicht über ARM-ABI-Konventionen
 ms.date: 07/11/2018
 ms.assetid: 23f4ae8c-3148-4657-8c47-e933a9f387de
-ms.openlocfilehash: 8737f7b1cbe0651b43eb3b9990a4035b60bd01b9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fc211b887b2b82f533c1e36bf95e6fd6b8e24728
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81320730"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229765"
 ---
 # <a name="overview-of-arm32-abi-conventions"></a>Übersicht über ARM32-ABI-Konventionen
 
@@ -201,7 +201,7 @@ Der standardmäßige Stack im Kernel-Modus unter Windows besteht aus drei Seiten
 
 Enumerationen sind 32-Bit-Ganzzahl-Typen, es sei denn mindestens ein Wert in der Enumeration erfordert einen 64-Bit-Doppelwort-Speicher. In diesem Fall wird die Enumeration auf einen 64-Bit-Ganzzahl-Typ heraufgestuft.
 
-`wchar_t` wurde als äquivalent zu `unsigned short` definiert, um die Kompatibilität mit anderen Plattformen zu bewahren.
+**`wchar_t`** wurde als äquivalent zu **`unsigned short`** definiert, um die Kompatibilität mit anderen Plattformen zu bewahren.
 
 ## <a name="stack-walking"></a>Stackwalk
 

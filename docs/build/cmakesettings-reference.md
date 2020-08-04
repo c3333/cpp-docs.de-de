@@ -4,12 +4,12 @@ ms.date: 11/22/2019
 helpviewer_keywords:
 - CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
-ms.openlocfilehash: c80bb27761b8de91f7caee5932f28f1ec2ac0e29
-ms.sourcegitcommit: 166039ceea3256c26fb23920b96de4257b8cf149
+ms.openlocfilehash: 55327d53f3f9e8439ba6e008f1b5a6b384722d54
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84946647"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229869"
 ---
 # <a name="cmakesettingsjson-schema-reference"></a>CMakeSettings.json-Schemareferenz
 
@@ -31,7 +31,7 @@ Das `configurations`-Array enthält alle Konfigurationen für ein CMake-Projekt.
 
 Eine `configuration` verfügt über die folgenden Eigenschaften:
 
-- `addressSanitizerEnabled`: Wenn `true` das Programm mit AddressSanitizer kompiliert (experimentell unter Windows). Unter Linux wird mit -fno-omit-frame-pointer kompiliert. Die Compileroptimierungsebene -Os oder -Oo liefert die besten Ergebnisse.
+- `addressSanitizerEnabled`: Bei Festlegung auf **`true`** wird das Programm mit Address Sanitizer kompiliert (experimentell unter Windows). Unter Linux wird mit -fno-omit-frame-pointer kompiliert. Die Compileroptimierungsebene -Os oder -Oo liefert die besten Ergebnisse.
 - `addressSanitizerRuntimeFlags`: Runtimeflags, die über die ASAN_OPTIONS-Umgebungsvariable an AddressSanitizer übergeben werden. Format: flag1=Wert:flag2=Wert2.
 - `buildCommandArgs`: Gibt native Buildoptionen an, die nach „--build --“ an CMake übergeben werden. Beispielsweise wird beim Übergeben von „-v“ mithilfe des Ninja-Generators erzwungen, dass Ninja Befehlszeilen ausgibt. Weitere Informationen zu Ninja-Befehlen finden Sie unter [Ninja-Befehlszeilenargumente](#ninja).
 - `buildRoot`: Gibt das Verzeichnis an, in dem CMake Buildskripts für den ausgewählten Generator erstellt.  Ist dem Schalter **-DCMAKE_BINARY_DIR** zugeordnet und gibt an, wo *CMakeCache.txt* erstellt wird. Wenn der Ordner noch nicht vorhanden ist, wird dieser erstellt. Unterstützte Makros sind `${workspaceRoot}`, `${workspaceHash}`, `${projectFile}`, `${projectDir}`, `${thisFile}`, `${thisFileDir}`, `${name}`, `${generator}`, `${env.VARIABLE}`.

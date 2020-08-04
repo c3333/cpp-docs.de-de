@@ -5,12 +5,12 @@ helpviewer_keywords:
 - x64 coding conventions
 - Visual C++, x64 calling conventions
 ms.assetid: 750f3d97-1706-4840-b2fc-41a007329a08
-ms.openlocfilehash: 11d29b6c31ccecfe5b9c51c2f9311213bd4a6732
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 4755cfcf98c9eadbd944e06a56f86ca89a33b0a3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422721"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223771"
 ---
 # <a name="x64-software-conventions"></a>Softwarekonventionen bei x64-Systemen
 
@@ -18,7 +18,7 @@ In diesem Abschnitt wird die Methode der C++-Aufrufkonvention für x64, der 64-B
 
 ## <a name="overview-of-x64-calling-conventions"></a>Übersicht über x64-Aufrufkonventionen
 
-Zwei wichtige Unterschiede zwischen x86 und x64 sind die Möglichkeit der 64-Bit-Adressierung und ein flacher Satz von 16 64-Bit-Registern für die allgemeine Verwendung. Aufgrund des erweiterten Registersatzes wird bei x64 die [__fastcall](../cpp/fastcall.md)-Aufrufkonvention und ein RISC-basiertes Ausnahmebehandlungsmodell verwendet. Die `__fastcall`-Konvention verwendet Register für die ersten vier Argumente und den Stapelrahmen zur Übergabe weiterer Argumente. Weitere Informationen zur x64-Aufrufkonvention, einschließlich Registerverwendung, Stapelparametern, Rückgabewerten und Stapelentladung, finden Sie unter [x64 calling convention](x64-calling-convention.md) (x64-Aufrufkonvention).
+Zwei wichtige Unterschiede zwischen x86 und x64 sind die Möglichkeit der 64-Bit-Adressierung und ein flacher Satz von 16 64-Bit-Registern für die allgemeine Verwendung. Aufgrund des erweiterten Registersatzes wird bei x64 die [__fastcall](../cpp/fastcall.md)-Aufrufkonvention und ein RISC-basiertes Ausnahmebehandlungsmodell verwendet. Die **`__fastcall`** -Konvention verwendet Register für die ersten vier Argumente und den Stapelrahmen zur Übergabe weiterer Argumente. Weitere Informationen zur x64-Aufrufkonvention, einschließlich Registerverwendung, Stapelparametern, Rückgabewerten und Stapelentladung, finden Sie unter [x64 calling convention](x64-calling-convention.md) (x64-Aufrufkonvention).
 
 ## <a name="enable-optimization-for-x64"></a>Aktivieren der Optimierung für x64
 
@@ -47,19 +47,19 @@ Obwohl es möglich ist, auf Daten mit beliebiger Ausrichtung zuzugreifen, wird e
 |||||
 |-|-|-|-|
 |Skalarer Type|Datentyp in C#|Speichergröße (in Byte)|Empfohlene Ausrichtung|
-|**INT8**|**char**|1|Byte|
-|**UINT8**|**unsigned char**|1|Byte|
-|**INT16**|**short**|2|Word|
-|**UINT16**|**unsigned short**|2|Word|
-|**INT32**|**int**, **long**|4|Doubleword|
+|**INT8**|**`char`**|1|Byte|
+|**UINT8**|**`unsigned char`**|1|Byte|
+|**INT16**|**`short`**|2|Word|
+|**UINT16**|**`unsigned short`**|2|Word|
+|**INT32**|**`int`** , **`long`**|4|Doubleword|
 |**UINT32**|**unsigned int, unsigned long**|4|Doubleword|
-|**INT64**|**__int64**|8|Quadword|
+|**INT64**|**`__int64`**|8|Quadword|
 |**UINT64**|**__int64 ohne Vorzeichen**|8|Quadword|
-|**FP32 (einfache Genauigkeit)**|**float**|4|Doubleword|
-|**FP64 (doppelte Genauigkeit)**|**double**|8|Quadword|
+|**FP32 (einfache Genauigkeit)**|**`float`**|4|Doubleword|
+|**FP64 (doppelte Genauigkeit)**|**`double`**|8|Quadword|
 |**POINTER**|__\*__|8|Quadword|
-|**__m64**|**struct __m64**|8|Quadword|
-|**__m128**|**struct __m128**|16|Octaword|
+|**`__m64`**|**struct __m64**|8|Quadword|
+|**`__m128`**|**struct __m128**|16|Octaword|
 
 ### <a name="aggregates-and-unions"></a>Aggregate und Unions
 
@@ -82,19 +82,19 @@ Die folgende Tabelle zeigt die dringend empfohlene Ausrichtung für die skalaren
 ||||
 |-|-|-|
 |Skalarer Type|Datentyp in C#|Erforderliche Ausrichtung|
-|**INT8**|**char**|Byte|
-|**UINT8**|**unsigned char**|Byte|
-|**INT16**|**short**|Word|
-|**UINT16**|**unsigned short**|Word|
-|**INT32**|**int**, **long**|Doubleword|
+|**INT8**|**`char`**|Byte|
+|**UINT8**|**`unsigned char`**|Byte|
+|**INT16**|**`short`**|Word|
+|**UINT16**|**`unsigned short`**|Word|
+|**INT32**|**`int`** , **`long`**|Doubleword|
 |**UINT32**|**unsigned int, unsigned long**|Doubleword|
-|**INT64**|**__int64**|Quadword|
+|**INT64**|**`__int64`**|Quadword|
 |**UINT64**|**__int64 ohne Vorzeichen**|Quadword|
-|**FP32 (einfache Genauigkeit)**|**float**|Doubleword|
-|**FP64 (doppelte Genauigkeit)**|**double**|Quadword|
+|**FP32 (einfache Genauigkeit)**|**`float`**|Doubleword|
+|**FP64 (doppelte Genauigkeit)**|**`double`**|Quadword|
 |**POINTER**|<strong>\*</strong>|Quadword|
-|**__m64**|**struct __m64**|Quadword|
-|**__m128**|**struct __m128**|Octaword|
+|**`__m64`**|**struct __m64**|Quadword|
+|**`__m128`**|**struct __m128**|Octaword|
 
 Es gelten die folgenden aggregierten Ausrichtungsregeln:
 
@@ -206,12 +206,12 @@ Die folgende Tabelle beschreibt, wie jedes Register bei Funktionsaufrufen verwen
 |RBX|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RBP|Nicht volatil|Kann als Frame-Pointer verwendet werden; muss vom Aufgerufenen bewahrt werden|
 |RSP|Nicht volatil|Stack-Pointer|
-|XMM0, YMM0|Volatil|Erstes FP-Argument; erstes Vektortypargument, wenn `__vectorcall` verwendet wird|
-|XMM1, YMM1|Volatil|Zweites FP-Argument; zweites Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM2, YMM2|Volatil|Drittes FP-Argument; drittes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM3, YMM3|Volatil|Viertes FP-Argument; viertes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM4, YMM4|Volatil|Muss je nach Bedarf vom Aufrufer bewahrt werden; fünftes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM5, YMM5|Volatil|Muss je nach Bedarf vom Aufrufer bewahrt werden; sechstes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM0, YMM0|Volatil|Erstes FP-Argument; erstes Argument vom Typ Vektor, wenn **`__vectorcall`** verwendet wird|
+|XMM1, YMM1|Volatil|Zweites FP-Argument; zweites Argument vom Typ Vektor, wenn **`__vectorcall`** verwendet wird|
+|XMM2, YMM2|Volatil|Drittes FP-Argument; drittes Argument vom Typ Vektor, wenn **`__vectorcall`** verwendet wird|
+|XMM3, YMM3|Volatil|Viertes FP-Argument; viertes Argument vom Typ Vektor, wenn **`__vectorcall`** verwendet wird|
+|XMM4, YMM4|Volatil|Muss je nach Bedarf vom Aufrufer beibehalten werden; fünftes Argument vom Typ Vektor, wenn **`__vectorcall`** verwendet wird|
+|XMM5, YMM5|Volatil|Muss je nach Bedarf vom Aufrufer beibehalten werden; sechstes Argument vom Typ Vektor, wenn **`__vectorcall`** verwendet wird|
 |XMM6:XMM15, YMM6:YMM15|Nicht volatil (XMM), Volatil (obere Hälfte von YMM)|Muss vom Aufgerufenen bewahrt werden. YMM-Register müssen je nach Bedarf vom Aufrufer bewahrt werden.|
 
 Bei Funktionsende und beim Funktionseinstieg in C-Laufzeitbibliotheksaufrufen und Windows-Systemaufrufen wird erwartet, dass das Richtungsflag im CPU-Flagsregister gelöscht wird.

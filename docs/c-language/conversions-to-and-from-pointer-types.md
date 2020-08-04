@@ -7,18 +7,18 @@ helpviewer_keywords:
 - type casts, involving pointers
 - void pointers
 ms.assetid: 3facc56f-06d3-4570-b1a2-7d4927b83086
-ms.openlocfilehash: 2d907dbcf4f826d364fb68ce65f7d44c6cfe97cd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6358216e72f054becf33d18aadb6a3a51bab8363
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62312408"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87218896"
 ---
 # <a name="conversions-to-and-from-pointer-types"></a>Konvertierungen in und aus Zeigertypen
 
 Ein Zeiger auf einen Werttyp kann in einen Zeiger auf einen anderen Typ konvertiert werden. Allerdings ist das Ergebnis möglicherweise aufgrund der Ausrichtungsanforderungen und Größen unterschiedlicher Typen im Speicher nicht definiert. Ein Zeiger auf ein Objekt kann in einen Zeiger auf ein Objekt konvertiert werden, dessen Typ eine weniger oder gleich strenge Speicherausrichtung erfordert, und unverändert wieder zurück konvertiert werden kann.
 
-Ein Zeiger auf `void` kann zu oder von einem Zeiger auf einen beliebigen Typ ohne Einschränkung oder Datenverlust konvertiert werden. Wenn das Ergebnis wieder in den ursprünglichen Typ konvertiert wird, wird der ursprüngliche Zeiger wiederhergestellt.
+Ein Zeiger auf **`void`** kann ohne Einschränkung oder Datenverlust in einen Zeiger auf einen beliebigen Typ konvertiert werden. Wenn das Ergebnis wieder in den ursprünglichen Typ konvertiert wird, wird der ursprüngliche Zeiger wiederhergestellt.
 
 Wenn ein Zeiger in einen anderen Zeiger desselben Typs konvertiert wird, aber über unterschiedliche oder zusätzliche Qualifizierer verfügt, ist der neue Zeiger bis auf die Einschränkungen, die vom neuen Qualifizierer auferlegt werden, derselbe wie der alte.
 
@@ -34,7 +34,7 @@ Umgekehrt kann ein ganzzahliger Typ gemäß den folgenden Regeln in einen Zeiger
 
 - Wenn die Größe des ganzzahligen Typs von der Größe des Zeigertyps abweicht, wird der ganzzahlige Typ zuerst auf die Größe des Zeigers konvertiert. Dies wird mithilfe der Konvertierungspfade erreicht, die in den Tabellen [Konvertierungen von ganzzahligen Typen mit Vorzeichen](../c-language/conversions-from-signed-integral-types.md) und [Konvertierungen von ganzzahligen Typen ohne Vorzeichen](../c-language/conversions-from-unsigned-integral-types.md) angegeben sind. Es wird dann als Zeigerwert behandelt.
 
-Ein integraler konstanter Ausdruck mit dem Wert 0 oder ein solcher Ausdruck, der in den Typ **void** <strong>\*</strong> umgewandelt wird, kann durch eine Typumwandlung, eine Zuweisung oder einen Vergleich mit einem beliebigen Zeiger konvertiert werden. Dies erzeugt einen NULL-Zeiger, der gleich einem anderen NULL-Zeiger desselben Typs ist, aber dieser NULL-Zeiger ist nicht gleich einem Zeiger auf eine Funktion oder ein Objekt. Ganze Zahlen, die nicht die Konstante 0 sind, können in den Zeigertyp konvertiert werden, aber das Ergebnis ist nicht übertragbar.
+Ein ganzzahliger konstanter Ausdruck mit dem Wert 0 oder ein solcher Ausdruck, der in den Typ **`void`** <strong>\*</strong> umgewandelt wird, kann per Typumwandlung, Zuweisung oder Vergleich mit einem beliebigen Zeiger konvertiert werden. Dies erzeugt einen NULL-Zeiger, der gleich einem anderen NULL-Zeiger desselben Typs ist, aber dieser NULL-Zeiger ist nicht gleich einem Zeiger auf eine Funktion oder ein Objekt. Ganze Zahlen, die nicht die Konstante 0 sind, können in den Zeigertyp konvertiert werden, aber das Ergebnis ist nicht übertragbar.
 
 ## <a name="see-also"></a>Siehe auch
 

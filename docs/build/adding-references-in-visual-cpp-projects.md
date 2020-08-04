@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Add References Dialog Box (C++)
 - .NET Framework (C++), Add References Dialog Box
 ms.assetid: 12b8f571-0f21-40b3-9404-5318a57e9cb5
-ms.openlocfilehash: c7facb82054eed4ef28c52830b8a3079eecb7fdc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 37c0120b7879678ad65dfbbffc17bd6d6791fdfe
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80169954"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229908"
 ---
 # <a name="consuming-libraries-and-components"></a>Verwenden von Bibliotheken und Komponenten
 
@@ -98,11 +98,11 @@ Die folgenden Eigenschaften stehen für verschiedene Arten von Verweisen zur Ver
 
 - **Lokale Satellitenassemblys kopieren (C++/CLI)**
 
-   Gibt an, ob die Satellitenassemblys der Assembly, auf die verwiesen wird, während eines Buildvorgangs automatisch an den Zielspeicherort kopiert werden. Wird nur verwendet, wenn **Lokale Kopie** den Wert **true** aufweist.
+   Gibt an, ob die Satellitenassemblys der Assembly, auf die verwiesen wird, während eines Buildvorgangs automatisch an den Zielspeicherort kopiert werden. Wird nur verwendet, wenn **Lokale Kopie** den Wert **`true`** aufweist.
 
 - **Verweisassemblyausgabe**
 
-   Gibt an, dass die Assembly im Buildvorgang verwendet wird. Wenn **true**, wird die Assembly während des Buildvorgangs in der Befehlszeile des Compilers verwendet.
+   Gibt an, dass die Assembly im Buildvorgang verwendet wird. Wenn **`true`** , wird die Assembly während des Buildvorgangs an der Befehlszeile des Compilers verwendet.
 
 ### <a name="project-to-project-reference-properties"></a>Interprojektverweiseigenschaften
 
@@ -158,7 +158,7 @@ Die folgenden Eigenschaften gelten für COM- und Assemblyverweise und können ni
 
 - **Starker Name**
 
-   `true` , wenn die Assembly, auf die verwiesen wird, einen starken Namen hat. Eine Assembly mit starkem Namen verfügt über eine eindeutige Versionsangabe.
+   **`true`** , wenn die Assembly, auf die verwiesen wird, einen starken Namen besitzt. Eine Assembly mit starkem Namen verfügt über eine eindeutige Versionsangabe.
 
 - **Version**
 

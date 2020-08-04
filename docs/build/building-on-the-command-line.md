@@ -1,8 +1,8 @@
 ---
 title: Verwenden des Microsoft C++-Toolsets über die Befehlszeile
-description: Verwenden Sie die Microsoft C++ Compiler Toolchain (MSVC) auf der Befehlszeile außerhalb der Visual Studio IDE.
+description: Verwenden Sie das Toolset für den Microsoft-C++-Compiler (MSVC) in der Befehlszeile außerhalb der Visual Studio IDE.
 ms.custom: conceptual
-ms.date: 11/12/2019
+ms.date: 04/21/2020
 helpviewer_keywords:
 - command-line builds [C++]
 - compiling source code [C++], command line
@@ -10,16 +10,19 @@ helpviewer_keywords:
 - command line [C++], building from
 - command line [C++], compilers
 ms.assetid: 7ca9daed-a003-4162-842d-908f79058365
-ms.openlocfilehash: ec30cba8e119f96efc5bca156fa565db77904520
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: f729947e4d798e5817ff8d4e5abe09eaca090e01
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422901"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229895"
 ---
 # <a name="use-the-microsoft-c-toolset-from-the-command-line"></a>Verwenden des Microsoft C++-Toolsets über die Befehlszeile
 
-Sie können mithilfe von Tools, die in Visual Studio enthalten sind, C- und C++-Anwendungen auf der Befehlszeile erstellen. Das Microsoft C++ -Compilertoolset (MSVC) kann auch als eigenständiges Paket heruntergeladen werden, das die Visual Studio-IDE nicht enthält.
+Sie können mithilfe von Tools, die in Visual Studio enthalten sind, C- und C++-Anwendungen auf der Befehlszeile erstellen. Das Microsoft-C++-Compilertoolset (MSVC) kann auch als eigenständiges Paket heruntergeladen werden. Sie müssen die Visual Studio IDE nicht installieren, wenn Sie nicht vorhaben, diese zu verwenden.
+
+> [!NOTE]
+> In diesem Artikel wird beschrieben, wie Sie eine Umgebung einrichten, in der Sie die einzelnen Compiler, Linker, Bibliotheksprogramme und andere grundlegende Tools verwenden. Das native Projektbuildsystem MSBuild verwendet die Umgebung nicht wie im Artikel beschrieben. Weitere Informationen zum Verwenden von MSBuild an der Befehlszeile finden Sie unter [C++: MSBuild in der Befehlszeile](msbuild-visual-cpp.md).
 
 ## <a name="download-and-install-the-tools"></a>Herunterladen und Installieren der Tools
 
@@ -231,16 +234,20 @@ Verwenden Sie den Compiler (cl.exe), um Quellcodedateien in Apps, Bibliotheken u
 [Link](reference/linking.md)<br/>
 Verwenden Sie den Linker (link.exe), um kompilierte Objektdateien in Apps und DLLs zu verknüpfen.
 
-[MSBuild](msbuild-visual-cpp.md)<br/>
-Verwenden Sie MSBuild (msbuild.exe) und eine Projektdatei (.vcxproj), um einen Build zu konfigurieren und das Toolset indirekt aufzurufen. Dies entspricht dem Ausführen des Befehls **Build** für Projekte oder **Projektmappe erstellen** in der Visual Studio-IDE. Das Ausführen von MSBuild über die Befehlszeile ist ein fortgeschrittenes Szenario und wird allgemein nicht empfohlen.
-
-[DEVENV](/visualstudio/ide/reference/devenv-command-line-switches)<br/>
-Verwenden Sie DEVENV (devenv.exe) in Kombination mit einem Befehlszeilenschalter, wie **/Build** oder **/Clean**, um bestimmte Buildbefehle auszuführen, ohne die Visual Studio-IDE anzuzeigen. Im Allgemeinen ist DEVENV der direkten Verwendung von MSBuild vorzuziehen, da Sie Visual Studio die Komplexität von MSBuild überlassen können.
-
 [NMAKE](reference/nmake-reference.md)<br/>
 Verwenden Sie NMAKE (nmake.exe) unter Windows, um C++-Projekte auf der Grundlage eines traditionellen Makefiles zu erstellen.
 
-Wenn Sie Builds über die Befehlszeile ausführen, ist der F1-Befehl für Soforthilfe nicht verfügbar. Stattdessen können Sie eine Suchmaschine verwenden, um Informationen über Warnungen, Fehler und Meldungen abzurufen, oder Sie können die Offline-Hilfedateien verwenden. Um die Suche in [docs.microsoft.com](https://docs.microsoft.com/cpp/) zu verwenden, geben Sie den Suchbegriff in das Suchfeld oben auf der Seite ein.
+Wenn Sie Builds über die Befehlszeile ausführen, ist der F1-Befehl für Soforthilfe nicht verfügbar. Stattdessen können Sie eine Suchmaschine verwenden, um Informationen zu Warnungen, Fehlern und Meldungen abzurufen. Sie können auch die Offlinehilfedateien herunterladen und verwenden. Um die Suche in [docs.microsoft.com](https://docs.microsoft.com/cpp/) zu verwenden, geben Sie Ihre Abfrage in das Suchfeld oben in einem beliebigen Artikel ein.
+
+## <a name="command-line-project-management-tools"></a>Befehlszeilentools für die Projektverwaltung
+
+Die Visual Studio IDE verwendet ein natives Buildsystem auf der Basis von MSBuild. Sie können MSBuild direkt aufrufen oder das native Projektsystem ohne die IDE verwenden:
+
+[MSBuild](msbuild-visual-cpp.md)<br/>
+Verwenden Sie MSBuild (msbuild.exe) und eine Projektdatei (.vcxproj), um einen Build zu konfigurieren und das Toolset indirekt aufzurufen. Dies entspricht dem Ausführen des Befehls **Build** für Projekte oder **Projektmappe erstellen** in der Visual Studio-IDE. Das Ausführen von MSBuild über die Befehlszeile ist ein fortgeschrittenes Szenario und wird allgemein nicht empfohlen. Ab Version 16.5 von Visual Studio verwendet MSBuild nicht mehr die Befehlszeilenumgebung, um das verwendete Toolset und die verwendeten Bibliotheken zu steuern.
+
+[DEVENV](/visualstudio/ide/reference/devenv-command-line-switches)<br/>
+Verwenden Sie DEVENV (devenv.exe) in Kombination mit einem Befehlszeilenschalter, wie **/Build** oder **/Clean**, um bestimmte Buildbefehle auszuführen, ohne die Visual Studio-IDE anzuzeigen. Im Allgemeinen ist DEVENV der direkten Verwendung von MSBuild vorzuziehen, da Sie Visual Studio die Komplexität von MSBuild überlassen können. Ab Version 16.5 von Visual Studio verwendet DEVENV nicht mehr die Befehlszeilenumgebung, um das verwendete Toolset und die verwendeten Bibliotheken zu steuern.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 

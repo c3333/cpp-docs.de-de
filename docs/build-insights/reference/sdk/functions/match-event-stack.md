@@ -1,6 +1,6 @@
 ---
 title: MatchEventStack
-description: Die C++ Build Insights SDK MatchEventStack-Funktionsreferenz.
+description: Die Funktionsreferenz zu MatchEventStack im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: a223d420e8c48667fbd1c6569f02d0486f597b5e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: ae476c402c3ea0cad558ce41a979b4233e0f1dd3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323877"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224122"
 ---
 # <a name="matcheventstack"></a>MatchEventStack
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MatchEventStack` Funktion wird verwendet, um einen Ereignisstapel mit einer bestimmten Ereignishierarchie abzugleichen. Abgestimmte Hierarchien werden zur weiteren Verarbeitung an einen Handler weitergeleitet. Weitere Informationen zu Ereignissen, Ereignisstapeln und Hierarchien finden Sie in der [Ereignistabelle](../event-table.md).
+Die `MatchEventStack`-Funktion wird zum Abgleichen eines Ereignisstapels mit einer bestimmten Ereignishierarchie verwendet. Übereinstimmende Hierarchien werden zur weiteren Verarbeitung an einen Handler weitergeleitet. Weitere Informationen zu Ereignissen, Ereignisstapeln und Hierarchien finden Sie in der [Ereignistabelle](../event-table.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -44,35 +44,35 @@ bool MatchEventStack(
 ### <a name="parameters"></a>Parameter
 
 *TEvent*\
-Der Typ des ältesten übergeordneten Elements, das im Ereignisstapel übereinstimmen soll.
+Der Typ des ältesten übergeordneten Elements, das im Ereignisstapel abgeglichen werden soll.
 
 *TEvents*\
-Die verbleibenden Typen, die Im Ereignisstapel übereinstimmen sollen.
+Die verbleibenden Typen, die im Ereignisstapel abgeglichen werden sollen.
 
 *TCallable*\
-Ein Typ, `operator()`der unterstützt. Weitere Informationen darüber, welche Argumente an diesen Operator übergeben werden, finden Sie in der beschreibung des *aufrufbaren* Parameters.
+Ein Typ, der `operator()` unterstützt. Weitere Informationen zu den Argumenten, die an diesen Operator übergeben werden, finden Sie in der Beschreibung des Parameters *callable*.
 
 *TExtraArgs*\
-Die Typen der zusätzlichen `MatchEventStack`Argumente, die an übergeben werden.
+Die Typen der zusätzlichen Argumente, die an `MatchEventStack` übergeben werden.
 
 *eventStack*\
-Der Ereignisstapel, der mit der von *TEvent* und *TEvents*beschriebenen Ereignistyphierarchie übereinstimmen soll.
+Der Ereignisstapel, der mit der von *TEvent* und *TEvents* beschriebenen Ereignistyphierarchie abgeglichen werden soll.
 
-*Aufrufbaren*\
-Beim erfolgreichen Abgleichen des Ereignisstapels mit der von `MatchEventStack` *TEvent* und *TEvents*beschriebenen Ereignistyphierarchie ruft *aufrufbar*auf. Es wird an *ein* r-Wert-Argument für jeden Typ in der Ereignishierarchie überführt. Das *extraArgs-Parameterpaket* wird in den verbleibenden Parametern von *callable*perfekt weitergeleitet.
+*callable*\
+Nach erfolgreichem Abgleich des Ereignisstapels mit der von *TEvent* und *TEvents* beschriebenen Ereignistyphierarchie ruft `MatchEventStack` den Parameter *callable* auf. Für jeden Typ in der Ereignishierarchie wird ein Rückgabewertargument an *callable* übergeben. Das Parameterpaket *extraArgs* wird perfekt an die übrigen *callable*-Parameter weitergeleitet.
 
 *extraArgs*\
-Die Argumente, die zusammen mit dem übereinstimmenden Ereignistyp perfekt weitergeleitet werden, um *aufrufbar* zu sein.
+Die Argumente, die zusammen mit dem übereinstimmenden Ereignistyp perfekt an den Parameter *callable* weitergeleitet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **bool-Wert,** der **wahr** ist, wenn der Abgleich erfolgreich war, oder andernfalls **false.**
+Ein **`bool`** -Wert, der **`true`** ist, wenn der Abgleich erfolgreich war. Andernfalls wird **`false`** zurückgegeben.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Das letzte Ereignis in *eventStack* wird immer mit dem letzten \[Eintrag im verketteten *TEvent*, *TEvents...* \] Typliste. Alle anderen *TEvent-* und *TEvents-Einträge* können mit jeder Position in *eventStack* mit Ausnahme der letzten übereinstimmen, sofern sie in der gleichen Reihenfolge sind.
+Das letzte Ereignis in *eventStack* wird immer mit dem letzten Eintrag in der verketteten Typliste \[*TEvent*, *TEvents...* \] abgeglichen. Alle anderen *TEvent*- und *TEvents*-Einträge können mit jeder Position in *eventStack* außer der letzten übereinstimmen, vorausgesetzt, sie liegen in der gleichen Reihenfolge vor.
 
-Ereignistypen, die für die Parameter *TEvent* und *TEvents* verwendet werden sollen, werden aus einer Liste von *Erfassungsklassen*ausgewählt. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie in der [Ereignistabelle](../event-table.md).
+Die Ereignistypen, die für die Parameter *TEvent* und *TEvents* verwendet werden sollen, werden aus eine Liste mit *Erfassungsklassen* ausgewählt. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie in der [Ereignistabelle](../event-table.md).
 
 ## <a name="example"></a>Beispiel
 

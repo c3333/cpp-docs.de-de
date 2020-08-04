@@ -10,12 +10,12 @@ helpviewer_keywords:
 - functions [C++], exporting
 - exports table [C++]
 ms.assetid: a08f86c4-5996-460b-ae54-da2b764045f0
-ms.openlocfilehash: 6bdf5b86724ae07aa073a9feb1cc4d5723bc6e6b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e6a8555561fcf935b3968bd6cb6d19ec42a78563
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62196741"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224018"
 ---
 # <a name="exporting-from-a-dll"></a>Exportieren aus einer DLL
 
@@ -25,7 +25,7 @@ Es gibt zwei Methoden zum Exportieren von Funktionen aus einer DLL:
 
 - Erzeugen Sie eine Moduldefinitionsdatei (.def), und verwenden Sie beim Erstellen der DLL diese DEF-Datei. Verwenden Sie diese Methode, wenn Sie [Funktionen aus einer DLL über die Ordnungszahl statt über den Namen exportieren](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md) möchten.
 
-- Verwendung des **__declspec(dllexport)** -Schlüsselwortes in der Funktionsdefinition.
+- Verwenden Sie das Schlüsselwort **`__declspec(dllexport)`** in der Funktionsdefinition.
 
 Wenn Sie Funktionen mit einer dieser beiden Methoden exportieren, sollten Sie darauf achten, die [__stdcall](../cpp/stdcall.md)-Aufrufkonvention zu verwenden.
 

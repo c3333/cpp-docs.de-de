@@ -5,18 +5,18 @@ helpviewer_keywords:
 - __declspec(dllimport) keyword [C++]
 - importing DLLs [C++], __declspec(dllimport)
 ms.assetid: edb4da4e-f83a-44cf-a668-9239d49dbe42
-ms.openlocfilehash: fd7d42ec5a76b92aa789a3a20f38e6b2c0fd2cb1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 50b630334cfd8752935b54549190d698fa5136bb
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79440411"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223979"
 ---
 # <a name="import-into-an-application-using-__declspecdllimport"></a>Importieren in eine Anwendung mithilfe von __declspec(dllimport)
 
-Wenn ein Programm öffentliche, durch eine DLL definierte Symbole verwendet, wird dieser Vorgang als Importieren bezeichnet. Wenn Sie Headerdateien für Anwendungen erstellen, die für den Erstellungsvorgang Ihre DLLs verwenden, sollten Sie für die Deklarationen der öffentlichen Symbole **__declspec(dllimport)** verwenden. Das **__declspec(dllimport)** -Schlüsselwort funktioniert unabhängig davon, ob der Export über DEF-Dateien oder über das **__declspec(dllexport)** -Schlüsselwort erfolgt.
+Wenn ein Programm öffentliche, durch eine DLL definierte Symbole verwendet, wird dieser Vorgang als Importieren bezeichnet. Wenn Sie Headerdateien für Anwendungen erstellen, die Ihre DLLs zum Kompilieren verwenden, sollten Sie für die Deklarationen der öffentlichen Symbole **`__declspec(dllimport)`** verwenden. Das Schlüsselwort **`__declspec(dllimport)`** funktioniert unabhängig davon, ob Sie DEF-Dateien oder das Schlüsselwort **`__declspec(dllexport)`** für den Export verwenden.
 
-Definieren Sie ein Makro für **__declspec(dllimport)** , und verwenden Sie dieses Makro zur Deklaration aller importierten Symbole, um den Code lesbarer zu gestalten:
+Definieren Sie ein Makro für **`__declspec(dllimport)`** , und verwenden Sie dieses zur Deklaration aller importierten Symbole, um den Code lesbarer zu gestalten:
 
 ```
 #define DllImport   __declspec( dllimport )
@@ -25,7 +25,7 @@ DllImport int  j;
 DllImport void func();
 ```
 
-Die Verwendung von **__declspec(dllimport)** ist bei Funktionsdeklarationen optional, der Compiler generiert jedoch effizienteren Code, wenn Sie dieses Schlüsselwort verwenden. **__declspec(dllimport)** muss jedoch verwendet werden, damit die importierende ausführbare Datei auf die öffentlichen Datensymbole und Objekte der DLL zugreifen kann. Beachten Sie, dass die Benutzer Ihrer DLL noch eine Verknüpfung mit einer Importbibliothek herstellen müssen.
+Die Verwendung von **`__declspec(dllimport)`** ist bei Funktionsdeklarationen optional, der Compiler generiert jedoch effizienteren Code, wenn Sie dieses Schlüsselwort verwenden. **`__declspec(dllimport)`** muss jedoch verwendet werden, damit die importierende ausführbare Datei auf die öffentlichen Datensymbole und Objekte der DLL zugreifen kann. Beachten Sie, dass die Benutzer Ihrer DLL noch eine Verknüpfung mit einer Importbibliothek herstellen müssen.
 
 Sie können dieselbe Headerdatei sowohl für die DLL als auch für die Clientanwendung nutzen. Verwenden Sie zu diesem Zweck ein spezielles Präprozessorsymbol, das angibt, ob die DLL oder die Clientanwendung erstellt wird. Zum Beispiel:
 

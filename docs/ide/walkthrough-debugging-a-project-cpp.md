@@ -6,18 +6,18 @@ helpviewer_keywords:
 - project debugging [C++]
 - debugging projects
 ms.assetid: a5cade77-ba51-4b03-a7a0-6897e3cd6a59
-ms.openlocfilehash: ce792345b045a1e647de6363ca094fb3f3826b73
-ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.openlocfilehash: 61433213619c16caf67de905a6da93c7360db298
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400978"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87219676"
 ---
 # <a name="walkthrough-debugging-a-project-c"></a>Exemplarische Vorgehensweise: Debuggen eines Projekts (C++)
 
 In dieser exemplarischen Vorgehensweise bearbeiten Sie das Programm, um das beim Testen des Projekts gefundene Problem zu beheben.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 - In dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass Sie die Grundlagen der Programmiersprache C++ beherrschen.
 
@@ -47,7 +47,7 @@ In dieser exemplarischen Vorgehensweise bearbeiten Sie das Programm, um das beim
 
 1. Klicken Sie in der Menüleiste auf **Debuggen** > **Prozedurschritt**, oder drücken Sie **F10**, um das Programm schrittweise zu durchlaufen.
 
-   Beachten Sie, dass der Wert von `totalParticipants` nach der Ausführung jedes `Cardgame`-Konstruktors zunimmt. Wenn die `PlayGames`-Funktion zurückkehrt, sobald jede `Cardgame`-Instanz den Gültigkeitsbereich verlässt und gelöscht wird (und der Destruktor aufgerufen wird), nimmt der Wert von `totalParticipants` ab. Direkt vor der Ausführung der `return`-Anweisung ist `totalParticipants` gleich 0.
+   Beachten Sie, dass der Wert von `totalParticipants` nach der Ausführung jedes `Cardgame`-Konstruktors zunimmt. Wenn die `PlayGames`-Funktion zurückkehrt, sobald jede `Cardgame`-Instanz den Gültigkeitsbereich verlässt und gelöscht wird (und der Destruktor aufgerufen wird), nimmt der Wert von `totalParticipants` ab. Direkt vor der Ausführung der **`return`** -Anweisung ist `totalParticipants` gleich 0.
 
 1. Setzen Sie das schrittweise Durchlaufen des Programms fort, bis es beendet wird, oder führen Sie das Programm aus, indem Sie in der Menüleiste auf **Debuggen** > **Ausführen** klicken oder **F5** drücken.
 

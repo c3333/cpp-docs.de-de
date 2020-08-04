@@ -3,12 +3,12 @@ title: CppProperties.json-Referenz
 ms.date: 08/09/2019
 helpviewer_keywords:
 - CppProperties.json file [C++]
-ms.openlocfilehash: be6db52e1e62244e9f44db8ac86238242ab50ca0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 2409c1d93d4e9d814407dbd4334daa73ae630775
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328717"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87224057"
 ---
 # <a name="cpppropertiesjson-reference"></a>CppProperties.json-Referenz
 
@@ -28,7 +28,7 @@ Eine Konfiguration kann folgende Eigenschaften aufweisen:
 |`forcedInclude`|Ein Header, der automatisch in jede Kompilierungseinheit eingefügt wird (entspricht /FI bei MSVC oder -include bei Clang)|
 |`undefines`|Die Liste der Makros, die nicht definiert sind (entspricht /U bei MSVC)|
 |`intelliSenseMode`|Die zu verwendende IntelliSense-Engine Sie können eine der vordefinierten, architekturspezifischen Varianten für MSVC, GCC oder Clang angeben.|
-|`environments`|Dies sind die benutzerdefinierten Variablen, die sich wie Umgebungsvariablen in einer Eingabeaufforderung verhalten und auf die über das Makro „${env.\<VARIABLE>}“ zugegriffen wird.|
+|`environments`|Dies sind benutzerdefinierte Variablen, die sich wie Umgebungsvariablen in einer Eingabeaufforderung verhalten und auf die über das Makro „${env.\<VARIABLE>}“ zugegriffen wird.|
 
 ### <a name="intellisensemode-values"></a>intelliSenseMode-Werte
 
@@ -85,7 +85,7 @@ Wenn die Linux-Workload installiert ist, können folgende Umgebungen verwendet w
 
 ## <a name="user-defined-environments"></a><a name="user_defined_environments"></a> Benutzerdefinierte Umgebungen
 
-Optional können Sie die `environments`-Eigenschaft verwenden, um Variablen in *CppProperties.json* entweder global oder pro Konfiguration zu definieren. Diese Variablen verhalten sich wie Umgebungsvariablen im Kontext eines „Ordner öffnen“-Projekts. Auf diese kann über die ${env.\<VARIABLE>}-Syntax von *tasks.vs.json* und *launch.vs.json* nach deren Definition zugegriffen werden. Allerdings werden sie in einer Eingabeaufforderung, die Visual Studio intern verwendet, nicht notwendigerweise als tatsächliche Umgebungsvariablen festgelegt.
+Optional können Sie die `environments`-Eigenschaft verwenden, um Variablen in *CppProperties.json* entweder global oder pro Konfiguration zu definieren. Diese Variablen verhalten sich wie Umgebungsvariablen im Kontext eines „Ordner öffnen“-Projekts. Der Zugriff auf die Variablen erfolgt über die ${env.\<VARIABLE>}- Syntax von *tasks.vs.json* und *launch.vs.json*, nachdem sie hier definiert wurden. Allerdings werden sie in einer Eingabeaufforderung, die Visual Studio intern verwendet, nicht notwendigerweise als tatsächliche Umgebungsvariablen festgelegt.
 
 **Visual Studio 2019, Version 16.4 und höher:** Konfigurationsspezifische Variablen, die in *CppProperties.json* definiert sind, werden automatisch durch Debugziele und Aufgaben abgerufen, ohne dass `inheritEnvironments` festgelegt werden muss. Debugziele werden automatisch mit der von Ihnen in *CppProperties.json* angegebenen Umgebung gestartet.
 
@@ -160,7 +160,7 @@ Wenn in Ihrem Projekt ein Includeordner sowie *windows.h* und andere allgemeine 
 
 ## <a name="troubleshoot-intellisense-errors"></a>Problembehandlung für IntelliSense-Fehler
 
-Wenn IntelliSense nicht so angezeigt wird, wie Sie es erwarten, können Sie ein Troubleshooting durchführen, indem Sie auf **Extras** > **Optionen** > **Text-Editor** > **C/C++**  > **Erweitert** klicken und **Protokollierung aktivieren** auf **True** festlegen. Versuchen Sie für den Beginn, den **Protokolliergrad** auf 5 und die **Protokollierungsfilter** auf 8 festzulegen.
+Wenn IntelliSense nicht so angezeigt wird, wie Sie es erwarten, können Sie eine Problembehandlung durchführen, indem Sie auf **Extras** > **Optionen** > **Text-Editor** > **C/C++**  > **Erweitert** klicken und **Protokollierung aktivieren** auf **`true`** festlegen. Versuchen Sie für den Beginn, den **Protokolliergrad** auf 5 festzulegen und die **Protokollierungsfilter** auf 8.
 
 ![Diagnoseprotokollierung](media/diagnostic-logging.png)
 

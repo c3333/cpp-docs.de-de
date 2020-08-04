@@ -6,12 +6,12 @@ ms.technology: cpp-language
 ms.assetid: 475da6e9-0d78-4b4e-bd23-f41c406c4efe
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: d4ec3036a5c4d42d9d98e91f628416b75e596d12
-ms.sourcegitcommit: 3f91111c0350c0237fddb82766c290307f20e659
+ms.openlocfilehash: 56719f6919b9329e74c947bc74053562d7743215
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83630459"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213943"
 ---
 # <a name="microsoft-c-language-conformance-table"></a>Microsoft C++-Sprachkonformität: Tabelle
 
@@ -397,7 +397,7 @@ __VS 2019 16.6__ gibt Features an, die in Visual Studio 2019 Version 16.6 unter
 
 ### <a name="notes"></a>Hinweise
 
-<a name="note_A"></a> __A__ Im Modus [`/std:c++14`](../build/reference/std-specify-language-standard-version.md) werden dynamische Ausnahmespezifikationen nicht implementiert, und `throw()` wird weiterhin als Synonym von `__declspec(nothrow)` behandelt. In C++17 wurden dynamische Ausnahmespezifikationen hauptsächlich durch P0003R5 entfernt. Nur `throw()` wurde noch nicht entfernt, weshalb es nun als veraltet markiert wird und als Synonym von `noexcept` behandelt werden muss. Im Modus [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) entspricht MSVC nun dem Standard, da `throw()` das gleiche Verhalten wie `noexcept` aufweist (d. h. Erzwingung durch Beenden).
+<a name="note_A"></a> __A__ Im Modus [`/std:c++14`](../build/reference/std-specify-language-standard-version.md) werden dynamische Ausnahmespezifikationen nicht implementiert, und `throw()` wird weiterhin als Synonym von `__declspec(nothrow)` behandelt. In C++17 wurden dynamische Ausnahmespezifikationen größtenteils durch P0003R5 entfernt, bis auf eine: `throw()` ist als veraltet markiert und muss sich wie ein Synonym von **`noexcept`** verhalten. Im Modus [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) entspricht MSVC nun dem Standard, da `throw()` das gleiche Verhalten wie **`noexcept`** aufweist: Erzwingung durch Beenden.
 
 Die Compileroption [`/Zc:noexceptTypes`](../build/reference/zc-noexcepttypes.md) fordert das alte Verhalten von `__declspec(nothrow)` an. Wahrscheinlich wird `throw()` in C++20 entfernt. Es wurden neue Compilerwarnungen für Probleme mit Ausnahmespezifikationen unter [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) und [`/permissive-`](../build/reference/permissive-standards-conformance.md) hinzugefügt, um die Codemigration aufgrund dieser Änderungen im Standard und unserer Implementierung zu erleichtern.
 
@@ -407,7 +407,7 @@ Die Compileroption [`/Zc:noexceptTypes`](../build/reference/zc-noexcepttypes.md)
 
 <a name="note_D"></a>__G__ Unterstützt unter [`/std:c++14`](../build/reference/std-specify-language-standard-version.md), mit einer unterdrückbaren Warnung ([`C4984`](../error-messages/compiler-warnings/compiler-warning-c4984.md)).
 
-<a name="note_E"></a> __E__ Dies ist eine völlig neue Implementierung, die nicht mit der vorherigen `std::experimental`-Version kompatibel ist. Sie ist aufgrund von Symlink-Unterstützung, Fehlerbehebungen und Änderungen des erforderlichen Standardverhaltens erforderlich. Wenn \<filesystem> verwendet wird, schließt dies aktuell das neue `std::filesystem`- und das vorherige `std::experimental::filesystem`-Element ein, und wenn \<experimental/filesystem> verwendet wird, schließt dies nur die alte experimentelle Implementierung ein. Die experimentelle Implementierung wird mit dem nächsten ABI unterbrechenden Release der Bibliotheken entfernt.
+<a name="note_E"></a> __E__ Dies ist eine völlig neue Implementierung, die nicht mit der vorherigen `std::experimental`-Version kompatibel ist. Sie ist aufgrund von Symlink-Unterstützung, Fehlerbehebungen und Änderungen des erforderlichen Standardverhaltens erforderlich. Derzeit werden durch Einschließen von \<filesystem> das neue `std::filesystem`- und das vorherige `std::experimental::filesystem`-Element bereitgestellt, und durch Einschließen von \<experimental/filesystem> wird nur die alte experimentelle Implementierung bereitgestellt. Die experimentelle Implementierung wird mit dem nächsten ABI unterbrechenden Release der Bibliotheken entfernt.
 
 <a name="note_G"></a> __G__ Unterstützt durch eine intrinsische Compilerfunktion.
 

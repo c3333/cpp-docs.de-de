@@ -7,12 +7,12 @@ helpviewer_keywords:
 - storing structures
 - packing structures
 ms.assetid: 60ff292f-2595-4f37-ae00-4c4b4f047196
-ms.openlocfilehash: 8e15f39b5a7a78da117c3b8a551ebfba5e07c194
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 81f5b640585ec3b55e4e3d65b37ea0929a757473
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62336167"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229479"
 ---
 # <a name="storage-and-alignment-of-structures"></a>Speicherung und Ausrichtung von Strukturen
 
@@ -36,7 +36,7 @@ wobei *n* die Komprimierungsgröße ist, ausgedrückt mit der /Zp[*n*]-Option, u
 
 Um mit dem `pack`-Pragma eine andere Komprimierung als die in der Befehlszeile für eine bestimmte Struktur angegebene festzulegen, geben Sie das `pack`-Pragma, bei dem die Komprimierungsgröße 1, 2, 4, 8 oder 16 ist, vor der Struktur an. Um die an der Befehlszeile angegebene Komprimierung wiederherzustellen, geben Sie das `pack`-Pragma ohne Argumente an.
 
-Bitfelder verwenden für den Microsoft C-Compiler standardmäßig die Größe **long**. Strukturmember werden nach der Größe des Typs oder der /Zp [*n*]-Größe ausgerichtet, je nachdem, welche kleiner ist. Die Standardgröße ist 4.
+Bitfelder verwenden für den Microsoft-C-Compiler standardmäßig die Größe **`long`** . Strukturmember werden nach der Größe des Typs oder der /Zp [*n*]-Größe ausgerichtet, je nachdem, welche kleiner ist. Die Standardgröße ist 4.
 
 **Ende Microsoft-spezifisch**
 

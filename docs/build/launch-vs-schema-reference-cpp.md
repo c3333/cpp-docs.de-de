@@ -3,12 +3,12 @@ title: launch.vs.json-Schemareferenz (C++)
 ms.date: 08/20/2019
 helpviewer_keywords:
 - launch.vs.json file [C++]
-ms.openlocfilehash: ff4713642ab95a9bbc31f1a06236de459e53f9c3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0410f22a680d5bfc12270ff686938a54e2e8a8fd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323055"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223953"
 ---
 # <a name="launchvsjson-schema-reference-c"></a>launch.vs.json-Schemareferenz (C++)
 
@@ -27,8 +27,8 @@ Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Kl
 |`inheritEnvironments`|array|Hiermit werden mehrere Umgebungsvariablen angegeben, die aus mehreren Quellen geerbt werden. Manche Variablen können Sie in Dateien wie *CMakeSettings.json* oder *CppProperties.json* definieren und für den Debugkontext verfügbar machen.  **Visual Studio 16.4:** Geben Sie Umgebungsvariablen pro Ziel an. Verwenden Sie dazu die `env.VARIABLE_NAME`-Syntax. Wenn Sie die Festlegung einer Variable aufheben möchten, legen Sie sie auf „null“ fest.|
 |`args`|array|Hiermit werden die Befehlszeilenargumente angegeben, die an das gestartete Programm übergeben werden.|
 |`currentDir`|string|Hiermit wird der vollständige Verzeichnispfad zum Buildziel angegeben. Er wird automatisch erkannt, wenn für diesen Parameter nichts festgelegt wurde.|
-|`noDebug`|boolean|Hiermit wird angegeben, ob das gestartete Programm debuggt werden soll. Wenn nichts angegeben wird, ist der Standardwert für diesen Parameter `false`.|
-|`stopOnEntry`|boolean|Hiermit wird angegeben, ob beim Starten des Prozesses eine Unterbrechung erfolgt und der Debugger angefügt wird. Der Standardwert für diesen Parameter ist `false`.|
+|`noDebug`|boolean|Hiermit wird angegeben, ob das gestartete Programm debuggt werden soll. Wenn nichts angegeben wird, lautet der Standardwert für diesen Parameter **`false`** .|
+|`stopOnEntry`|boolean|Hiermit wird angegeben, ob beim Starten des Prozesses eine Unterbrechung erfolgt und der Debugger angefügt wird. Der Standardwert für diesen Parameter ist **`false`** .|
 |`remoteMachine`|string|Hiermit wird der Name des Remotecomputers angegeben, auf dem das Programm gestartet wird.|
 |`env`|array| Hiermit wird eine Schlüssel-Wert-Liste benutzerdefinierter Umgebungsvariablen angegeben: env:{"myEnv":"myVal"}.|
 |`portName`|string|Hiermit wird der Name des Ports beim Anfügen an einen Prozess, der ausgeführt wird, angegeben.|
@@ -58,9 +58,9 @@ Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Kl
 |`launchCompleteCommand`|string|Hiermit wird der Befehl angegeben, der ausgeführt werden soll, wenn der Debugger vollständig eingerichtet ist, damit der Zielprozess ausgeführt wird. Zulässige Werte sind „exec-run“, „exec-continue“ und „None“. Der Standardwert ist „exec-run“.|
 |`debugServerPath`|string|Hiermit wird ein optionaler vollständiger Pfad zum zu startenden Debugserver angegeben. Der Standardwert ist „null“.|
 |`debugServerArgs`|string|Hiermit werden optionale Debugserverargumente angegeben. Der Standardwert ist „null“.|
-|`filterStderr`|boolean|Hiermit wird ein stderr-Datenstrom für ein vom Server gestartetes Muster gesucht und stderr in der Debugausgabe protokolliert. Wird standardmäßig auf `false` festgelegt.|
+|`filterStderr`|boolean|Hiermit wird ein stderr-Datenstrom für ein vom Server gestartetes Muster gesucht und stderr in der Debugausgabe protokolliert. Der Standardwert lautet **`false`** .|
 |`coreDumpPath`|string|Hiermit wird ein optionaler vollständiger Pfad zu einer Kern-Speicherabbilddatei für das angegebene Programm angegeben. Der Standardwert ist „null“.|
-externalConsole|boolean|Wenn „true“ festgelegt ist, wird eine Konsole für die zu debuggende Komponente gestartet. Wenn `false` festgelegt ist, wird keine Konsole gestartet. Wird standardmäßig auf `false` festgelegt. HINWEIS: Diese Option wird in manchen Fällen aus technischen Gründen ignoriert.|
+externalConsole|boolean|Wenn „true“ festgelegt ist, wird eine Konsole für die zu debuggende Komponente gestartet. Wenn **`false`** festgelegt ist, wird keine Konsole gestartet. Der Standardwert lautet **`false`** . HINWEIS: Diese Option wird in manchen Fällen aus technischen Gründen ignoriert.|
 |`pipeTransport`|string|Falls angegeben, weist diese Option den Debugger an, eine Verbindung mit einem Remotecomputer mithilfe einer anderen ausführbaren Datei als Pipe herzustellen, die Standardeingaben/-ausgaben zwischen Visual Studio und dem MI-fähigen Debugger (z. B. gdb) weiterleitet. Zulässige Werte sind eine oder mehrere [Pipetransportoptionen](#pipe_transport_options).|
 
 ## <a name="launch-setup-commands"></a><a name="launch_setup_commands"></a> Startsetupbefehle
@@ -71,7 +71,7 @@ Folgende Optionen können mit der Eigenschaft `setupCommands` verwendet werden:
 |-|-|-|
 |`text`|string|Hiermit wird der auszuführende Debuggerbefehl angegeben.|
 |`description`|string|Hiermit wird eine optionale Beschreibung des Befehls angegeben.|
-|`ignoreFailures`|boolean|Wenn „true“ festgelegt ist, sollten durch den Befehl verursachte Fehler ignoriert werden. Wird standardmäßig auf `false` festgelegt.|
+|`ignoreFailures`|boolean|Wenn „true“ festgelegt ist, sollten durch den Befehl verursachte Fehler ignoriert werden. Der Standardwert lautet **`false`** .|
 
 ## <a name="pipe-transport-options"></a><a name = "pipe_transport_options"></a> Pipetransportoptionen
 
@@ -84,7 +84,7 @@ Folgende Optionen können mit der Eigenschaft `pipeTransport` verwendet werden:
 |`pipeArgs`|array|Hiermit werden Befehlszeilenargumente angegeben, die zum Konfigurieren der Verbindung an das Pipeprogramm übergeben werden.|
 |`debuggerPath`|string|Hiermit wird der vollständige Pfad zum Debugger auf dem Zielcomputer angegeben, z. B. „/usr/bin/gdb“.|
 |`pipeEnv`|Objekt|Hiermit werden Umgebungsvariablen angegeben, die an das Pipeprogramm übergeben werden.|
-|`quoteArgs`|boolean|Wenn einzelne Argumente Zeichen enthalten (z. B. Leerzeichen oder Tabstoppzeichen), sollen diese in Anführungszeichen gesetzt werden? Wenn `false` festgelegt ist, wird der Debuggerbefehl nicht mehr automatisch in Anführungszeichen eingeschlossen. Der Standardwert ist `true`.|
+|`quoteArgs`|boolean|Wenn einzelne Argumente Zeichen enthalten (z. B. Leerzeichen oder Tabstoppzeichen), sollen diese in Anführungszeichen gesetzt werden? Wenn **`false`** festgelegt ist, wird der Debuggerbefehl nicht mehr automatisch in Anführungszeichen eingeschlossen. Der Standardwert lautet **`true`** .|
 
 ## <a name="source-file-map-options"></a><a name="source_file_map_options"></a> Quelldateizuordnungsoptionen
 
@@ -93,4 +93,4 @@ Folgende Optionen können mit der Eigenschaft `sourceFileMap` verwendet werden:
 ||||
 |-|-|-|
 |`editorPath`|string|Hiermit wird der Speicherort des Quellcodes angegeben, den der Editor sucht.|
-|`useForBreakpoints`|boolean|Beim Festlegen von Breakpoints sollte diese Quellzuordnung verwendet werden. Wenn `false` festgelegt ist, werden nur der Dateiname und die Zeilennummer zum Festlegen von Breakpoints verwendet. Wenn `true` festgelegt ist, werden Breakpoints nur mit dem vollständigen Pfad zur Datei und der Zeilennummer festgelegt, wenn diese Quellzuordnung verwendet wird. Andernfalls werden beim Festlegen von Breakpoints nur Dateiname und Zeilennummer verwendet. Der Standardwert ist `true`.|
+|`useForBreakpoints`|boolean|Beim Festlegen von Breakpoints sollte diese Quellzuordnung verwendet werden. Wenn **`false`** festgelegt ist, werden nur der Dateiname und die Zeilennummer zum Festlegen von Breakpoints verwendet. Wenn **`true`** festgelegt ist, werden Breakpoints nur dann mit dem vollständigen Pfad zur Datei und der Zeilennummer festgelegt, wenn diese Quellzuordnung verwendet wird. Andernfalls werden beim Festlegen von Breakpoints nur Dateiname und Zeilennummer verwendet. Der Standardwert lautet **`true`** .|

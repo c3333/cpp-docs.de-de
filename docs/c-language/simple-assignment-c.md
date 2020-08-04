@@ -9,12 +9,12 @@ helpviewer_keywords:
 - simple assignment operator
 - equal sign
 ms.assetid: e7140a0a-7104-4b3a-b293-7adcc1fdd52b
-ms.openlocfilehash: 77c61101e9540a0d9469e7176eb15992a73b4b09
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 64112a54828a9a6626e78e556e8fe6dc52a3300f
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62158279"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229544"
 ---
 # <a name="simple-assignment-c"></a>Einfache Zuweisung (C)
 
@@ -27,7 +27,7 @@ int y;
 x = y;
 ```
 
-In diesem Beispiel wird der Wert von `y` in den Typ **double** konvertiert und `x` zugewiesen.
+In diesem Beispiel wird der Wert von `y` in den Typ **`double`** konvertiert und `x` zugewiesen.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - extension DLLs [C++], mutual imports
 - exporting DLLs [C++], mutual imports
 ms.assetid: 2cc29537-92ee-4d92-af39-8b8b3afd808f
-ms.openlocfilehash: f01e69138a6ca1744645a1c2fa8525b7088e260d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 771ce7506359178c1b8346598e93c30a20329fe8
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62295672"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229791"
 ---
 # <a name="mutual-imports"></a>Gegenseitige Importe
 
@@ -48,7 +48,7 @@ Verknüpfen von zwei DLLs mit gegenseitigen Importen
 
 Sie können das Präprozessorsymbol `_AFXEXT` für Ihre MFC-Erweiterungs-DLLs verwenden, solange Sie nicht über mehrere Ebenen von MFC-Erweiterungs-DLLs verfügen. Wenn Sie über MFC-Erweiterungs-DLLs verfügen, die Klassen aus Ihren eigenen MFC-Erweiterungs-DLLs aufrufen oder davon abgeleitet sind, und diese wiederum von den MFC-Klassen abgeleitet sind, müssen Sie ein eigenes Präprozessorsymbol verwenden, um Mehrdeutigkeit zu vermeiden.
 
-Das Problem besteht darin, dass Sie in Win32 alle Daten explizit als **__declspec(dllexport)** deklarieren müssen, wenn sie aus einer DLL exportiert werden sollen, und als **__declspec(dllimport)** , wenn sie aus einer DLL importiert werden sollen. Wenn Sie `_AFXEXT` definieren, stellen die MFC-Header sicher, dass **AFX_EXT_CLASS** ordnungsgemäß definiert ist.
+Das Problem besteht darin, dass Sie in Win32 alle Daten explizit als **`__declspec(dllexport)`** deklarieren müssen, wenn sie aus einer DLL exportiert werden sollen, und als **`__declspec(dllimport)`** , wenn sie aus einer DLL importiert werden sollen. Wenn Sie `_AFXEXT` definieren, stellen die MFC-Header sicher, dass **AFX_EXT_CLASS** ordnungsgemäß definiert ist.
 
 Wenn Sie über mehrere Ebenen verfügen, ist ein Symbol, z. B. **AFX_EXT_CLASS**, nicht ausreichend, da eine MFC-Erweiterungs-DLL möglicherweise neue Klassen exportiert und andere Klassen aus einer anderen MFC-Erweiterungs-DLL importiert. Dieses Problem können Sie beheben, indem Sie ein spezielles Präprozessorsymbol verwenden, das angibt, ob Sie die DLL erstellen oder verwenden. Stellen Sie sich beispielsweise zwei MFC-Erweiterungs-DLLs vor: „A.dll“ und „B.dll“. Diese exportieren jeweils einige Klassen in „A.h“ bzw. „B.h“. „B.dll“ verwendet die Klassen aus „A.dll“. Die Headerdateien würden in etwa wie folgt aussehen:
 

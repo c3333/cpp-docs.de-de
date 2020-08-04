@@ -4,12 +4,12 @@ ms.date: 12/02/2019
 helpviewer_keywords:
 - Open Folder Projects in Visual Studio
 ms.assetid: abd1985e-3717-4338-9e80-869db5435175
-ms.openlocfilehash: 9264aa4bf77de406bdde9042ef9ec4251763f721
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 73d6ff9fb9411b146082989d581ed35298b911ad
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81320962"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229804"
 ---
 # <a name="open-folder-support-for-c-build-systems-in-visual-studio"></a>„Ordner öffnen“-Unterstützung für C++-Buildsysteme in Visual Studio
 
@@ -119,7 +119,7 @@ Wenn alles ordnungsgemäß funktioniert, wird IntelliSense in den GCC-Headern an
 
 ## <a name="enable-intellisense-diagnostics"></a>Aktivieren von IntelliSense-Diagnosen
 
-Wenn IntelliSense nicht so angezeigt wird, wie Sie es erwarten, können Sie ein Troubleshooting durchführen, indem Sie **Extras** > **Optionen** > **Text-Editor** > **C/C++**  > **Erweitert** aufrufen und **Protokollierung aktivieren** auf **True** festlegen. Versuchen Sie für den Beginn, den **Protokolliergrad** auf 5 festzulegen und die **Protokollierungsfilter** auf 8.
+Wenn IntelliSense nicht so angezeigt wird, wie Sie es erwarten, können Sie eine Problembehandlung durchführen, indem Sie auf **Extras** > **Optionen** > **Text-Editor** > **C/C++**  > **Erweitert** klicken und **Protokollierung aktivieren** auf **`true`** festlegen. Versuchen Sie für den Beginn, den **Protokolliergrad** auf 5 festzulegen und die **Protokollierungsfilter** auf 8.
 
 ![Diagnoseprotokollierung](media/diagnostic-logging.png)
 

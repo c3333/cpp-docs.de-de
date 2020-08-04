@@ -6,20 +6,20 @@ helpviewer_keywords:
 - dllimport attribute [C++], limitations and rules
 - dllexport attribute [C++]
 ms.assetid: 274b735f-ab9c-4b07-8d0e-fdb65d664634
-ms.openlocfilehash: cc83a43fd09299710585fa104dbd4dc847036c68
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c2f121d978962fe7fc03aa453fb0a16650aa2727
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62158422"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87220872"
 ---
 # <a name="rules-and-limitations-for-dllimportdllexport"></a>Regeln und Einschränkungen für dllimport/dllexport
 
 **Microsoft-spezifisch**
 
-- Wenn Sie eine Funktion ohne das **dllimport**- oder `dllexport`-Attribut deklarieren, wird die Funktion nicht als Teil der DLL-Schnittstelle betrachtet. Daher muss die Definition der Funktion in diesem Modul oder in einem anderen Modul desselben Programms vorhanden sein. Damit die Funktion Teil der DLL-Schnittstelle wird, müssen Sie die Definition der Funktion im anderen Modul als `dllexport` deklarieren. Andernfalls wird ein Linkerfehler generiert, wenn der Client erstellt wird.
+- Wenn Sie eine Funktion ohne das **`dllimport`** - oder `dllexport`-Attribut deklarieren, wird die Funktion nicht als Teil der DLL-Schnittstelle betrachtet. Daher muss die Definition der Funktion in diesem Modul oder in einem anderen Modul desselben Programms vorhanden sein. Damit die Funktion Teil der DLL-Schnittstelle wird, müssen Sie die Definition der Funktion im anderen Modul als `dllexport` deklarieren. Andernfalls wird ein Linkerfehler generiert, wenn der Client erstellt wird.
 
-- Wenn ein einzelnes Modul im Programm sowohl **dllimport**- als auch `dllexport`-Deklarationen für die gleiche Funktion enthält, hat das `dllexport`-Attribut Vorrang vor dem **dllimport**-Attribut. Es wird jedoch eine Compilerwarnung ausgegeben. Zum Beispiel:
+- Wenn ein einzelnes Modul im Programm **`dllimport`** - und `dllexport`-Deklarationen für die gleiche Funktion enthält, hat das `dllexport`-Attribut Vorrang vor dem **`dllimport`** -Attribut. Es wird jedoch eine Compilerwarnung ausgegeben. Zum Beispiel:
 
     ```
     #define DllImport   __declspec( dllimport )
@@ -31,7 +31,7 @@ ms.locfileid: "62158422"
 
     ```
 
-- Sie können keinen statischen Datenzeiger mit der Adresse eines Datenobjekts, das mit dem **dllimport**-Attribut deklariert wird, initialisieren. Durch folgenden Code werden z. B. Fehler verursacht:
+- Sie können keinen statischen Datenzeiger mit der Adresse eines Datenobjekts initialisieren, das mit dem **`dllimport`** -Attribut deklariert wird. Durch folgenden Code werden z. B. Fehler verursacht:
 
     ```
     #define DllImport   __declspec( dllimport )
@@ -50,7 +50,7 @@ ms.locfileid: "62158422"
 
     ```
 
-- Das Initialisieren eines statischen Funktionszeigers mit der Adresse einer Funktion, die mit **dllimport** deklariert ist, legt den Zeiger auf die Adresse des DLL-Importthunks (ein Codestub, der die Steuerung an die Funktion übergibt) anstatt auf die Adresse der Funktion fest. Diese Zuweisung generiert keine Fehlermeldung:
+- Das Initialisieren eines statischen Funktionszeigers mit der Adresse einer Funktion, die mit **`dllimport`** deklariert ist, legt den Zeiger auf die Adresse des DLL-Importthunks (ein Codestub, der die Steuerung an die Funktion übergibt) anstatt auf die Adresse der Funktion fest. Diese Zuweisung generiert keine Fehlermeldung:
 
     ```
     #define DllImport   __declspec( dllimport )

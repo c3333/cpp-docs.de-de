@@ -6,16 +6,16 @@ helpviewer_keywords:
 - .def files [C++], exporting from DLLs
 - exporting DLLs [C++], DEF files
 ms.assetid: 9d31eda2-184e-47de-a2ee-a93ebd603f8e
-ms.openlocfilehash: 6f7d58bcb42edd89527fff41b08a15321722a6cf
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 8fdbb060502f339eb748306eef582d2f296b1f60
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80078520"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229830"
 ---
 # <a name="exporting-from-a-dll-using-def-files"></a>Exportieren aus einer DLL mithilfe von DEF-Dateien
 
-Eine Moduldefinitionsdatei oder DEF-Datei (*.def) ist eine Textdatei mit einer oder mehreren Modulanweisungen, die verschiedene Attribute einer DLL beschreiben. Wenn Sie für das Exportieren von DLL-Funktionen nicht das **__declspec(dllexport)** -Schlüsselwort verwenden, ist eine DEF-Datei für die DLL erforderlich.
+Eine Moduldefinitionsdatei oder DEF-Datei (*.def) ist eine Textdatei mit einer oder mehreren Modulanweisungen, die verschiedene Attribute einer DLL beschreiben. Wenn Sie für das Exportieren von DLL-Funktionen nicht das **`__declspec(dllexport)`** -Schlüsselwort verwenden, ist eine DEF-Datei für die DLL erforderlich.
 
 Eine DEF-Datei muss mindestens die folgenden Moduldefinitionsanweisungen enthalten:
 

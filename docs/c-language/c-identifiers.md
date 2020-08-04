@@ -9,12 +9,12 @@ helpviewer_keywords:
 - identifiers, case sensitivity
 - symbols, case sensitivity
 ms.assetid: d02edbbc-85a0-4118-997b-84ee6b972eb6
-ms.openlocfilehash: 1f3abf304e6fda52e2571d0bccb8d4db5a414dfe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d68eb690a19f57555d9d757a2f058692ea1a40c3
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62325662"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87223745"
 ---
 # <a name="c-identifiers"></a>C-Bezeichner
 
@@ -34,7 +34,7 @@ int main()
 
 Sobald der Bezeichner deklariert wurde, können Sie ihn in späteren Programmanweisungen verwenden, um auf den zugeordneten Wert zu verweisen.
 
-Eine besondere Art von Bezeichnern, die als Anweisungsmarken bezeichnet werden, kann in `goto`-Anweisungen verwendet werden. (Deklarationen werden unter [Deklarationen und Typen](../c-language/declarations-and-types.md) und Anweisungsmarken unter [goto-Anweisungen und Anweisungen mit Bezeichnung](../c-language/goto-and-labeled-statements-c.md) erläutert.)
+Eine besondere Art von Bezeichnern, so genannte Anweisungsbezeichnungen, kann in **`goto`** -Anweisungen verwendet werden. (Deklarationen werden unter [Deklarationen und Typen](../c-language/declarations-and-types.md) und Anweisungsmarken unter [goto-Anweisungen und Anweisungen mit Bezeichnung](../c-language/goto-and-labeled-statements-c.md) erläutert.)
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,7 +50,7 @@ Eine besondere Art von Bezeichnern, die als Anweisungsmarken bezeichnet werden, 
 *digit*: eine von<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**0 1 2 3 4 5 6 7 8 9**
 
-Das erste Zeichen eines Bezeichnernamens muss ein `nondigit`-Wert sein (das heißt, dass das erste Zeichen ein Unterstrich oder ein Groß- oder Kleinbuchstabe sein muss). ANSI ermöglicht die Eingabe von sechs signifikanten Zeichen im Namen eines externen Bezeichners und von 31 signifikanten Zeichen für Namen interner Bezeichner (in einer Funktion). Externe Bezeichner (solche, die im globalen Gültigkeitsbereich oder mit der `extern`-Speicherklasse deklariert wurden) unterliegen möglicherweise zusätzlichen Benennungseinschränkungen, da diese Bezeichner von anderer Software wie Linker verarbeitet werden müssen.
+Das erste Zeichen eines Bezeichnernamens muss ein `nondigit`-Wert sein (das heißt, dass das erste Zeichen ein Unterstrich oder ein Groß- oder Kleinbuchstabe sein muss). ANSI ermöglicht die Eingabe von sechs signifikanten Zeichen im Namen eines externen Bezeichners und von 31 signifikanten Zeichen für Namen interner Bezeichner (in einer Funktion). Externe Bezeichner (solche, die im globalen Gültigkeitsbereich oder mit der **`extern`** -Speicherklasse deklariert wurden) unterliegen möglicherweise zusätzlichen Benennungseinschränkungen, da diese Bezeichner von anderer Software wie beispielsweise Linkern verarbeitet werden müssen.
 
 **Microsoft-spezifisch**
 

@@ -30,12 +30,12 @@ helpviewer_keywords:
 - _lfind function
 - heap allocation, time-critical code performance
 ms.assetid: 3e95a8cc-6239-48d1-9d6d-feb701eccb54
-ms.openlocfilehash: 039b86eec024daf8e3473bba5d89f190507f3cfd
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a2cc8062368b89e38b5f96b3134742123af24310
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81335454"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87231480"
 ---
 # <a name="tips-for-improving-time-critical-code"></a>Tipps zum Verbessern von zeitkritischem Code
 
@@ -107,7 +107,7 @@ Es gibt weniger Alternativen für Suchen als für die Sortierung. Wenn die Suche
 
 Die Microsoft Foundation Classes (MFC) können das Schreiben von Code erheblich vereinfachen. Wenn Sie zeitkritischen Code schreiben, sollte Ihnen der einigen der Klassen innewohnende Mehraufwand bewusst sein. Untersuchen Sie den MFC-Code, den Ihr zeitkritischer Code verwendet, um zu sehen, ob er Ihren Leistungsanforderungen entspricht. In der folgenden Liste sind die MFC-Klassen und -Funktionen aufgeführt, die Ihnen bewusst sein sollten:
 
-- `CString` MFC ruf die C-Laufzeitbibliothek auf, um Speicher dynamisch für [CString](../atl-mfc-shared/reference/cstringt-class.md) zu belegen. Allgemein gesagt ist `CString` ebenso effizient wie jede andere dynamisch zugeordnete Zeichenfolge. Wie bei jeder dynamisch zugewiesenen Zeichenfolge besteht der Mehraufwand der dynamischen Zuordnung und Freigabe. Oft, dient ein einfaches `char`-Array im Stapel demselben Zweck und ist schneller. Verwenden Sie nicht `CString`, um eine konstante Zeichenfolge zu speichern. Verwenden Sie stattdessen `const char *`. Jeder Vorgang, den Sie mit einem `CString`-Objekt durchführen, hat irgendeinen Mehraufwand. Möglicherweise ist es schneller, die [Zeichenfolgenfunktionen](../c-runtime-library/string-manipulation-crt.md) der Laufzeitbibliothek zu verwenden.
+- `CString` MFC ruf die C-Laufzeitbibliothek auf, um Speicher dynamisch für [CString](../atl-mfc-shared/reference/cstringt-class.md) zu belegen. Allgemein gesagt ist `CString` ebenso effizient wie jede andere dynamisch zugeordnete Zeichenfolge. Wie bei jeder dynamisch zugewiesenen Zeichenfolge besteht der Mehraufwand der dynamischen Zuordnung und Freigabe. Häufig erfüllt ein einfaches **`char`** -Array im Stapel denselben Zweck und ist schneller. Verwenden Sie nicht `CString`, um eine konstante Zeichenfolge zu speichern. Verwenden Sie stattdessen `const char *`. Jeder Vorgang, den Sie mit einem `CString`-Objekt durchführen, hat irgendeinen Mehraufwand. Möglicherweise ist es schneller, die [Zeichenfolgenfunktionen](../c-runtime-library/string-manipulation-crt.md) der Laufzeitbibliothek zu verwenden.
 
 - `CArray` Ein [CArray](../mfc/reference/carray-class.md) bietet eine Art von Flexibilität, die ein reguläres Array nicht bietet, aber Ihr Programm benötigt diese möglicherweise nicht. Wenn Sie bestimmte Grenzen für das Array kennen, können Sie stattdessen ein globales festes Array verwenden. Wenn Sie `CArray` benutzen, verwenden Sie `CArray::SetSize`, um die Größe festzulegen und die Anzahl der Elemente anzugeben, um die es wachsen kann, wenn eine Neuzuordnung erforderlich ist. Andernfalls kann das Hinzufügen von Elementen dazu führen, dass Ihr Array häufig neu zugeordnet und kopiert wird, was ineffizient ist und den Arbeitsspeicher fragmentieren kann. Ihnen sollte auch bewusst sein, dass beim Einfügen eines Elements in ein Array `CArray` nachfolgende Elemente im Arbeitsspeicher verschiebt und möglicherweise das Array vergrößern muss. Diese Aktionen können zu Cachefehlern und Seitenfehlern führen. Wenn Sie den Code durchsehen, den die MFC verwenden, sehen Sie möglicherweise, dass Sie etwas Spezifischeres für Ihr Szenario schreiben können, um die Leistung zu verbessern. Da `CArray` eine Vorlage ist, können Sie beispielsweise `CArray`-Spezialisierungen für bestimmte Typen bereitstellen.
 

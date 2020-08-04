@@ -3,12 +3,12 @@ title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
 ms.date: 05/18/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
 ms.technology: cpp-language
-ms.openlocfilehash: 7796728c869e39270ee9e8fe82fb5e0e9a3a8630
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 65e4f12c8fcf1ce0013f9ae272333a26a557186d
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405103"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87213956"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
@@ -93,7 +93,7 @@ int main()
 
 ### <a name="reinterpret_cast-from-an-overloaded-function"></a>Der Operator `reinterpret_cast` einer überladenen Funktion
 
-Das Argument für `reinterpret_cast` entspricht keinem der Kontexte, in denen die Adresse einer überladenen Funktion zulässig ist. Der folgende Code wird in Visual Studio 2017 fehlerfrei kompiliert, in Visual Studio 2019 wird jedoch der Fehler „C2440: `cannot convert from 'overloaded-function' to 'fp'`“ ausgelöst:
+Das Argument für **`reinterpret_cast`** ist keiner der Kontexte, in denen die Adresse einer überladenen Funktion zulässig ist. Der folgende Code wird in Visual Studio 2017 fehlerfrei kompiliert, in Visual Studio 2019 wird jedoch der Fehler „C2440: `cannot convert from 'overloaded-function' to 'fp'`“ ausgelöst:
 
 ```cpp
 int f(int) { return 1; }
@@ -121,7 +121,7 @@ int main()
 
 ### <a name="lambda-closures"></a>Lambda-Closures
 
-In C++14 sind Lambda-Closure-Typen nicht literal. Die primäre Folge dieser Regel ist, dass Lambdaausdrücke ggf. keinen **constexpr**-Variablen zugewiesen werden können. Der folgende Code wird in Visual Studio 2017 fehlerfrei kompiliert, in Visual Studio 2019 wird jedoch der Fehler „C2127: `'l': illegal initialization of 'constexpr' entity with a non-constant expression`“ ausgelöst:
+In C++14 sind Lambda-Closure-Typen nicht literal. Die primäre Folge dieser Regel ist, dass ein Lambda keinen **`constexpr`** -Variablen zugewiesen werden kann. Der folgende Code wird in Visual Studio 2017 fehlerfrei kompiliert, in Visual Studio 2019 wird jedoch der Fehler „C2127: `'l': illegal initialization of 'constexpr' entity with a non-constant expression`“ ausgelöst:
 
 ```cpp
 int main()
@@ -130,7 +130,7 @@ int main()
 }
 ```
 
-Entfernen Sie entweder den Qualifizierer **constexpr**, oder ändern Sie den Konformitätsmodus in `/std:c++17`, um diesen Fehler zu vermeiden.
+Entfernen Sie entweder den **`constexpr`** -Qualifizierer, oder ändern Sie den Konformitätsmodus in `/std:c++17`, um diesen Fehler zu vermeiden.
 
 ### <a name="stdcreate_directory-failure-codes"></a>`std::create_directory`-Fehlercodes
 
@@ -146,7 +146,7 @@ Neue parallele Versionen von `is_sorted`, `is_sorted_until`, `is_partitioned`, `
 
 ### <a name="atomic-initialization"></a>Atomische Initialisierung
 
-[P0883 "Fixing atomic initialization"](https://wg21.link/p0883r1) (Beheben der atomischen Initialisierung) ändert `std::atomic` in die Initialisierung des enthaltenen Werts von T, anstatt eine Standardinitialisierung durchzuführen. Die Behebung wird aktiviert, wenn Clang/LLVM mit der Microsoft-Standardbibliothek verwendet wird. Sie ist derzeit für den Microsoft C++-Compiler als Problemumgehung für einen Fehler in der Verarbeitung von **constexpr** deaktiviert.
+[P0883 "Fixing atomic initialization"](https://wg21.link/p0883r1) (Beheben der atomischen Initialisierung) ändert `std::atomic` in die Initialisierung des enthaltenen Werts von T, anstatt eine Standardinitialisierung durchzuführen. Die Behebung wird aktiviert, wenn Clang/LLVM mit der Microsoft-Standardbibliothek verwendet wird. Sie ist derzeit für den C++-Compiler von Microsoft als Workaround für einen Fehler in der Verarbeitung von **`constexpr`** deaktiviert.
 
 ### <a name="remove_cvref-and-remove_cvref_t"></a>`remove_cvref` und `remove_cvref_t`
 
@@ -164,7 +164,7 @@ Die Entwicklung der [Featuretestmakros (P0941R2)](https://wg21.link/p0941r2) ist
 
 ### <a name="char8_t"></a>char8_t
 
-[P0482r6](https://wg21.link/p0482r6). C++20 führt einen neuen Zeichentyp ein, der für die Darstellung von UTF-8-Codeeinheiten verwendet wird. `u8`-Zeichenfolgenliterale in C++20 verfügen über den Typ `const char8_t[N]` anstelle von `const char[N]` (der vorherige Typ). Ähnliche Änderungen wurden in [N2231](https://wg14.link/n2231) für den C-Standard vorgeschlagen. Vorschläge für die Wiederherstellung der Abwärtskompatibilität von `char8_t` wurden in [P1423r3](https://wg21.link/p1423r3) angegeben. In Visual Studio 2019 Version 16.1 wurde dem C++-Compiler von Microsoft Unterstützung für `char8_t` hinzugefügt, wenn die Compileroption **`/Zc:char8_t`** angegeben wird. Zukünftig erfolgt die Unterstützung mit [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md), was mithilfe von **`/Zc:char8_t-`** in das C++17-Verhalten zurückversetzt werden kann. Der EDG-Compiler, der IntelliSense betreibt, unterstützt dies noch nicht, weshalb vermeidbare Intune-spezifische Fehler auftreten, die sich nicht auf die tatsächliche Kompilierung auswirken.
+[P0482r6](https://wg21.link/p0482r6). C++20 führt einen neuen Zeichentyp ein, der für die Darstellung von UTF-8-Codeeinheiten verwendet wird. `u8`-Zeichenfolgenliterale in C++20 verfügen über den Typ `const char8_t[N]` anstelle von `const char[N]` (der vorherige Typ). Ähnliche Änderungen wurden in [N2231](https://wg14.link/n2231) für den C-Standard vorgeschlagen. Vorschläge für die Wiederherstellung der Abwärtskompatibilität von **`char8_t`** finden Sie in [P1423r3](https://wg21.link/p1423r3). In Visual Studio 2019 Version 16.1 fügt der C++-Compiler von Microsoft Unterstützung für **`char8_t`** hinzu, wenn die Compileroption **`/Zc:char8_t`** angegeben wird. Zukünftig erfolgt die Unterstützung mit [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md), was mithilfe von **`/Zc:char8_t-`** in das C++17-Verhalten zurückversetzt werden kann. Der EDG-Compiler, der IntelliSense betreibt, unterstützt dies noch nicht, weshalb vermeidbare Intune-spezifische Fehler auftreten, die sich nicht auf die tatsächliche Kompilierung auswirken.
 
 #### <a name="example"></a>Beispiel
 
@@ -243,7 +243,7 @@ void f() {
 
 ### <a name="noexcept-constexpr-functions"></a>noexcept constexpr-Funktionen
 
-Constexpr-Funktionen werden standardmäßig nicht mehr als **noexcept** angesehen, wenn sie in einem konstanten Ausdruck verwendet werden. Dieser Behavior Change stammt aus der Auflösung von [CWG 1351](https://wg21.link/cwg1351) und ist in [/permissive-](../build/reference/permissive-standards-conformance.md) aktiviert. Das folgende Beispiel wird in Visual Studio 2019 Version 16.1 und früher kompiliert, erzeugt jedoch C2338 in Visual Studio 2019 Version 16.2:
+Constexpr-Funktionen werden bei Verwendung in einem konstanten Ausdruck nicht mehr standardmäßig als **`noexcept`** angesehen. Dieser Behavior Change stammt aus der Auflösung von [CWG 1351](https://wg21.link/cwg1351) und ist in [/permissive-](../build/reference/permissive-standards-conformance.md) aktiviert. Das folgende Beispiel wird in Visual Studio 2019 Version 16.1 und früher kompiliert, erzeugt jedoch C2338 in Visual Studio 2019 Version 16.2:
 
 ```cpp
 constexpr int f() { return 0; }
@@ -253,7 +253,7 @@ int main() {
 }
 ```
 
-Fügen Sie den Ausdruck **noexcept** zur Funktionsdeklaration hinzu, um den Fehler zu beheben:
+Fügen Sie den Ausdruck **`noexcept`** zur Funktionsdeklaration hinzu, um den Fehler zu beheben:
 
 ```cpp
 constexpr int f() noexcept { return 0; }
@@ -405,7 +405,7 @@ char x[42];
 std::cin >> x;
 ```
 
-### <a name="new-keywords-requires-and-concept"></a>Neue Schlüsselwörter **`requires`** und **`concept`**
+### <a name="new-keywords-requires-and-concept"></a>Neue Schlüsselwörter `requires` und `concept`
 
 Die neuen Schlüsselwörter **`requires`** und **`concept`** wurden zum Microsoft C++-Compiler hinzugefügt. Wenn Sie versuchen, eins dieser Schlüsselwörter als Bezeichner im Modus [/std:c++latest](../build/reference/std-specify-language-standard-version.md) zu verwenden, löst der Compiler den Fehler „C2059: `syntax error`“ aus.
 
@@ -506,7 +506,7 @@ int* f(bool* p) {
 }
 ```
 
-Um den Fehler zu beheben, verwenden Sie **nullptr** statt **false**. Das Literal „0“ ist weiterhin erlaubt:
+Verwenden Sie zur Behebung des Fehlers **`nullptr`** anstelle von **`false`** . Das Literal „0“ ist weiterhin erlaubt:
 
 ```cpp
 int* f(bool* p) {
@@ -518,7 +518,7 @@ int* f(bool* p) {
 
 ### <a name="standard-rules-for-types-of-integer-literals"></a>Standardregeln für Typen von Integerliteralen
 
-Im Konformitätsmodus (aktiviert durch [`/permissive-`](../build/reference/permissive-standards-conformance.md)) verwendet MSVC die Standardregeln für Typen von Integerliteralen. Dezimalliteralen, die zu groß für einen signierten **`int`** -Typ waren, wurde früher der Typ **`unsigned int`** zugewiesen. Jetzt erhalten solche Literale den nächstgrößeren signierten Integertyp ( **`long long`** ). Darüber hinaus wird Literalen mit dem Suffix „ll“, die zu groß für einen signierten Typ sind, der Typ **`unsigned long long`** zugewiesen.
+Im Konformitätsmodus (aktiviert durch [`/permissive-`](../build/reference/permissive-standards-conformance.md)) verwendet MSVC die Standardregeln für Typen von Integerliteralen. Dezimalliteralen, die zu groß für einen **`signed int`** -Typ sind, wurde früher der Typ **`unsigned int`** zugewiesen. Jetzt erhalten solche Literale den nächstgrößeren **`signed`** -Integertyp: **`long long`** . Darüber hinaus wird Literalen mit dem Suffix „ll“, die zu groß für einen **`signed`** -Typ sind, der Typ **`unsigned long long`** zugewiesen.
 
 Dies kann dazu führen, dass verschiedene Warnungsdiagnosen generiert werden und Unterschiede im Verhalten bei arithmetischen Operationen in Literalen auftreten.
 
@@ -570,7 +570,7 @@ void f(T (&buffer)[Size], int& size_read)
 
 ### <a name="user-provided-specializations-of-type-traits"></a>Vom Benutzer bereitgestellte Spezialisierungen von Typmerkmalen
 
-In Übereinstimmung mit der Unterklausel *meta.rqmts* der Standardversion löst der MSVC-Compiler jetzt einen Fehler aus, wenn eine benutzerdefinierte Spezialisierung einer der angegebenen `type_traits`-Vorlagen im Namespace `std` gefunden wird. Sofern nicht anders angegeben, führen solche Spezialisierungen zu nicht definiertem Verhalten. Das folgende Beispiel zeigt ein nicht definiertes Verhalten, weil es die Regel verletzt, und bei `static_assert` tritt der Fehler C2338 auf.
+In Übereinstimmung mit der Unterklausel *meta.rqmts* der Standardversion löst der MSVC-Compiler jetzt einen Fehler aus, wenn eine benutzerdefinierte Spezialisierung einer der angegebenen `type_traits`-Vorlagen im Namespace `std` gefunden wird. Sofern nicht anders angegeben, führen solche Spezialisierungen zu nicht definiertem Verhalten. Das folgende Beispiel zeigt ein nicht definiertes Verhalten, weil es die Regel verletzt, und bei **`static_assert`** tritt der Fehler C2338 auf.
 
 ```cpp
 #include <type_traits>
@@ -602,7 +602,7 @@ static_assert(my_is_fundamental<S>::value, "fail");
 
 Der MSVC-Compiler implementiert jetzt die folgenden Änderungen an Vergleichsoperatoren gemäß [P1630R1](https://wg21.link/p1630r1), wenn die Option [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md) aktiviert ist:
 
-Der Compiler schreibt Ausdrücke mithilfe von `operator==` nicht mehr neu, wenn diese einen Rückgabetyp beinhalten, der kein **boolescher** Wert ist. Mit dem folgenden Code wird nun der Fehler „C2088: `'!=': illegal for struct`“ generiert:
+Der Compiler schreibt Ausdrücke nicht mehr mithilfe von `operator==` neu, wenn diese einen Rückgabetyp beinhalten, der kein **`bool`** -Wert ist. Mit dem folgenden Code wird nun der Fehler „C2088: `'!=': illegal for struct`“ generiert:
 
 ```cpp
 struct U {
@@ -890,9 +890,9 @@ U u{ 0 };
 
 ### <a name="standard-library-streams-reject-insertions-of-mis-encoded-character-types"></a>Bei Datenströmen der Standardbibliothek werden Einfügungen von nicht korrekt codierten Zeichentypen abgelehnt
 
-Beim Einfügen von `wchar_t` in `std::ostream` sowie von `char16_t` oder `char32_t` in `std::ostream` oder `std::wostream` wird üblicherweise ein ganzzahliger Wert ausgegeben. Beim Einfügen von Zeigern in diese Zeichentypen wird der Zeigerwert ausgegeben. Für Programmierer sind beide Verhalten nicht intuitiv. Vielmehr erwarten sie, dass die Standardbibliothek die auf Zeichen oder NULL endende Zeichenfolge transcodiert und das Ergebnis ausgibt.
+Beim Einfügen von **`wchar_t`** in `std::ostream` sowie von **`char16_t`** oder **`char32_t`** in `std::ostream` oder `std::wostream` wird üblicherweise ein ganzzahliger Wert ausgegeben. Beim Einfügen von Zeigern in diese Zeichentypen wird der Zeigerwert ausgegeben. Für Programmierer sind beide Verhalten nicht intuitiv. Vielmehr erwarten sie, dass die Standardbibliothek die auf Zeichen oder NULL endende Zeichenfolge transcodiert und das Ergebnis ausgibt.
 
-Mit dem C++20-Vorschlag [P1423R3](https://wg21.link/p1423r3) werden gelöschte insertion-Operatorüberladungen im Datenstrom für diese Kombinationen aus Datenstrom und Zeichen- oder Zeichenzeigertypen hinzugefügt. Bei Verwendung von **`/std:c++latest`** haben die Überladungen zur Folge, dass diese Einfügungen nicht korrekt angegeben werden. Das Verhalten entspricht dadurch nicht einem vermutlich unbeabsichtigten Verhalten. Wird ein solches Element ermittelt, löst der Compiler den Fehler C2280 aus. Um das alte Verhalten wiederherzustellen, können Sie das escape hatch-Makro `_HAS_STREAM_INSERTION_OPERATORS_DELETED_IN_CXX20` als `1` definieren. (Der Vorschlag löscht auch insertion-Operatoren in Datenströmen für `char8_t`. Unsere Standardbibliothek hat in der Vergangenheit ähnliche Überladungen implementiert, als Unterstützung für `char8_t` hinzugefügt wurde. Das „falsche“ Verhalten war für `char8_t` also nie verfügbar.)
+Mit dem C++20-Vorschlag [P1423R3](https://wg21.link/p1423r3) werden gelöschte insertion-Operatorüberladungen im Datenstrom für diese Kombinationen aus Datenstrom und Zeichen- oder Zeichenzeigertypen hinzugefügt. Bei Verwendung von **`/std:c++latest`** haben die Überladungen zur Folge, dass diese Einfügungen nicht korrekt angegeben werden. Das Verhalten entspricht dadurch nicht einem vermutlich unbeabsichtigten Verhalten. Wird ein solches Element ermittelt, löst der Compiler den Fehler C2280 aus. Um das alte Verhalten wiederherzustellen, können Sie das escape hatch-Makro `_HAS_STREAM_INSERTION_OPERATORS_DELETED_IN_CXX20` als `1` definieren. (Der Vorschlag löscht auch insertion-Operatoren in Datenströmen für **`char8_t`** . Unsere Standardbibliothek hat ähnliche Überladungen implementiert, als Unterstützung für **`char8_t`** hinzugefügt wurde. Das „falsche“ Verhalten war für **`char8_t`** also nie verfügbar.)
 
 Dieses Beispiel zeigt das Verhalten bei dieser Änderung:
 
@@ -920,7 +920,7 @@ error C2280: 'std::basic_ostream<wchar_t,std::char_traits<wchar_t>> &std::<<<std
 error C2280: 'std::basic_ostream<wchar_t,std::char_traits<wchar_t>> &std::<<<std::char_traits<wchar_t>>(std::basic_ostream<wchar_t,std::char_traits<wchar_t>> &,char32_t)': attempting to reference a deleted function
 ```
 
-Sie können die Auswirkungen des alten Verhaltens in allen Sprachmodi erzielen, indem Sie Zeichentypen in `unsigned int` bzw. Zeiger-zu-Zeichen-Typen in `const void*` konvertieren:
+Sie können den Effekt des alten Verhaltens in allen Sprachmodi erzielen, indem Sie Zeichentypen in **`unsigned int`** bzw. Zeiger-zu-Zeichen-Typen in `const void*` konvertieren:
 
 ```c++
 #include <iostream>
@@ -999,14 +999,14 @@ int main() {
 
 ### <a name="unnamed-classes-in-typedef-declarations"></a>Unbenannte Klassen in `typedef`-Deklarationen
 
-Ab Visual Studio 2019, Version 16.6, wurde das Verhalten von `typedef`-Deklarationen so beschränkt, dass es [P1766R1](https://wg21.link/P1766R1) entspricht. Durch diese Änderung können unbenannte Klassen innerhalb einer `typedef`-Deklaration keine anderen Member enthalten als die folgenden:
+Ab Visual Studio 2019, Version 16.6, wurde das Verhalten von **`typedef`** -Deklarationen so beschränkt, dass es [P1766R1](https://wg21.link/P1766R1) entspricht. Durch dieses Update können unbenannte Klassen innerhalb einer **`typedef`** -Deklaration keine anderen Member enthalten als die folgenden:
 
 - nicht statische Datenmember
 - Memberklassen
 - Memberenumerationen
 - Standardmemberinitialisierer
 
-Dieselben Einschränkungen gelten rekursiv für alle geschachtelten Klassen. Durch diese Einschränkung soll die Einfachheit von Strukturen mit `typedef`-Namen zu Bindungszwecken sichergestellt werden. Sie müssen so einfach sein, dass keine Bindungsberechnungen erforderlich sind, bevor der Compiler den `typedef`-Namen für die Bindung erreicht.
+Dieselben Einschränkungen gelten rekursiv für alle geschachtelten Klassen. Durch diese Einschränkung soll die Einfachheit von Strukturen mit **`typedef`** -Namen zu Bindungszwecken sichergestellt werden. Diese müssen so einfach sein, dass keine Bindungsberechnungen erforderlich sind, bevor der Compiler den **`typedef`** -Namen für die Bindung erreicht.
 
 Diese Änderung wirkt sich auf alle Standardmodi des Compilers aus. Bei der Standardeinstellung ( **`/std:c++14`** ) und den **`/std:c++17`** -Modi gibt der Compiler bei nicht konformem Code die Warnung C5208 aus. Wenn **`/permissive-`** angegeben wird, gibt der Compiler die Warnung C5208 als Fehler bei Verwendung von **`/std:c++14`** und Fehler C7626 bei Verwendung von **`/std:c++17`** aus. Der Compiler gibt den Fehler C7626 für nicht konformen Code aus, wenn **`/std:c++latest`** angegeben wird.
 
@@ -1061,7 +1061,7 @@ Der Compiler gibt den Fehler C2668 aus, weil beide Überladungen dieser Argumen
 
 ### <a name="reinterpret_cast-in-a-constexpr-function"></a>Reinterpret_cast in einer constexpr-Funktion
 
-Die Verwendung von **reinterpret_cast** in einer **constexpr**-Funktion ist illegal. Der Microsoft C++-Compiler lehnte früher das Element **reinterpret_cast** nur ab, wenn es in einem **constexpr**-Kontext verwendet wurde. In Visual Studio 2019 diagnostiziert der Compiler im Modus für alle Sprachstandards ordnungsgemäß **reinterpret_cast** in der Definition einer **constexpr**-Funktion. Mit dem folgenden Code wird nun „C3615: `constexpr function 'f' cannot result in a constant expression`“ ausgelöst.
+**`reinterpret_cast`** ist in einer **`constexpr`** -Funktion nicht zulässig. Der Microsoft-C++-Compiler lehnte **`reinterpret_cast`** früher nur bei Verwendung in einem **`constexpr`** -Kontext ab. In Visual Studio 2019 diagnostiziert der Compiler im Modus für alle Sprachstandards **`reinterpret_cast`** ordnungsgemäß in der Definition einer **`constexpr`** -Funktion. Mit dem folgenden Code wird nun „C3615: `constexpr function 'f' cannot result in a constant expression`“ ausgelöst.
 
 ```cpp
 long long i = 0;
@@ -1070,11 +1070,11 @@ constexpr void f() {
 }
 ```
 
-Entfernen Sie den Modifizierer **constexpr** aus der Funktionsdeklaration, um den Fehler zu vermeiden.
+Entfernen Sie den Modifizierer **`constexpr`** aus der Funktionsdeklaration, um den Fehler zu vermeiden.
 
 ### <a name="correct-diagnostics-for-basic_string-range-constructor"></a>Richtige Diagnose für den Bereichskonstruktor „basic_string“
 
-In Visual Studio 2019 unterdrückt der Bereichskonstruktor `basic_string` nicht mehr die Compilerdiagnose mit `static_cast`. Der folgende Code wird in Visual Studio 2017 fehlerfrei kompiliert, obwohl bei der Konvertierung von `wchar_t` in **char** Daten verloren gehen können, wenn `out` initialisiert wird:
+In Visual Studio 2019 unterdrückt der `basic_string`-Bereichskonstruktor nicht mehr die Compilerdiagnose mit **`static_cast`** . Der folgende Code wird in Visual Studio 2017 ohne Warnungen kompiliert, obwohl bei der Konvertierung von **`wchar_t`** in **`char`** ein Datenverlust auftreten kann, wenn `out` initialisiert wird:
 
 ```cpp
 std::wstring ws = /* … */;
@@ -1109,7 +1109,7 @@ Verwenden Sie den Operator mit der Methode „ToString()“, um den Fehler in di
 
 ### <a name="initializers-for-inline-static-data-members"></a>Initialisierer für statische Inline-Datenmember
 
-Ungültiger Memberzugriff innerhalb der Initialisierer **inline** und **static constexpr** wird nun ordnungsgemäß erkannt. Der folgende Beispielcode wird in Visual Studio 2017 fehlerfrei kompiliert, in Visual Studio 2019 wird im **`/std:c++17`** -Modus jedoch der Fehler „C2248: `cannot access private member declared in class 'X'`“ ausgelöst.
+Ungültige Memberzugriffe innerhalb der Initialisierer **`inline`** und **static constexpr** werden nun ordnungsgemäß erkannt. Der folgende Beispielcode wird in Visual Studio 2017 fehlerfrei kompiliert, in Visual Studio 2019 wird im **`/std:c++17`** -Modus jedoch der Fehler „C2248: `cannot access private member declared in class 'X'`“ ausgelöst.
 
 ```cpp
 struct X
@@ -1136,7 +1136,7 @@ struct X
 
 ### <a name="c4800-reinstated"></a>Wiederherstellung der Warnung C4800
 
-MSVC verwendete bisher die Leistungswarnung C4800 bei impliziten Konvertierungen in **bool**. Sie war zu störend und konnte nicht unterdrückt werden, sodass wir sie in Visual Studio 2017 entfernt haben. Allerdings gab es während des Lebenszyklus von Visual Studio 2017 viel Feedback zu den nützlichen Fällen, die dank dieser Warnung behoben werden konnten. Daher haben wir die Warnung C4800 sorgfältig angepasst und bieten sie in Visual Studio 2019 zusammen mit einer erläuternden C4165 wieder an. Beide Warnungen können problemlos unterdrückt werden: entweder durch eine explizite Umwandlung oder durch den Vergleich mit 0 des entsprechenden Typs. Die Warnung C4800 ist eine standardmäßig deaktivierte Warnung der Stufe 4, und die Warnung C4165 ist eine standardmäßig deaktivierte Warnung der Stufe 3. Beide können mithilfe der Compileroption `/Wall` gefunden werden.
+MSVC verwendete bisher die Leistungswarnung C4800 bei einer impliziten Konvertierung in **`bool`** . Sie war zu störend und konnte nicht unterdrückt werden, sodass wir sie in Visual Studio 2017 entfernt haben. Allerdings gab es während des Lebenszyklus von Visual Studio 2017 viel Feedback zu den nützlichen Fällen, die dank dieser Warnung behoben werden konnten. Daher haben wir die Warnung C4800 sorgfältig angepasst und bieten sie in Visual Studio 2019 zusammen mit einer erläuternden C4165 wieder an. Beide Warnungen können problemlos unterdrückt werden: entweder durch eine explizite Umwandlung oder durch den Vergleich mit 0 des entsprechenden Typs. Die Warnung C4800 ist eine standardmäßig deaktivierte Warnung der Stufe 4, und die Warnung C4165 ist eine standardmäßig deaktivierte Warnung der Stufe 3. Beide können mithilfe der Compileroption `/Wall` gefunden werden.
 
 Im folgenden Beispiel werden die Warnungen C4800 und C4165 in `/Wall` ausgelöst:
 
@@ -1209,7 +1209,7 @@ int main()
 }
 ```
 
-Um den Fehler zu vermeiden, fügen Sie das Schlüsselwort **typename** zur Deklaration von `a`: `typename T::Type a;` hinzu.
+Fügen Sie das Schlüsselwort **`typename`** zur Deklaration von `a` hinzu, um den Fehler zu vermeiden: `typename T::Type a;`.
 
 ### <a name="inline-assembly-code-isnt-supported-in-a-lambda-expression"></a>Inlineassemblycode wird in Lambdaausdrücken nicht unterstützt
 
@@ -1286,7 +1286,7 @@ Die makro-ersetzende Schlüsselworterzwingung \<xkeycheck.h> der Standardbibliot
 
 ### <a name="correct-warning-for-narrowing-string-conversions"></a>Richtige Warnungen für einschränkende Zeichenfolgenkonvertierungen
 
-Ein nicht beabsichtigter `static_cast` von `std::string`, der für den Standard nicht erforderlich ist und versehentlich C4244-Warnungen unterdrückt hat, wurde entfernt. Beim Versuch, `std::string::string(const wchar_t*, const wchar_t*)` aufzurufen, wird nun ordnungsgemäß die Warnung „C4244 `narrowing a wchar_t into a char`“ ausgelöst.
+Ein nicht beabsichtigter **`static_cast`** von `std::string`, der für den Standard nicht erforderlich ist und versehentlich C4244-Warnungen unterdrückt hat, wurde entfernt. Beim Versuch, `std::string::string(const wchar_t*, const wchar_t*)` aufzurufen, wird nun ordnungsgemäß die Warnung „C4244 `narrowing a wchar_t into a char`“ ausgelöst.
 
 ### <a name="various-filesystem-correctness-fixes"></a>Unterschiedliche \<filesystem>-Korrekturen der Genauigkeit
 
@@ -1354,7 +1354,7 @@ Ein kleiner Fehler bei Typmerkmalen wurde behoben, bei dem `add_const_t` und zug
 
 ### <a name="const-comparators-for-associative-containers"></a>Const-Vergleichsoperatoren für assoziative Container
 
-Der Code für die Suche und das Einfügen in [Menge](../standard-library/set-class.md), [Zuordnung](../standard-library/map-class.md), [Multimenge](../standard-library/multiset-class.md), und [Mehrfachzuordnung](../standard-library/multimap-class.md) wurde zusammengeführt, um die Codegröße zu reduzieren. Auf die gleiche Weise wie bei den Suchvorgängen zuvor bezeichnen Einfügevorgänge nun den „Kleiner als“-Vergleich auf einem **const**-Vergleichsfunktor. Der folgende Code wird in Visual Studio 2019 Version 16.1 und früher kompiliert, erzeugt jedoch C3848 in Visual Studio 2019 Version 16.2:
+Der Code für die Suche und das Einfügen in [Menge](../standard-library/set-class.md), [Zuordnung](../standard-library/map-class.md), [Multimenge](../standard-library/multiset-class.md), und [Mehrfachzuordnung](../standard-library/multimap-class.md) wurde zusammengeführt, um die Codegröße zu reduzieren. Auf die gleiche Weise wie früher bei Suchvorgängen rufen Einfügevorgänge nun den „Kleiner als“-Vergleich in einem **`const`** -Vergleichsfunktor auf. Der folgende Code wird in Visual Studio 2019 Version 16.1 und früher kompiliert, erzeugt jedoch C3848 in Visual Studio 2019 Version 16.2:
 
 ```cpp
 #include <iostream>
@@ -1389,7 +1389,7 @@ int main() {
 }
 ```
 
-Erstellen Sie den Vergleichsoperator **const**, um den Fehler zu vermeiden:
+Legen Sie den Vergleichsoperator als **`const`** fest, um den Fehler zu vermeiden:
 
 ```cpp
 struct Comparer  {
@@ -1406,23 +1406,23 @@ struct Comparer  {
 
 ## <a name="conformance-improvements-in-visual-studio-2017-rtw-version-150"></a><a name="improvements_150"></a> Verbesserungen der Konformität in Visual Studio 2017 RTW (Version 15.0)
 
-Der Microsoft C++-Compiler in Visual Studio 2017 ist mit Unterstützung für generalisierte **constexpr**-Elemente und die Initialisierung für nicht statische Datenelemente (NSDMI) für Aggregate für Funktionen, die im C++14-Standard hinzugefügt wurden, jetzt vollständig. Dem Compiler fehlen jedoch noch einige Funktionen der C++11- und C++98-Standards. Eine Tabelle mit dem aktuellen Compilerstatus finden Sie unter [Microsoft C++-Sprachkonformität: Tabelle](../visual-cpp-language-conformance.md).
+Mit der Unterstützung für generalisierte **`constexpr`** -Elemente und der Initialisierung für nicht statische Datenelemente (Non-Static Data Member Initialization, NSDMI) für Aggregate ist der Microsoft-C++-Compiler in Visual Studio 2017 für Features, die im C++14-Standard hinzugefügt wurden, jetzt vollständig. Dem Compiler fehlen jedoch noch einige Funktionen der C++11- und C++98-Standards. Eine Tabelle mit dem aktuellen Compilerstatus finden Sie unter [Microsoft C++-Sprachkonformität: Tabelle](../visual-cpp-language-conformance.md).
 
 ### <a name="c11-expression-sfinae-support-in-more-libraries"></a>C++11: Unterstützung für SFINAE für Ausdrücke in mehr Bibliotheken
 
-Die Unterstützung für den SFINAE-Ausdruck wird im Compiler weiterhin verbessert. Dies ist für die Vorlagenargumentableitung und -ersetzung erforderlich, bei der die Ausdrücke **decltype** und **constexpr** möglicherweise als Vorlagenparameter angezeigt werden. Weitere Informationen finden Sie unter [Expression SFINAE improvements in Visual Studio 2017 RC (Verbesserungen der SFINAE für Ausdrücke in Visual Studio 2017)](https://devblogs.microsoft.com/cppblog/expression-sfinae-improvements-in-vs-2015-update-3/).
+Die Unterstützung für den SFINAE-Ausdruck wird im Compiler weiterhin verbessert. Dies ist für die Vorlagenargumentableitung und -ersetzung erforderlich, bei der die Ausdrücke **`decltype`** und **`constexpr`** möglicherweise als Vorlagenparameter angezeigt werden. Weitere Informationen finden Sie unter [Expression SFINAE improvements in Visual Studio 2017 RC (Verbesserungen der SFINAE für Ausdrücke in Visual Studio 2017)](https://devblogs.microsoft.com/cppblog/expression-sfinae-improvements-in-vs-2015-update-3/).
 
 ### <a name="c14-nsdmi-for-aggregates"></a>C++14: NSDMI für Aggregate
 
 Ein Aggregat ist ein Array oder eine Klasse ohne einen vom Benutzer bereitgestellten Konstruktor, ohne private oder geschützte nicht statische Datenmember, ohne Basisklassen und ohne virtuelle Funktionen. Ab C++14 können Aggregate Memberinitialisierer enthalten. Weitere Informationen finden Sie unter [Member initializers and aggregates (Memberinitialisierer und Aggregate)](https://wg21.link/n3605).
 
-### <a name="c14-extended-constexpr"></a>C++14: Erweiterte **constexpr**-Ausdrücke
+### <a name="c14-extended-constexpr"></a>C++14: Erweiterte `constexpr`
 
-Ausdrücke, die als **constexpr** deklariert sind, dürfen jetzt bestimmte Arten von Deklarationen, if- und switch-Anweisungen, Schleifenanweisungen und Mutationen der Objekte enthalten, deren Lebensdauer in der Auswertung von constexpr-Ausdrücken begonnen hat. Es ist nicht mehr erforderlich, dass eine nicht statische Memberfunktion von **constexpr** implizit **const** ist. Weitere Informationen finden Sie unter [Relaxing constraints on constexpr functions (Lockerung der Einschränkungen auf constexpr-Funktionen)](https://wg21.link/n3652).
+Als **`constexpr`** deklarierte Ausdrücke dürfen jetzt bestimmte Arten von Deklarationen, if- und switch-Anweisungen, Schleifenanweisungen und Mutationen von Objekten enthalten, deren Lebensdauer in der Auswertung von constexpr-Ausdrücken begonnen hat. Darüber hinaus ist es nicht mehr erforderlich, dass eine nicht statische Memberfunktion von **`constexpr`** implizit **`const`** ist. Weitere Informationen finden Sie unter [Relaxing constraints on constexpr functions (Lockerung der Einschränkungen auf constexpr-Funktionen)](https://wg21.link/n3652).
 
 ### <a name="c17-terse-static_assert"></a>C++17: Nicht ausführliche `static_assert`
 
-der Meldungsparameter für `static_assert` ist optional. Weitere Informationen finden Sie unter [Extending static_assert, v2 (Erweitern des static_assert, v2)](https://wg21.link/n3928).
+Der Meldungsparameter für **`static_assert`** ist optional. Weitere Informationen finden Sie unter [Extending static_assert, v2 (Erweitern des static_assert, v2)](https://wg21.link/n3928).
 
 ### <a name="c17-fallthrough-attribute"></a>C++17: `[[fallthrough]]`-Attribut
 
@@ -1434,17 +1434,17 @@ Bereichsbezogene for-Schleifen erfordern nicht mehr, dass `begin()` und `end()` 
 
 ## <a name="conformance-improvements-in-153"></a><a name="improvements_153"></a> Verbesserungen der Konformität in 15.3
 
-### <a name="constexpr-lambdas"></a>constexpr-Lambdas
+### <a name="constexpr-lambdas"></a>`constexpr`-Lambdas
 
-Lambdaausdrücke können jetzt in konstanten Ausdrücken verwendet werden. Weitere Informationen finden Sie unter [constexpr-Lambdaausdrücke in C++](../cpp/lambda-expressions-constexpr.md).
+Lambdaausdrücke können jetzt in konstanten Ausdrücken verwendet werden. Weitere Informationen finden Sie unter [`constexpr`-Lambdaausdrücke in C++](../cpp/lambda-expressions-constexpr.md).
 
-### <a name="if-constexpr-in-function-templates"></a>**if constexpr** in Funktionsvorlagen
+### <a name="if-constexpr-in-function-templates"></a>`if constexpr` in Funktionsvorlagen
 
-Eine Funktionsvorlage kann **if constexpr**-Anweisungen zum Branchen zur Kompilierzeit enthalten. Weitere Informationen finden Sie unter [if constexpr statements (if constexpr-Anweisungen)](../cpp/if-else-statement-cpp.md#if_constexpr).
+Eine Funktionsvorlage kann **`if constexpr`** -Anweisungen enthalten, um das Branchen zur Kompilierzeit zu unterstützen. Weitere Informationen finden Sie unter [`if constexpr`-Anweisungen](../cpp/if-else-statement-cpp.md#if_constexpr).
 
 ### <a name="selection-statements-with-initializers"></a>Auswahlanweisungen mit Initialisierern
 
-Eine **if**-Anweisung kann einen Initialisierer enthalten, der im Blockbereich innerhalb der Anweisung selbst eine Variable einführt. Weitere Informationen finden Sie unter [if statements with initializer (if-Anweisungen mit Initialisierer)](../cpp/if-else-statement-cpp.md#if_with_init).
+Eine **`if`** -Anweisung kann einen Initialisierer enthalten, der innerhalb der Anweisung selbst im Blockbereich eine Variable einführt. Weitere Informationen finden Sie unter [`if`-Anweisungen mit Initialisierer](../cpp/if-else-statement-cpp.md#if_with_init).
 
 ### <a name="maybe_unused-and-nodiscard-attributes"></a>`[[maybe_unused]]`- und `[[nodiscard]]`-Attribute
 
@@ -1458,29 +1458,29 @@ Neue Syntax, um nur einen einzigen Namespacebezeichner in einer Attributliste zu
 
 Es ist jetzt möglich, einen Wert mit individuellen Namen für die verschiedenen Komponenten in einer einzigen Anweisung zu speichern. Dies gilt, wenn der Wert ein Array, `std::tuple` oder `std::pair` ist oder nur öffentliche, nicht statische Datenmember enthält. Weitere Informationen finden Sie unter [Structured Bindings (Strukturierte Bindungen)](https://wg21.link/p0144r0) und [Returning multiple values from a function (Zurückgeben von mehreren Werten aus einer Funktion)](../cpp/functions-cpp.md#multi_val).
 
-### <a name="construction-rules-for-enum-class-values"></a>Erstellungsregeln für **enum class**-Werte
+### <a name="construction-rules-for-enum-class-values"></a>Erstellungsregeln für `enum class`-Klassenwerte
 
 Für den zugrunde liegenden Typ einer Enumeration mit eigenem Gültigkeitsbereich wird jetzt eine implizite und nicht einschränkende Konvertierung in die Enumeration selbst durchgeführt. Diese Konvertierung ist verfügbar, wenn in der Definition kein Enumerator eingeführt wird und in der Quelle eine Listeninitialisierungsyntax verwendet wird. Weitere Informationen finden Sie unter [Construction Rules for enum class Values (Erstellungsregeln für enum-Klassenwerte)](https://wg21.link/p0138r2) und [Enumerations (Enumerationen)](../cpp/enumerations-cpp.md#no_enumerators).
 
 ### <a name="capturing-this-by-value"></a>Erfassen von `*this` nach Wert
 
-Das `*this`-Objekt in einem Lambdaausdruck kann jetzt anhand des Werts erfasst werden. Diese Änderung ermöglicht Szenarios in denen der Lambdaausdruck in parallelen und asynchronen Vorgängen aufgerufen wird, insbesondere in neueren Computerarchitekturen. Weitere Informationen finden Sie unter L[Lambda Capture of \*this by Value as \[=,\*this\]](https://wg21.link/p0018r3) (Lambdaerfassung von „*this“ anhand des Werts als =,this).
+Das **`*this`** -Objekt in einem Lambdaausdruck kann jetzt anhand des Werts erfasst werden. Diese Änderung ermöglicht Szenarios in denen der Lambdaausdruck in parallelen und asynchronen Vorgängen aufgerufen wird, insbesondere in neueren Computerarchitekturen. Weitere Informationen finden Sie unter L[Lambda Capture of \*this by Value as \[=,\*this\]](https://wg21.link/p0018r3) (Lambdaerfassung von „*this“ anhand des Werts als =,this).
 
-### <a name="removing-operator-for-bool"></a>`operator++` für **bool** wird entfernt
+### <a name="removing-operator-for-bool"></a>Entfernen von `operator++` für `bool`
 
-`operator++` wird nicht mehr für **bool**-Typen unterstützt. Weitere Informationen finden Sie unter [Remove Deprecated operator++(bool)](https://wg21.link/p0002r1) (Veralteten „operator++(bool)“ entfernen).
+`operator++` wird für **`bool`** -Typen nicht mehr unterstützt. Weitere Informationen finden Sie unter [Remove Deprecated operator++(bool)](https://wg21.link/p0002r1) (Veralteten „operator++(bool)“ entfernen).
 
-### <a name="removing-deprecated-register-keyword"></a>Das veraltete Schlüsselwort **register** wird nicht mehr unterstützt
+### <a name="removing-deprecated-register-keyword"></a>Entfernen des veralteten Schlüsselworts `register`
 
-Das Schlüsselwort **register**, das als veraltet gekennzeichnet wurde (und vom Compiler ignoriert wurde), wurde jetzt aus der Sprache entfernt. Weitere Informationen finden Sie unter [Remove Deprecated Use of the register Keyword](https://wg21.link/p0001r1) (Entfernen der Verwendung des veralteten register-Schlüsselworts).
+Das Schlüsselwort **`register`** , das als veraltet gekennzeichnet und vom Compiler ignoriert wurde, wurde jetzt aus der Sprache entfernt. Weitere Informationen finden Sie unter [Remove Deprecated Use of the `register`Keyword](https://wg21.link/p0001r1) (Entfernen der Verwendung des veralteten Schlüsselworts „register“).
 
 ## <a name="conformance-improvements-in-155"></a><a name="improvements_155"></a> Verbesserungen der Konformität in 15.5
 
 Funktionen, die mit \[14] markiert sind, stehen selbst im **`/std:c++14`** -Modus ohne Bedingungen zur Verfügung.
 
-### <a name="new-compiler-switch-for-extern-constexpr"></a>Neue Compileroption für **extern constexpr**
+### <a name="new-compiler-switch-for-extern-constexpr"></a>Neue Compilerschalter für `extern constexpr`
 
-In früheren Versionen von Visual Studio gab der Compiler immer eine interne **constexpr**-Variablenverknüpfung aus, selbst wenn die Variable als **extern** markiert war. In Visual Studio 2017 Version 15.5 ermöglicht ein neuer Compilerschalter ([`/Zc:externConstexpr`](../build/reference/zc-externconstexpr.md)) das richtige standardkonforme Verhalten. Weitere Informationen finden Sie unter [Externe constexpr-Verknüpfung](#extern_linkage).
+In früheren Versionen von Visual Studio hat der Compiler immer eine interne **`constexpr`** -Variablenbindung ausgegeben, selbst wenn die Variable als **`extern`** markiert wurde. In Visual Studio 2017 Version 15.5 ermöglicht ein neuer Compilerschalter ([`/Zc:externConstexpr`](../build/reference/zc-externconstexpr.md)) das richtige standardkonforme Verhalten. Weitere Informationen finden Sie unter [Externe constexpr-Verknüpfung](#extern_linkage).
 
 ### <a name="removing-dynamic-exception-specifications"></a>Entfernen dynamischer Ausnahmespezifikationen
 
@@ -1536,7 +1536,7 @@ Verbesserte Konformität in `<iostream>` durch Vermeidung einer nicht standardm�
 
 Die Standardbibliothek verwendet jetzt intern Variablenvorlagen.
 
-Die Standardbibliothek wurde aufgrund von C++17-Compileränderungen aktualisiert. Dabei wurde u. a. **noexcept** im Typsystem hinzugefügt. Außerdem wurden dynamische Ausnahmespezifikationen entfernt.
+Die Standardbibliothek wurde aufgrund von C++17-Compileränderungen aktualisiert. Dabei wurde u. a. **`noexcept`** im Typsystem hinzugefügt. Außerdem wurden dynamische Ausnahmespezifikationen entfernt.
 
 ## <a name="conformance-improvements-in-156"></a><a name="improvements_156"></a> Verbesserungen der Konformität in 15.6
 
@@ -1552,7 +1552,7 @@ Die Standardbibliothek wurde aufgrund von C++17-Compileränderungen aktualisiert
 
 ### <a name="c17-rewording-inheriting-constructors"></a>C++17: Umformulierung der Konstruktorvererbung
 
-[P0136R1](https://wg21.link/p0136r1) gibt an, dass eine **using**-Deklaration, die einen Konstruktor benennt, jetzt die zugehörigen Basisklassenkonstruktoren für Initialisierungen der abgeleiteten Klasse sichtbar macht, anstatt die zusätzlichen abgeleiteten Klassenkonstruktoren zu deklarieren. Diese Umformulierung ist eine Änderung gegenüber C++14. In Visual Studio 2017 Version 15.7 und höher kann Code, der im **`/std:c++17`** -Modus in C++14 gültig ist und die Konstruktorvererbung verwendet, ungültig sein oder über eine andere Semantik verfügen.
+[P0136R1](https://wg21.link/p0136r1) gibt an, dass eine **`using`** -Deklaration, die einen Konstruktor benennt, jetzt die zugehörigen Basisklassenkonstruktoren für Initialisierungen der abgeleiteten Klasse sichtbar macht, anstatt die zusätzlichen abgeleiteten Klassenkonstruktoren zu deklarieren. Diese Umformulierung ist eine Änderung gegenüber C++14. In Visual Studio 2017 Version 15.7 und höher kann Code, der im **`/std:c++17`** -Modus in C++14 gültig ist und die Konstruktorvererbung verwendet, ungültig sein oder über eine andere Semantik verfügen.
 
 Im folgenden Beispiel ist das Verhalten von C++14 dargestellt:
 
@@ -1638,7 +1638,7 @@ Derived d2 {}; // error C2248: 'Base::Base': cannot access
 
 [P0127R2](https://wg21.link/p0127r2)
 
-Im **`/std:c++17`** -Modus kann der Compiler jetzt den Typ eines Vorlagenarguments eines Nicht-Typs, das mit **auto** deklariert ist, ableiten:
+Im **`/std:c++17`** -Modus kann der Compiler jetzt den Typ eines mit **`auto`** deklarierten Vorlagenarguments ohne Typ ableiten:
 
 ```cpp
 template <auto x> constexpr auto constant = x;
@@ -1690,7 +1690,7 @@ void sample(A<0> *p)
 
 ### <a name="c17-hypotx-y-z"></a>C++17: `hypot(x, y, z)`
 
-[P0030R1](https://wg21.link/p0030r1) Es werden drei neue Überladungen zu `std::hypot` für die Typen **float**, **double** und **long double** hinzugefügt. Jeder dieser Typen verfügt über drei Eingabeparameter.
+[P0030R1](https://wg21.link/p0030r1) Für die Typen **`float`** , **`double`** und **`long double`** werden drei neue Überladungen zu `std::hypot` hinzugefügt. Jeder dieser Typen verfügt über drei Eingabeparameter.
 
 ### <a name="c17-filesystem"></a>C++17: \<filesystem>
 
@@ -1708,7 +1708,7 @@ void sample(A<0> *p)
 
 [P0682R1](https://wg21.link/p0682r1) Verschieben Sie die elementaren Funktionen für die Zeichenfolgenkonvertierung von P0067R5 in einen neuen Header, \<charconv>, und führen Sie andere Verbesserungen durch, einschließlich der Fehlerbehandlung zur Verwendung von `std::errc` anstelle von `std::error_code`.
 
-### <a name="c17-constexpr-for-char_traits-partial"></a>C++17: **constexpr** für `char_traits` (partiell)
+### <a name="c17-constexpr-for-char_traits-partial"></a>C ++ 17: `constexpr` für `char_traits` (partiell)
 
 [P0426R1](https://wg21.link/p0426r1) Änderungen an den `std::traits_type`-Memberfunktionen `length`, `compare` und `find`, damit `std::string_view` in konstanten Ausdrücken verfügbar wird. (In Visual Studio 2017 Version 15.6 wird dies nur für Clang/LLVM unterstützt. In Version 15.7 Preview 2 ist die Unterstützung für CIXX ebenso fast vollständig.)
 
@@ -1843,7 +1843,7 @@ int main()
 }
 ```
 
-### <a name="constexpr"></a>**constexpr**
+### `constexpr`
 
 Visual Studio 2017 löst ordnungsgemäß einen Fehler aus, wenn der linke Operand eines bedingten Auswertungsvorgangs in einem constexpr-Kontext ungültig ist. Der folgende Code wird in Visual Studio 2015 kompiliert, in Visual Studio 2017 jedoch nicht. Stattdessen wird „C3615 `constexpr function 'f' cannot result in a constant expression`“ ausgelöst:
 
@@ -1860,7 +1860,7 @@ constexpr bool f(const array<1> &arr)
 }
 ```
 
-Deklarieren Sie die Funktion `array::size()` als **constexpr**, oder entfernen Sie den Qualifizierer **constexpr** von `f`, um den Fehler zu beheben.
+Deklarieren Sie die Funktion `array::size()` als **`constexpr`** , oder entfernen Sie den **`constexpr`** -Qualifizierer aus `f`, um den Fehler zu beheben.
 
 ### <a name="class-types-passed-to-variadic-functions"></a>Klassentypen, die an variadic-Funktionen übergeben werden
 
@@ -1929,7 +1929,7 @@ struct S
 int i = (const S)0; // error C2440
 ```
 
-Deklarieren Sie `operator int()` als **const**, um den Fehler zu beheben.
+Deklarieren Sie `operator int()` als **`const`** , um den Fehler zu beheben.
 
 ### <a name="access-checking-on-qualified-names-in-templates"></a>Zugriff auf qualifizierte Namen in Vorlagen überprüfen
 
@@ -1966,7 +1966,7 @@ template <class T, ListNodeMember M> class ListHead; // C2955: 'ListNodeMember':
 
 ### <a name="expression-sfinae"></a>SFINAE für Ausdrücke
 
-Damit SFINAE für Ausdrücke unterstützt werden kann, analysiert der Compiler jetzt **decltype**-Argumente, wenn die Vorlagen deklariert, aber nicht instanziiert sind. Wenn also eine nicht abhängige Spezialisierung im decltype-Argument gefunden wird, wird sie nicht auf die Instanziierungerungszeit zurückgestellt. Es wird sofort verarbeitet, und alle daraus resultierenden Fehler werden sofort diagnostiziert.
+Um SFINAE für Ausdrücke zu unterstützen, analysiert der Compiler jetzt **`decltype`** -Argumente, wenn die Vorlagen deklariert statt instanziiert werden. Wenn also eine nicht abhängige Spezialisierung im decltype-Argument gefunden wird, wird sie nicht auf die Instanziierungerungszeit zurückgestellt. Es wird sofort verarbeitet, und alle daraus resultierenden Fehler werden sofort diagnostiziert.
 
 Das folgende Beispiel zeigt einen solchen Compilerfehler, der zum Zeitpunkt der Deklaration ausgelöst wird:
 
@@ -2015,7 +2015,7 @@ value struct V
 
 ### <a name="default-indexers-ccli"></a>Standardindexer (C++/CLI)
 
-In Visual Studio 2015 und früher hat der Compiler in einigen Fällen fälschlicherweise eine Standardeigenschaft als einen Standardindexer kategorisiert. Das Problem konnte umgangen werden, indem mithilfe des Bezeichners **default** auf die Eigenschaft zugegriffen wurde. Diese Problemumgehung löste selbst ein Problem aus, nachdem **default** als Schlüsselwort in C++11 eingeführt wurde. In Visual Studio 2017 wurden die Fehler, für die eine Problemumgehung erforderlich war, behoben. Der Compiler löst jetzt einen Fehler aus, wenn für den Zugriff auf die Standardeigenschaft für eine Klasse **default** verwendet wird.
+In Visual Studio 2015 und früher hat der Compiler in einigen Fällen fälschlicherweise eine Standardeigenschaft als einen Standardindexer kategorisiert. Das Problem konnte umgangen werden, indem der Bezeichner **`default`** für den Zugriff auf die Eigenschaft verwendet wurde. Diese Problemumgehung wurde selbst wiederum problematisch, nachdem **`default`** als Schlüsselwort in C++11 eingeführt wurde. In Visual Studio 2017 wurden die Fehler, für die eine Problemumgehung erforderlich war, behoben. Der Compiler löst jetzt einen Fehler aus, wenn für den Zugriff auf die Standardeigenschaft für eine Klasse **`default`** verwendet wird.
 
 ```cpp
 //class1.cs
@@ -2087,7 +2087,7 @@ void g()
 }
 ```
 
-Sie können den Fehler beheben, indem Sie `i` als **int** deklarieren.
+Um den Fehler zu beheben, deklarieren Sie `i` als **`int`** .
 
 ### <a name="pre-condition-checks-for-type-traits"></a>Voraussetzungsprüfungen für Typmerkmale
 
@@ -2182,7 +2182,7 @@ template <typename T>
 void S::f(T t) {}
 ```
 
-### <a name="attempting-to-take-the-address-of-this-pointer"></a>Es wird versucht, die Adresse eines **this**-Zeigers zu verwenden
+### <a name="attempting-to-take-the-address-of-this-pointer"></a>Es wird versucht, die Adresse eines `this`-Zeigers zu verwenden
 
 In C++ ist **`this`** ein prvalue des Typzeigers auf X. Sie können nicht die Adresse von **`this`** verwenden oder sie an einen lvalue-Verweis binden. In früheren Versionen von Visual Studio konnte es Ihnen der Compiler ermöglichen, diese Einschränkung mithilfe einer Umwandlung zu umgehen. In Visual Studio 2017 Version 15.3 generiert der Compiler Fehler C2664.
 
@@ -2279,9 +2279,9 @@ extern "C" __declspec(noinline) HRESULT __stdcall
 
 Diese Warnung ist in Version 15.3 standardmäßig deaktiviert (standardmäßig aktiviert in Version 15.5) und wirkt sich nur auf den mit **`/Wall`** **`/WX`** kompilierten Code aus.
 
-### <a name="decltype-and-calls-to-deleted-destructors"></a>**decltype** und Aufrufe gelöschter Destruktoren
+### <a name="decltype-and-calls-to-deleted-destructors"></a>`decltype` und Aufrufe gelöschter Destruktoren
 
-In früheren Versionen von Visual Studio erkannte der Compiler nicht, wenn ein Aufruf eines gelöschten Destruktors im Kontext des Ausdrucks erfolgte, der **decltype** zugeordnet war. Mit dem folgenden Code wird in Version 15.3 von Visual Studio 2017 der Fehler „C2280: `'A<T>::~A(void)': attempting to reference a deleted function`“ generiert:
+In früheren Versionen von Visual Studio erkannte der Compiler nicht, wenn im Kontext des Ausdrucks, der **`decltype`** zugeordnet war, ein gelöschter Destruktor aufgerufen wurde. Mit dem folgenden Code wird in Version 15.3 von Visual Studio 2017 der Fehler „C2280: `'A<T>::~A(void)': attempting to reference a deleted function`“ generiert:
 
 ```cpp
 template<typename T>
@@ -2304,7 +2304,7 @@ void h()
 
 ### <a name="uninitialized-const-variables"></a>Nicht initialisierte „const“-Variablen
 
-Das Visual Studio 2017 RTW-Release wies eine Regression auf, bei der der C++-Compiler keine Diagnose für eine nicht initialisierte **const**-Variable ausgab. Diese Regression wurde in Visual Studio 2017 Version 15.3 behoben. Mit dem folgenden Code wird die Warnung „C4132: `'Value': const object should be initialized`“ generiert:
+Das Visual Studio 2017 RTW-Release wies eine Regression auf, bei der der C++-Compiler keine Diagnose für eine nicht initialisierte **`const`** -Variable ausgab. Diese Regression wurde in Visual Studio 2017 Version 15.3 behoben. Mit dem folgenden Code wird die Warnung „C4132: `'Value': const object should be initialized`“ generiert:
 
 ```cpp
 const int Value; //C4132
@@ -2503,7 +2503,7 @@ int main()
 
 ### <a name="exception-handlers"></a>Ausnahmehandler
 
-Handler, die auf ein Array oder einen Funktionstyp verweisen, stimmen niemals mit einem Ausnahmeobjekt überein. Der Compiler hält sich nun ordnungsgemäß an diese Regel und gibt eine Warnung der Stufe 4 aus. Auch werden Handler von `char*` oder `wchar_t*` nicht mehr einem Zeichenfolgenliteral zugeordnet, wenn **`/Zc:strictStrings`** verwendet wird.
+Handler, die auf ein Array oder einen Funktionstyp verweisen, stimmen niemals mit einem Ausnahmeobjekt überein. Der Compiler hält sich nun ordnungsgemäß an diese Regel und gibt eine Warnung der Stufe 4 aus. Auch werden Handler von **`char*`** oder `wchar_t*` nicht mehr mit einem Zeichenfolgenliteral abgeglichen, wenn **`/Zc:strictStrings`** verwendet wird.
 
 ```cpp
 int main()
@@ -2687,7 +2687,7 @@ Diese neue Warnung C4768 wird für einige Windows SDK-Header ausgegeben, die mit
 
 ### <a name="extern-constexpr-linkage"></a><a name="extern_linkage"></a> Externe constexpr-Verknüpfung
 
-In früheren Versionen von Visual Studio gab der Compiler immer eine interne **constexpr**-Variablenverknüpfung aus, selbst wenn die Variable als **extern** markiert wurde. In Visual Studio 2017 Version 15.5 ermöglicht ein neuer Compilerschalter ( **`/Zc:externConstexpr`** ) das richtige, standardkonforme Verhalten. Letztendlich wird dieses Verhalten die Standardeinstellung sein.
+In früheren Versionen von Visual Studio gab der Compiler immer eine interne **`constexpr`** -Variablenverknüpfung aus, selbst wenn die Variable als **`extern`** markiert wurde. In Visual Studio 2017 Version 15.5 ermöglicht ein neuer Compilerschalter ( **`/Zc:externConstexpr`** ) das richtige, standardkonforme Verhalten. Letztendlich wird dieses Verhalten die Standardeinstellung sein.
 
 ```cpp
 extern constexpr int x = 10;
@@ -2703,7 +2703,7 @@ Wenn eine Headerdatei eine Variable enthält, die als **extern constexpr** dekla
 extern constexpr __declspec(selectany) int x = 10;
 ```
 
-### <a name="typeid-cant-be-used-on-incomplete-class-type"></a>**typeid** kann nicht für einen unvollständigen Klassentyp verwendet werden.
+### <a name="typeid-cant-be-used-on-incomplete-class-type"></a>`typeid` kann nicht für einen unvollständigen Klassentyp verwendet werden
 
 In früheren Versionen von Visual Studio ließ der Compiler fälschlicherweise den folgenden Code zu, was zu potenziell falschen Typinformationen führte. In Visual Studio 2017 Version 15.5 löst der Compiler ordnungsgemäß einen Fehler aus:
 
@@ -2743,9 +2743,9 @@ struct D : public B { virtual ~D(); };
 static_assert(std::is_convertible<D *, B *>::value, "fail");
 ```
 
-### <a name="dynamic-exception-specification-removal-and-noexcept"></a><a name="noexcept_removal"></a> Dynamischen Ausnahmespezifikation und **noexcept** werden entfernt
+### <a name="dynamic-exception-specification-removal-and-noexcept"></a><a name="noexcept_removal"></a> Entfernen der dynamischen Ausnahmespezifikation und `noexcept`
 
-In C++17 ist `throw()` ein Alias für **noexcept**, `throw(<type list>)` und `throw(...)` werden entfernt, und bestimmte Typen können **noexcept** enthalten. Diese Änderung kann zu Quellkompatibilitätsproblemen mit Code führen, der mit C++14 oder früher konform ist. Die Option **`/Zc:noexceptTypes-`** kann verwendet werden, um zur C++14-Version von **noexcept** zurückzukehren, während generell der C++17-Modus verwendet wird. Dies ermöglicht es Ihnen, Ihren Quellcode zu aktualisieren, um ihn an C++17 anzupassen, ohne dass Sie Ihren gesamten `throw()`-Code zur gleichen Zeit neu schreiben müssen.
+In C++17 ist `throw()` ein Alias für **`noexcept`** . `throw(<type list>)` und `throw(...)` werden entfernt, und bestimmte Typen können **`noexcept`** enthalten. Diese Änderung kann zu Quellkompatibilitätsproblemen mit Code führen, der mit C++14 oder früher konform ist. Die Option **`/Zc:noexceptTypes-`** kann verwendet werden, um zur C++14-Version von **`noexcept`** zurückzukehren, während generell der C++17-Modus verwendet wird. Dies ermöglicht es Ihnen, Ihren Quellcode zu aktualisieren, um ihn an C++17 anzupassen, ohne dass Sie Ihren gesamten `throw()`-Code zur gleichen Zeit neu schreiben müssen.
 
 Der Compiler diagnostiziert nun auch eine größere Anzahl nicht übereinstimmender Ausnahmespezifikationen in Deklarationen im C++17-Modus oder mit [/permissive-](../build/reference/permissive-standards-conformance.md) mit der neuen Warnung C5043.
 
@@ -2765,7 +2765,7 @@ struct B : A {
 };
 ```
 
-Sie können die Fehler entfernen, während Sie weiterhin **`/std:c++17`** verwenden, indem Sie entweder die Option **`/Zc:noexceptTypes-`** zur Befehlszeile hinzufügen oder Ihren Code aktualisieren, um wie im folgenden Beispiel gezeigt **noexcept** zu verwenden:
+Sie können die Fehler entfernen, während Sie weiterhin **`/std:c++17`** verwenden, indem Sie entweder die Option **`/Zc:noexceptTypes-`** zur Befehlszeile hinzufügen oder Ihren Code aktualisieren, um wie im folgenden Beispiel gezeigt **`noexcept`** zu verwenden:
 
 ```cpp
 void f() noexcept;
@@ -2838,11 +2838,11 @@ int main()
 }
 ```
 
-### <a name="noexcept-and-partial-specializations"></a>**noexcept** und Teilspezialisierungen
+### <a name="noexcept-and-partial-specializations"></a>`noexcept` und Teilspezialisierungen
 
-Mit **noexcept** im Typsystem können Teilspezialisierungen für die Zuordnung bestimmter aufrufbarer Typen möglicherweise zu einem Fehler beim Kompilieren oder zur Auswahl der primären Vorlage aufgrund einer fehlenden Teilspezialisierung für Zeiger auf noexcept-Funktionen führen.
+Mit **`noexcept`** im Typsystem können Teilspezialisierungen für den Abgleich bestimmter aufrufbarer Typen möglicherweise nicht kompiliert werden oder nicht die primäre Vorlage auswählen. Der Grund hierfür ist eine fehlende Teilspezialisierung für Zeiger auf noexcept-Funktionen.
 
-In solchen Fällen kann es erforderlich sein, zusätzliche Teilspezialisierungen hinzuzufügen, um die **noexcept**-Funktionszeiger und **noexcept**-Zeiger auf Memberfunktionen zu verarbeiten. Diese Überladungen sind nur im **`/std:c++17`** -Modus zulässig. Wenn die Abwärtskompatibilität mit C++14 aufrechterhalten werden muss und Sie Code schreiben, den andere nutzen, sollten Sie diese neuen Überladungen innerhalb von `#ifdef`-Anweisungen schützen. Wenn Sie in einem eigenständigen Modul arbeiten, können Sie anstelle von `#ifdef`-Wächtern einfach den Schalter **`/Zc:noexceptTypes-`** für die Kompilierung verwenden.
+In solchen Fällen kann es erforderlich sein, zusätzliche Teilspezialisierungen hinzuzufügen, um die **`noexcept`** -Funktionszeiger und die **`noexcept`** -Zeiger auf Memberfunktionen zu verarbeiten. Diese Überladungen sind nur im **`/std:c++17`** -Modus zulässig. Wenn die Abwärtskompatibilität mit C++14 aufrechterhalten werden muss und Sie Code schreiben, den andere nutzen, sollten Sie diese neuen Überladungen innerhalb von `#ifdef`-Anweisungen schützen. Wenn Sie in einem eigenständigen Modul arbeiten, können Sie anstelle von `#ifdef`-Wächtern einfach den Schalter **`/Zc:noexceptTypes-`** für die Kompilierung verwenden.
 
 Der folgende Code wird bei Verwendung von **`/std:c++14`** kompiliert, bei Verwendung von **`/std:c++17`** mit `error C2027: use of undefined type 'A<T>'` tritt jedoch ein Fehler auf:
 
@@ -2948,7 +2948,7 @@ struct D : B<T*> {
 };
 ```
 
-Für Version 15.7 von Visual Studio 2017 ist im Modus **`/std:c++17`** das Schlüsselwort **typename** in der Anweisung **using** von D erforderlich. Wenn **typename** nicht vorhanden ist, löst der Compiler die Warnung „C4346: `'B<T*>::type': dependent name is not a type`“ und den Fehler „C2061: `syntax error: identifier 'type'`“ aus:
+Für Version 15.7 von Visual Studio 2017 im Modus **`/std:c++17`** ist das **`typename`** -Schlüsselwort in der **`using`** -Anweisung von D erforderlich. Wenn **`typename`** nicht vorhanden ist, löst der Compiler die Warnung C4346 (`'B<T*>::type': dependent name is not a type`) und den Fehler C2061 (`syntax error: identifier 'type'`) aus:
 
 ```cpp
 template<typename T>
@@ -2964,7 +2964,7 @@ struct D : B<T*> {
 
 ### <a name="c17-nodiscard-attribute---warning-level-increase"></a>C++17 `[[nodiscard]]`-Attribute: Anstieg der Warnstufe
 
-In Visual Studio 2017 Version 15.7 wurde im **`/std:c++17`** -Modus die Warnstufe von „C4834 `discarding return value of function with 'nodiscard' attribute`“ von W3 in W1 erhöht. Sie können die Warnung mit einer Umwandlung in **void** oder durch die Übergabe von **`/wd:4834`** an den Compiler deaktivieren
+In Visual Studio 2017 Version 15.7 wurde im **`/std:c++17`** -Modus die Warnstufe von „C4834 `discarding return value of function with 'nodiscard' attribute`“ von W3 in W1 erhöht. Sie können die Warnung mit einer Umwandlung zu **`void`** oder durch Übergabe von **`/wd:4834`** an den Compiler deaktivieren.
 
 ```cpp
 [[nodiscard]] int f() { return 0; }
@@ -2998,9 +2998,9 @@ D<int> d;
 
 Ändern Sie den B()-Ausdruck zu „B\<T>T>()“, um den Fehler zu beheben.
 
-### <a name="constexpr-aggregate-initialization"></a>**constexpr**-Aggregatinitialisierung
+### <a name="constexpr-aggregate-initialization"></a>`constexpr`-Aggregatinitialisierung
 
-In früheren Versionen des C++-Compilers wurde die **constexpr**-Aggregatinitialisierung falsch behandelt. Der Compiler hat ungültigen Code akzeptiert, in dem die Aggregatinitialisierungsliste über zu viele Elemente verfügte und eine ungültige Codegenerierung erzeugte. Ein Beispiel für einen solchen Code wird im Folgenden gezeigt:
+In früheren Versionen des C++-Compilers wurde die **`constexpr`** -Aggregatinitialisierung falsch behandelt. Der Compiler hat ungültigen Code akzeptiert, in dem die Aggregatinitialisierungsliste über zu viele Elemente verfügte und eine ungültige Codegenerierung erzeugte. Ein Beispiel für einen solchen Code wird im Folgenden gezeigt:
 
 ```cpp
 #include <array>
@@ -3040,9 +3040,9 @@ int main() {
 
 Bei sämtlichen Compileränderungen in Visual Studio 2017 Version 15.8 handelt es sich um Fehlerbehebungen und Verhaltensänderungen. Sie sind im Folgenden aufgeführt:
 
-### <a name="typename-on-unqualified-identifiers"></a>**typename** für nicht qualifizierte Bezeichner
+### <a name="typename-on-unqualified-identifiers"></a>`typename` für nicht qualifizierte Bezeichner
 
-Im Modus [`/permissive-`](../build/reference/permissive-standards-conformance.md) werden falsche **typename**-Schlüsselwörter für nicht qualifizierte Bezeichner in Definitionen von Aliasvorlagen nicht mehr vom Compiler akzeptiert. Mit dem folgenden Code wird nun „C7511 `'T': 'typename' keyword must be followed by a qualified name`“ generiert.
+Im Modus [`/permissive-`](../build/reference/permissive-standards-conformance.md) werden falsche **`typename`** -Schlüsselwörter für nicht qualifizierte Bezeichner in Definitionen von Aliasvorlagen vom Compiler nicht mehr akzeptiert. Mit dem folgenden Code wird nun „C7511 `'T': 'typename' keyword must be followed by a qualified name`“ generiert.
 
 ```cpp
 template <typename T>
@@ -3091,7 +3091,7 @@ struct S : Base<T> {
 };
 ```
 
-Ändern Sie die Anweisung `return` in `return this->base_value;`, um den Fehler zu beheben.
+Ändern Sie die Anweisung **`return`** in `return this->base_value;`, um den Fehler zu beheben.
 
 **Hinweis**: In der Boost-Python-Bibliothek ist eine MSVC-spezifische Problemumgehung für eine Vorlagenvorwärtsdeklaration in [unwind_type.hpp](https://github.com/boostorg/python/blame/develop/include/boost/python/detail/unwind_type.hpp) vorhanden. Im [`/permissive-`](../build/reference/permissive-standards-conformance.md)-Modus ab Visual Studio 2017 Version 15.8 (\_MSC\_VER=1915) führt der MSVC-Compiler die argumentabhängige Namenssuche ordnungsgemäß aus. Das Verhalten entspricht jetzt dem Verhalten anderer Compiler, sodass diese Problemumgehung nicht mehr erforderlich ist. Um den Fehler „C3861: `'unwind_type': identifier not found`“ zu vermeiden, finden Sie unter [PR 229](https://github.com/boostorg/python/pull/229) im Boost-Repository Informationen zum Aktualisieren der Headerdatei. Das Boost-Paket [vcpkg](../build/vcpkg.md) wurde bereits gepatcht. Wenn Sie also Ihre Boost-Quellen aus vcpkg abrufen oder aktualisieren möchten, müssen Sie den Patch nicht separat anwenden.
 
@@ -3144,7 +3144,7 @@ public:
 
 [offsetof](../c-runtime-library/reference/offsetof-macro.md) wurde bisher mithilfe eines Makros implementiert, das [reinterpret_cast](../cpp/reinterpret-cast-operator.md) erfordert. Die Verwendung ist in Kontexten nicht zulässig, die einen konstanten Ausdruck erfordern, jedoch war es bisher im Microsoft C++-Compiler gültig. Das `offsetof`-Makro, das im Rahmen der Standardbibliothek enthalten ist, verwendet eine intrinsische Compiler-Funktion ( **__builtin_offsetof**), jedoch haben viele Personen den Makro-Trick verwendet, um `offsetof` selbst zu definieren.
 
-In Visual Studio 2017 Version 15.8 beschränkt der Compiler die Bereiche, in denen diese `reinterpret_cast`-Operatoren im Standardmodus auftreten kann, damit der Code einfacher dem Standardverhalten von C++ entspricht. Im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) sind die Einschränkungen sogar strenger. Wenn ein `offsetof`-Ergebnis an Stellen verwendet wird, an denen konstante Ausdrücke erforderlich sind, löst der Code möglicherweise die Warnung „C4644 `usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead`“ oder „C2975 `invalid template argument, expected compile-time constant expression`“ aus.
+In Visual Studio 2017, Version 15.8, beschränkt der Compiler die Bereiche, in denen diese **`reinterpret_cast`** -Operatoren im Standardmodus auftreten können, damit der Code dem Standardverhalten von C++ besser entspricht. Im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) sind die Einschränkungen sogar strenger. Wenn ein `offsetof`-Ergebnis an Stellen verwendet wird, an denen konstante Ausdrücke erforderlich sind, löst der Code möglicherweise die Warnung „C4644 `usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead`“ oder „C2975 `invalid template argument, expected compile-time constant expression`“ aus.
 
 Mit dem folgenden Code wird C4644 im **`/default`** - oder **`/std:c++17`** -Modus ausgelöst, im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) wird C2975 ausgelöst:
 
@@ -3202,9 +3202,9 @@ int main()
 }
 ```
 
-### <a name="template-keyword-and-nested-name-specifiers"></a>Das Schlüsselwort **template** und geschachtelte Namensspezifizierer
+### <a name="template-keyword-and-nested-name-specifiers"></a>`template`-Schlüsselwort und geschachtelte Namensspezifizierer
 
-Im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) verlangt der Compiler nun, dass das Schlüsselwort **template** Vorlagennamen vorangestellt wird, wenn diese hinter einem abhängigen geschachtelten Namensspezifizierer stehen.
+Im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) erfordert der Compiler nun das Schlüsselwort **`template`** , das einem Vorlagennamen vorangestellt wird, wenn dieser hinter einem abhängigen geschachtelten Namensspezifizierer steht.
 
 Der folgende Code löst im Modus [/permissive-](../build/reference/permissive-standards-conformance.md) nun „C7510: `'example': use of dependent template name must be prefixed with 'template'. note: see reference to class template instantiation 'X<T>' being compiled`“ aus:
 
@@ -3224,7 +3224,7 @@ struct X : Base<T>
 };
 ```
 
-Fügen Sie der Anweisung `Base<T>::example<int>();` das Schlüsselwort **template** wie im folgenden Beispiel gezeigt hinzu, um den Fehler zu beheben:
+Fügen Sie der Anweisung `Base<T>::example<int>();` das Schlüsselwort **`template`** wie im folgenden Beispiel gezeigt hinzu, um den Fehler zu beheben:
 
 ```cpp
 template<typename T> struct Base
@@ -3424,7 +3424,7 @@ note: failure was caused by call of undefined function or one not declared 'cons
 note: see usage of 'g'.
 ```
 
-Entfernen Sie den Qualifizierer **constexpr** aus der expliziten Instanziierungsanweisung der Funktion `f()`, um diesen Fehler zu vermeiden.
+Entfernen Sie den Qualifizierer **`constexpr`** aus der expliziten Instanziierung der Funktion `f()`, um diesen Fehler zu vermeiden.
 
 ::: moniker-end
 

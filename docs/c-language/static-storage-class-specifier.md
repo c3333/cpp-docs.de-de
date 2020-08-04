@@ -6,20 +6,20 @@ helpviewer_keywords:
 - storage classes, static
 - static storage class specifiers
 ms.assetid: 9bce361e-919b-46b9-8148-40d7ab0eb024
-ms.openlocfilehash: ef85ee4d757cb9579431427fba7b46a0e5ac905f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e84e2745c6077f038f47295119936a1ad6431bdd
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62157941"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229492"
 ---
 # <a name="static-storage-class-specifier"></a>static-Speicherklassenspezifizierer
 
-Eine Variable, die auf interner Ebene mit dem **static**-Speicherklassenspezifizierer deklariert wurde, hat eine globale Lebensdauer, wird jedoch nur innerhalb des Blocks angezeigt, in dem sie deklariert ist. Bei konstanten Zeichenfolgen ist die Verwendung von **static** nützlich, da es den Mehraufwand einer häufigen Initialisierung in häufig aufgerufenen Funktionen verringert.
+Eine Variable, die auf interner Ebene mit dem **`static`** -Speicherklassenspezifizierer deklariert wurde, hat eine globale Lebensdauer, ist jedoch nur innerhalb des Blocks sichtbar, in dem sie deklariert ist. Bei konstanten Zeichenfolgen ist die Verwendung von **`static`** nützlich, weil sich damit der Mehraufwand einer häufigen Initialisierung in häufig aufgerufenen Funktionen verringern lässt.
 
 ## <a name="remarks"></a>Hinweise
 
-Wenn Sie nicht explizit eine **static**-Variable initialisieren, wird sie standardmäßig mit 0 (null) initialisiert. Innerhalb einer Funktion bewirkt **static**, dass Speicher zugeordnet wird, und dient als Definition. Interne statische Variablen stellen privaten Festspeicher bereit, der nur für eine einzelne Funktion sichtbar ist.
+Wenn Sie eine Variable nicht explizit als **`static`** initialisieren, wird sie standardmäßig mit 0 initialisiert. Innerhalb einer Funktion sorgt **`static`** für die Zuordnung von Speicher und dient als Definition. Interne statische Variablen stellen privaten Festspeicher bereit, der nur für eine einzelne Funktion sichtbar ist.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - floating-point constants, about floating-point constants
 - double data type, floating-point constants
 ms.assetid: e1bd9b44-d6ab-470c-93e5-07142c7a2062
-ms.openlocfilehash: 5e17490926ee328c3a4ca03b1de9cb6e752959a0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8777f04b047516ef29ae7bf67ddaf4195e3aaf6e
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62325677"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228023"
 ---
 # <a name="c-floating-point-constants"></a>C-Gleitkommakonstanten
 
@@ -56,16 +56,16 @@ In den folgenden Beispielen werden einige Formen von Gleitkommakonstanten und Au
 25E-4     /* =  0.0025 */
 ```
 
-Gleitkommakonstanten sind positiv, es sei denn, ihnen wird ein Minuszeichen ( **-** ) vorangestellt. In diesem Fall wird das Minuszeichen als unärer arithmetischer Negationsoperator behandelt. Gleitkommakonstanten weisen den Typ `float`, `double` oder `long double` auf.
+Gleitkommakonstanten sind positiv, es sei denn, ihnen wird ein Minuszeichen ( **-** ) vorangestellt. In diesem Fall wird das Minuszeichen als unärer arithmetischer Negationsoperator behandelt. Gleitkommakonstanten weisen den Typ **`float`** , **`double`** oder **`long double`** auf.
 
-Eine Gleitkommakonstante ohne das Suffix **f**, **F**, **l** oder **L** ist vom Typ `double`. Wenn der Buchstabe **f** oder **F** als Suffix verwendet wird, ist die Konstante vom Typ `float`. Mit dem Suffix **l** oder **L** ist sie vom Typ `long double`. Zum Beispiel:
+Eine Gleitkommakonstante ohne das Suffix **f**, **F**, **l** oder **L** weist den Typ **`double`** auf. Wenn der Buchstabe **f** oder **F** als Suffix verwendet wird, ist die Konstante vom Typ **`float`** . Mit dem Suffix **l** oder **L** ist sie vom Typ **`long double`** . Zum Beispiel:
 
 ```C
 10.0L  /* Has type long double  */
 10.0F  /* Has type float        */
 ```
 
-Beachten Sie, dass der Microsoft C-Compiler `long double` intern genauso darstellt wie den Typ `double`. Weitere Informationen über die Typen `double`, `float` und `long double` finden Sie unter [Speicherung von einfachen Typen](../c-language/storage-of-basic-types.md).
+Beachten Sie, dass der Microsoft-C-Compiler **`long double`** intern genauso darstellt wie den Typ **`double`** . Weitere Informationen über die Typen **`double`** , **`float`** und **`long double`** finden Sie unter [Speicherung von einfachen Typen](../c-language/storage-of-basic-types.md).
 
 Wie in den folgenden Beispielen veranschaulicht, ist es möglich, den ganzzahligen Teil der Gleitkommakonstante auszulassen. Die Zahl .75 kann auf unterschiedliche Weise ausgedrückt werden, z. B. wie folgt:
 

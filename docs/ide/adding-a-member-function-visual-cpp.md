@@ -9,12 +9,12 @@ helpviewer_keywords:
 - classes [C++], adding members
 - add member function wizard [C++]
 ms.assetid: 55b25ddb-541d-44ed-957c-974ef91cfc85
-ms.openlocfilehash: 1cd7abbbc43ae56861b3b83451b41933b8b0b4f0
-ms.sourcegitcommit: b032daf81cb5fdb1f5a988277ee30201441c4945
+ms.openlocfilehash: c5423cfb8e2ea1b39001ec512c9c7f460d6a1a19
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51693411"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87228686"
 ---
 # <a name="add-a-member-function"></a>Hinzufügen einer Memberfunktion
 
@@ -46,10 +46,10 @@ Sobald Sie mithilfe des Assistenten eine Memberfunktion hinzugefügt haben, kön
 
   | | | |
   |---|---|---|
-  | `char` | `int` | `unsigned int` |
-  | `double` | `long` | `unsigned long` |
-  | `float` | `short` | `void` |
-  | `HRESULT` | `unsigned char` | |
+  | **`char`** | **`int`** | **`unsigned int`** |
+  | **`double`** | **`long`** | **`unsigned long`** |
+  | **`float`** | **`short`** | **`void`** |
+  | `HRESULT` | **`unsigned char`** | |
 
 - **Funktionsname**
 
@@ -61,9 +61,9 @@ Sobald Sie mithilfe des Assistenten eine Memberfunktion hinzugefügt haben, kön
 
   | | | |
   |---|---|---|
-  | `char` | `int` | `unsigned char` |
-  | `double` | `long` | `unsigned int` |
-  | `float` | `short` | `unsigned long` |
+  | **`char`** | **`int`** | **`unsigned char`** |
+  | **`double`** | **`long`** | **`unsigned int`** |
+  | **`float`** | **`short`** | **`unsigned long`** |
 
 - **Parametername**
 
@@ -75,7 +75,7 @@ Sobald Sie mithilfe des Assistenten eine Memberfunktion hinzugefügt haben, kön
 
 - **Zugriff**
 
-  Legt den Zugriff auf die Memberfunktion fest. Bei Zugriffsmodifizierern handelt es sich um Schlüsselwörter, die den Zugriff festlegen, den andere Klassen auf die Memberfunktion haben. Weitere Informationen zum Festlegen des Zugriffs finden Sie unter [Memberzugriffssteuerung](../cpp/member-access-control-cpp.md). Standardmäßig wird die Zugriffsebene von Memberfunktionen auf `public` festgelegt.
+  Legt den Zugriff auf die Memberfunktion fest. Bei Zugriffsmodifizierern handelt es sich um Schlüsselwörter, die den Zugriff festlegen, den andere Klassen auf die Memberfunktion haben. Weitere Informationen zum Festlegen des Zugriffs finden Sie unter [Memberzugriffssteuerung](../cpp/member-access-control-cpp.md). Standardmäßig ist die Zugriffsebene von Memberfunktionen auf **`public`** festgelegt.
 
   - [public](../cpp/public-cpp.md)
   - [protected](../cpp/protected-cpp.md)
@@ -83,7 +83,7 @@ Sobald Sie mithilfe des Assistenten eine Memberfunktion hinzugefügt haben, kön
 
   Überprüfen Sie, ob die neue Memberfunktion „static“ oder „virtual“ ist und ob diese „inline“ oder „pure“ ist. Wenn Sie die Memberfunktion auf „pure“ festlegen, wird das Kontrollkästchen **Virtual** aktiviert, und das Kontrollkästchen **Inline** wird deaktiviert. Standardmäßig sind Memberfunktionen nicht „static“ und nicht „virtual“.
 
-  | Option | Beschreibung  |
+  | Option | Beschreibung |
   |--------|-------------|
   | [Static](../cpp/storage-classes-cpp.md) |  Gibt an, dass die Funktion sich wie eine globale Funktion verhält und außerhalb der Klasse aufgerufen werden kann, auch wenn die Klasse nicht instanziiert wird. Die Memberfunktion hat keinen Zugriff auf nicht statische Members. Eine Memberfunktion, die als `Static` angegeben ist, kann nicht „virtual“ sein. |
   | [Virtual](../cpp/virtual-cpp.md) | Stellt sicher, dass die richtige Memberfunktion für ein Objekt aufgerufen wird, und zwar unabhängig von dem Ausdruck, mit dem der Aufruf der Memberfunktion erfolgt. Eine Memberfunktion, die als `Virtual` angegeben ist, kann nicht „static“ sein. |

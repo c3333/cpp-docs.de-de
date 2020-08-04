@@ -6,12 +6,12 @@ helpviewer_keywords:
 - DLLs [C++], frequently asked questions
 - FAQs [C++], DLLs
 ms.assetid: 09dd068e-fc33-414e-82f7-289c70680256
-ms.openlocfilehash: 9108aaf3fcface847b0391455a2aecd4d45658c4
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: e12817e016376d5b76ec67e8bd10fbd3e85dbdda
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422823"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229843"
 ---
 # <a name="dll-frequently-asked-questions"></a>FAQ (Häufig gestellte Fragen) zu DLLs
 
@@ -29,7 +29,7 @@ Im Folgenden finden Sie einige häufig gestellte Fragen zu DLLs.
 
 ## <a name="can-an-mfc-dll-create-multiple-threads"></a><a name="mfc_multithreaded_1"></a> Kann eine MFC-DLL mehrere Threads erstellen?
 
-Mit Ausnahme der Initialisierung kann eine MFC-DLL sicher mehrere Threads erstellen, solange die Win32-TLS-Funktionen (threadlokaler Speicher), z. B. **TlsAlloc**, verwendet werden, um threadlokalen Speicher zuzuweisen. Wenn eine MFC-DLL jedoch **__declspec(thread)** verwendet, um threadlokalen Speicher zuzuweisen, muss die Anwendung implizit mit der DLL verknüpft werden. Wenn die Clientanwendung explizit eine Verknüpfung mit der DLL herstellt, lädt der Aufruf für **LoadLibrary** die DLL nicht erfolgreich. Weitere Informationen zu threadlokalen Variablen in DLLs finden Sie unter [thread](../cpp/thread.md).
+Mit Ausnahme der Initialisierung kann eine MFC-DLL sicher mehrere Threads erstellen, solange die Win32-TLS-Funktionen (threadlokaler Speicher), z. B. **TlsAlloc**, verwendet werden, um threadlokalen Speicher zuzuweisen. Wenn eine MFC-DLL jedoch **`__declspec(thread)`** verwendet, um threadlokalen Speicher zuzuweisen, muss die Clientanwendung implizit mit der DLL verknüpft werden. Wenn die Clientanwendung explizit eine Verknüpfung mit der DLL herstellt, lädt der Aufruf für **LoadLibrary** die DLL nicht erfolgreich. Weitere Informationen zu threadlokalen Variablen in DLLs finden Sie unter [thread](../cpp/thread.md).
 
 Eine MFC-DLL, die während des Starts einen neuen MFC-Thread erstellt, antwortet nicht mehr, wenn sie von einer Anwendung geladen wird. Dies beinhaltet Szenarios, in denen ein Thread erstellt wird, indem ein Thread durch Aufruf von `AfxBeginThread` oder `CWinThread::CreateThread` innerhalb der folgenden Funktionen erstellt wird:
 
@@ -55,7 +55,7 @@ Beachten Sie, dass der `CWinApp::Run`-Mechanismus nicht für eine DLL gilt, da d
 
 Wenn es sich bei Ihrer DLL um eine reguläre MFC-DLL handelt, die statisch mit MFC verknüpft ist, wird die Dateigröße reduziert, wenn sie in eine reguläre MFC-DLL geändert wird, die dynamisch mit MFC verknüpft ist.
 
-Wenn die DLL über eine große Anzahl exportierter Funktionen verfügt, verwenden Sie eine DEF-Datei, um die Funktionen zu exportieren (anstelle von **__declspec(dllexport)** ), und verwenden Sie die DEF-Datei [NONAME attribute](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md) für jede exportierte Funktion. Das NONAME-Attribut führt dazu, dass nur der Ordinalwert und nicht der Funktionsname in der Exporttabelle der DLL gespeichert werden. Dies reduziert die Dateigröße.
+Wenn die DLL über eine große Anzahl exportierter Funktionen verfügt, verwenden Sie eine DEF-Datei, um die Funktionen zu exportieren (anstelle von **`__declspec(dllexport)`** ), und verwenden Sie die DEF-Datei [NONAME attribute](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md) in jeder exportierten Funktion. Das NONAME-Attribut führt dazu, dass nur der Ordinalwert und nicht der Funktionsname in der Exporttabelle der DLL gespeichert werden. Dies reduziert die Dateigröße.
 
 DLLs, die implizit mit einer Anwendung verknüpft sind, werden beim Laden der Anwendung geladen. Zur Leistungsverbesserung beim Laden können Sie versuchen, die DLL in verschiedene DLLs zu teilen. Verschieben Sie alle Funktionen, die die Anwendung, die den Aufruf durchführt, benötigt, sofort nach dem Ladevorgang in eine DLL, und lassen Sie die aufrufende Anwendung eine implizite Verknüpfung zu dieser DLL herstellen. Verschieben Sie die anderen Funktionen, die die aufrufende Anwendung nicht benötigt, sofort in einer andere DLL, und lassen Sie die Anwendung eine explizite Verknüpfung zu dieser DLL herstellen. Weitere Informationen finden Sie unter [Ermitteln der zu verwendenden Verknüpfungsmethode](linking-an-executable-to-a-dll.md#determining-which-linking-method-to-use).
 

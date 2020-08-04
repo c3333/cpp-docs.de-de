@@ -9,18 +9,18 @@ helpviewer_keywords:
 - associativity of operators
 - binary data, binary expressions
 ms.assetid: 13bc4c8e-2dc9-4b23-9f3a-25064e8777ed
-ms.openlocfilehash: 139eedf54ab42ddc34b5c049abfcd1c2638c5efc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7868073f4932e4b77329e6df4a3de374bcf41ec9
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62326377"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87227971"
 ---
 # <a name="c-operators"></a>C-Operatoren
 
 Die C-Operatoren sind eine Teilmenge der [integrierten C++-Operatoren](../cpp/cpp-built-in-operators-precedence-and-associativity.md).
 
-Es gibt drei Typen von Operatoren: Ein unärer Ausdruck umfasst entweder einen unären Operator, der einem Operanden vorangestellt wird, oder das **sizeof**-Schlüsselwort, auf das ein Ausdruck folgt. Der Ausdruck kann entweder der Name einer Variabel oder eines Umwandlungsausdrucks sein. Wenn der Ausdruck ein Umwandlungsausdruck ist, muss er in Klammern eingeschlossen werden. Ein binärer Ausdruck besteht aus zwei Operanden, die mit einem binären Operator verknüpft sind. Ein ternärer Ausdruck besteht aus drei Operanden, die vom bedingten Ausdrucksoperator verknüpft sind.
+Es gibt drei Typen von Operatoren: Ein unärer Ausdruck umfasst entweder einen unären Operator, der einem Operanden vorangestellt wird, oder das **`sizeof`** -Schlüsselwort, auf das ein Ausdruck folgt. Der Ausdruck kann entweder der Name einer Variabel oder eines Umwandlungsausdrucks sein. Wenn der Ausdruck ein Umwandlungsausdruck ist, muss er in Klammern eingeschlossen werden. Ein binärer Ausdruck besteht aus zwei Operanden, die mit einem binären Operator verknüpft sind. Ein ternärer Ausdruck besteht aus drei Operanden, die vom bedingten Ausdrucksoperator verknüpft sind.
 
 C enthält die folgenden unären Operatoren:
 
@@ -28,7 +28,7 @@ C enthält die folgenden unären Operatoren:
 |------------|----------|
 |**-** **~** **!**|Negations- und Ergänzungsoperatoren|
 |**&#42;** **&**|Dereferenzierungs- und Address-of-Operatoren|
-|**sizeof**|Größenoperator|
+|**`sizeof`**|Größenoperator|
 |**+**|Unärer Plus-Operator|
 |**++** **--**|Unäre Inkrement- und Dekrementoperatoren|
 

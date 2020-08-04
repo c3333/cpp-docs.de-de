@@ -15,12 +15,12 @@ helpviewer_keywords:
 - '* operator, address-of operator'
 - operators [C++], indirection
 ms.assetid: 10d62b00-12ba-4ea9-a2d5-09ac29ca2232
-ms.openlocfilehash: 146f84c90aa56b5abf6ae5212c1729022cb7e4dc
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: e631959e69fbdf026886b7a67a3d4e4cd7266989
+ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64343897"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87229635"
 ---
 # <a name="indirection-and-address-of-operators"></a>Dereferenzierungs- und Address-of-Operatoren
 
@@ -58,7 +58,7 @@ Die Anweisung verwendet den address-of-Operator ( **&** ), um die Adresse des se
 pa = &a[5];
 ```
 
-Der Dereferenzierungsoperator ( __&#42;__ ) wird in diesem Beispiel verwendet, um auf den Wert `int` in der Adresse, die in `pa` gespeichert ist, zuzugreifen. Der Wert wird der ganzzahligen `x`-Variable zugewiesen:
+Der Dereferenzierungsoperator ( __&#42;__ ) wird in diesem Beispiel verwendet, um auf den Wert **`int`** an der in `pa` gespeicherten Adresse zuzugreifen. Der Wert wird der ganzzahligen `x`-Variable zugewiesen:
 
 ```C
 x = *pa;
