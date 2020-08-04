@@ -88,12 +88,12 @@ helpviewer_keywords:
 - stdext::hash_map::upper_bound
 - stdext::hash_map::value_comp
 ms.assetid: 40879dfc-51ba-4a59-9f9e-26208de568a8
-ms.openlocfilehash: 063b71100af536a249949a1084ab208b6266fd8d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5939e2b4b0f8054ae5f7db7babd01dbeffc7f359
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222465"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520615"
 ---
 # <a name="hash_map-class"></a>hash_map-Klasse
 
@@ -215,7 +215,7 @@ Der von einer hash_map-Klasse bereitgestellte Iterator ist ein bidirektionaler I
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[operator&#91;&#93;](#op_at)|Fügt ein Element in ein `hash_map`-Element mit einem angegebenen Schlüsselwert ein.|
 |[hash_map:: Operator =](#op_eq)|Ersetzt die Elemente eines `hash_map`-Elements durch eine Kopie eines anderen `hash_map`-Elements.|
@@ -889,7 +889,7 @@ emplace(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*ster*|Der Wert verwendet normalerweise ein Bewegungskonstrukt, um ein Element in eine [hash_map](../standard-library/hash-map-class.md) einzufügen, außer die `hash_map` hat bereits das Element (oder, üblicher, ein Element, dessen Schlüssel gleichwertig sortiert wird).|
 
@@ -948,7 +948,7 @@ iterator emplace_hint(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*ster*|Der Wert verwendet normalerweise ein Bewegungskonstrukt, um ein Element in eine [hash_map](../standard-library/hash-map-class.md) einzufügen, außer die `hash_map` hat bereits das Element (oder, üblicher, ein Element, dessen Schlüssel gleichwertig sortiert wird).|
 |*_Where*|Ein Hinweis bezüglich des Platzes, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wird.|
@@ -1533,13 +1533,13 @@ hash_map(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*Irdische*|Die Speicher zuordnerklasse, die für dieses hash_map-Objekt verwendet werden soll, dessen Standard ist `Allocator` .|
 |*Zuschreiben*|Die Vergleichsfunktion des Typs const-`Traits`, die verwendet wird, um Elemente im hash_map-Element zu sortieren, dessen Standard `hash_compare` ist.|
 |*Right*|Das hash_map-Element , dessen Kopie die erstellte Zuordnung sein soll.|
 |*First*|Die Position des ersten Elements in dem zu kopierenden Elementbereich.|
-|*Letzten*|Die Position des ersten Elements nach dem zu kopierenden Elementbereich.|
+|*Letzter*|Die Position des ersten Elements nach dem zu kopierenden Elementbereich.|
 |*IList*|Das initializer_list-Element.|
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1591,7 +1591,7 @@ iterator insert(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*ster*|Der Wert eines in das hash_map-Element einzufügenden Elements, es sei denn, das hash_map-Element enthält dieses Element bereits (oder, allgemeiner gesagt, enthält ein Element, dessen Schlüssel gleichwertig sortiert wird).|
 |*_Where*|Ein Hinweis bezüglich des Platzes, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wird.|
@@ -1737,11 +1737,11 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::iter
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der, der `iterator` durch hash_map definiert wird, zeigt auf Elemente, die Objekte [value_type](#value_type)sind, das vom Typ "Pair" ist, dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist ** \<const Key, Type> ,** das vom Element gehalten wird.
+Der, der `iterator` durch hash_map definiert wird, zeigt auf Elemente, die Objekte von [value_type](#value_type)sind, das vom Typ ist `pair<const Key, Type>` , dessen erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
 
-Verwenden Sie den-Operator, um einen **Iterator** , `Iter` der auf ein Element in einer mehrfach Zuordnung zeigt, zu dereferenzieren `->` .
+Verwenden Sie den-Operator, um einen Iterator mit dem Namen zu dereferenzieren, `Iter` der auf ein Element in einer mehrfach Zuordnung verweist `->` .
 
-Verwenden Sie `Iter` -> **first**, das (\* `Iter`). **zuerst**. Verwenden Sie `Iter` -> **second**, das (\* `Iter`). **Zweitens**.
+Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `Iter->first` , das entspricht `(*Iter).first` . Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `Iter->second` , das entspricht `(*Iter).second` .
 
 Ein-Typ `iterator` kann zum Ändern des Werts eines Elements verwendet werden.
 
@@ -1768,7 +1768,7 @@ Gibt das Funktionsobjekt zurück, das ein hash_map-Element zum Sortieren seiner 
 
 Das gespeicherte Objekt definiert die Memberfunktion
 
-**bool operator**( **const Key&** `left`**, const Key&** `right`);
+`bool operator( const Key& left, const Key&right );`
 
 , der zurückgibt, **`true`** Wenn `left` vorausgeht und `right` in der Sortierreihenfolge nicht gleich ist.
 
@@ -2116,7 +2116,7 @@ hash_map& operator=(hash_map&& right);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*Richting*|Die [hash_map-Klasse](../standard-library/hash-map-class.md), die in die `hash_map` kopiert wird.|
 
@@ -2803,7 +2803,7 @@ The keys of the mapped elements are: 1 2 3.
 The values of the mapped elements are: 10 20 30.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

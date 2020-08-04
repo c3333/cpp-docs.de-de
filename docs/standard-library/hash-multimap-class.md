@@ -86,12 +86,12 @@ helpviewer_keywords:
 - stdext::hash_multimap::upper_bound
 - stdext::hash_multimap::value_comp
 ms.assetid: f41a6db9-67aa-43a3-a3c5-dbfe9ec3ae7d
-ms.openlocfilehash: 8876995f947823d046e0a3ea9a316a4249055d7e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 481836b22544c7bcf35df7fe27e75aae0492af42
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212331"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87521264"
 ---
 # <a name="hash_multimap-class"></a>hash_multimap-Klasse
 
@@ -212,7 +212,7 @@ Der von einer hash_multimap-Klasse bereitgestellte Iterator ist ein bidirektiona
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[hash_multimap::operator=](#op_eq)|Ersetzt die Elemente eines `hash_multimap`-Elements durch eine Kopie eines anderen `hash_multimap`-Elements.|
 
@@ -847,7 +847,7 @@ iterator emplace(ValTy&& val);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*ster*|Der Wert, der verwendet wird, um das einzufügende Element per Verschiebung in die [hash_multimap](../standard-library/hash-multimap-class.md) zu erstellen.|
 
@@ -904,7 +904,7 @@ iterator emplace_hint(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*ster*|Der Wert verwendet normalerweise ein Bewegungskonstrukt, um ein Element in eine [hash_multimap](../standard-library/hash-multimap-class.md) einzufügen, außer `hash_multimap` hat bereits das Element (oder, allgemeiner gesagt, ein Element, dessen Schlüssel gleichwertig sortiert wird).|
 |*_Where*|Ein Hinweis bezüglich des Platzes, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wird.|
@@ -1513,13 +1513,13 @@ hash_multimap(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*Irdische*|Die für dieses hash_multimap-Objekt zu verwendende Speicherreservierungsklasse, dessen Standard `Allocator` ist.|
 |*Zuschreiben*|Die Vergleichsfunktion vom Typ `const Traits`, die verwendet wird, um die Elemente in der Zuordnung zu sortieren, deren Standard `Traits` ist.|
 |*Right*|Die Zuordnung, deren Kopie der erstellte Satz sein soll.|
 |*First*|Die Position des ersten Elements in dem zu kopierenden Elementbereich.|
-|*Letzten*|Die Position des ersten Elements nach dem zu kopierenden Elementbereich.|
+|*Letzter*|Die Position des ersten Elements nach dem zu kopierenden Elementbereich.|
 |*IList*|Das initializer_list-Element, aus dem kopiert wird.|
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1573,12 +1573,12 @@ iterator insert(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*Val*|Der Wert eines in das hash_multimap-Element einzufügenden Elements, es sei denn, das Element ist bereits enthalten oder, üblicher, es sei denn, ein Element, dessen Schlüssel gleichwertig sortiert wird, ist bereits enthalten.|
 |*Where*|Ein Hinweis darüber, wo mit der Suche nach den richtigen Einfügepunkt begonnen wird.|
 |*First*|Die Position des ersten Elements, das aus einer Zuordnung kopiert werden soll.|
-|*Letzten*|Die Position direkt über den letzten aus einer Zuordnung zu kopierenden Elements.|
+|*Letzter*|Die Position direkt über den letzten aus einer Zuordnung zu kopierenden Elements.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1611,9 +1611,9 @@ typedef list<typename Traits::value_type, typename Traits::allocator_type>::iter
 
 Der `iterator` , der durch Hash_multimap definiert wird, zeigt auf Objekte [value_type](#value_type)vom Typ `pair` \< **const Key, Type**> , deren erster Member der Schlüssel zum Element und dessen zweiter Member das zugeordnete Datum ist, das vom Element gehalten wird.
 
-Verwenden Sie den-Operator, um einen **Iterator** zu dereferenzieren, `Iter` der auf ein Element in einem Hash_multimap zeigt `->` .
+Um einen Iterator mit dem Namen zu dereferenzieren, `Iter` der auf ein Element in einem Hash_multimap verweist, verwenden Sie den- `->` Operator.
 
-Verwenden Sie `Iter` -> **first**, das (\* `Iter`). **zuerst**. Verwenden Sie `Iter` -> **second**, das (\* `Iter`). **zuerst**.
+Um auf den Wert des Schlüssels für das Element zuzugreifen, verwenden Sie `Iter->first` , das entspricht `(*Iter).first` . Um auf den Wert des zugeordneten Datums für das Element zuzugreifen, verwenden Sie `Iter->second` , das entspricht `(*Iter).first` .
 
 Ein-Typ `iterator` kann zum Ändern des Werts eines Elements verwendet werden.
 
@@ -1640,7 +1640,7 @@ Gibt das Funktionsobjekt zurück, das ein hash_multimap-Element zum Sortieren se
 
 Das gespeicherte Objekt definiert die Memberfunktion
 
-**bool operator(const Key&** `left` **, const Key&** `right` **);**,
+`bool operator( const Key& left, const Key& right );`
 
 , der zurückgibt, **`true`** Wenn `left` vorausgeht und `right` in der Sortierreihenfolge nicht gleich ist.
 
@@ -1904,7 +1904,7 @@ hash_multimap& operator=(hash_multimap&& right);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |-|-|
 |*Richting*|Die [hash_multimap](../standard-library/hash-multimap-class.md), die in die `hash_multimap` kopiert wird.|
 
@@ -2593,7 +2593,7 @@ The keys of the mapped elements are: 1 2.
 The values of the mapped elements are: 10 20.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

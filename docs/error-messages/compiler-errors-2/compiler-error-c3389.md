@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3389
 ms.assetid: eaaffe17-23f2-413c-b1ad-f7220cfa1334
-ms.openlocfilehash: 823b28deae3e3cfc18cdad8d37007bf8e8cff494
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 8a040e649074e115b1b86ea56db6c9ef48f4c0d0
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221054"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520472"
 ---
 # <a name="compiler-error-c3389"></a>Compilerfehler C3389
 
@@ -19,9 +19,9 @@ ms.locfileid: "87221054"
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
+Die **`/clr:pure`** **`/clr:safe`** Compileroptionen und sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Ein [__declspec](../../cpp/declspec.md) Modifizierer, der verwendet wird, impliziert einen Prozess pro Prozess.  [/clr: pure](../../build/reference/clr-common-language-runtime-compilation.md) impliziert einen pro [AppDomain](../../cpp/appdomain.md) -Zustand.  Daher ist das Deklarieren einer Variablen mit dem `keyword` **`__declspec`** Modifizierer und dem Kompilieren mit **/clr: pure** nicht zulässig.
+Ein [`__declspec`](../../cpp/declspec.md) verwendeter Modifizierer impliziert einen prozessspezifischen Zustand.  [`/clr:pure`](../../build/reference/clr-common-language-runtime-compilation.md)impliziert einen pro- [`appdomain`](../../cpp/appdomain.md) Zustand.  Daher ist das Deklarieren einer Variablen *mit dem* schlüsselworgenmodifizierer **`__declspec`** und dem Kompilieren mit **`/clr:pure`** nicht zulässig.
 
 ## <a name="example"></a>Beispiel
 

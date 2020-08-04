@@ -334,12 +334,12 @@ helpviewer_keywords:
 - COleControl [MFC], IsInvokeAllowed
 - COleControl [MFC], SetInitialDataFormats
 ms.assetid: 53e95299-38e8-447b-9c5f-a381d27f5123
-ms.openlocfilehash: 7d75ec6fa111c8c26b4390ac0ac62160d71c185b
-ms.sourcegitcommit: 13f42c339fb7af935e3a93ac80e350d5e784c9f1
+ms.openlocfilehash: c49e71a3e43f74e0e68228c313d3198d0abd4f91
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87470918"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520693"
 ---
 # <a name="colecontrol-class"></a>COleControl-Klasse
 
@@ -355,13 +355,13 @@ class COleControl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleControl:: COleControl](#colecontrol)|Erstellt ein `COleControl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleControl:: ambientappearance](#ambientappearance)|Ruft die aktuelle Darstellung des-Steuer Elements ab.|
 |[COleControl:: ambientbackcolor](#ambientbackcolor)|Gibt den Wert der ambient-BackColor-Eigenschaft zurück.|
@@ -525,14 +525,14 @@ class COleControl : public CWnd
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleControl::D rawcontent](#drawcontent)|Wird von Framework aufgerufen, wenn die Darstellung des Steuer Elements aktualisiert werden muss.|
 |[COleControl::D rawmetafile](#drawmetafile)|Wird von Framework aufgerufen, wenn der Metadatei-Gerätekontext verwendet wird.|
 |[COleControl:: isinvokeallowed](#isinvokeallowed)|Aktiviert den Aufruf der Automatisierungs Methode.|
 |[COleControl:: setinitialdataformats](#setinitialdataformats)|Wird von Framework aufgerufen, um die Liste der Datenformate zu initialisieren, die vom-Steuerelement unterstützt werden.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `CWnd`Diese Klasse wird von abgeleitet und erbt die gesamte Funktionalität eines Windows-Fenster Objekts sowie zusätzliche Funktionen, die für OLE spezifisch sind, z. b. das Auslösen von Ereignissen und die Möglichkeit zur Unterstützung von Methoden und Eigenschaften.
 
@@ -568,7 +568,7 @@ Weitere Informationen zum Entwickeln eines OLE-Steuerelement-Frameworks finden S
 
 `COleControl`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxctl. h
 
@@ -584,7 +584,7 @@ OLE_COLOR AmbientBackColor();
 
 Der aktuelle Wert der ambient-BackColor-Eigenschaft des Containers, sofern vorhanden. Wenn die Eigenschaft nicht unterstützt wird, gibt diese Funktion die vom System definierte Windows-Hintergrundfarbe zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die ambient BackColor-Eigenschaft ist für alle Steuerelemente verfügbar und wird durch den Container definiert. Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -600,7 +600,7 @@ CString AmbientDisplayName();
 
 Der Name des OLE-Steuer Elements. Der Standardwert ist eine Zeichenfolge der Länge 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -616,7 +616,7 @@ LPFONTDISP AmbientFont();
 
 Ein Zeiger auf die Ambient-Schriftart Dispatch-Schnittstelle des Containers. Der Standardwert ist NULL. Wenn die Rückgabe nicht gleich NULL ist, sind Sie verantwortlich für das Freigeben der Schriftart durch Aufrufen der [IUnknown:: Release](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) -Member-Funktion.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Eigenschaft Ambient Font wird durch den Container definiert und ist für alle Steuerelemente verfügbar. Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -632,7 +632,7 @@ OLE_COLOR AmbientForeColor();
 
 Der aktuelle Wert der Ambient-ForeColor-Eigenschaft des Containers, sofern vorhanden. Wenn dies nicht unterstützt wird, gibt diese Funktion die vom System definierte Windows-Textfarbe zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Ambient-ForeColor-Eigenschaft ist für alle Steuerelemente verfügbar und wird durch den Container definiert. Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -648,7 +648,7 @@ LCID AmbientLocaleID();
 
 Der Wert der LocaleID-Eigenschaft des Containers, sofern vorhanden. Wenn diese Eigenschaft nicht unterstützt wird, gibt diese Funktion 0 zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Steuerelement kann die LocaleID verwenden, um die Benutzeroberfläche für bestimmte Gebiets Schemas anzupassen. Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -668,7 +668,7 @@ Das Aussehen des Steuer Elements:
 
 - **1** 3D-Darstellung
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Rufen Sie diese Funktion auf, um den aktuellen Wert der DISPID_AMBIENT_APPEARANCE-Eigenschaft für das Steuerelement abzurufen.
 
@@ -684,7 +684,7 @@ CString AmbientScaleUnits();
 
 Eine Zeichenfolge, die die Ambiente-Skalierungs Einheiten des Containers enthält. Wenn diese Eigenschaft nicht unterstützt wird, gibt diese Funktion eine Zeichenfolge der Länge 0 (null) zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Ambient scaleunits-Eigenschaft des Containers kann zum Anzeigen von Positionen oder Dimensionen verwendet werden, die mit der ausgewählten Einheit bezeichnet werden, z. b. Twips oder cm. Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -700,7 +700,7 @@ BOOL AmbientShowGrabHandles();
 
 Ungleich 0 (null), wenn Zieh Punkte angezeigt werden sollen. andernfalls 0. Wird diese Eigenschaft nicht unterstützt, gibt diese Funktion einen Wert ungleich 0 (null) zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -716,7 +716,7 @@ BOOL AmbientShowHatching();
 
 Ungleich 0 (null), wenn das ausgelöste Muster angezeigt werden soll. andernfalls 0. Wird diese Eigenschaft nicht unterstützt, gibt diese Funktion einen Wert ungleich 0 (null) zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -741,7 +741,7 @@ Im folgenden finden Sie eine Liste gültiger Rückgabewerte:
 |2|Zentrum|
 |3|Rechtsbündig|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Eigenschaft ist für alle eingebetteten Steuerelemente verfügbar und wird durch den Container definiert. Beachten Sie, dass der Container diese Eigenschaft nicht unterstützen muss.
 
@@ -757,7 +757,7 @@ BOOL AmbientUIDead();
 
 Ungleich 0 (null), wenn das Steuerelement auf Benutzeroberflächen Aktionen reagieren soll. andernfalls 0. Wenn diese Eigenschaft nicht unterstützt wird, gibt diese Funktion 0 zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beispielsweise kann ein Container dies im Entwurfs Modus auf "true" festlegen.
 
@@ -773,7 +773,7 @@ BOOL AmbientUserMode();
 
 Ungleich 0 (null), wenn sich der Container im Benutzermodus befindet. andernfalls 0 (im Entwurfs Modus). Wenn diese Eigenschaft nicht unterstützt wird, gibt diese Funktion "true" zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beispielsweise kann ein Container im Entwurfs Modus auf false festlegen.
 
@@ -790,7 +790,7 @@ void BoundPropertyChanged(DISPID dispid);
 *DISPID*<br/>
 Die Dispatch-ID einer gebundenen Eigenschaft des Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dies muss jedes Mal aufgerufen werden, wenn sich der Wert der-Eigenschaft ändert, auch in Fällen, in denen die Änderung nicht durch die-Eigenschaften Satz Methode erfolgt ist. Beachten Sie insbesondere gebundene Eigenschaften, die Element Variablen zugeordnet sind. Jedes Mal, wenn eine solche Element Variable geändert wird, `BoundPropertyChanged` muss aufgerufen werden.
 
@@ -811,7 +811,7 @@ Die Dispatch-ID einer gebundenen Eigenschaft des Steuer Elements.
 
 Ungleich 0 (null), wenn die Änderung zulässig ist. andernfalls 0. Der Standardwert ist ungleich 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Berechtigung verweigert wird, darf das Steuerelement den Wert der-Eigenschaft nicht ändern. Dies kann erreicht werden, indem die Aktion, die versucht hat, den Eigenschafts Wert zu ändern, ignoriert oder fehlerhaft ist
 
@@ -833,7 +833,7 @@ Ein Zeiger auf die Begrenzungen des OLE-Steuer Elements innerhalb des Containers
 *PPoint*<br/>
 Zeiger auf den OLE-Client Bereichs Punkt, der in die Koordinaten des übergeordneten Elements (Container) übersetzt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Auf dem Eingabe- *PPoint* ist relativ zum Ursprung des Client Bereichs des OLE-Steuer Elements (obere linke Ecke des Client Bereichs des Steuer Elements). Auf dem Ausgabe- *PPoint* ist relativ zum Ursprung der übergeordneten (oberen linken Ecke des Containers).
 
@@ -854,7 +854,7 @@ Bei Eingabe ein Zeiger auf eine [Rect](/windows/win32/api/windef/ns-windef-rect)
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Caretzeichen ist eine blinkende Linie, ein Block oder eine Bitmap, die in der Regel angibt, wo Text oder Grafiken eingefügt werden.
 
@@ -870,7 +870,7 @@ Erstellt ein `COleControl`-Objekt.
 COleControl();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird normalerweise nicht direkt aufgerufen. Stattdessen wird das OLE-Steuerelement normalerweise von seiner Klassenfactory erstellt.
 
@@ -882,7 +882,7 @@ Diese Funktion wird aufgerufen, wenn der vom-Steuerelement unterstützte mnetmon
 void ControlInfoChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beim Empfang dieser Benachrichtigung erhält der Container des Steuer Elements den neuen Satz von mnetmonics, indem er [IOleControl:: GetControlInfo](/windows/win32/api/ocidl/nf-ocidl-iolecontrol-getcontrolinfo)aufruft. Beachten Sie, dass der Container nicht auf diese Benachrichtigung reagieren muss.
 
@@ -916,7 +916,7 @@ Der Name der Hilfedatei, die eine Beschreibung des Fehlers enthält.
 *nhelpid*<br/>
 Die Hilfe Kontext-ID des gemeldeten Fehlers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Standardverhalten zeigt ein Meldungs Feld mit der Beschreibung des Fehlers an, der in *lpszdescription*enthalten ist.
 
@@ -930,7 +930,7 @@ Simuliert eine Maus Klick Aktion für das-Steuerelement.
 void DoClick();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die über schreibbare `COleControl::OnClick` Member-Funktion wird aufgerufen, und ein "Stock Click"-Ereignis wird ausgelöst, wenn das Steuerelement unterstützt wird.
 
@@ -949,7 +949,7 @@ virtual void DoPropExchange(CPropExchange* pPX);
 *PPX*<br/>
 Ein Zeiger auf ein `CPropExchange`-Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Eigenschaften Austauschs einschließlich seiner Richtung einzurichten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion führt normalerweise Aufrufe an die **PX_** -Funktions Familie aus, um bestimmte benutzerdefinierte Eigenschaften eines OLE-Steuer Elements zu laden oder zu speichern.
 
@@ -973,7 +973,7 @@ Ein Zeiger auf den Gerätekontext des Steuerelement Containers.
 *rcBounds*<br/>
 Der Bereich, in dem das Steuerelement gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, um das Zeichnen eines nicht aktiven OLE-Steuer Elements ordnungsgemäß zu behandeln. Diese Funktion sollte nur verwendet werden, wenn das OLE-Steuerelement ein Windows-Steuerelement Unterklassen und in der-Funktion des Steuer Elements aufgerufen werden sollte `OnDraw` .
 
@@ -997,7 +997,7 @@ Zeiger auf den Gerätekontext.
 *RC*<br/>
 Rechteckiger Bereich, in dem gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion Ruft die über schreibbare `OnDraw` Funktion direkt auf.
 
@@ -1027,7 +1027,7 @@ Aktiviert das einfache Frame Merkmal für ein OLE-Steuerelement.
 void EnableSimpleFrame();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieses Merkmal ermöglicht einem Steuerelement die Unterstützung der visuellen Kapselung anderer Steuerelemente, jedoch nicht der echten OLE-Kapselung Ein Beispiel wäre ein Gruppenfeld mit mehreren Steuerelementen in. Diese Steuerelemente sind nicht in OLE enthalten, Sie befinden sich jedoch im gleichen Gruppenfeld.
 
@@ -1048,7 +1048,7 @@ Ein Zeiger auf ein [CPropExchange](../../mfc/reference/cpropexchange-class.md) -
 
 Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird normalerweise von der Standard Implementierung von aufgerufen `COleControl::DoPropExchange` .
 
@@ -1065,7 +1065,7 @@ void ExchangeStockProps(CPropExchange* pPX);
 *PPX*<br/>
 Ein Zeiger auf ein [CPropExchange](../../mfc/reference/cpropexchange-class.md) -Objekt. Das Framework stellt dieses Objekt bereit, um den Kontext des Eigenschaften Austauschs einschließlich seiner Richtung einzurichten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird normalerweise von der Standard Implementierung von aufgerufen `COleControl::DoPropExchange` .
 
@@ -1095,7 +1095,7 @@ Gibt an, ob persistente Daten in das aktuelle Format konvertiert werden sollen, 
 
 Die Funktion war erfolgreich. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In der Regel ist dies die erste Funktion, die von der außer Kraft Setzung eines Steuer Elements aufgerufen wird `COleControl::DoPropExchange` . Beim Laden liest diese Funktion die Versionsnummer der persistenten Daten und legt das Versions Attribut des [CPropExchange](../../mfc/reference/cpropexchange-class.md) -Objekts entsprechend fest. Beim Speichern schreibt diese Funktion die Versionsnummer der persistenten Daten.
 
@@ -1109,7 +1109,7 @@ Wird vom Framework aufgerufen, wenn auf einen aktiven Steuerelement geklickt wir
 void FireClick();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1123,7 +1123,7 @@ Wird von Framework aufgerufen, wenn auf einen aktiven Steuerelement Doppel gekli
 void FireDblClick();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1151,7 +1151,7 @@ Die Beschreibung des Fehlers, der gemeldet wird.
 *nhelpid*<br/>
 Die Hilfe-ID des gemeldeten Fehlers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieses Ereignis bietet eine Möglichkeit, an den entsprechenden Stellen im Code zu signalisieren, dass innerhalb Ihres Steuer Elements ein Fehler aufgetreten ist. Anders als bei anderen Aktien Ereignissen, wie z. b. Click oder moulemove, wird der Fehler nie vom Framework ausgelöst.
 
@@ -1180,7 +1180,7 @@ Die Dispatch-ID des auszulösenden Ereignisses.
 *pbparameams*<br/>
 Ein Deskriptor für die Parametertypen des Ereignisses.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Normalerweise sollte diese Funktion nicht direkt aufgerufen werden. Stattdessen werden die Funktionen zum Auslösen von Ereignissen im Ereignis Zuordnungs Abschnitt der Klassen Deklaration Ihres Steuer Elements aufgerufen.
 
@@ -1204,7 +1204,7 @@ Das *pbparams* -Argument ist eine durch Leerzeichen getrennte Liste mit **VTS_**
 |VTS_YSIZE_HIMETRIC|OLE_XSIZE_HIMETRIC|
 
 > [!NOTE]
-> Für alle Variant-Typen wurden zusätzliche Variant-Konstanten definiert, mit Ausnahme von VTS_FONT und VTS_PICTURE, die einen Zeiger auf die Variant-Daten Konstante bereitstellen. Diese Konstanten werden mithilfe der **VTS_P** `constantname` Konvention benannt. VTS_PCOLOR ist beispielsweise ein Zeiger auf eine VTS_COLOR Konstante.
+> Für alle Variant-Typen wurden zusätzliche Variant-Konstanten definiert, mit Ausnahme von VTS_FONT und VTS_PICTURE, die einen Zeiger auf die Variant-Daten Konstante bereitstellen. Diese Konstanten werden mithilfe der VTS_P \<CONSTANT-NAME> Konvention benannt. VTS_PCOLOR ist beispielsweise ein Zeiger auf eine VTS_COLOR Konstante.
 
 ## <a name="colecontrolfirekeydown"></a><a name="firekeydown"></a>COleControl:: firekeydown
 
@@ -1230,7 +1230,7 @@ Enthält eine Kombination der folgenden Flags:
 
 - ALT_MASK während der Aktion die Alt-Taste gedrückt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1249,7 +1249,7 @@ void FireKeyPress(USHORT* pnChar);
 *pnchar*<br/>
 Ein Zeiger auf den Zeichen Wert des gedrückten Schlüssels.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1281,7 +1281,7 @@ Enthält eine Kombination der folgenden Flags:
 
 - ALT_MASK während der Aktion die Alt-Taste gedrückt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1325,7 +1325,7 @@ Die x-Koordinate des Cursors, wenn eine Maustaste gedrückt wurde. Die Koordinat
 *Teenie*<br/>
 Die y-Koordinate des Cursors, wenn eine Maustaste gedrückt wurde. Die Koordinate ist relativ zur linken oberen Ecke des Steuerelement Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1369,7 +1369,7 @@ Die x-Koordinate des Cursors. Die Koordinate ist relativ zur linken oberen Ecke 
 *Teenie*<br/>
 Die y-Koordinate des Cursors. Die Koordinate ist relativ zur linken oberen Ecke des Steuerelement Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1413,7 +1413,7 @@ Die x-Koordinate des Cursors, wenn eine Maustaste losgelassen wurde. Die Koordin
 *Teenie*<br/>
 Die y-Koordinate eines Cursors, wenn eine Maustaste losgelassen wurde. Die Koordinate ist relativ zur linken oberen Ecke des Steuerelement Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Ereignis als benutzerdefiniertes Ereignis definiert ist, legen Sie fest, wann das Ereignis ausgelöst wird.
 
@@ -1427,7 +1427,7 @@ Löst ein Ereignis mit dem aktuellen Wert des Ready-Zustands des Steuer Elements
 void FireReadyStateChange();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Status "bereit" kann einer der folgenden Werte sein:
 
@@ -1461,7 +1461,7 @@ Eine Kombination von Flags aus der pointerinaktiven Enumeration. Mögliche Flags
 |POINTERINACTIVE_DEACTIVATEONLEAVE|Das Objekt sollte deaktiviert werden, wenn der Mauszeiger das Objekt während eines Verschiebungs Vorgangs verlässt.|
 |POINTERINACTIVE_ACTIVATEONDRAG|Das Objekt sollte direkt aktiviert sein, wenn die Maus während eines Drag & Drop-Vorgangs darauf gezogen wird.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die `IPointerInactive` Schnittstelle aktiviert ist, delegiert der Container WM_SETCURSOR und WM_MOUSEMOVE Meldungen an ihn. `COleControl`die Implementierung dieser Schnittstelle versendet diese Nachrichten über die Meldungs Zuordnung Ihres Steuer Elements, nachdem die Maus Koordinaten entsprechend angepasst wurden.
 
@@ -1524,7 +1524,7 @@ Ein Zeiger auf die Adresse der Variablen, die den Eigenschafts Wert oder Rückga
 
 Ungleich NULL, wenn die Ambient-Eigenschaft unterstützt wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie verwenden, `GetAmbientProperty` um die Eigenschaften für "Ambient Display Name" und "scaleunits" abzurufen, legen Sie *vtprop* auf VT_BSTR und *pvprop* auf fest `CString*` . Wenn Sie die Eigenschaft Ambient Font (Schriftart) abrufen, legen Sie *vtprop* auf VT_FONT und *pvprop* auf LPFONTDISP * fest.
 
@@ -1580,7 +1580,7 @@ Wenn das Steuerelement aktiviert und Fenster frei ist, wird zurückgegeben, **`t
 
 Andernfalls wird das- `CWnd` Objekt zurückgegeben, das die Maus Aufzeichnung hat (identisch mit `CWnd::GetCapture` ).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein aktiviertes fensterloses Steuerelement empfängt die Maus Aufzeichnung, wenn [SetCapture](#setcapture) aufgerufen wird.
 
@@ -1601,7 +1601,7 @@ Zeiger auf den Speicherort der Klassen-ID.
 
 Ungleich 0 (null), wenn der-Vorgang nicht erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wird normalerweise von der [IMPLEMENT_OLECREATE_EX](class-factories-and-licensing.md#implement_olecreate_ex)implementiert.
 
@@ -1621,7 +1621,7 @@ Zeiger auf den horizontalen Offset des Client Bereichs des OLE-Steuer Elements.
 *pdyoffset*<br/>
 Zeiger auf den vertikalen Offset des Client Bereichs des OLE-Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das OLE-Steuerelement verfügt über einen rechteckigen Bereich in seinem Container. Der Client Bereich des Steuer Elements ist der Steuerbereich mit Ausnahme von Rahmen und Bild Lauf leisten. Der Offset, der von abgerufen `GetClientOffset` wird, ist der Unterschied zwischen der linken oberen Ecke des rechteckigen Bereichs des Steuer Elements und der oberen linken Ecke des Client Bereichs. Wenn das Steuerelement andere nicht-Client Elemente als die Standardrahmen und Bild Lauf leisten aufweist, überschreiben Sie diese Member-Funktion, um den Offset anzugeben.
 
@@ -1650,7 +1650,7 @@ LPOLECLIENTSITE GetClientSite();
 
 Ein Zeiger auf die aktuelle Client Site des-Steuer Elements in seinem Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zurückgegebene Zeiger verweist auf eine Instanz von `IOleClientSite` . Die `IOleClientSite` Schnittstelle, die von Containern implementiert wird, ist die Ansicht Ihres Kontexts des Objekts: wo Sie im Dokument verankert ist, wo Sie den Speicher, die Benutzeroberfläche und andere Ressourcen erhält.
 
@@ -1677,7 +1677,7 @@ enum ControlFlags {
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `GetControlFlags` gibt standardmäßig `fastBeginPaint | clipPaintDC` zurück.
 
@@ -1710,7 +1710,7 @@ Gibt die Breite des Steuer Elements in Pixel an.
 *pcy*<br/>
 Gibt die Höhe des Steuer Elements in Pixel an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass alle Koordinaten für Steuerelement Fenster relativ zur linken oberen Ecke des-Steuer Elements sind.
 
@@ -1742,7 +1742,7 @@ Zeichnungs Attribute des Geräte Kontexts. Folgende Optionen sind verfügbar:
 
 Zeiger auf den Anzeigegeräte Kontext für den Container `CWnd` Client Bereich, wenn der Vorgang erfolgreich ist. andernfalls ist der Rückgabewert NULL. Der Anzeigegeräte Kontext kann in nachfolgenden GDI-Funktionen verwendet werden, um im Client Bereich des Container Fensters zu zeichnen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die [ReleaseDC](#releasedc) -Member-Funktion muss aufgerufen werden, um den Kontext nach dem Zeichnen freizugeben. Beim Aufrufen `GetDC` von übergeben-Objekte das Rechteck, das in ihren eigenen Client Koordinaten gezeichnet werden soll. `GetDC`übersetzt diese in Koordinaten des Container Client Bereichs. Das Objekt sollte kein gewünschtes Zeichen Rechteck anfordern, das größer als das eigene Client Bereichs Rechteck ist, dessen Größe mit [GetClientRect](#getclientrect)abgerufen werden kann. Dadurch wird verhindert, dass Objekte versehentlich gezeichnet werden, wenn Sie nicht an Sie gesendet werden.
 
@@ -1772,7 +1772,7 @@ Ein Zeiger auf das erweiterte Steuerelement Objekt des Containers. Wenn kein Obj
 
 Dieses Objekt kann über seine- `IDispatch` Schnittstelle manipuliert werden. Sie können auch verwenden `QueryInterface` , um andere vom-Objekt bereitgestellte Schnittstellen abzurufen. Das-Objekt ist jedoch nicht erforderlich, um einen bestimmten Satz von Schnittstellen zu unterstützen. Beachten Sie, dass die Portabilität Ihres Steuer Elements auf andere beliebige Container beschränkt ist, wenn Sie sich auf die spezifischen Funktionen des erweiterten Steuerungs Objekts eines Containers verlassen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion, die diese Funktion aufruft, ist dafür verantwortlich, den Zeiger freizugeben, wenn das Objekt beendet wird. Beachten Sie, dass der Container dieses Objekt nicht unterstützen muss.
 
@@ -1790,7 +1790,7 @@ Wenn das Steuerelement aktiviert und Fenster frei ist, wird zurückgegeben, **`t
 
 Andernfalls wird das- `CWnd` Objekt zurückgegeben, das über den Fokus verfügt (identisch mit `CWnd::GetFocus` ).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein aktiviertes fensterloses Steuerelement erhält den Fokus, wenn [SetFocus](#setfocus) aufgerufen wird.
 
@@ -1806,7 +1806,7 @@ LPFONTDISP GetFont();
 
 Ein Zeiger auf die Schriftart Dispatchschnittstelle der vordefinierten Schriftart Eigenschaft des Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der Aufrufer das Objekt nach dem Abschluss freigeben muss. Verwenden Sie in der Implementierung des-Steuer Elements, `InternalGetFont` um auf das Stock Font-Objekt des Steuer Elements zuzugreifen. Weitere Informationen zum Verwenden von Schriftarten in Ihrem Steuerelement finden Sie im Artikel [ActiveX-Steuerelemente: Verwenden von Schriftarten in einem ActiveX-Steuer](../../mfc/mfc-activex-controls-using-fonts.md)Element.
 
@@ -1828,7 +1828,7 @@ Zeiger auf eine [TextMetric](/windows/win32/api/wingdi/ns-wingdi-textmetricw) -S
 *fonthälter*<br/>
 Verweis auf ein [cfontholder](../../mfc/reference/cfontholder-class.md) -Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine solche Schriftart kann mit der [COleControl:: selectfontobject](#selectfontobject) -Funktion ausgewählt werden. `GetFontTextMetrics`Initialisiert die `TEXTMETRIC` Struktur, auf die *lptm* zeigt, mit gültigen `fontHolder` metrikinformationen über die Schriftart, wenn erfolgreich, oder füllen Sie die Struktur mit Nullen aus, wenn dies nicht erfolgreich war. Sie sollten diese Funktion anstelle von [GetTextMetrics](/windows/win32/api/wingdi/nf-wingdi-gettextmetrics) verwenden, wenn Sie das Steuerelement zeichnen, da Steuerelemente, wie z. b. ein eingebettetes OLE-Objekt, möglicherweise erforderlich sind, um sich in einer Metadatei
 
@@ -1876,7 +1876,7 @@ Eine Menü Element-ID.
 *rmessage*<br/>
 Ein Verweis auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt, über das eine Zeichenfolge zurückgegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dies kann verwendet werden, um eine Meldung zu erhalten, die in einer Statusleiste angezeigt wird, während das Menü Element hervorgehoben ist. Die Standard Implementierung versucht, eine durch *NID*identifizierte Zeichen folgen Ressource zu laden.
 
@@ -1888,7 +1888,7 @@ Verhindert den Zugriff auf den Eigenschafts Wert eines Steuer Elements durch den
 void GetNotSupported();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird anstelle der Get-Funktion jeder Eigenschaft aufgerufen, bei der das Abrufen der Eigenschaft durch den Benutzer des Steuer Elements nicht unterstützt wird. Ein Beispiel wäre eine Eigenschaft, die schreibgeschützt ist.
 
@@ -1912,7 +1912,7 @@ Der Bereitschafts Zustand des Steuer Elements, einer der folgenden Werte:
 |READYSTATE_INTERACTIVE|Das Steuerelement verfügt über genügend Daten, um interaktiv zu sein, aber nicht alle asynchronen Daten sind noch geladen.|
 |READYSTATE_COMPLETE|Das Steuerelement verfügt über alle Daten.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die meisten einfachen Steuerelemente müssen niemals zwischen "geladen" und "interaktiv" unterscheiden. Steuerelemente, die Daten Pfad Eigenschaften unterstützen, können jedoch möglicherweise nicht interaktiv sein, bis zumindest einige Daten asynchron empfangen werden. Ein Steuerelement sollte so schnell wie möglich interaktiv werden.
 
@@ -1933,7 +1933,7 @@ Ein Zeiger auf die Rechteck Struktur, in die die Koordinaten des Steuer Elements
 
 Ungleich 0 (null), wenn das Steuerelement direkt aktiv ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Rechteck ist nur gültig, wenn das Steuerelement direkt aktiv ist.
 
@@ -1950,7 +1950,7 @@ void GetStockTextMetrics(LPTEXTMETRIC lptm);
 *lptm*<br/>
 Ein Zeiger auf eine [TextMetric](/windows/win32/api/wingdi/ns-wingdi-textmetricw) -Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `GetStockTextMetrics` Funktion initialisiert die `TEXTMETRIC` Struktur, auf die *lptm* mit gültigen metrikinformationen verweist, wenn Sie erfolgreich war, oder die Struktur mit Nullen, wenn Sie nicht erfolgreich war. Verwenden Sie diese Funktion anstelle von [GetTextMetrics](/windows/win32/api/wingdi/nf-wingdi-gettextmetrics) , wenn Sie das Steuerelement zeichnen, da Steuerelemente, wie ein beliebiges eingebettetes OLE-Objekt, ggf
 
@@ -1971,7 +1971,7 @@ Der aktuelle Wert der Steuerelement Text Zeichenfolge oder eine Zeichenfolge der
 > [!NOTE]
 > Weitere Informationen zum BSTR-Datentyp finden Sie unter [Datentypen](../../mfc/reference/data-types-mfc.md) im Abschnitt Makros und Globals.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der Aufrufer dieser Funktion `SysFreeString` für die zurückgegebene Zeichenfolge aufgerufen werden muss, um die Ressource freizugeben. Verwenden Sie in der Implementierung des-Steuer Elements, `InternalGetText` um auf die vordefinierte Eigenschaft des Steuer Elements oder den Beschriftungs Wert zuzugreifen.
 
@@ -1987,9 +1987,9 @@ virtual IDropTarget* GetWindowlessDropTarget();
 
 Ein Zeiger auf die- `IDropTarget` Schnittstelle des Objekts. Da es kein Fenster hat, kann ein fensterloses Objekt eine Schnittstelle nicht registrieren `IDropTarget` . Um jedoch an Drag & Drop teilnehmen zu können, kann ein fensterloses Objekt die-Schnittstelle implementieren und in zurückgeben `GetWindowlessDropTarget` .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Normalerweise würde dies erfordern, dass das Fenster des Steuer Elements als Ablage Ziel registriert wird. Da das Steuerelement jedoch kein eigenes Fenster hat, verwendet der Container sein eigenes Fenster als Ablage Ziel. Das-Steuerelement muss lediglich eine Implementierung der- `IDropTarget` Schnittstelle bereitstellen, an die der Container Aufrufe zum richtigen Zeitpunkt delegieren kann. Beispiel:
+Normalerweise würde dies erfordern, dass das Fenster des Steuer Elements als Ablage Ziel registriert wird. Da das Steuerelement jedoch kein eigenes Fenster hat, verwendet der Container sein eigenes Fenster als Ablage Ziel. Das-Steuerelement muss lediglich eine Implementierung der- `IDropTarget` Schnittstelle bereitstellen, an die der Container Aufrufe zum richtigen Zeitpunkt delegieren kann. Zum Beispiel:
 
 [!code-cpp[NVC_MFCAxCtl#2](../../mfc/reference/codesnippet/cpp/colecontrol-class_3.cpp)]
 
@@ -2011,7 +2011,7 @@ Ein Zeiger auf die-Schnittstellen-ID der primären Dispatch-Schnittstelle des St
 *piidevents*<br/>
 Ein Zeiger auf die Schnittstellen-ID der Ereignis Schnittstelle des Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird im Konstruktor des Steuer Elements aufgerufen, um die Basisklasse der Schnittstellen-IDs, die Ihr Steuerelement verwendet, zu informieren.
 
@@ -2060,7 +2060,7 @@ Der Bereitschafts Zustand, der für das Steuerelement festgelegt werden soll, ei
 |READYSTATE_INTERACTIVE|Das Steuerelement verfügt über genügend Daten, um interaktiv zu sein, aber nicht alle asynchronen Daten sind noch geladen.|
 |READYSTATE_COMPLETE|Das Steuerelement verfügt über alle Daten.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die meisten einfachen Steuerelemente müssen niemals zwischen "geladen" und "interaktiv" unterscheiden. Steuerelemente, die Daten Pfad Eigenschaften unterstützen, können jedoch möglicherweise nicht interaktiv sein, bis zumindest einige Daten asynchron empfangen werden. Ein Steuerelement sollte so schnell wie möglich interaktiv werden.
 
@@ -2082,7 +2082,7 @@ Ein Zeiger auf den Bereich des Steuer Elements, der für ungültig erklärt werd
 *berase*<br/>
 Gibt an, ob der Hintergrund innerhalb des Aktualisierungs Bereichs gelöscht werden soll, wenn der Aktualisierungs Bereich verarbeitet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *lprect* einen NULL-Wert aufweist, wird das gesamte Steuerelement neu gezeichnet. Wenn *lprect* nicht NULL ist, gibt dies den Teil des Rechtecks des Steuer Elements an, das für ungültig erklärt werden soll. In Fällen, in denen das Steuerelement kein Fenster hat oder zurzeit nicht aktiv ist, wird das Rechteck ignoriert, und es wird ein Rückruf an die [IAdviseSink:: OnViewChange](/windows/win32/api/objidl/nf-objidl-iadvisesink-onviewchange) -Member-Funktion des Client Standorts durchgeführt. Verwenden Sie diese Funktion anstelle von `CWnd::InvalidateRect` oder `InvalidateRect` .
 
@@ -2102,7 +2102,7 @@ Ein Zeiger auf ein [crgn](../../mfc/reference/crgn-class.md) -Objekt, das den An
 *berase*<br/>
 Gibt an, ob der Hintergrund innerhalb des ungültigen Bereichs gelöscht werden soll. TRUE gibt an, dass der Hintergrund gelöscht wird. Wenn der Wert false ist, bleibt der Hintergrund unverändert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dies kann verwendet werden, um fensterlose Steuerelemente im Container neu zu zeichnen. Der ungültige Bereich wird zusammen mit allen anderen Bereichen im Update Bereich zum Zeichnen gekennzeichnet, wenn die nächste [WM_PAINT](/windows/win32/gdi/wm-paint) Nachricht gesendet wird.
 
@@ -2120,7 +2120,7 @@ BOOL IsConvertingVBX();
 
 Ungleich 0 (null), wenn das Steuerelement konvertiert wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie ein Formular, das VBX-Steuerelemente verwendet, in ein Formular mit OLE-Steuerelementen umrechnen, ist möglicherweise spezieller Lade Code für die OLE-Steuerelemente Wenn Sie z. b. eine Instanz des OLE-Steuer Elements laden, verfügen Sie möglicherweise über einen aufzurufenden [PX_Font](persistence-of-ole-controls.md#px_font) in Ihrem `DoPropExchange` :
 
@@ -2146,7 +2146,7 @@ BOOL IsInvokeAllowed(DISPID dispid);
 
 Ungleich 0 (null), wenn das Steuerelement initialisiert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Implementierung des Frameworks von `IDispatch::Invoke` ruft `IsInvokeAllowed` auf, um zu bestimmen, ob eine angegebene Funktion (identifiziert durch `dispid` ) aufgerufen werden kann. Das Standardverhalten für ein OLE-Steuerelement besteht darin, dass Automatisierungsmethoden nur aufgerufen werden können, wenn das Steuerelement initialisiert wurde. ist jedoch `IsInvokeAllowed` eine virtuelle Funktion und kann ggf. überschrieben werden (z. b. wenn das Steuerelement als Automatisierungsserver verwendet wird).
 
@@ -2162,7 +2162,7 @@ BOOL IsModified();
 
 Ein Wert ungleich 0 (null), wenn der Zustand des Steuer Elements seit dem letzten Speichern geändert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Zustand eines Steuer Elements wird geändert, wenn sich ein Eigenschafts Wert ändert.
 
@@ -2178,7 +2178,7 @@ BOOL IsOptimizedDraw();
 
 TRUE, wenn der Container optimierte Zeichnung für den aktuellen Zeichnungs Vorgang unterstützt. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das optimierte zeichnen unterstützt wird, muss das Steuerelement alte Objekte (Stifte, Pinsel, Schriftarten usw.) nicht in den Gerätekontext auswählen, wenn das Zeichnen abgeschlossen ist.
 
@@ -2194,7 +2194,7 @@ virtual BOOL IsSubclassedControl();
 
 Ungleich 0 (null), wenn das Steuerelement untergeordnet ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie müssen diese Funktion überschreiben und true zurückgeben, wenn Ihre OLE-Steuerelemente ein Windows-Steuerelement Unterklassen.
 
@@ -2231,7 +2231,7 @@ TRUE, wenn der direkte aktive Zustand des Steuer Elements gesperrt werden soll. 
 
 Ungleich 0 (null), wenn die Sperre erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass jedes Sperren des-Steuer Elements mit dem Entsperren des-Steuer Elements gekoppelt werden muss, wenn es beendet wird. Sie sollten das Steuerelement nur für kurze Zeiträume sperren, z. b. beim Auslösen eines Ereignisses.
 
@@ -2256,7 +2256,7 @@ Wird von Framework aufgerufen, wenn sich der Eigenschafts Wert der Aktien Darste
 virtual void OnAppearanceChanged ();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn Sie eine Benachrichtigung wünschen, nachdem diese Eigenschaft geändert wurde. Die Standard Implementierung ruft auf `InvalidateControl` .
 
@@ -2268,7 +2268,7 @@ Wird von Framework aufgerufen, wenn sich der Eigenschafts Wert der Stock BackCol
 virtual void OnBackColorChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn Sie eine Benachrichtigung wünschen, nachdem diese Eigenschaft geändert wurde. Die Standard Implementierung ruft auf `InvalidateControl` .
 
@@ -2280,7 +2280,7 @@ Wird von Framework aufgerufen, wenn sich der Wert der Stock BorderStyle-Eigensch
 virtual void OnBorderStyleChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft auf `InvalidateControl` .
 
@@ -2305,7 +2305,7 @@ Der Index einer Maustaste. Kann einen der folgenden Werte aufweisen:
 
 - RIGHT_BUTTON mit der rechten Maustaste geklickt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft auf `COleControl::FireClick` .
 
@@ -2330,7 +2330,7 @@ Flag, das angibt, ob das Objekt vor dem Laden gespeichert werden soll. Gültige 
 
 - OLECLOSE_PROMPTSAVE
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig `OnClose` speichert das Steuerelement Objekt, wenn es geändert wurde, und *dwsaveoption* ist entweder OLECLOSE_SAVEIFDIRTY oder OLECLOSE_PROMPTSAVE.
 
@@ -2364,7 +2364,7 @@ Ein Zeiger auf eine Rect-Struktur, in die die Koordinaten des Steuer Elements re
 
 Ungleich 0 (null), wenn der Rückruf erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung verwendet die ON_OLEVERB und ON_STDOLEVERB Meldungs Zuordnungs Einträge, um zu bestimmen, welche Funktion aufgerufen werden soll.
 
@@ -2392,7 +2392,7 @@ Der rechteckige Bereich des-Steuer Elements, einschließlich des Rahmens.
 *rcInvalid*<br/>
 Der rechteckige Bereich des-Steuer Elements, der ungültig ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnDraw`wird in der Regel für Bildschirm Anzeige aufgerufen und übergibt einen Bildschirm-Gerätekontext als *PDC*. Der *rcBounds* -Parameter identifiziert das Rechteck im Zielgeräte Kontext (relativ zum aktuellen Kartenmodus). Der *rcInvalid* -Parameter ist das tatsächliche Rechteck, das ungültig ist. In einigen Fällen handelt es sich hierbei um einen kleineren Bereich als *rcBounds*.
 
@@ -2414,7 +2414,7 @@ Der Gerätekontext, in dem die Zeichnung auftritt.
 *rcBounds*<br/>
 Der rechteckige Bereich des-Steuer Elements, einschließlich des Rahmens.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft die [OnDraw](#ondraw) -Funktion auf.
 
@@ -2444,11 +2444,11 @@ Ein Zeiger auf das Rechteck, das vom-Steuerelement im Container verwendet wird.
 
 Ungleich NULL, wenn der-Befehl erfolgreich ausgeführt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dies hat dieselbe Auswirkung wie das Aufrufen des OLEIVERB_UIACTIVATE Verbs des Steuer Elements.
 
-Diese Funktion wird in der Regel als Handlerfunktion für einen ON_OLEVERB Meldungs Zuordnungs Eintrag verwendet. Dadurch ist das Verb "Bearbeiten" im Menü "Objekt" des Steuer Elements verfügbar. Beispiel:
+Diese Funktion wird in der Regel als Handlerfunktion für einen ON_OLEVERB Meldungs Zuordnungs Eintrag verwendet. Dadurch ist das Verb "Bearbeiten" im Menü "Objekt" des Steuer Elements verfügbar. Zum Beispiel:
 
 [!code-cpp[NVC_MFCAxCtl#5](../../mfc/reference/codesnippet/cpp/colecontrol-class_6.cpp)]
 
@@ -2460,7 +2460,7 @@ Wird von Framework aufgerufen, wenn sich der Wert der vordefinierten Eigenschaft
 virtual void OnEnabledChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn Sie eine Benachrichtigung wünschen, nachdem diese Eigenschaft geändert wurde. Die Standard Implementierung ruft [InvalidateControl](#invalidatecontrol)auf.
 
@@ -2481,7 +2481,7 @@ Ein Zeiger auf das `IEnumOLEVERB` -Objekt, das die Verben des Steuer Elements au
 
 Ungleich 0 (null), wenn Verben verfügbar sind; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung listet die ON_OLEVERB Einträge in der Meldungs Zuordnung auf.
 
@@ -2508,7 +2508,7 @@ Wird von Framework aufgerufen, wenn sich der Wert der Stock Font-Eigenschaft ge�
 virtual void OnFontChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft auf `COleControl::InvalidateControl` . Wenn das Steuerelement ein Windows-Steuerelement Unterklassen unterteilt, sendet die Standard Implementierung auch eine WM_SETFONT Meldung an das Fenster des Steuer Elements.
 
@@ -2526,7 +2526,7 @@ Wird von Framework aufgerufen, wenn sich der Wert der Stock ForeColor-Eigenschaf
 virtual void OnForeColorChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft auf `InvalidateControl` .
 
@@ -2545,7 +2545,7 @@ virtual void OnFreezeEvents(BOOL bFreeze);
 *bfreeze*<br/>
 TRUE, wenn die Ereignis Behandlung des Steuer Elements eingefroren ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei der Standardimplementierung wird keine Aktion ausgeführt.
 
@@ -2577,7 +2577,7 @@ Ein Zeiger auf den Speicherort, an dem der verwendete Satz von Farben kopiert we
 
 Ungleich 0 (null), wenn ein gültiger Farbsatz zurückgegeben wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Container ruft diese Funktion auf, um alle Farben zu erhalten, die zum Zeichnen des OLE-Steuer Elements erforderlich sind. Der Container kann die Farbsätze verwenden, die in Verbindung mit den Farben abgerufen wurden, um die gesamte Farbpalette festzulegen. Die Standard Implementierung gibt false zurück.
 
@@ -2596,7 +2596,7 @@ virtual void OnGetControlInfo(LPCONTROLINFO pControlInfo);
 *pcontrolinfo*<br/>
 Zeiger auf eine [controlInfo](/windows/win32/api/ocidl/ns-ocidl-controlinfo) -Struktur, die ausgefüllt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Informationen bestehen hauptsächlich aus einer Beschreibung der mnetmonischen Schlüssel des Steuer Elements. Die Standard Implementierung füllt *pcontrolinfo* mit Standardinformationen.
 
@@ -2624,7 +2624,7 @@ Ein Verweis auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) 
 
 Ungleich 0 (null), wenn eine Zeichenfolge in ' *strevalue* ' zurückgegeben wurde, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn das Steuerelement über eine Eigenschaft verfügt, deren Wert nicht direkt in eine Zeichenfolge konvertiert werden kann, und Sie möchten, dass der Wert der Eigenschaft in einem vom Container bereitgestellten Eigenschaften Browser angezeigt wird.
 
@@ -2640,7 +2640,7 @@ virtual HMENU OnGetInPlaceMenu();
 
 Das Handle des Steuer Elements des Steuer Elements oder NULL, wenn das Steuerelement keinen besitzt. Die Standard Implementierung gibt NULL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zum Zusammenführen von OLE-Ressourcen finden Sie in den Artikeln [Menüs und Ressourcen (OLE)](../../mfc/menus-and-resources-ole.md).
 
@@ -2697,7 +2697,7 @@ Zeigt auf die Größe der von Steuerelement zurückgegebenen Daten. Die zurückg
 
 Ungleich 0 (null), wenn die Größe erfolgreich zurückgegeben oder angepasst wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, um die Anzeige Größe des Objekts zurückzugeben, die der vorgeschlagenen Größe und dem Block Modus in der Struktur am nächsten liegt `DVEXTENTINFO` . Die Standard Implementierung gibt false zurück und nimmt keine Anpassungen an der Größe vor.
 
@@ -2727,7 +2727,7 @@ Ein DWORD-Array, das mit Rückgabe Werten aufgefüllt werden soll.
 
 Ein Wert ungleich 0, wenn *pstringarray* und *pcookiearray*Elemente hinzugefügt wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn das Steuerelement über eine Eigenschaft mit einem Satz möglicher Werte verfügt, die durch Zeichen folgen dargestellt werden können. Für jedes Element, das *pstringarray*hinzugefügt wird, sollten Sie *pcookiearray* ein entsprechendes "Cookie"-Element hinzufügen. Diese "Cookie"-Werte können später vom Framework an die Funktion weitergegeben werden `COleControl::OnGetPredefinedValue` .
 
@@ -2787,7 +2787,7 @@ Zeigt auf den Speicherort, an dem die Größe des Objekts zurückgegeben wird.
 
 Ungleich 0 (null), wenn die Block Informationen erfolgreich zurückgegeben wurden andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn das Steuerelement die zwei-Pass-Zeichnung verwendet und seine nicht transparenten und transparenten Teile unterschiedliche Dimensionen aufweisen.
 
@@ -2817,7 +2817,7 @@ Verweist auf die [RECTL](/windows/win32/api/windef/ns-windef-rectl) -Struktur, d
 
 Ungleich 0 (null), wenn das Rechteck für das Objekt erfolgreich zurückgegeben wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Größe des Objekts wird von `OnGetViewRect` in ein Rechteck konvertiert, beginnend an einer bestimmten Position (der Standardwert ist die linke obere Ecke der Anzeige). Überschreiben Sie diese Funktion, wenn das Steuerelement die zwei-Pass-Zeichnung verwendet und seine nicht transparenten und transparenten Teile unterschiedliche Dimensionen aufweisen.
 
@@ -2840,7 +2840,7 @@ Einer der Werte der VIEWSTATUS-Enumeration, wenn erfolgreich. andernfalls 0. Mö
 |VIEWSTATUS_DVASPECTOPAQUE|Das-Objekt unterstützt DVASPECT_OPAQUE. Alle IViewObjectEx-Methoden, die einen Zeichnungs Aspekt als Parameter annehmen, können mit diesem Aspekt aufgerufen werden.|
 |VIEWSTATUS_DVASPECTTRANSPARENT|Das-Objekt unterstützt DVASPECT_TRANSPARENT. Alle `IViewObjectEx` Methoden, die einen Zeichnungs Aspekt als Parameter annehmen, können mit diesem Aspekt aufgerufen werden.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn das Steuerelement die zwei-Pass-Zeichnung verwendet. Die Standard Implementierung gibt VIEWSTATUS_OPAQUE zurück.
 
@@ -2852,7 +2852,7 @@ Wird von Framework aufgerufen, wenn das Steuerelement die Benutzeroberfläche de
 virtual void OnHideToolBars();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Implementierung sollte alle Symbolleisten ausblenden, die von angezeigt werden `OnShowToolbars` .
 
@@ -2882,7 +2882,7 @@ Die y-Koordinate der Mausposition in Client Koordinaten des enthaltenden Fenster
 *dwkeystate*<br/>
 Identifiziert den aktuellen Zustand der Tastatur-Modifizierertasten auf der Tastatur. Gültige Werte können eine Kombination aus den Flags MK_CONTROL, MK_SHIFT, MK_ALT, MK_BUTTON, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON sein.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass Fenster Client Koordinaten (Pixel) verwendet werden, um die Position des Mauszeigers zu übergeben. Dies wird durch das Weiterleiten des umgebenden Rechtecks des Objekts im selben Koordinatensystem ermöglicht.
 
@@ -2920,7 +2920,7 @@ Gibt an, ob das Objekt den Cursor festlegen muss. TRUE gibt an, dass das-Objekt 
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass Fenster Client Koordinaten (Pixel) verwendet werden, um die Position des Mauszeigers zu übergeben. Dies wird durch das Weiterleiten des umgebenden Rechtecks des Objekts im selben Koordinatensystem ermöglicht.
 
@@ -2948,7 +2948,7 @@ Enthält eine Kombination der folgenden Flags:
 
 - ALT_MASK während der Aktion die Alt-Taste gedrückt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn Ihr Steuerelement Zugriff auf die Schlüsselinformationen benötigt, nachdem das Ereignis ausgelöst wurde.
 
@@ -2965,7 +2965,7 @@ virtual void OnKeyPressEvent(USHORT nChar);
 *NCHAR*<br/>
 Enthält den Code Wert des virtuellen Schlüssels des gedrückten Schlüssels. Eine Liste der virtuellen Standardschlüssel Codes finden Sie unter Winuser. h.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der *NCHAR* -Wert möglicherweise durch den Container geändert wurde.
 
@@ -2995,7 +2995,7 @@ Enthält eine Kombination der folgenden Flags:
 
 - ALT_MASK während der Aktion die Alt-Taste gedrückt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, wenn Ihr Steuerelement Zugriff auf die Schlüsselinformationen benötigt, nachdem das Ereignis ausgelöst wurde.
 
@@ -3025,7 +3025,7 @@ Gibt einen Indikator zurück, ob die Verwendung der angegebenen Eigenschaften Se
 
 Ungleich 0 (null), wenn eine Klassen-ID in *lpclsid*zurückgegeben wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, um eine Möglichkeit bereitzustellen, die Eigenschaften Seiten Ihres Steuer Elements über den Eigenschaften Browser des Containers aufzurufen.
 
@@ -3068,7 +3068,7 @@ Ein Zeiger auf das Rechteck, das vom-Steuerelement im Container verwendet wird.
 
 Ungleich NULL, wenn der-Befehl erfolgreich ausgeführt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung zeigt ein modales Eigenschaften Dialogfeld an.
 
@@ -3116,7 +3116,7 @@ Zeiger auf das Ergebnis der Treffer Abfrage. Einer der folgenden Werte:
 
 Ungleich 0 (null), wenn ein Treffer Ergebnis erfolgreich zurückgegeben wurde. andernfalls 0. Ein Treffer ist eine Überschneidung mit dem Anzeigebereich des OLE-Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Fragt ab, ob das Anzeige Rechteck eines Objekts den angegebenen Punkt überlappt (erreicht den Punkt). `QueryHitPoint`kann überschrieben werden, um Treffer für nicht rechteckige Objekte zu testen.
 
@@ -3158,7 +3158,7 @@ Zeiger auf das Ergebnis der Treffer Abfrage. Einer der folgenden Werte:
 
 Ungleich 0 (null), wenn ein Treffer Ergebnis erfolgreich zurückgegeben wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Fragt ab, ob das Anzeige Rechteck eines Objekts einen beliebigen Punkt im angegebenen Rechteck überlappt (trifft auf das Rechteck). `QueryHitRect`kann überschrieben werden, um Treffer für nicht rechteckige Objekte zu testen.
 
@@ -3184,7 +3184,7 @@ Verweist auf eine [STGMEDIUM](/windows/win32/api/objidl/ns-objidl-ustgmedium-r1)
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das angegebene Format ist ein zuvor im Steuerelement Objekt angegebenes-Element mit den Element Funktionen " [Delta Data](../../mfc/reference/coledatasource-class.md#delayrenderdata) " oder " [Delta Data](../../mfc/reference/coledatasource-class.md#delayrenderfiledata) " für verzögertes Rendering. Die Standard Implementierung dieser Funktion ruft `OnRenderFileData` `OnRenderGlobalData` bzw. auf, wenn es sich bei dem angegebenen Speichermedium entweder um eine Datei oder einen Arbeitsspeicher handelt. Wenn das angeforderte Format CF_METAFILEPICT oder das persistente Eigenschaften Satz Format ist, rendert die Standard Implementierung die entsprechenden Daten und gibt einen Wert ungleich 0 (null) zurück. Andernfalls wird 0 zurückgegeben, und es wird keine Aktion durchführt.
 
@@ -3216,7 +3216,7 @@ Verweist auf ein [CFile](../../mfc/reference/cfile-class.md) -Objekt, in dem die
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das angegebene Format ist ein zuvor im Steuerelement Objekt angegebenes-Element mit der [Delta Data](../../mfc/reference/coledatasource-class.md#delayrenderdata) -Element Funktion für verzögertes Rendering. Die Standard Implementierung dieser Funktion gibt einfach false zurück.
 
@@ -3246,7 +3246,7 @@ Verweist auf ein Handle für den globalen Speicher, in dem die Daten zurückgege
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das angegebene Format ist ein zuvor im Steuerelement Objekt angegebenes-Element mit der [Delta Data](../../mfc/reference/coledatasource-class.md#delayrenderdata) -Element Funktion für verzögertes Rendering. Die Standard Implementierung dieser Funktion gibt einfach false zurück.
 
@@ -3264,7 +3264,7 @@ Wird von Framework aufgerufen, wenn die Eigenschaften des Steuer Elements auf se
 virtual void OnResetState();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft [DoPropExchange](#dopropexchange)auf und übergibt ein- `CPropExchange` Objekt, das bewirkt, dass Eigenschaften auf ihre Standardwerte festgelegt werden.
 
@@ -3278,7 +3278,7 @@ Wird von Framework aufgerufen, wenn der Container die Funktion des Steuer Elemen
 virtual void OnSetClientSite();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig `OnSetClientSite` überprüft, ob Daten Pfad Eigenschaften geladen werden, und ruft, wenn dies der Fall ist, auf `DoDataPathPropExchange` .
 
@@ -3310,7 +3310,7 @@ TRUE, wenn das Speichermedium vom Steuerelement freigegeben werden soll. FALSE, 
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn sich die Daten im persistenten Eigenschaften Satz Format befinden, ändert die Standard Implementierung den Zustand des Steuer Elements entsprechend. Andernfalls führt die Standard Implementierung keine Aktion aus. Wenn *brelease* den Wert true hat, wird ein-Rückruf durch `ReleaseStgMedium` geführt; andernfalls nicht.
 
@@ -3335,7 +3335,7 @@ Ein Zeiger auf die-Struktur, die `SIZEL` lange ganze Zahlen verwendet, um die Br
 
 Ungleich 0 (null), wenn die Größenänderung akzeptiert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung behandelt die Größe des Steuer Elements im Steuerelement. Wenn das-Steuerelement direkt aktiv ist, wird ein-Rückruf für den Container ausgeführt `OnPosRectChanged` .
 
@@ -3363,7 +3363,7 @@ Ein Zeiger auf eine- `RECT` Struktur, die einen rechteckigen Bereich angibt, in 
 
 Ungleich 0 (null), wenn die Neupositionierung akzeptiert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung behandelt automatisch die Neupositionierung und die Größe des Steuerelement Fensters und gibt true zurück.
 
@@ -3377,7 +3377,7 @@ Wird von Framework aufgerufen, wenn das Steuerelement für die Benutzeroberfläc
 virtual void OnShowToolBars();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei der Standardimplementierung wird keine Aktion ausgeführt.
 
@@ -3389,7 +3389,7 @@ Wird von Framework aufgerufen, wenn der Eigenschafts Wert für die Aktien Beschr
 virtual void OnTextChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft auf `InvalidateControl` .
 
@@ -3425,7 +3425,7 @@ Windows-Ergebniscode. Gibt das Ergebnis der Nachrichtenverarbeitung an und häng
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verarbeitet Fenster Meldungen für fensterlose Steuerelemente. `COleControl``OnWindowlessMessage`muss für Fenster Meldungen verwendet werden, die keine Maus-und Tastatur Meldungen sind. `COleControl`stellt [SetCapture](#setcapture) und [SetFocus](#setfocus) speziell zum Erfassen von Maus Eingaben und Tastaturfokus für fensterlose OLE-Objekte bereit.
 
@@ -3505,7 +3505,7 @@ Wenn *bhittest* false ist, wird "htnirgendwo" zurückgegeben. Wenn *bhittest* de
 
 - Htzoom in einer Schaltfläche zum maximieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Auf dem Eingabe- *PPoint* ist relativ zum Ursprung der übergeordneten (oberen linken Ecke des Containers). Auf dem Ausgabe- *PPoint* ist relativ zum Ursprung des Client Bereichs des OLE-Steuer Elements (obere linke Ecke des Client Bereichs des Steuer Elements).
 
@@ -3522,7 +3522,7 @@ void PostModalDialog(HWND hWndParent = NULL);
 *hwndParent*<br/>
 Handle für das übergeordnete Fenster des modalen Dialog Felds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, nachdem ein modales Dialogfeld angezeigt wurde. Sie müssen diese Funktion so aufzurufen, dass der Container alle Fenster der obersten Ebene aktivieren kann, die von deaktiviert werden `PreModalDialog` . Diese Funktion sollte mit einem-Rückruf gekoppelt werden `PreModalDialog` .
 
@@ -3539,7 +3539,7 @@ void PreModalDialog(HWND hWndParent = NULL);
 *hwndParent*<br/>
 Handle für das übergeordnete Fenster des modalen Dialog Felds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, bevor ein modales Dialogfeld angezeigt wird. Sie müssen diese Funktion so aufruft, dass der Container alle Fenster der obersten Ebene deaktivieren kann. Nachdem das modale Dialogfeld angezeigt wurde, muss aufgerufen werden `PostModalDialog` .
 
@@ -3551,7 +3551,7 @@ Zerstört und erstellt das Fenster des Steuer Elements erneut.
 void RecreateControlWindow();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dies ist möglicherweise erforderlich, wenn Sie die stylebits des Fensters ändern müssen.
 
@@ -3563,7 +3563,7 @@ Erzwingt eine Umgestaltung des OLE-Steuer Elements.
 void Refresh();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird von der `COleControl` Basisklasse als eine Aktien Methode namens "Refresh" unterstützt. Dadurch können Benutzer des OLE-Steuer Elements das Steuerelement zu einem bestimmten Zeitpunkt neu zeichnen. Weitere Informationen zu dieser Methode finden Sie im Artikel ActiveX-Steuer [Elemente: Methoden](../../mfc/mfc-activex-controls-methods.md).
 
@@ -3579,7 +3579,7 @@ BOOL ReleaseCapture();
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Steuerelement derzeit über die Maus Aufzeichnung verfügt, wird die Erfassung freigegeben. Andernfalls hat diese Funktion keine Auswirkung.
 
@@ -3600,7 +3600,7 @@ Identifiziert den Container Gerätekontext, der freigegeben werden soll.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Anwendung muss `ReleaseDC` für jeden Rückruf von [GetDC](#getdc)aufrufen.
 
@@ -3622,7 +3622,7 @@ Das Handle des Steuerelement Fensters.
 *hwndParent*<br/>
 Das Handle des neuen übergeordneten Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, um das übergeordnete Element des Steuerelement Fensters zurückzusetzen.
 
@@ -3634,7 +3634,7 @@ Initialisiert den Zustand der vordefinierten `COleControl` Eigenschaften mit ihr
 void ResetStockProps();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Eigenschaften sind: Darstellung, BackColor, BorderStyle, Caption, aktiviert, Font, ForeColor, HWND und Text. Eine Beschreibung der vordefinierten Eigenschaften finden Sie unter [ActiveX-Steuerelemente: Hinzufügen von vordefinierten Eigenschaften](../../mfc/mfc-activex-controls-adding-stock-properties.md).
 
@@ -3657,7 +3657,7 @@ void ResetVersion(DWORD dwVersionDefault);
 *dwversiondefault*<br/>
 Die Versionsnummer, die dem Steuerelement zugewiesen werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können die binäre Initialisierungs Leistung eines Steuer Elements mithilfe von `ResetVersion` und verbessern `ResetStockProps` , um zu überschreiben `COleControl::OnResetState` . Weitere Informationen finden Sie im Beispiel unter [resetstock-](#resetstockprops)Eigenschaften. Weitere Informationen zum Optimieren der Initialisierung finden Sie unter ActiveX-Steuer [Elemente: Optimierung](../../mfc/mfc-activex-controls-optimization.md).
 
@@ -3739,7 +3739,7 @@ void SerializeExtent(CArchive& ar);
 *Tempel*<br/>
 Ein- `CArchive` Objekt, das in oder aus serialisiert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können die binäre Persistenz eines Steuer Elements mithilfe von `SerializeExtent` , `SerializeStockProps` und verbessern `SerializeVersion` , um zu überschreiben `COleControl::Serialize` . Betrachten Sie das folgende Beispiel. Weitere Informationen zum Optimieren der Initialisierung finden Sie unter ActiveX-Steuer [Elemente: Optimierung](../../mfc/mfc-activex-controls-optimization.md).
 
@@ -3760,7 +3760,7 @@ void SerializeStockProps(CArchive& ar);
 *Tempel*<br/>
 Ein- `CArchive` Objekt, das in oder aus serialisiert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Beschreibung der vordefinierten Eigenschaften finden Sie unter [ActiveX-Steuerelemente: Hinzufügen von vordefinierten Eigenschaften](../../mfc/mfc-activex-controls-adding-stock-properties.md).
 
@@ -3792,7 +3792,7 @@ Gibt an, ob persistente Daten in das neueste Format konvertiert werden sollen, w
 
 Die Versionsnummer des Steuer Elements. Wenn das angegebene Archiv geladen wird, `SerializeVersion` gibt die Version zurück, die aus diesem Archiv geladen wurde. Andernfalls wird die aktuell geladene Version zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können die binäre Persistenz eines Steuer Elements mithilfe von `SerializeVersion` , `SerializeExtent` und verbessern `SerializeStockProps` , um zu überschreiben `COleControl::Serialize` . Ein Beispiel finden Sie im Code unter [serializeblock](#serializeextent). Weitere Informationen zum Optimieren der Initialisierung finden Sie unter ActiveX-Steuer [Elemente: Optimierung](../../mfc/mfc-activex-controls-optimization.md).
 
@@ -3809,7 +3809,7 @@ void SetAppearance (short sAppearance);
 *sappearance*<br/>
 Ein **`short`** (VT_I2) Wert, der für die Darstellung des Steuer Elements verwendet werden soll. Der Wert 0 (null) legt die Darstellung des Steuer Elements auf Flat fest, und mit dem Wert 1 wird die Darstellung des Steuer Elements auf 3D festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zu den Eigenschaften von Aktien finden Sie unter ActiveX-Steuer [Elemente: Eigenschaften](../../mfc/mfc-activex-controls-properties.md).
 
@@ -3826,7 +3826,7 @@ void SetBackColor(OLE_COLOR dwBackColor);
 *dwbackcolor*<br/>
 Ein OLE_COLOR Wert, der zum Zeichnen des Hintergrunds des-Steuer Elements verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung dieser Eigenschaft und anderer zugehöriger Eigenschaften finden Sie im Artikel [ActiveX-Steuerelemente: Eigenschaften](../../mfc/mfc-activex-controls-properties.md).
 
@@ -3843,7 +3843,7 @@ void SetBorderStyle(short sBorderStyle);
 *sborderstyle*<br/>
 Die neue Rahmenart für das Steuerelement. 0 gibt an, dass kein Rahmen und 1 einen normalen Rahmen angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Steuerelement Fenster wird dann neu erstellt und `OnBorderStyleChanged` aufgerufen.
 
@@ -3859,7 +3859,7 @@ CWnd* SetCapture();
 
 Ein Zeiger auf das `CWnd` Fenster Objekt, das zuvor Maus Eingaben erhalten hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Steuerelement aktiviert und fensterloser ist, bewirkt diese Funktion, dass das Containerfenster des Steuer Elements im Namen des Steuer Elements die Maus Aufzeichnung übernimmt. Andernfalls bewirkt diese Funktion, dass das Steuerelement die Maus Aufzeichnung übernimmt (identisch mit `CWnd::SetCapture` ).
 
@@ -3883,7 +3883,7 @@ Gibt die neue Höhe des Steuer Elements in Pixel an.
 
 Ungleich NULL, wenn der-Befehl erfolgreich ausgeführt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion sollte nicht im Konstruktor des Steuer Elements verwendet werden.
 
@@ -3902,7 +3902,7 @@ void SetEnabled(BOOL bEnabled);
 *benabled*<br/>
 TRUE, wenn das Steuerelement aktiviert werden soll. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nachdem diese Eigenschaft festgelegt wurde, `OnEnabledChange` wird aufgerufen.
 
@@ -3918,7 +3918,7 @@ CWnd* SetFocus();
 
 Ein Zeiger auf das `CWnd` Fenster Objekt, das zuvor den Eingabefokus hatte, oder NULL, wenn kein solches Fenster vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Steuerelement aktiviert und fensterloser ist, bewirkt diese Funktion, dass das Containerfenster des Steuer Elements im Namen des Steuer Elements den Eingabefokus übernimmt. Der Eingabefokus leitet Tastatureingaben an das Fenster des Containers weiter, und der Container sendet alle nachfolgenden Tastatur Meldungen an das OLE-Objekt, das aufruft `SetFocus` . Jedes Fenster, das zuvor den Eingabefokus hatte, verliert es.
 
@@ -3950,7 +3950,7 @@ void SetForeColor(OLE_COLOR dwForeColor);
 *dwforecolor*<br/>
 Ein OLE_COLOR Wert, der für die Vordergrund Zeichnung Ihres Steuer Elements verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung dieser Eigenschaft und anderer zugehöriger Eigenschaften finden Sie im Artikel [ActiveX-Steuerelemente: Eigenschaften](../../mfc/mfc-activex-controls-properties.md).
 
@@ -3962,7 +3962,7 @@ Wird von Framework aufgerufen, um die Liste der Datenformate zu initialisieren, 
 virtual void SetInitialDataFormats();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung gibt zwei Formate an: CF_METAFILEPICT und den persistenten Eigenschaften Satz.
 
@@ -3984,7 +3984,7 @@ Die anfängliche Breite des OLE-Steuer Elements in Pixel.
 *CY*<br/>
 Die Anfangshöhe des OLE-Steuer Elements in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird im Konstruktor aufgerufen, um die anfängliche Größe des Steuer Elements festzulegen. Die Anfangs Größe wird in Geräte Einheiten oder Pixel gemessen. Es wird empfohlen, dass dieser-Befehl im Konstruktor Ihres Steuer Elements durchgeführt wird.
 
@@ -4001,7 +4001,7 @@ void SetModifiedFlag(BOOL bModified = TRUE);
 *bmodified*<br/>
 Der neue Wert für das geänderte Flag des Steuer Elements. TRUE gibt an, dass der Zustand des Steuer Elements geändert wurde. FALSE gibt an, dass der Zustand des Steuer Elements soeben gespeichert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ruft diese Funktion immer dann auf, wenn eine Änderung auftritt, die den persistenten Zustand Ihres Steuer Elements beeinträchtigen würde. Wenn sich der Wert einer permanenten Eigenschaft beispielsweise ändert, wird diese Funktion mit " *bmodified* **true**" aufgerufen.
 
@@ -4013,7 +4013,7 @@ Gibt an, dass eine Bearbeitungs Anforderung fehlgeschlagen ist.
 void SetNotPermitted();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, wenn `BoundPropertyRequestEdit` fehlschlägt. Diese Funktion löst eine Ausnahme vom Typ aus `COleDispScodeException` , um anzugeben, dass der Set-Vorgang nicht zulässig ist.
 
@@ -4025,7 +4025,7 @@ Verhindert die Änderung des Eigenschafts Werts eines Steuer Elements durch den 
 void SetNotSupported();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird anstelle der Set-Funktion jeder Eigenschaft aufgerufen, bei der die Änderung des Eigenschafts Werts durch den Benutzer des Steuer Elements nicht unterstützt wird. Ein Beispiel wäre eine Eigenschaft, die schreibgeschützt ist.
 
@@ -4046,7 +4046,7 @@ Ein Zeiger auf ein Rechteck, das die neuen Koordinaten des Steuer Elements relat
 
 Ungleich NULL, wenn der-Befehl erfolgreich ausgeführt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Steuerelement geöffnet ist, wird die Größe angepasst. Andernfalls wird die- `OnPosRectChanged` Funktion des Containers aufgerufen.
 
@@ -4063,7 +4063,7 @@ void SetText(LPCTSTR pszText);
 *Member pszText*<br/>
 Ein Zeiger auf eine Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass die Eigenschaften "Stock Caption" und "Text" dem gleichen Wert zugeordnet werden. Dies bedeutet, dass alle Änderungen, die an einer der Eigenschaften vorgenommen werden, beide Eigenschaften automatisch ändern. Im Allgemeinen sollte ein Steuerelement entweder die Eigenschaft "Stock Caption" oder "Text" unterstützen, aber nicht beides.
 
@@ -4097,7 +4097,7 @@ Die Hilfe-ID des Themas, für das berichtet werden soll.
 *pszdescription*<br/>
 Eine Zeichenfolge, die eine Erläuterung der zu gemeldeten Ausnahme enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion sollte nur innerhalb einer Get-oder Set-Funktion für eine OLE-Eigenschaft oder die Implementierung einer OLE-Automatisierungs Methode aufgerufen werden. Wenn Sie Fehler signalisieren müssen, die zu anderen Zeiten auftreten, sollten Sie das Lager Fehler Ereignis auslösen.
 
@@ -4131,7 +4131,7 @@ Eine Kombination der folgenden Werte:
 
 - XFORMCOORDS_CONTAINERTOHIMETRIC die Einheiten des Containers in HIMETRIC-Einheiten umzuwandeln.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die ersten beiden Flags, XFORMCOORDS_POSITION und XFORMCOORDS_SIZE, geben an, ob die Koordinaten als Position oder Größe behandelt werden sollen. Die verbleibenden zwei Flags geben die Transformations Richtung an.
 
@@ -4157,7 +4157,7 @@ Ein Handle für eine optionale Palette. kann NULL sein.
 
 Ein Wert vom Typ RGB (rot, grün, blau 32), der die voll Tonfarbe definiert, die dem *clrcolor* -Wert am nächsten liegt, den das Gerät darstellen kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist nützlich, um die Stock ForeColor-und BackColor-Eigenschaften in COLORREF-Typen zu übersetzen, die von [CDC](../../mfc/reference/cdc-class.md) -Element Funktionen verwendet werden
 
@@ -4173,7 +4173,7 @@ BOOL WillAmbientsBeValidDuringLoad();
 
 Ungleich 0 (null) gibt an, dass Ambient-Eigenschaften gültig sind. Andernfalls sind Ambient-Eigenschaften nicht gültig.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In einigen Containern hat das Steuerelement möglicherweise während des ersten Aufrufes der Überschreibung von keinen Zugriff auf seine Umgebungs Eigenschaften `COleControl::DoPropExchange` . Dies ist der Fall, wenn der Container [IPersistStreamInit:: Load](/windows/win32/api/ocidl/nf-ocidl-ipersiststreaminit-load) oder [IPersistStorage:: Load](/windows/win32/api/objidl/nf-objidl-ipersiststorage-load) aufruft, bevor [IOleObject:: SetClientSite](/windows/win32/api/oleidl/nf-oleidl-ioleobject-setclientsite) aufgerufen wird (d. h., wenn das OLEMISC_SETCLIENTSITEFIRST Statusbit nicht berücksichtigt wird).
 
@@ -4203,7 +4203,7 @@ Stellt zusätzliche Informationen bereit, die beim Verarbeiten der Nachricht ver
 
 Der Rückgabewert der gesendete Nachricht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, um bestimmte Nachrichten über die Meldungs Zuordnung des Steuer Elements zu senden.
 

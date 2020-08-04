@@ -3,25 +3,25 @@ title: for-Anweisung (C++)
 description: Verweis auf die C++ for-Standard Anweisung in Microsoft Visual Studio C++.
 f1_keywords:
 - for_cpp
-ms.date: 04/14/2020
+ms.date: 07/31/2020
 helpviewer_keywords:
 - for keyword [C++]
 ms.assetid: 6c7d01b3-c4c1-4c6a-aa58-e2d198f33d4a
-ms.openlocfilehash: 16486fd58a9b3fec750ebef6ec6647f9d92bca3b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b32a50e376113f9f9d550d4984d05fc8c675f14d
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231181"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520848"
 ---
-# <a name="for-statement-c"></a>for-Anweisung (C++)
+# <a name="for-statement-c"></a>`for`Anweisung (C++)
 
-Führt eine Anweisung wiederholt aus, bis die Bedingung false ergibt. Weitere Informationen zur Bereichs basierten for-Anweisung finden Sie unter [Range-based for-Anweisung (C++)](../cpp/range-based-for-statement-cpp.md).
+Führt eine Anweisung wiederholt aus, bis die Bedingung false ergibt. Weitere Informationen zur Bereichs basierten **`for`** Anweisung finden Sie unter [Bereichs basierte `for` Anweisung (C++)](../cpp/range-based-for-statement-cpp.md).
 
 ## <a name="syntax"></a>Syntax
 
-> **`for (`***Init-Ausdruck* **`;`** " *End-Ausdruck* **`;`** " *Schleifen Ausdruck***`)`**\
-> &nbsp;&nbsp;&nbsp;&nbsp;_an_**`;`**
+> **`for (`** *`init-expression`* **`;`** *`cond-expression`* **`;`** *`loop-expression`* **`)`**\
+> &emsp;*`statement`*
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -29,13 +29,13 @@ Verwenden Sie die- **`for`** Anweisung, um Schleifen zu erstellen, die eine ange
 
 Die- **`for`** Anweisung besteht aus drei optionalen teilen, wie in der folgenden Tabelle dargestellt.
 
-### <a name="for-loop-elements"></a>for-Schleifenelemente
+### <a name="for-loop-elements"></a>for-Schleifen Elemente
 
-|Syntaxname|Ausführung bei|Beschreibung|
-|-----------------|-------------------|-----------------|
-|`init-expression`|Vor jedem anderen Element der- **`for`** Anweisung `init-expression` wird nur ein Mal ausgeführt. Das Steuerelement wird dann an `cond-expression` übergeben.|Wird häufig zum Initialisieren von Schleifenindizes verwendet. Es können Ausdrücke oder Deklarationen enthalten sein.|
-|`cond-expression`|Vor der Ausführung jeder Iteration von `statement`, einschließlich der ersten Iteration. `statement` wird nur ausgeführt, wenn `cond-expression` den Wert „True“ (ungleich 0 (null)) annimmt.|Ein Ausdruck, der einen Ganzzahltyp oder einen Klassentyp ergibt, der über eine eindeutige Konvertierung in einen Ganzzahltyp verfügt. Wird normalerweise zum Testen von Beendigungskriterien für Schleifen verwendet.|
-|`loop-expression`|Am Ende jeder Iteration von `statement`. Nachdem `loop-expression` ausgeführt wird, wird `cond-expression` ausgewertet.|Wird normalerweise zum Erhöhen von Schleifenindizes verwendet.|
+| Syntax Name | Bei Ausführung | Beschreibung |
+|--|--|--|
+| *`init-expression`* | Vor jedem anderen Element der- **`for`** Anweisung *`init-expression`* wird nur ein Mal ausgeführt. Dann übergibt das Steuerelement an *`cond-expression`* . | Wird häufig zum Initialisieren von Schleifenindizes verwendet. Es können Ausdrücke oder Deklarationen enthalten sein. |
+| *`cond-expression`* | Vor der Ausführung jeder Iterationen von *`statement`* , einschließlich der ersten Iterationen. *`statement`* wird nur ausgeführt *`cond-expression`* , wenn als true (ungleich null) ausgewertet wird. | Ein Ausdruck, der einen Ganzzahltyp oder einen Klassentyp ergibt, der über eine eindeutige Konvertierung in einen Ganzzahltyp verfügt. Wird normalerweise zum Testen von Beendigungskriterien für Schleifen verwendet. |
+| *`loop-expression`* | Am Ende jeder Iterationen von *`statement`* . Nachdem *`loop-expression`* ausgeführt wurde, *`cond-expression`* wird ausgewertet. | Wird normalerweise zum Erhöhen von Schleifenindizes verwendet. |
 
 Die folgenden Beispiele zeigen verschiedene Möglichkeiten, die- **`for`** Anweisung zu verwenden.
 
@@ -60,11 +60,11 @@ int main() {
     while (i < 2){
         cout << i++;
     }
+    // Output: 01
 }
-    // Output: 012
 ```
 
-`init-expression` und `loop-expression` können mehrere durch Kommas getrennte Anweisungen enthalten. Beispiel:
+*`init-expression`* und *`loop-expression`* können mehrere-Anweisungen enthalten, die durch Kommas getrennt sind. Zum Beispiel:
 
 ```cpp
 #include <iostream>
@@ -82,7 +82,7 @@ int main(){
     i + j = 19
 ```
 
-Der `loop-expression` kann erweitert oder verringert werden oder in anderer Weise geändert werden.
+*`loop-expression`* kann inkrementiert oder dekrementiert oder auf andere Weise geändert werden.
 
 ```cpp
 #include <iostream>
@@ -99,11 +99,11 @@ for (int i = 10; i > 0; i--) {
     // Output: 10 12 14 16 18
 ```
 
-Eine- **`for`** Schleife wird beendet, wenn ein [break](../cpp/break-statement-cpp.md), [Return](../cpp/return-statement-cpp.md)oder [goto](../cpp/goto-statement-cpp.md) (an eine Anweisung mit Bezeichnung außerhalb der- **`for`** Schleife) in `statement` ausgeführt wird. Eine [Continue](../cpp/continue-statement-cpp.md) -Anweisung in einer- **`for`** Schleife beendet nur die aktuelle Iterations-.
+Eine- **`for`** Schleife wird beendet [`break`](../cpp/break-statement-cpp.md) , wenn eine, [Return](../cpp/return-statement-cpp.md)oder [`goto`](../cpp/goto-statement-cpp.md) (an eine Anweisung mit Bezeichnung außerhalb der- **`for`** Schleife) innerhalb von *`statement`* ausgeführt wird. Eine- [`continue`](../cpp/continue-statement-cpp.md) Anweisung in einer- **`for`** Schleife beendet nur die aktuelle Iterations-.
 
-Wenn `cond-expression` weggelassen wird, wird Sie berücksichtigt **`true`** , und die- **`for`** Schleife wird nicht ohne **`break`** , **`return`** oder **`goto`** in beendet `statement` .
+Wenn *`cond-expression`* weggelassen wird, wird Sie berücksichtigt **`true`** , und die- **`for`** Schleife wird nicht ohne **`break`** , **`return`** oder **`goto`** in beendet *`statement`* .
 
-Obwohl die drei Felder der- **`for`** Anweisung normalerweise für die Initialisierung, das Testen auf Beendigung und das Inkrementieren verwendet werden, sind Sie nicht auf diese Verwendungszwecke beschränkt. Beispielsweise gibt der folgende Code die Zahlen 0 bis 4 aus. In diesem Fall handelt es sich bei `statement` um die null-Anweisung:
+Obwohl die drei Felder der- **`for`** Anweisung normalerweise für die Initialisierung, das Testen auf Beendigung und das Inkrementieren verwendet werden, sind Sie nicht auf diese Verwendungszwecke beschränkt. Beispielsweise gibt der folgende Code die Zahlen 0 bis 4 aus. In diesem Fall *`statement`* ist die NULL-Anweisung:
 
 ```cpp
 #include <iostream>
@@ -118,9 +118,9 @@ int main()
 }
 ```
 
-## <a name="for-loops-and-the-c-standard"></a>for-Schleifen und der C++-Standard
+## <a name="for-loops-and-the-c-standard"></a>`for`Schleifen und der C++-Standard
 
-Der C++-Standard besagt, dass eine in einer-Schleife deklarierte Variable außerhalb des Gültigkeits Bereichs liegt, **`for`** Wenn die **`for`** Schleife beendet wird. Beispiel:
+Der C++-Standard besagt, dass eine in einer-Schleife deklarierte Variable außerhalb des Gültigkeits Bereichs liegt, **`for`** Wenn die **`for`** Schleife beendet wird. Zum Beispiel:
 
 ```cpp
 for (int i = 0 ; i < 5 ; i++) {
@@ -149,8 +149,8 @@ Dieses Verhalten imitiert das Standardverhalten einer Variablen, die in einer-Sc
 
 ## <a name="see-also"></a>Siehe auch
 
-[Iterationsanweisungen](../cpp/iteration-statements-cpp.md)<br/>
+[Iterations Anweisungen](../cpp/iteration-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[while-Anweisung (C++)](../cpp/while-statement-cpp.md)<br/>
-[do-while-Anweisung (C++)](../cpp/do-while-statement-cpp.md)<br/>
-[Bereichsbasiert für Anweisung (C++)](../cpp/range-based-for-statement-cpp.md)
+[While-Anweisung (C++)](../cpp/while-statement-cpp.md)<br/>
+[Do-While-Anweisung (C++)](../cpp/do-while-statement-cpp.md)<br/>
+[Range-based for-Anweisung (C++)](../cpp/range-based-for-statement-cpp.md)

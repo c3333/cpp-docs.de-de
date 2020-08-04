@@ -1,15 +1,15 @@
 ---
 title: Compileroptionen (alphabetisch sortiert)
 description: Verweis Auflistung in alphabetischer Reihenfolge der Microsoft C/C++-Compilerbefehlszeilenoptionen.
-ms.date: 07/08/2020
+ms.date: 07/29/2020
 helpviewer_keywords:
 - compiler options, C++
-ms.openlocfilehash: 46c6f7009c840c83db2f945de2e504f08172fca2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 81f2fbfe385e8655193c5862455e6ffca3719c96
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223888"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520861"
 ---
 # <a name="compiler-options-listed-alphabetically"></a>Compileroptionen (alphabetisch sortiert)
 
@@ -124,6 +124,7 @@ Diese Tabelle enthält eine alphabetische Liste der Compileroptionen. Eine Liste
 | [`/sdl`](sdl-enable-additional-security-checks.md) | Aktiviert zusätzliche Sicherheitsfunktionen und Warnungen. |
 | [`/showIncludes`](showincludes-list-include-files.md) | Zeigt während der Kompilierung eine Liste der Includedateien an. |
 | [`/source-charset`](source-charset-set-source-character-set.md) | Quell Zeichensatz festlegen. |
+| [`/sourceDependencies`](sourcedependencies.md) | Listen Header, Module und andere Quell Abhängigkeiten. |
 | [`/std`](std-specify-language-standard-version.md) | C++ Standard Versions Kompatibilitäts Auswahl. |
 | [`/Tc`](tc-tp-tc-tp-specify-source-file-type.md) | Gibt eine C-Quelldatei an. |
 | [`/TC`](tc-tp-tc-tp-specify-source-file-type.md) | Gibt an, dass alle Quelldateien C sind. |

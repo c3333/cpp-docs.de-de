@@ -26,12 +26,12 @@ helpviewer_keywords:
 - COleDispatchDriver [MFC], m_bAutoRelease
 - COleDispatchDriver [MFC], m_lpDispatch
 ms.assetid: 3ed98daf-cdc7-4374-8a0c-cf695a8d3657
-ms.openlocfilehash: 265fca7288ca2aa760fb1faffa94f9d74896a975
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 27520f09506698833b1449552ce669223cc0c4c6
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214099"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520641"
 ---
 # <a name="coledispatchdriver-class"></a>COleDispatchDriver-Klasse
 
@@ -47,13 +47,13 @@ class COleDispatchDriver
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleDispatchDriver:: COleDispatchDriver](#coledispatchdriver)|Erstellt ein `COleDispatchDriver`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleDispatchDriver:: attachdispatch](#attachdispatch)|Fügt eine `IDispatch` Verbindung mit dem- `COleDispatchDriver` Objekt an.|
 |[COleDispatchDriver:: up-Dispatch](#createdispatch)|Erstellt eine `IDispatch` Verbindung und fügt Sie an das- `COleDispatchDriver` Objekt an.|
@@ -65,14 +65,14 @@ class COleDispatchDriver
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleDispatchDriver:: Operator =](#operator_eq)|Kopiert den Quellwert in das- `COleDispatchDriver` Objekt.|
 |[COleDispatchDriver:: Operator lpdispatch](#operator_lpdispatch)|Greift auf den zugrunde liegenden `IDispatch` Zeiger zu.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleDispatchDriver:: m_bAutoRelease](#m_bautorelease)|Gibt an, ob die `IDispatch` während-oder Objekt Zerstörung freigegeben werden soll `ReleaseDispatch` .|
 |[COleDispatchDriver:: m_lpDispatch](#m_lpdispatch)|Gibt den Zeiger auf die- `IDispatch` Schnittstelle an, die diesem zugeordnet ist `COleDispatchDriver` .|
@@ -148,11 +148,11 @@ Verweis auf ein vorhandenes- `COleDispatchDriver` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Formular `COleDispatchDriver` ( `LPDISPATCH lpDispatch` , **bool** `bAutoRelease`  =  **true**) verbindet die [IDispatch](/previous-versions/windows/desktop/automat/implementing-the-idispatch-interface) -Schnittstelle.
+Das Formular `COleDispatchDriver( LPDISPATCH lpDispatch, BOOL bAutoRelease = TRUE )` verbindet die [IDispatch](/previous-versions/windows/desktop/automat/implementing-the-idispatch-interface) -Schnittstelle.
 
-Das Formular `COleDispatchDriver` ( **`const`** `COleDispatchDriver` &  `dispatchSrc` ) kopiert ein vorhandenes `COleDispatchDriver` Objekt und Inkremente den Verweis Zähler.
+Das Formular `COleDispatchDriver( const COleDispatchDriver& dispatchSrc )` kopiert ein vorhandenes `COleDispatchDriver` Objekt und erhöht den Verweis Zähler.
 
-Das Formular `COleDispatchDriver` () erstellt ein- `COleDispatchDriver` Objekt, stellt jedoch keine Verbindung mit der- `IDispatch` Schnittstelle her. Vor der Verwendung `COleDispatchDriver` von () ohne Argumente sollten Sie eine `IDispatch` mit entweder mit [COleDispatchDriver::](#createdispatch) up-oder [COleDispatchDriver:: attachdispatch](#attachdispatch)verbinden. Weitere Informationen finden Sie unter [Implementing the IDispatch Interface](/previous-versions/windows/desktop/automat/implementing-the-idispatch-interface).
+Das Formular `COleDispatchDriver( )` erstellt ein- `COleDispatchDriver` Objekt, stellt jedoch keine Verbindung mit der- `IDispatch` Schnittstelle her. Vor der Verwendung `COleDispatchDriver( )` von ohne Argumente sollten Sie eine `IDispatch` mit entweder mit [COleDispatchDriver::](#createdispatch) up-oder [COleDispatchDriver:: attachdispatch](#attachdispatch)verbinden. Weitere Informationen finden Sie unter [Implementing the IDispatch Interface](/previous-versions/windows/desktop/automat/implementing-the-idispatch-interface).
 
 ### <a name="example"></a>Beispiel
 
@@ -406,7 +406,7 @@ Ein einzelner Parameter des Typs, der von *vtprop*angegeben wird.
 
 [!code-cpp[NVC_MFCOleContainer#7](../../mfc/codesnippet/cpp/coledispatchdriver-class_7.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel für CALCDRIV](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel-ACDual](../../overview/visual-cpp-samples.md)<br/>

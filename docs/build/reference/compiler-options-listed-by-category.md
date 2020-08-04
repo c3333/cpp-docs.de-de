@@ -1,16 +1,16 @@
 ---
 title: Compileroptionen nach Kategorien sortiert
 description: Verweis Liste nach Kategorie der Microsoft C/C++-Compilerbefehlszeilenoptionen.
-ms.date: 07/08/2020
+ms.date: 07/29/2020
 helpviewer_keywords:
 - compiler options, C++
 ms.assetid: c4750dcf-dba0-4229-99b6-45cdecc11729
-ms.openlocfilehash: e362119ed3c642e2fa07bddd570c2365252d3325
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: beb10404075d9541872ff4780a725e177356a3b8
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223875"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520952"
 ---
 # <a name="compiler-options-listed-by-category"></a>Compileroptionen (nach Kategorie sortiert)
 
@@ -171,6 +171,7 @@ Dieser Artikel enthält eine nach Kategorien sortierte Liste der Compileroptione
 | [`/nologo`](nologo-suppress-startup-banner-c-cpp.md) | Unterdrückt die Anzeige von Startinformationen. |
 | [`/sdl`](sdl-enable-additional-security-checks.md) | Aktiviert zusätzliche Sicherheitsfunktionen und Warnungen. |
 | [`/showIncludes`](showincludes-list-include-files.md) | Zeigt während der Kompilierung eine Liste aller Includedateien an. |
+| [`/sourceDependencies`](sourcedependencies.md) | Listen Header, Module und andere Quell Abhängigkeiten. |
 | [`/Tc`](tc-tp-tc-tp-specify-source-file-type.md) | Gibt eine C-Quelldatei an. |
 | [`/TC`](tc-tp-tc-tp-specify-source-file-type.md) | Gibt an, dass alle Quelldateien C sind. |
 | [`/Tp`](tc-tp-tc-tp-specify-source-file-type.md) | Gibt eine C++-Quelldatei an. |

@@ -3,18 +3,18 @@ title: C++-Typsystem
 ms.date: 11/19/2019
 ms.topic: conceptual
 ms.assetid: 553c0ed6-77c4-43e9-87b1-c903eec53e80
-ms.openlocfilehash: cbe0b4421d2e7727b919dfaf20218b8da03ea871
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b49dfccc7f815bb13a23f4a334066fa5a8ba5c00
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228985"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87521212"
 ---
 # <a name="c-type-system"></a>C++-Typsystem
 
 Das Konzept des *Typs* ist in C++ sehr wichtig. Jede Variable, jedes Funktionsargument und jeder Rückgabewert muss über einen Typ verfügen, um kompiliert werden zu können. Außerdem wird jedem Ausdruck (einschließlich Literalwerten) vom Compiler implizit ein Typ angegeben, bevor der Ausdruck ausgewertet wird. Einige Beispiele für Typen sind z. a. **`int`** das Speichern von ganzzahligen Werten, **`double`** das Speichern von Gleit Komma Werten (auch als *skalare* Datentypen bezeichnet) oder die Standard Bibliotheks Klasse [Std:: basic_string](../standard-library/basic-string-class.md) zum Speichern von Text. Sie können einen eigenen Typ erstellen, indem Sie einen oder einen definieren **`class`** **`struct`** . Der Typ gibt den Speicher an, der für die Variable (oder das Ausdrucksergebnis) zugeordnet ist, die Wertarten, die in dieser Variablen gespeichert werden können, wie diese Werte (als Bitmuster) interpretiert werden, und die Vorgänge, die darauf ausgeführt werden können. In diesem Artikel ist eine informelle Übersicht der Hauptfunktionen des C++-Typsystems enthalten.
 
-## <a name="terminology"></a>Begriff
+## <a name="terminology"></a>Terminologie
 
 **Variable**: der symbolische Name einer Datenmenge, sodass der Name für den Zugriff auf die Daten verwendet werden kann, auf die er im gesamten Code Bereich verweist, in dem er definiert ist. In C++ wird im Allgemeinen eine *Variable* verwendet, um auf Instanzen von skalaren Datentypen zu verweisen, wohingegen Instanzen anderer Typen normalerweise als *Objekte*bezeichnet werden.
 
@@ -51,30 +51,32 @@ int maxValue;                // Not recommended! maxValue contains
 
 ## <a name="fundamental-built-in-types"></a>Grundlegende (integrierte) Typen
 
-Im Gegensatz zu einigen Sprachen gibt es bei C++ keinen universellen Basistyp, von dem alle anderen Typen abgeleitet werden. Die Sprache umfasst viele *grundlegende Typen*, die auch als *integrierte Typen*bezeichnet werden. Dazu zählen numerische Typen wie **`int`** ,, **`double`** **`long`** , **`bool`** sowie die **`char`** **`wchar_t`** Typen und für ASCII-und Unicode-Zeichen. Die meisten grundlegenden Typen (außer **`bool`** , **`double`** **WC `har_t** and related types) all have unsigned versions, which modify the range of values that the variable can store. For example, an **` int `**, which stores a 32-bit signed integer, can represent a value from -2,147,483,648 to 2,147,483,647. An **` ohne Vorzeichen int**), die auch als 32-Bits gespeichert werden, können einen Wert zwischen 0 und 4.294.967.295 speichern. Die Gesamtzahl der möglichen Werte ist in beiden Fällen gleich, nur der Bereich ist anders.
+Im Gegensatz zu einigen Sprachen gibt es bei C++ keinen universellen Basistyp, von dem alle anderen Typen abgeleitet werden. Die Sprache umfasst viele *grundlegende Typen*, die auch als *integrierte Typen*bezeichnet werden. Dazu zählen numerische Typen wie **`int`** ,, **`double`** **`long`** , **`bool`** sowie die **`char`** **`wchar_t`** Typen und für ASCII-und Unicode-Zeichen. Die meisten integralen grundlegenden Typen (außer **`bool`** , **`double`** , **`wchar_t`** und verwandte Typen) verfügen alle über **`unsigned`** Versionen, die den Wertebereich ändern, der von der Variablen gespeichert werden kann. Beispielsweise kann ein- **`int`** Wert, der eine 32-Bit-Ganzzahl mit Vorzeichen speichert, einen Wert zwischen-2.147.483.648 und 2.147.483.647 darstellen. Ein **`unsigned int`** , das auch als 32-Bit-Datei gespeichert wird, kann einen Wert zwischen 0 und 4.294.967.295 speichern. Die Gesamtzahl der möglichen Werte ist in beiden Fällen gleich, nur der Bereich ist anders.
 
 Die grundlegenden Typen werden vom Compiler erkannt, der über interne Regeln verfügt, die bestimmen, welche Vorgänge auf den Typen ausgeführt werden können und wie sie in andere grundlegenden Typen konvertiert werden können. Eine umfassende Liste der integrierten Typen und ihrer Größe und numerischen Grenzwerte finden Sie unter [integrierte Typen](../cpp/fundamental-types-cpp.md).
 
-In der folgende Abbildung wird die relative Größe der integrierten Datentypen dargestellt:
+Die folgende Abbildung zeigt die relativen Größen der integrierten Typen in der Microsoft C++-Implementierung:
 
 ![Größe der in Bytes erstellten&#45;in Typen](../cpp/media/built-intypesizes.png "Größe der in Bytes erstellten&#45;in Typen")
 
-In der folgenden Tabelle werden die am häufigsten verwendeten grundlegenden Typen aufgelistet:
+In der folgenden Tabelle sind die am häufigsten verwendeten grundlegenden Typen und deren Größen in der Microsoft C++-Implementierung aufgeführt:
 
-|type|Size|Anmerkungen|
-|----------|----------|-------------|
-|INT|4 Byte|Die Standardauswahl für ganzzahlige Werte.|
-|double|8 Byte|Die Standardauswahl für Gleitkommawerte.|
-|bool|1 Byte|Stellt Werte dar, die entweder wahr oder falsch sein können.|
-|char|1 Byte|Verwenden Sie sie für ASCII-Zeichen in Zeichenfolgen im älteren C-Format oder in std::string Objekten, die nie in den UNICODE konvertiert werden müssen.|
-|wchar_t|2 Bytes|Stellt "breite" Zeichenwerte dar, die in den UNICODE-Format codiert werden (UTF-16 bei Windows, andere Betriebssysteme können abweichen). Dies ist der Zeichentyp, der in Zeichenfolgen des Typs `std::wstring` verwendet wird.|
-|Ganzzahl ohne Vorzeichen &nbsp; Char|1 Byte|C++ hat keinen integrierten Bytetyp.  Verwenden **`unsigned char`** Sie, um einen Bytewert darzustellen.|
-|unsigned int|4 Byte|Die Standardauswahl für Bitflags.|
-|long long|8 Byte|Stellt sehr große ganzzahlige Werte dar.|
+| type | Size | Kommentar |
+|--|--|--|
+| **`int`** | 4 Bytes | Die Standardauswahl für ganzzahlige Werte. |
+| **`double`** | 8 Bytes | Die Standardauswahl für Gleitkommawerte. |
+| **`bool`** | 1 Byte | Stellt Werte dar, die entweder wahr oder falsch sein können. |
+| **`char`** | 1 Byte | Verwenden Sie sie für ASCII-Zeichen in Zeichenfolgen im älteren C-Format oder in std::string Objekten, die nie in den UNICODE konvertiert werden müssen. |
+| **`wchar_t`** | 2 Bytes | Stellt "breite" Zeichenwerte dar, die in den UNICODE-Format codiert werden (UTF-16 bei Windows, andere Betriebssysteme können abweichen). Dies ist der Zeichentyp, der in Zeichenfolgen des Typs `std::wstring` verwendet wird. |
+| **`unsigned char`** | 1 Byte | C++ hat keinen integrierten Bytetyp.  Verwenden **`unsigned char`** Sie, um einen Bytewert darzustellen. |
+| **`unsigned int`** | 4 Bytes | Die Standardauswahl für Bitflags. |
+| **`long long`** | 8 Bytes | Stellt sehr große ganzzahlige Werte dar. |
+
+Andere C++-Implementierungen können unterschiedliche Größen für bestimmte numerische Typen verwenden. Weitere Informationen zu den Größen und Größen von Beziehungen, die der C++-Standard erfordert, finden Sie unter [integrierte Typen](fundamental-types-cpp.md).
 
 ## <a name="the-void-type"></a>Der void-Typ
 
-Der **`void`** Typ ist ein spezieller Typ. Sie können keine Variable des Typs deklarieren **`void`** , aber Sie können eine Variable vom Typ __" \* void__ " (Zeiger auf) deklarieren **`void`** , was manchmal notwendig ist, wenn Sie unformatierten (nicht typisierten) Arbeitsspeicher zuordnen. Zeiger auf sind jedoch **`void`** nicht typsicher, und in der Regel ist die Verwendung in modernen C++ dringend nicht empfehlenswert. In einer Funktionsdeklaration **`void`** bedeutet ein Rückgabewert, dass die Funktion keinen Wert zurückgibt. Dies ist eine gängige und akzeptable Verwendung von **`void`** . Obwohl in der Programmiersprache C Funktionen erforderlich sind, die NULL-Parameter aufweisen, die **`void`** in der Parameterliste deklariert werden, z. b., `fou(void)` wird diese Vorgehensweise in modernem C++ nicht empfohlen und sollte als deklariert werden `fou()` . Weitere Informationen finden Sie unter [Typkonvertierungen und Typsicherheit](../cpp/type-conversions-and-type-safety-modern-cpp.md).
+Der **`void`** Typ ist ein spezieller Typ. Sie können keine Variable des Typs deklarieren **`void`** , aber Sie können eine Variable vom Typ `void *` (Zeiger auf **`void`** ) deklarieren, was manchmal notwendig ist, wenn Sie unformatierten (nicht typisierten) Arbeitsspeicher zuordnen. Zeiger auf sind jedoch **`void`** nicht typsicher, und in der Regel ist die Verwendung in modernen C++ dringend nicht empfehlenswert. In einer Funktionsdeklaration **`void`** bedeutet ein Rückgabewert, dass die Funktion keinen Wert zurückgibt. Dies ist eine gängige und akzeptable Verwendung von **`void`** . Obwohl in der Programmiersprache C Funktionen erforderlich sind, die NULL-Parameter aufweisen, die **`void`** in der Parameterliste deklariert werden, z. b., `fou(void)` wird diese Vorgehensweise in modernem C++ nicht empfohlen und sollte als deklariert werden `fou()` . Weitere Informationen finden Sie unter [Typkonvertierungen und Typsicherheit](../cpp/type-conversions-and-type-safety-modern-cpp.md).
 
 ## <a name="const-type-qualifier"></a>const-Typqualifizierer
 

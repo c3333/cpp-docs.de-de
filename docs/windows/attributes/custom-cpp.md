@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - custom attributes, defining
 ms.assetid: 3abac928-4d55-4ea6-8cf6-8427a4ad79f1
-ms.openlocfilehash: 185517720af7e61f6a04068e8868d258a51f262f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7a1d9bd64a28fa7c08477c6011dc0e8236b7bcf6
+ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215321"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87521251"
 ---
 # <a name="custom-c"></a>custom (C++)
 
@@ -44,16 +44,14 @@ Das **benutzerdefinierte** Attribut verfügt über die gleiche Funktionalität w
 
 ### <a name="attribute-context"></a>Attributkontext
 
-|||
-|-|-|
-|**Zielgruppe**|Nicht-com- **Schnittstelle**, **`class`** , **`enum`** s, `idl_module` Methoden, Schnittstellenmember, Schnittstellenparameter, s **`typedef`** **`union`** , **`struct`** s, s|
-|**REPEATABLE**|Ja|
-|**Erforderliche Attribute**|**Co-Klasse** (bei Verwendung für die Klasse)|
-|**Ungültige Attribute**|Keine|
+- **Gilt für**: nicht-com `interface` , `idl_module` Methoden, Schnittstellenmember, Schnittstellenparameter,,,,, **`typedef`** **`class`** **`enum`** **`union`** und **`struct`** .
+- **Wiederholbar**: Ja.
+- **Erforderliche Attribute**: **Co-Klasse** (bei Verwendung in der-Klasse).
+- **Ungültige Attribute**: None.
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
