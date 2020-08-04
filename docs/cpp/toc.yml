@@ -125,7 +125,7 @@
       items:
         - name: 'Integrierte Operatoren, Rangfolge und Assoziativität'
           href: ../cpp/cpp-built-in-operators-precedence-and-associativity.md
-        - name: __alignof-Operator
+        - name: alignof-Operator
           href: ../cpp/alignof-operator.md
         - name: __uuidof-Operator
           href: ../cpp/uuidof-operator.md
@@ -447,7 +447,7 @@
           href: ../cpp/lambda-expressions-constexpr.md
     - name: Arrays
       href: ../cpp/arrays-cpp.md
-    - name: Verweise
+    - name: References
       items:
         - name: Verweise
           href: ../cpp/references-cpp.md
