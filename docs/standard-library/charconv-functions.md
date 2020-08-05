@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - std::charconv [C++], to_chars
 - std::charconv [C++], from_chars
-ms.openlocfilehash: 276ac2bce70ce5c4ebf8e22bb1da1ac9914db55e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 92f838ededad3e2b8493e934ae2b614247f18458
+ms.sourcegitcommit: 4eda68a0b3c23d8cefa56b7ba11583412459b32f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230196"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87565949"
 ---
 # <a name="ltcharconvgt-functions"></a>&lt;chardev- &gt; Funktionen
 
@@ -23,12 +23,12 @@ Der- \<charconv> Header enthält die folgenden nicht-Member-Funktionen:
 |[to_chars](#to_chars) | Konvertiert eine Ganzzahl oder einen Gleit Komma Wert in eine Sequenz von **`char`** . |
 |[from_chars](#from_chars) | Konvertieren einer Sequenz von **`char`** in eine Ganzzahl oder einen Gleit Komma Wert. |
 
-Diese Konvertierungs Funktionen werden auf die Leistung optimiert und unterstützen auch das kürzeste Roundtrip-Verhalten. Das kürzeste Roundtrip-Verhalten bedeutet, dass bei der Konvertierung einer Zahl in Zeichen nur ausreichend Genauigkeit ausgegeben wird, um das Wiederherstellen der ursprünglichen Anzahl beim Konvertieren dieser Zeichen in einen Gleit Komma Wert zu ermöglichen.
+Diese Konvertierungs Funktionen werden auf die Leistung optimiert und unterstützen auch das kürzeste Roundtrip-Verhalten. Das kürzeste Roundtrip-Verhalten bedeutet, dass bei der Konvertierung einer Zahl in Zeichen nur ausreichend Genauigkeit ausgegeben wird, um das Wiederherstellen der ursprünglichen Anzahl bei der Wiederherstellung dieser Zeichen in einen Gleit Komma Wert zu ermöglichen.
 
-- Beim Umrechnen von Zeichen in eine Zahl muss der numerische Wert nicht auf Null enden. Ebenso, wenn eine Zahl in Zeichen umgerechnet wird, wird das Ergebnis nicht mit Null beendet.
+- Beim Umrechnen von Zeichen in eine Zahl muss der numerische Wert nicht auf Null enden. Ebenso gilt, wenn eine Zahl in Zeichen umgerechnet wird, das Ergebnis nicht mit NULL endet.
 - Die Konvertierungs Funktionen weisen keinen Arbeitsspeicher zu. Sie besitzen den Puffer in allen Fällen.
 - Die Konvertierungs Funktionen lösen nicht aus. Es wird ein Ergebnis zurückgegeben, aus dem Sie ermitteln können, ob die Konvertierung erfolgreich abgeschlossen wurde.
-- Bei den Konvertierungs Funktionen handelt es sich nicht um eine Unterscheidung in der Laufzeit
+- Bei den Konvertierungs Funktionen handelt es sich nicht um eine empfindliche Laufzeit.
 - Die Konvertierungs Funktionen sind nicht Gebiets Schema fähig. Sie drucken und analysieren immer Dezimalstellen als und `'.'` nie als ', ' für Gebiets Schemas, die Kommas verwenden.
 
 ## `to_chars`
@@ -95,9 +95,9 @@ Eine [to_chars_result](to-chars-result-structure.md) , die das Ergebnis der Konv
 
 ### <a name="remarks"></a>Bemerkungen
 
-Funktionen, die einen [chars_format](chars-format-class.md) -Parameter verwenden, bestimmen den Konvertierungsspezifizierer wie `printf()` folgt: der Konvertierungsspezifizierer ist, wenn ist, `f` `fmt` `chars_format::fixed` `e` `fmt` `chars_format::scientific` `a` (ohne das führende "0x" im Ergebnis) `fmt` , wenn ist `chars_format::hex` und wenn ist `g` `fmt` `chars_format::general` . Die Angabe der kürzesten Fixed-Notation kann zu einer längeren Ausgabe führen, da Sie möglicherweise die kürzeste Darstellung darstellt, wenn der Wert sehr groß oder sehr klein ist.
+Funktionen, die einen [chars_format](chars-format-class.md) -Parameter verwenden, bestimmen den Konvertierungsspezifizierer wie `printf()` folgt: der Konvertierungsspezifizierer ist, wenn ist, `'f'` `fmt` `chars_format::fixed` `'e'` `fmt` `chars_format::scientific` `'a'` (ohne die führende `0x` im Ergebnis) `fmt` , wenn ist, `chars_format::hex` und wenn ist `'g'` `fmt` `chars_format::general` . Die Angabe der kürzesten Fixed-Notation kann zu einer längeren Ausgabe führen, da Sie möglicherweise die kürzeste Darstellung darstellt, wenn der Wert sehr groß oder sehr klein ist.
 
-In der folgenden Tabelle wird das Konvertierungs Verhalten anhand verschiedener Kombinationen von `fmt` -und- `precision` Parametern beschrieben Der Begriff "kürzeste Roundtrip" bezieht sich auf das Schreiben der geringsten Anzahl von Ziffern, die erforderlich sind, damit der Wert durch die Verwendung der entsprechenden `from_chars` Funktion genau wieder hergestellt wird.
+In der folgenden Tabelle wird das Konvertierungs Verhalten anhand verschiedener Kombinationen von `fmt` -und- `precision` Parametern beschrieben Der Begriff "kürzeste Roundtrip-Verhalten" bezieht sich auf das Schreiben der geringsten Anzahl von Ziffern, die erforderlich sind, damit der Wert durch die Verwendung der entsprechenden `from_chars` Funktion genau wieder hergestellt wird.
 
 | `fmt`und- `precision` Kombination | Output |
 |--|--|
@@ -237,7 +237,16 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="requirements"></a>Requirements (Anforderungen)
+
+**Header:**\<charconv>
+
+**Namespace:** std
+
+/Std: c++ 17 (oder höher) ist erforderlich.
+
+## <a name="see-also"></a>Weitere Informationen
 
 [\<charconv>](charconv.md)  
-[Die kürzeste Dezimal Zeichenfolge, die von Roundtrips](https://www.exploringbinary.com/the-shortest-decimal-string-that-round-trips-examples/)
+[Die kürzeste Dezimal Zeichenfolge, die von Roundtrips](https://www.exploringbinary.com/the-shortest-decimal-string-that-round-trips-examples/) 
+ [printf ()-Formatspezifizierer](..\c-runtime-library\format-specification-syntax-printf-and-wprintf-functions.md)
