@@ -13,12 +13,12 @@ helpviewer_keywords:
 - value struct keyword [C++]
 - ref struct keyword [C++]
 ms.assetid: 5c360764-b229-49c6-9357-66213afbc372
-ms.openlocfilehash: 42742d8fadad78702a665e5c53119f022bc00971
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d01768eeb179ffdd0c39ce0717b84204d988528d
+ms.sourcegitcommit: 68ae6f9ea17f32734b32bb06ffeec12d8d33f0fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228725"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87807770"
 ---
 # <a name="ref-class-and-ref-struct--ccli-and-ccx"></a>Verweisklasse und Referenzstruktur (C++/CLI und C++/CX)
 
@@ -29,13 +29,10 @@ Die Erweiterungen **ref class** oder **ref struct** deklarieren eine Klasse oder
 ### <a name="syntax"></a>Syntax
 
 ```cpp
-      class_access
-      ref class
-      name
-      modifier :  inherit_accessbase_type {};
-class_accessref structnamemodifier :  inherit_accessbase_type {};
-class_accessvalue classnamemodifier :  inherit_accessbase_type {};
-class_accessvalue structnamemodifier :  inherit_accessbase_type {};
+class_access ref class name modifier : inherit_accessbase_type {};
+class_access ref struct name modifier : inherit_access base_type {};
+class_access value class name modifier : inherit_access base_type {};
+class_access value struct name modifier : inherit_access base_type {};
 ```
 
 ### <a name="parameters"></a>Parameter
@@ -121,6 +118,6 @@ Die Schlüsselwörter **value class** und **value struct** teilen dem Compiler m
 
 Compileroption: `/clr`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)
