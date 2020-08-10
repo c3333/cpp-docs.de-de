@@ -1,18 +1,18 @@
 ---
 title: Hilfe und Community für Visual C++
-ms.date: 11/30/2017
+ms.date: 08/03/2020
 ms.technology: cpp-ide
 ms.assetid: 6bc23c18-fcd9-47bc-bff2-17537700be4a
-ms.openlocfilehash: 66ff4844e34d1d3c781791b5e250387d6ac2a0d1
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: e3dd475112f217e9d7891a18f7dc91972b221dd9
+ms.sourcegitcommit: 4eda68a0b3c23d8cefa56b7ba11583412459b32f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405077"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87565923"
 ---
 # <a name="visual-c-help-and-community"></a>Hilfe und Community für Visual C++
 
-So erhalten Sie Informationen über das Schreiben von C++-Code und die Verwendung von Visual Studio-Entwicklungswerkzeugen.
+Hier erhalten Sie Hilfe und Informationen zum Schreiben von C++-Code und zum Verwenden der Visual Studio-Entwicklungstools.
 
 ## <a name="samples"></a>Beispiele
 
@@ -42,4 +42,4 @@ Viele Abschnitte der Dokumentation sind auch im PDF-Format verfügbar. Diese Abs
 |[C++-Teamblog](https://devblogs.microsoft.com/cppblog/)|Enthält Beiträge zu verschiedenen Themen von Experten aus dem C++-Produktteam von Microsoft.|
 |[Channel 9](https://channel9.msdn.com/)|Enthält Videointerviews und -vorlesungen. Verwenden Sie das Suchfeld auf der Channel 9-Homepage, um C++-Inhalt zu suchen.|
 |[Visual Studio](https://visualstudio.microsoft.com/)|Enthält Artikel und Neuigkeiten zu Visual Studio und verwandte Entwicklungstools.|
-|[MSDN-Foren](https://social.msdn.microsoft.com/Forums/) und Visual Studio-[Entwicklercommunity](https://developercommunity.visualstudio.com)|Offizielle Microsoft-Foren, in denen Sie Fragen zu C++ posten und Antworten von Microsoft und Experten aus der Community erhalten können.|
+|[Fragen und Antworten zur Microsoft-Dokumentation](https://docs.microsoft.com/answers/topics/c%2B%2B.html) und [Entwicklercommunity](https://developercommunity.visualstudio.com/spaces/62/index.html) zu Visual Studio C++|Offizielle Microsoft-Foren, in denen Sie Fragen zu C++ posten und Antworten von Microsoft und Experten aus der Community erhalten können.|

@@ -3,12 +3,12 @@ title: Neuerungen bei C++ in Visual Studio
 ms.date: 05/19/2020
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: e8202d03517086192ae893caff0602ec86fcb426
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 28b3708c8064623a364b7a60eb63c508808b0a0b
+ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87226788"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389999"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
@@ -513,12 +513,11 @@ Das C++ REST SDK, eine plattformübergreifende Web-API für C++, wurde auf Versi
 
 Mehrere Vorgänge in C++, die die IntelliSense-Engine für Refactoring und Codenavigation verwenden, werden viel schneller ausgeführt. Die folgenden Angaben basieren auf der Visual Studio Chromium-Lösung mit 3.500 Projekten:
 
-|||
-|-|-|
-|Feature|Leistungssteigerung|
-|Umbenennen|5,3-fach|
-|Signatur ändern |4,5-fach|
-|Alle Verweise suchen|4,7-fach|
+| Feature | Leistungssteigerung |
+|--|--|
+| Umbenennen | 5,3-fach |
+| Signatur ändern | 4,5-fach |
+| Alle Verweise suchen | 4,7-fach |
 
 C++ unterstützt jetzt STRG+Klick-**GoTo-Definition**, was die Navigation mit der Maus zu Definitionen vereinfacht. Die Strukturvisualisierung aus dem Productivity Power Tools-Paket ist nun standardmäßig auch im Produkt enthalten.
 
@@ -667,7 +666,7 @@ Visual Studio liefert nun die C++-Kernprüfungen zum Erzwingen der [C++-Kernrich
 
 ##### <a name="visual-studio-2017-version-157"></a>Visual Studio 2017-Version 15.7
 
-- Unterstützung für [/analyze:ruleset](../build/reference/analyze-code-analysis.md) hinzugefügt. So können Sie angeben, welche Codeanalyseregeln ausgeführt werden sollen.
+- Unterstützung für [`/analyze:ruleset`](../build/reference/analyze-code-analysis.md) hinzugefügt. So können Sie angeben, welche Codeanalyseregeln ausgeführt werden sollen.
 - Unterstützung für zusätzliche C++ Core Guidelines-Regeln hinzugefügt.  Weitere Informationen finden Sie unter [Verwenden der C++-Core-Richtlinienprüfungen](/cpp/code-quality/using-the-cpp-core-guidelines-checkers).
 
 ## <a name="unit-testing-in-visual-studio-2017"></a>Komponententests in Visual Studio 2017
