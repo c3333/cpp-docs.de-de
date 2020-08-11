@@ -29,12 +29,12 @@ helpviewer_keywords:
 - _setmbcp function
 - multibyte code pages
 ms.assetid: cfde53b5-0b73-4684-81b1-a8d3aafc85de
-ms.openlocfilehash: 18712661b2bda1eaaf0c583b922ad73a781b4abc
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 9a981c40b9e525ba1ffc1f2198f2b6a859fd9ac7
+ms.sourcegitcommit: b51703a96ee35ee2376d5f0775b70f03ccbe6d9a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82918828"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88086967"
 ---
 # <a name="_setmbcp"></a>_setmbcp
 
@@ -57,19 +57,9 @@ Neue Codepageeinstellung für gebietsschemaunabhängige Multibyte-Routinen.
 
 Gibt 0 zurück, wenn die Codepage erfolgreich festgelegt wurde. Wenn für *Codepage*ein ungültiger Codepage-Wert angegeben wird, wird-1 zurückgegeben, und die Codepage-Einstellung ist unverändert. Legt **errno** auf **EINVAL** fest, wenn ein Fehler bei der Speicher Belegung auftritt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_setmbcp** -Funktion gibt eine neue Multibytezeichen-Codepage an. Standardmäßig legt das Laufzeitsystem automatisch die Multibyte-Codepage auf die Systemstandard-ANSI-Codepage fest. Die Multibyte-Codepageeinstellung wirkt sich auf alle Multibyteroutinen auf, die nicht vom Gebietsschema abhängig sind. Es ist jedoch möglich, **_setmbcp** anzuweisen, die Codepage zu verwenden, die für das aktuelle Gebiets Schema definiert ist (Weitere Informationen finden Sie in der folgenden Liste der Manifest-Konstanten und der zugehörigen verhaltensergebnisse). Eine Liste der Multibyteroutinen, die von der Gebietsschema-Codepage und nicht von der Multibyte-Codepage abhängig sind, finden Sie unter [Interpretation von Multybite-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md).
-
-Die Multibyte-Codepage hat auch Auswirkungen auf die Multibyteverarbeitung durch die folgenden Routinen der Laufzeitbibliothek:
-
-||||
-|-|-|-|
-|[_exec functions](../../c-runtime-library/exec-wexec-functions.md)|[_mktemp](mktemp-wmktemp.md)|[_stat](stat-functions.md)|
-|[_fullpath](fullpath-wfullpath.md)|[_spawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)|[_tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md)|
-|[_makepath](makepath-wmakepath.md)|[_splitpath](splitpath-wsplitpath.md)|[tmpnam](tempnam-wtempnam-tmpnam-wtmpnam.md)|
-
-Außerdem verarbeiten alle Lauf Zeit Bibliotheks Routinen, die Multibytezeichen- *argv* -oder *envp* -Programm Argumente als Parameter (z. b. die **_exec** -und **_spawn** Familien) empfangen, diese Zeichen folgen entsprechend der Multibytezeichen-Codepage. Aus diesem Grund werden diese Routinen auch durch einen **aufrufs_setmbcp** beeinflusst, der die Multibytezeichen-Codepage ändert.
 
 Das *Codepage* -Argument kann auf einen der folgenden Werte festgelegt werden:
 
@@ -89,7 +79,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_setmbcp**|\<mbctype.h>|
 
